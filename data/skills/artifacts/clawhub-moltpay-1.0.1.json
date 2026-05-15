@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltpay@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltpay",
+  "skill": {
+    "id": 19755,
+    "skillKey": "clawhub-moltpay",
+    "name": "MoltPay Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltpay",
+    "url": "https://clawhub.ai/skills/moltpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltpay-96c08bd79034b22d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely synchronize and transfer resources between verified autonomous agents using cryptographically tethered identities and replay-protected requests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balkanblbn",
+      "userId": "publishers:balkanblbn",
+      "displayName": "balkanblbn",
+      "image": "https://avatars.githubusercontent.com/u/224807213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771969425932,
+      "changelog": "Hardened identity-tethering and resource management protocol.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:410b2d9d7d918b26f1aef976545a2ee861cc144053481a8c52a85c4e4b1ff23e"
+}

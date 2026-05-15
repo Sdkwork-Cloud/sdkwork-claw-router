@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "zshijie-publisher",
+    "displayName": "Zshijie Publisher",
+    "summary": "Operate the Z视介 publishing API from OpenClaw. Use when Codex needs to prompt the user to log in to Z视介 by QR code, then publish or edit 图文 and 短视频 content th...",
+    "tags": {
+      "latest": "0.1.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1773928664642,
+    "updatedAt": 1778312921767
+  },
+  "latestVersion": {
+    "version": "0.1.5",
+    "createdAt": 1773941646948,
+    "changelog": "zshijie-publisher 0.1.5\n\n- Simplified QR login flow: replaced two-step \"prepare-login\" and \"wait-login\" with single \"login\" command that outputs both HTML and PNG for QR code.\n- Session file structure clarified: now explicitly supports and documents the use of `captured.sessionId` as valid.\n- Updated documentation and workflows to reflect the streamlined login procedure and reduced reference to QR internals.\n- Removed runtime/environment installation instructions and Homebrew integration guidance from user-facing docs.\n- Adjusted payload and session rules for better compatibility and simpler usage.\n- Minor command usage changes: `login` command replaces previous preparation and waiting steps for QR scan.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jkbwfi",
+    "userId": "s171br7sn7a97rzw0kfshxdq6n83hny1",
+    "displayName": "jkbwfi",
+    "image": "https://avatars.githubusercontent.com/u/20609964?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312921767
+  }
+}

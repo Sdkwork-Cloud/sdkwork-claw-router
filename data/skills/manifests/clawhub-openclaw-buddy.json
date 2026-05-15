@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35607,
+  "uuid": "skill-clawhub-openclaw-buddy",
+  "skillKey": "clawhub-openclaw-buddy",
+  "name": "OpenClaw Buddy",
+  "summary": "Generate a unique deterministic virtual pet buddy based on your user ID, featuring species, rarity, stats, cosmetics, and personality in ASCII art format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rong",
+      "features": [
+        "Generate a unique deterministic virtual pet buddy based on your user ID, featuring species, rar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-buddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220700654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-buddy",
+      "url": "https://clawhub.ai/skills/openclaw-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-buddy",
+    "url": "https://clawhub.ai/skills/openclaw-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-buddy-2c5dc7f66075046a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-buddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-buddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:963fb10f319516b764edf17f16172b5f32df705bc59c8d02ab9d8b212faeae2e",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:33:11.125Z"
+}

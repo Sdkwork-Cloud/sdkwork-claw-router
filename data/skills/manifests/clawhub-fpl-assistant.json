@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47344,
+  "uuid": "skill-clawhub-fpl-assistant",
+  "skillKey": "clawhub-fpl-assistant",
+  "name": "FPL(Fantasy Premier League) assistant",
+  "summary": "Fantasy Premier League (FPL) assistant for squad management, transfer planning, captain selection, and chip strategy. Use when users ask about FPL lineup dec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fpl_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dyIdx(y')",
+      "features": [
+        "Fantasy Premier League (FPL) assistant for squad management, transfer planning, captain selecti.",
+        "Use when users ask about FPL lineup dec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fpl-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8368713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fpl-assistant",
+      "url": "https://clawhub.ai/skills/fpl-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fpl-assistant",
+    "url": "https://clawhub.ai/skills/fpl-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fpl-assistant-012d4642dca2c16b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fpl-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fpl-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d52a16d9124cffaef68fde45972ad462109de83fa39ba55bc1a7edb93ca4d4b",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T18:47:02.612Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39837,
+  "uuid": "skill-clawhub-alibabacloud-dsc-audit",
+  "skillKey": "clawhub-alibabacloud-dsc-audit",
+  "name": "Alibabacloud Dsc Audit",
+  "summary": "Query and handle security risk events from Alibaba Cloud Data Security Center. Supports viewing the list of unprocessed risk events and performing manual han...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dsc_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Query and handle security risk events from Alibaba Cloud Data Security Center",
+        "Supports viewing the list of unprocessed risk events and performing manual han..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-dsc-audit@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-dsc-audit",
+      "url": "https://clawhub.ai/skills/alibabacloud-dsc-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dsc-audit",
+    "url": "https://clawhub.ai/skills/alibabacloud-dsc-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dsc-audit-7fa1024bf69a4bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-dsc-audit@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-dsc-audit-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74433066ab54faa01ae83a48bcbcb2587ebd0bd857520ce0d0e937d38679325c",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:51:09.472Z"
+}

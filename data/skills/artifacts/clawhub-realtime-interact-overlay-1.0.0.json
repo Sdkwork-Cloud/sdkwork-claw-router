@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/realtime-interact-overlay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_interact_overlay",
+  "skill": {
+    "id": 68216,
+    "skillKey": "clawhub-realtime-interact-overlay",
+    "name": "realtime-interact-overlay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-interact-overlay",
+    "url": "https://clawhub.ai/skills/realtime-interact-overlay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-interact-overlay-f673390ca3f4d674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时交互浮窗技能。在需要用户确认、输入或交互的场景中，通过浮窗方式在当前操作界面旁边进行交互， 而不是回到OpenClaw聊天窗口。适用于：(1) 评论内容需要用户确认后执行，(2) 删除文件前需要用户确认， (3) 购物付款时需要输入密码，(4) 任何需要即时交互的场景。支持系统级浮窗和浏览器内浮窗。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lightcastlepro",
+      "userId": "publishers:lightcastlepro",
+      "displayName": "LightCastlePro",
+      "image": "https://avatars.githubusercontent.com/u/18499297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772098393641,
+      "changelog": "实时交互浮窗技能。在需要用户确认、输入或交互的场景中，通过浮窗方式在当前操作界面旁边进行交互，\n  而不是回到OpenClaw聊天窗口。适用于：(1) 评论内容需要用户确认后执行，(2) 删除文件前需要用户确认，\n  (3) 购物付款时需要输入密码，(4) 任何需要即时交互的场景。支持系统级浮窗和浏览器内浮窗。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4958ce96e4a7882210684a1aff8db0becc085bc3bf89d04a7cbfea41e6b69e3d"
+}

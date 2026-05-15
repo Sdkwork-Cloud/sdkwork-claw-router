@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-essentials@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_essentials",
+  "skill": {
+    "id": 8310,
+    "skillKey": "clawhub-git-essentials",
+    "name": "Git Essentials"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-essentials",
+    "url": "https://clawhub.ai/skills/git-essentials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-essentials-05d643f8161856bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Essential Git commands and workflows for version control, branching, and collaboration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arnarsson",
+      "userId": "publishers:arnarsson",
+      "displayName": "Arnarsson",
+      "image": "https://avatars.githubusercontent.com/u/96142966?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 27684,
+      "installsAllTime": 267,
+      "installsCurrent": 251,
+      "stars": 32,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769692045864,
+      "changelog": "Initial release of git-essentials.\n\n- Provides essential Git commands for setup, version control, branching, remote operations, stashing, rebasing, tagging, submodules, and cleaning.\n- Includes common workflows for feature branches, hotfixes, and syncing forks.\n- Offers helpful aliases, practical tips, and solutions to common issues.\n- Links to official Git documentation and resources for further learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ca544afc01c991756823c96d02a230c75a346f062e7b04f0ee00103b711e2df"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-analyst@1.0.54",
+  "version": "1.0.54",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_analyst",
+  "skill": {
+    "id": 17846,
+    "skillKey": "clawhub-research-analyst",
+    "name": "research analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-analyst",
+    "url": "https://clawhub.ai/skills/research-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-analyst-d05b56998cb22bb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimal local stock/crypto analysis (5 core scripts bundled). Public APIs only, zero credentials, no subprocess, ClawHub reviewed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 55
+    },
+    "latestVersion": {
+      "version": "1.0.54",
+      "createdAt": 1774788022210,
+      "changelog": "No changes detected in this version.\n\n- No file changes between previous and current versions.\n- SKILL.md and functionality remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:992013c601d5132aa0dd447f7cf7f243795931a6b6d4057928ef1afdd9d3fc3f"
+}

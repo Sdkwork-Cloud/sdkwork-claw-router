@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pg-jobs@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_jobs",
+  "skill": {
+    "id": 53596,
+    "skillKey": "clawhub-pg-jobs",
+    "name": "Pg Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-jobs",
+    "url": "https://clawhub.ai/skills/pg-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-jobs-21339b9c528d79da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when interacting with the ProxyGate job marketplace / bounty board — listing jobs, creating bounties, claiming work, submitting results, or managing job..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwelten",
+      "userId": "s17ea14p7afnh5qnk5d9zdacq183g92p",
+      "displayName": "jwelten",
+      "image": "https://avatars.githubusercontent.com/u/194850832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774132426948,
+      "changelog": "Sync with CLI v0.2.1 — updated commands, descriptions, and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a466109cfec5733e72be2407109e945ab5d3a649c4d9e8ab539f2b1bb7f54eff"
+}

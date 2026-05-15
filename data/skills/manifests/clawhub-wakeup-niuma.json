@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69248,
+  "uuid": "skill-clawhub-wakeup-niuma",
+  "skillKey": "clawhub-wakeup-niuma",
+  "name": "morning-brief",
+  "summary": "每天早上8点自动推送当前日期、周数、节假日倒计时及本周、本月、本年时间进度百分比简报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wakeup_niuma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foxseller",
+      "features": [
+        "每天早上8点自动推送当前日期、周数、节假日倒计时及本周、本月、本年时间进度百分比简报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wakeup-niuma@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215436235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wakeup-niuma",
+      "url": "https://clawhub.ai/skills/wakeup-niuma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wakeup-niuma",
+    "url": "https://clawhub.ai/skills/wakeup-niuma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wakeup-niuma-67f3211d643bc275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wakeup-niuma@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wakeup-niuma-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1d8f09982711574f02ef9c1b20605951bec7784c6a673ffdc7a4644da6fb9ef",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:12:52.985Z"
+}

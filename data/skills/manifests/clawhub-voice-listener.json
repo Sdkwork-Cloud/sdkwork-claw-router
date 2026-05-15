@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69926,
+  "uuid": "skill-clawhub-voice-listener",
+  "skillKey": "clawhub-voice-listener",
+  "name": "Voice Listener",
+  "summary": "智能唤醒“小龙虾”，启用百度高准确度语音识别，持续监听并自动输入语音内容，支持“停止”暂停输入。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_listener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanqing203",
+      "features": [
+        "智能唤醒“小龙虾”，启用百度高准确度语音识别，持续监听并自动输入语音内容，支持“停止”暂停输入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-listener@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201436940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-listener",
+      "url": "https://clawhub.ai/skills/voice-listener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-listener",
+    "url": "https://clawhub.ai/skills/voice-listener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-listener-e5caea9529347751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-listener@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-listener-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1fa36622cfd3f6eae22e2cd057fd74e4ef1138aad9183ac14858a4f4ea16def",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:23:36.035Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10377,
+  "uuid": "skill-clawhub-skill-scan",
+  "skillKey": "clawhub-skill-scan",
+  "name": "Skill Scan",
+  "summary": "Security scanner for OpenClaw skill packages. Scans skills for malicious code, evasion techniques, prompt injection, and misaligned behavior BEFORE installation. Use to audit any skill from ClawHub or local directories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dgriffin831",
+      "features": [
+        "Security scanner for OpenClaw skill packages",
+        "Scans skills for malicious code, evasion techniques, prompt injection, and misaligned behavior.",
+        "Use to audit any skill from ClawHub or local directories."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16494003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-scan",
+      "url": "https://clawhub.ai/skills/skill-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scan",
+    "url": "https://clawhub.ai/skills/skill-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scan-de75f4e77ad606ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e521b0eae94114a7098447b715d63291b907682966591dc8789e7d2114a1938",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:17:07.151Z"
+}

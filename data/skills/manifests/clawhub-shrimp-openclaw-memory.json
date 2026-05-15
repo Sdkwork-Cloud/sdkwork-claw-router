@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68097,
+  "uuid": "skill-clawhub-shrimp-openclaw-memory",
+  "skillKey": "clawhub-shrimp-openclaw-memory",
+  "name": "OpenClaw Memory System",
+  "summary": "让 OpenClaw 真的记住用户偏好、事实和上下文的长期记忆 skill。适用于你受不了每次新会话都要重复背景、希望 agent 能跨会话记住信息、并且想直接拥有可搜索、可持久化、可自动注入的记忆系统时使用。不是手工记笔记，而是一个已经做好的可运行记忆能力。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shrimp_openclaw_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "文武贝",
+      "features": [
+        "让 OpenClaw 真的记住用户偏好、事实和上下文的长期记忆 skill。适用于你受不了每次新会话都要重复背景、希望 agent 能跨会话记住信息、并且想直接拥有可搜索、可持久化、可自动注."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shrimp-openclaw-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171480212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shrimp-openclaw-memory",
+      "url": "https://clawhub.ai/skills/shrimp-openclaw-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shrimp-openclaw-memory",
+    "url": "https://clawhub.ai/skills/shrimp-openclaw-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shrimp-openclaw-memory-7aad841ec86b53c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shrimp-openclaw-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shrimp-openclaw-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:079ec095da700a19469c03ffa227b72a0fc0998fcc87270493da342ee6640025",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T03:51:47.849Z"
+}

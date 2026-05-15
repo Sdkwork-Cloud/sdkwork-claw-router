@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gw-self-heal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gw_self_heal",
+  "skill": {
+    "id": 21737,
+    "skillKey": "clawhub-gw-self-heal",
+    "name": "Gateway Self-Heal Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gw-self-heal",
+    "url": "https://clawhub.ai/skills/gw-self-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gw-self-heal-8ac1353eac977e5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-healing watchdog for OpenClaw gateway. Auto-backup openclaw.json before changes, health-check the gateway process, and auto-rollback to last known good..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772806306235,
+      "changelog": "Initial release: auto-backup openclaw.json, health check, config rollback on failure, process auto-restart. Supports cron, systemd, launchd, Docker. Author: 김여명 (dawnkim_master)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97749d190ff0a009d90f31567a1918a68fabeaca03aa34bdb5593775d999eaee"
+}

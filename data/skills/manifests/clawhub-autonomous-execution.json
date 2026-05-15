@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11513,
+  "uuid": "skill-clawhub-autonomous-execution",
+  "skillKey": "clawhub-autonomous-execution",
+  "name": "Autonomous Execution",
+  "summary": "Execute tasks end-to-end while respecting safety boundaries. Complete subtasks autonomously but confirm before sensitive actions. Handles errors intelligentl...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_execution",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PKhodadust",
+      "features": [
+        "Execute tasks end-to-end while respecting safety boundaries",
+        "Complete subtasks autonomously but confirm before sensitive actions",
+        "Handles errors intelligentl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-execution@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259203985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-execution",
+      "url": "https://clawhub.ai/skills/autonomous-execution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-execution",
+    "url": "https://clawhub.ai/skills/autonomous-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-execution-a623f9553377aebb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-execution@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-execution-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56901f0b8241c7a2dcef4d20d57c8ed35f1c2e16e390135b0bddc935ca47506a",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T21:15:11.603Z"
+}

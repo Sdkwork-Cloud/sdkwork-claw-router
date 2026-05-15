@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57993,
+  "uuid": "skill-clawhub-github-explorer",
+  "skillKey": "clawhub-github-explorer",
+  "name": "GitHub项目分析助手",
+  "summary": "Deep-dive analysis of GitHub projects. Use when the user mentions a GitHub repo/project name and wants to understand it — triggered by phrases like \"帮我看看这个项目...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyingants",
+      "features": [
+        "Deep-dive analysis of GitHub projects",
+        "Use when the user mentions a GitHub repo/project name and wants to understand it — triggered by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230412921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-explorer",
+      "url": "https://clawhub.ai/skills/github-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-explorer",
+    "url": "https://clawhub.ai/skills/github-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-explorer-280bc4d758528d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec61e3d0710f2c3b6f6ad0cf8bd3dacb0fd5d8a62233df2508f209c4984f25e9",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:50:23.476Z"
+}

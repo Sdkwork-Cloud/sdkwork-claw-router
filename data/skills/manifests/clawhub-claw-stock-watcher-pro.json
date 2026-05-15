@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33129,
+  "uuid": "skill-clawhub-claw-stock-watcher-pro",
+  "skillKey": "clawhub-claw-stock-watcher-pro",
+  "name": "Claw Stock Watcher Pro",
+  "summary": "Manage and monitor a personal stock watchlist with support for adding, removing, listing stocks, and summarizing their recent performance using data from 10j...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_stock_watcher_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Williamwang-wh",
+      "features": [
+        "Manage and monitor a personal stock watchlist with support for adding, removing, listing stocks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-stock-watcher-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75006654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-stock-watcher-pro",
+      "url": "https://clawhub.ai/skills/claw-stock-watcher-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-stock-watcher-pro",
+    "url": "https://clawhub.ai/skills/claw-stock-watcher-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-stock-watcher-pro-00ad624f2cecd545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-stock-watcher-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-stock-watcher-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a068da254c15c67dfd86b9fdce67f0c96ce2a215414e700d4a38ecb39993cf85",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:57:04.345Z"
+}

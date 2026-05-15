@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-docx@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_docx",
+  "skill": {
+    "id": 28315,
+    "skillKey": "clawhub-pdf-to-docx",
+    "name": "PDF to DOCX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-docx",
+    "url": "https://clawhub.ai/skills/pdf-to-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-docx-3faa666f31d3f942.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF documents to Word (.docx) format using MinerU. Transforms PDF files into editable Word documents preserving layout, text, tables, and formatting...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzlzyca",
+      "userId": "s177m2xppsth4a69xqx30k6kds83haz0",
+      "displayName": "mzlzyCA",
+      "image": "https://avatars.githubusercontent.com/u/87289074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775210324998,
+      "changelog": "SEO: expand description for better ClawHub vector search discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac297f58df62d9400c0b7ab391edfe71d69d5e6a971e530c700b4706c3efd21e"
+}

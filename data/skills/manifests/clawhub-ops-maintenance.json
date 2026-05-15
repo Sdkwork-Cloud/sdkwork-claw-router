@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63968,
+  "uuid": "skill-clawhub-ops-maintenance",
+  "skillKey": "clawhub-ops-maintenance",
+  "name": "ops-maintenance",
+  "summary": "运维助手 v2.1 - 支持本地、远程、多服务器集群监控 (安全增强版，密码加密、命令白名单)",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_maintenance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fish1981bimmer",
+      "features": [
+        "运维助手 v2.1",
+        "支持本地、远程、多服务器集群监控 (安全增强版，密码加密、命令白名单)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-maintenance@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271533977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-maintenance",
+      "url": "https://clawhub.ai/skills/ops-maintenance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-maintenance",
+    "url": "https://clawhub.ai/skills/ops-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-maintenance-06a325f6305e53ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-maintenance@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-maintenance-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c4f74f34b6a46f2b4503aa65cad41a25844f1d83095b9114cb1e22e3ed34dc9",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T04:08:17.560Z"
+}

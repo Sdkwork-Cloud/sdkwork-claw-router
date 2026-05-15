@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-model-router-skill@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_model_router_skill",
+  "skill": {
+    "id": 17086,
+    "skillKey": "clawhub-openclaw-model-router-skill",
+    "name": "OpenClaw Model Router Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-model-router-skill",
+    "url": "https://clawhub.ai/skills/openclaw-model-router-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-model-router-skill-7df32d88de213792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic model routing for OpenClaw with prefix routing (@codex/@mini), timezone-aware schedule switching, verify-after-switch, rollback, lock protectio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vulcanusalex",
+      "userId": "s17e006bpwqzpg8cejbkdy5srx858k50",
+      "displayName": "Tianqu",
+      "image": "https://avatars.githubusercontent.com/u/256598462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 787,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772320868069,
+      "changelog": "优化ClawHub商店文案：生产闭环能力、风险控制与操作指南重构",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a761ce820bce916490254cf97b041984c61b77484025ef3eaf70d04026144d83"
+}

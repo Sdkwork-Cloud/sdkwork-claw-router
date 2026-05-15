@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-reasoning-ux@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_reasoning_ux",
+  "skill": {
+    "id": 33078,
+    "skillKey": "clawhub-openclaw-feishu-reasoning-ux",
+    "name": "OpenClaw Feishu Reasoning UX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-reasoning-ux",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-reasoning-ux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-reasoning-ux-b515e9f0120a4dae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Improve OpenClaw's Feishu reply experience by customizing streaming cards, raw reasoning visibility, card 2.0 layouts, collapsible panels, titles, colors, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doashoi",
+      "userId": "publishers:doashoi",
+      "displayName": "doashoi",
+      "image": "https://avatars.githubusercontent.com/u/88933633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774254392485,
+      "changelog": "# openclaw-feishu-reasoning-ux 0.1.0 Changelog\n\n- Added a new reference guide: `references/proven-case-and-pitfalls.md`, outlining successful patterns and failure pitfalls for Feishu card customization.\n- Updated SKILL.md to direct users to review the new reference first and follow a diagnosis- and user-consent-first workflow.\n- Emphasized phased, low-risk rollout strategies for Feishu UX customization.\n- Strengthened backup and rollback requirements for any risky or non-trivial change.\n- Clarified successful condition checks vs. compatibility factors for raw reasoning features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91c978d2923453fbdfbad0e0d47d61c57262fcbfd13bf4b6ef8dd3ec14d25e47"
+}

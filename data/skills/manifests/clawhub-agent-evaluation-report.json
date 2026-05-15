@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63535,
+  "uuid": "skill-clawhub-agent-evaluation-report",
+  "skillKey": "clawhub-agent-evaluation-report",
+  "name": "Agent Evaluation Report",
+  "summary": "根据测试数据自动生成标准化的智能体系统评测报告。 Use when: 用户说\"生成智能体评测报告\"、\"创建测试报告\"、\"项目测试报告\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_evaluation_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuiciferYi",
+      "features": [
+        "根据测试数据自动生成标准化的智能体系统评测报告。 Use when: 用户说\"生成智能体评测报告\"、\"创建测试报告\"、\"项目测试报告\"。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-evaluation-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24913493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-evaluation-report",
+      "url": "https://clawhub.ai/skills/agent-evaluation-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-evaluation-report",
+    "url": "https://clawhub.ai/skills/agent-evaluation-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-evaluation-report-2536a63852a9cf14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-evaluation-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-evaluation-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58bdb7ab4690c7009f18826ec42cfac2b2acae3a86ab887e6eb133f449b647d9",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:31:25.439Z"
+}

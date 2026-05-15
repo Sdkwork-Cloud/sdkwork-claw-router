@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59544,
+  "uuid": "skill-clawhub-miaomiao-ai",
+  "skillKey": "clawhub-miaomiao-ai",
+  "name": "秒秒AI助理",
+  "summary": "调用秒秒AI多能力智能体，支持聊天、天气、新闻、快递、图像生成、搜索、总结、图表、地图、车票查询等功能。Invoke when user needs AI assistant with multiple practical functions or mentions related keywords.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaomiao_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agleameal",
+      "features": [
+        "调用秒秒AI多能力智能体，支持聊天、天气、新闻、快递、图像生成、搜索、总结、图表、地图、车票查询等功能。Invoke when user needs AI assistant with mu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaomiao-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24750910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaomiao-ai",
+      "url": "https://clawhub.ai/skills/miaomiao-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaomiao-ai",
+    "url": "https://clawhub.ai/skills/miaomiao-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaomiao-ai-e71c0df17f472e28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaomiao-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaomiao-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ed00bf03426d98a429da466b61f6876999bf55eeae65cc1d433acfc4aab00e8",
+      "artifactSizeBytes": 2718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:42:04.538Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-crew@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_crew",
+  "skill": {
+    "id": 32957,
+    "skillKey": "clawhub-agent-crew",
+    "name": "agent-crew"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-crew",
+    "url": "https://clawhub.ai/skills/agent-crew",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-crew-356fe489ae762382.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates and manages persistent multi-agent teams with standardized configs and team structures for progressive memory and private skill sets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "201983290498",
+      "userId": "s1713czbb0tgn52jep50x41yj983yfpg",
+      "displayName": "201983290498",
+      "image": "https://avatars.githubusercontent.com/u/64311715?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776407473987,
+      "changelog": "agent-crew 1.0.0\n\n- Initial release of the agent-crew skill for creating and managing persistent multi-agent teams.\n- Supports standardized file structures for agent config files and collaborative team directories.\n- Provides detailed SOP for team creation, including planning, file setup, system prompt generation, and agent instantiation.\n- Enforces strict workflow/confirmation checkpoints and rules for agent isolation, progressive documentation, and memory management.\n- Integrates with project-level and role-specific skills, project templates, and validation scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8061360f0da695c59d42c9097a4f5434d985299c7b275809bd66ecdf80fa2931"
+}

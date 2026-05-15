@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17628,
+  "uuid": "skill-clawhub-joule-dao",
+  "skillKey": "clawhub-joule-dao",
+  "name": "JOULE DAO",
+  "summary": "Interact with JOULE DAO on Base: track treasury, view proposals, vote, discuss, check balances, join as member, and earn JOULE for productive work contributi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joule_dao",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "echo-autonomous",
+      "features": [
+        "Interact with JOULE DAO on Base: track treasury, view proposals, vote, discuss, check balances,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joule-dao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258002730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joule-dao",
+      "url": "https://clawhub.ai/skills/joule-dao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joule-dao",
+    "url": "https://clawhub.ai/skills/joule-dao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joule-dao-0fb3048d03428a22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joule-dao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joule-dao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c63ce66dbc02cbbe9efb74bb2325d28f65827388c3f382f54a7a135a06861fd2",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T00:02:03.943Z"
+}

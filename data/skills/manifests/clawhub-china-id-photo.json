@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57661,
+  "uuid": "skill-clawhub-china-id-photo",
+  "skillKey": "clawhub-china-id-photo",
+  "name": "China Id Photo",
+  "summary": "生成中国标准证件照。Use when the user needs to create an ID photo, passport photo, visa photo, or any standard photo with specific size and background color. Supports...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_id_photo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "生成中国标准证件照。Use when the user needs to create an ID photo, passport photo, visa photo, or any sta.",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-id-photo@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-id-photo",
+      "url": "https://clawhub.ai/skills/china-id-photo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-id-photo",
+    "url": "https://clawhub.ai/skills/china-id-photo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-id-photo-15cfb6f48ecb7002.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-id-photo@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-id-photo-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d78a89c815827ccaae0a60f0ce61d784539a49e6d65115a0aeb5d7c20ec9140a",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:08:03.337Z"
+}

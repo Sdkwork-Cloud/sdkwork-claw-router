@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44562,
+  "uuid": "skill-clawhub-support-template-multilang-sync",
+  "skillKey": "clawhub-support-template-multilang-sync",
+  "name": "Support Template Multilang Sync",
+  "summary": "Update multilingual customer support reply templates in markdown files, then sync the updated content to Feishu Wiki, log the change in a GitHub issue, and p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_template_multilang_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Update multilingual customer support reply templates in markdown files, then sync the updated c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/support-template-multilang-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "support-template-multilang-sync",
+      "url": "https://clawhub.ai/skills/support-template-multilang-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-template-multilang-sync",
+    "url": "https://clawhub.ai/skills/support-template-multilang-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-template-multilang-sync-6497053d539c96b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/support-template-multilang-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-support-template-multilang-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:024907bdb1faa34133ad63e5972350b775231ccaf7ed38e870d012bb1f24e7f3",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T19:29:25.120Z"
+}

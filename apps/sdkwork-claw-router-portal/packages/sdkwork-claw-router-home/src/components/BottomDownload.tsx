@@ -101,7 +101,7 @@ export function BottomDownload() {
 
             <a
               href="#"
-              className="w-full px-6 py-4 rounded-xl bg-[#111827] hover:bg-[#1f2937] dark:bg-white/10 dark:hover:bg-white/20 text-white border border-transparent dark:border-white/10 font-medium transition-all flex items-center justify-center gap-2 mb-6"
+              className="w-full px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white/10 dark:hover:bg-white/20 text-white border border-transparent dark:border-white/10 font-medium transition-all flex items-center justify-center gap-2 mb-6"
             >
               <Terminal className="w-5 h-5" />
               {t('home.server.get', 'Get Server Edition')}

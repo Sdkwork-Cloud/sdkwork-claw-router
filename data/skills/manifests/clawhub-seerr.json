@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19743,
+  "uuid": "skill-clawhub-seerr",
+  "skillKey": "clawhub-seerr",
+  "name": "Seerr Media Requests",
+  "summary": "Search for movies and TV shows via a Seerr instance and request them for download. Use when the user asks to download, find, request, or queue a movie or TV...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seerr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ximga",
+      "features": [
+        "Search for movies and TV shows via a Seerr instance and request them for download",
+        "Use when the user asks to download, find, request, or queue a movie or TV..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seerr@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5874463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seerr",
+      "url": "https://clawhub.ai/skills/seerr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seerr",
+    "url": "https://clawhub.ai/skills/seerr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seerr-6ad309b484c58917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seerr@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seerr-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:305faba3e92859f61eeffac7a4cd6d35e55cf6e0d4b67985aceba03e93104c08",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:57:03.478Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ganglion@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ganglion",
+  "skill": {
+    "id": 25459,
+    "skillKey": "clawhub-ganglion",
+    "name": "Ganglion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ganglion",
+    "url": "https://clawhub.ai/skills/ganglion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ganglion-14e1cb3eb74b921f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for every task involving this project. Covers running Ganglion, its CLI commands, HTTP bridge API, pipeline execution, knowledge queries, configuration,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tensorlink-dev",
+      "userId": "publishers:tensorlink-dev",
+      "displayName": "tensorlink-dev",
+      "image": "https://avatars.githubusercontent.com/u/193437181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773030357310,
+      "changelog": "Initial release of Ganglion — a flexible, domain-specific execution engine for Bittensor subnet mining.\n\n- Provides both CLI and HTTP API for project scaffolding, pipeline management, knowledge queries, configuration, and operational workflows.\n- Supports local and remote operation modes, with clear mode detection and usage patterns.\n- Enables runtime mutations via remote API: register/patch tools, agents, pipeline stages, and swap retry policies; all changes are auditable and reversible (rollback supported).\n- Features a cross-run knowledge store for strategic memory sharing across agents and multi-bot workflows.\n- Integrates with MCP ecosystem as both client (consume external tools) and server (expose Ganglion tools to external agents).\n- Comes with detailed usage documentation, quick reference commands, and interactive API docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06d47ab012aa8204ba8776bd8f844c53f5178a67fd81dfda3efff8e7674fa431"
+}

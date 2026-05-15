@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31832,
+  "uuid": "skill-clawhub-dwd-dws-ads-warehouse-patterns",
+  "skillKey": "clawhub-dwd-dws-ads-warehouse-patterns",
+  "name": "DWD/DWS/ADS Data Warehouse Patterns",
+  "summary": "Provide production-tested SQL patterns for designing DWD/DWS/ADS data warehouse layers, including dimension explosion with ALL, multi-period roll-ups, snapsh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dwd_dws_ads_warehouse_patterns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Franklin Fang",
+      "features": [
+        "Provide production-tested SQL patterns for designing DWD/DWS/ADS data warehouse layers, includi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dwd-dws-ads-warehouse-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32094055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dwd-dws-ads-warehouse-patterns",
+      "url": "https://clawhub.ai/skills/dwd-dws-ads-warehouse-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dwd-dws-ads-warehouse-patterns",
+    "url": "https://clawhub.ai/skills/dwd-dws-ads-warehouse-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dwd-dws-ads-warehouse-patterns-935448d8bd093237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dwd-dws-ads-warehouse-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dwd-dws-ads-warehouse-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df88d7d42f70d2257b22f04f02cb9154cb924bd214b885823b2b67d5ee4b4525",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:55:02.548Z"
+}

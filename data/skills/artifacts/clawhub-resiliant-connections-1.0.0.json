@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resiliant-connections@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resiliant_connections",
+  "skill": {
+    "id": 11551,
+    "skillKey": "clawhub-resiliant-connections",
+    "name": "Resiliant Connections"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resiliant-connections",
+    "url": "https://clawhub.ai/skills/resiliant-connections",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resiliant-connections-bb16e7357d91aac4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Patterns for building resilient API clients and real-time connections with retry logic, circuit breakers, and graceful degradation. Use when building production systems that need to handle failures. Triggers on retry logic, circuit breaker."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1856,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729682555,
+      "changelog": "Initial release of resilient-connections—robust patterns for handling API and real-time connection failures.\n\n- Provides detailed patterns for retry logic, exponential backoff, and circuit breakers.\n- Includes resilient fetch and reconnecting WebSocket client examples.\n- Features graceful degradation with fallback and caching support.\n- Summarizes best practices and anti-patterns for robust API interactions.\n- Lists related skills and offers quick reference code snippets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae50af35f05ab9e4c7e6b583f0a685c4ad7f8e486356d50fa955f653e8014b4e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seopro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seopro",
+  "skill": {
+    "id": 30114,
+    "skillKey": "clawhub-seopro",
+    "name": "SEO Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seopro",
+    "url": "https://clawhub.ai/skills/seopro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seopro-9835300264bf1831.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides keyword research, meta tag analysis, content SEO scoring, and meta description generation to improve website search rankings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hughtan93-dev",
+      "userId": "s170sb8tmh8hxnkzme2nk7fxcs842rxk",
+      "displayName": "hughtan93-dev",
+      "image": "https://avatars.githubusercontent.com/u/254217053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773541118519,
+      "changelog": "Initial release of SEO Optimizer.\n\n- Provides keyword research with search volume indicators.\n- Analyzes and optimizes meta title and description tags for given URLs.\n- Calculates SEO scores for website content.\n- Generates and optimizes meta descriptions.\n- Offers keyword suggestions for specified topics.\n- Includes clear usage instructions and examples for all commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f6b51bf2ebd33d6eb43a512babed2267dd8538e826ce3f075841b2e7139b4fc"
+}

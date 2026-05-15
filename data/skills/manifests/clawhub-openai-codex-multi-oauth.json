@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24661,
+  "uuid": "skill-clawhub-openai-codex-multi-oauth",
+  "skillKey": "clawhub-openai-codex-multi-oauth",
+  "name": "OpenAI Codex Multi OAuth",
+  "summary": "Manage and debug multiple OpenAI Codex OAuth profiles inside OpenClaw, including native multi-profile auth stores and external-router setups where one active...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_codex_multi_oauth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WTHH031230",
+      "features": [
+        "Manage and debug multiple OpenAI Codex OAuth profiles inside OpenClaw, including native multi-p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openai-codex-multi-oauth@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184518394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openai-codex-multi-oauth",
+      "url": "https://clawhub.ai/skills/openai-codex-multi-oauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-codex-multi-oauth",
+    "url": "https://clawhub.ai/skills/openai-codex-multi-oauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-codex-multi-oauth-fae7088372df1f0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openai-codex-multi-oauth@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openai-codex-multi-oauth-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15f318eeb27368fea2ee68656e478da01742bfa02cf2a8994278b14e8d4d8c10",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:33:19.738Z"
+}

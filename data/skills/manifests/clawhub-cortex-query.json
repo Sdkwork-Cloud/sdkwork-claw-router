@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28573,
+  "uuid": "skill-clawhub-cortex-query",
+  "skillKey": "clawhub-cortex-query",
+  "name": "Cortex Query (Deprecated)",
+  "summary": "[DEPRECATED] This skill has been merged into cortex-engine. Install clawhub.ai/idapixl/cortex-engine instead.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cortex_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IDAPIXL",
+      "features": [
+        "[DEPRECATED] This skill has been merged into cortex-engine",
+        "Install clawhub.ai/idapixl/cortex-engine instead."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cortex-query@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8084809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cortex-query",
+      "url": "https://clawhub.ai/skills/cortex-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cortex-query",
+    "url": "https://clawhub.ai/skills/cortex-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cortex-query-13db878613bbb7f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cortex-query@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cortex-query-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:720246c266ed0ca8bba5dae9b7b058e0670f97d4f333df369edfc56bc31a4a3f",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:42:19.645Z"
+}

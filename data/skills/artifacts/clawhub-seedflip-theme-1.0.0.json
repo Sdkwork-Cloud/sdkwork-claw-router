@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedflip-theme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedflip_theme",
+  "skill": {
+    "id": 24569,
+    "skillKey": "clawhub-seedflip-theme",
+    "name": "SeedFlip Dashboard Theme"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedflip-theme",
+    "url": "https://clawhub.ai/skills/seedflip-theme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedflip-theme-6436a03d64b3605a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Re-theme your OpenClaw dashboard with 104 curated design seeds from SeedFlip. Fonts, colors, shadows, radii. One command, instant transformation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bockenstette1",
+      "userId": "publishers:bockenstette1",
+      "displayName": "bockenstette1",
+      "image": "https://avatars.githubusercontent.com/u/257587805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773159060672,
+      "changelog": "Initial release: Add the SeedFlip Dashboard Theme skill for instant theming of OpenClaw dashboards.\n\n- Instantly re-theme your OpenClaw dashboard with 104 curated SeedFlip design seeds (fonts, colors, shadows, and more).\n- Supports queries by brand, style, vibe, or specific seed name.\n- Fetch and apply themes through CSS variables via file, browser console, or themes.json.\n- Includes examples and clear instructions for setup and usage.\n- Easy integration with SeedFlip MCP server.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba09a704d26c0399b3e2ff0bf2fa966542842426e178d5459f423a2f543da902"
+}

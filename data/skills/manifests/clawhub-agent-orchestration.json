@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10495,
+  "uuid": "skill-clawhub-agent-orchestration",
+  "skillKey": "clawhub-agent-orchestration",
+  "name": "Agent Orchestration",
+  "summary": "Master the art of spawning and managing sub-agents. Write prompts that actually work, track running agents, and learn from every outcome. Part of the Hal Stack 🦞",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawdnw",
+      "features": [
+        "Master the art of spawning and managing sub-agents",
+        "Write prompts that actually work, track running agents, and learn from every outcome",
+        "Part of the Hal Stack 🦞"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-orchestration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257213758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-orchestration",
+      "url": "https://clawhub.ai/skills/agent-orchestration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestration",
+    "url": "https://clawhub.ai/skills/agent-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestration-a39be28ab5e2b168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-orchestration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-orchestration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ba009cab8611a7a5ac67fba141fa6f0b9e5d33f4ee115860ccc68016e04d844",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:21:09.147Z"
+}

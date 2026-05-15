@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "docker-ops",
+    "displayName": "Managing Docker containers via docker-socket-proxy",
+    "summary": "Manage Docker containers securely via docker-socket-proxy: check status, logs, resource usage, and safely restart only whitelisted containers with cooldown.",
+    "tags": {
+      "latest": "0.4.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774014918063,
+    "updatedAt": 1778313902595
+  },
+  "latestVersion": {
+    "version": "0.4.0",
+    "createdAt": 1774014918063,
+    "changelog": "- Added comprehensive whitelist and safety procedures: containers must be explicitly listed and allowed for operations.\n- Enforced use of the `SYSCTL_WHITELIST_PATH` environment variable before executing any Docker command.\n- Strictly limited commands to safe status, inspect, log retrieval, monitoring, and controlled restarts; forbidden dangerous Docker operations.\n- Introduced structured status report and log analysis workflow, including sensitive data redaction.\n- Established cooldown and auditing for restarts to prevent accidental or repeated operations.\n- Improved error handling and messaging for missing environment/configuration or denied actions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "elston",
+    "userId": "s175xvt7sepv856zx59z2n4t8s83hcng",
+    "displayName": "elston",
+    "image": "https://avatars.githubusercontent.com/u/357294?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778313902595
+  }
+}

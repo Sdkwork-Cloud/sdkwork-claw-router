@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24766,
+  "uuid": "skill-clawhub-placed-job-tracker",
+  "skillKey": "clawhub-placed-job-tracker",
+  "name": "Placed Job Tracker",
+  "summary": "This skill should be used when the user wants to \"track job applications\", \"add a job application\", \"update application status\", \"view my job pipeline\", \"get...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_job_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajit Singh",
+      "features": [
+        "This skill should be used when the user wants to \"track job applications\", \"add a job applicati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/placed-job-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34647819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "placed-job-tracker",
+      "url": "https://clawhub.ai/skills/placed-job-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-job-tracker",
+    "url": "https://clawhub.ai/skills/placed-job-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-job-tracker-257e8b239ca7da00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/placed-job-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-placed-job-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cab4404a412eb9fe76f6ccbe25aae2b97d190668bd9d242dc153ae7f3d315ec",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:59:42.343Z"
+}

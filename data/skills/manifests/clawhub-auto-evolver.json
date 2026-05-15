@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68671,
+  "uuid": "skill-clawhub-auto-evolver",
+  "skillKey": "clawhub-auto-evolver",
+  "name": "Auto Evolver",
+  "summary": "自动执行内循环自我优化和外循环价值连接，监控Token消耗并自动修复故障，确保持续高效进化与任务生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_evolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "largetool",
+      "features": [
+        "自动执行内循环自我优化和外循环价值连接，监控Token消耗并自动修复故障，确保持续高效进化与任务生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-evolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128457415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-evolver",
+      "url": "https://clawhub.ai/skills/auto-evolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-evolver",
+    "url": "https://clawhub.ai/skills/auto-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-evolver-fca734f825b197c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-evolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-evolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e16a6243ef458ff6815a278eb205153cdd9285d0f0a1dcc281f3428a98e5ce5",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:26:29.006Z"
+}

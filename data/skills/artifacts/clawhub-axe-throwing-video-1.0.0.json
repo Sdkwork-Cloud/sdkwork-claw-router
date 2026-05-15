@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axe-throwing-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axe_throwing_video",
+  "skill": {
+    "id": 51474,
+    "skillKey": "clawhub-axe-throwing-video",
+    "name": "Axe Throwing Video — Experience Preview and Booking Videos for Axe Throwing Businesses"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axe-throwing-video",
+    "url": "https://clawhub.ai/skills/axe-throwing-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axe-throwing-video-d8d83aa8375831d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates short preview and marketing videos showcasing axe throwing experiences to help businesses attract and reassure prospective customers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944835014,
+      "changelog": "Initial release of Axe Throwing Video\n\n- Introduced a video assistant for axe throwing businesses.\n- Helps venues showcase their experience through preview and marketing videos.\n- Answers common safety and skill-level questions for first-time customers.\n- Aims to increase bookings by building excitement and confidence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c8a99fefb196fdece9cb2745bb905b68da17fd19454386b8e151a0df4b389dd"
+}

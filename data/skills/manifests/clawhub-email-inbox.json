@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39106,
+  "uuid": "skill-clawhub-email-inbox",
+  "skillKey": "clawhub-email-inbox",
+  "name": "email",
+  "summary": "summarize, triage, and draft actions for incoming email. use when the user wants chatgpt to check an inbox, identify important unread messages, group emails...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_inbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangweifen2025-dotcom",
+      "features": [
+        "summarize, triage, and draft actions for incoming email",
+        "use when the user wants chatgpt to check an inbox, identify important unread messages, group em."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-inbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227732619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-inbox",
+      "url": "https://clawhub.ai/skills/email-inbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-inbox",
+    "url": "https://clawhub.ai/skills/email-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-inbox-d6a6d3d59e8283ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-inbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-inbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4a7423b2d9a37ea5c2f65e055e67bf36231d14d89078b8f8c96e7ba313ee0a0",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:36:42.645Z"
+}

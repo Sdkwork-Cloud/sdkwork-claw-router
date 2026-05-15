@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanize-zh-writers@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_zh_writers",
+  "skill": {
+    "id": 72437,
+    "skillKey": "clawhub-humanize-zh-writers",
+    "name": "humanize-zh-writers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-zh-writers",
+    "url": "https://clawhub.ai/skills/humanize-zh-writers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-zh-writers-fc6eab07e907b09d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "作家风格写作助手。模仿王小波、王朔、马尔克斯、卡尔维诺、博尔赫斯的写作风格对文本进行改写或创作。触发词：王小波风格、王朔风格、马尔克斯风格、卡尔维诺风格、博尔赫斯风格、用王小波写、用王朔写、用马尔克斯写、用卡尔维诺写、用博尔赫斯写、痞子风格、魔幻现实、元叙事、迷宫叙事、按某某作家风格写。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaozhengmao",
+      "userId": "s172t220v43schp8mkm0v8hjtx85nzec",
+      "displayName": "shaozhengmao",
+      "image": "https://avatars.githubusercontent.com/u/3367047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774095458399,
+      "changelog": "Initial release — a writing assistant that emulates the styles of several renowned authors for rewriting or composition.\n\n- Supports style emulation for 王小波、王朔、马尔克斯、卡尔维诺、博尔赫斯\n- Uses detailed, writer-specific mechanisms including narrative perspective, tone, structure, and unique stylistic features\n- Activates via trigger phrases (e.g., “王小波风格”, “魔幻现实”, “按某某作家风格写”)\n- Ensures style imitation focuses on thinking patterns and sentence dynamics, not just keywords or superficial traits\n- Provides examples and key points for each style to guide rewriting or creation\n- Accepts user prompts to specify author style and content, with optional follow-up if content is missing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6af2f25947ff684e181eaec3899fb1d854bfab5cf085652d85d45b5d13e5ff08"
+}

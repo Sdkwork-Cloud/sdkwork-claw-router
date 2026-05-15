@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69193,
+  "uuid": "skill-clawhub-ai-promo",
+  "skillKey": "clawhub-ai-promo",
+  "name": "AI Promo",
+  "summary": "查询大模型平台优惠信息。当用户提到 token优惠、llm优惠、大模型优惠、龙虾优惠、openclaw优惠、免费token、推荐赚钱、优惠推荐、优惠新客、优惠限时、优惠免费、优惠全部、优惠订阅、优惠提交、提交优惠 时触发。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_promo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "l",
+      "features": [
+        "查询大模型平台优惠信息。当用户提到 token优惠、llm优惠、大模型优惠、龙虾优惠、openclaw优惠、免费token、推荐赚钱、优惠推荐、优惠新客、优惠限时、优惠免费、优惠全部、优惠订."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-promo@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-promo",
+      "url": "https://clawhub.ai/skills/ai-promo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-promo",
+    "url": "https://clawhub.ai/skills/ai-promo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-promo-379df288914cd9b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-promo@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-promo-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:024a788559169616d58335a99c8b92d3daee7660fe12fe9e268509c7c508b6f3",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:52:54.155Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-planning@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_planning",
+  "skill": {
+    "id": 11245,
+    "skillKey": "clawhub-travel-planning",
+    "name": "Travel Planning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-planning",
+    "url": "https://clawhub.ai/skills/travel-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-planning-2e59ddd76591893a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan trips with itineraries, multi-city routing, budget optimization, family logistics, packing lists, and visa timelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1932,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771861672572,
+      "changelog": "Fixed all references to use travel-planning consistently.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7523f09f15527d695658d4e703fc6f79c55b31d2caf5f318e438563668386565"
+}

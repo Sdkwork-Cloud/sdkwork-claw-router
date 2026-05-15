@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-x402-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_x402_skill",
+  "skill": {
+    "id": 50887,
+    "skillKey": "clawhub-openclaw-x402-skill",
+    "name": "Openclaw X402 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-x402-skill",
+    "url": "https://clawhub.ai/skills/openclaw-x402-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-x402-skill-5a02b7f5ed9596a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, browse, filter, and pay for x402-compatible API endpoints and MCP tools from the x402 Bazaar — the autonomous discovery layer for agentic payments...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coinvest518",
+      "userId": "s170sr390mtt6jrq6vkqj48c8s85rkw1",
+      "displayName": "CoinVest AI Innovations",
+      "image": "https://avatars.githubusercontent.com/u/39965431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772568909360,
+      "changelog": "- Initial release of openclaw-x402-skill.\n- Enables discovery, browsing, and filtering of x402-compatible API endpoints and MCP tools from the x402 Bazaar.\n- Supports paying for and calling APIs using USDC micropayments on Base with no API keys or account setup (requires EVM_PRIVATE_KEY for paid calls).\n- Allows listing and searching services by price, type, and keywords; includes autonomous find + pay + use flows.\n- Handles discovery via multiple facilitators (Coinbase CDP, PayAI), supporting both v1 and v2 discovery specs.\n- Includes robust error handling and spending limits; browsing requires no keys or wallet.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:77cca5b81b5f3d2231ab2142f73d5751a749fa7eafad819c6e256ce07fcd723d"
+}

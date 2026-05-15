@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "zoom-meeting",
+    "displayName": "Zoom Meetings",
+    "summary": "How to create, retrieve, list, and delete Zoom meetings using the Zoom REST API. Use this skill whenever the user mentions Zoom meetings, wants to schedule a...",
+    "tags": {
+      "latest": "1.1.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 6
+    },
+    "createdAt": 1772208883999,
+    "updatedAt": 1778302421913
+  },
+  "latestVersion": {
+    "version": "1.1.5",
+    "createdAt": 1772726586748,
+    "changelog": "Version 1.1.5 of the zoom-meeting skill:\n\n- Replaced shell script-based meeting management with a new Python-based API script (`scripts/zoom_api.py`), enabling more robust meeting creation, retrieval, listing, and deletion.\n- Expanded functional scope: supports creating, retrieving, listing, and deleting meetings using the Zoom REST API.\n- Improved user interaction: accepts both natural language requests and structured JSON; always provides human-readable responses (no JSON output).\n- Clarified and simplified credential handling; all authentication is handled automatically within the skill.\n- Added dedicated API reference documentation (`references/zoom_api_reference.md`) and removed obsolete shell scripts and settings files.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "neuyazvimyi",
+    "userId": "s175pefdb3jebfx9jhpbcg06f983y98y",
+    "displayName": "Alibek Beldinov",
+    "image": "https://avatars.githubusercontent.com/u/1714732?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302421913
+  }
+}

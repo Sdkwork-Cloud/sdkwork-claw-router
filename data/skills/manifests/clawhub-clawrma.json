@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37811,
+  "uuid": "skill-clawhub-clawrma",
+  "skillKey": "clawhub-clawrma",
+  "name": "Clawrma",
+  "summary": "Use Clawrma for web fetch, web search, screenshots, snapshots, and inference, or as a fallback when built-in tools are not configured, blocked, expensive.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawrma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris",
+      "features": [
+        "Use Clawrma for web fetch, web search, screenshots, snapshots, and inference, or as a fallback."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawrma@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269083052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawrma",
+      "url": "https://clawhub.ai/skills/clawrma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawrma",
+    "url": "https://clawhub.ai/skills/clawrma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawrma-cfc8c9f0f4e99b52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawrma@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawrma-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0365b6dc604cbf815011f80aecea9ac4a917cfc39a38981643b7132f5ef3695",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:27:39.018Z"
+}

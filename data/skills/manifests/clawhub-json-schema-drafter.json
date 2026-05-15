@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59008,
+  "uuid": "skill-clawhub-json-schema-drafter",
+  "skillKey": "clawhub-json-schema-drafter",
+  "name": "json-schema-drafter",
+  "summary": "从 JSON 样本推断结构草案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_schema_drafter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "askjda",
+      "features": [
+        "从 JSON 样本推断结构草案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-schema-drafter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94748630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-schema-drafter",
+      "url": "https://clawhub.ai/skills/json-schema-drafter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-schema-drafter",
+    "url": "https://clawhub.ai/skills/json-schema-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-schema-drafter-7a30358b2ff61f3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-schema-drafter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-schema-drafter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e247eeedbf50e701ae8553fda8b4e11f8117de374e5fbea45aa6a9dae6ec80f",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:07:23.824Z"
+}

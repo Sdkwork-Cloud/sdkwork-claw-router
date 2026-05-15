@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hope-client@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hope_client",
+  "skill": {
+    "id": 58823,
+    "skillKey": "clawhub-hope-client",
+    "name": "Hope Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hope-client",
+    "url": "https://clawhub.ai/skills/hope-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hope-client-8142e6b10b77459f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hope Server Max API 客户端技能。用于发起对 Hope Server Max 服务端的 API 请求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776695068497,
+      "changelog": "Initial release of hope-client.\n\n- Provides a client skill for interacting with Hope Server Max API.\n- Supports essential channel, upload, download, account, and engine management APIs.\n- Includes detailed environment variable configuration for authentication and server connection.\n- Offers ready-to-use bash functions for common queries and automation.\n- Contains clear usage scenarios and standardized status code explanations.\n- Designed for internal network (SSH) usage with required API key in all requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c24afef80f24f85f46754cf07b47ede53c75c8c157821be01c88df8a6365d4e2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arbiscan-skill@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arbiscan_skill",
+  "skill": {
+    "id": 28287,
+    "skillKey": "clawhub-arbiscan-skill",
+    "name": "Arbiscan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arbiscan-skill",
+    "url": "https://clawhub.ai/skills/arbiscan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arbiscan-skill-fe321798df23860b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive crypto market scanner across Binance, OKX, Bybit, and Bitget. 12 scan types covering arbitrage (funding rate, basis, spot spread, futures sprea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zadanthony",
+      "userId": "publishers:zadanthony",
+      "displayName": "ZadAnthony",
+      "image": "https://avatars.githubusercontent.com/u/83726732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773475300918,
+      "changelog": "ArbiScan 0.2.0 - Expanded crypto market scanning and monitoring\n\n- Scans across Binance, OKX, Bybit, and Bitget with 12 scan types: arbitrage, market monitoring, and trading signals\n- Maps common user questions directly to appropriate scans for fast, relevant insights\n- Enforces correct symbol formats per exchange for reliable data\n- Robust error handling: processes partial results if some exchanges/symbols are unavailable\n- Read-only scanner—no trading or API keys required\n- New capabilities include funding rate and basis arbitrage, spot and futures spreads, open interest, price and volume anomalies, funding trends, depeg detection, and new listings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09defb10c10fe05456739fdc8aa594a809327624342323e81c3ce914fd60bfda"
+}

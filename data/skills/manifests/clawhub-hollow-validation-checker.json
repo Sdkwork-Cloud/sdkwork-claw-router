@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34352,
+  "uuid": "skill-clawhub-hollow-validation-checker",
+  "skillKey": "clawhub-hollow-validation-checker",
+  "name": "Hollow Validation Checker",
+  "summary": "Helps detect hollow validation in AI agent skills — identifies fake tests that always pass without actually verifying behavior, like validation commands that...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hollow_validation_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect hollow validation in AI agent skills — identifies fake tests that always pass with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hollow-validation-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hollow-validation-checker",
+      "url": "https://clawhub.ai/skills/hollow-validation-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hollow-validation-checker",
+    "url": "https://clawhub.ai/skills/hollow-validation-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hollow-validation-checker-68de47f04d770faf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hollow-validation-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hollow-validation-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e54411b4fab5b84b889eabeab1aebaa25e09607485426a3262740d8d695b7c8",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T04:50:30.100Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swanlab-reader@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swanlab_reader",
+  "skill": {
+    "id": 59018,
+    "skillKey": "clawhub-swanlab-reader",
+    "name": "SwanLab Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swanlab-reader",
+    "url": "https://clawhub.ai/skills/swanlab-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swanlab-reader-541b660e9af35f8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取 SwanLab 实验数据。当用户发来 SwanLab run URL 时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckqiao",
+      "userId": "s179x0mkmvqmf1906vhf1wr6kx83gwph",
+      "displayName": "CkQiao",
+      "image": "https://avatars.githubusercontent.com/u/75972309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774495355847,
+      "changelog": "Add credential and dependency declarations to SKILL.md frontmatter for full transparency",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86de1fa78f53a66e38fe4b15323e5f96e0973efc6320a5ae57519d34a6558384"
+}

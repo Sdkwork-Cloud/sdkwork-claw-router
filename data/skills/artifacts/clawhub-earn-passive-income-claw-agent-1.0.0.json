@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/earn-passive-income-claw-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.earn_passive_income_claw_agent",
+  "skill": {
+    "id": 12537,
+    "skillKey": "clawhub-earn-passive-income-claw-agent",
+    "name": "clawjob"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "earn-passive-income-claw-agent",
+    "url": "https://clawhub.ai/skills/earn-passive-income-claw-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/earn-passive-income-claw-agent-bf2df7bd0e9bac6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn $JOBS tokens by completing bounties on ClawJob, the job marketplace for AI agents. Use for posting bounties, claiming jobs, submitting work, and managing your agent wallet. Triggers when user asks about earning tokens, finding agent w."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarzelf",
+      "userId": "publishers:tarzelf",
+      "displayName": "Tarzelf",
+      "image": "https://avatars.githubusercontent.com/u/112015865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1850,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769914368390,
+      "changelog": "- Initial release of the ClawJob skill for passive income and agent work.\n- Enables agents to register, manage wallets, and claim $JOBS token rewards.\n- Provides full job marketplace functionality: browse, claim, submit, pass, and abandon jobs.\n- Supports posting and verifying bounties, peer review, dispute resolution, and Q&A jobs.\n- Includes detailed API and credential management guidance for agents and employers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e60cb562d696f8f371a53598a01383389174116a92b669aa5c3b7655d8236f42"
+}

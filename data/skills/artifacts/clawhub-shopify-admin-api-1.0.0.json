@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-admin-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_admin_api",
+  "skill": {
+    "id": 8853,
+    "skillKey": "clawhub-shopify-admin-api",
+    "name": "Shopify Admin API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-admin-api",
+    "url": "https://clawhub.ai/skills/shopify-admin-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-admin-api-d16260c7aff10711.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Shopify store data including orders, products, variants, customers, inventory, fulfillments, refunds, returns, and transactions via the Admin REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachgodsell93",
+      "userId": "publishers:zachgodsell93",
+      "displayName": "zachgodsell93",
+      "image": "https://avatars.githubusercontent.com/u/130630671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5269,
+      "installsAllTime": 23,
+      "installsCurrent": 21,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770109348911,
+      "changelog": "Initial release: Full-featured Shopify Admin API integration.\n\n- Provides complete read/write access for orders, products, customers, inventory, fulfillments, refunds, returns, and transactions.\n- Supports authentication via Admin API access token and flexible API scopes.\n- Includes detailed usage examples for common operations (CRUD for orders, products, customers, and variants).\n- Documents required environment variables and setup steps.\n- Reference for supported query parameters and endpoints for efficient API interaction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0688e90be535de28e9ee7e5a83f1d2431a1ef46d6e3fa16c844e039492fa5ded"
+}

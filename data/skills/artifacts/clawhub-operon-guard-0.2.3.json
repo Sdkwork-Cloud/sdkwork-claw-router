@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/operon-guard@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operon_guard",
+  "skill": {
+    "id": 47131,
+    "skillKey": "clawhub-operon-guard",
+    "name": "Operon Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operon-guard",
+    "url": "https://clawhub.ai/skills/operon-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operon-guard-fa3dc16f5e56d3cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-flight trust verification for AI agents. Verify behavior, detect injection vulnerabilities, check for PII leaks, and measure reliability before granting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brainhiveinc",
+      "userId": "s179c6p2e7mm6bntvvxmd3q15985jvpj",
+      "displayName": "BrainHive",
+      "image": "https://avatars.githubusercontent.com/u/260858703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1777222004631,
+      "changelog": "- Expanded documentation in SKILL.md detailing installation, usage, and verification workflows.\n- Clarifies runtime trust verification checks: determinism, concurrency, safety (injection/PII), and latency.\n- Provides examples for command-line use, combining skill scans, and writing custom guardfile YAML configs.\n- Describes trust scoring system with clear guidelines for permission gating.\n- Documents handling of nested package imports and ambiguity in multi-callable modules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe874ed0d8c33a7f4d4a44d052090e7cc8398e25ea34744bab4778d9d07bc103"
+}

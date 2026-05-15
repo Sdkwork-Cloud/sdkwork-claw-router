@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graphify@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphify",
+  "skill": {
+    "id": 21763,
+    "skillKey": "clawhub-graphify",
+    "name": "graphify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphify",
+    "url": "https://clawhub.ai/skills/graphify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphify-aaef3928cdb8052e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI coding assistant skill for building and querying knowledge graphs from codebases, docs, and media. Use for: understanding complex codebases, architectural..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantox",
+      "userId": "s17951783tfh7a7znjpezgbe1s84naav",
+      "displayName": "FantoX",
+      "image": "https://avatars.githubusercontent.com/u/143634789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776585141195,
+      "changelog": "**Credential requirements for semantic extraction now clearly specified in environment metadata.**\n\n- Added `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` to the environment variable list, describing their use for semantic extraction.\n- Clarified in documentation that code/AST and Whisper runs locally with no API key, but LLM-based content extraction requires a user-supplied API key.\n- No code or functional changes; documentation and skill metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:889df41b56752860be1faabf7faa4bc2108728bf57c2ba393c33d0488e49c0d6"
+}

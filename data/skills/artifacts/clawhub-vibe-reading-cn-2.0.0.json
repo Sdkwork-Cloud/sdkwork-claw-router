@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibe-reading-cn@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_reading_cn",
+  "skill": {
+    "id": 63634,
+    "skillKey": "clawhub-vibe-reading-cn",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-reading-cn",
+    "url": "https://clawhub.ai/skills/vibe-reading-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-reading-cn-437bd2756cbbae5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 驱动的智能书籍阅读分析技能。当用户提供 EPUB 或 TXT 格式的书籍文件时， 将其智能拆分为章节，逐章深度分析与总结，输出 Markdown 总结和交互式 HTML 阅读器。 兼容 OpenClaw 使用的任何 LLM 模型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drbillwang",
+      "userId": "s175ptjbxyq7fy70b1n5t2zzr983s2az",
+      "displayName": "BillWang",
+      "image": "https://avatars.githubusercontent.com/u/101500952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773802079852,
+      "changelog": "Major rewrite: Remove all Gemini SDK dependencies, exec() calls, and undeclared API keys. Pure instruction-based skill now compatible with any LLM model (GLM, Claude, Gemini, etc.). No external API keys needed. Resolves security scan flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4424987fee061638cf7795b62bc46ee1f4041ac173963a7d43cba1eb560ccab"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veritier-fact-checking@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veritier_fact_checking",
+  "skill": {
+    "id": 27517,
+    "skillKey": "clawhub-veritier-fact-checking",
+    "name": "Veritier Fact Checking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veritier-fact-checking",
+    "url": "https://clawhub.ai/skills/veritier-fact-checking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veritier-fact-checking-e22ad67904ea6fd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time fact-checking and claim extraction. Extract falsifiable claims from any text or document, then verify each against live web evidence or your own pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "salomonhenao",
+      "userId": "s171kcg0g7v1v6brp2td2kvjp984nj37",
+      "displayName": "Salomon Henao",
+      "image": "https://avatars.githubusercontent.com/u/39999385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1776908222546,
+      "changelog": "- Added support for two optional environment variables: VERITIER_TEST_KEY (test key, never used in production) and VERITIER_WEBHOOK_SECRET (webhook payload signing).\n- Updated metadata to describe these optional environment variables and clarify their usage and security.\n- No functional or API changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c44defaf143d161c31f31bec2c48a094a517a1eea9e28f8cc8f8aeefd464226"
+}

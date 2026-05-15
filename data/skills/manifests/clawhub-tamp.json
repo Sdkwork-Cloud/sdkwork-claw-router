@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39919,
+  "uuid": "skill-clawhub-tamp",
+  "skillKey": "clawhub-tamp",
+  "name": "Tamp",
+  "summary": "Set up Tamp token compression proxy for OpenClaw to reduce Anthropic API input token costs. Use when the user asks to save tokens, reduce API costs, set up t...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tamp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stas Kulesh",
+      "features": [
+        "Set up Tamp token compression proxy for OpenClaw to reduce Anthropic API input token costs",
+        "Use when the user asks to save tokens, reduce API costs, set up t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tamp@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tamp",
+      "url": "https://clawhub.ai/skills/tamp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tamp",
+    "url": "https://clawhub.ai/skills/tamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tamp-8a279f06494be774.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tamp@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tamp-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c4824da6a5a3d627ff8bda1b9d478c1e38d252573daaf42568f75c3e287f39f",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:18:06.375Z"
+}

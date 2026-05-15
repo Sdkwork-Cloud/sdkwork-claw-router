@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovefromio-sonoscli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovefromio_sonoscli",
+  "skill": {
+    "id": 46649,
+    "skillKey": "clawhub-lovefromio-sonoscli",
+    "name": "Lovefromio Sonoscli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovefromio-sonoscli",
+    "url": "https://clawhub.ai/skills/lovefromio-sonoscli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovefromio-sonoscli-bf73bb372e86f6b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Sonos speakers (discover/status/play/volume/group)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovefromio",
+      "userId": "s17bygff9ftqsew7hetgbztb7983mnpk",
+      "displayName": "AI",
+      "image": "https://avatars.githubusercontent.com/u/235840214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255544140,
+      "changelog": "Initial release of lovefromio-sonoscli.\n\n- Control Sonos speakers from the command line (discover, status, play/pause/stop, volume, grouping).\n- Supports favorites, queue management, and playlist/favorite playback.\n- Optional Spotify search integration (requires credentials).\n- Offers troubleshooting tips for SSDP/network issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ce7a86b777da6e054d8d87418948c7c0c1f991b9129891717865d69ef693f6e"
+}

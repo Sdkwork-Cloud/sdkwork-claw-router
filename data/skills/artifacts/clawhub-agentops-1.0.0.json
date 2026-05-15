@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentops",
+  "skill": {
+    "id": 58998,
+    "skillKey": "clawhub-agentops",
+    "name": "AgentOps — Agent运维管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentops",
+    "url": "https://clawhub.ai/skills/agentops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentops-0a8b23877a34bfeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Agent运维管理工具。Trigger when user mentions: Agent运维, agentops, Agent健康检查, 日志分析, 性能监控, 告警, Agent配置, 故障诊断, Agent协调, 运维报告, 性能报告, Agent管理, 系统监控. Supports fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keybryant",
+      "userId": "s17cd4bpfd9aafmqsqjm91ztk185ss8c",
+      "displayName": "keyong",
+      "image": "https://avatars.githubusercontent.com/u/18619191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777459880108,
+      "changelog": "Initial release of agentops — OpenClaw Agent运维管理工具\n\n- 提供免费功能：Agent健康检查、日志分析、基础性能监控\n- 支持高级（付费）功能：Agent配置优化、自动化告警、多Agent协调、故障诊断、性能报告\n- 脚本化命令行操作，覆盖运维各核心环节\n- 集成参考文档：配置、性能指标、常见问题排查\n- 明确功能分级、用法示例及订阅要求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95ed28d896c934988c33ce967b3c3283d3be98baad22221630a8552412bf02ec"
+}

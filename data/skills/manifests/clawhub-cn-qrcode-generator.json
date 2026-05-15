@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68721,
+  "uuid": "skill-clawhub-cn-qrcode-generator",
+  "skillKey": "clawhub-cn-qrcode-generator",
+  "name": "二维码生成器",
+  "summary": "输入URL或文本，生成PNG二维码。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_qrcode_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "输入URL或文本，生成PNG二维码。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-qrcode-generator@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-qrcode-generator",
+      "url": "https://clawhub.ai/skills/cn-qrcode-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-qrcode-generator",
+    "url": "https://clawhub.ai/skills/cn-qrcode-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-qrcode-generator-31f711737f124715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-qrcode-generator@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-qrcode-generator-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2344cac75aa73ec68a60965029e9c9ce71495c14e6aaf656ea41f3703f438f9a",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:49:10.742Z"
+}

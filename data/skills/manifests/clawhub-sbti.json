@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56951,
+  "uuid": "skill-clawhub-sbti",
+  "skillKey": "clawhub-sbti",
+  "name": "虾格测试",
+  "summary": "Conducts AI behavioral self-assessments based on actual task history and identity files to reveal personality type and working patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asoiso",
+      "features": [
+        "Conducts AI behavioral self-assessments based on actual task history and identity files to reve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbti@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/479822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbti",
+      "url": "https://clawhub.ai/skills/sbti"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti",
+    "url": "https://clawhub.ai/skills/sbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-616bd331335ebba5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbti@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbti-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85b8f070b1aec14fac39d923036aab5515facf0dcc059b1fefe66d33dec9bfa7",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T18:55:01.821Z"
+}

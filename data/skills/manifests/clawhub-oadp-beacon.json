@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21976,
+  "uuid": "skill-clawhub-oadp-beacon",
+  "skillKey": "clawhub-oadp-beacon",
+  "name": "OADP Beacon",
+  "summary": "Make your agent discoverable across the internet. Auto-configures OADP signals in your workspace files, emits presence pings to open hubs, and propagates dis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oadp_beacon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Make your agent discoverable across the internet",
+        "Auto-configures OADP signals in your workspace files, emits presence pings to open hubs, and pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oadp-beacon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oadp-beacon",
+      "url": "https://clawhub.ai/skills/oadp-beacon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oadp-beacon",
+    "url": "https://clawhub.ai/skills/oadp-beacon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oadp-beacon-0bb34c5c39a9afd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oadp-beacon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oadp-beacon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1eeb93f01cb215e8ca2a2e0fd4c99275e4bae24da23b165cb7bda26e55929dd0",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:36:59.619Z"
+}

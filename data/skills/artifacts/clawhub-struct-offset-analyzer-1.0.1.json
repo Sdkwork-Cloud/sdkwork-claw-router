@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/struct-offset-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.struct_offset_analyzer",
+  "skill": {
+    "id": 18388,
+    "skillKey": "clawhub-struct-offset-analyzer",
+    "name": "struct-offset-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "struct-offset-analyzer",
+    "url": "https://clawhub.ai/skills/struct-offset-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/struct-offset-analyzer-abcb73ef7812f2ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Statically analyze C struct member offsets through code reading to calculate memory layouts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littleenough",
+      "userId": "publishers:littleenough",
+      "displayName": "LittleEnough",
+      "image": "https://avatars.githubusercontent.com/u/131536352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772073694135,
+      "changelog": "- SKILL.md updated with a full English translation of all content\n- Terminology and workflow descriptions revised for clarity and consistency\n- Command-line search examples and tabular offset explanations now in English\n- No changes to core logic or functionality; documentation update only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5fd1384740d51337d079ba535507dd296b308c5598e728d6526a98e4ebe7ec1b"
+}

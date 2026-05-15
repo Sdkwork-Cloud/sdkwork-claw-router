@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25307,
+  "uuid": "skill-clawhub-clutch-perps",
+  "skillKey": "clawhub-clutch-perps",
+  "name": "automated agentic perps trading on dex.clutch.market",
+  "summary": "Runs agentic trading workflows on Clutch Perps through MCP. Use when users ask for setup, live trade workflows, market checks, order planning, risk setup, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clutch_perps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simplefarmer69",
+      "features": [
+        "Runs agentic trading workflows on Clutch Perps through MCP",
+        "Use when users ask for setup, live trade workflows, market checks, order planning, risk setup,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clutch-perps@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225970627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clutch-perps",
+      "url": "https://clawhub.ai/skills/clutch-perps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clutch-perps",
+    "url": "https://clawhub.ai/skills/clutch-perps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clutch-perps-8fd93e6e27c85153.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clutch-perps@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clutch-perps-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cfc652af74286a5b3cedb2eeeedd3658bb31405827e5f4b8db015ef28b821a7",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:54:26.940Z"
+}

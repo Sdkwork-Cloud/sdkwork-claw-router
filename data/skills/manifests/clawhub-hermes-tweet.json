@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44635,
+  "uuid": "skill-clawhub-hermes-tweet",
+  "skillKey": "clawhub-hermes-tweet",
+  "name": "Hermes Tweet",
+  "summary": "Use Xquik from Hermes Agent for X search, posting, replies, likes, retweets, follows, DMs, monitors, extraction jobs, draws, media, and trends.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_tweet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xquik",
+      "features": [
+        "Use Xquik from Hermes Agent for X search, posting, replies, likes, retweets, follows, DMs, moni."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-tweet@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/hermes-tweet/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-tweet",
+      "url": "https://clawhub.ai/skills/hermes-tweet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-tweet",
+    "url": "https://clawhub.ai/skills/hermes-tweet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-tweet-4bda17f373cb5851.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-tweet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-tweet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e7cb7378afb14b7a98267f017c28385a06660be435f5637d744d10b2bba706e",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T00:29:49.515Z"
+}

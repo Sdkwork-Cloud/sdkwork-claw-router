@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28379,
+  "uuid": "skill-clawhub-humanize-chinese-2-0-0",
+  "skillKey": "clawhub-humanize-chinese-2-0-0",
+  "name": "Humanize Chinese 2.0.0",
+  "summary": "Detect and humanize AI-generated Chinese text. 20+ detection categories, weighted 0-100 scoring with sentence-level analysis, 7 style transforms (casual/zhih...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_chinese_2_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xspeter",
+      "features": [
+        "Detect and humanize AI-generated Chinese text",
+        "20+ detection categories, weighted 0-100 scoring with sentence-level analysis, 7 style transfor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanize-chinese-2-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129072432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanize-chinese-2-0-0",
+      "url": "https://clawhub.ai/skills/humanize-chinese-2-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-chinese-2-0-0",
+    "url": "https://clawhub.ai/skills/humanize-chinese-2-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-chinese-2-0-0-ecbfe43ae288f52a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanize-chinese-2-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanize-chinese-2-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce62ab8edc9c7c35819781bd87d102c4d018c6850741bb4032ca7bae436beebc",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:53:05.144Z"
+}

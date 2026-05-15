@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_engine",
+  "skill": {
+    "id": 13803,
+    "skillKey": "clawhub-game-engine",
+    "name": "Game Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-engine",
+    "url": "https://clawhub.ai/skills/game-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-engine-4a068ef355d82ad5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. Use when asked to create games, build game engines, im..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhauga",
+      "userId": "s17ch25466qc0g2bcymk2dr8zx83pfny",
+      "displayName": "John Haugabook",
+      "image": "https://avatars.githubusercontent.com/u/10998676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1064,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771820019380,
+      "changelog": "Initial release of the game-engine skill for building web-based games.\n\n- Provides guidance for creating 2D and 3D games using HTML5, Canvas, WebGL, and JavaScript.\n- Includes step-by-step workflows, starter templates, and troubleshooting tips.\n- Covers topics such as game loops, rendering, physics, collision detection, game controls, audio, and multiplayer features.\n- Offers reference documentation on engine architecture, APIs, algorithms, and game publishing.\n- Supports frameworks like Phaser, Three.js, Babylon.js, and A-Frame.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:deaa2b0d8900138cbec49ad6069b75e12702b5b5a8cd1a6c0f6c7a16d2452c0b"
+}

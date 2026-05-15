@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44270,
+  "uuid": "skill-clawhub-mars-clouds-clustering-parallel-processing",
+  "skillKey": "clawhub-mars-clouds-clustering-parallel-processing",
+  "name": "parallel-processing",
+  "summary": "Parallel processing with joblib for grid search and batch computations. Use when speeding up computationally intensive tasks across multiple CPU cores.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mars_clouds_clustering_parallel_processing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lnj22",
+      "features": [
+        "Parallel processing with joblib for grid search and batch computations",
+        "Use when speeding up computationally intensive tasks across multiple CPU cores."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mars-clouds-clustering-parallel-processing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234027299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mars-clouds-clustering-parallel-processing",
+      "url": "https://clawhub.ai/skills/mars-clouds-clustering-parallel-processing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mars-clouds-clustering-parallel-processing",
+    "url": "https://clawhub.ai/skills/mars-clouds-clustering-parallel-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mars-clouds-clustering-parallel-processing-fc18a1da6a9d737f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mars-clouds-clustering-parallel-processing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mars-clouds-clustering-parallel-processing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e551fb9e1cc898b292a8950b2026e3b56099c2ddf8a1eab1909ab6aed46d6ad",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:33:32.106Z"
+}

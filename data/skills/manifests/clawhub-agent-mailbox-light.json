@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34109,
+  "uuid": "skill-clawhub-agent-mailbox-light",
+  "skillKey": "clawhub-agent-mailbox-light",
+  "name": "Agent Mailbox Light",
+  "summary": "Lightweight cross-agent mailbox using per-workspace file inboxes with best-effort fanout and local read/archive flow. Use when you want a middle layer betwee...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_mailbox_light",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meng Yang",
+      "features": [
+        "Lightweight cross-agent mailbox using per-workspace file inboxes with best-effort fanout and lo.",
+        "Use when you want a middle layer betwee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-mailbox-light@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37968818?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-mailbox-light",
+      "url": "https://clawhub.ai/skills/agent-mailbox-light"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-mailbox-light",
+    "url": "https://clawhub.ai/skills/agent-mailbox-light",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-mailbox-light-2fb6b38b6ba04da8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-mailbox-light@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-mailbox-light-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:322da821b25bfb321097be587a366c2cac13f68533807bafb4dd3c0a906136da",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:45:00.046Z"
+}

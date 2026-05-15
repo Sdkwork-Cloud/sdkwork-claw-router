@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-runner@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_runner",
+  "skill": {
+    "id": 20850,
+    "skillKey": "clawhub-codex-runner",
+    "name": "codex-runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-runner",
+    "url": "https://clawhub.ai/skills/codex-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-runner-b9ec86b620ade2af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Codex CLI to run long-running coding tasks in the background with sandbox bypass, supporting git repos and automated test/build workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianyn1990",
+      "userId": "s177s5q87h775ayy8h545cscp983jzty",
+      "displayName": "tianyn1990",
+      "image": "https://avatars.githubusercontent.com/u/7401433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772670149216,
+      "changelog": "- 改进推荐用法：主推使用 sessions_spawn 启动 Codex 任务，实现真正异步执行，主会话不会被阻塞\n- 明确标注旧版 start 方法仅作备用，不再推荐，避免阻塞主进程\n- 新增用法示例，说明如何让 AI 助手通过 sessions_spawn 启动项目任务\n- 文档结构更清晰，分离推荐与过时命令，方便理解和操作\n- 新增 scripts/commands/start-async.sh 用于支持更好的异步启动",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cad2aa0b9f22382ce12e40854e84915f529a0d26e8226678fe99f8a334f3705f"
+}

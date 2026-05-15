@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-vuln-auth-bypass@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_vuln_auth_bypass",
+  "skill": {
+    "id": 29523,
+    "skillKey": "clawhub-go-vuln-auth-bypass",
+    "name": "Go Vuln Auth Bypass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-vuln-auth-bypass",
+    "url": "https://clawhub.ai/skills/go-vuln-auth-bypass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-vuln-auth-bypass-9c45bdb174f09c83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when auditing Go code involving authentication flows, RBAC policies, Kubernetes admission webhooks, JWT/OAuth token validation, or privilege escalation i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yhy0",
+      "userId": "s172p34p6emz34m9wrf8241gp983hjhz",
+      "displayName": "yhy",
+      "image": "https://avatars.githubusercontent.com/u/31311038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773476159707,
+      "changelog": "Initial release of go-vuln-auth-bypass, a skill for auditing Go authentication and authorization flows.\n\n- Supports detection of common auth/z bypass patterns in Go/Kubernetes/cloud-native projects.\n- Provides a comprehensive checklist for auditing admission webhooks, RBAC, JWT/OAuth validation, gRPC interceptors, and middleware chains.\n- Details sources, sinks, sanitizers, and grep patterns for accurate detection.\n- Includes false positive/negative guidance and real-world vulnerabilities references.\n- Covers CWE-287, CWE-863, CWE-269, CWE-284, CWE-285, and CWE-862.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee025a7f74c2edd276456d0f442b4427c21650ab6905ca90686a4f680d964138"
+}

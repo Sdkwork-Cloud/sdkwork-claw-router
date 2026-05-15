@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22556,
+  "uuid": "skill-clawhub-openclaw-security-suite",
+  "skillKey": "clawhub-openclaw-security-suite",
+  "name": "OpenClaw Security Suite",
+  "summary": "Comprehensive security suite for OpenClaw skills. Includes static scanning (AST + keywords) and AI-powered semantic behavior review to detect malicious code.",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xunxingyuan",
+      "features": [
+        "Comprehensive security suite for OpenClaw skills",
+        "Includes static scanning (AST + keywords) and AI-powered semantic behavior review to detect mal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-security-suite@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15085009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-security-suite",
+      "url": "https://clawhub.ai/skills/openclaw-security-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-suite",
+    "url": "https://clawhub.ai/skills/openclaw-security-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-suite-c2ee75b1cca14cbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-security-suite@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-suite-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4dc43d1c7248038f51d549395f8fe5b188d7b6ccf57222f73bceb69d53cf972",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:48:17.411Z"
+}

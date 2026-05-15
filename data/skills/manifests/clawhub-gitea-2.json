@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57686,
+  "uuid": "skill-clawhub-gitea-2",
+  "skillKey": "clawhub-gitea-2",
+  "name": "Gitea",
+  "summary": "Interact with Gitea using the `tea` CLI. Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced queries.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitea_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "razzeee",
+      "features": [
+        "Interact with Gitea using the `tea` CLI",
+        "Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitea-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5943908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitea-2",
+      "url": "https://clawhub.ai/skills/gitea-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitea-2",
+    "url": "https://clawhub.ai/skills/gitea-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitea-2-a8aeda54bee5a9e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitea-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitea-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c3860565d32176ffb72d69adc2e189849540b55114d4c0c377a05a037742b02",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T01:12:44.973Z"
+}

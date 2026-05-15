@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61190,
+  "uuid": "skill-clawhub-zaregoto-miko",
+  "skillKey": "clawhub-zaregoto-miko",
+  "name": "Zaregoto Miko Style",
+  "summary": "将素材转换为戏言系列葵井巫女子的说话风格。Triggers on \"zaregoto\", \"character voice\", \"style conversion\". 触发场景：(1) 用户提供素材并要求「用巫女子风格改写」「巫女子会怎么说」；(2) 用户说「戏言风格」「巫女子口吻」；(3) 需要将普通文字转换为...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zaregoto_miko",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "将素材转换为戏言系列葵井巫女子的说话风格。Triggers on \"zaregoto\", \"character voice\", \"style conversion\"",
+        "触发场景：(1) 用户提供素材并要求「用巫女子风格改写」「巫女子会怎么说」；(2) 用户说「戏言风格」「巫女子口吻」；(3) 需要将普通文字转换为..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zaregoto-miko@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zaregoto-miko",
+      "url": "https://clawhub.ai/skills/zaregoto-miko"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zaregoto-miko",
+    "url": "https://clawhub.ai/skills/zaregoto-miko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zaregoto-miko-c60eb0530a067d83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zaregoto-miko@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zaregoto-miko-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2b0c4f0709a14c6dde624fe71ec2107579ab49ca91f91e8ebfd86bccf1c3ba5",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:14:06.306Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-creator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_creator",
+  "skill": {
+    "id": 39368,
+    "skillKey": "clawhub-company-creator",
+    "name": "Company Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-creator",
+    "url": "https://clawhub.ai/skills/company-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-creator-8016075140d717af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create agent company packages conforming to the Agent Companies specification (agentcompanies/v1). Use when a user wants to create a new agent company from s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marlowne12",
+      "userId": "s1701k29cpn53cjpxqp33amsah83qftd",
+      "displayName": "marlowne12",
+      "image": "https://avatars.githubusercontent.com/u/173687138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774621625589,
+      "changelog": "Updated UI/UX, added fork references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:907b411cdfc66d76bb5a13029e1c2608d90fa8985312a34fb59c24cc9e3765ee"
+}

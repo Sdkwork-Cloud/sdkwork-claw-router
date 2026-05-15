@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37546,
+  "uuid": "skill-clawhub-polymarket-edge-trader",
+  "skillKey": "clawhub-polymarket-edge-trader",
+  "name": "Polymarket Edge Trader",
+  "summary": "Trades the highest-edge active AION Polymarket market matching a query using a user-supplied fair probability, AION context safeguards, and Kelly-style sizing.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_edge_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fivegive249-ship-it",
+      "features": [
+        "Trades the highest-edge active AION Polymarket market matching a query using a user-supplied fa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-edge-trader@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273296578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-edge-trader",
+      "url": "https://clawhub.ai/skills/polymarket-edge-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-edge-trader",
+    "url": "https://clawhub.ai/skills/polymarket-edge-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-edge-trader-886eca9c4c5465d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-edge-trader@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-edge-trader-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6aded7d207dfd11a21cc99fbe261d454eabbfe3b73f3e5b405c86a2da2e20cda",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T12:09:52.415Z"
+}

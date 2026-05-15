@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62804,
+  "uuid": "skill-clawhub-social-publisher",
+  "skillKey": "clawhub-social-publisher",
+  "name": "Social Publisher",
+  "summary": "多平台内容发布工具 - 自动将 Markdown 转换为微信公众号/小红书/知乎/抖音格式，支持预览和发布",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "多平台内容发布工具",
+        "自动将 Markdown 转换为微信公众号/小红书/知乎/抖音格式，支持预览和发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-publisher",
+      "url": "https://clawhub.ai/skills/social-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-publisher",
+    "url": "https://clawhub.ai/skills/social-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-publisher-c52174c8ec7c86a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c1981560249a9b7814ca38a6a6ed770334ef21fbe6b96234c312d708f0f13b3",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:46:18.096Z"
+}

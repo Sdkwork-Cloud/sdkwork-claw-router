@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16393,
+  "uuid": "skill-clawhub-crypto-alpha-scanner",
+  "skillKey": "clawhub-crypto-alpha-scanner",
+  "name": "Crypto Alpha Scanner",
+  "summary": "Automated crypto market intelligence - prices, sentiment, trending coins, and Polymarket hot markets. Zero dependencies, 100% reliability. Perfect for alpha channels and market monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_alpha_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cassh",
+      "features": [
+        "Automated crypto market intelligence",
+        "prices, sentiment, trending coins, and Polymarket hot markets",
+        "Zero dependencies, 100% reliability",
+        "Perfect for alpha channels and market monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-alpha-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128089099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-alpha-scanner",
+      "url": "https://clawhub.ai/skills/crypto-alpha-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-alpha-scanner",
+    "url": "https://clawhub.ai/skills/crypto-alpha-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-alpha-scanner-bf9b6f87959ae241.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-alpha-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-alpha-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02e72eefbbe3ec63f73ba58843d9085f4d407e3fd32a67de178e65a266f4490c",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:16:11.658Z"
+}

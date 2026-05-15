@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48765,
+  "uuid": "skill-clawhub-read-tool",
+  "skillKey": "clawhub-read-tool",
+  "name": "Read Tool",
+  "summary": "Read a line from standard input into a variable. Use for interactive shell prompts and script input handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Read a line from standard input into a variable",
+        "Use for interactive shell prompts and script input handling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/read-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "read-tool",
+      "url": "https://clawhub.ai/skills/read-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-tool",
+    "url": "https://clawhub.ai/skills/read-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-tool-38f4046d12b6f629.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/read-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-read-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e9d3455e553000b0904f8a22ff0589178ea03cd8ca61ab8f21cae974462ec77",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:55:17.136Z"
+}

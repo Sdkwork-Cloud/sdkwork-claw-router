@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-history@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_history",
+  "skill": {
+    "id": 55907,
+    "skillKey": "clawhub-daily-history",
+    "name": "Daily History"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-history",
+    "url": "https://clawhub.ai/skills/daily-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-history-a4fb88cd31cbb3dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Today in history — 3–5 major events on this date with context and lasting impact. Bilingual EN/CN timeline card. Daily morning push."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777286822701,
+      "changelog": "- Shortened and clarified the skill description for improved readability.\n- Updated timeline card requirements: now focuses on 3–5 major historical events per day with added context and long-term impact.\n- Emphasized fully bilingual (EN/CN) event descriptions and visual presentation.\n- Highlighted daily morning push functionality in the description.\n- Added a new README.md file for better documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:008ead9330427d7de9c09e0f554d8ed8d5062ee64907980a7b0ec7d44d002668"
+}

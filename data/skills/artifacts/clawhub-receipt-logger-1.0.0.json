@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/receipt-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receipt_logger",
+  "skill": {
+    "id": 27893,
+    "skillKey": "clawhub-receipt-logger",
+    "name": "Receipt Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receipt-logger",
+    "url": "https://clawhub.ai/skills/receipt-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receipt-logger-4dee27c76d628b44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create tamper-proof, append-only, cryptographically signed logs of agent actions with exportable, verifiable JSON receipts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuge897",
+      "userId": "publishers:jiuge897",
+      "displayName": "jiuge897",
+      "image": "https://avatars.githubusercontent.com/u/57371395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763640218,
+      "changelog": "Initial release of Receipt Logger.\n\n- Adds append-only, cryptographically signed audit logs for agent actions.\n- Each log entry includes timestamp, action details, hash, and signature for verification.\n- CLI commands support logging, listing, verifying, and exporting receipts as JSON.\n- Ensures logs are tamper-evident and exportable for external verification.\n- Implements zero external dependencies with pure shell and JSON output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:724adbb536bbf1dce2c2ce4eababac84f0e1672f6f6281f9c1da8fe8238bdc5f"
+}

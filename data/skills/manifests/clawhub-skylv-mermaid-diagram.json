@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36837,
+  "uuid": "skill-clawhub-skylv-mermaid-diagram",
+  "skillKey": "clawhub-skylv-mermaid-diagram",
+  "name": "Skylv Mermaid Diagram",
+  "summary": "Generates Mermaid diagrams from descriptions. Creates flowcharts, sequence diagrams, and architecture diagrams. Triggers: mermaid diagram, architecture diagr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_mermaid_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates Mermaid diagrams from descriptions",
+        "Creates flowcharts, sequence diagrams, and architecture diagrams",
+        "Triggers: mermaid diagram, architecture diagr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-mermaid-diagram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-mermaid-diagram",
+      "url": "https://clawhub.ai/skills/skylv-mermaid-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-mermaid-diagram",
+    "url": "https://clawhub.ai/skills/skylv-mermaid-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-mermaid-diagram-8b3853d62fef74f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-mermaid-diagram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-mermaid-diagram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfdf3884b4e5500f8e08122464848fa824be060b0c95f64056e5b2cd59fbc94c",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:03:23.624Z"
+}

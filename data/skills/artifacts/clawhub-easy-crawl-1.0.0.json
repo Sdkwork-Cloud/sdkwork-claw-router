@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-crawl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_crawl",
+  "skill": {
+    "id": 22343,
+    "skillKey": "clawhub-easy-crawl",
+    "name": "EASY_CRAWL4AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-crawl",
+    "url": "https://clawhub.ai/skills/easy-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-crawl-bf78844362ddda10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Crawl4AI to fetch and convert complex webpages, including dynamic content, into Markdown for summarization, data extraction, or analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanqiudeng",
+      "userId": "publishers:hanqiudeng",
+      "displayName": "aesopdeng",
+      "image": "https://avatars.githubusercontent.com/u/168056688?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773126044564,
+      "changelog": "- 首次上传\n- 极简爬取网站内容转存为AI易读的Markdown文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c8187ad1162eb66f0af994c63d88246ec760a23bd99945ce804e8a7c6f20dfd"
+}

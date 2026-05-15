@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dual-brain@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_brain",
+  "skill": {
+    "id": 11660,
+    "skillKey": "clawhub-dual-brain",
+    "name": "Dual-Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-brain",
+    "url": "https://clawhub.ai/skills/dual-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-brain-a33e96c88eac290b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generates and saves alternative perspectives from a secondary LLM for every user message to enhance reasoning and response quality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannydvm",
+      "userId": "publishers:dannydvm",
+      "displayName": "Dannydvm",
+      "image": "https://avatars.githubusercontent.com/u/128923887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1846,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770279375319,
+      "changelog": "Multi-LLM perspective daemon. Get automatic second opinions from Ollama, Kimi, OpenAI, or Groq. Optional Engram integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e9c07b3159b3bf9fb6a5bc6c3e778c6b5852bfc736a40c4ba973f69221ae994"
+}

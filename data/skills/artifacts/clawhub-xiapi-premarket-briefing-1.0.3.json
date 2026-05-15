@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiapi-premarket-briefing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_premarket_briefing",
+  "skill": {
+    "id": 73041,
+    "skillKey": "clawhub-xiapi-premarket-briefing",
+    "name": "市场盘前概览简报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-premarket-briefing",
+    "url": "https://clawhub.ai/skills/xiapi-premarket-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-premarket-briefing-d230ec2e6e1c05a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "交易日开盘前（8:00-9:25）生成A股市场全景简报，整合市场结构、资金热度、风格轮动、板块强弱等信息，帮助把握当日投资主线。触发词：盘前简报、盘前分析、今日市场、开盘前瞻、市场主线、今日热点。适用场景：交易日开盘前快速了解市场全貌、投资决策参考、识别当日主线方向。不适用场景：非交易日、盘中实时分析、个股深度研究。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksky521",
+      "userId": "s177z4s6dabs1y9tx72np0acxs83zsfm",
+      "displayName": "三水清",
+      "image": "https://avatars.githubusercontent.com/u/1073262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775985666773,
+      "changelog": "- 修订盘前简报报告模板，将成交额章节的日期表述由“数据日期”明确为“前一交易日”，提升时效性表达准确度。\n- 优化报告生成规范，强调盘前简报仅基于前一交易日最新数据，避免日期混淆。\n- 其余流程与数据解读要求保持一致，未引入新特性或命令变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:829337efe494d0d730f16817cdc2c410af9656e02d683a6e3d004c0475f6c15f"
+}

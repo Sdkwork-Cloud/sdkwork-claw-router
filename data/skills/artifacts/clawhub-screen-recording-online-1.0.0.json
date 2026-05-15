@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screen-recording-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_recording_online",
+  "skill": {
+    "id": 46478,
+    "skillKey": "clawhub-screen-recording-online",
+    "name": "Screen Recording Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-recording-online",
+    "url": "https://clawhub.ai/skills/screen-recording-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-recording-online-48eaf3619eb5e33c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit screen recordings into polished screen recordings with this screen-recording-online skill. Works with MP4, MOV, WebM, AVI files up to 500MB. educators,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775894218750,
+      "changelog": "Initial release of Screen Recording Online skill for easy, cloud-based video editing and sharing.\n\n- Upload screen recordings (MP4, MOV, WebM, AVI up to 500MB) for online editing.\n- Instantly trims, captions, and exports 1080p MP4 files using AI-powered cloud GPUs.\n- Supports educators, developers, and marketers; fast render pipeline (1–2 minutes for short clips).\n- Automatically manages token setup and session for each user.\n- Offers keyword-based routing for common actions (edit, upload, export, check credits/status).\n- Handles errors gracefully and summarizes session updates for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef4c1512be5c05bb9d9363cd3899449a215077c3eb357731e79ca0dad5b652e1"
+}

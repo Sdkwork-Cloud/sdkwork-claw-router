@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69917,
+  "uuid": "skill-clawhub-stock-analyzer-v2",
+  "skillKey": "clawhub-stock-analyzer-v2",
+  "name": "股票实时行情分析器(安全版)",
+  "summary": "A股/港股实时行情查询、基本面分析、深度报告生成与邮件发送一体化工具。触发场景：(1) 用户询问股票价格、市值、PE/PB等数据；(2) 用户要求分析某只或多只股票；(3) 用户要求生成股票分析报告；(4) 用户要求通过邮件发送股票报告。支持AkShare实时行情、聚宽基本面数据、QQ邮箱/Gmail发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analyzer_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "寒武纪智能Cambrian Intelligence",
+      "features": [
+        "A股/港股实时行情查询、基本面分析、深度报告生成与邮件发送一体化工具。触发场景：(1) 用户询问股票价格、市值、PE/PB等数据；(2) 用户要求分析某只或多只股票；(3) 用户要求生成股票."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analyzer-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17725003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analyzer-v2",
+      "url": "https://clawhub.ai/skills/stock-analyzer-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analyzer-v2",
+    "url": "https://clawhub.ai/skills/stock-analyzer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analyzer-v2-2cf944797bb6150a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analyzer-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analyzer-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:177327d2841dc40f67674e90845df50cff4c661ba98f3c10ac3ff081df9c68d6",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:07:31.549Z"
+}

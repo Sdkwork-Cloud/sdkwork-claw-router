@@ -1,0 +1,69 @@
+package com.sdkwork.clawrouter.app
+
+import com.sdkwork.common.core.SdkConfig
+import com.sdkwork.clawrouter.app.http.HttpClient
+import com.sdkwork.clawrouter.app.api.AiApi
+import com.sdkwork.clawrouter.app.api.AuthApi
+import com.sdkwork.clawrouter.app.api.BillingApi
+import com.sdkwork.clawrouter.app.api.CommunicationApi
+import com.sdkwork.clawrouter.app.api.ContentApi
+import com.sdkwork.clawrouter.app.api.EcosystemApi
+import com.sdkwork.clawrouter.app.api.IamApi
+import com.sdkwork.clawrouter.app.api.PlatformApi
+
+class SdkworkAppClient {
+    private val httpClient: HttpClient
+
+    lateinit var ai: AiApi
+    lateinit var auth: AuthApi
+    lateinit var billing: BillingApi
+    lateinit var communication: CommunicationApi
+    lateinit var content: ContentApi
+    lateinit var ecosystem: EcosystemApi
+    lateinit var iam: IamApi
+    lateinit var platform: PlatformApi
+
+    constructor(baseUrl: String) {
+        this.httpClient = HttpClient(baseUrl)
+        ai = AiApi(httpClient)
+        auth = AuthApi(httpClient)
+        billing = BillingApi(httpClient)
+        communication = CommunicationApi(httpClient)
+        content = ContentApi(httpClient)
+        ecosystem = EcosystemApi(httpClient)
+        iam = IamApi(httpClient)
+        platform = PlatformApi(httpClient)
+    }
+
+    constructor(config: SdkConfig) {
+        this.httpClient = HttpClient(config)
+        ai = AiApi(httpClient)
+        auth = AuthApi(httpClient)
+        billing = BillingApi(httpClient)
+        communication = CommunicationApi(httpClient)
+        content = ContentApi(httpClient)
+        ecosystem = EcosystemApi(httpClient)
+        iam = IamApi(httpClient)
+        platform = PlatformApi(httpClient)
+    }
+
+    fun setApiKey(apiKey: String): SdkworkAppClient {
+        httpClient.setApiKey(apiKey)
+        return this
+    }
+
+    fun setAuthToken(token: String): SdkworkAppClient {
+        httpClient.setAuthToken(token)
+        return this
+    }
+
+    fun setAccessToken(token: String): SdkworkAppClient {
+        httpClient.setAccessToken(token)
+        return this
+    }
+
+    fun setHeader(key: String, value: String): SdkworkAppClient {
+        httpClient.setHeader(key, value)
+        return this
+    }
+}

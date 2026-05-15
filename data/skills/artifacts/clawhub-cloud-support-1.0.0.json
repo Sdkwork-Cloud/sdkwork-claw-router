@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-support@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_support",
+  "skill": {
+    "id": 35458,
+    "skillKey": "clawhub-cloud-support",
+    "name": "Cloud Support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-support",
+    "url": "https://clawhub.ai/skills/cloud-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-support-e6b6710a27dc5a2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized cloud career development roadmaps for AWS, Azure, and GCP support roles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774355060699,
+      "changelog": "Cloud Support Associate Roadmap API initial release:\n\n- Generate personalized cloud support career roadmaps for AWS, Azure, and GCP roles.\n- Accepts detailed user assessment to tailor learning paths and certification recommendations.\n- Structured output includes roadmap phases, topics, practical exercises, and resource links.\n- Clear skill gap analysis and actionable next steps provided.\n- Public REST API with free and paid usage plans; health check and service info endpoints included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abf5eba10ba98a9ab34b735131e045725f5d800e6453b5d36e33d3aed027619b"
+}

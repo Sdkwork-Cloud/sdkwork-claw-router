@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-recommendation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_recommendation",
+  "skill": {
+    "id": 40716,
+    "skillKey": "clawhub-meta-ads-recommendation",
+    "name": "Meta Ads Recommendation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-recommendation",
+    "url": "https://clawhub.ai/skills/meta-ads-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-recommendation-4912157772ef4d2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Didoo AI] Produces specific, prioritized action plans based on campaign analysis data. Use when user wants to know what to do about their campaign performan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elias-didoo",
+      "userId": "s170zy2wssmkqheacrkh2syyv183vgqw",
+      "displayName": "elias-didoo",
+      "image": "https://avatars.githubusercontent.com/u/234909039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776198098118,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:063c2815f4e1c0310ca0701164e267cdffbfe97e4e0c13f5e19639ad6796ac1d"
+}

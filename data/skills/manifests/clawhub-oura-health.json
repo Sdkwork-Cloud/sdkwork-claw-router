@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50890,
+  "uuid": "skill-clawhub-oura-health",
+  "skillKey": "clawhub-oura-health",
+  "name": "Oura Health",
+  "summary": "What: Query Oura Ring health data — sleep, readiness, activity, heart rate, and trends via the Oura API v2. When: User asks about their sleep, readiness, act...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "What: Query Oura Ring health data — sleep, readiness, activity, heart rate, and trends via the.",
+        "When: User asks about their sleep, readiness, act..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oura-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oura-health",
+      "url": "https://clawhub.ai/skills/oura-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-health",
+    "url": "https://clawhub.ai/skills/oura-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-health-1867e01537aade6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oura-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oura-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ecebd72b964619d7b8273a24e28aa9aa8ad09e8aa65fb7e717bdb0e5ce38851",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:27:10.908Z"
+}

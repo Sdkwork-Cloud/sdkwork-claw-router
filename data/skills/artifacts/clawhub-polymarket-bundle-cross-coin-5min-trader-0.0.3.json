@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-bundle-cross-coin-5min-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_bundle_cross_coin_5min_trader",
+  "skill": {
+    "id": 32013,
+    "skillKey": "clawhub-polymarket-bundle-cross-coin-5min-trader",
+    "name": "Polymarket Bundle Cross Coin 5min Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-bundle-cross-coin-5min-trader",
+    "url": "https://clawhub.ai/skills/polymarket-bundle-cross-coin-5min-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-bundle-cross-coin-5min-trader-13f7166cf2b8ee2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades cross-coin divergence in 5-minute crypto Up/Down bundles on Polymarket. BTC, ETH, SOL, and XRP move together in practice -- when one coin diverges fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386449651,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e28368b4b52c3307016b9f7e66cb42cede83bda98fa5763cbb8ebfc5bbcb7907"
+}

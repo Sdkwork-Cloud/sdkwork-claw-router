@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17615,
+  "uuid": "skill-clawhub-gov-cybersecurity",
+  "skillKey": "clawhub-gov-cybersecurity",
+  "name": "Government Cybersecurity Vulnerability Intel",
+  "summary": "CVE vulnerability lookup via NIST NVD, CISA KEV, EPSS scores, and MITRE ATT&CK. 7 tools for real-time cybersecurity intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_cybersecurity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "CVE vulnerability lookup via NIST NVD, CISA KEV, EPSS scores, and MITRE ATT&CK",
+        "7 tools for real-time cybersecurity intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-cybersecurity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-cybersecurity",
+      "url": "https://clawhub.ai/skills/gov-cybersecurity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-cybersecurity",
+    "url": "https://clawhub.ai/skills/gov-cybersecurity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-cybersecurity-a1fef7da3667c1a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-cybersecurity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-cybersecurity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bdbeca6a32f0d7e248791ac7c463e81fc8d5100033bd8df212df53464ebb45a",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T09:16:01.504Z"
+}

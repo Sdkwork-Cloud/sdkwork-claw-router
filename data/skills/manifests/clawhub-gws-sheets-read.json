@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17261,
+  "uuid": "skill-clawhub-gws-sheets-read",
+  "skillKey": "clawhub-gws-sheets-read",
+  "name": "Gws Sheets Read",
+  "summary": "Google Sheets: Read values from a spreadsheet.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_sheets_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Sheets: Read values from a spreadsheet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-sheets-read@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-sheets-read",
+      "url": "https://clawhub.ai/skills/gws-sheets-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-sheets-read",
+    "url": "https://clawhub.ai/skills/gws-sheets-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-sheets-read-e6194db2a2d0aee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-sheets-read@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-sheets-read-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec288f905cd63dc9b4142f852b5a1b09033d1d543e3821de4523c238b6c84f10",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:51.813Z"
+}

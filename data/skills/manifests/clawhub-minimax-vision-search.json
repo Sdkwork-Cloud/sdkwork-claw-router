@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27248,
+  "uuid": "skill-clawhub-minimax-vision-search",
+  "skillKey": "clawhub-minimax-vision-search",
+  "name": "Minimax Vision Search",
+  "summary": "Analyze images and search the web using MiniMax MCP tools",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_vision_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuu Dao",
+      "features": [
+        "Analyze images and search the web using MiniMax MCP tools"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-vision-search@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74347577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-vision-search",
+      "url": "https://clawhub.ai/skills/minimax-vision-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-vision-search",
+    "url": "https://clawhub.ai/skills/minimax-vision-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-vision-search-f8aad246979078e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-vision-search@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-vision-search-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:358ef0eec98ca04c2d167bac8659501665aca609aff4a1debd0c24274f031f65",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:33:57.978Z"
+}

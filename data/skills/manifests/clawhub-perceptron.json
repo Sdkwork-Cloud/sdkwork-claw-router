@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20239,
+  "uuid": "skill-clawhub-perceptron",
+  "skillKey": "clawhub-perceptron",
+  "name": "Perceptron",
+  "summary": "Image and video analysis powered by Isaac vision models. Capabilities include visual Q&A, object detection, OCR, captioning, counting, and grounded spatial r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perceptron",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subraiz Ahmed",
+      "features": [
+        "Image and video analysis powered by Isaac vision models",
+        "Capabilities include visual Q&A, object detection, OCR, captioning, counting, and grounded spat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perceptron@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25074637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perceptron",
+      "url": "https://clawhub.ai/skills/perceptron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perceptron",
+    "url": "https://clawhub.ai/skills/perceptron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perceptron-d6cc6bc3180d72ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perceptron@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-perceptron-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0366b6c9d5c421b4485138faf353e4bc64ca442a9e5c299fbe02c7e0805e869",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:27:39.537Z"
+}

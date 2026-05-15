@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-sbti@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_sbti",
+  "skill": {
+    "id": 62080,
+    "skillKey": "clawhub-agent-sbti",
+    "name": "Agent Sbti"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-sbti",
+    "url": "https://clawhub.ai/skills/agent-sbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-sbti-43708388e834e46a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 性格配置系统 - 完成 SBTI 测试，生成性格报告，选择 Agent 类型（互补/同频/微调/自定义），一键配置 Agent SOUL.md。适用：人格测试、Agent 性格配置。触发词：SBTI测试、人格测试、Agent性格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torchesfrms",
+      "userId": "s17b4z2mknzysd115pp2b62vsh84bhs3",
+      "displayName": "moer",
+      "image": "https://avatars.githubusercontent.com/u/42177272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775814448988,
+      "changelog": "- Added README.md for improved documentation and onboarding.\n- SKILL.md simplified and clarified: concise descriptions, updated trigger words, summarized features, and streamlined structure.\n- Minor language, formatting, and structure improvements for easier reading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90f47a59ec0916c5845c6f952d26c843665e30e38cd5da535f20d5aa1463a643"
+}

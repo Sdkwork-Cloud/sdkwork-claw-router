@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/executive-function@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.executive_function",
+  "skill": {
+    "id": 31170,
+    "skillKey": "clawhub-executive-function",
+    "name": "Executive Function Support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "executive-function",
+    "url": "https://clawhub.ai/skills/executive-function",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/executive-function-d1fbd3c2c74b48f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "External executive function support for planning, task initiation, time management, working memory, and self-monitoring. Use this skill whenever someone need..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skhotdotcom",
+      "userId": "s172xysjfqkzbet127r20fs78x83y8sx",
+      "displayName": "Scott Purcell",
+      "image": "https://avatars.githubusercontent.com/u/3972658?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774031323410,
+      "changelog": "Initial release - external executive function support for planning, task initiation, time management, working memory, and self-monitoring",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bc5ae19d2a2b320b553161eb2c0caebe400b3fc514edce445c346cdc5b72d18"
+}

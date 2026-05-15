@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creative-agents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_agents",
+  "skill": {
+    "id": 21064,
+    "skillKey": "clawhub-creative-agents",
+    "name": "Creative Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-agents",
+    "url": "https://clawhub.ai/skills/creative-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-agents-daf02af9741996b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integration scripts for the creative agent swarm managed by overstory (Claude Code). Use when configuring or running researcher, social media, blog, or scrib..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772197547937,
+      "changelog": "Initial release of creative-agents, providing automation scripts for agent workflows:\n\n- Integrates researcher, social media manager, blogger, and scribe agents managed by overstory (Claude Code).\n- Provides Python modules/CLI tools for research, OAuth/social media automation, content humanization, log analysis, and memory curation.\n- Implements orchestration and integration layers for agent tasks, including Playwright-based browser automation.\n- Designed for direct import or command-line use in multi-agent creative workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:459a30ad4f9edc059ca64a6d5e52f4a4fee4adf5e8e8cd37e460df99e1a86c32"
+}

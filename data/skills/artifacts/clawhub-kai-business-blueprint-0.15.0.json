@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kai-business-blueprint@0.15.0",
+  "version": "0.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kai_business_blueprint",
+  "skill": {
+    "id": 26555,
+    "skillKey": "clawhub-kai-business-blueprint",
+    "name": "Business Blueprint Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kai-business-blueprint",
+    "url": "https://clawhub.ai/skills/kai-business-blueprint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kai-business-blueprint-7ee46222bf8362a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when turning presales requirements, meeting notes, or solution materials into editable business capability blueprints, swimlane flows, and application ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaisersong",
+      "userId": "s17e36cy6y9drqxrb49xdqh05d83hqde",
+      "displayName": "Kaiser",
+      "image": "https://avatars.githubusercontent.com/u/4091099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.15.0",
+      "createdAt": 1777558652981,
+      "changelog": "Domain-knowledge blueprints now produce product-grade strategy names (统一归因模型 vs 测款节奏). Adds namingHints to cross-border-ecommerce seed + refine prompt + SKILL.md. Documents pass-through fields painPoint.audience and metric.forecast.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96fd55fac0bccd425d71fefdffdef2b6c808873a48f2dd91c65c52e580deb7ba"
+}

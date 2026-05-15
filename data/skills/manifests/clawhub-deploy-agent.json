@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9263,
+  "uuid": "skill-clawhub-deploy-agent",
+  "skillKey": "clawhub-deploy-agent",
+  "name": "C.R.A.B Deploy Agent",
+  "summary": "Multi-step deployment agent for full-stack apps. Build → Test → GitHub → Cloudflare Pages with human approval at each step.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deploy_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sherajdev",
+      "features": [
+        "Multi-step deployment agent for full-stack apps",
+        "Build → Test → GitHub → Cloudflare Pages with human approval at each step."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deploy-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228158241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deploy-agent",
+      "url": "https://clawhub.ai/skills/deploy-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deploy-agent",
+    "url": "https://clawhub.ai/skills/deploy-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deploy-agent-061b6b8e765a8acc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deploy-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deploy-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8302c589e00f661fc81b6b49fe15be66cd344b52bcf7be01089ce869f57b937c",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T15:02:23.838Z"
+}

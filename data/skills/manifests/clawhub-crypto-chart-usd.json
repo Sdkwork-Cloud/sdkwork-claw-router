@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28249,
+  "uuid": "skill-clawhub-crypto-chart-usd",
+  "skillKey": "clawhub-crypto-chart-usd",
+  "name": "Crypto charting with USD pricing (1s)",
+  "summary": "Real-time streaming crypto token feed for charting with 1-second OHLC ticks and USD pricing across Arbitrum, Base, Matic, Ethereum, Solana, Binance Smart Cha...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_chart_usd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Divyasshree",
+      "features": [
+        "Real-time streaming crypto token feed for charting with 1-second OHLC ticks and USD pricing acr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-chart-usd@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41162285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-chart-usd",
+      "url": "https://clawhub.ai/skills/crypto-chart-usd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-chart-usd",
+    "url": "https://clawhub.ai/skills/crypto-chart-usd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-chart-usd-4c51f6a70265c3bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-chart-usd@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-chart-usd-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3f256ec7fe2561a6853417d6f69a607f25eb0b123458903428e48a58361632f",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:47:26.595Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38186,
+  "uuid": "skill-clawhub-passnote",
+  "skillKey": "clawhub-passnote",
+  "name": "passnote-skill",
+  "summary": "Create and manage disposable memos using PassNote. Share secure, auto-destructing notes with others.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passnote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiweifu",
+      "features": [
+        "Create and manage disposable memos using PassNote",
+        "Share secure, auto-destructing notes with others."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/passnote@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/775934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "passnote",
+      "url": "https://clawhub.ai/skills/passnote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passnote",
+    "url": "https://clawhub.ai/skills/passnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passnote-6d7957e20a225e2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/passnote@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-passnote-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48c06494e4b753156835653c05e012ec244bd0b356c5e9795a67c2fa34d023e7",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:42:32.210Z"
+}

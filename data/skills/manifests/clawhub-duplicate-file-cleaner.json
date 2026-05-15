@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73609,
+  "uuid": "skill-clawhub-duplicate-file-cleaner",
+  "skillKey": "clawhub-duplicate-file-cleaner",
+  "name": "电脑清理大师",
+  "summary": "扫描并识别计算机中的重复文件，提供智能整理建议；当用户需要清理重复文件、释放磁盘空间或整理照片库时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duplicate_file_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ludiansheng",
+      "features": [
+        "扫描并识别计算机中的重复文件，提供智能整理建议；当用户需要清理重复文件、释放磁盘空间或整理照片库时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duplicate-file-cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269368209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duplicate-file-cleaner",
+      "url": "https://clawhub.ai/skills/duplicate-file-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duplicate-file-cleaner",
+    "url": "https://clawhub.ai/skills/duplicate-file-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duplicate-file-cleaner-279409f8e299daf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duplicate-file-cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duplicate-file-cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2946258e4e106ecca62a5753bd1c5bcbf47bc5a7d7fd817f1420361801ce787c",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:53:51.415Z"
+}

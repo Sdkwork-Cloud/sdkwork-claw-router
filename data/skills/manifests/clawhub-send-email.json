@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8770,
+  "uuid": "skill-clawhub-send-email",
+  "skillKey": "clawhub-send-email",
+  "name": "send-email",
+  "summary": "Send emails via SMTP. Configure in ~/.openclaw/openclaw.json under skills.entries.send-email.env.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_email",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fontStep",
+      "features": [
+        "Send emails via SMTP",
+        "Configure in ~/.openclaw/openclaw.json under skills.entries.send-email.env."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-email@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24265240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-email",
+      "url": "https://clawhub.ai/skills/send-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-email",
+    "url": "https://clawhub.ai/skills/send-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-email-db926702f8a10cbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-email@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-email-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f921d02ca9aa34c71d84e5da96fe9fb64ec07b6f8d1bec51128e5cbf34a0f0b",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T02:56:43.235Z"
+}

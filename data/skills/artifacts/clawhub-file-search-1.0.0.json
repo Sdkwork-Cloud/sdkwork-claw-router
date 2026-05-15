@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_search",
+  "skill": {
+    "id": 8542,
+    "skillKey": "clawhub-file-search",
+    "name": "File Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-search",
+    "url": "https://clawhub.ai/skills/file-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-search-73fe7b324c5fbb1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast file-name and content search using `fd` and `rg` (ripgrep)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xejrax",
+      "userId": "publishers:xejrax",
+      "displayName": "Xejrax",
+      "image": "https://avatars.githubusercontent.com/u/148405630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13789,
+      "installsAllTime": 165,
+      "installsCurrent": 157,
+      "stars": 19,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770135651974,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c98b77bd12ab5fe5213285b9992a8c037a1c74d714e0d79684651e59bec41e8"
+}

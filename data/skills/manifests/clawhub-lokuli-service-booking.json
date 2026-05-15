@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13667,
+  "uuid": "skill-clawhub-lokuli-service-booking",
+  "skillKey": "clawhub-lokuli-service-booking",
+  "name": "Lokuli Service Booking",
+  "summary": "Book real-world services through Lokuli MCP. Use when user needs to find, check availability, or book local services like plumbers, electricians, cleaners, mechanics, barbers, personal trainers, etc. Triggers on requests like \"book me a ha.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lokuli_service_booking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book real-world services through Lokuli MCP",
+        "Use when user needs to find, check availability, or book local services like plumbers, electric.",
+        "Triggers on requests like \"book me a haircut\", \"find a plumber near me\", \"I need a smog check\",.",
+        "75+ service categories available."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lokuli-service-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lokuli-service-booking",
+      "url": "https://clawhub.ai/skills/lokuli-service-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lokuli-service-booking",
+    "url": "https://clawhub.ai/skills/lokuli-service-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lokuli-service-booking-2d53e6d469743c04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lokuli-service-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lokuli-service-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06364746b12e35d7d6f6f5899e773da5eedd115a4e547af6f2e943ea229710bc",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T13:51:38.850Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailwise@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailwise",
+  "skill": {
+    "id": 21263,
+    "skillKey": "clawhub-mailwise",
+    "name": "MailWise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailwise",
+    "url": "https://clawhub.ai/skills/mailwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailwise-4d2cbbf25ff867a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze email issue threads from a local knowledge base. Use when the user asks about past bugs, incidents, or wants to find how experienced engin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "petrguan",
+      "userId": "s17bzr47xzawcrx5mp68fzj05183jxb9",
+      "displayName": "PetrGuan1995",
+      "image": "https://avatars.githubusercontent.com/u/7663073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774875375732,
+      "changelog": "**MailWise 1.0.2 — Now installable from PyPI, with streamlined setup and updated docs.**\n\n- Switched default installation to PyPI (`pip install mailwise`) for easier setup.\n- Added `mailwise init` interactive setup wizard for faster first-time configuration.\n- Updated instructions and description to reflect simpler workflow (no git clone required).\n- Clarified privacy and authentication details.\n- Improved documentation with clearer examples and usage tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88b0567fcf1cd0b7b3704ae97e79e13e4452088e666c7165b01dc302e473bdaa"
+}

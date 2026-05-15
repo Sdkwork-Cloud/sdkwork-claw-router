@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14410,
+  "uuid": "skill-clawhub-alicloud-database-rds-supabase",
+  "skillKey": "clawhub-alicloud-database-rds-supabase",
+  "name": "Alicloud Database Rds Supabase",
+  "summary": "Manage Alibaba Cloud RDS Supabase (RDS AI Service 2025-05-07) via OpenAPI. Use for creating, starting/stopping/restarting instances, resetting passwords, que...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_database_rds_supabase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud RDS Supabase (RDS AI Service 2025-05-07) via OpenAPI",
+        "Use for creating, starting/stopping/restarting instances, resetting passwords, que..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-database-rds-supabase@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-database-rds-supabase",
+      "url": "https://clawhub.ai/skills/alicloud-database-rds-supabase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-database-rds-supabase",
+    "url": "https://clawhub.ai/skills/alicloud-database-rds-supabase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-database-rds-supabase-ed13be540e6281f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-database-rds-supabase@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-database-rds-supabase-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fabfa52a547fa5730be21635a25fefd8f62ebfa5e622aa359f1d71d3a949876",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:39:16.999Z"
+}

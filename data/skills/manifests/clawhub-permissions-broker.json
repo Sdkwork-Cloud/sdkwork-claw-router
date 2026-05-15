@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13503,
+  "uuid": "skill-clawhub-permissions-broker",
+  "skillKey": "clawhub-permissions-broker",
+  "name": "Permissions Broker",
+  "summary": "Interact with the Permissions Broker service to fetch data from Google APIs behind a Telegram approval gate. Use when an agent needs to read Google Drive/Doc...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permissions_broker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stephancill",
+      "features": [
+        "Interact with the Permissions Broker service to fetch data from Google APIs behind a Telegram a.",
+        "Use when an agent needs to read Google Drive/Doc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/permissions-broker@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5469870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "permissions-broker",
+      "url": "https://clawhub.ai/skills/permissions-broker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permissions-broker",
+    "url": "https://clawhub.ai/skills/permissions-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permissions-broker-32c5dd10e6458dbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/permissions-broker@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-permissions-broker-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64f5d5141b7122e33ab0f8f244320cac9e3248875b2cb7a3a62a25e698ad4f58",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:42:13.547Z"
+}

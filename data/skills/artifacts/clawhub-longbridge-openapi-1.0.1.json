@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longbridge-openapi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longbridge_openapi",
+  "skill": {
+    "id": 10781,
+    "skillKey": "clawhub-longbridge-openapi",
+    "name": "Longbridge Openapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longbridge-openapi",
+    "url": "https://clawhub.ai/skills/longbridge-openapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longbridge-openapi-7cecff79245a3dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Hong Kong, US, and A-share stock trading, real-time market data, order management, and account info via Longbridge Securities OpenAPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "genkin-he",
+      "userId": "s172a7pa3x6vzbnhsrkppzf8e183pv84",
+      "displayName": "genkin",
+      "image": "https://avatars.githubusercontent.com/u/7637282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2069,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770051479136,
+      "changelog": "- Added English documentation file `SKILL_ZH.md`; removed `prompt.md` and `requirements.txt`.\n- SKILL.md is now fully translated to English for wider accessibility.\n- No changes to features or API—documentation and language updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4c4fa98d52d7a6f12cf0a66e0106d169b0e9472e818d5894ab8e71f1a1a6367"
+}

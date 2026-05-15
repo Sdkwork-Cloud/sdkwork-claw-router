@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16795,
+  "uuid": "skill-clawhub-capmetro-skill",
+  "skillKey": "clawhub-capmetro-skill",
+  "name": "Capmetro Skill",
+  "summary": "Austin CapMetro transit - real-time vehicle positions, next arrivals, service alerts, route info, and trip planning for buses and rail (MetroRail, MetroRapid...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capmetro_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Leach",
+      "features": [
+        "Austin CapMetro transit",
+        "real-time vehicle positions, next arrivals, service alerts, route info, and trip planning for b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capmetro-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1900805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capmetro-skill",
+      "url": "https://clawhub.ai/skills/capmetro-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capmetro-skill",
+    "url": "https://clawhub.ai/skills/capmetro-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capmetro-skill-6dc4b7cc11f9ff74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capmetro-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-capmetro-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34112568463ae0093f53c70094ccede0de4b72c1f641e225cce215bfd996c5b0",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:21:44.085Z"
+}

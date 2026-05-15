@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23997,
+  "uuid": "skill-clawhub-polymarket-scanner",
+  "skillKey": "clawhub-polymarket-scanner",
+  "name": "Polymarket Scanner",
+  "summary": "Automated Polymarket prediction market scanner and trader via Simmer API. Use when analyzing prediction markets, scanning for trading opportunities, executin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wyzmf",
+      "features": [
+        "Automated Polymarket prediction market scanner and trader via Simmer API",
+        "Use when analyzing prediction markets, scanning for trading opportunities, executin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52613328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-scanner",
+      "url": "https://clawhub.ai/skills/polymarket-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-scanner",
+    "url": "https://clawhub.ai/skills/polymarket-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-scanner-3dd89b86a42fc8eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1109782dc420f7c8342beda7d6ccc1fc052261fff046ba189e92dec491a98a34",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T18:12:47.466Z"
+}

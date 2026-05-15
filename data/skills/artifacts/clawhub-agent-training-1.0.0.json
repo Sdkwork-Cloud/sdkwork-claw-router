@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-training@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_training",
+  "skill": {
+    "id": 61059,
+    "skillKey": "clawhub-agent-training",
+    "name": "Agent Training System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-training",
+    "url": "https://clawhub.ai/skills/agent-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-training-90416b891bebcc59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent培训系统 - 用于培训多Agent团队。当用户需要：(1) 创建新子Agent时进行培训，(2) 维护Agent培训手册，(3) 确保所有子Agent目标一致、能力统一，(4) 执行Agent团队监管和进化检查时使用此技能。触发词：培训agent、agent培训手册、新agent培训、team trai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlim5",
+      "userId": "publishers:zlim5",
+      "displayName": "zLiM5",
+      "image": "https://avatars.githubusercontent.com/u/98153703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1298,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771737435238,
+      "changelog": "Initial release - Agent培训系统，用于培训多Agent团队，确保目标一致、能力统一",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecfd92ea21b9271cf7df7a8b85cfa3b4032fd78810a2315e1b209825f72161c5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26275,
+  "uuid": "skill-clawhub-habit",
+  "skillKey": "clawhub-habit",
+  "name": "Habit",
+  "summary": "Build daily habits with streak tracking, reminders, and progress charts. Use when starting habits, maintaining streaks, or analyzing completion rates.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Build daily habits with streak tracking, reminders, and progress charts",
+        "Use when starting habits, maintaining streaks, or analyzing completion rates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habit@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habit",
+      "url": "https://clawhub.ai/skills/habit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit",
+    "url": "https://clawhub.ai/skills/habit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-09aee23b1fd4f638.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habit@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habit-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0eef9dde111ad797e871c92162644ce58be7ecb3811eedf66a1a7beb507ee57",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:51:01.314Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33578,
+  "uuid": "skill-clawhub-wealthengine",
+  "skillKey": "clawhub-wealthengine",
+  "name": "Wealthengine",
+  "summary": "WealthEngine integration. Manage data, records, and automate workflows. Use when the user wants to interact with WealthEngine data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wealthengine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WealthEngine integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WealthEngine data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wealthengine@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wealthengine",
+      "url": "https://clawhub.ai/skills/wealthengine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wealthengine",
+    "url": "https://clawhub.ai/skills/wealthengine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wealthengine-82292731e831fddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wealthengine@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wealthengine-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb92510bd667ef652abd947ba1e0cb548af302be9134fbd25a7f6e48b539be19",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:00:38.077Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37468,
+  "uuid": "skill-clawhub-wepay",
+  "skillKey": "clawhub-wepay",
+  "name": "Wepay",
+  "summary": "WePay integration. Manage data, records, and automate workflows. Use when the user wants to interact with WePay data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wepay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "WePay integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WePay data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wepay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wepay",
+      "url": "https://clawhub.ai/skills/wepay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wepay",
+    "url": "https://clawhub.ai/skills/wepay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wepay-e9732107b72744a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wepay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wepay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e8737613dbca94138f3b7cc133b3ad207669ce6091df922945769445827d712",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:57.794Z"
+}

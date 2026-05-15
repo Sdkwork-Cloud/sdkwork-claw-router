@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27145,
+  "uuid": "skill-clawhub-frp-tunnel",
+  "skillKey": "clawhub-frp-tunnel",
+  "name": "frp-tunnel",
+  "summary": "Share local development servers via self-hosted frp tunnel with custom domains and auto HTTPS. Use when you need to share localhost with others, demo to clie...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frp_tunnel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joey Luo",
+      "features": [
+        "Share local development servers via self-hosted frp tunnel with custom domains and auto HTTPS",
+        "Use when you need to share localhost with others, demo to clie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frp-tunnel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11506086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frp-tunnel",
+      "url": "https://clawhub.ai/skills/frp-tunnel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frp-tunnel",
+    "url": "https://clawhub.ai/skills/frp-tunnel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frp-tunnel-577db7ecdf7251de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frp-tunnel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-frp-tunnel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9069fd211bb489aca2c10abbb1f966fa78da545680a84527e8d5b084dccb0483",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:43:48.432Z"
+}

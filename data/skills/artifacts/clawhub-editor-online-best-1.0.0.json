@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-online-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_online_best",
+  "skill": {
+    "id": 38040,
+    "skillKey": "clawhub-editor-online-best",
+    "name": "Editor Online Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-online-best",
+    "url": "https://clawhub.ai/skills/editor-online-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-online-best-47ca92aaf0fcabf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for editing videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776591912449,
+      "changelog": "Initial public release of Editor Online Best — Edit and Export Videos Online.\n\n- Enables online video editing of MP4, MOV, AVI, WebM files up to 500MB with cloud-based processing and 1080p MP4 export.\n- No installation required; all rendering and editing run on remote GPU nodes.\n- Supports quick start with automatic backend connection and free token retrieval for new users.\n- Simple, guided workflows: upload raw clips, describe edits, and download polished exports within minutes.\n- Offers credit-based usage, session management, and built-in error handling for authentication, file limits, and export restrictions.\n- Designed for content creators who need fast, accessible online video editing without software setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0248607243d021242f92d2eadbdb1f6e23dfcbdb82109582700525bb9ba5815e"
+}

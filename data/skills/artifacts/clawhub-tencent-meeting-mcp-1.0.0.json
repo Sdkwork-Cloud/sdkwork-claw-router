@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-meeting-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_meeting_mcp",
+  "skill": {
+    "id": 69302,
+    "skillKey": "clawhub-tencent-meeting-mcp",
+    "name": "Tencent Meeting Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-meeting-mcp",
+    "url": "https://clawhub.ai/skills/tencent-meeting-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-meeting-mcp-264458c0431b03d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在用户提及腾讯会议、视频会议、线上会议相关内容与操作时使用此技能。触发关键词包括：预约会议、创建会议、修改会议、取消会议、查询会议、会议详情、会议号、meeting_id、meeting_code、参会成员、受邀成员、等候室、会议列表、我的会议、会议录制、录制回放、录制下载、会议转写、会议纪要、智能纪要、AI纪要..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris8265-cl",
+      "userId": "s17185463fg4bq7v4kdv6wn27584txz8",
+      "displayName": "chris8265-cl",
+      "image": "https://avatars.githubusercontent.com/u/264188811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776176934863,
+      "changelog": "tencent-meeting-mcp v1.0.0\n\n- Initial release of the Tencent Meeting MCP skill.\n- Enables key meeting lifecycle management: create, modify, cancel, and query meetings with meeting ID or code.\n- Supports member management: view participants, invitees, waiting room members, and list user meetings.\n- Includes recording and transcription features: view/download meeting recordings, access & search transcripts, retrieve AI-generated summaries.\n- Strictly enforces password, time, and parameter handling standards as per official documentation.\n- Prevents activation for unrelated scenarios such as scheduling outside Tencent Meeting, chat, document editing, and other conference platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5e436a6994cab0becb6b29fa5a2f165db5e93c1427bb0377b8544e9535dc4b7"
+}

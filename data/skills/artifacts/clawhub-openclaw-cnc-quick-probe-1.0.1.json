@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cnc-quick-probe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cnc_quick_probe",
+  "skill": {
+    "id": 67284,
+    "skillKey": "clawhub-openclaw-cnc-quick-probe",
+    "name": "Cnc Quick Probe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cnc-quick-probe",
+    "url": "https://clawhub.ai/skills/openclaw-cnc-quick-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cnc-quick-probe-9d1dabf1d3f72be4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNC快速探明 - 5参数快速收敛。当报价请求参数不全时自动触发，收集材料、数量、精度、表面处理、Ra。收敛度≥80%后自动执行报价。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timo2026",
+      "userId": "s174wprm496tppjgz41wv2b6tn83faym",
+      "displayName": "Timo2026",
+      "image": "https://avatars.githubusercontent.com/u/258531684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775096005847,
+      "changelog": "### openclaw-cnc-quick-probe v1.0.1 Changelog\n\n- No file changes detected for this version.\n- No updates or new features introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7622dd678248b4cd3379f8a3dba3026734ba62308738dcd4a67751e9810950b0"
+}

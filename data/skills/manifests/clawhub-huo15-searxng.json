@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58555,
+  "uuid": "skill-clawhub-huo15-searxng",
+  "skillKey": "clawhub-huo15-searxng",
+  "name": "Huo15 Searxng",
+  "summary": "SearXNG 自托管搜索引擎一键部署 - Docker Compose + OpenClaw 配置自动化 (v1.2.1)",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_searxng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "SearXNG 自托管搜索引擎一键部署",
+        "Docker Compose + OpenClaw 配置自动化 (v1.2.1)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-searxng@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-searxng",
+      "url": "https://clawhub.ai/skills/huo15-searxng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-searxng",
+    "url": "https://clawhub.ai/skills/huo15-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-searxng-c8612e18fbf5242e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-searxng@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-searxng-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d2b6206fcc81b47f1f94a811f8357f5d6c1e2263ba6388cf381e0387dfd0720",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:32.730Z"
+}

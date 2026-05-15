@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insurance-broker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_broker",
+  "skill": {
+    "id": 61042,
+    "skillKey": "clawhub-insurance-broker",
+    "name": "Insurance Broker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-broker",
+    "url": "https://clawhub.ai/skills/insurance-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-broker-13bfffc671f534d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Insurance Broker - 智能保险经纪人，提供需求分析、产品推荐、理赔协助等全方位保险服务"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772714559064,
+      "changelog": "- Initial release of the AI Insurance Broker skill.\n- Provides comprehensive insurance services, including needs analysis, product recommendations, insurance Q&A, and premium calculations.\n- Supports analysis and recommendations based on user information and a database of 50+ mainstream insurance products.\n- Offers clear explanations of insurance concepts and claims assistance.\n- Focuses on user-centered, impartial, and professional advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7dabb1df0dd8e9b3ad82ebad74a64570e82c472c2c51d846040878e5bcf2133"
+}

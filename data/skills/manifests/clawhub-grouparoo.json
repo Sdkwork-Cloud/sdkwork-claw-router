@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35582,
+  "uuid": "skill-clawhub-grouparoo",
+  "skillKey": "clawhub-grouparoo",
+  "name": "Grouparoo",
+  "summary": "Grouparoo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Grouparoo data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grouparoo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Grouparoo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Grouparoo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grouparoo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grouparoo",
+      "url": "https://clawhub.ai/skills/grouparoo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grouparoo",
+    "url": "https://clawhub.ai/skills/grouparoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grouparoo-da16e8ee3fc6d2bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grouparoo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grouparoo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c04df33270de34e7916279224f7188252744fb30a872a344dd98bdbd8d9d7165",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:05:58.003Z"
+}

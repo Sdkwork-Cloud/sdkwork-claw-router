@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-to-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_pptx",
+  "skill": {
+    "id": 38568,
+    "skillKey": "clawhub-md-to-pptx",
+    "name": "Md To Pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-pptx",
+    "url": "https://clawhub.ai/skills/md-to-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-pptx-59a369930f0509a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files to PowerPoint (PPTX) format. Automatically detects slide separators (---) and converts them into presentation slides. By default, save..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhcanyu4",
+      "userId": "s17bxemg71peb7gzrqnbk1q6n583gtek",
+      "displayName": "DICO",
+      "image": "https://avatars.githubusercontent.com/u/60536707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775645708293,
+      "changelog": "- Initial release of md-to-pptx.\n- Converts Markdown files with `---` slide separators into PowerPoint (PPTX) presentations.\n- By default, saves the PPTX output to the active Obsidian vault at `~/obsidian-360/工作知识库/`.\n- Provides a fallback to save in the input file’s directory if the Obsidian vault isn’t available.\n- Supports specifying a custom output location via command line.\n- Compatible with LibreOffice (recommended) or Pandoc for conversion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f809753bddad91840b93ed186ce9cc12419d341c9c55544d569850c273a2bbbf"
+}

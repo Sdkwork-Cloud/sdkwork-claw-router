@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70775,
+  "uuid": "skill-clawhub-andy-lau",
+  "skillKey": "clawhub-andy-lau",
+  "name": "andy-lau",
+  "summary": "刘德华信息助手。查询电影作品、音乐专辑、演唱会、个人经历、最新动态。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.andy_lau",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "刘德华信息助手。查询电影作品、音乐专辑、演唱会、个人经历、最新动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/andy-lau@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "andy-lau",
+      "url": "https://clawhub.ai/skills/andy-lau"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "andy-lau",
+    "url": "https://clawhub.ai/skills/andy-lau",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/andy-lau-5b2dd33e712f9486.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/andy-lau@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-andy-lau-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbffaf36c66884804e1a5cc9626b51fab739d46956e27338a3f3c3090b606f3d",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:30:36.404Z"
+}

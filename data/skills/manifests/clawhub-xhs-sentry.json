@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71411,
+  "uuid": "skill-clawhub-xhs-sentry",
+  "skillKey": "clawhub-xhs-sentry",
+  "name": "小红书舆情哨兵",
+  "summary": "面向中文用户的小红书舆情巡检技能。按关键词抓取搜索结果，判断登录墙/验证码/空结果状态，输出结构化笔记、热度/风险/竞品信号和现场截图。使用前需配置 XHS_COOKIE 与消息接收渠道（如 Telegram、企业微信）。适用于品牌口碑监控、竞品观察、热点追踪与内容研究。",
+  "version": "1.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_sentry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangjh",
+      "features": [
+        "面向中文用户的小红书舆情巡检技能。按关键词抓取搜索结果，判断登录墙/验证码/空结果状态，输出结构化笔记、热度/风险/竞品信号和现场截图。使用前需配置 XHS_COOKIE 与消息接收渠道（如."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-sentry@1.3.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3371714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-sentry",
+      "url": "https://clawhub.ai/skills/xhs-sentry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-sentry",
+    "url": "https://clawhub.ai/skills/xhs-sentry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-sentry-20f3673a08979a7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-sentry@1.3.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-sentry-1.3.4.json",
+      "version": "1.3.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148bf9c06b60a9219df3616c8cc4bb4b6b5d3c9a275d62f0c064543e5b2ba2e6",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:44:35.891Z"
+}

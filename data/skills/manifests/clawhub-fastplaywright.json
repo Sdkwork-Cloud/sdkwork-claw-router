@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20006,
+  "uuid": "skill-clawhub-fastplaywright",
+  "skillKey": "clawhub-fastplaywright",
+  "name": "FastPlayWright Skill",
+  "summary": "High-performance browser automation with Fast Playwright MCP. Features token-optimized batch execution, intelligent element selection with fallback, diff det...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastplaywright",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frankausberlin",
+      "features": [
+        "High-performance browser automation with Fast Playwright MCP",
+        "Features token-optimized batch execution, intelligent element selection with fallback, diff det."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastplaywright@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58914204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastplaywright",
+      "url": "https://clawhub.ai/skills/fastplaywright"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastplaywright",
+    "url": "https://clawhub.ai/skills/fastplaywright",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastplaywright-c60468e731765364.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastplaywright@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastplaywright-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da3a9590ca0e2580a0fdd6f5ae6ed8270725031a1f1c6f8b9a30ff11c4ea2192",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T14:14:08.217Z"
+}

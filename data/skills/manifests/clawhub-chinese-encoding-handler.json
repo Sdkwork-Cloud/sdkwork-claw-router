@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62016,
+  "uuid": "skill-clawhub-chinese-encoding-handler",
+  "skillKey": "clawhub-chinese-encoding-handler",
+  "name": "Chinese-Encoding-Handler",
+  "summary": "解决PowerShell环境中文文件乱码，支持自动编码检测、安全读写及终端中文显示修复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_encoding_handler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "petersunpingww-droid",
+      "features": [
+        "解决PowerShell环境中文文件乱码，支持自动编码检测、安全读写及终端中文显示修复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-encoding-handler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249421977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-encoding-handler",
+      "url": "https://clawhub.ai/skills/chinese-encoding-handler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-encoding-handler",
+    "url": "https://clawhub.ai/skills/chinese-encoding-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-encoding-handler-5a3a5c32840a92c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-encoding-handler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-encoding-handler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fccafd0cf3377b51db44cb1e4e858ded48fbfad0f106ebf19186c2cedcb0e84",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:41:50.411Z"
+}

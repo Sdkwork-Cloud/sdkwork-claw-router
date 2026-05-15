@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61382,
+  "uuid": "skill-clawhub-lark-project-meegle",
+  "skillKey": "clawhub-lark-project-meegle",
+  "name": "Lark Project / Meegle",
+  "summary": "连接飞书项目/Meegle，查询和管理工作项、待办等。自动检测登录状态，未登录时引导 Device Code 授权。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_project_meegle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KentonYu",
+      "features": [
+        "连接飞书项目/Meegle，查询和管理工作项、待办等。自动检测登录状态，未登录时引导 Device Code 授权。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-project-meegle@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11837283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-project-meegle",
+      "url": "https://clawhub.ai/skills/lark-project-meegle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-project-meegle",
+    "url": "https://clawhub.ai/skills/lark-project-meegle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-project-meegle-05e67a360ff748c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-project-meegle@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-project-meegle-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5e8f0ef39ef631611a0d8247707dbd4bb5209fa9af699043c7005db8d58866e",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:16:59.212Z"
+}

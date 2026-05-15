@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9295,
+  "uuid": "skill-clawhub-tts",
+  "skillKey": "clawhub-tts",
+  "name": "Tts",
+  "summary": "Convert text to speech using Hume AI (or OpenAI) API. Use when the user asks for an audio message, a voice reply, or to hear something \"of vive voix\".",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AMSTKO",
+      "features": [
+        "Convert text to speech using Hume AI (or OpenAI) API",
+        "Use when the user asks for an audio message, a voice reply, or to hear something \"of vive voix\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/408968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts",
+      "url": "https://clawhub.ai/skills/tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts",
+    "url": "https://clawhub.ai/skills/tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-317e938a489b10da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d514a257af84c30a10c1565efa4894fc01dee32783b72b78d9edf99492b4fe45",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T21:42:25.231Z"
+}

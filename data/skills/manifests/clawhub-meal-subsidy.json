@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69521,
+  "uuid": "skill-clawhub-meal-subsidy",
+  "skillKey": "clawhub-meal-subsidy",
+  "name": "Meal Subsidy",
+  "summary": "2号人事部餐补申请自动化 — 读考勤判断下班时间，全自动填表提交。触发方式：\"申请餐补\"查昨天；\"申请4月7日餐补\"查指定日期；\"申请4月餐补\"查整月批量申请；\"本周餐补\"查本周批量申请。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meal_subsidy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jamy-lei",
+      "features": [
+        "2号人事部餐补申请自动化 — 读考勤判断下班时间，全自动填表提交。触发方式：\"申请餐补\"查昨天；\"申请4月7日餐补\"查指定日期；\"申请4月餐补\"查整月批量申请；\"本周餐补\"查本周批量申请。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meal-subsidy@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31760968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meal-subsidy",
+      "url": "https://clawhub.ai/skills/meal-subsidy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meal-subsidy",
+    "url": "https://clawhub.ai/skills/meal-subsidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meal-subsidy-e93584414d88f858.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meal-subsidy@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meal-subsidy-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30e49982ba33670c6ddf3cdf18a826fb0c4397f1742d6e85225d46282c2d9326",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:24:58.799Z"
+}

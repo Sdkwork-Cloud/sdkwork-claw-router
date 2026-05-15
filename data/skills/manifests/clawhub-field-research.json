@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69791,
+  "uuid": "skill-clawhub-field-research",
+  "skillKey": "clawhub-field-research",
+  "name": "领域调研",
+  "summary": "输入中文关键词后，生成中英双语关键词与文献检索结果表：中文来源知网、英文来源Google Scholar，近10年、相关性排序、按年份降序输出标准Markdown表格；优先可见浏览器人工验证。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.field_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huixiaheyu",
+      "features": [
+        "输入中文关键词后，生成中英双语关键词与文献检索结果表：中文来源知网、英文来源Google Scholar，近10年、相关性排序、按年份降序输出标准Markdown表格；优先可见浏览器人工验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/field-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95174705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "field-research",
+      "url": "https://clawhub.ai/skills/field-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "field-research",
+    "url": "https://clawhub.ai/skills/field-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/field-research-426990d2028264d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/field-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-field-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a120d2b47a1788185e16facd0d7ac9bc9fed73be05356fe6110b5d61b9e767",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:34:51.785Z"
+}

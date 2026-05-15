@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-replace-me-check@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_replace_me_check",
+  "skill": {
+    "id": 62942,
+    "skillKey": "clawhub-ai-replace-me-check",
+    "name": "can-ai-replace-me"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-replace-me-check",
+    "url": "https://clawhub.ai/skills/ai-replace-me-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-replace-me-check-73d31c9c0b1f505d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过苏格拉底追问方式提取用户隐性 SOP 知识，生成 AS-IS + TO-BE 可视化流程图和配置文件组 | 作者微信：erpers00001。当用户提到\"帮我梳理 SOP\"、\"提取我的工作流程\"、\"开始 SOP 调研\"、\"了解我的工作方式\"、\"AI能取代我吗\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwei03804-a11y",
+      "userId": "s172nvk175t1fj8hb7f7ffc11n83schz",
+      "displayName": "wwei03804-a11y",
+      "image": "https://avatars.githubusercontent.com/u/231736930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776580384599,
+      "changelog": "ai-replace-me-check 1.2.0\nstructural optimization based on Skills best practices: all Skills in TO-BE plans must come from real-time SkillHub/ClawHub search — placeholders forbidden. Each execution dynamically searches and populates matched Skills in owner/repo@skill-name format into the flowchart. Search priority: SkillHub first, ClawHub fallback. Cleaned up unreferenced scripts and test artifacts. Final package: 5 files, zero bloat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85b0d00d080606d95e29791199867047cde3bd2361aca0263e2cfad5364110e0"
+}

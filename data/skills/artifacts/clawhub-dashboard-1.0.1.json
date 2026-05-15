@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dashboard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dashboard",
+  "skill": {
+    "id": 10321,
+    "skillKey": "clawhub-dashboard",
+    "name": "Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dashboard",
+    "url": "https://clawhub.ai/skills/dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dashboard-66cd9688a2ae0682.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build custom dashboards from any data source with local hosting and visual QA loops."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2313,
+      "installsAllTime": 27,
+      "installsCurrent": 26,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771263565042,
+      "changelog": "User-driven data source model, explicit credential handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a54ad5b3887eb16213b99991de600daa7dce514cac54cb81bcbfcc89d3e940a1"
+}

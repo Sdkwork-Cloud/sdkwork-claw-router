@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46845,
+  "uuid": "skill-clawhub-llm-cost-tracker-openrouter-api",
+  "skillKey": "clawhub-llm-cost-tracker-openrouter-api",
+  "name": "LLM Cost Tracker",
+  "summary": "Track OpenClaw LLM token usage and cost from OpenRouter API. Reports: last 24h, 7d, 30d, 90d, 365d with model breakdown. Skills that trigger this: - \"llm cos...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_cost_tracker_openrouter_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larryjoe",
+      "features": [
+        "Track OpenClaw LLM token usage and cost from OpenRouter API",
+        "Reports: last 24h, 7d, 30d, 90d, 365d with model breakdown",
+        "Skills that trigger this:",
+        "\"llm cos..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-cost-tracker-openrouter-api@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25060936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-cost-tracker-openrouter-api",
+      "url": "https://clawhub.ai/skills/llm-cost-tracker-openrouter-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-cost-tracker-openrouter-api",
+    "url": "https://clawhub.ai/skills/llm-cost-tracker-openrouter-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-cost-tracker-openrouter-api-220ceada51181e2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-cost-tracker-openrouter-api@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-cost-tracker-openrouter-api-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69412e6d4a263847e68edb305bc6e383160191d1bd33aed9e92038820a6e9c68",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:10:57.164Z"
+}

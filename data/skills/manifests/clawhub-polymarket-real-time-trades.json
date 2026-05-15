@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24840,
+  "uuid": "skill-clawhub-polymarket-real-time-trades",
+  "skillKey": "clawhub-polymarket-real-time-trades",
+  "name": "Polymarket Real Time Trades Stream",
+  "summary": "Real-time streaming Polymarket prediction trades on Polygon (matic) with live USD pricing. Subscribe to a live stream of Polymarket prediction market trades...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_real_time_trades",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Divyasshree",
+      "features": [
+        "Real-time streaming Polymarket prediction trades on Polygon (matic) with live USD pricing",
+        "Subscribe to a live stream of Polymarket prediction market trades..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-real-time-trades@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41162285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-real-time-trades",
+      "url": "https://clawhub.ai/skills/polymarket-real-time-trades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-real-time-trades",
+    "url": "https://clawhub.ai/skills/polymarket-real-time-trades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-real-time-trades-ab535647eba45c74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-real-time-trades@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-real-time-trades-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da963017df829c6c3e3429354a110ba0939d558e4f3c3de8dbcfc08392d6127f",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:09:57.522Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8234,
+  "uuid": "skill-clawhub-sonoscli",
+  "skillKey": "clawhub-sonoscli",
+  "name": "Sonoscli",
+  "summary": "Control Sonos speakers (discover/status/play/volume/group).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonoscli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Control Sonos speakers (discover/status/play/volume/group)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonoscli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonoscli",
+      "url": "https://clawhub.ai/skills/sonoscli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonoscli",
+    "url": "https://clawhub.ai/skills/sonoscli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonoscli-ee97806b58bcd240.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonoscli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonoscli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bc6960b2d7938b64d96a1f90b615abdc17a3c6669d047be8f9f850ad2d0e090",
+      "artifactSizeBytes": 1738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:41.030Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32698,
+  "uuid": "skill-clawhub-rev",
+  "skillKey": "clawhub-rev",
+  "name": "Rev",
+  "summary": "Rev integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Rev data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rev integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Rev data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rev@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rev",
+      "url": "https://clawhub.ai/skills/rev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rev",
+    "url": "https://clawhub.ai/skills/rev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rev-d1e75aca758154ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rev@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rev-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0677e6d3879051e131b37755f80bd38995c383efad49527b848dc2894db7bc0",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:34:23.412Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71266,
+  "uuid": "skill-clawhub-my-first-skill",
+  "skillKey": "clawhub-my-first-skill",
+  "name": "招标项目分析技能",
+  "summary": "分析招标Excel文件，存储信息到MySQL，支持查询管理、时间跟踪和报告生成的招标项目分析技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_first_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zwh0709",
+      "features": [
+        "分析招标Excel文件，存储信息到MySQL，支持查询管理、时间跟踪和报告生成的招标项目分析技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-first-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203616191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-first-skill",
+      "url": "https://clawhub.ai/skills/my-first-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-first-skill",
+    "url": "https://clawhub.ai/skills/my-first-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-first-skill-83d5367a564c0783.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-first-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-first-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0aa480456648b52578090e3d5d84f9203d53b32584599f269a1d405f64fc976",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:09:31.572Z"
+}

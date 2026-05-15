@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57922,
+  "uuid": "skill-clawhub-clawguard-secure",
+  "skillKey": "clawhub-clawguard-secure",
+  "name": "ClawGuard Security Assistant",
+  "summary": "ClawGuard security assistant for OpenClaw. Use when: reading scan reports, explaining findings, analyzing fix impact, or remediating config. 安全扫描、报告解析与配置修复.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_secure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "R0llcre",
+      "features": [
+        "ClawGuard security assistant for OpenClaw",
+        "Use when: reading scan reports, explaining findings, analyzing fix impact, or remediating config",
+        "安全扫描、报告解析与配置修复."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-secure@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115418608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-secure",
+      "url": "https://clawhub.ai/skills/clawguard-secure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-secure",
+    "url": "https://clawhub.ai/skills/clawguard-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-secure-f0543951045650a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-secure@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-secure-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba6821fa96f14a081bb46778203ddcc9f9298b4be6772d9edcf0f080c89c8682",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:56:34.941Z"
+}

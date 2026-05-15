@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-commerce-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_commerce_context",
+  "skill": {
+    "id": 32163,
+    "skillKey": "clawhub-creator-commerce-context",
+    "name": "Creator Commerce Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-commerce-context",
+    "url": "https://clawhub.ai/skills/creator-commerce-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-commerce-context-a3193d10563ef5ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Normalize fragmented creator, product, and campaign details into a structured, reusable context pack for streamlined ecommerce and affiliate workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773765696937,
+      "changelog": "- Initial release of Creator Commerce Context skill.\n- Transforms fragmented creator, product, campaign, and store information into a structured, reusable context pack.\n- Designed for use before scripting, offer design, creator briefing, landing page review, or performance analysis.\n- Separates facts, assumptions, and missing information to create a clear ecommerce operating context.\n- Output includes business details, product snapshot, customer/creator profile, campaign objectives, constraints, risks, and recommended next actions.\n- Ensures downstream skills receive high-quality, organized context for better results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b376b947bbe290a2b84afa7adab9814412bf3010c0f92db57ea1050dc50ee6fa"
+}

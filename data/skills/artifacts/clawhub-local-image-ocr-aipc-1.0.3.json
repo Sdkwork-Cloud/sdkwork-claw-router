@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-image-ocr-aipc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_image_ocr_aipc",
+  "skill": {
+    "id": 21794,
+    "skillKey": "clawhub-local-image-ocr-aipc",
+    "name": "Local GLM OCR with llama.cpp on AIPC(no API Key)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-image-ocr-aipc",
+    "url": "https://clawhub.ai/skills/local-image-ocr-aipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-image-ocr-aipc-389ab65c52d0aee3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image OCR, text recognition, extract text from image, scan document, read image text, invoice OCR, receipt OCR, contract recognition, table extraction, busin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "violet17",
+      "userId": "s176cgbay75myxjkm5mshq1c7h83gtf5",
+      "displayName": "violet17",
+      "image": "https://avatars.githubusercontent.com/u/4042800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773994385016,
+      "changelog": "local-image-ocr-aipc 1.0.3\n\n- No code or skill manifest changes detected from previous version.\n- No user-facing features, bug fixes, or instructions were changed.\n- Behavior and setup remain identical to version 1.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4b1ad078093f622f68ed2460fe42b7812900f0287af28ff22940679d77c7059"
+}

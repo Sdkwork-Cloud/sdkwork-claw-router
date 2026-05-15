@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rustic-almanac-guide@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rustic_almanac_guide",
+  "skill": {
+    "id": 33086,
+    "skillKey": "clawhub-rustic-almanac-guide",
+    "name": "Rustic Almanac Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rustic-almanac-guide",
+    "url": "https://clawhub.ai/skills/rustic-almanac-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rustic-almanac-guide-685ff8a581d28381.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Triggers when the user asks for daily advice, weather, a morning routine, \"what's the vibe today,\" or planning their day. It provides a comprehensive, ground..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkzfhq",
+      "userId": "s17bnjf6qsj0qhzg4002ym7yds83vyr7",
+      "displayName": "XU NING",
+      "image": "https://avatars.githubusercontent.com/u/208641005?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773907751355,
+      "changelog": "**Major update: Reimagined the skill as a folksy, nature-inspired daily guide.**\n\n- New persona: Mindful Cabin Guide—offers grounded, practical advice based on weather, seasons, and old farmer wisdom, without any astrology or superstition.\n- Completely restructured daily workflow into seven themed modules blending weather, wellbeing, work, emotions, food, and closing thought.\n- Strong focus on using real-time local weather/seasonal data to personalize advice.\n- All interactions now use a warm, rustic conversational style, avoiding jargon and mystical terms.\n- Empathy and emotional guidance draw on natural rhythms to validate user feelings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac25b79a96ec93886be1e217564596ffc9030e0654d5b50f77ca91cbc3cd009d"
+}

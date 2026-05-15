@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-creative@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_creative",
+  "skill": {
+    "id": 50822,
+    "skillKey": "clawhub-ad-creative",
+    "name": "Ad Creative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-creative",
+    "url": "https://clawhub.ai/skills/ad-creative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-creative-7a8299dedbf4d90a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising plat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrhuang09",
+      "userId": "s17a05gnebhc550j5yxsrmhs7983mwgk",
+      "displayName": "Victor Huang",
+      "image": "https://avatars.githubusercontent.com/u/137679815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 773,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772686860651,
+      "changelog": "ad-creative 0.1.0\n\n- Initial release of the ad-creative skill for generating, iterating, and scaling ad copy for any paid ads platform.\n- Supports both \"generate from scratch\" and \"iterate from performance data\" workflows.\n- Includes detailed platform specs (character limits, formatting rules) for Google Ads, Meta, LinkedIn, TikTok, and Twitter/X.\n- Step-by-step process for asking the right context questions, defining ad angles, and validating copy against specs.\n- Guidance for integrating visual and video ad creative with generative AI tools and code-based video rendering.\n- Structured workflow to help users produce high-performing ad headlines, descriptions, and variations at scale.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05d408bec95ce205f4f6ea8374b6e1e2d41c098e4fa18fcadfc1b4cbcdf15af3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xyz-podcast-radar-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xyz_podcast_radar_cn",
+  "skill": {
+    "id": 70654,
+    "skillKey": "clawhub-xyz-podcast-radar-cn",
+    "name": "podcast-radar-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xyz-podcast-radar-cn",
+    "url": "https://clawhub.ai/skills/xyz-podcast-radar-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xyz-podcast-radar-cn-a52da86a851a5ffa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文播客数据工具包。用于播客发现、竞品分析、订阅追踪、创作机会评估。 触发场景： · 发现热门/新锐播客或单集 · 分析某个分类的竞争格局 · 追踪播客订阅量变化趋势 · 评估播客创作方向的机会 · 生成完整的播客创作机会报告 · 对标学习头部播客案例 · 话题热度趋势监控"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mteng27",
+      "userId": "s173v313y1wya4p2608z1x3j3n848v63",
+      "displayName": "mteng27",
+      "image": "https://avatars.githubusercontent.com/u/22829932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775638751032,
+      "changelog": "Podcast Radar CN 1.0.0 introduces a comprehensive Chinese podcast analytics toolkit for discovery, competitive analysis, subscription trend tracking, and opportunity reports.\n\n- Initial release with 7 scripts for multiple analytic and monitoring tasks: genre analysis, batch subscription tracking, opportunity report generation, topic trend analysis, episode and podcast tracking, and Xiaoyuzhou enrichment.\n- Integrated official xyzrank.com and api.xyzrank.top endpoints for real-time/weekly charts and full subscription growth curves.\n- Enhanced workflows for creator and listener scenarios, with built-in rules for query interpretation and data enrichment limits.\n- Extensive documentation included for usage scenarios, data caveats, API call samples, and analysis frameworks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c338bf55d85040936b1551c17f9c6da7493830c784e37e3fc95e8dbe061272b"
+}

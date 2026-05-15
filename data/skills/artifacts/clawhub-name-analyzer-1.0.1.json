@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/name-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.name_analyzer",
+  "skill": {
+    "id": 22529,
+    "skillKey": "clawhub-name-analyzer",
+    "name": "Name Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "name-analyzer",
+    "url": "https://clawhub.ai/skills/name-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/name-analyzer-b2d2f5d44b7ee6e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze names for meaning, origin, cultural associations, and personality traits. Use when user wants to (1) understand the meaning of a name, (2) check name..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775126307282,
+      "changelog": "Republish the correct name analysis skill contents, fix runnable README examples, and add a .clawhubignore publishing guard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e204a378f627b2835306b9b8cf1650977b155a1f8a6429d79b4f6a08d7f1e90b"
+}

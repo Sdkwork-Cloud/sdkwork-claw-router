@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiodopave@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiodopave",
+  "skill": {
+    "id": 56842,
+    "skillKey": "clawhub-tiodopave",
+    "name": "Piadas Reddit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiodopave",
+    "url": "https://clawhub.ai/skills/tiodopave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiodopave-9aafa07286f85381.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Busca e retorna piadas reais recentes e limpas do subreddit r/tiodopave com score > 5, evitando repetições e conteúdo NSFW."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runawaydevil",
+      "userId": "publishers:runawaydevil",
+      "displayName": "runawaydevil",
+      "image": "https://avatars.githubusercontent.com/u/8763225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772663381588,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a96272f4b94f7b24fcbc024a8d9d4b9b9d3459d8688d0081204f70b1cee0484a"
+}

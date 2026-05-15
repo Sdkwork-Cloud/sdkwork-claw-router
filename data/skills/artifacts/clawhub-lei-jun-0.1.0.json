@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lei-jun@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lei_jun",
+  "skill": {
+    "id": 56165,
+    "skillKey": "clawhub-lei-jun",
+    "name": "lei-jun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lei-jun",
+    "url": "https://clawhub.ai/skills/lei-jun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lei-jun-e0c21bc0c9cac1fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Lei Jun 雷军. Get biography, latest news, career highlights, and social media updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774749952362,
+      "changelog": "- Initial release of the Lei Jun 雷军 info assistant skill.\n- Provides biography, career highlights, latest news, and business ventures.\n- Includes social media updates and follower stats.\n- Supports real-time web search for up-to-date information about Lei Jun.\n- Designed for easy queries about Lei Jun's life, achievements, and activities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9be8b1d6ef07500b18df76124671252304562134465788cb54d6b2145b77eb2a"
+}

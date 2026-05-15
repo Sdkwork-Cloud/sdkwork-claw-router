@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19325,
+  "uuid": "skill-clawhub-norman-create-invoice",
+  "skillKey": "clawhub-norman-create-invoice",
+  "name": "Norman: Create Invoice",
+  "summary": "Create and optionally send a new invoice to a client. Use when the user wants to invoice someone, bill a client, or create a new Rechnung.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_create_invoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Kharlap",
+      "features": [
+        "Create and optionally send a new invoice to a client",
+        "Use when the user wants to invoice someone, bill a client, or create a new Rechnung."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/norman-create-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117379032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "norman-create-invoice",
+      "url": "https://clawhub.ai/skills/norman-create-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-create-invoice",
+    "url": "https://clawhub.ai/skills/norman-create-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-create-invoice-5c32d68cf9199906.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/norman-create-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-norman-create-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5672c93d564125149bd37ea0577eaf2caded1006744c8505427c81940b99e6a",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T18:43:00.532Z"
+}

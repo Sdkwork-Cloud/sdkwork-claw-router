@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57129,
+  "uuid": "skill-clawhub-s2-hardware-onboarding-gateway",
+  "skillKey": "clawhub-s2-hardware-onboarding-gateway",
+  "name": "S2 Hardware Onboarding Gateway (S2 硬件入户网关)",
+  "summary": "The official S2 firmware guide. Features absolute Zero-Exfiltration Data Topography, User-in-the-loop authorization, and local-only 3FA.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_hardware_onboarding_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "The official S2 firmware guide",
+        "Features absolute Zero-Exfiltration Data Topography, User-in-the-loop authorization, and local-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-hardware-onboarding-gateway@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-hardware-onboarding-gateway",
+      "url": "https://clawhub.ai/skills/s2-hardware-onboarding-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-hardware-onboarding-gateway",
+    "url": "https://clawhub.ai/skills/s2-hardware-onboarding-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-hardware-onboarding-gateway-21a7dfeac90241e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-hardware-onboarding-gateway@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-hardware-onboarding-gateway-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf1c68366d438ac24cc229523dfca6a2115468905105556479d8d622353afbe",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:10:06.197Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55685,
+  "uuid": "skill-clawhub-excel-clean",
+  "skillKey": "clawhub-excel-clean",
+  "name": "excel-clean",
+  "summary": "Clean Excel data — deduplication, fill missing values, format conversion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_clean",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin-SH-Ni",
+      "features": [
+        "Clean Excel data — deduplication, fill missing values, format conversion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excel-clean@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271690832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excel-clean",
+      "url": "https://clawhub.ai/skills/excel-clean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-clean",
+    "url": "https://clawhub.ai/skills/excel-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-clean-9712625b895e30d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excel-clean@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-excel-clean-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45781ccdfc80d24cd50fc1367bf8fd486b9f0ff323db1f6f8d6cf72f5fa5909c",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:08:41.469Z"
+}

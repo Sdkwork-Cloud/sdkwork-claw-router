@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-eng-meta-prompting@3.0.5",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_meta_prompting",
+  "skill": {
+    "id": 25038,
+    "skillKey": "clawhub-compound-eng-meta-prompting",
+    "name": "ia-meta-prompting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-meta-prompting",
+    "url": "https://clawhub.ai/skills/compound-eng-meta-prompting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-meta-prompting-586e32af36fe4df2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured reasoning modifiers (/think, /verify, /adversarial, /edge, /confidence, /assumptions, etc.) to stress-test decisions, surface assumptions, or enum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iliaal",
+      "userId": "s17bcar8wq0xhegs0ny6f57ypd8484bw",
+      "displayName": "Ilia Alshanetsky",
+      "image": "https://avatars.githubusercontent.com/u/158724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.5",
+      "createdAt": 1777507358660,
+      "changelog": "v3.0.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b14dbfcba4f7a23240fcd5a1668cc79f9a77d159f88fb20c66cd79fa6cee4837"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/isai-mermaid-diagrams@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isai_mermaid_diagrams",
+  "skill": {
+    "id": 28256,
+    "skillKey": "clawhub-isai-mermaid-diagrams",
+    "name": "ISAI Mermaid Diagrams"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isai-mermaid-diagrams",
+    "url": "https://clawhub.ai/skills/isai-mermaid-diagrams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isai-mermaid-diagrams-e4d02b4e30c005b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate architecture diagrams (network, system, cloud, microservices) and sequence diagrams (API flows, auth flows, data flows) as PNG files using Mermaid...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "opietaylor911",
+      "userId": "s1705pyta0a48v31rkj9rqckf583jy0h",
+      "displayName": "OpieTaylor911",
+      "image": "https://avatars.githubusercontent.com/u/93287031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773434868281,
+      "changelog": "Initial release — generate architecture diagrams (network, system, cloud, microservices) and sequence diagrams (API flows, auth flows, CI/CD) as PNG using mermaid.ink renderer. No local browser required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ee6b20c1b3d2f9c33f15cdef993340feb2b04db4c15d838378110554086f97a"
+}

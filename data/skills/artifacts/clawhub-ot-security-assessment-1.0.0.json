@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ot-security-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ot_security_assessment",
+  "skill": {
+    "id": 51950,
+    "skillKey": "clawhub-ot-security-assessment",
+    "name": "OT Security Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ot-security-assessment",
+    "url": "https://clawhub.ai/skills/ot-security-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ot-security-assessment-41e553bf99322720.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based, Enterprise Wide, Methodical, OT Security Focused, and OT Sec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814490859,
+      "changelog": "Initial release — Industrial (OT/ICS) security assessment skill.\n\n- Assess OT/ICS security posture across 30 controls in 6 key principles.\n- Guides users through structured evaluation questions tied to each control.\n- Calls ToolWeb API to return expert OT security compliance scores and prioritized remediation guidance.\n- Requires TOOLWEB_API_KEY and curl; supports Linux, Mac, and Windows.\n- Outputs compliance percentage, risk level, gaps, and detailed findings by principle.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffd15458203db77c0fc93a3e12db945010929e65431cedfa83829ea5ebb68c0c"
+}

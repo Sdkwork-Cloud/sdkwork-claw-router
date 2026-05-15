@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45423,
+  "uuid": "skill-clawhub-sora-video-generator",
+  "skillKey": "clawhub-sora-video-generator",
+  "name": "Sora Video Generator",
+  "summary": "generate text prompts into AI generated videos with this skill. Works with TXT, PNG, JPG, MP4 files up to 200MB. content creators use it for generating short...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "generate text prompts into AI generated videos with this skill",
+        "Works with TXT, PNG, JPG, MP4 files up to 200MB",
+        "content creators use it for generating short..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sora-video-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sora-video-generator",
+      "url": "https://clawhub.ai/skills/sora-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-video-generator",
+    "url": "https://clawhub.ai/skills/sora-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-video-generator-2562a112e896f468.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sora-video-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sora-video-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25f3ec9e6a90d2f0280f8f137f8e371b73ead63d4da45905e09e526ce1ad229c",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T18:29:48.279Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60374,
+  "uuid": "skill-clawhub-elegant-sync",
+  "skillKey": "clawhub-elegant-sync",
+  "name": "Elegant Sync",
+  "summary": "优雅安全的 OpenClaw 配置同步工具 - 支持选择性备份、.gitignore 规则、版本控制",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elegant_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russellfei",
+      "features": [
+        "优雅安全的 OpenClaw 配置同步工具",
+        "支持选择性备份、.gitignore 规则、版本控制"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elegant-sync@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3415940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elegant-sync",
+      "url": "https://clawhub.ai/skills/elegant-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elegant-sync",
+    "url": "https://clawhub.ai/skills/elegant-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elegant-sync-4fd2430828d7ece3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elegant-sync@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-elegant-sync-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5bdf403f5c3573f18ec7cd729fcef9cac7b0773f06cf4394f443b123998274a",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:27:43.514Z"
+}

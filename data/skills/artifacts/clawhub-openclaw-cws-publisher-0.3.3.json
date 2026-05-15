@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cws-publisher@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cws_publisher",
+  "skill": {
+    "id": 19452,
+    "skillKey": "clawhub-openclaw-cws-publisher",
+    "name": "OpenClaw CWS Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cws-publisher",
+    "url": "https://clawhub.ai/skills/openclaw-cws-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cws-publisher-60430795bbcd18e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw CWS Publisher is a public ClawHub Chrome Web Store publisher skill. Use it when the user says \"chrome web store publisher\", \"extension release publi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zack-dev-cm",
+      "userId": "s170hyv1nagjajq3y5c6kpzx3s84jp29",
+      "displayName": "Zakhar Pashkin",
+      "image": "https://avatars.githubusercontent.com/u/112114097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1778085345561,
+      "changelog": "Add Cloudflare public-page, SEO, privacy, reviewer, and design evidence gates for CWS release readiness",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0b7a217175dd84ef5181fbd32314ada576e7206c85f8333eafc32267e323376"
+}

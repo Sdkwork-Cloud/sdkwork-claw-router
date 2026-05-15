@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ad-creatives@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ad_creatives",
+  "skill": {
+    "id": 10762,
+    "skillKey": "clawhub-meta-ad-creatives",
+    "name": "Meta Ad Creatives"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ad-creatives",
+    "url": "https://clawhub.ai/skills/meta-ad-creatives",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ad-creatives-4849e6f9fa6f4b35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track Meta (Facebook/Instagram) ad creative performance and hit rates across multiple accounts. Use when asked about creative win rates, which ads are hitting benchmarks, CPT/CPI/ROAS analysis, or comparing creative performance across acco."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortytwode",
+      "userId": "publishers:fortytwode",
+      "displayName": "fortytwode",
+      "image": "https://avatars.githubusercontent.com/u/129731394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1980,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770121759551,
+      "changelog": "Initial skill release for tracking Meta (Facebook/Instagram) ad creative performance.\n\n- Calculates creative hit rates using key performance metrics (CPT, CPI, IPM, ROAS)\n- Compares performance across multiple accounts and time periods\n- Identifies winning creatives vs underperformers with benchmark support\n- Tracks historical data for trend analysis, with both Firestore and SQLite storage\n- Supports currency conversion for cross-market analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c508ceb871fa2865b577a06b7defaaaf85b57982411a50786273e0a9c7a9482"
+}

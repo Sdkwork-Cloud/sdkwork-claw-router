@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62645,
+  "uuid": "skill-clawhub-runtime-security-guard",
+  "skillKey": "clawhub-runtime-security-guard",
+  "name": "Runtime Security Guard",
+  "summary": "企业级 AI 运行时安全防护技能 v2.1。提供 406+ 条安全规则，支持跨平台检测（Windows/macOS/Linux），检测 9 大类安全威胁。完全本地运行，无云端 API，无配额限制。配备现代化 Web 监控界面和自动化测试系统。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_security_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nanlinsec-sys",
+      "features": [
+        "企业级 AI 运行时安全防护技能 v2.1。提供 406+ 条安全规则，支持跨平台检测（Windows/macOS/Linux），检测 9 大类安全威胁。完全本地运行，无云端 API，无配额."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runtime-security-guard@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266264956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runtime-security-guard",
+      "url": "https://clawhub.ai/skills/runtime-security-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-security-guard",
+    "url": "https://clawhub.ai/skills/runtime-security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-security-guard-50b0cc60d39a68c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runtime-security-guard@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runtime-security-guard-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd427b7200bc025e207f7561dcf504bb1174ca185094e99df435d7df38228341",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:52:53.898Z"
+}

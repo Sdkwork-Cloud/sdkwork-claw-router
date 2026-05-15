@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70115,
+  "uuid": "skill-clawhub-catfee-ssh",
+  "skillKey": "clawhub-catfee-ssh",
+  "name": "Catfee Ssh",
+  "summary": "SSH远程服务器密码连接技能。当用户提供服务器IP、用户名、密码需要SSH连接时激活。支持执行命令、查看配置、诊断问题、文件操作等运维操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catfee_ssh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "冢猫",
+      "features": [
+        "SSH远程服务器密码连接技能。当用户提供服务器IP、用户名、密码需要SSH连接时激活。支持执行命令、查看配置、诊断问题、文件操作等运维操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/catfee-ssh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20748423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "catfee-ssh",
+      "url": "https://clawhub.ai/skills/catfee-ssh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catfee-ssh",
+    "url": "https://clawhub.ai/skills/catfee-ssh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catfee-ssh-b95eac8dbc8ce127.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/catfee-ssh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-catfee-ssh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:936371dc97a6aad982fd2405ac8ad36f6bd34df521a2c17133c2cf82c179225f",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:34:34.535Z"
+}

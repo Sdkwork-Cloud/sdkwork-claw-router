@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32917,
+  "uuid": "skill-clawhub-medrates-fyi",
+  "skillKey": "clawhub-medrates-fyi",
+  "name": "MedRates.fyi",
+  "summary": "Query US hospital price transparency data via the MedRates REST API. Search medical procedure prices, compare hospitals, filter by insurance plan and locatio...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medrates_fyi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dimaosipa",
+      "features": [
+        "Query US hospital price transparency data via the MedRates REST API",
+        "Search medical procedure prices, compare hospitals, filter by insurance plan and locatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medrates-fyi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1094629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medrates-fyi",
+      "url": "https://clawhub.ai/skills/medrates-fyi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medrates-fyi",
+    "url": "https://clawhub.ai/skills/medrates-fyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medrates-fyi-a42c749aa34f5e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medrates-fyi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-medrates-fyi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf241aa0542a34cbe2ea6ce4a8e7db79fd7b614cc2f153725ae508cc18ecf8b4",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:45:29.418Z"
+}

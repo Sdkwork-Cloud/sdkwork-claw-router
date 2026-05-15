@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16783,
+  "uuid": "skill-clawhub-openspec-workflow",
+  "skillKey": "clawhub-openspec-workflow",
+  "name": "OpenSpec Workflow",
+  "summary": "Autonomous spec-driven development with OpenSpec CLI and Claude Code. You orchestrate (draft artifacts, make judgment calls, ship PRs) while Claude Code revi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openspec_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bobby Radford",
+      "features": [
+        "Autonomous spec-driven development with OpenSpec CLI and Claude Code",
+        "You orchestrate (draft artifacts, make judgment calls, ship PRs) while Claude Code revi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openspec-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6943982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openspec-workflow",
+      "url": "https://clawhub.ai/skills/openspec-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openspec-workflow",
+    "url": "https://clawhub.ai/skills/openspec-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openspec-workflow-70ccea08de9343e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openspec-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openspec-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e277904edd87b32f7cf870dc2a261766f1c8c7b0339ae702e3b629c3d8ae447",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T17:13:31.464Z"
+}

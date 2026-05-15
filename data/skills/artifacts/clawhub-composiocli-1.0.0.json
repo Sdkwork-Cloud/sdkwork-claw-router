@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/composiocli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composiocli",
+  "skill": {
+    "id": 34378,
+    "skillKey": "clawhub-composiocli",
+    "name": "composio cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composiocli",
+    "url": "https://clawhub.ai/skills/composiocli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composiocli-67fc06af4b1d1e1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775158994408,
+      "changelog": "- Initial release of the composio skill, enabling integration with 1000+ external apps through the Composio CLI or SDK.\n- Streamlined setup instructions for CLI installation and authentication.\n- Provides commands to search, link, and execute actions on external tools directly from the terminal.\n- Supports building AI agents and apps with multi-user connections to external services.\n- Includes workflow guidance and usage scenarios for both CLI and SDK approaches.\n\nThis is based on Composio's CLI claude skils",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f98276bd520d3d48f572e7ff78b7c7f560109cd9fbc033898e7684c925e572c"
+}

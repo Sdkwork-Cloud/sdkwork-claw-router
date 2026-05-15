@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60141,
+  "uuid": "skill-clawhub-vispatrol-alram-query",
+  "skillKey": "clawhub-vispatrol-alram-query",
+  "name": "vispatrol-alram-query",
+  "summary": "在 Windows 上查询 VisPatrol 报警与抓拍；执行前必须先获得用户明确同意读取本地 vpup.json 运行时配置。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vispatrol_alram_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baymax1957",
+      "features": [
+        "在 Windows 上查询 VisPatrol 报警与抓拍；执行前必须先获得用户明确同意读取本地 vpup.json 运行时配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vispatrol-alram-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263845230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vispatrol-alram-query",
+      "url": "https://clawhub.ai/skills/vispatrol-alram-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vispatrol-alram-query",
+    "url": "https://clawhub.ai/skills/vispatrol-alram-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vispatrol-alram-query-8a81ffe20b316d69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vispatrol-alram-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vispatrol-alram-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14755064ab0cf2da1f0379bb5e5115bc7b3f827b32c7c21467cc1c68dc0aaa55",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T05:48:21.043Z"
+}

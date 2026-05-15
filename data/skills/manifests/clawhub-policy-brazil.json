@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71047,
+  "uuid": "skill-clawhub-policy-brazil",
+  "skillKey": "clawhub-policy-brazil",
+  "name": "🇧🇷 巴西市场政策查询Skill",
+  "summary": "提供基于惠迈智能体架构的巴西市场政策、法规和投资环境的智能查询与多语言支持。无需API Key，安装即用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_brazil",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "提供基于惠迈智能体架构的巴西市场政策、法规和投资环境的智能查询与多语言支持。无需API Key，安装即用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/policy-brazil@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "policy-brazil",
+      "url": "https://clawhub.ai/skills/policy-brazil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-brazil",
+    "url": "https://clawhub.ai/skills/policy-brazil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-brazil-4449ad56ad1a3c05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/policy-brazil@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-policy-brazil-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de3f69531839fb2757b66001ad37cbde15fa42d4158be315e2fa16edb0cd2141",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:34:40.354Z"
+}

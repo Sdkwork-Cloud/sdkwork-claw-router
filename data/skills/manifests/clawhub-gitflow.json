@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9386,
+  "uuid": "skill-clawhub-gitflow",
+  "skillKey": "clawhub-gitflow",
+  "name": "GitFlow",
+  "summary": "Automatically monitor CI/CD pipeline status of new push across GitHub and GitLab in one place. Auto DevOps this is the way 🦞!",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "okoddcat",
+      "features": [
+        "Automatically monitor CI/CD pipeline status of new push across GitHub and GitLab in one place",
+        "Auto DevOps this is the way 🦞!"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitflow@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12825424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitflow",
+      "url": "https://clawhub.ai/skills/gitflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitflow",
+    "url": "https://clawhub.ai/skills/gitflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitflow-9e63965c73e02bfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitflow@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitflow-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:181d6f01a864c04dc61a5c169dc39c2bc62885e687f07575424ad21b949efcea",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:18:52.168Z"
+}

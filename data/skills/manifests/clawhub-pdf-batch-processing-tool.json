@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43288,
+  "uuid": "skill-clawhub-pdf-batch-processing-tool",
+  "skillKey": "clawhub-pdf-batch-processing-tool",
+  "name": "PDF Batch Processing Tool",
+  "summary": "Batch process PDF files - merge multiple PDFs, split PDF into multiple files, rotate pages, extract text, extract images, compress PDFs. Use when you need to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_batch_processing_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "potatosolo",
+      "features": [
+        "Batch process PDF files",
+        "merge multiple PDFs, split PDF into multiple files, rotate pages, extract text, extract images,.",
+        "Use when you need to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-batch-processing-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264348694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-batch-processing-tool",
+      "url": "https://clawhub.ai/skills/pdf-batch-processing-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-batch-processing-tool",
+    "url": "https://clawhub.ai/skills/pdf-batch-processing-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-batch-processing-tool-adb0144d468b9290.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-batch-processing-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-batch-processing-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac1b942e93cab1fd0d27fafa5a8343a0d7f8ae11a7cbe8655e860f38c96bb106",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:53:44.515Z"
+}

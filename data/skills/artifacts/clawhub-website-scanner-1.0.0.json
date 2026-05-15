@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_scanner",
+  "skill": {
+    "id": 39576,
+    "skillKey": "clawhub-website-scanner",
+    "name": "Web Site or Domain Name Basic Information Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-scanner",
+    "url": "https://clawhub.ai/skills/website-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-scanner-2c8590ff6cbc9d07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive website analysis and scanning tool. Analyzes IP (IPv4/IPv6), DNS records, WHOIS data, website content (including Schema.org JSON-LD, robots.txt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hugogu",
+      "userId": "s1786pd9zc99skgrwcbc48wtss83nynb",
+      "displayName": "Hugo Gu",
+      "image": "https://avatars.githubusercontent.com/u/2989766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775130983159,
+      "changelog": "Initial release of the website-scanner skill.\n\n- Comprehensive website analysis: scans IP, DNS records, WHOIS, content (Schema.org, robots.txt, llms.txt, sitemap.xml), SEO, and third-party data.\n- Deep scanning support with Playwright for client-side rendered pages.\n- Generates detailed technical reports in console, JSON, and markdown formats.\n- Includes actionable SEO audit, structured data extraction, and technology stack detection.\n- Designed for easy integration with OpenClaw and handles multiple pages in audits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b813e512107e6197f139680c15d38e9f75a47d4c0504b41cc820f517c7613f59"
+}

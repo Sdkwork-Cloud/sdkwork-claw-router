@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aster-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aster_skill",
+  "skill": {
+    "id": 20077,
+    "skillKey": "clawhub-aster-skill",
+    "name": "Aster-Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aster-skill",
+    "url": "https://clawhub.ai/skills/aster-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aster-skill-b188b08d7f9bd458.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors crypto news for BTC, ETH, SOL, BNB; classifies sentiment; and executes leveraged long/short orders on Aster with risk controls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asterskillagent",
+      "userId": "publishers:asterskillagent",
+      "displayName": "AsterSkill",
+      "image": "https://avatars.githubusercontent.com/u/216458434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772885265569,
+      "changelog": "Initial release of crypto-news-trader skill:\n\n- Monitors Twitter and crypto media news via OpenNews MCP, focusing on BTC, ETH, SOL, and BNB.\n- Classifies news as bullish, bearish, or neutral using LLM with attention to credibility, importance, timeliness, and market sensitivity.\n- Automatically places long or short orders on Aster based on sentiment, confidence, and signal strength.\n- Supports per-coin trade cooldown and default leverage with stop-loss/take-profit management.\n- Requires installation of OpenNews MCP 6551 for news monitoring integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2ae3e69e2840b802698b046f8125a0415449ac439ddc0bce96d005078e49e0e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43896,
+  "uuid": "skill-clawhub-toby-summarize",
+  "skillKey": "clawhub-toby-summarize",
+  "name": "summarize",
+  "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-summarize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-summarize",
+      "url": "https://clawhub.ai/skills/toby-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-summarize",
+    "url": "https://clawhub.ai/skills/toby-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-summarize-107005f5373a25d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-summarize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-summarize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90c25ed63ef9d9da954607de34819bc4c13b8e9b77ed7e3d1f8daf5572d1c327",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:00:18.650Z"
+}

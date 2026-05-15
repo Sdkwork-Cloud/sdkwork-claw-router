@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-market@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_market",
+  "skill": {
+    "id": 25106,
+    "skillKey": "clawhub-skill-market",
+    "name": "SkillMarket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-market",
+    "url": "https://clawhub.ai/skills/skill-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-market-e6a6e9d4fc6ac55f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to find, explore, and install new skills from the Zerone Skill Market (https://api.zerone.market/api). Trigger this when the user asks to \"add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zerone-agent",
+      "userId": "publishers:zerone-agent",
+      "displayName": "Zero",
+      "image": "https://avatars.githubusercontent.com/u/63570164?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 385,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773364615582,
+      "changelog": "- Added explicit security warnings and precautions before executing installation commands.\n- Users must now confirm and approve all install commands before any installation action is taken.\n- Recommended verifying package integrity and reviewing installation instructions manually or in a sandbox.\n- Improved guidance to restrict privileged actions during skill installation.\n- Removed README.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e7497979f82dface5d01ca4f96d2d9e69b08ede4bbc662ee97d9616aed9adda"
+}

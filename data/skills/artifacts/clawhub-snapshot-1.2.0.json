@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snapshot@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapshot",
+  "skill": {
+    "id": 54208,
+    "skillKey": "clawhub-snapshot",
+    "name": "OpenClaw Backup & Restore — Encrypted OpenClaw Snapshots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapshot",
+    "url": "https://clawhub.ai/skills/snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapshot-16a0eeb0791b6c92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore the .openclaw agent folder — encrypted snapshots pushed to a private GitHub repo. Use this skill whenever the user mentions backup, restor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishbhimani",
+      "userId": "s177x6hk3mtf64ghrjvr20mb1583hrq5",
+      "displayName": "KrishBhimani",
+      "image": "https://avatars.githubusercontent.com/u/126689784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774212031465,
+      "changelog": "Version 1.2.0\nSecurity hardening and runtime compatibility fixes.\n\n- Exclude all .env files from backups (.env, .env.*, at any depth) — secrets never end up in archives\n- Removed requires.bins (gpg, gpg-agent, git) from frontmatter — these are installed by setup.py at runtime, declaring them as required prevented the skill from loading on fresh workspaces where they aren't yet installed\n- Flexible credential resolution: os.environ first, skill .env fallback\n- Strip trailing commas from env values (OpenClaw injection edge case)\n- openclaw.json only needs { \"snapshot\": { \"enabled\": true } }",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1d196afa9a756f9e3b1eec66ad9a0d3efa803b18dd18a827a8aecee25c40324"
+}

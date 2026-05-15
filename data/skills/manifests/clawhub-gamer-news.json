@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17122,
+  "uuid": "skill-clawhub-gamer-news",
+  "skillKey": "clawhub-gamer-news",
+  "name": "gamer-news-skill",
+  "summary": "Fetch and summarize the latest video game news from major gaming outlets (IGN, Kotaku, GameSpot, Polygon, Eurogamer, Rock Paper Shotgun, VG247, Gematsu, Play...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamer_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yeonwoo Jo",
+      "features": [
+        "Fetch and summarize the latest video game news from major gaming outlets (IGN, Kotaku, GameSpot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamer-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16258627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamer-news",
+      "url": "https://clawhub.ai/skills/gamer-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamer-news",
+    "url": "https://clawhub.ai/skills/gamer-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamer-news-959e1775ed80a8da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamer-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamer-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2e56f845cb03652dd14f30109117144d82b12da89b3ced39dbb747048dd75b3",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:04:23.011Z"
+}

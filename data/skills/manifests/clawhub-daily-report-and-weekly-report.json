@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69767,
+  "uuid": "skill-clawhub-daily-report-and-weekly-report",
+  "skillKey": "clawhub-daily-report-and-weekly-report",
+  "name": "日报和周报(daily-report and weekly-report)",
+  "summary": "自动生成工作日报和周报的技能。当用户需要生成工作总结、工作汇报、日报或周报时使用。 技能通过分析git提交记录、TODO注释和工作日志，自动生成结构化的工作报告。 使用此技能的场景包括：用户需要向领导汇报工作进展、总结本周完成的任务、 准备每日站立会议内容、记录工作成果、规划下周工作等。 确保在用户提到\"日报\"、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_and_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flonerze",
+      "features": [
+        "自动生成工作日报和周报的技能。当用户需要生成工作总结、工作汇报、日报或周报时使用。 技能通过分析git提交记录、TODO注释和工作日志，自动生成结构化的工作报告。 使用此技能的场景包括：用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-report-and-weekly-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191269876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-report-and-weekly-report",
+      "url": "https://clawhub.ai/skills/daily-report-and-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-and-weekly-report",
+    "url": "https://clawhub.ai/skills/daily-report-and-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-and-weekly-report-25fd1aceb561a68f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-report-and-weekly-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-and-weekly-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34a49e223aee415f8403b01a48cea142d4d4f6de1f9ef97a1798116af0d70441",
+      "artifactSizeBytes": 2711
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:45:12.932Z"
+}

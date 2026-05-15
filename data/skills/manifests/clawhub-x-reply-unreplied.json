@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30236,
+  "uuid": "skill-clawhub-x-reply-unreplied",
+  "skillKey": "clawhub-x-reply-unreplied",
+  "name": "X Reply Unreplied",
+  "summary": "Check X notifications, mentions, or reply threads and answer posts that still need a response from the user. Use when the user wants help replying to unrepli...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_reply_unreplied",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Check X notifications, mentions, or reply threads and answer posts that still need a response f.",
+        "Use when the user wants help replying to unrepli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-reply-unreplied@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-reply-unreplied",
+      "url": "https://clawhub.ai/skills/x-reply-unreplied"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-reply-unreplied",
+    "url": "https://clawhub.ai/skills/x-reply-unreplied",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-reply-unreplied-5ae4dc42fd0b6621.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-reply-unreplied@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-reply-unreplied-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aefee5e900fb84344ef052cfa095782168c65a07cc8a24bdae293411665c33c",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:19:58.175Z"
+}

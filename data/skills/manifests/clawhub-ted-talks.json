@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67943,
+  "uuid": "skill-clawhub-ted-talks",
+  "skillKey": "clawhub-ted-talks",
+  "name": "TED Talks",
+  "summary": "提供全球思想洞察、中英双语字幕及核心观点解析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ted_talks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供全球思想洞察、中英双语字幕及核心观点解析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ted-talks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ted-talks",
+      "url": "https://clawhub.ai/skills/ted-talks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ted-talks",
+    "url": "https://clawhub.ai/skills/ted-talks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ted-talks-4ad5b07c9ec3339d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ted-talks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ted-talks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14b4137ddbcd0119da1db8f0285f694ef3f49a1eed5b093b07174c6bd2b29575",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:28:20.951Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67131,
+  "uuid": "skill-clawhub-trade-news-summary",
+  "skillKey": "clawhub-trade-news-summary",
+  "name": "外贸资讯聚合器 (多源 RSS + 翻译 + 飞书推送)",
+  "summary": "自动抓取外贸相关多源RSS新闻，翻译标题生成中文Markdown报告，支持飞书机器人推送更新。",
+  "version": "2.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_news_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeWangup",
+      "features": [
+        "自动抓取外贸相关多源RSS新闻，翻译标题生成中文Markdown报告，支持飞书机器人推送更新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-news-summary@2.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184340288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-news-summary",
+      "url": "https://clawhub.ai/skills/trade-news-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-news-summary",
+    "url": "https://clawhub.ai/skills/trade-news-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-news-summary-012031ffd6adc72b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-news-summary@2.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-news-summary-2.3.3.json",
+      "version": "2.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2889120b8d0c18c1fcae4e9fe4ef5da56072eeecddf78ce751fba48eb0be64fa",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:00:22.429Z"
+}

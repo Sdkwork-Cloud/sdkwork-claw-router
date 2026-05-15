@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14290,
+  "uuid": "skill-clawhub-yandex-tracker-cli",
+  "skillKey": "clawhub-yandex-tracker-cli",
+  "name": "Yandex Tracker CLI",
+  "summary": "CLI for Yandex Tracker (bash + curl). Queues, issues, comments, worklogs, attachments, YQL.",
+  "version": "1.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_tracker_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bohdan Kamuz",
+      "features": [
+        "CLI for Yandex Tracker (bash + curl)",
+        "Queues, issues, comments, worklogs, attachments, YQL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-tracker-cli@1.2.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118307284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-tracker-cli",
+      "url": "https://clawhub.ai/skills/yandex-tracker-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-tracker-cli",
+    "url": "https://clawhub.ai/skills/yandex-tracker-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-tracker-cli-a20a2dbbccdcd05e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-tracker-cli@1.2.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-tracker-cli-1.2.8.json",
+      "version": "1.2.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60c2e6e19280fede0126f133f57d14f55cea97b6c967a9771d1572066eb8f965",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:58:30.674Z"
+}

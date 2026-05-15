@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55628,
+  "uuid": "skill-clawhub-nanobanana-skill",
+  "skillKey": "clawhub-nanobanana-skill",
+  "name": "Nanobanana Skill",
+  "summary": "Generate or edit images using Google Gemini API via nanobanana. Triggers: \"nanobanana\", \"generate image\", \"create image\", \"edit image\", \"AI drawing\", \"图片生成\",...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengfei Ni",
+      "features": [
+        "Generate or edit images using Google Gemini API via nanobanana",
+        "Triggers: \"nanobanana\", \"generate image\", \"create image\", \"edit image\", \"AI drawing\", \"图片生成\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobanana-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/676637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobanana-skill",
+      "url": "https://clawhub.ai/skills/nanobanana-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana-skill",
+    "url": "https://clawhub.ai/skills/nanobanana-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana-skill-56c8c3e1fe214f9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobanana-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobanana-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b3ccaaec48a2086a54d90eba642f3aa5cc0e80367809bb569089c37c94f3081",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:07:10.468Z"
+}

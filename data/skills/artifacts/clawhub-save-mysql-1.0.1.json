@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-mysql@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_mysql",
+  "skill": {
+    "id": 43153,
+    "skillKey": "clawhub-save-mysql",
+    "name": "lin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-mysql",
+    "url": "https://clawhub.ai/skills/save-mysql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-mysql-1f6a1089943f612c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "extract parameters from a given URL and save them into a MySQL database. use when you need to store URL query parameters for later processing or analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lin-shiwu",
+      "userId": "s178j5066w5qf5w91k6sw37jcd83kws6",
+      "displayName": "番茄番茄番茄范",
+      "image": "https://avatars.githubusercontent.com/u/192315306?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774405760234,
+      "changelog": "- No code changes in this release.\n- Documentation and usage details remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f56bf8fc5207a055f4309e2c647de5a48584cb725b905b17b0681e60e58743e"
+}

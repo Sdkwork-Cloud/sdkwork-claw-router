@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-script-check-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_script_check_skill",
+  "skill": {
+    "id": 58331,
+    "skillKey": "clawhub-chinese-script-check-skill",
+    "name": "Chinese Script Check Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-script-check-skill",
+    "url": "https://clawhub.ai/skills/chinese-script-check-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-script-check-skill-ee410cd839cae662.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chinese Script checking/Proofreading/Polishing/Editing skill, optimized for Consistency Check/Goof Checking.中文剧本检查/校对/修改技能，穿帮检查/服化道一致性检查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flankechen",
+      "userId": "s17b70t4btcs49yzajxbdchgd183hddc",
+      "displayName": "flankechen",
+      "image": "https://avatars.githubusercontent.com/u/4598153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773720060886,
+      "changelog": "chinese-script-check-skill v0.1.0\n\n- Initial release of a Chinese script checking and editing skill.\n- Provides comprehensive proofreading and consistency checks for scripts, focusing on costume/prop continuity and logical coherence.\n- Generates structured reports on script issues, categorized by severity.\n- Saves detailed role and scene information to intermediate files for deeper review.\n- Emphasizes respectful, constructive feedback while maintaining the script’s original style and intention.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e13119a411fa65cae2744fd5c11055a07fcfad0a8f1b5c91efbe81b0103ce952"
+}

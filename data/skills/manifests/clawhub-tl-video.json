@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29255,
+  "uuid": "skill-clawhub-tl-video",
+  "skillKey": "clawhub-tl-video",
+  "name": "Tensorslab Video",
+  "summary": "Generate videos using TensorsLab's AI video generation models. Supports text-to-video and image-to-video generation with automatic prompt enhancement, progre...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tl_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bob",
+      "features": [
+        "Generate videos using TensorsLab's AI video generation models",
+        "Supports text-to-video and image-to-video generation with automatic prompt enhancement, progre.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tl-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207245394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tl-video",
+      "url": "https://clawhub.ai/skills/tl-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tl-video",
+    "url": "https://clawhub.ai/skills/tl-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tl-video-3d84e5a2cf64c458.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tl-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tl-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52ef7f3cc729b18c068ff58ce3fd69ccfdd331178e871ec9284dc6111dd14cf7",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:26:15.572Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-product-marketing-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_product_marketing_context",
+  "skill": {
+    "id": 28489,
+    "skillKey": "clawhub-abm-product-marketing-context",
+    "name": "Product Marketing Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-product-marketing-context",
+    "url": "https://clawhub.ai/skills/abm-product-marketing-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-product-marketing-context-4458cee121f222ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'service context,' 'mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773903619619,
+      "changelog": "- Major update: Improved workflow for gathering and maintaining foundational product marketing context, making it easier to avoid repeating information across marketing tasks.\n- Supports both products, services, and hybrid offerings — B2B and B2C.\n- Offers auto-drafting context from the codebase or a guided, conversational flow to build from scratch.\n- Uses adaptive, user-friendly question patterns (select-lists, fill-in-the-blank, short constraints) to reduce friction and capture authentic customer language.\n- Prioritizes capturing essential offering and audience details first, with optional advanced sections for deeper context.\n- All information is centralized in `.agents/product-marketing-context.md` for use by other marketing skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c54493b401e00fa9c7164990fb6ba9049014fd3e67aa783b734e14fbdb383a06"
+}

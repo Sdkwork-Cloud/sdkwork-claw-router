@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54247,
+  "uuid": "skill-clawhub-doctorclaw-project-status",
+  "skillKey": "clawhub-doctorclaw-project-status",
+  "name": "DoctorClaw Project Status",
+  "summary": "Project status board — compile daily status from tasks, calendar, and team updates into one dashboard. Daily cron or on-demand.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_project_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceobotson-bot",
+      "features": [
+        "Project status board — compile daily status from tasks, calendar, and team updates into one das.",
+        "Daily cron or on-demand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctorclaw-project-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263067918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctorclaw-project-status",
+      "url": "https://clawhub.ai/skills/doctorclaw-project-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-project-status",
+    "url": "https://clawhub.ai/skills/doctorclaw-project-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-project-status-ef598e7efac1f22d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctorclaw-project-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctorclaw-project-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9de884a756edaf3008bb034ab7aea2b7579a0db836feead98923475d8349aac9",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T13:03:29.584Z"
+}

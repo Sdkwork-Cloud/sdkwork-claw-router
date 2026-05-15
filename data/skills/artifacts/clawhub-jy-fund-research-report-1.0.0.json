@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-fund-research-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_fund_research_report",
+  "skill": {
+    "id": 64926,
+    "skillKey": "clawhub-jy-fund-research-report",
+    "name": "jy-fund-research-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-fund-research-report",
+    "url": "https://clawhub.ai/skills/jy-fund-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-fund-research-report-0843f018abbef292.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于恒生聚源 MCP 数据，生成覆盖基金概况、业绩、资产配置、经理、公司及投资建议的深度研究报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775188334520,
+      "changelog": "- 首次发布 jy-fund-research-report 技能，版本 1.0.0\n- 自动生成基金深度研究报告，涵盖基金概况、业绩分析（含同类排名）、资产配置、基金经理、基金公司、投资建议六大模块\n- 支持股票型、混合型、债券型、QDII、FOF 等多种基金类型的查询和分析\n- 并发获取恒生聚源 MCP 多维度数据，结果带时间戳、可追溯\n- 命令行与 OpenClaw 场景均可一键生成 Markdown 格式报告\n- 提供详细环境检查、API KEY 配置、查询与故障排查指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:767c6af74683c4ae0feb78e5b7cbec3369e28bdd286736ee690c88ed6570992f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43582,
+  "uuid": "skill-clawhub-seaart-video-public",
+  "skillKey": "clawhub-seaart-video-public",
+  "name": "seaart video public",
+  "summary": "Use this skill to generate high-quality AI videos using the SeaArt platform (seaart.ai). Supports both Text-to-Video and Image-to-Video generation using vari...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seaart_video_public",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seaartpublic",
+      "features": [
+        "Use this skill to generate high-quality AI videos using the SeaArt platform (seaart.ai)",
+        "Supports both Text-to-Video and Image-to-Video generation using vari..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seaart-video-public@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242731008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seaart-video-public",
+      "url": "https://clawhub.ai/skills/seaart-video-public"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seaart-video-public",
+    "url": "https://clawhub.ai/skills/seaart-video-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seaart-video-public-e7bb088266a97018.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seaart-video-public@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seaart-video-public-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd95c9c7070a7e59db315805b20c0dd6227b0e461277dfcc180dcae43dcff9ca",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:12:51.776Z"
+}

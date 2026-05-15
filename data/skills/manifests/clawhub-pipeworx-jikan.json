@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55856,
+  "uuid": "skill-clawhub-pipeworx-jikan",
+  "skillKey": "clawhub-pipeworx-jikan",
+  "name": "Pipeworx jikan",
+  "summary": "Jikan MCP — wraps the Jikan v4 API (anime/manga data, free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_jikan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Jikan MCP — wraps the Jikan v4 API (anime/manga data, free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-jikan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-jikan",
+      "url": "https://clawhub.ai/skills/pipeworx-jikan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-jikan",
+    "url": "https://clawhub.ai/skills/pipeworx-jikan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-jikan-c59c5ea86141855e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-jikan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-jikan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b06d47b9b40083c6cc7f916ef1e25bd8771fa2f45112d30aa158db8a5dbc8133",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:16:38.924Z"
+}

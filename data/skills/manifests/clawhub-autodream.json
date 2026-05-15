@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32724,
+  "uuid": "skill-clawhub-autodream",
+  "skillKey": "clawhub-autodream",
+  "name": "Autodream",
+  "summary": "Automatic memory consolidation for OpenClaw agents. Analyzes daily memory files, removes duplicates, prunes stale entries, normalizes dates, and builds a cle...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autodream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rimas Logic",
+      "features": [
+        "Automatic memory consolidation for OpenClaw agents",
+        "Analyzes daily memory files, removes duplicates, prunes stale entries, normalizes dates, and bu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autodream@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216572963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autodream",
+      "url": "https://clawhub.ai/skills/autodream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autodream",
+    "url": "https://clawhub.ai/skills/autodream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autodream-c3e6ad779efc6fab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autodream@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autodream-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39aacedcc169fa6ac0c3857c21a692745809a745784b55696e8ea96095111b13",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T21:08:25.563Z"
+}

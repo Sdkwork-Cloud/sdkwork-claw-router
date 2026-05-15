@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oatda-transcribe-audio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_transcribe_audio",
+  "skill": {
+    "id": 45514,
+    "skillKey": "clawhub-oatda-transcribe-audio",
+    "name": "Oatda Transcribe Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-transcribe-audio",
+    "url": "https://clawhub.ai/skills/oatda-transcribe-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-transcribe-audio-2b76cac9aed68825.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio to text using OATDA's unified audio API. Triggers when the user wants speech-to-text, transcription of meetings, podcasts, voice notes, subt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devcsde",
+      "userId": "s1715k9c0vyqryjet8h0ek3xc58447z6",
+      "displayName": "devcsde",
+      "image": "https://avatars.githubusercontent.com/u/29840319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777228245048,
+      "changelog": "Fix: replaced with correct OpenClaw skill format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:570012a54676913c332de65b30697caf17d5f025b1b91de72e6b8cd7013ee421"
+}

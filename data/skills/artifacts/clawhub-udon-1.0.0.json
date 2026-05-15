@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/udon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.udon",
+  "skill": {
+    "id": 41676,
+    "skillKey": "clawhub-udon",
+    "name": "udon noodle recipe search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "udon",
+    "url": "https://clawhub.ai/skills/udon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/udon-97e4e3ac24da5952.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and browse 100 curated Japanese udon noodle recipes from Cookpad. Use when the user asks about udon recipes, wants udon dish ideas, searches for udon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775224153126,
+      "changelog": "Initial release of the udon skill:\n\n- Search and browse 100 curated Japanese udon noodle recipes from Cookpad.\n- Find udon recipes by keyword, ingredient, category, or recipe number.\n- Supports common categories like grilled, cold, curry, miso, egg, meat, seafood, and more.\n- Simple Python script for searching and displaying recipes.\n- Includes references to full recipe details and Cookpad links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26f2a91140a12c1087371e03f6fa752f3a390b36e21937f856fc2701de4c6e00"
+}

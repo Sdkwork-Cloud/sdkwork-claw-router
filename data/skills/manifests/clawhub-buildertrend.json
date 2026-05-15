@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22141,
+  "uuid": "skill-clawhub-buildertrend",
+  "skillKey": "clawhub-buildertrend",
+  "name": "Buildertrend",
+  "summary": "Complete Buildertrend automation via Browser Relay - 43 playbooks covering sales, project management, financials, scheduling, change orders, daily logs, RFIs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buildertrend",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kris Mj",
+      "features": [
+        "Complete Buildertrend automation via Browser Relay",
+        "43 playbooks covering sales, project management, financials, scheduling, change orders, daily l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buildertrend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205469401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buildertrend",
+      "url": "https://clawhub.ai/skills/buildertrend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buildertrend",
+    "url": "https://clawhub.ai/skills/buildertrend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buildertrend-31135ce02873713e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buildertrend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buildertrend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e6f38d8bdbb927a4eb64c3e752b156bca73a7e0f11de6bcee999df91d2bb66",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:23:49.658Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54499,
+  "uuid": "skill-clawhub-otto-travel-local",
+  "skillKey": "clawhub-otto-travel-local",
+  "name": "Otto Travel Local",
+  "summary": "OpenClaw plugin for Otto Travel — search, compare, and book flights and hotels via Otto's MCP endpoint.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otto_travel_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cd-otto",
+      "features": [
+        "OpenClaw plugin for Otto Travel — search, compare, and book flights and hotels via Otto's MCP e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/otto-travel-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185837335?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "otto-travel-local",
+      "url": "https://clawhub.ai/skills/otto-travel-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otto-travel-local",
+    "url": "https://clawhub.ai/skills/otto-travel-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otto-travel-local-c8278f8c6ff819fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/otto-travel-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-otto-travel-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12aa74f1ff051e3ac8bdf67e86cbee0f1c520cbcf3b318ccf524736931444491",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T22:23:09.664Z"
+}

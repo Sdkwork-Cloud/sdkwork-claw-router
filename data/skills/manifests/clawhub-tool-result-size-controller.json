@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72030,
+  "uuid": "skill-clawhub-tool-result-size-controller",
+  "skillKey": "clawhub-tool-result-size-controller",
+  "name": "Tool结果大小控制器",
+  "summary": "自动判断工具结果大小，超阈值时gzip压缩落盘并返回文件元数据，保护对话上下文窗口免受大数据干扰",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_result_size_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suda6632",
+      "features": [
+        "自动判断工具结果大小，超阈值时gzip压缩落盘并返回文件元数据，保护对话上下文窗口免受大数据干扰"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tool-result-size-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194589286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tool-result-size-controller",
+      "url": "https://clawhub.ai/skills/tool-result-size-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-result-size-controller",
+    "url": "https://clawhub.ai/skills/tool-result-size-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-result-size-controller-f197885492ffc219.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tool-result-size-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tool-result-size-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac61774fdad15e45e1db7539da49ae8be337d0d486c17e2a76da288d1765fc91",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:22:20.187Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70557,
+  "uuid": "skill-clawhub-official-doc-generator",
+  "skillKey": "clawhub-official-doc-generator",
+  "name": "Official doc generator",
+  "summary": "专门用于自动生成体制内讨论材料并按照公文格式自动排版的技能。支持会议纪要、发言稿、讨论提纲、工作汇报等多种文档类型，遵循GB/T 9704-2012标准、党政机关公文格式和企业公文规范。使用场景：当用户需要生成体制内正式文档、会议材料、工作报告、发言稿等公文时；当需要按照标准公文格式自动排版时；当需要确保文档符合...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_doc_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leaproud",
+      "features": [
+        "专门用于自动生成体制内讨论材料并按照公文格式自动排版的技能。支持会议纪要、发言稿、讨论提纲、工作汇报等多种文档类型，遵循GB/T 9704-2012标准、党政机关公文格式和企业公文规范。使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official-doc-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185027071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official-doc-generator",
+      "url": "https://clawhub.ai/skills/official-doc-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-doc-generator",
+    "url": "https://clawhub.ai/skills/official-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-doc-generator-8e6f766cd8119353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official-doc-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-doc-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:279f1fa6567fc780374f756d7ef3e158e6dc38e43f087c90bbc0fb3e5f41e004",
+      "artifactSizeBytes": 2775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:16:18.632Z"
+}

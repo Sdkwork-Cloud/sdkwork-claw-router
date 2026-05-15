@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calorie1@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calorie1",
+  "skill": {
+    "id": 67739,
+    "skillKey": "clawhub-calorie1",
+    "name": "calorie1-detective-v3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calorie1",
+    "url": "https://clawhub.ai/skills/calorie1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calorie1-6fa2632312531d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "热量侦探 v2.0.0 - AI 食物卡路里计算器。通过 Kimi 视觉识别照片中的食物，自动计算卡路里、蛋白质、碳水、脂肪等营养数据。内置常见食物营养数据库。用于健康饮食管理、减肥健身追踪。再隐蔽的热量也逃不过我的眼睛！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaa2531349",
+      "userId": "publishers:aaa2531349",
+      "displayName": "aaa2531349",
+      "image": "https://avatars.githubusercontent.com/u/100289418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1772553776048,
+      "changelog": "- 新增对 Kimi 视觉识别（moonshot-v1-8k-vision-preview）的支持\n- 优化并扩充本地食物营养数据库（含 100+ 种食物，类别更新）\n- 进一步优化中文食物识别，专注中餐场景\n- 更新品牌说明与功能描述，版本号同步至 v3.0.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4218f71c39e782c1c3d4007ff4ef33af879e9a024dbada8e20c1c301a0d307f4"
+}

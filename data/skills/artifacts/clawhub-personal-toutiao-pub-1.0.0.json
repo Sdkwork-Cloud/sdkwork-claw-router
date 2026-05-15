@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-toutiao-pub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_toutiao_pub",
+  "skill": {
+    "id": 63364,
+    "skillKey": "clawhub-personal-toutiao-pub",
+    "name": "Personal Toutiao Pub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-toutiao-pub",
+    "url": "https://clawhub.ai/skills/personal-toutiao-pub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-toutiao-pub-10569ad244ab341f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "今日头条微头条自动发布工具。触发词：\"发布头条\"、\"发微头条\"、\"头条发布"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chellen021",
+      "userId": "publishers:chellen021",
+      "displayName": "Chellen",
+      "image": "https://avatars.githubusercontent.com/u/41749266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772933083544,
+      "changelog": "Initial release of personal-toutiao-pub:\n\n- Automatically publishes micro-posts to 今日头条 using local Chrome login state.\n- Waits intelligently for login if not already authenticated.\n- Expands content to at least 100 characters if needed.\n- Supports image uploads, file input, and saves screenshots of successful posts.\n- Provides command-line interface with multiple publishing options and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1247754cb5b9a64c0074560bd56dee97e22e94f589e93791077c0795c645342e"
+}

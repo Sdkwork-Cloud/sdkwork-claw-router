@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-model-switcher@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_model_switcher",
+  "skill": {
+    "id": 29790,
+    "skillKey": "clawhub-auto-model-switcher",
+    "name": "Auto Model Switcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-model-switcher",
+    "url": "https://clawhub.ai/skills/auto-model-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-model-switcher-ece8cc106539cfe8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically selects the best model based on task type and requirements. Use when: (1) Task requires specific capabilities (coding, analysis, multimodal, wr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrcuo",
+      "userId": "s17280ymvbef1e3v9h8n76zvy984kyxk",
+      "displayName": "mrcuo",
+      "image": "https://avatars.githubusercontent.com/u/258098126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773952660799,
+      "changelog": "Add support for writing and research tasks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24b6bc432523ed1acb339df12f0fe160d5631b6c8d0af8a6f2a75a69b102db1d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24244,
+  "uuid": "skill-clawhub-project-manager-agent",
+  "skillKey": "clawhub-project-manager-agent",
+  "name": "Project Manager Agent",
+  "summary": "Monitors active sub-agents, detects stalls, provides status updates, and steers stuck agents via sessions_send.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_manager_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Monitors active sub-agents, detects stalls, provides status updates, and steers stuck agents vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-manager-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-manager-agent",
+      "url": "https://clawhub.ai/skills/project-manager-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-manager-agent",
+    "url": "https://clawhub.ai/skills/project-manager-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-manager-agent-2a3838c525c75b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-manager-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-manager-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06a60402eca91972a6761340b9e95923d1e893f4d44f1803eac7994d6ff5a04f",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:11:39.386Z"
+}

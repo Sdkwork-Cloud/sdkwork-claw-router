@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-audit-trail@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_audit_trail",
+  "skill": {
+    "id": 13192,
+    "skillKey": "clawhub-agent-audit-trail",
+    "name": "Agent Audit Trail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-audit-trail",
+    "url": "https://clawhub.ai/skills/agent-audit-trail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-audit-trail-981438adf9ba10bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Append-only, hash-chained audit log for AI agents. Records agent actions, tool calls, decisions, and external writes with provenance, timestamps, and sha256..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roosch269",
+      "userId": "s177h8y1kddnjj28j50dph6c3983gbsv",
+      "displayName": "Justin",
+      "image": "https://avatars.githubusercontent.com/u/179031035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1476,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775152547302,
+      "changelog": "v2.1: EU AI Act Article 12 compliance mapping, companion skills (Self-Assessment v2.2.1 + AGIRAILS), roadmap for export/stats/remote shipping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7741a70f709eed83986bcc260a873691bdbf409604779394ee7761effa3e6536"
+}

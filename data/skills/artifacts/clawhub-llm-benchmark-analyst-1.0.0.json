@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-benchmark-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_benchmark_analyst",
+  "skill": {
+    "id": 24085,
+    "skillKey": "clawhub-llm-benchmark-analyst",
+    "name": "llm-benchmark-analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-benchmark-analyst",
+    "url": "https://clawhub.ai/skills/llm-benchmark-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-benchmark-analyst-86794c090b24b0ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "search and analyze llm benchmark results within a fixed benchmark universe, then produce evidence-based model strength and weakness reports or domain-leader..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chekhovin",
+      "userId": "s174v1fkeck4gffq8r6k2z6kp583hz1z",
+      "displayName": "水母打结",
+      "image": "https://avatars.githubusercontent.com/u/105915315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773487098884,
+      "changelog": "Initial release of LLM Benchmark Analyst skill.\n\n- Enables searching and analysis of LLM benchmark results within a fixed, pre-approved benchmark universe.\n- Generates evidence-based reports on model strengths/weaknesses, domain leaders, benchmark explanations, and predecessor comparisons.\n- Enforces strict normalization of model/version and prioritizes official benchmark sources, with detailed provenance for every score.\n- Integrates workflow for benchmark selection, multimodal leaderboard extraction, overlap expansion, and defect warning application.\n- Outputs follow structured templates, always including scope, summary, evidence tables, comparisons, data defects, and exclusions.\n- Does not invent or guess missing data; maintains strict reporting fidelity and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec79713aa55c1fefdd6b47ec775a3b9c6a3286386fba3025964ee486af7fd243"
+}

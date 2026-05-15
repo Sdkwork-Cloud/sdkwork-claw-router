@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55144,
+  "uuid": "skill-clawhub-follow-scoutx",
+  "skillKey": "clawhub-follow-scoutx",
+  "name": "谛听.skill",
+  "summary": "Installable digest skill for OpenClaw or Claude Code. Use when the user wants a personalized ScoutX briefing with conversational setup, local preference stor...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_scoutx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sundy Yang",
+      "features": [
+        "Installable digest skill for OpenClaw or Claude Code",
+        "Use when the user wants a personalized ScoutX briefing with conversational setup, local prefere."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/follow-scoutx@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2383724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "follow-scoutx",
+      "url": "https://clawhub.ai/skills/follow-scoutx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-scoutx",
+    "url": "https://clawhub.ai/skills/follow-scoutx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-scoutx-378fd0cc63fb526f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/follow-scoutx@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-follow-scoutx-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c20778ce2ab979c376515bef196b1b497dbf5eb19c9e2f90325a5ea8549f5e72",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T16:54:26.797Z"
+}

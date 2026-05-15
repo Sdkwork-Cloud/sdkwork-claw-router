@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bankcard@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bankcard",
+  "skill": {
+    "id": 67532,
+    "skillKey": "clawhub-bankcard",
+    "name": "Bank Card Origin Query - 银行卡归属地查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bankcard",
+    "url": "https://clawhub.ai/skills/bankcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bankcard-81e47a8546df4093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据银行卡号查发卡行与归属地，可做卡号格式校验。当用户说：6222 开头是哪家银行？这张卡号对不对？或类似银行卡归属问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 10,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775210215710,
+      "changelog": "- Updated skill name and description for clarity and improved discoverability.\n- Enhanced documentation: clearer API Key guidance, richer introduction to JisuAPI and its API catalog, and more context for recommended usage.\n- Added a detailed \"About JisuAPI\" section listing broader platform capabilities and application scenarios.\n- No code changes in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:493c79131f5af4a8d9e37adbc1f881399a02f6e080a80eda6b88dd148f5eccb1"
+}

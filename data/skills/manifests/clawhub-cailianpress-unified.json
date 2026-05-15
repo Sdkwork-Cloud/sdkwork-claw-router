@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67936,
+  "uuid": "skill-clawhub-cailianpress-unified",
+  "skillKey": "clawhub-cailianpress-unified",
+  "name": "Cailianpress Unified",
+  "summary": "提供统一稳定的财联社电报数据访问，支持加红、电报、热度查询及文章详情，保证数据可审计和格式统一。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cailianpress_unified",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caimao9539",
+      "features": [
+        "提供统一稳定的财联社电报数据访问，支持加红、电报、热度查询及文章详情，保证数据可审计和格式统一。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cailianpress-unified@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16041782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cailianpress-unified",
+      "url": "https://clawhub.ai/skills/cailianpress-unified"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cailianpress-unified",
+    "url": "https://clawhub.ai/skills/cailianpress-unified",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cailianpress-unified-b5e50991e62cfdec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cailianpress-unified@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cailianpress-unified-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c0e6a0bca8b3155c0f6652b6b2a34e7933cd6fdf83946deaa0475045985727",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:09:49.533Z"
+}

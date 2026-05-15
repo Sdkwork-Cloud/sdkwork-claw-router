@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55502,
+  "uuid": "skill-clawhub-dolph-market-maker",
+  "skillKey": "clawhub-dolph-market-maker",
+  "name": "Simmer Market Maker",
+  "summary": "Places GTC limit orders on both sides (bid/ask) of liquid Polymarket markets. Finds active markets with >$10k 24h volume, mid-range prices, and ample time to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolph_market_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richducat",
+      "features": [
+        "Places GTC limit orders on both sides (bid/ask) of liquid Polymarket markets",
+        "Finds active markets with >$10k 24h volume, mid-range prices, and ample time to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dolph-market-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15804981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dolph-market-maker",
+      "url": "https://clawhub.ai/skills/dolph-market-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolph-market-maker",
+    "url": "https://clawhub.ai/skills/dolph-market-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolph-market-maker-6691aeb7270ae2c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dolph-market-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dolph-market-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ef4431b007c110eda9cdae43f32573d9bac71d1eada82b78eacc1ec58417e2b",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T23:35:17.870Z"
+}

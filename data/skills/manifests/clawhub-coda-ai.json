@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13689,
+  "uuid": "skill-clawhub-coda-ai",
+  "skillKey": "clawhub-coda-ai",
+  "name": "coda.io",
+  "summary": "CLI to read Coda.io documents and pages. List docs, list pages, read content in markdown/json/html.",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anik Datta",
+      "features": [
+        "CLI to read Coda.io documents and pages",
+        "List docs, list pages, read content in markdown/json/html."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coda-ai@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26006798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coda-ai",
+      "url": "https://clawhub.ai/skills/coda-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda-ai",
+    "url": "https://clawhub.ai/skills/coda-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-ai-f889586fe0bb1151.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coda-ai@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-coda-ai-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d4a0c9784a7a80ef4d0e12457570420606e034d07d3fbb46f884c7e57fe4678",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:18:27.328Z"
+}

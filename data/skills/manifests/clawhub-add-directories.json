@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25567,
+  "uuid": "skill-clawhub-add-directories",
+  "skillKey": "clawhub-add-directories",
+  "name": "Add Directories",
+  "summary": "Use when adding new AI/startup directories to directories.json from a URL, pasted text, or GitHub awesome-list. Parses, deduplicates, appends new entries, th...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_directories",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "man0l",
+      "features": [
+        "Use when adding new AI/startup directories to directories.json from a URL, pasted text, or GitH.",
+        "Parses, deduplicates, appends new entries, th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-directories@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1413216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-directories",
+      "url": "https://clawhub.ai/skills/add-directories"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-directories",
+    "url": "https://clawhub.ai/skills/add-directories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-directories-fd84292b1e4a4a53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-directories@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-directories-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8551bfabfd2eb3b9b361392280bb68566976a6550b604f22598952e4f5b9e573",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:46:12.422Z"
+}

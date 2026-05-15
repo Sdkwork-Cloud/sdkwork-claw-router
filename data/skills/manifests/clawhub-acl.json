@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58046,
+  "uuid": "skill-clawhub-acl",
+  "skillKey": "clawhub-acl",
+  "name": "安全权限工程师 ACL与后台安全",
+  "summary": "Security engineer skill for backend ACL structure, menu visibility control, and administrative access safety.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "Security engineer skill for backend ACL structure, menu visibility control, and administrative."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acl",
+      "url": "https://clawhub.ai/skills/acl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acl",
+    "url": "https://clawhub.ai/skills/acl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acl-2344f08e51026cf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c10cc5caaff1c8f02561d4a52310a8648e9bc13de4bb1b709befbe97bd404cd",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:43:09.582Z"
+}

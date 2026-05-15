@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bfunbot-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bfunbot_skill",
+  "skill": {
+    "id": 44352,
+    "skillKey": "clawhub-bfunbot-skill",
+    "name": "BFunbot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bfunbot-skill",
+    "url": "https://clawhub.ai/skills/bfunbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bfunbot-skill-a428748cbfb0b530.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create tokens on BSC, check fee earnings, check BFun.bot Credits balance, trigger agent credit reload, and interact with BFunBot's Agent API and BFun LLM Gat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bfunbot",
+      "userId": "s17cmstk4yqz1tv4hcv6b7ppn183wzrp",
+      "displayName": "BFunbot",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774840802452,
+      "changelog": "Initial release of the bfunbot skill.\n\n- Create tokens on BSC and check trading fee earnings.\n- View your BFun.bot Credits balance and daily token creation quota.\n- Reload credits from trading wallet or trigger agent credit reloads.\n- Access and interact with BFunBot's Agent API as well as the BFun LLM Gateway for using multiple AI models through your BFun.bot account.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4e471c4eaabe76c937af422d53be3fc0511e4524327ca21724a16b82f83c738"
+}

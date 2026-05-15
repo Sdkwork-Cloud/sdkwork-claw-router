@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/triburuby@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triburuby",
+  "skill": {
+    "id": 23846,
+    "skillKey": "clawhub-triburuby",
+    "name": "TribuRuby Training Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triburuby",
+    "url": "https://clawhub.ai/skills/triburuby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triburuby-d915b8e432d70a7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users check in rituals, track streaks, and view tribe activity on TribuRuby."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a8ns",
+      "userId": "publishers:a8ns",
+      "displayName": "Emil-AAB",
+      "image": "https://avatars.githubusercontent.com/u/78978789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772729866961,
+      "changelog": "- Updated API key environment variable to TRIBURUBY_API_KEY.\n- Clarified authentication instructions, including where to create the API key in TribuRuby.\n- Added explicit homepage and primaryEnv fields to metadata.\n- No functional changes to API workflows or user features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:48e074ac0325e2c6caa6529bf4825e95ee04060f29c5da378e48ad92c0debf39"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_data",
+  "skill": {
+    "id": 26518,
+    "skillKey": "clawhub-health-data",
+    "name": "Health Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-data",
+    "url": "https://clawhub.ai/skills/health-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-data-ad4280cfdf5ce0af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Apple Health exports (export.zip or the exported folder) using xmlstarlet/jq to summarize activity, steps, sleep, and source counts. Trigger this ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppopen",
+      "userId": "publishers:ppopen",
+      "displayName": "pp",
+      "image": "https://avatars.githubusercontent.com/u/263042322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772994967374,
+      "changelog": "Initial release: Apple Health export parsing, PHI safeguards, secure output mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa901941db42ea2194df68b761637f0ddf16dc4d7c3cfe26ccbf24198def1278"
+}

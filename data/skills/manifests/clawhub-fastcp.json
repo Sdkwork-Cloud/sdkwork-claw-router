@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58428,
+  "uuid": "skill-clawhub-fastcp",
+  "skillKey": "clawhub-fastcp",
+  "name": "FastCP",
+  "summary": "Multi-target parallel file copy CLI. Reads source once into memory, writes to multiple USB drives concurrently. | 多目标并行复制工具，源文件只读一次，同时写入多个U盘。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongsheng123132",
+      "features": [
+        "Multi-target parallel file copy CLI",
+        "Reads source once into memory, writes to multiple USB drives concurrently",
+        "| 多目标并行复制工具，源文件只读一次，同时写入多个U盘。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90887123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastcp",
+      "url": "https://clawhub.ai/skills/fastcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastcp",
+    "url": "https://clawhub.ai/skills/fastcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastcp-56f8b369ced73336.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d508f5a30c8fcbb60f0ae03b081b988fb4d8bfc968b841c9ff321bf1fc58430",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:39:28.852Z"
+}

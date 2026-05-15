@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-style-writing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_style_writing",
+  "skill": {
+    "id": 38899,
+    "skillKey": "clawhub-human-style-writing",
+    "name": "Human Style Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-style-writing",
+    "url": "https://clawhub.ai/skills/human-style-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-style-writing-6479808937922f86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates natural, human-like texts for daily chats and social media posts across multiple platforms in Chinese, English, or mixed languages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unicorn82",
+      "userId": "s17c9vrae4enyqrrtyhff3142183swrf",
+      "displayName": "unicorn82",
+      "image": "https://avatars.githubusercontent.com/u/32371781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774670956335,
+      "changelog": "Initial publish (router + prompt library for chat/social human-like writing)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4edc607a991b45e85ba5087b0ad2a1f5ec78948e3bc39c0363688c2fda8e1052"
+}

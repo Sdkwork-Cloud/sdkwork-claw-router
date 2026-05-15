@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-content-censor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_content_censor",
+  "skill": {
+    "id": 65720,
+    "skillKey": "clawhub-baidu-content-censor",
+    "name": "Baidu Content Censor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-content-censor",
+    "url": "https://clawhub.ai/skills/baidu-content-censor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-content-censor-ce50fba7bfa831dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供文本和图像内容安全检测，自动识别类型并返回详细审核结果，支持本地图片路径和图片 URL 输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heke-uestc",
+      "userId": "s1751mesmdhx51d6jj3pjm894n8419h3",
+      "displayName": "HeKe-UESTC",
+      "image": "https://avatars.githubusercontent.com/u/92856813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774251544458,
+      "changelog": "baidu-content-censor 1.0.0\n\n- Initial release with API support for both text and image content moderation using Baidu Cloud.\n- Supports automatic trigger on various user audit requests (text/image/content/security).\n- Provides Python API for text_censor, image_censor, universal censor, and manual access_token refresh.\n- Implements automatic access_token management and caching for optimal performance.\n- Returns detailed JSON audit results, including compliance conclusions and data.\n- Requires setting Baidu API Key and Secret Key via environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9da4dcf12f40ec5a114aa8246b6d9af8f1c523e0b556b5eed19489bd818c1391"
+}

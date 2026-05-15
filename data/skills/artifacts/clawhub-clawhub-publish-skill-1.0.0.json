@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_skill",
+  "skill": {
+    "id": 59073,
+    "skillKey": "clawhub-clawhub-publish-skill",
+    "name": "Skill Publisher — ClawHub 一键发布器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-skill",
+    "url": "https://clawhub.ai/skills/clawhub-publish-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-skill-dd6311fd50ad3b9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将本地 skill 目录发布到 clawhub.com 的自动化发布助手。 当用户说\"发布这个 skill 到 clawhub\"、\"把 XX skill 上传到 clawhub\"、 \"clawhub publish\"、\"发布到 clawhub\" 等时触发。 自动处理：token 验证、CLI bug patch、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonia-sz",
+      "userId": "s1730srvecg82e9ex26q7shpd184ghxy",
+      "displayName": "antonia huang",
+      "image": "https://avatars.githubusercontent.com/u/143588581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773109092214,
+      "changelog": "把本地 skill 目录一键发布到 clawhub，自动处理 patch/slug冲突/频率限制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1036a6bb9981ede8346241767909e503670faa4dc516d2ea4c5e68c78274679e"
+}

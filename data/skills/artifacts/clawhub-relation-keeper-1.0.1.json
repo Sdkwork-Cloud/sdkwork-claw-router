@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relation-keeper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relation_keeper",
+  "skill": {
+    "id": 70021,
+    "skillKey": "clawhub-relation-keeper",
+    "name": "relation-keeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relation-keeper",
+    "url": "https://clawhub.ai/skills/relation-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relation-keeper-e281828b996d2b4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "维护、记忆、提醒你的社交关系。用于：(1) 记录和累积人物肖像（性别、出生年/日、家庭地址、手机、一起做过的事等）， (2) 记录未来的约会、纪念日、生日并设置分级提醒，(3) 归档过去共同经历（约会、吃饭、游玩等）， 以便后续查询某人时能回溯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujintang",
+      "userId": "s1714xpmpg4psgmbgsabpe97e9845rat",
+      "displayName": "大仁庄小余",
+      "image": "https://avatars.githubusercontent.com/u/18202085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1543,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770279625696,
+      "changelog": "init",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2785dfa9605ae735c944a2bc2c6262676231aab2a31b1b78ced266035f74576d"
+}

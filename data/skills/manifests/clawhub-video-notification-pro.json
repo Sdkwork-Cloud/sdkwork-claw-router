@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61296,
+  "uuid": "skill-clawhub-video-notification-pro",
+  "skillKey": "clawhub-video-notification-pro",
+  "name": "unisk_video_notification_pro",
+  "summary": "向指定手机号码发送IVVR视频通知，需要传入视频本地路径和手机号",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_notification_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhangKai",
+      "features": [
+        "向指定手机号码发送IVVR视频通知，需要传入视频本地路径和手机号"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-notification-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64352733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-notification-pro",
+      "url": "https://clawhub.ai/skills/video-notification-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-notification-pro",
+    "url": "https://clawhub.ai/skills/video-notification-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-notification-pro-9e71bdfe086e699d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-notification-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-notification-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8098bf4f703b8a23f3b44c50041c179223625dffd6552d9df0ed8a0b4c525fb",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:07:05.644Z"
+}

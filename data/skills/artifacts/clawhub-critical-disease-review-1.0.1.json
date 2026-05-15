@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/critical-disease-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_disease_review",
+  "skill": {
+    "id": 64976,
+    "skillKey": "clawhub-critical-disease-review",
+    "name": "critical-disease-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-disease-review",
+    "url": "https://clawhub.ai/skills/critical-disease-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-disease-review-89e64b5cc2e400db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "重大疾病理赔智能评估（支持 28 种病种）。输入住院病历结构化数据，调用内网评估接口，输出原始 JSON 与自然语言结论（结论 + 证据）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaiccee",
+      "userId": "s1730k4v567rph88v35wj1eftn83jpwr",
+      "displayName": "aaiccee",
+      "image": "https://avatars.githubusercontent.com/u/45053675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773893781992,
+      "changelog": "- 首个版本发布，无功能变更\n- 支持输入结构化住院病历，自动进行28种重大疾病理赔条款的判定与证据整理。\n- 内置数据安全、隐私保护与使用边界说明。\n- 支持保存接口原始 JSON 及自然语言评估结论，便于追溯和二次加工。\n- 提供命令行快速起步和详细参数说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f34ff35c5e01d7d28d9d29e7e1a792e4cf2fbf45d23b3afdc23ad53d450c677"
+}

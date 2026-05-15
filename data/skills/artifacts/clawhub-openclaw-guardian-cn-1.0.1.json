@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-guardian-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guardian_cn",
+  "skill": {
+    "id": 62648,
+    "skillKey": "clawhub-openclaw-guardian-cn",
+    "name": "OpenClaw Guardian CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guardian-cn",
+    "url": "https://clawhub.ai/skills/openclaw-guardian-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guardian-cn-e5bfd68c4375f0d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 系统守护 skill。每日定时自检、自动检测异常并尝试自救。 用于：(1) 每日定时检查 Gateway 状态 (2) 自动检测进程/WebSocket/插件异常 (3) 自动尝试恢复服务 (4) 用户可自定义自检时间 当用户要求设置每日自检、自助恢复、系统守护、自动重启 Gateway 时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenbinxin",
+      "userId": "s17a5b72n1k2azzf75mdn4vapx83k7tk",
+      "displayName": "shenbinxin",
+      "image": "https://avatars.githubusercontent.com/u/48900833?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774407185346,
+      "changelog": "- 文档中自动守护脚本的路径、示例命令更新为通用默认路径 ~/.openclaw，说明中移除了硬编码的安装路径。\n- 强调实际安装路径如有变化需相应修改脚本命令。\n- 其它内容无变动，仅文档细节优化，提升适用性和易用性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:886e2ac8d3137b0a50a79869e57303237ab7e939dd39646e300329e5a986e681"
+}

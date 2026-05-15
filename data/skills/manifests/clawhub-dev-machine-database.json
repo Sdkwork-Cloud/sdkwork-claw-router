@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60593,
+  "uuid": "skill-clawhub-dev-machine-database",
+  "skillKey": "clawhub-dev-machine-database",
+  "name": "Dev Machine Database",
+  "summary": "通过 SSH 连接开发机 datax，查询 MySQL dw 库中的表结构、数据及统计信息，支持只读 select 操作并限制50条记录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_machine_database",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexmayanjun-collab",
+      "features": [
+        "通过 SSH 连接开发机 datax，查询 MySQL dw 库中的表结构、数据及统计信息，支持只读 select 操作并限制50条记录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-machine-database@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247089206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-machine-database",
+      "url": "https://clawhub.ai/skills/dev-machine-database"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-machine-database",
+    "url": "https://clawhub.ai/skills/dev-machine-database",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-machine-database-0cf9677a61b5db15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-machine-database@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-machine-database-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50e536bdaf0579f4276c5e46ba15be045dd8918b6251c156cbace8271ccbcc0a",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:32:22.328Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-news-event-explain-staging@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_event_explain_staging",
+  "skill": {
+    "id": 38774,
+    "skillKey": "clawhub-gate-news-event-explain-staging",
+    "name": "gate-news-eventexplain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-event-explain-staging",
+    "url": "https://clawhub.ai/skills/gate-news-event-explain-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-event-explain-staging-ddce3396e8f94b88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Event attribution and explanation. Use this skill ONLY when the user's query is exclusively about the reason behind a price move with no other analysis dimen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775222569540,
+      "changelog": "- Improved wording in local maintenance instructions; now clarifies changes affect repository copy only.\n- Removed obsolete script: scripts/update-skill.sh.\n- Updated version and metadata to reflect latest release date.\n- No changes to core workflow, routing, or MCP dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62a9306e9bdd5def86acb0194e5519a1100f6fa65c285f26ccb131359f5563ff"
+}

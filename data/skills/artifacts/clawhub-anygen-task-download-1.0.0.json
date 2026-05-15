@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anygen-task-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_task_download",
+  "skill": {
+    "id": 47169,
+    "skillKey": "clawhub-anygen-task-download",
+    "name": "Anygen Task Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-task-download",
+    "url": "https://clawhub.ai/skills/anygen-task-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-task-download-5085fb37edb934da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AnyGen: Download artifacts from a completed task."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supertilico2001",
+      "userId": "s17fn15qsppc5hkbvd53dcppms85xvpe",
+      "displayName": "supertilico2001",
+      "image": "https://avatars.githubusercontent.com/u/42905851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777632516737,
+      "changelog": "Initial release of anygen-task-download\n\n- Adds the ability to download artifacts from a completed AnyGen task using the CLI.\n- Supports downloading all files, specific files by name, thumbnails, and output directory selection.\n- Provides JSON output listing downloaded files and their locations.\n- Includes usage examples and helpful tips for integration.\n- Highlights important prerequisites and security considerations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7be8d95ec5967900a700337a51b77b61711b037046dd9a007b7ab60be2a1a6f6"
+}

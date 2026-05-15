@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smtp-sender@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smtp_sender",
+  "skill": {
+    "id": 52552,
+    "skillKey": "clawhub-smtp-sender",
+    "name": "smtp-sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smtp-sender",
+    "url": "https://clawhub.ai/skills/smtp-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smtp-sender-e84a35471d06fdbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to send emails with support for markdown, HTML text, and attachments, leveraging existing SMTP configuration in `{skill~}/smtp-config.json`. Includes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xlbbb-cn",
+      "userId": "s175ztwtww31epg06959zj9jhn83x2bd",
+      "displayName": "leonard.w",
+      "image": "https://avatars.githubusercontent.com/u/12523600?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1255,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772507735793,
+      "changelog": "- Added smtp-config.example.json to provide a reference SMTP configuration file.\n- Removed sample and metadata files: .clawhub/origin.json, _meta.json, and smtp-config.json.\n- No changes to functionality; configuration and documentation remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b24651ca52b049951d5522643c31dd1a62aa3e2e306683d42d8cecd99d2b199"
+}

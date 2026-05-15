@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71837,
+  "uuid": "skill-clawhub-hd-infoimage",
+  "skillKey": "clawhub-hd-infoimage",
+  "name": "Hd Infoimage",
+  "summary": "高密度信息大图生成技能。根据文章/内容生成高信息密度的视觉大图，适合知识干货、笔记分享、课程内容可视化。支持9种风格：坐标蓝图波普实验室、复古波普网格、文件夹风、色块热敏纸、复古手帐、档案混合媒介、色块酸性风、票据剧场戏票风、Claude陶土风。使用系统配置的图像生成模型（建议4K）生成。当用户提供文章/内容并要...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_infoimage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dadaniya99",
+      "features": [
+        "高密度信息大图生成技能。根据文章/内容生成高信息密度的视觉大图，适合知识干货、笔记分享、课程内容可视化。支持9种风格：坐标蓝图波普实验室、复古波普网格、文件夹风、色块热敏纸、复古手帐、档案混."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hd-infoimage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254098635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hd-infoimage",
+      "url": "https://clawhub.ai/skills/hd-infoimage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-infoimage",
+    "url": "https://clawhub.ai/skills/hd-infoimage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-infoimage-07ca734dd2ad4982.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hd-infoimage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hd-infoimage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0237666c3a591ec78fecd7e7c6124d090f8894d4b6996c3839740cbe7366ce0f",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:43:48.213Z"
+}

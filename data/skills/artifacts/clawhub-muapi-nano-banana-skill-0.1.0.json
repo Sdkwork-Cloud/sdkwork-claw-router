@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muapi-nano-banana-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muapi_nano_banana_skill",
+  "skill": {
+    "id": 50615,
+    "skillKey": "clawhub-muapi-nano-banana-skill",
+    "name": "Nano Banana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muapi-nano-banana-skill",
+    "url": "https://clawhub.ai/skills/muapi-nano-banana-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muapi-nano-banana-skill-e2adb246545c31e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reasoning-driven image generation using structured creative briefs (Gemini 3 style) — generates high-fidelity images via muapi.ai with logic-based prompting"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anil-matcha",
+      "userId": "publishers:anil-matcha",
+      "displayName": "Anil Chandra Naidu Matcha",
+      "image": "https://avatars.githubusercontent.com/u/4326215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773408986359,
+      "changelog": "muapi-nano-banana-skill v0.1.0 — initial release\n\n- Introduces reasoning-driven, structured image generation using creative briefs modeled after Gemini 3's prompt architecture.\n- Integrates a \"Perfect Prompt\" formula: Subject, Action, Context, Composition, Lighting, and Style, in full natural language.\n- Enforces removal of keyword-stuffed prompts, requiring logic-based, physics-consistent descriptions instead.\n- Enhances text rendering by allowing precise, quoted text instructions.\n- Implements agent instruction for prompt rewriting and simulation of search/identity grounding.\n- Provides technical steps and guardrails to ensure coherent, high-fidelity image generation via muapi.ai.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:087923c141c535451994adee050081e3d6cfae9c3fdfdc57012f7e376422e20c"
+}

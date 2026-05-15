@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_pipeline",
+  "skill": {
+    "id": 59142,
+    "skillKey": "clawhub-dev-pipeline",
+    "name": "Dev Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-pipeline",
+    "url": "https://clawhub.ai/skills/dev-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-pipeline-3e7aa00e7d665d85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "版本化开发流水线 —— 与 version-manager 和 project-manager 集成的完整开发流程"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cwyhkyochen-a11y",
+      "userId": "s178d1zg80mbk3ay3b5abegn6n83gd1b",
+      "displayName": "cwyhkyochen-a11y",
+      "image": "https://avatars.githubusercontent.com/u/231615738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772353382203,
+      "changelog": "dev-pipeline 1.0.0 - 首发版本发布！\n\n- 提供与 version-manager 和 project-manager 集成的完整开发流水线，标准化开发版本管理流程。\n- 明确设计工作流：init、analyze、confirm、write、review、fix、deploy、seal。\n- 全面规范命令及结构化输出，覆盖架构分析、编码、审查、修复、部署、归档等各环节。\n- 强化安全流程：version-prepare、version-validate、version-archive 整合于关键节点。\n- 支持 Sub-agent 协作模式，实现主/子会话分工，提升大规模协作和稳定性。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f842ece6a80c73029ebf6b335b18645f05534cba5c291fb91d2702cb42b5b7e5"
+}

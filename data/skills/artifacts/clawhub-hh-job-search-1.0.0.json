@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hh-job-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hh_job_search",
+  "skill": {
+    "id": 26851,
+    "skillKey": "clawhub-hh-job-search",
+    "name": "Skills for finding a job on hh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hh-job-search",
+    "url": "https://clawhub.ai/skills/hh-job-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hh-job-search-d55c08081b6ecee5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, evaluate, and manage job opportunities for a candidate across the Russian market with hh.ru, Habr Career, Telegram vacancy channels/chats, and Linked..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naxofon",
+      "userId": "publishers:naxofon",
+      "displayName": "Nikolay Kuznetsov",
+      "image": "https://avatars.githubusercontent.com/u/47674467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773981007665,
+      "changelog": "Initial release of the job-search skill for structured job hunting across Russian and international sources.\n\n- Search, evaluate, and manage job opportunities from hh.ru, Habr Career, Telegram, and LinkedIn.\n- Supports candidate profiling, custom filtering, vacancy scoring, application tracking, and workflow safety controls.\n- Provides clear safety rules, operating modes (research, assisted, auto-apply, outreach), and workspace best practices.\n- Includes vacancy normalization, tailored resume/cover letter outputs, and a full set of Python tools for automation and parsing.\n- Emphasizes user control: never contacts recruiters or auto-applies without explicit permission.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6001fe3552abd3545c77623a7fc07ab7b592d52a80cdcc5d333d3845764b644"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67083,
+  "uuid": "skill-clawhub-ai-video-creator",
+  "skillKey": "clawhub-ai-video-creator",
+  "name": "AI Video Creator",
+  "summary": "AI 治愈氛围视频自动生产流水线。选题 → 即梦AI生成多段视频 → 拼接配乐 → 发布小红书。每天一条命令，自动产出治愈系短视频内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jameswang",
+      "features": [
+        "AI 治愈氛围视频自动生产流水线。选题 → 即梦AI生成多段视频 → 拼接配乐 → 发布小红书。每天一条命令，自动产出治愈系短视频内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21259595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-creator",
+      "url": "https://clawhub.ai/skills/ai-video-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-creator",
+    "url": "https://clawhub.ai/skills/ai-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-creator-d036d34cdbc871d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:720470ad97f9721ee5eb4963739f7bb070db11a556d4bd3020c26f13baa7e4fa",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:13:26.068Z"
+}

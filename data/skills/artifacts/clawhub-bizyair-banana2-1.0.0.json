@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bizyair-banana2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_banana2",
+  "skill": {
+    "id": 60266,
+    "skillKey": "clawhub-bizyair-banana2",
+    "name": "bizyair-banana2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-banana2",
+    "url": "https://clawhub.ai/skills/bizyair-banana2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-banana2-7996fdf48c80c3f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 BizyAir API 和 Nano Banana 2 模型生成图片。支持参考图、表情包生成。按量付费，无需本地 GPU。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin-chen2026",
+      "userId": "s176dst0jw6q96b7e7fjxbbbp583h2hg",
+      "displayName": "Kevin-Chen2026",
+      "image": "https://avatars.githubusercontent.com/u/266393600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775635218268,
+      "changelog": "使用 BizyAir API 和 Nano Banana 2 模型生成高质量图片。支持参考图、表情包生成。按量付费。\n- **1K 分辨率**：0.05¥/张\n- **2K/4K 分辨率**：0.08¥/张\n- **按量付费**：生成成功才扣费",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfc2af51dc8b41e2a04126607c3a0141294ca8323a65b1c6c6f0b5c77e8d7030"
+}

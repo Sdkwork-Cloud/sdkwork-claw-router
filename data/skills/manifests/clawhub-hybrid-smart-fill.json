@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28667,
+  "uuid": "skill-clawhub-hybrid-smart-fill",
+  "skillKey": "clawhub-hybrid-smart-fill",
+  "name": "hybrid-smart-fill",
+  "summary": "This skill provides hybrid retrieval (BM25 semantic search + TF-IDF vector similarity) for intelligent template auto-filling. Use when users need to batch fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_smart_fill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maodou13",
+      "features": [
+        "This skill provides hybrid retrieval (BM25 semantic search + TF-IDF vector similarity) for inte.",
+        "Use when users need to batch fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hybrid-smart-fill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22877372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hybrid-smart-fill",
+      "url": "https://clawhub.ai/skills/hybrid-smart-fill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-smart-fill",
+    "url": "https://clawhub.ai/skills/hybrid-smart-fill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-smart-fill-842da22b9f6a1485.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hybrid-smart-fill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hybrid-smart-fill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daa582769c816c6fc33d49bcba376c9068749ec69a2d8017ca8d85e9a3a7a803",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:32:35.592Z"
+}

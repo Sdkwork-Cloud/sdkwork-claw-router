@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14795,
+  "uuid": "skill-clawhub-node-transfer",
+  "skillKey": "clawhub-node-transfer",
+  "name": "Node Transfer",
+  "summary": "High-speed, memory-efficient file transfer between OpenClaw nodes using Node.js native streams and token-secured HTTP streaming without Base64 encoding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_transfer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EisonMe",
+      "features": [
+        "High-speed, memory-efficient file transfer between OpenClaw nodes using Node.js native streams."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/node-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13535199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "node-transfer",
+      "url": "https://clawhub.ai/skills/node-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-transfer",
+    "url": "https://clawhub.ai/skills/node-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-transfer-23a28ea027e9a7cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/node-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-node-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b78859c72d41b098736e39ff051bcf93aa0f88aa8c12e83c2829ecbaf3c66e9",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T11:26:51.334Z"
+}

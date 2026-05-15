@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kraft-heinz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kraft_heinz",
+  "skill": {
+    "id": 67366,
+    "skillKey": "clawhub-kraft-heinz",
+    "name": "Kraft Heinz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kraft-heinz",
+    "url": "https://clawhub.ai/skills/kraft-heinz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kraft-heinz-fd585b45df598ed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "北美领先的包装食品饮料企业，拥有200+品牌，以亨氏番茄酱和Kraft奶酪为核心，专注成本管理与品牌创新。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777814844214,
+      "changelog": "- 首发版本，提供Kraft Heinz公司详尽介绍，包括历史、商业模式、护城河及关键数据。\n- 总结3G Capital与巴菲特合作推动的行业变革、成本削减案例及投资教训。\n- 为食品饮料行业并购、零基预算策略、可持续发展等主题研究提供参考。\n- 特别收录亨氏番茄酱品牌趣闻与公司最新创新动态。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f67ff86c47da0325d80c3cec6cc2036339797247eb43272c9790aa1be0edaa0e"
+}

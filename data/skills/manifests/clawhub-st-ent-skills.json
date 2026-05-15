@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27604,
+  "uuid": "skill-clawhub-st-ent-skills",
+  "skillKey": "clawhub-st-ent-skills",
+  "name": "St Ent Mcp",
+  "summary": "Search 699pic enterprise photo/video assets, check whether an asset was already downloaded, inspect download records, and generate download links through the...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.st_ent_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "st699pic",
+      "features": [
+        "Search 699pic enterprise photo/video assets, check whether an asset was already downloaded, ins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/st-ent-skills@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130146777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "st-ent-skills",
+      "url": "https://clawhub.ai/skills/st-ent-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "st-ent-skills",
+    "url": "https://clawhub.ai/skills/st-ent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/st-ent-skills-d6f8f0180acc67b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/st-ent-skills@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-st-ent-skills-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2932a1d529bdd43b9e4f124ffe4f5e41a26ad40715660e312e4d92d71dcbbe51",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:04:32.182Z"
+}

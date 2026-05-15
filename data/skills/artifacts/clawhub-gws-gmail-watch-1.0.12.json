@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-gmail-watch@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_gmail_watch",
+  "skill": {
+    "id": 16752,
+    "skillKey": "clawhub-gws-gmail-watch",
+    "name": "Gws Gmail Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-gmail-watch",
+    "url": "https://clawhub.ai/skills/gws-gmail-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-gmail-watch-f86e89e963e55978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail: Watch for new emails and stream them as NDJSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 672,
+      "installsAllTime": 18,
+      "installsCurrent": 16,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982055065,
+      "changelog": "- Bumped skill version from 0.22.4 to 0.22.5 in SKILL.md.\n- No other changes were made.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3f9f0b529aec773d435fe5f482eee775cb0b554140a86b21e7fa5934f7f4a00"
+}

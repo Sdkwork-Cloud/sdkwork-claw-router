@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/officeclaw@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.officeclaw",
+  "skill": {
+    "id": 14396,
+    "skillKey": "clawhub-officeclaw",
+    "name": "OfficeClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "officeclaw",
+    "url": "https://clawhub.ai/skills/officeclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/officeclaw-6cac7c3128a90d20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to personal Microsoft accounts via Microsoft Graph API to manage email, calendar events, and tasks. Use this skill when the user needs to read/write..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielithomas",
+      "userId": "s175813sqtdwve7j1esbjfprw183qbk0",
+      "displayName": "Daniel Thomas",
+      "image": "https://avatars.githubusercontent.com/u/60994952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 980,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775286115473,
+      "changelog": "feat(security): Recipient allowlist (OFFICECLAW_ALLOWED_RECIPIENTS) — restrict outbound email to configured addresses. Blocked attempts logged + alert file for monitoring. Runtime warning when sending enabled without allowlist. Critical for AI agent deployments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43f1dae1df70dedbf7fcaf7d9ec4d0016abc6f487ec2ed7767134dbbffd0deff"
+}

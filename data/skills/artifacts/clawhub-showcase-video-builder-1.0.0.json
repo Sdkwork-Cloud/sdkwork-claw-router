@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/showcase-video-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showcase_video_builder",
+  "skill": {
+    "id": 19372,
+    "skillKey": "clawhub-showcase-video-builder",
+    "name": "Showcase Video Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showcase-video-builder",
+    "url": "https://clawhub.ai/skills/showcase-video-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showcase-video-builder-d3ea16a573af4694.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build polished showcase and demo videos from screenshots, avatars, and text overlays using ffmpeg. Use when creating demo reels, hackathon presentations, pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 597,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772393336568,
+      "changelog": "Initial release — extracted from Sandman Tales v2 hackathon",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab87d37c4d3b06ed2add5a2b64354586193c187da5715461151519f70253a2e0"
+}

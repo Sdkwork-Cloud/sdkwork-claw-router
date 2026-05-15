@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-knowhere@0.1.0-beta.0",
+  "version": "0.1.0-beta.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_knowhere",
+  "skill": {
+    "id": 30079,
+    "skillKey": "clawhub-clawhub-knowhere",
+    "name": "Knowhere"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-knowhere",
+    "url": "https://clawhub.ai/skills/clawhub-knowhere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-knowhere-622d2c95dd8ed14a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Knowhere OpenClaw plugin to ingest local files or URLs, search stored documents, inspect parsed results, check jobs, and clean up stored document state."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erickthoughts",
+      "userId": "publishers:erickthoughts",
+      "displayName": "Ontos AI",
+      "image": "https://avatars.githubusercontent.com/u/167045138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0-beta.0",
+      "createdAt": 1773718990448,
+      "changelog": "- Initial beta release of the Knowhere skill for ClawHub.\n- Provides guidance on ingesting, searching, inspecting, and managing documents using the Knowhere OpenClaw plugin.\n- Lists tool selection strategies and recommended workflows for document operations.\n- Includes response style best practices, retrieval rules, and attachment handling instructions.\n- Offers example payloads for common tool actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:557e514a0a3ac704e26d8c06f97d4b8ec98c26438bc21549006a620d84f26c07"
+}

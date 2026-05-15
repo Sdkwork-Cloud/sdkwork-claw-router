@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-anup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_anup",
+  "skill": {
+    "id": 55762,
+    "skillKey": "clawhub-video-editor-anup",
+    "name": "Video Editor Anup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-anup",
+    "url": "https://clawhub.ai/skills/video-editor-anup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-anup-fe44feb3de43ade2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the pauses, add background music, and export as a clean reel — and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777866118795,
+      "changelog": "Video Editor Anup 1.0.0 — Initial Release\n\n- Launches easy, AI-powered video editing via chat.\n- Supports uploads up to 500MB (MP4, MOV, AVI, WebM).\n- Handles editing requests: trim, add background music, export polished results in 1–2 minutes.\n- Runs fully in the cloud (no software install); keeps sessions for iterative edits.\n- Includes clear error handling, session, and API token management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:208d978a48f44da635f66eff1a868b2b2cd1c0d29229c0571d193a7b55ecc999"
+}

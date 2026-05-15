@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forge-swap@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forge_swap",
+  "skill": {
+    "id": 54815,
+    "skillKey": "clawhub-forge-swap",
+    "name": "FORGE — Cross-Chain Swap Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forge-swap",
+    "url": "https://clawhub.ai/skills/forge-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forge-swap-aa98c0b41365fa23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-chain swap routing via THORChain. Get quotes and build swap transactions across 44+ assets (BTC, ETH, RUNE, AVAX, USDC and more). Non-custodial — retur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morebetterclaw",
+      "userId": "publishers:morebetterclaw",
+      "displayName": "morebetterclaw",
+      "image": "https://avatars.githubusercontent.com/u/262843550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773595009702,
+      "changelog": "Initial release: THORChain routing, MCP (Streamable HTTP), 44 assets, forgemb affiliate fee",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:648056bbb50d18f187fec7849e5d5cdc1f4e9191caf1f0c75f39006da2b8175b"
+}

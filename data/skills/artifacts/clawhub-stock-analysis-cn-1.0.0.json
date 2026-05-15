@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_cn",
+  "skill": {
+    "id": 65373,
+    "skillKey": "clawhub-stock-analysis-cn",
+    "name": "Stock Analysis CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-cn",
+    "url": "https://clawhub.ai/skills/stock-analysis-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-cn-5cfccce19c46468f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键分析A股：技术面+估值+风险+基本面全覆盖，自动生成Word投资报告。基于腾讯财经API，内置行业专用估值基准。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jy02577302-ux",
+      "userId": "publishers:jy02577302-ux",
+      "displayName": "jy02577302-ux",
+      "image": "https://avatars.githubusercontent.com/u/265815065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773973299554,
+      "changelog": "Initial release: 一键分析A股，支持技术面、估值、风险、基本面，自动生成Word报告。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd0733a14405beff47aea0148c69f483225d68d8d5142c451e54a7407b185c70"
+}

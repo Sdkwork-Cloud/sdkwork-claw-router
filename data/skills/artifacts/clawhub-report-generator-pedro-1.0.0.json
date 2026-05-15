@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-generator-pedro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator_pedro",
+  "skill": {
+    "id": 17620,
+    "skillKey": "clawhub-report-generator-pedro",
+    "name": "Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator-pedro",
+    "url": "https://clawhub.ai/skills/report-generator-pedro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-pedro-6d08efb4bbef316f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional data reports (HTML/PDF-ready) with KPI summaries, charts, tables, executive insights, and recommendations from CSV, Excel, or JSON data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plgonzalezrx8",
+      "userId": "publishers:plgonzalezrx8",
+      "displayName": "Pedro Gonzalez",
+      "image": "https://avatars.githubusercontent.com/u/19900049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 752,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772300792174,
+      "changelog": "Initial release: KPI/report generation skill with security hardening and audit-clean output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fda10e2046824cda13cddbd3d8d694ea9132168b97fc3af23686367b879dfcec"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36336,
+  "uuid": "skill-clawhub-documo",
+  "skillKey": "clawhub-documo",
+  "name": "Documo",
+  "summary": "Documo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Documo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.documo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Documo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Documo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/documo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "documo",
+      "url": "https://clawhub.ai/skills/documo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "documo",
+    "url": "https://clawhub.ai/skills/documo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/documo-2a4f9141b30ce6d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/documo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-documo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fb826974ddf4abfbe3232722bdacd528880cf6e4d7cb97350a1e13c8f712286",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:40:31.715Z"
+}

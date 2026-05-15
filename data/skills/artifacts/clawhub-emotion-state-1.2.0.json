@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emotion-state@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotion_state",
+  "skill": {
+    "id": 9711,
+    "skillKey": "clawhub-emotion-state",
+    "name": "Emotion State"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotion-state",
+    "url": "https://clawhub.ai/skills/emotion-state",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotion-state-dce873eb51d21105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NL emotion tracking + prompt injection via OpenClaw hook"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tashfeenahmed",
+      "userId": "publishers:tashfeenahmed",
+      "displayName": "tashfeenahmed",
+      "image": "https://avatars.githubusercontent.com/u/9307356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2873,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 6,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770288844924,
+      "changelog": "Fix JSONL session file parsing, add fetch timeouts, fix OpenAI classifier role handling, use JSON response mode, add LRU user eviction, add state file locking, add error logging",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78345d8cd488ccd4b5d29624a9998f9a8f52c63e6bd86d9f761c9801c966e760"
+}

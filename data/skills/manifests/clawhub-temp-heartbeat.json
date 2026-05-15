@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69145,
+  "uuid": "skill-clawhub-temp-heartbeat",
+  "skillKey": "clawhub-temp-heartbeat",
+  "name": "Temp Heartbeat - 临时心跳",
+  "summary": "设置一次性临时心跳任务，在指定时间执行提醒、检查或操作，任务完成后自动删除，无需永久配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_heartbeat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "设置一次性临时心跳任务，在指定时间执行提醒、检查或操作，任务完成后自动删除，无需永久配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/temp-heartbeat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "temp-heartbeat",
+      "url": "https://clawhub.ai/skills/temp-heartbeat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-heartbeat",
+    "url": "https://clawhub.ai/skills/temp-heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-heartbeat-73350dccffe9e22c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/temp-heartbeat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-temp-heartbeat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8181142603f26b16150285cf844eab338dde3132bd19a5e4bbf6d9f3b0fb36cf",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T18:48:03.526Z"
+}

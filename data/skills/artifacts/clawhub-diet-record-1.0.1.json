@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diet-record@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diet_record",
+  "skill": {
+    "id": 26740,
+    "skillKey": "clawhub-diet-record",
+    "name": "diet-record"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diet-record",
+    "url": "https://clawhub.ai/skills/diet-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diet-record-a0bcc1217c3726f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diet recording skill. Log meals via text description or food photo upload, auto-recognize food items and estimate nutrition/calories. Activate when user send..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "734818028",
+      "userId": "s170merxhzb91m3mdz68kwbwq584te4q",
+      "displayName": "mijufeng",
+      "image": "https://avatars.githubusercontent.com/u/11549772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776163121451,
+      "changelog": "- Added two new template files: diet-preferences.json and record-schema.json for easier setup and reference.\n- No functional logic changes to the skill code or documentation.\n- Provides sample schemas for user preference and diet record data storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96ba1dd96df917903aede56600855acc3a72c570180df6e5bd6417313a36bcf0"
+}

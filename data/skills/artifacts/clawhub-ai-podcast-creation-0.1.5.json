@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-podcast-creation@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_podcast_creation",
+  "skill": {
+    "id": 11945,
+    "skillKey": "clawhub-ai-podcast-creation",
+    "name": "Ai Podcast Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-podcast-creation",
+    "url": "https://clawhub.ai/skills/ai-podcast-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-podcast-creation-db11204e85a68ee4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI-powered podcasts with text-to-speech, music, and audio editing. Tools: Kokoro TTS, DIA TTS, Chatterbox, AI music generation, media merger. Capabili..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1689,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403016728,
+      "changelog": "- Added a comprehensive SKILL.md with detailed usage examples, available voices, and workflow templates for AI-powered podcast creation.\n- Documented all supported tools: Kokoro TTS, DIA TTS, Chatterbox, AI music generation, and audio merging.\n- Included step-by-step guides for single-voice, multi-voice conversations, full episode pipelines, and audiobooks.\n- Provided best practices, script writing prompts, and podcast episode templates.\n- Outlined enrichment features like background music, sound effects, and audio post-processing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f265606898138b76af4e8200ac9fdf845a5ac599d09e0212d5bef21d1394dd9f"
+}

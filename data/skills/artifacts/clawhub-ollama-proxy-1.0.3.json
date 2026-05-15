@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-proxy@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_proxy",
+  "skill": {
+    "id": 50325,
+    "skillKey": "clawhub-ollama-proxy",
+    "name": "Ollama Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-proxy",
+    "url": "https://clawhub.ai/skills/ollama-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-proxy-1c1a2b6aee279525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ollama proxy — one endpoint that routes to multiple Ollama instances. Drop-in Ollama proxy replacement for localhost:11434. Same Ollama API, same model names..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775610454929,
+      "changelog": "Added /api/pull to drop-in compatibility examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf55f14fe5457db523e5b20a27ea7ea9e21556b8ff2d0e12e1622f3a0a84bba"
+}

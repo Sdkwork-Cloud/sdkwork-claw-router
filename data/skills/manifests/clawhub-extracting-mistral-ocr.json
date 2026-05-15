@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19026,
+  "uuid": "skill-clawhub-extracting-mistral-ocr",
+  "skillKey": "clawhub-extracting-mistral-ocr",
+  "name": "Mistral PDF OCR",
+  "summary": "Extracts text, tables, and images from PDFs (including scanned PDFs) using the Mistral OCR API. Use when user asks to OCR a PDF/image, extract text from a PD...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extracting_mistral_ocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Extracts text, tables, and images from PDFs (including scanned PDFs) using the Mistral OCR API",
+        "Use when user asks to OCR a PDF/image, extract text from a PD..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/extracting-mistral-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "extracting-mistral-ocr",
+      "url": "https://clawhub.ai/skills/extracting-mistral-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extracting-mistral-ocr",
+    "url": "https://clawhub.ai/skills/extracting-mistral-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extracting-mistral-ocr-3922204ec7c5b46b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/extracting-mistral-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-extracting-mistral-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c395f58bceb6f0016e8963dbeb877b92802bc9d69f72229a50146726198cc42",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T11:56:59.880Z"
+}

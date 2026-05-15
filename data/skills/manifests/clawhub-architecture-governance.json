@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69331,
+  "uuid": "skill-clawhub-architecture-governance",
+  "skillKey": "clawhub-architecture-governance",
+  "name": "Architecture Governance",
+  "summary": "架构治理专家。基于六大维度评价系统健康度，生成治理任务与报告。触发：架构健康度评估、技术债务识别、治理规划、架构评审、系统对比、治理周报/月报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_governance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jerry-guo-mys",
+      "features": [
+        "架构治理专家。基于六大维度评价系统健康度，生成治理任务与报告。触发：架构健康度评估、技术债务识别、治理规划、架构评审、系统对比、治理周报/月报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/architecture-governance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188930677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "architecture-governance",
+      "url": "https://clawhub.ai/skills/architecture-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-governance",
+    "url": "https://clawhub.ai/skills/architecture-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-governance-eb5c53a9be82cfc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/architecture-governance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-architecture-governance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c68501b007596ec2979ee75aa58053073373d0a5153b0c53f5e98b18616155c1",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T23:13:52.971Z"
+}

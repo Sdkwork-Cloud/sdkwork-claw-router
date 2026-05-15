@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/overkill-memory-system@1.9.5",
+  "version": "1.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overkill_memory_system",
+  "skill": {
+    "id": 17744,
+    "skillKey": "clawhub-overkill-memory-system",
+    "name": "Overkill Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overkill-memory-system",
+    "url": "https://clawhub.ai/skills/overkill-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overkill-memory-system-ab4e4f38e53b1717.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a neuroscience-inspired 6-tier automated memory system with WAL protocol, semantic search, emotional tagging, and value-based retention for OpenClaw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 750,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "1.9.5",
+      "createdAt": 1772031138642,
+      "changelog": "- Removed platform posts tracking functionality and associated files.\n- Updated documentation to reflect version downgrade from 2.0.0 to 1.9.3.\n- SKILL.md now matches feature availability for 1.9.x (platform post features no longer mentioned).\n- Cleaned up code and metadata to reflect the removal of platform post support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59e624ce41f172b6f54d5a5c6f1de5198d4efc9a3ab1fa34ef02198ed68d84f4"
+}

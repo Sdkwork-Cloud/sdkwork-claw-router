@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65193,
+  "uuid": "skill-clawhub-openclaw-todo-list",
+  "skillKey": "clawhub-openclaw-todo-list",
+  "name": "OpenClaw TODO List",
+  "summary": "通用待办事项管理技能。记录需要做的事（TODO）和已完成的事（DONE），区分于日记的日常记录。触发时机：(1) 有明确任务时 (2) 任务完成时 (3) 用户要求查看进度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_todo_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "通用待办事项管理技能。记录需要做的事（TODO）和已完成的事（DONE），区分于日记的日常记录。触发时机：(1) 有明确任务时 (2) 任务完成时 (3) 用户要求查看进度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-todo-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-todo-list",
+      "url": "https://clawhub.ai/skills/openclaw-todo-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-todo-list",
+    "url": "https://clawhub.ai/skills/openclaw-todo-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-todo-list-bac93be6c4e0ab24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-todo-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-todo-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:902d4e7230469645e069194f840957e2dac5df3184f90b8969270e11acd5cf52",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:39:57.348Z"
+}

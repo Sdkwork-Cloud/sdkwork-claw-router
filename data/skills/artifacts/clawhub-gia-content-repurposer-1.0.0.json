@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gia-content-repurposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gia_content_repurposer",
+  "skill": {
+    "id": 50624,
+    "skillKey": "clawhub-gia-content-repurposer",
+    "name": "Content Repurposer Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gia-content-repurposer",
+    "url": "https://clawhub.ai/skills/gia-content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gia-content-repurposer-ace7957b343921b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Repurpose long-form content (blog posts, articles, YouTube transcripts) into multiple formats automatically — Twitter/X threads, LinkedIn posts, email newsle..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merjua14",
+      "userId": "publishers:merjua14",
+      "displayName": "merjua14",
+      "image": "https://avatars.githubusercontent.com/u/40038194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773356682119,
+      "changelog": "Turn blog posts and articles into Twitter threads, LinkedIn posts, newsletters, and more",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:339bf8f64fc34a213f6fa0d414a96f44b847eaf2d7ae3564eda12c0eaf718b92"
+}

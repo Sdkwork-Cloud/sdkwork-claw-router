@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mbti-fortune@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbti_fortune",
+  "skill": {
+    "id": 63910,
+    "skillKey": "clawhub-mbti-fortune",
+    "name": "MBTI Fortune Teller — Ask Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbti-fortune",
+    "url": "https://clawhub.ai/skills/mbti-fortune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbti-fortune-df05e31b8deb9ab6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MBTI算命师。用户提任何问题，随机抽取一个MBTI类型，用认知功能栈解读答案。触发词：「MBTI算命」「帮我算」「问一卦」「抽个MBTI」「XX会不会」「XX喜不喜欢」「XX是什么类型」。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leilei926524-tech",
+      "userId": "s174ftaafqa048n853nb0g3j7183krjb",
+      "displayName": "leilei926524-tech",
+      "image": "https://avatars.githubusercontent.com/u/238133142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773620167295,
+      "changelog": "Rewrote SKILL.md in English for global audience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:697e596f7f1219ef20e293ab7b93f028b4cceb72f4107c7ac73cb25caef1bc1a"
+}

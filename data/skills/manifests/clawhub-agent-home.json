@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11020,
+  "uuid": "skill-clawhub-agent-home",
+  "skillKey": "clawhub-agent-home",
+  "name": "Ctxly Home",
+  "summary": "Get your own home on the internet - a profile page with a public inbox at home.ctxly.app",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_home",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aerialcombat",
+      "features": [
+        "Get your own home on the internet",
+        "a profile page with a public inbox at home.ctxly.app"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-home@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-home",
+      "url": "https://clawhub.ai/skills/agent-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-home",
+    "url": "https://clawhub.ai/skills/agent-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-home-fc52e26b8cbeb3f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-home@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-home-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:954a42d95cd4295c032f49b1bbad3bb3f10b80cc8233b6243bd72baaf507be67",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T23:47:29.635Z"
+}

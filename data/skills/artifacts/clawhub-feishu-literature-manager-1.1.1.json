@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-literature-manager@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_literature_manager",
+  "skill": {
+    "id": 41934,
+    "skillKey": "clawhub-feishu-literature-manager",
+    "name": "Feishu Literature Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-literature-manager",
+    "url": "https://clawhub.ai/skills/feishu-literature-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-literature-manager-ead61900ffd44337.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated literature retrieval and Feishu Bitable management. Use when user requests to create a literature database, search PubMed for specific topics, or m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenruao",
+      "userId": "s17eecygj06ahq5qrx258z1e7183h86t",
+      "displayName": "chenruao",
+      "image": "https://avatars.githubusercontent.com/u/201542869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774355483642,
+      "changelog": "安全更新：移除个人信息，泛化字段名称",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3d215ea1fffdd25ae3c03f52cde400708248def2ea46ea32d8346629fc52c22"
+}

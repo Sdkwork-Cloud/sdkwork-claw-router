@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sonoscli-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonoscli_hardened",
+  "skill": {
+    "id": 44561,
+    "skillKey": "clawhub-sonoscli-hardened",
+    "name": "Sonoscli Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonoscli-hardened",
+    "url": "https://clawhub.ai/skills/sonoscli-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonoscli-hardened-870cb8a3c0af170d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Sonos speakers (discover/status/play/volume/group)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776956432025,
+      "changelog": "Initial release of sonoscli-hardened.\n\n- Control Sonos speakers on the local network (discover, status, play/pause/stop, volume, group).\n- Includes commands for managing groups, favorites, queue, and Spotify search.\n- Implements four security guardrails for safe handling of destructive actions, confirmation requirements, credential secrecy, and preventing external transmission of device/network data.\n- Installation instructions provided for Go-based sonoscli.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:180787aee4b9324814a8a921e8cdaaa3aa65002789b822c8820d9848df31c411"
+}

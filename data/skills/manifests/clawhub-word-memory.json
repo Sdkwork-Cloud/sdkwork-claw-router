@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65282,
+  "uuid": "skill-clawhub-word-memory",
+  "skillKey": "clawhub-word-memory",
+  "name": "Word Memory",
+  "summary": "单词记忆助手 - 艾宾浩斯记忆曲线、每日打卡、词汇测试",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "艾宾浩斯记忆曲线、每日打卡、词汇测试"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-memory",
+      "url": "https://clawhub.ai/skills/word-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-memory",
+    "url": "https://clawhub.ai/skills/word-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-memory-3b8b6b7e6f81c29e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4af1389a23aacc5dd19c1ace634b03c1086990b2bf0cfbafc4ceeabe0a46921",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:03:39.193Z"
+}

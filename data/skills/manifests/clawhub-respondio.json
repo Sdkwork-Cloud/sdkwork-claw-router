@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24664,
+  "uuid": "skill-clawhub-respondio",
+  "skillKey": "clawhub-respondio",
+  "name": "Respondio",
+  "summary": "Respond.io integration. Manage Organizations. Use when the user wants to interact with Respond.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.respondio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Respond.io integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Respond.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/respondio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "respondio",
+      "url": "https://clawhub.ai/skills/respondio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "respondio",
+    "url": "https://clawhub.ai/skills/respondio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/respondio-9adb1531a83d828f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/respondio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-respondio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af16f39dc6f5b7a1193199a3f386c70b98a21b86b3eaf547087d6815339214e5",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:53.089Z"
+}

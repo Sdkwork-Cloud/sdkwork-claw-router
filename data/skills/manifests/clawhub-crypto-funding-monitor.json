@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60277,
+  "uuid": "skill-clawhub-crypto-funding-monitor",
+  "skillKey": "clawhub-crypto-funding-monitor",
+  "name": "Crypto Funding Monitor",
+  "summary": "实时监测加密货币项目融资和TEG信息，支持Telegram、Discord、Email多渠道推送及定时简报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_funding_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhdryanchang",
+      "features": [
+        "实时监测加密货币项目融资和TEG信息，支持Telegram、Discord、Email多渠道推送及定时简报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-funding-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252296405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-funding-monitor",
+      "url": "https://clawhub.ai/skills/crypto-funding-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-funding-monitor",
+    "url": "https://clawhub.ai/skills/crypto-funding-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-funding-monitor-782ba7e40bc100fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-funding-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-funding-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa2478d97aa25cc96f4c90c71786e19d3c7fcc04976391eb3401509475ba5f10",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:35:48.147Z"
+}

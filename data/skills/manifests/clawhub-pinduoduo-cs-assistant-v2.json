@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65802,
+  "uuid": "skill-clawhub-pinduoduo-cs-assistant-v2",
+  "skillKey": "clawhub-pinduoduo-cs-assistant-v2",
+  "name": "拼多多客服助手",
+  "summary": "拼多多商家客服自动化助手 - 基于 CDP (Chrome DevTools Protocol) 连接真实浏览器、自动登录拼多多商家后台、智能消息回复、售后处理。使用用户日常 Chrome，天然携带登录态，避免平台风控",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinduoduo_cs_assistant_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "拼多多商家客服自动化助手",
+        "基于 CDP (Chrome DevTools Protocol) 连接真实浏览器、自动登录拼多多商家后台、智能消息回复、售后处理。使用用户日常 Chrome，天然携带登录态，避免平台风控"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pinduoduo-cs-assistant-v2@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pinduoduo-cs-assistant-v2",
+      "url": "https://clawhub.ai/skills/pinduoduo-cs-assistant-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinduoduo-cs-assistant-v2",
+    "url": "https://clawhub.ai/skills/pinduoduo-cs-assistant-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinduoduo-cs-assistant-v2-bbd902a0fc38fb2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pinduoduo-cs-assistant-v2@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pinduoduo-cs-assistant-v2-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:424ad9dbdaaa342767e548e0cb3eba99dff729bc076bafd2111caa01d8804d73",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:46:31.214Z"
+}

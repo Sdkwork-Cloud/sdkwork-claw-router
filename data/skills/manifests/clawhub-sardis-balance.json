@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25870,
+  "uuid": "skill-clawhub-sardis-balance",
+  "skillKey": "clawhub-sardis-balance",
+  "name": "Sardis Balance",
+  "summary": "Read-only balance checking and spending analytics for Sardis agent wallets",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis_balance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EfeDurmaz16",
+      "features": [
+        "Read-only balance checking and spending analytics for Sardis agent wallets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sardis-balance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75971010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sardis-balance",
+      "url": "https://clawhub.ai/skills/sardis-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis-balance",
+    "url": "https://clawhub.ai/skills/sardis-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-balance-a77444df3fdbe520.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sardis-balance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sardis-balance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:467940aed738b8d12cb2e8d0c8f2d1111cfeb2ac561273f1ca865f3a1c97fe56",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:24:35.109Z"
+}

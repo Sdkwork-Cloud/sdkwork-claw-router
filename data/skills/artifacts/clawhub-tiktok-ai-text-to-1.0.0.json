@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-ai-text-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_ai_text_to",
+  "skill": {
+    "id": 42016,
+    "skillKey": "clawhub-tiktok-ai-text-to",
+    "name": "Tiktok Ai Text To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-ai-text-to",
+    "url": "https://clawhub.ai/skills/tiktok-ai-text-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-ai-text-to-f9377f3452c765da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text script into TikTok-ready videos with this skill. Works with TXT, DOCX, PDF, SRT files up to 200MB. TikTok creators use it for converting written..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939155711,
+      "changelog": "Initial release: Quickly turn text scripts into TikTok-ready videos using AI voiceover and cloud rendering.\n\n- Converts TXT, DOCX, PDF, or SRT files (up to 200MB) into 1080p TikTok videos with voiceover and captions.\n- Easy authentication with automatic free token generation for new users (100 free credits, valid 7 days).\n- Fast cloud-based processing: most videos ready for download in 1–2 minutes.\n- Supports batch uploads, timeline editing, audio tracks, and export in popular formats (mp4, mov, avi, webm, etc.).\n- User-friendly chat prompts guide you through uploading, editing, checking credits/status, and exporting your video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac2ef4219f41658c2f36cf433e1ea0e7f96a2dc182da6b2eb2b66e096abd557e"
+}

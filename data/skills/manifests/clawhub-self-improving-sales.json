@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41497,
+  "uuid": "skill-clawhub-self-improving-sales",
+  "skillKey": "clawhub-self-improving-sales",
+  "name": "Self-Improving Sales",
+  "summary": "Captures pipeline leaks, objection patterns, pricing errors, forecast misses, competitor shifts, and deal velocity drops to enable continuous sales improveme...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_sales",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "José I. O.",
+      "features": [
+        "Captures pipeline leaks, objection patterns, pricing errors, forecast misses, competitor shifts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-sales@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30682875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-sales",
+      "url": "https://clawhub.ai/skills/self-improving-sales"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-sales",
+    "url": "https://clawhub.ai/skills/self-improving-sales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-sales-22caf40a8f2026cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-sales@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-sales-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4af9abee0050134b5710246a5022e9e52107abbba99ac25a51fb450aa8177c05",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:27:54.009Z"
+}

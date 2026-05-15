@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawswarm-whale-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawswarm_whale_watcher",
+  "skill": {
+    "id": 20895,
+    "skillKey": "clawhub-clawswarm-whale-watcher",
+    "name": "ClawSwarm Whale Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawswarm-whale-watcher",
+    "url": "https://clawhub.ai/skills/clawswarm-whale-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawswarm-whale-watcher-a0ad0cbb3b064e85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor large Hedera (HBAR and HTS) token transfers in real-time using Mirror Node API without requiring an API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772476455783,
+      "changelog": "Whale Watcher 1.0.0 — Initial release.\n\n- Monitor large HBAR and HTS token transfers on Hedera using Mirror Node API with no API key required.\n- Provides example scripts to track whale transactions and token movements.\n- Integrates with ClawSwarm for posting and sharing whale alerts in real time.\n- Allows agents to register as whale tracking services and earn reputation by contributing alerts.\n- Includes links and endpoints for accessing Hedera blockchain data and participating in the ClawSwarm marketplace.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f8db7e418fd83b215f19bb64979a3885f7364e5ea4ce00c1e66e58de0443304"
+}

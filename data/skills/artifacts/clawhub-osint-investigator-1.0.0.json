@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osint-investigator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osint_investigator",
+  "skill": {
+    "id": 12381,
+    "skillKey": "clawhub-osint-investigator",
+    "name": "OSINT Investigator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osint-investigator",
+    "url": "https://clawhub.ai/skills/osint-investigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osint-investigator-7babd68c461b5ff7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep OSINT (Open Source Intelligence) investigations. Use when the user wants to research, find, or investigate any person, place, organisation, username, do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cineglobe",
+      "userId": "publishers:cineglobe",
+      "displayName": "cineglobe",
+      "image": "https://avatars.githubusercontent.com/u/76262232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1451,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772016218812,
+      "changelog": "Initial release of OSINT Investigator – a comprehensive, multi-source open-source intelligence gathering skill.\n\n- Automatically classifies targets (person, username, domain, IP, organization, etc.) and selects relevant investigation modules.\n- Executes deep web, social media, DNS/WHOIS, IP, email, phone, image, map/location, and corporate intelligence searches.\n- Sign in options/api keys for   (optional)\n  • Instagram (username + password)\n  • Twitter/X (Bearer Token — free API v2 tier works)\n  • LinkedIn (email + password)\n  • Facebook (email + password)\n  • Google Maps (API key — geocoding, places, Street View)\n  • Shodan (API key — deep IP intel)\n  • HaveIBeenPwned (API key — breach lookups)\n  • Hunter.io (email discovery)\n  • AbstractAPI (phone lookup)\n\n- Runs all applicable modules in parallel for thorough results.\n- Aggregates and cross-references findings across multiple sources.\n- Outputs a structured, actionable intelligence report for any investigated target.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7917cf50a7ef9fa535361c6491fd609933e7c3f17386bcca6cefec1c819ae72"
+}

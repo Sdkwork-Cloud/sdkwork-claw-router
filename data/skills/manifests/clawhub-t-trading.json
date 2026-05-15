@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64146,
+  "uuid": "skill-clawhub-t-trading",
+  "skillKey": "clawhub-t-trading",
+  "name": "T Trading",
+  "summary": "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易的多维度结构化技术分析和明确操作建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易的多维度结构化技术分析和明确操作建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/t-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "t-trading",
+      "url": "https://clawhub.ai/skills/t-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t-trading",
+    "url": "https://clawhub.ai/skills/t-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t-trading-4cbafb0d91bd689e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/t-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-t-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b720044969ab793e484bd47b8b6b88b63b1ed0ea7707cb4be123ccdf8fd02a7b",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:55:19.508Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61075,
+  "uuid": "skill-clawhub-codeflicker",
+  "skillKey": "clawhub-codeflicker",
+  "name": "Codeflicker",
+  "summary": "CodeFlicker CLI 编程助手 - 快手员工专用的 AI 代码开发工具，支持更多模型和免费用量",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeflicker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeeGoDamn",
+      "features": [
+        "CodeFlicker CLI 编程助手",
+        "快手员工专用的 AI 代码开发工具，支持更多模型和免费用量"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codeflicker@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243561453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codeflicker",
+      "url": "https://clawhub.ai/skills/codeflicker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeflicker",
+    "url": "https://clawhub.ai/skills/codeflicker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeflicker-8505c4f121067c3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codeflicker@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-codeflicker-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2254c3694eb70c3226e3d783f2c13f7455a2a4942988acc4b122c0817d0e343",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T10:42:59.919Z"
+}

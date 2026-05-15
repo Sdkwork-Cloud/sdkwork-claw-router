@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9196,
+  "uuid": "skill-clawhub-reddit-read-only",
+  "skillKey": "clawhub-reddit-read-only",
+  "name": "Reddit (read only - no auth)",
+  "summary": "Browse and search Reddit in read-only mode using public JSON endpoints. Use when the user asks to browse subreddits, search for posts by topic, inspect comment threads, or build a shortlist of links to review and reply to manually.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_read_only",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Browse and search Reddit in read-only mode using public JSON endpoints",
+        "Use when the user asks to browse subreddits, search for posts by topic, inspect comment threads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-read-only@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-read-only",
+      "url": "https://clawhub.ai/skills/reddit-read-only"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-read-only",
+    "url": "https://clawhub.ai/skills/reddit-read-only",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-read-only-a966e80841a37d47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-read-only@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-read-only-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a30d62fdc8ee6f0f50754c7e8e461aae831a8c5e2bdc9af52e18c79a67b6d03",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T05:04:33.423Z"
+}

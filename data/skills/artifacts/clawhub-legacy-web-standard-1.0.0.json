@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legacy-web-standard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legacy_web_standard",
+  "skill": {
+    "id": 62418,
+    "skillKey": "clawhub-legacy-web-standard",
+    "name": "Legacy Web Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legacy-web-standard",
+    "url": "https://clawhub.ai/skills/legacy-web-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legacy-web-standard-e1b7e3c669bcec91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "针对 JavaScript + jQuery + HTML/CSS 传统前端项目的开发与维护规范。当用户在非框架项目中工作，涉及 jQuery、原生 JS、传统多页面应用（MPA）、模板引擎渲染页面、或维护遗留代码时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774577064682,
+      "changelog": "Initial release of legacy-web-standard:\n\n- Introduces guidelines for JavaScript + jQuery + HTML/CSS legacy front-end projects.\n- Covers best practices for code style, security (with emphasis on XSS prevention), file organization, and gradual modernization.\n- Includes detailed rules for event binding, DOM operations, Ajax, jQuery usage, HTML/CSS standards, and file structure.\n- Provides a checklist to help ensure code quality and consistency in maintenance of traditional multi-page and server-rendered applications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18af1931d232853554aa67d3cb69690b5ecd20b2258e1040646fdc48a413b13b"
+}

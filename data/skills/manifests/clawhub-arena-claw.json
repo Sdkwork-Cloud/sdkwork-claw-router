@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18501,
+  "uuid": "skill-clawhub-arena-claw",
+  "skillKey": "clawhub-arena-claw",
+  "name": "are.na claw",
+  "summary": "Simple CLI wrapper for the are.na API. Lists channels, adds blocks, watches feeds. No AI, no automation, no external integrations. Just API calls.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "philkoell",
+      "features": [
+        "Simple CLI wrapper for the are.na API",
+        "Lists channels, adds blocks, watches feeds",
+        "No AI, no automation, no external integrations",
+        "Just API calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arena-claw@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20913807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arena-claw",
+      "url": "https://clawhub.ai/skills/arena-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-claw",
+    "url": "https://clawhub.ai/skills/arena-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-claw-146f3377a1828924.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arena-claw@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arena-claw-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ffeec718de5de0939b63a3da31ca836d64625245a591fe4a5379b51c72d7d91",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T22:05:10.665Z"
+}

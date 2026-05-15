@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-lab-ops-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_lab_ops_log",
+  "skill": {
+    "id": 60004,
+    "skillKey": "clawhub-home-lab-ops-log",
+    "name": "Home Lab Ops Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-lab-ops-log",
+    "url": "https://clawhub.ai/skills/home-lab-ops-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-lab-ops-log-bef39fe15af174e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为个人服务器或家庭实验室记录变更前后、目的、回滚和观察结果。；use for homelab, ops-log, changes workflows；do not use for 执行真实运维命令, 公开敏感主机信息."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773736650671,
+      "changelog": "Initial release of home-lab-ops-log.\n\n- Provides structured logging for homelab or personal server changes, including change intent, before/after state, rollback plan, and observations.\n- Designed for recording and reviewing ops-log workflows; outputs audit-friendly, reviewable drafts and follow-up tasks.\n- Explicitly avoids executing real operations or exposing sensitive host data.\n- Follows a standard output structure: summary, prior state, actions, results, rollback, and todos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c434f4bdd91f40f6c7f7083db42b4d4c3dc5cc96320fc3baa000ef79805c1686"
+}

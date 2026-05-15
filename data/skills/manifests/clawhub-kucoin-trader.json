@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18981,
+  "uuid": "skill-clawhub-kucoin-trader",
+  "skillKey": "clawhub-kucoin-trader",
+  "name": "KuCoin Trader",
+  "summary": "Professional KuCoin (KC) trading system - multi-account support, spot/margin/futures trading, asset transfers. Use to check balances, transfer assets, open/c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kucoin_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "govor",
+      "features": [
+        "Professional KuCoin (KC) trading system",
+        "multi-account support, spot/margin/futures trading, asset transfers",
+        "Use to check balances, transfer assets, open/c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kucoin-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5636461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kucoin-trader",
+      "url": "https://clawhub.ai/skills/kucoin-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kucoin-trader",
+    "url": "https://clawhub.ai/skills/kucoin-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kucoin-trader-c29ead9c240b752e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kucoin-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kucoin-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76dac981e0906c00a120f8d2e09c67b4c871332702cf73d1de2d5498f6b9b757",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:53:12.340Z"
+}

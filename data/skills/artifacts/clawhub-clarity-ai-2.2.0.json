@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-ai@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_ai",
+  "skill": {
+    "id": 29268,
+    "skillKey": "clawhub-clarity-ai",
+    "name": "Clarity AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-ai",
+    "url": "https://clawhub.ai/skills/clarity-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-ai-e6c358e1ad050a8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-Powered Intent Parser - Transform messy input into crystal-clear instructions. Converts verbose Chinese/English input into structured intent. Supports 7 i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjin94606-art",
+      "userId": "s175dphy4bwymz2xyv6jy398qh83nkxd",
+      "displayName": "yjin94606-art",
+      "image": "https://avatars.githubusercontent.com/u/237404437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774602377433,
+      "changelog": "Updated README, merged clarity-engine into clarity-ai",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c88393f946668ba70018639e7b817cf922a9f5daa6e9ead8e6f244796a697223"
+}

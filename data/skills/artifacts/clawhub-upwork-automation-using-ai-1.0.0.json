@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upwork-automation-using-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upwork_automation_using_ai",
+  "skill": {
+    "id": 19008,
+    "skillKey": "clawhub-upwork-automation-using-ai",
+    "name": "Upwork Automation Using Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upwork-automation-using-ai",
+    "url": "https://clawhub.ai/skills/upwork-automation-using-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upwork-automation-using-ai-560add7144329952.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Upwork login, search, filter, and proposal drafting in one browser session, stopping before submission unless explicitly instructed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adeel-powerhouse",
+      "userId": "publishers:adeel-powerhouse",
+      "displayName": "adeel-powerhouse",
+      "image": "https://avatars.githubusercontent.com/u/216753589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772042276091,
+      "changelog": "- Initial release of upwork-automation-using-ai.\n- Automates Upwork job search and proposal drafting within a single browser/session.\n- Supports login automation, job search/filter, disqualifier handling, and proposal field filling (no auto-submit).\n- Enforces strict rules: never submit proposals or switch tabs unless user explicitly requests.\n- Provides clear rubric for job filtering and a structured proposal drafting template.\n- Includes guidance for users when manual intervention or tab switching is needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:704e57c7a5103ec8c22e87a567ffc00fe214e315f6431a9124feab79807fe493"
+}

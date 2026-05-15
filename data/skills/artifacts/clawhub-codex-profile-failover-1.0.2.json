@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-profile-failover@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_profile_failover",
+  "skill": {
+    "id": 57134,
+    "skillKey": "clawhub-codex-profile-failover",
+    "name": "Codex Profile Failover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-profile-failover",
+    "url": "https://clawhub.ai/skills/codex-profile-failover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-profile-failover-59ddc99f5a7140c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw içinde birden fazla openai-codex OAuth profili varken otomatik ve manuel profil taklası sağlar. Aktif profilin kalan kullanım oranı yüzde 10 gibi bi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugurinanc12",
+      "userId": "s17e43s5845fkkyca9jkhccm3x84zzdk",
+      "displayName": "UgurInanc",
+      "image": "https://avatars.githubusercontent.com/u/55364464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776585561414,
+      "changelog": "Docker içinde kullanım ve Codex login mantığı Türkçe olarak açıklamaya eklendi.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:010138600a30963df89a4459dfbf8e226489f0bd7863421d5346904aabbc7e56"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bbt-competitive-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbt_competitive_analysis",
+  "skill": {
+    "id": 43795,
+    "skillKey": "clawhub-bbt-competitive-analysis",
+    "name": "Poll competitive crawl triggers, aggregate the last 6 months of product, review, and QA data by category, produce structured an."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbt-competitive-analysis",
+    "url": "https://clawhub.ai/skills/bbt-competitive-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbt-competitive-analysis-851e8778612b0525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Poll competitive crawl triggers, aggregate the last 6 months of product, review, and QA data by category, produce structured analysis context and a report sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wandervine",
+      "userId": "s178vg6yjb2bjbfge8gj29svcx83wy1g",
+      "displayName": "Wan Wei",
+      "image": "https://avatars.githubusercontent.com/u/33253166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776129469065,
+      "changelog": "**Initial release with automated, database-driven competitor analysis workflow for OpenClaw:**\n\n- Adds CLI and scripts to poll triggers, aggregate 6 months of product/review/QA data, and generate category-based analysis.\n- Outputs structured `analysis_context.json`, Markdown/HTML report skeleton, and sends a DingTalk summary.\n- Includes setup/config references and database/data contract documentation.\n- Designed for scheduled, standardized analysis with external host runtime handling final narrative generation.\n- Ensures all outputs and workflow steps are compatible with OpenClaw platform requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d2d87aade6f45b08a3d5daf01a182baa24146d9d51f4ec0a48308e24a853d42"
+}

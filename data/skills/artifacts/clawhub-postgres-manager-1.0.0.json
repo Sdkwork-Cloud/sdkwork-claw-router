@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postgres-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_manager",
+  "skill": {
+    "id": 49964,
+    "skillKey": "clawhub-postgres-manager",
+    "name": "Postgres Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-manager",
+    "url": "https://clawhub.ai/skills/postgres-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-manager-962f30c1b843bc25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a shared PostgreSQL Docker container for local dev environments. Handles container lifecycle, database creation/removal, and cross-instance dumps via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pereirajair",
+      "userId": "s17ayja6zg12t1dv98gn9tsg3986dtdv",
+      "displayName": "Jair Pereira",
+      "image": "https://avatars.githubusercontent.com/u/1306512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778325510632,
+      "changelog": "Initial release.\n\n- Manage a shared PostgreSQL Docker container for local development.\n- Handles container lifecycle, database creation/removal, and cross-instance dumps.\n- Joins the shared Docker network created by proxy-manager.\n- Provides CLI for common tasks: start/stop/status, create/drop database, database dumps, and interactive psql.\n- Persists data in a named Docker volume.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24202ccf1b8e9b7bb568a916471b6078a7e86d6d0b866174ce245e4f9cc6a9be"
+}

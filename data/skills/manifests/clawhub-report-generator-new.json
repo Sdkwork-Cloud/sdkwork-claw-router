@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57434,
+  "uuid": "skill-clawhub-report-generator-new",
+  "skillKey": "clawhub-report-generator-new",
+  "name": "技术报告生成",
+  "summary": "Generates structured technical reports in Markdown by collecting user input and applying a style guide to a predefined template.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator_new",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dapan0902",
+      "features": [
+        "Generates structured technical reports in Markdown by collecting user input and applying a styl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/report-generator-new@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219090163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "report-generator-new",
+      "url": "https://clawhub.ai/skills/report-generator-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator-new",
+    "url": "https://clawhub.ai/skills/report-generator-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-new-b919c568e4422472.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/report-generator-new@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-report-generator-new-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:078206d7761d45b81263dfaaf8e4d0db3666ebf3167bf1f9a049effecb133bf5",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:55:56.566Z"
+}

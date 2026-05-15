@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37133,
+  "uuid": "skill-clawhub-volcengine-image-studio",
+  "skillKey": "clawhub-volcengine-image-studio",
+  "name": "Volcengine Image Studio",
+  "summary": "Practical image generation workflow for Volcengine/ARK-compatible APIs. Use when users need poster creation, text-to-image, reference-image generation, local...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_image_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koi",
+      "features": [
+        "Practical image generation workflow for Volcengine/ARK-compatible APIs",
+        "Use when users need poster creation, text-to-image, reference-image generation, local..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-image-studio@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135015309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-image-studio",
+      "url": "https://clawhub.ai/skills/volcengine-image-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-image-studio",
+    "url": "https://clawhub.ai/skills/volcengine-image-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-image-studio-71729bd8710eb263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-image-studio@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-image-studio-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:639c27929d6b73398f88b3cc16dc12fb66b3233da19e7fd168187eee6049133c",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:41:42.903Z"
+}

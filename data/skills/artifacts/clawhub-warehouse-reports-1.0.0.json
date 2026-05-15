@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warehouse-reports@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warehouse_reports",
+  "skill": {
+    "id": 27518,
+    "skillKey": "clawhub-warehouse-reports",
+    "name": "warehouse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warehouse-reports",
+    "url": "https://clawhub.ai/skills/warehouse-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warehouse-reports-6612b1692ee3ca80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate warehouse analytics charts, table images, and report-ready visuals from SQLite/CSV data. Use when the user asks for warehouse charts, product table..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinmayagit",
+      "userId": "publishers:chinmayagit",
+      "displayName": "CHINMAYA GARNAIK",
+      "image": "https://avatars.githubusercontent.com/u/86422995?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772736340048,
+      "changelog": "- Initial release of the warehouse-chart-reports skill.\n- Generate warehouse analytics charts and report-ready visuals from SQLite/CSV data.\n- Supports creation of key images: stock status pie chart, revenue by category, 30-day profit trends, product tables, missing products list, and KPI summaries.\n- Designed for easy integration into PDF or slide reports.\n- Includes command-line instructions and recommendations for generating visuals.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc9316e694b8aaef90a6aa3e4d10df47b7bc867af8d137913aaf2de91cf53b5a"
+}

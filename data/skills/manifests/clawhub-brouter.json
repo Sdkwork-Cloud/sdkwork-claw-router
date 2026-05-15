@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23694,
+  "uuid": "skill-clawhub-brouter",
+  "skillKey": "clawhub-brouter",
+  "name": "Brouter",
+  "summary": "Generate GPX bike routes via brouter.de. Use when the user wants a bike route as a GPX file between two places, optionally specifying a routing profile. http...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brouter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "si-gr",
+      "features": [
+        "Generate GPX bike routes via brouter.de",
+        "Use when the user wants a bike route as a GPX file between two places, optionally specifying a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brouter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6516050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brouter",
+      "url": "https://clawhub.ai/skills/brouter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brouter",
+    "url": "https://clawhub.ai/skills/brouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brouter-83a2c18ce58d9de7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brouter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-brouter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b360f8f81bfa5394c8961ff15c716c4d119a55ec50e5de795c8e0b4754ade9fb",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T20:40:39.413Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airshell@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airshell",
+  "skill": {
+    "id": 54688,
+    "skillKey": "clawhub-airshell",
+    "name": "AirShell 🐢"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airshell",
+    "url": "https://clawhub.ai/skills/airshell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airshell-b4bd0fa08e3fc9c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent playbook for the AirShell open-source air quality sensor (github.com/oloapiu/airshell). Gives your agent domain knowledge about CO₂, PM2.5, temperature..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oloapiu",
+      "userId": "publishers:oloapiu",
+      "displayName": "oloapiu",
+      "image": "https://avatars.githubusercontent.com/u/13987587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772835788371,
+      "changelog": "Fix: vesync credentials via environment variables, never hardcoded",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:793b765eb1c5c99e447670ca044dd6578c46ab32e0837e434730146f096346e9"
+}

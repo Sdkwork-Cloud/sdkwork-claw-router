@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72658,
+  "uuid": "skill-clawhub-s2-elderly-guardian-agent",
+  "skillKey": "clawhub-s2-elderly-guardian-agent",
+  "name": "S2 零隐私老人守护者智能体",
+  "summary": "S2 零隐私老人健康哨兵。多模态跌倒监测，向医疗平台或智能家居总线发布健康预警（不包含物理执行裁定）。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_elderly_guardian_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "S2 零隐私老人健康哨兵。多模态跌倒监测，向医疗平台或智能家居总线发布健康预警（不包含物理执行裁定）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-elderly-guardian-agent@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-elderly-guardian-agent",
+      "url": "https://clawhub.ai/skills/s2-elderly-guardian-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-elderly-guardian-agent",
+    "url": "https://clawhub.ai/skills/s2-elderly-guardian-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-elderly-guardian-agent-ee41c323b600b611.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-elderly-guardian-agent@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-elderly-guardian-agent-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8475d860679f43e754be05df458e54db132f61a479c3e8348a334315c82488d9",
+      "artifactSizeBytes": 3766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:28:56.530Z"
+}

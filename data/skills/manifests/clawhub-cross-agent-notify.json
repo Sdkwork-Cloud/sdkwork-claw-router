@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40673,
+  "uuid": "skill-clawhub-cross-agent-notify",
+  "skillKey": "clawhub-cross-agent-notify",
+  "name": "Cross Agent Notify",
+  "summary": "Standard cross-agent notification and collaboration protocol for OpenClaw multi-agent setups. Use when: (1) one agent needs to delegate a task to another age...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_agent_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sune",
+      "features": [
+        "Standard cross-agent notification and collaboration protocol for OpenClaw multi-agent setups",
+        "Use when: (1) one agent needs to delegate a task to another age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-agent-notify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165292279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-agent-notify",
+      "url": "https://clawhub.ai/skills/cross-agent-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-agent-notify",
+    "url": "https://clawhub.ai/skills/cross-agent-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-agent-notify-8556ecfa1ba81a1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-agent-notify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-notify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78585133084b683407fc24f08cae1f8d58bc0b5e1de8d0f37dedf85a6c3049f3",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T09:42:30.704Z"
+}

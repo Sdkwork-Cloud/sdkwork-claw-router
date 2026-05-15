@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-estimate-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_estimate_builder",
+  "skill": {
+    "id": 65435,
+    "skillKey": "clawhub-cn-estimate-builder",
+    "name": "Estimate Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-estimate-builder",
+    "url": "https://clawhub.ai/skills/cn-estimate-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-estimate-builder-66cb84d8be892804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "建设工程项目估算编制系统。生成包含人工费、材料费、机械费、分包费、其他费的详细造价分解表，符合GB/T 50500-2024计价标准。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiyongwang",
+      "userId": "s17794q4z9wefyrcsdwngwptzd83qkh2",
+      "displayName": "ruiyongwang",
+      "image": "https://avatars.githubusercontent.com/u/127424769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775405243392,
+      "changelog": "cn-estimate-builder 1.0.0\n\n- Initial release of the construction project estimate compilation system with cost breakdown per GB/T 50500-2024 standard.\n- Supports detailed categorization: labor, material, equipment, subcontractor, and other costs.\n- Allows rate adjustments for management, profit, fees, and taxes.\n- Provides import/export via pandas DataFrame and Excel.\n- Includes WBS grouping, cost summary, and validation features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f4c6d69c8202a9d083fc901a1d2f0d9bb9249bc5586127338f4feb748d5616f"
+}

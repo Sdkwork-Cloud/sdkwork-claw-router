@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36590,
+  "uuid": "skill-clawhub-mock-build",
+  "skillKey": "clawhub-mock-build",
+  "name": "mock",
+  "summary": "Manage RPM package builds securely and reproducibly using Mock to create clean chroot environments with configurable presets and plugins.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mock_build",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "Manage RPM package builds securely and reproducibly using Mock to create clean chroot environme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mock-build@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mock-build",
+      "url": "https://clawhub.ai/skills/mock-build"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mock-build",
+    "url": "https://clawhub.ai/skills/mock-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mock-build-989f0acbbb16706c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mock-build@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mock-build-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52d4d15498c59c5f1d7c35740e38527425847cded68ed4eebc618142d68ba5c1",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:29:40.315Z"
+}

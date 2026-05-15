@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-tailor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_tailor",
+  "skill": {
+    "id": 46041,
+    "skillKey": "clawhub-resume-tailor",
+    "name": "Resume Tailor — JD-Matched Resume & Cover Letter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-tailor",
+    "url": "https://clawhub.ai/skills/resume-tailor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-tailor-aa91fb0f814f4b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Customize resumes and generate cover letters based on a specific job description (JD). Use this skill whenever the user wants to tailor their resume to a job..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suntianchong",
+      "userId": "s1769sgn271n26sq1pdkz7rvqs85zykp",
+      "displayName": "suntianchong",
+      "image": "https://avatars.githubusercontent.com/u/41775375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773106084230,
+      "changelog": "Initial release of resume-tailor skill.\n\n- Transforms a generic resume into a tailored application package (custom resume + cover letter) based on a specific job description.\n- Guides users through gathering required inputs: resume, job description, and preferences.\n- Analyzes the job description to identify keywords, required skills, and company values.\n- Rewrites resumes to prioritize relevance, keywords, and measurable achievements; trims unrelated content.\n- Generates a concise, personalized cover letter matching the tone and requirements of the target role/company.\n- Provides a gap analysis and quick interview prep tips alongside the tailored documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ae8d418dfbaf0133506d05257b4ddb98a5ae5aaa0cab7ace92951964914fccb"
+}

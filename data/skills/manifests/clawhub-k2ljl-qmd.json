@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23795,
+  "uuid": "skill-clawhub-k2ljl-qmd",
+  "skillKey": "clawhub-k2ljl-qmd",
+  "name": "QMD Markdown Search",
+  "summary": "Search and retrieve markdown documents from local knowledge bases using qmd. Supports BM25 keyword search, vector semantic search, and hybrid search with LLM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k2ljl_qmd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidsteelerose",
+      "features": [
+        "Search and retrieve markdown documents from local knowledge bases using qmd",
+        "Supports BM25 keyword search, vector semantic search, and hybrid search with LLM..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k2ljl-qmd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1289381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k2ljl-qmd",
+      "url": "https://clawhub.ai/skills/k2ljl-qmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k2ljl-qmd",
+    "url": "https://clawhub.ai/skills/k2ljl-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k2ljl-qmd-cbf6a5c94cae8f91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k2ljl-qmd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k2ljl-qmd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:038860b0515d0acced8c5045218fed61737a0d9c34c4a53198e4870959f0b4d5",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:59:15.716Z"
+}

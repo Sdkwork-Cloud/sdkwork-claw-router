@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/essay-humanizer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.essay_humanizer",
+  "skill": {
+    "id": 31915,
+    "skillKey": "clawhub-essay-humanizer",
+    "name": "Essay Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "essay-humanizer",
+    "url": "https://clawhub.ai/skills/essay-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/essay-humanizer-72e3e8c16999c38f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite AI-drafted essays into more human-like academic prose. Fine-tuned LoRA over Qwen3-8B guided by 24 Wikipedia-style AI-writing pattern weights plus MDD..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin0818-lxd",
+      "userId": "s179hhzw0zteyz1ae4wjft1kjh83e23s",
+      "displayName": "kevin0818-lxd",
+      "image": "https://avatars.githubusercontent.com/u/75295236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774004514679,
+      "changelog": "- Major update: Skill now includes a fine-tuned LoRA adapter and inference script for local model use (Apple Silicon only).\n- Adds LoRA adapter weights, pattern references, training documentation, and inference scripts.\n- Local inference supported via `Qwen3-8B-MLX-4bit`, with setup instructions and automated adapter decoding.\n- Optional FastAPI server included for HTTP-based remote use or tool integration.\n- Documentation and references extended; several previous documentation-only files replaced with executable scripts and model assets.\n- Still outputs plain text only, with strict prose, math, and citation requirements unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:681b3956dd00fa91bfa17026ef21497e4b7be35b86a24b1f5235bd6e76f1d9c8"
+}

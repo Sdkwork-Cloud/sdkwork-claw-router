@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27893,
+  "uuid": "skill-clawhub-receipt-logger",
+  "skillKey": "clawhub-receipt-logger",
+  "name": "Receipt Logger",
+  "summary": "Create tamper-proof, append-only, cryptographically signed logs of agent actions with exportable, verifiable JSON receipts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receipt_logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiuge897",
+      "features": [
+        "Create tamper-proof, append-only, cryptographically signed logs of agent actions with exportabl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/receipt-logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57371395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "receipt-logger",
+      "url": "https://clawhub.ai/skills/receipt-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receipt-logger",
+    "url": "https://clawhub.ai/skills/receipt-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receipt-logger-4dee27c76d628b44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/receipt-logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-receipt-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:724adbb536bbf1dce2c2ce4eababac84f0e1672f6f6281f9c1da8fe8238bdc5f",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:07:20.218Z"
+}

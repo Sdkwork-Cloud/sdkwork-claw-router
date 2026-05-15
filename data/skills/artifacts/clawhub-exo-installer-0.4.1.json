@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exo-installer@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exo_installer",
+  "skill": {
+    "id": 14769,
+    "skillKey": "clawhub-exo-installer",
+    "name": "E.x.O. Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exo-installer",
+    "url": "https://clawhub.ai/skills/exo-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exo-installer-305b57b71ad2c4c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, update, and monitor E.x.O. tools like jasper-recall and hopeIDS, manage OpenClaw plugins, and perform health checks with a single command."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emberdesire",
+      "userId": "publishers:emberdesire",
+      "displayName": "emberDesire",
+      "image": "https://avatars.githubusercontent.com/u/167948905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1770809316339,
+      "changelog": "Add SKILL.md and openclaw.plugin.json for ClawHub",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9aa8bbd431e2037c3ddf43610249871c15def96407fab5d7accaf293e6cd2bd5"
+}

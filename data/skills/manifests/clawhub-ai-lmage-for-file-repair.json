@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21361,
+  "uuid": "skill-clawhub-ai-lmage-for-file-repair",
+  "skillKey": "clawhub-ai-lmage-for-file-repair",
+  "name": "ai lmage",
+  "summary": "Async AI image generation (text-to-image and image-to-image). Submit a job to get a task_id, then poll status to get an OSS download URL.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_lmage_for_file_repair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilpvc",
+      "features": [
+        "Async AI image generation (text-to-image and image-to-image)",
+        "Submit a job to get a task_id, then poll status to get an OSS download URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-lmage-for-file-repair@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67964602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-lmage-for-file-repair",
+      "url": "https://clawhub.ai/skills/ai-lmage-for-file-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-lmage-for-file-repair",
+    "url": "https://clawhub.ai/skills/ai-lmage-for-file-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-lmage-for-file-repair-7bd4fa7e7bcf7938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-lmage-for-file-repair@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-lmage-for-file-repair-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8894adddca2e22de69ee34d0b9ed8f6230aa39e7adce079a2e519aedb9147f1d",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:40:14.241Z"
+}

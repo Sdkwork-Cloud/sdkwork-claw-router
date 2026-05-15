@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wundervault-vault@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wundervault_vault",
+  "skill": {
+    "id": 51841,
+    "skillKey": "clawhub-wundervault-vault",
+    "name": "Wundervault Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wundervault-vault",
+    "url": "https://clawhub.ai/skills/wundervault-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wundervault-vault-d882d9f5bda21410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read passwords, API keys, and credentials from a Wundervault encrypted secret vault, and run vault-authorized shell commands with secrets injected — without..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoweman",
+      "userId": "s17c1yjaae9xr2br7s67vews6x85s6xf",
+      "displayName": "snoweman",
+      "image": "https://avatars.githubusercontent.com/u/104793252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1778189178705,
+      "changelog": "Fix vault_entry_get description (does not return plaintext), fix vault_entry_inject_env parameter names, add vault_rsync tool",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35e3151451e8f55666f1119d7d5c2a013e320d39bd4446faea475d16b21edac4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-workflow@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_workflow",
+  "skill": {
+    "id": 65632,
+    "skillKey": "clawhub-ai-workflow",
+    "name": "auto-workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-workflow",
+    "url": "https://clawhub.ai/skills/ai-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-workflow-f7a14287b81d7c79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化工作流引擎 - 将重复性任务自动化。 支持：文件处理、数据转换、定时任务、API 调用、多步骤工作流。 触发词：\"自动化\"、\"工作流\"、\"批量处理\"、\"定时任务\"、\"workflow\"、\"automate\"。 自动执行：预设工作流或自定义流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yofoan",
+      "userId": "s174zrfxwm5679g34e17jp8tch83nfeb",
+      "displayName": "yofoan",
+      "image": "https://avatars.githubusercontent.com/u/267247252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774497141903,
+      "changelog": "auto-workflow 1.0.0\n\n- Major skill overhaul: now features a full automation workflow engine, sample definitions, and script support.\n- Added examples/backup-workflow.json and scripts/workflow-engine.py as new template/example and engine script.\n- Removed legacy skill.json file.\n- SKILL.md now details supported workflow types, preset command usage, advanced workflow definition, and Python engine usage.\n- Enhanced documentation with real-world examples covering file, data, scheduling, and API automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9820caf642530feea01a59d740ef244a92b8d619353aaee15ebd8ae82522d2d8"
+}

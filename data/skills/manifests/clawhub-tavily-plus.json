@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45322,
+  "uuid": "skill-clawhub-tavily-plus",
+  "skillKey": "clawhub-tavily-plus",
+  "name": "Tavily Plus",
+  "summary": "Enhanced Tavily search with multi-API key rotation, AI-powered intent recognition, sub-question decomposition, intelligent summarization, and offline documen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fundou1081",
+      "features": [
+        "Enhanced Tavily search with multi-API key rotation, AI-powered intent recognition, sub-question."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-plus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10492844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-plus",
+      "url": "https://clawhub.ai/skills/tavily-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-plus",
+    "url": "https://clawhub.ai/skills/tavily-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-plus-259d52d7dd114be0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-plus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-plus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a9f2820341eb80eacde07b8ccee1de0c5b46fe74d3768825faa332ac220824",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:27:22.191Z"
+}

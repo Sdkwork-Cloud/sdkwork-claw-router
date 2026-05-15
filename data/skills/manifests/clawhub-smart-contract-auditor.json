@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63319,
+  "uuid": "skill-clawhub-smart-contract-auditor",
+  "skillKey": "clawhub-smart-contract-auditor",
+  "name": "Smart Contract Auditor",
+  "summary": "AI智能合约安全审计，检测重入攻击、整数溢出、权限问题、未检查返回值等常见漏洞。每次调用收费0.001 USDT。触发词：合约审计、contract audit、智能合约安全、代码审计、solidity审计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_contract_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deeplearning1993",
+      "features": [
+        "AI智能合约安全审计，检测重入攻击、整数溢出、权限问题、未检查返回值等常见漏洞。每次调用收费0.001 USDT。触发词：合约审计、contract audit、智能合约安全、代码审计、so."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-contract-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106026146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-contract-auditor",
+      "url": "https://clawhub.ai/skills/smart-contract-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-contract-auditor",
+    "url": "https://clawhub.ai/skills/smart-contract-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-contract-auditor-d395fa86139db8bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-contract-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-contract-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40cbf1351f1ab6fc119f88d562a7e8b587750fd68e67b0493d1b942ffdcc1aa2",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:27:24.511Z"
+}

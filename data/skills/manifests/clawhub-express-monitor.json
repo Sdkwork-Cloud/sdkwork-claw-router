@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63066,
+  "uuid": "skill-clawhub-express-monitor",
+  "skillKey": "clawhub-express-monitor",
+  "name": "express-monitor",
+  "summary": "快递监控Skill - 查询快递物流、绑定手机号自动获取快递、同步到飞书",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.express_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hongjiahao371-pixel",
+      "features": [
+        "快递监控Skill",
+        "查询快递物流、绑定手机号自动获取快递、同步到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/express-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249543018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "express-monitor",
+      "url": "https://clawhub.ai/skills/express-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "express-monitor",
+    "url": "https://clawhub.ai/skills/express-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/express-monitor-c519c577dfd358c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/express-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-express-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:973a8d548909b96cbcb795358db34d680459a064ff44d964819ccfe9109a83b7",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:10:53.709Z"
+}

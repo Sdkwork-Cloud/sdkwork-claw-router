@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64094,
+  "uuid": "skill-clawhub-music-creator",
+  "skillKey": "clawhub-music-creator",
+  "name": "Music Creator",
+  "summary": "AI 音乐创作全流程技能。根据主题和风格创作歌词，通过 MiniMax AI 生成音乐和封面图，Whisper ASR + Aeneas 强制对齐精准校准歌词时序，生成标准 LRC 歌词文件和带歌词同步的播放页面并部署。触发词：创作歌曲、写首歌、生成音乐、AI 音乐、music creator、帮我写首歌、创作音...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顾雪阳",
+      "features": [
+        "AI 音乐创作全流程技能。根据主题和风格创作歌词，通过 MiniMax AI 生成音乐和封面图，Whisper ASR + Aeneas 强制对齐精准校准歌词时序，生成标准 LRC 歌词文件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-creator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6839855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-creator",
+      "url": "https://clawhub.ai/skills/music-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-creator",
+    "url": "https://clawhub.ai/skills/music-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-creator-c556d5b4f8ef7aba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-creator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-creator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a377a546c29cd3addb968007e5673978bfb3868d0c3e99f2822ca8f6dd44532e",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T13:42:32.177Z"
+}

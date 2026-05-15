@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hippocampus-memory@3.8.6",
+  "version": "3.8.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hippocampus_memory",
+  "skill": {
+    "id": 8739,
+    "skillKey": "clawhub-hippocampus-memory",
+    "name": "Hippocampus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hippocampus-memory",
+    "url": "https://clawhub.ai/skills/hippocampus-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hippocampus-memory-f150bd3349e6b8e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory system for AI agents. Automatic encoding, decay, and semantic reinforcement — just like the hippocampus in your brain. Based on Stanford Generative Agents (Park et al., 2023)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "impkind",
+      "userId": "s17a6jgq93ckexmb6qdvze637s84538n",
+      "displayName": "ImpKind",
+      "image": "https://avatars.githubusercontent.com/u/54905270?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 5636,
+      "installsAllTime": 26,
+      "installsCurrent": 25,
+      "stars": 24,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.8.6",
+      "createdAt": 1770323640353,
+      "changelog": "- Skill name updated to \"hippocampus-memory\" and title clarified.\n- Description rewritten for clarity and conciseness.\n- Metadata version bumped to 3.8.6.\n- Documentation restructured for easier reading; headings clarified and formatting improved.\n- No changes to scripts, features, or usage—documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23aac4929cdcd6b29a2d4020963e22e483b87f1046208c3c897d4025f06ace3e"
+}

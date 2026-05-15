@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21104,
+  "uuid": "skill-clawhub-zhuaxia",
+  "skillKey": "clawhub-zhuaxia",
+  "name": "Zhuaxia",
+  "summary": "Export and import OpenClaw instances as portable .claw packages for backup, sharing, and migration. Use when: user wants to back up, share, migrate, or resto...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuaxia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kissrain",
+      "features": [
+        "Export and import OpenClaw instances as portable .claw packages for backup, sharing, and migrat.",
+        "Use when: user wants to back up, share, migrate, or resto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhuaxia@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4645149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhuaxia",
+      "url": "https://clawhub.ai/skills/zhuaxia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuaxia",
+    "url": "https://clawhub.ai/skills/zhuaxia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuaxia-8b76419179572ca9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhuaxia@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhuaxia-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfecf54e372be4aa57d2307f953ba3da79c89ecd8390098a90a91ad9fe4cf8b9",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:33:26.317Z"
+}

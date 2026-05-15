@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/package-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_skill",
+  "skill": {
+    "id": 51650,
+    "skillKey": "clawhub-package-skill",
+    "name": "Package Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-skill",
+    "url": "https://clawhub.ai/skills/package-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-skill-4478a9dc70673db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage skill packages — bundles of related skills merged into a single top-level skill with internal dispatch. A package skill's own description d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiguozhi123456",
+      "userId": "s17c85k8j9szay0na5cba358ax855thv",
+      "displayName": "aiguozhi123456",
+      "image": "https://avatars.githubusercontent.com/u/126325311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776570321570,
+      "changelog": "- Internal scripts create.py and update.py were updated.\n- No changes to functionality or documentation in SKILL.md.\n- Maintenance update; no user-facing changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13c8f4b4dee713bfe63ca96cc842f62eb4f7ca54b5fbeae1466c5bc1920c863c"
+}

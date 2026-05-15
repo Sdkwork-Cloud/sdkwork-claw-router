@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longgang-job-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longgang_job_hunter",
+  "skill": {
+    "id": 71967,
+    "skillKey": "clawhub-longgang-job-hunter",
+    "name": "龙港求职技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longgang-job-hunter",
+    "url": "https://clawhub.ai/skills/longgang-job-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longgang-job-hunter-9e56f689bf1ca0d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动抓取龙港325802人才招聘网职位信息，按用户偏好筛选并整理后发送邮件通知。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ttzuozhe",
+      "userId": "publishers:ttzuozhe",
+      "displayName": "jinxiangren",
+      "image": "https://avatars.githubusercontent.com/u/244527891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 663,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771859993639,
+      "changelog": "Longgang Job Hunter v1.0.0  \n- Initial release: Automatically crawls job postings from 325802 talent recruitment website.  \n- Filters and organizes jobs based on user preferences, including computer, customer service, foreign trade, and clerical positions.  \n- Collects contact details, job description, experience, and education requirements.  \n- Sends organized job search results to a designated email address.  \n- Supports quick and customized job searches with user-specified preferences and email configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:513293541380e3e15ed383ce8e6d863ebd1f33b793d0fba4e9540e91412eae1c"
+}

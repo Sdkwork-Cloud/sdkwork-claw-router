@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zulip-bridge@2026.4.13",
+  "version": "2026.4.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zulip_bridge",
+  "skill": {
+    "id": 51695,
+    "skillKey": "clawhub-zulip-bridge",
+    "name": "Openclaw Zulip Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zulip-bridge",
+    "url": "https://clawhub.ai/skills/zulip-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zulip-bridge-43fef16962ce0ffb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "💬 High-performance Zulip bridge skill. Enables messaging, stream monitoring, and administrative actions on Zulip servers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niyazmft",
+      "userId": "s17cgmcba7qzg2k2gt6mskczrn83tyv2",
+      "displayName": "niyazmft",
+      "image": "https://avatars.githubusercontent.com/u/9331133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "2026.4.13",
+      "createdAt": 1776509902767,
+      "changelog": "Consolidated release v2026.4.13. Includes security hardening (URL encoding for API injection prevention #152), performance optimization (batch disk I/O for event polling #151), and SKILL.md version sync.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:825c591334dfa42e1a2b3e2baf0f1c653574eb1496f846e0173489e8ada76ffb"
+}

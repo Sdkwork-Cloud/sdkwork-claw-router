@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/summarize-all@3.0.6",
+  "version": "3.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_all",
+  "skill": {
+    "id": 65365,
+    "skillKey": "clawhub-summarize-all",
+    "name": "Summarize All"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-all",
+    "url": "https://clawhub.ai/skills/summarize-all",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-all-3af07fda6884f90f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能总结工具 - 自动检测内容类型、智能选择长度、缓存、关键点提取。支持网页、PDF、图片、音频、YouTube。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gu2003li",
+      "userId": "s1782yp2ye3k7mdm2hkj8smvwd83g44y",
+      "displayName": "Qing WETH",
+      "image": "https://avatars.githubusercontent.com/u/259586899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "3.0.6",
+      "createdAt": 1774361547501,
+      "changelog": "- Updated SKILL.md description: removed emoji and simplified to Chinese only.\n- No feature or functionality changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d5299179ca6eca4b7a1b3b77420e22252afc5164f23139d9e9b35c187a737f6"
+}

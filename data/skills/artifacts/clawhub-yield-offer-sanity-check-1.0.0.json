@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yield-offer-sanity-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yield_offer_sanity_check",
+  "skill": {
+    "id": 46388,
+    "skillKey": "clawhub-yield-offer-sanity-check",
+    "name": "Yield Offer Sanity Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yield-offer-sanity-check",
+    "url": "https://clawhub.ai/skills/yield-offer-sanity-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yield-offer-sanity-check-f53596938bad784c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A checklist skill that evaluates whether a yield, staking, or earn offer is reasonable or suspicious. Use when the user encounters a yield promotion. Prompt-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776300054151,
+      "changelog": "Initial release of yield-offer-sanity-check:\n\n- Provides a checklist workflow to evaluate yield, staking, or earn offers for reasonableness or suspicion.\n- Outputs an offer summary, a sanity check verdict, red flags, analysis of the offer, and recommended next steps.\n- Uses evidence and math rather than vague skepticism to assess offers.\n- Flags new protocols with no track record and highlights unknowns if information is missing.\n- Requires only user-provided offer details; no on-chain data or integrations needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec5981fc77ae14dbbd4fca352ea00e7743429bcbb5174b43ff14bc3d1784672e"
+}

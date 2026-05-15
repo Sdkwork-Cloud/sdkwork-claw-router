@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-ad-attribution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_ad_attribution",
+  "skill": {
+    "id": 51941,
+    "skillKey": "clawhub-shopify-ad-attribution",
+    "name": "Shopify Ad Attribution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-ad-attribution",
+    "url": "https://clawhub.ai/skills/shopify-ad-attribution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-ad-attribution-26a355fd8c88ab00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopify ad attribution agent. Calculates true ROAS per channel by correlating Shopify order UTM data with ad spend — reveals which channels actually drive pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773989402394,
+      "changelog": "Initial release of Shopify Ad Attribution agent.\n\n- Calculates true ROAS per channel by correlating Shopify order UTM data with ad spend.\n- Supports multiple attribution models: last-click, linear, and time-decay.\n- Analyzes UTM coverage, channel overlap, LTV impact, and attribution anomalies.\n- Provides profit-adjusted ROAS calculations based on COGS and margin.\n- Outputs comprehensive channel performance tables, model comparisons, and key findings.\n- Saves analysis and configurations to a structured workspace for ongoing reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba9ba30ad6eaccf4a951a7c0f46ba49844b63721a4ad92c04d36eeb32f15ca20"
+}

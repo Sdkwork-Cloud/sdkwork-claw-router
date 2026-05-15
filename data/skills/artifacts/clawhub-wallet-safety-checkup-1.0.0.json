@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-safety-checkup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_safety_checkup",
+  "skill": {
+    "id": 46034,
+    "skillKey": "clawhub-wallet-safety-checkup",
+    "name": "Wallet Safety Checkup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-safety-checkup",
+    "url": "https://clawhub.ai/skills/wallet-safety-checkup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-safety-checkup-3d3b59347e20f827.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A practical security review skill that checks wallet and backup habits for obvious weak points. Use when the user wants to audit their crypto security setup...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776296176204,
+      "changelog": "Initial release of wallet-safety-checkup skill.\n\n- Provides a guided security review of wallet and backup habits.\n- Assesses key areas: seed phrase handling, backups, passwords, 2FA, device security, and phishing awareness.\n- Scores results using green/yellow/red for quick assessment.\n- Highlights top recoverability and theft risks, with prioritized recommended actions.\n- Delivers a concise, actionable monthly self-check routine.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f817966a6a7869a984384cc541598fe1489b6a868326984ca51ba22c2e714d6c"
+}

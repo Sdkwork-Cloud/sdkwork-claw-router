@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71720,
+  "uuid": "skill-clawhub-blizzard",
+  "skillKey": "clawhub-blizzard",
+  "name": "Blizzard",
+  "summary": "提供暴雪娱乐游戏信息、价格、更新及电竞赛事查询，涵盖魔兽、暗黑、星际、守望先锋等经典游戏。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blizzard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供暴雪娱乐游戏信息、价格、更新及电竞赛事查询，涵盖魔兽、暗黑、星际、守望先锋等经典游戏。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blizzard@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blizzard",
+      "url": "https://clawhub.ai/skills/blizzard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blizzard",
+    "url": "https://clawhub.ai/skills/blizzard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blizzard-793da17aec26d53f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blizzard@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-blizzard-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e08dad712a4f1081ea42da68a0443dd5afb2f394f2fc2f2074ee31211ccc0c5b",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:02:22.586Z"
+}

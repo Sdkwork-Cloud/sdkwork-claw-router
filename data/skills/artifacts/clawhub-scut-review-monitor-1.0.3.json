@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scut-review-monitor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scut_review_monitor",
+  "skill": {
+    "id": 42588,
+    "skillKey": "clawhub-scut-review-monitor",
+    "name": "scut-review-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scut-review-monitor",
+    "url": "https://clawhub.ai/skills/scut-review-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scut-review-monitor-512a4aa28f3b9836.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check or monitor the SCUT thesis blind-review status page through the graduate portal and refresh cookies through a local Python helper."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "songxf1024",
+      "userId": "s170pn6fx2zfkbvmt45x2928e983g69p",
+      "displayName": "Song Xianfeng",
+      "image": "https://avatars.githubusercontent.com/u/111047002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776670972961,
+      "changelog": "scut-review-monitor 1.0.3\n\n- Added explicit trigger phrase examples for common user requests to check or monitor SCUT thesis blind-review status.\n- Improved documentation to recommend `check-once` for ordinary queries and clarify when to use monitoring.\n- Enhanced login flow: now automatically extracts QQ login QR codes from the page, saves them as PNG and data URL, and supports optional image upload.\n- Login now runs Playwright Chromium in headless mode.\n- Clarified behavior for expired QR codes: helper auto-refreshes and extracts new QR codes.\n- All other instructions, usage, and constraints remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9576cb9a6781cf43cd9b8ebd1fe129192830a8420b621f606ae8e1f0146f06eb"
+}

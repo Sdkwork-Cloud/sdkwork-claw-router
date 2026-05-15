@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8711,
+  "uuid": "skill-clawhub-finnhub",
+  "skillKey": "clawhub-finnhub",
+  "name": "Access Finnhub API for real-time stock quotes, company news, market data, financial statements, and trading signals",
+  "summary": "Access Finnhub API for real-time stock quotes, company news, market data, financial statements, and trading signals. Use when you need current stock prices, company news, earnings data, or market analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finnhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matthewxfz3",
+      "features": [
+        "Access Finnhub API for real-time stock quotes, company news, market data, financial statements,.",
+        "Use when you need current stock prices, company news, earnings data, or market analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finnhub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212980991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finnhub",
+      "url": "https://clawhub.ai/skills/finnhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finnhub",
+    "url": "https://clawhub.ai/skills/finnhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finnhub-f05ae882dbcd78e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finnhub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finnhub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ede0054d2fff8a8155af83d72a17d7e5a0b97f74e7c83a9eea722eed7626ebbd",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T07:44:40.647Z"
+}

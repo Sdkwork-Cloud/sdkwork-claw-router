@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-monitor-vic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_monitor_vic",
+  "skill": {
+    "id": 45319,
+    "skillKey": "clawhub-solana-monitor-vic",
+    "name": "Solana Monitor Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-monitor-vic",
+    "url": "https://clawhub.ai/skills/solana-monitor-vic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-monitor-vic-62a01fba6f27f23a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time Solana data monitoring with token prices, alerts via Telegram/email, whale transfers, liquidity pools, and new token discovery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775293878981,
+      "changelog": "Solana Monitor - OpenClaw 技能 v0.1.0 初版发布\n\n- 实时监控 Solana 生态数据，包括价格、流动性、巨鲸追踪等\n- 支持 CoinGecko API 获取代币价格\n- 可通过 Telegram 或邮件发送价格警报\n- 监测新代币、大额转账与流动性池\n- 针对 DeFi/NFT 交易者及项目方提供多场景使用说明\n- 丰富的安装与配置说明，支持多种价格版本选购",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9451c1a39dc6f694fdcb20a95839c2686d3d5110391cfe590f2959b800688498"
+}

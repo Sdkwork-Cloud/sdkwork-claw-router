@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67873,
+  "uuid": "skill-clawhub-pingcode-skills",
+  "skillKey": "clawhub-pingcode-skills",
+  "name": "PingCode",
+  "summary": "PingCode 研发管理平台 API 集成。支持查询工作项、生成周报、管理项目进度等。使用场景：研发管理自动化、团队协作、数据分析。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingcode_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anytao",
+      "features": [
+        "PingCode 研发管理平台 API 集成。支持查询工作项、生成周报、管理项目进度等。使用场景：研发管理自动化、团队协作、数据分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pingcode-skills@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/541185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pingcode-skills",
+      "url": "https://clawhub.ai/skills/pingcode-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingcode-skills",
+    "url": "https://clawhub.ai/skills/pingcode-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingcode-skills-3a65f26c58661d7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pingcode-skills@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pingcode-skills-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7847b5171b57e29545f6adaa29cd5eb1662e090124d48e871bff01ccd84bb6e",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:41:15.266Z"
+}

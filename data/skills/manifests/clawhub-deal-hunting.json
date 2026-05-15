@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68650,
+  "uuid": "skill-clawhub-deal-hunting",
+  "skillKey": "clawhub-deal-hunting",
+  "name": "Deal Hunting",
+  "summary": "提供全网各类优惠券、返利、签到积分及限时秒杀的综合汇总与抢购策略。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deal_hunting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供全网各类优惠券、返利、签到积分及限时秒杀的综合汇总与抢购策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deal-hunting@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deal-hunting",
+      "url": "https://clawhub.ai/skills/deal-hunting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deal-hunting",
+    "url": "https://clawhub.ai/skills/deal-hunting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deal-hunting-ac81400b1aa80066.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deal-hunting@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deal-hunting-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b05c3f0d9a8e4c00fe4f08f85a3267053a1b0dd2718a9cca1d098e3a58be91b5",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:32:47.621Z"
+}

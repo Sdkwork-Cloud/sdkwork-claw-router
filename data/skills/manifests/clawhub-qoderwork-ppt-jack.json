@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31065,
+  "uuid": "skill-clawhub-qoderwork-ppt-jack",
+  "skillKey": "clawhub-qoderwork-ppt-jack",
+  "name": "QoderWork PPT (Jack)",
+  "summary": "Generate QoderWork-style presentations. Automatically matches 14 templates based on your topic and outputs an editable .pptx file.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qoderwork_ppt_jack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jackwang2999",
+      "features": [
+        "Generate QoderWork-style presentations",
+        "Automatically matches 14 templates based on your topic and outputs an editable .pptx file."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qoderwork-ppt-jack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136064639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qoderwork-ppt-jack",
+      "url": "https://clawhub.ai/skills/qoderwork-ppt-jack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qoderwork-ppt-jack",
+    "url": "https://clawhub.ai/skills/qoderwork-ppt-jack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qoderwork-ppt-jack-a124154ae1622fb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qoderwork-ppt-jack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qoderwork-ppt-jack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9936f13eab7197e21b353fe275877927c42b63bfb82d6275bbe8aa92e6ca48ec",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:35:23.223Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26383,
+  "uuid": "skill-clawhub-conversation-flow-monitor",
+  "skillKey": "clawhub-conversation-flow-monitor",
+  "name": "Conversation Flow Monitor",
+  "summary": "Monitors and prevents conversation flow issues by implementing robust error handling, timeouts, and recovery mechanisms for reliable agent interactions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_flow_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eron",
+      "features": [
+        "Monitors and prevents conversation flow issues by implementing robust error handling, timeouts,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-flow-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212718401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-flow-monitor",
+      "url": "https://clawhub.ai/skills/conversation-flow-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-flow-monitor",
+    "url": "https://clawhub.ai/skills/conversation-flow-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-flow-monitor-ee9c1944c0f0178c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-flow-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-flow-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f434d8824a0eda35d70affdd7f565c546a434c33431a0ee7857de9bfed48d85b",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:12:01.464Z"
+}

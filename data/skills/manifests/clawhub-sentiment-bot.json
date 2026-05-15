@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24613,
+  "uuid": "skill-clawhub-sentiment-bot",
+  "skillKey": "clawhub-sentiment-bot",
+  "name": "Sentiment Bot",
+  "summary": "Analyze sentiment of text or URLs. Supports batch analysis, emotion detection, comparative and trend analysis.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Analyze sentiment of text or URLs",
+        "Supports batch analysis, emotion detection, comparative and trend analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentiment-bot@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentiment-bot",
+      "url": "https://clawhub.ai/skills/sentiment-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-bot",
+    "url": "https://clawhub.ai/skills/sentiment-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-bot-d7582032039da44d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentiment-bot@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-bot-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1857fce3a9856fca37680afb82b09230014179c5c7f63574c9a5322a9849c2e4",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:35:14.013Z"
+}

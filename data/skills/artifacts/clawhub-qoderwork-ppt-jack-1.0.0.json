@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qoderwork-ppt-jack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qoderwork_ppt_jack",
+  "skill": {
+    "id": 31065,
+    "skillKey": "clawhub-qoderwork-ppt-jack",
+    "name": "QoderWork PPT (Jack)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qoderwork-ppt-jack",
+    "url": "https://clawhub.ai/skills/qoderwork-ppt-jack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qoderwork-ppt-jack-a124154ae1622fb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QoderWork-style presentations. Automatically matches 14 templates based on your topic and outputs an editable .pptx file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackwang2999",
+      "userId": "publishers:jackwang2999",
+      "displayName": "Jackwang2999",
+      "image": "https://avatars.githubusercontent.com/u/136064639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774082123223,
+      "changelog": "QoderWork PPT skill initial release.\n\n- Automatically generates QoderWork-style presentations from a user topic, matching one of 14 built-in templates.\n- Produces a ready-to-edit .pptx presentation with cover, TOC, section dividers, and content slides (default: 8–15 slides).\n- Auto-fills templates, manages content generation, slot mapping, and required multimedia.\n- Includes resumable pipeline: content/slide structure reuse, template filling, HTML-to-PPTX conversion.\n- Outputs are placed in a project-root `output/` directory, with detailed structure and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9936f13eab7197e21b353fe275877927c42b63bfb82d6275bbe8aa92e6ca48ec"
+}

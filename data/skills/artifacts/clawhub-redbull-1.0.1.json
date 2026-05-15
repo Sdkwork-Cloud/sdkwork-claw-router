@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redbull@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbull",
+  "skill": {
+    "id": 70580,
+    "skillKey": "clawhub-redbull",
+    "name": "Redbull"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbull",
+    "url": "https://clawhub.ai/skills/redbull",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbull-a9b46c39b8ebae31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询红牛能量饮料产品、价格、门店及品牌活动资讯，包括极限运动和F1车队动态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295569104,
+      "changelog": "- Updated skill summary and use cases for conciseness and broader context.\n- Expanded on areas covered: brand history, product features, global presence, and recent news.\n- Shifted focus from specific product features to general brand background information.\n- Revised usage recommendations to emphasize market research, competitor analysis, and business background checks.\n- Added a note encouraging official and authoritative sources for accurate data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:638b637275586e3aed3a998ffb586857cbae2c16e40beaa4e69ea390fbf2a378"
+}

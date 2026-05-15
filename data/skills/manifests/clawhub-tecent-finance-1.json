@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15385,
+  "uuid": "skill-clawhub-tecent-finance-1",
+  "skillKey": "clawhub-tecent-finance-1",
+  "name": "Tecent Finance 1",
+  "summary": "Get stock prices, quotes, and compare stocks using Tencent Finance API. No API key required. Supports US stocks, China A-Shares, Hong Kong stocks. Optimized for use in mainland China.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tecent_finance_1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunerw-dev",
+      "features": [
+        "Get stock prices, quotes, and compare stocks using Tencent Finance API",
+        "No API key required",
+        "Supports US stocks, China A-Shares, Hong Kong stocks",
+        "Optimized for use in mainland China."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tecent-finance-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229715427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tecent-finance-1",
+      "url": "https://clawhub.ai/skills/tecent-finance-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tecent-finance-1",
+    "url": "https://clawhub.ai/skills/tecent-finance-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tecent-finance-1-f977901e8eeb4ab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tecent-finance-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tecent-finance-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bf9741aac2a247dad36a42611ac38825fb7214f638cacab008e8c347e91a18c",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T06:23:43.450Z"
+}

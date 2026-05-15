@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58049,
+  "uuid": "skill-clawhub-g2b-cli",
+  "skillKey": "clawhub-g2b-cli",
+  "name": "G2b Cli",
+  "summary": "Korean public procurement (나라장터 g2b.go.kr) command-line wrapper for the 조달청 OpenAPI surface — three subcommands cover BidPublicInfoService (입찰공고 per 업무구분 thn...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g2b_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Korean public procurement (나라장터 g2b.go.kr) command-line wrapper for the 조달청 OpenAPI surface — t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/g2b-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "g2b-cli",
+      "url": "https://clawhub.ai/skills/g2b-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g2b-cli",
+    "url": "https://clawhub.ai/skills/g2b-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g2b-cli-3215d3be78770194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/g2b-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-g2b-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:def00fd0e313ca8c1576f5e28e3b7ca40da5116fd569ff336154f1172ec4de45",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:11:52.510Z"
+}

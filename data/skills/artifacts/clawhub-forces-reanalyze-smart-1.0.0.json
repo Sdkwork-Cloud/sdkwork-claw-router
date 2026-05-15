@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forces-reanalyze-smart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forces_reanalyze_smart",
+  "skill": {
+    "id": 68691,
+    "skillKey": "clawhub-forces-reanalyze-smart",
+    "name": "Forces Reanalyze Smart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forces-reanalyze-smart",
+    "url": "https://clawhub.ai/skills/forces-reanalyze-smart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forces-reanalyze-smart-5e793420161c5612.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完成智慧门店工单复盘全流程。触发词：工单复盘、复盘工单、拉取工单数据、创建复盘文档、工单分析、创建复盘。完整覆盖三个阶段：(1)拉取Furcas工单数据并导入多维表格 (2)创建/更新工单复盘总文档 (3)创建开发复盘文档并填充TOP5统计。当用户要求进行工单复盘时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runkecheng",
+      "userId": "s177cbem7examhbe7rq6035fad840jdh",
+      "displayName": "runkecheng",
+      "image": "https://avatars.githubusercontent.com/u/68526782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778146009843,
+      "changelog": "forces-reanalyze-smart v1.0.0\n\n- Initial release: fully automates the end-to-end process for \"智慧门店工单复盘\" (smart store work order review).\n- Covers three major stages: (1) Fetch and import Furcas work order data to Feishu multi-dimensional tables, (2) Create/update overall review documentation, (3) Create technical review docs with TOP5 statistics.\n- Strict record de-duplication and validation enforced at every step, especially for tracking and data documents.\n- Thorough instructions and field requirements to prevent common input, time, and duplication errors.\n- Scripted data import, mention-doc updating, and template handling to ensure correct references and formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8b6f96d3cc20c95d987b194d77bbea81809a98618ed16f98145285c0dda1988"
+}

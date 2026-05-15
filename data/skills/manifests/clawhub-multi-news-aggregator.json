@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45511,
+  "uuid": "skill-clawhub-multi-news-aggregator",
+  "skillKey": "clawhub-multi-news-aggregator",
+  "name": "multi-news-aggregator-via x402",
+  "summary": "Agent skill for x402-paid global news aggregation and source/time-filtered search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_news_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "parsonssss",
+      "features": [
+        "Agent skill for x402-paid global news aggregation and source/time-filtered search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-news-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34808813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-news-aggregator",
+      "url": "https://clawhub.ai/skills/multi-news-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-news-aggregator",
+    "url": "https://clawhub.ai/skills/multi-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-news-aggregator-eedeabf380887d4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-news-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-news-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9188c6cfa5c7e80cbb54ea19c88babfcd7e3bf587c7b4971d3e908669eb8551",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:34:38.358Z"
+}

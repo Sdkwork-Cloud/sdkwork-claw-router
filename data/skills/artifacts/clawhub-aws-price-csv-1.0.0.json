@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-price-csv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_price_csv",
+  "skill": {
+    "id": 23114,
+    "skillKey": "clawhub-aws-price-csv",
+    "name": "aws-price-csv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-price-csv",
+    "url": "https://clawhub.ai/skills/aws-price-csv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-price-csv-e0d871c77efba09a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AWS cost CSVs from a user-provided service list. Use when someone supplies an item list + AWS region and needs per-item pricing plus totals via AWS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazylion",
+      "userId": "publishers:crazylion",
+      "displayName": "crazylion",
+      "image": "https://avatars.githubusercontent.com/u/12908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772693250065,
+      "changelog": "Initial release of aws-price-csv.\n\n- Generate AWS pricing CSVs from user-supplied service/item lists and regions.\n- Supports both live AWS Price List API and bulk JSON pricing queries.\n- Handles On-Demand and Reserved pricing terms, including key filters and contract types.\n- Outputs detailed cost breakdowns per item plus a total row in CSV format.\n- Includes caching and offline mode with cache refresh/override options.\n- Supports YAML/JSON input files and customizable output paths.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7b49a0a0aa32017a21bddeb9fe087c7ead2c7c4f61eeb336a8b565e1558866c"
+}

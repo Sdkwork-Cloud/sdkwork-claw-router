@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_reminder",
+  "skill": {
+    "id": 64626,
+    "skillKey": "clawhub-report-reminder",
+    "name": "Report Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-reminder",
+    "url": "https://clawhub.ai/skills/report-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-reminder-ca5c4cbec204aa48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在工作日检查日报是否已提交，未提交时提醒并@快腿鹿。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bounding-elk",
+      "userId": "s178sqd0jjtwc7bq75mrcdcp1983ghx6",
+      "displayName": "皮皮熊",
+      "image": "https://avatars.githubusercontent.com/u/245088438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773892268044,
+      "changelog": "- Initial release of report-reminder skill.\n- Checks if the daily report file exists and contains valid content on workdays.\n- Sends a reminder and @快腿鹿 if the report is missing or incomplete.\n- Skips reminders on weekends (non-working days).\n- Confirms when the daily report has already been submitted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccd7508ea8d0781900f4ffa3f106d7a720e248ed1062637194c7e73ae1ccb142"
+}

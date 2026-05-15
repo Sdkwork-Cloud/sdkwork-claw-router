@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airc@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airc",
+  "skill": {
+    "id": 10797,
+    "skillKey": "clawhub-airc",
+    "name": "Airc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airc",
+    "url": "https://clawhub.ai/skills/airc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airc-4fa8b974cb3a080e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to IRC servers (AIRC or any standard IRC) and participate in channels. Send/receive messages, join/part channels, and listen for activity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vortitron",
+      "userId": "publishers:vortitron",
+      "displayName": "Vortitron",
+      "image": "https://avatars.githubusercontent.com/u/8288276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770157088079,
+      "changelog": "- Added daemon mode for long-running IRC connections with commands: start, status, and stop.\n- Documented new quit command for clean IRC disconnect.\n- Daemon mode now logs incoming messages to messages.jsonl.\n- Updated tips and examples for improved clarity and accurate rate limits.\n- Simplified and clarified skill description and instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e513ddc0fd34d1fa866133e94ae262263f9e1b16c22a195d57eaeba79dc22325"
+}

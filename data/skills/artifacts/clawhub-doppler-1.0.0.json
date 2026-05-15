@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doppler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppler",
+  "skill": {
+    "id": 27192,
+    "skillKey": "clawhub-doppler",
+    "name": "Doppler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppler",
+    "url": "https://clawhub.ai/skills/doppler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppler-c0fc092abf25c405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage secrets and environment variables via Doppler CLI - secrets, projects, configs, environments. Use when user mentions 'doppler', 'secrets management',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "melvynx",
+      "userId": "s171qar4x43k9fxmt5aar5mn0x83n177",
+      "displayName": "Melvyn",
+      "image": "https://avatars.githubusercontent.com/u/56388157?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773160676133,
+      "changelog": "- Initial release of the doppler skill.\n- Allows managing secrets and environment variables via the Doppler CLI.\n- Provides command guidance for secrets, projects, configs, environments, and activity logging.\n- Includes setup instructions, authentication steps, and global flags for flexible CLI usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93978b10ae9620f83ea8c2914a85f2c64380ef5ef1ec55d0a38575e6762992fc"
+}

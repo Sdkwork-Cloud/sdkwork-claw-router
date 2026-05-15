@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20024,
+  "uuid": "skill-clawhub-intent-align",
+  "skillKey": "clawhub-intent-align",
+  "name": "Intent Align",
+  "summary": "Intent-alignment orchestration for OpenClaw agent teams across diverse host environments. Use when work must stay anchored to user goals while allowing flexi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_align",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oscraters",
+      "features": [
+        "Intent-alignment orchestration for OpenClaw agent teams across diverse host environments",
+        "Use when work must stay anchored to user goals while allowing flexi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-align@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93680161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-align",
+      "url": "https://clawhub.ai/skills/intent-align"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-align",
+    "url": "https://clawhub.ai/skills/intent-align",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-align-030e43e6a9ceef0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-align@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-align-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c053b81a1cea6e80679f2dc941e50e93c75a7cfca72fe07629afe0825faacd58",
+      "artifactSizeBytes": 3025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:34:37.707Z"
+}

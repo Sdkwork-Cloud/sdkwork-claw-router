@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bian16-wallpaper-downloader@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bian16_wallpaper_downloader",
+  "skill": {
+    "id": 56593,
+    "skillKey": "clawhub-bian16-wallpaper-downloader",
+    "name": "Bian16 Wallpaper Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bian16-wallpaper-downloader",
+    "url": "https://clawhub.ai/skills/bian16-wallpaper-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bian16-wallpaper-downloader-de5e12bd2deabe7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download 4K mobile wallpapers specifically from pic.netbian.com (彼岸图网), including WeChat QR login flow, token-based original image download, 3-minute rate-li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guitu917",
+      "userId": "s1736fbzs7t2407ykqygjayg1n848897",
+      "displayName": "guitu917",
+      "image": "https://avatars.githubusercontent.com/u/256925909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776504498712,
+      "changelog": "Add explicit slider/captcha handling guidance: prefer manual completion, allow only cautious assist, then continue with refreshed cookie.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bca5cede43fe56ac1fa912a56398045ccc9deb7f3b1a1cc63e7d9953420bf510"
+}

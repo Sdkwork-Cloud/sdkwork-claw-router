@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/with-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.with_music",
+  "skill": {
+    "id": 49084,
+    "skillKey": "clawhub-with-music",
+    "name": "With Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "with-music",
+    "url": "https://clawhub.ai/skills/with-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/with-music-5fddd218b73d4053.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video clips into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding background mus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777588099059,
+      "changelog": "With Music v1.0.0\n\n- Initial release: add background music to your videos automatically via cloud GPU processing.\n- Supports MP4, MOV, AVI, WebM files up to 500MB with 1080p MP4 export.\n- Automatic quick-start: checks for token and connects to cloud, with 100 free credits for new users.\n- Easy prompts: upload files, ask for music style, and export — all through conversational commands.\n- Full session management: keeps timeline state between edits and supports multiple file uploads.\n- Clear error handling and user feedback for uploads, credits, and exporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f171ce3d010c9617fba1b2b21332dc3fdab3398adbf94c44c4902ead140d180"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-store-benchmark-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_store_benchmark_analysis",
+  "skill": {
+    "id": 69933,
+    "skillKey": "clawhub-retail-store-benchmark-analysis",
+    "name": "门店Benchmark分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-store-benchmark-analysis",
+    "url": "https://clawhub.ai/skills/retail-store-benchmark-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-store-benchmark-analysis-c7d51e6ed9e2c54e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "门店Benchmark分析工具。与集团/区域其他门店对比，分析门店等级、排名变化、件单价×连带率矩阵象限。 核心能力： 1. 多维度对比范围（集团全部、区域、省份、城市） 2. 门店等级评估（基于销售额、订单数、客单价、连带率） 3. 排名变化追踪（本期排名vs上期排名） 4. 件单价×连带率矩阵象限分析（识别门..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwyang7",
+      "userId": "s174smknxqd6qs6q88gjradc7x83ngrp",
+      "displayName": "Xtechmerge.AI",
+      "image": "https://avatars.githubusercontent.com/u/176652150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774532446104,
+      "changelog": "Initial release: 支持多维度对比、门店等级、矩阵象限分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6e1f8da603a1909efb1eff5c6641e843a44b68d4a6099c2ecd0ebeeae28a6c2"
+}

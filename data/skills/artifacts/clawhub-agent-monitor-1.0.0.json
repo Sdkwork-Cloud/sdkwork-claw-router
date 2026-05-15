@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_monitor",
+  "skill": {
+    "id": 39457,
+    "skillKey": "clawhub-agent-monitor",
+    "name": "Agent Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-monitor",
+    "url": "https://clawhub.ai/skills/agent-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-monitor-fad7c3f490b1116e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent work status monitoring and automatic activation system. Triggers when monitoring subagent runtime status, detecting prolonged unresponsive \"stalled\" st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776908173828,
+      "changelog": "Initial release of agent-monitor skill: monitors subagent status, detects stalls, and auto-activates stalled agents.\n\n- Real-time monitoring of agent runtime status.\n- Detects and handles \"stalled\" agents unresponsive for over 5 minutes.\n- Sends automatic activation messages to resume stalled agents.\n- Includes a script (`scripts/monitor_agents.py`) with options for thresholds, dry-run, and targeting specific agents.\n- Designed for easy integration with scheduled tasks for continuous operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:102f2d9203fb60652b9fd8867fb526b83e0a948bf915c9d439571696efc43232"
+}

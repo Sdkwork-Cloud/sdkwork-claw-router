@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "silmaril-cdp",
+    "displayName": "Silmaril Ranger",
+    "summary": "Browser automation, DOM inspection, page mutation, wait orchestration, flow execution, and local proxy override work through the Silmaril Chrome DevTools Pro...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1773157926830,
+    "updatedAt": 1778306453146
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773419847762,
+    "changelog": "### Security\n\n  - Added explicit safeguard enforcement for high-risk commands.\n  - eval-js now requires --allow-unsafe-js, or SILMARIL_ALLOW_UNSAFE_JS=1 in a trusted local session.\n  - proxy-override, proxy-switch, and openurl-proxy now require --allow-mitm, or SILMARIL_ALLOW_MITM=1 in a trusted local session.\n  - Proxy helper commands now enforce loopback-only binding by default. Non-local proxy binding requires explicit --allow-nonlocal-bind.\n\n  ### Changed\n\n  - Updated eval-js to record the safeguard acknowledgement source in JSON output.\n  - Updated proxy commands to record the safeguard acknowledgement source in JSON output.\n  - Updated dispatcher help text to show the new safeguard flags in command usage.\n  - Updated the openurl-proxy missing-rules guidance to show the new --allow-mitm requirement.\n\n  ### Documentation\n\n  - Updated the silmaril-cdp skill documentation to mark eval-js, proxy-override, proxy-switch, and openurl-proxy as high-risk commands.\n  - Added guidance that cloning or installing the toolkit should only happen after explicit user approval.\n  - Updated command examples in the skill references, COMMAND_GUIDE.md, and MITM docs to include the new safeguard flags.\n  - Documented the new environment variable overrides for trusted local sessions.\n\n  ### Tests\n\n  - Added unit tests for high-risk safeguard enforcement on eval-js, openurl-proxy, proxy-override, and proxy-switch.\n  - Added unit tests for shared helper behavior covering truthy opt-in values and loopback host validation.\n  - Verified the unit test suite passes after the safeguard changes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "malac12",
+    "userId": "publishers:malac12",
+    "displayName": "Malac12",
+    "image": "https://avatars.githubusercontent.com/u/162802781?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306453146
+  }
+}

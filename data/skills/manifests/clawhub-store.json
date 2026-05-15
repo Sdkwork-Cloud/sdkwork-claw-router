@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19123,
+  "uuid": "skill-clawhub-store",
+  "skillKey": "clawhub-store",
+  "name": "Store",
+  "summary": "Manage a physical store of any kind with opening routines, inventory control, staffing, cash discipline, merchandising, and weekly reviews.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.store",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage a physical store of any kind with opening routines, inventory control, staffing, cash di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/store@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "store",
+      "url": "https://clawhub.ai/skills/store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "store",
+    "url": "https://clawhub.ai/skills/store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/store-824d80d71985f082.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/store@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-store-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5e99d0083816c10bcfa9da4db6cb42b1d779ee047338d8abc547e606eee44a4",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:23:00.611Z"
+}

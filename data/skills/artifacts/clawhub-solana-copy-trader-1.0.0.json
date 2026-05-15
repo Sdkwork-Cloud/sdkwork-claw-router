@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-copy-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_copy_trader",
+  "skill": {
+    "id": 17069,
+    "skillKey": "clawhub-solana-copy-trader",
+    "name": "Solana Copy Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-copy-trader",
+    "url": "https://clawhub.ai/skills/solana-copy-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-copy-trader-15c3af8547900902.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana whale copy trading bot. Track any wallet, copy trades in real-time via Jupiter + Pump.fun APIs, with paper trading simulation and live execution. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youthaiagent",
+      "userId": "publishers:youthaiagent",
+      "displayName": "YouthAIAgent",
+      "image": "https://avatars.githubusercontent.com/u/240294764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 809,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771476026801,
+      "changelog": "Initial release — Solana whale copy trader with Jupiter + Pump.fun routing, paper trading simulation, Helius WebSocket tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:739753d09639315cfa46a2c3a0bca2d00cdfc129a66396065adf3a95d34b14d4"
+}

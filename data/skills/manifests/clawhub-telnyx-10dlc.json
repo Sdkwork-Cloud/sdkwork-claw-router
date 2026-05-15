@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16013,
+  "uuid": "skill-clawhub-telnyx-10dlc",
+  "skillKey": "clawhub-telnyx-10dlc",
+  "name": "10dlc Registration",
+  "summary": "Register for 10DLC as a sole proprietor to enable SMS messaging in the USA. Use when setting up A2P SMS, registering brands/campaigns, or assigning phone numbers for compliant US messaging. Requires Telnyx CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_10dlc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Register for 10DLC as a sole proprietor to enable SMS messaging in the USA",
+        "Use when setting up A2P SMS, registering brands/campaigns, or assigning phone numbers for compl.",
+        "Requires Telnyx CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-10dlc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-10dlc",
+      "url": "https://clawhub.ai/skills/telnyx-10dlc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-10dlc",
+    "url": "https://clawhub.ai/skills/telnyx-10dlc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-10dlc-4bc19fdf133375d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-10dlc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-10dlc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1c5fc6372f3e4c7fa4e1e06416f71af471eb04cd77cdf7c37c3c1a384fe06ce",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:10:42.609Z"
+}

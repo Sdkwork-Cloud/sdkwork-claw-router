@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conference-poster-pitch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conference_poster_pitch",
+  "skill": {
+    "id": 29269,
+    "skillKey": "clawhub-conference-poster-pitch",
+    "name": "Conference Poster Pitch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conference-poster-pitch",
+    "url": "https://clawhub.ai/skills/conference-poster-pitch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conference-poster-pitch-a3e5ae354a598e82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate elevator pitch for conference posters"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googolme",
+      "userId": "s1702mgv785fagvtvv6nqy07kh83n9dy",
+      "displayName": "googolme",
+      "image": "https://avatars.githubusercontent.com/u/162564912?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773393865388,
+      "changelog": "Initial release of the conference-poster-pitch skill.\n\n- Generates structured elevator pitches for academic poster sessions.\n- Supports customizable pitch durations: 30, 60, or 180 seconds.\n- Outputs ready-to-practice scripts in multiple time formats.\n- Command-line tool with simple usage parameters.\n- Medium risk level with local script execution; security best practices outlined.\n- No external dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29570a1a4cd907da257324910098bed62663c9f38b0ba593bbc611e15b5523b9"
+}

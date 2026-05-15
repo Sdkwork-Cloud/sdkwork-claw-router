@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65756,
+  "uuid": "skill-clawhub-139mail",
+  "skillKey": "clawhub-139mail",
+  "name": "139mail（非官方）",
+  "summary": "139邮箱IMAP/POP3操作技能。支持通过IMAP/POP3协议查看收件箱/未读邮件、发送邮件、搜索邮件、管理邮件、邮件分拣。首次使用需配置账号和授权码。当用户需要操作139邮箱（mail.10086.cn）时触发此技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.139mail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FANJIABO-529",
+      "features": [
+        "139邮箱IMAP/POP3操作技能。支持通过IMAP/POP3协议查看收件箱/未读邮件、发送邮件、搜索邮件、管理邮件、邮件分拣。首次使用需配置账号和授权码。当用户需要操作139邮箱（mai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/139mail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206530070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "139mail",
+      "url": "https://clawhub.ai/skills/139mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "139mail",
+    "url": "https://clawhub.ai/skills/139mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/139mail-5912a120e8764039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/139mail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-139mail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6bde8f3ccee73408c71d053eb6df2dd5d6ef8f8ee06f423b0a1fa9b3861fa75",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T11:02:09.793Z"
+}

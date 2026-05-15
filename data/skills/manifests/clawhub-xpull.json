@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24888,
+  "uuid": "skill-clawhub-xpull",
+  "skillKey": "clawhub-xpull",
+  "name": "xpull",
+  "summary": "Pull tweets, threads, articles, and replies from X/Twitter. FxTwitter API primary (free), Grok x_search fallback (paid).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpull",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neo",
+      "features": [
+        "Pull tweets, threads, articles, and replies from X/Twitter",
+        "FxTwitter API primary (free), Grok x_search fallback (paid)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpull@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13029422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpull",
+      "url": "https://clawhub.ai/skills/xpull"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpull",
+    "url": "https://clawhub.ai/skills/xpull",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpull-b3ea3c08a9349510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpull@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpull-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c618bd72fba633ed63579ad24b79364e30d841c6ee16644a08d090b7fa1d92ae",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T01:56:55.153Z"
+}

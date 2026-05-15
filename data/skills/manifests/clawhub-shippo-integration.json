@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32204,
+  "uuid": "skill-clawhub-shippo-integration",
+  "skillKey": "clawhub-shippo-integration",
+  "name": "Shippo",
+  "summary": "Shippo integration. Manage Shipments, Batchs. Use when the user wants to interact with Shippo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shippo integration",
+        "Manage Shipments, Batchs",
+        "Use when the user wants to interact with Shippo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shippo-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shippo-integration",
+      "url": "https://clawhub.ai/skills/shippo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippo-integration",
+    "url": "https://clawhub.ai/skills/shippo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippo-integration-5a99f878b92dc2b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shippo-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shippo-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87068857236d1957866d15a7d2b673731b911e7a913af3664ccbb6ccfd817ae2",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:52.061Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-sourcing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_sourcing",
+  "skill": {
+    "id": 15418,
+    "skillKey": "clawhub-1688-sourcing",
+    "name": "1688 Sourcing Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-sourcing",
+    "url": "https://clawhub.ai/skills/1688-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-sourcing-24ee0a8c7c730d05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist e-commerce sellers in sourcing from 1688.com, calculating profit margins, and creating multi-platform product listings efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wymanwong",
+      "userId": "s17bhxcbmnhh20depgqnm1884983m30s",
+      "displayName": "wymanwong",
+      "image": "https://avatars.githubusercontent.com/u/5779925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773831387532,
+      "changelog": "Initial release of 1688 Sourcing Assistant.\n\n- Find suppliers on 1688.com using product keywords, with search tips and supplier evaluation checklists.\n- Calculate detailed profit margins with customizable cost inputs and a margin health check.\n- Generate multi-platform product listing content for Take.app, Shopify, Instagram, TikTok, and XiaoHongShu.\n- Step-by-step guidance for product research, reorder planning, and supplier messaging templates in English and Chinese.\n- Tips on common sourcing mistakes and best practices for new e-commerce sellers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee3d9c39a00c9cf7b00bc201bdabc8884ac22cac75b55a48a53c86570aa0eba4"
+}

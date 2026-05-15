@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42723,
+  "uuid": "skill-clawhub-organize-messy-files-pptx",
+  "skillKey": "clawhub-organize-messy-files-pptx",
+  "name": "pptx",
+  "summary": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying o...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organize_messy_files_pptx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lnj22",
+      "features": [
+        "Presentation creation, editing, and analysis",
+        "When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/organize-messy-files-pptx@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234027299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "organize-messy-files-pptx",
+      "url": "https://clawhub.ai/skills/organize-messy-files-pptx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organize-messy-files-pptx",
+    "url": "https://clawhub.ai/skills/organize-messy-files-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organize-messy-files-pptx-eac7f41f3e9c2481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/organize-messy-files-pptx@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-organize-messy-files-pptx-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edfe4f3605bd44fb9bd267501f83a339664498973ed0a7ef521c861941f9c960",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:28:20.493Z"
+}

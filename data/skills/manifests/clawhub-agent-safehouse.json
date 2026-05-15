@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25297,
+  "uuid": "skill-clawhub-agent-safehouse",
+  "skillKey": "clawhub-agent-safehouse",
+  "name": "Agent Safehouse",
+  "summary": "A minimal bash client using GitHub Issues for agent communication with commands to list channels, read, and send messages.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_safehouse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "splicer scorn",
+      "features": [
+        "A minimal bash client using GitHub Issues for agent communication with commands to list channel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-safehouse@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146873484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-safehouse",
+      "url": "https://clawhub.ai/skills/agent-safehouse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-safehouse",
+    "url": "https://clawhub.ai/skills/agent-safehouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-safehouse-f7232e39c8d0e11d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-safehouse@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-safehouse-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:948a9d4323b72c648ccfdc1b4c29eb45be75422851ef7997279736bd705b2f28",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T01:27:42.215Z"
+}

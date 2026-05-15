@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35429,
+  "uuid": "skill-clawhub-uservoice",
+  "skillKey": "clawhub-uservoice",
+  "name": "Uservoice",
+  "summary": "UserVoice integration. Manage data, records, and automate workflows. Use when the user wants to interact with UserVoice data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uservoice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "UserVoice integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with UserVoice data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uservoice@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uservoice",
+      "url": "https://clawhub.ai/skills/uservoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uservoice",
+    "url": "https://clawhub.ai/skills/uservoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uservoice-0bcec53a90621186.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uservoice@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-uservoice-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:096fef18d9fd4a4d1601968b4aa76a8694e064702a00e3325a27f93d0a1e54c4",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:51.521Z"
+}

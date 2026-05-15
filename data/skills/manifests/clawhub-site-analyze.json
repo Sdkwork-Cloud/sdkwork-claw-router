@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64271,
+  "uuid": "skill-clawhub-site-analyze",
+  "skillKey": "clawhub-site-analyze",
+  "name": "site analyzing tools",
+  "summary": "站点综合分析工具，析出域名/IP的机房位置、ISP、网络路径、robots策略等完整站点画像。当用户要分析某个域名或IP的机房部署、归属、网络质量时触发。支持：分析源机房位置、ISP/ASN归属、GeoDNS/CDN检测、traceroute路径分析、延迟探测、robots.txt策略。首次使用自动探测本机网络环...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvanFromDowntown",
+      "features": [
+        "站点综合分析工具，析出域名/IP的机房位置、ISP、网络路径、robots策略等完整站点画像。当用户要分析某个域名或IP的机房部署、归属、网络质量时触发。支持：分析源机房位置、ISP/ASN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-analyze@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203429656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-analyze",
+      "url": "https://clawhub.ai/skills/site-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-analyze",
+    "url": "https://clawhub.ai/skills/site-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-analyze-8118bfeaf28abae6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-analyze@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-analyze-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6283ae19ae3bb5b89838cd60560a10d2c19d288f63a6eb6604b788430a5512fa",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:59:23.207Z"
+}

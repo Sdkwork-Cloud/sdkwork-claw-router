@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-legal-docs-pro@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_legal_docs_pro",
+  "skill": {
+    "id": 37434,
+    "skillKey": "clawhub-normieclaw-legal-docs-pro",
+    "name": "Legal Docs Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-legal-docs-pro",
+    "url": "https://clawhub.ai/skills/normieclaw-legal-docs-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-legal-docs-pro-a56163b5b47350d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your landlord just sent a 12-page lease renewal and you have no idea what half the clauses mean. Or you need an NDA for a freelancer by tomorrow and LegalZoo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774993224744,
+      "changelog": "v1.0.3: Security fixes: confined scripts to skill directory, removed filesystem traversal from setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e4fec4f64293ec127050eed68c8531fe50a591e798ee52890dfed9a5528c564"
+}

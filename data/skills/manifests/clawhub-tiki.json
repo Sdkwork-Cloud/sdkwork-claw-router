@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38956,
+  "uuid": "skill-clawhub-tiki",
+  "skillKey": "clawhub-tiki",
+  "name": "Tiki",
+  "summary": "Tiki integration. Manage Recordses. Use when the user wants to interact with Tiki data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tiki integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Tiki data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiki@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiki",
+      "url": "https://clawhub.ai/skills/tiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiki",
+    "url": "https://clawhub.ai/skills/tiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiki-df1a59ec3001c99f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiki@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiki-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ae0217dcb78300fb3a5c5ad9bc9f959a6e768192cc5821466006729667860d7",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:53:14.653Z"
+}

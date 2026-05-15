@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8507,
+  "uuid": "skill-clawhub-upload-post",
+  "skillKey": "clawhub-upload-post",
+  "name": "Upload Videos🎥, Photos📸 & Text🖊️ to TikTok, Instagram, YouTube, X, LinkedIn, Facebook, Threads, Pinterest, Reddit & Bluesky.",
+  "summary": "Upload content to social media platforms via Upload-Post API. Use when posting videos, photos, text, or documents to TikTok, Instagram, YouTube, LinkedIn, Facebook, X (Twitter), Threads, Pinterest, Reddit, or Bluesky. Supports scheduling,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_post",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Víctor Cavero",
+      "features": [
+        "Upload content to social media platforms via Upload-Post API",
+        "Use when posting videos, photos, text, or documents to TikTok, Instagram, YouTube, LinkedIn, Fa.",
+        "Supports scheduling, analytics, FFmpeg processing, and upload history."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upload-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33009505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upload-post",
+      "url": "https://clawhub.ai/skills/upload-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-post",
+    "url": "https://clawhub.ai/skills/upload-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-post-39d21b34f8b4ee96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upload-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upload-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27ec372e6178f67356ec623a181f30e4600758f3a139d24c58b20ad48bffe98b",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T20:26:09.050Z"
+}

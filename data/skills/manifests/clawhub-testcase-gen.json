@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39252,
+  "uuid": "skill-clawhub-testcase-gen",
+  "skillKey": "clawhub-testcase-gen",
+  "name": "testcase-generator",
+  "summary": "Generates comprehensive test cases from MySQL/Redis data. Invoke when user wants to create test cases for an API endpoint.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testcase_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hcyyy0120",
+      "features": [
+        "Generates comprehensive test cases from MySQL/Redis data",
+        "Invoke when user wants to create test cases for an API endpoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testcase-gen@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82436308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testcase-gen",
+      "url": "https://clawhub.ai/skills/testcase-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testcase-gen",
+    "url": "https://clawhub.ai/skills/testcase-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testcase-gen-6924b9b34d0b0b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testcase-gen@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-testcase-gen-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:619f1771604c8246fd043402bec8fcfd555319931cad8a3d707c4b004f08a452",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:42:11.500Z"
+}

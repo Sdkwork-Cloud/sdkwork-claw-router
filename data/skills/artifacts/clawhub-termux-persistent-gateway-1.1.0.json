@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/termux-persistent-gateway@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.termux_persistent_gateway",
+  "skill": {
+    "id": 47443,
+    "skillKey": "clawhub-termux-persistent-gateway",
+    "name": "Termux Persistent Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "termux-persistent-gateway",
+    "url": "https://clawhub.ai/skills/termux-persistent-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/termux-persistent-gateway-eb78e56f2082e849.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keep an AI gateway running persistently on Android/Termux using tmux, wake-lock, auto-start on boot, and health monitoring without systemd."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingofqin2026",
+      "userId": "s17ettags7atqtc9w4wkamex3983s6gj",
+      "displayName": "kingofqin2026",
+      "image": "https://avatars.githubusercontent.com/u/261905121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777426654666,
+      "changelog": "v1.1.0: Configurable gateway command. No hardcoded data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34b6e09f170adebec34dc61ca744d801a8c15f0c19c3c75a4d2d37e46cecff56"
+}

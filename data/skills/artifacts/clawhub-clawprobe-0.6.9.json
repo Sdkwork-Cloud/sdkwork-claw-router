@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawprobe@0.6.9",
+  "version": "0.6.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawprobe",
+  "skill": {
+    "id": 27186,
+    "skillKey": "clawhub-clawprobe",
+    "name": "Clawprobe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawprobe",
+    "url": "https://clawhub.ai/skills/clawprobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawprobe-5bb6f52da4736ea8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor OpenClaw agent health, token usage, API cost, and context window in real time. Use when you need to check your own status, inspect context utilizatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuhao6741",
+      "userId": "s171snd2tbeeygm3yptvarnn7x83tkfm",
+      "displayName": "liuhao6741",
+      "image": "https://avatars.githubusercontent.com/u/157583880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.6.9",
+      "createdAt": 1774084763653,
+      "changelog": "Version 0.6.9 of clawprobe\n\n- No user-facing changes detected in this release.\n- No file or documentation updates were made.\n- Behavior and interface remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82db3b7ef3ab50cb07236392d6f4d86704c54a85fe916fcd79137184776bd267"
+}

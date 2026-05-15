@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-high-quality@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_high_quality",
+  "skill": {
+    "id": 47553,
+    "skillKey": "clawhub-free-video-generator-high-quality",
+    "name": "Free Video Generator High Quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-high-quality",
+    "url": "https://clawhub.ai/skills/free-video-generator-high-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-high-quality-602d9f0599d138e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into high quality MP4 with this skill. Works with MP4, JPG, PNG, WebM files up to 200MB. content creators and marketers use it for ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777224352781,
+      "changelog": "- Initial release of Free Video Generator High Quality.\n- Instantly generate and export 1080p MP4 videos from user text or images, with backend cloud processing.\n- Supports MP4, JPG, PNG, WebM, and other common media formats up to 200MB.\n- Automatic session/token management; anonymous users get 100 free credits (7-day expiry).\n- Key features: upload, AI-driven video creation, video export, timeline state, and credit checking.\n- Designed for fast turnaround — 30-90 seconds per video job on GPU cloud.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0019a48a9fcebe26e88ef4d5af4ec96cfc4193d922abd14d87026e5fc8c723b"
+}

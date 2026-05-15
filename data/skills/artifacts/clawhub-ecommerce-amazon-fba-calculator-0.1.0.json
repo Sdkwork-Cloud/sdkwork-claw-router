@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-amazon-fba-calculator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_amazon_fba_calculator",
+  "skill": {
+    "id": 38154,
+    "skillKey": "clawhub-ecommerce-amazon-fba-calculator",
+    "name": "Amazon Fba Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-amazon-fba-calculator",
+    "url": "https://clawhub.ai/skills/ecommerce-amazon-fba-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-amazon-fba-calculator-861fd10bccf73241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon FBA Calculator - Complete fee breakdown and profit analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774258549432,
+      "changelog": "Initial release of Amazon FBA Calculator (Lite):\n\n- Calculates precise Amazon FBA fees using 2024 rates and product details.\n- Automatically detects size tier based on dimensions and weight.\n- Provides complete fee breakdown (fulfillment, storage, referral, etc.).\n- Generates profit analysis (gross/net margin, ROI).\n- Offers optimization suggestions (size, weight, inventory management).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faaf31f9a3215a202db4173ffe653551c7dba5c72fc1f8ff68aaaae31a9c733c"
+}

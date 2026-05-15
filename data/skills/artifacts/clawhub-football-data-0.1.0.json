@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/football-data@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.football_data",
+  "skill": {
+    "id": 18282,
+    "skillKey": "clawhub-football-data",
+    "name": "Football Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "football-data",
+    "url": "https://clawhub.ai/skills/football-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/football-data-a6e63e5f581b2951.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Football (soccer) data across 13 leagues — standings, schedules, match stats, xG, transfers, player profiles. Zero config, no API keys. Covers Premier League..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonelli182",
+      "userId": "s1723h1tj3z971jmzpyq2g910d84mph4",
+      "displayName": "André Antonelli",
+      "image": "https://avatars.githubusercontent.com/u/32582969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1128,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772236668806,
+      "changelog": "Initial release of football-data skill — Football data across 13 major leagues.\n\n- Provides access to standings, schedules, team and player profiles, match stats, xG, transfers, and more.\n- No API keys or configuration required; works for Premier League, La Liga, Bundesliga, Serie A, Ligue 1, MLS, Champions League, World Cup, Championship, Eredivisie, Primeira Liga, Serie A Brazil, European Championship.\n- Season and league detection logic included — recommends deriving season IDs via get_current_season.\n- Clarifies which commands and data types are available for each league.\n- Both CLI and Python SDK usage supported.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97d37ad8676f4573a1a61470b97720909ff62ce00148f0dc2b98968647aed7c1"
+}

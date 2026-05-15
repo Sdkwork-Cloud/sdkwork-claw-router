@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-code-reviewer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_code_reviewer",
+  "skill": {
+    "id": 34034,
+    "skillKey": "clawhub-pr-code-reviewer",
+    "name": "PR Code Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-code-reviewer",
+    "url": "https://clawhub.ai/skills/pr-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-code-reviewer-367ec70e359acb00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Revisa automáticamente PRs en Bitbucket con análisis de errores, seguridad y estilo en JS, TS, Node.js, PHP y Python, generando comentarios detallados y vere..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nesquitmx",
+      "userId": "publishers:nesquitmx",
+      "displayName": "nesquitmx",
+      "image": "https://avatars.githubusercontent.com/u/155778245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1318,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770920827483,
+      "changelog": "- Corrige rutas de reglas de \"rules/*.md\" a \"references/*.md\" en la sección de Detección de Lenguaje y Reglas.\n- No hay cambios en la funcionalidad o el formato de revisión; solo actualizaciones en las rutas de los archivos de referencia.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f9c72402083887614ab02ad937241033e116fe750d22676074279475016d961"
+}

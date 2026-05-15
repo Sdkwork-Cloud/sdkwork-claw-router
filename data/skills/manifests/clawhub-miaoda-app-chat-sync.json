@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29628,
+  "uuid": "skill-clawhub-miaoda-app-chat-sync",
+  "skillKey": "clawhub-miaoda-app-chat-sync",
+  "name": "miaoda-app-chat-sync",
+  "summary": "Convert Git repository code to structured JSON instructions for AI agents. Fetches code from Git repositories (GitHub, GitLab, etc.), generates structured JS...",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoda_app_chat_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoanso",
+      "features": [
+        "Convert Git repository code to structured JSON instructions for AI agents",
+        "Fetches code from Git repositories (GitHub, GitLab, etc.), generates structured JS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaoda-app-chat-sync@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229038923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaoda-app-chat-sync",
+      "url": "https://clawhub.ai/skills/miaoda-app-chat-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoda-app-chat-sync",
+    "url": "https://clawhub.ai/skills/miaoda-app-chat-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoda-app-chat-sync-0bed639fd5af883e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaoda-app-chat-sync@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaoda-app-chat-sync-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f5648fab178b6a894fbf7337e8d2fed22af0e2491c51645cd2688a39b29fdf",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:33:36.689Z"
+}

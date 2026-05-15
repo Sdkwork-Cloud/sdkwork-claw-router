@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/observerclaude@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.observerclaude",
+  "skill": {
+    "id": 23044,
+    "skillKey": "clawhub-observerclaude",
+    "name": "observerclaude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "observerclaude",
+    "url": "https://clawhub.ai/skills/observerclaude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/observerclaude-5382d0e74f04ebe0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An embedded UX research ethnographer that passively observes everything users do in OpenClaw, automatically logs all interactions, tracks use cases and their..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomorse",
+      "userId": "publishers:giulianomorse",
+      "displayName": "giulianomorse",
+      "image": "https://avatars.githubusercontent.com/u/210213190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772598757960,
+      "changelog": "uXR-Observer 1.0.0 introduces a comprehensive embedded UX research ethnographer for OpenClaw, continuously capturing and analyzing user interactions.\n\n- Observes all OpenClaw user interactions and logs structured data, verbatim quotes, and summaries on disk in real time.\n- Automatically tracks usage patterns, friction/delight events, API token estimates, fail states, and user wins.\n- Runs post-task and end-of-day surveys; logs all responses while supporting user privacy and survey choice.\n- Generates detailed daily UX research reports (with charts), summarizing findings with optional, user-controlled email delivery.\n- Provides robust self-monitoring: persistent heartbeat, gap detection, system event logging, and data storage integrity checks.\n- Ensures all captured data is immediately written to disk, never forgotten, and never shared without explicit user consent.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1c7b07c945c99c8e941fa8ebe4fedd467612b9224b19dd81ca34fcf30194431"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infra-monitoring@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infra_monitoring",
+  "skill": {
+    "id": 33618,
+    "skillKey": "clawhub-infra-monitoring",
+    "name": "Infra Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infra-monitoring",
+    "url": "https://clawhub.ai/skills/infra-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infra-monitoring-b722547feeaef7f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor server health, uptime, resource utilization, SSL certificate expiry, and incident detection for small teams and self-hosters. Delivers plain-language..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitcanadabrett",
+      "userId": "s179z9xbrcbpqvt6a22em801t983qf9y",
+      "displayName": "GitCanadaBrett",
+      "image": "https://avatars.githubusercontent.com/u/269075000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775840343263,
+      "changelog": "v0.1.0 — First public release. Plain-language infrastructure health reports for solo operators and small teams. Server health checks, uptime monitoring, SSL cert expiry tracking, incident logging, severity classification with compound signal detection. Attention-first reporting — tells you what needs action, not 47 numbers. 43/45 QA score across 12 test cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f61339971fefd399de2535e4809518e622b991f777e0342df636dcdf2ab2c07a"
+}

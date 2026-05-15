@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aoi-squad-orchestrator-lite@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoi_squad_orchestrator_lite",
+  "skill": {
+    "id": 16539,
+    "skillKey": "clawhub-aoi-squad-orchestrator-lite",
+    "name": "AOI Squad Orchestrator (Lite)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoi-squad-orchestrator-lite",
+    "url": "https://clawhub.ai/skills/aoi-squad-orchestrator-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoi-squad-orchestrator-lite-98d2a05ac312a2c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate teams with three role presets, stable pseudonyms, renaming options, and generate a fixed JSON report for each task."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edmonddantesj",
+      "userId": "publishers:edmonddantesj",
+      "displayName": "edmonddantesj",
+      "image": "https://avatars.githubusercontent.com/u/217761516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 833,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771142206539,
+      "changelog": "MVP: presets + stable pseudonym team names + rename + fixed JSON report schema (public-safe).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7283ece45012d9f6b88c6788f2cd77a2fc0d4db7ff45a50dcdc30569c66f7dbc"
+}

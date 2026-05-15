@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60808,
+  "uuid": "skill-clawhub-openviking-adapter",
+  "skillKey": "clawhub-openviking-adapter",
+  "name": "OpenViking记忆适配器",
+  "summary": "字节OpenViking记忆系统适配器 - 分层加载优化，Token降低83%",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openviking_adapter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yyu812707-wq",
+      "features": [
+        "字节OpenViking记忆系统适配器",
+        "分层加载优化，Token降低83%"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openviking-adapter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260243474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openviking-adapter",
+      "url": "https://clawhub.ai/skills/openviking-adapter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openviking-adapter",
+    "url": "https://clawhub.ai/skills/openviking-adapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openviking-adapter-c4203a30b6da2e34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openviking-adapter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openviking-adapter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b37d2f61af98e21588bad211857131c8252d7915cfb3936adea194ef3a8d0229",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:36:41.875Z"
+}

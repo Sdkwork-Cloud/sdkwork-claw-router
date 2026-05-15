@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-synthesis-matrix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_synthesis_matrix",
+  "skill": {
+    "id": 48799,
+    "skillKey": "clawhub-idea-synthesis-matrix",
+    "name": "Idea Synthesis Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-synthesis-matrix",
+    "url": "https://clawhub.ai/skills/idea-synthesis-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-synthesis-matrix-95af285c6757b875.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organizes ideas from multiple user-supplied sources into a comparison matrix for synthesis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778067752293,
+      "changelog": "Initial release—organizes user-supplied ideas into a synthesis matrix for critical comparison.\n\n- Creates a comparison matrix based on user-provided sources, notes, and synthesis questions.\n- Guides users in defining comparison dimensions and populates the matrix accordingly.\n- Highlights shared patterns, tensions, gaps, and unique contributions among sources.\n- Provides a concise synthesis and suggests follow-up inquiry questions.\n- Ensures compliance with safety, privacy, and academic integrity guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e9446ce38037d16c7424a7f45283295704945f5e975281b2d0a960e4c1a50ae"
+}

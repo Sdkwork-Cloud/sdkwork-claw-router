@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmrland-personal-demo@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmrland_personal_demo",
+  "skill": {
+    "id": 21443,
+    "skillKey": "clawhub-tmrland-personal-demo",
+    "name": "tmrland-personal-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmrland-personal-demo",
+    "url": "https://clawhub.ai/skills/tmrland-personal-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmrland-personal-demo-c8cdd6e958ce4009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TMR Land personal agent for an AI business marketplace. Use when: (1) searching for AI/data businesses, (2) publishing purchase intentions, (3) placing and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cpy1990",
+      "userId": "publishers:cpy1990",
+      "displayName": "cpy1990",
+      "image": "https://avatars.githubusercontent.com/u/24219824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772716585375,
+      "changelog": "Version 1.0.5\n\n- Major feature update: 36 new scripts added, expanding coverage of TMR Land's personal workflow and business marketplace actions.\n- New actions include charging and withdrawing wallet funds, dispute management, contract and business profile access, KYC verification, and comprehensive notification handling.\n- Substantially enhanced script set for wallet operations, negotiations, order management, contract access, business reviews, and reputation/credit checks.\n- SKILL.md updated with full documentation and usage examples for all new and existing scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8971548512d39998fd1ad7d80fc2e9c20ad1e53ad7e3543766b6ece9456310d"
+}

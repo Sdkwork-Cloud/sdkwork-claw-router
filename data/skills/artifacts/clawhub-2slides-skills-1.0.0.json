@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/2slides-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2slides_skills",
+  "skill": {
+    "id": 12378,
+    "skillKey": "clawhub-2slides-skills",
+    "name": "Slides/PPT generation and voice narration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2slides-skills",
+    "url": "https://clawhub.ai/skills/2slides-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2slides-skills-dc13c8f4dd524c16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered presentation generation using 2slides API. Create slides from text content, match reference image styles, or summarize documents into presentations. Use when users request to \"create a presentation\", \"make slides\", \"generate a d."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javainthinking",
+      "userId": "s179pwr839zxxcs8hgrqv73jv583ma9f",
+      "displayName": "javainthinking",
+      "image": "https://avatars.githubusercontent.com/u/2844583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1762,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770795050958,
+      "changelog": "Initial release of 2slides: AI-powered presentation generation.\n\n- Generate professional slides from text, images, or entire documents using the 2slides API.\n- Supports content-based slide creation, style matching from reference images, custom PDF slide generation, and document summarization.\n- Includes theme selection, multiple languages, and both synchronous and asynchronous (long-running) modes.\n- Detailed workflow steps, setup instructions, and credit/pricing breakdown provided.\n- Additional features: slide export, voice narration, and theme search.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:428c70ccc4d42974a27ec169c435150463ca19331343a5d73d881d64922a54e0"
+}

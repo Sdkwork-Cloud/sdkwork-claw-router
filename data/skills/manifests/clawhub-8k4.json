@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27614,
+  "uuid": "skill-clawhub-8k4",
+  "skillKey": "clawhub-8k4",
+  "name": "Find Trusted On-Chain Agents",
+  "summary": "Trust scoring, agent discovery, profiling, wallet/identity lookup, contact, dispatch, and metadata reads/writes via 8K4 Protocol (ERC-8004). Use when checkin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8k4",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "8k4-dev",
+      "features": [
+        "Trust scoring, agent discovery, profiling, wallet/identity lookup, contact, dispatch, and metad.",
+        "Use when checkin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/8k4@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264769315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "8k4",
+      "url": "https://clawhub.ai/skills/8k4"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8k4",
+    "url": "https://clawhub.ai/skills/8k4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8k4-b08f6eac7ba5ac5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/8k4@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-8k4-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc79be8fc68832733a561d650ccbd1802a638a9e11efceb78d1e415ab40ebd80",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:59:15.360Z"
+}

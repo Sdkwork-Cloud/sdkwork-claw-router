@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36009,
+  "uuid": "skill-clawhub-clear-books",
+  "skillKey": "clawhub-clear-books",
+  "name": "Clear Books",
+  "summary": "Clear Books integration. Manage data, records, and automate workflows. Use when the user wants to interact with Clear Books data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_books",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Clear Books integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Clear Books data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clear-books@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clear-books",
+      "url": "https://clawhub.ai/skills/clear-books"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-books",
+    "url": "https://clawhub.ai/skills/clear-books",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-books-ada6e2de6f73c39d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clear-books@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clear-books-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:664f37f02377e34d8b47d53fbdb274017d06610c44be4f20b6b11c3dd7278d04",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:25.546Z"
+}

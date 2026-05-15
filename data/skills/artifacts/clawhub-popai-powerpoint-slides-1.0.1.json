@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/popai-powerpoint-slides@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popai_powerpoint_slides",
+  "skill": {
+    "id": 25518,
+    "skillKey": "clawhub-popai-powerpoint-slides",
+    "name": "PopAI Powerpoint Slides"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popai-powerpoint-slides",
+    "url": "https://clawhub.ai/skills/popai-powerpoint-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popai-powerpoint-slides-9466ba7646a91ede.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create presentations (PPT) using PopAI API. Use when asked to create slides, presentations, decks, or PPT content via PopAI. Supports uploading reference fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zdawang000",
+      "userId": "s1775bqmsdkpchtgkr48jk1xjs83gbvb",
+      "displayName": "zdawang000",
+      "image": "https://avatars.githubusercontent.com/u/168274732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773392469020,
+      "changelog": "No user-facing changes in this version.\n\n- Version bump only; no code or documentation changes detected.\n- All usage, setup, and behavior remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24d40e4e2c442140fa287c0cc3932e998fbecbe0ae3f35479ab99f8d9ec30893"
+}

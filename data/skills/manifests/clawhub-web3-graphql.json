@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44941,
+  "uuid": "skill-clawhub-web3-graphql",
+  "skillKey": "clawhub-web3-graphql",
+  "name": "Web3 Graphql",
+  "summary": "Use Ask GraphQL MCP to handle Web3 and on-chain questions through GraphQL endpoints (especially SubQuery/SubGraph). Trigger by default for blockchain/Web3-re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_graphql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SubQuery-Network",
+      "features": [
+        "Use Ask GraphQL MCP to handle Web3 and on-chain questions through GraphQL endpoints (especially.",
+        "Trigger by default for blockchain/Web3-re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web3-graphql@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248638490?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web3-graphql",
+      "url": "https://clawhub.ai/skills/web3-graphql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-graphql",
+    "url": "https://clawhub.ai/skills/web3-graphql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-graphql-a51da9e6c6f1b4ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web3-graphql@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web3-graphql-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3758f81228dd128e3108a0c92f4d36b7b314130dbb38998409640b4de940ec7b",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:47:09.412Z"
+}

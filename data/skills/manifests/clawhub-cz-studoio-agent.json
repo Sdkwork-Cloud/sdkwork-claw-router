@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23397,
+  "uuid": "skill-clawhub-cz-studoio-agent",
+  "skillKey": "clawhub-cz-studoio-agent",
+  "name": "cz-studio-agent",
+  "summary": "Bridge OpenClaw to a remote Studio Agent over WebSocket using a local JSONL proxy CLI (streaming, stop, multi-turn). Prefer this for ClickZetta Studio and La...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cz_studoio_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luketalent",
+      "features": [
+        "Bridge OpenClaw to a remote Studio Agent over WebSocket using a local JSONL proxy CLI (streamin.",
+        "Prefer this for ClickZetta Studio and La..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cz-studoio-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10443485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cz-studoio-agent",
+      "url": "https://clawhub.ai/skills/cz-studoio-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cz-studoio-agent",
+    "url": "https://clawhub.ai/skills/cz-studoio-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cz-studoio-agent-84b511c651de1864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cz-studoio-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cz-studoio-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d163c9b0b86c3a2df32943f242fc27d4a9edd3a8779e4ef394a062e4b76c2f8e",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:06:25.172Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-agent-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_agent_chat",
+  "skill": {
+    "id": 59813,
+    "skillKey": "clawhub-cross-agent-chat",
+    "name": "Cross Agent Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-agent-chat",
+    "url": "https://clawhub.ai/skills/cross-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-agent-chat-4c5d8438865aac66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现不同 agent 间的标准化消息发送与接收，支持查询目标 session 并通过 sessions_send 进行跨 agent 通信。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ebly",
+      "userId": "publishers:ebly",
+      "displayName": "ebly",
+      "image": "https://avatars.githubusercontent.com/u/5242545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772997876049,
+      "changelog": "Initial release: 跨 Agent 通信的标准化流程",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d295b294847f55e89a885334e2b1a30ffd436ec72c06ddfca80bc0fab5a412b"
+}

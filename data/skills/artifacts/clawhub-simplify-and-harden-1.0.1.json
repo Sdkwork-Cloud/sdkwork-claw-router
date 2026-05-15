@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simplify-and-harden@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplify_and_harden",
+  "skill": {
+    "id": 10547,
+    "skillKey": "clawhub-simplify-and-harden",
+    "name": "simplify-and-harden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplify-and-harden",
+    "url": "https://clawhub.ai/skills/simplify-and-harden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplify-and-harden-6b757d3ab19d3de5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post-completion self-review for coding agents that runs simplify, harden, and micro-documentation passes on non-trivial code changes. Use when: a coding task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pskoett",
+      "userId": "s1794qsnpbjfkfnp0k226sefv583hfzt",
+      "displayName": "pskoett",
+      "image": "https://avatars.githubusercontent.com/u/177305814?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1542,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 10,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771880025492,
+      "changelog": "- Added explicit \"fresh eyes\" self-review step in the Simplify pass, requiring re-reading all added/modified code for bugs, errors, and brittle logic before edits.\n- Clarified the skill’s philosophy: emphasizes disciplined, fresh review using peak context before any further coding steps.\n- No changes to code or functionality; documentation improvement only.\n- No functional or interface changes. Safe for all users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f259134a34f4589c779532e24b01b9634dfba451026ae851b88e3f8943460bf4"
+}

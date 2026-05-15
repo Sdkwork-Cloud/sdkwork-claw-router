@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25123,
+  "uuid": "skill-clawhub-ezviz-open-restaurant-inspection",
+  "skillKey": "clawhub-ezviz-open-restaurant-inspection",
+  "name": "Ezviz Open Restaurant Inspection",
+  "summary": "Ezviz restaurant inspection skill. Captures device images and sends to Ezviz AI for food safety analysis.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_restaurant_inspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EzvizOpenTeam",
+      "features": [
+        "Ezviz restaurant inspection skill",
+        "Captures device images and sends to Ezviz AI for food safety analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezviz-open-restaurant-inspection@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16202450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezviz-open-restaurant-inspection",
+      "url": "https://clawhub.ai/skills/ezviz-open-restaurant-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-restaurant-inspection",
+    "url": "https://clawhub.ai/skills/ezviz-open-restaurant-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-restaurant-inspection-d7e39b547a50deb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezviz-open-restaurant-inspection@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezviz-open-restaurant-inspection-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:849bbe3ba692483d17d04e9f8403abdd52b627739884a117979ab56e9b3cb467",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:22:51.949Z"
+}

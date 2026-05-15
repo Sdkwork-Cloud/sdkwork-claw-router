@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nicholasrae-expense-tracker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nicholasrae_expense_tracker",
+  "skill": {
+    "id": 48043,
+    "skillKey": "clawhub-nicholasrae-expense-tracker",
+    "name": "Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nicholasrae-expense-tracker",
+    "url": "https://clawhub.ai/skills/nicholasrae-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nicholasrae-expense-tracker-c9eba96e7ccc15b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Just say what you spent — your AI logs it, categorizes it, and tracks it against your budget. No apps, no forms, no friction. Supports natural language like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicholasrae",
+      "userId": "publishers:nicholasrae",
+      "displayName": "Nick",
+      "image": "https://avatars.githubusercontent.com/u/258079684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771616612533,
+      "changelog": "Security: fixed jq injection in query.sh — all user input passed via --arg. Safe JSON modification patterns in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b499c1cb138389af998b20304c2a15d3e6ca07a9dc449a235a391b2b6f21d64"
+}

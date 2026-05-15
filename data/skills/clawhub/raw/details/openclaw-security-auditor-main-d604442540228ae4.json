@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "openclaw-security-auditor-main",
+    "displayName": "OpenClaw 安全审计器 🛡️",
+    "summary": "[MANDATORY PRE-CHECK - STOP AND READ BEFORE ANY TOOL CALL] 本 skill 在每次工具调用前强制执行安全审计。触发场景：(1) 删除文件（exec 中的 rm/del/rmdir/Remove-Item），(2) 覆写文件（write/edit 已存在文件...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773838818423,
+    "updatedAt": 1777620962241
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773838818423,
+    "changelog": "**qclaw-security-auditor v1.0.0 Initial Release**\n\n- Introduces a mandatory pre-check skill enforcing strict security audits before tool operations.\n- Checks for risky file deletions, overwrites, dangerous commands, and sensitive path actions; classifies by risk level (extremely high, high, medium, low).\n- Blocks or requires explicit user confirmation before executing high-risk operations (e.g. system/critical directory removal, bulk deletes, installations).\n- Provides clear user notifications for blocked or high-risk actions, including required confirmation processes.\n- Supersedes previous OpenClaw security audit checks with a system-wide, always-on, preemptive design.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kukano996",
+    "userId": "publishers:kukano996",
+    "displayName": "库咔Kuka",
+    "image": "https://avatars.githubusercontent.com/u/95150957?v=4"
+  },
+  "moderation": null
+}

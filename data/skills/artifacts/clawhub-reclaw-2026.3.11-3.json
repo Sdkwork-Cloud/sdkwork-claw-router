@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reclaw@2026.3.11-3",
+  "version": "2026.3.11-3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reclaw",
+  "skill": {
+    "id": 19742,
+    "skillKey": "clawhub-reclaw",
+    "name": "Reclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reclaw",
+    "url": "https://clawhub.ai/skills/reclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reclaw-f745aea88d8cd470.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when accessing memory, recording information, searching prior context, or managing subjects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxpetretta",
+      "userId": "publishers:maxpetretta",
+      "displayName": "Max Petretta",
+      "image": "https://avatars.githubusercontent.com/u/19291506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2026.3.11-3",
+      "createdAt": 1773255212977,
+      "changelog": "**Full Changelog**: https://github.com/maxpetretta/reclaw/compare/v2026.3.11-2...v2026.3.11-3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fedfada7060aa79d9079a17c578a797e8707f6b5cbdcf4d18e5a96d30923df25"
+}

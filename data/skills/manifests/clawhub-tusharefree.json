@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63187,
+  "uuid": "skill-clawhub-tusharefree",
+  "skillKey": "clawhub-tusharefree",
+  "name": "tushare",
+  "summary": "Tushare Pro 金融大数据平台 - 提供A股、指数、基金、期货、债券、宏观数据，Token认证方式访问。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tusharefree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "Tushare Pro 金融大数据平台",
+        "提供A股、指数、基金、期货、债券、宏观数据，Token认证方式访问。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tusharefree@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tusharefree",
+      "url": "https://clawhub.ai/skills/tusharefree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tusharefree",
+    "url": "https://clawhub.ai/skills/tusharefree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tusharefree-61b2f2d02eabd4e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tusharefree@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tusharefree-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8835e2319df7c2be8840f79b157fa783c0090ae9fe23234f1292c4bbbff758ee",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:00:02.373Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61706,
+  "uuid": "skill-clawhub-byted-bytehouse-multimodal-search",
+  "skillKey": "clawhub-byted-bytehouse-multimodal-search",
+  "name": "Byted Bytehouse Multimodal Search",
+  "summary": "ByteHouse 多模态检索 Skill，支持文本、图片、视频的向量化存储和混合检索。当用户需要在ByteHouse数据库中进行多模态向量化存储和混合检索时，使用此Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_bytehouse_multimodal_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "ByteHouse 多模态检索 Skill，支持文本、图片、视频的向量化存储和混合检索。当用户需要在ByteHouse数据库中进行多模态向量化存储和混合检索时，使用此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-bytehouse-multimodal-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-bytehouse-multimodal-search",
+      "url": "https://clawhub.ai/skills/byted-bytehouse-multimodal-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-bytehouse-multimodal-search",
+    "url": "https://clawhub.ai/skills/byted-bytehouse-multimodal-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-bytehouse-multimodal-search-258ab9648f6a872f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-bytehouse-multimodal-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-bytehouse-multimodal-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f772732a3d9edca07281c2b28fea520219a1f574b966974e24dba381a3f56f5e",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:48:20.003Z"
+}

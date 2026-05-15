@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-indexer@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_indexer",
+  "skill": {
+    "id": 69317,
+    "skillKey": "clawhub-memory-indexer",
+    "name": "memory-indexer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-indexer",
+    "url": "https://clawhub.ai/skills/memory-indexer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-indexer-c6029a3cf29f28da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短期记忆关键词索引工具 - 自动提取关键词、建立索引、搜索记忆，支持关联发现、时间线视图、重要记忆标记、三级级联搜索、会话备份与精简等功能。版本 2.0.0"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallmj",
+      "userId": "s17dtrmex5wpqkctmbrfmcymah83h1nn",
+      "displayName": "smallmj",
+      "image": "https://avatars.githubusercontent.com/u/23742160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773596753474,
+      "changelog": "更新至 v2.0.1：新增三级级联搜索、向量语义搜索、会话备份与精简、Hook 支持等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7caa4154780fdaae616b8f5572da832e0a6498e0a63325d72fc23a3309051eea"
+}

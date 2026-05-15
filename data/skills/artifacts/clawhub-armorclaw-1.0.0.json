@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/armorclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.armorclaw",
+  "skill": {
+    "id": 40933,
+    "skillKey": "clawhub-armorclaw",
+    "name": "ArmorClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "armorclaw",
+    "url": "https://clawhub.ai/skills/armorclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/armorclaw-39b95afdda61d6f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AES-256 encrypted secrets manager for OpenClaw agents. Store API keys, tokens, and credentials in a secure local vault instead of plain-text .env files. Feat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supertechgod",
+      "userId": "s1784mygs0b5r3hea0we6975b984b53y",
+      "displayName": "SuperTechGod",
+      "image": "https://avatars.githubusercontent.com/u/212455961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774059514122,
+      "changelog": "Initial release: ClawKeep 1.0.0\n\n- Launch of an AES-256 encrypted secrets manager for OpenClaw agents.\n- Securely stores API keys, tokens, and credentials in a local vault with master password, machine/IP binding, and .env migration.\n- Provides cross-skill secret sharing, per-skill access logging, and command-line/`inject_vault_env` integration.\n- Implements flexible lock modes: password, machine, static IP, and combined restrictions.\n- Includes a detailed security model using PBKDF2-HMAC-SHA256, HMAC integrity, and zero plaintext storage.\n- New CLI and Python interfaces for adding, retrieving, importing, and auditing secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c59d1150a974dfe8402d6e29f3bfc8b08b3b5cf0679def46e49e90c60488136a"
+}

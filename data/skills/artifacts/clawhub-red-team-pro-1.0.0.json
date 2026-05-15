@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/red-team-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.red_team_pro",
+  "skill": {
+    "id": 66900,
+    "skillKey": "clawhub-red-team-pro",
+    "name": "red-team-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "red-team-pro",
+    "url": "https://clawhub.ai/skills/red-team-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/red-team-pro-9699afd76e90819b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对抗性方案审查工作流。专门扮演最挑剔的反对者，系统性地攻击任何方案、决策、 计划或论点——找漏洞、列风险、提反例、暴露盲区。 触发场景（必须使用本 skill）： - 用户说\"帮我找找这个方案的问题 / 漏洞 / 风险\" - 用户说\"挑战一下这个想法 / 帮我唱反调\" - 用户说\"red team / 对抗测试..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boboy-j",
+      "userId": "s17ckg9br2p4k5kx6cr8fc4jz5852pah",
+      "displayName": "boboy-j",
+      "image": "https://avatars.githubusercontent.com/u/257822985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778254314287,
+      "changelog": "- Initial release of \"red-team\" skill for adversarial review workflows.\n- Systematically attacks any plan, decision, or argument with three escalating rounds: logical flaws, execution risks, and worst-case scenarios.\n- Guides user through a structured process including goal clarification, scenario intake, and adversarial role selection.\n- After the review, optionally offers targeted remediation suggestions and a concise risk evaluation.\n- All outputs strictly maintain an adversarial, problem-exposing tone—focused on surfacing blind spots and vulnerabilities.\n- Fully documented workflow in Chinese, suited for decision-making and risk analysis contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd85d883b4bf236180037ba33f2fdc368f555b279198bc2876904a6bc7979ecb"
+}

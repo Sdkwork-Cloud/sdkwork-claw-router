@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lost-pet@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lost_pet",
+  "skill": {
+    "id": 35046,
+    "skillKey": "clawhub-lost-pet",
+    "name": "Lost Pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lost-pet",
+    "url": "https://clawhub.ai/skills/lost-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lost-pet-f575c92937de0855.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your virtual pet died. The gravestone is permanent, but the story isn't over. Browse the public graveyard at animalhouse.ai, read epitaphs written from your..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775007886607,
+      "changelog": "- Added new optional fields (bio, image_prompt) to registration and adoption API examples for greater personalization.\n- Updated code samples in the documentation with descriptive values to improve clarity.\n- Incremented version number to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fb767f3ba2046eaa761a4afa89f63ad55619d3ee1c40a2218f65a5583ec603f"
+}

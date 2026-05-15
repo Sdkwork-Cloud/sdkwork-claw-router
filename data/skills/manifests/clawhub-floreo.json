@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44392,
+  "uuid": "skill-clawhub-floreo",
+  "skillKey": "clawhub-floreo",
+  "name": "Floreo",
+  "summary": "Floreo - Autonomous compounding journal with local storage and open connections. Auto-detects activities, tracks compound metrics (streaks, trends, velocity)...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.floreo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coidea",
+      "features": [
+        "Autonomous compounding journal with local storage and open connections",
+        "Auto-detects activities, tracks compound metrics (streaks, trends, velocity)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/floreo@0.2.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/floreo/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "floreo",
+      "url": "https://clawhub.ai/skills/floreo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "floreo",
+    "url": "https://clawhub.ai/skills/floreo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/floreo-50d7ccf96fd1fdf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/floreo@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-floreo-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:727f777b6e8129efca46bcb5d26280a39db9e227a0e630eee3d7b1d39ddfb468",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:49:27.526Z"
+}

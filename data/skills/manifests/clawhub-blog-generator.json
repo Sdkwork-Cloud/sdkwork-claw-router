@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18936,
+  "uuid": "skill-clawhub-blog-generator",
+  "skillKey": "clawhub-blog-generator",
+  "name": "Blog Generator",
+  "summary": "Analyzes journal entries and chat history to identify high-value topics and automatically generate blog posts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Analyzes journal entries and chat history to identify high-value topics and automatically gener."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-generator",
+      "url": "https://clawhub.ai/skills/blog-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-generator",
+    "url": "https://clawhub.ai/skills/blog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-generator-5c7cceb5909016c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2467554050edbf94ec0f62d95ba833c014277a347ba5976d70a0c0f9d8e89660",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:03:38.548Z"
+}

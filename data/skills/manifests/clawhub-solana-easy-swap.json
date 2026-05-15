@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19777,
+  "uuid": "skill-clawhub-solana-easy-swap",
+  "skillKey": "clawhub-solana-easy-swap",
+  "name": "Solana Easy Swap",
+  "summary": "Swap any Solana token from chat. Say 'swap 1 SOL for USDC' and it handles everything — quoting, signing, sending, confirming. No API keys, no wallet extensions, no setup beyond a keypair. Powered by Jupiter. Use when a user wants to swap,.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_easy_swap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "in-liberty420",
+      "features": [
+        "Swap any Solana token from chat",
+        "Say 'swap 1 SOL for USDC' and it handles everything — quoting, signing, sending, confirming",
+        "No API keys, no wallet extensions, no setup beyond a keypair",
+        "Powered by Jupiter"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-easy-swap@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184328103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-easy-swap",
+      "url": "https://clawhub.ai/skills/solana-easy-swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-easy-swap",
+    "url": "https://clawhub.ai/skills/solana-easy-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-easy-swap-64fdc91dc96ccd46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-easy-swap@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-easy-swap-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5f1c83bbeb6582b7f59282800de19fad4dbb8185eba4812969bc6c0336faa60",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T20:40:25.399Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/360-ai-cloud-disk@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.360_ai_cloud_disk",
+  "skill": {
+    "id": 68928,
+    "skillKey": "clawhub-360-ai-cloud-disk",
+    "name": "360-ai-cloud-disk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "360-ai-cloud-disk",
+    "url": "https://clawhub.ai/skills/360-ai-cloud-disk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/360-ai-cloud-disk-1646739d70c3d03a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "360 AI 云盘文件管理和助手工具。提供对 360 AI 云盘的全面操作能力，包括文件/文件夹的列表查看、内容搜索、分享文件、上传下载、文件重命名、移动文件、创建文件夹等功能。支持与云盘进行快速的文件交互与管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jsoncm",
+      "userId": "s172r31kv8etje23q6bzgbbj6s83ggcm",
+      "displayName": "jsoncm",
+      "image": "https://avatars.githubusercontent.com/u/29718566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774348443809,
+      "changelog": "- Added documentation for required environment variables, including API_KEY and optional settings.\n- Clarified configuration instructions for environment variables via .env or system environment.\n- Updated user intent-to-tool mapping with more explicit examples and operation categories.\n- Strengthened instruction to avoid exposing technical/tool details to users.\n- No changes in code or feature set; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d3082f4f8463417e3ea2a4452e7435893d2bfdf358f47e05b38eef9eac76e27"
+}

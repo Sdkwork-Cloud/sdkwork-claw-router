@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safran@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safran",
+  "skill": {
+    "id": 45898,
+    "skillKey": "clawhub-safran",
+    "name": "Safran"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safran",
+    "url": "https://clawhub.ai/skills/safran",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safran-423d16ce8c066ceb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safran is a French aerospace leader specializing in aircraft engines, landing systems, aerospace equipment, and defense technologies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777140367779,
+      "changelog": "- Initial release introducing Safran skill: covers company summary, major business lines, and market position.\n- Includes a detailed historical timeline from origins (1878) to present milestones (2024).\n- Summarizes business model (CFM International JV, equipment, defense, MRO).\n- Explains industry “moat” with competitive landscape and regulatory barriers.\n- Provides key company stats: founding, revenue, employees, market cap, engine market share.\n- Lists notable facts about Safran’s joint ventures and historical innovation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9537339426c8d1b2ad8c95d6aa61b8e9a45dce5747e91422a064aae5e045a1d5"
+}

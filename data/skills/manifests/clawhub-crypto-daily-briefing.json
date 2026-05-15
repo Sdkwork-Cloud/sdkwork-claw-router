@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64688,
+  "uuid": "skill-clawhub-crypto-daily-briefing",
+  "skillKey": "clawhub-crypto-daily-briefing",
+  "name": "🗞️ Crypto Daily Briefing - 币圈每日简报",
+  "summary": "币圈每日简报生成器。当用户要求\"生成简报\"、\"每日行情\"、\"币圈新闻\"、\"crypto briefing\"、\"行情摘要\"时触发。自动搜索最新加密货币资讯，整合 BTC/ETH 行情、重大事件、套利机会，生成结构化简报并推送飞书。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_daily_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcy891",
+      "features": [
+        "币圈每日简报生成器。当用户要求\"生成简报\"、\"每日行情\"、\"币圈新闻\"、\"crypto briefing\"、\"行情摘要\"时触发。自动搜索最新加密货币资讯，整合 BTC/ETH 行情、重大事件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-daily-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100127401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-daily-briefing",
+      "url": "https://clawhub.ai/skills/crypto-daily-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-daily-briefing",
+    "url": "https://clawhub.ai/skills/crypto-daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-daily-briefing-108bc3fd1ed0186b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-daily-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-daily-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35248e799d8b794f47ac3a8d7405ed8b1d62e28d4c06e6c27c60665ef7fe5408",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T03:44:53.758Z"
+}

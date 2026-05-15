@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56865,
+  "uuid": "skill-clawhub-ferrari",
+  "skillKey": "clawhub-ferrari",
+  "name": "Ferrari",
+  "summary": "Information assistant for Ferrari 法拉利. Search models, specs, pricing, reviews, and dealership info.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ferrari",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Ferrari 法拉利",
+        "Search models, specs, pricing, reviews, and dealership info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ferrari@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ferrari",
+      "url": "https://clawhub.ai/skills/ferrari"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ferrari",
+    "url": "https://clawhub.ai/skills/ferrari",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ferrari-b8510932dad3ddf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ferrari@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ferrari-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0051b813155bb9c1539dc5dff1e139174816576f83a4d8959e1bead0c35d6ac5",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:35:02.804Z"
+}

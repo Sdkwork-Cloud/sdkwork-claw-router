@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11917,
+  "uuid": "skill-clawhub-kenya-tax-rates",
+  "skillKey": "clawhub-kenya-tax-rates",
+  "name": "Kenya Tax Rates",
+  "summary": "Calculate Kenya payroll deductions - PAYE, SHIF, NSSF, Housing Levy with accurate 2024/2025 rates",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kenya_tax_rates",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Kariuki",
+      "features": [
+        "Calculate Kenya payroll deductions",
+        "PAYE, SHIF, NSSF, Housing Levy with accurate 2024/2025 rates"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kenya-tax-rates@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91112713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kenya-tax-rates",
+      "url": "https://clawhub.ai/skills/kenya-tax-rates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kenya-tax-rates",
+    "url": "https://clawhub.ai/skills/kenya-tax-rates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kenya-tax-rates-698304066dd8e32f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kenya-tax-rates@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kenya-tax-rates-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e53b5149990308a10eb5ac5d237987a2089f1a734209b3b2684cbebff29b7daa",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T14:23:47.639Z"
+}

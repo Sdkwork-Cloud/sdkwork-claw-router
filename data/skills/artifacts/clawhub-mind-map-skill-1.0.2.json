@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mind-map-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mind_map_skill",
+  "skill": {
+    "id": 56794,
+    "skillKey": "clawhub-mind-map-skill",
+    "name": "Mind Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mind-map-skill",
+    "url": "https://clawhub.ai/skills/mind-map-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mind-map-skill-42657ae3a9365367.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a PNG mind map from Markdown using free (auto), center, or horizontal layout. Use when user asks to produce a brain map/思维导图 from notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sawyer-shi",
+      "userId": "s17fk7a77dw6jcbb8n6h4shh6n83k94v",
+      "displayName": "sawyer-shi",
+      "image": "https://avatars.githubusercontent.com/u/171759149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774838842676,
+      "changelog": "- Font fallback improved: now explicitly prioritizes system CJK fonts by OS when download is unavailable.\n- Documentation update: clarified system font selection order for Linux, macOS, and Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb369cfd2b2126d229d3ce893f2357a19db13d7e1ff78d95de653d13eb283a9c"
+}

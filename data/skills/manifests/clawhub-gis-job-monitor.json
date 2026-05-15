@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72432,
+  "uuid": "skill-clawhub-gis-job-monitor",
+  "skillKey": "clawhub-gis-job-monitor",
+  "name": "GIS 校招监控",
+  "summary": "测绘/GIS 专业校招信息监控技能。使用场景：用户需要搜索、监控或定期推送测绘类、地理信息系统（GIS）专业的招聘信息时触发。支持筛选国央企、事业单位、大厂等优先级，可定时执行推送最新校招岗位。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gis_job_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tigerhhzz",
+      "features": [
+        "测绘/GIS 专业校招信息监控技能。使用场景：用户需要搜索、监控或定期推送测绘类、地理信息系统（GIS）专业的招聘信息时触发。支持筛选国央企、事业单位、大厂等优先级，可定时执行推送最新校招岗."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gis-job-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58968504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gis-job-monitor",
+      "url": "https://clawhub.ai/skills/gis-job-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gis-job-monitor",
+    "url": "https://clawhub.ai/skills/gis-job-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gis-job-monitor-c78eca1bcf913a6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gis-job-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gis-job-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bc1f4177dc22dd2cbec5e1d0f5f4fd6c4ca0473c555effd33d8c81b8d205919",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:36:36.727Z"
+}

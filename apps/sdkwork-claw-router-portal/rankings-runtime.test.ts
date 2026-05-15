@@ -118,7 +118,8 @@ test("ranking page wires i18n keys and server-backed vendor loading", () => {
   assert.match(rankingsSource, /from 'react-i18next'/);
   assert.match(rankingsSource, /const \{ t \} = useTranslation\(\);/);
   assert.match(rankingsSource, /RankingService\.fetchModelVendors\(\)/);
-  assert.match(rankingsSource, /const selectedVendorCode = selectedVendor\s*\?\s*deriveVendorOptionsForRankings\(rankingCatalog, rankingVendors\)\.vendorCodesByLabel\[selectedVendor\]/);
+  assert.match(rankingsSource, /const vendorOptions = useMemo\(\s*\(\) => deriveVendorOptionsForRankings\(rankingCatalog, rankingVendors\),\s*\[rankingCatalog, rankingVendors\],\s*\);/);
+  assert.match(rankingsSource, /const selectedVendorCode = selectedVendor\s*\?\s*vendorOptions\.vendorCodesByLabel\[selectedVendor\]/);
   assert.ok(
     rankingsSource.indexOf("const selectedVendorCode = selectedVendor") < rankingsSource.indexOf("const rankingView = useMemo"),
     "selectedVendorCode must be derived before deriveRankingViewModel receives it",
@@ -135,7 +136,7 @@ test("ranking service loads model vendors through the generated app SDK vendor e
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-vendors");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_vendors");
       return {
         items: [
           { label: "OpenAI", code: "openai", modelCount: 2 },
@@ -147,7 +148,7 @@ test("ranking service loads model vendors through the generated app SDK vendor e
       const vendors = await RankingService.fetchModelVendors();
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /app/v3/api/router/model-vendors",
+        "GET /app/v3/api/ai/model_vendors",
       ]);
       assert.deepEqual(vendors, [
         { label: "Anthropic", code: "anthropic", modelCount: 1 },
@@ -164,7 +165,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       assert.equal(requestUrl.searchParams.get("limit"), "200");
       return {
         source: {
@@ -250,7 +251,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
       const snapshot = await RankingService.fetchModelRankings();
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /app/v3/api/router/model-rankings?limit=200",
+        "GET /app/v3/api/ai/model_rankings?limit=200",
       ]);
       assert.equal(snapshot.catalog.length, 2);
       assert.deepEqual(snapshot.catalog.map((model) => ({
@@ -313,7 +314,7 @@ test("ranking service treats an empty published snapshot as a valid first-run st
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -353,7 +354,7 @@ test("ranking service maps backend history identities to stable series keys and 
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -457,7 +458,7 @@ test("ranking service rejects snapshot-scoped ranking ids to keep backend and hi
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -518,7 +519,7 @@ test("ranking service rejects fractional ranking count metrics", async () => {
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -571,7 +572,7 @@ test("ranking service rejects fractional ranking order metrics", async () => {
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -624,7 +625,7 @@ test("ranking service rejects fractional ranking history volume metrics", async 
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -685,7 +686,7 @@ test("ranking service rejects fractional ranking history point indexes", async (
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -746,7 +747,7 @@ test("ranking service rejects fractional ranking source refresh intervals", asyn
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
       return {
         source: {
           sourceLabel: "Published model ranking snapshot",
@@ -897,11 +898,13 @@ test("ranking service sends page filters through the generated app SDK query con
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/router/model-rankings");
-      assert.equal(requestUrl.searchParams.get("rankScope"), "commercial-default");
-      assert.equal(requestUrl.searchParams.get("vendorCode"), "openai");
+      assert.equal(requestUrl.pathname, "/app/v3/api/ai/model_rankings");
+      assert.equal(requestUrl.searchParams.get("rank_scope"), "commercial-default");
+      assert.equal(requestUrl.searchParams.get("vendor_code"), "openai");
       assert.equal(requestUrl.searchParams.get("modality"), "llm");
-      assert.equal(requestUrl.searchParams.get("searchQuery"), "gpt");
+      assert.equal(requestUrl.searchParams.get("q"), "gpt");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
+      assert.equal(requestUrl.searchParams.has("searchQuery"), false);
       assert.equal(requestUrl.searchParams.get("limit"), "100");
       return {
         source: {
@@ -952,7 +955,7 @@ test("ranking service sends page filters through the generated app SDK query con
       });
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "GET /app/v3/api/router/model-rankings?rankScope=commercial-default&vendorCode=openai&modality=llm&searchQuery=gpt&limit=100",
+        "GET /app/v3/api/ai/model_rankings?rank_scope=commercial-default&vendor_code=openai&modality=llm&q=gpt&limit=100",
       ]);
       assert.equal(snapshot.catalog[0].vendorCode, "openai");
       assert.deepEqual(snapshot.history, []);

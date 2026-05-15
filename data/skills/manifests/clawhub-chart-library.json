@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37398,
+  "uuid": "skill-clawhub-chart-library",
+  "skillKey": "clawhub-chart-library",
+  "name": "Chart Library",
+  "summary": "Search and analyze similar historical stock chart patterns and view AI-generated insights on forward returns for informed investing decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_library",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grahammccain",
+      "features": [
+        "Search and analyze similar historical stock chart patterns and view AI-generated insights on fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chart-library@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78570410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chart-library",
+      "url": "https://clawhub.ai/skills/chart-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-library",
+    "url": "https://clawhub.ai/skills/chart-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-library-075f0ef221a68b13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chart-library@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chart-library-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d2e1cef40024f4eb571e5a7f5f9a55fdb1cfdded6b3a1bc1bc5ad201fe0907",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:47:22.843Z"
+}

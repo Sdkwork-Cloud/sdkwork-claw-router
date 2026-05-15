@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40826,
+  "uuid": "skill-clawhub-edith-senso-knowledge",
+  "skillKey": "clawhub-edith-senso-knowledge",
+  "name": "Edith Senso Knowledge",
+  "summary": "Search your Senso.ai knowledge base hands-free through Edith smart glasses. Triggers on knowledge/document queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edith_senso_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samdickson22",
+      "features": [
+        "Search your Senso.ai knowledge base hands-free through Edith smart glasses",
+        "Triggers on knowledge/document queries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edith-senso-knowledge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217395086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edith-senso-knowledge",
+      "url": "https://clawhub.ai/skills/edith-senso-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edith-senso-knowledge",
+    "url": "https://clawhub.ai/skills/edith-senso-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edith-senso-knowledge-f61b8cd373a3a94d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edith-senso-knowledge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edith-senso-knowledge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f771204c81a200bf7ae418561f993de99fdbcebaf89c06a7243eca709337c9",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:17:50.057Z"
+}

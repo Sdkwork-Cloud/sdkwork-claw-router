@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-voiceai-voice-agent@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_voiceai_voice_agent",
+  "skill": {
+    "id": 10148,
+    "skillKey": "clawhub-openclaw-voiceai-voice-agent",
+    "name": "Voice.Ai Voice Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-voiceai-voice-agent",
+    "url": "https://clawhub.ai/skills/openclaw-voiceai-voice-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-voiceai-voice-agent-673794b9e6ba0a4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and deploy Voice.ai conversational AI agents. Use when the user wants to work with voice agents, list their agents, create new ones, or manage agent configurations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gizmogremlin",
+      "userId": "publishers:gizmogremlin",
+      "displayName": "Nick Gill",
+      "image": "https://avatars.githubusercontent.com/u/42254038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2617,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1769869257452,
+      "changelog": "- Major documentation update: SKILL.md now covers API key setup, authentication methods, error handling, and OpenClaw integration in detail.\n- Expanded documentation for configuration via environment variable, .env file, and OpenClaw config.\n- Added comprehensive CLI, JSON configuration, and user-trigger phrase reference tables.\n- Improved troubleshooting section with common errors and solutions.\n- Included more usage examples, file overviews, and links for quick onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cefe46d517d7d5fa844d0af897f4df6d4e0188959a681f56bf87db57ad5bacbd"
+}

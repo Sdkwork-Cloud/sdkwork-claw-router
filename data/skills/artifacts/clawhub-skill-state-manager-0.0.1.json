@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-state-manager@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_state_manager",
+  "skill": {
+    "id": 34020,
+    "skillKey": "clawhub-skill-state-manager",
+    "name": "skill-state-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-state-manager",
+    "url": "https://clawhub.ai/skills/skill-state-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-state-manager-c65d53243ac19c4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Meta Skill that manages API keys and state persistence for other tools. Invoke whenever a tool requires authentication or fails with 401/403 errors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qipengguo",
+      "userId": "s170pr38p1397r6p2bxqgmp6p583hzq7",
+      "displayName": "QipengGuo",
+      "image": "https://avatars.githubusercontent.com/u/8382210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775220180683,
+      "changelog": "Initial release of Skill State Manager (SSM), a meta skill for seamless API key and state management:\n\n- Enables native conversational prompts for secrets when third-party tools require authentication or fail with 401/403 errors.\n- Automatically detects platform (Claude Code, Codex, or other CLIs) and adapts credential storage path accordingly.\n- Securely saves user-provided tokens/keys in standard local directories for future reuse.\n- Eliminates the need for per-tool manual config, token pasting, or hardcoded secrets.\n- Only activates for third-party tools needing secrets, not for public or built-in tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4591ff10acdc7f81de7660dbf576deab2468184673f89d6ebf15015a0172cdf8"
+}

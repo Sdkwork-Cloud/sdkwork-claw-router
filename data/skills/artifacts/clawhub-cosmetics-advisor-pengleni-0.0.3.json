@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cosmetics-advisor-pengleni@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosmetics_advisor_pengleni",
+  "skill": {
+    "id": 46297,
+    "skillKey": "clawhub-cosmetics-advisor-pengleni",
+    "name": "Cosmetics Advisor: Pengleni"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosmetics-advisor-pengleni",
+    "url": "https://clawhub.ai/skills/cosmetics-advisor-pengleni",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosmetics-advisor-pengleni-398df2897e8af9ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when users need Pengleni beauty assistant capabilities via SMS login/session APIs, including AI virtual try-on, makeup analysis, style transfer, product..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rayleethu",
+      "userId": "s17ex3jqes13ph37smy4xpn2w583nh9z",
+      "displayName": "RayLee",
+      "image": "https://avatars.githubusercontent.com/u/173655667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1775221864719,
+      "changelog": "- Added detailed agent checklist and runtime environment requirements.\n- Documented Python client scripts for SMS login, session management, and HTML chat, with typical usage and function descriptions.\n- Outlined full agent workflow from SMS verification to beauty assistant Q&A, including error handling and security constraints.\n- Introduced HTML white-listing rules and session binding checks for secure message handling.\n- Provided standardized error message format for improved robustness and clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef315be5acd6b6d60fbb1f35ce11b51dad8f4ea98a27f79ccb772aa61ee05d5a"
+}

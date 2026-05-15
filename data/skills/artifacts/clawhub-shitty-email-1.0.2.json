@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shitty-email@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shitty_email",
+  "skill": {
+    "id": 10794,
+    "skillKey": "clawhub-shitty-email",
+    "name": "Shitty Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shitty-email",
+    "url": "https://clawhub.ai/skills/shitty-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shitty-email-b3a02e75e285c94e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage temporary disposable email inboxes"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johanski",
+      "userId": "publishers:johanski",
+      "displayName": "johanski",
+      "image": "https://avatars.githubusercontent.com/u/44247437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2151,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770131950838,
+      "changelog": "- Clarified that the \"id\" field from inbox responses should be used for fetching email content, not the email address.\n- Updated example API responses to reflect correct \"id\" field usage (e.g. \"msg_a1b2c3d4e5\").\n- Improved instructions for retrieving full email content using the message ID.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b95dbb1e91a61b429ec7cfeac407126a37ec80b12567340c937f3dfcda2dc89a"
+}

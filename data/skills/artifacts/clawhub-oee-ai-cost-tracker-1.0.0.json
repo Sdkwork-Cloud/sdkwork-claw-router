@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oee-ai-cost-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oee_ai_cost_tracker",
+  "skill": {
+    "id": 17666,
+    "skillKey": "clawhub-oee-ai-cost-tracker",
+    "name": "OEE AI Cost Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oee-ai-cost-tracker",
+    "url": "https://clawhub.ai/skills/oee-ai-cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oee-ai-cost-tracker-6336ad5e47d95850.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks AI API usage by logging calls, reporting spending by model and period, and suggesting cheaper models to optimize costs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odinbot33",
+      "userId": "publishers:odinbot33",
+      "displayName": "OdinBot33",
+      "image": "https://avatars.githubusercontent.com/u/259951308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 758,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771080913421,
+      "changelog": "- Initial release of AI Cost Tracker by Odin's Eye Enterprises.\n- Log every AI API call with model, token counts, and cost to a JSONL file.\n- Generate spend reports by model, time period, and use case via command-line.\n- Get suggestions for cheaper model routing based on task complexity.\n- No external dependencies—Python 3.10+ standard library only.\n- Easy integration: import the logging library or use the CLI for reporting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec62c5e8a98312b225e9627c86fa873205db4d982c689bb9b6c98fca711f4e67"
+}

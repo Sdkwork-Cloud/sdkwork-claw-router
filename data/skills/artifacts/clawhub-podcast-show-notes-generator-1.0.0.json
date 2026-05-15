@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-show-notes-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_show_notes_generator",
+  "skill": {
+    "id": 53583,
+    "skillKey": "clawhub-podcast-show-notes-generator",
+    "name": "Podcast Show Notes Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-show-notes-generator",
+    "url": "https://clawhub.ai/skills/podcast-show-notes-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-show-notes-generator-1bb9741a76911a8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn podcast transcripts or audio files into a complete publishing package — SEO-optimized show notes, chapter timestamps, pull quotes, social clip suggestio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777599289629,
+      "changelog": "Initial release of the Podcast Show Notes Generator.\n\n- Generate SEO-optimized show notes, chapter timestamps, and pull quotes from podcast episodes (via transcript or audio).\n- Suggest social clips, newsletter blurbs, YouTube/Spotify descriptions, and A/B title variations.\n- Output includes guest bio, episode metadata extraction, and tag strategy.\n- Handles both raw audio and transcript files, with automated transcription and speaker diarization.\n- Produces publishing-ready assets for major platforms (Spotify, YouTube, Substack, etc.).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ebccbf111fae04db4f26a4cca9304802c1d018d0096ef24ba681b7564273107"
+}

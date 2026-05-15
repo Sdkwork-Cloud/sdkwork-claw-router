@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marketing-skills@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_skills",
+  "skill": {
+    "id": 8332,
+    "skillKey": "clawhub-marketing-skills",
+    "name": "Marketing Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-skills",
+    "url": "https://clawhub.ai/skills/marketing-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-skills-68513fa97d49c803.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access 23 marketing modules offering checklists, frameworks, and ready-to-use deliverables for CRO, SEO, copywriting, analytics, launches, ads, and social me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jchopard69",
+      "userId": "s174jk559vp7xk7w0myhxc1m9x84by15",
+      "displayName": "Jordan Chops",
+      "image": "https://avatars.githubusercontent.com/u/252077042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 16074,
+      "installsAllTime": 119,
+      "installsCurrent": 115,
+      "stars": 107,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1769004361011,
+      "changelog": "Add TL;DR summary to description + Summary section at top of SKILL.md (storefront-friendly).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc433f473c558d7f6d9620b6faa293b100153b98837048870be5a4135838d220"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/version-drift@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.version_drift",
+  "skill": {
+    "id": 50881,
+    "skillKey": "clawhub-version-drift",
+    "name": "Version Drift Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "version-drift",
+    "url": "https://clawhub.ai/skills/version-drift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/version-drift-1cb16d5cf4fb56f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One command to check if your entire stack is up to date. SSHes into servers, queries APIs, and compares installed versions against latest — across every serv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rtaylorgraham",
+      "userId": "publishers:rtaylorgraham",
+      "displayName": "rtaylorgraham",
+      "image": "https://avatars.githubusercontent.com/u/58042830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773655244279,
+      "changelog": "SSH host key checking now defaults to accept-new (trust-on-first-use) instead of no. Configurable per-host via strict_host_key setting. Addresses VirusTotal MITM warning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:196c00a5d334b8022f2b719eaf5fb0562347f2612d86bdfff0cd7277355fbf2c"
+}

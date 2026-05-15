@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subscan-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscan_api",
+  "skill": {
+    "id": 32024,
+    "skillKey": "clawhub-subscan-api",
+    "name": "Subscan API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscan-api",
+    "url": "https://clawhub.ai/skills/subscan-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscan-api-303a32eff291d42b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Subscan API query assistant. Trigger immediately when the user needs to query blockchain data (blocks, accounts, transactions, staking, governance, assets, e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carlhong",
+      "userId": "s17fsnex5qhf66m4tqcy1eb11984vcwc",
+      "displayName": "carlhong",
+      "image": "https://avatars.githubusercontent.com/u/11582958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776176672237,
+      "changelog": "Subscan API query skill initial release.\n\n- Enables querying on-chain data via the Subscan API, including blocks, accounts, transactions, and more.\n- Automatically interprets user intent, selects the correct API route, and formats the response.\n- Guides users through API key setup if none is present.\n- Handles API errors gracefully with helpful next-step suggestions or retry logic.\n- Formats output for readability, avoiding raw JSON unless explicitly requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e53a95ed12f805fdaeb743d4b9295e184a26b22bab45ee44839809705f6dedd4"
+}

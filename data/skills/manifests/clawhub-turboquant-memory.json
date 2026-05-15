@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55169,
+  "uuid": "skill-clawhub-turboquant-memory",
+  "skillKey": "clawhub-turboquant-memory",
+  "name": "TurboQuant Memory",
+  "summary": "Compress and accelerate vector search in memory/RAG systems using TurboQuant (ICLR 2026) — near-optimal vector quantization with 5-8x compression and 98%+ se...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turboquant_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunnyZhou",
+      "features": [
+        "Compress and accelerate vector search in memory/RAG systems using TurboQuant (ICLR 2026) — near."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turboquant-memory@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5576491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turboquant-memory",
+      "url": "https://clawhub.ai/skills/turboquant-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turboquant-memory",
+    "url": "https://clawhub.ai/skills/turboquant-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turboquant-memory-b861fadc033be19d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turboquant-memory@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turboquant-memory-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3bbcfe545d64ec8e0fda0887c085094521e7c2a30aff98ed2f261b45fb10780",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:41:02.974Z"
+}

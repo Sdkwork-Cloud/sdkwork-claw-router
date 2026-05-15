@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xstocks-beta@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xstocks_beta",
+  "skill": {
+    "id": 38110,
+    "skillKey": "clawhub-xstocks-beta",
+    "name": "xstocks-beta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xstocks-beta",
+    "url": "https://clawhub.ai/skills/xstocks-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xstocks-beta-aff2700babb800bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, list, and resolve xStocks tokens on Solana mainnet, and list wallet holdings; use with Jupiter for price and trading functionality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manu-xmint",
+      "userId": "s176gxg53nmy7n4z5dq80hfst583h1en",
+      "displayName": "Manuel Hidalgo",
+      "image": "https://avatars.githubusercontent.com/u/220928694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1774569603472,
+      "changelog": "- Clarified buy flow: once the user confirms an amount, execute the entire buy process immediately without pausing or waiting for further prompts.\n- Added explicit instruction not to wait after confirmation—confirmation means immediate execution.\n- Emphasized not to use the Jupiter Ultra endpoints for swaps.\n- Updated documentation to reinforce urgent, one-pass transaction execution after user confirmation.\n- No functional code changes; this update is documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b257beda88a6aeca9f9c96c846691dd8294791f3498acce9c9cf8ddfe6a2eec"
+}

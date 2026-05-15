@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpocr",
+  "skill": {
+    "id": 50639,
+    "skillKey": "clawhub-jpocr",
+    "name": "jpocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpocr",
+    "url": "https://clawhub.ai/skills/jpocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpocr-8b9445daa71b64de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Japanese OCR via NDLOCR-Lite (National Diet Library). Trigger on 'OCR this image', '日文OCR', 'recognize Japanese text', or any request to extract text from Ja..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realwaynesun",
+      "userId": "publishers:realwaynesun",
+      "displayName": "Wayne",
+      "image": "https://avatars.githubusercontent.com/u/31076436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1084,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772277374201,
+      "changelog": "- Initial release of jpocr, a local Japanese OCR skill powered by NDLOCR-Lite from Japan's National Diet Library.\n- Supports high-quality printed and vertical Japanese text recognition; works for English text as well.\n- Provides batch processing and multiple output formats: plain text, JSON with bounding boxes, and visualization images.\n- Experimental support for handwritten Japanese OCR.\n- Runs on CPU (Apple Silicon/x86); no GPU or API key required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a48fb7b63fd7194705bed118a03379950bc6447b64a7ff8564e431ecae3aa11c"
+}

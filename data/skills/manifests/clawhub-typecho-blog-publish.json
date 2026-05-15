@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61387,
+  "uuid": "skill-clawhub-typecho-blog-publish",
+  "skillKey": "clawhub-typecho-blog-publish",
+  "name": "Typecho Blog Publish",
+  "summary": "通过 XML-RPC 自动发布文章到 Typecho 博客。支持文件读取、草稿模式、标签管理、智能配图。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typecho_blog_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiliangseason-arch",
+      "features": [
+        "通过 XML-RPC 自动发布文章到 Typecho 博客。支持文件读取、草稿模式、标签管理、智能配图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typecho-blog-publish@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241988592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typecho-blog-publish",
+      "url": "https://clawhub.ai/skills/typecho-blog-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typecho-blog-publish",
+    "url": "https://clawhub.ai/skills/typecho-blog-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typecho-blog-publish-f09b9d30d2ebb952.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typecho-blog-publish@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-typecho-blog-publish-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abe2855a02e4b5728ed985b082c1b4b7fd259079de211c630926434caa4f3b63",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:48:31.584Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/connect@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connect",
+  "skill": {
+    "id": 50641,
+    "skillKey": "clawhub-connect",
+    "name": "Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connect",
+    "url": "https://clawhub.ai/skills/connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connect-5a638a128ca67348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory-driven human connections — match people through deep emotional understanding, not surface interests. Powered by Echo's memory graph and emotion-aware..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kkw-21",
+      "userId": "s175w46s26m85g7v78djf383b185aq6k",
+      "displayName": "Kobe",
+      "image": "https://avatars.githubusercontent.com/u/81384641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773174640564,
+      "changelog": "Initial placeholder — memory-driven human connections",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cce9f3fd26c9d0fd262946fd1ecbedda1092699b68f18723888f4f3eaa86daed"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27128,
+  "uuid": "skill-clawhub-traffic-ops-governance",
+  "skillKey": "clawhub-traffic-ops-governance",
+  "name": "Traffic Ops Governance",
+  "summary": "Governa como agentes de trafego operam Meta Ads com seguranca, padrao de aprovacao, auditoria de mudancas e limites claros para o MCP brijr/meta-mcp.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_ops_governance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan Mosko",
+      "features": [
+        "Governa como agentes de trafego operam Meta Ads com seguranca, padrao de aprovacao, auditoria d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-ops-governance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6052272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-ops-governance",
+      "url": "https://clawhub.ai/skills/traffic-ops-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-ops-governance",
+    "url": "https://clawhub.ai/skills/traffic-ops-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-ops-governance-e189fc7bcfd4e173.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-ops-governance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-ops-governance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81647e9907470dab30a7ef820aa08e1eec40361c21d3c4442bc60fc455fe8883",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:55:26.912Z"
+}

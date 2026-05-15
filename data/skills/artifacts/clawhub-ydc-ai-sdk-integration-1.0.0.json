@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ydc-ai-sdk-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ydc_ai_sdk_integration",
+  "skill": {
+    "id": 10868,
+    "skillKey": "clawhub-ydc-ai-sdk-integration",
+    "name": "Integrate You.com web tools with Vercel AI SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ydc-ai-sdk-integration",
+    "url": "https://clawhub.ai/skills/ydc-ai-sdk-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ydc-ai-sdk-integration-1650b6e299518b59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Vercel AI SDK applications with You.com tools (web search, AI agent, content extraction). Use when developer mentions AI SDK, Vercel AI SDK, generateText, streamText, or You.com integration with AI SDK."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardirby",
+      "userId": "s17ddf7f8acaadsv9xrjm63es1842mbj",
+      "displayName": "Edward Irby",
+      "image": "https://avatars.githubusercontent.com/u/1058725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2268,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769930263045,
+      "changelog": "ydc-ai-sdk-integration 1.0.0\n\n- Initial release.\n- Provides guided workflow to integrate You.com tools (web search, AI agent, content extraction) into Vercel AI SDK applications using @youdotcom-oss/ai-sdk-plugin.\n- Interactive setup covers package manager choice, environment variable setup, AI SDK function selection, and tool configuration.\n- Includes detailed integration examples for generateText() and streamText(), with code patterns for Node.js, Next.js, Express.js, and React.\n- Supports Anthropic and OpenAI models with tool-based text generation and streaming responses.\n- Documents options for standard and custom API key usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f3c61e0d0fb34e2c7a2306ea83baec6c5633155ca8927bae910b34b40e5d457"
+}

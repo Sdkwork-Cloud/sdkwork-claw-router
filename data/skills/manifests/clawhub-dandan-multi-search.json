@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67215,
+  "uuid": "skill-clawhub-dandan-multi-search",
+  "skillKey": "clawhub-dandan-multi-search",
+  "name": "Dandan Multi Search",
+  "summary": "多搜索引擎聚合搜索工具。集成17个搜索引擎（8个国内+9个国际），支持高级搜索语法、时间筛选、站内搜索、隐私引擎和 WolframAlpha 知识查询。无需 API Key。当用户要求搜索、多引擎搜索、聚合搜索、隐私搜索、或需要全面信息检索时触发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dandan_multi_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "realorange1994",
+      "features": [
+        "多搜索引擎聚合搜索工具。集成17个搜索引擎（8个国内+9个国际），支持高级搜索语法、时间筛选、站内搜索、隐私引擎和 WolframAlpha 知识查询。无需 API Key。当用户要求搜索、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dandan-multi-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222950321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dandan-multi-search",
+      "url": "https://clawhub.ai/skills/dandan-multi-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dandan-multi-search",
+    "url": "https://clawhub.ai/skills/dandan-multi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dandan-multi-search-24ab333f9683fefd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dandan-multi-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dandan-multi-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab75e189915b5be4b0e81d04f62368ec5baad0a68c2637fae48d3ae7463adf49",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:31:23.715Z"
+}

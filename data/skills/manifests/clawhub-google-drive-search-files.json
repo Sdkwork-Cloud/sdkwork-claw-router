@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42685,
+  "uuid": "skill-clawhub-google-drive-search-files",
+  "skillKey": "clawhub-google-drive-search-files",
+  "name": "Google Drive Search Files",
+  "summary": "Atomic node skill to search for files in Google Drive using the gog CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_search_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to search for files in Google Drive using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-drive-search-files@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-drive-search-files",
+      "url": "https://clawhub.ai/skills/google-drive-search-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-search-files",
+    "url": "https://clawhub.ai/skills/google-drive-search-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-search-files-277b7cb812bd267d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-drive-search-files@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-search-files-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d90fccf4b2d5934e6c145752fdb7ba8a4fd33544e2068aa361dfe391899a296",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:44.936Z"
+}

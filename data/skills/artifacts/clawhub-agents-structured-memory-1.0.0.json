@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agents-structured-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_structured_memory",
+  "skill": {
+    "id": 15428,
+    "skillKey": "clawhub-agents-structured-memory",
+    "name": "Qordinate - Durable lists, facts, and reminders for OpenClaw agents."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-structured-memory",
+    "url": "https://clawhub.ai/skills/agents-structured-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-structured-memory-b2417546cd20b2e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Qordinate is a chat-native assistant that acts as structured memory for your OpenClaw agents. Use this skill when you want your OpenClaw agent to offload long-term facts, tasks, and reminders into Qordinate over WhatsApp, Telegram, or Slac."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "singhcoder",
+      "userId": "s175nmgz16w9scde7cn90btnjh845f7a",
+      "displayName": "SinghCoder",
+      "image": "https://avatars.githubusercontent.com/u/32142363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1029,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770453134974,
+      "changelog": "- Initial release of qordinate-structured-memory skill for OpenClaw agents\n- Enables agents to offload long-term facts, lists, and reminders into Qordinate via WhatsApp, Telegram, or Slack\n- Agents communicate with Qordinate using plain language in structured text format\n- Users must connect Qordinate account to the desired messaging platform before use\n- Designed for easy management of tasks, contacts, leads, resources, and reminders without custom databases",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ea30e032405efc0d61ec0895da22cbe90c214c645f058c9b809c1f76e037772"
+}

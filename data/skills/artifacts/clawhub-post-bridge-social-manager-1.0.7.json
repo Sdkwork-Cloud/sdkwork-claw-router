@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/post-bridge-social-manager@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_bridge_social_manager",
+  "skill": {
+    "id": 10370,
+    "skillKey": "clawhub-post-bridge-social-manager",
+    "name": "Social Media Assistant (via post-bridge.com)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-bridge-social-manager",
+    "url": "https://clawhub.ai/skills/post-bridge-social-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-bridge-social-manager-bb099a4ca34c9a13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your OpenClaw into an autonomous social media manager using Post Bridge API. Use when scheduling, posting, or managing content across TikTok, Instagram..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackfriks",
+      "userId": "publishers:jackfriks",
+      "displayName": "jackfriks",
+      "image": "https://avatars.githubusercontent.com/u/112214002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1701,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 10,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772808807816,
+      "changelog": "- Adds new post creation options: `media_urls`, `is_draft`, `processing_enabled`, and `use_queue` for flexible scheduling and media sourcing.\n- Introduces `use_queue` for automatic scheduling to the next available slot from your configured social media queue.\n- Supports updating (`PATCH`) and deleting (`DELETE`) scheduled posts (only while status is `scheduled`).\n- Analytics endpoint expanded: now supports platform-wide queries, post result ID filters, and richer returned analytics (view, like, comment, and share counts).\n- Documentation for post result listing (`GET /v1/post-results`) and analytics syncing updated for improved clarity and broader coverage.\n- Tips and workflow sections updated to include queue-based posting options and new analytics tracking advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a97026a3469b4e0f7bd0fcc72b17104023c26577ea01e12fb01de87a4de0aeb"
+}

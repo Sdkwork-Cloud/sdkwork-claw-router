@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dex-browser@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_browser",
+  "skill": {
+    "id": 42077,
+    "skillKey": "clawhub-dex-browser",
+    "name": "Dexter Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-browser",
+    "url": "https://clawhub.ai/skills/dex-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-browser-5471a8c908d32946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation via Playwright. Use when pages are JS-rendered, require user interaction (click/fill), or need screenshots. Part of the 3-layer web tool h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tylerdotai",
+      "userId": "s175dzw0p3n0d9nddapydgeg9583pg3m",
+      "displayName": "Tyler",
+      "image": "https://avatars.githubusercontent.com/u/265649192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776221576156,
+      "changelog": "**Major 2.0.0 update: Switched to a multi-script structure with improved clarity and broader automation commands.**\n\n- Broke monolithic script into separate scripts: `screenshot.py`, `scrape.py`, `extract.py`, `interact.py`, and `init.py`\n- Added reference documentation: `selectors.md` (CSS selector tips) and `patterns.md` (automation patterns/troubleshooting)\n- Enhanced documentation: clearer layering, usage conditions, expanded examples, quick command table, and error codes\n- Added initial setup check script (`init.py`) for verifying Playwright installation\n- Broadened automation: support for click, fill, hover, and expanded structured data extraction (up to 50 items with more properties)\n- Improved guidance on when and how to use the skill in relation to other web tools",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf839a4bd0e63294509e81aad53aac9f71c9e2666947312cebbbd393f0f3d390"
+}

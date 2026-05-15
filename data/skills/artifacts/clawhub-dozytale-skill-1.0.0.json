@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dozytale-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dozytale_skill",
+  "skill": {
+    "id": 39104,
+    "skillKey": "clawhub-dozytale-skill",
+    "name": "bedtime-story-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dozytale-skill",
+    "url": "https://clawhub.ai/skills/dozytale-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dozytale-skill-d41a277bf7fcfe52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A sleep and relaxation skill that sends AI-generated bedtime audio stories mixed with ambient background music as a voice message on WhatsApp, WeChat, or Fei..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiansyao",
+      "userId": "s17830sff1v6yynfrd2k9jm9w183khwz",
+      "displayName": "tiansyao",
+      "image": "https://avatars.githubusercontent.com/u/177606955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774515485201,
+      "changelog": "**Major update: Redesigned as an end-to-end AI bedtime audio experience for chat platforms**\n\n- Sends AI-generated bedtime stories mixed with ambient background music as voice messages via WhatsApp, WeChat, or Feishu—no app download required.\n- Personalizes user onboarding: learns about your sleep habits, offers gentle advice, and configures nightly reminders.\n- Covers 139 unique relaxation themes (stories, white noise, instrumental, children’s content).\n- Two modes: automatic bedtime push via scheduled messages, or on-demand soothing audio by request.\n- Audio is generated dynamically by mixing story narration and music using ffmpeg, tailored for each user’s sleep mood.\n- Includes multi-step, friendly chat flow for onboarding and recommendation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ae57ed9b746b4388b3bcce74fa88bd09b816042bb82e83cbf6ff31aebf2c22a"
+}

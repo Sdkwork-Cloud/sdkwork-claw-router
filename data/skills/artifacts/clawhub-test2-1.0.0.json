@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test2",
+  "skill": {
+    "id": 20845,
+    "skillKey": "clawhub-test2",
+    "name": "Test 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test2",
+    "url": "https://clawhub.ai/skills/test2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test2-60303ae22b998861.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Formats text according to specified style guidelines. A clean example skill with no security issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tjade273",
+      "userId": "publishers:tjade273",
+      "displayName": "Tjaden Hess",
+      "image": "https://avatars.githubusercontent.com/u/3936648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772225978586,
+      "changelog": "- Initial release of the simple-formatter skill.\n- Formats text by capitalizing sentences, fixing spacing, and applying punctuation rules.\n- Removes trailing whitespace from formatted output.\n- Usage guidelines and example provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:31fa3b16b6e751fe1c8ad4cb68633a368340d2d5c765358e34255c0c636393e8"
+}

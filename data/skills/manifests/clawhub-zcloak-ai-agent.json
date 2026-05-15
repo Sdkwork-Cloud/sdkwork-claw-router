@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18905,
+  "uuid": "skill-clawhub-zcloak-ai-agent",
+  "skillKey": "clawhub-zcloak-ai-agent",
+  "name": "zcloak-ai-agent",
+  "summary": "Use this skill for zCloak.ai workflows, including agent identity creation, AI Name (.ai/.agent) lookup and registration, owner binding with passkey/WebAuthn,...",
+  "version": "1.0.47",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zcloak_ai_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whgreate",
+      "features": [
+        "Use this skill for zCloak.ai workflows, including agent identity creation, AI Name (.ai/.agent)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zcloak-ai-agent@1.0.47",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/811644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zcloak-ai-agent",
+      "url": "https://clawhub.ai/skills/zcloak-ai-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zcloak-ai-agent",
+    "url": "https://clawhub.ai/skills/zcloak-ai-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zcloak-ai-agent-4259a12548024867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zcloak-ai-agent@1.0.47",
+      "artifactUrl": "data/skills/artifacts/clawhub-zcloak-ai-agent-1.0.47.json",
+      "version": "1.0.47",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfb8564f8d77d159e9e118434ee353fa1c6cae2fa4cbd2b82d6e41b954628c09",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:06:10.715Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-lmage-for-file-repair@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_lmage_for_file_repair",
+  "skill": {
+    "id": 21361,
+    "skillKey": "clawhub-ai-lmage-for-file-repair",
+    "name": "ai lmage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-lmage-for-file-repair",
+    "url": "https://clawhub.ai/skills/ai-lmage-for-file-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-lmage-for-file-repair-7bd4fa7e7bcf7938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Async AI image generation (text-to-image and image-to-image). Submit a job to get a task_id, then poll status to get an OSS download URL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilpvc",
+      "userId": "s171k9t6ccdza1gf7d8j063xrh83jck0",
+      "displayName": "ilpvc",
+      "image": "https://avatars.githubusercontent.com/u/67964602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773283214241,
+      "changelog": "ai-lmage-for-file-repair 1.0.3\n\n- No code or documentation changes detected in this release.\n- All features and behavior remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8894adddca2e22de69ee34d0b9ed8f6230aa39e7adce079a2e519aedb9147f1d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-watchdog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_watchdog",
+  "skill": {
+    "id": 51220,
+    "skillKey": "clawhub-server-watchdog",
+    "name": "Server Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-watchdog",
+    "url": "https://clawhub.ai/skills/server-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-watchdog-dcfafb858a2fdb42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor remote servers via SSH — check service health (PM2, systemd, Docker), database status (MongoDB, MySQL, PostgreSQL), disk space, memory, and auto-rest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qoohsuan",
+      "userId": "s17716vf8bh77s3vpavep1kzfn83msft",
+      "displayName": "Qoohsuan",
+      "image": "https://avatars.githubusercontent.com/u/81729903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773801778763,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a175d56afc559dbe52b8fc4f2c011401df366ee3fac7165ff159d99c151f2989"
+}

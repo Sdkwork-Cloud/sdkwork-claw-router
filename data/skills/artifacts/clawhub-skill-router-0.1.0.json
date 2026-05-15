@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-router@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_router",
+  "skill": {
+    "id": 18404,
+    "skillKey": "clawhub-skill-router",
+    "name": "Skill Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-router",
+    "url": "https://clawhub.ai/skills/skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-router-9c64515352d7a9cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route the current task to the most relevant installed skill, and only suggest new skills when existing ones are not enough. Use when the user asks things lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzc-001",
+      "userId": "publishers:yuzc-001",
+      "displayName": "Yuzc-001",
+      "image": "https://avatars.githubusercontent.com/u/199756267?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773333178852,
+      "changelog": "First public release: capability-first skill routing, reuse-first behavior, discovery flow via find-skills, and vetting of unfamiliar third-party candidates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78c81d8e8edddea9d1441e6c3f83bc341f52bf8136d08da58c1ad68fca0f2f4b"
+}

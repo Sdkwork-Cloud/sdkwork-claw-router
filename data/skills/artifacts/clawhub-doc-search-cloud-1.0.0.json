@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-search-cloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_search_cloud",
+  "skill": {
+    "id": 58997,
+    "skillKey": "clawhub-doc-search-cloud",
+    "name": "doc-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-search-cloud",
+    "url": "https://clawhub.ai/skills/doc-search-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-search-cloud-76f986b42fc08cd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "处理文档向量化、存储和语义检索。支持 Word、Markdown、PDF、TXT 等格式。v3.0 新增查询缓存（速度提升 70x）、混合检索（BM25+ 向量）。Invoke when user needs to vectorize documents, search for similar content,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudcba",
+      "userId": "s17bc4wvkndystdpddzk7hm5sh83qf2a",
+      "displayName": "船长的虾",
+      "image": "https://avatars.githubusercontent.com/u/46065281?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775049986827,
+      "changelog": "**重大升级 — 向量化与混合检索能力全面增强，性能提升 70x**\n\n- 新增查询缓存与 BM25+ 向量混合检索，极大提升搜索速度和精度\n- 支持 Word、Markdown、PDF、TXT 等多种文档格式向量化与语义检索\n- 持久化存储，重启后自动恢复向量库，不丢数据\n- 灵活选择“哈希模拟”或真实 sentence-transformers 语义向量\n- 完善 API：文档向量化、语义相似检索、统计与清空管理等一站式能力\n- 文档显著更新，详述用法、技术细节及 v2-v3 主要特性和性能提升",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8f05418cab49da5fa1f64f88515bfcc7124f22af0e817a4386e6a5e9ca4c04a"
+}

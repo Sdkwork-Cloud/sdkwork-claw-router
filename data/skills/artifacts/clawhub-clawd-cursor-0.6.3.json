@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawd-cursor@0.6.3",
+  "version": "0.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_cursor",
+  "skill": {
+    "id": 16832,
+    "skillKey": "clawhub-clawd-cursor",
+    "name": "ClawdCursor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-cursor",
+    "url": "https://clawhub.ai/skills/clawd-cursor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-cursor-01968e88b11c34b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI desktop agent — control any app on Windows/macOS from your OpenClaw agent. Send natural language tasks to the Clawd Cursor API and it handles everything:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amrdab",
+      "userId": "s170zxaeskxm49sqa55wdy8y6h848426",
+      "displayName": "AmrDab",
+      "image": "https://avatars.githubusercontent.com/u/139714613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1339,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.6.3",
+      "createdAt": 1772362229231,
+      "changelog": "- Updated install instructions: now uses `npm run setup` and the CLI command `clawdcursor` in place of previous `npx clawd-cursor` and `npm start`.\n- Clarified OpenClaw routing logic: Clawd Cursor should only be used after OpenClaw's native tools/skills are attempted.\n- Added guidance on distinguishing tools vs skills, and best practices for integrating with OpenClaw workflows.\n- Clarified the role of Clawd Cursor as the GUI execution layer, including updated recommendations for task escalation.\n- Expanded documentation for when and how to use Clawd Cursor versus direct (API/CLI/browser) automation, minimizing overlap.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9b56a3cf7430d3df60957d2e2ef780fff0f6c7c53adaedde5f3603643a84e01"
+}

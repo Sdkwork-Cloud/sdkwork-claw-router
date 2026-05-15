@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auteng-docs-curl-publish@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auteng_docs_curl_publish",
+  "skill": {
+    "id": 15714,
+    "skillKey": "clawhub-auteng-docs-curl-publish",
+    "name": "Auteng Docs Curl Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auteng-docs-curl-publish",
+    "url": "https://clawhub.ai/skills/auteng-docs-curl-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auteng-docs-curl-publish-6e41cb4c142fdb9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish markdown and return share links using curl. Support markdown with mermaid diagrams such as component diagrams, flowcharts, and sequence diagrams. Also supports KaTex and code blocks. AutEng will return a shareable link to the publi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operator-auteng-ai",
+      "userId": "publishers:operator-auteng-ai",
+      "displayName": "Operator @ AutEng AI",
+      "image": "https://avatars.githubusercontent.com/u/191052735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 982,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770870542392,
+      "changelog": "- Added detailed usage guide for publishing markdown documents via curl, including sample commands.\n- Documented support for mermaid diagrams (component, flowcharts, sequence), KaTeX, and code blocks.\n- Provided examples for extracting share URLs and compact payloads using jq.\n- Clarified response handling: treat any response missing share_url as an error and show the full JSON.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92708244171c2cce7dee6fda287d6b69f8683d52c940c609107470a509041b56"
+}

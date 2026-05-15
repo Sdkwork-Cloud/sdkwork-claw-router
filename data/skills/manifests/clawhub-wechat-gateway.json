@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64121,
+  "uuid": "skill-clawhub-wechat-gateway",
+  "skillKey": "clawhub-wechat-gateway",
+  "name": "通过微信控制openclaw",
+  "summary": "在 OpenClaw 中提供 WeChat 回调接入、群私聊会话路由、消息发送与图片识别入口能力。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wechatapi",
+      "features": [
+        "在 OpenClaw 中提供 WeChat 回调接入、群私聊会话路由、消息发送与图片识别入口能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-gateway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205764237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-gateway",
+      "url": "https://clawhub.ai/skills/wechat-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-gateway",
+    "url": "https://clawhub.ai/skills/wechat-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-gateway-30cac340df78c9a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-gateway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-gateway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f21e9cee07bec78dba30fdd17955e8da1ca83b4a3edb3dff567676f4821b9b4",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:22:28.159Z"
+}

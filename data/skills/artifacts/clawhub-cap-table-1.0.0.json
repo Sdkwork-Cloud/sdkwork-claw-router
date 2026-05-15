@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cap-table@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cap_table",
+  "skill": {
+    "id": 55852,
+    "skillKey": "clawhub-cap-table",
+    "name": "Cap Table"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cap-table",
+    "url": "https://clawhub.ai/skills/cap-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cap-table-99d99042f19a8b9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cap table management and modeling for startups. Tracks equity分配, option pools, investor ownership, and dilution scenarios. Essential for fundraising."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774820587270,
+      "changelog": "- Initial release of Cap Table Manager for startups and investors\n- Track equity allocation, option pools, investor ownership, and dilution across funding rounds\n- Model new funding, option pool increases, M&A, and liquidation preference scenarios\n- Generate reports: ownership breakdown, dilution impacts, option pool use, and 409A valuation support\n- Command-line interface for scenario analysis and summary views",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d09d76237d0a0efe9fee990e7af9b1e3bc43801983bb29321a9ebd850fd74ea"
+}

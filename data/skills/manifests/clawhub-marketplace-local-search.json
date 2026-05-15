@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22866,
+  "uuid": "skill-clawhub-marketplace-local-search",
+  "skillKey": "clawhub-marketplace-local-search",
+  "name": "Marketplace Local Search",
+  "summary": "Search Facebook Marketplace listings near a specified location with filters for radius, price range, limit, and pickup-only. This skill is a thin client for...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketplace_local_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex He",
+      "features": [
+        "Search Facebook Marketplace listings near a specified location with filters for radius, price r.",
+        "This skill is a thin client for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketplace-local-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162394820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketplace-local-search",
+      "url": "https://clawhub.ai/skills/marketplace-local-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketplace-local-search",
+    "url": "https://clawhub.ai/skills/marketplace-local-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketplace-local-search-82a4e29b76f5783a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketplace-local-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketplace-local-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc3edee7621e11e36048294627903e8db546856d96596ee44f24fa5d9aa7cd5e",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:11:00.082Z"
+}

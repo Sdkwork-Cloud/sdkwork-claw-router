@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59255,
+  "uuid": "skill-clawhub-gaokao-essay",
+  "skillKey": "clawhub-gaokao-essay",
+  "name": "Gaokao Essay",
+  "summary": "高考作文助手。议论文模板、素材库、开头结尾、审题技巧、满分作文分析。Gaokao essay assistant with templates, materials, scoring tips. 高考语文、作文素材、议论文、记叙文。Use when preparing for gaokao essays.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaokao_essay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "高考作文助手。议论文模板、素材库、开头结尾、审题技巧、满分作文分析。Gaokao essay assistant with templates, materials, scoring tips",
+        "高考语文、作文素材、议论文、记叙文。Use when preparing for gaokao essays."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaokao-essay@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaokao-essay",
+      "url": "https://clawhub.ai/skills/gaokao-essay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaokao-essay",
+    "url": "https://clawhub.ai/skills/gaokao-essay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaokao-essay-8a590c033dd031a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaokao-essay@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaokao-essay-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba5c8ae9901adc8fdbb28ea3bf4a7de663734407cf41c51afca9fde75ea8c42",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:56:39.318Z"
+}

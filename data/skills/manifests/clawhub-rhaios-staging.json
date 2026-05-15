@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56531,
+  "uuid": "skill-clawhub-rhaios-staging",
+  "skillKey": "clawhub-rhaios-staging",
+  "name": "Rhaios Staging",
+  "summary": "Interact with the Rhaios staging REST API for yield operations. Discover -> prepare -> setup-if-needed -> sign -> execute flow with pluggable signer backend....",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rhaios_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "João",
+      "features": [
+        "Interact with the Rhaios staging REST API for yield operations",
+        "Discover -> prepare -> setup-if-needed -> sign -> execute flow with pluggable signer backend...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rhaios-staging@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45543880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rhaios-staging",
+      "url": "https://clawhub.ai/skills/rhaios-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rhaios-staging",
+    "url": "https://clawhub.ai/skills/rhaios-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rhaios-staging-927f497a28c7e4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rhaios-staging@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rhaios-staging-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9099dc283c1bb37244c8aa289dccc50c5952b8334e40a6d2d11c192a340481f",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T19:44:59.492Z"
+}

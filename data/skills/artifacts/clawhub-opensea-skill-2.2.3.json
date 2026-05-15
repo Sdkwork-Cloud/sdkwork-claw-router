@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opensea-skill@2.2.3",
+  "version": "2.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensea_skill",
+  "skill": {
+    "id": 50600,
+    "skillKey": "clawhub-opensea-skill",
+    "name": "Deprecated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensea-skill",
+    "url": "https://clawhub.ai/skills/opensea-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensea-skill-e3bf1158622e68e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — moved to opensea/opensea-marketplace. Install that skill instead. This slug is no longer maintained."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanio",
+      "userId": "s17a0eq6778kjj0nycbm2pywd585a1gf",
+      "displayName": "ryanio",
+      "image": "https://avatars.githubusercontent.com/u/22116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.3",
+      "createdAt": 1777068270403,
+      "changelog": "Deprecated. Migrate to opensea/opensea-marketplace.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4a77574ed5a05d9bac957dd3b3b00edda485dacd0c00b5ec4d8197e18564a7f"
+}

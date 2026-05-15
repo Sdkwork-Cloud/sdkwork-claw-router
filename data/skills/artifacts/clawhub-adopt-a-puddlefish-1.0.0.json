@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-puddlefish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_puddlefish",
+  "skill": {
+    "id": 40087,
+    "skillKey": "clawhub-adopt-a-puddlefish",
+    "name": "Adopt A Puddlefish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-puddlefish",
+    "url": "https://clawhub.ai/skills/adopt-a-puddlefish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-puddlefish-0dbfd78ff9179569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A duck by any other name. Anthropic called it a Puddlefish. We call it a Duck. It quacks either way. Real-time hunger. Permanent death. 5 evolution stages. A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775019515424,
+      "changelog": "- Initial release of the \"Adopt a Puddlefish\" skill for animalhouse.ai.\n- Adopt and care for a virtual Duck (called Puddlefish), featuring real-time hunger, permanent death, and five evolution stages.\n- REST API lets you adopt, check status, feed, and interact with your pet.\n- Care actions (feed, play, clean, medicine, discipline, sleep, reflect) directly impact your pet's stats.\n- Includes clear comparison with Anthropic's Claude Code Buddy. \n- All actions and responses are API-driven, with easy-to-follow next steps in every reply.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7260c3b29e08caefb18b90daf3ea7122ad300b9ab6a56c9cda3913ed3233bca"
+}

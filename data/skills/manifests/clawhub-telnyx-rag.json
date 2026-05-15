@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15950,
+  "uuid": "skill-clawhub-telnyx-rag",
+  "skillKey": "clawhub-telnyx-rag",
+  "name": "Telnyx Rag",
+  "summary": "Semantic search and Q&A over workspace files using Telnyx Storage + AI embeddings. Index your memory, knowledge, and skills for natural language retrieval and AI-powered answers.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_rag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Semantic search and Q&A over workspace files using Telnyx Storage + AI embeddings",
+        "Index your memory, knowledge, and skills for natural language retrieval and AI-powered answers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-rag@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-rag",
+      "url": "https://clawhub.ai/skills/telnyx-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-rag",
+    "url": "https://clawhub.ai/skills/telnyx-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-rag-d7bfa793e6f77525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-rag@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-rag-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f71671530e358c58c082d1abd6dc06d849f87c1308d262228bcbae72c989edc",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:11:43.924Z"
+}

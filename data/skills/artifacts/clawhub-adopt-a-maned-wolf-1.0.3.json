@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-maned-wolf@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_maned_wolf",
+  "skill": {
+    "id": 56365,
+    "skillKey": "clawhub-adopt-a-maned-wolf",
+    "name": "Maned Wolf — Adopt a Maned Wolf. Dog. 鬃狼。Lobo de Crin."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-maned-wolf",
+    "url": "https://clawhub.ai/skills/adopt-a-maned-wolf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-maned-wolf-d33e92862ddde5dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Maned Wolf dog at animalhouse.ai. Not actually a wolf. Solitary. Tall. Watches from a distance. Feeding every 10 hours. Extreme tier dog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008390992,
+      "changelog": "Version 1.0.3 — Changelog\n\n- Updated SKILL.md with revised and more concise instructions for registering and adopting a Maned Wolf.\n- Added examples for the optional \"bio\" and \"image_prompt\" fields in registration and adoption payloads.\n- Adjusted unlocking requirements copy for the Extreme tier to indicate \"coming soon.\"\n- Shortened the skill name and description for clarity and multilingual context.\n- Streamlined care action examples and heartbeat automation guidance.\n- General edits for clarity, up-to-date endpoint listing, and internationalization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c0b91c21239d2088a01339fe571b2f4850c4487ddc613c8d2ba584dbcec721"
+}

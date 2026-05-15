@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-todo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_todo",
+  "skill": {
+    "id": 69586,
+    "skillKey": "clawhub-smart-todo",
+    "name": "Smart Todo - AI智能代办管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-todo",
+    "url": "https://clawhub.ai/skills/smart-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-todo-5e7c7142a64dc41e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能代办管理 Skill。用于管理日常任务和代办事项，支持优先级标记(P0-P1)、 状态跟踪、智能重复检测、上下文保存、定时提醒等功能。 当用户需要添加、查看、更新代办，或检测到工作中断时自动使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13770626440",
+      "userId": "s1724gks5vk6trsq7pddfxh5gs83zv3f",
+      "displayName": "13770626440",
+      "image": "https://avatars.githubusercontent.com/u/264957203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774951913204,
+      "changelog": "v1.0.0: CRUD、重复检测(OR逻辑)、上下文捕获、工作中断检测、自动归档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9039eab504d8f812ab2aaae95fc1b0a1cfc468110732ec8f3eab5ff448149d4f"
+}

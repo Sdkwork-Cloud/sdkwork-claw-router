@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63266,
+  "uuid": "skill-clawhub-clawline-setup",
+  "skillKey": "clawhub-clawline-setup",
+  "name": "ClawLine Setup",
+  "summary": "通过对话一键安装 ClawLine 插件，绑定手机 UUID，查看连接状态或断开连接，无需命令行操作。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawline_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qutianxiang",
+      "features": [
+        "通过对话一键安装 ClawLine 插件，绑定手机 UUID，查看连接状态或断开连接，无需命令行操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawline-setup@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1277169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawline-setup",
+      "url": "https://clawhub.ai/skills/clawline-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawline-setup",
+    "url": "https://clawhub.ai/skills/clawline-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawline-setup-b0b14f9436b967d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawline-setup@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawline-setup-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3824b1ba940846b8190474ccc3760c000ca44d321469edfd9e5dcaa0ec2665d6",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:52:19.489Z"
+}

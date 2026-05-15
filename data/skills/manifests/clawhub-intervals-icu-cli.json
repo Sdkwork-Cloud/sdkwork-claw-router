@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54906,
+  "uuid": "skill-clawhub-intervals-icu-cli",
+  "skillKey": "clawhub-intervals-icu-cli",
+  "name": "intervals.icu CLI",
+  "summary": "Use this skill when an installed `intervals` CLI should be used to query Intervals.icu, inspect activities, create scheduled workout events, create workout l...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intervals_icu_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonas Wideking",
+      "features": [
+        "Use this skill when an installed `intervals` CLI should be used to query Intervals.icu, inspect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intervals-icu-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9721192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intervals-icu-cli",
+      "url": "https://clawhub.ai/skills/intervals-icu-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intervals-icu-cli",
+    "url": "https://clawhub.ai/skills/intervals-icu-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intervals-icu-cli-2396edad9aa54619.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intervals-icu-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-intervals-icu-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a097eba2a60e9473c0138600ea7db185637ea42eefb93dbb5a2e246c110104",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:56:27.499Z"
+}

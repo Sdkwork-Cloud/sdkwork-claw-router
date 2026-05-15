@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62226,
+  "uuid": "skill-clawhub-classical-chinese-v1",
+  "skillKey": "clawhub-classical-chinese-v1",
+  "name": "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。",
+  "summary": "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classical_chinese_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u5bf",
+      "features": [
+        "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/classical-chinese-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62391483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "classical-chinese-v1",
+      "url": "https://clawhub.ai/skills/classical-chinese-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classical-chinese-v1",
+    "url": "https://clawhub.ai/skills/classical-chinese-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classical-chinese-v1-41d406f0279fd67d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/classical-chinese-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-classical-chinese-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9229c6cf83eb685dfd298a56d321d32df5ef7e280c315cf8b1f68b60d0e682f7",
+      "artifactSizeBytes": 2765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:27:26.795Z"
+}

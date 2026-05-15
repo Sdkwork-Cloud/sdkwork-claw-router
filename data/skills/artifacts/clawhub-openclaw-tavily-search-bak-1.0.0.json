@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-tavily-search-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tavily_search_bak",
+  "skill": {
+    "id": 30696,
+    "skillKey": "clawhub-openclaw-tavily-search-bak",
+    "name": "Openclaw Tavily Search.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tavily-search-bak",
+    "url": "https://clawhub.ai/skills/openclaw-tavily-search-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tavily-search-bak-b2e093332884aa30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search via Tavily API (alternative to Brave). Use when the user asks to search the web / look up sources / find links and Brave web_search is unavailable..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774094109467,
+      "changelog": "- Initial release of tavily-search skill for OpenClaw.\n- Enables web searches via the Tavily API as an alternative to Brave.\n- Returns relevant results with titles, URLs, and snippets; can include short answer summaries.\n- Supports multiple output formats: raw JSON, Brave-compatible schema, and Markdown.\n- Allows API key configuration through environment variable or .env file.\n- Includes CLI usage instructions and best practices for result handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d325688b157ad0e253db8e22e1186de2c506e972b5b1885a5bb5ab3051a0f0ca"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26842,
+  "uuid": "skill-clawhub-diskman",
+  "skillKey": "clawhub-diskman",
+  "name": "DiskMan",
+  "summary": "Assist with scanning, analyzing, safely cleaning, and migrating directories to manage disk space effectively with risk-aware recommendations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diskman",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heyy259",
+      "features": [
+        "Assist with scanning, analyzing, safely cleaning, and migrating directories to manage disk spac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diskman@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67221771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diskman",
+      "url": "https://clawhub.ai/skills/diskman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diskman",
+    "url": "https://clawhub.ai/skills/diskman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diskman-12ba82735eb7eea9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diskman@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diskman-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b79440a8fc8c15faab4841633b9545275d6538d4a32e2cc67a4b1c2a2f95ef76",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:23:24.750Z"
+}

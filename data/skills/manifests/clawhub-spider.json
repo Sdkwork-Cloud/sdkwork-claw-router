@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15970,
+  "uuid": "skill-clawhub-spider",
+  "skillKey": "clawhub-spider",
+  "name": "Web scraping skill using Chrome + WebMCP",
+  "summary": "Web scraping using Chrome + WebMCP. Primary method for all web crawling tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex Wei",
+      "features": [
+        "Web scraping using Chrome + WebMCP",
+        "Primary method for all web crawling tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spider@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5334841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spider",
+      "url": "https://clawhub.ai/skills/spider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spider",
+    "url": "https://clawhub.ai/skills/spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spider-9bfa0b50a90e6699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spider@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spider-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e38057502fd022d7c0c27aba21582bd43e59befbbe494d39ac7d7555c7fb0a8c",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:02:28.593Z"
+}

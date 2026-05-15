@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49980,
+  "uuid": "skill-clawhub-hallucination-check",
+  "skillKey": "clawhub-hallucination-check",
+  "name": "Hallucination Check",
+  "summary": "LLM hallucination detector with dual strategy (UQLM + rule-based fallback). Scores any AI output's confidence and flags potential hallucination risks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucination_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "li8476295-bot",
+      "features": [
+        "LLM hallucination detector with dual strategy (UQLM + rule-based fallback)",
+        "Scores any AI output's confidence and flags potential hallucination risks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hallucination-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265793590?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hallucination-check",
+      "url": "https://clawhub.ai/skills/hallucination-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucination-check",
+    "url": "https://clawhub.ai/skills/hallucination-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucination-check-605288fd4540a753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hallucination-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hallucination-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:673885e247ac483b2768f8c22a8e3284b37508571bda39e21f681367176f9bb5",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:51:04.551Z"
+}

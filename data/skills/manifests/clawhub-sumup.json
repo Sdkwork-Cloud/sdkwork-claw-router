@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32637,
+  "uuid": "skill-clawhub-sumup",
+  "skillKey": "clawhub-sumup",
+  "name": "Sumup",
+  "summary": "SumUp integration. Manage data, records, and automate workflows. Use when the user wants to interact with SumUp data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sumup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SumUp integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SumUp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sumup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sumup",
+      "url": "https://clawhub.ai/skills/sumup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sumup",
+    "url": "https://clawhub.ai/skills/sumup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sumup-00201cf717c0c49a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sumup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sumup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b76d57946b2ec23ef6334a6552a5bb4e81c1a1a18da7352180cdc47756ed5f91",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:27.475Z"
+}

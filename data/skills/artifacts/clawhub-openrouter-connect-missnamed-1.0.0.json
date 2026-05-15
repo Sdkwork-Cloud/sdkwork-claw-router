@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-connect-missnamed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_connect_missnamed",
+  "skill": {
+    "id": 30302,
+    "skillKey": "clawhub-openrouter-connect-missnamed",
+    "name": "Operrouter Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-connect-missnamed",
+    "url": "https://clawhub.ai/skills/openrouter-connect-missnamed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-connect-missnamed-61115bdd637be93a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to work with OpenRouter's free LLM models. Triggers include: any mention of \"OpenRouter\", \"free models\", \"openrouter-c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sh01-rgb",
+      "userId": "publishers:sh01-rgb",
+      "displayName": "sh01-rgb",
+      "image": "https://avatars.githubusercontent.com/u/236919470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773770934779,
+      "changelog": "- Initial release of openrouter-connect skill.\n- Enables querying, ranking, and live proxying of all currently-free OpenRouter LLM models.\n- Supports user and automatic model preference ranking with robust fallback logic.\n- Can scaffold ready-to-use Python or TypeScript code to call OpenRouter's free models.\n- Handles API key discovery from project, global, or environment sources, with clear user guidance if missing.\n- Includes helpful handling of rate limits, key errors, unavailable models, and streaming support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e528f69d42620a4cdef2c743593c2c0f7ba2c63228e16687f712ea3c72129634"
+}

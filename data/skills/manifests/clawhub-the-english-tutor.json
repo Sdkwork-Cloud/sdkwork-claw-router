@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69508,
+  "uuid": "skill-clawhub-the-english-tutor",
+  "skillKey": "clawhub-the-english-tutor",
+  "name": "The English Tutor",
+  "summary": "英语口语陪练助手。触发词：「练习英语」「我要说英语」「英语陪练」。功能：上传生词表 → 每日定时情景对话 → 语音输入即时纠错 → 飞书语音推送 → 自动艾宾浩斯复习。",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_english_tutor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PandaltsGo",
+      "features": [
+        "英语口语陪练助手。触发词：「练习英语」「我要说英语」「英语陪练」。功能：上传生词表 → 每日定时情景对话 → 语音输入即时纠错 → 飞书语音推送 → 自动艾宾浩斯复习。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/the-english-tutor@3.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121210008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "the-english-tutor",
+      "url": "https://clawhub.ai/skills/the-english-tutor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-english-tutor",
+    "url": "https://clawhub.ai/skills/the-english-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-english-tutor-f5de2e9c270c2dcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/the-english-tutor@3.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-the-english-tutor-3.0.3.json",
+      "version": "3.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aff6ba6b61d2903343a8cd29c0c0a429f58f4bd9cf49f0a4bd5160246db7e79",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:26:31.895Z"
+}

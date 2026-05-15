@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-baike@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_baike",
+  "skill": {
+    "id": 9884,
+    "skillKey": "clawhub-baidu-baike",
+    "name": "baidu baike search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-baike",
+    "url": "https://clawhub.ai/skills/baidu-baike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-baike-9507ce6f61f64b0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Baidu Baike Component is a knowledge service tool designed to query authoritative encyclopedia explanations for various nouns. Its core function is given a specific \"noun\" (object, person, location, concept, event, etc.) provided by th."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baiduqianfangroup",
+      "userId": "s17bw36gp41wr28y5qgqmsbj29842pe2",
+      "displayName": "baidu_qianfan",
+      "image": "https://avatars.githubusercontent.com/u/41750260?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2987,
+      "installsAllTime": 17,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770218047184,
+      "changelog": "- No user-facing changes in this version.\n- Documentation reformatted with a minor wording adjustment to the description.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:010e545c9777e38dc86c78e0e14325837475736a8fd8dc6c732ffb08fa317e74"
+}

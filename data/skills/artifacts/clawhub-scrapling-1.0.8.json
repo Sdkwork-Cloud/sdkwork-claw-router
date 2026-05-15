@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapling@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling",
+  "skill": {
+    "id": 9107,
+    "skillKey": "clawhub-scrapling",
+    "name": "Scrapling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling",
+    "url": "https://clawhub.ai/skills/scrapling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-1d912f5760a7e184.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive web scraping framework with anti-bot bypass and spider crawling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zendenho7",
+      "userId": "publishers:zendenho7",
+      "displayName": "ohnednez",
+      "image": "https://avatars.githubusercontent.com/u/90267714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3804,
+      "installsAllTime": 94,
+      "installsCurrent": 90,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1772025670068,
+      "changelog": "v1.0.8 - Firecrawl-Style Crawl",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19d8def06f2259077e902916c1029aada91725a2fbafd7d03740ac1af789fcea"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clear-mind@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clear_mind",
+  "skill": {
+    "id": 57601,
+    "skillKey": "clawhub-clear-mind",
+    "name": "Clear-Mind Skill (龙虾大脑自动清理技能)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clear-mind",
+    "url": "https://clawhub.ai/skills/clear-mind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clear-mind-7a7e62070fc352aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory file maintenance and optimization system. Use when factual information (portfolio, projects, technical details) accumulates in MEMORY.md, or when peri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webray1983",
+      "userId": "publishers:webray1983",
+      "displayName": "webray1983",
+      "image": "https://avatars.githubusercontent.com/u/201538631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773460797530,
+      "changelog": "clear-mind 1.0.2 Changelog\n\n- Expanded content migration guidelines in SKILL.md, providing clearer distinctions for what to keep vs. move.\n- Enhanced safeguards: emphasized \"when in doubt, keep in MEMORY.md\" to prevent accidental data loss.\n- Clarified rules and scenarios for migration and rollback, with more explicit examples and decision boundaries.\n- No changes to code/logic; update is documentation and process refinement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21794a700cf60f8021902df31e8d3cf98ea1443131480c8b9afcd7d4cae3a1fe"
+}

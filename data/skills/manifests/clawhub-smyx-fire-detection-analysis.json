@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57456,
+  "uuid": "skill-clawhub-smyx-fire-detection-analysis",
+  "skillKey": "clawhub-smyx-fire-detection-analysis",
+  "name": "火情烟雾检测技能",
+  "summary": "Real-time detection of flames and smoke in video and image scenes. Suitable for fire early warning in industrial parks, forests, warehouses, and other locati...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_fire_detection_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Real-time detection of flames and smoke in video and image scenes",
+        "Suitable for fire early warning in industrial parks, forests, warehouses, and other locati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-fire-detection-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-fire-detection-analysis",
+      "url": "https://clawhub.ai/skills/smyx-fire-detection-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-fire-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-fire-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-fire-detection-analysis-7e3c4d8745532850.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-fire-detection-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-fire-detection-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49a0642a23c7f120b9be365a0bab086b33cf139d0cc18607c5f37567a6af6ef1",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T08:33:42.459Z"
+}

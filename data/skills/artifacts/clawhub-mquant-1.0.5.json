@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mquant@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mquant",
+  "skill": {
+    "id": 28221,
+    "skillKey": "clawhub-mquant",
+    "name": "mquant coder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mquant",
+    "url": "https://clawhub.ai/skills/mquant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mquant-40c5c955321e4e83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Matic MQuant strategy development assistant. Generates Python strategy code for Matic-MQuant platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chouchounii",
+      "userId": "s177k4fcvxda32ta286s6grrjn84bwk3",
+      "displayName": "chouchounii",
+      "image": "https://avatars.githubusercontent.com/u/6712261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773293731595,
+      "changelog": "mquant-coder 1.0.5 changelog:\n\n- Added detailed workflow and directory initialization guidance in documentation.\n- Clarified reference vs. user-maintained document structure with usage notes.\n- Described new user environment auto-initialization for notes and templates on first use.\n- Outlined version control policy: file naming, retention limit, and diff comparison.\n- Improved strategy code generation rules, error handling steps, and documentation references.\n- Added step-by-step instructions for user-driven parameter setting and strategy storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ee49326caa50a0231da7cb3cc51358dc5832a4c73e031c2a1a9c71defc63943"
+}

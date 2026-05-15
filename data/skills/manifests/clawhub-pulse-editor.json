@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10016,
+  "uuid": "skill-clawhub-pulse-editor",
+  "skillKey": "clawhub-pulse-editor",
+  "name": "Pulse Editor Vibe Coding APIs",
+  "summary": "Generate and build Pulse Apps using the Vibe Dev Flow API. Use this skill when the user wants to create, update, or generate code for Pulse Editor applications.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pulse_editor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shellishack",
+      "features": [
+        "Generate and build Pulse Apps using the Vibe Dev Flow API",
+        "Use this skill when the user wants to create, update, or generate code for Pulse Editor applica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pulse-editor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40737228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pulse-editor",
+      "url": "https://clawhub.ai/skills/pulse-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pulse-editor",
+    "url": "https://clawhub.ai/skills/pulse-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pulse-editor-146a9e07091c95ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pulse-editor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pulse-editor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:393b63d11f77f8b3d6fac8abc23c30cb4628a28e53a845e0c99a9808069a8370",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T22:39:50.631Z"
+}

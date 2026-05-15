@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39271,
+  "uuid": "skill-clawhub-alibabacloud-oss-manage-network-probe",
+  "skillKey": "clawhub-alibabacloud-oss-manage-network-probe",
+  "name": "Alibabacloud Oss Manage Network Probe",
+  "summary": "Alicloud Service Scenario-Based Skill. Use for diagnosing local-to-OSS network state, upload/download bandwidth, download time, and local symlink issues with...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_oss_manage_network_probe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alicloud Service Scenario-Based Skill",
+        "Use for diagnosing local-to-OSS network state, upload/download bandwidth, download time, and lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-oss-manage-network-probe@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-oss-manage-network-probe",
+      "url": "https://clawhub.ai/skills/alibabacloud-oss-manage-network-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-oss-manage-network-probe",
+    "url": "https://clawhub.ai/skills/alibabacloud-oss-manage-network-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-oss-manage-network-probe-f0d2fdb886923d4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-oss-manage-network-probe@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-oss-manage-network-probe-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5347b169531c0fd9d4c729b4ac5cd9fcc5c3c435aa3d08ddfe92157e76dc15b4",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:14:04.984Z"
+}

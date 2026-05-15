@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14864,
+  "uuid": "skill-clawhub-ned-analytics",
+  "skillKey": "clawhub-ned-analytics",
+  "name": "Ned - Shopify Profit Analytics AI",
+  "summary": "Query your Shopify store's sales, profitability, customers, and marketing data through Ned's API. Use when asked about profit, revenue, sales, orders, products, customers, churn, ad spend, ROAS, MER, margins, or any ecommerce analytics que.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ned_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nedAI",
+      "features": [
+        "Query your Shopify store's sales, profitability, customers, and marketing data through Ned's API",
+        "Use when asked about profit, revenue, sales, orders, products, customers, churn, ad spend, ROAS.",
+        "Also use for 'what's my profit today', 'top products', 'customer segments', 'ad performance', o.",
+        "Requires a NED_API_KEY."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ned-analytics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131872692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ned-analytics",
+      "url": "https://clawhub.ai/skills/ned-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ned-analytics",
+    "url": "https://clawhub.ai/skills/ned-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ned-analytics-15a0e1c72f4ef4c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ned-analytics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ned-analytics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99b9f711708d0799add33312ed2d758f0fb2653ea30ddab21df6caecd5fdfe17",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T05:13:46.506Z"
+}

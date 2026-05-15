@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51393,
+  "uuid": "skill-clawhub-ollama-herd",
+  "skillKey": "clawhub-ollama-herd",
+  "name": "Ollama Herd",
+  "summary": "Ollama multimodal model router for Llama, Qwen, DeepSeek, Phi, and Mistral — plus mflux image generation, speech-to-text, and embeddings. Self-hosted Ollama...",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_herd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Ollama multimodal model router for Llama, Qwen, DeepSeek, Phi, and Mistral — plus mflux image g.",
+        "Self-hosted Ollama..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-herd@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-herd",
+      "url": "https://clawhub.ai/skills/ollama-herd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-herd",
+    "url": "https://clawhub.ai/skills/ollama-herd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-herd-0f5c83e329479512.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-herd@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-herd-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b063a28cc4a65c17cf447cdf88c1f6e943ddb4fcdc8637ab9cc9aa5fd078fd1f",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:07:32.825Z"
+}

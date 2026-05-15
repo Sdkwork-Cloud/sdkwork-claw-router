@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-watcherkx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_watcherkx",
+  "skill": {
+    "id": 13951,
+    "skillKey": "clawhub-youtube-watcherkx",
+    "name": "YouTube Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-watcherkx",
+    "url": "https://clawhub.ai/skills/youtube-watcherkx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-watcherkx-97d37806aecf374f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and read transcripts from YouTube videos. Use when you need to summarize a video, answer questions about its content, or extract information from it."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naliehu",
+      "userId": "s178s6dra14ca6kywa6c7zhz2x83hxf3",
+      "displayName": "naliehu",
+      "image": "https://avatars.githubusercontent.com/u/126657331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770654257174,
+      "changelog": "Initial release of youtube-watcher:\n\n- Fetches and reads transcripts from YouTube videos.\n- Enables video summarization and content extraction.\n- Supports keyword search and Q&A based on transcripts.\n- Requires yt-dlp installation and works with videos that have subtitles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:29a6a099497f7eb684f49bf9cd2b03c342a25453c8bb347f854f9fabba21481f"
+}

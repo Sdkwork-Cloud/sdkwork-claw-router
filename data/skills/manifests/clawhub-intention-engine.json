@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25790,
+  "uuid": "skill-clawhub-intention-engine",
+  "skillKey": "clawhub-intention-engine",
+  "name": "Intention Engine",
+  "summary": "Intent inference and alignment for persistent AI agents. Classifies gaps between tasks and intentions, checks for misalignment before executing, and prevents...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intention_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MouseRider",
+      "features": [
+        "Intent inference and alignment for persistent AI agents",
+        "Classifies gaps between tasks and intentions, checks for misalignment before executing, and pre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intention-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12753169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intention-engine",
+      "url": "https://clawhub.ai/skills/intention-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intention-engine",
+    "url": "https://clawhub.ai/skills/intention-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intention-engine-42eb1352b7d7c00d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intention-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intention-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33d308a4e01a3ae39c139a4fec51f18d6d94f05590c830727d93f6738c298606",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:11:49.135Z"
+}

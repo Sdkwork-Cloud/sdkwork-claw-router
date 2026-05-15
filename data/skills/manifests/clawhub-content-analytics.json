@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65827,
+  "uuid": "skill-clawhub-content-analytics",
+  "skillKey": "clawhub-content-analytics",
+  "name": "Content Analytics",
+  "summary": "分析掘金、小红书、知乎多平台内容表现数据，提供汇总对比和基于AI的优化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "分析掘金、小红书、知乎多平台内容表现数据，提供汇总对比和基于AI的优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-analytics",
+      "url": "https://clawhub.ai/skills/content-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-analytics",
+    "url": "https://clawhub.ai/skills/content-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-analytics-f77ad18def8a7c4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe6844aacf608a437cc9f0659da966d460770135575a47e93b71ee8f14db4adb",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:40:15.521Z"
+}

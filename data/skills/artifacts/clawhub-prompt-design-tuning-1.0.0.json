@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-design-tuning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_design_tuning",
+  "skill": {
+    "id": 54878,
+    "skillKey": "clawhub-prompt-design-tuning",
+    "name": "Prompt Design Tuning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-design-tuning",
+    "url": "https://clawhub.ai/skills/prompt-design-tuning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-design-tuning-ae4b7df41c64bdff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collaboratively design, evaluate, iterate on, and recommend a final launch candidate for a target prompt under the principle of “human-gated, agent-executed”..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abysscat-yj",
+      "userId": "s1786bce9ngax6fpbn81sf46yd83qhwg",
+      "displayName": "yuanjie",
+      "image": "https://avatars.githubusercontent.com/u/33748845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774605146253,
+      "changelog": "Initial release: Provides a structured, human-gated workflow for prompt design and tuning.\n\n- Defines two main working modes: Design-Only and Execution, adapting to different project readiness levels.\n- Enforces separation between target prompts and judge prompts, with strict versioning and optimization logging requirements.\n- Outlines mandatory human approval gates at key decision points (task definition, prompt directions, high-cost evaluations, final launch).\n- Specifies required documentation, scripts, and reports for transparent, reusable prompt engineering.\n- Recommends inputs to collect for each project, ensuring clear task specs, evaluation plans, and cost control.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1192ad516d391ba300beeaf8415039212831eb152951767975d22b743b3a659"
+}

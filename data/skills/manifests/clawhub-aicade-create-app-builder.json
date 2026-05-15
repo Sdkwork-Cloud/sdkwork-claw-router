@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33465,
+  "uuid": "skill-clawhub-aicade-create-app-builder",
+  "skillKey": "clawhub-aicade-create-app-builder",
+  "name": "aicade galaxy create app skill",
+  "summary": "Build general aicade application prompts by taking the user's base prompt plus the platform additions from the bundled 3.1 workflow reference, then assemblin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicade_create_app_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aicadegalaxy",
+      "features": [
+        "Build general aicade application prompts by taking the user's base prompt plus the platform add."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aicade-create-app-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201355035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aicade-create-app-builder",
+      "url": "https://clawhub.ai/skills/aicade-create-app-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicade-create-app-builder",
+    "url": "https://clawhub.ai/skills/aicade-create-app-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicade-create-app-builder-319f95ffcb15bad2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aicade-create-app-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aicade-create-app-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e35b579903badb32a6b93a7c06ec26b89aa079be802351b2b94f318c3f2515ac",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T13:54:54.892Z"
+}

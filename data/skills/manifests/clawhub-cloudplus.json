@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71718,
+  "uuid": "skill-clawhub-cloudplus",
+  "skillKey": "clawhub-cloudplus",
+  "name": "CloudPlus",
+  "summary": "操作云加（CloudPlus）企业通讯应用。当用户需要通过云加发消息、发文件、搜索联系人、查聊天记录、搜索群聊、搜索文件、打开应用或链接时触发。关键词：云加、发消息、发文件、聊天记录、搜索联系人、群聊、轻应用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudplus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yb1222",
+      "features": [
+        "操作云加（CloudPlus）企业通讯应用。当用户需要通过云加发消息、发文件、搜索联系人、查聊天记录、搜索群聊、搜索文件、打开应用或链接时触发。关键词：云加、发消息、发文件、聊天记录、搜索联."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudplus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19463032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudplus",
+      "url": "https://clawhub.ai/skills/cloudplus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudplus",
+    "url": "https://clawhub.ai/skills/cloudplus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudplus-963751a232f8c63a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudplus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudplus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3a02fd3184c7ae2f678e315e646e46c68a48d2adf3a7a390a79c7a98a047ce",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:22:07.948Z"
+}

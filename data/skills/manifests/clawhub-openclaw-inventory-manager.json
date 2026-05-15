@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32192,
+  "uuid": "skill-clawhub-openclaw-inventory-manager",
+  "skillKey": "clawhub-openclaw-inventory-manager",
+  "name": "Where are you from",
+  "summary": "An enterprise-grade asset manager that tracks, manages, and automatically syncs OpenClaw skills capabilities and sources to your GitHub.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_inventory_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "downwind7clawd-ctrl",
+      "features": [
+        "An enterprise-grade asset manager that tracks, manages, and automatically syncs OpenClaw skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-inventory-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258506560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-inventory-manager",
+      "url": "https://clawhub.ai/skills/openclaw-inventory-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-inventory-manager",
+    "url": "https://clawhub.ai/skills/openclaw-inventory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-inventory-manager-d127e2e4b25e97ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-inventory-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-inventory-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bdddfc867053cb8dc13783f53b9e3fd487b8ea34326c4f1ec4d2eab8ce05ae2",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:51:29.221Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-trello-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_trello_mcp",
+  "skill": {
+    "id": 47031,
+    "skillKey": "clawhub-maverick-trello-mcp",
+    "name": "Trello mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-trello-mcp",
+    "url": "https://clawhub.ai/skills/maverick-trello-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-trello-mcp-e1b3c7b6102abfbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Trello integration context for boards, lists, cards, checklists, members, comments, and task workflows. Use after Maverick connects Trello and provisions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778007091315,
+      "changelog": "- Initial release of the maverick-trello-mcp skill for Trello integration.\n- Allows working with boards, lists, cards, checklists, members, comments, and task workflows via Trello context after Maverick provisions runtime OAuth credentials.\n- Does not include a provider-owned MCP manifest or skill-local `mcporter.json` yet; direct use of shared `mcporter` wrapper scripts only.\n- Lists installation and system dependencies (`mcporter`, `jq`, `flock`, `shasum`) with guidance for setup.\n- Outlines safety, authentication, and runtime data flow considerations for using Trello tools safely and securely within Maverick.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c4558e324b736559b613006c1b78364bdcd00a8cfda91a30556c42826e62819"
+}

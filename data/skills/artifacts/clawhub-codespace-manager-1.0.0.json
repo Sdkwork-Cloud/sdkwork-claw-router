@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codespace-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codespace_manager",
+  "skill": {
+    "id": 19131,
+    "skillKey": "clawhub-codespace-manager",
+    "name": "Codespace Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codespace-manager",
+    "url": "https://clawhub.ai/skills/codespace-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codespace-manager-5994334976c8b376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and access isolated cloud development environments (codespaces) powered by code-server, Docker, and Cloudflare Tunnel. Pre-installed with Bun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanbasara",
+      "userId": "publishers:lanbasara",
+      "displayName": "Lanbasara",
+      "image": "https://avatars.githubusercontent.com/u/42923472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772008940288,
+      "changelog": "Initial release: code-server based codespace manager with Bun, uv, OpenCode pre-installed. Cloudflare Tunnel for access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5b87f11ebc73b6d23052626e31b789a9d12a39739857eee5b7d94a733f78517"
+}

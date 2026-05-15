@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36648,
+  "uuid": "skill-clawhub-bump",
+  "skillKey": "clawhub-bump",
+  "name": "Bump",
+  "summary": "Bump integration. Manage data, records, and automate workflows. Use when the user wants to interact with Bump data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bump",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Bump integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Bump data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bump@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bump",
+      "url": "https://clawhub.ai/skills/bump"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bump",
+    "url": "https://clawhub.ai/skills/bump",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bump-5fbde9bb9c3fd8c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bump@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bump-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b79ce9b95de4e7538be19d0dfbee96463fa5660c6c65f2a2b7a886f8247d3b4",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:07.272Z"
+}

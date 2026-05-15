@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58497,
+  "uuid": "skill-clawhub-performance-review",
+  "skillKey": "clawhub-performance-review",
+  "name": "Performance Review",
+  "summary": "绩效评估助手。自评、上级评语、OKR复盘、KPI分析、改进计划、SMART目标设定、360反馈撰写。Performance review assistant with self-assessment, manager feedback, OKR review, SMART goals, 360 feedback...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "绩效评估助手。自评、上级评语、OKR复盘、KPI分析、改进计划、SMART目标设定、360反馈撰写。Performance review assistant with self-assess."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-review@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-review",
+      "url": "https://clawhub.ai/skills/performance-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-review",
+    "url": "https://clawhub.ai/skills/performance-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-review-4664c099c45c6f38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-review@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-review-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1321a50aa708856a9137855923a2ec47210e70abf06fe807fffb9c33025a249",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:55:53.386Z"
+}

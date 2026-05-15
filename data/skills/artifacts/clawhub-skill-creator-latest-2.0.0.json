@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-latest@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_latest",
+  "skill": {
+    "id": 19311,
+    "skillKey": "clawhub-skill-creator-latest",
+    "name": "skill-creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-latest",
+    "url": "https://clawhub.ai/skills/skill-creator-latest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-latest-73b114178feca49e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shimmernight",
+      "userId": "s17d9cmbdkz5mkgj9ppsx1c2xh83gqma",
+      "displayName": "Shimmernight",
+      "image": "https://avatars.githubusercontent.com/u/53256477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773116898868,
+      "changelog": "Major update with new evaluation, iteration, and optimization features.\n\n- Added scripts and agents for benchmarking, grading, comparing, and reviewing skill performance (quantitative + qualitative evaluation workflow).\n- Expanded bundled resources: new scripts, reference schemas, HTML assets, and utilities for running and aggregating skill evaluations.\n- Updated guidance: covers not just creating and updating skills, but also running evals, analyzing results, and optimizing skill descriptions for better triggering accuracy.\n- Simplified and streamlined instructions to better support iterative skill improvement and user communication at varying technical levels.\n- Removed redundant or now-integrated reference and initialization files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13a9ed6d4be1aa5075cfb08bda055b2d02359dadc734f36ecfd8e5567ca378ba"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69085,
+  "uuid": "skill-clawhub-product-picker",
+  "skillKey": "clawhub-product-picker",
+  "name": "product-picker",
+  "summary": "多平台数据加权打分筛选产品工具，针对\"尚品宅配\"品牌家居场景，从小红书、京东、淘宝三平台采集数据并综合评分。触发场景：(1) 选品、产品筛选；(2) 小红书/京东/淘宝数据加权打分；(3) 尚品宅配产品落地评估；(4) 产品热度/转化分析；(5) 询问\"这个产品适合落地吗\"类问题。输出要求：完成评估后，必须将 ....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_picker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heaven",
+      "features": [
+        "多平台数据加权打分筛选产品工具，针对\"尚品宅配\"品牌家居场景，从小红书、京东、淘宝三平台采集数据并综合评分。触发场景：(1) 选品、产品筛选；(2) 小红书/京东/淘宝数据加权打分；(3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-picker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23333359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-picker",
+      "url": "https://clawhub.ai/skills/product-picker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-picker",
+    "url": "https://clawhub.ai/skills/product-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-picker-0f9f11acbb6b3398.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-picker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-picker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:223cac997d5d264a68ad4d8a8441f0008025432a7caae6639633df3f6cdd25e1",
+      "artifactSizeBytes": 2812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:48:03.022Z"
+}

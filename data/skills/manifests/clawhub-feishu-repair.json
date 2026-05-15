@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63776,
+  "uuid": "skill-clawhub-feishu-repair",
+  "skillKey": "clawhub-feishu-repair",
+  "name": "Feishu Repair",
+  "summary": "自动修复飞书-自动修复飞书群聊+自动修复会话 - 诊断 Gateway 连接、权限配置、消息投递问题",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_repair",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c32",
+      "features": [
+        "自动修复飞书-自动修复飞书群聊+自动修复会话",
+        "诊断 Gateway 连接、权限配置、消息投递问题"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-repair@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8718992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-repair",
+      "url": "https://clawhub.ai/skills/feishu-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-repair",
+    "url": "https://clawhub.ai/skills/feishu-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-repair-bc13ab79a70505e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-repair@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-repair-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9f69fd883c5c18b525ec13b4ebb024f851f40cbf5d8eca65a43d96543bc6c30",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:29:06.633Z"
+}

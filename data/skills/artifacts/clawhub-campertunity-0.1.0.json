@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/campertunity@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campertunity",
+  "skill": {
+    "id": 43939,
+    "skillKey": "clawhub-campertunity",
+    "name": "Campertunity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campertunity",
+    "url": "https://clawhub.ai/skills/campertunity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campertunity-6ad45bb150c6d534.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for campgrounds, check availability and book campsites across the entire world"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jsuppers",
+      "userId": "s171devwgnay4fa7fxjpnv62yx84tctw",
+      "displayName": "Jsuppers",
+      "image": "https://avatars.githubusercontent.com/u/34351874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776165916046,
+      "changelog": "Initial release of the campertunity skill.\n\n- Search for campgrounds worldwide with filters for amenities, dates, and location.\n- View detailed campground info, including reviews and amenities.\n- Check campsite availability for specific dates.\n- Retrieve booking links for easy reservations.\n- Includes setup instructions and workflow guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ce2c5440dd65be65d5451cc61669e18f321d52eaaa9fef1f853fcdc5fec3d9e"
+}

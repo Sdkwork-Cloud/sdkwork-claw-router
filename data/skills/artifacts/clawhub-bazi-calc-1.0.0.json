@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-calc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_calc",
+  "skill": {
+    "id": 71487,
+    "skillKey": "clawhub-bazi-calc",
+    "name": "bazi-calc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-calc",
+    "url": "https://clawhub.ai/skills/bazi-calc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-calc-a3912d1746e68fa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "八字排盘计算工具。根据出生日期和时间，计算四柱八字（年柱、月柱、日柱、时柱）、 十神关系、日主旺衰、喜忌用神、大运排列。输出结构化数据，不做运势判断。 当用户需要\"排八字\"、\"算四柱\"、\"查日柱\"、\"看十神\"、\"排大运\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ktkid",
+      "userId": "s17czs1ja6fse6e3p5m93yrpv983mzcp",
+      "displayName": "KtKID",
+      "image": "https://avatars.githubusercontent.com/u/6822731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773328367058,
+      "changelog": "- Initial release of bazi-calc: a 八字排盘结构化计算工具  \n- 输入出生日期、时间、地点、性别，输出四柱八字、十神、日主旺衰、喜忌用神及大运排列  \n- 仅生成数据，不做任何运势或命理预测  \n- 自动支持公历/农历、真太阳时、五神、六十甲子、调候用神等规范细节  \n- 提供详细输出模板，便于对照与结果复用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19cf9ecc06506ebd7ca91575b77349553433f2c73109f06353a2b25da0e3cb45"
+}

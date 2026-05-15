@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erxes-next@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erxes_next",
+  "skill": {
+    "id": 34299,
+    "skillKey": "clawhub-erxes-next",
+    "name": "Erxes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erxes-next",
+    "url": "https://clawhub.ai/skills/erxes-next",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erxes-next-c0b37a0b2cc98a29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage contacts, companies, products, tags, documents, brands, automations, team members, and organization data on an erxes instance. Use when the user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wlkr123",
+      "userId": "s177gt5t8zrz25dce45748vnks856r7c",
+      "displayName": "Wlkr123",
+      "image": "https://avatars.githubusercontent.com/u/104069564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776750733646,
+      "changelog": "- Improved authentication flow documentation: session payload is now printed to stdout, no longer stored in project files.\n- Updated API usage instructions to use access/refresh tokens from in-memory session only.\n- Added guidance to send required headers (`Authorization`, `erxes-subdomain`) with each GraphQL call.\n- Removed instructions to write tokens to `.auth.json` or any project file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b69cd193c74b6c7bba745051dcd9d51025ac8bc83402d1b027dbdbe340183d09"
+}

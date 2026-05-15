@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-reminders@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_reminders",
+  "skill": {
+    "id": 9182,
+    "skillKey": "clawhub-quick-reminders",
+    "name": "Quick Reminders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-reminders",
+    "url": "https://clawhub.ai/skills/quick-reminders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-reminders-046dcd9cc0d8f723.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-LLM one-shot reminders (<48h) via nohup sleep + openclaw message send, operated via {baseDir}/scripts/nohup-reminder.sh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lstpsche",
+      "userId": "s17e65zsnrnq4cpfyghybrn4p985gcav",
+      "displayName": "Nikita Shkoda",
+      "image": "https://avatars.githubusercontent.com/u/40822400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4390,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 9,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1770770097624,
+      "changelog": "- No user-visible changes;\n- README updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c16a8b0c6562e8f27f74b2791f053bd0b7ffe8c4dcb25f87a8146e59f1029d1a"
+}

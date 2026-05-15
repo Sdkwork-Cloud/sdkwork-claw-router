@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51092,
+  "uuid": "skill-clawhub-emocity-biometric-scan",
+  "skillKey": "clawhub-emocity-biometric-scan",
+  "name": "EmoCity Biometric Scan",
+  "summary": "Real-time biometric analysis — stress, deception, emotions, heart rate from your camera. 478 facial landmarks, voice stress, micro-expression detection. Powe...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emocity_biometric_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gv66co",
+      "features": [
+        "Real-time biometric analysis — stress, deception, emotions, heart rate from your camera",
+        "478 facial landmarks, voice stress, micro-expression detection"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emocity-biometric-scan@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249819656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emocity-biometric-scan",
+      "url": "https://clawhub.ai/skills/emocity-biometric-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emocity-biometric-scan",
+    "url": "https://clawhub.ai/skills/emocity-biometric-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emocity-biometric-scan-70ed54dc6e2d254f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emocity-biometric-scan@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-emocity-biometric-scan-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fe9d68fc9fad72017c9f0d918ea2a334aaf2227e77ea922e0df68fdae8b1199",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:01:52.563Z"
+}

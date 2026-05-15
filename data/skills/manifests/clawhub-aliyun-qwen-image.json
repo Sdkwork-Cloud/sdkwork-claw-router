@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61464,
+  "uuid": "skill-clawhub-aliyun-qwen-image",
+  "skillKey": "clawhub-aliyun-qwen-image",
+  "name": "Qwen Image",
+  "summary": "调用阿里云百炼（DashScope/Model Studio）平台上的千问及万相2.6模型，完成图像生成与编辑任务。 当用户涉及以下任何场景时，必须使用此 skill： - 调用千问或万相2.6模型生成、编辑图片 - 百炼平台图像相关 API - 使用 dashscope SDK 访问 qwen-image /...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_qwen_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awsl1110",
+      "features": [
+        "调用阿里云百炼（DashScope/Model Studio）平台上的千问及万相2.6模型，完成图像生成与编辑任务。 当用户涉及以下任何场景时，必须使用此 skill：",
+        "调用千问或万相2.6模型生成、编辑图片",
+        "百炼平台图像相关 API",
+        "使用 dashscope SDK 访问 qwen-image /..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-qwen-image@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89456977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-qwen-image",
+      "url": "https://clawhub.ai/skills/aliyun-qwen-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-qwen-image",
+    "url": "https://clawhub.ai/skills/aliyun-qwen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-qwen-image-5845ed120815a82b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-qwen-image@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-qwen-image-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d2f6898eb0d3600b3a470c60266233b30fb0b9a5fc5a6f1b2c8679f9f8fe716",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:31:18.495Z"
+}

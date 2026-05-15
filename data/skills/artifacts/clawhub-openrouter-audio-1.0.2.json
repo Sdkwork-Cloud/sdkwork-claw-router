@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-audio@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_audio",
+  "skill": {
+    "id": 18000,
+    "skillKey": "clawhub-openrouter-audio",
+    "name": "OpenRouter Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-audio",
+    "url": "https://clawhub.ai/skills/openrouter-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-audio-e8bbeae477679498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audio transcription and text-to-speech generation using OpenRouter API. Use when the user needs to transcribe audio files to text or generate speech/audio fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odubinkin",
+      "userId": "publishers:odubinkin",
+      "displayName": "odubinkin",
+      "image": "https://avatars.githubusercontent.com/u/21105369?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 506,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772807709551,
+      "changelog": "- Version 1.0.2 includes tmp directory location fix - move to workspace by default.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5c0715ca3916f6b7f056776f37a2b36f97442060e8105d6d3068b1e84da7bc0"
+}

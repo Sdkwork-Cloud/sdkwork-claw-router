@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62989,
+  "uuid": "skill-clawhub-xhs-analytics",
+  "skillKey": "clawhub-xhs-analytics",
+  "name": "小红书数据分析",
+  "summary": "小红书数据分析工具。用于采集笔记数据、分析热度、追踪竞品、生成报告。 Activate when user mentions: 小红书, xiaohongshu, 笔记分析, 博主数据, 热度追踪, 竞品分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "legou20221023",
+      "features": [
+        "小红书数据分析工具。用于采集笔记数据、分析热度、追踪竞品、生成报告。 Activate when user mentions: 小红书, xiaohongshu, 笔记分析, 博主数据, 热."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116474236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-analytics",
+      "url": "https://clawhub.ai/skills/xhs-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-analytics",
+    "url": "https://clawhub.ai/skills/xhs-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-analytics-3727e85e661941f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d16addd8889cc35d00e0a5893e7f1b2dd09b6943d368802764518e4f90c5fd0",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:40:29.219Z"
+}

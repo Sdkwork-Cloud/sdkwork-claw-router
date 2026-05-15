@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65332,
+  "uuid": "skill-clawhub-ai-code-reviewer",
+  "skillKey": "clawhub-ai-code-reviewer",
+  "name": "AI Code Reviewer",
+  "summary": "AI 驱动的多语言代码审查工具，自动检测代码质量、潜在漏洞，生成 PR 描述和单元测试用例。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daimingvip-a11y",
+      "features": [
+        "AI 驱动的多语言代码审查工具，自动检测代码质量、潜在漏洞，生成 PR 描述和单元测试用例。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-code-reviewer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232273827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-code-reviewer",
+      "url": "https://clawhub.ai/skills/ai-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-code-reviewer",
+    "url": "https://clawhub.ai/skills/ai-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-code-reviewer-e8721e7838a2beae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-code-reviewer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-code-reviewer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dab06b5336764cbc406fa48a629fb3b52a23a1a2011388323df96ab068726261",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:46:01.881Z"
+}

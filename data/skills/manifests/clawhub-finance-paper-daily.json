@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60980,
+  "uuid": "skill-clawhub-finance-paper-daily",
+  "skillKey": "clawhub-finance-paper-daily",
+  "name": "Finance Paper Daily",
+  "summary": "每日金融学术论文自动抓取并生成 Excel 报告。从 arXiv (q-fin)、Semantic Scholar、OpenAlex、Google Scholar 四个来源获取最新金融领域论文（量化金融、资产定价、风险管理、算法交易、FinTech等），整理成格式化 Excel 文件保存到用户桌面，文件名为 YY...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_paper_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snow-seamless",
+      "features": [
+        "每日金融学术论文自动抓取并生成 Excel 报告。从 arXiv (q-fin)、Semantic Scholar、OpenAlex、Google Scholar 四个来源获取最新金融领域论."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-paper-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72679894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-paper-daily",
+      "url": "https://clawhub.ai/skills/finance-paper-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-paper-daily",
+    "url": "https://clawhub.ai/skills/finance-paper-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-paper-daily-d5b67465325f3e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-paper-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-paper-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebb3d03af1a6d3615e5229aba30bc8c48577c8a641f88aed7f7247c22184c73f",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:43:20.657Z"
+}

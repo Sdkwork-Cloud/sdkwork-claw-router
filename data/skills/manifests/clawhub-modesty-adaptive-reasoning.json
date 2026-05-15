@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48856,
+  "uuid": "skill-clawhub-modesty-adaptive-reasoning",
+  "skillKey": "clawhub-modesty-adaptive-reasoning",
+  "name": "Adaptive Reasoning",
+  "summary": "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_adaptive_reasoning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Automatically assess task complexity and adjust reasoning level",
+        "Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-adaptive-reasoning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-adaptive-reasoning",
+      "url": "https://clawhub.ai/skills/modesty-adaptive-reasoning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/modesty-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-adaptive-reasoning-891cb2a56f3ad865.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-adaptive-reasoning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-adaptive-reasoning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:551f19f285b7e74c4373de4a75b01f87cd43b21c6037e6c8aa5a7bc8f3b9a1f6",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:00:40.183Z"
+}

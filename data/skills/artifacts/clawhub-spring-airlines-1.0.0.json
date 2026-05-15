@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spring-airlines@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spring_airlines",
+  "skill": {
+    "id": 43745,
+    "skillKey": "clawhub-spring-airlines",
+    "name": "Spring Airlines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spring-airlines",
+    "url": "https://clawhub.ai/skills/spring-airlines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spring-airlines-99ea6cad79eb6115.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides key information on Spring Airlines' history, services, market coverage, and industry position for quick reference and analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412080560,
+      "changelog": "spring-airlines skill 1.0.0 — 首次发布\n\n- 提供 spring-airlines 基本信息查询功能\n- 包含品牌历史、业务概览、市场分布及竞争格局四个主要板块\n- 适用于快速了解企业概况、产品对比、市场分析及商业报告准备\n- 提供使用场景和信息获取建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6b041b07c64e57528a0733f74fea02fb1e5aff835d06e44438cc9bf06f764a9"
+}

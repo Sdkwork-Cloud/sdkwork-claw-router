@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-cisco-iosxe-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_cisco_iosxe_hardening",
+  "skill": {
+    "id": 41669,
+    "skillKey": "clawhub-toolweb-cisco-iosxe-hardening",
+    "name": "Cisco IOSXE Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-cisco-iosxe-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-cisco-iosxe-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-cisco-iosxe-hardening-6cb78502d7c6e88f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Cisco Router & Switch Security Configuration Generator"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774896784593,
+      "changelog": "- Initial release of the Cisco IOS XE Security Hardening Tool.\n- Provides an automated API to generate security-hardened configuration files for Cisco IOS XE routers and switches.\n- Supports configuration categories including authentication (SSH, AAA), encryption (IPsec, TLS), logging (syslog, NetFlow), and access control (ACL, RBAC).\n- Endpoints available for generating configurations, health checks, and listing all hardening options.\n- Professional, audit-ready outputs with estimated config size and platform compatibility for major Cisco models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c336f9d82c001949e7f7017e4a8eb98188b2774a9bde6976105336d2bdd1e0c8"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64711,
+  "uuid": "skill-clawhub-notion-time-management-matrix",
+  "skillKey": "clawhub-notion-time-management-matrix",
+  "name": "Notion Time Management Matrix (Eisenhower Matrix)",
+  "summary": "待办事项管理技能，用于通过 exec 调用 Python 脚本完成指定 Notion 数据库的连接，基于四象限法则进行时间管理，支持待办事项的创建、查询、搜索、状态更新、截止日期修改与分析总结。当用户提出\"明天要做\"或\"最近有什么重要的事\"或\"25号前解决\"或\"把任务延期到下周五\"等涉及时间管理内容时触发。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_time_management_matrix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiangtaoxiao",
+      "features": [
+        "待办事项管理技能，用于通过 exec 调用 Python 脚本完成指定 Notion 数据库的连接，基于四象限法则进行时间管理，支持待办事项的创建、查询、搜索、状态更新、截止日期修改与分析总."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-time-management-matrix@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65456849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-time-management-matrix",
+      "url": "https://clawhub.ai/skills/notion-time-management-matrix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-time-management-matrix",
+    "url": "https://clawhub.ai/skills/notion-time-management-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-time-management-matrix-450ee7e4cadf1e05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-time-management-matrix@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-time-management-matrix-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1763457364652445b97a963e943bf8e4ea4a52f99d07cb76da0c791667058f1c",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:14:03.679Z"
+}

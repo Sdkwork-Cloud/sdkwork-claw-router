@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hilton@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilton",
+  "skill": {
+    "id": 66956,
+    "skillKey": "clawhub-hilton",
+    "name": "Hilton"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilton",
+    "url": "https://clawhub.ai/skills/hilton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilton-8e3f5e915594cdb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "希尔顿酒店集团介绍和预订指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776533726265,
+      "changelog": "- 更新了品牌档案，新增希尔顿发展的关键历史节点及核心数据表格\n- 详细列出酒店数量、全球覆盖及会员体系等核心优势\n- 提供希尔顿关键品牌（如华尔道夫、康莱德等）简要介绍\n- 增加“值得了解”部分，推荐了相关书籍",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8744956817c18692d449b900158d0f6e9b1d0c90d229590e347c5229350660f2"
+}

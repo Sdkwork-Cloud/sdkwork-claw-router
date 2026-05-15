@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investoday-finance-data@1.8.4",
+  "version": "1.8.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_finance_data",
+  "skill": {
+    "id": 65790,
+    "skillKey": "clawhub-investoday-finance-data",
+    "name": "InvestToday Finance Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-finance-data",
+    "url": "https://clawhub.ai/skills/investoday-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-finance-data-e96bc8ec2cf1de3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取中国市场金融数据与投研信息，覆盖 A股、港股、基金、指数、财务、公告、研报和宏观经济等 200+ 接口。Use when: 查询行情数据、财务数据、公告研报、基金指数数据、宏观经济数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenneth-bro",
+      "userId": "s177j0jytadhmffa017fzg5tcs83gmm6",
+      "displayName": "investoday",
+      "image": "https://avatars.githubusercontent.com/u/19256972?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1109,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 26
+    },
+    "latestVersion": {
+      "version": "1.8.4",
+      "createdAt": 1777019875877,
+      "changelog": "Add scenario guidance and trigger instructions to skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26e56d941f275ba505e0b6047a7bf49a29704f66aa3492b66eac590fe214c026"
+}

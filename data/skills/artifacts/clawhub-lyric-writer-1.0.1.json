@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lyric-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyric_writer",
+  "skill": {
+    "id": 62386,
+    "skillKey": "clawhub-lyric-writer",
+    "name": "lyric-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyric-writer",
+    "url": "https://clawhub.ai/skills/lyric-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyric-writer-2676a4ed4c6a4d4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "歌词创作技能。根据给定的主题或情感，创作适合 Suno AI 音乐生成的英文歌词，包含 lyrics 和 styles 参数。触发条件：用户要求写歌词、创作歌词、suno 歌词、English lyrics 等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "279458179",
+      "userId": "s172tnbzze795e1dcwzac5127983pqdg",
+      "displayName": "xiaohuozi",
+      "image": "https://avatars.githubusercontent.com/u/79885733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773304408233,
+      "changelog": "lyric-writer v1.0.1\n\n- Changed output format: lyrics and styles are now displayed as two separate sections instead of JSON.\n- Updated the lyrics template to include real line breaks and optional sections like [break].\n- Added a requirement that each lyrics line uses actual newlines and blank lines between sections.\n- Clarified instructions for output formatting and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20cb19c88ef38882c9cfc7bc4c2ec857447e8a370e36be264092ae57430aea73"
+}

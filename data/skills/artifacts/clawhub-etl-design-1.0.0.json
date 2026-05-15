@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etl-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etl_design",
+  "skill": {
+    "id": 52167,
+    "skillKey": "clawhub-etl-design",
+    "name": "Etl Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etl-design",
+    "url": "https://clawhub.ai/skills/etl-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etl-design-fca5e3ad38f0b0a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep ETL/ELT design workflow—extract patterns, transforms, loading strategies, idempotency, validation, and reconciliation. Use when designing batch data flo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774398284433,
+      "changelog": "Initial release of the etl-design skill, providing a structured ETL/ELT workflow for robust data pipeline design.\n\n- Introduces a six-stage ETL design framework: source contract, extract strategy, transform rules, load & dedupe, validation, and operations & backfill.\n- Covers best practices for handling schema drift, partial loads, retries, and data reconciliation.\n- Includes detailed guidance for batch data loads, choosing extract modes, and ensuring idempotency and correctness.\n- Provides a comprehensive final review checklist and operational tips.\n- Clarifies when to use this workflow and considerations for deviations like near-real-time scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1da4d95ddd3667e492090bc3e6228bc5ba5b4f5a8ededa1fcfa236403adf2d06"
+}

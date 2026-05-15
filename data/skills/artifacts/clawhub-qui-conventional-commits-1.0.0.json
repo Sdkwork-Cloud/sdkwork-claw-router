@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qui-conventional-commits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_conventional_commits",
+  "skill": {
+    "id": 43579,
+    "skillKey": "clawhub-qui-conventional-commits",
+    "name": "qui-conventional-commits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-conventional-commits",
+    "url": "https://clawhub.ai/skills/qui-conventional-commits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-conventional-commits-0fde612ead7e762f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format commit messages using the Conventional Commits specification. Use when creating commits, writing commit messages, or when the user mentions commits, g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quincygunter",
+      "userId": "s17d0tr1e37k04dr1j7gy5ff0584nmyw",
+      "displayName": "QuincyGunter",
+      "image": "https://avatars.githubusercontent.com/u/260427166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776916704106,
+      "changelog": "- Initial release of the Conventional Commits skill.\n- Provides comprehensive guidelines and formatting rules for writing commit messages using the Conventional Commits specification.\n- Lists required and common commit types, with clear structure and examples.\n- Explains handling of scopes, breaking changes, and semantic versioning correlation.\n- Includes dos and don’ts for effective commit message writing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d39c15b0c5a1f594fe1d121ee6eae386a39dfe8e939dfd32dc997ea21346178c"
+}

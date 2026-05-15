@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42074,
+  "uuid": "skill-clawhub-creek",
+  "skillKey": "clawhub-creek",
+  "name": "Creek",
+  "summary": "Deploy and manage applications on Creek via the Creek CLI. Covers init, deploy, status, projects, deployments, rollback, env vars, custom domains, and dev se...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creek",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lawrence Lin",
+      "features": [
+        "Deploy and manage applications on Creek via the Creek CLI",
+        "Covers init, deploy, status, projects, deployments, rollback, env vars, custom domains, and dev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creek@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creek",
+      "url": "https://clawhub.ai/skills/creek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creek",
+    "url": "https://clawhub.ai/skills/creek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creek-6e8fe4702048181b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creek@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creek-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e7b5d5b5302c5639b4e7722f89aea59ab91b4a18c5ec6c280e0b7a3ea76d840",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T19:21:46.880Z"
+}

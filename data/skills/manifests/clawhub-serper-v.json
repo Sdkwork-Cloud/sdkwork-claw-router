@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11364,
+  "uuid": "skill-clawhub-serper-v",
+  "skillKey": "clawhub-serper-v",
+  "name": "serper-v",
+  "summary": "Professional search (news, places, maps, reviews, scholar, patents) and bulk scraping via Serper API.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper_v",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vinit",
+      "features": [
+        "Professional search (news, places, maps, reviews, scholar, patents) and bulk scraping via Serpe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serper-v@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152802686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serper-v",
+      "url": "https://clawhub.ai/skills/serper-v"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper-v",
+    "url": "https://clawhub.ai/skills/serper-v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-v-19f544eeeed52eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serper-v@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-serper-v-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8b2c419b2aed0b4b67eaf648790400af06b699f10d2e506a928b66f9f424f79",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T19:12:54.497Z"
+}

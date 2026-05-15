@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30762,
+  "uuid": "skill-clawhub-open-source-analysis",
+  "skillKey": "clawhub-open-source-analysis",
+  "name": "Open Source Analysis",
+  "summary": "Analyze an open source GitHub repository and generate a structured report. Trigger whenever the user provides a GitHub repository URL to analyze, or explicit...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_source_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Analyze an open source GitHub repository and generate a structured report",
+        "Trigger whenever the user provides a GitHub repository URL to analyze, or explicit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-source-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-source-analysis",
+      "url": "https://clawhub.ai/skills/open-source-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-source-analysis",
+    "url": "https://clawhub.ai/skills/open-source-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-source-analysis-7a0bd8a160f81c52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-source-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-source-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:996557e5100fac548bfed80803bc484b3e3bd74c6150f34cc40efe9c5ee762b3",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:57:50.117Z"
+}

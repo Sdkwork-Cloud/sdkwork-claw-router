@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71884,
+  "uuid": "skill-clawhub-lux-tts",
+  "skillKey": "clawhub-lux-tts",
+  "name": "Lux Tts",
+  "summary": "提供本地高速、高质量文本转语音服务，支持语音克隆与自动路径管理，无需云端确保隐私安全。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lux_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zs15600770520",
+      "features": [
+        "提供本地高速、高质量文本转语音服务，支持语音克隆与自动路径管理，无需云端确保隐私安全。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lux-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256583896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lux-tts",
+      "url": "https://clawhub.ai/skills/lux-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lux-tts",
+    "url": "https://clawhub.ai/skills/lux-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lux-tts-babac00cf4d9a48b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lux-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lux-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:235e158a24b1da9e513b64f67226de2c8788ed4d7c418b6f602120c387cfb460",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:04:44.737Z"
+}

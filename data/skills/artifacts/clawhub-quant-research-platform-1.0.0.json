@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-research-platform@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_research_platform",
+  "skill": {
+    "id": 28148,
+    "skillKey": "clawhub-quant-research-platform",
+    "name": "Quant Research Platform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-research-platform",
+    "url": "https://clawhub.ai/skills/quant-research-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-research-platform-220191b786614220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced quantitative research platform for multi-factor analysis, factor mining, backtesting, and portfolio optimization. Includes 100+ alpha factors, IC/IR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-aka-chen",
+      "userId": "publishers:jason-aka-chen",
+      "displayName": "jason-aka-chen",
+      "image": "https://avatars.githubusercontent.com/u/251550877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774163190937,
+      "changelog": "Initial release of quant-research-platform.\n\n- Multi-factor research with 100+ alpha factors and automated factor mining/evaluation\n- Comprehensive backtesting engine with historical, walk-forward, and Monte Carlo analysis, including transaction costs\n- Advanced portfolio optimization: mean-variance, risk parity, Black-Litterman, ACL, and Kelly criterion\n- Integrated risk management: VaR/CVaR, stress testing, factor exposure, drawdown control\n- Supports strategy development with classic and machine learning (XGBoost, LightGBM, LSTM) approaches\n- Extensive API for factor research, backtesting, and optimization\n- Built-in support for technical, fundamental, sentiment, and alternative data factors",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1097553c2ad80e1ac6f6d8cabf753aaed8628ae79946559db810e9ca3be4aa5"
+}

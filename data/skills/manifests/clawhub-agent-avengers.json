@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61690,
+  "uuid": "skill-clawhub-agent-avengers",
+  "skillKey": "clawhub-agent-avengers",
+  "name": "Agent Avengers",
+  "summary": "올인원 멀티에이전트 오케스트레이션. 복잡한 태스크를 자동으로 분해하고, 전문 에이전트들을 즉석에서 생성/스폰하여 병렬 처리 후 결과를 통합합니다. TRIGGERS: avengers assemble, 어벤저스, agent-avengers, 멀티에이전트 자동화, 에이전트 팀 구성, 자동 에이전트",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_avengers",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oozoofrog",
+      "features": [
+        "올인원 멀티에이전트 오케스트레이션",
+        "복잡한 태스크를 자동으로 분해하고, 전문 에이전트들을 즉석에서 생성/스폰하여 병렬 처리 후 결과를 통합합니다",
+        "TRIGGERS: avengers assemble, 어벤저스, agent-avengers, 멀티에이전트 자동화, 에이전트 팀 구성, 자동 에이전트"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-avengers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3011832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-avengers",
+      "url": "https://clawhub.ai/skills/agent-avengers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-avengers",
+    "url": "https://clawhub.ai/skills/agent-avengers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-avengers-3b112e7089251c05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-avengers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-avengers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be80b3562826b270b111244741fcd8685a75309485163d9d2867b4ee325fc0ff",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T18:05:58.581Z"
+}

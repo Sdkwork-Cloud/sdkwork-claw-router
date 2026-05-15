@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59398,
+  "uuid": "skill-clawhub-lovtrip-video2article",
+  "skillKey": "clawhub-lovtrip-video2article",
+  "name": "LovTrip Video to Article",
+  "summary": "视频转文章 / YouTube Video to Article — 使用 Gemini AI 将视频转为结构化文章。当用户需要将 YouTube 视频转换为文章时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovtrip_video2article",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KLeo",
+      "features": [
+        "视频转文章 / YouTube Video to Article — 使用 Gemini AI 将视频转为结构化文章。当用户需要将 YouTube 视频转换为文章时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovtrip-video2article@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2713983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovtrip-video2article",
+      "url": "https://clawhub.ai/skills/lovtrip-video2article"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovtrip-video2article",
+    "url": "https://clawhub.ai/skills/lovtrip-video2article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovtrip-video2article-1cb3659be3c169e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovtrip-video2article@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovtrip-video2article-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e099827969495a7cf843a5693f6bea0bd11e5835f85fe871fc78ba51ed7b7d61",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:29:45.336Z"
+}

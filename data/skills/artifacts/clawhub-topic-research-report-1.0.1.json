@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/topic-research-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topic_research_report",
+  "skill": {
+    "id": 71508,
+    "skillKey": "clawhub-topic-research-report",
+    "name": "topic-research-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topic-research-report",
+    "url": "https://clawhub.ai/skills/topic-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topic-research-report-6057b791ce4199cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向专题研究报告生成的能力。适用于用户提出“某主题/事件/政策的深度研究报告”类请求时，自动生成结构化研究内容。覆盖主题投资、政策影响、事件冲击、趋势判断等跨行业议题。触发核心条件：用户目标是“专题研究/深度解读/报告输出”，而非单行业常规研究或单标的诊断。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777022479907,
+      "changelog": "- 增加了命令行调用的注意事项，明确禁止后台异步执行，必须同步等待命令结果。\n- 常见问题部分新增专题研究报告接口响应时间相关提示，强调需同步等待结果输出。\n- 其他内容无变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5394dc944c8d678fabb49d4e339b9484cb0763d22f6ba85dfaeaf2740a97ada0"
+}

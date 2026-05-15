@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71007,
+  "uuid": "skill-clawhub-asml",
+  "skillKey": "clawhub-asml",
+  "name": "Asml",
+  "summary": "提供关于Asml品牌历史、产品服务、市场地位、全球布局及最新动态的详细信息查询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asml",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于Asml品牌历史、产品服务、市场地位、全球布局及最新动态的详细信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asml@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asml",
+      "url": "https://clawhub.ai/skills/asml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asml",
+    "url": "https://clawhub.ai/skills/asml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asml-3cb882789f1a7e57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asml@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-asml-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfb01fd424207011401c06b1744e88c21d3d056db1a0d0e0bc2017bf928d2311",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:09.219Z"
+}

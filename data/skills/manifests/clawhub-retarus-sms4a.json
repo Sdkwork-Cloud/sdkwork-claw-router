@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29587,
+  "uuid": "skill-clawhub-retarus-sms4a",
+  "skillKey": "clawhub-retarus-sms4a",
+  "name": "retarus-sms4a",
+  "summary": "Send SMS jobs and check SMS delivery status through the Retarus SMS for Applications REST API. Use when Codex or OpenClaw needs to create SMS jobs, inspect p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retarus_sms4a",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aeggerd",
+      "features": [
+        "Send SMS jobs and check SMS delivery status through the Retarus SMS for Applications REST API",
+        "Use when Codex or OpenClaw needs to create SMS jobs, inspect p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retarus-sms4a@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40333528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retarus-sms4a",
+      "url": "https://clawhub.ai/skills/retarus-sms4a"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retarus-sms4a",
+    "url": "https://clawhub.ai/skills/retarus-sms4a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retarus-sms4a-11e478bc97efa659.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retarus-sms4a@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retarus-sms4a-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebdfbc12e84107ce93282e8d3d188678ad3e3a01610707fe0991e4e1bd6bc724",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:20:09.071Z"
+}

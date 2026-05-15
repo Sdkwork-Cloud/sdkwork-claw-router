@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-auto-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_auto_subtitle_generator",
+  "skill": {
+    "id": 49069,
+    "skillKey": "clawhub-mediaio-auto-subtitle-generator",
+    "name": "Mediaio Auto Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-auto-subtitle-generator",
+    "url": "https://clawhub.ai/skills/mediaio-auto-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-auto-subtitle-generator-941107051324d48c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, content creators, marketers use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777587276335,
+      "changelog": "- Initial release of the Mediaio Auto Subtitle Generator.\n- Lets you upload video files (MP4, MOV, AVI, WebM up to 500MB) and auto-generate embedded subtitles in minutes using a cloud-based backend.\n- Supports session-based editing with export to 1080p MP4.\n- Handles user prompts for uploading, editing, checking credits, viewing status, and exporting with clear feedback.\n- Automatic environment setup, including token management and API authentication.\n- Error handling and user guidance for file type, size, credits, and rate limits included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49261e6ee6197cc048996792a39d253627ac2ef8f511fa7459da9688bafc68b9"
+}

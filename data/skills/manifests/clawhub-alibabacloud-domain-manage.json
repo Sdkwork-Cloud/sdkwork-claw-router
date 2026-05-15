@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58363,
+  "uuid": "skill-clawhub-alibabacloud-domain-manage",
+  "skillKey": "clawhub-alibabacloud-domain-manage",
+  "name": "Alibabacloud Domain Manage",
+  "summary": "Query Alibaba Cloud domain information: domain details, domain list, advanced search, and instance ID lookup. 查询阿里云域名信息：域名详情、域名列表、高级搜索、按实例ID查询。 Triggers: \"do...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_domain_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Query Alibaba Cloud domain information: domain details, domain list, advanced search, and insta.",
+        "查询阿里云域名信息：域名详情、域名列表、高级搜索、按实例ID查询。 Triggers: \"do..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-domain-manage@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-domain-manage",
+      "url": "https://clawhub.ai/skills/alibabacloud-domain-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-domain-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-domain-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-domain-manage-d65ea3cbdf2c858b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-domain-manage@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-domain-manage-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cfd487b15d99b9781881d147bdd05258eefcaf809df2ee497d27fc362a7135d",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:33:55.932Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14758,
+  "uuid": "skill-clawhub-only-baby-skill",
+  "skillKey": "clawhub-only-baby-skill",
+  "name": "OnlyBaby",
+  "summary": "Analyze contraction JSON and baby log JSON to assess mum's labour/contraction situation and baby's feeding and diaper status. Use when the user provides (or references) contractions_*.json and babyLogs_*.json files and wants to know if mum.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.only_baby_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bo Liu",
+      "features": [
+        "Analyze contraction JSON and baby log JSON to assess mum's labour/contraction situation and bab.",
+        "Use when the user provides (or references) contractions_*.json and babyLogs_*.json files and wa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/only-baby-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3782279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "only-baby-skill",
+      "url": "https://clawhub.ai/skills/only-baby-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "only-baby-skill",
+    "url": "https://clawhub.ai/skills/only-baby-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/only-baby-skill-d7c1924b1a0680f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/only-baby-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-only-baby-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fe90958a49165667b3d407434077ed1f8bb94dab723c5267040401ce71570e7",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:13:59.166Z"
+}

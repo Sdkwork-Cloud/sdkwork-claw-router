@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19011,
+  "uuid": "skill-clawhub-ag-model-usage",
+  "skillKey": "clawhub-ag-model-usage",
+  "name": "Ag Model Usage",
+  "summary": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ag_model_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lian Junhong",
+      "features": [
+        "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ag-model-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69239617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ag-model-usage",
+      "url": "https://clawhub.ai/skills/ag-model-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ag-model-usage",
+    "url": "https://clawhub.ai/skills/ag-model-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ag-model-usage-65fe027ce9908650.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ag-model-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ag-model-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ee4052380ab4e9928a3e8dcc98cba2c511eeee8b98ea6f4269150c1af4550a1",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:52:01.175Z"
+}

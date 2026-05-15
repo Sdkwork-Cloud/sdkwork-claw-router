@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-sxdg2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_sxdg2",
+  "skill": {
+    "id": 33046,
+    "skillKey": "clawhub-auto-updater-sxdg2",
+    "name": "Auto Updater Sxdg2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-sxdg2",
+    "url": "https://clawhub.ai/skills/auto-updater-sxdg2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-sxdg2-b4cd4a78a72e02d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update OpenClaw and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitchegumi",
+      "userId": "publishers:gitchegumi",
+      "displayName": "Mat",
+      "image": "https://avatars.githubusercontent.com/u/49793638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774222485617,
+      "changelog": "- Initial release of the auto-updater skill.\n- Adds daily automated updates for OpenClaw and all installed skills via a scheduled cron job.\n- Sends a summary message after updates, detailing what changed.\n- Supports configuration of update time, timezone, and summary message destination.\n- Provides troubleshooting steps and manual commands for update management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:157692a76b80c9caf58eb516bce59e6c93fb82c177a24279d1b612d3db757e94"
+}

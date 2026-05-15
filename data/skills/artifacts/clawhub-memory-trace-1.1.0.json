@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-trace@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_trace",
+  "skill": {
+    "id": 58365,
+    "skillKey": "clawhub-memory-trace",
+    "name": "Trace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-trace",
+    "url": "https://clawhub.ai/skills/memory-trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-trace-1f795cf8e92ea9ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract character personality from novels/scripts/anime, generate SoulPod packages for Memory-Inhabit dialogue. | 从小说、剧本、动漫素材中提取角色人格，生成 SoulPod 包。下游配合 Memory..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evangeliona",
+      "userId": "s179476jgkqc21r8vwyxpb4x8183prz3",
+      "displayName": "Asuka",
+      "image": "https://avatars.githubusercontent.com/u/32991809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778156602405,
+      "changelog": "Version 1.1.0\n\n- 新增角色支持，包括“戴安娜”、“秦彻”、“拓跋玉儿”并为每个角色生成完整SoulPod输出。\n- 扩充角色设定详细介绍及对话风格于文档中，提升复刻效果。\n- 增加新的配置与输出文件，包含 profile.json、system_prompts.txt、config.json、raw_memories.json 等，对应每个新角色。\n- 更新 forge.py 及相关脚本，支持自动解析与生成多角色完整SoulPod包。\n- 完善README与技能说明文档，展示最新工作流和角色目录结构。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b0757bf42f40fdeecf080fcc5ec3d2261238fe8b60a9266f912de3d0a4c347c"
+}

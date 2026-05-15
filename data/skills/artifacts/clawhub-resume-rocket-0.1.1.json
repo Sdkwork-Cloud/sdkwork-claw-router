@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-rocket@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_rocket",
+  "skill": {
+    "id": 65957,
+    "skillKey": "clawhub-resume-rocket",
+    "name": "Resume Rocket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-rocket",
+    "url": "https://clawhub.ai/skills/resume-rocket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-rocket-6ee942b4e02541f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 简历火箭 — 一键把你的简历改写成目标 JD 的满分匹配版，可选对接 Boss 直聘自动投递。输入旧简历 + 目标岗位 JD，输出「高命中改写版 + 匹配度评分 + 面试话术卡」。春招/秋招/跳槽必备。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenmoon1111",
+      "userId": "s1778kh9mrk6mkthps1zabn99585d2wz",
+      "displayName": "chenmoon1111",
+      "image": "https://avatars.githubusercontent.com/u/219963765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776912269142,
+      "changelog": "v0.1.1: 加入私域支付闭环（支付宝/微信收款码 + 手动发激活码），脱敏真人案例 chen-case-report.md，发布清单，CHANGELOG。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20eecaf6754125444f763615c0ce80f036198c56f75c1e264073c8afd363bb78"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19838,
+  "uuid": "skill-clawhub-reading-notes",
+  "skillKey": "clawhub-reading-notes",
+  "name": "Reading Notes Skill",
+  "summary": "Expand reading insights into detailed notes using local templates only. SAFE VERSION: No external API calls, no filesystem access, no secrets required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Expand reading insights into detailed notes using local templates only",
+        "SAFE VERSION: No external API calls, no filesystem access, no secrets required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-notes",
+      "url": "https://clawhub.ai/skills/reading-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-notes",
+    "url": "https://clawhub.ai/skills/reading-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-notes-7dec46092cce5a92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5231f957433c8d88cd5a3a30187e40e9e02793bd1e65388eb17c5f5fe53185ab",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:31:35.821Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35257,
+  "uuid": "skill-clawhub-equipment-maintenance-log-2",
+  "skillKey": "clawhub-equipment-maintenance-log-2",
+  "name": "Equipment Maintenance Log",
+  "summary": "Track lab equipment calibration dates and send maintenance reminders",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equipment_maintenance_log_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Track lab equipment calibration dates and send maintenance reminders"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/equipment-maintenance-log-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "equipment-maintenance-log-2",
+      "url": "https://clawhub.ai/skills/equipment-maintenance-log-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equipment-maintenance-log-2",
+    "url": "https://clawhub.ai/skills/equipment-maintenance-log-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equipment-maintenance-log-2-4e02fedce210aeff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/equipment-maintenance-log-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-equipment-maintenance-log-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc884bcde3eea013dbf40368ddbd85d577ff12acbe978cdc594d66298656864d",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:32:05.806Z"
+}

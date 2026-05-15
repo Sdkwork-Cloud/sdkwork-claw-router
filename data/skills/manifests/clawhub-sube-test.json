@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42887,
+  "uuid": "skill-clawhub-sube-test",
+  "skillKey": "clawhub-sube-test",
+  "name": "Sube Test",
+  "summary": "Convert unstructured documents into LLM-ready structured data. Supports PDF, Word, PPT, and images; extracts paragraphs, formulas, tables, charts, and other...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sube_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sube",
+      "features": [
+        "Convert unstructured documents into LLM-ready structured data",
+        "Supports PDF, Word, PPT, and images",
+        "extracts paragraphs, formulas, tables, charts, and other..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sube-test@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53138073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sube-test",
+      "url": "https://clawhub.ai/skills/sube-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sube-test",
+    "url": "https://clawhub.ai/skills/sube-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sube-test-60cd6afe6d26e37e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sube-test@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sube-test-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d5153129e174e334f5bc4f58179cec1914d7da001c2bb7befa6efa218cc1b2d",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:19:10.164Z"
+}

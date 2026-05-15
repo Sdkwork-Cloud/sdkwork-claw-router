@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/effective-competitive-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.effective_competitive_analysis",
+  "skill": {
+    "id": 18141,
+    "skillKey": "clawhub-effective-competitive-analysis",
+    "name": "competitive analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "effective-competitive-analysis",
+    "url": "https://clawhub.ai/skills/effective-competitive-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/effective-competitive-analysis-5b91753d257360c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a systematic competitive analysis framework based on Zhang Zaiwang's methodology, guiding goal-driven, structured market and product competitor eval..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caperszhang",
+      "userId": "s17ddkcpyrp474vsg08dhr6wbx83kk49",
+      "displayName": "caperszhang",
+      "image": "https://avatars.githubusercontent.com/u/132526517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774924660386,
+      "changelog": "Version 1.0.1 – Major update: Template localization and file name overhaul\n\n- All template files replaced: English templates removed and corresponding Chinese templates added for a localized and consistent user experience.\n- Template filenames updated from English (e.g., competitive-canvas-template.md) to Chinese (e.g., 竞品画布模板.md) to align with skill documentation language.\n- No functional changes to analysis framework; core concepts and toolset remain the same.\n- Skill description and documentation fully localized to Chinese for improved accessibility to Chinese-speaking users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa9c9146536594752bb76327f034179636ddf3ee986d4c3794127627d56fb638"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30432,
+  "uuid": "skill-clawhub-clawdoc",
+  "skillKey": "clawhub-clawdoc",
+  "name": "Clawdoc",
+  "summary": "Diagnose OpenClaw agent failures, cost spikes, and performance issues with 14 pattern detectors. Use when: task failed unexpectedly, costs seem high, agent b...",
+  "version": "0.12.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdoc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ashish Jain",
+      "features": [
+        "Diagnose OpenClaw agent failures, cost spikes, and performance issues with 14 pattern detectors",
+        "Use when: task failed unexpectedly, costs seem high, agent b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdoc@0.12.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45959584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdoc",
+      "url": "https://clawhub.ai/skills/clawdoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdoc",
+    "url": "https://clawhub.ai/skills/clawdoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdoc-f4f093143d1388a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdoc@0.12.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdoc-0.12.0.json",
+      "version": "0.12.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da77920f17306cf9a6ec8150cad41737369d831260c0873c1e7e86fd8e920f8d",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:35:40.502Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36864,
+  "uuid": "skill-clawhub-winget-package-manager",
+  "skillKey": "clawhub-winget-package-manager",
+  "name": "winget-package-manager",
+  "summary": "Controlled Windows package management workflow based on winget. Guides an agent to safely search, inspect, download, install, upgrade, uninstall, and list up...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.winget_package_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hongjiapeng",
+      "features": [
+        "Controlled Windows package management workflow based on winget",
+        "Guides an agent to safely search, inspect, download, install, upgrade, uninstall, and list up..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/winget-package-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26671281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "winget-package-manager",
+      "url": "https://clawhub.ai/skills/winget-package-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "winget-package-manager",
+    "url": "https://clawhub.ai/skills/winget-package-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/winget-package-manager-32bac67e714ee7c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/winget-package-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-winget-package-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcdbfb4c05b7520aae8ed11927618d158471d3362ece527e5f8e4c9f75f60163",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:49:52.120Z"
+}

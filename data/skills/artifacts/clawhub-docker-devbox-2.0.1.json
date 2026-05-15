@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-devbox@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_devbox",
+  "skill": {
+    "id": 45473,
+    "skillKey": "clawhub-docker-devbox",
+    "name": "Devbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-devbox",
+    "url": "https://clawhub.ai/skills/docker-devbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-devbox-0246bea72a99be59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-command Docker dev environment for any project. Auto-detects 20+ types (Nuxt/Next/Vite/Python/Go/Rust/Java/Ruby/PHP/C#/Swift/Hugo), matches local languag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nciae-zyh",
+      "userId": "s179dp7bw8a2j9psknkxwk5ncd83gpx8",
+      "displayName": "Little Moon",
+      "image": "https://avatars.githubusercontent.com/u/75648776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777346954290,
+      "changelog": "Declare lsof as optional dependency for port conflict detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a8cffcb8b9979ea132983888d0a208f3d8700a15721b885460644f8dc38b51f"
+}

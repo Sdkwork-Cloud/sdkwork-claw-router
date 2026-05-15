@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-business-strategy-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_business_strategy_analysis",
+  "skill": {
+    "id": 61460,
+    "skillKey": "clawhub-technical-business-strategy-analysis",
+    "name": "Technical Business Strategy Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-business-strategy-analysis",
+    "url": "https://clawhub.ai/skills/technical-business-strategy-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-business-strategy-analysis-73975f5569600075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业级商业战略分析：从市场规模估算到可执行洞察的完整工作流。支持 TAM/SAM/SOM、竞品矩阵、SWOT+、Porter 五力、商业模式画布等专业框架。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588318792,
+      "changelog": "Business Strategy Analysis v1.0.0 – 专业级战略分析完整工作流发布\n\n- 提供端到端商业战略分析：覆盖市场规模估算（TAM/SAM/SOM）、竞品矩阵、SWOT+、Porter五力、商业模式画布等主流分析框架。\n- 支持多行业专业化模板（AI Infra、SaaS、AI Agent、消费品、AI软件），细化分析维度与核心指标，自动匹配行业模板。\n- 实现严格量化分析（含置信区间、具体数值、可靠性评分等），所有主要输出含可视化和数据溯源。\n- 自动化数据提取和输出目录管理，支持结构化报告、原始数据、可视化演示文稿一键生成。\n- 内置权威数据源白名单与针对性提取策略，提高数据质量与分析准确度。\n- 丰富的错误处理和降级策略，确保在数据或API异常时保持可靠输出。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a1898d26d1db4b35f82790cf0fce13119c06991ea9efe88aac3434b75148167"
+}

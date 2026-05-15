@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2docx@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2docx",
+  "skill": {
+    "id": 62680,
+    "skillKey": "clawhub-md2docx",
+    "name": "Md2docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2docx",
+    "url": "https://clawhub.ai/skills/md2docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2docx-ea5d1d03d6020f2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown 转 Word 文档（标准公文格式）。使用 Pandoc 自动转换，支持目录/宋体排版、表格自动修复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sukimgit",
+      "userId": "s177cbxmzhapak8vf7dcae209d83hw3r",
+      "displayName": "sukimgit",
+      "image": "https://avatars.githubusercontent.com/u/131958832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774519077318,
+      "changelog": "md2docx 1.0.6\n\n- Added comprehensive docstrings, type annotations, and improved adherence to PEP 8.\n- Improved error messages with practical suggestions.\n- Enhanced testing: new and boundary test cases introduced.\n- Improved automatic setting of Chinese fonts in output.\n- Table border rendering further optimized for consistency.\n- Documentation updated and test script added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7e19e4d5b384d83e6b88c20719452d7b02cfa3f4eaab50144e55ce70ac24f78"
+}

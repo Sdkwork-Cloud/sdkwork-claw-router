@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19102,
+  "uuid": "skill-clawhub-oc-desktop-control",
+  "skillKey": "clawhub-oc-desktop-control",
+  "name": "OpenClaw Desktop Control",
+  "summary": "Remote desktop control and automation. Capture screenshots, control mouse and keyboard, automate UI interactions. Supports VNC, RDP, and local desktop enviro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_desktop_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Remote desktop control and automation",
+        "Capture screenshots, control mouse and keyboard, automate UI interactions",
+        "Supports VNC, RDP, and local desktop enviro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-desktop-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-desktop-control",
+      "url": "https://clawhub.ai/skills/oc-desktop-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-desktop-control",
+    "url": "https://clawhub.ai/skills/oc-desktop-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-desktop-control-106e0d51b40371f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-desktop-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-desktop-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3b5c9990bf13483dc1ca623757d3d1b5e65e96d4b18d2e127ee9a90c579872e",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:40:29.290Z"
+}

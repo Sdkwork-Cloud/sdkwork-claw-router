@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26632,
+  "uuid": "skill-clawhub-chitin-moat",
+  "skillKey": "clawhub-chitin-moat",
+  "name": "chitin-moat",
+  "summary": "Enforce contextual permission boundaries for AI agents based on communication surface. Constrains agent capabilities (exec, file I/O, secrets, messaging) by...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chitin_moat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adroidian",
+      "features": [
+        "Enforce contextual permission boundaries for AI agents based on communication surface",
+        "Constrains agent capabilities (exec, file I/O, secrets, messaging) by..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chitin-moat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7563431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chitin-moat",
+      "url": "https://clawhub.ai/skills/chitin-moat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chitin-moat",
+    "url": "https://clawhub.ai/skills/chitin-moat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chitin-moat-8538b8cdd7f90f8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chitin-moat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chitin-moat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec14dda376a69f26a1020d41893965f8516b5d2a3ef48170634ebfb6f5a04995",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T17:28:11.062Z"
+}

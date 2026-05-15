@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daxiang-agent-dispatch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_agent_dispatch",
+  "skill": {
+    "id": 65355,
+    "skillKey": "clawhub-daxiang-agent-dispatch",
+    "name": "Daxiang Agent Dispatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-agent-dispatch",
+    "url": "https://clawhub.ai/skills/daxiang-agent-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-agent-dispatch-e5ec43c1a33f8ad5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动识别用户意图并根据预设规则选择最合适的专家agent进行任务调度与结果整合，支持重试与并行处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daxiangnaoyang",
+      "userId": "s170b044ecgtt1cej83h1mfz6h83maqg",
+      "displayName": "daxiangnaoyang",
+      "image": "https://avatars.githubusercontent.com/u/223295173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774974995804,
+      "changelog": "Agent Dispatch Skill v1.0.0 — initial release\n\n- Provides automatic specialist agent dispatching based on routing rules.\n- Core features include intent recognition, rule-based routing and priority, task scheduling, result integration, and fault tolerance with retry/fallback logic.\n- Supports parallel task dispatch (up to 2 concurrent tasks).\n- Includes metrics and logging for dispatch performance monitoring.\n- Offers sample routing rules and usage examples for programming, content creation, and parallel queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1921e29aeb662e6a95a6a861523a1c10a70c7d913fd805048a022bd744744566"
+}

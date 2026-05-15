@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27569,
+  "uuid": "skill-clawhub-docraptor",
+  "skillKey": "clawhub-docraptor",
+  "name": "Docraptor",
+  "summary": "DocRaptor integration. Manage data, records, and automate workflows. Use when the user wants to interact with DocRaptor data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docraptor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "DocRaptor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with DocRaptor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docraptor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docraptor",
+      "url": "https://clawhub.ai/skills/docraptor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docraptor",
+    "url": "https://clawhub.ai/skills/docraptor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docraptor-cc564555263c3a93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docraptor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-docraptor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb4e39046cc405bf10a4c85f033fb029ee585cbd9ee16be7215c64d2740b28a3",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:56:51.179Z"
+}

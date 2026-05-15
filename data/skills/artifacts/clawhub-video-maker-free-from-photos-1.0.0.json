@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-from-photos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_from_photos",
+  "skill": {
+    "id": 45801,
+    "skillKey": "clawhub-video-maker-free-from-photos",
+    "name": "Video Maker Free From Photos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-from-photos",
+    "url": "https://clawhub.ai/skills/video-maker-free-from-photos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-from-photos-5cc9a26f9a16137a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get slideshow MP4 video ready to post, without touching a single slider. Upload your photos, images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776072585904,
+      "changelog": "Initial release — turn your photos into ready-to-share videos.\n\n- Upload images (JPG, PNG, WEBP, HEIC, up to 200MB) and get a 1080p MP4 slideshow with transitions & music.\n- No editing needed: just send your photos and a short description (“turn my photos into a slideshow”).\n- Automatic cloud processing with GPU rendering; download MP4 when done.\n- 100 free credits for first-time users; fast setup and export.\n- Supports quick edits, batch processing, and iterative refinements; session keeps your work-in-progress.\n- Broad format support for input and output files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3695798963e12a4cb0e347af99c3de92c4acf5ddec3bbe638dec0250f2a325c"
+}

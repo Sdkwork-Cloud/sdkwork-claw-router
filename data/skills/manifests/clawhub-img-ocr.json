@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66844,
+  "uuid": "skill-clawhub-img-ocr",
+  "skillKey": "clawhub-img-ocr",
+  "name": "Img Ocr",
+  "summary": "图片文字识别工具，基于Tesseract OCR。当用户提到：图片识别、OCR、文字提取、图片转文字、识别图片里的文字时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.img_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frank_Jin",
+      "features": [
+        "图片文字识别工具，基于Tesseract OCR。当用户提到：图片识别、OCR、文字提取、图片转文字、识别图片里的文字时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/img-ocr@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62980126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "img-ocr",
+      "url": "https://clawhub.ai/skills/img-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "img-ocr",
+    "url": "https://clawhub.ai/skills/img-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/img-ocr-df1cc663924875b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/img-ocr@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-img-ocr-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a21a20c8d6965f9bbfa6088dc42aa9b3c983e32664b9475541f224b2c9037275",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T18:16:58.070Z"
+}

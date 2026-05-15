@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ios-keyboard-limitations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ios_keyboard_limitations",
+  "skill": {
+    "id": 15034,
+    "skillKey": "clawhub-ios-keyboard-limitations",
+    "name": "Ios Keyboard Limitations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ios-keyboard-limitations",
+    "url": "https://clawhub.ai/skills/ios-keyboard-limitations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ios-keyboard-limitations-3e31316da61b1ad0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iOS keyboard extension technical limitations and workarounds. Use when planning or building iOS custom keyboards with voice/audio features, dictation, or system integration needs. Covers memory limits, sandbox restrictions, microphone acce."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "usimic",
+      "userId": "publishers:usimic",
+      "displayName": "usimic",
+      "image": "https://avatars.githubusercontent.com/u/66952391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1082,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770772302344,
+      "changelog": "- Initial release summarizing hard technical limitations of iOS custom keyboards, focused on audio/voice features.\n- Details restrictions: microphone access, app launching, memory limits, storage, and networking requirements.\n- Documents partial workarounds and friction-heavy patterns for integrating voice features.\n- Compares alternative architectures: share extension, standalone app, and Siri Shortcuts.\n- Provides a decision matrix and clear recommendations for different use cases.\n- Includes reference links to Apple documentation and PolyVoice project insights.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e4a2b1d4e7c89beb69ccc06c318d31e23218974d6e033de66bee7aaea98420e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rednote-summarize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_summarize",
+  "skill": {
+    "id": 68373,
+    "skillKey": "clawhub-rednote-summarize",
+    "name": "rednote summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-summarize",
+    "url": "https://clawhub.ai/skills/rednote-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-summarize-10bbdc01871176d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的小红书帖子链接，提取并总结该帖主贴内容和评论区主要观点，生成中文综合报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiwei26",
+      "userId": "s174y5eyazb681vfpb0qnf6cf183hn28",
+      "displayName": "xiwei26",
+      "image": "https://avatars.githubusercontent.com/u/8919307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231580967,
+      "changelog": "login to rednote via browser-subagent, and summarize the main content and sentiment",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89370385b40e7b85f4c33be02905208c917b4033b8ba4b9b9afdea0d785df100"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlassian-bitbucket-by-altf1be@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlassian_bitbucket_by_altf1be",
+  "skill": {
+    "id": 52125,
+    "skillKey": "clawhub-atlassian-bitbucket-by-altf1be",
+    "name": "Atlassian Bitbucket Cloud by @altf1be"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlassian-bitbucket-by-altf1be",
+    "url": "https://clawhub.ai/skills/atlassian-bitbucket-by-altf1be",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlassian-bitbucket-by-altf1be-0829b41de909ff39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atlassian Bitbucket Cloud skill — full CRUD on repos, PRs, pipelines, issues, snippets, workspaces, branches, deployments, and more via Bitbucket REST API 2...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdelkrim",
+      "userId": "s172w1sgvkex0h7wnrbwy5dcmd83qhzb",
+      "displayName": "Abdelkrim from Brussels",
+      "image": "https://avatars.githubusercontent.com/u/791663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774992189382,
+      "changelog": "Migrate auth from App Passwords to Atlassian API Tokens (BITBUCKET_EMAIL + BITBUCKET_API_TOKEN). Legacy App Passwords still supported as fallback until June 2026.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33793c82f2209c8f4b0fe92291a6508eae30506ff089e6f803bb71fcc4c24c64"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bigquery-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigquery_optimizer",
+  "skill": {
+    "id": 26684,
+    "skillKey": "clawhub-bigquery-optimizer",
+    "name": "Bigquery Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigquery-optimizer",
+    "url": "https://clawhub.ai/skills/bigquery-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigquery-optimizer-09fb93543d9835b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze BigQuery query patterns and storage to dramatically reduce the"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772735083752,
+      "changelog": "Initial release of gcp-bigquery-optimizer.\n\n- Provides step-by-step guidance to analyze and reduce BigQuery costs using exported query, storage, or billing data.\n- Identifies expensive queries, partitioning opportunities, storage optimization, and potential materialized view use, all based on user-provided outputs.\n- Designed to work read-only: never requests credentials or accesses the GCP account directly.\n- Outputs actionable recommendations, cost breakdowns, and plain-English query rewrites.\n- Includes minimum IAM permission guidance and clear data export instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cef720f6a0dcfeac545167b3522c6a9f99fe9323ca68430277331804b4662d3"
+}

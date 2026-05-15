@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8736,
+  "uuid": "skill-clawhub-academic-research-hub",
+  "skillKey": "clawhub-academic-research-hub",
+  "name": "Academic Research Hub",
+  "summary": "Use this skill when users need to search academic papers, download research documents, extract citations, or gather scholarly information. Triggers include: requests to \"find papers on\", \"search research about\", \"download academic articles.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_research_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anis Afifi",
+      "features": [
+        "Use this skill when users need to search academic papers, download research documents, extract.",
+        "Triggers include: requests to \"find papers on\", \"search research about\", \"download academic art.",
+        "Also use for literature reviews, bibliography generation, and research discovery",
+        "Requires OpenClawCLI installation from clawhub.ai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-research-hub@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174696450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-research-hub",
+      "url": "https://clawhub.ai/skills/academic-research-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-research-hub",
+    "url": "https://clawhub.ai/skills/academic-research-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-research-hub-610fa0d0bfbfcb3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-research-hub@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-research-hub-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41a9f30f2f13f6dbc7bcb51bd5f2c6cd641f1d67dd705b5f5bf25150218cf462",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T08:33:48.030Z"
+}

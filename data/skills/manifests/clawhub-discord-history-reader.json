@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20097,
+  "uuid": "skill-clawhub-discord-history-reader",
+  "skillKey": "clawhub-discord-history-reader",
+  "name": "Discord History Reader",
+  "summary": "Read Discord channel and thread message history directly via the Discord Bot API, bypassing OpenClaw's session-based message visibility. Use when you need to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_history_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eason Chen",
+      "features": [
+        "Read Discord channel and thread message history directly via the Discord Bot API, bypassing Ope.",
+        "Use when you need to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-history-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43432631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-history-reader",
+      "url": "https://clawhub.ai/skills/discord-history-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-history-reader",
+    "url": "https://clawhub.ai/skills/discord-history-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-history-reader-3525a0d2674a7f55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-history-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-history-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34a225e77315366561e570f856054a55459bf7f88eef1106dac1ef890727accf",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:02:25.107Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-market-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_watcher",
+  "skill": {
+    "id": 45023,
+    "skillKey": "clawhub-prediction-market-watcher",
+    "name": "Prediction Market Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-watcher",
+    "url": "https://clawhub.ai/skills/prediction-market-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-watcher-6311ab6e3bb17c53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor, analyze, and trade on Kalshi and Polymarket prediction markets. Use when the user wants to check open positions, scan for value bets, place bets, ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m-lwatcher",
+      "userId": "s1715044nr9rzk332dgaj1888n83za3x",
+      "displayName": "m-lwatcher",
+      "image": "https://avatars.githubusercontent.com/u/267762552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774966298782,
+      "changelog": "Initial release — Kalshi portfolio tracking, market scanning, bet placement, settlement reminders. Polymarket read-only reference included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4447a6a12f5b9626025e694a9e31ce0deee48c27c12c5a94ee2d203196c28903"
+}

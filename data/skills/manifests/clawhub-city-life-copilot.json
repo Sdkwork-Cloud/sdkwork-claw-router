@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69495,
+  "uuid": "skill-clawhub-city-life-copilot",
+  "skillKey": "clawhub-city-life-copilot",
+  "name": "city-life-copilot",
+  "summary": "告别冰冷导航的全场景城市管家。结合高德地图与网页抓取，提供情绪盲盒、一键拔草、房产雷达与无障碍守护服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_life_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiuhe",
+      "features": [
+        "告别冰冷导航的全场景城市管家。结合高德地图与网页抓取，提供情绪盲盒、一键拔草、房产雷达与无障碍守护服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/city-life-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244984037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "city-life-copilot",
+      "url": "https://clawhub.ai/skills/city-life-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-life-copilot",
+    "url": "https://clawhub.ai/skills/city-life-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-life-copilot-35821772441433e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/city-life-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-city-life-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:257306c1b1eb5a54973248051eca44071385f27f191a68413381edd43b8dc56c",
+      "artifactSizeBytes": 2637
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:13:46.400Z"
+}

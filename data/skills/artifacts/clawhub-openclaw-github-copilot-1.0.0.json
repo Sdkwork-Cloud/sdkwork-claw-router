@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-github-copilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_github_copilot",
+  "skill": {
+    "id": 28539,
+    "skillKey": "clawhub-openclaw-github-copilot",
+    "name": "OpenClaw GitHub Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-github-copilot",
+    "url": "https://clawhub.ai/skills/openclaw-github-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-github-copilot-62baddf8777715d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use GitHub Copilot as your OpenClaw coding agent via the built-in copilot-bridge. Use when setting up Copilot for the first time, switching the default model..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanglinzhen",
+      "userId": "s17a6w61g2h7deefg481g848vd83hfk8",
+      "displayName": "yanglinzhen",
+      "image": "https://avatars.githubusercontent.com/u/6395823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774360336420,
+      "changelog": "Initial public release: guided setup, auth, and activation scripts for using GitHub Copilot as the default OpenClaw agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ff978602d1fa20e731776200ee9d8a809f0cd2a211e170cf9cd5dde6aa8951d"
+}

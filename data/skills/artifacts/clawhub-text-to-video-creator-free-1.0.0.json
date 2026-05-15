@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-creator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_creator_free",
+  "skill": {
+    "id": 45791,
+    "skillKey": "clawhub-text-to-video-creator-free",
+    "name": "Text To Video Creator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-creator-free",
+    "url": "https://clawhub.ai/skills/text-to-video-creator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-creator-free-91ac0e27dc2dd9f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text prompts into ready-to-share videos with this skill. Works with TXT, DOCX, PDF, copied text files up to 500MB. content creators use it for genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776921074479,
+      "changelog": "Initial release of Text to Video Creator Free.\n\n- Convert text, DOCX, PDF, or pasted content (up to 500MB) into shareable 1080p MP4 videos.\n- Cloud processing with fast turnaround (1-2 minutes); no installation needed.\n- Automatic handling of user sessions, tokens, and credits with a free starter tier.\n- Supports custom video instructions, file uploads, editing, and exporting in multiple formats.\n- Designed for creators wanting to generate videos from text without recording footage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bc993616b26a224b6e423124854d8831ed038b9ce1aae31443eab0b2479bd66"
+}

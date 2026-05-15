@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64395,
+  "uuid": "skill-clawhub-xi-lrc-editor",
+  "skillKey": "clawhub-xi-lrc-editor",
+  "name": "Local LRC Editor 专业LRC歌词创作工具",
+  "summary": "专业LRC歌词创作工具，支持歌曲音频波形可视化、歌词时间轴精准打点、LRC导入/导出、播放实时高亮、毫秒级时间戳编辑、自动本地存储防止数据丢失。前端使用jQuery+WaveSurfer.js开发，后端Python Flask，默认端口698，界面紧凑高效。使用场景：(1) 为歌曲制作LRC歌词文件 (2) 编辑...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xi_lrc_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小潴",
+      "features": [
+        "专业LRC歌词创作工具，支持歌曲音频波形可视化、歌词时间轴精准打点、LRC导入/导出、播放实时高亮、毫秒级时间戳编辑、自动本地存储防止数据丢失。前端使用jQuery+WaveSurfer.j."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xi-lrc-editor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71431953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xi-lrc-editor",
+      "url": "https://clawhub.ai/skills/xi-lrc-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xi-lrc-editor",
+    "url": "https://clawhub.ai/skills/xi-lrc-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xi-lrc-editor-ec93fbe631326168.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xi-lrc-editor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xi-lrc-editor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e48ca05086084ce696e891477937d72df959cc35c6f15eef3547363f6b3688b1",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:20:47.244Z"
+}

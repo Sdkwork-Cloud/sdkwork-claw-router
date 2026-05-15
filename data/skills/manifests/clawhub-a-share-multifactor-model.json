@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63059,
+  "uuid": "skill-clawhub-a-share-multifactor-model",
+  "skillKey": "clawhub-a-share-multifactor-model",
+  "name": "A Share Multifactor Model",
+  "summary": "A股多因子模型/Barra风格因子分析。当用户说\"多因子\"、\"multifactor\"、\"Barra\"、\"因子模型\"、\"风格因子\"、\"XX的因子暴露\"、\"因子收益率\"、\"风险模型\"时触发。基于 cn-stock-data 获取行情和财务数据，构建多因子风险模型，分析因子暴露、因子收益、协方差矩阵。支持研报风格（f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_multifactor_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yzswk",
+      "features": [
+        "A股多因子模型/Barra风格因子分析。当用户说\"多因子\"、\"multifactor\"、\"Barra\"、\"因子模型\"、\"风格因子\"、\"XX的因子暴露\"、\"因子收益率\"、\"风险模型\"时触发。基."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-multifactor-model@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14083807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-multifactor-model",
+      "url": "https://clawhub.ai/skills/a-share-multifactor-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-multifactor-model",
+    "url": "https://clawhub.ai/skills/a-share-multifactor-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-multifactor-model-44200a6bf9e5ee44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-multifactor-model@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-multifactor-model-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:300ed56c64a3cca390524ec5251082fd3068f4aa032f9ee01bb6be20d41bc38d",
+      "artifactSizeBytes": 2855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:05:07.159Z"
+}

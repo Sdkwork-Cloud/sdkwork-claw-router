@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-anime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_anime",
+  "skill": {
+    "id": 42040,
+    "skillKey": "clawhub-ai-image-to-video-anime",
+    "name": "Ai Image To Video Anime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-anime",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-anime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-anime-526981e76f16ea6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated anime clips with this skill. Works with PNG, JPG, WEBP, BMP files up to 200MB. anime artists and fans use it for turning s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776793406966,
+      "changelog": "Initial release — convert still images into animated anime video clips via a cloud AI pipeline.\n\n- Supports PNG, JPG, WEBP, and BMP files up to 200MB, returning 1080p MP4 output in 1–2 minutes.\n- Automatic token setup for new and returning users.\n- Handles uploads, edits (including BGM or text overlays), timeline previews, export/download, and credit checks.\n- Error handling covers most common upload/render issues.\n- Designed for anime artists and fans to turn static illustrations into animated video easily.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5d002e88c77d2005231ce588b3661a11134c6a6e8cb107cb99a3162699308a9"
+}

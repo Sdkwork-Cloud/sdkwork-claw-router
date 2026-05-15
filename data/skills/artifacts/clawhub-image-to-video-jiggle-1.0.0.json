@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-jiggle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_jiggle",
+  "skill": {
+    "id": 43260,
+    "skillKey": "clawhub-image-to-video-jiggle",
+    "name": "Image To Video Jiggle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-jiggle",
+    "url": "https://clawhub.ai/skills/image-to-video-jiggle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-jiggle-87e3552e668c8f1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single portrait photo or product image into 1080p looping animated clips just by typing what you need. Whether it's turning static photos into jigglin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776053790428,
+      "changelog": "Initial release of \"Image to Video Jiggle\" (v1.0.0):\n\n- Animate single portrait or product photos into 1080p looping videos using natural language prompts.\n- Simple, fast workflow: upload a still image, describe the animation, and get a downloadable MP4 in 20–40 seconds.\n- No need for manual timeline editing or complex export settings.\n- Credits-based API access with anonymous or authenticated session support.\n- Supports a wide range of file formats (jpg, png, mp4, mov, etc.) and outputs social-media-ready video clips.\n- Automatic handling of user intents such as export, credits balance checks, and video state previews.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:880ae789c8303cf2f9a6213ad927bc00f0193dc926310896df89be02b0e75bcd"
+}

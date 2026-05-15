@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64111,
+  "uuid": "skill-clawhub-skill-install-manager-1-0-0",
+  "skillKey": "clawhub-skill-install-manager-1-0-0",
+  "name": "Skill Install Manager 1.0.0",
+  "summary": "安全技能安装管理器 - 按照用户要求，所有技能安装前必须通过Skill vetter检测，如果发现需要修改配置的直接拒绝并上报，所有指令以用户为准。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_install_manager_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TerryRen2024",
+      "features": [
+        "安全技能安装管理器",
+        "按照用户要求，所有技能安装前必须通过Skill vetter检测，如果发现需要修改配置的直接拒绝并上报，所有指令以用户为准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-install-manager-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192179498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-install-manager-1-0-0",
+      "url": "https://clawhub.ai/skills/skill-install-manager-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-install-manager-1-0-0",
+    "url": "https://clawhub.ai/skills/skill-install-manager-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-install-manager-1-0-0-082d028c8db1b7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-install-manager-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-install-manager-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f4c7eb454067da2c4b779f7c78ad8fb94ad45a143da00d582c78b350f3a361a",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:35:54.645Z"
+}

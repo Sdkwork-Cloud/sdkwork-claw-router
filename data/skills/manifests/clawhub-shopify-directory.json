@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18454,
+  "uuid": "skill-clawhub-shopify-directory",
+  "skillKey": "clawhub-shopify-directory",
+  "name": "Shopify Directory",
+  "summary": "Discover Shopify merchants by category or store name through Lobster Stores. Use when a buyer wants help finding the right merchant for coffee, cookies, supp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_directory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adolfo Builes",
+      "features": [
+        "Discover Shopify merchants by category or store name through Lobster Stores",
+        "Use when a buyer wants help finding the right merchant for coffee, cookies, supp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-directory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-directory",
+      "url": "https://clawhub.ai/skills/shopify-directory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-directory",
+    "url": "https://clawhub.ai/skills/shopify-directory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-directory-4826372abf5c1d44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-directory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-directory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ccee6045dd6773a6fa80ec22a02c057a9d4c3af51b46d81fbaa49bd94604456",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:20:06.255Z"
+}

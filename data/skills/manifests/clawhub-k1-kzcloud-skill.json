@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65538,
+  "uuid": "skill-clawhub-k1-kzcloud-skill",
+  "skillKey": "clawhub-k1-kzcloud-skill",
+  "name": "k1-kzcloud-skill",
+  "summary": "查询科众云CXO地图位置，支持按职能、职级、职位阵营及距离范围筛选并展示相关CXO信息。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k1_kzcloud_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YuXiaoXin00",
+      "features": [
+        "查询科众云CXO地图位置，支持按职能、职级、职位阵营及距离范围筛选并展示相关CXO信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k1-kzcloud-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151014754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k1-kzcloud-skill",
+      "url": "https://clawhub.ai/skills/k1-kzcloud-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k1-kzcloud-skill",
+    "url": "https://clawhub.ai/skills/k1-kzcloud-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k1-kzcloud-skill-61cb2bc19d91b019.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k1-kzcloud-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-k1-kzcloud-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea08a65a1ce1e9f76e0d9d08e046495b3173d8718cbd6ff81ff1bccfc02be933",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:31:01.427Z"
+}

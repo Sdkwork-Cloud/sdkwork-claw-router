@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37632,
+  "uuid": "skill-clawhub-ontology-kg",
+  "skillKey": "clawhub-ontology-kg",
+  "name": "Ontology KG",
+  "summary": "Typed knowledge graph for AI agent memory. Create entities, link relations, enforce constraints. JSONL append-only storage, zero dependencies. Use when agent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontology_kg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2233admin",
+      "features": [
+        "Typed knowledge graph for AI agent memory",
+        "Create entities, link relations, enforce constraints",
+        "JSONL append-only storage, zero dependencies",
+        "Use when agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ontology-kg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57929895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ontology-kg",
+      "url": "https://clawhub.ai/skills/ontology-kg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontology-kg",
+    "url": "https://clawhub.ai/skills/ontology-kg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontology-kg-6739baf6784d9860.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ontology-kg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ontology-kg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:456f445d887ef637b6091160d23631f9bbfe833953dd03403fa377249e0ff398",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:54:00.412Z"
+}

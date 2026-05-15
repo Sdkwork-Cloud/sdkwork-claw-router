@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35917,
+  "uuid": "skill-clawhub-gmail-link-archiver",
+  "skillKey": "clawhub-gmail-link-archiver",
+  "name": "Gmail Link Archiver",
+  "summary": "Connects to Gmail via IMAP, filters emails by subject prefix keyword in a specified mailbox, crawls links found in filtered emails using Playwright (to bypas...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_link_archiver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "목진왕",
+      "features": [
+        "Connects to Gmail via IMAP, filters emails by subject prefix keyword in a specified mailbox, cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-link-archiver@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80076897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-link-archiver",
+      "url": "https://clawhub.ai/skills/gmail-link-archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-link-archiver",
+    "url": "https://clawhub.ai/skills/gmail-link-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-link-archiver-fc5d3ffd99560626.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-link-archiver@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-link-archiver-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:998710482c35e8720d8a2036c347181a10942a5d678fc011af51917a9dcc3f54",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:01:35.333Z"
+}

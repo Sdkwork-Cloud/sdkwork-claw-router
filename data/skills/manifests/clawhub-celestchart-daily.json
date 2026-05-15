@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60166,
+  "uuid": "skill-clawhub-celestchart-daily",
+  "skillKey": "clawhub-celestchart-daily",
+  "name": "Celestchart Astrology Skills",
+  "summary": "通过 CelestChart 星盘占星 API 获取每日个人星盘运势，包括月亮行运、情绪基调、今日重点和行星相位解读。需要 CelestChart VIP 账号和 API Key。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.celestchart_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maye",
+      "features": [
+        "通过 CelestChart 星盘占星 API 获取每日个人星盘运势，包括月亮行运、情绪基调、今日重点和行星相位解读。需要 CelestChart VIP 账号和 API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/celestchart-daily@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13938912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "celestchart-daily",
+      "url": "https://clawhub.ai/skills/celestchart-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "celestchart-daily",
+    "url": "https://clawhub.ai/skills/celestchart-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/celestchart-daily-4cbe9331e55f273a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/celestchart-daily@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-celestchart-daily-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16d0858d2b21d0cef0ab7b0469398e7ef732c2b2a2afb836e2a9c0fe3bb3b1ed",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:34:22.159Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71930,
+  "uuid": "skill-clawhub-xiaodu-iot",
+  "skillKey": "clawhub-xiaodu-iot",
+  "name": "xiaodu-iot",
+  "summary": "小度智能设备控制技能。用于控制小度音箱、IoT设备、查看设备列表、语音播报等。当用户需要控制小度智能设备、查询设备状态、发送语音指令或管理智能家居时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_iot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vividlife",
+      "features": [
+        "小度智能设备控制技能。用于控制小度音箱、IoT设备、查看设备列表、语音播报等。当用户需要控制小度智能设备、查询设备状态、发送语音指令或管理智能家居时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaodu-iot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55922630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaodu-iot",
+      "url": "https://clawhub.ai/skills/xiaodu-iot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-iot",
+    "url": "https://clawhub.ai/skills/xiaodu-iot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-iot-82d21b2684879f21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaodu-iot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaodu-iot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:018a91fbae90bdf614003a2b41e701fad8750f2ddc5ebff3550d1c85cc221042",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:58:46.388Z"
+}

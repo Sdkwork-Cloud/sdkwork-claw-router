@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69042,
+  "uuid": "skill-clawhub-senserobot",
+  "skillKey": "clawhub-senserobot",
+  "name": "SenseRobot元萝卜AI下棋机器人",
+  "summary": "用户可以让 OpenClaw 控制元萝卜下棋机器人进行围棋取落子、机械臂移动、表情控制、语音播报、棋盘管理时使用此技能。触发词包括\"元萝卜\"、\"下棋机器人\"、\"机械臂控制\"。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senserobot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SenseRobotClaw",
+      "features": [
+        "用户可以让 OpenClaw 控制元萝卜下棋机器人进行围棋取落子、机械臂移动、表情控制、语音播报、棋盘管理时使用此技能。触发词包括\"元萝卜\"、\"下棋机器人\"、\"机械臂控制\"。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/senserobot@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33304906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "senserobot",
+      "url": "https://clawhub.ai/skills/senserobot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senserobot",
+    "url": "https://clawhub.ai/skills/senserobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senserobot-473fafc5cb6fff38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/senserobot@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-senserobot-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26277f205a3277f86c3b4f86d412163c26fae013f94420ae1aae4f8afb5c0089",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:37:43.260Z"
+}

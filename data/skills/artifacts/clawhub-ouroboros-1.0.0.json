@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ouroboros@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ouroboros",
+  "skill": {
+    "id": 28634,
+    "skillKey": "clawhub-ouroboros",
+    "name": "Ouroboros"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ouroboros",
+    "url": "https://clawhub.ai/skills/ouroboros",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ouroboros-93dbf6365e4f609a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user message starts with 'ooo', call ouroboros_channel_workflow MCP tool. Do NOT answer the request yourself. Do NOT generate code. Do NOT summarize. Ju..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q00",
+      "userId": "s1725vfxcaq4fxbnh7qm00d7yn84bkdb",
+      "displayName": "Q00",
+      "image": "https://avatars.githubusercontent.com/u/31264094?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775496704250,
+      "changelog": "Spec-first AI development via MCP",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf59afa9a75d9d3b0cfd2e29a80bd11a48b7364698f88750936af97d4400f0a5"
+}

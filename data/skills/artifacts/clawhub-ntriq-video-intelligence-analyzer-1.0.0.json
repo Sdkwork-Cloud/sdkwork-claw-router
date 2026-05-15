@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-video-intelligence-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_video_intelligence_analyzer",
+  "skill": {
+    "id": 44662,
+    "skillKey": "clawhub-ntriq-video-intelligence-analyzer",
+    "name": "Ntriq Video Intelligence Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-video-intelligence-analyzer",
+    "url": "https://clawhub.ai/skills/ntriq-video-intelligence-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-video-intelligence-analyzer-9cebc12adfc5208c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered multimodal analysis for images and videos. Structured tags, scene descriptions, mood analysis, virality scores. 15 languages. Users provide their..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776279610262,
+      "changelog": "Initial release of ntriq-video-intelligence-analyzer\n\n- Provides AI-powered multimodal analysis for images and videos via user-provided URLs.\n- Returns structured tags, scene descriptions, mood analysis, virality scores, and content classifications in up to 15 languages.\n- Supports optional analyses, output language selection, and audience targeting for virality scoring.\n- Use cases include content tagging, social media performance prediction, and ad creative pre-screening.\n- Accessible via x402 API endpoint with micropayments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d70a70629322b7291e6551f25f93094dfdfd7963ca28619a848a01836bd5ed97"
+}

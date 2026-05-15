@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59191,
+  "uuid": "skill-clawhub-filesystem-access-greaterpeter",
+  "skillKey": "clawhub-filesystem-access-greaterpeter",
+  "name": "Filesystem Access (GreaterPeter)",
+  "summary": "安全的本地文件读/写/列表能力，默认只在 OpenClaw workspace 目录内工作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filesystem_access_greaterpeter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "greaterpeter",
+      "features": [
+        "安全的本地文件读/写/列表能力，默认只在 OpenClaw workspace 目录内工作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filesystem-access-greaterpeter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184702131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filesystem-access-greaterpeter",
+      "url": "https://clawhub.ai/skills/filesystem-access-greaterpeter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filesystem-access-greaterpeter",
+    "url": "https://clawhub.ai/skills/filesystem-access-greaterpeter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filesystem-access-greaterpeter-8a0233e5bdceeb9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filesystem-access-greaterpeter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filesystem-access-greaterpeter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee1436040551629655e7e885b5d43ac041464c012b857da525a9408843b530e0",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:52:39.473Z"
+}

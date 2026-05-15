@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37424,
+  "uuid": "skill-clawhub-librato",
+  "skillKey": "clawhub-librato",
+  "name": "Librato",
+  "summary": "Librato integration. Manage data, records, and automate workflows. Use when the user wants to interact with Librato data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.librato",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Librato integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Librato data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/librato@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "librato",
+      "url": "https://clawhub.ai/skills/librato"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "librato",
+    "url": "https://clawhub.ai/skills/librato",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/librato-7f7e8dc8f57b9930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/librato@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-librato-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62db156555db718a67edbb98a56d62c87850ce32be4a443d6c0f2be4f0e5090e",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:41:37.449Z"
+}

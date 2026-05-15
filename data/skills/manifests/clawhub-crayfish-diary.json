@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21453,
+  "uuid": "skill-clawhub-crayfish-diary",
+  "skillKey": "clawhub-crayfish-diary",
+  "name": "Crayfish Diary",
+  "summary": "A WorkBuddy skill for quick diary and memo recording with automatic year/month/day directory organization. Supports Chinese and English triggers - start with...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crayfish_diary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "italks",
+      "features": [
+        "A WorkBuddy skill for quick diary and memo recording with automatic year/month/day directory or.",
+        "Supports Chinese and English triggers",
+        "start with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crayfish-diary@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1667764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crayfish-diary",
+      "url": "https://clawhub.ai/skills/crayfish-diary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crayfish-diary",
+    "url": "https://clawhub.ai/skills/crayfish-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crayfish-diary-6a6fc1e1e25ecdf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crayfish-diary@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crayfish-diary-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4158c8c8fc266acd6999272bd70a66d409d8f32802815b073680ae06e6a11b70",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:53:54.929Z"
+}

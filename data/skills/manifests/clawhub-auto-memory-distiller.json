@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22663,
+  "uuid": "skill-clawhub-auto-memory-distiller",
+  "skillKey": "clawhub-auto-memory-distiller",
+  "name": "Auto Memory Distiller",
+  "summary": "Automatically converts raw long conversations into structured, themed Markdown knowledge cards with source traceability, running incrementally and silently i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_memory_distiller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peng Shu",
+      "features": [
+        "Automatically converts raw long conversations into structured, themed Markdown knowledge cards."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-memory-distiller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58142289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-memory-distiller",
+      "url": "https://clawhub.ai/skills/auto-memory-distiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-memory-distiller",
+    "url": "https://clawhub.ai/skills/auto-memory-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-memory-distiller-9bc5431a7ef84829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-memory-distiller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-memory-distiller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40c2efe93e818a163d368c16b0f607b962c2b4d683331f5caf4ba53b9308424b",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:43:22.539Z"
+}

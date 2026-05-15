@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59303,
+  "uuid": "skill-clawhub-moyu-make-xhs-pics",
+  "skillKey": "clawhub-moyu-make-xhs-pics",
+  "name": "Moyu Make Xhs Pics",
+  "summary": "将Markdown文章转换为小红书风格的封面图、插图和配图。支持阿里百炼和MiniMax API，4种风格（fresh/warm/notion/cute），4种布局（balanced/list/comparison/flow）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moyu_make_xhs_pics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulforcoding",
+      "features": [
+        "将Markdown文章转换为小红书风格的封面图、插图和配图。支持阿里百炼和MiniMax API，4种风格（fresh/warm/notion/cute），4种布局（balanced/lis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moyu-make-xhs-pics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251518665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moyu-make-xhs-pics",
+      "url": "https://clawhub.ai/skills/moyu-make-xhs-pics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moyu-make-xhs-pics",
+    "url": "https://clawhub.ai/skills/moyu-make-xhs-pics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moyu-make-xhs-pics-f063043a307b5439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moyu-make-xhs-pics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moyu-make-xhs-pics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c67e37a93536f902fa7b968a272c8dde9769eef4904e64ee840303c8867f730c",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:03:18.886Z"
+}

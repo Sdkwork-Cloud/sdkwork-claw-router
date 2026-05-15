@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26628,
+  "uuid": "skill-clawhub-article-archiver",
+  "skillKey": "clawhub-article-archiver",
+  "name": "Article Archiver",
+  "summary": "Automatically archive web articles and Twitter Articles to Feishu documents. ALWAYS trigger when user shares URLs from x.com (Twitter), mp.weixin.qq.com (WeC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_archiver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yemoo",
+      "features": [
+        "Automatically archive web articles and Twitter Articles to Feishu documents",
+        "ALWAYS trigger when user shares URLs from x.com (Twitter), mp.weixin.qq.com (WeC..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-archiver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1298185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-archiver",
+      "url": "https://clawhub.ai/skills/article-archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-archiver",
+    "url": "https://clawhub.ai/skills/article-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-archiver-f6066de7ef5d1163.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-archiver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-archiver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd525f1c6def496ebbc9fb3cb99eda0e86cd84e05f73a7dd360b05eac13a5f69",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T07:23:21.910Z"
+}

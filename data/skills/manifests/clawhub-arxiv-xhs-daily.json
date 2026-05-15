@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22312,
+  "uuid": "skill-clawhub-arxiv-xhs-daily",
+  "skillKey": "clawhub-arxiv-xhs-daily",
+  "name": "arXiv XHS Daily",
+  "summary": "Read newly announced arXiv papers from cs.AI and cs.CL, filter them by user-defined research topics such as diffusion llm, summarize matching papers into rea...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_xhs_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zherui Li",
+      "features": [
+        "Read newly announced arXiv papers from cs.AI and cs.CL, filter them by user-defined research to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-xhs-daily@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78266119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-xhs-daily",
+      "url": "https://clawhub.ai/skills/arxiv-xhs-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-xhs-daily",
+    "url": "https://clawhub.ai/skills/arxiv-xhs-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-xhs-daily-8c41575f2a200d07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-xhs-daily@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-xhs-daily-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d176e84f273dacaff9deeaef7a19e5afcb0c1a905b2ddacf98f5868058a94145",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:54:58.156Z"
+}

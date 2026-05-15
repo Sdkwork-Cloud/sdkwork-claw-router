@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boot-installer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boot_installer",
+  "skill": {
+    "id": 42506,
+    "skillKey": "clawhub-boot-installer",
+    "name": "Boot Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boot-installer",
+    "url": "https://clawhub.ai/skills/boot-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boot-installer-81d24513a8f3867e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, update, repair, or health-check the openclaw environment. Use when the user says install openclaw, run the bootstrapper, update packages, fix a brok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alaminedits",
+      "userId": "s17dsy06yr7pma722ms8cx69v5841q0s",
+      "displayName": "Al Amin",
+      "image": "https://avatars.githubusercontent.com/u/257452362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775005008515,
+      "changelog": "boot-installer 1.0.0\n\n- Initial release for managing the openclaw environment lifecycle on Linux.\n- Provides install, update, repair, and health-check modes with corresponding slash commands.\n- Automates installs of Node.js 24+, UV Python manager, Python venv, Chromium (Playwright), NPM globals, and sets up systemd user services.\n- Handles privilege escalation, locks, and repairs common package and environment issues.\n- Surfaces logs and troubleshooting tips if steps fail; clear reporting of health-check results and log locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daac6d95a778cd9cb6d48687c0dac582044198ba6e838e60b115a879b33ef03a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61051,
+  "uuid": "skill-clawhub-kakaotalk",
+  "skillKey": "clawhub-kakaotalk",
+  "name": "Kakaotalk",
+  "summary": "카카오톡 채널을 AI 에이전트로 만드는 스킬. Vercel Serverless 배포 지원. (옵션: 로컬 컴퓨터와 연결하여 파일/메모리 접근 가능)",
+  "version": "1.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kakaotalk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomas",
+      "features": [
+        "카카오톡 채널을 AI 에이전트로 만드는 스킬",
+        "Vercel Serverless 배포 지원",
+        "(옵션: 로컬 컴퓨터와 연결하여 파일/메모리 접근 가능)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kakaotalk@1.2.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67946543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kakaotalk",
+      "url": "https://clawhub.ai/skills/kakaotalk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kakaotalk",
+    "url": "https://clawhub.ai/skills/kakaotalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kakaotalk-699a5e2f3f410152.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kakaotalk@1.2.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-kakaotalk-1.2.8.json",
+      "version": "1.2.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec3003e62d70c0508faf1361b87302ea400945da3db87aa8d0ce0752aacc0b22",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T00:19:18.923Z"
+}

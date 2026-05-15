@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-fetch@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_fetch",
+  "skill": {
+    "id": 60941,
+    "skillKey": "clawhub-github-fetch",
+    "name": "GitHub 稳定获取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-fetch",
+    "url": "https://clawhub.ai/skills/github-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-fetch-917f65a5c6d22883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供多层备选方案，优先通过 SSH clone，其次使用 ghproxy 镜像及 jsdelivr CDN，解决国内 GitHub 连接不稳定问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "d9g",
+      "userId": "s17098dct7c5vpcax9f6e0xkan84r9kq",
+      "displayName": "d9g",
+      "image": "https://avatars.githubusercontent.com/u/9856183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776050546683,
+      "changelog": "v2.1 新增：--oref 指定tag/commit、--probe 探测模式、--timeout 自定义超时、--branch 指定分支",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87048421f9b7dd6e4d722b39f527d4a4de2277a3096ea1be1f080aba0420e990"
+}

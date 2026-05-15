@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weixin-multi-agent-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_multi_agent_router",
+  "skill": {
+    "id": 56827,
+    "skillKey": "clawhub-weixin-multi-agent-router",
+    "name": "Weixin Multi-Agent Router｜微信多 Agent 路由"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-multi-agent-router",
+    "url": "https://clawhub.ai/skills/weixin-multi-agent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-multi-agent-router-6476b67b0209eabb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design or implement single-entry multi-agent routing for OpenClaw Weixin setups. Use when one Weixin account should route between any number of backend agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeqiulee",
+      "userId": "s1746b3h7f6kyszxbvrhr8xf0983gt73",
+      "displayName": "zeqiulee",
+      "image": "https://avatars.githubusercontent.com/u/221255858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774367626762,
+      "changelog": "-微信单入口多Agent路由， 可以在一个入口里轻松切换多Agent, 并且Agent之间不能默认读完整聊天记录，而是需要在协作的时候只做摘传递。\n- Initial release of weixin-multi-agent-router skill.\n- Enables single Weixin account to dynamically route messages to any number of backend agents with configurable names and roles.\n- Ensures strict per-agent session isolation to prevent context mixing between agents.\n- Supports summary-based handoff between agents, avoiding raw transcript sharing.\n- Provides natural-language commands for switching agents, checking status, resetting context, and handing off conversations.\n- Emphasizes a configuration-driven, plugin-layer approach suitable for both private teams and public skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19d235f54a4550d2856d22fb2bd0a5ae5055d7defaafbac05dde6e50a9bff8fc"
+}

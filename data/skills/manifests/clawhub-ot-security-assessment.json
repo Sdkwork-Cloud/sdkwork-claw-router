@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51950,
+  "uuid": "skill-clawhub-ot-security-assessment",
+  "skillKey": "clawhub-ot-security-assessment",
+  "name": "OT Security Assessment",
+  "summary": "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based, Enterprise Wide, Methodical, OT Security Focused, and OT Sec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ot_security_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Assess OT/ICS security posture across 30 controls in 6 principles — Business Driven, Risk Based."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ot-security-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ot-security-assessment",
+      "url": "https://clawhub.ai/skills/ot-security-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ot-security-assessment",
+    "url": "https://clawhub.ai/skills/ot-security-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ot-security-assessment-41e553bf99322720.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ot-security-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ot-security-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd15458203db77c0fc93a3e12db945010929e65431cedfa83829ea5ebb68c0c",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:14:50.859Z"
+}

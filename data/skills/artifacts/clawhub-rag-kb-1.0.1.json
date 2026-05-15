@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-kb@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_kb",
+  "skill": {
+    "id": 59825,
+    "skillKey": "clawhub-rag-kb",
+    "name": "Knowledge Base with Faiss and Bailian (embedding and rerank)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-kb",
+    "url": "https://clawhub.ai/skills/rag-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-kb-ffb706845483eafe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Python、FAISS、BM25、阿里云百炼 text-embedding-v4 与可选的 qwen3-rerank，维护基于文件目录的本地知识库；适用于在 OpenClaw 预先抽取文本后，遍历 chunks 与 T2Q 建立索引，以及对指定知识库或全部知识库做综合、语义或关键词查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kadbbz",
+      "userId": "s17c9yyt2sff7jk8nmf7ptf3r183g8kf",
+      "displayName": "宁伟",
+      "image": "https://avatars.githubusercontent.com/u/1631544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776090037598,
+      "changelog": "Version 1.0.1\n\n- Added BM25 支持，实现综合 (hybrid) 检索；支持关键词检索（BM25）与语义检索（FAISS）。\n- 新增知识库保护词（protected_terms.json）机制，可通过 protect-add / protect-delete 管理保护词并离线刷新 BM25 工件。\n- 支持全量重建知识库索引（rebuild），同时刷新语义与 BM25 索引。\n- 查询支持 retrieval-mode 选择（hybrid/semantic/keyword），默认使用 hybrid 。\n- 运行规则细化：明确 skill 仅消费文本文件，不再负责文件转文本。\n- 文档与目录结构调整，突出“先转文本、后索引”的规范。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b87069b0e925791fb425ebab2334f11f38ac5e18c45d130d21a24f70f336352c"
+}

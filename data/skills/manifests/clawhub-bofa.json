@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47941,
+  "uuid": "skill-clawhub-bofa",
+  "skillKey": "clawhub-bofa",
+  "name": "Bofa",
+  "summary": "Provides insights on Bank of America's history, business model, competitive landscape, digital transformation, and post-2008 financial crisis developments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bofa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides insights on Bank of America's history, business model, competitive landscape, digital."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bofa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bofa",
+      "url": "https://clawhub.ai/skills/bofa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bofa",
+    "url": "https://clawhub.ai/skills/bofa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bofa-f224c1153e340d81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bofa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bofa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fdc7b816f0379b604ca38c4c3d7cf78a8de1cb699d0d1863855ba23678c6444",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T09:04:39.110Z"
+}

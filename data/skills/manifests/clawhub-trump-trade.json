@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38102,
+  "uuid": "skill-clawhub-trump-trade",
+  "skillKey": "clawhub-trump-trade",
+  "name": "trump-trade",
+  "summary": "English version of the Trump RSS analysis skill. Uses trumpstruth.org/feed to track Trump's public TRUTH posts, support Evidence / Latest / Time / Watch mode...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AliceLIKER",
+      "features": [
+        "English version of the Trump RSS analysis skill",
+        "Uses trumpstruth.org/feed to track Trump's public TRUTH posts, support Evidence / Latest / Time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trump-trade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58773870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trump-trade",
+      "url": "https://clawhub.ai/skills/trump-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-trade",
+    "url": "https://clawhub.ai/skills/trump-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-trade-c1ca4522692c8058.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trump-trade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trump-trade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:703dd5c3c8a4ef28069f0619ffb292a8f0a3db61c73b32e569e38f1ceda03f07",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:38:42.421Z"
+}

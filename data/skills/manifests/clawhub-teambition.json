@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40899,
+  "uuid": "skill-clawhub-teambition",
+  "skillKey": "clawhub-teambition",
+  "name": "teambition",
+  "summary": "Create and query tasks in TeamBition across multiple apps using configured project and organization settings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teambition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wengjianmin19850412",
+      "features": [
+        "Create and query tasks in TeamBition across multiple apps using configured project and organiza."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teambition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267980481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teambition",
+      "url": "https://clawhub.ai/skills/teambition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teambition",
+    "url": "https://clawhub.ai/skills/teambition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teambition-ced422ed4a8498b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teambition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teambition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee7c5ff87ba8a8b090dcccf49483b671e3723b70ec7d301d9c82c380260fab3",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:11:51.652Z"
+}

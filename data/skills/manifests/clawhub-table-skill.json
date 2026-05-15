@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65755,
+  "uuid": "skill-clawhub-table-skill",
+  "skillKey": "clawhub-table-skill",
+  "name": "tabular data processing and analysis",
+  "summary": "端到端表格数据引擎：提供工业级表格预处理（拆分、清洗、表头合并、描述生成），并支持在受控前提下进行深度探索性分析、可视化与报告生成。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.table_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Table Intelligence Group",
+      "features": [
+        "端到端表格数据引擎：提供工业级表格预处理（拆分、清洗、表头合并、描述生成），并支持在受控前提下进行深度探索性分析、可视化与报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/table-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153084593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "table-skill",
+      "url": "https://clawhub.ai/skills/table-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "table-skill",
+    "url": "https://clawhub.ai/skills/table-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/table-skill-f11abe8cb1e5d320.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/table-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-table-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc9f254ff735f4fd7e97cf37dffc582d6f29c46452da846a559740cdf742167f",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:06:42.914Z"
+}

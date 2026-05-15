@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32683,
+  "uuid": "skill-clawhub-monero-wallet-security",
+  "skillKey": "clawhub-monero-wallet-security",
+  "name": "Monero Wallet Security",
+  "summary": "Provides essential best practices for securely managing Monero wallets, including seed phrase safety, hardware wallets, air-gapped setups, and backup strateg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_wallet_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liumaimiao",
+      "features": [
+        "Provides essential best practices for securely managing Monero wallets, including seed phrase s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monero-wallet-security@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131150921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monero-wallet-security",
+      "url": "https://clawhub.ai/skills/monero-wallet-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-wallet-security",
+    "url": "https://clawhub.ai/skills/monero-wallet-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-wallet-security-4782fa3cb58d4012.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monero-wallet-security@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monero-wallet-security-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3617486e5b6be34b9f442496e776ff796b51f7bee687cd5920b8894da6a93e3",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:38:29.645Z"
+}

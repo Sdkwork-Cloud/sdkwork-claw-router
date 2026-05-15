@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42514,
+  "uuid": "skill-clawhub-clank-blog-post",
+  "skillKey": "clawhub-clank-blog-post",
+  "name": "Clank Blog Post",
+  "summary": "Create and publish blog posts to GitHub Pages. Generates styled HTML posts, updates the blog index, commits, and pushes. Perfect for agent blogs, project upd...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clank_blog_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t3mr0i",
+      "features": [
+        "Create and publish blog posts to GitHub Pages",
+        "Generates styled HTML posts, updates the blog index, commits, and pushes",
+        "Perfect for agent blogs, project upd..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clank-blog-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9092940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clank-blog-post",
+      "url": "https://clawhub.ai/skills/clank-blog-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clank-blog-post",
+    "url": "https://clawhub.ai/skills/clank-blog-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clank-blog-post-084e3ed2d4e7b0ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clank-blog-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clank-blog-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51c79a7b7fae354f037e600bd89161233b2b5f095391804b276e03c024846d72",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T04:11:35.259Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-config-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_config_validator",
+  "skill": {
+    "id": 62291,
+    "skillKey": "clawhub-agent-config-validator",
+    "name": "Agent Config Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-config-validator",
+    "url": "https://clawhub.ai/skills/agent-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-config-validator-b36ace4b6e8dc428.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Agent配置验证器 - 自动检查openclaw.json与agent核心文档的一致性，检测过时引用，生成诊断报告并支持自动修复。当新增/调整agent或修改核心文档后使用此技能确保配置完整性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "starai-2026",
+      "userId": "s17bkzwhdeemp1vj70kpa56gy183pkkq",
+      "displayName": "StarAI-2026",
+      "image": "https://avatars.githubusercontent.com/u/261541634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773871840759,
+      "changelog": "Initial release: OpenClaw Agent configuration validator with security mechanisms",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e81010c4af57b380aed2b0cf060267198053c30722d36c47b1da2d47312ae78"
+}

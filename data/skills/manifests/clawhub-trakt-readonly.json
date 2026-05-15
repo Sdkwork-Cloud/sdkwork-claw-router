@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50789,
+  "uuid": "skill-clawhub-trakt-readonly",
+  "skillKey": "clawhub-trakt-readonly",
+  "name": "Trakt Read-only",
+  "summary": "Read-only Trakt.tv skill for checking a user’s currently watching item, recent episode history, watched shows list, stats, profile, and playback progress (OA...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trakt_readonly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Magolo Dennis Ooki",
+      "features": [
+        "Read-only Trakt.tv skill for checking a user’s currently watching item, recent episode history,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trakt-readonly@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104509082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trakt-readonly",
+      "url": "https://clawhub.ai/skills/trakt-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trakt-readonly",
+    "url": "https://clawhub.ai/skills/trakt-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trakt-readonly-d3afe8fbb63eb175.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trakt-readonly@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trakt-readonly-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b8acc232cf0befc3eb66536d1385a93dfd925d407ade6027b1da95f4bf2a9b0",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:52:37.767Z"
+}

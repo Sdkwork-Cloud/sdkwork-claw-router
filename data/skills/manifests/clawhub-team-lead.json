@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24026,
+  "uuid": "skill-clawhub-team-lead",
+  "skillKey": "clawhub-team-lead",
+  "name": "Team Lead",
+  "summary": "Multi-Agent Orchestration Lead - Decompose complex tasks, dispatch to specialized agents, aggregate results, and ensure quality.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_lead",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Tien",
+      "features": [
+        "Multi-Agent Orchestration Lead",
+        "Decompose complex tasks, dispatch to specialized agents, aggregate results, and ensure quality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-lead@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35169750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-lead",
+      "url": "https://clawhub.ai/skills/team-lead"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-lead",
+    "url": "https://clawhub.ai/skills/team-lead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-lead-fe0dbcdd1657f88e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-lead@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-lead-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb975f3b2b0b6d2a8ef5a49c4faf00bc22b9903b26593c9907cd549a071e7940",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:36:28.192Z"
+}

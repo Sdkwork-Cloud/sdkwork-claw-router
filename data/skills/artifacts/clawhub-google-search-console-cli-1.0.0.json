@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-search-console-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_console_cli",
+  "skill": {
+    "id": 51980,
+    "skillKey": "clawhub-google-search-console-cli",
+    "name": "Google Search Console CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-console-cli",
+    "url": "https://clawhub.ai/skills/google-search-console-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-console-cli-0b0ae2e2c11b067c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when working with this repository's `gsc` CLI, including Google Cloud OAuth client setup, CLI authentication, troubleshooting auth/config issu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nmadeleidev",
+      "userId": "s1750ew1ttxt7tdcp7qj670vk983m28d",
+      "displayName": "Gregory Potemkin",
+      "image": "https://avatars.githubusercontent.com/u/57456890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772087691381,
+      "changelog": "Initial release of the Google Search Console CLI skill.\n\n- Provides comprehensive instructions for installing, configuring, and authenticating the `gsc` CLI.\n- Includes detailed steps for Google Cloud OAuth client setup and recommended authentication workflow.\n- Documents all primary CLI commands (site management, sitemap management, URL inspection, analytics queries).\n- Offers troubleshooting guidance for common authentication and configuration issues.\n- Lists prerequisites and usage scenarios to guide users when to apply this skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f2e2368c3ad96be68b8c74ff6b5c6ff7e74414bd8b8fae971f21b9fb5d00c4f"
+}

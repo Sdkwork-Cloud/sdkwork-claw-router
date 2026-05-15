@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "baidu-mapbox-isochrone",
+    "displayName": "baidu-mapbox-isochrone",
+    "summary": "生成等时圈（isochrone）。通过百度地理编码API将地址转为BD-09坐标，转换为WGS84后，调用Mapbox Isochrone API生成等时圈SHP文件和Python预览图。当用户需要：给定地址生成等时圈地图、百度坐标转WGS84后做等时圈分析、生成等时圈shapefile并提供预览图时使用此技能。",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1775541055214,
+    "updatedAt": 1777527267821
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1775811278645,
+    "changelog": "Version 1.0.3\n\n- 更新底图方案，预览图底图由 Mapbox 静态底图 PNG 替换为 ESRI 卫星瓦片并重投影为 WGS84 GeoTIFF。\n- 预览图输出格式由 PNG 改为高质量 JPG，改善渲染效果。\n- 补充 agent 自动操作流程，包括 ZIP 打包全套文件并通过 Feishu 发送，明确消息内容与发送方式。\n- 优化参数说明，支持从 MEMORY.md 自动读取 API 密钥，无需每次手动输入。\n- 简化使用示例及输出文件描述，默认输出路径更加规范。\n- 旧有部分步骤和文件如 PNG 底图及部分参数表述已移除或替换。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ggyybb",
+    "userId": "s17dwtrmbh0atzzgj7fprv5e21843gga",
+    "displayName": "ggyybb",
+    "image": "https://avatars.githubusercontent.com/u/61568153?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527267821
+  }
+}

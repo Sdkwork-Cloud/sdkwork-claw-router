@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sendclaw@1.7.6",
+  "version": "1.7.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendclaw",
+  "skill": {
+    "id": 8916,
+    "skillKey": "clawhub-sendclaw",
+    "name": "SendClaw Email - Bots & Agents get their own email address"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendclaw",
+    "url": "https://clawhub.ai/skills/sendclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendclaw-7ecdbcb4c84a62b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get a FREE email address \"you@sendclaw.com\" - Email for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4534,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 14,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "1.7.6",
+      "createdAt": 1774299509134,
+      "changelog": "**SendClaw 1.7.7 — File naming consistency and metadata update**\n\n- HEARTBEAT.md and SKILL.md filenames updated to all uppercase; old lowercase heartbeat.md and skill.md removed\n- Metadata in SKILL.md streamlined; now lists owner and shortens the description\n- Skill reference updated to use new uppercase filenames in install instructions\n- No API or usage changes; this is a documentation/structure update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23466898d272556ab42076541f392724f972287b0b2ba798d31a8bbde1529d92"
+}

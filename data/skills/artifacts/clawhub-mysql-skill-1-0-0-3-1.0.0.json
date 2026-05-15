@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysql-skill-1-0-0-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_skill_1_0_0_3",
+  "skill": {
+    "id": 61750,
+    "skillKey": "clawhub-mysql-skill-1-0-0-3",
+    "name": "Mysql Skill 1.0.0 (3)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-skill-1-0-0-3",
+    "url": "https://clawhub.ai/skills/mysql-skill-1-0-0-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-skill-1-0-0-3-de82d07ed167e189.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MySQL 数据库管理技能。通过自然语言查询、管理 MySQL 数据库，支持 SELECT/INSERT/UPDATE/DELETE、表管理、备份恢复等操作。当用户提到 MySQL、数据库查询、建表、数据备份时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ding-renew",
+      "userId": "s17d40cr00gt1f7x19wz1f0a8d83hzrt",
+      "displayName": "ding-renew",
+      "image": "https://avatars.githubusercontent.com/u/266884871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776144632322,
+      "changelog": "mysql-skill 1.0.0 – MySQL 数据库管理技能发布\n\n- 支持通过自然语言进行 MySQL 查询与管理，包括 SELECT/INSERT/UPDATE/DELETE。\n- 提供表管理、建表、修改表结构、索引管理等功能。\n- 实现数据库/表级备份与恢复操作。\n- 附带慢查询分析和索引优化建议，辅助性能优化。\n- 丰富的使用示例、故障排查与安全建议，方便用户上手。\n- 详尽的安装、环境配置和常用操作指引。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1c0145ecffae48a2da14b948a9381993b4b9af46bffb1988e9265efd2db1078"
+}

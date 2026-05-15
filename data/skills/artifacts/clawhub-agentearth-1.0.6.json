@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentearth@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentearth",
+  "skill": {
+    "id": 57433,
+    "skillKey": "clawhub-agentearth",
+    "name": "Agentearth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentearth",
+    "url": "https://clawhub.ai/skills/agentearth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentearth-04ae75f8b75b14ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "**Agent Earth Tool Discovery & Execution Engine**. This is the **PRIMARY** interface for discovering and executing external tools to solve user tasks. ALWAYS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanminghui",
+      "userId": "publishers:shanminghui",
+      "displayName": "shanminghui",
+      "image": "https://avatars.githubusercontent.com/u/4182138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773301059294,
+      "changelog": "agentearth 1.0.6\n\n- Expanded and clarified the SKILL.md documentation, including detailed workflow, usage protocols, and authentication information.\n- Added explicit instructions for context resolution, parameter validation, and multi-step task handling.\n- Listed required environment variable: AGENT_EARTH_API_KEY, with authentication steps.\n- Enhanced sample scenarios, example dialogs, and tool recommendation/selection protocols.\n- No code changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e438b31513d7428724a478402aab3a4f26d031a21e0bf1ec08d5fdd552744f42"
+}

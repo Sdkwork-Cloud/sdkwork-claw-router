@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-opc-wiki@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_opc_wiki",
+  "skill": {
+    "id": 53732,
+    "skillKey": "clawhub-create-opc-wiki",
+    "name": "Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-opc-wiki",
+    "url": "https://clawhub.ai/skills/create-opc-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-opc-wiki-41b9da29f5523a79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scaffold a personal LLM wiki (Karpathy pattern) — multi-agent, MCP-ready, with SEO/GEO publish target. Compiles knowledge into a persistent wiki instead of r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mackding",
+      "userId": "s17280mcvtp4vrh7dgbtcshp6x83gb2m",
+      "displayName": "Blossom",
+      "image": "https://avatars.githubusercontent.com/u/19878893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777179528566,
+      "changelog": "v1.0.1: true gh-CLI auto-star on install; skill manifest published to ClawHub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89697455b5c1687582ad28463401c12b4e52444870e32b702227f26110a44050"
+}

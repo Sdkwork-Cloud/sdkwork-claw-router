@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28373,
+  "uuid": "skill-clawhub-capability-assessment",
+  "skillKey": "clawhub-capability-assessment",
+  "name": "Capability Assessment",
+  "summary": "Assess organizational capabilities using radar charts. Use for competitive analysis, gap identification, and strategic planning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_assessment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Assess organizational capabilities using radar charts",
+        "Use for competitive analysis, gap identification, and strategic planning."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capability-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capability-assessment",
+      "url": "https://clawhub.ai/skills/capability-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-assessment",
+    "url": "https://clawhub.ai/skills/capability-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-assessment-9c2bf91fbe1de9e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capability-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capability-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f434d8d0567184a63f928473e8cd442000343428aaa442e4a756534a132b58c",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:41:56.141Z"
+}

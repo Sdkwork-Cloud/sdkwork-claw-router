@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentfinobs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfinobs",
+  "skill": {
+    "id": 50526,
+    "skillKey": "clawhub-agentfinobs",
+    "name": "Agentfinobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfinobs",
+    "url": "https://clawhub.ai/skills/agentfinobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfinobs-2f10ee0d17aa15a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Financial Observability — monitor, budget, and analyze spending across any AI agent. Track costs, set budgets, detect anomalies, and export metrics..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oc127",
+      "userId": "publishers:oc127",
+      "displayName": "oc127",
+      "image": "https://avatars.githubusercontent.com/u/125192130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772280458209,
+      "changelog": "Initial release of agentfinobs:\n\n- Monitor and analyze spending across any AI agent with SpendTracker.\n- Set budgets and receive automatic alerts using BudgetManager.\n- Detect unusual spending patterns with AnomalyDetector.\n- Track ROI, win rate, burn rate, and runway via MetricsEngine.\n- Access a built-in HTTP dashboard for live financial observability.\n- Export metrics to JSONL, webhooks, or Prometheus.\n- Supports multiple payment rails, including x402/USDC, Stripe/ACP, and Polymarket CLOB.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2cc96d9e52b9d6007be944d01f2de664cd11093a70ec85ef58b3e31f69c886f"
+}

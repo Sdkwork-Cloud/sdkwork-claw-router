@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lockpicker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lockpicker",
+  "skill": {
+    "id": 48725,
+    "skillKey": "clawhub-lockpicker",
+    "name": "Lockpicker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lockpicker",
+    "url": "https://clawhub.ai/skills/lockpicker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lockpicker-d94ad55276443241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide a user through capturing and analyzing a HAR file from their own logged-in browser session, extracting the minimum auth material needed, mapping the ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanestane",
+      "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+      "displayName": "Stanislav Stankovic",
+      "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778087119243,
+      "changelog": "Add helper scripts for HAR request extraction, auth header extraction, request-shape diffing, and first-pass direct-client scaffolding. Keep the skill strongly scoped to user-authorized workflows and include clear warnings about terms-of-service, account risk, and avoiding brute-force or bypass behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:347aa44c4f345d1ef9cb68f0486c183440db2f8b416fc57d17a44cd5cefec752"
+}

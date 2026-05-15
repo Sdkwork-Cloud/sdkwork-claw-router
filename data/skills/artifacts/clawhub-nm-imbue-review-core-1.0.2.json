@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-imbue-review-core@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_imbue_review_core",
+  "skill": {
+    "id": 33077,
+    "skillKey": "clawhub-nm-imbue-review-core",
+    "name": "Nm Imbue Review Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-imbue-review-core",
+    "url": "https://clawhub.ai/skills/nm-imbue-review-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-imbue-review-core-ab2f147a2c467625.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reusable scaffolding for review workflows with context establishment, evidence capture, and structured output"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778293047277,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6be735a771c0b3d7791a6f57f4ab8fee3ef68369071138c603acb54c42c74c3b"
+}

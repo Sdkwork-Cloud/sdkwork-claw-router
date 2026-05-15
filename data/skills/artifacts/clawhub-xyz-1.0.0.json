@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xyz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xyz",
+  "skill": {
+    "id": 68668,
+    "skillKey": "clawhub-xyz",
+    "name": "Xyz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xyz",
+    "url": "https://clawhub.ai/skills/xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xyz-3608bca1e44ea6c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网络搜索工具，支持多种搜索引擎后端（DuckDuckGo、Tavily、Bing、Google、SearXNG）。使用场景：当用户需要搜索网络上的实时信息、查找最新资料、获取在线资源时调用。通过命令行执行搜索查询并返回结构化的搜索结果（标题、链接、摘要）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwu26",
+      "userId": "s17axtc8ve4mgd4ygnnstsa0v983wkcp",
+      "displayName": "jwu26",
+      "image": "https://avatars.githubusercontent.com/u/1152204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772953863070,
+      "changelog": "xyz v1.0.0 – 初始发布\n\n- 提供多搜索引擎网络搜索工具，支持 DuckDuckGo（默认）、Tavily、Bing、Google 和 SearXNG。\n- 允许通过命令行查询实时信息，支持结构化输出（标题、链接、摘要），并有 JSON 格式选项。\n- 可选多轮迭代与深度搜索，支持进度跟踪和并行检索。\n- 支持环境变量配置搜索引擎、密钥、连接超时及最大结果数。\n- 提供详细用法、运行要求、示例与工作流说明。\n- 明确本技能为搜索及工作流描述文档，需配合外部 web-search 技能实际执行。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe8091c0506f84fc312af402e3f3b03fb96f798b9a87f2d4a4bfa42ad2b058a7"
+}

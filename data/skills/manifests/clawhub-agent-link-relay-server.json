@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62044,
+  "uuid": "skill-clawhub-agent-link-relay-server",
+  "skillKey": "clawhub-agent-link-relay-server",
+  "name": "agent-link-relay-server",
+  "summary": "智能体互联技能 - 支持不同电脑上的 OpenClaw 实例和 Agent 通过中转服务器进行安全可靠的通讯。包含中转服务器组件和本地 Agent 组件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_link_relay_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericshpych",
+      "features": [
+        "支持不同电脑上的 OpenClaw 实例和 Agent 通过中转服务器进行安全可靠的通讯。包含中转服务器组件和本地 Agent 组件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-link-relay-server@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267561748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-link-relay-server",
+      "url": "https://clawhub.ai/skills/agent-link-relay-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-link-relay-server",
+    "url": "https://clawhub.ai/skills/agent-link-relay-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-link-relay-server-76b261bb8bc63418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-link-relay-server@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-link-relay-server-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c016a096e5ea4ccbbdf04daf7faa02105cad233d83b45275f8b551254e031e5",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:39:34.139Z"
+}

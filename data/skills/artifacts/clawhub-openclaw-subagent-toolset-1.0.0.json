@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-subagent-toolset@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_subagent_toolset",
+  "skill": {
+    "id": 41812,
+    "skillKey": "clawhub-openclaw-subagent-toolset",
+    "name": "OpenClaw Subagent Toolset"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-subagent-toolset",
+    "url": "https://clawhub.ai/skills/openclaw-subagent-toolset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-subagent-toolset-2d7c906aaf40444a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides predefined constrained tool subsets for spawning sub-agents tailored to task types like Explore, Plan, Verification, Coding, and Secretary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxiao-bot",
+      "userId": "s177wn48nxdm9a73g3sj4awv1583gddz",
+      "displayName": "hanxiao-bot",
+      "image": "https://avatars.githubusercontent.com/u/262316041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059436364,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22071d36a3252103f20b2717e56203d3ee1d81675064b3d6f0f15219dbeeaaad"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21901,
+  "uuid": "skill-clawhub-polymarket-simmer-fastloop-sync-pulse",
+  "skillKey": "clawhub-polymarket-simmer-fastloop-sync-pulse",
+  "name": "polymarket-simmer-fastloop-sync-pulse",
+  "summary": "Trade Polymarket BTC/ETH/SOL 5-minute fast markets using a zero-delay Triple-Trigger strategy. Combines Binance momentum, NOFX OI/Netflow (free public API),...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_simmer_fastloop_sync_pulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AndrewBrownrd",
+      "features": [
+        "Trade Polymarket BTC/ETH/SOL 5-minute fast markets using a zero-delay Triple-Trigger strategy",
+        "Combines Binance momentum, NOFX OI/Netflow (free public API),..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-simmer-fastloop-sync-pulse@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261283447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-simmer-fastloop-sync-pulse",
+      "url": "https://clawhub.ai/skills/polymarket-simmer-fastloop-sync-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-simmer-fastloop-sync-pulse",
+    "url": "https://clawhub.ai/skills/polymarket-simmer-fastloop-sync-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-simmer-fastloop-sync-pulse-bb0e7ea7a7782c51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-simmer-fastloop-sync-pulse@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-simmer-fastloop-sync-pulse-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b841a71736d35539ddfdd53da9df7560993c2def5e6f77fa0a865f8bd2f8d562",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:33:36.588Z"
+}

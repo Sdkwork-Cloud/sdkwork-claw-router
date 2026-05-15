@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imap-mail@1.5.4",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_mail",
+  "skill": {
+    "id": 38850,
+    "skillKey": "clawhub-imap-mail",
+    "name": "Imap Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-mail",
+    "url": "https://clawhub.ai/skills/imap-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-mail-583487f14d06d934.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal email via your own IMAP/SMTP server. Send and receive emails, manage folders, and search messages using standard protocols — no third-party email pl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "polumish",
+      "userId": "publishers:polumish",
+      "displayName": "Sergey",
+      "image": "https://avatars.githubusercontent.com/u/6078948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.5.4",
+      "createdAt": 1772975228179,
+      "changelog": "Fix silent output when --unseen finds no messages: cron jobs no longer print \"No unread messages\" noise. Added --quiet flag for explicit suppression.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e365629fc6536deda7e2990b16fe161cf0d8b45e3fe686f44687ec5e5c17f25b"
+}

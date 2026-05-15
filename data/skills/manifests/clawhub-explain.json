@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15091,
+  "uuid": "skill-clawhub-explain",
+  "skillKey": "clawhub-explain",
+  "name": "Explain",
+  "summary": "Learns how to explain things to your human. Adapts format, depth, and style by topic.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Learns how to explain things to your human",
+        "Adapts format, depth, and style by topic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/explain@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "explain",
+      "url": "https://clawhub.ai/skills/explain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explain",
+    "url": "https://clawhub.ai/skills/explain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explain-0818ab2593f5cb6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/explain@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-explain-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd074fb89336da79e05e038f80ed690e670cd27348464f5850ec4f160f1cad4",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:35:27.984Z"
+}

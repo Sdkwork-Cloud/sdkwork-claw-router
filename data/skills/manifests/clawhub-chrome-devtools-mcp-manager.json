@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30512,
+  "uuid": "skill-clawhub-chrome-devtools-mcp-manager",
+  "skillKey": "clawhub-chrome-devtools-mcp-manager",
+  "name": "Chrome DevTools MCP Manager",
+  "summary": "Manage chrome-devtools-mcp service and OpenClaw's built-in Chrome browser for MCP-based browser automation. Use when user needs to use chrome-devtools-mcp fu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_devtools_mcp_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andeymei",
+      "features": [
+        "Manage chrome-devtools-mcp service and OpenClaw's built-in Chrome browser for MCP-based browser.",
+        "Use when user needs to use chrome-devtools-mcp fu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-devtools-mcp-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/846017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-devtools-mcp-manager",
+      "url": "https://clawhub.ai/skills/chrome-devtools-mcp-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-devtools-mcp-manager",
+    "url": "https://clawhub.ai/skills/chrome-devtools-mcp-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-devtools-mcp-manager-79f6c280e34ac512.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-devtools-mcp-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-devtools-mcp-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:488c8cd5147e2650fc8e5b835ec15b9c53c78100b7c50142ff4b49d29cabf16b",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:41:49.705Z"
+}

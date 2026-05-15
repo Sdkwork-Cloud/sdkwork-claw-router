@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dell",
+  "skill": {
+    "id": 24639,
+    "skillKey": "clawhub-dell",
+    "name": "Shop on Dell - Give your Claw Agent a credit card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dell",
+    "url": "https://clawhub.ai/skills/dell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dell-d0e2ece166bdef23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dell Technologies skill. Browse and purchase PCs, servers, monitors, and enterprise infrastructure from the world's No. 1 AI infrastructure provider. Covers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773196927423,
+      "changelog": "- Major update: Expanded and modernized Dell skill to cover latest product lines, AI infrastructure leadership, and current branding.\n- PC lineup reflects 2025 brand simplification (simple tiers replacing Inspiron, Latitude, Precision; XPS reintroduced for high-end consumers).\n- Details added for Dell’s AI infrastructure solutions, including Dell AI Factory and recent product innovations.\n- Enterprise portfolio (servers, storage, networking, edge, cloud) fully documented with recent product names.\n- Up-to-date coverage of support, warranty tiers, and all purchase channels.\n- Key specifications for new Dell PCs, Copilot+ requirements, and customization options now included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8d213a5d5e3af6602ec5e7e1bdf7f30add8dfbdbf5b3feb94773d373239a06a"
+}

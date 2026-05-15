@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69899,
+  "uuid": "skill-clawhub-beergaao",
+  "skillKey": "clawhub-beergaao",
+  "name": "BeerGaao 专业量化交易",
+  "summary": "A股/港股/美股量化分析工具，提供技术分析、策略生成、回测验证和风险管理功能",
+  "version": "3.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beergaao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GanJiaKouN16",
+      "features": [
+        "A股/港股/美股量化分析工具，提供技术分析、策略生成、回测验证和风险管理功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beergaao@3.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11851126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beergaao",
+      "url": "https://clawhub.ai/skills/beergaao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beergaao",
+    "url": "https://clawhub.ai/skills/beergaao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beergaao-81628f65f43e19c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beergaao@3.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-beergaao-3.3.3.json",
+      "version": "3.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:509788e7ab5bb9d0f3bdc2a9acfc33458288c4855d0331fe61ec2233fdfa025f",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:36:52.842Z"
+}

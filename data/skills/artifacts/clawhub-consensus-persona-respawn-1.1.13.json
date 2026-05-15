@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consensus-persona-respawn@1.1.13",
+  "version": "1.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_persona_respawn",
+  "skill": {
+    "id": 18478,
+    "skillKey": "clawhub-consensus-persona-respawn",
+    "name": "consensus-persona-respawn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-persona-respawn",
+    "url": "https://clawhub.ai/skills/consensus-persona-respawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-persona-respawn-62ee3cf99af95935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ledger-informed persona lifecycle management. Replaces low-performing personas with successor personas derived from mistake patterns in board decision histor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaicianflone",
+      "userId": "s173yh69sk2g7jzav29e74412s83qaga",
+      "displayName": "Kai Cianflone",
+      "image": "https://avatars.githubusercontent.com/u/30943151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 687,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.1.13",
+      "createdAt": 1772480568570,
+      "changelog": "Aligned SKILL metadata/install docs for registry-only path and removed stale backend credential wording.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7ff524b872a137eff1d1160c9c2fd6361c291c9568e782421989a06731936ca"
+}

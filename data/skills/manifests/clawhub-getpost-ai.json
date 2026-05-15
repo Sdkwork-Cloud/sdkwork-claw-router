@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31403,
+  "uuid": "skill-clawhub-getpost-ai",
+  "skillKey": "clawhub-getpost-ai",
+  "name": "GetPost AI and LLM Gateway",
+  "summary": "Access 24+ LLM chat models and 16+ image/video generation models via one API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getpost_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "domm",
+      "features": [
+        "Access 24+ LLM chat models and 16+ image/video generation models via one API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getpost-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4269710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getpost-ai",
+      "url": "https://clawhub.ai/skills/getpost-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getpost-ai",
+    "url": "https://clawhub.ai/skills/getpost-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getpost-ai-f9f4e34eb777b775.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getpost-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getpost-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3ef467e987f4fded7e000a995d98f477ae36eede6d36f9247e79e512da5acf4",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:20:10.582Z"
+}

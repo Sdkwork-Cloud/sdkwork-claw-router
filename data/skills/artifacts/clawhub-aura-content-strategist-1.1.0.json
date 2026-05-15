@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aura-content-strategist@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_content_strategist",
+  "skill": {
+    "id": 56082,
+    "skillKey": "clawhub-aura-content-strategist",
+    "name": "Aura Content Strategist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-content-strategist",
+    "url": "https://clawhub.ai/skills/aura-content-strategist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-content-strategist-7d9bb9bc8cf1cf4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dual-platform content strategist for Xiaohongshu (小红书) and Pinterest. Generates complete content plans including visual design, copywriting, and publishing s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoboask",
+      "userId": "s174p3mxqgx91w315yr250apk983kqhb",
+      "displayName": "luoboask",
+      "image": "https://avatars.githubusercontent.com/u/67533551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774444561288,
+      "changelog": "Added multi-language support: Chinese for XHS/Douyin, English for Pinterest/TikTok/Instagram. Added English content output template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:053744cff5bf192f76253442785f06443bb6140feb2aba05f26862de7226f090"
+}

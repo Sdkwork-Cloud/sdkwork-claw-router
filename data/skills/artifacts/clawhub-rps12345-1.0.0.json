@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rps12345@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rps12345",
+  "skill": {
+    "id": 55896,
+    "skillKey": "clawhub-rps12345",
+    "name": "RockPaperSc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rps12345",
+    "url": "https://clawhub.ai/skills/rps12345",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rps12345-6954cbccccd159c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play a text-based game of rock–paper–scissors against the user and keep score."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoavrez",
+      "userId": "publishers:yoavrez",
+      "displayName": "Yoav",
+      "image": "https://avatars.githubusercontent.com/u/98273287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1010,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772010434947,
+      "changelog": "It's a new one",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99248c64c9fdc542bfb6cc4bd0cf91264602267e5f39c5866ca1b4fc71d0c3b9"
+}

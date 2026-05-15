@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toon-adoption-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toon_adoption_skill",
+  "skill": {
+    "id": 26816,
+    "skillKey": "clawhub-toon-adoption-skill",
+    "name": "TOON"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toon-adoption-skill",
+    "url": "https://clawhub.ai/skills/toon-adoption-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toon-adoption-skill-4e5c8f7ac4aa3768.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize token usage by adopting the compact TOON format for data storage and context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nelohenriq",
+      "userId": "publishers:nelohenriq",
+      "displayName": "nelohenriq",
+      "image": "https://avatars.githubusercontent.com/u/4016200?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772475701451,
+      "changelog": "- Initial release of TOON Adoption Skill for efficient data storage and context.\n- Introduces TOON syntax rules for compact, indentation-based JSON representation.\n- Provides guidelines for using TOON files to reduce token usage by ~40%.\n- Includes usage examples and formatting best practices for arrays and objects.\n- Targets improved context compression for LLM workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4ab2396c948fe7f4c17bdc6fdad6944f27262d7c4dc315ca454e74fc188977c"
+}

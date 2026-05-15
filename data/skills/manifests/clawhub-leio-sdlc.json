@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60788,
+  "uuid": "skill-clawhub-leio-sdlc",
+  "skillKey": "clawhub-leio-sdlc",
+  "name": "LEIO SDLC",
+  "summary": "强制指令：执行 Software Development Life Cycle (SDLC)。所有的代码修改、Bug 修复和功能实现，必须且只能通过启动本技能中的 orchestrator.py 来完成。严禁主 Agent (你) 绕过本技能直接去操作源码工作区。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leio_sdlc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leio9511",
+      "features": [
+        "强制指令：执行 Software Development Life Cycle (SDLC)。所有的代码修改、Bug 修复和功能实现，必须且只能通过启动本技能中的 orchestrator.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leio-sdlc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190667917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leio-sdlc",
+      "url": "https://clawhub.ai/skills/leio-sdlc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leio-sdlc",
+    "url": "https://clawhub.ai/skills/leio-sdlc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leio-sdlc-e01e301177a9e2a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leio-sdlc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leio-sdlc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c5435a5b499bd97b0ab7028cce7aad239376de8786bf0c4614b9c5b2d79f71e",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T08:34:58.998Z"
+}

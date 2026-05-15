@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_collector",
+  "skill": {
+    "id": 24723,
+    "skillKey": "clawhub-meta-ads-collector",
+    "name": "Meta Ads Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-collector",
+    "url": "https://clawhub.ai/skills/meta-ads-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-collector-57fcb898de337cda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans Meta Ad Library API to count active ads, identify ad formats and types, track longest-running ad, and estimate spend for a given brand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adarshvmore",
+      "userId": "publishers:adarshvmore",
+      "displayName": "Adarsh More",
+      "image": "https://avatars.githubusercontent.com/u/103880462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772681972387,
+      "changelog": "Initial release of the Meta Ads Collector skill.\n\n- Scans the Meta Ad Library API for active ads by brand and optional domain.\n- Extracts key metrics: number of active ads, formats used, ad types, and longest-running ad duration.\n- Supports error handling with consistent fallback output.\n- Designed to feed marketing audit reports with up-to-date paid ad strategy insights.\n- Gracefully handles API issues, zero results, and domain disambiguation.\n- Requires Meta App credentials and uses the official Facebook Graph API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37ae77e70beb5e6cf29d634ae27c583ed7f08401b05a13e214f13e50e92d2195"
+}

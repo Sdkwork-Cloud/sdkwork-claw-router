@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12519,
+  "uuid": "skill-clawhub-falimagegen",
+  "skillKey": "clawhub-falimagegen",
+  "name": "falimagegen",
+  "summary": "Call fal.ai model APIs for image generation (text-to-image and image-to-image). Use when a user asks to integrate fal, construct requests, run jobs, handle auth, or return image URLs from fal model APIs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.falimagegen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xxmzdxxxm",
+      "features": [
+        "Call fal.ai model APIs for image generation (text-to-image and image-to-image)",
+        "Use when a user asks to integrate fal, construct requests, run jobs, handle auth, or return ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/falimagegen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112739115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "falimagegen",
+      "url": "https://clawhub.ai/skills/falimagegen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "falimagegen",
+    "url": "https://clawhub.ai/skills/falimagegen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/falimagegen-2e81887031cd4160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/falimagegen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-falimagegen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16da51705655e2bca0d8fbb978167e7f9eef43071cbee765075fc9d0c823d979",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:46:23.036Z"
+}

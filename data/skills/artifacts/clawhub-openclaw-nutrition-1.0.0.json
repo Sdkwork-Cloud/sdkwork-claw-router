@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-nutrition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_nutrition",
+  "skill": {
+    "id": 19271,
+    "skillKey": "clawhub-openclaw-nutrition",
+    "name": "Nutrition tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-nutrition",
+    "url": "https://clawhub.ai/skills/openclaw-nutrition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-nutrition-3edd08443cb39c6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered nutrition coach and health tracker (powered by Haver). Log food with natural language, track calories and macros, monitor weight, get AI coaching,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuvasee",
+      "userId": "publishers:yuvasee",
+      "displayName": "Yuri.v9v",
+      "image": "https://avatars.githubusercontent.com/u/7745709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 615,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771643335964,
+      "changelog": "- Initial release of openclaw-nutrition: an AI-powered nutrition coach and health tracker powered by Haver.\n- Log food via natural language, track calories and macros, and monitor weight.\n- Get AI-driven nutrition coaching, progress feedback, and encouragement with XP and achievements.\n- Warm, non-judgmental coaching persona with adaptive responses and engaging use of emoji.\n- Supports onboarding, nutrition summaries, profile management, rewards, and account status tracking via robust API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:170d3ee76c4defed6d38e8d3cfbec211b1c73f17ba6359d9595ceda3da67ad09"
+}

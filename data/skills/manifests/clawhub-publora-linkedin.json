@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15587,
+  "uuid": "skill-clawhub-publora-linkedin",
+  "skillKey": "clawhub-publora-linkedin",
+  "name": "Publora Linkedin",
+  "summary": "Post or schedule content to LinkedIn using the Publora API. Use this skill when the user wants to publish or schedule LinkedIn posts, retrieve analytics (imp...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_linkedin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Post or schedule content to LinkedIn using the Publora API",
+        "Use this skill when the user wants to publish or schedule LinkedIn posts, retrieve analytics (i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora-linkedin@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora-linkedin",
+      "url": "https://clawhub.ai/skills/publora-linkedin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-linkedin",
+    "url": "https://clawhub.ai/skills/publora-linkedin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-linkedin-7ab3173f4863eb8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora-linkedin@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-linkedin-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:547aec49f262e2fd83f0ff48630a62d62cfed08ac49ffc835555fd2ad195ac87",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:00:26.323Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_backup",
+  "skill": {
+    "id": 22078,
+    "skillKey": "clawhub-slack-backup",
+    "name": "Slack Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-backup",
+    "url": "https://clawhub.ai/skills/slack-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-backup-10716523802cba4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Back up files uploaded to a Slack channel to the local doc/backup directory. Supports smart matching: multiple files, filename prefix/keyword filter, file ty..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caigang78",
+      "userId": "publishers:caigang78",
+      "displayName": "caigang78",
+      "image": "https://avatars.githubusercontent.com/u/7031130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772950409055,
+      "changelog": "Initial release of slack-backup.\n\n- Back up files uploaded to a Slack channel to the local doc/backup directory.\n- Supports smart matching: filter by filename prefix/keyword, file type (pdf/video/image), time range, and multiple files.\n- Triggered by natural language commands (e.g. \"back up the file from Slack\", \"save the Slack file locally\").\n- Follows strict rules to ensure file integrity: only uses a shell script, verifies real file download, and strictly reports errors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb1958afd52415463ac9a17bf4fbb9588241af55bccae82ba3c378845e9cbd55"
+}

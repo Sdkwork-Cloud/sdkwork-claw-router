@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capability-evolver-pro-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_evolver_pro_1_0_2",
+  "skill": {
+    "id": 21998,
+    "skillKey": "clawhub-capability-evolver-pro-1-0-2",
+    "name": "Capability Evolver Pro 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-evolver-pro-1-0-2",
+    "url": "https://clawhub.ai/skills/capability-evolver-pro-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-evolver-pro-1-0-2-0b26ace53cb83268.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meta-skill for AI agent self-improvement. Analyzes runtime logs to detect error patterns, regressions, and inefficiencies, then generates structured improvem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackey001-wq",
+      "userId": "s17d4ff0betqf0d672c7jwzqx583xqdv",
+      "displayName": "jackey001-wq",
+      "image": "https://avatars.githubusercontent.com/u/190724186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774846358523,
+      "changelog": "Capability Evolver 1.0.0 — Initial Release\n\n- Analyze agent runtime logs to detect error patterns, regressions, and inefficiencies.\n- Generates structured improvement proposals to enhance agent reliability and performance.\n- Provides deterministic, fast (sub-100ms) processing with zero external dependencies or LLMs.\n- Supports analyze, evolve, and status actions for diagnosis, health scoring, and evolution planning.\n- Designed for seamless integration with OpenClaw and other agent platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6253db5d1af44514dd456e3216dbe9f44a27d364d0b3798be3571dc83332fbf4"
+}

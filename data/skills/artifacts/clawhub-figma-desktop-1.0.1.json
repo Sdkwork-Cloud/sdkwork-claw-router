@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-desktop@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_desktop",
+  "skill": {
+    "id": 60243,
+    "skillKey": "clawhub-figma-desktop",
+    "name": "figma-desktop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-desktop",
+    "url": "https://clawhub.ai/skills/figma-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-desktop-b9b0fb4815d132a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Figma 桌面 MCP Skill - 通过 Figma 桌面应用本地 MCP 服务访问完整功能，包括 Figma Make 设计生成、代码生成、设计系统管理等，无需 OAuth 认证"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samuel-qin",
+      "userId": "s179w5wz2rsgqqgcvvxaevm5xh83h3p2",
+      "displayName": "samuel-qin",
+      "image": "https://avatars.githubusercontent.com/u/223211268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773751259391,
+      "changelog": "- 增加“安装 mcporter”步骤，明确要求先全局安装 mcporter CLI 工具\n- 前置要求部分优化，拆分并突出操作顺序及依赖\n- 其余内容与命令用法无变化，功能保持一致\n- 文档结构更友好，便于新用户首次配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac819909ff4c1210b999aa3d13954cc9488b35f2d16148a876f7af4633f3eabc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-financial-model@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_financial_model",
+  "skill": {
+    "id": 25492,
+    "skillKey": "clawhub-startup-financial-model",
+    "name": "Startup Financial Model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-financial-model",
+    "url": "https://clawhub.ai/skills/startup-financial-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-financial-model-39ec5cfed591ecf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build investor-ready 3-statement financial models for startups: P&L, Balance Sheet, Cash Flow Statement. Revenue forecasting with growth assumptions, burn ra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773775254063,
+      "changelog": "Fix: correct skill name and metadata (was published as test)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82729afae4607ec127dfa4ab67035d51fd89e0f6f9e303e4aad8bec6ba0d242b"
+}

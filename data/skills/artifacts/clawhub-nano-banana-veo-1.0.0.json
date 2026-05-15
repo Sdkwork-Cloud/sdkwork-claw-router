@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-veo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_veo",
+  "skill": {
+    "id": 36374,
+    "skillKey": "clawhub-nano-banana-veo",
+    "name": "Nano Banana Veo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-veo",
+    "url": "https://clawhub.ai/skills/nano-banana-veo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-veo-661ec547df0c532f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with Nano Banana (Gemini 3 Pro Image) and animate them into videos with Veo 3.1. Use when creating AI-generated visual assets for websites, l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bermyboystechsolutions",
+      "userId": "s179dg0ky3x3dw4fm07hv6r5fn84360k",
+      "displayName": "BermyBoysTechSolutions",
+      "image": "https://avatars.githubusercontent.com/u/74277896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775143459279,
+      "changelog": "Initial release of nano-banana-veo.\n\n- Generate premium static images using Gemini 3 Pro (Nano Banana).\n- Animate images into cinematic videos with Veo 3.1, supporting 4–8 second durations.\n- Designed for creating AI-generated assets for websites, landing pages, and marketing materials.\n- Flexible CLI for image and video generation, with customizable prompts, resolution, and output paths.\n- Requires a GEMINI_API_KEY environment variable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56eccc22f02d3272dd6ab32118120a2f8d0537ab5463b058f16ba395eaa59b9a"
+}

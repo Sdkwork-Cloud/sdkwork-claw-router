@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zalo-agent@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zalo_agent",
+  "skill": {
+    "id": 22275,
+    "skillKey": "clawhub-zalo-agent",
+    "name": "Zalo Agent CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zalo-agent",
+    "url": "https://clawhub.ai/skills/zalo-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zalo-agent-be59ebf923d3a977.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Zalo messaging, Official Account (OA), and MCP server integration via zalo-agent-cli. Triggers: 'zalo', 'send zalo', 'zalo OA', 'official account',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phucmpham",
+      "userId": "publishers:phucmpham",
+      "displayName": "PhucMPham",
+      "image": "https://avatars.githubusercontent.com/u/22748206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1773816766537,
+      "changelog": "Auto-publish from commit c9114350d09384d66c2f34a63c37a03767db39ec",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaa3d18eb8c680befd24a15deaa90a12e385c895a6b2b4c3cf198a5d00f83225"
+}

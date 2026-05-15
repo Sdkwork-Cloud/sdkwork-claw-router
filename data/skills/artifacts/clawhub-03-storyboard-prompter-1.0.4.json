@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/03-storyboard-prompter@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.03_storyboard_prompter",
+  "skill": {
+    "id": 25775,
+    "skillKey": "clawhub-03-storyboard-prompter",
+    "name": "03 Storyboard Prompter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "03-storyboard-prompter",
+    "url": "https://clawhub.ai/skills/03-storyboard-prompter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/03-storyboard-prompter-8c717b658ecc2427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate consistent positive and negative AI art prompts from short drama scripts locally, ensuring unified style and character depiction without API calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghwyever",
+      "userId": "s17e2s4tkevm4442ztsph1bhtd84d4rj",
+      "displayName": "GHwyever",
+      "image": "https://avatars.githubusercontent.com/u/177743476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775812802533,
+      "changelog": "- Updated documentation for clearer and more concise feature, usage, and technical descriptions.\n- Simplified input/output parameter explanations in SKILL.md.\n- Removed obsolete file (_meta.json) to streamline the skill package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3291f254b9fcc8677713b0f1f98bad671528e21a054881f7b99597d5f1096755"
+}

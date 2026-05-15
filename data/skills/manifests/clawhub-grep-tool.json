@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47765,
+  "uuid": "skill-clawhub-grep-tool",
+  "skillKey": "clawhub-grep-tool",
+  "name": "Grep Tool",
+  "summary": "Search text files for lines matching a pattern using regular expressions. Use for log analysis, code searching, and data filtering.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grep_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Search text files for lines matching a pattern using regular expressions",
+        "Use for log analysis, code searching, and data filtering."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grep-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grep-tool",
+      "url": "https://clawhub.ai/skills/grep-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grep-tool",
+    "url": "https://clawhub.ai/skills/grep-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grep-tool-c2142fb6fbfea948.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grep-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grep-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96f16e007a737568795781f2ccdb050243b803aee3c27acf2c2ed10c2163325b",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T18:15:12.902Z"
+}

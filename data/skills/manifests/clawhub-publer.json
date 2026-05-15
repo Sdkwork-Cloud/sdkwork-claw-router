@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16988,
+  "uuid": "skill-clawhub-publer",
+  "skillKey": "clawhub-publer",
+  "name": "Publer",
+  "summary": "Post content to social media via the Publer API. Use when scheduling or publishing posts to TikTok (carousels, videos), Instagram, Facebook, Twitter/X, or an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imamark",
+      "features": [
+        "Post content to social media via the Publer API",
+        "Use when scheduling or publishing posts to TikTok (carousels, videos), Instagram, Facebook, Twi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3796637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publer",
+      "url": "https://clawhub.ai/skills/publer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publer",
+    "url": "https://clawhub.ai/skills/publer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publer-867714c871ab0b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e13e7b17693563c0f1ce232e4ed2d255429ee3f592f8fe6078af5e2927f6b649",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:16:20.169Z"
+}

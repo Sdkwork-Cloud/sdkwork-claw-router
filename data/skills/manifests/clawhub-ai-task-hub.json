@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14976,
+  "uuid": "skill-clawhub-ai-task-hub",
+  "skillKey": "clawhub-ai-task-hub",
+  "name": "Ai Task Hub",
+  "summary": "AI task hub for image analysis, background removal, speech-to-text, text-to-speech, markdown conversion, and points queries. Default host path is connector-f...",
+  "version": "3.3.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_task_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasilva",
+      "features": [
+        "AI task hub for image analysis, background removal, speech-to-text, text-to-speech, markdown co.",
+        "Default host path is connector-f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-task-hub@3.3.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16743182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-task-hub",
+      "url": "https://clawhub.ai/skills/ai-task-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-task-hub",
+    "url": "https://clawhub.ai/skills/ai-task-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-task-hub-bed6e66873cf5284.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-task-hub@3.3.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-task-hub-3.3.14.json",
+      "version": "3.3.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4555b2ed193d6e9b1bd77bfbec168771921d6bf9ad81490b1e66d15072057ce5",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:24:04.988Z"
+}

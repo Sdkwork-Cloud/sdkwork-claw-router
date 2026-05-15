@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29258,
+  "uuid": "skill-clawhub-zixflow",
+  "skillKey": "clawhub-zixflow",
+  "name": "Zixflow",
+  "summary": "Zixflow integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zixflow data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zixflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zixflow integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zixflow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zixflow@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zixflow",
+      "url": "https://clawhub.ai/skills/zixflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zixflow",
+    "url": "https://clawhub.ai/skills/zixflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zixflow-7b088c01444843c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zixflow@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zixflow-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d724ee47c866946264cb144291bf69e217c6b7cbe02c6f6322265e154ccf977b",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:32.901Z"
+}

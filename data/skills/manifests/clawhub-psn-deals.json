@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57186,
+  "uuid": "skill-clawhub-psn-deals",
+  "skillKey": "clawhub-psn-deals",
+  "name": "PSN Assistant",
+  "summary": "PSN Assistant | PlayStation 会员助手 — PS Store deals, PS Plus free games, cross-region price comparison, game ratings, trophy guides, new releases, PSN status....",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psn_deals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jundongGit",
+      "features": [
+        "PSN Assistant | PlayStation 会员助手 — PS Store deals, PS Plus free games, cross-region price compa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psn-deals@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41845422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psn-deals",
+      "url": "https://clawhub.ai/skills/psn-deals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psn-deals",
+    "url": "https://clawhub.ai/skills/psn-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psn-deals-efe64a1ff6355636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psn-deals@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psn-deals-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c6e8fd0214f1d702dbc94370c2dc3256f6d2f018bdf521510c2bc088d209974",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:28:51.139Z"
+}

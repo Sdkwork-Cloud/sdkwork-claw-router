@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15081,
+  "uuid": "skill-clawhub-godaddy-api",
+  "skillKey": "clawhub-godaddy-api",
+  "name": "GoDaddy API",
+  "summary": "Complete GoDaddy API skill with shell scripts + MCP server for domains, DNS, certificates, shoppers, subscriptions, agreements, countries, and aftermarket li...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godaddy_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew",
+      "features": [
+        "Complete GoDaddy API skill with shell scripts + MCP server for domains, DNS, certificates, shop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/godaddy-api@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106849876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "godaddy-api",
+      "url": "https://clawhub.ai/skills/godaddy-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godaddy-api",
+    "url": "https://clawhub.ai/skills/godaddy-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godaddy-api-bffb2c1c9faa89fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/godaddy-api@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-godaddy-api-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b669a967820d4338a5b403d37c84d4782a6a658e87f0278e281870f4178d6da",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T02:02:23.430Z"
+}

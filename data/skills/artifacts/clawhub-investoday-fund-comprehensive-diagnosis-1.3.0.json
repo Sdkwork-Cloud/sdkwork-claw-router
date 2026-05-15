@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investoday-fund-comprehensive-diagnosis@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_fund_comprehensive_diagnosis",
+  "skill": {
+    "id": 69259,
+    "skillKey": "clawhub-investoday-fund-comprehensive-diagnosis",
+    "name": "investoday-fund-comprehensive-diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-fund-comprehensive-diagnosis",
+    "url": "https://clawhub.ai/skills/investoday-fund-comprehensive-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-fund-comprehensive-diagnosis-efa73474140b8f87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向公募基金综合诊断，聚焦收益表现、风险收益匹配、持仓结构、基金经理与费用分红特征。基于今日投资金融数据接口，自动识别基金代码并输出结构化基金综合诊断报告。触发词：基金诊断、基金分析、收益风险、持仓怎么看、长期持有、基金体检。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenneth-bro",
+      "userId": "s177j0jytadhmffa017fzg5tcs83gmm6",
+      "displayName": "investoday",
+      "image": "https://avatars.githubusercontent.com/u/19256972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774681418925,
+      "changelog": "Automated release from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bbf2142ce178ad4902a50bf6e5930d09f25276e9fb073eed9e51c8f12138a19"
+}

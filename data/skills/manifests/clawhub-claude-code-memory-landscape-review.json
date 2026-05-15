@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39970,
+  "uuid": "skill-clawhub-claude-code-memory-landscape-review",
+  "skillKey": "clawhub-claude-code-memory-landscape-review",
+  "name": "Memory Landscape Review",
+  "summary": "Use when the user wants to review auto-memory, promote durable instructions into CLAUDE.md or local memory, and clean up duplicates or conflicts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_memory_landscape_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants to review auto-memory, promote durable instructions into CLAUDE.md or l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-memory-landscape-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-memory-landscape-review",
+      "url": "https://clawhub.ai/skills/claude-code-memory-landscape-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-memory-landscape-review",
+    "url": "https://clawhub.ai/skills/claude-code-memory-landscape-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-memory-landscape-review-658be3eefa769679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-memory-landscape-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-memory-landscape-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a343ec7c0f82fa6095b6a11d431512c05c45615cd3213fd8ba2bc6392208adfd",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:30:08.977Z"
+}

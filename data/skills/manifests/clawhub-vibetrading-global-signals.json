@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14355,
+  "uuid": "skill-clawhub-vibetrading-global-signals",
+  "skillKey": "clawhub-vibetrading-global-signals",
+  "name": "vibetrading-global-signals",
+  "summary": "Query AI-generated trading signals from vibetrading-datahub. Signals are produced by autonomous agents analyzing whale activity, news, funding rates, and technical indicators.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibetrading_global_signals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haonan Liu",
+      "features": [
+        "Query AI-generated trading signals from vibetrading-datahub",
+        "Signals are produced by autonomous agents analyzing whale activity, news, funding rates, and te."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibetrading-global-signals@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7401465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibetrading-global-signals",
+      "url": "https://clawhub.ai/skills/vibetrading-global-signals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibetrading-global-signals",
+    "url": "https://clawhub.ai/skills/vibetrading-global-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibetrading-global-signals-fa3c435ca8565166.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibetrading-global-signals@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibetrading-global-signals-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35a03ebb0de25679d768dba9767c7a242603cb6fea7867e8bd21e241457f66bf",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T04:01:51.324Z"
+}

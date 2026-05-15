@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lead-generation@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_generation",
+  "skill": {
+    "id": 9106,
+    "skillKey": "clawhub-lead-generation",
+    "name": "Lead Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-generation",
+    "url": "https://clawhub.ai/skills/lead-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-generation-fff3aa7a5d6377d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lead Generation — Find high-intent buyers in live Twitter, Instagram, and Reddit conversations. Auto-researches your product, generates targeted search queries, and discovers people actively looking for solutions you offer. Social selling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atyachin",
+      "userId": "s17ds4vnj4xesk3c3hvqm5wr5x85pztp",
+      "displayName": "Avital Yachin",
+      "image": "https://avatars.githubusercontent.com/u/2669531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3924,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 13,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1770892639010,
+      "changelog": "Added setup section",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e367d0713bc5f05e4e74c002994197a451a177339dba0e17f321362929291e5c"
+}

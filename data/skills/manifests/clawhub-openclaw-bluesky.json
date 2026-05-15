@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25012,
+  "uuid": "skill-clawhub-openclaw-bluesky",
+  "skillKey": "clawhub-openclaw-bluesky",
+  "name": "Bluesky",
+  "summary": "Bluesky/AT Protocol orchestration skill for authenticated interaction with the Bluesky Social network: post, reply, like, repost, quote, bookmark, and upload...",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bluesky",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heather-Herbert",
+      "features": [
+        "Bluesky/AT Protocol orchestration skill for authenticated interaction with the Bluesky Social n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-bluesky@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/410682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-bluesky",
+      "url": "https://clawhub.ai/skills/openclaw-bluesky"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bluesky",
+    "url": "https://clawhub.ai/skills/openclaw-bluesky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bluesky-7a83d686a4d87f75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-bluesky@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bluesky-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:754ee031d6329dcceac2ea62bf1e6d0298f82bd2464e2a1c4749f2bf4eef0db9",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:55:46.190Z"
+}

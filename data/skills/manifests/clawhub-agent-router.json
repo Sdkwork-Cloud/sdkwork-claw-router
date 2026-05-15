@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30017,
+  "uuid": "skill-clawhub-agent-router",
+  "skillKey": "clawhub-agent-router",
+  "name": "Agent Router",
+  "summary": "Routes user commands to the most suitable sub-agent based on intent, coordinates task execution priority, and tracks overall task status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zs15600770520",
+      "features": [
+        "Routes user commands to the most suitable sub-agent based on intent, coordinates task execution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256583896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-router",
+      "url": "https://clawhub.ai/skills/agent-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-router",
+    "url": "https://clawhub.ai/skills/agent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-router-d6ea89053767ec65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eebf1c9dda4e02e71a70f94da8aab95664faa5211d3081a78a91739c04b1aa6f",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:04:56.863Z"
+}

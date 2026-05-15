@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/display-controller@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.display_controller",
+  "skill": {
+    "id": 68960,
+    "skillKey": "clawhub-display-controller",
+    "name": "DisplayControllerSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "display-controller",
+    "url": "https://clawhub.ai/skills/display-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/display-controller-5ec8ecae7eb567c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "显示器控制工具。当用户询问显示器信息、调整亮度/对比度、查询显示器状态、关闭/打开显示器时使用此技能。支持子命令模式，可管理多个显示器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "society2012",
+      "userId": "s170dxff8xz01xjmhf6xh1a2x586d9c3",
+      "displayName": "society2012",
+      "image": "https://avatars.githubusercontent.com/u/6984006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778314334206,
+      "changelog": "- Added install.ps1 script for automated setup of DisplayControlSkill.exe.\n- Updated documentation to include instructions for automatic and manual installation.\n- Removed duplicate help command example for clarity.\n- No changes to functionality or commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f13ade315285a1e2d029407bd481e42dd56d6494b45970aaf7b002b99861105"
+}

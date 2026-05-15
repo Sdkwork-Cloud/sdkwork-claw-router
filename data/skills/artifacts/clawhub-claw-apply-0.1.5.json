@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-apply@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_apply",
+  "skill": {
+    "id": 19832,
+    "skillKey": "clawhub-claw-apply",
+    "name": "Claw Apply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-apply",
+    "url": "https://clawhub.ai/skills/claw-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-apply-5e080baed2895b1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated job search and application for LinkedIn and Wellfound. Searches for matching roles every 12 hours, AI-filters and scores them, applies automaticall..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattjackson",
+      "userId": "publishers:mattjackson",
+      "displayName": "Matthew Jackson",
+      "image": "https://avatars.githubusercontent.com/u/1085847?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1772842225587,
+      "changelog": "Dynamic auth/profile/proxy lookup, GitHub link, rate limit docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6787f3ee509f7150f3537b2fdb61c35fff3d23f6b0e5ee5a9497d47e1ee8c4f4"
+}

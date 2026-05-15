@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19821,
+  "uuid": "skill-clawhub-recipe-share-folder-with-team",
+  "skillKey": "clawhub-recipe-share-folder-with-team",
+  "name": "Recipe Share Folder With Team",
+  "summary": "Share a Google Drive folder and all its contents with a list of collaborators.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_share_folder_with_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Share a Google Drive folder and all its contents with a list of collaborators."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-share-folder-with-team@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-share-folder-with-team",
+      "url": "https://clawhub.ai/skills/recipe-share-folder-with-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-share-folder-with-team",
+    "url": "https://clawhub.ai/skills/recipe-share-folder-with-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-share-folder-with-team-fe744668e32f707b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-share-folder-with-team@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-share-folder-with-team-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c5ab5f52eaf2ed9230212eea4d201844acf7a88f61676c591769fc04a6f1f1e",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:37:10.482Z"
+}

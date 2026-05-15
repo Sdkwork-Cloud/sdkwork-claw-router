@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26224,
+  "uuid": "skill-clawhub-rex-skill-creator",
+  "skillKey": "clawhub-rex-skill-creator",
+  "name": "Skill Creator",
+  "summary": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rex_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "limoxt",
+      "features": [
+        "Create new skills, modify and improve existing skills, and measure skill performance",
+        "Use when users want to create a skill from scratch, edit, or optimize a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rex-skill-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102217440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rex-skill-creator",
+      "url": "https://clawhub.ai/skills/rex-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rex-skill-creator",
+    "url": "https://clawhub.ai/skills/rex-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rex-skill-creator-345dd58293752f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rex-skill-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rex-skill-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b6087ebc22e3579f3a84d16569c335a9fbb1a88c2649852dfcf6148c44bfe3",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:01:24.871Z"
+}

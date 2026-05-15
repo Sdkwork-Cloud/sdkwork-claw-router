@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49511,
+  "uuid": "skill-clawhub-google-ads-intent-mcp",
+  "skillKey": "clawhub-google-ads-intent-mcp",
+  "name": "Google Ads Intent MCP",
+  "summary": "Analyze Google Ads search-term CSV exports locally and draft negative-keyword plans with dry-run safety. Use when an AI agent needs setup, usage, safety boun...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ads_intent_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Analyze Google Ads search-term CSV exports locally and draft negative-keyword plans with dry-ru.",
+        "Use when an AI agent needs setup, usage, safety boun..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-ads-intent-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-ads-intent-mcp",
+      "url": "https://clawhub.ai/skills/google-ads-intent-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ads-intent-mcp",
+    "url": "https://clawhub.ai/skills/google-ads-intent-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ads-intent-mcp-0cb0e5d43c4ad564.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-ads-intent-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-ads-intent-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d456ba3641d51b61034f5f091a2917822eb2afc048fd74f11dbdd8b308712fd",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:18:39.703Z"
+}

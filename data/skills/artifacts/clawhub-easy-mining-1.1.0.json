@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-mining@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_mining",
+  "skill": {
+    "id": 44383,
+    "skillKey": "clawhub-easy-mining",
+    "name": "Easy Mining"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-mining",
+    "url": "https://clawhub.ai/skills/easy-mining",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-mining-9e16803291b82116.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BTC mining farm management via natural language. Activate when user mentions mining farm, miners, hashrate, BTC mining, miner reboot, mining revenue, Nonce m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanpeng-dotcom",
+      "userId": "s17be4djsk51cp2zg7bk77n18n84n734",
+      "displayName": "deanpeng-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/271209600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775916810505,
+      "changelog": "easy-mining v1.1.0\n\n- Added detailed SKILL.md with usage instructions, security rules, supported features, CLI examples, and troubleshooting tips.\n- Clarified API Key handling policy: key required for each request, never stored server-side.\n- Documented write operation safeguards: batch actions require explicit confirmation before execution.\n- Provided example outputs and mapped user language to specific features.\n- Improved safety, usability, and onboarding clarity for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ac1c6164be95fec524644d954843026719a99299ad21a46a8078d9ba95dc6f5"
+}

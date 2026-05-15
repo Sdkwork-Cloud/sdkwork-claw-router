@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25427,
+  "uuid": "skill-clawhub-searxng-connect",
+  "skillKey": "clawhub-searxng-connect",
+  "name": "SearXNG Connect",
+  "summary": "Connect to and search the web using SearXNG (privacy-focused meta search engine). No API keys needed - all searches go through your self-hosted SearXNG insta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_connect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rocco De Angelis",
+      "features": [
+        "Connect to and search the web using SearXNG (privacy-focused meta search engine)",
+        "No API keys needed",
+        "all searches go through your self-hosted SearXNG insta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searxng-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6622982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searxng-connect",
+      "url": "https://clawhub.ai/skills/searxng-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-connect",
+    "url": "https://clawhub.ai/skills/searxng-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-connect-60a8c6b7afac1692.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searxng-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-searxng-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fc2fc633c63279a28aeca6235374175a9cf82ca59185d739c6466efdf9017fc",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:30:07.527Z"
+}

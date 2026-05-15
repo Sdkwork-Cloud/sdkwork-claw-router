@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/4k-capcut-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.4k_capcut_video_editor",
+  "skill": {
+    "id": 45045,
+    "skillKey": "clawhub-4k-capcut-video-editor",
+    "name": "4k Capcut Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "4k-capcut-video-editor",
+    "url": "https://clawhub.ai/skills/4k-capcut-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/4k-capcut-video-editor-7c86970e8ec92703.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into 4K edited videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and YouTubers use it for editi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776164236514,
+      "changelog": "Initial release of 4K CapCut Video Editor.\n\n- Edit raw video clips (MP4, MOV, AVI, WebM, up to 500MB) and export as 4K MP4 files using CapCut-style tools.\n- Cloud backend processes uploads and editing in 1–2 minutes; supports content creators and YouTubers.\n- Automatic session and token management with free credits for new users.\n- Supports video trimming, transitions, text overlays, audio tracks, and batch editing.\n- Simple instruction mapping: upload, preview timeline, edit, and export workflows.\n- Clear status, error reporting, and tips for best results included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ab2983eae9c71e9f21d8119b75123ec0372d30d42ab1035beaa297d9cf89602"
+}

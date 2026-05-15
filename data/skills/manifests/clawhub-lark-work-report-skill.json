@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23549,
+  "uuid": "skill-clawhub-lark-work-report-skill",
+  "skillKey": "clawhub-lark-work-report-skill",
+  "name": "Lark Work Report",
+  "summary": "Use this skill when the user wants to report task results to Feishu/Lark after completion, with a preflight check that the reporting channel is available.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_work_report_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xukp20",
+      "features": [
+        "Use this skill when the user wants to report task results to Feishu/Lark after completion, with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-work-report-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71265541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-work-report-skill",
+      "url": "https://clawhub.ai/skills/lark-work-report-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-work-report-skill",
+    "url": "https://clawhub.ai/skills/lark-work-report-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-work-report-skill-7794fa4b8ab1bace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-work-report-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-work-report-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:511f07425064ef705cdadfccb56e3886d4e6b50e81259732b7869da59832440e",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:29:54.537Z"
+}

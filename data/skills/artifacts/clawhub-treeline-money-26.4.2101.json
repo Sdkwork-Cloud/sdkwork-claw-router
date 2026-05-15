@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/treeline-money@26.4.2101",
+  "version": "26.4.2101",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treeline_money",
+  "skill": {
+    "id": 9752,
+    "skillKey": "clawhub-treeline-money",
+    "name": "Treeline Money"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treeline-money",
+    "url": "https://clawhub.ai/skills/treeline-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treeline-money-ed35c8d345476a0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat with your finances from Treeline Money. Query balances, spending, budgets, and transactions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zack-schrag",
+      "userId": "s17534fjqvm9vjt7f6hbjewrq1844c6r",
+      "displayName": "zack-schrag",
+      "image": "https://avatars.githubusercontent.com/u/29551763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3214,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "26.4.2101",
+      "createdAt": 1776822319244,
+      "changelog": "Release 26.4.2101",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73890b940ee846fac1b775431e9802fe096760b01bf2fa7999ac58232fb11b49"
+}

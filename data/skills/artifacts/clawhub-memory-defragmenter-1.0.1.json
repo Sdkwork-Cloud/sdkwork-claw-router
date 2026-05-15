@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-defragmenter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_defragmenter",
+  "skill": {
+    "id": 35168,
+    "skillKey": "clawhub-memory-defragmenter",
+    "name": "Memory Defragmenter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-defragmenter",
+    "url": "https://clawhub.ai/skills/memory-defragmenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-defragmenter-f7d475ce8e6f0b88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Defragment and optimize agent memory files by cleaning duplicates, merging similar entries, archiving stale content, and ensuring proper tiering. Use when: (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klemenska",
+      "userId": "s17ej3c36s8g4re8b70mnsye3583kz6q",
+      "displayName": "klemenska",
+      "image": "https://avatars.githubusercontent.com/u/62469076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774473889343,
+      "changelog": "- Improved logic in defragment.py for more accurate memory file optimization.\n- verify_memory.py updated with enhanced integrity checks and reporting.\n- Minor cleanups and reliability enhancements for defragmentation execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5222fa02ea6cce94ad8a211fe95fe28a463b735e2c3fa8371ddd375a66c53356"
+}

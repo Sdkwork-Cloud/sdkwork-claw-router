@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memocap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memocap",
+  "skill": {
+    "id": 71161,
+    "skillKey": "clawhub-memocap",
+    "name": "忆时"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memocap",
+    "url": "https://clawhub.ai/skills/memocap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memocap-2c3693c5852fb2a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎋 记忆胶囊系统 - 模拟人类记忆检索 | 自动加载，主动联想记忆"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777797808316,
+      "changelog": "首次发布 - 记忆胶囊系统，模拟人类记忆检索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e98ac87ade0a318bbfea3a952dfa5a0d406af9bfbabf69bc2202d2808875b67"
+}

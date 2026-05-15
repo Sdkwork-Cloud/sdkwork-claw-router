@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12210,
+  "uuid": "skill-clawhub-pdf-co",
+  "skillKey": "clawhub-pdf-co",
+  "name": "PDF.co",
+  "summary": "PDF.co API integration with managed OAuth. Convert, merge, split, edit PDFs and extract data. Use this skill when users want to convert PDFs to/from other fo...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_co",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "PDF.co API integration with managed OAuth",
+        "Convert, merge, split, edit PDFs and extract data",
+        "Use this skill when users want to convert PDFs to/from other fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-co@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-co",
+      "url": "https://clawhub.ai/skills/pdf-co"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-co",
+    "url": "https://clawhub.ai/skills/pdf-co",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-co-ede6aaaf6cf5875a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-co@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-co-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa7dab4dae91a43290104b4c034064598fe9bf819f7f571edc0212da49e86946",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:37:21.818Z"
+}

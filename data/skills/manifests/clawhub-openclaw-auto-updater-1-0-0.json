@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41808,
+  "uuid": "skill-clawhub-openclaw-auto-updater-1-0-0",
+  "skillKey": "clawhub-openclaw-auto-updater-1-0-0",
+  "name": "Openclaw Auto Updater 1.0.0",
+  "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_updater_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "q262045312-ui",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily",
+        "Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-updater-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245663412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-updater-1-0-0",
+      "url": "https://clawhub.ai/skills/openclaw-auto-updater-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-updater-1-0-0",
+    "url": "https://clawhub.ai/skills/openclaw-auto-updater-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-updater-1-0-0-4aa3562f6b7c9581.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-updater-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-updater-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01187cf5500c9a490be7f54acf30cb69db3a4d5aa5a69e66a5c6d3b5178e4408",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:19:58.586Z"
+}

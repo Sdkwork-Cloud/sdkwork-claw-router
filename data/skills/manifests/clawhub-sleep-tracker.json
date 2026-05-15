@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58788,
+  "uuid": "skill-clawhub-sleep-tracker",
+  "skillKey": "clawhub-sleep-tracker",
+  "name": "Sleep Tracker",
+  "summary": "睡眠改善工具。睡眠分析、改善建议、作息规划、睡眠环境优化、小睡指南、睡眠日记。Sleep tracker with analysis, improvement tips, schedule planning, environment optimization, nap guide.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "睡眠改善工具。睡眠分析、改善建议、作息规划、睡眠环境优化、小睡指南、睡眠日记。Sleep tracker with analysis, improvement tips, schedule."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sleep-tracker@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sleep-tracker",
+      "url": "https://clawhub.ai/skills/sleep-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-tracker",
+    "url": "https://clawhub.ai/skills/sleep-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-tracker-f10e2c1d3c75f751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sleep-tracker@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sleep-tracker-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55d0dc92cd3530dd00155c7626d1dda5b175b699cff2b4ff689e5c083bd16a25",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:50:30.316Z"
+}

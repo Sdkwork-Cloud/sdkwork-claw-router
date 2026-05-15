@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-task-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_task_reminder",
+  "skill": {
+    "id": 23766,
+    "skillKey": "clawhub-openclaw-task-reminder",
+    "name": "Openclaw Task Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-task-reminder",
+    "url": "https://clawhub.ai/skills/openclaw-task-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-task-reminder-0c070696d0d3ef13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple task reminder for OpenClaw agents. Create, list, and manage tasks with priority levels. Use for tracking to-dos and getting reminders for important wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773925412492,
+      "changelog": "openclaw-task-reminder 1.0.0\n\n- Initial release with essential task management features for OpenClaw agents.\n- Add, list, and manage tasks with high, medium, or low priority.\n- Mark tasks as done and clear completed tasks.\n- Persistent storage ensures your to-dos stay organized.\n- Simple CLI for fast, effective task tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb28accdf7e724d5811e1a302d4f6c66095ca64f03dabf466ac3b3a50ff7c0aa"
+}

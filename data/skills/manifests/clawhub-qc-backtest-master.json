@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51147,
+  "uuid": "skill-clawhub-qc-backtest-master",
+  "skillKey": "clawhub-qc-backtest-master",
+  "name": "Qc Backtest Master",
+  "summary": "QuantConnect automated backtest pipeline — submit local strategies, compile, execute, monitor with early-stop, and download results in one command.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qc_backtest_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tltby12341",
+      "features": [
+        "QuantConnect automated backtest pipeline — submit local strategies, compile, execute, monitor w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qc-backtest-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30487767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qc-backtest-master",
+      "url": "https://clawhub.ai/skills/qc-backtest-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qc-backtest-master",
+    "url": "https://clawhub.ai/skills/qc-backtest-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qc-backtest-master-6399c9f1534a76b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qc-backtest-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qc-backtest-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:258cde65107cfc7a6dd681a3ac9744652ed0d0a17baa7732e24a74a373cb38eb",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:20:36.097Z"
+}

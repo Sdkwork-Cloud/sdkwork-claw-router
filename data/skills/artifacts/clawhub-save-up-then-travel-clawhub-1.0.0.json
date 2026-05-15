@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-up-then-travel-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_up_then_travel_clawhub",
+  "skill": {
+    "id": 72239,
+    "skillKey": "clawhub-save-up-then-travel-clawhub",
+    "name": "攒够了去旅行"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-up-then-travel-clawhub",
+    "url": "https://clawhub.ai/skills/save-up-then-travel-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-up-then-travel-clawhub-a3d9fc2a353e2ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个围绕\"攒够了，就去旅行\"的旅行积分奖励 skill。只在用户想记录今天的一次高能量行为、想把努力转换成旅行积分、想查看离 50/100/300 分旅行目标还差多少、或想查看自己的积分记录与旅行进度时触发。不要用于机票酒店预订、旅行攻略、路线规划、签证咨询、普通人生建议或泛化的奖励池推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyikoi",
+      "userId": "s17a98te59fgza3ns6rs8sd4w183kr6g",
+      "displayName": "keyikoi",
+      "image": "https://avatars.githubusercontent.com/u/135075047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775051960745,
+      "changelog": "Initial release: A focused travel-points reward skill for turning daily high-energy actions into travel progress.\n\n- 记录并奖励用户每日高能量行为，自动发放旅行积分\n- 清晰显示当前累计积分及距离 50/100/300 分的旅行目标进度\n- 积分规则与奖励层级全部围绕旅行，拒绝泛化奖励与普通人生建议\n- 优先提供可点击交互链接入口，配合温柔、确认式文本反馈\n- 每次响应包含行为确认、获得积分、当前进度、情绪强化四部分",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39d7f56bde6d6f497ddaa71b92c8f21f541073a2e15e94fca28cc0a2c082e90e"
+}

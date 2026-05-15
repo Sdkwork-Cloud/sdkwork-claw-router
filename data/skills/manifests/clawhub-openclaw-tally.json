@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50466,
+  "uuid": "skill-clawhub-openclaw-tally",
+  "skillKey": "clawhub-openclaw-tally",
+  "name": "openclaw-tally",
+  "summary": "Tokens tell you how much you paid. Tasks tell you what you got. Tally tracks every OpenClaw task from start to finish — cost, complexity, and efficiency score.",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tally",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Jing",
+      "features": [
+        "Tokens tell you how much you paid",
+        "Tasks tell you what you got",
+        "Tally tracks every OpenClaw task from start to finish — cost, complexity, and efficiency score."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-tally@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17068507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-tally",
+      "url": "https://clawhub.ai/skills/openclaw-tally"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tally",
+    "url": "https://clawhub.ai/skills/openclaw-tally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tally-87c54eb7cb97bbe3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-tally@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-tally-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af93df383ec169094bf14d56e83a203154efa359ec8296b51b1f1267424004b9",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T00:35:41.930Z"
+}

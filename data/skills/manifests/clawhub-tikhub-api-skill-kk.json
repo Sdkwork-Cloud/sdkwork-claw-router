@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61158,
+  "uuid": "skill-clawhub-tikhub-api-skill-kk",
+  "skillKey": "clawhub-tikhub-api-skill-kk",
+  "name": "TikHub API 工具(KK版)",
+  "summary": "TikHub API 多平台数据爬取工具，支持抖音/TikTok/B站等。当用户提到：(1) 爬取抖音/TikTok/B站视频或评论；(2) 获取用户信息/粉丝列表；(3) 批量下载无水印视频；(4) 抖音链接转文字（下载→音频→Whisper pipeline）；(5) 调用 TikHub API。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tikhub_api_skill_kk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kk.Tang",
+      "features": [
+        "TikHub API 多平台数据爬取工具，支持抖音/TikTok/B站等。当用户提到：(1) 爬取抖音/TikTok/B站视频或评论；(2) 获取用户信息/粉丝列表；(3) 批量下载无水印视."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tikhub-api-skill-kk@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129717525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tikhub-api-skill-kk",
+      "url": "https://clawhub.ai/skills/tikhub-api-skill-kk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tikhub-api-skill-kk",
+    "url": "https://clawhub.ai/skills/tikhub-api-skill-kk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tikhub-api-skill-kk-ba5ced9b570a8393.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tikhub-api-skill-kk@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tikhub-api-skill-kk-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7232325d14da18874d308b78e9589b3d295d85acd71b0b795efb3218b521d9d3",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:44:19.040Z"
+}

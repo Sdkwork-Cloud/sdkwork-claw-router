@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70486,
+  "uuid": "skill-clawhub-analizy-ru",
+  "skillKey": "clawhub-analizy-ru",
+  "name": "Analizy Ru",
+  "summary": "Расшифруй результаты медицинских анализов, объясни отклонения от нормы и подскажи на что обратить внимание врачу.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analizy_ru",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aggel008",
+      "features": [
+        "Расшифруй результаты медицинских анализов, объясни отклонения от нормы и подскажи на что обрати."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analizy-ru@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161417766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analizy-ru",
+      "url": "https://clawhub.ai/skills/analizy-ru"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analizy-ru",
+    "url": "https://clawhub.ai/skills/analizy-ru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analizy-ru-737d627b7040cefa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analizy-ru@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-analizy-ru-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a5cb7ac6a8b5ffd62132c883680534bf12843f65b82c64d4a31d8c90330f913",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T09:42:47.496Z"
+}

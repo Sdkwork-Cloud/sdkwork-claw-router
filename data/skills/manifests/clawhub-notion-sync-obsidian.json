@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61890,
+  "uuid": "skill-clawhub-notion-sync-obsidian",
+  "skillKey": "clawhub-notion-sync-obsidian",
+  "name": "Notion Sync Obsidian",
+  "summary": "自动将Notion文章同步到本地Obsidian目录，支持定时检查、完整内容导出、智能标题提取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_sync_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hawkvan",
+      "features": [
+        "自动将Notion文章同步到本地Obsidian目录，支持定时检查、完整内容导出、智能标题提取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-sync-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121496864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-sync-obsidian",
+      "url": "https://clawhub.ai/skills/notion-sync-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-sync-obsidian",
+    "url": "https://clawhub.ai/skills/notion-sync-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-sync-obsidian-fa77904879f5a9ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-sync-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-sync-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3ee4852152a1a4f78c116a0c7d136a1ab2bcfceae2d850f21952284a23e145b",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T08:05:07.017Z"
+}

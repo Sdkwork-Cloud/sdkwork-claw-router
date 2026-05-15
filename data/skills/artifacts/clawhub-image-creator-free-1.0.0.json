@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-creator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_creator_free",
+  "skill": {
+    "id": 37062,
+    "skillKey": "clawhub-image-creator-free",
+    "name": "Image Creator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-creator-free",
+    "url": "https://clawhub.ai/skills/image-creator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-creator-free-11e9cda829ca8f74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create text or images into generated image videos with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. content creators use it for creating vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776598388201,
+      "changelog": "Image Creator Free 1.0.0 — Initial Release\n\n- Generate 1080p MP4 videos from uploaded or AI-generated images (JPG, PNG, WEBP, GIF, up to 200MB).\n- Simple cloud-based setup: automatic token and session management for new users.\n- Supports quick, demo-friendly workflows with fast cloud GPU processing (30–60s typical per job).\n- Includes commands for uploading, editing, checking credits, status, and exporting videos.\n- Shows clear error messages for file size/type issues, credit problems, and connectivity errors.\n- Exports high-quality videos and image/audio formats for easy content creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:061e441a4be4d001641619714c5677e6dd66db6f776fa483f525deab3d8c1961"
+}

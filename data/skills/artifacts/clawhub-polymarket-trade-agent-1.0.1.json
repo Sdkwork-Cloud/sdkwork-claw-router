@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-trade-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_trade_agent",
+  "skill": {
+    "id": 17452,
+    "skillKey": "clawhub-polymarket-trade-agent",
+    "name": "Polymarket Trade Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-trade-agent",
+    "url": "https://clawhub.ai/skills/polymarket-trade-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-trade-agent-7cf9c735d17754c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on Polymarket by researching markets, analyzing event probabilities, managing USDC balance, and executing buy/sell orders with risk-controlled position..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanswuhan",
+      "userId": "publishers:hanswuhan",
+      "displayName": "Han Wu",
+      "image": "https://avatars.githubusercontent.com/u/20180151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772434919147,
+      "changelog": "Polymarket Trade Agent Skill v1.0.1\n\n- Added _meta.json file for additional skill metadata.\n- Updated trade.py (details not specified).\n- No changes to user commands or documentation.\n- Minor internal updates; all existing features and setup remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95e72401c007dd4a3f528c96d1ddde42209be6c62da6157776528c196bf6c2eb"
+}

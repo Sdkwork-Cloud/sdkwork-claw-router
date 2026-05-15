@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-lvjunjie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_lvjunjie",
+  "skill": {
+    "id": 41587,
+    "skillKey": "clawhub-find-skills-lvjunjie",
+    "name": "Find Skills Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-lvjunjie",
+    "url": "https://clawhub.ai/skills/find-skills-lvjunjie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-lvjunjie-9432ae073f50f1b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvjunjie-byte",
+      "userId": "s17f7spafdf99xa1wkgwbztec183t877",
+      "displayName": "lvjunjie-byte",
+      "image": "https://avatars.githubusercontent.com/u/59714416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167557168,
+      "changelog": "- Initial release of the \"find-skills\" skill.\n- Helps users discover and install agent skills for extending capabilities.\n- Provides guidance on using the Skills CLI to search for, install, and update skills.\n- Outlines common use cases, example queries, and suggestions when no skill is found.\n- Includes tips for effective skill searches and instructions for creating custom skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2602970bc4c4d87e7cae268f8707a90344c021465cd44896b327a74f9f58499e"
+}

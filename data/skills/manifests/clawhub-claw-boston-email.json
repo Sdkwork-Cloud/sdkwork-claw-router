@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57508,
+  "uuid": "skill-clawhub-claw-boston-email",
+  "skillKey": "clawhub-claw-boston-email",
+  "name": "FREE EMAIL from @claw.boston 一键获取免费原生OpenClaw邮箱",
+  "summary": "Give your OpenClaw a real email address at @claw.boston. Send and receive emails with attachments, search your inbox, get notified of new messages. Setup tak...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_boston_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xcs",
+      "features": [
+        "Give your OpenClaw a real email address at @claw.boston",
+        "Send and receive emails with attachments, search your inbox, get notified of new messages",
+        "Setup tak..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-boston-email@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25174530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-boston-email",
+      "url": "https://clawhub.ai/skills/claw-boston-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-boston-email",
+    "url": "https://clawhub.ai/skills/claw-boston-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-boston-email-2c51f60abc7f1e2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-boston-email@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-boston-email-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ec8a6217eb2091f72a309dc5c978b649d969d4b194b2cd87cf99de115653106",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:23:46.720Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/continuity@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuity",
+  "skill": {
+    "id": 10505,
+    "skillKey": "clawhub-continuity",
+    "name": "Continuity Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuity",
+    "url": "https://clawhub.ai/skills/continuity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuity-0adc36057cef79f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Asynchronous reflection and memory integration for genuine AI development. Use on heartbeat to reflect on recent sessions, extract structured memories with confidence scores, generate follow-up questions, and surface those questions when t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "riley-coyote",
+      "userId": "publishers:riley-coyote",
+      "displayName": "Riley-Coyote",
+      "image": "https://avatars.githubusercontent.com/u/130717859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2482,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770271746741,
+      "changelog": "Initial public release - transforms passive memory into active AI development through asynchronous reflection, structured memory extraction, question generation, and identity evolution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:679d0406ecfe81b00d7c7bed7c49e04f3f8358dbc15f3870f0dd5b95a69173c5"
+}

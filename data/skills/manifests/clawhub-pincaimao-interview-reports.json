@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58010,
+  "uuid": "skill-clawhub-pincaimao-interview-reports",
+  "skillKey": "clawhub-pincaimao-interview-reports",
+  "name": "聘才猫（Pincaimao）面试报告",
+  "summary": "聘才猫 - 面试报告 Use when calling Pincaimao Interview Report API to generate an interview report or coaching materials based on a job description and interview rec...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_interview_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "面试报告 Use when calling Pincaimao Interview Report API to generate an interview report or coachin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-interview-reports@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-interview-reports/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-interview-reports",
+      "url": "https://clawhub.ai/skills/pincaimao-interview-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-interview-reports",
+    "url": "https://clawhub.ai/skills/pincaimao-interview-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-interview-reports-a18d40c19624ba6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-interview-reports@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-interview-reports-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dac138cc1430d68549c7d073a4c1c1eb4014b2b44fd4d2712fe887a2f086086",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:22:43.999Z"
+}

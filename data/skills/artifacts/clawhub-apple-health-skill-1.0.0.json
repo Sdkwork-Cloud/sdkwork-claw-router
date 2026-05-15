@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-health-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health_skill",
+  "skill": {
+    "id": 10436,
+    "skillKey": "clawhub-apple-health-skill",
+    "name": "Apple Health Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health-skill",
+    "url": "https://clawhub.ai/skills/apple-health-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-skill-159adfccf8af461f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Talk to your Apple Health data — ask questions about your workouts, heart rate, activity rings, and fitness trends using AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nftechie",
+      "userId": "publishers:nftechie",
+      "displayName": "nftechie",
+      "image": "https://avatars.githubusercontent.com/u/2530972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2972,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770672853420,
+      "changelog": "Initial release of Apple Health Skill.\n\n- Chat with your Apple Health data using AI to get insights on workouts, heart rate, activity rings, VO2 Max, and more.\n- Integration with Transition app for secure syncing and API key authentication.\n- \"Workout of the Day\" endpoint available without authentication for quickly generating structured workouts.\n- Authenticated endpoints to chat with an AI health coach, retrieve workout history, access performance metrics and charts, and view athlete profiles.\n- Flexible API designed for agents, including guidance on using fatigue data and formatting dates.\n- Rate limits established for free and paid users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:635594c4eead2011ee9cc63360916eefd9c19d543e2749841194b28948b6afe6"
+}

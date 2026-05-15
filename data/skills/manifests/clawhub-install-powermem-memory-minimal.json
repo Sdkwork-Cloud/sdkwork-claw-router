@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59590,
+  "uuid": "skill-clawhub-install-powermem-memory-minimal",
+  "skillKey": "clawhub-install-powermem-memory-minimal",
+  "name": "Install Powermem Memory Minimal",
+  "summary": "memory-powermem 最小安装步骤（OpenClaw + PowerMem 长期记忆），面向个人用户；无需单独配置 powermem.env，复用 OpenClaw 里已配好的对话模型。本 skill 可独立分发，不依赖其他安装类 skill。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_powermem_memory_minimal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "powermem",
+      "features": [
+        "memory-powermem 最小安装步骤（OpenClaw + PowerMem 长期记忆），面向个人用户；无需单独配置 powermem.env，复用 OpenClaw 里已配好的对话."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/install-powermem-memory-minimal@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35712518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "install-powermem-memory-minimal",
+      "url": "https://clawhub.ai/skills/install-powermem-memory-minimal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-powermem-memory-minimal",
+    "url": "https://clawhub.ai/skills/install-powermem-memory-minimal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-powermem-memory-minimal-78da41e7b82a51cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/install-powermem-memory-minimal@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-install-powermem-memory-minimal-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8004add467832bfcb8ff8e598f66c0d7893000c7200a003ec5eb77b39155eef4",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:28:15.196Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70651,
+  "uuid": "skill-clawhub-snowflake-com",
+  "skillKey": "clawhub-snowflake-com",
+  "name": "Snowflake Com",
+  "summary": "提供基于云的多云数据仓库和数据湖平台，支持弹性计算、零拷贝数据共享及按需付费，助力企业数据应用和分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snowflake_com",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供基于云的多云数据仓库和数据湖平台，支持弹性计算、零拷贝数据共享及按需付费，助力企业数据应用和分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snowflake-com@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snowflake-com",
+      "url": "https://clawhub.ai/skills/snowflake-com"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snowflake-com",
+    "url": "https://clawhub.ai/skills/snowflake-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snowflake-com-5d5d0e57bb4c7078.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snowflake-com@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snowflake-com-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52af1c90a8ddf50aeaa0313eff3b3ce81d312a53e01563ec5b0bbdbcefacd410",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T20:05:14.864Z"
+}

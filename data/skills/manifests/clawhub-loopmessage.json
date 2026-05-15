@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30533,
+  "uuid": "skill-clawhub-loopmessage",
+  "skillKey": "clawhub-loopmessage",
+  "name": "Loopmessage",
+  "summary": "LoopMessage integration. Manage Users, Organizations. Use when the user wants to interact with LoopMessage data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loopmessage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "LoopMessage integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with LoopMessage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loopmessage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loopmessage",
+      "url": "https://clawhub.ai/skills/loopmessage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loopmessage",
+    "url": "https://clawhub.ai/skills/loopmessage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loopmessage-23ef25cec1d83811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loopmessage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-loopmessage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:156512921a56dd7adcf9b48c5327f434f1250bf855b6d59dca1172caf872dc9e",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:42:37.032Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toronto-ca@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toronto_ca",
+  "skill": {
+    "id": 70520,
+    "skillKey": "clawhub-toronto-ca",
+    "name": "Toronto Ca"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toronto-ca",
+    "url": "https://clawhub.ai/skills/toronto-ca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toronto-ca-bb0eea3989a01f67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供多伦多旅游、文化、餐饮、住宿和交通等实用信息，助您规划加拿大最大城市旅行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295654502,
+      "changelog": "Changelog for toronto-ca v1.0.1\n\n- Updated SKILL.md content to focus on general \"toronto-ca\" information, replacing detailed tourism and lifestyle content specific to Toronto.\n- Added sections for brand history, business overview, market distribution, and competitive landscape.\n- Revised usage scenarios for broader informational and business contexts.\n- Clarified summary and navigation for easier access to key topics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5eb3149b5a3d6c74a182049b5d4287766d766fdfe1091aa52413ce8ce33bde0"
+}

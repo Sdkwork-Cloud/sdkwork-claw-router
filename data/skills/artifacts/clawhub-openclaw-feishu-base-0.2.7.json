@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-base@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_base",
+  "skill": {
+    "id": 29480,
+    "skillKey": "clawhub-openclaw-feishu-base",
+    "name": "Feishu Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-base",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-base-b0d23cab777044d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified Feishu Base/Bitable management for OpenClaw. Use when you need to inspect Base schema, manage tables/fields, or query/create/update/delete records in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "systransform88",
+      "userId": "s17ajckgzk7fkakszpe921xp2583xkc6",
+      "displayName": "systransform88",
+      "image": "https://avatars.githubusercontent.com/u/269083037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1777531721150,
+      "changelog": "Add discover_tables action, allow list_bases discovery without query, and improve fuzzy table discovery for self-discoverable scans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e874b5e4dfbb75964c6ca40e4e24545d50b49985297697d94ca6aca33258ae6"
+}

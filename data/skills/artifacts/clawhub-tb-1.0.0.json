@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tb",
+  "skill": {
+    "id": 62466,
+    "skillKey": "clawhub-tb",
+    "name": "Teambition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tb",
+    "url": "https://clawhub.ai/skills/tb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tb-7aa5ae9ecf82f6fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "连接和管理 Teambition（项目管理系统），通过 Teambition MCP 服务实现任务、项目、成员等数据查询和管理。当用户提到 Teambition、项目管理、任务管理等时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeandoom",
+      "userId": "s1740hxyqyvf17xfbaj7vverrd83z80p",
+      "displayName": "Rainco",
+      "image": "https://avatars.githubusercontent.com/u/20264327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774961302870,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8fe9eb95dab4abd9c736b0f33aeed24f4ddba77a30510198f68a59641f176bf"
+}

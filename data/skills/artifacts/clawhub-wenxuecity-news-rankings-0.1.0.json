@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wenxuecity-news-rankings@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenxuecity_news_rankings",
+  "skill": {
+    "id": 31596,
+    "skillKey": "clawhub-wenxuecity-news-rankings",
+    "name": "Wenxuecity News Rankings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenxuecity-news-rankings",
+    "url": "https://clawhub.ai/skills/wenxuecity-news-rankings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenxuecity-news-rankings-33a4e050cf34a0d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and format Wenxuecity News rankings from https://www.wenxuecity.com/news/, specifically the two 24-hour lists (hot ranking and discussion ranking). Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonyguo2010",
+      "userId": "s176316x4n2c18r9cv9cq574gx83penm",
+      "displayName": "tonyguo2010",
+      "image": "https://avatars.githubusercontent.com/u/17005666?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773533086225,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b4aeb0810d46c4613b6ccf57aa199b6c44e3c1ab19b607476bbc62056b4dac3"
+}

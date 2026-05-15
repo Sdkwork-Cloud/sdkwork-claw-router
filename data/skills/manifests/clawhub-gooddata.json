@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35581,
+  "uuid": "skill-clawhub-gooddata",
+  "skillKey": "clawhub-gooddata",
+  "name": "Gooddata",
+  "summary": "GoodData integration. Manage data, records, and automate workflows. Use when the user wants to interact with GoodData data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gooddata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GoodData integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with GoodData data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gooddata@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gooddata",
+      "url": "https://clawhub.ai/skills/gooddata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gooddata",
+    "url": "https://clawhub.ai/skills/gooddata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gooddata-f694c65c5b9b857f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gooddata@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gooddata-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1def7d30ed392baf65f3af70df188d08d89b96d24eab91563dd195b5b1a86e81",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:53.266Z"
+}

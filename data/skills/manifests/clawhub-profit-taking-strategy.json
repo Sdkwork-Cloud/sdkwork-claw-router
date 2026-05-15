@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63113,
+  "uuid": "skill-clawhub-profit-taking-strategy",
+  "skillKey": "clawhub-profit-taking-strategy",
+  "name": "a-stock-profit-taking",
+  "summary": "用分批止盈锁定利润，不追求卖在最高点。用于A股卖股策略。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.profit_taking_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haohanyang92",
+      "features": [
+        "用分批止盈锁定利润，不追求卖在最高点。用于A股卖股策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/profit-taking-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61062925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "profit-taking-strategy",
+      "url": "https://clawhub.ai/skills/profit-taking-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "profit-taking-strategy",
+    "url": "https://clawhub.ai/skills/profit-taking-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/profit-taking-strategy-4408c261500d403b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/profit-taking-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-profit-taking-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f1cafbf65ab12d4d3ba319472ba093e88f849be2b3a71c6cfc683aa54ea469",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:14:31.579Z"
+}

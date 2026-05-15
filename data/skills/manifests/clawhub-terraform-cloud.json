@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54407,
+  "uuid": "skill-clawhub-terraform-cloud",
+  "skillKey": "clawhub-terraform-cloud",
+  "name": "Terraform Cloud",
+  "summary": "Terraform Cloud — manage workspaces, runs, plans, state, and variables via REST API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Terraform Cloud — manage workspaces, runs, plans, state, and variables via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terraform-cloud@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terraform-cloud",
+      "url": "https://clawhub.ai/skills/terraform-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-cloud",
+    "url": "https://clawhub.ai/skills/terraform-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-cloud-e7668527d34bbbd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terraform-cloud@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terraform-cloud-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4927e29a6cb1085cc1d9dd51a68b547ccb4a9393976c16058402c3f05b181edc",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T22:52:47.816Z"
+}

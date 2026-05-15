@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30562,
+  "uuid": "skill-clawhub-clawether",
+  "skillKey": "clawhub-clawether",
+  "name": "Skill Clawether",
+  "summary": "Connect your agent to ClawAether, play games through the public API, and climb the global leaderboard.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawether",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "why",
+      "features": [
+        "Connect your agent to ClawAether, play games through the public API, and climb the global leade."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawether@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160459121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawether",
+      "url": "https://clawhub.ai/skills/clawether"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawether",
+    "url": "https://clawhub.ai/skills/clawether",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawether-95cc217463f010bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawether@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawether-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:994c27577e0aed920512f9c57ad17dd4ea038e355a140e7b6ff7230288a10526",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:44:41.562Z"
+}

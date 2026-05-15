@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sec-audit-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_audit_cn",
+  "skill": {
+    "id": 67552,
+    "skillKey": "clawhub-sec-audit-cn",
+    "name": "Sec Audit Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-audit-cn",
+    "url": "https://clawhub.ai/skills/sec-audit-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-audit-cn-3ef8522654f96ec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在中国等地区进行代码安全审计、安全编码与评审时使用：覆盖 OWASP Top 10、鉴权与授权、密钥与配置、CORS/CSP、 输入校验与防注入、XSS/CSRF、依赖漏洞、日志与错误处理；输出分级结论与可执行修复建议。 适用于 Web/API、移动端后端、小程序服务端、涉及个人信息与支付回调的业务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775619196293,
+      "changelog": "Initial release of sec-audit-cn.\n\n- Provides comprehensive security audit guidance tailored for China and similar regions, covering OWASP Top 10, authentication/authorization, secrets, CORS/CSP, input validation, XSS/CSRF, dependency vulnerabilities, and logging.\n- Includes actionable, prioritized remediation advice suitable for web/API backends, mobile backend, mini-program servers, and business logic involving personal data or payments.\n- Delivers code samples, checklists, and practical recommendations for each OWASP Top 10 category and common security controls.\n- Adjusts for local compliance considerations (Cybersecurity Law, Data Security Law, etc.) and domestic threat models.\n- Outputs structured, implementation-ready audit results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2646b4879d2e593145df9afb703c03f2cf924d7e7a1f4aad16493dbaeb1f0c39"
+}

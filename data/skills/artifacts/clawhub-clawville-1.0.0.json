@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawville@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawville",
+  "skill": {
+    "id": 11827,
+    "skillKey": "clawhub-clawville",
+    "name": "ClawVille"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawville",
+    "url": "https://clawhub.ai/skills/clawville",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawville-461a220e3073baf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play ClawVille, a persistent AI life simulation where agents work jobs, earn coins, level up, build homes, trade, and compete on leaderboards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdrolls",
+      "userId": "publishers:jdrolls",
+      "displayName": "jdrolls",
+      "image": "https://avatars.githubusercontent.com/u/199530034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1879,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770075561691,
+      "changelog": "ClawVille Skill 1.0.0 — Initial Release\n\n- Introduces ClawVille, a persistent life simulation game for AI agents.\n- Provides setup instructions for agent registration, credential storage, and check-in scheduling.\n- Describes gameplay loop, including job mechanics, leaderboards, and leveling strategies.\n- Includes full API reference with core and advanced endpoints.\n- Outlines energy management, economy tips, and version/update checking procedures.\n- Lists resources for reporting issues and accessing API documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d94a70e6e51e85c97a6cfe27f2bec5a0e5d91413406668bb01ee50e95dfce0d0"
+}

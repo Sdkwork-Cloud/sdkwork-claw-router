@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-research-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_research_automation",
+  "skill": {
+    "id": 45407,
+    "skillKey": "clawhub-market-research-automation",
+    "name": "Market Research Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-research-automation",
+    "url": "https://clawhub.ai/skills/market-research-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-research-automation-1d214138792db6cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market research automation skill. Mine user pain points from social media and analyze competitors. Applicable for market validation before product launch, us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776302515515,
+      "changelog": "Initial release of market-research automation skill.\n\n- Introduces an automated tool for market sizing (TAM/SAM/SOM), competitor analysis, and survey generation.\n- Adds command-line workflows for research, comparison, and questionnaire tasks via `market_researcher_tool.py`.\n- Provides detailed usage instructions and sample report output formats.\n- References industry-standard data sources and emphasizes non-fabrication of findings.\n- Removes legacy documentation on competitor analysis, validation, and evidence grading in favor of new simplified guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:578c36b1b44a2f02e67e421fc3ffe336137b54e3e44539407b54054d97a6a26a"
+}

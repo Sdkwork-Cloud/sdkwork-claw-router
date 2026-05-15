@@ -1,308 +1,51 @@
 # clawrouter-app-sdk
 
-SDKWork Claw Router app API SDK
+SDKWork Claw Router app API SDK.
 
-## Installation
+This directory is the SDK family workspace for one OpenAPI surface. Language SDKs live under this family root instead of directly under `sdks/`.
 
-```bash
-npm install @sdkwork/clawrouter-app-sdk
-# or
-yarn add @sdkwork/clawrouter-app-sdk
-# or
-pnpm add @sdkwork/clawrouter-app-sdk
-```
+## Workspace Layout
 
-## Quick Start
+- Authority contract: `openapi/clawrouter-app-sdk.openapi.json`
+- Derived sdkgen contract: `openapi/clawrouter-app-sdk.sdkgen.json`
+- Assembly snapshot: `.sdkwork-assembly.json`
+- TypeScript workspace: `clawrouter-app-sdk-typescript`
+- Other language workspaces: `<family>-<language>/generated/server-openapi`
+- Family generator: `bin/generate-sdk.mjs`
+- Family verifier: `bin/verify-sdk.mjs`
 
-```typescript
-import { SdkworkAppClient } from '@sdkwork/clawrouter-app-sdk';
+## Official Languages
 
-const client = new SdkworkAppClient({
-  baseUrl: 'http://localhost:18082',
-  timeout: 30000,
-});
+- `typescript`
+- `flutter`
+- `rust`
+- `java`
+- `csharp`
+- `swift`
+- `kotlin`
+- `go`
+- `python`
 
-// Mode A: API Key (recommended for server-to-server calls)
-client.setApiKey('your-api-key');
+## TypeScript
 
-// Use the SDK
-const result = await client.app.getCategories();
-```
+The materialized TypeScript package is `@sdkwork/clawrouter-app-sdk` and lives under `clawrouter-app-sdk-typescript`. Hand-written extensions stay inside `clawrouter-app-sdk-typescript/custom`.
 
-## Authentication Modes (Mutually Exclusive)
+TypeScript is the workspace dependency consumed by the portal. Other languages are generated under their own language workspace and use `generated/server-openapi` as the generator-owned transport boundary.
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```typescript
-const client = new SdkworkAppClient({ baseUrl: 'http://localhost:18082' });
-client.setApiKey('your-api-key');
-// Sends: Authorization: Bearer <apiKey>
-```
-
-### Mode B: Dual Token
-
-```typescript
-const client = new SdkworkAppClient({ baseUrl: 'http://localhost:18082' });
-client.setAuthToken('your-auth-token');
-client.setAccessToken('your-access-token');
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
-
-## Configuration (Non-Auth)
-
-```typescript
-import { SdkworkAppClient } from '@sdkwork/clawrouter-app-sdk';
-
-const client = new SdkworkAppClient({
-  baseUrl: 'http://localhost:18082',
-  timeout: 30000, // Request timeout in ms
-  headers: {      // Custom headers
-    'X-Custom-Header': 'value',
-  },
-});
-```
-
-## API Modules
-
-- `client.account` - account API
-- `client.app` - app API
-- `client.auth` - auth API
-- `client.comment` - comment API
-- `client.coupon` - coupon API
-- `client.feed` - feed API
-- `client.notification` - notification API
-- `client.payment` - payment API
-- `client.playground` - playground API
-- `client.router` - router API
-- `client.skill` - skill API
-- `client.user` - user API
-- `client.vip` - vip API
-
-## Usage Examples
-
-### account
-
-```typescript
-// List account details
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.account.fetchAccountDetails(params);
-```
-
-### app
-
-```typescript
-// Get categories
-const result = await client.app.getCategories();
-```
-
-### auth
-
-```typescript
-// Create app session
-const body = {};
-const xRequestId = 'X-Request-Id';
-const result = await client.auth.createAppSession(body, xRequestId);
-```
-
-### comment
-
-```typescript
-// List my forum comments
-const params = {
-  page: 1,
-  size: 2,
-  limit: 3,
-};
-const result = await client.comment.fetchMyForumComments(params);
-```
-
-### coupon
-
-```typescript
-// List redeem history
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.coupon.fetchRedeemHistory(params);
-```
-
-### feed
-
-```typescript
-// List forum feed categories
-const result = await client.feed.fetchForumFeedCategories();
-```
-
-### notification
-
-```typescript
-// List messages
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.notification.fetchMessages(params);
-```
-
-### payment
-
-```typescript
-// List recharge history
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.payment.fetchRechargeHistory(params);
-```
-
-### playground
-
-```typescript
-// List generation history
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.playground.fetchGenerationHistory(params);
-```
-
-### router
-
-```typescript
-// List ranking vendor filters
-const result = await client.router.fetchModelVendors();
-```
-
-### skill
-
-```typescript
-// Get skills
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.skill.getSkills(params);
-```
-
-### user
-
-```typescript
-// List user profile
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.user.fetchUserProfile(params);
-```
-
-### vip
-
-```typescript
-// List packages
-const params = {
-  pageNo: 1,
-  pageSize: 2,
-  keyword: 'keyword',
-  status: 'status',
-  startTime: 'startTime',
-  endTime: 'endTime',
-};
-const result = await client.vip.fetchPackages(params);
-```
-
-## Error Handling
-
-```typescript
-import { SdkworkAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork/clawrouter-app-sdk';
-
-try {
-  const result = await client.app.getCategories();
-} catch (error) {
-  if (error instanceof AuthenticationError) {
-    console.error('Authentication failed:', error.message);
-  } else if (error instanceof TimeoutError) {
-    console.error('Request timed out:', error.message);
-  } else if (error instanceof NetworkError) {
-    console.error('Network error:', error.message);
-  } else {
-    throw error;
-  }
-}
-```
-
-## Publishing
-
-This SDK includes cross-platform publish scripts in `bin/`:
-- `bin/publish-core.mjs`
-- `bin/publish.sh`
-- `bin/publish.ps1`
-
-### Check
+Regenerate this SDK family from the project root:
 
 ```bash
-./bin/publish.sh --action check
+node ./sdks/clawrouter-app-sdk/bin/generate-sdk.mjs
 ```
 
-### Publish
+Regenerate selected languages:
 
 ```bash
-./bin/publish.sh --action publish --channel release
+node ./sdks/clawrouter-app-sdk/bin/generate-sdk.mjs --language typescript --language flutter
 ```
 
-```powershell
-.\bin\publish.ps1 --action publish --channel test --dry-run
+Verify this SDK family from the project root:
+
+```bash
+node ./sdks/clawrouter-app-sdk/bin/verify-sdk.mjs
 ```
-
-> Set `NPM_TOKEN` (and optional `NPM_REGISTRY_URL`) before release publish.
-
-## License
-
-MIT
-
-## Regeneration Contract
-
-- Generator-owned files are tracked in `.sdkwork/sdkwork-generator-manifest.json`.
-- Each run also writes `.sdkwork/sdkwork-generator-changes.json` so automation can inspect created, updated, deleted, unchanged, scaffolded, and backed-up files plus the classified impact areas, verification plan, and execution decision for the latest generation.
-- Apply mode also writes `.sdkwork/sdkwork-generator-report.json` with the full execution report, including `schemaVersion`, `generator`, stable artifact paths, and the execution handoff commands that match CLI `--json` output.
-- CLI JSON output also includes an execution handoff with concrete next commands, including reviewed apply commands for dry-run flows.
-- Put hand-written wrappers, adapters, and orchestration in `custom/`.
-- Files scaffolded under `custom/` are created once and preserved across regenerations.
-- If a generated-owned file was modified locally, its previous content is copied to `.sdkwork/manual-backups/` before overwrite or removal.

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27913,
+  "uuid": "skill-clawhub-daily-reflection",
+  "skillKey": "clawhub-daily-reflection",
+  "name": "Daily Reflection",
+  "summary": "Nightly OpenClaw reflection routine for isolated cron jobs. Analyzes the day, extracts concrete learnings, updates solution memory, detects recurring pattern...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_reflection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Nightly OpenClaw reflection routine for isolated cron jobs",
+        "Analyzes the day, extracts concrete learnings, updates solution memory, detects recurring patte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-reflection@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-reflection",
+      "url": "https://clawhub.ai/skills/daily-reflection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-reflection",
+    "url": "https://clawhub.ai/skills/daily-reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-reflection-928b8a35e4f39970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-reflection@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-reflection-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc5a9103482d90e28ecb3ecc2802bfc8bd8fbca3e1b2d73dc34543240354b904",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:11:30.818Z"
+}

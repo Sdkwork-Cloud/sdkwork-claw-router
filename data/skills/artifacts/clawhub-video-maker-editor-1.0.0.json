@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_editor",
+  "skill": {
+    "id": 35542,
+    "skillKey": "clawhub-video-maker-editor",
+    "name": "Video Maker Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-editor",
+    "url": "https://clawhub.ai/skills/video-maker-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-editor-466f1f3f20c2b7db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into polished edited videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for tur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776615028947,
+      "changelog": "Video Maker Editor — Make and Edit Videos Fast (v1.0.0)\n\n- Initial release: AI-powered video editing tool for content creators and marketers.\n- Edit and export videos (MP4, MOV, AVI, WebM) up to 500MB, with options for cuts, music, and text overlays.\n- Cloud rendering pipeline delivers 1080p MP4 videos in 1–2 minutes.\n- Simple setup with instant anonymous access and session management.\n- Supports prompt-based editing, file uploads, credit checks, and real-time status updates.\n- Robust error handling and helpful workflow tips included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5df7d90108604ec0b1cce93d6937882bfe94f349538e5a8740f0913d2cc5b59"
+}

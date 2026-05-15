@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url2podcast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url2podcast",
+  "skill": {
+    "id": 65196,
+    "skillKey": "clawhub-url2podcast",
+    "name": "url2podcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url2podcast",
+    "url": "https://clawhub.ai/skills/url2podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url2podcast-e746a4df3954cfe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when 需要把网页内容转成双人中文播客，并按脚本逐句参数合成音频后输出成品"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangjinghua0127",
+      "userId": "s172r1btf7y9xywd5xpygdffmh83mcq5",
+      "displayName": "Mr.Yang",
+      "image": "https://avatars.githubusercontent.com/u/27726895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775401163015,
+      "changelog": "podcast-maker 1.0.0\n\n- Initial release of the podcast-maker skill.\n- Converts any web page content into a two-speaker Chinese podcast, with automatic summarization, script generation, and audio synthesis.\n- Fully automated workflow with quality control: structured content extraction, oral dialogue drafting, scoring & rewriting, structured TTS scripting, and audio merging.\n- Ensures output of source_brief.json, podcast_content.md, podcast_script.json, and podcast_final.mp3.\n- Uses Volcano Engine TTS API with strict role, emotion, and process constraints for consistent, high-quality podcast output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1654f70c1b6d678b181571d9776c9b27f8acf0bb7bed9090286c1f0ab0400be5"
+}

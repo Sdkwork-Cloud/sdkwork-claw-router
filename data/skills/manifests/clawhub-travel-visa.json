@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71401,
+  "uuid": "skill-clawhub-travel-visa",
+  "skillKey": "clawhub-travel-visa",
+  "name": "travel-visa",
+  "summary": "面向出境旅行的签证办理咨询与行前核验顾问。适用于用户已知目的国家/地区，希望快速获得签证要求、办理地点与行程衔接建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_visa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "面向出境旅行的签证办理咨询与行前核验顾问。适用于用户已知目的国家/地区，希望快速获得签证要求、办理地点与行程衔接建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-visa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-visa",
+      "url": "https://clawhub.ai/skills/travel-visa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-visa",
+    "url": "https://clawhub.ai/skills/travel-visa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-visa-eacc6b221205fe5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-visa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-visa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5c372a31b46e2ac11bddbff8e505133eb920c5a45998e8debdc0271e0899558",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:28:21.154Z"
+}

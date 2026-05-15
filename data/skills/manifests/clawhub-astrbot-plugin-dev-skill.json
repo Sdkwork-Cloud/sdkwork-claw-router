@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31542,
+  "uuid": "skill-clawhub-astrbot-plugin-dev-skill",
+  "skillKey": "clawhub-astrbot-plugin-dev-skill",
+  "name": "AstrBot plugin dev skill",
+  "summary": "Guide for developing AstrBot plugins that match the AstrBot main repo, pass astr-plugin-reviewer checks, and cover commands, filters, hooks, LLM integrations...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astrbot_plugin_dev_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "若月千鸮",
+      "features": [
+        "Guide for developing AstrBot plugins that match the AstrBot main repo, pass astr-plugin-reviewe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/astrbot-plugin-dev-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40380042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "astrbot-plugin-dev-skill",
+      "url": "https://clawhub.ai/skills/astrbot-plugin-dev-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astrbot-plugin-dev-skill",
+    "url": "https://clawhub.ai/skills/astrbot-plugin-dev-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astrbot-plugin-dev-skill-3fb1d7d144c6303c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/astrbot-plugin-dev-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-astrbot-plugin-dev-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34f5ad82d7cc7795e76c7d1fdbaa658dabf38dbc465f2f1274efe0cc78f94b79",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T12:17:26.211Z"
+}

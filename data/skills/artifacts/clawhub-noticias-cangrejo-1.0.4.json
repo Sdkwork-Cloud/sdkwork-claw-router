@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/noticias-cangrejo@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noticias_cangrejo",
+  "skill": {
+    "id": 15891,
+    "skillKey": "clawhub-noticias-cangrejo",
+    "name": "Noticias Cangrejo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noticias-cangrejo",
+    "url": "https://clawhub.ai/skills/noticias-cangrejo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noticias-cangrejo-98e8f7cba1fd4b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize recent news articles from GNews on any topic, generating a concise Markdown digest with date, greeting, and top links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidk2yoyo",
+      "userId": "s17ca7wy10n5kcfrpxc33a4fhn846rsc",
+      "displayName": "davidk2yoyo",
+      "image": "https://avatars.githubusercontent.com/u/200820776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 935,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771121962677,
+      "changelog": "- Added _meta.json to define canonical execution for the skill.\n- Updated SKILL.md to document running the skill via python3 scripts/fetch_news.py instead of the shell file.\n- Clarified execution and usage instructions in documentation.\n- No changes to core functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5fcfb65868a87f1d017ee9a78baa3b4da28972f67eec39844da82a1e7d261e9c"
+}

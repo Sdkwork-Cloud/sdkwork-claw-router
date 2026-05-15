@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-artist@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_artist",
+  "skill": {
+    "id": 25425,
+    "skillKey": "clawhub-prompt-artist",
+    "name": "Prompt Artist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-artist",
+    "url": "https://clawhub.ai/skills/prompt-artist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-artist-3d60e6af7186df72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize and generate text-to-image prompts for AI art platforms. Use when a user wants to: (1) Optimize prompts for Midjourney, Nano Banana, Dreamina, Qwen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elevo11",
+      "userId": "s171rfft5yr8qa54y1h7rtj63n83mh4y",
+      "displayName": "elevo11",
+      "image": "https://avatars.githubusercontent.com/u/133617972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772787436252,
+      "changelog": "v1.1.0: Added prompt history and favorites",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7cdafc3e417f3110f77598727199a7498cad63e23142e07d49a2fa32162b2be"
+}

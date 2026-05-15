@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-canvas@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_canvas",
+  "skill": {
+    "id": 35241,
+    "skillKey": "clawhub-business-canvas",
+    "name": "Business Canvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-canvas",
+    "url": "https://clawhub.ai/skills/business-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-canvas-2cf00fdfd98a4619.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive Business Model Canvas & Value Proposition Canvas generator based on Strategyzer methodology. Guides users through structured business modeling wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianen6",
+      "userId": "s17708fhq0bfd8g44n6q5g35pd854r0k",
+      "displayName": "qianen6",
+      "image": "https://avatars.githubusercontent.com/u/153802344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776661632674,
+      "changelog": "Add dual scoring (optimistic vs realistic), single falsifying assumption",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06e051060811ca38205111657c15145f9833b26a2ce47827f9f5206002cfe2d7"
+}

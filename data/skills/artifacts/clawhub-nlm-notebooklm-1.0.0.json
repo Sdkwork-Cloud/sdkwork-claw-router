@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nlm-notebooklm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nlm_notebooklm",
+  "skill": {
+    "id": 49967,
+    "skillKey": "clawhub-nlm-notebooklm",
+    "name": "NotebookLM Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nlm-notebooklm",
+    "url": "https://clawhub.ai/skills/nlm-notebooklm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nlm-notebooklm-032bd95335227453.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guide for the NotebookLM CLI (`nlm`) and MCP server - interfaces for Google NotebookLM. Use this skill when users want to interact with NotebookLM pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hewenqiang",
+      "userId": "s179rqf7t04891pe4eyjj0n3cn866v1a",
+      "displayName": "hewenqiang",
+      "image": "https://avatars.githubusercontent.com/u/19547075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1084,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772532515012,
+      "changelog": "Initial publish: NotebookLM CLI and MCP skill for Claude Code",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71bb53de403521df840513cfc94ba57739ccf0001369f1a25247127afc3cc202"
+}

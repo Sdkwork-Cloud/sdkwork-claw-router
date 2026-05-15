@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-system-feishu-bitable-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_feishu_bitable_sync",
+  "skill": {
+    "id": 55935,
+    "skillKey": "clawhub-content-system-feishu-bitable-sync",
+    "name": "Content System Feishu Bitable Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-feishu-bitable-sync",
+    "url": "https://clawhub.ai/skills/content-system-feishu-bitable-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-feishu-bitable-sync-60d21164d235b7cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync a local `wechat-report` result into Feishu Bitable after the user has reviewed the report and confirmed the sync."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abigale-cyber",
+      "userId": "s177gvvwbgtc3ew8annt8ph3gx84c2xt",
+      "displayName": "Abigale-cyber",
+      "image": "https://avatars.githubusercontent.com/u/237663252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775571271515,
+      "changelog": "Initial release of feishu-bitable-sync.\n\n- Allows users to sync reviewed local `wechat-report` results to Feishu Bitable with explicit confirmation.\n- Supports both Markdown and JSON wechat report formats as input.\n- Requires Feishu-related environment variables for setup.\n- Handles user auth: requests manual authorization if needed and caches user tokens.\n- Failed sync attempts trigger CSV fallback export.\n- Ensures idempotent sync by de-duplicating via `source_url` and updating existing rows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d588885c38fe02496a14bd989e54b4271b65cefd95760c1e1079119d6a28f05"
+}

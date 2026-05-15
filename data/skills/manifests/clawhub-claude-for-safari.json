@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22338,
+  "uuid": "skill-clawhub-claude-for-safari",
+  "skillKey": "clawhub-claude-for-safari",
+  "name": "Claude for Safari",
+  "summary": "Control the user's real Safari browser on macOS using AppleScript and screencapture. This skill should be used when the user asks to interact with Safari, br...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_for_safari",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SDLLL",
+      "features": [
+        "Control the user's real Safari browser on macOS using AppleScript and screencapture",
+        "This skill should be used when the user asks to interact with Safari, br..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-for-safari@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74636753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-for-safari",
+      "url": "https://clawhub.ai/skills/claude-for-safari"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-for-safari",
+    "url": "https://clawhub.ai/skills/claude-for-safari",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-for-safari-72d97af8d76b2215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-for-safari@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-for-safari-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:414905ea2249520e3c4becf740ca3e0d0ff1067c299f34047d99d91848340693",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:31:39.270Z"
+}

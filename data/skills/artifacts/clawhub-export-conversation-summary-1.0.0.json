@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/export-conversation-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.export_conversation_summary",
+  "skill": {
+    "id": 22233,
+    "skillKey": "clawhub-export-conversation-summary",
+    "name": "export-conversation-summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "export-conversation-summary",
+    "url": "https://clawhub.ai/skills/export-conversation-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/export-conversation-summary-7ca6b2164176eb34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export current Claude Code conversation to markdown document with full dialogue context and model operations"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youngbeauty",
+      "userId": "publishers:youngbeauty",
+      "displayName": "Young23",
+      "image": "https://avatars.githubusercontent.com/u/87481196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772609323429,
+      "changelog": "Initial release: Export Claude Code conversations to detailed markdown documents.\n\n- Extracts full dialogue with user questions, model responses, and associated tool operations from internal JSONL files.\n- Formats the conversation into a structured markdown file, including all turns, preserved formatting, and operation summaries.\n- Adds automatic statistics (total turns, duration, tokens used) and a dual performance evaluation (prompt quality, model performance, strengths/weaknesses, improvement suggestions).\n- Supports both English and Chinese; skips internal/system messages and this skill's own invocation.\n- Default output to `docs/{YYYY-MM-DD}-conversation.md`, with confirmation and file summary provided to the user.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de1e8776e0bc8664b517f3bad92f7e0ecfefa0519dbc1b61a3a2431207073f41"
+}

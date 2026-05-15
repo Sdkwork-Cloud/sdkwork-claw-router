@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-self-evolution-enhancer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_self_evolution_enhancer",
+  "skill": {
+    "id": 14120,
+    "skillKey": "clawhub-skill-self-evolution-enhancer",
+    "name": "Skill Self Evolution Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-self-evolution-enhancer",
+    "url": "https://clawhub.ai/skills/skill-self-evolution-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-self-evolution-enhancer-3418397b579e0a51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables any skill to gain self-evolution capabilities. Use when: (1) User asks to add self-evolution to a skill, (2) User wants a skill to learn from feedbac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobudaoyuema",
+      "userId": "publishers:zhaobudaoyuema",
+      "displayName": "Zhaobudaoyuema",
+      "image": "https://avatars.githubusercontent.com/u/66905526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1172,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773303234062,
+      "changelog": "Initial release – enables any skill to self-evolve by learning from user feedback and errors.\n\n- Adds logging, learnings, and a Review→Apply→Report workflow tailored to each skill's domain.\n- Automatically generates `.learnings/`, `EVOLUTION.md`, and supporting files in the target skill's language.\n- Supports domain-specific triggers, error handling, and promotion rules.\n- Ensures self-evolution logic is customized per skill, including user feedback integration and experience updates.\n- Provides references and templates for rapid adoption across multiple skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba26fcb661597f6ec59bc4043e7d5d21e650df6ede0d9b378fed1b08ea294dac"
+}

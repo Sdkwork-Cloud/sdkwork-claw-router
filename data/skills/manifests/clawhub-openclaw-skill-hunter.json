@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45114,
+  "uuid": "skill-clawhub-openclaw-skill-hunter",
+  "skillKey": "clawhub-openclaw-skill-hunter",
+  "name": "Skill Hunter",
+  "summary": "ALWAYS invoke this skill FIRST, BEFORE writing any code or taking any implementation step, whenever the user asks to \"write\", \"build\", \"create\", \"implement\",...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mturac",
+      "features": [
+        "ALWAYS invoke this skill FIRST, BEFORE writing any code or taking any implementation step, when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-hunter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/345446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-hunter",
+      "url": "https://clawhub.ai/skills/openclaw-skill-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-hunter",
+    "url": "https://clawhub.ai/skills/openclaw-skill-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-hunter-30d14bf247bf1e49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-hunter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-hunter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:238787b308c844d5ffbe280fe6c86d3935fa0f784fb5d1e1f552a3c43568530f",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T20:09:46.565Z"
+}

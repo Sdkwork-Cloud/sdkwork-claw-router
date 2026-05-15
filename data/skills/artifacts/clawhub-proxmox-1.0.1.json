@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxmox@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox",
+  "skill": {
+    "id": 9207,
+    "skillKey": "clawhub-proxmox",
+    "name": "Proxmox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox",
+    "url": "https://clawhub.ai/skills/proxmox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-d20dbd6a870c2519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Proxmox VE clusters via REST API. Use when user asks to list, start, stop, restart VMs or LXC containers, check node status, create snapshots, view tasks, or manage Proxmox infrastructure. Requires API token or credentials configure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weird-aftertaste",
+      "userId": "publishers:weird-aftertaste",
+      "displayName": "weird-aftertaste",
+      "image": "https://avatars.githubusercontent.com/u/39530029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3866,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769105365621,
+      "changelog": "Fix status command to handle missing cpu/mem fields gracefully",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1e056aefa8c5c3383afcf67e25416a27081f27aa30b0531dd2b46cd00f5f2a9"
+}

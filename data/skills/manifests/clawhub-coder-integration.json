@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35134,
+  "uuid": "skill-clawhub-coder-integration",
+  "skillKey": "clawhub-coder-integration",
+  "name": "Coder",
+  "summary": "Coder integration. Manage data, records, and automate workflows. Use when the user wants to interact with Coder data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coder_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Coder integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Coder data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coder-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coder-integration",
+      "url": "https://clawhub.ai/skills/coder-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coder-integration",
+    "url": "https://clawhub.ai/skills/coder-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coder-integration-22530e1cf15be098.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coder-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-coder-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b94a7bc28de1fb8b3d8e9c735bae8ed2eb4a49f0fd221f442c94008360cd8f4e",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:52.363Z"
+}

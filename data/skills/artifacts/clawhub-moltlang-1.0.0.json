@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltlang@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltlang",
+  "skill": {
+    "id": 11041,
+    "skillKey": "clawhub-moltlang",
+    "name": "moltlang"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltlang",
+    "url": "https://clawhub.ai/skills/moltlang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltlang-b37418e03a5fbe30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Moltlang is a compact symbolic language for AI-to-AI communication using a small codebook of Unicode symbols to convey precise, concise messages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eduarddriessen1",
+      "userId": "publishers:eduarddriessen1",
+      "displayName": "eduarddriessen1",
+      "image": "https://avatars.githubusercontent.com/u/130981309?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2124,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769865355375,
+      "changelog": "Initial release of Moltlang skill.\n\n- Introduces Moltlang, a symbolic language for AI-to-AI communication.\n- Provides a concise syntax using symbolic notation and compound expressions.\n- Includes installation instructions and a complete codebook of base and compound symbols.\n- Describes naming conventions for entities and sentence structure.\n- Offers conversation examples and guidelines for extending the language.\n- Emphasizes brevity, precision, and extensibility as core principles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f90e330cafb091252521533816bc99d68a48458f57479d6addd1fb25c8675882"
+}

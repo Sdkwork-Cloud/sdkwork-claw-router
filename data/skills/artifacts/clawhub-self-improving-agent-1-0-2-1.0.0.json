@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_1_0_2",
+  "skill": {
+    "id": 8540,
+    "skillKey": "clawhub-self-improving-agent-1-0-2",
+    "name": "Self Improving Agent 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-1-0-2",
+    "url": "https://clawhub.ai/skills/self-improving-agent-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-1-0-2-404d2ed4c8bf2b85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Claude ('No, that's wrong...', 'Actually...'), (3) User requests a capability that doe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "txmerlxn",
+      "userId": "publishers:txmerlxn",
+      "displayName": "TXMERLXN",
+      "image": "https://avatars.githubusercontent.com/u/163951354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9511,
+      "installsAllTime": 75,
+      "installsCurrent": 67,
+      "stars": 19,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769436497535,
+      "changelog": "- Initial release of the self-improvement skill for structured project learnings and continuous improvement.\n- Provides detailed guides and templates for logging errors, user corrections, feature requests, and knowledge gaps in markdown files.\n- Defines categories, log formats, metadata, and processes for reviewing, resolving, and promoting insights to project documentation.\n- Outlines triggers and periodic review steps to ensure recurring issues and valuable knowledge are captured and acted upon.\n- Supports detection patterns (corrections, requests, gaps, errors) for automatic or manual entry creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a38a38e99d64403b0e38d75390466d5fcf6783d6ddfc6a4358fbdd305faf7486"
+}

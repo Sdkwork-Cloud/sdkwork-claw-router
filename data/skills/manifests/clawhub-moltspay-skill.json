@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20587,
+  "uuid": "skill-clawhub-moltspay-skill",
+  "skillKey": "clawhub-moltspay-skill",
+  "name": "MoltsPay Skill",
+  "summary": "Pay for and use AI services via MoltsPay protocol. Trigger: User asks to generate video, use a paid service, etc. Auto-discovers services from /.well-known/a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltspay_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yaqing2023",
+      "features": [
+        "Pay for and use AI services via MoltsPay protocol",
+        "Trigger: User asks to generate video, use a paid service, etc",
+        "Auto-discovers services from /.well-known/a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltspay-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130617529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltspay-skill",
+      "url": "https://clawhub.ai/skills/moltspay-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltspay-skill",
+    "url": "https://clawhub.ai/skills/moltspay-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltspay-skill-bc107d1698e23331.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltspay-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltspay-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3db399b06a2bf042b3120cf1db6efb489d034e50d9106c7076c66b2d73f752e",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:00:50.713Z"
+}

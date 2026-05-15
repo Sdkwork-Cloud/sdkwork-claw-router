@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cca-domain2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cca_domain2",
+  "skill": {
+    "id": 60252,
+    "skillKey": "clawhub-cca-domain2",
+    "name": "Cca Domain2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cca-domain2",
+    "url": "https://clawhub.ai/skills/cca-domain2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cca-domain2-ef0b8f1944608b55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CCA 领域2：工具设计与MCP集成（18%权重）。当用户说\"学domain2\"、\"工具设计\"、\"MCP集成\"、\"cca-domain2\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sawzhang",
+      "userId": "s17f2a78kmndsznfxp2fqeckyn83h72m",
+      "displayName": "sawzhang",
+      "image": "https://avatars.githubusercontent.com/u/859624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774369107296,
+      "changelog": "cca-domain2 v1.0.0\n\n- 初始发布：全面讲解 CCA 领域2“工具设计与MCP集成”（18%权重）的核心与实操知识点\n- 覆盖工具描述优化、MCP结构化错误响应、工具分配、MCP服务器集成及内置工具应用等主题\n- 提供针对每个知识点的实际操作技能指南和逐步练习建议\n- 包含3道高质量模拟题，支持知识自测\n- 收录领域导航，便于串联CCA全流程学习",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1db2f6d437b78d63f9ac9e41efcfa5a521cac417df7eae0be2c3ded515cc4abb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44032,
+  "uuid": "skill-clawhub-sprint-release-notes",
+  "skillKey": "clawhub-sprint-release-notes",
+  "name": "sprint-release-notes",
+  "summary": "Automatically generate sprint release notes from a GitHub Project Board and publish to their respective repositories. Groups completed items by repository, g...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprint_release_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tenkus47",
+      "features": [
+        "Automatically generate sprint release notes from a GitHub Project Board and publish to their re.",
+        "Groups completed items by repository, g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sprint-release-notes@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42644738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sprint-release-notes",
+      "url": "https://clawhub.ai/skills/sprint-release-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprint-release-notes",
+    "url": "https://clawhub.ai/skills/sprint-release-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprint-release-notes-ca360d57b4c25e07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sprint-release-notes@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sprint-release-notes-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dee4965e574882abec5231316dad06c58d35fc017bad52cc4cabb9dc7e11cd3f",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:40:47.647Z"
+}

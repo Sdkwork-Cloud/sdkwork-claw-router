@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sun-path@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sun_path",
+  "skill": {
+    "id": 17233,
+    "skillKey": "clawhub-sun-path",
+    "name": "Sun Path & Environmental Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sun-path",
+    "url": "https://clawhub.ai/skills/sun-path",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sun-path-6571ed9be865ba5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a sun path diagram, calculates solar position, performs building shadow analysis, and analyzes thermal comfort."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qrost",
+      "userId": "publishers:qrost",
+      "displayName": "AddinCui",
+      "image": "https://avatars.githubusercontent.com/u/12784080?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 801,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1771637502064,
+      "changelog": "Patch: OpenClaw allowed media paths docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4f9561be7e3be11baccb07ffff88b2b90ff8bde56fe16f4e364fc3d1081adc8"
+}

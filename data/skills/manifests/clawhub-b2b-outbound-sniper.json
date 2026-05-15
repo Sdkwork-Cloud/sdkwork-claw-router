@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35997,
+  "uuid": "skill-clawhub-b2b-outbound-sniper",
+  "skillKey": "clawhub-b2b-outbound-sniper",
+  "name": "B2B Outbound Sniper",
+  "summary": "Autonomous B2B outbound engine that turns job board hiring signals into qualified pipeline. 6 LLMs. Your own email. 10/10 deliverability. Battle-tested in 30...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.b2b_outbound_sniper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "getlemnos32",
+      "features": [
+        "Autonomous B2B outbound engine that turns job board hiring signals into qualified pipeline",
+        "Your own email",
+        "10/10 deliverability",
+        "Battle-tested in 30..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/b2b-outbound-sniper@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248950239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "b2b-outbound-sniper",
+      "url": "https://clawhub.ai/skills/b2b-outbound-sniper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "b2b-outbound-sniper",
+    "url": "https://clawhub.ai/skills/b2b-outbound-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/b2b-outbound-sniper-0fd77310f4e5ef1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/b2b-outbound-sniper@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-b2b-outbound-sniper-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f9a93b480b15dcbfd87d20a7af0496b10bbc166e27dabbcb88d008b713bc7e3",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:10:14.216Z"
+}

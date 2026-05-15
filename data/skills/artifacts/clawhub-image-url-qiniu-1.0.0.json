@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-url-qiniu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_url_qiniu",
+  "skill": {
+    "id": 45095,
+    "skillKey": "clawhub-image-url-qiniu",
+    "name": "image-url-qiniu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-url-qiniu",
+    "url": "https://clawhub.ai/skills/image-url-qiniu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-url-qiniu-48fb39b2b2fa3c62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download an image from a user-supplied HTTP(S) URL and upload it to Qiniu cloud. Use when the user gives an image link and wants it stored on Qiniu (backup,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lubin1127",
+      "userId": "s170k8xpqg2qtankh1dfp1gyf98498q5",
+      "displayName": "lubin1127",
+      "image": "https://avatars.githubusercontent.com/u/28638947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775397214799,
+      "changelog": "Initial release of image-url-qiniu.\n\n- Downloads images from user-supplied HTTP(S) URLs and uploads them to Qiniu cloud storage.\n- Outputs a direct Qiniu image link (MEDIA_URL) suitable for backup, CDN, or Feishu/Outlook-safe sharing.\n- Supports file size limits, SSL verification toggling, and download timeouts.\n- Requires Qiniu credentials and bucket configuration set via environment variables.\n- Enforces public-read bucket and basic content-type/magic number validation for images.\n- Error messages are provided on failure for troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f0b70effa5dd3aee5c3e58673ba79f22a002e4cca54642d874b6573e31f7635"
+}

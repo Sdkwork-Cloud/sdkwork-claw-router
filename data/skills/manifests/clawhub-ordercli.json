@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8389,
+  "uuid": "skill-clawhub-ordercli",
+  "skillKey": "clawhub-ordercli",
+  "name": "Ordercli",
+  "summary": "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ordercli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ordercli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ordercli",
+      "url": "https://clawhub.ai/skills/ordercli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ordercli",
+    "url": "https://clawhub.ai/skills/ordercli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ordercli-4118214867376421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ordercli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ordercli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f0ce4b9582c3dace2ea3ca70b405f43f1d0ac0125723d0ee9bec94d2b2cc85",
+      "artifactSizeBytes": 1758
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:32.216Z"
+}

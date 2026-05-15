@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54694,
+  "uuid": "skill-clawhub-logger",
+  "skillKey": "clawhub-logger",
+  "name": "Log Automation — Append log entries to Google Sheet",
+  "summary": "Log Automation — Append log entries, record audit trails, and automate event logging to a pre-configured Google Sheet by PortEden Secure access.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PortEden",
+      "features": [
+        "Log Automation — Append log entries, record audit trails, and automate event logging to a pre-c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258120807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logger",
+      "url": "https://clawhub.ai/skills/logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logger",
+    "url": "https://clawhub.ai/skills/logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logger-2686af9f25e1a64f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a90be9330b9dc159a850645660e52c181a92413fc6c1760fcd9b0ff001275d9",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:35:08.057Z"
+}

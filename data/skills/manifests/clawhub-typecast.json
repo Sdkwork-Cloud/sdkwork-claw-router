@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25667,
+  "uuid": "skill-clawhub-typecast",
+  "skillKey": "clawhub-typecast",
+  "name": "Cast",
+  "summary": "Multilingual TTS via Typecast CLI with emotion control. Plays audio aloud or saves to file.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typecast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaebong Jeong",
+      "features": [
+        "Multilingual TTS via Typecast CLI with emotion control",
+        "Plays audio aloud or saves to file."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typecast@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/725287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typecast",
+      "url": "https://clawhub.ai/skills/typecast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typecast",
+    "url": "https://clawhub.ai/skills/typecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typecast-ea8ec5258b43954a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typecast@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-typecast-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55d21a88cfc4b38b4dfacd425e2faf7d3c5eadff4c9a8ed8eb0e0d9229b76037",
+      "artifactSizeBytes": 3560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:14:27.098Z"
+}

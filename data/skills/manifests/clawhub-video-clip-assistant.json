@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72890,
+  "uuid": "skill-clawhub-video-clip-assistant",
+  "skillKey": "clawhub-video-clip-assistant",
+  "name": "视频自动剪辑助手",
+  "summary": "视频自动剪辑助手。基于 FFmpeg 自动提取精彩片段、生成字幕、裁剪时长、制作短视视频，支持多平台导出。当用户需要：自动剪辑视频、提取关键词片段、生成字幕并烧录、导出短视频、提取视频精华、生成视频摘要时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuyongliang",
+      "features": [
+        "视频自动剪辑助手。基于 FFmpeg 自动提取精彩片段、生成字幕、裁剪时长、制作短视视频，支持多平台导出。当用户需要：自动剪辑视频、提取关键词片段、生成字幕并烧录、导出短视频、提取视频精华、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-clip-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105618971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-clip-assistant",
+      "url": "https://clawhub.ai/skills/video-clip-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip-assistant",
+    "url": "https://clawhub.ai/skills/video-clip-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-assistant-fc99d25defdd261f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-clip-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-clip-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f195d8bd30014b0d835a3a61d7adfde7aa330ae9d7c164ff43f9dcaf8795201",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:05:21.478Z"
+}

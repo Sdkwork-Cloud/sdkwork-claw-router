@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icecube-xiaohongshu-flow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icecube_xiaohongshu_flow",
+  "skill": {
+    "id": 59690,
+    "skillKey": "clawhub-icecube-xiaohongshu-flow",
+    "name": "IceCube Xiaohongshu Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icecube-xiaohongshu-flow",
+    "url": "https://clawhub.ai/skills/icecube-xiaohongshu-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icecube-xiaohongshu-flow-b1f5d456844f2447.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🧊 IceCube 小红书自动化工作流 — 从日记到发布的完整流程。自动生成内容、优化标题、选择最佳发布时间。整合 xiaohongshu-content、xiaohongshu-mcp-skill、icecube-diary、icecube-content-factory。当用户提到'小红书发布'、'小红书工..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ares521521-design",
+      "userId": "s172aacqpc1r0bvdjpej177jvh83m4wj",
+      "displayName": "ares521521-design",
+      "image": "https://avatars.githubusercontent.com/u/271112075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776528617930,
+      "changelog": "Initial release: Xiaohongshu content automation, MCP integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:646cf7a653d7bdb5ba45d3bf7f226ad3b41f2959c4362b60a254da9d619a0a60"
+}

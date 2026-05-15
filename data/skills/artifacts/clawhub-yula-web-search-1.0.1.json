@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yula-web-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yula_web_search",
+  "skill": {
+    "id": 26821,
+    "skillKey": "clawhub-yula-web-search",
+    "name": "yula-web-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yula-web-search",
+    "url": "https://clawhub.ai/skills/yula-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yula-web-search-39159a95b508e0d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Yula's custom web search - NO API KEY required. Uses multiple fallback search methods with public services that allow anonymous access. Works by direct curl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjzhb",
+      "userId": "s174x1zyjd5y732ygc7xenp52h83hd6e",
+      "displayName": "yula",
+      "image": "https://avatars.githubusercontent.com/u/8390602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774257798259,
+      "changelog": "1.0.1: Add correct metadata, improve README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ec716773d4e01c0bd0f4ad988026802c4b51216402ce28e04a1eed7a0df7466"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/termaid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.termaid",
+  "skill": {
+    "id": 36845,
+    "skillKey": "clawhub-termaid",
+    "name": "Termaid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "termaid",
+    "url": "https://clawhub.ai/skills/termaid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/termaid-5cd8fea6686eec62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render Mermaid diagrams as colored ASCII/Unicode text directly in terminals or Python apps without external dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallnest",
+      "userId": "s1732835fdfty4p76msqxsdq2583gj80",
+      "displayName": "smallnest",
+      "image": "https://avatars.githubusercontent.com/u/865763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774418673250,
+      "changelog": "Termaid 1.0.0 – Initial release\n\n- Render Mermaid diagrams as ASCII/Unicode art directly in the terminal or Python apps, pure Python with zero dependencies\n- Supports 9 Mermaid diagram types: flowcharts, sequence, class, ER, state, block, git, pie, and treemaps\n- Color theme system with 6 built-in themes, plus ASCII/text-only mode for basic terminals\n- Rich CLI options, TUI interface, and flexible Python API for integration and customization\n- Ready for use in SSH, CI/CD logs, TUI apps, and batch scripts; includes troubleshooting and advanced usage docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f44360296fa468f51bb4ee9eed563118628914e936914b84d43a64ffa5adc220"
+}

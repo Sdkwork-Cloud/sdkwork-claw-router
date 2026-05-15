@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45212,
+  "uuid": "skill-clawhub-oc-tdd",
+  "skillKey": "clawhub-oc-tdd",
+  "name": "OpenClaw TDD Assistant",
+  "summary": "Test-Driven Development assistant. Generates test cases from code or specifications, runs tests, tracks coverage, and guides the red-green-refactor cycle. Su...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_tdd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Test-Driven Development assistant",
+        "Generates test cases from code or specifications, runs tests, tracks coverage, and guides the r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-tdd@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-tdd",
+      "url": "https://clawhub.ai/skills/oc-tdd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-tdd",
+    "url": "https://clawhub.ai/skills/oc-tdd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-tdd-8e3ae6d30c25dd26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-tdd@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-tdd-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfb288d74805cabe7426630159800a7022407fb8555caa50808bbc9928762d59",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:12:17.046Z"
+}

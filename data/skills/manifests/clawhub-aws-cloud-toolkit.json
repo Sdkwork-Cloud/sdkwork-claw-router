@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42644,
+  "uuid": "skill-clawhub-aws-cloud-toolkit",
+  "skillKey": "clawhub-aws-cloud-toolkit",
+  "name": "Aws Cloud Toolkit",
+  "summary": "Manage AWS EC2, S3, Lambda, and CloudWatch resources with automated deployment, operations, and monitoring across multiple regions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_cloud_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Manage AWS EC2, S3, Lambda, and CloudWatch resources with automated deployment, operations, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-cloud-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-cloud-toolkit",
+      "url": "https://clawhub.ai/skills/aws-cloud-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-cloud-toolkit",
+    "url": "https://clawhub.ai/skills/aws-cloud-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-cloud-toolkit-d9562c6e70a02ab2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-cloud-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-cloud-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78e4edc5ec0faa859b4a0143809b2246eabc240f700eca7a7352883625b5b737",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:41:00.584Z"
+}

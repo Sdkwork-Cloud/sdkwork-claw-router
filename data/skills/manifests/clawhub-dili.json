@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70504,
+  "uuid": "skill-clawhub-dili",
+  "skillKey": "clawhub-dili",
+  "name": "geography-score-improvement",
+  "summary": "高中地理提分专项技能，提供精准答疑、教材查询、工具包、错题管理、真题解析、提分技巧等功能。当用户询问高中地理相关的知识点、题目解析、教材内容、公式图表、错题整理、真题解析、提分技巧等内容时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dili",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI遇见天马",
+      "features": [
+        "高中地理提分专项技能，提供精准答疑、教材查询、工具包、错题管理、真题解析、提分技巧等功能。当用户询问高中地理相关的知识点、题目解析、教材内容、公式图表、错题整理、真题解析、提分技巧等内容时使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dili@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129256359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dili",
+      "url": "https://clawhub.ai/skills/dili"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dili",
+    "url": "https://clawhub.ai/skills/dili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dili-26997989b8425dac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dili@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dili-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be1d780fe488618c0b0627ebbfd0853a1b5112d6e37de0b6aed273c24444315a",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:03:14.048Z"
+}

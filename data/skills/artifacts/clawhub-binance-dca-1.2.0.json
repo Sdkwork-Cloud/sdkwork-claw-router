@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-dca@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_dca",
+  "skill": {
+    "id": 11330,
+    "skillKey": "clawhub-binance-dca",
+    "name": "Binance Dca"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-dca",
+    "url": "https://clawhub.ai/skills/binance-dca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-dca-1a2abe050bd11210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Binance Dollar-Cost Averaging (DCA) tool for automated and manual recurring crypto purchases. Plan DCA strategies with scenario analysis, execute market/limit buys, track history, and manage systematic accumulation schedules f."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fpsjago",
+      "userId": "publishers:fpsjago",
+      "displayName": "fpsjago",
+      "image": "https://avatars.githubusercontent.com/u/105124565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2058,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770308254920,
+      "changelog": "- Enhanced documentation with a professional overview, strategy guidance, and clear step-by-step setup instructions.\n- Expanded usage examples to cover common DCA scenarios, including detailed output samples.\n- Improved explanation of all script actions, adding argument details, defaults, and security tips.\n- Added sections covering risk management, OpenClaw integration, and best practices for using testnet and API keys.\n- Overall, this is a significant rewrite aimed at clarity, safety, and usability for both beginners and advanced users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57ce707e80ea05e75ec7544a3ff5ee07a062960798aa07837b580aa378ff6fcc"
+}

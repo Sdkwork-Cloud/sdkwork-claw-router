@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30568,
+  "uuid": "skill-clawhub-cookie-information",
+  "skillKey": "clawhub-cookie-information",
+  "name": "Cookie Information",
+  "summary": "Cookie Information integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cookie Information data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cookie_information",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cookie Information integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cookie Information data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cookie-information@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cookie-information",
+      "url": "https://clawhub.ai/skills/cookie-information"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cookie-information",
+    "url": "https://clawhub.ai/skills/cookie-information",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cookie-information-d8bbfe79afba9652.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cookie-information@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cookie-information-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:567bc91ae667b25e80f699b6ce67c2945319c1bd06064fae96eaa4ccba0f22c6",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:34:59.611Z"
+}

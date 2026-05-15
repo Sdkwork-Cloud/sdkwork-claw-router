@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-encrypted@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_encrypted",
+  "skill": {
+    "id": 70327,
+    "skillKey": "clawhub-memory-encrypted",
+    "name": "memory-encrypted"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-encrypted",
+    "url": "https://clawhub.ai/skills/memory-encrypted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-encrypted-dc8d4e07696daf1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地加密存储记忆，定时自动备份到指定目录。防止记忆泄露，适合企业付费用户。用于用户提到加密、备份、安全、私密等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujw0214",
+      "userId": "s170dy42phba5mfs38gpqywtpd83h0p8",
+      "displayName": "Primordia",
+      "image": "https://avatars.githubusercontent.com/u/224094441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777834988892,
+      "changelog": "No visible changes detected in this version.\n\n- No file changes were made in this release.\n- All features and documentation remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce26e48725be526f2f08f7e712f93c75a06e31345b98c8e04f0019cffbcc919d"
+}

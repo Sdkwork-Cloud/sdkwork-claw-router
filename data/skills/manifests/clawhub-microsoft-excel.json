@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8336,
+  "uuid": "skill-clawhub-microsoft-excel",
+  "skillKey": "clawhub-microsoft-excel",
+  "name": "Microsoft Excel",
+  "summary": "Microsoft Excel API integration with managed OAuth. Read and write Excel workbooks, worksheets, ranges, tables, and charts stored in OneDrive. Use this skill...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_excel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Microsoft Excel API integration with managed OAuth",
+        "Read and write Excel workbooks, worksheets, ranges, tables, and charts stored in OneDrive",
+        "Use this skill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-excel@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-excel",
+      "url": "https://clawhub.ai/skills/microsoft-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-excel",
+    "url": "https://clawhub.ai/skills/microsoft-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-excel-a915bd902a515fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-excel@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-excel-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ead43387db6d47bc5af79e9a4872cfcc8c0644b7e0c59c4d179eda50129fd45",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:19:38.827Z"
+}

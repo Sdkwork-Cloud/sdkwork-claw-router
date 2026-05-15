@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-marketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_marketing",
+  "skill": {
+    "id": 9031,
+    "skillKey": "clawhub-instagram-marketing",
+    "name": "Generate Instagram marketing content from product URLs. Extract product information and create engaging Instagram posts with im."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-marketing",
+    "url": "https://clawhub.ai/skills/instagram-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-marketing-3b9002fb77209e0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Instagram marketing content from product URLs. Extract product information and create engaging Instagram posts with image suggestions, captions, and hashtags optimized for engagement. Use when user provides a product URL from e-co."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "insight68",
+      "userId": "publishers:insight68",
+      "displayName": "insight68",
+      "image": "https://avatars.githubusercontent.com/u/206829216?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4257,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770026421609,
+      "changelog": "Initial release of Instagram Marketing Generator\n\n- Generate Instagram content from any product URL, extracting product details for optimized posts.\n- Provides frameworks and templates for feed posts, carousels, stories, reels, and campaigns.\n- Includes structured image/video briefs, caption templates with hooks and CTAs, and hashtag strategies.\n- Offers workflow guidance for product analysis, manual/automated extraction, and content formatting.\n- Reference guides and templates included for multiple industries and content types.\n- Actionable best practices and tips for captions, visual style, engagement, and posting strategy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:595bdb40e9b45919b2a7bfef3fe52f8431327b496cf3ec56c5fadfcfa2752d48"
+}

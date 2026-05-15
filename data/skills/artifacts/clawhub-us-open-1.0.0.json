@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-open@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_open",
+  "skill": {
+    "id": 45680,
+    "skillKey": "clawhub-us-open",
+    "name": "Us Open"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-open",
+    "url": "https://clawhub.ai/skills/us-open",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-open-531debd30a702eca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on the US Open tennis tournament, including rules, history, top players, schedule, and results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776491994595,
+      "changelog": "- 首次发布，介绍美国网球公开赛（US Open）的基础信息。\n- 包括赛事历史、赛制规则、知名运动员与球队简介。\n- 提供近年（2024）男女单打冠军信息。\n- 总结比赛时间、地点、场地、奖金和赛事特色。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1702b9a2786e52bb4e957babb9b3f941df2e3098403c171c3d7735e08ec76bcf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradekix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradekix",
+  "skill": {
+    "id": 16700,
+    "skillKey": "clawhub-tradekix",
+    "name": "Tradekix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradekix",
+    "url": "https://clawhub.ai/skills/tradekix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradekix-952bf2b1105beb1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query financial market data via the Tradekix API — stock prices, crypto, forex, indices, market news, earnings, economic events, Congressional trades, and social sentiment. Use when the user asks about markets, stock prices, trading data,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesjohnfox",
+      "userId": "publishers:jamesjohnfox",
+      "displayName": "jamesjohnfox",
+      "image": "https://avatars.githubusercontent.com/u/203586484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770845257351,
+      "changelog": "Initial release: financial market data API for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c665347dec1749503d87df327fdf32042cddb7b2c32c631e8d7e486d5c11db13"
+}

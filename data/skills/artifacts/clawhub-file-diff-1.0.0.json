@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-diff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_diff",
+  "skill": {
+    "id": 38158,
+    "skillKey": "clawhub-file-diff",
+    "name": "File Diff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-diff",
+    "url": "https://clawhub.ai/skills/file-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-diff-82eb230db3fb6a4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare two files and display their differences in a human-readable markdown format. Use when asked to \"compare files\", \"show diff\", \"compare differences\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "super9du",
+      "userId": "s17ccn81eyq7syt95t6aehy6bx846xsp",
+      "displayName": "Super 9°",
+      "image": "https://avatars.githubusercontent.com/u/38002762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775751974405,
+      "changelog": "- Initial release of \"file-diff\": compare two files and display their differences in a readable markdown format.\n- Supports requests in English and Chinese, triggering on key phrases like \"compare files\" or \"diff\".\n- Uses unified diff (`diff -u`) for clear, context-rich comparison output.\n- Outputs file paths and formats differences with markdown and diff-style notation for clarity.\n- Step-by-step workflow: file detection, diff execution, parsing, and clean markdown formatting.\n- Includes usage instructions, output examples, and notes for best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e48b94a2a5ac47b37925a018a6a6c17638d8a57bcdd2776c612b45817dbe5f05"
+}

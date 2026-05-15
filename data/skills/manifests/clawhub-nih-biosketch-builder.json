@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40720,
+  "uuid": "skill-clawhub-nih-biosketch-builder",
+  "skillKey": "clawhub-nih-biosketch-builder",
+  "name": "NIH Biosketch Builder",
+  "summary": "Generate NIH Biosketch documents compliant with the 2022 OMB-approved.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nih_biosketch_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate NIH Biosketch documents compliant with the 2022 OMB-approved."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nih-biosketch-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nih-biosketch-builder",
+      "url": "https://clawhub.ai/skills/nih-biosketch-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nih-biosketch-builder",
+    "url": "https://clawhub.ai/skills/nih-biosketch-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nih-biosketch-builder-28e34734f282a054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nih-biosketch-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nih-biosketch-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d6fff11c6c9d5454898c504a2336e2fe71149eb057c68680160638d5c7c87e5",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:57:19.282Z"
+}

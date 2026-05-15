@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-recraft-v3@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_recraft_v3",
+  "skill": {
+    "id": 14253,
+    "skillKey": "clawhub-dlazy-recraft-v3",
+    "name": "Dlazy Recraft V3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-recraft-v3",
+    "url": "https://clawhub.ai/skills/dlazy-recraft-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-recraft-v3-3d2a836399f27ada.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate diverse design style images with Recraft v3. Supports text-to-image and image-to-image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076518009,
+      "changelog": "- Bumped version to 1.1.1.\n- Minor documentation updates in SKILL.md and SKILL-cn.md.\n- No changes to core functionality or commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efd01281c0f3f8124c2259819aa0198c5a7bb44a7dee758aa75fff01e9f33eb7"
+}

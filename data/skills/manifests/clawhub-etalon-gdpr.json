@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38041,
+  "uuid": "skill-clawhub-etalon-gdpr",
+  "skillKey": "clawhub-etalon-gdpr",
+  "name": "Etalon GDPR Scan",
+  "summary": "Full GDPR compliance audit for any website or codebase using the ETALON CLI. Scans for trackers (111k+ domain database), tests consent violations, checks pri...",
+  "version": "0.9.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etalon_gdpr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nico Lumma",
+      "features": [
+        "Full GDPR compliance audit for any website or codebase using the ETALON CLI",
+        "Scans for trackers (111k+ domain database), tests consent violations, checks pri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etalon-gdpr@0.9.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3120412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etalon-gdpr",
+      "url": "https://clawhub.ai/skills/etalon-gdpr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etalon-gdpr",
+    "url": "https://clawhub.ai/skills/etalon-gdpr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etalon-gdpr-2527ef02118e83bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etalon-gdpr@0.9.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-etalon-gdpr-0.9.6.json",
+      "version": "0.9.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0714e742d17bdc9575133e3b1a2df13e55ffc6a9ed11f3bad838d33511d20a8",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:41:11.324Z"
+}

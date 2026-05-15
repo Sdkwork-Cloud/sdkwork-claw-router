@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-log-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_log_analyzer",
+  "skill": {
+    "id": 73503,
+    "skillKey": "clawhub-security-log-analyzer",
+    "name": "安全事件日志调查助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-log-analyzer",
+    "url": "https://clawhub.ai/skills/security-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-log-analyzer-ce569960bfd8ea2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于大模型的安全事件日志分析工具，支持快速提取关键信息和深度攻击链细节分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "43622283",
+      "userId": "s17f1wyr24sxwd869zaes8zkvx83eecs",
+      "displayName": "Terry S Fisher",
+      "image": "https://avatars.githubusercontent.com/u/42956557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776865868306,
+      "changelog": "初始版本 - 支持简要/详细分析模式，集成 SiliconFlow API，内置限流保护",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efb3fdfa652e3d180a47564018364d32a8718013c0379910e656c450d2dadbbd"
+}

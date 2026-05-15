@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-video-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_summary",
+  "skill": {
+    "id": 53900,
+    "skillKey": "clawhub-bilibili-video-summary",
+    "name": "Bilibili Video Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-summary",
+    "url": "https://clawhub.ai/skills/bilibili-video-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-summary-22a4ee0aa301441b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and summarize Bilibili videos. Fetches subtitles or GPU-transcribed audio, danmaku (scrolling comments), video comments, and description — outputs st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gkd2323c",
+      "userId": "s176k5rqwx2gd4thnpv0af04v583wmpy",
+      "displayName": "gkd2323c",
+      "image": "https://avatars.githubusercontent.com/u/216696112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778240679895,
+      "changelog": "Initial release: subtitle extraction, GPU transcription (whisper.cpp+Vulkan), danmaku, comments, structured JSON output",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d63e33d6e08d26f5bff2e4256f2678adb177f984e5561431907772f5656c5a90"
+}

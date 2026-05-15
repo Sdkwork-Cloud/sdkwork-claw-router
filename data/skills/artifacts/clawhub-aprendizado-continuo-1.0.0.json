@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aprendizado-continuo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aprendizado_continuo",
+  "skill": {
+    "id": 56262,
+    "skillKey": "clawhub-aprendizado-continuo",
+    "name": "Aprendizado Continuo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aprendizado-continuo",
+    "url": "https://clawhub.ai/skills/aprendizado-continuo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aprendizado-continuo-1c0a7540474fe620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captura erros, correções e aprendizados automaticamente. Promove melhorias para AGENTS.md, TOOLS.md e SKILL.md. Sistema de auto-melhoria em português."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "engsathiago",
+      "userId": "s1748ca82aw6dtzhdqmtcdaj1h83fxeq",
+      "displayName": "engsathiago",
+      "image": "https://avatars.githubusercontent.com/u/40508117?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774139329802,
+      "changelog": "- Primeira versão do aprendizado-continuo lançada.\n- Captura automática de erros, correções, aprendizados e solicitações de features.\n- Sistema estruturado em português com diretório `.learnings/` para registro e acompanhamento.\n- Aprendizados promovidos automaticamente para AGENTS.md, TOOLS.md e SKILL.md.\n- Foco em auto-melhoria contínua para agentes da comunidade brasileira.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5383a3a9d62ac2e1f963755dbeae7c0f135e04e25783a76cb7f03ed0020c78a4"
+}

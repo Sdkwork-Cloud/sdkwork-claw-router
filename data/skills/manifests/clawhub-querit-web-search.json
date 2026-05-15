@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17709,
+  "uuid": "skill-clawhub-querit-web-search",
+  "skillKey": "clawhub-querit-web-search",
+  "name": "Querit Web Search",
+  "summary": "Advanced web search using the Querit API with support for site filtering, time ranges, geolocation, and language targeting.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.querit_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MurphyZzzzz",
+      "features": [
+        "Advanced web search using the Querit API with support for site filtering, time ranges, geolocat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/querit-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71890870?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "querit-web-search",
+      "url": "https://clawhub.ai/skills/querit-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "querit-web-search",
+    "url": "https://clawhub.ai/skills/querit-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/querit-web-search-cbfe0e69eb847502.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/querit-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-querit-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a74ccf4eafe7ae764c6c4e3857f59b86754920b90ace1be6593d661ce0c23393",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:01:25.465Z"
+}

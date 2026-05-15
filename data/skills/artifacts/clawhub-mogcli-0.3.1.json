@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mogcli@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mogcli",
+  "skill": {
+    "id": 10817,
+    "skillKey": "clawhub-mogcli",
+    "name": "Mog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mogcli",
+    "url": "https://clawhub.ai/skills/mogcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mogcli-97c34e55cd275b60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Ops Gadget — CLI for Microsoft 365 (Mail, Calendar, Drive, Contacts, Tasks, Word, PowerPoint, Excel, OneNote)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visionik",
+      "userId": "publishers:visionik",
+      "displayName": "visionik",
+      "image": "https://avatars.githubusercontent.com/u/52174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2642,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1769418945202,
+      "changelog": "- Added comprehensive SKILL.md documentation covering all modules, commands, usage examples, and configuration details.\n- Improved clarity on slug usage, credential storage locations, and command aliases.\n- Provided a quick start guide and detailed instructions for obtaining in-depth help with mog.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b021df675e64c0f45a2acfc324143d56547f9a5dbe6c10e9a86c2867042fe89"
+}

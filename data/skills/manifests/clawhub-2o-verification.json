@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26623,
+  "uuid": "skill-clawhub-2o-verification",
+  "skillKey": "clawhub-2o-verification",
+  "name": "2O Human Verification",
+  "summary": "Human verification for AI agents. Submit claims, draft responses, or observation requests to human domain experts via the 2O API. Returns structured verdicts...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2o_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russellshen1992",
+      "features": [
+        "Human verification for AI agents",
+        "Submit claims, draft responses, or observation requests to human domain experts via the 2O API",
+        "Returns structured verdicts..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/2o-verification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97408418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "2o-verification",
+      "url": "https://clawhub.ai/skills/2o-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2o-verification",
+    "url": "https://clawhub.ai/skills/2o-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2o-verification-22565f55e7eae1f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/2o-verification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-2o-verification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a99d8e7b9ee1d47a87686f1628d198a4ad976fe4d724a4a91ae46f1e2ea729f8",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:27:00.015Z"
+}

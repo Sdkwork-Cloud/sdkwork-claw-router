@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_ai",
+  "skill": {
+    "id": 13314,
+    "skillKey": "clawhub-elevenlabs-ai",
+    "name": "Elevenlabs AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-ai",
+    "url": "https://clawhub.ai/skills/elevenlabs-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-ai-73eea53fd0ae0aa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access ElevenLabs APIs for text-to-speech, speech-to-speech, realtime speech-to-text, voice/model management, and dialogue workflows with direct HTTP calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codedao12",
+      "userId": "s17ax1y7n44r8sjagk48sw25bx84nzpq",
+      "displayName": "codedao12",
+      "image": "https://avatars.githubusercontent.com/u/249323427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1457,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770631725619,
+      "changelog": "- Initial release of the ElevenLabs AI skill with production-focused guidance for ElevenLabs APIs.\n- Supports direct HTTP integration for text-to-speech, speech-to-speech, realtime speech-to-text, and dialogue workflows.\n- Provides detailed orientation with links to authentication, endpoint usage, safety, and privacy documentation.\n- Clarifies required inputs (API keys, voice/model IDs, output format) and expected outputs (workflow plan, checklist, guardrails).\n- Includes operational and security recommendations for safe API usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:359eb84ad6b9f70d27c83e59ce2f21f21eabd23c56b95e6322b5d7c29361a3aa"
+}

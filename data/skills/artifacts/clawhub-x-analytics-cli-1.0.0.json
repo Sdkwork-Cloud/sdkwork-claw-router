@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-analytics-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_analytics_cli",
+  "skill": {
+    "id": 46037,
+    "skillKey": "clawhub-x-analytics-cli",
+    "name": "X Analytics CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-analytics-cli",
+    "url": "https://clawhub.ai/skills/x-analytics-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-analytics-cli-0d51e60001b11510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X (Twitter) analytics and data retrieval via x-analytics-cli. Use when the user wants to search tweets, count tweet volumes, look up user profiles, get tweet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bin-huang",
+      "userId": "s1739hnztbtdx615kbwmdfzz6x84d57g",
+      "displayName": "Bin-Huang",
+      "image": "https://avatars.githubusercontent.com/u/20723142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775616633923,
+      "changelog": "- Initial release of x-analytics-cli skill.\n- Enables search, analytics, and data retrieval for X (Twitter) via CLI.\n- Supports user profile lookup, tweet details, tweet search, tweet counts, and timeline retrieval.\n- Requires OAuth credentials and supports configuration via environment, file, or command-line flag.\n- Outputs responses as JSON, compatible with X API v2 data structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b46b593127fd85e8fa14e60475e5d0292b312e4731886f4b8791874a15a4e17"
+}

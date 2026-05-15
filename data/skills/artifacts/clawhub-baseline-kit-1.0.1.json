@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baseline-kit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baseline_kit",
+  "skill": {
+    "id": 20422,
+    "skillKey": "clawhub-baseline-kit",
+    "name": "Baseline Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baseline-kit",
+    "url": "https://clawhub.ai/skills/baseline-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baseline-kit-e1c6e2e8311fa6ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate safer OpenClaw configuration baselines and audit existing config files for exposure, missing controls, and secret hygiene issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774585663579,
+      "changelog": "README and SKILL.md compliance update for OpenClaw / ClawHub alignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:904c9b0a553be3f996c90470811afb8be1777063025e78f9aa41e66b4cce4651"
+}

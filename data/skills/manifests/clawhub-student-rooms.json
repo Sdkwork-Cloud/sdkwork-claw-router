@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20993,
+  "uuid": "skill-clawhub-student-rooms",
+  "skillKey": "clawhub-student-rooms",
+  "name": "student-rooms",
+  "summary": "Search, scan, and monitor student accommodation availability across Yugo and Aparto providers. Use when the user asks about student housing, room availabilit...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.student_rooms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gonzalo López Gil",
+      "features": [
+        "Search, scan, and monitor student accommodation availability across Yugo and Aparto providers",
+        "Use when the user asks about student housing, room availabilit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/student-rooms@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74659017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "student-rooms",
+      "url": "https://clawhub.ai/skills/student-rooms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "student-rooms",
+    "url": "https://clawhub.ai/skills/student-rooms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/student-rooms-99741662ec9611d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/student-rooms@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-student-rooms-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1438f303954d1a725c18ecac0a8549bd4df325013012b028e7da145b14a0f71",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:14:39.699Z"
+}

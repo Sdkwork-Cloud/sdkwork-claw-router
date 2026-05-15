@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50995,
+  "uuid": "skill-clawhub-unbrowser",
+  "skillKey": "clawhub-unbrowser",
+  "name": "Unbrowser",
+  "summary": "Cheap first-pass web browsing without launching Chrome — fetch SSR pages, follow links, query the DOM, run JS, detect bot-wall challenges. Escalate to OpenCl...",
+  "version": "0.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbrowser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "protostatis",
+      "features": [
+        "Cheap first-pass web browsing without launching Chrome — fetch SSR pages, follow links, query t.",
+        "Escalate to OpenCl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unbrowser@0.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121765396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unbrowser",
+      "url": "https://clawhub.ai/skills/unbrowser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbrowser",
+    "url": "https://clawhub.ai/skills/unbrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbrowser-b7e7badecf0c3407.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unbrowser@0.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-unbrowser-0.0.12.json",
+      "version": "0.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b607b900198b6c99431fbf5e3dfcea054ca002c6c7e51c6858faefa88eb5a00",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T18:49:21.229Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20790,
+  "uuid": "skill-clawhub-clinical-trial",
+  "skillKey": "clawhub-clinical-trial",
+  "name": "NoahAI clinical-trial query",
+  "summary": "Search clinical trial databases similar to ClinicalTrials.gov. Use this skill whenever the user asks about clinical trials, drug trials, indications, targets...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_trial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yichen",
+      "features": [
+        "Search clinical trial databases similar to ClinicalTrials.gov",
+        "Use this skill whenever the user asks about clinical trials, drug trials, indications, targets.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinical-trial@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinical-trial",
+      "url": "https://clawhub.ai/skills/clinical-trial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-trial",
+    "url": "https://clawhub.ai/skills/clinical-trial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-trial-a5b2827e77d9accf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinical-trial@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinical-trial-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df5542a870f23757e532f7aee6df00a90583e8659ab1dd95121106e4d3368c82",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T15:12:15.551Z"
+}

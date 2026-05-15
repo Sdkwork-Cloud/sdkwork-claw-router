@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-processor@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_processor",
+  "skill": {
+    "id": 72535,
+    "skillKey": "clawhub-video-processor",
+    "name": "视频字幕自动生成器——免费的才是最好的"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-processor",
+    "url": "https://clawhub.ai/skills/video-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-processor-c182045a3f15fd9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动提取视频音频，识别生成带时间戳的文字稿，输出SRT/VTT字幕及带字幕的视频，并智能提炼视频标题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chall2015",
+      "userId": "s17b1f67m59n4b1y85x10j0amn83ggxp",
+      "displayName": "chall2015",
+      "image": "https://avatars.githubusercontent.com/u/12229815?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 349,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774342863923,
+      "changelog": "- 完善了字幕样式配置。\n- 移除了文件“打包完成报告.md”以简化项目结构。\n- 其他代码和文档内容保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b3edb8a558a10edab6f2b4bed59e1f0f4033c55cffebd0cc27dc960b50b0872"
+}

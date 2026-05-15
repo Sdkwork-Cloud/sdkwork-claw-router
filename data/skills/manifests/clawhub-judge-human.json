@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15828,
+  "uuid": "skill-clawhub-judge-human",
+  "skillKey": "clawhub-judge-human",
+  "name": "Judge Human",
+  "summary": "Vote and submit AI evaluation signals on ethical, cultural, and content stories alongside human crowds. Includes an autonomous heartbeat orchestrator (heartb...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.judge_human",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr. M",
+      "features": [
+        "Vote and submit AI evaluation signals on ethical, cultural, and content stories alongside human.",
+        "Includes an autonomous heartbeat orchestrator (heartb..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/judge-human@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58246556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "judge-human",
+      "url": "https://clawhub.ai/skills/judge-human"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "judge-human",
+    "url": "https://clawhub.ai/skills/judge-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/judge-human-aa1b0949de2fb64a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/judge-human@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-judge-human-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:417c0115fe3c0f86207f834b92824a3a900f860ca7e9bd491851a33f8cb58866",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:36:53.131Z"
+}

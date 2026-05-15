@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51489,
+  "uuid": "skill-clawhub-mflux-image-router",
+  "skillKey": "clawhub-mflux-image-router",
+  "name": "Mflux Image Router",
+  "summary": "Local mflux image generation on Apple Silicon — mflux routes Z-Image-Turbo, Flux Dev, Flux Schnell across your Mac fleet. mflux is MLX-native for Mac Studio,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mflux_image_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Local mflux image generation on Apple Silicon — mflux routes Z-Image-Turbo, Flux Dev, Flux Schn.",
+        "mflux is MLX-native for Mac Studio,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mflux-image-router@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mflux-image-router",
+      "url": "https://clawhub.ai/skills/mflux-image-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mflux-image-router",
+    "url": "https://clawhub.ai/skills/mflux-image-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mflux-image-router-39cb5a352d87545d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mflux-image-router@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mflux-image-router-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c12b409ba358878cc279134002cea79eff1ef953c2ac1e8321c029df8515c20",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:25.982Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novel-writer-v2@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_writer_v2",
+  "skill": {
+    "id": 64043,
+    "skillKey": "clawhub-novel-writer-v2",
+    "name": "Novel Writer V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-writer-v2",
+    "url": "https://clawhub.ai/skills/novel-writer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-writer-v2-9385ad0f66057771.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "章节正文生成器 - 根据章节大纲、Voice Profile 和角色档案构建 LLM 提示词，用于生成章节正文。当需要根据大纲创作具体章节时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzhihui886",
+      "userId": "s171q47tfc9tb8mpczgympghws83jcja",
+      "displayName": "yuzhihui886",
+      "image": "https://avatars.githubusercontent.com/u/213567314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775317320558,
+      "changelog": "修复平台反馈问题：1) style.yml 改为可选配置 2) 添加 GBK 编码自动检测支持 3) 更新 SKILL.md 说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:997d5a8afe0eaeee8d981296ba3661ac87b1e2d2f8ba3ffe8cf8c7ea75e452b2"
+}

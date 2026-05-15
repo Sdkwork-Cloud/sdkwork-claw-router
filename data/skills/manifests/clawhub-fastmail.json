@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11489,
+  "uuid": "skill-clawhub-fastmail",
+  "skillKey": "clawhub-fastmail",
+  "name": "Fastmail",
+  "summary": "Manages Fastmail email and calendar via JMAP and CalDAV APIs. Use for emails (read, send, reply, search, organize, bulk operations, threads) or calendar (events, reminders, RSVP invitations). Timezone auto-detected from system.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastmail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "witooh",
+      "features": [
+        "Manages Fastmail email and calendar via JMAP and CalDAV APIs",
+        "Use for emails (read, send, reply, search, organize, bulk operations, threads) or calendar (eve.",
+        "Timezone auto-detected from system."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastmail@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1762587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastmail",
+      "url": "https://clawhub.ai/skills/fastmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastmail",
+    "url": "https://clawhub.ai/skills/fastmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastmail-0fc712a7cb8fc3e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastmail@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastmail-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c72f49004472528c8a041e102972d288bed490af3b904a0ae100280fbec99036",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:59:49.341Z"
+}

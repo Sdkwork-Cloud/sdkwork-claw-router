@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/issue-prioritizer@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issue_prioritizer",
+  "skill": {
+    "id": 13277,
+    "skillKey": "clawhub-issue-prioritizer",
+    "name": "Issue Prioritizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issue-prioritizer",
+    "url": "https://clawhub.ai/skills/issue-prioritizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issue-prioritizer-370bbad305b61df1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prioritize GitHub issues by ROI, solution sanity, and architectural impact. Identifies quick wins, over-engineered proposals, and actionable bugs. Use for is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glucksberg",
+      "userId": "s174ntjpaez2r36rkj193c5j3183jww8",
+      "displayName": "Glucksberg",
+      "image": "https://avatars.githubusercontent.com/u/80581902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1508,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771114464832,
+      "changelog": "Add --topic, --search, and --label options for targeted issue fetching. Enables filtering by component (e.g. telegram, agents) instead of only analyzing the most recent issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97da4b73150a9da1589c04ec22f26c32505b4fb99f6dd472a2d95809543d4df5"
+}

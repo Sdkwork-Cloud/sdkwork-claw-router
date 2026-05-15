@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aidenote@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aidenote",
+  "skill": {
+    "id": 64935,
+    "skillKey": "clawhub-aidenote",
+    "name": "aidenote-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aidenote",
+    "url": "https://clawhub.ai/skills/aidenote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aidenote-e8abc211ae2306bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能录音笔记管理助手 - AI 自动转写和总结录音，支持知识库管理和语义搜索"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajingmiao",
+      "userId": "s17dmz7eb30afbcqhzpf1cfg9h83jfjt",
+      "displayName": "ajingmiao",
+      "image": "https://avatars.githubusercontent.com/u/3364984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774493824750,
+      "changelog": "SlonAide 录音笔记 v2.0.0 重大更新\n\n- 技能更名为“SlonAide”，并适配 OpenClaw 新插件体系\n- 全面重构 API 工具，支持 get_list、get_detail、get_summary、test_connection 等命令\n- 自动令牌获取与缓存，增加连接测试与异常处理，提升健壮性\n- 优化用户配置流程与错误提示，文档大幅精简并聚焦实际用例\n- 移除旧版 Python 测试脚本，增加 JS 工具和 OpenClaw 插件描述\n- 输出格式和隐私保护完善，增强易用性、可扩展性和安全性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84647f7f5e01355949753458856909c86c63283cb9d59b39054aaf4ee094be78"
+}

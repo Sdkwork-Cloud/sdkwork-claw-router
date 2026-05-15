@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34799,
+  "uuid": "skill-clawhub-aana-research-grounding",
+  "skillKey": "clawhub-aana-research-grounding",
+  "name": "AANA Research Grounding Skill",
+  "summary": "Ensures research answers and reports strictly cite and align with allowed sources, clearly marking unsupported or uncertain claims before publishing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_research_grounding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Ensures research answers and reports strictly cite and align with allowed sources, clearly mark."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-research-grounding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-research-grounding",
+      "url": "https://clawhub.ai/skills/aana-research-grounding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-research-grounding",
+    "url": "https://clawhub.ai/skills/aana-research-grounding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-research-grounding-c07b9b90daf321ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-research-grounding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-research-grounding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b30b8d936294f7916c45795f3865f73e86205a92ba8bc79df0aa6b014035b6f",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:43:59.241Z"
+}

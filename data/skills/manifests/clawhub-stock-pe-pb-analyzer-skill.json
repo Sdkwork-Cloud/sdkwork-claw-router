@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67062,
+  "uuid": "skill-clawhub-stock-pe-pb-analyzer-skill",
+  "skillKey": "clawhub-stock-pe-pb-analyzer-skill",
+  "name": "Stock Pe Pb Analyzer",
+  "summary": "分析股票PE/PB历史水位的专业工具。使用BaoStock API获取真实股票数据，计算股票在过去十年中的PE、PB历史百分位水位。适用于：1）查询单个股票的PE/PB历史估值水平；2）评估当前估值相对于历史的高低位置；3）为投资决策提供估值参考数据。支持通过股票名称（如贵州茅台）或代码（如600519）查询A股...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_pe_pb_analyzer_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoyachao",
+      "features": [
+        "分析股票PE/PB历史水位的专业工具。使用BaoStock API获取真实股票数据，计算股票在过去十年中的PE、PB历史百分位水位。适用于：1）查询单个股票的PE/PB历史估值水平；2）评估."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-pe-pb-analyzer-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13848791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-pe-pb-analyzer-skill",
+      "url": "https://clawhub.ai/skills/stock-pe-pb-analyzer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-pe-pb-analyzer-skill",
+    "url": "https://clawhub.ai/skills/stock-pe-pb-analyzer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-pe-pb-analyzer-skill-e2704a0cd8be7eea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-pe-pb-analyzer-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-pe-pb-analyzer-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4be62488f34f583a57901f0fd582cc0401744b65ef08093c13c467b75ba905aa",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:44:25.857Z"
+}

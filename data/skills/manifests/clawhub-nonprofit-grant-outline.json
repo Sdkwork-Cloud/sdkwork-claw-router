@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59096,
+  "uuid": "skill-clawhub-nonprofit-grant-outline",
+  "skillKey": "clawhub-nonprofit-grant-outline",
+  "name": "Nonprofit Grant Outline",
+  "summary": "为公益项目生成 grant proposal 大纲，连接目标、预算、影响指标与证据。；use for nonprofit, grant, proposal workflows；do not use for 伪造受益人数, 替代正式合规审核.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nonprofit_grant_outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为公益项目生成 grant proposal 大纲，连接目标、预算、影响指标与证据。；use for nonprofit, grant, proposal workflows；do not."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nonprofit-grant-outline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nonprofit-grant-outline",
+      "url": "https://clawhub.ai/skills/nonprofit-grant-outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nonprofit-grant-outline",
+    "url": "https://clawhub.ai/skills/nonprofit-grant-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nonprofit-grant-outline-729432af7f7628ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nonprofit-grant-outline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nonprofit-grant-outline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92a43c574dae3a7918b0cf42c42699760b1a3f749e610d4a404822344e91260",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:25:04.641Z"
+}

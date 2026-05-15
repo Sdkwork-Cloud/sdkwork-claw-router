@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15588,
+  "uuid": "skill-clawhub-research-report",
+  "skillKey": "clawhub-research-report",
+  "name": "Research Report Generator",
+  "summary": "Research technical projects/papers and generate comprehensive reports with PDF export. Modes: lite (analysis + writing) or full (+ environment setup + experi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuno Wang",
+      "features": [
+        "Research technical projects/papers and generate comprehensive reports with PDF export",
+        "Modes: lite (analysis + writing) or full (+ environment setup + experi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79401001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-report",
+      "url": "https://clawhub.ai/skills/research-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-report",
+    "url": "https://clawhub.ai/skills/research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-report-96d349f96edbc728.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9780b66832455ef55ecbefa694382a179c2621a2b8600b9cc27a0e4da6200bbc",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T02:48:14.975Z"
+}

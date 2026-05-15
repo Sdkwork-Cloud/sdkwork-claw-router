@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67725,
+  "uuid": "skill-clawhub-image-collector",
+  "skillKey": "clawhub-image-collector",
+  "name": "image-collector",
+  "summary": "AI 科技日报图片采集工具，从官方来源自动采集新闻配图，支持水印检测、质量检查和关联性验证",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luna",
+      "features": [
+        "AI 科技日报图片采集工具，从官方来源自动采集新闻配图，支持水印检测、质量检查和关联性验证"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73635949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-collector",
+      "url": "https://clawhub.ai/skills/image-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-collector",
+    "url": "https://clawhub.ai/skills/image-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-collector-6d9b340fce81c23b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d905465b20afbbae7ed040c7f7f48005f9fb153129f7452e9a044bfce893aeb0",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:55:27.784Z"
+}

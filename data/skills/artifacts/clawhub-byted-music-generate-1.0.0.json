@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-music-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_music_generate",
+  "skill": {
+    "id": 39964,
+    "skillKey": "clawhub-byted-music-generate",
+    "name": "Byted Music Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-music-generate",
+    "url": "https://clawhub.ai/skills/byted-music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-music-generate-3afeedd77232d7fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate music using Volcengine Imagination API. Supports vocal songs, instrumental BGM, and lyrics generation. Use when the user wants to create songs, back..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774534324750,
+      "changelog": "byted-kickart-marketing-material-generator v1.0.0\n\n- Initial release with industry trending list and hot topic/event ranking capabilities.\n- Supports two major types: topic challenges and trending events.\n- Allows users to query by industry, view sorted rankings, and request details for any list item.\n- Enforces strict output rules: no technical details or process logs exposed to users.\n- Provides industry list, trending queries, and informative interaction templates for consistent user experience.\n- Guides users with suggested follow-up questions after every result.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:608875be3d24e005d515d4749117226914c47892de3419d57bc069bf994315fd"
+}

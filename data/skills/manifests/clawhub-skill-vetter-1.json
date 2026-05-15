@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17752,
+  "uuid": "skill-clawhub-skill-vetter-1",
+  "skillKey": "clawhub-skill-vetter-1",
+  "name": "Skill Vetter 1",
+  "summary": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "h-harry",
+      "features": [
+        "Security-first skill vetting for AI agents",
+        "Use before installing any skill from ClawdHub, GitHub, or other sources",
+        "Checks for red flags, permission scope,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vetter-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68003924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vetter-1",
+      "url": "https://clawhub.ai/skills/skill-vetter-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-1",
+    "url": "https://clawhub.ai/skills/skill-vetter-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-1-05b0705292300c44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vetter-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vetter-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6829a5ec22e697efbf538413da0f8f284319c21e36fc68867d79b55898c0a83",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:36:20.283Z"
+}

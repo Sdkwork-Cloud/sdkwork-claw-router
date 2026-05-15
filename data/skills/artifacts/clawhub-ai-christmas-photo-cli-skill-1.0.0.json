@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-christmas-photo-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_christmas_photo_cli_skill",
+  "skill": {
+    "id": 55898,
+    "skillKey": "clawhub-ai-christmas-photo-cli-skill",
+    "name": "AI Christmas Photo Generator - Create Festive Images Online – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-christmas-photo-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-christmas-photo-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-christmas-photo-cli-skill-462eed0c7c26d055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Christmas photo generator — transform a portrait into a festive Christmas scene"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775908990249,
+      "changelog": "ai-christmas-photo-cli-skill v1.0.0 — Initial Release\n\n- Launches a CLI skill to transform portrait photos into festive Christmas-themed scenes using AI.\n- Requires weshop-cli and a WESHOP_API_KEY environment variable.\n- Adds `weshop ai-christmas-photo` command with image, prompt, and batch options.\n- Includes a detailed default prompt for consistent, cinematic Christmas results.\n- Ensures API key security by reading from environment variable only.\n- Supports custom prompts and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db0ff3ef25692d36ad35567e67fc082d72bfed01b0e24e3c00d3b2c7973fed5a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sales-engineer@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_engineer",
+  "skill": {
+    "id": 19651,
+    "skillKey": "clawhub-sales-engineer",
+    "name": "Sales Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-engineer",
+    "url": "https://clawhub.ai/skills/sales-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-engineer-41088d3bfdc97a08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes RFP/RFI responses for coverage gaps, builds competitive feature comparison matrices, and plans proof-of-concept (POC) engagements for pre-sales engi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773198484376,
+      "changelog": "v2.1.1: optimization, reference splits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e8674cb56b04b8c0aedb5b1a26ba10fdb64afb9f58d3c623a4c778d16a53079"
+}

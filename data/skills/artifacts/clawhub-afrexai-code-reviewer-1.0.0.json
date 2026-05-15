@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-code-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_code_reviewer",
+  "skill": {
+    "id": 16100,
+    "skillKey": "clawhub-afrexai-code-reviewer",
+    "name": "Code Review Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-code-reviewer",
+    "url": "https://clawhub.ai/skills/afrexai-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-code-reviewer-280140d940c9086d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enterprise-grade code review agent. Reviews PRs, diffs, or code files for security vulnerabilities, performance issues, error handling gaps, architecture smells, and test coverage. Works with any language, any repo, no dependencies require."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 917,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770982011796,
+      "changelog": "Initial release of afrexai-code-reviewer — an enterprise-grade automated code review agent.\n\n- Reviews code for security, performance, error handling, architecture, and reliability using the SPEAR framework (with weighted scores).\n- Supports GitHub PRs, diffs, individual files, or pasted code across any language or repository.\n- No dependencies required; works via agent intelligence.\n- Provides detailed review output with severity ratings, SPEAR scores, and actionable recommendations.\n- Includes extensive lists of language-specific code smells and issues detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0bda6a93b076b90a1c8355191755f75caffecb3c35ebcb98668471307d4498c4"
+}

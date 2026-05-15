@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cd2flac@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cd2flac",
+  "skill": {
+    "id": 57203,
+    "skillKey": "clawhub-cd2flac",
+    "name": "CD 转 FLAC 音频转换器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cd2flac",
+    "url": "https://clawhub.ai/skills/cd2flac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cd2flac-2956f5bd8b6423af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert CD audio archives (RAR files containing WAV+CUE pairs) into organized FLAC files. Handles RAR extraction, CUE-based track splitting, GBK encoding fix..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanshojin",
+      "userId": "s17dbfqvbfr8qxnqrg39mgdg8185rt7m",
+      "displayName": "HANSHOJIN",
+      "image": "https://avatars.githubusercontent.com/u/194571965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777436971600,
+      "changelog": "全部中文化发布。v1.2.0: 歌词搜索优化(无歌手标签时从目录名推断); v1.1.0: 自动歌词注入(网易云+酷狗); v1.0.0: 首发(RAR解压 CUE分轨 GBK编码修复 多CD目录)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e49d8b96efd75207258f1db778ab22d92c1a1e3e3b8d10af0809ab4e0464c24"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_translator",
+  "skill": {
+    "id": 18624,
+    "skillKey": "clawhub-excel-translator",
+    "name": "Excel Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-translator",
+    "url": "https://clawhub.ai/skills/excel-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-translator-083fb52b682f4abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates Excel files (.xlsx) from English to Chinese while preserving all formatting, images, and charts. Use for any task where a user provides an Excel f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilove323",
+      "userId": "s17abamd7n35v4xgykeg537p3h83g3qz",
+      "displayName": "ilove323",
+      "image": "https://avatars.githubusercontent.com/u/14835165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772204376996,
+      "changelog": "- Initial release of Excel Translator Skill.\n- Translates Excel (.xlsx) files from English to Chinese, preserving all formatting, images, and charts.\n- Writes the Chinese translation below the original English text in the same cell, separated by a newline.\n- Supports custom output file paths and automatically appends a \"_translated\" suffix if not specified.\n- Uses OpenAI API credentials configured via environment variables in the Manus sandbox.\n- Provides a core Python script (`translate.py`) for streamlined translation workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d5fd5ec0a1fad4b9196819851af27914fb301d76f301b0d68adb5b3dccf42d6"
+}

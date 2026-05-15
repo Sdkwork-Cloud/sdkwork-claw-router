@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-gmncode-vision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_gmncode_vision",
+  "skill": {
+    "id": 61313,
+    "skillKey": "clawhub-local-gmncode-vision",
+    "name": "Local GMNCODE Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-gmncode-vision",
+    "url": "https://clawhub.ai/skills/local-gmncode-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-gmncode-vision-e3bec2402f30faed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当内置 image 工具不可用、但本机配置了 GMNCODE_API_KEY 时，使用本地脚本直连 GMNCODE Responses API 完成图片理解。适用于角色识别、图片描述、风格分析、截图理解等任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "io2077",
+      "userId": "s17472y975hqvz6yyssqprrqvn83grwg",
+      "displayName": "iO2077",
+      "image": "https://avatars.githubusercontent.com/u/124873010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774389915586,
+      "changelog": "Initial release: GMNCODE-based local image understanding fallback when built-in image tool is unavailable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ac349313711fa98b96f0f1dc31729b763672e36027def1957fcd217b1a3cee5"
+}

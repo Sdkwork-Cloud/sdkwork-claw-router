@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixelmagic-photologic-9z@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixelmagic_photologic_9z",
+  "skill": {
+    "id": 63158,
+    "skillKey": "clawhub-pixelmagic-photologic-9z",
+    "name": "PixelMagic-PhotoLogic-9z"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixelmagic-photologic-9z",
+    "url": "https://clawhub.ai/skills/pixelmagic-photologic-9z",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixelmagic-photologic-9z-353e3fb85ea02f9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业图像后期处理工具。支持多种修图风格（末日大片、日系清新、复古胶片等），自动检测并安装 ImageMagick，支持 RAW/JPG/PNG 等多种格式，提供批量处理和自定义预设功能。Use when: (1)用户需要修图/调色/加滤镜, (2)处理 RAW 格式照片, (3)批量处理图片, (4)创建自定义修图预设"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "couplefishes",
+      "userId": "s17drevb5ky8p34d1s95f2623x83x4k2",
+      "displayName": "couplefishes",
+      "image": "https://avatars.githubusercontent.com/u/35591075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776771209364,
+      "changelog": "**Changelog for pixelmagic-photologic-9z v1.1.0:**\n\n- Optimized the retouching effect.\n- Added new scripts for skill logic: `scripts/editor.py`, `scripts/__init__.py`, and their compiled versions.\n- Removed redundant documentation file `SKILL-CN.md`.\n- Updated main documentation (`SKILL.md`) with expanded, fully localized Chinese usage instructions, workflow, best practices, and parameter tuning standards.\n- Clarified step-by-step image editing methodology and added detailed agent guidelines for iterative editing and user delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1de1241cc54a02c33ba714d76c9f25202ba99c197c0bff0d7baecddc7b55b2f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60801,
+  "uuid": "skill-clawhub-pdf2zh-translator",
+  "skillKey": "clawhub-pdf2zh-translator",
+  "name": "pdf2zh-next翻译",
+  "summary": "用统一脚本执行 pdf2zh-next。支持单/多PDF、目录批处理、按 glob 筛选；未指定 provider 时按 config.toml 生效；指定 provider 时按官方 --<Services> 参数传给主程序；支持实时监控与并行翻译。",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2zh_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiandoufayale",
+      "features": [
+        "用统一脚本执行 pdf2zh-next。支持单/多PDF、目录批处理、按 glob 筛选；未指定 provider 时按 config.toml 生效；指定 provider 时按官方 --."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf2zh-translator@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45908670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf2zh-translator",
+      "url": "https://clawhub.ai/skills/pdf2zh-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2zh-translator",
+    "url": "https://clawhub.ai/skills/pdf2zh-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2zh-translator-d9d393a22897b779.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf2zh-translator@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf2zh-translator-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb266d3b732302009c8dea90465aa5f0f960e6a7ac3bab78f5e3a1b3660d2169",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:25:07.680Z"
+}

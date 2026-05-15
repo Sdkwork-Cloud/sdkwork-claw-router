@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claws-dream@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claws_dream",
+  "skill": {
+    "id": 56207,
+    "skillKey": "clawhub-claws-dream",
+    "name": "claws-dream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claws-dream",
+    "url": "https://clawhub.ai/skills/claws-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claws-dream-993c746116542e3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "⚠️ DEPRECATED — OpenClaw 2026.4.5+ has official Dreaming (memory-core) built-in. This skill is no longer maintained. Use the official /dreaming slash command..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunateadventurer",
+      "userId": "s17dg5yxvez03pgq0jj0s716an841j7s",
+      "displayName": "FortunateAdventurer",
+      "image": "https://avatars.githubusercontent.com/u/131467124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1775476496043,
+      "changelog": "DEPRECATED: OpenClaw 2026.4.5+ has official Dreaming built-in. This skill is no longer maintained. Use /dreaming instead. Retired 2026-04-06.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4275fc336b1414be5088113069fa12a0c0ef7dc2986df49c5ec1e0013ed243a8"
+}

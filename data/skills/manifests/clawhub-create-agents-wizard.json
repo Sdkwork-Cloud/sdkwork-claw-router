@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26152,
+  "uuid": "skill-clawhub-create-agents-wizard",
+  "skillKey": "clawhub-create-agents-wizard",
+  "name": "create-agents-wizard",
+  "summary": "Guided creation of multiple OpenClaw agents and their workspace templates. Use when users ask to create agents in batch, configure new agents, or customize A...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agents_wizard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zcxGGmu",
+      "features": [
+        "Guided creation of multiple OpenClaw agents and their workspace templates",
+        "Use when users ask to create agents in batch, configure new agents, or customize A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-agents-wizard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72263081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-agents-wizard",
+      "url": "https://clawhub.ai/skills/create-agents-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agents-wizard",
+    "url": "https://clawhub.ai/skills/create-agents-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agents-wizard-9b004adfc1170833.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-agents-wizard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-agents-wizard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d10b3b8674262d376f04604cfe984c89ed0df765aa17fea24f0dfb384945aae",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:57:28.416Z"
+}

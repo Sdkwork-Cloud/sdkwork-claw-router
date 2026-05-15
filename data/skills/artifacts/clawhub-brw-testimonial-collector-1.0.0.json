@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brw-testimonial-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_testimonial_collector",
+  "skill": {
+    "id": 18069,
+    "skillKey": "clawhub-brw-testimonial-collector",
+    "name": "Testimonial Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-testimonial-collector",
+    "url": "https://clawhub.ai/skills/brw-testimonial-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-testimonial-collector-bf72aa6920a0c6d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically gather and format client testimonials. Use when someone needs social proof, wants to collect feedback, or needs to turn happy clients into pub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianrwagner",
+      "userId": "publishers:brianrwagner",
+      "displayName": "Brian Wagner",
+      "image": "https://avatars.githubusercontent.com/u/3800703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 721,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771446852182,
+      "changelog": "Initial release of the testimonial-collector skill.\n\n- Provides step-by-step guidance on when and how to ask clients for testimonials.\n- Includes empathetic, customizable request templates (direct ask, question route, draft route).\n- Offers detailed formatting tips for short, medium, and long testimonial use cases.\n- Lays out ethical editing guidelines and a testimonial quality checklist.\n- Suggests testimonial placement across web, proposals, and social.\n- Encourages follow-up and testimonial tracking with a review system.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:638c9736e4c7d1ef61a4ef6e13e3df91251e3c90e411cbcf2a7c3a053f309091"
+}

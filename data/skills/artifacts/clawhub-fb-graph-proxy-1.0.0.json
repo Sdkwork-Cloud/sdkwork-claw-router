@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fb-graph-proxy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fb_graph_proxy",
+  "skill": {
+    "id": 59624,
+    "skillKey": "clawhub-fb-graph-proxy",
+    "name": "尤里改 Facebook Graph API 代理服务使用指南"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fb-graph-proxy",
+    "url": "https://clawhub.ai/skills/fb-graph-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fb-graph-proxy-f8d332409be1a53d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "尤里改 Facebook Graph API 代理服务使用指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evte",
+      "userId": "s1733c6s35ryhwxy2qtgqzcdc983gz7h",
+      "displayName": "zhou",
+      "image": "https://avatars.githubusercontent.com/u/31637545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773811679208,
+      "changelog": "Initial release – integrates baiz.ai’s Facebook ad management API.\n\n- Enables creation and management of Facebook ad campaigns, ad sets, and ads via baiz.ai MCP API.\n- Supports querying account balance, managing offers, audience targeting, copywriting, assets, and budgets.\n- Provides example JSON-RPC calls and security guidance.\n- Requires a BAIZ_API_TOKEN, generated from baiz.ai, for all operations.\n- Includes detailed instructions for setup, safe token management, and operational best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:008c7bb9f18d0858cb624ab3c1bcfaf3ca34780a8fcc3e337b679ca4e0500436"
+}

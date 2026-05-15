@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-accounts-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_accounts_publisher",
+  "skill": {
+    "id": 69906,
+    "skillKey": "clawhub-wechat-accounts-publisher",
+    "name": "Wechat AutoPublish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-accounts-publisher",
+    "url": "https://clawhub.ai/skills/wechat-accounts-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-accounts-publisher-a4318418118174cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化微信公众号文章发布，通过 API 创建和管理文章草稿，支持封面图和正文图片自动上传。用于：发布文章到公众号、创建内容草稿、自动化内容工作流、或设置定时发布系统。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlr25",
+      "userId": "publishers:zlr25",
+      "displayName": "Zhengy Li",
+      "image": "https://avatars.githubusercontent.com/u/25642130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771674906679,
+      "changelog": "Big update: Now supports automatic uploading of cover and article body images.\n\n- 自动检测内容中的本地图片路径，自动上传至微信素材库，并替换为微信 URL\n- 支持命令行参数设置封面图（thumb）和正文图片目录（content-dir）\n- 详细补充图片格式、大小限制与上传说明\n- 增强配置与故障排查，支持多账号、图片安全、批量处理等新场景\n- 用中文重写全流程文档，覆盖图片智能处理、API 使用规范、OpenClaw 集成等内容",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f82e91aea4013fbd3c8cc51c1968edb9b7551ec2a95ddf344e3e7a8be6549869"
+}

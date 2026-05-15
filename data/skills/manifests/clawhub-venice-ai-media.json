@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10038,
+  "uuid": "skill-clawhub-venice-ai-media",
+  "skillKey": "clawhub-venice-ai-media",
+  "name": "Venice AI Media",
+  "summary": "Generate, edit, and upscale images; create videos from images via Venice AI. Supports text-to-image, image-to-video (Sora, WAN), upscaling, and AI editing.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venice_ai_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neil",
+      "features": [
+        "Generate, edit, and upscale images",
+        "create videos from images via Venice AI",
+        "Supports text-to-image, image-to-video (Sora, WAN), upscaling, and AI editing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/venice-ai-media@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/608869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "venice-ai-media",
+      "url": "https://clawhub.ai/skills/venice-ai-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venice-ai-media",
+    "url": "https://clawhub.ai/skills/venice-ai-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venice-ai-media-fa0b38549019b860.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/venice-ai-media@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-venice-ai-media-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb97ee00ef03eaad223afbd6521122d48e566b3b64fe7b5763286ca96581f2c6",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T05:37:40.181Z"
+}

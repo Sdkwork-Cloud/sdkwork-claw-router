@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parcel-package-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parcel_package_tracking",
+  "skill": {
+    "id": 10760,
+    "skillKey": "clawhub-parcel-package-tracking",
+    "name": "Parcel Package Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parcel-package-tracking",
+    "url": "https://clawhub.ai/skills/parcel-package-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parcel-package-tracking-76c0245ba41012fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and add deliveries via Parcel API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gumadeiras",
+      "userId": "s1753zvp6tjqvngzbef17gxshh849mep",
+      "displayName": "Gustavo Madeira Santana",
+      "image": "https://avatars.githubusercontent.com/u/5599352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2301,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768268054453,
+      "changelog": "Initial release of the Parcel package tracking skill.\n\n- Track deliveries and add new packages via the Parcel API.\n- Supports listing deliveries (recent, active), adding packages, and searching carriers.\n- Requires configuration with PARCEL_API_KEY.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b3a7fd18f1c931f836b98f58f98217d91941bb6e9e3f74172dc61a3f74d8c24"
+}

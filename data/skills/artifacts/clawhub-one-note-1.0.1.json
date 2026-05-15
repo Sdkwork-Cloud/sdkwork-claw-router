@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-note@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_note",
+  "skill": {
+    "id": 19919,
+    "skillKey": "clawhub-one-note",
+    "name": "Microsoft OneNote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-note",
+    "url": "https://clawhub.ai/skills/one-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-note-51a6978aee3eabc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OneNote API integration with managed OAuth via Microsoft Graph. Access notebooks, sections, section groups, and pages. Use this skill when users want to crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777587137916,
+      "changelog": "- Updated all API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for improved consistency.\n- Removed LICENSE.txt file.\n- Clarified security and permissions: all write operations now require explicit user approval and confirmation of target resources.\n- Enhanced documentation for connection management, emphasizing use of the Maton-Connection header with multiple connections.\n- Minor documentation updates for clarity and alignment with current API URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee5b22f12a9f73e1c3e5f70f3ef9de640216f0622b06c5830156b9ffea4c7832"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-human-posture-recognition-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_human_posture_recognition_analysis",
+  "skill": {
+    "id": 57472,
+    "skillKey": "clawhub-smyx-human-posture-recognition-analysis",
+    "name": "人体姿态识别技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-human-posture-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-human-posture-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-human-posture-recognition-analysis-27d5d8bc17916bb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recognizes various poses such as standing, sitting, lying down, bending, raising hands, running, and falling. Supports abnormal pose recognition and fall war..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smyx-sunjinhui",
+      "userId": "s17cfv2h26b7hq5w47tgfy23xx83z9x6",
+      "displayName": "smyx-sunjinhui",
+      "image": "https://avatars.githubusercontent.com/u/272464691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778319521645,
+      "changelog": "## v1.0.2\n\n- Internal script updates in `skills/face_analysis/scripts/skill.py` and `skills/smyx_common/scripts/skill.py`.\n- No user-facing changes or documentation updates.\n- Maintains existing skill description, features, and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68c774247cabf05636bbf75e62838256144f06e0149189d6ee5ad0c6dd4a8aff"
+}

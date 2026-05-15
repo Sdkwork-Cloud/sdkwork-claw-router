@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12377,
+  "uuid": "skill-clawhub-wallet-pilot",
+  "skillKey": "clawhub-wallet-pilot",
+  "name": "WalletPilot",
+  "summary": "Universal browser wallet automation for AI agents. Supports 10 wallets including MetaMask, Rabby, Phantom, Trust Wallet, OKX, Coinbase, and more. EVM + Solana. Configurable guardrails with spend limits, chain allowlists, and approval thres.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_pilot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Francesco",
+      "features": [
+        "Universal browser wallet automation for AI agents",
+        "Supports 10 wallets including MetaMask, Rabby, Phantom, Trust Wallet, OKX, Coinbase, and more",
+        "EVM + Solana",
+        "Configurable guardrails with spend limits, chain allowlists, and approval thresholds."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wallet-pilot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15174764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wallet-pilot",
+      "url": "https://clawhub.ai/skills/wallet-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-pilot",
+    "url": "https://clawhub.ai/skills/wallet-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-pilot-b5e389ec06a9fcc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wallet-pilot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wallet-pilot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:111271f19cfe41eb91deffa0266b4ea17c7fb41e169ec28ac7a1cb41cee821a5",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:34:18.129Z"
+}

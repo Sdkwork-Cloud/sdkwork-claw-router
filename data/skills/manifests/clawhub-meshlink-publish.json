@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66432,
+  "uuid": "skill-clawhub-meshlink-publish",
+  "skillKey": "clawhub-meshlink-publish",
+  "name": "MeshLink 服务发布",
+  "summary": "通过 meshlink CLI 一键将本地服务安全发布到集团内网，支持端口检测和服务名管理，需用户确认后执行。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshlink_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jadejadelu",
+      "features": [
+        "通过 meshlink CLI 一键将本地服务安全发布到集团内网，支持端口检测和服务名管理，需用户确认后执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meshlink-publish@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97713895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meshlink-publish",
+      "url": "https://clawhub.ai/skills/meshlink-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshlink-publish",
+    "url": "https://clawhub.ai/skills/meshlink-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshlink-publish-74366c30550fca70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meshlink-publish@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meshlink-publish-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7e2e2fc4927aaa3f323a83f8691c58fb6d77f1548c1ec9b9a076ecf17c7b64f",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:48:24.603Z"
+}

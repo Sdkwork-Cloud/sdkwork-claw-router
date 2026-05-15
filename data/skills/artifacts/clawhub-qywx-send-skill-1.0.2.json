@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qywx-send-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qywx_send_skill",
+  "skill": {
+    "id": 68108,
+    "skillKey": "clawhub-qywx-send-skill",
+    "name": "向企业微信发送消息"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qywx-send-skill",
+    "url": "https://clawhub.ai/skills/qywx-send-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qywx-send-skill-3a3bbf1f514778de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "严格按照企业微信文档规范，支持文本、markdown、markdown_v2、图片、图文等多种消息类型的发送技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxf8126275",
+      "userId": "s1786zfcxbf10b6n2wd3qwga5s83hyfc",
+      "displayName": "wxf8126275",
+      "image": "https://avatars.githubusercontent.com/u/2673544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774316476429,
+      "changelog": "- 文档中默认Webhook地址由 \"key=key\" 更新为 \"key=you-key\"。\n- 其余内容无变化，仅为文档格式/内容微调。\n- 无功能或代码变更。\n- 创建SSL上下文时使用安全的默认验证",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34496a75ce229dd17fa9b97910d4f5538b60a6631cd29de305428c7b062b6048"
+}

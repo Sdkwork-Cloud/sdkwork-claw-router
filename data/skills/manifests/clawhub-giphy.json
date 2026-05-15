@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9543,
+  "uuid": "skill-clawhub-giphy",
+  "skillKey": "clawhub-giphy",
+  "name": "Giphy",
+  "summary": "Search and send contextual Giphy GIFs in Discord. Use when a user asks for a GIF or when a brief visual reaction (celebration, humor, emotion) improves the flow.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giphy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minbang930",
+      "features": [
+        "Search and send contextual Giphy GIFs in Discord",
+        "Use when a user asks for a GIF or when a brief visual reaction (celebration, humor, emotion) im."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giphy@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106417866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giphy",
+      "url": "https://clawhub.ai/skills/giphy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giphy",
+    "url": "https://clawhub.ai/skills/giphy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giphy-5b6e1915eee65374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giphy@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-giphy-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8aed91c6a767ea1ec28176ae14d7e68072ba7fd7d7e5dc2804ed8a170336350c",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T14:42:34.359Z"
+}

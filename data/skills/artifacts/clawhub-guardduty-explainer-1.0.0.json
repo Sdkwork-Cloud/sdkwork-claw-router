@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guardduty-explainer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardduty_explainer",
+  "skill": {
+    "id": 27241,
+    "skillKey": "clawhub-guardduty-explainer",
+    "name": "Guardduty Explainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardduty-explainer",
+    "url": "https://clawhub.ai/skills/guardduty-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardduty-explainer-e970f5589f332c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate GuardDuty findings into plain-English incident summaries with actionable response steps"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772419921963,
+      "changelog": "- Initial release of the AWS GuardDuty Explainer skill.\n- Translates GuardDuty JSON findings into clear incident summaries with actionable response steps.\n- Supports findings for EC2, EKS, RDS, Lambda, Malware Protection, and more.\n- Provides plain-English explanations, severity assessments, MITRE ATT&CK mapping, and prioritized response playbooks.\n- Requires only exported/console data (never credentials); read-only analysis.\n- Output includes alert summaries, false positive assessment, CLI isolation commands, and escalation guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83a7f2ba6b2ffaa402614dc89bc16a5c33163c6d7aa4f56e1bb9480221992b21"
+}

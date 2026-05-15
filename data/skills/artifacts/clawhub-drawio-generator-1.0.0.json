@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drawio-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawio_generator",
+  "skill": {
+    "id": 14140,
+    "skillKey": "clawhub-drawio-generator",
+    "name": "drawio-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawio-generator",
+    "url": "https://clawhub.ai/skills/drawio-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawio-generator-6956e85ab57d6d89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate draw.io diagrams from Mermaid, XML, or CSV code. Use this skill when the user requests any visual diagram including flowcharts, UML diagrams, ERD, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thincher",
+      "userId": "s170vv9kmhtyc5hywwmkq5cf51845fxf",
+      "displayName": "要啥自行车",
+      "image": "https://avatars.githubusercontent.com/u/54308220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1078,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772325669886,
+      "changelog": "- Initial release of drawio-generator.\n- Generate draw.io diagrams from Mermaid, XML, or CSV code.\n- Supports a wide range of diagrams: flowcharts, UML, ERD, architecture, org charts, network topology, wireframes, and more.\n- Provides guidance on selecting the appropriate format (Mermaid, XML, CSV) for different diagram types.\n- Includes usage instructions and format templates.\n- Outputs a markdown link that opens the diagram directly in draw.io for editing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:662fba88be458c4a9696605aec8e3b04b7ece40085e305f06d85bfc8d8a8006b"
+}

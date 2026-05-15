@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unsuck-your-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unsuck_your_thinking",
+  "skill": {
+    "id": 69722,
+    "skillKey": "clawhub-unsuck-your-thinking",
+    "name": "unsuck-your-thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unsuck-your-thinking",
+    "url": "https://clawhub.ai/skills/unsuck-your-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unsuck-your-thinking-7f0e01548ab7610c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户表达困惑、纠结、想不清楚、不知道怎么办时使用此 skill。哪怕用户只说了一句话、几个字、或者逻辑混乱，都应触发。专门处理\"说不清楚的困惑\"——通过逐层追问剥开表面问题，找到真正的卡点，最终给出清晰结论。当用户说\"我不知道该怎么办\"\"我有些纠结\"\"我有个困惑\"\"帮我想想\"时必须触发此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ronindt",
+      "userId": "s175r605r1q496yc8s1kbe0m6s83kcb0",
+      "displayName": "RoninDT",
+      "image": "https://avatars.githubusercontent.com/u/101232079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773753435249,
+      "changelog": "What's Really Bothering You",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:970508326865806e7152eac00d39271f21a9d6ade9ac1d095f7f5bfb2c7d8026"
+}

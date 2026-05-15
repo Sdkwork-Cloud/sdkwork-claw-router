@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26560,
+  "uuid": "skill-clawhub-palette",
+  "skillKey": "clawhub-palette",
+  "name": "Palette",
+  "summary": "Create and manage color palettes using color theory algorithms. Use when designing UIs or building brand color systems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.palette",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Create and manage color palettes using color theory algorithms",
+        "Use when designing UIs or building brand color systems."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/palette@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "palette",
+      "url": "https://clawhub.ai/skills/palette"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "palette",
+    "url": "https://clawhub.ai/skills/palette",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/palette-19e4bd2d806bed3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/palette@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-palette-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4ee3df0d7a42a042405a8898c797de21c6e788598119ff086e36e0d78619b81",
+      "artifactSizeBytes": 1795
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:17:17.497Z"
+}

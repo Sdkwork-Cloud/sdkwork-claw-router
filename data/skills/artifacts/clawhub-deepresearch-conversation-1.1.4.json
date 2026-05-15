@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepresearch-conversation@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepresearch_conversation",
+  "skill": {
+    "id": 60888,
+    "skillKey": "clawhub-deepresearch-conversation",
+    "name": "qianfan-deepresearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepresearch-conversation",
+    "url": "https://clawhub.ai/skills/deepresearch-conversation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepresearch-conversation-9fa8aac34fd9adbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用百度千帆 DeepResearch Agent API 自动生成深度研究报告（输出 Markdown 与 HTML 两种格式），一键完成「创建会话 → 发起研究 → 自动跳过澄清 → 自动 确认大纲 → 获取报告下载链接」完整流程。支持三种深度模式：lite（轻量版， 速度快，默认）/ standard（标准..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ide-rea",
+      "userId": "s17a4y7rpj2bmp94zpqe8r915h83gq6d",
+      "displayName": "ide-rea",
+      "image": "https://avatars.githubusercontent.com/u/30512600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7193,
+      "installsAllTime": 32,
+      "installsCurrent": 27,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1778145894575,
+      "changelog": "Version 1.1.4 of deepresearch-conversation — major update and rebranding.\n\n- Renamed skill to \"qianfan-deepresearch\" and updated the description for greater clarity and coverage.\n- Streamlined the workflow: switched to a single-step, fully automated bash script execution that outputs report download links in Markdown and HTML.\n- Introduced deep research versions: lite (default), standard, pro; includes explicit mapping rules triggered by specific user keywords.\n- Set strict guidelines for query generation, with clear rules for use, required clarifications, and which user inputs map to which research depth.\n- Standardized user-facing output with a fixed template; all responses now strictly follow the mandated format, forbidding extra commentary or formatting.\n- Deprecated manual SSE/HTTP workflow in favor of a robust wrapper script; users/agents must now always call scripts/deepresearch.py with proper long timeouts and parse only its stdout JSON.\n- Enhanced resource section and practical examples to illustrate real-world usage and correct input/output patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:254f12a1ccc219a1c63eb9ac36258c21a4de0b5d3943daec1315c07a9702639d"
+}

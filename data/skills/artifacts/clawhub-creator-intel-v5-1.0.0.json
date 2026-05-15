@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-intel-v5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_intel_v5",
+  "skill": {
+    "id": 64096,
+    "skillKey": "clawhub-creator-intel-v5",
+    "name": "Creator Intel V5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-intel-v5",
+    "url": "https://clawhub.ai/skills/creator-intel-v5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-intel-v5-48347fc30ba9f5a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创造者情报 V5 - 工程师视角技术情报聚合器 严禁 VC 商业化话术，只关注底层技术实现。 服务对象：硬科技工程师、极客产品经理、技术研究者。 核心选品标准（按优先级）： 1. 🥇 GitHub 开源项目与霸榜（新模型、新硬件图纸、开发工具库） 2. 🥈 硬核技术原理解析（MoE、稀疏注意力、流匹配、新架构） 3. 🥉 极客硬件与创新交互（ESP32、树莓派、Kickstarter 创意硬件） 摘要必须包含： - 至少 2 个技术名词或具体参数 - 架构/算法/材料."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uuoov",
+      "userId": "s175gxftyftqd2ca3mbz6ba3kh83w3sr",
+      "displayName": "uuoov",
+      "image": "https://avatars.githubusercontent.com/u/153625659?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1091,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770801251727,
+      "changelog": "creator-intel-v5 1.0.0 初始版本发布\n\n- 面向硬科技工程师、极客产品经理、技术研究者，专注底层技术实现与精选技术情报汇总\n- 明确三大核心选品方向：GitHub 开源项目、硬核技术原理解析、极客/创新硬件\n- 摘要输出强制包含技术名词、参数、架构/算法，要点直击技术细节；严禁商业化、公关、融资等套话\n- 支持手动/定时生成情报，集成 Tavily API 搜索多源情报（GitHub、arXiv、Kickstarter、开源中国等）\n- 丰富 emoji 分类提升内容辨识度，内置历史自动去重与最大条数\n- 提供开箱即用的配置、调用与依赖说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:598fd099fdc2a24d305489bc3fc2351e955ecbb50a45e5faafa35ed103f1104a"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11562,
+  "uuid": "skill-clawhub-readeck",
+  "skillKey": "clawhub-readeck",
+  "name": "Readeck",
+  "summary": "Readeck integration for saving and managing articles. Supports adding URLs, listing entries, and managing bookmarks via Readeck's API. Configure custom URL and API key per request or via environment variables READECK_URL and READECK_API_KE.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readeck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jayphen",
+      "features": [
+        "Readeck integration for saving and managing articles",
+        "Supports adding URLs, listing entries, and managing bookmarks via Readeck's API",
+        "Configure custom URL and API key per request or via environment variables READECK_URL and READE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readeck@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/329184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readeck",
+      "url": "https://clawhub.ai/skills/readeck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readeck",
+    "url": "https://clawhub.ai/skills/readeck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readeck-31f3036a19dc3e12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readeck@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readeck-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c310cf03b75144de01415d1d53510bd515f8a7c9ffec4131c0f192d2d81cc893",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T11:02:39.128Z"
+}

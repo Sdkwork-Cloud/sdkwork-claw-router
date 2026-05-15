@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31511,
+  "uuid": "skill-clawhub-shlink-cli",
+  "skillKey": "clawhub-shlink-cli",
+  "name": "Shlink CLI",
+  "summary": "Use this skill when the user wants to install, configure, or troubleshoot the Shlink CLI from GitHub and manage short URLs, tags, visits, domains, and health...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shlink_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parin Lai",
+      "features": [
+        "Use this skill when the user wants to install, configure, or troubleshoot the Shlink CLI from G."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shlink-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40908073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shlink-cli",
+      "url": "https://clawhub.ai/skills/shlink-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shlink-cli",
+    "url": "https://clawhub.ai/skills/shlink-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shlink-cli-33871f639736dfd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shlink-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shlink-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1659ef567bb9d2dffe5d41d12a844992cd88ac6d7990df6d75a58bd9cfbe1bae",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:47:03.613Z"
+}

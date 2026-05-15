@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67954,
+  "uuid": "skill-clawhub-empyrical-risk-metrics",
+  "skillKey": "clawhub-empyrical-risk-metrics",
+  "name": "Empyrical Risk Metrics",
+  "summary": "计算投资组合风险指标，包括年化收益率、夏普比率、索提诺比率、最大回撤和卡玛比率，支持滚动窗口统计和 NaN 数据处理，适用于多市场数据。。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.empyrical_risk_metrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "计算投资组合风险指标，包括年化收益率、夏普比率、索提诺比率、最大回撤和卡玛比率，支持滚动窗口统计和 NaN 数据处理，适用于多市场数据。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/empyrical-risk-metrics@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "empyrical-risk-metrics",
+      "url": "https://clawhub.ai/skills/empyrical-risk-metrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "empyrical-risk-metrics",
+    "url": "https://clawhub.ai/skills/empyrical-risk-metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/empyrical-risk-metrics-6f285b6f1b102985.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/empyrical-risk-metrics@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-empyrical-risk-metrics-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:228bb6aa3830b90436bd6dd6249608d97e9aa2392b8df001dd8cb3ae51d6342d",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:25:47.722Z"
+}

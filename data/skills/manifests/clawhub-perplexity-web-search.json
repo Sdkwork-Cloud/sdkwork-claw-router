@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12076,
+  "uuid": "skill-clawhub-perplexity-web-search",
+  "skillKey": "clawhub-perplexity-web-search",
+  "name": "Perplexity Web Search",
+  "summary": "Web search and URL fetching via Perplexity Sonar Pro. Use when searching the web, looking up information, fetching URL content, or configuring web search set...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kokoko",
+      "features": [
+        "Web search and URL fetching via Perplexity Sonar Pro",
+        "Use when searching the web, looking up information, fetching URL content, or configuring web se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perplexity-web-search@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10269740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perplexity-web-search",
+      "url": "https://clawhub.ai/skills/perplexity-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-web-search",
+    "url": "https://clawhub.ai/skills/perplexity-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-web-search-c45dbcb872b745b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perplexity-web-search@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-web-search-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbcc4067906a8900b37ada6d8b60c8453d4bef75f5465fb830a074ba1481b73a",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:05:13.906Z"
+}

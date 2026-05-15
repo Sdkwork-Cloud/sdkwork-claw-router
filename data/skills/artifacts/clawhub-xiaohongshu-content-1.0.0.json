@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_content",
+  "skill": {
+    "id": 63246,
+    "skillKey": "clawhub-xiaohongshu-content",
+    "name": "Xiaohongshu Content Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-content",
+    "url": "https://clawhub.ai/skills/xiaohongshu-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-content-e2c0476ea12cfb4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小紅書內容創作技能 - 爆款筆記標題、內容模板、hashtag策略、發布時間優化。適合博主、品牌、MCN。觸發詞：小紅書、紅書、xiaohongshu、筆記、種草、爆款、小紅書文案、筆記標題。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isaacloi1995-dot",
+      "userId": "publishers:isaacloi1995-dot",
+      "displayName": "isaacloi1995-dot",
+      "image": "https://avatars.githubusercontent.com/u/257231061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3267,
+      "installsAllTime": 23,
+      "installsCurrent": 23,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772773627907,
+      "changelog": "首個版本 - 爆款標題、內容模板、hashtag策略",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:baf861e0d3f3e4a62f8a519129ee701ebdeba4aa304c47058059732d938d91f0"
+}

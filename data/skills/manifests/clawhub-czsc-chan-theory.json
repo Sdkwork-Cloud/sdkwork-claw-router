@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63566,
+  "uuid": "skill-clawhub-czsc-chan-theory",
+  "skillKey": "clawhub-czsc-chan-theory",
+  "name": "Czsc Chan Theory",
+  "summary": "CZSC 缠论技术分析工具，支持 K 线生成、笔线段识别、分型信号提取与 A 股回测可视化。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.czsc_chan_theory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "CZSC 缠论技术分析工具，支持 K 线生成、笔线段识别、分型信号提取与 A 股回测可视化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/czsc-chan-theory@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "czsc-chan-theory",
+      "url": "https://clawhub.ai/skills/czsc-chan-theory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "czsc-chan-theory",
+    "url": "https://clawhub.ai/skills/czsc-chan-theory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/czsc-chan-theory-7a570bcfb699e3ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/czsc-chan-theory@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-czsc-chan-theory-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e057a382b257c70af0b6be4ef2bead3dd113fcb58f65e93225e6437f0a25d82",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:25:01.792Z"
+}

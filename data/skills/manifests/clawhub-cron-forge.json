@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23474,
+  "uuid": "skill-clawhub-cron-forge",
+  "skillKey": "clawhub-cron-forge",
+  "name": "Cron Forge",
+  "summary": "Human-readable cron job templates for OpenClaw. Stop googling cron syntax. Pre-built schedules for daily reports, hourly checks, weekly summaries, and custom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Human-readable cron job templates for OpenClaw",
+        "Stop googling cron syntax",
+        "Pre-built schedules for daily reports, hourly checks, weekly summaries, and custom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-forge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-forge",
+      "url": "https://clawhub.ai/skills/cron-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-forge",
+    "url": "https://clawhub.ai/skills/cron-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-forge-40a4bcdc6c57733a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-forge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-forge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f27d930b637a3f14012e80bd683c282c3067b319cf114c7cd89740e8326effd",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:57:48.283Z"
+}

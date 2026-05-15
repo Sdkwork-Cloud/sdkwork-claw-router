@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67710,
+  "uuid": "skill-clawhub-cn-excel-formula",
+  "skillKey": "clawhub-cn-excel-formula",
+  "name": "Excel公式助手",
+  "summary": "Excel公式助手。自然语言描述需求，自动生成Excel公式。支持VLOOKUP、条件统计、日期计算、文本处理等200+常用公式。附带公式解释和示例数据。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_excel_formula",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "Excel公式助手。自然语言描述需求，自动生成Excel公式。支持VLOOKUP、条件统计、日期计算、文本处理等200+常用公式。附带公式解释和示例数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-excel-formula@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-excel-formula",
+      "url": "https://clawhub.ai/skills/cn-excel-formula"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-excel-formula",
+    "url": "https://clawhub.ai/skills/cn-excel-formula",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-excel-formula-62f1523368b843d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-excel-formula@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-excel-formula-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54cf294bd79182dab70ad5d550a97a723ce1b4260baa553b50f44ed9e38aa263",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:46:58.598Z"
+}

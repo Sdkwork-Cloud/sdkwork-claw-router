@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-improver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_improver",
+  "skill": {
+    "id": 42054,
+    "skillKey": "clawhub-auto-improver",
+    "name": "Auto Improver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-improver",
+    "url": "https://clawhub.ai/skills/auto-improver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-improver-e29838a19db800de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-improving AI agent that learns from every execution, extracts patterns, and continuously optimizes itself. 17-minute autonomous loop with confidence sco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776045789053,
+      "changelog": "- Initial release of auto-improver: an autonomous AI agent that learns and optimizes itself through 17-minute execution loops.\n- Introduces confidence scoring with a six-dimensional evaluation and time decay model.\n- Features advanced pattern extraction (supports 8 types) and flexible aggregation (Skill/Command/Agent).\n- Includes use-case examples, FAQ, pricing tiers, and quickstart commands.\n- Ensures data privacy with local encryption and supports private deployment for enterprise users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:344b34223de8c78c9029a0add7f652522cfa39b2a94dd1bead70551a1649aa9b"
+}

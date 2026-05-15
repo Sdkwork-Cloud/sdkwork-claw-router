@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16919,
+  "uuid": "skill-clawhub-business-process-audit",
+  "skillKey": "clawhub-business-process-audit",
+  "name": "Business Process Audit",
+  "summary": "Evaluates business workflows across 8 areas to identify automation opportunities, estimate time and cost savings, and prioritize processes by ROI for digital...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_process_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Evaluates business workflows across 8 areas to identify automation opportunities, estimate time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-process-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-process-audit",
+      "url": "https://clawhub.ai/skills/business-process-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-process-audit",
+    "url": "https://clawhub.ai/skills/business-process-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-process-audit-3f60ef19269272b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-process-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-process-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5ab0c9737fb24589355b875aa2566c2a7a82984dd57dfd58560ff6aebacfadd",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T21:55:59.667Z"
+}

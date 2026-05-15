@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45640,
+  "uuid": "skill-clawhub-oatda-translate-audio",
+  "skillKey": "clawhub-oatda-translate-audio",
+  "name": "Oatda Translate Audio",
+  "summary": "Translate foreign-language audio into English text using OATDA's unified audio API. Triggers when the user wants audio translation, spoken-language translati...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_translate_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Translate foreign-language audio into English text using OATDA's unified audio API",
+        "Triggers when the user wants audio translation, spoken-language translati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-translate-audio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-translate-audio",
+      "url": "https://clawhub.ai/skills/oatda-translate-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-translate-audio",
+    "url": "https://clawhub.ai/skills/oatda-translate-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-translate-audio-8ecc08bd58c987f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-translate-audio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-translate-audio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4954a1ba47a9821c94fe49418707614f7caba609a2816a5be7212f7668842e6",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:30:46.832Z"
+}

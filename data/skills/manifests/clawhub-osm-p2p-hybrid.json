@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58508,
+  "uuid": "skill-clawhub-osm-p2p-hybrid",
+  "skillKey": "clawhub-osm-p2p-hybrid",
+  "name": "osm-p2p-hybrid",
+  "summary": "OSM-P2P Hybrid - 融合 UDP 直连与 Nostr 网络的 P2P 通讯系统",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osm_p2p_hybrid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanara-osm",
+      "features": [
+        "OSM-P2P Hybrid",
+        "融合 UDP 直连与 Nostr 网络的 P2P 通讯系统"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osm-p2p-hybrid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221350780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osm-p2p-hybrid",
+      "url": "https://clawhub.ai/skills/osm-p2p-hybrid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osm-p2p-hybrid",
+    "url": "https://clawhub.ai/skills/osm-p2p-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osm-p2p-hybrid-37b7ebb97c9011e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osm-p2p-hybrid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osm-p2p-hybrid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0248ba131d75977d564ccec0182fb561eb8a5dd9cc60b3373622454fd8646f6b",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T11:18:17.415Z"
+}

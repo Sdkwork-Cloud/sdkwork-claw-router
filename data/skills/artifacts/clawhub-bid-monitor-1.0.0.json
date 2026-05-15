@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bid-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bid_monitor",
+  "skill": {
+    "id": 71111,
+    "skillKey": "clawhub-bid-monitor",
+    "name": "国顺搜项目"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bid-monitor",
+    "url": "https://clawhub.ai/skills/bid-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bid-monitor-247599065643c5f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "招标监控：自动抓取招投标网站，按关键词过滤新项目，飞书/Telegram推送。 支持智能化/EPC总承包/中标公告，可独立配置关键词、数据源、推送目标。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmygx",
+      "userId": "s17f83z4j2gxvarqndt8kfabts83nqd2",
+      "displayName": "jimmygx",
+      "image": "https://avatars.githubusercontent.com/u/27848299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774537457533,
+      "changelog": "招标监控：智能化+EPC总承包+中标公告推送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97e930ca5f9183e833da6232fdf190faba0edc7079ff812a83fde3ccf20a8164"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convex-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convex_obsidian",
+  "skill": {
+    "id": 56968,
+    "skillKey": "clawhub-convex-obsidian",
+    "name": "Convex Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convex-obsidian",
+    "url": "https://clawhub.ai/skills/convex-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convex-obsidian-b77462bf9c9c9ab0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integração automática de memória persistente no OpenClaw, salvando conversas no Convex e buscando contexto híbrido com Convex e Obsidian para respostas relev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreytsushima",
+      "userId": "s17crdc791v1w5ef2ww9dk3abx84avbr",
+      "displayName": "Andrey Tsushima",
+      "image": "https://avatars.githubusercontent.com/u/5756241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775514631491,
+      "changelog": "Initial release of Convex + Obsidian persistent memory integration for OpenClaw.\n\n- Automatic, persistent memory using Convex (hot/recent) and deep historical knowledge via Obsidian.\n- Hybrid search injects relevant context based on conversation history references.\n- Includes CLI utilities and scripts for saving, searching, and stats across both memory stores.\n- Deep integration with OpenClaw via hooks and command options for auto-save and context injection.\n- Detailed setup instructions, configuration options, and usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:604f2c21ccdcb07d9c071e4cf091e031daf3ad507d76214348ce391411cf587b"
+}

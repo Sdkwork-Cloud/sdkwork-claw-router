@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25369,
+  "uuid": "skill-clawhub-envelope-sender",
+  "skillKey": "clawhub-envelope-sender",
+  "name": "Envelope Sender",
+  "summary": "Guide agent to send a user-specified local PDF document for signature through eSignGlobal by calling the eSignGlobal CLI tool.eSignGlobal CLI is an agent-fri...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.envelope_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley",
+      "features": [
+        "Guide agent to send a user-specified local PDF document for signature through eSignGlobal by ca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/envelope-sender@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9038144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "envelope-sender",
+      "url": "https://clawhub.ai/skills/envelope-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "envelope-sender",
+    "url": "https://clawhub.ai/skills/envelope-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/envelope-sender-4a531950fea704d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/envelope-sender@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-envelope-sender-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c795005b03e33fb287bea6b5944eadad5074778b8345d833bb62b93d8751a630",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:51:34.555Z"
+}

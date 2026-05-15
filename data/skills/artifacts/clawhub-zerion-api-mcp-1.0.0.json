@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zerion-api-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerion_api_mcp",
+  "skill": {
+    "id": 13829,
+    "skillKey": "clawhub-zerion-api-mcp",
+    "name": "Zerion API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerion-api-mcp",
+    "url": "https://clawhub.ai/skills/zerion-api-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerion-api-mcp-662af55702b2aca6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query crypto wallet portfolios, transactions, DeFi positions, NFTs, token prices, and gas fees across EVM chains and Solana using Zerion's API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abishekdharshan",
+      "userId": "s175kh00zycsvmvc1vfvp2t5cx83z5bw",
+      "displayName": "abishekdharshan",
+      "image": "https://avatars.githubusercontent.com/u/34197204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770319554414,
+      "changelog": "- Initial release of the Zerion API Skill for the MCP platform.\n- Query crypto wallet portfolios, transactions, DeFi positions, token and NFT data, and gas prices across 50+ EVM chains and Solana via Zerion's MCP server.\n- Requires a Zerion API key for authentication.\n- Includes detailed examples for common wallet, DeFi, token, NFT, and gas price queries.\n- Supports real-time data and multi-chain analysis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b5ef8d00a50d1720296d048fd8fa4c09a82dd420bb894e7b5bb9a5baf3dff95c"
+}

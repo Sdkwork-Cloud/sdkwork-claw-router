@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ads-manager-claw@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ads_manager_claw",
+  "skill": {
+    "id": 50524,
+    "skillKey": "clawhub-ads-manager-claw",
+    "name": "Ads Manager Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ads-manager-claw",
+    "url": "https://clawhub.ai/skills/ads-manager-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ads-manager-claw-629bbcc6b8fc4629.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage paid advertising campaigns across Meta (Facebook & Instagram), Google Ads, X, and Snapchat — optimized for Indian businesses. This skill analyzes perf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhishekj9621",
+      "userId": "s1751yz1cbsqn3pc7sqpc0ytq983k7kg",
+      "displayName": "Abhishek Jaiswal",
+      "image": "https://avatars.githubusercontent.com/u/215396960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775130009985,
+      "changelog": "**New engine: Real-time feedback, business metrics, and smarter automation.**\n\n- Added continuous data-driven feedback loop (DATA → ANALYSIS → DECISION → ACTION → FEEDBACK)\n- Now evaluates deeper business metrics: LTV, CAC, LTV:CAC, payback period\n- Expanded diagnostic, alert, and root-cause explanation system\n- Upgraded decision rules for budget scaling, creative, and audience optimization\n- Smarter recommendations after every action, including expected ₹ impact\n- Output includes clear summary, alerts, opportunities, and prioritized next steps",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0cdd14b7ee5364686b302bd07f6d0174f834085d108d8a903bde3f198714972"
+}

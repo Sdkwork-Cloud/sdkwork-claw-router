@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imperial-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imperial_engine",
+  "skill": {
+    "id": 58764,
+    "skillKey": "clawhub-imperial-engine",
+    "name": "Imperial Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imperial-engine",
+    "url": "https://clawhub.ai/skills/imperial-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imperial-engine-2af044d7a61d4997.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帝王引擎（Emperor Engine）Skill - 极限token消耗测试工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr33b1rd8979-max",
+      "userId": "publishers:fr33b1rd8979-max",
+      "displayName": "fr33b1rd8979-max",
+      "image": "https://avatars.githubusercontent.com/u/261570927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772695372279,
+      "changelog": "Initial release of imperial-engine: a tool for extreme token usage and throughput testing in OpenClaw.\n\n- Enables massive token consumption per session, triggering deep, recursive LLM-tool-chains.\n- Highly configurable: control iterations, prompt/output sizes, memory persistence, browser and shell use.\n- Adds strong safety warnings, budgeting tips, rate limits, and monitoring recommendations.\n- Offers example usage flows and step-by-step guidance for safe activation and shutdown.\n- Designed strictly for testing/environments with strict cost/usage controls—may rapidly incur high costs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5841cf647abf46af1dd32b3206b9229a070df181147309da8ccf0abbd9eb420b"
+}

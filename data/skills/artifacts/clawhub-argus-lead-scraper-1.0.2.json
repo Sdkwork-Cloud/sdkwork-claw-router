@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/argus-lead-scraper@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.argus_lead_scraper",
+  "skill": {
+    "id": 26374,
+    "skillKey": "clawhub-argus-lead-scraper",
+    "name": "B2B Lead Generation Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "argus-lead-scraper",
+    "url": "https://clawhub.ai/skills/argus-lead-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/argus-lead-scraper-de01f4f07f287d4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts verified B2B leads (name, email, company, LinkedIn, job title) from target sources and exports them as CRM-ready CSV files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neo1307",
+      "userId": "s17e4t723xx0m0178xj1mw78td85175k",
+      "displayName": "neo1307",
+      "image": "https://avatars.githubusercontent.com/u/196853531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773933628110,
+      "changelog": "Fix: remove non-standard frontmatter fields, document env vars in markdown body",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:786bb1ae494c84e242879e079576e3b5da8f37ce7cece0113b2b6c5345c39755"
+}

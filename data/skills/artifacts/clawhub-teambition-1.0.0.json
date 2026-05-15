@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teambition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teambition",
+  "skill": {
+    "id": 40899,
+    "skillKey": "clawhub-teambition",
+    "name": "teambition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teambition",
+    "url": "https://clawhub.ai/skills/teambition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teambition-ced422ed4a8498b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and query tasks in TeamBition across multiple apps using configured project and organization settings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wengjianmin19850412",
+      "userId": "s173e9zemym4n6apehgkqwn3tx83qwek",
+      "displayName": "wengjianmin19850412",
+      "image": "https://avatars.githubusercontent.com/u/267980481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774627911652,
+      "changelog": "- Initial release of TeamBition task management skill.\n- Supports configuration for multiple TeamBition applications.\n- Enables creation and query of TeamBition tasks by agents.\n- Customizable agent-level binding to different TeamBition apps.\n- Returns raw TeamBition API responses for task operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ee7c5ff87ba8a8b090dcccf49483b671e3723b70ec7d301d9c82c380260fab3"
+}

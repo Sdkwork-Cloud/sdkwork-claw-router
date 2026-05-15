@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36333,
+  "uuid": "skill-clawhub-daily-task-checkin",
+  "skillKey": "clawhub-daily-task-checkin",
+  "name": "Daily Task Check-in",
+  "summary": "Simple task intake, reminder, and completion check-in flow for public-safe daily coordination.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_task_checkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guoma970",
+      "features": [
+        "Simple task intake, reminder, and completion check-in flow for public-safe daily coordination."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-task-checkin@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266290379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-task-checkin",
+      "url": "https://clawhub.ai/skills/daily-task-checkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-task-checkin",
+    "url": "https://clawhub.ai/skills/daily-task-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-task-checkin-124636f4f621f758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-task-checkin@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-task-checkin-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f5abcb1296f17180cd1e5b79c8cd8e54e43a19cc6b53413e9198a402323d001",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:49:36.762Z"
+}

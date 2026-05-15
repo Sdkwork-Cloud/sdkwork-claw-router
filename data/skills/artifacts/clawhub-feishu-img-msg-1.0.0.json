@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-img-msg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_img_msg",
+  "skill": {
+    "id": 66813,
+    "skillKey": "clawhub-feishu-img-msg",
+    "name": "飞书图片消息"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-img-msg",
+    "url": "https://clawhub.ai/skills/feishu-img-msg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-img-msg-ce4a19b1f17f36b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书图片消息操作技能，当触发飞书发送图片时自动调用本技能。 支持上传图片、发送图片消息、获取图片内容。 Activate when user mentions: 飞书发图、发送图片、上传图片、获取图片、下载图片、image_key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imbing",
+      "userId": "publishers:imbing",
+      "displayName": "BING",
+      "image": "https://avatars.githubusercontent.com/u/6907564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 597,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772507203609,
+      "changelog": "feishu-img-msg 1.0.0\n\n- Initial release with full Feishu image message operations.\n- Supports uploading, sending, fetching, downloading, and viewing images via CLI commands.\n- Handles both local image files and Feishu image_key usage.\n- Clear instructions and parameter guidance for all commands.\n- Includes FAQ for troubleshooting and documents required permissions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c44ce4de17bc07ee0f87ec45271cd3c0a397cf3f50660a38ea267f056460f48"
+}

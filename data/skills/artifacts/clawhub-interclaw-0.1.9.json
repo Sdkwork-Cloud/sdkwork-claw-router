@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interclaw@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interclaw",
+  "skill": {
+    "id": 15751,
+    "skillKey": "clawhub-interclaw",
+    "name": "InterClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interclaw",
+    "url": "https://clawhub.ai/skills/interclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interclaw-2f5e51e40908cecd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure, sequenced, PGP-signed email mesh for agent-to-agent coordination via plain email"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachlagden",
+      "userId": "publishers:zachlagden",
+      "displayName": "Zach Lagden",
+      "image": "https://avatars.githubusercontent.com/u/57912331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 775,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1771536567438,
+      "changelog": "Add files field to SKILL.md frontmatter to include scripts, config, and docs in ClaHub package",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17850b07a28b5d0a7496da11bb066b6cd7dfa270e474974518454c459eecf7d4"
+}

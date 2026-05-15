@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abi-toolchain@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abi_toolchain",
+  "skill": {
+    "id": 33268,
+    "skillKey": "clawhub-abi-toolchain",
+    "name": "Abi Toolchain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abi-toolchain",
+    "url": "https://clawhub.ai/skills/abi-toolchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abi-toolchain-5f173b11ab27a302.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ABI lifecycle management for smart contract projects. Use when your frontend is out of sync with contract changes, when you need to set up ABI generation in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "old-greggyboy",
+      "userId": "s175wg8gt8gbcdafp6w5d0s7gh83gsp5",
+      "displayName": "old-greggyboy",
+      "image": "https://avatars.githubusercontent.com/u/266362655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774389910095,
+      "changelog": "No user-visible changes in this release.  \n- Version number bumped to 1.0.1 with no modifications to files or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7863e754a722468299211207901184f25353eafcd24f5c29132da82e5454241"
+}

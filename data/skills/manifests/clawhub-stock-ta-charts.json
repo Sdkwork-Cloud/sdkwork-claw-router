@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24212,
+  "uuid": "skill-clawhub-stock-ta-charts",
+  "skillKey": "clawhub-stock-ta-charts",
+  "name": "Stock TA Charts",
+  "summary": "Generate professional technical analysis charts (candlesticks, Fibonacci, SMA 20/50, RSI, pattern detection) for crypto and commodities. Use when the user as...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_ta_charts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NomadRex",
+      "features": [
+        "Generate professional technical analysis charts (candlesticks, Fibonacci, SMA 20/50, RSI, patte.",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-ta-charts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57141717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-ta-charts",
+      "url": "https://clawhub.ai/skills/stock-ta-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-ta-charts",
+    "url": "https://clawhub.ai/skills/stock-ta-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-ta-charts-52037126c234486a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-ta-charts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-ta-charts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a79f807787731e0948357a62ff040dbb561bdb4ac9918ca7d538c86caa0b278",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:12:03.732Z"
+}

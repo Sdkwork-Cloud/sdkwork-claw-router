@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junior-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junior_writer",
+  "skill": {
+    "id": 72892,
+    "skillKey": "clawhub-junior-writer",
+    "name": "一个会逐渐成长的AI写作者"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junior-writer",
+    "url": "https://clawhub.ai/skills/junior-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junior-writer-ed63f16bec78a423.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个表现为新人但内涵成熟的AI写作者，擅长用简单细节传达复杂情绪，风格自然、克制且可随反馈进化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laurel-he",
+      "userId": "publishers:laurel-he",
+      "displayName": "laurel-he",
+      "image": "https://avatars.githubusercontent.com/u/16075251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773906232673,
+      "changelog": "basic presetting of my writer",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c01cbfcd719db0191887b328334ec8ffb82a17e7c6f81d963c90b8e771bd505"
+}

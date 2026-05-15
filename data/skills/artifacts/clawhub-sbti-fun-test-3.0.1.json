@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sbti-fun-test@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_fun_test",
+  "skill": {
+    "id": 61146,
+    "skillKey": "clawhub-sbti-fun-test",
+    "name": "Sbti Fun Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-fun-test",
+    "url": "https://clawhub.ai/skills/sbti-fun-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-fun-test-2305eeba01e2f3bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SBTI personality test V3 - 梗王版！28种接地气的人格类型，包括自我攻击者、吗喽、狗屎人、握草人等。每种类型都有独特的ASCII艺术宠物。30道题，4个选项，测试结果 hilariously accurate。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1775796504510,
+      "changelog": "- Documentation only: updated SKILL.md without any code or feature changes.\n- No impact on usage or test content; all functionality remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73fd249fb594bc3a782b3e2f445c1f709e611c7c35decc306c2e37055a0f62d2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neural-learning-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neural_learning_engine",
+  "skill": {
+    "id": 24658,
+    "skillKey": "clawhub-neural-learning-engine",
+    "name": "neural-learning-engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neural-learning-engine",
+    "url": "https://clawhub.ai/skills/neural-learning-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neural-learning-engine-59b8c5c6d69b9296.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simulates a neural network learning loop by detecting input patterns, storing them in memory, and generating improved, adaptive responses over time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aineuralagency",
+      "userId": "s174jtv0eh9rp8e7dsb5fv42j18423k6",
+      "displayName": "AiNeuralAgency",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775204862798,
+      "changelog": "Neural Learning Engine v1.0.0\n\n- Initial release of the Neural Learning Engine skill.\n- Simulates a neural network learning loop: input processing, pattern recognition, memory storage, and adaptive response.\n- Provides structured, confidence-scored JSON outputs.\n- Designed for easy integration into AI agents, dashboards, APIs, and automation workflows.\n- Serves as a lightweight, extensible foundation for neural-based AI systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f405f8875f631a40357b7b382c7093f661f7a39b5a4965a222e66c824ff6956e"
+}

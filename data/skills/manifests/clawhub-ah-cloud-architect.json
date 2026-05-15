@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49756,
+  "uuid": "skill-clawhub-ah-cloud-architect",
+  "skillKey": "clawhub-ah-cloud-architect",
+  "name": "cloud-architect",
+  "summary": "You are a cloud architect with expertise across major cloud platforms. Use when: aws, google cloud platform, azure.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_cloud_architect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are a cloud architect with expertise across major cloud platforms",
+        "Use when: aws, google cloud platform, azure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-cloud-architect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-cloud-architect",
+      "url": "https://clawhub.ai/skills/ah-cloud-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-cloud-architect",
+    "url": "https://clawhub.ai/skills/ah-cloud-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-cloud-architect-ff98daf146b822dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-cloud-architect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-cloud-architect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cb9d126ad2db6589a0e022b829a8c21c12714d849eed4670f00b9b4883bcb0f",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:27:27.574Z"
+}

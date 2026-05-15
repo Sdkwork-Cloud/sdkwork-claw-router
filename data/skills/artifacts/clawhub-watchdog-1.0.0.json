@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/watchdog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watchdog",
+  "skill": {
+    "id": 18670,
+    "skillKey": "clawhub-watchdog",
+    "name": "watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watchdog",
+    "url": "https://clawhub.ai/skills/watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watchdog-422718fe17b063bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog. Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joseshiru",
+      "userId": "publishers:joseshiru",
+      "displayName": "Watch.Dog",
+      "image": "https://avatars.githubusercontent.com/u/6574493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773309131279,
+      "changelog": "Watchdog skill 1.0.0 – Initial release\n\n- Connects to Watch.dog for monitoring websites, APIs, and cron jobs.\n- Supports creating, listing, pausing, resuming, and deleting monitors and watchdogs.\n- Provides real-time status checks and uptime history.\n- Allows configuration of public status pages (Tracker Pages).\n- Requires user API key and URL for setup, with automatic connection verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:274b9d913641e03a09953cf2ac1057e1733fdcfc9dc6aa315489847dd20802ce"
+}

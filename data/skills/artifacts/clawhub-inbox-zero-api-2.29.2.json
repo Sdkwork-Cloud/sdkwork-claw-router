@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inbox-zero-api@2.29.2",
+  "version": "2.29.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_zero_api",
+  "skill": {
+    "id": 29279,
+    "skillKey": "clawhub-inbox-zero-api",
+    "name": "Inbox Zero API CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-zero-api",
+    "url": "https://clawhub.ai/skills/inbox-zero-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-zero-api-476393acba0ab864.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Inbox Zero API CLI to inspect the live API schema, list and manage automation rules, and read inbox analytics through the public API. Use this when a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elie222",
+      "userId": "publishers:elie222",
+      "displayName": "Elie Steinbock",
+      "image": "https://avatars.githubusercontent.com/u/3090527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.29.2",
+      "createdAt": 1773587693166,
+      "changelog": "Initial release — manage Inbox Zero rules and stats via the public API CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cab51ef21f6d700935dd3f6bd9d407a5aa9a87dd80a986f4e2267f3bf709188"
+}

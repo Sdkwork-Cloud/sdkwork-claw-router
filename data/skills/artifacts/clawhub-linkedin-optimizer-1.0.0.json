@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_optimizer",
+  "skill": {
+    "id": 35378,
+    "skillKey": "clawhub-linkedin-optimizer",
+    "name": "LinkedIn Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-optimizer",
+    "url": "https://clawhub.ai/skills/linkedin-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-optimizer-399eed10d1644ce9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when optimizing LinkedIn profiles for doctors, physicians, nurses, healthcare professionals, or medical researchers. Crafts compelling headlines, writes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774503118520,
+      "changelog": "Initial release of the linkedin-optimizer skill for healthcare professionals.\n\n- Optimizes LinkedIn profiles for doctors, nurses, physicians, healthcare professionals, and medical researchers.\n- Automatically generates compelling headlines, professional summaries, and experience section content tailored to the medical field.\n- Integrates relevant healthcare keywords and personal branding strategies.\n- Includes scriptable workflow (scripts/main.py) and reference materials for consistent, reviewable output.\n- Provides both programmatic and CLI examples for ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b288b4c493bcfc01669356e36a61f6d735e01171899065391c38028eee9d9f75"
+}

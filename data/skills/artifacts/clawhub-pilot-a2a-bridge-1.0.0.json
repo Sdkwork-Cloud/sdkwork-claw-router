@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-a2a-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_a2a_bridge",
+  "skill": {
+    "id": 38294,
+    "skillKey": "clawhub-pilot-a2a-bridge",
+    "name": "Pilot A2a Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-a2a-bridge",
+    "url": "https://clawhub.ai/skills/pilot-a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-a2a-bridge-0b506242ad4a19f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge A2A (Agent-to-Agent) protocol messages over Pilot tunnels. Use this skill when: 1. You need to connect A2A agents across different networks 2. You wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775680827732,
+      "changelog": "Initial release for bridging Agent-to-Agent (A2A) protocol messages over Pilot tunnels.\n\n- Enables reliable A2A messaging across different networks using Pilot’s encrypted overlay.\n- Supports sending, receiving, and subscribing to A2A messages between agents behind NAT.\n- Designed for multi-agent systems needing robust, cross-network communication.\n- Requires a running pilotctl daemon and pilot-protocol skill for operation.\n- Includes example workflows and command usage for rapid integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09704142f0b8bf94c410e295ccb9d95611410a893d6b3ce3b9269427fd70ac39"
+}

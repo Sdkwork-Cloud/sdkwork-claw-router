@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10268,
+  "uuid": "skill-clawhub-web-search-instant",
+  "skillKey": "clawhub-web-search-instant",
+  "name": "Web Search Instant",
+  "summary": "Web search using DuckDuckGo Instant Answer API (no API key required). Use when you need to search the web for information, definitions, calculations, conversions, or quick facts. Also use when user mentions \"search\", \"look up\", \"find infor.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_instant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hahahxx",
+      "features": [
+        "Web search using DuckDuckGo Instant Answer API (no API key required)",
+        "Use when you need to search the web for information, definitions, calculations, conversions, or.",
+        "Also use when user mentions \"search\", \"look up\", \"find information\", \"what is\", \"how to\", or \"g.",
+        "The skill provides instant answers, definitions, abstracts, and related topics without requirin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-search-instant@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1911097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-search-instant",
+      "url": "https://clawhub.ai/skills/web-search-instant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-instant",
+    "url": "https://clawhub.ai/skills/web-search-instant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-instant-035b7471f5deca8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-search-instant@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-search-instant-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15ee426e718e9a57cd9e889b27dba50cc19018e3131a8fcb03b624c5cd3dedfe",
+      "artifactSizeBytes": 3106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T22:53:39.312Z"
+}

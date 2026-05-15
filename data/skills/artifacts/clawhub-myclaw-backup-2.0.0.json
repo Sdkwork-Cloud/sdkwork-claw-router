@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myclaw-backup@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclaw_backup",
+  "skill": {
+    "id": 12778,
+    "skillKey": "clawhub-myclaw-backup",
+    "name": "myclaw-backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclaw-backup",
+    "url": "https://clawhub.ai/skills/myclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclaw-backup-675d7f9214c33593.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore all OpenClaw configuration, agent memory, skills, and workspace data. Part of the MyClaw.ai (https://myclaw.ai/skills) open skills ecosyst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leoyeai",
+      "userId": "s17173yy3nw4w4agfswx5k0wz583g31t",
+      "displayName": "Leo Ye",
+      "image": "https://avatars.githubusercontent.com/u/121472001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1416,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774681984896,
+      "changelog": "Update ecosystem links to myclaw.ai/skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f936a06c7846c7c36ed639a032e9121a96454207e11ecb7e1d732c1f1b46d3b2"
+}

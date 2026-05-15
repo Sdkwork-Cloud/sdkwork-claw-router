@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "byted-bytehouse-load-analyzer",
+    "displayName": "Byted Bytehouse Load Analyzer",
+    "summary": "ByteHouse集群负载分析和性能监控工具，用于分析集群负载情况、监控资源使用情况、分析查询吞吐量、识别性能瓶颈。当用户需要分析ByteHouse集群负载情况、监控资源使用情况、分析查询吞吐量、识别性能瓶颈时，使用此Skill。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774526862099,
+    "updatedAt": 1777623888297
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774526862099,
+    "changelog": "Initial release of ByteHouse cluster load analyzer and performance monitoring skill.\n\n- Provides resource usage monitoring (CPU, memory, disk, network) for ByteHouse clusters.\n- Analyzes query load, concurrency, and query type distribution, including QPS statistics and peak period detection.\n- Ranks table access hotness, analyzes read/write ratios, tracks size growth, and shows partition load distribution.\n- Identifies system performance bottlenecks and generates optimization suggestions.\n- Outputs reports as structured JSON files covering resource usage, query load, table load, and bottleneck analysis.\n- Depends on the bytehouse-mcp skill for accessing ByteHouse MCP Server.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "volcengine-skills",
+    "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+    "displayName": "volcengine-skills",
+    "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623888297
+  }
+}

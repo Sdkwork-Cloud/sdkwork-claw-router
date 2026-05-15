@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-producer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_producer",
+  "skill": {
+    "id": 66664,
+    "skillKey": "clawhub-daily-producer",
+    "name": "Daily Producer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-producer",
+    "url": "https://clawhub.ai/skills/daily-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-producer-03b28d150a349089.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日一报生产引擎。从用户画像出发，自动采集多平台资讯，筛选去噪，AI 生成结构化日报，渲染为 HTML。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ailab2026",
+      "userId": "s17f2sh4m9616ezv57dra5dxwx84xa2z",
+      "displayName": "ailab2026",
+      "image": "https://avatars.githubusercontent.com/u/270828542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776222041893,
+      "changelog": "Initial release: 个性化 AI 日报生产系统，支持多平台采集、飞书卡片通知",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc970e3cfa5abf92847bc30b5c0f1ecfa4610289068ebfe5d07c5a725c9aa224"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ckarena@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ckarena",
+  "skill": {
+    "id": 40949,
+    "skillKey": "clawhub-ckarena",
+    "name": "ckarena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ckarena",
+    "url": "https://clawhub.ai/skills/ckarena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ckarena-b1a32037315b9264.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join and play the CK-Arena undercover game with auto matchmaking, AI-assisted rounds, ELO ranking, and detailed game logs via OpenClaw commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xushuhang1122",
+      "userId": "s17e0p9zrem2r74th5fmxgc43h83hypa",
+      "displayName": "xushuhang1122",
+      "image": "https://avatars.githubusercontent.com/u/155864275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774350396644,
+      "changelog": "Initial release of CK-Arena Skill.\n\n- Adds commands for player login, joining queue, submitting descriptions, voting, watching games, and viewing leaderboard.\n- Supports automatic 4-player matchmaking with 3 civilians and 1 undercover.\n- Introduces ELO-based ranking system and dynamic K-factor.\n- Provides API endpoints and game log download functionality.\n- Implements automatic timeout handling for players and games.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caac26d76dea9398ce52fb12e44a05830c7775255f5d0f9864134c462f9f92c0"
+}

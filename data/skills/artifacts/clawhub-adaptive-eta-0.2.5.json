@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-eta@0.2.5",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_eta",
+  "skill": {
+    "id": 56665,
+    "skillKey": "clawhub-adaptive-eta",
+    "name": "Adaptive Eta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-eta",
+    "url": "https://clawhub.ai/skills/adaptive-eta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-eta-7a80398e9b66d1c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A behavioral skill that enforces proactive time estimation and progress updates. It **must be activated for any task predicted to exceed 15 seconds.** It use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanghe1941",
+      "userId": "s176ejhymd70h70zqpx7jv8rth83f2c6",
+      "displayName": "RJ Young",
+      "image": "https://avatars.githubusercontent.com/u/35376018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.2.5",
+      "createdAt": 1774308143933,
+      "changelog": "- Added English translations for all major sections alongside Chinese descriptions in SKILL.md.\n- Updated description to clarify use of both a script and cron-based reminders.\n- Improved clarity of rules and processes with bilingual step-by-step instructions.\n- No logic or code changes; documentation and accessibility improved for broader audiences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:848419ff0307fa5b0d0b74f2ebe2e2c7255fd7bf8f1baa100212a3e34662bd01"
+}

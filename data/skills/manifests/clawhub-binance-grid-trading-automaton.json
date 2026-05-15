@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60060,
+  "uuid": "skill-clawhub-binance-grid-trading-automaton",
+  "skillKey": "clawhub-binance-grid-trading-automaton",
+  "name": "Binance Grid Trading",
+  "summary": "网格交易策略 - 自动化低买高卖。每次调用自动扣费 0.001 USDT",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_grid_trading_automaton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenghaifeng08-creator",
+      "features": [
+        "自动化低买高卖。每次调用自动扣费 0.001 USDT"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-grid-trading-automaton@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266006783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-grid-trading-automaton",
+      "url": "https://clawhub.ai/skills/binance-grid-trading-automaton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-grid-trading-automaton",
+    "url": "https://clawhub.ai/skills/binance-grid-trading-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-grid-trading-automaton-94a613147d140c0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-grid-trading-automaton@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-grid-trading-automaton-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db6d2aa8508b24e695e6b8d987177af7e7943e4138553854a8d70e433e93949",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:29:20.604Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13400,
+  "uuid": "skill-clawhub-restaurants",
+  "skillKey": "clawhub-restaurants",
+  "name": "Restaurants",
+  "summary": "Build a personal restaurant system for tracking places to try, favorites, and dining memories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurants",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal restaurant system for tracking places to try, favorites, and dining memories."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restaurants@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restaurants",
+      "url": "https://clawhub.ai/skills/restaurants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurants",
+    "url": "https://clawhub.ai/skills/restaurants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurants-0dbdc4fb0fbb8e19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restaurants@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restaurants-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f76e23558c97ede6fd1a8bf230a434bc248e24a699e05f685cd2d6523134ea6a",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:45:12.460Z"
+}

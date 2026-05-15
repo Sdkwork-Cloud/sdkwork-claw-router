@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scalekit-agent-auth@2.4.2",
+  "version": "2.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scalekit_agent_auth",
+  "skill": {
+    "id": 13155,
+    "skillKey": "clawhub-scalekit-agent-auth",
+    "name": "Scalekit Agent Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scalekit-agent-auth",
+    "url": "https://clawhub.ai/skills/scalekit-agent-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scalekit-agent-auth-f3d44e92636112a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user asks for information from, or wants to take an action in, a third-party tool or service. This includes — but is not limited..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avinash-kamath",
+      "userId": "s17dyks943e4s42fxp7kyrm5m583jr1d",
+      "displayName": "Avinash Kamath",
+      "image": "https://avatars.githubusercontent.com/u/80739901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1607,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.4.2",
+      "createdAt": 1774429668028,
+      "changelog": "- Updated dependencies in pyproject.toml for improved compatibility.\n- Minor metadata or configuration changes in _meta.json.\n- No changes to usage or functionality documented in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fbb0b2ffd7f9eb72ae93a3c0fa6abcd72e13ef0958f50d68342b6f5e5b7b90c"
+}

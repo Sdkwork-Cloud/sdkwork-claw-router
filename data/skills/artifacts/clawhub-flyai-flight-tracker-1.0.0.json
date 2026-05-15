@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-flight-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_flight_tracker",
+  "skill": {
+    "id": 46164,
+    "skillKey": "clawhub-flyai-flight-tracker",
+    "name": "FlyAI Flight Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-flight-tracker",
+    "url": "https://clawhub.ai/skills/flyai-flight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-flight-tracker-5bb0976844ffbb41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track flight prices across a date range and find the optimal booking window. Shows day-by-day price comparison charts to spot trends and the best moment to b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "v3.2.0",
+      "createdAt": 1775726028700,
+      "changelog": "- New execution rules enforce that all responses must use live flyai CLI data and include booking links, with strict output validation.\n- Expanded supported features: hotel reservation, train tickets, attraction tickets, itinerary planning, visa info, travel insurance, car rental, and more — all via Fliggy (Alibaba Group).\n- Added detailed scenario playbooks for common flight price tracking and booking timing queries (e.g., price trends, best day to book).\n- Revised parameters table and usage guidance to ensure only documented CLI options are used.\n- Strict Chinese/English response logic based on user input language.\n- Enhanced compliance checks to prevent fallback to model knowledge or fabricated results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:899269bb43cdb85822ddd346fc794fe53c6c860f4a23c612cd960d117f64fb0f"
+}

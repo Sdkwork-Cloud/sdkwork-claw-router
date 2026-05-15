@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59274,
+  "uuid": "skill-clawhub-skill-routing-benchmark",
+  "skillKey": "clawhub-skill-routing-benchmark",
+  "name": "Skill Routing Benchmark",
+  "summary": "测试多个 Skill 描述是否会路由冲突，并生成正例、反例与负向触发语句。；use for skills, routing, benchmark workflows；do not use for 只给模糊建议, 忽略高度相近的 skill.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_routing_benchmark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "测试多个 Skill 描述是否会路由冲突，并生成正例、反例与负向触发语句。；use for skills, routing, benchmark workflows；do not use f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-routing-benchmark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-routing-benchmark",
+      "url": "https://clawhub.ai/skills/skill-routing-benchmark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-routing-benchmark",
+    "url": "https://clawhub.ai/skills/skill-routing-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-routing-benchmark-dae3b09a560b9a00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-routing-benchmark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-routing-benchmark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb43b554b94ed9f639c52ec96b06c5a4b795144bae9c2b02805425a7a63192f0",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:43:28.292Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57420,
+  "uuid": "skill-clawhub-feishu-evolver-dashboard",
+  "skillKey": "clawhub-feishu-evolver-dashboard",
+  "name": "飞书进化仪表盘",
+  "summary": "Feishu-integrated wrapper for the capability-evolver. Manages the evolution loop lifecycle (start/stop/ensure), sends rich Feishu card reports, and provides...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_evolver_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbo405",
+      "features": [
+        "Feishu-integrated wrapper for the capability-evolver",
+        "Manages the evolution loop lifecycle (start/stop/ensure), sends rich Feishu card reports, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-evolver-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-evolver-dashboard",
+      "url": "https://clawhub.ai/skills/feishu-evolver-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-evolver-dashboard",
+    "url": "https://clawhub.ai/skills/feishu-evolver-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-evolver-dashboard-4fd6d85feddcdd68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-evolver-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-evolver-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34c23fb33ba271a5071a5c33745a932051f7feec1b31cc28fc98533d263041a4",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:12:51.559Z"
+}

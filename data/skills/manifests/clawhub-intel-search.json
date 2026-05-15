@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55492,
+  "uuid": "skill-clawhub-intel-search",
+  "skillKey": "clawhub-intel-search",
+  "name": "Intel Search — News, Earthquakes, Iran, Tech",
+  "summary": "Simplified search for news, earthquakes, Iran, tech, finance, layoffs. Bilingual (EN/中文). Flexible time. Data from World Monitor (fetch then query locally)....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intel_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oscarka",
+      "features": [
+        "Simplified search for news, earthquakes, Iran, tech, finance, layoffs",
+        "Bilingual (EN/中文)",
+        "Flexible time",
+        "Data from World Monitor (fetch then query locally)...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intel-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3446157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intel-search",
+      "url": "https://clawhub.ai/skills/intel-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intel-search",
+    "url": "https://clawhub.ai/skills/intel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intel-search-efa3a57cad692d92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intel-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intel-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b580e7ac9cf05a02634d86bba50d7f2a84e5b186c8b3dc03b0229908039083f3",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:49:35.669Z"
+}

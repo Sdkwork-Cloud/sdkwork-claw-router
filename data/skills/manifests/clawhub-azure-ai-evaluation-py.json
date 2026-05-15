@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11329,
+  "uuid": "skill-clawhub-azure-ai-evaluation-py",
+  "skillKey": "clawhub-azure-ai-evaluation-py",
+  "name": "Azure Ai Evaluation Py",
+  "summary": "Azure AI Evaluation SDK for Python. Use for evaluating generative AI applications with quality, safety, and custom evaluators. Triggers: \"azure-ai-evaluation\", \"evaluators\", \"GroundednessEvaluator\", \"evaluate\", \"AI quality metrics\".",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_ai_evaluation_py",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thegovind",
+      "features": [
+        "Azure AI Evaluation SDK for Python",
+        "Use for evaluating generative AI applications with quality, safety, and custom evaluators",
+        "Triggers: \"azure-ai-evaluation\", \"evaluators\", \"GroundednessEvaluator\", \"evaluate\", \"AI quality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-ai-evaluation-py@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18152044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-ai-evaluation-py",
+      "url": "https://clawhub.ai/skills/azure-ai-evaluation-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-ai-evaluation-py",
+    "url": "https://clawhub.ai/skills/azure-ai-evaluation-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-ai-evaluation-py-09f1108f5a60d13a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-ai-evaluation-py@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-ai-evaluation-py-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80b8721daa5a7a6ad0b2befc9ca694597c371d042d4de8045ee7c94dc50ac87b",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:48:51.892Z"
+}

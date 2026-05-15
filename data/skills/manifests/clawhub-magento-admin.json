@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31256,
+  "uuid": "skill-clawhub-magento-admin",
+  "skillKey": "clawhub-magento-admin",
+  "name": "Magento 2 Admin",
+  "summary": "Complete Magento 2 store administration via SSH key auth, REST API, GraphQL, and direct DB access. For server owners on their own infrastructure. SSH key aut...",
+  "version": "5.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magento_admin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Only 1 Naren",
+      "features": [
+        "Complete Magento 2 store administration via SSH key auth, REST API, GraphQL, and direct DB acce.",
+        "For server owners on their own infrastructure",
+        "SSH key aut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magento-admin@5.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233563303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magento-admin",
+      "url": "https://clawhub.ai/skills/magento-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magento-admin",
+    "url": "https://clawhub.ai/skills/magento-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magento-admin-bd37482ba292099e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magento-admin@5.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-magento-admin-5.6.1.json",
+      "version": "5.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ba41b2f61efb6db9a1334bf04c7c15a613ddf5c8edd54dec61d446fd24627a4",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:51:53.555Z"
+}

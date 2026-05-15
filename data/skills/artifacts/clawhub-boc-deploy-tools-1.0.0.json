@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boc-deploy-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boc_deploy_tools",
+  "skill": {
+    "id": 72300,
+    "skillKey": "clawhub-boc-deploy-tools",
+    "name": "BOC部署工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boc-deploy-tools",
+    "url": "https://clawhub.ai/skills/boc-deploy-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boc-deploy-tools-65855f10ee32d498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "博云BOC容器平台 部署工具。整合了部署机初始化和平台部署功能，自动完成从环境初始化到部署验证的全流程。使用场景：用户需要初始化部署机并部署 BOC容器平台时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongruiji",
+      "userId": "s176zj0cccf11f5deg6y2893xs83jw1f",
+      "displayName": "Rick",
+      "image": "https://avatars.githubusercontent.com/u/28558668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774578796717,
+      "changelog": "Initial release of boc-deploy-tools.\n\n- Provides an automated end-to-end workflow for initializing deployment machines and deploying the BOC container platform.\n- Supports environment checks, package validation, extraction, and deployment process monitoring.\n- Enables configuration via detailed input parameters for both initialization and deployment phases.\n- Offers clear verification steps for deployment progress and success, including node and Pod status validation.\n- Includes troubleshooting guidance and best practices for common deployment issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:085bbf10e4c251befc37ee3991ee0b7ee4cdd4fda0e6bdcb28a2463631dabf5e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-xiaoshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_xiaoshu",
+  "skill": {
+    "id": 40408,
+    "skillKey": "clawhub-humanizer-xiaoshu",
+    "name": "Humanizer Xiaoshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-xiaoshu",
+    "url": "https://clawhub.ai/skills/humanizer-xiaoshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-xiaoshu-2e0b5c00573471d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaomaju-888",
+      "userId": "s170yv0m5gz6jparmgp94178xx849yqr",
+      "displayName": "xiaomaju-888",
+      "image": "https://avatars.githubusercontent.com/u/267942803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775375738927,
+      "changelog": "- Initial release of the \"humanizer\" skill, version 1.0.0.\n- Detects and removes common signs of AI-generated writing based on Wikipedia's \"Signs of AI writing\" guide.\n- Targets patterns such as inflated symbolism, promotional language, superficial \"-ing\" analyses, vague attributions, overuse of certain structures, and AI vocabulary.\n- Emphasizes not just cleaner text, but writing with genuine human voice, rhythm, and personality.\n- Offers practical before-and-after editing examples and actionable guidelines for more natural, soulful writing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7ed2d709fcf3ba89d2ab1c4487e1edde4c03368c71429ac142e5f30d954413"
+}

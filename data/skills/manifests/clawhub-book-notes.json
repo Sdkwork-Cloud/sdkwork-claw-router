@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16763,
+  "uuid": "skill-clawhub-book-notes",
+  "skillKey": "clawhub-book-notes",
+  "name": "BookNotes Reading Notes and Book Tracker",
+  "summary": "Capture reading notes through conversation, organize by book, generate summaries, track reading list. Never lose an insight from a book again.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Capture reading notes through conversation, organize by book, generate summaries, track reading.",
+        "Never lose an insight from a book again."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-notes@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-notes",
+      "url": "https://clawhub.ai/skills/book-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-notes",
+    "url": "https://clawhub.ai/skills/book-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-notes-f0de649dc9068a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-notes@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-notes-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e802d38c7a8d5a24e5a42d227b21bf2a9140c3a29483b28a2b291a47da2c30f",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:07:31.861Z"
+}

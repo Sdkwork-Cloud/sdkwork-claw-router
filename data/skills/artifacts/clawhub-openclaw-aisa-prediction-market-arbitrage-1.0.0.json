@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-prediction-market-arbitrage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_prediction_market_arbitrage",
+  "skill": {
+    "id": 40426,
+    "skillKey": "clawhub-openclaw-aisa-prediction-market-arbitrage",
+    "name": "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-prediction-market-arbitrage",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-prediction-market-arbitrage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-prediction-market-arbitrage-7eb8235fc80125ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and analyze arbitrage opportunities across prediction markets like Polymarket and Kalshi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaimengphp",
+      "userId": "s176gjzd7rb2en9j7fcxwyp5qs83gbwb",
+      "displayName": "chaimengphp",
+      "image": "https://avatars.githubusercontent.com/u/18716845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775102851562,
+      "changelog": "- Major refocus: Skill is now dedicated to finding and analyzing arbitrage opportunities across prediction markets.\n- Updated documentation and examples to stress arbitrage detection, price comparison, market matching, and orderbook analysis.\n- New scripts: Added arbitrage_finder.py and streamlined prediction_market_client.py for arbitrage workflows.\n- Polished description, metadata, and usage instructions for clarity and new focus.\n- Removed older references and files unrelated to arbitrage and cross-platform matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39ff1b3728c0309d15d69fbbd8703ab9c90a9b04726a5f768b5bc97c4d65bab0"
+}

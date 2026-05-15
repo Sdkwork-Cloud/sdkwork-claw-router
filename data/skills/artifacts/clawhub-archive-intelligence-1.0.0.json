@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/archive-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archive_intelligence",
+  "skill": {
+    "id": 73676,
+    "skillKey": "clawhub-archive-intelligence",
+    "name": "档案文件"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archive-intelligence",
+    "url": "https://clawhub.ai/skills/archive-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archive-intelligence-618802f6aec5675b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "定时获取档案行业最新情报、政策法规、技术动态和行业资讯。当用户需要获取档案行业新闻、政策更新、技术趋势或设置定时情报收集任务时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijie012",
+      "userId": "s17ctvvz1bnxf21p3r6cbd0p5h84dnn2",
+      "displayName": "L",
+      "image": "https://avatars.githubusercontent.com/u/150664619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775544359359,
+      "changelog": "archive-intelligence 1.0.0\n\n- Initial release of the archive-intelligence skill.\n- Enables scheduled collection of the latest intelligence, policy updates, technical trends, and industry news for the archive sector.\n- Supports one-time information queries and customizable regular intelligence gathering tasks.\n- Provides standardized output formats for intelligence summaries and periodic reports.\n- Includes curated lists of official, media, and academic information sources, as well as relevant keyword libraries.\n- Offers clear configuration steps for both ad-hoc and scheduled information collection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9333d9d9f93bfa028709daa51634bc1e98ed2de75933533ece6bce225c798960"
+}

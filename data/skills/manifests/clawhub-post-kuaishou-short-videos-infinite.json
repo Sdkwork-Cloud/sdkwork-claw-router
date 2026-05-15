@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73306,
+  "uuid": "skill-clawhub-post-kuaishou-short-videos-infinite",
+  "skillKey": "clawhub-post-kuaishou-short-videos-infinite",
+  "name": "发布快手短视频_无限",
+  "summary": "在快手创作者平台发布短视频。触发场景：发布快手视频、上传快手视频、快手发布视频、发快手视频、发布快手短视频。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_kuaishou_short_videos_infinite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "未来X无限",
+      "features": [
+        "在快手创作者平台发布短视频。触发场景：发布快手视频、上传快手视频、快手发布视频、发快手视频、发布快手短视频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-kuaishou-short-videos-infinite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36912555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-kuaishou-short-videos-infinite",
+      "url": "https://clawhub.ai/skills/post-kuaishou-short-videos-infinite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-kuaishou-short-videos-infinite",
+    "url": "https://clawhub.ai/skills/post-kuaishou-short-videos-infinite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-kuaishou-short-videos-infinite-3c3163730dcff171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-kuaishou-short-videos-infinite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-kuaishou-short-videos-infinite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93565df2fc6b2cf44e84185aab71ba4e3cfff05ed6ca1de66577d995b54b9e41",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T11:53:22.252Z"
+}

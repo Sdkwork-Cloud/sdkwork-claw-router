@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19302,
+  "uuid": "skill-clawhub-ryot",
+  "skillKey": "clawhub-ryot",
+  "name": "Ryot",
+  "summary": "Complete Ryot media tracker with progress tracking, reviews, collections, analytics, calendar, and automated daily/weekly reports. Track TV shows, movies, bo...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ryot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Federico Liva",
+      "features": [
+        "Complete Ryot media tracker with progress tracking, reviews, collections, analytics, calendar,.",
+        "Track TV shows, movies, bo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ryot@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/346224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ryot",
+      "url": "https://clawhub.ai/skills/ryot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ryot",
+    "url": "https://clawhub.ai/skills/ryot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ryot-5d44b7d88f0a5c34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ryot@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ryot-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431dd8d0cf1bd46b5e0612cfa6b36fed3377693aa829f40069df16ef562c1806",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T20:00:05.048Z"
+}

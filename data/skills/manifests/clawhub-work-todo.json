@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68024,
+  "uuid": "skill-clawhub-work-todo",
+  "skillKey": "clawhub-work-todo",
+  "name": "Work Todo - 工作待办管理",
+  "summary": "管理工作待办事项，支持添加、查看、完成、删除待办",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_todo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liumeixin",
+      "features": [
+        "管理工作待办事项，支持添加、查看、完成、删除待办"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-todo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129157223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-todo",
+      "url": "https://clawhub.ai/skills/work-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-todo",
+    "url": "https://clawhub.ai/skills/work-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-todo-9ee784de1a9f19a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-todo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-todo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab4a505e198cad6ce363523ea519d9b8a7c853e9d77d459e3ec6751e1aa50915",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:57:48.030Z"
+}

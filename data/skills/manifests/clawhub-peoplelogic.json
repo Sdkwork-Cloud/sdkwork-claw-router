@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33390,
+  "uuid": "skill-clawhub-peoplelogic",
+  "skillKey": "clawhub-peoplelogic",
+  "name": "Peoplelogic",
+  "summary": "Peoplelogic integration. Manage data, records, and automate workflows. Use when the user wants to interact with Peoplelogic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peoplelogic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Peoplelogic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Peoplelogic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peoplelogic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peoplelogic",
+      "url": "https://clawhub.ai/skills/peoplelogic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peoplelogic",
+    "url": "https://clawhub.ai/skills/peoplelogic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peoplelogic-7aa55cdd0ee2eb47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peoplelogic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-peoplelogic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f9042923dce53248984dd0e12b2fd7a066f55d73e0de2fa495c80d1b10b48dc",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:09.145Z"
+}

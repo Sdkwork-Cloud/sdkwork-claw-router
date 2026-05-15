@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weryai-image-generator@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_image_generator",
+  "skill": {
+    "id": 34793,
+    "skillKey": "clawhub-weryai-image-generator",
+    "name": "WeryAI Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-image-generator",
+    "url": "https://clawhub.ai/skills/weryai-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-image-generator-10267cf1e2fddcfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate WeryAI images from text prompts or reference images through the WeryAI image APIs. Use when the user needs text-to-image, image-to-image, async imag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weryai-developer",
+      "userId": "s17csvx4ax7kyjt70t862cpp4d83h5hh",
+      "displayName": "WeryAI-Developer",
+      "image": "https://avatars.githubusercontent.com/u/254698481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1774361040931,
+      "changelog": "weryai-image-generator v0.1.5\n\n- Added support for `WERYAI_BASE_URL` and `WERYAI_MODELS_BASE_URL` environment variables in required setup.\n- Updated documentation: The skill now explicitly supports local file path inputs for reference images, with automatic uploading to WeryAI servers.\n- Security section improved to clarify that local file paths are handled safely.\n- No code changes detected; all updates are documentation and metadata clarifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebd4e8891abc2a6a27931a657d18d0537c76283b0a58f4712418b9bb3e594c20"
+}

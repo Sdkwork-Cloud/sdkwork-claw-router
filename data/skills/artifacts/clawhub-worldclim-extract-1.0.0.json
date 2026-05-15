@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/worldclim-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worldclim_extract",
+  "skill": {
+    "id": 48870,
+    "skillKey": "clawhub-worldclim-extract",
+    "name": "worldclim-extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worldclim-extract",
+    "url": "https://clawhub.ai/skills/worldclim-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worldclim-extract-276e1b2dbbe4202a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract bioclimatic variables (BIO1-BIO19) from WorldClim GeoTIFF rasters using sample coordinates (longitude/latitude). Supports automatic download of World..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zd200572",
+      "userId": "s174x28nza5s7ej2xavf0yehpd83pbq7",
+      "displayName": "Dong Zhao",
+      "image": "https://avatars.githubusercontent.com/u/20882745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777348437441,
+      "changelog": "- Initial release of worldclim-extract.\n- Extracts WorldClim 2.1 bioclimatic variables (BIO1-BIO19) for coordinates from Excel/CSV.\n- Supports automatic WorldClim raster download, batch extraction, and output to Excel/CSV.\n- Offers CLI script and Python code examples; validates coordinate formats and handles common data issues.\n- Default extraction: BIO1 (annual mean temp) and BIO12 (annual precipitation); configurable variables and resolutions.\n- Includes detailed documentation, input/output examples, and R cross-validation guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ab657914767ee2c05f33a0b8cd3560ee7aa9f9d88782a0a05622f329462c865"
+}

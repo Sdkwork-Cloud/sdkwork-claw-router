@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-workflow-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_workflow_master",
+  "skill": {
+    "id": 67429,
+    "skillKey": "clawhub-ai-workflow-master",
+    "name": "Ai Workflow Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-workflow-master",
+    "url": "https://clawhub.ai/skills/ai-workflow-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-workflow-master-e942b9f6ab04e941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI工作流大师，集成内容创作/数据分析/自动化/报告生成的一站式工作流。触发词：'做这个'、'帮我搞定'、'AI工作流'、'自动化'、'批量处理'、'一键生成'、'效率工具'。通过串联多个AI能力，实现复杂任务的自动化完成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windy-001-crypto",
+      "userId": "s1736ky0sjf4n07k892nb8555n83gn8g",
+      "displayName": "windy-001-crypto",
+      "image": "https://avatars.githubusercontent.com/u/258460660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774517507819,
+      "changelog": "Initial release of AI Workflow Master.\n\n- Provides a one-stop workflow integrating content creation, data analysis, automation, and report generation.\n- Built-in workflows for content pipelines, data analysis, report generation, competitor monitoring, and customer service automation.\n- Triggered by common automation keywords such as \"帮我搞定\", \"AI工作流\", \"批量处理\", and more.\n- Minimal user input required; AI infers most needs and optimizes output (content packs, analysis reports, etc.).\n- Supports custom workflow definitions and best practices for efficient, reliable AI-assisted work.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a9b33b27e03101e8cea569634ea19554fef27f169a6aeb3de6a3a1c391d120b"
+}

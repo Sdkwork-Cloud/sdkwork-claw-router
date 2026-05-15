@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63654,
+  "uuid": "skill-clawhub-skylv-api-gateway",
+  "skillKey": "clawhub-skylv-api-gateway",
+  "name": "Api Gateway",
+  "summary": "API网关管理。配置和管理API网关，处理流量路由和限流。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_api_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "API网关管理。配置和管理API网关，处理流量路由和限流。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-api-gateway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-api-gateway",
+      "url": "https://clawhub.ai/skills/skylv-api-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-api-gateway",
+    "url": "https://clawhub.ai/skills/skylv-api-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-api-gateway-96ac127a04d3970b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-api-gateway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-api-gateway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bd5fc154a38744b6ac22b5288b8fd05c751ae8fdfcd10ba50eb3f063edfd8ab",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T01:52:45.879Z"
+}

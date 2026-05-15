@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-recruit-page@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_recruit_page",
+  "skill": {
+    "id": 70757,
+    "skillKey": "clawhub-social-recruit-page",
+    "name": "Social Recruit Page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-recruit-page",
+    "url": "https://clawhub.ai/skills/social-recruit-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-recruit-page-fb79628e39ef33a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成高端黑金风格私人圈子/社群招募长图并发送到飞书。当用户说\"生成招募页\"、\"做一个招募图\"、\"私人圈子招募页\"、\"帮我生成会员招募海报\"、或提到需要私人俱乐部/高端社群/付费圈子的招募宣传图时触发。支持自定义品牌名、发起人、服务内容、定价、名额等信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyken",
+      "userId": "s17779d7ckrtnq92w1jx4g5wrn846fpe",
+      "displayName": "Conan",
+      "image": "https://avatars.githubusercontent.com/u/9691831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777412204426,
+      "changelog": "Initial release: black-gold style community recruit poster with Feishu integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73c23b44a82ef02ce7a510aa40801f1af349dcbfe77df83cf5f51d87425cfe03"
+}

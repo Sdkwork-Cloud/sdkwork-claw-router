@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65197,
+  "uuid": "skill-clawhub-s2-suns-address-calculator",
+  "skillKey": "clawhub-s2-suns-address-calculator",
+  "name": "SUNS 品牌母体空间寻址器",
+  "summary": "Space² SUNS v3.0 品牌母体空间地址解算器。严格遵循 Mod 10 算法，为品牌计算其在数字平行宇宙中的唯一 6 段式门牌号。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_suns_address_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "Space² SUNS v3.0 品牌母体空间地址解算器。严格遵循 Mod 10 算法，为品牌计算其在数字平行宇宙中的唯一 6 段式门牌号。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-suns-address-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-suns-address-calculator",
+      "url": "https://clawhub.ai/skills/s2-suns-address-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-suns-address-calculator",
+    "url": "https://clawhub.ai/skills/s2-suns-address-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-suns-address-calculator-1529176220eb008d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-suns-address-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-suns-address-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c77da8c820cc247086ded47df721c93aaf144ab3f9682603c0afde172c7f567",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:26:31.487Z"
+}

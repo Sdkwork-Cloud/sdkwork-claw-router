@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shipping-booking@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_booking",
+  "skill": {
+    "id": 59820,
+    "skillKey": "clawhub-shipping-booking",
+    "name": "海运托书智能提取 Shipping Booking Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-booking",
+    "url": "https://clawhub.ai/skills/shipping-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-booking-0b3cff4a063daf40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "海运托书（Booking Note / Shipping Instruction）智能提取工具。从 PDF、图片、扫描件、Word、Excel、RTF 等格式的托书文件中提取结构化信息，输出标准 JSON。当用户明确提到\"托书\"、\"booking\"、\"shipping instruction\"、\"帮我提取\"、\"解..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucezhouzhou",
+      "userId": "s174nh84m0g6dbs814k3rmrg6d83zdqj",
+      "displayName": "Bruce",
+      "image": "https://avatars.githubusercontent.com/u/42055718?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774941871122,
+      "changelog": "修复 Word 文本框（TextBox）内容提取：python-docx 默认不读文本框，新增 XML 层遍历 w:txbxContent，修复内容为图片/文本框排版的 docx 托书提取失败问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b5f0ae7cef626f55305ecd7adfd97c64f2dff4d698b3761f98431c79875bb64"
+}

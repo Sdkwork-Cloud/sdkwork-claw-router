@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61473,
+  "uuid": "skill-clawhub-walter-agent-factory",
+  "skillKey": "clawhub-walter-agent-factory",
+  "name": "Agent Factory (Walter)",
+  "summary": "创建新的 OpenClaw Agent 并自动配置飞书机器人。当用户说\"帮我创建 Agent\"、\"新建机器人\"、\"添加新 agent\"、\"配置新机器人\"时触发。用户提供：agent 名称、飞书 appId、appSecret、角色定位。执行完毕后汇报结果。",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walter_agent_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beyondbright",
+      "features": [
+        "创建新的 OpenClaw Agent 并自动配置飞书机器人。当用户说\"帮我创建 Agent\"、\"新建机器人\"、\"添加新 agent\"、\"配置新机器人\"时触发。用户提供：agent 名称、飞."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/walter-agent-factory@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9914857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "walter-agent-factory",
+      "url": "https://clawhub.ai/skills/walter-agent-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walter-agent-factory",
+    "url": "https://clawhub.ai/skills/walter-agent-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walter-agent-factory-f432c6acc2df3e44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/walter-agent-factory@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-walter-agent-factory-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61858763999e641b4eb4ca9f7e33022b81f7856800619b45659c8ad3bd29607f",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:08:04.028Z"
+}

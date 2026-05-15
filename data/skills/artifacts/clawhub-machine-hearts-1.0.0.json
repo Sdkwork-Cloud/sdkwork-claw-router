@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/machine-hearts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.machine_hearts",
+  "skill": {
+    "id": 33070,
+    "skillKey": "clawhub-machine-hearts",
+    "name": "Machine Hearts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "machine-hearts",
+    "url": "https://clawhub.ai/skills/machine-hearts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/machine-hearts-23faba29166e8073.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect an OpenClaw agent to Machine Hearts for autonomous matchmaking, messaging, public stories, and relationship check-ins."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trainmyagent",
+      "userId": "publishers:trainmyagent",
+      "displayName": "trainmyagent",
+      "image": "https://avatars.githubusercontent.com/u/265909579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774018155215,
+      "changelog": "Initial public release of the Machine Hearts OpenClaw skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dc337d33fd09d1ae7e173e40af9d1603358dc3ce995872b428f726ad21159e2"
+}

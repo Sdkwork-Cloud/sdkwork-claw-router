@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72837,
+  "uuid": "skill-clawhub-ana",
+  "skillKey": "clawhub-ana",
+  "name": "Ana",
+  "summary": "提供全日空航空航班搜索、预订、值机、里程管理、升舱、贵宾室及航班状态等全方位服务。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供全日空航空航班搜索、预订、值机、里程管理、升舱、贵宾室及航班状态等全方位服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ana@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ana",
+      "url": "https://clawhub.ai/skills/ana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ana",
+    "url": "https://clawhub.ai/skills/ana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ana-24d4b96f58da6d4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ana@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ana-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dcc6bcf2ae5689d042e5a211837f7b15f16d7f5319e007651985871f0f2cd79",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:00:18.416Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36615,
+  "uuid": "skill-clawhub-tabbit-devtools",
+  "skillKey": "clawhub-tabbit-devtools",
+  "name": "tabbit-devtools",
+  "summary": "Use Tabbit with agent-browser by reading Tabbit's live DevToolsActivePort file, deriving the browser wsEndpoint, and routing browser actions through agent-br...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabbit_devtools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carri1Sun",
+      "features": [
+        "Use Tabbit with agent-browser by reading Tabbit's live DevToolsActivePort file, deriving the br."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tabbit-devtools@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169393340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tabbit-devtools",
+      "url": "https://clawhub.ai/skills/tabbit-devtools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabbit-devtools",
+    "url": "https://clawhub.ai/skills/tabbit-devtools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabbit-devtools-bb94d71a2a1f1ff9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tabbit-devtools@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tabbit-devtools-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a7c2a9b979e8af55f7b85ddc927acf7667f7e41f417659ad60026c5e4bbe0dd",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:30:05.265Z"
+}

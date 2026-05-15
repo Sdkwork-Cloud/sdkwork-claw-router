@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-linter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_linter",
+  "skill": {
+    "id": 15651,
+    "skillKey": "clawhub-markdown-linter",
+    "name": "Markdown Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-linter",
+    "url": "https://clawhub.ai/skills/markdown-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-linter-254a5504104ce9f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates Markdown files in the workspace for broken local links, missing file references, and basic syntax issues. Use to maintain documentation integrity a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771191383023,
+      "changelog": "Initial release of markdown-linter.\n\n- Validates Markdown files for broken local links and missing file references.\n- Checks header hierarchy consistency.\n- Ensures code blocks use language identifiers where needed.\n- Produces detailed JSON output of issues found.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be25742fca42479d93a668d1187b43bafe9353b0874be4f247149899be74400a"
+}

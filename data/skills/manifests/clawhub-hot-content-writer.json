@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66450,
+  "uuid": "skill-clawhub-hot-content-writer",
+  "skillKey": "clawhub-hot-content-writer",
+  "name": "Hot Content Writer",
+  "summary": "✍️ 热点文案一键生成！输入热点话题，AI自动生成小红书/抖音/公众号/微博多平台文案。支持DeepSeek API，成本极低！自媒体运营必备！免费使用，定制开发请联系作者。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_content_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "蓝天",
+      "features": [
+        "✍️ 热点文案一键生成！输入热点话题，AI自动生成小红书/抖音/公众号/微博多平台文案。支持DeepSeek API，成本极低！自媒体运营必备！免费使用，定制开发请联系作者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-content-writer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49087597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-content-writer",
+      "url": "https://clawhub.ai/skills/hot-content-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-content-writer",
+    "url": "https://clawhub.ai/skills/hot-content-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-content-writer-f454768085234471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-content-writer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-content-writer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:090297cc8e26ea339d5ef84bd7b5448f79a67e94229f009ebc5cff8249bef11a",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:02:48.867Z"
+}

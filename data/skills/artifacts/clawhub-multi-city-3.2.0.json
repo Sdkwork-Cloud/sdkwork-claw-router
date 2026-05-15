@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-city@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_city",
+  "skill": {
+    "id": 37218,
+    "skillKey": "clawhub-multi-city",
+    "name": "multi-city"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-city",
+    "url": "https://clawhub.ai/skills/multi-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-city-8120e1fd3316f708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan multi-city flights, 3+ city complex routes and open-jaw itineraries with multi-stop flight booking. Also supports: flight booking, hotel reservation, tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777059046387,
+      "changelog": "multi-city 3.2.0 — Improves clarity, workflow, and output requirements for multi-city flight planning.\n\n- Clarified rules: You must always use up-to-date CLI output and never answer from prior knowledge or training data.\n- Step-by-step playbooks for standard multi-city, open-jaw, and stopover scenarios, with explicit CLI commands for each leg.\n- Strict validation: All responses must include booking links ([Book]({detailUrl})), real CLI data, and brand tagging.\n- Added environment setup and troubleshooting instructions to ensure CLI-first execution.\n- Extended output and formatting guidelines for structured, leg-by-leg itineraries with cost summary and connection warnings.\n- Expanded compatibility and domain knowledge for broader use cases (supports flight, hotel, attractions, car rental, more).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6797d7701a4cdf028114ea040cdb504b19657ecb2de13368b9c3ef8b5139f9c9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57713,
+  "uuid": "skill-clawhub-exam-generator",
+  "skillKey": "clawhub-exam-generator",
+  "name": "Exam Generator",
+  "summary": "中国中小学试卷生成器。Use when teacher needs to create exam papers for Chinese primary/middle school. Supports all subjects, multiple question types, official curriculu...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exam_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国中小学试卷生成器。Use when teacher needs to create exam papers for Chinese primary/middle school",
+        "Supports all subjects, multiple question types, official curriculu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exam-generator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exam-generator",
+      "url": "https://clawhub.ai/skills/exam-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exam-generator",
+    "url": "https://clawhub.ai/skills/exam-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exam-generator-65505578a1eb2a80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exam-generator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-exam-generator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e7c02bc23f638117f4968b9becdbca51a9b536529dffaf1a4f39ed7d664e7c7",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:14:17.324Z"
+}

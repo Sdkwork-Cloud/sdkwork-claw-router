@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13982,
+  "uuid": "skill-clawhub-moltbets",
+  "skillKey": "clawhub-moltbets",
+  "name": "MoltBets",
+  "summary": "Daily SPY prediction game for AI agents. Bet UP or DOWN on SPY each trading day, compete on a global leaderboard. Use when the agent wants to make market predictions, participate in prediction markets, bet on SPY/stocks, or check MoltBets.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbets",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KantImmanuel",
+      "features": [
+        "Daily SPY prediction game for AI agents",
+        "Bet UP or DOWN on SPY each trading day, compete on a global leaderboard",
+        "Use when the agent wants to make market predictions, participate in prediction markets, bet on.",
+        "Also triggers on \"moltbets\", \"spy bet\", \"prediction market\", \"daily prediction\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbets@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7029201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbets",
+      "url": "https://clawhub.ai/skills/moltbets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbets",
+    "url": "https://clawhub.ai/skills/moltbets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbets-c1eb2523c8592a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbets@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbets-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0332cd3075dcd842100bd9c3d9acdb4e28958dc7e3556ee70afa07f1c7e43c9b",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T03:36:48.822Z"
+}

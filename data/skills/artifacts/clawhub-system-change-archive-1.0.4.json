@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-change-archive@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_change_archive",
+  "skill": {
+    "id": 31521,
+    "skillKey": "clawhub-system-change-archive",
+    "name": "System Change Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-change-archive",
+    "url": "https://clawhub.ai/skills/system-change-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-change-archive-5473c85fc2ef4fa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a pre-restart audit and rollback archive for system-level changes. Use when modifying OpenClaw config, plugins, routing, approvals, startup behavior,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zczcm85",
+      "userId": "s171pajkt486jp0ycpzgm4s0j185e1kf",
+      "displayName": "zczcm85",
+      "image": "https://avatars.githubusercontent.com/u/251946060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776997887864,
+      "changelog": "补齐完整中英双语对齐结构，使正文框架一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98ad115e9d157e17c98bcf1a47dc698c18c1311b78755b972a504c32599c11a5"
+}

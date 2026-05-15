@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11412,
+  "uuid": "skill-clawhub-sanctifai",
+  "skillKey": "clawhub-sanctifai",
+  "name": "Skills",
+  "summary": "Interface with the SanctifAI Human-in-the-Loop API to create tasks and wait for human responses. Use when the user needs to delegate a decision, data entry,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanctifai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ndgates",
+      "features": [
+        "Interface with the SanctifAI Human-in-the-Loop API to create tasks and wait for human responses",
+        "Use when the user needs to delegate a decision, data entry,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanctifai@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2688658?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanctifai",
+      "url": "https://clawhub.ai/skills/sanctifai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanctifai",
+    "url": "https://clawhub.ai/skills/sanctifai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanctifai-e1bb5ca343f520b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanctifai@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanctifai-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dc943ba75b2bef10749e8156ee37af261de3acbd1944b935e4f0c6ed3abbccc",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:34:30.408Z"
+}

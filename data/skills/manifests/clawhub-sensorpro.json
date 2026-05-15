@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17273,
+  "uuid": "skill-clawhub-sensorpro",
+  "skillKey": "clawhub-sensorpro",
+  "name": "sensorpro.app",
+  "summary": "Manage your Sensorpro email marketing account in OpenClaw.",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sensorpro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Byrne",
+      "features": [
+        "Manage your Sensorpro email marketing account in OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sensorpro@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3969102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sensorpro",
+      "url": "https://clawhub.ai/skills/sensorpro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sensorpro",
+    "url": "https://clawhub.ai/skills/sensorpro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sensorpro-b4d8ce2f1c353c27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sensorpro@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sensorpro-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:080abc13dc049ebce81e7f59bd95a11656041b005645c6f6ca3919c5948cd20e",
+      "artifactSizeBytes": 1762
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T12:50:40.223Z"
+}

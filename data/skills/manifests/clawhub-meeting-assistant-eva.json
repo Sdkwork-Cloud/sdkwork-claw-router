@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57285,
+  "uuid": "skill-clawhub-meeting-assistant-eva",
+  "skillKey": "clawhub-meeting-assistant-eva",
+  "name": "Meeting Assistant",
+  "summary": "Zoom/Teams/Meet 远程会议AI助手。Use when: user asks to join a meeting, monitor a meeting, record a meeting, assist in a medical consultation, help doctor-patient co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_assistant_eva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rongze Gao",
+      "features": [
+        "Zoom/Teams/Meet 远程会议AI助手。Use when: user asks to join a meeting, monitor a meeting, record a mee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-assistant-eva@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90145946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-assistant-eva",
+      "url": "https://clawhub.ai/skills/meeting-assistant-eva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-assistant-eva",
+    "url": "https://clawhub.ai/skills/meeting-assistant-eva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-assistant-eva-0e2c20dcc97eca82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-assistant-eva@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-assistant-eva-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22fd321154562675f053691030f2e8b48ff95d5eb56bec51684ebbdb50eacb4f",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:58:28.387Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58547,
+  "uuid": "skill-clawhub-star-search",
+  "skillKey": "clawhub-star-search",
+  "name": "一个可以媲美百度搜索的中文搜索引擎，其效果会让你惊艳，而且是免费的，完全不需要百度千帆API KEY。",
+  "summary": "Use when asked to search the web, find online information, research topics, get news, or look up content. Primary: Sogou+Camofox (10 results, no captcha). Ba...",
+  "version": "8.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.star_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "muchenhengxin",
+      "features": [
+        "Use when asked to search the web, find online information, research topics, get news, or look u.",
+        "Primary: Sogou+Camofox (10 results, no captcha)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/star-search@8.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267485855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "star-search",
+      "url": "https://clawhub.ai/skills/star-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "star-search",
+    "url": "https://clawhub.ai/skills/star-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/star-search-6177f0ec90a85883.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/star-search@8.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-star-search-8.0.0.json",
+      "version": "8.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb690f03f20f7b5395e899707b3358217ed43d577eb056c61d7021bb382dfde8",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:25:19.088Z"
+}

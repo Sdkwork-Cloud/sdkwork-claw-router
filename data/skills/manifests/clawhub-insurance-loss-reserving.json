@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61160,
+  "uuid": "skill-clawhub-insurance-loss-reserving",
+  "skillKey": "clawhub-insurance-loss-reserving",
+  "name": "Insurance Loss Reserving",
+  "summary": "用 chainladder-python 做精算损失准备金估算：从历史理赔三角到 IBNR 准备金、 尾部参数拟合。支持再保险 / 巨灾 / 一般责任险多产品线。",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_loss_reserving",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "用 chainladder-python 做精算损失准备金估算：从历史理赔三角到 IBNR 准备金、 尾部参数拟合。支持再保险 / 巨灾 / 一般责任险多产品线。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-loss-reserving@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-loss-reserving",
+      "url": "https://clawhub.ai/skills/insurance-loss-reserving"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-loss-reserving",
+    "url": "https://clawhub.ai/skills/insurance-loss-reserving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-loss-reserving-d91d5b5a3597a1e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-loss-reserving@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-loss-reserving-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:475bb858aad45c84facc7205a1e3e60b2179a2c4a48eebf0acaec5957f2873c3",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:07:02.522Z"
+}

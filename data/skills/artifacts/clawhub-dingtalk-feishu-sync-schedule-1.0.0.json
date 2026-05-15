@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-feishu-sync-schedule@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_feishu_sync_schedule",
+  "skill": {
+    "id": 64227,
+    "skillKey": "clawhub-dingtalk-feishu-sync-schedule",
+    "name": "dingtalk-feishu-sync-schedule"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-feishu-sync-schedule",
+    "url": "https://clawhub.ai/skills/dingtalk-feishu-sync-schedule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-feishu-sync-schedule-4f981300d4b3d590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将钉钉本周日历日程（含今天起6天内）单向同步至飞书日历，支持自动定时刷新和手动配置校验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alittlebao",
+      "userId": "s175xfkn3tmf7n82eewv12mgns83grvw",
+      "displayName": "alibao",
+      "image": "https://avatars.githubusercontent.com/u/16297896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774496406370,
+      "changelog": "钉钉→飞书日程同步，支持定时同步、token自动刷新、unionid手机号双模式获取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4040895987995ddbd40a116a032ca5f9f4cfb2b7363c29b5e319e1a68465956e"
+}

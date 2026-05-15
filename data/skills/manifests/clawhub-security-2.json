@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24314,
+  "uuid": "skill-clawhub-security-2",
+  "skillKey": "clawhub-security-2",
+  "name": "Security",
+  "summary": "Runs a backend-backed live safety check for instructions that may trigger tool execution, external calls, file edits, permission changes, destructive or irre...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "modeioai",
+      "features": [
+        "Runs a backend-backed live safety check for instructions that may trigger tool execution, exter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244495891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-2",
+      "url": "https://clawhub.ai/skills/security-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-2",
+    "url": "https://clawhub.ai/skills/security-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-2-373c83951bb7d9cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:995db79538517c4f784edffd8340ec77ccc753d9ee4ac45fa59e2c75a0c8d4d6",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:11:03.470Z"
+}

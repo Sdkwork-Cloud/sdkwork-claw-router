@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27832,
+  "uuid": "skill-clawhub-gate-info-coin-compare",
+  "skillKey": "clawhub-gate-info-coin-compare",
+  "name": "gate-info-coincompare",
+  "summary": "Coin comparison. Use this skill whenever the user asks to compare two or more coins. Trigger phrases include: compare, versus, vs, which is better, differenc...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_coin_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Coin comparison",
+        "Use this skill whenever the user asks to compare two or more coins",
+        "Trigger phrases include: compare, versus, vs, which is better, differenc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-coin-compare@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-coin-compare",
+      "url": "https://clawhub.ai/skills/gate-info-coin-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-coin-compare",
+    "url": "https://clawhub.ai/skills/gate-info-coin-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-coin-compare-c38be3b47be545f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-coin-compare@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-coin-compare-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5211423155a5b00615fb80a77805c72c085096d325fe96b9be78b1b42dacd0f9",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:34:08.259Z"
+}

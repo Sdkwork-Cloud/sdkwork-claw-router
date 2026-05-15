@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/car-parks@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_parks",
+  "skill": {
+    "id": 57865,
+    "skillKey": "clawhub-car-parks",
+    "name": "附近停车场"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-parks",
+    "url": "https://clawhub.ai/skills/car-parks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-parks-9bf726d3f8aa85c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby car parks. Invoke when user asks for parking near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774245026857,
+      "changelog": "Initial release of \"附近停车场\" (Nearby Car Parks):\n\n- Enables users to find car parks near their current location.\n- Supports location-based search with adjustable radius and filters (e.g., availability, price).\n- Returns a standardized list of car parks for easy interface integration.\n- Includes clear error codes for invalid input, rate limits, and provider issues.\n- Ensures user privacy by requiring location permission and supports coordinate obfuscation if needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:146605f2276f3a328e5ebb69bc0f7cc88985ba3ee6fc6b2d64c84fc696e3f684"
+}

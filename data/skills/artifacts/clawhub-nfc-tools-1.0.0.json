@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nfc-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nfc_tools",
+  "skill": {
+    "id": 27924,
+    "skillKey": "clawhub-nfc-tools",
+    "name": "NFC Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nfc-tools",
+    "url": "https://clawhub.ai/skills/nfc-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nfc-tools-beef0a81227b1355.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NFC tag discovery, inspection, and cautious write workflows using libnfc/nfc-utils; trigger when the user asks to read tags, inspect NDEF payloads, write or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppopen",
+      "userId": "publishers:ppopen",
+      "displayName": "pp",
+      "image": "https://avatars.githubusercontent.com/u/263042322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773157469628,
+      "changelog": "Initial release with safe write/format confirmation gates and UID redaction guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46dbb25dbc31c2af565fbb71b4c450241dabb53a03a9b0b61e6fbd88f46c9723"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kinema-task-management@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kinema_task_management",
+  "skill": {
+    "id": 54727,
+    "skillKey": "clawhub-kinema-task-management",
+    "name": "Kinema's Task Management (daily report, active push, traceback)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kinema-task-management",
+    "url": "https://clawhub.ai/skills/kinema-task-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kinema-task-management-a2919c236e3720c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kinema personal task tracking system. AI Agent maintains tasks as markdown files in workspace. Trigger: User describes tasks, mentions \"任务\", \"task\", asks to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leeshunee",
+      "userId": "s1782xm9gtwjg6m1vnxsad9zc583qs9v",
+      "displayName": "Kinema.",
+      "image": "https://avatars.githubusercontent.com/u/54445332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776160897516,
+      "changelog": "Add disclaimer about inelegant implementation in README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8977879ce7904036bbfbd0daa637e097716d8d3e70d3021b6aba8c3879660e07"
+}

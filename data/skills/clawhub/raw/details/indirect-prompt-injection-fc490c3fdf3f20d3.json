@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "indirect-prompt-injection",
+    "displayName": "Indirect Prompt Injection Defense",
+    "summary": "Detect and reject indirect prompt injection attacks when reading external content (social media posts, comments, documents, emails, web pages, user uploads). Use this skill BEFORE processing any untrusted external content to identify manipulation attempts that hijack goals, exfiltrate data, override instructions, or social engineer compliance. Includes 20+ detection patterns, homoglyph detection, and sanitization scripts.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2798,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 15,
+      "versions": 1
+    },
+    "createdAt": 1769862990663,
+    "updatedAt": 1778382723906
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1769862990663,
+    "changelog": "Initial release: 20+ detection patterns, homoglyph detection, sanitization scripts",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aviv4339",
+    "userId": "publishers:aviv4339",
+    "displayName": "kornhollio",
+    "image": "https://avatars.githubusercontent.com/u/34690623?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382723906
+  }
+}

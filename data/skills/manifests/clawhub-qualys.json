@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31941,
+  "uuid": "skill-clawhub-qualys",
+  "skillKey": "clawhub-qualys",
+  "name": "Qualys",
+  "summary": "Qualys integration. Manage data, records, and automate workflows. Use when the user wants to interact with Qualys data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualys",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Qualys integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Qualys data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qualys@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qualys",
+      "url": "https://clawhub.ai/skills/qualys"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualys",
+    "url": "https://clawhub.ai/skills/qualys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualys-5cc935b4ad65574e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qualys@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qualys-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d64c79d9f71f4af9e7e1490ccac9f0a9cb3a4968ca6f2d37665e5f9880d34d57",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:22.830Z"
+}

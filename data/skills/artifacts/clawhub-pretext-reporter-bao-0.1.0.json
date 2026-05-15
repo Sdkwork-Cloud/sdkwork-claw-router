@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pretext-reporter-bao@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretext_reporter_bao",
+  "skill": {
+    "id": 62328,
+    "skillKey": "clawhub-pretext-reporter-bao",
+    "name": "Pretext Reporter Bao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretext-reporter-bao",
+    "url": "https://clawhub.ai/skills/pretext-reporter-bao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretext-reporter-bao-b69de32f6e856e61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文本测量和Canvas布局报告工具 - 基于Pretext库，支持多语言文本测量、行布局计算、可视化报告生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baojun-billion",
+      "userId": "s17c6p8hn21k0xkktmpsp7351s844hd7",
+      "displayName": "BillionB",
+      "image": "https://avatars.githubusercontent.com/u/228880007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775275965525,
+      "changelog": "Initial release of pretext-reporter-bao.\n\n- Provides high-performance, multi-language text measurement using Pretext library, supporting CJK, BIDI, emoji, and more.\n- Calculates line layout with features like auto line-wrapping, fixed/variable width, shrink wrap, and detailed line info.\n- Generates text layout reports in Markdown, JSON, and supports Canvas visual output (PNG export).\n- No DOM dependency; uses pure arithmetic for measurement and layout.\n- Includes APIs for text measurement, Canvas report generation, and flow layout.\n- Suitable for virtual lists, dynamic UIs, Canvas/SVG rendering, editor development, and layout validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7839e76886e34a1393929ff57831ab02d2bf7a994e230eca3c8f8edff087052b"
+}

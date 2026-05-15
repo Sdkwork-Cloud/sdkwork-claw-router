@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/8004-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.8004_skill",
+  "skill": {
+    "id": 17671,
+    "skillKey": "clawhub-8004-skill",
+    "name": "8004 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "8004-skill",
+    "url": "https://clawhub.ai/skills/8004-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/8004-skill-de191d2ab0fa74f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ERC-8004 Trustless Agents - Register and manage AI agent identities on TRON and BSC blockchains with on-chain reputation tracking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spyderjr",
+      "userId": "publishers:spyderjr",
+      "displayName": "SpyderJR",
+      "image": "https://avatars.githubusercontent.com/u/186445232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 736,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771256549324,
+      "changelog": "- Added new file: `_meta.json` for metadata management.\n- No other changes to functionality or documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5d3e4fed24760b654675f41f4325f35b42b97306f54e31492fe974448decc0f"
+}

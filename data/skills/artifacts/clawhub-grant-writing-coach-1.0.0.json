@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grant-writing-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grant_writing_coach",
+  "skill": {
+    "id": 47348,
+    "skillKey": "clawhub-grant-writing-coach",
+    "name": "Grant Writing Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grant-writing-coach",
+    "url": "https://clawhub.ai/skills/grant-writing-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grant-writing-coach-84526e0d880126d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach non-profits, researchers, and artists to write, structure, and improve grant proposals and match projects with appropriate funders across major funding..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679677225,
+      "changelog": "Initial release of Grant Writing Coach.\n\n- Guides non-profits, researchers, artists, and founders through the grant writing process for foundation, government, and corporate funding.\n- Diagnoses common reasons for grant rejection and helps rewrite proposals, structure budgets, and build logic models.\n- Provides tailored advice based on proposal type: project, general operating, capital, and capacity-building.\n- Outlines differences between US private foundations, federal grants (NIH/NSF/NEA), state/city grants, corporate giving, and international funders.\n- Offers practical tools for funder matching, writing Letters of Inquiry, and preparing full proposals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6064d20c3cbe50bf75e52d7b7d90052b985d04d0163b83763b81d475862c6952"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63035,
+  "uuid": "skill-clawhub-ruyue-skill-publisher",
+  "skillKey": "clawhub-ruyue-skill-publisher",
+  "name": "OpenClaw Skill Publisher",
+  "summary": "OpenClaw 技能包的发布与管理技能。当用户需要将技能发布到 ClawHub 或 Gitee、 创建新技能、更新技能版本、通用化技能内容、或管理多渠道分发时使用此技能。 触发场景：用户提到\"发布技能\"、\"发布到技能商店\"、\"skill publish\"、\"上传Gitee\"、 \"技能通用化\"、\"技能包管理\"、\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ruyue_skill_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanyu",
+      "features": [
+        "OpenClaw 技能包的发布与管理技能。当用户需要将技能发布到 ClawHub 或 Gitee、 创建新技能、更新技能版本、通用化技能内容、或管理多渠道分发时使用此技能。 触发场景：用户提."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ruyue-skill-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129377562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ruyue-skill-publisher",
+      "url": "https://clawhub.ai/skills/ruyue-skill-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ruyue-skill-publisher",
+    "url": "https://clawhub.ai/skills/ruyue-skill-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ruyue-skill-publisher-245d87eddaf5a9fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ruyue-skill-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ruyue-skill-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd59dfaa8d230918a816c7075fc34d19b0b80d0b684ea012938f22de683037a1",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:26:46.041Z"
+}

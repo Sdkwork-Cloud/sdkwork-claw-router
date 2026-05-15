@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62883,
+  "uuid": "skill-clawhub-airilab",
+  "skillKey": "clawhub-airilab",
+  "name": "AIRILAB",
+  "summary": "统一调用 AiriLab 图像生成与任务管理能力（MJ 创意渲染 workflowId=0、创意放大 workflowId=16、氛围转换 workflowId=13），并自动处理登录鉴权、项目选择、任务提交、状态轮询与结果回推。用户提到 Midjourney/MJ 文生图、参考图生成、放大超分/4K、天气季节昼...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airilab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siyn Ma",
+      "features": [
+        "统一调用 AiriLab 图像生成与任务管理能力（MJ 创意渲染 workflowId=0、创意放大 workflowId=16、氛围转换 workflowId=13），并自动处理登录鉴权、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airilab@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42462195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airilab",
+      "url": "https://clawhub.ai/skills/airilab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airilab",
+    "url": "https://clawhub.ai/skills/airilab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airilab-503a1e7c13bc07b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airilab@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-airilab-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f53a61df85c6be2f16a5f78cd9a18aa6784634b6249cec57761cd479be9d85",
+      "artifactSizeBytes": 2913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:28:37.458Z"
+}

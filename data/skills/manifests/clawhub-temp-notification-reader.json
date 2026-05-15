@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58689,
+  "uuid": "skill-clawhub-temp-notification-reader",
+  "skillKey": "clawhub-temp-notification-reader",
+  "name": "Temp Notification Reader",
+  "summary": "读取 macOS 通知中心，导出到 memory/computer_io/notification/ 目录。让 OpenClaw 了解你的工作动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_notification_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gift-is-coding",
+      "features": [
+        "读取 macOS 通知中心，导出到 memory/computer_io/notification/ 目录。让 OpenClaw 了解你的工作动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/temp-notification-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33282030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "temp-notification-reader",
+      "url": "https://clawhub.ai/skills/temp-notification-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-notification-reader",
+    "url": "https://clawhub.ai/skills/temp-notification-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-notification-reader-f63a0475546e7663.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/temp-notification-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-temp-notification-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0f4e2f9808e86e4057a16308c0405a705c94ff339b37434e9bcdc288fef838f",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:01:18.485Z"
+}

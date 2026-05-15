@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defect-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defect_detector",
+  "skill": {
+    "id": 73615,
+    "skillKey": "clawhub-defect-detector",
+    "name": "病害检测识别技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defect-detector",
+    "url": "https://clawhub.ai/skills/defect-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defect-detector-0260a48fb64dd35d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "病害检测识别技能，支持从图片中自动检测病害区域，识别病害类型、严重程度，输出检测结果和结构化信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kumamon2019s",
+      "userId": "s173tg1xa240bcd524t0ct9kn583t82b",
+      "displayName": "Venwell Chiang",
+      "image": "https://avatars.githubusercontent.com/u/42192791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944066120,
+      "changelog": "defect-detector 1.0.0 – Initial Release\n\n- Introduces automatic detection of disease/defect regions in images with precise bounding boxes and segmentation masks.\n- Supports over 120 built-in defect types with customizable categories.\n- Evaluates defect severity (mild/moderate/severe/critical) and outputs structured results.\n- Provides API to fetch corresponding solutions from a knowledge base.\n- Simple Python interface and example usage included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14bda95f3abf3d466693ebe384ff94e9ddcaef46bdd8799e21d7384bdc48d5b8"
+}

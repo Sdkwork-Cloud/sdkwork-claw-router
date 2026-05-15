@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-autoplay@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_autoplay",
+  "skill": {
+    "id": 56611,
+    "skillKey": "clawhub-tts-autoplay",
+    "name": "TTS AutoPlay with Wake Word"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-autoplay",
+    "url": "https://clawhub.ai/skills/tts-autoplay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-autoplay-debf5d60f1936276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-play TTS voice files with wake word detection. Only plays audio when user message contains wake words like \"语音\", \"念出来\", \"voice\", etc. Perfect for Webcha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangzjhz",
+      "userId": "publishers:wangzjhz",
+      "displayName": "WangZjhz",
+      "image": "https://avatars.githubusercontent.com/u/141498897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 661,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1772200308803,
+      "changelog": "Added wake word detection and tagged mode support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3633cb9d7935816351311ccb5d710b1890c522d281c42d6df8b7e4fbed692c9"
+}

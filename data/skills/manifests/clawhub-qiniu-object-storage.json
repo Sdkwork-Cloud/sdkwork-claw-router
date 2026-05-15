@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72169,
+  "uuid": "skill-clawhub-qiniu-object-storage",
+  "skillKey": "clawhub-qiniu-object-storage",
+  "name": "七牛云对象存储",
+  "summary": "上传本地文件到七牛对象存储，返回可交付的下载链接。当用户提到\"上传\"\"七牛\"\"对象存储\"\"OSS\"\"交付链接\"\"公网链接\"\"签名链接\"时引用；当已有本地文件需要上传并获得可访问的 URL 时引用；当工作流完成内容生成后进入交付阶段时引用。自动按扩展名判定文件类型，私有空间返回签名链接，公开空间返回公网链接。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiniu_object_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "王新平（Wang-Xin-ping）",
+      "features": [
+        "上传本地文件到七牛对象存储，返回可交付的下载链接。当用户提到\"上传\"\"七牛\"\"对象存储\"\"OSS\"\"交付链接\"\"公网链接\"\"签名链接\"时引用；当已有本地文件需要上传并获得可访问的 URL 时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qiniu-object-storage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50769299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qiniu-object-storage",
+      "url": "https://clawhub.ai/skills/qiniu-object-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiniu-object-storage",
+    "url": "https://clawhub.ai/skills/qiniu-object-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiniu-object-storage-cf32d22370a472cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qiniu-object-storage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qiniu-object-storage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2beb4c5f936632d16be4c2847a5abed7f534da4ed95362c4cc5b7723671533b1",
+      "artifactSizeBytes": 2693
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:08:34.149Z"
+}

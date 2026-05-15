@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-deep-research-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_deep_research_skill",
+  "skill": {
+    "id": 40869,
+    "skillKey": "clawhub-openai-deep-research-skill",
+    "name": "OpenAI Deep Research Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-deep-research-skill",
+    "url": "https://clawhub.ai/skills/openai-deep-research-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-deep-research-skill-df93d69fbee1ba3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute multi-step deep research with the OpenAI Responses API, including question decomposition, evidence gathering with web search, contradiction tracking,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanglechen",
+      "userId": "s17b7ctw56jzd4kcqknpm4na7s83gb9k",
+      "displayName": "Grus",
+      "image": "https://avatars.githubusercontent.com/u/15143423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774322274688,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40c8925927c782948ecc52234aa4da3152394703527ffedf30c23df74c0774b0"
+}

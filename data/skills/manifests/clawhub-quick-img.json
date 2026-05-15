@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27593,
+  "uuid": "skill-clawhub-quick-img",
+  "skillKey": "clawhub-quick-img",
+  "name": "Quick Img V2",
+  "summary": "Generate images using curl and the SkillBoss API.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_img",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Generate images using curl and the SkillBoss API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-img@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-img",
+      "url": "https://clawhub.ai/skills/quick-img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-img",
+    "url": "https://clawhub.ai/skills/quick-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-img-eca43f5862b3ecee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-img@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-img-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:974d35fa59a926198bf94904162efe182c4aafec13bad04a7aa594ca7a3a7930",
+      "artifactSizeBytes": 1759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:34:49.445Z"
+}

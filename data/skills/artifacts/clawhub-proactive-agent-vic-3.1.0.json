@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-agent-vic@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_agent_vic",
+  "skill": {
+    "id": 46001,
+    "skillKey": "clawhub-proactive-agent-vic",
+    "name": "Proactive Agent Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-agent-vic",
+    "url": "https://clawhub.ai/skills/proactive-agent-vic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-agent-vic-9a90b31f91377701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autono..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1775293888563,
+      "changelog": "Version 3.1.0 of Proactive Agent introduces improved proactivity and self-correction:\n\n- Added support for distinguishing Autonomous vs Prompted Crons (`systemEvent` vs `isolated agentTurn`)\n- New guidance on verifying implementation details, not just stated intent\n- Introduced Tool Migration Checklist to ensure complete tool deprecation and updates\n- Documentation now includes expanded explanations and best practices for memory handling and self-improvement protocols",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed824b187c9c85521fbbb712c03b92b676da44cd455f9697185bf5256b155514"
+}

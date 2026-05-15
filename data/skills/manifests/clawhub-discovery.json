@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70924,
+  "uuid": "skill-clawhub-discovery",
+  "skillKey": "clawhub-discovery",
+  "name": "Discovery",
+  "summary": "提供全球最大纪实内容平台的历史与业务分析，涵盖频道运营、流媒体和品牌战略研究。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供全球最大纪实内容平台的历史与业务分析，涵盖频道运营、流媒体和品牌战略研究。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discovery",
+      "url": "https://clawhub.ai/skills/discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discovery",
+    "url": "https://clawhub.ai/skills/discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discovery-fa44132b238e6795.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bbbb664b4de53e1dbf6a468bd1f54d2afb3585249050f3f31c13933c2095382",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:04:48.736Z"
+}

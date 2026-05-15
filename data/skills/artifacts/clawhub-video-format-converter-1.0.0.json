@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-format-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_format_converter",
+  "skill": {
+    "id": 37262,
+    "skillKey": "clawhub-video-format-converter",
+    "name": "Video Format Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-format-converter",
+    "url": "https://clawhub.ai/skills/video-format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-format-converter-817a932d7126a165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tell me what you need and I'll help you convert any video into the exact format, resolution, or codec your project demands. This video-format-converter skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775035206423,
+      "changelog": "Video Format Converter 1.0.0 — Initial Release\n\n- Instantly convert, compress, and reformat videos between major formats (mp4, mov, avi, webm, mkv, and more).\n- Cloud-based backend handles large files and parallel processing for fast results.\n- Smart routing: Handles export, upload, credits, status, and conversion with clear user-friendly workflow.\n- Automated environment setup with anonymous token generation; 100 free credits for new users.\n- Responsive error handling for unsupported files, expired tokens, missing credits, and plan limits.\n- Clear instructions and actionable guidance for creators and developers—no codec confusion required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1317f0e95e329d60f0a6859550a51e7569bb8733d5408a8d2d8738aa136afe1"
+}

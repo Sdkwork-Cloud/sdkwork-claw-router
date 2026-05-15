@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api3-feed-manager@0.4.3",
+  "version": "0.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api3_feed_manager",
+  "skill": {
+    "id": 32154,
+    "skillKey": "clawhub-api3-feed-manager",
+    "name": "Api3 Feed Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api3-feed-manager",
+    "url": "https://clawhub.ai/skills/api3-feed-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api3-feed-manager-0f71ecc65d17a0ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, activate, fund, and maintain Api3 data feeds permissionlessly for downstream agent projects. Use when an agent needs a decentralized data feed pric..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daav3",
+      "userId": "s176sa2svdwgks5ycz1yngewb184yand",
+      "displayName": "dave",
+      "image": "https://avatars.githubusercontent.com/u/49767509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.3",
+      "createdAt": 1778070519685,
+      "changelog": "Remove the public env/private-key credential patterns from Api3 feed execution and keep the guarded execution contract explicit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9b2a9fcf8417707926a617d85be6934d4820e4556a45177e1437b48ea9ac23b"
+}

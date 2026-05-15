@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64033,
+  "uuid": "skill-clawhub-multimedia-to-obsidian",
+  "skillKey": "clawhub-multimedia-to-obsidian",
+  "name": "Multimedia To Obsidian",
+  "summary": "将任意多媒体文档导入 Obsidian 知识库。支持 PPT、PDF、DOCX、图片等格式，自动提取每一页/每一张图片，使用多模态模型理解内容，生成文字描述后存入 OB。适用于：(1) 整理培训课件 (2) 迁移笔记到 OB (3) 将图片资料转为结构化知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multimedia_to_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aidescend",
+      "features": [
+        "将任意多媒体文档导入 Obsidian 知识库。支持 PPT、PDF、DOCX、图片等格式，自动提取每一页/每一张图片，使用多模态模型理解内容，生成文字描述后存入 OB。适用于：(1) 整理."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multimedia-to-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138131715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multimedia-to-obsidian",
+      "url": "https://clawhub.ai/skills/multimedia-to-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multimedia-to-obsidian",
+    "url": "https://clawhub.ai/skills/multimedia-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multimedia-to-obsidian-2a59825cca35fb53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multimedia-to-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multimedia-to-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70d456f5e55b3947bbca2f297721dc9fc04b539c071f3dd4133941725ed29082",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T09:55:54.638Z"
+}

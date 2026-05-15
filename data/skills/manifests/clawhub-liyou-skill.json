@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70779,
+  "uuid": "skill-clawhub-liyou-skill",
+  "skillKey": "clawhub-liyou-skill",
+  "name": "Liyou Skill",
+  "summary": "璃幽×次元解忧杂货店专属技能 - 数字动漫 IP 创作助手。用于角色设计、故事创作、SD 图像生成关键词优化、世界观设定扩展、小说章节创作。当需要创作璃幽 IP 相关内容、生成动漫角色图像、编写小说章节、整理设定时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liyou_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jay0609",
+      "features": [
+        "璃幽×次元解忧杂货店专属技能",
+        "数字动漫 IP 创作助手。用于角色设计、故事创作、SD 图像生成关键词优化、世界观设定扩展、小说章节创作。当需要创作璃幽 IP 相关内容、生成动漫角色图像、编写小说章节、整理设定时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liyou-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41465287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liyou-skill",
+      "url": "https://clawhub.ai/skills/liyou-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liyou-skill",
+    "url": "https://clawhub.ai/skills/liyou-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liyou-skill-768894ab30b0423d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liyou-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liyou-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dec7a79a5de6c2be3f1d2dba0ae56377071e02ff5ad3fcdba6c912bae4b21e0",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:13:49.640Z"
+}

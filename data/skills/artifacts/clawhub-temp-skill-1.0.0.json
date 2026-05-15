@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_skill",
+  "skill": {
+    "id": 70993,
+    "skillKey": "clawhub-temp-skill",
+    "name": "Temp Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-skill",
+    "url": "https://clawhub.ai/skills/temp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-skill-61952d7994bf69a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于免费数据源的多资产投资组合分析，支持滚动窗口风险平价调仓及完整回测和图表报告生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzratgit",
+      "userId": "publishers:wzratgit",
+      "displayName": "wzratgit",
+      "image": "https://avatars.githubusercontent.com/u/111557788?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772108343103,
+      "changelog": "金融分析技能 1.0.0\n\n- 新增投资组合分析工具，支持多资产类型（股票、ETF、加密货币等）\n- 集成多种免费行情数据源（Yahoo Finance、Alpha Vantage、Finnhub、CSV）\n- 实现文字+图表化投资报告，涵盖收益、风险及资产配置等指标\n- 支持滚动窗口风险平价分析及自动回测流程，避免未来数据\n- 输出详细报告和多种可视化图表（收益曲线、配置饼图、相关性热力图等）\n- 示例配置和报告文档详尽，方便快速上手",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d24de2f3dee0499153f3fa888df0fd49532e7128814c65f57b22c6fb5ae64749"
+}

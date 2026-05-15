@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29675,
+  "uuid": "skill-clawhub-lecture-transcript-study-notes",
+  "skillKey": "clawhub-lecture-transcript-study-notes",
+  "name": "Lecture Transcript to Study Notes",
+  "summary": "Convert lecture transcripts into structured study notes, key concepts, and exam review summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lecture_transcript_study_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "babybabyyeah",
+      "features": [
+        "Convert lecture transcripts into structured study notes, key concepts, and exam review summarie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lecture-transcript-study-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154887035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lecture-transcript-study-notes",
+      "url": "https://clawhub.ai/skills/lecture-transcript-study-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lecture-transcript-study-notes",
+    "url": "https://clawhub.ai/skills/lecture-transcript-study-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lecture-transcript-study-notes-b19c72a47c4a1b3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lecture-transcript-study-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lecture-transcript-study-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd300453c320b79904582b2ec699a94c39d87123582c4cc23c5df4f26b02a534",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:31:29.768Z"
+}

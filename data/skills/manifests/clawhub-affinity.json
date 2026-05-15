@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22280,
+  "uuid": "skill-clawhub-affinity",
+  "skillKey": "clawhub-affinity",
+  "name": "Affinity",
+  "summary": "Affinity integration. Manage Organizations, Leads, Pipelines, Users, Roles, Filters. Use when the user wants to interact with Affinity data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.affinity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Affinity integration",
+        "Manage Organizations, Leads, Pipelines, Users, Roles, Filters",
+        "Use when the user wants to interact with Affinity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/affinity@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "affinity",
+      "url": "https://clawhub.ai/skills/affinity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "affinity",
+    "url": "https://clawhub.ai/skills/affinity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/affinity-74283e22161afdd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/affinity@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-affinity-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbd21b86d58500501c27cc38adf21c800be3be7b1e9cd4347f10c04779cc47d5",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:02:59.429Z"
+}

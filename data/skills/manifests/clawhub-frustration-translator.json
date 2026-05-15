@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37931,
+  "uuid": "skill-clawhub-frustration-translator",
+  "skillKey": "clawhub-frustration-translator",
+  "name": "Frustration Translator",
+  "summary": "Detect user frustration in prompts and translate charged/emotional language into clear, actionable instructions. Use when user messages contain vague anger (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frustration_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KairoKid",
+      "features": [
+        "Detect user frustration in prompts and translate charged/emotional language into clear, actiona.",
+        "Use when user messages contain vague anger (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frustration-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235199066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frustration-translator",
+      "url": "https://clawhub.ai/skills/frustration-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frustration-translator",
+    "url": "https://clawhub.ai/skills/frustration-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frustration-translator-6764818a33e6dced.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frustration-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-frustration-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43c803e82faa7e677c45d90699b8d907203ce5ecb4e3a5b8878af28654f6d9c9",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:24:58.802Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25272,
+  "uuid": "skill-clawhub-lh-deepwiki",
+  "skillKey": "clawhub-lh-deepwiki",
+  "name": "LH DeepWiki",
+  "summary": "Query DeepWiki MCP service via Streamable HTTP to get GitHub repository documentation, wiki structure, and AI-powered Q&A.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lh_deepwiki",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhedev",
+      "features": [
+        "Query DeepWiki MCP service via Streamable HTTP to get GitHub repository documentation, wiki str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lh-deepwiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19663285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lh-deepwiki",
+      "url": "https://clawhub.ai/skills/lh-deepwiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lh-deepwiki",
+    "url": "https://clawhub.ai/skills/lh-deepwiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lh-deepwiki-c4f77a229ba0d620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lh-deepwiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lh-deepwiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2936fe73358d595dfa09bf1bd471f2d6260045a734c9021347d49630bfb5c95",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:20:18.775Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-profile-orchestrator@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_profile_orchestrator",
+  "skill": {
+    "id": 30734,
+    "skillKey": "clawhub-codex-profile-orchestrator",
+    "name": "Codex Profile Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-profile-orchestrator",
+    "url": "https://clawhub.ai/skills/codex-profile-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-profile-orchestrator-804b7cb4c57d2208.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "deterministic openclaw codex profile failover for windows workspaces with duplicate detection, workspace variant aliases, quota-aware profile choice, telegra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugurinanc12",
+      "userId": "s17e43s5845fkkyca9jkhccm3x84zzdk",
+      "displayName": "UgurInanc",
+      "image": "https://avatars.githubusercontent.com/u/55364464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1776804918757,
+      "changelog": "Prevent repeated low-limit Telegram alerts until threshold recovers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b271c8fdcb51d9bbbe81947403c7ee667337cfc3201a45ec9074a5d139b04ca9"
+}

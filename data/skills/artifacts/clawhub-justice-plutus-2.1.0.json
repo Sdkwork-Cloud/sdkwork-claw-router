@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justice-plutus@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justice_plutus",
+  "skill": {
+    "id": 11090,
+    "skillKey": "clawhub-justice-plutus",
+    "name": "Justice Plutus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justice-plutus",
+    "url": "https://clawhub.ai/skills/justice-plutus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justice-plutus-0ffdad30a922a98d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local A-share analysis with Markdown/JSON reports, optional Feishu notifications, and optional iFinD enhancement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etherstrings",
+      "userId": "s171fcqmjxj7s97pghsy1s5ya583gdqd",
+      "displayName": "Wu Bo Yu",
+      "image": "https://avatars.githubusercontent.com/u/95729350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1378,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 9,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774974509170,
+      "changelog": "Add Feishu notification support details, iFinD enhancement docs, and local runner flags for notify/ifind/dry-run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37cb197f8de0090756b3adbf30dc830b349680ed156ce2b3fb03e02e4ea6a907"
+}

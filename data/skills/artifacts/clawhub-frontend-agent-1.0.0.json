@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_agent",
+  "skill": {
+    "id": 58731,
+    "skillKey": "clawhub-frontend-agent",
+    "name": "Frontend Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-agent",
+    "url": "https://clawhub.ai/skills/frontend-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-agent-81ceb527283d6607.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "前端开发专家 - React/Vue/Angular、UI 实现、性能优化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muyanshouji",
+      "userId": "publishers:muyanshouji",
+      "displayName": "muyanshouji",
+      "image": "https://avatars.githubusercontent.com/u/55934984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2603,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772928417416,
+      "changelog": "Initial release of frontend-agent.\n\n- Provides expertise in React, Vue, Angular, Tailwind CSS, Next.js, Nuxt.js, and modern frontend tools.\n- Supports UI component development, state management, and performance optimization.\n- Includes detailed workflow: requirement analysis, architecture, implementation, and optimization advice.\n- Offers code quality guidance, accessibility best practices, and security considerations.\n- Ready-to-use code templates and responsive design examples included.\n- Auto-activates for frontend-related queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65249f831f409525a79eb1fb4d3c8e40c24d2e9cde833e921f286e0139a8cd7b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59479,
+  "uuid": "skill-clawhub-stock-manage-skill",
+  "skillKey": "clawhub-stock-manage-skill",
+  "name": "stock-manage-skill",
+  "summary": "股票管理技能，支持股票订单管理、交易规则管理和股票信息获取。支持A股、港股、美股等多种股票类型，使用本地文本目录存储数据。Use when user wants to manage stock orders, trading rules or get stock information including add...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_manage_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a925907195",
+      "features": [
+        "股票管理技能，支持股票订单管理、交易规则管理和股票信息获取。支持A股、港股、美股等多种股票类型，使用本地文本目录存储数据。Use when user wants to manage stoc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-manage-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10365191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-manage-skill",
+      "url": "https://clawhub.ai/skills/stock-manage-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-manage-skill",
+    "url": "https://clawhub.ai/skills/stock-manage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-manage-skill-8cfd8f9e14363438.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-manage-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-manage-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:528df5931169f3bae7801297b2e8362471854e2b5e40aebc07249a72a688bf76",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:28:24.880Z"
+}

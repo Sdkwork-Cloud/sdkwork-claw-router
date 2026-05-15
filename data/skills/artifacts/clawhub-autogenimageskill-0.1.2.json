@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autogenimageskill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autogenimageskill",
+  "skill": {
+    "id": 43931,
+    "skillKey": "clawhub-autogenimageskill",
+    "name": "autoGenImageSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autogenimageskill",
+    "url": "https://clawhub.ai/skills/autogenimageskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autogenimageskill-ce022400f6a19bdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants GPT-Image-2 image generation or image-to-image through an official OpenAI permission code/API key, a custom Responses-compatible prox..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etherstrings",
+      "userId": "s171fcqmjxj7s97pghsy1s5ya583gdqd",
+      "displayName": "Wu Bo Yu",
+      "image": "https://avatars.githubusercontent.com/u/95729350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1777196378365,
+      "changelog": "Rename the OpenClaw skill display and source root to autoGenImageSkill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff5a4ff900507fdf4e1be86ad07828c20aa9f00b337635ce819a95637b3eed75"
+}

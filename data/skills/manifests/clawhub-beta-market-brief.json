@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41423,
+  "uuid": "skill-clawhub-beta-market-brief",
+  "skillKey": "clawhub-beta-market-brief",
+  "name": "Beta Market Brief",
+  "summary": "Generate a concise Chinese market brief for the trader agent using Tiger API first and Yahoo Finance as supplement. Use for hourly market snapshots, trader b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_market_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Generate a concise Chinese market brief for the trader agent using Tiger API first and Yahoo Fi.",
+        "Use for hourly market snapshots, trader b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beta-market-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beta-market-brief",
+      "url": "https://clawhub.ai/skills/beta-market-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-market-brief",
+    "url": "https://clawhub.ai/skills/beta-market-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-market-brief-fc35e5054694c608.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beta-market-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beta-market-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1977fdc9fba9d842f7ca67e2a2338af50b531c906a5ce7b476319c4da64c4a1",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:45:42.657Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ainative-vue-sdk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainative_vue_sdk",
+  "skill": {
+    "id": 38011,
+    "skillKey": "clawhub-ainative-vue-sdk",
+    "name": "Ainative Vue Sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainative-vue-sdk",
+    "url": "https://clawhub.ai/skills/ainative-vue-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainative-vue-sdk-2a65bba2d183ebeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use @ainative/vue-sdk to add AI chat to Vue 3 apps. Use when (1) Installing @ainative/vue-sdk, (2) Using the useChat composable in Vue components, (3) Provid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urbantech",
+      "userId": "s1705vnaxvfmy5a3t55qeprr4d83hnbz",
+      "displayName": "Toby Morning",
+      "image": "https://avatars.githubusercontent.com/u/2746731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774323233012,
+      "changelog": "Initial release of ainative-vue-sdk.\n\n- Adds Vue 3 composables for integrating AINative chat completions in Vue apps.\n- Provides useChat and useCredits composables for chat functionality and credit balance.\n- Includes provideAINative helper for configuration injection.\n- Features complete setup instructions, usage examples, and Nuxt integration guidance.\n- Type definitions and primary API surface exported for use in Vue projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09c99c3b2cb8df18d95cee5813cbb51f07eaa238bad36acdc54150f0492d6626"
+}

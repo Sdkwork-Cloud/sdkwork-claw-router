@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-visual-qa-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_visual_qa_analysis",
+  "skill": {
+    "id": 57570,
+    "skillKey": "clawhub-smyx-visual-qa-analysis",
+    "name": "大模型视觉问答技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-visual-qa-analysis",
+    "url": "https://clawhub.ai/skills/smyx-visual-qa-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-visual-qa-analysis-eabf8e79f9f05b94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conducts open-ended Q&A on image content based on computer vision and large language models, supporting any questions to receive natural language responses...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778063139310,
+      "changelog": "- Improved logic in skills/smyx_common/scripts/skill.py for handling open-id retrieval and validation.\n- Enhanced error handling to ensure open-id is never assumed or auto-generated.\n- No changes to the user-facing documentation or SKILL.md content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abf96848319ba6effbe7176677c8303cea2b2ce3637d6dba85bb8395ed1672a5"
+}

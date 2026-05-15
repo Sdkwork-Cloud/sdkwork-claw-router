@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11238,
+  "uuid": "skill-clawhub-monzo",
+  "skillKey": "clawhub-monzo",
+  "name": "Monzo",
+  "summary": "Access Monzo bank account - check balance, view transactions, manage pots, send feed notifications. For personal finance queries and banking automation.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monzo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rob",
+      "features": [
+        "Access Monzo bank account",
+        "check balance, view transactions, manage pots, send feed notifications",
+        "For personal finance queries and banking automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monzo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monzo",
+      "url": "https://clawhub.ai/skills/monzo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monzo",
+    "url": "https://clawhub.ai/skills/monzo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monzo-efc68bdfc744cb70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monzo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-monzo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83b57153cf331a75b0c47cf3a0cd3203435304a4f4cca8691bf1624ec32b6f24",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T11:06:08.348Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calvin-klein@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calvin_klein",
+  "skill": {
+    "id": 64715,
+    "skillKey": "clawhub-calvin-klein",
+    "name": "Calvin Klein"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calvin-klein",
+    "url": "https://clawhub.ai/skills/calvin-klein",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calvin-klein-9adbea9dee2b0f82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Calvin Klein品牌历史、产品介绍、行业地位、全球布局及最新动态的详细信息和官网链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776237892747,
+      "changelog": "- 优化了技能摘要及适用场景描述，更加精准简洁\n- 信息模块细分为历史沿革、业务范围、全球布局、最新动态\n- 格式调整，提升内容结构和可读性\n- 明确推荐访问官方网站获取更详尽信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c51b75fce695f89169f8abdb23f7eec11165ae993f3dfcf2309a35816780db51"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-seo-content-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_seo_content_engine",
+  "skill": {
+    "id": 21823,
+    "skillKey": "clawhub-ai-seo-content-engine",
+    "name": "Ai Seo Content Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-seo-content-engine",
+    "url": "https://clawhub.ai/skills/ai-seo-content-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-seo-content-engine-eeffad6f5a413d9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated SEO content generator that schedules daily SaaS review articles using OpenAI GPT-4o, publishes to a Hugo blog via API, and tracks output in Google..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhmalvi",
+      "userId": "publishers:mhmalvi",
+      "displayName": "Muhammad H.M. Alvi",
+      "image": "https://avatars.githubusercontent.com/u/74125579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772557181782,
+      "changelog": "Initial release: AI-powered SEO content generator with OpenAI GPT-4o",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64a9129f962f09e5b5a6e02cedcdb16883e6514ad719ed6817e32f4a02bda9d7"
+}

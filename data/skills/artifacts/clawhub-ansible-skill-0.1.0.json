@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ansible-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansible_skill",
+  "skill": {
+    "id": 10383,
+    "skillKey": "clawhub-ansible-skill",
+    "name": "Ansible"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansible-skill",
+    "url": "https://clawhub.ai/skills/ansible-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansible-skill-86cb26e6a1b08370.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Infrastructure automation with Ansible. Use for server provisioning, configuration management, application deployment, and multi-host orchestration. Includes playbooks for OpenClaw VPS setup, security hardening, and common server configura."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "botond-rackhost",
+      "userId": "publishers:botond-rackhost",
+      "displayName": "rhbotond",
+      "image": "https://avatars.githubusercontent.com/u/258622552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2711,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769956578976,
+      "changelog": "Initial release of Ansible Skill: infrastructure automation framework for provisioning, configuration, and orchestration.\n\n- Provides ready-to-use Ansible playbooks for OpenClaw VPS setup, security hardening, and common server configurations.\n- Includes modular roles: common (base system), security (hardening), nodejs (Node.js installs), and openclaw (OpenClaw deployment).\n- Outlines best practices, core Ansible concepts (inventories, playbooks, roles), and usage patterns for reproducible server management.\n- Covers secrets management with vault, recommended directory structure, and ad-hoc command usage.\n- Includes documentation references for best practices, module usage, and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9712d06c2559e951469dbdb6a14313c012e5360b7c2ec82b265ab9fd9f089fcb"
+}

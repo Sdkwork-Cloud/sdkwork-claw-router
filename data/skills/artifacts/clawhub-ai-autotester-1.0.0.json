@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-autotester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_autotester",
+  "skill": {
+    "id": 18737,
+    "skillKey": "clawhub-ai-autotester",
+    "name": "Ai Autotester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-autotester",
+    "url": "https://clawhub.ai/skills/ai-autotester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-autotester-9148fa8018c2266e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates code testing by analyzing tasks, planning subtasks, executing tests, validating results, and providing detailed reports and summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason513597",
+      "userId": "publishers:jason513597",
+      "displayName": "jason513597",
+      "image": "https://avatars.githubusercontent.com/u/94666838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772940941196,
+      "changelog": "AI_AutoTester 1.0.0 初始發佈：\n\n- 提供自動化測試程式碼的功能  \n- 支援單獨測試與流程節點\n- 接收任務描述、上下文與限制條件輸入\n- 產出計畫、結果、報告及測試日誌摘要\n- 標準工作流程：分析任務、規劃子任務、角色執行、驗證結果、彙整回報\n- 內建安全機制：避免未授權破壞性操作、重要外部動作需二次確認、決策與錯誤皆有記錄",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25ef396527b99508d71691e730b546603842098ccbf7d7e8538a5aea1e5d0045"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-bundler-oracle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_bundler_oracle",
+  "skill": {
+    "id": 42875,
+    "skillKey": "clawhub-prompt-bundler-oracle",
+    "name": "Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-bundler-oracle",
+    "url": "https://clawhub.ai/skills/prompt-bundler-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-bundler-oracle-29f554e911fc5218.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774219932489,
+      "changelog": "- Initial release of the oracle skill, providing best practices for using the oracle CLI.\n- Covers prompt and file bundling, engine choices (browser/API), sessions, and file attachment patterns.\n- Includes recommended defaults for browser-based GPT‑5.2 Pro workflows and session management.\n- Details commands for preview, token checks, and browser or manual workflows.\n- Documents file inclusion/exclusion patterns, engine behaviors, session handling, and prompt templates.\n- Emphasizes safety guidance and thorough context restoration for reproducible runs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c802769bcd2b6811a1f13077d9723b10df009ef0afed4a4ef3c3d403c846a1aa"
+}

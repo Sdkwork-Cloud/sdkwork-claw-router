@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hivehome@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hivehome",
+  "skill": {
+    "id": 25950,
+    "skillKey": "clawhub-hivehome",
+    "name": "Hive Home"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hivehome",
+    "url": "https://clawhub.ai/skills/hivehome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hivehome-9dc1921099a1b2c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and query Hive Home (UK) smart heating, hot water, lights and devices via the unofficial API. Use when the user mentions Hive, Hive Home, Hive thermo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m0nkmaster",
+      "userId": "s177rkwg2hry4pdmperpeqa76x83r5wt",
+      "displayName": "Rob MacDonald",
+      "image": "https://avatars.githubusercontent.com/u/1137937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773189979754,
+      "changelog": "Hivehome 1.0.1\n\n- Updated code examples and quick reference for heating to use new pyhiveapi method names (e.g. getCurrentTemperature, getTargetTemperature, getBoostStatus, setBoostOn).\n- Updated temperature limit references to use getMinTemperature and getMaxTemperature methods.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c4b3663b85cc6608b235298cfc0d0e6b2d9a09f0ecf74afc1bcc170a41ea9d0"
+}

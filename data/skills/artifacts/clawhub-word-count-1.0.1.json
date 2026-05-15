@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-count@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_count",
+  "skill": {
+    "id": 36209,
+    "skillKey": "clawhub-word-count",
+    "name": "Word Count"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-count",
+    "url": "https://clawhub.ai/skills/word-count",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-count-8f6a788939ca730f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Count words, lines, and characters in a file. Outputs a single summary line. Use when the user wants to know how long a file is or count words in a document."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinwangmok",
+      "userId": "s1724v3p011w6ed31wyzjmnvbd83pd0b",
+      "displayName": "목진왕",
+      "image": "https://avatars.githubusercontent.com/u/80076897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774708213756,
+      "changelog": "Update SKILL.md formatting",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d0d46f047caddce4d6c5156e15f15b4af453508ad63b63a489de4eedababe68"
+}

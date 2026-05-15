@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wolt-orders@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolt_orders",
+  "skill": {
+    "id": 11424,
+    "skillKey": "clawhub-wolt-orders",
+    "name": "Wolt Orders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolt-orders",
+    "url": "https://clawhub.ai/skills/wolt-orders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolt-orders-01c33afe13ad5e91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover restaurants with advanced filters (cuisine, price, distance, rating, promotions), place single or group orders on Wolt.com, reorder past favorites, track status in real-time, automatically detect delays and contact support, and pu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dviros",
+      "userId": "publishers:dviros",
+      "displayName": "Dviros",
+      "image": "https://avatars.githubusercontent.com/u/23431860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1946,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769450956264,
+      "changelog": "Initial release of Wolt Orders 🍔 — a comprehensive Wolt.com assistant.\n\n- Advanced restaurant discovery with filters for cuisine, price, distance, ratings, promotions, and dietary options.\n- Seamless single and group ordering, including menu browsing, cart building, confirmation, and real-time tracking.\n- Effortless reordering from past favorites and live order tracking with detailed status and notifications.\n- Automatic delay detection and integrated support contact, including message relay.\n- Pushes rich updates to Slack or other connected channels for all major actions and alerts.\n- Emphasizes safety with explicit confirmation before all orders and robust error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f91e117740bc3e991fa6afd52c05886484faaeb2582729c932111420c53c22f9"
+}

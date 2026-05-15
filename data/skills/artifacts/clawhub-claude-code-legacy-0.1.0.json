@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-legacy@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_legacy",
+  "skill": {
+    "id": 15837,
+    "skillKey": "clawhub-claude-code-legacy",
+    "name": "claude-code (Deprecated alias)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-legacy",
+    "url": "https://clawhub.ai/skills/claude-code-legacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-legacy-154e6790ad4cb42b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger Claude Code development tasks in observable tmux sessions with stable startup, progress visibility, and completion callback to OpenClaw. Use when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaxuan42",
+      "userId": "publishers:yaxuan42",
+      "displayName": "Yaxuan42",
+      "image": "https://avatars.githubusercontent.com/u/184813557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 952,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771142918722,
+      "changelog": "Deprecated alias pointing to claude-code-orchestrator",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f12f8566ce9350699a9d84a2e7e3044fcea5a5f45a1d55b51f532e28e5609de5"
+}

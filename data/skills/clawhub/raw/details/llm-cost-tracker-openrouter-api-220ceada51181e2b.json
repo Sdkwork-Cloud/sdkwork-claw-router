@@ -1,0 +1,40 @@
+{
+  "skill": {
+    "slug": "llm-cost-tracker-openrouter-api",
+    "displayName": "LLM Cost Tracker",
+    "summary": "Track OpenClaw LLM token usage and cost from OpenRouter API. Reports: last 24h, 7d, 30d, 90d, 365d with model breakdown. Skills that trigger this: - \"llm cos...",
+    "tags": {
+      "latest": "1.1.1",
+      "automation": "1.0.0",
+      "cost-tracking": "1.0.0",
+      "llm": "1.0.0",
+      "monitoring": "1.0.0",
+      "openrouter": "1.0.0",
+      "token-metrics": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1777351249684,
+    "updatedAt": 1777528048055
+  },
+  "latestVersion": {
+    "version": "1.1.1",
+    "createdAt": 1777518657164,
+    "changelog": "## 1.1.1 (2026-04-30)\n- Added: scripts/setup.py\n- Updated: SKILL.md, version.txt\n\n### Changed\n- Clarified billing rules: use `usage.cost.total` as canonical source, not token-count math\n- Split token categories: prompt, cached (cacheRead), cache_write, completion, reasoning, total\n- Updated cron examples in SKILL.md with `--no-deliver` flag for collect cron\n- Removed \"forward output exactly\" requirement from report triggers",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "joeyiptk",
+    "userId": "s17av7k4d5aq1pr3yswt5phdg985p5pm",
+    "displayName": "larryjoe",
+    "image": "https://avatars.githubusercontent.com/u/25060936?v=4"
+  },
+  "moderation": null
+}

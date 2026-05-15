@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mail-126@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail_126",
+  "skill": {
+    "id": 66318,
+    "skillKey": "clawhub-mail-126",
+    "name": "126 邮箱管理 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail-126",
+    "url": "https://clawhub.ai/skills/mail-126",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-126-c209f98f2d5a4ac7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "126.com 网易邮箱管理 CLI。支持收取/发送邮件、搜索邮件、邮件管理和邮件统计。 当用户提到邮件、邮箱、email、发邮件、收邮件、查邮件、126邮箱时触发。 支持其它 skill 和定时任务调用，所有命令输出 JSON 格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slamw",
+      "userId": "s178r2gqmf35ybvg22bgqkk6m584chwa",
+      "displayName": "Phal studio",
+      "image": "https://avatars.githubusercontent.com/u/212455601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925158383,
+      "changelog": "- Initial release of mail-126, a CLI tool for managing 126.com (NetEase) email.\n- Supports email reception, sending, searching, management, and statistics with all operations via CLI commands and JSON output.\n- Triggers on keywords like 邮件/邮箱/email/发邮件/收邮件/查邮件/126邮箱.\n- Provides clear workflow instructions for setup, mailbox operations, attachment handling, and mailbox statistics.\n- Facilitates integration with other skills and scheduled tasks by consistent JSON-format responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0651732030ab9a603669877474397032635f5b54924fb4cc137a3c02573aba6f"
+}

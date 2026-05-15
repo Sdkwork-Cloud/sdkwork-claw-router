@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16613,
+  "uuid": "skill-clawhub-eridian-carapace",
+  "skillKey": "clawhub-eridian-carapace",
+  "name": "Eridian Carapace",
+  "summary": "Agent security hardening and prompt injection defense for OpenClaw. Protects against ClawHavoc-style attacks including prompt injection, data exfiltration, credential theft, and unauthorized operations. Runtime protection that complements.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eridian_carapace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EridianCarapace",
+      "features": [
+        "Agent security hardening and prompt injection defense for OpenClaw",
+        "Protects against ClawHavoc-style attacks including prompt injection, data exfiltration, credent.",
+        "Runtime protection that complements pre-installation skill scanners like Clawdex",
+        "Includes security audit checklist, 8 documented attack vector defenses with mitigations, copy-p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eridian-carapace@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228373334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eridian-carapace",
+      "url": "https://clawhub.ai/skills/eridian-carapace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eridian-carapace",
+    "url": "https://clawhub.ai/skills/eridian-carapace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eridian-carapace-c5bd7b38b39f60da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eridian-carapace@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-eridian-carapace-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4fab47498811170fe09f1a1d2a4a31f9d929d0d9ac1f5557e2b0716cf773e0a",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T15:40:28.823Z"
+}

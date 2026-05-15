@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-listing-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_optimizer",
+  "skill": {
+    "id": 22138,
+    "skillKey": "clawhub-amazon-listing-optimizer",
+    "name": "Amazon Listing Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-optimizer",
+    "url": "https://clawhub.ai/skills/amazon-listing-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-optimizer-04bdfcd6ea2b48a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and score any Amazon listing, find keyword opportunities, and spy on competitors for free with no API keys or subscriptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avmw2025",
+      "userId": "publishers:avmw2025",
+      "displayName": "Elway Botty",
+      "image": "https://avatars.githubusercontent.com/u/214021893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475307092,
+      "changelog": "Amazon Listing Optimizer 1.0.0 — Initial release\n\n- Analyze and score any Amazon product listing for Title, Bullets, Images, and Reviews.\n- Discover keyword opportunities using Amazon autocomplete with advanced crawling.\n- Identify and analyze top competitors for any search term.\n- 100% free: no API keys, subscriptions, or third-party dependencies required.\n- Pure Python (standard library only); runs on any system with Python 3.6+.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ed32d130d025d81fec1420a364f831500a1cfbcc91c20c421ffaff002ebc501"
+}

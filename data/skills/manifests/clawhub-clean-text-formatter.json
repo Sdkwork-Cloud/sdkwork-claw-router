@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37031,
+  "uuid": "skill-clawhub-clean-text-formatter",
+  "skillKey": "clawhub-clean-text-formatter",
+  "name": "Clean Text Formatter",
+  "summary": "Removes Markdown formatting and excess whitespace from text to produce clean, publication-ready plain text with normalized punctuation and spacing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_text_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zihaowyt5525-max",
+      "features": [
+        "Removes Markdown formatting and excess whitespace from text to produce clean, publication-ready."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clean-text-formatter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237939160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clean-text-formatter",
+      "url": "https://clawhub.ai/skills/clean-text-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-text-formatter",
+    "url": "https://clawhub.ai/skills/clean-text-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-text-formatter-5bc73879e7090e3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clean-text-formatter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clean-text-formatter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4adacf341ce36a88446795864a8cca6d67c4acb5d1364fc0a32a14cc4cbeb355",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:48:42.645Z"
+}

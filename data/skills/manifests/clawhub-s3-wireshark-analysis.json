@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51603,
+  "uuid": "skill-clawhub-s3-wireshark-analysis",
+  "skillKey": "clawhub-s3-wireshark-analysis",
+  "name": "S³ Wireshark Analysis",
+  "summary": "This skill should be used when the user asks to \"analyze network traffic with Wireshark\", \"capture packets for troubleshooting\", \"filter PCAP files\", \"follow...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s3_wireshark_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "This skill should be used when the user asks to \"analyze network traffic with Wireshark\", \"capt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s3-wireshark-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s3-wireshark-analysis",
+      "url": "https://clawhub.ai/skills/s3-wireshark-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s3-wireshark-analysis",
+    "url": "https://clawhub.ai/skills/s3-wireshark-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s3-wireshark-analysis-b19d6bb6d5c5479a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s3-wireshark-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s3-wireshark-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ee115c68c640c47c35b14498d2fef0d2c696f87b86a2020107a2c646bd8074",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:44:39.957Z"
+}

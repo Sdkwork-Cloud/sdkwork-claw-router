@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53492,
+  "uuid": "skill-clawhub-gmail-assistant",
+  "skillKey": "clawhub-gmail-assistant",
+  "name": "Gmail Assistant",
+  "summary": "Gmail API integration with smart AI features — read, send, search, and manage emails with Claude-powered summarization and drafting. Powered by evolink.ai",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "Gmail API integration with smart AI features — read, send, search, and manage emails with Claud.",
+        "Powered by evolink.ai"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-assistant@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-assistant",
+      "url": "https://clawhub.ai/skills/gmail-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-assistant",
+    "url": "https://clawhub.ai/skills/gmail-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-assistant-03fe872a026215ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-assistant@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-assistant-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b53c55336578124f6018d1bdea0a0d655de119591d8c8a78da035a4e054520",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:19:15.986Z"
+}

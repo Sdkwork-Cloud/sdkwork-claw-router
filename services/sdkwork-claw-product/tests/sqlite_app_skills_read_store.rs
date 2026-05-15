@@ -8,22 +8,52 @@ use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
 
 #[tokio::test]
-async fn sqlite_app_skills_requires_trusted_subject() {
+async fn sqlite_app_skills_reads_public_catalog_without_trusted_subject() {
     let pool = sqlite_pool().await;
     create_skill_tables(&pool).await;
+    seed_skills(&pool).await;
+    sqlx::query(
+        r#"
+        INSERT INTO plus_category (
+            id, tenant_id, organization_id, parent_id, name, description, shop_id,
+            type, group_name, code, tags, icon, sort_weight, path, visible, status
+        )
+        VALUES (3901, 0, 0, NULL, 'Official', NULL, NULL, 19, NULL, 'official', NULL, NULL, 1, '/official', 1, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    insert_skill(
+        &pool,
+        3902,
+        0,
+        0,
+        0,
+        "Public Skill",
+        "System public skill",
+        3901,
+        701,
+        "PUBLISHED",
+        "PUBLIC",
+        "APPROVED",
+        1,
+        "2026-05-04 08:00:00",
+    )
+    .await;
 
     let store = SqliteAppSkillsReadStore::new(pool);
-    let error = store
+    let items = store
         .load_skills(AppSkillsQuery::default(), None)
         .await
-        .unwrap_err();
+        .unwrap();
 
     assert!(
-        error
-            .to_string()
-            .contains("trusted request subject is required"),
-        "real skills hub read model must fail closed without a trusted subject"
+        items.iter().any(|item| item.id == "3902"),
+        "anonymous users must be able to browse public skills"
     );
+    let my_skills = store.load_user_skills(None).await.unwrap();
+    assert!(my_skills.is_empty());
 }
 
 #[tokio::test]

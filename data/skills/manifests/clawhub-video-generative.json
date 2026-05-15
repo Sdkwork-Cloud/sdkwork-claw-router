@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45148,
+  "uuid": "skill-clawhub-video-generative",
+  "skillKey": "clawhub-video-generative",
+  "name": "Video Generative",
+  "summary": "Get AI-generated video clips ready to post, without touching a single slider. Upload your text prompts or images (MP4, MOV, PNG, JPG, up to 200MB), say somet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generative",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get AI-generated video clips ready to post, without touching a single slider",
+        "Upload your text prompts or images (MP4, MOV, PNG, JPG, up to 200MB), say somet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generative@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generative",
+      "url": "https://clawhub.ai/skills/video-generative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generative",
+    "url": "https://clawhub.ai/skills/video-generative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generative-76e1caf74843835a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generative@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generative-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:534be71fbb6f15ecc23369d5000f401964fbadebe7d0038443bd691e7b959773",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:28:12.910Z"
+}

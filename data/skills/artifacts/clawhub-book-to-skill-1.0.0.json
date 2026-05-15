@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-to-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_to_skill",
+  "skill": {
+    "id": 65350,
+    "skillKey": "clawhub-book-to-skill",
+    "name": "Book to Skill Converter 书本即技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-to-skill",
+    "url": "https://clawhub.ai/skills/book-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-to-skill-4e1d51c91220cc1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据上传的书籍自动提取技能和思维方式并创建新skill。用于：当用户上传一本书（PDF、TXT、EPUB等），希望从中提取核心技能、方法论或思维方式，并生成一个可复用的skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenshuo-03",
+      "userId": "s177dj8cv1tarm8t0z7cfg3k7h840qwh",
+      "displayName": "shenshuo-03",
+      "image": "https://avatars.githubusercontent.com/u/262797904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773074058684,
+      "changelog": "- Initial release of book-to-skill.\n- Automatically extracts core skills, methodologies, and thinking models from uploaded books (PDF, TXT, EPUB, MOBI, DOCX, MD).\n- Supports generating structured, reusable skills based on book content analysis.\n- Includes templates for method-based, mindset-based, and comprehensive skill formats.\n- Guides the extraction and structuring workflow step-by-step for easy user review and adaptation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b4053410c435abce667f9df55def318a952a18cb22b9cb1424220c8ed335946"
+}

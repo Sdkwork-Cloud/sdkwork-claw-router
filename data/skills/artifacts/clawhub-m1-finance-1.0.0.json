@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/m1-finance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m1_finance",
+  "skill": {
+    "id": 69139,
+    "skillKey": "clawhub-m1-finance",
+    "name": "M1 Finance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m1-finance",
+    "url": "https://clawhub.ai/skills/m1-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m1-finance-ce3e0cf4b1f0b955.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美国自动化投资平台，支持零佣金交易、自定义投资组合Pie理念及银行功能一站式服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777978912745,
+      "changelog": "M1 Finance v1.0.0\n\n- 初始版本发布，详细介绍M1 Finance的历史、商业模式、核心数据和独特优势\n- 涵盖Pie投资理念、平台集成自动化投资与银行功能的创新特色\n- 提供护城河分析与行业定位，适合研究美国自动化投资及robo-advisor领域",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5ef0ebcce5edf457e7989cbc83698173b0af17e6cce322df178de5d3f823c7c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faridwahysapp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faridwahysapp",
+  "skill": {
+    "id": 26695,
+    "skillKey": "clawhub-faridwahysapp",
+    "name": "farid wa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faridwahysapp",
+    "url": "https://clawhub.ai/skills/faridwahysapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faridwahysapp-84f907ec97e6d343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WhatsApp Business API integration with managed OAuth. Send messages, manage templates, and handle conversations. Use this skill when users want to interact w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "faridmalik1",
+      "userId": "publishers:faridmalik1",
+      "displayName": "Farid Malik",
+      "image": "https://avatars.githubusercontent.com/u/78303624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773439653337,
+      "changelog": "- Initial release of the WhatsApp Business skill.\n- Integrates WhatsApp Business API with managed OAuth via Maton.\n- Supports sending messages, managing templates, and handling conversations.\n- Includes Python code examples for API invocation and connection management.\n- Requires a Maton API key and network access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bc85e51c2536b89862940a030774463750ecf9d627bae15d0dd3da955eac8db"
+}

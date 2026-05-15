@@ -155,6 +155,7 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                             model: model_lookup_key.to_owned(),
                             billing_meter: query.billing_meter.clone(),
                             provider_code: provider_for_resolve,
+                            channel_id: None,
                         })
                     })
                     .map(to_price_availability)

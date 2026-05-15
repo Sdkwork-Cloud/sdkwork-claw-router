@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24119,
+  "uuid": "skill-clawhub-health-insurance",
+  "skillKey": "clawhub-health-insurance",
+  "name": "Health Insurance",
+  "summary": "Compare health insurance plans, estimate total yearly costs, and choose coverage that fits medical usage, prescriptions, and financial risk.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_insurance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Compare health insurance plans, estimate total yearly costs, and choose coverage that fits medi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-insurance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-insurance",
+      "url": "https://clawhub.ai/skills/health-insurance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-insurance",
+    "url": "https://clawhub.ai/skills/health-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-insurance-235d8ad56631cd12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-insurance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-insurance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da96d20c08e9874cc785752b20acb37e042085b13668b87af1c75b4ccc0b8430",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T10:04:06.864Z"
+}

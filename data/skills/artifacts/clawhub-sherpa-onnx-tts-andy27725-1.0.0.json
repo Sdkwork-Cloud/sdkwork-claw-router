@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sherpa-onnx-tts-andy27725@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sherpa_onnx_tts_andy27725",
+  "skill": {
+    "id": 25067,
+    "skillKey": "clawhub-sherpa-onnx-tts-andy27725",
+    "name": "Sherpa Onnx Tts Andy27725"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sherpa-onnx-tts-andy27725",
+    "url": "https://clawhub.ai/skills/sherpa-onnx-tts-andy27725",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sherpa-onnx-tts-andy27725-a45b9152aa19f769.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-speech via sherpa-onnx (offline, no cloud)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774377478772,
+      "changelog": "Initial release of local text-to-speech using sherpa-onnx (offline, no cloud):\n\n- Supports macOS, Linux, and Windows (x64) platforms.\n- Installs sherpa-onnx runtime and English (en_US lessac-high) TTS model automatically.\n- Requires configuration of environment variables for runtime and model directories.\n- Provides a command-line wrapper for generating speech audio files locally.\n- Allows customization with different models and settings via environment variables or CLI options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b30f376539eb2ca499a31875f1ee1ef99a16faa404747bd86c0a85ed55c610ac"
+}

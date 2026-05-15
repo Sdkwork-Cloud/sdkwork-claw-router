@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13120,
+  "uuid": "skill-clawhub-moltmarkets-agent",
+  "skillKey": "clawhub-moltmarkets-agent",
+  "name": "MoltMarkets Agent",
+  "summary": "Complete MoltMarkets trading agent setup with autonomous trader, market creator, and resolution crons. Use when setting up a new MoltMarkets agent, configuring trading bots, or replicating the bicep agent architecture. Includes Kelly crite.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltmarkets_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shirtlessfounder",
+      "features": [
+        "Complete MoltMarkets trading agent setup with autonomous trader, market creator, and resolution.",
+        "Use when setting up a new MoltMarkets agent, configuring trading bots, or replicating the bicep.",
+        "Includes Kelly criterion betting, learning loops, and degenerate trader personality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltmarkets-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127783485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltmarkets-agent",
+      "url": "https://clawhub.ai/skills/moltmarkets-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltmarkets-agent",
+    "url": "https://clawhub.ai/skills/moltmarkets-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltmarkets-agent-92aede1a9b0a383e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltmarkets-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltmarkets-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bce1bb41339158112f93094aaa4ca7142e7cd1773bf4286c3f11a43f22a42348",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:26:42.745Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44662,
+  "uuid": "skill-clawhub-ntriq-video-intelligence-analyzer",
+  "skillKey": "clawhub-ntriq-video-intelligence-analyzer",
+  "name": "Ntriq Video Intelligence Analyzer",
+  "summary": "AI-powered multimodal analysis for images and videos. Structured tags, scene descriptions, mood analysis, virality scores. 15 languages. Users provide their...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_video_intelligence_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "AI-powered multimodal analysis for images and videos",
+        "Structured tags, scene descriptions, mood analysis, virality scores",
+        "15 languages",
+        "Users provide their..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-video-intelligence-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-video-intelligence-analyzer",
+      "url": "https://clawhub.ai/skills/ntriq-video-intelligence-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-video-intelligence-analyzer",
+    "url": "https://clawhub.ai/skills/ntriq-video-intelligence-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-video-intelligence-analyzer-9cebc12adfc5208c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-video-intelligence-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-video-intelligence-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d70a70629322b7291e6551f25f93094dfdfd7963ca28619a848a01836bd5ed97",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T19:00:10.262Z"
+}

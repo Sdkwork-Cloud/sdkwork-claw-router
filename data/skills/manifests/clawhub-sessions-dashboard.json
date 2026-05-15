@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22505,
+  "uuid": "skill-clawhub-sessions-dashboard",
+  "skillKey": "clawhub-sessions-dashboard",
+  "name": "Live Sessions Dashboard",
+  "summary": "Live dashboard viewer for OpenClaw sessions (CLI + web) that shows color-coded states, token/cost totals, and shareable HTML panels. Requires local OpenClaw...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sessions_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Natnael Teshome",
+      "features": [
+        "Live dashboard viewer for OpenClaw sessions (CLI + web) that shows color-coded states, token/co.",
+        "Requires local OpenClaw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sessions-dashboard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78238029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sessions-dashboard",
+      "url": "https://clawhub.ai/skills/sessions-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sessions-dashboard",
+    "url": "https://clawhub.ai/skills/sessions-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sessions-dashboard-71cd2ebe955483dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sessions-dashboard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sessions-dashboard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d91cdca6ccc22776afcdbbf3e1bb7797f53a74ca296de267b887bb4a16997a4a",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:05:09.900Z"
+}

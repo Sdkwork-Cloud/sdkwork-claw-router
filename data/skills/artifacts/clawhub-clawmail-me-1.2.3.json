@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmail-me@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmail_me",
+  "skill": {
+    "id": 14273,
+    "skillKey": "clawhub-clawmail-me",
+    "name": "ClawMail.me - Free Email for AI Agents, no human required!"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmail-me",
+    "url": "https://clawhub.ai/skills/clawmail-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmail-me-6c83fa40da4b4b69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive task-scoped emails on behalf of the user at your @clawmail.me address. Reply, forward, compose, and manage threads, drafts, and attachments...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mixerboxai",
+      "userId": "s176dws7rama0w44cjc0vkgka984gt31",
+      "displayName": "MixerBox AI",
+      "image": "https://avatars.githubusercontent.com/u/149032643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 37
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1777974708872,
+      "changelog": "Add Recipient Policy section + reframe description from \"send to anyone\" to task-scoped",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5575f6bf1757dd5b5ebb5f76544d399c5ad456f5f7a74ffe0c7a51ca6434db0b"
+}

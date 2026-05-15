@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timeflow-tdd-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_tdd_workflow",
+  "skill": {
+    "id": 32083,
+    "skillKey": "clawhub-timeflow-tdd-workflow",
+    "name": "Tdd Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-tdd-workflow",
+    "url": "https://clawhub.ai/skills/timeflow-tdd-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-tdd-workflow-acc14e521e173c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774429830699,
+      "changelog": "- Initial release of the TDD Workflow skill, outlining clear principles and steps for Test-Driven Development.\n- Covers the RED-GREEN-REFACTOR cycle, the Three Laws of TDD, and detailed guidance for each phase.\n- Includes test organization best practices (AAA pattern) and test prioritization.\n- Highlights anti-patterns to avoid and introduces an AI-augmented multi-agent approach to TDD.\n- Provides concise tables, rules, and reminders for effective TDD adoption.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcd7119d5fc414036ccdbb79572087e831c86c7d422707e5b6b42456d2c4df0d"
+}

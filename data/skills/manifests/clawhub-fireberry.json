@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27098,
+  "uuid": "skill-clawhub-fireberry",
+  "skillKey": "clawhub-fireberry",
+  "name": "Fireberry",
+  "summary": "Fireberry integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Fireberry data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireberry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Fireberry integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Fireberry data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireberry@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireberry",
+      "url": "https://clawhub.ai/skills/fireberry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireberry",
+    "url": "https://clawhub.ai/skills/fireberry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireberry-eb9b23fd4918118a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireberry@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireberry-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e731c51605431d2713e7b72c9b2e98455b081fc0ddad6eea159d0e12f6f38814",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:47:37.063Z"
+}

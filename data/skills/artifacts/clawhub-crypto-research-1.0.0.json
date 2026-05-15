@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_research",
+  "skill": {
+    "id": 65054,
+    "skillKey": "clawhub-crypto-research",
+    "name": "crypto-research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-research",
+    "url": "https://clawhub.ai/skills/crypto-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-research-6be2f7d31d0900b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密货币投研分析框架，用于每日行情展望报告和市场实时监控。当需要：(1) 生成每日行情报告，(2) 分析BTC/ETH走势，(3) 监控市场资讯和币价异动，(4) 制定交易预案时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zif10765-maker",
+      "userId": "s170wnenzs0zv8bgzvqayz5tbx842q58",
+      "displayName": "zif10765-maker",
+      "image": "https://avatars.githubusercontent.com/u/242345646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 728,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772015167224,
+      "changelog": "Initial release of crypto-research skill.\n\n- Provides a professional research analysis framework for daily crypto market reports and real-time monitoring.\n- Supports workflows for intel gathering, macro analysis, supply-demand, technical and sentiment analysis, and scenario planning.\n- Integrates real-time data from Binance, jin10, ARKM API, and QVeris.\n- Designed for BTC/ETH trend analysis, market intel monitoring, and trade planning.\n- Prioritizes answering core market questions and proactive user alerts based on real events.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:115fa8bb5330ab656537dbb7bbed620ea8fa6a3e1f6f36086ea978e20f76cbe7"
+}

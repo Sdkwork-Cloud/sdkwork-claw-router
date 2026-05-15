@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musicgenerator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musicgenerator",
+  "skill": {
+    "id": 27578,
+    "skillKey": "clawhub-musicgenerator",
+    "name": "MusicGenerator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musicgenerator",
+    "url": "https://clawhub.ai/skills/musicgenerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musicgenerator-308fc382dc4001c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI music generation assistant powered by MakebestMusic. Use when user wants to create AI-generated music, songs, or audio tracks. Perfect for content creator..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sthk-mbm",
+      "userId": "publishers:sthk-mbm",
+      "displayName": "MakeBestMusic",
+      "image": "https://avatars.githubusercontent.com/u/219227592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773746980014,
+      "changelog": "AI music generation assistant for custom songs and audio tracks.\n\n- Added comprehensive skill documentation, including usage, setup, and troubleshooting.\n- Provides clear steps for obtaining and configuring the required API key.\n- Details example requests for creating songs with or without vocals.\n- Explains command usage for generating music and checking status.\n- Describes expected response formats and status handling for music tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ac65f15c3fc0d6726fdaced863d34b6143fd24fcc7b0cf426eb82666f54a5ce"
+}

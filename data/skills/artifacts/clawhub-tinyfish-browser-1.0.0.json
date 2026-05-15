@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tinyfish-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinyfish_browser",
+  "skill": {
+    "id": 37780,
+    "skillKey": "clawhub-tinyfish-browser",
+    "name": "Tinyfish Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinyfish-browser",
+    "url": "https://clawhub.ai/skills/tinyfish-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinyfish-browser-55546af876602faf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spin up a remote browser session via the TinyFish Browser API and get a CDP URL for driving it. Use when you need an automatable Chromium session (Playwright..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bunsdev",
+      "userId": "s176y0dk1gq1q7z0byq22yqemd83fkb4",
+      "displayName": "Val Alexander",
+      "image": "https://avatars.githubusercontent.com/u/68980965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776688755983,
+      "changelog": "Initial release of tinyfish-browser.\n\n- Provides an interface to create remote Chromium browser sessions using the TinyFish Browser API.\n- Returns a session ID, a CDP URL for automation (Chromium DevTools Protocol), and a base URL for polling session state.\n- Requires a TINYFISH_API_KEY environment variable; prompts users if not set.\n- Sessions auto-expire after approximately 1 hour of inactivity.\n- Includes a helper shell script for streamlined session creation.\n- Documentation covers API usage, authentication, and recommendations on session handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ae00c0b34f865bfda26d0e2c710259edb284299986a93e669dace36fde0e07e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qf-data-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qf_data_analyzer",
+  "skill": {
+    "id": 35846,
+    "skillKey": "clawhub-qf-data-analyzer",
+    "name": "Data Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qf-data-analyzer",
+    "url": "https://clawhub.ai/skills/qf-data-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qf-data-analyzer-f89a08e9b099a7a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interpret CSV, JSON, and structured data to profile, identify trends, detect anomalies, compare categories, extract insights, and recommend clear visualizati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "371166758-qq",
+      "userId": "s17ar5a7nns9zvtefny1zx0jrs83q234",
+      "displayName": "371166758-qq",
+      "image": "https://avatars.githubusercontent.com/u/267607290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774602047782,
+      "changelog": "Systematic data analysis for CSV/JSON: profiling, trend analysis, anomaly detection, visualization recommendations. Structured insight extraction with actionable findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d6367762956bc0a44f9f46ba7d45204b2b7a32e85a03af54b23af12be1917c5"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12934,
+  "uuid": "skill-clawhub-blinko",
+  "skillKey": "clawhub-blinko",
+  "name": "Blinko",
+  "summary": "Play Blinko (on-chain Plinko) headlessly on Abstract chain. Use when an agent wants to play Blinko games, check game stats, view leaderboards, or track honey rewards. Handles the full commit-reveal flow including API auth, on-chain game cr.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blinko",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tolibear",
+      "features": [
+        "Play Blinko (on-chain Plinko) headlessly on Abstract chain",
+        "Use when an agent wants to play Blinko games, check game stats, view leaderboards, or track hon.",
+        "Handles the full commit-reveal flow including API auth, on-chain game creation, simulation, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blinko@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3253693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blinko",
+      "url": "https://clawhub.ai/skills/blinko"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blinko",
+    "url": "https://clawhub.ai/skills/blinko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blinko-a43e52e42a404a4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blinko@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blinko-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f3d05f41fb8e78ce17a92ad21306f4e8172f6ee35fdd3416dd5124aaa3e0da0",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T04:40:17.836Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48100,
+  "uuid": "skill-clawhub-head-tool",
+  "skillKey": "clawhub-head-tool",
+  "name": "Head Tool",
+  "summary": "Display the first lines of files. Use for quickly previewing file contents, checking headers, or sampling data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.head_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display the first lines of files",
+        "Use for quickly previewing file contents, checking headers, or sampling data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/head-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "head-tool",
+      "url": "https://clawhub.ai/skills/head-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "head-tool",
+    "url": "https://clawhub.ai/skills/head-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/head-tool-1939db04aaac6ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/head-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-head-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99f507c352a1cee200a7f3a09b43b85f43a84d52e43f9ba37e78fbfe766a2a71",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T18:15:28.260Z"
+}

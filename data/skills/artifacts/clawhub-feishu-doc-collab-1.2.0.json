@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-collab@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_collab",
+  "skill": {
+    "id": 24229,
+    "skillKey": "clawhub-feishu-doc-collab",
+    "name": "Feishu Doc Collab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-collab",
+    "url": "https://clawhub.ai/skills/feishu-doc-collab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-collab-cfcf327548e027aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable real-time AI collaboration in Feishu (Lark) documents. When a user edits a Feishu doc, the agent automatically detects the change, reads the document,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongweiii",
+      "userId": "publishers:dongweiii",
+      "displayName": "dongweiii",
+      "image": "https://avatars.githubusercontent.com/u/94768474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773715254817,
+      "changelog": "v1.2.0: Support openclaw-lark extension (compiled .js), deliver:false for hook sessions, drive.file.read_v1 empty handler, OAuth permission docs, debounce improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af0fc7bc963035f5e459eb21441c09095fecf87436b28e5c56b9a3b71a71631f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-design@0.2.8",
+  "version": "0.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_design",
+  "skill": {
+    "id": 59752,
+    "skillKey": "clawhub-claw-design",
+    "name": "Claw Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-design",
+    "url": "https://clawhub.ai/skills/claw-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-design-5a0be8bde475d681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 设计引擎。一句话生成演示文稿、图表、架构图、海报等设计产物。npm install @self-evolving-harness/claw-design 即可使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuchangxu1989-openclaw",
+      "userId": "s17a59yf9b9zefwe0avdmbspmh852jzp",
+      "displayName": "yuchangxu",
+      "image": "https://avatars.githubusercontent.com/u/259125079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.2.8",
+      "createdAt": 1777614850464,
+      "changelog": "HTML/PPTX双输出，542测试全绿",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1603b86b4a28e7fff18100dee2296f3e605d8f28a52b9e132cd46c019573cf8"
+}

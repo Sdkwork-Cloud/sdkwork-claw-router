@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30739,
+  "uuid": "skill-clawhub-epub-read",
+  "skillKey": "clawhub-epub-read",
+  "name": "EPUB Read",
+  "summary": "Task-mode-driven EPUB reading and analysis skill with overview, targeted reading, chunked full reading, extraction, complex-content inspection, and batch pro...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epub_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "INF-Lucas",
+      "features": [
+        "Task-mode-driven EPUB reading and analysis skill with overview, targeted reading, chunked full."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epub-read@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179494206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epub-read",
+      "url": "https://clawhub.ai/skills/epub-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epub-read",
+    "url": "https://clawhub.ai/skills/epub-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epub-read-fd47c7e6cdcb0b9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epub-read@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epub-read-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab5a74116e9b1975183daf9561574bfd52dd42ae77cf6ef500a4f877aea131f1",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:57:37.592Z"
+}

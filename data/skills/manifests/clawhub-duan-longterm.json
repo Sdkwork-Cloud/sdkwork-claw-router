@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72187,
+  "uuid": "skill-clawhub-duan-longterm",
+  "skillKey": "clawhub-duan-longterm",
+  "name": "段永平长期检查",
+  "summary": "［何时使用］当用户需要判断公司是否值得长期持有时；当用户问\"这家公司能持有 10 年吗\"时；当进行长期投资分析时；当应用段永平 10 年测试时",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duan_longterm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要判断公司是否值得长期持有时；当用户问\"这家公司能持有 10 年吗\"时；当进行长期投资分析时；当应用段永平 10 年测试时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duan-longterm@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duan-longterm",
+      "url": "https://clawhub.ai/skills/duan-longterm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duan-longterm",
+    "url": "https://clawhub.ai/skills/duan-longterm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duan-longterm-5cbc7fe21e4db5e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duan-longterm@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duan-longterm-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ab9962302bbf5eecf157a7ffc114810ffdf70f091f7475263d5e27e16d0626f",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:14:23.541Z"
+}

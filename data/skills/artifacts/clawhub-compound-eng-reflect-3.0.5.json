@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-eng-reflect@3.0.5",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_reflect",
+  "skill": {
+    "id": 27095,
+    "skillKey": "clawhub-compound-eng-reflect",
+    "name": "ia-reflect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-reflect",
+    "url": "https://clawhub.ai/skills/compound-eng-reflect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-reflect-e9c90a1eb489ed1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Session retrospective and skill audit. Use when asked to reflect, do a retrospective, review lessons learned, audit what went well or wrong, or review sessio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iliaal",
+      "userId": "s17bcar8wq0xhegs0ny6f57ypd8484bw",
+      "displayName": "Ilia Alshanetsky",
+      "image": "https://avatars.githubusercontent.com/u/158724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.5",
+      "createdAt": 1777507429636,
+      "changelog": "v3.0.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:085a80160e437bcb7b0ffa4fbbda0a1889ad5b74c6b7feb39db25ff8316ece2c"
+}

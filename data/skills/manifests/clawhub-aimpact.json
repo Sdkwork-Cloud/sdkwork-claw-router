@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63043,
+  "uuid": "skill-clawhub-aimpact",
+  "skillKey": "clawhub-aimpact",
+  "name": "aimpact",
+  "summary": "AIMPACT 提供 AI 领域早报、晚报、热点新闻和精选内容，基于 AI 评分智能排序，支持定时推送。当用户说\"查询 AIMPACT 早报\"、\"查询 AIMPACT 晚报\"、\"查询 24H 热点新闻榜\"或\"查询 AI 精选内容\"时调用。",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimpact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIMPACT",
+      "features": [
+        "AIMPACT 提供 AI 领域早报、晚报、热点新闻和精选内容，基于 AI 评分智能排序，支持定时推送。当用户说\"查询 AIMPACT 早报\"、\"查询 AIMPACT 晚报\"、\"查询 24H."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aimpact@0.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254596585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aimpact",
+      "url": "https://clawhub.ai/skills/aimpact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimpact",
+    "url": "https://clawhub.ai/skills/aimpact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimpact-4da3d74b366ffb45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aimpact@0.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aimpact-0.8.1.json",
+      "version": "0.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3d038d1a9f54d3945f402133cd01fbefac95a3b188f483587a703634b6d16ab",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:15:37.628Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-design-lead-qualifier@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_design_lead_qualifier",
+  "skill": {
+    "id": 48406,
+    "skillKey": "clawhub-web-design-lead-qualifier",
+    "name": "Web Design Lead Qualifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-design-lead-qualifier",
+    "url": "https://clawhub.ai/skills/web-design-lead-qualifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-design-lead-qualifier-11349360b23f4aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and score prospective web design clients. Crawl their site, assess fit, and produce a qualification report. Use when asked to qualify a lead, resear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "99rebels",
+      "userId": "s17b17x5vmnh2q27ane7sj7an5843qs4",
+      "displayName": "99rebels",
+      "image": "https://avatars.githubusercontent.com/u/148632105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777553443552,
+      "changelog": "Proper DNS resolution before fetch — resolves hostname, checks all IPs against private ranges, re-validates after redirects, enforces 5MB response size limit. Reverts CTA language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4845428c9b3f1e2233462e8f848735102a2cb41f95f9c267e668c9ebd08eeb1"
+}

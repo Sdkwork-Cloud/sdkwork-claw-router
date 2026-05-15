@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37574,
+  "uuid": "skill-clawhub-zanna-aperta",
+  "skillKey": "clawhub-zanna-aperta",
+  "name": "Zanna Aperta",
+  "summary": "MCP Bridge completo per OpenClaw con 45 tool per agenti, workspace, progetti, cron, browser, canvas, nodes, messaging, gateway, Ollama e ClawX",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zanna_aperta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raidone632-create",
+      "features": [
+        "MCP Bridge completo per OpenClaw con 45 tool per agenti, workspace, progetti, cron, browser, ca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zanna-aperta@3.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246584137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zanna-aperta",
+      "url": "https://clawhub.ai/skills/zanna-aperta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zanna-aperta",
+    "url": "https://clawhub.ai/skills/zanna-aperta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zanna-aperta-6c6bd0e17efaaeef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zanna-aperta@3.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zanna-aperta-3.4.0.json",
+      "version": "3.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3364fbe6bc100774365742d8a3e414e3b357febb0e46e5ce5907ad170b8ced4",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:35:44.992Z"
+}

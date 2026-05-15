@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72072,
+  "uuid": "skill-clawhub-jike-couplet-query",
+  "skillKey": "clawhub-jike-couplet-query",
+  "name": "中文对联查询 - 即刻数据",
+  "summary": "中文对联查询。支持按上联或下联关键词搜索，也支持随机返回对联。 适用场景：用户要求搜索、随机推荐或解释相关中文内容时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_couplet_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "中文对联查询。支持按上联或下联关键词搜索，也支持随机返回对联。 适用场景：用户要求搜索、随机推荐或解释相关中文内容时使用。数据由即刻数据（jikeapi.cn）开放接口提供。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-couplet-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-couplet-query",
+      "url": "https://clawhub.ai/skills/jike-couplet-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-couplet-query",
+    "url": "https://clawhub.ai/skills/jike-couplet-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-couplet-query-29a30b84188bcf72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-couplet-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-couplet-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00894ee9670f7f62965929394026bbd567f916849c636065abdd98e3e43858df",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:51:15.406Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/read-no-evil-mcp@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_no_evil_mcp",
+  "skill": {
+    "id": 11897,
+    "skillKey": "clawhub-read-no-evil-mcp",
+    "name": "read-no-evil-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-no-evil-mcp",
+    "url": "https://clawhub.ai/skills/read-no-evil-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-no-evil-mcp-cbd30acc19d5b0c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure email access via read-no-evil-mcp. Protects against prompt injection attacks in emails. Use for reading, sending, deleting, and moving emails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thekie",
+      "userId": "publishers:thekie",
+      "displayName": "thekie",
+      "image": "https://avatars.githubusercontent.com/u/3187582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1872,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1771287374985,
+      "changelog": "## Fixed\n- CLI argument order: global options (, ) now work in any position, not just before the subcommand (#7)\n-  command:  and  are now correctly passed as lists to the MCP server, fixing sends to multiple recipients (#8)\n\n## Added\n-  command now displays an unread indicator () next to unseen messages (#9) (requires read-no-evil-mcp>=0.3.1)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b55d41c84f81b1ec8ac03b89a27a6823cec908d7a4a0933638d7d1679443c5e"
+}

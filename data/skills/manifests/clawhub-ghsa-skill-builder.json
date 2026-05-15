@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27746,
+  "uuid": "skill-clawhub-ghsa-skill-builder",
+  "skillKey": "clawhub-ghsa-skill-builder",
+  "name": "Ghsa Skill Builder",
+  "summary": "Use when building or updating vulnerability pattern Skills from multiple sources: GitHub Security Advisories (GHSA), HackerOne Hacktivity, or NVD. Triggers o...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghsa_skill_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yhy",
+      "features": [
+        "Use when building or updating vulnerability pattern Skills from multiple sources: GitHub Securi.",
+        "Triggers o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghsa-skill-builder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31311038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghsa-skill-builder",
+      "url": "https://clawhub.ai/skills/ghsa-skill-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghsa-skill-builder",
+    "url": "https://clawhub.ai/skills/ghsa-skill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghsa-skill-builder-18cafb47326c5b7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghsa-skill-builder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghsa-skill-builder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:751fe00c9c3da8517d68cb60ebfa58810e84ee16ff66ffe7a32b226039a50236",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:15:18.491Z"
+}

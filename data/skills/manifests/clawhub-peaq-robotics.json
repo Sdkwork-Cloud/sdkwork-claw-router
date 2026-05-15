@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10962,
+  "uuid": "skill-clawhub-peaq-robotics",
+  "skillKey": "clawhub-peaq-robotics",
+  "name": "peaq Robotics",
+  "summary": "Core peaq-robotics-ros2 runtime for OpenClaw. Start/stop ROS 2 nodes and call DID, storage, and access-control services. Use when requests are about running...",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peaq_robotics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lovish Arora",
+      "features": [
+        "Core peaq-robotics-ros2 runtime for OpenClaw",
+        "Start/stop ROS 2 nodes and call DID, storage, and access-control services",
+        "Use when requests are about running..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peaq-robotics@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46993225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peaq-robotics",
+      "url": "https://clawhub.ai/skills/peaq-robotics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peaq-robotics",
+    "url": "https://clawhub.ai/skills/peaq-robotics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peaq-robotics-e564193182a77bdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peaq-robotics@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-peaq-robotics-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47f02716456171abe51df58bbbde85dafe2dd2c4762b46341854d6f5c96ea27a",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:01:58.571Z"
+}

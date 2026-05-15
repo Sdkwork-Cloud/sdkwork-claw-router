@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25923,
+  "uuid": "skill-clawhub-slack-ai",
+  "skillKey": "clawhub-slack-ai",
+  "name": "Pub Slack",
+  "summary": "Control Slack from Clawdbot including reacting to messages and pinning items. And also 50+ models for image generation, video generation, text-to-speech, spe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Control Slack from Clawdbot including reacting to messages and pinning items",
+        "And also 50+ models for image generation, video generation, text-to-speech, spe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-ai",
+      "url": "https://clawhub.ai/skills/slack-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-ai",
+    "url": "https://clawhub.ai/skills/slack-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-ai-b7cc0918423fb022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bb2dc145f82a7b5589a856a4c30b1cb58bde2aa631b3ed68b9757e07a269029",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:16:41.606Z"
+}

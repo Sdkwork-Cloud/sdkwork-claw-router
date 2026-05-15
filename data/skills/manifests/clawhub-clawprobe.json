@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27186,
+  "uuid": "skill-clawhub-clawprobe",
+  "skillKey": "clawhub-clawprobe",
+  "name": "Clawprobe",
+  "summary": "Monitor OpenClaw agent health, token usage, API cost, and context window in real time. Use when you need to check your own status, inspect context utilizatio...",
+  "version": "0.6.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawprobe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhao6741",
+      "features": [
+        "Monitor OpenClaw agent health, token usage, API cost, and context window in real time",
+        "Use when you need to check your own status, inspect context utilizatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawprobe@0.6.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157583880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawprobe",
+      "url": "https://clawhub.ai/skills/clawprobe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawprobe",
+    "url": "https://clawhub.ai/skills/clawprobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawprobe-5bb6f52da4736ea8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawprobe@0.6.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawprobe-0.6.9.json",
+      "version": "0.6.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82db3b7ef3ab50cb07236392d6f4d86704c54a85fe916fcd79137184776bd267",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:19:23.653Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-scanner@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_scanner",
+  "skill": {
+    "id": 9604,
+    "skillKey": "clawhub-patent-scanner",
+    "name": "Patent Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-scanner",
+    "url": "https://clawhub.ai/skills/patent-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-scanner-4028009d5d97b3cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Describe your concept and discover what makes it distinctive — structured analysis for patent consultation. NOT legal advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2912,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 14,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1771829402454,
+      "changelog": "Patent Scanner 1.4.0\n\n- Removed the \"disable-model-invocation: true\" property, enabling model invocation.\n- No other functional or content changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:879ccdd62ea9c1a608b471ec96a1da93f1b614de2f5d2b20089aa6c834e61bb0"
+}

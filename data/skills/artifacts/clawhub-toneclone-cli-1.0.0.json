@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toneclone-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toneclone_cli",
+  "skill": {
+    "id": 30499,
+    "skillKey": "clawhub-toneclone-cli",
+    "name": "ToneClone CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toneclone-cli",
+    "url": "https://clawhub.ai/skills/toneclone-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toneclone-cli-60a89bcd69563363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write in the user's authentic voice using ToneClone. Generate emails, messages, social posts, and other content that sounds like the user — not generic AI. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfox85",
+      "userId": "publishers:jfox85",
+      "displayName": "Jon Fox",
+      "image": "https://avatars.githubusercontent.com/u/441017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 636,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771520257264,
+      "changelog": "- Initial release of toneclone-cli.\n- Generate emails, messages, social posts, and more using your authentic writing voice via trained personas.\n- Supports adding context with knowledge cards for more accurate content.\n- Requires a ToneClone account and CLI setup; installable via Homebrew.\n- Includes quick commands for writing, listing personas, checking auth, and more.\n- Documentation and source links provided for further setup and training.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb5f9f5d2333c6047536fed5f15a3bbea16422e801dfc8792d00f1e0f3830044"
+}

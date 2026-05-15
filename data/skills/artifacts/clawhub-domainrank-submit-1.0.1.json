@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domainrank-submit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domainrank_submit",
+  "skill": {
+    "id": 59968,
+    "skillKey": "clawhub-domainrank-submit",
+    "name": "DomainRank Submit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domainrank-submit",
+    "url": "https://clawhub.ai/skills/domainrank-submit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domainrank-submit-b307f4cdfea7b617.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提交网站到 DomainRank.app 导航站。使用场景：(1) 用户想要提交网站到 AI 导航站，(2) 用户说\"提交到 domainrank\"、\"submit to domainrank\"、\"提交网站\"，(3) 用户需要批量提交多个网站到导航站。触发词：domainrank、提交网站、submit site..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "domainrankhq",
+      "userId": "s172bj7whzm2b117ty5r2h4h2n861gxh",
+      "displayName": "domainrankhq",
+      "image": "https://avatars.githubusercontent.com/u/275320542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777802175079,
+      "changelog": "Security: replace hardcoded API token with placeholder; require user confirmation before batch submissions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a62deb1356b0073a94de12f74bfea81a3563d904f031383cf11ef5102f507b4"
+}

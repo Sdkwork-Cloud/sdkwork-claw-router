@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vigilath-shopping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vigilath_shopping",
+  "skill": {
+    "id": 53812,
+    "skillKey": "clawhub-vigilath-shopping",
+    "name": "Vigilath Pet Commerce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vigilath-shopping",
+    "url": "https://clawhub.ai/skills/vigilath-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vigilath-shopping-e8ccdf76420530da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, bargain, order, and pay for pet supplies on Vigilath.com — an AI-powered pet commerce platform with multi-round price negotiation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gt-oliver",
+      "userId": "s176fyeg1ccq6e8qb47j0et331843q57",
+      "displayName": "GT-oliver",
+      "image": "https://avatars.githubusercontent.com/u/3624305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775129096926,
+      "changelog": "vigilath-shopping 1.0.0\n\n- Initial release of Vigilath.com pet commerce integration.\n- Features product search, AI-powered recommendations, and fully automated autonomous shopping.\n- Supports multi-round price negotiation (bargain mode) for eligible products.\n- Enables order placement, payment (points, Stripe, or Coinbase), and order tracking.\n- Includes full address management and authentication via Device Flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:562bb47318f4f59e4fc0b2902195c385486bfb0e947faa6d0c2b6ae4c31a1673"
+}

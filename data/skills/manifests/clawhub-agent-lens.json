@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49300,
+  "uuid": "skill-clawhub-agent-lens",
+  "skillKey": "clawhub-agent-lens",
+  "name": "Agent Lens",
+  "summary": "Track AI agent API calls, analyze token usage, and optimize costs. Use when user wants to monitor LLM spending, debug API calls, track token consumption, or...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_lens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lrg913427-dot",
+      "features": [
+        "Track AI agent API calls, analyze token usage, and optimize costs",
+        "Use when user wants to monitor LLM spending, debug API calls, track token consumption, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-lens@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/279154854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-lens",
+      "url": "https://clawhub.ai/skills/agent-lens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-lens",
+    "url": "https://clawhub.ai/skills/agent-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-lens-efcb3670e5e924f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-lens@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-lens-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff73209ebd5e7691f8566fe028ecf9685164fdcd0c0c6aeb80bbfdafac97f371",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:02:24.339Z"
+}

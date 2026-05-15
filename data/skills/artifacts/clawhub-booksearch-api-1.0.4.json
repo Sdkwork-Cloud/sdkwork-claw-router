@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/booksearch-api@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booksearch_api",
+  "skill": {
+    "id": 20474,
+    "skillKey": "clawhub-booksearch-api",
+    "name": "BeyondBSR - BookSearch API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booksearch-api",
+    "url": "https://clawhub.ai/skills/booksearch-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booksearch-api-765a8d184b77beeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Amazon KDP books on the BeyondBSR public API and retrieve BSR (Best Sellers Rank) history for a single book. Use this skill whenever the user wants to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramius88",
+      "userId": "s176q0vwbyv9fyg5jsxfm2pjv1857303",
+      "displayName": "Ramius88",
+      "image": "https://avatars.githubusercontent.com/u/202961118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777986830791,
+      "changelog": "No user-facing changes detected in this version.\n\n- No file changes were detected between versions 1.0.3 and 1.0.4.\n- Behavior and documentation remain consistent with previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcfa18ed1cb18e17eade85b059a28427b25ba5ae6824413e99e6a6c30cc5a578"
+}

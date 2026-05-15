@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62537,
+  "uuid": "skill-clawhub-notebooklm-py",
+  "skillKey": "clawhub-notebooklm-py",
+  "name": "Notebooklm",
+  "summary": "Google NotebookLM 非官方 Python API 的 OpenClaw Skill。支持内容生成（播客、视频、幻灯片、测验、思维导图等）、文档管理和研究自动化。当用户需要使用 NotebookLM 生成音频概述、视频、学习材料或管理知识库时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_py",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "Google NotebookLM 非官方 Python API 的 OpenClaw Skill。支持内容生成（播客、视频、幻灯片、测验、思维导图等）、文档管理和研究自动化。当用户需要使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-py@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-py",
+      "url": "https://clawhub.ai/skills/notebooklm-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-py",
+    "url": "https://clawhub.ai/skills/notebooklm-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-py-6f59647f1ed45022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-py@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-py-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:980fa3368b9deb10db63a31ecaf4f69579e1ab8c8a9d9c8cbe704cf8f6c58653",
+      "artifactSizeBytes": 2742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:25:20.300Z"
+}

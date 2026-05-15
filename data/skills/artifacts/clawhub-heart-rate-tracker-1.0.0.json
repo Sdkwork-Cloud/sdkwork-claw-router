@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heart-rate-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heart_rate_tracker",
+  "skill": {
+    "id": 61108,
+    "skillKey": "clawhub-heart-rate-tracker",
+    "name": "Heart Rate Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heart-rate-tracker",
+    "url": "https://clawhub.ai/skills/heart-rate-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heart-rate-tracker-97efa55d26bd2a23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "心率追踪 - 心率记录、运动心率、健康分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776886123599,
+      "changelog": "Initial release of heart-rate-tracker.\n\n- Record and track heart rate data\n- Monitor exercise heart rate\n- Analyze heart health trends\n- Receive abnormal heart rate alerts\n- Generate statistical health reports\n- Supports free and paid versions with additional features",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:758e3c5d3af6f254a3b1e2d0bec5f0e533a0e97ae34acb59824a3025ba77f95c"
+}

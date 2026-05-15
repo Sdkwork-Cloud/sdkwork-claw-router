@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68067,
+  "uuid": "skill-clawhub-memory-for-openclaw",
+  "skillKey": "clawhub-memory-for-openclaw",
+  "name": "long-term-memory",
+  "summary": "AI记忆中间件 - 为AI Agent提供持久化、跨会话的长期记忆能力。自动捕获关键事实、决策、用户偏好和项目上下文，支持语义搜索和向量检索。适用于需要记忆连续性的所有AI场景。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_for_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "szwangw",
+      "features": [
+        "为AI Agent提供持久化、跨会话的长期记忆能力。自动捕获关键事实、决策、用户偏好和项目上下文，支持语义搜索和向量检索。适用于需要记忆连续性的所有AI场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-for-openclaw@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199233020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-for-openclaw",
+      "url": "https://clawhub.ai/skills/memory-for-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-for-openclaw",
+    "url": "https://clawhub.ai/skills/memory-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-for-openclaw-c32af2cddbacfe8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-for-openclaw@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-for-openclaw-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3252b0c267e8dbfc44af0d115fa8f45692f937fdf671fc0cc3b0495c6400ebc4",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:05:41.555Z"
+}

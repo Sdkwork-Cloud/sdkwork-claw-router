@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46507,
+  "uuid": "skill-clawhub-amd-company",
+  "skillKey": "clawhub-amd-company",
+  "name": "Amd Company",
+  "summary": "Provides detailed information on AMD's history, products, market strategy, and competitive position in the CPU and GPU semiconductor industry.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amd_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on AMD's history, products, market strategy, and competitive posi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amd-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amd-company",
+      "url": "https://clawhub.ai/skills/amd-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amd-company",
+    "url": "https://clawhub.ai/skills/amd-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amd-company-f3d90623ead9275d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amd-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amd-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18a797b2f1575d74c94ac684893cf3e80dd9e7139056aa778b7a75764f562d2e",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T09:03:31.902Z"
+}

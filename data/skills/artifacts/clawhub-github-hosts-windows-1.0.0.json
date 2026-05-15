@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-hosts-windows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_hosts_windows",
+  "skill": {
+    "id": 57759,
+    "skillKey": "clawhub-github-hosts-windows",
+    "name": "github改hosts文件加速skill，仅针对windows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-hosts-windows",
+    "url": "https://clawhub.ai/skills/github-hosts-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-hosts-windows-3472cad1985786a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize GitHub access speed on Windows by finding the fastest IPs and updating the hosts file to reduce latency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vay-qz",
+      "userId": "s175rwa3bbgkx2ap5sp71yg17584pnzf",
+      "displayName": "qz",
+      "image": "https://avatars.githubusercontent.com/u/15967566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775993620329,
+      "changelog": "- Initial release of github-hosts-windows skill.\n- Automatically finds the fastest IP addresses for key GitHub domains on Windows.\n- Updates the hosts file to map GitHub domains to these IPs for improved access speed.\n- Provides a ready-to-use PowerShell script for the entire workflow: resolving IPs, measuring latency, updating hosts, and flushing DNS cache.\n- Triggers when users mention GitHub slowness or need to optimize/update GitHub-related hosts entries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d086466430f5c1504eab5ff307d9b20b96c0c57cd62de4cc6807c1826061ad74"
+}

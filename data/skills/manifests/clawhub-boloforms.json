@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25360,
+  "uuid": "skill-clawhub-boloforms",
+  "skillKey": "clawhub-boloforms",
+  "name": "Boloforms",
+  "summary": "Boloforms integration. Manage data, records, and automate workflows. Use when the user wants to interact with Boloforms data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boloforms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Boloforms integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Boloforms data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boloforms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boloforms",
+      "url": "https://clawhub.ai/skills/boloforms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boloforms",
+    "url": "https://clawhub.ai/skills/boloforms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boloforms-0e41ceee9f09a881.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boloforms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-boloforms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b314e33befd6510a7b6845885a06ae8a4f240c55851c4b29a0c4a1b0c4521de",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:40.017Z"
+}

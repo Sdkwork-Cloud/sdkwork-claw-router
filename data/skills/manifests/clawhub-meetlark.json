@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15134,
+  "uuid": "skill-clawhub-meetlark",
+  "skillKey": "clawhub-meetlark",
+  "name": "Meetlark - coordinate a meeting",
+  "summary": "Scheduling polls for humans and their agents. Create polls, share participation links, collect votes, and find the best meeting time. A Doodle alternative built for the age of AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetlark",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkelk",
+      "features": [
+        "Scheduling polls for humans and their agents",
+        "Create polls, share participation links, collect votes, and find the best meeting time",
+        "A Doodle alternative built for the age of AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetlark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13288681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetlark",
+      "url": "https://clawhub.ai/skills/meetlark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetlark",
+    "url": "https://clawhub.ai/skills/meetlark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetlark-2a1a41daa6c006e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetlark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetlark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70bbe02fb4ee855a64cf653ba9253d37972ca049aa3e2b5849982c8375125faf",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T06:21:43.461Z"
+}

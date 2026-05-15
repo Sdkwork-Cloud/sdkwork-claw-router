@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30765,
+  "uuid": "skill-clawhub-printautopilot",
+  "skillKey": "clawhub-printautopilot",
+  "name": "Printautopilot",
+  "summary": "PrintAutopilot integration. Manage Organizations. Use when the user wants to interact with PrintAutopilot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printautopilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PrintAutopilot integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with PrintAutopilot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/printautopilot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "printautopilot",
+      "url": "https://clawhub.ai/skills/printautopilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printautopilot",
+    "url": "https://clawhub.ai/skills/printautopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printautopilot-6fe0138173033cfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/printautopilot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-printautopilot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2d7655584dd6d528b96ef93d1e944b6decf6b73ec447b607b5595de79a32dc0",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:31.690Z"
+}

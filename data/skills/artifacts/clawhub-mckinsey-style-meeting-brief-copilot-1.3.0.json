@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mckinsey-style-meeting-brief-copilot@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mckinsey_style_meeting_brief_copilot",
+  "skill": {
+    "id": 19180,
+    "skillKey": "clawhub-mckinsey-style-meeting-brief-copilot",
+    "name": "McKinsey-Style Meeting Brief Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mckinsey-style-meeting-brief-copilot",
+    "url": "https://clawhub.ai/skills/mckinsey-style-meeting-brief-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mckinsey-style-meeting-brief-copilot-806e581f385cfb31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn people, companies, agendas, notes, and email threads into consulting-style meeting briefs, sharp questions, follow-up emails, and action items."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atwatcher",
+      "userId": "publishers:atwatcher",
+      "displayName": "OPC Essentials",
+      "image": "https://avatars.githubusercontent.com/u/17039619?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 432,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772575830501,
+      "changelog": "- Updated documentation for clarity and brevity, especially at the top, making the skill's use cases and outputs easier to scan.\n- Added a new \"Use when\" section outlining practical scenarios for using the skill.\n- Streamlined the introduction and instructions without changing functionality.\n- No functional or code changes included—documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:271f0b91b1418de6ba8a947a8897040572e871fb076a71922e3fc96ce6a22df2"
+}

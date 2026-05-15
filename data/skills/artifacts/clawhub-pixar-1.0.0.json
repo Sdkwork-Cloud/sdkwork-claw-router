@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixar",
+  "skill": {
+    "id": 72258,
+    "skillKey": "clawhub-pixar",
+    "name": "Pixar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixar",
+    "url": "https://clawhub.ai/skills/pixar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixar-8a1718ee736f769f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于皮克斯动画电影发展、代表作、技术优势及行业影响的详细信息与资料查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776539081368,
+      "changelog": "Pixar skill version 1.0.0 changelog:\n\n- 新增详细发展历程时间线，包括重要历史节点与代表作。\n- 总结皮克斯的核心特点和优势，突出技术创新与市场成就。\n- 补充关键业务数据，如影片数量、总票房与获奖情况。\n- 特别介绍“A113”彩蛋等皮克斯独特文化细节。\n- 全文支持中文，便于中文用户快速了解皮克斯。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5c809482f2ab67709c3b84b4bfc6bb3d68289e3c69494f824aff493e076c092"
+}

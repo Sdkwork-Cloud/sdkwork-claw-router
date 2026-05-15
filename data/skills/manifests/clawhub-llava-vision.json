@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37836,
+  "uuid": "skill-clawhub-llava-vision",
+  "skillKey": "clawhub-llava-vision",
+  "name": "Llava Vision",
+  "summary": "Call a local llama.cpp server with the LLaVA model to analyze images.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llava_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jh-server",
+      "features": [
+        "Call a local llama.cpp server with the LLaVA model to analyze images."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llava-vision@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168769906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llava-vision",
+      "url": "https://clawhub.ai/skills/llava-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llava-vision",
+    "url": "https://clawhub.ai/skills/llava-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llava-vision-1818e3c9a58eaae1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llava-vision@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llava-vision-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d664b3713b53228aeae7e1098938b9ce0412a137952dcfd4fae73a869872d93",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T23:44:33.091Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeiq-edgeiq-security-report-generator@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_edgeiq_security_report_generator",
+  "skill": {
+    "id": 43517,
+    "skillKey": "clawhub-edgeiq-edgeiq-security-report-generator",
+    "name": "Edgeiq Security Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-edgeiq-security-report-generator",
+    "url": "https://clawhub.ai/skills/edgeiq-edgeiq-security-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-edgeiq-security-report-generator-cfc3f3f61d038cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates EdgeIQ Labs scan results into branded, scheduled security reports with risk scores, recommendations, and multi-channel delivery for MSSPs or inter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgeiq-labs",
+      "userId": "s17281v95sfy21qznab55m4qb984t38a",
+      "displayName": "EdgeIQLabs",
+      "image": "https://avatars.githubusercontent.com/u/16479432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777136901782,
+      "changelog": "v1.4.0: URGENT FIX — corrected Stripe Payment Link URLs (no suffixes, correct live URLs)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d408cc6c64cf4c3651dd0dce0d33db7681a32a08c5570ce5ab60b5dc76ecc92"
+}

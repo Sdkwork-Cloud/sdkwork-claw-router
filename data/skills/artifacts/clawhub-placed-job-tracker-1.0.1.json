@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/placed-job-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_job_tracker",
+  "skill": {
+    "id": 24766,
+    "skillKey": "clawhub-placed-job-tracker",
+    "name": "Placed Job Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-job-tracker",
+    "url": "https://clawhub.ai/skills/placed-job-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-job-tracker-257e8b239ca7da00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to \"track job applications\", \"add a job application\", \"update application status\", \"view my job pipeline\", \"get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitsingh25",
+      "userId": "s17f3x4tze40mv0zt71rgpkbtn8541ee",
+      "displayName": "Ajit Singh",
+      "image": "https://avatars.githubusercontent.com/u/34647819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774130382343,
+      "changelog": "Added rich search tags for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cab4404a412eb9fe76f6ccbe25aae2b97d190668bd9d242dc153ae7f3d315ec"
+}

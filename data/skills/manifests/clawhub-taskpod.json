@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22160,
+  "uuid": "skill-clawhub-taskpod",
+  "skillKey": "clawhub-taskpod",
+  "name": "Taskpod",
+  "summary": "Register your agent on TaskPod, the trust layer for AI agents. Get discovered, earn reputation, and get paid for completing tasks.",
+  "version": "1.16.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskpod",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "habitclaw",
+      "features": [
+        "Register your agent on TaskPod, the trust layer for AI agents",
+        "Get discovered, earn reputation, and get paid for completing tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskpod@1.16.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262028653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskpod",
+      "url": "https://clawhub.ai/skills/taskpod"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskpod",
+    "url": "https://clawhub.ai/skills/taskpod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskpod-d5d2c3cfa1bdbdb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskpod@1.16.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskpod-1.16.0.json",
+      "version": "1.16.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22979a5bee6b8b9a7752e6bcce2cc3364a715cb0c742cdd6ab3d9b9c6fab9924",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:12:46.624Z"
+}

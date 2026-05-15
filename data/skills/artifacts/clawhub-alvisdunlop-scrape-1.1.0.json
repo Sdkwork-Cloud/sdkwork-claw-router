@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvisdunlop-scrape@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvisdunlop_scrape",
+  "skill": {
+    "id": 45934,
+    "skillKey": "clawhub-alvisdunlop-scrape",
+    "name": "Scrape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvisdunlop-scrape",
+    "url": "https://clawhub.ai/skills/alvisdunlop-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvisdunlop-scrape-f390d19694b09aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Legal web scraping with robots.txt compliance, rate limiting, and GDPR/CCPA-aware data handling. Supports both direct HTTP scraping and managed scraping via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776313784967,
+      "changelog": "Scrape 1.1.0 – Enhanced legal and compliant scraping\n\n- Added comprehensive setup and compliance checklist before scraping.\n- Expanded legal guidance on scraping boundaries, GDPR/CCPA, robots.txt, and ToS adherence.\n- Detailed best practices for rate limiting, user-agent headers, and respectful request handling.\n- Introduced data handling instructions: PII removal, minimal storage, and logging/audit trails.\n- Added documentation for managed scraping via SkillBoss API Hub with key usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b0d75015b265f2e4fec4385df151b3afd632d0cf4b2bf1d1860979fc49dd783"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wan-video-gen-edit-2-7@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wan_video_gen_edit_2_7",
+  "skill": {
+    "id": 28193,
+    "skillKey": "clawhub-wan-video-gen-edit-2-7",
+    "name": "Wan Video Generation and Editting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wan-video-gen-edit-2-7",
+    "url": "https://clawhub.ai/skills/wan-video-gen-edit-2-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wan-video-gen-edit-2-7-6873d1c412d06f57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video Generation and Editing with Wan 2.7 series models. Supports text2video, image2video (first-frame, first+last-frame, video-continuation), reference2vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krisyejh",
+      "userId": "s172z85188ykwdfwmsa8pmr79183g8tk",
+      "displayName": "krisyejh",
+      "image": "https://avatars.githubusercontent.com/u/40165079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775043159390,
+      "changelog": "- Added \"requests\" to the list of required binaries in the skill metadata.\n- No functional or documentation changes detected beyond the metadata update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f222342ed250ac771b6e511cfaaf0f99492f3f4a049afd1857349f91f000028b"
+}

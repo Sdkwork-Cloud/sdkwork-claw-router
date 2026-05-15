@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66495,
+  "uuid": "skill-clawhub-wechat-article-digest",
+  "skillKey": "clawhub-wechat-article-digest",
+  "name": "WeChat Article Digest",
+  "summary": "微信公众号文章抓取、分类与日报生成。当用户发送公众号文章链接（mp.weixin.qq.com）、说\"文章日报\"、\"今日阅读\"、\"归类一下\"、\"整理文章\"、\"帮我看看这篇文章\"时触发。也用于用户日常转发文章链接时自动抓取摘要和分类。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Milesnee",
+      "features": [
+        "微信公众号文章抓取、分类与日报生成。当用户发送公众号文章链接（mp.weixin.qq.com）、说\"文章日报\"、\"今日阅读\"、\"归类一下\"、\"整理文章\"、\"帮我看看这篇文章\"时触发。也用于."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16829681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-digest",
+      "url": "https://clawhub.ai/skills/wechat-article-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-digest",
+    "url": "https://clawhub.ai/skills/wechat-article-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-digest-0814f4dfe6146cba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fef51cfa9248ffc0ec3fc44f6d8cb042fc7871d7f1d71692373251856d611787",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:08:27.183Z"
+}

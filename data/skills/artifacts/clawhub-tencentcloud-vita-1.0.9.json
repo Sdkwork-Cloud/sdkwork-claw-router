@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-vita@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_vita",
+  "skill": {
+    "id": 63329,
+    "skillKey": "clawhub-tencentcloud-vita",
+    "name": "TencentCloud VITA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-vita",
+    "url": "https://clawhub.ai/skills/tencentcloud-vita",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-vita-ef381b4fddf0d54a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云图像与视频理解 (TencentCloud VITA / vita) 技能。用于图片理解、视频理解、图像分析、视频分析、描述生成、监控录像分析、体育高光提取、直播理解、新闻视频摘要、产品演示视频分析，以及设置或更新 vita prompt。支持单张图片、多张图片、视频。TencentCloud VITA (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wayne-j151",
+      "userId": "s179ts7gas9w7qbsf22fz1qjrd83z3km",
+      "displayName": "Wayne-J151",
+      "image": "https://avatars.githubusercontent.com/u/73774260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 602,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774950068797,
+      "changelog": "TencentCloud VITA 1.0.9 — documentation update\n\n- Updated and improved SKILL documentation for clarity and consistency.\n- Enhanced English descriptions; clarified skill’s name as TencentCloud VITA (vita) and its positioning for video/image understanding.\n- Simplified language; restructured guide sections for easier agent integration and prompt management.\n- Standardized environment variable to TENCENTCLOUD_VITA_API_KEY.\n- No code or functional changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fbb56aee6fcb6e524cedee9db4b85bd4dc7faab1bb5df8385c66478e7e1a731"
+}

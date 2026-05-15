@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debank-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debank_skill",
+  "skill": {
+    "id": 55873,
+    "skillKey": "clawhub-debank-skill",
+    "name": "Debank Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debank-skill",
+    "url": "https://clawhub.ai/skills/debank-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debank-skill-84d5fdffd05e1899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query blockchain wallet data—balances, DeFi positions, tokens, NFTs, transactions, gas prices, and token approvals—across EVM chains via DeBank API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lolieatapple",
+      "userId": "s17cwjkczzsfcn60bss426xknn83kag8",
+      "displayName": "lolieatapple",
+      "image": "https://avatars.githubusercontent.com/u/54833180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774497140809,
+      "changelog": "Initial release of DeBank Skill:\n- Query blockchain wallet data using DeBank CLI and API, covering balances, DeFi positions, tokens, NFTs, approvals, and transaction history.\n- Supports natural language mapping to CLI commands for wallet, token, and gas queries.\n- Detailed usage instructions provided for setup, available commands, and handling user requests.\n- Includes chain ID reference and native token address conventions.\n- Guides users through API key setup if not already configured.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88d7b5e39165f37ede27ab2387228b5c956de8f27413cb61474c8c3699e2edb6"
+}

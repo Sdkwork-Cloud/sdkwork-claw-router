@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disinto-factory@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disinto_factory",
+  "skill": {
+    "id": 42081,
+    "skillKey": "clawhub-disinto-factory",
+    "name": "Disinto Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disinto-factory",
+    "url": "https://clawhub.ai/skills/disinto-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disinto-factory-67c0c64cb562c26f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and operate a disinto autonomous code factory. Use when bootstrapping a new factory instance, checking on agents and CI, managing the backlog, or trou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johba37",
+      "userId": "s17779emay927trgx4fhj7zb5n83ntwj",
+      "displayName": "johba37",
+      "image": "https://avatars.githubusercontent.com/u/659301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774697852309,
+      "changelog": "Add repository and homepage links",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e5cbbac8a83365ec5695aaf213b30337d27a285b7c79fbe238e22c47a357ef9"
+}

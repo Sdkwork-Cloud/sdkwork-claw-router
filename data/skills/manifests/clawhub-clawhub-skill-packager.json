@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29454,
+  "uuid": "skill-clawhub-clawhub-skill-packager",
+  "skillKey": "clawhub-clawhub-skill-packager",
+  "name": "ClawHub Skill Packager",
+  "summary": "Turn rough, partial, or broken ClawHub/OpenClaw skill material into one publish-ready skill bundle plus one separate plain-text review file using an inferenc...",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_packager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher L Haynes",
+      "features": [
+        "Turn rough, partial, or broken ClawHub/OpenClaw skill material into one publish-ready skill bun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-packager@1.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130129909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-packager",
+      "url": "https://clawhub.ai/skills/clawhub-skill-packager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-packager",
+    "url": "https://clawhub.ai/skills/clawhub-skill-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-packager-59f6f39f080d1863.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-packager@1.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-packager-1.5.2.json",
+      "version": "1.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e39e26ae36e6066ed5047c53249376faf0295cbadb6da39982ed22a9f97b5c8",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:39:25.110Z"
+}

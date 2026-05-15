@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52975,
+  "uuid": "skill-clawhub-vibe-switch",
+  "skillKey": "clawhub-vibe-switch",
+  "name": "Vibe-Switch",
+  "summary": "tmux for AI Agents — Orchestrate multiple AI coding agents in parallel with one command. Run Claude Code, Codex CLI, and Gemini CLI simultaneously on isolate...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_switch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Jhang",
+      "features": [
+        "tmux for AI Agents — Orchestrate multiple AI coding agents in parallel with one command",
+        "Run Claude Code, Codex CLI, and Gemini CLI simultaneously on isolate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-switch@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-switch",
+      "url": "https://clawhub.ai/skills/vibe-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-switch",
+    "url": "https://clawhub.ai/skills/vibe-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-switch-8dbf076f72e060ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-switch@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-switch-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae0f8d2dd49a51ccd8733f48f3bf0b25e9ba233def362db86feb5cbffc9bcfcc",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T13:30:57.415Z"
+}

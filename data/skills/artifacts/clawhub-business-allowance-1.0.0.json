@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-allowance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_allowance",
+  "skill": {
+    "id": 59150,
+    "skillKey": "clawhub-business-allowance",
+    "name": "差旅补助"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-allowance",
+    "url": "https://clawhub.ai/skills/business-allowance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-allowance-a600221bd01b14c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "差旅补助助手，支持补助标准查询、出差补助计算、补助申请、审批进度查询、发放状态跟踪等功能。Invoke when user needs to calculate travel allowance, submit allowance claims, or check allowance policy and sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775913751043,
+      "changelog": "fb-travel-allowance-skill v1.0.0 – Initial Release\n\n- Provides travel allowance queries, automatic calculation, claim submission, approval status checks, and payment tracking for business trips.\n- Supports compliance checks to prevent duplicate or overdue claims, and deduction rules for company-provided meals or transport.\n- Offers allowance standards based on position and city tier, as well as rules for meal, transport, communication, and special region subsidies.\n- Includes detailed user inputs and example output formats for calculation, application, and status tracking.\n- Enables allowance stats, personal and departmental analysis, and exception/warning detection for claims.\n- Designed for use by employees handling business travel allowances in a corporate context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3943597920e7830e5db1bf583d68cc36ef55d2876a6205ae6078767a281fc460"
+}

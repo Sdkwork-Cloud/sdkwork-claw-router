@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30114,
+  "uuid": "skill-clawhub-seopro",
+  "skillKey": "clawhub-seopro",
+  "name": "SEO Optimizer",
+  "summary": "Provides keyword research, meta tag analysis, content SEO scoring, and meta description generation to improve website search rankings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seopro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hughtan93-dev",
+      "features": [
+        "Provides keyword research, meta tag analysis, content SEO scoring, and meta description generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seopro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254217053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seopro",
+      "url": "https://clawhub.ai/skills/seopro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seopro",
+    "url": "https://clawhub.ai/skills/seopro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seopro-9835300264bf1831.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seopro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seopro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f6b51bf2ebd33d6eb43a512babed2267dd8538e826ce3f075841b2e7139b4fc",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T02:18:38.519Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24711,
+  "uuid": "skill-clawhub-craftmypdf",
+  "skillKey": "clawhub-craftmypdf",
+  "name": "Craftmypdf",
+  "summary": "CraftMyPDF integration. Manage PDFDocuments, Users, Workspaces. Use when the user wants to interact with CraftMyPDF data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craftmypdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "CraftMyPDF integration",
+        "Manage PDFDocuments, Users, Workspaces",
+        "Use when the user wants to interact with CraftMyPDF data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/craftmypdf@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "craftmypdf",
+      "url": "https://clawhub.ai/skills/craftmypdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craftmypdf",
+    "url": "https://clawhub.ai/skills/craftmypdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craftmypdf-7fa30db11f42842a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/craftmypdf@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-craftmypdf-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73750141f6efd79999016c004bf6c4b1e6eddb7a168fffcc843852f6bb090ea4",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:17.027Z"
+}

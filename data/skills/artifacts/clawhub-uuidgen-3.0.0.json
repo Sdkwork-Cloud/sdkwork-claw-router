@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uuidgen@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uuidgen",
+  "skill": {
+    "id": 23943,
+    "skillKey": "clawhub-uuidgen",
+    "name": "Uuidgen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uuidgen",
+    "url": "https://clawhub.ai/skills/uuidgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uuidgen-8641a063e95f5efd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UUIDs, short IDs, and nano IDs. Use when creating database keys, minting session tokens, generating unique filenames, or producing batch IDs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773916751622,
+      "changelog": "v3.0.0: Real UUID generator.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af912f0149ec852f6f885ba3bd7d33448ea750857aa35f5ca7cd73496cb2db15"
+}

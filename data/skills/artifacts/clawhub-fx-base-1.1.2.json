@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fx-base@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fx_base",
+  "skill": {
+    "id": 58974,
+    "skillKey": "clawhub-fx-base",
+    "name": "Fx Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fx-base",
+    "url": "https://clawhub.ai/skills/fx-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fx-base-d52811413a725bc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "feima-lab 后端公共基础模块：API 认证校验（FX_AI_API_KEY）、请求封装（POST + Bearer Token）、 通用错误处理（missing_api_key / api_unavailable / api_error）。 这是基础依赖 skill，被其他领域 skill（如 fanli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776253372876,
+      "changelog": "清理 fenxiang-ai 品牌描述残留，统一为 feima-lab",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3b8a8d6fde94d2b91ba0e22254205dbed1ad4cacea6dca262507584e4ae657d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-diff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_diff",
+  "skill": {
+    "id": 22544,
+    "skillKey": "clawhub-doc-diff",
+    "name": "Document Diff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-diff",
+    "url": "https://clawhub.ai/skills/doc-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-diff-0cef1bd907616562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare two documents or files and generate a structured diff report. Use when: user asks to compare files, find differences between documents, generate diff..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnoder-wgh",
+      "userId": "s177kat3e518801npd0aptksdx83ps2k",
+      "displayName": "cnoder-wgh",
+      "image": "https://avatars.githubusercontent.com/u/15918416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773626839937,
+      "changelog": "Initial release: compare two files and generate a structured diff report",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7b7bda49e6d629d91eff420a1385c6d69a212ffff47b3fe9d6e3a6aa16ab762"
+}

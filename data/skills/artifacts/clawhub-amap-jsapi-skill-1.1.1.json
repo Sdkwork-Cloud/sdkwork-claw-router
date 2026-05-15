@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-jsapi-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_jsapi_skill",
+  "skill": {
+    "id": 59785,
+    "skillKey": "clawhub-amap-jsapi-skill",
+    "name": "Gaode Map JSAPI - 高德官方 JavaScript SDK Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-jsapi-skill",
+    "url": "https://clawhub.ai/skills/amap-jsapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-jsapi-skill-a7cfac2916efd551.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高德地图 JSAPI v2.0 (WebGL) 开发技能。涵盖地图生命周期管理、强制安全配置、3D 视图控制、覆盖物绘制及 LBS 服务集成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbs-amap",
+      "userId": "s175kkx7bgg448fksjnhth7b1n83p4n5",
+      "displayName": "GaodeMapOfficial",
+      "image": "https://avatars.githubusercontent.com/u/15030363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3623,
+      "installsAllTime": 23,
+      "installsCurrent": 22,
+      "stars": 9,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776425711650,
+      "changelog": "优化展示名称，Map 关键词前置提升搜索排名",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:217bf30271e3471354646170935505eaf7f91da8f200d3ef56a02bf2ad2d2f10"
+}

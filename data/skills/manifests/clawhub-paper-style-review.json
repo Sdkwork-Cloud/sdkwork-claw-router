@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66428,
+  "uuid": "skill-clawhub-paper-style-review",
+  "skillKey": "clawhub-paper-style-review",
+  "name": "Paper Style Review",
+  "summary": "结构化审校中文论文：从参考论文学习风格，统一结构图谱，执行格式/术语/逻辑/风格融合审查，并将结果回写为 Word 批注。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_style_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "urnotLhh",
+      "features": [
+        "结构化审校中文论文：从参考论文学习风格，统一结构图谱，执行格式/术语/逻辑/风格融合审查，并将结果回写为 Word 批注。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-style-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145005456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-style-review",
+      "url": "https://clawhub.ai/skills/paper-style-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-style-review",
+    "url": "https://clawhub.ai/skills/paper-style-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-style-review-98eafaf15eb01845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-style-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-style-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e3cc99eabf14dbbe5700132d98336c4175109f2d7f067e73fdaf2b2cd6b69cf",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:32:42.676Z"
+}

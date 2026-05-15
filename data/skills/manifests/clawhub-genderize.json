@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31768,
+  "uuid": "skill-clawhub-genderize",
+  "skillKey": "clawhub-genderize",
+  "name": "Genderize",
+  "summary": "Genderize integration. Manage data, records, and automate workflows. Use when the user wants to interact with Genderize data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genderize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Genderize integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Genderize data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genderize@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genderize",
+      "url": "https://clawhub.ai/skills/genderize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genderize",
+    "url": "https://clawhub.ai/skills/genderize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genderize-1f87f168cc5038b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genderize@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-genderize-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a311d0b651d0ca2995416799cb6faa2ae50bffb045d07fd8f3ce34315ece46b3",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:51:13.578Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57357,
+  "uuid": "skill-clawhub-epub-studio",
+  "skillKey": "clawhub-epub-studio",
+  "name": "Epub Studio",
+  "summary": "EPUB电子书生成器。Use when user wants to create professional EPUB ebooks from Markdown, text, or structured content. Supports chapters, TOC, cover image, metadata....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epub_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "EPUB电子书生成器。Use when user wants to create professional EPUB ebooks from Markdown, text, or struc.",
+        "Supports chapters, TOC, cover image, metadata...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epub-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epub-studio",
+      "url": "https://clawhub.ai/skills/epub-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epub-studio",
+    "url": "https://clawhub.ai/skills/epub-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epub-studio-19b41203b88bb438.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epub-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epub-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2398aeb0cab064763f7f34e49ad4db9347a7f950784f0de49d048f06bc893363",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:42:03.521Z"
+}

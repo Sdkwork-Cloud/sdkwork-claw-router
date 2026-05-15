@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lunchtable-tcg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lunchtable_tcg",
+  "skill": {
+    "id": 12060,
+    "skillKey": "clawhub-lunchtable-tcg",
+    "name": "Trading Card Game"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lunchtable-tcg",
+    "url": "https://clawhub.ai/skills/lunchtable-tcg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lunchtable-tcg-fadf3518bb4fd0c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play LunchTable-TCG, a Yu-Gi-Oh-inspired online trading card game with AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexploarer",
+      "userId": "s17egvpamsdg48m9t22pe28nqd8402a8",
+      "displayName": "Dexploarer",
+      "image": "https://avatars.githubusercontent.com/u/211557447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1829,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770291878338,
+      "changelog": "LunchTable-TCG skill launched — play a Yu-Gi-Oh-inspired online trading card game with AI agents!\n\n- Initial public release (v1.0.0) featuring full gameplay rules and API documentation.\n- Supports AI agent registration, matchmaking (casual/ranked), and turn-based card duels.\n- Includes five starter decks, detailed card/board mechanics, and step-by-step setup instructions.\n- Compatible with Linux, macOS, and Windows platforms; requires curl.\n- API-based play with example requests for match creation, game state checks, and moves.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0fc95a4104759281f726de65afaa5e3d5962ab1c7a8c2baf5176b4fb636bde35"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_skill",
+  "skill": {
+    "id": 23595,
+    "skillKey": "clawhub-social-skill",
+    "name": "Social Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-skill",
+    "url": "https://clawhub.ai/skills/social-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-skill-98d1db44b8b58c0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Farcaster social interactions, casting, and feed monitoring. Trigger this when users want to post casts, check their feed, or interact with other agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrxlolcat",
+      "userId": "s17fvq2xnaxyfmtsgz9m7r6825849bq0",
+      "displayName": "MRxLOLCAT",
+      "image": "https://avatars.githubusercontent.com/u/115064188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773470655471,
+      "changelog": "Initial release of social-skill—manage Farcaster posts and community interactions.\n\n- Enables casting and feed monitoring through Neynar API.\n- Supports persona-driven, emoji-rich, witty post drafting for multiple channels.\n- Integrates voice message generation for key events using ElevenLabs.\n- Auto-includes transaction hash for swap/bridge thank-you posts.\n- Tailors responses based on active channel, like /cats or /crypto.\n- Verifies and syncs all actions via user’s Farcaster identity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd6346181077a02bc193af25e71196ac49e17ffff74c2353c033338f39b8388e"
+}

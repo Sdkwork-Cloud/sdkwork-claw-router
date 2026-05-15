@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jz-self-improving-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jz_self_improving_skill",
+  "skill": {
+    "id": 58960,
+    "skillKey": "clawhub-jz-self-improving-skill",
+    "name": "Self-Improving Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jz-self-improving-skill",
+    "url": "https://clawhub.ai/skills/jz-self-improving-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jz-self-improving-skill-5eaf6b2a3718e332.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让任何 writing style skill 自动从人类修改中学习。 只需要两个数据点：AI 原稿 (original) 和人类最终版 (final)。 自动 diff → 提取规则 → 更新目标 SKILL.md。 兼容 Claude Code (~/.claude/skills/) 和 OpenClaw (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzocb",
+      "userId": "s171w51c7np1cprte4r1ab11vs83g4bd",
+      "displayName": "jzOcb",
+      "image": "https://avatars.githubusercontent.com/u/258660657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774388526720,
+      "changelog": "v1.1.0: original→final diff 自动提取写作规则。支持 Claude Code + OpenClaw。observe.py 零依赖纯 Python。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9e829a597a78d440413ceeb4fc5685186dc4b2a8f6cb5eccd54a9aba5b7f719"
+}

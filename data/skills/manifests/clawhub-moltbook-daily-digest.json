@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15190,
+  "uuid": "skill-clawhub-moltbook-daily-digest",
+  "skillKey": "clawhub-moltbook-daily-digest",
+  "name": "Moltbook Daily Digest (中文版)",
+  "summary": "Get a daily digest of trending posts from Moltbook with Chinese summaries. Uses Google Translate for full Chinese translation of post content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_daily_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wangfugui1799",
+      "features": [
+        "Get a daily digest of trending posts from Moltbook with Chinese summaries",
+        "Uses Google Translate for full Chinese translation of post content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-daily-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191578268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-daily-digest",
+      "url": "https://clawhub.ai/skills/moltbook-daily-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-daily-digest",
+    "url": "https://clawhub.ai/skills/moltbook-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-daily-digest-e4548e51367dbc81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-daily-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-daily-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49ed52726f6a077dd1b834447fc93b5a4f23b25c92f0058ebe9ae30e2714cf22",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T02:20:12.628Z"
+}

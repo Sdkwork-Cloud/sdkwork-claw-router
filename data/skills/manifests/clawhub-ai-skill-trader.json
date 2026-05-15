@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28656,
+  "uuid": "skill-clawhub-ai-skill-trader",
+  "skillKey": "clawhub-ai-skill-trader",
+  "name": "Smart Agent Skill",
+  "summary": "aion-sdk powered Polymarket thesis trader. Scan prediction markets for a configurable thesis, compare your probability to the market price, and trade only wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skill_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "孤狼独闯天宇",
+      "features": [
+        "aion-sdk powered Polymarket thesis trader",
+        "Scan prediction markets for a configurable thesis, compare your probability to the market price."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-skill-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26455814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-skill-trader",
+      "url": "https://clawhub.ai/skills/ai-skill-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skill-trader",
+    "url": "https://clawhub.ai/skills/ai-skill-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skill-trader-e0ad805068f298f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-skill-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-skill-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f5cf4d00b1c985f9d04ea05df2de83fb218e74775ca3e3802c49df45443a9cb",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:30:25.246Z"
+}

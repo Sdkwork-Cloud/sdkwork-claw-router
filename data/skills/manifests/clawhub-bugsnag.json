@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30847,
+  "uuid": "skill-clawhub-bugsnag",
+  "skillKey": "clawhub-bugsnag",
+  "name": "Bugsnag",
+  "summary": "Bugsnag integration. Manage data, records, and automate workflows. Use when the user wants to interact with Bugsnag data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugsnag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Bugsnag integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Bugsnag data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bugsnag@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bugsnag",
+      "url": "https://clawhub.ai/skills/bugsnag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugsnag",
+    "url": "https://clawhub.ai/skills/bugsnag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugsnag-04cb3f52124b62e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bugsnag@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bugsnag-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fde07d189013d6ff2cac35f79b88e89da856e0ea4f4e4a2832466bf5a55c0797",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:19.147Z"
+}

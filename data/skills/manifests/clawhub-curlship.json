@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14931,
+  "uuid": "skill-clawhub-curlship",
+  "skillKey": "clawhub-curlship",
+  "name": "CurlShip Directory Submission",
+  "summary": "Submit products to CurlShip, the bot-friendly SaaS directory. One curl command to list your product with OG tag scraping, badge-based dofollow links, and tier upgrades.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.curlship",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcin Dudek",
+      "features": [
+        "Submit products to CurlShip, the bot-friendly SaaS directory",
+        "One curl command to list your product with OG tag scraping, badge-based dofollow links, and tie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/curlship@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109857699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "curlship",
+      "url": "https://clawhub.ai/skills/curlship"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "curlship",
+    "url": "https://clawhub.ai/skills/curlship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/curlship-9f330ce7cb479bfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/curlship@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-curlship-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0cfc7413136c0aabf97347e6652c9dff6de183fe347e226f989521a22e6dc2",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T15:43:44.942Z"
+}

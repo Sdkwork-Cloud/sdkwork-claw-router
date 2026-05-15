@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/config-guardian@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_guardian",
+  "skill": {
+    "id": 8774,
+    "skillKey": "clawhub-config-guardian",
+    "name": "Config Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-guardian",
+    "url": "https://clawhub.ai/skills/config-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-guardian-b55e666a34266f64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe OpenClaw config updates with automatic backup, validation, and rollback. For agent use - prevents invalid config updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdhilabs",
+      "userId": "publishers:abdhilabs",
+      "displayName": "abdhilabs",
+      "image": "https://avatars.githubusercontent.com/u/28172248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6556,
+      "installsAllTime": 42,
+      "installsCurrent": 40,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771624219478,
+      "changelog": "**Summary**: Introduces atomic, automatic config updates with built-in backup, validation, and rollback.\n\n- Added `atomic_apply.sh` for one-step safe config changes; creates backups, validates, and auto-rolls back on failure.\n- Removed legacy scripts: `backup_config.sh` and `diff_config.sh`.\n- Updated workflow and documentation to enforce atomic updates and automatic rollback.\n- Tightened guardrails to only allow validated, agent-initiated config changes.\n- Backups now stored in `~/.openclaw/config-guardian-backups/`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a2fd3c2e2d741db1aefbe6cdb1cac2c96fd6c491986bf9a6828e7a59c835b55"
+}

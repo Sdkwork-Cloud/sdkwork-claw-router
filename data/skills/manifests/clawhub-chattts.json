@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25984,
+  "uuid": "skill-clawhub-chattts",
+  "skillKey": "clawhub-chattts",
+  "name": "Chattts",
+  "summary": "High-quality, conversational Text-to-Speech (TTS) generation via local ChatTTS API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chattts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Djttt",
+      "features": [
+        "High-quality, conversational Text-to-Speech (TTS) generation via local ChatTTS API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chattts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77910823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chattts",
+      "url": "https://clawhub.ai/skills/chattts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chattts",
+    "url": "https://clawhub.ai/skills/chattts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chattts-18da9dfddb3785a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chattts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chattts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9172ae2e03ff3951a4ee9d71c58aeb91acff52554a73f26cdae6cc1d9e6ed7d4",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:59:42.038Z"
+}

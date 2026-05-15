@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10466,
+  "uuid": "skill-clawhub-startclaw-optimizer",
+  "skillKey": "clawhub-startclaw-optimizer",
+  "name": "StartClaw-Optimizer",
+  "summary": "Master optimization system - APPLIES TO EVERY RESPONSE. Before responding, classify task complexity (simple question vs analysis vs coding). Use Haiku for simple/navigation/extraction/status. Use Sonnet ONLY for writing/analysis/planning/d.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startclaw_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "idanmann10",
+      "features": [
+        "Master optimization system",
+        "APPLIES TO EVERY RESPONSE",
+        "Before responding, classify task complexity (simple question vs analysis vs coding)",
+        "Use Haiku for simple/navigation/extraction/status"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/startclaw-optimizer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166182976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "startclaw-optimizer",
+      "url": "https://clawhub.ai/skills/startclaw-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startclaw-optimizer",
+    "url": "https://clawhub.ai/skills/startclaw-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startclaw-optimizer-a0be8fca2b6046ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/startclaw-optimizer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-startclaw-optimizer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd5b67c312d51e295ca9897b0e7d72736e20ae8835cdf7322a040cac52c1f5bc",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T21:10:20.652Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23071,
+  "uuid": "skill-clawhub-local-llm-router",
+  "skillKey": "clawhub-local-llm-router",
+  "name": "Local Llm Router",
+  "summary": "Local LLM model router for Llama, Qwen, DeepSeek, Phi, Mistral, and Gemma across multiple devices. Self-hosted local LLM inference routing on macOS, Linux, a...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_llm_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Local LLM model router for Llama, Qwen, DeepSeek, Phi, Mistral, and Gemma across multiple devic.",
+        "Self-hosted local LLM inference routing on macOS, Linux, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-llm-router@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-llm-router",
+      "url": "https://clawhub.ai/skills/local-llm-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-llm-router",
+    "url": "https://clawhub.ai/skills/local-llm-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-llm-router-5c163ce344382ce1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-llm-router@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-llm-router-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a52cd3ad5a8cdc404646db4a91a431acc9e7541ae0f5d6861381c0793933624d",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:21.548Z"
+}

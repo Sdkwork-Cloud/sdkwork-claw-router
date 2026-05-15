@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11516,
+  "uuid": "skill-clawhub-github-issue-resolver",
+  "skillKey": "clawhub-github-issue-resolver",
+  "name": "GitHub Issue Resolver",
+  "summary": "Autonomous GitHub Issue Resolver Agent with guardrails. Use when the user wants to discover, analyze, and fix open issues in GitHub repositories. Triggers on...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_issue_resolver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ashwinhegde19",
+      "features": [
+        "Autonomous GitHub Issue Resolver Agent with guardrails",
+        "Use when the user wants to discover, analyze, and fix open issues in GitHub repositories",
+        "Triggers on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-issue-resolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107956700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-issue-resolver",
+      "url": "https://clawhub.ai/skills/github-issue-resolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-issue-resolver",
+    "url": "https://clawhub.ai/skills/github-issue-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-issue-resolver-1d15d3d47bf44031.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-issue-resolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-issue-resolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:358802f58e478da657d867adaa0c0dca447914c172875e46a9fdd9d72282ea91",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T22:02:58.970Z"
+}

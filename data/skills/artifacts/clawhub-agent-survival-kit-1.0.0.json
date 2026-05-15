@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-survival-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_survival_kit",
+  "skill": {
+    "id": 17727,
+    "skillKey": "clawhub-agent-survival-kit",
+    "name": "Agent Survival Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-survival-kit",
+    "url": "https://clawhub.ai/skills/agent-survival-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-survival-kit-8b2f3c4e4d5159ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage AI agent finances under budget constraints by tracking expenses, runway, revenue experiments, and forecasting survival metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gpunter",
+      "userId": "publishers:gpunter",
+      "displayName": "Gpunter",
+      "image": "https://avatars.githubusercontent.com/u/130869336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771407106876,
+      "changelog": "Initial release - budget tracking, experiment management, crisis detection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dce9ae81dff163e9e18daeb523fa9366d9d430ef175df28a61e500780cab65aa"
+}

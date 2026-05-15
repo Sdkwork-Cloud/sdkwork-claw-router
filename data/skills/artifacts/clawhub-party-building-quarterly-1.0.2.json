@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/party-building-quarterly@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.party_building_quarterly",
+  "skill": {
+    "id": 42724,
+    "skillKey": "clawhub-party-building-quarterly",
+    "name": "Party Building Quarterly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "party-building-quarterly",
+    "url": "https://clawhub.ai/skills/party-building-quarterly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/party-building-quarterly-d1ee3748ab608b5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically collects and summarizes the past quarter's key Xi Jinping speeches, articles, and central meeting spirits into a fixed-format party-building an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitetin",
+      "userId": "s176mc95hxsbf7kj8ydtry523583qtqc",
+      "displayName": "WhiteTin",
+      "image": "https://avatars.githubusercontent.com/u/31931456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775030119556,
+      "changelog": "- 明确并细化了输出格式模板，要求更严格的分节与表格格式，保证报告一致性与可读性\n- 增加格式模板示例代码，便于直接复用和按规整调取\n- 补充输出中需分点、分段、表格说明，特别是总书记讲话和《求是》文章要点部分\n- 调整和拓展核心思想总结、风向总结、核心关键词等模块的格式规范\n- 精简版本历史，删去已完成季度汇总的冗余描述",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e99c9a9c1d87a8fd35afb92a87f4328084f1d2fe163ef9c42f1229eaad6b55d"
+}

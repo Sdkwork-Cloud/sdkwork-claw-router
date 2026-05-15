@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exchange-skills@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exchange_skills",
+  "skill": {
+    "id": 29941,
+    "skillKey": "clawhub-exchange-skills",
+    "name": "Exchange Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exchange-skills",
+    "url": "https://clawhub.ai/skills/exchange-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exchange-skills-c05fd9865425f37e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full email, calendar, contacts, tasks, and notes management for Microsoft Exchange/Outlook. Use when Claude needs to list unread emails, read email content,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derekhsu",
+      "userId": "s1772b3ygba1w907zqrcjm95p983jdw7",
+      "displayName": "Derek Hsu",
+      "image": "https://avatars.githubusercontent.com/u/2805401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773735016088,
+      "changelog": "Fix: SSL verification is now conditional - only disabled when EXCHANGE_DISABLE_SSL_VERIFY=1 is explicitly set",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a05dc82ff084fe2aa7ae629644c68fd54e7fbf9e01cec780b606f453e12b3c0"
+}

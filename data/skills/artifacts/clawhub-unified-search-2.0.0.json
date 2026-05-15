@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unified-search@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_search",
+  "skill": {
+    "id": 60467,
+    "skillKey": "clawhub-unified-search",
+    "name": "Unified Search - 统一智能搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-search",
+    "url": "https://clawhub.ai/skills/unified-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-search-e9e0b19db05177ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一搜索技能！中文用百度，英文用 DuckDuckGo，加密货币用 CoinGecko"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coder-knock",
+      "userId": "publishers:coder-knock",
+      "displayName": "三产",
+      "image": "https://avatars.githubusercontent.com/u/112768464?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 551,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772525913102,
+      "changelog": "🎉 统一智能搜索大升级！中文用百度，英文用DuckDuckGo，加密货币用CoinGecko，一个技能搞定所有搜索！",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ca0bcfbaba795951b35f831424f55705b92780e85c937de3383a281867be997"
+}

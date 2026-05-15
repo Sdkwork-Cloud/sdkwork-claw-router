@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-dingding@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_dingding",
+  "skill": {
+    "id": 30369,
+    "skillKey": "clawhub-use-dingding",
+    "name": "Use Dingding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-dingding",
+    "url": "https://clawhub.ai/skills/use-dingding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-dingding-50fa38580708b159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with DingTalk workspace via dws CLI to manage contacts, chats, calendars, todos, approvals, attendance, reports, and AITable data using OAuth creden..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucezhu888",
+      "userId": "s17b4qa3j6xnznhde41q2pdyf583g4yx",
+      "displayName": "brucezhu888",
+      "image": "https://avatars.githubusercontent.com/u/130302745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775039046517,
+      "changelog": "- Add support for mapping CSV column names to AITable field names in import_records.py using a new --field-map argument.\n- Update documentation in SKILL.md to reflect the new --field-map option for importing records.\n- Improves bulk data migration workflows with flexible column/field alignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8174eff90e09eec8c64459e9133743b273a4766bf6a18dc4fde4341b8d2bebf3"
+}

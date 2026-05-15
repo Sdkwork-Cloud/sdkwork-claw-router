@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jrv-changelog-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_changelog_gen",
+  "skill": {
+    "id": 28096,
+    "skillKey": "clawhub-jrv-changelog-gen",
+    "name": "Changelog Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-changelog-gen",
+    "url": "https://clawhub.ai/skills/jrv-changelog-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-changelog-gen-f5594606004d5b72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate changelogs from git commit history with conventional commit parsing. Use when asked to generate a changelog, create release notes, summarize git his..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773148087751,
+      "changelog": "Initial release: conventional commit parsing, grouped output, breaking change detection, markdown and JSON format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4f3befee8abdc7d4462b83c6dcad803811fab822e90f1448c1150d12fab54cd"
+}

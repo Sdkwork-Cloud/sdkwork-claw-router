@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-insurance-claims@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_insurance_claims",
+  "skill": {
+    "id": 19108,
+    "skillKey": "clawhub-afrexai-insurance-claims",
+    "name": "Insurance Claims Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-insurance-claims",
+    "url": "https://clawhub.ai/skills/afrexai-insurance-claims",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-insurance-claims-feb3990dd08e2e83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Processes and analyzes insurance claims across policy types, providing coverage mapping, liability scoring, reserve estimates, fraud detection, and settlemen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 627,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771782167242,
+      "changelog": "Initial release of AfrexAI Insurance Claims Processor.\n\n- Processes insurance claims for property, liability, workers’ comp, auto, and professional indemnity.\n- Produces structured claim summaries, liability assessments, reserve estimates, subrogation analysis, fraud detection, and settlement recommendations.\n- Accepts free-form claim details and supports both quick and full claim processing modes.\n- Includes industry-specific modules and jurisdiction-based compliance checklists.\n- Standardized output format delivers clear executive summary, analysis, recommendations, and next steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:42e8f95d23a8887d8fb453ad331b285ed7545f22526109f5c13997f4fe56476a"
+}

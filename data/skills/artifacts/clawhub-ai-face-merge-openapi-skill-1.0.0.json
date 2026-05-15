@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-face-merge-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_face_merge_openapi_skill",
+  "skill": {
+    "id": 55980,
+    "skillKey": "clawhub-ai-face-merge-openapi-skill",
+    "name": "AI Face Merge: Free Online AI Face Morph & Face Merge Tool – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-face-merge-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-face-merge-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-face-merge-openapi-skill-5fd565c2623fd7f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI face merge — blend two faces together into a single realistic portrait"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775976034699,
+      "changelog": "- Initial release of the ai-face-merge skill.\n- Blend two faces into a single realistic portrait using the WeShop OpenAPI.\n- Supports secure API key handling with environment variable support.\n- Endpoints for running merges, polling status, and uploading images.\n- Allows optional custom text guidance and batch image generation (1–16 results).\n- Detailed usage instructions and security recommendations included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77f228232a304b43ec579d99d13392dff15b5c328a49afa7e0f650d89aa8684d"
+}

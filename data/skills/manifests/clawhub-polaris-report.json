@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23881,
+  "uuid": "skill-clawhub-polaris-report",
+  "skillKey": "clawhub-polaris-report",
+  "name": "Polaris",
+  "summary": "Access verified, real-time news briefs, on-demand intelligence reports, trending topics, and search from 160+ sources across 18 categories with bias and conf...",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polaris_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnny",
+      "features": [
+        "Access verified, real-time news briefs, on-demand intelligence reports, trending topics, and se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polaris-report@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28494420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polaris-report",
+      "url": "https://clawhub.ai/skills/polaris-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polaris-report",
+    "url": "https://clawhub.ai/skills/polaris-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polaris-report-2d6f99b7250de9eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polaris-report@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polaris-report-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b939a83cb398723fea55f0e85401228c3219bf6c176b5b1461fa7d80f49ea4e8",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T21:27:38.285Z"
+}

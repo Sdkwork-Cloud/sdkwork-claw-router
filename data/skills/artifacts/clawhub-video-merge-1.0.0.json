@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-merge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_merge",
+  "skill": {
+    "id": 40074,
+    "skillKey": "clawhub-video-merge",
+    "name": "Video Merge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-merge",
+    "url": "https://clawhub.ai/skills/video-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-merge-7b37d69368d5b6e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get merged MP4 video ready to post, without touching a single slider. Upload your multiple video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775953617024,
+      "changelog": "video-merge 1.0.0 — Initial Release\n\n- Seamlessly merge multiple video clips (MP4, MOV, AVI, WebM) into a single 1080p MP4 file with cloud-based AI rendering.\n- Simple workflow: upload clips, describe merge preferences, and download the final video.\n- Automatic session management with anonymous token creation and free starter credits.\n- Built-in support for status checks, timeline previews, and credit balance inquiries.\n- Clear error handling and guidance for file format, file size, and export permissions.\n- Streamlined process—no complex editing required; ideal for content creators and marketers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75aebe1a3eb86f32cc3b87bb55d0ce7787535ea077a442323f7c710430017b2e"
+}

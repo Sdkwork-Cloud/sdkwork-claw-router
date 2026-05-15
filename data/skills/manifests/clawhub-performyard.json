@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33081,
+  "uuid": "skill-clawhub-performyard",
+  "skillKey": "clawhub-performyard",
+  "name": "Performyard",
+  "summary": "PerformYard integration. Manage data, records, and automate workflows. Use when the user wants to interact with PerformYard data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performyard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PerformYard integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PerformYard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performyard@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performyard",
+      "url": "https://clawhub.ai/skills/performyard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performyard",
+    "url": "https://clawhub.ai/skills/performyard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performyard-135f39a29943cdfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performyard@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-performyard-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a024b618559f7a7b6b04e6bee2e704b13ba20c6809c5e938d82c825777cccbc2",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:36.391Z"
+}

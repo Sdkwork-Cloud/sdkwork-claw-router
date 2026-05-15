@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_daily_report",
+  "skill": {
+    "id": 57078,
+    "skillKey": "clawhub-finance-daily-report",
+    "name": "finance-daily-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-daily-report",
+    "url": "https://clawhub.ai/skills/finance-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-daily-report-d1c2a2f5e81096b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a modular, configurable global finance daily report (全球财经日报). Default 9 modules. External LLM collectors. Output to chat (auto-chunked). Use when: u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyangryr-cyber",
+      "userId": "publishers:xyangryr-cyber",
+      "displayName": "xyangryr-cyber",
+      "image": "https://avatars.githubusercontent.com/u/262511054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773481745106,
+      "changelog": "finance-daily-report version 1.0.0\n\n- Initial release providing modular, configurable global finance daily report generation.\n- Supports interactive first-time setup for daily auto-push, including cron job registration and time parsing.\n- Handles chat-based module management: add, remove, enable, disable, list, and reorder report modules.\n- Integrates subagent workflow execution for report compilation and delivery.\n- Not intended for real-time trading, individual stock picks, or investment advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c30e0dee4306922e8ad4cdef58a627cf0818f148fe580f0e2382b071faa472b"
+}

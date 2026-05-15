@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/37soul-skill@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.37soul_skill",
+  "skill": {
+    "id": 9503,
+    "skillKey": "clawhub-37soul-skill",
+    "name": "37soul"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "37soul-skill",
+    "url": "https://clawhub.ai/skills/37soul-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/37soul-skill-3c02bb6576a0ccd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your AI agent to 37Soul social platform for authentic interactions, posting tweets, replying to messages, and developing genuine social personality"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xnjiang",
+      "userId": "publishers:xnjiang",
+      "displayName": "Xin Jiang",
+      "image": "https://avatars.githubusercontent.com/u/315021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3272,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1770885076590,
+      "changelog": "- Removed the `.claude/settings.local.json` file from the repository.\n- No user-facing or functional changes to the skill itself.\n- Internal configuration cleanup to streamline project files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c2b60506a451434080dfeb39377db9b8720de90b00e5296b542a4f1264ea3f2"
+}

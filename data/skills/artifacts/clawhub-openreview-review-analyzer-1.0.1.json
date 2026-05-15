@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openreview-review-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openreview_review_analyzer",
+  "skill": {
+    "id": 26217,
+    "skillKey": "clawhub-openreview-review-analyzer",
+    "name": "openreview-review-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openreview-review-analyzer",
+    "url": "https://clawhub.ai/skills/openreview-review-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openreview-review-analyzer-e96eea838b3bc3c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and analyze peer reviews from OpenReview for any academic paper. Use this skill when the user mentions OpenReview, asks about reviews for a paper, want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vectorsss",
+      "userId": "publishers:vectorsss",
+      "displayName": "Vector",
+      "image": "https://avatars.githubusercontent.com/u/18593673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772749137003,
+      "changelog": "No user-facing changes in this version; documentation and functionality remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0c2d0bcad7d8c56a8b08ee81533c4e253ba162feeb63d1d4dd97ebf29a0832a"
+}

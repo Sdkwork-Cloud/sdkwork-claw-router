@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19665,
+  "uuid": "skill-clawhub-se3",
+  "skillKey": "clawhub-se3",
+  "name": "Pywayne Vio Se3",
+  "summary": "SE(3) rigid body transformation library for 3D rotation and translation operations. Use when working with robot poses, camera transformations, SLAM systems,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.se3",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyendt",
+      "features": [
+        "SE(3) rigid body transformation library for 3D rotation and translation operations",
+        "Use when working with robot poses, camera transformations, SLAM systems,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/se3@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18455758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "se3",
+      "url": "https://clawhub.ai/skills/se3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "se3",
+    "url": "https://clawhub.ai/skills/se3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/se3-7dcf17944e8c265a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/se3@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-se3-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:515e5c5fa82af5571a0a3d74c4a4dd3e9004a57630bd1f8a43773984eae467d3",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:36:04.635Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62185,
+  "uuid": "skill-clawhub-wechat-tutorial-editor-publisher",
+  "skillKey": "clawhub-wechat-tutorial-editor-publisher",
+  "name": "Wechat Tutorial Editor Publisher",
+  "summary": "模仿作者写作风格，完成教程类微信公众号文章编写，输出 Markdown 文件，一键发布到微信公众号草稿箱。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_tutorial_editor_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "niko-yang-arch",
+      "features": [
+        "模仿作者写作风格，完成教程类微信公众号文章编写，输出 Markdown 文件，一键发布到微信公众号草稿箱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-tutorial-editor-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83321415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-tutorial-editor-publisher",
+      "url": "https://clawhub.ai/skills/wechat-tutorial-editor-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-tutorial-editor-publisher",
+    "url": "https://clawhub.ai/skills/wechat-tutorial-editor-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-tutorial-editor-publisher-1af20f9d8a4efa56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-tutorial-editor-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-tutorial-editor-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f27b53fc6a126b4c120f840b0b992a04d0dd930884b29dba2a4437a863c048fc",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:51:00.289Z"
+}

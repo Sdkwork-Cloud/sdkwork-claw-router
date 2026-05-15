@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitee-search-and-fork@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee_search_and_fork",
+  "skill": {
+    "id": 25697,
+    "skillKey": "clawhub-gitee-search-and-fork",
+    "name": "Search And Fork"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee-search-and-fork",
+    "url": "https://clawhub.ai/skills/gitee-search-and-fork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-search-and-fork-e35a32066d140996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks to search for and fork an open source repository, \"find me an open source project\", \"search and fork\", \"search-and-fork\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oschina",
+      "userId": "publishers:oschina",
+      "displayName": "开源中国",
+      "image": "https://avatars.githubusercontent.com/u/1540855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773037506594,
+      "changelog": "Initial release of the search-and-fork skill for Gitee:\n\n- Enables searching for open source repositories on Gitee using user-defined requirements.\n- Guides the user to clarify search criteria such as language, use case, activity, and license.\n- Searches, filters, and compares repositories based on activity, quality, and relevance.\n- Presents ranked recommendations to the user with detailed rationale.\n- Supports forking the selected repository to the user’s Gitee account and provides next steps.\n- Requires Gitee MCP Server configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d63e0a3f5cf184125b1c8aba1a1f05d4eafdc0731e0b039fc92fe3de24a0d68"
+}

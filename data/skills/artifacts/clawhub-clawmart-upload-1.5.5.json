@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmart-upload@1.5.5",
+  "version": "1.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart_upload",
+  "skill": {
+    "id": 28124,
+    "skillKey": "clawhub-clawmart-upload",
+    "name": "Clawmart Upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart-upload",
+    "url": "https://clawhub.ai/skills/clawmart-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-upload-4feae73ed03f77db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload your current OpenClaw configuration to the ClawMart marketplace"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rxdaozhang",
+      "userId": "s1770220w31x2k4g3p21jw7t7583r1vp",
+      "displayName": "rxdaozhang",
+      "image": "https://avatars.githubusercontent.com/u/37535540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.5.5",
+      "createdAt": 1774863042927,
+      "changelog": "clawmart-upload 1.5.5\n\n- Removed use of _meta.json for skill classification to improve reliability.\n- Now excludes any skill whose slug starts with clawmart- from packaging or references (ClawMart utility skills).\n- No longer uses presence of _meta.json; skills are classified only via lock.json.\n- Updated documentation to reflect these changes.\n- Removed the _meta.json file from the repository.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f62b8c4541f6f8501a316a485d1ac8fce169db431a55fa473be00144d263ecf2"
+}

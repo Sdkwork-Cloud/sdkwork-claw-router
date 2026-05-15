@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30057,
+  "uuid": "skill-clawhub-tapfiliate",
+  "skillKey": "clawhub-tapfiliate",
+  "name": "Tapfiliate",
+  "summary": "Tapfiliate integration. Manage Affiliates, Referrals, Conversions, Programs, Invoices. Use when the user wants to interact with Tapfiliate data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapfiliate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Tapfiliate integration",
+        "Manage Affiliates, Referrals, Conversions, Programs, Invoices",
+        "Use when the user wants to interact with Tapfiliate data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tapfiliate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tapfiliate",
+      "url": "https://clawhub.ai/skills/tapfiliate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapfiliate",
+    "url": "https://clawhub.ai/skills/tapfiliate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapfiliate-72e283ddff52bd44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tapfiliate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tapfiliate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2023913f0ae5039f4205b4eb113c98b328228e0ca996302b469a65a501bc94f7",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:20.301Z"
+}

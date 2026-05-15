@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/question-explanation@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.question_explanation",
+  "skill": {
+    "id": 35847,
+    "skillKey": "clawhub-question-explanation",
+    "name": "Question Explanation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "question-explanation",
+    "url": "https://clawhub.ai/skills/question-explanation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/question-explanation-28c21cd1e2cb18ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a complete HTML tutorial that explains one or more problems with clear reasoning and embedded SVG or Canvas visuals. Use this skill whenever the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vaintwyt",
+      "userId": "s177t9nx6h1hkgbjd1zznbqy1d83jpqj",
+      "displayName": "vaintwyt",
+      "image": "https://avatars.githubusercontent.com/u/3339127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774497928360,
+      "changelog": "- Updated the required user-facing response after HTML generation for clarity and simplicity.\n- Removed the need to include a clickable file path link in the final response; now only confirms the file is sent.\n- No changes to input handling, HTML generation standards, or visual material rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0669c8b286a0994eb00df708ae437100067cfb3bb3aeeb9f54264ca4bf85705"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51227,
+  "uuid": "skill-clawhub-performance-tuning",
+  "skillKey": "clawhub-performance-tuning",
+  "name": "Performance Tuning",
+  "summary": "Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_tuning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/performance-tuning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "performance-tuning",
+      "url": "https://clawhub.ai/skills/performance-tuning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-tuning",
+    "url": "https://clawhub.ai/skills/performance-tuning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-tuning-16d3678abca6831b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/performance-tuning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-performance-tuning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dafc127f9406d99aeb8bb9498e8fb260e0fef8604c1f2ae0c389c2375a935f09",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:07:08.875Z"
+}

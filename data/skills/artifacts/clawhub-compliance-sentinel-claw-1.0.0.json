@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compliance-sentinel-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_sentinel_claw",
+  "skill": {
+    "id": 72234,
+    "skillKey": "clawhub-compliance-sentinel-claw",
+    "name": "合规哨兵监控虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-sentinel-claw",
+    "url": "https://clawhub.ai/skills/compliance-sentinel-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-sentinel-claw-4ce9c64fb19eadf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "合规哨兵监控虾。监控合作方（供应商/客户）的工商异动、法律诉讼、失信记录等合规风险，7×24 小时守望预警。 触发场景： - 合作方准入审查（签约前查询工商、诉讼、失信记录） - 持续监控预警（对已签约合作方定期监控，异动时推送飞书通知） - 批量风险扫描（对供应商库/客户库批量合规检查） - 风险等级评估（给合..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776679800522,
+      "changelog": "Initial release: 监控合作方工商异动、诉讼、失信记录，7×24 小时风险预警",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9608052bc40de2bd74acd075179c1f809996542ba8f0af58e009354785856aa2"
+}

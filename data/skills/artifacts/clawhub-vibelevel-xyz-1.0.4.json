@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibelevel-xyz@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibelevel_xyz",
+  "skill": {
+    "id": 21138,
+    "skillKey": "clawhub-vibelevel-xyz",
+    "name": "Vibelevel Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibelevel-xyz",
+    "url": "https://clawhub.ai/skills/vibelevel-xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibelevel-xyz-e9dd5de6a91f4540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check any GitHub developer's vibe score across 7 dimensions. Compare coders, flex leaderboards, and discover who's really shipping."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "therealstein",
+      "userId": "publishers:therealstein",
+      "displayName": "therealstein",
+      "image": "https://avatars.githubusercontent.com/u/31182980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772111560257,
+      "changelog": "Fixed profile link template to avoid broken URL indexing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3e12d1926e5c800b32df95822458cb5f053abfd08aa4eb48b46a4a50a3c207b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-invalid-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_invalid_search",
+  "skill": {
+    "id": 25865,
+    "skillKey": "clawhub-patent-invalid-search",
+    "name": "patent-invalid-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-invalid-search",
+    "url": "https://clawhub.ai/skills/patent-invalid-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-invalid-search-5e95b79c66b3c84a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform patent invalidation analysis by verifying inputs, extracting and comparing technical features, searching prior art, evaluating evidence, and generati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaochaosz",
+      "userId": "s17aqnhgyt2gmfqt1j9zm7p2mx83wch8",
+      "displayName": "chaochaoSZ",
+      "image": "https://avatars.githubusercontent.com/u/39897272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773799732538,
+      "changelog": "Initial release of the patent invalidation analysis skill.\n\n- Supports input verification (filing date and completeness of technical solution).\n- Structures patent information into technical problem, means, and effect.\n- Extracts and lists independent technical features for comparison.\n- Performs targeted prior art search using Google Patents or alternatives.\n- Ranks and evaluates prior art based on similarity for invalidity grounds.\n- Guides generation of comprehensive invalidation analysis reports in Word format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc7a6bf3abcd40f2089fa8651d47cd7186847ddd0334572b9e10af871e73f0d6"
+}

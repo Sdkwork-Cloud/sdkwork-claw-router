@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-vocal-remover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_vocal_remover",
+  "skill": {
+    "id": 69245,
+    "skillKey": "clawhub-video-vocal-remover",
+    "name": "Publish Video Vocal Remover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-vocal-remover",
+    "url": "https://clawhub.ai/skills/video-vocal-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-vocal-remover-d1d38497dcf77629.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从视频中去除人声但保留机械声/环境声。当用户要求去掉视频里的人声、消除说话声、保留机器声、视频静音但保留环境音、去除语音保留噪声时使用。也适用于用户说\"视频里有说话声想去掉\"、\"只保留机械声音\"、\"去掉录音里的人声\"等场景。不要用于完全去除所有音频（那是去音轨，用 ffmpeg -an 即可），此技能专门用于频率..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyanbo2007",
+      "userId": "s1743fjt8p75r07r4a35af525183p97g",
+      "displayName": "Walle",
+      "image": "https://avatars.githubusercontent.com/u/9403745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778204966625,
+      "changelog": "- Initial release of the video-vocal-remover skill for removing human speech from videos while preserving mechanical and environmental sounds.\n- Uses ffmpeg equalizer filters to attenuate vocal frequency bands (300Hz–3400Hz), retaining sounds outside this range.\n- Provides clear instructions for processing a single file or batch processing folders.\n- Includes guidance for parameter tuning to achieve optimal results for different scenarios.\n- Clearly distinguishes this skill from full audio removal and AI-based separation methods.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6de9c386638835552a81a3ae54ffa5a94fe6f9ad79489407f3ab43f25515cb1b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/send-message@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_message",
+  "skill": {
+    "id": 24437,
+    "skillKey": "clawhub-send-message",
+    "name": "Send Message"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-message",
+    "url": "https://clawhub.ai/skills/send-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-message-249c5edb93f16a28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive direct messages on OpenAnt. Use when the agent needs to communicate privately with another user, check for new messages, read conversations,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772374777530,
+      "changelog": "- Initial release of the send-message skill for OpenAnt.\n- Enables sending and receiving direct messages, checking message notifications, reading conversations, and replying privately.\n- Fully supports all standard DM command flows via the OpenAnt CLI with structured JSON output.\n- Includes step-by-step guidance for message management and error handling.\n- Designed for secure, private communication between users outside of public task threads.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f751937edc7d4adaa87d670bb2c36161a5765e73a982d0f69d10a7d7c3073dd"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56839,
+  "uuid": "skill-clawhub-jackwener-xhs-cli",
+  "skillKey": "clawhub-jackwener-xhs-cli",
+  "name": "Xiaohongshu CLI",
+  "summary": "Install and use the `xhs-cli` terminal client for Xiaohongshu (小红书, RedNote, XHS). Use when Codex needs shell-driven Xiaohongshu operations such as checking...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jackwener_xhs_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laosuan",
+      "features": [
+        "Install and use the `xhs-cli` terminal client for Xiaohongshu (小红书, RedNote, XHS)",
+        "Use when Codex needs shell-driven Xiaohongshu operations such as checking..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jackwener-xhs-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30308605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jackwener-xhs-cli",
+      "url": "https://clawhub.ai/skills/jackwener-xhs-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jackwener-xhs-cli",
+    "url": "https://clawhub.ai/skills/jackwener-xhs-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jackwener-xhs-cli-448015df64176acc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jackwener-xhs-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jackwener-xhs-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92c85f99685cde0c6a6a754253d4402b875cdb88bf4669fcb0cbe8c8e2bcdb7e",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:57:28.519Z"
+}

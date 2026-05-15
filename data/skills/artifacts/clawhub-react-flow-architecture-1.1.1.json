@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-flow-architecture@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_flow_architecture",
+  "skill": {
+    "id": 29290,
+    "skillKey": "clawhub-react-flow-architecture",
+    "name": "React Flow Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-flow-architecture",
+    "url": "https://clawhub.ai/skills/react-flow-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-flow-architecture-2fc8b0f9b4198104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Architectural guidance for building node-based UIs with React Flow. Use when designing flow-based applications, making decisions about state management, inte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831300280,
+      "changelog": "- Added a \"Decision workflow (gates)\" section outlining a four-step checklist to assess React Flow fit before implementation.\n- The checklist covers mapping interactions to callbacks, estimating node counts, defining state placement, and verifying fit over alternatives.\n- No other content changes; all existing architecture guidance and examples are unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82953160d68689c8c9adf13bc5a9f03255de6ccc5b217e9558f03f1d2c90e780"
+}

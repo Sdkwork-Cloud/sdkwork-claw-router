@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67485,
+  "uuid": "skill-clawhub-a-stocks-analysis",
+  "skillKey": "clawhub-a-stocks-analysis",
+  "name": "A Stocks Analysis",
+  "summary": "中国 A 股/港股只读数据查询与分析技能。支持行情、基本面、指数、文本四类数据检索， 支持自然语言需求映射到 stocks 接口，并输出结构化分析结果。 需 TAX_API_KEY 鉴权；仅用于公开历史数据查询，不支持交易下单，也不构成投资建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stocks_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roamer 徐",
+      "features": [
+        "中国 A 股/港股只读数据查询与分析技能。支持行情、基本面、指数、文本四类数据检索， 支持自然语言需求映射到 stocks 接口，并输出结构化分析结果。 需 TAX_API_KEY 鉴权；仅."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stocks-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267348107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stocks-analysis",
+      "url": "https://clawhub.ai/skills/a-stocks-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stocks-analysis",
+    "url": "https://clawhub.ai/skills/a-stocks-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stocks-analysis-6562ddb1d0c48ec9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stocks-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stocks-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2830656b5f80bd8f5b1f1e1b2d87fb8a9734fb3103fcb925aadbcb60c197bb1",
+      "artifactSizeBytes": 2694
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T18:01:31.263Z"
+}

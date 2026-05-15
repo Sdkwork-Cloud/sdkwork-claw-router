@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swiftui-empty-app-init@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiftui_empty_app_init",
+  "skill": {
+    "id": 12671,
+    "skillKey": "clawhub-swiftui-empty-app-init",
+    "name": "SwiftUI Empty App Init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiftui-empty-app-init",
+    "url": "https://clawhub.ai/skills/swiftui-empty-app-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiftui-empty-app-init-8bcb29c5c858d7f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Initialize a minimal SwiftUI iOS app in the current directory by generating a single `.xcodeproj` with XcodeGen (no workspaces, packages, or tests unless explicitly requested)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ignaciocervino",
+      "userId": "publishers:ignaciocervino",
+      "displayName": "ignaciocervino",
+      "image": "https://avatars.githubusercontent.com/u/45499501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2458,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768391417282,
+      "changelog": "Initial release of swiftui-empty-app-init.\n\n- Initializes a minimal SwiftUI iOS app using XcodeGen in the current directory.\n- Generates a single `.xcodeproj` with exactly one app target and no additional workspaces, packages, or tests (unless explicitly requested).\n- Prompts for project name, minimum iOS deployment target, and optional bundle identifier (defaults provided).\n- Ensures required prerequisites (Xcode, XcodeGen) are present before proceeding.\n- Produces a clean project structure with minimal source files and configuration, ready for immediate development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b92803505f517008ca4c5db97ec74372f134482d79972d1df1e9b537cf1dbee"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59280,
+  "uuid": "skill-clawhub-zotero-sholar",
+  "skillKey": "clawhub-zotero-sholar",
+  "name": "zotero-sholar",
+  "summary": "将论文和摘要保存到 Zotero 文库。需配置 ZOTERO_CREDENTIALS 环境变量。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_sholar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GottenZZP",
+      "features": [
+        "将论文和摘要保存到 Zotero 文库。需配置 ZOTERO_CREDENTIALS 环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-sholar@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69204281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-sholar",
+      "url": "https://clawhub.ai/skills/zotero-sholar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-sholar",
+    "url": "https://clawhub.ai/skills/zotero-sholar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-sholar-9c983d8d7e11e364.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-sholar@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-sholar-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29fd342a3dfcdcc5998e82179159112e30ce992864ef72c242db984f6be475dc",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:43:09.071Z"
+}

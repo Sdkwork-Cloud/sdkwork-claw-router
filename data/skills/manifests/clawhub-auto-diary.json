@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68230,
+  "uuid": "skill-clawhub-auto-diary",
+  "skillKey": "clawhub-auto-diary",
+  "name": "Diary",
+  "summary": "个人日记自动化 skill。用于按天生成日记文本并导出 1080px 图片；支持首次自动初始化、读取 SOUL/MEMORY/每日记忆素材、保持写作风格连续性。适用于用户要求“写日记/生成日记图片/补昨天日记/自动日记归档”等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_diary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DaShanENG",
+      "features": [
+        "个人日记自动化 skill。用于按天生成日记文本并导出 1080px 图片；支持首次自动初始化、读取 SOUL/MEMORY/每日记忆素材、保持写作风格连续性。适用于用户要求“写日记/生成日."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-diary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25707325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-diary",
+      "url": "https://clawhub.ai/skills/auto-diary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-diary",
+    "url": "https://clawhub.ai/skills/auto-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-diary-aa4bfcdbc60baac0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-diary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-diary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19dd5ccc0f681e339abccc6c8938c2481d3bfba5d913ac29d8b8643a846d94df",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:32:03.722Z"
+}

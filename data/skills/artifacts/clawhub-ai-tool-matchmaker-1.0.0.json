@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-tool-matchmaker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tool_matchmaker",
+  "skill": {
+    "id": 55080,
+    "skillKey": "clawhub-ai-tool-matchmaker",
+    "name": "Ai Tool Matchmaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tool-matchmaker",
+    "url": "https://clawhub.ai/skills/ai-tool-matchmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tool-matchmaker-7c5d7f0d829316fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Match your specific task to the right AI tool — no tool fetishism, just practical fit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778135994891,
+      "changelog": "- Initial release of AI Tool Matchmaker: a prompt-flow skill to help users choose the best AI tools for their specific tasks.\n- Guides users step-by-step to clarify task type, budget, skill level, platform, and privacy needs before recommending tools.\n- Provides tiered recommendations: best overall, best free/low-cost, and best for privacy, with clear trade-offs explained.\n- Supports a wide range of use cases, including writing, research, coding assistance, and productivity.\n- Summarizes options in a decision matrix and emphasizes the importance of reviewing privacy policies and keeping up with fast tool changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1053d5e1c789e772628f37e0e387e68d627c20525c0c8fcdffeb7b035d02acc"
+}

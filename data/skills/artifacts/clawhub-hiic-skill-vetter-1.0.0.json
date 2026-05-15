@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hiic-skill-vetter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiic_skill_vetter",
+  "skill": {
+    "id": 37728,
+    "skillKey": "clawhub-hiic-skill-vetter",
+    "name": "HIIC-skill-vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiic-skill-vetter",
+    "url": "https://clawhub.ai/skills/hiic-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiic-skill-vetter-589ce1c945de2c6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical skill vetting workflow for AI agents. Prioritizes clear yes/no risk judgments, concise conclusions, and business-aware risk tolerance before instal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waytobetter619",
+      "userId": "s177se0q686b5k9yrh2nm6e0ad83gwv5",
+      "displayName": "HIIC-Wayne",
+      "image": "https://avatars.githubusercontent.com/u/264586794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774401616706,
+      "changelog": "HIIC-skill-vetter v1.0.0\n\n- Initial release providing a practical, business-aware vetting workflow for AI agent skills.\n- Focuses on concise yes/no risk judgments and clear conclusions for installation decisions.\n- Defines default safety standards and explicit criteria for escalating risk levels.\n- Calibrates normal capabilities (like API access, scheduled tasks, and documented credentials) as standard or caution items, not automatic red flags.\n- Supplies a checklist format for vetting and a short review process to streamline decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edd3725316a04c33ba323e50b79b3999c571d0d702fbd879f7092642b1659d93"
+}

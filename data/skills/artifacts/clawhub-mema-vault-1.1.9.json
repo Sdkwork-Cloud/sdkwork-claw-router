@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mema-vault@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mema_vault",
+  "skill": {
+    "id": 16979,
+    "skillKey": "clawhub-mema-vault",
+    "name": "Mema Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mema-vault",
+    "url": "https://clawhub.ai/skills/mema-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mema-vault-49d6cc01e9f82675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure credential manager using AES-256 (Fernet) encryption. Stores, retrieves, and rotates secrets using a mandatory Master Key. Use for managing API keys,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1999azzar",
+      "userId": "publishers:1999azzar",
+      "displayName": "azzar budiyanto",
+      "image": "https://avatars.githubusercontent.com/u/48999412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 820,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1771262101240,
+      "changelog": "SECURITY: Removed local database from package and added gitignore. Only source and documentation are included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:400774d24bfc300fad6a3240e0c3270fbbda94c677f8c4e5e1798840159a8d35"
+}

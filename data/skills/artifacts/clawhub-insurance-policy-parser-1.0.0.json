@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insurance-policy-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_policy_parser",
+  "skill": {
+    "id": 67081,
+    "skillKey": "clawhub-insurance-policy-parser",
+    "name": "保险条款分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-policy-parser",
+    "url": "https://clawhub.ai/skills/insurance-policy-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-policy-parser-20e9fe3d37b1ea25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析医疗险条款文档并提取32个结构化字段，含14个核心字段和18个增强字段，支持PDF/DOCX/TXT格式，输出标准JSON"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "long1973m",
+      "userId": "s17c19cz831h9vazw3m6crqpbh843w77",
+      "displayName": "马龙",
+      "image": "https://avatars.githubusercontent.com/u/185081395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773127870098,
+      "changelog": "Initial release: Extracts 32 structured fields from medical insurance policy documents in PDF, DOCX, or TXT formats, outputting standardized JSON.\n\n- Supports both core (14) and enhancement (18) fields as defined in the output format specification.\n- Implements automated data type conversion for amounts, proportions, enumerations, and booleans.\n- Provides a document parsing script for robust text extraction from files.\n- Ensures all Level 1 core fields are mandatory and accurately extracted; Level 2 enhancement fields allow nulls.\n- Output strictly follows predefined JSON formatting and field rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f16a13631bc168df9b90a2b0d38ee50caad53eeffb4ce1c6da54f5427b852ec0"
+}

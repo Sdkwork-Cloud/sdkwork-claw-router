@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27645,
+  "uuid": "skill-clawhub-overnight-factory",
+  "skillKey": "clawhub-overnight-factory",
+  "name": "Overnight Factory",
+  "summary": "Set up an AI agent as an Overnight Software Factory operator. Use when configuring an OpenClaw agent to autonomously handle support tickets end-to-end: recei...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overnight_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alpha Zenith",
+      "features": [
+        "Set up an AI agent as an Overnight Software Factory operator",
+        "Use when configuring an OpenClaw agent to autonomously handle support tickets end-to-end: recei."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overnight-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263947534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overnight-factory",
+      "url": "https://clawhub.ai/skills/overnight-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overnight-factory",
+    "url": "https://clawhub.ai/skills/overnight-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overnight-factory-f560c6f0ee7ac4b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overnight-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-overnight-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ddfb95e5bdace1c433f766dbb2b2684fcf96c8c10470551cf853948994fdf4b",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T20:43:10.634Z"
+}

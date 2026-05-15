@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-product@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_product",
+  "skill": {
+    "id": 42448,
+    "skillKey": "clawhub-shopify-product",
+    "name": "shopify product"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-product",
+    "url": "https://clawhub.ai/skills/shopify-product",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-product-077b1c13aa63050d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Shopify products and analyze winning items with PPSPY. Filter products by price, category, sales, and revenue, and inspect bestselling products by store."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775099068259,
+      "changelog": "- Added clearer setup instructions, including links to the main dashboard (ppspy.com) and API site (api.ppspy.com) for key management and billing.\n- Setup section now distinguishes between using the dashboard/product UI and obtaining API access.\n- No changes to functionality or tools.\n- Version unchanged at 1.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d310134d88c5df56009284d6a6812cc000bdc65106b57649fe7c1caa9eb4715f"
+}

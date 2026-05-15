@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hrclaw-jd-scorecard@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hrclaw_jd_scorecard",
+  "skill": {
+    "id": 19647,
+    "skillKey": "clawhub-hrclaw-jd-scorecard",
+    "name": "HRClaw JD & Resume Scorecard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hrclaw-jd-scorecard",
+    "url": "https://clawhub.ai/skills/hrclaw-jd-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hrclaw-jd-scorecard-cd85eb6ed4b739fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn job descriptions and PDF resumes into structured hiring decisions, interview questions, and Feishu/DingTalk-friendly output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinjobs",
+      "userId": "s171x1v9sw69z93xg480zv58r983wgxc",
+      "displayName": "qinjobs",
+      "image": "https://avatars.githubusercontent.com/u/37294169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774858339030,
+      "changelog": "Homepage/about refresh: tighter value prop and clearer recruiting positioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a42d6e5512193331773eb601ca0f58ccdfec170a3778b4ef026c3bd20811591"
+}

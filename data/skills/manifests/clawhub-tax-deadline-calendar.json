@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30552,
+  "uuid": "skill-clawhub-tax-deadline-calendar",
+  "skillKey": "clawhub-tax-deadline-calendar",
+  "name": "Tax Deadline Calendar",
+  "summary": "Tax deadline tracking and compliance calendar for businesses and individuals. Tracks federal and state tax filing deadlines, estimated tax payment due dates,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax_deadline_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Tax deadline tracking and compliance calendar for businesses and individuals",
+        "Tracks federal and state tax filing deadlines, estimated tax payment due dates,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tax-deadline-calendar@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tax-deadline-calendar",
+      "url": "https://clawhub.ai/skills/tax-deadline-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax-deadline-calendar",
+    "url": "https://clawhub.ai/skills/tax-deadline-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-deadline-calendar-2d39cbf4d313cb02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tax-deadline-calendar@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tax-deadline-calendar-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6daf82c2c264eba67ab21683b6be85cfb58ffdcac70ca4f98f6f43114c4eed3a",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:19:15.702Z"
+}

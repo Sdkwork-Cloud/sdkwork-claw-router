@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30630,
+  "uuid": "skill-clawhub-gamelegend",
+  "skillKey": "clawhub-gamelegend",
+  "name": "GameLegend",
+  "summary": "Game discovery and recommendations powered by GameLegend's Gameplay DNA engine. Use when users ask for game recommendations, games like a specific title, wha...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamelegend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhilipLudington",
+      "features": [
+        "Game discovery and recommendations powered by GameLegend's Gameplay DNA engine",
+        "Use when users ask for game recommendations, games like a specific title, wha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamelegend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/370934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamelegend",
+      "url": "https://clawhub.ai/skills/gamelegend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamelegend",
+    "url": "https://clawhub.ai/skills/gamelegend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamelegend-65e4709f928d4339.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamelegend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamelegend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c904ae5042435222cbb2cbc82ec78af6285db944f1d578d9be135e51b4e88d73",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T00:28:08.829Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57973,
+  "uuid": "skill-clawhub-invassistant",
+  "skillKey": "clawhub-invassistant",
+  "name": "InvAssistant",
+  "summary": "Investment portfolio management system covering A-shares (A股), US stocks (美股), and HK stocks (港股). A-shares: Three-condition entry system (引擎评分≥80 + 价格≤目标 +...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invassistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haiyangchen",
+      "features": [
+        "Investment portfolio management system covering A-shares (A股), US stocks (美股), and HK stocks (港.",
+        "A-shares: Three-condition entry system (引擎评分≥80 + 价格≤目标 +..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invassistant@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135641704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invassistant",
+      "url": "https://clawhub.ai/skills/invassistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invassistant",
+    "url": "https://clawhub.ai/skills/invassistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invassistant-58c291b03c9545d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invassistant@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invassistant-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a50270bdc77e51f9cea29d4451223781d8b9e2e9f77e30ae375de5ca5961855d",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:56:01.626Z"
+}

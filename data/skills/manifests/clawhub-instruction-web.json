@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66022,
+  "uuid": "skill-clawhub-instruction-web",
+  "skillKey": "clawhub-instruction-web",
+  "name": "instruction-web",
+  "summary": "生成包含截图占位符和操作步骤的美观Web界面操作指南HTML页面，介绍软件功能及导入智能体教程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instruction_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2239721014-ops",
+      "features": [
+        "生成包含截图占位符和操作步骤的美观Web界面操作指南HTML页面，介绍软件功能及导入智能体教程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instruction-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230829172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instruction-web",
+      "url": "https://clawhub.ai/skills/instruction-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instruction-web",
+    "url": "https://clawhub.ai/skills/instruction-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instruction-web-902403e5054df4a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instruction-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instruction-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0913ec02c3b43b9482373cfd6212b5744c590a756008140635d7fd5fe3af3987",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:29:10.072Z"
+}

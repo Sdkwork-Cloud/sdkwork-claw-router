@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25021,
+  "uuid": "skill-clawhub-swagup",
+  "skillKey": "clawhub-swagup",
+  "name": "Swagup",
+  "summary": "SwagUp integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with SwagUp data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swagup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SwagUp integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with SwagUp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swagup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swagup",
+      "url": "https://clawhub.ai/skills/swagup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swagup",
+    "url": "https://clawhub.ai/skills/swagup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swagup-63242c5498f43213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swagup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-swagup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feb1fa926f2b2c9c293be4e96b344fdd52cbf00efa64e7f2210000644199c526",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:05.867Z"
+}

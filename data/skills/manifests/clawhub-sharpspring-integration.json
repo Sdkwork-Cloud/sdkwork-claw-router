@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33868,
+  "uuid": "skill-clawhub-sharpspring-integration",
+  "skillKey": "clawhub-sharpspring-integration",
+  "name": "Sharpspring",
+  "summary": "SharpSpring integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with SharpSpring data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sharpspring_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SharpSpring integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with SharpSpring data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sharpspring-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sharpspring-integration",
+      "url": "https://clawhub.ai/skills/sharpspring-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sharpspring-integration",
+    "url": "https://clawhub.ai/skills/sharpspring-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sharpspring-integration-76c76ecf09d97e8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sharpspring-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sharpspring-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf94aeb4df20400c515f5f2c148cf7e13a9006741972d217c64acfec2975f5ec",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:31.029Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taichi@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taichi",
+  "skill": {
+    "id": 61081,
+    "skillKey": "clawhub-taichi",
+    "name": "taichi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taichi",
+    "url": "https://clawhub.ai/skills/taichi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taichi-de6f0783531f8bc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "太极架构多 Agent 协作框架，支持集中式、分布式，元混合三种执行模式。基于 Redis 消息总线，实现 Planner/Drafter/Validator/Dispatcher 四个阶段的工作流。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indivisible2025",
+      "userId": "s174zfn3g8cbmvtzghpmnydj2d84axhs",
+      "displayName": "Indivisible",
+      "image": "https://avatars.githubusercontent.com/u/196898298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775469354605,
+      "changelog": "Taichi 2.1.0 introduces a flexible multi-agent workflow framework with multiple execution modes:\n\n- Supports centralized, distributed, and hybrid (meta-mixed) execution modes for various task scenarios.\n- Implements a four-stage workflow: Planner, Drafter, Validator, Dispatcher, using a Redis message bus.\n- Provides easy command-line usage examples for each mode.\n- Updated documentation with mode descriptions, commands, and prerequisites.\n- Requires a running Redis server and Python virtual environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c301fab1f53622871abb88dd6e8a6a1d0f6ea84ed0049a54ba3dc9672881cbe"
+}

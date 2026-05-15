@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19520,
+  "uuid": "skill-clawhub-cofounder-im",
+  "skillKey": "clawhub-cofounder-im",
+  "name": "OpenClaw Cofounder Skill",
+  "summary": "Pull startup project data and AI-generated build specifications from CoFounder.im. Use when a user wants to build a project that was validated and planned on...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cofounder_im",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex Filatov",
+      "features": [
+        "Pull startup project data and AI-generated build specifications from CoFounder.im",
+        "Use when a user wants to build a project that was validated and planned on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cofounder-im@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cofounder-im",
+      "url": "https://clawhub.ai/skills/cofounder-im"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cofounder-im",
+    "url": "https://clawhub.ai/skills/cofounder-im",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cofounder-im-13ad721d7990d9be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cofounder-im@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cofounder-im-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de2e71548d8c30ca4d32adfd4a8725b6b908b437bcd03d1af8b446c942a7dd54",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T20:58:58.981Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-enhancer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_enhancer",
+  "skill": {
+    "id": 9630,
+    "skillKey": "clawhub-prompt-enhancer",
+    "name": "Prompt Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-enhancer",
+    "url": "https://clawhub.ai/skills/prompt-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-enhancer-7952c74f84c8db0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically rewrites rough user inputs into optimized, structured prompts for dramatically better AI responses. Prefix any message with \"p:\" to activate."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyaan-dub",
+      "userId": "publishers:gyaan-dub",
+      "displayName": "gyaan-dub",
+      "image": "https://avatars.githubusercontent.com/u/253904739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2620,
+      "installsAllTime": 23,
+      "installsCurrent": 18,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771153915046,
+      "changelog": "Version 1.0.1\n\n- Added _meta.json file for additional metadata support.\n- No changes to skill functionality or user experience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55c359ee996b8197b86ed6d87cea7f5293b461a9410dfa2125f86513917dd4e0"
+}

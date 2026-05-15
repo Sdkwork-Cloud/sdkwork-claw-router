@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36244,
+  "uuid": "skill-clawhub-deepxiv-cli",
+  "skillKey": "clawhub-deepxiv-cli",
+  "name": "Deepxiv Cli",
+  "summary": "Search, inspect, and progressively read open-access academic papers with the deepxiv CLI. Use when the user wants arXiv / PMC / Semantic Scholar paper search...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepxiv_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric",
+      "features": [
+        "Search, inspect, and progressively read open-access academic papers with the deepxiv CLI",
+        "Use when the user wants arXiv / PMC / Semantic Scholar paper search..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepxiv-cli@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10356449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepxiv-cli",
+      "url": "https://clawhub.ai/skills/deepxiv-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepxiv-cli",
+    "url": "https://clawhub.ai/skills/deepxiv-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepxiv-cli-acf6b3dac02c8594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepxiv-cli@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepxiv-cli-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee0934aacc9c72c790674f04a6265ca6341d805107dc040984a391f09c7ef2ae",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:42:26.852Z"
+}

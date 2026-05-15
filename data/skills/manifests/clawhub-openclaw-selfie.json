@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39776,
+  "uuid": "skill-clawhub-openclaw-selfie",
+  "skillKey": "clawhub-openclaw-selfie",
+  "name": "OpenClaw Selfie",
+  "summary": "Generate identity-consistent selfies, group photos, and other SFW images for OpenClaw characters via the tuqu.ai API. Use when creating character portraits,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_selfie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Austin Zhou",
+      "features": [
+        "Generate identity-consistent selfies, group photos, and other SFW images for OpenClaw character.",
+        "Use when creating character portraits,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-selfie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11924957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-selfie",
+      "url": "https://clawhub.ai/skills/openclaw-selfie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-selfie",
+    "url": "https://clawhub.ai/skills/openclaw-selfie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-selfie-2059fecb63540384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-selfie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-selfie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac475a98e5b15336746e003dfa6f1019711842664aa7689d361db60e8fdff4cf",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T08:29:14.805Z"
+}

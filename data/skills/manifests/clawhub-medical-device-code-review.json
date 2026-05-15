@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67819,
+  "uuid": "skill-clawhub-medical-device-code-review",
+  "skillKey": "clawhub-medical-device-code-review",
+  "name": "medical-device-code-review",
+  "summary": "医疗设备软件代码审核（符合IEC 62304、NMPA中国医疗器械注册要求）。当用户要求审核代码、审查代码、代码检查、代码安全审查、代码质量审查、代码合规检查、代码安全审计、代码评审、code review、代码审查、审核这段代码、帮我看看代码、有bug吗、代码有问题吗等关键词时触发。适用于手术机器人、监护仪、输...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_device_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myjnathan",
+      "features": [
+        "医疗设备软件代码审核（符合IEC 62304、NMPA中国医疗器械注册要求）。当用户要求审核代码、审查代码、代码检查、代码安全审查、代码质量审查、代码合规检查、代码安全审计、代码评审、cod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-device-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40301176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-device-code-review",
+      "url": "https://clawhub.ai/skills/medical-device-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-device-code-review",
+    "url": "https://clawhub.ai/skills/medical-device-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-device-code-review-505ad22bc4f503e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-device-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-device-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58c73b6ec6c6a4aee96998107af1968cbedb896a004d4b6db6515a29aa43bf01",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:35:28.188Z"
+}

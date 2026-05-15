@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanobanana-pro-fallback@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana_pro_fallback",
+  "skill": {
+    "id": 11465,
+    "skillKey": "clawhub-nanobanana-pro-fallback",
+    "name": "Nanobanana Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana-pro-fallback",
+    "url": "https://clawhub.ai/skills/nanobanana-pro-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana-pro-fallback-e38e389e8f0ad585.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nano Banana Pro with auto model fallback — generate/edit images via Gemini Image API. Run via: uv run {baseDir}/scripts/generate_image.py --prompt 'desc' --filename 'out.png' [--resolution 1K|2K|4K] [-i input.png]. Supports text-to-image +."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yazelin",
+      "userId": "publishers:yazelin",
+      "displayName": "yazelin",
+      "image": "https://avatars.githubusercontent.com/u/6235553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2721,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1770656011661,
+      "changelog": "Improve description for search",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4ebdde00855d68319c268e44a2fbac328aacf9b4edcdb71fbe8ca3215efc0e9"
+}

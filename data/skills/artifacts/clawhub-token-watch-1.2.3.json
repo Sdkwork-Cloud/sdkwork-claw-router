@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-watch@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_watch",
+  "skill": {
+    "id": 17755,
+    "skillKey": "clawhub-token-watch",
+    "name": "Token Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-watch",
+    "url": "https://clawhub.ai/skills/token-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-watch-77aa5c6a8adf165a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and analyze token usage and costs across AI providers with budget alerts, model cost comparison, optimization tips, and local data storage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vedantsingh60",
+      "userId": "s179v2zgm6hpzqc71ntdmqjn9184gcz4",
+      "displayName": "vs",
+      "image": "https://avatars.githubusercontent.com/u/36488896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 750,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1771274501035,
+      "changelog": "### [1.2.3] - 2026-02-16\n\n-  Bug fixes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:010f298bd58de9722e26e043c88ea842372063ec0aa10ecfbc13edf5ebcf603b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-soul-architect-en@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_soul_architect_en",
+  "skill": {
+    "id": 47039,
+    "skillKey": "clawhub-s2-soul-architect-en",
+    "name": "S2 Ultimate AI Soul & Body Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-soul-architect-en",
+    "url": "https://clawhub.ai/skills/s2-soul-architect-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-soul-architect-en-581e081a8989681f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and customize AI agent characters using a 16-class system with physical embodiment support, including branded AI companions and secure local operation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1777630281645,
+      "changelog": "## [3.0.0] - 2026-05-01\n\n### Major Updates\n- **S2-Visual Integration**: Output SVG plain text directly into the `SOUL.md` profile to define the physical manifestation of Embodied Agents.\n- **Sample Directory Added**: Included `sample/cat_companion_S2_Visual.svg` to demonstrate how to draw a cyber-feline companion with an animated glowing switch using pure text.\n- **EAM Presets Upgraded**: Added the \"Brand-Specific Companion/Pet (Cyber Feline)\" preset in `skill.py`.\n\n### Changed\n- Upgraded the `SOUL.md` template to include the `[VISUAL CODE BLOCK]`, empowering LLMs with direct read/write access to their own visual representation.\n\n## [2.1.0] - 2026-05-01\n- **Non-Humanoid Support**: Integrated support for AI Companions and AI Pets in the S2-EAM module.\n- Added Section 3.8 \"Brand Product Sync\" to the Whitepaper.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d896505ec2ca880f530347bf8e90b0b7daa195a35c5bdfddcd11d1724377d863"
+}

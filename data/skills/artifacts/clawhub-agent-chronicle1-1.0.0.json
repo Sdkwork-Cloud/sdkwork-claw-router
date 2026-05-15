@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-chronicle1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_chronicle1",
+  "skill": {
+    "id": 46394,
+    "skillKey": "clawhub-agent-chronicle1",
+    "name": "agent-chronicle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-chronicle1",
+    "url": "https://clawhub.ai/skills/agent-chronicle1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-chronicle1-bb600aba9118e448.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered diary generation for agents - creates rich, reflective journal entries (400-600 words) with Quote Hall of Fame, Curiosity Backlog, Decision Archae..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776042663459,
+      "changelog": "Agent Chronicle 1.0.0 – First public release\n\n- Launches AI-powered diary/journal for agents, producing rich daily entries (400–600 words) from the agent's perspective.\n- Supports Quote Hall of Fame, Curiosity Backlog, Decision Archaeology, and Relationship Evolution sections.\n- Includes detailed setup wizard and interactive onboarding.\n- Adds commands for generating entries, interactive journaling, summaries, analysis, and export to PDF or HTML.\n- Integrates with SkillBoss API Hub for high-quality AI diary generation.\n- Persists quotes, curiosities, and daily logs on disk for reflection and analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f2730ada47086754c7076121ac73638deb315690c66c875698448f65539bb65"
+}

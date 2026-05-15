@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64598,
+  "uuid": "skill-clawhub-feishu-bot-manager-twisted",
+  "skillKey": "clawhub-feishu-bot-manager-twisted",
+  "name": "Feishu Bot Manager",
+  "summary": "交互式添加和管理多个飞书机器人账户，支持账户级和群聊级路由绑定指定 Agent 处理消息。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_manager_twisted",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TwistedCz",
+      "features": [
+        "交互式添加和管理多个飞书机器人账户，支持账户级和群聊级路由绑定指定 Agent 处理消息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bot-manager-twisted@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131542164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bot-manager-twisted",
+      "url": "https://clawhub.ai/skills/feishu-bot-manager-twisted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-manager-twisted",
+    "url": "https://clawhub.ai/skills/feishu-bot-manager-twisted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-manager-twisted-77c8dba3d43ce56f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bot-manager-twisted@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bot-manager-twisted-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62bac34d63432885ce87577a5eef13590c87e532a7dcc8dfd98fe7b75182df46",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:53:42.348Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24798,
+  "uuid": "skill-clawhub-mobile-text-alerts",
+  "skillKey": "clawhub-mobile-text-alerts",
+  "name": "Mobile Text Alerts",
+  "summary": "Mobile Text Alerts integration. Manage Accounts. Use when the user wants to interact with Mobile Text Alerts data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_text_alerts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mobile Text Alerts integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with Mobile Text Alerts data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobile-text-alerts@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobile-text-alerts",
+      "url": "https://clawhub.ai/skills/mobile-text-alerts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-text-alerts",
+    "url": "https://clawhub.ai/skills/mobile-text-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-text-alerts-c2d670314b84f6bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobile-text-alerts@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobile-text-alerts-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:302360d81a2af12ef42b115dc8caeb26e7c14a442fda49be50fbbff4b99770ce",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:48.793Z"
+}

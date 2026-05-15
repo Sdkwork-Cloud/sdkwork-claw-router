@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31929,
+  "uuid": "skill-clawhub-mobivate",
+  "skillKey": "clawhub-mobivate",
+  "name": "Mobivate",
+  "summary": "Mobivate integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Mobivate data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobivate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mobivate integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Mobivate data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobivate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobivate",
+      "url": "https://clawhub.ai/skills/mobivate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobivate",
+    "url": "https://clawhub.ai/skills/mobivate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobivate-ad2ad81dd561987d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobivate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobivate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cea9d73ed256482166ce1f1679e51d61d12b417048aa3e4e21a06ed1880dba4",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:45:06.676Z"
+}

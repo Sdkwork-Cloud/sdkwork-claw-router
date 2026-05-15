@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-analyzer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_analyzer",
+  "skill": {
+    "id": 20224,
+    "skillKey": "clawhub-chat-analyzer",
+    "name": "Chat Analyzer Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-analyzer",
+    "url": "https://clawhub.ai/skills/chat-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-analyzer-6ede492e1cfc9eb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat Analyzer is an AI conversation analysis assistant for people who want to understand chat patterns instead of reacting on impulse. It reviews message flo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774895774618,
+      "changelog": "- Updated description to clarify focus on chat pattern analysis across different contexts (relationships, work, groups).\n- Added Chinese summary (对话分析、聊天模式、语气识别、关系动态判断) in the description.\n- No changes to functionality or analysis framework; existing instructions and analysis workflow remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:560a973eaae581a03a4e8a8e8570a9b1ed70aba35aa1d3ab691a425fe981de99"
+}

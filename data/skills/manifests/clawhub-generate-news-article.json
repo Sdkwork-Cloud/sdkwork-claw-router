@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18469,
+  "uuid": "skill-clawhub-generate-news-article",
+  "skillKey": "clawhub-generate-news-article",
+  "name": "Generate News Article",
+  "summary": "Generate individual Markdown articles from SerpAPI Google search results with images",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_news_article",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "near2sea",
+      "features": [
+        "Generate individual Markdown articles from SerpAPI Google search results with images"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-news-article@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4099187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-news-article",
+      "url": "https://clawhub.ai/skills/generate-news-article"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-news-article",
+    "url": "https://clawhub.ai/skills/generate-news-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-news-article-2cd01338c7f804a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-news-article@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-news-article-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba68c5dcd7a4882a10bc179fa2ddfa47befec3827558a92d4796fca72b8a8d8c",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:08:05.207Z"
+}

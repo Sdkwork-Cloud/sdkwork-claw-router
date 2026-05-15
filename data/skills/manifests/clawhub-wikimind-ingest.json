@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41688,
+  "uuid": "skill-clawhub-wikimind-ingest",
+  "skillKey": "clawhub-wikimind-ingest",
+  "name": "Wikimind Skill",
+  "summary": "Ingest articles, docs, notes, and web pages into your local LLM-WikiMind knowledge base (Karpathy's LLM Wiki pattern). Triggers: add to knowledge base, inges...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wikimind_ingest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HAL-9909",
+      "features": [
+        "Ingest articles, docs, notes, and web pages into your local LLM-WikiMind knowledge base (Karpat.",
+        "Triggers: add to knowledge base, inges..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wikimind-ingest@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261329242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wikimind-ingest",
+      "url": "https://clawhub.ai/skills/wikimind-ingest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wikimind-ingest",
+    "url": "https://clawhub.ai/skills/wikimind-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wikimind-ingest-afb3e79fe0246ede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wikimind-ingest@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wikimind-ingest-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90567efd98068bb34ad752bcfbcc43cd954648d6970f64d8265e16db62171a93",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:18:37.010Z"
+}

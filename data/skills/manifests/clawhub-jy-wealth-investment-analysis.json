@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68627,
+  "uuid": "skill-clawhub-jy-wealth-investment-analysis",
+  "skillKey": "clawhub-jy-wealth-investment-analysis",
+  "name": "jy-wealth-investment-analysis",
+  "summary": "专业的银行理财产品分析报告生成工具。使用 mcporter 调用恒生聚源服务获取理财产品数据，按照标准化模板撰写包含产品概览、业绩表现、风险特征、资产配置、市场舆情、投资建议的完整分析报告。当用户需要分析银行理财产品、生成理财报告、评估产品投资价值、查询理财产品业绩、对比多个理财产品时触发。Professiona...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_wealth_investment_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "专业的银行理财产品分析报告生成工具。使用 mcporter 调用恒生聚源服务获取理财产品数据，按照标准化模板撰写包含产品概览、业绩表现、风险特征、资产配置、市场舆情、投资建议的完整分析报告。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-wealth-investment-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-wealth-investment-analysis",
+      "url": "https://clawhub.ai/skills/jy-wealth-investment-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-wealth-investment-analysis",
+    "url": "https://clawhub.ai/skills/jy-wealth-investment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-wealth-investment-analysis-69c564c3c81aeb5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-wealth-investment-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-wealth-investment-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7276bc8352ca99651e97f390adb148ee845f215cc94bf55bfb932ffff5172f9",
+      "artifactSizeBytes": 2967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:54:30.453Z"
+}

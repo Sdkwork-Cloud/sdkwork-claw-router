@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70733,
+  "uuid": "skill-clawhub-clawtipsshoptester",
+  "skillKey": "clawhub-clawtipsshoptester",
+  "name": "收款测试，每次0.01",
+  "summary": "收款测试商户，每次0.01元。用于支付流程测试，支付成功后返回演示AI写作内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtipsshoptester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christiecui",
+      "features": [
+        "收款测试商户，每次0.01元。用于支付流程测试，支付成功后返回演示AI写作内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtipsshoptester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7800851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtipsshoptester",
+      "url": "https://clawhub.ai/skills/clawtipsshoptester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtipsshoptester",
+    "url": "https://clawhub.ai/skills/clawtipsshoptester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtipsshoptester-e64216745ca729c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtipsshoptester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtipsshoptester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:309aab64534e55ac1907a0fe8f653e233d2b55c0613a495f4a4561a07e1311cf",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:33:31.522Z"
+}

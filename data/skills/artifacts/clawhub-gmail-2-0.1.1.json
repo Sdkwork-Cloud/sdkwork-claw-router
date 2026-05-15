@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_2",
+  "skill": {
+    "id": 61487,
+    "skillKey": "clawhub-gmail-2",
+    "name": "Gmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-2",
+    "url": "https://clawhub.ai/skills/gmail-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-2-0f73aec652d58c29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[暂不可用] Gmail 邮件集成。收发邮件、搜索邮件、管理标签。通过 MorphixAI 代理安全访问 Gmail API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paul-leo",
+      "userId": "s1752kcbgt0ajgbfqwd4y5vb3n83kvp4",
+      "displayName": "Paul Leo",
+      "image": "https://avatars.githubusercontent.com/u/55380315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772786504583,
+      "changelog": "- 文档更新：丰富了前置条件，新增了插件安装、API Key 获取、环境变量配置、账号链接等详细说明。\n- 操作指引更加分步骤、结构化，提升新用户的接入与配置体验。\n- 其余核心操作和用法保持一致。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf03fd7941108fb5b7578adc176313b008d7a0ab09d25a20728fcf85f83564dd"
+}

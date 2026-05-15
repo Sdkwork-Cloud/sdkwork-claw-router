@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51743,
+  "uuid": "skill-clawhub-mobb-vulnerabilities-fixer",
+  "skillKey": "clawhub-mobb-vulnerabilities-fixer",
+  "name": "Mobb Vulnerabilities Fixer",
+  "summary": "Scan, fix, and remediate security vulnerabilities in a local code repository using Mobb MCP/CLI. Use when the user asks to scan for vulnerabilities, run a security check, auto-fix issues, remediate findings, or apply Mobb fixes (e.g., \\\"sc.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobb_vulnerabilities_fixer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Santilli",
+      "features": [
+        "Scan, fix, and remediate security vulnerabilities in a local code repository using Mobb MCP/CLI",
+        "Use when the user asks to scan for vulnerabilities, run a security check, auto-fix issues, reme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobb-vulnerabilities-fixer@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1774227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobb-vulnerabilities-fixer",
+      "url": "https://clawhub.ai/skills/mobb-vulnerabilities-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobb-vulnerabilities-fixer",
+    "url": "https://clawhub.ai/skills/mobb-vulnerabilities-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobb-vulnerabilities-fixer-6f7c3dc7ab7ff11a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobb-vulnerabilities-fixer@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobb-vulnerabilities-fixer-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3091c88f80f12d35ef1916b74a7fd793d2655f5ca2cc7b8a442d7c35fc1bddb",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T18:59:41.344Z"
+}

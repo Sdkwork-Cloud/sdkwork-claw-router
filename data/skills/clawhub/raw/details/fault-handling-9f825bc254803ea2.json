@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "fault-handling",
+    "displayName": "Lerwee Fault Handling",
+    "summary": "当用户需要故障处理、远程主机执行脚本、服务重启、磁盘清理等运维操作时使用。通过 run-script API 执行脚本，并轮询 execution-history 获取执行结果。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1773399150778,
+    "updatedAt": 1778308032622
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773399150778,
+    "changelog": "Initial release of the fault-handling skill.\n\n- Provides automated remote fault handling, including script execution, service restart, and disk cleanup, via API.\n- Confirms required parameters (especially host IP) before execution; prompts user if missing.\n- Uses pure Python for all operations; no Node.js or TypeScript dependencies.\n- Submits jobs with `run-script` API, polls `execution-history` for results (with 5-minute timeout).\n- Outputs a detailed JSON execution report, including per-host status and logs.\n- Handles API errors explicitly and displays clear user-facing reports for all results.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lerwee",
+    "userId": "s179drnz45v8z453519b5s430583nh0a",
+    "displayName": "Lerwee",
+    "image": "https://avatars.githubusercontent.com/u/162661167?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308032622
+  }
+}

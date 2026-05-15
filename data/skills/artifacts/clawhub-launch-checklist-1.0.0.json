@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/launch-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launch_checklist",
+  "skill": {
+    "id": 37833,
+    "skillKey": "clawhub-launch-checklist",
+    "name": "Launch Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launch-checklist",
+    "url": "https://clawhub.ai/skills/launch-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launch-checklist-18530d08d950716d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create comprehensive pre-launch, launch day, and post-launch checklists for new TikTok Shop products to avoid costly missed steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774674783777,
+      "changelog": "Initial release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9eb91af2370d9c382bbb1a9a4481cea31eefb835ab5e1768bcc0662cd9b0c3a9"
+}

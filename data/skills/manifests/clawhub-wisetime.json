@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31809,
+  "uuid": "skill-clawhub-wisetime",
+  "skillKey": "clawhub-wisetime",
+  "name": "Wisetime",
+  "summary": "WiseTime integration. Manage data, records, and automate workflows. Use when the user wants to interact with WiseTime data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wisetime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WiseTime integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WiseTime data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wisetime@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wisetime",
+      "url": "https://clawhub.ai/skills/wisetime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wisetime",
+    "url": "https://clawhub.ai/skills/wisetime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wisetime-5a953f98f821ec59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wisetime@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wisetime-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0d465b7f585b0ec5fcf7961990c9f651d6d4f9cf4c7a288fb89a05592c27e6c",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:25.634Z"
+}

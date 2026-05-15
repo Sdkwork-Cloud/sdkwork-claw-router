@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ipo-alert@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipo_alert",
+  "skill": {
+    "id": 60946,
+    "skillKey": "clawhub-ipo-alert",
+    "name": "Ipo Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipo-alert",
+    "url": "https://clawhub.ai/skills/ipo-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipo-alert-24395588a0dd085a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "한국 공모주 청약/신규상장 일정 알림. 38.co.kr에서 데이터 수집, D-1/당일 알림, 주간 요약 제공."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garibong-labs",
+      "userId": "s17erq91vaqjxyyx47mr6hkq2183hwed",
+      "displayName": "garibong-labs",
+      "image": "https://avatars.githubusercontent.com/u/258610216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1041,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770707654799,
+      "changelog": "연락처 추가 (contact@garibong.dev)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0673dfb3f61a39aa4303fa49747525cf5d8cb13d23e73b5a123083ebc8a315e1"
+}

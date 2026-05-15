@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clearweb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clearweb",
+  "skill": {
+    "id": 10414,
+    "skillKey": "clawhub-clearweb",
+    "name": "ClearWeb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clearweb",
+    "url": "https://clawhub.ai/skills/clearweb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clearweb-485e147576233a5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete web access for AI agents via Bright Data CLI. Replaces native web_fetch, web_search, and browser tools with reliable, unblocked access to the entire..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meirk-brd",
+      "userId": "s1785kqh67tb9awftjs3e67kds83ga1a",
+      "displayName": "Meir Kadosh",
+      "image": "https://avatars.githubusercontent.com/u/182499612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2610,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774343716436,
+      "changelog": "- Initial release of ClearWeb: provides complete, unrestricted web access for AI agents using the Bright Data CLI (`bdata`).\n- Replaces native web_fetch, web_search, and browser tools with reliable, automated JavaScript rendering, CAPTCHA solving, and anti-bot bypass.\n- Enables web search, webpage reading, structured data extraction (Amazon, LinkedIn, Instagram, YouTube, and 40+ platforms), screenshots, and geo-targeted browsing.\n- One-time authentication and simple terminal-based commands; eliminates ongoing configuration.\n- Includes composable workflows for research, competitor analysis, lead generation, price monitoring, and more.\n- Designed for use in any shell-capable AI agent environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fddb9a905831509c4092b32ea9b4e8aefc7dba8d0ff6ebbef2fd715964a6118"
+}

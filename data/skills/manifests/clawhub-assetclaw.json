@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65983,
+  "uuid": "skill-clawhub-assetclaw",
+  "skillKey": "clawhub-assetclaw",
+  "name": "AssetClaw 资产管理系统",
+  "summary": "AssetClaw技能（官网：http://www.medfix.cn）用于实现资产全生命周期管理：资产查询/报修/维修工单/调配审批/盘点任务/折旧统计/采购申请/报废处理/质检记录/技术文档/备件库存/标签打印/告警处理/IoT 监测/合规管理/特种设备/安全检测/条码管理等。适用于需要快速查询、创建、审批各...",
+  "version": "1.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assetclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmu4hlee",
+      "features": [
+        "AssetClaw技能（官网：http://www.medfix.cn）用于实现资产全生命周期管理：资产查询/报修/维修工单/调配审批/盘点任务/折旧统计/采购申请/报废处理/质检记录/技术."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/assetclaw@1.5.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7542991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "assetclaw",
+      "url": "https://clawhub.ai/skills/assetclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assetclaw",
+    "url": "https://clawhub.ai/skills/assetclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assetclaw-cc8f50c038acc573.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/assetclaw@1.5.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-assetclaw-1.5.8.json",
+      "version": "1.5.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd5e9f319acef1ee703f37ab5e0e03c86264a9bd09880044b1f968d6ddc36f42",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T03:56:39.844Z"
+}

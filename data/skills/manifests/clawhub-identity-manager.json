@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26468,
+  "uuid": "skill-clawhub-identity-manager",
+  "skillKey": "clawhub-identity-manager",
+  "name": "Identity Manager",
+  "summary": "Create, update, and maintain structured identity entries for every person, org, or group mentioned in conversation. Supports human and AI entity subtypes, gr...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identity_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyber-bye",
+      "features": [
+        "Create, update, and maintain structured identity entries for every person, org, or group mentio.",
+        "Supports human and AI entity subtypes, gr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/identity-manager@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42940952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "identity-manager",
+      "url": "https://clawhub.ai/skills/identity-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identity-manager",
+    "url": "https://clawhub.ai/skills/identity-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identity-manager-eb58f52e6378057c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/identity-manager@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-identity-manager-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c8135693f36cbc8b39dd5f64f897c94e4640de8f3c43e0ddfeabf00ac259efa",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:59:52.413Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/111132232@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.111132232",
+  "skill": {
+    "id": 35435,
+    "skillKey": "clawhub-111132232",
+    "name": "111132232"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "111132232",
+    "url": "https://clawhub.ai/skills/111132232",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/111132232-1203f79c902e11b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "aa"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q878787",
+      "userId": "s17f4651cgmgk8vbnxhff6kfj983h42m",
+      "displayName": "jianwei3fang",
+      "image": "https://avatars.githubusercontent.com/u/47075831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774249239667,
+      "changelog": "Initial release of the skill discovery and installation helper.\n\n- Lets users search for and install skills from the open agent skills ecosystem.\n- Guides users when they want to extend agent capabilities or find skills for specific tasks.\n- Responds to queries about available skills or tools for particular needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d49787f2100fa436abba2c23e02b67e37e824c33240208d088e4969fdf046a0"
+}

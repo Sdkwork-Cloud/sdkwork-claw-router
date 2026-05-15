@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-listing-alert@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_listing_alert",
+  "skill": {
+    "id": 40674,
+    "skillKey": "clawhub-crypto-listing-alert",
+    "name": "Crypto Listing Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-listing-alert",
+    "url": "https://clawhub.ai/skills/crypto-listing-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-listing-alert-0c726c003f96fd1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when users want to subscribe, pay, or manage Crypto Listing Alert notifications for exchange listing events and need Telegram, Discord, or Email delivery..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyz-ass",
+      "userId": "s17by10qsdt76sjjkc7wk4zv9d83jbxp",
+      "displayName": "syx-ass",
+      "image": "https://avatars.githubusercontent.com/u/9102088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775096331394,
+      "changelog": "- Changed the API key registration/login website from https://noteagent.ai to https://listingalert.org.\n- Updated all mentions of the API server base URL in instructional examples to https://listingalert.org.\n- No changes to commands, functionality, or operational rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ca142c639ba709e1add00107f48281ca219738cc07e2597851eff439318db9"
+}

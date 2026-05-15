@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "clean-skill",
+    "displayName": "Clean Skill",
+    "summary": "Cross-reference restaurant recommendations from Xiaohongshu (小红书) and Dianping (大众点评) to validate restaurant quality and consistency. Use when querying resta...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771218861551,
+    "updatedAt": 1778386149244
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1771218861551,
+    "changelog": "restaurant-crosscheck-v2 now cross-references restaurant recommendations from Xiaohongshu (小红书) and Dianping (大众点评) for higher-confidence results.\n\n- Fetches and analyzes ratings, review counts, and sentiment from both platforms\n- Matches restaurants using fuzzy matching and address proximity\n- Calculates a platform consistency score and outputs confidence-based recommendations (0–10 scale)\n- Supports custom filtering by location, cuisine, rating, and review count\n- Integrates error handling, advanced NLP sentiment analysis, and proxy management for scraping robustness",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zhongrenfei1-hub",
+    "userId": "publishers:zhongrenfei1-hub",
+    "displayName": "RenfeiZhong",
+    "image": "https://avatars.githubusercontent.com/u/231221504?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386149244
+  }
+}

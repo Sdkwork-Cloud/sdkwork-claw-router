@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20729,
+  "uuid": "skill-clawhub-clinical-data-cleaner",
+  "skillKey": "clawhub-clinical-data-cleaner",
+  "name": "Clinical Data Cleaner",
+  "summary": "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDTM datasets, handling missing values in clinical studies, detec...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_data_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "renhaosu2024",
+      "features": [
+        "Use when cleaning clinical trial data, preparing data for FDA/EMA submission, standardizing SDT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinical-data-cleaner@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194580685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinical-data-cleaner",
+      "url": "https://clawhub.ai/skills/clinical-data-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-data-cleaner",
+    "url": "https://clawhub.ai/skills/clinical-data-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-data-cleaner-0597a03bafae2baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinical-data-cleaner@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinical-data-cleaner-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:802c723e78f579a3335279b7e64a92320bd01283dbd11f4370fdc338614276ba",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:50:28.181Z"
+}

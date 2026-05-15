@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57583,
+  "uuid": "skill-clawhub-openclaw-clone",
+  "skillKey": "clawhub-openclaw-clone",
+  "name": "复制学习别人养好的 OpenClaw",
+  "summary": "Clone and learn from a well-trained OpenClaw instance. Use when: (1) User wants to copy someone else's OpenClaw configuration, (2) User wants to learn from a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ache",
+      "features": [
+        "Clone and learn from a well-trained OpenClaw instance",
+        "Use when: (1) User wants to copy someone else's OpenClaw configuration, (2) User wants to learn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-clone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127603560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-clone",
+      "url": "https://clawhub.ai/skills/openclaw-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-clone",
+    "url": "https://clawhub.ai/skills/openclaw-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-clone-fb5d21d1e570f396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-clone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-clone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d32976d4a55b3e8318fbc3450c6a603ae462efea8a022b2ceedb29dbce87f7f",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T04:31:03.466Z"
+}

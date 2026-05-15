@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-fraud-detect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_fraud_detect",
+  "skill": {
+    "id": 59228,
+    "skillKey": "clawhub-ai-fraud-detect",
+    "name": "Ai Intelligent Fraud Detection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-fraud-detect",
+    "url": "https://clawhub.ai/skills/ai-fraud-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-fraud-detect-b4fb48bc242fabea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "反欺诈检测，交易风控 + 身份验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774778564683,
+      "changelog": "Initial release of AI-intelligent-fraud-detection:\n\n- Provides fraud detection, transaction risk monitoring, and identity verification.\n- Features real-time monitoring, model-driven fraud detection, multi-factor authentication, dynamic risk scoring, and investigation tools.\n- Supports financial risk control, e-commerce fraud prevention, payment security, and account protection scenarios.\n- Built with Python and FastAPI, leveraging risk models and rule engines.\n- Includes tiered pricing for different usage volumes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a00c72b458d433be2f49098075f1644c80b0ae0a99dd0eddb25a17083b66dca2"
+}

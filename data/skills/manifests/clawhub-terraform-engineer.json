@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9616,
+  "uuid": "skill-clawhub-terraform-engineer",
+  "skillKey": "clawhub-terraform-engineer",
+  "name": "Terraform Engineer",
+  "summary": "Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development, state management, provider configuration, multi-environment workflows, infrastructure testing.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_engineer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP",
+        "Invoke for module development, state management, provider configuration, multi-environment work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terraform-engineer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terraform-engineer",
+      "url": "https://clawhub.ai/skills/terraform-engineer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-engineer",
+    "url": "https://clawhub.ai/skills/terraform-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-engineer-b6b99d0e7a7e0023.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terraform-engineer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terraform-engineer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13966bdcd84115835069e537b90d92410fc784432e217d0c95e8ff88209a22ac",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:54:09.955Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45932,
+  "uuid": "skill-clawhub-airport-transit-hotel",
+  "skillKey": "clawhub-airport-transit-hotel",
+  "name": "airport-transit-hotel",
+  "summary": "Find hotels near airports for layovers, early morning flights, or late-night arrivals. Sorted by distance to terminal with shuttle info. Also supports: fligh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_transit_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find hotels near airports for layovers, early morning flights, or late-night arrivals",
+        "Sorted by distance to terminal with shuttle info",
+        "Also supports: fligh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airport-transit-hotel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airport-transit-hotel",
+      "url": "https://clawhub.ai/skills/airport-transit-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-transit-hotel",
+    "url": "https://clawhub.ai/skills/airport-transit-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-transit-hotel-1bb49f535fe943a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airport-transit-hotel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airport-transit-hotel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aa03b33b17cb6bb5189f8acbf80962bf0ed0509a799804d91555f1c1e828a5b",
+      "artifactSizeBytes": 2709
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:50:58.809Z"
+}

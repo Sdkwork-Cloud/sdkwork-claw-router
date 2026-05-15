@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tickdb-market-data@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tickdb_market_data",
+  "skill": {
+    "id": 63632,
+    "skillKey": "clawhub-tickdb-market-data",
+    "name": "TickDB Real-time Market Data API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tickdb-market-data",
+    "url": "https://clawhub.ai/skills/tickdb-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tickdb-market-data-b59926bf9111af90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TickDB 统一实时行情数据 API。覆盖外汇、贵金属、指数、美股、港股、A股、加密货币，提供实时行情、K线、订单簿、资金流向、股票基本面等数据查询。 当用户提及价格、行情、K线、买卖盘、市值、市盈率、资金流向、分时走势、交易日历等金融数据相关话题时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tickdb",
+      "userId": "s177majr951dd6bjydzn5pkhy983g1yg",
+      "displayName": "TickDB",
+      "image": "https://avatars.githubusercontent.com/u/252287337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 897,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 137,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776433556734,
+      "changelog": "tickdb-market-data 1.0.8\n\n- Version bump only; no file or functionality changes detected.\n- All documentation, API usage, and supported features remain the same as in 1.0.7.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f6dca8d08d5fc9ff80b8ec103cc142d5f0f12d76a0e5c267678add420ff36c7"
+}

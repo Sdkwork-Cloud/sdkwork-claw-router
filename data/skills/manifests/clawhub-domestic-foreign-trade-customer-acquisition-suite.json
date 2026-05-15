@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70365,
+  "uuid": "skill-clawhub-domestic-foreign-trade-customer-acquisition-suite",
+  "skillKey": "clawhub-domestic-foreign-trade-customer-acquisition-suite",
+  "name": "内外贸全渠道获客智能助手",
+  "summary": "人机协作台技能。用户输入自然语言销售指令，AI自动分析拆解任务参数，调用 deepsop 平台接口提交任务，等待后查询结果并推送。触发场景：用户说「帮我找客户」「挖掘XXX行业客户」「找XXX个客户」「提交任务」等与客户挖掘、销售任务相关的指令；「发TikTok视频」「生成视频发布到TikTok」等TikTok视...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domestic_foreign_trade_customer_acquisition_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kukuoAI",
+      "features": [
+        "人机协作台技能。用户输入自然语言销售指令，AI自动分析拆解任务参数，调用 deepsop 平台接口提交任务，等待后查询结果并推送。触发场景：用户说「帮我找客户」「挖掘XXX行业客户」「找XX."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domestic-foreign-trade-customer-acquisition-suite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275868190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domestic-foreign-trade-customer-acquisition-suite",
+      "url": "https://clawhub.ai/skills/domestic-foreign-trade-customer-acquisition-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domestic-foreign-trade-customer-acquisition-suite",
+    "url": "https://clawhub.ai/skills/domestic-foreign-trade-customer-acquisition-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domestic-foreign-trade-customer-acquisition-suite-63449d5c4513da68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domestic-foreign-trade-customer-acquisition-suite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-domestic-foreign-trade-customer-acquisition-suite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7a48bf46131613651d8a6762ed3340ebf3678ebca3a0954293108ad2f552fd7",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:13:10.875Z"
+}

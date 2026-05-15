@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47880,
+  "uuid": "skill-clawhub-clawhub-integration",
+  "skillKey": "clawhub-clawhub-integration",
+  "name": "ClawHub Integration",
+  "summary": "Use when browsing, searching, installing, or publishing skills to ClawHub (OpenClaw skill registry). ClawHub is like npm for AI agent skills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piuaibot-stack",
+      "features": [
+        "Use when browsing, searching, installing, or publishing skills to ClawHub (OpenClaw skill regis.",
+        "ClawHub is like npm for AI agent skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266981195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-integration",
+      "url": "https://clawhub.ai/skills/clawhub-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-integration",
+    "url": "https://clawhub.ai/skills/clawhub-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-integration-701f829e6fd05005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02877169cc66531f27b06c3cc5d22eb3f0056d2d4582396f9d38a961f200988c",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:22:46.584Z"
+}

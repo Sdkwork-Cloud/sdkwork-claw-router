@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revid-pdf-to-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_pdf_to_video",
+  "skill": {
+    "id": 46759,
+    "skillKey": "clawhub-revid-pdf-to-video",
+    "name": "PDF to Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-pdf-to-video",
+    "url": "https://clawhub.ai/skills/revid-pdf-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-pdf-to-video-78ddb54a3972979d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a PDF (whitepaper, ebook chapter, slide deck export, research paper) into a short summary video. Use when the source is a PDF URL or a PDF the agent can..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "api00",
+      "userId": "s1728d1rdp70wm5hvmk61q153h85kp8x",
+      "displayName": "api00",
+      "image": "https://avatars.githubusercontent.com/u/57573621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777216488992,
+      "changelog": "Initial release of revid-pdf-to-video\n\n- Create short summary videos from public PDF URLs (whitepapers, research papers, slide decks, ebooks).\n- Supports custom prompts to focus summaries on user-specified sections.\n- Allows optional aspect ratio and video duration settings.\n- Outlines API usage and failure troubleshooting.\n- Must upload local PDFs to public storage for processing.\n- Linked to related skills for HTML articles and advanced media control.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:340dd373b8553b2bdac398a29248c3b6f8434f706ce017c816e785b1a213cf70"
+}

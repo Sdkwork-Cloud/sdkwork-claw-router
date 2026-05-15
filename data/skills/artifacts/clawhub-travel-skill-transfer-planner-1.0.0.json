@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-skill-transfer-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_skill_transfer_planner",
+  "skill": {
+    "id": 38214,
+    "skillKey": "clawhub-travel-skill-transfer-planner",
+    "name": "Travel Skill Transfer Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-skill-transfer-planner",
+    "url": "https://clawhub.ai/skills/travel-skill-transfer-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-skill-transfer-planner-e26c62a30e7b63ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps plan skill development through travel"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776744716262,
+      "changelog": "Travel Skill Transfer Planner 1.0.0 – Initial Release\n\n- Launches a descriptive skill to help travelers plan skill development and transfer through travel.\n- Provides frameworks, templates, checklists, and heuristic analysis for skill gap analysis, development planning, transfer strategy, and integration into resume/life.\n- Returns structured, actionable recommendations in JSON format; no code execution or external data access.\n- Includes clear safety disclaimers and limitations for user guidance.\n- Complete English documentation and unit tests for core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:774c3e880ec27ae733f2565b9b222a910e815ba6def176452efd055b704f23b0"
+}

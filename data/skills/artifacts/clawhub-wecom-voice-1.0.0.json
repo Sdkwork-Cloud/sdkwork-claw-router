@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wecom-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_voice",
+  "skill": {
+    "id": 21211,
+    "skillKey": "clawhub-wecom-voice",
+    "name": "Wecom Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-voice",
+    "url": "https://clawhub.ai/skills/wecom-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-voice-19075f5de6fc4991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send native voice messages to WeCom using Windows TTS. Converts text to speech and sends as voice message (not audio file)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanqisyx",
+      "userId": "publishers:fanqisyx",
+      "displayName": "fanqi",
+      "image": "https://avatars.githubusercontent.com/u/38562035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773782699233,
+      "changelog": "Initial release of wecom-voice.\n\n- Send native voice messages to WeCom (企业微信) using Windows TTS.\n- Converts input text to speech with Microsoft Huihui and outputs AMR format (native voice message).\n- Requires Windows System.Speech and FFmpeg.\n- CLI tool can target individual users.\n- Integrates with OpenClaw for message delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6a4c13130dc369e3db62b2f1472927a1de3ca19b3a5854635a725eabd07e164"
+}

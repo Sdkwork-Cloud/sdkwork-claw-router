@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jarvis-incident-timeline-writer-01@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jarvis_incident_timeline_writer_01",
+  "skill": {
+    "id": 18452,
+    "skillKey": "clawhub-jarvis-incident-timeline-writer-01",
+    "name": "Jarvis Incident Timeline Writer 01"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jarvis-incident-timeline-writer-01",
+    "url": "https://clawhub.ai/skills/jarvis-incident-timeline-writer-01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jarvis-incident-timeline-writer-01-f5ecd314b9407542.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create precise incident timelines from logs and notes. Use when handling development work that needs repeatable steps, quality gates, and practical outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xammarie",
+      "userId": "publishers:xammarie",
+      "displayName": "xammarie",
+      "image": "https://avatars.githubusercontent.com/u/219314498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771439581001,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b44775b9c8665f447fed14616e2a68759112e7db7479cd31bf81135d703e380a"
+}

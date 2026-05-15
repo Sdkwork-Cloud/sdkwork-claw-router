@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29280,
+  "uuid": "skill-clawhub-install-chinese-fonts",
+  "skillKey": "clawhub-install-chinese-fonts",
+  "name": "Install Chinese Fonts",
+  "summary": "Install Chinese/CJK fonts on Linux hosts using distro packages and fontconfig verification. Use when Chinese text renders as tofu / missing glyphs, or when a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_chinese_fonts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fan",
+      "features": [
+        "Install Chinese/CJK fonts on Linux hosts using distro packages and fontconfig verification",
+        "Use when Chinese text renders as tofu / missing glyphs, or when a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/install-chinese-fonts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7427551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "install-chinese-fonts",
+      "url": "https://clawhub.ai/skills/install-chinese-fonts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-chinese-fonts",
+    "url": "https://clawhub.ai/skills/install-chinese-fonts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-chinese-fonts-888398be492f48ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/install-chinese-fonts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-install-chinese-fonts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c21e8b8a94dbcb1f0e3bbcdb39bab051cd1eb797859307f6b9b1ee3f1fbc449",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:33:35.507Z"
+}

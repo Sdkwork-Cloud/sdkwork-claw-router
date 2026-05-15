@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9516,
+  "uuid": "skill-clawhub-clickfunnels",
+  "skillKey": "clawhub-clickfunnels",
+  "name": "ClickFunnels",
+  "summary": "ClickFunnels API integration with managed OAuth. Manage contacts, products, orders, courses, forms, and webhooks. Use this skill when users want to create sa...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickfunnels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "ClickFunnels API integration with managed OAuth",
+        "Manage contacts, products, orders, courses, forms, and webhooks",
+        "Use this skill when users want to create sa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clickfunnels@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clickfunnels",
+      "url": "https://clawhub.ai/skills/clickfunnels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickfunnels",
+    "url": "https://clawhub.ai/skills/clickfunnels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickfunnels-3987e8f923df69e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clickfunnels@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clickfunnels-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7f8e863ec1afcca3cbf1b494c464f6c33ac27ca5e3284f2bbbeaf63e36231a5",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:13:22.986Z"
+}

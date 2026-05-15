@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-image-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_image_generation",
+  "skill": {
+    "id": 52662,
+    "skillKey": "clawhub-openrouter-image-generation",
+    "name": "Openrouter Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-image-generation",
+    "url": "https://clawhub.ai/skills/openrouter-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-image-generation-b61dc8cf4fcc6156.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate or edit images through OpenRouter's multimodal image generation endpoint (`/api/v1/chat/completions`) using OpenRouter-compatible image models. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bawerlacher",
+      "userId": "publishers:bawerlacher",
+      "displayName": "Yihan Wang",
+      "image": "https://avatars.githubusercontent.com/u/29868015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 682,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772089324231,
+      "changelog": "- Initial release of OpenRouter Image Generation skill.\n- Allows generating and editing images via OpenRouter-compatible models using the Chat Completions API.\n- Supports both text-to-image and image-to-image workflows.\n- Fully configurable: choose model, aspect ratio, image size, and advanced provider-specific image configs.\n- Handles API key via argument or environment variable, with optional attribution headers.\n- Saves generated images to the OpenClaw default outbound media directory for easy integration into other flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2f0123d93d256abadd77356a7a341fb764fde10990c73dbd2c91c12d0e46065"
+}

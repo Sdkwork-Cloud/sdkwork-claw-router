@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erc-800claw@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc_800claw",
+  "skill": {
+    "id": 12310,
+    "skillKey": "clawhub-erc-800claw",
+    "name": "ERC-800Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc-800claw",
+    "url": "https://clawhub.ai/skills/erc-800claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc-800claw-d05bc3fbfca1f2d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The OpenClaw entry point for ERC-8004 agent identity and reputation. Register agents on-chain, query identities, give and receive feedback ratings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "primer-dev",
+      "userId": "s170znheys61983e4tb4n426q583hahn",
+      "displayName": "primer-dev",
+      "image": "https://avatars.githubusercontent.com/u/244186697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1806,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770124256382,
+      "changelog": "- Added a \"How to Respond\" section with guidance for interpreting user queries and mapping them to specific CLI commands.\n- Introduced a CLI-focused section, providing command syntax, options, and sample outputs for common agent operations.\n- No code/API changes; documentation update only to improve usability and clarify usage patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f1ffe0085d00ffc60b73f100387534bdb3a0c49d5a74ec068c9323da4b1e775"
+}

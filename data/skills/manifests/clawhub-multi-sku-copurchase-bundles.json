@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42262,
+  "uuid": "skill-clawhub-multi-sku-copurchase-bundles",
+  "skillKey": "clawhub-multi-sku-copurchase-bundles",
+  "name": "Multi-SKU Bundles",
+  "summary": "Mine historical orders for multi-SKU co-purchase patterns, quantify association strength between SKUs, and produce high-converting bundle and Frequently-Boug...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_sku_copurchase_bundles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Mine historical orders for multi-SKU co-purchase patterns, quantify association strength betwee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-sku-copurchase-bundles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-sku-copurchase-bundles",
+      "url": "https://clawhub.ai/skills/multi-sku-copurchase-bundles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-sku-copurchase-bundles",
+    "url": "https://clawhub.ai/skills/multi-sku-copurchase-bundles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-sku-copurchase-bundles-3c518a20a414513f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-sku-copurchase-bundles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-sku-copurchase-bundles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6258e10cf1fb38f8366a8f0950b5257f5ea9014ed19efbcf395a018aab1826d9",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:18:41.356Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ucloud-indeustry-trend@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucloud_indeustry_trend",
+  "skill": {
+    "id": 41052,
+    "skillKey": "clawhub-ucloud-indeustry-trend",
+    "name": "UCloud_indeustry_trend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucloud-indeustry-trend",
+    "url": "https://clawhub.ai/skills/ucloud-indeustry-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucloud-indeustry-trend-9fd75d3459d7d068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UCloud industry trend radar for tracking the latest 30-60 day changes, new customer demand, new business models, solution shifts, high-value financings, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lious68",
+      "userId": "s172qm68a6h34ygj6y3g3s865d84vz5x",
+      "displayName": "bright",
+      "image": "https://avatars.githubusercontent.com/u/15836048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776927072594,
+      "changelog": "Add UCloud keyword to skill description and improve marketplace searchability and display metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d1486997307d7717f7e97585d0209b922fc854bfa4f115e9471e6a6df3884a7"
+}

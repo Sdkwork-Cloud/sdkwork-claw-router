@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56969,
+  "uuid": "skill-clawhub-content-refresher",
+  "skillKey": "clawhub-content-refresher",
+  "name": "Content Refresher",
+  "summary": "Use when updating outdated content, fixing traffic/ranking decay, refreshing stats, adding new sections, or improving freshness signals. 内容更新/排名恢复",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_refresher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Use when updating outdated content, fixing traffic/ranking decay, refreshing stats, adding new.",
+        "内容更新/排名恢复"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-refresher@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-refresher",
+      "url": "https://clawhub.ai/skills/content-refresher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-refresher",
+    "url": "https://clawhub.ai/skills/content-refresher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-refresher-61bd762f3430c0e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-refresher@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-refresher-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4566f80b42ce9db2b8d42a9a4b29079311083b3573e9a9b54dcee5b2bc13dac4",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:40.804Z"
+}

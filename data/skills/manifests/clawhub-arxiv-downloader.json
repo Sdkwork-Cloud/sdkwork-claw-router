@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59939,
+  "uuid": "skill-clawhub-arxiv-downloader",
+  "skillKey": "clawhub-arxiv-downloader",
+  "name": "arXiv Downloader",
+  "summary": "arXiv 论文 PDF/LaTeX 源码下载工具。支持通过 arXiv ID 或 URL 下载论文。 当用户提到下载 arXiv 论文、获取 PDF、下载 LaTeX 源码时使用。 触发条件：(1) 用户要求下载 arXiv 论文 (2) 提供 arXiv ID 或链接 (3) 需要 PDF 或源码",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NingAnMe",
+      "features": [
+        "arXiv 论文 PDF/LaTeX 源码下载工具。支持通过 arXiv ID 或 URL 下载论文。 当用户提到下载 arXiv 论文、获取 PDF、下载 LaTeX 源码时使用。 触发条."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13708622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-downloader",
+      "url": "https://clawhub.ai/skills/arxiv-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-downloader",
+    "url": "https://clawhub.ai/skills/arxiv-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-downloader-f8b0bb4325603fa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2faf8f67f5d05235d8034c03c32babdb5434d915aa8018a2135edbae00f7f77b",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:01:54.624Z"
+}

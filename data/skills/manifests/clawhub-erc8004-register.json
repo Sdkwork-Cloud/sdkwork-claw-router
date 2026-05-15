@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14137,
+  "uuid": "skill-clawhub-erc8004-register",
+  "skillKey": "clawhub-erc8004-register",
+  "name": "Erc8004 Register",
+  "summary": "Register AI agents on-chain, update metadata, validate registrations, and auto-fix broken profiles via the ERC-8004 Identity Registry. Supports Base, Ethereum, Polygon, Monad, BNB.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc8004_register",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aether",
+      "features": [
+        "Register AI agents on-chain, update metadata, validate registrations, and auto-fix broken profi.",
+        "Supports Base, Ethereum, Polygon, Monad, BNB."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erc8004-register@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258334579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erc8004-register",
+      "url": "https://clawhub.ai/skills/erc8004-register"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc8004-register",
+    "url": "https://clawhub.ai/skills/erc8004-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc8004-register-0d5962bdbe1f91ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erc8004-register@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-erc8004-register-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:923661b309b847d9ab087a54711ee80be4e01ebe40a2270adab707e0cbb3b4c8",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T04:34:31.250Z"
+}

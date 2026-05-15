@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21704,
+  "uuid": "skill-clawhub-clawguard-scanner",
+  "skillKey": "clawhub-clawguard-scanner",
+  "name": "ClawGuard Scanner",
+  "summary": "Security scanner for OpenClaw skills. Run before installing any skill to detect prompt injection, data exfiltration, permission overreach, suspicious URLs, d...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frrrrrrrrank",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Run before installing any skill to detect prompt injection, data exfiltration, permission overr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-scanner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82270228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-scanner",
+      "url": "https://clawhub.ai/skills/clawguard-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-scanner",
+    "url": "https://clawhub.ai/skills/clawguard-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-scanner-669dc918d64ece68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-scanner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-scanner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4eed368a524f491086cf6003829d34dd380635da67962e72ac23eda379e76f1c",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:22:50.082Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15753,
+  "uuid": "skill-clawhub-sec-watcher",
+  "skillKey": "clawhub-sec-watcher",
+  "name": "SEC Watcher",
+  "summary": "Monitor SEC EDGAR filings for AI/tech companies in real time. Use this skill when the user asks about SEC filings, EDGAR data, company disclosures, 8-K event...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Probabilistic Paladin",
+      "features": [
+        "Monitor SEC EDGAR filings for AI/tech companies in real time",
+        "Use this skill when the user asks about SEC filings, EDGAR data, company disclosures, 8-K event."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48436741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-watcher",
+      "url": "https://clawhub.ai/skills/sec-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-watcher",
+    "url": "https://clawhub.ai/skills/sec-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-watcher-07e6fe83268e2720.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4669c63f80288612f8a18311d4212dc0ae4ed19e98c370543ede564fc0ab19b9",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T07:15:18.321Z"
+}

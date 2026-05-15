@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52331,
+  "uuid": "skill-clawhub-social-card",
+  "skillKey": "clawhub-social-card",
+  "name": "social-card",
+  "summary": "Generate social preview images (OG, Twitter, GitHub) with a fluent builder API. Single dependency — Pillow.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vveerrgg",
+      "features": [
+        "Generate social preview images (OG, Twitter, GitHub) with a fluent builder API",
+        "Single dependency — Pillow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-card@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1497261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-card",
+      "url": "https://clawhub.ai/skills/social-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-card",
+    "url": "https://clawhub.ai/skills/social-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-card-ef3dc0e4fcbf3871.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-card@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-card-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:379d72b8401667274eb15f3b67b3b65c2c4ac438890ffe5c0417b733d7c06c38",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:17:25.661Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49953,
+  "uuid": "skill-clawhub-kc-gui",
+  "skillKey": "clawhub-kc-gui",
+  "name": "Kc Gui",
+  "summary": "Use the bundled kc.exe Windows agent to perform GUI-based desktop automation tasks that cannot be handled through CLI or scripting alone. Use this skill when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kc_gui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Use the bundled kc.exe Windows agent to perform GUI-based desktop automation tasks that cannot.",
+        "Use this skill when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kc-gui@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kc-gui",
+      "url": "https://clawhub.ai/skills/kc-gui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kc-gui",
+    "url": "https://clawhub.ai/skills/kc-gui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kc-gui-fb8a95425e2af920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kc-gui@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kc-gui-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4788e7152429d60ee67801a2c68997b55097b8a59a9906f976baa55015544894",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T17:39:32.021Z"
+}

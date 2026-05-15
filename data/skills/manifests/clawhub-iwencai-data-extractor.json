@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65573,
+  "uuid": "skill-clawhub-iwencai-data-extractor",
+  "skillKey": "clawhub-iwencai-data-extractor",
+  "name": "同花顺问财数据提取器",
+  "summary": "从同花顺问财(iwencai.com) AI选股页面批量抓取涨停股票数据，使用 agent-browser 通过 Chrome CDP 连接操作浏览器，将数据存入 SQLite 数据库，并可导出为 Excel 汇总报告。适用场景：用户要求爬取/抓取/提取问财涨停数据、查询特定日期涨停股票、批量获取历史涨停记录、生...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iwencai_data_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HJ2916",
+      "features": [
+        "从同花顺问财(iwencai.com) AI选股页面批量抓取涨停股票数据，使用 agent-browser 通过 Chrome CDP 连接操作浏览器，将数据存入 SQLite 数据库，并可."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iwencai-data-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205438258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iwencai-data-extractor",
+      "url": "https://clawhub.ai/skills/iwencai-data-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iwencai-data-extractor",
+    "url": "https://clawhub.ai/skills/iwencai-data-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iwencai-data-extractor-fa87b2c880f10643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iwencai-data-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iwencai-data-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87053057585b85e3789568620f33dae3ee189232e1a20989d65d76bba20dda7f",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:02:46.992Z"
+}

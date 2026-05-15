@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66690,
+  "uuid": "skill-clawhub-git-weekly",
+  "skillKey": "clawhub-git-weekly",
+  "name": "git-weekly",
+  "summary": "用于每周自动分析 Git 提交记录，生成包含技术挑战、性能优化及 AI 提效维度的深度复盘报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_weekly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "商汤小浣熊",
+      "features": [
+        "用于每周自动分析 Git 提交记录，生成包含技术挑战、性能优化及 AI 提效维度的深度复盘报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-weekly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5978574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-weekly",
+      "url": "https://clawhub.ai/skills/git-weekly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-weekly",
+    "url": "https://clawhub.ai/skills/git-weekly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-weekly-705198bc85e57885.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-weekly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-weekly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da7b923549e68da6360a472653bf2fff8329684821022b64426807c93ffa72de",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:57:37.771Z"
+}

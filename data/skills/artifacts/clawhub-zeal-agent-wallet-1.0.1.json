@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeal-agent-wallet@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeal_agent_wallet",
+  "skill": {
+    "id": 20492,
+    "skillKey": "clawhub-zeal-agent-wallet",
+    "name": "Zeal Agent Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeal-agent-wallet",
+    "url": "https://clawhub.ai/skills/zeal-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeal-agent-wallet-3d85edd453c1344a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Propose transactions to a Zeal Wallet. Use when the user wants to set up an agent as a Zeal Wallet signer, propose transactions, or manage a delegate wallet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicvaniek",
+      "userId": "publishers:nicvaniek",
+      "displayName": "Nicolai van Niekerk",
+      "image": "https://avatars.githubusercontent.com/u/14542853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772727252090,
+      "changelog": "- Update proxy endpoint\n- Reduced the maximum length for the `--origin` transaction description parameter from 250 to 200 characters",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:698b6ba67c15a24b4a2c6d6e2e3bada659e5ea91d388465e44e268ed154714c3"
+}

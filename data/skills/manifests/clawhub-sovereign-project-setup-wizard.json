@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18328,
+  "uuid": "skill-clawhub-sovereign-project-setup-wizard",
+  "skillKey": "clawhub-sovereign-project-setup-wizard",
+  "name": "Sovereign project-setup-wizard",
+  "summary": "Generates production-ready project scaffolds for Node.js, Python, Go, or Rust with directory, .gitignore, README, CI/CD, Docker, linting, testing, and licens...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_project_setup_wizard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryudi84",
+      "features": [
+        "Generates production-ready project scaffolds for Node.js, Python, Go, or Rust with directory, .."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-project-setup-wizard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67792598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-project-setup-wizard",
+      "url": "https://clawhub.ai/skills/sovereign-project-setup-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-project-setup-wizard",
+    "url": "https://clawhub.ai/skills/sovereign-project-setup-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-project-setup-wizard-26898c378f972ad1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-project-setup-wizard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-project-setup-wizard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b8995cb5d95f09daf06743cf698d2b83889f4524ef25741a314d7e5792d84b4",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:39:04.470Z"
+}

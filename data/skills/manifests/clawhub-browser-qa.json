@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25934,
+  "uuid": "skill-clawhub-browser-qa",
+  "skillKey": "clawhub-browser-qa",
+  "name": "Browser QA",
+  "summary": "Automate visual testing and UI interaction verification. 4-phase methodology: smoke test (console errors, network status, Web Vitals), interaction test (form...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Automate visual testing and UI interaction verification",
+        "4-phase methodology: smoke test (console errors, network status, Web Vitals), interaction test."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-qa@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-qa",
+      "url": "https://clawhub.ai/skills/browser-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-qa",
+    "url": "https://clawhub.ai/skills/browser-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-qa-3a75f63fd5f5ceba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-qa@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-qa-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07484e5191d35d917d813cdde8969fd2f5c70a5b8e21cb067c8d988e3f64f42e",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:12:02.929Z"
+}

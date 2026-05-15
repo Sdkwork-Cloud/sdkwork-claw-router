@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-release@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_release",
+  "skill": {
+    "id": 47857,
+    "skillKey": "clawhub-skill-release",
+    "name": "Skill Release"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-release",
+    "url": "https://clawhub.ai/skills/skill-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-release-b7f54f2ee661cb8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish and manage Claude Code skills on ClawHub (clawhub.ai). Use when user wants to \"publish skill\", \"update skill version\", \"release to clawhub\", \"clawhub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "casperkwok",
+      "userId": "s17fyhjs9jxpg3xe0y1hvteyd5858px1",
+      "displayName": "Casper",
+      "image": "https://avatars.githubusercontent.com/u/4013050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777685167275,
+      "changelog": "Initial release: publish and update Claude Code skills on ClawHub with version bumping and changelog generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac3b61f9c8ad5df7c572e65b107826cd689203070b94b92b93abc4d002166653"
+}

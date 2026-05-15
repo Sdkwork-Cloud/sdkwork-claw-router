@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53148,
+  "uuid": "skill-clawhub-census",
+  "skillKey": "clawhub-census",
+  "name": "Census",
+  "summary": "US Census Bureau — population, demographics, ACS data, economic indicators, and geographic data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.census",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "US Census Bureau — population, demographics, ACS data, economic indicators, and geographic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/census@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "census",
+      "url": "https://clawhub.ai/skills/census"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "census",
+    "url": "https://clawhub.ai/skills/census",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/census-7969bf2d3a9ceff9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/census@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-census-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3509d3964438e3615bef2a80ec8f227414a81b1d5b28ec909f5eed186863c5d",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:04:40.881Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-correction-cn@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_correction_cn",
+  "skill": {
+    "id": 57767,
+    "skillKey": "clawhub-bot-correction-cn",
+    "name": "bot纠偏"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-correction-cn",
+    "url": "https://clawhub.ai/skills/bot-correction-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-correction-cn-26d9bd4f777ecc1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "bot纠偏 discovery skill for VeriClaw 爪印. Use when the intent is bot纠偏, bot correction, bot验证, bot drift recovery, or AI bot claimed progress without evidence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheygoodbai",
+      "userId": "s17f0jxkymmhg7fyyxgc6d57ex83gjd9",
+      "displayName": "Sheygoodbai",
+      "image": "https://avatars.githubusercontent.com/u/143479205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775424357513,
+      "changelog": "Launch mixed-language bot correction discovery route for VeriClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edcc844fd72bd15c7797df8306fb2aa71d1d0555d40f43556bb6bf601329f830"
+}

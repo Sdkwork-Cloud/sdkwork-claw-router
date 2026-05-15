@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42181,
+  "uuid": "skill-clawhub-weather-stable",
+  "skillKey": "clawhub-weather-stable",
+  "name": "Weather Stable",
+  "summary": "Stable weather skill for OpenClaw. Designed for reliable same-day weather queries with predictable output, Chinese city support, and automation-friendly plai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_stable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paceycrognale",
+      "features": [
+        "Stable weather skill for OpenClaw",
+        "Designed for reliable same-day weather queries with predictable output, Chinese city support, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-stable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265425477?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-stable",
+      "url": "https://clawhub.ai/skills/weather-stable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-stable",
+    "url": "https://clawhub.ai/skills/weather-stable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-stable-702619a793ff8855.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-stable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-stable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d2f52e38ff1ce150d27bdb79d61802c732e708c894e7032a375580fb585f96",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T02:50:13.797Z"
+}

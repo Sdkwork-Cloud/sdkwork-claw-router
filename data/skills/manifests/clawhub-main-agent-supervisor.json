@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24870,
+  "uuid": "skill-clawhub-main-agent-supervisor",
+  "skillKey": "clawhub-main-agent-supervisor",
+  "name": "Main Agent Supervisor",
+  "summary": "Supervise a main agent so it defaults to execution, suppresses obvious permission loops, and escalates to the user only for true approvals or critical ambigu...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.main_agent_supervisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sjinopenclaw",
+      "features": [
+        "Supervise a main agent so it defaults to execution, suppresses obvious permission loops, and es."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/main-agent-supervisor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29119182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "main-agent-supervisor",
+      "url": "https://clawhub.ai/skills/main-agent-supervisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "main-agent-supervisor",
+    "url": "https://clawhub.ai/skills/main-agent-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/main-agent-supervisor-9a9d7f2c25245d52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/main-agent-supervisor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-main-agent-supervisor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba3812cffca1b21d61f0b75894dd3027d84db5de17813f5d997c11b365f49180",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:18:11.508Z"
+}

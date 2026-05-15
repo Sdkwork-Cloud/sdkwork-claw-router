@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72491,
+  "uuid": "skill-clawhub-contract-risk-reviewer",
+  "skillKey": "clawhub-contract-risk-reviewer",
+  "name": "法律合同风险审查系统",
+  "summary": "专业级合同风险审查工具，自动识别 20+ 类常见风险条款，给出修改建议和法律依据",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_risk_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amaxclaw",
+      "features": [
+        "专业级合同风险审查工具，自动识别 20+ 类常见风险条款，给出修改建议和法律依据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-risk-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269517300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-risk-reviewer",
+      "url": "https://clawhub.ai/skills/contract-risk-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-risk-reviewer",
+    "url": "https://clawhub.ai/skills/contract-risk-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-risk-reviewer-858fff1499bf0c12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-risk-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-risk-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4409da857bc83cd9a4184ed4bbba42491909ccc4237c2d656f7b1696e9aff7b7",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:57:55.919Z"
+}

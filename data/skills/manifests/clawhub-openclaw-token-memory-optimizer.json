@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13977,
+  "uuid": "skill-clawhub-openclaw-token-memory-optimizer",
+  "skillKey": "clawhub-openclaw-token-memory-optimizer",
+  "name": "Openclaw Token Memory Optimizer",
+  "summary": "Optimization suite for OpenClaw agents to prevent token leaks and context bloat. Use when an agent needs to implement background task isolation (Cron) or a Reset & Summarize workflow (RAG).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_token_memory_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klautimus",
+      "features": [
+        "Optimization suite for OpenClaw agents to prevent token leaks and context bloat",
+        "Use when an agent needs to implement background task isolation (Cron) or a Reset & Summarize wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-token-memory-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94497010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-token-memory-optimizer",
+      "url": "https://clawhub.ai/skills/openclaw-token-memory-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-token-memory-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-token-memory-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-token-memory-optimizer-58ad1d3150cf7d5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-token-memory-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-token-memory-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb8e683aa5cc141535682e09c9fed395febebbf5b6846141a1637bc25820476a",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:24:13.127Z"
+}

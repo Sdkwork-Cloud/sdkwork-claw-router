@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flatastic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flatastic",
+  "skill": {
+    "id": 28617,
+    "skillKey": "clawhub-flatastic",
+    "name": "Flatastic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flatastic",
+    "url": "https://clawhub.ai/skills/flatastic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flatastic-213250a1db2da0ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage shared household chores, shopping lists, and expenses via Flatastic. Use when user asks about chores, WG tasks, shopping list, expenses, or Flatastic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "david-schopf",
+      "userId": "s1768zwedtjmxpacw3x4eyp87183jc88",
+      "displayName": "david-schopf",
+      "image": "https://avatars.githubusercontent.com/u/7288717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773398938009,
+      "changelog": "- Initial release of Flatastic CLI skill for managing shared household chores, shopping lists, and expenses.\n- Supports authentication, chore management, shopping list operations, expense and balance tracking, and bulletin board messaging.\n- Offers comprehensive command set for flat routines: chores, shopping, expenses, and WG info.\n- Enables partial name matching for easier, faster interactions.\n- Integrates with the Flatastic API to synchronize data, trigger reminders, and update household activity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cfe1ef7dcb5ab9ccc15e8f1ec0cf50b3dd034867446674ca68268ba9ce67213"
+}

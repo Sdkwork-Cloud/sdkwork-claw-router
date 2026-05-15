@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22535,
+  "uuid": "skill-clawhub-skill-dropshipping-fulfillment",
+  "skillKey": "clawhub-skill-dropshipping-fulfillment",
+  "name": "Skill Dropshipping Fulfillment",
+  "summary": "Automates order fulfillment by pushing WooCommerce orders to CJ Dropshipping. Fetches \"Processing\" orders, matches line items to CJ variants via a supplier s...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_dropshipping_fulfillment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Automates order fulfillment by pushing WooCommerce orders to CJ Dropshipping",
+        "Fetches \"Processing\" orders, matches line items to CJ variants via a supplier s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-dropshipping-fulfillment@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-dropshipping-fulfillment",
+      "url": "https://clawhub.ai/skills/skill-dropshipping-fulfillment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-dropshipping-fulfillment",
+    "url": "https://clawhub.ai/skills/skill-dropshipping-fulfillment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-dropshipping-fulfillment-aa1351db71775727.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-dropshipping-fulfillment@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-dropshipping-fulfillment-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a282d1e0d190263a1a8a4557c28f5cacf4bfbbaaa3b1a3d2ac4457165a9aef44",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T21:24:39.543Z"
+}

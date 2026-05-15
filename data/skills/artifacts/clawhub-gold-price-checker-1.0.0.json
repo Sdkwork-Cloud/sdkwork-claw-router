@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-price-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_checker",
+  "skill": {
+    "id": 71638,
+    "skillKey": "clawhub-gold-price-checker",
+    "name": "gold-price-checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-checker",
+    "url": "https://clawhub.ai/skills/gold-price-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-checker-f9e14dbc6aae2947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内金价查询工具。用于查询黄金实时价格、银行金条价格、金店零售价、国际金价和黄金未来趋势分析。当用户询问金价、黄金价格、今日金价、金店价格、银行金条、国际金价、伦敦金、黄金走势或未来趋势时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmu14641",
+      "userId": "publishers:anmu14641",
+      "displayName": "anmu14641",
+      "image": "https://avatars.githubusercontent.com/u/239561593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1174,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772951419254,
+      "changelog": "Initial release of the gold-price-checker skill:\n\n- Enables real-time gold price queries, including domestic, international, bank bars, jewelry stores, and gold recycling prices.\n- Retrieves data from jinjia.com.cn using the extract_content_from_websites tool.\n- Supports queries about gold price trends and provides structured output for easier understanding.\n- Includes example usage and guidance for interpreting and analyzing gold price data.\n- Reminds users that all data is for reference only and may differ from actual transaction prices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b47c046f4bc2b9522cd228ca6d561e7d18d218307e64366ec7e4e7c6d9f6043"
+}

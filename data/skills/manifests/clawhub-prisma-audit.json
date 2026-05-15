@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37343,
+  "uuid": "skill-clawhub-prisma-audit",
+  "skillKey": "clawhub-prisma-audit",
+  "name": "prisma-audit",
+  "summary": "Audit and validate Prisma Access configurations against best practices and security standards. Use when reviewing security policies, checking for misconfigur...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "H@CKMEN",
+      "features": [
+        "Audit and validate Prisma Access configurations against best practices and security standards",
+        "Use when reviewing security policies, checking for misconfigur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prisma-audit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11771122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prisma-audit",
+      "url": "https://clawhub.ai/skills/prisma-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-audit",
+    "url": "https://clawhub.ai/skills/prisma-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-audit-416cf8c9ac52d4aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prisma-audit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prisma-audit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a3c60409c27df06c8eafaf3cdb8cbe8a8d1647f0768790429c1bab9dcb3428e",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:21:15.525Z"
+}

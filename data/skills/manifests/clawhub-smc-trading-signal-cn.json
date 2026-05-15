@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61540,
+  "uuid": "skill-clawhub-smc-trading-signal-cn",
+  "skillKey": "clawhub-smc-trading-signal-cn",
+  "name": "Smc Trading Signal",
+  "summary": "SMC 聪明钱交易信号监控，1H 定方向 +15M 入场，ATR 动态止盈止损。支持黄金/加密货币/外汇。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smc_trading_signal_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zt6558609-cpu",
+      "features": [
+        "SMC 聪明钱交易信号监控，1H 定方向 +15M 入场，ATR 动态止盈止损。支持黄金/加密货币/外汇。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smc-trading-signal-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233548982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smc-trading-signal-cn",
+      "url": "https://clawhub.ai/skills/smc-trading-signal-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smc-trading-signal-cn",
+    "url": "https://clawhub.ai/skills/smc-trading-signal-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smc-trading-signal-cn-d5d0b63bf18991fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smc-trading-signal-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smc-trading-signal-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f199ce3574f07c881bfeef0f2c9c0bf87fc8bb16738ec664c53d7e1926017f",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:57:02.444Z"
+}

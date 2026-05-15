@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssh-remote-sanitized@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_remote_sanitized",
+  "skill": {
+    "id": 65700,
+    "skillKey": "clawhub-ssh-remote-sanitized",
+    "name": "Ssh Remote Sanitized"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-remote-sanitized",
+    "url": "https://clawhub.ai/skills/ssh-remote-sanitized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-remote-sanitized-c9c420d5c79c84ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SSH 远程服务器管理工具。支持多服务器连接管理、命令执行、文件传输、系统监控、服务管理、日志分析、安全检查等功能，适用于 Linux/Unix 服务器运维。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickliang",
+      "userId": "s171enx9zatvz72b096s1dzvm583gf78",
+      "displayName": "myroboskill.com",
+      "image": "https://avatars.githubusercontent.com/u/7106779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773503491991,
+      "changelog": "Initial release of SSH remote server management skill.\n\n- Supports multi-server SSH connection management\n- Features remote command execution, file upload/download, system monitoring, service management, log analysis, and security checks\n- Designed for Linux/Unix server operations and maintenance\n- Includes configurable server list and usage examples\n- Provides trigger words for key operations (连接, 执行, 上传, 下载, 监控, 服务, 日志, 安全)\n- Requires Node.js (>=18.0.0) and ssh2 (>=1.15.0)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36b80030080ade91e462d8b9eef2c241056bb8278ed0a8b19a9541701ebe6cc6"
+}

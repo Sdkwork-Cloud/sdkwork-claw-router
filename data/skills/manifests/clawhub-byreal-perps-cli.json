@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38246,
+  "uuid": "skill-clawhub-byreal-perps-cli",
+  "skillKey": "clawhub-byreal-perps-cli",
+  "name": "Byreal Perps CLI",
+  "summary": "Byreal Hyperliquid perpetual futures trading CLI: account setup, market/limit orders with TP/SL, position close-market/close-limit/close-all, leverage contro...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byreal_perps_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James333",
+      "features": [
+        "Byreal Hyperliquid perpetual futures trading CLI: account setup, market/limit orders with TP/SL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byreal-perps-cli@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40433945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byreal-perps-cli",
+      "url": "https://clawhub.ai/skills/byreal-perps-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byreal-perps-cli",
+    "url": "https://clawhub.ai/skills/byreal-perps-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byreal-perps-cli-16310333c980d611.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byreal-perps-cli@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-byreal-perps-cli-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:743598e911f210771afc21a6bb69f3c13ea52919dab2458282531371379ecc2d",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:01:34.824Z"
+}

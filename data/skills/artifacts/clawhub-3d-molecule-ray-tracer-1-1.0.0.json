@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/3d-molecule-ray-tracer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3d_molecule_ray_tracer_1",
+  "skill": {
+    "id": 39582,
+    "skillKey": "clawhub-3d-molecule-ray-tracer-1",
+    "name": "3D Molecule Ray-tracer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3d-molecule-ray-tracer-1",
+    "url": "https://clawhub.ai/skills/3d-molecule-ray-tracer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3d-molecule-ray-tracer-1-773434bad4ff622d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate photorealistic rendering scripts for PyMOL and UCSF ChimeraX."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775107531246,
+      "changelog": "Initial release of 3d-molecule-ray-tracer skill.\n\n- Enables generation of photorealistic rendering scripts for PyMOL and UCSF ChimeraX\n- Supports cinematic lighting, depth of field, ambient occlusion, and publication presets\n- Provides customizable scene parameters including camera, materials, and atmosphere\n- Offers explicit input validation, reproducible outputs, and structured error handling\n- Includes audit-ready commands and detailed usage documentation for both tools\n- Requires Python 3.8+ and separate installation of PyMOL or ChimeraX",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ae5d5bf2961498756505df84496b435324689fd5593602a1fc642afbbc5c124"
+}

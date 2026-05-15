@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-paper-to-ppt-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_paper_to_ppt_v1",
+  "skill": {
+    "id": 67063,
+    "skillKey": "clawhub-research-paper-to-ppt-v1",
+    "name": "医学文献ppt生成skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-paper-to-ppt-v1",
+    "url": "https://clawhub.ai/skills/research-paper-to-ppt-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-paper-to-ppt-v1-2b1561563c11574a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将指定医学研究论文自动生成 PPTX 汇报文件的技能。用于用户给出单篇文献标题、PMID、DOI、InfoX-Med 文献 id 或可唯一定位该论文的信息时：先用 InfoX-Med 相关检索技能精确定位目标论文，再读取全文与原文图表，最后按基础研究型汇报大纲选择性生成 PPTX。适用于\"根据这篇论文生成汇报PP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jukiss1",
+      "userId": "s175xm88denp5dr6aemmb2887n84088b",
+      "displayName": "jukiss1",
+      "image": "https://avatars.githubusercontent.com/u/221144047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775025211533,
+      "changelog": "Initial release: 支持连接infoxmed数据库，生成医学文献ppt",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7360039b9b0c575a84ef3bde5708bb20dc1ed859c5dee63c45fe951c263d14e"
+}

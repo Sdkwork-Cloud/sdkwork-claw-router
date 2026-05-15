@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jira-api-rest@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_api_rest",
+  "skill": {
+    "id": 25702,
+    "skillKey": "clawhub-jira-api-rest",
+    "name": "Jira API (REST + Agile)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-api-rest",
+    "url": "https://clawhub.ai/skills/jira-api-rest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-api-rest-e045472fb94a63a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Jira Cloud by managing worklogs, executing advanced JQL searches, editing/deleting worklogs, handling sprints, and making direct REST API calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "temperatio",
+      "userId": "s172hc53f8zq0tnz4wsyp0zz8h8480n3",
+      "displayName": "César",
+      "image": "https://avatars.githubusercontent.com/u/71706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773774830958,
+      "changelog": "Initial release: Jira Cloud REST API helper. Covers issues, comments, transitions, assign/link; worklogs add/update/delete; boards/sprints via Agile API; JQL via /search/jql.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd6a831f7dc456ebf1b4fc439d9935dc1f348dbf804fedc1d6eddcbb3eab462c"
+}

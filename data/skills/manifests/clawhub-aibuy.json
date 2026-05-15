@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71428,
+  "uuid": "skill-clawhub-aibuy",
+  "skillKey": "clawhub-aibuy",
+  "name": "Aibuy",
+  "summary": "AIBuy 水贝珠宝行情助手，面向深圳水贝批发市场的一手货源查询。 覆盖三类能力： 1. 水贝珠宝产品查询：当用户询问珠宝商品、想查看或比较货源、提到任何珠宝品类 （黄金、K金、翡翠、钻石、手镯、戒指、项链、耳饰、彩宝等）、询问价格或 想浏览批发行情时触发。即使用户表达随意也应触发，例如\"有没有18K的\"、 \"看...",
+  "version": "1.7.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibuy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plabzzxx",
+      "features": [
+        "AIBuy 水贝珠宝行情助手，面向深圳水贝批发市场的一手货源查询。 覆盖三类能力： 1",
+        "水贝珠宝产品查询：当用户询问珠宝商品、想查看或比较货源、提到任何珠宝品类 （黄金、K金、翡翠、钻石、手镯、戒指、项链、耳饰、彩宝等）、询问价格或 想浏览批发行情时触发。即使用户表达随意也应触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aibuy@1.7.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172346891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aibuy",
+      "url": "https://clawhub.ai/skills/aibuy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibuy",
+    "url": "https://clawhub.ai/skills/aibuy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibuy-5873ca297da2d219.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aibuy@1.7.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-aibuy-1.7.6.json",
+      "version": "1.7.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d56f9e3c1fa1c4668d6f7f0d9a9376db9c1ed7342ee7fd60140eeb70e15180c",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:23:07.165Z"
+}

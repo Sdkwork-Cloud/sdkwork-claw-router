@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62329,
+  "uuid": "skill-clawhub-security-audit-hand",
+  "skillKey": "clawhub-security-audit-hand",
+  "name": "Security Audit Hand",
+  "summary": "自主安全审计 - 定期检查系统安全、发现风险、生成报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_audit_hand",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaomo",
+      "features": [
+        "定期检查系统安全、发现风险、生成报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-audit-hand@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100823174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-audit-hand",
+      "url": "https://clawhub.ai/skills/security-audit-hand"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-audit-hand",
+    "url": "https://clawhub.ai/skills/security-audit-hand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-audit-hand-48bf07c5e0003270.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-audit-hand@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-audit-hand-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6d552d7b0e10bce5a09b6762141f61b883f65a9918524dac27f608ea8f4e5b5",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:49:10.281Z"
+}

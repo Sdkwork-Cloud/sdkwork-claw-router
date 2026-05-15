@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19749,
+  "uuid": "skill-clawhub-correction-memory",
+  "skillKey": "clawhub-correction-memory",
+  "name": "Correction Memory",
+  "summary": "Makes agent corrections persistent and reusable. When you override, reject, or correct an agent's output, this skill logs the correction and automatically in...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.correction_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dp-del",
+      "features": [
+        "Makes agent corrections persistent and reusable",
+        "When you override, reject, or correct an agent's output, this skill logs the correction and aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/correction-memory@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262228646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "correction-memory",
+      "url": "https://clawhub.ai/skills/correction-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "correction-memory",
+    "url": "https://clawhub.ai/skills/correction-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/correction-memory-5c626648fd3bcf9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/correction-memory@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-correction-memory-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8206f92d3e07b0029dc8816c14724cf251cadf2e40efec06f1bd41352d237c0a",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:23:29.533Z"
+}

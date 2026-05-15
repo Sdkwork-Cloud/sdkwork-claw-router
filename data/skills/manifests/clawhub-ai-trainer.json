@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18269,
+  "uuid": "skill-clawhub-ai-trainer",
+  "skillKey": "clawhub-ai-trainer",
+  "name": "Ai Trainer",
+  "summary": "Autonomously learn, summarize, and integrate complex technical documentation into system memory and rules to optimize AI task workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_trainer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lhwa8685",
+      "features": [
+        "Autonomously learn, summarize, and integrate complex technical documentation into system memory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-trainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195074450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-trainer",
+      "url": "https://clawhub.ai/skills/ai-trainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-trainer",
+    "url": "https://clawhub.ai/skills/ai-trainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-trainer-048d648473892622.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-trainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-trainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:573035e65e0bc7580e0f28fda481a3a3def3cfb529a27dde33e24d65df4bddf3",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:44:33.286Z"
+}

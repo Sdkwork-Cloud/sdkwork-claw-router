@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawme",
+  "skill": {
+    "id": 50895,
+    "skillKey": "clawhub-clawme",
+    "name": "ClawMe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawme",
+    "url": "https://clawhub.ai/skills/clawme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawme-b6a79e9f2ec6edb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send instructions to user's real browser via ClawMe Chrome extension. Fill forms, tweet, email, click, extract — user sees and confirms each action in the si..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongsheng123132",
+      "userId": "s17084bpvdzamtn12vmsse6r0d83ttn8",
+      "displayName": "dongsheng123132",
+      "image": "https://avatars.githubusercontent.com/u/90887123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772344668969,
+      "changelog": "Initial release of ClawMe: Control your real Chrome browser via simple API instructions.\n\n- Send browser automation commands (fill forms, tweet, email, click, extract data) through the ClawMe Chrome extension.\n- Users see each instruction and confirm before execution, preserving control and security.\n- Supports multi-step workflows with progress tracking in the browser side panel.\n- Compatible with user's existing Chrome sessions and logins.\n- Simple setup: install extension and configure a client token.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7adbd496e848055b9d0f7966c1a47ea2b44d3b8e11742ea2d984d366e1be035"
+}

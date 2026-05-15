@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17416,
+  "uuid": "skill-clawhub-memory-ops",
+  "skillKey": "clawhub-memory-ops",
+  "name": "Memory Ops",
+  "summary": "Manage mandatory PostgreSQL memory operations with context retrieval, prompt logging, delegation tracking, and audit event recording using Memory_openclaw an...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ianleme",
+      "features": [
+        "Manage mandatory PostgreSQL memory operations with context retrieval, prompt logging, delegatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-ops@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162730731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-ops",
+      "url": "https://clawhub.ai/skills/memory-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-ops",
+    "url": "https://clawhub.ai/skills/memory-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-ops-263851c14847be31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-ops@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-ops-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb57a3bb134b310509ec81145c663c10b776f2ee9473706e4ad3e27a20b158dc",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T03:06:51.461Z"
+}

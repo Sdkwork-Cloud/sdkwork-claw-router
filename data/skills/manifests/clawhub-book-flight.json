@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10413,
+  "uuid": "skill-clawhub-book-flight",
+  "skillKey": "clawhub-book-flight",
+  "name": "Search and Book Flights",
+  "summary": "Find, book, and change flights for your human via email. One message, and done. (by BonBook)",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_flight",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BonBook",
+      "features": [
+        "Find, book, and change flights for your human via email",
+        "One message, and done",
+        "(by BonBook)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-flight@2.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95665008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-flight",
+      "url": "https://clawhub.ai/skills/book-flight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-flight",
+    "url": "https://clawhub.ai/skills/book-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-flight-9f363f5469e6500c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-flight@2.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-flight-2.4.1.json",
+      "version": "2.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b079f25511ac951ac6684a052073d91ff2bb48873f884d68e9432963fb333257",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:39:38.950Z"
+}

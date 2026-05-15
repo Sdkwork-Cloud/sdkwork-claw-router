@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28795,
+  "uuid": "skill-clawhub-barct-efectivo-vs-cuotas-ipc",
+  "skillKey": "clawhub-barct-efectivo-vs-cuotas-ipc",
+  "name": "Efectivo o Cuotas (ARGENTINA)",
+  "summary": "Comparar efectivo, cuotas y tarjeta a fin de mes usando valor presente, con salida breve y clara.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barct_efectivo_vs_cuotas_ipc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fernando Hidalgo",
+      "features": [
+        "Comparar efectivo, cuotas y tarjeta a fin de mes usando valor presente, con salida breve y clar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barct-efectivo-vs-cuotas-ipc@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23461656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barct-efectivo-vs-cuotas-ipc",
+      "url": "https://clawhub.ai/skills/barct-efectivo-vs-cuotas-ipc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barct-efectivo-vs-cuotas-ipc",
+    "url": "https://clawhub.ai/skills/barct-efectivo-vs-cuotas-ipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barct-efectivo-vs-cuotas-ipc-700299193c2f8508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barct-efectivo-vs-cuotas-ipc@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-barct-efectivo-vs-cuotas-ipc-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef093fb5020d9709a26a6599062ac4bf6b74bb0c56273245f754c0552ea43eb4",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T20:13:14.109Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/storyboard-creation@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storyboard_creation",
+  "skill": {
+    "id": 12349,
+    "skillKey": "clawhub-storyboard-creation",
+    "name": "Storyboard Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storyboard-creation",
+    "url": "https://clawhub.ai/skills/storyboard-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storyboard-creation-a7decab17d003ce4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Film and video storyboarding with shot vocabulary, continuity rules, and panel layout. Covers shot types, camera angles, movement, 180-degree rule, and annot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1533,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403400714,
+      "changelog": "Storyboard-creation 0.1.5 introduces comprehensive documentation and workflow guidance for planning and generating AI-assisted storyboards.\n\n- Added detailed SKILL.md covering shot vocabulary, continuity rules, camera angles, movement types, and panel annotation format.\n- Included quick start instructions for generating and composing storyboard panels using inference.sh CLI commands.\n- Provides shot and angle tables, examples for generating various panel styles, and suggested panel layouts.\n- Outlines standard storyboard workflow: shot listing, image generation, and panel annotation for film, video, ads, music videos, and animation.\n- No code changes listed; new version focuses on thorough documentation and structured creative guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:294da55877cbde6e69b84afe7381bd7b95f6df4be38e0a7c2d3c23616c89bc47"
+}

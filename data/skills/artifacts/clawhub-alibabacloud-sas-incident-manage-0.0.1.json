@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-sas-incident-manage@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_sas_incident_manage",
+  "skill": {
+    "id": 57903,
+    "skillKey": "clawhub-alibabacloud-sas-incident-manage",
+    "name": "Alibabacloud Sas Incident Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-sas-incident-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-sas-incident-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-sas-incident-manage-7ba9d93df749ff7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Security Center incident management skill. Query security incidents, threat trends, and incident details. Triggers: \"云安全中心\", \"安全事件\", \"事件查询\", \"安..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775642142269,
+      "changelog": "alibabacloud-sas-incident-manage v0.0.1 – Initial release\n\n- Provides incident management for Alibaba Cloud Security Center via standardized CLI commands.\n- Supports querying incident lists, retrieving incident details, and analyzing threat trends.\n- Includes strict input validation, region selection, and output sanitization (e.g., masking sensitive data).\n- Enforces correct CLI usage: requires cloud-siem plugin, specific required flags, and prohibits fallback to incorrect APIs.\n- Multi-language trigger support and clear output policies for end-user interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cb380a8d90c009af865da6bcde1d90c0d1fc026358edd8b6040987c88814579"
+}

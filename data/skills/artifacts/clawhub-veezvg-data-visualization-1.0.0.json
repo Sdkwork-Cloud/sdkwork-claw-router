@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veezvg-data-visualization@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veezvg_data_visualization",
+  "skill": {
+    "id": 64549,
+    "skillKey": "clawhub-veezvg-data-visualization",
+    "name": "Data Visualization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veezvg-data-visualization",
+    "url": "https://clawhub.ai/skills/veezvg-data-visualization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veezvg-data-visualization-87c2a798ae81283b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据数据类型智能选择图表，并按统一规范生成专业 Python matplotlib 可视化代码。 支持三套专业风格模板：BCG（默认绿色简洁风）、The Economist（红线+青蓝媒体风）、McKinsey（亮青+浅灰咨询风）。 触发场景：用户需要可视化数据、生成图表、画图、制作柱状图/折线图/饼图/散点图/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veezvg",
+      "userId": "s17852ervbnpeg1e5sf8abe7gs857gbr",
+      "displayName": "veezVg",
+      "image": "https://avatars.githubusercontent.com/u/97422187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776655347227,
+      "changelog": "Initial release with professional multi-style data visualization code generation using matplotlib:\n\n- Intelligently selects optimal chart type based on data type and user scenario.\n- Supports three professional style templates: BCG (default green), The Economist (media red-blue), McKinsey (bright cyan/grey).\n- Provides complete runnable Python script examples for each style and chart type.\n- Enforces strict visual guidelines, color schemes, and formatting for each style.\n- Offers clear workflow and chart selection guidance for fast, standardized visualization output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e2723760597a847c36895f9ced32b5ed2332c57fc5f36d23e7695f73771b82c"
+}

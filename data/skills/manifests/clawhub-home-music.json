@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10960,
+  "uuid": "skill-clawhub-home-music",
+  "skillKey": "clawhub-home-music",
+  "name": "Home Music",
+  "summary": "Control whole-house music scenes combining Spotify playback with Airfoil speaker routing. Quick presets for morning, party, chill modes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_music",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Steinberger",
+      "features": [
+        "Control whole-house music scenes combining Spotify playback with Airfoil speaker routing",
+        "Quick presets for morning, party, chill modes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133219358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-music",
+      "url": "https://clawhub.ai/skills/home-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-music",
+    "url": "https://clawhub.ai/skills/home-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-music-b021a01b592f711a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b95c758f3de8c59e5ad08ecc3076bf538d784bd3c5ec27bd729094a3fe32fc",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:05:42.847Z"
+}

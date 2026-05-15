@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31505,
+  "uuid": "skill-clawhub-ragic",
+  "skillKey": "clawhub-ragic",
+  "name": "Ragic",
+  "summary": "Ragic integration. Manage Organizations. Use when the user wants to interact with Ragic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ragic integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Ragic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ragic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ragic",
+      "url": "https://clawhub.ai/skills/ragic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragic",
+    "url": "https://clawhub.ai/skills/ragic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragic-332f0a0d784166bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ragic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ragic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6c45a76eb8e3b6b5112ea24ff6a806c374066782091003d2ffcc81274d0b02c",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:52.069Z"
+}

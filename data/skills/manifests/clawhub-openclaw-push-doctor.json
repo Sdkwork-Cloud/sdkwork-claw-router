@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37756,
+  "uuid": "skill-clawhub-openclaw-push-doctor",
+  "skillKey": "clawhub-openclaw-push-doctor",
+  "name": "Openclaw Push Doctor",
+  "summary": "openclaw-healthcheck is a self-diagnostic skill that checks and repairs openclaw's communication channels and scheduled tasks. It diagnoses Feishu/lark-cli a...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_push_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cosmos Fang",
+      "features": [
+        "openclaw-healthcheck is a self-diagnostic skill that checks and repairs openclaw's communicatio.",
+        "It diagnoses Feishu/lark-cli a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-push-doctor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255512740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-push-doctor",
+      "url": "https://clawhub.ai/skills/openclaw-push-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-push-doctor",
+    "url": "https://clawhub.ai/skills/openclaw-push-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-push-doctor-fa9e10d45d9a1ac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-push-doctor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-push-doctor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b78a74d085f2a7fbb8ec03eb68931ba9a8636a48e906c11a85814392c530eec5",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:34:26.412Z"
+}

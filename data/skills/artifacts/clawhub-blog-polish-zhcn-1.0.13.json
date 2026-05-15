@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-polish-zhcn@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_polish_zhcn",
+  "skill": {
+    "id": 50607,
+    "skillKey": "clawhub-blog-polish-zhcn",
+    "name": "blog-polish-zhcn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-polish-zhcn",
+    "url": "https://clawhub.ai/skills/blog-polish-zhcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-polish-zhcn-26ea5d2e55176102.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polish and translate a technical blog draft into a 1200–1400 word, 4-5 section Markdown article in Simplified Chinese (zh-CN), preserving technical terms and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j3ffyang",
+      "userId": "s1779e1n6evsf8stg77rena51983qpyd",
+      "displayName": "Jeff Yang",
+      "image": "https://avatars.githubusercontent.com/u/245605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1774602374028,
+      "changelog": "- Increased target article length to 1200–1400 words.\n- Output filename now includes a title slug for better clarity (e.g., `${ts}_${titleSlug}.md`).\n- Improved workflow: extracts a slugified title and separates file writing from content generation.\n- Updated metadata for schema version 1.1.\n- Removed unnecessary files to streamline the skill directory.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ff18ff7e7f8308f52d477cd8ccb6192dd40f9693f4cec8a0af46dbfb6a67f25"
+}

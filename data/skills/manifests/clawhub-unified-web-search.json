@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71052,
+  "uuid": "skill-clawhub-unified-web-search",
+  "skillKey": "clawhub-unified-web-search",
+  "name": "联网搜索统一接口",
+  "summary": "联网搜索统一接口 - 一个接口自动选择最优服务商（百炼/Tavily/火山引擎），支持降级、合并、告警",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "naive-white-expert",
+      "features": [
+        "联网搜索统一接口",
+        "一个接口自动选择最优服务商（百炼/Tavily/火山引擎），支持降级、合并、告警"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unified-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130733538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unified-web-search",
+      "url": "https://clawhub.ai/skills/unified-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-web-search",
+    "url": "https://clawhub.ai/skills/unified-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-web-search-57ccac948671b519.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unified-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unified-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb691870e529b0b99c61eb6e2447cafcf8ad2ccb30a88d9a6b7594fc5285b3f7",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T11:03:09.244Z"
+}

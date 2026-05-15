@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newsmcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsmcp_skill",
+  "skill": {
+    "id": 22186,
+    "skillKey": "clawhub-newsmcp-skill",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsmcp-skill",
+    "url": "https://clawhub.ai/skills/newsmcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsmcp-skill-3e9506f13a5b34d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time world news briefings with AI-clustered events, topic classification, and geographic filtering. No API key needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pranciskus",
+      "userId": "s178q09ra0ehnj3pbgest8mj6583zaea",
+      "displayName": "pranciskus",
+      "image": "https://avatars.githubusercontent.com/u/15796823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772561327676,
+      "changelog": "newsMCP Skill v1.0.0\n\n- Initial release providing real-time world news briefings with AI-powered event clustering, topic classification, and geographic filtering.\n- No API key required: access news events directly with simple API calls.\n- Features AI-generated event summaries, multi-source aggregation, deduplication, and importance signals for each event.\n- Supports filtering by topics and geographical regions, and includes endpoints for listing available topics and regions.\n- Provides example usage and recommended briefing formatting for seamless integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3827dd3dd27c3d3ffd5843d1473daec195ce0af949a91c5b01a5863832ee3d2"
+}

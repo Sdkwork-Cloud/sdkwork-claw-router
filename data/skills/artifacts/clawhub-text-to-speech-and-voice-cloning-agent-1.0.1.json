@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-speech-and-voice-cloning-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_speech_and_voice_cloning_agent",
+  "skill": {
+    "id": 24407,
+    "skillKey": "clawhub-text-to-speech-and-voice-cloning-agent",
+    "name": "Text to Speech and Voice Cloning by Verbatik AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-speech-and-voice-cloning-agent",
+    "url": "https://clawhub.ai/skills/text-to-speech-and-voice-cloning-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-speech-and-voice-cloning-agent-25d4fc037112f27e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your AI assistant into a TTS and voice cloning powerhouse using the Verbatik API. Use when generating speech from text, cloning voices, managing cloned..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "verbatik",
+      "userId": "publishers:verbatik",
+      "displayName": "Verbatik Technologies Limited",
+      "image": "https://avatars.githubusercontent.com/u/115904153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773228423917,
+      "changelog": "- Added OpenClaw metadata block under the \"metadata\" section, specifying `requires.env` and `primaryEnv`.\n- No changes to core features, API, or end-user functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cff902de8c00cb091fc73e6d1060f8aadd56b17fb85e3df20b39700c02a0583"
+}

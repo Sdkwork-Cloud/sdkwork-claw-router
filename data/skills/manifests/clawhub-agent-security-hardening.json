@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22879,
+  "uuid": "skill-clawhub-agent-security-hardening",
+  "skillKey": "clawhub-agent-security-hardening",
+  "name": "Agent Security Hardening",
+  "summary": "Security hardening patterns for production AI agents. Covers prompt injection defense (7 rules), data boundary enforcement, read-only defaults for external i...",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Security hardening patterns for production AI agents",
+        "Covers prompt injection defense (7 rules), data boundary enforcement, read-only defaults for ex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-security-hardening@98.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-security-hardening",
+      "url": "https://clawhub.ai/skills/agent-security-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-hardening",
+    "url": "https://clawhub.ai/skills/agent-security-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-hardening-4f3ba346ed40169c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-security-hardening@98.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-hardening-98.0.1.json",
+      "version": "98.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d620e7519d240127b392e24ca0838e52a7d5bdd2f096437412edc3425cff78ee",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:21:56.597Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33014,
+  "uuid": "skill-clawhub-polymarket-whale-tracker-pro",
+  "skillKey": "clawhub-polymarket-whale-tracker-pro",
+  "name": "Polymarket Whale Tracker",
+  "summary": "Track the top Polymarket whale wallets and copy their winning trades. Monitors the monthly leaderboard, shows open positions, and identifies high-conviction...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_whale_tracker_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "Track the top Polymarket whale wallets and copy their winning trades",
+        "Monitors the monthly leaderboard, shows open positions, and identifies high-conviction..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-whale-tracker-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5358781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-whale-tracker-pro",
+      "url": "https://clawhub.ai/skills/polymarket-whale-tracker-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-whale-tracker-pro",
+    "url": "https://clawhub.ai/skills/polymarket-whale-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-whale-tracker-pro-87a02ff60f2f959a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-whale-tracker-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-whale-tracker-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41422359c6bff987bda9adb27f1124da007e56b28336cb65f79c0c082917c75a",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T20:09:46.993Z"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "vigilance",
+    "displayName": "Vigilance",
+    "summary": "Evaluate-before-Execute (EBE) guardrail for OpenClaw agents. Issues a mandatory GO / NO-GO decision before any high-stakes tool call. Enforces child-safety p...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774111209711,
+    "updatedAt": 1777622254925
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1774127866196,
+    "changelog": "**Major update: Initial release of the agent-sentinel skill (Evaluate-before-Execute guardrail for OpenClaw agents).**\n\n- Introduces a mandatory evaluation layer (\"agent-sentinel\") enforcing safety and compliance before any high-stakes tool call.\n- Implements strict GO / NO-GO decisions (ALLOW, BLOCK, ADVISE) for critical actions—booking, payment, web search, and shell commands—based on user and safety policy specified in SENTINEL_CONFIG.md.\n- Provides a clear command-line interface and response schema; emits structured JSON decisions with severity and suggested alternatives.\n- Enforces robust child-safety, budget, and travel preferences via a configurable policy file.\n- Includes explicit user override and advisory protocols for handling preference and policy violations.\n- Complete documentation of configuration, invocation, and decision handling in the new SKILL.md.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sanjeet-toosi",
+    "userId": "s17bbe45jkphpd0sbc75rz11qn83h65f",
+    "displayName": "sanjeet-toosi",
+    "image": "https://avatars.githubusercontent.com/u/139010128?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622254925
+  }
+}

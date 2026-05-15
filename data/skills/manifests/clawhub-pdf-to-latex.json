@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28105,
+  "uuid": "skill-clawhub-pdf-to-latex",
+  "skillKey": "clawhub-pdf-to-latex",
+  "name": "PDF to LaTeX",
+  "summary": "Convert PDF documents to LaTeX source using MinerU. Extracts text, formulas, and structure from PDFs and outputs LaTeX format for academic and technical docu...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_latex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "Convert PDF documents to LaTeX source using MinerU",
+        "Extracts text, formulas, and structure from PDFs and outputs LaTeX format for academic and tech."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-latex@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-latex",
+      "url": "https://clawhub.ai/skills/pdf-to-latex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-latex",
+    "url": "https://clawhub.ai/skills/pdf-to-latex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-latex-e2958c9efa508693.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-latex@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-latex-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d889b90cc861938c4bd566d78163f3a86b635c5c0ab1cafa80174b90ddb3bfd",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:49.381Z"
+}

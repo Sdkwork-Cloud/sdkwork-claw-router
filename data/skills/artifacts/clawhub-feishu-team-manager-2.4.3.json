@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-team-manager@2.4.3",
+  "version": "2.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_team_manager",
+  "skill": {
+    "id": 60249,
+    "skillKey": "clawhub-feishu-team-manager",
+    "name": "feishu-team-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-team-manager",
+    "url": "https://clawhub.ai/skills/feishu-team-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-team-manager-06597f4ea2a84582.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化招聘新 Agent，配置独立飞书/ Discord 机器人并重构多账号路由"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "htf0513",
+      "userId": "s17dmf1anpn1zhwc8082ez2hrn85bke4",
+      "displayName": "htf0513",
+      "image": "https://avatars.githubusercontent.com/u/98440978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.4.3",
+      "createdAt": 1777297653570,
+      "changelog": "Fix: remove Unicode control chars, declare credentials in metadata, update description to include Discord scope",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c90be134a8d5d154c2c2dde4c3195193f62080e5d4e170816f896ad1ba2c778"
+}

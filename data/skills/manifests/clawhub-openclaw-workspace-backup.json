@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60455,
+  "uuid": "skill-clawhub-openclaw-workspace-backup",
+  "skillKey": "clawhub-openclaw-workspace-backup",
+  "name": "openclaw workspace backup",
+  "summary": "将工作空间 git 仓库备份到 GitHub 各分支。通过 .env 配置目录列表，每天 03:00 自动执行。当用户说\"workspace-backup\"、\"备份工作空间\"、\"工作空间备份\"时触发。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpengle",
+      "features": [
+        "将工作空间 git 仓库备份到 GitHub 各分支。通过 .env 配置目录列表，每天 03:00 自动执行。当用户说\"workspace-backup\"、\"备份工作空间\"、\"工作空间备份."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-workspace-backup@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152125462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-workspace-backup",
+      "url": "https://clawhub.ai/skills/openclaw-workspace-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-backup",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-backup-08d5ac02ba9e0816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-workspace-backup@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workspace-backup-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d838d321b1e13514e8bd811ed07b73b7887f2b0372f55480187665d28b643347",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:45:25.467Z"
+}

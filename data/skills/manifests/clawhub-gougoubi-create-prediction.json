@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20627,
+  "uuid": "skill-clawhub-gougoubi-create-prediction",
+  "skillKey": "clawhub-gougoubi-create-prediction",
+  "name": "Gougoubi Create Prediction",
+  "summary": "Create public Gougoubi prediction proposals from minimal input with deterministic enrichment, group creation, approval handling, and transaction submission....",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_create_prediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Create public Gougoubi prediction proposals from minimal input with deterministic enrichment, g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-create-prediction@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-create-prediction",
+      "url": "https://clawhub.ai/skills/gougoubi-create-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-create-prediction",
+    "url": "https://clawhub.ai/skills/gougoubi-create-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-create-prediction-cd296d5411b7026a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-create-prediction@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-create-prediction-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:099c248060eb82e4e8eec89ded4bfcc0067fe9f79b51e3c4fbfe2b622e67870b",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:23:59.247Z"
+}

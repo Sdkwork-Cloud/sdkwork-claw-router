@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-weather-scanner-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_weather_scanner_pro",
+  "skill": {
+    "id": 29869,
+    "skillKey": "clawhub-polymarket-weather-scanner-pro",
+    "name": "Polymarket Weather Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-weather-scanner-pro",
+    "url": "https://clawhub.ai/skills/polymarket-weather-scanner-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-weather-scanner-pro-e0c16a5fa70ccb95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exploit NOAA/Open-Meteo forecast vs Polymarket temperature market mispricing. Uses METAR real-time observations + ECMWF + Visual Crossing for 3-source consen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "themsquared",
+      "userId": "publishers:themsquared",
+      "displayName": "Mike",
+      "image": "https://avatars.githubusercontent.com/u/5358781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774210190245,
+      "changelog": "Exploit meteorological forecast vs Polymarket temperature market mispricing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a06d050ac5391ed88cbfb586ca5984cac21ac80ae0f34e4125552e77993fdf19"
+}

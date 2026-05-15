@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/partykeys-midi@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partykeys_midi",
+  "skill": {
+    "id": 33389,
+    "skillKey": "clawhub-partykeys-midi",
+    "name": "Partykeys Midi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partykeys-midi",
+    "url": "https://clawhub.ai/skills/partykeys-midi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partykeys-midi-4efb697c73f454c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control PartyKeys MIDI keyboard via WebSocket - connect device, light up keys with 12 colors, listen to playing, play sequences, and follow mode for music te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allen4z",
+      "userId": "s173ja6p8bcsxkq2ya3qax6jsn83whfr",
+      "displayName": "allen4z",
+      "image": "https://avatars.githubusercontent.com/u/5235844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1775138341460,
+      "changelog": "- Added new API tools: music_set_mode, music_set_octave, music_set_bpm, music_set_beat_type, music_chord_light, music_set_skin, music_query_device, music_query_version.\n- Updated SKILL.md with details and usage instructions for the new tools.\n- Improved documentation to cover expanded device control and configuration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54d29562cd9dbc3a1b5a21846e9f82e8b222bb661f944eb683edeb346ec30118"
+}

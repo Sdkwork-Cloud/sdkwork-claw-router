@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15865,
+  "uuid": "skill-clawhub-okx-exchange",
+  "skillKey": "clawhub-okx-exchange",
+  "name": "OKX Exchange",
+  "summary": "OKX quantitative trading agent. Supports spot, USDT-M perpetual swap, and coin-M futures. Strategies: grid trading, trend following (MA/RSI/MACD), spot-futur...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_exchange",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lk2023060901",
+      "features": [
+        "OKX quantitative trading agent",
+        "Supports spot, USDT-M perpetual swap, and coin-M futures",
+        "Strategies: grid trading, trend following (MA/RSI/MACD), spot-futur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-exchange@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157355385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-exchange",
+      "url": "https://clawhub.ai/skills/okx-exchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-exchange",
+    "url": "https://clawhub.ai/skills/okx-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-exchange-d53447487ea35cc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-exchange@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-exchange-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68a514dabec4a590eba9289d4e4a3303ac6c5e572c4c100f5444f76750d35e40",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:24:32.713Z"
+}

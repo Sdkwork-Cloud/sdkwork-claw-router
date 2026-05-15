@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13210,
+  "uuid": "skill-clawhub-bloom",
+  "skillKey": "clawhub-bloom",
+  "name": "Bloom Supporter Identity",
+  "summary": "Discover your supporter personality and find AI tools you'll love. Get personalized recommendations, connect with your first 100 supporters, and search for skills that match how you work. For indie devs, vibe coders, and AI builders.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bloom",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bloom Protocol",
+      "features": [
+        "Discover your supporter personality and find AI tools you'll love",
+        "Get personalized recommendations, connect with your first 100 supporters, and search for skills.",
+        "For indie devs, vibe coders, and AI builders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bloom@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253553660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bloom",
+      "url": "https://clawhub.ai/skills/bloom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bloom",
+    "url": "https://clawhub.ai/skills/bloom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bloom-34659fd61a72a852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bloom@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bloom-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ab8cd160c623d3d3d273bdacfb3c243935ea44ca0edffb43f07d2ed2f0ebb3d",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T14:56:00.384Z"
+}

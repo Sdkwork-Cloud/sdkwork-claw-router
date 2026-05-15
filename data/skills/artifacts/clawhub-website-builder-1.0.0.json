@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_builder",
+  "skill": {
+    "id": 22357,
+    "skillKey": "clawhub-website-builder",
+    "name": "ANDG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-builder",
+    "url": "https://clawhub.ai/skills/website-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-builder-480cacb85a5cf016.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist users in planning and structuring websites by defining goals, proposing site architecture, writing copy, and outlining implementation steps for quick..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewgufx",
+      "userId": "publishers:andrewgufx",
+      "displayName": "Andrew",
+      "image": "https://avatars.githubusercontent.com/u/98487831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772852461976,
+      "changelog": "Website Builder v1.0.0\n\n- Initial release of Website Builder.\n- Shifts focus from technical rules to a structured, product-oriented planning assistant.\n- Guides users from vague ideas to clear website structure and build plan.\n- Provides step-by-step output: goal interpretation, site type, page structure, content, UX, tech stack, and actionable steps.\n- Emphasizes shipping practical, shippable websites with clear separation of strategy, content, and implementation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1604880882fd4c663d64295423aac85f2af03adf7615e63cc95e210d1b70355f"
+}

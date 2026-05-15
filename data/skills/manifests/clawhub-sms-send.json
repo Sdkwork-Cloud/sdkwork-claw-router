@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72347,
+  "uuid": "skill-clawhub-sms-send",
+  "skillKey": "clawhub-sms-send",
+  "name": "AI短信发送工具",
+  "summary": "通过创蓝短信平台发送模板短信",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuanglanyunzhi",
+      "features": [
+        "通过创蓝短信平台发送模板短信"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sms-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168170047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sms-send",
+      "url": "https://clawhub.ai/skills/sms-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-send",
+    "url": "https://clawhub.ai/skills/sms-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-send-bdf363e992251c16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sms-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sms-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66f60e5792adf0f014eebf1dbe754c46eb046068b52a7effbecacb5d47f92a02",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:58:57.545Z"
+}

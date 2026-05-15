@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tdx-ua-patcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdx_ua_patcher",
+  "skill": {
+    "id": 66122,
+    "skillKey": "clawhub-tdx-ua-patcher",
+    "name": "通达信UA修改，TcefWnd.dll修改"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdx-ua-patcher",
+    "url": "https://clawhub.ai/skills/tdx-ua-patcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdx-ua-patcher-7a433d39e58a99a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通达信 TcefWnd.dll User-Agent 修改工具。用于查找通达信安装目录、检测版本信息、修改浏览器组件的 UA 标识。当用户需要修改通达信 UA、伪装成移动端浏览器、或绕过某些网站对通达信内置浏览器的限制时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "libertyzero10",
+      "userId": "s171gkznyanjcs835wae1dkt85843gh0",
+      "displayName": "祝先生Bruce",
+      "image": "https://avatars.githubusercontent.com/u/95122518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775485252865,
+      "changelog": "tdx-ua-patcher 1.0.0 initial release:\n\n- New tool for modifying User-Agent in 通达信(TongDaXin) TcefWnd.dll browser component.\n- Supports listing found installations, previewing changes, and applying patches to default or specified paths.\n- Features automatic backup, UA length validation (padding if necessary), and process checks to ensure safe modification.\n- Allows custom UA strings; default UA mimics Android mobile browsers.\n- Includes dry-run mode for testing changes without modification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b37a83bb196ea608c017600e4cd82b6ea6050978f0b8da5b2fccf9780d1e3741"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-flink-workspace-ops@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_flink_workspace_ops",
+  "skill": {
+    "id": 57628,
+    "skillKey": "clawhub-alibabacloud-flink-workspace-ops",
+    "name": "Alibabacloud Flink Workspace Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-flink-workspace-ops",
+    "url": "https://clawhub.ai/skills/alibabacloud-flink-workspace-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-flink-workspace-ops-216b442311243fa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user explicitly asks Flink/Ververica/Realtime Compute Console workspace operations: 草稿(draft), SQL校验/执行, 部署(deployment), 作业(job), Session Cluster, n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 40,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1778312044777,
+      "changelog": "alibabacloud-flink-workspace-ops v0.0.1 – Initial Release\n\n- Provides CLI-based operations for Flink/Ververica/Realtime Compute Console workspace resources (drafts, SQL checks, deployments, jobs, session clusters, tables, members, variables, and checkpoint diagnostics).\n- Strictly scoped to Console workspace actions; excludes instance lifecycle, generic cloud resources, and unrelated platform operations.\n- Implements mandatory boundary and trigger validation rules, with clear user guidance on out-of-scope requests.\n- Enforces real command execution using only the provided Python script (`python scripts/flink_ververica_ops.py`); prohibits non-execution responses.\n- Batch validation workflow supported for trigger evaluation using workspace input files, with detailed classification and result reporting.\n- Compatibility requirements: Python dependencies and Alibaba Cloud credentials as specified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8b9f78e93edffaa505b4b175afc5f6bf0cea78be984165543f355c6be82f285"
+}

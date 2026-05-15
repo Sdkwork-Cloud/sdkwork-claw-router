@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cycle@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cycle",
+  "skill": {
+    "id": 14325,
+    "skillKey": "clawhub-cycle",
+    "name": "Cycle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cycle",
+    "url": "https://clawhub.ai/skills/cycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cycle-c501935a6b2b247d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design custom workflow cycles for any domain. Create structured, repeatable processes that become persistent skills."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1033,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770833964528,
+      "changelog": "Added supporting files (discovery.md, implementation.md, examples.md), cross-reference to loop skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:724d8dc50140f623f7acb10108a78f87f35c2f637e621f770fd29ca16c5e638d"
+}

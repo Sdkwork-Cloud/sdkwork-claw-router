@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14180,
+  "uuid": "skill-clawhub-email-skill",
+  "skillKey": "clawhub-email-skill",
+  "name": "Email",
+  "summary": "Email management and automation. Send, read, search, and organize emails across multiple providers.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awspace",
+      "features": [
+        "Email management and automation",
+        "Send, read, search, and organize emails across multiple providers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131568675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-skill",
+      "url": "https://clawhub.ai/skills/email-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-skill",
+    "url": "https://clawhub.ai/skills/email-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-skill-dcd87a165eb4f807.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fbd09302ae21d06a1af86143562be5d8025acaf85b68543794dd211ae877dbb",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T04:00:10.039Z"
+}

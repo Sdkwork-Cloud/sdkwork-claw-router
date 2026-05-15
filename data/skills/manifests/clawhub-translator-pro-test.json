@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20117,
+  "uuid": "skill-clawhub-translator-pro-test",
+  "skillKey": "clawhub-translator-pro-test",
+  "name": "Translator Pro Test",
+  "summary": "Test translation quality with built-in dictionaries and comparison tools. Use when evaluating translations.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translator_pro_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Test translation quality with built-in dictionaries and comparison tools",
+        "Use when evaluating translations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/translator-pro-test@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "translator-pro-test",
+      "url": "https://clawhub.ai/skills/translator-pro-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translator-pro-test",
+    "url": "https://clawhub.ai/skills/translator-pro-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translator-pro-test-b51c36d6499bc420.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/translator-pro-test@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-translator-pro-test-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bb5a2ed5a2dc4266cf7001c508fcd8a0416c80884882fa78a31101dee28d72e",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:23:35.487Z"
+}

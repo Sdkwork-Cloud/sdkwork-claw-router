@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-content-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_content_writer",
+  "skill": {
+    "id": 64489,
+    "skillKey": "clawhub-skylv-content-writer",
+    "name": "Skylv Content Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-content-writer",
+    "url": "https://clawhub.ai/skills/skylv-content-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-content-writer-9efc0294fd5cb7cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内容创作助手。撰写各类文案、文章、报告。使用场景：(1) 撰写技术文档，(2) 创作营销文案，(3) 写作博客文章，(4) 生成报告总结。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776648406202,
+      "changelog": "- Updated description to English, summarizing supported content types and adding trigger keywords.\n- No changes to functional instructions or example usage.\n- Metadata and internal documentation remain unchanged except for description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c4dd8b8e9eebf40346f00dc5cc05aafbe04355d3eb15ef55c6112707c96f2ad"
+}

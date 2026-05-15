@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-with-claude@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_with_claude",
+  "skill": {
+    "id": 37401,
+    "skillKey": "clawhub-code-with-claude",
+    "name": "code-with-claude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-with-claude",
+    "url": "https://clawhub.ai/skills/code-with-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-with-claude-df8f347ac51d14a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Claude Code CLI reference covering interactive mode, CLI flags, commands, environment variables, hooks, channels, checkpointing, plugins, and t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awalesagar",
+      "userId": "s17581mechpdyzj8d8dnx8zpkh8467p8",
+      "displayName": "Sagar Awale",
+      "image": "https://avatars.githubusercontent.com/u/33474772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775847297628,
+      "changelog": "- Initial release of the code-with-claude skill.\n- Provides a comprehensive Claude Code CLI feature reference, including commands, flags, environment variables, hooks, plugins, channels, checkpointing, and tools.\n- Includes quick reference sections for essential commands, keyboard shortcuts, permission modes, and core tools.\n- Highlights common gotchas, best practices, and when to load specific reference files.\n- Designed to assist users with configuration, workflows, and effective use of the Claude Code CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:879ad71f1a83d7712e4de4b90c2d28259c027648adeb28cfec87dc1b19440fab"
+}

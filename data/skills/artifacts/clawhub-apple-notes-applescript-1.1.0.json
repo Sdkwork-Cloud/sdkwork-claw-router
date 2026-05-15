@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-notes-applescript@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_notes_applescript",
+  "skill": {
+    "id": 13882,
+    "skillKey": "clawhub-apple-notes-applescript",
+    "name": "Apple Notes (AppleScript)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-notes-applescript",
+    "url": "https://clawhub.ai/skills/apple-notes-applescript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-notes-applescript-8ed87c12df57cf05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple Notes.app integration for macOS. List folders, read, create, search, edit, and delete notes via AppleScript."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shad0wca7",
+      "userId": "publishers:shad0wca7",
+      "displayName": "shad0wca7",
+      "image": "https://avatars.githubusercontent.com/u/9969843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1201,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770752587648,
+      "changelog": "v1.1.0: PDF/image attachment extraction, Spotlight OCR search (--spotlight), notes-export-pdf.sh convenience script, shared folder resolver handles / in folder names, container lookup error handling, UUID auto-detection fix.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e57f0d5c8980ed0c808e97b1c45e76928ca910d4592c3a234a7bc4e12829e614"
+}

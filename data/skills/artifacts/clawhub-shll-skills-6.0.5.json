@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shll-skills@6.0.5",
+  "version": "6.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shll_skills",
+  "skill": {
+    "id": 19997,
+    "skillKey": "clawhub-shll-skills",
+    "name": "Upload Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shll-skills",
+    "url": "https://clawhub.ai/skills/shll-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shll-skills-64a79c53882b3ae0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute DeFi transactions on BSC via SHLL AgentNFA. The AI handles all commands and users only need to chat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kledx",
+      "userId": "publishers:kledx",
+      "displayName": "kledx",
+      "image": "https://avatars.githubusercontent.com/u/259126602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "6.0.5",
+      "createdAt": 1772893886182,
+      "changelog": "Replace rent/rental/renter with subscription/subscriber in all user-facing strings",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:242c76b86d86158e0cef066bf3427ffb081d82df22b8a727280e07e6001a8474"
+}

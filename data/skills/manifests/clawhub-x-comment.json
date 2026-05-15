@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64017,
+  "uuid": "skill-clawhub-x-comment",
+  "skillKey": "clawhub-x-comment",
+  "name": "X Comment Bot",
+  "summary": "在 X（Twitter/X.com）的推荐时间线（Home timeline）上自动浏览并评论技术类和 BTC 相关推文。 用户说「去 X 时间线上找几条技术帖子评论」「在 X 首页互动几条 BTC 相关内容」 「帮我在 X 推荐页发几条技术评论」时触发本 skill。不进行点赞，只发布评论。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars82311111",
+      "features": [
+        "在 X（Twitter/X.com）的推荐时间线（Home timeline）上自动浏览并评论技术类和 BTC 相关推文。 用户说「去 X 时间线上找几条技术帖子评论」「在 X 首页互动几条."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265482749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-comment",
+      "url": "https://clawhub.ai/skills/x-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-comment",
+    "url": "https://clawhub.ai/skills/x-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-comment-48d82d21ad3829d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e66e6362d365d7a03548191af70de67373497ec639ef5bf90b9a5f4f617cc89",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:08:24.063Z"
+}

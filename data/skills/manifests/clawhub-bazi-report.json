@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59079,
+  "uuid": "skill-clawhub-bazi-report",
+  "skillKey": "clawhub-bazi-report",
+  "name": "BaZi Insight Report - Cantian AI",
+  "summary": "八字报告下单与进度查询技能 / Skill for bazi report checkout and progress tracking. 触发于“我要/我想买 2026 报告”“我想看人生/感情/财运/健康深度报告”“查报告进度/在哪里下载”等请求 / Trigger when users ask to buy...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cantian.ai",
+      "features": [
+        "八字报告下单与进度查询技能 / Skill for bazi report checkout and progress tracking",
+        "触发于“我要/我想买 2026 报告”“我想看人生/感情/财运/健康深度报告”“查报告进度/在哪里下载”等请求 / Trigger when users ask to buy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-report@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5206898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-report",
+      "url": "https://clawhub.ai/skills/bazi-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-report",
+    "url": "https://clawhub.ai/skills/bazi-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-report-c83d565c6d04fd2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-report@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-report-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a47d337ba3fa060fb5068258c2ac7c32eba6d388a6af8e37896320d952fc66a0",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:44:30.686Z"
+}

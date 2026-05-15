@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pao-system@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pao_system",
+  "skill": {
+    "id": 60169,
+    "skillKey": "clawhub-pao-system",
+    "name": "PAO System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pao-system",
+    "url": "https://clawhub.ai/skills/pao-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pao-system-fb163a3f0f5f7671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PAO系统 - 个人AI运营助手。触发词：PAO、Personal AI Operator、运营助手、技能管理、协议管理、WebSocket通信、PAO技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hansondong",
+      "userId": "s179z50mzadmg5m663fxz4z9v1843aah",
+      "displayName": "hansondong",
+      "image": "https://avatars.githubusercontent.com/u/266646024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776787231898,
+      "changelog": "- Bumped version to 1.1.2.\n- Documentation updated (SKILL.md only): version number incremented in metadata.\n- No functional or code changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e605536de281df1388d7e68ab57c992ff81933dad947d8e3612d4f1ed3c20db9"
+}

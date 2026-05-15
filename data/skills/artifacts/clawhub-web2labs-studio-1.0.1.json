@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web2labs-studio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web2labs_studio",
+  "skill": {
+    "id": 17607,
+    "skillKey": "clawhub-web2labs-studio",
+    "name": "Web2Labs Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web2labs-studio",
+    "url": "https://clawhub.ai/skills/web2labs-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web2labs-studio-df29f8963c455e5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Edit my recording, turn a long video into shorts, generate captions and thumbnails, estimate cost before processing. Upload local files or YouTube/Twitch URL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinlow",
+      "userId": "publishers:vinlow",
+      "displayName": "Philipp Fanta",
+      "image": "https://avatars.githubusercontent.com/u/6688409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771948573602,
+      "changelog": "Release of the Web2Labs Studio Skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71c7078ef134dc8312579e09fb6561ecaacddd1848d114e7172bc6020ad85075"
+}

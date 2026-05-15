@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21529,
+  "uuid": "skill-clawhub-stravacli",
+  "skillKey": "clawhub-stravacli",
+  "name": "Strava CLI Skill",
+  "summary": "Use the stravacli terminal tool to access Strava data (athlete profile, activities, streams, routes, segments, clubs, gear, uploads) and perform limited writ...",
+  "version": "2.2.98",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stravacli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raxat",
+      "features": [
+        "Use the stravacli terminal tool to access Strava data (athlete profile, activities, streams, ro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stravacli@2.2.98",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53768667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stravacli",
+      "url": "https://clawhub.ai/skills/stravacli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stravacli",
+    "url": "https://clawhub.ai/skills/stravacli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stravacli-77e2de71e88e46d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stravacli@2.2.98",
+      "artifactUrl": "data/skills/artifacts/clawhub-stravacli-2.2.98.json",
+      "version": "2.2.98",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4fd5dfa8a5323de9a8bfa901d3c90fd8d3ee210df04cb21a23e9f4cf365f55",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:23:56.226Z"
+}

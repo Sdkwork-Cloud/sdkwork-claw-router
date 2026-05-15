@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56143,
+  "uuid": "skill-clawhub-ssq-prediction",
+  "skillKey": "clawhub-ssq-prediction",
+  "name": "SSQ Prediction",
+  "summary": "AI Investment Research - Double Color Ball (双色球) Prediction. Fetches historical data, applies Contextual Quantum-like Bayesian Network (CQ-BN) model, and sen...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssq_prediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rix Zhang",
+      "features": [
+        "AI Investment Research",
+        "Double Color Ball (双色球) Prediction",
+        "Fetches historical data, applies Contextual Quantum-like Bayesian Network (CQ-BN) model, and se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssq-prediction@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42019741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssq-prediction",
+      "url": "https://clawhub.ai/skills/ssq-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssq-prediction",
+    "url": "https://clawhub.ai/skills/ssq-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssq-prediction-bfeca120977837ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssq-prediction@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssq-prediction-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20651bc125346af1a320a48f6fada564211a73e30538552a5aa0d05be3936b78",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:00:11.422Z"
+}

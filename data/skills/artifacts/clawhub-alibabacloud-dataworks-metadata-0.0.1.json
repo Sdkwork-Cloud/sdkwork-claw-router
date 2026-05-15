@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-dataworks-metadata@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dataworks_metadata",
+  "skill": {
+    "id": 51464,
+    "skillKey": "clawhub-alibabacloud-dataworks-metadata",
+    "name": "Alibabacloud Dataworks Metadata"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dataworks-metadata",
+    "url": "https://clawhub.ai/skills/alibabacloud-dataworks-metadata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dataworks-metadata-8f0791c3b0b4b318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DataWorks metadata Skill for Alibaba Cloud — browse Data Map metadata and perform non-destructive writes via Aliyun CLI. READ scope: list/get catalogs, datab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1778033364116,
+      "changelog": "Initial release of alibabacloud-dataworks-metadata.\n\n- Provides DataWorks metadata browsing and non-destructive metadata write operations via Aliyun CLI.\n- Supports listing and retrieving catalogs, databases, tables, columns, partitions, data lineage, datasets & versions, and metadata collections.\n- Enables non-destructive updates: update table/column business metadata, register lineage, create/update datasets/collections, add entities.\n- Strictly forbids all delete/remove operations for safety; directs deletion requests to the DataWorks console.\n- Enforces CLI safety: AI-Mode & user-agent binding, confirmation for all writes, idempotency on create/add, and enforced timeouts.\n- Includes clear prerequisites, CLI command rules, and user guidance for credentials and permission management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f5a7a78d39332727fd7131a895fb05abe19e752bc7167e3688b84a581f93544"
+}

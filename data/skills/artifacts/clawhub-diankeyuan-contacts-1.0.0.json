@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diankeyuan-contacts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diankeyuan_contacts",
+  "skill": {
+    "id": 67942,
+    "skillKey": "clawhub-diankeyuan-contacts",
+    "name": "Diankeyuan Contacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diankeyuan-contacts",
+    "url": "https://clawhub.ai/skills/diankeyuan-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diankeyuan-contacts-4361adfcb3f641da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理电科院人员信息和科室关系的技能。支持添加、查询、更新电科院工作人员、科室、办公室等信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "humblebin",
+      "userId": "publishers:humblebin",
+      "displayName": "HumbleBin",
+      "image": "https://avatars.githubusercontent.com/u/98149733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772468106796,
+      "changelog": "- Initial release of diankeyuan-contacts.\n- Supports adding, querying, updating, and deleting 电科院 (Power Research Institute) staff and department information.\n- Enables management of departments, office locations, and personnel roles.\n- Provides quick commands and examples for efficient contact management.\n- Data is stored locally in a JSON file for easy retrieval and modification.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37ef0561aa36919e968a2a967a3bbf506a47afd6d66859d0732e371e619116e4"
+}

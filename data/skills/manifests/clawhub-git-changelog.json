@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14664,
+  "uuid": "skill-clawhub-git-changelog",
+  "skillKey": "clawhub-git-changelog",
+  "name": "Git Changelog",
+  "summary": "Auto-generate beautiful changelogs from git history, grouped by conventional commit types",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_changelog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fratua",
+      "features": [
+        "Auto-generate beautiful changelogs from git history, grouped by conventional commit types"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-changelog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130244023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-changelog",
+      "url": "https://clawhub.ai/skills/git-changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-changelog",
+    "url": "https://clawhub.ai/skills/git-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-changelog-4ad5ed43d90c726f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-changelog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-changelog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c466a9d8034442b0bc83d62b68582fc749f43ebf0472493b96025119e52912f",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:48:34.093Z"
+}

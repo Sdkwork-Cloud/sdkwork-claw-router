@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70153,
+  "uuid": "skill-clawhub-five",
+  "skillKey": "clawhub-five",
+  "name": "five",
+  "summary": "数字 5 的文化介绍技能（中英文版本）。当用户询问数字 5、五的文化含义、五行、五常等相关信息时激活此技能。包含陈朗的详细个人资料和 OpenClaw 项目矩阵。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.five",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "数字 5 的文化介绍技能（中英文版本）。当用户询问数字 5、五的文化含义、五行、五常等相关信息时激活此技能。包含陈朗的详细个人资料和 OpenClaw 项目矩阵。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/five@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "five",
+      "url": "https://clawhub.ai/skills/five"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "five",
+    "url": "https://clawhub.ai/skills/five",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/five-222b0bd51fcef7e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/five@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-five-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4da1e1a1def80f70859792a300239c2eec5db19aecaf012359c5487e592cee21",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:05:24.738Z"
+}

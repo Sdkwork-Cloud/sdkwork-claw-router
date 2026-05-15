@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strava-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_api",
+  "skill": {
+    "id": 36073,
+    "skillKey": "clawhub-strava-api",
+    "name": "Strava Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-api",
+    "url": "https://clawhub.ai/skills/strava-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-api-212ce56e6294fa61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Strava OAuth integration for OpenClaw. Use to connect/authorize Strava, store+refresh tokens, and fetch workout/activity data (runs/rides/etc.) for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swang62",
+      "userId": "s176fnaaqcfs30e667hmpdzpyh84cs4f",
+      "displayName": "Steve Wang",
+      "image": "https://avatars.githubusercontent.com/u/19756696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776581059425,
+      "changelog": "- Removed normalization and rendering scripts and documentation, focusing the skill on fetching activity data only.\n- Updated instructions: now fetch activities directly as JSON output.\n- Cleaned up references and removed output schema documentation.\n- Renamed skill from openclaw-strava to strava-api.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:686ff7509bd7e2203e49f16f054b71eaa7657582e7e35607e1b35268fb2a3c1c"
+}

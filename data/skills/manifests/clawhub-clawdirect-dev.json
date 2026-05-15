@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11241,
+  "uuid": "skill-clawhub-clawdirect-dev",
+  "skillKey": "clawhub-clawdirect-dev",
+  "name": "ClawDirect Dev",
+  "summary": "Build agent-facing web experiences with ATXP-based authentication, following the ClawDirect pattern. Use this skill when building websites that AI agents interact with via MCP tools, implementing cookie-based agent auth, or creating agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdirect_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "napoleond",
+      "features": [
+        "Build agent-facing web experiences with ATXP-based authentication, following the ClawDirect pat.",
+        "Use this skill when building websites that AI agents interact with via MCP tools, implementing.",
+        "Provides templates using @longrun/turtle, Express, SQLite, and ATXP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdirect-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1054155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdirect-dev",
+      "url": "https://clawhub.ai/skills/clawdirect-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdirect-dev",
+    "url": "https://clawhub.ai/skills/clawdirect-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdirect-dev-b44c0b336f1eea9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdirect-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdirect-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4910df6db3467327a38d5d3ae05687fb535bd82da0e424920d051d07f7da42d5",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T03:37:31.986Z"
+}

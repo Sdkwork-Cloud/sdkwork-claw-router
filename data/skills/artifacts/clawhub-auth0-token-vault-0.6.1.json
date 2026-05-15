@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auth0-token-vault@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auth0_token_vault",
+  "skill": {
+    "id": 25213,
+    "skillKey": "clawhub-auth0-token-vault",
+    "name": "Auth0 Token Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auth0-token-vault",
+    "url": "https://clawhub.ai/skills/auth0-token-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auth0-token-vault-eacfcc4d3f7e7352.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access third-party services (Gmail, Slack, Google Calendar, GitHub) and custom Auth0 connections on behalf of authenticated users via Auth0 Token Vault. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepu105",
+      "userId": "s17eaaw0hskq8cmppzxp3cyb4983w60x",
+      "displayName": "Deepu K Sasidharan",
+      "image": "https://avatars.githubusercontent.com/u/1107223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1777907887700,
+      "changelog": "**Expanded support and improved setup instructions.**\n\n- Added support for Google Calendar, Slack, GitHub, and custom Auth0 connections in addition to Gmail.\n- Updated minimum requirements to Node.js 20+ and global auth0-tv CLI install.\n- Provided detailed first-time setup instructions, including a new guided `auth0-tv init` wizard.\n- Outlined procedures for connecting any Auth0 connection and managing callback ports.\n- Removed the obsolete `_meta.json` metadata file.\n- Adjusted author and version metadata to reflect project changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01fd9587dc99a79a1f81229e7ca97f56128d59a77d0a4e15d0d41f3c29cd824a"
+}

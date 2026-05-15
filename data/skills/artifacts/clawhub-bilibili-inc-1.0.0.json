@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-inc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_inc",
+  "skill": {
+    "id": 69126,
+    "skillKey": "clawhub-bilibili-inc",
+    "name": "Bilibili Inc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-inc",
+    "url": "https://clawhub.ai/skills/bilibili-inc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-inc-bc1a86b3344a211a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运营中国最大的年轻人文化社区，专注ACG起家，覆盖全品类视频，擅长弹幕互动和Z世代用户留存策略分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778151834025,
+      "changelog": "Initial release\n\n- 提供了Bilibili（哔哩哔哩）的详细介绍与核心历史事件、商业模式等信息。\n- 包含平台护城河分析、关键用户及营收数据。\n- 总结了B站的社区文化特点和有趣事实，突出弹幕互动与“投币”等独特机制。\n- 适用于研究中国年轻人文化、ACG产业、以及视频社区运营与转型。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca1a17128217f1082c9808c876e6f9cb8a2d7f6389ba67166ba512c6f2ca257f"
+}

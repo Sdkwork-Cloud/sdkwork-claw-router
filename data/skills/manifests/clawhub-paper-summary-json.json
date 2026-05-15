@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47296,
+  "uuid": "skill-clawhub-paper-summary-json",
+  "skillKey": "clawhub-paper-summary-json",
+  "name": "paper-summary-json",
+  "summary": "structured academic paper analysis from local paper files or paper urls, adapted from a dify scheme a workflow. use when the user asks to analyze pdf/docx/te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_summary_json",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CRW0149",
+      "features": [
+        "structured academic paper analysis from local paper files or paper urls, adapted from a dify sc.",
+        "use when the user asks to analyze pdf/docx/te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-summary-json@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144223119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-summary-json",
+      "url": "https://clawhub.ai/skills/paper-summary-json"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-summary-json",
+    "url": "https://clawhub.ai/skills/paper-summary-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-summary-json-d511a1677186916c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-summary-json@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-summary-json-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1757c837faf8b4e399a69689a713d7af07a073e94b7cc3fd87c03664ebbe9b45",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:27:07.215Z"
+}

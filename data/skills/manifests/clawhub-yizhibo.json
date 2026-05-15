@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65272,
+  "uuid": "skill-clawhub-yizhibo",
+  "skillKey": "clawhub-yizhibo",
+  "name": "Yizhibo",
+  "summary": "一直播（已停运）- 直播平台历史存档",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yizhibo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "一直播（已停运）",
+        "直播平台历史存档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yizhibo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yizhibo",
+      "url": "https://clawhub.ai/skills/yizhibo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yizhibo",
+    "url": "https://clawhub.ai/skills/yizhibo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yizhibo-cc5677a35bcf0fa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yizhibo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yizhibo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e78e5cf0f8aa2378601207a9e2573a65d98c3f76fbcc62faf9d81f75322cd828",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:21:52.670Z"
+}

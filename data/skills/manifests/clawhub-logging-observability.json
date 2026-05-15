@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11452,
+  "uuid": "skill-clawhub-logging-observability",
+  "skillKey": "clawhub-logging-observability",
+  "name": "Logging Observability",
+  "summary": "Structured logging, distributed tracing, and metrics collection patterns for building observable systems. Use when implementing logging infrastructure, setting up distributed tracing with OpenTelemetry, designing metrics collection (RED/US.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logging_observability",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Structured logging, distributed tracing, and metrics collection patterns for building observabl.",
+        "Use when implementing logging infrastructure, setting up distributed tracing with OpenTelemetry.",
+        "Covers structured JSON logging, context propagation, trace sampling, Prometheus/Grafana stack,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logging-observability@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logging-observability",
+      "url": "https://clawhub.ai/skills/logging-observability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logging-observability",
+    "url": "https://clawhub.ai/skills/logging-observability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logging-observability-4f6bd40dd8f537b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logging-observability@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logging-observability-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecf93664998ce8d6f579a4e0f883717c740bb38836b860da5c0e71b50c38d583",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:28:46.517Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spf-write-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spf_write_plan",
+  "skill": {
+    "id": 27975,
+    "skillKey": "clawhub-spf-write-plan",
+    "name": "SPF Write Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spf-write-plan",
+    "url": "https://clawhub.ai/skills/spf-write-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spf-write-plan-a68ed2c11de1b514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you have a spec or requirements for a multi-step task, before touching code"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mok888",
+      "userId": "publishers:mok888",
+      "displayName": "mok888",
+      "image": "https://avatars.githubusercontent.com/u/82868581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772781088468,
+      "changelog": "Initial release - TDD planning with templates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df492403109d9ed9cb3c0036634aaf1462d3a7197b04427291edb5f16291421c"
+}

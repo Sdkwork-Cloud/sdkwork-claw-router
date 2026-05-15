@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23868,
+  "uuid": "skill-clawhub-gate-mcp-cursor-installer",
+  "skillKey": "clawhub-gate-mcp-cursor-installer",
+  "name": "Gate Cursor One-Click Installer (MCP + Skills)",
+  "summary": "Gate MCP and Gate skills installer for Cursor. Use when the user asks to set up Gate trading or research tools in Cursor. Triggers on 'install Gate MCP Curso...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_cursor_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate MCP and Gate skills installer for Cursor",
+        "Use when the user asks to set up Gate trading or research tools in Cursor",
+        "Triggers on 'install Gate MCP Curso..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-mcp-cursor-installer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-mcp-cursor-installer",
+      "url": "https://clawhub.ai/skills/gate-mcp-cursor-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-cursor-installer",
+    "url": "https://clawhub.ai/skills/gate-mcp-cursor-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-cursor-installer-1d8249afac84caa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-mcp-cursor-installer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-cursor-installer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d27892be4aed378e7a0d287c3e42f3e4b83f01429cff1ceeecbf6febca650660",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:38:02.824Z"
+}

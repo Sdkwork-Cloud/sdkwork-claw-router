@@ -5,14 +5,14 @@ import {
   readRequiredString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { UserProfileResponse as SdkUserProfileResponse } from '@sdkwork/clawrouter-app-sdk';
+import type { IamUserResponse as SdkUserProfileResponse } from '@sdkwork/clawrouter-app-sdk';
 
 export interface UserProfile {
-  name: SdkUserProfileResponse['name'];
+  name: SdkUserProfileResponse['displayName'];
   email: SdkUserProfileResponse['email'];
   phone: SdkUserProfileResponse['phone'];
   language: SdkUserProfileResponse['language'];
-  avatar: SdkUserProfileResponse['avatar'];
+  avatar: SdkUserProfileResponse['avatarUrl'];
   isVerified: SdkUserProfileResponse['isVerified'];
   status: SdkUserProfileResponse['status'];
   registeredAt: SdkUserProfileResponse['registeredAt'];
@@ -24,20 +24,20 @@ export interface UserProfile {
 }
 
 export class UserService {
-  static async fetchUserProfile(): Promise<UserProfile> {
-    const result = await getClawRouterAppSdkClient().user.fetchUserProfile();
-    ensurePlusApiSuccess(result, 'Failed to fetch user profile');
+  static async fetchCurrentUser(): Promise<UserProfile> {
+    const result = await getClawRouterAppSdkClient().iam.users.current.retrieve();
+    ensurePlusApiSuccess(result, 'Failed to fetch current user');
     return normalizeUserProfile(readApiRecord(result));
   }
 }
 
 function normalizeUserProfile(data: ApiRecord): UserProfile {
   return {
-    name: readRequiredString(data, 'name', 'User profile name is required'),
+    name: readRequiredString(data, 'displayName', 'User profile display name is required'),
     email: readRequiredString(data, 'email', 'User profile response missing data'),
     phone: readRequiredStringAllowEmpty(data, 'phone', 'User profile phone is required'),
     language: readRequiredString(data, 'language', 'User profile language is required'),
-    avatar: readRequiredString(data, 'avatar', 'User profile avatar is required'),
+    avatar: readRequiredStringAllowEmpty(data, 'avatarUrl', 'User profile avatar URL is required'),
     isVerified: readRequiredBoolean(data, 'isVerified', 'User profile verification status is required'),
     status: readRequiredString(data, 'status', 'User profile status is required'),
     registeredAt: readRequiredString(data, 'registeredAt', 'User profile registration time is required'),

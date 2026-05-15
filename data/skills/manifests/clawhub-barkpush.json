@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67549,
+  "uuid": "skill-clawhub-barkpush",
+  "skillKey": "clawhub-barkpush",
+  "name": "barkpush",
+  "summary": "智能 Bark 推送助手，支持多用户管理、智能内容识别、历史记录追踪和消息更新功能",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barkpush",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chang",
+      "features": [
+        "智能 Bark 推送助手，支持多用户管理、智能内容识别、历史记录追踪和消息更新功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/barkpush@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79965108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "barkpush",
+      "url": "https://clawhub.ai/skills/barkpush"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barkpush",
+    "url": "https://clawhub.ai/skills/barkpush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barkpush-c21a1e71d63352be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/barkpush@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-barkpush-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4067469431d4dbf20e7be1d1a13fdeccf97a5c108022ca9769ccbc43623c94c9",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T13:15:45.470Z"
+}

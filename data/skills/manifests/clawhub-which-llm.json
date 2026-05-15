@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11941,
+  "uuid": "skill-clawhub-which-llm",
+  "skillKey": "clawhub-which-llm",
+  "name": "Which LLM? Deterministic model selection for agents",
+  "summary": "Deterministic decision-ranking API with HTTP 402 payments and outcome credits.",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.which_llm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zapkid",
+      "features": [
+        "Deterministic decision-ranking API with HTTP 402 payments and outcome credits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/which-llm@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4131350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "which-llm",
+      "url": "https://clawhub.ai/skills/which-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "which-llm",
+    "url": "https://clawhub.ai/skills/which-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/which-llm-8679e55eceaf21e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/which-llm@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-which-llm-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82c03e4fd03d9a8b2f34d3cdf3ae58a4942e7bd728b3f7bc515ae8a59a47fb11",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:22:12.574Z"
+}

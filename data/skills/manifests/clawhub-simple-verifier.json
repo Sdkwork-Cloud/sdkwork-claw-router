@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32322,
+  "uuid": "skill-clawhub-simple-verifier",
+  "skillKey": "clawhub-simple-verifier",
+  "name": "Simple Verifier",
+  "summary": "Fast lightweight verification pass for recent work. Use proactively after medium or large tasks, coding passes, app changes, or long replies when you need a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noahfleming",
+      "features": [
+        "Fast lightweight verification pass for recent work",
+        "Use proactively after medium or large tasks, coding passes, app changes, or long replies when y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-verifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19826605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-verifier",
+      "url": "https://clawhub.ai/skills/simple-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-verifier",
+    "url": "https://clawhub.ai/skills/simple-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-verifier-4e84e4f6adfea155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-verifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-verifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69c65a40238c818af1a0fb5445bf3654d0a7088cef15551d9c9aa06117da5e0d",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:37:35.615Z"
+}

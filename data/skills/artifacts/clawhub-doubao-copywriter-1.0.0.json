@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-copywriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_copywriter",
+  "skill": {
+    "id": 67019,
+    "skillKey": "clawhub-doubao-copywriter",
+    "name": "doubao-copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-copywriter",
+    "url": "https://clawhub.ai/skills/doubao-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-copywriter-860a85370151de40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用豆包AI，根据用户提供的主题或大纲生成适用于小红书、公众号和抖音脚本的定制文案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775221380336,
+      "changelog": "- 初始版本发布，支持调用豆包AI根据主题/大纲自动生成各类文案。\n- 适用于小红书、公众号、抖音等多种内容场景。\n- 支持两种生成方式：网页自动生成与用户本地生成（需扫码登录）。\n- 明确登录限制和浏览器兼容提醒。\n- 输出为纯文案，支持风格调整与多次生成。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2bd07f95ad2dfc14a204bccd8a83e6d088ade87723418592d405ab0f425d996"
+}

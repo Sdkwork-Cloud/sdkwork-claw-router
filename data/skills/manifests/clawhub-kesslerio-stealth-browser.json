@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9234,
+  "uuid": "skill-clawhub-kesslerio-stealth-browser",
+  "skillKey": "clawhub-kesslerio-stealth-browser",
+  "name": "Stealth Browser",
+  "summary": "Anti-bot browser automation using Camoufox and Nodriver. Bypasses Cloudflare Turnstile, Datadome, and aggressive anti-bot on sites like Airbnb and Yelp. Use when standard Playwright/Selenium gets blocked.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kesslerio_stealth_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Anti-bot browser automation using Camoufox and Nodriver",
+        "Bypasses Cloudflare Turnstile, Datadome, and aggressive anti-bot on sites like Airbnb and Yelp",
+        "Use when standard Playwright/Selenium gets blocked."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kesslerio-stealth-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kesslerio-stealth-browser",
+      "url": "https://clawhub.ai/skills/kesslerio-stealth-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kesslerio-stealth-browser",
+    "url": "https://clawhub.ai/skills/kesslerio-stealth-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kesslerio-stealth-browser-a0f178cd4a2ca624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kesslerio-stealth-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kesslerio-stealth-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f48ee227dfe032823517da321ca468e899f7e2ba43ef2319df0cd807a78830",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T07:48:01.564Z"
+}

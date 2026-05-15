@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dream@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dream",
+  "skill": {
+    "id": 52388,
+    "skillKey": "clawhub-openclaw-dream",
+    "name": "OpenClaw Dream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dream",
+    "url": "https://clawhub.ai/skills/openclaw-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dream-2a7a767418092fef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatic memory consolidation for OpenClaw agents. Cleans, deduplicates, and organizes memory files (MEMORY.md + memory/*.md) like human REM sleep consolida..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuweifly",
+      "userId": "s17cz51bc8t629sjywdxdadkk583rqaa",
+      "displayName": "liuweifly",
+      "image": "https://avatars.githubusercontent.com/u/9208751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774718949711,
+      "changelog": "Initial release: 4-phase memory consolidation (scan, analyze, consolidate, write). Automatic cron scheduling, customizable via DREAM.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e4c7447680fb024f89a5eb0796e6089ff28d01176299acd08d7e8ac88e84c0e"
+}

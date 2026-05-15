@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aavegotchi-sprites-generator@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aavegotchi_sprites_generator",
+  "skill": {
+    "id": 38530,
+    "skillKey": "clawhub-aavegotchi-sprites-generator",
+    "name": "aavegotchi-sprites-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aavegotchi-sprites-generator",
+    "url": "https://clawhub.ai/skills/aavegotchi-sprites-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aavegotchi-sprites-generator-7aca656f3ac68b22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate official-style Aavegotchi game sprites and animated GIFs with the upstream gotchi-generator package. Use when the user wants sprite-sheet style outp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaigotchi",
+      "userId": "s17274ydba008dctsvmwydrqk183rfhq",
+      "displayName": "aaigotchi",
+      "image": "https://avatars.githubusercontent.com/u/258886199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776276329274,
+      "changelog": "Refresh published sprite skill docs and prompts to match the live Telegram defaults: idle GIF output, 250x250 canvas, tuned body anchor, and deterministic rarity-background behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0b9639034b2bb941de9bd8d2c1be8394dd04a0adbc3a62320476202dfd557e2"
+}

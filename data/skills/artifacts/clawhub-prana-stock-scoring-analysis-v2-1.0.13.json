@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prana-stock-scoring-analysis-v2@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prana_stock_scoring_analysis_v2",
+  "skill": {
+    "id": 60410,
+    "skillKey": "clawhub-prana-stock-scoring-analysis-v2",
+    "name": "prana-stock-scoring-analysis-v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prana-stock-scoring-analysis-v2",
+    "url": "https://clawhub.ai/skills/prana-stock-scoring-analysis-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prana-stock-scoring-analysis-v2-5f3486e2087eaab8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过调用 Prana 平台上的远程 agent 完成以下处理：通过基本面、技术面、机构动向等多个维度对股票进行数据深度分析，生成交互式HTML分析报告。帮助投资者多方面了解股票的各项指标和数据。 IMPORTANT: This skill has a mandatory step-by-step process...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gocybertrade",
+      "userId": "s17d0rcqkage3s88dtx5zh718h83zs99",
+      "displayName": "goCyberTrade",
+      "image": "https://avatars.githubusercontent.com/u/219055106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1775645493696,
+      "changelog": "Version 1.0.13\n\n- No file changes detected in this release.\n- No updates or modifications documented for this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:648e3a2519094797e1110e7f4587e2e13008de8cfb788592e3510c511ad9e798"
+}

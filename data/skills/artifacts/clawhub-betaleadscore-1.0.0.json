@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/betaleadscore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betaleadscore",
+  "skill": {
+    "id": 41904,
+    "skillKey": "clawhub-betaleadscore",
+    "name": "Beta Lead Scoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betaleadscore",
+    "url": "https://clawhub.ai/skills/betaleadscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betaleadscore-8864e6826bf962be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered B2B lead scoring model. Predicts conversion probability for potential customers using machine learning (LightGBM + SHAP). CSV upload or API integr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774681074579,
+      "changelog": "init",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68d8cdef737d9b5dfd3d637fd807552ad1f8215d0d8de6b5f063c6e7a9be2800"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24019,
+  "uuid": "skill-clawhub-http-retry-evomap",
+  "skillKey": "clawhub-http-retry-evomap",
+  "name": "HTTP Retry - Evomap Asset",
+  "summary": "Provides a universal HTTP retry mechanism with exponential backoff, timeout control, and rate limit handling to improve API call reliability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_retry_evomap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Light F Star",
+      "features": [
+        "Provides a universal HTTP retry mechanism with exponential backoff, timeout control, and rate l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-retry-evomap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251987713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-retry-evomap",
+      "url": "https://clawhub.ai/skills/http-retry-evomap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-retry-evomap",
+    "url": "https://clawhub.ai/skills/http-retry-evomap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-retry-evomap-5859a8013b95cb27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-retry-evomap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-retry-evomap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2d90c23d69ee4fdafdf05a2251683ec02eb7579b72417c4fae3df526ecd3ea2",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:01:38.423Z"
+}

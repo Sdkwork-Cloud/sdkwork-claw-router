@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dropbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox",
+  "skill": {
+    "id": 10244,
+    "skillKey": "clawhub-dropbox",
+    "name": "Dropbox Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox",
+    "url": "https://clawhub.ai/skills/dropbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-75170593d559f227.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Dropbox files securely with OAuth 2.0 PKCE via CLI or MCP server, supporting upload, download, search, delete, and account info operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanlisse",
+      "userId": "s178s3v3th8dpnw8f083act35584pte3",
+      "displayName": "Ryan Lisse",
+      "image": "https://avatars.githubusercontent.com/u/57917217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2757,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768662689302,
+      "changelog": "Initial release: MCP server + CLI for Dropbox file operations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:228e1c408d0fb335c44425c26aa8b027e68ad1d88039239b4cfef8a0e9a2ce34"
+}

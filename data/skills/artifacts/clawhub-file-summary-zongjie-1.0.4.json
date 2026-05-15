@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-summary-zongjie@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_summary_zongjie",
+  "skill": {
+    "id": 58265,
+    "skillKey": "clawhub-file-summary-zongjie",
+    "name": "文档内容总结 Summary & Analysis txt/docx/pdf/xlsx/xls"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-summary-zongjie",
+    "url": "https://clawhub.ai/skills/file-summary-zongjie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-summary-zongjie-7f4aeb81a41ceaa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "local document summary & analysis tool. triggers: 帮我总结, 总结文件, 分析文档, 分析总结, 总结一下, 分析一下 summarize for me, analyze for me, summarize the file, analyze the docume..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonthepro2012",
+      "userId": "publishers:leonthepro2012",
+      "displayName": "LeonThePro",
+      "image": "https://avatars.githubusercontent.com/u/88210194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772661476972,
+      "changelog": "- Updated the skill description to be more concise and moved all trigger words under a single \"triggers\" field.\n- Removed redundant \"Multi-language\" wording from the description.\n- No functional changes; files remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bfc8c8a38c9b7a005160dd829fc64c1cfe2d9ea4585a1e30aed26569544af7e9"
+}

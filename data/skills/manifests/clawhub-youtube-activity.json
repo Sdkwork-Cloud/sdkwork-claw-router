@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50543,
+  "uuid": "skill-clawhub-youtube-activity",
+  "skillKey": "clawhub-youtube-activity",
+  "name": "YouTube Activity",
+  "summary": "Manage activities on YouTube. Use this skill to list channel activities. Useful when working with YouTube activity — provides commands to list activity via t...",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_activity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenWaygate",
+      "features": [
+        "Manage activities on YouTube",
+        "Use this skill to list channel activities",
+        "Useful when working with YouTube activity — provides commands to list activity via t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-activity@0.10.7-dev",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27287694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-activity",
+      "url": "https://clawhub.ai/skills/youtube-activity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-activity",
+    "url": "https://clawhub.ai/skills/youtube-activity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-activity-c4dd3cb08185cf0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-activity@0.10.7-dev",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-activity-0.10.7-dev.json",
+      "version": "0.10.7-dev",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0c96fa0185f056e25660cdb68dcbedf678b6cff2f60d99db3da65d178cd2040",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:54:01.631Z"
+}

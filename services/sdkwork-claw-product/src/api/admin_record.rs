@@ -1,10 +1,9 @@
 use std::sync::Arc;
 
-use axum::body::Bytes;
-use axum::extract::State;
+use axum::extract::{Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::post;
+use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
@@ -24,9 +23,8 @@ struct AdminRecordState {
 }
 
 #[derive(Debug, Default, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct AdminRecordListRequest {
-    page_no: Option<i64>,
+struct AdminRecordListQuery {
+    page: Option<i64>,
     page_size: Option<i64>,
     user: Option<String>,
     token: Option<String>,
@@ -35,22 +33,18 @@ struct AdminRecordListRequest {
 
 pub fn admin_record_router_with_store(store: Arc<dyn AdminRecordStore + Send + Sync>) -> Router {
     Router::new()
-        .route("/backend/v3/api/record/list", post(fetch_logs))
+        .route("/backend/v3/api/system/records", get(fetch_logs))
         .with_state(AdminRecordState { store })
 }
 
 async fn fetch_logs(
     State(state): State<AdminRecordState>,
     headers: HeaderMap,
-    body: Bytes,
+    Query(request): Query<AdminRecordListQuery>,
 ) -> Response {
     let subject = match resolve_subject(&headers) {
         Ok(subject) => subject,
         Err(response) => return response,
-    };
-    let request = match parse_list_request(&body) {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
     };
     let query = match build_query(subject, request) {
         Ok(query) => query,
@@ -80,25 +74,17 @@ fn resolve_subject(headers: &HeaderMap) -> Result<AdminRecordSubject, Response> 
         })
 }
 
-fn parse_list_request(body: &[u8]) -> Result<AdminRecordListRequest, String> {
-    if body.iter().all(u8::is_ascii_whitespace) {
-        return Ok(AdminRecordListRequest::default());
-    }
-    serde_json::from_slice(body)
-        .map_err(|error| format!("invalid record list request body: {error}"))
-}
-
 fn build_query(
     subject: AdminRecordSubject,
-    request: AdminRecordListRequest,
+    request: AdminRecordListQuery,
 ) -> Result<ListAdminRecordLogsQuery, String> {
-    let page_no = request.page_no.unwrap_or(DEFAULT_PAGE_NO);
+    let page_no = request.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
-        return Err("pageNo must be greater than or equal to 1".to_owned());
+        return Err("page must be greater than or equal to 1".to_owned());
     }
     let page_size = request.page_size.unwrap_or(DEFAULT_PAGE_SIZE);
     if !(1..=MAX_PAGE_SIZE).contains(&page_size) {
-        return Err(format!("pageSize must be between 1 and {MAX_PAGE_SIZE}"));
+        return Err(format!("page_size must be between 1 and {MAX_PAGE_SIZE}"));
     }
     Ok(ListAdminRecordLogsQuery {
         subject,

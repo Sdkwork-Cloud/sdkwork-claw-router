@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-upload-to-local-workspace@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_upload_to_local_workspace",
+  "skill": {
+    "id": 62233,
+    "skillKey": "clawhub-file-upload-to-local-workspace",
+    "name": "File Upload to Local Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-upload-to-local-workspace",
+    "url": "https://clawhub.ai/skills/file-upload-to-local-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-upload-to-local-workspace-f5fa4f81dce618bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过网页上传文件到本地workspace，支持智能认证，文件安全保存，供AI分析处理，支持中文名和文件管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengwang86",
+      "userId": "publishers:chengwang86",
+      "displayName": "chengwang86",
+      "image": "https://avatars.githubusercontent.com/u/22303971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773106782610,
+      "changelog": "### v3.0.1\n\n- Updated `clawhub.json` configuration.\n- Made changes to `src/upload-server.js`.\n- No user-facing features documented; minor internal adjustments/maintenance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80879c1f377f7a7347c4bdaa09af910dd19c44015ea6b79fd6c8de640b945ac6"
+}

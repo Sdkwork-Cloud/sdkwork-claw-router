@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawng-term-memory@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawng_term_memory",
+  "skill": {
+    "id": 29785,
+    "skillKey": "clawhub-clawng-term-memory",
+    "name": "Clawng Term Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawng-term-memory",
+    "url": "https://clawhub.ai/skills/clawng-term-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawng-term-memory-46617fb279ff51c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make your OpenClaw agent portable and persistent. Version-controls SOUL.md, MEMORY.md, and all core knowledge files using git with automatic GitHub push — so..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidharket",
+      "userId": "publishers:davidharket",
+      "displayName": "davidharket",
+      "image": "https://avatars.githubusercontent.com/u/112109685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771675115019,
+      "changelog": "AI-powered memory synthesis: each machine has its own MEMORY.md on its own branch. A nightly Claude agent reads all agents' memories, deduplicates, and writes one authoritative SHARED_MEMORY.md to main. Scales to 10+ machines with zero conflicts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01b796d862cd9bbc908bc3159585f4467cc832185f5b4d66e99a9b53c26b1e54"
+}

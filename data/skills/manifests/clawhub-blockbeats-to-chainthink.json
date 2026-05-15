@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65830,
+  "uuid": "skill-clawhub-blockbeats-to-chainthink",
+  "skillKey": "clawhub-blockbeats-to-chainthink",
+  "name": "只需要发律动文章链接，帮你抓取并保存到 ChainThink 后台",
+  "summary": "自动抓取律动 BlockBeats文章内容并保存为ChainThink后台草稿，支持标题、摘要、正文和图片提取与上传。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockbeats_to_chainthink",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShinChan_Crayon",
+      "features": [
+        "自动抓取律动 BlockBeats文章内容并保存为ChainThink后台草稿，支持标题、摘要、正文和图片提取与上传。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockbeats-to-chainthink@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255044303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockbeats-to-chainthink",
+      "url": "https://clawhub.ai/skills/blockbeats-to-chainthink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockbeats-to-chainthink",
+    "url": "https://clawhub.ai/skills/blockbeats-to-chainthink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockbeats-to-chainthink-132062b0227a8642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockbeats-to-chainthink@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockbeats-to-chainthink-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32bdf80ca0171639bff702e8127c715eea6779c7cc1a50bd6bbd2860ec77fdc4",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:06:44.499Z"
+}

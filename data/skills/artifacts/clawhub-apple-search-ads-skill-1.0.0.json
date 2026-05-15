@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-search-ads-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_search_ads_skill",
+  "skill": {
+    "id": 14901,
+    "skillKey": "clawhub-apple-search-ads-skill",
+    "name": "Apple Search Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-search-ads-skill",
+    "url": "https://clawhub.ai/skills/apple-search-ads-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-search-ads-skill-fd8a1c40d86f32ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Apple Search Ads campaigns, ad groups, keywords, and reports via the asa-cli tool. Use when the user asks about Apple Search Ads management, campaign..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trebuhs",
+      "userId": "publishers:trebuhs",
+      "displayName": "TrebuhS",
+      "image": "https://avatars.githubusercontent.com/u/37559824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 915,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771177060737,
+      "changelog": "Initial release of Apple Search Ads management skill.  \n- Provides full command reference for managing Apple Search Ads campaigns, ad groups, keywords, and reports via `asa-cli`.\n- Includes guidance for authentication, multi-org management, filtering, pagination, and output formatting.\n- Documents relevant global flags, config options, and environment variable overrides.\n- Lists recommended best practices for command usage, reporting, and troubleshooting common scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e634f42eae83b0eb2cf3ffdb4a8a81104923dddeca4bfc781ca6182d551f2e87"
+}

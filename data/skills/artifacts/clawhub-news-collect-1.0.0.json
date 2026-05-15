@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-collect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_collect",
+  "skill": {
+    "id": 55541,
+    "skillKey": "clawhub-news-collect",
+    "name": "News Collect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-collect",
+    "url": "https://clawhub.ai/skills/news-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-collect-fd5ede4d74153322.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a repo-local scan through `skills/news-aggregator-skill`, then normalize the result into a local report contract for the collect layer. Use when Codex ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abigale-cyber",
+      "userId": "s177gvvwbgtc3ew8annt8ph3gx84c2xt",
+      "displayName": "Abigale-cyber",
+      "image": "https://avatars.githubusercontent.com/u/237663252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775575132503,
+      "changelog": "Initial release of news-collect skill.\n\n- Scans news using the repo-local news-aggregator-skill and outputs results in a normalized, collect-layer report contract.\n- Supports repeatable markdown news reports and archives raw JSON in a defined directory structure.\n- Allows flexible input with selectable profiles, keywords, source customization, and limit/depth controls.\n- Each report includes writing decision fields to guide topic recommendations and editorial directions.\n- Ensures compatibility and separation from the vendor dependency for stable long-term use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8f10bf6bfad57e60cfe805e0867d76160b56fc8439fcf8cd501a4a1e9a4efb1"
+}

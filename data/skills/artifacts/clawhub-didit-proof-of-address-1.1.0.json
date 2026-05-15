@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/didit-proof-of-address@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_proof_of_address",
+  "skill": {
+    "id": 20301,
+    "skillKey": "clawhub-didit-proof-of-address",
+    "name": "Didit Proof Of Address"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-proof-of-address",
+    "url": "https://clawhub.ai/skills/didit-proof-of-address",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-proof-of-address-67131777f3bd860d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Didit Proof of Address standalone API to verify address documents. Use when the user wants to verify a proof of address, validate utility bills, ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rosasalberto",
+      "userId": "publishers:rosasalberto",
+      "displayName": "Didit",
+      "image": "https://avatars.githubusercontent.com/u/47662054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772514922369,
+      "changelog": "Updated API refs, added utility script and feature guide",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe0051fd311bd2efe2e51bc0a61b6f3c6a2dbbbe73747ef6ed83ff6bf7b4438c"
+}

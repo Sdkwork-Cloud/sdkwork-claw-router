@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48966,
+  "uuid": "skill-clawhub-linkedin-community",
+  "skillKey": "clawhub-linkedin-community",
+  "name": "LinkedIn Community",
+  "summary": "LinkedIn Community Management API integration with managed OAuth. Manage organization pages, posts, comments, reactions, and analytics. Use this skill when u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_community",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "LinkedIn Community Management API integration with managed OAuth",
+        "Manage organization pages, posts, comments, reactions, and analytics",
+        "Use this skill when u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-community@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-community",
+      "url": "https://clawhub.ai/skills/linkedin-community"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-community",
+    "url": "https://clawhub.ai/skills/linkedin-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-community-70314a1b01519a38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-community@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-community-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc20c45d4f858df74d708b4dc33fd4c641f39af00e3b47c60ad541f475665f03",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T20:02:14.361Z"
+}

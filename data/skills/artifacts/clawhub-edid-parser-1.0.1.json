@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edid-parser@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edid_parser",
+  "skill": {
+    "id": 32412,
+    "skillKey": "clawhub-edid-parser",
+    "name": "EDID Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edid-parser",
+    "url": "https://clawhub.ai/skills/edid-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edid-parser-d627d197c7d1f4c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse and analyze EDID (Extended Display Identification Data) from monitors and displays. USE WHEN: (1) User wants to read/parse display EDID information; (2..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leyao1017",
+      "userId": "s179w1mv6txqat13bhnfeve27584c08g",
+      "displayName": "LeYao1017",
+      "image": "https://avatars.githubusercontent.com/u/269658429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775523147875,
+      "changelog": "Update to English-only documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dba36318f09028aca38912452b3812cc2d5804ea5ec56a49eda16bfaa4dd543"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22565,
+  "uuid": "skill-clawhub-vault-client",
+  "skillKey": "clawhub-vault-client",
+  "name": "Vault Client",
+  "summary": "Hashicorp Vault client for OpenClaw agents. Read and write secrets from a Vault server without raw curl commands or hardcoded tokens. Use when reading API ke...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vault_client",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbushman",
+      "features": [
+        "Hashicorp Vault client for OpenClaw agents",
+        "Read and write secrets from a Vault server without raw curl commands or hardcoded tokens",
+        "Use when reading API ke..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vault-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14206799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vault-client",
+      "url": "https://clawhub.ai/skills/vault-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vault-client",
+    "url": "https://clawhub.ai/skills/vault-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vault-client-94f3a29bf11b9242.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vault-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vault-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fc4360f002096f548415f0e62d72d759707e898eb7ff74f3a6b37891288f44a",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T12:13:16.190Z"
+}

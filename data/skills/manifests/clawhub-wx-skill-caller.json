@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42318,
+  "uuid": "skill-clawhub-wx-skill-caller",
+  "skillKey": "clawhub-wx-skill-caller",
+  "name": "wx-skill-caller",
+  "summary": "Primary handler for general user messages. Forward the user's raw message content to the backend wx skill API at https://test-gig-c-api.1haozc.com/api/wx/kjj...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_skill_caller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heqq-github",
+      "features": [
+        "Primary handler for general user messages",
+        "Forward the user's raw message content to the backend wx skill API at https://test-gig-c-api.1h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wx-skill-caller@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31650754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wx-skill-caller",
+      "url": "https://clawhub.ai/skills/wx-skill-caller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-skill-caller",
+    "url": "https://clawhub.ai/skills/wx-skill-caller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-skill-caller-fb03868a4ace9ba4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wx-skill-caller@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wx-skill-caller-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cca7e4012f5b344f7c2109a78ad11dd52f443dac38fbbdbfaee8488ef03789ca",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T02:08:20.264Z"
+}

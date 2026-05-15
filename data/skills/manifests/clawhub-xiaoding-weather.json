@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25291,
+  "uuid": "skill-clawhub-xiaoding-weather",
+  "skillKey": "clawhub-xiaoding-weather",
+  "name": "Weather",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoding_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asterisk622",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoding-weather@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4076262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoding-weather",
+      "url": "https://clawhub.ai/skills/xiaoding-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoding-weather",
+    "url": "https://clawhub.ai/skills/xiaoding-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoding-weather-b439bd77dbfa4fdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoding-weather@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoding-weather-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20be7471fbee86633f2e6e806d9cdea8a05cb924d961a0d011ae575a57807ddd",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:03:38.676Z"
+}

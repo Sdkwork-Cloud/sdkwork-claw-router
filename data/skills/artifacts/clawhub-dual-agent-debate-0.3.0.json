@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dual-agent-debate@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_agent_debate",
+  "skill": {
+    "id": 25218,
+    "skillKey": "clawhub-dual-agent-debate",
+    "name": "DualAgentDebate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-agent-debate",
+    "url": "https://clawhub.ai/skills/dual-agent-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-agent-debate-89544609ec799294.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured 2-agent debate loop between ChatGPT (OpenAI API) and the user's own thoughts retrieved from Supabase Open Brain via MCP, iterating up to 3 r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tvaloki",
+      "userId": "publishers:tvaloki",
+      "displayName": "tvaloki",
+      "image": "https://avatars.githubusercontent.com/u/147118570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1772720997722,
+      "changelog": "OAuth-friendly mode via openclaw agent fallback, lexical embedding fallback, and auto-create/retry for public.memories",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d7e87a736c7b9adce83179a0b1684bc03afec0dd1c250cab410c283b33f9816"
+}

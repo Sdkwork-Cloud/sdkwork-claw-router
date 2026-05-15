@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71002,
+  "uuid": "skill-clawhub-xh-auto-workflow",
+  "skillKey": "clawhub-xh-auto-workflow",
+  "name": "自动化工作流引擎",
+  "summary": "自动化工作流引擎。定时执行任务链：数据采集→处理→通知→存档。支持cron定时、 webhook触发、文件监控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xh_auto_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CJstate",
+      "features": [
+        "自动化工作流引擎。定时执行任务链：数据采集→处理→通知→存档。支持cron定时、 webhook触发、文件监控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xh-auto-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142857225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xh-auto-workflow",
+      "url": "https://clawhub.ai/skills/xh-auto-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xh-auto-workflow",
+    "url": "https://clawhub.ai/skills/xh-auto-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xh-auto-workflow-5ccc3934a0735969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xh-auto-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xh-auto-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daf5fa3d22bfe2cc4e177cc753a35339d150169531281e6b78b81eb9144a9b1e",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:44:29.192Z"
+}

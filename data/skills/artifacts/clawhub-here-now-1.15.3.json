@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/here-now@1.15.3",
+  "version": "1.15.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.here_now",
+  "skill": {
+    "id": 11815,
+    "skillKey": "clawhub-here-now",
+    "name": "here.now"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "here-now",
+    "url": "https://clawhub.ai/skills/here-now",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/here-now-a33e9780c5eec502.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "here.now lets agents publish websites and store private files in cloud Drives. Use Sites to publish HTML, documents, images, PDFs, videos, and static files t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamludwin",
+      "userId": "s172zbemcbcayy2ez5htg4md0s83h9pv",
+      "displayName": "adamludwin",
+      "image": "https://avatars.githubusercontent.com/u/32345145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1741,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "1.15.3",
+      "createdAt": 1777420865352,
+      "changelog": "Raise Drive file upload helper limit to 500 MB and refresh here.now skill copy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e15ad64bd5c62eda9f6e08e9d5474cf21b19ca11cface6e9248401e1f8c202d"
+}

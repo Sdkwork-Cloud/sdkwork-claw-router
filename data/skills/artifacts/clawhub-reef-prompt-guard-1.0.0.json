@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reef-prompt-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reef_prompt_guard",
+  "skill": {
+    "id": 15524,
+    "skillKey": "clawhub-reef-prompt-guard",
+    "name": "Reef Prompt Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reef-prompt-guard",
+    "url": "https://clawhub.ai/skills/reef-prompt-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reef-prompt-guard-9006051207da9a17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and filter prompt injection attacks in untrusted input. Use when processing external content (emails, web scrapes, API inputs, Discord messages, sub-agent outputs) or when building systems that accept user-provided text that will be."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "staybased",
+      "userId": "publishers:staybased",
+      "displayName": "staybased",
+      "image": "https://avatars.githubusercontent.com/u/216957304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1011,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770927808691,
+      "changelog": "Initial release — injection detection, 5 threat categories, CLI filter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:177f211feb02c5c7f97cf99ab909e7278070d6f9d81020cbb30926a65d245574"
+}

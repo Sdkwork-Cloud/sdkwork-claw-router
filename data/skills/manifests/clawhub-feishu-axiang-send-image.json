@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68797,
+  "uuid": "skill-clawhub-feishu-axiang-send-image",
+  "skillKey": "clawhub-feishu-axiang-send-image",
+  "name": "飞书图片发送技能",
+  "summary": "使用自有飞书应用配置，上传并发送本地图片到指定飞书用户或群聊，支持PNG/JPG/GIF/WEBP格式。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_axiang_send_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icesumer-lgtm",
+      "features": [
+        "使用自有飞书应用配置，上传并发送本地图片到指定飞书用户或群聊，支持PNG/JPG/GIF/WEBP格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-axiang-send-image@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262824601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-axiang-send-image",
+      "url": "https://clawhub.ai/skills/feishu-axiang-send-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-axiang-send-image",
+    "url": "https://clawhub.ai/skills/feishu-axiang-send-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-axiang-send-image-faab4830a24833fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-axiang-send-image@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-axiang-send-image-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de24b57143cca18e9ad004ea1754503e7c958786e1a0b328a46a198fb66133bd",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:38:26.724Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53944,
+  "uuid": "skill-clawhub-emotional-memo",
+  "skillKey": "clawhub-emotional-memo",
+  "name": "emotional-memo",
+  "summary": "A shared emotional memo for relationships — records emotional moments and gently reminds before old wounds are touched",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotional_memo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zj-zc",
+      "features": [
+        "A shared emotional memo for relationships — records emotional moments and gently reminds before."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emotional-memo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207544357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emotional-memo",
+      "url": "https://clawhub.ai/skills/emotional-memo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotional-memo",
+    "url": "https://clawhub.ai/skills/emotional-memo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotional-memo-b1ee2d81a8ba694b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emotional-memo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emotional-memo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c3434b6826ea0809aa68164f3144ea000f5ef596c47b729209be42758da3b2",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:29:51.680Z"
+}

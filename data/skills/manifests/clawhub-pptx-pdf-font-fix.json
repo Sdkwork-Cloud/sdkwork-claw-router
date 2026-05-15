@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14440,
+  "uuid": "skill-clawhub-pptx-pdf-font-fix",
+  "skillKey": "clawhub-pptx-pdf-font-fix",
+  "name": "PPTX PDF Font Fix",
+  "summary": "Fix PowerPoint font embedding issues in PDF export by patching text transparency in PPTX files. Use when a user has a PPTX file where exported PDFs show wrong/default fonts instead of the intended downloaded/custom fonts, even with font em.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_pdf_font_fix",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chernojagne",
+      "features": [
+        "Fix PowerPoint font embedding issues in PDF export by patching text transparency in PPTX files",
+        "Use when a user has a PPTX file where exported PDFs show wrong/default fonts instead of the int.",
+        "Works by applying minimal (1%) transparency to fully-opaque text runs, which forces PowerPoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptx-pdf-font-fix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48069284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptx-pdf-font-fix",
+      "url": "https://clawhub.ai/skills/pptx-pdf-font-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-pdf-font-fix",
+    "url": "https://clawhub.ai/skills/pptx-pdf-font-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-pdf-font-fix-da64be0f3524cb6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptx-pdf-font-fix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptx-pdf-font-fix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29e92d5d0200e1edc6b535323bf168c37f0a4e331ab9e013d42b9eafde210721",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T04:38:11.162Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68808,
+  "uuid": "skill-clawhub-mx-selfselect",
+  "skillKey": "clawhub-mx-selfselect",
+  "name": "Mx Selfselect",
+  "summary": "妙想自选管理skill，基于东方财富通行证账户数据及行情底层数据构建，支持通过自然语言查询、添加、删除自选股。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_selfselect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jessecq1995",
+      "features": [
+        "妙想自选管理skill，基于东方财富通行证账户数据及行情底层数据构建，支持通过自然语言查询、添加、删除自选股。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-selfselect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185338792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-selfselect",
+      "url": "https://clawhub.ai/skills/mx-selfselect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-selfselect",
+    "url": "https://clawhub.ai/skills/mx-selfselect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-selfselect-10a8e37332361902.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-selfselect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-selfselect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f2f3c6839599cd8321da82d5785f8307c20f30f1c885c116f8b42b7adf537b",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:48:42.642Z"
+}

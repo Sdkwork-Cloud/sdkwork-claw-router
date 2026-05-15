@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x5-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x5_protocol",
+  "skill": {
+    "id": 41866,
+    "skillKey": "clawhub-x5-protocol",
+    "name": "X5 Protocol Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x5-protocol",
+    "url": "https://clawhub.ai/skills/x5-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x5-protocol-ea51c4a9f9941040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send X5 protocol API requests from the terminal. Use this skill whenever the user wants to test, call, or send X5 API requests; parse .x5 files; generate X5..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "growingppp",
+      "userId": "s179s175dy81dnvfksk7y0scr5840ybr",
+      "displayName": "GrowingPPP",
+      "image": "https://avatars.githubusercontent.com/u/30253998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028263082,
+      "changelog": "x5-protocol 1.0.0 – Initial release\n\n- Send X5 protocol API requests directly from the terminal or scripts.\n- Parse `.x5` multi-request files, with support for directives and custom headers.\n- Inline request mode with command-line parameters (`--appid`, `--appkey`, `--url`, `--method`, `--body`).\n- Generate X5-compliant cURL commands for debugging or sharing.\n- Output detailed results in JSON, show encoded requests with `--dry-run`, and list requests in `.x5` files.\n- No external dependencies; uses only the Python standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc801d2f102d3aaeff34ca8ffcf41a63dec033442c4f45aa4d332a6d3f456bf2"
+}

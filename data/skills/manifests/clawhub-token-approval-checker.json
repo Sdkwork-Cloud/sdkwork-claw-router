@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59735,
+  "uuid": "skill-clawhub-token-approval-checker",
+  "skillKey": "clawhub-token-approval-checker",
+  "name": "Token Approval Checker",
+  "summary": "钱包授权管理工具，检查 ERC20/ERC721 代币授权风险，识别无限授权和高风险授权。每次调用收取 0.001 USDT。当用户提到\"检查授权\"、\"撤销授权\"、\"Token Approval\"、\"高风险授权\"、\"MetaMask授权\"时使用。Wallet authorization management to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_approval_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liusanhong",
+      "features": [
+        "钱包授权管理工具，检查 ERC20/ERC721 代币授权风险，识别无限授权和高风险授权。每次调用收取 0.001 USDT。当用户提到\"检查授权\"、\"撤销授权\"、\"Token Approv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-approval-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18411036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-approval-checker",
+      "url": "https://clawhub.ai/skills/token-approval-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-approval-checker",
+    "url": "https://clawhub.ai/skills/token-approval-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-approval-checker-1f6a5686265cb759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-approval-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-approval-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee4941081808c425fb2e8b6c4e89e728d976a60ae865c7cdc03839a651aa35c9",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T11:23:54.915Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43071,
+  "uuid": "skill-clawhub-appian-missingdescr",
+  "skillKey": "clawhub-appian-missingdescr",
+  "name": "Appian Missingdescr",
+  "summary": "Audit Appian application objects for missing descriptions. Given an application UUID, reports every object whose description field is empty or absent.",
+  "version": "1.5.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_missingdescr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "Audit Appian application objects for missing descriptions",
+        "Given an application UUID, reports every object whose description field is empty or absent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-missingdescr@1.5.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-missingdescr",
+      "url": "https://clawhub.ai/skills/appian-missingdescr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-missingdescr",
+    "url": "https://clawhub.ai/skills/appian-missingdescr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-missingdescr-a1722052c0177414.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-missingdescr@1.5.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-missingdescr-1.5.10.json",
+      "version": "1.5.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78055d19503ac6fa79800ef4c473ae427447b3b39f329eb4dee46fcf4c753bd4",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:04:31.130Z"
+}

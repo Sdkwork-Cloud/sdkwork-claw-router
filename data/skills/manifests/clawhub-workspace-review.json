@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9645,
+  "uuid": "skill-clawhub-workspace-review",
+  "skillKey": "clawhub-workspace-review",
+  "name": "Workspace Review",
+  "summary": "Audit workspace structure and memory files against OpenClaw conventions. Use when asked to \"review workspace\", \"audit files\", \"check structure\", or during periodic self-maintenance. Helps catch drift from standard patterns.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ortegarod",
+      "features": [
+        "Audit workspace structure and memory files against OpenClaw conventions",
+        "Use when asked to \"review workspace\", \"audit files\", \"check structure\", or during periodic self.",
+        "Helps catch drift from standard patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-review@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66845285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-review",
+      "url": "https://clawhub.ai/skills/workspace-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-review",
+    "url": "https://clawhub.ai/skills/workspace-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-review-45cb6f3a225784d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-review@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-review-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5faedfd7886a86162559bcf5b08a8dc4acd4460d587575283da97a2f2402b49a",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:38:19.275Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28982,
+  "uuid": "skill-clawhub-pilates",
+  "skillKey": "clawhub-pilates",
+  "name": "Pilates (Session Planner, Form Coach, Progress Tracker)",
+  "summary": "Plan Pilates sessions, refine form, and track steady progress with equipment-aware modifications, core-focused cues, and weekly reviews.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan Pilates sessions, refine form, and track steady progress with equipment-aware modification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilates@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilates",
+      "url": "https://clawhub.ai/skills/pilates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilates",
+    "url": "https://clawhub.ai/skills/pilates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilates-2f6aa6800491ddcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilates@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilates-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b51c3ea560453ff21c1a68f59402b2df479417fa64d84c823de66fbb5d9f44ce",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:37:03.629Z"
+}

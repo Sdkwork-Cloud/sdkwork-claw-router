@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/living-room-smoke-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.living_room_smoke_detector",
+  "skill": {
+    "id": 19239,
+    "skillKey": "clawhub-living-room-smoke-detector",
+    "name": "Living Room Smoke Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "living-room-smoke-detector",
+    "url": "https://clawhub.ai/skills/living-room-smoke-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/living-room-smoke-detector-b9c53afd3c61edb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple smoke/fire detector for living room. Queries Dirigera air sensor every 5 minutes, detects dangerous PM2.5 over 250 or CO2 over 2000 levels, and broadc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-2",
+      "userId": "publishers:maverick-2",
+      "displayName": "Igor",
+      "image": "https://avatars.githubusercontent.com/u/3859269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 627,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772012236387,
+      "changelog": "Initial release - smoke detection with continuous Mac speaker alerts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e778520dd55c9e1c5a32f574a64c22c13ffd94d5ecbc9e760fb0d0ce77f8c002"
+}

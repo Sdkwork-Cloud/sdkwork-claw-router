@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40574,
+  "uuid": "skill-clawhub-motif-logo-generator",
+  "skillKey": "clawhub-motif-logo-generator",
+  "name": "Motif Logo Generator",
+  "summary": "Generate publication-quality sequence logos for DNA or protein motifs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motif_logo_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate publication-quality sequence logos for DNA or protein motifs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/motif-logo-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "motif-logo-generator",
+      "url": "https://clawhub.ai/skills/motif-logo-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motif-logo-generator",
+    "url": "https://clawhub.ai/skills/motif-logo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motif-logo-generator-377ae6b432d5aade.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/motif-logo-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-motif-logo-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19cc8f800891c183ea77e7b917897c1bd51e708412e63a329c4f0d374fe2336d",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:58:47.484Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64219,
+  "uuid": "skill-clawhub-raspberry-pi-camera-service",
+  "skillKey": "clawhub-raspberry-pi-camera-service",
+  "name": "raspberry-pi-camera-service",
+  "summary": "提供使用摄像头拍照, 录制视频或直接生成gif的能力。何时触发: 需要拍照时, 需要观察一段时间当前视野时, 需要关注某件事情的进展时.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raspberry_pi_camera_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CLD1994",
+      "features": [
+        "提供使用摄像头拍照, 录制视频或直接生成gif的能力。何时触发: 需要拍照时, 需要观察一段时间当前视野时, 需要关注某件事情的进展时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raspberry-pi-camera-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10044266?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raspberry-pi-camera-service",
+      "url": "https://clawhub.ai/skills/raspberry-pi-camera-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raspberry-pi-camera-service",
+    "url": "https://clawhub.ai/skills/raspberry-pi-camera-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raspberry-pi-camera-service-918614656bd8a8eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raspberry-pi-camera-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-camera-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aad7137a0dd8a46939045eb67eb2b6258e15481726d01e50e1f75f62038f6f7",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:21:08.970Z"
+}

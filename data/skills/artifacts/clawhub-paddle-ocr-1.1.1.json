@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paddle-ocr@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paddle_ocr",
+  "skill": {
+    "id": 61974,
+    "skillKey": "clawhub-paddle-ocr",
+    "name": "PaddleOCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paddle-ocr",
+    "url": "https://clawhub.ai/skills/paddle-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paddle-ocr-578103109337b8e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向法律 PDF 与扫描件的 PaddleOCR 结构化解析技能。默认将本地 PDF 或图片转换为 Markdown，并在技能内部保留可追溯 archive 归档。本技能应在用户需要法律 PDF OCR、卷宗 OCR、病历 OCR、证据扫描件转 Markdown、表格识别、公式识别、版面分析、PDF 转 Mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cat-xierluo",
+      "userId": "s179ghx665dhgcsrdzyss2am0x83g7nf",
+      "displayName": "xierluo",
+      "image": "https://avatars.githubusercontent.com/u/66555304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776247374231,
+      "changelog": "面向法律 PDF 与扫描件的 PaddleOCR 结构化解析，支持表格识别、公式识别、版面分析，保留 archive 归档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40c3e677bdb26ad2eb3b8ca922d4998650ebd37324452b686de0ebe3c9af950e"
+}

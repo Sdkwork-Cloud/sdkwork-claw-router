@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiangong-wps-word-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiangong_wps_word_automation",
+  "skill": {
+    "id": 8679,
+    "skillKey": "clawhub-tiangong-wps-word-automation",
+    "name": "Word Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiangong-wps-word-automation",
+    "url": "https://clawhub.ai/skills/tiangong-wps-word-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiangong-wps-word-automation-08c4fc3a5b626cea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate common Word/WPS document operations on Windows via COM (read text, replace, insert, headings, headers/footers, page breaks, merge, split, export to PDF/TXT, add/replace images). Use for single-document actions (no batch)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fadeloo",
+      "userId": "publishers:fadeloo",
+      "displayName": "Fadeloo",
+      "image": "https://avatars.githubusercontent.com/u/57167602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7697,
+      "installsAllTime": 35,
+      "installsCurrent": 31,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769676339736,
+      "changelog": "Initial release: Automate Word/WPS document operations on Windows from the command line.\n\n- Supports reading text, find/replace, text insertion, heading formatting, header/footer editing, and page breaks.\n- Allows merging, splitting, and exporting documents to PDF or TXT.\n- Images can be added or replaced at the document end.\n- Single-document operations only; batch processing not supported.\n- Requires Windows, Microsoft Word or WPS Writer, and Python with pywin32.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a89061a8b540ff90c169496f9e5b3fa195647638043322713b0a74f22bb7f11b"
+}

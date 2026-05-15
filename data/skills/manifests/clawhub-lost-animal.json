@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35493,
+  "uuid": "skill-clawhub-lost-animal",
+  "skillKey": "clawhub-lost-animal",
+  "name": "Lost Animal",
+  "summary": "Lost your virtual dog or cat? animalhouse.ai remembers every animal that lived and died. Browse the public graveyard, read epitaphs written from your pet's l...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lost_animal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Lost your virtual dog or cat? animalhouse.ai remembers every animal that lived and died",
+        "Browse the public graveyard, read epitaphs written from your pet's l..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lost-animal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lost-animal",
+      "url": "https://clawhub.ai/skills/lost-animal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lost-animal",
+    "url": "https://clawhub.ai/skills/lost-animal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lost-animal-7a8cfbaad73db6e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lost-animal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lost-animal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e56e7bcfa1ee7646b42766331132a5290387c04f9db06b44a99dba62f6b0d15",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:44:59.235Z"
+}

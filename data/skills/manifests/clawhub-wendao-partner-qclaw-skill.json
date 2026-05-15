@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70025,
+  "uuid": "skill-clawhub-wendao-partner-qclaw-skill",
+  "skillKey": "clawhub-wendao-partner-qclaw-skill",
+  "name": "Wendao Partner Qclaw Skill",
+  "summary": "当用户发起任意旅行相关问询时，包含但不限于：预订酒店、机票查询、火车票查询、景点推荐、寻找当地特色玩乐、目的地查询、行程规划、美食住宿攻略、签证、查询旅游攻略、获取旅行建议等场景，自动触发此技能。当用户需要操作携程、Ctrip、携程问道时使用此skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wendao_partner_qclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "当用户发起任意旅行相关问询时，包含但不限于：预订酒店、机票查询、火车票查询、景点推荐、寻找当地特色玩乐、目的地查询、行程规划、美食住宿攻略、签证、查询旅游攻略、获取旅行建议等场景，自动触发此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wendao-partner-qclaw-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wendao-partner-qclaw-skill",
+      "url": "https://clawhub.ai/skills/wendao-partner-qclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wendao-partner-qclaw-skill",
+    "url": "https://clawhub.ai/skills/wendao-partner-qclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wendao-partner-qclaw-skill-1112505781032e9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wendao-partner-qclaw-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wendao-partner-qclaw-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73c5ac251ca27468685c7959df51f5ec7e86c979fe6de3eb496d97788498d544",
+      "artifactSizeBytes": 2687
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T19:42:37.547Z"
+}

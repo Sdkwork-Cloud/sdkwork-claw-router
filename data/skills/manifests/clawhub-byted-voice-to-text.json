@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63977,
+  "uuid": "skill-clawhub-byted-voice-to-text",
+  "skillKey": "clawhub-byted-voice-to-text",
+  "name": "Byted Voice To Text",
+  "summary": "语音转文字（ASR）。使用火山引擎 BigModel ASR 识别语音，包含极速版（≤2h/100MB 同步快速返回）和标准版（≤5h 异步识别）两种模式。支持飞书语音消息、本地音频文件及音频 URL。当收到语音消息或音频附件（.ogg/.mp3/.wav）时使用本技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_voice_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "语音转文字（ASR）。使用火山引擎 BigModel ASR 识别语音，包含极速版（≤2h/100MB 同步快速返回）和标准版（≤5h 异步识别）两种模式。支持飞书语音消息、本地音频文件及音."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-voice-to-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-voice-to-text",
+      "url": "https://clawhub.ai/skills/byted-voice-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-voice-to-text",
+    "url": "https://clawhub.ai/skills/byted-voice-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-voice-to-text-1b93ecee89708615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-voice-to-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-voice-to-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b94589de9ae5b20f7df9cb314665da211e81f627e802f64c689a801e2a86775",
+      "artifactSizeBytes": 2721
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:38:38.325Z"
+}

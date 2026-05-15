@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-market-overview@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_market_overview",
+  "skill": {
+    "id": 26550,
+    "skillKey": "clawhub-gate-info-market-overview",
+    "name": "gate-info-marketoverview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-market-overview",
+    "url": "https://clawhub.ai/skills/gate-info-market-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-market-overview-fa107ca558aed31a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market overview. Use this skill ONLY when the user's query is exclusively about overall market conditions with no specific coin analysis. Trigger phrases: ho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775558081561,
+      "changelog": "**gate-info-market-overview v1.0.3 Changelog**\n\n- Updated local references to runtime rules; `.md` documents are now read from the `references` directory.\n- Added new rule files: `gate-runtime-rules.md` and `info-news-runtime-rules.md`, in `references/`.\n- Removed obsolete/duplicative files: `CHANGELOG.md`, `README.md`, and `scripts/update-skill.sh`.\n- Simplified installation check and clarified that install flows are local to the host IDE/environment.\n- Housekeeping and documentation improvements; no logic or workflow changes to the market overview process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:318500decf42474d6c12f3069952a549435ba99d1b0ec7f321f25190a01c6add"
+}

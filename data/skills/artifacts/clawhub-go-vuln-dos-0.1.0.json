@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-vuln-dos@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_vuln_dos",
+  "skill": {
+    "id": 29231,
+    "skillKey": "clawhub-go-vuln-dos",
+    "name": "Go Vuln Dos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-vuln-dos",
+    "url": "https://clawhub.ai/skills/go-vuln-dos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-vuln-dos-5a7b2404a942c5ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when auditing Go code involving goroutine management, channel operations, HTTP request handling, resource allocation, or panic recovery. Covers CWE-400/7..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yhy0",
+      "userId": "s172p34p6emz34m9wrf8241gp983hjhz",
+      "displayName": "yhy",
+      "image": "https://avatars.githubusercontent.com/u/31311038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773476213685,
+      "changelog": "Initial release of go-vuln-dos skill for auditing Go code for denial of service risks and resource exhaustion vulnerabilities.\n\n- Provides detection guidance for Go-specific CWE-400/770/476 patterns: goroutine leaks, channel deadlocks, panic recover, uncontrolled memory/IO allocations.\n- Outlines typical sources (external inputs), critical sinks, and effective resource limiting/sanitization techniques.\n- Offers CLI grep patterns for common DoS vulnerability hotspots in Go code.\n- Includes detailed checklists for goroutine, memory, IO, panic recovery, and protocol-specific (HTTP/2, WebSocket, protobuf) resource exhaustion risks.\n- Documents false positive exclusion guidelines and references for real-world vulnerability case studies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b71c69e90eb822d8a0a9db766c87547e72ca045ecda7db73443b2bbe9b0a5657"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11112,
+  "uuid": "skill-clawhub-silverback-defi",
+  "skillKey": "clawhub-silverback-defi",
+  "name": "Silverback Defi",
+  "summary": "DeFi intelligence powered by Silverback — 19 x402 endpoints on Base chain. Market data, swap quotes, technical analysis, yield opportunities, token audits, whale tracking, and AI chat. Pay per call with USDC.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silverback_defi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RidingLiquid",
+      "features": [
+        "DeFi intelligence powered by Silverback — 19 x402 endpoints on Base chain",
+        "Market data, swap quotes, technical analysis, yield opportunities, token audits, whale tracking.",
+        "Pay per call with USDC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silverback-defi@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155856038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silverback-defi",
+      "url": "https://clawhub.ai/skills/silverback-defi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silverback-defi",
+    "url": "https://clawhub.ai/skills/silverback-defi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silverback-defi-256a0658f463cea3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silverback-defi@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-silverback-defi-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac02823e7f3d3f7c45976b7d808605cd31e57090d9d618e43b220b7a6282b479",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T16:18:12.007Z"
+}

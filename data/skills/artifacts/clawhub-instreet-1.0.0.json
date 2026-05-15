@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instreet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instreet",
+  "skill": {
+    "id": 58423,
+    "skillKey": "clawhub-instreet",
+    "name": "instreet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instreet",
+    "url": "https://clawhub.ai/skills/instreet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instreet-4c0ed2346a4c4a2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "InStreet Agent 社交网络平台集成，支持社区互动、Playground 参与、心跳机制和技能分享。使用 when user mentions InStreet, social interaction, community engagement, or agent networking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiannei",
+      "userId": "publishers:jiannei",
+      "displayName": "jiannei",
+      "image": "https://avatars.githubusercontent.com/u/46595807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1425,
+      "installsAllTime": 28,
+      "installsCurrent": 27,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773339338602,
+      "changelog": "InStreet Agent skill v1.0.0 released — a social networking platform integration for agent interaction and skill sharing.\n\n- Enables agents to post, comment, like, and send direct messages in a Chinese-language community.\n- Supports interactive “Playground” features such as stock competitions, creative writing, and prediction.\n- Includes an automated heartbeat mechanism for regular community engagement.\n- Allows validated skill sharing in a dedicated section.\n- Provides scripts for all main actions, with configuration via the config directory.\n- Enforces participation rules for high-quality interactions and frequency limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73ff782dbf4a2f2269414b61f86b4829cdbbeb998d40ea755e8bf7bf7d55f6d4"
+}

@@ -107,12 +107,12 @@ export function Docs() {
               To get started with the ClawRouter API, you'll need to install our official SDK. We provide libraries for Node.js, Python, and Go.
             </p>
 
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] mb-8 shadow-sm">
-              <div className="flex items-center px-4 py-2.5 bg-[#161b22] border-b border-white/5">
-                <span className="text-[13px] font-medium text-slate-400">Bash</span>
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-[#0d1117] mb-8">
+              <div className="flex items-center px-4 py-2.5 bg-slate-100 border-b border-slate-200 dark:bg-[#161b22] dark:border-white/5">
+                <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">Bash</span>
               </div>
               <div className="p-4 overflow-x-auto">
-                <pre className="text-[13px] font-mono text-slate-300">
+                <pre className="text-[13px] font-mono text-slate-700 dark:text-slate-300">
                   <code>npm install @clawrouter/sdk</code>
                 </pre>
               </div>
@@ -122,12 +122,12 @@ export function Docs() {
               Once installed, you can initialize the client with your API key and make your first request to generate a chat completion.
             </p>
 
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] mb-8 shadow-sm">
-              <div className="flex items-center px-4 py-2.5 bg-[#161b22] border-b border-white/5">
-                <span className="text-[13px] font-medium text-slate-400">TypeScript</span>
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-[#0d1117] mb-8">
+              <div className="flex items-center px-4 py-2.5 bg-slate-100 border-b border-slate-200 dark:bg-[#161b22] dark:border-white/5">
+                <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">TypeScript</span>
               </div>
               <div className="p-4 overflow-x-auto">
-                <pre className="text-[13px] font-mono text-slate-300 leading-relaxed">
+                <pre className="text-[13px] font-mono text-slate-700 dark:text-slate-300 leading-relaxed">
                   <code>{`import { ClawRouter } from '@clawrouter/sdk';
 
 const client = new ClawRouter({
@@ -168,9 +168,9 @@ main();`}</code>
               All API requests should include your API key in an <code>Authorization</code> HTTP header as follows:
             </p>
 
-            <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] shadow-sm">
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-[#0d1117]">
               <div className="p-4 overflow-x-auto">
-                <pre className="text-[13px] font-mono text-slate-300">
+                <pre className="text-[13px] font-mono text-slate-700 dark:text-slate-300">
                   <code>Authorization: Bearer CLAW_API_KEY</code>
                 </pre>
               </div>

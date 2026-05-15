@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28926,
+  "uuid": "skill-clawhub-discord-roster",
+  "skillKey": "clawhub-discord-roster",
+  "name": "Discord Roster",
+  "summary": "Query Discord guild members, list bots, get channel and role info via REST API. Use when: listing server members, checking who's a bot, viewing channel permi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_roster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wehub4me",
+      "features": [
+        "Query Discord guild members, list bots, get channel and role info via REST API",
+        "Use when: listing server members, checking who's a bot, viewing channel permi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-roster@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15828534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-roster",
+      "url": "https://clawhub.ai/skills/discord-roster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-roster",
+    "url": "https://clawhub.ai/skills/discord-roster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-roster-09f5856a095c79f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-roster@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-roster-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef62ead27f3281c464b6df56318b01e82d8a7a557663231f83462b6fc62c8183",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:15:35.583Z"
+}

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronRight, ChevronDown, Terminal, Sun, Moon, Globe, Check, Github, Bell } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { buildPortalAuthLoginRedirect } from '../portal-auth.ts';
 
 interface NavbarProps {
   isDark: boolean;
@@ -56,7 +57,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   };
 
   const handleSignIn = () => {
-    navigate('/auth/login?redirect=/console');
+    navigate(buildPortalAuthLoginRedirect(location));
   };
 
   const languages = [
@@ -128,7 +129,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://github.com/Sdkwork-Cloud/sdkwork-api-router.git"
+            href="https://github.com/Sdkwork-Cloud/sdkwork-claw-router.git"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-lobster-500 dark:text-slate-300 dark:hover:text-white transition-colors"
@@ -296,7 +297,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </div>
           <div className="h-px bg-slate-200 dark:bg-white/10 my-2" />
           <a
-            href="https://github.com/Sdkwork-Cloud/sdkwork-api-router.git"
+            href="https://github.com/Sdkwork-Cloud/sdkwork-claw-router.git"
             target="_blank"
             rel="noopener noreferrer"
             className="text-base font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2"

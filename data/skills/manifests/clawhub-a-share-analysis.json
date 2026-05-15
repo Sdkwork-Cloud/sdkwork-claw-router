@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64721,
+  "uuid": "skill-clawhub-a-share-analysis",
+  "skillKey": "clawhub-a-share-analysis",
+  "name": "a-share-analysis",
+  "summary": "提供A股实时行情、技术指标、财务数据和市场情绪分析，生成详细的Markdown格式综合投资报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "czf0718",
+      "features": [
+        "提供A股实时行情、技术指标、财务数据和市场情绪分析，生成详细的Markdown格式综合投资报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199261670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-analysis",
+      "url": "https://clawhub.ai/skills/a-share-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-analysis",
+    "url": "https://clawhub.ai/skills/a-share-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-analysis-9c36671c89340ad2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d93c3bf6a13a526948c9e61118ddbbc011751765f14d264cd502db249017c05",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:49:36.919Z"
+}

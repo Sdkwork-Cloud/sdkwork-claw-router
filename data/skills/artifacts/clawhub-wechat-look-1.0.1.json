@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-look@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_look",
+  "skill": {
+    "id": 68844,
+    "skillKey": "clawhub-wechat-look",
+    "name": "Wechat Look"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-look",
+    "url": "https://clawhub.ai/skills/wechat-look",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-look-7c8edbbe8f59f2c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取微信公众号文章的专用工具，支持OCR文字识别。自动规范化URL并提取文章内容，识别图片中的中英文文字。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2720480371",
+      "userId": "s175vcqr1v9gn1h76sqn9qt9qh8408qk",
+      "displayName": "2720480371",
+      "image": "https://avatars.githubusercontent.com/u/32962721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775754986224,
+      "changelog": "- Added detailed installation and system requirements, including Python and Node.js setup instructions.\n- Documented explicit Python and Node.js dependencies and install steps for OCR components.\n- Described the hybrid Python + Node.js architecture and runtime behavior.\n- Expanded technical implementation details, including inter-process communication and OCR workflow.\n- No changes to user-facing features or API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f09e0992ea343e27d8aa3bca574d5367909145324ccaaed326e7c5ccedb9dd1f"
+}

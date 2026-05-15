@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lenovo-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lenovo_cn",
+  "skill": {
+    "id": 65240,
+    "skillKey": "clawhub-lenovo-cn",
+    "name": "Lenovo Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lenovo-cn",
+    "url": "https://clawhub.ai/skills/lenovo-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lenovo-cn-08869352d76c03b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供联想产品信息、价格、技术支持及门店查询，助您了解ThinkPad、Legion等系列及智能设备详情。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776042824929,
+      "changelog": "Lenovo 联想技能 1.0.0 - 首发版本上线\n\n- 支持联想产品信息查询（包括 ThinkPad、Legion、IdeaPad、ThinkCentre、GeekPro 等系列）\n- 提供智能设备、配件和价格查询\n- 集成技术支持：驱动下载、保修信息\n- 可查询联想授权门店及经销商信息\n- 场景覆盖产品推荐、购买建议、促销咨询与售后协助",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1b4fb363b9082aaace672036365504925202db715218c8044ee83e4c6575088"
+}

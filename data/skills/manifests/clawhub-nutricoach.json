@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56587,
+  "uuid": "skill-clawhub-nutricoach",
+  "skillKey": "clawhub-nutricoach",
+  "name": "nutricoach 营养专家",
+  "summary": "Personal health data management and intelligent diet recommendation system. Use when users need to: - Record and track body metrics (weight, height, BMI, bod...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutricoach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RainbowLion0320",
+      "features": [
+        "Personal health data management and intelligent diet recommendation system",
+        "Use when users need to:",
+        "Record and track body metrics (weight, height, BMI, bod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nutricoach@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230983374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nutricoach",
+      "url": "https://clawhub.ai/skills/nutricoach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutricoach",
+    "url": "https://clawhub.ai/skills/nutricoach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutricoach-921e5f0783092d64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nutricoach@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nutricoach-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ed3ecc4c2e67db58c806b3646c4841e1928c0bc3c5a49192046ede2fe1e4c94",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:09:21.636Z"
+}

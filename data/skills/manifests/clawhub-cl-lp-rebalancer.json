@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63296,
+  "uuid": "skill-clawhub-cl-lp-rebalancer",
+  "skillKey": "clawhub-cl-lp-rebalancer",
+  "name": "Cl Lp Rebalancer",
+  "summary": "Uniswap V3 集中流动性 LP 自动调仓策略。基于波动率自适应范围宽度：低波动率收紧范围（高资本效率），高波动率放宽范围（减少调仓和 IL）。支持趋势不对称调整、多时间框架分析、自动 claim/remove/swap/deposit 全流程。适用于 EVM L2 链上 CL LP 管理、调仓、范围优化、...",
+  "version": "3.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cl_lp_rebalancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SynthThoughts",
+      "features": [
+        "Uniswap V3 集中流动性 LP 自动调仓策略。基于波动率自适应范围宽度：低波动率收紧范围（高资本效率），高波动率放宽范围（减少调仓和 IL）。支持趋势不对称调整、多时间框架分析、自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cl-lp-rebalancer@3.9.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261547909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cl-lp-rebalancer",
+      "url": "https://clawhub.ai/skills/cl-lp-rebalancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cl-lp-rebalancer",
+    "url": "https://clawhub.ai/skills/cl-lp-rebalancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cl-lp-rebalancer-bbc04c29a5f2d25d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cl-lp-rebalancer@3.9.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cl-lp-rebalancer-3.9.2.json",
+      "version": "3.9.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370b8fc730e3d34fb8658b3304b1d4f6c047c4138ad016762a176f88c7219a7e",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:34:02.698Z"
+}

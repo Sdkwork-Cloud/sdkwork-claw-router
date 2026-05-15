@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51325,
+  "uuid": "skill-clawhub-plane-cli-tool",
+  "skillKey": "clawhub-plane-cli-tool",
+  "name": "Plane CLI",
+  "summary": "Plane.so: Create, update, and manage issues, projects, states, labels, and pages. Use when the user wants to interact with Plane.so — creating issues, listin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plane_cli_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jamil Zakirov",
+      "features": [
+        "Plane.so: Create, update, and manage issues, projects, states, labels, and pages",
+        "Use when the user wants to interact with Plane.so — creating issues, listin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plane-cli-tool@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15848838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plane-cli-tool",
+      "url": "https://clawhub.ai/skills/plane-cli-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plane-cli-tool",
+    "url": "https://clawhub.ai/skills/plane-cli-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plane-cli-tool-1f17cc00592abdac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plane-cli-tool@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plane-cli-tool-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7bffc8ed27a42f18fcb9ef47bf4182eb6e45af05d409e5f4be6ab94c798d91f",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T22:44:46.317Z"
+}

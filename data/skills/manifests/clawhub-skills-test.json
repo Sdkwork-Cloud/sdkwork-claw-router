@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55315,
+  "uuid": "skill-clawhub-skills-test",
+  "skillKey": "clawhub-skills-test",
+  "name": "Skill Test",
+  "summary": "Evaluate and QA a skill before release on ClawHub, skills.sh, and similar directories. Includes the bundled static evaluator `scripts/eval_skill.py` plus gui...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Weiwei Fan",
+      "features": [
+        "Evaluate and QA a skill before release on ClawHub, skills.sh, and similar directories",
+        "Includes the bundled static evaluator `scripts/eval_skill.py` plus gui..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-test@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3015434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-test",
+      "url": "https://clawhub.ai/skills/skills-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-test",
+    "url": "https://clawhub.ai/skills/skills-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-test-0aef5cbc70a26130.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-test@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-test-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356afafc2a7b64e46d102b272eeb4f2c3181cd07219b451124e86db71a683c27",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:54:14.814Z"
+}

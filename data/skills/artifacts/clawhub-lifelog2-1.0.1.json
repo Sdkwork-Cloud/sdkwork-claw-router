@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lifelog2@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifelog2",
+  "skill": {
+    "id": 70704,
+    "skillKey": "clawhub-lifelog2",
+    "name": "lifelog2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifelog2",
+    "url": "https://clawhub.ai/skills/lifelog2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifelog2-0fe0cbcfe3dd6cd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "碎片化日记记录和汇总技能。当用户想要记录当天碎片化的想法、心情、事件，或者需要汇总、存档日记时使用。触发场景包括：用户发送\"记日记\"记录碎片内容、发送\"汇总日记\"整理当天内容、发送\"日记存档\"将日记写入 flomo 和 ima。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quanmengli777",
+      "userId": "s175yrv0x89dtn1k1819mh0z0183ga99",
+      "displayName": "quanmengli",
+      "image": "https://avatars.githubusercontent.com/u/199542653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774372106295,
+      "changelog": "lifelog2 v1.0.1\n\n- 新增技能文档，详细说明日记暂存、汇总、存档的功能、文件结构与流程。\n- 设计全新暂存机制，采用按日期分文件保存，文件路径与格式明确。\n- 引入错误与边界情况处理建议（如存档失败、首次使用等）。\n- 新增多个用户交互示例，涵盖日记记录、汇总、存档各场景。\n- 项目初始评测文件、页面示意和测试文档已添加。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3775dab953d2a9f5c834618a06b4595540536423e6879636101be5385441a1f"
+}

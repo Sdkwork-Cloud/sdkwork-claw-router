@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14319,
+  "uuid": "skill-clawhub-pdf-to-markdown",
+  "skillKey": "clawhub-pdf-to-markdown",
+  "name": "Pdf To Markdown",
+  "summary": "Convert PDF files to Markdown with table recognition. Use when extracting text, converting tables, summarizing documents, fixing formatting issues.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Convert PDF files to Markdown with table recognition",
+        "Use when extracting text, converting tables, summarizing documents, fixing formatting issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-markdown@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-markdown",
+      "url": "https://clawhub.ai/skills/pdf-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-markdown",
+    "url": "https://clawhub.ai/skills/pdf-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-markdown-041dc645d8bf26fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-markdown@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-markdown-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea43f6c98a7956af0b463f982c8650ad52bce9bd4df4c63ce353d2463c5d2661",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:40:41.421Z"
+}

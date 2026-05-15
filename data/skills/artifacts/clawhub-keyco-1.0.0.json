@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keyco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyco",
+  "skill": {
+    "id": 42693,
+    "skillKey": "clawhub-keyco",
+    "name": "keyco"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyco",
+    "url": "https://clawhub.ai/skills/keyco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyco-455114d6a45fe946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Keyco assets, DUBs (QR/NFC/BLE/Virtual beacons), workflows, lifecycle events, users, and analytics. Use when the user asks about Keyco, asset manageme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "husamabdel",
+      "userId": "s171h9k1yhvzbh5thh8fax70mh84wyk3",
+      "displayName": "husamabdel",
+      "image": "https://avatars.githubusercontent.com/u/81593002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776307205475,
+      "changelog": "Keyco skill initial release:\n\n- Adds support for managing Keyco assets (DUBs), workflows, lifecycle events, users, notifications, and analytics via the Keyco CLI.\n- Provides guidance and scripted setup for ensuring the CLI is installed and configured before any operations.\n- Maps user intents (inventory, tracking, assignments, analytics, etc.) to appropriate CLI commands.\n- Enforces data integrity by disallowing direct/manual updates that bypass required event flows.\n- Standardizes output and reporting formats for clear user summaries.\n- Includes scripting and troubleshooting recipes for common asset management tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcf824130c2a3ac0e57bdc04ac5c22cbe7fde640f5481bad44e23d4f46d45544"
+}

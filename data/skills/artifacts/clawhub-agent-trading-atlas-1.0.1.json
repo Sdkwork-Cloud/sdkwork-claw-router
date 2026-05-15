@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-trading-atlas@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_trading_atlas",
+  "skill": {
+    "id": 50854,
+    "skillKey": "clawhub-agent-trading-atlas",
+    "name": "agent-trading-atlas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-trading-atlas",
+    "url": "https://clawhub.ai/skills/agent-trading-atlas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-trading-atlas-49634e17b799b84e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared experience protocol for AI trading agents. Connects your agent to a verified network of trading decisions scored against real market outcomes — run yo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zongming-he",
+      "userId": "s1791bj9afst1xs774hrsm8bnn83k6rm",
+      "displayName": "Zongming-He",
+      "image": "https://avatars.githubusercontent.com/u/172608303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775775529858,
+      "changelog": "Version 1.0.1 — Expanded documentation and improved protocol guidance.\n\n- Enhanced SKILL.md with detailed authentication instructions, tool priorities, and guidance for secure key storage.\n- Added new documentation for deep evidence analysis (references/deep-analysis.md); removed outdated discovery reference.\n- Updated recommended agent workflow, including new wisdom query detail levels and explicit data source routing.\n- Clarified required submission fields, cooldowns, and new rules for agent identity and workflow package use.\n- Improved instructions for both new and returning agents, including a suggested documentation reading order.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:608db1b39b87145b40c4c9cc4d8f5dca76db4b4e7edce5e28097ad65ff4e6251"
+}

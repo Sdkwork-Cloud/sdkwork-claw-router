@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youcom-search@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youcom_search",
+  "skill": {
+    "id": 36527,
+    "skillKey": "clawhub-youcom-search",
+    "name": "Youcom Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youcom-search",
+    "url": "https://clawhub.ai/skills/youcom-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youcom-search-296b58d86cc509f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "you.com web search, deep research, and content extraction for OpenClaw. Free tier for basic search; research and extract require paid API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crabsticksalad",
+      "userId": "s17572r03ywk8ctcnx8amnqrhd83f232",
+      "displayName": "Crabstick",
+      "image": "https://avatars.githubusercontent.com/u/262156320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1774875275734,
+      "changelog": "- Added support for the --formats and --timeout options to youcom_extract (choose output format and set crawl timeout).\n- SKILL.md and API documentation updated to reflect new youcom_extract options and usage.\n- No changes to API endpoints or free search functionality.\n- Bugfixes and clarifications in CLI help and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d30c93e862934516e95810d4fd176f716bc43b8abad23cd547f864308c27d57a"
+}

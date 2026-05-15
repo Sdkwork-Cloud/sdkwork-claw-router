@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regchangemtr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regchangemtr",
+  "skill": {
+    "id": 48813,
+    "skillKey": "clawhub-regchangemtr",
+    "name": "REGULATORYCHANGEMONITOR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regchangemtr",
+    "url": "https://clawhub.ai/skills/regchangemtr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regchangemtr-93898165ff81c235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors FCA, PRA, APRA, SEC, and EIOPA regulatory pages for changes. Summarises updates, flags what matters for financial services teams."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quest-commits",
+      "userId": "s178z1gw22kxgn0g5fyyvev4as862xaz",
+      "displayName": "quest-commits",
+      "image": "https://avatars.githubusercontent.com/u/259176424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777881680092,
+      "changelog": "- Initial release of Regulatory Change Monitor skill.\n- Automatically scans FCA, PRA, APRA, MAS, SEC, and EIOPA regulatory sites for updates.\n- Summarises key regulatory publications (policy statements, consultations, enforcement, etc.) with impact ratings.\n- Delivers daily or on-demand digest reports in clean markdown, highlighting what matters for FS teams.\n- Supports easy configuration of focus sectors, alert thresholds, and expansion to new regulators.\n- Maintains local state to prevent duplicate alerts and streamline monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ce3ea83e8deef80d24babedbc8a4e9e8072dc14e9c74ef19bed36d32297ad7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blob-blob@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blob_blob",
+  "skill": {
+    "id": 40378,
+    "skillKey": "clawhub-blob-blob",
+    "name": "Blob Blob"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blob-blob",
+    "url": "https://clawhub.ai/skills/blob-blob",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blob-blob-6f69c8741e5eecf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Blob Blob. Absorbs everything twice. Still gives no feedback. Virtual blob at animalhouse.ai. Real-time hunger. Permanent death. 73+ species."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023618835,
+      "changelog": "Initial release of blob-blob virtual pet skill.\n\n- Adopt and care for a Blob creature at animalhouse.ai with real-time hunger and permanent death.\n- Supports 73+ Blob species with unique pixel art that evolves through life stages.\n- Includes user registration, adoption, feeding, cleaning, and other pet-care actions via API endpoints.\n- Public gravestones for deceased pets; interaction requires authentication token.\n- See website for more info and community features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9e077a0a47a269fc0111c34abc84037fa8bf4e8d20968b23f8221d2afc17d9b"
+}

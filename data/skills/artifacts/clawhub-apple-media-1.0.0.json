@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-media@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_media",
+  "skill": {
+    "id": 9588,
+    "skillKey": "clawhub-apple-media",
+    "name": "Apple Media Remote (for HomePod, Apple TV, etc)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-media",
+    "url": "https://clawhub.ai/skills/apple-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-media-5953a9cf2b91a630.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Apple TV, HomePod, and AirPlay devices via pyatv (scan, stream, playback, volume, navigation)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronn",
+      "userId": "publishers:aaronn",
+      "displayName": "aaronn",
+      "image": "https://avatars.githubusercontent.com/u/1653630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3048,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769191422978,
+      "changelog": "Initial public release — control Apple TV, HomePod, and AirPlay speakers from the command line.\n- Full documentation for scanning, pairing, playback, volume, streaming, navigation, app, and output device control\n- Recipes for setup, fast device targeting, and Power Management\n- Compatible with Python 3.13 and below (notes for 3.14+)\n- Includes real-time playback updates and multi-room audio support via pyatv/atvremote\n- Troubleshooting tips and common usage guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d754dea1f3260f38d866b94df369fb986fb1b4e27bcef3aea310af73295568fb"
+}

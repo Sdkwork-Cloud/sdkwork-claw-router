@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10950,
+  "uuid": "skill-clawhub-shortcut",
+  "skillKey": "clawhub-shortcut",
+  "name": "Shortcut",
+  "summary": "Manage stories on Shortcut.com kanban boards. Use when creating, updating, or listing tasks/stories on Shortcut project management boards. Supports creating stories with descriptions and types (feature/bug/chore), updating story status, an.",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortcut",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "catwalksophie",
+      "features": [
+        "Manage stories on Shortcut.com kanban boards",
+        "Use when creating, updating, or listing tasks/stories on Shortcut project management boards",
+        "Supports creating stories with descriptions and types (feature/bug/chore), updating story statu.",
+        "Includes full checklist task management and comment support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortcut@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257796352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortcut",
+      "url": "https://clawhub.ai/skills/shortcut"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortcut",
+    "url": "https://clawhub.ai/skills/shortcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortcut-8dfea6856769fb4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortcut@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortcut-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e422d938f3d21f1bf33ee3cd64d19c85ecb5a7cf79c81f74171bccaf9845fa65",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T09:26:01.309Z"
+}

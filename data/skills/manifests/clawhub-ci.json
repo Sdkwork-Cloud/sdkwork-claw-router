@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58047,
+  "uuid": "skill-clawhub-ci",
+  "skillKey": "clawhub-ci",
+  "name": "CI发布工程师 环境兼容与命令安全",
+  "summary": "CI release engineer skill for environment compatibility, Windows-safe command composition, and automation-stable execution paths.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "CI release engineer skill for environment compatibility, Windows-safe command composition, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ci@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ci",
+      "url": "https://clawhub.ai/skills/ci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci",
+    "url": "https://clawhub.ai/skills/ci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-1b158839f8aa339e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ci@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ci-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2a2febe457ad97b0ef80b1912f5d900b0bf537f2ff63067b98024a501f865f2",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:43:12.491Z"
+}

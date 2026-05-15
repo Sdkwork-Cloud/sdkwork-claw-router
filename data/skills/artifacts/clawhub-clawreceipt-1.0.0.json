@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawreceipt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawreceipt",
+  "skill": {
+    "id": 21785,
+    "skillKey": "clawhub-clawreceipt",
+    "name": "ClawReceipt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawreceipt",
+    "url": "https://clawhub.ai/skills/clawreceipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawreceipt-00483b9223093030.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to extract receipt information, record expenses, track budgets, and manage financial receipts using the ClawReceipt CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sakurako-irs",
+      "userId": "publishers:sakurako-irs",
+      "displayName": "Sakurako",
+      "image": "https://avatars.githubusercontent.com/u/104028329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772423915608,
+      "changelog": "Initial release of the ClawReceipt skill for OpenClaw:\n\n- Enables extraction and recording of receipt information using the ClawReceipt CLI.\n- Allows users to add new expenses and categorize receipts.\n- Supports checking of current spend and monthly budget status.\n- Provides the ability to update the monthly budget and list recent receipts.\n- Guides users to launch the dashboard or export data, with clear terminal instructions and necessary pre-checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b3f51dfde239f34d29c566ab621dd814f21e0b8ed724097386cbcd50531129c"
+}

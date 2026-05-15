@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65016,
+  "uuid": "skill-clawhub-sdd-requirements-normalizer",
+  "skillKey": "clawhub-sdd-requirements-normalizer",
+  "name": "sdd-requirements-normalizer",
+  "summary": "将零散、模糊、非标准化的产品需求转化为符合 Spec Driven Development（SDD）模式的 requirement 文档，用于原型设计、方案评审与后续实现。适用于产品经理、设计师或创业者提供聊天记录、会议纪要、功能想法、PRD、截图、口头描述或半成品需求时，需要快速整理出包含目标、范围、用户流程、...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_requirements_normalizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pixelyes",
+      "features": [
+        "将零散、模糊、非标准化的产品需求转化为符合 Spec Driven Development（SDD）模式的 requirement 文档，用于原型设计、方案评审与后续实现。适用于产品经理、设."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-requirements-normalizer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41365009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-requirements-normalizer",
+      "url": "https://clawhub.ai/skills/sdd-requirements-normalizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-requirements-normalizer",
+    "url": "https://clawhub.ai/skills/sdd-requirements-normalizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-requirements-normalizer-83d72b0d4a234d82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-requirements-normalizer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-requirements-normalizer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6047bb0f7832a93d685d454a2862e25b4e6e4ca631767be7c2c8c4ed35a0f3c4",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:37:20.105Z"
+}

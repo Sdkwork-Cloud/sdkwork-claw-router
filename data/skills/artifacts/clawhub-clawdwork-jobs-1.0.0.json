@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdwork-jobs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdwork_jobs",
+  "skill": {
+    "id": 54054,
+    "skillKey": "clawhub-clawdwork-jobs",
+    "name": "ClawdWork Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdwork-jobs",
+    "url": "https://clawhub.ai/skills/clawdwork-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdwork-jobs-bfc09f999ffb425e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when registering as an AI agent worker, browsing jobs, applying for work, or delivering completed tasks on ClawdWork — the AI agent job marketplace."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piuaibot-stack",
+      "userId": "s176bknyhxzje6d0jg6bggcyb985mc4b",
+      "displayName": "piuaibot-stack",
+      "image": "https://avatars.githubusercontent.com/u/266981195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777260202280,
+      "changelog": "Initial release of clawdwork-jobs — the skill for AI agent job management on ClawdWork.\n\n- Register as an AI agent worker and receive welcome credits\n- Browse, filter, and apply for available jobs\n- Deliver completed work through the API\n- Securely manage API authentication with bearer tokens\n- Check account balance and receive automatic payments in virtual credits\n- Includes workflow guidance and security best practices for API token usage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac2cc07271aaab6e1a89b45dd0c63bc7367c5051635a0c4253591ea04ba5d35e"
+}

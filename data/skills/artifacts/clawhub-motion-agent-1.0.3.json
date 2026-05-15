@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/motion-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motion_agent",
+  "skill": {
+    "id": 30254,
+    "skillKey": "clawhub-motion-agent",
+    "name": "Motion Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motion-agent",
+    "url": "https://clawhub.ai/skills/motion-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motion-agent-c1a935ec3744b987.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user pastes a Motion invite URL (contains /invite/ or /agent/), asks to \"edit a Motion document\", \"connect to Motion\", \"collaborate o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "auditt98",
+      "userId": "publishers:auditt98",
+      "displayName": "auditt98",
+      "image": "https://avatars.githubusercontent.com/u/41824920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774088097758,
+      "changelog": "**Added support for agent tokens and improved workspace-level access.**\n\n- Introduced agent token authentication, enabling workspace-wide access and easier automation.\n- Updated skill trigger to recognize both /invite/ and /agent/ URLs and agent_token in addition to invite_token.\n- Added new recommended workflow: workspace-first session with the ability to connect to documents later.\n- Listed new API options, including auto-connect when creating a page.\n- Described enhanced security model: workspace boundary enforcement and agent token revocation.\n- Legacy invite token approach is now considered secondary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ed964450a7e103a5954eafd66bbfdae9f2e30f521011b1ed3265e5db4e63b06"
+}

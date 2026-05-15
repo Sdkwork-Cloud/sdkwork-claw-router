@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56496,
+  "uuid": "skill-clawhub-opencli-skill",
+  "skillKey": "clawhub-opencli-skill",
+  "name": "opencli",
+  "summary": "Use opencli CLI to interact with social/content websites (Bilibili, Zhihu, Twitter/X, YouTube, Weibo, 小红书, V2EX, Reddit, HackerNews, 雪球, BOSS直聘 etc.) via the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronwang1980",
+      "features": [
+        "Use opencli CLI to interact with social/content websites (Bilibili, Zhihu, Twitter/X, YouTube,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencli-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25520608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencli-skill",
+      "url": "https://clawhub.ai/skills/opencli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-skill",
+    "url": "https://clawhub.ai/skills/opencli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-skill-d087105a161d9a63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencli-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencli-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75a5ed1fec63ce0851cb00f978226ce13174367532b8d0534299bf0207059a27",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:31:21.311Z"
+}

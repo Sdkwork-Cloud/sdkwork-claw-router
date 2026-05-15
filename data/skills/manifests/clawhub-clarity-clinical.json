@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19276,
+  "uuid": "skill-clawhub-clarity-clinical",
+  "skillKey": "clawhub-clarity-clinical",
+  "name": "Clarity Clinical",
+  "summary": "Query clinical variant data from ClinVar and gnomAD via Clarity Protocol. Use when the user asks about ClinVar classification, clinical significance, pathoge...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_clinical",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clarityprotocol",
+      "features": [
+        "Query clinical variant data from ClinVar and gnomAD via Clarity Protocol",
+        "Use when the user asks about ClinVar classification, clinical significance, pathoge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarity-clinical@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255743260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarity-clinical",
+      "url": "https://clawhub.ai/skills/clarity-clinical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-clinical",
+    "url": "https://clawhub.ai/skills/clarity-clinical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-clinical-ef4195d3472eb705.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarity-clinical@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarity-clinical-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae2297631abcd2ffac32ff5037bbef76b62844fd3f485a59fabd9d342e4a5330",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T20:31:52.411Z"
+}

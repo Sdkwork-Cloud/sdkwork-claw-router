@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43853,
+  "uuid": "skill-clawhub-massat-security-audit",
+  "skillKey": "clawhub-massat-security-audit",
+  "name": "Massat Security Audit",
+  "summary": "Security audit for multi-agent AI systems - OWASP ASI01-ASI10",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.massat_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "craigmbrown",
+      "features": [
+        "Security audit for multi-agent AI systems",
+        "OWASP ASI01-ASI10"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/massat-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134821091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "massat-security-audit",
+      "url": "https://clawhub.ai/skills/massat-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "massat-security-audit",
+    "url": "https://clawhub.ai/skills/massat-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/massat-security-audit-a4df888845aeda11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/massat-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-massat-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e17f590ee550dfb118137009cbc8f4a665b8af23bdfbe39d3962b128b539bb7",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T04:10:41.732Z"
+}

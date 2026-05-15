@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "binance-square-skill",
+    "displayName": "binance-square-skill",
+    "summary": "Binance Square (币安广场) signal agent. Scrapes 200+ posts via Puppeteer + API interception, detects bot-pushed narratives, runs on-chain confirmation (OI/fundin...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776087233514,
+    "updatedAt": 1777527499076
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776087233514,
+    "changelog": "Binance Square Signal Agent v1.0.0\n\n- Provides an end-to-end pipeline for detecting crypto trade signals based on Binance Square narrative tracking and on-chain confirmation.\n- Scrapes 200+ Binance Square posts using Puppeteer with multi-method bot detection.\n- Runs on-chain confirmation steps for each coin via user-supplied Coinglass API/proxy (OI, funding rates, liquidations).\n- Combines four signal sources (liquidation, funding, OI/price, Square sentiment) for actionable LONG/SHORT/AVOID/WATCH calls.\n- Generates detailed markdown reports and optionally pushes summary signals to Telegram (configurable via environment variables).\n- Supports multiple modes: full scan, Telegram push, deep coin drill, and keyword/article summary.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ru7superbeauty",
+    "userId": "s17btjxx0yk80a3agywsxk1st184stfd",
+    "displayName": "RU7superbeauty",
+    "image": "https://avatars.githubusercontent.com/u/257958087?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.potential_exfiltration (+1 more)",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527499076
+  }
+}

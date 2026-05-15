@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/private-computation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_computation",
+  "skill": {
+    "id": 25965,
+    "skillKey": "clawhub-private-computation",
+    "name": "private computation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-computation",
+    "url": "https://clawhub.ai/skills/private-computation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-computation-f0711e2c7017a467.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-Knowledge Execution for Sensitive Agent Tasks - Privacy computing framework for AI Agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773398783920,
+      "changelog": "Initial release of OpenClaw Private Computation.\n\n- Introduces a privacy-first computation framework for AI Agents, supporting zero-knowledge execution of sensitive tasks.\n- Features encrypted credential storage (AES-256-GCM), isolated/secure task execution, and immutable audit logs.\n- Supports multiple security levels, including basic, TEE isolation, and strict zero-knowledge modes.\n- Designed for GDPR and HIPAA compliance.\n- Provides a simple TypeScript/Node.js API for credential management, secure task execution, and audit logging.\n- Documentation, examples, and roadmap included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09d5302ce7deb9ad2fd7496657a89394b9024fda579705d20865b2c93de8b393"
+}

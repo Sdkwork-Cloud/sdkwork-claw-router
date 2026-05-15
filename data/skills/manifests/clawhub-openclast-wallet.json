@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13462,
+  "uuid": "skill-clawhub-openclast-wallet",
+  "skillKey": "clawhub-openclast-wallet",
+  "name": "Openclast Wallet",
+  "summary": "Guides the agent in Openclast/Openclaw wallet usage, approvals, and safety rules. Use when users ask about wallet setup, balances, transactions, approvals, or key export.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclast_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fabriziogianni7",
+      "features": [
+        "Guides the agent in Openclast/Openclaw wallet usage, approvals, and safety rules",
+        "Use when users ask about wallet setup, balances, transactions, approvals, or key export."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclast-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46995085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclast-wallet",
+      "url": "https://clawhub.ai/skills/openclast-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclast-wallet",
+    "url": "https://clawhub.ai/skills/openclast-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclast-wallet-0f17a6eaea0cd21a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclast-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclast-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f884d9fedafa82c936a5277288e80b336e28af6c0b7cea9886437cf8c7622ad",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T13:27:17.813Z"
+}

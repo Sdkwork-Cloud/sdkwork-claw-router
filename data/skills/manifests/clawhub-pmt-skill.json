@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26349,
+  "uuid": "skill-clawhub-pmt-skill",
+  "skillKey": "clawhub-pmt-skill",
+  "name": "pumpmarket skill",
+  "summary": "Predict pump.fun token graduations (YES/NO) on Solana mainnet via PumpMarket parimutuel betting markets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmt_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "King0",
+      "features": [
+        "Predict pump.fun token graduations (YES/NO) on Solana mainnet via PumpMarket parimutuel betting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pmt-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83126184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pmt-skill",
+      "url": "https://clawhub.ai/skills/pmt-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmt-skill",
+    "url": "https://clawhub.ai/skills/pmt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmt-skill-3fa33cc848742bca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pmt-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pmt-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a75b64e0a4c68f28268e9b129e986979a4ac739e6c4c8d638b88258a6ebcc6b",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:16:54.153Z"
+}

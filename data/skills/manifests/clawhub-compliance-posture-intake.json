@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27533,
+  "uuid": "skill-clawhub-compliance-posture-intake",
+  "skillKey": "clawhub-compliance-posture-intake",
+  "name": "Compliance Posture Intake",
+  "summary": "Comprehensive HIPAA compliance posture assessment for agent and API contexts. Runs a structured intake covering all Seven Elements of an effective compliance...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_posture_intake",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dangsllc",
+      "features": [
+        "Comprehensive HIPAA compliance posture assessment for agent and API contexts",
+        "Runs a structured intake covering all Seven Elements of an effective compliance..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-posture-intake@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226757080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-posture-intake",
+      "url": "https://clawhub.ai/skills/compliance-posture-intake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-posture-intake",
+    "url": "https://clawhub.ai/skills/compliance-posture-intake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-posture-intake-8cd416dfa835399e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-posture-intake@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-posture-intake-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06da736827160a341103489af7d7b7cb2c9977ea46962b643f09214e5e131328",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T01:29:15.869Z"
+}

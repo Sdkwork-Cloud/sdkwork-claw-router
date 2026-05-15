@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65349,
+  "uuid": "skill-clawhub-yt-search-download",
+  "skillKey": "clawhub-yt-search-download",
+  "name": "YouTube/B站 视频搜索下载",
+  "summary": "多站点视频搜索、下载、字幕提取工具。支持 YouTube、B站（Bilibili）等主流平台。 结合 YouTube Data API v3 进行高级搜索，yt-dlp 下载视频/音频/字幕。 核心能力：全站关键词搜索、频道浏览、按时间/播放量/相关度排序、下载视频、提取音频（MP3）、下载字幕（中英文）、查看视...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_search_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joppyao-bit",
+      "features": [
+        "多站点视频搜索、下载、字幕提取工具。支持 YouTube、B站（Bilibili）等主流平台。 结合 YouTube Data API v3 进行高级搜索，yt-dlp 下载视频/音频/字幕."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-search-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246783575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-search-download",
+      "url": "https://clawhub.ai/skills/yt-search-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-search-download",
+    "url": "https://clawhub.ai/skills/yt-search-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-search-download-1333a5e8c1fe4fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-search-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-search-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7e3e6c7c8654173e8f90ca0b39aafbdeb8fdc158339be96de00d7954e9bfcfa",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:22:05.366Z"
+}

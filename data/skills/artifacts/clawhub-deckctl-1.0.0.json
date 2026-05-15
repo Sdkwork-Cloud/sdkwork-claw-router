@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deckctl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deckctl",
+  "skill": {
+    "id": 55945,
+    "skillKey": "clawhub-deckctl",
+    "name": "deckctl — Steam Deck / Bazzite Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deckctl",
+    "url": "https://clawhub.ai/skills/deckctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deckctl-0e8a74f01b341f79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Steam Deck & Bazzite system management — gamescope, flatpak, podman, GPU, performance, game mode, system health"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silverod",
+      "userId": "s17c8hecabrv720rnyqjk5hmsd85cgtc",
+      "displayName": "13",
+      "image": "https://avatars.githubusercontent.com/u/20891937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776960947873,
+      "changelog": "Initial release of deckctl — Steam Deck & Bazzite system management.\n\n- Manage system health, performance, and configuration on Steam Deck and Bazzite OS\n- Control Gamescope sessions, Flatpak app management, Proton/Lutris compatibility, and gaming containers\n- Monitor GPU, memory, disk, and CPU stats\n- Assist with Sunshine streaming, MangoHud/vkBasalt overlays, and OBS VkCapture\n- Includes troubleshooting guides and common task references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c76cfc913cbaf1d9299f914d9951605d7b3975b617953fb6a57ac7e054f2ac2"
+}

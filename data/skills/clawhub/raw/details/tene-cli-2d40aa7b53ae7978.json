@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "tene-cli",
+    "displayName": "Tene CLI — Local-First Secrets",
+    "summary": "Local-first encrypted secret management with the tene CLI. Activate when the user mentions secrets, API keys, credentials, tokens, .env files, environment va...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1776842539587,
+    "updatedAt": 1777527849619
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1776842539587,
+    "changelog": "tene-cli 1.0.3 Changelog\n\n- Updated SKILL.md with detailed usage instructions and strict AI safety rules.\n- Clarified activation triggers and restrictions for when the skill should be used.\n- Added comprehensive documentation for all main tene commands and workflows (init, set, list, run, import, export, env, passwd, etc.).\n- Reiterated critical safety practices, including never leaking plain secrets and only injecting via `tene run --`.\n- Provided updated install and migration guidance.\n- 100% coverage of active tene CLI commands (init, set, get, list, delete, run, import, export, env, passwd, recover, version, update, whoami)\n- 5 baked-in AI safety rules: never run `tene get`, never plain `tene export`, never read `.tene/`, never pass secrets as CLI args, use `tene list` for introspection\n- 3 end-to-end examples (init, .env migration, multi-env CI/CD) and 6 expected-behavior test cases\n- Verified: 19/19 offline assertion self-tests + 6/6 live behavioral eval (3 consecutive runs, 100%) via `claude -p`",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "macos",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "tomo-kay",
+    "userId": "s174snwxqqgsqztjj2keh8atqs85bq09",
+    "displayName": "agent-kay",
+    "image": "https://avatars.githubusercontent.com/u/248060914?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527849619
+  }
+}

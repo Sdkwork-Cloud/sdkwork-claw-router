@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/protein-docking-configurator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protein_docking_configurator",
+  "skill": {
+    "id": 36715,
+    "skillKey": "clawhub-protein-docking-configurator",
+    "name": "Protein Docking Configurator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protein-docking-configurator",
+    "url": "https://clawhub.ai/skills/protein-docking-configurator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protein-docking-configurator-b12dcf8bd858c2ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare input files for molecular docking software, automatically determine Grid Box center and size. Supports AutoDock Vina, AutoDock4, and other mainstream..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774920514876,
+      "changelog": "Initial release.\n\n- Prepare input files for molecular docking software with automatic Grid Box determination.\n- Supports AutoDock Vina and AutoDock4 configuration file generation.\n- Grid Box center and size can be set using active site residues, reference ligand, or manual input.\n- Usable both as a command-line tool and Python module.\n- Includes security guidelines and risk assessment in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:504da43c1d4e027d4a0644766899d2481143b21defc02600c7ef57372a1a0b76"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68072,
+  "uuid": "skill-clawhub-cn-hot-trends",
+  "skillKey": "clawhub-cn-hot-trends",
+  "name": "Cn Hot Trends",
+  "summary": "聚合中国主流平台热点榜单，获取实时热搜、热议、科技、财经、影视、音乐等多维度热点内容。 当用户询问\"今天热搜是什么\"、\"微博热搜\"、\"知乎热榜\"、\"B站热门\"、\"抖音热点\"、 \"今日热点\"、\"热点新闻\"、\"热门话题\"、\"各平台热榜\"、\"热点聚合\"等时使用此 skill。 支持按平台查询（微博/百度/知乎/抖音/B...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_hot_trends",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunGang-pine",
+      "features": [
+        "聚合中国主流平台热点榜单，获取实时热搜、热议、科技、财经、影视、音乐等多维度热点内容。 当用户询问\"今天热搜是什么\"、\"微博热搜\"、\"知乎热榜\"、\"B站热门\"、\"抖音热点\"、 \"今日热点\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-hot-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71001425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-hot-trends",
+      "url": "https://clawhub.ai/skills/cn-hot-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-hot-trends",
+    "url": "https://clawhub.ai/skills/cn-hot-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-hot-trends-def9829cd8816b88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-hot-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-hot-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:258e47b53347198cf5762549993ca3fc00b95904e0055564141bcdb95f942a71",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:18:14.541Z"
+}

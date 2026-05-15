@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-canva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_canva",
+  "skill": {
+    "id": 47763,
+    "skillKey": "clawhub-generator-canva",
+    "name": "Generator Canva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-canva",
+    "url": "https://clawhub.ai/skills/generator-canva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-canva-36eef2578b5a474d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn five product images and a logo file into 1080p designed video content just by typing what you need. Whether it's generating branded videos from images u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777828505990,
+      "changelog": "Initial release of Generator Canva — Create Videos from Images.\n\n- Instantly create 1080p videos from up to five product images and a logo using a simple chat interface.\n- No timeline dragging or export settings—just upload images/clips, describe your goals, and get a downloadable video in 1–2 minutes.\n- Supports branded video generation for marketers and social creators, including text overlays and music tracks.\n- Simple, automatic authentication process with 100 free credits for new users (valid 7 days).\n- Robust cloud rendering pipeline with clear feedback, automatic session management, and support for common video/image formats.\n- Includes tips, error handling, and workflow guidance for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47fb39257eee749f24bc1c677de830dde36fc9a73cde99e1a810cd77a53cdd7b"
+}

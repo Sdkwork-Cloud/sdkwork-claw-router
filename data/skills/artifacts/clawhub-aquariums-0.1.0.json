@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aquariums@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aquariums",
+  "skill": {
+    "id": 73491,
+    "skillKey": "clawhub-aquariums",
+    "name": "网红水族馆"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aquariums",
+    "url": "https://clawhub.ai/skills/aquariums",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aquariums-eaa14c7eeb2ec2f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红水族馆的推荐清单、打卡路线与指南。用户搜索网红水族馆或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223342826,
+      "changelog": "- 初始版本，提供网红水族馆推荐清单、打卡路线与出行指南。\n- 支持多维度筛选：路线难度、交通、季节、预约要求、安全性等。\n- 返回路线图、用时、补给点、取景推荐、风险提示等核心信息。\n- 包含高峰期、拍摄限制、最低消费等注意事项说明。\n- 每周更新，基于热度和用户口碑持续优化内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b277403ef1dd3bbfd28628d0f17ec71dc34a7a9173409720103bb82a10a6ba74"
+}

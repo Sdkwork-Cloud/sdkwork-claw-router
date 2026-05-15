@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-review-workbook@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_workbook",
+  "skill": {
+    "id": 41252,
+    "skillKey": "clawhub-amazon-review-workbook",
+    "name": "Amazon Review Workbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-workbook",
+    "url": "https://clawhub.ai/skills/amazon-review-workbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-workbook-0dce0598b0d9300f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect all customer reviews from an Amazon product URL or product-reviews URL through a logged-in Chrome session on port 9222, export a 14-column factual wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aduo6668",
+      "userId": "s17fj6v9xpdmy7355vez923rkh844679",
+      "displayName": "aduo6668",
+      "image": "https://avatars.githubusercontent.com/u/257307438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775208991907,
+      "changelog": "amazon-review-workbook 1.0.3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d094ac19476c90e45623a6afc0099d32f0e37f236125d3e38068c6d31a53ed94"
+}

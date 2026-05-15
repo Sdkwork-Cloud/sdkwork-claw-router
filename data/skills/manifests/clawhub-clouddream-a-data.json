@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72082,
+  "uuid": "skill-clawhub-clouddream-a-data",
+  "skillKey": "clawhub-clouddream-a-data",
+  "name": "云梦A股数据获取Skill",
+  "summary": "获取A股市场资金流向、新闻、筹码分布、龙虎榜及涨停板等多维度数据，支持单只股票详情查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clouddream_a_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "冢猫",
+      "features": [
+        "获取A股市场资金流向、新闻、筹码分布、龙虎榜及涨停板等多维度数据，支持单只股票详情查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clouddream-a-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20748423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clouddream-a-data",
+      "url": "https://clawhub.ai/skills/clouddream-a-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clouddream-a-data",
+    "url": "https://clawhub.ai/skills/clouddream-a-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clouddream-a-data-ca917169242ad1b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clouddream-a-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clouddream-a-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfc99270ddb62fb8af7b93f38cc7193b3a6af0861f4a7b1efb4c25910d480f90",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:19:32.660Z"
+}

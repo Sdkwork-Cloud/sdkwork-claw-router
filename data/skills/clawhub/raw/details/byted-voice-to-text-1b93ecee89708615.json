@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "byted-voice-to-text",
+    "displayName": "Byted Voice To Text",
+    "summary": "语音转文字（ASR）。使用火山引擎 BigModel ASR 识别语音，包含极速版（≤2h/100MB 同步快速返回）和标准版（≤5h 异步识别）两种模式。支持飞书语音消息、本地音频文件及音频 URL。当收到语音消息或音频附件（.ogg/.mp3/.wav）时使用本技能。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774597118325,
+    "updatedAt": 1777624225983
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774597118325,
+    "changelog": "byted-voice-to-text 1.0.0 – Initial Release\n\n- Provides voice-to-text conversion using Volcengine BigModel ASR, supporting both Express (≤2h/100MB, synchronous) and Standard (≤5h, asynchronous) modes.\n- Supports Feishu voice messages, local audio files, and audio URLs (.ogg/.mp3/.wav).\n- Enforces mandatory script routing and error handling procedures; does not fall back to whisper or other providers.\n- Includes pre-checks for audio properties and ffmpeg/ffprobe dependencies, with auto-installation if missing.\n- Outlines precise instructions, environment variable requirements, and command samples for all supported workflows.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "volcengine-skills",
+    "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+    "displayName": "volcengine-skills",
+    "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624225983
+  }
+}

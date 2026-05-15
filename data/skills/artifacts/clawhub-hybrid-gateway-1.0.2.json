@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hybrid-gateway@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_gateway",
+  "skill": {
+    "id": 43257,
+    "skillKey": "clawhub-hybrid-gateway",
+    "name": "Hybrid Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-gateway",
+    "url": "https://clawhub.ai/skills/hybrid-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-gateway-b5ebd1c5de6f5c40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and troubleshoot a hybrid OpenClaw architecture where the gateway runs on a cloud VPS and a local machine (Mac Mini, desktop, Raspberry Pi, etc.) acts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkfaris94",
+      "userId": "s173a4s6bmp7aa29xcatcymz0x840jaj",
+      "displayName": "Johnny Faris",
+      "image": "https://avatars.githubusercontent.com/u/155022265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775147703946,
+      "changelog": "Remove inline credential placeholders and raw SSH commands to clear VirusTotal heuristics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:346955599b51e36483c4dbd60873bbac4c75908d5dd89e395d89a2a3892e3e51"
+}

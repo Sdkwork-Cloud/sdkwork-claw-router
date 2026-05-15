@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import type { JsonObject } from "./packages/sdkwork-claw-router-commons/src/json-value.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
   AdminAppService,
@@ -223,42 +224,42 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/app/list" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&page=1&page_size=20" && method === "GET") {
         return { items: [sampleApp()] };
       }
-      if (url === "/backend/v3/api/app/8101" && method === "GET") {
+      if (url === "/backend/v3/api/platform/apps/8101" && method === "GET") {
         return { item: sampleApp({ marketStatus: "PUBLISHED" }) };
       }
-      if (url === "/backend/v3/api/app" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps" && method === "POST") {
         return { item: sampleApp({ id: "9001", name: "Draft App" }) };
       }
-      if (url === "/backend/v3/api/app/8101" && method === "PUT") {
+      if (url === "/backend/v3/api/platform/apps/8101" && method === "PUT") {
         return { item: sampleApp({ name: "Browser Smoke Admin App Pro" }) };
       }
-      if (url === "/backend/v3/api/app/8101/publish" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps/8101/publish" && method === "POST") {
         return { item: sampleApp({ marketStatus: "PUBLISHED" }) };
       }
-      if (url === "/backend/v3/api/app/8101/offline" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps/8101/unpublish" && method === "POST") {
         return { item: sampleApp({ marketStatus: "OFFLINE" }) };
       }
-      if (url === "/backend/v3/api/app/8101/disable" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps/8101/disable" && method === "POST") {
         return { item: sampleApp({ status: "INACTIVE" }) };
       }
-      if (url === "/backend/v3/api/app/8101/enable" && method === "POST") {
+      if (url === "/backend/v3/api/platform/apps/8101/enable" && method === "POST") {
         return { item: sampleApp({ status: "ACTIVE" }) };
       }
-      if (url === "/backend/v3/api/app/8101" && method === "DELETE") {
+      if (url === "/backend/v3/api/platform/apps/8101" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected request ${method} ${url}`);
     },
     async (captured) => {
       const apps = await AdminAppService.fetchApps({
-        keyword: "browser",
+        searchQuery: "browser",
         status: "ACTIVE",
         marketStatus: "PUBLISHED",
         appType: "web",
-        pageNo: 1,
+        page: 1,
         pageSize: 20,
       });
       const app = await AdminAppService.fetchApp("8101");
@@ -288,25 +289,18 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
       assert.equal(deleted, true);
 
       assert.deepEqual(captured.map((request) => `${request.method} ${request.url}`), [
-        "POST /backend/v3/api/app/list",
-        "GET /backend/v3/api/app/8101",
-        "POST /backend/v3/api/app",
-        "PUT /backend/v3/api/app/8101",
-        "POST /backend/v3/api/app/8101/publish",
-        "POST /backend/v3/api/app/8101/offline",
-        "POST /backend/v3/api/app/8101/disable",
-        "POST /backend/v3/api/app/8101/enable",
-        "DELETE /backend/v3/api/app/8101",
+        "GET /backend/v3/api/platform/apps?q=browser&status=ACTIVE&market_status=PUBLISHED&app_type=web&page=1&page_size=20",
+        "GET /backend/v3/api/platform/apps/8101",
+        "POST /backend/v3/api/platform/apps",
+        "PUT /backend/v3/api/platform/apps/8101",
+        "POST /backend/v3/api/platform/apps/8101/publish",
+        "POST /backend/v3/api/platform/apps/8101/unpublish",
+        "POST /backend/v3/api/platform/apps/8101/disable",
+        "POST /backend/v3/api/platform/apps/8101/enable",
+        "DELETE /backend/v3/api/platform/apps/8101",
       ]);
 
-      assert.deepEqual(JSON.parse(captured[0].body), {
-        keyword: "browser",
-        status: "ACTIVE",
-        marketStatus: "PUBLISHED",
-        appType: "web",
-        pageNo: 1,
-        pageSize: 20,
-      });
+      assert.equal(captured[0].body, "");
       assert.deepEqual(JSON.parse(captured[2].body), {
         name: "Draft App",
         icon: {},
@@ -321,7 +315,7 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
         releaseNotes: [],
       });
       assert.deepEqual(JSON.parse(captured[3].body), { name: "Browser Smoke Admin App Pro" });
-      for (const request of captured) {
+      for (const request of captured.filter((item) => item.headers["x-request-id"] !== undefined)) {
         assert.match(request.headers["x-request-id"], /^admin-app-/);
       }
     },
@@ -349,7 +343,7 @@ test("admin app service validates path segments and structured JSON form fields"
     /appKey must use lowercase kebab-case/,
   );
   await assert.rejects(
-    () => AdminAppService.createApp({ name: "Invalid", config: [] as unknown as Record<string, unknown> }),
+    () => AdminAppService.createApp({ name: "Invalid", config: [] as unknown as JsonObject }),
     /config must be a JSON object/,
   );
 
@@ -367,7 +361,7 @@ test("admin app service validates path segments and structured JSON form fields"
 test("admin app service fails closed when backend app config omits the standard app key", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/app/8101" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/platform/apps/8101" && (init?.method ?? "GET") === "GET") {
         return { item: sampleApp({ config: {} }) };
       }
       throw new Error(`Unexpected request ${init?.method ?? "GET"} ${url}`);

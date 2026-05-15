@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19631,
+  "uuid": "skill-clawhub-recipe-plan-weekly-schedule",
+  "skillKey": "clawhub-recipe-plan-weekly-schedule",
+  "name": "Recipe Plan Weekly Schedule",
+  "summary": "Review your Google Calendar week, identify gaps, and add events to fill them.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_plan_weekly_schedule",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Review your Google Calendar week, identify gaps, and add events to fill them."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-plan-weekly-schedule@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-plan-weekly-schedule",
+      "url": "https://clawhub.ai/skills/recipe-plan-weekly-schedule"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-plan-weekly-schedule",
+    "url": "https://clawhub.ai/skills/recipe-plan-weekly-schedule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-plan-weekly-schedule-6ee37bb35922c715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-plan-weekly-schedule@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-plan-weekly-schedule-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ab51a9910098529778056ede0df83eb8fe5ea3675808e6c3ac3e23778966c84",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:45.571Z"
+}

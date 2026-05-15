@@ -69,7 +69,7 @@ mod tests {
     fn api_surface_is_inferred_from_paths() {
         assert_eq!(
             Some(ApiSurface::App),
-            ApiSurface::from_path("/app/v3/api/user/profile")
+            ApiSurface::from_path("/app/v3/api/iam/users/current")
         );
         assert_eq!(
             Some(ApiSurface::Backend),

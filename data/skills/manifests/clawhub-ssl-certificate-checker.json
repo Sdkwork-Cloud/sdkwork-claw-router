@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20468,
+  "uuid": "skill-clawhub-ssl-certificate-checker",
+  "skillKey": "clawhub-ssl-certificate-checker",
+  "name": "SSL Certificate Checker",
+  "summary": "Check SSL/TLS certificate details including expiration date, issuer, validity, cipher suites, and security warnings for any domain. Use when verifying HTTPS...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_certificate_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeonardoDpanda",
+      "features": [
+        "Check SSL/TLS certificate details including expiration date, issuer, validity, cipher suites, a.",
+        "Use when verifying HTTPS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl-certificate-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51777214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl-certificate-checker",
+      "url": "https://clawhub.ai/skills/ssl-certificate-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-certificate-checker",
+    "url": "https://clawhub.ai/skills/ssl-certificate-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-certificate-checker-9458ffb7c8ed8d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl-certificate-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-certificate-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e42f5bcebffa6c7ee6ff6a76876ca0b1dea8c24e74f337b914e1cb65d2b7e05",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T21:02:10.826Z"
+}

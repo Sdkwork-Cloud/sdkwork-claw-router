@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-dumb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_dumb",
+  "skill": {
+    "id": 67106,
+    "skillKey": "clawhub-play-dumb",
+    "name": "Play Dumb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-dumb",
+    "url": "https://clawhub.ai/skills/play-dumb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-dumb-7498c4f8c010699f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 Agent 可控地\"装笨\"——根据场景调整智能表现水平。 支持多种笨法人格（金毛犬、苏格拉底、迷糊实习生等）和10级笨度调节。 触发条件：用户说\"装笨\"、\"别那么聪明\"、\"笨一点\"、\"play dumb\"、\"dumb mode\"。 安全底线：涉及人身安全、医疗、法律、金融的问题自动解除装笨。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dox012",
+      "userId": "s176trdf8cdbg0rak67ekta2t583gjae",
+      "displayName": "dox012",
+      "image": "https://avatars.githubusercontent.com/u/109445745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773032993669,
+      "changelog": "- Initial release of play-dumb: a controllable \"dumb mode\" that adjusts agent intelligence and persona.\n- Supports 6 preset \"dumb\" personalities and 10 levels of \"dumbness.\"\n- Easily activated in conversation with phrases like \"play dumb,\" \"装笨,\" or choosing a persona.\n- Includes safety overrides: auto-disable in sensitive scenarios (safety, medical, legal, finance, frustration, or repeated queries).\n- Sample dialogues and configuration examples provided.\n- Uses techniques like delayed understanding, partial knowledge, intentional mistakes, and Socratic questioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d3aadcbeca84cd38c80597c396142735d2e21ac359ac57c9f3033a7370b31c5"
+}

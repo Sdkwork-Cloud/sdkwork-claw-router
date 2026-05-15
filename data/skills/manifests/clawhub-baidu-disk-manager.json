@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66257,
+  "uuid": "skill-clawhub-baidu-disk-manager",
+  "skillKey": "clawhub-baidu-disk-manager",
+  "name": "Baidu Disk Manager",
+  "summary": "管理百度网盘文件，支持登录、列出文件、上传/下载/复制/移动/删除/重命名/创建文件夹、查看配额等操作。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_disk_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hayden.wang",
+      "features": [
+        "管理百度网盘文件，支持登录、列出文件、上传/下载/复制/移动/删除/重命名/创建文件夹、查看配额等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-disk-manager@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12755906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-disk-manager",
+      "url": "https://clawhub.ai/skills/baidu-disk-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-disk-manager",
+    "url": "https://clawhub.ai/skills/baidu-disk-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-disk-manager-01fcdb55558eaeea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-disk-manager@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-disk-manager-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9b77e22fc19e1987a47a19a7da9d01ed4a232521b747f5130053dab8e05c28f",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:02:27.923Z"
+}

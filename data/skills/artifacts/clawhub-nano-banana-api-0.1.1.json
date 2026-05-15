@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-api@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_api",
+  "skill": {
+    "id": 31857,
+    "skillKey": "clawhub-nano-banana-api",
+    "name": "Nano Banana API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-api",
+    "url": "https://clawhub.ai/skills/nano-banana-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-api-0fe1e4f202b7c221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images through the Nano Banana REST API and help agents integrate or operate the service safely. Use when a task involves text-to-image, image-to-im..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdhjkagbjksg",
+      "userId": "s1727n8p9gbqfaygpa5mq6yzks83k8kx",
+      "displayName": "Nano Banana API",
+      "image": "https://avatars.githubusercontent.com/u/93693863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774495873492,
+      "changelog": "Add official website to skill docs and fix image downloads by sending an explicit User-Agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85e79b4e2c505fa401385ea141579b09483bf7f924c7c54573ce5747a8d5975b"
+}

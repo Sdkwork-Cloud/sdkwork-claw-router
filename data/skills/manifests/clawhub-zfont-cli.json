@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64640,
+  "uuid": "skill-clawhub-zfont-cli",
+  "skillKey": "clawhub-zfont-cli",
+  "name": "ZFONT-CLI",
+  "summary": "从 zfont.cn 智能搜索、推荐并下载免费商用字体，支持递归解压字体包提取 TTF、OTF、TTC 格式文件并提供安装或传输方案。",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zfont_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LANMIN-X",
+      "features": [
+        "从 zfont.cn 智能搜索、推荐并下载免费商用字体，支持递归解压字体包提取 TTF、OTF、TTC 格式文件并提供安装或传输方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zfont-cli@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155052516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zfont-cli",
+      "url": "https://clawhub.ai/skills/zfont-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zfont-cli",
+    "url": "https://clawhub.ai/skills/zfont-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zfont-cli-73d1ab887c488a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zfont-cli@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-zfont-cli-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc8daa0ab44f58f2fe5dfacde10e41ea594a0b6d8cf3442dfeaeaa9a12d96b0c",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:40:49.052Z"
+}

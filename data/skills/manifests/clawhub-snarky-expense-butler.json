@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68987,
+  "uuid": "skill-clawhub-snarky-expense-butler",
+  "skillKey": "clawhub-snarky-expense-butler",
+  "name": "Snarky Expense Butler",
+  "summary": "毒舌记账管家，支持记账、查询、预算提醒、毒舌消费分析、地域统计、趋势图。当用户提到记账、消费、花销、支出、记一笔、消费分析、预算、记个账时触发。NOT for: 股票/投资分析、记账软件推荐。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snarky_expense_butler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ybl2020",
+      "features": [
+        "毒舌记账管家，支持记账、查询、预算提醒、毒舌消费分析、地域统计、趋势图。当用户提到记账、消费、花销、支出、记一笔、消费分析、预算、记个账时触发。NOT for: 股票/投资分析、记账软件推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snarky-expense-butler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60306730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snarky-expense-butler",
+      "url": "https://clawhub.ai/skills/snarky-expense-butler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snarky-expense-butler",
+    "url": "https://clawhub.ai/skills/snarky-expense-butler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snarky-expense-butler-044300982ddca6f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snarky-expense-butler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snarky-expense-butler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee276300e7e1d33fab9b82eebe1d40beb38d3cdd8030c94de0806e478009e547",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:06:16.686Z"
+}

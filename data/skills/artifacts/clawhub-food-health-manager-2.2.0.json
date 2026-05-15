@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/food-health-manager@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_health_manager",
+  "skill": {
+    "id": 73346,
+    "skillKey": "clawhub-food-health-manager",
+    "name": "食品健康管家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-health-manager",
+    "url": "https://clawhub.ai/skills/food-health-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-health-manager-ecbc81aaad0bfacb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "食品健康管家。识别食品配料表，分析成分健康程度，给出打分和建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liny2046",
+      "userId": "s17f6v95vp3w1tcjqpr958cpqh83qdwg",
+      "displayName": "liny2046",
+      "image": "https://avatars.githubusercontent.com/u/265679697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774022442300,
+      "changelog": "- Enhanced scoring rules and details for food ingredient evaluation.\n- Added clear output format with sample tables and explanations for analysis results.\n- Included risk explanations for complex ingredients and humor in output.\n- Expanded reference scores for common foods and updated advice section.\n- Emphasized that recommendations are for reference, not strict medical guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:600cf2c44b0c4e154ae004aaeb8a60d7fb9bdee3eea2cdb6c762fc1283bb4808"
+}

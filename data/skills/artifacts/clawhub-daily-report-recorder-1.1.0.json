@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report-recorder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_recorder",
+  "skill": {
+    "id": 61526,
+    "skillKey": "clawhub-daily-report-recorder",
+    "name": "Daily Report Recorder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-recorder",
+    "url": "https://clawhub.ai/skills/daily-report-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-recorder-1bd6cdfa85f58f42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "记录、润色、归档用户每天的工作内容，生成或更新当日日报 Markdown。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bounding-elk",
+      "userId": "s178sqd0jjtwc7bq75mrcdcp1983ghx6",
+      "displayName": "皮皮熊",
+      "image": "https://avatars.githubusercontent.com/u/245088438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774232905848,
+      "changelog": "新增自动添加时间戳功能（Asia/Shanghai 时区）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ee22be3760cd70fe0ce2b31e4a5af27b5a482479e134f09a9ba3d6fda52e999"
+}

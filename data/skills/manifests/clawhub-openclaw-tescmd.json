@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10638,
+  "uuid": "skill-clawhub-openclaw-tescmd",
+  "skillKey": "clawhub-openclaw-tescmd",
+  "name": "tescmd",
+  "summary": "Installation and setup guide for Tesla vehicle control and telemetry via the tescmd node.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tescmd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oceanswave",
+      "features": [
+        "Installation and setup guide for Tesla vehicle control and telemetry via the tescmd node."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-tescmd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/760674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-tescmd",
+      "url": "https://clawhub.ai/skills/openclaw-tescmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tescmd",
+    "url": "https://clawhub.ai/skills/openclaw-tescmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tescmd-cae21c3ce903a53f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-tescmd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-tescmd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef0ff902b6a929f0a0f068177bbd0abf1e36dfbd742bf07e29d242cb59162511",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T15:42:30.728Z"
+}

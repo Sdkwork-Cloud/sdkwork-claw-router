@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46191,
+  "uuid": "skill-clawhub-justoneapi-imdb-title-box-office-summary",
+  "skillKey": "clawhub-justoneapi-imdb-title-box-office-summary",
+  "name": "IMDb Box Office Summary API",
+  "summary": "Call GET /api/imdb/title-box-office-summary/v1 for IMDb Box Office Summary through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_title_box_office_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/imdb/title-box-office-summary/v1 for IMDb Box Office Summary through JustOneAPI w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb-title-box-office-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb-title-box-office-summary",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb-title-box-office-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-title-box-office-summary",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-title-box-office-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-title-box-office-summary-52fc9f11bb290aba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb-title-box-office-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-title-box-office-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3dcbc01e24c710ed5a918a88b6887550f340e19235e3a0f8d5ec6f09d98f9d9",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T22:11:50.435Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ladybug-opencypher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ladybug_opencypher",
+  "skill": {
+    "id": 28583,
+    "skillKey": "clawhub-ladybug-opencypher",
+    "name": "ladybug-opencypher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ladybug-opencypher",
+    "url": "https://clawhub.ai/skills/ladybug-opencypher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ladybug-opencypher-fb3da5013ed136c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs openCypher against Ladybug DB with schema-first DDL, Python sync/async execution, CALL procedures, full-text search (CREATE_FTS_INDEX / QUERY_FTS_INDEX)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trenza1ore",
+      "userId": "s17fkyygppevs0wt88954q57rs83hz0r",
+      "displayName": "Hugo",
+      "image": "https://avatars.githubusercontent.com/u/25863274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774377753447,
+      "changelog": "Initial release of ladybug-opencypher.\n\n- Run openCypher queries on Ladybug DB with schema-first DDL support.\n- Supports Python (sync/async) execution, CALL procedures, and full-text search extensions (FTS).\n- Highlights key differences from Neo4j Cypher, including schema, DDL, and pattern semantics.\n- Includes utility scripts for query execution and environment checks.\n- Documentation links provided for Cypher features, DDL, import, FTS, and Neo4j migration notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f174ddf263b956553f9333f592ac0c90ee9ca6a6bde104da7ad288742524232"
+}

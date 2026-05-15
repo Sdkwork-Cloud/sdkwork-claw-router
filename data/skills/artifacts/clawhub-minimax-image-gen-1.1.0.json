@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-image-gen@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_image_gen",
+  "skill": {
+    "id": 60686,
+    "skillKey": "clawhub-minimax-image-gen",
+    "name": "Minimax Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-image-gen",
+    "url": "https://clawhub.ai/skills/minimax-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-image-gen-3919a4c97b762183.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Minimax Image API 生成图片。支持文生图、13+ 种风格预设、跨平台。 neuroXY 专属画图技能！ Use when: 用户想生成图片、AI 画图、创建图像。 NOT for: 视频生成、动画制作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluestar-34",
+      "userId": "s17e4verp5pcdbb9cjtzggec7d83g5vm",
+      "displayName": "Neuroblue",
+      "image": "https://avatars.githubusercontent.com/u/177648248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773807776126,
+      "changelog": "minimax-image-gen v1.1.0 introduces major feature updates and improvements:\n\n- Added 13 built-in style presets for image generation.\n- Introduced style type options (e.g., 漫画/元气/中世纪/水彩) for more creative outputs.\n- Improved cross-platform compatibility for Windows, macOS, and Linux.\n- Enhanced security features, including better API key handling and encrypted transmission.\n- Expanded and refined documentation for usage, configuration, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eac7a9e043037e3843a6a81d6e532ea17e09b067664a289beb6b3ee7e06029ab"
+}

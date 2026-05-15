@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45599,
+  "uuid": "skill-clawhub-cycling-trip",
+  "skillKey": "clawhub-cycling-trip",
+  "name": "cycling-trip",
+  "summary": "Book flights for cycling trips and bike tours. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning, visa...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cycling_trip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Book flights for cycling trips and bike tours",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cycling-trip@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cycling-trip",
+      "url": "https://clawhub.ai/skills/cycling-trip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cycling-trip",
+    "url": "https://clawhub.ai/skills/cycling-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cycling-trip-863d0f6f7bb9dc7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cycling-trip@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cycling-trip-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6d020adc0d8d8283044937949ab1d61e3d53435415008756bf336e9e252747f",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:36:33.803Z"
+}

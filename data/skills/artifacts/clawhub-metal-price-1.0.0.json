@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metal-price@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metal_price",
+  "skill": {
+    "id": 65963,
+    "skillKey": "clawhub-metal-price",
+    "name": "Metal Price"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metal-price",
+    "url": "https://clawhub.ai/skills/metal-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metal-price-d4cec900a4b3a277.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球铁合金网价格查询与导出技能。自动登录www.qqthj.com网站，查询指定金属(如锰铁、钒铁等)的当日价格数据，抓取价格表格并导出为Excel文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiang2023",
+      "userId": "s172t5654we4v0gb8hy5m268ys83h8dk",
+      "displayName": "wangxiang2023",
+      "image": "https://avatars.githubusercontent.com/u/138273132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 621,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771934711046,
+      "changelog": "全球铁合金网价格查询与导出技能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fcec8b502e8a74c65755f23b22af1d6c5548eef701bc83214416ad57200f288f"
+}

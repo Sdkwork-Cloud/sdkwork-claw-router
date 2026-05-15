@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dp-pipeline-designer@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dp_pipeline_designer",
+  "skill": {
+    "id": 60722,
+    "skillKey": "clawhub-dp-pipeline-designer",
+    "name": "AI-powered DP Data Processing Pipeline Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dp-pipeline-designer",
+    "url": "https://clawhub.ai/skills/dp-pipeline-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dp-pipeline-designer-79d5c886e593a5ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DP 数据处理平台流水线设计师。当用户提到创建管道、数据流、Flink作业、Kafka读取、写到数据库/MongoDB、数据处理管道等需求时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hxp365",
+      "userId": "s1740x4wv84km1dc40yd5nv22583te97",
+      "displayName": "Hxp365",
+      "image": "https://avatars.githubusercontent.com/u/85484481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774786288639,
+      "changelog": "**Summary:**  \nDocumentation streamlined and environment configuration simplified for ease of use.\n\n- Removed guidance for session-based authentication; API Key authentication is now mandatory and simplified.\n- Clarified required environment variables and setup steps.\n- Dropped references to file-based secrets and install scripts — now relies only on environment variables.\n- Added a summary of skill knowledge base/context files.\n- Expanded section on limitations and usage guardrails.  \n- General editing for clarity and brevity throughout the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbb8b5b2ae7fb99971ceeded587cb5bff3afaa00d9c2577933360adbd655e073"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65806,
+  "uuid": "skill-clawhub-novelty-report-review",
+  "skillKey": "clawhub-novelty-report-review",
+  "name": "Scientific and Technological Novelty Search Report Review",
+  "summary": "根据《科技查新技术规范》对科技查新报告进行专业审核，按\"只报问题\"原则逐步检查查新点理解、检索词与中英文翻译、检索式构造、文献筛选合理性，最终仅输出需要注意和优化改进的事项。适用于用户提到\"科技查新报告\"\"查新报告审核\"\"报告质量审查\"等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novelty_report_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charliegates309-oss",
+      "features": [
+        "根据《科技查新技术规范》对科技查新报告进行专业审核，按\"只报问题\"原则逐步检查查新点理解、检索词与中英文翻译、检索式构造、文献筛选合理性，最终仅输出需要注意和优化改进的事项。适用于用户提到\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novelty-report-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260441374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novelty-report-review",
+      "url": "https://clawhub.ai/skills/novelty-report-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novelty-report-review",
+    "url": "https://clawhub.ai/skills/novelty-report-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novelty-report-review-79ff5f53a72168b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novelty-report-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novelty-report-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d35d31303eb4617ab765142b6103e701f2ff9cd7979b7a238207d2ecdea6ebc",
+      "artifactSizeBytes": 2884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:32:31.076Z"
+}

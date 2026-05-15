@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71954,
+  "uuid": "skill-clawhub-dev-tools",
+  "skillKey": "clawhub-dev-tools",
+  "name": "Dev Tools",
+  "summary": "开发工具箱，提供规范管理、预提交检查、错误诊断、技术债务跟踪、代码差异对比、重构建议、依赖分析等开发辅助功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Feng",
+      "features": [
+        "开发工具箱，提供规范管理、预提交检查、错误诊断、技术债务跟踪、代码差异对比、重构建议、依赖分析等开发辅助功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10513100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-tools",
+      "url": "https://clawhub.ai/skills/dev-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-tools",
+    "url": "https://clawhub.ai/skills/dev-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-tools-3219ce06c222b1c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35c171dfaddfc561cc098bee5c0a4032dc23709b483702c1e79774bb3b733ab1",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:50.402Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/touch-the-grass@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.touch_the_grass",
+  "skill": {
+    "id": 56159,
+    "skillKey": "clawhub-touch-the-grass",
+    "name": "Touch The Grass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "touch-the-grass",
+    "url": "https://clawhub.ai/skills/touch-the-grass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/touch-the-grass-34de41b14ac37f63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill de reconexión personal para semanas agobiantes de trabajo. Úsala cuando el usuario mencione que está estresado, agotado, quemado, necesita descansar, q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alannetwork",
+      "userId": "publishers:alannetwork",
+      "displayName": "Alan Estrada",
+      "image": "https://avatars.githubusercontent.com/u/47581949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774139500219,
+      "changelog": "- Añadido archivo README.md con información de referencia.\n- Ajustado el campo \"requires\" en metadata para eliminar dependencia explícita de `gcal.enabled`.\n- Sin cambios en los flujos principales ni en las instrucciones del skill.\n- Pequeñas mejoras de compatibilidad para facilitar la instalación y configuración.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34b5f7bf9160b2590ee509128ceeca81f4d1fbf298822415ac6e2607506d5ef8"
+}

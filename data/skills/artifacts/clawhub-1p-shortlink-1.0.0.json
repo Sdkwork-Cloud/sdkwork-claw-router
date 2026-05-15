@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1p-shortlink@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1p_shortlink",
+  "skill": {
+    "id": 15402,
+    "skillKey": "clawhub-1p-shortlink",
+    "name": "1p.io Shortlink API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1p-shortlink",
+    "url": "https://clawhub.ai/skills/1p-shortlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1p-shortlink-f4854214b93deef1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create short URLs and submit feature requests using 1p.io. Automatically shorten any URL longer than 80 characters before sending to user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuanpmt",
+      "userId": "publishers:tuanpmt",
+      "displayName": "tuanpmt",
+      "image": "https://avatars.githubusercontent.com/u/1904924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1002,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771588255478,
+      "changelog": "Initial release - 1p.io API integration with shortlink, feature requests, MCP tools",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf1293112c99730f3d31123406b990194c4c5e2018f59bdcfffd129737259978"
+}

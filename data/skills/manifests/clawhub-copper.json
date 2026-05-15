@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50627,
+  "uuid": "skill-clawhub-copper",
+  "skillKey": "clawhub-copper",
+  "name": "Copper",
+  "summary": "Copper CRM integration — manage people, companies, opportunities, projects, tasks, and activities via the Copper REST API. Google Workspace native CRM with r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Copper CRM integration — manage people, companies, opportunities, projects, tasks, and activiti.",
+        "Google Workspace native CRM with r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copper",
+      "url": "https://clawhub.ai/skills/copper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copper",
+    "url": "https://clawhub.ai/skills/copper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copper-d16f06fe255d801e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fcbe8256623112a2a8ab47e8060b3b268b00df4e270afd23af59d0f0c9755db",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:55:53.413Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alexion@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alexion",
+  "skill": {
+    "id": 54029,
+    "skillKey": "clawhub-alexion",
+    "name": "Alexion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alexion",
+    "url": "https://clawhub.ai/skills/alexion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alexion-4694df6e626d9cda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Specializes in rare disease drugs using complement inhibition, building a $10B franchise led by Soliris and acquired by AstraZeneca in 2021."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776963861015,
+      "changelog": "- Added a new version header (version: 1.0.0) to SKILL.md for clarity and version control.\n- No other content changes were made.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5abe8963e21d45ab6bdbe9ccee88beb7b60ce9240da30a9489f31efe3191850"
+}

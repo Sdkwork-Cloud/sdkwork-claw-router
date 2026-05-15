@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29777,
+  "uuid": "skill-clawhub-tavily-search-local",
+  "skillKey": "clawhub-tavily-search-local",
+  "name": "Tavily Search Local",
+  "summary": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenghuwei",
+      "features": [
+        "AI-optimized web search via Tavily API",
+        "Returns concise, relevant results for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161549085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search-local",
+      "url": "https://clawhub.ai/skills/tavily-search-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-local",
+    "url": "https://clawhub.ai/skills/tavily-search-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-local-d07acd2875d44d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05755cb5a981403ea3f49b72445a548e196615919a2bf34d8a2ad039b67be8cb",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T20:09:24.457Z"
+}

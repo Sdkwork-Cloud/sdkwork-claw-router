@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/00-overview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.00_overview",
+  "skill": {
+    "id": 66355,
+    "skillKey": "clawhub-00-overview",
+    "name": "00 Overview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "00-overview",
+    "url": "https://clawhub.ai/skills/00-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/00-overview-7929017fa1ac5d1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Miki 智能育儿助手 · 0-3岁宝宝发育评估、辅食指导、睡眠分析、语言开发、行为解读、入园准备的全程AI陪伴"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777740196387,
+      "changelog": "Miki 智能育儿助手 v1.0.0 发布\n\n- 提供 0-3 岁宝宝发育、辅食、睡眠、语言、行为等全程 AI 育儿指导\n- 九大核心 Skill 覆盖成长各阶段与家庭需求\n- 差异化定位：智能工具、持续数据跟踪、实时免费基础功能\n- 明确三阶段变现路径与成长档案数据壁垒\n- 品牌形象与执行节奏规划明确",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e72e351da0e633c4ef43efcd8bc06aed8d8d2b5ed015b4607f7861c858d4973"
+}

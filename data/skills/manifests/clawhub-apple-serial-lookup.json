@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14187,
+  "uuid": "skill-clawhub-apple-serial-lookup",
+  "skillKey": "clawhub-apple-serial-lookup",
+  "name": "Apple Serial Lookup",
+  "summary": "Look up Apple device information from a serial number. Supports iPhones, iPads, Macs (MacBook, iMac, Mac mini, Mac Pro, Mac Studio), Apple Watch, Apple TV, and iPods. Use when a user provides an Apple serial number and wants to identify th.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_serial_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siatrial",
+      "features": [
+        "Look up Apple device information from a serial number",
+        "Supports iPhones, iPads, Macs (MacBook, iMac, Mac mini, Mac Pro, Mac Studio), Apple Watch, Appl.",
+        "Use when a user provides an Apple serial number and wants to identify the device, check specs,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-serial-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29793076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-serial-lookup",
+      "url": "https://clawhub.ai/skills/apple-serial-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-serial-lookup",
+    "url": "https://clawhub.ai/skills/apple-serial-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-serial-lookup-1e99638d03b21af3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-serial-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-serial-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf0d24ac4472e547fe365dbf546a06ef6cab7d8c5d79f314d7722939cd250abf",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T21:56:43.155Z"
+}

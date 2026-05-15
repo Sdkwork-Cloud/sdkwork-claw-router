@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35066,
+  "uuid": "skill-clawhub-retrospective",
+  "skillKey": "clawhub-retrospective",
+  "name": "Retrospective",
+  "summary": "Run a structured weekly agent retrospective. Analyses wins, failures, skill gaps, cron health, and config issues from the last 7 days. Produces honest, speci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retrospective",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Furlong",
+      "features": [
+        "Run a structured weekly agent retrospective",
+        "Analyses wins, failures, skill gaps, cron health, and config issues from the last 7 days",
+        "Produces honest, speci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retrospective@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/614768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retrospective",
+      "url": "https://clawhub.ai/skills/retrospective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retrospective",
+    "url": "https://clawhub.ai/skills/retrospective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retrospective-543a10bcd514d63a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retrospective@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retrospective-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d7f4ee318b4ea8d8d3782458eafecc39fa8f0bf9cf7d74cc12e9809f7f339a7",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:55:44.540Z"
+}

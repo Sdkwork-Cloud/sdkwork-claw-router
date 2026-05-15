@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11985,
+  "uuid": "skill-clawhub-claw-clawbridge",
+  "skillKey": "clawhub-claw-clawbridge",
+  "name": "ClawBridge - Find Connections",
+  "summary": "Runs nightly searches to identify and rank relevant candidates matching your offer and ask, delivering evidence-backed connection briefs for human review.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_clawbridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltlife",
+      "features": [
+        "Runs nightly searches to identify and rank relevant candidates matching your offer and ask, del."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-clawbridge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258533364?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-clawbridge",
+      "url": "https://clawhub.ai/skills/claw-clawbridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-clawbridge",
+    "url": "https://clawhub.ai/skills/claw-clawbridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-clawbridge-9f018cf6343a430e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-clawbridge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-clawbridge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9a59b31c665fd18b4342efaef09ad51afeeda6dc7561facb96af5a5373dd30b",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:12:12.278Z"
+}

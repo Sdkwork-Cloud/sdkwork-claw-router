@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8820,
+  "uuid": "skill-clawhub-slack-api",
+  "skillKey": "clawhub-slack-api",
+  "name": "Slack",
+  "summary": "Slack API integration with managed OAuth. Send messages, manage channels, search conversations, and interact with Slack workspaces. Use this skill when users...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Slack API integration with managed OAuth",
+        "Send messages, manage channels, search conversations, and interact with Slack workspaces",
+        "Use this skill when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-api@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-api",
+      "url": "https://clawhub.ai/skills/slack-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-api",
+    "url": "https://clawhub.ai/skills/slack-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-api-a30c6d5852e6342e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-api@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-api-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35fc480b1fdeb7de4a30a04838dac05affe9d113bc0194748ae741f1cd666414",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:08:29.702Z"
+}

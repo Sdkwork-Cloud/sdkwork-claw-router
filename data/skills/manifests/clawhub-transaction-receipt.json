@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37363,
+  "uuid": "skill-clawhub-transaction-receipt",
+  "skillKey": "clawhub-transaction-receipt",
+  "name": "Transaction Receipt",
+  "summary": "Human-readable on-chain transaction receipt. Resolve tx status, fees, and intent: simple transfers, swaps/trades, token approvals, DeFi staking-style calls,...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transaction_receipt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bevanding",
+      "features": [
+        "Human-readable on-chain transaction receipt",
+        "Resolve tx status, fees, and intent: simple transfers, swaps/trades, token approvals, DeFi stak."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transaction-receipt@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85435357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transaction-receipt",
+      "url": "https://clawhub.ai/skills/transaction-receipt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transaction-receipt",
+    "url": "https://clawhub.ai/skills/transaction-receipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transaction-receipt-6b31249185fecfae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transaction-receipt@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-transaction-receipt-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9ec532b21ef614c74201bfaee2ce3eb5b5253de5b099a81931fcaa746dab83",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:14:08.033Z"
+}

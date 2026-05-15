@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vmware-pilot@1.5.17",
+  "version": "1.5.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_pilot",
+  "skill": {
+    "id": 28908,
+    "skillKey": "clawhub-vmware-pilot",
+    "name": "Vmware Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-pilot",
+    "url": "https://clawhub.ai/skills/vmware-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-pilot-6d03de6beb98eca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to design, execute, or manage complex multi-step VMware workflows with human approval and automatic rollback. Pilot is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zw008",
+      "userId": "s171xgnmqse0nqvgqvqnaq5f9183kyre",
+      "displayName": "zw008",
+      "image": "https://avatars.githubusercontent.com/u/10613299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.5.17",
+      "createdAt": 1777636040822,
+      "changelog": "v1.5.17 - Pilot v2 architecture follow-ups: investigate_alert template (causal-chain root-cause workflow with 4-criteria checkpoint), review_workflow MCP tool (structural sanity check), parallel_group step type with group_id field, dispatch contract docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cff7b18474f2d434c4179f0559f5172acb713abad432c15ebea0884b43f2de5"
+}

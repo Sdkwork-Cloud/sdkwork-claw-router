@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cat-therapy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cat_therapy",
+  "skill": {
+    "id": 62205,
+    "skillKey": "clawhub-cat-therapy",
+    "name": "Cat Therapy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cat-therapy",
+    "url": "https://clawhub.ai/skills/cat-therapy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cat-therapy-12efa84b53497476.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台治愈系撸猫技能。当用户说\"休息一下\"、\"累了\"、\"tired\"、\"need a break\"等触发词时，自动发送可爱猫咪图片 + 猫叫声（TTS 音频 + 文字双保险）+ 治愈语录。支持用户上传自定义猫咪图片和叫声，支持 QQ/微信/钉钉/飞书/Discord/Telegram/WhatsApp 等多平台，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yyxy",
+      "userId": "s176gwkgshzfcs65k29m3cyj5x842ynq",
+      "displayName": "yyxy",
+      "image": "https://avatars.githubusercontent.com/u/5263136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773392740669,
+      "changelog": "🔒 安全更新：修复 SSL 证书验证问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfcd0d623248560c63a4c2c4fadcf85ed4b02c3903e8191722ff55b7cf43c342"
+}

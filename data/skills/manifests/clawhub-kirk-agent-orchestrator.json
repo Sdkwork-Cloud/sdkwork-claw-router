@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41327,
+  "uuid": "skill-clawhub-kirk-agent-orchestrator",
+  "skillKey": "clawhub-kirk-agent-orchestrator",
+  "name": "agent-orchestrator",
+  "summary": "Orchestrate complex tasks by decomposing them into subtasks, spawning autonomous sub-agents with generated skills, coordinating via file communication, and c...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_agent_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Orchestrate complex tasks by decomposing them into subtasks, spawning autonomous sub-agents wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-agent-orchestrator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-agent-orchestrator",
+      "url": "https://clawhub.ai/skills/kirk-agent-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-agent-orchestrator",
+    "url": "https://clawhub.ai/skills/kirk-agent-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-agent-orchestrator-15842c8f9fb19236.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-agent-orchestrator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-agent-orchestrator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a702e38034593c5a4e6e1756489da8e110d8f77ea4bc455ce253a6b2665adf3",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:19:18.305Z"
+}

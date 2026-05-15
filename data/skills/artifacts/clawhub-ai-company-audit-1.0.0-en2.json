@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-audit@1.0.0-en2",
+  "version": "1.0.0-en2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_audit",
+  "skill": {
+    "id": 58396,
+    "skillKey": "clawhub-ai-company-audit",
+    "name": "AI Company Audit (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-audit",
+    "url": "https://clawhub.ai/skills/ai-company-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-audit-9412e887cb5af196.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨Agentaudit日志standard。7类日志（决策/操作/错误/security/性能/访问/data）+ compliance检查点 + audittrackstandard，适配fully AI companygovernframework。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0-en2",
+      "createdAt": 1776678521383,
+      "changelog": "Full body English translation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cde7bdd76774ad3e0ef352185c98d81d9b75773ed2c0b4f3935daf9661d7280f"
+}

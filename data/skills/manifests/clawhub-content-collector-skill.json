@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16764,
+  "uuid": "skill-clawhub-content-collector-skill",
+  "skillKey": "clawhub-content-collector-skill",
+  "name": "Content Collector Skill",
+  "summary": "Automatically collect content from shared links upon keywords or in group chats, create Feishu docs under a knowledge base, and update the archive table.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_collector_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuhongchen",
+      "features": [
+        "Automatically collect content from shared links upon keywords or in group chats, create Feishu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-collector-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7197517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-collector-skill",
+      "url": "https://clawhub.ai/skills/content-collector-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-collector-skill",
+    "url": "https://clawhub.ai/skills/content-collector-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-collector-skill-a5bd4abc6ab8a29d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-collector-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-collector-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8118371616e25e9db3bf07fb8cc308973b6b17557fb4e2ec74d111063726eab",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:41:23.338Z"
+}

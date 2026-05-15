@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crayfish-diary@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crayfish_diary",
+  "skill": {
+    "id": 21453,
+    "skillKey": "clawhub-crayfish-diary",
+    "name": "Crayfish Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crayfish-diary",
+    "url": "https://clawhub.ai/skills/crayfish-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crayfish-diary-6a6fc1e1e25ecdf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A WorkBuddy skill for quick diary and memo recording with automatic year/month/day directory organization. Supports Chinese and English triggers - start with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "italks",
+      "userId": "s174ttwzwb13qs89nj73rcrt0983k22k",
+      "displayName": "italks",
+      "image": "https://avatars.githubusercontent.com/u/1667764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773240834929,
+      "changelog": "crayfish-diary 0.1.1\n\n- Added English support: now recognizes \"help me record\", \"start recording\", and \"end recording\" as triggers, in addition to Chinese phrases.\n- Updated skill description and examples to reflect bilingual (Chinese/English) usage.\n- No code or functionality changes detected; documentation updated for clarity and broader audience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4158c8c8fc266acd6999272bd70a66d409d8f32802815b073680ae06e6a11b70"
+}

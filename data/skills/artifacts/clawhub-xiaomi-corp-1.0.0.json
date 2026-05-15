@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi-corp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_corp",
+  "skill": {
+    "id": 48624,
+    "skillKey": "clawhub-xiaomi-corp",
+    "name": "Xiaomi Corp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-corp",
+    "url": "https://clawhub.ai/skills/xiaomi-corp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-corp-1970ef4933a0a570.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Xiaomi's smartphone and IoT ecosystem, global market strategy, business model, EV entry, and founder Lei Jun's leadership."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777773756391,
+      "changelog": "- Initial release of the Xiaomi Corp skill.\n- Includes a company overview, business model breakdown, and competitive moat analysis.\n- Features a detailed historical timeline and key financial/data highlights.\n- Offers insights into Xiaomi's smartphone, IoT, and electric vehicle strategies.\n- Provides interesting facts about company founder Lei Jun and Xiaomi’s brand philosophy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e07fae1a5ebd4cdd5dd4c9d6b6f4ba6bafdaf7666e8d5147e0808b844677442b"
+}

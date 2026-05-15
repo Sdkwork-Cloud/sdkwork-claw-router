@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobstersearch-mcp@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobstersearch_mcp",
+  "skill": {
+    "id": 51114,
+    "skillKey": "clawhub-lobstersearch-mcp",
+    "name": "Lobstersearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobstersearch-mcp",
+    "url": "https://clawhub.ai/skills/lobstersearch-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobstersearch-mcp-0aee053d8abc51e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native agentic commerce — 10 MCP tools to discover businesses, browse product catalogs with variants, and complete purchases with Stripe payments. Built f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theoddbrick",
+      "userId": "publishers:theoddbrick",
+      "displayName": "theoddbrick",
+      "image": "https://avatars.githubusercontent.com/u/75828489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773820638734,
+      "changelog": "Version 2.0.0 is a major upgrade introducing agentic commerce capabilities and an expanded set of tools.\n\n- Expanded from 7 to 10 MCP tools, adding catalog browsing and full order/payment flow.\n- Enables AI-native shopping: businesses, real product catalogs (with variants), and full commerce (order, Stripe payment, cancellation).\n- New tools include browse_catalog, get_product_details, check_availability, create_order, confirm_order, get_order_status, and cancel_order.\n- Unified natural language \"search\" with advanced fallback and richer discovery options.\n- Every response now includes next_actions for agent guidance and error cases provide retry_guidance.\n- Updated documentation reflecting a focus on agentic commerce and real-time business data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79beecfdf6d41767869157ea35e4f6b00dba01021ac234e905c89632109e025d"
+}

@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "axelhu-local-sdxl",
+    "displayName": "Axelhu Local Sdxl",
+    "summary": "基于本地 ComfyUI 与 SDXL，实现高质量私密图像生成，支持详细构图、风格及尺寸自定义，适合无在线API场景。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775129801177,
+    "updatedAt": 1777527090308
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775130277852,
+    "changelog": "Version 1.0.1\n\n- 调整了触发条件，明确要求需用户/agent 明确指定\"本地\"、\"私密\"等关键词才会调本地生图\n- 默认情况及普通\"生成图片\"请求将优先走在线服务，不再自动触发本地生图\n- 新增部署说明文档 references/deployment.md\n- 新增 ComfyUI 启动脚本 scripts/start-comfyui.sh",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "axelhu",
+    "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+    "displayName": "AxelHu",
+    "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527090308
+  }
+}

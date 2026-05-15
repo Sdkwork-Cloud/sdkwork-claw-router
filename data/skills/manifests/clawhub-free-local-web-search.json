@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50523,
+  "uuid": "skill-clawhub-free-local-web-search",
+  "skillKey": "clawhub-free-local-web-search",
+  "name": "free-local-web-search",
+  "summary": "100% FREE local web search for OpenClaw. Secure localhost-only SearXNG deployment. Supports hidden --dev flag.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_local_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pipe",
+      "features": [
+        "100% FREE local web search for OpenClaw",
+        "Secure localhost-only SearXNG deployment",
+        "Supports hidden --dev flag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-local-web-search@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16253126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-local-web-search",
+      "url": "https://clawhub.ai/skills/free-local-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-local-web-search",
+    "url": "https://clawhub.ai/skills/free-local-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-local-web-search-8f5572d0b00c4aa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-local-web-search@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-local-web-search-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:053bf19376e9369d91499a105ed4c447bd38aa1ee1d89b65d92f2b232d363c30",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:48:17.950Z"
+}

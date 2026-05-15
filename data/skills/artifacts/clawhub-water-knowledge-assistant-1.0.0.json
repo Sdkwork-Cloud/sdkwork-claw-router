@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/water-knowledge-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.water_knowledge_assistant",
+  "skill": {
+    "id": 72463,
+    "skillKey": "clawhub-water-knowledge-assistant",
+    "name": "太湖云水务知识库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "water-knowledge-assistant",
+    "url": "https://clawhub.ai/skills/water-knowledge-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/water-knowledge-assistant-f01c40fc2ff31e11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "水务设备知识库 AI 助手，提供设备查询、选型建议、参数对比等功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhulihuaaaaa",
+      "userId": "publishers:zhulihuaaaaa",
+      "displayName": "zhulihuaaaaa",
+      "image": "https://avatars.githubusercontent.com/u/23044677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773301606637,
+      "changelog": "- 首个发布版本，水务设备知识库 AI 助手上线\n- 支持液位计、水尺、流量计、水质传感器等设备的问答、选型、参数查询与对比\n- 提供询价引导、文档下载、定时/按需知识库更新等功能\n- 集成审计日志系统，强化操作、结果、追溯记录\n- 支持设备和数据源的灵活扩展，完善的权限与异常处理机制\n- 提供详细的安装、初始化与部署指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fff6bce5478d5f291f01d713a244d5c2a4ddccc7b375e44cd13a2610bbcb70a"
+}

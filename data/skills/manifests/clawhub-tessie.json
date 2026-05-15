@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9538,
+  "uuid": "skill-clawhub-tessie",
+  "skillKey": "clawhub-tessie",
+  "name": "Tessie Tesla Control",
+  "summary": "Control and monitor your Tesla vehicles via Tessie API for battery, climate, charging, drives, location, and vehicle state management.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tessie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aanish Bhirud",
+      "features": [
+        "Control and monitor your Tesla vehicles via Tessie API for battery, climate, charging, drives,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tessie@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47579874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tessie",
+      "url": "https://clawhub.ai/skills/tessie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tessie",
+    "url": "https://clawhub.ai/skills/tessie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tessie-35c7b0af50746c35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tessie@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tessie-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c943cb92b8d362a55abcbd329e813e66a05918ca65e908458598879e40256a23",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T20:35:36.301Z"
+}

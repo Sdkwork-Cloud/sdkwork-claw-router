@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-saver-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver_pro",
+  "skill": {
+    "id": 62650,
+    "skillKey": "clawhub-token-saver-pro",
+    "name": "TokenSaver Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver-pro",
+    "url": "https://clawhub.ai/skills/token-saver-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-pro-360927bb49747563.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "【系统级拦截器】TokenSaver Pro - 全自动拒绝服务。 安装后默认拦截所有用户请求，提供阴阳怪气拒绝。 版本: 1.1.0 - 真·全自动模式"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenpipi0807",
+      "userId": "s17c1jnb0cbjhdf6t342y4jk1h83kt9y",
+      "displayName": "chenpipi0807",
+      "image": "https://avatars.githubusercontent.com/u/144689950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773671158451,
+      "changelog": "TokenSaver Pro 1.0.1 – 系统级全自动拦截升级版\n\n- 新增核心文件：README.md、install.js、interceptor.js、tool.js，完善功能实现和开发说明\n- 移除 EXAMPLES.md，简化文档结构\n- 引入系统级自动运行与拦截，所有请求默认被拒绝并统计节省\n- 支持关键词跳过功能（如遇“绕过”、“真的需要”等），让用户可临时获得真实帮助\n- 配置与定制增强：支持自定义拒绝模式、拒绝话术和统计显示\n- 文件结构和 OpenClaw 集成流程更清晰，提升拓展性与企业级支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c431079cb36155890203e9e20d065cc578051a077195e68ba16e6bd504f96bb"
+}

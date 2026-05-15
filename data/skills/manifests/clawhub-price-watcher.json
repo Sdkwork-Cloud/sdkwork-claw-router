@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39899,
+  "uuid": "skill-clawhub-price-watcher",
+  "skillKey": "clawhub-price-watcher",
+  "name": "Price Watcher",
+  "summary": "Monitor product URLs to track and alert on significant price changes using a local watchlist without requiring API keys.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Monitor product URLs to track and alert on significant price changes using a local watchlist wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-watcher",
+      "url": "https://clawhub.ai/skills/price-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-watcher",
+    "url": "https://clawhub.ai/skills/price-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-watcher-ab05efa0e401b6af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:784f18e9319abfa0dcb9c558a30ef3b7abf6d9839f702015cceb1bb597dd3dcb",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:34:14.665Z"
+}

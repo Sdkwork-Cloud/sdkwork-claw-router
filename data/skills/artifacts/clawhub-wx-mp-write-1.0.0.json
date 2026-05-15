@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wx-mp-write@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_mp_write",
+  "skill": {
+    "id": 72149,
+    "skillKey": "clawhub-wx-mp-write",
+    "name": "wx-mp-write"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-mp-write",
+    "url": "https://clawhub.ai/skills/wx-mp-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-mp-write-a417312440f90713.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章全流程写作助手。支持热点选题、文章撰写、AI去味润色（去除机器感）、配图建议、一键发布到公众号草稿箱。适用于技术博主、自媒体创作者、企业公众号运营等场景。当用户需要写公众号文章、润色内容、寻找配图或发布到微信时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onceyoungs",
+      "userId": "s179hqxgbet955kxe3d65fwfg983hx8w",
+      "displayName": "onceyoungs",
+      "image": "https://avatars.githubusercontent.com/u/33124872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774608213853,
+      "changelog": "- 首发版本，推出微信公众号文章写作全流程助手\n- 支持热点选题、资料搜索、文章撰写、AI去味润色、配图建议与一键发布\n- 集成 tavily-search 进行资料与配图搜索，优化信息获取流程\n- 润色功能可去除AI痕迹，增强真人表达感\n- 自动生成符合公众号规范的 Markdown 并支持草稿箱发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e98840774c7990e16857c567954ba50b0c663441d4d51fd104e51aa439d9443"
+}

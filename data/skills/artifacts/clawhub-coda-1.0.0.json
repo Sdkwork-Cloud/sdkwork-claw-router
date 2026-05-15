@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda",
+  "skill": {
+    "id": 12252,
+    "skillKey": "clawhub-coda",
+    "name": "Coda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda",
+    "url": "https://clawhub.ai/skills/coda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-66c8aec217cac5fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "General-purpose Coda document manager via REST API v1. Supports listing/creating/updating/deleting docs, managing tables/rows/pages, triggering automations, and exploring doc structure. Requires CODA_API_TOKEN environment variable. Delete."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x7466",
+      "userId": "publishers:0x7466",
+      "displayName": "TFM",
+      "image": "https://avatars.githubusercontent.com/u/7838269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1696,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770583874306,
+      "changelog": "Initial release: Complete Coda REST API v1 integration. Supports doc management (list, get, create, delete), tables, rows (CRUD), and pages. Features safety confirmations for destructive operations and JSON/Table/CSV output formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b165ec284706c24a95425a141bb7dd563d49b47477d9fe75ba527a35725a7d6"
+}

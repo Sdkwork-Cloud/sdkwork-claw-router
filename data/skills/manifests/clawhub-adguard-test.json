@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23919,
+  "uuid": "skill-clawhub-adguard-test",
+  "skillKey": "clawhub-adguard-test",
+  "name": "Adguard Test",
+  "summary": "Query AdGuard Home instances for real-time DNS stats, blocked domains, client activity, service status, and configuration details.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adguard_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Li",
+      "features": [
+        "Query AdGuard Home instances for real-time DNS stats, blocked domains, client activity, service."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adguard-test@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5019239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adguard-test",
+      "url": "https://clawhub.ai/skills/adguard-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adguard-test",
+    "url": "https://clawhub.ai/skills/adguard-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adguard-test-b3ddd1cbae36251c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adguard-test@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adguard-test-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efc2ec01ed37501c8b4861661c6dfecdbbed773326db4b14b9db434aed39562a",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T10:42:10.059Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35407,
+  "uuid": "skill-clawhub-skill-studio",
+  "skillKey": "clawhub-skill-studio",
+  "name": "Skill Studio",
+  "summary": "Create, validate, and publish OpenClaw Skills through conversation. Use when user wants to create a new skill, build a ClawHub plugin, generate SKILL.md, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "Create, validate, and publish OpenClaw Skills through conversation",
+        "Use when user wants to create a new skill, build a ClawHub plugin, generate SKILL.md, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-studio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-studio",
+      "url": "https://clawhub.ai/skills/skill-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-studio",
+    "url": "https://clawhub.ai/skills/skill-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-studio-15ed0a999fdfbf0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-studio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-studio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d5da523e385e918ae282fbb01fe56bdc13e6456d6273a9627f5daf09446e227",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:21:45.758Z"
+}

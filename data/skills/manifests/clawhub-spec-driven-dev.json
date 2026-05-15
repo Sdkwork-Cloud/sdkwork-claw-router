@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59265,
+  "uuid": "skill-clawhub-spec-driven-dev",
+  "skillKey": "clawhub-spec-driven-dev",
+  "name": "spec驱动开发vibe coding skill",
+  "summary": "在克隆的 Git 仓库中驱动完整的规格驱动开发生命周期（init→requirements→architecture→process_design→project_plan→coding→test→bugfix→code_review→release）。阶段门控、产物强制输出、多语言支持，内置 commit me...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_driven_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "胡实",
+      "features": [
+        "在克隆的 Git 仓库中驱动完整的规格驱动开发生命周期（init→requirements→architecture→process_design→project_plan→coding→t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-driven-dev@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22045509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-driven-dev",
+      "url": "https://clawhub.ai/skills/spec-driven-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-driven-dev",
+    "url": "https://clawhub.ai/skills/spec-driven-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-driven-dev-c2c187c7ac46e67f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-driven-dev@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-driven-dev-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc009fb092cab345d70e5e7d081a19901b173a365204188668d22d9aac884edf",
+      "artifactSizeBytes": 2712
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:10:00.693Z"
+}

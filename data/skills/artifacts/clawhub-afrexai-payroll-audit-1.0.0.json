@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-payroll-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_payroll_audit",
+  "skill": {
+    "id": 18038,
+    "skillKey": "clawhub-afrexai-payroll-audit",
+    "name": "Payroll Compliance Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-payroll-audit",
+    "url": "https://clawhub.ai/skills/afrexai-payroll-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-payroll-audit-4da4f46da14a58b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs comprehensive payroll audits including worker classification, overtime, tax withholding accuracy, compliance checklists, and generates detailed repo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 723,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771157584826,
+      "changelog": "Payroll Compliance Auditor skill v1.0.0\n\n- Initial release with fast, automated payroll compliance auditing features.\n- Classifies workers using the IRS 20-factor test and estimates misclassification risk and penalties.\n- Audits overtime pay calculations under FLSA and state rules.\n- Checks federal, state, and local payroll tax withholding accuracy.\n- Generates quarterly checklists and audit-ready reports for DOL/state reviews.\n- Provides detailed usage instructions and actionable compliance recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bdc0adcab759f6f0a346b5c5df4c8fa8929b1a9dc0690fc5fe4fd6006ad6c11d"
+}

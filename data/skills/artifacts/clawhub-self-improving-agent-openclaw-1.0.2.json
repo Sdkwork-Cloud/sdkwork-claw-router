@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-openclaw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_openclaw",
+  "skill": {
+    "id": 36606,
+    "skillKey": "clawhub-self-improving-agent-openclaw",
+    "name": "OpenClaw Learning Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-openclaw",
+    "url": "https://clawhub.ai/skills/self-improving-agent-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-openclaw-12a5d7f522fb98d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture errors, corrections, and feature requests so your OpenClaw agent improves over time instead of repeating the same mistakes. Use when commands fail, u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sam-k-migz",
+      "userId": "s17axyb16rkr5e6qa95tzgt3xx83rp95",
+      "displayName": "Sam-k-migz",
+      "image": "https://avatars.githubusercontent.com/u/108572026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774700952284,
+      "changelog": "Rename title for stronger branding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1d3e3056b5259e76451e3b3d90a31fd93b7bbe4a3460381e140bedac89c7588"
+}

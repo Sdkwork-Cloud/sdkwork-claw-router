@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-daily-report-hk@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_daily_report_hk",
+  "skill": {
+    "id": 66644,
+    "skillKey": "clawhub-stock-daily-report-hk",
+    "name": "港股日报Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-daily-report-hk",
+    "url": "https://clawhub.ai/skills/stock-daily-report-hk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-daily-report-hk-3afd429b8d398457.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "港股日报分析Agent - 每日发送《港股每日动量报告》到飞书"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuchhao",
+      "userId": "publishers:wuchhao",
+      "displayName": "wuchhao",
+      "image": "https://avatars.githubusercontent.com/u/53897023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773408307575,
+      "changelog": "- Added detailed role and task description for the Agent, emphasizing expertise, style, and reporting structure.\n- Clarified the daily report's structure: market stance, 5% watchlist with win probabilities, and risk warnings.\n- Specified multiple Hong Kong stock market data sources for real-time and technical analysis.\n- Provided a standardized markdown output template for the daily report, including formatting instructions.\n- Updated environment configuration notes, highlighting optional Finnhub API key for US stock data reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44b0cfb19da00c064d18e2c813b1cf31c3749b6b960d41a51134852ffc1cc3ba"
+}

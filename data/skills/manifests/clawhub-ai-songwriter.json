@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69616,
+  "uuid": "skill-clawhub-ai-songwriter",
+  "skillKey": "clawhub-ai-songwriter",
+  "name": "AI Songwriter",
+  "summary": "三道工序 AI 写歌。用户只需给主题，全自动跑完白描起草→注入灵魂金句→完美押韵排版→Suno生成，最终直接返回试听链接。中间不停顿、不等用户确认。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_songwriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jason-hou-pe",
+      "features": [
+        "三道工序 AI 写歌。用户只需给主题，全自动跑完白描起草→注入灵魂金句→完美押韵排版→Suno生成，最终直接返回试听链接。中间不停顿、不等用户确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-songwriter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190561125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-songwriter",
+      "url": "https://clawhub.ai/skills/ai-songwriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-songwriter",
+    "url": "https://clawhub.ai/skills/ai-songwriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-songwriter-7a94392735754f8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-songwriter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-songwriter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29328ff4ca00560304f0f55513be6a07aec282bed1cc8be486d23a72a687a57a",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:17:17.049Z"
+}

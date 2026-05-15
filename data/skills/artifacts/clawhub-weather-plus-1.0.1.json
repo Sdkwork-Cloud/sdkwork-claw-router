@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-plus@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_plus",
+  "skill": {
+    "id": 20338,
+    "skillKey": "clawhub-weather-plus",
+    "name": "Weather Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-plus",
+    "url": "https://clawhub.ai/skills/weather-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-plus-c81cb215b8f55f59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather, multi-day forecasts, clothing index, and feels-like temperature. No API key required. Use when a user wants to: (1) Check current weathe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elevo11",
+      "userId": "s171rfft5yr8qa54y1h7rtj63n83mh4y",
+      "displayName": "elevo11",
+      "image": "https://avatars.githubusercontent.com/u/133617972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772789277276,
+      "changelog": "v1.0.1: Updated SkillPay skill_id",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2afe5804207ee272387361732f1cffb715430304353e140bcb1850bfa5c6cd3e"
+}

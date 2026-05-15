@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_orchestrator",
+  "skill": {
+    "id": 61004,
+    "skillKey": "clawhub-knowledge-orchestrator",
+    "name": "Knowledge Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-orchestrator",
+    "url": "https://clawhub.ai/skills/knowledge-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-orchestrator-6d42100fe4874519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一管理和协调Zotero、Obsidian与IMA平台，实现跨平台文献搜索、笔记同步与关联功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776426661378,
+      "changelog": "- Skill functions have been fully integrated into the unified knowledge entry skill.\n- Existing commands are preserved for backward compatibility, but now auto-forward to the new system.\n- Recommended to use `knowledge search/sync/link [parameters]` for future operations.\n- Supports unified search, cloud sync to IMA, and linking literature and notes.\n- Updated usage instructions and configuration guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e64a296bfbe781afad9c6306b6b0c3d635a5a93b58d496a4232d445ee242f2df"
+}

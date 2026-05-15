@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41829,
+  "uuid": "skill-clawhub-ros2-control-introspection",
+  "skillKey": "clawhub-ros2-control-introspection",
+  "name": "ROS2 Control Introspection",
+  "summary": "Execute ROS 2 Control read-only introspection commands (list, view) in a sandboxed environment. Supports parameter profiles.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ros2_control_introspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Robinson",
+      "features": [
+        "Execute ROS 2 Control read-only introspection commands (list, view) in a sandboxed environment",
+        "Supports parameter profiles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ros2-control-introspection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42244176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ros2-control-introspection",
+      "url": "https://clawhub.ai/skills/ros2-control-introspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ros2-control-introspection",
+    "url": "https://clawhub.ai/skills/ros2-control-introspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ros2-control-introspection-fa1b2ef207eb15b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ros2-control-introspection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ros2-control-introspection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f79c49208694f32f0f9d50edf41905f6747c15708a36dff4e62bbbb0cc02d6e9",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T18:15:21.174Z"
+}

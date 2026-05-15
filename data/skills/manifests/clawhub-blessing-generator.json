@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71777,
+  "uuid": "skill-clawhub-blessing-generator",
+  "skillKey": "clawhub-blessing-generator",
+  "name": "万能祝福语生成器",
+  "summary": "输入被祝福人信息（称呼/辈分/近况/节日/风格），AI 生成个性化祝福语。 覆盖全年所有节日（春节/妇女节/儿童节/光棍节/圣诞节等）和人生场合（生日/婚礼/升学等）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blessing_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "输入被祝福人信息（称呼/辈分/近况/节日/风格），AI 生成个性化祝福语。 覆盖全年所有节日（春节/妇女节/儿童节/光棍节/圣诞节等）和人生场合（生日/婚礼/升学等）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blessing-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blessing-generator",
+      "url": "https://clawhub.ai/skills/blessing-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blessing-generator",
+    "url": "https://clawhub.ai/skills/blessing-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blessing-generator-342f250e86045e24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blessing-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blessing-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86e7a8f3d08b543f3292a9741c0031b2d4e53fd079ce3528e5d6a9d5ad9b2261",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:14:47.803Z"
+}

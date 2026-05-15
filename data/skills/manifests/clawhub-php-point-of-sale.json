@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25798,
+  "uuid": "skill-clawhub-php-point-of-sale",
+  "skillKey": "clawhub-php-point-of-sale",
+  "name": "Php Point Of Sale",
+  "summary": "PHP Point of Sale integration. Manage Organizations. Use when the user wants to interact with PHP Point of Sale data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.php_point_of_sale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PHP Point of Sale integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with PHP Point of Sale data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/php-point-of-sale@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "php-point-of-sale",
+      "url": "https://clawhub.ai/skills/php-point-of-sale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "php-point-of-sale",
+    "url": "https://clawhub.ai/skills/php-point-of-sale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/php-point-of-sale-ec8c23bf82f95b7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/php-point-of-sale@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-php-point-of-sale-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b64013febcb64ceb7c7346aa071eaf0b323ba32a2369af2ab6a67a9364f2ae4f",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:58.349Z"
+}

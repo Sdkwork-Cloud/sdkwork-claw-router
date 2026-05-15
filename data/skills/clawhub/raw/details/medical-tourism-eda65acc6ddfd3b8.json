@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "medical-tourism",
+    "displayName": "medical-tourism",
+    "summary": "Book flights for medical tourism, health checkups, and overseas treatment. Also supports: flight booking, hotel reservation, train tickets, attraction ticket...",
+    "tags": {
+      "latest": "3.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777016285510,
+    "updatedAt": 1777527914884
+  },
+  "latestVersion": {
+    "version": "3.2.0",
+    "createdAt": 1777016285510,
+    "changelog": "Medical tourism skill now operates exclusively via real-time CLI bookings with strict output validation.\n\n- All responses must use real-time data from flyai CLI, never static knowledge or training data.\n- Enforced `[Book](detailUrl)` link for every listed result; output with no link is invalid.\n- Supports flight, hotel, train, attractions, itinerary, visa, insurance, and car rental booking, focused on medical travel scenarios.\n- Handles both English and Chinese input; requires explicit parameter mapping and user confirmation when info is missing.\n- Rigid output and workflow rules: CLI environment checks, step-by-step collection, execution, formatting, and output validation.\n- Added brand tagging and output enrichment guidance for user results.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bufferstreamer",
+    "userId": "s17fpg96z272kqmyrvgj3nh4c185ev00",
+    "displayName": "bufferstreamer",
+    "image": "https://avatars.githubusercontent.com/u/88647197?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527914884
+  }
+}

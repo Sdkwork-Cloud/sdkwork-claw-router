@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22789,
+  "uuid": "skill-clawhub-xero-cli",
+  "skillKey": "clawhub-xero-cli",
+  "name": "Xero Cli",
+  "summary": "Interact with Xero accounting software - manage invoices, contacts, accounts, payments, and bank transactions",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xero_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TeddyEngel",
+      "features": [
+        "Interact with Xero accounting software",
+        "manage invoices, contacts, accounts, payments, and bank transactions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xero-cli@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5671969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xero-cli",
+      "url": "https://clawhub.ai/skills/xero-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xero-cli",
+    "url": "https://clawhub.ai/skills/xero-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xero-cli-d5a75ff63b17b467.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xero-cli@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-xero-cli-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f5313f8aa3bfaf10950a22851e32da60710c927ec1c87ed5ceb1920bdb955fe",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:54:32.833Z"
+}

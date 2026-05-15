@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onebot-adapter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onebot_adapter",
+  "skill": {
+    "id": 17679,
+    "skillKey": "clawhub-onebot-adapter",
+    "name": "OneBot Adapter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onebot-adapter",
+    "url": "https://clawhub.ai/skills/onebot-adapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onebot-adapter-ab986ee869d2c380.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to OneBot protocol for QQ bot integration. Use when receiving or sending QQ messages via NapCat or other OneBot servers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gu-heping",
+      "userId": "publishers:gu-heping",
+      "displayName": "peace0824",
+      "image": "https://avatars.githubusercontent.com/u/79317004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 756,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771847770351,
+      "changelog": "Initial release of OneBot Adapter for OpenClaw.\n\n- Enables integration of OpenClaw with QQ via the OneBot protocol (e.g., NapCat).\n- Supports both WebSocket and HTTP modes for sending and receiving messages.\n- Provides Python scripts for message handling, connection setup, and common QQ bot operations.\n- Includes troubleshooting tips and detailed setup instructions.\n- Supports token authentication for secure deployments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c6f6c9d09a3d3a2cab801ba42212f9b8c0e12441d6e81f91f9a8495235f8ddf2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18682,
+  "uuid": "skill-clawhub-claw-history",
+  "skillKey": "clawhub-claw-history",
+  "name": "Claw History",
+  "summary": "Provide a chronological history of all actions the agent has taken from the beginning (birth) until now. Use when the user asks for full lifetime timeline/ac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_history",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BlueBirdBack ✨",
+      "features": [
+        "Provide a chronological history of all actions the agent has taken from the beginning (birth) u.",
+        "Use when the user asks for full lifetime timeline/ac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126304167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-history",
+      "url": "https://clawhub.ai/skills/claw-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-history",
+    "url": "https://clawhub.ai/skills/claw-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-history-fb02df5383af656c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b84979669dac5ece48ba11ac1133752bf57f7775cf9ebcf29f5ce129b7afbcd2",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T09:26:09.923Z"
+}

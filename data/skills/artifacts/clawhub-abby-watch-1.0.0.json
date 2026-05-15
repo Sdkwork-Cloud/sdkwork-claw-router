@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abby-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abby_watch",
+  "skill": {
+    "id": 17513,
+    "skillKey": "clawhub-abby-watch",
+    "name": "Abby Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abby-watch",
+    "url": "https://clawhub.ai/skills/abby-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abby-watch-e1142d2df8c04789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple time display for Abby. Use when you need to know the current time or count down to a specific time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earnabitmore365",
+      "userId": "publishers:earnabitmore365",
+      "displayName": "earnabitmore365",
+      "image": "https://avatars.githubusercontent.com/u/258793012?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771666751407,
+      "changelog": "Initial release of abby-watch.\n\n- Quickly display the current time or count down to a specified time.\n- Supports simple (HH:MM) and verbose (full date and timezone) time formats.\n- Countdown feature calculates time remaining until a given 24-hour time.\n- Easy command-line usage for fast time checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75748ee440d5554cf93b51916082d2eab110d0627a53ba35ffd6a5c550135472"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/braces-filter-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.braces_filter_openapi_skill",
+  "skill": {
+    "id": 56896,
+    "skillKey": "clawhub-braces-filter-openapi-skill",
+    "name": "Braces Filter – See What You’d Look Like with Braces Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "braces-filter-openapi-skill",
+    "url": "https://clawhub.ai/skills/braces-filter-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/braces-filter-openapi-skill-baa87941b4644527.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI braces filter — add dental braces to a person's teeth in a portrait photo"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776216853964,
+      "changelog": "- Initial release of braces-filter-openapi-skill.\n- Enables adding dental braces to a person's teeth in portrait photos via WeShop API.\n- Requires a WESHOP_API_KEY for secure access; API key should only be used with openapi.weshop.ai.\n- Supports uploading images, running the braces filter agent, and polling run status.\n- Allows optional customization of braces instructions and batch processing (up to 16 images).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a5afa09ea7fd7aa1a8285456274c663bda77d5ce4532f0ce7d0fa3808aae0ea"
+}

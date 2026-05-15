@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xlsx-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xlsx_skill",
+  "skill": {
+    "id": 23690,
+    "skillKey": "clawhub-xlsx-skill",
+    "name": "xlsx-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xlsx-skill",
+    "url": "https://clawhub.ai/skills/xlsx-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xlsx-skill-aaa015e9592692c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, read, edit Excel spreadsheets (.xlsx, .xlsm, .csv). Supports formulas, formatting, charts, pivot tables, and data analysis with pandas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weaglewang",
+      "userId": "publishers:weaglewang",
+      "displayName": "weaglewang",
+      "image": "https://avatars.githubusercontent.com/u/55526152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774144821576,
+      "changelog": "ppt-skill 1.0.0\n\n- Major change: Reveal.js-based HTML presentation generation has been removed.\n- All core files, references, scripts, and documentation for Reveal.js and related tooling have been deleted.\n- The skill no longer provides HTML or browser-focused presentation features.\n- No PowerPoint (.pptx) functionality is included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64dc9f0a949f822d789a6f632b72e1f8d0cf9ca31e25578532a5bbf51f31d924"
+}

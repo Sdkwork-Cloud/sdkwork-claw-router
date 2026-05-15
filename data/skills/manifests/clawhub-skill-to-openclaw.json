@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55611,
+  "uuid": "skill-clawhub-skill-to-openclaw",
+  "skillKey": "clawhub-skill-to-openclaw",
+  "name": "Skill to OpenClaw",
+  "summary": "Convert a foreign agent-skill directory into an OpenClaw skill. Use when importing a non-OpenClaw skill folder, such as `.agents/skills` or Claude/Codex-styl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_to_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Silronin",
+      "features": [
+        "Convert a foreign agent-skill directory into an OpenClaw skill",
+        "Use when importing a non-OpenClaw skill folder, such as `.agents/skills` or Claude/Codex-styl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-to-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67084317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-to-openclaw",
+      "url": "https://clawhub.ai/skills/skill-to-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-to-openclaw",
+    "url": "https://clawhub.ai/skills/skill-to-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-to-openclaw-30b8d89980ff38c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-to-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-to-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:058b27408f5fdf7ca95f3daaca52cad1aa08befa2a699b161cb7024392e51470",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:29:16.509Z"
+}

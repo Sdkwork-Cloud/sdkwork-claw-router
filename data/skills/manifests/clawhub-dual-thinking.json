@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17839,
+  "uuid": "skill-clawhub-dual-thinking",
+  "skillKey": "clawhub-dual-thinking",
+  "name": "Dual Thinking",
+  "summary": "Second-opinion consultation plus automatic skill-engineering escalation for reviews, rewrites, hardening, weak-model optimization, packaging, testing, and pu...",
+  "version": "8.5.24",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_thinking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ciklopentan",
+      "features": [
+        "Second-opinion consultation plus automatic skill-engineering escalation for reviews, rewrites,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dual-thinking@8.5.24",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259757332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dual-thinking",
+      "url": "https://clawhub.ai/skills/dual-thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-thinking",
+    "url": "https://clawhub.ai/skills/dual-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-thinking-147e66b8ca983887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dual-thinking@8.5.24",
+      "artifactUrl": "data/skills/artifacts/clawhub-dual-thinking-8.5.24.json",
+      "version": "8.5.24",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63c64c84c4b4e389a91ed3f9530e09455209929e54d4ddc4cb0b7354d5595ec2",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:55:12.962Z"
+}

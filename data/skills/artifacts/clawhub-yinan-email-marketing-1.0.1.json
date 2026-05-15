@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yinan-email-marketing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinan_email_marketing",
+  "skill": {
+    "id": 21800,
+    "skillKey": "clawhub-yinan-email-marketing",
+    "name": "Email Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinan-email-marketing",
+    "url": "https://clawhub.ai/skills/yinan-email-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinan-email-marketing-db7a6d06b631adaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email marketing automation for campaigns, newsletters, and customer engagement. Use when creating email sequences, drip campaigns, promotional emails, or cus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinanping-cpu",
+      "userId": "publishers:yinanping-cpu",
+      "displayName": "Yinanping",
+      "image": "https://avatars.githubusercontent.com/u/87659652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772879994793,
+      "changelog": "- Simplified features list to focus on campaign creation, templates, subscriber management, analytics, and e-commerce support.\n- Combined campaign creation and sending into a single script (`email_campaign.py`) with clear actions (create, send, add-subscriber).\n- Removed detailed documentation for multiple scripts; centralized workflow and arguments under `email_campaign.py`.\n- Streamlined quick start instructions and usage examples for easier onboarding.\n- Retained all email templates, best practices, compliance, and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88fd9ab5b09126bb990748475a6454f219158ae6656f09c41aa35538cb0bb45d"
+}

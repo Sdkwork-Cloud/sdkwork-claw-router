@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_tracker",
+  "skill": {
+    "id": 35660,
+    "skillKey": "clawhub-book-tracker",
+    "name": "Book Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-tracker",
+    "url": "https://clawhub.ai/skills/book-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-tracker-cf87ad155511055b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks your reading progress, notes, ratings, themes, and suggests what to read next based on your history and preferences."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rednix",
+      "userId": "s170cvfh9s59w5610ah2tznmxd83fyk2",
+      "displayName": "Nico Lumma",
+      "image": "https://avatars.githubusercontent.com/u/3120412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784624520,
+      "changelog": "Initial release of book-tracker.\n\n- Tracks current, finished, abandoned, and to-read books with notes, ratings, and reflections.\n- Suggests what to read next based on preferences, ratings, and recent themes.\n- Supports knowledge capture integration for key book insights and quotes.\n- Offers pattern and theme tracking across your reading history.\n- Provides personal reading goal tracking and monthly updates.\n- Respects privacy: all library actions require user instruction; data stays private.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:644308c84389f77ddac53159ba1205d1ad5aea6d516c720bbd861db296370827"
+}

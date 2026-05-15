@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39291,
+  "uuid": "skill-clawhub-decision-advisor",
+  "skillKey": "clawhub-decision-advisor",
+  "name": "Decision Advisor",
+  "summary": "Decision-making advisor using Tree of Thoughts for exploring options, analyzing trade-offs, and providing data-driven recommendations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banxian87",
+      "features": [
+        "Decision-making advisor using Tree of Thoughts for exploring options, analyzing trade-offs, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264314218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-advisor",
+      "url": "https://clawhub.ai/skills/decision-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-advisor",
+    "url": "https://clawhub.ai/skills/decision-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-advisor-e1b60f8480958bc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e159502e26fd39c61c61ba028ecc371460819748d0ea1477d8a18644f52cf428",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:07:34.227Z"
+}

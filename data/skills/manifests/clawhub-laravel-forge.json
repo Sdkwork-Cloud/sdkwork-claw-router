@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17843,
+  "uuid": "skill-clawhub-laravel-forge",
+  "skillKey": "clawhub-laravel-forge",
+  "name": "Laravel Forge",
+  "summary": "Manage Laravel Forge servers, sites, deployments, databases, integrations, and more via the Forge API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laravel_forge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Beer",
+      "features": [
+        "Manage Laravel Forge servers, sites, deployments, databases, integrations, and more via the For."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laravel-forge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/800047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laravel-forge",
+      "url": "https://clawhub.ai/skills/laravel-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laravel-forge",
+    "url": "https://clawhub.ai/skills/laravel-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laravel-forge-7873c05a44435064.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laravel-forge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laravel-forge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bf6153efac279425e2b3541d9afde7ae8e12a4d16c0537e734e4afbb3af3285",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:45:50.420Z"
+}

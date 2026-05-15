@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35553,
+  "uuid": "skill-clawhub-aisa-tavily-search",
+  "skillKey": "clawhub-aisa-tavily-search",
+  "name": "AIsa Tavily Search",
+  "summary": "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_tavily_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Run web, multi-source, or last-30-days research through AIsa",
+        "Use when: the user needs search, synthesis, competitor scans, or trend discovery",
+        "Supports rese..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-tavily-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-tavily-search",
+      "url": "https://clawhub.ai/skills/aisa-tavily-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-tavily-search",
+    "url": "https://clawhub.ai/skills/aisa-tavily-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-tavily-search-80f08343583cf1f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-tavily-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-tavily-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3c3a79b759f9c4be4f105c7e038e6864b896fa6f3e22c41a2d28c03ad313e1",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:33:54.545Z"
+}

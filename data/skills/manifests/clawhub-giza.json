@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27539,
+  "uuid": "skill-clawhub-giza",
+  "skillKey": "clawhub-giza",
+  "name": "Giza",
+  "summary": "Autonomous DeFi yield management on Giza -- onboarding, portfolio reviews, withdrawals, rewards, and education. Connects to the Giza MCP server for autonomou...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giza",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raphaelDkhn",
+      "features": [
+        "Autonomous DeFi yield management on Giza -",
+        "onboarding, portfolio reviews, withdrawals, rewards, and education",
+        "Connects to the Giza MCP server for autonomou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giza@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113879115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giza",
+      "url": "https://clawhub.ai/skills/giza"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giza",
+    "url": "https://clawhub.ai/skills/giza",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giza-2c03944b432a76bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giza@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-giza-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1723f2982a435cc20416e73856faa286c30d0b9fc36c1d5f346d66417f2fbda9",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:38:25.898Z"
+}

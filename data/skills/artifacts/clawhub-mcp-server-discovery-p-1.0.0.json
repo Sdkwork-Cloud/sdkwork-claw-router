@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-server-discovery-p@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server_discovery_p",
+  "skill": {
+    "id": 45105,
+    "skillKey": "clawhub-mcp-server-discovery-p",
+    "name": "mcp-server-discovery-p"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server-discovery-p",
+    "url": "https://clawhub.ai/skills/mcp-server-discovery-p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-discovery-p-bb86796d94488ee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, search, and manage MCP (Model Context Protocol) servers with comprehensive capabilities. Efficiently locate servers, retrieve detailed information,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subaru0573",
+      "userId": "s17fv9b8ta6mn155x3x71jzdf583p03s",
+      "displayName": "Subaru0573",
+      "image": "https://avatars.githubusercontent.com/u/188862647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777047857882,
+      "changelog": "Initial release of mcp-server-discovery:\n\n- Provides tools to discover, search, and manage MCP (Model Context Protocol) servers.\n- Supports listing, filtering, and searching for servers by category or query.\n- Allows retrieval of detailed server information and generation of MCP client configurations.\n- Offers a streamlined workflow for setting up MCP clients and finding the right servers.\n- Includes support for multiple server categories, such as filesystem, dev, database, web, search, and memory.\n- All commands support JSON output for integration with other tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7878c0bc2aaf97db1752f94cc4151605204ea3c50499e8e0dae7a5dbbee120af"
+}

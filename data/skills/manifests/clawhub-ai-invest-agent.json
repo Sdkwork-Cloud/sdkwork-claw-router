@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70183,
+  "uuid": "skill-clawhub-ai-invest-agent",
+  "skillKey": "clawhub-ai-invest-agent",
+  "name": "Ai Invest Agent",
+  "summary": "基于四步复盘法和多市场指数温度计，提供跨市场投资分析及多格式报告，支持周度复盘、每日快检与单标的深度评估。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_invest_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vivifishtl",
+      "features": [
+        "基于四步复盘法和多市场指数温度计，提供跨市场投资分析及多格式报告，支持周度复盘、每日快检与单标的深度评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-invest-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33654455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-invest-agent",
+      "url": "https://clawhub.ai/skills/ai-invest-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-invest-agent",
+    "url": "https://clawhub.ai/skills/ai-invest-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-invest-agent-c8dd84603979fac8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-invest-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-invest-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38ef586f7c08b8318f513a91276a9fa6f2c7f37eda1ec5e7c1d8646cc51f278f",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T20:04:04.293Z"
+}

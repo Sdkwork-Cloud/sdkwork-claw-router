@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26846,
+  "uuid": "skill-clawhub-flippingbook",
+  "skillKey": "clawhub-flippingbook",
+  "name": "Flippingbook",
+  "summary": "FlippingBook integration. Manage FlippingBooks, Users, Groups, Brandings. Use when the user wants to interact with FlippingBook data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flippingbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FlippingBook integration",
+        "Manage FlippingBooks, Users, Groups, Brandings",
+        "Use when the user wants to interact with FlippingBook data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flippingbook@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flippingbook",
+      "url": "https://clawhub.ai/skills/flippingbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flippingbook",
+    "url": "https://clawhub.ai/skills/flippingbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flippingbook-d65d89f194c9f1ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flippingbook@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-flippingbook-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7a7cd28b51d70b0a40a0a0c538c41d8211fe7bf7e2a2f9dcfa03ee2fc6aacf2",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:31.681Z"
+}

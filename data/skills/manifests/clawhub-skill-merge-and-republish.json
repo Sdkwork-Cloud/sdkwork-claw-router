@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25765,
+  "uuid": "skill-clawhub-skill-merge-and-republish",
+  "skillKey": "clawhub-skill-merge-and-republish",
+  "name": "skill-merge-and-republish",
+  "summary": "Merge overlapping local skills into one canonical skill and republish the canonical skill to ClawHub. Use when two local skills have overlapping responsibili...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_merge_and_republish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G-Hanasq",
+      "features": [
+        "Merge overlapping local skills into one canonical skill and republish the canonical skill to Cl.",
+        "Use when two local skills have overlapping responsibili..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-merge-and-republish@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74138794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-merge-and-republish",
+      "url": "https://clawhub.ai/skills/skill-merge-and-republish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-merge-and-republish",
+    "url": "https://clawhub.ai/skills/skill-merge-and-republish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-merge-and-republish-28fe739e1f3dd7eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-merge-and-republish@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-merge-and-republish-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a7d2ad02e613b3984a8f7a07a913cd0a96f7192848ad6af0b16632fb042f0ce",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T19:15:10.439Z"
+}

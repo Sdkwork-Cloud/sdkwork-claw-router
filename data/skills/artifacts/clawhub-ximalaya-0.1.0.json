@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ximalaya@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ximalaya",
+  "skill": {
+    "id": 71594,
+    "skillKey": "clawhub-ximalaya",
+    "name": "Ximalaya"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ximalaya",
+    "url": "https://clawhub.ai/skills/ximalaya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ximalaya-5cb53303d83bb89e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供喜马拉雅公开节目和主播页面的播放量、评论等数据摘要与榜单统计，辅助内容分析与提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773724099638,
+      "changelog": "ximalaya-hot-trend v0.1.0\n\n- Initial release registering the “喜马拉雅” hot trend skill.\n- Supports summary and lightweight analysis for public programs, albums, and hosts on ximalaya.com.\n- Enables search, leaderboard extraction, and host performance comparison for public pages.\n- Does not support downloads, API reverse engineering, or bypassing platform protections.\n- Results are for internal analysis and notifications only, with platform compliance emphasized.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c5e6b89a62d23632f688623e6274a702094210a6dfaca598a8b492ebe08ae8a"
+}

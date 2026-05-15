@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40076,
+  "uuid": "skill-clawhub-video2podcast",
+  "skillKey": "clawhub-video2podcast",
+  "name": "video2podcast",
+  "summary": "Convert bookmarked videos from YouTube, X (Twitter), and other sites into a podcast RSS feed hosted on Cloudflare R2. Use when the user says things like \"add...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video2podcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan",
+      "features": [
+        "Convert bookmarked videos from YouTube, X (Twitter), and other sites into a podcast RSS feed ho.",
+        "Use when the user says things like \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video2podcast@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29902460?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video2podcast",
+      "url": "https://clawhub.ai/skills/video2podcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video2podcast",
+    "url": "https://clawhub.ai/skills/video2podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video2podcast-69d32263893af3dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video2podcast@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-video2podcast-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:101dd706289220acfe946a36d289ed819f8b882e8c3b61a2aa2c64393f790153",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T19:20:36.033Z"
+}

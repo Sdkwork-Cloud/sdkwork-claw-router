@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-fun-styles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_fun_styles",
+  "skill": {
+    "id": 30817,
+    "skillKey": "clawhub-persona-fun-styles",
+    "name": "Persona Styles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-fun-styles",
+    "url": "https://clawhub.ai/skills/persona-fun-styles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-fun-styles-dde302866b43cf97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply inspired-by character/persona writing styles (for fun and creative outputs) with explicit on/off controls, intensity settings, and automatic neutral fa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anugotta",
+      "userId": "s17axsx356as5m47cf210hgx2183e9km",
+      "displayName": "ASP",
+      "image": "https://avatars.githubusercontent.com/u/4218061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773930408691,
+      "changelog": "- Initial release of persona-fun-styles skill for creative, character-inspired writing modes.\n- Supports on/off activation, preset switching, and intensity levels via simple chat commands.\n- Automatically reverts to neutral style for serious, sensitive, or high-stakes topics.\n- Includes a variety of fun, \"inspired-by\" persona presets such as Gandhi, Bond, Batman, and more.\n- Provides clear disclaimers and safety checks to prevent misuse.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8cafc4b964a60221b5a6a03369de3f81edc7b16b4c2d58cb862216be5e878a2"
+}

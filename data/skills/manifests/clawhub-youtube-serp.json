@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46253,
+  "uuid": "skill-clawhub-youtube-serp",
+  "skillKey": "clawhub-youtube-serp",
+  "name": "Youtube Serp",
+  "summary": "Search YouTube videos, channels, rankings, and trends through AIsa. Use when: the user needs YouTube research, competitor scouting, or content discovery. Sup...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_serp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Search YouTube videos, channels, rankings, and trends through AIsa",
+        "Use when: the user needs YouTube research, competitor scouting, or content discovery"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-serp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-serp",
+      "url": "https://clawhub.ai/skills/youtube-serp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-serp",
+    "url": "https://clawhub.ai/skills/youtube-serp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-serp-7a8f693e8a43f0ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-serp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-serp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a767b2d02dae22a12ee3d8946c2d6f10caff683ee2b22a660d558bbe5959c70d",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:52:48.519Z"
+}

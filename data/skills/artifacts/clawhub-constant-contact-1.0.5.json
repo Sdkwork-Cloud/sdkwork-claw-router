@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/constant-contact@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.constant_contact",
+  "skill": {
+    "id": 9020,
+    "skillKey": "clawhub-constant-contact",
+    "name": "Constant Contact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "constant-contact",
+    "url": "https://clawhub.ai/skills/constant-contact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/constant-contact-8526acc308a2f9c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Constant Contact API integration with managed OAuth. This is a write-capable integration — it can read, create, update, delete, and bulk-modify contacts, ema..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5623,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777629051963,
+      "changelog": "- Updated API hostname from gateway.maton.ai/ctrl.maton.ai to api.maton.ai throughout documentation and examples.\n- Clarified that this integration is write-capable (supports create, update, delete, and bulk-modify operations) and includes segments in its scope.\n- Strongly emphasized user confirmation requirements for all write, bulk, and high-impact operations, with new step-by-step safety guidelines.\n- Improved security documentation, including explanations about connection management, resource scoping, and the need to use the correct Maton-Connection header for multi-account setups.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12dececd4683fcae03dab05b79dc3e7a5c2f372740cca17db61fac637491ee87"
+}

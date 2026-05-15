@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69110,
+  "uuid": "skill-clawhub-open-leqi-assistant",
+  "skillKey": "clawhub-open-leqi-assistant",
+  "name": "open-leqi-assistant",
+  "summary": "乐企(open-leqi)项目分析与代码定位助手技能。当用户询问关于乐企发票系统、勾选能力、抵扣功能、用票接口等问题时触发。本技能提供项目架构理解、代码快速定位、业务流程分析和问题诊断建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_leqi_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allanseven",
+      "features": [
+        "乐企(open-leqi)项目分析与代码定位助手技能。当用户询问关于乐企发票系统、勾选能力、抵扣功能、用票接口等问题时触发。本技能提供项目架构理解、代码快速定位、业务流程分析和问题诊断建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-leqi-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19431678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-leqi-assistant",
+      "url": "https://clawhub.ai/skills/open-leqi-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-leqi-assistant",
+    "url": "https://clawhub.ai/skills/open-leqi-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-leqi-assistant-a43f202780140541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-leqi-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-leqi-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60a4c7d921ae121192b371bd80cc5f1c1d336a5e6ace8e26d72590a054bd243d",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:32:01.134Z"
+}

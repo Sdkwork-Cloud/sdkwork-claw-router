@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65803,
+  "uuid": "skill-clawhub-twitter-video-downloader",
+  "skillKey": "clawhub-twitter-video-downloader",
+  "name": "推特视频下载器",
+  "summary": "推特视频下载器 - 下载 Twitter/X 视频、GIF 和音频（MP4/MP3），支持 1080p、2K、4K、8K 高清下载。适用于需要保存推特视频、提取音频的用户。⚠️ 中国大陆用户需要使用代理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_video_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harbour015",
+      "features": [
+        "下载 Twitter/X 视频、GIF 和音频（MP4/MP3），支持 1080p、2K、4K、8K 高清下载。适用于需要保存推特视频、提取音频的用户。⚠️ 中国大陆用户需要使用代理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-video-downloader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48000268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-video-downloader",
+      "url": "https://clawhub.ai/skills/twitter-video-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-video-downloader",
+    "url": "https://clawhub.ai/skills/twitter-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-video-downloader-51c9f63e8f72217a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-video-downloader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-video-downloader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6770ac09d342ec29918494d25853616df2301b4c71b3947e15f757c2a2ff6ac",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:10:15.821Z"
+}

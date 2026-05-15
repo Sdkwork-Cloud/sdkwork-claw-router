@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ens-manager@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ens_manager",
+  "skill": {
+    "id": 26983,
+    "skillKey": "clawhub-ens-manager",
+    "name": "ens-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ens-manager",
+    "url": "https://clawhub.ai/skills/ens-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ens-manager-01232dd7c4c835d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register ENS names, create subdomains, and publish IPFS sites without manual contract calls"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeugh-eth",
+      "userId": "s17dykphk1xvn6ht386gs4dfms83yqcb",
+      "displayName": "Zeugh",
+      "image": "https://avatars.githubusercontent.com/u/107566861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773361710201,
+      "changelog": "ens-manager 1.2.0 introduces streamlined ENS name management and new IPFS publishing features.\n\n- Register new `.eth` names, create subdomains, and publish IPFS content from the command line, with clear three-phase registration process.\n- Supports ENS ownership checks, content hash management, and subdomain creation in a single step.\n- Comprehensive quick start and example workflows included.\n- Requires Node.js 18+, viem ^1.20.0, and (optionally) content-hash for IPFS support.\n- Transparent about required contract addresses and gas costs for most actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d30530dd93e4ecb83ef7ca883ea66cf9b22c73721a12e9985fa03172d1082178"
+}

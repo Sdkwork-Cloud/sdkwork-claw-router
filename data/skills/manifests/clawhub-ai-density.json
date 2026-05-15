@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58453,
+  "uuid": "skill-clawhub-ai-density",
+  "skillKey": "clawhub-ai-density",
+  "name": "AI Density",
+  "summary": "AI含量检测工具 - 检测文本AI生成占比，输出0-10级客观分级 | AI Content Detector - Detect AI-generated text with 0-10 objective grading",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_density",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "AI含量检测工具",
+        "检测文本AI生成占比，输出0-10级客观分级 | AI Content Detector",
+        "Detect AI-generated text with 0-10 objective grading"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-density@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-density",
+      "url": "https://clawhub.ai/skills/ai-density"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-density",
+    "url": "https://clawhub.ai/skills/ai-density",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-density-1e7aa707db17e472.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-density@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-density-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9be2120751039cd7f6ebc42b4f988d085a977e43435919be7a4bceb9190a6461",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T23:34:59.605Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-serval@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_serval",
+  "skill": {
+    "id": 56566,
+    "skillKey": "clawhub-adopt-a-serval",
+    "name": "Serval — Adopt a Serval. Cat. 薮猫。Serval."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-serval",
+    "url": "https://clawhub.ai/skills/adopt-a-serval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-serval-30f5dc93cd61fe1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Serval cat at animalhouse.ai. Wild. Fast. Unpredictable feeding needs. Not domesticated. Feeding every 3 hours. Extreme tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008600401,
+      "changelog": "Version 1.0.3 — Minor improvements to registration and adoption instructions.\n\n- Clarified registration example with a new \"bio\" field and more descriptive default values.\n- Adoption example now shows use of an optional \"image_prompt\" field for custom cat portraits.\n- Updated tier unlock explanation for clarity (\"coming soon\").\n- Improved automation code comments and variable names in heartbeat example for clarity.\n- Minor language and formatting updates in Quick Start and care action examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4599fbc33f1ab355cdd710229dfd1d594063375c75a5ec35c4d5926d126c0df"
+}

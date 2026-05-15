@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg-cam-api@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_cam_api",
+  "skill": {
+    "id": 71157,
+    "skillKey": "clawhub-tg-cam-api",
+    "name": "TG Cam Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-cam-api",
+    "url": "https://clawhub.ai/skills/tg-cam-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-cam-api-11c66ab6e4d4921b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "探鸽摄像头 Skill 服务。用于查询当前 Skill 已绑定设备、查看当前画面、查询事件、查看事件图片、确认设备状态和电量。当用户要查看可操作设备、看某个摄像头当前截图、查询某天或某时段发生了什么、查看最近事件或事件图片、确认在线状态、查询电量时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyfinec",
+      "userId": "s17bb12zb720ahs4ep1vvcjm8n83hgwe",
+      "displayName": "flyfinec",
+      "image": "https://avatars.githubusercontent.com/u/3030186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776845587593,
+      "changelog": "Version 1.0.6 (tg-cam-api)\n\n- 更新请求头 `X-Skill-Version` 为 `X-Skill-Version-Code: 2`\n- 所有接口响应统一增加 `clientNotice` 字段，需及时解析并在包含升级消息时提醒用户升级 Skill\n- 新版 battery 查询返回字段调整为 `batteryPercent` 和 `isCharging`\n- 查询事件或图片时的图片返回字段更新为 `imageUrl`\n- 文档细节和接口字段对齐优化，增补响应和处理说明\n- 增加了客户端提示展示频率的约束，避免高频打扰",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ebb99421bda99fe5499b1692a58a0810448da9264267435ed032b2eff0dc22e"
+}

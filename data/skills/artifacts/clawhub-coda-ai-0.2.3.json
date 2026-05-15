@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coda-ai@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda_ai",
+  "skill": {
+    "id": 13689,
+    "skillKey": "clawhub-coda-ai",
+    "name": "coda.io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda-ai",
+    "url": "https://clawhub.ai/skills/coda-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-ai-f889586fe0bb1151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI to read Coda.io documents and pages. List docs, list pages, read content in markdown/json/html."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "auniik",
+      "userId": "publishers:auniik",
+      "displayName": "Anik Datta",
+      "image": "https://avatars.githubusercontent.com/u/26006798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1335,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1770841107328,
+      "changelog": "Declare CODA_API_TOKEN in metadata (requires.env + primaryEnv); add logout; improve credential docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d4a0c9784a7a80ef4d0e12457570420606e034d07d3fbb46f884c7e57fe4678"
+}

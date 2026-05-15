@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63234,
+  "uuid": "skill-clawhub-edge-tts-auto",
+  "skillKey": "clawhub-edge-tts-auto",
+  "name": "edge-tts-auto",
+  "summary": "自动安装依赖并将输入文本转换为中文女声 MP3，兼容 OpenClaw，无需手动配置环境。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IiaWhite-Sir",
+      "features": [
+        "自动安装依赖并将输入文本转换为中文女声 MP3，兼容 OpenClaw，无需手动配置环境。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edge-tts-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267610446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edge-tts-auto",
+      "url": "https://clawhub.ai/skills/edge-tts-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-auto",
+    "url": "https://clawhub.ai/skills/edge-tts-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-auto-20ed185a6e90e7b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edge-tts-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edge-tts-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3da0a057cfe7166c00faa8d2f4f7ab3adc9121d9253e36cac7b7deaed13d2306",
+      "artifactSizeBytes": 4213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:07:55.071Z"
+}

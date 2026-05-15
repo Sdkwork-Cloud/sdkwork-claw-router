@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slideshow-video@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slideshow_video",
+  "skill": {
+    "id": 32134,
+    "skillKey": "clawhub-slideshow-video",
+    "name": "Slideshow Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slideshow-video",
+    "url": "https://clawhub.ai/skills/slideshow-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slideshow-video-d0dd9d7d82766d6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate TikTok-style slideshow assets and MP4 exports from local images, GPT Image 2 visuals, remote image URLs, or lightweight image queries plus structure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1777726426300,
+      "changelog": "Default production guidance now prefers GPT Image 2 visuals, ElevenLabs voice, more human/emotive delivery tuning when requested, explicit CTA alignment between final slide and final narration, and a short CTA default of Visit Clawlite.ai.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fa00d290825da10f0f1bbff3f71e274a794009aab30f3740de28864d7d1b402"
+}

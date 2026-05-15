@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42106,
+  "uuid": "skill-clawhub-icalendar-events-parser",
+  "skillKey": "clawhub-icalendar-events-parser",
+  "name": "iCalendar Events Parser",
+  "summary": "Parse .ics / iCalendar files or URLs, expand recurring events (RRULE), filter by date range / keywords, and return clean list of events. Use this instead of...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icalendar_events_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baptiste00001",
+      "features": [
+        "Parse .ics / iCalendar files or URLs, expand recurring events (RRULE), filter by date range / k.",
+        "Use this instead of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icalendar-events-parser@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54464650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icalendar-events-parser",
+      "url": "https://clawhub.ai/skills/icalendar-events-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icalendar-events-parser",
+    "url": "https://clawhub.ai/skills/icalendar-events-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icalendar-events-parser-712687c5df5ae627.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icalendar-events-parser@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-icalendar-events-parser-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa129ea347d6a963649474a715d875c52d3a62281f91d17b03d12f233bef46bf",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:25:21.460Z"
+}

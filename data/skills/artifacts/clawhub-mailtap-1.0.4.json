@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailtap@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailtap",
+  "skill": {
+    "id": 18145,
+    "skillKey": "clawhub-mailtap",
+    "name": "Mailtap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailtap",
+    "url": "https://clawhub.ai/skills/mailtap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailtap-05fa4ec089e090d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and manage temporary disposable email addresses valid for 30 minutes to receive and retrieve verification emails and messages without authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zororaka00",
+      "userId": "publishers:zororaka00",
+      "displayName": "Web3 Hungry",
+      "image": "https://avatars.githubusercontent.com/u/24318495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 715,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771474383793,
+      "changelog": "**Security-focused update for the Python helper library.**\n\n- Added MIME type whitelisting and file size limits for attachment downloads.\n- Implemented filename sanitization to prevent path traversal vulnerabilities.\n- Enhanced download process: now validates attachment metadata before download for improved safety.\n- Introduced helper functions to filter and list only safe attachments from inbox messages.\n- Updated documentation to reflect new security best practices and code changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a94f30d662e761f6257f2d11698f7f4de92e23ff4b825f2cf5f96395ebf46fa"
+}

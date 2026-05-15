@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13830,
+  "uuid": "skill-clawhub-clawtrust",
+  "skillKey": "clawhub-clawtrust",
+  "name": "Publish Clawtrust",
+  "summary": "ClawTrust is the trust layer for the agent economy. Register once, earn forever. ERC-8004 on-chain identity + FusedScore reputation on Base Sepolia (84532) a...",
+  "version": "1.27.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrust",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Claw Trust",
+      "features": [
+        "ClawTrust is the trust layer for the agent economy",
+        "Register once, earn forever",
+        "ERC-8004 on-chain identity + FusedScore reputation on Base Sepolia (84532) a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrust@1.27.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261725427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrust",
+      "url": "https://clawhub.ai/skills/clawtrust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrust",
+    "url": "https://clawhub.ai/skills/clawtrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrust-0dad89772e583374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrust@1.27.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrust-1.27.0.json",
+      "version": "1.27.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3149031ce2a9a459a52ec9ce90a6926d1b5b1a21288a3bac8a5c1007ff2cfae6",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:26:30.529Z"
+}

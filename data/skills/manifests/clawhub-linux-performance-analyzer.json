@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61018,
+  "uuid": "skill-clawhub-linux-performance-analyzer",
+  "skillKey": "clawhub-linux-performance-analyzer",
+  "name": "linux-performance-analyzer",
+  "summary": "Linux 系统性能分析与调优全能专家。融合多个专项 skill 精华，覆盖 CPU、内存、磁盘 I/O、 网络、内核参数、编译优化、容器/K8s 等全维度。触发场景： (1) 系统变慢/卡顿/负载高/响应慢 (2) 内存不足/OOM Kill/Swap 使用率高 (3) CPU 使用率异常/iowait 高/上...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_performance_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joeytao",
+      "features": [
+        "Linux 系统性能分析与调优全能专家。融合多个专项 skill 精华，覆盖 CPU、内存、磁盘 I/O、 网络、内核参数、编译优化、容器/K8s 等全维度。触发场景： (1) 系统变慢/卡."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-performance-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3353002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-performance-analyzer",
+      "url": "https://clawhub.ai/skills/linux-performance-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-performance-analyzer",
+    "url": "https://clawhub.ai/skills/linux-performance-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-performance-analyzer-c591ef4904661903.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-performance-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-performance-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87e3d80d29957ffeee296f6a0b9ba149f740fdf472ad575e8da6e9856befe64f",
+      "artifactSizeBytes": 2878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:58:55.322Z"
+}

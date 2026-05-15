@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "water-coach",
+    "displayName": "Water Coach",
+    "summary": "Hydration tracking and coaching skill. Use when user wants to track water intake, get reminders to drink water, log body metrics (weight, body fat, muscle %,...",
+    "tags": {
+      "latest": "1.7.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1119,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 21
+    },
+    "createdAt": 1771169987659,
+    "updatedAt": 1778386007151
+  },
+  "latestVersion": {
+    "version": "1.7.0",
+    "createdAt": 1771809092144,
+    "changelog": "water-coach 1.7.0\n\n- Fixed: The `water dynamic` command now correctly resets the hourly notification counter when the hour changes, preventing missed notifications at hour boundaries.\n- Fixed: Weekly and monthly analytics now sum water intake per day using the correct CSV column (`ml_drank`), resolving errors from missing `cumulative_ml`.\n- Documentation updated to clarify bug fixes and reference correct analytics usage.\n- No database, config, or CLI changes to user experience expected outside these bug fixes.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "oristides",
+    "userId": "publishers:oristides",
+    "displayName": "oristides",
+    "image": "https://avatars.githubusercontent.com/u/11547862?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386007151
+  }
+}

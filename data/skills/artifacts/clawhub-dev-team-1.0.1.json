@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-team@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_team",
+  "skill": {
+    "id": 50797,
+    "skillKey": "clawhub-dev-team",
+    "name": "Multi Agent Development-Team Collaboration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-team",
+    "url": "https://clawhub.ai/skills/dev-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-team-1b1ad1a3d89240dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate a multi-agent dev/agency team with shared memory, handoffs, and OpenClaw sessions. Use when (1) First-time onboarding — follow references/OPENCLA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realm1lf",
+      "userId": "s1745zssmqb0jzw6r0exv327bh83h2n2",
+      "displayName": "realM1lF",
+      "image": "https://avatars.githubusercontent.com/u/61932034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774438058801,
+      "changelog": "Version 1.0.1\n\n- Added a new introduction section for clarity on skill capabilities, setup, and data flow\n- Provided a structured overview table outlining the guide's organization and reference links\n- Clarified the relationship to the original community use case (Telegram, VPS are now described as examples, not requirements)\n- Included a new Mermaid diagram showing agent, team, and customer/task structure\n- Updated quick start instructions and links to setup/reference documents\n- No functional changes; documentation and onboarding focused update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20196dbc661ba279614a67b44404ac996ab08c380ef2fabc4b46cf84a0df53db"
+}

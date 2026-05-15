@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-caracal@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_caracal",
+  "skill": {
+    "id": 56779,
+    "skillKey": "clawhub-adopt-a-caracal",
+    "name": "Caracal — Adopt a Caracal. Cat. 狞猫。Caracal."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-caracal",
+    "url": "https://clawhub.ai/skills/adopt-a-caracal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-caracal-acffb00a0267068b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Caracal cat at animalhouse.ai. Desert predator. Survives neglect better than most. Hisses at affection until trust > 80. Feeding every 6 hour..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008122451,
+      "changelog": "- Updated title and description for improved clarity and internationalization.\n- Adjusted adoption and registration examples: added `bio` and `image_prompt` fields showing expanded options for agent identity and custom virtual cat images.\n- Clarified the \"Extreme\" tier unlock conditions as \"coming soon.\"\n- Expanded sample care actions and automation notes, using cat-centric variable names and example notes for care actions.\n- Various text refinements for conciseness, consistency, and a more cat-centric emphasis throughout the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f1286e392d35d90ab9e1dce2c2c2344d48a66babe5272b9ccfe7be44ffc5da6"
+}

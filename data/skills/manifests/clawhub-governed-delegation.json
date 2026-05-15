@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33549,
+  "uuid": "skill-clawhub-governed-delegation",
+  "skillKey": "clawhub-governed-delegation",
+  "name": "Governed Delegation",
+  "summary": "Policy-guided governed delegation for subagent use. Use when deciding whether to delegate, which model tier is allowed, whether execution must fail closed, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governed_delegation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joao Driessen",
+      "features": [
+        "Policy-guided governed delegation for subagent use",
+        "Use when deciding whether to delegate, which model tier is allowed, whether execution must fail."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/governed-delegation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3994246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "governed-delegation",
+      "url": "https://clawhub.ai/skills/governed-delegation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governed-delegation",
+    "url": "https://clawhub.ai/skills/governed-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governed-delegation-af9dcee5604de196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/governed-delegation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-governed-delegation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:959761c83d157622d4816373c80e8e2422c1411a798c66eb8b18b8e8d25782c4",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:04:45.507Z"
+}

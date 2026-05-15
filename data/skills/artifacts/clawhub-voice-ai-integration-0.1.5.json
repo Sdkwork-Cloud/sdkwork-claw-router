@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-ai-integration@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_ai_integration",
+  "skill": {
+    "id": 23526,
+    "skillKey": "clawhub-voice-ai-integration",
+    "name": "Voice Ai Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-ai-integration",
+    "url": "https://clawhub.ai/skills/voice-ai-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-ai-integration-0ff93f4625929d30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Shengwang products: ConvoAI voice agents, RTC audio/video, RTM messaging, Cloud Recording, and token generation. Use when the user mentions Shengwa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hugochaan",
+      "userId": "s17fhyjrrhh7kr3hanmt2tzh5h83hfsg",
+      "displayName": "Hugo Chan",
+      "image": "https://avatars.githubusercontent.com/u/47882165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1774439314400,
+      "changelog": "- Clarified that the static doc index is downloaded from doc.shengwang.cn and no user data is sent.\n- Added explicit details on network behavior and what is sent during doc downloads and sample repo inspections.\n- Simplified language and formatting in the documentation for improved clarity.\n- Removed some redundant instructions about project structure and runtime checks.\n- No changes to core logic or intended use; documentation and privacy clarifications only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6505bc55536df46f2c0dd2dbc30131067c21da554dee5596cc2c4fd42d84988b"
+}

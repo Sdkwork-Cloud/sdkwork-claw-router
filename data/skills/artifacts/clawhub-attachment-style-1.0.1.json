@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attachment-style@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attachment_style",
+  "skill": {
+    "id": 32223,
+    "skillKey": "clawhub-attachment-style",
+    "name": "Attachment Style Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attachment-style",
+    "url": "https://clawhub.ai/skills/attachment-style",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attachment-style-f711b2fead715376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Attachment Style is an AI attachment theory coach for people stuck in anxious, avoidant, or push-pull relationship patterns. It helps identify your attachmen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774896584247,
+      "changelog": "- Updated skill description to emphasize analysis of triggers, safer communication, and boundaries.\n- Added a README.md file.\n- No functional or structural changes to the main skill logic or user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:503285d3ef2943f9f596f448f00d8b8bea93125ee84a4255858dc1009ce8cf58"
+}

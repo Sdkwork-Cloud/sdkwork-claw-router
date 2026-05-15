@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-pilot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_pilot",
+  "skill": {
+    "id": 47220,
+    "skillKey": "clawhub-n8n-pilot",
+    "name": "n8n Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-pilot",
+    "url": "https://clawhub.ai/skills/n8n-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-pilot-3dce4fc65ab3f29d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design, build, deploy, test, and secure advanced n8n workflows. Architecture patterns, flow logic, dangerous pattern detection, self-hosting, credential mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wahajahmed010",
+      "userId": "s173f134cjwrtga3tp1pwvjf8d851jc2",
+      "displayName": "Wahaj Ahmed",
+      "image": "https://avatars.githubusercontent.com/u/57330918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777679035098,
+      "changelog": "v0.1.0 MVP: workflow design patterns, flow logic (branching/merging/looping/sub-workflows), self-hosting guide (dev + production), credential management, dangerous pattern detection, webhook security, testing strategy, 3 core recipes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdd5a7098c2ce94690593b7c6ce9767d0bf4460eb91f98d82a76eda4eb0c1dd5"
+}

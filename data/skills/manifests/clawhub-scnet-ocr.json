@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69197,
+  "uuid": "skill-clawhub-scnet-ocr",
+  "skillKey": "clawhub-scnet-ocr",
+  "name": "Scnet Ocr",
+  "summary": "将图片中的文字、通用文字识别, 居民身份证, 银行卡, 社保卡, 户口本, 出生医学证明, 往来港澳通行证, 往来台湾通行证, 台湾居民来往大陆通行证, 港澳居民来往内地通行证, 营业执照, 社会团体法人登记证书, 工会法人资格证书, 宗教活动场所登记证, 民办非企业单位登记证书, 事业单位法人证书, 统一社会信...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scnet_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SCNet-sugon",
+      "features": [
+        "将图片中的文字、通用文字识别, 居民身份证, 银行卡, 社保卡, 户口本, 出生医学证明, 往来港澳通行证, 往来台湾通行证, 台湾居民来往大陆通行证, 港澳居民来往内地通行证, 营业执照,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scnet-ocr@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267813088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scnet-ocr",
+      "url": "https://clawhub.ai/skills/scnet-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scnet-ocr",
+    "url": "https://clawhub.ai/skills/scnet-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scnet-ocr-b40703334e061f14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scnet-ocr@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-scnet-ocr-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9775bd010198a2e94b7683fb2b41b9b0e30bea75c60c907c12acf67d89a59cc",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:44:05.310Z"
+}

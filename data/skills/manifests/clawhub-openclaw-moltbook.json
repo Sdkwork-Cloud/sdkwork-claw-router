@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41624,
+  "uuid": "skill-clawhub-openclaw-moltbook",
+  "skillKey": "clawhub-openclaw-moltbook",
+  "name": "Openclaw Moltbook",
+  "summary": "Integrates OpenClaw with Moltbook for posting, browsing, notifications, and managing submolt communities with rate limit and error handling.",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_moltbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eamondowling",
+      "features": [
+        "Integrates OpenClaw with Moltbook for posting, browsing, notifications, and managing submolt co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-moltbook@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/793659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-moltbook",
+      "url": "https://clawhub.ai/skills/openclaw-moltbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-moltbook",
+    "url": "https://clawhub.ai/skills/openclaw-moltbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-moltbook-060f1c27625837ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-moltbook@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-moltbook-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b255b37ef4e2157d2a2e5d3521cc84ad14b02d70fdb0d5ce094b757d7b55e9aa",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:58:18.407Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48534,
+  "uuid": "skill-clawhub-skylv-repo-cleaner",
+  "skillKey": "clawhub-skylv-repo-cleaner",
+  "name": "Skylv Repo Cleaner",
+  "summary": "Safely removes merged and stale Git branches. Identifies branches already on main/master. Triggers: clean branches, remove old branches, delete merged branch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_repo_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Safely removes merged and stale Git branches",
+        "Identifies branches already on main/master",
+        "Triggers: clean branches, remove old branches, delete merged branch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-repo-cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-repo-cleaner",
+      "url": "https://clawhub.ai/skills/skylv-repo-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-repo-cleaner",
+    "url": "https://clawhub.ai/skills/skylv-repo-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-repo-cleaner-220b8a178b7e6489.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-repo-cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-repo-cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db4347de99e92dc0bd3adb4bcd85d4e1f3281d10c67c1990a51dd5f60c61cd0",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T04:49:21.806Z"
+}

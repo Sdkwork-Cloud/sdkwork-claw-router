@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29523,
+  "uuid": "skill-clawhub-go-vuln-auth-bypass",
+  "skillKey": "clawhub-go-vuln-auth-bypass",
+  "name": "Go Vuln Auth Bypass",
+  "summary": "Use when auditing Go code involving authentication flows, RBAC policies, Kubernetes admission webhooks, JWT/OAuth token validation, or privilege escalation i...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_vuln_auth_bypass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yhy",
+      "features": [
+        "Use when auditing Go code involving authentication flows, RBAC policies, Kubernetes admission w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-vuln-auth-bypass@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31311038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-vuln-auth-bypass",
+      "url": "https://clawhub.ai/skills/go-vuln-auth-bypass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-vuln-auth-bypass",
+    "url": "https://clawhub.ai/skills/go-vuln-auth-bypass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-vuln-auth-bypass-9c45bdb174f09c83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-vuln-auth-bypass@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-vuln-auth-bypass-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee025a7f74c2edd276456d0f442b4427c21650ab6905ca90686a4f680d964138",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:15:59.707Z"
+}

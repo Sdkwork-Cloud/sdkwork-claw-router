@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69139,
+  "uuid": "skill-clawhub-m1-finance",
+  "skillKey": "clawhub-m1-finance",
+  "name": "M1 Finance",
+  "summary": "美国自动化投资平台，支持零佣金交易、自定义投资组合Pie理念及银行功能一站式服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m1_finance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "美国自动化投资平台，支持零佣金交易、自定义投资组合Pie理念及银行功能一站式服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/m1-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "m1-finance",
+      "url": "https://clawhub.ai/skills/m1-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m1-finance",
+    "url": "https://clawhub.ai/skills/m1-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m1-finance-ce3e0cf4b1f0b955.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/m1-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-m1-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5ef0ebcce5edf457e7989cbc83698173b0af17e6cce322df178de5d3f823c7c",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T11:01:52.745Z"
+}

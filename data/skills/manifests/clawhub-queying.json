@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64090,
+  "uuid": "skill-clawhub-queying",
+  "skillKey": "clawhub-queying",
+  "name": "雀影",
+  "summary": "AI 视频创意伙伴，生成分镜脚本和 Seedance 提示词",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.queying",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "AI 视频创意伙伴，生成分镜脚本和 Seedance 提示词"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/queying@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "queying",
+      "url": "https://clawhub.ai/skills/queying"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "queying",
+    "url": "https://clawhub.ai/skills/queying",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/queying-d4293dd0351834e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/queying@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-queying-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51486a60924e8487964f947b9771ed80244751fde92e5122ef0a2845b302bc59",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:26:21.354Z"
+}

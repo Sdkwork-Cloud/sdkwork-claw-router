@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wip-grok@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_grok",
+  "skill": {
+    "id": 18115,
+    "skillKey": "clawhub-wip-grok",
+    "name": "Wip Grok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-grok",
+    "url": "https://clawhub.ai/skills/wip-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-grok-bb62bd061a8877e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "xAI Grok API. Search the web, search X, generate images, generate video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkertoddbrooks",
+      "userId": "s17620xzyc7kfan8m36at57m6n83h8he",
+      "displayName": "Parker Todd Brooks",
+      "image": "https://avatars.githubusercontent.com/u/585456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771700110011,
+      "changelog": "Release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d3fa14e5c4b0c144ed57778381ac86d3eb4a5387949a019167e281d944224d85"
+}

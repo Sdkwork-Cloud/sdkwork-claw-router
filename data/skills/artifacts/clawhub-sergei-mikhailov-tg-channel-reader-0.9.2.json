@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sergei-mikhailov-tg-channel-reader@0.9.2",
+  "version": "0.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sergei_mikhailov_tg_channel_reader",
+  "skill": {
+    "id": 14594,
+    "skillKey": "clawhub-sergei-mikhailov-tg-channel-reader",
+    "name": "Telegram Channel Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sergei-mikhailov-tg-channel-reader",
+    "url": "https://clawhub.ai/skills/sergei-mikhailov-tg-channel-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sergei-mikhailov-tg-channel-reader-ac94661cbc26fbb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read posts and comments from Telegram channels via MTProto (Pyrogram or Telethon). Fetch recent messages and discussion replies from public or private channe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bzsega",
+      "userId": "publishers:bzsega",
+      "displayName": "Sergey Mikhaylov",
+      "image": "https://avatars.githubusercontent.com/u/825538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1060,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 30
+    },
+    "latestVersion": {
+      "version": "0.9.2",
+      "createdAt": 1772739219252,
+      "changelog": "sergei-mikhailov-tg-channel-reader 0.9.2\n\n- Added support for enabling read_unread mode via the TG_READ_UNREAD environment variable.\n- Documented environment variable overrides for read_unread and state file location (TG_STATE_FILE).\n- Minor documentation improvements to clarify setup and configuration options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1186c0cfb94672e7c37cda015aada983fcbec789d23065ea75abf4e70df450d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56297,
+  "uuid": "skill-clawhub-cuba",
+  "skillKey": "clawhub-cuba",
+  "name": "cuba",
+  "summary": "Country information assistant for Cuba 古巴. Get travel info, economy data, culture, visa policies, and news.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cuba",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Country information assistant for Cuba 古巴",
+        "Get travel info, economy data, culture, visa policies, and news."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cuba@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cuba",
+      "url": "https://clawhub.ai/skills/cuba"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cuba",
+    "url": "https://clawhub.ai/skills/cuba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cuba-950662956e7592a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cuba@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cuba-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38a9b8d8db560719d3d4c9cd160ae0d5bc5fd53ad373b40b6078f2a7baf0b3d8",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:41:58.022Z"
+}

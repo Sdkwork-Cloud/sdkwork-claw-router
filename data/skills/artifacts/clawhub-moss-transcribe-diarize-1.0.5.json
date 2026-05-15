@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moss-transcribe-diarize@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_transcribe_diarize",
+  "skill": {
+    "id": 60967,
+    "skillKey": "clawhub-moss-transcribe-diarize",
+    "name": "moss-transcribe-diarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-transcribe-diarize",
+    "url": "https://clawhub.ai/skills/moss-transcribe-diarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-transcribe-diarize-1f1a29bacca18260.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MOSS 多说话人转写技能。支持 URL / 本地文件 / Base64 音频输入，输出带时间戳与 speaker 的结构化转写结果（JSON、逐段文本、按说话人汇总）。用于会议纪要、访谈录音、多人对话整理。需要 API 凭证（环境变量：MOSS_API_KEY，兼容 MOSI_TTS_API_KEY / MOS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloeveryworlds",
+      "userId": "publishers:helloeveryworlds",
+      "displayName": "helloeveryworlds",
+      "image": "https://avatars.githubusercontent.com/u/58319337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773717854773,
+      "changelog": "Add user-selectable segment output formats (json/compact/text) with speaker fields; fix segment parsing for asr_transcription_result.segments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f29113c2cae87c2ad4897a8fbd996026efb7484f397a37a3f805ff1fabac6ee"
+}

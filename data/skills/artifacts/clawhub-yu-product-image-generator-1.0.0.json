@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yu-product-image-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yu_product_image_generator",
+  "skill": {
+    "id": 60409,
+    "skillKey": "clawhub-yu-product-image-generator",
+    "name": "Yu Product Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yu-product-image-generator",
+    "url": "https://clawhub.ai/skills/yu-product-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yu-product-image-generator-7dab710790e34ab7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 商品图生成器 - 多方案选择、12 种语言、分镜规划与批量生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidunderwood7970",
+      "userId": "s17ebtjn444pny4scrdhxrshzx84qb2y",
+      "displayName": "davidunderwood7970",
+      "image": "https://avatars.githubusercontent.com/u/266227975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776003587493,
+      "changelog": "- Added support for 3 distinct design styles for product images.\n- Introduced 12-language support, including an option for no text.\n- Implemented storyboard planning and editing before image generation.\n- Enabled bulk generation and download of product images.\n- Improved interactive workflow for easy user guidance and customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55683504c3a7295a544e69b31435ce8b7eb8acd2810bae1197510516639a295a"
+}

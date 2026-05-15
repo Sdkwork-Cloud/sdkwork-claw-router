@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60524,
+  "uuid": "skill-clawhub-sjht-doubao-image-gen",
+  "skillKey": "clawhub-sjht-doubao-image-gen",
+  "name": "sjht doubao text to image",
+  "summary": "使用豆包 Seedream 模型文生图，支持并发批量生成，输出图库预览页",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjht_doubao_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aowind",
+      "features": [
+        "使用豆包 Seedream 模型文生图，支持并发批量生成，输出图库预览页"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sjht-doubao-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26450413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sjht-doubao-image-gen",
+      "url": "https://clawhub.ai/skills/sjht-doubao-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjht-doubao-image-gen",
+    "url": "https://clawhub.ai/skills/sjht-doubao-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjht-doubao-image-gen-7db518acb712d643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sjht-doubao-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sjht-doubao-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd7ba22b1e002ebb6ac0c66123a3218be62159473fb739f0473526c4b9208875",
+      "artifactSizeBytes": 3082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:51:17.892Z"
+}

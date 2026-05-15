@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npkill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npkill",
+  "skill": {
+    "id": 11128,
+    "skillKey": "clawhub-npkill",
+    "name": "NPkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npkill",
+    "url": "https://clawhub.ai/skills/npkill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npkill-77fad10e16223cf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clean up node_modules and .next folders to free up disk space using npkill. Specifically designed to help JavaScript and Next.js developers remove accumulated build artifacts that consume significant storage. Provides both interactive and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashirbadgudu",
+      "userId": "publishers:ashirbadgudu",
+      "displayName": "AshirbadGudu",
+      "image": "https://avatars.githubusercontent.com/u/49669234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769527760067,
+      "changelog": "Initial release: JavaScript/Next.js build artifact cleanup tool. Safely removes node_modules and .next folders using npkill with interactive selection, safety warnings, and dry-run functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd7fae73bc56817292616dee972be76e9fe4258e407deb7153a1da503e7b26dd"
+}

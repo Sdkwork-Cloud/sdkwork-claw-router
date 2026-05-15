@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-create@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_create",
+  "skill": {
+    "id": 66259,
+    "skillKey": "clawhub-feishu-doc-create",
+    "name": "飞书创建云文档"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-create",
+    "url": "https://clawhub.ai/skills/feishu-doc-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-create-161f9d5d6345648b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建飞书云文档。从 Lark-flavored Markdown 内容创建新的飞书云文档，支持指定创建位置（文件夹/知识库/知识空间）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3152557994-ship-it",
+      "userId": "s173ar224xha1b0e8jxxvg0r2985aes9",
+      "displayName": "a3152557994-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248589521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012536251,
+      "changelog": "Initial release of feishu-create-doc:  \n- Create Feishu cloud documents from Lark-flavored Markdown with support for rich structure and styling.\n- Specify document location: personal folder, knowledge base node, or knowledge space.\n- Detailed formatting capabilities: callouts, grids, tables, images, files, and embedded diagrams (Mermaid/PlantUML).\n- Examples and best practices for writing well-structured, visually engaging content.\n- Returns doc ID, URL, and operation result in a structured JSON response.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af313cf7a9ce20a77eab29a833665f9e6c78dd13a3d409c3fed061d1ccb32263"
+}

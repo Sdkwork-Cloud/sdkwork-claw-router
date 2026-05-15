@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edison-autopilot-post-x@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edison_autopilot_post_x",
+  "skill": {
+    "id": 23092,
+    "skillKey": "clawhub-edison-autopilot-post-x",
+    "name": "Edison Autopilot Post X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edison-autopilot-post-x",
+    "url": "https://clawhub.ai/skills/edison-autopilot-post-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edison-autopilot-post-x-644e8684621e6409.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generates and posts 5 persona-matched tweets daily to X using GPT-5.1, with repetition checks, content filters, and Telegram alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edisonchenai",
+      "userId": "publishers:edisonchenai",
+      "displayName": "EdisonChenAI",
+      "image": "https://avatars.githubusercontent.com/u/27086130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772955515279,
+      "changelog": "Initial release: AI auto-tweeting system for X with GPT-5.1, Telegram notifications, banned phrases, and character limit protection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f437da908fd30927906fd64cc7b3bc0124fd5b96124af874f08a760b57e63f2"
+}

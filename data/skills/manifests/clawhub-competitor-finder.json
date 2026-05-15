@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27532,
+  "uuid": "skill-clawhub-competitor-finder",
+  "skillKey": "clawhub-competitor-finder",
+  "name": "Competitor Finder",
+  "summary": "Identifies 3-5 competitors for a given brand using SerpAPI, DataForSEO, or OpenAI fallback, returning names, websites, and optional reasons for competition.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adarsh More",
+      "features": [
+        "Identifies 3-5 competitors for a given brand using SerpAPI, DataForSEO, or OpenAI fallback, ret."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103880462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-finder",
+      "url": "https://clawhub.ai/skills/competitor-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-finder",
+    "url": "https://clawhub.ai/skills/competitor-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-finder-010c03c2f74d0d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e0bd7af5685d14ea25dc89288cd96f6dbe3b5d6fee237c518dfe2d980b88311",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:39:57.651Z"
+}

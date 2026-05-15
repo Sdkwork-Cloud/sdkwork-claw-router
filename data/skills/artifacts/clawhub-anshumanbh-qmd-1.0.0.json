@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anshumanbh-qmd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anshumanbh_qmd",
+  "skill": {
+    "id": 10867,
+    "skillKey": "clawhub-anshumanbh-qmd",
+    "name": "QMD Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anshumanbh-qmd",
+    "url": "https://clawhub.ai/skills/anshumanbh-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anshumanbh-qmd-c9281d9920fae194.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search markdown knowledge bases efficiently using qmd. Use this when searching Obsidian vaults or markdown collections to find relevant content with minimal token usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anshumanbh",
+      "userId": "publishers:anshumanbh",
+      "displayName": "Anshuman Bhartiya",
+      "image": "https://avatars.githubusercontent.com/u/9063340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2387,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769500172640,
+      "changelog": "Initial release - efficient markdown knowledge base search using qmd",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:651cdb478c503a580ab41dea9aaafe261b2a2062dada2857b5bbb7b696eeabd5"
+}

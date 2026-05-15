@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63518,
+  "uuid": "skill-clawhub-baidu-search-node",
+  "skillKey": "clawhub-baidu-search-node",
+  "name": "Baidu Search Node",
+  "summary": "通过 Node.js 脚本调用百度搜索 API，可按关键字和数量参数获取排序、标题、摘要和链接的搜索结果。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_node",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangsihong",
+      "features": [
+        "通过 Node.js 脚本调用百度搜索 API，可按关键字和数量参数获取排序、标题、摘要和链接的搜索结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-search-node@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30776503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-search-node",
+      "url": "https://clawhub.ai/skills/baidu-search-node"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-node",
+    "url": "https://clawhub.ai/skills/baidu-search-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-node-337067ea50e6adcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-search-node@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-node-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4006e003f4f783a10e06f4edb9af66ece79d796e0eb6e191613c2b532eb9d11",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T00:52:56.095Z"
+}

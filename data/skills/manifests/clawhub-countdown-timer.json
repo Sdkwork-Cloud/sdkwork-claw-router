@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66954,
+  "uuid": "skill-clawhub-countdown-timer",
+  "skillKey": "clawhub-countdown-timer",
+  "name": "Countdown Timer - 倒计时助手",
+  "summary": "提供倒计时管理、重要日子提醒、番茄钟工作休息定时及自定义提醒功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.countdown_timer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "提供倒计时管理、重要日子提醒、番茄钟工作休息定时及自定义提醒功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/countdown-timer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "countdown-timer",
+      "url": "https://clawhub.ai/skills/countdown-timer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "countdown-timer",
+    "url": "https://clawhub.ai/skills/countdown-timer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/countdown-timer-1ca192afc61fcb1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/countdown-timer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-countdown-timer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:592f5efede49042397946ddd23eda53b846bb4cd89fc9a5f2df43c640b2b30cd",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:32:02.241Z"
+}

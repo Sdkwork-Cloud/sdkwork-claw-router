@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11871,
+  "uuid": "skill-clawhub-vhs-recorder",
+  "skillKey": "clawhub-vhs-recorder",
+  "name": "vhs-recorder",
+  "summary": "Create professional terminal recordings with VHS tape files - guides through syntax, timing, settings, and best practices",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vhs_recorder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vaskin Kissoyan",
+      "features": [
+        "Create professional terminal recordings with VHS tape files",
+        "guides through syntax, timing, settings, and best practices"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vhs-recorder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vhs-recorder",
+      "url": "https://clawhub.ai/skills/vhs-recorder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vhs-recorder",
+    "url": "https://clawhub.ai/skills/vhs-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vhs-recorder-0a9b60babd0cda36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vhs-recorder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vhs-recorder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05e110c2dd8ef9f04de5ecd843dbaa6e29ed9b0942090fc39f36e98af41af54f",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:46:52.505Z"
+}

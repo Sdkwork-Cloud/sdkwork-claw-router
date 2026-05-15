@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56563,
+  "uuid": "skill-clawhub-algernon-texto",
+  "skillKey": "clawhub-algernon-texto",
+  "name": "Algernon Texto",
+  "summary": "Block-by-block reading mode for OpenAlgernon materials. Use when the user runs `/algernon texto SLUG`, `/algernon paper SLUG`, says \"quero ler [material]\", \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algernon_texto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Antonio V. Franco",
+      "features": [
+        "Block-by-block reading mode for OpenAlgernon materials",
+        "Use when the user runs `/algernon texto SLUG`, `/algernon paper SLUG`, says \"quero ler [materia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/algernon-texto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174359210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "algernon-texto",
+      "url": "https://clawhub.ai/skills/algernon-texto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algernon-texto",
+    "url": "https://clawhub.ai/skills/algernon-texto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algernon-texto-449e608cfde086f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/algernon-texto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-algernon-texto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b08f22cf9e69cb868cd2dff284cbaa83de166fe41f5df9a836033ca6d94e52fa",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T19:10:42.311Z"
+}

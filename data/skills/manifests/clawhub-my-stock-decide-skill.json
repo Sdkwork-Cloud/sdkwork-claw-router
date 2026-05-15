@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69442,
+  "uuid": "skill-clawhub-my-stock-decide-skill",
+  "skillKey": "clawhub-my-stock-decide-skill",
+  "name": "my_stock_decide_skill",
+  "summary": "当且仅当用户提供持仓列表（图片或文字），并明确要求“交易决策”时触发。根据宏观形势分数动态调控T1/T2/T3的仓位比例（总上限90%），为当前持仓及观察仓标的输出明确操作方向、情绪、价格和详尽操作原因。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_decide_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "当且仅当用户提供持仓列表（图片或文字），并明确要求“交易决策”时触发。根据宏观形势分数动态调控T1/T2/T3的仓位比例（总上限90%），为当前持仓及观察仓标的输出明确操作方向、情绪、价格和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-stock-decide-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-stock-decide-skill",
+      "url": "https://clawhub.ai/skills/my-stock-decide-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-decide-skill",
+    "url": "https://clawhub.ai/skills/my-stock-decide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-decide-skill-07e50d830babd0f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-stock-decide-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-decide-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a34389dae85c4a5f6917da6f9325b85bfa57c08ad10a1ee655c95a2e0d7db084",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:55.424Z"
+}

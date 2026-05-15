@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a4-to-a3-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a4_to_a3_pdf",
+  "skill": {
+    "id": 65306,
+    "skillKey": "clawhub-a4-to-a3-pdf",
+    "name": "A4 To A3 Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a4-to-a3-pdf",
+    "url": "https://clawhub.ai/skills/a4-to-a3-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a4-to-a3-pdf-21f79376b0caff95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文件夹中的图片按顺序两两合并为A3横向PDF（两张A4左右并排）。触发词：合并PDF、合成A3、两张A4合成一页、图片转PDF。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangchuang9523-gif",
+      "userId": "s17bkkjmrg71mv8f7a1mzcq7h584c7eh",
+      "displayName": "wangchuang9523-gif",
+      "image": "https://avatars.githubusercontent.com/u/274148623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776840367747,
+      "changelog": "a4-to-a3-pdf 1.0.0 – Initial Release\n\n- Merge multiple images from a folder into a horizontal A3 PDF, placing two A4-sized images side by side per page.\n- Supports processing via command-line script, allowing specification of input folder, output PDF path, and optional DPI.\n- Maintains digital order for PDF page arrangement.\n- Output PDF uses A3 landscape size (420mm × 297mm) with no margins by default.\n- Requires Python 3.x and Pillow library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1c723530e4b099f6c3bb48f1218d6871d7167c7afc775593a39d386089bc7da"
+}

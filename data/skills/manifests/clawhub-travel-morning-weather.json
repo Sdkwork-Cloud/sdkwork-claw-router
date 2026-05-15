@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48816,
+  "uuid": "skill-clawhub-travel-morning-weather",
+  "skillKey": "clawhub-travel-morning-weather",
+  "name": "Travel Morning Weather",
+  "summary": "Adjust morning weather briefing location based on travel plans captured from conversation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_morning_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neo Shi",
+      "features": [
+        "Adjust morning weather briefing location based on travel plans captured from conversation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-morning-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34770064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-morning-weather",
+      "url": "https://clawhub.ai/skills/travel-morning-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-morning-weather",
+    "url": "https://clawhub.ai/skills/travel-morning-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-morning-weather-e56cab5e248a62ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-morning-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-morning-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:935b397e4c697c2a1bbb3d7b309d903832e6a4798a048274d3f9ee0ac7ed536e",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T05:40:32.882Z"
+}

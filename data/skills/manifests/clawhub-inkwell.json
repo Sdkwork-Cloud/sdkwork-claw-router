@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44133,
+  "uuid": "skill-clawhub-inkwell",
+  "skillKey": "clawhub-inkwell",
+  "name": "Inkwell",
+  "summary": "Bootstrap a complete 3-layer memory system for any OpenClaw agent. PARA knowledge structure, QMD search integration, daily consolidation cron, transcript ver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkwell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DavidKim01",
+      "features": [
+        "Bootstrap a complete 3-layer memory system for any OpenClaw agent",
+        "PARA knowledge structure, QMD search integration, daily consolidation cron, transcript ver..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inkwell@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31714605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inkwell",
+      "url": "https://clawhub.ai/skills/inkwell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkwell",
+    "url": "https://clawhub.ai/skills/inkwell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkwell-5819f51d8686086c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inkwell@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inkwell-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fe82da3b77dafd5a79204fae8b97fd65d3fbcb18f8fc0ff64c87f9def160b0d",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T20:22:15.173Z"
+}

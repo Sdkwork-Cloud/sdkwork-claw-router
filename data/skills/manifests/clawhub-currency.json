@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26883,
+  "uuid": "skill-clawhub-currency",
+  "skillKey": "clawhub-currency",
+  "name": "Currency",
+  "summary": "Your personal Currency assistant. Track, analyze, and manage all your travel planning needs from the command line.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.currency",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Your personal Currency assistant",
+        "Track, analyze, and manage all your travel planning needs from the command line."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/currency@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "currency",
+      "url": "https://clawhub.ai/skills/currency"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "currency",
+    "url": "https://clawhub.ai/skills/currency",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/currency-466e5b9cd57fa444.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/currency@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-currency-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa43f2e966136f122b87e091f2c659cd424d4b4cabf8c93d4511e9ad6e3acb3a",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:43:49.223Z"
+}

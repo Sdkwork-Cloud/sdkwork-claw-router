@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68783,
+  "uuid": "skill-clawhub-deep-reader",
+  "skillKey": "clawhub-deep-reader",
+  "name": "Deep Reader",
+  "summary": "深度阅读一本书籍或网页文章并提供系统性内容解读。当用户想要深入分析一本书、了解书籍核心观点与论证逻辑，或提供网页 URL 要求分析文章内容时触发。支持 EPUB、PDF、TXT 等电子书格式，以及网页 URL 内容提取。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ltryee",
+      "features": [
+        "深度阅读一本书籍或网页文章并提供系统性内容解读。当用户想要深入分析一本书、了解书籍核心观点与论证逻辑，或提供网页 URL 要求分析文章内容时触发。支持 EPUB、PDF、TXT 等电子书格式."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/854047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-reader",
+      "url": "https://clawhub.ai/skills/deep-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-reader",
+    "url": "https://clawhub.ai/skills/deep-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-reader-15810ffe1989ab08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09de37ce501bb5e58f30dd560aeb654d8cc256c791a3845b3b9cfc5bf5a16373",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T01:36:44.176Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27884,
+  "uuid": "skill-clawhub-my-ssm-business-lookup",
+  "skillKey": "clawhub-my-ssm-business-lookup",
+  "name": "Malaysian Business Lookup (SSM)",
+  "summary": "Look up Malaysian company registration data from SSM. Returns directors, status, filings, business type.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_ssm_business_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wms2537",
+      "features": [
+        "Look up Malaysian company registration data from SSM",
+        "Returns directors, status, filings, business type."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-ssm-business-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51080539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-ssm-business-lookup",
+      "url": "https://clawhub.ai/skills/my-ssm-business-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-ssm-business-lookup",
+    "url": "https://clawhub.ai/skills/my-ssm-business-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-ssm-business-lookup-8c955c5539509f64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-ssm-business-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-ssm-business-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f6134f597986419ffbb9a71f839aeb681330f114888dd32cf274ec3e76f7830",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:50:10.606Z"
+}

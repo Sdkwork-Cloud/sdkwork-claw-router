@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarmrecall-skills@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmrecall_skills",
+  "skill": {
+    "id": 35414,
+    "skillKey": "clawhub-swarmrecall-skills",
+    "name": "SwarmRecall Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmrecall-skills",
+    "url": "https://clawhub.ai/skills/swarmrecall-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmrecall-skills-5d2ed13c4662de06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill registry for tracking agent capabilities and getting contextual suggestions via the SwarmRecall API. Register, list, and query installed skills with se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waydelyle",
+      "userId": "s172jgfp1hrj42g10wkscjf0t583ttz6",
+      "displayName": "Wayde",
+      "image": "https://avatars.githubusercontent.com/u/16001190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775309747498,
+      "changelog": "Fix production API base URL to swarmrecall-api.onrender.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4a1fe48fc614fc41f2be90d19f1df82c67356e916a841c71c6c8439c0d8c0a1"
+}

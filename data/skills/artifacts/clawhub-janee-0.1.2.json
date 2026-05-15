@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/janee@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.janee",
+  "skill": {
+    "id": 10225,
+    "skillKey": "clawhub-janee",
+    "name": "Janee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "janee",
+    "url": "https://clawhub.ai/skills/janee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/janee-ab25a15b5576184b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secrets management for AI agents. Never expose your API keys again."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsdouglas",
+      "userId": "publishers:rsdouglas",
+      "displayName": "rsdouglas",
+      "image": "https://avatars.githubusercontent.com/u/241231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2766,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770121520801,
+      "changelog": "Improved SKILL.md with architecture diagram and examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38e3bf7774966c39b9ec519e2d89f31fcd93ddd59b29c2f3feb8236b25d2c8df"
+}

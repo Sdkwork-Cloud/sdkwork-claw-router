@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11735,
+  "uuid": "skill-clawhub-skill-mixer",
+  "skillKey": "clawhub-skill-mixer",
+  "name": "Skill Mixer",
+  "summary": "Processes and auto-categorizes 150 skills into 12 composite master skills with ClawHub integration and multiple deployment options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_mixer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grxkun",
+      "features": [
+        "Processes and auto-categorizes 150 skills into 12 composite master skills with ClawHub integrat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-mixer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101440677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-mixer",
+      "url": "https://clawhub.ai/skills/skill-mixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-mixer",
+    "url": "https://clawhub.ai/skills/skill-mixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-mixer-8e2c5a5bc803d0be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-mixer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-mixer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:554e6afc2ba523c2705572de9aa35bceb057eac497bd632f6137ef0bbf2e8386",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T14:43:19.928Z"
+}

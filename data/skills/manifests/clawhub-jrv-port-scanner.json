@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25545,
+  "uuid": "skill-clawhub-jrv-port-scanner",
+  "skillKey": "clawhub-jrv-port-scanner",
+  "name": "Port Scanner",
+  "summary": "Fast TCP port scanner for network reconnaissance and security auditing. Scan hosts for open ports, detect common services, and identify potential attack surf...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_port_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Fast TCP port scanner for network reconnaissance and security auditing",
+        "Scan hosts for open ports, detect common services, and identify potential attack surf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jrv-port-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jrv-port-scanner",
+      "url": "https://clawhub.ai/skills/jrv-port-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-port-scanner",
+    "url": "https://clawhub.ai/skills/jrv-port-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-port-scanner-55cbc98c565d1561.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jrv-port-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jrv-port-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e28c300e88c8583a5dcec0a42bf59daba359db08e990daf79bf02a446104f1d5",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:06:27.062Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14547,
+  "uuid": "skill-clawhub-browser-secure",
+  "skillKey": "clawhub-browser-secure",
+  "name": "Browser Secure",
+  "summary": "Secure browser automation with Chrome profile support, vault integration, approval gates, and comprehensive audit logging. Use for authenticated sites, sensi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_secure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "riverho",
+      "features": [
+        "Secure browser automation with Chrome profile support, vault integration, approval gates, and c.",
+        "Use for authenticated sites, sensi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-secure@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1990962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-secure",
+      "url": "https://clawhub.ai/skills/browser-secure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-secure",
+    "url": "https://clawhub.ai/skills/browser-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-secure-a18a438332c95984.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-secure@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-secure-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e182cbbce6cd50d8b87b3500d29f22ce1e747792e1cfbcdf4bae8fe740e11c08",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:19:16.324Z"
+}

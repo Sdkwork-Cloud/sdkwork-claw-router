@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22243,
+  "uuid": "skill-clawhub-opencode-acp-control-v2",
+  "skillKey": "clawhub-opencode-acp-control-v2",
+  "name": "OpenCode ACP Control v2",
+  "summary": "Control OpenCode directly via the Agent Client Protocol (ACP). Start sessions, send prompts, resume conversations, and manage OpenCode updates. Includes auto...",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_acp_control_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bastian Berrios Alarcon",
+      "features": [
+        "Control OpenCode directly via the Agent Client Protocol (ACP)",
+        "Start sessions, send prompts, resume conversations, and manage OpenCode updates",
+        "Includes auto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode-acp-control-v2@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253074697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode-acp-control-v2",
+      "url": "https://clawhub.ai/skills/opencode-acp-control-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-acp-control-v2",
+    "url": "https://clawhub.ai/skills/opencode-acp-control-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-acp-control-v2-d4af6bf42c361c94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode-acp-control-v2@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-acp-control-v2-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:329293159fb2bfe3712544628ed15f507412195ceb8146b026f148c32fa35408",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:25:45.355Z"
+}

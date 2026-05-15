@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tk-youtube-script-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tk_youtube_script_gen",
+  "skill": {
+    "id": 52779,
+    "skillKey": "clawhub-tk-youtube-script-gen",
+    "name": "YouTube Script Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tk-youtube-script-gen",
+    "url": "https://clawhub.ai/skills/tk-youtube-script-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tk-youtube-script-gen-6fb1265bc34bfa56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete YouTube video scripts — hooks, intros, body, CTAs, descriptions, tags, and thumbnail text. Supports educational, review, story, and listicl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tktk-ai",
+      "userId": "s17dae0n2wkh65b6p2v4zvkbt184ey9h",
+      "displayName": "tktk-ai",
+      "image": "https://avatars.githubusercontent.com/u/59158345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775667979361,
+      "changelog": "Initial release — video scripts with hooks, retention loops, SEO descriptions, tags, thumbnail copy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e841450512050a72caeae5394241c4b3bd144027fc15cd47c77ab4ee46a49125"
+}

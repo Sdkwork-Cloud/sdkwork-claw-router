@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61345,
+  "uuid": "skill-clawhub-forgetting-curve",
+  "skillKey": "clawhub-forgetting-curve",
+  "name": "Forgetting Curve",
+  "summary": "独立的 Ebbinghaus 遗忘曲线模块，提供记忆衰减计算和间隔重复调度",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forgetting_curve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whoisme007",
+      "features": [
+        "独立的 Ebbinghaus 遗忘曲线模块，提供记忆衰减计算和间隔重复调度"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forgetting-curve@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6497382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forgetting-curve",
+      "url": "https://clawhub.ai/skills/forgetting-curve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forgetting-curve",
+    "url": "https://clawhub.ai/skills/forgetting-curve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forgetting-curve-cd7ca1f7b1530713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forgetting-curve@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-forgetting-curve-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b21888e7f15c3995bdf50906c4eb796bd98da3fe8cdbbaf03d8739f2e1b9235",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:31:37.282Z"
+}

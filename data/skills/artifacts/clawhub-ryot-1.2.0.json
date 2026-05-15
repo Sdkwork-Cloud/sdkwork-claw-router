@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ryot@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ryot",
+  "skill": {
+    "id": 19302,
+    "skillKey": "clawhub-ryot",
+    "name": "Ryot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ryot",
+    "url": "https://clawhub.ai/skills/ryot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ryot-5d44b7d88f0a5c34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Ryot media tracker with progress tracking, reviews, collections, analytics, calendar, and automated daily/weekly reports. Track TV shows, movies, bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "f-liva",
+      "userId": "s172qzhaaqgbcj367wdz5xwjjx84m22g",
+      "displayName": "Federico Liva",
+      "image": "https://avatars.githubusercontent.com/u/346224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771876805048,
+      "changelog": "Added bulk episode marking script for marking multiple episodes at once",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:431dd8d0cf1bd46b5e0612cfa6b36fed3377693aa829f40069df16ef562c1806"
+}

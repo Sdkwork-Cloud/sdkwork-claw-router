@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24086,
+  "uuid": "skill-clawhub-lt",
+  "skillKey": "clawhub-lt",
+  "name": "lt",
+  "summary": "Agents can sign plugins, rotate credentials without losing identity, and publicly attest to behavior.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ltte",
+      "features": [
+        "Agents can sign plugins, rotate credentials without losing identity, and publicly attest to beh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28721466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lt",
+      "url": "https://clawhub.ai/skills/lt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lt",
+    "url": "https://clawhub.ai/skills/lt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lt-67d4143062b55c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b8b3ca69f242f61226b95ec8fa66ca177e38edceac4faaea487ea73b622f4f",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:00:21.847Z"
+}

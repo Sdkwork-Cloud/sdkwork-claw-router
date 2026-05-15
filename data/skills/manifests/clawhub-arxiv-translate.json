@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13595,
+  "uuid": "skill-clawhub-arxiv-translate",
+  "skillKey": "clawhub-arxiv-translate",
+  "name": "Arxiv Translate",
+  "summary": "Provides a direct link to download Chinese translations of arXiv papers using the paper's arXiv ID or URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_translate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sky Yan",
+      "features": [
+        "Provides a direct link to download Chinese translations of arXiv papers using the paper's arXiv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-translate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/945860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-translate",
+      "url": "https://clawhub.ai/skills/arxiv-translate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-translate",
+    "url": "https://clawhub.ai/skills/arxiv-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-translate-85594e25fc32b0db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-translate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-translate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370c229722dba1d6aa06c1e91994e2bcd1c7bdc4f69f819df392ae5404712169",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:00:41.076Z"
+}

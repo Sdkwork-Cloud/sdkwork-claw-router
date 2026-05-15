@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62862,
+  "uuid": "skill-clawhub-openclaw-three-manuals-generator",
+  "skillKey": "clawhub-openclaw-three-manuals-generator",
+  "name": "OpenClaw 三本说明书生成器",
+  "summary": "通过对话引导帮助用户确定AI搭档需求，生成个性化的SOUL.md、USER.md和AGENTS.md三本说明书。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_three_manuals_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack-Long-2022",
+      "features": [
+        "通过对话引导帮助用户确定AI搭档需求，生成个性化的SOUL.md、USER.md和AGENTS.md三本说明书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-three-manuals-generator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128901973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-three-manuals-generator",
+      "url": "https://clawhub.ai/skills/openclaw-three-manuals-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-three-manuals-generator",
+    "url": "https://clawhub.ai/skills/openclaw-three-manuals-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-three-manuals-generator-c3d4d780099af2b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-three-manuals-generator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-three-manuals-generator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5985cb9a0fbdcf769b981cd4d451747bcb69907a22bc6ddf5be2e6071a6148c0",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T04:14:19.383Z"
+}

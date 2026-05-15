@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16081,
+  "uuid": "skill-clawhub-invoice-template",
+  "skillKey": "clawhub-invoice-template",
+  "name": "Invoice Template",
+  "summary": "Free simple invoice generator. Creates clean, professional invoices with your branding. Use when you need to bill a client quickly without complex tracking o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_template",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karl Ambrosius",
+      "features": [
+        "Free simple invoice generator",
+        "Creates clean, professional invoices with your branding",
+        "Use when you need to bill a client quickly without complex tracking o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-template@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38363945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-template",
+      "url": "https://clawhub.ai/skills/invoice-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-template",
+    "url": "https://clawhub.ai/skills/invoice-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-template-4e7ada4bc2157e9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-template@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-template-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76b10753acc5cfdff9fd9a0065adabac0484b388c21c84a1ed04af6b2d6a2319",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:46:03.663Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/make-design-md@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.make_design_md",
+  "skill": {
+    "id": 63531,
+    "skillKey": "clawhub-make-design-md",
+    "name": "make-design-md"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "make-design-md",
+    "url": "https://clawhub.ai/skills/make-design-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/make-design-md-34cc3a60506b14b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网站设计风格分析器，从网站URL、HTML文件或截图提取设计规范，生成符合 Google design.md 规范的 DESIGN.md 文档。当用户要求\"分析设计风格\"、\"提取设计规范\"、\"生成设计文档\"、\"从XX网站提取风格\"、\"分析这个页面的设计\"等任务时触发此skill。也支持用户直接提供URL、HTML..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouchang1988",
+      "userId": "s1720bd1njpgkfeygpnhevb7z184dag4",
+      "displayName": "Zhou Chang",
+      "image": "https://avatars.githubusercontent.com/u/1515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777447487253,
+      "changelog": "Release v1.1.0 from GitHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bc6d35241519d247797b9ab2277392a9feddaf89edc2a50572a18a0427817f6"
+}

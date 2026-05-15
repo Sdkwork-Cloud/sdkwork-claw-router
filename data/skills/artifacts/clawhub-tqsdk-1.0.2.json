@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tqsdk@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tqsdk",
+  "skill": {
+    "id": 63441,
+    "skillKey": "clawhub-tqsdk",
+    "name": "tqsdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tqsdk",
+    "url": "https://clawhub.ai/skills/tqsdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tqsdk-f251ac3d3de724db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天勤量化TqSdk - 开源Python期货/期权交易SDK，提供实时行情、回测和实盘交易功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774260056039,
+      "changelog": "- Added a sample project directory `demo_project/` containing `README.md` and `demo.py`.\n- Provides example code and documentation to help users quickly get started with TqSdk.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edf4181cc527f88d7d7b107d1f6d85d9cac2e8a4e080c0e35122a37a86930837"
+}

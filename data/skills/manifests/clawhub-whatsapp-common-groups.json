@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17758,
+  "uuid": "skill-clawhub-whatsapp-common-groups",
+  "skillKey": "clawhub-whatsapp-common-groups",
+  "name": "WhatsApp Common Groups",
+  "summary": "Find groups shared between contacts and check group membership",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_common_groups",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Santos",
+      "features": [
+        "Find groups shared between contacts and check group membership"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-common-groups@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74862230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-common-groups",
+      "url": "https://clawhub.ai/skills/whatsapp-common-groups"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-common-groups",
+    "url": "https://clawhub.ai/skills/whatsapp-common-groups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-common-groups-aaa55067f7ce1d64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-common-groups@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-common-groups-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edf1cd98de7e3b710ad5f71469607799697245f2ca798795572c4347d7704470",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T19:41:58.125Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70545,
+  "uuid": "skill-clawhub-bullet-journal-generator",
+  "skillKey": "clawhub-bullet-journal-generator",
+  "name": "bullet-journal-gen",
+  "summary": "子弹笔记生成skill。将零散的自然语言输入转换为规范的子弹笔记格式， 包含任务、事件、笔记分类，自动润色语言，生成可视化卡片和打印版本。 工作学习相关内容自动合并到Obsidian日志，支持标签、双链和规范格式。 触发词：子弹笔记、记录今天、今天计划、写日记、每日记录、 整理笔记、生成日记、今天做了什么、明天计...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bullet_journal_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirutong",
+      "features": [
+        "子弹笔记生成skill。将零散的自然语言输入转换为规范的子弹笔记格式， 包含任务、事件、笔记分类，自动润色语言，生成可视化卡片和打印版本。 工作学习相关内容自动合并到Obsidian日志，支."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bullet-journal-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46773951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bullet-journal-generator",
+      "url": "https://clawhub.ai/skills/bullet-journal-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bullet-journal-generator",
+    "url": "https://clawhub.ai/skills/bullet-journal-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bullet-journal-generator-3310176d6a2bac43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bullet-journal-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bullet-journal-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7ee907d9b211ac5105a5a82412802b06592b952ba0f506a9efc4b829ea95e8a",
+      "artifactSizeBytes": 2811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:54:45.989Z"
+}

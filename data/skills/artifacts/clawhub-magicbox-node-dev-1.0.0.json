@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/magicbox-node-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magicbox_node_dev",
+  "skill": {
+    "id": 64415,
+    "skillKey": "clawhub-magicbox-node-dev",
+    "name": "魔盒node服务开发技能包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magicbox-node-dev",
+    "url": "https://clawhub.ai/skills/magicbox-node-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magicbox-node-dev-a0ba5ad59b35442a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Node.js + TypeScript 项目开发规范和最佳实践指南。用于指导 MagicBox Node 服务的开发、代码风格、目录结构、配置管理、容器部署等方面的规范。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinchuncheng123",
+      "userId": "publishers:jinchuncheng123",
+      "displayName": "JinChunCheng",
+      "image": "https://avatars.githubusercontent.com/u/18729854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772099717832,
+      "changelog": "Initial release: Node.js + TypeScript development standards and best practices for MagicBox Node services.\n\n- Defines recommended project structure, including directory layout and config files.\n- Specifies TypeScript code standards, naming conventions, and ESLint/Prettier usage.\n- Outlines environment/config management and deployment guidelines (containerization, startup scripts, versioning).\n- Details database practices using TypeORM, with migration/file structure guidance.\n- Provides unified API/response, logging, error handling, and security practices.\n- Lists workflow steps for deployment, testing, code review, and monitoring.\n- Emphasizes modularity, consistency, testability, and maintainability as best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e75b5160b9ed9fced614cb88a76c64c4c2c3925fad16913d20e6e2926c6e2486"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agents-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agents_architect",
+  "skill": {
+    "id": 32334,
+    "skillKey": "clawhub-ai-agents-architect",
+    "name": "Ai Agents Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agents-architect",
+    "url": "https://clawhub.ai/skills/ai-agents-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agents-architect-a6a7534325a75e35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert in designing and building autonomous AI agents. Helps with agent architecture, tool integration, memory systems, planning strategies, and multi-agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nemo-ryanniddel",
+      "userId": "s174r9gv3sjj2p9xnzapj4fe0984erns",
+      "displayName": "nemo-ryanniddel",
+      "image": "https://avatars.githubusercontent.com/u/260219431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775647865081,
+      "changelog": "Initial release of ai-agents-architect: an expert guide for designing autonomous AI agent systems.\n\n- Provides detailed guidance on agent architecture, tool integration, memory systems, planning strategies, and multi-agent orchestration.\n- Emphasizes safe, observable, and practical agent design with implementation-ready code patterns.\n- Includes sample Python classes for key agent patterns (ReAct Loop, Plan-and-Execute, Tool Registry, Selective Memory, Supervisor).\n- Offers best practices for tool schema design and integration.\n- Focuses on reliability with built-in safety features such as iteration limits, error handling, and logging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1174fc3af4ff2d9fd990f5f94dbc1fbee1b62711ab0e38aebb593b3d7c93a519"
+}

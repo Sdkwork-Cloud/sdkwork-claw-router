@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59238,
+  "uuid": "skill-clawhub-qqbot-voice-transcribe",
+  "skillKey": "clawhub-qqbot-voice-transcribe",
+  "name": "Qqbot Voice Transcribe",
+  "summary": "QQ Bot 语音消息自动识别 v2.0。自动解码 QQ Silk V3 格式，Whisper medium 模型识别，Gateway 集成，用户确认流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_voice_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cindypapa",
+      "features": [
+        "QQ Bot 语音消息自动识别 v2.0。自动解码 QQ Silk V3 格式，Whisper medium 模型识别，Gateway 集成，用户确认流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot-voice-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128971646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot-voice-transcribe",
+      "url": "https://clawhub.ai/skills/qqbot-voice-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-voice-transcribe",
+    "url": "https://clawhub.ai/skills/qqbot-voice-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-voice-transcribe-0d4430c0a71e8cac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot-voice-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-voice-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:025a874fe4cf7d38fd2cf88a125510933fa047042c2d794bea67a93a0c52a194",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:47:51.418Z"
+}

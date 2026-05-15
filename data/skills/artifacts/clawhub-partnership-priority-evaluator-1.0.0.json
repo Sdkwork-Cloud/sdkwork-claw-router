@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/partnership-priority-evaluator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partnership_priority_evaluator",
+  "skill": {
+    "id": 37226,
+    "skillKey": "clawhub-partnership-priority-evaluator",
+    "name": "Partnership Priority Evaluator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partnership-priority-evaluator",
+    "url": "https://clawhub.ai/skills/partnership-priority-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partnership-priority-evaluator-1a8a5ae0a462d357.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate new revenue channels by scoring technical difficulty, market demand, competition barriers, and revenue potential to guide prioritization decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gdp6539",
+      "userId": "s1700q9j1d775p2em2makn5qq583emj8",
+      "displayName": "gdp6539",
+      "image": "https://avatars.githubusercontent.com/u/198542148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774302581544,
+      "changelog": "- Initial release of Partnership Priority Evaluator (合作优先级评估器).\n- Enables fast feasibility assessment of new revenue channels using a 4-dimension scoring method: technical barrier, market demand, competitive moat, and revenue potential.\n- Provides clear decision recommendations based on scoring threshold.\n- Supports trigger phrases related to channel evaluation and ROI assessment.\n- Outputs structured evaluation reports in Markdown format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c97b6b43906191f3c44c3e61e1a2e2aea15e5964d39209a52b0967e9d426fe3"
+}

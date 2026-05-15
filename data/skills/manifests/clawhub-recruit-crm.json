@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23076,
+  "uuid": "skill-clawhub-recruit-crm",
+  "skillKey": "clawhub-recruit-crm",
+  "name": "Recruit Crm",
+  "summary": "Recruit CRM integration. Manage Candidates, Jobs, Companies, Users, Notes, Files and more. Use when the user wants to interact with Recruit CRM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruit_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Recruit CRM integration",
+        "Manage Candidates, Jobs, Companies, Users, Notes, Files and more",
+        "Use when the user wants to interact with Recruit CRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recruit-crm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recruit-crm",
+      "url": "https://clawhub.ai/skills/recruit-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruit-crm",
+    "url": "https://clawhub.ai/skills/recruit-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruit-crm-aef96957bcf40e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recruit-crm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-recruit-crm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6775ac23bde263c297f20e4929179279502840536d0ad00e16c01e4c3a2d92da",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:51:33.293Z"
+}

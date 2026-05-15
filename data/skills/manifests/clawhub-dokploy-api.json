@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34734,
+  "uuid": "skill-clawhub-dokploy-api",
+  "skillKey": "clawhub-dokploy-api",
+  "name": "Dokploy API",
+  "summary": "Use for Dokploy-specific API operations (apps, deployments, databases, domains, backups, settings) when tasks explicitly involve Dokploy. Route requests to d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dokploy_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Achal Singhal",
+      "features": [
+        "Use for Dokploy-specific API operations (apps, deployments, databases, domains, backups, settin.",
+        "Route requests to d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dokploy-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45008879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dokploy-api",
+      "url": "https://clawhub.ai/skills/dokploy-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dokploy-api",
+    "url": "https://clawhub.ai/skills/dokploy-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dokploy-api-b764e574640a1b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dokploy-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dokploy-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:907517d361ac73e00fcf0d8755ea937b8d686f6532daccda10d70268b0a3fccb",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:59:12.917Z"
+}

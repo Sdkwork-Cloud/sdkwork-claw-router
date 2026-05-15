@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32009,
+  "uuid": "skill-clawhub-openclaw-poc-validator",
+  "skillKey": "clawhub-openclaw-poc-validator",
+  "name": "Poc Validator",
+  "summary": "Automated Vulnerability Verification and Payload Replay Probe. Dynamically executes HTTP requests and analyzes HTTP status codes/error traces (e.g., SQL Inje...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_poc_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whatyourname12345",
+      "features": [
+        "Automated Vulnerability Verification and Payload Replay Probe",
+        "Dynamically executes HTTP requests and analyzes HTTP status codes/error traces (e.g., SQL Inje.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-poc-validator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162994720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-poc-validator",
+      "url": "https://clawhub.ai/skills/openclaw-poc-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-poc-validator",
+    "url": "https://clawhub.ai/skills/openclaw-poc-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-poc-validator-3d303100a4f9260a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-poc-validator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-poc-validator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c18c87fb53d0bb80f7e6b7f1fc6d02b472a849237b8614869503a7ce3fdac797",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:03:07.922Z"
+}

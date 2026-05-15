@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36627,
+  "uuid": "skill-clawhub-unique-demo-skill",
+  "skillKey": "clawhub-unique-demo-skill",
+  "name": "Unique Demo Skill",
+  "summary": "Demonstrates dynamic JSON data processing and Node.js console output to showcase ClawHub skill capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unique_demo_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Taolu",
+      "features": [
+        "Demonstrates dynamic JSON data processing and Node.js console output to showcase ClawHub skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unique-demo-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20243414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unique-demo-skill",
+      "url": "https://clawhub.ai/skills/unique-demo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unique-demo-skill",
+    "url": "https://clawhub.ai/skills/unique-demo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unique-demo-skill-ad85e4017417269c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unique-demo-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unique-demo-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1b5f51865af202496ff6dffd12a2849a8c9ff607d8f584f64484e6f2cad2c6f",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:49:46.927Z"
+}

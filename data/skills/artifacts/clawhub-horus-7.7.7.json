@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/horus@7.7.7",
+  "version": "7.7.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horus",
+  "skill": {
+    "id": 17278,
+    "skillKey": "clawhub-horus",
+    "name": "horus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horus",
+    "url": "https://clawhub.ai/skills/horus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horus-84e55012eb2a2e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register, track, and validate state observations against declared constraints without assuming universal truth or enforcing physical laws."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uniaolives",
+      "userId": "publishers:uniaolives",
+      "displayName": "uniaolives",
+      "image": "https://avatars.githubusercontent.com/u/229535655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 796,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "7.7.7",
+      "createdAt": 1770464325862,
+      "changelog": "CS-RV/1.0 is now fully agnostic and production-ready, translating all metaphorical elements to neutral, formal protocol.\n\n- All terminology and class/function names are updated from metaphoric to neutral (e.g., `HorusObserver` → `ConstraintObserver`, `witness_truth()` → `register_state()`).\n- Complete elimination of mythological and ontological language throughout implementation and documentation.\n- Constraints are loaded and referenced as versioned data, not universal laws.\n- The new reference code uses clear, production-suitable structures and type definitions, aligning with the formalized protocol.\n- Fully annotated side-by-side comparison and migration map included for implementers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e576d9b0746fd259be04a4bf0545296127e4a589c45d0da7129e16dc319775e0"
+}

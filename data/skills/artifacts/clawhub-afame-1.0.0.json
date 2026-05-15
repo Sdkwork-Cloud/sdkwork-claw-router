@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afame@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afame",
+  "skill": {
+    "id": 10363,
+    "skillKey": "clawhub-afame",
+    "name": "fame graphic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afame",
+    "url": "https://clawhub.ai/skills/afame",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afame-05febbcc154bccd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate diverse creative illustrations via OpenAI Images API. Create book illustrations, editorial art, children's book art, concept illustrations, and artistic scenes. Use when user needs creative visual content for stories, articles, pr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adebayoabdushaheed-a11y",
+      "userId": "publishers:adebayoabdushaheed-a11y",
+      "displayName": "adebayoabdushaheed-a11y",
+      "image": "https://avatars.githubusercontent.com/u/258526544?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2437,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769911642173,
+      "changelog": "Initial release of Creative Illustration Factory.\n\n- Generate diverse creative illustrations using the OpenAI Images API for books, editorials, children's stories, and concept art.\n- Supports a wide range of illustration types, styles, moods, color palettes, and compositions.\n- Command-line tool allows batch processing, custom prompts, and multiple output formats (PNG images, prompts.json, index.html gallery).\n- Includes detailed setup instructions, usage examples, and project templates for common use cases.\n- Configurable image size and quality, with support for specific OpenAI image models and API keys.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4988fb516aea5007e7479c812da41133d45263c607a3ce17a1c459a6cfd1dde7"
+}

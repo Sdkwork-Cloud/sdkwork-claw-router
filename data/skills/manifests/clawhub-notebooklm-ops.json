@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16134,
+  "uuid": "skill-clawhub-notebooklm-ops",
+  "skillKey": "clawhub-notebooklm-ops",
+  "name": "NotebookLM Ops",
+  "summary": "Manage NotebookLM MCP auth lifecycle on Linux by automating GUI startup, auth refresh, status check, and cleanup for frequent cookie expiry.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spiceman161",
+      "features": [
+        "Manage NotebookLM MCP auth lifecycle on Linux by automating GUI startup, auth refresh, status c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45951852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-ops",
+      "url": "https://clawhub.ai/skills/notebooklm-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-ops",
+    "url": "https://clawhub.ai/skills/notebooklm-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-ops-3d92d448c1ba4106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85c4dbcc66707e0234f668fd64040fa6db3acace7ef287e9e4c3c5bd6cbc3dda",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T19:50:06.406Z"
+}

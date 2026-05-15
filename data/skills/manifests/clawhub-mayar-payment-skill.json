@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11543,
+  "uuid": "skill-clawhub-mayar-payment-skill",
+  "skillKey": "clawhub-mayar-payment-skill",
+  "name": "Mayar.id Payment",
+  "summary": "Integrate Mayar.id for Indonesian payments to create invoices, generate payment links, track transactions, manage subscriptions, and automate payment workflo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayar_payment_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahsanatha",
+      "features": [
+        "Integrate Mayar.id for Indonesian payments to create invoices, generate payment links, track tr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mayar-payment-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12840926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mayar-payment-skill",
+      "url": "https://clawhub.ai/skills/mayar-payment-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayar-payment-skill",
+    "url": "https://clawhub.ai/skills/mayar-payment-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayar-payment-skill-a8858d19cb9879a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mayar-payment-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mayar-payment-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:846eadb1b53e2102d3e15702598dea5d93aa70743000098ed38d5795b33886a6",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:48:19.418Z"
+}

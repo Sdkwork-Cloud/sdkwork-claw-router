@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-analysis-execution@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_analysis_execution",
+  "skill": {
+    "id": 54970,
+    "skillKey": "clawhub-multi-agent-analysis-execution",
+    "name": "multi agent analysis and execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-analysis-execution",
+    "url": "https://clawhub.ai/skills/multi-agent-analysis-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-analysis-execution-e3c3e67387b745ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate complex multi-agent workflows with explicit coordinator planning, execution governance, and *automatic output management*. Each skill run creates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubencoppensongit",
+      "userId": "s177k99mfg161rhj6rtbg28cd98412tj",
+      "displayName": "RubenCoppensOnGit",
+      "image": "https://avatars.githubusercontent.com/u/78661888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775125294261,
+      "changelog": "Updated README.md to accurately reflect the content of SKILL.md, providing clear documentation of the five-phase coordinator process, modes (lean/debug), run directory structure, and mandatory execution contract",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72dc902e0b819375e80f99030b4c13bb9b4b4f9e4ac96dda46777af57ba4fa4d"
+}

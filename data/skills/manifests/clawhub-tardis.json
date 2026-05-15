@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11000,
+  "uuid": "skill-clawhub-tardis",
+  "skillKey": "clawhub-tardis",
+  "name": "TARDIS",
+  "summary": "Track elapsed time from a set epoch with tamper-evident locking. Like an analog Hobbs meter but digital. Use for tracking uptime, service hours, time since events, sobriety counters, project duration, equipment runtime. Supports create, lo.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tardis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rm289",
+      "features": [
+        "Track elapsed time from a set epoch with tamper-evident locking",
+        "Like an analog Hobbs meter but digital",
+        "Use for tracking uptime, service hours, time since events, sobriety counters, project duration,.",
+        "Supports create, lock (seal), check, verify against external hash, list, and export operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tardis@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/961275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tardis",
+      "url": "https://clawhub.ai/skills/tardis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tardis",
+    "url": "https://clawhub.ai/skills/tardis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tardis-76f753aacb0ed0f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tardis@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tardis-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bd050ce78a186ab54e75b5ff2355475ad6823e9f192b467bd084af64700efb4",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T15:22:10.959Z"
+}

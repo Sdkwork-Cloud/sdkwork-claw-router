@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56971,
+  "uuid": "skill-clawhub-cosin",
+  "skillKey": "clawhub-cosin",
+  "name": "Cosin",
+  "summary": "Use this skill when an agent needs to operate the `cosin` CLI from the terminal. `cosin` accepts only relative paths, lists available skills through the `ski...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "C9",
+      "features": [
+        "Use this skill when an agent needs to operate the `cosin` CLI from the terminal",
+        "`cosin` accepts only relative paths, lists available skills through the `ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cosin@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210006044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cosin",
+      "url": "https://clawhub.ai/skills/cosin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosin",
+    "url": "https://clawhub.ai/skills/cosin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosin-8a692bc1316ea89b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cosin@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cosin-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45a76e825f7b29726df589fa87240da0571d6604ea36d23b3d6908cdaa64f046",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:22:01.560Z"
+}

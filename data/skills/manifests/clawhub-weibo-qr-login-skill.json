@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36750,
+  "uuid": "skill-clawhub-weibo-qr-login-skill",
+  "skillKey": "clawhub-weibo-qr-login-skill",
+  "name": "weibo-qr-login-skill",
+  "summary": "Fetch Weibo login QR code via OpenClaw browser integration. Use when the user asks to log in to Weibo or needs a Weibo QR code. Runs a Python script that han...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_qr_login_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FMLS",
+      "features": [
+        "Fetch Weibo login QR code via OpenClaw browser integration",
+        "Use when the user asks to log in to Weibo or needs a Weibo QR code",
+        "Runs a Python script that han..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-qr-login-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12793501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-qr-login-skill",
+      "url": "https://clawhub.ai/skills/weibo-qr-login-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-qr-login-skill",
+    "url": "https://clawhub.ai/skills/weibo-qr-login-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-qr-login-skill-848bd583567d4b32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-qr-login-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-qr-login-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ff74eafdfc8a970821692670bc954965fd596d02184df5d1222867e131c9229",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:17:07.329Z"
+}

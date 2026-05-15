@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/performance-reporter@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.performance_reporter",
+  "skill": {
+    "id": 56025,
+    "skillKey": "clawhub-performance-reporter",
+    "name": "Performance Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "performance-reporter",
+    "url": "https://clawhub.ai/skills/performance-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/performance-reporter-a20b3c62328f37cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating SEO/GEO reports, traffic summaries, ranking reports, KPI dashboards, stakeholder updates, or monthly reports. SEO报告/绩效仪表盘"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2751,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349144192,
+      "changelog": "Published from v9.9.5 @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e31208f06969624204dd35e6f5581b5a6e1ff94dfae99c712d2079036e8c34b7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28904,
+  "uuid": "skill-clawhub-shift",
+  "skillKey": "clawhub-shift",
+  "name": "SHIFT",
+  "summary": "Manages multi-identity delegation to specialized AI sub-agents for coding, research, and quick tasks, routing and synthesizing responses seamlessly.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "palxislabs",
+      "features": [
+        "Manages multi-identity delegation to specialized AI sub-agents for coding, research, and quick."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shift@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258656192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shift",
+      "url": "https://clawhub.ai/skills/shift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shift",
+    "url": "https://clawhub.ai/skills/shift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shift-ecd3fad7a4d35d71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shift@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shift-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5da24c1573b506a7590bb0113c7ac9f5555965d35a6058fbbf991a2c0836bb1a",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:28:04.061Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flutter-updater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flutter_updater",
+  "skill": {
+    "id": 46309,
+    "skillKey": "clawhub-flutter-updater",
+    "name": "Flutter Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flutter-updater",
+    "url": "https://clawhub.ai/skills/flutter-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flutter-updater-7f747a1edf2452a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keep Flutter/Dart projects automatically up-to-date. Detects new Flutter/Dart SDK releases, updates pubspec.yaml dependencies with safe breaking-change handl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaekyung-you",
+      "userId": "s175kxt1t1r6w4x2806ffg0yrs84s3b3",
+      "displayName": "JaekyungYou",
+      "image": "https://avatars.githubusercontent.com/u/59492694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776085402855,
+      "changelog": "Initial release: auto-update Flutter/Dart projects with breaking-change handling and QA",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c9a8e78fb89ad90bb9182d579a5d7e19c551e182fe3f7a7a70626bc1367925d"
+}

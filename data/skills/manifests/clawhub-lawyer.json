@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10261,
+  "uuid": "skill-clawhub-lawyer",
+  "skillKey": "clawhub-lawyer",
+  "name": "Lawyer",
+  "summary": "Draft contracts, review legal documents, and navigate compliance with practical legal patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawyer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Draft contracts, review legal documents, and navigate compliance with practical legal patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lawyer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lawyer",
+      "url": "https://clawhub.ai/skills/lawyer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawyer",
+    "url": "https://clawhub.ai/skills/lawyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawyer-83a7005250473313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lawyer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lawyer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b6019cdc480eb1d8b04a5a881010ecb7a77ddda69997a1bb03732f4e8092bf3",
+      "artifactSizeBytes": 1764
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T21:30:40.855Z"
+}

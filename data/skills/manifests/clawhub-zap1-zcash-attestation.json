@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39262,
+  "uuid": "skill-clawhub-zap1-zcash-attestation",
+  "skillKey": "clawhub-zap1-zcash-attestation",
+  "name": "ZAP1 - Zcash Attestation",
+  "summary": "Provides cryptographic attestation for AI actions with Zcash-anchored proofs, policy enforcement, session tracking, and verifiable proof checkpoints.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zap1_zcash_attestation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SkndrS",
+      "features": [
+        "Provides cryptographic attestation for AI actions with Zcash-anchored proofs, policy enforcemen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zap1-zcash-attestation@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197349543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zap1-zcash-attestation",
+      "url": "https://clawhub.ai/skills/zap1-zcash-attestation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zap1-zcash-attestation",
+    "url": "https://clawhub.ai/skills/zap1-zcash-attestation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zap1-zcash-attestation-617e79eaf1b87999.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zap1-zcash-attestation@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zap1-zcash-attestation-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d68598af1e687d51cecdbc2d3418c0017682f2394f717cfba5d5b0a891df070",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:25:28.142Z"
+}

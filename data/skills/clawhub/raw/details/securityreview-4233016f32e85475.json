@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "securityreview",
+    "displayName": "Security code review",
+    "summary": "Conduct thorough security audits of source code by identifying vulnerabilities such as hardcoded secrets, access control flaws, injection risks, insecure dat...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2115,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1770279715480,
+    "updatedAt": 1778383685770
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770279715480,
+    "changelog": "Initial release—Security Analysis Guidelines skill:\n\n- Defines persona: senior security and privacy engineer with strict methodology.\n- Details operational principles: only act on explicit security requests, assume all input is malicious, enforce least privilege and secure failure.\n- Lists permitted actions and tools: strictly read-only file access and reporting, with clear audit artifact handling.\n- Provides comprehensive vulnerability checklist for SAST, covering hardcoded secrets, access control, insecure data handling, injection flaws, and authentication weaknesses.\n- Requires full final security reports to be displayed in chat, and stored in a designated directory if artifacts are produced.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kylehuan",
+    "userId": "publishers:kylehuan",
+    "displayName": "kylehuan",
+    "image": "https://avatars.githubusercontent.com/u/11254438?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383685770
+  }
+}

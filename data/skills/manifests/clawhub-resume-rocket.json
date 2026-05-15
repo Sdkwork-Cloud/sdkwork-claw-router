@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65957,
+  "uuid": "skill-clawhub-resume-rocket",
+  "skillKey": "clawhub-resume-rocket",
+  "name": "Resume Rocket",
+  "summary": "AI 简历火箭 — 一键把你的简历改写成目标 JD 的满分匹配版，可选对接 Boss 直聘自动投递。输入旧简历 + 目标岗位 JD，输出「高命中改写版 + 匹配度评分 + 面试话术卡」。春招/秋招/跳槽必备。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_rocket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenmoon1111",
+      "features": [
+        "AI 简历火箭 — 一键把你的简历改写成目标 JD 的满分匹配版，可选对接 Boss 直聘自动投递。输入旧简历 + 目标岗位 JD，输出「高命中改写版 + 匹配度评分 + 面试话术卡」。春招."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-rocket@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219963765?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-rocket",
+      "url": "https://clawhub.ai/skills/resume-rocket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-rocket",
+    "url": "https://clawhub.ai/skills/resume-rocket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-rocket-6ee942b4e02541f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-rocket@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-rocket-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20eecaf6754125444f763615c0ce80f036198c56f75c1e264073c8afd363bb78",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:44:29.142Z"
+}

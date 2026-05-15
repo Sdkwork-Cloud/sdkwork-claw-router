@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stable-diffusion-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_diffusion_skill",
+  "skill": {
+    "id": 35628,
+    "skillKey": "clawhub-stable-diffusion-skill",
+    "name": "stable Diffusion Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-diffusion-skill",
+    "url": "https://clawhub.ai/skills/stable-diffusion-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-diffusion-skill-0b94f4636ce22817.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Stable Diffusion WebUI integration skill. Supports txt2img, img2img, inpainting, ControlNet, LoRA, model switching, upscaling, and more via SD WebUI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markcookie",
+      "userId": "s173a6b7vatqkph605zqy4jgdh84adc0",
+      "displayName": "Freyr",
+      "image": "https://avatars.githubusercontent.com/u/112866258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775500143741,
+      "changelog": "- Moved tool scripts into a dedicated tools/ directory for better organization (e.g., sd_client.py → tools/sd_client.py).\n- Updated all usage documentation and command references to point to the new tools/ path.\n- No feature or API changes; this is a structural and documentation update only.\n\n首次发布 v1.0.0\n完整的 Stable Diffusion WebUI 集成技能，支持：\n- 文生图（txt2img）\n- 图生图（img2img）\n- 局部重绘（Inpainting）\n- ControlNet 姿势控制\n- LoRA 风格模型\n- 模型切换\n- 超分辨率放大至 2K/4K\n\n免责声明：本 Skill 与 AUTOMATIC1111 无任何关联，需要用户自行安装 SD WebUI。生成的图片由用户自行承担责任。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a584cc749bb75ae37562f052cec26c99c60df98567de1b9d9f422b6063e7c866"
+}

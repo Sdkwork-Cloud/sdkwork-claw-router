@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aana-continuous-improvement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_continuous_improvement",
+  "skill": {
+    "id": 28034,
+    "skillKey": "clawhub-aana-continuous-improvement",
+    "name": "AANA Continuous Self-Improvement Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-continuous-improvement",
+    "url": "https://clawhub.ai/skills/aana-continuous-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-continuous-improvement-d6c280e1b7fed753.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable continuous workflow improvement by observing outcomes, identifying issues, proposing low-risk changes, and verifying them without altering agent autho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindbomber",
+      "userId": "s177cynx168hg36ac5nrkb9wdn85z9dq",
+      "displayName": "mindbomber",
+      "image": "https://avatars.githubusercontent.com/u/42798111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777753074068,
+      "changelog": "Initial release of the AANA Continuous Self-Improvement Skill.\n\n- Introduces a structured self-improvement loop for agents, focused on outcome evaluation and actionable proposals.\n- Strong constraints prevent agents from drifting away from user goals, safety boundaries, or approval controls.\n- Clearly separates allowed, restricted, and forbidden types of self-improvement.\n- Defines AANA-style constraint mapping for physical, human, task, and feedback boundaries.\n- Specifies a minimal, privacy-respecting review payload format.\n- Outlines concise reporting and approval rules for any agent-led improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88d82af6559f508305fc08a298e5d0d074c7e880c2c41802ac8c35dce0bb9c76"
+}

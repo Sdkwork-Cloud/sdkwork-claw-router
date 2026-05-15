@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-ideas-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_ideas_generator",
+  "skill": {
+    "id": 9762,
+    "skillKey": "clawhub-content-ideas-generator",
+    "name": "Content Ideas Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-ideas-generator",
+    "url": "https://clawhub.ai/skills/content-ideas-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-ideas-generator-03b8a89549a89149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured post outlines from reference materials for wisdom-style social posts. Use when someone wants to extract compelling concepts from newsletters, scripts, notes, or other content and transform them into engaging post outli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentchan",
+      "userId": "publishers:vincentchan",
+      "displayName": "vincentchan",
+      "image": "https://avatars.githubusercontent.com/u/229261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3251,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769496258372,
+      "changelog": "Initial release of Content Ideas Generator.  \n- Generates structured social post outlines from reference materials.\n- Extracts and organizes paradoxes, transformations, and insights into five distinct post concepts.\n- Applies techniques like second-person voice, imperative verbs, metaphors, and absolute language.\n- Saves outlines in timestamped markdown files for easy access.\n- Designed for engaging, wisdom-style social content creation from diverse source materials.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9dceb3b82bfad31a13be5935b2c319f45ca30a4e77119bdaeb41428b617740c3"
+}

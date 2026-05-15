@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-accuracy-checker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_accuracy_checker",
+  "skill": {
+    "id": 36403,
+    "skillKey": "clawhub-social-accuracy-checker",
+    "name": "Social Accuracy Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-accuracy-checker",
+    "url": "https://clawhub.ai/skills/social-accuracy-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-accuracy-checker-f79d9a8148650602.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fact-check and attribution-check social media content (tweets, LinkedIn posts, blog intros) before publication. Uses web search to verify factual claims and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774671901929,
+      "changelog": "Security: added security_notes to clarify legitimate usage of network/credential/encoding patterns. Prevents false-positive scanner flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5ec3c351a53428273734a5a5047bfaf132081e6581fce2bee1e2ec99f64efec"
+}

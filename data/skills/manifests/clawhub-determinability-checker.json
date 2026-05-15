@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54361,
+  "uuid": "skill-clawhub-determinability-checker",
+  "skillKey": "clawhub-determinability-checker",
+  "name": "Determinability Checker",
+  "summary": "Causal Sufficiency Determinability Checker — Meta-Skill Gatekeeper based on JEP Paper CheckDeterminability Algorithm",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.determinability_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEP (Judgment Event Protocol)",
+      "features": [
+        "Causal Sufficiency Determinability Checker — Meta-Skill Gatekeeper based on JEP Paper CheckDete."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/determinability-checker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10815391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "determinability-checker",
+      "url": "https://clawhub.ai/skills/determinability-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "determinability-checker",
+    "url": "https://clawhub.ai/skills/determinability-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/determinability-checker-4d37022d722e2b0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/determinability-checker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-determinability-checker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f00e0cf91fbf0f25932674de3e7048133b89406155e384e9b9c86f920d1ea1c",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:24:55.963Z"
+}

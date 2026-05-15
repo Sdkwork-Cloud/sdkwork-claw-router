@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-a-video-with-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_a_video_with_ai",
+  "skill": {
+    "id": 42072,
+    "skillKey": "clawhub-create-a-video-with-ai",
+    "name": "Create A Video With Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-a-video-with-ai",
+    "url": "https://clawhub.ai/skills/create-a-video-with-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-a-video-with-ai-8e38280c8761f787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based create-a-video-with-ai tool that handles generating videos from images or clips without manual editing. Upload MP4, MOV, JPG, PNG files (up to 50..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775858795356,
+      "changelog": "- Initial release of \"Create a Video with AI\" skill.\n- Upload images (JPG, PNG) or video/audio files (MP4, MOV, etc.; up to 500MB) and describe your desired output.\n- Automatically generates 1080p MP4 videos from your assets in 1-2 minutes, with support for editing instructions, text overlays, transitions, and audio tracks.\n- Simple setup: auto-acquire tokens, manage sessions, and connect to the cloud rendering API with minimal user effort.\n- Supports core workflows: uploads, exports, credit checking, previewing tracks, and session management.\n- Built for marketers and content creators wanting quick, no-edit AI video generation from their existing materials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4e2fe5e06fc8d1276525672378dbff46d7e9894f7662a0ed98f55df7ab5c9b3"
+}

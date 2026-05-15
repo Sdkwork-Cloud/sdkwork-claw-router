@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decodo-scraper-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decodo_scraper_skill",
+  "skill": {
+    "id": 16372,
+    "skillKey": "clawhub-decodo-scraper-skill",
+    "name": "Decodo Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decodo-scraper-skill",
+    "url": "https://clawhub.ai/skills/decodo-scraper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decodo-scraper-skill-09ce182afe01e802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google, scrape web pages, Amazon product pages, YouTube subtitles, or Reddit (post/subreddit) using the Decodo Scraper OpenClaw Skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donatasdecodo",
+      "userId": "publishers:donatasdecodo",
+      "displayName": "DonatasDecodo",
+      "image": "https://avatars.githubusercontent.com/u/246480029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 783,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771513553387,
+      "changelog": "- Added detailed documentation for all supported scraping targets: Google Search, web pages, Amazon product and search pages, YouTube subtitles, Reddit posts, and Reddit subreddits.\n- Clarified required environment variable (`DECODO_AUTH_TOKEN`) and setup instructions for authentication.\n- Provided example usage commands and described output formats for each tool.\n- Summarized actions and arguments in a new summary table for easier reference.\n- Improved error handling documentation, specifying JSON output on failure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4c7b1d9cdfdb8b98ce1c5af069c854a6896176dda21c7947eb3f4576caa085b"
+}

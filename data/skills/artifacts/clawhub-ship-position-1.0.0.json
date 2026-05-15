@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ship-position@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ship_position",
+  "skill": {
+    "id": 66464,
+    "skillKey": "clawhub-ship-position",
+    "name": "HiFleet Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ship-position",
+    "url": "https://clawhub.ai/skills/ship-position",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ship-position-4e7ba127a03999a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询并展示船舶实时及历史位置，支持AIS报位、锚地和靠泊状态管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charleiwang",
+      "userId": "s17ea91fpqz4xz3ebzmcet2r7983gjad",
+      "displayName": "charleiWang",
+      "image": "https://avatars.githubusercontent.com/u/20695841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773637750065,
+      "changelog": "HiFleet Claw Skills 1.0.0\n\n- Initial release of the HiFleet Claw skills index, supporting both Chinese and English.\n- Lists 11 core skills, covering vessel position, profile management, port info, voyage, route, performance, fleet management, charter, shipping market, weather/sea conditions, and AIS.\n- Includes suggested implementation order for skills.\n- Provides detailed descriptions and trigger terms for each skill.\n- Documentation tailored for ClawHub platform.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e2293aeb75dacc12a321d42074ba073f3097bb7c8dcfb4de15db6aaca751eb2"
+}

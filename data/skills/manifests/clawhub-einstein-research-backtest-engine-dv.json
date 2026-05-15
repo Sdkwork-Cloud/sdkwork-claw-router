@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31395,
+  "uuid": "skill-clawhub-einstein-research-backtest-engine-dv",
+  "skillKey": "clawhub-einstein-research-backtest-engine-dv",
+  "name": "Backtest Engine - Run Backtests",
+  "summary": "Programmatic backtesting framework for trading strategies. Runs backtests with historical price data (yfinance or CSV), supports momentum/mean-reversion/fact...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.einstein_research_backtest_engine_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Programmatic backtesting framework for trading strategies",
+        "Runs backtests with historical price data (yfinance or CSV), supports momentum/mean-reversion/f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/einstein-research-backtest-engine-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "einstein-research-backtest-engine-dv",
+      "url": "https://clawhub.ai/skills/einstein-research-backtest-engine-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "einstein-research-backtest-engine-dv",
+    "url": "https://clawhub.ai/skills/einstein-research-backtest-engine-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/einstein-research-backtest-engine-dv-7d48bce4431330fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/einstein-research-backtest-engine-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-einstein-research-backtest-engine-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f4e5b6b833f14e25566bcba97f087d3c062e908b89db9f3393e6e025e84fdcd",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:22:26.879Z"
+}

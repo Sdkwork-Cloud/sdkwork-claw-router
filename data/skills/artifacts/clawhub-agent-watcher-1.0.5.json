@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-watcher@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_watcher",
+  "skill": {
+    "id": 15290,
+    "skillKey": "clawhub-agent-watcher",
+    "name": "Agent Watcher Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-watcher",
+    "url": "https://clawhub.ai/skills/agent-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-watcher-249ed415c54248c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors Moltbook feed for new agents and posts, tracks keywords, and saves interesting agents to your Open Notebook for easy reference."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771604595828,
+      "changelog": "Fixed: SKILL.md version matches registry (1.0.5)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:367b4cef830087d995e3f9f860ab12031730579140e46604c29885a0ed018408"
+}

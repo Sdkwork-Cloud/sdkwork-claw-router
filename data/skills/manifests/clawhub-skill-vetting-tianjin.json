@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26044,
+  "uuid": "skill-clawhub-skill-vetting-tianjin",
+  "skillKey": "clawhub-skill-vetting-tianjin",
+  "name": "Skill Vetting Tianjin",
+  "summary": "Vet ClawHub skills for security and utility before installation. Use when considering installing a ClawHub skill, evaluating third-party code, or assessing w...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetting_tianjin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianjin-ren",
+      "features": [
+        "Vet ClawHub skills for security and utility before installation",
+        "Use when considering installing a ClawHub skill, evaluating third-party code, or assessing w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vetting-tianjin@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191457384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vetting-tianjin",
+      "url": "https://clawhub.ai/skills/skill-vetting-tianjin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetting-tianjin",
+    "url": "https://clawhub.ai/skills/skill-vetting-tianjin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetting-tianjin-22c310851e358fa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vetting-tianjin@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vetting-tianjin-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:584d542e3735c940e6797c366b1037cf192e291a14682331f0999604627c89ee",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:25:06.123Z"
+}

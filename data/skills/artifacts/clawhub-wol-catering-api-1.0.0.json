@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wol-catering-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol_catering_api",
+  "skill": {
+    "id": 50062,
+    "skillKey": "clawhub-wol-catering-api",
+    "name": "WOL catering api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol-catering-api",
+    "url": "https://clawhub.ai/skills/wol-catering-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-catering-api-3374cf6004c0bd7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access the Wake-up On LAN catering API to list menu items, place orders by product ID and quantity, and view order history with account balance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onokje",
+      "userId": "s173hstes7a50gbdxwgz48qdvn86dgm5",
+      "displayName": "Martin Schimmel",
+      "image": "https://avatars.githubusercontent.com/u/6135389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778358313586,
+      "changelog": "- Initial release of the wol-catering-api skill for interacting with the Wake-up On LAN (WOL) catering system.\n- Supports listing products/menu, placing orders, and viewing order history and account balance via REST API using curl.\n- Automatically checks and resolves required API credentials from environment variables.\n- Provides clear error handling for all major HTTP response codes, with user guidance for common issues.\n- Formats and presents monetary values and order details in a user-friendly way.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cb8dc80638ea4e36b15c18c42727207af4fb31ee63d8fcf931066352815c9f8"
+}

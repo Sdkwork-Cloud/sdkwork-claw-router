@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21285,
+  "uuid": "skill-clawhub-clude-memory",
+  "skillKey": "clawhub-clude-memory",
+  "name": "Clude Memory",
+  "summary": "Persistent memory for AI agents. Semantic search, association graphs, dream cycles. Local-first, fully offline, free. Works with any MCP runtime.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clude_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sebastien Sim",
+      "features": [
+        "Persistent memory for AI agents",
+        "Semantic search, association graphs, dream cycles",
+        "Local-first, fully offline, free",
+        "Works with any MCP runtime."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clude-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9026086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clude-memory",
+      "url": "https://clawhub.ai/skills/clude-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clude-memory",
+    "url": "https://clawhub.ai/skills/clude-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clude-memory-168c9946acc16291.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clude-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clude-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb0292a1ce496c54caa67686d59ea59fca4b43b5e1b20e07cf066895be38cec2",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:23:09.620Z"
+}

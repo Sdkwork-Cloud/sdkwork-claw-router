@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25417,
+  "uuid": "skill-clawhub-health-git",
+  "skillKey": "clawhub-health-git",
+  "name": "Health Git",
+  "summary": "Implements Git-like workflow for health tracking, allowing users to log data, submit intervention plans for expert review, and audit health events.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_git",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erinyu",
+      "features": [
+        "Implements Git-like workflow for health tracking, allowing users to log data, submit interventi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-git@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24399861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-git",
+      "url": "https://clawhub.ai/skills/health-git"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-git",
+    "url": "https://clawhub.ai/skills/health-git",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-git-15fd8659c6058c84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-git@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-git-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d39262f565105dfd7d2fa6c7ab9b6bf8971fd8ea1d518a6b23079b7bd8d0bcb2",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:18:04.801Z"
+}

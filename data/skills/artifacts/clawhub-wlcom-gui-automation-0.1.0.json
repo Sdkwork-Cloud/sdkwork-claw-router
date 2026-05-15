@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wlcom-gui-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wlcom_gui_automation",
+  "skill": {
+    "id": 49827,
+    "skillKey": "clawhub-wlcom-gui-automation",
+    "name": "wlcom GUI Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wlcom-gui-automation",
+    "url": "https://clawhub.ai/skills/wlcom-gui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wlcom-gui-automation-5971cfde401cfa3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate GUI tests on KylinOS V11 Wayland desktops using wlcctrl for window control, scaled pointer actions, screenshots, and result verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyanogenic",
+      "userId": "s171wvgqx6fa6vr3gpvwqjntan86btja",
+      "displayName": "Cyanogenic",
+      "image": "https://avatars.githubusercontent.com/u/13376066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 65,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778221804330,
+      "changelog": "Initial release for KylinOS V11 Desktop wlcom/wlcctrl GUI automation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab8b565e347fcdf40893ff48e93e8118bf2275b29e66fe1a14c13ae53055c35a"
+}

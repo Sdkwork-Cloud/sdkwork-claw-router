@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65951,
+  "uuid": "skill-clawhub-intj-coach",
+  "skillKey": "clawhub-intj-coach",
+  "name": "INTJ Coach",
+  "summary": "［何时使用］当用户是 INTJ 且需要成长/职业/战略指导时；当用户说\"我是 INTJ\"、\"INTJ 成长\"、\"迷茫\"、\"卡住了\"、\"完美主义\"、\"内耗\"、\"职业方向\"、\"创业方向\"时；当用户需要教练模式（提问题帮他想清楚）或顾问模式（给具体建议）时；当用户说\"给我建议\"、\"咋办\"、\"/intj-coach\"时触发。",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intj_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户是 INTJ 且需要成长/职业/战略指导时；当用户说\"我是 INTJ\"、\"INTJ 成长\"、\"迷茫\"、\"卡住了\"、\"完美主义\"、\"内耗\"、\"职业方向\"、\"创业方向\"时；当用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intj-coach@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intj-coach",
+      "url": "https://clawhub.ai/skills/intj-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intj-coach",
+    "url": "https://clawhub.ai/skills/intj-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intj-coach-a9562d994aa50454.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intj-coach@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-intj-coach-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d945037f9a2b887e3f6c455b55b83c325e3ca99470706bb73024d4dfcf3db14f",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T01:44:53.704Z"
+}

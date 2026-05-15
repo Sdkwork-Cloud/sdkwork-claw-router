@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debate-learning-workflow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debate_learning_workflow",
+  "skill": {
+    "id": 33735,
+    "skillKey": "clawhub-debate-learning-workflow",
+    "name": "Debate Learning Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debate-learning-workflow",
+    "url": "https://clawhub.ai/skills/debate-learning-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debate-learning-workflow-0af69de747adb3ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run evidence-backed multi-agent debates (A/B/Opponent3/Judge) with 20-40 rounds, loophole analysis, and universal actionable lesson extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kdylan1010-alt",
+      "userId": "s17ccmq6vrdk5tt3rbnjfs4h9x83h38x",
+      "displayName": "kdylan1010-alt",
+      "image": "https://avatars.githubusercontent.com/u/264438177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774360303431,
+      "changelog": "Add evidence-backed openings, judge-gated 20-40 rounds, and universal lesson quality gate",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26c6a4870e2e6f81d3f0090c3e8b791884cffaabc8a45c9dd397fd80edc768f0"
+}

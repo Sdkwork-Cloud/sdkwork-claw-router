@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37807,
+  "uuid": "skill-clawhub-bouncer-integration",
+  "skillKey": "clawhub-bouncer-integration",
+  "name": "Bouncer",
+  "summary": "Bouncer integration. Manage Organizations, Leads, Projects, Pipelines, Users, Goals and more. Use when the user wants to interact with Bouncer data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bouncer_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Bouncer integration",
+        "Manage Organizations, Leads, Projects, Pipelines, Users, Goals and more",
+        "Use when the user wants to interact with Bouncer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bouncer-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bouncer-integration",
+      "url": "https://clawhub.ai/skills/bouncer-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bouncer-integration",
+    "url": "https://clawhub.ai/skills/bouncer-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bouncer-integration-9a98350e1c916e54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bouncer-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bouncer-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4cbfbf302cbec4d077078a505cdafe7b70f4b0512e637e786777bb30c3eabc4",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:05.659Z"
+}

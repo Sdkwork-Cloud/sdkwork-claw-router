@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68383,
+  "uuid": "skill-clawhub-xhs-cn",
+  "skillKey": "clawhub-xhs-cn",
+  "name": "小红书",
+  "summary": "小红书自动化运营工具-支持：搜索笔记、查看笔记详情及评论、浏览推荐流、发布图文笔记。 当用户提及 xiaohongshu、小红书、RedNote，或需要在该平台进行内容调研/发布时使用。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "小红书自动化运营工具-支持：搜索笔记、查看笔记详情及评论、浏览推荐流、发布图文笔记。 当用户提及 xiaohongshu、小红书、RedNote，或需要在该平台进行内容调研/发布时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-cn@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-cn",
+      "url": "https://clawhub.ai/skills/xhs-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-cn",
+    "url": "https://clawhub.ai/skills/xhs-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-cn-550212d101744334.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-cn@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-cn-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bba0d2cd8c8d473cb5aa7f375254cbf339911f4522e319a9dbd74af5b5bb8321",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T07:11:03.669Z"
+}

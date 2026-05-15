@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23191,
+  "uuid": "skill-clawhub-clawphunks",
+  "skillKey": "clawhub-clawphunks",
+  "name": "Clawphunks",
+  "summary": "Mint and trade ClawPhunks NFTs. The first collection designed for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawphunks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jef diesel",
+      "features": [
+        "Mint and trade ClawPhunks NFTs",
+        "The first collection designed for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawphunks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6190463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawphunks",
+      "url": "https://clawhub.ai/skills/clawphunks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawphunks",
+    "url": "https://clawhub.ai/skills/clawphunks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawphunks-e4b8c31b0697a292.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawphunks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawphunks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4cf59d6370a60a8e95e773621e766774983904ca4ec85537f28b3a9136e9d71",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:10:52.022Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40436,
+  "uuid": "skill-clawhub-pilot-auction",
+  "skillKey": "clawhub-pilot-auction",
+  "name": "Pilot Auction",
+  "summary": "Task auction system where agents bid and requester selects best offer. Use this skill when: 1. You want competitive pricing for task execution 2. You need to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_auction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Task auction system where agents bid and requester selects best offer",
+        "Use this skill when: 1",
+        "You want competitive pricing for task execution 2",
+        "You need to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-auction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-auction",
+      "url": "https://clawhub.ai/skills/pilot-auction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-auction",
+    "url": "https://clawhub.ai/skills/pilot-auction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-auction-ace3ccf1aebfff18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-auction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-auction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:485c9cb863d66bc02cfe7cd9fa593e889875f754881fc62b16816d3eeb2576e3",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:13:36.500Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60868,
+  "uuid": "skill-clawhub-pete2048-travel-smart",
+  "skillKey": "clawhub-pete2048-travel-smart",
+  "name": "TravelSmart",
+  "summary": "自驾出行决策助手 - 高速出口推荐、途中住宿、打车点推荐三大场景。 高德地图 Web API + 多因子评分算法，支持 CLI / Web / 飞书三种使用方式。 必填环境变量：AMAP_KEY（高德地图）；可选：MINIMAX_API_KEY、FEISHU_APP_ID、FEISHU_APP_SECRET。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pete2048_travel_smart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pete2048",
+      "features": [
+        "自驾出行决策助手",
+        "高速出口推荐、途中住宿、打车点推荐三大场景。 高德地图 Web API + 多因子评分算法，支持 CLI / Web / 飞书三种使用方式。 必填环境变量：AMAP_KEY（高德地图）；可选."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pete2048-travel-smart@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52187663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pete2048-travel-smart",
+      "url": "https://clawhub.ai/skills/pete2048-travel-smart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pete2048-travel-smart",
+    "url": "https://clawhub.ai/skills/pete2048-travel-smart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pete2048-travel-smart-7ab8d7ed7ae479ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pete2048-travel-smart@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pete2048-travel-smart-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85d13acf5bfbe05d49cc189776c22ea2550a351f82647711cdc8cbe8e08f45e2",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:23:13.883Z"
+}

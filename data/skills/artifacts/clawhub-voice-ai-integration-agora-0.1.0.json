@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-ai-integration-agora@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_ai_integration_agora",
+  "skill": {
+    "id": 48487,
+    "skillKey": "clawhub-voice-ai-integration-agora",
+    "name": "Agora"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-ai-integration-agora",
+    "url": "https://clawhub.ai/skills/voice-ai-integration-agora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-ai-integration-agora-60f91203df1b0386.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate when the user wants to add real-time voice, video, AI voice agents, chat, live streaming, recording, or token generation to their app. Supports Web,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyuguo-agora",
+      "userId": "s17c4azt7x3ps7byztq5x258vn863mgg",
+      "displayName": "chenyuguo-agora",
+      "image": "https://avatars.githubusercontent.com/u/191848744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777900760018,
+      "changelog": "Initial public release of Agora skill for real-time voice, video, AI, and related integrations.\n\n- Supports all core Agora products: RTC, RTM, Conversational AI (voice agents), Cloud Recording, Server-side token generation, Server Gateway SDK, and multi-product integration patterns.\n- Enforces strict local reference usage for all SDK usage and queries—never use web search or external sources.\n- Mandates official demo/sample project cloning for demos or prototypes; prohibits custom code until after a working baseline.\n- Adds clear routing logic for product-specific and ambiguous requests, requiring intake for unclear queries.\n- Includes guidance for server-side authentication, CLI workflows, and integration testing patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:976b12207a949ad4448dc0f0f591747d246a62c8402476c31020dafed5195799"
+}

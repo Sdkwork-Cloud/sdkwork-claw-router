@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-export-data@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_export_data",
+  "skill": {
+    "id": 22230,
+    "skillKey": "clawhub-china-export-data",
+    "name": "China Export Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-export-data",
+    "url": "https://clawhub.ai/skills/china-export-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-export-data-370625daf4962475.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access aggregated China export trade statistics sourced from China General Administration of Customs public data (stats.customs.gov.cn), compiled and served..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "findhappy7",
+      "userId": "s1701f5z695a3sxp0qr39avsjn83kdpg",
+      "displayName": "findhappy7",
+      "image": "https://avatars.githubusercontent.com/u/14501839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777894937485,
+      "changelog": "- Clarified that export data is sourced from China General Administration of Customs public statistics and aggregated by doumaotong.com.\n- Updated description and data provenance details for transparency about data source, aggregation, and update lag.\n- Added privacy notice and authentication guidance for all endpoints.\n- No changes to API endpoints, request parameters, or response formats.\n- Improved documentation to specify suitability for reference and baseline market analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:477181bdefa03b5b4cc3748af573dceb8599e5ae5e7bf4aec6d144bf63589b12"
+}

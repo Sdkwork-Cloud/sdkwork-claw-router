@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32184,
+  "uuid": "skill-clawhub-leyr",
+  "skillKey": "clawhub-leyr",
+  "name": "Leyr",
+  "summary": "Leyr integration. Manage data, records, and automate workflows. Use when the user wants to interact with Leyr data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leyr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Leyr integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Leyr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leyr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leyr",
+      "url": "https://clawhub.ai/skills/leyr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leyr",
+    "url": "https://clawhub.ai/skills/leyr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leyr-638f28fb46db5b4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leyr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-leyr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aa6f639d97e2f743b3739ca321f4d0abf081b1afe30a876d65db2283fdc7e38",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:41:33.958Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teleskopiq@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teleskopiq",
+  "skill": {
+    "id": 20864,
+    "skillKey": "clawhub-teleskopiq",
+    "name": "Teleskopiq"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teleskopiq",
+    "url": "https://clawhub.ai/skills/teleskopiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teleskopiq-469866cc8a72276c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates and manages AI-generated YouTube scripts, metadata, thumbnails, and schedules via a GraphQL API with specialized Markdown tags for production."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nethunter",
+      "userId": "publishers:nethunter",
+      "displayName": "nethunter",
+      "image": "https://avatars.githubusercontent.com/u/618947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772398049389,
+      "changelog": "Fix: ai-write now uses SSE (Server-Sent Events) instead of WebSocket — matches Teleskopiq's actual subscription transport. Fix: correct GraphQL field name (script not scriptId).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:390a9a4eddfade513d32efe5e1899a72bc6f1f35ee899c135a83f7474c6992ee"
+}

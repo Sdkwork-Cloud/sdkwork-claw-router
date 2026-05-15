@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53326,
+  "uuid": "skill-clawhub-news-gameinfomer",
+  "skillKey": "clawhub-news-gameinfomer",
+  "name": "Gameinformer News",
+  "summary": "Game Informer — section RSS (news/reviews/previews/features). Fetch per section; English reply; only ### headings for sections with at least one item from th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_gameinfomer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Edogawa",
+      "features": [
+        "Game Informer — section RSS (news/reviews/previews/features)",
+        "Fetch per section",
+        "English reply",
+        "only ### headings for sections with at least one item from th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-gameinfomer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118206726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-gameinfomer",
+      "url": "https://clawhub.ai/skills/news-gameinfomer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-gameinfomer",
+    "url": "https://clawhub.ai/skills/news-gameinfomer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-gameinfomer-10629640bfcc08c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-gameinfomer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-gameinfomer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62aebed13345fb90a3f178190ba12b654e7f9bdc47124d994ebd08511a81706d",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T18:40:17.009Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-las-document-parse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_document_parse",
+  "skill": {
+    "id": 36447,
+    "skillKey": "clawhub-byted-las-document-parse",
+    "name": "Byted Las Document Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-document-parse",
+    "url": "https://clawhub.ai/skills/byted-las-document-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-document-parse-34c0122a6011d29d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CRITICAL: EXCELLENT at parsing BOTH PDF documents and IMAGES (including LONG SCREENSHOTS, scanned documents, and standard images). Extract structured Markdow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774510598877,
+      "changelog": "byted-las-document-parse 1.0.0\n\n- Initial release of the skill for parsing PDF documents and images (including long screenshots and scanned documents).\n- Extracts structured content (text, tables, images) and outputs in Markdown format.\n- Supports both local files and URLs, with automatic mode selection (normal/detail) and process workflow.\n- Handles asynchronous task submission, user feedback, and result retrieval (including background and fallback polling).\n- Environment setup and resume capability for interrupted sessions included.\n- Guides user with detailed workflow and troubleshooting tips in the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cc67a9d159da6351a796bc0f28de5910e9f46936242ca05c49db7826960dcf9"
+}

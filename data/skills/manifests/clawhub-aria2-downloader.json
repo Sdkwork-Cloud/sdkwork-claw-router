@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39467,
+  "uuid": "skill-clawhub-aria2-downloader",
+  "skillKey": "clawhub-aria2-downloader",
+  "name": "Aria2 Downloader",
+  "summary": "Remote control aria2 via JSON-RPC API. Add downloads (magnet/HTTP/FTP), check progress, pause/resume/remove tasks, batch download from text. NOT for local ar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiastia",
+      "features": [
+        "Remote control aria2 via JSON-RPC API",
+        "Add downloads (magnet/HTTP/FTP), check progress, pause/resume/remove tasks, batch download from.",
+        "NOT for local ar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aria2-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19776350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aria2-downloader",
+      "url": "https://clawhub.ai/skills/aria2-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-downloader",
+    "url": "https://clawhub.ai/skills/aria2-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-downloader-cd9dfd8e86d912d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aria2-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aria2-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bdf75d5c23ff76c36126bdb00381ccf2fe5d8325d0dcbb40ab9728f69ddc27e",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:13:26.757Z"
+}

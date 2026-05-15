@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13017,
+  "uuid": "skill-clawhub-netpad",
+  "skillKey": "clawhub-netpad",
+  "name": "NetPad - Build forms, workflows and manage MongoDB data",
+  "summary": "Manage NetPad forms, submissions, users, and RBAC. Use when: (1) Creating forms with custom fields, (2) Submitting data to forms, (3) Querying form submissions, (4) Managing users/groups/roles (RBAC), (5) Installing NetPad apps from market.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netpad",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Lynn",
+      "features": [
+        "Manage NetPad forms, submissions, users, and RBAC",
+        "Use when: (1) Creating forms with custom fields, (2) Submitting data to forms, (3) Querying for.",
+        "Requires NETPAD_API_KEY for API, or `netpad login` for CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netpad@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netpad",
+      "url": "https://clawhub.ai/skills/netpad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netpad",
+    "url": "https://clawhub.ai/skills/netpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netpad-7fba0f647fee57be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netpad@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-netpad-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e5b507d9edf6b9c6423d54ceb326186e50e195fed0dd8f19ac2b80e02b26848",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T19:09:28.656Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-memory-bridge@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_memory_bridge",
+  "skill": {
+    "id": 61048,
+    "skillKey": "clawhub-hermes-memory-bridge",
+    "name": "Hermes Memory Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-memory-bridge",
+    "url": "https://clawhub.ai/skills/hermes-memory-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-memory-bridge-073f48fbec4a531e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermes Agent 与 WorkBuddy 双向记忆互通 Skill。触发词：同步到hermes、读取hermes记忆、hermes会话历史、跨记忆搜索、记忆互通、bridge状态、hermes统计、环境变量、错误处理、信号事件、信号通知、发送任务、WorkBuddy执行、闭环命令、协同进化、co_evol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuboacean",
+      "userId": "s1779brgcyhkdmz9tgjpwarx3h84vb82",
+      "displayName": "liuboacean",
+      "image": "https://avatars.githubusercontent.com/u/27935764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776686066438,
+      "changelog": "Summary: Adds v2.0 event-driven signal and feedback system and full task command loop integration.\n\n- Introduced event-driven signal system and feedback directory for real-time Hermes ↔ WorkBuddy closed-loop commands.\n- Added new modules for event signaling, adaptive polling, command processing, and queue management.\n- Implemented task execution and result feedback mechanism between agents.\n- Enhanced compatibility: legacy (v1.x) commands remain available; v2.0 features coexist.\n- Improved documentation detailing signal types, error handling, deployment, and advanced triggers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cfbc2730d40adfe534dfa9720d61052e0ce91078a6f4dd876fb040d6f0bd09a"
+}

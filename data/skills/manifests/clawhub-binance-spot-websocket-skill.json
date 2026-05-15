@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29705,
+  "uuid": "skill-clawhub-binance-spot-websocket-skill",
+  "skillKey": "clawhub-binance-spot-websocket-skill",
+  "name": "Binance Spot WebSocket Skill",
+  "summary": "Subscribe to Binance Spot public market streams through UXC raw WebSocket support for trades, book ticker, depth, and ticker events with stream-specific guar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_spot_websocket_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Subscribe to Binance Spot public market streams through UXC raw WebSocket support for trades, b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-spot-websocket-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-spot-websocket-skill",
+      "url": "https://clawhub.ai/skills/binance-spot-websocket-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-spot-websocket-skill",
+    "url": "https://clawhub.ai/skills/binance-spot-websocket-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-spot-websocket-skill-609acb72ced37bfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-spot-websocket-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-spot-websocket-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8aafd2e4d75750a6bd43a06d90d5bc78b485a41c23358c7ea0a6330cc0f5e978",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:11:00.455Z"
+}

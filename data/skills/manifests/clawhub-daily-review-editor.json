@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64940,
+  "uuid": "skill-clawhub-daily-review-editor",
+  "skillKey": "clawhub-daily-review-editor",
+  "name": "Daily Review Editor",
+  "summary": "将 Digest 候选进一步精选为 Daily Review 日报：合并同一事件、提炼主题、分配栏目、突出重点。用于需要把预处理后的候选内容组织成真正可读的每日重点综述时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_review_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "阿晨聊技术",
+      "features": [
+        "将 Digest 候选进一步精选为 Daily Review 日报：合并同一事件、提炼主题、分配栏目、突出重点。用于需要把预处理后的候选内容组织成真正可读的每日重点综述时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-review-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26523525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-review-editor",
+      "url": "https://clawhub.ai/skills/daily-review-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-review-editor",
+    "url": "https://clawhub.ai/skills/daily-review-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-review-editor-74db4e72a88b27b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-review-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-review-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49e735f4279fa882b37085e7e7fd7657460e1f071d72fde6abd75031b20ac65e",
+      "artifactSizeBytes": 2613
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:09:22.268Z"
+}

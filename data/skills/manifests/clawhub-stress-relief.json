@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11308,
+  "uuid": "skill-clawhub-stress-relief",
+  "skillKey": "clawhub-stress-relief",
+  "name": "Stress Relief",
+  "summary": "Manage stress with quick techniques, stress logging, and recovery tools",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stress_relief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Manage stress with quick techniques, stress logging, and recovery tools"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stress-relief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stress-relief",
+      "url": "https://clawhub.ai/skills/stress-relief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stress-relief",
+    "url": "https://clawhub.ai/skills/stress-relief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stress-relief-d464ac5d7f4bb85e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stress-relief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stress-relief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff0ccde46bb0ec880f23aa0889bd2f1e6c57e3ee4729610b98633179df59943b",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:37:16.922Z"
+}

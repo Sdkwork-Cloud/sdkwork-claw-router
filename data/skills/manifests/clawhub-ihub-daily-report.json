@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67565,
+  "uuid": "skill-clawhub-ihub-daily-report",
+  "skillKey": "clawhub-ihub-daily-report",
+  "name": "iHub日报自动填写",
+  "summary": "自动填写 iHub 测试农场平台指定日期的日报，支持自定义账号密码和Markdown格式内容输入。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ihub_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaqima2024",
+      "features": [
+        "自动填写 iHub 测试农场平台指定日期的日报，支持自定义账号密码和Markdown格式内容输入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ihub-daily-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191233562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ihub-daily-report",
+      "url": "https://clawhub.ai/skills/ihub-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ihub-daily-report",
+    "url": "https://clawhub.ai/skills/ihub-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ihub-daily-report-c02c73b6e2557d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ihub-daily-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ihub-daily-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31caf090347f2e81334335e44d35944c03b765cc64ff5bafb4d5cc949bf82674",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:32:14.110Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9430,
+  "uuid": "skill-clawhub-canva-connect",
+  "skillKey": "clawhub-canva-connect",
+  "name": "Canva Connect",
+  "summary": "Manage Canva designs, assets, and folders via the Connect API. WHAT IT CAN DO: - List/search/organize designs and folders - Export finished designs (PNG/PDF/JPG) - Upload images to asset library - Autofill brand templates with data - Creat.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva_connect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolmanns",
+      "features": [
+        "Manage Canva designs, assets, and folders via the Connect API",
+        "WHAT IT CAN DO:",
+        "List/search/organize designs and folders",
+        "Export finished designs (PNG/PDF/JPG)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canva-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117685070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canva-connect",
+      "url": "https://clawhub.ai/skills/canva-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva-connect",
+    "url": "https://clawhub.ai/skills/canva-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-connect-fe6bfd10707bf81a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canva-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canva-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cf7c41e662bbeb56ceec9a8e3ec9eccf19f4506b94cc7aaa2ffaa616f531133",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-30T01:07:55.413Z"
+}

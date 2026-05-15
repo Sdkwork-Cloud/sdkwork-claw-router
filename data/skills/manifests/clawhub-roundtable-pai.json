@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70842,
+  "uuid": "skill-clawhub-roundtable-pai",
+  "skillKey": "clawhub-roundtable-pai",
+  "name": "Roundtable Pai",
+  "summary": "圆桌派会把用户的一个问题变成一场三位大师的圆桌讨论。 典型触发词：启动圆桌派、用圆桌讨论、启动圆桌讨论、开始讨论、开始圆桌派。",
+  "version": "1.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roundtable_pai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouxiang1",
+      "features": [
+        "圆桌派会把用户的一个问题变成一场三位大师的圆桌讨论。 典型触发词：启动圆桌派、用圆桌讨论、启动圆桌讨论、开始讨论、开始圆桌派。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roundtable-pai@1.6.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13264925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roundtable-pai",
+      "url": "https://clawhub.ai/skills/roundtable-pai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roundtable-pai",
+    "url": "https://clawhub.ai/skills/roundtable-pai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roundtable-pai-1ff08f7a4fe31bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roundtable-pai@1.6.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-roundtable-pai-1.6.5.json",
+      "version": "1.6.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50cd97599016b61f975012f1a77bb20d12a0295327119e256e612ce7c6ba2b12",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:03:52.537Z"
+}

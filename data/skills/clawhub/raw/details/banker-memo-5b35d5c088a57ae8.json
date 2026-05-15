@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "banker-memo",
+    "displayName": "Banker Memo",
+    "summary": "Generate an investment-banker-grade research memo (analysis.md + slides-outline.md + data-provenance.md) from CN raw-data/ snapshots. Use when the user asks...",
+    "tags": {
+      "latest": "0.9.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776698292430,
+    "updatedAt": 1777527793752
+  },
+  "latestVersion": {
+    "version": "0.9.6",
+    "createdAt": 1776698292430,
+    "changelog": "banker-memo v0.9.6\n\n- Switched from fixed Python templates to prompt-driven memo generation using agent reasoning, enabling richer, peer-benchmarked analysis.\n- Outputs now include analysis.md (8-section memo), slides-outline.md (PPT blueprint, 10–15 slides), and data-provenance.md (trace every number to raw source).\n- Hard constraints: every figure traced to raw-data, peer comps tagged as estimates, valuation covers multiple scenarios, and all outputs validated by strict audit gates.\n- Slide deck outlines are now flexible (not fixed at 8 slides), consumed by build_deck.py v0.9.6+ for custom layout.\n- Strict requirements on provenance, peer benchmarking, and 4C's credit view; not suitable for US-listed firms or quick fact-sheets.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jackdark425",
+    "userId": "s176mxzq3jzjv11d44t7jjr33x83rvkb",
+    "displayName": "jackdark",
+    "image": "https://avatars.githubusercontent.com/u/201514154?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527793752
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29664,
+  "uuid": "skill-clawhub-commercehq",
+  "skillKey": "clawhub-commercehq",
+  "name": "Commercehq",
+  "summary": "CommerceHQ integration. Manage data, records, and automate workflows. Use when the user wants to interact with CommerceHQ data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commercehq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CommerceHQ integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CommerceHQ data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commercehq@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commercehq",
+      "url": "https://clawhub.ai/skills/commercehq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commercehq",
+    "url": "https://clawhub.ai/skills/commercehq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commercehq-cb32be3a0d93bddc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commercehq@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-commercehq-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:574714168351d2d5f8c6ecdf5bc1b53545c9afbface28cddd299a0b3048b79ae",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:33:44.628Z"
+}

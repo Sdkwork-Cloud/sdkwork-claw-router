@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53346,
+  "uuid": "skill-clawhub-muapi-platform",
+  "skillKey": "clawhub-muapi-platform",
+  "name": "muapi-platform",
+  "summary": "Setup and utility scripts for muapi.ai — configure API keys, test connectivity, and poll for async generation results",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muapi_platform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anil Chandra Naidu Matcha",
+      "features": [
+        "Setup and utility scripts for muapi.ai — configure API keys, test connectivity, and poll for as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/muapi-platform@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4326215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "muapi-platform",
+      "url": "https://clawhub.ai/skills/muapi-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muapi-platform",
+    "url": "https://clawhub.ai/skills/muapi-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muapi-platform-cca63cab24a1649d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/muapi-platform@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-muapi-platform-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54d68718712d1e64e4444fefff51b3eff4ff5970a144bdaad97501abc3c53356",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:58:55.300Z"
+}

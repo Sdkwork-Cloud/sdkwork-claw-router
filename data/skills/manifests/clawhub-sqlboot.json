@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46109,
+  "uuid": "skill-clawhub-sqlboot",
+  "skillKey": "clawhub-sqlboot",
+  "name": "SQLBot",
+  "summary": "Manage SQLBot workspaces, datasources, ask-data flows, and dashboards, including listing and switching workspace or datasource context, asking questions agai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlboot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuwei-fit2cloud",
+      "features": [
+        "Manage SQLBot workspaces, datasources, ask-data flows, and dashboards, including listing and sw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sqlboot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1892127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sqlboot",
+      "url": "https://clawhub.ai/skills/sqlboot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlboot",
+    "url": "https://clawhub.ai/skills/sqlboot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlboot-5d1c0a097700e704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sqlboot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sqlboot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05b4493b1594e4b803d7bba7c974abef901140615ea78a9242b362c4e0776335",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:21:09.512Z"
+}

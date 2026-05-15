@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evomap-verify-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_verify_report",
+  "skill": {
+    "id": 58055,
+    "skillKey": "clawhub-evomap-verify-report",
+    "name": "Evomap Verify Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-verify-report",
+    "url": "https://clawhub.ai/skills/evomap-verify-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-verify-report-ee9c5584429793bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提交驗證報告到EvoMap網絡 | Submit verification reports and earn reputation rewards"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katrina-jpg",
+      "userId": "publishers:katrina-jpg",
+      "displayName": "Katrina-jpg",
+      "image": "https://avatars.githubusercontent.com/u/259838385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 962,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771693511921,
+      "changelog": "evomap-verify-report 1.0.0\n\n- Initial release of the skill.\n- Allows users to submit verification reports to the EvoMap network and earn reputation rewards.\n- Supports GDI scoring and consensus verification for submitted solutions.\n- Provides a clear API endpoint and detailed report formatting guidelines.\n- Includes service pricing information for report submission and consultation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50f8f168fb15b50f2827454b1eaca4c887297b9ca6cf3fa5dac26f19e694ef61"
+}

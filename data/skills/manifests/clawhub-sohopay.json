@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15581,
+  "uuid": "skill-clawhub-sohopay",
+  "skillKey": "clawhub-sohopay",
+  "name": "sohopay",
+  "summary": "Initiate payments on the SOHO Pay credit layer using EIP-712 signatures.",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sohopay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nmsteve",
+      "features": [
+        "Initiate payments on the SOHO Pay credit layer using EIP-712 signatures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sohopay@1.0.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23119925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sohopay",
+      "url": "https://clawhub.ai/skills/sohopay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sohopay",
+    "url": "https://clawhub.ai/skills/sohopay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sohopay-fe6a824dba6ec5e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sohopay@1.0.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-sohopay-1.0.17.json",
+      "version": "1.0.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb00fe9c6823ab1fd3283d9202bcfb7f8f55c7c5f201056c3e295aa6914b368d",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:58:56.663Z"
+}

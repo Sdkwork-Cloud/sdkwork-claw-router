@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51188,
+  "uuid": "skill-clawhub-playasia",
+  "skillKey": "clawhub-playasia",
+  "name": "Mcp Server",
+  "summary": "Search and buy digital game codes, eShop cards, PSN vouchers from Play-Asia.com via HTTP or MCP. Three purchase methods — Wallet (instant), Lightning (instan...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playasia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tom",
+      "features": [
+        "Search and buy digital game codes, eShop cards, PSN vouchers from Play-Asia.com via HTTP or MCP",
+        "Three purchase methods — Wallet (instant), Lightning (instan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/playasia@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70365740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "playasia",
+      "url": "https://clawhub.ai/skills/playasia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playasia",
+    "url": "https://clawhub.ai/skills/playasia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playasia-f390d3837a09ce7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/playasia@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-playasia-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e73ac648069ac874e6957e4f4cb67c231840e0cca1a96b53f52705f92d37be2",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T02:13:15.088Z"
+}

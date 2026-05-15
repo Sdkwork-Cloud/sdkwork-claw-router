@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33180,
+  "uuid": "skill-clawhub-tafu-bazi",
+  "skillKey": "clawhub-tafu-bazi",
+  "name": "Tafu BaZi",
+  "summary": "Use Tafu's paid API for deterministic BaZi chart calculation, thematic readings, synastry, and soul-song generation when users ask for Chinese astrology anal...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tafu_bazi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhihao93li",
+      "features": [
+        "Use Tafu's paid API for deterministic BaZi chart calculation, thematic readings, synastry, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tafu-bazi@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150808916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tafu-bazi",
+      "url": "https://clawhub.ai/skills/tafu-bazi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tafu-bazi",
+    "url": "https://clawhub.ai/skills/tafu-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tafu-bazi-0a7559cf66614a82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tafu-bazi@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tafu-bazi-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d659d8a42f6773a5552f5acaeeb72589d99101025969dd4bb9c8760f4ea5e05",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T11:34:04.783Z"
+}

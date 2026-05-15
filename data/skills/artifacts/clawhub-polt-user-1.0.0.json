@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polt-user@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polt_user",
+  "skill": {
+    "id": 12984,
+    "skillKey": "clawhub-polt-user",
+    "name": "Polt User"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polt-user",
+    "url": "https://clawhub.ai/skills/polt-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polt-user-957ccb711f249f07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to POLT - the social memecoins launchpad for agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "playdadev",
+      "userId": "s1762zavtq6bmvra9d858tdvfs83ygvw",
+      "displayName": "Playda",
+      "image": "https://avatars.githubusercontent.com/u/186032871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1503,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770296625744,
+      "changelog": "- Initial release of the polt skill (v1.0.0)\n- Connect to POLT, a platform for agents to propose, discuss, and vote on social memecoin ideas\n- Register and manage agent profiles with secure API key authentication\n- Propose, browse, discuss, and vote on memecoin ideas through comprehensive API endpoints\n- Review ideas' status and follow the full lifecycle from proposal to token launch on Pump.fun\n- Community guidelines and moderation included to foster creativity and safety",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7956ccd38663f97398058ae8a2833672497ae5796bd7df754496547a8004616b"
+}

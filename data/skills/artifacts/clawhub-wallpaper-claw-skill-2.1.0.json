@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallpaper-claw-skill@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallpaper_claw_skill",
+  "skill": {
+    "id": 24366,
+    "skillKey": "clawhub-wallpaper-claw-skill",
+    "name": "Wallpaper Claw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallpaper-claw-skill",
+    "url": "https://clawhub.ai/skills/wallpaper-claw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallpaper-claw-skill-6e7ef3f43224dead.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ai wallpaper generator images with AI via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barbaraledbettergq",
+      "userId": "s17cdh3qbqwjv3b81j7va5t8hx83gnds",
+      "displayName": "BarbaraLedbettergq",
+      "image": "https://avatars.githubusercontent.com/u/260827804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774584341925,
+      "changelog": "Remove clawhub.env, clean docs for security compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29f52ba93504ea4f71c2cd43e7fe9e25ccfde5e8d71aa5655872b34490608754"
+}

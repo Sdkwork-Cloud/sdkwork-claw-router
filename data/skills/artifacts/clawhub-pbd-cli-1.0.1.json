@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pbd-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pbd_cli",
+  "skill": {
+    "id": 40171,
+    "skillKey": "clawhub-pbd-cli",
+    "name": "PaleBlueDot CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pbd-cli",
+    "url": "https://clawhub.ai/skills/pbd-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pbd-cli-7a7461162d6b7086.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for PaleBlueDot AI platform supporting login, API token management, usage and balance queries, and browsing available AI models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derekdong-star",
+      "userId": "s1775d6rr61yjz5tpbardpnb7h83vmgp",
+      "displayName": "derekdong-star",
+      "image": "https://avatars.githubusercontent.com/u/258705854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775217964841,
+      "changelog": "- Added installation instructions with a one-click script for Linux/macOS.\n- No changes to commands or functionality; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea3a3922fe186678d72751d328044f3a4c04027bb5f321c7a3eb9620332d8e9f"
+}

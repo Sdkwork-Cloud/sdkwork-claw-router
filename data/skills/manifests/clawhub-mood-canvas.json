@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27640,
+  "uuid": "skill-clawhub-mood-canvas",
+  "skillKey": "clawhub-mood-canvas",
+  "name": "Mood Canvas",
+  "summary": "Turn a vague emotion, theme, or aesthetic idea into a structured visual mood board blueprint. Use when the user wants a visual brief for design, photography,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_canvas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn a vague emotion, theme, or aesthetic idea into a structured visual mood board blueprint",
+        "Use when the user wants a visual brief for design, photography,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mood-canvas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mood-canvas",
+      "url": "https://clawhub.ai/skills/mood-canvas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-canvas",
+    "url": "https://clawhub.ai/skills/mood-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-canvas-50cb3b5544049030.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mood-canvas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mood-canvas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:146fc8143c16a22766c20188f1dea2715027fd5a8fac84c11250267ecf26abc4",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:59:05.525Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/target-novelty-scorer-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target_novelty_scorer_1",
+  "skill": {
+    "id": 45321,
+    "skillKey": "clawhub-target-novelty-scorer-1",
+    "name": "Target Novelty Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target-novelty-scorer-1",
+    "url": "https://clawhub.ai/skills/target-novelty-scorer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-novelty-scorer-1-d47810ab554d1fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score the novelty of biological targets through literature mining and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775095530600,
+      "changelog": "Initial release of Target Novelty Scorer.\n\n- Scores the novelty of biological targets based on literature mining from academic databases (e.g., PubMed, PMC).\n- Features include literature retrieval, multi-dimensional novelty scoring (0–100), trend analysis, cross-validation, and detailed report generation.\n- Provides both basic and advanced command-line usage, supporting output in text, JSON, or CSV.\n- Assesses targets using five main scoring criteria: research heat, uniqueness, research depth, collaboration network, and temporal trends.\n- Includes security, risk, and evaluation checklists to ensure safe and reliable operation.\n- Requires Python 3.9+, with dependencies including requests, pandas, biopython, and numpy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d0003690a409dbbe87012547c84bfabdb55c587f5f765f8d679a3b30c7e4eff"
+}

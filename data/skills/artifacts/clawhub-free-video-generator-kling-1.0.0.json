@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-kling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_kling",
+  "skill": {
+    "id": 40543,
+    "skillKey": "clawhub-free-video-generator-kling",
+    "name": "Free Video Generator Kling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-kling",
+    "url": "https://clawhub.ai/skills/free-video-generator-kling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-kling-bdaead2788b39c42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text prompt describing a scene into 1080p AI generated videos just by typing what you need. Whether it's generating short AI videos from text pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776754562081,
+      "changelog": "Free Video Generator Kling 1.0.0 — First Release\n\n- Easily generate 1080p AI videos from text or image prompts, no local setup required.\n- Automatic token and session handling with free credits for new users.\n- Supports quick workflows: upload, prompt, and download your video in minutes.\n- Includes cloud-based export with multiple formats (MP4, MOV, AVI, etc.).\n- Integrated error handling for tokens, sessions, credits, and file support.\n- User-friendly prompt routing for exports, uploads, credits, and editing actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1339c0690e6beb6640231a5b95cb1f043360375010feda5c326c1b334af2032"
+}

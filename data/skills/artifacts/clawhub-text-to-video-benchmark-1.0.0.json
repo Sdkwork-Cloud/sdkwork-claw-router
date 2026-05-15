@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-benchmark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_benchmark",
+  "skill": {
+    "id": 46571,
+    "skillKey": "clawhub-text-to-video-benchmark",
+    "name": "Text To Video Benchmark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-benchmark",
+    "url": "https://clawhub.ai/skills/text-to-video-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-benchmark-90db7ad7e0bd632a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get benchmark video clips ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, CSV, JSON, up to 500MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776278557679,
+      "changelog": "Initial release of Text to Video Benchmark.\n\n- Generate AI videos from text prompts, with upload support for TXT, DOCX, CSV, and JSON (up to 500MB).\n- Automatic cloud setup: handles NEMO_TOKEN authentication and cloud session creation.\n- Supports 1080p MP4 exports and batch processing of multiple prompts.\n- Credits balance, session state, and export functions accessible via simple commands.\n- Accurate error messages for token, credits, file size/type, and session issues.\n- Timeline viewer for previewing video, audio, and text tracks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c405e5a9254ddf0bc194e78c5adf730dccccec62f4a96d1a201d58c1c4430037"
+}

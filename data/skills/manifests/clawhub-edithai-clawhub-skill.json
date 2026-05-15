@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21090,
+  "uuid": "skill-clawhub-edithai-clawhub-skill",
+  "skillKey": "clawhub-edithai-clawhub-skill",
+  "name": "Edithai",
+  "summary": "Intelligent log analysis CLI tool powered by DeepSeek API with 30+ built-in tools for file operations, system diagnostics, and log pattern recognition.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edithai_clawhub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xin9min9",
+      "features": [
+        "Intelligent log analysis CLI tool powered by DeepSeek API with 30+ built-in tools for file oper."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edithai-clawhub-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12562720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edithai-clawhub-skill",
+      "url": "https://clawhub.ai/skills/edithai-clawhub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edithai-clawhub-skill",
+    "url": "https://clawhub.ai/skills/edithai-clawhub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edithai-clawhub-skill-644ebd6a8dc76fd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edithai-clawhub-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-edithai-clawhub-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a0880eb5cdfd75c03a8fb82ac1c70154055fc4813c84237bda1c36007e795e1",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:40:09.495Z"
+}

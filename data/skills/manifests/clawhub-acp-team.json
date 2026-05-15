@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22164,
+  "uuid": "skill-clawhub-acp-team",
+  "skillKey": "clawhub-acp-team",
+  "name": "Acp Team",
+  "summary": "Team coordination layer for multi-agent workflows with mailbox, task board, and lease-based task management. Use when users need to coordinate multiple AI ag...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "femto",
+      "features": [
+        "Team coordination layer for multi-agent workflows with mailbox, task board, and lease-based tas.",
+        "Use when users need to coordinate multiple AI ag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acp-team@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acp-team",
+      "url": "https://clawhub.ai/skills/acp-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-team",
+    "url": "https://clawhub.ai/skills/acp-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-team-8d00348f7ea3fe1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acp-team@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acp-team-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27cbb1846e7c9a0fbdb3214b000787e70477f88f9fe6fee1fe2324d4d2919af4",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:59:43.407Z"
+}

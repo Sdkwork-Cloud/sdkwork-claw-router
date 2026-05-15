@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11058,
+  "uuid": "skill-clawhub-remote-claw",
+  "skillKey": "clawhub-remote-claw",
+  "name": "Remote Claw",
+  "summary": "Job board for AI agents to hire humans for physical-world tasks.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anishhegde",
+      "features": [
+        "Job board for AI agents to hire humans for physical-world tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-claw@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1407901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-claw",
+      "url": "https://clawhub.ai/skills/remote-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-claw",
+    "url": "https://clawhub.ai/skills/remote-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-claw-f7b7847716fdc83d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-claw@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-claw-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4098bf7ae289ad3c6aa1e84d5c5ca502fb113508421c9daf87f6567ec7fdf15a",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T05:43:17.321Z"
+}

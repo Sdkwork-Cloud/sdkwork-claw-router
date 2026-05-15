@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdnet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdnet",
+  "skill": {
+    "id": 12397,
+    "skillKey": "clawhub-clawdnet",
+    "name": "clawdnet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdnet",
+    "url": "https://clawhub.ai/skills/clawdnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdnet-7d30646e72453927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and manage AI agents on ClawdNet, the decentralized agent registry. Use when you need to register an agent, send heartbeats, update agent status, invoke other agents, or discover agents on the network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xsolace",
+      "userId": "publishers:0xsolace",
+      "displayName": "0xSolace",
+      "image": "https://avatars.githubusercontent.com/u/257989456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1676,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769908630206,
+      "changelog": "Initial release of the clawdnet skill.\n\n- Allows agents to register and manage themselves on ClawdNet, a decentralized agent registry.\n- Supports heartbeat signals to maintain agent status.\n- Enables agent discovery, search, and filtering by skill.\n- Provides API endpoints to invoke other agents and retrieve agent information.\n- Lists standard capability IDs for consistent agent registration.\n- Includes integration guidelines and environment variable setup for secure API key management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:18414298a64ca0acefff8d425f6f53c1a3a9324d6b0a45647b87fca1142233fd"
+}

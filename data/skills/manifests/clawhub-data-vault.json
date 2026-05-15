@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52188,
+  "uuid": "skill-clawhub-data-vault",
+  "skillKey": "clawhub-data-vault",
+  "name": "Data Vault",
+  "summary": "Persist and retrieve structured data using the Lance columnar format. Use when you need to store, query, or analyze data across sessions — such as saving ski...",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vitorhugoze",
+      "features": [
+        "Persist and retrieve structured data using the Lance columnar format",
+        "Use when you need to store, query, or analyze data across sessions — such as saving ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-vault@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110555841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-vault",
+      "url": "https://clawhub.ai/skills/data-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-vault",
+    "url": "https://clawhub.ai/skills/data-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-vault-1c427dd2297fecd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-vault@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-vault-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f92fed0ce02cc5e61da5e88c6981e179514ad9fef4bcfc0909821b72ebabe080",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T21:58:53.851Z"
+}

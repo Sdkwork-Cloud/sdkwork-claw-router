@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14816,
+  "uuid": "skill-clawhub-review",
+  "skillKey": "clawhub-review",
+  "name": "Review",
+  "summary": "Professional reviewer and critic. Trigger whenever the user wants structured feedback on anything: documents, plans, code, decisions, strategies, designs, pi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "Professional reviewer and critic",
+        "Trigger whenever the user wants structured feedback on anything: documents, plans, code, decisi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review",
+      "url": "https://clawhub.ai/skills/review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review",
+    "url": "https://clawhub.ai/skills/review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-c97ace4c8fef2cee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6066da6781128846b90ce5f22e5909bd8b5e108ef376838757c8a80ffbcd1651",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:57:15.640Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14390,
+  "uuid": "skill-clawhub-evolution-api",
+  "skillKey": "clawhub-evolution-api",
+  "name": "Evolution Api v2",
+  "summary": "Complete WhatsApp automation via Evolution API v2.3 - instances, messages (text/media/polls/lists/buttons/status), groups, labels, chatbots (Typebot/OpenAI/Dify/Flowise/N8N/EvoAI), webhooks, proxy, S3 storage, and Chatwoot integration",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "impa365",
+      "features": [
+        "Complete WhatsApp automation via Evolution API v2.3",
+        "instances, messages (text/media/polls/lists/buttons/status), groups, labels, chatbots (Typebot/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolution-api@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91766929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolution-api",
+      "url": "https://clawhub.ai/skills/evolution-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-api",
+    "url": "https://clawhub.ai/skills/evolution-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-api-eb6f283629f6f863.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolution-api@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolution-api-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9ff4f3624e1b234f0ffe462d0fbaf81cadcd038f3f777d94003cc90257c5ac8",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T05:47:02.878Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supernote-cloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supernote_cloud",
+  "skill": {
+    "id": 11906,
+    "skillKey": "clawhub-supernote-cloud",
+    "name": "Supernote Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supernote-cloud",
+    "url": "https://clawhub.ai/skills/supernote-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supernote-cloud-36f0cc0e234b1857.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access a self-hosted Supernote Private Cloud instance to browse files and folders, upload documents (PDF, EPUB) and notes, convert web articles to EPUB/PDF and send them to the device, check storage capacity, and navigate the directory tre."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickian",
+      "userId": "publishers:nickian",
+      "displayName": "nickian",
+      "image": "https://avatars.githubusercontent.com/u/590678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1980,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769630155396,
+      "changelog": "Initial release: browse files, upload documents, convert web articles to EPUB/PDF and send to Supernote e-ink device via self-hosted Private Cloud API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a6139be42feddd19c85a30025ef0c7422ccdc5aa7c3cd90bed49e51b1936f48"
+}

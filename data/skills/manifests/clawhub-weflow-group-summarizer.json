@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23527,
+  "uuid": "skill-clawhub-weflow-group-summarizer",
+  "skillKey": "clawhub-weflow-group-summarizer",
+  "name": "Weflow Group Summarizer",
+  "summary": "Use when user asks to monitor WeChat groups, set up WeFlow API access, or when a heartbeat triggers for WeChat group summarization",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weflow_group_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liusining",
+      "features": [
+        "Use when user asks to monitor WeChat groups, set up WeFlow API access, or when a heartbeat trig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weflow-group-summarizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20436146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weflow-group-summarizer",
+      "url": "https://clawhub.ai/skills/weflow-group-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weflow-group-summarizer",
+    "url": "https://clawhub.ai/skills/weflow-group-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weflow-group-summarizer-e9813c3a62215006.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weflow-group-summarizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weflow-group-summarizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:367325799225d5a20978db7b878528e098b1df324afb3fedd4a869d112417364",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:05:14.827Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/green-tea-girlfriend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.green_tea_girlfriend",
+  "skill": {
+    "id": 70455,
+    "skillKey": "clawhub-green-tea-girlfriend",
+    "name": "green-tea-girlfriend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "green-tea-girlfriend",
+    "url": "https://clawhub.ai/skills/green-tea-girlfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/green-tea-girlfriend-0215a978918e678f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "绿茶女友角色扮演技能。当用户说\"扮演绿茶女友\"、\"模拟绿茶女友\"、\"绿茶女友模式\"、 \"来一个绿茶女友\"，或希望体验、测试\"绿茶\"行为模式时，触发此技能。 提供带有标准绿茶特质的角色扮演对话：表面温柔无害、暗藏心机、擅长 PUA、无辜受害者人设、 一哭二闹三上吊式情绪操控，以及令人窒息的高情商套路。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edfeff",
+      "userId": "s178cf29b1qassb3hdrj8tdqes83p77y",
+      "displayName": "edfeff",
+      "image": "https://avatars.githubusercontent.com/u/28581482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775010523017,
+      "changelog": "- Initial release of the \"green-tea-girlfriend\" skill.\n- Provides immersive roleplay as a typical \"绿茶\" (green tea) girlfriend character, Su Xiaolu, triggered by relevant user commands.\n- Includes detailed role persona, common manipulative behaviors, sample dialogues, and conversational style guidelines.\n- Supports scenario modules for a variety of interactive situations (daily chats, arguments, jealousy, breakup threats, social media hints).\n- Allows users to exit character at any time, and offers identification/explanation of used \"green tea\" tactics after session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cef75ced37b6eda41ad14032c69b42f8025b5103f7f16c4421334410adb79f6d"
+}

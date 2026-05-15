@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-trending-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_monitor",
+  "skill": {
+    "id": 21110,
+    "skillKey": "clawhub-github-trending-monitor",
+    "name": "GitHub Trending Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-monitor",
+    "url": "https://clawhub.ai/skills/github-trending-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-monitor-fb34f88e13196b29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor GitHub trending repositories by language and time range, receiving daily alerts via Telegram, Discord, or Email with pay-per-use pricing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhdryanchang",
+      "userId": "s176vtxqys9dn59s845h1ht27d844hwf",
+      "displayName": "zhdryanchang",
+      "image": "https://avatars.githubusercontent.com/u/252296405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772780007664,
+      "changelog": "Initial release: Monitor GitHub trending repositories with multi-channel notifications (Telegram, Discord, Email). Features include language filtering, time range selection, scheduled daily reports, and SkillPay integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9675882dca3633a39d83e679522f2485b7080610c1fe33a3a2f7bea9010b8905"
+}

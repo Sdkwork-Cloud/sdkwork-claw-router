@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10590,
+  "uuid": "skill-clawhub-mens-mental-health",
+  "skillKey": "clawhub-mens-mental-health",
+  "name": "Mens Mental Health",
+  "summary": "Mental health support for men with emotion check-ins, stress tools, and no-judgment space",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mens_mental_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Mental health support for men with emotion check-ins, stress tools, and no-judgment space"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mens-mental-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mens-mental-health",
+      "url": "https://clawhub.ai/skills/mens-mental-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mens-mental-health",
+    "url": "https://clawhub.ai/skills/mens-mental-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mens-mental-health-e3ad3b5d0da2de10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mens-mental-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mens-mental-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e10ff9fdc952d9c29e5d55d6087e4f80c5e73c3c648df2ab9b13efb966f01f5b",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:34:35.304Z"
+}

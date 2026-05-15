@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16091,
+  "uuid": "skill-clawhub-x-extract",
+  "skillKey": "clawhub-x-extract",
+  "name": "X Extract",
+  "summary": "Extract tweet content from x.com URLs without credentials using browser automation. Use when user asks to \"extract tweet\", \"download x.com link\", \"get tweet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_extract",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Extract tweet content from x.com URLs without credentials using browser automation",
+        "Use when user asks to \"extract tweet\", \"download x.com link\", \"get tweet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-extract",
+      "url": "https://clawhub.ai/skills/x-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-extract",
+    "url": "https://clawhub.ai/skills/x-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-extract-cebdc4d4b6a123d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b4cd6cf755837b4fc6cdd6b07179eda2bae44386689e1ce6953ee8235c93c48",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:56:35.795Z"
+}

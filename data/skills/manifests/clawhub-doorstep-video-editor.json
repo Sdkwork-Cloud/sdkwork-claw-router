@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62583,
+  "uuid": "skill-clawhub-doorstep-video-editor",
+  "skillKey": "clawhub-doorstep-video-editor",
+  "name": "Video Editor - 视频剪辑",
+  "summary": "视频剪辑技能 - 基于moviepy + ffmpeg的视频处理工具箱。功能：(1) 裁剪/合并/分割视频，(2) 添加中文文字/字幕，(3) 添加/替换背景音乐，(4) 变速/调整尺寸，(5) 提取/替换音频，(6) 纯文字讲解视频生成。Use when: (1) 需要剪辑短视频（抖音/小红书），(2) 需要给...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_video_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ncsimok",
+      "features": [
+        "基于moviepy + ffmpeg的视频处理工具箱。功能：(1) 裁剪/合并/分割视频，(2) 添加中文文字/字幕，(3) 添加/替换背景音乐，(4) 变速/调整尺寸，(5) 提取/替换音."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doorstep-video-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128122169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doorstep-video-editor",
+      "url": "https://clawhub.ai/skills/doorstep-video-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-video-editor",
+    "url": "https://clawhub.ai/skills/doorstep-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-video-editor-91d8625ee79a2cca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doorstep-video-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doorstep-video-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc7b50487d7a6e39b70510286ebd753813e7cbe1ab9a2e10a054304b3822919d",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T09:28:22.036Z"
+}

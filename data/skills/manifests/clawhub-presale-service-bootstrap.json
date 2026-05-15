@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18460,
+  "uuid": "skill-clawhub-presale-service-bootstrap",
+  "skillKey": "clawhub-presale-service-bootstrap",
+  "name": "Presale Service Bootstrap",
+  "summary": "Scaffold a new presale service foundation (docs/config/plans/readiness) before coding. Use when starting a new presale automation service, rebuilding project...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presale_service_bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dima Tsiomo",
+      "features": [
+        "Scaffold a new presale service foundation (docs/config/plans/readiness) before coding",
+        "Use when starting a new presale automation service, rebuilding project..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presale-service-bootstrap@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59199852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presale-service-bootstrap",
+      "url": "https://clawhub.ai/skills/presale-service-bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presale-service-bootstrap",
+    "url": "https://clawhub.ai/skills/presale-service-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presale-service-bootstrap-65a178f5e68b513a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presale-service-bootstrap@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-presale-service-bootstrap-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:779354348a227852e2faa08b3cfd262fb714567644d94d3dedb1e01971938285",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T05:43:54.612Z"
+}

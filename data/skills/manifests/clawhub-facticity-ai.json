@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20054,
+  "uuid": "skill-clawhub-facticity-ai",
+  "skillKey": "clawhub-facticity-ai",
+  "name": "Facticity.AI Complete Integration",
+  "summary": "Complete Facticity.AI integration - fact-check claims, extract claims from content, transcribe links, check link reliability, check credits, and monitor task...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facticity_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shahruj",
+      "features": [
+        "Complete Facticity.AI integration",
+        "fact-check claims, extract claims from content, transcribe links, check link reliability, check."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facticity-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57801700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facticity-ai",
+      "url": "https://clawhub.ai/skills/facticity-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facticity-ai",
+    "url": "https://clawhub.ai/skills/facticity-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facticity-ai-000321c88da2a891.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facticity-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-facticity-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcd4336295dd3c51751449f9f78815feaa329558bccc5e95a2c4be8dd63d2b49",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T06:57:45.384Z"
+}

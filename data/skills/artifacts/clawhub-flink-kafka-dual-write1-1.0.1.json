@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flink-kafka-dual-write1@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flink_kafka_dual_write1",
+  "skill": {
+    "id": 58557,
+    "skillKey": "clawhub-flink-kafka-dual-write1",
+    "name": "kafka写入hive和sr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flink-kafka-dual-write1",
+    "url": "https://clawhub.ai/skills/flink-kafka-dual-write1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flink-kafka-dual-write1-c938021d8a8f5b5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 bethune 项目生成新的 Flink Kafka 到 Hive 和 StarRocks 双写监控任务，参考 Bus_Search_ReplacePrice_KafkaToStarRock_34 及相邻的 33/35/36 模式，自动产出 Job 类、MessageModel、PO、4 个 config.p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "printsky",
+      "userId": "s177fys2sf0hb62s95g7f1szd183g4qk",
+      "displayName": "printsky",
+      "image": "https://avatars.githubusercontent.com/u/20061563?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773921325705,
+      "changelog": "Version 1.0.1\n\n- Added _meta.json metadata file to the project.\n- No changes to skill logic or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d475e7d90712cc248cba2f027cbd6cf696f29f7032143383ba2d2b0035ca37a7"
+}

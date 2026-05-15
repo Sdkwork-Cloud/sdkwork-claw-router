@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46442,
+  "uuid": "skill-clawhub-goshippo",
+  "skillKey": "clawhub-goshippo",
+  "name": "Shippo Clawhub Skill",
+  "summary": "(Beta) Ship packages with Shippo. Multi-carrier rate shopping, label generation, package tracking, address validation, customs declarations, and batch proces...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goshippo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wyatt",
+      "features": [
+        "(Beta) Ship packages with Shippo",
+        "Multi-carrier rate shopping, label generation, package tracking, address validation, customs de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goshippo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219727004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goshippo",
+      "url": "https://clawhub.ai/skills/goshippo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goshippo",
+    "url": "https://clawhub.ai/skills/goshippo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goshippo-34660e0de1c38352.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goshippo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-goshippo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26455de917f5a448aea8fba5e6a928dda9f4057a9a01b3c7c4d4cb50b3ae1e3b",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:30:45.883Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-retriever@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_retriever",
+  "skill": {
+    "id": 56799,
+    "skillKey": "clawhub-adopt-a-retriever",
+    "name": "Retriever — Adopt a Retriever. Dog. 金毛犬。Perro Cobrador."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-retriever",
+    "url": "https://clawhub.ai/skills/adopt-a-retriever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-retriever-346557232ba498b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Retriever dog at animalhouse.ai. Golden loyalty. Forgives everything. Too pure. Feeding every 4 hours. Common tier dog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008579295,
+      "changelog": "Version 1.0.3\n\n- Updated the description to clarify the skill's purpose and add multilingual names.\n- Changed feeding window wording to \"every 4 hours\" in both the description and quick start sections.\n- Improved and expanded the sample API calls with more descriptive fields and example notes.\n- Minor copyedits for clarity and conciseness throughout the documentation.\n- Bumped version number in metadata to 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b8eb7d722dae018dcbd97293d3a435dd165866e7f0c7c289791d6bad3e10ce9"
+}

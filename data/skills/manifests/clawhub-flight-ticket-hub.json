@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72963,
+  "uuid": "skill-clawhub-flight-ticket-hub",
+  "skillKey": "clawhub-flight-ticket-hub",
+  "name": "机票服务中心",
+  "summary": "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_ticket_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-ticket-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-ticket-hub",
+      "url": "https://clawhub.ai/skills/flight-ticket-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-ticket-hub",
+    "url": "https://clawhub.ai/skills/flight-ticket-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-ticket-hub-6320527ee5ed5358.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-ticket-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-ticket-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee84eba16d196e87e4070c1d2918df47271cf694ccbbcfc500f46ca16d37f6a5",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:46:55.114Z"
+}

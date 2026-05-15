@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71418,
+  "uuid": "skill-clawhub-diy-pc-master",
+  "skillKey": "clawhub-diy-pc-master",
+  "name": "diy-pc-master",
+  "summary": "电脑DIY装机大师技能。用于帮助用户进行电脑配置推荐、装机方案分析、配件兼容性判断。当用户询问装机配置、电脑推荐、预算配置、配件分析、配置测评等问题时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diy_pc_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangzbin90-source",
+      "features": [
+        "电脑DIY装机大师技能。用于帮助用户进行电脑配置推荐、装机方案分析、配件兼容性判断。当用户询问装机配置、电脑推荐、预算配置、配件分析、配置测评等问题时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diy-pc-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257249300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diy-pc-master",
+      "url": "https://clawhub.ai/skills/diy-pc-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diy-pc-master",
+    "url": "https://clawhub.ai/skills/diy-pc-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diy-pc-master-043cf930631586d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diy-pc-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diy-pc-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16c376e206ab2ae82cfeeda2f25e6f1bb15c80a63226019cdb6d11d28100f02b",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:29:06.571Z"
+}

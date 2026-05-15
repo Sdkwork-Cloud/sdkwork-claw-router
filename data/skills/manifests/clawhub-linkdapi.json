@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10613,
+  "uuid": "skill-clawhub-linkdapi",
+  "skillKey": "clawhub-linkdapi",
+  "name": "Linkedin API",
+  "summary": "Work with LinkdAPI Python SDK for accessing LinkedIn professional profile and company data. Use when you need to fetch profile information, company data, job listings, or search for people/jobs on LinkedIn. The skill uses uv script pattern.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkdapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foontinz",
+      "features": [
+        "Work with LinkdAPI Python SDK for accessing LinkedIn professional profile and company data",
+        "Use when you need to fetch profile information, company data, job listings, or search for peopl.",
+        "The skill uses uv script pattern for ephemeral Python scripts with inline dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkdapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94636779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkdapi",
+      "url": "https://clawhub.ai/skills/linkdapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkdapi",
+    "url": "https://clawhub.ai/skills/linkdapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkdapi-c64d2c4c2dbf2cac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkdapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkdapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f33c3b1ea073fdcc54cf298167018970b92ac050941d5df7a924a520c76c3614",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:12:02.491Z"
+}

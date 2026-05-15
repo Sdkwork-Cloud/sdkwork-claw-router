@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uptime-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uptime_checker",
+  "skill": {
+    "id": 29877,
+    "skillKey": "clawhub-uptime-checker",
+    "name": "Uptime Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uptime-checker",
+    "url": "https://clawhub.ai/skills/uptime-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uptime-checker-7b0cbe460a5b19df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight URL uptime checker and response time monitor. Check if websites and APIs are up, measure response times, track history, and detect SSL issues. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493619719,
+      "changelog": "Initial release of uptime-checker.\n\n- Lightweight tool for checking URL uptime and measuring response times.\n- Supports monitoring multiple URLs and tracking history.\n- Detects SSL certificate issues and HTTP redirects.\n- Flexible options for expected status codes, request methods, headers, and timeouts.\n- Provides JSON and text outputs for easy integration with scripts and reports.\n- No external dependencies; uses only Python standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f781d15ba40868053f296bbe3023233f06b94374926ea354a841c7e99955f1ff"
+}

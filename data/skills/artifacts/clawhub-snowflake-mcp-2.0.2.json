@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snowflake-mcp@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snowflake_mcp",
+  "skill": {
+    "id": 10000,
+    "skillKey": "clawhub-snowflake-mcp",
+    "name": "Snowflake MCP Connection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snowflake-mcp",
+    "url": "https://clawhub.ai/skills/snowflake-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snowflake-mcp-3f1190a3b7ec79bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to the Snowflake Managed MCP server with Clawdbot or other MCP clients. Use when wiring Snowflake MCP endpoints, validating connectivity, or configuring Cortex AI services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vikrambalaaj",
+      "userId": "publishers:vikrambalaaj",
+      "displayName": "vikrambalaaj",
+      "image": "https://avatars.githubusercontent.com/u/134609800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2803,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1769705215400,
+      "changelog": "- Documentation in SKILL.md was rewritten for clarity and brevity.\n- Refined the description and Quick Start section to focus on endpoint creation, authentication, and tool validation.\n- Updated Clawdbot configuration instructions for concise setup steps.\n- Removed repeated or verbose explanations to make the guide easier to follow.\n- No changes to functionality or code—documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c267f8d6417fa3b4849a24bd03a30e2cc96d7839c9203fa406d8d075acb0480"
+}

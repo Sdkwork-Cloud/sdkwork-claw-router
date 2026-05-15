@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdk-x5-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_system",
+  "skill": {
+    "id": 60815,
+    "skillKey": "clawhub-rdk-x5-system",
+    "name": "Rdk X5 System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-system",
+    "url": "https://clawhub.ai/skills/rdk-x5-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-system-fcefcf1bcec78d9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "修改和管理 RDK X5 系统配置：查看系统版本/硬件信息/系统日志、rdk-backup 一键备份与恢复、apt OTA 升级、miniboot 固件更新、CPU/BPU 频率调节与温度阈值设置、config.txt 配置修改、实时内核切换、systemd 开机自启动、存储扩容。Use when the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katherineedwards2475",
+      "userId": "s171fb3mdcgkeseprx9k9hd0v583wsb1",
+      "displayName": "qiaolongli",
+      "image": "https://avatars.githubusercontent.com/u/262944264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773211179455,
+      "changelog": "Initial release: system management, backup, upgrade, autostart, storage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a83eeece7e17b8c3464b27a1d56b9595e6e808537fe660d5404437deae14dc42"
+}

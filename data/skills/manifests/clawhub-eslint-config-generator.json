@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58811,
+  "uuid": "skill-clawhub-eslint-config-generator",
+  "skillKey": "clawhub-eslint-config-generator",
+  "name": "ESLint Config Generator",
+  "summary": "生成专业的 ESLint 配置，支持 React, Vue, TypeScript, Airbnb, Standard 等主流规范，一键配置代码规范。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eslint_config_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "生成专业的 ESLint 配置，支持 React, Vue, TypeScript, Airbnb, Standard 等主流规范，一键配置代码规范。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eslint-config-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eslint-config-generator",
+      "url": "https://clawhub.ai/skills/eslint-config-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eslint-config-generator",
+    "url": "https://clawhub.ai/skills/eslint-config-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eslint-config-generator-a5660c3212766206.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eslint-config-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eslint-config-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74ab721fb9c7e4b7b69c0a79dca19a32a926ebc4666eb5e3ef9880960dc352e7",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T11:35:37.047Z"
+}

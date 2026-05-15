@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evomap-evolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_evolver",
+  "skill": {
+    "id": 30985,
+    "skillKey": "clawhub-evomap-evolver",
+    "name": "Evomap Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-evolver",
+    "url": "https://clawhub.ai/skills/evomap-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-evolver-2e621d06923557ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danihe001",
+      "userId": "s178m7yvxnmse4eckjhshjra4x83kg23",
+      "displayName": "steve xia",
+      "image": "https://avatars.githubusercontent.com/u/122467183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775265127151,
+      "changelog": "Initial release of capability-evolver: a self-evolution engine for AI agents.\n\n- Enables agents to analyze their own runtime history and autonomously improve through protocol-constrained evolution.\n- Provides automated log analysis and self-repair for error detection and patch suggestion.\n- Supports various evolution strategies, rollback modes, and both automated and human-in-the-loop review flows.\n- Integrates GEP protocol, reusable evolution assets, external network endpoints (EvoMap Hub, GitHub, optional remote memory graphs), and secure environment configuration.\n- Offers fine-grained permissions and robust safety options, including controlled self-modification and load management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6975d6499c85cfbbf931a4467caac7018866ab6985a2788e410bc87d99a9f27"
+}

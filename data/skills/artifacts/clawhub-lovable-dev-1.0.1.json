@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovable-dev@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovable_dev",
+  "skill": {
+    "id": 61407,
+    "skillKey": "clawhub-lovable-dev",
+    "name": "Lovable Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovable-dev",
+    "url": "https://clawhub.ai/skills/lovable-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovable-dev-d7bb2e95aa65e7b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lovable AI 全栈开发助手，精通自然语言建站、Supabase 集成、组件生成、一键部署"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774194489612,
+      "changelog": "- Initial release of \"Lovable Dev\" skill documentation.\n- Updated name, description, and tags to reflect Lovable AI fullstack assistant focus.\n- Added detailed capability sections on natural language-driven site building, Supabase integration, GitHub sync, and one-click deployment.\n- Included comparison table with competing tools (Bolt.new, v0.dev, Replit).\n- Added best practices and prompt engineering tips for optimal results.\n- Replaces previous version focused on Claude prompt engineering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b801a8f67a1933c77c7ea2d0c7b161efa0b3acaae64af63b4b142248f36d3fdf"
+}

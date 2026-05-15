@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59768,
+  "uuid": "skill-clawhub-douyin-messager",
+  "skillKey": "clawhub-douyin-messager",
+  "name": "Douyin Messager | 抖音私信助手",
+  "summary": "Douyin DMs and video/note comment assistant. 抖音私信与视频/图文评论助手；可读私信、分析评论区，评论/回复等写入前必须确认。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_messager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morois",
+      "features": [
+        "Douyin DMs and video/note comment assistant",
+        "抖音私信与视频/图文评论助手；可读私信、分析评论区，评论/回复等写入前必须确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-messager@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98001108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-messager",
+      "url": "https://clawhub.ai/skills/douyin-messager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-messager",
+    "url": "https://clawhub.ai/skills/douyin-messager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-messager-59ce3beac7539de0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-messager@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-messager-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a773be5128f08c2022eb9721e8273c37329e53987ca1058e5183dfae70da9003",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T17:25:39.073Z"
+}

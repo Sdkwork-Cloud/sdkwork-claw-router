@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63158,
+  "uuid": "skill-clawhub-pixelmagic-photologic-9z",
+  "skillKey": "clawhub-pixelmagic-photologic-9z",
+  "name": "PixelMagic-PhotoLogic-9z",
+  "summary": "专业图像后期处理工具。支持多种修图风格（末日大片、日系清新、复古胶片等），自动检测并安装 ImageMagick，支持 RAW/JPG/PNG 等多种格式，提供批量处理和自定义预设功能。Use when: (1)用户需要修图/调色/加滤镜, (2)处理 RAW 格式照片, (3)批量处理图片, (4)创建自定义修图预设",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixelmagic_photologic_9z",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "couplefishes",
+      "features": [
+        "专业图像后期处理工具。支持多种修图风格（末日大片、日系清新、复古胶片等），自动检测并安装 ImageMagick，支持 RAW/JPG/PNG 等多种格式，提供批量处理和自定义预设功能。Us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixelmagic-photologic-9z@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35591075?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixelmagic-photologic-9z",
+      "url": "https://clawhub.ai/skills/pixelmagic-photologic-9z"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixelmagic-photologic-9z",
+    "url": "https://clawhub.ai/skills/pixelmagic-photologic-9z",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixelmagic-photologic-9z-353e3fb85ea02f9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixelmagic-photologic-9z@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixelmagic-photologic-9z-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1de1241cc54a02c33ba714d76c9f25202ba99c197c0bff0d7baecddc7b55b2f",
+      "artifactSizeBytes": 2691
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:33:29.364Z"
+}

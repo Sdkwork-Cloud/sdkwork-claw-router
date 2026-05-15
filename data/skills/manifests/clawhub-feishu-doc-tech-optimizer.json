@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65488,
+  "uuid": "skill-clawhub-feishu-doc-tech-optimizer",
+  "skillKey": "clawhub-feishu-doc-tech-optimizer",
+  "name": "feishu-doc-tech-optimizer",
+  "summary": "原地优化飞书文档内容，强制输出极度严谨、纯技术文档风格（RFC/阿里云/华为云级别），禁止新建文档、禁止任何废话",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_tech_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taooooooooooooooo",
+      "features": [
+        "原地优化飞书文档内容，强制输出极度严谨、纯技术文档风格（RFC/阿里云/华为云级别），禁止新建文档、禁止任何废话"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-tech-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112991218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-tech-optimizer",
+      "url": "https://clawhub.ai/skills/feishu-doc-tech-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-tech-optimizer",
+    "url": "https://clawhub.ai/skills/feishu-doc-tech-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-tech-optimizer-1adb18cb25d18e03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-tech-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-tech-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:066fde021ab779fd736b54a6233805f873bcc6a23b1ea9b1826250a6a2d592df",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T09:30:30.311Z"
+}

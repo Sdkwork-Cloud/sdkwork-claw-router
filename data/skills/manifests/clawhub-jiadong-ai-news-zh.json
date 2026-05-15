@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62783,
+  "uuid": "skill-clawhub-jiadong-ai-news-zh",
+  "skillKey": "clawhub-jiadong-ai-news-zh",
+  "name": "Ai News Zh",
+  "summary": "中文AI科技日报自动采集与推送。从The Verge、Wired、TechCrunch等英文源抓取最新AI资讯，自动翻译整理为中文，按分类推送到飞书/Telegram/Discord等渠道。适合关注AI行业动态的中文用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiadong_ai_news_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiadong0723",
+      "features": [
+        "中文AI科技日报自动采集与推送。从The Verge、Wired、TechCrunch等英文源抓取最新AI资讯，自动翻译整理为中文，按分类推送到飞书/Telegram/Discord等渠道。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiadong-ai-news-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267246555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiadong-ai-news-zh",
+      "url": "https://clawhub.ai/skills/jiadong-ai-news-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiadong-ai-news-zh",
+    "url": "https://clawhub.ai/skills/jiadong-ai-news-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiadong-ai-news-zh-4982988e05ae360a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiadong-ai-news-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiadong-ai-news-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449c0357738b54884969c714bf65cfab64e721fe1ed7247d6449e1ae10351a41",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:25:45.608Z"
+}

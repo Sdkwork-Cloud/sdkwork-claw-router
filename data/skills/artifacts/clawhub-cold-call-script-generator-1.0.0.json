@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cold-call-script-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_call_script_generator",
+  "skill": {
+    "id": 48838,
+    "skillKey": "clawhub-cold-call-script-generator",
+    "name": "Cold Call Script Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-call-script-generator",
+    "url": "https://clawhub.ai/skills/cold-call-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-call-script-generator-7c052f64e50fd4a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized cold call openers, voicemail scripts, cold email opening lines, and full multi-touch outbound sequences for B2B sales reps, SDRs, and f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777599279524,
+      "changelog": "Initial release of the Cold Call Script Generator skill.\n\n- Generates personalized cold call scripts, voicemail templates, and outbound email openers for B2B sales teams and founder-led sales.\n- Incorporates real prospect research, pain hypothesis generation (tiered by signal strength), and objection handling.\n- Features pattern-interrupt opening frameworks and tone calibration based on ideal customer profile (ICP).\n- Supports building full multi-touch outbound sequences and customized opener variations.\n- Triggered by requests such as \"cold call script\", \"voicemail script\", \"cold email opener\", \"outbound cadence\", and similar sales prospecting prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30e9280555d4aeb3a9e3a1b7f9a4ab731a402f2dd926e1d26b531ece0513fdd5"
+}

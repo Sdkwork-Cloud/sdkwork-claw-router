@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36013,
+  "uuid": "skill-clawhub-commercetools",
+  "skillKey": "clawhub-commercetools",
+  "name": "Commercetools",
+  "summary": "Commercetools integration. Manage data, records, and automate workflows. Use when the user wants to interact with Commercetools data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commercetools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Commercetools integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Commercetools data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commercetools@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commercetools",
+      "url": "https://clawhub.ai/skills/commercetools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commercetools",
+    "url": "https://clawhub.ai/skills/commercetools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commercetools-f77f4913a7458f53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commercetools@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-commercetools-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e1dcf08b23183d34a2a7ebe40cdce43c52e84ec656065e7c350af42d9abb782",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:20:27.536Z"
+}

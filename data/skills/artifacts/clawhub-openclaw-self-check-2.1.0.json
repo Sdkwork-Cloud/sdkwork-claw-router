@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-self-check@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_check",
+  "skill": {
+    "id": 63587,
+    "skillKey": "clawhub-openclaw-self-check",
+    "name": "Self-Check Enhanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-check",
+    "url": "https://clawhub.ai/skills/openclaw-self-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-check-a11fc3607da5b4c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统自检工具。全面检查环境配置、文件完整性、Gateway、备份状态、日志报错、磁盘用量等，汇报问题并给出修复建议（不主动修复）。兼容 workspace/workspace-xxx 两种命名。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangsuann",
+      "userId": "s176dgnza5ckzy094pj10h0xm186axgy",
+      "displayName": "TangSuann",
+      "image": "https://avatars.githubusercontent.com/u/244341551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 71,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1778256381638,
+      "changelog": "路径检测兼容 workspace/workspace-xxx；新增备份状态、日志报错、磁盘状态三项检测；nvm 可选",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b74ffef9d2f9551d7dd37d729b28b9412d587c51d1b5e49c25bb9379f8f54783"
+}

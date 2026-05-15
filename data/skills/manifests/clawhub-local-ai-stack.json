@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45874,
+  "uuid": "skill-clawhub-local-ai-stack",
+  "skillKey": "clawhub-local-ai-stack",
+  "name": "Local AI Stack",
+  "summary": "Transform your Mac into an offline AI workstation with Ollama and OpenCode, running curated local models for coding and reasoning without internet or API costs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_ai_stack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaysclawd-cloud",
+      "features": [
+        "Transform your Mac into an offline AI workstation with Ollama and OpenCode, running curated loc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-ai-stack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270541648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-ai-stack",
+      "url": "https://clawhub.ai/skills/local-ai-stack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-ai-stack",
+    "url": "https://clawhub.ai/skills/local-ai-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-ai-stack-2b9e629d419eb3d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-ai-stack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-ai-stack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0ba36c00b56bcf0d12ac017cd38d8ad386cf35b236ffb990cb6b967144a90e6",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:42:28.828Z"
+}

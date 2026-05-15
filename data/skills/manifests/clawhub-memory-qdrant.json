@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8633,
+  "uuid": "skill-clawhub-memory-qdrant",
+  "skillKey": "clawhub-memory-qdrant",
+  "name": "OpenClaw Memory Qdrant",
+  "summary": "Local semantic memory with Qdrant and Transformers.js. Store, search, and recall conversation context using vector embeddings (fully local, no API keys).",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_qdrant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuiho",
+      "features": [
+        "Local semantic memory with Qdrant and Transformers.js",
+        "Store, search, and recall conversation context using vector embeddings (fully local, no API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-qdrant@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31877877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-qdrant",
+      "url": "https://clawhub.ai/skills/memory-qdrant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-qdrant",
+    "url": "https://clawhub.ai/skills/memory-qdrant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-qdrant-51aa4fc97a6f037e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-qdrant@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-qdrant-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e22e9e696ea43f1ed5ae5bf24fcad51d69538c944a177fe15d28bd05c4f050e",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:13:49.545Z"
+}

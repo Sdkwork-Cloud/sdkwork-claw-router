@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/query-policy-deepseek@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_policy_deepseek",
+  "skill": {
+    "id": 58018,
+    "skillKey": "clawhub-query-policy-deepseek",
+    "name": "编程政策查找"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-policy-deepseek",
+    "url": "https://clawhub.ai/skills/query-policy-deepseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-policy-deepseek-a3e94cc7c8467490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to query or search for \"科技特长生升学政策\" (technology/specialty student admission policies), batch query education poli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfm-mid",
+      "userId": "s17f0m3c9rxxqfrm4pyebec0xd8614sb",
+      "displayName": "酒不换桃花",
+      "image": "https://avatars.githubusercontent.com/u/112449400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777808268192,
+      "changelog": "Query Policy DeepSeek Skill 1.0.0 – Initial Release\n\n- Enables batch querying of technology/specialty student admission policies by region in China using DeepSeek API.\n- Provides script for reading input regions, querying policies, parsing results, and writing to a CSV file compatible with Excel.\n- Ensures only approved competition types are included per policy requirements.\n- CSV output includes detailed policy info: year, quota, requirements, eligible students, and admission process.\n- Default script paths and configuration details included for setup and execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61ac299d7b835a39a21cb900f35ba3dc07ef539ac43d5498c8a90385037b66e1"
+}

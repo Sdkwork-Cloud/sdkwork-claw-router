@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26627,
+  "uuid": "skill-clawhub-anymail-finder",
+  "skillKey": "clawhub-anymail-finder",
+  "name": "Anymail Finder",
+  "summary": "Anymail Finder integration. Manage data, records, and automate workflows. Use when the user wants to interact with Anymail Finder data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anymail_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Anymail Finder integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Anymail Finder data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anymail-finder@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anymail-finder",
+      "url": "https://clawhub.ai/skills/anymail-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anymail-finder",
+    "url": "https://clawhub.ai/skills/anymail-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anymail-finder-7b1992c88ca0a351.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anymail-finder@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-anymail-finder-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21f9780cf8d2294623ef00d96e394c8c8892ee2f9053047bbf9de15d0ca39694",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:19:41.152Z"
+}

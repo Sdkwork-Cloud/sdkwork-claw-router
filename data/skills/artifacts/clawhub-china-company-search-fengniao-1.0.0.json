@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-company-search-fengniao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_company_search_fengniao",
+  "skill": {
+    "id": 36327,
+    "skillKey": "clawhub-china-company-search-fengniao",
+    "name": "China company search fengniao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-company-search-fengniao",
+    "url": "https://clawhub.ai/skills/china-company-search-fengniao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-company-search-fengniao-e8ec0d477fd189d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "China company search and business registry skill by Fengniao (Riskbird). Supports KYB, supplier verification, company due diligence, corporate risk screening..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elijah-pi",
+      "userId": "s175k19v30amqr83me3cp70hfx83ndeg",
+      "displayName": "Elijah-Pi",
+      "image": "https://avatars.githubusercontent.com/u/77263364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775114620349,
+      "changelog": "Initial release of China Company Search | Fengniao by Riskbird\n\n- Provides China company search and business registry lookup, including KYB, risk screening, due diligence, and supplier verification.\n- Retrieves core information: business registration, shareholders, executives, outbound investments, legal issues, administrative penalties, and more.\n- Supports fuzzy name search (Chinese only), structured due diligence reports, and full compliance checks using public or private API keys.\n- Includes detailed usage, error handling, and dimension coverage guidelines.\n- Designed for onboarding, compliance, and risk checks of Chinese counterparties.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c918d2891907db309785f6aaaee9a60099d8e6fca7ee20736367f1f2c71dfc3"
+}

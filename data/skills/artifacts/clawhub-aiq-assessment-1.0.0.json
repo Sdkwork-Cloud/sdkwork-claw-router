@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiq-assessment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiq_assessment",
+  "skill": {
+    "id": 67483,
+    "skillKey": "clawhub-aiq-assessment",
+    "name": "aiq-assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiq-assessment",
+    "url": "https://clawhub.ai/skills/aiq-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiq-assessment-b6a6738bcc324757.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIQ（AI商数）评估工具。基于\"三层18原子能力\"框架，对个人或团队的AI协作效能进行 结构化评估。包含提示素养、算法共情、判断锐度三大维度，覆盖18个可量化的原子能力。 适用于自我诊断、招聘评估、团队AI成熟度审计等场景。触发词：AIQ、AI商数、AI能力评估、 AI协作效能、会不会用AI、AI Native..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ravenlionx",
+      "userId": "s177h9892akfgpfevd4pp80jvs85tzzh",
+      "displayName": "RavenlionX",
+      "image": "https://avatars.githubusercontent.com/u/49067132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777555334463,
+      "changelog": "aiq-assessment v1.0.0\n\n- Initial release of the AIQ（AI商数）评估工具 skill.\n- Provides structural AI collaboration ability assessment based on \"三层18原子能力\" framework.\n- Supports self-assessment, peer assessment, and quick scan modes for individuals and teams.\n- Outputs standard reports including scores, key findings, scene-weighted analysis, and improvement suggestions.\n- Designed for self-diagnosis, hiring evaluation, and AI maturity audits in organizations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecc958adc30464eeba31c53022cec34d7e279e0c6c9233d17a316540895d8b37"
+}

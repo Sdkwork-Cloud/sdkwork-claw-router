@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-master@2.6.5",
+  "version": "2.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_master",
+  "skill": {
+    "id": 12792,
+    "skillKey": "clawhub-memory-master",
+    "name": "Memory Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-master",
+    "url": "https://clawhub.ai/skills/memory-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-master-a3ff8f7fd013e6ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local memory system with structured indexing and auto-learning. Auto-write, heuristic recall, auto learning when knowledge is insufficient. Compatible with s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizhelong0907",
+      "userId": "publishers:lizhelong0907",
+      "displayName": "lizhelong0907",
+      "image": "https://avatars.githubusercontent.com/u/181441896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1293,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 2,
+      "versions": 39
+    },
+    "latestVersion": {
+      "version": "2.6.5",
+      "createdAt": 1772739709394,
+      "changelog": "memory-master v2.6.5\n\n- Updated metadata and version information in _meta.json and package.json.\n- No changes to documentation or feature set in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45210b973a4e463955a1fb4a3382899d7dc357c790a7eed487791d4c4efce1ea"
+}

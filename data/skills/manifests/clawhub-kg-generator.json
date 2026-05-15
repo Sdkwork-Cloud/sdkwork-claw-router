@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28972,
+  "uuid": "skill-clawhub-kg-generator",
+  "skillKey": "clawhub-kg-generator",
+  "name": "Knowledge Graph Generator",
+  "summary": "Generate comprehensive Knowledge Graphs (RDF-Turtle by default, or JSON-LD and other RDF serializations on request) from content at file: or http(s): scheme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kg_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kingsley Idehen",
+      "features": [
+        "Generate comprehensive Knowledge Graphs (RDF-Turtle by default, or JSON-LD and other RDF serial."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kg-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1541745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kg-generator",
+      "url": "https://clawhub.ai/skills/kg-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kg-generator",
+    "url": "https://clawhub.ai/skills/kg-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kg-generator-9347f01226ce31e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kg-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kg-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e50881d269c63b21367bd261153d48f726d8ef2fc85c950014af4389b9f53704",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:56:51.679Z"
+}

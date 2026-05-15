@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/productivity-skill@2.9.2",
+  "version": "2.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productivity_skill",
+  "skill": {
+    "id": 13198,
+    "skillKey": "clawhub-productivity-skill",
+    "name": "Productivity Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productivity-skill",
+    "url": "https://clawhub.ai/skills/productivity-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productivity-skill-a4bb4fffc685edf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ye Wubin authorized AI coach for energy-based time management with calendar, context lists, and self-evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yewubin-jpg",
+      "userId": "s179pxvaqpc99xr4qdzhzj98hd83zpna",
+      "displayName": "yewubin-jpg",
+      "image": "https://avatars.githubusercontent.com/u/258250987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1305,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.9.2",
+      "createdAt": 1777818415896,
+      "changelog": "## productivity-skill v2.9.2 Changelog\n\n- Updated FIRST_TIME_SETUP protocol: clarified \"consent step\" language and streamlined instructions for clarity and compliance.\n- Documentation improvements in PRIVACY.md and README.md to better describe consent, memory usage, and user data handling.\n- Clarified approach to permissions and removed outdated OAuth/Google Calendar sync references.\n- Minor edits in core methodology reference for clearer alignment with workflow description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1ec170b6261bbb3f16550a96b14d6a9f3b8bce148af073a70464ddc088e47c8"
+}

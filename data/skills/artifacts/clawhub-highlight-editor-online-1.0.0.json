@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor_online",
+  "skill": {
+    "id": 42241,
+    "skillKey": "clawhub-highlight-editor-online",
+    "name": "Highlight Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor-online",
+    "url": "https://clawhub.ai/skills/highlight-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-online-4282705d3e33c9cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get highlight reel clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775937542134,
+      "changelog": "Initial release of Highlight Editor Online — Extract and Export Video Highlights.\n\n- Lets users upload raw video footage and use simple text instructions to extract and compile highlight reels.\n- Supports popular video formats (MP4, MOV, AVI, WebM) up to 500MB.\n- Automatic token handling with free starter credits if no API key is set.\n- Cloud render pipeline: generates 1080p MP4 highlight clips in 1-2 minutes.\n- Quick actions for upload, export, credits checking, and timeline previews.\n- Handles common workflows: quick edits, batch processing, and iterative refinement.\n- User-friendly error handling and guidance for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b72e0e89a2cc27f21321ca9bc24864a68b4fc90a0cbf52ce030bd8778375b409"
+}

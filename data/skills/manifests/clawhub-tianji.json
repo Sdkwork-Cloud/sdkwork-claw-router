@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19175,
+  "uuid": "skill-clawhub-tianji",
+  "skillKey": "clawhub-tianji",
+  "name": "Tianji",
+  "summary": "Query website analytics, monitor uptime, survey results, telemetry data, feed events, application stats, and more from the Tianji platform via its read-only...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianji",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moonrailgun",
+      "features": [
+        "Query website analytics, monitor uptime, survey results, telemetry data, feed events, applicati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianji@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6964737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianji",
+      "url": "https://clawhub.ai/skills/tianji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianji",
+    "url": "https://clawhub.ai/skills/tianji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianji-fde72eb3c892dd7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianji@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianji-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7e29843ee6cf428c5d3f9fc1ad366d4715d9144bc8834e68b85a219ab4d3f0c",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:38:08.315Z"
+}

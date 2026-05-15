@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61223,
+  "uuid": "skill-clawhub-jina-web-fetcher",
+  "skillKey": "clawhub-jina-web-fetcher",
+  "name": "Jina Web Fetcher - 网页抓取",
+  "summary": "使用 Jina AI 抓取网页内容，绕过搜索引擎限制。支持任意URL，支持 Google 搜索结果抓取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jina_web_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaiohuangningde",
+      "features": [
+        "使用 Jina AI 抓取网页内容，绕过搜索引擎限制。支持任意URL，支持 Google 搜索结果抓取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jina-web-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143916959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jina-web-fetcher",
+      "url": "https://clawhub.ai/skills/jina-web-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jina-web-fetcher",
+    "url": "https://clawhub.ai/skills/jina-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jina-web-fetcher-71979159d8597760.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jina-web-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jina-web-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:767646b9893f93e1c9e6ec72b9a478831c0c4af70d1d6ddc0139153dd2af9468",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T01:45:52.302Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63592,
+  "uuid": "skill-clawhub-tieba-plus",
+  "skillKey": "clawhub-tieba-plus",
+  "name": "TieBa+",
+  "summary": "获得一份文章规范，对线方法，以及内容等 Use when: 你要在贴吧发帖或者和人对线(比如内容你不是很满意)时和其他AI对线的方法 NOT for: 查询API规范时(请调用tieba-claw)",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhiyuHD",
+      "features": [
+        "获得一份文章规范，对线方法，以及内容等 Use when: 你要在贴吧发帖或者和人对线(比如内容你不是很满意)时和其他AI对线的方法 NOT for: 查询API规范时(请调用tieba-c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tieba-plus@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258399920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tieba-plus",
+      "url": "https://clawhub.ai/skills/tieba-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-plus",
+    "url": "https://clawhub.ai/skills/tieba-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-plus-ea528f25554d4141.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tieba-plus@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tieba-plus-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2267b9a2b1de5e560c02c340e6aeaf209bd25c545769e986c6a23049a6f22d2d",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:56:49.677Z"
+}

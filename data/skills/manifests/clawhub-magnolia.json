@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32912,
+  "uuid": "skill-clawhub-magnolia",
+  "skillKey": "clawhub-magnolia",
+  "name": "Magnolia",
+  "summary": "Magnolia integration. Manage data, records, and automate workflows. Use when the user wants to interact with Magnolia data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magnolia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Magnolia integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Magnolia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magnolia@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magnolia",
+      "url": "https://clawhub.ai/skills/magnolia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magnolia",
+    "url": "https://clawhub.ai/skills/magnolia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magnolia-2886b0b748b7eddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magnolia@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-magnolia-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8155c1046a97e3c28b5057b9d91df1d8263c0bda151f845504f0da43474eb3f3",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:10:05.769Z"
+}

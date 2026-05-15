@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26197,
+  "uuid": "skill-clawhub-docsgenflow",
+  "skillKey": "clawhub-docsgenflow",
+  "name": "Docsgenflow",
+  "summary": "DocsGenFlow integration. Manage Documents, Users, Workspaces. Use when the user wants to interact with DocsGenFlow data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docsgenflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "DocsGenFlow integration",
+        "Manage Documents, Users, Workspaces",
+        "Use when the user wants to interact with DocsGenFlow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docsgenflow@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docsgenflow",
+      "url": "https://clawhub.ai/skills/docsgenflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docsgenflow",
+    "url": "https://clawhub.ai/skills/docsgenflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docsgenflow-09b4c793a0631d82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docsgenflow@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-docsgenflow-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7264e417f54b82dc5ce361e483cf0004baa99d332c57d42e9d714e64a5256da9",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:19:06.814Z"
+}

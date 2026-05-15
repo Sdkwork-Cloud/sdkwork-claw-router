@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-tasks-skip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_tasks_skip",
+  "skill": {
+    "id": 43162,
+    "skillKey": "clawhub-team-tasks-skip",
+    "name": "Team Tasks.Skip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-tasks-skip",
+    "url": "https://clawhub.ai/skills/team-tasks-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-tasks-skip-4029e740432e2c5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate multi-agent development pipelines using shared JSON task files. Use when dispatching work across dev team agents (code-agent, test-agent, docs-age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zdp1117",
+      "userId": "s17f1c9gdt4f7hy0hjg9f33qm583ykee",
+      "displayName": "ZDP1117",
+      "image": "https://avatars.githubusercontent.com/u/129380544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774917849665,
+      "changelog": "Team-tasks-skip 1.0.0 — Initial Release\n\n- Introduces a system for coordinating multi-agent development pipelines using shared JSON task files.\n- Supports two workflow modes: linear (sequential task pipeline) and dag (parallelized tasks with dependencies).\n- Provides a CLI tool for project initialization, task assignment, status tracking, and agent coordination.\n- Enables task management features: assign, update status, log, collect results, reset, and progress checks.\n- Designed for integration with multiple team agents (code, test, docs, monitor) via session-based dispatch.\n- Includes special handling for session context and agent communication channels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dff22f7f792ee463aeb6c0a1114600a4bb84dd72eefdf82bee0e271211791cca"
+}

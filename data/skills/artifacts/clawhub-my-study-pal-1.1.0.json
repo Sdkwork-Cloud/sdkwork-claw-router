@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-study-pal@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_study_pal",
+  "skill": {
+    "id": 72447,
+    "skillKey": "clawhub-my-study-pal",
+    "name": "my study pal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-study-pal",
+    "url": "https://clawhub.ai/skills/my-study-pal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-study-pal-5d33dcfde77b3d11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向成年人碎片化学习场景的中文概念解释搭子 skill。用于处理“这个概念是什么意思”“这个名词到底在说什么”“这个词和那个词有什么区别”这类请求，重点是把陌生概念、术语、缩写、名词解释清楚。适合用户遇到不会的概念或不知道的名词时，先快速听懂，再获得最小必要理解，而不是展开成整套课程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivanyqw",
+      "userId": "s1738eyprw3jg1dsq06seqjdxs83x4pr",
+      "displayName": "ivanyqw",
+      "image": "https://avatars.githubusercontent.com/u/199084719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776419417870,
+      "changelog": "my-study-pal 1.1.0更新说明\n本次更新主要围绕成人碎片化学习场景，对 my-study-pal 进行了整体重构和增强，重点优化了教学架构、个性化适配能力，以及学习记录系统。\n1. 更聚焦成人碎片化学习场景\n本次更新进一步明确了 my-study-pal 的定位，聚焦成年人在碎片化时间里的即时学习需求。\nskill 主要面向“快速听懂概念、术语、缩写、知识点”的场景，强调先建立最小必要理解，而不是一开始就展开成完整课程。\n2. 重构教学技能架构\n本次对教学方法体系进行了重新梳理，把 skill 的整体运行规则与具体教学方法拆分开来。\n目前默认支持讲解式教学，并已经预留引导式及其他教学方法的扩展结构，方便后续继续演进不同教学模式，而不会造成规则混层。\n3. 强化个性化学习方式\n本次更新增强了个性化适配能力，支持根据用户自身偏好动态调整：\n教学模块\n展开程度\n术语风格\n示例内容\n语言风格与表达方式\n这让 skill 不只是“解释概念”，而是可以更贴近用户熟悉的领域、习惯的结构和偏好的语气来讲解内容。\n4. 加强学习过程记录与文件系统管理\n本次同步强化了 mystudy/ 下的文件系统管理能力，进一步明确了：\n用户画像记录\n学习概览记录\n单主题详情记录\n通过这套结构，skill 可以更稳定地保存学习过程、记录解释进展，并支持后续连续学习时更好地承接上下文，让学习内容更可积累、更可追踪。\n5. 整体效果\n经过这次更新，my-study-pal 不再只是一个“临时解释概念”的 skill，\n而是更接近一个面向成人碎片化学习场景的、可持续记录、可个性化适配、可扩展教学方法的学习解释系统。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d98fe81c46eafaddb34455ec2ddbda20d442a2dd09c2901893dfa9a8b0667a01"
+}

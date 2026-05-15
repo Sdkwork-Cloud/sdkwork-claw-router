@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72547,
+  "uuid": "skill-clawhub-idea-generator",
+  "skillKey": "clawhub-idea-generator",
+  "name": "idea-generator。超级深度思考-创意生成系统。通过多轮迭代筛选高分创意，每轮步骤：需求分析-信息搜集-洞察分析-创意生成-反馈-下一轮。项目集中了可视化的网页端。安装后在前端输入“启动创意工作台”即可启动服务。",
+  "summary": "创意工作台启动器。当用户说「启动创意工作台」「打开工作台」「开启工作台」时激活。负责启动工作台服务并返回访问链接，创意生成由用户在工作台网页中操作。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunnyxiaoli",
+      "features": [
+        "创意工作台启动器。当用户说「启动创意工作台」「打开工作台」「开启工作台」时激活。负责启动工作台服务并返回访问链接，创意生成由用户在工作台网页中操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205262667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-generator",
+      "url": "https://clawhub.ai/skills/idea-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-generator",
+    "url": "https://clawhub.ai/skills/idea-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-generator-dc695b36cf82e42a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f0530dcb4d9a06452490c86ed51ce27e75b15b2cd4053df5ce084400141bdf5",
+      "artifactSizeBytes": 2768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T13:29:28.539Z"
+}

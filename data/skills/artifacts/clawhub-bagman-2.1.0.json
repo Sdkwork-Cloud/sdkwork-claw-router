@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bagman@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bagman",
+  "skill": {
+    "id": 12880,
+    "skillKey": "clawhub-bagman",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bagman",
+    "url": "https://clawhub.ai/skills/bagman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bagman-5140f32df6bee17a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure key management for AI agents. Use when handling private keys, API secrets, wallet credentials, or when building systems that need agent-controlled funds. Covers secure storage, session keys, leak prevention, prompt injection defense."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zscole",
+      "userId": "publishers:zscole",
+      "displayName": "zscole",
+      "image": "https://avatars.githubusercontent.com/u/20308948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1410,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1770571230396,
+      "changelog": "v2.1: MetaMask Delegation Framework (EIP-7710) integration, patched 9 security gaps from adversarial testing, 18 passing integration tests",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00d0fcf41cdb0a331f071194cb389aa9ad291bc2f78961486474354c5f19b026"
+}

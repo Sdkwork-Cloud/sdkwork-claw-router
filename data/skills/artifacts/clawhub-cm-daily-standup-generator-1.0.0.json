@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-daily-standup-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_daily_standup_generator",
+  "skill": {
+    "id": 48950,
+    "skillKey": "clawhub-cm-daily-standup-generator",
+    "name": "Daily Standup Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-daily-standup-generator",
+    "url": "https://clawhub.ai/skills/cm-daily-standup-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-daily-standup-generator-e68191a3cd36aab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured daily standup reports by analyzing git commits, pull request activity, issue trackers, and project context. Produces yesterday/today/bloc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777509737001,
+      "changelog": "Initial release — effortlessly generate daily standup reports by analyzing real development activity.\n\n- Automatically gathers and summarizes git commits, pull request activity, and issue tracker updates for a chosen time range.\n- Groups related work, interprets commit messages, and identifies active branches and work-in-progress.\n- Highlights blockers such as failing CI, unreviewed PRs, and merge conflicts.\n- Produces structured standup reports with clear yesterday/today/blockers sections, tailored to common Scrum/Agile team rituals.\n- Customizable for different users, repositories, and time ranges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ae7d69c1842fd93f3ac3983437bfe7e68b16ac6350ad477a6f2419683e2f35f"
+}

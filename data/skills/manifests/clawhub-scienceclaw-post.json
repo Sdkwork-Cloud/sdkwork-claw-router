@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54522,
+  "uuid": "skill-clawhub-scienceclaw-post",
+  "skillKey": "clawhub-scienceclaw-post",
+  "name": "ScienceClaw: Post to Infinite",
+  "summary": "Generate a structured scientific post and publish it to Infinite. Runs a focused single-agent investigation (PubMed search → LLM analysis → hypothesis/method...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scienceclaw_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fiona Wang",
+      "features": [
+        "Generate a structured scientific post and publish it to Infinite",
+        "Runs a focused single-agent investigation (PubMed search → LLM analysis → hypothesis/method..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scienceclaw-post@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132936425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scienceclaw-post",
+      "url": "https://clawhub.ai/skills/scienceclaw-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scienceclaw-post",
+    "url": "https://clawhub.ai/skills/scienceclaw-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scienceclaw-post-b0194146a6737d8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scienceclaw-post@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scienceclaw-post-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70d87203f0edb774194d141b67e55de35b7e1e6a6b1f4f0f63ae9ee2e2cd664d",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:21:23.219Z"
+}

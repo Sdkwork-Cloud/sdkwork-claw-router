@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-assistant@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_assistant",
+  "skill": {
+    "id": 70367,
+    "skillKey": "clawhub-patent-assistant",
+    "name": "Patent Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-assistant",
+    "url": "https://clawhub.ai/skills/patent-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-assistant-c824a7435cc50fe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专利交底书撰写与专利检索助手。帮助研发人员将技术方案转化为结构化交底书，并进行专利检索分析。当用户要求写专利、写交底书、专利检索、查新时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ty-teo",
+      "userId": "publishers:ty-teo",
+      "displayName": "TY-teo",
+      "image": "https://avatars.githubusercontent.com/u/108162553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2596,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770111500723,
+      "changelog": "新增多平台检索：Google Patents, Lens.org, 大为Innojoy, 百度学术, Espacenet, 国知局CNIPA；支持并行检索",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d344cf8e14ec22cc3e34ad986ec0b0add2254207fffed9a5d2a9fd60bcaab09"
+}

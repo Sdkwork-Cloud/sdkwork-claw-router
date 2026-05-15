@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8350,
+  "uuid": "skill-clawhub-youtube-transcript",
+  "skillKey": "clawhub-youtube-transcript",
+  "name": "YouTube Transcript",
+  "summary": "Fetch and summarize YouTube video transcripts. Use when asked to summarize, transcribe, or extract content from YouTube videos. Handles transcript fetching via residential IP proxy to bypass YouTube's cloud IP blocks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Zealot",
+      "features": [
+        "Fetch and summarize YouTube video transcripts",
+        "Use when asked to summarize, transcribe, or extract content from YouTube videos",
+        "Handles transcript fetching via residential IP proxy to bypass YouTube's cloud IP blocks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9503891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript",
+      "url": "https://clawhub.ai/skills/youtube-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript",
+    "url": "https://clawhub.ai/skills/youtube-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-526d8dabc45a7956.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d764ab60d6017faeb0e6a68feea0e6dfcd6f87ae2cdd8bd43dc79e70266bc162",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T16:46:01.984Z"
+}

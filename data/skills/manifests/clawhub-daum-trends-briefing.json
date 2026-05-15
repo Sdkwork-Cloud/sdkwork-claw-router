@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22175,
+  "uuid": "skill-clawhub-daum-trends-briefing",
+  "skillKey": "clawhub-daum-trends-briefing",
+  "name": "Daum Trends Briefing",
+  "summary": "Fetch Daum real-time trend TOP10, add one-line context (top news title) + links, and print a 12-line briefing suitable for OpenClaw cron + Telegram announce.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daum_trends_briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sung Kim",
+      "features": [
+        "Fetch Daum real-time trend TOP10, add one-line context (top news title) + links, and print a 12."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daum-trends-briefing@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/901975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daum-trends-briefing",
+      "url": "https://clawhub.ai/skills/daum-trends-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daum-trends-briefing",
+    "url": "https://clawhub.ai/skills/daum-trends-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daum-trends-briefing-3665fa44062197d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daum-trends-briefing@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daum-trends-briefing-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c8cf817a268fd52e103a5017c6b131304c24f01385f2e5bc9ccb64c373bb892",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:00:38.449Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-travel-planner@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_travel_planner",
+  "skill": {
+    "id": 67657,
+    "skillKey": "clawhub-universal-travel-planner",
+    "name": "通用商旅出行规划助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-travel-planner",
+    "url": "https://clawhub.ai/skills/universal-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-travel-planner-343fb6eff7903648.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用商旅出行规划技能 v1.0 · 面向所有商务出差人士。 一站式AI出行规划 + 全平台酒店比价 + HTML报告生成。 集成12306 MCP（火车票实时查询）+ 高德地图（路径规划/POI/天气）+ Web搜索（航班/酒店价格）。 支持**实时HTML报告生成**，所有预订链接真实可一键跳转。 触发条件：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776724709820,
+      "changelog": "首发版本：12306火车票+高德地图+酒店比价+HTML报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d229d25825c6bedf99626ebb42d659a1108a1d63ec65d5a81e1b62801b039c59"
+}

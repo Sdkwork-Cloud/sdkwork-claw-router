@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intelligent-diagnosis-report@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_diagnosis_report",
+  "skill": {
+    "id": 72895,
+    "skillKey": "clawhub-intelligent-diagnosis-report",
+    "name": "创建智能诊断报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-diagnosis-report",
+    "url": "https://clawhub.ai/skills/intelligent-diagnosis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-diagnosis-report-d0250679fd2301f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "域名测试"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimadara",
+      "userId": "s17bzs0ghd5vs277p6crtwb8ss85sx60",
+      "displayName": "Jim Adara",
+      "image": "https://avatars.githubusercontent.com/u/48739679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 641,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1777452644934,
+      "changelog": "- 技能重命名为“域名测试”，中文显示为“域名测试”\n- 变更技能用途，从“智能诊断报告”改为仅做商家域名测试\n- 修改触发词与例句，仅支持“域名测试”相关内容\n- 流程仅包含解析商家并获取ID这一步，直接返回接口结果\n- 服务接口地址和认证机制已变更：必须本地存在用户名配置，否则会直接报错\n- 移除了诊断报告生成相关的所有说明、流程与输出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cca5148f8604bc7d3f12d61d4aeacf2529ddd87cfecaa04102f6f3f4cf4691ad"
+}

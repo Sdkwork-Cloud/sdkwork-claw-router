@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22211,
+  "uuid": "skill-clawhub-dockerps",
+  "skillKey": "clawhub-dockerps",
+  "name": "Dockerps",
+  "summary": "View and manage Docker container processes and stats. Use when monitoring containers. Requires docker.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dockerps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "View and manage Docker container processes and stats",
+        "Use when monitoring containers",
+        "Requires docker."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dockerps@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dockerps",
+      "url": "https://clawhub.ai/skills/dockerps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dockerps",
+    "url": "https://clawhub.ai/skills/dockerps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dockerps-15eed147168380bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dockerps@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dockerps-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb9a44bc975976855822b98918127e53f8272730b4df390e963aa4b5914dcfb",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:09:25.308Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/communication-coach@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.communication_coach",
+  "skill": {
+    "id": 61056,
+    "skillKey": "clawhub-communication-coach",
+    "name": "communication-coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "communication-coach",
+    "url": "https://clawhub.ai/skills/communication-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/communication-coach-4f352b0fd67e3ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "沟通教练。Challenge + 降维表达。Yi 在 EIZ 做 solution architect 经常要给各种人汇报、评审、谈判，试过不少沟通方法，这个是实战中总结出来的。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiguoguo",
+      "userId": "s1723bqg0dk1m66de6gktsg4kh84pbfw",
+      "displayName": "王易",
+      "image": "https://avatars.githubusercontent.com/u/9280973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775964184014,
+      "changelog": "- Added “触发词” section，列出常用关键词，方便用户找到和使用沟通教练技能\n- 移除了 metadata 中的 \"always\": true 属性，保持功能一致\n- 其余内容无变动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1b25de4a7e0b5dfbc632d0a0f4ea7558036e265beda9c1147ae31148524daef"
+}

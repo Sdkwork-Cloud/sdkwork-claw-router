@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10477,
+  "uuid": "skill-clawhub-find-people",
+  "skillKey": "clawhub-find-people",
+  "name": "Find People (x402)",
+  "summary": "Open Source Intelligence (OSINT) tool for researching individuals - professional backgrounds, career timelines, due diligence, competitive intelligence, and investor research. Use when users need to research people, verify credentials, or.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_people",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TzannetosGiannis",
+      "features": [
+        "Open Source Intelligence (OSINT) tool for researching individuals",
+        "professional backgrounds, career timelines, due diligence, competitive intelligence, and invest.",
+        "Use when users need to research people, verify credentials, or gather professional information",
+        "Costs $0.15 USDC per request via x402 protocol on Base network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-people@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32258946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-people",
+      "url": "https://clawhub.ai/skills/find-people"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-people",
+    "url": "https://clawhub.ai/skills/find-people",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-people-d73295282fd50392.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-people@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-people-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c11a1337fe7e2d75a354cbd7e6ff7e32c2055bb5285a2c3dfa36e1b262fc2e6",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T14:07:08.394Z"
+}

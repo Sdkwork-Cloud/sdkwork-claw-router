@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35521,
+  "uuid": "skill-clawhub-security-scanner-triage",
+  "skillKey": "clawhub-security-scanner-triage",
+  "name": "Security Scanner Triage",
+  "summary": "Triage security/virus scanner findings for skills and automations. Use when scanner reports mixed-risk findings (defaults, credential handling, data routing,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_scanner_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "okikeSolutions",
+      "features": [
+        "Triage security/virus scanner findings for skills and automations",
+        "Use when scanner reports mixed-risk findings (defaults, credential handling, data routing,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-scanner-triage@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176530744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-scanner-triage",
+      "url": "https://clawhub.ai/skills/security-scanner-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-scanner-triage",
+    "url": "https://clawhub.ai/skills/security-scanner-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-scanner-triage-b8bec67c89931715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-scanner-triage@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-scanner-triage-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:130265e3956b86234e2d5332be1768b4bfb32db3e47fde8082e5656c6af925fd",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:24:45.360Z"
+}

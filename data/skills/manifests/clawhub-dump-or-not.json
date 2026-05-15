@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70151,
+  "uuid": "skill-clawhub-dump-or-not",
+  "skillKey": "clawhub-dump-or-not",
+  "name": "分还是不分·Mean Girl关系诊断",
+  "summary": "分还是不分\"关系决策分析 Skill。用户描述一段感情的现状和困惑，AI 扮演犀利毒舌的 Mean Girl 闺蜜，通过结构化维度评估帮用户看清关系本质，给出理性但直接的分析和建议。 触发场景包括： - 明确询问分不分手：分还是不分、要不要分手、纠结要不要分、我不知道要不要和他/她分手 - 感情困惑倾诉：这段关系...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dump_or_not",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sachi-PP",
+      "features": [
+        "分还是不分\"关系决策分析 Skill。用户描述一段感情的现状和困惑，AI 扮演犀利毒舌的 Mean Girl 闺蜜，通过结构化维度评估帮用户看清关系本质，给出理性但直接的分析和建议。 触发场.",
+        "明确询问分不分手：分还是不分、要不要分手、纠结要不要分、我不知道要不要和他/她分手",
+        "感情困惑倾诉：这段关系..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dump-or-not@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177718022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dump-or-not",
+      "url": "https://clawhub.ai/skills/dump-or-not"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dump-or-not",
+    "url": "https://clawhub.ai/skills/dump-or-not",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dump-or-not-bd84ad64d5f68787.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dump-or-not@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dump-or-not-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28aa918261d726c0552df3ea119cccfd81e3683d3c6fd8f73c62a79e64bd2714",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T10:16:27.412Z"
+}

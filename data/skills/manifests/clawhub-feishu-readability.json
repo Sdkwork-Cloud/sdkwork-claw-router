@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65008,
+  "uuid": "skill-clawhub-feishu-readability",
+  "skillKey": "clawhub-feishu-readability",
+  "name": "Feishu Readability",
+  "summary": "飞书文档格式优化与安全修改规范。**必须在通过MCP修改任何mi.feishu.cn文档之前加载此skill**。包括最小修改原则、富文本保护、段落间距、加粗规范。触发条件：用户要求修改飞书文档内容或格式，涉及mi.feishu.cn域名，或调用小米飞书MCP的update-doc工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_readability",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Madoka",
+      "features": [
+        "飞书文档格式优化与安全修改规范。**必须在通过MCP修改任何mi.feishu.cn文档之前加载此skill**。包括最小修改原则、富文本保护、段落间距、加粗规范。触发条件：用户要求修改飞书."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-readability@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9532020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-readability",
+      "url": "https://clawhub.ai/skills/feishu-readability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-readability",
+    "url": "https://clawhub.ai/skills/feishu-readability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-readability-3af6ffa18b484cc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-readability@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-readability-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbce22db82e265c111410d954b1fba140ba65a33afc060a53a89ad72fcb0a968",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:56:49.548Z"
+}

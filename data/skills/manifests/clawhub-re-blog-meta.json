@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32202,
+  "uuid": "skill-clawhub-re-blog-meta",
+  "skillKey": "clawhub-re-blog-meta",
+  "name": "Re Blog Meta",
+  "summary": "Generate SEO-optimized title, SEO title, SEO description, SEO slug, and social tips for a blog post. Use when the user provides a blog name or slug to look u...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.re_blog_meta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Generate SEO-optimized title, SEO title, SEO description, SEO slug, and social tips for a blog.",
+        "Use when the user provides a blog name or slug to look u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/re-blog-meta@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "re-blog-meta",
+      "url": "https://clawhub.ai/skills/re-blog-meta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "re-blog-meta",
+    "url": "https://clawhub.ai/skills/re-blog-meta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/re-blog-meta-23d0e5cbafb26dea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/re-blog-meta@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-re-blog-meta-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55d6c67353d5efb2de94f5ac789f7da7812a4b7237e2c3743f77ae066cb0b6f3",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:20:11.132Z"
+}

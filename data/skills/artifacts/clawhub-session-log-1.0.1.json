@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-log@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_log",
+  "skill": {
+    "id": 15316,
+    "skillKey": "clawhub-session-log",
+    "name": "Session Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-log",
+    "url": "https://clawhub.ai/skills/session-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-log-4812d96944542dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight session logging for OpenClaw agents. Automatically creates a timestamped session file on every session start (including /new resets) and appends..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meigesir",
+      "userId": "publishers:meigesir",
+      "displayName": "Veevid AI",
+      "image": "https://avatars.githubusercontent.com/u/1229786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 946,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773996508789,
+      "changelog": "No code changes — republish to trigger fresh VirusTotal rescan (v1.0.0 was a false positive)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef548da3bfeccc91782e24fd9070a3e0352a48523862b5dab8d9a3714ebc5dd6"
+}

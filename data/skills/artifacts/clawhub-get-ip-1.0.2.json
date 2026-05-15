@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-ip@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_ip",
+  "skill": {
+    "id": 11606,
+    "skillKey": "clawhub-get-ip",
+    "name": "ip lookup ( get ip )"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-ip",
+    "url": "https://clawhub.ai/skills/get-ip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-ip-47f6ae554003b1fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current public IP address and geolocation information. Use when users ask about IP addresses, network location, or want to check their public IP. Supports both fetching IP info and displaying it clearly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qidu",
+      "userId": "s1716ddt8wrq7dhxd61hprgpgs83q1qw",
+      "displayName": "christo",
+      "image": "https://avatars.githubusercontent.com/u/1757861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1968,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770187601220,
+      "changelog": "- Expanded list of trigger phrases to recognize more queries about IP address and location.\n- Improved clarity in user prompts such as \"Where am I?\", \"Locate me\", and \"Get location\".\n- No changes to core functionality or workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b8171e7c591ab54ca0f65a6fe626e4008619970d6d891ca6493286dafd31d087"
+}

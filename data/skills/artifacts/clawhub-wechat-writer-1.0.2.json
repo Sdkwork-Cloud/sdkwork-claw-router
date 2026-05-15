@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-writer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_writer",
+  "skill": {
+    "id": 72688,
+    "skillKey": "clawhub-wechat-writer",
+    "name": "微信公众号文章自动化写作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-writer",
+    "url": "https://clawhub.ai/skills/wechat-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-writer-20816cddd82df9e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "以大卫风格写微信公众号科技/AI/管理/职场文章。用户要写公众号文章、选题、改稿、审校时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzdavid",
+      "userId": "s174a0xfn56fd71e247cxj48b183hqv0",
+      "displayName": "Wei Zhang",
+      "image": "https://avatars.githubusercontent.com/u/5423862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774496014758,
+      "changelog": "- 新增 Step 8「复盘并更新 Skill」：支持用户对比初稿与最终发布版，自动归纳人工改动，输出复盘和风格规范建议。\n- 增加场景 H（Skill 复盘），流程中涵盖结构、信息增删、语气、排版、闭环等多维改进建议。\n- 三遍审校第二遍人味化工具由 humanizer-zh 替换为 content-humanizer-zh。\n- 部分流程描述更细化，进一步完善 Skill 自动进化与案例归档机制。\n- 其他场景流转、保存规范等未作变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c679994aa7bf0a2945740e10e2d944fbe76578412e6ea83e712e60045e39afab"
+}

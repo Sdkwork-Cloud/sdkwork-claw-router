@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/changtu-xiaohongshu-cropper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changtu_xiaohongshu_cropper",
+  "skill": {
+    "id": 72788,
+    "skillKey": "clawhub-changtu-xiaohongshu-cropper",
+    "name": "长图转小红书图片切割工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changtu-xiaohongshu-cropper",
+    "url": "https://clawhub.ai/skills/changtu-xiaohongshu-cropper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changtu-xiaohongshu-cropper-e5c01588505ff9a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长图转小红书图片切割工具 - 将任意长图按小红书 3:4 比例自动切割，支持移动端协作。使用场景：用户需要将长图（如文档截图、设计稿等）切割成小红书友好的图片格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "selena001",
+      "userId": "publishers:selena001",
+      "displayName": "Selena001",
+      "image": "https://avatars.githubusercontent.com/u/50068692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773996649780,
+      "changelog": "changtu-xiaohongshu-cropper v1.0.0\n\n- Initial release.\n- Provides command-line and GUI tools to crop long images into Xiaohongshu-friendly 3:4 (1080×1440px) format.\n- Features automatic bottom cropping with customizable height and start position.\n- Supports mobile collaboration workflow for quick image processing.\n- Includes batch processing and automatic blank-filling for the last image piece.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c51cbc71aac431b8f6ff3659ee6b3f88648c26de8e74190ab6291d931b308b2"
+}

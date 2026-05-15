@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18367,
+  "uuid": "skill-clawhub-csharp",
+  "skillKey": "clawhub-csharp",
+  "name": "C#",
+  "summary": "Avoid common C# mistakes — null traps, async pitfalls, LINQ gotchas, and disposal leaks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csharp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common C# mistakes — null traps, async pitfalls, LINQ gotchas, and disposal leaks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csharp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csharp",
+      "url": "https://clawhub.ai/skills/csharp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csharp",
+    "url": "https://clawhub.ai/skills/csharp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csharp-7fc218f23b1a52a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csharp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-csharp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:768d938185d48c389c0a8218b26254ece1e859efc5b9f40213b96840b38f621e",
+      "artifactSizeBytes": 1753
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:27:33.854Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65492,
+  "uuid": "skill-clawhub-monster",
+  "skillKey": "clawhub-monster",
+  "name": "Monster",
+  "summary": "提供Monster Energy魔爪能量饮料品牌及其极限运动营销、产品矩阵及市场竞争格局的详细信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Monster Energy魔爪能量饮料品牌及其极限运动营销、产品矩阵及市场竞争格局的详细信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monster",
+      "url": "https://clawhub.ai/skills/monster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monster",
+    "url": "https://clawhub.ai/skills/monster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monster-beaafa510bcc774b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b52aae4d74753d548e47b012b1c094499c50f4428f7b7edff2cc94692e2836de",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:29:52.383Z"
+}

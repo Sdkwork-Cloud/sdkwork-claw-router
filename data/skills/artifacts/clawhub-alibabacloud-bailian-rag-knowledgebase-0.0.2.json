@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-bailian-rag-knowledgebase@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_bailian_rag_knowledgebase",
+  "skill": {
+    "id": 35881,
+    "skillKey": "clawhub-alibabacloud-bailian-rag-knowledgebase",
+    "name": "Alibabacloud Bailian Rag Knowledgebase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-bailian-rag-knowledgebase",
+    "url": "https://clawhub.ai/skills/alibabacloud-bailian-rag-knowledgebase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-bailian-rag-knowledgebase-a65e54e79e59b344.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Bailian Knowledge Base Retrieval Tool. Use Alibaba Cloud Bailian SDK to query and retrieve knowledge base content. Use when: User needs to quer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776662830689,
+      "changelog": "- Improved script logic in list_indices.js, list_workspace.js, and retrieve.js for better retrieval and workspace management.\n- Enhanced documentation in SKILL.md for clarity on setup, permissions, and workflow.\n- No changes to the user-facing interface or workflow steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04be1cfad3ee0d5ae837b4c286921574abc874dac5bbe5acc14094b100a924c6"
+}

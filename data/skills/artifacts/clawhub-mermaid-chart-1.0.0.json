@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mermaid-chart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_chart",
+  "skill": {
+    "id": 46851,
+    "skillKey": "clawhub-mermaid-chart",
+    "name": "Mermaid Diagram Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-chart",
+    "url": "https://clawhub.ai/skills/mermaid-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-chart-bf76e7e678727134.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate various diagrams using Mermaid syntax (flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, pie charts, ER diagrams, mind ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777773080784,
+      "changelog": "- Initial release of the mermaid-chart skill.\n- Generate a wide range of diagrams using Mermaid syntax, including flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, ER diagrams, mind maps, timelines, C4 diagrams, and more.\n- Supports direct Markdown rendering for platforms like GitHub, Notion, and Obsidian.\n- Provides quick syntax reference, best practices, and output specifications for various diagram types.\n- Offers both concise and full diagram code options, with recommendations for semantic node IDs and centralized styling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75da3adbfeca7415db96e3891f16847bb99098a8bed2ec4acc5725b42b54397a"
+}

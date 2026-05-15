@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36084,
+  "uuid": "skill-clawhub-tripetto",
+  "skillKey": "clawhub-tripetto",
+  "name": "Tripetto",
+  "summary": "Tripetto integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tripetto data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tripetto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tripetto integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tripetto data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tripetto@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tripetto",
+      "url": "https://clawhub.ai/skills/tripetto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tripetto",
+    "url": "https://clawhub.ai/skills/tripetto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tripetto-9e87a33246b62ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tripetto@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tripetto-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:522016b61524e281de468e5ea70edd10917f0e431f945151a96b323665b1e248",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:55:25.463Z"
+}

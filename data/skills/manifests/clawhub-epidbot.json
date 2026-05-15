@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35028,
+  "uuid": "skill-clawhub-epidbot",
+  "skillKey": "clawhub-epidbot",
+  "name": "Epidbot",
+  "summary": "Interact with EpidBot - AI-powered assistant for Brazilian public health data (DATASUS/SINAN)",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epidbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flávio Codeço Coelho",
+      "features": [
+        "Interact with EpidBot",
+        "AI-powered assistant for Brazilian public health data (DATASUS/SINAN)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epidbot@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epidbot",
+      "url": "https://clawhub.ai/skills/epidbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epidbot",
+    "url": "https://clawhub.ai/skills/epidbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epidbot-83c7a5232b2fee02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epidbot@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-epidbot-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8755f43aee506941421b23cfea1d680b4b8b4355df28791192db1f68549c2374",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T11:56:24.262Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56011,
+  "uuid": "skill-clawhub-nfs-e-parser",
+  "skillKey": "clawhub-nfs-e-parser",
+  "name": "NFS-e Parser — Brazilian invoice field extraction",
+  "summary": "NFS-e field extractor for Brazilian agents. 100% field accuracy on São Paulo NFS-e invoices (auxiliar-nfs-e + Surya). Extracts CNPJ, prestador, tomador, valo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nfs_e_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tlalvarez",
+      "features": [
+        "NFS-e field extractor for Brazilian agents",
+        "100% field accuracy on São Paulo NFS-e invoices (auxiliar-nfs-e + Surya)",
+        "Extracts CNPJ, prestador, tomador, valo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nfs-e-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167329671?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nfs-e-parser",
+      "url": "https://clawhub.ai/skills/nfs-e-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nfs-e-parser",
+    "url": "https://clawhub.ai/skills/nfs-e-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nfs-e-parser-616de00ce84a407d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nfs-e-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nfs-e-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48920c721f8d04d7b5c1ece69287ea070a874f3ff526ea95e2bce4d42d0bd6f4",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T17:22:51.873Z"
+}

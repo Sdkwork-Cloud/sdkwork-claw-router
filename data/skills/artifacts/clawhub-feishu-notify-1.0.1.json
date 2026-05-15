@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-notify@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_notify",
+  "skill": {
+    "id": 22860,
+    "skillKey": "clawhub-feishu-notify",
+    "name": "Feishu Notify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-notify",
+    "url": "https://clawhub.ai/skills/feishu-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-notify-475c3f5c5f5cfe1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when users need to send notifications to Feishu (Lark) via webhook. It supports multiple message types including text, rich text, i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex098929",
+      "userId": "s17c65pthhzjm0nzpxc61ry2td83jbvp",
+      "displayName": "alex098929",
+      "image": "https://avatars.githubusercontent.com/u/217886385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773903819700,
+      "changelog": "feishu-notify 1.0.1 changelog:\n\n- Clarified that configuration is only loaded from the user's config.json; removed mentions of platform environment variables and default values.\n- Added detailed security guidance: emphasized that webhook URLs are secrets, not to be committed to version control, and should have restricted file permissions.\n- Documented that template loading is strictly restricted to the templates/ directory for security; arbitrary JSON files cannot be used as templates.\n- Updated notes to clarify that the agent may send messages autonomously using this skill.\n- Improved and tightened instructions regarding error handling and secret management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eb28a3340b07bd33bcd18205eaf4e50b3a3472446cf99b005f7bef4c99f354f"
+}

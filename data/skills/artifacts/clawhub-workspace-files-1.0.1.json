@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-files@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_files",
+  "skill": {
+    "id": 17304,
+    "skillKey": "clawhub-workspace-files",
+    "name": "Workspace Files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-files",
+    "url": "https://clawhub.ai/skills/workspace-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-files-f7fb7aa583006f59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work safely with files inside the OpenClaw workspace sandbox. Use for listing directories, reading text files, writing text files, and searching files by nam..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ecosincronia",
+      "userId": "publishers:ecosincronia",
+      "displayName": "EcosincronIA",
+      "image": "https://avatars.githubusercontent.com/u/242621438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 754,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773167362467,
+      "changelog": "- Updated _meta.json file.\n- No changes to skill functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f6aff5bcb3fbcd700585566315f588ce099e0370602dacdbfdcd27ba8fd0cdd"
+}

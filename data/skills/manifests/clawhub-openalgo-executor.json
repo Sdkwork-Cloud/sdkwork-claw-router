@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41807,
+  "uuid": "skill-clawhub-openalgo-executor",
+  "skillKey": "clawhub-openalgo-executor",
+  "name": "Openalgo Executor",
+  "summary": "Skill to interact with the OpenAlgo API for trading operations. Allows placing market/limit orders, retrieving current positions, and fetching symbol quotes....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openalgo_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anthonyabraham1379-pixel",
+      "features": [
+        "Skill to interact with the OpenAlgo API for trading operations",
+        "Allows placing market/limit orders, retrieving current positions, and fetching symbol quotes...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openalgo-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270008768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openalgo-executor",
+      "url": "https://clawhub.ai/skills/openalgo-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openalgo-executor",
+    "url": "https://clawhub.ai/skills/openalgo-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openalgo-executor-4b7c98ac69577442.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openalgo-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openalgo-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7663c640570221f0ab3f1848b74d21c35d6b7175bb8fd57a5e8687ed7d55e997",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:03:53.643Z"
+}

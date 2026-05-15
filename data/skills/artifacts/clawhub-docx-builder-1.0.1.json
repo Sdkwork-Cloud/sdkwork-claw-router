@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_builder",
+  "skill": {
+    "id": 65616,
+    "skillKey": "clawhub-docx-builder",
+    "name": "Docx Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-builder",
+    "url": "https://clawhub.ai/skills/docx-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-builder-4a38a11e9bffa852.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一套基于 docx npm 库的 Word 文档排版样式系统，用于生成带有专业配色、表格、标题层级的 .docx 文档。适用于 PRD、技术方案、项目汇报、会议纪要等结构化文档的模板输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "casperkwok",
+      "userId": "s17fyhjs9jxpg3xe0y1hvteyd5858px1",
+      "displayName": "Casper",
+      "image": "https://avatars.githubusercontent.com/u/4013050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776836621859,
+      "changelog": "Rename to docx-builder, refine description for clarity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:378725a556c3d8446db404ea689787ec53d87dd53ef5358cbf3090de757fbc43"
+}

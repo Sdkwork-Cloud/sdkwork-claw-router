@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/silviu-core@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silviu_core",
+  "skill": {
+    "id": 21958,
+    "skillKey": "clawhub-silviu-core",
+    "name": "Silviu Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silviu-core",
+    "url": "https://clawhub.ai/skills/silviu-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silviu-core-27239ac57c98d46b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements Silviu-specific guards and runbooks to enforce validation, prevent common errors, and manage browser and GitHub interactions in OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unknoownd",
+      "userId": "publishers:unknoownd",
+      "displayName": "unknoOwnd",
+      "image": "https://avatars.githubusercontent.com/u/242932858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772314821882,
+      "changelog": "Initial release of silviu-core skill.\n\n- Adds guardrails for OpenClaw operational workflows.\n- Enforces the validate → execute → verify process.\n- Blocks random package installs, misclassified network issues, and browser automation without an active tab.\n- Provides \"Browser Attach Doctor\" and \"Repo Audit Preflight\" runbooks to streamline troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c16fa20dd0ea25c515fada8dc8f63e187d7d81753331e9b8460b7f74e403a0bd"
+}

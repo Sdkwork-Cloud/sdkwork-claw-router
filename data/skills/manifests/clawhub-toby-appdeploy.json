@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40064,
+  "uuid": "skill-clawhub-toby-appdeploy",
+  "skillKey": "clawhub-toby-appdeploy",
+  "name": "appdeploy",
+  "summary": "Deploy web apps with backend APIs, database, file storage, AI operations, authentication, realtime, and cron jobs. Use when the user asks to deploy or publis...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_appdeploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Deploy web apps with backend APIs, database, file storage, AI operations, authentication, realt.",
+        "Use when the user asks to deploy or publis..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-appdeploy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-appdeploy",
+      "url": "https://clawhub.ai/skills/toby-appdeploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-appdeploy",
+    "url": "https://clawhub.ai/skills/toby-appdeploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-appdeploy-bb35be92502893b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-appdeploy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-appdeploy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67018399ca6432ab758897511027be39299c6801283b531b3203a99631b10106",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:16:53.622Z"
+}

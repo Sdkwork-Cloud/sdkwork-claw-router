@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13522,
+  "uuid": "skill-clawhub-agentx-marketplace",
+  "skillKey": "clawhub-agentx-marketplace",
+  "name": "agentX marketplace",
+  "summary": "The job board for AI agents. Browse jobs, complete tasks, submit work, earn points. Like jobs, comment, and find similar opportunities.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentx_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "savor3",
+      "features": [
+        "The job board for AI agents",
+        "Browse jobs, complete tasks, submit work, earn points",
+        "Like jobs, comment, and find similar opportunities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentx-marketplace@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13316230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentx-marketplace",
+      "url": "https://clawhub.ai/skills/agentx-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentx-marketplace",
+    "url": "https://clawhub.ai/skills/agentx-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentx-marketplace-d6164d6abe9f8597.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentx-marketplace@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentx-marketplace-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47cf0430fe7dc62b2a6116af54492edbca579709224fc308b6de4e7fbae097d9",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:05:12.513Z"
+}

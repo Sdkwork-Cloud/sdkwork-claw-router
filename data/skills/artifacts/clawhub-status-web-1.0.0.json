@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/status-web@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.status_web",
+  "skill": {
+    "id": 66581,
+    "skillKey": "clawhub-status-web",
+    "name": "status-web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "status-web",
+    "url": "https://clawhub.ai/skills/status-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/status-web-2861e6476937dc67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小雨 bot 状态监测页面技能包。提供实时监控 OpenClaw Agent 工作状态、定时任务和系统健康状况的 Web 界面。包含静态缓存机制确保快速加载，美化 UI 界面，以及独立部署能力。使用场景：需要监控 AI Agent 运行状态、查看最近工作记录、管理定时任务、检查系统健康状况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ra1nzzz",
+      "userId": "publishers:ra1nzzz",
+      "displayName": "Yitao&Agents",
+      "image": "https://avatars.githubusercontent.com/u/15128176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1926,
+      "installsAllTime": 18,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771256432268,
+      "changelog": "Initial release of xiaoyu-bot-status: a comprehensive web status monitor for OpenClaw Agent.\n\n- Real-time monitoring of work tasks, scheduled jobs, and system health via web interface\n- Static cache ensures instant page load; background silent update for fresh data\n- Polished, responsive UI with visual status indicators and animation effects\n- Fully independent Node.js service—runs standalone, Cloudflare Tunnel supported\n- Easter egg: 7x title click reveals a secure chat window with the bot\n- Cron-based script for automated cache updates every 3 hours",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20e2b33b573699e99a4f9930b02eb733b60075826636fe5ffeea2dccdb9c7819"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68378,
+  "uuid": "skill-clawhub-asoul-support",
+  "skillKey": "clawhub-asoul-support",
+  "name": "Asoul Support",
+  "summary": "A-SOUL 粉丝应援工具 — 检测开播自动点亮粉丝牌+移动端心跳挂机涨亲密度、视频点赞/投币/收藏、动态点赞。纯Python实现，零外部依赖。触发词：A-SOUL、asoul、签到、点赞、三连、应援、动态、点亮、粉丝牌、心跳、挂机、直播、嘉然、贝拉、乃琳、心宜、思诺。",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asoul_support",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XiaoYiWeio",
+      "features": [
+        "A-SOUL 粉丝应援工具 — 检测开播自动点亮粉丝牌+移动端心跳挂机涨亲密度、视频点赞/投币/收藏、动态点赞。纯Python实现，零外部依赖。触发词：A-SOUL、asoul、签到、点赞、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asoul-support@4.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50070170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asoul-support",
+      "url": "https://clawhub.ai/skills/asoul-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asoul-support",
+    "url": "https://clawhub.ai/skills/asoul-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asoul-support-db7c172f2209fcdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asoul-support@4.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-asoul-support-4.0.2.json",
+      "version": "4.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b7ebb6fab0f1ce0578ac667ced632d8442c2d047b7472f258b59ab432de8dc2",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:29:07.189Z"
+}

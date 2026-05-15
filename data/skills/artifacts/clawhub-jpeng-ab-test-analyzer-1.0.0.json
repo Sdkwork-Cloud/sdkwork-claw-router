@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-ab-test-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_ab_test_analyzer",
+  "skill": {
+    "id": 34488,
+    "skillKey": "clawhub-jpeng-ab-test-analyzer",
+    "name": "ab-test-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-ab-test-analyzer",
+    "url": "https://clawhub.ai/skills/jpeng-ab-test-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-ab-test-analyzer-f514c8a069221e14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze A/B test results"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774387683060,
+      "changelog": "Initial release of jpeng-ab-test-analyzer.\n\n- Analyze A/B test results with a simple command-line interface.\n- Supports automation of A/B testing tasks and analytics operations.\n- Configurable via environment variable AB_API_KEY.\n- Outputs results in JSON format for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1538dbe5988a0c25e5152c7eef8ef81483d6a11f41125c5f7d1518a8759cf2c7"
+}

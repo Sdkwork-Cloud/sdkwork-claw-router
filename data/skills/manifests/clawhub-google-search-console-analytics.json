@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24078,
+  "uuid": "skill-clawhub-google-search-console-analytics",
+  "skillKey": "clawhub-google-search-console-analytics",
+  "name": "google-search-console",
+  "summary": "When the user wants to analyze Google Search Console data, use the GSC API, or interpret search performance. Also use when the user mentions \"GSC,\" \"Search C...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_console_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to analyze Google Search Console data, use the GSC API, or interpret search.",
+        "Also use when the user mentions \"GSC,\" \"Search C..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-search-console-analytics@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-search-console-analytics",
+      "url": "https://clawhub.ai/skills/google-search-console-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-console-analytics",
+    "url": "https://clawhub.ai/skills/google-search-console-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-console-analytics-8f8b9af9598fd5ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-search-console-analytics@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-search-console-analytics-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ba520c402bf029f6987d96421336316c2036aa633249fa8b7fabdc8b1a5a2e0",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:17:12.514Z"
+}

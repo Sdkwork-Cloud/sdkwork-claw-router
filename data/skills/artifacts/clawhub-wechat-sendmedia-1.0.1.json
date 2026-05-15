@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-sendmedia@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sendmedia",
+  "skill": {
+    "id": 41862,
+    "skillKey": "clawhub-wechat-sendmedia",
+    "name": "Wechat Sendmedia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sendmedia",
+    "url": "https://clawhub.ai/skills/wechat-sendmedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sendmedia-6c4954387d691ba7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "send images and files to a wechat conversation through openclaw's wechat channel. use when the user asks to send a local image, send a screenshot, send a dow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torry21th",
+      "userId": "s17eqadxqcfqyvve4xfx86wrqh843xwc",
+      "displayName": "torry21th",
+      "image": "https://avatars.githubusercontent.com/u/1551424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775566028382,
+      "changelog": "修复最新版openclaw不能发送图片的bug\n\nFixes bug where images couldn't be sent in the latest OpenClaw build.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5128269b4dc1374c5e74797f1c4f2af9d24f73bd70b6d391123736d9236f759"
+}

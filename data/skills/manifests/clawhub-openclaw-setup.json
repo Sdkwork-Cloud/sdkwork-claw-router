@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11350,
+  "uuid": "skill-clawhub-openclaw-setup",
+  "skillKey": "clawhub-openclaw-setup",
+  "name": "OpenClaw Setup on AWS (Free Tier) - Memory Upgrade",
+  "summary": "Set up a complete OpenClaw personal AI assistant from scratch using Claude Code. Walks through AWS provisioning, OpenClaw installation, Telegram bot creation, API configuration, Google Workspace integration, security hardening, and all pow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "j540",
+      "features": [
+        "Set up a complete OpenClaw personal AI assistant from scratch using Claude Code",
+        "Walks through AWS provisioning, OpenClaw installation, Telegram bot creation, API configuration.",
+        "Give this to Claude Code and it handles the rest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5269048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-setup",
+      "url": "https://clawhub.ai/skills/openclaw-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-setup",
+    "url": "https://clawhub.ai/skills/openclaw-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-setup-2743f72a371b9268.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53bba8d0b2d761fe8bc63e6785a3fb1e0c68ef7c9a800a98d33b9d714ea13023",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T04:53:36.264Z"
+}

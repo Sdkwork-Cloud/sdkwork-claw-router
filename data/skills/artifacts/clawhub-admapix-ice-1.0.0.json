@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/admapix-ice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admapix_ice",
+  "skill": {
+    "id": 38005,
+    "skillKey": "clawhub-admapix-ice",
+    "name": "Admapix Ice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admapix-ice",
+    "url": "https://clawhub.ai/skills/admapix-ice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admapix-ice-8271486358d85135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ad intelligence & app analytics assistant. Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insights via api.admapix..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bkmcice",
+      "userId": "publishers:bkmcice",
+      "displayName": "ICE",
+      "image": "https://avatars.githubusercontent.com/u/176222518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774103727921,
+      "changelog": "AdMapix Intelligence Assistant 1.0.0\n\n- Initial release of AdMapix skill for ad intelligence & app analytics via api.admapix.com\n- Supports searching ad creatives, app analysis, rankings, download/revenue tracking, and market insights\n- Automatic language detection (Chinese/English) with consistent language and number formatting throughout interactions\n- Smart complexity classification: routes simple queries internally; deep/comparative analyses via integrated Deep Research Framework with automated polling and reporting\n- Includes API key checking, data disclaimer displays, and response customization based on user language",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e96d51c0e1b3e88b04375c242fb4cf79cc30b4c95728b89d9d6b6ba9ba7d62d"
+}

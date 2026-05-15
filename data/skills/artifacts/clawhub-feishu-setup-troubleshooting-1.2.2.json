@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-setup-troubleshooting@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_setup_troubleshooting",
+  "skill": {
+    "id": 36787,
+    "skillKey": "clawhub-feishu-setup-troubleshooting",
+    "name": "Feishu/Lark Setup and Troubleshooting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-setup-troubleshooting",
+    "url": "https://clawhub.ai/skills/feishu-setup-troubleshooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-setup-troubleshooting-2e6d70cb58c9675d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and troubleshoot Feishu or Lark messaging integration with Hermes Agent, including connection checks, access control, and common failure modes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuxuclassmate",
+      "userId": "s17ev136gszam5rsp8hcgkksex83gbfy",
+      "displayName": "XuXu",
+      "image": "https://avatars.githubusercontent.com/u/76080484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1776836882242,
+      "changelog": "Declare the required Hermes binary and Feishu environment variables in top-level skill metadata so the scan matches the guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6f2e274379a7ef83093facc3d30428e60caf8193016684a913d49acfa71dfde"
+}

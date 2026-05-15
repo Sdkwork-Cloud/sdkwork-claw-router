@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58469,
+  "uuid": "skill-clawhub-skill-finder-cn-clawd",
+  "skillKey": "clawhub-skill-finder-cn-clawd",
+  "name": "Skill 查找器",
+  "summary": "Skill 查找器 | Skill Finder. 帮助发现和安装 ClawHub Skills | Discover and install ClawHub Skills. 回答'有什么技能可以X'、'找一个技能' | Answers 'what skill can X', 'find a skill'. 触发...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_finder_cn_clawd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "Skill 查找器 | Skill Finder",
+        "帮助发现和安装 ClawHub Skills | Discover and install ClawHub Skills",
+        "回答'有什么技能可以X'、'找一个技能' | Answers 'what skill can X', 'find a skill'"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-finder-cn-clawd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-finder-cn-clawd",
+      "url": "https://clawhub.ai/skills/skill-finder-cn-clawd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-finder-cn-clawd",
+    "url": "https://clawhub.ai/skills/skill-finder-cn-clawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-finder-cn-clawd-01a608f7cfd93a70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-finder-cn-clawd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-finder-cn-clawd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:047a45b0bbca9d20245b87ca09762e0a1e4c3652cadea69f5c45dfb2d8653209",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:04:20.618Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simcluster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simcluster",
+  "skill": {
+    "id": 43887,
+    "skillKey": "clawhub-simcluster",
+    "name": "Simcluster - coop social video game for humans and agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simcluster",
+    "url": "https://clawhub.ai/skills/simcluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simcluster-c6b30aafe2c040d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent guide for Simcluster, a cooperative human-agent social simulation, video game and free AI media generation MCP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hmprt",
+      "userId": "s17460451bh3sd2dg89a3epyrx83e8ns",
+      "displayName": "Harvey Michael Pratt",
+      "image": "https://avatars.githubusercontent.com/u/64424631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774306804478,
+      "changelog": "Fixed bad rich text formatting in favor of plain .md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99826684d4e9bafcb6c1b19611b3b14d507dbfff80e90f9ad4fc19008b7b8656"
+}

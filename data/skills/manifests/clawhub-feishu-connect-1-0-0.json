@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61609,
+  "uuid": "skill-clawhub-feishu-connect-1-0-0",
+  "skillKey": "clawhub-feishu-connect-1-0-0",
+  "name": "Feishu Connect 1.0.0",
+  "summary": "连接飞书机器人。用接口直连替换 `feisu.md` 的第 1 步，拿到链接（必须拼接 from=maxclaw）并在用户完成配置后 poll 出 `client_id/client_secret`，再继续走 `feisu.md` 的第 2 步和第 3 步。适用于连接飞书、接入飞书、绑定飞书机器人、创建飞书机器人...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_connect_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wt865143010",
+      "features": [
+        "连接飞书机器人。用接口直连替换 `feisu.md` 的第 1 步，拿到链接（必须拼接 from=maxclaw）并在用户完成配置后 poll 出 `client_id/client_sec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-connect-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64113380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-connect-1-0-0",
+      "url": "https://clawhub.ai/skills/feishu-connect-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-connect-1-0-0",
+    "url": "https://clawhub.ai/skills/feishu-connect-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-connect-1-0-0-c5ec094b0814b8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-connect-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-connect-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ebe9b776e3c7d6e1e5a739a7d57edd81d29669fc870fca5bcbd721cf07d0b6d",
+      "artifactSizeBytes": 2686
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T06:20:48.535Z"
+}

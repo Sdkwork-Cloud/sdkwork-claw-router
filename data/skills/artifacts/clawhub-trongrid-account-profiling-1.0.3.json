@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trongrid-account-profiling@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_account_profiling",
+  "skill": {
+    "id": 27902,
+    "skillKey": "clawhub-trongrid-account-profiling",
+    "name": "trongrid-account-profiling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-account-profiling",
+    "url": "https://clawhub.ai/skills/trongrid-account-profiling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-account-profiling-8da41a2f38ba9a5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any TRON account's assets, token holdings, staking, voting, energy/bandwidth, and transaction patterns. Use when a user asks about a TRON address, wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greason",
+      "userId": "s176mhh3c31n267h3brgrreh1x83jhx8",
+      "displayName": "greason",
+      "image": "https://avatars.githubusercontent.com/u/12513158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773913579026,
+      "changelog": "No changes detected in this version.\n\n- Version 1.0.0 released with initial TRON account profiling capabilities.\n- Analyze assets, token holdings, staking, voting, resource usage, transaction patterns, and DeFi participation.\n- Includes detailed step-by-step instructions and example outputs.\n- Error handling and usage scenarios provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7240c1125bd1d80ae4a78a04bad7d1a668c2131a729e42b6a507edd4e29c91b8"
+}

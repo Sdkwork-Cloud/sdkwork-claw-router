@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spend-pulse@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spend_pulse",
+  "skill": {
+    "id": 13544,
+    "skillKey": "clawhub-spend-pulse",
+    "name": "Spend Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spend-pulse",
+    "url": "https://clawhub.ai/skills/spend-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spend-pulse-f347315539f8b185.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive spending alerts via Plaid. Track credit card spending against a monthly budget with pace-based alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbornhorst1524",
+      "userId": "publishers:jbornhorst1524",
+      "displayName": "jbornhorst1524",
+      "image": "https://avatars.githubusercontent.com/u/203846750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770657383348,
+      "changelog": "Removed launchd scheduling from skill.md. OpenClaw's native cron functionality is preferred.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8ded40ff7f360f483053fcbc0ebbfde605d86eed48afacbe51306ae977569a36"
+}

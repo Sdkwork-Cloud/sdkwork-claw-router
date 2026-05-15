@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29093,
+  "uuid": "skill-clawhub-github-actions-timeout-risk-audit",
+  "skillKey": "clawhub-github-actions-timeout-risk-audit",
+  "name": "GitHub Actions Timeout Risk Audit",
+  "summary": "Audit GitHub Actions job runtime risk against timeout thresholds so near-timeout jobs get fixed before they fail CI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_timeout_risk_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions job runtime risk against timeout thresholds so near-timeout jobs get fixed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-timeout-risk-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-timeout-risk-audit",
+      "url": "https://clawhub.ai/skills/github-actions-timeout-risk-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-timeout-risk-audit",
+    "url": "https://clawhub.ai/skills/github-actions-timeout-risk-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-timeout-risk-audit-89751260f18f6229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-timeout-risk-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-timeout-risk-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1876603823108e5c1690ddcff65255b9b0f8c34970c37eaf5a078b89f84804d4",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:09:21.533Z"
+}

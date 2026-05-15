@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-resume-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_resume_builder",
+  "skill": {
+    "id": 39300,
+    "skillKey": "clawhub-global-resume-builder",
+    "name": "Global Resume Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-resume-builder",
+    "url": "https://clawhub.ai/skills/global-resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-resume-builder-5c13afabc335a25a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates ATS-friendly, professionally formatted resumes tailored for US, UK, EU, and APAC job markets in tech, finance, and corporate sectors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jochoonhwan",
+      "userId": "s1759xggfr7af71g842gdc4dg183y1rx",
+      "displayName": "jochoonhwan",
+      "image": "https://avatars.githubusercontent.com/u/258758600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774974237763,
+      "changelog": "- Initial release of global-resume-builder.\n- Generates professional, ATS-optimized resumes tailored for US, UK, EU, and APAC job markets.\n- Supports resume templates for tech/software, finance/consulting, and marketing/creative industries.\n- Includes best practices for formatting, action verbs by category, and region-specific guidelines.\n- Provides output in clean, hiring manager-ready formats with tips for maximizing impact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47bb1e8569fe7529d5f3890c152d65b5b860afbdff58d878c00135ce5268aca7"
+}

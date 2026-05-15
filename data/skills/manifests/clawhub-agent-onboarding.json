@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64254,
+  "uuid": "skill-clawhub-agent-onboarding",
+  "skillKey": "clawhub-agent-onboarding",
+  "name": "Agent Onboarding",
+  "summary": "新成员加入群聊后的快速上手指南。当新 agent 加入 Meeting 群或任何项目群时，使用此 skill 指导其：更新自己的 AGENTS.md、建立群组笔记、掌握发言规范、搭建设记忆体系。触发场景：被要求\"教新成员\"、\"更新 AGENTS.md\"、\"建立项目文档\"、\"快速上手群聊\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fang, Chao",
+      "features": [
+        "新成员加入群聊后的快速上手指南。当新 agent 加入 Meeting 群或任何项目群时，使用此 skill 指导其：更新自己的 AGENTS.md、建立群组笔记、掌握发言规范、搭建设记忆体."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9637282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-onboarding",
+      "url": "https://clawhub.ai/skills/agent-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-onboarding",
+    "url": "https://clawhub.ai/skills/agent-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-onboarding-e2791637f0819617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:497b18ded77d5f0c1f4fd2ecbafffe99cb3a061d5500a5cddcf83b71aaa7e6de",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T02:25:20.399Z"
+}

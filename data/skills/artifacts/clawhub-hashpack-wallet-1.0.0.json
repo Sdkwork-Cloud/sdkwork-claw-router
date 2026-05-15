@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hashpack-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashpack_wallet",
+  "skill": {
+    "id": 18120,
+    "skillKey": "clawhub-hashpack-wallet",
+    "name": "HashPack Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashpack-wallet",
+    "url": "https://clawhub.ai/skills/hashpack-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashpack-wallet-e3be7ca83f9aa7d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate HashPack for Hedera blockchain login, transaction signing, DApp connection, and account balance retrieval in web applications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harleyscodes",
+      "userId": "publishers:harleyscodes",
+      "displayName": "HarleysCodes",
+      "image": "https://avatars.githubusercontent.com/u/116604105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771109012554,
+      "changelog": "- Initial release: Integrate HashPack wallet for Hedera blockchain authentication.\n- Supports adding HashPack login to web apps.\n- Enables signing HBAR transactions and accessing account balance.\n- Provides methods for connecting/disconnecting, and supports multiple transaction types.\n- Compatible with mainnet, testnet, and previewnet environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa4eb0f40d3f2e5fc14129acd9936f6d6687db8baf9c864edc88bdda200d474d"
+}

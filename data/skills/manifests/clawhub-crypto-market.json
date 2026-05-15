@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59808,
+  "uuid": "skill-clawhub-crypto-market",
+  "skillKey": "clawhub-crypto-market",
+  "name": "Crypto Market",
+  "summary": "加密货币行情分析：本技能自带 Binance 公开行情 + 指标脚本；资讯用 web_search/web_fetch。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luyao-inc",
+      "features": [
+        "加密货币行情分析：本技能自带 Binance 公开行情 + 指标脚本；资讯用 web_search/web_fetch。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-market@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35760741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-market",
+      "url": "https://clawhub.ai/skills/crypto-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market",
+    "url": "https://clawhub.ai/skills/crypto-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-892f85d228f6d7f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-market@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-market-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0ff1bf8c0a1c3da1c39c0ef8a63918d7f56bb5f607093dffe53818c1a41b734",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:09:56.454Z"
+}

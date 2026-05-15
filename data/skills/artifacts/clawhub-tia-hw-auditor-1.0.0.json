@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tia-hw-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tia_hw_auditor",
+  "skill": {
+    "id": 40062,
+    "skillKey": "clawhub-tia-hw-auditor",
+    "name": "TIA HW AUDITOR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tia-hw-auditor",
+    "url": "https://clawhub.ai/skills/tia-hw-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tia-hw-auditor-a1095c20c06bb496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use TIA Openness to compare hardware and I/O configuration between field and master backups."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjmore66",
+      "userId": "s173kf9xreef911jpkrjazbz3d83hevz",
+      "displayName": "Caisik",
+      "image": "https://avatars.githubusercontent.com/u/104183381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774668997142,
+      "changelog": "Initial release of TIA_HW_AUDITOR.\n\n- Compares hardware and I/O configuration between field and master backups using TIA Openness.\n- Mounts or accesses NAS and engineering vault paths to locate backup files.\n- Runs an external audit script on .zap18 files.\n- Outputs change results in CSV (detailed) and JSON (summary) formats.\n- Detects node additions, I/O address shifts, firmware changes, and forced I/O points.\n- Integrated heartbeat agent workflow for automated report generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05dc8ad6ccdf9f28065f7100a43ed543ebf4e0150fe66428775808924f0222c5"
+}

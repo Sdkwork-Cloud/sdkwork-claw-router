@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redbook@0.7.2",
+  "version": "0.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbook",
+  "skill": {
+    "id": 56617,
+    "skillKey": "clawhub-redbook",
+    "name": "redbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbook",
+    "url": "https://clawhub.ai/skills/redbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbook-c3b0a3efbc6542f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, analyze, and automate Xiaohongshu (小红书) content via CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasygu",
+      "userId": "s178n5dtwwsjcmy1nhtkhtj4ph83m208",
+      "displayName": "lucasygu",
+      "image": "https://avatars.githubusercontent.com/u/37234721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1606,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.7.2",
+      "createdAt": 1775972145031,
+      "changelog": "redbook v0.7.2\n\n- Updated dependencies in package.json for improved stability or compatibility.\n- No user-facing features or documentation changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:128d56d9b1a4c329de850e94cd85df3609c47acfe9479b52b61a250d2aaf1090"
+}

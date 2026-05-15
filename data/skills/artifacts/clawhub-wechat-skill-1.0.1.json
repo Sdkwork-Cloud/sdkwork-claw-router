@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_skill",
+  "skill": {
+    "id": 62313,
+    "skillKey": "clawhub-wechat-skill",
+    "name": "wechat-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-skill",
+    "url": "https://clawhub.ai/skills/wechat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-skill-a32eab6ed4538dea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows 电脑端微信消息发送 MCP，实现在微信上给指定联系人发送消息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "529279917",
+      "userId": "s1746hsy8w16j6bn6jnf7zzex983gkm9",
+      "displayName": "529279917",
+      "image": "https://avatars.githubusercontent.com/u/43699698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773381416139,
+      "changelog": "- Updata the description.\n- No code or documentation updates included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:583f08c66697663b8433ba1f89712cb732da55dd0d6186372ae30868c1ac020c"
+}

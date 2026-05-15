@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-process@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_process",
+  "skill": {
+    "id": 11153,
+    "skillKey": "clawhub-image-process",
+    "name": "Image Process"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-process",
+    "url": "https://clawhub.ai/skills/image-process",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-process-880ca163cdcf68f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image processing tool for compression, background removal/replacement, and upscaling. Invoke when user wants to compress image, remove background, change bac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanford284",
+      "userId": "s17fe3nx4k6qsy643qbd9qc2vh83n3df",
+      "displayName": "Real",
+      "image": "https://avatars.githubusercontent.com/u/18443683?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2209,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772456605961,
+      "changelog": "Initial release of the image-process skill:\n\n- Compress images to reduce file size with adjustable quality settings.\n- Remove image backgrounds using AI-powered tools.\n- Replace image backgrounds with a solid color or a custom image.\n- Upscale images by a chosen factor or to specific dimensions.\n- Includes CLI commands and programmatic usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8368c7cbfbea680411a3e7cd27cb248f9d99220e2e1b7cad62d2d80918211b50"
+}

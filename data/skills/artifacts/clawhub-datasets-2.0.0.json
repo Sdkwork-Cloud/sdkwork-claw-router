@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datasets@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datasets",
+  "skill": {
+    "id": 29896,
+    "skillKey": "clawhub-datasets",
+    "name": "Datasets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datasets",
+    "url": "https://clawhub.ai/skills/datasets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datasets-714284abfa95a144.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and load ready-to-use AI/ML datasets with fast manipulation. Use when searching datasets, loading training data, transforming formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773897494519,
+      "changelog": "publish v2.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e03ccc39f814e292e5cb6e3b46834e8d9d47d8a2332a9cc4e8e7fd6d3ffbf669"
+}

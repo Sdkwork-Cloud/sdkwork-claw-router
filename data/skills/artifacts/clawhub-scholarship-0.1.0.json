@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scholarship@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scholarship",
+  "skill": {
+    "id": 67505,
+    "skillKey": "clawhub-scholarship",
+    "name": "Scholarship"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scholarship",
+    "url": "https://clawhub.ai/skills/scholarship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scholarship-f552935eea2a6d76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供各类国家/校级奖学金申请规则、截止日期及心得分享指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773932147740,
+      "changelog": "Scholarship Skill v0.1.0\n\n- Initial release with support for national and university scholarship rules, deadlines, and experience sharing.\n- Includes filters such as academic stage, teaching format, and assessment criteria.\n- Provides key return fields: study duration tracking, mastery analysis, error-book sync, teacher backgrounds, course outlines, and more.\n- Sample prompts and usage guidance now available.\n- Regular updates tied to exam syllabus changes and feedback on teaching effectiveness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:455cafabc2706c372e747af5ff4433ed8fcdab084e2a88bbca0c88271aa47369"
+}

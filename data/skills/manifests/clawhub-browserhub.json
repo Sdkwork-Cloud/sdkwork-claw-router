@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27025,
+  "uuid": "skill-clawhub-browserhub",
+  "skillKey": "clawhub-browserhub",
+  "name": "Browserhub",
+  "summary": "Browserhub integration. Manage data, records, and automate workflows. Use when the user wants to interact with Browserhub data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Browserhub integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Browserhub data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browserhub@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browserhub",
+      "url": "https://clawhub.ai/skills/browserhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserhub",
+    "url": "https://clawhub.ai/skills/browserhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserhub-e39b26475fed568c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browserhub@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-browserhub-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98c93a7138a36ba981e7dac136fac7db88caac1580c4ba5e267610532d06ea91",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:09:55.494Z"
+}

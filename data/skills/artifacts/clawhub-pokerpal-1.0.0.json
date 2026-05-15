@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pokerpal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pokerpal",
+  "skill": {
+    "id": 12291,
+    "skillKey": "clawhub-pokerpal",
+    "name": "pokerpal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pokerpal",
+    "url": "https://clawhub.ai/skills/pokerpal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pokerpal-1f07f4134477ecd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query PokerPal poker game data - games, players, buy-ins, settlements"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vvardhan14",
+      "userId": "publishers:vvardhan14",
+      "displayName": "vvardhan14",
+      "image": "https://avatars.githubusercontent.com/u/16073429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1703,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770255673218,
+      "changelog": "Initial release of PokerPal assistant.\n\n- Query live poker game data including games, players, buy-ins, and settlements\n- Tools available: list groups, view group games, summaries, player stats, and buy-in details\n- Supports filtering active/closed games and summarizing results\n- Formats responses for clear display, including money and player lists",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca301451508d35c84a49fe852d0a2f8ef49bbace22400b8e2bd6ed7f138acfeb"
+}

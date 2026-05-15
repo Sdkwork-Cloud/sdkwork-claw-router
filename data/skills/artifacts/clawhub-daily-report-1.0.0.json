@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report",
+  "skill": {
+    "id": 8847,
+    "skillKey": "clawhub-daily-report",
+    "name": "Daily Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report",
+    "url": "https://clawhub.ai/skills/daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-e91bf0bd726d98dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily, weekly, and alert reports tracking leads, outreach, cost, priorities, and issues, saving structured summaries for progress monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visualdeptcreative",
+      "userId": "publishers:visualdeptcreative",
+      "displayName": "visualdeptcreative",
+      "image": "https://avatars.githubusercontent.com/u/257858472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5079,
+      "installsAllTime": 98,
+      "installsCurrent": 91,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770291915487,
+      "changelog": "- Initial release of daily-report skill, providing automated daily, end-of-day, and weekly reporting templates.\n- Tracks lead pipeline, outreach, metrics, and budget in structured reports.\n- Saves daily log summaries to memory files for future reference.\n- Includes support for immediate alerts on replies, budget thresholds, API errors, and blockers.\n- Designed for use with a local ollama model for cost-free, simple aggregation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f5681b7e89eb684c3faaae1f6283de60dd0deb9f63c6cff17df0d125ec38e10"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glitch-skillstore@2026.2.17",
+  "version": "2026.2.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_skillstore",
+  "skill": {
+    "id": 16502,
+    "skillKey": "clawhub-glitch-skillstore",
+    "name": "Skillstore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-skillstore",
+    "url": "https://clawhub.ai/skills/glitch-skillstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-skillstore-cb4c7626f290577f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, install, and create OpenClaw skills with intelligent matching across known, local, and GitHub repositories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris6970barbarian-hue",
+      "userId": "publishers:chris6970barbarian-hue",
+      "displayName": "Glitch",
+      "image": "https://avatars.githubusercontent.com/u/258746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 867,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.2.17",
+      "createdAt": 1771336626950,
+      "changelog": "- Added detailed documentation in SKILL.md covering usage, search algorithm, interaction flow, error handling, and skill database.\n- Explained setup-free operation and provided clear CLI usage examples for searching, installing, and creating skills.\n- Described the intelligent skill matching process, including matching algorithm steps, score thresholds, and data sources.\n- Listed and described 20 built-in, searchable OpenClaw skills.\n- Documented error handling behavior and fallback strategies.\n- Included file structure overview and related skills for easier discovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:360782e9685a18841443bd6ee2b78f6ec0fd6844df0969c5975e54cc22f25184"
+}

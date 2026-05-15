@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/computer-takeover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.computer_takeover",
+  "skill": {
+    "id": 53130,
+    "skillKey": "clawhub-computer-takeover",
+    "name": "Computer Takeover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "computer-takeover",
+    "url": "https://clawhub.ai/skills/computer-takeover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/computer-takeover-45e908f776bb9bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full unattended remote control of paired devices (nodes) — screen capture, file management, shell commands, app control, camera, notifications, and process m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775877138055,
+      "changelog": "- Initial release of computer-takeover skill for full unattended remote control of paired devices.\n- Supports real-time screen capture, camera access, file management, shell/command execution, and app control across Windows, macOS, Android, and iOS.\n- Enables input injection (typing, clicks), process management, notification monitoring/responding, and location retrieval.\n- Node pairing and management included for secure device linking.\n- Designed for automation, device ghosting, and direct device management without user interaction on the remote end.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f088b0cadbe9a4bc3065aeedbecbf23e2210f85b021143164851a11392846b6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rd-workflow-guide@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rd_workflow_guide",
+  "skill": {
+    "id": 71836,
+    "skillKey": "clawhub-rd-workflow-guide",
+    "name": "rd-workflow食品研发流程指引"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rd-workflow-guide",
+    "url": "https://clawhub.ai/skills/rd-workflow-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rd-workflow-guide-07aa84119a1052a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "研发全流程操作指引能力；支持研发阶段递进提醒、上一步总结、注意事项提示；当进行产品研发项目或需要流程指导时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudyxuq",
+      "userId": "s1705xx83pwxdyafv3n4m2r8s183m72a",
+      "displayName": "Tinker",
+      "image": "https://avatars.githubusercontent.com/u/3884483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776336034191,
+      "changelog": "- 移除了对 pandas 和系统依赖（data/rd_workflow 目录创建）。\n- 其他内容未发生变化，功能和流程指引文档保持一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05319ee3e7d0b05652c2427142aeb6affd83bdd73d2848ceda2a65849fee84b7"
+}

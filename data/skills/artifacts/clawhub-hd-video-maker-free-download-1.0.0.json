@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hd-video-maker-free-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hd_video_maker_free_download",
+  "skill": {
+    "id": 37312,
+    "skillKey": "clawhub-hd-video-maker-free-download",
+    "name": "Hd Video Maker Free Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hd-video-maker-free-download",
+    "url": "https://clawhub.ai/skills/hd-video-maker-free-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hd-video-maker-free-download-e5729bd850f8e33b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished HD videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776701741623,
+      "changelog": "Initial release of HD Video Maker Free Download (v1.0.0):\n\n- Upload video clips (MP4, MOV, AVI, WebM up to 500MB) and process edits via cloud AI.\n- Simple text instructions enable quick actions like trimming, adding transitions, and exporting in 1080p MP4.\n- Automatic backend setup using anonymous token with 100 free credits (7-day expiry).\n- Session state is preserved to enable iterative or batch editing.\n- Built-in credit check, export, and error handling; guides users if issues occur.\n- Supports common video/audio/image formats for input and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d65f6430bbf10ba63bbcfbfda9e04c7b5af3e8ca735a3f661010ad504c870767"
+}

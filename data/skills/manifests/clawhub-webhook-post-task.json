@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58937,
+  "uuid": "skill-clawhub-webhook-post-task",
+  "skillKey": "clawhub-webhook-post-task",
+  "name": "webhook-post-task",
+  "summary": "将本地 JSON 发送到 webhook 并记录响应。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webhook_post_task",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "askjda",
+      "features": [
+        "将本地 JSON 发送到 webhook 并记录响应。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webhook-post-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94748630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webhook-post-task",
+      "url": "https://clawhub.ai/skills/webhook-post-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webhook-post-task",
+    "url": "https://clawhub.ai/skills/webhook-post-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webhook-post-task-626f0a39e03c7567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webhook-post-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webhook-post-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:440cd5163bf026b4d390f940b27d5986b44c89ffd39bfcfb0a40d2b4e5a16fcb",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:13:42.612Z"
+}

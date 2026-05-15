@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72093,
+  "uuid": "skill-clawhub-content-deai-engine",
+  "skillKey": "clawhub-content-deai-engine",
+  "name": "去 AI 味内容引擎",
+  "summary": "为小红书、X、知乎等平台生成“去 AI 味”的内容重写与新稿产出技能。用于用户要求内容更像真人表达、减少模板腔、提升口语感和观点力度的场景；也用于把已有草稿改写为平台适配版本。触发词包括“去 AI 味”“重写成更像人写的”“太像 AI 了”“口语化”“按平台改写”“小红书/X/知乎 优化”。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_deai_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "为小红书、X、知乎等平台生成“去 AI 味”的内容重写与新稿产出技能。用于用户要求内容更像真人表达、减少模板腔、提升口语感和观点力度的场景；也用于把已有草稿改写为平台适配版本。触发词包括“去."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-deai-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-deai-engine",
+      "url": "https://clawhub.ai/skills/content-deai-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-deai-engine",
+    "url": "https://clawhub.ai/skills/content-deai-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-deai-engine-f0217a706072268b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-deai-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-deai-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e48f196ad03179f280efb48cda1453ef56bed12e6aa9715bb46e4ebb60eba4e9",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:54:37.643Z"
+}

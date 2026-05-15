@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36147,
+  "uuid": "skill-clawhub-mono",
+  "skillKey": "clawhub-mono",
+  "name": "Mono",
+  "summary": "Mono integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mono data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mono",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mono integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mono data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mono@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mono",
+      "url": "https://clawhub.ai/skills/mono"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mono",
+    "url": "https://clawhub.ai/skills/mono",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mono-d7de34b17b4691aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mono@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mono-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f230331ccafa74db248652c21fee91e525a3987d69f05c8afd3b8774f7759d85",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:45:36.139Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20709,
+  "uuid": "skill-clawhub-delete-recovery",
+  "skillKey": "clawhub-delete-recovery",
+  "name": "delete-recovery",
+  "summary": "Automatically backs up files before deletion to timestamped folders, allows restoring deleted files, lists backups, and cleans expired backups and logs.",
+  "version": "0.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delete_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoderHanX",
+      "features": [
+        "Automatically backs up files before deletion to timestamped folders, allows restoring deleted f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delete-recovery@0.8.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22065436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delete-recovery",
+      "url": "https://clawhub.ai/skills/delete-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delete-recovery",
+    "url": "https://clawhub.ai/skills/delete-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delete-recovery-b6659dd1a44e8286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delete-recovery@0.8.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-delete-recovery-0.8.3.json",
+      "version": "0.8.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3a783606561c6945f5c8f4b45fd9dc87d46768a8fe1452aba0d1082939525a8",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:35:28.808Z"
+}

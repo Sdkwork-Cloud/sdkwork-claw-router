@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52227,
+  "uuid": "skill-clawhub-dynamic-temperature",
+  "skillKey": "clawhub-dynamic-temperature",
+  "name": "Dynamic Temperature",
+  "summary": "Dynamic LLM temperature selection based on task type. Use when deciding what temperature to apply for a given task — scheduling, communication, creative writ...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_temperature",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Dynamic LLM temperature selection based on task type",
+        "Use when deciding what temperature to apply for a given task — scheduling, communication, creat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dynamic-temperature@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dynamic-temperature",
+      "url": "https://clawhub.ai/skills/dynamic-temperature"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-temperature",
+    "url": "https://clawhub.ai/skills/dynamic-temperature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-temperature-4312f56b0fd71a6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dynamic-temperature@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-temperature-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fb3b12824d719884ac6fc8b36c8b2ea50e85f5233c8392dd44ee28f384b823d",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:51:13.829Z"
+}

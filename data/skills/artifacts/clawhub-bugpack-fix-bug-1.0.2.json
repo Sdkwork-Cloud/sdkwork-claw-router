@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bugpack-fix-bug@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugpack_fix_bug",
+  "skill": {
+    "id": 30974,
+    "skillKey": "clawhub-bugpack-fix-bug",
+    "name": "BugPack Fix Bug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugpack-fix-bug",
+    "url": "https://clawhub.ai/skills/bugpack-fix-bug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugpack-fix-bug-e420d58cfc15f2ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix a bug from BugPack by reading its context, locating code, applying fixes, and updating status. Use when: user asks to fix, repair, or resolve a bug. NOT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duhuazhu",
+      "userId": "publishers:duhuazhu",
+      "displayName": "duhuazhu",
+      "image": "https://avatars.githubusercontent.com/u/45280664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773826100532,
+      "changelog": "- Clarified the skill's purpose in the description, specifying when to use and not use it.\n- Added detailed step-by-step instructions for fetching bug context, analyzing bugs, locating code, applying fixes, and marking bugs as fixed.\n- Included example API requests and responses for clarity.\n- Expanded guidance on finding relevant source files using relatedFiles, pagePath, and description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:773e8c7983685c2868f42af2cabe63ada99a88ac5453e4d6efbb4b1044c257d7"
+}

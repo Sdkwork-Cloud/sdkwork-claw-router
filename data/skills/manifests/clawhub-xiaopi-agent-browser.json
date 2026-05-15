@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39815,
+  "uuid": "skill-clawhub-xiaopi-agent-browser",
+  "skillKey": "clawhub-xiaopi-agent-browser",
+  "name": "Xiaopi Agent Browser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adin",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaopi-agent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22701008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaopi-agent-browser",
+      "url": "https://clawhub.ai/skills/xiaopi-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-agent-browser",
+    "url": "https://clawhub.ai/skills/xiaopi-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-agent-browser-ed4ad88ef4931920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaopi-agent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-agent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02e3f166abbd6f964ba199e430ec13ac64b6bd2b6458fc2cb3be8b290d100959",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:06:19.497Z"
+}

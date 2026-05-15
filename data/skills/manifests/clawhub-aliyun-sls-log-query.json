@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53124,
+  "uuid": "skill-clawhub-aliyun-sls-log-query",
+  "skillKey": "clawhub-aliyun-sls-log-query",
+  "name": "Aliyun Sls Log Query",
+  "summary": "Use when querying or troubleshooting logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_sls_log_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when querying or troubleshooting logs in Alibaba Cloud Log Service (SLS) using query|analys.",
+        "Use for time-bounded log search,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-sls-log-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-sls-log-query",
+      "url": "https://clawhub.ai/skills/aliyun-sls-log-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-sls-log-query",
+    "url": "https://clawhub.ai/skills/aliyun-sls-log-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-sls-log-query-a2ee5ea2a73047d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-sls-log-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-sls-log-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86ae5dc57c37bb5206334b8dcf65f3d876581271c5462b34c07167e0d96d3f46",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:20:14.856Z"
+}

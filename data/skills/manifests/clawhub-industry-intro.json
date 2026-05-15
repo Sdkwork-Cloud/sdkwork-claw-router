@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69182,
+  "uuid": "skill-clawhub-industry-intro",
+  "skillKey": "clawhub-industry-intro",
+  "name": "industry-intro",
+  "summary": "行业定义生成系统；当用户需要为任意行业/产品生成高信度、可溯源、结构化的行业定义报告时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_intro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youhaokun0514-sys",
+      "features": [
+        "行业定义生成系统；当用户需要为任意行业/产品生成高信度、可溯源、结构化的行业定义报告时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-intro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256751680?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-intro",
+      "url": "https://clawhub.ai/skills/industry-intro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-intro",
+    "url": "https://clawhub.ai/skills/industry-intro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-intro-d3c05f2383bfa3b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-intro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-intro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac99d0659001a70689de46391dddd4a6c7be985fc84e5e680620f422807ac8ae",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:44:08.119Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29522,
+  "uuid": "skill-clawhub-github-actions-stuck-run-audit",
+  "skillKey": "clawhub-github-actions-stuck-run-audit",
+  "name": "GitHub Actions Stuck Run Audit",
+  "summary": "Detect stale queued/in-progress GitHub Actions runs before they quietly block delivery.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_stuck_run_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Detect stale queued/in-progress GitHub Actions runs before they quietly block delivery."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-stuck-run-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-stuck-run-audit",
+      "url": "https://clawhub.ai/skills/github-actions-stuck-run-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-stuck-run-audit",
+    "url": "https://clawhub.ai/skills/github-actions-stuck-run-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-stuck-run-audit-c05de97ee0098d8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-stuck-run-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-stuck-run-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:808b871c921f570778100d9cd591939d3293f8ab375e0d879f2ab365a3208d63",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T18:07:11.072Z"
+}

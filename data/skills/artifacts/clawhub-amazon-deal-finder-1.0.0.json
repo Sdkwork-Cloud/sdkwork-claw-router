@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-deal-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_deal_finder",
+  "skill": {
+    "id": 52477,
+    "skillKey": "clawhub-amazon-deal-finder",
+    "name": "Amazon Deal Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-deal-finder",
+    "url": "https://clawhub.ai/skills/amazon-deal-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-deal-finder-871f9b8572630cca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and optimize Amazon promotional deals — Lightning Deals, Best Deals, Coupons, and Prime Exclusive Discounts. Evaluate deal ROI, timing, and strategy for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774348717082,
+      "changelog": "Initial release of Amazon Deal Finder.\n\n- Plan and optimize Amazon promotional deals, including Lightning Deals, Best Deals, Coupons, and Prime Exclusive Discounts.\n- Evaluate deal ROI, timing, and strategic impact to maximize sales.\n- Supports planning for deal type selection, seasonality, inventory, and post-deal momentum.\n- Compatible with major e-commerce platforms including Amazon, Shopify, Walmart, and more.\n- Output includes structured recommendations, data points, and concrete next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f63e8e0d5c0305121989ab45c0d09c7d5e62e0fdb61fbc7ba53ba273ea2831f9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawddocs-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawddocs_1",
+  "skill": {
+    "id": 33729,
+    "skillKey": "clawhub-clawddocs-1",
+    "name": "Clawddocs 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawddocs-1",
+    "url": "https://clawhub.ai/skills/clawddocs-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawddocs-1-c1058583e7d0e204.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clawdbot documentation expert with decision tree navigation, search scripts, doc fetching, version tracking, and config snippets for all Clawdbot features"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774540977012,
+      "changelog": "Initial release of Clawdbot documentation expert skill.\n\n- Provides decision tree navigation to quickly identify relevant documentation.\n- Supports searching, fetching, and indexing docs with included CLI scripts.\n- Offers detailed documentation categories for all Clawdbot features.\n- Includes ready-to-use config snippets for common scenarios.\n- Adds workflow guidance and tips for efficient support and documentation lookup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b846f23c1feaa3cc245c807000e518fe6c25ef774aba5b22ae0d84a47b6ebe8e"
+}

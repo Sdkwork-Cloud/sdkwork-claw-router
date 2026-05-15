@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screencast-studio@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screencast_studio",
+  "skill": {
+    "id": 53327,
+    "skillKey": "clawhub-screencast-studio",
+    "name": "Screencast Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screencast-studio",
+    "url": "https://clawhub.ai/skills/screencast-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screencast-studio-4dc4a0224f6f9a90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-record narrated demo videos of any web UI from a Playwright-driven walkthrough — primary use case is the vibe-coding test loop (you just shipped a featu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tatsuko-tsukimi",
+      "userId": "s17fzynzndvr66ba9b8t2qxjd1859kvt",
+      "displayName": "TatsuKo Tsukimi",
+      "image": "https://avatars.githubusercontent.com/u/268521277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1778226677028,
+      "changelog": "Sharpen the vision phrasing: scrolling demos *is* the dev loop, not a review/QA layer on top. The video is the spec — see a take, tell AI what's off, swipe to the next version, stop when one matches. README + SKILL.md updated. No code changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b00e343d2243e8e04c275a4d1c07e9e968651c3ae351f42f412137810bc3245"
+}

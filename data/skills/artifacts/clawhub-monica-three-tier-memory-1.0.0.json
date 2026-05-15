@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monica-three-tier-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monica_three_tier_memory",
+  "skill": {
+    "id": 63432,
+    "skillKey": "clawhub-monica-three-tier-memory",
+    "name": "Three Tier Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monica-three-tier-memory",
+    "url": "https://clawhub.ai/skills/monica-three-tier-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monica-three-tier-memory-bbb1ccc9419a9039.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三级记忆管理系统 (Three-Tier Memory Management)。用于管理 AI 代理的短期、中期、长期记忆。包括：(1) 滑动窗口式短期记忆，(2) 自动摘要生成中期记忆，(3) 向量检索长期记忆 (RAG)。当需要管理对话历史、优化上下文、构建个人知识库、或实现记忆持久化时使用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forvendettaw",
+      "userId": "publishers:forvendettaw",
+      "displayName": "forvendettaw",
+      "image": "https://avatars.githubusercontent.com/u/24313853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 911,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771225406367,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e3cfcc79e394f9a02a68029e5dd6e691f7bdb31fd81240ae8b4616d74c7876f"
+}

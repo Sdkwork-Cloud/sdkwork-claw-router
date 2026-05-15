@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/posture-reset-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.posture_reset_guide",
+  "skill": {
+    "id": 49377,
+    "skillKey": "clawhub-posture-reset-guide",
+    "name": "Posture Reset Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "posture-reset-guide",
+    "url": "https://clawhub.ai/skills/posture-reset-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/posture-reset-guide-5309688458b90c24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Desk-worker posture checklists, micro-break planning, and gentle alignment awareness prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777614057998,
+      "changelog": "Initial release: document-only health literacy skill with explicit safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9baf6eabd3eabcd12de811a5420ee9719ab299a3ff7fcc6e690df8727d4334f"
+}

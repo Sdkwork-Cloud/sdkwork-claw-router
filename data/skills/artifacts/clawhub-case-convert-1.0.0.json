@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/case-convert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case_convert",
+  "skill": {
+    "id": 31457,
+    "skillKey": "clawhub-case-convert",
+    "name": "Case Convert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case-convert",
+    "url": "https://clawhub.ai/skills/case-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-convert-76cff444766dab29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert text between different case styles. Use when the user asks to convert text to camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohernandez-dev-blossom",
+      "userId": "publishers:ohernandez-dev-blossom",
+      "displayName": "Omar Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/86250007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774227243967,
+      "changelog": "- Initial release of case-convert skill.\n- Converts text between 15 different case styles, including camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, and more.\n- Supports converting a single string or each line individually (batchMode).\n- Provides helpful error handling, including style suggestions and long input notices.\n- If no target style is given, outputs all 15 transformations at once.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f4649a6bfbde588afbaced8a60f16fd7b44ec297c25936c47765558b79c1090"
+}

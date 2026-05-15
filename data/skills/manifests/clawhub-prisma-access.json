@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38409,
+  "uuid": "skill-clawhub-prisma-access",
+  "skillKey": "clawhub-prisma-access",
+  "name": "Prisma Access All-in-One",
+  "summary": "All-in-one Prisma Access management for Strata Cloud Manager (SCM). Generate configurations, audit against best practices, migrate between tenants, troublesh...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_access",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "H@CKMEN",
+      "features": [
+        "All-in-one Prisma Access management for Strata Cloud Manager (SCM)",
+        "Generate configurations, audit against best practices, migrate between tenants, troublesh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prisma-access@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11771122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prisma-access",
+      "url": "https://clawhub.ai/skills/prisma-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-access",
+    "url": "https://clawhub.ai/skills/prisma-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-access-bcf6979fa2386d11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prisma-access@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prisma-access-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d91e4c09f706d1c08a11ec0a925024b6fea2be8efb24e7c575991a84bed78e47",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:21:29.225Z"
+}

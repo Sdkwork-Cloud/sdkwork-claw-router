@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67900,
+  "uuid": "skill-clawhub-judgment-analyzer",
+  "skillKey": "clawhub-judgment-analyzer",
+  "name": "Judgment Analyzer 判决书分析",
+  "summary": "分析判决书文档，提取关键信息并生成结构化分析报告。当用户提到「分析判决书」「解读判决书」「判决书总结」「生成判决书报告」「批量分析判决书」时使用。支持 PDF 和 Word (.docx/.doc) 格式，可处理单个文件或整个文件夹。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.judgment_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "szzzcode",
+      "features": [
+        "分析判决书文档，提取关键信息并生成结构化分析报告。当用户提到「分析判决书」「解读判决书」「判决书总结」「生成判决书报告」「批量分析判决书」时使用。支持 PDF 和 Word (.docx/.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/judgment-analyzer@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52872763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "judgment-analyzer",
+      "url": "https://clawhub.ai/skills/judgment-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "judgment-analyzer",
+    "url": "https://clawhub.ai/skills/judgment-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/judgment-analyzer-6c1ba8ca58ade0a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/judgment-analyzer@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-judgment-analyzer-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d31c18948f37375ea784784534436ceae6a38e76e61fc3b7f3a37a67ed5b3035",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:10:41.445Z"
+}

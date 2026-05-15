@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skywork-ppt@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_ppt",
+  "skill": {
+    "id": 8766,
+    "skillKey": "clawhub-skywork-ppt",
+    "name": "Skywork PPT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-ppt",
+    "url": "https://clawhub.ai/skills/skywork-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-ppt-29d213ce50b11727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skywork PPT (skywork) - Use when the user wants to work with PowerPoint presentations. Triggers: (1) Generate a new PPT from a topic — 'generate a PPT', 'cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxcun17",
+      "userId": "s174hwb34r6ncgdm62n09a9tbd83hn5x",
+      "displayName": "Skywork AI",
+      "image": "https://avatars.githubusercontent.com/u/5279174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4640,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 32,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776949188398,
+      "changelog": "**Added support for converting NotebookLM-exported files to editable PPTX.**\n\n- New capability: Convert .pptx or .pdf exported from NotebookLM to fully editable PPTX format (Layer 5).\n- Added script: scripts/run_editable_convert.py to handle the conversion process.\n- Added workflow guide: workflow_convert_editable.md.\n- Updated skill description and workflow to include the new conversion feature.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd8abe123dd4774d55d8bf5b9239fc242df8b54d4883794ca884a503c0c8b82c"
+}

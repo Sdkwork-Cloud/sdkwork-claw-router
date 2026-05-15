@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-drive-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_skill",
+  "skill": {
+    "id": 51144,
+    "skillKey": "clawhub-google-drive-skill",
+    "name": "Google Drive Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-skill",
+    "url": "https://clawhub.ai/skills/google-drive-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-skill-6ec3ebe2b1b34d9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to interact with a public Google Drive — listing, reading, creating, updating, or deleting files and folders. Handles both read-only..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dvnghiem",
+      "userId": "s176swzbjx3ec06d1w9ky2839d83pcwb",
+      "displayName": "DVNghiem",
+      "image": "https://avatars.githubusercontent.com/u/70430093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773906003048,
+      "changelog": "google-drive-skill 0.1.0 — Initial release\n\n- Provides ready-to-run scripts for listing, reading, creating, updating, and deleting files and folders in Google Drive via the Drive API v3.\n- Supports both read-only access (using API key) and full CRUD operations (using service account).\n- Includes robust folder navigation, file upload/download, setting permissions, handling MIME types, and error management.\n- Features an organized script interface with detailed usage examples and credential setup instructions.\n- Useful supporting materials: service account template, MIME type references, error code guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac5eae5ebecb3751c9af769f5bd1e3672dda51daac77f359b3c1432d4acfe14d"
+}

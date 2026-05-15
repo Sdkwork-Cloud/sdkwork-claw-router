@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/refactoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refactoring",
+  "skill": {
+    "id": 51433,
+    "skillKey": "clawhub-refactoring",
+    "name": "Refactoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refactoring",
+    "url": "https://clawhub.ai/skills/refactoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refactoring-aa3850283600eb7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep refactoring workflow—characterization tests, incremental steps, behavior preservation, design direction, and verification. Use when improving structure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370864431,
+      "changelog": "- Initial release introducing a structured deep refactoring workflow.\n- Outlines six clear stages: goal clarification, safety net establishment, incremental planning, reviewable execution, verification, and documentation.\n- Provides practical guidance for when and how to use the workflow, emphasizing behavior preservation and risk management.\n- Includes a review checklist and troubleshooting tips for effective and safe refactoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:520c6286f80b36cc2b5753f36935cd02e8ff97e12f430324d77a448770c45401"
+}

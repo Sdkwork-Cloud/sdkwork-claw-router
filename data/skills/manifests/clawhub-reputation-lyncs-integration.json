@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44444,
+  "uuid": "skill-clawhub-reputation-lyncs-integration",
+  "skillKey": "clawhub-reputation-lyncs-integration",
+  "name": "Reputation Lyncs",
+  "summary": "Reputation Lyncs integration. Manage data, records, and automate workflows. Use when the user wants to interact with Reputation Lyncs data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reputation_lyncs_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Reputation Lyncs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Reputation Lyncs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reputation-lyncs-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reputation-lyncs-integration",
+      "url": "https://clawhub.ai/skills/reputation-lyncs-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reputation-lyncs-integration",
+    "url": "https://clawhub.ai/skills/reputation-lyncs-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reputation-lyncs-integration-5b08e85fbaaed55b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reputation-lyncs-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reputation-lyncs-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7056826b2cddfd67467c60e5acd5c48592835b2306ca7020bea866d05b890114",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:49.861Z"
+}

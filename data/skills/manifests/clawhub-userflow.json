@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34022,
+  "uuid": "skill-clawhub-userflow",
+  "skillKey": "clawhub-userflow",
+  "name": "Userflow",
+  "summary": "Userflow integration. Manage data, records, and automate workflows. Use when the user wants to interact with Userflow data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.userflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Userflow integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Userflow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/userflow@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "userflow",
+      "url": "https://clawhub.ai/skills/userflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "userflow",
+    "url": "https://clawhub.ai/skills/userflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/userflow-981c7e6b7f4e65cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/userflow@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-userflow-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6ce5517132f3af6325877e92f696cd427da0f12a0f5cdbbbf8d0c5a9a1c7cc2",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:02.279Z"
+}

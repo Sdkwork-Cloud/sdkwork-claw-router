@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metacognition-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metacognition_checker",
+  "skill": {
+    "id": 29866,
+    "skillKey": "clawhub-metacognition-checker",
+    "name": "Metacognition Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metacognition-checker",
+    "url": "https://clawhub.ai/skills/metacognition-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metacognition-checker-b20a4b6b090b2293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check whether a user truly understands, or is just feeling familiar and overconfident"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495919813,
+      "changelog": "- Initial release of **metacognition-checker** skill.\n- Helps users distinguish between true understanding and mere familiarity or overconfidence.\n- Provides a structured checklist, highlights blind spots, identifies missing information, and suggests next-step validation actions.\n- Designed for use before decisions, during learning blocks, or after errors/misjudgments.\n- Encourages self-checking with prompting questions, separating feeling from evidence, and recommending minimal verification, rather than providing direct answers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfcba5022bb9602a9795d60b861771b52d3cfe5988ead774ee5b9cd7ccfbbc28"
+}

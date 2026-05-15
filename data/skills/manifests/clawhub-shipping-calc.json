@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17068,
+  "uuid": "skill-clawhub-shipping-calc",
+  "skillKey": "clawhub-shipping-calc",
+  "name": "Shipping Calc",
+  "summary": "Calculate shipping costs with zone-based rates and duty estimates. Use when estimating shipping costs.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_calc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Calculate shipping costs with zone-based rates and duty estimates",
+        "Use when estimating shipping costs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipping-calc@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipping-calc",
+      "url": "https://clawhub.ai/skills/shipping-calc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-calc",
+    "url": "https://clawhub.ai/skills/shipping-calc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-calc-d3f59953dabe6d33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipping-calc@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipping-calc-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3734a1a1cfaf34ab7c71515339ad4c6d81bb4be1c5d5274739a6fd2fa907f6c6",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:23:03.940Z"
+}

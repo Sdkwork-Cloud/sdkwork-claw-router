@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35073,
+  "uuid": "skill-clawhub-scrivito",
+  "skillKey": "clawhub-scrivito",
+  "name": "Scrivito",
+  "summary": "Scrivito integration. Manage data, records, and automate workflows. Use when the user wants to interact with Scrivito data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrivito",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Scrivito integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Scrivito data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrivito@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrivito",
+      "url": "https://clawhub.ai/skills/scrivito"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrivito",
+    "url": "https://clawhub.ai/skills/scrivito",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrivito-c7e09c334643e129.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrivito@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrivito-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac7b1d2583909f88de31dadc171d2565ced98cbe95c2a43a62b289da4ecc545f",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:53.150Z"
+}

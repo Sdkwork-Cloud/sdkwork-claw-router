@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12557,
+  "uuid": "skill-clawhub-find-skills-3",
+  "skillKey": "clawhub-find-skills-3",
+  "name": "Find Skills",
+  "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "玩cursor和养比格有什么区别",
+      "features": [
+        "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-skills-3@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165377543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-skills-3",
+      "url": "https://clawhub.ai/skills/find-skills-3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-3",
+    "url": "https://clawhub.ai/skills/find-skills-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-3-87c301ce1dd24f68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-skills-3@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-skills-3-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26013bdc3eb469b615a1ba84ed4092354ac68796bd1edb87d78b22f963e72b23",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:15:08.079Z"
+}

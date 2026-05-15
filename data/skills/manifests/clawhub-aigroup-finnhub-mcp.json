@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54938,
+  "uuid": "skill-clawhub-aigroup-finnhub-mcp",
+  "skillKey": "clawhub-aigroup-finnhub-mcp",
+  "name": "AIGroup Finnhub MCP",
+  "summary": "Use Finnhub-backed market intelligence through the `aigroup-finnhub-mcp` server for stock, crypto, forex, calendar, news, sentiment, filing, ownership, analy...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigroup_finnhub_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackdark",
+      "features": [
+        "Use Finnhub-backed market intelligence through the `aigroup-finnhub-mcp` server for stock, cryp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigroup-finnhub-mcp@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201514154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigroup-finnhub-mcp",
+      "url": "https://clawhub.ai/skills/aigroup-finnhub-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigroup-finnhub-mcp",
+    "url": "https://clawhub.ai/skills/aigroup-finnhub-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigroup-finnhub-mcp-f6d9713df298f292.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigroup-finnhub-mcp@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigroup-finnhub-mcp-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d780fd054eb98f65ceaf905df47e6a46a3d536cdf468b92dbe0de6db76d705b",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:32:09.016Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55957,
+  "uuid": "skill-clawhub-pipeworx-mhw",
+  "skillKey": "clawhub-pipeworx-mhw",
+  "name": "Pipeworx mhw",
+  "summary": "MHW MCP — Monster Hunter World data (mhw-db.com, free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_mhw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "MHW MCP — Monster Hunter World data (mhw-db.com, free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-mhw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-mhw",
+      "url": "https://clawhub.ai/skills/pipeworx-mhw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-mhw",
+    "url": "https://clawhub.ai/skills/pipeworx-mhw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-mhw-adf4737efcc14a3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-mhw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-mhw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d2f2cbb2af318ae47ea1c16dabb98116d22e32b50121a57a3e810e2d8e40ba9",
+      "artifactSizeBytes": 1781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:28:41.492Z"
+}

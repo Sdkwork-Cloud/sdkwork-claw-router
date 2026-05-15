@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-best@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_best",
+  "skill": {
+    "id": 72457,
+    "skillKey": "clawhub-stock-analysis-best",
+    "name": "对上市公司进行系统性投资价值分析，支持 A 股、港股、美股"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-best",
+    "url": "https://clawhub.ai/skills/stock-analysis-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-best-7809b2540134d2a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对上市公司进行系统性投资价值分析，支持 A 股、港股、美股"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newhackerman",
+      "userId": "s17b91nfeywmd7q7q2f991sawh83g0a7",
+      "displayName": "newhackerman",
+      "image": "https://avatars.githubusercontent.com/u/15150570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773652792789,
+      "changelog": "**新增：支持自动生成可下载的 HTML/PDF 报告**\n\n- 增加分析后自动生成 HTML 报告以及下载链接功能\n- 新增 analyze-with-pdf.sh、generate-pdf-report.sh 脚本，实现一键生成和下载报告\n- 报告可通过本地 HTTP 端口直接访问，方便浏览器预览与保存为 PDF\n- 新增 reports/ 目录，自动保存各公司分析报告文件\n- 数据缓存与报告生成一体化，提升用户体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32e60ad0c6fca6a8c5bed8bf23619dffdcf9a1371e6ec19ece1ab91ac120c98d"
+}

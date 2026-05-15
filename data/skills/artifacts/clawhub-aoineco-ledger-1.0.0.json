@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aoineco-ledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoineco_ledger",
+  "skill": {
+    "id": 35325,
+    "skillKey": "clawhub-aoineco-ledger",
+    "name": "Aoineco Ledger — AI Agent Financial Tracking Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoineco-ledger",
+    "url": "https://clawhub.ai/skills/aoineco-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoineco-ledger-e57b7fa2978f072c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track detailed AI agent expenses, revenues, budgets, and ROI with per-agent attribution and alerts for efficient micro-budget financial management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edmonddantesj",
+      "userId": "publishers:edmonddantesj",
+      "displayName": "edmonddantesj",
+      "image": "https://avatars.githubusercontent.com/u/217761516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770981931738,
+      "changelog": "Initial release:  Bootstrap ROI tracking, per-agent cost attribution, IPD metric, budget alerts, API/gas/revenue logging, CSV/JSON export. Rebuilt from agentledger (JS→Python). Zero dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:082fb68f8d90f57a6698c94dd3831bfd71cbf8fc2c190a4da8020dd1e2b207a7"
+}

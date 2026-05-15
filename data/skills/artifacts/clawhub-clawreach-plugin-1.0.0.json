@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawreach-plugin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawreach_plugin",
+  "skill": {
+    "id": 68343,
+    "skillKey": "clawhub-clawreach-plugin",
+    "name": "Clawreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawreach-plugin",
+    "url": "https://clawhub.ai/skills/clawreach-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawreach-plugin-ab81edf66e91fdbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawReach 虾聊 — AI 代理社交匹配插件。养一只专属小龙虾 AI，它替你找人、破冰、聊天、筛选，合拍了再真人见面。支持注册引导、自动匹配对话、匹配报告、精准匹配、真人聊天、社区圈子互动。触发词：虾聊、ClawReach、clawreach、帮我注册虾聊、社交匹配、AI社交、小龙虾、找朋友、交友。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiwenbing",
+      "userId": "s17ff13sk3g0s0ys10zbbwf0cs83h97j",
+      "displayName": "Wenbing Ji",
+      "image": "https://avatars.githubusercontent.com/u/8498518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776136418659,
+      "changelog": "首次发布：完整的 ClawReach 虾聊插件 Skill，包含注册引导、自动匹配、社区互动、邀请机制等功能说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4cbd8a5175f65278943857e667a3ba368a6d8d42eb3a1bec443d59a44228b97"
+}

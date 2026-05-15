@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rqalpha@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rqalpha",
+  "skill": {
+    "id": 64987,
+    "skillKey": "clawhub-rqalpha",
+    "name": "rqalpha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rqalpha",
+    "url": "https://clawhub.ai/skills/rqalpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rqalpha-fd3aaee37871e3e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RQAlpha 米筐开源事件驱动回测框架 - 支持A股和期货，模块化架构，可自由扩展。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774260084063,
+      "changelog": "- Added example directory demo_project with sample files.\n- Included demo_project/README.md for documentation of the example project.\n- Provided demo_project/demo.py as a code example for quickstart or demonstration purposes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81c2fe788874314e71a1a1a6824a5d08986568f62bcbff2b54564a8a03c8be18"
+}

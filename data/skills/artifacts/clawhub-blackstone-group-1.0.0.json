@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blackstone-group@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blackstone_group",
+  "skill": {
+    "id": 69114,
+    "skillKey": "clawhub-blackstone-group",
+    "name": "Blackstone Group"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blackstone-group",
+    "url": "https://clawhub.ai/skills/blackstone-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blackstone-group-a0cb699e3d9f8688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球最大另类资产管理公司，主营房地产、私募股权、信贷与对冲基金，收入模式为管理费加绩效分成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777439058719,
+      "changelog": "- Initial release of the Blackstone Group skill, providing a comprehensive overview in Chinese.\n- Covers Blackstone’s history, milestone deals (like the Hilton acquisition), and business lines (PE, real estate, credit, hedge funds).\n- Explains Blackstone’s business model (“2-and-20” fees), retail product innovation (BREIT), and competitive advantages.\n- Includes key financial data, fun facts about the firm, and context for when to activate the skill (e.g. discussions of Blackstone, PE, REITs, Steve Schwarzman).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99affb530685e67ff2b95b10a041ebe26609efdb6588a44af6c8ed099706223a"
+}

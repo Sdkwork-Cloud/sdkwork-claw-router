@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12681,
+  "uuid": "skill-clawhub-oura-ring",
+  "skillKey": "clawhub-oura-ring",
+  "name": "Ouraskill",
+  "summary": "Syncs daily health and fitness data from Oura Ring into markdown files. Provides sleep, readiness, activity, heart rate, stress, SpO2, and workout data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_ring",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freakyflow",
+      "features": [
+        "Syncs daily health and fitness data from Oura Ring into markdown files",
+        "Provides sleep, readiness, activity, heart rate, stress, SpO2, and workout data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oura-ring@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95600411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oura-ring",
+      "url": "https://clawhub.ai/skills/oura-ring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-ring",
+    "url": "https://clawhub.ai/skills/oura-ring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-ring-0c5e5951ba6b3b25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oura-ring@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-oura-ring-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aca295edd36bd93e7e4cc65e5c803097011e33d29a7b4f87cfcf3d999e290d7",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:17:29.201Z"
+}

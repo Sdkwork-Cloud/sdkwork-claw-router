@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44226,
+  "uuid": "skill-clawhub-boardgame-picker",
+  "skillKey": "clawhub-boardgame-picker",
+  "name": "Boardgame Picker",
+  "summary": "Match a group to the right board game style by weighing player count, time, experience level, competition appetite, and social mood. Use when the user wants...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boardgame_picker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Match a group to the right board game style by weighing player count, time, experience level, c.",
+        "Use when the user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boardgame-picker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boardgame-picker",
+      "url": "https://clawhub.ai/skills/boardgame-picker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boardgame-picker",
+    "url": "https://clawhub.ai/skills/boardgame-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boardgame-picker-eda79a3f5e5047e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boardgame-picker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boardgame-picker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e541371155b08a404c0430ded93b0d8517880a8e9686e39a707e858c2d2e47ed",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:03:18.146Z"
+}

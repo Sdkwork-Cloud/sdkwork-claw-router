@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45187,
+  "uuid": "skill-clawhub-fix-universal-apk-installation",
+  "skillKey": "clawhub-fix-universal-apk-installation",
+  "name": "Fix Universal Apk Installation",
+  "summary": "Fixes universal_signed.apk installation failures on Android 11+ by correcting AndroidManifest, enabling native lib extraction, ensuring uncompressed aligned...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fix_universal_apk_installation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SoftwareME",
+      "features": [
+        "Fixes universal_signed.apk installation failures on Android 11+ by correcting AndroidManifest,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fix-universal-apk-installation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5801905?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fix-universal-apk-installation",
+      "url": "https://clawhub.ai/skills/fix-universal-apk-installation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fix-universal-apk-installation",
+    "url": "https://clawhub.ai/skills/fix-universal-apk-installation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fix-universal-apk-installation-95d698a6e2ff1ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fix-universal-apk-installation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fix-universal-apk-installation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2a7ba8b46cb1e21a783b20089844caf98f44036f83d6680ccd41393b0b5ac00",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T11:04:35.706Z"
+}

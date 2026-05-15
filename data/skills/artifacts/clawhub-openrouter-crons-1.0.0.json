@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-crons@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_crons",
+  "skill": {
+    "id": 41975,
+    "skillKey": "clawhub-openrouter-crons",
+    "name": "OpenRouter Cron Migration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-crons",
+    "url": "https://clawhub.ai/skills/openrouter-crons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-crons-a8a4b0bbe046eb8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collaboratively migrate specific OpenClaw cron jobs onto popular OpenRouter models. Audit cron usage, fetch the current OpenRouter rankings via curl, propose..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrmps",
+      "userId": "s179fbparxpyzegq4czjtwmv4s83msac",
+      "displayName": "mrmps",
+      "image": "https://avatars.githubusercontent.com/u/41216139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774611386949,
+      "changelog": "Initial release: guides OpenClaw users through usage-driven cron migrations to popular OpenRouter models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b6155c91f0bd0aba6c699a0ba5637e886f3fe28431adf72ea6ccaefc4ba7ded"
+}

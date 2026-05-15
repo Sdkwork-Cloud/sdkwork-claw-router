@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19491,
+  "uuid": "skill-clawhub-codeflow",
+  "skillKey": "clawhub-codeflow",
+  "name": "codeflow",
+  "summary": "Codeflow streams coding agent sessions (Claude Code, Codex, Gemini CLI, etc.) to Discord or Telegram in real-time. Use when invoking coding agents and wantin...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "subjadeites",
+      "features": [
+        "Codeflow streams coding agent sessions (Claude Code, Codex, Gemini CLI, etc.) to Discord or Tel.",
+        "Use when invoking coding agents and wantin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codeflow@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58224835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codeflow",
+      "url": "https://clawhub.ai/skills/codeflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeflow",
+    "url": "https://clawhub.ai/skills/codeflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeflow-33ed41960077a6c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codeflow@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-codeflow-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6654df0374256e9339b9506e46b0aa8351b004b3022a06fee3727d45a60e5dca",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:02:09.352Z"
+}

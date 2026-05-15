@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-wiki-andy27725@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_wiki_andy27725",
+  "skill": {
+    "id": 34929,
+    "skillKey": "clawhub-feishu-wiki-andy27725",
+    "name": "Feishu Wiki Andy27725"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-wiki-andy27725",
+    "url": "https://clawhub.ai/skills/feishu-wiki-andy27725",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-wiki-andy27725-c9113fd93e5be9c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774363141526,
+      "changelog": "- Initial release of Feishu Wiki skill for knowledge base navigation.\n- Provides a unified `feishu_wiki` tool to list wiki spaces, manage nodes (list, get, create, move, rename), and handle Feishu wiki-to-doc workflows.\n- Supports direct node token extraction from Feishu wiki URLs.\n- Outlines clear actions and JSON formats for all wiki operations.\n- Requires `feishu_doc` skill for reading/editing document content within wiki pages.\n- Includes configuration details and necessary permission scopes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dc8db90cdd25ed646265705c1da85d0dff7c076f0c9549b5392ea9600b96226"
+}

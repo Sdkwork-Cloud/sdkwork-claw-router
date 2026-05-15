@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63798,
+  "uuid": "skill-clawhub-video-resizer-zh",
+  "skillKey": "clawhub-video-resizer-zh",
+  "name": "视频尺寸调整",
+  "summary": "面向比例转换和平台适配场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 resizer 场景定位。",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_resizer_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "面向比例转换和平台适配场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 resizer 场景定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-resizer-zh@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-resizer-zh",
+      "url": "https://clawhub.ai/skills/video-resizer-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-resizer-zh",
+    "url": "https://clawhub.ai/skills/video-resizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-resizer-zh-ce12fccdaf8acbe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-resizer-zh@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-resizer-zh-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a3f690666546e0432ed7c0dcd6e40313004e751b7bc34c6bbb26f9100f11c9",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:15:03.722Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-engine-auto-search@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_engine_auto_search",
+  "skill": {
+    "id": 73587,
+    "skillKey": "clawhub-multi-engine-auto-search",
+    "name": "多引擎全自动搜索聚合器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-engine-auto-search",
+    "url": "https://clawhub.ai/skills/multi-engine-auto-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-engine-auto-search-401667e726875fc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动调用所有已安装搜索技能并行检索，去重交叉验证后整合排序，提供最全面、准确、实时的搜索结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chn012cjus",
+      "userId": "s177fdxdvzcq3sb9cv3qp182wn83q1r8",
+      "displayName": "chn012cjus",
+      "image": "https://avatars.githubusercontent.com/u/266467448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774949174053,
+      "changelog": "Version 1.0.3 - Major logic and scope upgrade\n\n- Now auto-discovers all installed search skills in specific directories and runs them in parallel, aggregating results.\n- Adds mechanisms to deduplicate results by URL and handles no-result cases by automatic Bing fallback.\n- Technical update: replaces fixed-engine curl script with ThreadPoolExecutor and subprocess calls to all detected search scripts.\n- Improves robustness by communicating via temporary JSON file to solve encoding issues.\n- Documentation updated to reflect broader auto-discovery logic, skill engine compatibility, and new output format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81f84965d179ebb080b74fc1d597dbb0ec1c83bc4a02c3c6d3f8f2929a9bc201"
+}

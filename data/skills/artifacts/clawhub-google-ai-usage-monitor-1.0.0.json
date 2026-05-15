@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-ai-usage-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ai_usage_monitor",
+  "skill": {
+    "id": 12680,
+    "skillKey": "clawhub-google-ai-usage-monitor",
+    "name": "Google AI Usage Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ai-usage-monitor",
+    "url": "https://clawhub.ai/skills/google-ai-usage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ai-usage-monitor-01dea8208752786a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Google AI Studio (Gemini API) usage, rate limits, and quota consumption with automated alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyaner0201",
+      "userId": "s1785gskknnt63nakfhmqr7rph83nm0y",
+      "displayName": "xiaoyaner0201",
+      "image": "https://avatars.githubusercontent.com/u/258399167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1579,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770455158853,
+      "changelog": "Initial release: Monitor Google AI Studio usage, rate limits, and quota consumption with automated alerts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:157e88b07274c1bb83934b307afac747e23c3e4f2e15ada6103eda8bae35abf1"
+}

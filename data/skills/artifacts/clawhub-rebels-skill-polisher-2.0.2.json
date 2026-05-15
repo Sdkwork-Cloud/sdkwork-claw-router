@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rebels-skill-polisher@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebels_skill_polisher",
+  "skill": {
+    "id": 36177,
+    "skillKey": "clawhub-rebels-skill-polisher",
+    "name": "Skill Polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebels-skill-polisher",
+    "url": "https://clawhub.ai/skills/rebels-skill-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebels-skill-polisher-a6b88d0e901a2041.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polishes standalone skills and multi-skill bundles for ClawHub readability without sacrificing LLM effectiveness. Use when improving a skill's listing, makin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "99rebels",
+      "userId": "s17b17x5vmnh2q27ane7sj7an5843qs4",
+      "displayName": "99rebels",
+      "image": "https://avatars.githubusercontent.com/u/148632105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1777586185947,
+      "changelog": "- Updated references to credential setup: \"Detailed credential setup\" changed to \"Detailed auth/token setup\" for clarity.\n- Enhanced reference section wording for alignment with the \"setup\" file and terminology.\n- No behavioral or functional logic changes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:809926361c8100c90a19bd586b478a76a6ad59adcd554714d18d27c8b5dbcfc0"
+}

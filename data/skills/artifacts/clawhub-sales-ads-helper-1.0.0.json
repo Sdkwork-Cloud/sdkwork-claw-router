@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sales-ads-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_ads_helper",
+  "skill": {
+    "id": 17695,
+    "skillKey": "clawhub-sales-ads-helper",
+    "name": "Sales Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-ads-helper",
+    "url": "https://clawhub.ai/skills/sales-ads-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-ads-helper-bc1a80db6f29e5a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse client URLs and requirements to generate ad proposals, ROI estimates, persuasion logic, and CRM-based close probability forecasting for Meta (Facebook/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 626,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772607944622,
+      "changelog": "- Initial release of sales-ads-helper skill.\n- Converts client URLs and requirements into ad proposals and ROI estimates for major ad platforms.\n- Outputs persuasion strategies, close probability forecasting, and sales reporting templates.\n- Supports Meta, Google, TikTok, YouTube, Amazon, and Shopify Ads.\n- Handles uncertain deals and missing CRM data with fallback logic and escalation steps.\n- Includes practical examples and clear workflow, decision rules, and platform-specific notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d55e62c11ff786e12dbdf0f04a64e011ad269f7589ea30febd449e18edea6f60"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-chub-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_chub_cli",
+  "skill": {
+    "id": 29601,
+    "skillKey": "clawhub-use-chub-cli",
+    "name": "kshern"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-chub-cli",
+    "url": "https://clawhub.ai/skills/use-chub-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-chub-cli-5cae34a6913cfa83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Context Hub chub CLI to fetch current third-party SDK, API, and cloud-service documentation before writing, modifying, or reviewing integration code...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kshern",
+      "userId": "publishers:kshern",
+      "displayName": "kshern",
+      "image": "https://avatars.githubusercontent.com/u/13652283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773373926273,
+      "changelog": "- Added NOTICE.txt and UPSTREAM_LICENSE.txt files for proper legal attribution.\n- Included an Attribution section in SKILL.md explaining project origins, upstream repository, and license information.\n- No functional or workflow changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b40003ad54da3179db4df480e631e5050e916b52d27f0a02c6d98fb900ee5b8"
+}

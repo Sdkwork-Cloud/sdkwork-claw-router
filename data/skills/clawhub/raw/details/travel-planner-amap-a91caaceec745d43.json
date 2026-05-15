@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "travel-planner-amap",
+    "displayName": "travel planner amap",
+    "summary": "智能旅行攻略规划师。根据用户提供的出行信息（人数、男女比例、关系、出发地、目的地、日期、天数）， 直接调用高德地图 REST API 获取实时路线、POI、距离等数据，生成完整的个性化旅行攻略。 攻略包含：创意名称、出行方式建议（含当地租车判断）、分时段行程（早午晚三餐均有具体推荐）、 景点推荐（含高铁站→景点距...",
+    "tags": {
+      "latest": "2.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1775745859464,
+    "updatedAt": 1777527367019
+  },
+  "latestVersion": {
+    "version": "2.0.1",
+    "createdAt": 1776000449666,
+    "changelog": "▎ Hi, I've updated the travel-planner skill and the SKILL.md frontmatter now explicitly declares:        \n  ▎               \n  ▎ - env: AMAP_KEY (required)                                                                             \n  ▎ - requires: curl, python3\n  ▎                                                                                                        \n  ▎ However, the OpenClaw scanner still reports \"registry metadata omits the declared requirements,\" which \n  ▎ suggests the registry is reading a cached version of the old metadata rather than the current SKILL.md.\n  ▎                                                                                                        \n  ▎ Could you re-index this skill or confirm whether the registry metadata updates automatically on        \n  ▎ republish? The SKILL.md content and the scanner's capability analysis are consistent — only the \n  ▎ registry summary appears stale.                                                                        \n  ▎               \n  ▎ Thank you.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "bifang988",
+    "userId": "s176k1da64p43tq9n85mt7vzxs840f9y",
+    "displayName": "bifang988",
+    "image": "https://avatars.githubusercontent.com/u/269688853?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527367019
+  }
+}

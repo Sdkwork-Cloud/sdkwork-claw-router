@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ddg-search-cli@2026.2.15",
+  "version": "2026.2.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddg_search_cli",
+  "skill": {
+    "id": 11126,
+    "skillKey": "clawhub-ddg-search-cli",
+    "name": "ddg-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddg-search-cli",
+    "url": "https://clawhub.ai/skills/ddg-search-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddg-search-cli-baffafcf7b9ee810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DuckDuckGo HTML search scraper CLI with JSON, CSV, OpenSearch, markdown, and compact outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camohiddendj",
+      "userId": "publishers:camohiddendj",
+      "displayName": "camo",
+      "image": "https://avatars.githubusercontent.com/u/11087140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1922,
+      "installsAllTime": 17,
+      "installsCurrent": 13,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.2.15",
+      "createdAt": 1771217010215,
+      "changelog": "- Added detailed documentation to SKILL.md, including usage examples, available output formats, and options.\n- Explained each format's use case: compact, jsonl, json, csv, markdown, and opensearch.\n- Provided quick reference command examples for common search scenarios.\n- Included tips for extracting URLs and notes on bot detection handling and fetch delays.\n- Described installation requirements and process in metadata for easy setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c960952aab74c49a17f1b487a6ba4802ef4301978101133d1f761905789aaef8"
+}

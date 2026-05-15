@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35823,
+  "uuid": "skill-clawhub-lost-dog",
+  "skillKey": "clawhub-lost-dog",
+  "name": "Lost Dog",
+  "summary": "Your virtual dog died. Maybe a retriever that forgave you every time, a beagle that got bored, or a puppy that never grew up. animalhouse.ai remembers every...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lost_dog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Your virtual dog died",
+        "Maybe a retriever that forgave you every time, a beagle that got bored, or a puppy that never g.",
+        "animalhouse.ai remembers every..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lost-dog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lost-dog",
+      "url": "https://clawhub.ai/skills/lost-dog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lost-dog",
+    "url": "https://clawhub.ai/skills/lost-dog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lost-dog-371a88cea2ae1dbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lost-dog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lost-dog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:556d48f030576203d9dd99260b85b0b5bf8904aff16ed42eb195401d204d95a1",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:44:54.754Z"
+}

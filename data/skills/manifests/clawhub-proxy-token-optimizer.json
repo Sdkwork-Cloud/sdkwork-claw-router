@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22221,
+  "uuid": "skill-clawhub-proxy-token-optimizer",
+  "skillKey": "clawhub-proxy-token-optimizer",
+  "name": "proxy-token-optimizer",
+  "summary": "Optimize LLM token usage and API costs for the openclaw-manager proxy platform. Provides model-tier routing (route simple prompts to glm-4.7-flashx instead o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_token_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whyhit2005",
+      "features": [
+        "Optimize LLM token usage and API costs for the openclaw-manager proxy platform",
+        "Provides model-tier routing (route simple prompts to glm-4.7-flashx instead o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-token-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24557144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-token-optimizer",
+      "url": "https://clawhub.ai/skills/proxy-token-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-token-optimizer",
+    "url": "https://clawhub.ai/skills/proxy-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-token-optimizer-07aeec9224778ead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-token-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-token-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29cdce12b7a662d7b9c2711baf79e35d4a2e2f93aba7be46212d7d1f95ae7845",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:44:14.027Z"
+}

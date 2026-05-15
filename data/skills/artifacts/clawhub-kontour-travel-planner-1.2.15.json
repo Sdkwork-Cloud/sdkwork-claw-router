@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kontour-travel-planner@1.2.15",
+  "version": "1.2.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kontour_travel_planner",
+  "skill": {
+    "id": 12195,
+    "skillKey": "clawhub-kontour-travel-planner",
+    "name": "Travel Planner - Notion AI, Obsidian, Kontour.ai integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kontour-travel-planner",
+    "url": "https://clawhub.ai/skills/kontour-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kontour-travel-planner-a3b8748fbdc2ffb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Travel Planner - Notion AI, Obsidian, Kontour.ai integration. Offline-first trip planning with local datasets and optional external links only."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skylinehk",
+      "userId": "s172w5phb33spv0zh9b324d7g583egdn",
+      "displayName": "Gerald He",
+      "image": "https://avatars.githubusercontent.com/u/26716208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1548,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 74
+    },
+    "latestVersion": {
+      "version": "1.2.15",
+      "createdAt": 1777833295288,
+      "changelog": "Safety metadata alignment: clarified offline-only runtime, no OAuth/credentials/purchases; marked booking roadmap as non-operational reference; tightened README/SKILL security disclosures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ef151a29eeddc9185e421b93907660c9ee0b2c4618239f265cc3275ac1c51ec"
+}

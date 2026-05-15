@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/big-ai-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.big_ai_news",
+  "skill": {
+    "id": 39473,
+    "skillKey": "clawhub-big-ai-news",
+    "name": "Big AI NEWS from multiple technews sources"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "big-ai-news",
+    "url": "https://clawhub.ai/skills/big-ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/big-ai-news-ef7d58ada61b1a55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregate and deduplicate AI news from multiple Chinese and English tech news sources into a single merged digest. Use when the user asks for \"AI news\", \"AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775121377529,
+      "changelog": "Big AI News 1.0.0 — Initial Release\n\n- Aggregates and deduplicates AI news from multiple Chinese and English tech sources into a single digest.\n- Categorizes news into key AI topics for easy browsing.\n- Automatically merges duplicate stories and lists all sources/links.\n- Adapts output language (Chinese/English) to user queries.\n- Provides clear fallback handling if sources are unavailable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:804edf6eda60486ad4530a94afeb2b90db33d710490e460d7750823cbbcd8f83"
+}

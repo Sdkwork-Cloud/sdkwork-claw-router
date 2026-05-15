@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50088,
+  "uuid": "skill-clawhub-openra-rl",
+  "skillKey": "clawhub-openra-rl",
+  "name": "OpenRA-RL",
+  "summary": "Play Command & Conquer Red Alert RTS — build bases, train armies, and defeat AI opponents using 48 MCP tools.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openra_rl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chuang",
+      "features": [
+        "Play Command & Conquer Red Alert RTS — build bases, train armies, and defeat AI opponents using."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openra-rl@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25799960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openra-rl",
+      "url": "https://clawhub.ai/skills/openra-rl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openra-rl",
+    "url": "https://clawhub.ai/skills/openra-rl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openra-rl-8a57ede85cfe7989.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openra-rl@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openra-rl-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffab07b7f3b6679d7bbafecf2ccf9e4360e1a969a4bce0d5cc6b1231175fa2da",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:33:58.902Z"
+}

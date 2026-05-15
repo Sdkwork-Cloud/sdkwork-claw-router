@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61095,
+  "uuid": "skill-clawhub-openclaw-wallpaper",
+  "skillKey": "clawhub-openclaw-wallpaper",
+  "name": "OpenClaw Wallpaper",
+  "summary": "OpenClaw 桌面壁纸 - 让 AI 住进你的桌面。支持流式对话、成就系统、上下文持久化、7x24稳定运行。自动安装 Lively Wallpaper，一键启动。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wallpaper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI话聊室",
+      "features": [
+        "OpenClaw 桌面壁纸",
+        "让 AI 住进你的桌面。支持流式对话、成就系统、上下文持久化、7x24稳定运行。自动安装 Lively Wallpaper，一键启动。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-wallpaper@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28421346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-wallpaper",
+      "url": "https://clawhub.ai/skills/openclaw-wallpaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wallpaper",
+    "url": "https://clawhub.ai/skills/openclaw-wallpaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wallpaper-4e4208d967f7b776.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-wallpaper@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wallpaper-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4924ba86660a37e9109601b1b0661073f6140261951d4896f08a065ac12ec4",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:35:10.612Z"
+}

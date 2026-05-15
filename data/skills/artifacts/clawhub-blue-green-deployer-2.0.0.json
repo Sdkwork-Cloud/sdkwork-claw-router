@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blue-green-deployer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blue_green_deployer",
+  "skill": {
+    "id": 31454,
+    "skillKey": "clawhub-blue-green-deployer",
+    "name": "Blue Green Deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blue-green-deployer",
+    "url": "https://clawhub.ai/skills/blue-green-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blue-green-deployer-58067a8c29b18e1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A specialized skill for safely managing and testing OpenClaw configuration changes using a Blue/Green deployment pattern. Use when you need to test new setti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joshualeecowan33-ui",
+      "userId": "s175d2pbh6a2nc78zx66e7edv984zda1",
+      "displayName": "joshualeecowan33-ui",
+      "image": "https://avatars.githubusercontent.com/u/264918583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776368370457,
+      "changelog": "Blue-green-deployer 2.0.0 is a significant update introducing versioning and dependency metadata.\n\n- Added explicit `version` and `dependencies` fields to SKILL.md for improved clarity and reproducibility.\n- Declared dependencies on `openclaw` and `jq` in the documentation.\n- Corrected minor documentation issues (e.g., file naming typo: `open:openclaw.json.green` → `openclaw.json.green`).\n- No changes to the documented deployment script workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b4bd06dd1cb3051d132e0adbb88596c9badbd72c2f940f5e55278611f1f064b"
+}

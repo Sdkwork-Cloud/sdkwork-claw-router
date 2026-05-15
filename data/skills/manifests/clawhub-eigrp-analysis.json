@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35681,
+  "uuid": "skill-clawhub-eigrp-analysis",
+  "skillKey": "clawhub-eigrp-analysis",
+  "name": "Eigrp Analysis",
+  "summary": "EIGRP DUAL algorithm analysis with successor/feasible successor evaluation, stuck-in-active diagnosis, K-value validation, and redistribution loop detection....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eigrp_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "EIGRP DUAL algorithm analysis with successor/feasible successor evaluation, stuck-in-active dia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eigrp-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eigrp-analysis",
+      "url": "https://clawhub.ai/skills/eigrp-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eigrp-analysis",
+    "url": "https://clawhub.ai/skills/eigrp-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eigrp-analysis-a25c480a689ca4da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eigrp-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eigrp-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bcd5eaba96a4bdc41112d77b3ce6aa0365f92ab53efdac7296b13b90aee6c23",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:56:39.453Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-latex-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_latex_gen",
+  "skill": {
+    "id": 62504,
+    "skillKey": "clawhub-paper-latex-gen",
+    "name": "Paper Latex Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-latex-gen",
+    "url": "https://clawhub.ai/skills/paper-latex-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-latex-gen-51168b972753b4ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成符合NeurIPS、ICML、ICLR等会议模板的结构化学术论文LaTeX文件及相关资源，支持会议名和主题输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776426727386,
+      "changelog": "- LaTeX 生成功能已整合到 paper 统一入口技能，建议使用新版命令 `paper latex [会议名] [主题]`\n- 本技能保留用于向后兼容，旧用法仍可用，将自动转发到新入口\n- 支持 NeurIPS、ICML、ICLR 等会议模板\n- 生成结构化的主 LaTeX 文件、BibTeX 引用和图表目录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13fda82a051f3254532df665c7176d2200168da7bad4c81f878eca71e5c36cf9"
+}

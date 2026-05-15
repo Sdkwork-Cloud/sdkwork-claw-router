@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32316,
+  "uuid": "skill-clawhub-procore",
+  "skillKey": "clawhub-procore",
+  "name": "Procore",
+  "summary": "Procore integration. Manage Projects, Users, Roles, Organizations. Use when the user wants to interact with Procore data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.procore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Procore integration",
+        "Manage Projects, Users, Roles, Organizations",
+        "Use when the user wants to interact with Procore data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/procore@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "procore",
+      "url": "https://clawhub.ai/skills/procore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "procore",
+    "url": "https://clawhub.ai/skills/procore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/procore-5696c9f4a0e58aa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/procore@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-procore-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc47032dab6be4d4aebc02336ece193bc3ad66eac4fd01189b2d20022ba8588",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:28:03.267Z"
+}

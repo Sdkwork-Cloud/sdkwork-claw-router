@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13061,
+  "uuid": "skill-clawhub-db-readonly",
+  "skillKey": "clawhub-db-readonly",
+  "name": "DB Readonly",
+  "summary": "Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_readonly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and trou.",
+        "Use when the user asks to read tables, inspect schema, count rows, sample data, or export query."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/db-readonly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "db-readonly",
+      "url": "https://clawhub.ai/skills/db-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-readonly",
+    "url": "https://clawhub.ai/skills/db-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-readonly-4a19857c5d73f559.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/db-readonly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-db-readonly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:742409c5ef0e0d3cf16a0dc33d30165768260e4801473bff6670b97f87f8206a",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T03:02:31.392Z"
+}

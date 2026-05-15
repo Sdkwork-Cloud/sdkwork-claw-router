@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67117,
+  "uuid": "skill-clawhub-tushare-data",
+  "skillKey": "clawhub-tushare-data",
+  "name": "tushare",
+  "summary": "面向中文自然语言的 Tushare 数据研究技能。用于把“看看这只股票最近怎么样”“帮我查财报趋势”“最近哪个板块最强”“北向资金在买什么”“给我导出一份行情数据”这类请求，转成可执行的数据获取、清洗、对比、筛选、导出与简要分析流程。适用于 A 股、指数、ETF/基金、财务、估值、资金流、公告新闻、板块概念与宏观...",
+  "version": "1.1.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lidayan",
+      "features": [
+        "面向中文自然语言的 Tushare 数据研究技能。用于把“看看这只股票最近怎么样”“帮我查财报趋势”“最近哪个板块最强”“北向资金在买什么”“给我导出一份行情数据”这类请求，转成可执行的数据."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tushare-data@1.1.16",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16535491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tushare-data",
+      "url": "https://clawhub.ai/skills/tushare-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare-data",
+    "url": "https://clawhub.ai/skills/tushare-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-data-43c73a019be6d28e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tushare-data@1.1.16",
+      "artifactUrl": "data/skills/artifacts/clawhub-tushare-data-1.1.16.json",
+      "version": "1.1.16",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6769d1f328dbb3e870e597bf32c99f688b330fe5011856e1c00342d681671589",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T01:53:04.425Z"
+}

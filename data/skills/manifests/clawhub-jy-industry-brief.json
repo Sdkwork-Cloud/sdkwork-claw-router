@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63813,
+  "uuid": "skill-clawhub-jy-industry-brief",
+  "skillKey": "clawhub-jy-industry-brief",
+  "name": "jy-industry-brief",
+  "summary": "基于 MCP 聚源金融数据库生成指定行业过去24小时内的速报，涵盖简读素材、重要新闻、企业动态及投融资事件，支持 Markdown 和 HTML 格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_industry_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于 MCP 聚源金融数据库生成指定行业过去24小时内的速报，涵盖简读素材、重要新闻、企业动态及投融资事件，支持 Markdown 和 HTML 格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-industry-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-industry-brief",
+      "url": "https://clawhub.ai/skills/jy-industry-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-industry-brief",
+    "url": "https://clawhub.ai/skills/jy-industry-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-industry-brief-e7efe8872f1d3cc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-industry-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-industry-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c5df43dedec8df4098e2d53c408785b76c2a4bedaa2151ace39c2b1634a9d93",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:18:24.792Z"
+}

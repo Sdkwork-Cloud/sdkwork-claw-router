@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47132,
+  "uuid": "skill-clawhub-pack-smart",
+  "skillKey": "clawhub-pack-smart",
+  "name": "Pack Smart",
+  "summary": "Get a customized packing list based on your destination, season, trip type, and activities. Never forget essentials again. Also supports: flight booking, hot...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pack_smart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Get a customized packing list based on your destination, season, trip type, and activities",
+        "Never forget essentials again",
+        "Also supports: flight booking, hot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pack-smart@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pack-smart",
+      "url": "https://clawhub.ai/skills/pack-smart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pack-smart",
+    "url": "https://clawhub.ai/skills/pack-smart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pack-smart-16b5928f607c597e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pack-smart@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pack-smart-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70f23b10dd49fb34dd70f71301db6d919e5ef37cb07d3cd9358de77bb74ce554",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:20:56.630Z"
+}

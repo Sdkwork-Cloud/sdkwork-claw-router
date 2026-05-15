@@ -154,11 +154,11 @@ pub fn admin_access_group_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/router/access-groups",
+            "/backend/v3/api/router/access_groups",
             get(fetch_access_groups).post(create_access_group),
         )
         .route(
-            "/backend/v3/api/router/access-groups/{group_id}",
+            "/backend/v3/api/router/access_groups/{group_id}",
             patch(update_access_group).delete(delete_access_group),
         )
         .with_state(AdminAccessGroupState {

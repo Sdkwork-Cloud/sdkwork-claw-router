@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-page-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_page_generator",
+  "skill": {
+    "id": 28424,
+    "skillKey": "clawhub-legal-page-generator",
+    "name": "legal-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-page-generator",
+    "url": "https://clawhub.ai/skills/legal-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-page-generator-12c6dfa63cf1973b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or structure legal pages (Privacy, Terms, etc.). Also use when the user mentions \"privacy policy,\" \"terms of service..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774961247466,
+      "changelog": "Batch: resources through privacy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83dd5e540d0cac937eaeae03804539e27bcf7133dd0739f390331c014367dc0a"
+}

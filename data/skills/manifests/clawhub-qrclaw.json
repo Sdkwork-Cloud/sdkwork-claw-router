@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32070,
+  "uuid": "skill-clawhub-qrclaw",
+  "skillKey": "clawhub-qrclaw",
+  "name": "QR Claw",
+  "summary": "Generate QR codes for any string or URL using the QRClaw open source service (qrclaw.goplausible.xyz). Use this skill whenever the user asks to create a QR c...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MG",
+      "features": [
+        "Generate QR codes for any string or URL using the QRClaw open source service (qrclaw.goplausibl.",
+        "Use this skill whenever the user asks to create a QR c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrclaw@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1900448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrclaw",
+      "url": "https://clawhub.ai/skills/qrclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrclaw",
+    "url": "https://clawhub.ai/skills/qrclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrclaw-e65948323271f2bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrclaw@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrclaw-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:907397c91b7b7e1c7fcfd110efd71fb77e9f918196fe61df900e9aebb75b13cf",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:47:44.327Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59115,
+  "uuid": "skill-clawhub-trip-ai",
+  "skillKey": "clawhub-trip-ai",
+  "name": "出行AI助手",
+  "summary": "AI智能旅行助手套装，包含行程规划、目的地指南、预算管理、签证办理、天气打包等一站式旅行服务。Invoke when user needs comprehensive travel planning, itinerary creation, destination information, budget calc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "AI智能旅行助手套装，包含行程规划、目的地指南、预算管理、签证办理、天气打包等一站式旅行服务。Invoke when user needs comprehensive travel plan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-ai",
+      "url": "https://clawhub.ai/skills/trip-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-ai",
+    "url": "https://clawhub.ai/skills/trip-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-ai-5b4538e7fd078c42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d56df19497de67224470312100b6f9af79a3f3cab49e8d9ce1e60e7ca4a452bc",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:53:32.192Z"
+}

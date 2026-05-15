@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66758,
+  "uuid": "skill-clawhub-code-dev-pipeline",
+  "skillKey": "clawhub-code-dev-pipeline",
+  "name": "code-dev-pipeline 代码开发流水线",
+  "summary": "八人协作代码开发流水线，用于复杂代码开发任务。**必须使用此 skill 当用户要求开发代码、写程序、实现功能，或对代码质量有要求时**。特别适合： - 复杂功能开发（>50行代码、多文件、需要测试） - 需要UI/前端设计的项目（HTML/CSS/JS、React/Vue等） - 对代码质量有要求的任务（需要审...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_dev_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawaizhang",
+      "features": [
+        "八人协作代码开发流水线，用于复杂代码开发任务。**必须使用此 skill 当用户要求开发代码、写程序、实现功能，或对代码质量有要求时**。特别适合：",
+        "复杂功能开发（>50行代码、多文件、需要测试）",
+        "需要UI/前端设计的项目（HTML/CSS/JS、React/Vue等）",
+        "对代码质量有要求的任务（需要审..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-dev-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266250787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-dev-pipeline",
+      "url": "https://clawhub.ai/skills/code-dev-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-dev-pipeline",
+    "url": "https://clawhub.ai/skills/code-dev-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-dev-pipeline-8c77a87d8d63ec1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-dev-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-dev-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:978bcc013516b707a12c0756f3defba21fce0f6393b70d63a11b90f0a74eaf60",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:51:43.490Z"
+}

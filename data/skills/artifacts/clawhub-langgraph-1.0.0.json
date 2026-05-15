@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/langgraph@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langgraph",
+  "skill": {
+    "id": 27244,
+    "skillKey": "clawhub-langgraph",
+    "name": "LangGraph Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langgraph",
+    "url": "https://clawhub.ai/skills/langgraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langgraph-ad3fc2c957602b63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Architect and deploy advanced LangGraph AI pipelines with stateful graphs, conditional routing, human-in-the-loop, persistence, and streaming execution featu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773919776298,
+      "changelog": "LangGraph Agent Pipeline Architect v1.0.0\n\n- Introduces a comprehensive guide for architecting, building, and deploying AI agent pipelines with LangGraph.\n- Covers state schema definition using Python TypedDict and state reducers.\n- Explains graph node creation, adding computation units, and advanced control flow using conditional routing and cycles.\n- Details implementation of production features including human-in-the-loop, persistence with checkpointers, and streaming responses.\n- Provides troubleshooting tips for common issues like infinite loops and state overwriting.\n- Suggests extensions for multi-agent collaboration, subgraph modularity, and dynamic tool binding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e90211926daa1f7d602edbbbbce1ffbbf393e5c1edd9a936bf75aa0f1374a7fc"
+}

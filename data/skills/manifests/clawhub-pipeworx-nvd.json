@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55578,
+  "uuid": "skill-clawhub-pipeworx-nvd",
+  "skillKey": "clawhub-pipeworx-nvd",
+  "name": "Pipeworx nvd",
+  "summary": "NVD MCP — wraps the NIST National Vulnerability Database API (free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_nvd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "NVD MCP — wraps the NIST National Vulnerability Database API (free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-nvd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-nvd",
+      "url": "https://clawhub.ai/skills/pipeworx-nvd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-nvd",
+    "url": "https://clawhub.ai/skills/pipeworx-nvd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-nvd-589f0657d4c7c594.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-nvd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-nvd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30d7545c29a512440220973b49aa6a3bbfa5f6db56400285f7e4401ba551166e",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T21:09:49.662Z"
+}

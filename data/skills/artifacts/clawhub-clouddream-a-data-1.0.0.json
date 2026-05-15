@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clouddream-a-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clouddream_a_data",
+  "skill": {
+    "id": 72082,
+    "skillKey": "clawhub-clouddream-a-data",
+    "name": "云梦A股数据获取Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clouddream-a-data",
+    "url": "https://clawhub.ai/skills/clouddream-a-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clouddream-a-data-ca917169242ad1b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取A股市场资金流向、新闻、筹码分布、龙虎榜及涨停板等多维度数据，支持单只股票详情查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glory904649854",
+      "userId": "s174mpq1kn7trpfav983k6effh844krw",
+      "displayName": "冢猫",
+      "image": "https://avatars.githubusercontent.com/u/20748423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 837,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772705972660,
+      "changelog": "首次上传云梦A股数据获取Skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bfc99270ddb62fb8af7b93f38cc7193b3a6af0861f4a7b1efb4c25910d480f90"
+}

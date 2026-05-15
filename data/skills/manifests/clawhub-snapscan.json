@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29295,
+  "uuid": "skill-clawhub-snapscan",
+  "skillKey": "clawhub-snapscan",
+  "name": "Snapscan",
+  "summary": "SnapScan integration. Manage data, records, and automate workflows. Use when the user wants to interact with SnapScan data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapscan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SnapScan integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SnapScan data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snapscan@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snapscan",
+      "url": "https://clawhub.ai/skills/snapscan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapscan",
+    "url": "https://clawhub.ai/skills/snapscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapscan-c68104120c286e58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snapscan@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-snapscan-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94af023543ca0e77fd86190cbe37e0bcd7f8eabf78ffab813cb54a077ef7531b",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:44:29.953Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29016,
+  "uuid": "skill-clawhub-foxy",
+  "skillKey": "clawhub-foxy",
+  "name": "Foxy",
+  "summary": "Foxy integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Foxy data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Foxy integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Foxy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foxy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foxy",
+      "url": "https://clawhub.ai/skills/foxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foxy",
+    "url": "https://clawhub.ai/skills/foxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foxy-55aff0ff427489c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foxy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-foxy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ead204393c8561c1b4d8b77cacf031ecc7636460161148bf0bfe89d510d6116b",
+      "artifactSizeBytes": 1775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:13:09.493Z"
+}

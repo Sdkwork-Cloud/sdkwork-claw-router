@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66810,
+  "uuid": "skill-clawhub-china-social-policy-public-data",
+  "skillKey": "clawhub-china-social-policy-public-data",
+  "name": "China Social Policy Public Data",
+  "summary": "中国社保、公积金、医保等公共政策信息助手。仅查询、整合、转发公开、权威、免费的全国与地方官方政策信息，不做个案判断或操作建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_social_policy_public_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国社保、公积金、医保等公共政策信息助手。仅查询、整合、转发公开、权威、免费的全国与地方官方政策信息，不做个案判断或操作建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-social-policy-public-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-social-policy-public-data",
+      "url": "https://clawhub.ai/skills/china-social-policy-public-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-social-policy-public-data",
+    "url": "https://clawhub.ai/skills/china-social-policy-public-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-social-policy-public-data-3c3ea7d3cdbecbbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-social-policy-public-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-social-policy-public-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ad73e937e1e87905c7f7a2445d743f870e68a6c6791ddf99c5c08eddb8fab90",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:56:25.137Z"
+}

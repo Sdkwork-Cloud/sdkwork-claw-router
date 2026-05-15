@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27333,
+  "uuid": "skill-clawhub-data247",
+  "skillKey": "clawhub-data247",
+  "name": "Data247",
+  "summary": "Data247 integration. Manage Organizations, Activities, Notes, Files, Pipelines, Users and more. Use when the user wants to interact with Data247 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data247",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Data247 integration",
+        "Manage Organizations, Activities, Notes, Files, Pipelines, Users and more",
+        "Use when the user wants to interact with Data247 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data247@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data247",
+      "url": "https://clawhub.ai/skills/data247"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data247",
+    "url": "https://clawhub.ai/skills/data247",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data247-03544bcde531ed82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data247@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-data247-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:221a63c67ba42c35d94c1bbc6b99642bed0536b1a8acef4fc78018be9a241d07",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:37:32.847Z"
+}

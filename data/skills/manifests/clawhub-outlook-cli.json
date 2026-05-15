@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34857,
+  "uuid": "skill-clawhub-outlook-cli",
+  "skillKey": "clawhub-outlook-cli",
+  "name": "Secure Outlook integration CLI (outlook 365, microsoft exchange and organization support firewall)",
+  "summary": "Secure Outlook API CLI. Use when the user wants to read, search, or triage Outlook / Microsoft 365 mail; sending, replying, forwarding, deleting, or modifyin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PortEden",
+      "features": [
+        "Secure Outlook API CLI",
+        "Use when the user wants to read, search, or triage Outlook / Microsoft 365 mail",
+        "sending, replying, forwarding, deleting, or modifyin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlook-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258120807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlook-cli",
+      "url": "https://clawhub.ai/skills/outlook-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-cli",
+    "url": "https://clawhub.ai/skills/outlook-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-cli-0cd327823df76f33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlook-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlook-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ff6efdd84def356f510fc2d7906ddf02b6fe0e24d0463ed7a5ae3f34d839002",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T18:54:16.932Z"
+}

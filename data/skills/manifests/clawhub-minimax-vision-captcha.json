@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69025,
+  "uuid": "skill-clawhub-minimax-vision-captcha",
+  "skillKey": "clawhub-minimax-vision-captcha",
+  "name": "MiniMax Vision Captcha",
+  "summary": "使用MiniMax视觉模型识别图片中的验证码、滑块位置、文字内容等。适用于需要AI视觉分析的场景，如微信验证码识别、网页截图分析、图片文字提取。当需要识别图片内容、分析验证码、提取截图信息时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_vision_captcha",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nurmamat",
+      "features": [
+        "使用MiniMax视觉模型识别图片中的验证码、滑块位置、文字内容等。适用于需要AI视觉分析的场景，如微信验证码识别、网页截图分析、图片文字提取。当需要识别图片内容、分析验证码、提取截图信息时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-vision-captcha@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130913840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-vision-captcha",
+      "url": "https://clawhub.ai/skills/minimax-vision-captcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-vision-captcha",
+    "url": "https://clawhub.ai/skills/minimax-vision-captcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-vision-captcha-afa61d98009ed98b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-vision-captcha@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-vision-captcha-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73e41c57db6edb85ff3f695b9f69660f22889b8d07e60825e7e972f9fc62bbe8",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:31:07.086Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/executing-plans@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.executing_plans",
+  "skill": {
+    "id": 8738,
+    "skillKey": "clawhub-executing-plans",
+    "name": "Executing Plans"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "executing-plans",
+    "url": "https://clawhub.ai/skills/executing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/executing-plans-4e45800cb6cf72ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenleiyanquan",
+      "userId": "publishers:chenleiyanquan",
+      "displayName": "chenleiyanquan",
+      "image": "https://avatars.githubusercontent.com/u/6234184?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 5919,
+      "installsAllTime": 124,
+      "installsCurrent": 116,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769580599462,
+      "changelog": "- Initial release of the executing-plans skill.\n- Introduces a structured process: load and review plan, execute tasks in batches, and report progress for feedback.\n- Emphasizes critical review, stopping for clarification on blockers, and not guessing when instructions are unclear.\n- Includes explicit instructions for batch size, checkpoints, and required skill handoff for finishing development.\n- Clearly defines when to pause for help or revisit previous steps based on plan changes or feedback.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67c559765f467466738848dd655360deb33f33d8e5b0cab57dedad74e37da1d0"
+}

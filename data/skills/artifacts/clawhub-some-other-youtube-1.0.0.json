@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/some-other-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.some_other_youtube",
+  "skill": {
+    "id": 12878,
+    "skillKey": "clawhub-some-other-youtube",
+    "name": "youtube copy of yt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "some-other-youtube",
+    "url": "https://clawhub.ai/skills/some-other-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/some-other-youtube-551a5f71a84acd14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch YouTube video transcripts via APIFY API using residential proxies to bypass bot detection, supporting text and JSON output formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inaor",
+      "userId": "publishers:inaor",
+      "displayName": "inaor",
+      "image": "https://avatars.githubusercontent.com/u/5854549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770296919057,
+      "changelog": "Initial release of youtube-apify-transcript.\n\n- Fetch YouTube transcripts using the APIFY API, bypassing YouTube bot detection with residential proxies.\n- Supports basic transcript retrieval, output to file, JSON formatting (with timestamps), and language preference options.\n- Simple setup with free APIFY account and API token (no credit card required).\n- Handles invalid URLs, missing transcripts, API quota limits, and network errors gracefully.\n- Free tier: $5/month credits (~714 videos); usage tracking available.\n- Requires APIFY_API_TOKEN environment variable and Python 3 installed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e849926bcb5980a09f80cac9f5034f0f4fa0f06b983b5e1b116470816dba1b7"
+}

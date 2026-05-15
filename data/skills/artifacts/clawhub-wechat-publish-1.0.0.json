@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publish",
+  "skill": {
+    "id": 44469,
+    "skillKey": "clawhub-wechat-publish",
+    "name": "Wechat Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publish",
+    "url": "https://clawhub.ai/skills/wechat-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publish-3b70988b15653828.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click publishing of articles with custom images to WeChat official account draft, ensuring images use WeChat permanent material URLs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776159847428,
+      "changelog": "wechat-publish v1.0.0\n\n- Initial release outlining the full workflow for publishing illustrated articles to WeChat Official Account drafts.\n- Supports flexible image generation methods: MakeContents HTML render, MiniMax AI image, and fixed templates.\n- Emphasizes correct handling of images: all images used in articles must first be uploaded to WeChat's material library and use mmbiz.qpic.cn URLs.\n- Provides detailed step-by-step instructions for text preparation, image generation, WeChat API integration, and draft creation.\n- Includes ready-to-use HTML/CSS templates for various graphic needs and clear reminders about differences between official and personal (订阅号) accounts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3603d8cc49a433db7ab743ac10684e37ff91bd7543e695057275372c300dee2"
+}

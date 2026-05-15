@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/economic-calendar-fetcher-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_calendar_fetcher_zc",
+  "skill": {
+    "id": 39863,
+    "skillKey": "clawhub-economic-calendar-fetcher-zc",
+    "name": "Economic Calendar Fetcher Zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-calendar-fetcher-zc",
+    "url": "https://clawhub.ai/skills/economic-calendar-fetcher-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-calendar-fetcher-zc-7ed6c9864b4d0ad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch scheduled upcoming economic events and data releases from FMP API for specified date ranges with impact assessment in chronological markdown format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774487039852,
+      "changelog": "Initial release of Economic Calendar Fetcher.\n\n- Fetches upcoming economic events and data releases via the FMP API.\n- Supports date range selection, country, event type, and impact filters (default: next 7 days).\n- Generates markdown reports with event details and impact assessments.\n- Handles API key provision via environment variable or user input.\n- Covers major central bank decisions, employment, inflation, GDP, and key market-moving indicators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3adc0d48e842a6f45ad9fd21cd5d8fdcfe07e4ac61665f0c71673d9128f529da"
+}

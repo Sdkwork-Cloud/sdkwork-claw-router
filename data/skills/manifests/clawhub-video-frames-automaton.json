@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12905,
+  "uuid": "skill-clawhub-video-frames-automaton",
+  "skillKey": "clawhub-video-frames-automaton",
+  "name": "Video Frames",
+  "summary": "Extract frames or short clips from videos using ffmpeg.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frames_automaton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenghaifeng08-creator",
+      "features": [
+        "Extract frames or short clips from videos using ffmpeg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-frames-automaton@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266006783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-frames-automaton",
+      "url": "https://clawhub.ai/skills/video-frames-automaton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frames-automaton",
+    "url": "https://clawhub.ai/skills/video-frames-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frames-automaton-e7e21ddb688515f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-frames-automaton@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-frames-automaton-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b52450a9e5d9825ed0b460d40f2d6f50e6d2937c6c4a152ffc4237f7f7ac8ef9",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:30:58.119Z"
+}

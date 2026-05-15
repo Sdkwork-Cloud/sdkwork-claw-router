@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56820,
+  "uuid": "skill-clawhub-bilibili-upload",
+  "skillKey": "clawhub-bilibili-upload",
+  "name": "bilibili-upload",
+  "summary": "Upload videos to Bilibili (哔哩哔哩). Supports automatic login, title, description, tags, and partition selection.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zorro",
+      "features": [
+        "Upload videos to Bilibili (哔哩哔哩)",
+        "Supports automatic login, title, description, tags, and partition selection."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31155186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-upload",
+      "url": "https://clawhub.ai/skills/bilibili-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-upload",
+    "url": "https://clawhub.ai/skills/bilibili-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-upload-a449b827b86608c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b58dc65554783677643bb76ea14183c2f0b0493aa13bf79597c168f918c0c13",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:39:49.604Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-enhancement@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_enhancement",
+  "skill": {
+    "id": 60331,
+    "skillKey": "clawhub-claude-code-enhancement",
+    "name": "Claude Code Enhancement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-enhancement",
+    "url": "https://clawhub.ai/skills/claude-code-enhancement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-enhancement-c12d05fb9537c6d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Claude Code 架构增强 OpenClaw，实现多 Agent 协作、工具权限控制、结构化记忆和任务工作流管理能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntaffffff",
+      "userId": "s178h8rgjjj5ctbk1bkky72vph8439t6",
+      "displayName": "ntaffffff",
+      "image": "https://avatars.githubusercontent.com/u/186145692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775213556786,
+      "changelog": "- Added a new README.md with user-facing documentation.\n- Completely rewrote SKILL.md with a more visual, user-friendly style and enhanced explanations.\n- No functional code changes; this update focuses on improved documentation, examples, and feature highlights.\n- Clearer guidance for installation, usage, configuration, and comparison with alternatives.\n- Added quickstart, visual diagrams, shields, and contributor sections to increase accessibility for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6664faf4450625db9dd869e5f36e049eb944415c12162550c7222a05bc19222"
+}

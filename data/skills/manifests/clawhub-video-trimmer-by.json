@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42763,
+  "uuid": "skill-clawhub-video-trimmer-by",
+  "skillKey": "clawhub-video-trimmer-by",
+  "name": "Video Trimmer By",
+  "summary": "Get trimmed video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_by",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "Get trimmed video clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-trimmer-by@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-trimmer-by",
+      "url": "https://clawhub.ai/skills/video-trimmer-by"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-by",
+    "url": "https://clawhub.ai/skills/video-trimmer-by",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-by-7157ee8758ad4e12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-trimmer-by@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-trimmer-by-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1080e98d672290a5e932068639133500bb5ac6263419e1eaafd766c6123a7cb8",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:25:55.024Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58282,
+  "uuid": "skill-clawhub-context-engineering-for-projects-skill",
+  "skillKey": "clawhub-context-engineering-for-projects-skill",
+  "name": "Context Engineering For Projects",
+  "summary": "Build or initialize team-style project context directories for context engineering. Use when the user says “构建/初始化项目上下文”, “针对该项目构建上下文”, **or** in English phr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_engineering_for_projects_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lywhlao2025",
+      "features": [
+        "Build or initialize team-style project context directories for context engineering",
+        "Use when the user says “构建/初始化项目上下文”, “针对该项目构建上下文”, **or** in English phr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-engineering-for-projects-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215267987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-engineering-for-projects-skill",
+      "url": "https://clawhub.ai/skills/context-engineering-for-projects-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-engineering-for-projects-skill",
+    "url": "https://clawhub.ai/skills/context-engineering-for-projects-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-engineering-for-projects-skill-7c520f2acb5b9547.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-engineering-for-projects-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-engineering-for-projects-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:048f923dcd7adb438e24e2fecbe57440f4310549d14d88d7d5e0d7ced9b2760b",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:33:02.296Z"
+}

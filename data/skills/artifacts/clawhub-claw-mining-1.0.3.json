@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-mining@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mining",
+  "skill": {
+    "id": 55930,
+    "skillKey": "clawhub-claw-mining",
+    "name": "$CLAW Mining - Proof of AI Work"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mining",
+    "url": "https://clawhub.ai/skills/claw-mining",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mining-432f828938f33b6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mine $CLAW tokens via Proof of AI Work on Ethereum. Install this Skill and tell your agent 'mine CLAW' — the agent handles everything automatically. No techn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minewithclaw",
+      "userId": "publishers:minewithclaw",
+      "displayName": "minewithclaw",
+      "image": "https://avatars.githubusercontent.com/u/189420301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773513512775,
+      "changelog": "- Interactive setup flow improved: the `init` command now optionally prompts the user to enter their private key directly in the CLI, or to skip and fill it in later.\n- Default values added for several environment variables: `ORACLE_URL`, `RPC_URL`, and `POAIW_MINT_ADDRESS` now have built-in defaults for faster setup.\n- Advanced settings are now hidden behind an \"advanced\" prompt, streamlining the initial configuration for new users.\n- Security instructions clarified: agents must never handle or transmit the private key; this can only be set through the local CLI prompt or by editing `.env` directly.\n- Updated environment variable documentation to reflect new defaults, making setup more accessible to non-technical users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa0b0ac9ead0fe0996477ab59f59f9fcbb99d25aea8c6c8395bde3f8840c843f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69464,
+  "uuid": "skill-clawhub-mysteel-infosearch",
+  "skillKey": "clawhub-mysteel-infosearch",
+  "name": "Mysteel_InfoSearch",
+  "summary": "大宗商品行业资讯查询技能。用于查询钢铁、有色、能源化工等行业的动态新闻、市场快讯、政策变化、企业消息、价格异动分析、供需事件等资讯信息。当用户需要：(1) 了解行业最新动态和新闻；(2) 查询政策法规变化；(3) 获取企业生产经营消息；(4) 分析价格异动原因；(5) 跟踪供需事件；(6) 进行市场跟踪和研究支持...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteel_infosearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mysteel",
+      "features": [
+        "大宗商品行业资讯查询技能。用于查询钢铁、有色、能源化工等行业的动态新闻、市场快讯、政策变化、企业消息、价格异动分析、供需事件等资讯信息。当用户需要：(1) 了解行业最新动态和新闻；(2) 查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysteel-infosearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49762508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysteel-infosearch",
+      "url": "https://clawhub.ai/skills/mysteel-infosearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteel-infosearch",
+    "url": "https://clawhub.ai/skills/mysteel-infosearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteel-infosearch-f9357bfed8a59698.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysteel-infosearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysteel-infosearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa2f9bc08b958bd08ba9acfc6c536cb65268c36f0e41d5e6ff139f4db0dcd52",
+      "artifactSizeBytes": 2781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:31:19.447Z"
+}

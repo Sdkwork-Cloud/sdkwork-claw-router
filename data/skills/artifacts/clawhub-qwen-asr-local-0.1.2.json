@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-asr-local@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_asr_local",
+  "skill": {
+    "id": 23884,
+    "skillKey": "clawhub-qwen-asr-local",
+    "name": "Qwen ASR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-asr-local",
+    "url": "https://clawhub.ai/skills/qwen-asr-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-asr-local-3da1c393550811b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local speech-to-text using Qwen3-ASR (CPU-only, no API key, no cloud). Use when: (1) a voice message or audio file needs transcription, (2) user asks to tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huanglizhuo",
+      "userId": "s178htt5z5n76ebadk6q4ptn7983msgn",
+      "displayName": "lizhuo",
+      "image": "https://avatars.githubusercontent.com/u/3874324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773920466232,
+      "changelog": "- Added source code and original implementation links for QwenASR and qwen-asr in documentation.\n- No changes to functionality or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b45d281b22337cf0f9a3d5de02460f2a1e5123ee8c1dbbd08eb096facaba347"
+}

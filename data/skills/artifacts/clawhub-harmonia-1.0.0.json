@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harmonia@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harmonia",
+  "skill": {
+    "id": 45191,
+    "skillKey": "clawhub-harmonia",
+    "name": "Harmonia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harmonia",
+    "url": "https://clawhub.ai/skills/harmonia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harmonia-4d214cdf38a656ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check PyTorch, Transformers, and CUDA compatibility. Detect GPU, driver mismatches, and version conflicts in ML environments. Use when the user sets up ML/AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmed-eladl",
+      "userId": "s172tgwsfq1kvpmtva6cnxzg1983vfjh",
+      "displayName": "Ahmed Eladl",
+      "image": "https://avatars.githubusercontent.com/u/96540988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775092142980,
+      "changelog": "Initial release of harmonia.\n\n- Detects GPU, CUDA, driver, OS, Python, and main ML package versions for compatibility checks.\n- Diagnoses version conflicts and mismatches in PyTorch, Transformers, and related environments.\n- Provides specific commands for full environment diagnostics, system details, and compatibility suggestions.\n- Offers a compatibility matrix and lists known bug patterns and fixes.\n- Outputs actionable recommendations, including errors, warnings, and install commands.\n- Works offline with no dependencies beyond Python and pip.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95b9ca999d13d00cbfbef6608026d3bd7303453cd090710ecbd17f2909c0023a"
+}

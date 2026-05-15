@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-scheduler@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_scheduler",
+  "skill": {
+    "id": 21562,
+    "skillKey": "clawhub-smart-scheduler",
+    "name": "Smart Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-scheduler",
+    "url": "https://clawhub.ai/skills/smart-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-scheduler-a319a0c923791173.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate meeting requests, proposed time slots, confirmations, and ICS exports from a local scheduling ledger."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mehulupase01",
+      "userId": "s179gdpwbtw41fc7hd5650bh8183ejp1",
+      "displayName": "Mehul Bhojraj Upase",
+      "image": "https://avatars.githubusercontent.com/u/59685273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774300829951,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5b6d1a0ff49b8bd3b3b3700b745fecab69ac369eff8ec4df32f60b3c8accc97"
+}

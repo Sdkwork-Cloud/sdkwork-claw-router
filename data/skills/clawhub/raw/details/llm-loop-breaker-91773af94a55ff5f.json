@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "llm-loop-breaker",
+    "displayName": "LLM Loop Breaker",
+    "summary": "Two-layer defense for Openclaw gateway: kills hallucinating LLM streams via entropy analysis, and watchdogs host CPU/RAM/Disk to prevent resource exhaustion.",
+    "tags": {
+      "Initial Release": "1.0.0",
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775139571371,
+    "updatedAt": 1777527096717
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775139571371,
+    "changelog": "- Initial release of LLM Stream Guard with two-layer protection for the Openclaw gateway.\n- Adds Node.js-based Stream Entropy Breaker to detect and abort hallucinating LLM streams.\n- Introduces Python-based Host Resource Watchdog daemon to monitor CPU, RAM, disk, and process health.\n- Deterministic deploy script for safe, idempotent installation and easy verification via automated test suites.\n- Comprehensive uninstall instructions included.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "hehkcaspar",
+    "userId": "s176yegapb1pzn8bcxxry6hm0n843rqs",
+    "displayName": "hehkcaspar",
+    "image": "https://avatars.githubusercontent.com/u/36178242?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527096717
+  }
+}

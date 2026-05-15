@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38820,
+  "uuid": "skill-clawhub-solarwinds-service-desk-integration",
+  "skillKey": "clawhub-solarwinds-service-desk-integration",
+  "name": "Solarwinds Service Desk",
+  "summary": "SolarWinds Service Desk integration. Manage Incidents, Problems, Changes, Assets, Solutions, Users and more. Use when the user wants to interact with SolarWi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solarwinds_service_desk_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SolarWinds Service Desk integration",
+        "Manage Incidents, Problems, Changes, Assets, Solutions, Users and more",
+        "Use when the user wants to interact with SolarWi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solarwinds-service-desk-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solarwinds-service-desk-integration",
+      "url": "https://clawhub.ai/skills/solarwinds-service-desk-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solarwinds-service-desk-integration",
+    "url": "https://clawhub.ai/skills/solarwinds-service-desk-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solarwinds-service-desk-integration-8928112efd22eda7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solarwinds-service-desk-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-solarwinds-service-desk-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7daf3b4e678fa4cdbf10f0067501dd0dbae6722286368478318144d5a0ad66c6",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:05.045Z"
+}

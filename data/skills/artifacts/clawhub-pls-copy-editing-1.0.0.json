@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pls-copy-editing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_copy_editing",
+  "skill": {
+    "id": 15940,
+    "skillKey": "clawhub-pls-copy-editing",
+    "name": "PLS Copy Editing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-copy-editing",
+    "url": "https://clawhub.ai/skills/pls-copy-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-copy-editing-3bd143d9e6e59a1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhances text clarity, grammar, punctuation, and style in documents, ideal for polishing drafts before publication or submission."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattvalenta",
+      "userId": "publishers:mattvalenta",
+      "displayName": "Matt Valenta",
+      "image": "https://avatars.githubusercontent.com/u/153394211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 920,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771804447909,
+      "changelog": "- Initial skill version scaffolding for \"copy-editing\".\n- Includes placeholders for description, overview, content structure, and optional resource directories.\n- Provides guidance for organizing documentation and structuring the skill.\n- No executable code, references, or assets are included yet.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25fa5839cd75052abc2d4c49e502683ab45c50a42831d29c710a577d90b223ec"
+}

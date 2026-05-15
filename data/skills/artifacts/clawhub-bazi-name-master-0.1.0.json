@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-name-master@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_name_master",
+  "skill": {
+    "id": 45058,
+    "skillKey": "clawhub-bazi-name-master",
+    "name": "Bazi Name Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-name-master",
+    "url": "https://clawhub.ai/skills/bazi-name-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-name-master-658ea41b908fb32f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants BaZi-based baby naming, asks you to calculate a child's chart from raw birth data, already has a detailed four-pillar chart and wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billin9",
+      "userId": "s1732yfv4vsf3vzrhp8c37typ9845jhq",
+      "displayName": "Billin9",
+      "image": "https://avatars.githubusercontent.com/u/15778311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775186065974,
+      "changelog": "首次发布八字起名 skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b529519423972441b67e30432cc1cf83df021a53a0c33e378601cb54700b85ed"
+}

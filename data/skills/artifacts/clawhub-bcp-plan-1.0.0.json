@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bcp-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bcp_plan",
+  "skill": {
+    "id": 34048,
+    "skillKey": "clawhub-bcp-plan",
+    "name": "Bcp Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bcp-plan",
+    "url": "https://clawhub.ai/skills/bcp-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bcp-plan-f811118dc18d228c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive business continuity planning including emergency plans, critical alternatives, drill scripts, and recovery procedures. Covers risk assessment,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1970168137",
+      "userId": "s1750jcdy0m9f65nkyj3n8y7ws83f35s",
+      "displayName": "走过",
+      "image": "https://avatars.githubusercontent.com/u/48984941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774252404365,
+      "changelog": "Initial release of bcp-plan: a skill for creating comprehensive business continuity plans.\n\n- Generates BCP documents covering emergency plans, risk assessments, recovery and communication procedures.\n- Supports detailed input on business functions, risks, objectives, dependencies, and capabilities.\n- Provides outputs such as drill scenarios, prioritized risk analysis, recovery strategies, and compliance frameworks.\n- Designed for operational preparedness, crisis management, and organizational resilience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:698b216f98c9505c2eb4753232e0acb0ce02bfc1bb1cf8787e939986c21b8e6b"
+}

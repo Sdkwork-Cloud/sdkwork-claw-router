@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57672,
+  "uuid": "skill-clawhub-smyx-staff-absence-detection-analysis",
+  "skillKey": "clawhub-smyx-staff-absence-detection-analysis",
+  "name": "人员离岗实时监测技能",
+  "summary": "Real-time monitoring of personnel on-duty status in specific areas based on computer vision and human pose estimation, automatically detects abnormal statuse...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_staff_absence_detection_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Real-time monitoring of personnel on-duty status in specific areas based on computer vision and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-staff-absence-detection-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-staff-absence-detection-analysis",
+      "url": "https://clawhub.ai/skills/smyx-staff-absence-detection-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-staff-absence-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-staff-absence-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-staff-absence-detection-analysis-f88ea3308944fc37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-staff-absence-detection-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-staff-absence-detection-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a91c27d7c76851dd6527ae4019475bbcbb72f804d11d6a46b0a40d60d79c07ce",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T03:34:39.669Z"
+}

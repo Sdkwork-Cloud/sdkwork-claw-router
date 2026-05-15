@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cspr-trade-mcp@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cspr_trade_mcp",
+  "skill": {
+    "id": 55304,
+    "skillKey": "clawhub-cspr-trade-mcp",
+    "name": "CSPR.trade MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cspr-trade-mcp",
+    "url": "https://clawhub.ai/skills/cspr-trade-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cspr-trade-mcp-71087d836c9dccb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on CSPR.trade DEX (Casper Network) — swaps, liquidity, and portfolio queries via the cspr-trade MCP server. Non-custodial — transactions are built remo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mssteuer",
+      "userId": "s179gtm1v0mjptt5qyk65g26ah83g7pm",
+      "displayName": "mssteuer",
+      "image": "https://avatars.githubusercontent.com/u/142457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774389017812,
+      "changelog": "Security improvements: declare all sensitive env vars in requires.env with sensitive:true, require explicit user confirmation before signing, remove auto-sign behavior, add security notes for local signer mode, single-file skill (no references dir)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:183e74455a28af594bdc9d8040261fe429cbd47ae7b111c24739c23bae06c0dc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deus-pandora-context-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deus_pandora_context_engine",
+  "skill": {
+    "id": 40129,
+    "skillKey": "clawhub-deus-pandora-context-engine",
+    "name": "Context Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deus-pandora-context-engine",
+    "url": "https://clawhub.ai/skills/deus-pandora-context-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deus-pandora-context-engine-37cbe207ba89595a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintains conversation state and project continuity across sessions by saving, restoring, and managing project contexts and progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deus-pandora",
+      "userId": "s17fbpc92sh6w1wv7fr57kk2f9845bs4",
+      "displayName": "deus-pandora",
+      "image": "https://avatars.githubusercontent.com/u/262764471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775814396429,
+      "changelog": "- Initial release of the Smart Context Engine for OpenClaw.\n- Maintains conversation state and project continuity across sessions.\n- Allows switching, tracking, and summarizing multiple projects.\n- Supports manual and automatic saving/restoring of context.\n- Includes commands for project management (save, switch, list, summarize).\n- Integrates with long-term memory to keep project summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc4e70dccd53dfd271a9fa2bfe684787e09238541da185f352e0ec08e76ebc69"
+}

@@ -16,16 +16,28 @@ use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::OsApiKeySecretGenerator;
 use crate::ports::{
-    CreateForumCommentCommand, CreateForumFeedCommand, ForumBooleanResult, ForumCommandFuture,
+    CreateForumCommentCommand, CreateForumFeedCommand, ForumCommandFuture,
     ForumCommentCommandStore, ForumCommentItem, ForumCommentPage, ForumCommentReadStore,
-    ForumCommentStatistics, ForumFeedCommandStore, ForumFeedItem, ForumFeedQuery,
-    ForumFeedReadStore, ForumReadFuture, ForumSubject,
+    ForumCommentStatistics, ForumCommunityLink, ForumFeedCommandStore, ForumFeedItem,
+    ForumFeedQuery, ForumFeedReadStore, ForumOverview, ForumOverviewSource, ForumOverviewStats,
+    ForumReadFuture, ForumSubject,
 };
 
-const DEFAULT_PAGE_SIZE: i64 = 20;
+const DEFAULT_FEED_PAGE_SIZE: i64 = 10;
+const DEFAULT_COMMENT_PAGE_SIZE: i64 = 20;
+const DEFAULT_REPLY_PAGE_SIZE: i64 = 10;
+const DEFAULT_FEED_LIMIT: i64 = 10;
+const DEFAULT_TOP_FEED_LIMIT: i64 = 5;
 const MAX_PAGE_SIZE: i64 = 100;
 const MAX_QUERY_TEXT_LEN: usize = 128;
 const MAX_FORUM_BODY_BYTES: usize = 256 * 1024;
+const MAX_FEED_IMAGES: usize = 20;
+const MAX_FEED_IMAGE_LEN: usize = 2048;
+const MAX_FEED_TAGS: usize = 20;
+const MAX_FEED_TAG_LEN: usize = 64;
+const MAX_COMMENT_CONTENT_LEN: usize = 20_000;
+const MAX_COMMENT_DEVICE_INFO_LEN: usize = 512;
+const ENV_FORUM_COMMUNITY_LINKS: &str = "SDKWORK_CLAW_FORUM_COMMUNITY_LINKS";
 
 #[derive(Clone)]
 struct AppForumState {
@@ -34,23 +46,25 @@ struct AppForumState {
     comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
     comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    community_links: Arc<Vec<ForumCommunityLink>>,
     require_subject: bool,
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct ForumFeedHttpQuery {
-    feed_type: Option<String>,
-    #[serde(alias = "type")]
+    #[serde(rename = "type")]
+    type_: Option<String>,
     content_type: Option<String>,
-    keyword: Option<String>,
+    q: Option<String>,
     author_id: Option<i64>,
-    category_id: Option<i64>,
     page: Option<i64>,
-    page_no: Option<i64>,
-    size: Option<i64>,
     page_size: Option<i64>,
     limit: Option<i64>,
+}
+
+#[derive(Debug, Deserialize)]
+struct CollectFeedQuery {
+    folder_id: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -58,7 +72,6 @@ struct ForumFeedHttpQuery {
 struct CreateFeedRequest {
     title: Option<String>,
     content: Option<String>,
-    summary: Option<String>,
     category_id: Option<i64>,
     images: Option<Vec<String>>,
     tags: Option<Vec<String>>,
@@ -67,15 +80,11 @@ struct CreateFeedRequest {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct ForumCommentHttpQuery {
     content_type: Option<String>,
     content_id: Option<i64>,
     page: Option<i64>,
-    page_no: Option<i64>,
-    size: Option<i64>,
     page_size: Option<i64>,
-    limit: Option<i64>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -84,23 +93,32 @@ struct CreateCommentRequest {
     content_type: Option<String>,
     content_id: Option<i64>,
     content: String,
-    parent_id: Option<i64>,
     device_info: Option<String>,
-    ip_address: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct CollectFeedRequest {
-    folder_id: Option<i64>,
+struct ReplyCommentRequest {
+    content: String,
+    device_info: Option<String>,
 }
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
-struct ForumFeedItems {
-    items: Vec<ForumFeedItem>,
-    content: Vec<ForumFeedItem>,
-    total_elements: i64,
+struct ForumOverviewResponse {
+    stats: ForumOverviewStats,
+    community_links: Vec<ForumCommunityLink>,
+    source: ForumOverviewSource,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct ForumCommunityLinkConfig {
+    id: String,
+    label: String,
+    url: String,
+    qr_code_url: Option<String>,
+    tone: Option<String>,
 }
 
 struct EmptyForumFeedReadStore;
@@ -119,17 +137,10 @@ impl ForumFeedReadStore for EmptyForumFeedReadStore {
 
     fn load_feed_detail<'a>(
         &'a self,
-        _feed_id: String,
+        _feed_id: i64,
         _subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, Option<ForumFeedItem>> {
         Box::pin(async { Ok(None) })
-    }
-
-    fn load_feed_categories<'a>(
-        &'a self,
-        _subject: Option<ForumSubject>,
-    ) -> ForumReadFuture<'a, Vec<String>> {
-        Box::pin(async { Ok(Vec::new()) })
     }
 
     fn is_feed_collected<'a>(
@@ -138,6 +149,30 @@ impl ForumFeedReadStore for EmptyForumFeedReadStore {
         _subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, bool> {
         Box::pin(async { Ok(false) })
+    }
+
+    fn load_overview<'a>(
+        &'a self,
+        _subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumOverview> {
+        Box::pin(async {
+            Ok(ForumOverview {
+                stats: ForumOverviewStats::default(),
+                source: ForumOverviewSource {
+                    source_label: "Live forum data".to_owned(),
+                    source_description:
+                        "Derived from PlusFeeds, PlusComments, vote, and favorite tables."
+                            .to_owned(),
+                    source_tables: vec![
+                        "plus_feeds".to_owned(),
+                        "plus_comments".to_owned(),
+                        "plus_content_vote".to_owned(),
+                        "plus_favorite".to_owned(),
+                    ],
+                    observed_at: current_timestamp_string(),
+                },
+            })
+        })
     }
 }
 
@@ -194,7 +229,7 @@ impl ForumFeedCommandStore for EmptyForumFeedCommandStore {
     fn share_feed<'a>(
         &'a self,
         _feed_id: i64,
-        _subject: Option<ForumSubject>,
+        _subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem> {
         Box::pin(async { Err(unavailable("forum feed command store")) })
     }
@@ -321,6 +356,7 @@ pub fn app_forum_router() -> Router {
         comment_read_store,
         comment_command_store,
         Arc::new(OsApiKeySecretGenerator),
+        configured_forum_community_links(),
         false,
     )
 }
@@ -332,13 +368,32 @@ pub fn app_forum_router_with_store(
     comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
+    app_forum_router_with_store_and_community_links(
+        feed_read_store,
+        feed_command_store,
+        comment_read_store,
+        comment_command_store,
+        entity_uuid_generator,
+        configured_forum_community_links(),
+    )
+}
+
+pub fn app_forum_router_with_store_and_community_links(
+    feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
+    feed_command_store: Arc<dyn ForumFeedCommandStore + Send + Sync>,
+    comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
+    comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
+    entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    community_links: Vec<ForumCommunityLink>,
+) -> Router {
     app_forum_router_with_state(
         feed_read_store,
         feed_command_store,
         comment_read_store,
         comment_command_store,
         entity_uuid_generator,
-        true,
+        community_links,
+        false,
     )
 }
 
@@ -348,67 +403,95 @@ fn app_forum_router_with_state(
     comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
     comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
+    community_links: Vec<ForumCommunityLink>,
     require_subject: bool,
 ) -> Router {
+    let community_links = Arc::new(community_links);
     Router::new()
-        .route("/app/v3/api/feeds/list", get(fetch_feeds))
-        .route("/app/v3/api/feeds/hot", get(fetch_hot_feeds))
-        .route("/app/v3/api/feeds/recommend", get(fetch_recommended_feeds))
-        .route("/app/v3/api/feeds/search", get(fetch_search_feeds))
-        .route("/app/v3/api/feeds/top", get(fetch_top_feeds))
         .route(
-            "/app/v3/api/feeds/category/{category_id}",
+            "/app/v3/api/content/feeds/overview",
+            get(fetch_forum_overview),
+        )
+        .route("/app/v3/api/content/feeds", get(fetch_feeds))
+        .route("/app/v3/api/content/feeds/hot", get(fetch_hot_feeds))
+        .route(
+            "/app/v3/api/content/feeds/recommend",
+            get(fetch_recommended_feeds),
+        )
+        .route("/app/v3/api/content/feeds/top", get(fetch_top_feeds))
+        .route(
+            "/app/v3/api/content/feeds/category/{categoryId}",
             get(fetch_category_feeds),
         )
         .route(
-            "/app/v3/api/feeds/most-viewed",
+            "/app/v3/api/content/feeds/most_viewed",
             get(fetch_most_viewed_feeds),
         )
-        .route("/app/v3/api/feeds/most-liked", get(fetch_most_liked_feeds))
-        .route("/app/v3/api/feeds/categories", get(fetch_feed_categories))
-        .route("/app/v3/api/feeds/detail/{feed_id}", get(fetch_feed_detail))
         .route(
-            "/app/v3/api/feeds/check-collected/{feed_id}",
+            "/app/v3/api/content/feeds/most_liked",
+            get(fetch_most_liked_feeds),
+        )
+        .route("/app/v3/api/content/feeds/{id}", get(fetch_feed_detail))
+        .route(
+            "/app/v3/api/content/feeds/{id}/collections/current",
             get(check_feed_collected),
         )
-        .route("/app/v3/api/feeds", post(create_feed))
-        .route("/app/v3/api/feeds/{feed_id}", delete(delete_feed))
-        .route("/app/v3/api/feeds/like/{feed_id}", post(like_feed))
-        .route("/app/v3/api/feeds/unlike/{feed_id}", post(unlike_feed))
-        .route("/app/v3/api/feeds/collect/{feed_id}", post(collect_feed))
+        .route("/app/v3/api/content/feeds", post(create_feed))
+        .route("/app/v3/api/content/feeds/{id}", delete(delete_feed))
+        .route("/app/v3/api/content/feeds/{id}/likes", post(like_feed))
         .route(
-            "/app/v3/api/feeds/uncollect/{feed_id}",
-            post(uncollect_feed),
+            "/app/v3/api/content/feeds/{id}/likes/current",
+            delete(unlike_feed),
         )
-        .route("/app/v3/api/feeds/share/{feed_id}", post(share_feed))
-        .route("/app/v3/api/comments", post(create_comment))
-        .route("/app/v3/api/comments/list", get(fetch_comments))
-        .route("/app/v3/api/comments/my", get(fetch_my_comments))
         .route(
-            "/app/v3/api/comments/statistics",
+            "/app/v3/api/content/feeds/{id}/collections",
+            post(collect_feed),
+        )
+        .route(
+            "/app/v3/api/content/feeds/{id}/collections/current",
+            delete(uncollect_feed),
+        )
+        .route("/app/v3/api/content/feeds/{id}/shares", post(share_feed))
+        .route("/app/v3/api/content/comments", post(create_comment))
+        .route("/app/v3/api/content/comments", get(fetch_comments))
+        .route(
+            "/app/v3/api/content/users/current/comments",
+            get(fetch_my_comments),
+        )
+        .route(
+            "/app/v3/api/content/comments/statistics",
             get(fetch_comment_statistics),
         )
         .route(
-            "/app/v3/api/comments/{comment_id}/reply",
+            "/app/v3/api/content/comments/{comment_id}/reply",
             post(reply_comment),
         )
         .route(
-            "/app/v3/api/comments/{comment_id}/replies",
+            "/app/v3/api/content/comments/{comment_id}/replies",
             get(fetch_comment_replies),
         )
         .route(
-            "/app/v3/api/comments/{comment_id}",
+            "/app/v3/api/content/comments/{comment_id}",
             get(fetch_comment_detail),
         )
-        .route("/app/v3/api/comments/{comment_id}", delete(delete_comment))
-        .route("/app/v3/api/comments/{comment_id}/like", post(like_comment))
         .route(
-            "/app/v3/api/comments/{comment_id}/like",
+            "/app/v3/api/content/comments/{comment_id}",
+            delete(delete_comment),
+        )
+        .route(
+            "/app/v3/api/content/comments/{comment_id}/likes",
+            post(like_comment),
+        )
+        .route(
+            "/app/v3/api/content/comments/{comment_id}/likes/current",
             delete(unlike_comment),
         )
-        .route("/app/v3/api/comments/{comment_id}/pin", post(pin_comment))
         .route(
-            "/app/v3/api/comments/{comment_id}/pin",
+            "/app/v3/api/content/comments/{comment_id}/pins",
+            post(pin_comment),
+        )
+        .route(
+            "/app/v3/api/content/comments/{comment_id}/pins/current",
             delete(unpin_comment),
         )
         .with_state(AppForumState {
@@ -417,8 +500,25 @@ fn app_forum_router_with_state(
             comment_read_store,
             comment_command_store,
             entity_uuid_generator,
+            community_links,
             require_subject,
         })
+}
+
+async fn fetch_forum_overview(State(state): State<AppForumState>, headers: HeaderMap) -> Response {
+    let subject = match forum_subject(&headers, state.require_subject) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    match state.feed_read_store.load_overview(subject).await {
+        Ok(overview) => Json(PlusApiResult::success(ForumOverviewResponse {
+            stats: overview.stats,
+            community_links: state.community_links.as_ref().clone(),
+            source: overview.source,
+        }))
+        .into_response(),
+        Err(error) => forum_error("forum overview read model is unavailable", error),
+    }
 }
 
 async fn fetch_feeds(
@@ -426,7 +526,7 @@ async fn fetch_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, None, None).await
+    fetch_feeds_with_query(state, headers, validate_feed_list_query(query)).await
 }
 
 async fn fetch_hot_feeds(
@@ -434,7 +534,12 @@ async fn fetch_hot_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, Some("hot"), None).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_shortcut_query(query, "hot", DEFAULT_FEED_LIMIT),
+    )
+    .await
 }
 
 async fn fetch_recommended_feeds(
@@ -442,15 +547,12 @@ async fn fetch_recommended_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, Some("recommend"), None).await
-}
-
-async fn fetch_search_feeds(
-    State(state): State<AppForumState>,
-    headers: HeaderMap,
-    Query(query): Query<ForumFeedHttpQuery>,
-) -> Response {
-    fetch_feeds_with_type(state, headers, query, None, None).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_shortcut_query(query, "recommend", DEFAULT_FEED_LIMIT),
+    )
+    .await
 }
 
 async fn fetch_top_feeds(
@@ -458,7 +560,12 @@ async fn fetch_top_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, Some("top"), None).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_shortcut_query(query, "top", DEFAULT_TOP_FEED_LIMIT),
+    )
+    .await
 }
 
 async fn fetch_most_viewed_feeds(
@@ -466,7 +573,12 @@ async fn fetch_most_viewed_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, Some("most-viewed"), None).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_shortcut_query(query, "most_viewed", DEFAULT_FEED_LIMIT),
+    )
+    .await
 }
 
 async fn fetch_most_liked_feeds(
@@ -474,7 +586,12 @@ async fn fetch_most_liked_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, Some("most-liked"), None).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_shortcut_query(query, "most_liked", DEFAULT_FEED_LIMIT),
+    )
+    .await
 }
 
 async fn fetch_category_feeds(
@@ -483,31 +600,29 @@ async fn fetch_category_feeds(
     headers: HeaderMap,
     Query(query): Query<ForumFeedHttpQuery>,
 ) -> Response {
-    fetch_feeds_with_type(state, headers, query, None, Some(category_id)).await
+    fetch_feeds_with_query(
+        state,
+        headers,
+        validate_feed_category_query(query, category_id),
+    )
+    .await
 }
 
-async fn fetch_feeds_with_type(
+async fn fetch_feeds_with_query(
     state: AppForumState,
     headers: HeaderMap,
-    query: ForumFeedHttpQuery,
-    feed_type: Option<&str>,
-    category_id: Option<i64>,
+    query: Result<ForumFeedQuery, String>,
 ) -> Response {
     let subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let query = match validate_feed_query(query, feed_type, category_id) {
+    let query = match query {
         Ok(query) => query,
         Err(message) => return bad_request(message),
     };
     match state.feed_read_store.load_feeds(query, subject).await {
-        Ok(items) => Json(PlusApiResult::success(ForumFeedItems {
-            total_elements: items.len() as i64,
-            content: items.clone(),
-            items,
-        }))
-        .into_response(),
+        Ok(items) => Json(PlusApiResult::success(items)).into_response(),
         Err(error) => forum_error("forum feed read model is unavailable", error),
     }
 }
@@ -521,9 +636,12 @@ async fn fetch_feed_detail(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let feed_id = match normalize_path_id(&feed_id, "feedId") {
-        Ok(feed_id) => feed_id,
-        Err(message) => return bad_request(message),
+    let feed_id = match feed_id.parse::<i64>() {
+        Ok(feed_id) => match validate_positive_id(feed_id, "id") {
+            Ok(feed_id) => feed_id,
+            Err(message) => return bad_request(message),
+        },
+        Err(_) => return not_found("feed was not found"),
     };
     match state
         .feed_read_store
@@ -536,22 +654,15 @@ async fn fetch_feed_detail(
     }
 }
 
-async fn fetch_feed_categories(State(state): State<AppForumState>, headers: HeaderMap) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    match state.feed_read_store.load_feed_categories(subject).await {
-        Ok(items) => Json(PlusApiResult::success(items)).into_response(),
-        Err(error) => forum_error("forum feed read model is unavailable", error),
-    }
-}
-
 async fn check_feed_collected(
     State(state): State<AppForumState>,
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -561,7 +672,7 @@ async fn check_feed_collected(
         .is_feed_collected(feed_id, subject)
         .await
     {
-        Ok(ok) => Json(PlusApiResult::success(ForumBooleanResult { ok })).into_response(),
+        Ok(ok) => Json(PlusApiResult::success(ok)).into_response(),
         Err(error) => forum_error("forum feed read model is unavailable", error),
     }
 }
@@ -571,30 +682,27 @@ async fn create_feed(
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match required_forum_subject(&headers, state.require_subject, "create feed") {
+    let request_subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let subject = request_subject.unwrap_or_else(public_forum_subject);
     let request = match parse_json_body::<CreateFeedRequest>(&body, "feed request") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    let content = match normalize_required_text(
-        request.content.clone().or_else(|| request.summary.clone()),
-        "content",
-        8192,
-    ) {
+    let content = match normalize_required_text(request.content.clone(), "content", 2000) {
         Ok(content) => content,
         Err(message) => return bad_request(message),
     };
     let command = match build_create_feed_command(&state, subject, request, content) {
         Ok(command) => command,
-        Err(error) => return forum_error("forum feed command is invalid", error),
+        Err(message) => return bad_request(message),
     };
     feed_command_response(
         state
             .feed_command_store
-            .create_feed(command, Some(subject))
+            .create_feed(command, request_subject)
             .await,
     )
 }
@@ -604,6 +712,10 @@ async fn delete_feed(
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "delete feed") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -616,6 +728,10 @@ async fn like_feed(
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "like feed") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -628,6 +744,10 @@ async fn unlike_feed(
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "unlike feed") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -639,14 +759,18 @@ async fn collect_feed(
     State(state): State<AppForumState>,
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
-    body: Bytes,
+    Query(query): Query<CollectFeedQuery>,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "collect feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let folder_id = match parse_optional_json_body::<CollectFeedRequest>(&body, "collect request") {
-        Ok(request) => request.and_then(|request| request.folder_id),
+    let folder_id = match validate_optional_positive(query.folder_id, "folder_id") {
+        Ok(folder_id) => folder_id,
         Err(message) => return bad_request(message),
     };
     feed_command_response(
@@ -662,6 +786,10 @@ async fn uncollect_feed(
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "uncollect feed") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -679,7 +807,11 @@ async fn share_feed(
     Path(feed_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
-    let subject = match forum_subject(&headers, state.require_subject) {
+    let feed_id = match validate_positive_id(feed_id, "id") {
+        Ok(feed_id) => feed_id,
+        Err(message) => return bad_request(message),
+    };
+    let subject = match required_forum_subject(&headers, state.require_subject, "share feed") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
@@ -715,11 +847,15 @@ async fn fetch_comment_replies(
     headers: HeaderMap,
     Query(query): Query<ForumCommentHttpQuery>,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let query = match validate_comment_page_query(query) {
+    let query = match validate_comment_page_query(query, DEFAULT_REPLY_PAGE_SIZE) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
     };
@@ -738,6 +874,10 @@ async fn fetch_comment_detail(
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -762,7 +902,7 @@ async fn fetch_my_comments(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let query = match validate_comment_page_query(query) {
+    let query = match validate_comment_page_query(query, DEFAULT_COMMENT_PAGE_SIZE) {
         Ok(query) => query,
         Err(message) => return bad_request(message),
     };
@@ -785,12 +925,17 @@ async fn fetch_comment_statistics(
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let content_type = match normalize_required_text(query.content_type, "contentType", 64) {
+    let content_type = match normalize_comment_content_type(query.content_type) {
         Ok(value) => value,
         Err(message) => return bad_request(message),
     };
-    let Some(content_id) = query.content_id else {
-        return bad_request("contentId is required".to_owned());
+    let content_id = match query
+        .content_id
+        .ok_or_else(|| "content_id is required".to_owned())
+        .and_then(|content_id| validate_positive_id(content_id, "content_id"))
+    {
+        Ok(content_id) => content_id,
+        Err(message) => return bad_request(message),
     };
     match state
         .comment_read_store
@@ -807,15 +952,39 @@ async fn create_comment(
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match required_forum_subject(&headers, state.require_subject, "create comment") {
+    let request_subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
+    let subject = request_subject.unwrap_or_else(public_forum_subject);
     let request = match parse_json_body::<CreateCommentRequest>(&body, "comment request") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    create_comment_with_parent(state, subject, request, None).await
+    let content_type = match normalize_comment_content_type(request.content_type) {
+        Ok(content_type) => content_type,
+        Err(message) => return bad_request(message),
+    };
+    let content_id = match request
+        .content_id
+        .ok_or_else(|| "contentId is required".to_owned())
+        .and_then(|content_id| validate_positive_id(content_id, "contentId"))
+    {
+        Ok(content_id) => content_id,
+        Err(message) => return bad_request(message),
+    };
+    create_comment_with_target(
+        state,
+        subject,
+        request_subject,
+        content_type,
+        content_id,
+        request.content,
+        None,
+        request.device_info,
+        None,
+    )
+    .await
 }
 
 async fn reply_comment(
@@ -824,34 +993,70 @@ async fn reply_comment(
     headers: HeaderMap,
     body: Bytes,
 ) -> Response {
-    let subject = match required_forum_subject(&headers, state.require_subject, "reply comment") {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
+    let request_subject = match forum_subject(&headers, state.require_subject) {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    let request = match parse_json_body::<CreateCommentRequest>(&body, "comment reply request") {
+    let subject = request_subject.unwrap_or_else(public_forum_subject);
+    let request = match parse_json_body::<ReplyCommentRequest>(&body, "comment reply request") {
         Ok(request) => request,
         Err(message) => return bad_request(message),
     };
-    create_comment_with_parent(state, subject, request, Some(comment_id)).await
+    let parent = match state
+        .comment_read_store
+        .load_comment_detail(comment_id, Some(subject))
+        .await
+    {
+        Ok(Some(parent)) => parent,
+        Ok(None) => return not_found("parent comment was not found"),
+        Err(error) => return forum_error("forum comment read model is unavailable", error),
+    };
+    create_comment_with_target(
+        state,
+        subject,
+        request_subject,
+        parent.content_type,
+        parent.content_id,
+        request.content,
+        Some(comment_id),
+        request.device_info,
+        None,
+    )
+    .await
 }
 
-async fn create_comment_with_parent(
+async fn create_comment_with_target(
     state: AppForumState,
     subject: ForumSubject,
-    request: CreateCommentRequest,
+    request_subject: Option<ForumSubject>,
+    content_type: String,
+    content_id: i64,
+    content: String,
     parent_id: Option<i64>,
+    device_info: Option<String>,
+    ip_address: Option<String>,
 ) -> Response {
-    let content = match normalize_required_text(Some(request.content), "content", 8192) {
-        Ok(content) => content,
+    let content_id = match validate_positive_id(content_id, "contentId") {
+        Ok(content_id) => content_id,
         Err(message) => return bad_request(message),
     };
-    let content_type = match normalize_required_text(request.content_type, "contentType", 64) {
+    let content_type = match normalize_comment_content_type(Some(content_type)) {
         Ok(content_type) => content_type,
         Err(message) => return bad_request(message),
     };
-    let Some(content_id) = request.content_id else {
-        return bad_request("contentId is required".to_owned());
+    let content = match normalize_required_text(Some(content), "content", MAX_COMMENT_CONTENT_LEN) {
+        Ok(content) => content,
+        Err(message) => return bad_request(message),
     };
+    let device_info =
+        match normalize_optional_text(device_info, "deviceInfo", MAX_COMMENT_DEVICE_INFO_LEN) {
+            Ok(content) => content,
+            Err(message) => return bad_request(message),
+        };
     let uuid = match state.entity_uuid_generator.generate_entity_uuid() {
         Ok(uuid) => uuid,
         Err(error) => return forum_error("forum comment command is invalid", error),
@@ -862,15 +1067,15 @@ async fn create_comment_with_parent(
         content_type,
         content_id,
         content,
-        parent_id: parent_id.or(request.parent_id),
-        device_info: request.device_info,
-        ip_address: request.ip_address,
+        parent_id,
+        device_info,
+        ip_address,
         requested_at: current_timestamp_string(),
     };
     comment_command_response(
         state
             .comment_command_store
-            .create_comment(command, Some(subject))
+            .create_comment(command, request_subject)
             .await,
     )
 }
@@ -880,11 +1085,15 @@ async fn delete_comment(
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "delete comment") {
         Ok(subject) => subject,
         Err(response) => return response,
     };
-    boolean_command_response(
+    void_command_response(
         state
             .comment_command_store
             .delete_comment(comment_id, subject)
@@ -897,6 +1106,10 @@ async fn like_comment(
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "like comment") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -914,6 +1127,10 @@ async fn unlike_comment(
     Path(comment_id): Path<i64>,
     headers: HeaderMap,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "unlike comment") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -948,6 +1165,10 @@ async fn set_comment_pin(
     headers: HeaderMap,
     pinned: bool,
 ) -> Response {
+    let comment_id = match validate_positive_id(comment_id, "commentId") {
+        Ok(comment_id) => comment_id,
+        Err(message) => return bad_request(message),
+    };
     let subject = match required_forum_subject(&headers, state.require_subject, "pin comment") {
         Ok(subject) => subject,
         Err(response) => return response,
@@ -965,83 +1186,148 @@ fn build_create_feed_command(
     subject: ForumSubject,
     request: CreateFeedRequest,
     content: String,
-) -> Result<CreateForumFeedCommand, DomainError> {
+) -> Result<CreateForumFeedCommand, String> {
+    let category_id = match request.category_id {
+        Some(category_id) if category_id < 0 => {
+            return Err("categoryId must be greater than or equal to 0".to_owned());
+        }
+        value => value,
+    };
     Ok(CreateForumFeedCommand {
         subject,
-        uuid: state.entity_uuid_generator.generate_entity_uuid()?,
-        title: normalize_optional_text(request.title, "title", 255).map_err(DomainError::new)?,
+        uuid: state
+            .entity_uuid_generator
+            .generate_entity_uuid()
+            .map_err(|error| error.to_string())?,
+        title: normalize_optional_text(request.title, "title", 255)?,
         content,
-        category_id: request.category_id,
-        images: request
-            .images
-            .unwrap_or_default()
-            .into_iter()
-            .filter_map(|value| normalize_optional_text(Some(value), "image", 1024).transpose())
-            .collect::<Result<Vec<_>, _>>()
-            .map_err(DomainError::new)?,
-        tags: request
-            .tags
-            .unwrap_or_default()
-            .into_iter()
-            .filter_map(|value| normalize_optional_text(Some(value), "tag", 64).transpose())
-            .collect::<Result<Vec<_>, _>>()
-            .map_err(DomainError::new)?,
-        source: normalize_optional_text(request.source, "source", 100).map_err(DomainError::new)?,
-        source_url: normalize_optional_text(request.source_url, "sourceUrl", 500)
-            .map_err(DomainError::new)?,
+        category_id,
+        images: normalize_optional_text_list(
+            request.images,
+            "images",
+            "image",
+            MAX_FEED_IMAGES,
+            MAX_FEED_IMAGE_LEN,
+        )?,
+        tags: normalize_optional_text_list(
+            request.tags,
+            "tags",
+            "tag",
+            MAX_FEED_TAGS,
+            MAX_FEED_TAG_LEN,
+        )?,
+        source: normalize_optional_text(request.source, "source", 100)?,
+        source_url: normalize_optional_text(request.source_url, "sourceUrl", 500)?,
         requested_at: current_timestamp_string(),
     })
 }
 
-fn validate_feed_query(
+fn validate_feed_list_query(query: ForumFeedHttpQuery) -> Result<ForumFeedQuery, String> {
+    let page = validate_optional_positive(query.page, "page")?;
+    let size = validate_optional_positive(query.page_size, "page_size")?;
+    if size.unwrap_or(1) > MAX_PAGE_SIZE {
+        return Err(format!("page_size must be at most {MAX_PAGE_SIZE}"));
+    }
+    let feed_type = normalize_feed_type(query.type_)?;
+    let content_type = normalize_feed_content_type(query.content_type)?;
+    Ok(ForumFeedQuery {
+        feed_type: Some(feed_type),
+        content_type: Some(content_type),
+        keyword: normalize_optional_text(query.q, "q", MAX_QUERY_TEXT_LEN)?,
+        author_id: query.author_id,
+        page: Some(page.unwrap_or(1)),
+        size: Some(size.unwrap_or(DEFAULT_FEED_PAGE_SIZE)),
+        ..ForumFeedQuery::default()
+    })
+}
+
+fn normalize_feed_type(value: Option<String>) -> Result<String, String> {
+    let value =
+        normalize_optional_text(value, "type", 64)?.unwrap_or_else(|| "recommend".to_owned());
+    match value.as_str() {
+        "recommend" | "hot" | "top" => Ok(value),
+        _ => Err("type must be recommend, hot, or top".to_owned()),
+    }
+}
+
+fn normalize_feed_content_type(value: Option<String>) -> Result<String, String> {
+    let value =
+        normalize_optional_text(value, "content_type", 64)?.unwrap_or_else(|| "all".to_owned());
+    match value.as_str() {
+        "all" | "feeds" | "FEEDS" => Ok(value),
+        _ => Err("content_type must be all or feeds".to_owned()),
+    }
+}
+
+fn validate_feed_shortcut_query(
     query: ForumFeedHttpQuery,
-    feed_type_override: Option<&str>,
-    category_id_override: Option<i64>,
+    feed_type: &str,
+    default_limit: i64,
 ) -> Result<ForumFeedQuery, String> {
-    let page = validate_optional_positive(query.page.or(query.page_no), "page")?;
-    let size = validate_optional_positive(query.size.or(query.page_size), "size")?;
-    let limit = validate_optional_positive(query.limit, "limit")?;
-    if size.unwrap_or(1) > MAX_PAGE_SIZE || limit.unwrap_or(1) > MAX_PAGE_SIZE {
-        return Err(format!("size and limit must be at most {MAX_PAGE_SIZE}"));
+    let limit = validate_optional_positive(query.limit, "limit")?.unwrap_or(default_limit);
+    if limit > MAX_PAGE_SIZE {
+        return Err(format!("limit must be at most {MAX_PAGE_SIZE}"));
     }
     Ok(ForumFeedQuery {
-        feed_type: feed_type_override.map(ToOwned::to_owned).or_else(|| {
-            normalize_optional_text(query.feed_type, "feedType", 64)
-                .ok()
-                .flatten()
-        }),
-        content_type: normalize_optional_text(query.content_type, "contentType", 64)?,
-        keyword: normalize_optional_text(query.keyword, "keyword", MAX_QUERY_TEXT_LEN)?,
-        author_id: query.author_id,
-        category_id: category_id_override.or(query.category_id),
-        page,
-        size,
-        limit,
+        feed_type: Some(feed_type.to_owned()),
+        page: Some(1),
+        size: Some(limit),
+        limit: Some(limit),
+        ..ForumFeedQuery::default()
+    })
+}
+
+fn validate_feed_category_query(
+    query: ForumFeedHttpQuery,
+    category_id: i64,
+) -> Result<ForumFeedQuery, String> {
+    let category_id = validate_positive_id(category_id, "categoryId")?;
+    let page = validate_optional_positive(query.page, "page")?;
+    let size = validate_optional_positive(query.page_size, "page_size")?;
+    if size.unwrap_or(1) > MAX_PAGE_SIZE {
+        return Err(format!("page_size must be at most {MAX_PAGE_SIZE}"));
+    }
+    Ok(ForumFeedQuery {
+        category_id: Some(category_id),
+        page: Some(page.unwrap_or(1)),
+        size: Some(size.unwrap_or(DEFAULT_FEED_PAGE_SIZE)),
+        ..ForumFeedQuery::default()
     })
 }
 
 fn validate_comment_query(
     query: ForumCommentHttpQuery,
 ) -> Result<(String, i64, ForumFeedQuery), String> {
-    let content_type = normalize_required_text(query.content_type.clone(), "contentType", 64)?;
-    let Some(content_id) = query.content_id else {
-        return Err("contentId is required".to_owned());
-    };
-    let query = validate_comment_page_query(query)?;
+    let content_type = normalize_comment_content_type(query.content_type.clone())?;
+    let content_id = query
+        .content_id
+        .ok_or_else(|| "content_id is required".to_owned())
+        .and_then(|content_id| validate_positive_id(content_id, "content_id"))?;
+    let query = validate_comment_page_query(query, DEFAULT_COMMENT_PAGE_SIZE)?;
     Ok((content_type, content_id, query))
 }
 
-fn validate_comment_page_query(query: ForumCommentHttpQuery) -> Result<ForumFeedQuery, String> {
-    let page = validate_optional_positive(query.page.or(query.page_no), "page")?;
-    let size = validate_optional_positive(query.size.or(query.page_size), "size")?;
-    let limit = validate_optional_positive(query.limit, "limit")?;
-    if size.unwrap_or(1) > MAX_PAGE_SIZE || limit.unwrap_or(1) > MAX_PAGE_SIZE {
-        return Err(format!("size and limit must be at most {MAX_PAGE_SIZE}"));
+fn normalize_comment_content_type(value: Option<String>) -> Result<String, String> {
+    let value = normalize_required_text(value, "content_type", 64)?;
+    match value.as_str() {
+        "feeds" | "comments" | "course" | "courses" | "FEEDS" | "COMMENTS" | "COURSE"
+        | "COURSES" => Ok(value),
+        _ => Err("content_type must be feeds, comments, or course".to_owned()),
+    }
+}
+
+fn validate_comment_page_query(
+    query: ForumCommentHttpQuery,
+    default_size: i64,
+) -> Result<ForumFeedQuery, String> {
+    let page = validate_optional_positive(query.page, "page")?;
+    let size = validate_optional_positive(query.page_size, "page_size")?;
+    if size.unwrap_or(1) > MAX_PAGE_SIZE {
+        return Err(format!("page_size must be at most {MAX_PAGE_SIZE}"));
     }
     Ok(ForumFeedQuery {
-        page,
-        size,
-        limit,
+        page: Some(page.unwrap_or(1)),
+        size: Some(size.unwrap_or(default_size)),
         ..ForumFeedQuery::default()
     })
 }
@@ -1050,8 +1336,8 @@ fn page_size_from_query(query: Option<&ForumFeedQuery>) -> (i64, i64) {
     (
         query.and_then(|query| query.page).unwrap_or(1),
         query
-            .and_then(|query| query.limit.or(query.size))
-            .unwrap_or(DEFAULT_PAGE_SIZE),
+            .and_then(|query| query.size)
+            .unwrap_or(DEFAULT_COMMENT_PAGE_SIZE),
     )
 }
 
@@ -1092,6 +1378,161 @@ fn required_forum_subject(
     }
 }
 
+fn public_forum_subject() -> ForumSubject {
+    ForumSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        user_id: 0,
+    }
+}
+
+fn configured_forum_community_links() -> Vec<ForumCommunityLink> {
+    let Ok(raw) = std::env::var(ENV_FORUM_COMMUNITY_LINKS) else {
+        return Vec::new();
+    };
+    parse_forum_community_links_config(&raw)
+}
+
+pub fn parse_forum_community_links_config(raw: &str) -> Vec<ForumCommunityLink> {
+    serde_json::from_str::<Vec<ForumCommunityLinkConfig>>(raw)
+        .ok()
+        .unwrap_or_default()
+        .into_iter()
+        .filter_map(normalize_community_link)
+        .collect()
+}
+
+fn normalize_community_link(item: ForumCommunityLinkConfig) -> Option<ForumCommunityLink> {
+    let id = normalize_optional_text(Some(item.id), "id", 64)
+        .ok()
+        .flatten()?;
+    let label = normalize_optional_text(Some(item.label), "label", 128)
+        .ok()
+        .flatten()?;
+    let url = normalize_public_url(item.url)?;
+    let qr_code_url = item.qr_code_url.and_then(normalize_public_url);
+    let tone = normalize_optional_text(item.tone, "tone", 32)
+        .ok()
+        .flatten()
+        .filter(|value| matches!(value.as_str(), "green" | "blue" | "teal" | "red" | "pink"))
+        .unwrap_or_else(|| "blue".to_owned());
+    Some(ForumCommunityLink {
+        id,
+        label,
+        url,
+        qr_code_url,
+        tone,
+    })
+}
+
+fn normalize_public_url(value: String) -> Option<String> {
+    let value = normalize_optional_text(Some(value), "url", 2048)
+        .ok()
+        .flatten()?;
+    if value.chars().any(char::is_whitespace) {
+        return None;
+    }
+    let (scheme, remainder) = value.split_once("://")?;
+    if !scheme.eq_ignore_ascii_case("https") && !scheme.eq_ignore_ascii_case("http") {
+        return None;
+    }
+    let host_port_path = remainder.split(['/', '?', '#']).next().unwrap_or_default();
+    let host = public_authority_host(host_port_path)?;
+    if !is_public_host(host) {
+        return None;
+    }
+    Some(value)
+}
+
+fn public_authority_host(authority: &str) -> Option<&str> {
+    if authority.is_empty() || authority.contains('@') {
+        return None;
+    }
+
+    if authority.starts_with('[') {
+        let closing_bracket = authority.find(']')?;
+        let host = &authority[1..closing_bracket];
+        let port_suffix = &authority[closing_bracket + 1..];
+        if !is_valid_optional_port_suffix(port_suffix) {
+            return None;
+        }
+        return Some(host);
+    }
+
+    if authority.contains('[') || authority.contains(']') {
+        return None;
+    }
+
+    match authority.split_once(':') {
+        Some((host, port)) => {
+            if port.contains(':') || !is_valid_public_port(port) {
+                return None;
+            }
+            Some(host)
+        }
+        None => {
+            if authority.contains(':') {
+                return None;
+            }
+            Some(authority)
+        }
+    }
+}
+
+fn is_valid_optional_port_suffix(value: &str) -> bool {
+    if value.is_empty() {
+        return true;
+    }
+    let Some(port) = value.strip_prefix(':') else {
+        return false;
+    };
+    is_valid_public_port(port)
+}
+
+fn is_valid_public_port(value: &str) -> bool {
+    !value.is_empty()
+        && value.chars().all(|ch| ch.is_ascii_digit())
+        && value.parse::<u16>().map(|port| port > 0).unwrap_or(false)
+}
+
+fn is_public_host(host: &str) -> bool {
+    let host = host.trim_end_matches('.').to_ascii_lowercase();
+    if host.is_empty()
+        || host.len() > 253
+        || host == "localhost"
+        || host.ends_with(".localhost")
+        || host.ends_with(".local")
+        || host.ends_with(".internal")
+    {
+        return false;
+    }
+    if host.parse::<std::net::IpAddr>().is_ok() {
+        return false;
+    }
+    let labels = host.split('.').collect::<Vec<_>>();
+    labels.len() >= 2
+        && labels.iter().all(|label| is_public_dns_label(label))
+        && labels
+            .last()
+            .map(|label| label.chars().any(|ch| ch.is_ascii_alphabetic()))
+            .unwrap_or(false)
+}
+
+fn is_public_dns_label(label: &str) -> bool {
+    let Some(first) = label.as_bytes().first() else {
+        return false;
+    };
+    let Some(last) = label.as_bytes().last() else {
+        return false;
+    };
+    label.len() <= 63
+        && first.is_ascii_alphanumeric()
+        && last.is_ascii_alphanumeric()
+        && label
+            .chars()
+            .all(|ch| ch.is_ascii_alphanumeric() || ch == '-')
+}
+
 fn parse_json_body<T>(body: &[u8], name: &str) -> Result<T, String>
 where
     T: for<'de> Deserialize<'de>,
@@ -1102,16 +1543,6 @@ where
         ));
     }
     serde_json::from_slice::<T>(body).map_err(|error| format!("invalid {name} body: {error}"))
-}
-
-fn parse_optional_json_body<T>(body: &[u8], name: &str) -> Result<Option<T>, String>
-where
-    T: for<'de> Deserialize<'de>,
-{
-    if body.iter().all(u8::is_ascii_whitespace) {
-        return Ok(None);
-    }
-    parse_json_body(body, name).map(Some)
 }
 
 fn normalize_required_text(
@@ -1143,6 +1574,25 @@ fn normalize_optional_text(
     Ok(Some(value))
 }
 
+fn normalize_optional_text_list(
+    values: Option<Vec<String>>,
+    list_field: &str,
+    item_field: &str,
+    max_items: usize,
+    max_len: usize,
+) -> Result<Vec<String>, String> {
+    let values = values.unwrap_or_default();
+    if values.len() > max_items {
+        return Err(format!(
+            "{list_field} must contain at most {max_items} items"
+        ));
+    }
+    values
+        .into_iter()
+        .filter_map(|value| normalize_optional_text(Some(value), item_field, max_len).transpose())
+        .collect()
+}
+
 fn validate_optional_positive(value: Option<i64>, field: &str) -> Result<Option<i64>, String> {
     match value {
         Some(value) if value <= 0 => Err(format!("{field} must be a positive integer")),
@@ -1150,21 +1600,12 @@ fn validate_optional_positive(value: Option<i64>, field: &str) -> Result<Option<
     }
 }
 
-fn normalize_path_id(value: &str, field: &str) -> Result<String, String> {
-    let value = value.trim();
-    if value.is_empty() {
-        return Err(format!("{field} is required"));
+fn validate_positive_id(value: i64, field: &str) -> Result<i64, String> {
+    if value > 0 {
+        Ok(value)
+    } else {
+        Err(format!("{field} must be a positive integer"))
     }
-    if value.chars().count() > 128 {
-        return Err(format!("{field} must be at most 128 characters"));
-    }
-    if !value
-        .bytes()
-        .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'_' | b'.' | b':'))
-    {
-        return Err(format!("{field} contains unsupported characters"));
-    }
-    Ok(value.to_owned())
 }
 
 fn feed_command_response(result: Result<ForumFeedItem, DomainError>) -> Response {
@@ -1187,7 +1628,17 @@ fn comment_command_response(result: Result<ForumCommentItem, DomainError>) -> Re
 
 fn boolean_command_response(result: Result<bool, DomainError>) -> Response {
     match result {
-        Ok(ok) => Json(PlusApiResult::success(ForumBooleanResult { ok })).into_response(),
+        Ok(ok) => Json(PlusApiResult::success(ok)).into_response(),
+        Err(error) if error.is_not_found() => not_found(&error.to_string()),
+        Err(error) if error.is_conflict() => conflict(&error.to_string()),
+        Err(error) => forum_error("forum command store is unavailable", error),
+    }
+}
+
+fn void_command_response(result: Result<bool, DomainError>) -> Response {
+    match result {
+        Ok(true) => Json(PlusApiResult::success(())).into_response(),
+        Ok(false) => not_found("resource was not found"),
         Err(error) if error.is_not_found() => not_found(&error.to_string()),
         Err(error) if error.is_conflict() => conflict(&error.to_string()),
         Err(error) => forum_error("forum command store is unavailable", error),

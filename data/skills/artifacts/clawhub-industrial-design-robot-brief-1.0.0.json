@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industrial-design-robot-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industrial_design_robot_brief",
+  "skill": {
+    "id": 42110,
+    "skillKey": "clawhub-industrial-design-robot-brief",
+    "name": "industrial-design-robot-brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industrial-design-robot-brief",
+    "url": "https://clawhub.ai/skills/industrial-design-robot-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industrial-design-robot-brief-e2342acf819c0a41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the task is to find recent humanoid-robot papers and turn them into Chinese briefs for industrial designers, prioritizing design impact, user experi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuqing98",
+      "userId": "s179wmq4vw1kvnkv3a4c7dj425848qqr",
+      "displayName": "ZHUQING98",
+      "image": "https://avatars.githubusercontent.com/u/206490538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775407358381,
+      "changelog": "Initial release — generates daily Chinese briefs from recent humanoid robot papers for industrial design teams.\n\n- Selects top 5 recent papers (prioritizing industrial design, UX/trust, and product-definition impact).\n- Writes concise Chinese briefs, making clear the design relevance and practical implications.\n- Strictly separates factual paper content from design interpretations.\n- Appends each daily brief to a Feishu document, following a structured template.\n- Includes mechanisms for verifying data and marking uncertainty transparently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4728166c69c16a69ed47ac3006ad216ce5453aeef98dbff77ffa91a959f9de4a"
+}

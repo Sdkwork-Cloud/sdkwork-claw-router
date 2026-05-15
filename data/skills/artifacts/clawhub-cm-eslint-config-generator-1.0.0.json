@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-eslint-config-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_eslint_config_generator",
+  "skill": {
+    "id": 54021,
+    "skillKey": "clawhub-cm-eslint-config-generator",
+    "name": "Eslint Config Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-eslint-config-generator",
+    "url": "https://clawhub.ai/skills/cm-eslint-config-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-eslint-config-generator-e05388da2de83627.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate optimal ESLint configurations based on project type, framework, and team preferences — flat config format, plugin selection, and rule tuning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777607808756,
+      "changelog": "- Initial release of the ESLint Config Generator skill.\n- Generates optimal ESLint flat config based on detected framework, TypeScript usage, plugins, and project patterns.\n- Supports migration from legacy .eslintrc formats to flat config.\n- Recommends and tunes plugins and rules for code quality, accessibility, and best practices.\n- Audits ESLint configuration for rule conflicts and upgrades configuration format compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:396305923300592748a5e11ac8b90020b5b4a7aef0240a4668ab826c6dd79616"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ohmytoken@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohmytoken",
+  "skill": {
+    "id": 22438,
+    "skillKey": "clawhub-ohmytoken",
+    "name": "ohmytoken"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohmytoken",
+    "url": "https://clawhub.ai/skills/ohmytoken",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohmytoken-fb3095552c31d327.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize your AI token usage as real-time pixel art with customizable boards, animations, achievements, and social sharing powered by ohmytoken."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x5446",
+      "userId": "publishers:0x5446",
+      "displayName": "a1pha",
+      "image": "https://avatars.githubusercontent.com/u/3060520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1772168923368,
+      "changelog": "Recommend env var over openclaw.json for API key storage to prevent accidental leakage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d0b6206d09fb826a3198a1fbacad12ab47d8079f84c584762a07d228b30e1ab"
+}

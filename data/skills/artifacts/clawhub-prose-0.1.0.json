@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prose@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prose",
+  "skill": {
+    "id": 18198,
+    "skillKey": "clawhub-prose",
+    "name": "Prose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prose",
+    "url": "https://clawhub.ai/skills/prose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prose-8e8cc5a7ecc7cf5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenProse VM skill pack. Activate on any `prose` command, .prose files, or OpenProse mentions; orchestrates multi-agent workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mondilo1",
+      "userId": "publishers:mondilo1",
+      "displayName": "mondilo1",
+      "image": "https://avatars.githubusercontent.com/u/209247345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2070,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769698494330,
+      "changelog": "Initial release of the OpenProse skill pack for orchestrating AI agent workflows via the `prose` language.\n\n- Activates on any `prose` command, references to `.prose` files, or mentions of OpenProse.\n- Supports unified command routing for running, compiling, updating, and exploring `prose` programs.\n- Enables multi-agent orchestration based on `.prose` scripts and session definitions.\n- Provides resolution and execution of both local and remote `prose` programs, with flexible example lookup.\n- Integrates file/state management and authoring guidance per the OpenProse VM specification.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8235a3307fe245ad40dcb9283f957f896376d58215a328a8e29bf38429ae0d19"
+}

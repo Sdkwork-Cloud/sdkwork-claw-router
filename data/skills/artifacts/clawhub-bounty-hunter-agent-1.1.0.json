@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bounty-hunter-agent@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounty_hunter_agent",
+  "skill": {
+    "id": 39196,
+    "skillKey": "clawhub-bounty-hunter-agent",
+    "name": "Bounty Hunter Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounty-hunter-agent",
+    "url": "https://clawhub.ai/skills/bounty-hunter-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounty-hunter-agent-7fe4c2621e2ccc3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously scans GitHub, Algora, and Opire for bounty issues, scores by payout and competition, ranks opportunities, and can auto-submit PRs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanxevo3",
+      "userId": "s177815d2cqzf9rjmm2fy9a82583hpt2",
+      "displayName": "lanxevo3",
+      "image": "https://avatars.githubusercontent.com/u/77862787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774644085708,
+      "changelog": "No file changes detected for this release.\n\n- Version number updated from 1.0.0 to 1.1.0 in metadata only.\n- No functional, documentation, or code updates included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:753b3146fb568546e2fd7ebfa8b4ab94c858863980b07b17ddffc8721b4d886a"
+}

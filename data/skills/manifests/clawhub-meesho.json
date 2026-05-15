@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37737,
+  "uuid": "skill-clawhub-meesho",
+  "skillKey": "clawhub-meesho",
+  "name": "Meesho",
+  "summary": "Meesho integration. Manage Recordses. Use when the user wants to interact with Meesho data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meesho",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Meesho integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Meesho data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meesho@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meesho",
+      "url": "https://clawhub.ai/skills/meesho"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meesho",
+    "url": "https://clawhub.ai/skills/meesho",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meesho-8894283570d18338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meesho@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meesho-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f07c1692afd3ba361a7e7d38d0d2eaca6519613737f3566f1d67c66638a43df",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:23.755Z"
+}

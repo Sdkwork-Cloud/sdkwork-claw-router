@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awesome-demo-web-build@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_demo_web_build",
+  "skill": {
+    "id": 30328,
+    "skillKey": "clawhub-awesome-demo-web-build",
+    "name": "awesome-demo-web-build"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-demo-web-build",
+    "url": "https://clawhub.ai/skills/awesome-demo-web-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-demo-web-build-670a391df233d0bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native web demo project generator using Project Blueprint system. Use when user wants to \"build a demo\", \"create a web project\", \"generate a landing page\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xianhaocao",
+      "userId": "s171ea9vcz91pwgqnkce95wzvh84eztr",
+      "displayName": "xianhaocao",
+      "image": "https://avatars.githubusercontent.com/u/54051238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775789692859,
+      "changelog": "- English localization: All user prompts and phase instructions in SKILL.md are now in English.\n- No functional changes—flow, process, and logic remain the same as before.\n- Added `.claude/settings.local.json` (for local configuration; does not affect public functionality).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de76542013753b5df4d66b1fb1e735c83632d763d690924475522fc333c85104"
+}

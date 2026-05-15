@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickup-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickup_mcp",
+  "skill": {
+    "id": 9202,
+    "skillKey": "clawhub-clickup-mcp",
+    "name": "ClickUp MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickup-mcp",
+    "url": "https://clawhub.ai/skills/clickup-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickup-mcp-e86f45a8f54d645a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ClickUp tasks, docs, time tracking, comments, chat, and search via official MCP. OAuth authentication required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pvoo",
+      "userId": "publishers:pvoo",
+      "displayName": "pvoo",
+      "image": "https://avatars.githubusercontent.com/u/20116814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4062,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767711438115,
+      "changelog": "Initial release - Official ClickUp MCP with OAuth workaround via Claude Code",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39a93e63ce0eba106166d680c56f72b8037f109a76357fa9ddbcd50094a72a6e"
+}

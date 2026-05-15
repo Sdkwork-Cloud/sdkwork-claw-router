@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37928,
+  "uuid": "skill-clawhub-email-deliverability",
+  "skillKey": "clawhub-email-deliverability",
+  "name": "Email Deliverability",
+  "summary": "Audit and improve email deliverability for ecommerce marketing by diagnosing spam folder issues, list hygiene problems, authentication gaps, and sending repu...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_deliverability",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Audit and improve email deliverability for ecommerce marketing by diagnosing spam folder issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-deliverability@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-deliverability",
+      "url": "https://clawhub.ai/skills/email-deliverability"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-deliverability",
+    "url": "https://clawhub.ai/skills/email-deliverability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-deliverability-797651ddb0969f6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-deliverability@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-deliverability-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84b688b04107cf5a7a32e26cad3370990f59d102df0568ef4c2144ebb395e358",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:47:19.808Z"
+}

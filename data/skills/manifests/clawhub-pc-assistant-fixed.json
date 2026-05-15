@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26413,
+  "uuid": "skill-clawhub-pc-assistant-fixed",
+  "skillKey": "clawhub-pc-assistant-fixed",
+  "name": "Pc Assistant Fixed",
+  "summary": "PC healthcheck and diagnostics with detailed system information and actionable recommendations. Works on Windows, macOS, and Linux. Read-only system diagnost...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pc_assistant_fixed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ning",
+      "features": [
+        "PC healthcheck and diagnostics with detailed system information and actionable recommendations",
+        "Works on Windows, macOS, and Linux",
+        "Read-only system diagnost..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pc-assistant-fixed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55053307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pc-assistant-fixed",
+      "url": "https://clawhub.ai/skills/pc-assistant-fixed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pc-assistant-fixed",
+    "url": "https://clawhub.ai/skills/pc-assistant-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pc-assistant-fixed-0cbff0127740eb7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pc-assistant-fixed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pc-assistant-fixed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:182c8a4345b2009318f8d974504ad73194575886d5f1aa202e93fb50697879ac",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:20:44.701Z"
+}

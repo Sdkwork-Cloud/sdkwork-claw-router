@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9028,
+  "uuid": "skill-clawhub-wordpress",
+  "skillKey": "clawhub-wordpress",
+  "name": "Wordpress REST API",
+  "summary": "OpenClaw skill that provides a WordPress REST API CLI for posts, pages, categories, tags, users, and custom requests using plain HTTP.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "OpenClaw skill that provides a WordPress REST API CLI for posts, pages, categories, tags, users."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress",
+      "url": "https://clawhub.ai/skills/wordpress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress",
+    "url": "https://clawhub.ai/skills/wordpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-576473d6a73d7f55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:776a12977e1f750d73888be782cae3777b81204d27ebe361f2085e0320817991",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T10:12:16.694Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51816,
+  "uuid": "skill-clawhub-localization",
+  "skillKey": "clawhub-localization",
+  "name": "Localization",
+  "summary": "Deep localization workflow—locale strategy, string extraction, ICU and placeholders, formatting, RTL and layout, translation QA, and continuous delivery with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Deep localization workflow—locale strategy, string extraction, ICU and placeholders, formatting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/localization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "localization",
+      "url": "https://clawhub.ai/skills/localization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localization",
+    "url": "https://clawhub.ai/skills/localization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localization-a3cacb75505cc02b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/localization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-localization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:613ca2e7ed3b30a36dba01daa04a280aab469e23507f409fbd4f035babff2629",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:12:36.645Z"
+}

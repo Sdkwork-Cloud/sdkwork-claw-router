@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69348,
+  "uuid": "skill-clawhub-podcast-gen",
+  "skillKey": "clawhub-podcast-gen",
+  "name": "Podcast Generator",
+  "summary": "播客生成器 — 根据用户描述，通过搜索引擎抓取最新资讯，生成口语化播客脚本，根据脚本语义自动匹配最合适的讯飞TTS声音，合成时长3分钟内的MP3音频并发送。触发词：生成播客、播客、podcast、帮我做一段音频、做一期节目。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "播客生成器 — 根据用户描述，通过搜索引擎抓取最新资讯，生成口语化播客脚本，根据脚本语义自动匹配最合适的讯飞TTS声音，合成时长3分钟内的MP3音频并发送。触发词：生成播客、播客、podca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-gen",
+      "url": "https://clawhub.ai/skills/podcast-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-gen",
+    "url": "https://clawhub.ai/skills/podcast-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-gen-c21f8f8f08eeb9ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e21eb62d25893af117024b16cdd48f09f8e82460e9b99acf3a7c7ac0cd6a1e90",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:10:26.907Z"
+}

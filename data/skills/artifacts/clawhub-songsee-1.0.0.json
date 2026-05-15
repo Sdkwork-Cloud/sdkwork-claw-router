@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/songsee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.songsee",
+  "skill": {
+    "id": 8369,
+    "skillKey": "clawhub-songsee",
+    "name": "Songsee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "songsee",
+    "url": "https://clawhub.ai/skills/songsee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/songsee-9bc44a918992f509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate spectrograms and feature-panel visualizations from audio with the songsee CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10865,
+      "installsAllTime": 1061,
+      "installsCurrent": 1034,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545379576,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8af1d3ec3097932f2bae5d066331965155daee7b81b00322dcd749ccff25cd94"
+}

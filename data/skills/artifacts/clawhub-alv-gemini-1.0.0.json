@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alv-gemini@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alv_gemini",
+  "skill": {
+    "id": 42495,
+    "skillKey": "clawhub-alv-gemini",
+    "name": "alv-gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alv-gemini",
+    "url": "https://clawhub.ai/skills/alv-gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alv-gemini-fc05f5d48a0a3abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777003844278,
+      "changelog": "- Initial release of the gemini skill for one-shot Q&A, summarization, and text generation via SkillBoss API Hub.\n- Supports Python and curl quick starts using the /v1/pilot endpoint, which automatically selects the optimal LLM.\n- Offers configurable model preferences: balanced, quality, or price.\n- Requires only setting the SKILLBOSS_API_KEY environment variable; no CLI installation needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13d2b269e324e3b00999f8a7301cfdad8b00dd732c5a7e2ed98e443deaca16f6"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66339,
+  "uuid": "skill-clawhub-aitablet",
+  "skillKey": "clawhub-aitablet",
+  "name": "aispeech_ainote",
+  "summary": "AI办公本 Skill：用于在 OpenClaw 中访问 思必驰AI办公本的会议（笔记、记录）、待办、标签与知识库检索能力。 当用户表达以下意图时优先使用本技能： - 查笔记/看笔记详情/查会议/找记录 - 查待办/新建待办/更新待办/删除待办 - 同步标签/查标签 - 搜索知识库（笔记、待办）",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aitablet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FairyLong",
+      "features": [
+        "AI办公本 Skill：用于在 OpenClaw 中访问 思必驰AI办公本的会议（笔记、记录）、待办、标签与知识库检索能力。 当用户表达以下意图时优先使用本技能：",
+        "查笔记/看笔记详情/查会议/找记录",
+        "查待办/新建待办/更新待办/删除待办",
+        "同步标签/查标签"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aitablet@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29269337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aitablet",
+      "url": "https://clawhub.ai/skills/aitablet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aitablet",
+    "url": "https://clawhub.ai/skills/aitablet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aitablet-8e40a6ab14210728.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aitablet@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-aitablet-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a1aede3139928eabf8ffa86b9948305c99b521fe6c8dab88250dc9dff57f12d",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:33:04.019Z"
+}

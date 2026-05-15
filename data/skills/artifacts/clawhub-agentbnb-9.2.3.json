@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentbnb@9.2.3",
+  "version": "9.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbnb",
+  "skill": {
+    "id": 25028,
+    "skillKey": "clawhub-agentbnb",
+    "name": "AgentBnB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbnb",
+    "url": "https://clawhub.ai/skills/agentbnb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbnb-acc17ab90a430c85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find, hire, and serve specialist AI agents on the AgentBnB network from OpenClaw or Claude Code. Use when you need multi-agent delegation, provider discovery..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoher-c",
+      "userId": "s17a0mzej81ppzjph4grhz7akn83m2pw",
+      "displayName": "Xiaoher-C",
+      "image": "https://avatars.githubusercontent.com/u/207363423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "9.2.3",
+      "createdAt": 1776072543493,
+      "changelog": "Make publishing explicit instead of automatic during install/activation. Remove invasive secondary CLI auto-install from install.sh. Keep quickstart as the main first-provider path and improve trust/scan posture.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a22005e593ebf6401bb3800d911c330632573e004cea97905b5b916bd30fec7"
+}

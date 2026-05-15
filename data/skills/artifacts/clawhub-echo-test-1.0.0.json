@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echo-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_test",
+  "skill": {
+    "id": 20286,
+    "skillKey": "clawhub-echo-test",
+    "name": "Echo Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-test",
+    "url": "https://clawhub.ai/skills/echo-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-test-e0d1549b286b94b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Returns the text you input along with the current time for simple testing purposes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxsjlrwsj",
+      "userId": "publishers:wxsjlrwsj",
+      "displayName": "wxsjlrwsj",
+      "image": "https://avatars.githubusercontent.com/u/201960414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771915090720,
+      "changelog": "- 初始发布版本。\n- 输入任何内容后，将原样返回并显示当前时间。\n- 适用于基本测试和回显功能。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0023347b740db487dc94d0685d88f5e278cae422a62e8f606dca009b7e13970"
+}

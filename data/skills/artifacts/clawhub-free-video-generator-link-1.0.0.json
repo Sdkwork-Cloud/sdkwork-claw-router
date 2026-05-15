@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_link",
+  "skill": {
+    "id": 44117,
+    "skillKey": "clawhub-free-video-generator-link",
+    "name": "Free Video Generator Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-link",
+    "url": "https://clawhub.ai/skills/free-video-generator-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-link-1ee77895bed3732e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short product description and three product photos into 1080p ready-to-share videos just by typing what you need. Whether it's generating shareable vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776281078116,
+      "changelog": "Initial public release of Free Video Generator Link\n\n- Instantly generate shareable 1080p videos from product descriptions and up to three photos—no timeline editing required.\n- Free, anonymous access with 100 credits valid for 7 days; simple setup with instant token generation.\n- Cloud-based pipeline: uploads, text prompts, and exports all handled automatically with typical 1–2 minute turnaround.\n- Supports a wide range of media formats: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Robust error handling and session management, plus user-friendly feedback during processing and export.\n- Common workflows include quick edits, batch processing, and iterative refinement with persistent timeline state.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:002275f70336eabd917e943ced7c10df9be9bcaffb8c2f236022a7337d6d7e5c"
+}

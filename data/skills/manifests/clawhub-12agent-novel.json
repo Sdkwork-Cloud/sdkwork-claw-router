@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70915,
+  "uuid": "skill-clawhub-12agent-novel",
+  "skillKey": "clawhub-12agent-novel",
+  "name": "12agent Novel",
+  "summary": "中文长篇小说多智能体创作体系（12Agent）。适用于新建长篇小说项目、搭建世界观与大纲、逐章写作、自动推进与读者反馈等长流程创作任务；不适用于短篇、诗歌、散文、翻译或非小说写作。",
+  "version": "2.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12agent_novel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "咲鹏",
+      "features": [
+        "中文长篇小说多智能体创作体系（12Agent）。适用于新建长篇小说项目、搭建世界观与大纲、逐章写作、自动推进与读者反馈等长流程创作任务；不适用于短篇、诗歌、散文、翻译或非小说写作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12agent-novel@2.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47680970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12agent-novel",
+      "url": "https://clawhub.ai/skills/12agent-novel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12agent-novel",
+    "url": "https://clawhub.ai/skills/12agent-novel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12agent-novel-4753647398bc9038.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12agent-novel@2.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-12agent-novel-2.8.0.json",
+      "version": "2.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f1c466accfc450d90281bc4e4fb909d6ee1400f9b39d96681b7dbd904afeed3",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:21:41.540Z"
+}

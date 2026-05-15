@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "video-vocal-remover",
+    "displayName": "Publish Video Vocal Remover",
+    "summary": "从视频中去除人声但保留机械声/环境声。当用户要求去掉视频里的人声、消除说话声、保留机器声、视频静音但保留环境音、去除语音保留噪声时使用。也适用于用户说\"视频里有说话声想去掉\"、\"只保留机械声音\"、\"去掉录音里的人声\"等场景。不要用于完全去除所有音频（那是去音轨，用 ffmpeg -an 即可），此技能专门用于频率...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778204966625,
+    "updatedAt": 1778205107394
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1778204966625,
+    "changelog": "- Initial release of the video-vocal-remover skill for removing human speech from videos while preserving mechanical and environmental sounds.\n- Uses ffmpeg equalizer filters to attenuate vocal frequency bands (300Hz–3400Hz), retaining sounds outside this range.\n- Provides clear instructions for processing a single file or batch processing folders.\n- Includes guidance for parameter tuning to achieve optimal results for different scenarios.\n- Clearly distinguishes this skill from full audio removal and AI-based separation methods.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zhangyanbo2007",
+    "userId": "s1743fjt8p75r07r4a35af525183p97g",
+    "displayName": "Walle",
+    "image": "https://avatars.githubusercontent.com/u/9403745?v=4"
+  },
+  "moderation": null
+}

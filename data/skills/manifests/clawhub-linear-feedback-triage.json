@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56499,
+  "uuid": "skill-clawhub-linear-feedback-triage",
+  "skillKey": "clawhub-linear-feedback-triage",
+  "name": "Linear Feedback Triage",
+  "summary": "Triage user-feedback issues in Linear, especially FB team / 用户反馈 workflows. Use when asked to query Linear issues, list recent complaints, find duplicate fee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_feedback_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qwqcode",
+      "features": [
+        "Triage user-feedback issues in Linear, especially FB team / 用户反馈 workflows",
+        "Use when asked to query Linear issues, list recent complaints, find duplicate fee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linear-feedback-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22412567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linear-feedback-triage",
+      "url": "https://clawhub.ai/skills/linear-feedback-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-feedback-triage",
+    "url": "https://clawhub.ai/skills/linear-feedback-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-feedback-triage-1adb8f70696a782e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linear-feedback-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linear-feedback-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66bda1b516f8bbdd2803e754a166d3ea7b81dc355ad5143dbeadf65bd8eb2523",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:55:12.465Z"
+}

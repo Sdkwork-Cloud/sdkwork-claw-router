@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20215,
+  "uuid": "skill-clawhub-recipe-reschedule-meeting",
+  "skillKey": "clawhub-recipe-reschedule-meeting",
+  "name": "Recipe Reschedule Meeting",
+  "summary": "Move a Google Calendar event to a new time and automatically notify all attendees.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_reschedule_meeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Move a Google Calendar event to a new time and automatically notify all attendees."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-reschedule-meeting@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-reschedule-meeting",
+      "url": "https://clawhub.ai/skills/recipe-reschedule-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-reschedule-meeting",
+    "url": "https://clawhub.ai/skills/recipe-reschedule-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-reschedule-meeting-e7446f6e67b6c1fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-reschedule-meeting@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-reschedule-meeting-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5cfec9f84f5e8c322c457147497cc3fde44cb5518fdc799a44b605e857b954c",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:49.815Z"
+}

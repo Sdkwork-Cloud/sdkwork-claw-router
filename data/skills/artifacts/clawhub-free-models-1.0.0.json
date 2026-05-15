@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-models@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_models",
+  "skill": {
+    "id": 48957,
+    "skillKey": "clawhub-free-models",
+    "name": "Free Models for OpenClaw and other Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-models",
+    "url": "https://clawhub.ai/skills/free-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-models-f369eeaed4f24194.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and select free or low-cost AI models from OpenRouter optimized for agents with filtering by price, context, provider, and capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qidu",
+      "userId": "s1716ddt8wrq7dhxd61hprgpgs83q1qw",
+      "displayName": "christo",
+      "image": "https://avatars.githubusercontent.com/u/1757861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773134881612,
+      "changelog": "No changes detected in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4034b4a71a7e164fae86e5e23ea1d18a5e6e4b8c4faa93a1a1583eff77970fc"
+}

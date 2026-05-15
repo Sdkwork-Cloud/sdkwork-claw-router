@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bobo-context-cleanup@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bobo_context_cleanup",
+  "skill": {
+    "id": 61938,
+    "skillKey": "clawhub-bobo-context-cleanup",
+    "name": "DEPRECATED - Bobo Context Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bobo-context-cleanup",
+    "url": "https://clawhub.ai/skills/bobo-context-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bobo-context-cleanup-dfa8c00616c6ab23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析并归档 OpenClaw workspace 中低价值 memory 记录，缓解上下文膨胀与启动变慢。适用于上下文冗余、维护整理场景。默认先分析与计划，执行归档前要求确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "irideas",
+      "userId": "publishers:irideas",
+      "displayName": "irideas",
+      "image": "https://avatars.githubusercontent.com/u/192851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772801341207,
+      "changelog": "Deprecated: please migrate to context-cleanup. This slug is kept for backward compatibility only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce2fb92d693585cc9a15b30ad576bd05b46a149e9117af18a84fa2f0fd2a7785"
+}

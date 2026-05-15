@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13015,
+  "uuid": "skill-clawhub-jd-shopping",
+  "skillKey": "clawhub-jd-shopping",
+  "name": "JD Shopping",
+  "summary": "JD.com shopping agent for search, comparison, review analysis, seller trust checks, SKU selection, cart preparation, and coupon/cart organization in a user-o...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_shopping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "JD.com shopping agent for search, comparison, review analysis, seller trust checks, SKU selecti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-shopping@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-shopping",
+      "url": "https://clawhub.ai/skills/jd-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-shopping",
+    "url": "https://clawhub.ai/skills/jd-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-shopping-0f887d8e5de59c7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-shopping@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-shopping-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32b90f00264d858ba973c2b1511c0d251ab4fc742770734713649f6a1c7377df",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T13:36:51.219Z"
+}

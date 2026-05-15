@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60968,
+  "uuid": "skill-clawhub-personal-wiki",
+  "skillKey": "clawhub-personal-wiki",
+  "name": "Personal Wiki",
+  "summary": "个人知识库（LLM Wiki）操作 skill。 当用户提到以下意图时触发： - Ingest：处理新内容、更新知识库、\"处理IMA新内容\"、\"处理印象笔记\"、\"处理raw里的文件\"、\"帮我ingest\" - Query：查 wiki、\"wiki里有没有关于XX\"、\"从知识库里找XX\" - Lint：整理wiki...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heavenchenggong",
+      "features": [
+        "个人知识库（LLM Wiki）操作 skill。 当用户提到以下意图时触发：",
+        "Ingest：处理新内容、更新知识库、\"处理IMA新内容\"、\"处理印象笔记\"、\"处理raw里的文件\"、\"帮我ingest\"",
+        "Query：查 wiki、\"wiki里有没有关于XX\"、\"从知识库里找XX\"",
+        "Lint：整理wiki..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-wiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259799383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-wiki",
+      "url": "https://clawhub.ai/skills/personal-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-wiki",
+    "url": "https://clawhub.ai/skills/personal-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-wiki-e8189be4b912da03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-wiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-wiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee85f6865854c8d0cad6a20b444fbe5885824a3219548660048c8ae84ab40ca4",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:02:40.308Z"
+}

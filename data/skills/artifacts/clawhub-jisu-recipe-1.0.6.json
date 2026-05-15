@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisu-recipe@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_recipe",
+  "skill": {
+    "id": 72012,
+    "skillKey": "clawhub-jisu-recipe",
+    "name": "Recipe - 菜谱大全"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-recipe",
+    "url": "https://clawhub.ai/skills/jisu-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-recipe-b68d80bb3c7b2a2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按关键词或分类检索菜谱，可查分类与菜谱详情。当用户说：糖醋排骨怎么做？来个家常豆腐菜谱，或类似做菜问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 9,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1775208912447,
+      "changelog": "- 新增更简洁、直观的技能名称和描述，更好体现用途和适用场景\n- 丰富并优化「前置配置」和 API 申请流程说明\n- 描述中直接举例典型问题（如：家常菜做法问答）方便理解\n- 技能调用方式和参数无变动，使用说明更聚焦、结构更清晰\n- 精简部分冗余内容，便于快速上手使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21ea9da4530e64677f7a8651ddddb732723a644ef5cb79e91a42f3a0f6130f30"
+}

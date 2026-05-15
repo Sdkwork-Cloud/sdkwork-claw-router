@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26436,
+  "uuid": "skill-clawhub-webperf-resources",
+  "skillKey": "clawhub-webperf-resources",
+  "name": "Webperf Resources",
+  "summary": "Intelligent network quality analysis with adaptive loading strategies. Detects connection type (2g/3g/4g), bandwidth, RTT, and save-data mode, then automatic...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webperf_resources",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nucliweb",
+      "features": [
+        "Intelligent network quality analysis with adaptive loading strategies",
+        "Detects connection type (2g/3g/4g), bandwidth, RTT, and save-data mode, then automatic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webperf-resources@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1307927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webperf-resources",
+      "url": "https://clawhub.ai/skills/webperf-resources"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webperf-resources",
+    "url": "https://clawhub.ai/skills/webperf-resources",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webperf-resources-b2ef28ff3c0cb6b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webperf-resources@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webperf-resources-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ca16e9db94f731080c963956d05baf4890a8eb31558dec9c3e2d2ccd417388",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:48:14.049Z"
+}

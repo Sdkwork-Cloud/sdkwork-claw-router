@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-social-intel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_social_intel",
+  "skill": {
+    "id": 43953,
+    "skillKey": "clawhub-crypto-social-intel",
+    "name": "Crypto Social Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-social-intel",
+    "url": "https://clawhub.ai/skills/crypto-social-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-social-intel-0da608198a827ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto social intelligence skill for AI agents. Activate when user mentions social trends, sentiment analysis, KOL signals, mention surge, Fear & Greed Index..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackxun520",
+      "userId": "s17esxecmzq8s34tp5bkxf7nk584yed1",
+      "displayName": "Jackxun520",
+      "image": "https://avatars.githubusercontent.com/u/200736711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776323268421,
+      "changelog": "Initial release of crypto-social-intel skill:\n\n- Provides 5 social intelligence tools for crypto: trending tokens, sentiment score, KOL signals, mention surge detection, and real-time Fear & Greed Index.\n- Integrates Santiment (free tier, ~35-day lag) for most social data, and alternative.me for real-time Fear & Greed data.\n- Includes recommended workflows for market sentiment, token analysis, early warning, and signal combination.\n- Presents example response templates and clear agent behavior rules for various user queries.\n- Notes limitations of Santiment free tier and current KOL signals (not real Twitter data).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66de5555e8a90ba2ce4409d21dd3f99365e6003953eed9e7f074044c6d580670"
+}

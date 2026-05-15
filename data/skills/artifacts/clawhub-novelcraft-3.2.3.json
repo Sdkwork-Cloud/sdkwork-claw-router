@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novelcraft@3.2.3",
+  "version": "3.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novelcraft",
+  "skill": {
+    "id": 51840,
+    "skillKey": "clawhub-novelcraft",
+    "name": "Novelcraft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novelcraft",
+    "url": "https://clawhub.ai/skills/novelcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novelcraft-7c6ce2767f8443da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fully autonomous book author. Creates complete novels from idea to finished PDF/EPUB. Modular workflow with standardized config schema v3.2: Concept → Option..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesuek",
+      "userId": "s17e04xravfhwsnj3mq49zs71h83jxgv",
+      "displayName": "Kesuek",
+      "image": "https://avatars.githubusercontent.com/u/120419048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.2.3",
+      "createdAt": 1775502548297,
+      "changelog": "Translate GETTING-STARTED.md to English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ae3f3881dbecdfdedaa31563cfbc6c57d1d64818d4bb386cbd808209a7d5fb5"
+}

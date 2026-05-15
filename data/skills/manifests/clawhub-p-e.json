@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60211,
+  "uuid": "skill-clawhub-p-e",
+  "skillKey": "clawhub-p-e",
+  "name": "P-E",
+  "summary": "极速图片提取工具。发送模板图片+多张实际图片，秒懂格式，一步到位生成 Excel 表格。无需确认，直接输出。 触发方式：/p-e、/pe、「图片提取」「提取Excel」「picture extract」 Picture Extract: send template + data images, instantly...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p_e",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haiou-max",
+      "features": [
+        "极速图片提取工具。发送模板图片+多张实际图片，秒懂格式，一步到位生成 Excel 表格。无需确认，直接输出。 触发方式：/p-e、/pe、「图片提取」「提取Excel」「picture ex."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/p-e@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190620472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "p-e",
+      "url": "https://clawhub.ai/skills/p-e"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p-e",
+    "url": "https://clawhub.ai/skills/p-e",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p-e-7f8e01b0906babb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/p-e@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-p-e-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f14f341094205e03a9a8c9e36c8982949e656bade2b1ce9e5f3e6a2a7432227a",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:02:34.897Z"
+}

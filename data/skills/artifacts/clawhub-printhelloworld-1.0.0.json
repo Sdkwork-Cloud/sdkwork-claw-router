@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/printhelloworld@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printhelloworld",
+  "skill": {
+    "id": 59004,
+    "skillKey": "clawhub-printhelloworld",
+    "name": "Print Hello World"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printhelloworld",
+    "url": "https://clawhub.ai/skills/printhelloworld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printhelloworld-bdfbe3788e51b92a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成各编程语言的 Hello World 示例程序"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex-gh-lao",
+      "userId": "s176eg1tf7d686fpscbx23f15x83j5qd",
+      "displayName": "Alex.Lao",
+      "image": "https://avatars.githubusercontent.com/u/161424492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773377990084,
+      "changelog": "Initial release of printhelloworld (print_hello_world_multi):\n\n- Generates minimal \"print hello world\" code snippets in various programming languages.\n- Outputs pure code blocks with appropriate language identifiers.\n- Provides a selectable language list if none specified by the user.\n- Supports multiple languages and outputs code blocks for each if requested.\n- Follows each language’s most basic and common syntax.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9425c4c53b79c1f377cdc0df0c9771f79a63902cdf3837de38c4fafd1610673d"
+}

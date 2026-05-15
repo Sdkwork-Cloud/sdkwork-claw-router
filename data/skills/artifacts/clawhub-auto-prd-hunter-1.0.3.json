@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-prd-hunter@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_prd_hunter",
+  "skill": {
+    "id": 59003,
+    "skillKey": "clawhub-auto-prd-hunter",
+    "name": "输入关键词，自动扫描全网用户痛点，生成PRD并输出OpenClaw标准任务JSON。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-prd-hunter",
+    "url": "https://clawhub.ai/skills/auto-prd-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-prd-hunter-e965eb2d1ddee5b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search web for user pain points and output a PRD JSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijinhongucl-pixel",
+      "userId": "s17949gfzvrqfhghg6pp8x6t3d83v8g3",
+      "displayName": "Socialite UCL LJH",
+      "image": "https://avatars.githubusercontent.com/u/270577937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775580189990,
+      "changelog": "- Major update adds explicit support and documentation for API-based web search (Brave Search and Baidu), with dedicated environment variables.\n- Detailed network access and privacy notices now included in SKILL.md.\n- Error handling and output schema improved for clarity, including new suggestions and troubleshooting sections.\n- Command-line script moved to scripts/search.py; legacy scripts removed.\n- Stronger \"no fabrication\" policy: only real, API-derived pain points are returned.\n- Metadata now lists required binaries, possible API keys, and network hosts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a49054a5d775f4c5926658a1dda9f0559eae29d23dae971e87d64ded483a0829"
+}

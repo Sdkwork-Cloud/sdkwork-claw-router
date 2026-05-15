@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-notify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_notify",
+  "skill": {
+    "id": 14296,
+    "skillKey": "clawhub-universal-notify",
+    "name": "Universal Notify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-notify",
+    "url": "https://clawhub.ai/skills/universal-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-notify-90fdc0cb36380911.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send notifications through multiple channels with a single script. Supports ntfy.sh (free, no signup), Gotify (self-hosted), generic webhooks, email (SMTP/curl), Telegram Bot API, and Pushover. Use when sending alerts, monitoring notificat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josunlp",
+      "userId": "s17epfp2mj1k4nhrvwwj5q4rfh84593k",
+      "displayName": "Jonas Pfalzgraf",
+      "image": "https://avatars.githubusercontent.com/u/20913954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1128,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770651086173,
+      "changelog": "Initial release: ntfy.sh, Gotify, Webhook, Email, Telegram, Pushover",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb153bd1edb53338a5b3b27c29af04154ccf8714e6f3059fb9f5a7d5165ad1b9"
+}

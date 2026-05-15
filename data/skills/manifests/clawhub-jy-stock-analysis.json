@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69475,
+  "uuid": "skill-clawhub-jy-stock-analysis",
+  "skillKey": "clawhub-jy-stock-analysis",
+  "name": "jy-stock-analysis",
+  "summary": "基于恒生聚源金融数据库，提供个股实时行情、财务分析、估值、资金流向、技术指标及机构评级的全面分析与诊断。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于恒生聚源金融数据库，提供个股实时行情、财务分析、估值、资金流向、技术指标及机构评级的全面分析与诊断。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-stock-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-stock-analysis",
+      "url": "https://clawhub.ai/skills/jy-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-stock-analysis",
+    "url": "https://clawhub.ai/skills/jy-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-stock-analysis-f2b93bf672363566.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-stock-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-stock-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1ec56f68c8d6a5ed1238fc7c04fd861e5e347458ff58eff117a1ee978a00931",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:35:40.224Z"
+}

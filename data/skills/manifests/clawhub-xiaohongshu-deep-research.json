@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8806,
+  "uuid": "skill-clawhub-xiaohongshu-deep-research",
+  "skillKey": "clawhub-xiaohongshu-deep-research",
+  "name": "Xiaohongshu Deep Research",
+  "summary": "Deep research on Xiaohongshu (小红书) topics. Use when user wants to research a topic, analyze trends, gather insights from top posts, or produce a summary repo...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Xie",
+      "features": [
+        "Deep research on Xiaohongshu (小红书) topics",
+        "Use when user wants to research a topic, analyze trends, gather insights from top posts, or pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-deep-research@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21349144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-deep-research",
+      "url": "https://clawhub.ai/skills/xiaohongshu-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-deep-research",
+    "url": "https://clawhub.ai/skills/xiaohongshu-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-deep-research-2ef99a337410f9de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-deep-research@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-deep-research-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edc90bd38ac1a058da3661cf7e72b67bae230376f499cd60a12fd8d087a8e867",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T23:24:17.182Z"
+}

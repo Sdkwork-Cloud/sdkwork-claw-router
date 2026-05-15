@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69953,
+  "uuid": "skill-clawhub-video-organizer",
+  "skillKey": "clawhub-video-organizer",
+  "name": "Video Organizer",
+  "summary": "视频文件批量重命名和整理工具，支持按时间、格式、分辨率等方式整理视频，批量重命名，预览模式和撤销功能！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_organizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "视频文件批量重命名和整理工具，支持按时间、格式、分辨率等方式整理视频，批量重命名，预览模式和撤销功能！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-organizer",
+      "url": "https://clawhub.ai/skills/video-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-organizer",
+    "url": "https://clawhub.ai/skills/video-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-organizer-16afe9139ab8fbef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d11839917c00e7c4eaa233ad84f1791bc9838c8faabf7cff3a9af141a96fd90",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:06:22.851Z"
+}

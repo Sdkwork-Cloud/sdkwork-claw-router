@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36367,
+  "uuid": "skill-clawhub-meishiene-publish-smoke-20260323-1056",
+  "skillKey": "clawhub-meishiene-publish-smoke-20260323-1056",
+  "name": "ClawHub Publish Smoke Check",
+  "summary": "Verify ClawHub login, dry-run sync state, one-off publish success, and cleanup for a local skill workspace.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meishiene_publish_smoke_20260323_1056",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meishiene",
+      "features": [
+        "Verify ClawHub login, dry-run sync state, one-off publish success, and cleanup for a local skil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meishiene-publish-smoke-20260323-1056@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116013672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meishiene-publish-smoke-20260323-1056",
+      "url": "https://clawhub.ai/skills/meishiene-publish-smoke-20260323-1056"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meishiene-publish-smoke-20260323-1056",
+    "url": "https://clawhub.ai/skills/meishiene-publish-smoke-20260323-1056",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meishiene-publish-smoke-20260323-1056-6848f4b53d339f9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meishiene-publish-smoke-20260323-1056@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meishiene-publish-smoke-20260323-1056-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6463fe3ed513cf67a54c8e0779d53b97327444294dc1433fabd8a3aacf25b56e",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:00:39.046Z"
+}

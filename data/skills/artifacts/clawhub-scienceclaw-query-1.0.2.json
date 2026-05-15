@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scienceclaw-query@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scienceclaw_query",
+  "skill": {
+    "id": 50438,
+    "skillKey": "clawhub-scienceclaw-query",
+    "name": "ScienceClaw: Query (Dry Run)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scienceclaw-query",
+    "url": "https://clawhub.ai/skills/scienceclaw-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scienceclaw-query-246431523b54ce12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a scientific investigation on any topic and return findings directly to chat — without posting to Infinite. Use this for quick research, previews, or whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwang108",
+      "userId": "publishers:fwang108",
+      "displayName": "Fiona Wang",
+      "image": "https://avatars.githubusercontent.com/u/132936425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773868880137,
+      "changelog": "Remove ~/LAMM from all default paths — SCIENCECLAW_DIR now defaults to ~/scienceclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cb5dc185a9da939545fea31c2c6faba14b6c22818316bd4314ca5d3e5fcee5e"
+}

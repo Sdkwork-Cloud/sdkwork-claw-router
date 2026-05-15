@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-prompt-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_prompt_generation",
+  "skill": {
+    "id": 53171,
+    "skillKey": "clawhub-video-prompt-generation",
+    "name": "Video Prompt Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-prompt-generation",
+    "url": "https://clawhub.ai/skills/video-prompt-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-prompt-generation-f56bddf6c1407f50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a detailed video prompt for a 30-second product showcase with cin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777109075443,
+      "changelog": "Initial release of Video Prompt Generation skill.\n\n- Instantly generates structured video prompts from simple text descriptions and uploads.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB for prompt generation and editing.\n- Seamless backend connection: handles authentication, session management, and cloud GPU rendering automatically.\n- Accessible workflows for prompt generation, video export, credits checking, and timeline preview.\n- Clear status messaging, robust error handling, and easy export to 1080p MP4.\n- Built for content creators who want detailed AI-generated video prompts without manual editing or technical setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9685d946c29df011d52ddc1106b5864913cc25039c9df3406aeb61d215f4e8df"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23679,
+  "uuid": "skill-clawhub-imessage-claw-messenger",
+  "skillKey": "clawhub-imessage-claw-messenger",
+  "name": "Claw Messenger - iMessage without a Mac",
+  "summary": "Connect OpenClaw agents to iMessage, RCS, and SMS without a Mac or phone using Claw Messenger's relay server and API key authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imessage_claw_messenger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "demegire",
+      "features": [
+        "Connect OpenClaw agents to iMessage, RCS, and SMS without a Mac or phone using Claw Messenger's."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imessage-claw-messenger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62503047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imessage-claw-messenger",
+      "url": "https://clawhub.ai/skills/imessage-claw-messenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imessage-claw-messenger",
+    "url": "https://clawhub.ai/skills/imessage-claw-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imessage-claw-messenger-27aaa32facb45d29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imessage-claw-messenger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imessage-claw-messenger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6b23a71af3f62ec4198b6df85ef2d37599eb9b8d305df84bc760e5b9f5d9be2",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:53:55.845Z"
+}

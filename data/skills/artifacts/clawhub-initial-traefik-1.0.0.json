@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/initial-traefik@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.initial_traefik",
+  "skill": {
+    "id": 22644,
+    "skillKey": "clawhub-initial-traefik",
+    "name": "initial-traefik"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "initial-traefik",
+    "url": "https://clawhub.ai/skills/initial-traefik",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/initial-traefik-8648190974e25023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Initialize and configure Traefik reverse proxy with Docker. Install Traefik, configure Docker Compose, set up service routing via path prefix or host-based r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "le-shi",
+      "userId": "s17cv1pjxmdd4scd21c078fjn983gdjf",
+      "displayName": "le-shi",
+      "image": "https://avatars.githubusercontent.com/u/22446162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772602726524,
+      "changelog": "initial-traefik 1.0.0 – Initial release\n\n- Provides setup instructions for Traefik v3 reverse proxy with Docker Compose.\n- Includes example Docker Compose and dynamic configuration templates.\n- Covers multiple routing methods: path prefix, host-based (.nip.io), and Docker labels.\n- Details enabling features like dashboard, metrics, logging, and tracing.\n- Offers troubleshooting steps and references for further configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d35a14f5c4df680e4e494dda6738e471d8c906c2c3dd7eaa148c4d19b79e4a4"
+}

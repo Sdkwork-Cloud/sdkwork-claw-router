@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61900,
+  "uuid": "skill-clawhub-pans-lead-miner",
+  "skillKey": "clawhub-pans-lead-miner",
+  "name": "Pans Lead Miner",
+  "summary": "AI算力销售线索挖掘器。输入行业关键词，自动搜索筛选潜在客户，识别算力需求信号。 通过SearXNG聚合多数据源（Crunchbase/GitHub/LinkedIn/新闻），按融资和算力需求排序。 触发词：线索挖掘, 客户发现, AI公司搜索, 融资动态, 算力需求, lead generation, pros...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_lead_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "AI算力销售线索挖掘器。输入行业关键词，自动搜索筛选潜在客户，识别算力需求信号。 通过SearXNG聚合多数据源（Crunchbase/GitHub/LinkedIn/新闻），按融资和算力需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-lead-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-lead-miner",
+      "url": "https://clawhub.ai/skills/pans-lead-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-lead-miner",
+    "url": "https://clawhub.ai/skills/pans-lead-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-lead-miner-4e4faba966800a76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-lead-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-lead-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11e3ea106d2d348636a4e5a59b20f4814e28e648036d64974b2ab867d37b1ab3",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:37:55.094Z"
+}

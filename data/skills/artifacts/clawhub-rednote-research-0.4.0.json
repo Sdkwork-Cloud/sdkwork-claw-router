@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rednote-research@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_research",
+  "skill": {
+    "id": 22561,
+    "skillKey": "clawhub-rednote-research",
+    "name": "RedNote Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-research",
+    "url": "https://clawhub.ai/skills/rednote-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-research-cfd7bf9d0ade8cb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research a topic through RedNote/Xiaohongshu discussion signals using either public-web mode (no login) or optional login-enhanced browser review when the us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pippin1214",
+      "userId": "s174a9t5wfgz2hgpajd4ke0gt184efj8",
+      "displayName": "Pippin",
+      "image": "https://avatars.githubusercontent.com/u/184304990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1774101466966,
+      "changelog": "Make the skill operational for real use: add a concrete login-enhanced workflow, account-summary templates, minimal no-login user-input fallback paths, and stronger guidance for hybrid public-web plus user-provided evidence research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8044694936fc51b508896069daa0bc05f01be6b9f3a95adac9197c254d2a157a"
+}

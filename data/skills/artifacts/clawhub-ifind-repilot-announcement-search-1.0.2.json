@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifind-repilot-announcement-search@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_repilot_announcement_search",
+  "skill": {
+    "id": 72459,
+    "skillKey": "clawhub-ifind-repilot-announcement-search",
+    "name": "iFinD投研-公司公告信息搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-repilot-announcement-search",
+    "url": "https://clawhub.ai/skills/ifind-repilot-announcement-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-repilot-announcement-search-8c48f508ed759517.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过问句语义化搜索A股、基金、港美股相关公告信息（年报、半年报、季报、临时公告、招股说明书等），返回与问句相关的公告片段信息。当需要检索上市公司公告、财务报告、监管公告等信息时，使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenzisay",
+      "userId": "s17e3n25efm3nsbyswwyy0v17583g96c",
+      "displayName": "wenzi",
+      "image": "https://avatars.githubusercontent.com/u/43460226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774517185400,
+      "changelog": "- No code or documentation changes detected in this version.\n- Functionality and user instructions remain the same as the previous release.\n- update py script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6949bd37aa19d4765463afe39f27dc4a9e3f7cfd31d9c0f60e9333b2c285eca"
+}

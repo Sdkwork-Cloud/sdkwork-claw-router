@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-qr-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_qr_extractor",
+  "skill": {
+    "id": 42725,
+    "skillKey": "clawhub-pdf-qr-extractor",
+    "name": "PDF QR Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-qr-extractor",
+    "url": "https://clawhub.ai/skills/pdf-qr-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-qr-extractor-1af3008ecbc35b4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts and saves QR codes from each page of a PDF by converting pages to images and detecting QR regions with padding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mywebliu",
+      "userId": "s176wg0te9v8frcj0z99a90g7d83j9j7",
+      "displayName": "mywebliu",
+      "image": "https://avatars.githubusercontent.com/u/249780391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776140959939,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83c1d752aef5d8fe5de03cee68d0651d86ae7955d888a3088622a6609dc0cd1d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mu-brianstorm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mu_brianstorm",
+  "skill": {
+    "id": 70906,
+    "skillKey": "clawhub-mu-brianstorm",
+    "name": "Brainstorm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mu-brianstorm",
+    "url": "https://clawhub.ai/skills/mu-brianstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mu-brianstorm-b457e431ec395576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导梳理模糊想法，分三步完成需求澄清、方案对比和设计细化，适用于新功能规划和技术选型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caspermoo",
+      "userId": "s17bvfezb0xb5c584j2hr54jas83mnq4",
+      "displayName": "CasperMoo",
+      "image": "https://avatars.githubusercontent.com/u/6940684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774592541723,
+      "changelog": "优化 description 描述",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:724346b4949947c668dfcb28d0e67380666854593f00fe62cc7653549a42fc58"
+}

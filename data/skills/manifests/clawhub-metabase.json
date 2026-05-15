@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32250,
+  "uuid": "skill-clawhub-metabase",
+  "skillKey": "clawhub-metabase",
+  "name": "Metabase",
+  "summary": "Metabase integration. Manage data, records, and automate workflows. Use when the user wants to interact with Metabase data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metabase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Metabase integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Metabase data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metabase@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metabase",
+      "url": "https://clawhub.ai/skills/metabase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metabase",
+    "url": "https://clawhub.ai/skills/metabase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metabase-7930172fa3e0d4a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metabase@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-metabase-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0c9695468a3fccde6cc53a62cfb8c6cf7a4dddc835be2c967d0b54253dd0b3",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:29.500Z"
+}

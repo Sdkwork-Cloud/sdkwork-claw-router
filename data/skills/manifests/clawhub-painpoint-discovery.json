@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24662,
+  "uuid": "skill-clawhub-painpoint-discovery",
+  "skillKey": "clawhub-painpoint-discovery",
+  "name": "Painpoint Discovery Expert",
+  "summary": "Painpoint discovery expert. Helps users discover, analyze, and evaluate startup painpoints in specific domains. Use when user says \"find painpoints in X\", \"a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.painpoint_discovery",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DZ_2026",
+      "features": [
+        "Painpoint discovery expert",
+        "Helps users discover, analyze, and evaluate startup painpoints in specific domains",
+        "Use when user says \"find painpoints in X\", \"a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/painpoint-discovery@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41491904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "painpoint-discovery",
+      "url": "https://clawhub.ai/skills/painpoint-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "painpoint-discovery",
+    "url": "https://clawhub.ai/skills/painpoint-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/painpoint-discovery-9e805c90e2528e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/painpoint-discovery@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-painpoint-discovery-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05c36c20af3b882e37973ffc3268977be6e45520d16f9fb92d39b86326d4d106",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:49:48.504Z"
+}

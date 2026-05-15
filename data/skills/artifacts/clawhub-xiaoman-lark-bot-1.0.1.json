@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoman-lark-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoman_lark_bot",
+  "skill": {
+    "id": 63728,
+    "skillKey": "clawhub-xiaoman-lark-bot",
+    "name": "Lark Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoman-lark-bot",
+    "url": "https://clawhub.ai/skills/xiaoman-lark-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoman-lark-bot-38648640bf2d7ef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书/Lark Bot 完整对接方案 - 所有敏感配置从环境变量读取，支持消息收发、知识库操作、Bitable 任务管理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "griffithkk3-del",
+      "userId": "s17bjnyge8edndve4m37c5ysts83gwga",
+      "displayName": "griffithkk3-del",
+      "image": "https://avatars.githubusercontent.com/u/250252436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773401546965,
+      "changelog": "- Added initial SKILL.md documentation for xiaoman-lark-bot.\n- Provides a complete Lark Bot integration solution: supports message sending/receiving, knowledge base operations, and Bitable task management.\n- All sensitive configuration is now read from environment variables for improved security.\n- SKILL.md includes code samples for token retrieval, group messaging, interactive cards, Bitable, and Wiki knowledge base operations.\n- Environment variable requirements and usage examples are clearly documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dab493dfb550abf9ad3779f65a2d6cf32ca2472fd9b34c1001b73de62271cfa"
+}

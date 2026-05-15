@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoiceforge-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoiceforge_api",
+  "skill": {
+    "id": 28305,
+    "skillKey": "clawhub-invoiceforge-api",
+    "name": "InvoiceForge API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoiceforge-api",
+    "url": "https://clawhub.ai/skills/invoiceforge-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoiceforge-api-5d0e9c27abd872b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional PDF invoices using InvoiceForge API - create, manage, and download invoices for freelancers, agencies, consultants, small businesses, S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbennett111",
+      "userId": "publishers:jbennett111",
+      "displayName": "Jbennett111",
+      "image": "https://avatars.githubusercontent.com/u/86585533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772671205380,
+      "changelog": "Initial release of the InvoiceForge API skill:\n\n- Generate professional PDF invoices programmatically using InvoiceForge API.\n- Supports API key signup and secure key storage process.\n- Create, list, download, and update status of invoices via simple endpoints.\n- Handles batch invoicing, invoice tracking, and multi-currency support.\n- Includes information on rate limits, endpoint summary, and error codes.\n- Designed for freelancers, businesses, SaaS, contractors, and billing automation needs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c83a771cd806962bbb36441f540e14d18a403481d7ef0caeaa5f97b6aef095e"
+}

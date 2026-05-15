@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12825,
+  "uuid": "skill-clawhub-my-weather",
+  "skillKey": "clawhub-my-weather",
+  "name": "My Weather",
+  "summary": "Provides current weather conditions for any city, airport code, or zip code using wttr.in without requiring an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_weather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryansorr1",
+      "features": [
+        "Provides current weather conditions for any city, airport code, or zip code using wttr.in witho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31250381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-weather",
+      "url": "https://clawhub.ai/skills/my-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-weather",
+    "url": "https://clawhub.ai/skills/my-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-weather-cca06bf8fc381ac4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69806b04d4684dbabc9ce31e52fbccf58a988649974f0f1ccbf584a3e321d0ab",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T19:24:48.043Z"
+}

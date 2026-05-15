@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71351,
+  "uuid": "skill-clawhub-paper-analyzer",
+  "skillKey": "clawhub-paper-analyzer",
+  "name": "Paper Analyzer",
+  "summary": "学术论文结构化阅读、拆解与分析工具。基于12个阅读要素（研究背景、研究问题、研究结论、文献综合、文献批评、研究方法、理论视角与理论框架、一致性发现、不一致性发现、研究贡献、研究不足、未来研究展望）对论文进行深度拆解，结果保存为Excel文件。当用户提到需要针对论文/文献/paper进行拆解、解析、分析、阅读、梳理...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yipng05-max",
+      "features": [
+        "学术论文结构化阅读、拆解与分析工具。基于12个阅读要素（研究背景、研究问题、研究结论、文献综合、文献批评、研究方法、理论视角与理论框架、一致性发现、不一致性发现、研究贡献、研究不足、未来研究."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256726987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-analyzer",
+      "url": "https://clawhub.ai/skills/paper-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-analyzer",
+    "url": "https://clawhub.ai/skills/paper-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-analyzer-c43b6e28e307970c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d49d9fe96f42bcd5f2cc2ed4a9a966993eba133663437711da99972c5b72b2ec",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:04:46.404Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68868,
+  "uuid": "skill-clawhub-mmxagent-skill-wecom",
+  "skillKey": "clawhub-mmxagent-skill-wecom",
+  "name": "mmxagent-skill-wecom",
+  "summary": "连接企业微信。调用 generate 接口获取授权链接，用户把链接发到企业微信聊天里点开完成授权。用户提到连接企业微信、接入企微、绑定企微机器人、创建企微机器人、扫码绑定企微时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmxagent_skill_wecom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OreoAndYuumi",
+      "features": [
+        "连接企业微信。调用 generate 接口获取授权链接，用户把链接发到企业微信聊天里点开完成授权。用户提到连接企业微信、接入企微、绑定企微机器人、创建企微机器人、扫码绑定企微时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mmxagent-skill-wecom@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169647655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mmxagent-skill-wecom",
+      "url": "https://clawhub.ai/skills/mmxagent-skill-wecom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmxagent-skill-wecom",
+    "url": "https://clawhub.ai/skills/mmxagent-skill-wecom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmxagent-skill-wecom-582fc6ad074616f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mmxagent-skill-wecom@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-wecom-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8cbc9943834b212a2860fa08cae69b1ca28fa3ea35b3e9fb8a317ea33d52d2f",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:51:18.914Z"
+}

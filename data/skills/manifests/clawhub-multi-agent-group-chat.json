@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61882,
+  "uuid": "skill-clawhub-multi-agent-group-chat",
+  "skillKey": "clawhub-multi-agent-group-chat",
+  "name": "Multi Agent Group Chat",
+  "summary": "多 Agent 群聊协作插件。子 Agent 完成 sessions_send 任务后，自动将回复发送到来源群聊。 支持 Telegram 和飞书，无需配置群 ID，自动检测消息来源。 适用于：多 Bot 协作、团队分工、群聊表演等场景。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_group_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harven-droid",
+      "features": [
+        "多 Agent 群聊协作插件。子 Agent 完成 sessions_send 任务后，自动将回复发送到来源群聊。 支持 Telegram 和飞书，无需配置群 ID，自动检测消息来源。 适用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-agent-group-chat@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210953820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-agent-group-chat",
+      "url": "https://clawhub.ai/skills/multi-agent-group-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-group-chat",
+    "url": "https://clawhub.ai/skills/multi-agent-group-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-group-chat-898b5f10001933f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-agent-group-chat@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-group-chat-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4f8c25591841e6aada449cab7f93d0c64a6c301ae6d5008dad214bf5efaa487",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:08:41.726Z"
+}

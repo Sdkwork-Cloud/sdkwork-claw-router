@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27378,
+  "uuid": "skill-clawhub-bigml",
+  "skillKey": "clawhub-bigml",
+  "name": "Bigml",
+  "summary": "BigML integration. Manage data, records, and automate workflows. Use when the user wants to interact with BigML data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigml",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BigML integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BigML data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigml@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigml",
+      "url": "https://clawhub.ai/skills/bigml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigml",
+    "url": "https://clawhub.ai/skills/bigml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigml-fb5be0bb46160135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigml@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigml-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e36cbac641fc2cb65dffce84b5279bcf186e8d45008829a0826b07553e0fb1",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:23:36.190Z"
+}

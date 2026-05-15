@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kv-senior-frontend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kv_senior_frontend",
+  "skill": {
+    "id": 33989,
+    "skillKey": "clawhub-kv-senior-frontend",
+    "name": "Senior Frontend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kv-senior-frontend",
+    "url": "https://clawhub.ai/skills/kv-senior-frontend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kv-senior-frontend-deaf98e8d13d3a7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, optimize, and review React and Next.js applications with TypeScript and Tailwind CSS. Use when scaffolding a frontend project, generating components,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-antonio-sl",
+      "userId": "s17301x2y8n5dbvbsbv42fvgxx83n922",
+      "displayName": "felix-antonio-sl",
+      "image": "https://avatars.githubusercontent.com/u/143637936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774973846804,
+      "changelog": "Senior Frontend skill initial release:\n\n- Supports scaffolding and optimization for React and Next.js projects with TypeScript and Tailwind CSS.\n- Provides scripts for generating components, hooks, bundle analysis, and performance recommendations.\n- Enforces best practices: TypeScript types, server/client component separation, accessibility, and optimized dependencies.\n- Grades bundles, recommends lightweight alternatives, and highlights common frontend pitfalls.\n- Includes proactive triggers and strict frontend-only guardrails to guide code quality and maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df1b99e2ebc43ef0c788aff1f71cb099b97ea4bfb4615a0506ab5bdb9b867a0e"
+}

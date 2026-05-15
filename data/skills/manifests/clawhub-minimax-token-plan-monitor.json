@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61222,
+  "uuid": "skill-clawhub-minimax-token-plan-monitor",
+  "skillKey": "clawhub-minimax-token-plan-monitor",
+  "name": "MiniMax Token Plan Usage Monitor",
+  "summary": "MiniMax Token Plan 用量监控 — 专为云部署龙虾（OpenClaw）设计，自动查询本周/5小时窗口用量、套餐余量、剩余调用次数及重置时间。支持 QQ/Discord/Telegram 多通道通知，可配置告警阈值。触发词：minimax额度查询、token plan用量、本周用量、剩余次数、订阅状...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_token_plan_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bbzhi177",
+      "features": [
+        "MiniMax Token Plan 用量监控 — 专为云部署龙虾（OpenClaw）设计，自动查询本周/5小时窗口用量、套餐余量、剩余调用次数及重置时间。支持 QQ/Discord/Tel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-token-plan-monitor@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204663031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-token-plan-monitor",
+      "url": "https://clawhub.ai/skills/minimax-token-plan-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-token-plan-monitor",
+    "url": "https://clawhub.ai/skills/minimax-token-plan-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-token-plan-monitor-b39f4defb85d2d20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-token-plan-monitor@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-token-plan-monitor-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbd9aa538c490ac4c9f277a59462233d8f1f34b1f89da3ecc523f096817bfa95",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:55:27.238Z"
+}

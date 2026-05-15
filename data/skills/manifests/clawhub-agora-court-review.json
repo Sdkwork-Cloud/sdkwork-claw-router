@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43203,
+  "uuid": "skill-clawhub-agora-court-review",
+  "skillKey": "clawhub-agora-court-review",
+  "name": "Agora Court Review",
+  "summary": "Review a proposal through separated governance roles: strategist, operator, censor, historian, and sovereign.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agora_court_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "malleus35",
+      "features": [
+        "Review a proposal through separated governance roles: strategist, operator, censor, historian,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agora-court-review@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36567887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agora-court-review",
+      "url": "https://clawhub.ai/skills/agora-court-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agora-court-review",
+    "url": "https://clawhub.ai/skills/agora-court-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agora-court-review-6b3133ec16db95ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agora-court-review@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agora-court-review-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f00b612a6d6d7598ea12722524b9727b0d325d103c0e510c8d947556e5b72b1",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T04:30:50.863Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-latex@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_latex",
+  "skill": {
+    "id": 28105,
+    "skillKey": "clawhub-pdf-to-latex",
+    "name": "PDF to LaTeX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-latex",
+    "url": "https://clawhub.ai/skills/pdf-to-latex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-latex-e2958c9efa508693.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF documents to LaTeX source using MinerU. Extracts text, formulas, and structure from PDFs and outputs LaTeX format for academic and technical docu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzlzyca",
+      "userId": "s177m2xppsth4a69xqx30k6kds83haz0",
+      "displayName": "mzlzyCA",
+      "image": "https://avatars.githubusercontent.com/u/87289074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775210329381,
+      "changelog": "SEO: expand description for better ClawHub vector search discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d889b90cc861938c4bd566d78163f3a86b635c5c0ab1cafa80174b90ddb3bfd"
+}

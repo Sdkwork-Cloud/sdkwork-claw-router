@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bts@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bts",
+  "skill": {
+    "id": 62822,
+    "skillKey": "clawhub-bts",
+    "name": "bts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bts",
+    "url": "https://clawhub.ai/skills/bts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bts-7fbb9405837478f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "防弹少年团 BTS - 韩国男子音乐组合，全球知名 K-pop 团体"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775055619744,
+      "changelog": "- Initial release of the BTS skill, version 0.1.0\n- 提供 BTS（防弹少年团）七位成员详细介绍与分工\n- 整理 BTS 出道以来的重要发展历程与里程碑\n- 概括音乐成就，包括 Billboard、格莱美提名等主要奖项\n- 展示 ARMY 粉丝文化及 BTS 的社会影响\n- 收录热门单曲、专辑及常见查询示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47ad9e7e0b4b2950d9c288f8c45a6d33a20693be5d17652fdcd415f218e6e79b"
+}

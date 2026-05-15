@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-reviewer-pro@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_reviewer_pro",
+  "skill": {
+    "id": 18471,
+    "skillKey": "clawhub-skill-reviewer-pro",
+    "name": "Skill Reviewer Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-reviewer-pro",
+    "url": "https://clawhub.ai/skills/skill-reviewer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-reviewer-pro-64e2d720759f8640.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs thorough format validation, content quality assessment, and functional verification of OpenClaw skills for compliance and completeness."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykaixu",
+      "userId": "publishers:ykaixu",
+      "displayName": "YuKaiXu",
+      "image": "https://avatars.githubusercontent.com/u/30675834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 678,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1772244269468,
+      "changelog": "Add language auto-adaptation: skill-reviewer-pro now automatically responds in the same language as the user's request (Chinese, English, or other languages). Added language detection rules and guidelines for consistent user experience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9cd848572e0092c1558fb3dfce8ba06429872a679af7b1c8c6212ab24dab0c6"
+}

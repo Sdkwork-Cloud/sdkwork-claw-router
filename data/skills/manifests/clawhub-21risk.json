@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33463,
+  "uuid": "skill-clawhub-21risk",
+  "skillKey": "clawhub-21risk",
+  "name": "21Risk",
+  "summary": "21RISK integration. Manage data, records, and automate workflows. Use when the user wants to interact with 21RISK data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.21risk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "21RISK integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 21RISK data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/21risk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "21risk",
+      "url": "https://clawhub.ai/skills/21risk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "21risk",
+    "url": "https://clawhub.ai/skills/21risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/21risk-68112ed2bf65fb4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/21risk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-21risk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adb59d01004ae793e33864c5b407ee9976f00c8a43aad0dadd6a84d433c360f6",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:14:25.893Z"
+}

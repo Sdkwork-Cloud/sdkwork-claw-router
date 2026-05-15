@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -18,7 +18,7 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         )
 
         self.assertIn("operation: fetchLogs", contract)
-        self.assertIn("api_path: /app/v3/api/router/usage/logs", contract)
+        self.assertIn("api_path: /app/v3/api/ai/usage/logs", contract)
         self.assertIn(
             "read_sources: [ai_request_trace, ai_usage_fact, ai_routing_decision_log]",
             contract,
@@ -47,17 +47,17 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
             ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "usage_logs_read_store.rs"
         ).read_text(encoding="utf-8")
 
-        self.assertIn('"/app/v3/api/router/usage/logs"', app_usage_logs)
+        self.assertIn('"/app/v3/api/ai/usage/logs"', app_usage_logs)
         self.assertIn("MAX_USAGE_LOGS_PAGE_SIZE", app_usage_logs)
         self.assertIn("UsageLogsQueryValidationError", app_usage_logs)
         self.assertIn("validate_usage_logs_query", app_usage_logs)
         self.assertIn("parse_usage_logs_timestamp", app_usage_logs)
-        self.assertIn("usage logs pageNo must be greater than or equal to 1", app_usage_logs)
-        self.assertIn("usage logs pageSize must be between 1 and", app_usage_logs)
+        self.assertIn("usage logs page must be greater than or equal to 1", app_usage_logs)
+        self.assertIn("usage logs page_size must be between 1 and", app_usage_logs)
         self.assertIn("usage logs status must be one of all, success, error", app_usage_logs)
-        self.assertIn("usage logs keyword must not exceed", app_usage_logs)
-        self.assertIn("usage logs startTime must be a valid UTC timestamp", app_usage_logs)
-        self.assertIn("usage logs endTime must be greater than or equal to startTime", app_usage_logs)
+        self.assertIn("usage logs q must not exceed", app_usage_logs)
+        self.assertIn("usage logs start_time must be a valid UTC timestamp", app_usage_logs)
+        self.assertIn("usage logs end_time must be greater than or equal to start_time", app_usage_logs)
         self.assertIn('PlusApiResult::error("4001"', app_usage_logs)
         self.assertIn("EmptyUsageLogsReadStore", app_usage_logs)
         self.assertIn("UsageLogsPage::default()", app_usage_logs)
@@ -130,9 +130,19 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
             compact_store = " ".join(store.split())
             with self.subTest(store=relative):
                 self.assertIn('log_type: modality_label(optional_integer_cell(&row, "modality"))', compact_store)
-                self.assertIn("None => \"unknown\"", store)
-                self.assertIn("Some(_) => \"unknown\"", store)
+                self.assertIn("model_modality::label(value).to_owned()", store)
                 self.assertNotIn("_ => \"text\"", store)
+        modality_helper = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "model_modality.rs"
+        ).read_text(encoding="utf-8")
+        self.assertIn("_ => \"unknown\"", modality_helper)
+        self.assertNotIn("_ => \"text\"", modality_helper)
 
     def test_console_usage_view_renders_real_loaded_records_without_hardcoded_ip_or_mock_names(self) -> None:
         usage_view = (
@@ -210,17 +220,18 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("readOnlyUsageActions", usage_view)
         self.assertIn("Read-only", usage_view)
         self.assertIn("buildUsageLogQuery", usage_view)
-        self.assertIn("pageNo", usage_view)
+        self.assertIn("page: number", usage_view)
+        self.assertNotIn("pageNo", usage_view)
         self.assertIn("pageSize", usage_view)
-        self.assertIn("keyword", usage_view)
+        self.assertIn("searchQuery", usage_view)
         self.assertIn("status", usage_view)
         self.assertIn("startTime", usage_view)
         self.assertIn("endTime", usage_view)
         self.assertIn("UsageService.fetchLogs(buildUsageLogQuery", usage_view)
         self.assertIn("onClick={() => void applyFilters()}", usage_view)
         self.assertIn("onClick={() => void resetFilters()}", usage_view)
-        self.assertIn("onClick={() => void goToPage(pageNo - 1)}", usage_view)
-        self.assertIn("onClick={() => void goToPage(pageNo + 1)}", usage_view)
+        self.assertIn("onClick={() => void goToPage(page - 1)}", usage_view)
+        self.assertIn("onClick={() => void goToPage(page + 1)}", usage_view)
         self.assertNotIn("<SlidersHorizontal", usage_view)
         self.assertNotIn("<Settings2", usage_view)
         for unsupported_action in [
@@ -246,8 +257,8 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_router = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
@@ -261,19 +272,23 @@ class UsageLogsRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: UsageLogsResponse", contract)
         self.assertIn('"UsageLogsResponse"', openapi)
-        self.assertIn('"FetchLogsResult"', openapi)
+        self.assertIn('"UsageLogsListResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/UsageLogsResponse"', openapi)
-        self.assertIn("async fetchLogs(params?: QueryParams): Promise<FetchLogsResult>", sdk_router)
-        self.assertIn("get<FetchLogsResult>", sdk_router)
+        self.assertIn("async list(params?: AiUsageLogsListParams): Promise<UsageLogsListResult>", sdk_ai)
+        self.assertIn("get<UsageLogsListResult>", sdk_ai)
+        self.assertIn("{ name: 'q', value: params?.q", sdk_ai)
+        self.assertNotIn("search_query", sdk_ai)
 
-        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "usage-logs-response.ts"
-        item_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "usage-log-item.ts"
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-logs-result.ts"
+        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "usage-logs-response.ts"
+        item_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "usage-log-item.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "usage-logs-list-result.ts"
         self.assertTrue(response_path.exists())
         self.assertTrue(item_path.exists())
         self.assertTrue(result_path.exists())
         self.assertIn("logs: UsageLogItem[];", response_path.read_text(encoding="utf-8"))
         self.assertIn("total: number;", response_path.read_text(encoding="utf-8"))
+        self.assertIn("page: number;", response_path.read_text(encoding="utf-8"))
+        self.assertNotIn("pageNo: number;", response_path.read_text(encoding="utf-8"))
         self.assertIn("data?: UsageLogsResponse;", result_path.read_text(encoding="utf-8"))
 
         self.assertIn("UsageLogsResponse as SdkUsageLogsResponse", service)

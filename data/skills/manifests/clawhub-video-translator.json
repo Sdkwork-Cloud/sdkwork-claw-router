@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58232,
+  "uuid": "skill-clawhub-video-translator",
+  "skillKey": "clawhub-video-translator",
+  "name": "Video Translator",
+  "summary": "Real time video translation / dubbing skill. Translate user-provided video (file or URL) and return preview_url. 适用于视频直译、视频翻译、视频配音、字幕翻译出片。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "papawaigo",
+      "features": [
+        "Real time video translation / dubbing skill",
+        "Translate user-provided video (file or URL) and return preview_url",
+        "适用于视频直译、视频翻译、视频配音、字幕翻译出片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-translator@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13962862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-translator",
+      "url": "https://clawhub.ai/skills/video-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-translator",
+    "url": "https://clawhub.ai/skills/video-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-translator-d77976a0eb1cfaf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-translator@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-translator-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caecdf81479f1c62dd8d64dfd85b5f5a84d66c4b7bedc11fd8b20093b78689f8",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:08:57.145Z"
+}

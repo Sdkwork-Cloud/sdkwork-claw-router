@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-report@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_report",
+  "skill": {
+    "id": 20546,
+    "skillKey": "clawhub-portfolio-report",
+    "name": "Uniswap Portfolio Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-report",
+    "url": "https://clawhub.ai/skills/portfolio-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-report-ee3f83bc8ed2dd96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a comprehensive portfolio report for a wallet's Uniswap positions across all chains — covering total value, PnL, fee earnings, impermanent loss, and composition. Use when the user asks about their positions, earnings, or portfolio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745753113,
+      "changelog": "Initial release: Generate comprehensive Uniswap portfolio reports across all chains with detailed analytics.\n\n- Generates aggregate portfolio reports for any wallet's Uniswap positions (total value, PnL, fee earnings, impermanent loss, and composition).\n- Supports queries by wallet address, chain, and report focus (positions, PnL, fees, or full overview).\n- Delegates analysis to the portfolio-analyst agent—no direct tool calls.\n- Presents reports in a clear, user-friendly summary format.\n- Includes robust error handling and user guidance for missing wallets, empty portfolios, or chain access issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21c9f284525b0bef8b17e3de556dc1856b830e4c51e07ee7a856c095b11245cc"
+}

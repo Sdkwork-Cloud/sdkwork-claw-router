@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11432,
+  "uuid": "skill-clawhub-agentns",
+  "skillKey": "clawhub-agentns",
+  "name": "Domain Name Registration For Agents",
+  "summary": "Register and manage ICANN domains for AI agents. Wallet authentication (SIWE/SIWS), USDC payments on Base or Solana, full DNS management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vibrant",
+      "features": [
+        "Register and manage ICANN domains for AI agents",
+        "Wallet authentication (SIWE/SIWS), USDC payments on Base or Solana, full DNS management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentns@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/323183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentns",
+      "url": "https://clawhub.ai/skills/agentns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentns",
+    "url": "https://clawhub.ai/skills/agentns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentns-394c119c5b2ce80a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentns@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentns-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c083aa0e7eff277b8f8c9d8a21871a2bd73ddc80cf6ca0e21b3147fcdf9965a1",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T11:08:10.638Z"
+}

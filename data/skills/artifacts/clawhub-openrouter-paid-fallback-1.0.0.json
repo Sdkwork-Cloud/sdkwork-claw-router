@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-paid-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_paid_fallback",
+  "skill": {
+    "id": 31781,
+    "skillKey": "clawhub-openrouter-paid-fallback",
+    "name": "OpenRouter Paid Fallback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-paid-fallback",
+    "url": "https://clawhub.ai/skills/openrouter-paid-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-paid-fallback-f479de9fb1cdf6a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set OpenClaw to use a paid OpenRouter model first and fall back to free models when quota is exhausted or rate-limited. Use when the user wants a paid OpenRo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h452624729",
+      "userId": "s174d4g3qkt8jj2a74vewyt7bs83xhzg",
+      "displayName": "Ceasr Hu",
+      "image": "https://avatars.githubusercontent.com/u/266956225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861959024,
+      "changelog": "Initial release: paid OpenRouter primary with free fallback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8038981682189374eca51fed830c40e2ab867fb5d59694be0faa7ebb4e0d6ec3"
+}

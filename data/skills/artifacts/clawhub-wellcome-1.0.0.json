@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wellcome@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wellcome",
+  "skill": {
+    "id": 40767,
+    "skillKey": "clawhub-wellcome",
+    "name": "Browser key (auto created by Firebase)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wellcome",
+    "url": "https://clawhub.ai/skills/wellcome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wellcome-635c76f25c7707bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Greets the user with a friendly, personalized welcome message. USE WHEN user says \"hello\", \"hi\", \"hey\", \"greet me\", \"good morning\", \"good afternoon\", \"good e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tran-quang-tien",
+      "userId": "publishers:tran-quang-tien",
+      "displayName": "Trần Quang Tiến",
+      "image": "https://avatars.githubusercontent.com/u/167073397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774245392452,
+      "changelog": "Initial release of the \"greet\" skill.\n\n- Responds to user greetings with a warm, personalized welcome.\n- Automatically detects time of day to choose an appropriate greeting (morning, afternoon, evening, late night).\n- Offers help at the end of each greeting.\n- Activated by common greetings or when a session start greeting is requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eea5306a505136f731b7ae00e0592f8872ce94ca80e4c7d6ac9176ea11c60b6"
+}

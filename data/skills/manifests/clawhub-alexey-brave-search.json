@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23536,
+  "uuid": "skill-clawhub-alexey-brave-search",
+  "skillKey": "clawhub-alexey-brave-search",
+  "name": "alexey-brave-search",
+  "summary": "Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alexey_brave_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexeyVorobiev",
+      "features": [
+        "Web search and content extraction via Brave Search API",
+        "Use for searching documentation, facts, or any web content",
+        "Lightweight, no browser required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alexey-brave-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4204488?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alexey-brave-search",
+      "url": "https://clawhub.ai/skills/alexey-brave-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alexey-brave-search",
+    "url": "https://clawhub.ai/skills/alexey-brave-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alexey-brave-search-d73ab14f6c206ef5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alexey-brave-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alexey-brave-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb8a048fe611bbd0c81607e09b79808a6881d14f5444b2c66b67cd5ee4866d26",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:48:11.369Z"
+}

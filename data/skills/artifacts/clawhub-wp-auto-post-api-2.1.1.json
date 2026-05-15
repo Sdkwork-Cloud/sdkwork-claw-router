@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wp-auto-post-api@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wp_auto_post_api",
+  "skill": {
+    "id": 57560,
+    "skillKey": "clawhub-wp-auto-post-api",
+    "name": "WordPress API Auto Post 文章自动发布API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wp-auto-post-api",
+    "url": "https://clawhub.ai/skills/wp-auto-post-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wp-auto-post-api-02a375052e3a1148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish SEO-optimized articles to WordPress via REST API with RankMath meta fields"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l1angjy",
+      "userId": "s17bmfnfq7nzzx2d9ex2x5189183jrb4",
+      "displayName": "L1angjy",
+      "image": "https://avatars.githubusercontent.com/u/173944444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1778083073605,
+      "changelog": "**Adds user approval step and draft-by-default publishing.**\n\n- Now requires explicit user confirmation before publishing each article.\n- 严格要求每次发布文章时请求用户同意\n- Default article status changed from \"publish\" to \"draft\" if not specified.\n- 默认的发布文章状态从原来的‘发布’改为‘草稿’\n- Updated documentation to clarify the user approval step and draft default.\n- 更新文档以说明用户的同意流程以及草稿为默认状态\n- Added environment variable and credential definitions to SKILL.md frontmatter.\n- Improved guidance on logging: the publication log is for internal audit only, not for cross-skill data input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ac37a16a0ddad09554a96f7c9f7f283b57ed5fbd509f78caecdb4eaa59695de"
+}

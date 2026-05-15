@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64207,
+  "uuid": "skill-clawhub-podcast-downloader",
+  "skillKey": "clawhub-podcast-downloader",
+  "name": "Podcast Downloader",
+  "summary": "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需要下载播客、保存播客音频、提取播客文字内容时使用。支持：(1) 单集下载，(2) 批量下载，(3) 自定义音质，(4) 自动...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhang Yuming",
+      "features": [
+        "小宇宙播客下载工具。从小宇宙(xiaoyuzhoufm.com)下载播客音频和Show Notes。自动转换为MP3格式（兼容Sanag、小游等骨传导蓝牙耳机、水下游泳时离线播放）。当用户需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262479155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-downloader",
+      "url": "https://clawhub.ai/skills/podcast-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-downloader",
+    "url": "https://clawhub.ai/skills/podcast-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-downloader-838cfdbbc09255e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3a4a88f8996cedc8807585a64bcb8ddfce76b6d9bb42aede6c98dc10b232725",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:48:47.233Z"
+}

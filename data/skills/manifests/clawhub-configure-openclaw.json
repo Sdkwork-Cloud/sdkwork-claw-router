@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30498,
+  "uuid": "skill-clawhub-configure-openclaw",
+  "skillKey": "clawhub-configure-openclaw",
+  "name": "configure OpenClaw",
+  "summary": "Use when asked to change, configure, or update any OpenClaw setting — model selection, channel setup, auth, tools, gateway, session, cron, hooks, env, skills...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.configure_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onenameneo",
+      "features": [
+        "Use when asked to change, configure, or update any OpenClaw setting — model selection, channel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/configure-openclaw@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6267834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "configure-openclaw",
+      "url": "https://clawhub.ai/skills/configure-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "configure-openclaw",
+    "url": "https://clawhub.ai/skills/configure-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/configure-openclaw-3f90eafcb7a2f333.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/configure-openclaw@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-configure-openclaw-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7219930222362c9c8cffcec29a5470e0c4c092b291c1569129428cac72fc473a",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:05:37.323Z"
+}

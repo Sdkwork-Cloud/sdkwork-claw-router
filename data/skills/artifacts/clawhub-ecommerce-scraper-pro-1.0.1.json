@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-scraper-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_scraper_pro",
+  "skill": {
+    "id": 60402,
+    "skillKey": "clawhub-ecommerce-scraper-pro",
+    "name": "E-commerce Data Scraper Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-scraper-pro",
+    "url": "https://clawhub.ai/skills/ecommerce-scraper-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-scraper-pro-bb16d8a9b7f25f3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能数据抓取工具 - 从网页/API 提取结构化数据，支持批量处理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775293878086,
+      "changelog": "- Updated skill name and description to \"data-scraper\" with broader data extraction capabilities.\n- Expanded supported features: now includes API integration, structured outputs (JSON, CSV, Excel), bulk processing, anti-blocking measures, automatic data cleaning, and scheduling options.\n- Added usage instructions for web and API data scraping, output formatting, proxy support, and scheduled tasks.\n- Included detailed data type and output format support, new pricing tiers, and real-world usage examples for multiple scenarios.\n- Outlined technical implementation notes and compliance guidelines.\n- Published initial release notes and outlined planned future features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4476c96513cd2492d4ecdadb39ded1af430b8161fc57a5cf2a345af2a197c2b0"
+}

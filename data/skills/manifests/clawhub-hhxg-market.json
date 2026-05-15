@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72017,
+  "uuid": "skill-clawhub-hhxg-market",
+  "skillKey": "clawhub-hhxg-market",
+  "name": "恢恢量化 A股数据助手",
+  "summary": "A 股量化数据助手 — 日报快照、A股日历、融资融券、实时快讯，零配置无需安装任何依赖。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hhxg_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niceck",
+      "features": [
+        "A 股量化数据助手 — 日报快照、A股日历、融资融券、实时快讯，零配置无需安装任何依赖。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hhxg-market@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126089681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hhxg-market",
+      "url": "https://clawhub.ai/skills/hhxg-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hhxg-market",
+    "url": "https://clawhub.ai/skills/hhxg-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hhxg-market-2658ae583d26788c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hhxg-market@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hhxg-market-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9080a74e23d2231c4822568492100acfdee101070cd08be8f15d9c68c3c3ea95",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:08:46.442Z"
+}

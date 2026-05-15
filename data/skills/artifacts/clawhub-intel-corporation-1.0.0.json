@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intel-corporation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intel_corporation",
+  "skill": {
+    "id": 54048,
+    "skillKey": "clawhub-intel-corporation",
+    "name": "Intel Corporation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intel-corporation",
+    "url": "https://clawhub.ai/skills/intel-corporation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intel-corporation-ef59e2a2ed36c22f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intel designs and manufactures x86 CPUs powering 80% of servers, focusing on IDM, data centers, and foundry services amid rising AMD and ARM competition."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777612254590,
+      "changelog": "Intel Corporation skill initial release:\n\n- Provides a detailed timeline of Intel's major milestones and turning points from 1968 to 2025.\n- Explains Intel's IDM (Integrated Device Manufacturer) business model and recent strategic shifts.\n- Includes competitive analysis against AMD and ARM, highlighting threats and industry context.\n- Features key financial and market data, plus notable company facts.\n- Designed as a resource for semiconductor industry analysis, CPU architecture research, and policy impact studies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:530deb280b28949ad06501ca51072bb2bf1da535f057f1407e9afd2dae3c727a"
+}

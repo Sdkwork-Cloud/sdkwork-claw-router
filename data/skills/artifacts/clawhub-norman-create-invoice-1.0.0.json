@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/norman-create-invoice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_create_invoice",
+  "skill": {
+    "id": 19325,
+    "skillKey": "clawhub-norman-create-invoice",
+    "name": "Norman: Create Invoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-create-invoice",
+    "url": "https://clawhub.ai/skills/norman-create-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-create-invoice-5c32d68cf9199906.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and optionally send a new invoice to a client. Use when the user wants to invoice someone, bill a client, or create a new Rechnung."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanlee000",
+      "userId": "s17cbmkhac7cryh3kwmg7jc0ch83qty9",
+      "displayName": "Stan Kharlap",
+      "image": "https://avatars.githubusercontent.com/u/117379032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 621,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771526580532,
+      "changelog": "Initial release. Step-by-step invoice creation with VAT, client lookup, and email sending.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b5672c93d564125149bd37ea0577eaf2caded1006744c8505427c81940b99e6a"
+}

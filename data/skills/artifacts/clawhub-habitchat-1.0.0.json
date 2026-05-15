@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habitchat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habitchat",
+  "skill": {
+    "id": 16971,
+    "skillKey": "clawhub-habitchat",
+    "name": "HabitChat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habitchat",
+    "url": "https://clawhub.ai/skills/habitchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habitchat-db77fb4292668b8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal habit coach that tracks daily habits, streaks, and provides AI-powered coaching. Say things like \"track a new habit\", \"log my habits\", \"show my stre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinesh18s",
+      "userId": "publishers:dinesh18s",
+      "displayName": "SELVADINESH",
+      "image": "https://avatars.githubusercontent.com/u/90266004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 831,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771412574006,
+      "changelog": "Initial release — AI-powered habit tracking companion with streak management, coaching insights, and smart reminders.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ddb07b4a47cae230ca12bdd2ade3b7052d3d40b914dc5e16c1846b562e23340"
+}

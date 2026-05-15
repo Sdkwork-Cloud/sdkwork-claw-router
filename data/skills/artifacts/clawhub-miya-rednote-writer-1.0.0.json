@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miya-rednote-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miya_rednote_writer",
+  "skill": {
+    "id": 73260,
+    "skillKey": "clawhub-miya-rednote-writer",
+    "name": "小红书爆款助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miya-rednote-writer",
+    "url": "https://clawhub.ai/skills/miya-rednote-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miya-rednote-writer-dcdc2a281678d2c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书爆款助手，热点追踪、文案生成、标签推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "786793119",
+      "userId": "s17ewzcjs6eyhf12stk532z0cx83ws5a",
+      "displayName": "786793119",
+      "image": "https://avatars.githubusercontent.com/u/87558407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773937584967,
+      "changelog": "Initial release of RedNote Viral Writer.\n\n- Search trending topics on Xiaohongshu (小红书)\n- Generate viral captions for various themes: product recommendations, tips, lifestyle, and relationships\n- Recommend popular hashtags\n- Analyze successful post templates\n- Command-line usage examples provided",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1772d5c5c703594636d6e7f3cc288ca54936fc0913809cdff5b5ba7abf71e967"
+}

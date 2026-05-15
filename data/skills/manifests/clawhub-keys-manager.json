@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53987,
+  "uuid": "skill-clawhub-keys-manager",
+  "skillKey": "clawhub-keys-manager",
+  "name": "Keys Manager",
+  "summary": "Manage API keys locally from the terminal using the `keys` CLI. Use when users want to store, retrieve, search, import, export, or organize API keys and secr...",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keys_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Satyam Raj",
+      "features": [
+        "Manage API keys locally from the terminal using the `keys` CLI",
+        "Use when users want to store, retrieve, search, import, export, or organize API keys and secr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keys-manager@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20970728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keys-manager",
+      "url": "https://clawhub.ai/skills/keys-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keys-manager",
+    "url": "https://clawhub.ai/skills/keys-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keys-manager-81b374195a2466a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keys-manager@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-keys-manager-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e646bd718dbee4e6a1b57ee800f288b9efa59cc0a90f5f72cc113f442f839069",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:06:15.603Z"
+}

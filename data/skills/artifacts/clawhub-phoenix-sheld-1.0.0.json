@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenix-sheld@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_sheld",
+  "skill": {
+    "id": 12820,
+    "skillKey": "clawhub-phoenix-sheld",
+    "name": "Phoenix Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-sheld",
+    "url": "https://clawhub.ai/skills/phoenix-sheld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-sheld-61c4ce9b6c09a558.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-healing backup and update system with intelligent rollback. Protects against failed updates by automatically monitoring system health post-update and recovering from backups when needed. Features canary deployment testing, health base."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiqiezhenxi",
+      "userId": "publishers:yiqiezhenxi",
+      "displayName": "yiqiezhenxi",
+      "image": "https://avatars.githubusercontent.com/u/10209519?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1641,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770285642382,
+      "changelog": "Phoenix Shield 1.0.0\n\n- Removed the sample file `docs/examples.md` from the repository.\n- No functional or documentation changes to core features or existing docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bd388a841810e607c1064e7ea2a2985846a07b09ced90fc37350859708edc93"
+}

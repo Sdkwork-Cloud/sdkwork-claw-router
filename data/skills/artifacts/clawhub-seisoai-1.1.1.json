@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seisoai@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seisoai",
+  "skill": {
+    "id": 19283,
+    "skillKey": "clawhub-seisoai",
+    "name": "Seisoai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seisoai",
+    "url": "https://clawhub.ai/skills/seisoai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seisoai-6062cd56fd0850b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified media generation gateway for agents. Discover tools dynamically, choose API key or x402 auth, invoke image/video/audio/music/3D/training tools, and h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "legendarylibr",
+      "userId": "publishers:legendarylibr",
+      "displayName": "Legendarylibr",
+      "image": "https://avatars.githubusercontent.com/u/117605439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771318508588,
+      "changelog": "Unified media gateway: discover tools, x402/API key auth, image/video/audio/3D. Agent-scoped safety controls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:326b8c6a3a9c9368381a185724ce34953957ca3981fa942ea3357ce63e66f98f"
+}

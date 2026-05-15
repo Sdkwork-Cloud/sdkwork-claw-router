@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27968,
+  "uuid": "skill-clawhub-prompt-token-analyzer",
+  "skillKey": "clawhub-prompt-token-analyzer",
+  "name": "prompt-token-analyzer",
+  "summary": "A Node.js CLI tool that analyzes prompt token usage using a GPT-compatible tokenizer. Helps agents estimate prompt size, debug context overflow, and optimize...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_token_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "putixiaosheng",
+      "features": [
+        "A Node.js CLI tool that analyzes prompt token usage using a GPT-compatible tokenizer",
+        "Helps agents estimate prompt size, debug context overflow, and optimize..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-token-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110288560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-token-analyzer",
+      "url": "https://clawhub.ai/skills/prompt-token-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-token-analyzer",
+    "url": "https://clawhub.ai/skills/prompt-token-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-token-analyzer-24a4941c38ac0fb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-token-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-token-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:495db3fa1e37cb4e7c70cceca64f5c226e5872444f69fd2fccff514eff8c59e1",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:31:44.044Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61674,
+  "uuid": "skill-clawhub-wechat-md-publisher-skill",
+  "skillKey": "clawhub-wechat-md-publisher-skill",
+  "name": "Wechat Md Publisher Skill",
+  "summary": "发布 Markdown 文章到微信公众号，支持草稿管理、多主题、智能图片处理、自动封面图。推荐与 news-to-markdown-skill 配合使用实现一键转载（支持本地图片）。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_md_publisher_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PING SI",
+      "features": [
+        "发布 Markdown 文章到微信公众号，支持草稿管理、多主题、智能图片处理、自动封面图。推荐与 news-to-markdown-skill 配合使用实现一键转载（支持本地图片）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-md-publisher-skill@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19371897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-md-publisher-skill",
+      "url": "https://clawhub.ai/skills/wechat-md-publisher-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-md-publisher-skill",
+    "url": "https://clawhub.ai/skills/wechat-md-publisher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-md-publisher-skill-883c383d1949f6b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-md-publisher-skill@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-md-publisher-skill-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2e0f214fbc087fc684ff8f8c95cea7ed5201de2af41f3a0850ba5378fc53e04",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:17:10.116Z"
+}

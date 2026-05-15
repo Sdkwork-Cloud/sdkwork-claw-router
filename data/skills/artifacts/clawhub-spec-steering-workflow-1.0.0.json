@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-steering-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_steering_workflow",
+  "skill": {
+    "id": 25201,
+    "skillKey": "clawhub-spec-steering-workflow",
+    "name": "spec steering workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-steering-workflow",
+    "url": "https://clawhub.ai/skills/spec-steering-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-steering-workflow-0654689fdc4d7c5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use a lightweight spec + steering workflow for long, interruptible, multi-phase tasks that need checkpointed progress, recoverable state, and multi-session c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whisper1952717",
+      "userId": "s176wfbh8krs6gvbw64yp5wa3h83mh33",
+      "displayName": "whisper1952717",
+      "image": "https://avatars.githubusercontent.com/u/248128888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773607691926,
+      "changelog": "- Introduces the spec-steering-workflow skill for managing long, interruptible, multi-phase tasks with checkpointed progress and recoverable state.\n- Defines a default workflow using workspace directories and structured checkpoints (`done`, `blocked`, `failed`).\n- Provides commands for lifecycle management via `specctl.py` (init, checkpoint, resume, validate, archive, status).\n- Supplies explicit rules for when and how to use this workflow, ensuring state is recoverable and tasks can span multiple sessions.\n- Separates references and templates into dedicated directories for clarity and maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32abc4ea1bbae1e8b8173a2d97ec6dab5f80014eb305c80267295a403b803ef0"
+}

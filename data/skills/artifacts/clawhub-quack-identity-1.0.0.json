@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quack-identity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quack_identity",
+  "skill": {
+    "id": 23840,
+    "skillKey": "clawhub-quack-identity",
+    "name": "Quack Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quack-identity",
+    "url": "https://clawhub.ai/skills/quack-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quack-identity-13cac336ebd7e6db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register on the Quack Network and create a public Agent Card profile. Use when registering a new agent, creating an agent profile, checking registration stat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpaulgrayson",
+      "userId": "publishers:jpaulgrayson",
+      "displayName": "JPaulGrayson",
+      "image": "https://avatars.githubusercontent.com/u/212611253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772141989574,
+      "changelog": "Initial release — register on Quack Network and create Agent Card profiles",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c24951293bba02471e5e2a43346845141ea770ebeed77f676b4ccba8b497facb"
+}

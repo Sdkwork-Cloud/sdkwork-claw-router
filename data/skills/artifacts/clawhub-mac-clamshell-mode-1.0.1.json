@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-clamshell-mode@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_clamshell_mode",
+  "skill": {
+    "id": 21582,
+    "skillKey": "clawhub-mac-clamshell-mode",
+    "name": "Mac Clamshell Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-clamshell-mode",
+    "url": "https://clawhub.ai/skills/mac-clamshell-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-clamshell-mode-fbcc5f567dbcb84e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mac laptop clamshell mode assistant. Supports running with lid closed WITHOUT external display/keyboard/mouse. Auto-detects Mac model and macOS version, prov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keenlycat",
+      "userId": "publishers:keenlycat",
+      "displayName": "keenlycat",
+      "image": "https://avatars.githubusercontent.com/u/63429838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772772391454,
+      "changelog": "- Improved support for running Mac laptops with the lid closed, now works without any external display, keyboard, or mouse.\n- Added auto-detection of Mac model and macOS version with tailored configuration options.\n- Introduced multiple configuration modes: standard clamshell, forced headless, temporary (caffeinate), status check, and easy restore to defaults.\n- Enhanced safety: explicit user approval for changes, clear battery/power warnings, and detailed rollback instructions.\n- Updated documentation with clearer feature explanations and use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f56b3cde37fc31e658a9cf59538d753650032081b78e3cede15cd18cd7182fc"
+}

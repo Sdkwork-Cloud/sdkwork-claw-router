@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8735,
+  "uuid": "skill-clawhub-openai-tts",
+  "skillKey": "clawhub-openai-tts",
+  "name": "OpenAI TTS",
+  "summary": "Text-to-speech via OpenAI Audio Speech API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark Pors 🦖",
+      "features": [
+        "Text-to-speech via OpenAI Audio Speech API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openai-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1078320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openai-tts",
+      "url": "https://clawhub.ai/skills/openai-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-tts",
+    "url": "https://clawhub.ai/skills/openai-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-tts-513b47d377bf12c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openai-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openai-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:764d2a1cc0cf9efcc3d2d847fb8f249ef78eacb33bf16958d354689c37e2fcdc",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T08:29:34.911Z"
+}

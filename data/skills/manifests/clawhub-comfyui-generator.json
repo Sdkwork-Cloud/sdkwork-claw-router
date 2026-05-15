@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38548,
+  "uuid": "skill-clawhub-comfyui-generator",
+  "skillKey": "clawhub-comfyui-generator",
+  "name": "ComfyUI Generator",
+  "summary": "Generate AI images and perform style transfers via ComfyUI with batch processing and automated workflow management through OpenClaw integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nl108",
+      "features": [
+        "Generate AI images and perform style transfers via ComfyUI with batch processing and automated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43090644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-generator",
+      "url": "https://clawhub.ai/skills/comfyui-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-generator",
+    "url": "https://clawhub.ai/skills/comfyui-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-generator-002758801f18ef16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a17902c03a2d7ee09c0049851719a21b372e7f7c6a6ccf8ea1cac0ec5393685f",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:27:20.129Z"
+}

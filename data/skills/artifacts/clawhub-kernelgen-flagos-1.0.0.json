@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kernelgen-flagos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kernelgen_flagos",
+  "skill": {
+    "id": 35923,
+    "skillKey": "clawhub-kernelgen-flagos",
+    "name": "KernelGen FlagOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kernelgen-flagos",
+    "url": "https://clawhub.ai/skills/kernelgen-flagos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kernelgen-flagos-a86aa1ccb2888146.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified GPU kernel operator generation skill. Automatically detects the target repository type (FlagGems, vLLM, or general Python/Triton) and dispatches to t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wbavon",
+      "userId": "s179mcxns07mhashdtzg4tbf6584wt8v",
+      "displayName": "Flagos",
+      "image": "https://avatars.githubusercontent.com/u/263577448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240400901,
+      "changelog": "- Initial release of kernelgen-flagos as a unified GPU kernel operator generation skill.\n- Automatically detects repository type (FlagGems, vLLM, or general Python/Triton) and dispatches to the appropriate specialized workflow.\n- Combines four sub-skills: kernelgen-general, kernelgen-for-flaggems, kernelgen-for-vllm, and kernelgen-submit-feedback, removing the need for separate installations.\n- Enforces mandatory use of the MCP tool for all operator code generation.\n- Supports user-invoked feedback and bug report submission via the bundled feedback sub-skill.\n- Enhances user experience with clear routing, explicit detection rules, and a quick reference guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:144d63d35bc8f04b7d85c80e9402a8b1c8bcc521bae908f172405ec4cb67e5ef"
+}

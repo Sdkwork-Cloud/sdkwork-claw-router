@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/robonet-workbench@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robonet_workbench",
+  "skill": {
+    "id": 12179,
+    "skillKey": "clawhub-robonet-workbench",
+    "name": "Robonet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robonet-workbench",
+    "url": "https://clawhub.ai/skills/robonet-workbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robonet-workbench-ab41ccfaafa81c13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Robonet's MCP server to build, backtest, optimize, and deploy trading strategies. Provides 24 specialized tools for crypto and prediction market trading: (1) Data tools for browsing strategies, symbols, indicators, Allora topics, and b."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickemmons",
+      "userId": "publishers:nickemmons",
+      "displayName": "nickemmons",
+      "image": "https://avatars.githubusercontent.com/u/5005545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1852,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770084204091,
+      "changelog": "Initial release of robonet-workbench: a comprehensive toolkit for building, testing, and deploying trading strategies using Robonet's MCP server.\n\n- Provides 24 MCP tools across 6 categories: data access, AI strategy generation, backtesting, prediction markets, deployment, and account management.\n- Supports end-to-end workflows: data exploration, strategy creation (including ML-enhanced and AI-generated), backtesting, optimization, and live deployment on Hyperliquid/Polymarket.\n- Includes documentation for tool pricing, usage recommendations, strategy development best practices, and workflow examples.\n- Designed for crypto and prediction market traders leveraging Allora Network ML signals and Robonet's advanced automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fccd709ac7ce1a35438cd2ca9ddf04f29136250b0da9eb5fa3d7bbdc8146418b"
+}

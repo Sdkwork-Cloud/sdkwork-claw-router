@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57991,
+  "uuid": "skill-clawhub-openclaw-telegram-acp-troubleshooter",
+  "skillKey": "clawhub-openclaw-telegram-acp-troubleshooter",
+  "name": "OpenClaw Telegram ACP Troubleshooter",
+  "summary": "Diagnose why Telegram forum topics do not reliably route into OpenClaw ACP sessions backed by codex. 诊断 Telegram 话题为何无法稳定进入 OpenClaw 的 codex ACP 会话。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_telegram_acp_troubleshooter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grey0758",
+      "features": [
+        "Diagnose why Telegram forum topics do not reliably route into OpenClaw ACP sessions backed by c.",
+        "诊断 Telegram 话题为何无法稳定进入 OpenClaw 的 codex ACP 会话。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-telegram-acp-troubleshooter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110289906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-telegram-acp-troubleshooter",
+      "url": "https://clawhub.ai/skills/openclaw-telegram-acp-troubleshooter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-telegram-acp-troubleshooter",
+    "url": "https://clawhub.ai/skills/openclaw-telegram-acp-troubleshooter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-telegram-acp-troubleshooter-1701f791e19742cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-telegram-acp-troubleshooter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-telegram-acp-troubleshooter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11aa789802b113de25276eedce0913b99600fe6cac6bd3bfbfbfc6889faef9d1",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:40:01.979Z"
+}

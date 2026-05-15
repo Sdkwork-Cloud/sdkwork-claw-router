@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27579,
+  "uuid": "skill-clawhub-my-test-2",
+  "skillKey": "clawhub-my-test-2",
+  "name": "my-test-2",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_test_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuckyJin",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-test-2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34025230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-test-2",
+      "url": "https://clawhub.ai/skills/my-test-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-test-2",
+    "url": "https://clawhub.ai/skills/my-test-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-test-2-2f57fac1f6b5fa2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-test-2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-test-2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aa65f72400f2bf02b3f28197dfe8c685655976bf146cbc64d4605f2717fcc93",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:18:22.253Z"
+}

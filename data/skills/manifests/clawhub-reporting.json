@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17192,
+  "uuid": "skill-clawhub-reporting",
+  "skillKey": "clawhub-reporting",
+  "name": "Reporting",
+  "summary": "Standardized templates for periodic reports, system audits, revenue tracking, and progress logs. All output goes to workspace/artifacts/ directory. Use when: generating periodic reports, system audits, performance reviews, revenue tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reporting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "staybased",
+      "features": [
+        "Standardized templates for periodic reports, system audits, revenue tracking, and progress logs",
+        "All output goes to workspace/artifacts/ directory",
+        "Use when: generating periodic reports, system audits, performance reviews, revenue tracking, we.",
+        "Don't use when: ad-hoc status updates in chat, quick summaries in Discord, one-off answers to \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reporting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216957304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reporting",
+      "url": "https://clawhub.ai/skills/reporting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reporting",
+    "url": "https://clawhub.ai/skills/reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reporting-637d7becb9983937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reporting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reporting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3f4ccfee57598b82949338311c29f7d2972bb48ed005b94be01751c58173243",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:23:30.984Z"
+}

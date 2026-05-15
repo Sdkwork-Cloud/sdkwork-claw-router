@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gov-doc-writing@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_doc_writing",
+  "skill": {
+    "id": 71454,
+    "skillKey": "clawhub-gov-doc-writing",
+    "name": "国央企word文档"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-doc-writing",
+    "url": "https://clawhub.ai/skills/gov-doc-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-doc-writing-95f4d3da635fe2d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此技能用于创建符合中国政府及央企规范的Word文档(.docx)。当用户要求创建公文、国央企文档、规范文书、正式报告等需要特定中国公文格式的文档时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-lhliang",
+      "userId": "s176g3m7mbt4d359wwkdaq0g1585j937",
+      "displayName": "刘洪亮Leo",
+      "image": "https://avatars.githubusercontent.com/u/39986022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1777181757675,
+      "changelog": "- Added detailed documentation for creating Word documents aligned with Chinese government and central enterprise standards, including full style, margin, font, and formatting specifications.\n- Provided example usage via JavaScript API and CLI, with step-by-step code samples.\n- Documented table and image formatting rules in detail, specifying style names, color schema, vertical/horizontal alignment, and line spacing.\n- Clarified document property requirements (e.g., removing author metadata, page numbering, no cover page).\n- Included tips on font size conversions, text normalization, and style application for compliant output.\n- Listed core script location and modular functions for integrating skill in automation workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a423dedd76ced9dffcb940e4a4b40cd8322bfa0820676d1a64b4704f64d8802e"
+}

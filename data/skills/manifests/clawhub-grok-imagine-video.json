@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10435,
+  "uuid": "skill-clawhub-grok-imagine-video",
+  "skillKey": "clawhub-grok-imagine-video",
+  "name": "Grok Imagine Video Generation",
+  "summary": "xAI Grok Imagine API integration for image generation, text-to-video, image-to-video, and editing via natural language. Use when you need to generate images or videos from text prompts, edit existing images, animate static images into vide.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_imagine_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevGwardo",
+      "features": [
+        "xAI Grok Imagine API integration for image generation, text-to-video, image-to-video, and editi.",
+        "Use when you need to generate images or videos from text prompts, edit existing images, animate.",
+        "Supports conversational generation across messaging platforms with async polling, progress upda."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-imagine-video@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25094504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-imagine-video",
+      "url": "https://clawhub.ai/skills/grok-imagine-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-imagine-video",
+    "url": "https://clawhub.ai/skills/grok-imagine-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-imagine-video-014b6efad121f91f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-imagine-video@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-imagine-video-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a0747d7f5a04c746e3fb833c8ceec59d8b14fd962d66ccfd30cc1276e9c1863",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T15:53:19.741Z"
+}

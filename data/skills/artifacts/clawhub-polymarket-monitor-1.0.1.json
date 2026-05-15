@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_monitor",
+  "skill": {
+    "id": 15036,
+    "skillKey": "clawhub-polymarket-monitor",
+    "name": "Polymarket Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-monitor",
+    "url": "https://clawhub.ai/skills/polymarket-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-monitor-bea1f209907c1ca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Polymarket prediction markets and alert when odds cross a threshold. Use when a user wants to track any Polymarket market probability, set up recurri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xmeir-dev",
+      "userId": "publishers:xmeir-dev",
+      "displayName": "Meir Rosenschein",
+      "image": "https://avatars.githubusercontent.com/u/229780782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1041,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771848475768,
+      "changelog": "Fix: replaced spoofed User-Agent with honest identifier; added conditionId input validation to prevent injection",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b23e283ae46499c614f3d0b87deba4e0d1dc89be0d1197e2a29df0e9fdb7a79"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swot-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swot_analysis",
+  "skill": {
+    "id": 24740,
+    "skillKey": "clawhub-swot-analysis",
+    "name": "Swot Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swot-analysis",
+    "url": "https://clawhub.ai/skills/swot-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swot-analysis-980201aff281fdda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct a comprehensive SWOT analysis to audit organizational position. Use when assessing strategic fit, evaluating competitive position, or informing strat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773980456636,
+      "changelog": "Initial release with comprehensive SWOT analysis framework.\n\n- Provides a detailed walkthrough for conducting SWOT analysis, including scope definition and factor prioritization.\n- Offers structured prompts and category lists for each SWOT quadrant.\n- Includes an explanation of the strategic cross-reference matrix (SO, WO, ST, WT strategies).\n- Specifies a clear output format for consistent, actionable reporting.\n- Shares practical tips to ensure honest and data-driven analyses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84697a7d2eb3e93fbcd176eb1b59fff85fc755cacff973b59395ec8c71981dbb"
+}

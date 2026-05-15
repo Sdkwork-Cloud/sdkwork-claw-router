@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-shopify-stores@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_shopify_stores",
+  "skill": {
+    "id": 31023,
+    "skillKey": "clawhub-best-shopify-stores",
+    "name": "Best Shopify Stores"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-shopify-stores",
+    "url": "https://clawhub.ai/skills/best-shopify-stores",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-shopify-stores-d4d2f6da2d3d078a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover the best Shopify stores with PPSPY by filtering stores by traffic, revenue, language, region, theme, and single-product characteristics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanyanggod",
+      "userId": "s176gtyby3x3jz51q780av8wjn83paxt",
+      "displayName": "fanyanggod",
+      "image": "https://avatars.githubusercontent.com/u/44659216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775099054403,
+      "changelog": "- Updated setup instructions for more precise onboarding.\n- Now includes links to both the real-time dashboard ([ppspy.com](https://www.ppspy.com/)) and the direct API management site ([api.ppspy.com](https://api.ppspy.com/)).\n- Clarifies where to obtain your API key and manage billing/recharge.\n- No changes to available features or tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4000d1625f03beba5cba892e5fba8a6e96f3f2b423c1ebbe0bb3c2acf821c440"
+}

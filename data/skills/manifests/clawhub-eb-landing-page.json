@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44102,
+  "uuid": "skill-clawhub-eb-landing-page",
+  "skillKey": "clawhub-eb-landing-page",
+  "name": "Landing Page",
+  "summary": "Build high-conversion landing pages. Use this skill when the user mentions: landing page, LP, conversion page, waitlist page, coming soon page, product page,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_landing_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Build high-conversion landing pages",
+        "Use this skill when the user mentions: landing page, LP, conversion page, waitlist page, coming."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-landing-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-landing-page",
+      "url": "https://clawhub.ai/skills/eb-landing-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-landing-page",
+    "url": "https://clawhub.ai/skills/eb-landing-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-landing-page-1dca04b73f49d312.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-landing-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-landing-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e67eba23845c01bbdc1830d3b733d5987329d1bba57f733495a192b740a3e48e",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:35:50.825Z"
+}

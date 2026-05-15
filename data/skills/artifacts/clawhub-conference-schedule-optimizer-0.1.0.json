@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conference-schedule-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conference_schedule_optimizer",
+  "skill": {
+    "id": 28375,
+    "skillKey": "clawhub-conference-schedule-optimizer",
+    "name": "Conference Schedule Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conference-schedule-optimizer",
+    "url": "https://clawhub.ai/skills/conference-schedule-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conference-schedule-optimizer-914752a86bfb15d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when planning conference schedules, optimizing session selection at scientific meetings, managing time between presentations, or maximizing networking at..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773884118074,
+      "changelog": "Initial release of conference-schedule-optimizer.\n\n- Generate personalized conference schedules balancing learning, networking, and career growth.\n- Prioritize sessions using custom criteria and weights (topic relevance, speaker, career value, networking).\n- Optimize schedules with constraints (breaks, must-attend sessions, conflicting interests).\n- Plan and schedule networking opportunities with key individuals.\n- Account for travel time between venue locations.\n- Command-line interface for PDF program input, real-time updates, and networking target export.\n- Includes best practices, checklists, and common patterns for attendees of scientific and medical conferences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b09fd0dbce9adbcb38a0841dde35c8741edcf294585023a5d4840ba799c9837"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13800,
+  "uuid": "skill-clawhub-qrcode",
+  "skillKey": "clawhub-qrcode",
+  "name": "QRCode",
+  "summary": "Generate styled QR codes (SVG/PNG/JPG) from user input. Supports custom module color, background, dot shape and eye shape, and many output options.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HeXavi8",
+      "features": [
+        "Generate styled QR codes (SVG/PNG/JPG) from user input",
+        "Supports custom module color, background, dot shape and eye shape, and many output options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcode@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51332043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcode",
+      "url": "https://clawhub.ai/skills/qrcode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode",
+    "url": "https://clawhub.ai/skills/qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode-6cbf40494f64db72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcode@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a5e0c2de5591c05c4605c9f98fe140fef77ba15e917070ec49d9da2d3da90d9",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T19:08:06.059Z"
+}

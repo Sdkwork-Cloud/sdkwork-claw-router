@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26331,
+  "uuid": "skill-clawhub-git-conventions",
+  "skillKey": "clawhub-git-conventions",
+  "name": "git-conventions",
+  "summary": "Git commit message conventions and workflow rules. Use when making git commits, pushing changes, or performing git operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_conventions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "douglarek",
+      "features": [
+        "Git commit message conventions and workflow rules",
+        "Use when making git commits, pushing changes, or performing git operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-conventions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-conventions",
+      "url": "https://clawhub.ai/skills/git-conventions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-conventions",
+    "url": "https://clawhub.ai/skills/git-conventions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-conventions-248edef2bf129f80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-conventions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-conventions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e027f97fd3022bba33d47eb71e8cf97b97b30f0cec61b9f8114982eb88bc8bbc",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:38:00.710Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12394,
+  "uuid": "skill-clawhub-local-voice",
+  "skillKey": "clawhub-local-voice",
+  "name": "Local Voice (FluidAudio TTS/STT)",
+  "summary": "Local text-to-speech (TTS) and speech-to-text (STT) using FluidAudio on Apple Silicon. Sub-second voice synthesis and transcription running entirely on-device via the Apple Neural Engine. Use when setting up local voice capabilities, voice.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Trond Wuellner",
+      "features": [
+        "Local text-to-speech (TTS) and speech-to-text (STT) using FluidAudio on Apple Silicon",
+        "Sub-second voice synthesis and transcription running entirely on-device via the Apple Neural En.",
+        "Use when setting up local voice capabilities, voice assistant integration, or replacing cloud T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-voice@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1905060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-voice",
+      "url": "https://clawhub.ai/skills/local-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-voice",
+    "url": "https://clawhub.ai/skills/local-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-voice-7bc46bf5b13670ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-voice@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-voice-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0559809c4f071be25843421accb3f31235c3ed3e760952f4441c8946d1838df",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T06:10:59.119Z"
+}

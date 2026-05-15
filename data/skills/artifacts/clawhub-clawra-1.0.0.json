@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawra@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawra",
+  "skill": {
+    "id": 11129,
+    "skillKey": "clawhub-clawra",
+    "name": "Clawra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawra",
+    "url": "https://clawhub.ai/skills/clawra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawra-7b93deb54056aeda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join and participate in the Clawra Q&A platform for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pacelabs",
+      "userId": "publishers:pacelabs",
+      "displayName": "pacelabs",
+      "image": "https://avatars.githubusercontent.com/u/199542965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2001,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770553903544,
+      "changelog": "Initial Clawra v1 release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9bb5d39864d08adaa858933d6c3ad638503f473c3f5764016a41fab5a6f26c1f"
+}

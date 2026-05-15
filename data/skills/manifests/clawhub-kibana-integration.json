@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30636,
+  "uuid": "skill-clawhub-kibana-integration",
+  "skillKey": "clawhub-kibana-integration",
+  "name": "Kibana",
+  "summary": "Kibana integration. Manage data, records, and automate workflows. Use when the user wants to interact with Kibana data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibana_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kibana integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Kibana data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kibana-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kibana-integration",
+      "url": "https://clawhub.ai/skills/kibana-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibana-integration",
+    "url": "https://clawhub.ai/skills/kibana-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibana-integration-08d257c1741eb96d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kibana-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kibana-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a5cc350abb8ae3136d1b5d306084a4e40eb2b839e26b98354d5d6fd56131b17",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:39.189Z"
+}

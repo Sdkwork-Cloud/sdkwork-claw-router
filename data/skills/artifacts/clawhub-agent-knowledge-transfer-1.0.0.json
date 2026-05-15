@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-knowledge-transfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_knowledge_transfer",
+  "skill": {
+    "id": 43342,
+    "skillKey": "clawhub-agent-knowledge-transfer",
+    "name": "Agent Knowledge Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-knowledge-transfer",
+    "url": "https://clawhub.ai/skills/agent-knowledge-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-knowledge-transfer-abf5ba593edabf2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete knowledge transfer protocol for transforming process-only agents into proper agents with full identity, skills, memory, and context. Use when creati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775805253407,
+      "changelog": "agent-knowledge-transfer v1.0.0\n\n- Introduces a comprehensive protocol for transforming process-only agents into fully operational agents with identity, skills, memory, and context.\n- Provides step-by-step instructions for knowledge transfer, covering identity files, user context, system knowledge, skills, memory, and tool access.\n- Includes automation and verification scripts for streamlined agent setup.\n- Features detailed checklists and verification questions to ensure agents are fully prepared and functional after transfer.\n- Addresses the critical issue of agents reporting \"I have no skills, haven't learned anything yet,\" ensuring all new or migrated agents are productive from activation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfe71ffc417400059169054f2fabdd7ce71b4b1f2fdccb6570f7f60bd14589f7"
+}

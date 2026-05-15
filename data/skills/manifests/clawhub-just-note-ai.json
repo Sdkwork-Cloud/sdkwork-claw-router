@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72504,
+  "uuid": "skill-clawhub-just-note-ai",
+  "skillKey": "clawhub-just-note-ai",
+  "name": "记一下",
+  "summary": "像发消息一样记录一切（灵感/想法/知识/收支/日记/任务/引用），AI 自动分类、标签、关联，让知识自然生长。 支持微信/飞书消息输入，零摩擦记录。统一存储，多视图呈现（闪记视图/日记视图/周报视图）。 触发：用户发送任何想记录的内容时自动调用。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.just_note_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yankj",
+      "features": [
+        "像发消息一样记录一切（灵感/想法/知识/收支/日记/任务/引用），AI 自动分类、标签、关联，让知识自然生长。 支持微信/飞书消息输入，零摩擦记录。统一存储，多视图呈现（闪记视图/日记视图/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/just-note-ai@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15847212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "just-note-ai",
+      "url": "https://clawhub.ai/skills/just-note-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "just-note-ai",
+    "url": "https://clawhub.ai/skills/just-note-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/just-note-ai-4a14ab68bfeae93c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/just-note-ai@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-just-note-ai-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3535d2d56179a8416c49388ca7c75c58eadde7d707f630e762966eff4342e2ae",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:18:31.038Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68980,
+  "uuid": "skill-clawhub-aigc-reducer",
+  "skillKey": "clawhub-aigc-reducer",
+  "name": "aigc-reducer",
+  "summary": "降低论文AIGC检测率的专业化处理流水线。当用户需要降低AI生成文本检测率、降低AIGC百分比、去除AI写作特征、规避Turnitin检测、论文去AI化、让论文更像人类写作时使用。本skill包含5个专业化模块：词汇清洗、句法节奏打乱、机械连词隐蔽、学术克制注入、困惑度重构。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_reducer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nudt-eddie",
+      "features": [
+        "降低论文AIGC检测率的专业化处理流水线。当用户需要降低AI生成文本检测率、降低AIGC百分比、去除AI写作特征、规避Turnitin检测、论文去AI化、让论文更像人类写作时使用。本skil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc-reducer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70185338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc-reducer",
+      "url": "https://clawhub.ai/skills/aigc-reducer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-reducer",
+    "url": "https://clawhub.ai/skills/aigc-reducer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-reducer-92755eb0e57a0b54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc-reducer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-reducer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4572d6d223fdf8a4f6241115b62789bf8aec8547bb9547a8703d8dc6475a91fa",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:57:51.886Z"
+}

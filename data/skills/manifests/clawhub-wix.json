@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19841,
+  "uuid": "skill-clawhub-wix",
+  "skillKey": "clawhub-wix",
+  "name": "Wix",
+  "summary": "Wix integration. Manage Stores. Use when the user wants to interact with Wix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Wix integration",
+        "Manage Stores",
+        "Use when the user wants to interact with Wix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wix",
+      "url": "https://clawhub.ai/skills/wix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wix",
+    "url": "https://clawhub.ai/skills/wix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wix-82b818c5f0192223.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3221ea0c8980333e85fc07ba2176593d30387e975cae82d7fb98d2d58329bdb",
+      "artifactSizeBytes": 1762
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:11:32.566Z"
+}

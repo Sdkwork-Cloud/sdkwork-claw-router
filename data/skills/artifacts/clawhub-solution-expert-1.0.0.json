@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solution-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solution_expert",
+  "skill": {
+    "id": 57192,
+    "skillKey": "clawhub-solution-expert",
+    "name": "解决方案专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solution-expert",
+    "url": "https://clawhub.ai/skills/solution-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solution-expert-392bec50f622fead.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn customer background, current problems, and target requirements into a consulting-grade solution narrative and PPT-ready JSON outline. Use when Codex nee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renqiukai",
+      "userId": "publishers:renqiukai",
+      "displayName": "renqiukai",
+      "image": "https://avatars.githubusercontent.com/u/9354413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773833451209,
+      "changelog": "Initial release of Solution Expert skill.\n\n- Generate consulting-grade solution narratives and PPT-ready JSON outlines from customer/project background, problems, and requirements.\n- Accept input as either structured files or plain text, normalizing and inferring key business details.\n- Output only JSON in a strict schema, optimized for direct PPT generation.\n- Includes default deck structure, table of contents, and slide writing standards focused on problem diagnosis and actionable solutions.\n- Provides explicit file naming conventions and an automated workflow for end-to-end JSON to PPTX generation.\n- Ensures dense, fact-based content with clear business value and minimal marketing language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3ea296d812ebaa79a00520b872a70d8bca9d2f5e0af3fe0463b22a2edf14e52"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-reply-unreplied@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_reply_unreplied",
+  "skill": {
+    "id": 30236,
+    "skillKey": "clawhub-x-reply-unreplied",
+    "name": "X Reply Unreplied"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-reply-unreplied",
+    "url": "https://clawhub.ai/skills/x-reply-unreplied",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-reply-unreplied-5ae4dc42fd0b6621.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check X notifications, mentions, or reply threads and answer posts that still need a response from the user. Use when the user wants help replying to unrepli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dishant0406",
+      "userId": "s17eesnw5kqz6wryn0n59ma5sx84mrsv",
+      "displayName": "Dishant Sharma",
+      "image": "https://avatars.githubusercontent.com/u/90952604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776881998175,
+      "changelog": "No changes detected in this version.\n\n- Version 1.1.2 was released with no modifications to existing files or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aefee5e900fb84344ef052cfa095782168c65a07cc8a24bdae293411665c33c"
+}

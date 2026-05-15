@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33315,
+  "uuid": "skill-clawhub-oss-pilot",
+  "skillKey": "clawhub-oss-pilot",
+  "name": "Oss Pilot",
+  "summary": "End-to-end open-source GitHub contribution automation system. Discover high-value issues, implement fixes, open quality PRs, monitor CI/review status, and le...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oss_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cypher",
+      "features": [
+        "End-to-end open-source GitHub contribution automation system",
+        "Discover high-value issues, implement fixes, open quality PRs, monitor CI/review status, and le."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oss-pilot@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28184436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oss-pilot",
+      "url": "https://clawhub.ai/skills/oss-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oss-pilot",
+    "url": "https://clawhub.ai/skills/oss-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oss-pilot-743c161c09e9a36b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oss-pilot@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-oss-pilot-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1753e51af6089fd031cdb083a2d2a5de0ccfff891ed7165f6f258997270f1e20",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:40:56.228Z"
+}

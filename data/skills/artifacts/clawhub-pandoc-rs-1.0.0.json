@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pandoc-rs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pandoc_rs",
+  "skill": {
+    "id": 46353,
+    "skillKey": "clawhub-pandoc-rs",
+    "name": "Pandoc Rust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pandoc-rs",
+    "url": "https://clawhub.ai/skills/pandoc-rs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pandoc-rs-6e8a78519ec5559c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A powerful document conversion tool supporting Html, Markdown, Docx, PDF, and LaTeX formats. Provides bidirectional conversion between these formats using a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyoung",
+      "userId": "s1791jtrp7z0s6h87f8f0twdk183pq6y",
+      "displayName": "guyoung",
+      "image": "https://avatars.githubusercontent.com/u/1448308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775715524025,
+      "changelog": "Initial release of Pandoc Rs document conversion tool.\n\n- Supports bidirectional conversion between Html, Markdown, Docx, PDF, and LaTeX formats using a WebAssembly-based engine.\n- Designed to trigger when users request document format conversion among the supported types.\n- Provides a quick start guide for setup and usage, including file access instructions.\n- Lists all supported format conversions with clear directionality.\n- Includes references for detailed usage and examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfc2dcd1ae28ff02590c6fe9e2099087cae90a38aac01a603d9554c5d5c18c51"
+}

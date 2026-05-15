@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/st-ent-skills-install@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.st_ent_skills_install",
+  "skill": {
+    "id": 54907,
+    "skillKey": "clawhub-st-ent-skills-install",
+    "name": "St Ent Mcp Install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "st-ent-skills-install",
+    "url": "https://clawhub.ai/skills/st-ent-skills-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/st-ent-skills-install-b7abf0c63fa4c1ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, wire, and verify the 699pic enterprise MCP server from the GitHub repository https://github.com/st699pic/st-ent-mcp . Use when the user asks to 安装 s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "st699pic",
+      "userId": "publishers:st699pic",
+      "displayName": "st699pic",
+      "image": "https://avatars.githubusercontent.com/u/130146777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773387914158,
+      "changelog": "- Improved security guidance: added explicit trust, audit, and code review requirements before running install scripts.\n- Updated preconditions to require git, node, and mcporter, and recommend least-privilege API keys and isolated environments if needed.\n- Expanded install workflow steps to emphasize code inspection and safety.\n- Clarified that required environment variables are documented in the skill due to format limitations.\n- Minor updates to notes and documentation for accuracy and user safety.\n- Added an OpenAI agent configuration file (agents/openai.yaml).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51d5f80b1925c7871dd0dedf58c0c5f6a247d0c0ccc363358a08f3945b79837e"
+}

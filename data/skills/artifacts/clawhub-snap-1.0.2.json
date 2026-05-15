@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snap@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snap",
+  "skill": {
+    "id": 13767,
+    "skillKey": "clawhub-snap",
+    "name": "SaaS (Screenshot As A Service)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snap",
+    "url": "https://clawhub.ai/skills/snap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snap-1c27324f013705cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent the ability to instantly take screenshots of any website with just the URL. Cloud-based so your agent has to perform no work. Free forever, open source."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kav-k",
+      "userId": "publishers:kav-k",
+      "displayName": "Kav-K",
+      "image": "https://avatars.githubusercontent.com/u/21161101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1134,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770699241316,
+      "changelog": "- Added a YAML front matter block with skill name, description, author, and version to SKILL.md.\n- Improved the description to emphasize agent use, cloud-based convenience, free availability, and open source.\n- No changes to API functionality or usage; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d4e9c03bb8bf60a2f95de666b5f5b72af1e9a63022718542a9037e676a619bc"
+}

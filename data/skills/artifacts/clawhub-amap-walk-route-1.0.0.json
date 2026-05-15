@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-walk-route@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_walk_route",
+  "skill": {
+    "id": 69215,
+    "skillKey": "clawhub-amap-walk-route",
+    "name": "Amap Walk Route"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-walk-route",
+    "url": "https://clawhub.ai/skills/amap-walk-route",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-walk-route-638ee9fb01980511.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "告诉我你在哪、想走多远，自动规划一条经过公园、湖边、咖啡馆的散步路线。生成高德地图二维码，扫码即可边走边导航。适合周末散步、跑步、遛狗、City Walk。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "770600682-cyber",
+      "userId": "s170hh1asz5mp3w3w80qd7y0b584wcq6",
+      "displayName": "SmartVicky",
+      "image": "https://avatars.githubusercontent.com/u/270828245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776259788482,
+      "changelog": "- Initial release of \"周末遛弯路线 Walk Route\" (v1.0.0) skill\n- Generates custom walking routes based on user location and desired distance, automatically connecting parks, lakesides, coffee shops, etc.\n- Prioritizes looped routes returning to the starting point, with options for various themes (coffee tour, park loop, riverside walk)\n- Provides a Gaode Map QR code for instant route navigation in the app\n- Supports scenarios including walking, jogging, dog-walking, and family strolls\n- Requires setup of the AMAP_API_KEY environment variable for access to Gaode Map Web Service APIs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cd8c388c15f770dbd05097947ac5e8b3fe02d2f389217038f0a7ec9aa1b2cd9"
+}

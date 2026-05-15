@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69227,
+  "uuid": "skill-clawhub-free-douyin-downloader",
+  "skillKey": "clawhub-free-douyin-downloader",
+  "name": "下载抖音视频到本地文件（免费+无水印）",
+  "summary": "下载抖音视频到本地文件。当用户需要下载抖音视频、提取抖音链接内容、或保存抖音分享的视频时使用。支持抖音短链（v.douyin.com）、分享文本（含短链）、视频直链（douyin.com/video/...）三种输入格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_douyin_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wudi",
+      "features": [
+        "下载抖音视频到本地文件。当用户需要下载抖音视频、提取抖音链接内容、或保存抖音分享的视频时使用。支持抖音短链（v.douyin.com）、分享文本（含短链）、视频直链（douyin.com/v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-douyin-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3753615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-douyin-downloader",
+      "url": "https://clawhub.ai/skills/free-douyin-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-douyin-downloader",
+    "url": "https://clawhub.ai/skills/free-douyin-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-douyin-downloader-ccbaf9f18969ffc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-douyin-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-douyin-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f0c5892fc68034d5296415e47b851c0bf156a6f2442d04b00bda592a791576c",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:55:35.324Z"
+}

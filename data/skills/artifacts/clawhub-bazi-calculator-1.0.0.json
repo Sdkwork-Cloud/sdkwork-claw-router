@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_calculator",
+  "skill": {
+    "id": 50893,
+    "skillKey": "clawhub-bazi-calculator",
+    "name": "BaZi Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-calculator",
+    "url": "https://clawhub.ai/skills/bazi-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-calculator-f9c9fa4b6fa008f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate a person’s Four Pillars (BaZi / Eight Characters) from birth date and time using sexagenary-cycle offsets from one trusted reference datetime that..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wingchiu",
+      "userId": "s176egwp1q3t1bzz4ycgwvx8h983tx3t",
+      "displayName": "wingchiu",
+      "image": "https://avatars.githubusercontent.com/u/2759231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773246148899,
+      "changelog": "Initial release with Four Pillars, DaYun, and LiuNian support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7973e7c3ab882b01fde474e5e231467c67a59141e6963bedf8d16b0d14d9bade"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8679,
+  "uuid": "skill-clawhub-tiangong-wps-word-automation",
+  "skillKey": "clawhub-tiangong-wps-word-automation",
+  "name": "Word Automation",
+  "summary": "Automate common Word/WPS document operations on Windows via COM (read text, replace, insert, headings, headers/footers, page breaks, merge, split, export to PDF/TXT, add/replace images). Use for single-document actions (no batch).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiangong_wps_word_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fadeloo",
+      "features": [
+        "Automate common Word/WPS document operations on Windows via COM (read text, replace, insert, he.",
+        "Use for single-document actions (no batch)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiangong-wps-word-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57167602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiangong-wps-word-automation",
+      "url": "https://clawhub.ai/skills/tiangong-wps-word-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiangong-wps-word-automation",
+    "url": "https://clawhub.ai/skills/tiangong-wps-word-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiangong-wps-word-automation-08c4fc3a5b626cea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiangong-wps-word-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiangong-wps-word-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a89061a8b540ff90c169496f9e5b3fa195647638043322713b0a74f22bb7f11b",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T08:45:39.736Z"
+}

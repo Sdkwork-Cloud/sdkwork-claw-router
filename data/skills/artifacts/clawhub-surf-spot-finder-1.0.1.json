@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surf-spot-finder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surf_spot_finder",
+  "skill": {
+    "id": 45233,
+    "skillKey": "clawhub-surf-spot-finder",
+    "name": "Surf Forecast Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surf-spot-finder",
+    "url": "https://clawhub.ai/skills/surf-spot-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surf-spot-finder-0fe7d39ef18c9f06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides top 3 surf spots in a region ranked by wave height, wind direction, and wind speed using Surfline data and a defined scoring rubric."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wertopter",
+      "userId": "s176nqr1c4m9d9pvxxk89d1vj185p0z0",
+      "displayName": "Wertopter",
+      "image": "https://avatars.githubusercontent.com/u/57506406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778115154030,
+      "changelog": "- Migrated surf data collection from a Go script to a new Python script (`surfline_region_report.py`).\n- Updated command syntax to use Python: `python3 surfline_region_report.py` with revised arguments.\n- Adjusted all documentation and usage instructions to reflect the switch from Go to Python for data gathering.\n- No changes were made to the scoring, ranking, or output formatting rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2f8ca841ec4d811933eb060c215dc897857c62b4246be11674656076cabd477"
+}

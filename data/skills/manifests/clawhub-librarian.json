@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18809,
+  "uuid": "skill-clawhub-librarian",
+  "skillKey": "clawhub-librarian",
+  "name": "librarian companion",
+  "summary": "Conversational interface for semantic book search (companion skill for Librarian project)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.librarian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nicholas Frota",
+      "features": [
+        "Conversational interface for semantic book search (companion skill for Librarian project)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/librarian@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "librarian",
+      "url": "https://clawhub.ai/skills/librarian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "librarian",
+    "url": "https://clawhub.ai/skills/librarian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/librarian-2c445e1c04df4e24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/librarian@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-librarian-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04c4de811a3b0d201c6bc2ba27f0d76f3bff2ccff46edd21ca0d95bb91c8791c",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:48:20.531Z"
+}

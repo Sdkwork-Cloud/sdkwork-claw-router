@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37828,
+  "uuid": "skill-clawhub-jx-transcribe",
+  "skillKey": "clawhub-jx-transcribe",
+  "name": "transcribe",
+  "summary": "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx-transcribe",
+      "url": "https://clawhub.ai/skills/jx-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-transcribe",
+    "url": "https://clawhub.ai/skills/jx-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-transcribe-49ed0f570d755119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9351934c5b4d036b1b2cf94b9cec77281b2b095a7bdb4e718ba6b425d42c022",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:45:55.794Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-hd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_hd",
+  "skill": {
+    "id": 45394,
+    "skillKey": "clawhub-free-video-generator-hd",
+    "name": "Free Video Generator Hd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-hd",
+    "url": "https://clawhub.ai/skills/free-video-generator-hd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-hd-88a0553135e757e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into HD video files with this skill. Works with JPG, PNG, MP4, MOV files up to 200MB. content creators, small business owners, studen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776185654724,
+      "changelog": "- Initial release of Free Video Generator HD skill.\n- Generate HD 1080p videos from text or images and export as MP4.\n- Supports JPG, PNG, MP4, MOV uploads up to 200MB; processing takes 1–2 minutes.\n- Built-in free token system: 100 credits for 7 days for new users.\n- Offers easy file uploads, session-based editing, and cloud GPU rendering — no software install needed.\n- Action mapping for commands like export, upload, credits, and status; supports prompt-based workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a7704b6d41bc414bc49eac3a2939c909aad575a784f8a78341c9ba27393fd62"
+}

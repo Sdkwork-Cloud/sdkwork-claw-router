@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-markdown-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_markdown_search",
+  "skill": {
+    "id": 10361,
+    "skillKey": "clawhub-qmd-markdown-search",
+    "name": "QMD - Quick Markdown Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-markdown-search",
+    "url": "https://clawhub.ai/skills/qmd-markdown-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-markdown-search-077e095ed5b6c391.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local hybrid search for markdown notes and docs. Use when searching notes, finding related content, or retrieving documents from indexed collections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emcmillan80",
+      "userId": "publishers:emcmillan80",
+      "displayName": "emcmillan80",
+      "image": "https://avatars.githubusercontent.com/u/166746577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2659,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769694802515,
+      "changelog": "Local hybrid search for markdown notes: BM25 keyword search + semantic search with vector embeddings, running on-device with auto-downloaded models.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:102197cd4780a0339f2ff39cf88fc0da874c1065fb75905b4901989e8a4cf2f2"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16332,
+  "uuid": "skill-clawhub-flomo-via-app",
+  "skillKey": "clawhub-flomo-via-app",
+  "name": "Flomo Via App",
+  "summary": "Send notes and memos to flomo (浮墨笔记) via URL Scheme with automatic webhook fallback. Use when user wants to save thoughts, links, ideas, or content to their flomo inbox. Automatically falls back to webhook API if the flomo app is not avail.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flomo_via_app",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiantao1001",
+      "features": [
+        "Send notes and memos to flomo (浮墨笔记) via URL Scheme with automatic webhook fallback",
+        "Use when user wants to save thoughts, links, ideas, or content to their flomo inbox",
+        "Automatically falls back to webhook API if the flomo app is not available",
+        "Supports hashtags and quick capture workflows on macOS"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flomo-via-app@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3388988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flomo-via-app",
+      "url": "https://clawhub.ai/skills/flomo-via-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flomo-via-app",
+    "url": "https://clawhub.ai/skills/flomo-via-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flomo-via-app-7419f997b854dee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flomo-via-app@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-flomo-via-app-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d11243fd2db0543a1513ce8021071b33d2d663380d630c039aeef044c4a295be",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T07:21:05.822Z"
+}

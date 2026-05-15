@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caremax-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caremax_ocr",
+  "skill": {
+    "id": 41909,
+    "skillKey": "clawhub-caremax-ocr",
+    "name": "CareMax OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caremax-ocr",
+    "url": "https://clawhub.ai/skills/caremax-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caremax-ocr-dfcbe2d13090ca5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload medical reports and run OCR recognition via CareMax Health API. After upload succeeds, agents MUST immediately run OCR on the same session unless the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kittenyang",
+      "userId": "s17d91pcw1pk9x5gavqh0he8cn83vd8e",
+      "displayName": "Qitao Yang",
+      "image": "https://avatars.githubusercontent.com/u/5517281?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774778077189,
+      "changelog": "Initial publish to ClawHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95f404f3c981bbd2f6052acddd4b4e147759ef9789ce91ce7c2e7699579154ce"
+}

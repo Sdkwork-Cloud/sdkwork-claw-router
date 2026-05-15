@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40336,
+  "uuid": "skill-clawhub-smart-router-omni",
+  "skillKey": "clawhub-smart-router-omni",
+  "name": "Smart Router Omni",
+  "summary": "Universal smart routing skill that chooses the best installed skill or skill chain across mixed environments, and automatically applies OpenClaw-aware routin...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_router_omni",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "e2e5g",
+      "features": [
+        "Universal smart routing skill that chooses the best installed skill or skill chain across mixed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-router-omni@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130967590?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-router-omni",
+      "url": "https://clawhub.ai/skills/smart-router-omni"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-router-omni",
+    "url": "https://clawhub.ai/skills/smart-router-omni",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-router-omni-da3167a66116c7b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-router-omni@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-router-omni-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13bbbc28db081b2041c384f77e0a7586301f63fbd66a0fd8e976129da25597f0",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:05:36.691Z"
+}

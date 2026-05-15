@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57639,
+  "uuid": "skill-clawhub-byd",
+  "skillKey": "clawhub-byd",
+  "name": "Byd",
+  "summary": "Information assistant for 比亚迪 BYD. Search products, news, financials, and official resources for 比亚迪 BYD.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 比亚迪 BYD",
+        "Search products, news, financials, and official resources for 比亚迪 BYD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byd@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byd",
+      "url": "https://clawhub.ai/skills/byd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byd",
+    "url": "https://clawhub.ai/skills/byd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byd-f25bbea0b95de916.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byd@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-byd-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6c072c05804f63ec3963884110716983b1448e55e99a8ee7c9367ddeeedea66",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:08:09.193Z"
+}

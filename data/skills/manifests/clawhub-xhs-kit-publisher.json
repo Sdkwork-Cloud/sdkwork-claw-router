@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61476,
+  "uuid": "skill-clawhub-xhs-kit-publisher",
+  "skillKey": "clawhub-xhs-kit-publisher",
+  "name": "xhs-kit-publisher",
+  "summary": "使用xhs-kit Python库高效发布小红书内容，无需浏览器，支持多账号和定时发布",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_kit_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glittering",
+      "features": [
+        "使用xhs-kit Python库高效发布小红书内容，无需浏览器，支持多账号和定时发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-kit-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20500187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-kit-publisher",
+      "url": "https://clawhub.ai/skills/xhs-kit-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-kit-publisher",
+    "url": "https://clawhub.ai/skills/xhs-kit-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-kit-publisher-f48c80ec22edbcc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-kit-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-kit-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab685acee3c92417c2e085b6b9148b3c932f2e5c9f2f5d30503dcfac32c6a268",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:21:10.078Z"
+}

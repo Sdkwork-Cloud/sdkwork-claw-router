@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inputshield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inputshield",
+  "skill": {
+    "id": 44406,
+    "skillKey": "clawhub-inputshield",
+    "name": "inputshield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inputshield",
+    "url": "https://clawhub.ai/skills/inputshield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inputshield-eebfadbb73fa4264.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Input validation & sanitization scanner -- catches missing validation, unsafe deserialization, ReDoS, path traversal, command injection, and XSS patterns"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776191116721,
+      "changelog": "Fix: declare all deps, JWT verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e110dbee703e8655394a21aad6bf568a290e274efc2e92996ef7f9baea51b7f"
+}

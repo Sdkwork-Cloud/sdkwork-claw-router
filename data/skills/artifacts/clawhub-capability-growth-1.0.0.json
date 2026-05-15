@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capability-growth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_growth",
+  "skill": {
+    "id": 40946,
+    "skillKey": "clawhub-capability-growth",
+    "name": "Capability Growth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-growth",
+    "url": "https://clawhub.ai/skills/capability-growth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-growth-40b7d860b31be3c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks and grows agent capabilities over time"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776920825917,
+      "changelog": "Initial release of skylv-capability-growth.\n\n- Tracks and analyzes AI agent capability growth from session logs.\n- Measures task success rate, token efficiency, speed, skill improvement, and self-repair trends.\n- Supports multiple log formats (daily notes, session exports, JSON, plain text).\n- Generates detailed capability growth reports with visual summaries and top wins.\n- Command-line interface for report generation, metric trending, and period comparisons.\n- Designed for seamless integration with OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f4bfcdc274edad8523b4b4e738a3ae145b66ef82f7adb90b2f56b01b4694f7e"
+}

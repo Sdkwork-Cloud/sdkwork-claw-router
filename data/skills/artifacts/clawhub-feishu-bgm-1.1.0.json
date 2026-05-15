@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bgm@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bgm",
+  "skill": {
+    "id": 65076,
+    "skillKey": "clawhub-feishu-bgm",
+    "name": "Feishu BGM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bgm",
+    "url": "https://clawhub.ai/skills/feishu-bgm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bgm-032bfff26c9c809c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书场景化背景音乐生成器。通过 MiniMax Music API 生成纯音乐 BGM，以音频消息发送到飞书群。 触发词：\"来点BGM\"、\"开会背景音\"、\"加班音乐\"、\"头脑风暴BGM\"、\"会议音乐\"、\"工作BGM\"、 \"放点音乐\"、\"背景音乐\"、\"需要BGM\"。当用户在飞书群中描述场景并希望获得背景音乐时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylinr",
+      "userId": "s1762zn98mnjwa52gqaffygph983jy8y",
+      "displayName": "Rong",
+      "image": "https://avatars.githubusercontent.com/u/220700654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775794462759,
+      "changelog": "Add MiniMax CLI + Token Plan quick-start setup; CLI as primary generation method",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bfb0f105cef1537c6c4b078a8863dc40da17a3c34ed47fcfeb73af99f5cea5a"
+}

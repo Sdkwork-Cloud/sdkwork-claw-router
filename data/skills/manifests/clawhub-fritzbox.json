@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45084,
+  "uuid": "skill-clawhub-fritzbox",
+  "skillKey": "clawhub-fritzbox",
+  "name": "FRITZ!Box",
+  "summary": "Control AVM FRITZ!Box routers and Smarthome devices via TR-064 and Web API. Use when the user wants to manage their FRITZ!Box router (WLAN, connected devices...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fritzbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HW",
+      "features": [
+        "Control AVM FRITZ!Box routers and Smarthome devices via TR-064 and Web API",
+        "Use when the user wants to manage their FRITZ!Box router (WLAN, connected devices..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fritzbox@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/712975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fritzbox",
+      "url": "https://clawhub.ai/skills/fritzbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fritzbox",
+    "url": "https://clawhub.ai/skills/fritzbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fritzbox-cc86863bd5011540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fritzbox@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-fritzbox-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c47f0e631429b30023c19c95147d52975a039f2fcc6a4065055f6990af3198a9",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:05:06.103Z"
+}

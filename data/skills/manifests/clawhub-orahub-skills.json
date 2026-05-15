@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37439,
+  "uuid": "skill-clawhub-orahub-skills",
+  "skillKey": "clawhub-orahub-skills",
+  "name": "OraHub Skills",
+  "summary": "Route OraHub image edit requests to the right Ora workflow. Trigger for color match, color transfer, style transfer, \"make this photo look like the reference...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orahub_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Orahub-ora",
+      "features": [
+        "Route OraHub image edit requests to the right Ora workflow",
+        "Trigger for color match, color transfer, style transfer, \"make this photo look like the referen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orahub-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271401149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orahub-skills",
+      "url": "https://clawhub.ai/skills/orahub-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orahub-skills",
+    "url": "https://clawhub.ai/skills/orahub-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orahub-skills-dc2eefe60a78ae6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orahub-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-orahub-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08b0e53d6915e216e1ef39d2fe99be0fdce0c91099ed0ed465b5b1867fca54d7",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T13:05:29.642Z"
+}

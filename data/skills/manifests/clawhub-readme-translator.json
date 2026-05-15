@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60877,
+  "uuid": "skill-clawhub-readme-translator",
+  "skillKey": "clawhub-readme-translator",
+  "name": "README Translator",
+  "summary": "将 GitHub README 自动翻译成多种语言，支持中文、英文、日文、韩文等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_translator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "将 GitHub README 自动翻译成多种语言，支持中文、英文、日文、韩文等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-translator",
+      "url": "https://clawhub.ai/skills/readme-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-translator",
+    "url": "https://clawhub.ai/skills/readme-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-translator-3345dd172761b113.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e42e37144f54a3bf588dc990eac8c3915079548c94893d3c95120f72ecbcd18",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:34:44.282Z"
+}

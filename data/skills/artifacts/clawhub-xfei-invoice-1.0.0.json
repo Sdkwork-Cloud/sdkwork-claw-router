@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xfei-invoice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xfei_invoice",
+  "skill": {
+    "id": 57963,
+    "skillKey": "clawhub-xfei-invoice",
+    "name": "讯飞票据识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xfei-invoice",
+    "url": "https://clawhub.ai/skills/xfei-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xfei-invoice-e3f81ba970a79ef3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recognize and extract structured data from invoices, receipts, and bills using iFlytek OCR API (科大讯飞票据识别). Supports VAT invoices, taxi receipts, train ticket..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingzhe2020",
+      "userId": "s17e3thgyg00vp9728mfseza8d83neqj",
+      "displayName": "Iflytek AIcloud",
+      "image": "https://avatars.githubusercontent.com/u/162573515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773838143047,
+      "changelog": "- Initial release of xfei-invoice: OCR-based invoice and receipt recognition using the iFlytek (科大讯飞) API.\n- Supports extraction of structured data from multiple invoice types, including VAT invoices, taxi receipts, train tickets, toll invoices, medical bills, and bank receipts.\n- Accepts common image formats (png, jpg, bmp, gif, tif, pdf) for recognition.\n- Simple CLI tool (scripts/invoice.py) for processing images and retrieving results in human-readable or raw JSON formats.\n- Authentication via environment variables for secure API access.\n- Comprehensive troubleshooting guide and error code reference included for easy problem resolution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa6e7e4b8c534da319f444100a524c8ce97417c82766c71914a2b54f34ad340e"
+}

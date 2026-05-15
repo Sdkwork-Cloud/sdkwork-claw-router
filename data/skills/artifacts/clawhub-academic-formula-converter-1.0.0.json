@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-formula-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_formula_converter",
+  "skill": {
+    "id": 17284,
+    "skillKey": "clawhub-academic-formula-converter",
+    "name": "Academic Formula Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-formula-converter",
+    "url": "https://clawhub.ai/skills/academic-formula-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-formula-converter-cebe7c2d95f2df94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert LaTeX math formulas in Markdown to styled docx or HTML documents with Unicode symbol support for academic use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khimyoung",
+      "userId": "s17e0jkyy192vc7kztczpysaz983k2nh",
+      "displayName": "KhimYoung",
+      "image": "https://avatars.githubusercontent.com/u/85329569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 764,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771538480521,
+      "changelog": "- Initial release of academic-formula-converter.\n- Converts LaTeX formulas in Markdown to Unicode for improved readability.\n- Exports Markdown with formulas and images to docx (Word) and styled HTML formats.\n- Supports both inline `$formula$` and block `$$formula$$` math syntax.\n- Provides command line interface for file conversion and image directory specification.\n- Includes sample LaTeX-to-Unicode mappings and installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13781d2a2cde3f7a03da215b65d36e6614dd8e66605de1ca9d099f56f5e8ec88"
+}

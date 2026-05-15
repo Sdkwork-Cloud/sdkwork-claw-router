@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68493,
+  "uuid": "skill-clawhub-vipshop-user-login",
+  "skillKey": "clawhub-vipshop-user-login",
+  "name": "唯品会用户登录",
+  "summary": "唯品会账号扫码登录技能。当用户说\"登录唯品会\"、\"唯品会登录\"、\"扫码登录唯品会\"、 \"我要登录唯品会账号\"，或其他技能检测到未登录需要引导登录时，应立即触发此技能。 执行完整的二维码登录流程：获取二维码 → 展示给用户扫码 → 轮询确认 → 保存登录态到 ~/.vipshop-user-login/tokens...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vipshop_user_login",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vip",
+      "features": [
+        "唯品会账号扫码登录技能。当用户说\"登录唯品会\"、\"唯品会登录\"、\"扫码登录唯品会\"、 \"我要登录唯品会账号\"，或其他技能检测到未登录需要引导登录时，应立即触发此技能。 执行完整的二维码登录流."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vipshop-user-login@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260809866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vipshop-user-login",
+      "url": "https://clawhub.ai/skills/vipshop-user-login"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vipshop-user-login",
+    "url": "https://clawhub.ai/skills/vipshop-user-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vipshop-user-login-689920a8c72f4626.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vipshop-user-login@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-vipshop-user-login-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acd173f4fa2f80f22370a9bf14ed12b724db1e87639879e9a9d3f3d0b5e45900",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:17:27.390Z"
+}

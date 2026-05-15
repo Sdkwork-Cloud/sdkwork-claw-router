@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitnote@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitnote",
+  "skill": {
+    "id": 51915,
+    "skillKey": "clawhub-bitnote",
+    "name": "BitNote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitnote",
+    "url": "https://clawhub.ai/skills/bitnote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitnote-1be87dbd3b013c91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized encrypted memory for agents—truly own your secrets, identity, and memories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rockwellshah",
+      "userId": "s17cnrnv8ta9p2bk4081annx2n85z2ng",
+      "displayName": "Rockwell",
+      "image": "https://avatars.githubusercontent.com/u/16342745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772075831996,
+      "changelog": "- Added section describing required environment variables and privileged capabilities for all operations.\n- Clarified which scripts have privileged access, their behaviors, and operator policy requirements.\n- Updated \"Quick Start\" to recommend dry-run writes for safety prior to on-chain broadcast.\n- Stated the usage of optional environment and profile fields for flexible configuration.\n- Emphasized the importance of explicit operator approval and caution when using real accounts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf422c5b522c3603c8d3f61f92955ec135e1c97ac3e5a7e8a97ebdc6c0d5d646"
+}

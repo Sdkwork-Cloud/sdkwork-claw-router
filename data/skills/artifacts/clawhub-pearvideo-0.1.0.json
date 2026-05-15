@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pearvideo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pearvideo",
+  "skill": {
+    "id": 70581,
+    "skillKey": "clawhub-pearvideo",
+    "name": "Pearvideo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pearvideo",
+    "url": "https://clawhub.ai/skills/pearvideo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pearvideo-f9f0c01a572251f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供梨视频公开短视频及话题页的内容检索与数据摘要，不涉及下载或接口逆向。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774223319588,
+      "changelog": "pearvideo-shortvideo-hot-trend 0.1.0\n\n- 初始发布，注册“梨视频”技能，用于整理与摘要公开短视频和话题页信息。\n- 支持关键词摘要、账号主页视频对比和榜单题材统计等常见任务。\n- 输出包括视频标题、作者昵称、点赞、评论、收藏等核心数据字段。\n- 明确强调不支持下载、接口逆向或突破风控，仅限公开页面轻量分析。\n- 增加平台合规与使用范围提示，适用于内部分析与提醒。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c883b25aba42b2089ef2d352de644e1f13351550ed5169124638493632158320"
+}

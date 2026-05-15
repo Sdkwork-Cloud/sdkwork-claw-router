@@ -27,9 +27,10 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "POST",
-                            "api_path": "/app/v3/api/router/api-keys",
+                            "api_path": "/app/v3/api/iam/api_keys",
                             "operation": "createKey",
-                            "tag": "router",
+                            "operation_id": "apiKeys.create",
+                            "tag": "iam",
                             "kind": "create",
                             "path_params": [],
                             "source": "apps/portal/apiKeyService.ts",
@@ -73,23 +74,23 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
         ClawRouterOpenApiGenerator(root=root).write()
 
     def write_sdk(self, root: Path, *, generic_method: bool = False) -> None:
-        base = root / "sdks" / "clawrouter-app-sdk"
+        base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
         (base / "src" / "api").mkdir(parents=True, exist_ok=True)
         (base / "src" / "types").mkdir(parents=True, exist_ok=True)
         method = (
             "  async createKey(body?: OperationRequest): Promise<PlusApiResult> {\n"
-            "    return this.client.post<PlusApiResult>(appApiPath(`/router/api-keys`), body, undefined, undefined, 'application/json');\n"
+            "    return this.client.post<PlusApiResult>(appApiPath(`/iam/api_keys`), body, undefined, undefined, 'application/json');\n"
             "  }\n"
             if generic_method
-            else "  async createKey(body: CreateApiKeyRequest, headers?: Record<string, string>): Promise<CreateKeyResult> {\n"
-            "    return this.client.post<CreateKeyResult>(appApiPath(`/router/api-keys`), body, undefined, headers, 'application/json');\n"
+            else "  async create(body: CreateApiKeyRequest, headers?: Record<string, string>): Promise<ApiKeysCreateResult> {\n"
+            "    return this.client.post<ApiKeysCreateResult>(appApiPath(`/iam/api_keys`), body, undefined, headers, 'application/json');\n"
             "  }\n"
         )
-        (base / "src" / "api" / "router.ts").write_text(
+        (base / "src" / "api" / "iam.ts").write_text(
             "import { appApiPath } from './paths';\n"
             "import type { HttpClient } from '../http/client';\n"
-            "import type { CreateApiKeyRequest, CreateKeyResult, OperationRequest, PlusApiResult } from '../types';\n"
-            "export class RouterApi {\n"
+            "import type { ApiKeysCreateResult, CreateApiKeyRequest, OperationRequest, PlusApiResult } from '../types';\n"
+            "export class IamApiKeysApi {\n"
             "  constructor(private client: HttpClient) {}\n"
             f"{method}"
             "}\n",
@@ -103,18 +104,18 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             "export interface CreateApiKeyResponse { rawKey: string; }\n",
             encoding="utf-8",
         )
-        (base / "src" / "types" / "create-key-result.ts").write_text(
+        (base / "src" / "types" / "api-keys-create-result.ts").write_text(
             "import type { CreateApiKeyResponse } from './create-api-key-response';\n"
-            "export interface CreateKeyResult { code: string; data?: CreateApiKeyResponse; }\n",
+            "export interface ApiKeysCreateResult { code: string; data?: CreateApiKeyResponse; }\n",
             encoding="utf-8",
         )
         (base / "src" / "types" / "index.ts").write_text(
             "export type { CreateApiKeyRequest } from './create-api-key-request';\n"
             "export type { CreateApiKeyResponse } from './create-api-key-response';\n"
-            "export type { CreateKeyResult } from './create-key-result';\n",
+            "export type { ApiKeysCreateResult } from './api-keys-create-result';\n",
             encoding="utf-8",
         )
-        backend = root / "sdks" / "clawrouter-backend-sdk" / "src"
+        backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
         (backend / "api").mkdir(parents=True, exist_ok=True)
         (backend / "types").mkdir(parents=True, exist_ok=True)
 
@@ -132,6 +133,335 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_openapi(root)
             self.write_sdk(root)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_closed_empty_request_object_as_record_never_type_alias(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "app",
+                                "api_method": "POST",
+                                "api_path": "/app/v3/api/billing/vip/points/daily_rewards",
+                                "operation": "createVipDailyReward",
+                                "operation_id": "vip.points.dailyRewards.create",
+                                "tag": "billing",
+                                "kind": "create",
+                                "path_params": [],
+                                "source": "apps/portal/billingService.ts",
+                                "read_sources": [],
+                                "write_tables": [],
+                                "request_schema": {
+                                    "name": "CommerceEmptyCommandRequest",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "properties": {},
+                                    },
+                                },
+                                "response_schema": {
+                                    "name": "CommerceOperationResponse",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["id"],
+                                        "properties": {"id": {"type": "string"}},
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "billing.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { CommerceEmptyCommandRequest, VipPointsDailyRewardsCreateResult } from '../types';\n"
+                "export class BillingVipPointsDailyRewardsApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async create(body: CommerceEmptyCommandRequest): Promise<VipPointsDailyRewardsCreateResult> {\n"
+                "    return this.client.post<VipPointsDailyRewardsCreateResult>(appApiPath(`/billing/vip/points/daily_rewards`), body, undefined, undefined, 'application/json');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "commerce-empty-command-request.ts").write_text(
+                "export type CommerceEmptyCommandRequest = Record<string, never>;\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "commerce-operation-response.ts").write_text(
+                "export interface CommerceOperationResponse { id: string; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "vip-points-daily-rewards-create-result.ts").write_text(
+                "import type { CommerceOperationResponse } from './commerce-operation-response';\n"
+                "export interface VipPointsDailyRewardsCreateResult { code: string; data?: CommerceOperationResponse; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { CommerceEmptyCommandRequest } from './commerce-empty-command-request';\n"
+                "export type { CommerceOperationResponse } from './commerce-operation-response';\n"
+                "export type { VipPointsDailyRewardsCreateResult } from './vip-points-daily-rewards-create-result';\n",
+                encoding="utf-8",
+            )
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
+            (backend / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_multipart_payload_schema_with_request_dto_sdk_body(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "generated" / "api").mkdir(parents=True, exist_ok=True)
+            (root / "generated" / "openapi").mkdir(parents=True, exist_ok=True)
+            (root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api").mkdir(parents=True)
+            (root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types").mkdir(parents=True)
+            (root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api").mkdir(parents=True)
+            (root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types").mkdir(parents=True)
+
+            upload_request = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["file"],
+                "properties": {"file": {"type": "string", "format": "binary"}},
+            }
+            upload_response = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["videoUrl", "sha256"],
+                "properties": {
+                    "videoUrl": {"type": "string"},
+                    "sha256": {"type": "string"},
+                },
+            }
+            manifest = {
+                "schema": {"version": "0.1.0"},
+                "operations": [
+                    {
+                        "api_surface": "app",
+                        "api_method": "POST",
+                        "api_path": "/app/v3/api/courses/applications/videos",
+                        "operation": "uploadCourseApplicationVideo",
+                        "operation_id": "applications.videos.create",
+                        "tag": "content",
+                        "kind": "create",
+                        "path_params": [],
+                        "source": "apps/portal/courseService.ts",
+                        "read_sources": [],
+                        "write_tables": [],
+                        "request_content_type": "multipart/form-data",
+                        "request_schema": {
+                            "name": "CourseApplicationVideoUploadRequest",
+                            "schema": upload_request,
+                        },
+                        "response_schema": {
+                            "name": "CourseApplicationVideoUploadResponse",
+                            "schema": upload_response,
+                        },
+                    }
+                ],
+            }
+            (root / "generated" / "api" / "api-contract-manifest.json").write_text(
+                json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            app_spec = {
+                "openapi": "3.1.0",
+                "paths": {
+                    "/app/v3/api/courses/applications/videos": {
+                        "post": {
+                            "operationId": "applications.videos.create",
+                            "requestBody": {
+                                "required": True,
+                                "content": {
+                                    "multipart/form-data": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"
+                                        }
+                                    }
+                                },
+                            },
+                            "responses": {
+                                "200": {
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/ApplicationsVideosCreateResult"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                        }
+                    }
+                },
+                "components": {
+                    "schemas": {
+                        "CourseApplicationVideoUploadRequest": upload_request,
+                        "CourseApplicationVideoUploadResponse": upload_response,
+                        "ApplicationsVideosCreateResult": {
+                            "type": "object",
+                            "properties": {
+                                "data": {
+                                    "$ref": "#/components/schemas/CourseApplicationVideoUploadResponse"
+                                }
+                            },
+                        },
+                    }
+                },
+            }
+            (root / "generated" / "openapi" / "clawrouter-app-openapi.json").write_text(
+                json.dumps(app_spec, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            (root / "generated" / "openapi" / "clawrouter-backend-openapi.json").write_text(
+                json.dumps({"openapi": "3.1.0", "paths": {}, "components": {"schemas": {}}}) + "\n",
+                encoding="utf-8",
+            )
+
+            sdk_base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
+            (sdk_base / "api" / "content.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { ApplicationsVideosCreateResult, CourseApplicationVideoUploadRequest } from '../types';\n"
+                "export class ContentApplicationsVideosApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async create(body: CourseApplicationVideoUploadRequest): Promise<ApplicationsVideosCreateResult> {\n"
+                "    return this.client.post<ApplicationsVideosCreateResult>(appApiPath(`/courses/applications/videos`), body, undefined, undefined, 'multipart/form-data');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (sdk_base / "types" / "course-application-video-upload-request.ts").write_text(
+                "export interface CourseApplicationVideoUploadRequest { file: string; }\n",
+                encoding="utf-8",
+            )
+            (sdk_base / "types" / "course-application-video-upload-response.ts").write_text(
+                "export interface CourseApplicationVideoUploadResponse { videoUrl: string; sha256: string; }\n",
+                encoding="utf-8",
+            )
+            (sdk_base / "types" / "applications-videos-create-result.ts").write_text(
+                "import type { CourseApplicationVideoUploadResponse } from './course-application-video-upload-response';\n"
+                "export interface ApplicationsVideosCreateResult { data?: CourseApplicationVideoUploadResponse; }\n",
+                encoding="utf-8",
+            )
+            (sdk_base / "types" / "index.ts").write_text(
+                "export type { CourseApplicationVideoUploadRequest } from './course-application-video-upload-request';\n"
+                "export type { CourseApplicationVideoUploadResponse } from './course-application-video-upload-response';\n"
+                "export type { ApplicationsVideosCreateResult } from './applications-videos-create-result';\n",
+                encoding="utf-8",
+            )
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_no_data_response_without_public_sdk_no_data_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "app",
+                                "api_method": "DELETE",
+                                "api_path": "/app/v3/api/comments/{commentId}",
+                                "operation": "deleteForumComment",
+                                "operation_id": "comments.delete",
+                                "tag": "comments",
+                                "kind": "delete",
+                                "path_params": ["commentId"],
+                                "source": "apps/portal/forumService.ts",
+                                "read_sources": ["plus_comments"],
+                                "write_tables": ["plus_comments"],
+                                "response_schema": {
+                                    "name": "NoData",
+                                    "schema": {"$ref": "#/components/schemas/NoData"},
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "comment.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { CommentsDeleteResult } from '../types';\n"
+                "export class CommentApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async delete(commentId: string | number): Promise<CommentsDeleteResult> {\n"
+                "    return this.client.delete<CommentsDeleteResult>(appApiPath(`/comments/${commentId}`));\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "comments-delete-result.ts").write_text(
+                "export interface CommentsDeleteResult { code: string; data?: never; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { CommentsDeleteResult } from './comments-delete-result';\n",
+                encoding="utf-8",
+            )
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
+            (backend / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "types").mkdir(parents=True, exist_ok=True)
 
             result = ClawRouterPayloadSdkAudit(root=root).run()
 
@@ -164,6 +494,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "GET",
                                 "api_path": "/app/v3/api/coupons/my",
                                 "operation": "fetchRedeemHistory",
+                                "operation_id": "coupons.mine.retrieve",
                                 "tag": "coupons",
                                 "kind": "read",
                                 "path_params": [],
@@ -196,17 +527,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             }
             self.write_app_spec(root, spec)
 
-            base = root / "sdks" / "clawrouter-app-sdk"
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "coupons.ts").write_text(
                 "import { appApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { FetchRedeemHistoryResult } from '../types';\n"
+                "import type { CouponsMineRetrieveResult } from '../types';\n"
                 "export class CouponsApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async fetchRedeemHistory(): Promise<FetchRedeemHistoryResult> {\n"
-                "    return this.client.get<FetchRedeemHistoryResult>(appApiPath(`/coupons/my`));\n"
+                "  async retrieve(): Promise<CouponsMineRetrieveResult> {\n"
+                "    return this.client.get<CouponsMineRetrieveResult>(appApiPath(`/coupons/my`));\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -220,18 +551,103 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export type BillingRedeemHistoryResponse = BillingRedeemHistoryItem[];\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "fetch-redeem-history-result.ts").write_text(
+            (base / "src" / "types" / "coupons-mine-retrieve-result.ts").write_text(
                 "import type { BillingRedeemHistoryResponse } from './billing-redeem-history-response';\n"
-                "export interface FetchRedeemHistoryResult { code: string; data?: BillingRedeemHistoryResponse; }\n",
+                "export interface CouponsMineRetrieveResult { code: string; data?: BillingRedeemHistoryResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
                 "export type { BillingRedeemHistoryItem } from './billing-redeem-history-item';\n"
                 "export type { BillingRedeemHistoryResponse } from './billing-redeem-history-response';\n"
-                "export type { FetchRedeemHistoryResult } from './fetch-redeem-history-result';\n",
+                "export type { CouponsMineRetrieveResult } from './coupons-mine-retrieve-result';\n",
                 encoding="utf-8",
             )
-            backend = root / "sdks" / "clawrouter-backend-sdk" / "src"
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
+            (backend / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_top_level_boolean_response_type_alias(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "app",
+                                "api_method": "GET",
+                                "api_path": "/app/v3/api/feeds/check-collected/{id}",
+                                "operation": "checkForumFeedCollected",
+                                "operation_id": "feeds.checkCollected.retrieve",
+                                "tag": "feeds",
+                                "kind": "read",
+                                "path_params": ["id"],
+                                "source": "apps/portal/forumService.ts",
+                                "read_sources": ["plus_favorite"],
+                                "write_tables": [],
+                                "response_schema": {
+                                    "name": "ForumBooleanResponse",
+                                    "schema": {"type": "boolean"},
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "feed.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { FeedsCheckCollectedRetrieveResult } from '../types';\n"
+                "export class FeedApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async retrieve(id: string | number): Promise<FeedsCheckCollectedRetrieveResult> {\n"
+                "    return this.client.get<FeedsCheckCollectedRetrieveResult>(appApiPath(`/feeds/check-collected/${id}`));\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "forum-boolean-response.ts").write_text(
+                "export type ForumBooleanResponse = boolean;\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "feeds-check-collected-retrieve-result.ts").write_text(
+                "import type { ForumBooleanResponse } from './forum-boolean-response';\n"
+                "export interface FeedsCheckCollectedRetrieveResult { code: string; data?: ForumBooleanResponse; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { FeedsCheckCollectedRetrieveResult } from './feeds-check-collected-retrieve-result';\n"
+                "export type { ForumBooleanResponse } from './forum-boolean-response';\n",
+                encoding="utf-8",
+            )
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
             (backend / "api").mkdir(parents=True, exist_ok=True)
             (backend / "types").mkdir(parents=True, exist_ok=True)
 
@@ -266,6 +682,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "GET",
                                 "api_path": "/app/v3/api/router/models",
                                 "operation": "fetchModels",
+                                "operation_id": "models.list",
                                 "tag": "router",
                                 "kind": "read",
                                 "path_params": [],
@@ -278,6 +695,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "GET",
                                 "api_path": "/app/v3/api/router/models",
                                 "operation": "fetchModelVendors",
+                                "operation_id": "modelVendors.list",
                                 "tag": "router",
                                 "kind": "read",
                                 "path_params": [],
@@ -311,8 +729,8 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
-            backend = root / "sdks" / "clawrouter-backend-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
             (backend / "api").mkdir(parents=True, exist_ok=True)
@@ -349,6 +767,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/channel",
                                 "operation": "addChannel",
+                                "operation_id": "channels.create",
                                 "tag": "channel",
                                 "kind": "create",
                                 "path_params": [],
@@ -393,17 +812,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "channel.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AddChannelResult, AdminChannelCreateRequest } from '../types';\n"
+                "import type { ChannelsCreateResult, AdminChannelCreateRequest } from '../types';\n"
                 "export class ChannelApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async add(body: AdminChannelCreateRequest): Promise<AddChannelResult> {\n"
-                "    return this.client.post<AddChannelResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
+                "  async create(body: AdminChannelCreateRequest): Promise<ChannelsCreateResult> {\n"
+                "    return this.client.post<ChannelsCreateResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -416,18 +835,18 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export interface AdminChannelMutationResponse { item: { id: string; name?: string }; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "add-channel-result.ts").write_text(
+            (base / "src" / "types" / "channels-create-result.ts").write_text(
                 "import type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n"
-                "export interface AddChannelResult { code: string; data?: AdminChannelMutationResponse; }\n",
+                "export interface ChannelsCreateResult { code: string; data?: AdminChannelMutationResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AddChannelResult } from './add-channel-result';\n"
+                "export type { ChannelsCreateResult } from './channels-create-result';\n"
                 "export type { AdminChannelCreateRequest } from './admin-channel-create-request';\n"
                 "export type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 
@@ -462,6 +881,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/provider-secrets",
                                 "operation": "addProviderSecret",
+                                "operation_id": "providerSecrets.create",
                                 "tag": "provider-secrets",
                                 "kind": "create",
                                 "path_params": [],
@@ -508,17 +928,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "provider-secret.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AddProviderSecretResult, AdminProviderSecretCreateRequest } from '../types';\n"
+                "import type { ProviderSecretsCreateResult, AdminProviderSecretCreateRequest } from '../types';\n"
                 "export class ProviderSecretApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async add(body: AdminProviderSecretCreateRequest): Promise<AddProviderSecretResult> {\n"
-                "    return this.client.post<AddProviderSecretResult>(backendApiPath(`/provider-secrets`), body, undefined, undefined, 'application/json');\n"
+                "  async create(body: AdminProviderSecretCreateRequest): Promise<ProviderSecretsCreateResult> {\n"
+                "    return this.client.post<ProviderSecretsCreateResult>(backendApiPath(`/provider-secrets`), body, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -536,25 +956,512 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export interface AdminProviderSecretMutationResponse { item: AdminProviderSecretItem; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "add-provider-secret-result.ts").write_text(
+            (base / "src" / "types" / "provider-secrets-create-result.ts").write_text(
                 "import type { AdminProviderSecretMutationResponse } from './admin-provider-secret-mutation-response';\n"
-                "export interface AddProviderSecretResult { code: string; data?: AdminProviderSecretMutationResponse; }\n",
+                "export interface ProviderSecretsCreateResult { code: string; data?: AdminProviderSecretMutationResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AddProviderSecretResult } from './add-provider-secret-result';\n"
+                "export type { ProviderSecretsCreateResult } from './provider-secrets-create-result';\n"
                 "export type { AdminProviderSecretCreateRequest } from './admin-provider-secret-create-request';\n"
                 "export type { AdminProviderSecretItem } from './admin-provider-secret-item';\n"
                 "export type { AdminProviderSecretMutationResponse } from './admin-provider-secret-mutation-response';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 
             result = ClawRouterPayloadSdkAudit(root=root).run()
 
             self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_resource_tree_method_matched_by_template_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "backend",
+                                "api_method": "PUT",
+                                "api_path": "/backend/v3/api/skill/{skillId}/assets/{assetId}",
+                                "operation": "updateSkillAsset",
+                                "operation_id": "skills.assets.update",
+                                "tag": "skill",
+                                "kind": "update",
+                                "path_params": ["skillId", "assetId"],
+                                "source": "apps/portal/skillService.tsx",
+                                "read_sources": ["plus_agent_skill", "studio_catalog_asset"],
+                                "write_tables": ["studio_catalog_asset", "ops_audit_log"],
+                                "request_schema": {
+                                    "name": "AdminSkillAssetUpdateRequest",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": [],
+                                        "properties": {"title": {"type": "string"}},
+                                    },
+                                },
+                                "response_schema": {
+                                    "name": "AdminSkillAssetMutationResponse",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["item"],
+                                        "properties": {
+                                            "item": {
+                                                "name": "AdminSkillAssetItem",
+                                                "type": "object",
+                                                "additionalProperties": False,
+                                                "required": ["id", "title"],
+                                                "properties": {
+                                                    "id": {"type": "string"},
+                                                    "title": {"type": "string"},
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "skill.ts").write_text(
+                "import { backendApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { AdminSkillAssetUpdateRequest, SkillsAssetsUpdateResult } from '../types';\n"
+                "export class SkillAssetsApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async update(skillId: string, assetId: string, body: AdminSkillAssetUpdateRequest): Promise<SkillsAssetsUpdateResult> {\n"
+                "    return this.client.put<SkillsAssetsUpdateResult>(backendApiPath(`/skill/${skillId}/assets/${assetId}`), body, undefined, undefined, 'application/json');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "admin-skill-asset-item.ts").write_text(
+                "export interface AdminSkillAssetItem { id: string; title: string; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "admin-skill-asset-update-request.ts").write_text(
+                "export interface AdminSkillAssetUpdateRequest { title?: string; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "admin-skill-asset-mutation-response.ts").write_text(
+                "import type { AdminSkillAssetItem } from './admin-skill-asset-item';\n"
+                "export interface AdminSkillAssetMutationResponse { item: AdminSkillAssetItem; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "skills-assets-update-result.ts").write_text(
+                "import type { AdminSkillAssetMutationResponse } from './admin-skill-asset-mutation-response';\n"
+                "export interface SkillsAssetsUpdateResult { code: string; data?: AdminSkillAssetMutationResponse; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { AdminSkillAssetItem } from './admin-skill-asset-item';\n"
+                "export type { AdminSkillAssetMutationResponse } from './admin-skill-asset-mutation-response';\n"
+                "export type { AdminSkillAssetUpdateRequest } from './admin-skill-asset-update-request';\n"
+                "export type { SkillsAssetsUpdateResult } from './skills-assets-update-result';\n",
+                encoding="utf-8",
+            )
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
+            (app / "api").mkdir(parents=True, exist_ok=True)
+            (app / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_rejects_explicit_no_body_operation_with_sdk_body_parameter(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "app",
+                                "api_method": "POST",
+                                "api_path": "/app/v3/api/feeds/collect/{id}",
+                                "operation": "collectForumFeed",
+                                "operation_id": "feeds.collect",
+                                "tag": "feeds",
+                                "kind": "action",
+                                "path_params": ["id"],
+                                "source": "apps/portal/forumService.ts",
+                                "read_sources": ["plus_feeds", "plus_favorite"],
+                                "write_tables": ["plus_feeds", "plus_favorite"],
+                                "request_body_required": False,
+                                "query_parameters_declared": True,
+                                "query_parameters": [
+                                    {
+                                        "name": "folderId",
+                                        "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                                    }
+                                ],
+                                "response_schema": {
+                                    "name": "ForumFeedItem",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["id"],
+                                        "properties": {"id": {"type": "integer", "format": "int64", "minimum": 1}},
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "feed.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { FeedsCollectResult, UnexpectedBodyRequest } from '../types';\n"
+                "export class FeedApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async collect(id: string | number, body?: UnexpectedBodyRequest): Promise<FeedsCollectResult> {\n"
+                "    return this.client.post<FeedsCollectResult>(appApiPath(`/feeds/collect/${id}`), body, undefined, undefined, 'application/json');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "unexpected-body-request.ts").write_text(
+                "export interface UnexpectedBodyRequest { folderId?: number; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "forum-feed-item.ts").write_text(
+                "export interface ForumFeedItem { id: number; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "feeds-collect-result.ts").write_text(
+                "import type { ForumFeedItem } from './forum-feed-item';\n"
+                "export interface FeedsCollectResult { code: string; data?: ForumFeedItem; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { FeedsCollectResult } from './feeds-collect-result';\n"
+                "export type { ForumFeedItem } from './forum-feed-item';\n"
+                "export type { UnexpectedBodyRequest } from './unexpected-body-request';\n",
+                encoding="utf-8",
+            )
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
+            (backend / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app feeds.collect SDK method must not accept body parameter for explicit no-body operation",
+                result.messages,
+            )
+
+    def test_accepts_optional_request_body_when_request_schema_is_declared(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "backend",
+                                "api_method": "POST",
+                                "api_path": "/backend/v3/api/platform/apps/list",
+                                "operation": "fetchApps",
+                                "operation_id": "apps.list",
+                                "tag": "app",
+                                "kind": "read",
+                                "path_params": [],
+                                "source": "apps/portal/adminAppService.ts",
+                                "read_sources": ["plus_app"],
+                                "write_tables": [],
+                                "request_body_required": False,
+                                "request_schema": {
+                                    "name": "AdminAppListRequest",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "properties": {
+                                            "q": {"type": "string", "maxLength": 128},
+                                        },
+                                    },
+                                },
+                                "response_schema": {
+                                    "name": "AdminAppListResponse",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["items"],
+                                        "properties": {
+                                            "items": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "additionalProperties": False,
+                                                    "required": ["id"],
+                                                    "properties": {
+                                                        "id": {"type": "string"},
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
+            (backend / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (backend / "src" / "api" / "app.ts").write_text(
+                "import { backendApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { AdminAppListRequest, AppsListResult } from '../types';\n"
+                "export class AppApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async list(body?: AdminAppListRequest, xRequestId?: string): Promise<AppsListResult> {\n"
+                "    return this.client.post<AppsListResult>(backendApiPath(`/app/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "admin-app-list-request.ts").write_text(
+                "export interface AdminAppListRequest { q?: string; }\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "admin-app-list-response.ts").write_text(
+                "export interface AdminAppListResponse { items: { id: string }[]; }\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "apps-list-result.ts").write_text(
+                "import type { AdminAppListResponse } from './admin-app-list-response';\n"
+                "export interface AppsListResult { code: string; data?: AdminAppListResponse; }\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "index.ts").write_text(
+                "export type { AdminAppListRequest } from './admin-app-list-request';\n"
+                "export type { AdminAppListResponse } from './admin-app-list-response';\n"
+                "export type { AppsListResult } from './apps-list-result';\n",
+                encoding="utf-8",
+            )
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
+            (app / "api").mkdir(parents=True, exist_ok=True)
+            (app / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_rejects_request_body_search_text_aliases(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "backend",
+                                "api_method": "POST",
+                                "api_path": "/backend/v3/api/platform/apps/list",
+                                "operation": "fetchApps",
+                                "operation_id": "apps.list",
+                                "tag": "app",
+                                "kind": "read",
+                                "path_params": [],
+                                "source": "apps/portal/adminAppService.ts",
+                                "read_sources": ["plus_app"],
+                                "write_tables": [],
+                                "request_body_required": False,
+                                "request_schema": {
+                                    "name": "AdminAppListRequest",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "properties": {
+                                            "q": {"type": "string", "maxLength": 128},
+                                            "keyword": {"type": "string", "maxLength": 128},
+                                            "search_query": {"type": "string", "maxLength": 128},
+                                            "search": {"type": "string", "maxLength": 128},
+                                            "searchQuery": {"type": "string", "maxLength": 128},
+                                        },
+                                    },
+                                },
+                                "response_schema": {
+                                    "name": "AdminAppListResponse",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["items"],
+                                        "properties": {
+                                            "items": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "additionalProperties": False,
+                                                    "required": ["id"],
+                                                    "properties": {
+                                                        "id": {"type": "string"},
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
+            (backend / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (backend / "src" / "api" / "app.ts").write_text(
+                "import { backendApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { AdminAppListRequest, AppsListResult } from '../types';\n"
+                "export class AppApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async list(body?: AdminAppListRequest, xRequestId?: string): Promise<AppsListResult> {\n"
+                "    return this.client.post<AppsListResult>(backendApiPath(`/app/list`), body, undefined, { 'X-Request-Id': xRequestId }, 'application/json');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "admin-app-list-request.ts").write_text(
+                "export interface AdminAppListRequest {\n"
+                "  q?: string;\n"
+                "  keyword?: string;\n"
+                "  search_query?: string;\n"
+                "  search?: string;\n"
+                "  searchQuery?: string;\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "admin-app-list-response.ts").write_text(
+                "export interface AdminAppListResponse { items: { id: string }[]; }\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "apps-list-result.ts").write_text(
+                "import type { AdminAppListResponse } from './admin-app-list-response';\n"
+                "export interface AppsListResult { code: string; data?: AdminAppListResponse; }\n",
+                encoding="utf-8",
+            )
+            (backend / "src" / "types" / "index.ts").write_text(
+                "export type { AdminAppListRequest } from './admin-app-list-request';\n"
+                "export type { AdminAppListResponse } from './admin-app-list-response';\n"
+                "export type { AppsListResult } from './apps-list-result';\n",
+                encoding="utf-8",
+            )
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
+            (app / "api").mkdir(parents=True, exist_ok=True)
+            (app / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            for property_name in ("keyword", "search_query", "search", "searchQuery"):
+                self.assertIn(
+                    f"backend apps.list request schema AdminAppListRequest.{property_name} must use q for search text",
+                    result.messages,
+                )
+                self.assertIn(
+                    f"backend apps.list SDK request type AdminAppListRequest.{property_name} must use q for search text",
+                    result.messages,
+                )
+            self.assertFalse(any(".q must use q for search text" in message for message in result.messages))
 
     def test_accepts_generated_sdk_method_with_singular_path_resource_suffix_removed(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -581,32 +1488,30 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                             {
                                 "api_surface": "app",
                                 "api_method": "POST",
-                                "api_path": "/app/v3/api/feeds/collect/{feedId}",
+                                "api_path": "/app/v3/api/feeds/collect/{id}",
                                 "operation": "collectForumFeed",
+                                "operation_id": "feeds.collect",
                                 "tag": "feeds",
                                 "kind": "action",
-                                "path_params": ["feedId"],
+                                "path_params": ["id"],
                                 "source": "apps/portal/forumService.ts",
                                 "read_sources": ["plus_feeds", "plus_favorite"],
                                 "write_tables": ["plus_feeds", "plus_favorite"],
                                 "request_body_required": False,
-                                "request_schema": {
-                                    "name": "ForumCollectFeedRequest",
-                                    "schema": {
-                                        "type": "object",
-                                        "additionalProperties": False,
-                                        "properties": {
-                                            "folderId": {"type": "integer", "format": "int64", "minimum": 1}
-                                        },
-                                    },
-                                },
+                                "query_parameters_declared": True,
+                                "query_parameters": [
+                                    {
+                                        "name": "folderId",
+                                        "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                                    }
+                                ],
                                 "response_schema": {
                                     "name": "ForumFeedItem",
                                     "schema": {
                                         "type": "object",
                                         "additionalProperties": False,
                                         "required": ["id"],
-                                        "properties": {"id": {"type": "string"}},
+                                        "properties": {"id": {"type": "integer", "format": "int64", "minimum": 1}},
                                     },
                                 },
                             }
@@ -619,47 +1524,148 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-app-sdk"
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "feed.ts").write_text(
                 "import { appApiPath } from './paths';\n"
+                "import { appendQueryString, buildQueryString } from './query';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { CollectForumFeedResult, ForumCollectFeedRequest } from '../types';\n"
+                "import type { FeedsCollectResult } from '../types';\n"
                 "export class FeedApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async collectForum(feedId: string | number, body?: ForumCollectFeedRequest): Promise<CollectForumFeedResult> {\n"
-                "    return this.client.post<CollectForumFeedResult>(appApiPath(`/feeds/collect/${feedId}`), body, undefined, undefined, 'application/json');\n"
+                "  async collect(id: string | number, folderId?: number): Promise<FeedsCollectResult> {\n"
+                "    const query = buildQueryString([{ name: 'folderId', value: folderId, style: 'form', explode: true, allowReserved: false }]);\n"
+                "    return this.client.post<FeedsCollectResult>(appendQueryString(appApiPath(`/feeds/collect/${id}`), query));\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "forum-collect-feed-request.ts").write_text(
-                "export interface ForumCollectFeedRequest { folderId?: number; }\n",
-                encoding="utf-8",
-            )
             (base / "src" / "types" / "forum-feed-item.ts").write_text(
-                "export interface ForumFeedItem { id: string; }\n",
+                "export interface ForumFeedItem { id: number; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "collect-forum-feed-result.ts").write_text(
+            (base / "src" / "types" / "feeds-collect-result.ts").write_text(
                 "import type { ForumFeedItem } from './forum-feed-item';\n"
-                "export interface CollectForumFeedResult { code: string; data?: ForumFeedItem; }\n",
+                "export interface FeedsCollectResult { code: string; data?: ForumFeedItem; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { CollectForumFeedResult } from './collect-forum-feed-result';\n"
-                "export type { ForumCollectFeedRequest } from './forum-collect-feed-request';\n"
+                "export type { FeedsCollectResult } from './feeds-collect-result';\n"
                 "export type { ForumFeedItem } from './forum-feed-item';\n",
                 encoding="utf-8",
             )
-            backend = root / "sdks" / "clawrouter-backend-sdk" / "src"
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
             (backend / "api").mkdir(parents=True, exist_ok=True)
             (backend / "types").mkdir(parents=True, exist_ok=True)
 
             result = ClawRouterPayloadSdkAudit(root=root).run()
 
             self.assertTrue(result.ok, result.messages)
+
+    def test_rejects_sdk_query_parameter_serialization_that_differs_from_openapi(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "app",
+                                "api_method": "POST",
+                                "api_path": "/app/v3/api/feeds/collect/{id}",
+                                "operation": "collectForumFeed",
+                                "operation_id": "feeds.collect",
+                                "tag": "feeds",
+                                "kind": "action",
+                                "path_params": ["id"],
+                                "source": "apps/portal/forumService.ts",
+                                "read_sources": ["plus_feeds", "plus_favorite"],
+                                "write_tables": ["plus_feeds", "plus_favorite"],
+                                "request_body_required": False,
+                                "query_parameters_declared": True,
+                                "query_parameters": [
+                                    {
+                                        "name": "folder_id",
+                                        "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                                    }
+                                ],
+                                "response_schema": {
+                                    "name": "ForumFeedItem",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["id"],
+                                        "properties": {"id": {"type": "integer", "format": "int64", "minimum": 1}},
+                                    },
+                                },
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            ClawRouterOpenApiGenerator(root=root).write()
+            base = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "api" / "feed.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import { appendQueryString, buildQueryString } from './query';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { FeedsCollectResult } from '../types';\n"
+                "export class FeedApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async collect(id: string | number, folderId?: number): Promise<FeedsCollectResult> {\n"
+                "    const query = buildQueryString([{ name: 'folderId', value: folderId, style: 'form', explode: true, allowReserved: false }]);\n"
+                "    return this.client.post<FeedsCollectResult>(appendQueryString(appApiPath(`/feeds/collect/${id}`), query));\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "forum-feed-item.ts").write_text(
+                "export interface ForumFeedItem { id: number; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "feeds-collect-result.ts").write_text(
+                "import type { ForumFeedItem } from './forum-feed-item';\n"
+                "export interface FeedsCollectResult { code: string; data?: ForumFeedItem; }\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "index.ts").write_text(
+                "export type { FeedsCollectResult } from './feeds-collect-result';\n"
+                "export type { ForumFeedItem } from './forum-feed-item';\n",
+                encoding="utf-8",
+            )
+            backend = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src"
+            (backend / "api").mkdir(parents=True, exist_ok=True)
+            (backend / "types").mkdir(parents=True, exist_ok=True)
+
+            result = ClawRouterPayloadSdkAudit(root=root).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "app feeds.collect SDK query serialization must include OpenAPI query parameter folder_id",
+                result.messages,
+            )
 
     def test_accepts_nested_router_backend_module_method_with_tag_suffix_removed(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -688,6 +1694,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/router/firewall/rules",
                                 "operation": "addFirewall",
+                                "operation_id": "firewalls.rules.create",
                                 "tag": "firewall",
                                 "kind": "create",
                                 "path_params": [],
@@ -733,17 +1740,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "firewall.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AddFirewallResult, AdminFirewallRuleCreateRequest } from '../types';\n"
+                "import type { FirewallsRulesCreateResult, AdminFirewallRuleCreateRequest } from '../types';\n"
                 "export class FirewallApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async add(body: AdminFirewallRuleCreateRequest): Promise<AddFirewallResult> {\n"
-                "    return this.client.post<AddFirewallResult>(backendApiPath(`/router/firewall/rules`), body, undefined, undefined, 'application/json');\n"
+                "  async create(body: AdminFirewallRuleCreateRequest): Promise<FirewallsRulesCreateResult> {\n"
+                "    return this.client.post<FirewallsRulesCreateResult>(backendApiPath(`/router/firewall/rules`), body, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -761,19 +1768,19 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export interface AdminFirewallRuleCreateRequest { type: string; value: string; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "add-firewall-result.ts").write_text(
+            (base / "src" / "types" / "firewalls-rules-create-result.ts").write_text(
                 "import type { AdminFirewallMutationResponse } from './admin-firewall-mutation-response';\n"
-                "export interface AddFirewallResult { code: string; data?: AdminFirewallMutationResponse; }\n",
+                "export interface FirewallsRulesCreateResult { code: string; data?: AdminFirewallMutationResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AddFirewallResult } from './add-firewall-result';\n"
+                "export type { FirewallsRulesCreateResult } from './firewalls-rules-create-result';\n"
                 "export type { AdminFirewallItem } from './admin-firewall-item';\n"
                 "export type { AdminFirewallMutationResponse } from './admin-firewall-mutation-response';\n"
                 "export type { AdminFirewallRuleCreateRequest } from './admin-firewall-rule-create-request';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 
@@ -791,11 +1798,11 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app createKey SDK method must accept body: CreateApiKeyRequest",
+                "app apiKeys.create SDK method must accept body: CreateApiKeyRequest",
                 result.messages,
             )
             self.assertIn(
-                "app createKey SDK method must return Promise<CreateKeyResult>",
+                "app apiKeys.create SDK method must return Promise<ApiKeysCreateResult>",
                 result.messages,
             )
 
@@ -805,7 +1812,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             self.write_openapi(root)
             self.write_sdk(root)
             spec = self.read_app_spec(root)
-            spec["paths"]["/app/v3/api/router/api-keys"]["post"]["requestBody"]["content"]["application/json"]["schema"] = {
+            spec["paths"]["/app/v3/api/iam/api_keys"]["post"]["requestBody"]["content"]["application/json"]["schema"] = {
                 "$ref": "#/components/schemas/OperationRequest"
             }
             self.write_app_spec(root, spec)
@@ -814,7 +1821,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "app createKey requestBody must reference #/components/schemas/CreateApiKeyRequest",
+                "app apiKeys.create requestBody must reference #/components/schemas/CreateApiKeyRequest",
                 result.messages,
             )
 
@@ -845,6 +1852,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/channel",
                                 "operation": "addChannel",
+                                "operation_id": "channels.create",
                                 "tag": "channel",
                                 "kind": "create",
                                 "path_params": [],
@@ -881,17 +1889,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "channel.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AddChannelResult, AdminChannelCreateRequest } from '../types';\n"
+                "import type { ChannelsCreateResult, AdminChannelCreateRequest } from '../types';\n"
                 "export class ChannelApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async add(body: AdminChannelCreateRequest): Promise<AddChannelResult> {\n"
-                "    return this.client.post<AddChannelResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
+                "  async create(body: AdminChannelCreateRequest): Promise<ChannelsCreateResult> {\n"
+                "    return this.client.post<ChannelsCreateResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -904,18 +1912,18 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export interface AdminChannelMutationResponse { item: Record<string, unknown>; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "add-channel-result.ts").write_text(
+            (base / "src" / "types" / "channels-create-result.ts").write_text(
                 "import type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n"
-                "export interface AddChannelResult { code: string; data?: AdminChannelMutationResponse; }\n",
+                "export interface ChannelsCreateResult { code: string; data?: AdminChannelMutationResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AddChannelResult } from './add-channel-result';\n"
+                "export type { ChannelsCreateResult } from './channels-create-result';\n"
                 "export type { AdminChannelCreateRequest } from './admin-channel-create-request';\n"
                 "export type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 
@@ -923,11 +1931,11 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "backend addChannel response schema AdminChannelMutationResponse.item must declare a closed object schema",
+                "backend channels.create response schema AdminChannelMutationResponse.item must declare a closed object schema",
                 result.messages,
             )
             self.assertIn(
-                "backend addChannel response schema AdminChannelMutationResponse.item must require stable id",
+                "backend channels.create response schema AdminChannelMutationResponse.item must require stable id",
                 result.messages,
             )
 
@@ -958,6 +1966,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/channel",
                                 "operation": "addChannel",
+                                "operation_id": "channels.create",
                                 "tag": "channel",
                                 "kind": "create",
                                 "path_params": [],
@@ -1000,17 +2009,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "channel.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { AddChannelResult, AdminChannelCreateRequest } from '../types';\n"
+                "import type { ChannelsCreateResult, AdminChannelCreateRequest } from '../types';\n"
                 "export class ChannelApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async add(body: AdminChannelCreateRequest): Promise<AddChannelResult> {\n"
-                "    return this.client.post<AddChannelResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
+                "  async create(body: AdminChannelCreateRequest): Promise<ChannelsCreateResult> {\n"
+                "    return this.client.post<ChannelsCreateResult>(backendApiPath(`/channel`), body, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -1027,19 +2036,19 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "export interface AdminChannelMutationResponse { item: Record<string, unknown>; }\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "add-channel-result.ts").write_text(
+            (base / "src" / "types" / "channels-create-result.ts").write_text(
                 "import type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n"
-                "export interface AddChannelResult { code: string; data?: AdminChannelMutationResponse; }\n",
+                "export interface ChannelsCreateResult { code: string; data?: AdminChannelMutationResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
-                "export type { AddChannelResult } from './add-channel-result';\n"
+                "export type { ChannelsCreateResult } from './channels-create-result';\n"
                 "export type { AdminChannelCreateRequest } from './admin-channel-create-request';\n"
                 "export type { AdminChannelItem } from './admin-channel-item';\n"
                 "export type { AdminChannelMutationResponse } from './admin-channel-mutation-response';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 
@@ -1047,7 +2056,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "backend addChannel SDK response type AdminChannelMutationResponse.item must use AdminChannelItem",
+                "backend channels.create SDK response type AdminChannelMutationResponse.item must use AdminChannelItem",
                 result.messages,
             )
 
@@ -1078,6 +2087,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                                 "api_method": "POST",
                                 "api_path": "/backend/v3/api/models/sync",
                                 "operation": "syncVendorsAndModels",
+                                "operation_id": "models.sync",
                                 "tag": "model",
                                 "kind": "sync",
                                 "path_params": [],
@@ -1128,17 +2138,17 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             ClawRouterOpenApiGenerator(root=root).write()
-            base = root / "sdks" / "clawrouter-backend-sdk"
+            base = root / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
             (base / "src" / "api").mkdir(parents=True, exist_ok=True)
             (base / "src" / "types").mkdir(parents=True, exist_ok=True)
             (base / "src" / "api" / "model.ts").write_text(
                 "import { backendApiPath } from './paths';\n"
                 "import type { HttpClient } from '../http/client';\n"
-                "import type { SyncVendorsAndModelsResult } from '../types';\n"
+                "import type { ModelsSyncResult } from '../types';\n"
                 "export class ModelApi {\n"
                 "  constructor(private client: HttpClient) {}\n"
-                "  async syncVendorsAndModels(): Promise<SyncVendorsAndModelsResult> {\n"
-                "    return this.client.post<SyncVendorsAndModelsResult>(backendApiPath(`/models/sync`), undefined, undefined, undefined, 'application/json');\n"
+                "  async sync(): Promise<ModelsSyncResult> {\n"
+                "    return this.client.post<ModelsSyncResult>(backendApiPath(`/models/sync`), undefined, undefined, undefined, 'application/json');\n"
                 "  }\n"
                 "}\n",
                 encoding="utf-8",
@@ -1161,19 +2171,19 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 "}\n",
                 encoding="utf-8",
             )
-            (base / "src" / "types" / "sync-vendors-and-models-result.ts").write_text(
+            (base / "src" / "types" / "models-sync-result.ts").write_text(
                 "import type { AdminModelCatalogSyncResponse } from './admin-model-catalog-sync-response';\n"
-                "export interface SyncVendorsAndModelsResult { code: string; data?: AdminModelCatalogSyncResponse; }\n",
+                "export interface ModelsSyncResult { code: string; data?: AdminModelCatalogSyncResponse; }\n",
                 encoding="utf-8",
             )
             (base / "src" / "types" / "index.ts").write_text(
                 "export type { AdminAiModelItem } from './admin-ai-model-item';\n"
                 "export type { AdminModelCatalogSyncResponse } from './admin-model-catalog-sync-response';\n"
                 "export type { AdminModelVendorItem } from './admin-model-vendor-item';\n"
-                "export type { SyncVendorsAndModelsResult } from './sync-vendors-and-models-result';\n",
+                "export type { ModelsSyncResult } from './models-sync-result';\n",
                 encoding="utf-8",
             )
-            app = root / "sdks" / "clawrouter-app-sdk" / "src"
+            app = root / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src"
             (app / "api").mkdir(parents=True, exist_ok=True)
             (app / "types").mkdir(parents=True, exist_ok=True)
 

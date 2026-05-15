@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "chaoschain-ace",
+    "displayName": "ChaosChain ACE (Phase 0)",
+    "summary": "Authorize autonomous x402 API payments with bounded, wallet-funded session keys under strict policy limits in ACE Phase 0 without credit lines.",
+    "tags": {
+      "latest": "0.1.0",
+      "openclaw": "0.1.0",
+      "payments": "0.1.0",
+      "phase0": "0.1.0",
+      "x402": "0.1.0"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 759,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771059902566,
+    "updatedAt": 1778385721130
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1771059902566,
+    "changelog": "- Initial release of the ChaosChain ACE skill (Phase 0), enabling use of ACE session keys for autonomous x402 API payments.\n- Supports policy-bounded wallet-funded API payments with explicit spend limits (per-tx, per-day, TTL, categories).\n- Enforces strict policy adherence and category limits (`compute`, `data`, `api`); refuses out-of-policy or unsupported requests.\n- Requires initialization flow with policy setup and confirmation before first payment.\n- Provides clear rules for spend reasoning, schema discovery, and policy enforcement.\n- Designed for agent-side operating policy; integration performed separately via the @chaoschain/ace-session-key-sdk.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sumeetchougule",
+    "userId": "publishers:sumeetchougule",
+    "displayName": "SumeetChougule",
+    "image": "https://avatars.githubusercontent.com/u/101477214?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385721130
+  }
+}

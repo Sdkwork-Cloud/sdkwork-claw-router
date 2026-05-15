@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reinvent4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reinvent4",
+  "skill": {
+    "id": 39426,
+    "skillKey": "clawhub-reinvent4",
+    "name": "reinvent4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reinvent4",
+    "url": "https://clawhub.ai/skills/reinvent4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reinvent4-a2354e51c261f91c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help install, configure, run, troubleshoot, and extend MolecularAI REINVENT4 for generative molecular design. Use when the user mentions REINVENT4 or Reinven..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoeprior",
+      "userId": "s17e4pd9n6zjvdst39t7jav2yx83q5kc",
+      "displayName": "zoeprior",
+      "image": "https://avatars.githubusercontent.com/u/248590779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774623703282,
+      "changelog": "- Initial release of the REINVENT4 support skill for generative molecular design workflows.\n- Provides guidance on installation, backend selection, configuration editing, running, troubleshooting, and extending REINVENT4.\n- Emphasizes using and verifying with a local REINVENT4 checkout and upstream reference files.\n- Covers environment setup, TOML config usage, plugin integration, notebook conversion, and test execution.\n- Includes specific advice and warnings for different platforms and dependency scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30707842c187b676122bc6b825683eee8d835edac1e22ec324460529344b2db9"
+}

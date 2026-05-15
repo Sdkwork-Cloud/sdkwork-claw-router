@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taskboard-cli@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskboard_cli",
+  "skill": {
+    "id": 26667,
+    "skillKey": "clawhub-taskboard-cli",
+    "name": "Taskboard Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskboard-cli",
+    "url": "https://clawhub.ai/skills/taskboard-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskboard-cli-8bde0bee3ab8aa91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight task management CLI for multi-agent workflows. SQLite backend, no external dependencies or credentials. Status-change hooks emit agent instructio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckouder",
+      "userId": "publishers:ckouder",
+      "displayName": "Bingji Guo",
+      "image": "https://avatars.githubusercontent.com/u/20468259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773950414990,
+      "changelog": "Add rejected status back (todo/in_progress/done/blocked/rejected)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:769b65e080140e75273b536f79f162cade6b8606634b06c152ed6009b3e4c563"
+}

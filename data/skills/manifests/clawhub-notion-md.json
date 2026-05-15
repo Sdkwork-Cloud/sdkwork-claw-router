@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18494,
+  "uuid": "skill-clawhub-notion-md",
+  "skillKey": "clawhub-notion-md",
+  "name": "Notion Md",
+  "summary": "Convert Markdown to Notion blocks with full format support. Handles bold, italic, strikethrough, inline code, headings, lists, tables, callouts, and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_md",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patronum",
+      "features": [
+        "Convert Markdown to Notion blocks with full format support",
+        "Handles bold, italic, strikethrough, inline code, headings, lists, tables, callouts, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-md@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-md",
+      "url": "https://clawhub.ai/skills/notion-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-md",
+    "url": "https://clawhub.ai/skills/notion-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-md-ca67779b010b038c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-md@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-md-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78f7fcf1037207ab5c256826c42c44659d3f580c6d388d4d123e7c240e7efc5f",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T04:04:19.070Z"
+}

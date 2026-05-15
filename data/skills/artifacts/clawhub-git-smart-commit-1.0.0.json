@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-smart-commit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_smart_commit",
+  "skill": {
+    "id": 26551,
+    "skillKey": "clawhub-git-smart-commit",
+    "name": "Git Smart Commit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-smart-commit",
+    "url": "https://clawhub.ai/skills/git-smart-commit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-smart-commit-ee2e7f90250ef363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze staged git changes and generate high-quality commit messages following Conventional Commits format. Use when: (1) user asks to commit changes, (2) us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wusuiling-if",
+      "userId": "publishers:wusuiling-if",
+      "displayName": "wusuiling-if",
+      "image": "https://avatars.githubusercontent.com/u/221723439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773282818595,
+      "changelog": "Initial release: auto-generate Conventional Commits messages from staged git changes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d7245936ebde8eb27d79497b65cac4279af87d33d5f616a547e258f23c15e39"
+}

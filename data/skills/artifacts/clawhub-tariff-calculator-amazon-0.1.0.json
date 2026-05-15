@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tariff-calculator-amazon@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tariff_calculator_amazon",
+  "skill": {
+    "id": 56564,
+    "skillKey": "clawhub-tariff-calculator-amazon",
+    "name": "Tariff Calculator Amazon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tariff-calculator-amazon",
+    "url": "https://clawhub.ai/skills/tariff-calculator-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tariff-calculator-amazon-6051a0ba4e1e59a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal tariff calculator for Amazon sellers. Calculate import duties, landed costs, and VAT/GST for any trade route. Supports CN→US, CN→EU, US→EU, EU→US,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774258620180,
+      "changelog": "Universal tariff calculator for Amazon sellers, now released.\n\n- Calculate import duties, landed costs, and VAT/GST for any global trade route\n- No API key required; covers CN→US, CN→EU, US→EU, EU→US, US→CN, and custom pairs\n- Supports Section 301 tariffs, trade agreements (USMCA, EVFTA), and HS code lookup\n- Provides detailed landed cost breakdowns and supports custom configuration\n- Includes VAT/GST rates for EU, UK, CA, AU, CN",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f57f217bc16c0c89feca8b1f864756ea8060f33ace26d9583c17819be9dea1a"
+}

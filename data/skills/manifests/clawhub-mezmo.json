@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28011,
+  "uuid": "skill-clawhub-mezmo",
+  "skillKey": "clawhub-mezmo",
+  "name": "Mezmo",
+  "summary": "Mezmo integration. Manage Organizations. Use when the user wants to interact with Mezmo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mezmo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mezmo integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Mezmo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mezmo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mezmo",
+      "url": "https://clawhub.ai/skills/mezmo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mezmo",
+    "url": "https://clawhub.ai/skills/mezmo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mezmo-911dd7eb8096dbe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mezmo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mezmo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922892119b34e61fcb67c2ed8788a3847655f5165f620ba4792171271130a48e",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:13:42.217Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19290,
+  "uuid": "skill-clawhub-webfetch-google",
+  "skillKey": "clawhub-webfetch-google",
+  "name": "Web fetch Google search",
+  "summary": "Performs a web fetch request to Google based on a user-provided query. Use this skill when you need to retrieve information from Google search results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webfetch_google",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Uroboros1205",
+      "features": [
+        "Performs a web fetch request to Google based on a user-provided query",
+        "Use this skill when you need to retrieve information from Google search results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webfetch-google@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86728823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webfetch-google",
+      "url": "https://clawhub.ai/skills/webfetch-google"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webfetch-google",
+    "url": "https://clawhub.ai/skills/webfetch-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webfetch-google-be5470a827faa1fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webfetch-google@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webfetch-google-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69a2cf3a43aea70c1f96fde7aaa01d9a8ff24fd0d1e01724feca8c4e1cbff907",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:27:22.304Z"
+}

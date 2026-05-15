@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_best",
+  "skill": {
+    "id": 44116,
+    "skillKey": "clawhub-free-video-generator-best",
+    "name": "Free Video Generator Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-best",
+    "url": "https://clawhub.ai/skills/free-video-generator-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-best-45fa684898e47e51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your text prompts or clips (MP4, MOV, PNG, JPG, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776318365202,
+      "changelog": "Initial release of Free Video Generator Best.\n\n- Generate ready-to-share 1080p MP4 videos from text prompts or uploaded clips (MP4, MOV, PNG, JPG, up to 500MB).\n- Cloud-based rendering with automatic session and token setup (100 free credits, 7-day expiry).\n- Simple text commands to generate, edit, check credits, preview timeline, and export videos.\n- Fast turnaround for content creators (typical 30–90 seconds per video render).\n- Supports various formats (video, image, audio) with automatic track and timeline handling.\n- Built-in error handling for uploads, credits, and session management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa62f5ece5119a730aa8381d629dd2abec001f7b81967fbcb7016d8e16578644"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-auto-update@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_update",
+  "skill": {
+    "id": 61007,
+    "skillKey": "clawhub-openclaw-auto-update",
+    "name": "openclaw-update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-update",
+    "url": "https://clawhub.ai/skills/openclaw-auto-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-update-575c8686dfae5576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 版本升级评估与执行技能。工作流程：(1) 检测 agent-reach 可用性（无则引导安装），(2) 检查 GitHub releases 获取最新稳定版，(3) 对比当前版本判断是否需要更新，(4) 分析版本差距和更新日志，(5) 检查 GitHub issues 评估风险，(6) 综合评估..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davis1216",
+      "userId": "publishers:davis1216",
+      "displayName": "Davis1216",
+      "image": "https://avatars.githubusercontent.com/u/62478796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773227629527,
+      "changelog": "openclaw-auto-update v1.0.1\n\n- Version bump only; no file or functional changes.\n- No modifications to code or documentation detected.\n- Maintains full compatibility with previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3203acf6927c528182208398578f8242f5d71ba2d1ccabfdd9be31fb1caa331c"
+}

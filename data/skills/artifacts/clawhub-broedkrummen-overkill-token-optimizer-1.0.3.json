@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broedkrummen-overkill-token-optimizer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broedkrummen_overkill_token_optimizer",
+  "skill": {
+    "id": 20184,
+    "skillKey": "clawhub-broedkrummen-overkill-token-optimizer",
+    "name": "Overkill Token Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broedkrummen-overkill-token-optimizer",
+    "url": "https://clawhub.ai/skills/broedkrummen-overkill-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broedkrummen-overkill-token-optimizer-6b1f0ffb0aab53dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize and manage session tokens for workspace memory with commands to check usage, reset, index, search, and compress tokens."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772039929631,
+      "changelog": "v1.0.3 - Fixed warnings: manual oktk install, declared npm dependency, removed auto-install",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb82e99731c868f6f8a3ccb520185ddcf2f5190afb235cf9b18668b5e1c27c1c"
+}

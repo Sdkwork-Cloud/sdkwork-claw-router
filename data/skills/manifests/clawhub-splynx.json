@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32859,
+  "uuid": "skill-clawhub-splynx",
+  "skillKey": "clawhub-splynx",
+  "name": "Splynx",
+  "summary": "Splynx integration. Manage data, records, and automate workflows. Use when the user wants to interact with Splynx data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.splynx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Splynx integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Splynx data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/splynx@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "splynx",
+      "url": "https://clawhub.ai/skills/splynx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "splynx",
+    "url": "https://clawhub.ai/skills/splynx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/splynx-d50c57001790e32c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/splynx@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-splynx-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c11acb8b287b000e02ec31f96d597f4b5079daffae453301936f87b83a455d1",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:52.865Z"
+}

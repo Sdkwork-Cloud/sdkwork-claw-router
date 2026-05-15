@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48099,
+  "uuid": "skill-clawhub-grab-holdings",
+  "skillKey": "clawhub-grab-holdings",
+  "name": "Grab Holdings",
+  "summary": "Provides detailed insights on Grab Holdings, a leading Southeast Asian super-app offering ride-hailing, food delivery, payments, and financial services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grab_holdings",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed insights on Grab Holdings, a leading Southeast Asian super-app offering ride-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grab-holdings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grab-holdings",
+      "url": "https://clawhub.ai/skills/grab-holdings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grab-holdings",
+    "url": "https://clawhub.ai/skills/grab-holdings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grab-holdings-11c29a29495122eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grab-holdings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grab-holdings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c18d53cda4f56a0856e0f5b326c237c1b2df86030f6ebd424d75125f5c1ba2e",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T21:04:19.634Z"
+}

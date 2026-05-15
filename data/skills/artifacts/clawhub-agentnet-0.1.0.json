@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentnet@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentnet",
+  "skill": {
+    "id": 20404,
+    "skillKey": "clawhub-agentnet",
+    "name": "AgentNet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentnet",
+    "url": "https://clawhub.ai/skills/agentnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentnet-b0ba6fd6b887da15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent discovery network. Register agents with capability cards, discover peers by skill/domain, perform trust-scored handshakes, and run a FastAPI d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassh100k",
+      "userId": "publishers:cassh100k",
+      "displayName": "Cassh",
+      "image": "https://avatars.githubusercontent.com/u/128089099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772043185542,
+      "changelog": "v0.1.0: Agent-to-agent discovery - registry, identity cards, handshakes, trust scoring, FastAPI server.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a1dda96acceaa3f37a451f07f913a48b83aaa6954a4b0f7e7d359ac5aa973a9"
+}

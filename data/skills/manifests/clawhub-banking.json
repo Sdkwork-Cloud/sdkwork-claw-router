@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19701,
+  "uuid": "skill-clawhub-banking",
+  "skillKey": "clawhub-banking",
+  "name": "Banking",
+  "summary": "Manage retail and business banking workflows with payment operations, account controls, reconciliation, fraud response, and compliant communication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage retail and business banking workflows with payment operations, account controls, reconci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banking",
+      "url": "https://clawhub.ai/skills/banking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banking",
+    "url": "https://clawhub.ai/skills/banking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banking-68ba9b33ad38d5d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-banking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e233f7c700af75bf69cebfb42078ae59bd733a15792924900c625be4e5f6fd96",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:16:16.058Z"
+}

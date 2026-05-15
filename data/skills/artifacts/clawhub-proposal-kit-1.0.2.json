@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proposal-kit@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal_kit",
+  "skill": {
+    "id": 28264,
+    "skillKey": "clawhub-proposal-kit",
+    "name": "ProposalKit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal-kit",
+    "url": "https://clawhub.ai/skills/proposal-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-kit-ff722f71d05acab6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click business proposal package generator. Takes a brief project/service description and generates a COMPLETE ready-to-send package: proposal (.docx), pi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethagent",
+      "userId": "publishers:ethagent",
+      "displayName": "EthAgent",
+      "image": "https://avatars.githubusercontent.com/u/216467966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772943863317,
+      "changelog": "Full skill with complete workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6943460f7eb4a561706751f4f7d379e5eca4aec6746ec7ebba15a72d9706709b"
+}

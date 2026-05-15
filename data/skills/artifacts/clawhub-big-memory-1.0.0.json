@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/big-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.big_memory",
+  "skill": {
+    "id": 22854,
+    "skillKey": "clawhub-big-memory",
+    "name": "Big Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "big-memory",
+    "url": "https://clawhub.ai/skills/big-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/big-memory-db3946f8b52e8f0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured task snapshot and automatic post-compaction recovery. Captures exact code, decisions, file paths, and task state before context compaction and rec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obekt",
+      "userId": "s1763xfmpakn0wwsp0986vdcnn853g87",
+      "displayName": "Veselin Vasilev",
+      "image": "https://avatars.githubusercontent.com/u/1297310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772175672445,
+      "changelog": "Big-memory 1.0.0 – Initial Release\n\n- Introduces structured task snapshots that persist through context compaction.\n- Provides automatic detection and recovery of lost context using precise snapshot retrieval from memory logs.\n- Supports user and system-triggered snapshot creation via commands and keywords.\n- Defines a strict schema to capture code, decisions, file paths, and task state for robust task continuity.\n- Offers clear protocols for capturing, storing, and restoring task snapshots.\n- Zero external dependencies; uses only built-in OpenClaw tools (`memory_search`, `memory_get`, etc.).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dbf486a669d4ddb6809e698b038beb6a6b6bc3f5b11b8d9f4a8e0b3203d36622"
+}

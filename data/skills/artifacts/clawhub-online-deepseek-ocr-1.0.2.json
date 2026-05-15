@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/online-deepseek-ocr@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_deepseek_ocr",
+  "skill": {
+    "id": 31708,
+    "skillKey": "clawhub-online-deepseek-ocr",
+    "name": "Online Deepseek-OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-deepseek-ocr",
+    "url": "https://clawhub.ai/skills/online-deepseek-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-deepseek-ocr-ef7a885dc01aa2f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform cloud-based OCR on PNG, JPG, JPEG, and WEBP images using SiliconFlow's DeepSeek-OCR with automatic image preprocessing for enhanced recognition."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwq2023qwq",
+      "userId": "s17fvakz1ge1mr3x9e0xa6j89x83pe3c",
+      "displayName": "qwq2023",
+      "image": "https://avatars.githubusercontent.com/u/90580525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774611988606,
+      "changelog": "- Removed the debug_config.py file for a cleaner production release.\n- No user-facing feature changes or documentation updates in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8a61936317cc92cf78c4e24b6340190923b630deca81d5e31388befc4344db4"
+}

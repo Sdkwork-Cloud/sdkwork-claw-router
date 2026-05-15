@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perry-coding-agents@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perry_coding_agents",
+  "skill": {
+    "id": 9294,
+    "skillKey": "clawhub-perry-coding-agents",
+    "name": "Perry Coding Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perry-coding-agents",
+    "url": "https://clawhub.ai/skills/perry-coding-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perry-coding-agents-09ba4e51a97a1d72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dispatch coding tasks to OpenCode or Claude Code on Perry workspaces. Use for development work, PR reviews, or any coding task requiring an isolated environment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gricha",
+      "userId": "publishers:gricha",
+      "displayName": "gricha",
+      "image": "https://avatars.githubusercontent.com/u/875316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4063,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1769219915133,
+      "changelog": "Emphasized: always create dex task BEFORE dispatch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c2c93593543c9495783fcf9901c56314fad6082a74ffd854d52dfa99184b64b"
+}

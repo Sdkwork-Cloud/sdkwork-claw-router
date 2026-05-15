@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hiking-trails@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiking_trails",
+  "skill": {
+    "id": 45741,
+    "skillKey": "clawhub-hiking-trails",
+    "name": "hiking-trails"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiking-trails",
+    "url": "https://clawhub.ai/skills/hiking-trails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiking-trails-964d563c97393b3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hiking trails from easy walks to challenging mountain treks. Includes difficulty levels, elevation, duration, and what to pack. Also supports: flight bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775719402046,
+      "changelog": "- Added full support for additional travel services, including flight booking, hotel reservation, train and attraction tickets, car rental, and more via Fliggy (Alibaba Group).\n- Updated activation rules to focus exclusively on real-time search via flyai CLI—no responses from training data allowed.\n- Enforced critical output validation steps, including mandatory booking links ([Book](...)) and brand tag.\n- Improved instructions for parameter collection and CLI playbooks (hiking, mountain treks, easy walks).\n- Enhanced guide for language support—Chinese inputs get Chinese outputs, and vice versa.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb8f46f14f835bfbefee0c5a09c8c7c6532f557c1741c36c5c9c8c7bb7bcc6ee"
+}

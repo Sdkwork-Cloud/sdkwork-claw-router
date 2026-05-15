@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -17,7 +17,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         openapi = json.loads(
             (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(encoding="utf-8")
         )
-        sdk_router = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts").read_text(
+        sdk_ai = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts").read_text(
             encoding="utf-8"
         )
         frontend = (
@@ -37,15 +37,15 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         operations = {operation["key"]: operation for operation in manifest["operations"]}
 
         self.assertIn("operation: fetchDashboardOverview", contract)
-        self.assertIn("api_path: /app/v3/api/router/dashboard/overview", contract)
+        self.assertIn("api_path: /app/v3/api/ai/dashboard/overview", contract)
         self.assertIn(operation_key, operations)
         self.assertEqual("app", operations[operation_key]["api_surface"])
         self.assertEqual("GET", operations[operation_key]["api_method"])
-        self.assertEqual("/app/v3/api/router/dashboard/overview", operations[operation_key]["api_path"])
-        self.assertIn("/app/v3/api/router/dashboard/overview", openapi["paths"])
-        self.assertIn("async fetchDashboardOverview(params?: QueryParams): Promise<FetchDashboardOverviewResult>", sdk_router)
+        self.assertEqual("/app/v3/api/ai/dashboard/overview", operations[operation_key]["api_path"])
+        self.assertIn("/app/v3/api/ai/dashboard/overview", openapi["paths"])
+        self.assertIn("async retrieve(params?: AiDashboardOverviewRetrieveParams): Promise<DashboardOverviewRetrieveResult>", sdk_ai)
         self.assertIn("static async fetchDashboardOverview", frontend)
-        self.assertIn("client.router.fetchDashboardOverview(params)", frontend)
+        self.assertIn("client.ai.dashboard.overview.retrieve(params)", frontend)
         self.assertNotIn("client.account.fetchAccountDetails", frontend)
         self.assertNotIn("client.router.fetchUsageData", frontend)
         self.assertNotIn("client.router.fetchDashboardData", frontend)
@@ -55,7 +55,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/router/dashboard/overview"
+        operation_marker = "api_path: /app/v3/api/ai/dashboard/overview"
         operation_index = contract.index(operation_marker)
         schema_index = contract.index("name: DashboardOverviewResponse", operation_index)
         self.assertLess(schema_index - operation_index, 1200)
@@ -76,13 +76,14 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_router = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
         ).read_text(encoding="utf-8")
         overview_response_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "dashboard-overview-response.ts"
@@ -91,14 +92,16 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
-            / "fetch-dashboard-overview-result.ts"
+            / "dashboard-overview-retrieve-result.ts"
         )
         top_model_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "dashboard-top-model.ts"
@@ -107,6 +110,7 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "dashboard-announcement.ts"
@@ -136,7 +140,10 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         self.assertIn("data?: DashboardOverviewResponse;", fetch_result)
         self.assertIn("modality: 'text' | 'image' | 'video' | 'audio' | 'music' | 'unknown';", top_model)
         self.assertIn("type: 'success' | 'info' | 'warning' | 'error' | 'unknown';", announcement)
-        self.assertIn("async fetchDashboardOverview(params?: QueryParams): Promise<FetchDashboardOverviewResult>", sdk_router)
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
+        ).read_text(encoding="utf-8")
+        self.assertIn("async retrieve(params?: AiDashboardOverviewRetrieveParams): Promise<DashboardOverviewRetrieveResult>", sdk_ai)
 
         self.assertIn("DashboardOverviewResponse as SdkDashboardOverviewResponse", frontend)
         self.assertIn("summary: SdkDashboardOverviewResponse['summary'];", frontend)
@@ -251,14 +258,14 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("MAX_DASHBOARD_RANGE_DAYS", app_dashboard)
-        self.assertIn("SUPPORTED_DASHBOARD_KEYWORDS", app_dashboard)
+        self.assertIn("SUPPORTED_DASHBOARD_RANGES", app_dashboard)
         self.assertIn("DashboardOverviewQueryValidationError", app_dashboard)
         self.assertIn("validate_dashboard_overview_query", app_dashboard)
         self.assertIn("parse_dashboard_timestamp", app_dashboard)
         self.assertIn("format_dashboard_timestamp_for_query", app_dashboard)
-        self.assertIn("dashboard overview keyword must be one of hourly, daily, monthly, yearly", app_dashboard)
-        self.assertIn("dashboard overview startTime must be a valid UTC timestamp", app_dashboard)
-        self.assertIn("dashboard overview endTime must be greater than or equal to startTime", app_dashboard)
+        self.assertIn("dashboard overview time_range must be one of hourly, daily, monthly, yearly", app_dashboard)
+        self.assertIn("dashboard overview start_time must be a valid UTC timestamp", app_dashboard)
+        self.assertIn("dashboard overview end_time must be greater than or equal to start_time", app_dashboard)
         self.assertIn("dashboard overview time range must not exceed", app_dashboard)
         self.assertIn('StatusCode::BAD_REQUEST', app_dashboard)
         self.assertIn('PlusApiResult::error("4001"', app_dashboard)

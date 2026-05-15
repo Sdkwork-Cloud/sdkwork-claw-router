@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-edge-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_edge_tts",
+  "skill": {
+    "id": 44775,
+    "skillKey": "clawhub-mar-edge-tts",
+    "name": "mar-edge-tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-edge-tts",
+    "url": "https://clawhub.ai/skills/mar-edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-edge-tts-fce242e9a40ce235.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion using SkillBoss API Hub TTS service for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777002598520,
+      "changelog": "Initial release of mar-edge-tts 1.0.0:\n\n- Provides text-to-speech (TTS) audio generation using the SkillBoss API Hub TTS service with support for multiple languages, voices, speed, pitch, and subtitle output.\n- Includes Node.js scripts for advanced customization: `tts-converter.js` (TTS with options for voice, rate, pitch, volume, format, and subtitles) and `config-manager.js` (manages and persists user TTS preferences).\n- Recognizes \"tts\" triggers; automatically filters out TTS-related keywords from spoken content.\n- Returns audio as MEDIA paths for integration; supports both simple usage and advanced CLI/customization.\n- Requires `SKILLBOSS_API_KEY` environment variable.\n- Contains extensive documentation, examples, and troubleshooting information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d025c095d8221c8f99d904326b525ffbee2ceac0efb892ada10dd312dbd8bf4"
+}

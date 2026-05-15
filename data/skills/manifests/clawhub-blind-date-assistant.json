@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20522,
+  "uuid": "skill-clawhub-blind-date-assistant",
+  "skillKey": "clawhub-blind-date-assistant",
+  "name": "Blind Date Assistant",
+  "summary": "Help users decide how to shop on Taobao from public marketplace characteristics. Use when the user asks whether Taobao is a good place to buy something, how...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blind_date_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help users decide how to shop on Taobao from public marketplace characteristics",
+        "Use when the user asks whether Taobao is a good place to buy something, how..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blind-date-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blind-date-assistant",
+      "url": "https://clawhub.ai/skills/blind-date-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blind-date-assistant",
+    "url": "https://clawhub.ai/skills/blind-date-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blind-date-assistant-4e17623f7e937754.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blind-date-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blind-date-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:166034f9649ea1bca39120e363fe25406000caea4a9aac1c75422086a1b6a292",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:44:28.477Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53352,
+  "uuid": "skill-clawhub-weekly-meal-planner",
+  "skillKey": "clawhub-weekly-meal-planner",
+  "name": "Weekly Meal Planner",
+  "summary": "Weekly meal planner - input people count, budget, taste preference → output 7-day menu with breakfast/lunch/dinner and shopping list",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_meal_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Weekly meal planner",
+        "input people count, budget, taste preference → output 7-day menu with breakfast/lunch/dinner an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-meal-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-meal-planner",
+      "url": "https://clawhub.ai/skills/weekly-meal-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-meal-planner",
+    "url": "https://clawhub.ai/skills/weekly-meal-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-meal-planner-d301ec1cf5393a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-meal-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-meal-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa37d07c8b4b552684356cad2c657ad4a776b64428464016a1bae719b3820d73",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:45:11.635Z"
+}

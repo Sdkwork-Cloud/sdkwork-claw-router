@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28530,
+  "uuid": "skill-clawhub-giggle-generation-speech",
+  "skillKey": "clawhub-giggle-generation-speech",
+  "name": "Giggle Generation Speech",
+  "summary": "Use when the user wants to generate speech, voiceover, or text-to-audio. Converts text to AI voice via Giggle.pro TTS API. Triggers: generate speech, text-to...",
+  "version": "0.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giggle_generation_speech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Use when the user wants to generate speech, voiceover, or text-to-audio",
+        "Converts text to AI voice via Giggle.pro TTS API",
+        "Triggers: generate speech, text-to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giggle-generation-speech@0.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giggle-generation-speech",
+      "url": "https://clawhub.ai/skills/giggle-generation-speech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giggle-generation-speech",
+    "url": "https://clawhub.ai/skills/giggle-generation-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giggle-generation-speech-5e7e014cf1618a15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giggle-generation-speech@0.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-giggle-generation-speech-0.0.10.json",
+      "version": "0.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04680b4d98e264ba8d3fc773b2dc0c0995194873a05783eebbaad6133e46e9fb",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:36:07.125Z"
+}

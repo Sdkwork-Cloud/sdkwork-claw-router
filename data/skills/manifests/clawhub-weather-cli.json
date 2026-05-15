@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60105,
+  "uuid": "skill-clawhub-weather-cli",
+  "skillKey": "clawhub-weather-cli",
+  "name": "Weather Cli",
+  "summary": "获取全球城市天气预报（使用 wttr.in 免费 API）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickcen",
+      "features": [
+        "获取全球城市天气预报（使用 wttr.in 免费 API）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1256408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-cli",
+      "url": "https://clawhub.ai/skills/weather-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-cli",
+    "url": "https://clawhub.ai/skills/weather-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-cli-ff056e5155918963.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34d6091b915e93315e56723c50adf616352b305c53e571934370837f39717f73",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T23:08:29.306Z"
+}

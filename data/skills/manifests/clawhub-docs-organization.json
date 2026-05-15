@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38552,
+  "uuid": "skill-clawhub-docs-organization",
+  "skillKey": "clawhub-docs-organization",
+  "name": "Docs Organization",
+  "summary": "Organize project documentation by size, audience, and freshness. Trigger when setting up docs for a new project, restructuring existing documentation, slimmi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_organization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZHANG Ning",
+      "features": [
+        "Organize project documentation by size, audience, and freshness",
+        "Trigger when setting up docs for a new project, restructuring existing documentation, slimmi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docs-organization@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6896818?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docs-organization",
+      "url": "https://clawhub.ai/skills/docs-organization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-organization",
+    "url": "https://clawhub.ai/skills/docs-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-organization-d13253d34f2392f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docs-organization@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docs-organization-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c5b42cd19ea39982826959644d3b27b2fb6e320f141ffbd38067bd82c4b8654",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:15:54.594Z"
+}

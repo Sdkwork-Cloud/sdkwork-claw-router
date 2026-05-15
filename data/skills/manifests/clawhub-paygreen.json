@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35729,
+  "uuid": "skill-clawhub-paygreen",
+  "skillKey": "clawhub-paygreen",
+  "name": "Paygreen",
+  "summary": "PayGreen integration. Manage data, records, and automate workflows. Use when the user wants to interact with PayGreen data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paygreen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PayGreen integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PayGreen data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paygreen@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paygreen",
+      "url": "https://clawhub.ai/skills/paygreen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paygreen",
+    "url": "https://clawhub.ai/skills/paygreen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paygreen-7fddb17560825b61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paygreen@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paygreen-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:605e2a710d5409f46e9e2f04f4b4ec841d0531faac8ff3c9ee87f8e6f51b1143",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:07.548Z"
+}

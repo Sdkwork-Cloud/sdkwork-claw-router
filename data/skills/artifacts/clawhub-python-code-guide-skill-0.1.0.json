@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-code-guide-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_code_guide_skill",
+  "skill": {
+    "id": 24973,
+    "skillKey": "clawhub-python-code-guide-skill",
+    "name": "python-code-pep8-style"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-code-guide-skill",
+    "url": "https://clawhub.ai/skills/python-code-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-code-guide-skill-aa74a0786b07bd3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply PEP 8 Python code style standards when writing, reviewing, or refactoring Python code. Use this skill when the user asks to enforce Python coding style..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dolantan548-cmd",
+      "userId": "s17d7q57wmv70vhe3aasyaxgnd841xvc",
+      "displayName": "dolantan548-cmd",
+      "image": "https://avatars.githubusercontent.com/u/250539564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775040154638,
+      "changelog": "python-code-guide-skill 0.1.0 – Initial release\n\n- Introduces the python-pep8-style skill, based on the official PEP 8 Python style guide.\n- Enforces rules for code layout, indentation, line length, whitespace, naming, comments, and best practices.\n- Supports code review, formatting checks, refactoring, and generation of PEP 8-compliant Python code.\n- Detailed explanations and examples included for indentation, line breaks, and other formatting standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2f5ec319078ccb068080635f06c85901a3ac71a40a22a5fe7adb9174136f36f"
+}

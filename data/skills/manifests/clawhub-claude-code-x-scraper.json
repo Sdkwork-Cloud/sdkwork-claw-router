@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42656,
+  "uuid": "skill-clawhub-claude-code-x-scraper",
+  "skillKey": "clawhub-claude-code-x-scraper",
+  "name": "X (Twitter) Data Scraper",
+  "summary": "X (Twitter) data extraction and analysis. Use when user asks to \"get tweets from @username\", \"search X for\", \"analyze Twitter data\", \"fetch tweets about [top...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_x_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lamtest556-blip",
+      "features": [
+        "X (Twitter) data extraction and analysis",
+        "Use when user asks to \"get tweets from @username\", \"search X for\", \"analyze Twitter data\", \"fet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-x-scraper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261954715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-x-scraper",
+      "url": "https://clawhub.ai/skills/claude-code-x-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-x-scraper",
+    "url": "https://clawhub.ai/skills/claude-code-x-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-x-scraper-81c736d4e01371ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-x-scraper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-x-scraper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e009d01ebbfb8f1d502518349a8b0729157b03d54c8c46f0c458e9c7384b092",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:42:32.144Z"
+}

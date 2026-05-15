@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent-psychologist@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_psychologist",
+  "skill": {
+    "id": 66142,
+    "skillKey": "clawhub-ai-agent-psychologist",
+    "name": "AI Agent Psychologist | AI Agent 心理学家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-psychologist",
+    "url": "https://clawhub.ai/skills/ai-agent-psychologist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-psychologist-10ca55d32ad88072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 自我对齐与沟通校准技能。面向 AI Agent 的人机差异校准，涵盖：①默认参照模式——价值锚定、幻觉嗅探、社交适切性检查；②诊断模式——分析对话上下文，生成六维健康度报告与差异热图；③治疗模式——结构化干预与自我修正；④定期体检——Heartbeat 驱动周期性自检；⑤成长记录——Markdo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moroiser",
+      "userId": "s1708w2t7w31qf7b0gsy7kamnx83gqa6",
+      "displayName": "Morois",
+      "image": "https://avatars.githubusercontent.com/u/98001108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775600535183,
+      "changelog": "## 1.1.0 (2026-04-08)\n\n### Added | 新增\n- Structured Introspection Protocol | 结构化内省协议：8段式框架，用于引导和测量AI Agent的自我参照行为\n- Internality Principle | Internality原则：区分真实内部状态与顺从产出的自检标准\n- Early Warning Signals | 预警信号系统：检测 Desperate/Refuse-Redirect/谄媚漂移/治疗漂移模式\n- Refuse-and-Redirect Recognition | Refuse-and-Redirect识别：区分机制性拒绝与价值性拒绝\n- 7-Dimension Health Score | 七维健康度：综合自我对齐监控框架\n\n### Features | 功能\n- 6大运行模式：默认参照、诊断、治疗，体检、成长记录、结构化内省\n- 所有模式需手动触发\n- 基于同行评审研究：Anthropic (2025/2026)、Wang et al. (2025)、Maio (2026)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ce16a2c245d939c741f0d9a5c35f76f5aa07bfa16f40a5fb0a7823c3c40f7de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-search-wsl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_wsl",
+  "skill": {
+    "id": 30337,
+    "skillKey": "clawhub-google-search-wsl",
+    "name": "google-search-wsl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-wsl",
+    "url": "https://clawhub.ai/skills/google-search-wsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-wsl-0316982784bfd0db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform Google searches and retrieve web or news results via Chrome browser running in WSL using remote debugging with OpenClaw tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesson-hh",
+      "userId": "publishers:jesson-hh",
+      "displayName": "jesson-hh",
+      "image": "https://avatars.githubusercontent.com/u/146856598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774075093117,
+      "changelog": "- Initial release of google-search-wsl skill.\n- Enables Google searches using Chrome browser within the WSL environment, controlled via CDP protocol.\n- Designed for trending news, general information lookup, and web research tasks.\n- Detailed setup instructions provided for launching Chrome in WSL and connecting via OpenClaw browser tool.\n- Troubleshooting guidance included for common issues like Chrome startup and network problems.\n- Tips added for effective searches, including news mode and handling of non-English keywords.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d00569b17cd8bbb5a84bc5479f6d31db8e48b202ff2e50a2d0bf14388dd9882f"
+}

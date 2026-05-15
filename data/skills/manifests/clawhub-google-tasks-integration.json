@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23201,
+  "uuid": "skill-clawhub-google-tasks-integration",
+  "skillKey": "clawhub-google-tasks-integration",
+  "name": "Google Tasks",
+  "summary": "Google Tasks integration. Manage data, records, and automate workflows. Use when the user wants to interact with Google Tasks data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_tasks_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Google Tasks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Google Tasks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-tasks-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-tasks-integration",
+      "url": "https://clawhub.ai/skills/google-tasks-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-tasks-integration",
+    "url": "https://clawhub.ai/skills/google-tasks-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-tasks-integration-fe39a8b207ba7672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-tasks-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-tasks-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad09d087cf4ad76876cdd3b5f9f698f94980e4dc108d0b7cd37d87fa019c7179",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:30.257Z"
+}

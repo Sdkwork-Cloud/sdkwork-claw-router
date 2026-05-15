@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46682,
+  "uuid": "skill-clawhub-vryfik-skill",
+  "skillKey": "clawhub-vryfik-skill",
+  "name": "vryfik skill",
+  "summary": "Use when searching the web, documentation, or current information where token efficiency matters. Triggers on queries about API docs, current events, pricing...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vryfik_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "briefness",
+      "features": [
+        "Use when searching the web, documentation, or current information where token efficiency matters",
+        "Triggers on queries about API docs, current events, pricing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vryfik-skill@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25975388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vryfik-skill",
+      "url": "https://clawhub.ai/skills/vryfik-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vryfik-skill",
+    "url": "https://clawhub.ai/skills/vryfik-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vryfik-skill-c95eb743f73426bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vryfik-skill@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-vryfik-skill-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf6e5b54db8e38f025fc63996d65a13f4181e8b6afbf041cdc26d3336520d2f6",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:29:12.787Z"
+}

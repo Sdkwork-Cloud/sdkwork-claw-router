@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10720,
+  "uuid": "skill-clawhub-signal-cli",
+  "skillKey": "clawhub-signal-cli",
+  "name": "Signal CLI",
+  "summary": "Send Signal messages and look up Signal recipients via the local signal-cli installation on macOS. Use when the user asks to message someone on Signal, send a Signal text/attachment, list Signal contacts, or resolve a recipient by name/nic.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pseudobun",
+      "features": [
+        "Send Signal messages and look up Signal recipients via the local signal-cli installation on mac.",
+        "Use when the user asks to message someone on Signal, send a Signal text/attachment, list Signal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32909989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-cli",
+      "url": "https://clawhub.ai/skills/signal-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-cli",
+    "url": "https://clawhub.ai/skills/signal-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-cli-36050ca4605339a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18c0a2eddb3d4944b376ed6c76eef641dab1a0cd9ef73d09358d64cd96ab5a50",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T10:50:00.975Z"
+}

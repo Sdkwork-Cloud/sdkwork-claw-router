@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58270,
+  "uuid": "skill-clawhub-ernie-image-gen",
+  "skillKey": "clawhub-ernie-image-gen",
+  "name": "Ernie Image Gen",
+  "summary": "百度文生图 / Baidu ERNIE-Image text-to-image generation. Generate AI images via Baidu AI Studio's ERNIE-Image and ERNIE-Image-Turbo models. 中文：支持文生图、AI绘图、图片生成、百度生...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ernie_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIwork4me",
+      "features": [
+        "百度文生图 / Baidu ERNIE-Image text-to-image generation",
+        "Generate AI images via Baidu AI Studio's ERNIE-Image and ERNIE-Image-Turbo models",
+        "中文：支持文生图、AI绘图、图片生成、百度生..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ernie-image-gen@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261514469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ernie-image-gen",
+      "url": "https://clawhub.ai/skills/ernie-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ernie-image-gen",
+    "url": "https://clawhub.ai/skills/ernie-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ernie-image-gen-149d63d87979b46e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ernie-image-gen@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ernie-image-gen-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2837cac0d128c2eebf42435de6727576ea0e38fac4e89b3ba7b6ff4944a8bd11",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:40:26.760Z"
+}

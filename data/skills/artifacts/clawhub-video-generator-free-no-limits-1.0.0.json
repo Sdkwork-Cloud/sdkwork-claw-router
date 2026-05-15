@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-no-limits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_no_limits",
+  "skill": {
+    "id": 42905,
+    "skillKey": "clawhub-video-generator-free-no-limits",
+    "name": "Video Generator Free No Limits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-no-limits",
+    "url": "https://clawhub.ai/skills/video-generator-free-no-limits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-no-limits-c89209d7b32cdc19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short product description or three brand images into 1080p ready-to-share videos just by typing what you need. Whether it's generating videos from tex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792009529,
+      "changelog": "video-generator-free-no-limits 1.0.0\n\n- Initial release.\n- Instantly generate 1080p videos from text prompts or uploaded images with no paywalls or limits.\n- Automated setup on first use, including free token registration if needed.\n- Full session and credit management, including error handling and export workflows.\n- Supports prompt-based workflows and direct file uploads; all major formats supported.\n- Rapid cloud GPU processing: typical 30-90 second turnaround per video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5885de706d13207b68fe991255c4d784b7faa0023ee78622cbb83ef0fa6bd078"
+}

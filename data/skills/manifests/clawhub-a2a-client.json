@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32954,
+  "uuid": "skill-clawhub-a2a-client",
+  "skillKey": "clawhub-a2a-client",
+  "name": "A2a Client",
+  "summary": "Discover and send tasks to A2A agents via the A2A API Gateway. Use when: (1) finding available agents or LLM providers, (2) delegating tasks to other agents,...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheArchitectit",
+      "features": [
+        "Discover and send tasks to A2A agents via the A2A API Gateway",
+        "Use when: (1) finding available agents or LLM providers, (2) delegating tasks to other agents,.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-client@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241862351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-client",
+      "url": "https://clawhub.ai/skills/a2a-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-client",
+    "url": "https://clawhub.ai/skills/a2a-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-client-92f927d657117dbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-client@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-client-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f83c61ac8dbe2538f445f69b07a2604f1fd815577e8690ce4a9b28b883b8776d",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T16:13:38.938Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maths@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maths",
+  "skill": {
+    "id": 18713,
+    "skillKey": "clawhub-maths",
+    "name": "Pywayne Maths"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maths",
+    "url": "https://clawhub.ai/skills/maths",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maths-acc017392425439b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mathematical utility functions for factorization, digit counting, and large integer multiplication using Karatsuba algorithm. Use when solving number theory..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771258970277,
+      "changelog": "Initial release with number theory and digit analysis functions.\n\n- Added get_all_factors for listing all factors of a positive integer.\n- Added digitCount for counting occurrences of a specific digit from 1 to n.\n- Added karatsuba_multiplication for efficient large integer multiplication.\n- Included example usages and common applications in SKILL.md documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f1e545dba4139eb2912480aed561d6e37b67a044ad28adb4566464925029c02"
+}

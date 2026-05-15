@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/priority-conflict-resolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.priority_conflict_resolver",
+  "skill": {
+    "id": 59698,
+    "skillKey": "clawhub-priority-conflict-resolver",
+    "name": "Priority Conflict Resolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "priority-conflict-resolver",
+    "url": "https://clawhub.ai/skills/priority-conflict-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/priority-conflict-resolver-83fe0bc1588a2191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面对多个目标、有限资源与冲突时，输出排序、牺牲说明、边界与不做清单。；use for priority, tradeoff, planning workflows；do not use for 替代人事绩效决策, 伪造资源承诺."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773891119472,
+      "changelog": "Initial release of priority-conflict-resolver.\n\n- Provides structured workflows for resolving priority conflicts among multiple goals and limited resources.\n- Outputs include task ordering, trade-off explanations, boundaries, and \"not to do\" lists.\n- Emphasizes transparent, review-first drafts before generating actionable lists.\n- Explicitly outlines unsuited uses, such as personnel performance decisions or making false resource commitments.\n- Includes standard output templates and local resource references for consistent guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44ce503c17570fbf064a046ab134fad4eee1e5615073bca69c96fc290e7519d4"
+}

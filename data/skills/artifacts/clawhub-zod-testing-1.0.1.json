@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zod-testing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zod_testing",
+  "skill": {
+    "id": 22200,
+    "skillKey": "clawhub-zod-testing",
+    "name": "Zod Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zod-testing",
+    "url": "https://clawhub.ai/skills/zod-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zod-testing-3e74aee9d713b3d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Testing patterns for Zod schemas using Jest and Vitest. Covers schema correctness testing, mock data generation, error assertion patterns, integration testin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anivar",
+      "userId": "publishers:anivar",
+      "displayName": "Anivar Aravind",
+      "image": "https://avatars.githubusercontent.com/u/422943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772684719278,
+      "changelog": "Added source_url linking to GitHub repo",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f123418653a7ab484ffaeb5e60b44c26d2a331f40a2cb148a255d1c7e2b94953"
+}

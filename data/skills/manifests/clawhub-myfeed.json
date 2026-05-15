@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8590,
+  "uuid": "skill-clawhub-myfeed",
+  "skillKey": "clawhub-myfeed",
+  "name": "My Life Feed",
+  "summary": "Manage MyFeed things and groups via the MyFeed REST API.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myfeed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "l-fy",
+      "features": [
+        "Manage MyFeed things and groups via the MyFeed REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myfeed@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6887706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myfeed",
+      "url": "https://clawhub.ai/skills/myfeed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myfeed",
+    "url": "https://clawhub.ai/skills/myfeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myfeed-05db255bf0301cf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myfeed@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-myfeed-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8620c3fe09324b98a84f12043b7fde57282871146ceb75a442a72fb3c34d4907",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T13:52:36.765Z"
+}

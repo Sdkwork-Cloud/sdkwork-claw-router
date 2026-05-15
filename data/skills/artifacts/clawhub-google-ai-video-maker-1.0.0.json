@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-ai-video-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_ai_video_maker",
+  "skill": {
+    "id": 44758,
+    "skillKey": "clawhub-google-ai-video-maker",
+    "name": "Google Ai Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-ai-video-maker",
+    "url": "https://clawhub.ai/skills/google-ai-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-ai-video-maker-5d7b4f821e470a13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate images or clips into AI-made videos with this google-ai-video-maker skill. Works with MP4, MOV, JPG, PNG files up to 500MB. marketers and content cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775856457466,
+      "changelog": "Initial release of Google AI Video Maker — create polished videos from your images or clips using AI.\n\n- Upload images (JPG, PNG) or clips (MP4, MOV) up to 500MB for AI-powered video creation.\n- Simple, guided setup: automatic cloud connection and session management.\n- Supports quick edits, batch processing, and iterative enhancements with 1080p MP4 exports.\n- One-click actions for uploading, generating, editing, and exporting videos.\n- Intuitive prompt-based controls for marketers and content creators; no software install required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bcf77142a4c272d2ff78fb46009782f663afe858365e24b38a778751943a2a9"
+}

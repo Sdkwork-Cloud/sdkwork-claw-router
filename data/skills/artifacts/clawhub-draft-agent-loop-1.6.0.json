@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/draft-agent-loop@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draft_agent_loop",
+  "skill": {
+    "id": 25173,
+    "skillKey": "clawhub-draft-agent-loop",
+    "name": "Draft Agent Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draft-agent-loop",
+    "url": "https://clawhub.ai/skills/draft-agent-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draft-agent-loop-7089df5b9794cd15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce a Human-in-the-Right-Loop (HITRL) lifecycle for remote agents. Use this skill when the user wants structured oversight over an agent task: plan appro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toliuweijing",
+      "userId": "s1792my6kfgvzgtqavh11j5h0h83grgt",
+      "displayName": "Jim Liu",
+      "image": "https://avatars.githubusercontent.com/u/1712231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1776754669549,
+      "changelog": "**Dependency change for compatibility and consolidation.**\n- Replaced `draft-headless-pages` dependency with the canonical `draft-cli` dependency.\n- Updated skill description and instructions to reference `draft-cli` throughout.\n- Adjusted setup and recovery instructions to match `draft-cli` usage and conventions.\n- No changes to overall workflow logic or HITRL phases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d46a259bde0757f1316fba5eaf3733d660716ea387b402500185a6471b97cdd"
+}

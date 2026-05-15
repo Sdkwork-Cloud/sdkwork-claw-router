@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-reader@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_reader",
+  "skill": {
+    "id": 62103,
+    "skillKey": "clawhub-web-reader",
+    "name": "Web Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-reader",
+    "url": "https://clawhub.ai/skills/web-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-reader-2e219286e854d402.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能网页阅读器 - 抓取文章/下载视频并归档，支持分析、摘要、衍生。Triggers: '下载这篇文章', '抓取文章', '保存文章', 'fetch URL', '分析这篇文章', '摘要', '总结文章', '下载视频', '抓取微信文章', '抓取飞书文档', '把这个链接保存下来', '下载B站视频',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexxxiong",
+      "userId": "publishers:alexxxiong",
+      "displayName": "alexxiong",
+      "image": "https://avatars.githubusercontent.com/u/45865830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 631,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773475538875,
+      "changelog": "Smart article fetcher with archive workflow and analysis support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea56521930779bf6a9c7335565854e1aae05c1e533569bb7e26ef3c1cb4e51f8"
+}

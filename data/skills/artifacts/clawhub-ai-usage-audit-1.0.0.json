@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-usage-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_usage_audit",
+  "skill": {
+    "id": 50655,
+    "skillKey": "clawhub-ai-usage-audit",
+    "name": "AI Usage Audit — Monthly Retrospective & Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-usage-audit",
+    "url": "https://clawhub.ai/skills/ai-usage-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-usage-audit-1ebf4437fb77d68d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a monthly HTML report analyzing your recent AI conversations by theme, efficiency patterns, output value, and collaboration quality with actionable..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jjliu6",
+      "userId": "s177eys0rywp17aywmhsqq07sd83hq2t",
+      "displayName": "Junjie Liu",
+      "image": "https://avatars.githubusercontent.com/u/126896304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773976924133,
+      "changelog": "Initial release. Monthly AI usage retrospective that analyzes conversation history across 5 dimensions (theme clustering, pattern detection, value output, collaboration friction, highlights) and generates a polished HTML report with next-month improvement checklist. Supports auto language detection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:256e516b38a4e19cd042d869b2c58c644eea08bd721ecfe75a49a85e63c6e7a8"
+}

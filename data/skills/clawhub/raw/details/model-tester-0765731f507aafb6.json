@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "model-tester",
+    "displayName": "Model Tester",
+    "summary": "Test agents or models against predefined test cases to validate model routing, performance, and output quality. Use when: (1) verifying a specific agent or m...",
+    "tags": {
+      "agents": "1.0.0",
+      "debugging": "1.0.0",
+      "latest": "1.0.0",
+      "testing": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773232981985,
+    "updatedAt": 1778306934277
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773232981985,
+    "changelog": "Initial release of model-tester.\n\n- Provides a command-line tool to validate agents or models against predefined test cases.\n- Supports testing model routing, performance, and output quality with structured JSON reporting.\n- Allows targeting specific agents or models using `--agent`, `--model`, and `--case` parameters.\n- Extracts actual model usage, token counts, and runtime from OpenClaw logs for verification.\n- Ensures privacy by using only static prompts and structured log fields—no user data involved.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "nandorocker",
+    "userId": "publishers:nandorocker",
+    "displayName": "Nando Rossi",
+    "image": "https://avatars.githubusercontent.com/u/1476836?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306934277
+  }
+}

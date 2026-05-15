@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/js-comfyui-client@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.js_comfyui_client",
+  "skill": {
+    "id": 65012,
+    "skillKey": "clawhub-js-comfyui-client",
+    "name": "ComfyUI Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "js-comfyui-client",
+    "url": "https://clawhub.ai/skills/js-comfyui-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/js-comfyui-client-ffaac551b948e516.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此技能应在用户需要通过 ComfyUI 生成图片或视频时使用。支持加载工作流、修改 prompt、提交任务、轮询结果并自动下载生成的图片和视频。需 ComfyUI 服务已启动。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imjszhang",
+      "userId": "s178deygezkand2ppdrw966d7s840msf",
+      "displayName": "JS",
+      "image": "https://avatars.githubusercontent.com/u/5433500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775066723924,
+      "changelog": "js-comfyui-client v1.2.0\n\n- Major update: Improved support for ComfyUI image and video generation workflows, bundled with common workflows and enhanced prompt/image node handling.\n- Provides commands to load workflows, modify prompts, submit tasks, poll for results, and auto-download images/videos.\n- Added detailed guidance for using txt2img, img2img (ControlNet, Qwen edit), and video generation, including workflow and node selection.\n- Bundled 5 ready-to-use workflows for common generation scenarios (Z-Image, Qwen Edit, Wan Video etc.).\n- Improved flexibility: supports multi-image editing, auto-detect prompt nodes, and session-based output organization.\n- Expanded documentation with use cases, CLI reference, troubleshooting, and environment setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2aee897b36cac749b1986a56e23249fdbcc8e4e3d5df7f79f29348b3c6a6e29f"
+}

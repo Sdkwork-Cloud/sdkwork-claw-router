@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40647,
+  "uuid": "skill-clawhub-aws-knowledge",
+  "skillKey": "clawhub-aws-knowledge",
+  "name": "Openclaw",
+  "summary": "AWS expert powered by the AWS Knowledge MCP Server (via mcporter). Provides real-time access to AWS documentation, best practices, SOPs, and regional availab...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "w0yne",
+      "features": [
+        "AWS expert powered by the AWS Knowledge MCP Server (via mcporter)",
+        "Provides real-time access to AWS documentation, best practices, SOPs, and regional availab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-knowledge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5569148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-knowledge",
+      "url": "https://clawhub.ai/skills/aws-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-knowledge",
+    "url": "https://clawhub.ai/skills/aws-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-knowledge-fb93863c91b9fafe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-knowledge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-knowledge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b45adde0446094e412fc8689201590c334f86fd15e5e8e0511e692040e9f577",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:28:15.546Z"
+}

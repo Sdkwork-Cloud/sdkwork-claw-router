@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18114,
+  "uuid": "skill-clawhub-tidbyt-status",
+  "skillKey": "clawhub-tidbyt-status",
+  "name": "Tidbyt Status Display",
+  "summary": "Provides an HTTP API exposing OpenClaw agent status as JSON for displaying on Tidbyt 64x32 LED devices with activity, emoji, and task details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tidbyt_status",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrScoutsHub",
+      "features": [
+        "Provides an HTTP API exposing OpenClaw agent status as JSON for displaying on Tidbyt 64x32 LED."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tidbyt-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259955502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tidbyt-status",
+      "url": "https://clawhub.ai/skills/tidbyt-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tidbyt-status",
+    "url": "https://clawhub.ai/skills/tidbyt-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tidbyt-status-42959c538f5cd692.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tidbyt-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tidbyt-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73ae8725a8a9da53656e1f75d54c2577b276f1970be611bf5e34c02f5fa0c1ba",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:32:28.285Z"
+}

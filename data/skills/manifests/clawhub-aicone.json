@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66915,
+  "uuid": "skill-clawhub-aicone",
+  "skillKey": "clawhub-aicone",
+  "name": "aiclone",
+  "summary": "通用 AI 机器人克隆技能（安全加固版 v2.0）。支持导出/导入配置，ZIP Slip 防护，元数据脱敏，敏感文件自动排除。用于 A→B 能力复制、团队共享、备份恢复。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dreamcalste",
+      "features": [
+        "通用 AI 机器人克隆技能（安全加固版 v2.0）。支持导出/导入配置，ZIP Slip 防护，元数据脱敏，敏感文件自动排除。用于 A→B 能力复制、团队共享、备份恢复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aicone@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237932126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aicone",
+      "url": "https://clawhub.ai/skills/aicone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicone",
+    "url": "https://clawhub.ai/skills/aicone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicone-41935326ae3f7363.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aicone@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aicone-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20e62e45ab63322136609d4c7dc80d99e822f3c86184c62194298ee6b5c52056",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:28:02.837Z"
+}

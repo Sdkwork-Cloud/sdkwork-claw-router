@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47823,
+  "uuid": "skill-clawhub-cm-sitemap-generator",
+  "skillKey": "clawhub-cm-sitemap-generator",
+  "name": "Sitemap Generator",
+  "summary": "Generate XML sitemaps by crawling a website or scanning local files. Auto-discovers pages via link extraction. Supports local HTML/MD file scanning with last...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_sitemap_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate XML sitemaps by crawling a website or scanning local files",
+        "Auto-discovers pages via link extraction",
+        "Supports local HTML/MD file scanning with last..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cm-sitemap-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cm-sitemap-generator",
+      "url": "https://clawhub.ai/skills/cm-sitemap-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-sitemap-generator",
+    "url": "https://clawhub.ai/skills/cm-sitemap-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-sitemap-generator-912c3dd63cbf4c9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cm-sitemap-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cm-sitemap-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431e44d27f0aae49a48029a1ba6ac98b6dd58a42a067bcf2b1c2299ec2f5fa7a",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:47:38.848Z"
+}

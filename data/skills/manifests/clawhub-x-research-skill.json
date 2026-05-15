@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20499,
+  "uuid": "skill-clawhub-x-research-skill",
+  "skillKey": "clawhub-x-research-skill",
+  "name": "X/Twitter Research",
+  "summary": "Research trending topics, tweets, user profiles, and conversations on X (Twitter) using twitterapi.io for insights and trend reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_research_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xArtex",
+      "features": [
+        "Research trending topics, tweets, user profiles, and conversations on X (Twitter) using twitter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-research-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108491869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-research-skill",
+      "url": "https://clawhub.ai/skills/x-research-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-research-skill",
+    "url": "https://clawhub.ai/skills/x-research-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-research-skill-6da0b523ec2389d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-research-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-research-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:206db96b6080c5e7c78a9a4c84d864edea859c268b1d0d1ac76d4be35012a396",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:18:31.402Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-runner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_runner",
+  "skill": {
+    "id": 31200,
+    "skillKey": "clawhub-skill-runner",
+    "name": "Skill Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-runner",
+    "url": "https://clawhub.ai/skills/skill-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-runner-3c10d266c675bfb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables secure execution of specified OpenClaw skills via cron jobs by forwarding agentTurn messages and passing the necessary context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xpneuma",
+      "userId": "s174pybjnfq5kz3ff7r1kpkrvx841v1q",
+      "displayName": "xpneuma",
+      "image": "https://avatars.githubusercontent.com/u/2805947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774029999454,
+      "changelog": "Initial release of Skill Runner – a tool to trigger other OpenClaw skills via scheduled or indirect invocation.\n\n- Enables secure, dynamic execution of skill functions based on incoming messages.\n- Passes full context (tools, session) to the target skill.\n- Designed for use with cron jobs or similar agentTurn triggers.\n- Standard message-based interface (e.g., run <skill-name>).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:392252e41b935fccdb79ff009d69305ccf4af9a56bb20b71e3fed6b927a560ee"
+}

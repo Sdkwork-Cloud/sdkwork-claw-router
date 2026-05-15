@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48732,
+  "uuid": "skill-clawhub-safe-self-improvement",
+  "skillKey": "clawhub-safe-self-improvement",
+  "name": "Safe Self-Improvement",
+  "summary": "Security-hardened self-improvement skill for OpenClaw. Captures learnings, errors, and corrections with mandatory human-approval gate, automated sanitization...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_self_improvement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shuhuan Cao",
+      "features": [
+        "Security-hardened self-improvement skill for OpenClaw",
+        "Captures learnings, errors, and corrections with mandatory human-approval gate, automated sanit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-self-improvement@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29369968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-self-improvement",
+      "url": "https://clawhub.ai/skills/safe-self-improvement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-self-improvement",
+    "url": "https://clawhub.ai/skills/safe-self-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-self-improvement-82b8dd4d3497ad52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-self-improvement@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-self-improvement-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f469b0bc5b19360ef1d8a90e973905f8a31a5b432f6af9e4878424f4168458a2",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T03:03:26.967Z"
+}

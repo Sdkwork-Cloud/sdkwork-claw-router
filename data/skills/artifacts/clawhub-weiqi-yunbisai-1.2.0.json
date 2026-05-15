@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weiqi-yunbisai@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_yunbisai",
+  "skill": {
+    "id": 68976,
+    "skillKey": "clawhub-weiqi-yunbisai",
+    "name": "围棋云比赛网查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-yunbisai",
+    "url": "https://clawhub.ai/skills/weiqi-yunbisai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-yunbisai-2eb3ee0e4f802e74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "weiqi-yunbisai 云比赛网围棋比赛数据查询 - 支持比赛列表、分组信息、对阵数据、排名计算。当用户需要\"查比赛\"、\"云比赛网\"、\"围棋比赛\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangbin2025",
+      "userId": "s172smqj3myyxf7bjeyvyvse5183em11",
+      "displayName": "tokener",
+      "image": "https://avatars.githubusercontent.com/u/39153812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775973785976,
+      "changelog": "feat: 添加对手分逆减破同分规则; feat: 添加 --ranking-mode 参数支持简化排名模式(跳过累进分); fix: 对手分=0时不计算逆减; docs: 更新排名规则文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb96607d14c853bbb89e8580762d6258d41cfd61e92066a3b97baef498cc4ee5"
+}

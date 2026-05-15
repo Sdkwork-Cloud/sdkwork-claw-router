@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lamborghini@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lamborghini",
+  "skill": {
+    "id": 70061,
+    "skillKey": "clawhub-lamborghini",
+    "name": "Lamborghini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lamborghini",
+    "url": "https://clawhub.ai/skills/lamborghini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lamborghini-c798ceefaebca023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "兰博基尼超跑信息助手。提供车型查询、价格配置、性能参数、经销商、品牌历史等信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979195613,
+      "changelog": "Lamborghini skill 1.0.0 — Initial release:\n\n- 提供兰博基尼品牌与车型（Aventador、Huracán、Urus）基础信息查询\n- 支持官方定价、限量版、定制服务（Ad Personam）等常见问题\n- 可查询品牌历史、经典车型、引擎技术、经销商信息\n- 适用于想了解或购买兰博基尼超跑、豪车的用户",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e96b2b0c8ed17dde7c2feaf26d1af9dff3e745acdb7ac28bcf0faff3437add42"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reagent-expiry-alert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reagent_expiry_alert",
+  "skill": {
+    "id": 44915,
+    "skillKey": "clawhub-reagent-expiry-alert",
+    "name": "Reagent Expiry Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reagent-expiry-alert",
+    "url": "https://clawhub.ai/skills/reagent-expiry-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reagent-expiry-alert-8c9a835e5632fefd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan reagent barcodes or IDs, log expiration dates, and generate multi-level alerts before reagent expiry to support laboratory inventory management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774929562215,
+      "changelog": "Initial release of reagent-expiry-alert skill:\n\n- Log reagent barcodes/IDs and expiration dates for laboratory inventory.\n- Automatically generate multi-level alerts (expired, 30/60/90-day warnings) before reagent expiry.\n- CLI parameters for scanning, logging, and custom alert windows.\n- Returns expiration alert levels, inventory summary, and reorder recommendations.\n- Includes robust input validation, error handling, and response templates for clear reporting and risk management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ad737c4e79bb25f73e95dbee8a966c9be3db4f9752c9fbdff0e4d7361cba89e"
+}

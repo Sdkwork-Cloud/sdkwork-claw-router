@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tesseract-image-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesseract_image_ocr",
+  "skill": {
+    "id": 46233,
+    "skillKey": "clawhub-tesseract-image-ocr",
+    "name": "Tesseract OCR Image Text Extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesseract-image-ocr",
+    "url": "https://clawhub.ai/skills/tesseract-image-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesseract-image-ocr-93684808af0b8c66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from images using Tesseract.js (OCR). Supports multi-language recognition including Chinese and English, region recognition, character whitelist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777945358362,
+      "changelog": "- Initial release of tesseract-image-ocr.\n- Extract text from images using Tesseract.js with support for over 100 languages, including Chinese and English.\n- Features include region recognition, character whitelist filtering, text orientation detection, and adjustable output formats (text, hocr, blocks, tsv).\n- Supports multiple recognition parameters: language selection, page segmentation modes, OCR engine modes, and DPI specification.\n- Requires Node.js environment and does not support PDF files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b034f0277faf300eea54df022878c3930914ce3add9b0395773f95594792d5c9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72655,
+  "uuid": "skill-clawhub-douyin-2",
+  "skillKey": "clawhub-douyin-2",
+  "name": "Douyin",
+  "summary": "抖音视频上传工具。支持登录抖音账号、上传视频、管理登录状态。当用户需要上传视频到抖音、登录抖音、检查抖音登录状态时使用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lance",
+      "features": [
+        "抖音视频上传工具。支持登录抖音账号、上传视频、管理登录状态。当用户需要上传视频到抖音、登录抖音、检查抖音登录状态时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8026845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-2",
+      "url": "https://clawhub.ai/skills/douyin-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-2",
+    "url": "https://clawhub.ai/skills/douyin-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-2-e052a9e9ad631634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f92c25ff7cff4c0d7d6f6ec6e64d6882522af09e759137a65c6839c50546ef97",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:58:30.072Z"
+}

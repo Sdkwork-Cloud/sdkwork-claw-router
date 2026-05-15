@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26961,
+  "uuid": "skill-clawhub-superdoc",
+  "skillKey": "clawhub-superdoc",
+  "name": "Superdoc",
+  "summary": "Create, edit, and manipulate DOCX files using SuperDoc - a modern document editor with custom rendering pipeline. Use when you need to programmatically work...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superdoc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yebo-liu",
+      "features": [
+        "Create, edit, and manipulate DOCX files using SuperDoc",
+        "a modern document editor with custom rendering pipeline",
+        "Use when you need to programmatically work..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superdoc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56617247?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superdoc",
+      "url": "https://clawhub.ai/skills/superdoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superdoc",
+    "url": "https://clawhub.ai/skills/superdoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superdoc-5ccec16923f2ac5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superdoc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-superdoc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c498328de083dac6738f6f833fc9c5ab3f97b7484eda9acd77103f7ade048d7c",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:01:51.889Z"
+}

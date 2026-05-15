@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-platform-auto-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_platform_auto_poster",
+  "skill": {
+    "id": 70916,
+    "skillKey": "clawhub-cross-platform-auto-poster",
+    "name": "跨平台内容自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-platform-auto-poster",
+    "url": "https://clawhub.ai/skills/cross-platform-auto-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-platform-auto-poster-4c8c2119f95d8438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台内容自动化发布工作流，支持AI原创内容生成、视频制作、自动发布到小红书、抖音等平台，支持国内视频搬运去重后发布到TikTok/YouTube。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiatian5",
+      "userId": "s1764r9t6hqrdy95j73zbh974183mfa0",
+      "displayName": "xiatian5",
+      "image": "https://avatars.githubusercontent.com/u/106873142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774881789843,
+      "changelog": "Initial release: 支持AI原创小红书图文/视频、国内视频搬运到TikTok/YouTube",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1151b647945a268a145466acb72d150b4551f6ba51e3a7834c14e83d45cb93b8"
+}

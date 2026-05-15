@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70570,
+  "uuid": "skill-clawhub-child-growth-tracker",
+  "skillKey": "clawhub-child-growth-tracker",
+  "name": "儿童成长跟踪与评估",
+  "summary": "儿童成长跟踪与评估技能 V2（心理学对齐版）。基于8维发展模型（D0关系、D1运动、D2学业、D3认知、D4社交、D5习惯、D6动机、D7兴趣）， 持续记录、整理和分析孩子的成长档案。数据作为能力评估参考，核心关注内在动机和关系安全感。 当用户提到\"记录喜悦\"\"喜悦最近\"\"孩子表现\"\"成长记录\"\"发展评估\"\"跳绳...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.child_growth_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "儿童成长跟踪与评估技能 V2（心理学对齐版）。基于8维发展模型（D0关系、D1运动、D2学业、D3认知、D4社交、D5习惯、D6动机、D7兴趣）， 持续记录、整理和分析孩子的成长档案。数据作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/child-growth-tracker@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "child-growth-tracker",
+      "url": "https://clawhub.ai/skills/child-growth-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "child-growth-tracker",
+    "url": "https://clawhub.ai/skills/child-growth-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/child-growth-tracker-0ab04bae9711ad9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/child-growth-tracker@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-child-growth-tracker-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d90f1254330313bf1370fe77989709ae4440c97daee6d4ec9a51622b1ad9a93c",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:37:22.653Z"
+}

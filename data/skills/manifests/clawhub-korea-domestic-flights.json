@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58350,
+  "uuid": "skill-clawhub-korea-domestic-flights",
+  "skillKey": "clawhub-korea-domestic-flights",
+  "name": "Korea Domestic Flights",
+  "summary": "Search, compare, and monitor 대한민국 domestic flights using a Playwright-backed airfare workflow. Use when the user wants 한국 국내선 항공권 최저가 조회, 김포-제주/부산-제주 같은 노선 비...",
+  "version": "0.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korea_domestic_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "twbeatles",
+      "features": [
+        "Search, compare, and monitor 대한민국 domestic flights using a Playwright-backed airfare workflow",
+        "Use when the user wants 한국 국내선 항공권 최저가 조회, 김포-제주/부산-제주 같은 노선 비..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/korea-domestic-flights@0.6.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243789332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "korea-domestic-flights",
+      "url": "https://clawhub.ai/skills/korea-domestic-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korea-domestic-flights",
+    "url": "https://clawhub.ai/skills/korea-domestic-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korea-domestic-flights-fecd7487cc28ddb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/korea-domestic-flights@0.6.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-korea-domestic-flights-0.6.4.json",
+      "version": "0.6.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41e3d16161e9d20bcb152efd4ae4ff8e96b4ffb3a91f05b717269aa48341cd02",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:59:54.902Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65493,
+  "uuid": "skill-clawhub-murasame-feishu-voice",
+  "skillKey": "clawhub-murasame-feishu-voice",
+  "name": "Murasame Feishu Voice",
+  "summary": "Feishu 语音气泡技能：使用丛雨（Murasame）语音包发送语音；若可表达则按标签发送语音并同步发送中文文本；支持开关控制、标签映射与关键词回退。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.murasame_feishu_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenxundaozu",
+      "features": [
+        "Feishu 语音气泡技能：使用丛雨（Murasame）语音包发送语音；若可表达则按标签发送语音并同步发送中文文本；支持开关控制、标签映射与关键词回退。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/murasame-feishu-voice@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140960497?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "murasame-feishu-voice",
+      "url": "https://clawhub.ai/skills/murasame-feishu-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "murasame-feishu-voice",
+    "url": "https://clawhub.ai/skills/murasame-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/murasame-feishu-voice-0f317c5d18d9d537.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/murasame-feishu-voice@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-murasame-feishu-voice-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:325d2356c518a0796521e792561cb5d376a183b1c4065472758be60d0a65fa74",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:30:52.085Z"
+}

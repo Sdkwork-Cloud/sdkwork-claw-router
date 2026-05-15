@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49887,
+  "uuid": "skill-clawhub-pagepop-skill",
+  "skillKey": "clawhub-pagepop-skill",
+  "name": "PagePop",
+  "summary": "Create and continue PagePop content-generation conversations from a host app. Use when the user wants PagePop to generate, refine, or retrieve content artifa...",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pagepop_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jujian-pp",
+      "features": [
+        "Create and continue PagePop content-generation conversations from a host app",
+        "Use when the user wants PagePop to generate, refine, or retrieve content artifa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pagepop-skill@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/278613988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pagepop-skill",
+      "url": "https://clawhub.ai/skills/pagepop-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pagepop-skill",
+    "url": "https://clawhub.ai/skills/pagepop-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pagepop-skill-769896c4f714ccef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pagepop-skill@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pagepop-skill-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d416a188cadd9fa633922d38386d006183a63b3ba66de66888b417497b6e2bd6",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T06:47:21.785Z"
+}

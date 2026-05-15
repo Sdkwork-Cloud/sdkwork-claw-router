@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-storage-management@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_storage_management",
+  "skill": {
+    "id": 44924,
+    "skillKey": "clawhub-session-storage-management",
+    "name": "Session Storage Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-storage-management",
+    "url": "https://clawhub.ai/skills/session-storage-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-storage-management-0a51abafa9759a93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and clean up OpenClaw session storage files. Use when the user wants to manage session files, clean up old sessions, delete cron/heartbeat, or organi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "denq04",
+      "userId": "s17ekyz9gt4qh3d23eevhky9e1853cnt",
+      "displayName": "denq04",
+      "image": "https://avatars.githubusercontent.com/u/22273058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776543426827,
+      "changelog": "Removed useless scripts section",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa05b3f67184546ffa100431066789e6d3b255793fa2ac640c38ca0da8052477"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28340,
+  "uuid": "skill-clawhub-github-actions-merge-queue-health-audit",
+  "skillKey": "clawhub-github-actions-merge-queue-health-audit",
+  "name": "GitHub Actions Merge Queue Health Audit",
+  "summary": "Audit GitHub merge queue workflow health with failure-rate, queue-latency, and stale-success risk scoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_merge_queue_health_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub merge queue workflow health with failure-rate, queue-latency, and stale-success ri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-merge-queue-health-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-merge-queue-health-audit",
+      "url": "https://clawhub.ai/skills/github-actions-merge-queue-health-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-merge-queue-health-audit",
+    "url": "https://clawhub.ai/skills/github-actions-merge-queue-health-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-merge-queue-health-audit-cff6c90b5961e707.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-merge-queue-health-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-merge-queue-health-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14cfbaecab9a2f5ff475a3dcd6493734c65af5c52640ac8f10a92802b0d132ba",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T19:07:48.484Z"
+}

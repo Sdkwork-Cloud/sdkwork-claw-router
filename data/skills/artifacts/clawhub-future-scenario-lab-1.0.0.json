@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/future-scenario-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.future_scenario_lab",
+  "skill": {
+    "id": 49801,
+    "skillKey": "clawhub-future-scenario-lab",
+    "name": "Future Scenario Lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "future-scenario-lab",
+    "url": "https://clawhub.ai/skills/future-scenario-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/future-scenario-lab-5210154ac2e57619.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore possible futures by identifying weak signals, building scenarios, and analyzing their implications for today's decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778244477216,
+      "changelog": "Future Scenario Lab 1.0.0 — initial release.\n\n- Enables exploration of multiple plausible futures using structured scenario planning.\n- Guides users through framing questions, scanning for signals, defining critical uncertainties, building a 2x2 scenario matrix, and analyzing implications.\n- Supports stress-testing strategies, identifying robust actions, and planning for uncertainty.\n- Emphasizes exploration over prediction and includes compliance and safety guidelines.\n- Suitable for individuals and small teams preparing for change in any domain or time horizon.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f335feacc358d42403132c71b768f1c10e9a5c955aab178811f191b4df238e75"
+}

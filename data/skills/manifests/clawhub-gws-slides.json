@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16826,
+  "uuid": "skill-clawhub-gws-slides",
+  "skillKey": "clawhub-gws-slides",
+  "name": "Gws Slides",
+  "summary": "Google Slides: Read and write presentations.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_slides",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Slides: Read and write presentations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-slides@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-slides",
+      "url": "https://clawhub.ai/skills/gws-slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-slides",
+    "url": "https://clawhub.ai/skills/gws-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-slides-7aab8a7acef6d96b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-slides@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-slides-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce5537ca25a431a599d533c9372fbbbacedf4929af40f050fac934bbd5400573",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:53.957Z"
+}

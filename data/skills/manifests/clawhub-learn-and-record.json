@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70306,
+  "uuid": "skill-clawhub-learn-and-record",
+  "skillKey": "clawhub-learn-and-record",
+  "name": "Learn and Record",
+  "summary": "学习新工具、新技术、新平台的完整流程。当你需要从零学习某个东西时使用此 skill。包含学习方法论、踩坑记录、探索清单和笔记模板。也用于回顾已有学习经验来指导新的学习。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_and_record",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amazcuter(神奇可人）",
+      "features": [
+        "学习新工具、新技术、新平台的完整流程。当你需要从零学习某个东西时使用此 skill。包含学习方法论、踩坑记录、探索清单和笔记模板。也用于回顾已有学习经验来指导新的学习。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-and-record@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90633247?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-and-record",
+      "url": "https://clawhub.ai/skills/learn-and-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-and-record",
+    "url": "https://clawhub.ai/skills/learn-and-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-and-record-7e518740ccbd9c05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-and-record@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-and-record-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36ef1b4caf9ab3f0d041771aa4724a2ec8cf6fc8c243dfc05c099ac128564d62",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:50:16.852Z"
+}

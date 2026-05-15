@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69517,
+  "uuid": "skill-clawhub-ai-promotion-query",
+  "skillKey": "clawhub-ai-promotion-query",
+  "name": "Ai Promotion Query",
+  "summary": "腾讯音乐人宣推数据查询能力。当用户提到\"我这些歌宣推情况如何\"、\"看一下宣推数据\"、\"这首歌宣推效果怎么样\"、\"我有哪些歌在投放\"、\"这首歌还要不要继续投\"、\"宣推诊断\"、\"宣推表现\"、\"投放效果\"等与宣推数据查询相关的请求时触发。本 Skill 整合了两大子场景：① **宣推概览**——拉取当前登录用户名下所有...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_promotion_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "腾讯音乐人宣推数据查询能力。当用户提到\"我这些歌宣推情况如何\"、\"看一下宣推数据\"、\"这首歌宣推效果怎么样\"、\"我有哪些歌在投放\"、\"这首歌还要不要继续投\"、\"宣推诊断\"、\"宣推表现\"、\"投."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-promotion-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-promotion-query",
+      "url": "https://clawhub.ai/skills/ai-promotion-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-promotion-query",
+    "url": "https://clawhub.ai/skills/ai-promotion-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-promotion-query-b60980da591e847c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-promotion-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-promotion-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:986589616dcb8eea13b48ecc2f34ecf0f2413869199cb3352176ab9ccf2b8ee7",
+      "artifactSizeBytes": 3023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:39:48.534Z"
+}

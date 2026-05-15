@@ -1,20 +1,24 @@
 import { ChatHistoryItem } from '../ChatHistoryItem';
 import { GenerationChatInput } from '../GenerationChatInput';
 import type { Modality } from '../../pages/Playground';
-import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
+import type { PlaygroundHistoryItem, PlaygroundModelGroup, PlaygroundPreviewSetter } from '../../playgroundTypes';
 
 export function AgentView({
   agentHistory,
   setPreviewItem,
-  modality,
   selectedModality,
-  setSelectedModality
+  setSelectedModality,
+  modelGroups,
+  selectedModels,
+  setSelectedModel,
 }: {
   agentHistory: PlaygroundHistoryItem[],
   setPreviewItem: PlaygroundPreviewSetter,
-  modality: Modality,
   selectedModality: Modality,
-  setSelectedModality: (value: Modality) => void
+  setSelectedModality: (value: Modality) => void,
+  modelGroups: PlaygroundModelGroup[],
+  selectedModels: Record<Modality, string>,
+  setSelectedModel: (targetModality: Modality) => (modelId: string) => void,
 }) {
   return (
     <div className="flex-1 min-h-0 relative flex flex-col bg-[#111]">
@@ -46,7 +50,13 @@ export function AgentView({
       <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end z-50 pointer-events-none pb-6">
          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#111] via-[#111]/80 to-transparent pointer-events-none" />
          <div className="w-full max-w-[1280px] pointer-events-auto px-4 md:px-12 relative z-10">
-           <GenerationChatInput modality={modality} selectedModality={selectedModality} setSelectedModality={setSelectedModality} />
+           <GenerationChatInput
+             selectedModality={selectedModality}
+             setSelectedModality={setSelectedModality}
+             modelGroups={modelGroups}
+             selectedModels={selectedModels}
+             setSelectedModel={setSelectedModel}
+           />
          </div>
       </div>
     </div>

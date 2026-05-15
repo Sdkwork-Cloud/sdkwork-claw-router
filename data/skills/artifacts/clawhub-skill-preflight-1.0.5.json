@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-preflight@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_preflight",
+  "skill": {
+    "id": 53412,
+    "skillKey": "clawhub-skill-preflight",
+    "name": "Skill Preflight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-preflight",
+    "url": "https://clawhub.ai/skills/skill-preflight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-preflight-ccbe16dd56abee12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically inject relevant skills and protocols into agent context using local embeddings. Free, no API calls — uses Ollama with nomic-embed-text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thekhemistai",
+      "userId": "s171v87b9rv4nydqj1j11z8evn83ncjk",
+      "displayName": "thekhemistai",
+      "image": "https://avatars.githubusercontent.com/u/261874262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774565800219,
+      "changelog": "Fix doc mismatches, strengthen remote Ollama trust-boundary warnings, and remove remaining gold-standard-specific skip behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a9cae164321183b433bf79f6cd960ef84b57ff9d7d581c9103fd6582608fbc4"
+}

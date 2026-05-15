@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31791,
+  "uuid": "skill-clawhub-qclaw-restart",
+  "skillKey": "clawhub-qclaw-restart",
+  "name": "QClaw Restart",
+  "summary": "Prompt user to confirm before restarting QClaw by closing all its processes, waiting 5 seconds, then relaunching via its desktop or Start Menu shortcut.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qclaw_restart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenguangwu",
+      "features": [
+        "Prompt user to confirm before restarting QClaw by closing all its processes, waiting 5 seconds,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qclaw-restart@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20456043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qclaw-restart",
+      "url": "https://clawhub.ai/skills/qclaw-restart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qclaw-restart",
+    "url": "https://clawhub.ai/skills/qclaw-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qclaw-restart-9f961bb73df0a7da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qclaw-restart@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qclaw-restart-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:197feb4d5e4b74f51e279f78b147d1e07c8d63411473da32248e229c390d4fe8",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:49:30.877Z"
+}

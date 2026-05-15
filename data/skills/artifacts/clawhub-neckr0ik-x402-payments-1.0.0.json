@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neckr0ik-x402-payments@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neckr0ik_x402_payments",
+  "skill": {
+    "id": 25472,
+    "skillKey": "clawhub-neckr0ik-x402-payments",
+    "name": "Neckr0ik X402 Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neckr0ik-x402-payments",
+    "url": "https://clawhub.ai/skills/neckr0ik-x402-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neckr0ik-x402-payments-6ef2d866fef0baf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "x402 payment protocol for AI agents. Enables autonomous micropayments using HTTP 402 status codes and stablecoins. Use when you need to pay for API access, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neckr0ik",
+      "userId": "s1743ver4v9fjtabxtnwrxe1ms83n31n",
+      "displayName": "Neckr0ik",
+      "image": "https://avatars.githubusercontent.com/u/96146149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772833963150,
+      "changelog": "Initial release of the x402 payment protocol skill for AI agents.\n\n- Enables autonomous micropayments for API access using HTTP 402 status codes and stablecoins.\n- Supports paying for, accepting, and verifying x402-enabled endpoints.\n- Compatible with major blockchains (Ethereum, Polygon, Base, Arbitrum, Optimism, Solana) and stablecoins (USDC, USDT, DAI).\n- Provides CLI commands for checking endpoints, making payments, running a payment-enabled API server, checking balances, and viewing payment history.\n- Emphasizes secure local key management and on-chain payment settlement.\n- Includes usage examples for both agents (consumers) and service providers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a045979f9a969eb437214f865fb684698ad0e9b4cde83107dd8cc9e676214a83"
+}

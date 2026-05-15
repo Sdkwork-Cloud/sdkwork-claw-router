@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-expense-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_expense_tracker",
+  "skill": {
+    "id": 33776,
+    "skillKey": "clawhub-personal-expense-tracker",
+    "name": "Personal Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-expense-tracker",
+    "url": "https://clawhub.ai/skills/personal-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-expense-tracker-81b8426dcc67db87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal expense tracker - record expenses, auto-categorize, monthly statistics with total and category breakdown"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774439420404,
+      "changelog": "Personal expense tracker with auto-categorization and monthly statistics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48519765ef3148aab7a233d3956ab9baf137342dc7a0d170462b3f393ca2498d"
+}

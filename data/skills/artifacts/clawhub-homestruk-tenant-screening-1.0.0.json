@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homestruk-tenant-screening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homestruk_tenant_screening",
+  "skill": {
+    "id": 34134,
+    "skillKey": "clawhub-homestruk-tenant-screening",
+    "name": "Homestruk Tenant Screening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homestruk-tenant-screening",
+    "url": "https://clawhub.ai/skills/homestruk-tenant-screening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homestruk-tenant-screening-17c65bf7f36ecd3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Screen tenant applications using Fair Housing compliant criteria for Massachusetts properties. Use when evaluating a rental application, setting screening cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamsjb",
+      "userId": "s177eabkm6n64ftj8hjjrm4gth84309a",
+      "displayName": "Adams Jean Baptiste",
+      "image": "https://avatars.githubusercontent.com/u/22421595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774200839852,
+      "changelog": "Homestruk Tenant Screening Skill 1.0.0 – Initial Release\n\n- Provides Fair Housing-compliant tenant screening guidelines specific to Massachusetts.\n- Includes step-by-step screening criteria covering income, credit, criminal background, rental history, and employment.\n- Emphasizes MA and federal protected classes and source of income law compliance.\n- Features a screening decision matrix and FCRA-compliant rejection letter template.\n- Integrates with related SOPs, knowledge base, and forms for streamlined property management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a85f1ca0b2a9ee0381f74ad2aa61a848b5a9b6f014a99f9b4e2cd94c3fbe2edd"
+}

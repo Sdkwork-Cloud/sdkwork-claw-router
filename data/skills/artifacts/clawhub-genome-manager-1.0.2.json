@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genome-manager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genome_manager",
+  "skill": {
+    "id": 16484,
+    "skillKey": "clawhub-genome-manager",
+    "name": "Genome Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genome-manager",
+    "url": "https://clawhub.ai/skills/genome-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genome-manager-59c88d1740acc661.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Genome Evolution Protocol (GEP) genomes for AI agent self-evolution. Use when creating, storing, retrieving, mutating, or tracking genomes - the encod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylechen26",
+      "userId": "publishers:kylechen26",
+      "displayName": "Kyle Chen",
+      "image": "https://avatars.githubusercontent.com/u/260723137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 870,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771617448763,
+      "changelog": "Improved description explaining GEP genome lifecycle and collective evolution",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92155b7dba04f0380ed007c82283d70c88385c4241c4c23ab9d124072c5533a1"
+}

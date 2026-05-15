@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blockpi-rpc-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockpi_rpc_skill",
+  "skill": {
+    "id": 37486,
+    "skillKey": "clawhub-blockpi-rpc-skill",
+    "name": "blockpi-rpc.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockpi-rpc-skill",
+    "url": "https://clawhub.ai/skills/blockpi-rpc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockpi-rpc-skill-96344ddcc51fb6c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-protocol BlockPI access skill for discovering documented methods, routing requests by protocol, mapping RU pricing, and calling BlockPI endpoints acros..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neganzhao",
+      "userId": "s17dg4w4sr13rbncvr7mn36k2d84hb2b",
+      "displayName": "NeganZhao",
+      "image": "https://avatars.githubusercontent.com/u/147230368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775789488558,
+      "changelog": "- Endpoints in state are now encrypted at rest and automatically decrypted on use; local encryption key is stored in state/.endpoints.key.\n- Legacy plaintext endpoint state is automatically migrated to encrypted format on first access.\n- Do not commit or distribute real endpoints or key material; all persisted secrets are local-only.\n- User consent is emphasized for storing sensitive API keys or tokens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cc37cf3b5376fc769108ea2a5d78456ced32cb2213fe00b70b05bb1e6eab6cd"
+}

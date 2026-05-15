@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-opencode@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_opencode",
+  "skill": {
+    "id": 25662,
+    "skillKey": "clawhub-skill-creator-opencode",
+    "name": "Skill Creator (Opencode)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-opencode",
+    "url": "https://clawhub.ai/skills/skill-creator-opencode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-opencode-f00edc8e29d7a980.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pwu0125",
+      "userId": "s176bbxfh1ct8npc788f5q4cbd83g1tt",
+      "displayName": "pwu0125",
+      "image": "https://avatars.githubusercontent.com/u/17172459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773682769985,
+      "changelog": "Added README.md and README.cn.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4297a7ef35f318fda6649761bc43d419d8565514c46e35bb2f9fe0e1808799f7"
+}

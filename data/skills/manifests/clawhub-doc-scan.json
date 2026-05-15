@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51159,
+  "uuid": "skill-clawhub-doc-scan",
+  "skillKey": "clawhub-doc-scan",
+  "name": "Doc Scan",
+  "summary": "DEPRECATED — this skill has been merged into doc-process (v4.0.0+). Use doc-process instead for document scanning, perspective correction, and dewarping. doc...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piyush-zinc",
+      "features": [
+        "DEPRECATED — this skill has been merged into doc-process (v4.0.0+)",
+        "Use doc-process instead for document scanning, perspective correction, and dewarping"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-scan@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172476424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-scan",
+      "url": "https://clawhub.ai/skills/doc-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-scan",
+    "url": "https://clawhub.ai/skills/doc-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-scan-d80e23ac0c72fbc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-scan@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-scan-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c02b5d4476bbaaf20c3be3cbe936195e1d1f84dde1999d8b6ee196eda96d60",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:58:19.298Z"
+}

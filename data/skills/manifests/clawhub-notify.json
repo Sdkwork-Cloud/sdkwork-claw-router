@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9299,
+  "uuid": "skill-clawhub-notify",
+  "skillKey": "clawhub-notify",
+  "name": "Notify",
+  "summary": "Configure notification channels and conditional alerts. Track what's being watched, log what's been sent.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Configure notification channels and conditional alerts",
+        "Track what's being watched, log what's been sent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notify",
+      "url": "https://clawhub.ai/skills/notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notify",
+    "url": "https://clawhub.ai/skills/notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notify-6cd6f41455d78245.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2858876e37433c1bfee3b6d72780a748d04d02df53caca0024f776fed97c6c1",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:05:00.486Z"
+}

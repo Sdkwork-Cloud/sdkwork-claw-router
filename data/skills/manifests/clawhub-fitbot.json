@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19559,
+  "uuid": "skill-clawhub-fitbot",
+  "skillKey": "clawhub-fitbot",
+  "name": "Fitbot",
+  "summary": "Personal fitness coaching. Use when users ask about training, workouts, programs, progression, or fitness accountability. Onboards new users, deep-researches...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "conmeara",
+      "features": [
+        "Personal fitness coaching",
+        "Use when users ask about training, workouts, programs, progression, or fitness accountability",
+        "Onboards new users, deep-researches..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitbot@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130254620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitbot",
+      "url": "https://clawhub.ai/skills/fitbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbot",
+    "url": "https://clawhub.ai/skills/fitbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbot-6ea321f9dffaaee6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitbot@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitbot-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ddbe06613a0960f65e7f0aea024f519ee634cda50fc4f000199fc390029ff44",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T04:34:21.743Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategy-workflow@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_workflow",
+  "skill": {
+    "id": 18329,
+    "skillKey": "clawhub-strategy-workflow",
+    "name": "Strategy Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-workflow",
+    "url": "https://clawhub.ai/skills/strategy-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-workflow-fabcd0b37b240b83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive strategy development workflow from ideation to validation. Use when creating trading strategies, running backtests, parameter optimization, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahuserious",
+      "userId": "publishers:ahuserious",
+      "displayName": "Dan Repaci",
+      "image": "https://avatars.githubusercontent.com/u/99930580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772214270503,
+      "changelog": "strategy-workflow 2.0.0 is a major upgrade providing an end-to-end quantitative trading strategy framework.\n\n- Adds multi-GPU backtesting, Bayesian hyperparameter optimization with Optuna, and walk-forward validation support.\n- Introduces watchdogs and a control plane for hardware/resource management and self-healing orchestration.\n- Details new entry points for parallel and single-symbol workflows, including cloud deployment instructions.\n- Expands documentation with step-by-step development guidance, pre-flight validation, parameter optimization, and guardrails.\n- Enables automated tearsheet/report generation and multi-provider PAL MCP integration.\n- Provides comprehensive implementation notes, references, and orchestration instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0bdef6eb1955b7f49fee2fb2f6779c9c02b407842c61f2d83eb4f1ff3f64ff3e"
+}

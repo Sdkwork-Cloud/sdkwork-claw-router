@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-test-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_test_generate",
+  "skill": {
+    "id": 63058,
+    "skillKey": "clawhub-skill-test-generate",
+    "name": "Skill Test Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-test-generate",
+    "url": "https://clawhub.ai/skills/skill-test-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-test-generate-fb00bd2f3edd65da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为任意 Agent Skill 自动生成 SFT 级别的功能测试用例，JSON 格式结构化输出。适用于生成测试用例、测试Skill、SFT测试、功能验证、技能测试、测试生成等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liyifm",
+      "userId": "s179kh0epwge0t3k69k7sr20fx84ysd2",
+      "displayName": "uv0xab",
+      "image": "https://avatars.githubusercontent.com/u/54772011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776563827632,
+      "changelog": "skill-test-generate v1.0.0\n\n- Initial release of an Agent Skill for automatic SFT-level functional test case generation for any compliant Agent Skill.\n- Generates structured JSON test cases covering 5 core areas: skill activation/routing, core capabilities, workflow, instruction clarity, and exception/security.\n- Utilizes both SKILL.md and all related scripts/references for comprehensive testing scenarios.\n- Includes guided steps, edge/boundary case coverage checklists, and precise source referencing for each test case.\n- Requires strict validation of generated JSON using included scripts before output is accepted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e2b192d1baa254e78176f823f35cd458637424af9611405b133f0876ce0323"
+}

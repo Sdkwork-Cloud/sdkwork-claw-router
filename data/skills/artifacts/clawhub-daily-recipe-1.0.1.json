@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-recipe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_recipe",
+  "skill": {
+    "id": 55108,
+    "skillKey": "clawhub-daily-recipe",
+    "name": "Daily Recipe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-recipe",
+    "url": "https://clawhub.ai/skills/daily-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-recipe-9157772bbf0f803a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily recipe recommendation — Chinese, Western, and fusion cuisines on rotation. Full ingredients, step-by-step instructions, 30–60 min home-cook meals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajiaoy",
+      "userId": "s17cev4f59prejmqpq8qft2ffn83g42e",
+      "displayName": "jiajiaoy",
+      "image": "https://avatars.githubusercontent.com/u/254620896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777286839382,
+      "changelog": "- Clarified the description for improved readability and focus on home-cook meals.\n- Updated SKILL.md for more concise and approachable language; emphasized 30–60 minute recipes and cuisine variety.\n- Added a README.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86737b33af866d1e2c72162dae197ea853933241fb3a7be3f96cf035731074a9"
+}

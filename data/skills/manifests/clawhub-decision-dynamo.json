@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29090,
+  "uuid": "skill-clawhub-decision-dynamo",
+  "skillKey": "clawhub-decision-dynamo",
+  "name": "Decision Dynamo",
+  "summary": "Run a weighted decision matrix to score and rank 2-4 options across 5 configurable criteria. Use when a user needs help choosing between options, comparing t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_dynamo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mdomerofski",
+      "features": [
+        "Run a weighted decision matrix to score and rank 2-4 options across 5 configurable criteria",
+        "Use when a user needs help choosing between options, comparing t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-dynamo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3968585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-dynamo",
+      "url": "https://clawhub.ai/skills/decision-dynamo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-dynamo",
+    "url": "https://clawhub.ai/skills/decision-dynamo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-dynamo-69268f0738a9c1a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-dynamo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-dynamo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3d3f71a3e21cd42fc7432a7e387ad9ad926a2a93e4640a2e78b5490e352ceef",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:39:37.285Z"
+}

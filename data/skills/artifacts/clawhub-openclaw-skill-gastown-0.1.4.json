@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-gastown@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_gastown",
+  "skill": {
+    "id": 11377,
+    "skillKey": "clawhub-openclaw-skill-gastown",
+    "name": "Openclaw Skill Gastown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-gastown",
+    "url": "https://clawhub.ai/skills/openclaw-skill-gastown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-gastown-3d7581ad86a38da7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent coding orchestrator using Gas Town (gt) and Claude Code. Use for ANY non-trivial coding task — multi-file changes, new features, refactors, bug fixes, anything involving code that needs to compile/run/test. Delegates work to pa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saesak",
+      "userId": "publishers:saesak",
+      "displayName": "saesak",
+      "image": "https://avatars.githubusercontent.com/u/40836287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2361,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1770146586391,
+      "changelog": "openclaw-skill-gastown 0.1.4\n\nMajor documentation overhaul, systematizing Gas Town’s identity and workflows.\n\n- Rewrote SKILL.md with a deep-dive on Gas Town’s architecture, metaphors, agent roles, and operational principles (MEOW, GUPP, NDI).\n- Added detailed sections on agent lifecycles, molecular workflows, hook conventions, troubleshooting, and directory structures.\n- Expanded quick start, command reference, and onboarding instructions.\n- Enhanced clarity and navigability for new and experienced users.\n- No changes to executable code—documentation and conceptual update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7100e05e8af8a8a87ea4ad3425f2e88ec84339766527ce7ab1d1a22d9c2e0034"
+}

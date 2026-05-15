@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57626,
+  "uuid": "skill-clawhub-xiaoqiang-script-gen",
+  "skillKey": "clawhub-xiaoqiang-script-gen",
+  "name": "小强视频文案生成器",
+  "summary": "AI-powered short video script generator. Input a video topic/title, get complete matching content: viral titles, opening hooks, interactive comments, hashtag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoqiang_script_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sysxccl092",
+      "features": [
+        "AI-powered short video script generator",
+        "Input a video topic/title, get complete matching content: viral titles, opening hooks, interact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoqiang-script-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270042860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoqiang-script-gen",
+      "url": "https://clawhub.ai/skills/xiaoqiang-script-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoqiang-script-gen",
+    "url": "https://clawhub.ai/skills/xiaoqiang-script-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoqiang-script-gen-57fb96d252d1a2b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoqiang-script-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoqiang-script-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a89d5d69aa74d80286ec7b60da472bf8b943fdc8db3b43d547e6841add060e8",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T00:17:09.592Z"
+}

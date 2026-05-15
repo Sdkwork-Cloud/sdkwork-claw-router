@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_download",
+  "skill": {
+    "id": 37902,
+    "skillKey": "clawhub-ai-video-download",
+    "name": "Ai Video Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-download",
+    "url": "https://clawhub.ai/skills/ai-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-download-7c6a2c40ebee4ddc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a completed AI-generated 60-second promo video into 1080p exported MP4 files just by typing what you need. Whether it's downloading finished AI-edited v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776597041251,
+      "changelog": "Initial release: Export and download AI-generated videos in 1080p MP4 format, fast and server-side.\n\n- Upload AI-processed videos and receive high-quality 1080p MP4 files in 20-40 seconds.\n- No need for complex export settings—just describe your request in plain language.\n- Automated session management, including fallback to anonymous tokens with free starter credits.\n- Supports export, credits check, timeline state, and uploads through simple chat commands.\n- Cloud-based GPU rendering; all major video and audio formats supported.\n- Clear feedback and guidance for unsupported files, errors, and typical video workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80176d8d7282a0df602671188b194822b16ee59a09e5a9e22a568ddc385e1ec0"
+}

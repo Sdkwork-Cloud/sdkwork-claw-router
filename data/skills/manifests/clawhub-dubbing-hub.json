@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58353,
+  "uuid": "skill-clawhub-dubbing-hub",
+  "skillKey": "clawhub-dubbing-hub",
+  "name": "DubbingHub",
+  "summary": "Real time video translation / dubbing skill. Translate user-provided video (file or URL) and return preview_url. 适用于视频直译、视频翻译、视频配音、字幕翻译出片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dubbing_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "papawaigo",
+      "features": [
+        "Real time video translation / dubbing skill",
+        "Translate user-provided video (file or URL) and return preview_url",
+        "适用于视频直译、视频翻译、视频配音、字幕翻译出片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dubbing-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13962862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dubbing-hub",
+      "url": "https://clawhub.ai/skills/dubbing-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dubbing-hub",
+    "url": "https://clawhub.ai/skills/dubbing-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dubbing-hub-43968d487a32a1cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dubbing-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dubbing-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7297fa27976dd8b56daaf8b5a6eb646f84becbce1f66089c8c6044d8f36394be",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:34:33.744Z"
+}

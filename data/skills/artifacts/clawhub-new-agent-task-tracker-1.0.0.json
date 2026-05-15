@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-agent-task-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_agent_task_tracker",
+  "skill": {
+    "id": 18677,
+    "skillKey": "clawhub-new-agent-task-tracker",
+    "name": "agent-task-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-agent-task-tracker",
+    "url": "https://clawhub.ai/skills/new-agent-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-agent-task-tracker-624df32cc6e0b429.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive task state management. Use on EVERY task start, progress update, completion, or failure. Tracks what was requested, what's running (background proc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 640,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772549613505,
+      "changelog": "Task Tracker skill v1.0.0 — Tracks and maintains live task state to survive session resets.\n\n- Proactively records task lifecycles: start, progress, completion, or failure.\n- Tracks background processes with session ID, PID, server, and command.\n- Stores state in memory/tasks.md, capped at 50 lines or 2KB.\n- Ensures up-to-date status before any user reporting.\n- Auto-prunes completed tasks, preserving recent activity only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b6be75869f77f5deb76b696b92d27349ee1b46e8ce74cf8d4d080f3f9d41524"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dialysis-assistant@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialysis_assistant",
+  "skill": {
+    "id": 67028,
+    "skillKey": "clawhub-dialysis-assistant",
+    "name": "dialysis-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialysis-assistant",
+    "url": "https://clawhub.ai/skills/dialysis-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialysis-assistant-1a6495ce03ad6ffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动记录和分析透析上下机体重、血压及脱水量，提供趋势、警告和个性化饮水建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinkang19940922",
+      "userId": "s17c3nth1ng687v4mpnmbzsg4584qmr0",
+      "displayName": "噢福阔斯KANG",
+      "image": "https://avatars.githubusercontent.com/u/96525444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776055444799,
+      "changelog": "- 更改数据存储路径为 `/other/透析数据（勿删）/dialysis-data.json`，以取代原有路径\n- 其余功能和指令保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f3ef78de123feb8f27570401bdd91c67db4fbcb9737de1c7cce4e90e73ecdd6"
+}

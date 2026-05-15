@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41141,
+  "uuid": "skill-clawhub-funding-trend-forecaster",
+  "skillKey": "clawhub-funding-trend-forecaster",
+  "name": "Funding Trend Forecaster",
+  "summary": "Predict funding trend shifts using NLP analysis of grant abstracts from NIH, NSF, and Horizon Europe",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funding_trend_forecaster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Predict funding trend shifts using NLP analysis of grant abstracts from NIH, NSF, and Horizon E."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funding-trend-forecaster@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funding-trend-forecaster",
+      "url": "https://clawhub.ai/skills/funding-trend-forecaster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funding-trend-forecaster",
+    "url": "https://clawhub.ai/skills/funding-trend-forecaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funding-trend-forecaster-068a6af9296a7524.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funding-trend-forecaster@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-funding-trend-forecaster-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9135adbc26b0bcc5845c8fc3d3660f065eee71ef695010f408870142772f591f",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:55:15.840Z"
+}

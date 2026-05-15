@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63008,
+  "uuid": "skill-clawhub-mysql-skill",
+  "skillKey": "clawhub-mysql-skill",
+  "name": "MySQL Skill - 对话式数据库管理",
+  "summary": "MySQL 数据库管理技能。通过自然语言查询、管理 MySQL 数据库，支持 SELECT/INSERT/UPDATE/DELETE、表管理、备份恢复等操作。当用户提到 MySQL、数据库查询、建表、数据备份时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanlee-gemini",
+      "features": [
+        "MySQL 数据库管理技能。通过自然语言查询、管理 MySQL 数据库，支持 SELECT/INSERT/UPDATE/DELETE、表管理、备份恢复等操作。当用户提到 MySQL、数据库查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181323138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-skill",
+      "url": "https://clawhub.ai/skills/mysql-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-skill",
+    "url": "https://clawhub.ai/skills/mysql-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-skill-b373487768bf13b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bee50e76a264f5acaa878fe71960c78a1adae81858fa82900eeec871df4ef5e",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:18:10.895Z"
+}

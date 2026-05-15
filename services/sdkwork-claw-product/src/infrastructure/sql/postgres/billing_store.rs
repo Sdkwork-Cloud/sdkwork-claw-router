@@ -2,8 +2,9 @@ use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DecimalValue, DomainError};
 use crate::ports::{
-    BillingCommandFuture, BillingReadFuture, BillingRechargeHistoryItem, BillingRedeemHistoryItem,
-    BillingStore, BillingSubject, RedeemCodeCommand, RedeemCodeOutcome,
+    BillingCommandFuture, BillingPointsBalance, BillingPointsHistoryItem, BillingReadFuture,
+    BillingRechargeHistoryItem, BillingRedeemHistoryItem, BillingStore, BillingSubject,
+    RedeemCodeCommand, RedeemCodeOutcome,
 };
 
 const LOAD_REDEEM_HISTORY: &str = r#"
@@ -60,6 +61,42 @@ ORDER BY COALESCE(vr.recharge_time, p.success_time, p.created_at, o.pay_success_
 LIMIT 100
 "#;
 
+const LOAD_POINTS_BALANCE: &str = r#"
+SELECT
+    CAST(COALESCE(SUM(CASE WHEN status = 1 THEN COALESCE(available_points, 0) ELSE 0 END), 0) AS TEXT) AS available_points,
+    CAST(COALESCE(SUM(CASE WHEN status = 1 THEN COALESCE(frozen_points, 0) ELSE 0 END), 0) AS TEXT) AS frozen_points
+FROM plus_account
+WHERE tenant_id = $1
+  AND organization_id = $2
+  AND user_id = $3
+  AND owner_id = $3
+  AND account_type = 2
+"#;
+
+const LOAD_POINTS_HISTORY: &str = r#"
+SELECT
+    COALESCE(NULLIF(uuid, ''), CAST(id AS TEXT)) AS id,
+    CAST(COALESCE(points_change, 0) AS TEXT) AS amount,
+    CAST(COALESCE(points_after, 0) AS TEXT) AS balance_after,
+    CAST(COALESCE(transaction_type, source_type, 0) AS TEXT) AS business_type,
+    CAST(COALESCE(created_at, updated_at) AS TEXT) AS created_at
+FROM plus_account_history
+WHERE tenant_id = $1
+  AND organization_id = $2
+  AND account_type = 2
+  AND account_id IN (
+      SELECT id
+      FROM plus_account
+      WHERE tenant_id = $1
+        AND organization_id = $2
+        AND user_id = $3
+        AND owner_id = $3
+        AND account_type = 2
+  )
+ORDER BY COALESCE(created_at, updated_at) DESC NULLS LAST, id DESC
+LIMIT 100
+"#;
+
 const LOAD_COUPON_FOR_REDEEM: &str = r#"
 SELECT
     CAST(id AS TEXT) AS id,
@@ -111,6 +148,30 @@ impl BillingStore for PostgresBillingStore {
                 DomainError::new("trusted request subject is required for billing recharge history")
             })?;
             load_recharge_history(&self.pool, subject).await
+        })
+    }
+
+    fn load_points_balance<'a>(
+        &'a self,
+        subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, BillingPointsBalance> {
+        Box::pin(async move {
+            let subject = subject.ok_or_else(|| {
+                DomainError::new("trusted request subject is required for billing points balance")
+            })?;
+            load_points_balance(&self.pool, subject).await
+        })
+    }
+
+    fn load_points_history<'a>(
+        &'a self,
+        subject: Option<BillingSubject>,
+    ) -> BillingReadFuture<'a, Vec<BillingPointsHistoryItem>> {
+        Box::pin(async move {
+            let subject = subject.ok_or_else(|| {
+                DomainError::new("trusted request subject is required for billing points history")
+            })?;
+            load_points_history(&self.pool, subject).await
         })
     }
 
@@ -171,6 +232,51 @@ async fn load_recharge_history(
             })
         })
         .collect()
+}
+
+async fn load_points_balance(
+    pool: &PgPool,
+    subject: BillingSubject,
+) -> Result<BillingPointsBalance, DomainError> {
+    let row = sqlx::query(LOAD_POINTS_BALANCE)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(subject.user_id)
+        .fetch_one(pool)
+        .await
+        .map_err(sql_error)?;
+    Ok(BillingPointsBalance {
+        available_points: integer_cell(&row, "available_points").max(0),
+        frozen_points: integer_cell(&row, "frozen_points").max(0),
+    })
+}
+
+async fn load_points_history(
+    pool: &PgPool,
+    subject: BillingSubject,
+) -> Result<Vec<BillingPointsHistoryItem>, DomainError> {
+    let rows = sqlx::query(LOAD_POINTS_HISTORY)
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(subject.user_id)
+        .fetch_all(pool)
+        .await
+        .map_err(sql_error)?;
+
+    Ok(rows
+        .iter()
+        .map(|row| {
+            let amount = integer_cell(row, "amount");
+            BillingPointsHistoryItem {
+                id: string_cell(row, "id"),
+                amount,
+                direction: points_direction(amount).to_owned(),
+                balance_after: integer_cell(row, "balance_after").max(0),
+                business_type: points_business_type(integer_cell(row, "business_type")).to_owned(),
+                created_at: string_cell(row, "created_at"),
+            }
+        })
+        .collect())
 }
 
 async fn redeem_code(
@@ -701,6 +807,25 @@ fn points_to_money_string(points: i64) -> String {
     let sign = if cents < 0 { "-" } else { "" };
     let absolute = cents.abs();
     format!("{sign}{}.{:02}", absolute / 100, absolute % 100)
+}
+
+fn points_direction(amount: i64) -> &'static str {
+    if amount < 0 {
+        "out"
+    } else {
+        "in"
+    }
+}
+
+fn points_business_type(value: i64) -> &'static str {
+    match value {
+        1 => "recharge",
+        2 => "redeem",
+        3 => "usage",
+        4 => "refund",
+        5 => "adjustment",
+        _ => "account",
+    }
 }
 
 fn bool_cell(row: &sqlx::postgres::PgRow, column: &str) -> bool {

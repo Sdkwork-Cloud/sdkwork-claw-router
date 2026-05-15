@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29995,
+  "uuid": "skill-clawhub-nft",
+  "skillKey": "clawhub-nft",
+  "name": "Nft",
+  "summary": "Nft reference tool. Use when working with nft in blockchain contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Nft reference tool",
+        "Use when working with nft in blockchain contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nft",
+      "url": "https://clawhub.ai/skills/nft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nft",
+    "url": "https://clawhub.ai/skills/nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nft-b8cb100b12807bd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b59ee7ad477347b18de2c298383896c58fcaf4c0cf226b3be993d432c9811d07",
+      "artifactSizeBytes": 1723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:17:19.412Z"
+}

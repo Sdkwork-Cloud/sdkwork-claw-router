@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43678,
+  "uuid": "skill-clawhub-hkipo-decision-engine",
+  "skillKey": "clawhub-hkipo-decision-engine",
+  "name": "HK IPO Decision Engine",
+  "summary": "Score Hong Kong IPOs, build decision cards, and batch-evaluate symbols or watchlists with explainable factors and execution guidance. Use when the user wants...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkipo_decision_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackstoic",
+      "features": [
+        "Score Hong Kong IPOs, build decision cards, and batch-evaluate symbols or watchlists with expla.",
+        "Use when the user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkipo-decision-engine@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7455951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkipo-decision-engine",
+      "url": "https://clawhub.ai/skills/hkipo-decision-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkipo-decision-engine",
+    "url": "https://clawhub.ai/skills/hkipo-decision-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkipo-decision-engine-af6205ce63c0ad9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkipo-decision-engine@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkipo-decision-engine-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcaefe3840995d39af08dd5d37c3a38a61d533a20b6bb2db5f9b5ca476d6699c",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:12:38.440Z"
+}

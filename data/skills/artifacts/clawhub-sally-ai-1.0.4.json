@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sally-ai@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sally_ai",
+  "skill": {
+    "id": 13572,
+    "skillKey": "clawhub-sally-ai",
+    "name": "Sally AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sally-ai",
+    "url": "https://clawhub.ai/skills/sally-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sally-ai-af90ba00cf360b0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat with Sally about metabolic health, blood sugar, A1C, nutrition, fasting, supplements, and lab results. Uses the Sally MCP server on Smithery with x402 m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sally-labs",
+      "userId": "publishers:sally-labs",
+      "displayName": "Sally Labs",
+      "image": "https://avatars.githubusercontent.com/u/240842277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 897,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772078808495,
+      "changelog": "- Updated setup instructions to require users to add their own dedicated wallet private key to Smithery for x402 micropayments\n- Clarified that Clawbot never sees the user's private key; it is stored encrypted in Smithery's cloud only\n- Expanded security and privacy sections with connection details, best practices for wallet usage, and data flow diagrams\n- Adjusted description and homepage formatting for clarity and accuracy\n- Removed references to pre-configured payment; setup now requires explicit wallet provisioning by user",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5f248d2c5ece085999c86182c523ddfd86b387630a8875e7e55554d21c437bb"
+}

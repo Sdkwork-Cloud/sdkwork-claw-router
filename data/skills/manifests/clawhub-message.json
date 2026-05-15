@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15098,
+  "uuid": "skill-clawhub-message",
+  "skillKey": "clawhub-message",
+  "name": "Message",
+  "summary": "Communicate across channels without social disasters, with escalation rules, tone calibration, and platform-aware formatting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Communicate across channels without social disasters, with escalation rules, tone calibration,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message",
+      "url": "https://clawhub.ai/skills/message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message",
+    "url": "https://clawhub.ai/skills/message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-ab530a13e4591498.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d6fa7135322bbd0e502a5ec72c4bc84d95c220538b13e29e1ee367f1fd952c2",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T22:28:31.070Z"
+}

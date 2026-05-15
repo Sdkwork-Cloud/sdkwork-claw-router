@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59129,
+  "uuid": "skill-clawhub-smart-web-fetch",
+  "skillKey": "clawhub-smart-web-fetch",
+  "name": "Smart Web Fetch",
+  "summary": "智能网页抓取技能 - 替代内置 web_fetch，自动使用 Jina Reader / markdown.new / defuddle.md 清洗服务获取干净 Markdown。支持多级降级策略，大幅降低 Token 消耗。当 Agent 需要获取网页内容时使用本技能替代 web_fetch。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_web_fetch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leochens",
+      "features": [
+        "智能网页抓取技能",
+        "替代内置 web_fetch，自动使用 Jina Reader / markdown.new / defuddle.md 清洗服务获取干净 Markdown。支持多级降级策略，大幅降低 To."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-web-fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30434852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-web-fetch",
+      "url": "https://clawhub.ai/skills/smart-web-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-web-fetch",
+    "url": "https://clawhub.ai/skills/smart-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-web-fetch-dcabe7c19ae6bcda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-web-fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-web-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de1abac2fc764a741122669d1f712c163dd29ce9dd3f3c81d3f28a2c6d98c094",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:15:26.104Z"
+}

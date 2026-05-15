@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datacrawl-debug@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datacrawl_debug",
+  "skill": {
+    "id": 41283,
+    "skillKey": "clawhub-datacrawl-debug",
+    "name": "DataCrawl Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datacrawl-debug",
+    "url": "https://clawhub.ai/skills/datacrawl-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datacrawl-debug-972aa2323ab8686a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to process web data, debug data collection code, clean processed data, or iterate on data processing strategies. Use when generating data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1778291085509,
+      "changelog": "- Added a compliance statement outlining data collection ethics, including robots.txt adherence, request rate control, and legal authorization requirements.\n- Provided a common problems and solutions table for quick reference in debugging.\n- Expanded guidance for handling dynamic (JavaScript-rendered) pages.\n- Removed the \"anti_detection_guide.md\" reference file.\n- General content cleanup and update for clarity in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:392276a4bac48a558311fa5639de930c21c6478d1dc40f48145a3bfa2a4090a1"
+}

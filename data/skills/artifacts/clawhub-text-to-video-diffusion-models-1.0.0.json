@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-diffusion-models@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_diffusion_models",
+  "skill": {
+    "id": 46483,
+    "skillKey": "clawhub-text-to-video-diffusion-models",
+    "name": "Text To Video Diffusion Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-diffusion-models",
+    "url": "https://clawhub.ai/skills/text-to-video-diffusion-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-diffusion-models-93034201fcc177f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI generated clips ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, PNG, up to 10MB), say something like \"gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776451546037,
+      "changelog": "- Initial release of text-to-video-diffusion-models v1.0.0.\n- Generate AI videos from text prompts or uploaded files (TXT, DOCX, PDF, PNG, up to 10MB).\n- Automatic backend connection and token handling for new users; 100 free credits for 7 days.\n- Cloud rendering outputs 1080p MP4 and other formats, with simple export and download workflow.\n- Built-in error handling, timeline state management, and mapping of natural user requests to video actions.\n- Designed for marketers and creators to produce content quickly, no video editing skills required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f01e1f87da4dd8aa7d9821f6733ff0c8e183e2db491061970ae802207f9badd4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thu-thesis@1.5.6",
+  "version": "1.5.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thu_thesis",
+  "skill": {
+    "id": 62895,
+    "skillKey": "clawhub-thu-thesis",
+    "name": "thu-thesis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thu-thesis",
+    "url": "https://clawhub.ai/skills/thu-thesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thu-thesis-af032a613d46a9ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将清华毕业论文 Word (.docx) 转换为符合 thuthesis 官方模板规范的完整高质量 PDF，支持章节、摘要、图表、参考文献等处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chao1208",
+      "userId": "s173f3z727kbrrrb02t4s2qr3183g1gh",
+      "displayName": "Chao1208",
+      "image": "https://avatars.githubusercontent.com/u/205137243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 38
+    },
+    "latestVersion": {
+      "version": "1.5.6",
+      "createdAt": 1774851748118,
+      "changelog": "新增手工修复强制检查流程：写章节正文前必须先列出原文所有表格/图片清单并逐章核对，防止表格数据丢失",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa4b3d344c1c9147777960cda8bcc2d26a913d8a93676e90b7674e9e3f5d78bf"
+}

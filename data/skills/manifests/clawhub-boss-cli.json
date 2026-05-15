@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67803,
+  "uuid": "skill-clawhub-boss-cli",
+  "skillKey": "clawhub-boss-cli",
+  "name": "Boss Cli",
+  "summary": "BOSS直聘 CLI 工具，支持职位搜索、求职申请管理、聊天、发送招呼等功能。通过逆向 BOSS直聘 API 实现，支持多城市、多筛选条件。当用户需要搜索 BOSS直聘 上的职位、查看公司信息、管理求职申请、联系 HR 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aitowerofbabel-lang",
+      "features": [
+        "BOSS直聘 CLI 工具，支持职位搜索、求职申请管理、聊天、发送招呼等功能。通过逆向 BOSS直聘 API 实现，支持多城市、多筛选条件。当用户需要搜索 BOSS直聘 上的职位、查看公司信."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boss-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265811549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boss-cli",
+      "url": "https://clawhub.ai/skills/boss-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-cli",
+    "url": "https://clawhub.ai/skills/boss-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-cli-b98450a559fec221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boss-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boss-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f8500a74ef0c167af1a26ec0d300bf6c814fdaab11c27773c02cd360bbbf5ed",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:08:15.600Z"
+}

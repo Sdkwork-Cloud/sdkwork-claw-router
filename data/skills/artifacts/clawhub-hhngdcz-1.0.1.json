@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hhngdcz@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hhngdcz",
+  "skill": {
+    "id": 61063,
+    "skillKey": "clawhub-hhngdcz",
+    "name": "一键为项目生成完整的 `.claude` 配置体系。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hhngdcz",
+    "url": "https://clawhub.ai/skills/hhngdcz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hhngdcz-5545baf0a0184caa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为项目生成完整的 .claude 配置体系。通过问答引导生成 CLAUDE.md、settings.json、rules 等配置文件，并可从 ClawHub 安装 skills。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hhngdcz",
+      "userId": "s17fyfc13h6t6vyzd5pergpbss83yp48",
+      "displayName": "hhngdcz",
+      "image": "https://avatars.githubusercontent.com/u/69241941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774960255474,
+      "changelog": "- 阶段 3.2 优化：生成 CLAUDE.md 时，改为使用 **Skill** 工具在前台执行 `/init` 并等待完成（原为 Bash 后台异步执行，不等待）。\n- 移除阶段 5「等待后台任务」相关内容，输出汇总阶段不再包含后台任务检查。\n- 其余执行逻辑保持不变，流程更直观。\n- 纯文档更新，无代码文件改动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ce09cc45d2cb918c209e413f243c0d3879a1a129a91bb957e0e87df5c048c59"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fofa-query@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fofa_query",
+  "skill": {
+    "id": 71203,
+    "skillKey": "clawhub-fofa-query",
+    "name": "fofa-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fofa-query",
+    "url": "https://clawhub.ai/skills/fofa-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fofa-query-dacf95514e011545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网络空间资产搜索引擎，支持 IP/域名/端口/协议/证书等多维度查询；当用户需要进行网络资产发现、安全研究、漏洞资产定位、证书分析或需要查询特定特征的互联网资产时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moxin1044",
+      "userId": "s179edwyjyfjkwyce78c44wve983ejpk",
+      "displayName": "末心",
+      "image": "https://avatars.githubusercontent.com/u/59173630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774122259693,
+      "changelog": "- 依赖环境要求由 node 更正为 python，确保脚本可用性与描述一致\n- openclaw 元数据中 bins 字段由 [\"node\"] 改为 [\"python\"]，使依赖与实际脚本环境一致\n- 其余内容无变动，仅修正环境及依赖描述使之准确",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e527035182c846198721c53fe5bba1cf6bae2951529b297e0808bf16d151a89b"
+}

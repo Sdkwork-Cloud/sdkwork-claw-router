@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11369,
+  "uuid": "skill-clawhub-polyvision",
+  "skillKey": "clawhub-polyvision",
+  "name": "Polyvision",
+  "summary": "Analyze Polymarket prediction market wallets — get copy trading scores (1-10), P&L, win rate, risk metrics (Sharpe ratio, Sortino ratio, max drawdown), red f...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyvision",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mystic",
+      "features": [
+        "Analyze Polymarket prediction market wallets — get copy trading scores (1-10), P&L, win rate, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyvision@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55243932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyvision",
+      "url": "https://clawhub.ai/skills/polyvision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyvision",
+    "url": "https://clawhub.ai/skills/polyvision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyvision-9fea2d9e946d1bc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyvision@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyvision-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef377762c825075bc070008707fc4c8de8db6a4657c4b179296f6f6a871c6e05",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:21:14.107Z"
+}

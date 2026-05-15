@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_publisher",
+  "skill": {
+    "id": 35877,
+    "skillKey": "clawhub-youtube-video-publisher",
+    "name": "Youtube Video Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-publisher",
+    "url": "https://clawhub.ai/skills/youtube-video-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-publisher-4afa6cfab67b862d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload videos and Shorts to YouTube. Use when the user says 'upload to YouTube', 'publish YouTube video', 'post a YouTube Short', 'upload video with thumbnai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774682317906,
+      "changelog": "- Initial release of youtube-video-publisher skill.\n- Upload YouTube videos and Shorts with full support for titles, descriptions, tags, thumbnails, and captions.\n- Easy integration—requires only a single MCP Connector link with embedded authentication.\n- Supports direct upload from local files, URLs, or Google Drive.\n- Documentation provided for permissions, error handling, media requirements, and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe24ec445132cb265e155f173af10755c218a0986567f0c25f7a4c094cca2e64"
+}

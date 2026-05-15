@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_writer",
+  "skill": {
+    "id": 47671,
+    "skillKey": "clawhub-video-writer",
+    "name": "Video Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-writer",
+    "url": "https://clawhub.ai/skills/video-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-writer-d491e86580df2f28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw product demo recording into 1080p scripted video content just by typing what you need. Whether it's generating written scripts and narrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777336863182,
+      "changelog": "- Initial release of Video Writer: turn raw product demos into 1080p scripted videos in under a minute by uploading clips and describing the result you want.\n- Automatic session setup and free anonymous access (100-credits, 7-day token); handles token/session management transparently.\n- Supports generating scripts, narration, text overlays, and audio tracks from uploaded video or user description.\n- Cloud-based rendering (MP4 default, up to 1080p), with export/download ready in 30–90 seconds.\n- Streamlined commands: upload, export, check credits, view project state, and batch processing—all via natural language.\n- Clear error messages and workflow guidance; supports multiple file formats and iterative editing in session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bc188454f5561a37767e29726b7fd92762fe7faed39b35dcb43ad2dfbbe77ac"
+}

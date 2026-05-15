@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64593,
+  "uuid": "skill-clawhub-fbs-bookwriter",
+  "skillKey": "clawhub-fbs-bookwriter",
+  "name": "FBS-BookWriter",
+  "summary": "FBS 福帮手长文档写作：书/手册/白皮书/长篇报道全流程；Node 脚本驱动 intake、会话恢复、S/P/C/B 质检与 MD/HTML 交付。用户提及写书、出书、章节、大纲、素材、质检、导出、扩写、退出保存时启用。",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fbs_bookwriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duhongchao-Fbsir",
+      "features": [
+        "FBS 福帮手长文档写作：书/手册/白皮书/长篇报道全流程；Node 脚本驱动 intake、会话恢复、S/P/C/B 质检与 MD/HTML 交付。用户提及写书、出书、章节、大纲、素材、质."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fbs-bookwriter@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254867190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fbs-bookwriter",
+      "url": "https://clawhub.ai/skills/fbs-bookwriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fbs-bookwriter",
+    "url": "https://clawhub.ai/skills/fbs-bookwriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fbs-bookwriter-04141fdba327b17f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fbs-bookwriter@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fbs-bookwriter-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57d1c6de539961faac8d4d587447aee7d3959400c17b84f19c81c8fa039e6a53",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T23:49:11.256Z"
+}

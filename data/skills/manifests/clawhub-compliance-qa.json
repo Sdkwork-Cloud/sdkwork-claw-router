@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26511,
+  "uuid": "skill-clawhub-compliance-qa",
+  "skillKey": "clawhub-compliance-qa",
+  "name": "Compliance Qa",
+  "summary": "Compliance-specific Q&A with regulatory interpretation guardrails, source attribution, confidence scoring, and escalation triggers when context is insufficie...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_qa",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dangsllc",
+      "features": [
+        "Compliance-specific Q&A with regulatory interpretation guardrails, source attribution, confiden."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-qa@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226757080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-qa",
+      "url": "https://clawhub.ai/skills/compliance-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-qa",
+    "url": "https://clawhub.ai/skills/compliance-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-qa-bdb5db0e4d240524.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-qa@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-qa-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad473b82001a101fca1c6a5237587d8ce63c91fce0e832eb2d3e2206ebc5ad46",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T01:29:59.207Z"
+}

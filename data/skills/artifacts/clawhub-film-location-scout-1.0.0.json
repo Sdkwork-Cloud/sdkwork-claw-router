@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/film-location-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.film_location_scout",
+  "skill": {
+    "id": 42817,
+    "skillKey": "clawhub-film-location-scout",
+    "name": "While traveling, try recreating iconic scenes from classic movies in your photos!"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "film-location-scout",
+    "url": "https://clawhub.ai/skills/film-location-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/film-location-scout-a34e7df278662ecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover nearby film and TV show shooting locations based on the user's current city and position. Outputs 5 self-contained cases, each with a cinematic scen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kensonh",
+      "userId": "s1750ww8bt7g2b1s4r5m79db55842cqs",
+      "displayName": "KensonH",
+      "image": "https://avatars.githubusercontent.com/u/175804336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775113864403,
+      "changelog": "Film Location Scout 1.0.0 – Initial Release\n\n- Discover 5 nearby film and TV shooting locations tailored to your city and position.\n- Each location case includes: a cinematic scene image (with 1–2 prominent foreground characters), GPS coordinates, detailed scene description, and weather-adapted photography parameters.\n- Designed for easy photo recreation at iconic spots, with composition and phone shooting tips.\n- Supports natural queries about movie/TV locations, scene photography, and cinematic spot guides.\n- Automatically fetches local weather, light, and precise locations; outputs results in structured, user-friendly cards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4debce0d00c591bff83f389fd2d2363db8c2793fb8f3db674d3061bfb9d7ccf"
+}

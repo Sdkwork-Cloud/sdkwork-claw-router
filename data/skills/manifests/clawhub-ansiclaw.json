@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20141,
+  "uuid": "skill-clawhub-ansiclaw",
+  "skillKey": "clawhub-ansiclaw",
+  "name": "ANSIClaw",
+  "summary": "Draws BBS compatible ANSI art via the Clawbius API",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansiclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "n2tr0n",
+      "features": [
+        "Draws BBS compatible ANSI art via the Clawbius API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ansiclaw@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161380167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ansiclaw",
+      "url": "https://clawhub.ai/skills/ansiclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansiclaw",
+    "url": "https://clawhub.ai/skills/ansiclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansiclaw-75060d2095e446ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ansiclaw@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ansiclaw-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51f903d2a2d5e2f9299e08841c0687ff2822781c3c5e474052fbef1396c4d618",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:10:42.612Z"
+}

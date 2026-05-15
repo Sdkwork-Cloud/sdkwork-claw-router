@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omniwire@3.5.0",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omniwire",
+  "skill": {
+    "id": 52828,
+    "skillKey": "clawhub-omniwire",
+    "name": "OmniWire"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omniwire",
+    "url": "https://clawhub.ai/skills/omniwire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omniwire-cec47572fe800179.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Infrastructure layer for AI agent swarms — 88 MCP tools for mesh control, A2A protocol, OmniMesh VPN, CyberSync, web scraping, firewall management, browser a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "voidchecksum",
+      "userId": "s17epadvdaxqb381jt0qtdjyfh83wft4",
+      "displayName": "VoidChecksum",
+      "image": "https://avatars.githubusercontent.com/u/89574102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.5.0",
+      "createdAt": 1774834271149,
+      "changelog": "Full OpenClaw + PaperClip integration. 88 MCP tools (was 30). Agent setup instructions. OmniMesh VPN, A2A, CyberSync, scraping, firewall, CDP browser, 2FA, COC sync.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f441d577868cf32e18c7aa4baa31873d65e8ebe399edb14675bbc56fb9b8c2c"
+}

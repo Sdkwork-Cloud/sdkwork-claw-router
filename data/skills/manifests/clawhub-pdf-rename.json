@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55584,
+  "uuid": "skill-clawhub-pdf-rename",
+  "skillKey": "clawhub-pdf-rename",
+  "name": "Pdf Rename",
+  "summary": "Rename academic PDF papers to a standardized format \"[Year] [Venue] Title.pdf\" using a three-stage pipeline (Extract → Verify → Rename). Use when the user as...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_rename",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "67available",
+      "features": [
+        "Rename academic PDF papers to a standardized format \"[Year] [Venue] Title.pdf\" using a three-st.",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-rename@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98302065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-rename",
+      "url": "https://clawhub.ai/skills/pdf-rename"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-rename",
+    "url": "https://clawhub.ai/skills/pdf-rename",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-rename-c54e62da09cd6de4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-rename@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-rename-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c27860286e47f865e2d9b2587ab68adc841a08901f126a5dbb922424ffa5e9da",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:23:29.649Z"
+}

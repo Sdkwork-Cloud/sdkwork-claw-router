@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54831,
+  "uuid": "skill-clawhub-guomeiqing-security-audit",
+  "skillKey": "clawhub-guomeiqing-security-audit",
+  "name": "OpenClaw Security Audit",
+  "summary": "Scan your OpenClaw configuration for security risks and harden it with guided fixes. Supports three hardening levels. Use when asked to \"security check\", \"安全...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guomeiqing_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shanggqm",
+      "features": [
+        "Scan your OpenClaw configuration for security risks and harden it with guided fixes",
+        "Supports three hardening levels",
+        "Use when asked to \"security check\", \"安全..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guomeiqing-security-audit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2172641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guomeiqing-security-audit",
+      "url": "https://clawhub.ai/skills/guomeiqing-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guomeiqing-security-audit",
+    "url": "https://clawhub.ai/skills/guomeiqing-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guomeiqing-security-audit-9d12c9d961b61b22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guomeiqing-security-audit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guomeiqing-security-audit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4264a1de04bb5c602c0b6df310d554324538d84f571c1d43a4a732dad5df2c95",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:03:45.016Z"
+}

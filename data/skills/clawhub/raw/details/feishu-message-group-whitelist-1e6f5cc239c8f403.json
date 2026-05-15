@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "feishu-message-group-whitelist",
+    "displayName": "feishu-message-group-whitelist",
+    "summary": "飞书群聊白名单关键词过滤。当飞书机器人收到群消息时，根据白名单判断是否需要回复——只有消息中包含白名单关键词时才触发回复，实现精准触发而非广播所有消息。触发词示例：群里有人发消息时、提到特定关键词时、需要过滤无关消息时。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774705810149,
+    "updatedAt": 1777624499555
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774705810149,
+    "changelog": "Initial release of feishu-message-group-whitelist.\n\n- Adds whitelist-based keyword filtering for Feishu group chats.\n- Only triggers a reply when the message contains a keyword from a configurable whitelist file.\n- Whitelist is stored in config/whitelist.txt for easy keyword management.\n- Supports skipping filtering if the whitelist is empty.\n- Silently ignores unrelated messages to reduce noise and token consumption.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "johnhejunlin",
+    "userId": "s17f26jv19t7ep4yb4pkfffeah83nbb7",
+    "displayName": "johnhejunlin",
+    "image": "https://avatars.githubusercontent.com/u/69186928?v=4"
+  },
+  "moderation": null
+}

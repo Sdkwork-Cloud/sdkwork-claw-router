@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27624,
+  "uuid": "skill-clawhub-crispr-grna-designer",
+  "skillKey": "clawhub-crispr-grna-designer",
+  "name": "Crispr Grna Designer",
+  "summary": "Design CRISPR gRNA sequences for specific gene exons with off-target prediction and efficiency scoring. Trigger when user needs gRNA design, CRISPR guide RNA...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crispr_grna_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Design CRISPR gRNA sequences for specific gene exons with off-target prediction and efficiency.",
+        "Trigger when user needs gRNA design, CRISPR guide RNA..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crispr-grna-designer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crispr-grna-designer",
+      "url": "https://clawhub.ai/skills/crispr-grna-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crispr-grna-designer",
+    "url": "https://clawhub.ai/skills/crispr-grna-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crispr-grna-designer-441ad7bb66ee0439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crispr-grna-designer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crispr-grna-designer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:663d830b123d0b4c6f4ba158f19290b9a66d353c17341d92c8ce802bcdd21db2",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:55:15.533Z"
+}

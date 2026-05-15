@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26908,
+  "uuid": "skill-clawhub-target-novelty-scorer",
+  "skillKey": "clawhub-target-novelty-scorer",
+  "name": "Target Novelty Scorer",
+  "summary": "Score the novelty of biological targets through literature mining and trend analysis",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target_novelty_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lyla0921",
+      "features": [
+        "Score the novelty of biological targets through literature mining and trend analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/target-novelty-scorer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219433372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "target-novelty-scorer",
+      "url": "https://clawhub.ai/skills/target-novelty-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target-novelty-scorer",
+    "url": "https://clawhub.ai/skills/target-novelty-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-novelty-scorer-64677b17cdfc6d80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/target-novelty-scorer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-target-novelty-scorer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31002d35a7804d64edbb28a9a51e2a51e222b8b355620384b1bccd6cfefd18a4",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:46:31.074Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-analysis@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_analysis",
+  "skill": {
+    "id": 66786,
+    "skillKey": "clawhub-product-analysis",
+    "name": "product-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-analysis",
+    "url": "https://clawhub.ai/skills/product-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-analysis-d457f8a793b30362.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "产品需求分析专用 skill。触发词：「分析需求」「产品分析」「业务流程」「功能架构」「PRD」「改版」「迭代需求」， 或用户上传需求文档/PRD 时。支持快速模式（3步）、标准模式（5步）、迭代模式（Diff分析）三种工作流， 输出 Mermaid 流程图、功能架构、埋点方案、PRD、开发 Ticket 等文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanghy1993",
+      "userId": "s175jrky7a58yndyfpr6yhhdn58480a2",
+      "displayName": "Allan_zhang",
+      "image": "https://avatars.githubusercontent.com/u/32677010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774038778813,
+      "changelog": "新增改版/迭代模式；\n新增 JTBD 框架（含三类 Job）+ RICE 评分（含示例和公式）需求分析框架；\n新增开发任务拆解清单；",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21df49dd4fefea99dd4ec979b484c6d4f044c2bda6a1649c93c737fca60f5211"
+}

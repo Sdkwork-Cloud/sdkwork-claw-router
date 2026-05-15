@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/job-search-mcp-jobspy@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_search_mcp_jobspy",
+  "skill": {
+    "id": 10203,
+    "skillKey": "clawhub-job-search-mcp-jobspy",
+    "name": "Job Search MCP (JobSpy)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-search-mcp-jobspy",
+    "url": "https://clawhub.ai/skills/job-search-mcp-jobspy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-search-mcp-jobspy-1e5fb354e5f74eca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and compare job listings across multiple boards using JobSpy MCP, with filters for criteria, location, salary, remote options, and easy apply roles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikkijasmine",
+      "userId": "s175q09f0h9n73d2prbfh776cs83pcdq",
+      "displayName": "NikkiJasmine",
+      "image": "https://avatars.githubusercontent.com/u/133794106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2627,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770055342683,
+      "changelog": "Initial release of the Job Search MCP skill.\nProvides aggregated job search across multiple job boards using JobSpy.Minor metadata update",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:31eb2ea9801981d006fd182bcada112653a59c47ac37196b26f781240862eed9"
+}

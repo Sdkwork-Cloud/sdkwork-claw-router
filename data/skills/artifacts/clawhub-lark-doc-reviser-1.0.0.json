@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-doc-reviser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_doc_reviser",
+  "skill": {
+    "id": 45503,
+    "skillKey": "clawhub-lark-doc-reviser",
+    "name": "lark-doc-reviser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-doc-reviser",
+    "url": "https://clawhub.ai/skills/lark-doc-reviser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-doc-reviser-3cddf6bcf6034d9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read unresolved comments in a Feishu (Lark) document and apply targeted edits block-by-block based on those comments. Use when the user shares a Feishu doc U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billzhuang6569",
+      "userId": "s17d7mdp9nn22faex2cbvcrzy183wr4c",
+      "displayName": "Bill Zhuang",
+      "image": "https://avatars.githubusercontent.com/u/68314048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776090248495,
+      "changelog": "- Initial release of lark-doc-reviser.\n- Enables fetching unresolved comments from Feishu (Lark) documents and presenting them for targeted editing.\n- Guides users through a step-by-step workflow: fetch doc state, present comments, apply block edits, resolve comments, and refresh state.\n- Supports text edits at the block level, including rich text fields (bold, italic, code, etc.).\n- Documents current limitations (blank line insertion, block deletion/reordering not automated).\n- Warns against destructive heading renames using certain lark-cli options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f3383a2b89df8c69c67ce3cd0369cda726045a44b8c4d8b22775c86985ddd9a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66940,
+  "uuid": "skill-clawhub-xiaohong-hot-tracker",
+  "skillKey": "clawhub-xiaohong-hot-tracker",
+  "name": "Content Hot Tracker",
+  "summary": "实时追踪微博、知乎、抖音等多平台热点话题，分析趋势并提供内容选题和爆款标题建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohong_hot_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "--冷月无心--",
+      "features": [
+        "实时追踪微博、知乎、抖音等多平台热点话题，分析趋势并提供内容选题和爆款标题建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohong-hot-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohong-hot-tracker",
+      "url": "https://clawhub.ai/skills/xiaohong-hot-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohong-hot-tracker",
+    "url": "https://clawhub.ai/skills/xiaohong-hot-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohong-hot-tracker-e14c50363921df60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohong-hot-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohong-hot-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a41f52cd52f72208ad0126e22952fa6002116d4bacf45c172fa5708b6e177e99",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:08:05.491Z"
+}

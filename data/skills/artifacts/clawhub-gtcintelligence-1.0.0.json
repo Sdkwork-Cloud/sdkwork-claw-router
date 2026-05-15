@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gtcintelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gtcintelligence",
+  "skill": {
+    "id": 65385,
+    "skillKey": "clawhub-gtcintelligence",
+    "name": "GTC Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gtcintelligence",
+    "url": "https://clawhub.ai/skills/gtcintelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gtcintelligence-18f3de15e295911e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供2026年GTC前的非公开及半公开情报汇总，重点验证关键产品路线、架构及供应链合作细节。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangrong",
+      "userId": "publishers:wangrong",
+      "displayName": "wangrong",
+      "image": "https://avatars.githubusercontent.com/u/1551149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772763034859,
+      "changelog": "GTC skill v1.0.0 changelog:\n\n- Added comprehensive GTC 2026 Information Collection Plan (ICP) documentation (v2).\n- Integrated pre-release signals from both user intelligence and major media sources (The Register, CES 2026, GTC 2025).\n- Defined 10 key signals with credibility ratings and specific on-site verification priorities.\n- Outlined clear intelligence collection principles, multi-layer evidence classification, and misjudgment prevention tips.\n- Provided detailed, actionable collection paths and key onsite questions for each PIR (Priority Information Requirement).\n- Described the expanded team structure: 3 onsite and 5 remote monitoring members.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a6a808c14b351582c289b086613d5fe7a94dc725ed43a1db1dca37dee464039"
+}

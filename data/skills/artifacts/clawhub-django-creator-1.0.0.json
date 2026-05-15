@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/django-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.django_creator",
+  "skill": {
+    "id": 17121,
+    "skillKey": "clawhub-django-creator",
+    "name": "Django Project Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "django-creator",
+    "url": "https://clawhub.ai/skills/django-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/django-creator-59ec1f26cb80de96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically create a ready-to-use Django or Django REST Framework project with preconfigured settings and environment provisioning for fast, consistent setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moenassi",
+      "userId": "publishers:moenassi",
+      "displayName": "Nassi Mohammed",
+      "image": "https://avatars.githubusercontent.com/u/115360141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771513992184,
+      "changelog": "Initial release:\n\n- Automates creation of ready-to-use Django or Django REST Framework environments.\n- Provides a preconfigured project structure with best practices.\n- Includes default development and production-ready settings.\n- Manages dependencies and creates isolated environments.\n- Designed to standardize, accelerate, and simplify backend project initialization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:201a7146b9d186387d7cabbd51f9d88256be4af82338279803d263abb408d3a1"
+}

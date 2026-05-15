@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-work-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_work_report",
+  "skill": {
+    "id": 46589,
+    "skillKey": "clawhub-weekly-work-report",
+    "name": "weekly-report-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-work-report",
+    "url": "https://clawhub.ai/skills/weekly-work-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-work-report-79fddaf103cac3cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional weekly reports instantly. Transform your bullet points into polished, manager-ready reports. Never stress about weekly updates again."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776380702905,
+      "changelog": "- Major update: Expanded from templates to a guided tool that transforms user bullet points into polished, professional weekly reports.\n- README.md file removed for streamlining.\n- New usage instructions and real-life transformation examples added.\n- Improved report structures focusing on impactful summaries, completed work, progress tracking, blockers, and next steps.\n- Includes language upgrade suggestions and side-by-side impact framing examples.\n- Quick-start templates and usage tips provided for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ed24fed90ff54064976d1f741d671664ee29fc3a4c6c4de8a9fd5a98cbee2ec"
+}

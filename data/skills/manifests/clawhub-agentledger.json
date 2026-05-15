@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9790,
+  "uuid": "skill-clawhub-agentledger",
+  "skillKey": "clawhub-agentledger",
+  "name": "AgentLedger",
+  "summary": "Expense tracking and accounting for AI agents. Log purchases, set budgets, generate spending reports, and manage multi-currency finances — all stored locally. Privacy.com card import, natural language queries, CSV/JSON export. Use when age.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentledger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c-goro",
+      "features": [
+        "Expense tracking and accounting for AI agents",
+        "Log purchases, set budgets, generate spending reports, and manage multi-currency finances — all.",
+        "Privacy.com card import, natural language queries, CSV/JSON export",
+        "Use when agents make purchases and need a financial audit trail."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentledger@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53454494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentledger",
+      "url": "https://clawhub.ai/skills/agentledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentledger",
+    "url": "https://clawhub.ai/skills/agentledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentledger-f7ccbd94d56bdb52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentledger@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentledger-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de0837a1f87787491d69cb1e352fe6d20ceaf856ddd24fd09c4053be606c18e5",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T03:35:24.548Z"
+}

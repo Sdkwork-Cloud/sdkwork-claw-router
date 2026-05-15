@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/list-running-starred-services@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.list_running_starred_services",
+  "skill": {
+    "id": 37835,
+    "skillKey": "clawhub-list-running-starred-services",
+    "name": "list-running-starred-services"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "list-running-starred-services",
+    "url": "https://clawhub.ai/skills/list-running-starred-services",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/list-running-starred-services-ea572732d7b4f0b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when you need to call bytedcli tce list-starred-service and print the raw original output directly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plusplus7",
+      "userId": "s17fpgz9ecvr8ek5tqjfffbcws83jmgv",
+      "displayName": "plusplus7",
+      "image": "https://avatars.githubusercontent.com/u/3286803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774592033106,
+      "changelog": "- Updated to print the raw, original output of bytedcli tce list-starred-service without any filtering or processing.\n- The skill no longer limits output to only running services; it now returns the full starred services list as-is.\n- Clarified instructions and description to reflect the new direct-output behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e509889f3a316fe9140507794620ce0c5d94c12d66fffd11f2d9a87cf6b1b970"
+}

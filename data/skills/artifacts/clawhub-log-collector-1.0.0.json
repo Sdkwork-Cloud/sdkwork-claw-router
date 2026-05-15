@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/log-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_collector",
+  "skill": {
+    "id": 44646,
+    "skillKey": "clawhub-log-collector",
+    "name": "Log Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-collector",
+    "url": "https://clawhub.ai/skills/log-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-collector-86a83b3800c77b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Permanent log collection agent. Collects logs and history from all nodes via SSH/VPN every 3 hours. Stores in logs.db with 30-day retention. Multi-node capab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kikikari",
+      "userId": "s1758dpxe8hkp0hvht0fbd948h84mh2s",
+      "displayName": "KikiKari",
+      "image": "https://avatars.githubusercontent.com/u/272986081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776514470407,
+      "changelog": "Initial release of log-collector—permanent log collection agent for multi-node clusters.\n\n- Collects system and custom logs from all nodes every 3 hours via SSH/VPN; stores in logs.db with 30-day retention.\n- Supports multi-node clusters with prioritized VPN fallback (Tailscale > WireGuard > WAN-SSH).\n- Handles nodes with variable reachability using best-effort and error logging.\n- Includes automated daily cleanup of expired logs and buffer transfer if gateway is offline.\n- Configuration is externalized; skill provides detailed documentation, installation, and troubleshooting guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:405e043ff1219f961fe885349edb7ee34b0cfc82c521b7e9c81f39aabb1e1b1d"
+}

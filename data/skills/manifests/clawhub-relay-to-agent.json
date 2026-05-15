@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9640,
+  "uuid": "skill-clawhub-relay-to-agent",
+  "skillKey": "clawhub-relay-to-agent",
+  "name": "Relay To Agent",
+  "summary": "Relay messages to AI agents on any OpenAI-compatible API. Supports multi-turn conversations with session management. List agents, send messages, reset sessions.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relay_to_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Santos",
+      "features": [
+        "Relay messages to AI agents on any OpenAI-compatible API",
+        "Supports multi-turn conversations with session management",
+        "List agents, send messages, reset sessions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relay-to-agent@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relay-to-agent",
+      "url": "https://clawhub.ai/skills/relay-to-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relay-to-agent",
+    "url": "https://clawhub.ai/skills/relay-to-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relay-to-agent-9f3709e52881c3c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relay-to-agent@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-relay-to-agent-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b72f4e34ad65af6dc7625e815d8fa64580094abda7d5d9572c0bf6e6e6a079d",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T19:41:32.291Z"
+}

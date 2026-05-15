@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38342,
+  "uuid": "skill-clawhub-agentlair-vault",
+  "skillKey": "clawhub-agentlair-vault",
+  "name": "Agentlair Vault",
+  "summary": "Store and fetch credentials securely at runtime via AgentLair Vault REST API. Use when an agent needs to read an API key, store a secret, rotate credentials,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentlair_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hawkaa",
+      "features": [
+        "Store and fetch credentials securely at runtime via AgentLair Vault REST API",
+        "Use when an agent needs to read an API key, store a secret, rotate credentials,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentlair-vault@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3704520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentlair-vault",
+      "url": "https://clawhub.ai/skills/agentlair-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentlair-vault",
+    "url": "https://clawhub.ai/skills/agentlair-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentlair-vault-e7ee5d85dff6aa16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentlair-vault@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentlair-vault-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087bd0ee06900f182d0005f4c344b099d360c7493bd4582f71428c11e7059d2e",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:51:51.762Z"
+}

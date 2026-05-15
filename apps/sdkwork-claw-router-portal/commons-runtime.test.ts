@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { getLoadErrorMessage } from "./packages/sdkwork-claw-router-commons/src/load-error.ts";
-import { createRequestToken } from "./packages/sdkwork-claw-router-commons/src/request-id.ts";
+import { createRequestParams, createRequestToken } from "./packages/sdkwork-claw-router-commons/src/request-id.ts";
 import {
   ensurePlusApiSuccess,
   readApiItems,
@@ -15,8 +16,14 @@ import {
 } from "./packages/sdkwork-claw-router-commons/src/api-result.ts";
 import {
   clearStoredAppSessionToken,
-  getStoredAppSessionToken,
-} from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+  getStoredAppSessionAccessToken,
+  getStoredAppSessionAuthToken,
+  } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import {
+  buildPortalAuthLoginRedirect,
+  hasStoredPortalSession,
+  resolvePortalLoginRequiredAction,
+} from "./packages/sdkwork-claw-router-commons/src/portal-auth.ts";
 import { normalizeGeneratedSdkBaseUrl } from "./packages/sdkwork-claw-router-commons/src/sdk-base-url.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
@@ -106,6 +113,26 @@ test("createRequestToken rejects an all-zero random byte result", () => {
   );
 });
 
+test("createRequestParams creates request id and idempotency key for generated SDK write calls", () => {
+  let sequence = 0;
+  const params = withCrypto(
+    {
+      randomUUID: () => {
+        sequence += 1;
+        return sequence === 1
+          ? "11111111-2222-4333-8444-555555555555"
+          : "66666666-7777-4888-9999-aaaaaaaaaaaa";
+      },
+    } as unknown as Crypto,
+    () => createRequestParams(" commerce-wallet-topup "),
+  );
+
+  assert.deepEqual(params, {
+    idempotencyKey: "commerce-wallet-topup-11111111-2222-4333-8444-555555555555",
+    xRequestId: "commerce-wallet-topup-request-66666666-7777-4888-9999-aaaaaaaaaaaa",
+  });
+});
+
 test("getLoadErrorMessage returns Error messages", () => {
   assert.equal(getLoadErrorMessage(new Error("network unavailable"), "Fallback"), "network unavailable");
 });
@@ -163,35 +190,82 @@ test("api base url defaults to same-origin edge gateway path when runtime env is
   assert.equal(API_BASE_URL, "/v1");
 });
 
+test("portal auth helpers preserve the current route for login-required actions", () => {
+  clearStoredAppSessionToken();
+
+  assert.equal(hasStoredPortalSession(), false);
+  assert.equal(
+    buildPortalAuthLoginRedirect({
+      hash: "#comments",
+      pathname: "/forum/42",
+      search: "?sort=top",
+    }),
+    "/auth/login?redirect=%2Fforum%2F42%3Fsort%3Dtop%23comments",
+  );
+  assert.deepEqual(
+    resolvePortalLoginRequiredAction({
+      hasSession: false,
+      location: {
+        hash: "#install",
+        pathname: "/skills-hub/skill-1",
+        search: "?tab=config",
+      },
+    }),
+    {
+      allowed: false,
+      redirectTo: "/auth/login?redirect=%2Fskills-hub%2Fskill-1%3Ftab%3Dconfig%23install",
+    },
+  );
+  assert.deepEqual(
+    resolvePortalLoginRequiredAction({
+      hasSession: true,
+      location: { pathname: "/courses", search: "", hash: "" },
+    }),
+    { allowed: true },
+  );
+});
+
+test("navbar sign-in preserves the current public route while console links use route protection", () => {
+  const navbarSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/Navbar.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(navbarSource, /buildPortalAuthLoginRedirect/u);
+  assert.match(navbarSource, /const handleSignIn = \(\) => \{\s*navigate\(buildPortalAuthLoginRedirect\(location\)\);\s*\}/u);
+  assert.match(navbarSource, /<Link to="\/console"/u);
+  assert.doesNotMatch(navbarSource, /redirect=\/console/u);
+});
+
 test("sdk request boundary validates query primitives and safe path segments", () => {
   assert.equal(optionalInteger(" 2026 ", "year"), 2026);
-  assert.equal(optionalPositiveInteger(" 2 ", "pageNo"), 2);
+  assert.equal(optionalPositiveInteger(" 2 ", "page"), 2);
   assert.equal(optionalBoundedPositiveInteger("100", "pageSize", 100), 100);
-  assert.equal(optionalText(" keyword ", "keyword", 128), "keyword");
-  assert.equal(optionalText(" ", "keyword", 128), undefined);
+  assert.equal(optionalText(" query ", "searchQuery", 128), "query");
+  assert.equal(optionalText(" ", "searchQuery", 128), undefined);
   assert.equal(requiredSafePathSegment("app-1_2.3~stable", "appId"), "app-1_2.3~stable");
   assert.deepEqual(
     pruneUndefinedQueryParams({
-      pageNo: 2,
+      page: 2,
       pageSize: 100,
-      keyword: "gpt-4o",
+      searchQuery: "gpt-4o",
       empty: undefined,
       zero: 0,
     }),
     {
-      pageNo: 2,
+      page: 2,
       pageSize: 100,
-      keyword: "gpt-4o",
+      searchQuery: "gpt-4o",
       zero: 0,
     },
   );
 
   assert.throws(() => optionalInteger("2026.5", "year"), /year must be an integer/);
-  assert.throws(() => optionalInteger("1e2", "pageNo"), /pageNo must be an integer/);
-  assert.throws(() => optionalPositiveInteger(0, "pageNo"), /pageNo must be a positive integer/);
+  assert.throws(() => optionalInteger("1e2", "page"), /page must be an integer/);
+  assert.throws(() => optionalPositiveInteger(0, "page"), /page must be a positive integer/);
   assert.throws(() => optionalBoundedPositiveInteger(101, "pageSize", 100), /pageSize must be between 1 and 100/);
   assert.throws(() => optionalText({ value: "2026-05-05" }, "startTime", 64), /startTime must be a string/);
-  assert.throws(() => optionalText("x".repeat(129), "keyword", 128), /keyword must be at most 128 characters/);
+  assert.throws(() => optionalText("x".repeat(129), "searchQuery", 128), /searchQuery must be at most 128 characters/);
   assert.throws(() => requiredSafePathSegment("", "appId"), /appId is required/);
   assert.throws(() => requiredSafePathSegment(" app-1 ", "appId"), /appId must be a safe path segment/);
   assert.throws(() => requiredSafePathSegment("../admin", "appId"), /appId must be a safe path segment/);
@@ -371,7 +445,7 @@ test("ensurePlusApiSuccess accepts generated SDK data objects and raw success en
   );
 });
 
-test("createAppSession stores tokens returned as generated SDK data objects", async () => {
+test("createAppSession stores dual IAM tokens returned as generated SDK data objects", async () => {
   const captured: { url: string; method: string; headers: Record<string, string> }[] = [];
   Object.defineProperty(globalThis, "window", {
     configurable: true,
@@ -390,10 +464,23 @@ test("createAppSession stores tokens returned as generated SDK data objects", as
         code: "2000",
         msg: "success",
         data: {
-          token: "session-token-2026",
-          tokenType: "Bearer",
-          expiresAt: Math.floor(Date.now() / 1000) + 3600,
-          expiresInSeconds: 3600,
+          accessToken: "access-token-2026",
+          authToken: "auth-token-2026",
+          refreshToken: "refresh-token-2026",
+          expiresAt: new Date(Date.now() + 3600_000).toISOString(),
+          sessionId: "session-2026",
+          context: {
+            appId: "sdkwork-claw-router",
+            authLevel: "password",
+            dataScope: ["tenant:tenant-2026"],
+            deploymentMode: "saas",
+            environment: "dev",
+            organizationId: "org-2026",
+            permissionScope: ["clawrouter:console"],
+            sessionId: "session-2026",
+            tenantId: "tenant-2026",
+            userId: "user-2026",
+          },
         },
       }),
       {
@@ -409,12 +496,15 @@ test("createAppSession stores tokens returned as generated SDK data objects", as
     const result = await createAppSession();
 
     assert.equal(captured.length, 1);
-    assert.equal(captured[0].url, "/app/v3/api/auth/session");
+    assert.equal(captured[0].url, "/app/v3/api/auth/sessions");
     assert.equal(captured[0].method, "POST");
     assert.match(captured[0].headers["x-request-id"], /^app-session-/);
-    assert.equal(getStoredAppSessionToken(), "session-token-2026");
-    assert.equal(result.code, "2000");
-    assert.equal(result.msg, "success");
+    assert.equal(getStoredAppSessionAuthToken(), "auth-token-2026");
+    assert.equal(getStoredAppSessionAccessToken(), "access-token-2026");
+    assert.equal(result.authToken, "auth-token-2026");
+    assert.equal(result.accessToken, "access-token-2026");
+    assert.equal(result.refreshToken, "refresh-token-2026");
+    assert.equal(result.sessionId, "session-2026");
   } finally {
     clearStoredAppSessionToken();
     resetClawRouterSdkClients();

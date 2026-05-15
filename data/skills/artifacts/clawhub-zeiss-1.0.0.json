@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeiss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeiss",
+  "skill": {
+    "id": 49039,
+    "skillKey": "clawhub-zeiss",
+    "name": "Zeiss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeiss",
+    "url": "https://clawhub.ai/skills/zeiss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeiss-bf895aabe88c0ae1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Carl Zeiss specializes in precision optics for semiconductor lithography, medical technology, industrial measurement, and consumer camera lenses since 1846."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777565546858,
+      "changelog": "- Initial release with overview of Zeiss: history, business model, and key technologies.\n- Details Zeiss's critical role as the sole optics supplier for ASML EUV lithography.\n- Covers Zeiss’s product segments: semiconductor, medical technology, industrial research, and consumer optics.\n- Includes major historical milestones and interesting facts about Zeiss’s optical innovations and global impact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13fca2f6e4ab49b19660ed2ec0363e3d9e4121284924c151d33b4b09b05bfe1d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explain-code-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explain_code_1_0_0",
+  "skill": {
+    "id": 67556,
+    "skillKey": "clawhub-explain-code-1-0-0",
+    "name": "Explain Code 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explain-code-1-0-0",
+    "url": "https://clawhub.ai/skills/explain-code-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explain-code-1-0-0-607249ba813f66e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用可视化图表和类比解释代码。在解释代码如何工作、教授代码库或用户询问如何工作时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyingzhuangk",
+      "userId": "s1745jre4s1dpyqce9y646s8gh84v3k6",
+      "displayName": "zhangyingzhuangk",
+      "image": "https://avatars.githubusercontent.com/u/16957705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131984606,
+      "changelog": "Initial release of explain-code skill:\n\n- Explains code using analogies to everyday objects or scenarios\n- Visualizes code with ASCII diagrams for flow, structure, or relationships\n- Walks through code step by step to clarify execution\n- Highlights common mistakes or misunderstandings\n- Explanations are natural and may use multiple analogies for complex concepts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90f57cce3bdc3fa282eca9daee0538b25ad374176bad864adaa74fa2c47f8211"
+}

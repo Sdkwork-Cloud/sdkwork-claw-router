@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-citation-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_citation_writer",
+  "skill": {
+    "id": 21707,
+    "skillKey": "clawhub-geo-citation-writer",
+    "name": "AI Citation Content Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-citation-writer",
+    "url": "https://clawhub.ai/skills/geo-citation-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-citation-writer-8bbbc4be13b46732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write AI-citable content in proven formats including FAQ pages, definition articles (\"What is X?\"), comparison guides (A vs B), how-to guides, and original d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772265658654,
+      "changelog": "Initial release: Write AI-citable content formats (FAQ, definitions, lists) based on GEOly AI citation patterns",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5baff44912314103cd390eaf3795c5b1d3931c3b28a7151ab91f0665cdfd1945"
+}

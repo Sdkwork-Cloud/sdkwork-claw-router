@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixcli-skill@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixcli_skill",
+  "skill": {
+    "id": 53553,
+    "skillKey": "clawhub-pixcli-skill",
+    "name": "Pixcli Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixcli-skill",
+    "url": "https://clawhub.ai/skills/pixcli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixcli-skill-30a123ecc512690e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creative toolkit for AI agents — generate images, videos, voiceover, music, and sound effects, then assemble polished output via Remotion. Uses the pixcli CL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cohnen",
+      "userId": "s170vzyj2a2jpw4je5vt0t2c4h83n8g3",
+      "displayName": "cohnen",
+      "image": "https://avatars.githubusercontent.com/u/2776023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774984567973,
+      "changelog": "v2.2: Multi-image references, Google Search grounding, start/end frame video, PixVerse v6 models, negative prompts, native audio, job recovery command",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cec0bbb06f506536a8fa9f582ecdd80a8ce503b163d412fe79c88315a89fcb8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12430,
+  "uuid": "skill-clawhub-browser-use-local",
+  "skillKey": "clawhub-browser-use-local",
+  "name": "Browser Use Local",
+  "summary": "Automate browser actions locally via browser-use CLI/Python: open pages, click/type, screenshot, extract HTML/links, debug sessions, and capture login QR codes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_local",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengjiajie",
+      "features": [
+        "Automate browser actions locally via browser-use CLI/Python: open pages, click/type, screenshot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-use-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16379560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-use-local",
+      "url": "https://clawhub.ai/skills/browser-use-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-local",
+    "url": "https://clawhub.ai/skills/browser-use-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-local-9f0378a933d7d9a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-use-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-use-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e84290fc63586527adf2a5b415a1e6dc9ac1a551d7a7553a5d2412f5db5dae50",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:26:48.699Z"
+}

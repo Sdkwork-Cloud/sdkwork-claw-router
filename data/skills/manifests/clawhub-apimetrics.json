@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29451,
+  "uuid": "skill-clawhub-apimetrics",
+  "skillKey": "clawhub-apimetrics",
+  "name": "Apimetrics",
+  "summary": "APImetrics integration. Manage data, records, and automate workflows. Use when the user wants to interact with APImetrics data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apimetrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "APImetrics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with APImetrics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apimetrics@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apimetrics",
+      "url": "https://clawhub.ai/skills/apimetrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apimetrics",
+    "url": "https://clawhub.ai/skills/apimetrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apimetrics-e0d834fd7569e691.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apimetrics@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-apimetrics-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac9638a5ace5183e07a4b99b73cb8d38b4b2f8d0639b9aca2c6ad8f1ac29847d",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:03.557Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43471,
+  "uuid": "skill-clawhub-ai-context-generator",
+  "skillKey": "clawhub-ai-context-generator",
+  "name": "Project Context Generator For AI",
+  "summary": "Generates .ai-context knowledge base for coding agents. Activate when: (1) setting up a new project for AI-assisted development, (2) user asks to \"create pro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_context_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sopaco",
+      "features": [
+        "Generates .ai-context knowledge base for coding agents",
+        "Activate when: (1) setting up a new project for AI-assisted development, (2) user asks to \"crea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-context-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15891288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-context-generator",
+      "url": "https://clawhub.ai/skills/ai-context-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-context-generator",
+    "url": "https://clawhub.ai/skills/ai-context-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-context-generator-d64f15675b122ea3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-context-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-context-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dd5d6fdcf906f3cc479f7f35c0cbe9f0ed907a7f66f40eaeace2c15bfba49a2",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:10:11.803Z"
+}

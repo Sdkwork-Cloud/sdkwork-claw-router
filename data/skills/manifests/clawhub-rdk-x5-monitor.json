@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58771,
+  "uuid": "skill-clawhub-rdk-x5-monitor",
+  "skillKey": "clawhub-rdk-x5-monitor",
+  "name": "Rdk X5 Monitor",
+  "summary": "只读查询 RDK X5 实时硬件状态：CPU 使用率与频率、BPU 算力占用、内存/磁盘使用、芯片温度、GPU 频率、网络 IP 地址。Use when the user wants to READ or CHECK current CPU usage, BPU utilization, memory, temp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiaolongli",
+      "features": [
+        "只读查询 RDK X5 实时硬件状态：CPU 使用率与频率、BPU 算力占用、内存/磁盘使用、芯片温度、GPU 频率、网络 IP 地址。Use when the user wants to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rdk-x5-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262944264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rdk-x5-monitor",
+      "url": "https://clawhub.ai/skills/rdk-x5-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-monitor",
+    "url": "https://clawhub.ai/skills/rdk-x5-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-monitor-a3e62c601ec36452.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rdk-x5-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8ae61fdb62af761b2ed08e996c76816ee5e45df08b3161b0985a43439769fc4",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:12:46.039Z"
+}

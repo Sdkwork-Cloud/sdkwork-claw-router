@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54852,
+  "uuid": "skill-clawhub-ntriq-x402-sentiment-batch",
+  "skillKey": "clawhub-ntriq-x402-sentiment-batch",
+  "name": "Ntriq X402 Sentiment Batch",
+  "summary": "Batch sentiment and intent analysis for up to 500 texts. Flat $3.00 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_sentiment_batch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Batch sentiment and intent analysis for up to 500 texts",
+        "Flat $3.00 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-sentiment-batch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-sentiment-batch",
+      "url": "https://clawhub.ai/skills/ntriq-x402-sentiment-batch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-sentiment-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-sentiment-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-sentiment-batch-b03fb22b35655deb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-sentiment-batch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-sentiment-batch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8069d4c913c303516184054f5fe383b3b2806d0748c63af34f1f4322d9f1358f",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T00:00:17.664Z"
+}

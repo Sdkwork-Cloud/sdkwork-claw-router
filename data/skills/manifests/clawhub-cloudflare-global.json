@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42947,
+  "uuid": "skill-clawhub-cloudflare-global",
+  "skillKey": "clawhub-cloudflare-global",
+  "name": "Cloudflare Global",
+  "summary": "Cloudflare DNS and zone operations using a Global API Key. Use when the user needs to list, create, update, delete, export, or import DNS records, inspect zo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_global",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HongWei Jiang",
+      "features": [
+        "Cloudflare DNS and zone operations using a Global API Key",
+        "Use when the user needs to list, create, update, delete, export, or import DNS records, inspect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-global@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11488705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-global",
+      "url": "https://clawhub.ai/skills/cloudflare-global"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-global",
+    "url": "https://clawhub.ai/skills/cloudflare-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-global-379b54ac8191ab77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-global@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-global-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28247267187489f25a61a5d152e9ddf3eb824251e5dabc5d881929bb18ea608a",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T05:15:52.477Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keepalive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keepalive",
+  "skill": {
+    "id": 23584,
+    "skillKey": "clawhub-keepalive",
+    "name": "Openclaw Keepalive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keepalive",
+    "url": "https://clawhub.ai/skills/keepalive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keepalive-4f361b43bd568fc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keep OpenClaw gateway running 24/7 on a laptop or workstation. Use when: (1) user reports gateway disconnects or crashes, (2) user asks how to make OpenClaw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lgy2020",
+      "userId": "s176czm9q353k4nsah5bag0twx83h98f",
+      "displayName": "lgy2020",
+      "image": "https://avatars.githubusercontent.com/u/126315502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773922051025,
+      "changelog": "Initial release of openclaw-keepalive.\n\n- Enables OpenClaw gateway to run persistently on Windows, Linux, and macOS.\n- Provides simple commands for install, status, start/stop, uninstall, and restart as a system service.\n- Auto-starts on system boot and restarts automatically on crashes.\n- Detailed power configuration instructions to keep computers awake and processes alive.\n- Includes troubleshooting guidance and advanced supervision options (pm2, NSSM, scripts).\n- Built-in WebSocket auto-reconnect and platform-specific service integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bdab5ba60d6a7c435098a713f0968581683b856f87b03abc2e0fc841d64aa3e"
+}

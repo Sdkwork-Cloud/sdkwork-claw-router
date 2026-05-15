@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27413,
+  "uuid": "skill-clawhub-simple-file-tree",
+  "skillKey": "clawhub-simple-file-tree",
+  "name": "Simple File Tree",
+  "summary": "Show the directory tree structure of a folder. Displays files and subdirectories in a visual tree format. Use when the user wants to see what files are in a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_file_tree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "목진왕",
+      "features": [
+        "Show the directory tree structure of a folder",
+        "Displays files and subdirectories in a visual tree format",
+        "Use when the user wants to see what files are in a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-file-tree@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80076897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-file-tree",
+      "url": "https://clawhub.ai/skills/simple-file-tree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-file-tree",
+    "url": "https://clawhub.ai/skills/simple-file-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-file-tree-fefee7777473f37c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-file-tree@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-file-tree-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daa860c9558fc41fde5518ac5f5346679d61d1b64e074fc27b88bbcd15c77c69",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:24:19.517Z"
+}

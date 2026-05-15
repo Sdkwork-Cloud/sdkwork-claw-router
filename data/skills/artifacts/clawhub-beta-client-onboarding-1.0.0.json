@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beta-client-onboarding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_client_onboarding",
+  "skill": {
+    "id": 52750,
+    "skillKey": "clawhub-beta-client-onboarding",
+    "name": "Beta Client Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-client-onboarding",
+    "url": "https://clawhub.ai/skills/beta-client-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-client-onboarding-3005296532722c58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages client onboarding workflows — welcome sequences, document collection, intake forms, kickoff scheduling, and progress tracking. Supports multiple trac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774894618749,
+      "changelog": "Initial release of the client onboarding skill:\n\n- Manages end-to-end onboarding workflows, including welcome emails, document collection, and intake forms.\n- Supports multiple onboarding tracks (e.g., SMB vs Enterprise).\n- Automates kickoff scheduling and progress tracking.\n- Generates checklists and sends reminders for stalled accounts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8edb3b9c366723092d459899ec84301b6f944cb32dec16c22a9618f0788bdcc"
+}

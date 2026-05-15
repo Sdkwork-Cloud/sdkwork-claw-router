@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72034,
+  "uuid": "skill-clawhub-video-editing",
+  "skillKey": "clawhub-video-editing",
+  "name": "Video",
+  "summary": "该技能介绍如何通过视频剪辑实现变现；当你计划从事或优化视频剪辑时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "该技能介绍如何通过视频剪辑实现变现；当你计划从事或优化视频剪辑时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editing",
+      "url": "https://clawhub.ai/skills/video-editing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing",
+    "url": "https://clawhub.ai/skills/video-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-80a24e14b777bdb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b30a558069f7c73a9b029c6ff16eed4b82b80baa477d3a149950ccc6366b1327",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:48:23.472Z"
+}

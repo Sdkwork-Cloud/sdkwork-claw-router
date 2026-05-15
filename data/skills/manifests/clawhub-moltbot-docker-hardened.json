@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47501,
+  "uuid": "skill-clawhub-moltbot-docker-hardened",
+  "skillKey": "clawhub-moltbot-docker-hardened",
+  "name": "Moltbot Docker Hardened",
+  "summary": "Enables the bot to manage Docker containers, images, and stacks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_docker_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Enables the bot to manage Docker containers, images, and stacks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbot-docker-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbot-docker-hardened",
+      "url": "https://clawhub.ai/skills/moltbot-docker-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-docker-hardened",
+    "url": "https://clawhub.ai/skills/moltbot-docker-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-docker-hardened-e93b5dd2b4d22b79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbot-docker-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbot-docker-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0e44018e3e395efb71fac514cd4c0d13537f4f5f62cbb4d09d640eb2fd17999",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:00:47.681Z"
+}

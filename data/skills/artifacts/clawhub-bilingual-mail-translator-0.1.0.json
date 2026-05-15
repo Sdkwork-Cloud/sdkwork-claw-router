@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilingual-mail-translator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilingual_mail_translator",
+  "skill": {
+    "id": 43076,
+    "skillKey": "clawhub-bilingual-mail-translator",
+    "name": "Bilingual Mail Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilingual-mail-translator",
+    "url": "https://clawhub.ai/skills/bilingual-mail-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilingual-mail-translator-3b1ffd8d036d41fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or improve a bilingual email translation and notification workflow that converts raw emails into Chinese-friendly bilingual output. Use when designing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huacius",
+      "userId": "s17abrggnn06z6pmpebjt7ky5s83gg39",
+      "displayName": "Sengo Zhao",
+      "image": "https://avatars.githubusercontent.com/u/72131616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775609232621,
+      "changelog": "Initial public release of a prompt-driven bilingual email translation skill with recipient truncation, quoted-history summarization, duplicate suppression, and prompt/postprocess boundary guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f55cf029361dcc04a3b6b370b1be12e623362fbbd61143cfb59ebb81b6838455"
+}

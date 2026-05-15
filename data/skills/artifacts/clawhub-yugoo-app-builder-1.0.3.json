@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yugoo-app-builder@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yugoo_app_builder",
+  "skill": {
+    "id": 56739,
+    "skillKey": "clawhub-yugoo-app-builder",
+    "name": "语构 App Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yugoo-app-builder",
+    "url": "https://clawhub.ai/skills/yugoo-app-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yugoo-app-builder-12706392e46dbef3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build full-stack web applications using 语构's chat-driven development platform. Manages conversations, sends development instructions, monitors build progress..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seedling-you",
+      "userId": "s170vbwhnjt0qpzgdfsknb38ah850e91",
+      "displayName": "Seedling-You",
+      "image": "https://avatars.githubusercontent.com/u/36663412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778120793886,
+      "changelog": "**yugoo-app-builder 1.0.3**\n\n- Added `homepage` metadata field for improved platform integration and discoverability.\n- Clarified API key instructions: recommend using a least-privilege or revocable key.\n- Noted usage and limitations of the `--insecure` flag for CLI commands.\n- No functional changes to skill logic or file structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22735ae1616a39e969edc2623ff90583ecdc2d045671766e0e7587f22a777c3e"
+}

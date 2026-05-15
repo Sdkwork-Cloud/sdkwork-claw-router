@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38055,
+  "uuid": "skill-clawhub-integrate-cloze",
+  "skillKey": "clawhub-integrate-cloze",
+  "name": "Cloze",
+  "summary": "Cloze integration. Manage Organizations. Use when the user wants to interact with Cloze data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_cloze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cloze integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Cloze data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-cloze@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-cloze",
+      "url": "https://clawhub.ai/skills/integrate-cloze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-cloze",
+    "url": "https://clawhub.ai/skills/integrate-cloze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-cloze-aaed319b8117d0c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-cloze@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-cloze-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ee9890588e4adf327842d39636512546e86a336592efcc743c14cb4e1bd1e89",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:59.133Z"
+}

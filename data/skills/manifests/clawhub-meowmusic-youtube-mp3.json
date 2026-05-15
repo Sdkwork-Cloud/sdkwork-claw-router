@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40858,
+  "uuid": "skill-clawhub-meowmusic-youtube-mp3",
+  "skillKey": "clawhub-meowmusic-youtube-mp3",
+  "name": "MeowMusic YouTube MP3",
+  "summary": "Package and reuse the MeowMusicServer-patched YouTube fallback workflow: Windows Chrome cookie export/sync to server, server-side yt-dlp/yt-dlp-ejs/ffmpeg se...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meowmusic_youtube_mp3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joe12801",
+      "features": [
+        "Package and reuse the MeowMusicServer-patched YouTube fallback workflow: Windows Chrome cookie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meowmusic-youtube-mp3@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70465495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meowmusic-youtube-mp3",
+      "url": "https://clawhub.ai/skills/meowmusic-youtube-mp3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meowmusic-youtube-mp3",
+    "url": "https://clawhub.ai/skills/meowmusic-youtube-mp3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meowmusic-youtube-mp3-2338550962e1a10f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meowmusic-youtube-mp3@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meowmusic-youtube-mp3-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed5678691cf54cde282d9c1013749a4f9fde22f916bf7bd9760f976895a6d53a",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:21:40.982Z"
+}

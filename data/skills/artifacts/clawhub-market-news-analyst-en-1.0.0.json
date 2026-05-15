@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-news-analyst-en@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_news_analyst_en",
+  "skill": {
+    "id": 24305,
+    "skillKey": "clawhub-market-news-analyst-en",
+    "name": "Market News Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-news-analyst-en",
+    "url": "https://clawhub.ai/skills/market-news-analyst-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-news-analyst-en-69c0f38cfa1f787b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when analyzing recent market-moving news events and their impact on equity markets and commodities. Use this skill when the user re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neverchenx",
+      "userId": "s17adhez2g5qn4xyd2v6wrdn2984541c",
+      "displayName": "Never",
+      "image": "https://avatars.githubusercontent.com/u/142883982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773571375880,
+      "changelog": "English market news analyst skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd8611ae682c65104de36bb7ef1f2582d022ae172195f01f5d5b03b309c232df"
+}

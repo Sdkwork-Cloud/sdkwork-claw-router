@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sonos-music-search-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonos_music_search_skill",
+  "skill": {
+    "id": 39913,
+    "skillKey": "clawhub-sonos-music-search-skill",
+    "name": "Sonos Music Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonos-music-search-skill",
+    "url": "https://clawhub.ai/skills/sonos-music-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonos-music-search-skill-dea87f7ef82440dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and play music on Sonos speakers using Brave Search to find Spotify tracks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775681625401,
+      "changelog": "Sonos Music Search Skill 1.0.0\n\n- Initial release\n- Search Spotify tracks using Brave Search\n- Play found music on specified Sonos speakers\n- View currently playing track information\n- Simple setup with only Brave API key required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c34088abc65f916c3977befbc560cf16404088d1372ee751df8074b927759f82"
+}

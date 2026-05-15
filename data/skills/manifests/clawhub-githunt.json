@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10488,
+  "uuid": "skill-clawhub-githunt",
+  "skillKey": "clawhub-githunt",
+  "name": "GitHunt",
+  "summary": "Find and rank GitHub developers by location, technology, and role. Search for candidates, get scored profiles with tech stack matches, activity, and contact info.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.githunt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mordka",
+      "features": [
+        "Find and rank GitHub developers by location, technology, and role",
+        "Search for candidates, get scored profiles with tech stack matches, activity, and contact info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/githunt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3659502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "githunt",
+      "url": "https://clawhub.ai/skills/githunt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "githunt",
+    "url": "https://clawhub.ai/skills/githunt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/githunt-1dc0345875672f0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/githunt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-githunt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ff121e48171ed24ec5591701b80925daeb40b65199387691903073ad5f5d002",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T23:40:52.274Z"
+}

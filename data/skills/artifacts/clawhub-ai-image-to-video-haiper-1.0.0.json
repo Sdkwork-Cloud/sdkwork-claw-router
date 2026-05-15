@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-haiper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_haiper",
+  "skill": {
+    "id": 44206,
+    "skillKey": "clawhub-ai-image-to-video-haiper",
+    "name": "Ai Image To Video Haiper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-haiper",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-haiper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-haiper-e8af31ef91800374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 20MB. social media creators, marketers, designers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776355240059,
+      "changelog": "Initial release — Convert still images into animated video clips using Haiper AI.\n\n- Supports JPG, PNG, WEBP, HEIC images up to 20MB; outputs 1080p MP4 videos.\n- Seamless session handling with anonymous-token and credits system.\n- Simple prompts to animate, export, and manage timeline edits.\n- Cloud GPU processing for fast (30–60 seconds) video generation.\n- Handles uploads, exports, session status, and credits queries.\n- Clean feedback and error handling for common workflow and file issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10b1dcf2eda086434335ccffc60a78459fa778cb762efc8ffb519d74a34a34aa"
+}

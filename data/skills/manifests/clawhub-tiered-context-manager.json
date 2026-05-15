@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63005,
+  "uuid": "skill-clawhub-tiered-context-manager",
+  "skillKey": "clawhub-tiered-context-manager",
+  "name": "Tiered Context Manager",
+  "summary": "多Agent协作的智能会话上下文管理系统。当需要管理AI agent的长会话压缩、多层记忆分层、跨Agent知识共享时激活。支持L1/L2/L3分层压缩、实时监控、统计分析。用于OpenClaw agent的上下文管理优化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiered_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Scorpioxyb",
+      "features": [
+        "多Agent协作的智能会话上下文管理系统。当需要管理AI agent的长会话压缩、多层记忆分层、跨Agent知识共享时激活。支持L1/L2/L3分层压缩、实时监控、统计分析。用于OpenCl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiered-context-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77651269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiered-context-manager",
+      "url": "https://clawhub.ai/skills/tiered-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiered-context-manager",
+    "url": "https://clawhub.ai/skills/tiered-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiered-context-manager-51ab29696d1b4b95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiered-context-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiered-context-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c0dab091a4679106aef2b1cada494c69a22df78dc9a5d9e5367528386f1055f",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:34:18.914Z"
+}

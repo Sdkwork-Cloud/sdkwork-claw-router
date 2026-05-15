@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65566,
+  "uuid": "skill-clawhub-ai-fact-checker",
+  "skillKey": "clawhub-ai-fact-checker",
+  "name": "Ai Fact Checker",
+  "summary": "🔍 AI 事实核查 - 自动验证大模型输出准确性，检测 hallucination 幻觉编造内容，联网搜索交叉验证给出可信度评分和修正。解决大模型一本正经胡说八道的痛点。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_fact_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rudagebil11-jpg",
+      "features": [
+        "🔍 AI 事实核查",
+        "自动验证大模型输出准确性，检测 hallucination 幻觉编造内容，联网搜索交叉验证给出可信度评分和修正。解决大模型一本正经胡说八道的痛点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-fact-checker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262148849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-fact-checker",
+      "url": "https://clawhub.ai/skills/ai-fact-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-fact-checker",
+    "url": "https://clawhub.ai/skills/ai-fact-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-fact-checker-be44424aa2d80b4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-fact-checker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-fact-checker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:052bf100511e7a87762508e44cea24337e74ead7c28b8405a8486daa057f1d5d",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:25:57.974Z"
+}

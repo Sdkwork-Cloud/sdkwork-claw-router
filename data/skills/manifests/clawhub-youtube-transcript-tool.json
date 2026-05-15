@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22753,
+  "uuid": "skill-clawhub-youtube-transcript-tool",
+  "skillKey": "clawhub-youtube-transcript-tool",
+  "name": "YouTube Transcript",
+  "summary": "Fetch and download YouTube video transcripts with timestamps and multi-language support by providing the video URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Fetch and download YouTube video transcripts with timestamps and multi-language support by prov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript-tool",
+      "url": "https://clawhub.ai/skills/youtube-transcript-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-tool",
+    "url": "https://clawhub.ai/skills/youtube-transcript-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-tool-ffe54c6097544a7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ad6fa5d6401eb783a7d1a253857f579be6bbc8f27501f7e391d1f1a99c517ae",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:54:50.320Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/map-address-query-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.map_address_query_skills",
+  "skill": {
+    "id": 54873,
+    "skillKey": "clawhub-map-address-query-skills",
+    "name": "Map Address Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "map-address-query-skills",
+    "url": "https://clawhub.ai/skills/map-address-query-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/map-address-query-skills-8bf209406051e405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map service address lookup and distance-query workflow. MUST use this skill when the user asks for coordinates (坐标), latitude/longitude, POI locations (e.g.,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottkiss",
+      "userId": "s17fpp7tzj8kme81v54de2cgsn83gjmh",
+      "displayName": "sirk",
+      "image": "https://avatars.githubusercontent.com/u/1182545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773989933235,
+      "changelog": "- Initial release of map-address-query skill for querying addresses, coordinates, and calculating distances using Tencent map.\n- Features address geocoding, address-to-address distance queries, and flexible coordinate or distance-matrix lookups.\n- Provides detailed CLI setup and workflow, including API key management and config file usage.\n- Supports structured (`--json`) and human-readable output modes for diverse use cases.\n- Includes troubleshooting tips, especially for SSL errors on macOS.\n- Designed to handle user queries for coordinates, POI locations, and travel metrics efficiently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5dfabd4da4ae8ce46bdaadee70ad6f832feb2c1636d8c2bc6bb5cb4d8297cab"
+}

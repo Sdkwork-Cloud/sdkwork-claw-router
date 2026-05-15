@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29251,
+  "uuid": "skill-clawhub-proxy-detect",
+  "skillKey": "clawhub-proxy-detect",
+  "name": "detect opened proxy",
+  "summary": "Detects active system proxy settings on Windows and macOS, tests proxy availability, and returns results in JSON format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_detect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah-smith-max",
+      "features": [
+        "Detects active system proxy settings on Windows and macOS, tests proxy availability, and return."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-detect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250434724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-detect",
+      "url": "https://clawhub.ai/skills/proxy-detect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-detect",
+    "url": "https://clawhub.ai/skills/proxy-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-detect-ab5e7ad53ad760df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-detect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-detect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c80c5c38b9226c8ea1b732ac8f3af10cffc90a7f14eca98d3f09b38542f279e6",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:26:19.777Z"
+}

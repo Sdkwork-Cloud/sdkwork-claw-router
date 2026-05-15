@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cold-email@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_email",
+  "skill": {
+    "id": 8838,
+    "skillKey": "clawhub-cold-email",
+    "name": "MachFive Cold Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-email",
+    "url": "https://clawhub.ai/skills/cold-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-email-5818a530a9fa8e8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate hyper-personalized cold email sequences using AI. Turn lead data into high-converting outreach campaigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluecraft-ai",
+      "userId": "publishers:bluecraft-ai",
+      "displayName": "MachFive",
+      "image": "https://avatars.githubusercontent.com/u/201488461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6122,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 4,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1770258160243,
+      "changelog": "Doc and API alignment: email required for leads; clearer errors, limits, and auth. Validation and recovery flow unchanged",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb6db7f46e0572cd009f6600c9927abf940d5959501cadaf65a7999bc37fb90c"
+}

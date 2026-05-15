@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32830,
+  "uuid": "skill-clawhub-gate-exchange-activitycenter",
+  "skillKey": "clawhub-gate-exchange-activitycenter",
+  "name": "gate-exchange-activitycenter",
+  "summary": "Gate platform activity and campaign hub skill. Use when the user asks about trading competitions, airdrops, or their enrolled activities. Triggers on 'recomm...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_activitycenter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate platform activity and campaign hub skill",
+        "Use when the user asks about trading competitions, airdrops, or their enrolled activities",
+        "Triggers on 'recomm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-activitycenter@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-activitycenter",
+      "url": "https://clawhub.ai/skills/gate-exchange-activitycenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-activitycenter",
+    "url": "https://clawhub.ai/skills/gate-exchange-activitycenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-activitycenter-d2db8b904b3e0ed6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-activitycenter@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-activitycenter-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:beedbf6bdeb7cdca44adb86ba4d0442dbf9f17d42841b7d6e3c3068c3887df28",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:32:30.962Z"
+}

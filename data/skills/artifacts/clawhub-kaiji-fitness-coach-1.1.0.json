@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaiji-fitness-coach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaiji_fitness_coach",
+  "skill": {
+    "id": 67713,
+    "skillKey": "clawhub-kaiji-fitness-coach",
+    "name": "Kaiji Fitness Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaiji-fitness-coach",
+    "url": "https://clawhub.ai/skills/kaiji-fitness-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaiji-fitness-coach-d9a7752e07900bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全流程 AI 健身私教技能。提供完整的健身教练体验：新用户信息收集 → 个性化训练计划生成 → 训练进化与调整 → 动作教学与指导。 触发场景： - 用户想要健身指导、训练计划、增肌减脂 - \"给我设计训练计划\"、\"我想健身\"、\"帮我练肌肉\" - \"我是新手，怎么开始健身\"、\"帮我调整训练计划\" - 询问动作如何..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiji-z",
+      "userId": "s17ebygnfk981pjnnr5tfcte8h83mdm3",
+      "displayName": "Kaiji-Z",
+      "image": "https://avatars.githubusercontent.com/u/255520104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775986893987,
+      "changelog": "Add workout-timer app integration (references/workout-timer-integration.md), data source detection for app vs manual users, general compatibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d37b1e074011e29a990d4f552f5420f058c4be8036196d559176bc0d559f0a14"
+}

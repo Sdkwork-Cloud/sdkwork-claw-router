@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/para-second-brain@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.para_second_brain",
+  "skill": {
+    "id": 8541,
+    "skillKey": "clawhub-para-second-brain",
+    "name": "PARA Second Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "para-second-brain",
+    "url": "https://clawhub.ai/skills/para-second-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/para-second-brain-597cd2571ee4a583.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize your agent's knowledge using PARA (Projects, Areas, Resources, Archive) — then make it ALL searchable. The symlink trick enables full semantic search across your entire knowledge base, not just MEMORY.md. Includes session transcri."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halthelobster",
+      "userId": "publishers:halthelobster",
+      "displayName": "halthelobster",
+      "image": "https://avatars.githubusercontent.com/u/257232409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6827,
+      "installsAllTime": 51,
+      "installsCurrent": 46,
+      "stars": 51,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1769704942488,
+      "changelog": "Added PARA explanation to description, credited Tiago Forte as creator of PARA methodology",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fafa09e850d4ca7953719ec5d5c00986b0d3f961d5576481d607772329c2fe98"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-session@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_session",
+  "skill": {
+    "id": 13032,
+    "skillKey": "clawhub-build-session",
+    "name": "Build Session"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-session",
+    "url": "https://clawhub.ai/skills/build-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-session-d62b36191b202dd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facilitates focused autonomous sessions to build, create, or produce one concrete deliverable, then log and commit progress efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenartzt",
+      "userId": "publishers:stevenartzt",
+      "displayName": "stevenartzt",
+      "image": "https://avatars.githubusercontent.com/u/122651625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1559,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770504362705,
+      "changelog": "Initial release - productive autonomous session framework",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9497e0a030835db72879f9beda370c6c001898ebbc5d2d2a63cf73ff113bff0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59506,
+  "uuid": "skill-clawhub-openclaw-wecom-channel",
+  "skillKey": "clawhub-openclaw-wecom-channel",
+  "name": "OpenClaw WeCom Channel",
+  "summary": "企业微信 (WeCom) Channel 插件 — 让 OpenClaw AI Agent 通过企业微信收发消息。支持消息加解密、Token 自动管理、访问控制策略。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wecom_channel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darrryZ",
+      "features": [
+        "企业微信 (WeCom) Channel 插件 — 让 OpenClaw AI Agent 通过企业微信收发消息。支持消息加解密、Token 自动管理、访问控制策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-wecom-channel@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125576291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-wecom-channel",
+      "url": "https://clawhub.ai/skills/openclaw-wecom-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wecom-channel",
+    "url": "https://clawhub.ai/skills/openclaw-wecom-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wecom-channel-ddda575655d5d344.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-wecom-channel@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wecom-channel-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6bff39d65bf23c2165659dcdf034da366c71aacb17e60020c0b44b4a09f23a3",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:01:58.007Z"
+}

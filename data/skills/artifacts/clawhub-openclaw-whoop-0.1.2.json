@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-whoop@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whoop",
+  "skill": {
+    "id": 25758,
+    "skillKey": "clawhub-openclaw-whoop",
+    "name": "WHOOP (Official API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whoop",
+    "url": "https://clawhub.ai/skills/openclaw-whoop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whoop-b2f0c0602a1aa20e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to the WHOOP Developer Platform via official OAuth (authorization code flow), store and refresh tokens, and fetch WHOOP v2 data (recovery, sleep, cyc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavinchengcool",
+      "userId": "s17ah06n6ay2g64xj492qk88zs84a53k",
+      "displayName": "Gavin C.",
+      "image": "https://avatars.githubusercontent.com/u/201307310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773381819669,
+      "changelog": "OAuth UX: default remote copy/paste mode; add optional --loopback fast path for same-machine browser authorization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59b94d1fad3c290c73c8b4b5233d1c3df586d7e97e7ebc790231af66b9a298a5"
+}

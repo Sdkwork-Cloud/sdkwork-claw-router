@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "uapp-core-index",
+    "displayName": "App核心指标问答",
+    "summary": "友盟 U-App 核心指标查询技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 9 个只读查询接口，涵盖账户维度所有 App 合计、单日快照（DAU/新增/启动/总用户）、活跃/新增/启动趋势、使用时长。当用户需要查询 DAU、日活、新增用户...",
+    "tags": {
+      "latest": "1.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1775617766358,
+    "updatedAt": 1777527298985
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1777462755166,
+    "changelog": "**Skill version 1.2.0 changelog**\n\n- Major refactor: migrated from custom Python scripts and OpenAPI Python SDK to integrating the official `umeng-cli` tool.\n- Removed all legacy code and custom scripts; the skill now relies solely on `umeng-cli` for data access and queries.\n- SKILL.md extensively updated: now documents 9 supported umeng-cli queries, detailed parameter requirements, appkey usage, login flow, and new interface endpoints.\n- Added interface documentation for account statistics, daily snapshots, multi-day trends, and usage duration queries with clear field/parameter definitions.\n- Introduced umeng-cli trace (埋点) logic for skill and appkey usage tracking.\n- New dependency requirement: umeng-cli must be installed on the host system.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "squall0925",
+    "userId": "s178qv5gja5sbh0bq8t6wbhq8x83rmg5",
+    "displayName": "Umeng+",
+    "image": "https://avatars.githubusercontent.com/u/195273084?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527298985
+  }
+}

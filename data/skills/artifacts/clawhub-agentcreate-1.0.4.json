@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcreate@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcreate",
+  "skill": {
+    "id": 60433,
+    "skillKey": "clawhub-agentcreate",
+    "name": "agentCreate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcreate",
+    "url": "https://clawhub.ai/skills/agentcreate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcreate-0bc8e5aa74ba674c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建或卸载独立的 OpenClaw Agent，支持独立工作区、可选通道绑定（飞书/微信等）、模型选择。触发词：创建agent、new agent、创建机器人、agent setup、new bot、卸载agent、删除agent、remove agent"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xf9070",
+      "userId": "publishers:xf9070",
+      "displayName": "xf9070",
+      "image": "https://avatars.githubusercontent.com/u/246187629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773792564501,
+      "changelog": "修复：通道绑定改为可选；首次启用飞书需 doctor --fix；删除账号改用 Python 直接操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77ebe952f936cc9e44eebe3f89f251a2e489f59cd05810e52165f1174f99d1b7"
+}

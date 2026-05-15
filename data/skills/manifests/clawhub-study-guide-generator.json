@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73045,
+  "uuid": "skill-clawhub-study-guide-generator",
+  "skillKey": "clawhub-study-guide-generator",
+  "name": "学习指南网页生成器",
+  "summary": "制作高度互动、排版疏朗、适合讲师演示与学生自测的单文件 HTML 学习指南网页。当用户要求“制作学习指南”、“生成互动教学页面”、“生成沉浸式网页”、将复习资料做成网页、或提供教学/考前突击内容要求排版为互动网页时，请立刻触发此技能。哪怕用户没有明确提到“学习指南”，只要涉及到把笔记、真题或知识点生成演示版网页或...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_guide_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "制作高度互动、排版疏朗、适合讲师演示与学生自测的单文件 HTML 学习指南网页。当用户要求“制作学习指南”、“生成互动教学页面”、“生成沉浸式网页”、将复习资料做成网页、或提供教学/考前突击."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/study-guide-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "study-guide-generator",
+      "url": "https://clawhub.ai/skills/study-guide-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-guide-generator",
+    "url": "https://clawhub.ai/skills/study-guide-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-guide-generator-db060556da96b617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/study-guide-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-study-guide-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:452bf7a0d05de9c43eceb743f0703c2fbd58d6772fcfcc7aa8158713f95f8988",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:11:51.247Z"
+}

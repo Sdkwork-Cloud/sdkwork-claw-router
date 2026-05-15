@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67639,
+  "uuid": "skill-clawhub-skill-composer-pro",
+  "skillKey": "clawhub-skill-composer-pro",
+  "name": "Skill Composer",
+  "summary": "L2 编排层 - 智能技能编排引擎。自动编排多技能协作流程，分析技能依赖关系，优化执行策略（并行/串行决策）。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_composer_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pagoda111king",
+      "features": [
+        "智能技能编排引擎。自动编排多技能协作流程，分析技能依赖关系，优化执行策略（并行/串行决策）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-composer-pro@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177529007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-composer-pro",
+      "url": "https://clawhub.ai/skills/skill-composer-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-composer-pro",
+    "url": "https://clawhub.ai/skills/skill-composer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-composer-pro-c1fc0f66c34b4691.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-composer-pro@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-composer-pro-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef0f0fc954a8c80cc8446a0f7409b33ebd9b7435969852efef716480d0709e44",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:15:19.427Z"
+}

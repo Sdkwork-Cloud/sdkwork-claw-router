@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-helper@2.3.5",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_helper",
+  "skill": {
+    "id": 59892,
+    "skillKey": "clawhub-bilibili-helper",
+    "name": "Bilibili Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-helper",
+    "url": "https://clawhub.ai/skills/bilibili-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-helper-da217d24a58f4935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B站创作助手。视频标题优化、标签推荐、简介模板、投稿策略、UP主运营、弹幕互动。Bilibili video creator assistant. B站运营、视频SEO、粉丝增长、投币收藏、充电计划。Use when creating content for Bilibili."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.3.5",
+      "createdAt": 1773773835346,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:387d94935dedc0233e27bea96d9ca6780b5afc85b1bebc80d0ab6f6124cb58de"
+}

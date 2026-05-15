@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22827,
+  "uuid": "skill-clawhub-calendarhero",
+  "skillKey": "clawhub-calendarhero",
+  "name": "Calendarhero",
+  "summary": "CalendarHero integration. Manage Persons, Meetings. Use when the user wants to interact with CalendarHero data.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendarhero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CalendarHero integration",
+        "Manage Persons, Meetings",
+        "Use when the user wants to interact with CalendarHero data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calendarhero@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calendarhero",
+      "url": "https://clawhub.ai/skills/calendarhero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendarhero",
+    "url": "https://clawhub.ai/skills/calendarhero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendarhero-72067f1c384fc387.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calendarhero@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-calendarhero-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9aff9e141edb078a6ed5fe717778f5cad1e72baf407dab2f9699f771014ddf1",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:27:02.119Z"
+}

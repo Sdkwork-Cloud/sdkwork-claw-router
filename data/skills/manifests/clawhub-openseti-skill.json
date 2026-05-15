@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18953,
+  "uuid": "skill-clawhub-openseti-skill",
+  "skillKey": "clawhub-openseti-skill",
+  "name": "OpenSETI",
+  "summary": "Distributed SETI scanner - contribute compute power to analyze real radio telescope data from Breakthrough Listen. Earn tokens when your analysis discovers a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openseti_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "synergysize",
+      "features": [
+        "Distributed SETI scanner",
+        "contribute compute power to analyze real radio telescope data from Breakthrough Listen",
+        "Earn tokens when your analysis discovers a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openseti-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173307316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openseti-skill",
+      "url": "https://clawhub.ai/skills/openseti-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openseti-skill",
+    "url": "https://clawhub.ai/skills/openseti-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openseti-skill-c5c0f76e3c109dd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openseti-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openseti-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b700c6740a0fb5934a93b5018af74458a7a94aa4f50fcf27222f630692dbfd36",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T17:29:31.345Z"
+}

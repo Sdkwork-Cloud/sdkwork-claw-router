@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49363,
+  "uuid": "skill-clawhub-blood-pressure-pattern-journal",
+  "skillKey": "clawhub-blood-pressure-pattern-journal",
+  "name": "Blood Pressure Pattern Journal",
+  "summary": "A structured journaling framework to observe blood pressure patterns over time and prepare informed questions for your clinician.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blood_pressure_pattern_journal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A structured journaling framework to observe blood pressure patterns over time and prepare info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blood-pressure-pattern-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blood-pressure-pattern-journal",
+      "url": "https://clawhub.ai/skills/blood-pressure-pattern-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blood-pressure-pattern-journal",
+    "url": "https://clawhub.ai/skills/blood-pressure-pattern-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blood-pressure-pattern-journal-717133bf2dc51cea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blood-pressure-pattern-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blood-pressure-pattern-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a10dfe748b8f698c24adae079e5171af30439190161cd0b062cc75c298ab955",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T03:56:46.610Z"
+}

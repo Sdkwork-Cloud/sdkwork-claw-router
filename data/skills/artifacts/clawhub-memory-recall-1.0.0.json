@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-recall@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_recall",
+  "skill": {
+    "id": 71621,
+    "skillKey": "clawhub-memory-recall",
+    "name": "Memory Recall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-recall",
+    "url": "https://clawhub.ai/skills/memory-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-recall-0a8f51bede7787ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "精准检索历史记忆，调取某天、某项目、某条对话记录。支持按日期、按关键词、按类型检索。用于用户说查找、找回、某天、某次、之前说过等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujw0214",
+      "userId": "s170dy42phba5mfs38gpqywtpd83h0p8",
+      "displayName": "Primordia",
+      "image": "https://avatars.githubusercontent.com/u/224094441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777745121750,
+      "changelog": "Version 1.0.0 of memory-recall introduces an intelligent, precise system for historical memory retrieval.\n\n- Supports retrieval by date, keyword, type, and natural language queries.\n- Designed for scenarios such as finding a previous conversation, recalling a project decision, or retrieving notes from a specific day.\n- Unified output format with clear sources, timestamps, and relevant content.\n- Seamlessly integrates with a permanent memory system for a write-and-recall workflow.\n- No extra setup needed—enable and use immediately.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7423f8362917d2a9e07a457aa2ae1e00f78ac83ecd175158ca0a2ff0ac77c64e"
+}

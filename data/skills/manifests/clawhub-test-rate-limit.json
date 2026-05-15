@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61504,
+  "uuid": "skill-clawhub-test-rate-limit",
+  "skillKey": "clawhub-test-rate-limit",
+  "name": "Kimi Cli Headless Execution",
+  "summary": "教 OpenClaw 在自动化脚本、后台任务、CI/CD、无 TTY 环境等非交互场景中， 正确使用 Kimi Code CLI 的 `-p/--prompt`、`--print`、`--quiet`、`--wire` 等参数完成无头执行。 涵盖命令构造、自动审批控制、输出格式选择、会话管理、错误处理与安全护栏。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_rate_limit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiyouwolegequ",
+      "features": [
+        "教 OpenClaw 在自动化脚本、后台任务、CI/CD、无 TTY 环境等非交互场景中， 正确使用 Kimi Code CLI 的 `-p/--prompt`、`--print`、`--q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-rate-limit@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8555243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-rate-limit",
+      "url": "https://clawhub.ai/skills/test-rate-limit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-rate-limit",
+    "url": "https://clawhub.ai/skills/test-rate-limit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-rate-limit-639bba68a12d69da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-rate-limit@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-rate-limit-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3668f81f32d31ac976c397c9499e3497a6a527a4929888dc3b5c5bbccde85237",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:04:41.212Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-werewolf-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_werewolf_openapi_skill",
+  "skill": {
+    "id": 56291,
+    "skillKey": "clawhub-ai-werewolf-openapi-skill",
+    "name": "AI Werewolf Generator – Create a Stunning Werewolf Transformation – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-werewolf-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-werewolf-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-werewolf-openapi-skill-0f4435a0e8fbaf75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI werewolf generator — create a dramatic werewolf transformation video from a person photo"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776134193625,
+      "changelog": "- Initial release of ai-werewolf-openapi-skill.\n- Generate dramatic werewolf transformation videos from a person photo.\n- Requires HTTPS access to openapi.weshop.ai and API key (WESHOP_API_KEY) for authentication.\n- Supports custom transformation descriptions, Kling model selection, video duration, audio generation, and batch video creation.\n- Provides endpoints to start, poll, and manage video transformation runs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9bb228c8e281900a44c4cdfaf40af52fe878a7c9f0946793a845eaf2c12a21e"
+}

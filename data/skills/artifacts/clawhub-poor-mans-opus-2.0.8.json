@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poor-mans-opus@2.0.8",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poor_mans_opus",
+  "skill": {
+    "id": 33082,
+    "skillKey": "clawhub-poor-mans-opus",
+    "name": "Poor Mans Opus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poor-mans-opus",
+    "url": "https://clawhub.ai/skills/poor-mans-opus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poor-mans-opus-05b3cc6cfa48c09b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent a personality. Complete behavioral profile via I-Lang ::GENE{} protocol. Six gene blocks: identity, security, communication, capability, m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtmpss",
+      "userId": "s175d69canek3fv45fq6q5mqxd8610s6",
+      "displayName": "mtmpss",
+      "image": "https://avatars.githubusercontent.com/u/118411498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.8",
+      "createdAt": 1777842120973,
+      "changelog": "poor-mans-opus 2.0.8\n\n- Added \"Upgrade to full genome\" section to SKILL.md, clarifying safe vs. full feature set and linking to advanced configuration.\n- Improved onboarding guidance by highlighting upgrade path for production environments.\n- No changes to core skill behavior or protocol.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:546a31bafba3b026ac79ca9136993ddf014fc43cf63f7a5e56236a2b2bd83f99"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-api-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_api_skill",
+  "skill": {
+    "id": 16773,
+    "skillKey": "clawhub-youtube-video-api-skill",
+    "name": "youtube-video-api-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-video-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-api-skill-51227ce7b54674f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users automatically extract channel-level and video detail data from a specific YouTube channel via BrowserAct API. Agent should proactively..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccmagia2-gif",
+      "userId": "s1713egtej3sxzc5sv71841qzh83x5xs",
+      "displayName": "Maggia",
+      "image": "https://avatars.githubusercontent.com/u/259630312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773317081204,
+      "changelog": "youtube-video-api-skill 1.0.1\n\n- Fixed metadata to correctly require \"python\" instead of \"pyhon\" as a dependency.\n- No functional or behavioral changes to the skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccef26ecf412c0897ae840932d39b4119af67398de4f1916179e6f2338ca4d72"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64102,
+  "uuid": "skill-clawhub-tech-news-daily-report",
+  "skillKey": "clawhub-tech-news-daily-report",
+  "name": "科技新闻日报",
+  "summary": "科技新闻日报技能。每日科技新闻热榜整理与报告生成。当用户说\"科技新闻日报\"、\"整理今日科技新闻\"、\"生成科技新闻热榜\"、\"tech-news-daily\"、\"TechNews-Daily-Report\"或类似表达时触发。功能包括：(1) 使用 Tavily 搜索引擎近7天科技/AI 新闻进行搜索；(2) 按相关度...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_news_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binhuatochina",
+      "features": [
+        "科技新闻日报技能。每日科技新闻热榜整理与报告生成。当用户说\"科技新闻日报\"、\"整理今日科技新闻\"、\"生成科技新闻热榜\"、\"tech-news-daily\"、\"TechNews-Daily-R."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-news-daily-report@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164600322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-news-daily-report",
+      "url": "https://clawhub.ai/skills/tech-news-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-news-daily-report",
+    "url": "https://clawhub.ai/skills/tech-news-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-news-daily-report-3d12a07852354236.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-news-daily-report@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-news-daily-report-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8256da74ba0164a8aa05a499bb05313050ae77a3d49a53cd1e24f2790b35b77",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T00:30:50.588Z"
+}

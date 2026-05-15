@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48349,
+  "uuid": "skill-clawhub-env-tool",
+  "skillKey": "clawhub-env-tool",
+  "name": "Env Tool",
+  "summary": "Display, set, and manage environment variables in shell sessions. Use when inspecting or modifying the runtime environment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display, set, and manage environment variables in shell sessions",
+        "Use when inspecting or modifying the runtime environment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/env-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "env-tool",
+      "url": "https://clawhub.ai/skills/env-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-tool",
+    "url": "https://clawhub.ai/skills/env-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-tool-3a77fad0fca57a4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/env-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-env-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a0d752648a23640f030676c4c37d365c3869c65cfd766671a84cde20dd829dd",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T16:30:27.704Z"
+}

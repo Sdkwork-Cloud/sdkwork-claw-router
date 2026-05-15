@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9548,
+  "uuid": "skill-clawhub-cognito-forms",
+  "skillKey": "clawhub-cognito-forms",
+  "name": "Cognito Forms",
+  "summary": "Cognito Forms API integration with managed OAuth. Access forms, entries, and documents. Use this skill when users want to create, read, update, or delete for...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognito_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Cognito Forms API integration with managed OAuth",
+        "Access forms, entries, and documents",
+        "Use this skill when users want to create, read, update, or delete for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognito-forms@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognito-forms",
+      "url": "https://clawhub.ai/skills/cognito-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognito-forms",
+    "url": "https://clawhub.ai/skills/cognito-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognito-forms-415de528665bd3c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognito-forms@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognito-forms-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d95a25db59fe60800caa1ed4a73433fe7447d7126fc9d375dcc437ab0f9a47a",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:13:05.010Z"
+}

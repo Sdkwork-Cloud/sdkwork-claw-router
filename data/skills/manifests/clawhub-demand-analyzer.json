@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57376,
+  "uuid": "skill-clawhub-demand-analyzer",
+  "skillKey": "clawhub-demand-analyzer",
+  "name": "7步需求拆解框架",
+  "summary": "7-Part Demand Analysis Framework. Use before executing any user task or request. Forces structured requirement analysis before action to prevent blind execut...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demand_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zcz-user",
+      "features": [
+        "7-Part Demand Analysis Framework",
+        "Use before executing any user task or request",
+        "Forces structured requirement analysis before action to prevent blind execut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/demand-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185903578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "demand-analyzer",
+      "url": "https://clawhub.ai/skills/demand-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demand-analyzer",
+    "url": "https://clawhub.ai/skills/demand-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demand-analyzer-3641e244b7710292.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/demand-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-demand-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5fdc5bc79cf3fdd7decc511a79c64f5833ac666888e4319009e99be16f1c377",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:57:19.372Z"
+}

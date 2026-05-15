@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tools",
+  "skill": {
+    "id": 10406,
+    "skillKey": "clawhub-tools",
+    "name": "Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tools",
+    "url": "https://clawhub.ai/skills/tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tools-f9d35d43770d3909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learns your tool preferences while staying capable of using anything. Adapts to your stack."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2258,
+      "installsAllTime": 17,
+      "installsCurrent": 15,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770816027297,
+      "changelog": "Initial release - Adaptive tool intelligence",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aae69fefbd4c137106ddec4e4263693ebabd91d3f8f2a0171f9901f81ac95a39"
+}

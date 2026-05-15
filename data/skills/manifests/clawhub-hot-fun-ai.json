@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22610,
+  "uuid": "skill-clawhub-hot-fun-ai",
+  "skillKey": "clawhub-hot-fun-ai",
+  "name": "Hot Fun Integration",
+  "summary": "CLI tool to create meme tokens on hot.fun (Solana). Returns structured JSON for token creation flow.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_fun_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qinxiuchen",
+      "features": [
+        "CLI tool to create meme tokens on hot.fun (Solana)",
+        "Returns structured JSON for token creation flow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-fun-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1527607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-fun-ai",
+      "url": "https://clawhub.ai/skills/hot-fun-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-fun-ai",
+    "url": "https://clawhub.ai/skills/hot-fun-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-fun-ai-410528ab10cd7753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-fun-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-fun-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b0e329c851cf67c90db2b0eb108bb100474b17370d837584abcd3c3451e307c",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:01:22.236Z"
+}

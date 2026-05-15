@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-transaction-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_transaction_analysis",
+  "skill": {
+    "id": 63240,
+    "skillKey": "clawhub-jy-transaction-analysis",
+    "name": "jy-transaction-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-transaction-analysis",
+    "url": "https://clawhub.ai/skills/jy-transaction-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-transaction-analysis-0bbe2d807331a1f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 股交易流水分析 skill。接收用户交易流水文本，生成专业的《交易片段行为速览》HTML 报告，包含交易解析、闭环识别、关键交易剖析、行为画像等。触发场景：用户粘贴交易流水、要求分析交易记录、查看交易行为、评估交易表现等。A-share transaction analysis skill. Receives..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776002669794,
+      "changelog": "- Updated extreme market condition thresholds for key trade selection: now strictly distinguishes \"一般极端\" (±5%~±7%), \"严重极端\" (≥±7%), and \"历史罕见\" (≥±10%) based on CSI 300 daily moves.\n- Report styling changed to match A-share (mainland China) convention: red for profit/up, green for loss/down, including relevant CSS class instructions.\n- Revised sample and description for key trade selection to mandate inclusion of all trades during documented extreme market days, regardless of amount.\n- No logic or interface breaking changes; core functionality and integration unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:998fb44a6692ecd5ffa64b58404e18be9a8f978a953b287f73da23317d2390c2"
+}

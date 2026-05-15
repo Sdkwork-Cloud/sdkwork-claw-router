@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-research-cn@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_research_cn",
+  "skill": {
+    "id": 64451,
+    "skillKey": "clawhub-company-research-cn",
+    "name": "Company Research (CN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-research-cn",
+    "url": "https://clawhub.ai/skills/company-research-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-research-cn-0449d281de1e0259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业/行业研究与访谈问题生成。当用户说\"研究一下XX公司\"、\"XX行业分析\"、\"帮我出访谈问题\"、\"尽调XX\"、\"XX竞争格局\"时激活。支持行业竞争分析、企业基本面摸底、访谈问题清单、上市公司财务分析。不用于日常新闻、股票技术分析或投资报告（分别用 daily-news、stock-analysis、family..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xwz119",
+      "userId": "s1777apmpd4rfghxr058s0m8kn84467p",
+      "displayName": "xwz119",
+      "image": "https://avatars.githubusercontent.com/u/14540221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1775221062454,
+      "changelog": "v5: Complete enterprise/industry research framework with interview question generation, competitive analysis, financial analysis. Chinese-focused.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a99dbb08552521de9462eae2c931b416b7ce0b426cc9a254cb873d8e7a06e23f"
+}

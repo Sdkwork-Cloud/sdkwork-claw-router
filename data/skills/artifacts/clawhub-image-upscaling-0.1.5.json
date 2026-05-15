@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-upscaling@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_upscaling",
+  "skill": {
+    "id": 12342,
+    "skillKey": "clawhub-image-upscaling",
+    "name": "Image Upscaling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-upscaling",
+    "url": "https://clawhub.ai/skills/image-upscaling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-upscaling-3510a25a012d632f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upscale and enhance images with Real-ESRGAN, Thera, Topaz, FLUX Upscaler via inference.sh CLI. Models: Real-ESRGAN, Thera (any size), FLUX Dev Upscaler, Topa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1745,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403212166,
+      "changelog": "- Added comprehensive documentation for installing and using image upscaling via inference.sh CLI.\n- Listed supported models, including Topaz Image Upscaler, with App IDs and recommended use cases.\n- Included step-by-step examples for upscaling and integrating with image generation workflows.\n- Expanded use case suggestions and linked related skills for broader image processing workflows.\n- Provided links to official documentation for further reading and support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2daa439c3773637a7bd39af7c96dbd4fd846d2aa9b82de8d196cf2b1af783f23"
+}

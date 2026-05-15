@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newsskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsskill",
+  "skill": {
+    "id": 71176,
+    "skillKey": "clawhub-newsskill",
+    "name": "新闻skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsskill",
+    "url": "https://clawhub.ai/skills/newsskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsskill-e8d13d0d85f65d80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "npm-ued",
+      "userId": "s176z4cbsvf52fc541fdcf69zd84gk3e",
+      "displayName": "npm-ued",
+      "image": "https://avatars.githubusercontent.com/u/31879256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773210224795,
+      "changelog": "daily-news v1.0.0 — 首个版本上线\n\n- 提供每日新闻摘要、详情查询，通过 API 支持最新新闻或指定日期查阅。\n- 支持热点新闻排行、新闻分类筛选及详细新闻内容阅读。\n- 用户可通过关键词或命令获取列表、阅读指定新闻详情。\n- 脚本工具支持通过 date/ID 快速拉取新闻列表和文章内容。\n- 完整场景与回复模板，便于集成与场景适配。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01ad4820b3026334d25c103dc2ed4f61c5927ca5eb89d6c56bd64cb11bc6dac2"
+}

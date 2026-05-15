@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okr-progress-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okr_progress_tracker",
+  "skill": {
+    "id": 48066,
+    "skillKey": "clawhub-okr-progress-tracker",
+    "name": "Okr Progress Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okr-progress-tracker",
+    "url": "https://clawhub.ai/skills/okr-progress-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okr-progress-tracker-500847930f7c652e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and evaluate OKR (Objectives and Key Results) progress by parsing OKR definitions from markdown, YAML, or JSON files. Scores key results, calculates ob..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777628602320,
+      "changelog": "Initial release of **cm-okr-progress-tracker**.\n\n- Parses OKR (Objectives and Key Results) definitions from markdown, YAML, or JSON files.\n- Scores key results, calculates progress, and classifies objective health based on pace and milestones.\n- Forecasts end-of-quarter outcomes and flags at-risk or off-track goals.\n- Produces actionable, data-driven recommendations for stalled or lagging results.\n- Generates a structured OKR progress report for reviews and status checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4720f899fb02a59ea998bb51507f73f55bd99814b799bcfe23666e0f625e780d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consensus-code-merge-guard@1.1.15",
+  "version": "1.1.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_code_merge_guard",
+  "skill": {
+    "id": 19219,
+    "skillKey": "clawhub-consensus-code-merge-guard",
+    "name": "consensus-code-merge-guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-code-merge-guard",
+    "url": "https://clawhub.ai/skills/consensus-code-merge-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-code-merge-guard-7c7e23646fdeec70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persona-weighted merge governance for AI-assisted engineering. Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaicianflone",
+      "userId": "s173yh69sk2g7jzav29e74412s83qaga",
+      "displayName": "Kai Cianflone",
+      "image": "https://avatars.githubusercontent.com/u/30943151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.1.15",
+      "createdAt": 1772480641305,
+      "changelog": "Aligned SKILL metadata/install docs for registry-only path and removed misleading install bins.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc798e548b33015d33d93418950a4865089f4d6233f32f8e167f277f9eee3a03"
+}

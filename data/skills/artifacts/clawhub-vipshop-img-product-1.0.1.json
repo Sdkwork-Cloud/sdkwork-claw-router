@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vipshop-img-product@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vipshop_img_product",
+  "skill": {
+    "id": 72908,
+    "skillKey": "clawhub-vipshop-img-product",
+    "name": "唯品会图片搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vipshop-img-product",
+    "url": "https://clawhub.ai/skills/vipshop-img-product",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vipshop-img-product-7d837e0ce92eb4b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "唯品会（vip.com）图片搜索商品技能。当用户想通过图片搜索相似商品时触发，包括但不限于：以图搜图、拍照搜商品、图片搜索、找同款等。返回商品名称、价格、品牌、图片、链接等结构化信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vip",
+      "userId": "s176vxvz1gx2q3cq6qyhfd3wa9849vf2",
+      "displayName": "vip",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776678944129,
+      "changelog": "vipshop-img-product 1.0.1\n\n- 明确登录流程，要求未登录情况下自动触发 `vipshop-user-login` skill 并继续搜索。\n- 强化输出规范，必须完整展示全部商品数据，不可只展示部分记录。\n- 输出表格样式优化，商品名需带 Markdown 链接，不再展示商品链接为独立一栏。\n- 调整每页搜索结果数量为最多 10 个，相关分页参数说明同步更新。\n- 明确强调不得对返回数据进行截断、省略或省略字段。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85171dcb1e78e986607b7d1d17bdfc0709348d3562456c95fa855bc7f6b5caef"
+}

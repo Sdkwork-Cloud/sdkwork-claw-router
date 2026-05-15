@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-research-assistant@5.0.1",
+  "version": "5.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_research_assistant",
+  "skill": {
+    "id": 23149,
+    "skillKey": "clawhub-youtube-research-assistant",
+    "name": "YouTube Research Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-research-assistant",
+    "url": "https://clawhub.ai/skills/youtube-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-research-assistant-651e381502bac26c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch transcripts from YouTube videos to provide structured multilingual summaries, Q&A, deep dives"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maheshmuke",
+      "userId": "publishers:maheshmuke",
+      "displayName": "MaheshMuke",
+      "image": "https://avatars.githubusercontent.com/u/227421853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "5.0.1",
+      "createdAt": 1772884408944,
+      "changelog": "YouTube Research Assistant v5.0.1 is a minor update focused on improved clarity, transparency, and accuracy in network activity and session management.\n\n- Clarifies that only yt-dlp may make external requests, limited to fetching subtitles from YouTube.\n- Updates session state storage location to the skill’s own data folder for improved isolation and reliability.\n- Expands forbidden actions to explicitly ban all metadata APIs and all network activity except subtitle fetches.\n- Improves documentation for network transparency and local-only processing of transcript files.\n- Minor text and formatting refinements for clearer execution and error-handling rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:901d09209ee11c0cc69df2234e4b93f4c745a293f58a5927b8acc40b47bbf763"
+}

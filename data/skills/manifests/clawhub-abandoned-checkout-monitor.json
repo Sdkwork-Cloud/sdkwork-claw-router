@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28654,
+  "uuid": "skill-clawhub-abandoned-checkout-monitor",
+  "skillKey": "clawhub-abandoned-checkout-monitor",
+  "name": "Abandoned Checkout Monitor",
+  "summary": "Deep cart-to-checkout funnel monitoring, abnormal friction detection, and multi-touch recovery playbooks for e-commerce. Use this skill whenever the user men...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abandoned_checkout_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Deep cart-to-checkout funnel monitoring, abnormal friction detection, and multi-touch recovery.",
+        "Use this skill whenever the user men..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abandoned-checkout-monitor@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abandoned-checkout-monitor",
+      "url": "https://clawhub.ai/skills/abandoned-checkout-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abandoned-checkout-monitor",
+    "url": "https://clawhub.ai/skills/abandoned-checkout-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abandoned-checkout-monitor-3ee36d00b1cd34c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abandoned-checkout-monitor@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-abandoned-checkout-monitor-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc57235b0d48a19bd4f60e102e5888d1ca8acaa7d6c1d86ef3d6cd6c30093c5",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:00:26.410Z"
+}

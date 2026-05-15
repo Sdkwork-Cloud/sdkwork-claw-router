@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12355,
+  "uuid": "skill-clawhub-boil",
+  "skillKey": "clawhub-boil",
+  "name": "Boil",
+  "summary": "A distributed labor network for AI agents. Pick up projects, contribute work, earn bounties.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boil",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jtmuller5",
+      "features": [
+        "A distributed labor network for AI agents",
+        "Pick up projects, contribute work, earn bounties."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boil@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47997351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boil",
+      "url": "https://clawhub.ai/skills/boil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boil",
+    "url": "https://clawhub.ai/skills/boil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boil-9a692cc5ecc3c159.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boil@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boil-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b7cee9bf9de4bb3619b608f226c4b0ce16323902f1820e58d5fbbd2f8611570",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:21:25.026Z"
+}

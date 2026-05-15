@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/landing@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.landing",
+  "skill": {
+    "id": 21869,
+    "skillKey": "clawhub-landing",
+    "name": "Landing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "landing",
+    "url": "https://clawhub.ai/skills/landing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/landing-d6709cd49ed87966.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate HTML landing pages from templates with SEO optimization. Use when creating web pages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773922206344,
+      "changelog": "v3.0.0: Complete rewrite with real functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43a8e932cd6f7d7c61964445008c9887ba0c4d724bcf1a5a2c715a9ad4e47e58"
+}

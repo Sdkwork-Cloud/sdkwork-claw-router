@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21211,
+  "uuid": "skill-clawhub-wecom-voice",
+  "skillKey": "clawhub-wecom-voice",
+  "name": "Wecom Voice",
+  "summary": "Send native voice messages to WeCom using Windows TTS. Converts text to speech and sends as voice message (not audio file).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanqi",
+      "features": [
+        "Send native voice messages to WeCom using Windows TTS",
+        "Converts text to speech and sends as voice message (not audio file)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38562035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-voice",
+      "url": "https://clawhub.ai/skills/wecom-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-voice",
+    "url": "https://clawhub.ai/skills/wecom-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-voice-19075f5de6fc4991.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a4c13130dc369e3db62b2f1472927a1de3ca19b3a5854635a725eabd07e164",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:24:59.233Z"
+}

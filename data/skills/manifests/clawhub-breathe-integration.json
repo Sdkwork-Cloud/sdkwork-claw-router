@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39361,
+  "uuid": "skill-clawhub-breathe-integration",
+  "skillKey": "clawhub-breathe-integration",
+  "name": "Breathe",
+  "summary": "Breathe integration. Manage data, records, and automate workflows. Use when the user wants to interact with Breathe data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breathe_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Breathe integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Breathe data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/breathe-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "breathe-integration",
+      "url": "https://clawhub.ai/skills/breathe-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breathe-integration",
+    "url": "https://clawhub.ai/skills/breathe-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breathe-integration-27b56652e7435f43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/breathe-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-breathe-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:980c767d4cb5d2e246f8bc939efd769f8c9208fbbf0043af1d8897d32f4f7ca3",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:30.795Z"
+}

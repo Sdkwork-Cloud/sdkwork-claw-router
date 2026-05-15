@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24172,
+  "uuid": "skill-clawhub-skill-smc-multi-strategy-paper-trader",
+  "skillKey": "clawhub-skill-smc-multi-strategy-paper-trader",
+  "name": "SMC Multi-Strategy Paper Trader",
+  "summary": "Paper trading monitors for SMC (Smart Money Concepts) + Macro Rotation strategies. Includes swing (4H BoS+FVG), day (1H BoS+FVG+CVD), coordinated 8D/2S orche...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_smc_multi_strategy_paper_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Paper trading monitors for SMC (Smart Money Concepts) + Macro Rotation strategies",
+        "Includes swing (4H BoS+FVG), day (1H BoS+FVG+CVD), coordinated 8D/2S orche..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-smc-multi-strategy-paper-trader@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-smc-multi-strategy-paper-trader",
+      "url": "https://clawhub.ai/skills/skill-smc-multi-strategy-paper-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-smc-multi-strategy-paper-trader",
+    "url": "https://clawhub.ai/skills/skill-smc-multi-strategy-paper-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-smc-multi-strategy-paper-trader-d3d21a3f5c3a94d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-smc-multi-strategy-paper-trader@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-smc-multi-strategy-paper-trader-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e6482f7cebf2cef17052e2d062b00281f435fe613f7d9fb49e2cde895544d1c",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:13:50.691Z"
+}

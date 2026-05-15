@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclawkit-word@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawkit_word",
+  "skill": {
+    "id": 63185,
+    "skillKey": "clawhub-openclawkit-word",
+    "name": "WORD,OFFICE,office,word文档处理工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawkit-word",
+    "url": "https://clawhub.ai/skills/openclawkit-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawkit-word-1fbf5fb5421898db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Word文档处理工具套件，提供Word文档的创建、读取、内容提取和基本处理功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghao20150901",
+      "userId": "s171mkrycntxergzkaw3jea96183s663",
+      "displayName": "wanghao20150901",
+      "image": "https://avatars.githubusercontent.com/u/26130035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774676303352,
+      "changelog": "openclawkit-word v1.0.1\n\n- 初始版本发布\n- 支持Word文档创建、读取、内容提取及格式处理\n- 提供表格插入和批量处理功能\n- 命令行与Python API双重接口\n- 增加详细示例和完善的错误处理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b909f6b6c9362651ad049988a440d37b3c12b8f3983f5f4c2e5a0bf027ac683b"
+}

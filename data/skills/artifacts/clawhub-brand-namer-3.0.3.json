@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-namer@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_namer",
+  "skill": {
+    "id": 19555,
+    "skillKey": "clawhub-brand-namer",
+    "name": "Brand Namer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-namer",
+    "url": "https://clawhub.ai/skills/brand-namer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-namer-96fd1e82241edb1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate brand names with domain checks and analysis. Use when naming a startup, checking domain availability, or brainstorming product names."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1773882094206,
+      "changelog": "v3.0.3: Fix config paths and dependency declarations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:644b2f42be69d13555aef9cfddc809ba932f2518be42f62a4a8c6b35d9377bfd"
+}

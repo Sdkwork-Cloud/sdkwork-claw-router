@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_verify",
+  "skill": {
+    "id": 41197,
+    "skillKey": "clawhub-self-verify",
+    "name": "Self Verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-verify",
+    "url": "https://clawhub.ai/skills/self-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-verify-3467a24ad2f3887c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically checks and verifies consequential claims before response to prevent confident errors and ensure accuracy and safety."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ariffazil",
+      "userId": "s17awd3g3ca6ks5ke3nsy4ajf984r2qd",
+      "displayName": "ariffazil",
+      "image": "https://avatars.githubusercontent.com/u/210893902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776079282519,
+      "changelog": "Initial release: pre-delivery error check - 5-step verification before returning consequential claims",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c668932cb9510fdf48540c7c9bc9a686822691347246d5ba1e17d92655bcede"
+}

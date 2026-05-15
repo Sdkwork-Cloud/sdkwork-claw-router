@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eq-training@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eq_training",
+  "skill": {
+    "id": 29323,
+    "skillKey": "clawhub-eq-training",
+    "name": "Eq Coach Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eq-training",
+    "url": "https://clawhub.ai/skills/eq-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eq-training-f72f263da32b34b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EQ Training is an AI emotional intelligence coach for people who want stronger emotional intelligence in work, dating, family, and leadership. It improves em..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775320522013,
+      "changelog": "- Added an \"Emotional Intelligence Assessment Framework\" for scoring self-awareness, self-regulation, social awareness, and relationship management.\n- Now provides a snapshot of EQ strengths and gaps when users ask about their emotional intelligence level.\n- Updated the description to emphasize practical frameworks over vague advice.\n- No changes to core coaching style, response formats, or safety instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c334234751fb33771ba14728415ad87fbd411a63ece93f40c681e8eed2f4ad42"
+}

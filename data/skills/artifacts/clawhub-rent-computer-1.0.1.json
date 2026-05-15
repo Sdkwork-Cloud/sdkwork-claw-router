@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rent-computer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rent_computer",
+  "skill": {
+    "id": 64569,
+    "skillKey": "clawhub-rent-computer",
+    "name": "Rent Computer Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rent-computer",
+    "url": "https://clawhub.ai/skills/rent-computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rent-computer-40489d3c7086f4ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户电脑性能不足，或者希望租赁高性能电脑时，帮助用户完成电脑租赁申请"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyyinfo",
+      "userId": "s179dr6bybk3z4kfqdhmvwz17983jwaz",
+      "displayName": "cyyinfo",
+      "image": "https://avatars.githubusercontent.com/u/15858735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773457067497,
+      "changelog": "Version 1.0.1\n\n- 调用租赁申请接口时，请求头新增 Content-Type: application/json;charset=UTF-8\n- 其他功能和流程保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:001be2b9a87938db2fa3cee8ffcf272ae69d7fda4e830ba0f7b64aa33de6c728"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65374,
+  "uuid": "skill-clawhub-restaurant-business-analyst",
+  "skillKey": "clawhub-restaurant-business-analyst",
+  "name": "Restaurant Business Analyst",
+  "summary": "餐饮行业商业模式全景分析 Skill。输入餐饮品牌或业态，自动生成\"战略+策略+指标\"三位一体分析报告。 支持 HTML + PDF 双格式输出，含数据置信度标注。 覆盖快餐/茶饮/火锅/正餐/咖啡/烘焙/卤味/预制菜等8大业态。 触发词：分析[品牌]商业模式、[品牌]战略分析、[业态]案例分析、[品牌]翻台率坪...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurant_business_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "louiseliu",
+      "features": [
+        "餐饮行业商业模式全景分析 Skill。输入餐饮品牌或业态，自动生成\"战略+策略+指标\"三位一体分析报告。 支持 HTML + PDF 双格式输出，含数据置信度标注。 覆盖快餐/茶饮/火锅/正."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restaurant-business-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/339183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restaurant-business-analyst",
+      "url": "https://clawhub.ai/skills/restaurant-business-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurant-business-analyst",
+    "url": "https://clawhub.ai/skills/restaurant-business-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurant-business-analyst-89ff757e9b47d0ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restaurant-business-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restaurant-business-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2b61c163b38164890b02623c23b7f71a2437acd7156b591f7ba701fb517618",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:10:57.799Z"
+}

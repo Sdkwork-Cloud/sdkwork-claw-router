@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68014,
+  "uuid": "skill-clawhub-xhs-writer",
+  "skillKey": "clawhub-xhs-writer",
+  "name": "Xhs Writer",
+  "summary": "小红书内容创作套件，离线生成爆款标题、正文、话题、评论和多卡图片Markdown，全方位支持多类型主题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "小红书内容创作套件，离线生成爆款标题、正文、话题、评论和多卡图片Markdown，全方位支持多类型主题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-writer",
+      "url": "https://clawhub.ai/skills/xhs-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-writer",
+    "url": "https://clawhub.ai/skills/xhs-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-writer-983b2b3e35cbe491.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80e1a9c76785460b25332f5ab513e56893b8086728f73cf246e6f8800ccb4ca9",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:43:11.458Z"
+}

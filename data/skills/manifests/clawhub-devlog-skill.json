@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10682,
+  "uuid": "skill-clawhub-devlog-skill",
+  "skillKey": "clawhub-devlog-skill",
+  "name": "Devlog Skill",
+  "summary": "A standardized journaling skill for OpenClaw agents to track progress, tasks, and project status using dev-log-cli.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devlog_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrimsonDevil333333",
+      "features": [
+        "A standardized journaling skill for OpenClaw agents to track progress, tasks, and project statu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devlog-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49252920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devlog-skill",
+      "url": "https://clawhub.ai/skills/devlog-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devlog-skill",
+    "url": "https://clawhub.ai/skills/devlog-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devlog-skill-4922c671c0b18d97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devlog-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-devlog-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c05a69d04090f6a6ba9f135cbd58c53393f685e7dd2a0709dad28f9613d2a15",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T08:39:42.397Z"
+}

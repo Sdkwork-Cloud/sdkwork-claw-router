@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32455,
+  "uuid": "skill-clawhub-wttr-weather",
+  "skillKey": "clawhub-wttr-weather",
+  "name": "wttr-weather",
+  "summary": "How to check weather forecasts using wttr.in service. Make sure to use this skill whenever the user mentions weather, forecast, temperature, or wants to chec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wttr_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fbbyqsyea",
+      "features": [
+        "How to check weather forecasts using wttr.in service",
+        "Make sure to use this skill whenever the user mentions weather, forecast, temperature, or wants."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wttr-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59274835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wttr-weather",
+      "url": "https://clawhub.ai/skills/wttr-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wttr-weather",
+    "url": "https://clawhub.ai/skills/wttr-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wttr-weather-f5c811bdeb5e0a09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wttr-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wttr-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f69980fddbbc4d677cac61c62ec6db4b9425d67d6b5563b64783b855227a48",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:41:15.975Z"
+}

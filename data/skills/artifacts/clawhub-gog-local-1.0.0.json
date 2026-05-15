@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_local",
+  "skill": {
+    "id": 27954,
+    "skillKey": "clawhub-gog-local",
+    "name": "Gog Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-local",
+    "url": "https://clawhub.ai/skills/gog-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-local-4bc0c2b15cac839f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "czm448",
+      "userId": "s17ex11kgzktwf1st05nh3pcss83gbsv",
+      "displayName": "czm448",
+      "image": "https://avatars.githubusercontent.com/u/257216004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774317178404,
+      "changelog": "Initial release of gog-local – Google Workspace CLI for popular services.\n\n- Provides CLI commands for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.\n- Requires OAuth setup and supports multi-account authentication.\n- Includes common usage examples for each supported Google service.\n- Offers scripting and automation-friendly flags, like `--json` and `--no-input`.\n- Supports batch actions and metadata retrieval across services.\n- Caution: In-place Google Docs editing is not supported; only export, cat, and copy are available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65bf670edf021d20dc9402db9d59c03edfce244157c764e941ac6c9e0b6753c9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ape-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ape_claw",
+  "skill": {
+    "id": 17827,
+    "skillKey": "clawhub-ape-claw",
+    "name": "ape-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ape-claw",
+    "url": "https://clawhub.ai/skills/ape-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ape-claw-600132beba680fa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ape-claw CLI to bridge to ApeChain and execute NFT quote/simulate/buy flows with strict policy gating, confirm phrases, and telemetry. Use when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simplefarmer69",
+      "userId": "publishers:simplefarmer69",
+      "displayName": "simplefarmer69",
+      "image": "https://avatars.githubusercontent.com/u/225970627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 741,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771169203217,
+      "changelog": "This skill allows users to train their A.I agent to bridge tokens between chains via Relay and also purchase nfts from OpenSea via Seaport , fully automated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cab73b7142213840d2460798d4205895c383f07525ecebf665a9facc5d59ef5c"
+}

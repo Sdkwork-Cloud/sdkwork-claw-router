@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cardpointers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cardpointers",
+  "skill": {
+    "id": 20366,
+    "skillKey": "clawhub-cardpointers",
+    "name": "CardPointers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cardpointers",
+    "url": "https://clawhub.ai/skills/cardpointers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cardpointers-5efd3742b252e31f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query CardPointers card recommendations, wallet cards, and offers via the CardPointers CLI. Use when the user asks about which credit card to use for a purch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emcro",
+      "userId": "publishers:emcro",
+      "displayName": "Emmanuel Crouvisier",
+      "image": "https://avatars.githubusercontent.com/u/689374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772050273809,
+      "changelog": "First version of the CardPointers skill with the CLI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbf4246bed85dc0cc09ac20eda5533138ecff1918ac74fc01aab0ca320e9b119"
+}

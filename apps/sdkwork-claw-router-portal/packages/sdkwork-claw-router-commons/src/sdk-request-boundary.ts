@@ -86,9 +86,9 @@ export function pruneUndefinedQueryParams<T extends Record<string, unknown>>(val
 }
 
 export type StandardListQueryArguments = [
-  pageNo?: number,
+  page?: number,
   pageSize?: number,
-  keyword?: string,
+  searchQuery?: string,
   status?: string,
   startTime?: string,
   endTime?: string,
@@ -98,9 +98,9 @@ export function standardListQueryArguments(
   params: Record<string, string | number>,
 ): StandardListQueryArguments {
   return [
-    optionalQueryNumber(params.pageNo),
+    optionalQueryNumber(params.page),
     optionalQueryNumber(params.pageSize),
-    optionalQueryString(params.keyword),
+    optionalQueryString(params.searchQuery),
     optionalQueryString(params.status),
     optionalQueryString(params.startTime),
     optionalQueryString(params.endTime),

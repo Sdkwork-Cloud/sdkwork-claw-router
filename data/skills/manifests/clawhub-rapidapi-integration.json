@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31506,
+  "uuid": "skill-clawhub-rapidapi-integration",
+  "skillKey": "clawhub-rapidapi-integration",
+  "name": "Rapidapi",
+  "summary": "RapidAPI integration. Manage data, records, and automate workflows. Use when the user wants to interact with RapidAPI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapidapi_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "RapidAPI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with RapidAPI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapidapi-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapidapi-integration",
+      "url": "https://clawhub.ai/skills/rapidapi-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapidapi-integration",
+    "url": "https://clawhub.ai/skills/rapidapi-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapidapi-integration-8b4b03512071fe0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapidapi-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapidapi-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:253365de2fcf453bf27eb69b6163314f3aeacbb2c0fb084883b50829d579795b",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:26.391Z"
+}

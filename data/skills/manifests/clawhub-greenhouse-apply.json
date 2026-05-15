@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25543,
+  "uuid": "skill-clawhub-greenhouse-apply",
+  "skillKey": "clawhub-greenhouse-apply",
+  "name": "Greenhouse Apply",
+  "summary": "Submit job applications on Greenhouse (job-boards.greenhouse.io). Handles the full flow: fill text fields, set React Select dropdowns, select phone country,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greenhouse_apply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buildingbrien",
+      "features": [
+        "Submit job applications on Greenhouse (job-boards.greenhouse.io)",
+        "Handles the full flow: fill text fields, set React Select dropdowns, select phone country,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greenhouse-apply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143160499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greenhouse-apply",
+      "url": "https://clawhub.ai/skills/greenhouse-apply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greenhouse-apply",
+    "url": "https://clawhub.ai/skills/greenhouse-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greenhouse-apply-6aa4f82ac8704255.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greenhouse-apply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-greenhouse-apply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db448bc2343c424a708fa94956e34690ef4dbfe4cf3cdd65d2256a3d3e4167c4",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:47:00.493Z"
+}

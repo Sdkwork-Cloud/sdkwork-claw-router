@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56320,
+  "uuid": "skill-clawhub-baijiu",
+  "skillKey": "clawhub-baijiu",
+  "name": "baijiu",
+  "summary": "Information guide for Baijiu 白酒. Learn about Chinese spirits, brands (Moutai, Wuliangye), and culture.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baijiu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information guide for Baijiu 白酒",
+        "Learn about Chinese spirits, brands (Moutai, Wuliangye), and culture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baijiu@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baijiu",
+      "url": "https://clawhub.ai/skills/baijiu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baijiu",
+    "url": "https://clawhub.ai/skills/baijiu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baijiu-41803e4b72f709de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baijiu@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baijiu-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4ae8c251269a858a1b283d628fec4970497508b1c57ea419bc52ca879639ade",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T22:37:58.123Z"
+}

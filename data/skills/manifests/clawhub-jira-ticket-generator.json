@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43846,
+  "uuid": "skill-clawhub-jira-ticket-generator",
+  "skillKey": "clawhub-jira-ticket-generator",
+  "name": "robertsong",
+  "summary": "Generate bilingual (Chinese/English) JIRA ticket descriptions from user input. Use when user asks to create a JIRA ticket, write ticket description, or needs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_ticket_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robertsong",
+      "features": [
+        "Generate bilingual (Chinese/English) JIRA ticket descriptions from user input",
+        "Use when user asks to create a JIRA ticket, write ticket description, or needs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-ticket-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55969163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-ticket-generator",
+      "url": "https://clawhub.ai/skills/jira-ticket-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-ticket-generator",
+    "url": "https://clawhub.ai/skills/jira-ticket-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-ticket-generator-e990c4829f3290a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-ticket-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-ticket-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2f2edea4b1721f67de5b69ed83e7d98d284d599c49cb9b49268814eb4f4fae",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:09:14.520Z"
+}

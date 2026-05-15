@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-explanation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_explanation",
+  "skill": {
+    "id": 55414,
+    "skillKey": "clawhub-text-to-video-explanation",
+    "name": "Text To Video Explanation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-explanation",
+    "url": "https://clawhub.ai/skills/text-to-video-explanation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-explanation-ffcca69a6d030221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this text into a short explainer video with voiceover and visuals — a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777104067994,
+      "changelog": "Text to Video Explanation skill — initial release.\n\n- Converts written text (TXT, DOCX, PDF, or pasted content up to 500MB) into explainer videos with voiceover and visuals via a cloud rendering pipeline.\n- Automatic cloud account setup and session management with free usage credits for new users.\n- Supports plain language commands to upload, generate, preview, and export videos (1080p MP4 and other formats).\n- Provides video creation status, track/timeline summaries, and simple error handling for common workflow issues.\n- Designed for educators, marketers, and content creators to quickly create explainer clips without editing software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cde7bb90ef790a342357283774bfd0c9a6ef1d9dda87bfe6fb6136fc97121388"
+}

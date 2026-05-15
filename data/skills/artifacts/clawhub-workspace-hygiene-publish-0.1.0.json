@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-hygiene-publish@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_hygiene_publish",
+  "skill": {
+    "id": 31439,
+    "skillKey": "clawhub-workspace-hygiene-publish",
+    "name": "Workspace Hygiene Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-hygiene-publish",
+    "url": "https://clawhub.ai/skills/workspace-hygiene-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-hygiene-publish-136e2b63ae87dbee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and maintain workspace file structure, memory quality, and project documentation. Use when: cleaning up the workspace, running a file audit, checking m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevemichael001",
+      "userId": "publishers:stevemichael001",
+      "displayName": "Steve",
+      "image": "https://avatars.githubusercontent.com/u/210807441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773516987796,
+      "changelog": "Initial release of workspace-hygiene skill.\n\n- Audits workspace file structure, agent memory, and project documentation.\n- Checks for improper file placement, memory log issues, and missing project READMEs.\n- Validates tagged memory entry formats for recent logs.\n- Generates a detailed hygiene report with violations and recommended actions.\n- Automatically consolidates timestamped memory files; other issues flagged for manual review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5e62c2efc686d2e09efee29f49cf439982bd7d0a506d43d1f6456bfb5084d16"
+}

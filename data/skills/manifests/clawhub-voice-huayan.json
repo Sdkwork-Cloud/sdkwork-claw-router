@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31956,
+  "uuid": "skill-clawhub-voice-huayan",
+  "skillKey": "clawhub-voice-huayan",
+  "name": "voice-huayan",
+  "summary": "Local Chinese TTS playback on Windows using Piper zh_CN-huayan-medium with automatic fallback to System.Speech. Use when user asks to read replies aloud loca...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_huayan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MecyAlika",
+      "features": [
+        "Local Chinese TTS playback on Windows using Piper zh_CN-huayan-medium with automatic fallback t.",
+        "Use when user asks to read replies aloud loca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-huayan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141535631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-huayan",
+      "url": "https://clawhub.ai/skills/voice-huayan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-huayan",
+    "url": "https://clawhub.ai/skills/voice-huayan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-huayan-da4de0b78597728b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-huayan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-huayan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7bdfdc6e9b855c208808ece9e94c9b1ddfa914498079a64aa2e5a708553d38a",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:58:52.900Z"
+}

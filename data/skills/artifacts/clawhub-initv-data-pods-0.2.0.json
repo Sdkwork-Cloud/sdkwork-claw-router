@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/initv-data-pods@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.initv_data_pods",
+  "skill": {
+    "id": 22496,
+    "skillKey": "clawhub-initv-data-pods",
+    "name": "data-pods"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "initv-data-pods",
+    "url": "https://clawhub.ai/skills/initv-data-pods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/initv-data-pods-2ecfcb89193495d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage modular portable database pods (SQLite + metadata + embeddings). Includes document ingestion with embeddings for semantic search. Full auto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "init-v",
+      "userId": "publishers:init-v",
+      "displayName": "init-v",
+      "image": "https://avatars.githubusercontent.com/u/74110964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772621336789,
+      "changelog": "v0.2 - Document ingestion with embeddings, semantic search",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7de075b930e1df77d018105fe7bbac98a6b7cb1b8b5764526f4a18e79c99407a"
+}

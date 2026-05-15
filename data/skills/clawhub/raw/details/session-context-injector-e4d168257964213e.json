@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "session-context-injector",
+    "displayName": "Session Context Injector",
+    "summary": "Reorient a Telegram chat after a session reset. Reads a project's STATUS.md (resume point, blockers, next action) and sends a project-specific context inject...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775204173311,
+    "updatedAt": 1777527125977
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775204173311,
+    "changelog": "session-context-injector v1.0.0 — Initial release\n\n- Introduces project-aware Telegram chat reorientation after session reset, room creation, or collaborator join\n- Reads STATUS.md for resume point and blockers, injecting current project context into group chats or DMs\n- Sends smart context messages via Telegram Bot API (HTML mode) with tailored variants: group, DM summary, and welcome\n- Logs each injection and handles missing/partial data gracefully\n- Supports out-of-the-box use with Clawhub playbooks for room/session management",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "nissan",
+    "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+    "displayName": "Nissan Dookeran",
+    "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527125977
+  }
+}

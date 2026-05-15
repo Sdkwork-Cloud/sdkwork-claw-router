@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69800,
+  "uuid": "skill-clawhub-clausewitz-expert",
+  "skillKey": "clawhub-clausewitz-expert",
+  "name": "Clausewitz Skill",
+  "summary": "提供基于克劳塞维茨战略理论的严谨战争与竞争分析，指导集中优势、管理摩擦及识别顶点，适用于军事与商业决策。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clausewitz_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruiyongwang",
+      "features": [
+        "提供基于克劳塞维茨战略理论的严谨战争与竞争分析，指导集中优势、管理摩擦及识别顶点，适用于军事与商业决策。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clausewitz-expert@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127424769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clausewitz-expert",
+      "url": "https://clawhub.ai/skills/clausewitz-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clausewitz-expert",
+    "url": "https://clawhub.ai/skills/clausewitz-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clausewitz-expert-7db513dd39b0d352.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clausewitz-expert@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clausewitz-expert-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4267caccebd8fdac74e50616524342094bd211ea8ef12843f92f866ca186c707",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T22:43:17.681Z"
+}

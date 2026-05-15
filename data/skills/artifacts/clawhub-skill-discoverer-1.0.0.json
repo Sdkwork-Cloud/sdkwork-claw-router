@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-discoverer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_discoverer",
+  "skill": {
+    "id": 62503,
+    "skillKey": "clawhub-skill-discoverer",
+    "name": "Skill Discoverer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-discoverer",
+    "url": "https://clawhub.ai/skills/skill-discoverer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-discoverer-cacf8f787ebc2fc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill Discoverer — Skill 广场发现者。自动发现 Skill 广场新上线 skill，或按工作背景智能推荐。将候选 skill 分类为工具型（直接安装）和增强型（会影响 agent 行为），对增强型提供三种处理方式：整体安装 / 内化学习（规则写入 MEMORY.md）/ 只应用无冲突部分。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dr23334444",
+      "userId": "s17bzzhxg3mx7tkvfp2v21gq2583r7mm",
+      "displayName": "Dr23334444",
+      "image": "https://avatars.githubusercontent.com/u/79101766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774722615350,
+      "changelog": "首次公开发布：实现定时巡查 Skill 广场、智能推荐、风险评估等完整流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e99aeafa6c580a25b14cbba8a0eeb769fa641e457da407dc49e880f5281f940"
+}

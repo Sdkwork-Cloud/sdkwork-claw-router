@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8665,
+  "uuid": "skill-clawhub-context-optimizer",
+  "skillKey": "clawhub-context-optimizer",
+  "name": "Context Optimizer",
+  "summary": "Advanced context management with auto-compaction and dynamic context optimization for DeepSeek's 64k context window. Features intelligent compaction (merging, summarizing, extracting), query-aware relevance scoring, and hierarchical memory.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ad2546",
+      "features": [
+        "Advanced context management with auto-compaction and dynamic context optimization for DeepSeek'.",
+        "Features intelligent compaction (merging, summarizing, extracting), query-aware relevance scori.",
+        "Logs optimization events to chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143520060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-optimizer",
+      "url": "https://clawhub.ai/skills/context-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-optimizer",
+    "url": "https://clawhub.ai/skills/context-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-optimizer-ae0c428c0a7aa4b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae5155f3d975f2076851211b2db1ddff615fbe6ec7d85469f9d4345eb0481586",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T03:51:39.415Z"
+}

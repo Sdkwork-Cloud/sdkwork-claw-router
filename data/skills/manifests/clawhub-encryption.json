@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12788,
+  "uuid": "skill-clawhub-encryption",
+  "skillKey": "clawhub-encryption",
+  "name": "Encryption",
+  "summary": "Encrypt files, secure passwords, manage keys, and audit code for cryptographic best practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.encryption",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Encrypt files, secure passwords, manage keys, and audit code for cryptographic best practices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/encryption@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "encryption",
+      "url": "https://clawhub.ai/skills/encryption"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "encryption",
+    "url": "https://clawhub.ai/skills/encryption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/encryption-bf86075ceab2af34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/encryption@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-encryption-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:503bdc56b63f519deed0121afd4a7b48cd5fd219329054a292cf9b2a48bb764a",
+      "artifactSizeBytes": 1791
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:30:07.718Z"
+}

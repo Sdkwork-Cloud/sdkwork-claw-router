@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "md2wechat",
+    "displayName": "md2wechat",
+    "summary": "Convert Markdown to WeChat Official Account HTML, inspect supported providers/themes/prompts, generate article images, create drafts, write with creator styl...",
+    "tags": {
+      "latest": "2.0.7"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1152,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 4,
+      "versions": 8
+    },
+    "createdAt": 1773844235693,
+    "updatedAt": 1778312032042
+  },
+  "latestVersion": {
+    "version": "2.0.7",
+    "createdAt": 1774888802228,
+    "changelog": "md2wechat 2.0.7\n\n- Adds explicit intent routing between standard article drafts (`convert --draft`) and image-based posts (`create_image_post`) for correct publishing flows.\n- Introduces clear rules: requests for 小绿书, 图文笔记, newspic, or image-first posts are routed to `create_image_post`, not `convert --draft`, even if Markdown content exists.\n- Documents the usage of `--cover` (local path) vs `--cover-media-id` (reusable WeChat asset) in draft creation; clarifies they are not interchangeable with remote URLs.\n- Expands discovery and provider inspection guidelines, including image model selection using `providers show <name> --json`.\n- Strengthens agent and workflow guidance to enforce correct command family usage based on user intent.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "geekjourneyx",
+    "userId": "s172bghxb7ss49wmxkkqtrvbf583hwn8",
+    "displayName": "geekjourney",
+    "image": "https://avatars.githubusercontent.com/u/24422856?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312032042
+  }
+}

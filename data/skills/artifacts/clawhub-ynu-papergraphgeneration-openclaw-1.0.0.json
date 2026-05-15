@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ynu-papergraphgeneration-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ynu_papergraphgeneration_openclaw",
+  "skill": {
+    "id": 63039,
+    "skillKey": "clawhub-ynu-papergraphgeneration-openclaw",
+    "name": "ynu-papergraphgeneration-openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ynu-papergraphgeneration-openclaw",
+    "url": "https://clawhub.ai/skills/ynu-papergraphgeneration-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ynu-papergraphgeneration-openclaw-75b1377aedd64d1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多模态论文可视化引擎 — 从 PDF 或纯文本论文自动生成学术插图。 支持：全篇扫描识别可图化内容、双编码器架构图/算法流程图/动机图生成、 自校核机制、LaTeX/Word 图注输出、Matplotlib 结果图精确绘图。 也包含独立的 PDF → Text 提取工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljk00000",
+      "userId": "s17b036x5tawcxfqnkd9hwtr8x84qvz2",
+      "displayName": "ljk00000",
+      "image": "https://avatars.githubusercontent.com/u/113766996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775981125912,
+      "changelog": "paper-diagram 1.0.0 initial release:\n\n- Automatically generates academic diagrams from PDF or plain text papers.\n- Includes tools for PDF-to-text extraction and diagram creation via command-line.\n- Supports full-paper scanning, customized diagram generation, and batch processing.\n- Generates architecture diagrams, flowcharts, motivation/teaser figures, and results plots in various academic styles.\n- Outputs images, LaTeX/Word captions, and exportable Mermaid topology descriptions.\n- Features an auto-check mechanism and flexible API credential management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a5102198268546ffc893271d56da83f0f0462e3d46ff51f0a94edeb9fbef8cb"
+}

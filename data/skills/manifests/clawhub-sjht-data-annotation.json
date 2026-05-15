@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67017,
+  "uuid": "skill-clawhub-sjht-data-annotation",
+  "skillKey": "clawhub-sjht-data-annotation",
+  "name": "sjht-data-annotation",
+  "summary": "通用数据标注处理工具。当用户提到需要数据标注、有标注任务、数据处理、数据集生成、 标注查看/编辑时使用此 skill。支持图像、视频、文本等多种数据类型，调用模型进行内容理解 和标注，生成结构化标注数据，提供 Web 查看编辑界面。 触发短语：「标注」「annotation」「数据集」「label」「tag da...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjht_data_annotation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aowind",
+      "features": [
+        "通用数据标注处理工具。当用户提到需要数据标注、有标注任务、数据处理、数据集生成、 标注查看/编辑时使用此 skill。支持图像、视频、文本等多种数据类型，调用模型进行内容理解 和标注，生成结."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sjht-data-annotation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26450413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sjht-data-annotation",
+      "url": "https://clawhub.ai/skills/sjht-data-annotation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjht-data-annotation",
+    "url": "https://clawhub.ai/skills/sjht-data-annotation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjht-data-annotation-c81da0a9bb6497ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sjht-data-annotation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sjht-data-annotation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d569fa07045dd4f3f357d8c9bb772bbd7274cb8472f280b8feaed2001646b663",
+      "artifactSizeBytes": 4468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:00:25.023Z"
+}

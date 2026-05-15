@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tetra-scar-code-review@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tetra_scar_code_review",
+  "skill": {
+    "id": 39337,
+    "skillKey": "clawhub-tetra-scar-code-review",
+    "name": "Tetra Scar Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tetra-scar-code-review",
+    "url": "https://clawhub.ai/skills/tetra-scar-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tetra-scar-code-review-a57ac09a0c82b262.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Code review that learns from failures. Reflex arc blocks repeat mistakes without LLM calls. Combines systematic checklist review (security, performance, corr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aibenyclaude-coder",
+      "userId": "publishers:aibenyclaude-coder",
+      "displayName": "aibenyclaude-coder",
+      "image": "https://avatars.githubusercontent.com/u/259613785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774061743092,
+      "changelog": "- Initial release of scar-code-review (version 0.1.0)\n- Provides checklist code reviews across security, performance, correctness, and maintainability\n- Introduces a scar reflex arc: when a bug slips through review, a \"scar\" is recorded to block similar mistakes in the future\n- No external dependencies; Python 3.9+ only\n- Includes CLI for reviewing files, checking diffs against scars, and recording missed findings\n- Offers importable Python API for integration with existing workflows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68d6fb371857fbb082b89d360df7b89cd5158afa1223cd7698ea6d7aa51b2d55"
+}

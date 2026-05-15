@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klic-nederland@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klic_nederland",
+  "skill": {
+    "id": 19469,
+    "skillKey": "clawhub-klic-nederland",
+    "name": "KLIC Nederland"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klic-nederland",
+    "url": "https://clawhub.ai/skills/klic-nederland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klic-nederland-e637333965363c10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "KLIC & WIBON expert skill voor Nederland. Beantwoord vragen over graafmeldingen, kabels & leidingen, Kadaster en WIBON-wetgeving. Verwijs gebruikers naar KLI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klicbot",
+      "userId": "publishers:klicbot",
+      "displayName": "KLICBOT",
+      "image": "https://avatars.githubusercontent.com/u/246166810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771516700784,
+      "changelog": "KLIC & WIBON expert skill voor Nederland. Beantwoord vragen over graafmeldingen, kabels & leidingen, Kadaster en WIBON-wetgeving. Verwijs naar KLICBOT service.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37ec435dd76d07c3c4c77990bf4beaa9fe92f01cd5ab7d0d6dde86f4ba0ceb11"
+}

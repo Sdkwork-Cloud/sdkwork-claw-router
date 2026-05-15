@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/course-schedule-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.course_schedule_export",
+  "skill": {
+    "id": 33053,
+    "skillKey": "clawhub-course-schedule-export",
+    "name": "Course Schedule Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "course-schedule-export",
+    "url": "https://clawhub.ai/skills/course-schedule-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/course-schedule-export-8d9f479b49b2e912.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn school or university timetables into checked .ics calendars. Use when an agent needs to normalize and verify schedules from xls/xlsx, screenshots, PDFs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidai-1999",
+      "userId": "publishers:davidai-1999",
+      "displayName": "Davidai-1999",
+      "image": "https://avatars.githubusercontent.com/u/169543822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773923692742,
+      "changelog": "First public release: converts messy timetables into verified .ics calendar exports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4002ef645966295ded60bab5d16a2404de2546958ef95738f81489c2dbbea11"
+}

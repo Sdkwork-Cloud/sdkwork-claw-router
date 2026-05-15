@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36813,
+  "uuid": "skill-clawhub-neon-one",
+  "skillKey": "clawhub-neon-one",
+  "name": "Neon One",
+  "summary": "Neon One integration. Manage data, records, and automate workflows. Use when the user wants to interact with Neon One data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neon_one",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Neon One integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Neon One data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neon-one@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neon-one",
+      "url": "https://clawhub.ai/skills/neon-one"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neon-one",
+    "url": "https://clawhub.ai/skills/neon-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neon-one-f1364e241342494a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neon-one@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-neon-one-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1582e16e1b11f9900e798eb3d01a3369cc1510f5894cabf53b7dd10c7c29e896",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:23.405Z"
+}

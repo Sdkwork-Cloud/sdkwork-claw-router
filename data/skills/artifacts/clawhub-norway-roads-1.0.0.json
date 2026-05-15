@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/norway-roads@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norway_roads",
+  "skill": {
+    "id": 13195,
+    "skillKey": "clawhub-norway-roads",
+    "name": "Norway Roads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norway-roads",
+    "url": "https://clawhub.ai/skills/norway-roads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norway-roads-0faa469068aa6068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time road conditions, closures, and traffic issues in Norway. Use when the user asks about road status, closed roads, traffic conditions, weather on roads, or planning a route in Norway. Handles queries like \"Are there road clos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoffreycasaubon",
+      "userId": "publishers:geoffreycasaubon",
+      "displayName": "GeoffreyCasaubon",
+      "image": "https://avatars.githubusercontent.com/u/790606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770384596191,
+      "changelog": "- Initial release of norway-roads skill.\n- Enables real-time queries for road conditions, closures, and barriers in Norway using NVDB public API.\n- Supports city-to-city route checks, specific road or location queries, and filtering by closure cause (e.g., snow, ice).\n- Returns detailed closure data including location, period, and reason.\n- No API key required; updates in real time from official Statens Vegvesen data.\n- Includes sample commands, major route info, county overview, and Norwegian-English road terms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc2f43f510872e338360a9b38f7df9b86e3ae067bf9a29eee9eb8f8c50920ee8"
+}

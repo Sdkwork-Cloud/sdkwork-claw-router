@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17572,
+  "uuid": "skill-clawhub-doc-accurate-codegen",
+  "skillKey": "clawhub-doc-accurate-codegen",
+  "name": "Documentation-Accurate Code Generation",
+  "summary": "Generate code that references actual documentation, preventing hallucination bugs. ALWAYS loads docs first, validates against API signatures, and verifies co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_accurate_codegen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobisamaa",
+      "features": [
+        "Generate code that references actual documentation, preventing hallucination bugs",
+        "ALWAYS loads docs first, validates against API signatures, and verifies co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-accurate-codegen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62774845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-accurate-codegen",
+      "url": "https://clawhub.ai/skills/doc-accurate-codegen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-accurate-codegen",
+    "url": "https://clawhub.ai/skills/doc-accurate-codegen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-accurate-codegen-0962223b94955277.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-accurate-codegen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-accurate-codegen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10a3b0135f54832cfc0d38f80c014750b658987ab018e2d159044bc4d041768",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T20:01:26.552Z"
+}

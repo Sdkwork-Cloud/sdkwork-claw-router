@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33518,
+  "uuid": "skill-clawhub-video-frame-extractor",
+  "skillKey": "clawhub-video-frame-extractor",
+  "name": "video-frame-extractor",
+  "summary": "This skill should be used when extracting frames from video files, such as generating keyframe sequences from videos, creating video thumbnails at intervals,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_frame_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haoyu Huang",
+      "features": [
+        "This skill should be used when extracting frames from video files, such as generating keyframe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-frame-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31029753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-frame-extractor",
+      "url": "https://clawhub.ai/skills/video-frame-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-frame-extractor",
+    "url": "https://clawhub.ai/skills/video-frame-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-frame-extractor-975dd4cf8ed41142.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-frame-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-frame-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fff8f8e1f27e6c31a000746e1fb43321904cd1e4e92954fcba4c1c183073fd4",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T11:11:23.460Z"
+}

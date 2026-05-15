@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmind-testcase-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmind_testcase_generator",
+  "skill": {
+    "id": 61349,
+    "skillKey": "clawhub-xmind-testcase-generator",
+    "name": "XMind Test Case Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmind-testcase-generator",
+    "url": "https://clawhub.ai/skills/xmind-testcase-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmind-testcase-generator-55422f8dd9d8f0ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据需求文档生成 XMind 格式测试用例。当用户要求\"写测试用例\"、\"生成用例\"、\"写XMind用例\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxl1779766474",
+      "userId": "publishers:wxl1779766474",
+      "displayName": "wxl1779766474",
+      "image": "https://avatars.githubusercontent.com/u/70827107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773982615802,
+      "changelog": "Restore full SKILL.md with complete checklist and code analysis guidelines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e44e6b9db06d80463f114337b4cb299452cbee159c04f3f955d791baa9126b4c"
+}

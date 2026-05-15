@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flatnotes-service@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flatnotes_service",
+  "skill": {
+    "id": 62089,
+    "skillKey": "clawhub-flatnotes-service",
+    "name": "Flatnotes 笔记服务"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flatnotes-service",
+    "url": "https://clawhub.ai/skills/flatnotes-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flatnotes-service-bcd1faa53d7a57ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Flatnotes 笔记服务操作技能。用于创建、搜索、获取、更新、删除 Markdown 笔记，支持全文搜索和附件管理。**必需环境变量**：FLATNOTES_BASE_URL（服务地址）、FLATNOTES_USERNAME（用户名）、FLATNOTES_PASSWORD（密码，敏感）。使用时必须先获取用户明..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cal0rie",
+      "userId": "s17c5cnxqtqdm1pb53bg1hxh4583gzng",
+      "displayName": "Cal0rie",
+      "image": "https://avatars.githubusercontent.com/u/99197561?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774347185084,
+      "changelog": "add: homepage 字段声明白皮书仓库地址，解决 provenance 问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99e3dcf96d02333a6002a34b2bf9cbd8db7b38443438088f0c3bfa6990a57d5d"
+}

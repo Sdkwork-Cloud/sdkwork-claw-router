@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2wechat-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2wechat_skill",
+  "skill": {
+    "id": 63827,
+    "skillKey": "clawhub-md2wechat-skill",
+    "name": "md2WeChat-python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2wechat-skill",
+    "url": "https://clawhub.ai/skills/md2wechat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2wechat-skill-92e4b0c94dfe786e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 文件转换为微信公众号兼容的内联样式 HTML，并一键发送到微信草稿箱。支持 Front Matter 元数据、表格、代码块、列表、图片自动上传等完整排版能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koraihub",
+      "userId": "s172z4zaevvt8akc43jsfz7a1183gyzp",
+      "displayName": "koraiHub",
+      "image": "https://avatars.githubusercontent.com/u/32049957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 606,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773291964440,
+      "changelog": "**Major update:** v2.0.0 introduces new files and possible binary/distribution changes.\n\n- Added origin.json for .clawhub, likely for version/source tracking.\n- Compiled Python bytecode files added for html_formatter, md_converter, and wechat_client, improving execution readiness and deployment.\n- No visible changes to documentation or SKILL.md.\n- No core feature or interface changes documented for end users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfb2648dd265544c0e7c64d3a8d9bbdc4f6ca1a3a772add38e50bea96173e131"
+}

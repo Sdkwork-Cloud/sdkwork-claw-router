@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17492,
+  "uuid": "skill-clawhub-chatbot-builder",
+  "skillKey": "clawhub-chatbot-builder",
+  "name": "Chatbot Builder",
+  "summary": "Create, train, and deploy AI chatbots using your data across multiple channels like web, Slack, Discord, and WhatsApp with context-aware responses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatbot_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Create, train, and deploy AI chatbots using your data across multiple channels like web, Slack,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatbot-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatbot-builder",
+      "url": "https://clawhub.ai/skills/chatbot-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatbot-builder",
+    "url": "https://clawhub.ai/skills/chatbot-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatbot-builder-d7d3792e34a72841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatbot-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatbot-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c8bb362879449b48ea46bb8b1fd14eace3e4bb83471008e60ba9af9a8267f5e",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T18:10:34.777Z"
+}

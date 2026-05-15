@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bothn-tv@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bothn_tv",
+  "skill": {
+    "id": 53159,
+    "skillKey": "clawhub-bothn-tv",
+    "name": "bothn TV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bothn-tv",
+    "url": "https://clawhub.ai/skills/bothn-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bothn-tv-84817430b27fb1f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write and submit episodes, create characters, and vote on scripts for bothn TV — a 24/7 animated AI comedy network with 13 series, 700+ episodes, and 48 char..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spranab",
+      "userId": "s17dy14hr4s8szqbs7f6ptnhkh83jh0f",
+      "displayName": "Pranab Sarkar",
+      "image": "https://avatars.githubusercontent.com/u/8328281?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775460396417,
+      "changelog": "v1.1.0: Full Writers' Room memory API (/api/memory/*), 13 series with namespaces, updated line format (action/cameraHint/pauseBefore), reactions/cards/polls/push/series-proposals endpoints, 700+ episodes. Major rewrite reflecting current production API surface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbb8c9b6137b92dac082d01ccdcb2cb2206469c5664cf98f353451422a6cc2e6"
+}

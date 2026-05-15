@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-audit-framework@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_audit_framework",
+  "skill": {
+    "id": 33640,
+    "skillKey": "clawhub-skill-audit-framework",
+    "name": "Skill Audit Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-audit-framework",
+    "url": "https://clawhub.ai/skills/skill-audit-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-audit-framework-60ef4dc427bd7582.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured security and quality audit framework for AI agent skills. Teaches you what to check before installing any skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enawareness",
+      "userId": "s1738xfvyva2ffz6d8jn9z772h83sdn5",
+      "displayName": "LeoYann",
+      "image": "https://avatars.githubusercontent.com/u/166632095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774743766050,
+      "changelog": "- Added a homepage field pointing to the official GitHub repository in SKILL.md.\n- Expanded metadata tags to include \"trust\".\n- No changes to the framework or audit methodology—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbeb290407dd05d33d032ed2211324f90b144bfe161753e7a3fdef580a746269"
+}

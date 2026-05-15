@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soundclawd@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soundclawd",
+  "skill": {
+    "id": 27358,
+    "skillKey": "clawhub-soundclawd",
+    "name": "SoundClawd - identify songs in live sets on Soundcloud - give back an Apple Music/Spotify link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soundclawd",
+    "url": "https://clawhub.ai/skills/soundclawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soundclawd-8c7121ff7c6996dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify a track from a SoundCloud Live set screenshot and find its Apple Music and Spotify links. Use when a user shares a screenshot of a SoundCloud Live s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjanssen19",
+      "userId": "s175nj94mt88jyny7psexhg29583hjgk",
+      "displayName": "mjanssen19",
+      "image": "https://avatars.githubusercontent.com/u/54576802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774353550770,
+      "changelog": "- Expanded sources for tracklists: now searches livetracklist.com, set79.com, SoundCloud reposts, and YouTube descriptions before 1001tracklists.\n- Updated Apple Music link retrieval: now uses the iTunes Search API as primary method.\n- Improved Spotify search steps for more reliable link retrieval.\n- Notes on Cloudflare obstacles and fallback procedures added for 1001tracklists.\n- Additional guidance for matching tracks at transitions and handling ambiguous timestamps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67158e629819853d8b35b9865a77c0659b2bf0e52f5b3f8badc13cb8ad43db4d"
+}

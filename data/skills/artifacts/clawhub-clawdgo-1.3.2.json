@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdgo@1.3.2",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdgo",
+  "skill": {
+    "id": 24011,
+    "skillKey": "clawhub-clawdgo",
+    "name": "ClawdGo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdgo",
+    "url": "https://clawhub.ai/skills/clawdgo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdgo-042737bd47afc5d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawdGo Lobster Cybersecurity Camp. Train one lobster through 3 layers / 12 dimensions with modes W + A-H. Keep onboarding clear, mode boundaries strict, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nrt2024",
+      "userId": "s173z289wxy42yvz6784rejwz183ntn2",
+      "displayName": "NRT2024",
+      "image": "https://avatars.githubusercontent.com/u/162438792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.2",
+      "createdAt": 1775535692870,
+      "changelog": "ClawdGo 1.3.2 brings persistent profile/memory architecture, a richer command set, and training flow upgrades:\n\n- Introduced three-layer memory system with persistent profile in `runtime/clawdgo-profile.json`, soul.md anchors, and self-generated scenarios folder.\n- First-run now auto-initializes with 47 training records from seed profile if no profile exists.\n- Expanded trigger words and richer mode/command routing, including new workshop, vaccine, and B-mode explicit/后台/观摩 triggers.\n- Main menu, command card, and mode descriptions updated for new context (\"场景工坊\", \"安全疫苗\", \"H 联网斗虾\" as internal beta).\n- New event sync: session/profile changes now written to JSON on mode/session updates.\n- Removed dependency on legacy soul.md for runtime, aligning with new bootstrapping and profile sync logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cee136e44c2bf2e411405a64119da71eeca08480d62ac51dde8b009dc3e78f14"
+}

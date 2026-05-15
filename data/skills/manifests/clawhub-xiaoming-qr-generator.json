@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64218,
+  "uuid": "skill-clawhub-xiaoming-qr-generator",
+  "skillKey": "clawhub-xiaoming-qr-generator",
+  "name": "Qr Generator",
+  "summary": "二维码生成器 - 自定义样式、批量生成、动态二维码",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_qr_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "自定义样式、批量生成、动态二维码"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-qr-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-qr-generator",
+      "url": "https://clawhub.ai/skills/xiaoming-qr-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-qr-generator",
+    "url": "https://clawhub.ai/skills/xiaoming-qr-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-qr-generator-a3b2c4e260c5b690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-qr-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-qr-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ae9d54e9bd3bb2dcf2febef2fed8f732227b29464e1ee1dd30d882607e69079",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:28:57.023Z"
+}

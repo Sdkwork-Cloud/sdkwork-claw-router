@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20723,
+  "uuid": "skill-clawhub-agent-payment-rail",
+  "skillKey": "clawhub-agent-payment-rail",
+  "name": "Agent Payment Rail",
+  "summary": "Provides a unified API for AI agents to create, query, refund, and cancel multi-currency payments via Stripe and other providers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_payment_rail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "Provides a unified API for AI agents to create, query, refund, and cancel multi-currency paymen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-payment-rail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-payment-rail",
+      "url": "https://clawhub.ai/skills/agent-payment-rail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-payment-rail",
+    "url": "https://clawhub.ai/skills/agent-payment-rail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-payment-rail-f11f639e4c855e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-payment-rail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-payment-rail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e138f94ab9897679873c88eeebeffc599cd371e0c0b2f12ccd88913e381c2b61",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:37:25.115Z"
+}

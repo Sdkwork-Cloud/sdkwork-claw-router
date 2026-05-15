@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51021,
+  "uuid": "skill-clawhub-pg-buy",
+  "skillKey": "clawhub-pg-buy",
+  "name": "Pg Buy",
+  "summary": "Use when buying API access through ProxyGate — depositing USDC, browsing available APIs, making proxy requests, streaming responses, or rating sellers. Make...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_buy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwelten",
+      "features": [
+        "Use when buying API access through ProxyGate — depositing USDC, browsing available APIs, making."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pg-buy@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194850832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pg-buy",
+      "url": "https://clawhub.ai/skills/pg-buy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-buy",
+    "url": "https://clawhub.ai/skills/pg-buy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-buy-6084ebc158ecc9ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pg-buy@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pg-buy-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04f927ab905b69606e2228bd925fa142ad3155e1a7bd215ba95b1b4da0423111",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:33:30.773Z"
+}

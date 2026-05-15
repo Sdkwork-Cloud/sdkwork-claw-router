@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71129,
+  "uuid": "skill-clawhub-ojimport",
+  "skillKey": "clawhub-ojimport",
+  "name": "搬题姬",
+  "summary": "从 OJ 平台搬运题目，生成标准化题目文件包",
+  "version": "1.7.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ojimport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "从 OJ 平台搬运题目，生成标准化题目文件包"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ojimport@1.7.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ojimport",
+      "url": "https://clawhub.ai/skills/ojimport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ojimport",
+    "url": "https://clawhub.ai/skills/ojimport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ojimport-72622f88090305e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ojimport@1.7.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ojimport-1.7.4.json",
+      "version": "1.7.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac607a8765090cb5bf4f04d13848e76fcdb13848af1a3261e5387fe8d8fc082d",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:19:24.762Z"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "remote-console",
+    "displayName": "ResmoteConsole",
+    "summary": "通过手机/浏览器远程访问主机上的 Claude Code 或其他 CLI 工具。使用此技能来启动、停止和管理远程开发环境。 **必须触发此技能的场景**： - 用户提到\"远程控制台\"、\"远程终端\"、\"远程开发\"、\"ttyd\"、\"SSH 隧道\" - 用户想用手机/平板访问电脑上的开发环境 - 用户提到\"移动端编程\"...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773292117478,
+    "updatedAt": 1778307256321
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773292117478,
+    "changelog": "remote-console 1.0.0 初始版本发布\n\n- 实现通过手机/浏览器远程访问主机 Claude Code 或 CLI 工具，支持项目管理及命令自定义\n- 强制所有操作通过 Python 脚本（禁止直接拼接 Shell 命令）以增强安全性\n- 提供一键启动、停止、状态检查、配置验证等常用管理命令\n- 详细说明配置文件内容及常见预定义命令，包含安全警告提示\n- 增加常见问题与解决方案、首次使用检查清单",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "haibaraaiaptx",
+    "userId": "publishers:haibaraaiaptx",
+    "displayName": "HaibaraAi",
+    "image": "https://avatars.githubusercontent.com/u/16848557?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307256321
+  }
+}

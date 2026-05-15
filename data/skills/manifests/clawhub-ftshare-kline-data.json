@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60493,
+  "uuid": "skill-clawhub-ftshare-kline-data",
+  "skillKey": "clawhub-ftshare-kline-data",
+  "name": "Skills of A-share kline data released by ft.tech.",
+  "summary": "非凸科技 A 股 K 线数据技能集。覆盖日/周/月/年线 OHLC K 线查询、以及单只股票一分钟级分时价格查询（market.ft.tech）。用户询问 A 股某只股票的历史 K 线、开高低收、成交量成交额、均线（MA5/MA10/MA20），或当日/多日分时、分时图数据时使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_kline_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "非凸科技 A 股 K 线数据技能集。覆盖日/周/月/年线 OHLC K 线查询、以及单只股票一分钟级分时价格查询（market.ft.tech）。用户询问 A 股某只股票的历史 K 线、开高."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-kline-data@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-kline-data",
+      "url": "https://clawhub.ai/skills/ftshare-kline-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-kline-data",
+    "url": "https://clawhub.ai/skills/ftshare-kline-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-kline-data-98b297d82f93e37e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-kline-data@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-kline-data-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bbcb09ea1dbbfaa8ad73c4ab3fbc060f36139cd94d82b3c4b020378251bb9fa",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:25:55.337Z"
+}

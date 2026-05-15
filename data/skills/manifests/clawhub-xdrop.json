@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9045,
+  "uuid": "skill-clawhub-xdrop",
+  "skillKey": "clawhub-xdrop",
+  "name": "Xdrop",
+  "summary": "Use this skill when the user wants to send or fetch files through an Xdrop server from the terminal, asks to automate encrypted Xdrop share-link workflows, p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xdrop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xi Xu",
+      "features": [
+        "Use this skill when the user wants to send or fetch files through an Xdrop server from the term."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xdrop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109734945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xdrop",
+      "url": "https://clawhub.ai/skills/xdrop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xdrop",
+    "url": "https://clawhub.ai/skills/xdrop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xdrop-793f211998f77cdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xdrop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xdrop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:306a7ab46b55a1bc361aec2ca51206394a1e2d05cf6546f1681eb01dea15fb82",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T22:20:32.963Z"
+}

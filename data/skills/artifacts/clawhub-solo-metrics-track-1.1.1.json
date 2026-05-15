@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-metrics-track@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_metrics_track",
+  "skill": {
+    "id": 17880,
+    "skillKey": "clawhub-solo-metrics-track",
+    "name": "Metrics Track"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-metrics-track",
+    "url": "https://clawhub.ai/skills/solo-metrics-track",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-metrics-track-8de01b0fefc5ae1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up PostHog metrics plan with event funnel, KPI benchmarks, and kill/iterate/scale decision thresholds. Use when user says \"set up metrics\", \"track KPIs\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunto2",
+      "userId": "publishers:fortunto2",
+      "displayName": "Rust",
+      "image": "https://avatars.githubusercontent.com/u/1236751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 727,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771711607616,
+      "changelog": "Universalize: remove project-specific references, add SearXNG recommendation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7ee2c083a8265625cdb1eba45465cb85d3c205467952ccdcdf621821983dc87"
+}

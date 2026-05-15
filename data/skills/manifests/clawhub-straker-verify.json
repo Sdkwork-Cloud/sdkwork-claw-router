@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12243,
+  "uuid": "skill-clawhub-straker-verify",
+  "skillKey": "clawhub-straker-verify",
+  "name": "Straker Verify - AI Translation & Human Review",
+  "summary": "Professional AI-powered translation with optional human verification. Supports 100+ languages. Quality boost for existing translations. Enterprise-grade security and privacy by straker.ai.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.straker_verify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "indy-at-straker",
+      "features": [
+        "Professional AI-powered translation with optional human verification",
+        "Supports 100+ languages",
+        "Quality boost for existing translations",
+        "Enterprise-grade security and privacy by straker.ai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/straker-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13318723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "straker-verify",
+      "url": "https://clawhub.ai/skills/straker-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "straker-verify",
+    "url": "https://clawhub.ai/skills/straker-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/straker-verify-37224ab85822b3ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/straker-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-straker-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbec2af171e22d0898954f0f38f6b0a63ac08cd25e00672c97dc5ffcc32dd359",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T02:14:48.618Z"
+}

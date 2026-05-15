@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tempo-stable-uniswap-swaps@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tempo_stable_uniswap_swaps",
+  "skill": {
+    "id": 28081,
+    "skillKey": "clawhub-tempo-stable-uniswap-swaps",
+    "name": "Tempo Stable + Uniswap Swaps"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tempo-stable-uniswap-swaps",
+    "url": "https://clawhub.ai/skills/tempo-stable-uniswap-swaps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tempo-stable-uniswap-swaps-d95120042d325513.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tempo stablecoin and token swap operations for agents. Use when working with pathUSD/USDC.e balances, swapping between USDC.e and pathUSD, or executing any-t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773960915436,
+      "changelog": "- Initial release of tempo-stable-uniswap-swaps.\n- Provides step-by-step instructions for swapping tokens (including pathUSD and USDC.e) via Uniswap on Tempo mainnet.\n- Includes commands for balance checks, token transfers, Permit2 approvals, quoting, simulation, and broadcasting swaps.\n- No external dependencies required beyond standard tools (`cast`, `curl`, `jq`).\n- Outlines network and token specifics for Tempo, with caution for fee headroom on pathUSD transfers.\n- Documents common error cases and resolutions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbbbaf368f33116188766c1a75391ce264b8744e3e86c68e97ac1efdca9ac55b"
+}

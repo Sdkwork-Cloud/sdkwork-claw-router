@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34914,
+  "uuid": "skill-clawhub-chipax",
+  "skillKey": "clawhub-chipax",
+  "name": "Chipax",
+  "summary": "Chipax integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chipax data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chipax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chipax integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chipax data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chipax@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chipax",
+      "url": "https://clawhub.ai/skills/chipax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chipax",
+    "url": "https://clawhub.ai/skills/chipax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chipax-552ffbd91a0c546f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chipax@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chipax-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a65432c057653b63a47d32bbc9c6bf0db3f851c2b8652b7fed02dc1ce8008f6",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:29:53.949Z"
+}

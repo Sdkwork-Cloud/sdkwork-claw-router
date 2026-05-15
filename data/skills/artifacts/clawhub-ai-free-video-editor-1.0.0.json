@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-free-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_free_video_editor",
+  "skill": {
+    "id": 41886,
+    "skillKey": "clawhub-ai-free-video-editor",
+    "name": "Ai Free Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-free-video-editor",
+    "url": "https://clawhub.ai/skills/ai-free-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-free-video-editor-932f7f41272ac2cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tell me what you need and I'll help you edit your videos without relying on AI-generated effects or automated processing. This ai-free-video-editor skill giv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775009383733,
+      "changelog": "AI-Free Video Editor 1.0.0 — Initial Release\n\n- Launches a manual, non-AI video editing tool: trim, merge, cut, or export videos with full user control.\n- Supports mp4, mov, avi, webm, and mkv formats.\n- Connects securely to the NemoVideo backend using a simple authentication flow with free starter credits for new users.\n- Exposes intuitive chat-based commands for all basic video edits—no automated enhancements or AI inference involved.\n- Clearly routes requests for uploading, editing, exporting, balance checks, and state review.\n- Provides transparent error handling, direct session management, and export/download support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c99f25352947d22f2df6f09a91f0ba8446b552e256aedd1c51580ae492e33c1"
+}

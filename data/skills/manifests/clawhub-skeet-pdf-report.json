@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47909,
+  "uuid": "skill-clawhub-skeet-pdf-report",
+  "skillKey": "clawhub-skeet-pdf-report",
+  "name": "Pdf Report",
+  "summary": "Generate a polished PDF report or summary from findings, data, or tables gathered earlier in the conversation. Use when the user asks to \"make a PDF\", \"gener...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skeet_pdf_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bryan Seitz",
+      "features": [
+        "Generate a polished PDF report or summary from findings, data, or tables gathered earlier in th.",
+        "Use when the user asks to \"make a PDF\", \"gener..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skeet-pdf-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skeet-pdf-report",
+      "url": "https://clawhub.ai/skills/skeet-pdf-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skeet-pdf-report",
+    "url": "https://clawhub.ai/skills/skeet-pdf-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skeet-pdf-report-ceb87b1e01d99a30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skeet-pdf-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skeet-pdf-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec3d49975610fc3a52615bda1b21361d3d6df397cc2617896f4abe389ccd3754",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:42:31.254Z"
+}

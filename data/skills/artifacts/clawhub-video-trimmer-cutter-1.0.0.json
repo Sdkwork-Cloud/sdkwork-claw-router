@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-cutter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_cutter",
+  "skill": {
+    "id": 55442,
+    "skillKey": "clawhub-video-trimmer-cutter",
+    "name": "Video Trimmer Cutter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-cutter",
+    "url": "https://clawhub.ai/skills/video-trimmer-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-cutter-073c66e0631ab7bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the first 30 seconds and cut out the pause at 4:20 — and get trimmed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776252244741,
+      "changelog": "Initial release of Video Trimmer Cutter\n\n- Instantly trim and cut video clips with plain-language instructions.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB.\n- No editing experience needed; AI handles all cuts and trims automatically.\n- Fast cloud processing — get a downloadable MP4 in 20–40 seconds for typical clips.\n- Simple API token/session setup with free credits for new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86ed5dc7d809b352acd362193d9b30fdccad702ad54527d13544f1d6e7ce6305"
+}

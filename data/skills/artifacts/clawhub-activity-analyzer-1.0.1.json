@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/activity-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activity_analyzer",
+  "skill": {
+    "id": 16907,
+    "skillKey": "clawhub-activity-analyzer",
+    "name": "activity-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activity-analyzer",
+    "url": "https://clawhub.ai/skills/activity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activity-analyzer-1881d5aa322ff4b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use ActivityWatch to analyze user's computer activity"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qew21",
+      "userId": "s17bnbff4vcxhgsyak74p39eb583qm14",
+      "displayName": "Tim",
+      "image": "https://avatars.githubusercontent.com/u/25722332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 827,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771863660601,
+      "changelog": "- Added a clear privacy and security notice outlining risks of exposing sensitive window titles from ActivityWatch logs.\n- Updated requirements to specify Node.js as a prerequisite.\n- Enhanced the skill description with privacy recommendations and explicit user consent.\n- Command output now warns if raw window titles are included, encouraging aggregation for better privacy.\n- Added best practices section advising users on redaction, minimal data use, and local execution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13c1ad6bd64ee1730eaebb5785b24237488192835dedfdf9420c89209836d481"
+}

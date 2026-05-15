@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40485,
+  "uuid": "skill-clawhub-alibabacloud-cksync-plan",
+  "skillKey": "clawhub-alibabacloud-cksync-plan",
+  "name": "Alibabacloud Cksync Plan",
+  "summary": "ClickHouse cluster migration planner. Use when planning data migration between ClickHouse clusters, including cross-cluster migrations, horizontal scaling, d...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cksync_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "ClickHouse cluster migration planner",
+        "Use when planning data migration between ClickHouse clusters, including cross-cluster migration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-cksync-plan@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-cksync-plan",
+      "url": "https://clawhub.ai/skills/alibabacloud-cksync-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cksync-plan",
+    "url": "https://clawhub.ai/skills/alibabacloud-cksync-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cksync-plan-3b90e607395ccbe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-cksync-plan@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-cksync-plan-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cff277698b385aa14e1a77fa448e3a9329dda9ac93348539aad69646478623d9",
+      "artifactSizeBytes": 2749
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:12:40.525Z"
+}

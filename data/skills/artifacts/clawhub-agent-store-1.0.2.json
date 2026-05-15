@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-store@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_store",
+  "skill": {
+    "id": 45049,
+    "skillKey": "clawhub-agent-store",
+    "name": "Agent Store"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-store",
+    "url": "https://clawhub.ai/skills/agent-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-store-66ab66be5e0c41c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to buy, purchase, order, pay for, or top up API keys or API credits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levey",
+      "userId": "s1716b2str5h8awnegs974rm8983j3j7",
+      "displayName": "levey",
+      "image": "https://avatars.githubusercontent.com/u/629136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775536889307,
+      "changelog": "agent-store 1.0.2\n\n- Clarified not to run an api_key purchase if the active model provider is already agent-store; suggest purchasing api_credits instead.\n- Improved reporting instructions to always inform the user based on the log file after running the script.\n- Renamed section title to \"Agent Store Skill\" for accuracy.\n- No functionality changes; procedural adjustments for clearer execution and user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0697fd7bea17f228d4aa66f97c8ce960dd8d9200cbaa77db348b59202c6b7b25"
+}

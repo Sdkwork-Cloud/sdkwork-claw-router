@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67153,
+  "uuid": "skill-clawhub-japanese-news-briefing",
+  "skillKey": "clawhub-japanese-news-briefing",
+  "name": "Japanese News Briefing 日本語でニュースまとめ",
+  "summary": "日本語でイラン・イスラエル情勢、米国・日本経済、東京・NYの天気を1日4回簡潔にまとめて配信します。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japanese_news_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harinezumi",
+      "features": [
+        "日本語でイラン・イスラエル情勢、米国・日本経済、東京・NYの天気を1日4回簡潔にまとめて配信します。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/japanese-news-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7042774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "japanese-news-briefing",
+      "url": "https://clawhub.ai/skills/japanese-news-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japanese-news-briefing",
+    "url": "https://clawhub.ai/skills/japanese-news-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japanese-news-briefing-10765669df24d48b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/japanese-news-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-japanese-news-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:217ec85ab6e1ca910ad16a115d78b8553cc9b46e144048b9049fb286928dd7a0",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T00:00:54.122Z"
+}

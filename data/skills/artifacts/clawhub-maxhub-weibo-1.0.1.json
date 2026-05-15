@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-weibo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_weibo",
+  "skill": {
+    "id": 65747,
+    "skillKey": "clawhub-maxhub-weibo",
+    "name": "Maxhub Weibo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-weibo",
+    "url": "https://clawhub.ai/skills/maxhub-weibo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-weibo-0e6f610336775642.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微博/Weibo平台微博热搜、话题、用户与博文数据采集。当用户提到微博、weibo、热搜、超话、话题等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778341906326,
+      "changelog": "v1.1.1 - 修复YAML元数据格式，统一repository地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d781422909fe026a08ef0589978e4b5447ec431ed3064b3a9a67414afa969e4e"
+}

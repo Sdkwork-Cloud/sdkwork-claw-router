@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camofox-browser-remote@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camofox_browser_remote",
+  "skill": {
+    "id": 32814,
+    "skillKey": "clawhub-camofox-browser-remote",
+    "name": "Camofox Browser Remote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camofox-browser-remote",
+    "url": "https://clawhub.ai/skills/camofox-browser-remote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camofox-browser-remote-c1c1d5d0c41954a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote-mode anti-detection browser automation using Camoufox (Firefox fork with C++ fingerprint spoofing). Requires CAMOFOX_URL pointing to an externally-man..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuo77122",
+      "userId": "s17a7kk5432c7yrdvsmqjzxdg1857ap1",
+      "displayName": "Che-Nan, Kuo (Sam)",
+      "image": "https://avatars.githubusercontent.com/u/24984469?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777626351982,
+      "changelog": "- Added eval support for executing arbitrary JavaScript via camofox-remote.\n- Updated quick start and command reference to include the new eval \"<js>\" command in usage examples and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94ca22b90dfbdf8f80a3fe5d1d397c3ae9284fc895bbe1f363488b5aa88266f5"
+}

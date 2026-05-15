@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14989,
+  "uuid": "skill-clawhub-opensoul-cloud",
+  "skillKey": "clawhub-opensoul-cloud",
+  "name": "OpenSoul - Agent Soul Sharing and Community",
+  "summary": "Share anonymized OpenClaw configurations with the OpenSoul community. Use when user wants to share their agent setup, discover how others use OpenClaw, or ge...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensoul_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fnaser",
+      "features": [
+        "Share anonymized OpenClaw configurations with the OpenSoul community",
+        "Use when user wants to share their agent setup, discover how others use OpenClaw, or ge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opensoul-cloud@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19733158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opensoul-cloud",
+      "url": "https://clawhub.ai/skills/opensoul-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensoul-cloud",
+    "url": "https://clawhub.ai/skills/opensoul-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensoul-cloud-8602e008185ed6c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opensoul-cloud@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-opensoul-cloud-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3feeba443a128b7746066021bb91721e4aa91823569a9d802a3f54e634cddc9b",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T14:15:42.297Z"
+}

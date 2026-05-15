@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-ugc-pipeline@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_ugc_pipeline",
+  "skill": {
+    "id": 56430,
+    "skillKey": "clawhub-skill-ugc-pipeline",
+    "name": "AI UGC Video Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-ugc-pipeline",
+    "url": "https://clawhub.ai/skills/skill-ugc-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-ugc-pipeline-6513b496b58db631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end AI UGC video pipeline. Product info → GPT-4o-mini script → ElevenLabs voiceover → Aurora talking head (fal-ai/creatify/aurora) → Kling 2.6 Pro pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772838838963,
+      "changelog": "skill-ugc-pipeline v1.2.0\n\n- Adds B-roll video splicing: Kling 2.6 Pro generates product shots, inserted into the avatar video at configurable time\n- Introduces UGC filter: grain and handheld shake apply to avatar segments only, product B-roll remains cinematic\n- Ensures continuous audio across B-roll splice (no gaps)\n- New broll.js script for B-roll and UGC filter post-processing\n- Updated cost estimate and requirements\n- Documentation expanded with new workflow steps and script options",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f97c3ea373a775c3b59f5ec4bed4fa6676c21ffa7136fd94c7dee08cd428ff08"
+}

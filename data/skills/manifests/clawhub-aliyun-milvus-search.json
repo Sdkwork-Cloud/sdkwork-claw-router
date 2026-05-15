@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44219,
+  "uuid": "skill-clawhub-aliyun-milvus-search",
+  "skillKey": "clawhub-aliyun-milvus-search",
+  "name": "Aliyun Milvus Search",
+  "summary": "Use when working with AliCloud Milvus (serverless) with PyMilvus to create collections, insert vectors, and run filtered similarity search. Optimized for Cla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_milvus_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when working with AliCloud Milvus (serverless) with PyMilvus to create collections, insert.",
+        "Optimized for Cla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-milvus-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-milvus-search",
+      "url": "https://clawhub.ai/skills/aliyun-milvus-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-milvus-search",
+    "url": "https://clawhub.ai/skills/aliyun-milvus-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-milvus-search-de1f024cbb8b83d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-milvus-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-milvus-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cfe8748f964b2eacc64b23ac5b8b49ed7d8a748cc7cb16450de7046f02c63cf",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:54:13.928Z"
+}

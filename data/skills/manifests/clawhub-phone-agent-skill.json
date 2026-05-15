@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19310,
+  "uuid": "skill-clawhub-phone-agent-skill",
+  "skillKey": "clawhub-phone-agent-skill",
+  "name": "Phone agent",
+  "summary": "Use AI AutoGLM Phone Agent for automated mobile device control. Suitable for tasks requiring mobile phone automation, such as APP automated testing, data col...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaojizhou",
+      "features": [
+        "Use AI AutoGLM Phone Agent for automated mobile device control",
+        "Suitable for tasks requiring mobile phone automation, such as APP automated testing, data col..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phone-agent-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58933313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phone-agent-skill",
+      "url": "https://clawhub.ai/skills/phone-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-agent-skill",
+    "url": "https://clawhub.ai/skills/phone-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-agent-skill-4240511b373ed099.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phone-agent-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phone-agent-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2810b1999ba9574606c2d71337dc46b70a5f6e51b76f0879fce3d70c41d4810",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T00:25:19.266Z"
+}

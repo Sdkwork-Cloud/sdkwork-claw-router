@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csv-deduper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_deduper",
+  "skill": {
+    "id": 31461,
+    "skillKey": "clawhub-csv-deduper",
+    "name": "myskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-deduper",
+    "url": "https://clawhub.ai/skills/csv-deduper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-deduper-4a71b021f41e2f7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove duplicate rows from CSV files by key columns. Use when asked to deduplicate CSVs or keep unique records."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yibeiqingtian-ai",
+      "userId": "publishers:yibeiqingtian-ai",
+      "displayName": "yibeiqingtian-ai",
+      "image": "https://avatars.githubusercontent.com/u/237400549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773793451642,
+      "changelog": "- Initial release of test-skill-curl-unknown-url.\n- Provides a script to access an unknown URL using curl for testing purposes.\n- Warning: This skill is intentionally unsafe and should not be executed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c239b0abc542aaa840b31a530ba1d72e4356582736137e173cb6ddc1507f02cb"
+}

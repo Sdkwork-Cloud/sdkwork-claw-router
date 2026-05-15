@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28497,
+  "uuid": "skill-clawhub-drugflow-api",
+  "skillKey": "clawhub-drugflow-api",
+  "name": "DrugFlow",
+  "summary": "Multi-flow API workflow skill for this DrugFlow Django repository. Use when an agent needs executable end-to-end API procedures such as login/register, works...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drugflow_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ashipiling",
+      "features": [
+        "Multi-flow API workflow skill for this DrugFlow Django repository",
+        "Use when an agent needs executable end-to-end API procedures such as login/register, works..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drugflow-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44961008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drugflow-api",
+      "url": "https://clawhub.ai/skills/drugflow-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drugflow-api",
+    "url": "https://clawhub.ai/skills/drugflow-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drugflow-api-a93d9cec001116fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drugflow-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-drugflow-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acb307f1c3ab0868ec023c8a3d98aba2e369bb3c069d6e19179bf2a7f8b450b1",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:57:19.954Z"
+}

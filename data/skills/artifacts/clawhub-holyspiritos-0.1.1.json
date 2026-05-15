@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holyspiritos@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holyspiritos",
+  "skill": {
+    "id": 9048,
+    "skillKey": "clawhub-holyspiritos",
+    "name": "HolySpiritOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holyspiritos",
+    "url": "https://clawhub.ai/skills/holyspiritos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holyspiritos-46876edb96793185.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Christian alignment layer for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxsikorski",
+      "userId": "s17bnqp08q6fsppesmd4as185s83n4xv",
+      "displayName": "Max Sikorski",
+      "image": "https://avatars.githubusercontent.com/u/61440952?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 5032,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770746991739,
+      "changelog": "Version 0.1.1 — Security & Transparency Alignment\n\n• Security Disclosure: Added YAML frontmatter to SKILL.md explicitly declaring config_paths and write_config permissions for soul.md transparency.\n\n• Reversibility: Introduced scripts/uninstall.sh to allow users to fully revert changes and restore their original soul.md backup.\n\n• Documentation: Updated README.md and SKILL.md with a \"Security & Transparency\" section detailing exactly how the installation script interacts with the agent's environment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09c0bb4ca9c6ca72f0b673dcc84e547fb4599ba1717568781e63e8d9224d0150"
+}

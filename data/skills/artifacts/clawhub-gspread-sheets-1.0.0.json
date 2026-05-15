@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gspread-sheets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gspread_sheets",
+  "skill": {
+    "id": 49398,
+    "skillKey": "clawhub-gspread-sheets",
+    "name": "gspread-sheets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gspread-sheets",
+    "url": "https://clawhub.ai/skills/gspread-sheets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gspread-sheets-6ddd8b04e57478e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch read/write Google Sheets using the gspread Python library with service account authentication. Use when the user needs to: (1) read/write/update/clear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nuokunkeji",
+      "userId": "s17bwpxhhx276kxygzgqvkzken84xvdt",
+      "displayName": "nuokunkeji",
+      "image": "https://avatars.githubusercontent.com/u/272966214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777536947873,
+      "changelog": "Initial release: batch read/write Google Sheets via gspread with service account auth",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:873f82a13cbffbcb88de191ddaf0923096db545d1a6224b183f126a63fa24654"
+}

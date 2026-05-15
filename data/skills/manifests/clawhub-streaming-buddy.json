@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10672,
+  "uuid": "skill-clawhub-streaming-buddy",
+  "skillKey": "clawhub-streaming-buddy",
+  "name": "Streaming Buddy",
+  "summary": "Personal streaming assistant with learning preferences. Tracks what you're watching, learns your taste, and suggests what to watch next based on your services, mood, and preferences. Use when asked about movies, TV shows, streaming service.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.streaming_buddy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "udiedrichsen",
+      "features": [
+        "Personal streaming assistant with learning preferences",
+        "Tracks what you're watching, learns your taste, and suggests what to watch next based on your s.",
+        "Use when asked about movies, TV shows, streaming services, what to watch, or tracking viewing p.",
+        "Triggers: /stream, 'what should I watch', 'recommend something', mentioning Netflix/Prime/Disne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/streaming-buddy@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "streaming-buddy",
+      "url": "https://clawhub.ai/skills/streaming-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "streaming-buddy",
+    "url": "https://clawhub.ai/skills/streaming-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/streaming-buddy-425a624394a9d7f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/streaming-buddy@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-streaming-buddy-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03dc0be9e9b8c4ee3fcaa6341fed9ae4726555a39eee7ae31bf87c00ebf8e7b9",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T12:46:06.851Z"
+}

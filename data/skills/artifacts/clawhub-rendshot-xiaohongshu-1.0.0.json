@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rendshot-xiaohongshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rendshot_xiaohongshu",
+  "skill": {
+    "id": 56895,
+    "skillKey": "clawhub-rendshot-xiaohongshu",
+    "name": "Xiaohongshu Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rendshot-xiaohongshu",
+    "url": "https://clawhub.ai/skills/rendshot-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rendshot-xiaohongshu-f7f10b72dc4c52b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create high-performing Xiaohongshu (Little Red Book / RED) cover images and content graphics. Use when the user mentions: '小红书', 'xiaohongshu', 'RED', '种草',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoohero500",
+      "userId": "s171ez02n1bmk4z3cwvva66csx84t33z",
+      "displayName": "Martian",
+      "image": "https://avatars.githubusercontent.com/u/27270775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776178862369,
+      "changelog": "Initial release: Xiaohongshu algorithm, design styles, template recommendations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5e3b183cdb3414deb6a525240b34781602fbfe301fe2d0c4a0d8d77d4b6dda7"
+}

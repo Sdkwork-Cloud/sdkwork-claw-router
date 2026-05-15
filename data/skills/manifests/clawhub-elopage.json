@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26199,
+  "uuid": "skill-clawhub-elopage",
+  "skillKey": "clawhub-elopage",
+  "name": "Elopage",
+  "summary": "Elopage integration. Manage Deals, Persons, Organizations, Leads, Projects, Activities and more. Use when the user wants to interact with Elopage data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elopage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Elopage integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Elopage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elopage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elopage",
+      "url": "https://clawhub.ai/skills/elopage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elopage",
+    "url": "https://clawhub.ai/skills/elopage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elopage-803504fbb9565041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elopage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-elopage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dc9edb693bf82dcba91cf8c35a9993183dbad1bd4ec484d180f9adc9c00b53c",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:43:20.133Z"
+}

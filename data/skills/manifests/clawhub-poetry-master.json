@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69818,
+  "uuid": "skill-clawhub-poetry-master",
+  "skillKey": "clawhub-poetry-master",
+  "name": "Poetry Master - Chinese Classical Poetry Review",
+  "summary": "诗词雅韵助手——中华传统诗词专业点评与润色。此技能应在以下场景触发：用户提交古体诗、近体诗（五绝、七绝、五律、七律）、宋词、元曲等中华传统诗词作品并请求点评、赏析、修改或润色；用户询问诗词格律（平仄、押韵、对仗、词谱）；用户请求诗词创作指导或灵感建议。覆盖体裁包括但不限于古风、绝句、律诗、词（小令、中调、长调）、...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poetry_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilovecode2018",
+      "features": [
+        "诗词雅韵助手——中华传统诗词专业点评与润色。此技能应在以下场景触发：用户提交古体诗、近体诗（五绝、七绝、五律、七律）、宋词、元曲等中华传统诗词作品并请求点评、赏析、修改或润色；用户询问诗词格."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poetry-master@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41527437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poetry-master",
+      "url": "https://clawhub.ai/skills/poetry-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poetry-master",
+    "url": "https://clawhub.ai/skills/poetry-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poetry-master-3ff48d5c34ad05e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poetry-master@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poetry-master-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8905f8577acd430ae8a6a9bec6094c7de5adcd9cb48bb352eb4f8821167f2d8",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:43:26.881Z"
+}

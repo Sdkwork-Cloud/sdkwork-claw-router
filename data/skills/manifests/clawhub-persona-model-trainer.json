@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41019,
+  "uuid": "skill-clawhub-persona-model-trainer",
+  "skillKey": "clawhub-persona-model-trainer",
+  "name": "persona-model-trainer",
+  "summary": "Fine-tune any HuggingFace instruction-tuned model (Gemma 4, Qwen 3, Llama, Phi, Mistral, and more) on persona data from anyone-skill. Produces a self-contain...",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_model_trainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acnlabs",
+      "features": [
+        "Fine-tune any HuggingFace instruction-tuned model (Gemma 4, Qwen 3, Llama, Phi, Mistral, and mo.",
+        "Produces a self-contain..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-model-trainer@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43027886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-model-trainer",
+      "url": "https://clawhub.ai/skills/persona-model-trainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-model-trainer",
+    "url": "https://clawhub.ai/skills/persona-model-trainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-model-trainer-425e52abe807963f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-model-trainer@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-model-trainer-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ea082d0a4d8fb942ece6ac62f1a0aed95288105601e388d096a5bcafb106534",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:47:58.230Z"
+}

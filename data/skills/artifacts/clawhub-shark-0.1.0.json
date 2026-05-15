@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shark@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shark",
+  "skill": {
+    "id": 38205,
+    "skillKey": "clawhub-shark",
+    "name": "Shark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shark",
+    "url": "https://clawhub.ai/skills/shark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shark-31fc15942b0c47f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables non-blocking AI agent execution by spawning parallel remora subagents for slow tasks, keeping the main agent responsive and efficient."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keugenek",
+      "userId": "s1784q7j0d3fxzn07c1h20xbqd83g2zt",
+      "displayName": "keugenek",
+      "image": "https://avatars.githubusercontent.com/u/3640405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774360030113,
+      "changelog": "Shark Pattern skill initial release.\n\n- Introduces the Shark Pattern for universal non-blocking execution in AI coding agents.\n- Main agent never blocks on slow tools; instead, spawns \"remora\" subagents for parallel background execution.\n- Outlines lifecycle, key rules, and clear examples for implementation.\n- Defines progress reporting format and output conventions (e.g., Unicode progress bars).\n- Describes \"pilot fish\" sub-pattern for opportunistic time-bounded sub-analysis during blocking waits.\n- Provides guidelines for tool classification, timing budgets, and decision criteria for spawning subagents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39e815b471722df67c483b76254adb8c8441aad6aa07227c95c10f0901bf0ded"
+}

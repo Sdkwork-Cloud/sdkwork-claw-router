@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23101,
+  "uuid": "skill-clawhub-nexus-code-explain",
+  "skillKey": "clawhub-nexus-code-explain",
+  "name": "NEXUS Code Explain",
+  "summary": "Explain code in plain language with complexity analysis",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_code_explain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Explain code in plain language with complexity analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-code-explain@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-code-explain",
+      "url": "https://clawhub.ai/skills/nexus-code-explain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-code-explain",
+    "url": "https://clawhub.ai/skills/nexus-code-explain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-code-explain-90103bb6ebee6ef2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-code-explain@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-code-explain-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a4ae752e5aa018510b8aaa94694b3a94c6778cf5e402d052537f830bcfff156",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:08:04.191Z"
+}

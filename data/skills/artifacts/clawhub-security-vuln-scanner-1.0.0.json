@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-vuln-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_vuln_scanner",
+  "skill": {
+    "id": 61740,
+    "skillKey": "clawhub-security-vuln-scanner",
+    "name": "Security Vulnerability Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-vuln-scanner",
+    "url": "https://clawhub.ai/skills/security-vuln-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-vuln-scanner-1cc57b9eff82d7ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "扫描代码中常见安全漏洞如SQL注入、XSS、硬编码密码，提供检测结果和安全评分建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honestqiao",
+      "userId": "publishers:honestqiao",
+      "displayName": "HonestQiao",
+      "image": "https://avatars.githubusercontent.com/u/696708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1337,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771715987147,
+      "changelog": "Initial release of Security Vulnerability Scanner.\n\n- Scans code for common security vulnerabilities.\n- Detects SQL injection, XSS, hardcoded passwords/keys, insecure random, command injection, and sensitive information leaks.\n- Provides security score and specific remediation suggestions.\n- Triggered by phrases like \"安全扫描\", \"漏洞检测\", \"security scan\", and \"vulnerability\".\n- Outputs detailed vulnerability reports and scores for identified issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abbe53b615fbf1a9822d6d24957604478b79d2a2d6ec1939ade731869e9605b2"
+}

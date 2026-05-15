@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71913,
+  "uuid": "skill-clawhub-restaurant-reservation-radar",
+  "skillKey": "clawhub-restaurant-reservation-radar",
+  "name": "用空位“雷达”替你抢旅游目的地的米其林/热门餐厅",
+  "summary": "旅行目的地米其林与热门餐厅空位监控、自动预约与定金提醒助手。 收集用户旅行日期、目的城市、人数与用餐偏好后，自动匹配米其林/热门餐厅清单， 持续监控空位并尝试自动预约，需要定金或确认时通过短信/Push 通知用户。 当用户提到\"餐厅预约\"\"米其林订位\"\"旅行餐厅\"\"热门餐厅预定\"\"自动订餐厅\"\"抢位\" \"餐厅空位...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurant_reservation_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LMerCy",
+      "features": [
+        "旅行目的地米其林与热门餐厅空位监控、自动预约与定金提醒助手。 收集用户旅行日期、目的城市、人数与用餐偏好后，自动匹配米其林/热门餐厅清单， 持续监控空位并尝试自动预约，需要定金或确认时通过短."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restaurant-reservation-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13573827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restaurant-reservation-radar",
+      "url": "https://clawhub.ai/skills/restaurant-reservation-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurant-reservation-radar",
+    "url": "https://clawhub.ai/skills/restaurant-reservation-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurant-reservation-radar-35221d8fe6cc85c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restaurant-reservation-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restaurant-reservation-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ea485f85dfcedd21f6e45adb030ce82eb2dba12bfb1e6e85b9c096c071ab8f1",
+      "artifactSizeBytes": 2827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:41:15.140Z"
+}

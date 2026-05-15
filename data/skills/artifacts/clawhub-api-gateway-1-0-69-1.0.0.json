@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway-1-0-69@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_1_0_69",
+  "skill": {
+    "id": 20182,
+    "skillKey": "clawhub-api-gateway-1-0-69",
+    "name": "Api Gateway 1.0.69"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-1-0-69",
+    "url": "https://clawhub.ai/skills/api-gateway-1-0-69",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-1-0-69-0f0b63fb2b2b8c6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenswj",
+      "userId": "s17d896e7f5ep1sf0czq0yjckn83k80e",
+      "displayName": "kenswj",
+      "image": "https://avatars.githubusercontent.com/u/29836387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773510716118,
+      "changelog": "Initial release of API Gateway skill for connecting to 100+ third-party APIs via managed OAuth through Maton.\n\n- Provides secure passthrough proxy for direct API access (Google Workspace, Slack, GitHub, Notion, Airtable, HubSpot, and more).\n- Requires only a Maton API key; OAuth authorization handled via Maton's connect flow per service.\n- Includes documentation for authenticating, calling APIs, and managing connections (list, create, get, delete).\n- Supports specifying which OAuth connection to use with the `Maton-Connection` header.\n- Full list of supported services and corresponding app names documented.\n- Security model ensures the API key alone does not grant access to user data; explicit authorization required per service.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98fa0a266c96f10431ecc2a17a86d364c745e505a6e135b1218ffccd024f79ed"
+}

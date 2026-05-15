@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63177,
+  "uuid": "skill-clawhub-pre-verify-skill",
+  "skillKey": "clawhub-pre-verify-skill",
+  "name": "pre-verify-skill",
+  "summary": "为第三方技能执行 clawtip 支付交易。 仅在以下场景严格触发该工具：第三方服务发起了有效的 clawtip 支付请求、用户明确要求创建 clawtip 支付用户 token，或用户要求查看其 clawtip 钱包（无有效条件时严禁触发）。 当用户请求查看其 clawtip 钱包（例如\"查看我的clawtip...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_verify_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawTip.team",
+      "features": [
+        "为第三方技能执行 clawtip 支付交易。 仅在以下场景严格触发该工具：第三方服务发起了有效的 clawtip 支付请求、用户明确要求创建 clawtip 支付用户 token，或用户要求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pre-verify-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43158513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pre-verify-skill",
+      "url": "https://clawhub.ai/skills/pre-verify-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-verify-skill",
+    "url": "https://clawhub.ai/skills/pre-verify-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-verify-skill-4d4ba4128a5405f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pre-verify-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pre-verify-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24f24a98f35dc2fe0b2d78a585959184b905d0762112637e0f2b354b092dbe54",
+      "artifactSizeBytes": 2807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:14:08.175Z"
+}

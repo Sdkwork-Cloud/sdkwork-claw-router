@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21027,
+  "uuid": "skill-clawhub-polyclaw-2",
+  "skillKey": "clawhub-polyclaw-2",
+  "name": "Polyclaw",
+  "summary": "Trade on Polymarket via split + CLOB execution. Browse markets, track positions with P&L, discover hedges via LLM. Polygon/Web3.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclaw_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woody2434",
+      "features": [
+        "Trade on Polymarket via split + CLOB execution",
+        "Browse markets, track positions with P&L, discover hedges via LLM",
+        "Polygon/Web3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyclaw-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115105907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyclaw-2",
+      "url": "https://clawhub.ai/skills/polyclaw-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclaw-2",
+    "url": "https://clawhub.ai/skills/polyclaw-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclaw-2-3a2bbdab00516220.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyclaw-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyclaw-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd97177270ec378ebb60617569c2242bea42082c91ca086ca7f9f63c34127b3e",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:45:06.681Z"
+}

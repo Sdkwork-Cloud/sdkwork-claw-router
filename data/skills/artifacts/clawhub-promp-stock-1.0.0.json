@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promp-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promp_stock",
+  "skill": {
+    "id": 52718,
+    "skillKey": "clawhub-promp-stock",
+    "name": "Promo Stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promp-stock",
+    "url": "https://clawhub.ai/skills/promp-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promp-stock-17336426e43013da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "During peak sales (Black Friday, Cyber Monday, Singles' Day, flash sales), align hot-SKU remaining inventory with live ad spend—surface sell-through risk, au..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774334504773,
+      "changelog": "Initial release connecting live ad spend, hot-SKU inventory, and supplier escalation during major sales.\n\n- Monitors sell-through risk and flags low inventory during high-velocity promos.\n- Auto-generates pre-order messaging and syncs ad/landing copy when stock drops below threshold.\n- Provides supplier restock email templates and quick internal alert messages.\n- Outputs a Markdown sync table aligning SKU-level stock and ad actions.\n- Includes a T-24h pre-event checklist when relevant.\n- Explicitly scopes triggers and exclusions to avoid unrelated inventory topics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3468f438ab030df4a4f1ad0fc063804365b0f04f125dd1cd6a3c2682fde4cd51"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33939,
+  "uuid": "skill-clawhub-security-auditor-tk",
+  "skillKey": "clawhub-security-auditor-tk",
+  "name": "Security Auditor Tk",
+  "summary": "Run security audits on Linux servers, web applications, and cloud infrastructure. Checks SSH hardening, firewall rules, open ports, SSL/TLS config, file perm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_auditor_tk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tktk-ai",
+      "features": [
+        "Run security audits on Linux servers, web applications, and cloud infrastructure",
+        "Checks SSH hardening, firewall rules, open ports, SSL/TLS config, file perm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-auditor-tk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59158345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-auditor-tk",
+      "url": "https://clawhub.ai/skills/security-auditor-tk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-auditor-tk",
+    "url": "https://clawhub.ai/skills/security-auditor-tk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-auditor-tk-3e05da3895bd4429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-auditor-tk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-auditor-tk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d6a9ebe1e812e9b56f850ad199728a0d011b24174ab193302452eacda249e3f",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:48:41.081Z"
+}

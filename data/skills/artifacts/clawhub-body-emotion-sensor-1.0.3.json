@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/body-emotion-sensor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.body_emotion_sensor",
+  "skill": {
+    "id": 35560,
+    "skillKey": "clawhub-body-emotion-sensor",
+    "name": "Body Emotion Sensor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "body-emotion-sensor",
+    "url": "https://clawhub.ai/skills/body-emotion-sensor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/body-emotion-sensor-be16be7205ff60be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give an agent a persistent body-emotion state system that converts structured AnalysisInput JSON into runtime prompt tags and workspace state updates. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askkumptenchen",
+      "userId": "s1745ga27bawpvv5e5089t4x0983jkge",
+      "displayName": "Zhihao Kang",
+      "image": "https://avatars.githubusercontent.com/u/77649830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774434941355,
+      "changelog": "body-emotion-sensor 1.0.3\n\n- Clarified that installation should use pip install body-emotion-sensor and that this creates the bes CLI runtime.\n- Adjusted safety boundaries to specify the published package as the correct install source.\n- Installation steps now include running pip install body-emotion-sensor if bes is missing, with user approval.\n- Other runtime and routing rules remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf06358cb5b0f7a7a301e2eb43771705bae0d125ed035fab860d8757bfcf37cc"
+}

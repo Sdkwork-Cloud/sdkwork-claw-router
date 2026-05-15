@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-subscription-tracker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_subscription_tracker",
+  "skill": {
+    "id": 40022,
+    "skillKey": "clawhub-normieclaw-subscription-tracker",
+    "name": "Subscription Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-subscription-tracker",
+    "url": "https://clawhub.ai/skills/normieclaw-subscription-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-subscription-tracker-533da2058cd0b5a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks and analyzes recurring charges from uploaded bank statements without bank linking, alerts upcoming renewals, duplicates, price hikes, and aids cancell..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774993293719,
+      "changelog": "v1.0.3: Security fixes: confined scripts to skill directory, removed filesystem traversal from setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa399aeab2240e4414bb5dd34c9529fdc8363e87a2e4b3cf875c86c0ada6d8b8"
+}

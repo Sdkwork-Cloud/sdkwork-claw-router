@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-agriculture-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_agriculture_research",
+  "skill": {
+    "id": 39338,
+    "skillKey": "clawhub-toolweb-agriculture-research",
+    "name": "Agriculture Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-agriculture-research",
+    "url": "https://clawhub.ai/skills/toolweb-agriculture-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-agriculture-research-0c9f5ff06abcdd1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates personalized agriculture research career roadmaps based on user experience, skills, and professional goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775398316216,
+      "changelog": "Agriculture Research Roadmap API v1.0.0\n\n- Initial release of the Agriculture Research Roadmap API.\n- Enables users to generate personalized, data-driven agriculture research career roadmaps tailored to experience, skills, and goals.\n- Supports session-based interactions for tracking progress and refining recommendations.\n- Includes endpoints for API info, service health check, and roadmap generation.\n- Detailed roadmap output features skill gap analysis, phase objectives, milestones, and next steps.\n- Transparent pricing plans for Free, Developer, Professional, and Enterprise usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcade0cc1c9edf2102ce13934144adf5d7b6ce677deff719bb3f008c45646bc4"
+}

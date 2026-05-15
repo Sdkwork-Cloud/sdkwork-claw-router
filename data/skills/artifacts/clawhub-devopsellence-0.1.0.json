@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devopsellence@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devopsellence",
+  "skill": {
+    "id": 36569,
+    "skillKey": "clawhub-devopsellence",
+    "name": "devopsellence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devopsellence",
+    "url": "https://clawhub.ai/skills/devopsellence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devopsellence-b926e276122a5a5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install the devopsellence CLI, initialize project config, deploy the current app, inspect status, and manage secrets or bring-your-own nodes from OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elvinefendi",
+      "userId": "s175cd1qqb77drbk41dyprc6zd83vzkq",
+      "displayName": "Elvin Efendi",
+      "image": "https://avatars.githubusercontent.com/u/1150042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774810633212,
+      "changelog": "Initial release of devopsellence skill.\n\n- Provides step-by-step CLI workflow for installing, initializing, deploying, and managing projects with devopsellence.\n- Includes commands for secret management with security guidance.\n- Supports bring-your-own-node workflows, including node bootstrap, assignment, and unassignment.\n- Documents heuristics for deployment troubleshooting and safe handling of sensitive data.\n- Links to official documentation for further reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:472f3840cab719aaa3247319b8224843c602089297ba2505a492a367acebc371"
+}

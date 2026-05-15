@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-agent-telegram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agent_telegram",
+  "skill": {
+    "id": 58025,
+    "skillKey": "clawhub-create-agent-telegram",
+    "name": "Create Agent + Telegram Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agent-telegram",
+    "url": "https://clawhub.ai/skills/create-agent-telegram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agent-telegram-98111621dd5dda46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建新 OpenAgent Agent 并绑定 Telegram Bot"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangzhiyu",
+      "userId": "publishers:liangzhiyu",
+      "displayName": "liangzhiyu",
+      "image": "https://avatars.githubusercontent.com/u/17261823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773418644673,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49041e195197f13e2825dcafa89385a7f5f38c052c6d1db4684123c89c849d7c"
+}

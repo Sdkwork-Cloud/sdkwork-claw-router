@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-petrol-query@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_petrol_query",
+  "skill": {
+    "id": 71650,
+    "skillKey": "clawhub-jike-petrol-query",
+    "name": "国内油价实时查询 - 即刻数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-petrol-query",
+    "url": "https://clawhub.ai/skills/jike-petrol-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-petrol-query-ff49b9ba7a16780b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内油价实时查询。按省份查询 92号汽油、95号汽油、98号汽油和0号柴油价格，也支持不传省份返回全部地区油价。适用场景：用户说“四川今天油价多少”“查一下广东95号汽油价格”“全国油价列表”等。数据由即刻数据（jikeapi.cn）开放接口提供。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jikeapi-cn",
+      "userId": "s1748e0m2nvjyq8jm7s2y4man185q081",
+      "displayName": "jikeapi",
+      "image": "https://avatars.githubusercontent.com/u/26078515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777532622829,
+      "changelog": "修正 Skill 中文展示标题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc4fea0a45f203a0acc97131ae0879181d2cf74684270c15426848cf3d53b398"
+}

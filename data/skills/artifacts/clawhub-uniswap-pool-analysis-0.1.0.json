@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniswap-pool-analysis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniswap_pool_analysis",
+  "skill": {
+    "id": 16460,
+    "skillKey": "clawhub-uniswap-pool-analysis",
+    "name": "Uniswap Pool Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniswap-pool-analysis",
+    "url": "https://clawhub.ai/skills/uniswap-pool-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniswap-pool-analysis-abb800f73f11ce30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Uniswap pool data including liquidity distribution, fee tiers, tick ranges, and TVL. Use when the user asks about pool metrics, liquidity analysis, or wants to query on-chain pool state."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 865,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770746024110,
+      "changelog": "- Initial release: analyze Uniswap v3/v4 pool data including liquidity, tick ranges, fee tiers, and TVL.\n- Supports querying on-chain pool state using viem, including `slot0` and `liquidity`.\n- Includes utilities for price and tick conversion.\n- Offers liquidity distribution analysis across ticks.\n- Accepts `chainId` for multi-chain support with configurable endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b5007ffe05728eda240808c9f2c1dee3c23af8877b87cc4a3d0dd1ac716bb4e"
+}

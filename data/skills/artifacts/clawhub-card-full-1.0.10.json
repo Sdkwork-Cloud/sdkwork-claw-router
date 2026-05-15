@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/card-full@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_full",
+  "skill": {
+    "id": 50599,
+    "skillKey": "clawhub-card-full",
+    "name": "Card Full"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-full",
+    "url": "https://clawhub.ai/skills/card-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-full-f6ede365f5ae5a9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Return a compact full report for one major-US credit card — fees, welcome offer, earning rates, redemption, credits, travel benefits, protections, mechanics,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahongc",
+      "userId": "s17bwps1v7fqm560253grqacxn83kpf2",
+      "displayName": "jiahongc",
+      "image": "https://avatars.githubusercontent.com/u/61323260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776259447976,
+      "changelog": "Refresh published skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:381450e4ce5a4aa4387387562ddb2365bf6b60a69aed78eafea4b77156b8c486"
+}

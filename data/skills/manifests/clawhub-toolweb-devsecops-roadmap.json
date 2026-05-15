@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34982,
+  "uuid": "skill-clawhub-toolweb-devsecops-roadmap",
+  "skillKey": "clawhub-toolweb-devsecops-roadmap",
+  "name": "DevSecOps Roadmap",
+  "summary": "Generates customized DevSecOps implementation roadmaps based on organizational assessment data and maturity level analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_devsecops_roadmap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates customized DevSecOps implementation roadmaps based on organizational assessment data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-devsecops-roadmap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-devsecops-roadmap",
+      "url": "https://clawhub.ai/skills/toolweb-devsecops-roadmap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-devsecops-roadmap",
+    "url": "https://clawhub.ai/skills/toolweb-devsecops-roadmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-devsecops-roadmap-5c235b718698a963.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-devsecops-roadmap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-devsecops-roadmap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d46583c44dad9e9f87cfc9e21fc433ddf29b3995df1a86f59a89472523e294fc",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:18:53.034Z"
+}

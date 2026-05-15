@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/income-brain@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.income_brain",
+  "skill": {
+    "id": 43394,
+    "skillKey": "clawhub-income-brain",
+    "name": "Income Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "income-brain",
+    "url": "https://clawhub.ai/skills/income-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/income-brain-5fd069c5fde929fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving income agent. Scans market demand, identifies high-value skill gaps, generates new SKILL.md files, and deploys them across all platforms. The..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssidharhubble",
+      "userId": "s1751xfhp40q8vjjqd22y5vaw584gpke",
+      "displayName": "ssyopro",
+      "image": "https://avatars.githubusercontent.com/u/156830224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777572336152,
+      "changelog": "- Updated SKILL.md formatting and metadata structure.\n- Cleaned up header, name, and tags fields for better compatibility.\n- No functional or workflow changes introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c276303386acadbdec36cd77c2445aa4b80bf7e2a73cceae6f7074d22235bfed"
+}

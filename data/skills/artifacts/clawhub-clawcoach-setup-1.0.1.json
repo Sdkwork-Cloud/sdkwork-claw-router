@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcoach-setup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcoach_setup",
+  "skill": {
+    "id": 21193,
+    "skillKey": "clawhub-clawcoach-setup",
+    "name": "ClawCoach Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcoach-setup",
+    "url": "https://clawhub.ai/skills/clawcoach-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcoach-setup-137f84a8f04226a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-time setup for ClawCoach AI health coaching. Configures your profile, goals, macro targets, dietary preferences, and coach personality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "authoredniko",
+      "userId": "publishers:authoredniko",
+      "displayName": "Niko Vijayaratnam",
+      "image": "https://avatars.githubusercontent.com/u/19196163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771860509340,
+      "changelog": "Remove unjustified always:true flag. Setup skill only activates on explicit user request or first-run detection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6343a1e1f7e2a3816822abb93fc39954c9a4583e93186d618f00310394e90e9"
+}

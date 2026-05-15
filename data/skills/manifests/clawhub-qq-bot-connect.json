@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63675,
+  "uuid": "skill-clawhub-qq-bot-connect",
+  "skillKey": "clawhub-qq-bot-connect",
+  "name": "QQ-Bot-connect",
+  "summary": "QQBot 消息主动推送技能。当需要向 QQ 用户或群发送消息时使用此技能。支持：(1) 主动发送消息到 QQ 对话框 (2) 发送图片/语音/文件等富媒体 (3) 群发消息。触发词：发送 QQ、推送 QQ、QQ 消息、发送到 QQ、QQ 发送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_bot_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JCDuann",
+      "features": [
+        "QQBot 消息主动推送技能。当需要向 QQ 用户或群发送消息时使用此技能。支持：(1) 主动发送消息到 QQ 对话框 (2) 发送图片/语音/文件等富媒体 (3) 群发消息。触发词：发送."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-bot-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269719394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-bot-connect",
+      "url": "https://clawhub.ai/skills/qq-bot-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-bot-connect",
+    "url": "https://clawhub.ai/skills/qq-bot-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-bot-connect-5080b9d3d4a175fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-bot-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-bot-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:374bee0a0f95d1ce44973f14610a5e6c874319e0dc2c93306659b34ad1c6cbe8",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T01:33:19.526Z"
+}

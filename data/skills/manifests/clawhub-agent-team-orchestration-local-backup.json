@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37475,
+  "uuid": "skill-clawhub-agent-team-orchestration-local-backup",
+  "skillKey": "clawhub-agent-team-orchestration-local-backup",
+  "name": "Agent Team Orchestration Local Backup",
+  "summary": "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows. Use when: (1) Setting up a team of 2+ agents with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_orchestration_local_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lean-zhouchao",
+      "features": [
+        "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and revie.",
+        "Use when: (1) Setting up a team of 2+ agents with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-orchestration-local-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23061177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-orchestration-local-backup",
+      "url": "https://clawhub.ai/skills/agent-team-orchestration-local-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-orchestration-local-backup",
+    "url": "https://clawhub.ai/skills/agent-team-orchestration-local-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-orchestration-local-backup-6bfb943c659b8368.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-orchestration-local-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-orchestration-local-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c88721927d1928915c15d085788579b2f97523c63ea25676de2c9f5e0d7d23d0",
+      "artifactSizeBytes": 2697
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:34:32.205Z"
+}

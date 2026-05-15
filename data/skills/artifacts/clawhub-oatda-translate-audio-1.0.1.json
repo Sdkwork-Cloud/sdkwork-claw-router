@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oatda-translate-audio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_translate_audio",
+  "skill": {
+    "id": 45640,
+    "skillKey": "clawhub-oatda-translate-audio",
+    "name": "Oatda Translate Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-translate-audio",
+    "url": "https://clawhub.ai/skills/oatda-translate-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-translate-audio-8ecc08bd58c987f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate foreign-language audio into English text using OATDA's unified audio API. Triggers when the user wants audio translation, spoken-language translati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devcsde",
+      "userId": "s1715k9c0vyqryjet8h0ek3xc58447z6",
+      "displayName": "devcsde",
+      "image": "https://avatars.githubusercontent.com/u/29840319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777228246832,
+      "changelog": "Fix: replaced with correct OpenClaw skill format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4954a1ba47a9821c94fe49418707614f7caba609a2816a5be7212f7668842e6"
+}

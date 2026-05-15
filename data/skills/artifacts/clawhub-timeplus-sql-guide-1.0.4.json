@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timeplus-sql-guide@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeplus_sql_guide",
+  "skill": {
+    "id": 20780,
+    "skillKey": "clawhub-timeplus-sql-guide",
+    "name": "timeplus-sql-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeplus-sql-guide",
+    "url": "https://clawhub.ai/skills/timeplus-sql-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeplus-sql-guide-d6155fd744646da6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write and execute Timeplus streaming SQL for real-time analytics. Use this skill when the user wants to create streams, run streaming queries, build material..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangtao",
+      "userId": "s17fb3h3yznyvkzn8pjbvf2xkh83md0v",
+      "displayName": "Gang Tao",
+      "image": "https://avatars.githubusercontent.com/u/3509037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774631963810,
+      "changelog": "- Updated metadata: version set to 1.0.4 and added the `openclaw` requirements section for improved compatibility.\n- Expanded environment and binary requirements now explicitly list all necessary environment variables and require `curl`.\n- Minor correction in the description text.\n- No changes to core usage examples, compatibility, or SQL instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88ce930fe96d3f607d056e0052e816688b5d7944b0ff1484323c21513d26110e"
+}

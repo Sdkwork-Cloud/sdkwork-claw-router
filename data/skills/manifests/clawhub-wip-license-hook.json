@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16550,
+  "uuid": "skill-clawhub-wip-license-hook",
+  "skillKey": "clawhub-wip-license-hook",
+  "name": "Wip License Hook",
+  "summary": "License rug-pull detection. Scans dependencies and forks for license changes, gates upstream merges, maintains a license ledger, and generates a public compl...",
+  "version": "1.9.72",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_license_hook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker Todd Brooks",
+      "features": [
+        "License rug-pull detection",
+        "Scans dependencies and forks for license changes, gates upstream merges, maintains a license le."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wip-license-hook@1.9.72",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/585456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wip-license-hook",
+      "url": "https://clawhub.ai/skills/wip-license-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-license-hook",
+    "url": "https://clawhub.ai/skills/wip-license-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-license-hook-255576ab1b447e4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wip-license-hook@1.9.72",
+      "artifactUrl": "data/skills/artifacts/clawhub-wip-license-hook-1.9.72.json",
+      "version": "1.9.72",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bac75618839cd81a7b468ab6a6b87c0a5ba2a10c2d7e1f7e7585f5c958bb99e",
+      "artifactSizeBytes": 3559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T21:25:11.220Z"
+}

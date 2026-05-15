@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bijieserv-express@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bijieserv_express",
+  "skill": {
+    "id": 58214,
+    "skillKey": "clawhub-bijieserv-express",
+    "name": "Bijie Express Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bijieserv-express",
+    "url": "https://clawhub.ai/skills/bijieserv-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bijieserv-express-9f82899051306d1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast package tracking and logistics timeline lookup for 2000+ couriers with BijieServ. Use for 查快递, 快递查询, 查物流, 物流轨迹, 快递到哪了, 包裹追踪, track package, where is my..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huhao19871026",
+      "userId": "s172bgjwq1470gy3ggcbx8cgc183ggme",
+      "displayName": "huhao19871026",
+      "image": "https://avatars.githubusercontent.com/u/262856734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775608711897,
+      "changelog": "Publish with https://www.bijieserv.com API, improve OpenClaw compatibility, and strengthen search metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96390f390c37718f58dafecfd55672d848ee64c25c1a3937fdbaa71c816029ed"
+}

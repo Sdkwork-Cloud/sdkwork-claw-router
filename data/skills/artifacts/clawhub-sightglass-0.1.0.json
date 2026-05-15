@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sightglass@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sightglass",
+  "skill": {
+    "id": 18196,
+    "skillKey": "clawhub-sightglass",
+    "name": "Sightglass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sightglass",
+    "url": "https://clawhub.ai/skills/sightglass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sightglass-9584b002891c3be9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors AI coding agents to track dependency choices, classify discovery methods, flag risks, and reveal biases and missed alternatives in your project."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidgeorgehope",
+      "userId": "publishers:davidgeorgehope",
+      "displayName": "David Hope",
+      "image": "https://avatars.githubusercontent.com/u/30470909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771792400016,
+      "changelog": "Initial release — agent supply chain intelligence",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d38b1ef8a66e28128cef59a350c2711f24408dfbab4f5eeac07cf5677733780"
+}

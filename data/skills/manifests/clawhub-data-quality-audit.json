@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57970,
+  "uuid": "skill-clawhub-data-quality-audit",
+  "skillKey": "clawhub-data-quality-audit",
+  "name": "Data Quality Audit",
+  "summary": "Independent cross-source audit of a completed CN banker deliverable. Use when the user asks to audit / double-check / 双核实 / 交叉验证 / 数据质量检查 / 审计 an existing de...",
+  "version": "0.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_quality_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackdark",
+      "features": [
+        "Independent cross-source audit of a completed CN banker deliverable",
+        "Use when the user asks to audit / double-check / 双核实 / 交叉验证 / 数据质量检查 / 审计 an existing de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-quality-audit@0.8.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201514154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-quality-audit",
+      "url": "https://clawhub.ai/skills/data-quality-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-quality-audit",
+    "url": "https://clawhub.ai/skills/data-quality-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-quality-audit-fc76bb911ce85b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-quality-audit@0.8.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-quality-audit-0.8.2.json",
+      "version": "0.8.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5365d26bfb832b69a3bb3905046d2319ee3df406d84ec99957fb0be8ab4175d6",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T15:20:45.405Z"
+}

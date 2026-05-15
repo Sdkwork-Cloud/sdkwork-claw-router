@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30332,
+  "uuid": "skill-clawhub-china-hospital-recommendation",
+  "skillKey": "clawhub-china-hospital-recommendation",
+  "name": "China Hospital Recommendation",
+  "summary": "Generate English hospital recommendation reports for medical travel to China, hospital matching, and redo orders. Use when needs to turn user intake data int...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_hospital_recommendation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helenalhq",
+      "features": [
+        "Generate English hospital recommendation reports for medical travel to China, hospital matching.",
+        "Use when needs to turn user intake data int..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-hospital-recommendation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258706524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-hospital-recommendation",
+      "url": "https://clawhub.ai/skills/china-hospital-recommendation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-hospital-recommendation",
+    "url": "https://clawhub.ai/skills/china-hospital-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-hospital-recommendation-69da4ef8fc208255.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-hospital-recommendation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-hospital-recommendation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ab5507dd006c7abfcdca8b668904ab5dde9607ed3ed0cf38957cb95e369c3fe",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:01:23.726Z"
+}

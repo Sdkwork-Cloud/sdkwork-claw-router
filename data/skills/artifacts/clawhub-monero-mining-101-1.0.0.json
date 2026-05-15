@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monero-mining-101@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_mining_101",
+  "skill": {
+    "id": 32682,
+    "skillKey": "clawhub-monero-mining-101",
+    "name": "Monero Mining 101"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-mining-101",
+    "url": "https://clawhub.ai/skills/monero-mining-101",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-mining-101-09fcbd6220e7736c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn to set up ethical low-power CPU mining of Monero (XMR) with XMRig, including wallet setup, pool choice, config tips, and troubleshooting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liumaimiao",
+      "userId": "s17acegnjt6mqvmw0j76w4kz91844vgb",
+      "displayName": "liumaimiao",
+      "image": "https://avatars.githubusercontent.com/u/131150921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773829540051,
+      "changelog": "- Initial release: Beginner’s guide for responsible, low-power Monero (XMR) mining using CPU.\n- Covers wallet setup, ethical guidelines, mining pool selection, and quick XMRig installation across major OSes.\n- Provides sample config.json for safe, voluntary mining (default 20% CPU usage recommended).\n- Step-by-step instructions include mining process, hashrate/earnings expectations, and troubleshooting tips.\n- Stresses ethical mining practices and includes links for further learning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ea83457c176f8e7dc7fc7d28c413e2c8f7fdd54694f1dd2940d81ed299d227b"
+}

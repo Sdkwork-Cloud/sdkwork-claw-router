@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/implement-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implement_design",
+  "skill": {
+    "id": 27198,
+    "skillKey": "clawhub-implement-design",
+    "name": "implement-design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implement-design",
+    "url": "https://clawhub.ai/skills/implement-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implement-design-0679baab788ffb29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates Figma designs into production-ready code with 1:1 visual fidelity. Use when implementing UI from Figma files, when user mentions \"implement design..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "springer63",
+      "userId": "s171k2sg44wpnqf8g0w1g21k9s83jn8k",
+      "displayName": "springer63",
+      "image": "https://avatars.githubusercontent.com/u/21698211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773823625520,
+      "changelog": "- Initial release of the implement-design skill.\n- Provides a structured workflow for translating Figma designs into production-ready code with 1:1 visual fidelity.\n- Requires active connection to Figma MCP server for accessing design context, screenshots, and assets.\n- Details step-by-step implementation: parsing Figma URLs, fetching context and assets, translating to project conventions, and validating for accuracy.\n- Enforces integration with existing design systems, consistent use of tokens, and project code quality standards.\n- Includes practical examples and best practices for reliable, maintainable UI implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68e2da671256815dcb0ff03917f463aafd9cbe170430a4d088ea35679b742029"
+}

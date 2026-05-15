@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23605,
+  "uuid": "skill-clawhub-anycrawl-cli",
+  "skillKey": "clawhub-anycrawl-cli",
+  "name": "Anycrawl",
+  "summary": "Web scraping, search, crawling, and site mapping via the AnyCrawl CLI. Use when the user wants to search the web, scrape a page, find URLs on a site, or bulk...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anycrawl_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QThans",
+      "features": [
+        "Web scraping, search, crawling, and site mapping via the AnyCrawl CLI",
+        "Use when the user wants to search the web, scrape a page, find URLs on a site, or bulk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anycrawl-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18275400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anycrawl-cli",
+      "url": "https://clawhub.ai/skills/anycrawl-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anycrawl-cli",
+    "url": "https://clawhub.ai/skills/anycrawl-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anycrawl-cli-465d7e7e4c846798.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anycrawl-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-anycrawl-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84ed3fa8fe859aaddf9bdd18f767dadfa05c0071ca3b9b6b650ffce2da92a048",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:33:14.460Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18284,
+  "uuid": "skill-clawhub-github-helper",
+  "skillKey": "clawhub-github-helper",
+  "name": "github-helper",
+  "summary": "Local GitHub repository helper for search, clone, sync, and issue/PR inspection workflows. Use when users mention github/repo/repository, ask to download or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dandandujie",
+      "features": [
+        "Local GitHub repository helper for search, clone, sync, and issue/PR inspection workflows",
+        "Use when users mention github/repo/repository, ask to download or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142396650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-helper",
+      "url": "https://clawhub.ai/skills/github-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-helper",
+    "url": "https://clawhub.ai/skills/github-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-helper-466a55e137575193.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22541b63368bd133a30e73db8ddc48c050d8fa84bad162b1d4bf4af5999d4961",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:26:28.992Z"
+}

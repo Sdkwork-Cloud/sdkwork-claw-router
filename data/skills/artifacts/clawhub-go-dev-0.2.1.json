@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-dev@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_dev",
+  "skill": {
+    "id": 44867,
+    "skillKey": "clawhub-go-dev",
+    "name": "go-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-dev",
+    "url": "https://clawhub.ai/skills/go-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-dev-f5464c4bb4f58906.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Opinionated Go development setup with golangci-lint v2 + gofumpt + gotestsum + golang-migrate + just. Use when creating new Go projects, setting up linting/f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777572259964,
+      "changelog": "Updated go-dev from 0.2.0 to 0.2.1.\nChanges:\n- modified `SKILL.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f9fbc120352493afb53ed5f112c5493ab6307d3d16130605dc4050e2ef35f9d"
+}

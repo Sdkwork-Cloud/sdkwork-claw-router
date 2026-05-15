@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption",
+  "skill": {
+    "id": 50781,
+    "skillKey": "clawhub-caption",
+    "name": "Caption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption",
+    "url": "https://clawhub.ai/skills/caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-176ca52906b001da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Caption concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1774314739456,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad23eb067e0873cf204148100445fc5a7dba52a1395122a06e708dfdbdb26dca"
+}

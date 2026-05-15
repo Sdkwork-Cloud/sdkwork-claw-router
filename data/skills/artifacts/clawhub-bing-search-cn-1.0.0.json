@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bing-search-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_search_cn",
+  "skill": {
+    "id": 73179,
+    "skillKey": "clawhub-bing-search-cn",
+    "name": "必应搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-search-cn",
+    "url": "https://clawhub.ai/skills/bing-search-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-search-cn-aea46eb33155c18d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用必应中文搜索引擎进行网络搜索和网页抓取"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dej4vu",
+      "userId": "s17bw47vkwe2w75qhn0nceacyx83vj7e",
+      "displayName": "dej4vu",
+      "image": "https://avatars.githubusercontent.com/u/5743053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 808,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773109126316,
+      "changelog": "1.0.0 发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22108c5debf9b66673ce4c4847715bca01bcc7990b805081a1db460245b17a48"
+}

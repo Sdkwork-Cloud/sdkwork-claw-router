@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-social-scheduler@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_social_scheduler",
+  "skill": {
+    "id": 10379,
+    "skillKey": "clawhub-openclaw-social-scheduler",
+    "name": "Openclaw Social Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-social-scheduler",
+    "url": "https://clawhub.ai/skills/openclaw-social-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-social-scheduler-0f1ab999d1692c1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and post text, media, and threads to Discord, Reddit, Twitter/X, Mastodon, Bluesky, and Moltbook via API with immediate or scheduled publishing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrshorrid",
+      "userId": "publishers:mrshorrid",
+      "displayName": "Shilatdoesai",
+      "image": "https://avatars.githubusercontent.com/u/88950077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2635,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770160213383,
+      "changelog": "Initial public release—free, open-source post scheduler for bots & agents:\n\n- Schedule posts across Discord, Twitter/X, Mastodon, Bluesky, Reddit, and Moltbook.\n- Media upload support for images/videos (Twitter/X, Mastodon, Bluesky).\n- New: Post and schedule full threads on Twitter, Mastodon, and Bluesky with automatic chaining.\n- Includes scheduling, immediate post, queue management, and post cancellation features.\n- Platform-specific setup guides and examples included in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fd05278e304bb9d39b8d1a413536586cd4bf97dd356a005fb17aabf7f53c54f"
+}

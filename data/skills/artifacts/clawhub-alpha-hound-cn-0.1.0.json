@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpha-hound-cn@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpha_hound_cn",
+  "skill": {
+    "id": 64763,
+    "skillKey": "clawhub-alpha-hound-cn",
+    "name": "Alpha Hound"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpha-hound-cn",
+    "url": "https://clawhub.ai/skills/alpha-hound-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpha-hound-cn-6a19d707a481cf31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于复杂条件筛选股票并输出候选列表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772786580498,
+      "changelog": "Initial release of alpha-hound skill:\n\n- Enables advanced stock screening based on complex, customizable conditions.\n- Supports filtering by financials, valuation, technicals, sector, and events.\n- Integrates multiple APIs for data extraction, news/event search, and cross-verification.\n- Outputs candidate stock lists with evidence, risk assessment, and actionable next steps.\n- Delivers concise results with tabular summaries in Markdown format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec1619ac88f575c7f907cb88532f5c6e709d3c54fd5e1825501fac6281b20b46"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38929,
+  "uuid": "skill-clawhub-openclaw-gateway-manager",
+  "skillKey": "clawhub-openclaw-gateway-manager",
+  "name": "Openclaw Gateway Manager",
+  "summary": "Manage OpenClaw gateways: query status, modify ports, restart, verify configs, create, delete instances with backups and port scanning.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seastaradmin",
+      "features": [
+        "Manage OpenClaw gateways: query status, modify ports, restart, verify configs, create, delete i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gateway-manager@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102996509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gateway-manager",
+      "url": "https://clawhub.ai/skills/openclaw-gateway-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-manager",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-manager-71762ca4c5554a67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gateway-manager@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gateway-manager-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9081ee640ebb790c04c2aa1cf92d423d0e4030b82843139716ceef6a839cc2a2",
+      "artifactSizeBytes": 3053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T20:37:20.063Z"
+}

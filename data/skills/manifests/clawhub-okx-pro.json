@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66838,
+  "uuid": "skill-clawhub-okx-pro",
+  "skillKey": "clawhub-okx-pro",
+  "name": "Okx Pro",
+  "summary": "完整 OKX 交易所集成，U本位/币本位合约，杠杆交易，止盈止损，仓位管理",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LostOmato",
+      "features": [
+        "完整 OKX 交易所集成，U本位/币本位合约，杠杆交易，止盈止损，仓位管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18007752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-pro",
+      "url": "https://clawhub.ai/skills/okx-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-pro",
+    "url": "https://clawhub.ai/skills/okx-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-pro-f35cd8cb9f9de4b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:042bb48d15937a0b79c8519a7ce79777dcf74ffdc1aeadcb1a9a013cbfc850ce",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:36:50.685Z"
+}

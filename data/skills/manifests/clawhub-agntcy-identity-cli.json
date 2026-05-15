@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22631,
+  "uuid": "skill-clawhub-agntcy-identity-cli",
+  "skillKey": "clawhub-agntcy-identity-cli",
+  "name": "AGNTCY Identity CLI",
+  "summary": "AGNTCY Identity Issuer CLI and Node Backend for managing verifiable agent identities, metadata, and badges.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntcy_identity_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jean DIACONU",
+      "features": [
+        "AGNTCY Identity Issuer CLI and Node Backend for managing verifiable agent identities, metadata,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agntcy-identity-cli@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23049301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agntcy-identity-cli",
+      "url": "https://clawhub.ai/skills/agntcy-identity-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntcy-identity-cli",
+    "url": "https://clawhub.ai/skills/agntcy-identity-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntcy-identity-cli-ce7ee99a5abf2e4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agntcy-identity-cli@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agntcy-identity-cli-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f35b0a4b18d48d5953c80e72589fcee66e84b6ae5fcce73b131c3438b2a3b293",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:03:35.143Z"
+}

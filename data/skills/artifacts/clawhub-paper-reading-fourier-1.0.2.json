@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-reading-fourier@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reading_fourier",
+  "skill": {
+    "id": 37637,
+    "skillKey": "clawhub-paper-reading-fourier",
+    "name": "paper-reading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reading-fourier",
+    "url": "https://clawhub.ai/skills/paper-reading-fourier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reading-fourier-6d97391935d39bcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read academic papers from local PDF files, arXiv URLs, or paper titles and generate structured reading notes in Chinese. Use when the user provides a PDF fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fourierer",
+      "userId": "s173yhpcjqfbfkhcr6jnjj1rxn846jkh",
+      "displayName": "Fourier",
+      "image": "https://avatars.githubusercontent.com/u/55837279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776654235049,
+      "changelog": "- Initial metadata file (_meta.json) added for the skill.\n- Documentation and code examples updated to use relative script paths (e.g., python scripts/fetch_pdf.py), improving portability and clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c83c8594075ee58ab633b43ea592b9697c68fcab63201523686a452e7b41ba16"
+}

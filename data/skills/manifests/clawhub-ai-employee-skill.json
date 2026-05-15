@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71652,
+  "uuid": "skill-clawhub-ai-employee-skill",
+  "skillKey": "clawhub-ai-employee-skill",
+  "name": "AI员工协作技能包",
+  "summary": "AI员工协作技能包 - 多AI角色配置、任务自动分配、进度监控、结果汇报。适合想要自动化运营的团队。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_employee_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdp6539",
+      "features": [
+        "AI员工协作技能包",
+        "多AI角色配置、任务自动分配、进度监控、结果汇报。适合想要自动化运营的团队。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-employee-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198542148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-employee-skill",
+      "url": "https://clawhub.ai/skills/ai-employee-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-employee-skill",
+    "url": "https://clawhub.ai/skills/ai-employee-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-employee-skill-217ac4039619d09a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-employee-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-employee-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:305ad29dd791af9a5d0da9c8a81aa2207c732abcf2760a2e6ba39e0d0e8b6e77",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T14:46:43.895Z"
+}

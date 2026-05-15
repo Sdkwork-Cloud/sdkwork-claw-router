@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39636,
+  "uuid": "skill-clawhub-jx-marketing",
+  "skillKey": "clawhub-jx-marketing",
+  "name": "marketing",
+  "summary": "Generate Instagram marketing content from product URLs. Extract product information and create engaging Instagram posts with image suggestions, captions, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_marketing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Generate Instagram marketing content from product URLs",
+        "Extract product information and create engaging Instagram posts with image suggestions, caption."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx-marketing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx-marketing",
+      "url": "https://clawhub.ai/skills/jx-marketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-marketing",
+    "url": "https://clawhub.ai/skills/jx-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-marketing-a9420f7066aeb32d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx-marketing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx-marketing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3775124864664371a6aa9d0376665ac70a3de34273154e8bae61b99ea04be903",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:46:37.399Z"
+}

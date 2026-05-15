@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22300,
+  "uuid": "skill-clawhub-resend-integration",
+  "skillKey": "clawhub-resend-integration",
+  "name": "Resend",
+  "summary": "Resend integration. Manage Emails, Domains, ApiKeys. Use when the user wants to interact with Resend data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Resend integration",
+        "Manage Emails, Domains, ApiKeys",
+        "Use when the user wants to interact with Resend data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resend-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resend-integration",
+      "url": "https://clawhub.ai/skills/resend-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-integration",
+    "url": "https://clawhub.ai/skills/resend-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-integration-de97c0e314c80a26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resend-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-resend-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f84acc1f88d90f5086aacaf8f26a330f488f9a9dd4d46315eb1ffdccb34ce2d",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:56.993Z"
+}

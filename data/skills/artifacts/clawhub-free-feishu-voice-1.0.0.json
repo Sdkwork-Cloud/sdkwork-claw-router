@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-feishu-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_feishu_voice",
+  "skill": {
+    "id": 26159,
+    "skillKey": "clawhub-free-feishu-voice",
+    "name": "free-feishu-voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-feishu-voice",
+    "url": "https://clawhub.ai/skills/free-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-feishu-voice-a0eb93b9872d61a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send customized voice messages to Feishu chats by generating and uploading TTS audio using configurable credentials and options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuwudou",
+      "userId": "publishers:jisuwudou",
+      "displayName": "jisuwudou",
+      "image": "https://avatars.githubusercontent.com/u/5960639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773645207061,
+      "changelog": "Initial public release with core Feishu voice messaging features:\n\n- Added support for sending Feishu voice messages via shell scripts, using either espeak-ng+ffmpeg or high-quality Edge TTS.\n- Introduced a JSON configuration system with environment variable overrides for credentials, chat ID, default text, and voice.\n- Scripts automatically generate config templates if the config file does not exist.\n- Both basic (espeak) and enhanced (Edge TTS) scripts validate parameters and dependencies before sending messages.\n- Edge TTS version supports auto-installation of Python package edge-tts and provides higher quality voice output.\n- Added inline help and status/error outputs for simplified troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72727155697c3e2a454fc0d021afa147855ecca4c1d9a38ff0c811af40d5300f"
+}

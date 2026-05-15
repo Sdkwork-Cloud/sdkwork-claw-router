@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23672,
+  "uuid": "skill-clawhub-dual-agent-solver",
+  "skillKey": "clawhub-dual-agent-solver",
+  "name": "DualAgentSolver",
+  "summary": "Run a two-agent collaborative problem-solving workflow where one agent is your OpenClaw agent (primary solver) and a second agent challenges assumptions, sur...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_agent_solver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tvaloki",
+      "features": [
+        "Run a two-agent collaborative problem-solving workflow where one agent is your OpenClaw agent (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dual-agent-solver@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147118570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dual-agent-solver",
+      "url": "https://clawhub.ai/skills/dual-agent-solver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-agent-solver",
+    "url": "https://clawhub.ai/skills/dual-agent-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-agent-solver-4181bedad5f606e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dual-agent-solver@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dual-agent-solver-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8eb3c67282fd0aecdb8aae9531136780512bec83beb103b39c3588cab8b3f38",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:52:18.064Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58553,
+  "uuid": "skill-clawhub-phone-controller",
+  "skillKey": "clawhub-phone-controller",
+  "name": "Phone Controller | 手机操控者",
+  "summary": "AI phone controller via ADB + GLM. Controls Android with natural language. | 基于 AutoGLM-Phone 的手机操控技能，用自然语言控制安卓手机。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morois",
+      "features": [
+        "AI phone controller via ADB + GLM",
+        "Controls Android with natural language",
+        "| 基于 AutoGLM-Phone 的手机操控技能，用自然语言控制安卓手机。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phone-controller@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98001108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phone-controller",
+      "url": "https://clawhub.ai/skills/phone-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-controller",
+    "url": "https://clawhub.ai/skills/phone-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-controller-db221cc5190ee3a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phone-controller@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-phone-controller-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4632c9cf4715928eb213b8701b2445f5d9792f7d2288dc20347d5da8eac5dc8e",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T14:43:17.600Z"
+}

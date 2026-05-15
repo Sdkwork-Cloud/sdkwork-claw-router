@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vertical-niche-community-selection@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vertical_niche_community_selection",
+  "skill": {
+    "id": 24487,
+    "skillKey": "clawhub-vertical-niche-community-selection",
+    "name": "Vertical Niche Community Selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vertical-niche-community-selection",
+    "url": "https://clawhub.ai/skills/vertical-niche-community-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vertical-niche-community-selection-0e9404cdd4cebbcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "For merchants selling vertical niche/interest products (e.g. vinyl turntable accessories, serious outdoor/camping gear, enthusiast categories). Provides a fu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773198068494,
+      "changelog": "**Expanded triggers and significant structural improvements for clarity and usability.**\n\n- Broadened trigger criteria to cover more community-driven and niche selection scenarios.\n- Refined audience and use-case explanations for merchants targeting enthusiast, vertical, or insider-driven categories.\n- Introduced a clear, consistent response structure: Summary, Community Research Map, Demand Extraction, Selection Criteria & Scoring, Assortment Recommendations, and Validation Plan.\n- Added specific user input questions for better context-gathering before giving advice.\n- Clarified when to use (and not use) this skill versus others.\n- Detailed integration points with Rijoy for post-launch validation and community tiering.\n- Provided precise language and examples for each section, emphasizing \"insider approval\" over mass-market appeal.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00bce151f6cf2ca3562ce78431b62f2ac8e308de35338878a3bd273e11f487d9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64361,
+  "uuid": "skill-clawhub-consulting-slide-generator",
+  "skillKey": "clawhub-consulting-slide-generator",
+  "name": "Consulting Slide Generator",
+  "summary": "コンサルティングファーム品質のスライド図解をHTML+Tailwindで生成。McKinsey/BCG風のビジネス資料、提案書、プレゼンテーション用の図解を作成する際に使用。対応: (1) 課題提起スライド（数字+プログレスバー）, (2) ソリューションフロー（ステップ図）, (3) 2x2マトリクス（軸に意味...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consulting_slide_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtdnot",
+      "features": [
+        "コンサルティングファーム品質のスライド図解をHTML+Tailwindで生成。McKinsey/BCG風のビジネス資料、提案書、プレゼンテーション用の図解を作成する際に使用。対応: (1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consulting-slide-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115239996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consulting-slide-generator",
+      "url": "https://clawhub.ai/skills/consulting-slide-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consulting-slide-generator",
+    "url": "https://clawhub.ai/skills/consulting-slide-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consulting-slide-generator-a8dab418cd874e4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consulting-slide-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consulting-slide-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed7eca682b4eeec4237021611c502cd9a78c845e46e84378f4a27e2fbe759aad",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:45:12.733Z"
+}

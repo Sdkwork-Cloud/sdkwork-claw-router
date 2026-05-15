@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40478,
+  "uuid": "skill-clawhub-ai-daily-brief",
+  "skillKey": "clawhub-ai-daily-brief",
+  "name": "Ai Daily Brief",
+  "summary": "Parallel fetch and summarize top 10 AI news from multiple sources, delivering a structured daily brief to users via Telegram.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_daily_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "warrior156006050",
+      "features": [
+        "Parallel fetch and summarize top 10 AI news from multiple sources, delivering a structured dail."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-daily-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44488276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-daily-brief",
+      "url": "https://clawhub.ai/skills/ai-daily-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-daily-brief",
+    "url": "https://clawhub.ai/skills/ai-daily-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-daily-brief-23880421d02b27e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-daily-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-daily-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d19eb524e49964bb7a4b1c6534605f2c397c481ec7d83c814bb630b076fbd6b4",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:21:46.872Z"
+}

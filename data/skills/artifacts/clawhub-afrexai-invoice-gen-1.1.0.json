@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-invoice-gen@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_invoice_gen",
+  "skill": {
+    "id": 16040,
+    "skillKey": "clawhub-afrexai-invoice-gen",
+    "name": "Invoice Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-invoice-gen",
+    "url": "https://clawhub.ai/skills/afrexai-invoice-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-invoice-gen-f06dd9de39b550c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates professional invoices in markdown and HTML"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 834,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770951516590,
+      "changelog": "Cross-links",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2814556fb17e49842375b956b2a2765b3d2f1cfd795814ced822d9b715d0d40"
+}

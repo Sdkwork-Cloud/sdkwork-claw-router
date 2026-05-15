@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26348,
+  "uuid": "skill-clawhub-phishguard",
+  "skillKey": "clawhub-phishguard",
+  "name": "phishguard",
+  "summary": "Monitorea las bandejas de Gmail y Outlook en busca de correos de phishing. Analiza cada correo entrante usando reglas estaticas e IA (Claude API). Asigna un...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phishguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lichq1337",
+      "features": [
+        "Monitorea las bandejas de Gmail y Outlook en busca de correos de phishing",
+        "Analiza cada correo entrante usando reglas estaticas e IA (Claude API)",
+        "Asigna un..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phishguard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105398914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phishguard",
+      "url": "https://clawhub.ai/skills/phishguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phishguard",
+    "url": "https://clawhub.ai/skills/phishguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phishguard-768e6d78e40c0188.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phishguard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phishguard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6223cb990e82e6d5135e9107531c822f0510a348d34574f9201f87a5dc94f545",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:39:19.700Z"
+}

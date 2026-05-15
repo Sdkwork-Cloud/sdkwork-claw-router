@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chrome-relay-browser@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_relay_browser",
+  "skill": {
+    "id": 62445,
+    "skillKey": "clawhub-chrome-relay-browser",
+    "name": "chrome-relay-browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-relay-browser",
+    "url": "https://clawhub.ai/skills/chrome-relay-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-relay-browser-22c890b62358cf43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Chrome Extension relay 控制浏览器。用于控制用户已在 Chrome 中打开并 attach 的标签页，无需启动新浏览器，用户可直接看到操作界面。触发条件：(1) 用户让我操作浏览器 (2) 需要复用用户已打开的页面 (3) 需要截图/填表/点击等操作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaviwayne",
+      "userId": "s17e2mp4zc8vwqg0dbg032v4ts83hkac",
+      "displayName": "ZaviWayne",
+      "image": "https://avatars.githubusercontent.com/u/248329820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774252829300,
+      "changelog": "No functional or file changes detected in this release.\n\n- Version number updated to 1.0.1.\n- No content, documentation, or code changes made.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2c79e68e8ab68ff646c4912201eac944fa664a655695dbde6a8e612477eef0b"
+}

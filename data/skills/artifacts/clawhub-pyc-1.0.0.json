@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyc",
+  "skill": {
+    "id": 21979,
+    "skillKey": "clawhub-pyc",
+    "name": "Python Cheat Sheets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyc",
+    "url": "https://clawhub.ai/skills/pyc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyc-5c85d85c5badfbd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides functional Python code and detailed answers by fetching and applying proven patterns and examples from pythonsheets.com across core, system, concurr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazyguitar",
+      "userId": "s177c2946np1x2kkwk081ry5kh83pt19",
+      "displayName": "CHANG-NING TSAI",
+      "image": "https://avatars.githubusercontent.com/u/3689606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773632272296,
+      "changelog": "- Major rewrite: transitioned from topic-summary + rule-based quick reference to a focused, example-driven cheat sheet format.\n- Removed individual topic files (e.g. classes.md, concurrency.md) in favor of a central fetch-based workflow.\n- Added references/guidelines.md and references/structure.md to standardize fetching real patterns/examples and code quality.\n- Strong emphasis on fetching from pythonsheets.com for every task to ensure solutions use battle-tested examples and patterns.\n- Expanded coverage to include databases, security, ML/LLM workflows, and high-performance computing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb12996713c6ddf187e269b9322b08dee32b6cbf6648b1620e5b2a10884b78e1"
+}

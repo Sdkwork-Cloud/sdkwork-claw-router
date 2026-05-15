@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21710,
+  "uuid": "skill-clawhub-invoice-extractor",
+  "skillKey": "clawhub-invoice-extractor",
+  "name": "Invoice-Recognition",
+  "summary": "Extract invoice information from images and PDF files using Baidu OCR API, export to Excel. Supports single file, multiple files, or entire directory process...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aitanjp",
+      "features": [
+        "Extract invoice information from images and PDF files using Baidu OCR API, export to Excel",
+        "Supports single file, multiple files, or entire directory process..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165343740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-extractor",
+      "url": "https://clawhub.ai/skills/invoice-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-extractor",
+    "url": "https://clawhub.ai/skills/invoice-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-extractor-08d7da95cfaaae9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a74e5a83f8c7a72a2c24164b274fe8523bdfa25b740382bd2ecfff0d80484b9",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:55:56.076Z"
+}

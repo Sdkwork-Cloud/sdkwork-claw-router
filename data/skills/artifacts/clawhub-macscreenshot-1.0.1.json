@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macscreenshot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macscreenshot",
+  "skill": {
+    "id": 29527,
+    "skillKey": "clawhub-macscreenshot",
+    "name": "mac screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macscreenshot",
+    "url": "https://clawhub.ai/skills/macscreenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macscreenshot-766f45e082297463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture macOS screenshots for the whole screen, a specific app window, or a precisely targeted desktop window using built-in system tools. Use when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mallocfeng",
+      "userId": "s179q2bn9cckdh4bjq7q7mfk3n83fnt5",
+      "displayName": "mallocfeng",
+      "image": "https://avatars.githubusercontent.com/u/4647455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776289460013,
+      "changelog": "- Now treats screenshots as potentially sensitive and returns only the local file path by default.\n- Changed behavior so screenshots are sent or attached into chat only if the user explicitly requests it.\n- Updated chat delivery workflow and privacy language for clearer handling of confidential screen content.\n- Added metadata specifying required binaries, recommended install steps, and OS compatibility.\n- Default workflow and script output clarified to avoid sending screenshots into chat automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5961ad49d77b2fccdaa667d850d8e929c7335be54edb423908d3dc4964692ba5"
+}

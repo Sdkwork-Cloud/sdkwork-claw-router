@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_trading",
+  "skill": {
+    "id": 46881,
+    "skillKey": "clawhub-test-trading",
+    "name": "Test Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-trading",
+    "url": "https://clawhub.ai/skills/test-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-trading-16cd934c4912cdcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades a market when your estimated probability diverges from the live market price, with dry-run by default, context checks, reasoning tags, and optional li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssj124",
+      "userId": "s174p432zdjmq0szb7x7pvv8zx84s03q",
+      "displayName": "ssj124",
+      "image": "https://avatars.githubusercontent.com/u/83407521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777100990587,
+      "changelog": "AION Market Divergence Trader skill, initial release:\n\n- Publishes a trading template that acts on probability divergence between your estimate and live market price.\n- Safely executes trades on venues like Polymarket or Kalshi, defaulting to dry-run unless explicitly run live.\n- Enforces context checks, risk alerts, trade threshold, and operator-style output for every decision.\n- Supports customizable parameters (trade size, minimum edge, live/dry run, venue, reasoning tags).\n- Built-in logic for required credentials, market context validation, and avoiding flip-flop trades.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f37aed209e913c749b9094489135a583f7435c65cb1eae768e960aca25dc344"
+}

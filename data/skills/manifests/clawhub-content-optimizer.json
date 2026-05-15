@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19596,
+  "uuid": "skill-clawhub-content-optimizer",
+  "skillKey": "clawhub-content-optimizer",
+  "name": "Content Optimizer",
+  "summary": "Score and optimize content for search engines using SERP-based analysis. Check word count, keyword usage, headings, readability, entity coverage, and get act...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharozdawa",
+      "features": [
+        "Score and optimize content for search engines using SERP-based analysis",
+        "Check word count, keyword usage, headings, readability, entity coverage, and get act..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31814833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-optimizer",
+      "url": "https://clawhub.ai/skills/content-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-optimizer",
+    "url": "https://clawhub.ai/skills/content-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-optimizer-64fce00641cf3737.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f7aa3d2b6c2c2cebbab7d50b97f25dcac93810fead5bd39d928271a041f6192",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:19:48.457Z"
+}

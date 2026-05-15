@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apify-lead-generation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apify_lead_generation",
+  "skill": {
+    "id": 10798,
+    "skillKey": "clawhub-apify-lead-generation",
+    "name": "Apify Lead Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apify-lead-generation",
+    "url": "https://clawhub.ai/skills/apify-lead-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apify-lead-generation-8d6c83902c419a90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates B2B/B2C leads by scraping Google Maps, websites, Instagram, TikTok, Facebook, LinkedIn, YouTube, and Google Search. Use when user asks to find leads, prospects, businesses, build lead lists, enrich contacts, or scrape profiles fo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "protoss70",
+      "userId": "s17ad3qz5p4aff3vv32kbrwm6d83nrqp",
+      "displayName": "Gökdeniz Kaymak",
+      "image": "https://avatars.githubusercontent.com/u/57136915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1938,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770824476291,
+      "changelog": "- Switched from mcporter CLI to mcpc for fetching Apify Actor schemas and details.\n- Updated installation to use the @apify/mcpc package.\n- Revised metadata to require the mcpc binary instead of mcporter.\n- Updated schema fetch workflow and command examples to use mcpc.\n- Clarified error handling for mcpc and added relevant installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2ab0e664efff97699a8c64d5c028c5b95df648a4c3dfad70ef5745cf22275dd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-oss-upload@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_oss_upload",
+  "skill": {
+    "id": 59545,
+    "skillKey": "clawhub-aliyun-oss-upload",
+    "name": "aliyun-oss-upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-oss-upload",
+    "url": "https://clawhub.ai/skills/aliyun-oss-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-oss-upload-b2bba9e86a2c2e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云 OSS 文件上传工具，支持上传文件到阿里云对象存储并生成临时访问链接。使用场景：将本地文件上传到 OSS 并获得可分享的临时 URL。需要配置 ALIYUN_OSS_ACCESS_KEY_ID、ALIYUN_OSS_ACCESS_KEY_SECRET、ALIYUN_OSS_ENDPOINT、ALIYUN_OSS_BUCKET 环境变量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengjiaxiongkf",
+      "userId": "publishers:chengjiaxiongkf",
+      "displayName": "chengjiaxiongkf",
+      "image": "https://avatars.githubusercontent.com/u/66402618?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1942,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770001772623,
+      "changelog": "- Initial release of aliyun-oss-upload.\n- Supports uploading local files to Alibaba Cloud OSS.\n- Generates temporary signed URLs for secure file sharing.\n- Requires configuration of OSS credentials and settings via environment variables.\n- Includes CLI commands for uploading files and generating access links.\n- Handles large file uploads automatically; default signed URL expiry is 1 hour.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1e179fe36c0874b8fcf9b92873c6cb4881f0ad3c45f9dc5dcbcef38c8958e8e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-shark@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_shark",
+  "skill": {
+    "id": 69909,
+    "skillKey": "clawhub-token-shark",
+    "name": "Token Shark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-shark",
+    "url": "https://clawhub.ai/skills/token-shark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-shark-e15a6605412b5f4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时监控新上线代币，提供多维风险评估、交易数据和价格提醒，助您把握投资机会。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gztanht",
+      "userId": "publishers:gztanht",
+      "displayName": "Haha Tan",
+      "image": "https://avatars.githubusercontent.com/u/18513327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772789095474,
+      "changelog": "🎯 初始版本 - 新代币监控 + 风险评估 + 价格提醒",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3738a347a8c6b0713c095c3c7f696d93efcca1a8c5ac03c6d7b30ebc40c4f59d"
+}

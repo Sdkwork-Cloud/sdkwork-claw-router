@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33076,
+  "uuid": "skill-clawhub-nm-conserve-token-conservation",
+  "skillKey": "clawhub-nm-conserve-token-conservation",
+  "name": "Nm Conserve Token Conservation",
+  "summary": "Enforce token quota management at session start with conservation rules, delegation checks, and compression review",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_conserve_token_conservation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Enforce token quota management at session start with conservation rules, delegation checks, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-conserve-token-conservation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-conserve-token-conservation",
+      "url": "https://clawhub.ai/skills/nm-conserve-token-conservation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-conserve-token-conservation",
+    "url": "https://clawhub.ai/skills/nm-conserve-token-conservation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-conserve-token-conservation-ed3a3db05903a455.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-conserve-token-conservation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-conserve-token-conservation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff3688e958fa3b20330505aa2b678ed439ce5bf527643c82eb472537e07dae07",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:49.783Z"
+}

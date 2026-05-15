@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-daily-briefing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_daily_briefing",
+  "skill": {
+    "id": 35604,
+    "skillKey": "clawhub-normieclaw-daily-briefing",
+    "name": "Supercharged Daily Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-daily-briefing",
+    "url": "https://clawhub.ai/skills/normieclaw-daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-daily-briefing-e53f78d62f22155e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop spending your mornings hunting for news, trends, and updates across a dozen tabs. The Supercharged Daily Briefing turns OpenClaw into a production-grade..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774993129528,
+      "changelog": "v1.0.3: Security fixes: confined scripts to skill directory, removed filesystem traversal from setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d13b94078e29bbe1a7cdc0cd742e86873c459fdedd98d8d7ef42b4f4e6434bd"
+}

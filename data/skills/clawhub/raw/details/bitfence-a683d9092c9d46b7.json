@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "bitfence",
+    "displayName": "Bitfence - pre-transaction risk infrastructure for AI agents operating on-chain",
+    "summary": "Provides pre-transaction risk assessments for token trades on Solana and Base, returning safety recommendations via rapid, paid oracle queries.",
+    "tags": {
+      "latest": "0.5.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1776026553131,
+    "updatedAt": 1777527468272
+  },
+  "latestVersion": {
+    "version": "0.5.1",
+    "createdAt": 1776028594422,
+    "changelog": "**Major update — agents now treat Bitfence as an optional, user-driven safety advisory instead of an enforced pre-condition.**\n\n- New skill instructions clarify that Bitfence is user-controlled and purely advisory; users always have the final say on transactions.\n- Privacy and data-sharing guidance added: explicit user consent now required before running paid, contextual risk checks.\n- Agents must inform users that risk assessments incur small USDC fees on Base mainnet before calling Bitfence for the first time in a session.\n- Error and circuit breaker handling updated: surface all warnings, but respect explicit user overrides.\n- Batched or repeated risk checks discouraged; call Bitfence only once per decision.\n- Response and endpoint documentation streamlined for user transparency.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bilsbys",
+    "userId": "s177rpj7ehfna2wgefr3jpjwhh84mvq1",
+    "displayName": "bilsbys",
+    "image": "https://avatars.githubusercontent.com/u/265898507?v=4"
+  },
+  "moderation": null
+}

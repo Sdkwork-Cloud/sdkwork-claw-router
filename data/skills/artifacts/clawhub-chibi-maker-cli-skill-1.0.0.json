@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chibi-maker-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chibi_maker_cli_skill",
+  "skill": {
+    "id": 56507,
+    "skillKey": "clawhub-chibi-maker-cli-skill",
+    "name": "AI Chibi Maker – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chibi-maker-cli-skill",
+    "url": "https://clawhub.ai/skills/chibi-maker-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chibi-maker-cli-skill-2a3206807588f434.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI chibi maker — convert a photo into a cute chibi character sticker"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776601670699,
+      "changelog": "- Initial release of chibi-maker-cli-skill.\n- Instantly converts photos into cute chibi character stickers using the WeShop CLI.\n- Requires the weshop-cli tool and a valid WESHOP_API_KEY.\n- Supports custom prompts for chibi style and batch processing.\n- Example usage provided for easy setup and operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16819261b020bea6003da669fb514cf9edad36fdb0abb420002b6ff18a8c5678"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48202,
+  "uuid": "skill-clawhub-regex-tool",
+  "skillKey": "clawhub-regex-tool",
+  "name": "Regex Tool",
+  "summary": "Match and extract text patterns using regular expressions. Use for data validation, text parsing, and pattern-based extraction tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Match and extract text patterns using regular expressions",
+        "Use for data validation, text parsing, and pattern-based extraction tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regex-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regex-tool",
+      "url": "https://clawhub.ai/skills/regex-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-tool",
+    "url": "https://clawhub.ai/skills/regex-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-tool-a400a254d40f4ddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regex-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-regex-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:572bf74481703dbee89471829dca409a749fa3a0dc48c41735f65b59be762492",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T21:30:21.157Z"
+}

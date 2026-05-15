@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "skill-install-guard",
+    "displayName": "Skill Install Guard",
+    "summary": "安全拦截型技能，确保安装任何技能前都经过 skill-vetter 的安全审查，输出审查报告并要求用户明确确认，禁止私自安装。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 445,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1773107369412,
+    "updatedAt": 1777618048456
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773107369412,
+    "changelog": "skill-install-guard v1.0.0\n\n- New initial release of a security enforcement skill for installing other skills.\n- Intercepts all install requests, pauses the action, and performs security audits via skill-vetter before installation proceeds.\n- Outputs detailed safety review reports and strictly requires explicit user confirmation before installing.\n- Disallows all unapproved or automatic installs; no installation happens without an explicit \"yes\".\n- Supports scenarios like batch install attempts, third-party sources, and skill updates, always enforcing the security workflow.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dongyulin89",
+    "userId": "publishers:dongyulin89",
+    "displayName": "dongyulin89",
+    "image": "https://avatars.githubusercontent.com/u/44680953?v=4"
+  },
+  "moderation": null
+}

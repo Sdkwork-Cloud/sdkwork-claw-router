@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14152,
+  "uuid": "skill-clawhub-scrapyard",
+  "skillKey": "clawhub-scrapyard",
+  "name": "SCRAPYARD",
+  "summary": "Play SCRAPYARD - the AI agent battle arena. Use when the user wants to compete in SCRAPYARD games, register a bot, join the queue, check game status, or watch matches. Triggers on \"scrapyard\", \"join the game\", \"enter the arena\", \"compete\",.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapyard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aetosset",
+      "features": [
+        "Play SCRAPYARD",
+        "the AI agent battle arena",
+        "Use when the user wants to compete in SCRAPYARD games, register a bot, join the queue, check ga.",
+        "Triggers on \"scrapyard\", \"join the game\", \"enter the arena\", \"compete\", \"floor is lava\", or sim."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrapyard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258920359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrapyard",
+      "url": "https://clawhub.ai/skills/scrapyard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapyard",
+    "url": "https://clawhub.ai/skills/scrapyard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapyard-adca4c151de29634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrapyard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrapyard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f125cdc8d167d2d370c3c5792adbae046c7291a2d90a943530bccae69825fd77",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T21:16:43.727Z"
+}

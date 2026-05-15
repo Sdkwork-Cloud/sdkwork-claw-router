@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-profile-images@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_profile_images",
+  "skill": {
+    "id": 50905,
+    "skillKey": "clawhub-agent-profile-images",
+    "name": "Agent Profile Images"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-profile-images",
+    "url": "https://clawhub.ai/skills/agent-profile-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-profile-images-9e6977d340a553a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Profile Images for OpenClaw Control UI — upload custom avatars, generate themed AI profile images, preview before saving, and persist agent avatars acr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773777393182,
+      "changelog": "Initial release: agent profile image upload, themed AI generation, preview/keep-regenerate-cancel loop, and refresh-state fixes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:552c8c6537241862ee202c0a9b6ddd9b36dbb99e516578b1518edebf5f9bd78e"
+}

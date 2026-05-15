@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60082,
+  "uuid": "skill-clawhub-qmsg-push-skills",
+  "skillKey": "clawhub-qmsg-push-skills",
+  "name": "Qmsg Push",
+  "summary": "Qmsg 酱推送，通过 QQ 主动发送消息通知，无需 API Key",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmsg_push_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TimeThreeSecond",
+      "features": [
+        "Qmsg 酱推送，通过 QQ 主动发送消息通知，无需 API Key"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmsg-push-skills@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198433732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmsg-push-skills",
+      "url": "https://clawhub.ai/skills/qmsg-push-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmsg-push-skills",
+    "url": "https://clawhub.ai/skills/qmsg-push-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmsg-push-skills-64631c8d899f03a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmsg-push-skills@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmsg-push-skills-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67b2c6387d1243bb41c1224eefc295582ef2c1f8ebda6684f04414584c1fbd01",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:35:28.234Z"
+}

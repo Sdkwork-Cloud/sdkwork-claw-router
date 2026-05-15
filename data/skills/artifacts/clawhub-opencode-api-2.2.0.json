@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-api@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_api",
+  "skill": {
+    "id": 59157,
+    "skillKey": "clawhub-opencode-api",
+    "name": "OpenCode HTTP API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-api",
+    "url": "https://clawhub.ai/skills/opencode-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-api-0b703fe9a348de5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "透過 HTTP API 呼叫 OpenCode Server 進行 code review、程式碼分析與編碼任務。 涵蓋：Agents（4種模式+自訂代理）、Custom Tools（TypeScript）、Formatters（ruff/biome）、 Skills（載入技能）、SDK（完整 API，含結構化輸..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jlin53882",
+      "userId": "s1723zkxfh1pw9pn178tsx1pr183hmq4",
+      "displayName": "jlin53882",
+      "image": "https://avatars.githubusercontent.com/u/76562059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1775386472431,
+      "changelog": "新增 code-review-prompt.md（11 面向審查框架）；更新 opencode_review.py（完整 prompt + Minecraft-Translate 語境）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:741ab900f7b680a4e0ae5ea8418af4345f05c1a5d5a9da9a6c125f8118aa530c"
+}

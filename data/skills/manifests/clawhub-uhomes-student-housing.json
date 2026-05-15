@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58101,
+  "uuid": "skill-clawhub-uhomes-student-housing",
+  "skillKey": "clawhub-uhomes-student-housing",
+  "name": "Uhomes Student Housing",
+  "summary": "Find and compare student accommodation worldwide on uhomes.com. Use for any student housing, 学生公寓, 留学租房, 留学生寮, 学生マンション, or study-abroad accommodation query.",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uhomes_student_housing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neilding",
+      "features": [
+        "Find and compare student accommodation worldwide on uhomes.com",
+        "Use for any student housing, 学生公寓, 留学租房, 留学生寮, 学生マンション, or study-abroad accommodation query."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uhomes-student-housing@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51530852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uhomes-student-housing",
+      "url": "https://clawhub.ai/skills/uhomes-student-housing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uhomes-student-housing",
+    "url": "https://clawhub.ai/skills/uhomes-student-housing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uhomes-student-housing-f06929be9d7a4e9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uhomes-student-housing@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-uhomes-student-housing-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dee5f5564be64a025a46b3032edc0f32f550da3fce679057b5487461a57b550d",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:32:42.056Z"
+}

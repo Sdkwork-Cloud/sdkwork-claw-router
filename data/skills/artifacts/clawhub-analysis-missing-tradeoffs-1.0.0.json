@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analysis-missing-tradeoffs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analysis_missing_tradeoffs",
+  "skill": {
+    "id": 39356,
+    "skillKey": "clawhub-analysis-missing-tradeoffs",
+    "name": "Analysis Missing Tradeoffs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analysis-missing-tradeoffs",
+    "url": "https://clawhub.ai/skills/analysis-missing-tradeoffs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analysis-missing-tradeoffs-6c3274321ae6f718.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analysis presents a single option without comparing alternatives or articulating the costs of the chosen approach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mvogt99",
+      "userId": "s1795cpfvhkpcq4k9a8xmpepw585gbjp",
+      "displayName": "mvogt99",
+      "image": "https://avatars.githubusercontent.com/u/911083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777140871514,
+      "changelog": "Initial release: Introduces best practices for making tradeoffs explicit in analysis.\n\n- Highlights pitfalls of presenting only a single option.\n- Lists common symptoms of missing tradeoff analysis.\n- Provides clear steps to enumerate, compare, and justify alternative options.\n- Emphasizes naming and briefly dismissing alternatives, even when one answer seems obvious.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c146004913a6e8e8c8b426194a78ffafe60699696d9c869bc96241b7d0fef9fa"
+}

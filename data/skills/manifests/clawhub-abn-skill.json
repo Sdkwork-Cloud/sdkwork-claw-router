@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11806,
+  "uuid": "skill-clawhub-abn-skill",
+  "skillKey": "clawhub-abn-skill",
+  "name": "Agent Backlink Network",
+  "summary": "Decentralized backlink exchange for AI agents. Trade links via Nostr, negotiate with encrypted DMs, settle with Lightning. No middlemen.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abn_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tylerhuff",
+      "features": [
+        "Decentralized backlink exchange for AI agents",
+        "Trade links via Nostr, negotiate with encrypted DMs, settle with Lightning",
+        "No middlemen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abn-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18559932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abn-skill",
+      "url": "https://clawhub.ai/skills/abn-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abn-skill",
+    "url": "https://clawhub.ai/skills/abn-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abn-skill-83572eab0e1a0977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abn-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abn-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85acf4e9a8be71c81be2f8daa6858cbddcf15b577783f5a2e14af924a1098c83",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T07:45:24.955Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-canonical@6.1.2",
+  "version": "6.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_canonical",
+  "skill": {
+    "id": 28780,
+    "skillKey": "clawhub-skill-creator-canonical",
+    "name": "skill-creator-canonical"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-canonical",
+    "url": "https://clawhub.ai/skills/skill-creator-canonical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-canonical-3f8443b117a3a4ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch, restructuring an existing skill, auditing skill quality, or making a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ciklopentan",
+      "userId": "s170bzkafdeer9wznxg0rasry58402yp",
+      "displayName": "ciklopentan",
+      "image": "https://avatars.githubusercontent.com/u/259757332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "6.1.2",
+      "createdAt": 1776204619700,
+      "changelog": "Hardened review, validation, packaging, and publish flows; aligned scaffold and archive hygiene.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abd95b146a74793943f9a9e816e9b788f56789469cdcdb8a4c7b70335680eab3"
+}

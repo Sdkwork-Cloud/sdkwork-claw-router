@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32660,
+  "uuid": "skill-clawhub-clipbox",
+  "skillKey": "clawhub-clipbox",
+  "name": "Clipbox",
+  "summary": "Save and organize reusable text snippets for quick retrieval. Use when storing code fragments, saving command templates, or building snippet libraries.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Save and organize reusable text snippets for quick retrieval",
+        "Use when storing code fragments, saving command templates, or building snippet libraries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clipbox@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clipbox",
+      "url": "https://clawhub.ai/skills/clipbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipbox",
+    "url": "https://clawhub.ai/skills/clipbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipbox-ee72b358c739de70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clipbox@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clipbox-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f8f75fe5a867387e4aca5158bd67f83ec525b66581ce430c848424ddd1a3015",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:02:53.653Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gopass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gopass",
+  "skill": {
+    "id": 12140,
+    "skillKey": "clawhub-gopass",
+    "name": "gopass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gopass",
+    "url": "https://clawhub.ai/skills/gopass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gopass-99ee4607fc83e05a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Store, retrieve, list, and manage secrets using gopass (the team password manager). Use when the user asks to save credentials, look up passwords, generate secrets, manage password entries, or interact with a gopass password store. Covers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erdgeclaw",
+      "userId": "publishers:erdgeclaw",
+      "displayName": "erdGeclaw",
+      "image": "https://avatars.githubusercontent.com/u/258411179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1786,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769855311664,
+      "changelog": "Initial release: CRUD, search, generate, TOTP, store management, non-interactive tips",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85a172ccd686d36da51f1e95232b5c188286579e24b3588ff8158434a6876467"
+}

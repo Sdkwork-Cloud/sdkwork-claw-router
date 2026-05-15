@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "miro-workshop-assistant",
+    "displayName": "Miro board",
+    "summary": "Workshop photos/notes -> an editable Miro diagram (real FRAMES as containers + stickies + connectors) with idempotent dedupe, rollback, undo and change commands, using the local script miro-push.mjs and env vars.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 999,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1770885992671,
+    "updatedAt": 1778385311145
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770885992671,
+    "changelog": "Workshop → Miro Agent (OpenClaw Skill)\n\nTurn workshop whiteboard photos (or raw notes) into a clean, editable Miro diagram—with real containers (Frames), grouped stickies, and smart connectors—then push directly to Miro via API.\n\nWhat it does\n\nPhoto/notes → structured diagram\n\nDetects logical “areas” (e.g., Product A, Product B, Easy Vision, Milestone) and creates Miro Frames as true containers.\n\nPlaces stickies inside the correct frame with a readable layout.\n\nClean relationships\n\nCreates connectors where they make sense.\n\nIf the diagram is clearly “container → container” (e.g., Product A → Product B), it creates a frame-to-frame flow (not random sticky-to-sticky arrows).\n\nPrevents messy arrows by avoiding cross-frame sticky connectors when a container-level flow is detected.\n\nNo duplicates (idempotent)\n\nUses a stable sessionKey + a runId.\n\nRe-running the same session replaces the previous run automatically.\n\nUndo / rollback\n\nAutomatic rollback if a run fails.\n\nManual undo per session with a single command.\n\nKey technical improvements\n\nBulletproof frame creation\n\nIf the AI output misses frames, the script auto-generates frames using:\n\nTitle stickies (e.g., “Product A”, “Product B”), or\n\nX-axis clustering (left/right grouping) as fallback.\n\nFixed Miro parent-boundary errors\n\nCorrectly converts coordinates when parenting stickies into frames (avoids “position is outside parent boundaries”).\n\nArrow-only sticky filtering\n\nRemoves “→ / ->” as stickies (arrows are connectors, not post-its).\n\nHow it pushes to Miro\n\nUses only environment variables (no cookies, no browser session hacks):\n\nMIRO_ACCESS_TOKEN\n\nMIRO_BOARD_ID\n\nExecutes a local script:\n\nnode miro-push.mjs apply <miro-ready.json>\n\nnode miro-push.mjs undo <sessionKey>\n\nOutput format\n\nThe agent produces a Miro-ready JSON containing:\n\nframes[] (containers)\n\nstickies[] (notes inside frames)\n\nconnectors[] (relationships)\n\nmeta.sessionKey + meta.runId for idempotent updates\n\nBest for\n\nWorkshop facilitation\n\nArchitecture diagrams\n\nProduct mapping sessions\n\nBrainstorms that need to become clean, editable boards fast",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "simoneferrario",
+    "userId": "s177nharevwjakjyp226bys69n85h75c",
+    "displayName": "Simone Ferrario",
+    "image": "https://avatars.githubusercontent.com/u/79698543?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385311145
+  }
+}

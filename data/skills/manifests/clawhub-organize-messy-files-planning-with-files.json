@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41626,
+  "uuid": "skill-clawhub-organize-messy-files-planning-with-files",
+  "skillKey": "clawhub-organize-messy-files-planning-with-files",
+  "name": "planning-with-files",
+  "summary": "Implements Manus-style file-based planning for complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when starting complex multi-step tasks,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organize_messy_files_planning_with_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lnj22",
+      "features": [
+        "Implements Manus-style file-based planning for complex tasks",
+        "Creates task_plan.md, findings.md, and progress.md",
+        "Use when starting complex multi-step tasks,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/organize-messy-files-planning-with-files@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234027299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "organize-messy-files-planning-with-files",
+      "url": "https://clawhub.ai/skills/organize-messy-files-planning-with-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organize-messy-files-planning-with-files",
+    "url": "https://clawhub.ai/skills/organize-messy-files-planning-with-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organize-messy-files-planning-with-files-2cb56185ff12092e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/organize-messy-files-planning-with-files@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-organize-messy-files-planning-with-files-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1fda9f0e174d18336a85eb7f507e56dbca8eefdd20943d9547694a4f2826690",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:27:57.089Z"
+}

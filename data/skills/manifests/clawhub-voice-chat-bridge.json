@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58849,
+  "uuid": "skill-clawhub-voice-chat-bridge",
+  "skillKey": "clawhub-voice-chat-bridge",
+  "name": "Bidirectional Voice Chat System",
+  "summary": "双向语音对话系统 - 语音识别转文字 + Edge TTS语音合成 + Cloudflare Tunnel公网访问",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_chat_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "patrickgeek",
+      "features": [
+        "双向语音对话系统",
+        "语音识别转文字 + Edge TTS语音合成 + Cloudflare Tunnel公网访问"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-chat-bridge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8056882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-chat-bridge",
+      "url": "https://clawhub.ai/skills/voice-chat-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-chat-bridge",
+    "url": "https://clawhub.ai/skills/voice-chat-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-chat-bridge-d35b29c78dad741f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-chat-bridge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-chat-bridge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20ce300258739b93d0e74d7a89dad56a453ef70bbf93428b5c6c837b6bdd403d",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T17:59:55.515Z"
+}

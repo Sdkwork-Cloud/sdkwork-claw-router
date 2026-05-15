@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22474,
+  "uuid": "skill-clawhub-wechat-to-xiaohongshu",
+  "skillKey": "clawhub-wechat-to-xiaohongshu",
+  "name": "WeChat to Xiaohongshu",
+  "summary": "Automatically migrate WeChat Official Account articles to Xiaohongshu (Little Red Book). Use when the user wants to (1) cross-post published WeChat articles...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_xiaohongshu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ibmhonghao",
+      "features": [
+        "Automatically migrate WeChat Official Account articles to Xiaohongshu (Little Red Book)",
+        "Use when the user wants to (1) cross-post published WeChat articles..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-to-xiaohongshu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262624744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-to-xiaohongshu",
+      "url": "https://clawhub.ai/skills/wechat-to-xiaohongshu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-xiaohongshu",
+    "url": "https://clawhub.ai/skills/wechat-to-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-xiaohongshu-e51d8651873a883a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-to-xiaohongshu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-to-xiaohongshu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1fcea792c42db52b87afc465659afbe6433a0565b398d15ff2daae83174127a",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:31:50.025Z"
+}

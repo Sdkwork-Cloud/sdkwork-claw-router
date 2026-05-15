@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-image-api-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_image_api_skill",
+  "skill": {
+    "id": 24269,
+    "skillKey": "clawhub-google-image-api-skill",
+    "name": "google-image-api-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-image-api-skill",
+    "url": "https://clawhub.ai/skills/google-image-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-image-api-skill-ab6f2ee5bb43d1e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users automatically extract structured image data from Google Images via BrowserAct API. Agent should proactively apply this skill when user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccmagia2-gif",
+      "userId": "s1713egtej3sxzc5sv71841qzh83x5xs",
+      "displayName": "Maggia",
+      "image": "https://avatars.githubusercontent.com/u/259630312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772521212783,
+      "changelog": "- Initial release of the google-image-api-skill, enabling one-click extraction of structured image data from Google Images using the BrowserAct API.\n- Supports keyword search, country and language selection, scroll control, and result limit customization.\n- Outputs clean metadata (e.g., product detection, titles, links, thumbnail, source info).\n- Handles errors and retries automatically; guides user if API Key is missing or invalid.\n- Designed for tasks like visual content sourcing, competitor monitoring, market research, and trend tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:540821b90257c307a40a77c67f700c0d350dc753f19d3cc102d6329c83be2296"
+}

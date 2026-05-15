@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_search",
+  "skill": {
+    "id": 49553,
+    "skillKey": "clawhub-linkedin-search",
+    "name": "linkedin-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-search",
+    "url": "https://clawhub.ai/skills/linkedin-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-search-4dfaf8931e2605e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search LinkedIn for candidates matching user-defined role, location, and criteria, classify requirements, and save profiles to avoid duplicates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianjunye",
+      "userId": "s178x03n0v7kt6nmv474ewqe8983kmk2",
+      "displayName": "qianjunye",
+      "image": "https://avatars.githubusercontent.com/u/3345643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777516606386,
+      "changelog": "- Initial release of /linkedin-search: an automated LinkedIn candidate search workflow.\n- Adds a multi-phase requirement clarification step before searching to ensure precise criteria.\n- Distinguishes between hard and soft candidate requirements, allowing user confirmation and adjustment.\n- Separates search parameters (job keywords/location) from LLM-analyzed parameters (experience, relevance, etc.).\n- Implements pre-checks for Chrome DevTools session and LinkedIn login before execution.\n- Prevents duplicate scanning by saving candidate profiles to role-based folders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd410e60a142ca34aed2bc3c0d6898e55196ce16a2e2c96582d82575da1a4120"
+}

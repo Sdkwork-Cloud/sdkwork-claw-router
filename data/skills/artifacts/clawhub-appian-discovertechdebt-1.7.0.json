@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appian-discovertechdebt@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_discovertechdebt",
+  "skill": {
+    "id": 39598,
+    "skillKey": "clawhub-appian-discovertechdebt",
+    "name": "Appian Discovertechdebt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-discovertechdebt",
+    "url": "https://clawhub.ai/skills/appian-discovertechdebt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-discovertechdebt-4abe369c6b105ff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan an Appian application for tech debt by finding objects whose SAIL definitions reference outdated versioned functions (marked by Appian with a _v suffix..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solarspiker",
+      "userId": "s178dayez9mwwgvpf042g31jgd83kwbh",
+      "displayName": "solarspiker",
+      "image": "https://avatars.githubusercontent.com/u/235690575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1776169820180,
+      "changelog": "Version 1.7.0\n\n- Updated scripts/index.js (contents not detailed).\n- No changes to documentation or external behavior described in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c30aa1243ebb113777e423cb8c9d5bd836307687575192f6bc6ddb012281087f"
+}

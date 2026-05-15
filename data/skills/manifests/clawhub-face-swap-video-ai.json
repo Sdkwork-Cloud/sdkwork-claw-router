@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49147,
+  "uuid": "skill-clawhub-face-swap-video-ai",
+  "skillKey": "clawhub-face-swap-video-ai",
+  "name": "Face Swap Video Ai",
+  "summary": "Get face-swapped videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"swap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.face_swap_video_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "Get face-swapped videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"swap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/face-swap-video-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "face-swap-video-ai",
+      "url": "https://clawhub.ai/skills/face-swap-video-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "face-swap-video-ai",
+    "url": "https://clawhub.ai/skills/face-swap-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/face-swap-video-ai-d096f8cc5f7a7e0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/face-swap-video-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-face-swap-video-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47c4659ac0a27781cf3f3340d0dcb04b4baddcb6bbff91a269b2737521967029",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:17:17.906Z"
+}

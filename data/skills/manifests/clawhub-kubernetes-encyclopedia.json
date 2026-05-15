@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38060,
+  "uuid": "skill-clawhub-kubernetes-encyclopedia",
+  "skillKey": "clawhub-kubernetes-encyclopedia",
+  "name": "Kubernetes Encyclopedia",
+  "summary": "Kubernetes documentation-first workflow for Kubernetes-specific questions, troubleshooting, command planning, cluster operations, workload/resource behavior,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_encyclopedia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kklouzal",
+      "features": [
+        "Kubernetes documentation-first workflow for Kubernetes-specific questions, troubleshooting, com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-encyclopedia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2928845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-encyclopedia",
+      "url": "https://clawhub.ai/skills/kubernetes-encyclopedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-encyclopedia",
+    "url": "https://clawhub.ai/skills/kubernetes-encyclopedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-encyclopedia-5186ed8c37b08a01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-encyclopedia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-encyclopedia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa7d0057212252980d61d7c531658883ae1b308b1baf1221f2ff78ef131d6530",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:43:42.365Z"
+}

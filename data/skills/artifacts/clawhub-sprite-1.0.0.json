@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sprite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprite",
+  "skill": {
+    "id": 70188,
+    "skillKey": "clawhub-sprite",
+    "name": "Sprite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprite",
+    "url": "https://clawhub.ai/skills/sprite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprite-4a046e33ecf7aced.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Sprite雪碧品牌历史、产品信息及市场对比，突出其柠檬酸橙味汽水领导地位与可口可乐公司布局。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412089688,
+      "changelog": "- 初始版本发布，详细介绍 Sprite（雪碧）作为柠檬酸橙味汽水的全球领导品牌。\n- 包含品牌历史、与 7 Up 等主要竞品的对比、产品线和市场表现。\n- 重点呈现 Sprite 与嘻哈及年轻流行文化的深度绑定，以及全球各区域的本地化策略。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70177f351f50df22d55e708b7ff7822245b7ff0d6964e7c3e57e2217022f3eee"
+}

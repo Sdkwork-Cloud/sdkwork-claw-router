@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61508,
+  "uuid": "skill-clawhub-stock-assistant",
+  "skillKey": "clawhub-stock-assistant",
+  "name": "stock-assistant",
+  "summary": "A股交易辅助工具，集行情查询、交易记录管理、盈亏分析于一体。 用于：(1) 查询A股实时行情 (2) 管理交易记录 (3) 计算持仓和盈亏 (4) 导入/导出CSV 代码目录：D:\\aicode\\stock-assistant（跨平台：代码会自动适配路径） 调用方式：from fetcher import get...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "退役前写代码的",
+      "features": [
+        "A股交易辅助工具，集行情查询、交易记录管理、盈亏分析于一体。 用于：(1) 查询A股实时行情 (2) 管理交易记录 (3) 计算持仓和盈亏 (4) 导入/导出CSV 代码目录：D:\\aico."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-assistant@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-assistant",
+      "url": "https://clawhub.ai/skills/stock-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-assistant",
+    "url": "https://clawhub.ai/skills/stock-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-assistant-7d8299fcd91c0d9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-assistant@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-assistant-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3422a4cac525f3b0d1b1a7a37cf8a3780090564d807246f471b141a8de57ffad",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:12:37.731Z"
+}

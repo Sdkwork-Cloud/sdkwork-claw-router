@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-alpha-feed@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_alpha_feed",
+  "skill": {
+    "id": 12106,
+    "skillKey": "clawhub-creator-alpha-feed",
+    "name": "Creator Alpha Feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-alpha-feed",
+    "url": "https://clawhub.ai/skills/creator-alpha-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-alpha-feed-95af4fec46bed765.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect and rank daily AI content for creator-focused publishing workflows. Use when users ask for AI topic scouting, KOL tracking (especially X/Twitter), practical tutorial picks, industry updates, or automated Feishu/Obsidian briefing pu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rotbit",
+      "userId": "publishers:rotbit",
+      "displayName": "rotbit",
+      "image": "https://avatars.githubusercontent.com/u/76201628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1860,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1770708985051,
+      "changelog": "Add structured Obsidian directory convention (01-日报/02-运行记录/03-文档) and enforce report placement + timestamp naming.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e852144f647fb47218265a8ac8b877686e829b2ad40470057c7c36a6394cac9c"
+}

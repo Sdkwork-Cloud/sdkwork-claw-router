@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27914,
+  "uuid": "skill-clawhub-dpi-upscaler-checker",
+  "skillKey": "clawhub-dpi-upscaler-checker",
+  "name": "Dpi Upscaler Checker",
+  "summary": "Check image DPI and intelligently upscale low-resolution images using super-resolution",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dpi_upscaler_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Check image DPI and intelligently upscale low-resolution images using super-resolution"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dpi-upscaler-checker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dpi-upscaler-checker",
+      "url": "https://clawhub.ai/skills/dpi-upscaler-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dpi-upscaler-checker",
+    "url": "https://clawhub.ai/skills/dpi-upscaler-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dpi-upscaler-checker-8ea97aa411e58970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dpi-upscaler-checker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dpi-upscaler-checker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c444d6977e18c26b9ff0d8e8c0fd97a9ca6e223dbe85d5e67db476fd88b206e0",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:39:37.824Z"
+}

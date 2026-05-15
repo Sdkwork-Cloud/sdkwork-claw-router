@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36416,
+  "uuid": "skill-clawhub-vistoya-fashion",
+  "skillKey": "clawhub-vistoya-fashion",
+  "name": "vistoya fashion search and shopping",
+  "summary": "Search and recommend real fashion products and brands across thousands of online stores via the Vistoya MCP. Use when the user wants to discover, compare, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vistoya_fashion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vistoya",
+      "features": [
+        "Search and recommend real fashion products and brands across thousands of online stores via the.",
+        "Use when the user wants to discover, compare, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vistoya-fashion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275310955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vistoya-fashion",
+      "url": "https://clawhub.ai/skills/vistoya-fashion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vistoya-fashion",
+    "url": "https://clawhub.ai/skills/vistoya-fashion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vistoya-fashion-24562aaf431becd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vistoya-fashion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vistoya-fashion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a0c28995c0fc3c91417f977005115078f9ea7e97a7549271783e55f96e31ea7",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:50:53.848Z"
+}

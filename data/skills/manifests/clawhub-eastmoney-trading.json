@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70403,
+  "uuid": "skill-clawhub-eastmoney-trading",
+  "skillKey": "clawhub-eastmoney-trading",
+  "name": "Eastmoney Trading",
+  "summary": "东方财富证券交易技能，支持自动登录、持仓查询、持仓分析、条件选股、买入、卖出、撤单、委托查询、资金查询等完整交易功能。使用 CDP 连接浏览器，支持验证码自动识别。⚠️ 高风险操作，需谨慎使用。",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenchaoqun",
+      "features": [
+        "东方财富证券交易技能，支持自动登录、持仓查询、持仓分析、条件选股、买入、卖出、撤单、委托查询、资金查询等完整交易功能。使用 CDP 连接浏览器，支持验证码自动识别。⚠️ 高风险操作，需谨慎使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-trading@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11999246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-trading",
+      "url": "https://clawhub.ai/skills/eastmoney-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-trading",
+    "url": "https://clawhub.ai/skills/eastmoney-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-trading-98f0672bbc652802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-trading@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-trading-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3c280d0f498c39ff23ea73d6a0d5f00abe2d5b3db03bcb232e41496502b7b73",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:19:15.826Z"
+}

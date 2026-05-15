@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pengyouquan-pangyu@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pengyouquan_pangyu",
+  "skill": {
+    "id": 57680,
+    "skillKey": "clawhub-pengyouquan-pangyu",
+    "name": "pengyouquan-pangyu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pengyouquan-pangyu",
+    "url": "https://clawhub.ai/skills/pengyouquan-pangyu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pengyouquan-pangyu-51d8323ca56e693f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user mentions \"胖鱼朋友圈\" and wants to write a WeChat Moments post. Analyzes user's past writing style from reference materials, guides through a conversational process to understand sharing needs, then generates style-consistent copy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rampagepeter",
+      "userId": "publishers:rampagepeter",
+      "displayName": "rampagepeter",
+      "image": "https://avatars.githubusercontent.com/u/11288470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770888360034,
+      "changelog": "**Critical update: Enforces strict, auditable file operation rules and lowers the style summary threshold for a more reliable and responsive user experience.**\n\n- 强化了文件写入操作规范，要求所有保存/积累行为必须实际写入文件，并严格要求「先写入、后确认」。\n- 增加【CRITICAL: File Operation Rules】和写入顺序，明确 posts.md 只能追加、style.md 需覆盖且写入需带元数据。\n- 风格总结（style.md）的触发门槛由5条降至3条文案，风格更新更加及时。\n- 明确生成/更新风格总结时的逻辑、时机及流程，包括文案计数策略和用户请求优先。\n- 优化积累材料与风格总结的判断、处理细节，确保材料积累和总结的可追溯性。\n- 内容轻微精简，流程描述更清晰，保障每次对用户的承诺都兑现。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c6cac741fdf132a0bce7b46d6f5f4084fb3aab27e90d1c8e9bb0d356beafabcf"
+}

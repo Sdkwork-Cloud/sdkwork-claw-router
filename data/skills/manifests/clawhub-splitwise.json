@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17835,
+  "uuid": "skill-clawhub-splitwise",
+  "skillKey": "clawhub-splitwise",
+  "name": "Splitwise",
+  "summary": "Create and manage expenses on Splitwise. Use this skill when the user wants to log a new expense, split a bill, or check their Splitwise balance.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.splitwise",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richie Foreman",
+      "features": [
+        "Create and manage expenses on Splitwise",
+        "Use this skill when the user wants to log a new expense, split a bill, or check their Splitwise."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/splitwise@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1050799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "splitwise",
+      "url": "https://clawhub.ai/skills/splitwise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "splitwise",
+    "url": "https://clawhub.ai/skills/splitwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/splitwise-b404beee516203b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/splitwise@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-splitwise-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57fd68d13406d955aab581b41ad620007efb6467e1b2c2ddb7d79a20812bdf14",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T22:21:44.314Z"
+}

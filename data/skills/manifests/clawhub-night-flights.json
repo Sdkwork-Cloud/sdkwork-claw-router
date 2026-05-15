@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55855,
+  "uuid": "skill-clawhub-night-flights",
+  "skillKey": "clawhub-night-flights",
+  "name": "Search Late Night & Red Eye Flights — Overnight, After-Midnight, Late Evening Departures",
+  "summary": "Find overnight and late-night departure flights — often 20-40% cheaper than daytime. Save a hotel night by flying while you sleep. Also supports: flight book...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.night_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find overnight and late-night departure flights — often 20-40% cheaper than daytime",
+        "Save a hotel night by flying while you sleep",
+        "Also supports: flight book..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/night-flights@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "night-flights",
+      "url": "https://clawhub.ai/skills/night-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "night-flights",
+    "url": "https://clawhub.ai/skills/night-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/night-flights-f5238408e90b2edc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/night-flights@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-night-flights-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4415a17ff0ba0d63001556ceb1abaac32d2fccc28423c92d58329c97dfff05ad",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:42:13.779Z"
+}

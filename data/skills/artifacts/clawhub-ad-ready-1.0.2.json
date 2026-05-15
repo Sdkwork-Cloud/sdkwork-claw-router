@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-ready@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_ready",
+  "skill": {
+    "id": 10788,
+    "skillKey": "clawhub-ad-ready",
+    "name": "Ad-Ready"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-ready",
+    "url": "https://clawhub.ai/skills/ad-ready",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-ready-c0d0d604f28bcdb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate advertising images automatically from a product URL + brand profile. ✅ USE WHEN: - User provides a product URL (e-commerce link) - Want automated product scraping + image generation - Have a brand profile to apply (70+ brands avai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2931,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770859191124,
+      "changelog": "Improved routing: URL-based vs file-based differentiation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce7d7e2fa13cf70e52077ceb2ce89bf186f65eb013dfdde3e3b9ba6d5d1eba93"
+}

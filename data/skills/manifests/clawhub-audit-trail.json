@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53925,
+  "uuid": "skill-clawhub-audit-trail",
+  "skillKey": "clawhub-audit-trail",
+  "name": "Audit Trail",
+  "summary": "Governance — immutable, timestamped, hash-chained audit log of all agent actions. Forensic-ready for compliance, investigation, and accountability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_trail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adnane Arharbi",
+      "features": [
+        "Governance — immutable, timestamped, hash-chained audit log of all agent actions",
+        "Forensic-ready for compliance, investigation, and accountability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audit-trail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14889338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audit-trail",
+      "url": "https://clawhub.ai/skills/audit-trail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-trail",
+    "url": "https://clawhub.ai/skills/audit-trail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-trail-3b1124832a9b0e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audit-trail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audit-trail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9cac9740fa5a7f87804c7509158ea0c9a2542167a96a1d4748258e7827bd2c8",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T21:51:31.785Z"
+}

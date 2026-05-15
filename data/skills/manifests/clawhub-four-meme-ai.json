@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14235,
+  "uuid": "skill-clawhub-four-meme-ai",
+  "skillKey": "clawhub-four-meme-ai",
+  "name": "FourMeme",
+  "summary": "CLI tool for creating and trading meme tokens on Four.Meme (BSC), with structured JSON outputs for config, token details, pricing quotes, on-chain events, an...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.four_meme_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fourmeme",
+      "features": [
+        "CLI tool for creating and trading meme tokens on Four.Meme (BSC), with structured JSON outputs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/four-meme-ai@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239776964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "four-meme-ai",
+      "url": "https://clawhub.ai/skills/four-meme-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "four-meme-ai",
+    "url": "https://clawhub.ai/skills/four-meme-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/four-meme-ai-8d4582d9085626a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/four-meme-ai@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-four-meme-ai-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b52abae2b08905402967f33845ce8babc1147e1eae89fedae9bbd0c9622755d6",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:41:02.228Z"
+}

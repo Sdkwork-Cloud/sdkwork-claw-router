@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-pet-mmwave-analyzer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_pet_mmwave_analyzer",
+  "skill": {
+    "id": 35069,
+    "skillKey": "clawhub-s2-pet-mmwave-analyzer",
+    "name": "Multimodal Pet Health Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-pet-mmwave-analyzer",
+    "url": "https://clawhub.ai/skills/s2-pet-mmwave-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-pet-mmwave-analyzer-d1d2565046682fa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms mmWave radar data into pet health metrics by detecting micro-movements, fusing environmental data, and enabling automatic spatial adjustments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774084507499,
+      "changelog": "S2-Pet-mmWave-Analyzer v1.1.0\n\n- Added a requirements.txt file to specify and simplify installation of needed dependencies.\n- Updated documentation to include explicit installation steps and stress the need for installing scientific computing libraries (numpy, scipy, matplotlib).\n- Clarified the architecture, highlighting the deliberate use of data simulation for cloud/sandbox environments.\n- Shifted technical focus in documentation to installation and deployment, while retaining concise pipeline and architecture summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c1f23101b50b9e3ae0b3d40524b9a575fead79ea03ab7be4d98d2958f13aa71"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70415,
+  "uuid": "skill-clawhub-data-report-outline",
+  "skillKey": "clawhub-data-report-outline",
+  "name": "Report Outline",
+  "summary": "在有了研究大纲后使用。将研究大纲转化为详细的报告结构和执行计划，明确每个章节的内容、数据来源、分析方法。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_report_outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingginwan",
+      "features": [
+        "在有了研究大纲后使用。将研究大纲转化为详细的报告结构和执行计划，明确每个章节的内容、数据来源、分析方法。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-report-outline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91401222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-report-outline",
+      "url": "https://clawhub.ai/skills/data-report-outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-report-outline",
+    "url": "https://clawhub.ai/skills/data-report-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-report-outline-803fe3adfc4ccac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-report-outline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-report-outline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0063624f39073b7f41aee13bc68b9d282da54208b15e21257793347f9a34ab2",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:15:06.320Z"
+}

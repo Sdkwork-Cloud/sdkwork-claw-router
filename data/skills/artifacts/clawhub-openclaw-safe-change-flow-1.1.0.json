@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-safe-change-flow@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_change_flow",
+  "skill": {
+    "id": 20944,
+    "skillKey": "clawhub-openclaw-safe-change-flow",
+    "name": "OpenClaw Safe Change Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-change-flow",
+    "url": "https://clawhub.ai/skills/openclaw-safe-change-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-change-flow-053913b4c8f703ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe OpenClaw config change workflow with backup, minimal edits, validation, health checks, and rollback. Single-instance first; secondary instance optional."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1987566643",
+      "userId": "publishers:1987566643",
+      "displayName": "1987566643",
+      "image": "https://avatars.githubusercontent.com/u/51523972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773116004237,
+      "changelog": "Security hardening: remove inline command execution (`bash -lc`) and use script-file entrypoints only; require SECONDARY_TOKEN via environment variable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2632b45702eb622a523cee0745623c61408b65c3cb37462844e03a5d6c04f54a"
+}

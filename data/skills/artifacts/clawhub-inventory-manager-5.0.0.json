@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inventory-manager@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_manager",
+  "skill": {
+    "id": 18426,
+    "skillKey": "clawhub-inventory-manager",
+    "name": "Inventory Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-manager",
+    "url": "https://clawhub.ai/skills/inventory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-manager-859f9d94edb272df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inventory management reference — SKU systems, FIFO/LIFO valuation, barcode formats, ABC analysis, EOQ formula, and WMS migration"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1347,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1774226678125,
+      "changelog": "Clean package with matching SKILL.md and script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:778dfb964d7eec4f109532e1e4ff177d0fb0e27ff64e3757619f5eae99f2d17b"
+}

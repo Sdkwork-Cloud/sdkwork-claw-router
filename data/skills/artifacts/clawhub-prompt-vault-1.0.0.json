@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_vault",
+  "skill": {
+    "id": 28390,
+    "skillKey": "clawhub-prompt-vault",
+    "name": "PromptVault Team Prompt Library"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-vault",
+    "url": "https://clawhub.ai/skills/prompt-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-vault-17a725e5cf831688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize, rate, and share prompts with your team. Never lose a great prompt again. Centralized prompt management with search, tags, and ratings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773268214734,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f39af7aa4529f03eb7e8cd9334824f2db8f4d8c1717b5a82fe0dff2fde4925f8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10004,
+  "uuid": "skill-clawhub-opencode",
+  "skillKey": "clawhub-opencode",
+  "name": "OpenCode AI",
+  "summary": "OpenCode AI - AI-driven code editor/IDE (CLI/TUI version of Cursor/Windsurf). Use when: (1) AI-assisted coding tasks, (2) Code refactoring with AI, (3) GitHu...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Lei",
+      "features": [
+        "OpenCode AI",
+        "AI-driven code editor/IDE (CLI/TUI version of Cursor/Windsurf)",
+        "Use when: (1) AI-assisted coding tasks, (2) Code refactoring with AI, (3) GitHu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16048250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode",
+      "url": "https://clawhub.ai/skills/opencode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode",
+    "url": "https://clawhub.ai/skills/opencode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-62f8e1ec095e1857.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3faef417d6d7949352d45b9a2fce005378537e0fec58f6300fffef414c40a02",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:07:53.812Z"
+}

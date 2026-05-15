@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-fba-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_fba_finder",
+  "skill": {
+    "id": 66528,
+    "skillKey": "clawhub-amazon-fba-finder",
+    "name": "Amazon FBA Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-fba-finder",
+    "url": "https://clawhub.ai/skills/amazon-fba-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-fba-finder-bc28779fd32dd87d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助亚马逊卖家发现高利润FBA产品，分析竞争，推荐供应商，并精确计算利润率和投资回报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvjunjie-byte",
+      "userId": "s17f7spafdf99xa1wkgwbztec183t877",
+      "displayName": "lvjunjie-byte",
+      "image": "https://avatars.githubusercontent.com/u/59714416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773561072192,
+      "changelog": "v1.0.0 - Initial release with product discovery, competition analysis, supplier recommendations, and FBA profit calculator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:103badc273edcfed361a2eadcc826c57a0ae2092f31e930c2f86f1464df652e0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comic-to-realistic@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comic_to_realistic",
+  "skill": {
+    "id": 33204,
+    "skillKey": "clawhub-comic-to-realistic",
+    "name": "Comic To Realistic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comic-to-realistic",
+    "url": "https://clawhub.ai/skills/comic-to-realistic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comic-to-realistic-2db2ee0a7c35444a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert comic or anime character images into high-quality, realistic portraits while preserving key facial features and expressions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maweis1981",
+      "userId": "s1712syt9cdt0t39k36zcs6gvs83tee1",
+      "displayName": "Patronum",
+      "image": "https://avatars.githubusercontent.com/u/68876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774957879178,
+      "changelog": "- Updated preview section with new example images showcasing both comic and realistic styles.\n- No changes made to features, functionality, or inputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:515d05fb2e6879f6e9e0b5a5650bc1ae330a9b36bd5234bba2ba193f255c79ff"
+}

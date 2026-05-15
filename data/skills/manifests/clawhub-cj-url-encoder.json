@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62894,
+  "uuid": "skill-clawhub-cj-url-encoder",
+  "skillKey": "clawhub-cj-url-encoder",
+  "name": "url编解码",
+  "summary": "快速对文本或 URL 进行 Encode (编码) 和 Decode (解码) 操作，解决中文乱码和特殊字符传输问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cj_url_encoder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mark.cj",
+      "features": [
+        "快速对文本或 URL 进行 Encode (编码) 和 Decode (解码) 操作，解决中文乱码和特殊字符传输问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cj-url-encoder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22016345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cj-url-encoder",
+      "url": "https://clawhub.ai/skills/cj-url-encoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cj-url-encoder",
+    "url": "https://clawhub.ai/skills/cj-url-encoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cj-url-encoder-534263b151ba5ff1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cj-url-encoder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cj-url-encoder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c78ff706545e07371ed60068d1f70b12508b00c0c5caeafaded1b987f4f06587",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:57:14.176Z"
+}

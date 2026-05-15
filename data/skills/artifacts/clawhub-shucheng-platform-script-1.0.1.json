@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shucheng-platform-script@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shucheng_platform_script",
+  "skill": {
+    "id": 63036,
+    "skillKey": "clawhub-shucheng-platform-script",
+    "name": "Platform Script Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shucheng-platform-script",
+    "url": "https://clawhub.ai/skills/shucheng-platform-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shucheng-platform-script-01edcdc807da47bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供自研业务平台的脚本模板和编码规范。当用户需要编写 Groovy 后端脚本、JavaScript 表单脚本、SQL 查询、附件处理等代码时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lan2898408767",
+      "userId": "s171zfb64w6rnnwcbc72p7ecxx83pw2h",
+      "displayName": "Lan2898408767",
+      "image": "https://avatars.githubusercontent.com/u/134391587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774667032675,
+      "changelog": "优化搜索关键词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44045a4b67d7faaf73e6a83b02e1af22be2a630e0e3efd16107b9a7c5fdefa87"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infinite-memory-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infinite_memory_v2",
+  "skill": {
+    "id": 51752,
+    "skillKey": "clawhub-infinite-memory-v2",
+    "name": "infinite memory locall rag system for"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infinite-memory-v2",
+    "url": "https://clawhub.ai/skills/infinite-memory-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infinite-memory-v2-578f4ff9905c7f71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-precision memory with 100% recall accuracy for long contexts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhndayesh",
+      "userId": "publishers:mhndayesh",
+      "displayName": "mhndayesh",
+      "image": "https://avatars.githubusercontent.com/u/206111602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771919940391,
+      "changelog": "- Added \"curl\" to the required dependencies.\n- Streamlined and shortened the description for tools and features.\n- Condensed setup and usage instructions for improved clarity.\n- Removed detailed agent instructions and database location notes for a more concise overview.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e54433c7ad0955815f464e65b0a60147c8164189bf047423567460d17394037"
+}

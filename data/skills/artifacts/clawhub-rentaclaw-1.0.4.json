@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rentaclaw@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rentaclaw",
+  "skill": {
+    "id": 46757,
+    "skillKey": "clawhub-rentaclaw",
+    "name": "Rentaclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rentaclaw",
+    "url": "https://clawhub.ai/skills/rentaclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rentaclaw-0af7ebb74c0ae07d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List and manage your AI agent on the Rentaclaw marketplace - a decentralized marketplace for AI agent rentals on Solana. Earn SOL by renting out your agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buildwithrekt",
+      "userId": "publishers:buildwithrekt",
+      "displayName": "rekt",
+      "image": "https://avatars.githubusercontent.com/u/73000712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773184413381,
+      "changelog": "- Initial release of the Rentaclaw skill.\n- List and manage your AI agent on the decentralized Rentaclaw marketplace on Solana.\n- Features include: agent setup, listing creation, status checking, earnings/statistics viewing, listing updates, and pause/resume controls.\n- Supports agent pricing options and provides example conversational flows for integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4296bc987a72a0b1bf8700dd6512335cbf6634379dad438da2b2fb5b9f9442e8"
+}

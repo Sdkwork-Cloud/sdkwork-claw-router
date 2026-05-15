@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_analyzer",
+  "skill": {
+    "id": 71351,
+    "skillKey": "clawhub-paper-analyzer",
+    "name": "Paper Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-analyzer",
+    "url": "https://clawhub.ai/skills/paper-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-analyzer-c43b6e28e307970c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术论文结构化阅读、拆解与分析工具。基于12个阅读要素（研究背景、研究问题、研究结论、文献综合、文献批评、研究方法、理论视角与理论框架、一致性发现、不一致性发现、研究贡献、研究不足、未来研究展望）对论文进行深度拆解，结果保存为Excel文件。当用户提到需要针对论文/文献/paper进行拆解、解析、分析、阅读、梳理..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yipng05-max",
+      "userId": "s17e7y2rfdj7a3t1zc44g22dk983ncaz",
+      "displayName": "yipng05-max",
+      "image": "https://avatars.githubusercontent.com/u/256726987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773821086404,
+      "changelog": "学术论文结构化拆解工具，基于12个维度深度分析论文并输出Excel报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d49d9fe96f42bcd5f2cc2ed4a9a966993eba133663437711da99972c5b72b2ec"
+}

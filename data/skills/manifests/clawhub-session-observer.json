@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31276,
+  "uuid": "skill-clawhub-session-observer",
+  "skillKey": "clawhub-session-observer",
+  "name": "Session Observer",
+  "summary": "Observe OpenClaw session usage, token consumption, context pressure, and model/runtime state. Use when the user asks about token usage, context size, model i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_observer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qsczseasd",
+      "features": [
+        "Observe OpenClaw session usage, token consumption, context pressure, and model/runtime state",
+        "Use when the user asks about token usage, context size, model i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-observer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45473573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-observer",
+      "url": "https://clawhub.ai/skills/session-observer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-observer",
+    "url": "https://clawhub.ai/skills/session-observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-observer-f75c3ea0d50e0f65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-observer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-observer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032400fc84dd13be78f1d27c930b3fa2754c5cfd8e68e481b1c479b33fa8c2af",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:50:47.337Z"
+}

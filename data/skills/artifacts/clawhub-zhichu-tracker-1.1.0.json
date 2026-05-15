@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhichu-tracker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhichu_tracker",
+  "skill": {
+    "id": 67941,
+    "skillKey": "clawhub-zhichu-tracker",
+    "name": "Smart Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhichu-tracker",
+    "url": "https://clawhub.ai/skills/zhichu-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhichu-tracker-3e54a7ea43a76059.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能收支追踪器 — 通过自然语言快速记账，自动分类，生成日/周/月报告和趋势分析。 支持中文自然语言输入(\"今天午饭花了35元\")，数据本地JSON存储保护隐私。 适用于个人财务管理、预算追踪和消费分析场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dyby99-gif",
+      "userId": "publishers:dyby99-gif",
+      "displayName": "dyby99-gif",
+      "image": "https://avatars.githubusercontent.com/u/257656835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772433896393,
+      "changelog": "v1.1.0: 隐私保护增强 — 数据文件权限设为600，数据目录权限设为700，仅文件所有者可访问。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:606eeda1423799b55d8b1a772c1bc098e058c48adf571a33f63b3c75fa3a3cf7"
+}

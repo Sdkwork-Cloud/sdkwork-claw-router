@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-agent-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_agent_skill",
+  "skill": {
+    "id": 19310,
+    "skillKey": "clawhub-phone-agent-skill",
+    "name": "Phone agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-agent-skill",
+    "url": "https://clawhub.ai/skills/phone-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-agent-skill-4240511b373ed099.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use AI AutoGLM Phone Agent for automated mobile device control. Suitable for tasks requiring mobile phone automation, such as APP automated testing, data col..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaojizhou",
+      "userId": "publishers:gaojizhou",
+      "displayName": "gaojizhou",
+      "image": "https://avatars.githubusercontent.com/u/58933313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772583919266,
+      "changelog": "- Initial release of AutoGLM Phone Agent skill.\n- Enables natural language control of Android devices via the AutoGLM Phone Agent SDK.\n- Supports actions such as tapping, swiping, typing, launching apps, taking screenshots, and reading UI text.\n- Includes detailed prerequisite, setup, and usage instructions.\n- Provides troubleshooting guidance and safety best practices.\n- Designed for mobile automation tasks like app testing, UI interaction, and data collection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2810b1999ba9574606c2d71337dc46b70a5f6e51b76f0879fce3d70c41d4810"
+}

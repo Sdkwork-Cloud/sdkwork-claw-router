@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkding@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkding",
+  "skill": {
+    "id": 11137,
+    "skillKey": "clawhub-linkding",
+    "name": "Linkding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkding",
+    "url": "https://clawhub.ai/skills/linkding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkding-5143f03950b25f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage bookmarks with Linkding. Use when the user asks to \"save a bookmark\", \"add link\", \"search bookmarks\", \"list my bookmarks\", \"find saved links\", \"tag a bookmark\", \"archive bookmark\", \"check if URL is saved\", \"list tags\", \"create bundl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmagar",
+      "userId": "publishers:jmagar",
+      "displayName": "jmagar",
+      "image": "https://avatars.githubusercontent.com/u/38927646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2169,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769203199974,
+      "changelog": "- Added README.md file.\n- Added explicit version field (1.0.1) to SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fdb09b2111ec333f4b48c32f9931781eeca1dd4653d32207bcb991b902aa89e"
+}

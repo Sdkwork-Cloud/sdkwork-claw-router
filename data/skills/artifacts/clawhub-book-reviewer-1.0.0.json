@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_reviewer",
+  "skill": {
+    "id": 72142,
+    "skillKey": "clawhub-book-reviewer",
+    "name": "Book Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-reviewer",
+    "url": "https://clawhub.ai/skills/book-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-reviewer-824dd9b954129a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为文学类书籍生成有温度、有深度的书评及微信公众号文章。聚焦文学作品的精神内核，结合真实生活体验做诗意解读，以感性与理性交织的视角呈现文学之美，适配微信公众号发布场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueda",
+      "userId": "s17esmz2rjkjt1twh7adaessj583jwms",
+      "displayName": "三昧",
+      "image": "https://avatars.githubusercontent.com/u/22470505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436868711,
+      "changelog": "- Initial release of the book-reviewer skill.\n- Generates in-depth, emotionally resonant literary book reviews suitable for WeChat public accounts.\n- Focuses on the spiritual core of literature and personal reading experiences, blending emotional and rational perspectives.\n- Emphasizes authentic, conversation-like expression and avoids cliché or formulaic structures.\n- Provides clear guidance on style, forbidden topics, and review composition.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66e8a715212c3c335cd8f893680207595c68a6c90a565ac5f5da47ccb06365dd"
+}

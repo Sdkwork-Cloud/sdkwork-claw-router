@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/impressionist-art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.impressionist_art_generator",
+  "skill": {
+    "id": 41314,
+    "skillKey": "clawhub-impressionist-art-generator",
+    "name": "Impressionist Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "impressionist-art-generator",
+    "url": "https://clawhub.ai/skills/impressionist-art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/impressionist-art-generator-45e42e65b4024a3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate stunning impressionist-style art in the tradition of Monet, Renoir, Van Gogh, Degas, and Pissarro. Perfect for wall art, Etsy prints, art education,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776854764319,
+      "changelog": "- Initial release of Impressionist Art Generator.\n- Create impressionist-style artwork inspired by Monet, Renoir, Van Gogh, Degas, and Pissarro.\n- Supports custom prompts, various sizes, and reference image style inheritance.\n- Integrates with the Neta AI image generation API (free trial available).\n- Ideal for wall art, Etsy prints, art education, and 19th-century impressionism aesthetics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2af80d84039804fcd3ecb53d3d881f4204238d50cea2ebff7d3c2b2cf19457e"
+}

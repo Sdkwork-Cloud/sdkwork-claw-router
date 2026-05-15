@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-validate@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_validate",
+  "skill": {
+    "id": 17096,
+    "skillKey": "clawhub-solo-validate",
+    "name": "Validate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-validate",
+    "url": "https://clawhub.ai/skills/solo-validate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-validate-08a6643c3cba3f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score startup idea through S.E.E.D. niche check + STREAM 6-layer analysis + Devil's Advocate inversion, auto-pick stack, and generate PRD with acceptance cri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunto2",
+      "userId": "publishers:fortunto2",
+      "displayName": "Rust",
+      "image": "https://avatars.githubusercontent.com/u/1236751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 815,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1771711662056,
+      "changelog": "Universalize: remove project-specific references, add SearXNG recommendation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c6b5999e84ebbe5dac83e318cc8a1adc1d000852652e9dec89eaa099d66d686"
+}

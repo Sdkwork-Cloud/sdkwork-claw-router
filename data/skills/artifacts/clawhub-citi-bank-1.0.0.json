@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/citi-bank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citi_bank",
+  "skill": {
+    "id": 49308,
+    "skillKey": "clawhub-citi-bank",
+    "name": "Citi Bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citi-bank",
+    "url": "https://clawhub.ai/skills/citi-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citi-bank-935c43dad7cb9d84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Citigroup is a global US bank with operations in 95+ countries, specializing in institutional banking, trade finance, emerging markets, and wealth management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778065454801,
+      "changelog": "- Initial release of the citi-bank skill, focused on Citigroup Inc.\n- Includes a detailed company timeline, highlighting major historical events.\n- Covers Citigroup’s business model with emphasis on global diversification and institutional banking.\n- Features moat analysis including global footprint, dollar clearing, and transaction banking leadership.\n- Provides key data: assets, revenue, country presence, employee count, and credit card portfolio.\n- Shares interesting fact about the origin and meaning of Citigroup’s iconic red umbrella logo.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e19366ed980fda8285d80e09fa22a2441dce680ec25fa33df3b3e4950a8db9e1"
+}

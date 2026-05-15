@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33893,
+  "uuid": "skill-clawhub-beta-ta-signal-engine",
+  "skillKey": "clawhub-beta-ta-signal-engine",
+  "name": "Beta TA Signal Engine",
+  "summary": "Generate technical-analysis trade setups from OHLCV CSV using SMA/EMA/RSI/MACD/ATR with clear entry, stop, target, and position size.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beta_ta_signal_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Generate technical-analysis trade setups from OHLCV CSV using SMA/EMA/RSI/MACD/ATR with clear e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beta-ta-signal-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beta-ta-signal-engine",
+      "url": "https://clawhub.ai/skills/beta-ta-signal-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beta-ta-signal-engine",
+    "url": "https://clawhub.ai/skills/beta-ta-signal-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beta-ta-signal-engine-5e54c850cbb01ac3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beta-ta-signal-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beta-ta-signal-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21dbcc3881d826854031c4e2fb94325b448b9a891a79e0a9d6250bde47760531",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:46:16.588Z"
+}

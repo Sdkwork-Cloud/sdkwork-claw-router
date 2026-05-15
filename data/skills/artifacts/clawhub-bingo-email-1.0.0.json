@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bingo-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bingo_email",
+  "skill": {
+    "id": 65718,
+    "skillKey": "clawhub-bingo-email",
+    "name": "Bingo Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bingo-email",
+    "url": "https://clawhub.ai/skills/bingo-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bingo-email-97ba8ff852c1e9eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一邮件管理技能，用于读取、发送、回复、转发邮件，以及管理草稿箱和文件夹。 当用户提到\"读邮件\"、\"发邮件\"、\"回复\"、\"草稿箱\"、\"未读邮件\"、\"收件箱\"、 \"邮箱\"等任何与电子邮件相关的操作时，使用此技能。替代 himalaya CLI， 全部使用 Python 脚本操作任意 IMAP/SMTP 邮箱（腾讯企..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soulcoolzzz",
+      "userId": "s1764zv533bkzek5gzz8nex6sn83gvgb",
+      "displayName": "soulcoolzzz",
+      "image": "https://avatars.githubusercontent.com/u/145415318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775407349701,
+      "changelog": "bingo-email 1.0.0 — 首发版，支持全功能统一邮箱操作\n\n- 新增通过 Python 脚本操作任意 IMAP/SMTP 邮箱的全流程管理\n- 支持收发、回复、转发、草稿、新建移动删除邮件及文件夹管理\n- 针对 126/163 网易邮箱自动启用 IMAP ID (RFC 2971) 特殊兼容\n- 纯 Python 依赖（imapclient），配置文件明文安全（自动 chmod 600）\n- 支持多邮箱、Reply-All、自动 inline quote、会话线程归并\n- 交互式引导，包括环境检测、依赖安装、初始化与连接测试\n- 输出标准化，支持脚本调用和 AI 自动处理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4d18bf8f3ce4182d34a504783be1edec7485dddedde38a8a2d561c40478188b"
+}

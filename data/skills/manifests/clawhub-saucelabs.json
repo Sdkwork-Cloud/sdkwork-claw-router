@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25871,
+  "uuid": "skill-clawhub-saucelabs",
+  "skillKey": "clawhub-saucelabs",
+  "name": "Saucelabs",
+  "summary": "SauceLabs integration. Manage Users, Organizations, Files, Notes, Activities. Use when the user wants to interact with SauceLabs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saucelabs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SauceLabs integration",
+        "Manage Users, Organizations, Files, Notes, Activities",
+        "Use when the user wants to interact with SauceLabs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saucelabs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saucelabs",
+      "url": "https://clawhub.ai/skills/saucelabs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saucelabs",
+    "url": "https://clawhub.ai/skills/saucelabs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saucelabs-c9bfe8926d60ef81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saucelabs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-saucelabs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9d03c0dac0d214c04ccd0d013be5285040a2fca2f8968bf32cddcdf8a222673",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:37:31.532Z"
+}

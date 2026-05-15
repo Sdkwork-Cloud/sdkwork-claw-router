@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cryptofolio@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptofolio",
+  "skill": {
+    "id": 62657,
+    "skillKey": "clawhub-cryptofolio",
+    "name": "cryptofolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptofolio",
+    "url": "https://clawhub.ai/skills/cryptofolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptofolio-6b0a3298eae5307b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密资产管理助手 - 通过对话记录持仓、交易、理财，支持导出 CSV/Excel"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christinafanxy",
+      "userId": "s17fap0mc2ve487mjbnm9r01e183j7q2",
+      "displayName": "Christina Fanxy",
+      "image": "https://avatars.githubusercontent.com/u/85915516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773070004637,
+      "changelog": "- Initial release of cryptofolio skill.\n- Added documentation files: README.md and SKILL.md.\n- Introduced Cloudflare Worker support with setup instructions and example worker files.\n- Provided scripts and configuration for cloud syncing and multi-device data management.\n- Removed old markdown files (readme.md, skill.md) in favor of new naming and updated content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f567ce1a2fcae1b664c03b823562a0773353dc60f2ecf6a5b57ecaadb40a5d44"
+}

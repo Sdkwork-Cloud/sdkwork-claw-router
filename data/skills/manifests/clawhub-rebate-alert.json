@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73578,
+  "uuid": "skill-clawhub-rebate-alert",
+  "skillKey": "clawhub-rebate-alert",
+  "name": "返利提醒官",
+  "summary": "返利信息实时提醒工具，追踪高返商品限时活动、返利到账状态、优惠券过期预警，确保不错过任何省钱机会。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebate_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "返利信息实时提醒工具，追踪高返商品限时活动、返利到账状态、优惠券过期预警，确保不错过任何省钱机会。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rebate-alert@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rebate-alert",
+      "url": "https://clawhub.ai/skills/rebate-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebate-alert",
+    "url": "https://clawhub.ai/skills/rebate-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebate-alert-4d85d59168d4c54e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rebate-alert@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rebate-alert-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94a0c5e2d7ea01c021622b8d205bd1a04fbf2976886146299b26b50fa304f073",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:16:15.212Z"
+}

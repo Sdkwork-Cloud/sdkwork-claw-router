@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kmb-bus-arrival@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kmb_bus_arrival",
+  "skill": {
+    "id": 21262,
+    "skillKey": "clawhub-kmb-bus-arrival",
+    "name": "KMB and LWB Bus Arrivals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kmb-bus-arrival",
+    "url": "https://clawhub.ai/skills/kmb-bus-arrival",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kmb-bus-arrival-b06d965c78fb7051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get real-time KMB bus arrival times by route, direction, and stop using the official API for accurate next bus ETAs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenho1394",
+      "userId": "s17bfk0ef12w09pdqpw6wghae183eqa8",
+      "displayName": "Steven Ho",
+      "image": "https://avatars.githubusercontent.com/u/75365123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1778219658082,
+      "changelog": "No changes detected since the previous release.\n\n- No file or documentation updates in this version.\n- Functionality, tools, and implementation remain the same as v1.1.9.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:558a5fdabc42816b4bf3256df52ddf05e0b3992adcb9283ddc329615b2400dba"
+}

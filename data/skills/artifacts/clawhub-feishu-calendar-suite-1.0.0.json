@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-calendar-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_calendar_suite",
+  "skill": {
+    "id": 73460,
+    "skillKey": "clawhub-feishu-calendar-suite",
+    "name": "飞书日历管理工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-calendar-suite",
+    "url": "https://clawhub.ai/skills/feishu-calendar-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-calendar-suite-a0102235c6137b2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书日历与日程管理工具集。包含日历管理、日程管理、参会人管理、忙闲查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3152557994-ship-it",
+      "userId": "s173ar224xha1b0e8jxxvg0r2985aes9",
+      "displayName": "a3152557994-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248589521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012477308,
+      "changelog": "feishu-calendar-suite 1.0.0\n\n- Initial release of 飞书日历与日程管理工具集，支持日历管理、日程管理、参会人管理和忙闲查询。\n- 提供详细参数指南和示例，明确各类 ID 格式、权限说明及常见用法。\n- 内含常见错误排查和背景架构知识，方便快速上手与排错。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2478f547a642a660f89502d9de20978c7d2262f28d64821d7c1540748dd7509b"
+}

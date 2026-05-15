@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-validation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_validation",
+  "skill": {
+    "id": 10287,
+    "skillKey": "clawhub-data-validation",
+    "name": "Data Validation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-validation",
+    "url": "https://clawhub.ai/skills/data-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-validation-5c6d4c4ece388ddd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate data with schemas across languages and formats. Use when defining JSON Schema, using Zod (TypeScript) or Pydantic (Python), validating API request/response shapes, checking CSV/JSON data integrity, or setting up data contracts bet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2536,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770158588475,
+      "changelog": "Initial release: JSON Schema, Zod (TypeScript), Pydantic (Python), CSV/JSON integrity checks, migration validation, API boundary validation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae929ef42638a524e78fac95e0233ff0d20b91d694b636b08a02020f19e351ba"
+}

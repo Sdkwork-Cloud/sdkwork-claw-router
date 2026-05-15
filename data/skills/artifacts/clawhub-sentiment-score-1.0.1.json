@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentiment-score@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentiment_score",
+  "skill": {
+    "id": 16660,
+    "skillKey": "clawhub-sentiment-score",
+    "name": "Sentiment Score"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentiment-score",
+    "url": "https://clawhub.ai/skills/sentiment-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentiment-score-72fedd5417181e1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze text sentiment on a scale from -1 (negative) to +1 (positive) using Expanso Edge pipelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aronchick",
+      "userId": "publishers:aronchick",
+      "displayName": "Expanso",
+      "image": "https://avatars.githubusercontent.com/u/51317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 852,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771188227689,
+      "changelog": "- Updated skill.yaml metadata for clarity and accuracy.\n- No changes to functionality or usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aab137fd698950e1ed7ab4230d8cc732f9fec640f19bda8b504e5ac7710b56ca"
+}

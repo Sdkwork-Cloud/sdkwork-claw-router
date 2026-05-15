@@ -1,12 +1,15 @@
 use crate::domain::{
     AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, GatewayAccessPolicy,
     GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
-    QuotaPolicy,
+    ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 
 pub trait PricingCatalog {
     fn list_models(&self, vendor_code: Option<&str>) -> Vec<AiModel>;
     fn list_provider_routes(&self, model: &str) -> Vec<ModelProviderRoute>;
+    fn list_provider_account_pool_routes(&self) -> Vec<ProviderAccountPoolRoute>;
+    fn list_routing_policies(&self) -> Vec<RoutingPolicy>;
+    fn list_routing_rules(&self, profile_id: i64) -> Vec<RoutingRule>;
     fn list_api_keys(&self) -> Vec<GatewayApiKey>;
     fn list_api_key_groups(&self) -> Vec<ApiKeyGroup>;
     fn list_model_prices(

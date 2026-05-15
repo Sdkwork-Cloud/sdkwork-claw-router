@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65229,
+  "uuid": "skill-clawhub-openclaw-recovery",
+  "skillKey": "clawhub-openclaw-recovery",
+  "name": "OpenClaw Recovery",
+  "summary": "跨平台自动备份与健康监控OpenClaw配置，崩溃时自动回滚并发送系统通知，确保服务持续稳定运行。",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoyoyosan",
+      "features": [
+        "跨平台自动备份与健康监控OpenClaw配置，崩溃时自动回滚并发送系统通知，确保服务持续稳定运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-recovery@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274874620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-recovery",
+      "url": "https://clawhub.ai/skills/openclaw-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-recovery",
+    "url": "https://clawhub.ai/skills/openclaw-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-recovery-bfcc91e1fcb407c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-recovery@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-recovery-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a91f461295a664a7a0ed7f5cce93d8be989fe14fee5f4702b2642820236243ae",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:16:07.795Z"
+}

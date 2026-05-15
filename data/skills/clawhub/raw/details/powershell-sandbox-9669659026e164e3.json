@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "powershell-sandbox",
+    "displayName": "Powershell Sandbox",
+    "summary": "在受限 PowerShell 环境中安全执行脚本，支持命令白名单、超时控制、输出限制、文件隔离和执行前安全检查。",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774514860514,
+    "updatedAt": 1777623800653
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1774514860514,
+    "changelog": "PowerShell 脚本安全沙箱初始发布：\n\n- 支持命令白名单/黑名单和 .NET 类型限制\n- 执行前自动进行危险命令与类型安全检查\n- 超时保护（Job 机制），防止脚本长时间运行\n- 输出行数与字符数限制，防止日志炸弹\n- 文件操作严格限定于工作目录，防止越权访问\n- 全流程审计日志与标准退出代码",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yuyonghao-123",
+    "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+    "displayName": "yuyonghao-123",
+    "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623800653
+  }
+}

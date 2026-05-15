@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24357,
+  "uuid": "skill-clawhub-runtime-debug-skill",
+  "skillKey": "clawhub-runtime-debug-skill",
+  "name": "Runtime Debug Skill",
+  "summary": "Diagnose and fix bugs using runtime execution traces. Use when debugging errors, analyzing failures, or finding root causes in Python, Node.js, or Java appli...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_debug_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxsup",
+      "features": [
+        "Diagnose and fix bugs using runtime execution traces",
+        "Use when debugging errors, analyzing failures, or finding root causes in Python, Node.js, or Ja."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runtime-debug-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46807570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runtime-debug-skill",
+      "url": "https://clawhub.ai/skills/runtime-debug-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-debug-skill",
+    "url": "https://clawhub.ai/skills/runtime-debug-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-debug-skill-986d714ef8277459.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runtime-debug-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runtime-debug-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa01c69739151ef75aab502869b399fde2aee1abb702641bfd6bcb758a5131fb",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:04:19.305Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35627,
+  "uuid": "skill-clawhub-sps-commerce",
+  "skillKey": "clawhub-sps-commerce",
+  "name": "Sps Commerce",
+  "summary": "SPS Commerce integration. Manage data, records, and automate workflows. Use when the user wants to interact with SPS Commerce data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sps_commerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SPS Commerce integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SPS Commerce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sps-commerce@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sps-commerce",
+      "url": "https://clawhub.ai/skills/sps-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sps-commerce",
+    "url": "https://clawhub.ai/skills/sps-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sps-commerce-4cf0d78d719df969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sps-commerce@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sps-commerce-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b36e51b7202671b47d7c9a51e71e953231af1c6c6cfc408edf2ed529eff06d0",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:46:15.076Z"
+}

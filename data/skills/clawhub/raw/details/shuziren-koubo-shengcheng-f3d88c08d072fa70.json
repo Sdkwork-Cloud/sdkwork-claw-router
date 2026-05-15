@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "shuziren-koubo-shengcheng",
+    "displayName": "数字人口播生成",
+    "summary": "可以生成数字人口播视频。训练自己的数字人、生成口播视频。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774344374507,
+    "updatedAt": 1777623093929
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774344374507,
+    "changelog": "数字人口播生成 Skill v1.0.0\n\n- 新增用于生成数字人口播视频的能力，包括训练专属数字人、生成口播视频等。\n- 明确所有操作需通过 scripts/ 目录下的入口 Python 脚本实现，不可手写 HTTP 请求。\n- 强化异步任务流程，集成 OpenClaw cron watcher，实现生成完成自动通知。\n- 丰富口播视频配置项，支持字幕、背景、分辨率等多种可选参数。\n- 明确环境变量和 Token 获取指引，说明接口优先事项和防止重复任务提交的规则。\n- 统一响应格式，要求输出图片/视频直链并优先渲染相关媒体内容。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "xuhongfeii2",
+    "userId": "s17ewe2mzrav865pdydja4cjg183hzvt",
+    "displayName": "XuHongFeii2",
+    "image": "https://avatars.githubusercontent.com/u/113486864?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623093929
+  }
+}

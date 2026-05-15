@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54854,
+  "uuid": "skill-clawhub-z-image",
+  "skillKey": "clawhub-z-image",
+  "name": "Z Image API",
+  "summary": "Use PoYo AI Z-Image for straightforward prompt-based image generation through the `https://api.poyo.ai/api/generate/submit` endpoint. Use when a user wants d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.z_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Use PoYo AI Z-Image for straightforward prompt-based image generation through the `https://api..",
+        "Use when a user wants d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/z-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "z-image",
+      "url": "https://clawhub.ai/skills/z-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "z-image",
+    "url": "https://clawhub.ai/skills/z-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/z-image-7ac6429f9f44e17d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/z-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-z-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a13f0e25f5fcd007125d17bd69cc2b91c8067e1d64629457e74a1a3136e280d4",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:05:42.806Z"
+}

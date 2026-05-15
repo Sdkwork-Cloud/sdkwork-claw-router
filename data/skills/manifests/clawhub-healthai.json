@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72956,
+  "uuid": "skill-clawhub-healthai",
+  "skillKey": "clawhub-healthai",
+  "name": "个人智能健康管理",
+  "summary": "提供体检报告分析、健康风险评估、个性化运动方案及每日打卡提醒，支持文字和图片OCR输入。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amitabhama",
+      "features": [
+        "提供体检报告分析、健康风险评估、个性化运动方案及每日打卡提醒，支持文字和图片OCR输入。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33750689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthai",
+      "url": "https://clawhub.ai/skills/healthai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthai",
+    "url": "https://clawhub.ai/skills/healthai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthai-42679a1fc496754e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acfb79987d4c5feaac1b98fda7f01714dd1d069fa452f30eb4a32f83b3910180",
+      "artifactSizeBytes": 8991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:02:33.249Z"
+}

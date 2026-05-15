@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72185,
+  "uuid": "skill-clawhub-trading-signals",
+  "skillKey": "clawhub-trading-signals",
+  "name": "量化交易信号",
+  "summary": "量化交易信号系统。基于多种技术指标（MACD、RSI、KDJ、布林带、均线）生成买卖信号。支持金叉死叉、底背离、顶背离、超买超卖等信号。适用于股票和加密货币。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_signals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanduan003",
+      "features": [
+        "量化交易信号系统。基于多种技术指标（MACD、RSI、KDJ、布林带、均线）生成买卖信号。支持金叉死叉、底背离、顶背离、超买超卖等信号。适用于股票和加密货币。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-signals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125126230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-signals",
+      "url": "https://clawhub.ai/skills/trading-signals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-signals",
+    "url": "https://clawhub.ai/skills/trading-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-signals-0542faab0c6b9509.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-signals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-signals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8aa806b6701aef3c96aea2ef96427b439979dac1e92a13627d937dd2a0deb0b4",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:24:09.083Z"
+}

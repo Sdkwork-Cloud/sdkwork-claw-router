@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43679,
+  "uuid": "skill-clawhub-hkipo-review-optimizer",
+  "skillKey": "clawhub-hkipo-review-optimizer",
+  "name": "HK IPO Review Optimizer",
+  "summary": "Review past Hong Kong IPO decisions, update actual outcomes, export review datasets, and accept or reject tuning suggestions. Use when the user wants to lear...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkipo_review_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackstoic",
+      "features": [
+        "Review past Hong Kong IPO decisions, update actual outcomes, export review datasets, and accept.",
+        "Use when the user wants to lear..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkipo-review-optimizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7455951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkipo-review-optimizer",
+      "url": "https://clawhub.ai/skills/hkipo-review-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkipo-review-optimizer",
+    "url": "https://clawhub.ai/skills/hkipo-review-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkipo-review-optimizer-ccca3d9e83a94e7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkipo-review-optimizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkipo-review-optimizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a40792cec75035768268aeeb69769dba4bfd3293c6d7251c796b65190868f70",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T23:31:33.825Z"
+}

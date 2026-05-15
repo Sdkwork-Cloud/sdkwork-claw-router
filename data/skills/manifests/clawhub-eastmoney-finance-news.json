@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12940,
+  "uuid": "skill-clawhub-eastmoney-finance-news",
+  "skillKey": "clawhub-eastmoney-finance-news",
+  "name": "Eastmoney Financial Search",
+  "summary": "Search and retrieve timely financial news, reports, announcements, and policy analyses based on user queries from Eastmoney data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_finance_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yunduanmanbu",
+      "features": [
+        "Search and retrieve timely financial news, reports, announcements, and policy analyses based on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-finance-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5285494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-finance-news",
+      "url": "https://clawhub.ai/skills/eastmoney-finance-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-finance-news",
+    "url": "https://clawhub.ai/skills/eastmoney-finance-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-finance-news-4fea6854f36e0d82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-finance-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-finance-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66505375db769ab29bbf1ee9a5a054ffee487ce12b37621d9df710ddaefed69f",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:07:19.556Z"
+}

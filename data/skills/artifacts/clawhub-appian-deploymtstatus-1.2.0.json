@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appian-deploymtstatus@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_deploymtstatus",
+  "skill": {
+    "id": 39706,
+    "skillKey": "clawhub-appian-deploymtstatus",
+    "name": "Appian Deploymtstatus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-deploymtstatus",
+    "url": "https://clawhub.ai/skills/appian-deploymtstatus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-deploymtstatus-691d314128fa14fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check the status of an Appian deployment by UUID and optionally download its artifacts (log, package ZIP). Use after appian-export or appian-deploy to monito..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solarspiker",
+      "userId": "s178dayez9mwwgvpf042g31jgd83kwbh",
+      "displayName": "solarspiker",
+      "image": "https://avatars.githubusercontent.com/u/235690575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776169290210,
+      "changelog": "- Updated to version 1.2.0.\n- scripts/index.js modified (details not provided).\n- No visible user-facing changes to documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dc622c3f215ca7a2975f999efc9e4a39a46b043ab7fe2a2b09f6433a07ad523"
+}

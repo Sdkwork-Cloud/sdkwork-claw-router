@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60042,
+  "uuid": "skill-clawhub-long-task-handler-v2",
+  "skillKey": "clawhub-long-task-handler-v2",
+  "name": "long-task-handler-v2",
+  "summary": "升级版长任务处理技能。整合 frankieway/long-task-handler 和 chrislawyeryounger-spec/long-task-checkin 的优点。 触发场景：编译、部署、训练、数据处理、搜索爬虫、多步骤写作、调用外部API等预计超过60秒的任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_task_handler_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chrislawyeryounger-spec",
+      "features": [
+        "升级版长任务处理技能。整合 frankieway/long-task-handler 和 chrislawyeryounger-spec/long-task-checkin 的优点。 触发场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-task-handler-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274015848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-task-handler-v2",
+      "url": "https://clawhub.ai/skills/long-task-handler-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-task-handler-v2",
+    "url": "https://clawhub.ai/skills/long-task-handler-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-task-handler-v2-7ba7f5e10698893f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-task-handler-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-task-handler-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfdd2c4ee055fb724fd298daff4a8fde1e6f1bb7ce8d60ab7eb7d02f6eeceb11",
+      "artifactSizeBytes": 2702
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T19:00:35.036Z"
+}

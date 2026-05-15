@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavilysearch@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavilysearch",
+  "skill": {
+    "id": 68152,
+    "skillKey": "clawhub-tavilysearch",
+    "name": "Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavilysearch",
+    "url": "https://clawhub.ai/skills/tavilysearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavilysearch-2ee1a7e1c3b97bde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tavily 搜索引擎集成，支持 web 搜索、内容提取、实时新闻查询等功能。使用场景：需要搜索最新网络信息、查找实时新闻、获取专业资料、验证事实准确性等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raydoomed",
+      "userId": "s1793ae330e8wwb5pepxqvhbvs83gsdh",
+      "displayName": "xRay",
+      "image": "https://avatars.githubusercontent.com/u/57515812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1249,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 4,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773577125941,
+      "changelog": "v1.0.4 增强兼容性与依赖声明：\n\n- 修复环境变量读取逻辑，仅读取 TAVILY_API_KEY，提升安全性\n- 在 SKILL.md 中添加环境变量注册声明，确保需求一致\n- 移除未使用的 python-dotenv 依赖，优化依赖管理\n- 新增 urllib3 依赖，保证脚本正常运行\n- 所有核心功能测试通过",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc51a838bb618b7d94813b923591ada709be4922c9b76c63a4a343a9aa930609"
+}

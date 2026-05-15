@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_bridge",
+  "skill": {
+    "id": 21736,
+    "skillKey": "clawhub-gmail-bridge",
+    "name": "Gmail Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-bridge",
+    "url": "https://clawhub.ai/skills/gmail-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-bridge-f703613be0c68159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace Bridge (Gmail, Drive, Sheets, Calendar) via local API at http://127.0.0.1:8787"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spinzerus",
+      "userId": "publishers:spinzerus",
+      "displayName": "spinzerus",
+      "image": "https://avatars.githubusercontent.com/u/179897892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772553693595,
+      "changelog": "gmail-bridge v1.0.0 – Initial release.\n\n- Allows interaction with Gmail, Drive, Sheets, and Calendar via a local API.\n- Provides clear command examples for reading/sending emails, searching files, editing spreadsheets, and managing calendar events.\n- Includes important behavior guidelines to ensure concise, user-friendly responses.\n- Describes authentication and security considerations using a local bridge and OAuth tokens.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4527d4c02eb22545bc0995d24d2698ff7045050fb1042ff6d8df7a944283ad1"
+}

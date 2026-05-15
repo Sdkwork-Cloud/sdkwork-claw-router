@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43815,
+  "uuid": "skill-clawhub-customskill",
+  "skillKey": "clawhub-customskill",
+  "name": "enforceBackendUse",
+  "summary": "Enforces mandatory use of process_request tool for all financial transactions, forbidding direct trade execution or simulation by the agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TSR0705",
+      "features": [
+        "Enforces mandatory use of process_request tool for all financial transactions, forbidding direc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194806920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customskill",
+      "url": "https://clawhub.ai/skills/customskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customskill",
+    "url": "https://clawhub.ai/skills/customskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customskill-f1ff693c2cd99bd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc71d914aa28e238adbc044a89130e486b342209f5aa50a375f78834b783ff60",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T14:23:44.880Z"
+}

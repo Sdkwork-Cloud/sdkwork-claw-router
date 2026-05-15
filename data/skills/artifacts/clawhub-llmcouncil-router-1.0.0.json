@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llmcouncil-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llmcouncil_router",
+  "skill": {
+    "id": 16778,
+    "skillKey": "clawhub-llmcouncil-router",
+    "name": "LLM Council Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llmcouncil-router",
+    "url": "https://clawhub.ai/skills/llmcouncil-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llmcouncil-router-2f23c8509c2bf18b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route any prompt to the best-performing LLM using peer-reviewed council rankings from LLM Council"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashtiwariasu",
+      "userId": "publishers:ashtiwariasu",
+      "displayName": "ashtiwariasu",
+      "image": "https://avatars.githubusercontent.com/u/43255023?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 850,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771337692243,
+      "changelog": "Initial release – instantly route prompts to the top LLM based on peer-reviewed council rankings.\n\n- Route any prompt to the best-performing LLM via a single API call.\n- Models are chosen using thousands of peer-reviewed council deliberations.\n- Response includes model recommendation, relevance & confidence scores, and detailed model rankings.\n- Fully compatible with OpenRouter model catalogue – use results directly without mapping.\n- Requires a free API key from llmcouncil.ai; free and pro usage tiers available.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5cc308ca22b664c650f6e548ffe0571580cce8f21172653ae1aa338218db1c6d"
+}

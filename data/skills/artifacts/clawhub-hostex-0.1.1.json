@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hostex@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hostex",
+  "skill": {
+    "id": 11728,
+    "skillKey": "clawhub-hostex",
+    "name": "Hostex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hostex",
+    "url": "https://clawhub.ai/skills/hostex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hostex-dec4f80631e54dc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hostex (hostex.io) OpenAPI v3.0 skill for querying and managing vacation rental properties, room types, reservations, availability, listing calendars, guest messaging, reviews, and webhooks via the Hostex API. Use when you need to integrat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ansonfreeman",
+      "userId": "s179j0gyd19sz6d3xyzt0pk4zx83hy6y",
+      "displayName": "Anson",
+      "image": "https://avatars.githubusercontent.com/u/7079435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1942,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770107375732,
+      "changelog": "- Added support and documentation for updating listing prices with multiple date/price ranges in a single request.\n- Added support and example for updating property availabilities (close/open) via the script interface.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec1dd871fb12d332f6a45dfa133e6ab4da95899288f826c19b9dd109171f22be"
+}

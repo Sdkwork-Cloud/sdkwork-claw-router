@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-niche@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_niche",
+  "skill": {
+    "id": 38591,
+    "skillKey": "clawhub-twitter-niche",
+    "name": "Twitter Niche Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-niche",
+    "url": "https://clawhub.ai/skills/twitter-niche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-niche-e838c8984213010d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and identify trending or underserved Twitter niches to inform marketing, content strategies, and skill development using search and browser tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skunnyo",
+      "userId": "s176yq9afdp9gd8nzecy1ja8x583kk3v",
+      "displayName": "skunnyo",
+      "image": "https://avatars.githubusercontent.com/u/51137961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774782087649,
+      "changelog": "Initial release: Twitter niche discovery using OpenClaw tools (search, browser). For ClawHub skill ideas, content strategies, business opportunities. Examples: hockey, AI agents, acreage biz.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07c464d8693de25913bee4d14a16d69d52b5e9c989f26f7171ed6ea7f21c2415"
+}

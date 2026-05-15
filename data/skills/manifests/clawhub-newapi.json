@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22006,
+  "uuid": "skill-clawhub-newapi",
+  "skillKey": "clawhub-newapi",
+  "name": "NewAPI",
+  "summary": "Assistant for newapi (new-api), an open-source unified AI gateway platform (https://github.com/QuantumNous/new-api). Use when the user asks about New API, ma...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calcium-Ion",
+      "features": [
+        "Assistant for newapi (new-api), an open-source unified AI gateway platform (https://github.com/.",
+        "Use when the user asks about New API, ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newapi@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61247483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newapi",
+      "url": "https://clawhub.ai/skills/newapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newapi",
+    "url": "https://clawhub.ai/skills/newapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newapi-b7f12f76af2acae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newapi@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-newapi-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8c0b0425a2a64747dcc77e3ec2e7da8cebf8e080fc6993f1f8849c0740202a4",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:29:44.875Z"
+}

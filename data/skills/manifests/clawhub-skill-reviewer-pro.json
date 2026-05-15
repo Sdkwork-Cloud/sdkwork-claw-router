@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18471,
+  "uuid": "skill-clawhub-skill-reviewer-pro",
+  "skillKey": "clawhub-skill-reviewer-pro",
+  "name": "Skill Reviewer Pro",
+  "summary": "Performs thorough format validation, content quality assessment, and functional verification of OpenClaw skills for compliance and completeness.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_reviewer_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YuKaiXu",
+      "features": [
+        "Performs thorough format validation, content quality assessment, and functional verification of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-reviewer-pro@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30675834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-reviewer-pro",
+      "url": "https://clawhub.ai/skills/skill-reviewer-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-reviewer-pro",
+    "url": "https://clawhub.ai/skills/skill-reviewer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-reviewer-pro-64e2d720759f8640.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-reviewer-pro@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-reviewer-pro-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9cd848572e0092c1558fb3dfce8ba06429872a679af7b1c8c6212ab24dab0c6",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T02:04:29.468Z"
+}

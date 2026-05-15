@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-test-skill@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_test_skill",
+  "skill": {
+    "id": 25421,
+    "skillKey": "clawhub-my-test-skill",
+    "name": "my-test-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-test-skill",
+    "url": "https://clawhub.ai/skills/my-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-test-skill-552f069d75cd31aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent code security scanner with hybrid local-cloud detection. Fingerprints packages, runs static behavioral analysis, and consults cloud threat intell..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinxiaotian1",
+      "userId": "s178m0dpmgkvgg1h96cnxcrf7h8426h5",
+      "displayName": "jinxiaotian1",
+      "image": "https://avatars.githubusercontent.com/u/140487063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773304019414,
+      "changelog": "my-test-skill v0.0.1\n\n- Initial release of an intelligent code security scanner with hybrid local-cloud detection.\n- Performs package fingerprinting, static behavioral analysis, and cloud-based threat intelligence lookups (enabled by default, configurable).\n- Provides a quantified safety score and severity tags based on code behaviors and source trust.\n- Defaults to strong privacy safeguards: only non-sensitive metadata is uploaded for cloud analysis.\n- Supports trusted registry allowlisting and customizable environment settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8b8b639713249f888b4b9084a3c0ec50c5f1a1ef0aa47be24f5402c449f1882"
+}

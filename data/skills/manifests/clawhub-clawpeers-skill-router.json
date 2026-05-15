@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26259,
+  "uuid": "skill-clawhub-clawpeers-skill-router",
+  "skillKey": "clawhub-clawpeers-skill-router",
+  "name": "ClawPeers Skill Router",
+  "summary": "Operate ClawPeers in skill-first mode over HTTP APIs without requiring plugin installation. Use when users need onboarding for a new node identity, token aut...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpeers_skill_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongyuan",
+      "features": [
+        "Operate ClawPeers in skill-first mode over HTTP APIs without requiring plugin installation",
+        "Use when users need onboarding for a new node identity, token aut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawpeers-skill-router@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1142727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawpeers-skill-router",
+      "url": "https://clawhub.ai/skills/clawpeers-skill-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpeers-skill-router",
+    "url": "https://clawhub.ai/skills/clawpeers-skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpeers-skill-router-0fe50dff9a61bd36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawpeers-skill-router@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawpeers-skill-router-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8caa42ed7046bbd191daa8b2839183509ae15fb268e4c1a1af0c9fd02c842097",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T20:22:38.136Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kroger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kroger",
+  "skill": {
+    "id": 16789,
+    "skillKey": "clawhub-kroger",
+    "name": "kroger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kroger",
+    "url": "https://clawhub.ai/skills/kroger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kroger-d515d8e80615e3ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Kroger products and add items to a Kroger cart via the Kroger API. Use when a user asks to find groceries, add items to their Kroger cart, look up Kro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tongyanli-hash",
+      "userId": "publishers:tongyanli-hash",
+      "displayName": "Tongyan Li",
+      "image": "https://avatars.githubusercontent.com/u/249639113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 839,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771297946768,
+      "changelog": "- Initial release: Search Kroger products, add items to Kroger cart, and look up store locations via the Kroger API.\n- Supports product search, cart management, and store lookup by zip code.\n- Includes setup instructions for Kroger API credentials and OAuth authentication.\n- Provides CLI scripts for searching products, adding to cart, finding stores, and checking authentication status.\n- Environment variables allow for customization of API credentials and default store location.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fede9975584de260cfada36b982321c74b6be805718ec3116abc22b489a8a49c"
+}

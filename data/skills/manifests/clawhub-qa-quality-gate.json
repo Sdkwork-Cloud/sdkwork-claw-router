@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57926,
+  "uuid": "skill-clawhub-qa-quality-gate",
+  "skillKey": "clawhub-qa-quality-gate",
+  "name": "QA测试主管 质量门禁验收",
+  "summary": "QA lead skill for evidence review, gate enforcement, release-readiness assessment, and quality signoff recommendations.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_quality_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "QA lead skill for evidence review, gate enforcement, release-readiness assessment, and quality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-quality-gate@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-quality-gate",
+      "url": "https://clawhub.ai/skills/qa-quality-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-quality-gate",
+    "url": "https://clawhub.ai/skills/qa-quality-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-quality-gate-e08eb1c6e1162ba0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-quality-gate@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-quality-gate-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c450e6b6f5ae0da87d60e0a7e84378d6b1de07566c5b391645b24e1b685eaed4",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:20:32.196Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_local",
+  "skill": {
+    "id": 35024,
+    "skillKey": "clawhub-cron-local",
+    "name": "Cron Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-local",
+    "url": "https://clawhub.ai/skills/cron-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-local-fb32b789bb07cc56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first recurring schedule engine for reminders, repeated tasks, and time-based execution plans. Use whenever the user mentions recurring timing, repetit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morrison230",
+      "userId": "s17e2ws5n9ev1vzxen73zmg6ws83tzyz",
+      "displayName": "morrison230",
+      "image": "https://avatars.githubusercontent.com/u/120681849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774030351451,
+      "changelog": "cron-local 1.0.0 initial release\n\n- Introduced a local-only recurring schedule engine for reminders, tasks, and time-based execution.\n- Supports capturing natural language recurrence and converting to structured local schedules.\n- Allows users to add, pause, resume, inspect, and list recurring jobs with daily, weekly, monthly, or interval cadence.\n- All data stored locally; no cloud sync or third-party service required.\n- Users can always check what runs next and manage job status (active, paused, archived).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7a04b3ad57ebcf4f582522041aa143faa9277a40766b3d8044c853e395c197b"
+}

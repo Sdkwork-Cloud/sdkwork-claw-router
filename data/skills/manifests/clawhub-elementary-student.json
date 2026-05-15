@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73250,
+  "uuid": "skill-clawhub-elementary-student",
+  "skillKey": "clawhub-elementary-student",
+  "name": "成绩不好的小学生",
+  "summary": "模拟一个只掌握小学知识的小学生人格技能",
+  "version": "0.0.1-alpha.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elementary_student",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imwatching",
+      "features": [
+        "模拟一个只掌握小学知识的小学生人格技能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elementary-student@0.0.1-alpha.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48648400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elementary-student",
+      "url": "https://clawhub.ai/skills/elementary-student"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elementary-student",
+    "url": "https://clawhub.ai/skills/elementary-student",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elementary-student-2be197fc9b3dff5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elementary-student@0.0.1-alpha.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-elementary-student-0.0.1-alpha.3.json",
+      "version": "0.0.1-alpha.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f45e2ac7e8aae539bb165477181fdc313e1f2ea33a9ad2e34069d663c5ffbc64",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:18:12.209Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69893,
+  "uuid": "skill-clawhub-auto-push-system-skill",
+  "skillKey": "clawhub-auto-push-system-skill",
+  "name": "Auto Push System Skill",
+  "summary": "全自动化AI内容监控与飞书推送工作流，支持多源内容检测、自动文档创建、智能错误恢复。当用户需要自动化推送AI生成的内容（播客摘要、技能学习总结、对话简报等）到飞书时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_push_system_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bianca1227",
+      "features": [
+        "全自动化AI内容监控与飞书推送工作流，支持多源内容检测、自动文档创建、智能错误恢复。当用户需要自动化推送AI生成的内容（播客摘要、技能学习总结、对话简报等）到飞书时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-push-system-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51720853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-push-system-skill",
+      "url": "https://clawhub.ai/skills/auto-push-system-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-push-system-skill",
+    "url": "https://clawhub.ai/skills/auto-push-system-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-push-system-skill-2d10e6f96b01daa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-push-system-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-push-system-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48bbd486e8489df3e46b97320d286e09eaf50082ec2b07babc7d30d76c469103",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:45:45.894Z"
+}

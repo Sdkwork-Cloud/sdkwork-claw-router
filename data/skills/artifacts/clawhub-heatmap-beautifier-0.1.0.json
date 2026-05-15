@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heatmap-beautifier@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heatmap_beautifier",
+  "skill": {
+    "id": 38781,
+    "skillKey": "clawhub-heatmap-beautifier",
+    "name": "Heatmap Beautifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heatmap-beautifier",
+    "url": "https://clawhub.ai/skills/heatmap-beautifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heatmap-beautifier-7732331000d118c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional beautification tool for gene expression heatmaps, automatically adds clustering trees, color annotation tracks, and intelligently optimizes labe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774242848962,
+      "changelog": "Initial release of heatmap-beautifier — an automated tool for publishing-ready gene expression heatmaps.\n\n- Automatically adds clustering trees and color annotation tracks.\n- Intelligently optimizes row/column label layout to avoid overlap.\n- Supports multiple output formats (PDF, PNG, SVG) and professional color schemes.\n- Provides both Python API and command line interface, including a demo mode.\n- Explicit validation and error handling for required inputs and supported workflows.\n- Structured response templates for result reporting and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f11b7d61b3183cb465e953872af0cf55eeddcad76917cc52a85c5d36558440ea"
+}

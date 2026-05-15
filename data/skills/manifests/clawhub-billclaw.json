@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10335,
+  "uuid": "skill-clawhub-billclaw",
+  "skillKey": "clawhub-billclaw",
+  "name": "Billclaw",
+  "summary": "This skill should be used when managing financial data, syncing bank transactions via Plaid/GoCardless, fetching bills from Gmail, or exporting to Beancount/Ledger formats. Provides local-first data sovereignty for OpenClaw users.",
+  "version": "0.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "firela",
+      "features": [
+        "This skill should be used when managing financial data, syncing bank transactions via Plaid/GoC.",
+        "Provides local-first data sovereignty for OpenClaw users."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/billclaw@0.5.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115340766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "billclaw",
+      "url": "https://clawhub.ai/skills/billclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billclaw",
+    "url": "https://clawhub.ai/skills/billclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billclaw-062e59b4890c1942.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/billclaw@0.5.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-billclaw-0.5.5.json",
+      "version": "0.5.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ee1745fffef98d21d3976374709844a03bf7306e332c70d453cf627f857ee62",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:43:48.494Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40931,
+  "uuid": "skill-clawhub-amazon-elasticsearch",
+  "skillKey": "clawhub-amazon-elasticsearch",
+  "name": "Amazon Elasticsearch",
+  "summary": "Amazon Elasticsearch integration. Manage data, records, and automate workflows. Use when the user wants to interact with Amazon Elasticsearch data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_elasticsearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Amazon Elasticsearch integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Amazon Elasticsearch data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-elasticsearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-elasticsearch",
+      "url": "https://clawhub.ai/skills/amazon-elasticsearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-elasticsearch",
+    "url": "https://clawhub.ai/skills/amazon-elasticsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-elasticsearch-7e631819e7495c3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-elasticsearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-elasticsearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:237bafe092510f8ae69f37294065cbf6f33f15341201f9d438372c74922ae48a",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:53:24.251Z"
+}

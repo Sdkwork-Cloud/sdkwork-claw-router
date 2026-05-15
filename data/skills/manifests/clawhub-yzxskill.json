@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64639,
+  "uuid": "skill-clawhub-yzxskill",
+  "skillKey": "clawhub-yzxskill",
+  "name": "My Skill",
+  "summary": "这是一个专门用于与 Example API 进行安全交互的技能工具，支持执行数据变更操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yzxskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NuoWei",
+      "features": [
+        "这是一个专门用于与 Example API 进行安全交互的技能工具，支持执行数据变更操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yzxskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112142908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yzxskill",
+      "url": "https://clawhub.ai/skills/yzxskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yzxskill",
+    "url": "https://clawhub.ai/skills/yzxskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yzxskill-f8655bf90839bdb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yzxskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yzxskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec42bc0a4ac4b929afe9394051af3130368211452d23c13a22b87b65695fb987",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T07:04:09.595Z"
+}

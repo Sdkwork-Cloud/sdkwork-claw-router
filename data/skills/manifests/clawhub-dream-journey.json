@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70385,
+  "uuid": "skill-clawhub-dream-journey",
+  "skillKey": "clawhub-dream-journey",
+  "name": "dream-journey(寻梦之旅)",
+  "summary": "用户描述模糊或反复出现的梦境场景后，AI 先高清还原梦境、生成视觉描述，然后调用 Fly.ai 实时匹配高度相似的真实目的地，进行端到端行程规划。行中使用拍照讲解'验证梦境'，结束生成《梦成真了》情感报告和短视频。治愈+宿命+冒险感拉满。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_journey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "菠萝吹雪🍍🗡️",
+      "features": [
+        "用户描述模糊或反复出现的梦境场景后，AI 先高清还原梦境、生成视觉描述，然后调用 Fly.ai 实时匹配高度相似的真实目的地，进行端到端行程规划。行中使用拍照讲解'验证梦境'，结束生成《梦成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dream-journey@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268181154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dream-journey",
+      "url": "https://clawhub.ai/skills/dream-journey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-journey",
+    "url": "https://clawhub.ai/skills/dream-journey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-journey-3c5aafb11f364c2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dream-journey@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dream-journey-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d744ff88cdb0436a202db3f244648b9088d7af1c91894da74e43c79f59c080f3",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T05:32:06.826Z"
+}

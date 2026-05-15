@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohong-hot-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohong_hot_tracker",
+  "skill": {
+    "id": 66940,
+    "skillKey": "clawhub-xiaohong-hot-tracker",
+    "name": "Content Hot Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohong-hot-tracker",
+    "url": "https://clawhub.ai/skills/xiaohong-hot-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohong-hot-tracker-e14c50363921df60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时追踪微博、知乎、抖音等多平台热点话题，分析趋势并提供内容选题和爆款标题建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazypatient0",
+      "userId": "s171qjqp5e2gwvwgdtmf6jcfsd84vxtm",
+      "displayName": "--冷月无心--",
+      "image": "https://avatars.githubusercontent.com/u/26730984?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773457685491,
+      "changelog": "xiaohohng-hot-tracker v1.0.0\n\n- Initial release.\n- Tracks trending topics across multiple platforms (Weibo, Zhihu, Douyin, Xiaohongshu, Bilibili).\n- Provides trend analysis to identify rising, stable, or declining topics.\n- Suggests content directions and viral title templates for creators.\n- Includes competitor content analysis and customizable preferences for topic and platform.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a41f52cd52f72208ad0126e22952fa6002116d4bacf45c172fa5708b6e177e99"
+}

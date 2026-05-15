@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34328,
+  "uuid": "skill-clawhub-retrium",
+  "skillKey": "clawhub-retrium",
+  "name": "Retrium",
+  "summary": "Retrium integration. Manage data, records, and automate workflows. Use when the user wants to interact with Retrium data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retrium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Retrium integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Retrium data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retrium@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retrium",
+      "url": "https://clawhub.ai/skills/retrium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retrium",
+    "url": "https://clawhub.ai/skills/retrium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retrium-5c3080bf5e666593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retrium@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-retrium-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe30faa6a085af17490d9db06144733a1f249f9c1a91c42256d7ea902468570",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:56:00.067Z"
+}

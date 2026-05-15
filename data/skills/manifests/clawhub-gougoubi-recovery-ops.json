@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26595,
+  "uuid": "skill-clawhub-gougoubi-recovery-ops",
+  "skillKey": "clawhub-gougoubi-recovery-ops",
+  "name": "Gougoubi Recovery Ops",
+  "summary": "Detect and repair partial failures in Gougoubi PBFT operations, including missing activation, missing risk LP, missing results, and pending reward claims. Us...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_recovery_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Detect and repair partial failures in Gougoubi PBFT operations, including missing activation, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-recovery-ops@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-recovery-ops",
+      "url": "https://clawhub.ai/skills/gougoubi-recovery-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-recovery-ops",
+    "url": "https://clawhub.ai/skills/gougoubi-recovery-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-recovery-ops-080216ba359df18a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-recovery-ops@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-recovery-ops-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7187d235ffd3e282077a0dc59ff1886932f68c54932a424fa1a30db41ad21a7",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:24:06.704Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21397,
+  "uuid": "skill-clawhub-esimpal-api",
+  "skillKey": "clawhub-esimpal-api",
+  "name": "eSIMPal API Skill",
+  "summary": "Use when building or debugging an agent (e.g. Telegram/WhatsApp bot, AI assistant) that integrates with the eSIMPal API to buy eSIMs for end-users, create or...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esimpal_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Denis Yurchak",
+      "features": [
+        "Use when building or debugging an agent (e.g",
+        "Telegram/WhatsApp bot, AI assistant) that integrates with the eSIMPal API to buy eSIMs for end-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esimpal-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67059948?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esimpal-api",
+      "url": "https://clawhub.ai/skills/esimpal-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esimpal-api",
+    "url": "https://clawhub.ai/skills/esimpal-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esimpal-api-f09bc58a40f876c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esimpal-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-esimpal-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c10fc671a4c91b601a9105e527b36e55f44af0b83f90360c9c23a4675388283b",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:50:57.215Z"
+}

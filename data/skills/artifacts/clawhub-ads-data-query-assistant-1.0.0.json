@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ads-data-query-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ads_data_query_assistant",
+  "skill": {
+    "id": 25399,
+    "skillKey": "clawhub-ads-data-query-assistant",
+    "name": "Ads Data Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ads-data-query-assistant",
+    "url": "https://clawhub.ai/skills/ads-data-query-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ads-data-query-assistant-8a06f91797b3e904.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run natural-language data query workflows for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify Ads reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772498885784,
+      "changelog": "- Initial release of ads-data-query-assistant skill.\n- Enables natural-language data query workflows for Meta, Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify Ads.\n- Structured input/output contracts for execution-ready insights and actionable campaign recommendations.\n- Includes robust workflow steps, decision rules, platform-specific notes, and failure handling logic.\n- Provides platform examples to illustrate output focus for Meta, Google Ads, and TikTok/YouTube cross-channel scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4033b32c1f473172956e2d8bea7777e553e213e74d3578fe7d669f8ff7311e02"
+}

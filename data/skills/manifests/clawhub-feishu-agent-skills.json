@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57675,
+  "uuid": "skill-clawhub-feishu-agent-skills",
+  "skillKey": "clawhub-feishu-agent-skills",
+  "name": "Feishu Agent Skills",
+  "summary": "Create and wire a new OpenClaw agent with a fixed workflow. Use when the user asks to create/add a new OpenClaw agent or says “我要创建一个新的 Agent”, automate mult...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meichuanyi",
+      "features": [
+        "Create and wire a new OpenClaw agent with a fixed workflow",
+        "Use when the user asks to create/add a new OpenClaw agent or says “我要创建一个新的 Agent”, automate mu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agent-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35057768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agent-skills",
+      "url": "https://clawhub.ai/skills/feishu-agent-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-skills",
+    "url": "https://clawhub.ai/skills/feishu-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-skills-1f768cbb388d0615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agent-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d840c193ef4d18c9776c1da1d78eadfecc299f0b2846dcc69ccb0b3e4f3cf45",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T16:51:18.337Z"
+}

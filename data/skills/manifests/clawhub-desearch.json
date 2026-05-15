@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69008,
+  "uuid": "skill-clawhub-desearch",
+  "skillKey": "clawhub-desearch",
+  "name": "ZeeLin Deep Research 深度研究",
+  "summary": "ZeeLin Deep Research 深度研究是一款 AI 驱动的专业研究辅助平台，支持一句话生成与多步骤生成，提供深度、专家两大研究路径。从快速信息梳理、系统分析到超万字专家报告全流程覆盖，依托多轮推理与多源数据整合，高效完成企业分析、市场洞察、招商研究等复杂任务，一站式提升研究效率与决策质量。",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desearch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhushanwei",
+      "features": [
+        "ZeeLin Deep Research 深度研究是一款 AI 驱动的专业研究辅助平台，支持一句话生成与多步骤生成，提供深度、专家两大研究路径。从快速信息梳理、系统分析到超万字专家报告全流程."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desearch@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53216479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desearch",
+      "url": "https://clawhub.ai/skills/desearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desearch",
+    "url": "https://clawhub.ai/skills/desearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desearch-2ef984d3c02377c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desearch@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-desearch-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c728f3733b7041066524aa00325276c474f49e5586a5c3375b872a843cc96d5",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:45:29.803Z"
+}

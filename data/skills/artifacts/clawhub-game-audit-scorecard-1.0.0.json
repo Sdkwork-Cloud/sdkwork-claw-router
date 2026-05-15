@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-audit-scorecard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_audit_scorecard",
+  "skill": {
+    "id": 38554,
+    "skillKey": "clawhub-game-audit-scorecard",
+    "name": "Game Audit Scorecard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-audit-scorecard",
+    "url": "https://clawhub.ai/skills/game-audit-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-audit-scorecard-de820481fe1c8e5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize audit findings into a structured multi-dimensional scorecard for UI/UX, feedback, mechanics, scope completeness, maintainability, and live risk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774857071006,
+      "changelog": "Initial release: Summarize game audit findings into a structured, multi-dimensional scorecard.\n\n- Scores games across 10 required areas including UX flow, feedback, mechanics, scope, maintainability, and live risk.\n- Generates and updates `scorecard.json` and `audit-summary.md` in the project.\n- Uses defined templates and schema to ensure consistent evidence-based scoring and documentation.\n- Emphasizes clear justification, severity language, and explanation of uncertainty for each score.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18f27ecb545907d9d22f839bbdc2ca1f81a83150c5de329dd9872281486aa251"
+}

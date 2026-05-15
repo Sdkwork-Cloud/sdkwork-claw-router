@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11933,
+  "uuid": "skill-clawhub-skirmish",
+  "skillKey": "clawhub-skirmish",
+  "name": "LLM Skirmish",
+  "summary": "Install and use the Skirmish CLI to write, test, and submit JavaScript battle strategies. Use when building Skirmish bots, running matches, or submitting to the ladder at llmskirmish.com.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skirmish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaimcpheeters",
+      "features": [
+        "Install and use the Skirmish CLI to write, test, and submit JavaScript battle strategies",
+        "Use when building Skirmish bots, running matches, or submitting to the ladder at llmskirmish.co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skirmish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28831437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skirmish",
+      "url": "https://clawhub.ai/skills/skirmish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skirmish",
+    "url": "https://clawhub.ai/skills/skirmish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skirmish-d50448f5c7f51a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skirmish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skirmish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78865ae73d64b332d2ee9a4a3e3538e5d057f0fe30dc11741f238ede7270d173",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:09:08.564Z"
+}

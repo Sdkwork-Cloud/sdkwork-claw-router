@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claimable-postgres@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claimable_postgres",
+  "skill": {
+    "id": 20450,
+    "skillKey": "clawhub-claimable-postgres",
+    "name": "Claimable Postgres"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claimable-postgres",
+    "url": "https://clawhub.ai/skills/claimable-postgres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claimable-postgres-c9f71f5ac867fefd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provision instant temporary Postgres databases via Claimable Postgres by Neon (neon.new) with no login, signup, or credit card. Supports REST API, CLI, and S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrelandgraf",
+      "userId": "publishers:andrelandgraf",
+      "displayName": "Andre Landgraf",
+      "image": "https://avatars.githubusercontent.com/u/15163028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773782824100,
+      "changelog": "- Updated all references from \"pg.new\" and \"get-db\" to \"neon.new\" and \"neon-new\" (API endpoints, CLI commands, SDK, Vite plugin, and documentation).\n- Changed CLI and SDK instructions to use `npx neon-new@latest` and `neon-new/sdk`.\n- Adjusted REST API URLs to point to `https://neon.new/api/v1/`.\n- Updated trigger phrases and descriptions to reflect the new naming.\n- No functional changes, but all user-facing instructions, URLs, and examples now reference \"neon.new\" branding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdbe8d331533aa81c8f09ea05e5cc90c237839e17a38aa0fa1179223a6db4146"
+}

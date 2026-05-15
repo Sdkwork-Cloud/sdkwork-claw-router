@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-grok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_grok",
+  "skill": {
+    "id": 43484,
+    "skillKey": "clawhub-ai-video-generator-free-grok",
+    "name": "Ai Video Generator Free Grok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-grok",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-grok-d88bf28df4b79025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, GIF, up to 200MB), say something like \"gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776917678463,
+      "changelog": "AI Video Generator Free Grok 1.0.0 — Initial Release\n\n- Generate AI-powered videos from text prompts using Grok AI, with free session tokens and no subscription required.\n- Supports uploads up to 200MB (MP4, MOV, WebM, GIF) and exports in 1080p MP4.\n- Integrated workflows for uploading, video editing via chat, previewing, and exporting.\n- Real-time status updates and automatic handling of backend session/token management.\n- Designed for fast, intuitive content creation with tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6237f13c26fb9a37f195863b4940d4428f29a5a61c914eee9a34a2dc42226a7b"
+}

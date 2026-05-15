@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24830,
+  "uuid": "skill-clawhub-github-actions-workflow-hardening-audit",
+  "skillKey": "clawhub-github-actions-workflow-hardening-audit",
+  "name": "GitHub Actions Workflow Hardening Audit",
+  "summary": "Audit GitHub Actions workflow files for hardening gaps (missing timeouts/permissions/concurrency and floating action refs).",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_workflow_hardening_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions workflow files for hardening gaps (missing timeouts/permissions/concurrenc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-workflow-hardening-audit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-workflow-hardening-audit",
+      "url": "https://clawhub.ai/skills/github-actions-workflow-hardening-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-workflow-hardening-audit",
+    "url": "https://clawhub.ai/skills/github-actions-workflow-hardening-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-workflow-hardening-audit-d56d11b765899e8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-workflow-hardening-audit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-workflow-hardening-audit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e53232cc7449d759d53149fe61295cb69609fa3959e303e752f17c659f38e5b",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:06:46.934Z"
+}

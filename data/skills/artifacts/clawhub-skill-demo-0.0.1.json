@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-demo@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_demo",
+  "skill": {
+    "id": 26614,
+    "skillKey": "clawhub-skill-demo",
+    "name": "my skill demo showcase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-demo",
+    "url": "https://clawhub.ai/skills/skill-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-demo-a0cd67698530c84e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimal TypeScript hello-world skill that demonstrates bundling TS code, a Node dependency, and package.json instructions for use and publication on Clawdhub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whgreate",
+      "userId": "s171a1f8y7czq291txb49sxt7x83wsqe",
+      "displayName": "whgreate",
+      "image": "https://avatars.githubusercontent.com/u/811644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772441059181,
+      "changelog": "Initial release of a minimal TypeScript hello-world skill.\n\n- Demonstrates bundling TypeScript code in scripts/\n- Shows usage of a third-party Node dependency (dayjs for timestamps)\n- Provides a sample package.json with installation and usage instructions\n- Includes a simple TypeScript function that returns a formatted greeting\n- Documentation and example usage provided in SKILL.md and references/README-usage.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3bfacb4c40256ac226f34a916df8079548d8fc4cc58afc9a2bcadcee4ebee9c"
+}

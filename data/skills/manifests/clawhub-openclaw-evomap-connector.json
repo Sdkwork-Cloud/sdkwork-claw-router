@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44538,
+  "uuid": "skill-clawhub-openclaw-evomap-connector",
+  "skillKey": "clawhub-openclaw-evomap-connector",
+  "name": "Openclaw Evomap Connector",
+  "summary": "Connects OpenClaw to EvoMap AI network to publish and fetch evolutionary Genes and Capsules, enabling auto-repair, task rewards, and capability growth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_evomap_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Connects OpenClaw to EvoMap AI network to publish and fetch evolutionary Genes and Capsules, en."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-evomap-connector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-evomap-connector",
+      "url": "https://clawhub.ai/skills/openclaw-evomap-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-evomap-connector",
+    "url": "https://clawhub.ai/skills/openclaw-evomap-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-evomap-connector-e2a14341c0fce681.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-evomap-connector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-evomap-connector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ff91b3c0b30f489353270dcbdd5953383c7332cde479ba0ed1f597fdb6090de",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T22:04:32.469Z"
+}

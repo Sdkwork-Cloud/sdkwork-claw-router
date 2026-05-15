@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61159,
+  "uuid": "skill-clawhub-pr-review-factory",
+  "skillKey": "clawhub-pr-review-factory",
+  "name": "PR Review Factory",
+  "summary": "自动化Code Review工厂 — GitHub PR审查全流程自动化，从提交到修复到合并，一站式质量门禁。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_review_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlszhonglongshen",
+      "features": [
+        "自动化Code Review工厂 — GitHub PR审查全流程自动化，从提交到修复到合并，一站式质量门禁。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pr-review-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9023908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pr-review-factory",
+      "url": "https://clawhub.ai/skills/pr-review-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-review-factory",
+    "url": "https://clawhub.ai/skills/pr-review-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-review-factory-9dacb336de442e2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pr-review-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pr-review-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63a994a8502647a8688f663b113d9b36e11dc3b2623ac66b0104d831c2b86a35",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T19:46:21.823Z"
+}

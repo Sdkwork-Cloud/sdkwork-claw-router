@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12202,
+  "uuid": "skill-clawhub-strands",
+  "skillKey": "clawhub-strands",
+  "name": "Strands Agents SDK",
+  "summary": "Build and run Python-based AI agents using the AWS Strands SDK. Use when you need to create autonomous agents, multi-agent workflows, custom tools, or integrate with MCP servers. Supports Ollama (local), Anthropic, OpenAI, Bedrock, and oth.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strands",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TrippingKelsea",
+      "features": [
+        "Build and run Python-based AI agents using the AWS Strands SDK",
+        "Use when you need to create autonomous agents, multi-agent workflows, custom tools, or integrat.",
+        "Supports Ollama (local), Anthropic, OpenAI, Bedrock, and other model providers",
+        "Use for agent scaffolding, tool creation, and running agent tasks programmatically."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strands@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132861539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strands",
+      "url": "https://clawhub.ai/skills/strands"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strands",
+    "url": "https://clawhub.ai/skills/strands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strands-11e0e34bd35e1218.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strands@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-strands-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d73b6868a5162a069fd96ad8aed1babc3918d6359d8f35660172416c6f6dd18e",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:52:46.892Z"
+}

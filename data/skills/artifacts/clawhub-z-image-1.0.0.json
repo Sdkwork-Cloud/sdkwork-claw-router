@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/z-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.z_image",
+  "skill": {
+    "id": 54854,
+    "skillKey": "clawhub-z-image",
+    "name": "Z Image API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "z-image",
+    "url": "https://clawhub.ai/skills/z-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/z-image-7ac6429f9f44e17d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PoYo AI Z-Image for straightforward prompt-based image generation through the `https://api.poyo.ai/api/generate/submit` endpoint. Use when a user wants d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolhackboy",
+      "userId": "s177pant1v4gn5k13ffg1fp5b183nb02",
+      "displayName": "coolhackboy",
+      "image": "https://avatars.githubusercontent.com/u/13427145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773187542806,
+      "changelog": "- Initial release of the poyo-z-image skill.\n- Enables prompt-based image generation via the PoYo AI Z-Image model.\n- Supports direct text-to-image creation, aspect ratio control, and lightweight payloads.\n- Requires a POYO_API_KEY for authentication.\n- Provides clear workflow, model selection guidance, and concise integration steps for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a13f0e25f5fcd007125d17bd69cc2b91c8067e1d64629457e74a1a3136e280d4"
+}

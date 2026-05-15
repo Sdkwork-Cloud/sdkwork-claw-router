@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "openclaw-android",
+    "displayName": "openclaw-android",
+    "summary": "通过openclaw控制android手机，所有命令在手机内部执行，先su切换到root权限后执行后续命令，支持获取安装软件列表、打开和关闭app、操作app（点击、滑动、输入文本）以及截图app。当用户需要控制android设备或执行app操作时调用。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1772705788371,
+    "updatedAt": 1778304389587
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1772708507729,
+    "changelog": "- 新增 shell.sh 脚本，实现所有操作统一通过脚本调用，并自动处理 root 权限切换与日志记录。\n- 所有文档命令示例切换为 shell.sh 统一调用方式，提升易用性和可维护性。\n- 文档增加日志调试说明，每次命令调用生成日志文件便于排错。\n- 原有手动 su 切换方式由脚本自动化，降低使用门槛。",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ssrlxl123",
+    "userId": "publishers:ssrlxl123",
+    "displayName": "xxxx",
+    "image": "https://avatars.githubusercontent.com/u/234872563?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304389587
+  }
+}

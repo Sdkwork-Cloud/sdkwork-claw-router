@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27261,
+  "uuid": "skill-clawhub-server-audit",
+  "skillKey": "clawhub-server-audit",
+  "name": "Server Audit",
+  "summary": "Reads server hardware, Proxmox/Linux OS info, temperatures, SMART status, ECC errors, RAID, disks, network stats, services, and logs without making changes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey",
+      "features": [
+        "Reads server hardware, Proxmox/Linux OS info, temperatures, SMART status, ECC errors, RAID, dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6078948?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-audit",
+      "url": "https://clawhub.ai/skills/server-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-audit",
+    "url": "https://clawhub.ai/skills/server-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-audit-a29ccc7d6abe2a6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:312cdc01537ba66a1561b60cfe26a855b160562d2f65e6b6ace48627c2bc28b1",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T22:06:38.123Z"
+}

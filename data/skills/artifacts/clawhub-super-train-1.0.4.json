@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-train@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_train",
+  "skill": {
+    "id": 68698,
+    "skillKey": "clawhub-super-train",
+    "name": "Flyai Super Train / 火车票智能中转"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-train",
+    "url": "https://clawhub.ai/skills/super-train",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-train-eee33221675c72ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "火车票智能中转方案推荐助手。查火车票/高铁票/动车票/12306余票，智能拼接中转换乘方案，学习用户偏好（坐席策略、时间偏好、中转约束）。火车票查询/余票/车次/预订/中转换乘/坐席偏好。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangxchao",
+      "userId": "s172wbq91pxj2p5mkm7hsckw9x83w8tr",
+      "displayName": "zhangxchao",
+      "image": "https://avatars.githubusercontent.com/u/3321261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775633079447,
+      "changelog": "No file changes detected; documentation refinements.\n\n- Revised and clarified description of the scheme评分维度 (scoring dimensions) section for greater detail and accuracy.\n- Improved language clarity and readability throughout SKILL.md, with minor adjustments to formatting and examples.\n- No changes to functionality or logic—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:332dcc69f22049ce9b4f20cf736b2e918af25d3430a563994ab690ba748c6660"
+}

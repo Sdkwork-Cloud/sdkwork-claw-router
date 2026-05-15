@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-business-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_business_plan",
+  "skill": {
+    "id": 42695,
+    "skillKey": "clawhub-kirk-business-plan",
+    "name": "business-plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-business-plan",
+    "url": "https://clawhub.ai/skills/kirk-business-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-business-plan-92d82c62d5e2d59a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write, structure, and update a business plan for a solopreneur. Use when creating a plan from scratch, updating an existing plan after a pivot or new phase,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776221135613,
+      "changelog": "- Initial release of the \"business-plan\" skill for solopreneurs.\n- Guides users step-by-step to create, update, or share a business plan tailored for a one-person business.\n- Covers all essential sections: executive summary, company overview, problem/solution, market analysis, competition, business model, operations, marketing and sales, financials, and risk assessment.\n- Includes practical instructions, prompts, and data-driven requirements for each section.\n- Designed for clarity, regular updates, and actionable next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:259f398f70ea5df7ba3dad1d39dc45ff5c36552b70c259742a79ecec300608da"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generic-drug@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generic_drug",
+  "skill": {
+    "id": 66077,
+    "skillKey": "clawhub-generic-drug",
+    "name": "Generic Drug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generic-drug",
+    "url": "https://clawhub.ai/skills/generic-drug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generic-drug-f7995f6c4b8afb8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询药品名称对应的通用名，若无结果则返回原名称，基于本地 SearXNG 搜索结果智能分析识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dddwinter",
+      "userId": "s17fg9dr39d18g2d49zpzg8apd83g5mn",
+      "displayName": "DDDWinter",
+      "image": "https://avatars.githubusercontent.com/u/75260795?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775349403674,
+      "changelog": "Initial release of the generic_drug skill:\n\n- Supports querying the generic name of a drug based on user-provided product names.\n- Uses a local SearXNG search service to find generic name information.\n- Returns original search results and lets the LLM analyze context for intelligent generic name extraction.\n- If no generic name is found, returns the original name as the generic name by default.\n- Outputs results in a structured JSON format for easy interpretation.\n- Handles drug names, excipients, and complex naming situations intelligently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b67d15271f6c77ccec2296372281de892a1f5fbbbbc6361dfdd0a2ced25fcf5d"
+}

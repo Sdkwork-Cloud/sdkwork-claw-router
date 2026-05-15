@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47577,
+  "uuid": "skill-clawhub-sifs-search",
+  "skillKey": "clawhub-sifs-search",
+  "name": "SIFS Search: Fast hybrid code search for agents",
+  "summary": "Use this skill when you need to find code in a local checkout or Git source by behavior, intent, symbol, file path, related implementation, or indexed chunk...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sifs_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Use this skill when you need to find code in a local checkout or Git source by behavior, intent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sifs-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sifs-search",
+      "url": "https://clawhub.ai/skills/sifs-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sifs-search",
+    "url": "https://clawhub.ai/skills/sifs-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sifs-search-3d2a802fcde2a7b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sifs-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sifs-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df0c6e28100ed1ef7dea875fd49bdcbf4724ac3542a9a10263b43be7a506d142",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T09:22:10.940Z"
+}

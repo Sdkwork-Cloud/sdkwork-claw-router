@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-validation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_validation",
+  "skill": {
+    "id": 45561,
+    "skillKey": "clawhub-trade-validation",
+    "name": "Trade Validation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-validation",
+    "url": "https://clawhub.ai/skills/trade-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-validation-acbef2a444094614.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "10-dimension weighted scoring framework for prediction market trade evaluation. Enforces disciplined position sizing, circuit breakers, and mandatory counter-arguments. Use when: evaluating prediction market trades, scoring opportunities,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "staybased",
+      "userId": "publishers:staybased",
+      "displayName": "staybased",
+      "image": "https://avatars.githubusercontent.com/u/216957304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770927795952,
+      "changelog": "Initial release — 10-dimension weighted scoring, 80%+ gate, veto rules",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66073a1a379e58149507f4e8124fa4c9eb9d159d5a58f8d7475b0861eb677dc6"
+}

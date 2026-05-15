@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26614,
+  "uuid": "skill-clawhub-skill-demo",
+  "skillKey": "clawhub-skill-demo",
+  "name": "my skill demo showcase",
+  "summary": "Minimal TypeScript hello-world skill that demonstrates bundling TS code, a Node dependency, and package.json instructions for use and publication on Clawdhub.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_demo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whgreate",
+      "features": [
+        "Minimal TypeScript hello-world skill that demonstrates bundling TS code, a Node dependency, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-demo@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/811644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-demo",
+      "url": "https://clawhub.ai/skills/skill-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-demo",
+    "url": "https://clawhub.ai/skills/skill-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-demo-a0cd67698530c84e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-demo@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-demo-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3bfacb4c40256ac226f34a916df8079548d8fc4cc58afc9a2bcadcee4ebee9c",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:44:19.181Z"
+}

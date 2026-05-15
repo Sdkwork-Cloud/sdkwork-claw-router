@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_downloader",
+  "skill": {
+    "id": 36619,
+    "skillKey": "clawhub-tiktok-downloader",
+    "name": "tiktok-downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-downloader",
+    "url": "https://clawhub.ai/skills/tiktok-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-downloader-cab52b9f8623206d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download TikTok videos by URL or hashtag. Handles 403 errors, cookies, and user-agent rotation. Use for downloading TikTok videos, batch downloading from a l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kgc-yj",
+      "userId": "publishers:kgc-yj",
+      "displayName": "kgc-yj",
+      "image": "https://avatars.githubusercontent.com/u/79899090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774251848762,
+      "changelog": "- Initial release of TikTok Downloader.\n- Download TikTok videos by URL or hashtag, with support for batch downloads.\n- Handles common anti-bot measures, including 403 errors via browser cookie extraction and user-agent rotation.\n- Provides detailed instructions for single and multiple video downloads.\n- Offers best practices for navigating login requirements and avoiding rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2aac6b32fe3c9da52c3480f510eae98fee535cfbcb22300f4f7fc99a7a6148c7"
+}

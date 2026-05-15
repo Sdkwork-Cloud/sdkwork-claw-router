@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-wiki-personal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_wiki_personal",
+  "skill": {
+    "id": 62216,
+    "skillKey": "clawhub-llm-wiki-personal",
+    "name": "LLM Wiki - Personal Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-wiki-personal",
+    "url": "https://clawhub.ai/skills/llm-wiki-personal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-wiki-personal-eb81c365b041b927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人知识库构建系统（基于 Karpathy llm-wiki 方法论）。让 AI 持续构建和维护你的知识库， 支持多种素材源（网页、推特、公众号、小红书、知乎、YouTube、PDF、本地文件）， 自动整理为结构化的 wiki。 触发条件：用户明确提到\"知识库\"、\"wiki\"、\"llm-wiki\"，或要求对已初始..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vlalamoon",
+      "userId": "s17cdse0x5pj8mk3ac01bypyhx83e1n9",
+      "displayName": "vlalamoon",
+      "image": "https://avatars.githubusercontent.com/u/56936308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775584653442,
+      "changelog": "Initial release: Personal knowledge base building system based on Karpathy's llm-wiki methodology. Supports multiple source types, automatic content extraction, and structured wiki generation with bidirectional linking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1f59179188ff7694e127a71a8b1d8cb4688c2ca089cb31e07758fc14113d8b5"
+}

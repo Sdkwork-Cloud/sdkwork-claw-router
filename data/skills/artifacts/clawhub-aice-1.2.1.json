@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aice@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aice",
+  "skill": {
+    "id": 55909,
+    "skillKey": "clawhub-aice",
+    "name": "AICE — AI Confidence Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aice",
+    "url": "https://clawhub.ai/skills/aice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aice-50ccd96dbaff55f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Confidence Engine — 5 dominios bidireccionales (TECH/OPS/JUDGMENT/COMMS/ORCH). Agent + User scoring. Triggers: puntúa, auto-score, task-complete, idea-val..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brugillo",
+      "userId": "publishers:brugillo",
+      "displayName": "brugillo",
+      "image": "https://avatars.githubusercontent.com/u/50134745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772563486935,
+      "changelog": "Initial public release. Bidirectional trust scoring across 5 domains (TECH, OPS, JUDGMENT, COMMS, ORCH). Hub sync, streaks, ACC bonuses, warmup system.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:adb7e12d2cadce6e207f64988a4665c24f9c26f7c7e2d5f6a6b60216ad7113aa"
+}

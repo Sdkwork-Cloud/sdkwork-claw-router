@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clearbit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clearbit",
+  "skill": {
+    "id": 52150,
+    "skillKey": "clawhub-clearbit",
+    "name": "Clearbit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clearbit",
+    "url": "https://clawhub.ai/skills/clearbit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clearbit-c9544986a471ca3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clearbit — person enrichment, company enrichment, prospecting, and reveal (identify website visitors)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772064257325,
+      "changelog": "- Initial release of the Clearbit skill for OpenClaw agents.\n- Person and company enrichment, prospecting, and website visitor reveal via Clearbit API.\n- Python 3.10+ support with no external dependencies.\n- Command-line interface supports lookups by email, domain, IP, and company name.\n- Requires CLEARBIT_API_KEY environment variable.\n- All commands output results as JSON.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40446da03d40a1c084e6e4149abce7ac6b0bc64b1fefc129f675be03045ac409"
+}

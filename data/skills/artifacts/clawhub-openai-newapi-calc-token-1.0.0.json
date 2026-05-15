@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-newapi-calc-token@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_newapi_calc_token",
+  "skill": {
+    "id": 44894,
+    "skillKey": "clawhub-openai-newapi-calc-token",
+    "name": "Token-cost-calc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-newapi-calc-token",
+    "url": "https://clawhub.ai/skills/openai-newapi-calc-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-newapi-calc-token-1c5e1cfb748bd8d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when calculating, auditing, implementing, or reviewing token pricing and billing formulas for OpenAI-style APIs, NewAPI-compatible gateways, cached input..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "y-victor",
+      "userId": "s17dvsq84b2kfqc2a7qmjvcpsd84yd2f",
+      "displayName": "Y-Victor",
+      "image": "https://avatars.githubusercontent.com/u/29653038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776389068223,
+      "changelog": "- Initial release of token-cost-skill.\n- Supports calculating and reviewing token billing for OpenAI-style APIs and NewAPI-compatible gateways.\n- Differentiates between raw pricing, quota-based billing, and dashboard-specific cost projections.\n- Provides core rules to avoid double-counting cached tokens and to prevent mixing incompatible pricing units.\n- Includes detailed formulas, verification checklist, and common mistake handling for accurate token billing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38b7265baad7868e881216914b838ee654376849c3130b90e5ac34eeca4355b0"
+}

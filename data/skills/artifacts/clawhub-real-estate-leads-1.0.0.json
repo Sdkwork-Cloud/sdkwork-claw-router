@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/real-estate-leads@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_leads",
+  "skill": {
+    "id": 38813,
+    "skillKey": "clawhub-real-estate-leads",
+    "name": "Real Estate Leads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-leads",
+    "url": "https://clawhub.ai/skills/real-estate-leads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-leads-975d49755b06f546.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape fresh property listings by location, identify motivated sellers with contact info, score opportunities, and generate personalized buyer outreach messa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774989986143,
+      "changelog": "- Initial release of Real Estate Lead Machine.\n- Automates scraping of new and motivated property listings from major portals (Zillow, Rightmove, etc.) with owner/agent contact extraction.\n- Ranks leads by motivation level, opportunity score, and market analysis.\n- Generates AI-personalized outreach (email/SMS/follow-ups) for each lead.\n- Delivers a unified, ranked lead list with contact data and outreach messages, exportable in CSV/JSON.\n- Designed for agents, investors, and property sourcers to contact sellers before competitors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d9b20d83d2473bc0ff06fca364b2ebae27e45f761aab2c15efd3ffa54b56b22"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bengii-gemini-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bengii_gemini_fix",
+  "skill": {
+    "id": 51160,
+    "skillKey": "clawhub-bengii-gemini-fix",
+    "name": "Bengii Gemini Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bengii-gemini-fix",
+    "url": "https://clawhub.ai/skills/bengii-gemini-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bengii-gemini-fix-123ddb0729eac13c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive guide for installing, configuring, operating, and troubleshooting OpenClaw — a self-hosted, multi-channel AI agent gateway. Use when the user a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bengii",
+      "userId": "s171fb6yfp8ms1bz5rh4102zb183gs5j",
+      "displayName": "bengii",
+      "image": "https://avatars.githubusercontent.com/u/14150418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773679796748,
+      "changelog": "OpenClaw maintenance skill initial release.\n\n- Provides a comprehensive guide for installing, configuring, operating, and troubleshooting self-hosted OpenClaw gateways.\n- Covers multi-channel setup (WhatsApp, Telegram, Discord, Slack, iMessage, etc.), agent routing, security, and maintenance.\n- Includes quick reference for essential file paths and CLI commands.\n- Features detailed reference mapping for platform-specific guides, plugins, tools, and troubleshooting scenarios.\n- Supports resolving common errors and administering gateways on macOS, Linux, and Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fedea96989e8c625cd76bd9956a107f023b1dddd37f273f9082d4b623c91241"
+}

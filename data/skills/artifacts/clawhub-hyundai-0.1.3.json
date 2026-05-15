@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyundai@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyundai",
+  "skill": {
+    "id": 31561,
+    "skillKey": "clawhub-hyundai",
+    "name": "Hyundai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyundai",
+    "url": "https://clawhub.ai/skills/hyundai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyundai-ac85892205b92e8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Hyundai. Search products, news, financials, and official resources for Hyundai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1776533739950,
+      "changelog": "- 更新了 SKILL.md，提供更详细的现代（Hyundai）公司背景、发展历程、核心产品线和经营数据\n- 总结现代由廉价车到设计与技术领先转型的关键事件\n- 增加了 Genesis 豪华品牌等亮点信息\n- 移除了多余的 hyundai/SKILL.md 文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed3a597f051f59110cdaf73de6057af81c4c28aaa030b9fcd28fbd595701cabc"
+}

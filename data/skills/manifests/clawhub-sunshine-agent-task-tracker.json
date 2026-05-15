@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27309,
+  "uuid": "skill-clawhub-sunshine-agent-task-tracker",
+  "skillKey": "clawhub-sunshine-agent-task-tracker",
+  "name": "Agent Task Tracker",
+  "summary": "Proactive task state management. Use on EVERY task start, progress update, completion, or failure. Tracks what was requested, what's running (background proc...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunshine_agent_task_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Proactive task state management",
+        "Use on EVERY task start, progress update, completion, or failure",
+        "Tracks what was requested, what's running (background proc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sunshine-agent-task-tracker@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sunshine-agent-task-tracker",
+      "url": "https://clawhub.ai/skills/sunshine-agent-task-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunshine-agent-task-tracker",
+    "url": "https://clawhub.ai/skills/sunshine-agent-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunshine-agent-task-tracker-1fea4da72f8cb1f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sunshine-agent-task-tracker@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sunshine-agent-task-tracker-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49fbd2893f878e635e22c751d4cbb7d790e32267724e9b28e5b85e65700def35",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T21:39:09.353Z"
+}

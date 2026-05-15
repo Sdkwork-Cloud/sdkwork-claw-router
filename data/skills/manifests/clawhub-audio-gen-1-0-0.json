@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36886,
+  "uuid": "skill-clawhub-audio-gen-1-0-0",
+  "skillKey": "clawhub-audio-gen-1-0-0",
+  "name": "Audio Gen 1.0.0",
+  "summary": "Generate audiobooks, podcasts, or educational audio content on demand. User provides an idea or topic, Claude AI writes a script, and ElevenLabs converts it...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_gen_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matttgx",
+      "features": [
+        "Generate audiobooks, podcasts, or educational audio content on demand",
+        "User provides an idea or topic, Claude AI writes a script, and ElevenLabs converts it..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-gen-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192658944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-gen-1-0-0",
+      "url": "https://clawhub.ai/skills/audio-gen-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-gen-1-0-0",
+    "url": "https://clawhub.ai/skills/audio-gen-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-gen-1-0-0-1887dfeeed141624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-gen-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-gen-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69f2e22d6b9f0c6b17f2af8865b721fe7e139cc0ac5b1b38b274854c1c870fbd",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:01:49.658Z"
+}

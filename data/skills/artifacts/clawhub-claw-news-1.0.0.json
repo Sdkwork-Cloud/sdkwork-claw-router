@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_news",
+  "skill": {
+    "id": 63099,
+    "skillKey": "clawhub-claw-news",
+    "name": "Claw News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-news",
+    "url": "https://clawhub.ai/skills/claw-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-news-6c05125ee65a2310.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能每日新闻简报 Skill。支持两种新闻获取模式：(1) 主动搜索 - 基于用户关注的话题/关键词/人名，通过多 AI API 检索全网信息；(2) RSS 订阅 - 从配置的 RSS/Atom 源自动抓取新闻。 支持智能去重、兴趣管理、AI 摘要、定时推送。 触发关键词: \"newsman\", \"新闻简报\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russellfei",
+      "userId": "s176a27myh2rbyrfvwd62nct2h83g913",
+      "displayName": "russellfei",
+      "image": "https://avatars.githubusercontent.com/u/3415940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772530051967,
+      "changelog": "Claw-News 1.0.0 — 智能每日新闻简报发布\n\n- 支持主动搜索、RSS 订阅、定向爬虫三大新闻获取模式\n- 提供兴趣管理、智能去重、AI 摘要、定时推送功能\n- 多 API（Kimi、MiniMax、Claude）联合检索，支持兴趣关键词及人名关注\n- 可自定义 RSS 源、Kickstarter 超热门众筹项目跟踪\n- 支持通过 Slack/Channel 推送新闻简报和 Cron 定时任务\n- 详细命令与配置文档，便于快速上手与扩展",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7e96940ba01b09181c48edfad3d518be1755e4680c9db0fd3d716a028be114c"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20069,
+  "uuid": "skill-clawhub-openclaw-blender-mcp-skill",
+  "skillKey": "clawhub-openclaw-blender-mcp-skill",
+  "name": "Blender Mcp",
+  "summary": "Integrate Blender MCP (Model Context Protocol) allowing OpenClaw to control Blender for 3D modeling, scene creation, and manipulation. Use when you need to i...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_blender_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars720816",
+      "features": [
+        "Integrate Blender MCP (Model Context Protocol) allowing OpenClaw to control Blender for 3D mode.",
+        "Use when you need to i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-blender-mcp-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31459056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-blender-mcp-skill",
+      "url": "https://clawhub.ai/skills/openclaw-blender-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-blender-mcp-skill",
+    "url": "https://clawhub.ai/skills/openclaw-blender-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-blender-mcp-skill-bf6bd2912794cf90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-blender-mcp-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-blender-mcp-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d1eb549db5a72a686dafb3507fd2f32e3696eaa911cb54635dbdba435a2f327",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:11:37.759Z"
+}

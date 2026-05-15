@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31014,
+  "uuid": "skill-clawhub-wechat-article-export",
+  "skillKey": "clawhub-wechat-article-export",
+  "name": "Wechat Article Export",
+  "summary": "Export WeChat public account articles as mobile long screenshots (PNG), PDFs, or high-quality Markdown with YAML frontmatter and code block support.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benzking",
+      "features": [
+        "Export WeChat public account articles as mobile long screenshots (PNG), PDFs, or high-quality M."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-export@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2979921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-export",
+      "url": "https://clawhub.ai/skills/wechat-article-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-export",
+    "url": "https://clawhub.ai/skills/wechat-article-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-export-00b6d78b5fb838bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-export@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-export-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c7a4df0128a2fbac71f2607f4435dadc0a8bb6f2a4bb5f88d1321ec48dfe93",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T05:13:54.253Z"
+}

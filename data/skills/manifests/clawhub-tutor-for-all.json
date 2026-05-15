@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70251,
+  "uuid": "skill-clawhub-tutor-for-all",
+  "skillKey": "clawhub-tutor-for-all",
+  "name": "tutor-for-all",
+  "summary": "根据你的学习目标和时间，制定个性化课程及计划，跟踪进度，答疑解惑，并推荐优质学习资源辅助提升。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutor_for_all",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "枳初",
+      "features": [
+        "根据你的学习目标和时间，制定个性化课程及计划，跟踪进度，答疑解惑，并推荐优质学习资源辅助提升。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutor-for-all@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74137379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutor-for-all",
+      "url": "https://clawhub.ai/skills/tutor-for-all"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutor-for-all",
+    "url": "https://clawhub.ai/skills/tutor-for-all",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutor-for-all-711369578558d3db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutor-for-all@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutor-for-all-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cab70471a1469080a41214ded8dd848d41005f18c7d9c7d3f86d28aad21e1a61",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:19:23.743Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43719,
+  "uuid": "skill-clawhub-pilot-github-bridge",
+  "skillKey": "clawhub-pilot-github-bridge",
+  "name": "Pilot Github Bridge",
+  "summary": "Bridge GitHub webhook events as Pilot Protocol events. Use this skill when: 1. You need to receive GitHub events in Pilot agents 2. You want to trigger agent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_github_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Bridge GitHub webhook events as Pilot Protocol events",
+        "Use this skill when: 1",
+        "You need to receive GitHub events in Pilot agents 2",
+        "You want to trigger agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-github-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-github-bridge",
+      "url": "https://clawhub.ai/skills/pilot-github-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-github-bridge",
+    "url": "https://clawhub.ai/skills/pilot-github-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-github-bridge-f0f1dbd048c54b7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-github-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-github-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56d3ab8399acb5664cc403f9e179f0e92088d9741465fce47b5a916205653de3",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:20:34.501Z"
+}

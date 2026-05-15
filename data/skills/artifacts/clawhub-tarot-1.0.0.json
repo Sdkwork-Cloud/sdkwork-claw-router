@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tarot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tarot",
+  "skill": {
+    "id": 13378,
+    "skillKey": "clawhub-tarot",
+    "name": "Tarot from Univoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tarot",
+    "url": "https://clawhub.ai/skills/tarot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tarot-9fab58426fbe0e5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A reflective tarot draw for emotional support (presence-first, non-clinical, non-predictive)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangsenessa",
+      "userId": "publishers:yangsenessa",
+      "displayName": "Shiraz",
+      "image": "https://avatars.githubusercontent.com/u/43944399?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 957,
+      "installsAllTime": 32,
+      "installsCurrent": 30,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771658949393,
+      "changelog": "- Initial release of the tarot skill for reflective, presence-first tarot draws.\n- Supports single-card and three-card (Situation/Tension/Next Step) spreads using only the 22 Major Arcana.\n- Focuses on gentle, non-predictive, and agency-centered interpretations—never offering clinical or directive advice.\n- Includes language guidelines to ensure supportive, non-judgmental responses.\n- Built-in boundaries: no medical/legal/financial advice, and a safety-first shift if self-harm intent is mentioned.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d826fd1f5b40046782e3a70cfbd18199cb85774eb69468419e27ffc4f537fa0f"
+}

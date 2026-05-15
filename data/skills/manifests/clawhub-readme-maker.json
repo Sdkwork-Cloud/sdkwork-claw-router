@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25653,
+  "uuid": "skill-clawhub-readme-maker",
+  "skillKey": "clawhub-readme-maker",
+  "name": "Readme Maker",
+  "summary": "Design beautiful GitHub profile READMEs with templates. Use when styling profiles, validating badges, generating stat widgets, formatting bio sections.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Design beautiful GitHub profile READMEs with templates",
+        "Use when styling profiles, validating badges, generating stat widgets, formatting bio sections."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readme-maker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readme-maker",
+      "url": "https://clawhub.ai/skills/readme-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-maker",
+    "url": "https://clawhub.ai/skills/readme-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-maker-eebcd73d0a4f5d45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readme-maker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readme-maker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa4f3fffedd4a357c96206409c96d3919bb7c5b48c4ee00cb1f3d8a965476de0",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:33:44.728Z"
+}

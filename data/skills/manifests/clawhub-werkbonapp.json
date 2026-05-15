@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34523,
+  "uuid": "skill-clawhub-werkbonapp",
+  "skillKey": "clawhub-werkbonapp",
+  "name": "Werkbonapp",
+  "summary": "WerkbonApp integration. Manage data, records, and automate workflows. Use when the user wants to interact with WerkbonApp data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.werkbonapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WerkbonApp integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WerkbonApp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/werkbonapp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "werkbonapp",
+      "url": "https://clawhub.ai/skills/werkbonapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "werkbonapp",
+    "url": "https://clawhub.ai/skills/werkbonapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/werkbonapp-86141d006bc94e05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/werkbonapp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-werkbonapp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8ea46e7880b303844b20e5eaff93753350c7dfe809303ac8bba9e167250bcaa",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:01:29.710Z"
+}

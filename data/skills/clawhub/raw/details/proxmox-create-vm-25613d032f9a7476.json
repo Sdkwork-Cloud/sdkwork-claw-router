@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "proxmox-create-vm",
+    "displayName": "Proxmox Create Vm",
+    "summary": "Create Ubuntu 24.04 LXC containers or full VMs on Proxmox VE. Docker-ready with Compose v2. Handles nesting for Docker-in-LXC, auto-picks next available CTID...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774051251128,
+    "updatedAt": 1778314130425
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774051251128,
+    "changelog": "Initial release - Automates creation of Docker-ready Ubuntu 24.04 LXC containers or VMs on Proxmox VE.\n\n- Supports both LXC containers (default) and full VMs.\n- Auto-selects next available CTID/VMID to avoid conflicts.\n- Sets up Docker & Docker Compose v2 post-boot for immediate use.\n- Handles LXC nesting features for Docker-in-LXC scenarios.\n- Returns connection info and build summary after creation.\n- Includes teardown instructions and critical limitations in references.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "solomonneas",
+    "userId": "s175vcq9b774xbehtq2py4r5vn83f1k2",
+    "displayName": "Solomon Neas",
+    "image": "https://avatars.githubusercontent.com/u/41877493?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778314130425
+  }
+}

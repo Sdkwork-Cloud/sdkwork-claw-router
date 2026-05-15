@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15666,
+  "uuid": "skill-clawhub-amazon-to-shopify-sync",
+  "skillKey": "clawhub-amazon-to-shopify-sync",
+  "name": "amazon-to-shopify-sync",
+  "summary": "Extract multilingual product data from Amazon and sync it to Shopify with automatic token renewal and English content rewriting via REST Admin API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_to_shopify_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walyn",
+      "features": [
+        "Extract multilingual product data from Amazon and sync it to Shopify with automatic token renew."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-to-shopify-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70092910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-to-shopify-sync",
+      "url": "https://clawhub.ai/skills/amazon-to-shopify-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-to-shopify-sync",
+    "url": "https://clawhub.ai/skills/amazon-to-shopify-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-to-shopify-sync-10337302a98d0e46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-to-shopify-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-to-shopify-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a816e15b2cbfe2ce87dde14ee5e748e400227e8c748b4ad5879b9a5a38d9be2a",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:55:10.272Z"
+}

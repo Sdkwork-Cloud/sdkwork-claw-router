@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57485,
+  "uuid": "skill-clawhub-video2txt",
+  "skillKey": "clawhub-video2txt",
+  "name": "在线视频转文字稿",
+  "summary": "Extract transcripts/subtitles from video URLs and deliver as .docx files. Use this skill whenever the user provides a video link (YouTube, Bilibili, or any y...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video2txt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vistalyq",
+      "features": [
+        "Extract transcripts/subtitles from video URLs and deliver as .docx files",
+        "Use this skill whenever the user provides a video link (YouTube, Bilibili, or any y..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video2txt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5344331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video2txt",
+      "url": "https://clawhub.ai/skills/video2txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video2txt",
+    "url": "https://clawhub.ai/skills/video2txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video2txt-8bb89ecd019561d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video2txt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video2txt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:947e98a4f584e2750038d8faf81a82e6436571212377251a69d8457e4bdaf530",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:27:37.904Z"
+}

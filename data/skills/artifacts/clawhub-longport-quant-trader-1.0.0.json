@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/longport-quant-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.longport_quant_trader",
+  "skill": {
+    "id": 67220,
+    "skillKey": "clawhub-longport-quant-trader",
+    "name": "LongPort Quant Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "longport-quant-trader",
+    "url": "https://clawhub.ai/skills/longport-quant-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/longport-quant-trader-cd51a431d8eda37f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长桥证券量化交易集成 - 自动超跌/动量策略 + 飞书推送 + 绩效跟踪。支持港股/美股自动交易，每 5 分钟监控，止盈止损管理。适用于想要自动化交易的个人投资者和量化爱好者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fxm1618-gmail",
+      "userId": "s170c8z2bahqmngh7mzv2m36cn84dqbm",
+      "displayName": "fxm1618-gmail",
+      "image": "https://avatars.githubusercontent.com/u/265743492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774247026597,
+      "changelog": "longport-quant-trader v1.0.0\n\n- 首次发布版本，集成港股/美股自动量化交易。\n- 支持超跌抄底与动量追涨策略，内置止盈止损管理。\n- 提供飞书推送功能，监控结果和绩效实时推送。\n- 每 5 分钟自动市场扫描，智能捕捉买卖机会。\n- 支持绩效跟踪、个性化参数配置和自定义股票池。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8ff880aa9ed7e2dccede590f08f05657bae8c7a16ac229ee110275872bb1c07"
+}

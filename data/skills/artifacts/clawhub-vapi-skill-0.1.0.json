@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vapi-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vapi_skill",
+  "skill": {
+    "id": 12783,
+    "skillKey": "clawhub-vapi-skill",
+    "name": "Vapi Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vapi-skill",
+    "url": "https://clawhub.ai/skills/vapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vapi-skill-8c42719eae54f034.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Vapi voice assistants, calls, phone numbers, tools, and webhooks via Vapi REST API or CLI commands within OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "colygon",
+      "userId": "s17ef63y4eajhnta7q4y51cz8d83kv2z",
+      "displayName": "Colin Lowenburg",
+      "image": "https://avatars.githubusercontent.com/u/2701548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1666,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770450508473,
+      "changelog": "vapi-skill 0.1.0\n\n- Initial release providing management of Vapi voice agents (assistants), calls, phone numbers, tools, and webhooks via OpenClaw.\n- Supports both Vapi REST API and Vapi CLI for flexible workflows.\n- Includes a Node-based helper script for REST interactions.\n- Offers detailed setup and usage guidance for API keys, endpoints, and deployment modes.\n- Documents best practices for agent queries and resource management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2a10e97a7aa2a8e58543067519c1fce4ea8fb47650d3406d6de6efee8bf63fb"
+}

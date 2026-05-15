@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-ai-table@0.6.0",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_ai_table",
+  "skill": {
+    "id": 59021,
+    "skillKey": "clawhub-dingtalk-ai-table",
+    "name": "Dingtalk Ai Table"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-ai-table",
+    "url": "https://clawhub.ai/skills/dingtalk-ai-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-ai-table-e56541c8f1930ee8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉 AI 表格（多维表）操作技能。使用 mcporter CLI 连接钉钉官方新版 AI 表格 MCP server，基于 baseId / tableId / fieldId / recordId 体系执行 Base、Table、Field、Record 的查询与增删改。适用于创建 AI 表格、搜索表格、读取..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aliramw",
+      "userId": "s174xfzpfa9vjsavb1twmf90mx83kgrz",
+      "displayName": "Marila Wang",
+      "image": "https://avatars.githubusercontent.com/u/8380339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3901,
+      "installsAllTime": 37,
+      "installsCurrent": 35,
+      "stars": 10,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "0.6.0",
+      "createdAt": 1774966596414,
+      "changelog": "新增完整 skill metadata、快速开始说明、触发测试与示例脚本；发布前验证通过：security 21/21，triggering 2/2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fd83c1f5bea6f0e0eb95ff0152aceef4850a325ff10eba97fff66db47c2e239"
+}

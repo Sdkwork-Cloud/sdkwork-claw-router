@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66821,
+  "uuid": "skill-clawhub-short-video-creation",
+  "skillKey": "clawhub-short-video-creation",
+  "name": "Short Video Creation",
+  "summary": "帮助用户基于真实数据选题、撰写脚本、拍摄和剪辑短视频，提供实用创作指导和优化建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "帮助用户基于真实数据选题、撰写脚本、拍摄和剪辑短视频，提供实用创作指导和优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/short-video-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "short-video-creation",
+      "url": "https://clawhub.ai/skills/short-video-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-creation",
+    "url": "https://clawhub.ai/skills/short-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-creation-6f4de0a9e9ecaa55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/short-video-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-short-video-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2635799bfdd017e5980c77daefddc41c0341244e23741aef7feca02d6eaaed69",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T04:52:50.868Z"
+}

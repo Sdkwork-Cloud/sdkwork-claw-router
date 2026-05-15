@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59314,
+  "uuid": "skill-clawhub-minimax-image-generation",
+  "skillKey": "clawhub-minimax-image-generation",
+  "name": "minimax-image",
+  "summary": "MiniMax AI图片生成，支持 image-01 和 image-01-live 模型。 image-01: 画面表现细腻，支持文生图、图生图 image-01-live: 手绘、卡通等画风增强，支持文生图并进行画风设置 需要 MiniMax API Key (Coding Plan)。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanycun",
+      "features": [
+        "MiniMax AI图片生成，支持 image-01 和 image-01-live 模型。 image-01: 画面表现细腻，支持文生图、图生图 image-01-live: 手绘、卡通等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-image-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186550099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-image-generation",
+      "url": "https://clawhub.ai/skills/minimax-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-image-generation",
+    "url": "https://clawhub.ai/skills/minimax-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-image-generation-61a582f6f4921d08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-image-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-image-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d731932cd5bd3673ba9ab1aaeb1168094624aeb6d69f7728022c8cdf43399a17",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:12:50.792Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20930,
+  "uuid": "skill-clawhub-structs-mining",
+  "skillKey": "clawhub-structs-mining",
+  "name": "Structs Mining",
+  "summary": "Executes resource extraction in Structs. Mines ore and refines it into Alpha Matter. Use when mining ore, refining ore, starting a mine-refine cycle, checkin...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_mining",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh McDougall",
+      "features": [
+        "Executes resource extraction in Structs",
+        "Mines ore and refines it into Alpha Matter",
+        "Use when mining ore, refining ore, starting a mine-refine cycle, checkin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structs-mining@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structs-mining",
+      "url": "https://clawhub.ai/skills/structs-mining"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-mining",
+    "url": "https://clawhub.ai/skills/structs-mining",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-mining-8cee22b15505b3a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structs-mining@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structs-mining-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:149c17bda1f747140b98060906b3c1b4044d9a2214022a1305aa80861902ec9c",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:38.521Z"
+}

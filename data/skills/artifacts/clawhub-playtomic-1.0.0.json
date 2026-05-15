@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playtomic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playtomic",
+  "skill": {
+    "id": 27164,
+    "skillKey": "clawhub-playtomic",
+    "name": "Playtomic - Book courts using padel-tui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playtomic",
+    "url": "https://clawhub.ai/skills/playtomic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playtomic-08bd506b2eee6a88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"book a padel court\", \"find available padel courts\", \"search padel courts near me\", \"reserve a Playtomic cour..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philipp-eisen",
+      "userId": "publishers:philipp-eisen",
+      "displayName": "Philipp Eisen",
+      "image": "https://avatars.githubusercontent.com/u/8607233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649731217,
+      "changelog": "Initial release of Playtomic padel court booking skill for terminal users.\n\n- Enables searching, booking, listing, and canceling padel courts via the `padel-tui` CLI.\n- Guides users through setup, authentication, and all booking workflow steps.\n- Includes safety checks for installation and account actions.\n- Supports both global and local (`./bin/padel-tui`) command prefixes.\n- Requires interactive authentication and explicit user confirmation for impactful actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49de586f8acadd731b8e532976592ab9c2e0f1ab24dfb031387bbfa7ac74801a"
+}

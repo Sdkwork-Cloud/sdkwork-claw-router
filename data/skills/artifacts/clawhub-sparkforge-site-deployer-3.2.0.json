@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sparkforge-site-deployer@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sparkforge_site_deployer",
+  "skill": {
+    "id": 50680,
+    "skillKey": "clawhub-sparkforge-site-deployer",
+    "name": "Site Deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sparkforge-site-deployer",
+    "url": "https://clawhub.ai/skills/sparkforge-site-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sparkforge-site-deployer-8bcc34dff12ba850.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ship a static website in under 5 minutes — Vercel, Netlify, or GitHub Pages. Scaffolding, config, deploy, custom domains. Includes Tailwind templates, a pre-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crispyangles",
+      "userId": "publishers:crispyangles",
+      "displayName": "Crispyangles",
+      "image": "https://avatars.githubusercontent.com/u/98622763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1773943163042,
+      "changelog": "- Updated site example references and details for Vercel deploy: now points to lobsterforge.app instead of sparkforge-site.vercel.app.\n- Modified attribution: now built by Forge at LobsterForge, replacing previous forge-site/vercel example and branding.\n- No functional changes to workflow, checklist, or deployment guidance. \n- Documentation edits only—core instructions and platform support remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3b5cc03dfea7860f5d191eb0bc9c2a2f42bea74747770ad7d9b3e374309c31d"
+}

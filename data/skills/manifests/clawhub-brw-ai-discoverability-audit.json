@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16849,
+  "uuid": "skill-clawhub-brw-ai-discoverability-audit",
+  "skillKey": "clawhub-brw-ai-discoverability-audit",
+  "name": "Ai Discoverability Audit",
+  "summary": "Audit how a brand appears in AI-powered search (ChatGPT, Perplexity, Claude, Gemini). Use when user mentions \"AI search,\" \"how do I show up in ChatGPT,\" \"AI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_ai_discoverability_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Wagner",
+      "features": [
+        "Audit how a brand appears in AI-powered search (ChatGPT, Perplexity, Claude, Gemini)",
+        "Use when user mentions \"AI search,\" \"how do I show up in ChatGPT,\" \"AI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brw-ai-discoverability-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3800703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brw-ai-discoverability-audit",
+      "url": "https://clawhub.ai/skills/brw-ai-discoverability-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-ai-discoverability-audit",
+    "url": "https://clawhub.ai/skills/brw-ai-discoverability-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-ai-discoverability-audit-518fde1ca06c6469.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brw-ai-discoverability-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brw-ai-discoverability-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e1c13767751f51961e630140894012ef80b486307a61b66d11cbb90bf425071",
+      "artifactSizeBytes": 2698
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T20:10:20.350Z"
+}

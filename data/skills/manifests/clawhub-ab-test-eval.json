@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27907,
+  "uuid": "skill-clawhub-ab-test-eval",
+  "skillKey": "clawhub-ab-test-eval",
+  "name": "AB Test Eval",
+  "summary": "Run A/B evaluation tests for any OpenClaw skill, script, hook, or cron job. Make sure to use this skill whenever the user mentions testing, benchmarking, com...",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siyuan Huang",
+      "features": [
+        "Run A/B evaluation tests for any OpenClaw skill, script, hook, or cron job",
+        "Make sure to use this skill whenever the user mentions testing, benchmarking, com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-test-eval@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227780668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-test-eval",
+      "url": "https://clawhub.ai/skills/ab-test-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-eval",
+    "url": "https://clawhub.ai/skills/ab-test-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-eval-af90637087119cd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-test-eval@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-test-eval-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0972031ca5062ae2b5bd38ea832b7a884238bd1171dc63124d7045e04466ee4e",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T12:11:32.769Z"
+}

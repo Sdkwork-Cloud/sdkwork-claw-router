@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whale-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_watch",
+  "skill": {
+    "id": 19330,
+    "skillKey": "clawhub-whale-watch",
+    "name": "Whale Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-watch",
+    "url": "https://clawhub.ai/skills/whale-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-watch-124219e7e2ca6d5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor large crypto transactions across chains. Track whale wallets, detect unusual volume, alert on big moves. Supports Hedera, Ethereum, and Solana via pu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772379017444,
+      "changelog": "Whale Watch 1.0.0 — Initial Release\n\n- Monitor large crypto transactions across Hedera, Ethereum, and Solana using public APIs.\n- Track and alert on whale wallet activity and unusual transaction volumes.\n- Includes example command-line scripts for querying big transfers and monitoring specific wallets.\n- Tips provided for setup, API usage, and monitoring best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0e199d4fbce0d97f7b6dc8ae9b79880b8c3325614b2719b67227c15116fff45"
+}

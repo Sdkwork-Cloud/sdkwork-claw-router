@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10248,
+  "uuid": "skill-clawhub-code-quality",
+  "skillKey": "clawhub-code-quality",
+  "name": "Code Quality",
+  "summary": "Coding style standards, security guidelines, and accessibility requirements. Use when (1) Writing new code, (2) Reviewing code for style/security, (3) Implem...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Toby Morning",
+      "features": [
+        "Coding style standards, security guidelines, and accessibility requirements",
+        "Use when (1) Writing new code, (2) Reviewing code for style/security, (3) Implem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-quality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2746731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-quality",
+      "url": "https://clawhub.ai/skills/code-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-quality",
+    "url": "https://clawhub.ai/skills/code-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-quality-a48600120b9b9e39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f877577e15b96b548753320bba2165b7e241304a524dd2a8ce485c63c1103495",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:34:00.214Z"
+}

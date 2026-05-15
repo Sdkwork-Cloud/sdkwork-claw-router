@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66869,
+  "uuid": "skill-clawhub-xiaopi-self-improving",
+  "skillKey": "clawhub-xiaopi-self-improving",
+  "name": "Xiaopi Self Improving",
+  "summary": "AI自我改进与记忆系统 - 解决'同类错误反复犯、用户纠正不长记性'的痛点。自动捕获错误、用户纠正、最佳实践，并转化为长期记忆。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaopi_self_improving",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adin",
+      "features": [
+        "AI自我改进与记忆系统",
+        "解决'同类错误反复犯、用户纠正不长记性'的痛点。自动捕获错误、用户纠正、最佳实践，并转化为长期记忆。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaopi-self-improving@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22701008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaopi-self-improving",
+      "url": "https://clawhub.ai/skills/xiaopi-self-improving"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaopi-self-improving",
+    "url": "https://clawhub.ai/skills/xiaopi-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaopi-self-improving-181ce8ccce533a2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaopi-self-improving@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-self-improving-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95da43247d466798619ea3d8fef24ab66d6074347cb48a419a2c2c7bc37c28e7",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:06:33.903Z"
+}

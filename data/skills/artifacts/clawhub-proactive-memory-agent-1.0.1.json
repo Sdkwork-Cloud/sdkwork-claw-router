@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-memory-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_memory_agent",
+  "skill": {
+    "id": 34962,
+    "skillKey": "clawhub-proactive-memory-agent",
+    "name": "Proactive Memory Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-memory-agent",
+    "url": "https://clawhub.ai/skills/proactive-memory-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-memory-agent-e3d27ac83c234148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ultimate memory optimization for AI agents. Combines WAL protocol, Working Buffer, three-tier memory (HOT/WARM/COLD), context budgeting (10/40/20/20), and .l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silaszhu",
+      "userId": "s172qe4e950w23cxt802p0r55x83ge57",
+      "displayName": "silaszhu",
+      "image": "https://avatars.githubusercontent.com/u/86552162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774326193722,
+      "changelog": "v1.0.1: Added comprehensive Chinese documentation (中文文档). Bilingual support for SKILL.md with full Chinese translations and examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50f4e45420323694e113226cdf0f1adc60762c44724d17a909be2a86c65316bf"
+}

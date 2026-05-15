@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobazha-store-mcp-connect@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha_store_mcp_connect",
+  "skill": {
+    "id": 37741,
+    "skillKey": "clawhub-mobazha-store-mcp-connect",
+    "name": "Store Mcp Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha-store-mcp-connect",
+    "url": "https://clawhub.ai/skills/mobazha-store-mcp-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-store-mcp-connect-859f0c4ae3edd959.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect an AI agent to a Mobazha store via MCP (Model Context Protocol). Use when the user wants their agent to directly manage store products, orders, and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengzie",
+      "userId": "s17012xh220m3wrc8qzm42y7y5858439",
+      "displayName": "fengzie",
+      "image": "https://avatars.githubusercontent.com/u/34826428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1776854629162,
+      "changelog": "Add credential declarations and consent notice; strengthen credential safety guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86c8329ab62a913b8a5096334ea4bec9685e8535b8aef7611ba56afa907e18cd"
+}

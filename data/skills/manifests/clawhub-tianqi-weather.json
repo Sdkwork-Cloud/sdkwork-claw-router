@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69651,
+  "uuid": "skill-clawhub-tianqi-weather",
+  "skillKey": "clawhub-tianqi-weather",
+  "name": "天气",
+  "summary": "获取天气预报和气温信息。使用场景：用户询问天气、温度、降雨、出行建议等。支持通过 wttr.in 查询全球城市天气，无需 API Key。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianqi_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anmu14641",
+      "features": [
+        "获取天气预报和气温信息。使用场景：用户询问天气、温度、降雨、出行建议等。支持通过 wttr.in 查询全球城市天气，无需 API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianqi-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239561593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianqi-weather",
+      "url": "https://clawhub.ai/skills/tianqi-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianqi-weather",
+    "url": "https://clawhub.ai/skills/tianqi-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianqi-weather-e3abcbd0ae12016d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianqi-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianqi-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8207579d9860983b0233197c691607e94ddeb246c6b02b5f2782b36a6ab5f03",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:22:39.380Z"
+}

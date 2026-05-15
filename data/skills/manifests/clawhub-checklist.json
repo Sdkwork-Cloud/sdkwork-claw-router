@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21123,
+  "uuid": "skill-clawhub-checklist",
+  "skillKey": "clawhub-checklist",
+  "name": "Checklist",
+  "summary": "Collaborative task checklist manager for AI agents with sequential, parallel, and looping execution. Features agent coordination, dependencies, deadlock prev...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wel liu",
+      "features": [
+        "Collaborative task checklist manager for AI agents with sequential, parallel, and looping execu.",
+        "Features agent coordination, dependencies, deadlock prev..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checklist@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13745586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checklist",
+      "url": "https://clawhub.ai/skills/checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checklist",
+    "url": "https://clawhub.ai/skills/checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checklist-6da624dba5235ba1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checklist@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-checklist-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d71736bc2f9e58240764bbdd58d5d72e7dcb58baf54923592cb8071f478efc4",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:20:56.843Z"
+}

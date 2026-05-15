@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-greeting-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_greeting_bot",
+  "skill": {
+    "id": 65934,
+    "skillKey": "clawhub-daily-greeting-bot",
+    "name": "Daily Greeting Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-greeting-bot",
+    "url": "https://clawhub.ai/skills/daily-greeting-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-greeting-bot-7c3acd453fde3b37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取当地天气，并结合天气情况生成一句幽默的早安问候或“土味情话”。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrencheski",
+      "userId": "s17f15kfya0n3jw7d6z2qvnx09845cmp",
+      "displayName": "WrenCheski",
+      "image": "https://avatars.githubusercontent.com/u/132810010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775185684065,
+      "changelog": "首次发布：每日问候机器人",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e95283c45e02f6d62d3519e56c14738d828f4b7193befbe86f468b5d211085c5"
+}

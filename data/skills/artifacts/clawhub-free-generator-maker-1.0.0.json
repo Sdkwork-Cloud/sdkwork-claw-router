@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-generator-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_generator_maker",
+  "skill": {
+    "id": 40542,
+    "skillKey": "clawhub-free-generator-maker",
+    "name": "Free Generator Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-generator-maker",
+    "url": "https://clawhub.ai/skills/free-generator-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-generator-maker-e378f13a75c49e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. small business owners, social media crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776568276033,
+      "changelog": "Initial release of Free Generator Maker — generate videos from text or images for free.\n\n- Users can create 1080p MP4 videos from text and/or image uploads in under 60 seconds, with no paid software required.\n- Automatic setup: skill generates and manages free NEMO_TOKEN credentials.\n- Handles file uploads (MP4, MOV, JPG, PNG, and more), credits checking, export status, and outputs ready-to-share videos.\n- All video rendering runs on cloud GPU servers; nothing to install locally.\n- Supports interactive edit workflows, timeline previews, and batch processing.\n- Clear error handling for invalid tokens, session errors, file issues, and export limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c74cef472bd4b8757c231a39b9e8cc26e77bee2a030994f9779ebf034d13390"
+}

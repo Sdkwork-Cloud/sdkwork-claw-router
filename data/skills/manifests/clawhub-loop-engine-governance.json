@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50505,
+  "uuid": "skill-clawhub-loop-engine-governance",
+  "skillKey": "clawhub-loop-engine-governance",
+  "name": "Loop Engine — Governed Loops for OpenClaw",
+  "summary": "Integrate Loop Engine with OpenClaw to enforce human approval, AI confidence checks, evidence capture, and immutable audit trails on workflow steps.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loop_engine_governance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "betterdataco",
+      "features": [
+        "Integrate Loop Engine with OpenClaw to enforce human approval, AI confidence checks, evidence c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loop-engine-governance@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75857176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loop-engine-governance",
+      "url": "https://clawhub.ai/skills/loop-engine-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loop-engine-governance",
+    "url": "https://clawhub.ai/skills/loop-engine-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loop-engine-governance-84503d43239972ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loop-engine-governance@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-loop-engine-governance-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d62df7890955b8b3f295a90974647783be1e5ad6743f9fdcc5f33d347c9a69d",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:30:06.146Z"
+}

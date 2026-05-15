@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/india@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.india",
+  "skill": {
+    "id": 27634,
+    "skillKey": "clawhub-india",
+    "name": "India"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "india",
+    "url": "https://clawhub.ai/skills/india",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/india-fb54e9062429a937.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan India trips with specific neighborhoods, regional food calls, route choices, and grounded advice that avoids common travel mistakes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773246358642,
+      "changelog": "Added country-level routing, city guides, and practical travel advice for first-time and repeat India trips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31f9b56a9af0ba7f27cf1abad500d8304d59fd3c85b8223f2c0499792c5ff2d2"
+}

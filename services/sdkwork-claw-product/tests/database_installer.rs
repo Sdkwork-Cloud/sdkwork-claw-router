@@ -2,10 +2,11 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqliteAppSkillsReadStore, SqlitePricingCatalogLoader,
+    SqliteAppSkillsReadStore, SqliteForumStore, SqlitePricingCatalogLoader,
 };
 use sdkwork_claw_product::ports::{
-    AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject, PricingCatalog,
+    AppSkillsQuery, AppSkillsReadStore, AppSkillsSubject, ForumFeedQuery, ForumFeedReadStore,
+    PricingCatalog,
 };
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::{Row, SqlitePool};
@@ -236,7 +237,7 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_app_store_seed_rows(&pool).await;
     assert_skill_store_seed_rows(&pool).await;
     assert_skill_store_seed_visible_to_app_tenants(&pool).await;
-    assert_forum_seed_rows(&pool).await;
+    assert_forum_tutorial_seed_rows(&pool).await;
     assert_pricing_snapshot_contains_catalog_models(&pool, &catalog).await;
 
     let migration_count: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM system_schema_migration")
@@ -376,6 +377,183 @@ async fn sqlite_installer_upgrades_existing_installation_when_versions_change() 
 }
 
 #[tokio::test]
+async fn sqlite_installer_repairs_drifted_course_relation_seed_identity_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE content_course_relation
+        SET course_id = 30001001,
+            related_course_id = 30001003,
+            relation_type = 1,
+            sort_order = 9001
+        WHERE id = 30005002
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE system_installation_state
+        SET schema_version = '2026.05.06.1',
+            catalog_version = '2026.05.06.1'
+        WHERE id = 1
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must force a course seed repair pass when the persisted installation version is stale"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let relation = sqlx::query(
+        r#"
+        SELECT course_id, related_course_id, relation_type, sort_order, status, deleted_at
+        FROM content_course_relation
+        WHERE id = 30005002
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(30001001, relation.get::<i64, _>("course_id"));
+    assert_eq!(30001006, relation.get::<i64, _>("related_course_id"));
+    assert_eq!(1, relation.get::<i64, _>("relation_type"));
+    assert_eq!(20, relation.get::<i64, _>("sort_order"));
+    assert_eq!(1, relation.get::<i64, _>("status"));
+    assert!(
+        relation.get::<Option<String>, _>("deleted_at").is_none(),
+        "course relation seed repair must restore the canonical active relation row"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_reimports_course_seed_when_recorded_payload_is_stale() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE system_schema_migration
+        SET checksum = 'stale-course-seed-checksum',
+            status = 'completed'
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("course:{SCHEMA_VERSION}"))
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect a stale course seed payload even when seed ids are present"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let course_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM content_course
+        WHERE course_code LIKE 'c%'
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(
+        course_count >= 200,
+        "course seed repair must restore the expanded online learning catalog"
+    );
+
+    let course_migration = sqlx::query(
+        r#"
+        SELECT status, checksum
+        FROM system_schema_migration
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("course:{SCHEMA_VERSION}"))
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("completed", course_migration.get::<String, _>("status"));
+    assert_ne!(
+        "stale-course-seed-checksum",
+        course_migration.get::<String, _>("checksum")
+    );
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_drifted_course_section_seed_identity_on_payload_refresh() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE content_course_section
+        SET course_id = 30001002,
+            section_no = 9,
+            title = 'Drifted section'
+        WHERE id = 30003001
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE system_schema_migration
+        SET checksum = 'stale-course-seed-checksum',
+            status = 'completed'
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("course:{SCHEMA_VERSION}"))
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let section = sqlx::query(
+        r#"
+        SELECT course_id, section_no, title, status, deleted_at
+        FROM content_course_section
+        WHERE id = 30003001
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(30001001, section.get::<i64, _>("course_id"));
+    assert_eq!(1, section.get::<i64, _>("section_no"));
+    assert_ne!("Drifted section", section.get::<String, _>("title"));
+    assert_eq!(1, section.get::<i64, _>("status"));
+    assert!(section.get::<Option<String>, _>("deleted_at").is_none());
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup_check() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -459,16 +637,12 @@ async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_missing_forum_seed_rows_on_startup_check() {
+async fn sqlite_installer_repairs_missing_forum_tutorial_seed_rows_on_startup_check() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
 
     installer.ensure_installed().await.unwrap();
-    sqlx::query("DELETE FROM plus_comments WHERE uuid = 'sdkwork-forum-comment-routing-benchmark'")
-        .execute(&pool)
-        .await
-        .unwrap();
-    sqlx::query("DELETE FROM plus_feeds WHERE uuid = 'sdkwork-forum-feed-routing-performance'")
+    sqlx::query("DELETE FROM plus_feeds WHERE uuid = 'sdkwork-forum-tutorial-quick-start'")
         .execute(&pool)
         .await
         .unwrap();
@@ -476,58 +650,62 @@ async fn sqlite_installer_repairs_missing_forum_seed_rows_on_startup_check() {
     assert_eq!(
         InstallationStatus::UpgradeRequired,
         installer.status().await.unwrap(),
-        "installer status must detect missing Java-compatible forum seed rows"
+        "installer status must detect missing bundled forum tutorial rows"
     );
 
     let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert_eq!(
+        InstallationStatus::Installed,
+        repaired.status,
+        "forum seed repair must restore the default tutorial rows"
+    );
     assert!(repaired.changed);
-    assert_forum_seed_rows(&pool).await;
+
+    assert_forum_tutorial_seed_rows(&pool).await;
 }
 
 #[tokio::test]
-async fn sqlite_installer_repairs_drifted_forum_seed_counts_on_startup_check() {
+async fn sqlite_installer_repairs_missing_default_iam_subject_on_startup_check() {
     let pool = sqlite_pool().await;
     let installer = installer(pool.clone());
 
     installer.ensure_installed().await.unwrap();
-    sqlx::query(
-        r#"
-        UPDATE plus_feeds
-        SET like_count = 0,
-            favorite_count = 0,
-            status = 3
-        WHERE uuid = 'sdkwork-forum-feed-routing-performance'
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
+    sqlx::query("DELETE FROM iam_organization")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query("DELETE FROM iam_tenant")
+        .execute(&pool)
+        .await
+        .unwrap();
 
     assert_eq!(
         InstallationStatus::UpgradeRequired,
         installer.status().await.unwrap(),
-        "installer status must detect drifted Java-compatible forum seed counters and status"
+        "installer status must detect that server-mode app-api startup has no active IAM subject"
     );
 
     let repaired = installer.ensure_installed().await.unwrap();
     assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
 
-    let row = sqlx::query(
+    let active_subject_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT like_count, favorite_count, status
-        FROM plus_feeds
-        WHERE uuid = 'sdkwork-forum-feed-routing-performance'
+        SELECT COUNT(1)
+        FROM iam_tenant t
+        JOIN iam_organization o ON o.tenant_id = t.id
+        WHERE t.code = 'default'
+          AND t.status = 'active'
+          AND o.code = 'root'
+          AND o.status = 'active'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(124, row.get::<i64, _>("like_count"));
-    assert_eq!(42, row.get::<i64, _>("favorite_count"));
-    assert_eq!(2, row.get::<i64, _>("status"));
-    assert_forum_seed_rows(&pool).await;
+    assert_eq!(
+        1, active_subject_count,
+        "installer repair must restore a default active IAM tenant and organization"
+    );
 }
 
 #[tokio::test]
@@ -592,6 +770,198 @@ async fn sqlite_installer_repairs_drifted_skills_seed_standard_fields_on_startup
     assert_eq!(1, prompt_optimizer.get::<i64, _>("builtin"));
     assert_eq!(1, prompt_optimizer.get::<i64, _>("is_builtin"));
     assert_skill_store_seed_rows(&pool).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_drifted_skill_package_identity_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE plus_agent_skill_package
+        SET package_key = 'legacy-sdkwork-official-skills',
+            name = 'Legacy SDKWork Official Skills',
+            enabled = 0,
+            featured = 0
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND id = 7101
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect seed package identity drift before startup repair"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let package = sqlx::query(
+        r#"
+        SELECT package_key, name, enabled, featured
+        FROM plus_agent_skill_package
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND id = 7101
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "sdkwork-official-skills",
+        package.get::<String, _>("package_key")
+    );
+    assert_eq!("SDKWork Official Skills", package.get::<String, _>("name"));
+    assert_eq!(1, package.get::<i64, _>("enabled"));
+    assert_eq!(1, package.get::<i64, _>("featured"));
+    assert_skill_store_seed_rows(&pool).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_reclaims_skill_package_key_from_stale_seed_duplicate_on_startup_check() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE plus_agent_skill_package
+        SET package_key = 'legacy-sdkwork-official-skills',
+            name = 'Legacy SDKWork Official Skills',
+            enabled = 0
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND id = 7101
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO plus_agent_skill_package
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, enabled, featured, sort_weight, tags)
+        VALUES
+            (97101, 'stale-seed-package-sdkwork-official-skills', 0, 0, 0, 0, 'sdkwork-official-skills', 'Stale SDKWork Official Skills Duplicate', 0, 0, 999, '[]')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect stale duplicate seed packages that occupy the canonical package key"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let canonical_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill_package
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND package_key = 'sdkwork-official-skills'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, canonical_count);
+
+    let stale_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM plus_agent_skill_package
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND id = 97101
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, stale_count);
+
+    let package = sqlx::query(
+        r#"
+        SELECT package_key, name, enabled, featured
+        FROM plus_agent_skill_package
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND id = 7101
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "sdkwork-official-skills",
+        package.get::<String, _>("package_key")
+    );
+    assert_eq!("SDKWork Official Skills", package.get::<String, _>("name"));
+    assert_eq!(1, package.get::<i64, _>("enabled"));
+    assert_eq!(1, package.get::<i64, _>("featured"));
+    assert_skill_store_seed_rows(&pool).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_skills_seed_when_store_visible_catalog_becomes_empty() {
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer.ensure_installed().await.unwrap();
+    sqlx::query(
+        r#"
+        UPDATE plus_category
+        SET visible = 0,
+            status = 0
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND type IN (19, 20)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect skill seed drift that makes the public SkillsHub categories and skill joins empty"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+    assert_skill_store_seed_visible_to_app_tenants(&pool).await;
+
+    let categories = SqliteAppSkillsReadStore::new(pool.clone())
+        .load_categories(Some(AppSkillsSubject {
+            tenant_id: 10,
+            organization_id: 20,
+            user_id: 30,
+        }))
+        .await
+        .unwrap();
+    assert_eq!(
+        Some("SDKWork Official"),
+        categories.first().map(String::as_str),
+        "SDKWork Official must remain the first visible SkillsHub category after seed repair"
+    );
 }
 
 #[tokio::test]
@@ -2293,6 +2663,7 @@ async fn assert_skill_store_seed_rows(pool: &SqlitePool) {
 }
 
 async fn assert_app_store_seed_rows(pool: &SqlitePool) {
+    let expected_app_count = sdkwork_app_seed_count();
     let app_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
@@ -2303,8 +2674,8 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     .fetch_one(pool)
     .await
     .unwrap();
-    assert!(
-        app_count >= 31,
+    assert_eq!(
+        expected_app_count as i64, app_count,
         "installer must seed every sdkwork.app.config.json PlusApp projection"
     );
 
@@ -2517,91 +2888,182 @@ async fn assert_skill_store_seed_visible_to_app_tenants(pool: &SqlitePool) {
     assert!(
         categories
             .iter()
-            .any(|category| category == "Agent Productivity"),
+            .any(|category| category == "SDKWork Official"),
         "official global skill categories must be visible to any app tenant"
     );
 }
 
-async fn assert_forum_seed_rows(pool: &SqlitePool) {
+async fn assert_forum_tutorial_seed_rows(pool: &SqlitePool) {
     let feed_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
         FROM plus_feeds
-        WHERE tenant_id = 0
+        WHERE uuid LIKE 'sdkwork-forum-tutorial-%'
+          AND COALESCE(status, 0) = 2
+          AND tenant_id = 0
           AND organization_id = 0
-          AND content_type = 5
-          AND status = 2
-          AND uuid LIKE 'sdkwork-forum-feed-%'
         "#,
     )
     .fetch_one(pool)
     .await
     .unwrap();
     assert_eq!(
-        4, feed_count,
-        "installer must seed Java-compatible PlusFeeds forum rows"
+        8, feed_count,
+        "installer must create default professional forum tutorial posts"
     );
 
-    let comment_count: i64 = sqlx::query_scalar(
+    let tutorial = sqlx::query(
+        r#"
+        SELECT title, summary, category_id, is_top, is_recommended, tags
+        FROM plus_feeds
+        WHERE uuid = 'sdkwork-forum-tutorial-quick-start'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "Claw Router 快速入门：从安装到第一次模型调用",
+        tutorial.get::<String, _>("title")
+    );
+    assert!(
+        tutorial.get::<String, _>("summary").contains("安装完成后"),
+        "quick-start tutorial summary must explain post-install onboarding"
+    );
+    assert_eq!(1004, tutorial.get::<i64, _>("category_id"));
+    assert!(tutorial.get::<bool, _>("is_top"));
+    assert!(tutorial.get::<bool, _>("is_recommended"));
+    assert!(
+        tutorial.get::<String, _>("tags").contains("快速入门"),
+        "tutorial tags must be written as JSON text for SQLite"
+    );
+
+    let forum_comment_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
         FROM plus_comments
-        WHERE tenant_id = 0
+        WHERE uuid LIKE 'sdkwork-forum-comment-%'
+          AND COALESCE(content_type, 0) = 5
+          AND tenant_id = 0
           AND organization_id = 0
-          AND content_type = 5
-          AND status = 1
-          AND uuid LIKE 'sdkwork-forum-comment-%'
         "#,
     )
     .fetch_one(pool)
     .await
     .unwrap();
     assert_eq!(
-        5, comment_count,
-        "installer must seed Java-compatible PlusComments forum rows"
+        8, forum_comment_count,
+        "installer must create default forum tutorial comments"
     );
 
     let vote_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
         FROM plus_content_vote
-        WHERE tenant_id = 0
+        WHERE uuid LIKE 'sdkwork-forum-vote-%'
+          AND COALESCE(content_type, 0) = 5
+          AND tenant_id = 0
           AND organization_id = 0
-          AND content_type = 5
-          AND rating = 'like'
-          AND uuid LIKE 'sdkwork-forum-vote-%'
         "#,
     )
     .fetch_one(pool)
     .await
     .unwrap();
     assert!(
-        vote_count >= 4,
-        "installer must seed fact-backed forum like rows"
+        vote_count >= 8,
+        "installer must create default forum engagement votes"
     );
 
     let favorite_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
         FROM plus_favorite
-        WHERE tenant_id = 0
+        WHERE uuid LIKE 'sdkwork-forum-favorite-%'
+          AND COALESCE(content_type, 0) = 5
+          AND tenant_id = 0
           AND organization_id = 0
-          AND content_type = 5
-          AND status = 1
-          AND uuid LIKE 'sdkwork-forum-favorite-%'
         "#,
     )
     .fetch_one(pool)
     .await
     .unwrap();
     assert!(
-        favorite_count >= 2,
-        "installer must seed fact-backed forum favorite rows"
+        favorite_count >= 4,
+        "installer must create default forum collection examples"
+    );
+
+    let migration_status: String = sqlx::query_scalar(
+        r#"
+        SELECT status
+        FROM system_schema_migration
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("forum:{SCHEMA_VERSION}"))
+    .fetch_one(pool)
+    .await
+    .unwrap();
+    assert_eq!("completed", migration_status);
+
+    let store = SqliteForumStore::new(pool.clone());
+    let posts = store
+        .load_feeds(
+            ForumFeedQuery {
+                content_type: Some("feeds".to_owned()),
+                keyword: Some("模型调用".to_owned()),
+                page: Some(1),
+                size: Some(10),
+                ..ForumFeedQuery::default()
+            },
+            None,
+        )
+        .await
+        .unwrap();
+    assert!(
+        posts
+            .iter()
+            .any(|post| post.title.contains("第一次模型调用")),
+        "default tutorial posts must be visible through the forum read store"
+    );
+
+    let quick_start_post = posts
+        .iter()
+        .find(|post| post.title.contains("第一次模型调用"))
+        .expect("quick-start tutorial must be returned by the forum read store");
+    let quick_start_detail = store
+        .load_feed_detail(quick_start_post.id, None)
+        .await
+        .unwrap()
+        .expect("quick-start tutorial detail must be readable after install");
+    assert!(
+        quick_start_detail.content.contains("第一步")
+            && quick_start_detail.content.contains("OpenAI 兼容接口"),
+        "default tutorial detail must expose the full onboarding article body"
     );
 }
 
 fn bundled_catalog() -> sdkwork_models::ModelCatalog {
     sdkwork_models::load_bundled_catalog().unwrap()
+}
+
+fn sdkwork_app_seed_count() -> usize {
+    let seed: serde_json::Value =
+        serde_json::from_str(include_str!("../../../data/app/sdkwork-apps.json"))
+            .expect("bundled app seed must parse");
+    let declared_count = seed
+        .get("count")
+        .and_then(serde_json::Value::as_u64)
+        .expect("bundled app seed must declare count") as usize;
+    let actual_count = seed
+        .get("apps")
+        .and_then(serde_json::Value::as_array)
+        .expect("bundled app seed must include apps")
+        .len();
+    assert_eq!(
+        declared_count, actual_count,
+        "bundled app seed count must match apps length"
+    );
+    actual_count
 }
 
 fn catalog_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {

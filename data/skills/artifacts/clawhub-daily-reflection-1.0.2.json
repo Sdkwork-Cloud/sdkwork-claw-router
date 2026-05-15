@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-reflection@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_reflection",
+  "skill": {
+    "id": 27913,
+    "skillKey": "clawhub-daily-reflection",
+    "name": "Daily Reflection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-reflection",
+    "url": "https://clawhub.ai/skills/daily-reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-reflection-928b8a35e4f39970.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nightly OpenClaw reflection routine for isolated cron jobs. Analyzes the day, extracts concrete learnings, updates solution memory, detects recurring pattern..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778141490818,
+      "changelog": "Reduce autonomous wording, require approval for cron changes, and strengthen privacy guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc5a9103482d90e28ecb3ecc2802bfc8bd8fbca3e1b2d73dc34543240354b904"
+}

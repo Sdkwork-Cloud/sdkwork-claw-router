@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vue-expert@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue_expert",
+  "skill": {
+    "id": 9418,
+    "skillKey": "clawhub-vue-expert",
+    "name": "Vue Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue-expert",
+    "url": "https://clawhub.ai/skills/vue-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue-expert-9ef123b6869b00b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building Vue 3 applications with Composition API, Nuxt 3, or Quasar. Invoke for Pinia, TypeScript, PWA, Capacitor mobile apps, Vite configuration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3347,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838836660,
+      "changelog": "Initial release of vue-expert skill.\n\n- Senior Vue specialist for Vue 3, Composition API, Nuxt 3, Pinia, TypeScript, Quasar, Capacitor, and Vite.\n- Detailed scope covering reusable composables, SSR/SSG setup, PWA/mobile features, build configuration, and advanced reactivity.\n- Provides implementation-ready code with `<script setup>` and strict Composition API guidelines.\n- Reference workflow and constraints ensure best practices in state management, reactivity, and testing.\n- Includes clear triggers and topic-based references for contextual guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:743a2bef1eab9b88d9c41421516b388aa279f50886d0afa8e0fbf3fbf78e8990"
+}

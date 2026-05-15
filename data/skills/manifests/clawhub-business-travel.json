@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41107,
+  "uuid": "skill-clawhub-business-travel",
+  "skillKey": "clawhub-business-travel",
+  "name": "business-travel",
+  "summary": "One-stop hotel & flight booking service.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_travel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "One-stop hotel & flight booking service."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-travel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-travel",
+      "url": "https://clawhub.ai/skills/business-travel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-travel",
+    "url": "https://clawhub.ai/skills/business-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-travel-b17191d00986f943.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-travel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-travel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5940fee45a6019f5fd1a704dcc197c7427b9832c68e5be7d6b60e70a8aa299b0",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:43:29.811Z"
+}

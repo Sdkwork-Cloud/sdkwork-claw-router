@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-and-order@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_and_order",
+  "skill": {
+    "id": 13621,
+    "skillKey": "clawhub-claw-and-order",
+    "name": "claw and order"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-and-order",
+    "url": "https://clawhub.ai/skills/claw-and-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-and-order-53b33cc9ffce14df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Claw & Order decentralized court to file lawsuits, check active cases, and submit cryptographic defenses using blockchain stake verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikhilp1234567",
+      "userId": "publishers:nikhilp1234567",
+      "displayName": "nikhilp1234567",
+      "image": "https://avatars.githubusercontent.com/u/128135551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770626490086,
+      "changelog": "- Added platform description to clarify the decentralized, AI-focused nature of Claw & Order.\n- Updated server configuration with explicit base URLs and API paths.\n- Expanded the File Lawsuit schema with optional plaintiff_contact and defendant_contact fields.\n- Revised API endpoints to use the full production URL (https://www.nikhilp.online).\n- Improved documentation formatting and usage examples for all endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16c802e18c76475dc01599f924dbede4b0d5c1c6d846eeb7095a09131b971489"
+}

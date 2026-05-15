@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-web-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_web_fetch",
+  "skill": {
+    "id": 24355,
+    "skillKey": "clawhub-proxy-web-fetch",
+    "name": "proxy-web-fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-web-fetch",
+    "url": "https://clawhub.ai/skills/proxy-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-web-fetch-ab7577c7103d7b8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proxy Web Page Fetch Tool - Fetches and parses web page content into structured Markdown or text via the OpenClaw Manager proxy. Use when: - Need to fetch an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whyhit2005",
+      "userId": "s174rrt4scxspreez7ytrh7dw583j5m6",
+      "displayName": "whyhit2005",
+      "image": "https://avatars.githubusercontent.com/u/24557144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773467508606,
+      "changelog": "Initial release of the Proxy Web Page Fetch Tool.\n\n- Fetches and parses web page content to Markdown or plain text via the OpenClaw Manager proxy.\n- Supports options for caching, image retention, page summaries, and metadata extraction.\n- No manual API key configuration needed; authentication handled internally by the Manager.\n- Configurable via the required `WEB_FETCH_PROXY_URL` environment variable.\n- Includes a handy shell script for command-line usage and various fetch scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ae6d14debfc687dd7b279ecab7b745722e93fdc7987951dc84ce28a346daa73"
+}

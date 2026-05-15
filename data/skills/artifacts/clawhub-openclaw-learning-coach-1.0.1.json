@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-learning-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_learning_coach",
+  "skill": {
+    "id": 18459,
+    "skillKey": "clawhub-openclaw-learning-coach",
+    "name": "OpenClaw Learning Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-learning-coach",
+    "url": "https://clawhub.ai/skills/openclaw-learning-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-learning-coach-4c1551a258a0da52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "For new OpenClaw users, provide a staged learning path based on official docs, moving from usage to configuration to core concepts, with everyday analogies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antler2024",
+      "userId": "s172qg95hr86mt0mxmbj9tmvk983mz0j",
+      "displayName": "antler2024",
+      "image": "https://avatars.githubusercontent.com/u/155366038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772948318162,
+      "changelog": "Optimized teaching flow, added course testing support, strictly followed official teaching constraints",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a82fce7a6daf6e042b83f28892432dce5c88a29624da17f97339ed5e2b08515"
+}

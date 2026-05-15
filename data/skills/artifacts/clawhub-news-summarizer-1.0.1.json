@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-summarizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_summarizer",
+  "skill": {
+    "id": 35503,
+    "skillKey": "clawhub-news-summarizer",
+    "name": "News Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-summarizer",
+    "url": "https://clawhub.ai/skills/news-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-summarizer-439c1e076baab46f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and summarize world news from BBC, Reuters, NPR RSS feeds. Can create voice summaries. USE WHEN: \"What's happening in the world?\", daily briefings, gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777869157233,
+      "changelog": "首个正式版本，支持新闻内容抓取总结与技能发布功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a5f458cc9e6cacb0e9719272c505e2eac4901c1c41d374fc79b90ce87916d08"
+}

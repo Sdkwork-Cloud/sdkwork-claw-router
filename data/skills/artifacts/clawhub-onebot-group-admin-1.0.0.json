@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onebot-group-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onebot_group_admin",
+  "skill": {
+    "id": 68977,
+    "skillKey": "clawhub-onebot-group-admin",
+    "name": "onebot QQ群管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onebot-group-admin",
+    "url": "https://clawhub.ai/skills/onebot-group-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onebot-group-admin-12f976ccbd277f95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QQ 群管理操作，通过 OneBot 11 API 实现群名修改、群公告、禁言、踢人、设置管理员、全员禁言等功能。当用户需要在 QQ 群中执行管理操作时使用，如修改群名、发公告、禁言某人、踢人、设置管理员等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangalexhy",
+      "userId": "s17fnysdn13tb167vvb7bn1qes83gjf5",
+      "displayName": "zhangalexhy",
+      "image": "https://avatars.githubusercontent.com/u/51531505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775188648891,
+      "changelog": "通过OneBot 11 API发布用于QQ群管理的onebot-group-admin技能的初始版本：\n- 支持群组重命名、发布公告、成员禁言/封禁、踢出成员、设置管理员、全群禁言等操作。\n- 提供命令行脚本接口以执行组管理操作。\n- 包括脚本使用说明、所需参数以及每个支持操作的示例。\n- 允许通过环境变量覆盖OneBot WebSocket端点和令牌。\n- 注意机器人需要管理员权限。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b71cfb34edd83e782539062812c25cdeb16f981b3cbc35f0a0c87dccdba01b1"
+}

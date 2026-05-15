@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-image-skill-openclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_image_skill_openclaw",
+  "skill": {
+    "id": 22645,
+    "skillKey": "clawhub-jimeng-image-skill-openclaw",
+    "name": "Jimeng Image Skill Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-image-skill-openclaw",
+    "url": "https://clawhub.ai/skills/jimeng-image-skill-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-image-skill-openclaw-76ef71903118c31c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts using the Jimeng API with customizable size, scale, seed, and output path via Python scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gkhcsc",
+      "userId": "s178x5n6w3fhvxbqkmcf9q18n5844471",
+      "displayName": "gkhcsc",
+      "image": "https://avatars.githubusercontent.com/u/80573974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773667455732,
+      "changelog": "- Initial release of Jimeng-Image skill for generating images via the Jimeng API.\n- Supports image generation based on user prompts using a Python script.\n- Images are saved automatically to ~/.openclaw/workspace/images.\n- Command line allows customization of prompt, width, height, output path, and other parameters.\n- Authentication via environment variables Jimeng_Secret_Key and Jimeng_Access_Key is required.\n- Includes usage instructions, requirements, and command examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c694fd448448fc8afa4b45ebc12eeed1639cfafeec34701c06be4dd79f4b2f3d"
+}

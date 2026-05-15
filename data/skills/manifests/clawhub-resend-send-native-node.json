@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39545,
+  "uuid": "skill-clawhub-resend-send-native-node",
+  "skillKey": "clawhub-resend-send-native-node",
+  "name": "Resend Send Native Node",
+  "summary": "Send email via Resend.com's HTTPS API - native Node.js, zero dependencies. Use when the user explicitly asks to email, send a message, mail a report, or deli...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_send_native_node",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwestburg",
+      "features": [
+        "Send email via Resend.com's HTTPS API",
+        "native Node.js, zero dependencies",
+        "Use when the user explicitly asks to email, send a message, mail a report, or deli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resend-send-native-node@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/278213922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resend-send-native-node",
+      "url": "https://clawhub.ai/skills/resend-send-native-node"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-send-native-node",
+    "url": "https://clawhub.ai/skills/resend-send-native-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-send-native-node-4505149e6cbe9f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resend-send-native-node@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-resend-send-native-node-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59722f06b1f061b34f4dfbebe6be9b37c41282d727f394f171b4e4445cce1b49",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:42:21.161Z"
+}

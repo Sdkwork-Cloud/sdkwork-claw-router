@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "session-janitor",
+    "displayName": "Session Janitor",
+    "summary": "Automated transcript trimming, LLM memory extraction, and session hygiene for OpenClaw gateways. Keeps transcripts from bloating, extracts structured memorie...",
+    "tags": {
+      "latest": "1.6.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1775500630367,
+    "updatedAt": 1777912007068
+  },
+  "latestVersion": {
+    "version": "1.6.0",
+    "createdAt": 1777911681590,
+    "changelog": "Fix: skip .trajectory.jsonl (OpenClaw telemetry) in watcher, cron loop, and ops-bot watchdog — these were being incorrectly treated as large transcripts and triggering false alerts. Verified compatible with OpenClaw 2026.5.3.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "halfdeadcat",
+    "userId": "s175ws1903zk4kgz0r3wqpxzd984a47y",
+    "displayName": "halfdeadcat",
+    "image": "https://avatars.githubusercontent.com/u/33385118?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777912007068
+  }
+}

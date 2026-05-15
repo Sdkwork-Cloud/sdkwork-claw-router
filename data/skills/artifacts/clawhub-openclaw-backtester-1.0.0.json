@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backtester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backtester",
+  "skill": {
+    "id": 45515,
+    "skillKey": "clawhub-openclaw-backtester",
+    "name": "OpenClaw Backtester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backtester",
+    "url": "https://clawhub.ai/skills/openclaw-backtester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backtester-9ba2a80469c27284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional backtesting framework for trading strategies. Tests SMA crossover, RSI, MACD, Bollinger Bands, and custom strategies on historical data. Generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cry779",
+      "userId": "s17894j327d6nmwbmaa8hmrjyx844kqm",
+      "displayName": "cry779",
+      "image": "https://avatars.githubusercontent.com/u/266420414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775212291254,
+      "changelog": "Initial release of openclaw-backtester – a professional backtesting framework for trading strategies.\n\n- Supports SMA crossover, RSI, MACD, Bollinger Bands, and custom strategies on historical data.\n- Generates equity curves, drawdown analysis, and key performance metrics (Sharpe, Sortino, Max Drawdown, Win Rate).\n- Offers parameter optimization, A/B strategy comparison, and robust error handling with fallback data sources.\n- Context-aware data loading for different markets and timeframes; handles common edge cases and input validation.\n- Designed for reliable validation, comparison, and optimization of quantitative trading strategies before live deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4778f3e7be5478fc0e421f65728f542c50c4ad651009d7b567962d9c781ec1f9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57474,
+  "uuid": "skill-clawhub-taylor-swift",
+  "skillKey": "clawhub-taylor-swift",
+  "name": "Taylor Swift",
+  "summary": "Information assistant for Taylor Swift 泰勒斯威夫特. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taylor_swift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Taylor Swift 泰勒斯威夫特",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taylor-swift@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taylor-swift",
+      "url": "https://clawhub.ai/skills/taylor-swift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taylor-swift",
+    "url": "https://clawhub.ai/skills/taylor-swift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taylor-swift-a1bd12cec5c79865.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taylor-swift@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taylor-swift-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0bfe3a76c14140f3ba8b7e0b9afe94b202b7ee98846cbd3f8d03afe433136ce",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:23.352Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-note-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_note_assistant",
+  "skill": {
+    "id": 73471,
+    "skillKey": "clawhub-medical-note-assistant",
+    "name": "醫療病歷結構化助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-note-assistant",
+    "url": "https://clawhub.ai/skills/medical-note-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-note-assistant-242ce3a7672824cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自動將門診或住院病歷內容轉換為結構化摘要，包括主訴、病史、檢查發現、診斷建議及治療方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isaacloi1995-dot",
+      "userId": "publishers:isaacloi1995-dot",
+      "displayName": "isaacloi1995-dot",
+      "image": "https://avatars.githubusercontent.com/u/257231061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772761360091,
+      "changelog": "initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70c2369291ec780dffc90874ae29f78a47b28375001060ac5805a8c2fcc3e5ea"
+}

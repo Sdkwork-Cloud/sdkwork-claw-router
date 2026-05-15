@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-express@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_express",
+  "skill": {
+    "id": 29375,
+    "skillKey": "clawhub-news-express",
+    "name": "News Express"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-express",
+    "url": "https://clawhub.ai/skills/news-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-express-91a5afd4877f7b94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users ask for news updates, daily briefings, or what's happening in the world."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775354054258,
+      "changelog": "- Updated and streamlined RSS feed lists for both domestic and international news sources.\n- Simplified and unified trigger scenarios and overview section.\n- Refreshed workflow steps and output format for greater clarity and consistency.\n- Removed redundant details, making documentation more concise and user-friendly.\n- Ensured all instructions and notes are focused on essential usage information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:339a0672ea8c809a34b1d2486afe5fff823ef02764a02b759f7afdab60920c42"
+}

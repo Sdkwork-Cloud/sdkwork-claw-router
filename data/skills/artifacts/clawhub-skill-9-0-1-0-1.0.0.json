@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-9-0-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_9_0_1_0",
+  "skill": {
+    "id": 23973,
+    "skillKey": "clawhub-skill-9-0-1-0",
+    "name": "Skill 9 0.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-9-0-1-0",
+    "url": "https://clawhub.ai/skills/skill-9-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-9-0-1-0-773640c9a51700c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent eyes to see the entire internet. Install and configure upstream tools for Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiyi-9",
+      "userId": "publishers:yiyi-9",
+      "displayName": "yiyi-9",
+      "image": "https://avatars.githubusercontent.com/u/220494133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772981412852,
+      "changelog": "agent-reach 1.0.0\n\n- Initial release of agent-reach, providing setup and management tools for 13+ internet platforms.\n- Supports channel installation and configuration for platforms like Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, LinkedIn, Boss直聘, WeChat (公众号), RSS, and general web pages.\n- Enforces dedicated directories outside the agent workspace for configs, tool repos, and temporary files.\n- Setup instructions and direct usage guides for each supported upstream tool included.\n- Easily configure channels via cookies, browser extraction, or proxies.\n- Multi-language support for user prompts and setup guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bbbb4b6b66621c29857ca51b9a75614643b719f26521401f788f71f8c22d02b5"
+}

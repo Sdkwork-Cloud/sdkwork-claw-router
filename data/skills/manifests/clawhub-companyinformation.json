@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70720,
+  "uuid": "skill-clawhub-companyinformation",
+  "skillKey": "clawhub-companyinformation",
+  "name": "CompanyInformation",
+  "summary": "企业舆情监测与风险预警技能。基于 FEEDAX API 查询特定上市公司的新闻资讯和舆情动态，支持情感分析（正面/负面/中性）、舆情热度评估、行业分类和关联公司识别。 使用场景：用户查询特定公司新闻、监测企业舆情风险、分析公司口碑、研究上市公司动态、追踪企业负面事件、评估投资风险、了解行业竞争格局等。 触发示例：...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.companyinformation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longGGGGGG",
+      "features": [
+        "企业舆情监测与风险预警技能。基于 FEEDAX API 查询特定上市公司的新闻资讯和舆情动态，支持情感分析（正面/负面/中性）、舆情热度评估、行业分类和关联公司识别。 使用场景：用户查询特定."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/companyinformation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40319383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "companyinformation",
+      "url": "https://clawhub.ai/skills/companyinformation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "companyinformation",
+    "url": "https://clawhub.ai/skills/companyinformation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/companyinformation-3b5d3b8387a6d6f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/companyinformation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-companyinformation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bfd5cbb88871e451ecd24baba65743979df3ef7c4413d2ff1aeea76504b06e6",
+      "artifactSizeBytes": 2930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:46:07.531Z"
+}

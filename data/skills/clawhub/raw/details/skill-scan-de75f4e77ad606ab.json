@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "skill-scan",
+    "displayName": "Skill Scan",
+    "summary": "Security scanner for OpenClaw skill packages. Scans skills for malicious code, evasion techniques, prompt injection, and misaligned behavior BEFORE installation. Use to audit any skill from ClawHub or local directories.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2376,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "createdAt": 1770063427151,
+    "updatedAt": 1778383209312
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770063427151,
+    "changelog": "Initial release of skill-scan – a multi-layered security scanner for OpenClaw skills.\n\n- Scans skills (local or from ClawHub) for malicious code, evasion, prompt injection, and misaligned behavior before installation.\n- Features 6 analysis layers, 60+ detection rules, and context-aware scoring to reduce false positives.\n- Supports static and optional LLM-powered deep inspection.\n- Provides detailed risk scores with actionable exit codes for automation.\n- Integrates with agent workflows via AGENTS.md templates (automatic or manual scanning).\n- Flexible output (text, JSON, compact, quiet) and supports batch audits.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dgriffin831",
+    "userId": "publishers:dgriffin831",
+    "displayName": "dgriffin831",
+    "image": "https://avatars.githubusercontent.com/u/16494003?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.dynamic_code_execution",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.obfuscated_code",
+      "suspicious.potential_exfiltration",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.dynamic_code_execution, suspicious.env_credential_access (+4 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383209312
+  }
+}

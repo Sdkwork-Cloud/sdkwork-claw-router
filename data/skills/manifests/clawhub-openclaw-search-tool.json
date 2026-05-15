@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16362,
+  "uuid": "skill-clawhub-openclaw-search-tool",
+  "skillKey": "clawhub-openclaw-search-tool",
+  "name": "Openclaw Research Tool",
+  "summary": "Search the web using LLMs via OpenRouter. Use for current web data, API docs, market research, news, fact-checking, or any question that benefits from live i...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_search_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronn",
+      "features": [
+        "Search the web using LLMs via OpenRouter",
+        "Use for current web data, API docs, market research, news, fact-checking, or any question that."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-search-tool@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1653630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-search-tool",
+      "url": "https://clawhub.ai/skills/openclaw-search-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-search-tool",
+    "url": "https://clawhub.ai/skills/openclaw-search-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-search-tool-60daf550fb4dfa44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-search-tool@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-search-tool-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef4e839999503559634b3feead913c0a159715886369b5b0b342f0cad59dead4",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:52:00.540Z"
+}

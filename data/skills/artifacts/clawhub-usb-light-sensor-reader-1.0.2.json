@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usb-light-sensor-reader@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usb_light_sensor_reader",
+  "skill": {
+    "id": 29442,
+    "skillKey": "clawhub-usb-light-sensor-reader",
+    "name": "Usb Light Sensor Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usb-light-sensor-reader",
+    "url": "https://clawhub.ai/skills/usb-light-sensor-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usb-light-sensor-reader-c5e9fb4add8e331b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read light intensity from USB sensors with real-time monitoring, filtering, and threshold detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj-hao",
+      "userId": "publishers:lj-hao",
+      "displayName": "jiahaoli",
+      "image": "https://avatars.githubusercontent.com/u/82585537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773728498304,
+      "changelog": "- Added USAGE-GUIDE.md to provide more detailed usage instructions.\n- Updated version to 1.0.2 in metadata and documentation.\n- No changes to core functionality or security notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dd3c047137ed339968fb2210f03119db53561f0b2068e02cf83f3cc17bb7fe6"
+}

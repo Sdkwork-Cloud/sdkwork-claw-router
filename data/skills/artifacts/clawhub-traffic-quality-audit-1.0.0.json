@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/traffic-quality-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_quality_audit",
+  "skill": {
+    "id": 37362,
+    "skillKey": "clawhub-traffic-quality-audit",
+    "name": "Traffic Quality Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-quality-audit",
+    "url": "https://clawhub.ai/skills/traffic-quality-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-quality-audit-2052cb83170aead9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit traffic sources for engagement depth and key action rates beyond surface GA4 or Meta metrics, flag low-intent clicks, and recommend specific budget cut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774332767178,
+      "changelog": "Initial release of the traffic-quality-audit skill.\n\n- Audits traffic quality beyond basic GA4/Meta reports, mapping source/medium to behavioral depth and conversions.\n- Flags invalid or low-intent clicks (bots, spam referrals, mis-set placements) and recommends specific sources, campaigns, or placements to pause/exclude.\n- Always delivers a markdown table comparing source, bounce rate, key action completion, and budget recommendations.\n- Enforces a \"dwell time vs conversion path\" analysis for any ads/traffic queries, even if user input is vague.\n- Requires at least two actionable shutoff/pause recommendations per audit.\n- Includes framework for data-collection and sample recommendations when data is missing.\n- Excludes use for pure creative-only, criminal investigation, or non-analytics requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f66bd74cfb0ef68d64eda8b1fcc634fe8d3172e315c63fbb798a0d0e51d4190"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/motion-graphics-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motion_graphics_generator",
+  "skill": {
+    "id": 49071,
+    "skillKey": "clawhub-motion-graphics-generator",
+    "name": "Motion Graphics Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motion-graphics-generator",
+    "url": "https://clawhub.ai/skills/motion-graphics-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motion-graphics-generator-07d515603d4683b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into animated graphics video with this skill. Works with PNG, JPG, SVG, MP4 files up to 200MB. marketers use it for creating animated..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778065836799,
+      "changelog": "Motion Graphics Generator 1.0.0 — initial release.\n\n- Transform text or images into animated graphics videos (up to 1080p MP4, 200MB/file).\n- Marketer-friendly: generate intros, text overlays, branded video sequences in 30–90 seconds via cloud GPU.\n- Supports batch, iterative, and quick-edit workflows.\n- Easy setup: handles anonymous registration and session creation automatically.\n- Exposes simple chat-based commands for upload, edit, export, credits, and status.\n- Wide format support: PNG, JPG, SVG, MP4, MOV, AVI, GIF, MP3, WAV, more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edfb0f9f4221fdca57f4d136e62e73185b094f8bc801f6051fd952e7b4f94054"
+}

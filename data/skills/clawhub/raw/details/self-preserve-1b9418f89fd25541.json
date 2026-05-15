@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "self-preserve",
+    "displayName": "Self Preserve",
+    "summary": "Backup readiness and disaster recovery for your OpenClaw agent. Checks whether your memory, identity, config, skills, and workspace files are covered by a re...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "createdAt": 1775086818922,
+    "updatedAt": 1777527056705
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776491495549,
+    "changelog": "Self-preserve 1.0.0\n\n- Initial release providing backup readiness and disaster recovery assessment for OpenClaw agents.\n- Checks existence and backup status of agent config, memory, identity, workspace, and skills files.\n- Detects local backups, surfaces offsite backup marker file if present, and inspects recent backup history.\n- Advises on best practices for offsite disaster recovery and version control (advisory only, does not implement).\n- Supports user-gated creation and management of automated backup cron jobs via Claude-native tools.\n- Strictly read-only for critical files; never reads contents or accesses credential directories.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "gavinlinasd",
+    "userId": "s17f5xsp0mvmqfa2rzbj8e7vrn8401dh",
+    "displayName": "Gavin Lin",
+    "image": "https://avatars.githubusercontent.com/u/1175419?v=4"
+  },
+  "moderation": null
+}

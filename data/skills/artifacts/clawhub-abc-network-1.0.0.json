@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abc-network@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abc_network",
+  "skill": {
+    "id": 69844,
+    "skillKey": "clawhub-abc-network",
+    "name": "Abc Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abc-network",
+    "url": "https://clawhub.ai/skills/abc-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abc-network-98263cd1a303ff7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ABC是美国三大传统电视网之一，隶属于迪士尼，提供电视和流媒体内容，涵盖新闻、剧集及原创节目制作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778173509299,
+      "changelog": "- 首次发布 abc-network 技能，涵盖ABC电视网的历史、商业模式及迪士尼生态下的现状。  \n- 提供ABC发展关键时间线和重要数据。  \n- 分析其护城河和与流媒体平台（Disney+/Hulu）的协同效应。  \n- 适合研究美国电视产业、传统媒体转型及媒体集团布局时参考。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab986fa56fc676fd62b310fb04000b608ec80dd75cf3d1ebc8a00c9c8001cc6c"
+}

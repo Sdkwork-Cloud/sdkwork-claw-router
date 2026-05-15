@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authorize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authorize",
+  "skill": {
+    "id": 25888,
+    "skillKey": "clawhub-authorize",
+    "name": "Authorize.net Agentic Payments - Add agentic cards and wallets to your stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authorize",
+    "url": "https://clawhub.ai/skills/authorize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authorize-4a2dbd905287e75a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authorize.net is a payments provider. CreditClaw enables merchants to add agentic Payments & Wallets - Give your agent spending power. Financial management f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773337601849,
+      "changelog": "- Initial release of the authorize skill for integration with CreditClaw, enabling agent-controlled payments and wallets.\n- Supports secure card payments with owner approval and USDC x402 wallet via Stripe integration.\n- Offers storefront and product management for bots to sell digital and physical products.\n- Enforces strong security: per-transaction approval, encrypted card details, hashed API keys, and strict owner-controlled spending permissions.\n- Comprehensive documentation for registration, setup, payment rails, security policies, and real-time status checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6862399968ac2bdd6c0f2b9b7fcac7ed1652bacefc3dbbf8eac52a4d783e30e4"
+}

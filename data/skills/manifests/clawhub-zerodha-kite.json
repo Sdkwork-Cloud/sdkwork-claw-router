@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51070,
+  "uuid": "skill-clawhub-zerodha-kite",
+  "skillKey": "clawhub-zerodha-kite",
+  "name": "Zerodha",
+  "summary": "Route natural-language trading/account queries to the correct `zerodha` CLI command with exact flags, validation constraints, and synonym mapping. Use when a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerodha_kite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jatin Bansal",
+      "features": [
+        "Route natural-language trading/account queries to the correct `zerodha` CLI command with exact.",
+        "Use when a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerodha-kite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19741014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerodha-kite",
+      "url": "https://clawhub.ai/skills/zerodha-kite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerodha-kite",
+    "url": "https://clawhub.ai/skills/zerodha-kite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerodha-kite-81d07365e757a935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerodha-kite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerodha-kite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:056aefbef66f4e90e233c72db894b02b6496694d6eaac8c54444d88f1164e406",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T12:16:13.534Z"
+}

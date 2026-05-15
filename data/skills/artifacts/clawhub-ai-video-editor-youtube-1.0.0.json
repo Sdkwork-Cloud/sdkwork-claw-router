@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_youtube",
+  "skill": {
+    "id": 55339,
+    "skillKey": "clawhub-ai-video-editor-youtube",
+    "name": "Ai Video Editor Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-youtube",
+    "url": "https://clawhub.ai/skills/ai-video-editor-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-youtube-afaf68e3a282bc49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut dead air, add transitions, and export ready for YouTube upload — and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939287762,
+      "changelog": "- Initial release of AI Video Editor for YouTube.\n- Upload raw video files (MP4, MOV, AVI, WebM up to 500MB) and describe the edits you want.\n- Automatic editing features: cut dead air, add transitions, and export in YouTube-ready MP4 format within 1-2 minutes.\n- No need for complex software—simple text instructions handle editing, export, and credit checking.\n- Anonymous free tier available with sign-up for 100 credits (7-day expiry).\n- Full support for session management, export queueing, supported formats, and comprehensive error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66bb0ec20c3e9600013a06e3b8e9f762805895c551d6fcaec1bb647670ed1ccb"
+}

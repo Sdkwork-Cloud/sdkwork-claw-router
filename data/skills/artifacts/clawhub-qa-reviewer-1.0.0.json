@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qa-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_reviewer",
+  "skill": {
+    "id": 63022,
+    "skillKey": "clawhub-qa-reviewer",
+    "name": "QA Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-reviewer",
+    "url": "https://clawhub.ai/skills/qa-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-reviewer-869e53916286ab5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供代码审查、单元测试、覆盖率分析和问题追踪，支持C++/Python/JavaScript，确保项目质量和文档完整度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samuelpang",
+      "userId": "publishers:samuelpang",
+      "displayName": "SamuelPang",
+      "image": "https://avatars.githubusercontent.com/u/5119154?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 586,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772604628839,
+      "changelog": "Initial release based on SRM project experience. Provides code review, testing framework, and quality assurance capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3c375fa1ade6b4808e11e56d8986c463cc17b1193e7684adce300e588bd4a1a"
+}

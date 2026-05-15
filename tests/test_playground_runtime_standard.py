@@ -35,14 +35,49 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         type_source = (PLAYGROUND_ROOT / "playgroundTypes.ts").read_text(encoding="utf-8")
         service_source = (PLAYGROUND_ROOT / "playgroundService.ts").read_text(encoding="utf-8")
         page_source = (PLAYGROUND_ROOT / "pages" / "Playground.tsx").read_text(encoding="utf-8")
+        input_source = (PLAYGROUND_ROOT / "components" / "GenerationChatInput.tsx").read_text(encoding="utf-8")
 
         self.assertIn("export interface PlaygroundHistoryItem", type_source)
         self.assertIn("export type PlaygroundPreviewSetter", type_source)
         self.assertIn("export interface PlaygroundModelOption", type_source)
         self.assertIn("export interface PlaygroundAssetViewProps", type_source)
-        self.assertIn("export type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts'", service_source)
-        self.assertIn("import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelOption } from '../playgroundTypes'", page_source)
-        self.assertIn("const modelOptions: Record<Modality, PlaygroundModelOption[]>", page_source)
+        self.assertIn("export type { PlaygroundHistoryItem, PlaygroundMedia", service_source)
+        self.assertIn("import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelBucket, PlaygroundModelGroup } from '../playgroundTypes'", page_source)
+        self.assertIn("const MODEL_BUCKETS: PlaygroundModelBucket[]", service_source)
+        self.assertIn("export type PlaygroundModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx'", type_source)
+        self.assertIn("const MODEL_BUCKETS: PlaygroundModelBucket[] = ['llms', 'images', 'videos', 'audios', 'music', 'sfx']", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ai.models.list()", service_source)
+        self.assertIn("return 'llms';", page_source)
+        self.assertIn("return 'llms';", input_source)
+        self.assertIn("return 'audios';", page_source)
+        self.assertIn("return 'audios';", input_source)
+        self.assertNotIn("'agents'", type_source)
+        self.assertNotIn("agents:", type_source)
+        self.assertNotIn("ai.playground.models", service_source)
+
+    def test_playground_generation_runtime_uses_appbase_generation_service(self) -> None:
+        portal_workspace_source = (
+            ROOT / "apps" / "sdkwork-claw-router-portal" / "pnpm-workspace.yaml"
+        ).read_text(encoding="utf-8")
+        playground_package_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-playground"
+            / "package.json"
+        ).read_text(encoding="utf-8")
+        service_source = (PLAYGROUND_ROOT / "playgroundService.ts").read_text(encoding="utf-8")
+
+        self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
+        self.assertIn("../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react", portal_workspace_source)
+
+        self.assertIn("createSdkworkGenerationService", service_source)
+        self.assertIn("type SdkworkGenerationRun", service_source)
+        self.assertIn("type SdkworkGenerationWorkspaceData", service_source)
+        self.assertIn("getClawRouterAppSdkClient().ai.generations.list()", service_source)
+        self.assertNotIn("ai.playground.history", service_source)
+        self.assertIn("fetchGenerationWorkspace", service_source)
 
         checked_sources = [
             PLAYGROUND_ROOT / "components" / "ChatHistoryItem.tsx",
@@ -119,8 +154,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
     def test_playground_history_rust_read_models_fail_closed_for_invalid_database_rows(self) -> None:
         for relative in [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_playground_history_read_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_playground_history_read_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/app_generation_history_read_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/app_generation_history_read_store.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -147,9 +182,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                     'status_label(required_integer_cell(&row, "status_code", "status")?)?',
                     compact_store,
                 )
-                self.assertIn("missing playground history {source} from database row", store)
-                self.assertIn("invalid playground history item kind from database row", store)
-                self.assertIn("invalid playground history status from database row", store)
+                self.assertIn("missing generation history {source} from database row", store)
+                self.assertIn("invalid generation history item kind from database row", store)
+                self.assertIn("invalid generation history status from database row", store)
 
 
 if __name__ == "__main__":

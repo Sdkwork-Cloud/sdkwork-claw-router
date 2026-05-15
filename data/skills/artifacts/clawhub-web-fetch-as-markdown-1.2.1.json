@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-fetch-as-markdown@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetch_as_markdown",
+  "skill": {
+    "id": 36089,
+    "skillKey": "clawhub-web-fetch-as-markdown",
+    "name": "Web Fetch as Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetch-as-markdown",
+    "url": "https://clawhub.ai/skills/web-fetch-as-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetch-as-markdown-a375887049c8f879.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches web pages from specific URLs and converts them to clean, structured Markdown via trusted APIs, enabling Agents to parse and extract data more effecti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuruofan",
+      "userId": "s17azx9xkyebv20y6rhtp3jvm5858hzf",
+      "displayName": "wuruofan",
+      "image": "https://avatars.githubusercontent.com/u/1763633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776823044447,
+      "changelog": "- Updated skill metadata formatting for consistency; version is now set under `metadata`.\n- No functional or logic changes to skill behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afcd824adfe1071a565caceee9464fe63dad75fc9445b73f4a39a89b743ebe44"
+}

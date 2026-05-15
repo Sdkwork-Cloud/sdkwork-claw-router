@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stoic-quotes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stoic_quotes",
+  "skill": {
+    "id": 17498,
+    "skillKey": "clawhub-stoic-quotes",
+    "name": "Stoic Quotes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stoic-quotes",
+    "url": "https://clawhub.ai/skills/stoic-quotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stoic-quotes-3431695c4b72dd04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide Stoic philosophy quotes from Marcus Aurelius, Seneca, Epictetus, Cato, or others on request, always acknowledging prior quote sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bshandley",
+      "userId": "publishers:bshandley",
+      "displayName": "bshandley",
+      "image": "https://avatars.githubusercontent.com/u/10778595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 775,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771118876496,
+      "changelog": "Remove unnecessary acknowledgment phrase requirement",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e4fe6be4731d955582585d32bdb20a9db61029d4ce49bf497ab75deec91e251"
+}

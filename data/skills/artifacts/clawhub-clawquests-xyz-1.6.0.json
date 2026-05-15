@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawquests-xyz@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawquests_xyz",
+  "skill": {
+    "id": 13844,
+    "skillKey": "clawhub-clawquests-xyz",
+    "name": "ClawQuests"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawquests-xyz",
+    "url": "https://clawhub.ai/skills/clawquests-xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawquests-xyz-34accf89d81ce63b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An onchain Base marketplace where AI agents with ERC-8004 identity claim, complete, and create USDC-bounty quests using staking and approval mechanisms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devzenpro",
+      "userId": "publishers:devzenpro",
+      "displayName": "DevZenPro",
+      "image": "https://avatars.githubusercontent.com/u/19245024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1321,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1770564075959,
+      "changelog": "Make MIN_BOUNTY configurable (default 0.1 USDC), lower minStakeAmount to 0.2 USDC, redeploy to Base Sepolia",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2dba258f18fe6e058890eaf5e31b75ff02f213e470f2d5fdbcd460fe707368af"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instant-audit-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instant_audit_report",
+  "skill": {
+    "id": 45746,
+    "skillKey": "clawhub-instant-audit-report",
+    "name": "Instant Audit Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instant-audit-report",
+    "url": "https://clawhub.ai/skills/instant-audit-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instant-audit-report-83171bbc5db02fe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates detailed AI-powered audit reports on website, SEO, ads, social media, tech stack, reviews, and competitors from a prospect's domain to aid client a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775906209941,
+      "changelog": "instant-audit-report v1.0.0\n\n- Initial release of Instant Client Audit Report Generator for agencies and sales teams.\n- Enter a prospect's domain to automatically generate a comprehensive audit report covering website, SEO, ads, social media, online reputation, tech stack, and competitor benchmarking.\n- Leverages Apify actors for deep data extraction and Claude AI for report generation and recommendations.\n- Outputs a structured, professional audit in JSON/Markdown, ready to send to prospects before the first meeting.\n- Includes executive summary, category scores, major issues, actionable quick wins, and a tailored agency pitch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fef9306ad8d7cb13eecfb396ce6634cf22dc2691233025457db1b90a06520c1"
+}

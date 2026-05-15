@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47772,
+  "uuid": "skill-clawhub-justoneapi-xiaohongshu-get-note-comment",
+  "skillKey": "clawhub-justoneapi-xiaohongshu-get-note-comment",
+  "name": "Xiaohongshu (RedNote) Note Comments API",
+  "summary": "Call 2 get-note-comment versions for Xiaohongshu (RedNote) Note Comments through JustOneAPI with noteId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_get_note_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call 2 get-note-comment versions for Xiaohongshu (RedNote) Note Comments through JustOneAPI wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-xiaohongshu-get-note-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-xiaohongshu-get-note-comment",
+      "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-get-note-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-get-note-comment",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-get-note-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-get-note-comment-2800e0ef4caaab9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-get-note-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-xiaohongshu-get-note-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94bcfc817765ffa2823b9263a2d82370273e52a46b54cf664e58ef9ccd660399",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T11:12:57.398Z"
+}

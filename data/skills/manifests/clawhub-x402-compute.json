@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15267,
+  "uuid": "skill-clawhub-x402-compute",
+  "skillKey": "clawhub-x402-compute",
+  "name": "x402 Compute",
+  "summary": "This skill should be used when the user asks to \"provision GPU instance\", \"spin up a cloud server\", \"list compute plans\", \"browse GPU pricing\", \"extend compu...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_compute",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivaavi.eth",
+      "features": [
+        "This skill should be used when the user asks to \"provision GPU instance\", \"spin up a cloud serv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-compute@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99599836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-compute",
+      "url": "https://clawhub.ai/skills/x402-compute"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-compute",
+    "url": "https://clawhub.ai/skills/x402-compute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-compute-35b36ca98b8ad751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-compute@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-compute-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc51e41e827708f9aeed9b8b1110897e3655a11763d997f558cca471081adfd2",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T20:09:44.792Z"
+}

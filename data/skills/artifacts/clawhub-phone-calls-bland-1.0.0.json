@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-calls-bland@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_calls_bland",
+  "skill": {
+    "id": 9254,
+    "skillKey": "clawhub-phone-calls-bland",
+    "name": "AI Phone Calls (Bland AI)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-calls-bland",
+    "url": "https://clawhub.ai/skills/phone-calls-bland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-calls-bland-0a0e42ba7af81dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make AI-powered phone calls via Bland AI - book restaurants, make appointments, inquire about services. The AI calls on your behalf and reports back with transcripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dru-ca",
+      "userId": "s17fbsf0jwska41s434g9bxa018623yv",
+      "displayName": "Dru Carpenter",
+      "image": "https://avatars.githubusercontent.com/u/117193827?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3745,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769458951896,
+      "changelog": "Initial release: Make AI-powered phone calls via Bland AI.\n\n- Book restaurants, make appointments, or inquire about services automatically.\n- Simple setup: requires only Bland API key and phone number.\n- Returns call transcripts and summaries for every interaction.\n- Supports custom voice selection and advanced features like voicemail handling, call recordings, and webhooks.\n- Includes CLI scripts (`phone-call.sh`, `check-call.sh`) for easy usage and status tracking.\n- Clear troubleshooting and pricing details provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b31546bc58c8263036b22d06f7539aad87c978a31f4cd9f5088396849bac1462"
+}

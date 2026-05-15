@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-youtube-serp-scout@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_youtube_serp_scout",
+  "skill": {
+    "id": 38235,
+    "skillKey": "clawhub-aisa-youtube-serp-scout",
+    "name": "AIsa Youtube Serp Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-youtube-serp-scout",
+    "url": "https://clawhub.ai/skills/aisa-youtube-serp-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-youtube-serp-scout-e0bda9d77cb85e1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search YouTube videos, channels, and trends through the AIsa YouTube SERP client. Use when the user asks for content research, competitor tracking, or trend..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778258533124,
+      "changelog": "- Updated documentation to clarify skill intent, usage guidelines, and capabilities.\n- Added setup and security notes, highlighting use of the AISA_API_KEY and API endpoint.\n- Improved Python client usage examples with command-line references.\n- Revised guardrails to specify API boundaries and avoid browser or credential requests.\n- Increased detail on when to use or not use the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca0e6fb5126c849f283a23be8a6c08091ebf8a50803bf5f680d52097e50aaf92"
+}

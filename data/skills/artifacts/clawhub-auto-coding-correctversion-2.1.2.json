@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-coding-correctversion@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_coding_correctversion",
+  "skill": {
+    "id": 68164,
+    "skillKey": "clawhub-auto-coding-correctversion",
+    "name": "Auto Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-coding-correctversion",
+    "url": "https://clawhub.ai/skills/auto-coding-correctversion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-coding-correctversion-45ecf079dd2adee8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自主编程系统 - 需求拆解、分析需求、找方法、自我反思、迭代优化，达到交付标准"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krislu1221",
+      "userId": "s1722js5hsngdpp170necz8fgn83r9q4",
+      "displayName": "Krislu",
+      "image": "https://avatars.githubusercontent.com/u/258380416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1777127546135,
+      "changelog": "auto-coding-correctversion 2.1.2\n\n- Removed usage guide and test files (`USAGE.md`, `tests/test_decomposer.py`, `tests/test_worker.py`)\n- SKILL.md updated; some version and capability descriptions adjusted\n- Updated `delivery_check.py` with changes not detailed here",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb4be211b1968b8d9ad5312969cd6464f1cdbbaeb354036a93489856dc3339b2"
+}

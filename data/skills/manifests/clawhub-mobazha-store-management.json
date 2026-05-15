@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53551,
+  "uuid": "skill-clawhub-mobazha-store-management",
+  "skillKey": "clawhub-mobazha-store-management",
+  "name": "Store Management",
+  "summary": "Manage a Mobazha store using MCP tools — products, orders, messages, and settings. Requires an active MCP connection (see store-mcp-connect).",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobazha_store_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengzie",
+      "features": [
+        "Manage a Mobazha store using MCP tools — products, orders, messages, and settings",
+        "Requires an active MCP connection (see store-mcp-connect)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobazha-store-management@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34826428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobazha-store-management",
+      "url": "https://clawhub.ai/skills/mobazha-store-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobazha-store-management",
+    "url": "https://clawhub.ai/skills/mobazha-store-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobazha-store-management-a56e4f5972715ce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobazha-store-management@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobazha-store-management-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:654f4f2b74b371713a95d9d94d12326e8212d4a7329aa1fe1953aac144fb5fea",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:43:46.531Z"
+}

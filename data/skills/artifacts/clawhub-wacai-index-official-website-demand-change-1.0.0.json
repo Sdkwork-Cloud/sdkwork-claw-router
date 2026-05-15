@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wacai-index-official-website-demand-change@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacai_index_official_website_demand_change",
+  "skill": {
+    "id": 63397,
+    "skillKey": "clawhub-wacai-index-official-website-demand-change",
+    "name": "wacai-index-official-website-demand-change"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacai-index-official-website-demand-change",
+    "url": "https://clawhub.ai/skills/wacai-index-official-website-demand-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacai-index-official-website-demand-change-a2d276ee37c358a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键执行官网项目需求变更。用于用户粘贴一大段新需求并同时提供项目路径后，自动在指定项目目录上完成：检查目标分支工作区是否干净、拉取最新代码、把需求写入 productdemand.md 并做小时级备份、根据需求修改代码、运行必要检查、git commit、push，并在 push 成功后通过企业微信 webhoo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shidengyun",
+      "userId": "s17dgmxpd9y90vmr70daq4casd84qwap",
+      "displayName": "shidengyun",
+      "image": "https://avatars.githubusercontent.com/u/7777003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773131035369,
+      "changelog": "- Initial release of \"index-official-website-demand-change\" skill for automating Wacai官网需求变更全流程。\n- Supports one-click execution: checks git workspace, writes/backs up demand file, modifies code, runs checks, commits, pushes, and notifies via 企业微信 webhook.\n- Requires explicit project path, branch, and demand file from user input or context—refuses to proceed if missing.\n- Includes detailed enterprise WeChat notification with time, path, branch, commit info, and code changes after successful push.\n- Handles and reports all error cases: missing input, dirty workspace, git pull/check failures, push/notification failures.\n- Scripts for notification and git operations now parameterized by project path and branch, no hardcoded paths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26ef113ab1aae26c3b0799d8a9c388143bb951d96bbe4f98a0f97c99b5a6fa70"
+}

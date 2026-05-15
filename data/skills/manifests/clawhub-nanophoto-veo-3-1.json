@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31634,
+  "uuid": "skill-clawhub-nanophoto-veo-3-1",
+  "skillKey": "clawhub-nanophoto-veo-3-1",
+  "name": "Veo 3.1",
+  "summary": "Generate videos with the NanoPhoto.AI Veo 3.1 API. Use when: (1) User wants Veo 3.1 text-to-video generation, (2) User wants Veo 3.1 generation from referenc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanophoto_veo_3_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NanoPhoto.AI",
+      "features": [
+        "Generate videos with the NanoPhoto.AI Veo 3.1 API",
+        "Use when: (1) User wants Veo 3.1 text-to-video generation, (2) User wants Veo 3.1 generation fr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanophoto-veo-3-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260005344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanophoto-veo-3-1",
+      "url": "https://clawhub.ai/skills/nanophoto-veo-3-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanophoto-veo-3-1",
+    "url": "https://clawhub.ai/skills/nanophoto-veo-3-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanophoto-veo-3-1-bb44b57de1e953cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanophoto-veo-3-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanophoto-veo-3-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19ee9d7ffbce60e36876f3a18a68867b057a605c1db5908bee2c64f787230950",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:37:57.461Z"
+}

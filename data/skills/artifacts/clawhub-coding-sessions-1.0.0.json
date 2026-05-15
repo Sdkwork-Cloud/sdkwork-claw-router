@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-sessions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_sessions",
+  "skill": {
+    "id": 22993,
+    "skillKey": "clawhub-coding-sessions",
+    "name": "Coding Sessions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-sessions",
+    "url": "https://clawhub.ai/skills/coding-sessions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-sessions-8166badbd179ecf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run long-lived AI coding agents (Codex CLI, Claude Code, Ralph loops) in persistent tmux sessions with completion hooks and automatic monitoring. Use when la..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luke-deltadesk",
+      "userId": "publishers:luke-deltadesk",
+      "displayName": "luke-deltadesk",
+      "image": "https://avatars.githubusercontent.com/u/143728034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772593455883,
+      "changelog": "- Initial release of coding-sessions skill.\n- Run long-lived AI coding agents in persistent tmux sessions for reliable multi-step or background coding tasks.\n- Provides robust session management with completion notifications, monitoring commands, and survival across process restarts.\n- Includes best practices for Codex/Claude/Ralph agent orchestration, PRD checklist integration, and post-run verification.\n- Detailed troubleshooting and logging guidance for stable operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1e9999bfa70924e741acb7406a7df72485c1b5038c7ebc89a6d433532d3163e"
+}

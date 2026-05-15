@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17647,
+  "uuid": "skill-clawhub-core",
+  "skillKey": "clawhub-core",
+  "name": "Core",
+  "summary": "core reference tool",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.core",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "core reference tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/core@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "core",
+      "url": "https://clawhub.ai/skills/core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "core",
+    "url": "https://clawhub.ai/skills/core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/core-0d45f5fd462b8c70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/core@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-core-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf2fb726105e8f7381e5e632ffe122b0bd4595f1a17f7fc6a398fcc2d4def7f6",
+      "artifactSizeBytes": 1680
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:02:15.105Z"
+}

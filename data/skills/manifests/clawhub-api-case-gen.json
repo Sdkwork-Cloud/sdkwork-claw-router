@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64276,
+  "uuid": "skill-clawhub-api-case-gen",
+  "skillKey": "clawhub-api-case-gen",
+  "name": "API Test Case Generator",
+  "summary": "通用 API 测试设计用例生成器。脚本 + AI 协作模式：脚本从 OpenAPI 规范自动提取 结构化约束并批量生成基础用例（schema 键 + 正则），AI 负责阅读所有自然语言 description 补全脚本无法理解的语义约束（字符集、复合规则、条件依赖等）。 检测参数间条件依赖/值联动/格式约束，输出...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_case_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujianyeey-oss",
+      "features": [
+        "通用 API 测试设计用例生成器。脚本 + AI 协作模式：脚本从 OpenAPI 规范自动提取 结构化约束并批量生成基础用例（schema 键 + 正则），AI 负责阅读所有自然语言 de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-case-gen@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265681936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-case-gen",
+      "url": "https://clawhub.ai/skills/api-case-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-case-gen",
+    "url": "https://clawhub.ai/skills/api-case-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-case-gen-a902f366394d01fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-case-gen@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-case-gen-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a4a9113dcb1d8923f3381c8bbb4fb660276fd223ed38e4501ba1cd842ce2638",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:58:32.562Z"
+}

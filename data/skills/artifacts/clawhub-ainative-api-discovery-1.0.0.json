@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ainative-api-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainative_api_discovery",
+  "skill": {
+    "id": 28824,
+    "skillKey": "clawhub-ainative-api-discovery",
+    "name": "Ainative Api Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainative-api-discovery",
+    "url": "https://clawhub.ai/skills/ainative-api-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainative-api-discovery-b494aa2a0695b438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help agents discover and navigate AINative's 89+ API endpoints. Use when (1) Asking \"what endpoints exist?\", (2) Finding the right API for a task, (3) Lookin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urbantech",
+      "userId": "s1705vnaxvfmy5a3t55qeprr4d83hnbz",
+      "displayName": "Toby Morning",
+      "image": "https://avatars.githubusercontent.com/u/2746731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774311014021,
+      "changelog": "Initial release: provides comprehensive AINative API discovery and navigation.\n\n- Lists and describes 89+ REST API endpoints categorized by feature (auth, chat, memory, billing, developer, storage, admin).\n- Offers example code in Python, JavaScript/TypeScript, and curl for key endpoints.\n- Details authentication methods (API key, bearer token).\n- Includes quick references to full documentation and source code locations.\n- Enables agents to search endpoints, find usage patterns, and explore API capabilities efficiently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41087989892bab7988b859b35d9b9de4d220d2772918a881b7c93808068b95b7"
+}

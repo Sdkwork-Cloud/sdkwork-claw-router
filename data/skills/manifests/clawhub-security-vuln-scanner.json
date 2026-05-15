@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61740,
+  "uuid": "skill-clawhub-security-vuln-scanner",
+  "skillKey": "clawhub-security-vuln-scanner",
+  "name": "Security Vulnerability Scanner",
+  "summary": "扫描代码中常见安全漏洞如SQL注入、XSS、硬编码密码，提供检测结果和安全评分建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_vuln_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "扫描代码中常见安全漏洞如SQL注入、XSS、硬编码密码，提供检测结果和安全评分建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-vuln-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-vuln-scanner",
+      "url": "https://clawhub.ai/skills/security-vuln-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-vuln-scanner",
+    "url": "https://clawhub.ai/skills/security-vuln-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-vuln-scanner-1cc57b9eff82d7ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-vuln-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-vuln-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abbe53b615fbf1a9822d6d24957604478b79d2a2d6ec1939ade731869e9605b2",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:19:47.147Z"
+}

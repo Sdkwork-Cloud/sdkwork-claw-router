@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-playlist-curator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_playlist_curator",
+  "skill": {
+    "id": 39559,
+    "skillKey": "clawhub-spotify-playlist-curator",
+    "name": "Spotify Playlist Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-playlist-curator",
+    "url": "https://clawhub.ai/skills/spotify-playlist-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-playlist-curator-334e1cdbd13e4f0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and refine Spotify playlists using the Spotify Web API, with support for track search, recent and top listening lookups, queueing selected tracks, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachel-howell",
+      "userId": "s172w0r2xjmekaz73g1hqps56183tkzj",
+      "displayName": "rachel-howell",
+      "image": "https://avatars.githubusercontent.com/u/66449986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774825873463,
+      "changelog": "Improve first-run diagnostics: detect placeholder Spotify credentials earlier, clarify invalid_client auth errors, and document common setup failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dddb4cab411f6bdcdeb4aac679cf01a729221405e2117f7c8aa596cfe22b764"
+}

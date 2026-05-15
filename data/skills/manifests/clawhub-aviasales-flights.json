@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40646,
+  "uuid": "skill-clawhub-aviasales-flights",
+  "skillKey": "clawhub-aviasales-flights",
+  "name": "Aviasales Flight Search",
+  "summary": "Search for cheap flights and airfare via Travelpayouts/Aviasales API. Supports date-specific search, price calendar, round-trip, cheapest-price monitoring, p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviasales_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aspalagin",
+      "features": [
+        "Search for cheap flights and airfare via Travelpayouts/Aviasales API",
+        "Supports date-specific search, price calendar, round-trip, cheapest-price monitoring, p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aviasales-flights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263096044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aviasales-flights",
+      "url": "https://clawhub.ai/skills/aviasales-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviasales-flights",
+    "url": "https://clawhub.ai/skills/aviasales-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviasales-flights-8a40cc70429c1c06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aviasales-flights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aviasales-flights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31fbaa7d623e7a5441a26a53b53c7eefe7f021cbfc9691ee37738129e8eb94b1",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T19:57:39.676Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-base-001@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_001",
+  "skill": {
+    "id": 47979,
+    "skillKey": "clawhub-knowledge-base-001",
+    "name": "Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-001",
+    "url": "https://clawhub.ai/skills/knowledge-base-001",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-001-6d677d5c6169aa6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert documents to Markdown, auto-classify, extract keywords, and enable local keyword and vector search in a private knowledge base."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777826456183,
+      "changelog": "Initial release: document conversion via markitdown, auto-categorization, keyword extraction, semantic search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a5f94b50819ac7a3ef66c642f8c2012ae136058aeb3d87480b45a74c2964ed1"
+}

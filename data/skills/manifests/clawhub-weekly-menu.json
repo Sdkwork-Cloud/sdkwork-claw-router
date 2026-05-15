@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57298,
+  "uuid": "skill-clawhub-weekly-menu",
+  "skillKey": "clawhub-weekly-menu",
+  "name": "Weekly Menu 每周菜单",
+  "summary": "Generate a weekly meal plan with images, recipes, and shopping lists. Searches Xiaohongshu (小红书) for trending seasonal recipes, creates a beautifully formatt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_menu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BeginnerRudy",
+      "features": [
+        "Generate a weekly meal plan with images, recipes, and shopping lists",
+        "Searches Xiaohongshu (小红书) for trending seasonal recipes, creates a beautifully formatt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-menu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36201915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-menu",
+      "url": "https://clawhub.ai/skills/weekly-menu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-menu",
+    "url": "https://clawhub.ai/skills/weekly-menu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-menu-93f8154f6d68c83c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-menu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-menu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea853514b1cf729b173f8014a6f2579d921c606ab09008d71c2f128efece107",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:50:09.491Z"
+}

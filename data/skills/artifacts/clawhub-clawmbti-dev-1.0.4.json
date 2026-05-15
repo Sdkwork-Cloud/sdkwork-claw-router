@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmbti-dev@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmbti_dev",
+  "skill": {
+    "id": 39282,
+    "skillKey": "clawhub-clawmbti-dev",
+    "name": "clawmbti-dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmbti-dev",
+    "url": "https://clawhub.ai/skills/clawmbti-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmbti-dev-bdc5ac8496bb4c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects the MBTI personality type of an AI assistant and issues a lobster-themed NFT PFP certificate. Supports three trigger modes: user-initiated, passive t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joyboy-sats",
+      "userId": "s1702atjw6y94whg3ngv4xy3d183qgh3",
+      "displayName": "Joyboy",
+      "image": "https://avatars.githubusercontent.com/u/43311360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775803256794,
+      "changelog": "No changes detected in this release.  \n- Version bumped to 1.0.4 with no file or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3617983ef34b190b6f6cea3b6ef968addba60dae4e5568f63c9a75283b3784a"
+}

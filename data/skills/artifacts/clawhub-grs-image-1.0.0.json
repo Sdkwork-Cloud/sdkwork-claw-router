@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grs-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grs_image",
+  "skill": {
+    "id": 62965,
+    "skillKey": "clawhub-grs-image",
+    "name": "Grs Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grs-image",
+    "url": "https://clawhub.ai/skills/grs-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grs-image-bcd09b33e91f14b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GrsAI Nano Banana Pro 图片生成工具。使用 GrsAI API 生成图片，支持中文描述。适用于室内设计效果图、开工大吉海报、设计素材生成等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapleslove",
+      "userId": "s17eggbqe3epjkd0bmstdt0ad583gwhm",
+      "displayName": "mapleslove",
+      "image": "https://avatars.githubusercontent.com/u/10831075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774955859421,
+      "changelog": "GrsAI Nano Banana Pro 图片生成工具首发上线：\n\n- 支持通过 GrsAI API 生成图片，可用中文描述，适配多种设计场景。\n- 覆盖室内设计效果图、开工大吉海报、设计素材等应用。\n- 支持多模型、多分辨率（1K/2K/4K）及多宽高比选择。\n- 提供图生图功能及参考图指定。\n- 命令行工具形式，附使用示例与常用场景脚本。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e9f234bc63cbd20d940399d71c20ec57977b2f10fad037b851c768a166a62ab"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ticket-signal-watch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticket_signal_watch",
+  "skill": {
+    "id": 34885,
+    "skillKey": "clawhub-ticket-signal-watch",
+    "name": "Ticket Signal Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticket-signal-watch",
+    "url": "https://clawhub.ai/skills/ticket-signal-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticket-signal-watch-6e2b7d9582f5abce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor ticket pages or backend ticket data for sale, restock, presale, or status-change signals; emit structured alerts that can be pushed to OpenClaw chann..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "armysheng",
+      "userId": "publishers:armysheng",
+      "displayName": "armysheng",
+      "image": "https://avatars.githubusercontent.com/u/4077310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774055967214,
+      "changelog": "Initial public release: monitor ticket status signals from pages or backend data and emit push-ready alerts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59f1ccaa4cda55d0ebe29213ec4251b8a3cbef46c342bd50db93dbb1fff732a9"
+}

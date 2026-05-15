@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bp-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bp_company",
+  "skill": {
+    "id": 69107,
+    "skillKey": "clawhub-bp-company",
+    "name": "Bp Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bp-company",
+    "url": "https://clawhub.ai/skills/bp-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bp-company-0ed1f70b70d5802a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "英国石油公司（BP）是一家全球能源巨头，专注油气开采与新能源转型，历经深水地平线事故及2050净零承诺。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777223243601,
+      "changelog": "bp-company 1.0.0 Changelog\n\n- 首次发布，全面梳理 BP（英国石油）的百年发展历程与业务模式。\n- 添加深水地平线事故及其对公司转型的深远影响。\n- 覆盖从石油勘探、炼油到新能源领域的业务转型路径。\n- 提供历年关键大事、主要财务数据与行业护城河分析。\n- 收录 BP 品牌趣闻及标志更新、深水地平线事故影像化等有趣事实。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fe8af4cc5419b308c90a3754fdd5c9643105dec229981e512a5dc210fe7426d"
+}

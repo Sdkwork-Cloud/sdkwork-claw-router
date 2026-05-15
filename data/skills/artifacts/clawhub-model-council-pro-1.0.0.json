@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-council-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_council_pro",
+  "skill": {
+    "id": 39072,
+    "skillKey": "clawhub-model-council-pro",
+    "name": "Model Council Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-council-pro",
+    "url": "https://clawhub.ai/skills/model-council-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-council-pro-d02516b760b2acb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-model consensus system — send a query to 3+ different LLMs via OpenRouter simultaneously, then a judge model evaluates all responses and produces a win..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771143871329,
+      "changelog": "Initial release — introduce Model Council for consensus queries across multiple LLMs.\n\n- Query multiple AI models in parallel via OpenRouter; responses judged for best answer and reasoning.\n- Supports custom model selection, judge model, output format (plain or JSON), and token limits.\n- Designed for important decisions, code review, research verification, creative comparison, and debugging.\n- Requires an OpenRouter API key (OPENROUTER_API_KEY).\n- Includes cost breakdown and synthesized answers in outputs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4087b03860a47280b03e100090d4d93d5c96a42697ff5fbc528d28fcf9d2be7c"
+}

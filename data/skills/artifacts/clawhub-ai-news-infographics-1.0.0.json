@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-infographics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_infographics",
+  "skill": {
+    "id": 63144,
+    "skillKey": "clawhub-ai-news-infographics",
+    "name": "AI News Infographics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-infographics",
+    "url": "https://clawhub.ai/skills/ai-news-infographics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-infographics-3ada542c5d999867.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成AI新闻资讯的Infographics图片。使用场景：(1) 用户要求生成AI热门产品或新闻的图片 (2) 需要近期AI动态的可视化内容 (3) 制作OpenClaw相关的AI资讯图片 (4) 创建社交媒体分享的AI新闻卡片。功能：搜索近期热门AI产品和新闻，筛选与OpenClaw相关的内容，生成新闻杂志风格..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leahliang",
+      "userId": "publishers:leahliang",
+      "displayName": "LeahLiang",
+      "image": "https://avatars.githubusercontent.com/u/40543830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773311726024,
+      "changelog": "- Initial release of ai-news-infographics skill.\n- Generates infographics for AI news and products, focusing on recent hot topics.\n- Prioritizes OpenClaw, AI agents, productivity tools, and open-source AI content.\n- Produces magazine-style, professional visuals optimized for sharing and readability.\n- Supports multiple image resolutions and aspect ratios for various social media needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e813324df625116a03d9615a6ae9cd7e91de9f33e054570ba34314c7510a7306"
+}

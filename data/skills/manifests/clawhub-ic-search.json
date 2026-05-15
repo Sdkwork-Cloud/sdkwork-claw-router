@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70792,
+  "uuid": "skill-clawhub-ic-search",
+  "skillKey": "clawhub-ic-search",
+  "name": "ic-search",
+  "summary": "提供电子元器件价格、库存、报价及求购现货的搜索查询，返回宁克沃德供应商数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ic_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wordgao",
+      "features": [
+        "提供电子元器件价格、库存、报价及求购现货的搜索查询，返回宁克沃德供应商数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ic-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10544395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ic-search",
+      "url": "https://clawhub.ai/skills/ic-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ic-search",
+    "url": "https://clawhub.ai/skills/ic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ic-search-3e31995cf93a5439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ic-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ic-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6043fea8e01c1971db5965024de3bee36c68f817bdf095aa1db6bb300aaf037",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:17:49.858Z"
+}

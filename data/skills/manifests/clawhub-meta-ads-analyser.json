@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16060,
+  "uuid": "skill-clawhub-meta-ads-analyser",
+  "skillKey": "clawhub-meta-ads-analyser",
+  "name": "Ads Analyzer",
+  "summary": "Analyze extracted Meta ad creatives and generate a professional strategy report. Use after /meta_ads_extractor to produce a clean, organized analysis documen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_analyser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bluerockerr",
+      "features": [
+        "Analyze extracted Meta ad creatives and generate a professional strategy report",
+        "Use after /meta_ads_extractor to produce a clean, organized analysis documen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-ads-analyser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5529755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-ads-analyser",
+      "url": "https://clawhub.ai/skills/meta-ads-analyser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-analyser",
+    "url": "https://clawhub.ai/skills/meta-ads-analyser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-analyser-391422090b08f70b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-ads-analyser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-analyser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49bd4b2e250b4cab4e8d8e645a87947aac8797af5fcb06a05eaf2295992be3e3",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:13:26.910Z"
+}

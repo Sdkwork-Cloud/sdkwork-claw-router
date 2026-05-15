@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43556,
+  "uuid": "skill-clawhub-meta-harness-evolver",
+  "skillKey": "clawhub-meta-harness-evolver",
+  "name": "Meta-Harness Evolver",
+  "summary": "End-to-end Meta-Harness evolution for Hoss (OpenClaw agent). Runs nightly at 3 AM via OpenClaw cron. Reads Hoss's current workspace configs (SOUL.md, IDENTIT...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_harness_evolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tyler",
+      "features": [
+        "End-to-end Meta-Harness evolution for Hoss (OpenClaw agent)",
+        "Runs nightly at 3 AM via OpenClaw cron",
+        "Reads Hoss's current workspace configs (SOUL.md, IDENTIT..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-harness-evolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265649192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-harness-evolver",
+      "url": "https://clawhub.ai/skills/meta-harness-evolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-harness-evolver",
+    "url": "https://clawhub.ai/skills/meta-harness-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-harness-evolver-f4ab54c737840a09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-harness-evolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-harness-evolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f3be4cc9f252a246495235be76f86dff8168d0b241230e8320fbeb985f0b1e6",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:54:52.137Z"
+}

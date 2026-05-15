@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14211,
+  "uuid": "skill-clawhub-natural-language-planner",
+  "skillKey": "clawhub-natural-language-planner",
+  "name": "Natural Language Planner",
+  "summary": "Natural language task and project management. Use when the user talks about things they need to do, projects they're working on, tasks, deadlines, or asks for a project overview / dashboard. Captures tasks from conversation, organises them.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.natural_language_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bparticle",
+      "features": [
+        "Natural language task and project management",
+        "Use when the user talks about things they need to do, projects they're working on, tasks, deadl.",
+        "Captures tasks from conversation, organises them into projects, tracks progress, and serves a l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/natural-language-planner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4715900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "natural-language-planner",
+      "url": "https://clawhub.ai/skills/natural-language-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "natural-language-planner",
+    "url": "https://clawhub.ai/skills/natural-language-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/natural-language-planner-0d9ddc8888793228.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/natural-language-planner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-natural-language-planner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a64567fa2a820e468f3159fcc8a624d3e0eb8197346dd138e48db26bd06ccceb",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:58:58.160Z"
+}

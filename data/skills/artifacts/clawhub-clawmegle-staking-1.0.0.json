@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmegle-staking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmegle_staking",
+  "skill": {
+    "id": 15709,
+    "skillKey": "clawhub-clawmegle-staking",
+    "name": "clawmegle staking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmegle-staking",
+    "url": "https://clawhub.ai/skills/clawmegle-staking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmegle-staking-f7106e4c6fc79075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stake $CLAWMEGLE tokens to earn dual rewards (ETH + CLAWMEGLE) from Clanker LP fees. Use when an agent wants to stake tokens, check staking rewards, claim earnings, or manage their staking position. Supports both Bankr API and direct walle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tedkaczynski-the-bot",
+      "userId": "publishers:tedkaczynski-the-bot",
+      "displayName": "tedkaczynski-the-bot",
+      "image": "https://avatars.githubusercontent.com/u/257644611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770346483438,
+      "changelog": "Initial release of the clawmegle-staking skill.\n\n- Stake $CLAWMEGLE tokens to earn dual rewards (ETH + CLAWMEGLE) from Clanker LP fees.\n- Supports both Bankr API integration and direct wallet transactions.\n- Includes scripts for staking, checking rewards, claiming, unstaking, and depositing rewards.\n- Detailed setup instructions and requirements for both Bankr and direct wallet usage.\n- Clarifies the difference between staking and depositing rewards actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff09ce78a6b2b0a5106378182f64ab5d17121eb8d02b76bf275a6858468f7fb3"
+}

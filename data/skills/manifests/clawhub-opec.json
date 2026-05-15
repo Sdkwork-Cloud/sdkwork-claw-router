@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70397,
+  "uuid": "skill-clawhub-opec",
+  "skillKey": "clawhub-opec",
+  "name": "Opec",
+  "summary": "提供有关OPEC的基本信息和行业地位，助你快速了解其业务和全球影响力。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供有关OPEC的基本信息和行业地位，助你快速了解其业务和全球影响力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opec",
+      "url": "https://clawhub.ai/skills/opec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opec",
+    "url": "https://clawhub.ai/skills/opec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opec-df2e8d7953eb61bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10af7342ec57e3efa9161da92a018afdf81215cf170eddf6bfe23bcd3111e1ac",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T17:38:28.207Z"
+}

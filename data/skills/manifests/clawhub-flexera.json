@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38368,
+  "uuid": "skill-clawhub-flexera",
+  "skillKey": "clawhub-flexera",
+  "name": "Flexera",
+  "summary": "Flexera integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flexera data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flexera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Flexera integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flexera data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flexera@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flexera",
+      "url": "https://clawhub.ai/skills/flexera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flexera",
+    "url": "https://clawhub.ai/skills/flexera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flexera-6293d99f223f0620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flexera@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flexera-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:952ee74b3726f1e9fbd6aeb218b7b309783cd18ace2b7cc283e9f7f0706e72d1",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:28:09.415Z"
+}

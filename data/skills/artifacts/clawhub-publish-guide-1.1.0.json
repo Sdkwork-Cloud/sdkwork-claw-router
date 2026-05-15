@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-guide@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_guide",
+  "skill": {
+    "id": 45314,
+    "skillKey": "clawhub-publish-guide",
+    "name": "Skill Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-guide",
+    "url": "https://clawhub.ai/skills/publish-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-guide-8ee3db54aaa10f87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare and publish an OpenClaw AgentSkill to ClawHub. Use when a skill directory is ready and needs to be published, or when upgrading an already-published..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ham-5on",
+      "userId": "s17edg3w6m9g86ekfhjrkad47x85g3hq",
+      "displayName": "Ham-5on",
+      "image": "https://avatars.githubusercontent.com/u/211765505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777100317671,
+      "changelog": "v1.1.0: Added 'clawhub' binary requirement in metadata. Removed Chinese/English mixed content. Full English documentation with structured pre-publish checklist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18c29692e1772dd99b8e01de987996bbea89b41e682d5058f7085697a073aa34"
+}

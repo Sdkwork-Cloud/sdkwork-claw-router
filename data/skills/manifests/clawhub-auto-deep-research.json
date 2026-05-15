@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71833,
+  "uuid": "skill-clawhub-auto-deep-research",
+  "skillKey": "clawhub-auto-deep-research",
+  "name": "Auto Deep Research",
+  "summary": "深度研究技能。用于深入调查、验证信息、研究主题。当用户需要调研概念、对比工具、追踪事件、分析趋势时使用。通过拆分问题、多次搜索、多源验证，输出结构化报告。确保每个结论有多个独立来源，不确定点要标注。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pancat009",
+      "features": [
+        "深度研究技能。用于深入调查、验证信息、研究主题。当用户需要调研概念、对比工具、追踪事件、分析趋势时使用。通过拆分问题、多次搜索、多源验证，输出结构化报告。确保每个结论有多个独立来源，不确定点."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-deep-research@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134357830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-deep-research",
+      "url": "https://clawhub.ai/skills/auto-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-deep-research",
+    "url": "https://clawhub.ai/skills/auto-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-deep-research-ee8d953515f99cb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-deep-research@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-deep-research-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:319158e84495889c23471334d8fa3545a792e6794179180cd6ba64b462a78d5b",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:28:51.873Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-health-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_health_monitor",
+  "skill": {
+    "id": 25358,
+    "skillKey": "clawhub-aws-health-monitor",
+    "name": "AWS Health Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-health-monitor",
+    "url": "https://clawhub.ai/skills/aws-health-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-health-monitor-511043620139d2ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor AWS Health Dashboard for active incidents and notify via configurable channels (Feishu, Telegram, Slack, Discord, etc.). Activate when user wants to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shimotsuk1-rei",
+      "userId": "publishers:shimotsuk1-rei",
+      "displayName": "Shimotsuk1-Rei",
+      "image": "https://avatars.githubusercontent.com/u/56585099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772437504017,
+      "changelog": "Initial release: monitor AWS Health Dashboard for active incidents with configurable region/service filters, root cause analysis, and multi-channel notifications (Feishu/Telegram/Slack/Discord).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8e6fa016083d72bd038db18671f866f00e0321cff5b9305aa87db7bcd701ccf"
+}

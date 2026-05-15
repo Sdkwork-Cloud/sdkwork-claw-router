@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "byted-mediakit-voiceover-editing",
+    "displayName": "Byted Mediakit Voiceover Editing",
+    "summary": "Volcano Engine AI MediaKit talking-head video editing Skill: a one-stop workflow from environment setup through media management, audio processing, talking-h...",
+    "tags": {
+      "latest": "1.0.9"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1774599198640,
+    "updatedAt": 1777624223007
+  },
+  "latestVersion": {
+    "version": "1.0.9",
+    "createdAt": 1774876519782,
+    "changelog": "Version 1.0.9 adds full support for multi-mode (local/cloud/apig) execution of talking-head video editing, with flexible credential handling and path management.\n\n- Added new environment variables and logic to support 3 execution modes: apig (SkillHub), cloud (Volcano Engine OpenAPI), and local (offline, no cloud needed).\n- Introduced scripts for local processing: ASR, denoise, AV separation, media handling, and subtitle processing.\n- Enhanced mode auto-detection with credential fallback and explicit .env control; \"mode switch\" commands by user are now supported.\n- Revised project root and output directory resolution via new script, with clearer user prompts before overwriting outputs.\n- Step-by-step flow, script list, and product file mapping have been updated in documentation.\n- Security and separation of credential scope further emphasized.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "volc-ai-mediakit",
+    "userId": "s171dsq7d6kwkp84z3y0kp27z983gk8r",
+    "displayName": "Volc-AI-MediaKit",
+    "image": "https://avatars.githubusercontent.com/u/137325527?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624223007
+  }
+}

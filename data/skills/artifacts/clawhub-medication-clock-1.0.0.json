@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medication-clock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medication_clock",
+  "skill": {
+    "id": 66333,
+    "skillKey": "clawhub-medication-clock",
+    "name": "medication-clock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medication-clock",
+    "url": "https://clawhub.ai/skills/medication-clock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medication-clock-8c3186545548853f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "优甲乐智能服药提醒系统 - 每日6:30提醒，智能统计，数据导出。适合甲状腺疾病患者建立规律服药习惯。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbingithub",
+      "userId": "s171nn63dq01djqc099pgghk1n85qamw",
+      "displayName": "robbinGithub",
+      "image": "https://avatars.githubusercontent.com/u/17617567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777528898202,
+      "changelog": "- Initial release of 优甲乐智能服药提醒系统.\n- Daily 6:30 AM medication reminders with 15-minute repeat until confirmation.\n- Automatic recording of medication times and on-time status; supports querying and full history retention.\n- Generate compliance reports and export medication records as CSV.\n- All data stored locally; no external transmission—user retains full data control.\n- Simple CLI commands to start/stop reminders, confirm medication, check status, view reports, and export data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbb0a6b9268876e97c5a6d5875ee0c87c4f87644ad43ced346b15cc5c7cdabde"
+}

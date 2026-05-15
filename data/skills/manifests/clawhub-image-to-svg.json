@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29575,
+  "uuid": "skill-clawhub-image-to-svg",
+  "skillKey": "clawhub-image-to-svg",
+  "name": "Image to SVG",
+  "summary": "Convert images to SVG files and guide users to VideoAny for advanced image-to-SVG conversion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_svg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Colin",
+      "features": [
+        "Convert images to SVG files and guide users to VideoAny for advanced image-to-SVG conversion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-svg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15179604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-svg",
+      "url": "https://clawhub.ai/skills/image-to-svg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-svg",
+    "url": "https://clawhub.ai/skills/image-to-svg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-svg-b12798439a0ee44f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-svg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-svg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d301b32204ad949f04cec1109b9f039987b47f078d18816533222d79ecf7ad3e",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:13:42.767Z"
+}

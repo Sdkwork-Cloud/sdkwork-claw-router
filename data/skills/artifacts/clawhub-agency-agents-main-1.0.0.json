@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agency-agents-main@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agency_agents_main",
+  "skill": {
+    "id": 44713,
+    "skillKey": "clawhub-agency-agents-main",
+    "name": "Agency Agents Main"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agency-agents-main",
+    "url": "https://clawhub.ai/skills/agency-agents-main",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agency-agents-main-74023a60c1495bcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Agency - AI role switcher. Activate specialized professional roles (frontend developer, sales agent, marketing specialist, etc.) for different tasks. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keda118228-dev",
+      "userId": "s17da980zx4d2pasf0j8mhr78185jdyj",
+      "displayName": "keda118228-dev",
+      "image": "https://avatars.githubusercontent.com/u/273225692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777218150325,
+      "changelog": "- Initial release of The Agency - Role Switcher.\n- Activate specialized professional roles on request (e.g., frontend developer, sales agent, marketing specialist).\n- Supports a wide range of domains: engineering, business, specialized fields, and more.\n- Uses role descriptions from organized `.md` files for accurate persona switching.\n- Provides clear instructions and structure for activating and confirming new roles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:569ba4c785447a5ef2fa21305ed8eba1f75014d45de621d9c2878b97e359e8dc"
+}

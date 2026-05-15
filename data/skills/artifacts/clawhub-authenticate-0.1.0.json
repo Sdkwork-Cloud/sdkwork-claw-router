@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authenticate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authenticate",
+  "skill": {
+    "id": 25570,
+    "skillKey": "clawhub-authenticate",
+    "name": "Authenticate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authenticate",
+    "url": "https://clawhub.ai/skills/authenticate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authenticate-20dc65af899cb0b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sign in to the Finance District agent wallet. Use when you or the user want to log in, sign in, connect, set up, or configure the wallet, or when any wallet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachidjarray-hk-qa-fdt",
+      "userId": "publishers:rachidjarray-hk-qa-fdt",
+      "displayName": "Rachid Jarray",
+      "image": "https://avatars.githubusercontent.com/u/111736103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773031642747,
+      "changelog": "- Initial release of the \"authenticate\" skill for signing in to the Finance District agent wallet.\n- Enables guided login and authentication using the `fdx` CLI via browser or device OAuth flows.\n- Allows users to check authentication status, handle errors, and log out as needed.\n- Prerequisite for all wallet operations such as sending tokens, swapping, and checking balances.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:703c36d857344cc7212b0acfab26fb8e7661f963e620f3284ac1739b5c224ed8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glin-profanity-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glin_profanity_mcp",
+  "skill": {
+    "id": 11290,
+    "skillKey": "clawhub-glin-profanity-mcp",
+    "name": "Glin Profanity MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glin-profanity-mcp",
+    "url": "https://clawhub.ai/skills/glin-profanity-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glin-profanity-mcp-91580d99e49244ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCP server providing profanity detection tools for AI assistants. Use when reviewing batches of user content, auditing comments for moderation reports, analyzing text for profanity before publishing, or when AI needs content moderation cap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thegdsks",
+      "userId": "publishers:thegdsks",
+      "displayName": "thegdsks",
+      "image": "https://avatars.githubusercontent.com/u/39922405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2197,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769926081000,
+      "changelog": "glin-profanity-mcp v1.0.0\n\n- Initial release of the MCP server for profanity detection.\n- Provides tools for batch content review, moderation audits, and pre-publishing validation.\n- Includes context-aware detection, obfuscation handling, and language support for 24 languages.\n- Supports user tracking and moderation history features.\n- Integrates with Claude Desktop, Cursor, and similar AI assistant workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:90e5c0e577ea39c5924c910947256d3ad145b478386e0ae3a611e5612d1a5278"
+}

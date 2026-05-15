@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70640,
+  "uuid": "skill-clawhub-guoshun-industrial-vision-advisor",
+  "skillKey": "clawhub-guoshun-industrial-vision-advisor",
+  "name": "国顺工业视觉顾问技能",
+  "summary": "国顺工业视觉顾问技能。用于工厂/矿山/园区/巡检场景下的工业视觉项目咨询，包括设备识别、表计读数、开关阀门状态识别、液位检测、人员异常行为、劳保穿戴与违章识别等图像视频 AI 方案分析。适用于用户需要判断现场是否适合做视觉 AI、该用 YOLO/RT-DETR、开放词汇检测、SAM、VLM/OCR、关键点、姿态动...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_industrial_vision_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "国顺工业视觉顾问技能。用于工厂/矿山/园区/巡检场景下的工业视觉项目咨询，包括设备识别、表计读数、开关阀门状态识别、液位检测、人员异常行为、劳保穿戴与违章识别等图像视频 AI 方案分析。适用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guoshun-industrial-vision-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guoshun-industrial-vision-advisor",
+      "url": "https://clawhub.ai/skills/guoshun-industrial-vision-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-industrial-vision-advisor",
+    "url": "https://clawhub.ai/skills/guoshun-industrial-vision-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-industrial-vision-advisor-8a6d7fbc153372e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guoshun-industrial-vision-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guoshun-industrial-vision-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6513fd64449775c898a89f0749d23e46101721ee57fa16596e6b8f14d5ff68c",
+      "artifactSizeBytes": 3190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:11:43.141Z"
+}

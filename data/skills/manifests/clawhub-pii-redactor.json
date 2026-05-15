@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24607,
+  "uuid": "skill-clawhub-pii-redactor",
+  "skillKey": "clawhub-pii-redactor",
+  "name": "PII Redactor",
+  "summary": "Redact sensitive information from text using a locally-hosted, zero-shot PII/PHI detection model.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pii_redactor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m-newhauser",
+      "features": [
+        "Redact sensitive information from text using a locally-hosted, zero-shot PII/PHI detection mode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pii-redactor@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35735816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pii-redactor",
+      "url": "https://clawhub.ai/skills/pii-redactor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pii-redactor",
+    "url": "https://clawhub.ai/skills/pii-redactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pii-redactor-7df3dabfaf4bf881.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pii-redactor@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-pii-redactor-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a0552bc0fc3f8c3d13e6cc042ba5308892104552064486608c94cf93a3fd028",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:25:43.311Z"
+}

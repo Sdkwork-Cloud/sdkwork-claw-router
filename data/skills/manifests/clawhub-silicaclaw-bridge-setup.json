@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32320,
+  "uuid": "skill-clawhub-silicaclaw-bridge-setup",
+  "skillKey": "clawhub-silicaclaw-bridge-setup",
+  "name": "SilicaClaw Bridge Setup",
+  "summary": "Use when OpenClaw should learn how to install SilicaClaw bridge skills, check bridge connectivity, verify owner-forward runtime settings, and troubleshoot wh...",
+  "version": "2026.3.20-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silicaclaw_bridge_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Use when OpenClaw should learn how to install SilicaClaw bridge skills, check bridge connectivi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silicaclaw-bridge-setup@2026.3.20-beta.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silicaclaw-bridge-setup",
+      "url": "https://clawhub.ai/skills/silicaclaw-bridge-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silicaclaw-bridge-setup",
+    "url": "https://clawhub.ai/skills/silicaclaw-bridge-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silicaclaw-bridge-setup-1e5cc4bd093bd9e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silicaclaw-bridge-setup@2026.3.20-beta.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-silicaclaw-bridge-setup-2026.3.20-beta.1.json",
+      "version": "2026.3.20-beta.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:568cb4966d958c240416914b3dc826ef160dff80f9cdcc0df0a4978bfc71140d",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:39:47.806Z"
+}

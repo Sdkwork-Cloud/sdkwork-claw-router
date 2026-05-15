@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dlp-guard@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dlp_guard",
+  "skill": {
+    "id": 40724,
+    "skillKey": "clawhub-openclaw-dlp-guard",
+    "name": "OpenClaw DLP Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dlp-guard",
+    "url": "https://clawhub.ai/skills/openclaw-dlp-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dlp-guard-396d47010560a129.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects and blocks prompt injection attempts during AI content submission to social media, APIs, web forms, and file outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danlct27",
+      "userId": "s170vywn1sf915b1y3q8bqk2y983nh10",
+      "displayName": "danlct27",
+      "image": "https://avatars.githubusercontent.com/u/182242979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774545253209,
+      "changelog": "49+ prompt injection detection patterns, 9 platforms, 16+ API key detection, PII protection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69f1f5ff09537a4511cc6259bfd59648b62f27bc76a368e102f77ace2886d576"
+}

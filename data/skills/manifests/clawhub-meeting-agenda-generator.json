@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43986,
+  "uuid": "skill-clawhub-meeting-agenda-generator",
+  "skillKey": "clawhub-meeting-agenda-generator",
+  "name": "meeting-agenda-generator",
+  "summary": "Create structured, productive meeting agendas that respect everyone's time. Perfect for team leads, project managers, and anyone running effective meetings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_agenda_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "Create structured, productive meeting agendas that respect everyone's time",
+        "Perfect for team leads, project managers, and anyone running effective meetings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-agenda-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-agenda-generator",
+      "url": "https://clawhub.ai/skills/meeting-agenda-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-agenda-generator",
+    "url": "https://clawhub.ai/skills/meeting-agenda-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-agenda-generator-1f6f216a9534bccf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-agenda-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-agenda-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18c32c26c63ac84f67341385212a3f6768ee6fef3944281250a13e5655de64b0",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T07:30:05.451Z"
+}

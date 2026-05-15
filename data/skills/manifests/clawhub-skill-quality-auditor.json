@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29688,
+  "uuid": "skill-clawhub-skill-quality-auditor",
+  "skillKey": "clawhub-skill-quality-auditor",
+  "name": "Skill Quality Auditor",
+  "summary": "Evaluate and score AgentSkills on design, content, security, and usability, producing a detailed numeric scorecard with improvement suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_quality_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ann0501",
+      "features": [
+        "Evaluate and score AgentSkills on design, content, security, and usability, producing a detaile."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-quality-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104628912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-quality-auditor",
+      "url": "https://clawhub.ai/skills/skill-quality-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-quality-auditor",
+    "url": "https://clawhub.ai/skills/skill-quality-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-quality-auditor-156e228d38b8640a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-quality-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-quality-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a7fd09ed76c39f45cb491e4256bb7353ae1f7cac7acd38885df514de2100afb",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:04:41.338Z"
+}

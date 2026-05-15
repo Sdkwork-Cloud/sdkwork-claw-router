@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59528,
+  "uuid": "skill-clawhub-weixin-openclaw-login",
+  "skillKey": "clawhub-weixin-openclaw-login",
+  "name": "Weixin OpenClaw Login",
+  "summary": "处理微信个人号接入 OpenClaw 的官方登录流程与排障。用于安装 `@tencent-weixin/openclaw-weixin`、获取新的二维码授权链接、查询扫码状态、修复 `openclaw-weixin` 卡在 `SETUP / no token`、以及整理微信 8.0.70+ 接入 OpenClaw...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_openclaw_login",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aqHi",
+      "features": [
+        "处理微信个人号接入 OpenClaw 的官方登录流程与排障。用于安装 `@tencent-weixin/openclaw-weixin`、获取新的二维码授权链接、查询扫码状态、修复 `ope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-openclaw-login@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18386917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-openclaw-login",
+      "url": "https://clawhub.ai/skills/weixin-openclaw-login"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-openclaw-login",
+    "url": "https://clawhub.ai/skills/weixin-openclaw-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-openclaw-login-07b5c2218f792bde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-openclaw-login@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-openclaw-login-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fef4c5cd634c160641bef94924ff59eba466019f0d6432efa1498d370ae2e73",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:08:36.076Z"
+}

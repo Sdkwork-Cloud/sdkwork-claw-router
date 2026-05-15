@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16564,
+  "uuid": "skill-clawhub-wavespeed",
+  "skillKey": "clawhub-wavespeed",
+  "name": "WaveSpeed AI",
+  "summary": "Generate and edit images and videos using WaveSpeed AI's 700+ model library. Use when the user wants to generate images from text prompts (FLUX, Seedream, Qw...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavespeed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilya",
+      "features": [
+        "Generate and edit images and videos using WaveSpeed AI's 700+ model library",
+        "Use when the user wants to generate images from text prompts (FLUX, Seedream, Qw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wavespeed@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72158359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wavespeed",
+      "url": "https://clawhub.ai/skills/wavespeed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavespeed",
+    "url": "https://clawhub.ai/skills/wavespeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavespeed-b858f760399ed936.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wavespeed@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wavespeed-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b64fc73cc4218ed19004565367cfd60b6761be299c7567b6f0653bb9e39cab8",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T05:32:24.806Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73735,
+  "uuid": "skill-clawhub-embodied-ai-jobs",
+  "skillKey": "clawhub-embodied-ai-jobs",
+  "name": "具身智能就业资讯追踪",
+  "summary": "具身智能就业资讯追踪。每周自动搜集具身智能领域的实习和就业机会，包括软件、硬件、算法、产品等岗位。适用于：每周就业资讯、具身智能岗位、招聘汇总、实习信息、具身智能公司招聘、机器人公司职位。当用户需要获取具身智能行业招聘信息、追踪具身智能企业招聘动态、整理实习就业资讯时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embodied_ai_jobs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jessy-Huang",
+      "features": [
+        "具身智能就业资讯追踪。每周自动搜集具身智能领域的实习和就业机会，包括软件、硬件、算法、产品等岗位。适用于：每周就业资讯、具身智能岗位、招聘汇总、实习信息、具身智能公司招聘、机器人公司职位。当."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/embodied-ai-jobs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66520966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "embodied-ai-jobs",
+      "url": "https://clawhub.ai/skills/embodied-ai-jobs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embodied-ai-jobs",
+    "url": "https://clawhub.ai/skills/embodied-ai-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embodied-ai-jobs-8da701d6a5802479.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/embodied-ai-jobs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-embodied-ai-jobs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24fa9890d526b0d9d4cb3776e50c620dc0a02ee39bf6295642be00be42e7c7c8",
+      "artifactSizeBytes": 2724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:25:38.228Z"
+}

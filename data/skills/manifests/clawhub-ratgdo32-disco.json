@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26865,
+  "uuid": "skill-clawhub-ratgdo32-disco",
+  "skillKey": "clawhub-ratgdo32-disco",
+  "name": "ratgdo32 disco",
+  "summary": "Control a ratgdo32 disco garage door opener via its local web API. Use when the user asks to open/close the garage, check garage status, toggle the garage li...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ratgdo32_disco",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Boland",
+      "features": [
+        "Control a ratgdo32 disco garage door opener via its local web API",
+        "Use when the user asks to open/close the garage, check garage status, toggle the garage li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ratgdo32-disco@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23284377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ratgdo32-disco",
+      "url": "https://clawhub.ai/skills/ratgdo32-disco"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ratgdo32-disco",
+    "url": "https://clawhub.ai/skills/ratgdo32-disco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ratgdo32-disco-5105b417ec6f8f31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ratgdo32-disco@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ratgdo32-disco-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:791fd43813dc6fb79b74204f36f78bb00a4ffc7b85fc0c813566210357d66702",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:12:26.951Z"
+}

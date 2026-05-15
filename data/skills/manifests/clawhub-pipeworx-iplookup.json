@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55958,
+  "uuid": "skill-clawhub-pipeworx-iplookup",
+  "skillKey": "clawhub-pipeworx-iplookup",
+  "name": "Pipeworx iplookup",
+  "summary": "IP Lookup MCP — ip-api.com (free, no auth for basic usage)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_iplookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "IP Lookup MCP — ip-api.com (free, no auth for basic usage)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-iplookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-iplookup",
+      "url": "https://clawhub.ai/skills/pipeworx-iplookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-iplookup",
+    "url": "https://clawhub.ai/skills/pipeworx-iplookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-iplookup-6c236a81ffd7f060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-iplookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-iplookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c040878d5c8f3b32b04a0da75873a3e1268b13c0dd2a6623bbbb8cf3f29e8d3f",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:16:12.739Z"
+}

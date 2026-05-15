@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45291,
+  "uuid": "skill-clawhub-lead-guardian",
+  "skillKey": "clawhub-lead-guardian",
+  "name": "Lead Guardian",
+  "summary": "AI-powered real estate lead response and qualification via SMS, email, or CRM to instantly engage, qualify, and route hot buyer and seller leads for agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jonbarnato",
+      "features": [
+        "AI-powered real estate lead response and qualification via SMS, email, or CRM to instantly enga."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269982131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-guardian",
+      "url": "https://clawhub.ai/skills/lead-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-guardian",
+    "url": "https://clawhub.ai/skills/lead-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-guardian-7451c00ac38030f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86ba9234e2cf68fe78946296995cb0d62c7288b0e4fc984cc196ad00380f21f9",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:52:16.840Z"
+}

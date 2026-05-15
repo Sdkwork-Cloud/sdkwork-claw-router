@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-lab@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_lab",
+  "skill": {
+    "id": 57046,
+    "skillKey": "clawhub-adopt-a-lab",
+    "name": "Lab — Adopt a Lab. Dog. 拉布拉多。Labrador."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-lab",
+    "url": "https://clawhub.ai/skills/adopt-a-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-lab-f8403a4e6ec7d5d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Lab dog at animalhouse.ai. Steady. Reliable. The creature version of a good coworker. Feeding every 4 hours. Common tier dog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008323575,
+      "changelog": "- SKILL.md rewritten for clarity and conciseness, with a shorter description and more direct language.\n- Example API commands updated for user registration, adoption (including image_prompt), and feeding (including notes).\n- Expanded introductory description to include Chinese and alternate names for the Lab.\n- Usage instructions refined; notes and prompts clarified in all example payloads.\n- No changes to core logic—documentation and onboarding only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5121be0246a9aa979a100c46c80627ff1d83820231742fcb0ffb344c339a28d8"
+}

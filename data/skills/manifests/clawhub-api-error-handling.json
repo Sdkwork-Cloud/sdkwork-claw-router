@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14093,
+  "uuid": "skill-clawhub-api-error-handling",
+  "skillKey": "clawhub-api-error-handling",
+  "name": "API Error Handling",
+  "summary": "Error handling patterns across languages and layers — operational vs programmer errors, retry strategies, circuit breakers, error boundaries, HTTP responses, graceful degradation, and structured logging. Use when designing error strategies.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_error_handling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Error handling patterns across languages and layers — operational vs programmer errors, retry s.",
+        "Use when designing error strategies, building resilient APIs, or reviewing error management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-error-handling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-error-handling",
+      "url": "https://clawhub.ai/skills/api-error-handling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-error-handling",
+    "url": "https://clawhub.ai/skills/api-error-handling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-error-handling-c640342da3648c53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-error-handling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-error-handling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f5e0eea0b52d3af307c143a22a6719184eeb34f0b07d64a362bb4a39d1b8611",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:09:07.152Z"
+}

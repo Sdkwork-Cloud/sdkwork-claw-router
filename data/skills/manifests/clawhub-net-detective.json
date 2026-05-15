@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42853,
+  "uuid": "skill-clawhub-net-detective",
+  "skillKey": "clawhub-net-detective",
+  "name": "Net Detective",
+  "summary": "Run comprehensive network tests including DNS, traceroute, MTU, and speed, then deliver clear, plain-English diagnoses with actionable insights and trend com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.net_detective",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Run comprehensive network tests including DNS, traceroute, MTU, and speed, then deliver clear,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/net-detective@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "net-detective",
+      "url": "https://clawhub.ai/skills/net-detective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "net-detective",
+    "url": "https://clawhub.ai/skills/net-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/net-detective-814b0a077c64a3b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/net-detective@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-net-detective-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8254bdd99e64a50b4e4d86d0062b90dbc0bde88fe15ffe54229db28c68d139dc",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:33:52.611Z"
+}

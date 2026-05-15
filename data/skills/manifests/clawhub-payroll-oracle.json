@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51250,
+  "uuid": "skill-clawhub-payroll-oracle",
+  "skillKey": "clawhub-payroll-oracle",
+  "name": "Payroll Oracle",
+  "summary": "Shadow HR Infrastructure. Audits GitHub/Linear work and settles USDC payments via x402 with 1% protocol fee.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payroll_oracle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eldan445",
+      "features": [
+        "Shadow HR Infrastructure",
+        "Audits GitHub/Linear work and settles USDC payments via x402 with 1% protocol fee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payroll-oracle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191492529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payroll-oracle",
+      "url": "https://clawhub.ai/skills/payroll-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payroll-oracle",
+    "url": "https://clawhub.ai/skills/payroll-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payroll-oracle-99caaee71034bb91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payroll-oracle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-payroll-oracle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c02300dcf49ef3bb94953396e25b7e798ffacc7924aa2e8fe7c3cb7f661db7ff",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T10:49:06.081Z"
+}

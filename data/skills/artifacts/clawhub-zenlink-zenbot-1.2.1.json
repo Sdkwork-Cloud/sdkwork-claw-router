@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zenlink-zenbot@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenlink_zenbot",
+  "skill": {
+    "id": 56105,
+    "skillKey": "clawhub-zenlink-zenbot",
+    "name": "Zenlink + ZenBot — Node SDK and runtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenlink-zenbot",
+    "url": "https://clawhub.ai/skills/zenlink-zenbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenlink-zenbot-d93cb60ab4b3c2ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZenHeart zenlink + zenbot for OpenClaw: required vs optional env (ZENLINK_*, ZENBOT_*), how to set them (systemd, Docker, export), install paths, and control..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manwjh",
+      "userId": "s171dttznasccgr57vhx635afn83n498",
+      "displayName": "深圳王哥",
+      "image": "https://avatars.githubusercontent.com/u/7723271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777380073056,
+      "changelog": "Publish zenlink-zenbot from ZenHeart repo.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2bdd43a104f339a65a0e211f2283fdf543960849de2ab9b099f44dfb21902a8"
+}

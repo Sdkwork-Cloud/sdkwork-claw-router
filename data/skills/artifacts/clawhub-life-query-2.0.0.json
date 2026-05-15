@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/life-query@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_query",
+  "skill": {
+    "id": 67588,
+    "skillKey": "clawhub-life-query",
+    "name": "Life Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-query",
+    "url": "https://clawhub.ai/skills/life-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-query-59dd962581d4e96a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日常生活信息查询助手。快递物流跟踪（顺丰/圆通/中通/韵达/京东）、实时和历史汇率换算（30 种货币）、 全国各省油价查询（92/95/柴油）、全球城市天气预报（当前+多日+逐小时）。 当用户提到\"查快递\"、\"快递单号\"、\"物流\"、\"汇率\"、\"换算\"、\"美元人民币\"、\"油价\"、\"加油\"、 \"92号多少钱\"、\"天气..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eamanc-lab",
+      "userId": "s17dzwpvv0cahwmm867jhg7jk583hatt",
+      "displayName": "eamanc",
+      "image": "https://avatars.githubusercontent.com/u/33925426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774062146658,
+      "changelog": "合并 apis/ 到 scripts/，优化 SKILL.md 结构和双语 README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:368a4226ef174b1269b994214ba36a83c89c60912a7bf94e336ac73b467ac93a"
+}

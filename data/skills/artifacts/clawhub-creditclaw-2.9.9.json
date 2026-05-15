@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creditclaw@2.9.9",
+  "version": "2.9.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creditclaw",
+  "skill": {
+    "id": 11386,
+    "skillKey": "clawhub-creditclaw",
+    "name": "CreditClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creditclaw",
+    "url": "https://clawhub.ai/skills/creditclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creditclaw-d6b77a68bceef4d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shop in any store with any payment method."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "creditclaw",
+      "userId": "s1786035rxajpadskvj7yq2m7x83n8er",
+      "displayName": "CreditClaw",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1672,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.9.9",
+      "createdAt": 1774561847820,
+      "changelog": "- Added legacy OpenClaw sub-agent documentation (`agents/OPENCLAW_legacy.md`) for fallback credit card handling.\n- Updated and clarified OpenClaw checkout flow to prioritize plugin-based secure card entry, using sub-agent only as a fallback.\n- Expanded skill description: \"Shop in any store with any payment method.\"\n- Updated security documentation to emphasize plugin-based card isolation and sub-agent fallback on OpenClaw.\n- Added documentation reference for the new OpenClaw plugin (`Plugins/OpenClaw/`) and its secure tool.\n- Minor content, structure, and clarity improvements throughout SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:853ff6b8bfbd614d9e52ec49110707680fa8276403682d00f00066541186a3c8"
+}

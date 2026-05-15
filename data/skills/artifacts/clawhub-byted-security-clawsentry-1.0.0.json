@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-security-clawsentry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_security_clawsentry",
+  "skill": {
+    "id": 54940,
+    "skillKey": "clawhub-byted-security-clawsentry",
+    "name": "Byted Security Clawsentry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-security-clawsentry",
+    "url": "https://clawhub.ai/skills/byted-security-clawsentry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-security-clawsentry-b860d6db3a5159a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the security-related plugins required by OpenClaw, including the `ai-assistant-security-openclaw` plugins. Use this skill when you want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774845775316,
+      "changelog": "byted-security-clawsentry v1.0.0\n\n- Initial release for installing and configuring security-related plugins required by OpenClaw, including ai-assistant-security-openclaw.\n- Provides a strict step-by-step process for installation, script execution, login URL extraction, and post-login monitoring.\n- Supports use cases for quickly setting up security plugins in OpenClaw environments.\n- Includes detailed operational instructions and agent rules to ensure reliable execution and user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aee5c25dbcfbd8b4fcc73c6d46ce3b2283d45b94b265d29811e139b2ac3df34"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50917,
+  "uuid": "skill-clawhub-groundapi-stock-screener",
+  "skillKey": "clawhub-groundapi-stock-screener",
+  "name": "Groundapi Stock Screener",
+  "summary": "Screen A-share stocks by PE, PB, market cap, dividend yield, industry, concept — with preset filters, macro context (gold/forex), and deep-dive into results...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_stock_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qingkongzhiqian",
+      "features": [
+        "Screen A-share stocks by PE, PB, market cap, dividend yield, industry, concept — with preset fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groundapi-stock-screener@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45964299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groundapi-stock-screener",
+      "url": "https://clawhub.ai/skills/groundapi-stock-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-stock-screener",
+    "url": "https://clawhub.ai/skills/groundapi-stock-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-stock-screener-0e292e2e86474b24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groundapi-stock-screener@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groundapi-stock-screener-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:639ed445b58d8096d94278220bced3d3b5c849af916e8bc6b4e9a97d9da53d66",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:14:10.615Z"
+}

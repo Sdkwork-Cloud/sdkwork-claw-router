@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58313,
+  "uuid": "skill-clawhub-xiaomi-home",
+  "skillKey": "clawhub-xiaomi-home",
+  "name": "小米家居 (Xiaomi Home)",
+  "summary": "[English] Control Xiaomi Home devices via local LAN using miiocli. Supports status checks, toggling power, and MIOT property manipulation for devices like smart plugs, humidifiers, and rice cookers. | [中文] 通过局域网利用 miiocli 控制米家智能设备。支持查看状态、开.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_home",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pegasus02",
+      "features": [
+        "[English] Control Xiaomi Home devices via local LAN using miiocli",
+        "Supports status checks, toggling power, and MIOT property manipulation for devices like smart p.",
+        "| [中文] 通过局域网利用 miiocli 控制米家智能设备。支持查看状态、开关控制以及对智能插座、加湿器、电饭煲等 MIOT 设备的属性调优。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-home@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102945996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-home",
+      "url": "https://clawhub.ai/skills/xiaomi-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-home",
+    "url": "https://clawhub.ai/skills/xiaomi-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-home-1e89337d97e4e460.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-home@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-home-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b85ea28179a566efc97ecfc9a201f0f3556f217768862c6e9907c77aa7a064a",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T06:16:20.628Z"
+}

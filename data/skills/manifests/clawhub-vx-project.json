@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39690,
+  "uuid": "skill-clawhub-vx-project",
+  "skillKey": "clawhub-vx-project",
+  "name": "Vx Project",
+  "summary": "Project management guide for vx. Use when setting up a new project, configuring vx.toml, or managing project-level tool versions and scripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vx_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hal",
+      "features": [
+        "Project management guide for vx",
+        "Use when setting up a new project, configuring vx.toml, or managing project-level tool versions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vx-project@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13111745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vx-project",
+      "url": "https://clawhub.ai/skills/vx-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vx-project",
+    "url": "https://clawhub.ai/skills/vx-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vx-project-0e43be6423fee8fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vx-project@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vx-project-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63157db1b331b90d67d4c9955e8861f1016994a70f88d920950ad4cf11d35067",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:53:36.167Z"
+}

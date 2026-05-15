@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-evolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evolve",
+  "skill": {
+    "id": 64179,
+    "skillKey": "clawhub-skill-evolve",
+    "name": "Skill Evolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evolve",
+    "url": "https://clawhub.ai/skills/skill-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evolve-f11b3ac72ad4db4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自进化技能管理器 — 复杂任务后自动将经验固化为 SKILL.md，下次同类任务直接复用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorinwei",
+      "userId": "s1733tyb59vqwrwmm0zy5k78en83s29v",
+      "displayName": "lorinwei",
+      "image": "https://avatars.githubusercontent.com/u/100334628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775911869534,
+      "changelog": "Initial release — self-evolving skills manager inspired by Hermes Agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24ebe8bd278d2ccead43a1370348e111c49cf84c7e2ac88014e109320b8c1a60"
+}

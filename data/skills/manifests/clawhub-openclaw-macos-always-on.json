@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18470,
+  "uuid": "skill-clawhub-openclaw-macos-always-on",
+  "skillKey": "clawhub-openclaw-macos-always-on",
+  "name": "OpenClaw macOS Always-On",
+  "summary": "Run OpenClaw as a system-level LaunchDaemon on macOS for 24/7 operation, surviving screen lock, logout, and user switching. Uses caffeinate to prevent sleep....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_macos_always_on",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "happy dog",
+      "features": [
+        "Run OpenClaw as a system-level LaunchDaemon on macOS for 24/7 operation, surviving screen lock,.",
+        "Uses caffeinate to prevent sleep...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-macos-always-on@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-macos-always-on",
+      "url": "https://clawhub.ai/skills/openclaw-macos-always-on"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-macos-always-on",
+    "url": "https://clawhub.ai/skills/openclaw-macos-always-on",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-macos-always-on-54d46075fe267af1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-macos-always-on@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-macos-always-on-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eacbc70c984753b8300db5a20a1f8e5062c2df7976fac886d6bcaff2aa61a965",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T12:51:17.444Z"
+}

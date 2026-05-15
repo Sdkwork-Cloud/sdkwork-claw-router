@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48122,
+  "uuid": "skill-clawhub-prompt-finder",
+  "skillKey": "clawhub-prompt-finder",
+  "name": "Prompt Finder",
+  "summary": "Search and retrieve high-quality AI prompt templates from prompts.chat by keyword or category to improve your prompt writing.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuTong",
+      "features": [
+        "Search and retrieve high-quality AI prompt templates from prompts.chat by keyword or category t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-finder@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7344866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-finder",
+      "url": "https://clawhub.ai/skills/prompt-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-finder",
+    "url": "https://clawhub.ai/skills/prompt-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-finder-6513bded4b30edda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-finder@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-finder-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f5e66a50c5bead6107b2e4c2ab1d5eccbb97de67f2258df98b1759dd79dcc60",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T13:34:36.259Z"
+}

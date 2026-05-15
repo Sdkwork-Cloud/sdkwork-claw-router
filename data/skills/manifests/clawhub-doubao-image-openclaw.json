@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70521,
+  "uuid": "skill-clawhub-doubao-image-openclaw",
+  "skillKey": "clawhub-doubao-image-openclaw",
+  "name": "doubao-image",
+  "summary": "使用火山引擎豆包模型生成图片。通过火山引擎豆包图片生成 API 创建图片。支持自定义提示词、尺寸、模型等参数。使用方式：生图：一只可爱的小猫。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_image_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanxing0724",
+      "features": [
+        "使用火山引擎豆包模型生成图片。通过火山引擎豆包图片生成 API 创建图片。支持自定义提示词、尺寸、模型等参数。使用方式：生图：一只可爱的小猫。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-image-openclaw@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212342093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-image-openclaw",
+      "url": "https://clawhub.ai/skills/doubao-image-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-image-openclaw",
+    "url": "https://clawhub.ai/skills/doubao-image-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-image-openclaw-1791cb32cb52fd55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-image-openclaw@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-image-openclaw-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6913490f43e15cb208bc3e21403a0be63d633f022c7e1abcfe8aa33774191d42",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:57:39.984Z"
+}

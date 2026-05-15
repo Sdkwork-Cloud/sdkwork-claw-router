@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64441,
+  "uuid": "skill-clawhub-moviemovie",
+  "skillKey": "clawhub-moviemovie",
+  "name": "moviemovie",
+  "summary": "搜索电影下载资源（磁力链接/种子），推荐有下载资源的热门电影。 多平台热门聚合（烂番茄+豆瓣）+ 种子资源实时验证 = 只推荐你能下载到的电影。 触发词：\"找电影\"、\"电影下载\"、\"磁力\"、\"推荐电影\"、\"最近有什么好看的\"、 \"find movie\"、\"download\"、\"magnet\"、\"trending",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moviemovie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kunhai",
+      "features": [
+        "搜索电影下载资源（磁力链接/种子），推荐有下载资源的热门电影。 多平台热门聚合（烂番茄+豆瓣）+ 种子资源实时验证 = 只推荐你能下载到的电影。 触发词：\"找电影\"、\"电影下载\"、\"磁力\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moviemovie@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20219762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moviemovie",
+      "url": "https://clawhub.ai/skills/moviemovie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moviemovie",
+    "url": "https://clawhub.ai/skills/moviemovie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moviemovie-ccb9befd41caab80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moviemovie@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-moviemovie-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffeb76de9d31804e7a5cb54cc4d74cac6a94f3f4e47fe725a263591d03b0cb1e",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:50:35.736Z"
+}

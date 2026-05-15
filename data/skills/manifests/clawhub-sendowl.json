@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37449,
+  "uuid": "skill-clawhub-sendowl",
+  "skillKey": "clawhub-sendowl",
+  "name": "Sendowl",
+  "summary": "SendOwl integration. Manage data, records, and automate workflows. Use when the user wants to interact with SendOwl data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendowl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SendOwl integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SendOwl data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendowl@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendowl",
+      "url": "https://clawhub.ai/skills/sendowl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendowl",
+    "url": "https://clawhub.ai/skills/sendowl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendowl-bdd6d3041d66fab6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendowl@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendowl-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de2695e92ca677b13a3064594a4914496b73a742285f91a201ce121b4c61d0d0",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:51.111Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_watcher",
+  "skill": {
+    "id": 8243,
+    "skillKey": "clawhub-youtube-watcher",
+    "name": "YouTube Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-watcher",
+    "url": "https://clawhub.ai/skills/youtube-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-watcher-6e4e8fef51970505.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and read transcripts from YouTube videos. Use when you need to summarize a video, answer questions about its content, or extract information from it."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelgathara",
+      "userId": "publishers:michaelgathara",
+      "displayName": "Michael Gathara",
+      "image": "https://avatars.githubusercontent.com/u/21083524?v=4"
+    },
+    "stats": {
+      "comments": 6,
+      "downloads": 47869,
+      "installsAllTime": 522,
+      "installsCurrent": 500,
+      "stars": 293,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769327779866,
+      "changelog": "Initial release of youtube-watcher.\n\n- Fetch and read transcripts from YouTube videos.\n- Summarize videos, answer questions, or extract specific information from transcripts.\n- Trigger phrases include: \"watch youtube\", \"summarize video\", \"video transcript\", \"youtube summary\", and \"analyze video\".\n- Requires installation of `yt-dlp` for transcript retrieval.\n- Only works with videos that have closed captions or auto-generated subtitles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0bb24d61930ce3141960b6af8734ac9baed6f3df69f4b20f29db53deba247fb3"
+}

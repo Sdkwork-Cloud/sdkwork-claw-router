@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23123,
+  "uuid": "skill-clawhub-github-auto-reply",
+  "skillKey": "clawhub-github-auto-reply",
+  "name": "GitHub Auto Reply",
+  "summary": "Smart auto-reply for GitHub Issues with professional customer service",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_auto_reply",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sendwealth",
+      "features": [
+        "Smart auto-reply for GitHub Issues with professional customer service"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-auto-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261151873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-auto-reply",
+      "url": "https://clawhub.ai/skills/github-auto-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-auto-reply",
+    "url": "https://clawhub.ai/skills/github-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-auto-reply-5058524f51944af5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-auto-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-auto-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9585c9a96fc0bd7b43aef0f440bf4aa974a193d756291d6a154780fdd956bcb",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:55:03.254Z"
+}

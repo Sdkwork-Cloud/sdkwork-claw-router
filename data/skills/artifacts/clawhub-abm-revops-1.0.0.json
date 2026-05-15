@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-revops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_revops",
+  "skill": {
+    "id": 34106,
+    "skillKey": "clawhub-abm-revops",
+    "name": "Revops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-revops",
+    "url": "https://clawhub.ai/skills/abm-revops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-revops-47c8fd745825eaf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. Also use when the user mentions 'RevOps..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773903634648,
+      "changelog": "Initial release of RevOps expert skill for revenue operations process design.\n\n- Provides a complete lead lifecycle framework, including detailed stage definitions and handoff SLAs.\n- Outlines best practices for MQL definition, lead scoring (fit and engagement), and negative scoring.\n- Includes routing models (round-robin, territory, account-based, skill-based) with guidance on speed-to-lead and fallback rules.\n- Offers pipeline stage templates with required fields and exit criteria for each stage.\n- Emphasizes core RevOps principles: single system of record, process alignment, \"define before automate,\" and regular measurement of handoffs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e5edcbb05dec55c6852e433aad03527af4e4577ccfffcc8773bff163204dd81"
+}

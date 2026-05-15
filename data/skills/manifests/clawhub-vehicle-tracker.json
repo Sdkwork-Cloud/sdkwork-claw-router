@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12103,
+  "uuid": "skill-clawhub-vehicle-tracker",
+  "skillKey": "clawhub-vehicle-tracker",
+  "name": "Vehicle Expense Tracker",
+  "summary": "Track vehicle expenses (gas, maintenance, parts) in Google Sheets and save related photos. Handles mileage, cost, category, and photo organization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vehicle_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huchengtw",
+      "features": [
+        "Track vehicle expenses (gas, maintenance, parts) in Google Sheets and save related photos",
+        "Handles mileage, cost, category, and photo organization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vehicle-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1418929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vehicle-tracker",
+      "url": "https://clawhub.ai/skills/vehicle-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vehicle-tracker",
+    "url": "https://clawhub.ai/skills/vehicle-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vehicle-tracker-7063522c7674cedd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vehicle-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vehicle-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67e4d1d438343c8016e5b712ce9aba6599282f493a2113df1de132c1cc82f0f4",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T05:56:36.089Z"
+}

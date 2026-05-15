@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tandem-browser@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tandem_browser",
+  "skill": {
+    "id": 53922,
+    "skillKey": "clawhub-tandem-browser",
+    "name": "Tandem Browser Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tandem-browser",
+    "url": "https://clawhub.ai/skills/tandem-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tandem-browser-eba24bc9a647bbfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered browser automation skill. Connect any MCP-compatible agent to Tandem Browser — browse, read pages, click, fill forms, execute JS, coordinate with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikefaierberg-byte",
+      "userId": "s17bzyt0p4vz4fhm7s43aea31h85rjr9",
+      "displayName": "mikefaierberg-byte",
+      "image": "https://avatars.githubusercontent.com/u/278094606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778052405072,
+      "changelog": "Fix: display name to include 'Skill'",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d026cb00c0beb1f8bfdb6595f646f5ef14e69879795934425c09b6eb6610644"
+}

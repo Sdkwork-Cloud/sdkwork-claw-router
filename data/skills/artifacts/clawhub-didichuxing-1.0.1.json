@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/didichuxing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didichuxing",
+  "skill": {
+    "id": 66396,
+    "skillKey": "clawhub-didichuxing",
+    "name": "Didichuxing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didichuxing",
+    "url": "https://clawhub.ai/skills/didichuxing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didichuxing-69a567de474affa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "滴滴出行助手，精通出行规划、费用估算、企业用车、开放平台API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773653065586,
+      "changelog": "- Added an \"企业用车规则配置\" section to the documentation, with example code for configuring business ride policies.\n- Added \"费用优化建议\" with tips for both individuals and businesses on how to save money using Didi Chuxing.\n- Expanded usage scenarios and common questions for more practical guidance.\n- No changes to the skill's functionality or code—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59533a391910c9fee776b611dc6ffaf70c34a944b176574cfe23d58bc271debc"
+}

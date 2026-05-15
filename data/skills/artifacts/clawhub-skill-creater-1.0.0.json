@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creater",
+  "skill": {
+    "id": 34513,
+    "skillKey": "clawhub-skill-creater",
+    "name": "skill-creater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creater",
+    "url": "https://clawhub.ai/skills/skill-creater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creater-707c651d04063507.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete AgentSkills from user requirements. Creates SKILL.md, scripts, references, assets folders, and packages them into a ready-to-upload archive..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timyljob2011-sudo",
+      "userId": "s173c9xf7r1vtegphbw5vyhap183hax4",
+      "displayName": "timyljob2011-sudo",
+      "image": "https://avatars.githubusercontent.com/u/253444946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774237951422,
+      "changelog": "- Initial release of skill-creater.\n- Automatically generates complete AgentSkill packages from user requirements.\n- Includes interview workflow to clarify needs, then creates SKILL.md, scripts, references, asset folders, and manifest.\n- Outputs a ready-to-upload .zip archive for Clawhub.\n- Ensures directory structure, documentation, and metadata meet best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da9863aee92703c9d7777f9b4caaff9d59029c03ed49654f3fdeca9ac484e818"
+}

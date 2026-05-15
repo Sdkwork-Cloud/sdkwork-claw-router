@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/internal-linking-optimizer@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internal_linking_optimizer",
+  "skill": {
+    "id": 57200,
+    "skillKey": "clawhub-internal-linking-optimizer",
+    "name": "Internal Linking Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internal-linking-optimizer",
+    "url": "https://clawhub.ai/skills/internal-linking-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internal-linking-optimizer-66f4c5f9edff55c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when improving internal link structure, anchor text, orphan pages, crawl depth, site architecture, or link equity flow. 内链优化/站内架构"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1687,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349141853,
+      "changelog": "Published from v9.9.5 @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d65e3ad1153d73ba39d1fef24ef8a566431c229ad6e0f0de33cb04f279b3ff26"
+}

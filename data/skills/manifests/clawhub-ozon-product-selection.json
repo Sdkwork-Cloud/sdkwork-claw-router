@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65652,
+  "uuid": "skill-clawhub-ozon-product-selection",
+  "skillKey": "clawhub-ozon-product-selection",
+  "name": "ozon-product-selection",
+  "summary": "Ozon电商选品工具：根据用户指定的品类，自动搜索市场趋势、提取热门细分关键词、 调用1688搜索API逐一选品，按筛选条件过滤后输出每个细分市场的最优商品推荐。 触发词：寻找Ozon蓝海商品、Ozon潜力爆品、Ozon可铺货商品、Ozon可卖的货盘、 Ozon选品、帮我选品、找Ozon能卖的商品、Ozon热门商...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ozon_product_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "Ozon电商选品工具：根据用户指定的品类，自动搜索市场趋势、提取热门细分关键词、 调用1688搜索API逐一选品，按筛选条件过滤后输出每个细分市场的最优商品推荐。 触发词：寻找Ozon蓝海商."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ozon-product-selection@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ozon-product-selection",
+      "url": "https://clawhub.ai/skills/ozon-product-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ozon-product-selection",
+    "url": "https://clawhub.ai/skills/ozon-product-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ozon-product-selection-9a1ed4a5decc06ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ozon-product-selection@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ozon-product-selection-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7dbf91955c21dc7e9f0a692f3a092a35dc6f2af3e4dd9c5b5f48a1ad068df9c",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:06:36.244Z"
+}

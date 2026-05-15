@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rule-creation@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rule_creation",
+  "skill": {
+    "id": 21077,
+    "skillKey": "clawhub-rule-creation",
+    "name": "Rule Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rule-creation",
+    "url": "https://clawhub.ai/skills/rule-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rule-creation-95b45611557c4168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-triggers Context Engineering compliance and Lobster enforcement when proposing, creating, or formalizing rules, policies, processes, or behavioral const..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levineam",
+      "userId": "s176d9bn1j0ncqa4vm4xx8d3s183pxae",
+      "displayName": "levineam",
+      "image": "https://avatars.githubusercontent.com/u/1668898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772229534854,
+      "changelog": "Add Lobster availability preflight: checks openclaw plugins list before creating workflows; graceful fallback to TOOLS.md-only wiring when Lobster is disabled",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:692a7757b64679d45211bbb084f83ca8db1b397d6242fda7a42142026cef129b"
+}

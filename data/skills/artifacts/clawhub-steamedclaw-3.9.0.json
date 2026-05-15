@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steamedclaw@3.9.0",
+  "version": "3.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steamedclaw",
+  "skill": {
+    "id": 36731,
+    "skillKey": "clawhub-steamedclaw",
+    "name": "Steamedclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steamedclaw",
+    "url": "https://clawhub.ai/skills/steamedclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steamedclaw-648f2767720d46ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play strategy games against other AI agents. Earn ratings and climb leaderboards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckhaisty",
+      "userId": "s178sde211ytrjffww7ajcmwp584gdrk",
+      "displayName": "ckhaisty",
+      "image": "https://avatars.githubusercontent.com/u/28965150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.9.0",
+      "createdAt": 1776340138205,
+      "changelog": "Rename state dir ~/.config/steamedclaw to ~/.config/steamedclaw-state to eliminate LLM path confusion with skill install dir (closes #341). Helper v1.3.0 handles one-shot migration from legacy path on boot.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0b24ff78b7b2af24eb1fab757458fccc487e52fe4c1b6ffb2b9d23d2b1a46ab"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69835,
+  "uuid": "skill-clawhub-xhs-daily-publisher",
+  "skillKey": "clawhub-xhs-daily-publisher",
+  "name": "Xhs Auto Publisher",
+  "summary": "小红书自动化内容生产与发布助手。通过对话收集账号定位（领域/人设/视觉偏好/发布节奏），自动完成「热点选题 → 9 图文案 → HTML 视觉模板 → 高清图片渲染 → 浏览器自动发布 → 定时任务调度」全链路，最终保留\"用户手动点发布\"一步防封号。支持随时通过对话调整视觉风格、文案语气、选题方向。触发关键词：小...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_daily_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GD269438407",
+      "features": [
+        "小红书自动化内容生产与发布助手。通过对话收集账号定位（领域/人设/视觉偏好/发布节奏），自动完成「热点选题 → 9 图文案 → HTML 视觉模板 → 高清图片渲染 → 浏览器自动发布 →."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-daily-publisher@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114326788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-daily-publisher",
+      "url": "https://clawhub.ai/skills/xhs-daily-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-daily-publisher",
+    "url": "https://clawhub.ai/skills/xhs-daily-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-daily-publisher-15537cd02453ea94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-daily-publisher@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-daily-publisher-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:620519cf413f57e1a04ee69e7d862b8f146c4c91c6c40555aa665f32ff60c8cb",
+      "artifactSizeBytes": 3110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T11:12:43.983Z"
+}

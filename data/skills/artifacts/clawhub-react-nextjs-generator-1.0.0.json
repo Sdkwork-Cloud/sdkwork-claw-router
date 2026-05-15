@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-nextjs-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_nextjs_generator",
+  "skill": {
+    "id": 20278,
+    "skillKey": "clawhub-react-nextjs-generator",
+    "name": "React Nextjs Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-nextjs-generator",
+    "url": "https://clawhub.ai/skills/react-nextjs-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-nextjs-generator-36c15bcef28ebeaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates complete React Next.js projects from requirements and UI designs using Ant Design, Tailwind CSS, and Zustand for state management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "batype",
+      "userId": "s17d1mkm8n8dsvztbqhx18zb5n83hpfg",
+      "displayName": "batype",
+      "image": "https://avatars.githubusercontent.com/u/37270997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772207225874,
+      "changelog": "Initial release of the React Next.js 项目生成器技能.\n\n- Generates full React + Next.js projects from requirement documents and UI design files\n- Integrates Ant Design, Tailwind CSS, and Zustand for UI and state management\n- Automatically analyzes uploaded documents and designs to create page components, project structure, and configuration\n- Streamlines workflow from input analysis to generating code and applying styles",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cae7d1917c27923dd6d71e63c40512f02ecfee67fc935557bcc34713b954c93e"
+}

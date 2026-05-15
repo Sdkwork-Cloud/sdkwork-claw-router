@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daming-core@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daming_core",
+  "skill": {
+    "id": 73591,
+    "skillKey": "clawhub-daming-core",
+    "name": "我的大明朝廷"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daming-core",
+    "url": "https://clawhub.ai/skills/daming-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daming-core-044cde0a6b1046ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动接收微信指令，校验意图并审核政令，调度执行文生图视频任务，管理预算和链路，保障流程安全稳定运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fenzyh",
+      "userId": "s1721syj3dbvtrrj8mc163cv7s83gwep",
+      "displayName": "fenzyh",
+      "image": "https://avatars.githubusercontent.com/u/50050112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774458741865,
+      "changelog": "daming-core 1.0.2\n\n- Added documentation: HYBRID_ARCHITECTURE.md, JINYIWEI_GUIDE.md, and various workflow/configuration guides.\n- Introduced extensive config and backup files for external agents and workflows.\n- Added new scheduler and image generation workflow files to support advanced features.\n- Introduced scheduler service with logging support (logs/scheduler_service.log).\n- Removed validate_architecture.py (no longer needed).\n- No breaking changes to user-facing APIs or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d43b56d461d4a4a8e5ebf16eda50e8110bc2a0653a7b880794d937284ebea1ec"
+}

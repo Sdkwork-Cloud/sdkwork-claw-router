@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38603,
+  "uuid": "skill-clawhub-adhder-assistant",
+  "skillKey": "clawhub-adhder-assistant",
+  "name": "adhd-assistant",
+  "summary": "ADHD-friendly life management assistant for SkillBoss API Hub. Helps with daily planning, task breakdown, time management, prioritization, body doubling, dop...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adhder_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "ADHD-friendly life management assistant for SkillBoss API Hub",
+        "Helps with daily planning, task breakdown, time management, prioritization, body doubling, dop.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adhder-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adhder-assistant",
+      "url": "https://clawhub.ai/skills/adhder-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adhder-assistant",
+    "url": "https://clawhub.ai/skills/adhder-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adhder-assistant-dd4683c6e29acde7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adhder-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adhder-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4637b13333a5e9c2fe3d2417de3ca982db5f5715b90ab002e07f065385328826",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T15:38:30.572Z"
+}

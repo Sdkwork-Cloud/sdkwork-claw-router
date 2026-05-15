@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20335,
+  "uuid": "skill-clawhub-star-hotel",
+  "skillKey": "clawhub-star-hotel",
+  "name": "Star Hotel Search",
+  "summary": "Smart hotel search, supporting filtering by location, date, star rating, and budget",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.star_hotel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxc-Aqr",
+      "features": [
+        "Smart hotel search, supporting filtering by location, date, star rating, and budget"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/star-hotel@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94050861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "star-hotel",
+      "url": "https://clawhub.ai/skills/star-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "star-hotel",
+    "url": "https://clawhub.ai/skills/star-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/star-hotel-04d85bffe80f5f1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/star-hotel@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-star-hotel-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04c80aaa2437ea70546c8a14ba50a8354e0e47417a2cb976ea1dc32ecb6999b2",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:38:27.185Z"
+}

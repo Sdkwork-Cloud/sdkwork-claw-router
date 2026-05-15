@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36101,
+  "uuid": "skill-clawhub-ashby",
+  "skillKey": "clawhub-ashby",
+  "name": "Ashby",
+  "summary": "Ashby integration. Manage Persons, Users, Roles. Use when the user wants to interact with Ashby data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ashby",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ashby integration",
+        "Manage Persons, Users, Roles",
+        "Use when the user wants to interact with Ashby data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ashby@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ashby",
+      "url": "https://clawhub.ai/skills/ashby"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ashby",
+    "url": "https://clawhub.ai/skills/ashby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ashby-3b3516aad1d9e72e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ashby@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ashby-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b1d88b2a64c55d465855f436404db82b7f0bae7c14f6f37939d5e8baa2a4b90",
+      "artifactSizeBytes": 1769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:41:40.135Z"
+}

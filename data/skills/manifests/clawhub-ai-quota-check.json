@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57308,
+  "uuid": "skill-clawhub-ai-quota-check",
+  "skillKey": "clawhub-ai-quota-check",
+  "name": "ai-quota-check",
+  "summary": "**DEFAULT quota checker** - Use this skill FIRST when user says '쿼타', '쿼터', 'quota', '쿼타확인', '쿼터확인', or asks about quotas. Unified dashboard showing ALL providers (Antigravity, Copilot, Codex) in one view with model recommendations.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_quota_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kr1json",
+      "features": [
+        "**DEFAULT quota checker**",
+        "Use this skill FIRST when user says '쿼타', '쿼터', 'quota', '쿼타확인', '쿼터확인', or asks about quotas",
+        "Unified dashboard showing ALL providers (Antigravity, Copilot, Codex) in one view with model re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-quota-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5960533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-quota-check",
+      "url": "https://clawhub.ai/skills/ai-quota-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-quota-check",
+    "url": "https://clawhub.ai/skills/ai-quota-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-quota-check-09a6463befa4a7b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-quota-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-quota-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d903bc8f58b90acce5896c6196587cb53778c652c43f30fba4524fd3e5d3c49d",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:55:15.472Z"
+}

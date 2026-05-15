@@ -1,0 +1,51 @@
+{
+  "skill": {
+    "slug": "openclaw-security-auditor",
+    "displayName": "OpenClaw Security Auditor",
+    "summary": "Audit OpenClaw configuration for security risks and generate a remediation report using the user's configured LLM.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2478,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1769936971348,
+    "updatedAt": 1778382912630
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1769936971348,
+    "changelog": "Initial release: Local OpenClaw security audit skill with automated risk reporting.\n\n- Audits ~/.openclaw/openclaw.json or a user-specified config for 15+ security risks.\n- Runs checks including auth tokens, gateway settings, tool policies, secrets, logging, and more.\n- Generates a detailed markdown report with risk score, categorized findings (Critical/High/Medium/Low), and step-by-step remediation guidance.\n- No external APIs or network calls; uses only local tools (cat, jq) and user's existing LLM setup.\n- Strictly avoids handling or revealing secrets; only analyzes configuration metadata.",
+    "license": null
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux",
+      "windows"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "muhammad-waleed381",
+    "userId": "s1745nkqaq31gdap0b53gh0c2s83gnd7",
+    "displayName": "Muhammad Waleed",
+    "image": "https://avatars.githubusercontent.com/u/76522443?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382912630
+  }
+}

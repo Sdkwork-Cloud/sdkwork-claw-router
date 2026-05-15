@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18227,
+  "uuid": "skill-clawhub-html-to-pdf",
+  "skillKey": "clawhub-html-to-pdf",
+  "name": "HTML to PDF",
+  "summary": "Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_to_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HankAgent",
+      "features": [
+        "Convert HTML files and URLs to PDF using Puppeteer",
+        "Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-to-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265473118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-to-pdf",
+      "url": "https://clawhub.ai/skills/html-to-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-to-pdf",
+    "url": "https://clawhub.ai/skills/html-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-to-pdf-ce20a163b987b777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-to-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-to-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd86caeabf8a4ff7d314eb1d15fe26d3ac532890a75e3bcddd8d5ae769c90e49",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:19:40.484Z"
+}

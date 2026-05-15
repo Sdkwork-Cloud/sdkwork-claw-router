@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11213,
+  "uuid": "skill-clawhub-okx-dex",
+  "skillKey": "clawhub-okx-dex",
+  "name": "okx-dex",
+  "summary": "OKX DEX aggregator (v6). Get swap quotes, swap/approve tx data, tokens, and chains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_dex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ricky321u",
+      "features": [
+        "OKX DEX aggregator (v6)",
+        "Get swap quotes, swap/approve tx data, tokens, and chains."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-dex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17769771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-dex",
+      "url": "https://clawhub.ai/skills/okx-dex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-dex",
+    "url": "https://clawhub.ai/skills/okx-dex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-dex-4e6a8a7313820536.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-dex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-dex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbb545be662242fb97ca0a771637184a7221e78a4a33bd09f3ee6134c90e8f6d",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T09:24:39.760Z"
+}

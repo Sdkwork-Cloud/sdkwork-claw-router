@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58981,
+  "uuid": "skill-clawhub-neural-memory-cn",
+  "skillKey": "clawhub-neural-memory-cn",
+  "name": "Neural Memory CN",
+  "summary": "神经网络启发的记忆系统，支持激活扩散和联想检索。安装后即可使用本地模式，配置 LLM 后可启用智能意图分析。/ Neural network-inspired memory with activation spreading. Works out-of-box in local mode; configure L...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neural_memory_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunlight-Bulling",
+      "features": [
+        "神经网络启发的记忆系统，支持激活扩散和联想检索。安装后即可使用本地模式，配置 LLM 后可启用智能意图分析。/ Neural network-inspired memory with act.",
+        "Works out-of-box in local mode",
+        "configure L..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neural-memory-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114903810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neural-memory-cn",
+      "url": "https://clawhub.ai/skills/neural-memory-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neural-memory-cn",
+    "url": "https://clawhub.ai/skills/neural-memory-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neural-memory-cn-9ce6045597ca812c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neural-memory-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-neural-memory-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c341a08bb47e8ce37a5e06219e35e58de69901983bf143922832ce85bb453ad",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:07:25.420Z"
+}

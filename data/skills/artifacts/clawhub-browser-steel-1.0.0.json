@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-steel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_steel",
+  "skill": {
+    "id": 41426,
+    "skillKey": "clawhub-browser-steel",
+    "name": "Browser Steel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-steel",
+    "url": "https://clawhub.ai/skills/browser-steel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-steel-0969c31b2c63c160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation with Steel CLI as the default runtime, plus a Python Playwright fallback for custom flows. Use when the user asks to open a JS-heavy site,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyanmi",
+      "userId": "s1758b553y9sfvwj0ny4twmd1183ms1y",
+      "displayName": "xyanmi",
+      "image": "https://avatars.githubusercontent.com/u/64118037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774543674689,
+      "changelog": "Initial release of browser-steel skill for browser automation via Steel CLI and Python Playwright fallback.\n\n- Enables JS-heavy site automation, live page capture, screenshots, PDFs, form filling, and session workflows.\n- Steel CLI is used by default for most tasks; Python Playwright serves as fallback for advanced flows.\n- Supports stateless commands and multi-step session management.\n- Allows runtime selection between auto, cli, node, or python modes.\n- Includes guardrails for session, secret, and environment management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f9b31827da2aebc95892474e823e323e94d283866d3845f2b4027473e21ce40"
+}

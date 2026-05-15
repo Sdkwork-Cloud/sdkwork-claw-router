@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-music-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_music_generate",
+  "skill": {
+    "id": 59418,
+    "skillKey": "clawhub-minimax-music-generate",
+    "name": "minimax-music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-music-generate",
+    "url": "https://clawhub.ai/skills/minimax-music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-music-generate-848d8a92ca617869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 音乐生成技能 - 支持歌词生成(Lyrics Generation)、音乐生成(Music Generation)。支持自定义歌词段落结构(verse/chorus/bridge/intro/outro)，异步生成 MP3 格式音乐，自动下载保存到本地。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silingyuan0",
+      "userId": "s177t4ntzk8g80ej8ja2gyfesd83hff2",
+      "displayName": "silingyuan0",
+      "image": "https://avatars.githubusercontent.com/u/26161065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774450781660,
+      "changelog": "- Initial release of minimax-music skill for music and lyrics generation.\n- Supports custom verse/chorus/bridge/intro/outro lyric structures.\n- Asynchronous MP3 music generation with automatic local download.\n- Provides functions for generating music, generating lyrics, querying task status, waiting for completion, and downloading music.\n- Includes usage examples and lyrics formatting guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d28abc72e372703964ba15201281d3fccc2482642e4063bee4440dbbc99a4ebc"
+}

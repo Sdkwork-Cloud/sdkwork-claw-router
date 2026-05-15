@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20058,
+  "uuid": "skill-clawhub-markdown-browser-skills-openclaw",
+  "skillKey": "clawhub-markdown-browser-skills-openclaw",
+  "name": "Markdown Browser",
+  "summary": "Wrapper skill for OpenClaw web_fetch results. Use when you need MECE post-processing on fetched pages: policy decision from Content-Signal, privacy redaction...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_browser_skills_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnortegahyc",
+      "features": [
+        "Wrapper skill for OpenClaw web_fetch results",
+        "Use when you need MECE post-processing on fetched pages: policy decision from Content-Signal, p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-browser-skills-openclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149606716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-browser-skills-openclaw",
+      "url": "https://clawhub.ai/skills/markdown-browser-skills-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-browser-skills-openclaw",
+    "url": "https://clawhub.ai/skills/markdown-browser-skills-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-browser-skills-openclaw-e72539d3110f1777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-browser-skills-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-browser-skills-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:700c4e1e1215ccfedd70e5c4c373595d341ba2b5aff7d6dd761c7a6367db4935",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:37:14.161Z"
+}

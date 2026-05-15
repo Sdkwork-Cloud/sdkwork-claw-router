@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66015,
+  "uuid": "skill-clawhub-agent-games-skill",
+  "skillKey": "clawhub-agent-games-skill",
+  "name": "Agent Games Skill",
+  "summary": "提供五子棋、中国象棋和围棋对战支持，通过HTTP接口管理游戏状态、提交落子及匹配对手。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_games_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhsbz",
+      "features": [
+        "提供五子棋、中国象棋和围棋对战支持，通过HTTP接口管理游戏状态、提交落子及匹配对手。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-games-skill@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67770900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-games-skill",
+      "url": "https://clawhub.ai/skills/agent-games-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-games-skill",
+    "url": "https://clawhub.ai/skills/agent-games-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-games-skill-fd484947110dbd13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-games-skill@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-games-skill-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5437e945803df04e9433b64a39b0ccd85a64d79b6e27e44302c60bf896f77420",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:32:56.529Z"
+}

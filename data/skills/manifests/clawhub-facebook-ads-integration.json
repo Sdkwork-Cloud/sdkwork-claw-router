@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49368,
+  "uuid": "skill-clawhub-facebook-ads-integration",
+  "skillKey": "clawhub-facebook-ads-integration",
+  "name": "Facebook Ads",
+  "summary": "Meta (Facebook) Ads integration. Manage Campaigns, Audiences, Pixels. Use when the user wants to interact with Meta (Facebook) Ads data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_ads_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Meta (Facebook) Ads integration",
+        "Manage Campaigns, Audiences, Pixels",
+        "Use when the user wants to interact with Meta (Facebook) Ads data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-ads-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-ads-integration",
+      "url": "https://clawhub.ai/skills/facebook-ads-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-ads-integration",
+    "url": "https://clawhub.ai/skills/facebook-ads-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-ads-integration-80160b1d98864030.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-ads-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-ads-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caeb26643f0c4bdf870cbd6cc9799b28a029393497d7aa567b51c37a3f7f89f2",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:58:48.567Z"
+}

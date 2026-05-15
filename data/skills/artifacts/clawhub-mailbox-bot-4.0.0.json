@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailbox-bot@4.0.0",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbox_bot",
+  "skill": {
+    "id": 14330,
+    "skillKey": "clawhub-mailbox-bot",
+    "name": "mailbox.bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbox-bot",
+    "url": "https://clawhub.ai/skills/mailbox-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbox-bot-b5922035396a2bb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real mailing address for your AI agent. Receive, scan, and forward postal mail — or send letters and documents. CMRA postal mail infrastructure your agent ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arbengine",
+      "userId": "s17ea2qp20pe27fwxfpcb4zg6n83j3n2",
+      "displayName": "arbengine",
+      "image": "https://avatars.githubusercontent.com/u/117533990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1593,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "4.0.0",
+      "createdAt": 1774461162029,
+      "changelog": "v4.0 — Postal mail infrastructure for AI agents. CMRA mailing address ($2/mo), outbound print-and-mail ($0/mo base), MAILBOX.md standing instructions with HITL approval gates, 22 MCP tools, 9 A2A skills, OpenClaw native.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c927786c555ababa6796010c762cc7a32ca4891237fcfe1c1cbf03cbefeac062"
+}

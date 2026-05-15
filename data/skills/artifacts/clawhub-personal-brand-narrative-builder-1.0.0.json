@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-brand-narrative-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_brand_narrative_builder",
+  "skill": {
+    "id": 49339,
+    "skillKey": "clawhub-personal-brand-narrative-builder",
+    "name": "Personal Brand Narrative Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-brand-narrative-builder",
+    "url": "https://clawhub.ai/skills/personal-brand-narrative-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-brand-narrative-builder-cdb56c4473cdc678.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates an authentic, consistent professional narrative for resumes, LinkedIn, and conversations without fabricating credentials or outcomes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778040941045,
+      "changelog": "- Initial release of Personal Brand Narrative Builder.\n- Helps craft authentic professional narratives for resumes, LinkedIn, and career conversations.\n- Ensures ethical boundaries: no fabricated achievements or manipulative tactics.\n- Requires specific inputs (audience, career history, strengths, proof, opportunities).\n- Outputs structured positioning statements, narrative pillars, proof examples, channel customizations, and guardrails.\n- Includes clear limits: no outcome guarantees or false representations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2ec9d333644d73848da602f9160597579bc06e330cfa1b614d117f40e2096d7"
+}

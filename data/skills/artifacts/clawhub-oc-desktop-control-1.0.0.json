@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-desktop-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_desktop_control",
+  "skill": {
+    "id": 19102,
+    "skillKey": "clawhub-oc-desktop-control",
+    "name": "OpenClaw Desktop Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-desktop-control",
+    "url": "https://clawhub.ai/skills/oc-desktop-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-desktop-control-106e0d51b40371f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote desktop control and automation. Capture screenshots, control mouse and keyboard, automate UI interactions. Supports VNC, RDP, and local desktop enviro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775126429290,
+      "changelog": "Remote desktop automation: screenshot, mouse/keyboard control, application management, automation scripts. Based on Bytebot Computer Use pattern.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3b5c9990bf13483dc1ca623757d3d1b5e65e96d4b18d2e127ee9a90c579872e"
+}

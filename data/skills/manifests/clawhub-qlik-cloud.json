@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10838,
+  "uuid": "skill-clawhub-qlik-cloud",
+  "skillKey": "clawhub-qlik-cloud",
+  "name": "Qlik Cloud",
+  "summary": "Complete Qlik Cloud analytics platform integration with 37 tools. Health checks, search, app management, reloads, natural language queries (Insight Advisor), automations, AutoML, Qlik Answers AI, data alerts, spaces, users, licenses, data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qlik_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "undsoul",
+      "features": [
+        "Complete Qlik Cloud analytics platform integration with 37 tools",
+        "Health checks, search, app management, reloads, natural language queries (Insight Advisor), aut.",
+        "Use when user asks about Qlik, Qlik Cloud, Qlik Sense apps, analytics dashboards, data reloads,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qlik-cloud@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9967744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qlik-cloud",
+      "url": "https://clawhub.ai/skills/qlik-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qlik-cloud",
+    "url": "https://clawhub.ai/skills/qlik-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qlik-cloud-263107be5dbdd275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qlik-cloud@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-qlik-cloud-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b3fd49692704bc7a299cf820a41de933831a1e40c4ebf1ee4b46039ca96c1aa",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T22:39:20.744Z"
+}

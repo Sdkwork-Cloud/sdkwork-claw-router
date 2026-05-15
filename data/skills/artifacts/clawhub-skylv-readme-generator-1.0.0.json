@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-readme-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_readme_generator",
+  "skill": {
+    "id": 37118,
+    "skillKey": "clawhub-skylv-readme-generator",
+    "name": "Skylv Readme Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-readme-generator",
+    "url": "https://clawhub.ai/skills/skylv-readme-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-readme-generator-717551174029e0bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generates professional README.md from code structure, package.json, and directory analysis. Triggers: generate readme, create readme, readme from code,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776737051204,
+      "changelog": "Initial release of skylv-readme-generator.\n\n- Automatically analyzes project structure and code to generate a professional README.md.\n- Detects project type (JavaScript, Python, Rust, Go, Java) based on config files.\n- Builds README sections including title, badges, description, features, installation, usage, API, contributing, and license.\n- Supports triggers like \"generate readme\" or \"create documentation\".\n- Outputs a ready-to-use, comprehensive README.md in markdown format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:062f034b80e5ae30e83f05062e1b00dcea0145d2499ef4bdae6c076858c2c2d6"
+}

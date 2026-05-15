@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60087,
+  "uuid": "skill-clawhub-minimax-web-search",
+  "skillKey": "clawhub-minimax-web-search",
+  "name": "minimax-web-search",
+  "summary": "使用 MiniMax MCP 进行网络搜索。触发条件：(1) 用户要求进行网络搜索、在线搜索、查找信息 (2) 需要查询最新资讯、新闻、资料 (3) 使用 MiniMax 的 web_search 功能",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "要啥自行车",
+      "features": [
+        "使用 MiniMax MCP 进行网络搜索。触发条件：(1) 用户要求进行网络搜索、在线搜索、查找信息 (2) 需要查询最新资讯、新闻、资料 (3) 使用 MiniMax 的 web_sea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-web-search@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54308220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-web-search",
+      "url": "https://clawhub.ai/skills/minimax-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-web-search",
+    "url": "https://clawhub.ai/skills/minimax-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-web-search-324ad7d77631a194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-web-search@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-web-search-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c4c18ea5a3b51175e3b71b956e660d926e11a82203a9ba173a4de42e83ed65",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:27:15.593Z"
+}

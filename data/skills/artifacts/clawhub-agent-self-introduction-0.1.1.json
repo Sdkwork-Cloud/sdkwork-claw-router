@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-self-introduction@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_introduction",
+  "skill": {
+    "id": 11664,
+    "skillKey": "clawhub-agent-self-introduction",
+    "name": "Agent Self-Introduction Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-introduction",
+    "url": "https://clawhub.ai/skills/agent-self-introduction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-introduction-a45842f41996be54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to introduce themselves clearly and consistently by expressing their identity, temperament, boundaries, and preferred relationship style."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ronwithlove",
+      "userId": "publishers:ronwithlove",
+      "displayName": "ronwithlove",
+      "image": "https://avatars.githubusercontent.com/u/15605063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1756,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770339617321,
+      "changelog": "v0.1.1\n\n* Added explicit summary for improved discovery and clarity.\n* Added an example self-introduction for agent-to-agent interaction.\n* No changes to core behavior or input schema.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc609264e0382785a118b01b72bbc3a3199d930c5f3833eaf419040f8737caa9"
+}

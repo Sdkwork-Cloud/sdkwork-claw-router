@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-lead-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_lead_generation",
+  "skill": {
+    "id": 52471,
+    "skillKey": "clawhub-jx-lead-generation",
+    "name": "lead-generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-lead-generation",
+    "url": "https://clawhub.ai/skills/jx-lead-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-lead-generation-e5b99756c6589abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lead Generation — Find high-intent buyers in live Twitter, Instagram, and Reddit conversations. Auto-researches your product, generates targeted search queri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776663949003,
+      "changelog": "Initial release — lead generation for social platforms via SkillBoss API Hub.\n\n- Finds high-intent buyers in real-time Twitter, Instagram, and Reddit conversations.\n- Auto-researches your product, generates targeted search queries, and identifies people seeking solutions.\n- Provides a 3-phase workflow: product research, prospect discovery via social search, and lead scoring/output.\n- Outputs include lead details, fit explanation, suggested outreach messages, and engagement stats.\n- Requires SKILLBOSS_API_KEY for API searches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c77af63e3488bc56f785d982198a17831d277750bd888d40a7369e732ec68b31"
+}

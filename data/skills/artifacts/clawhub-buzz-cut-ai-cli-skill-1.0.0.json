@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buzz-cut-ai-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buzz_cut_ai_cli_skill",
+  "skill": {
+    "id": 56441,
+    "skillKey": "clawhub-buzz-cut-ai-cli-skill",
+    "name": "AI Buzz Cut Filter Online – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buzz-cut-ai-cli-skill",
+    "url": "https://clawhub.ai/skills/buzz-cut-ai-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buzz-cut-ai-cli-skill-7fac83080bcc6ba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI buzz cut filter — change a person's hairstyle to a buzz cut"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776601275970,
+      "changelog": "- Initial release of buzz-cut-ai-cli-skill.\n- Adds a CLI command to turn a person's hairstyle into a buzz cut using AI.\n- Requires weshop-cli and WESHOP_API_KEY environment variable for authentication.\n- Supports image input, custom prompts, and batch processing.\n- Output includes processed images with status and download URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2728307f4ecc37e875090c628a8ca12fdedb951e7ed3eae9a4654febed1bf12f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19693,
+  "uuid": "skill-clawhub-criticaster",
+  "skillKey": "clawhub-criticaster",
+  "name": "Criticaster",
+  "summary": "Search Criticaster's aggregated product reviews to quickly find the best products. Use when the user needs trustworthy product recommendations, reviews, comp...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.criticaster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gglucass",
+      "features": [
+        "Search Criticaster's aggregated product reviews to quickly find the best products",
+        "Use when the user needs trustworthy product recommendations, reviews, comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/criticaster@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1226415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "criticaster",
+      "url": "https://clawhub.ai/skills/criticaster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "criticaster",
+    "url": "https://clawhub.ai/skills/criticaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/criticaster-70b313b24c5ef04d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/criticaster@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-criticaster-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:812941f4ebcd8f38524eed327bc2d66ec6085f0d56148049e0613719b21d52df",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T17:10:04.605Z"
+}

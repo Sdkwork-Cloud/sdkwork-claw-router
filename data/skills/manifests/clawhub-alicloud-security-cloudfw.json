@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13930,
+  "uuid": "skill-clawhub-alicloud-security-cloudfw",
+  "skillKey": "clawhub-alicloud-security-cloudfw",
+  "name": "Alicloud Security Cloudfw",
+  "summary": "Manage Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK. Use whenever the user requests firewall policy/resource operations, change management, status...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_security_cloudfw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud Cloud Firewall (Cloudfw) via OpenAPI/SDK",
+        "Use whenever the user requests firewall policy/resource operations, change management, status..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-security-cloudfw@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-security-cloudfw",
+      "url": "https://clawhub.ai/skills/alicloud-security-cloudfw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-security-cloudfw",
+    "url": "https://clawhub.ai/skills/alicloud-security-cloudfw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-security-cloudfw-c5ac55aef7b90646.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-security-cloudfw@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-security-cloudfw-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c53d24a0584f9f448d397f843b1a9f344544b1e61e0e74c96cd51e60abfc6697",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:43.159Z"
+}

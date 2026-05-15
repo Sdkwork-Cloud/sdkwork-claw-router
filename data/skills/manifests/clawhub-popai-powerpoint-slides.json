@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25518,
+  "uuid": "skill-clawhub-popai-powerpoint-slides",
+  "skillKey": "clawhub-popai-powerpoint-slides",
+  "name": "PopAI Powerpoint Slides",
+  "summary": "Create presentations (PPT) using PopAI API. Use when asked to create slides, presentations, decks, or PPT content via PopAI. Supports uploading reference fil...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popai_powerpoint_slides",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zdawang000",
+      "features": [
+        "Create presentations (PPT) using PopAI API",
+        "Use when asked to create slides, presentations, decks, or PPT content via PopAI",
+        "Supports uploading reference fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popai-powerpoint-slides@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168274732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popai-powerpoint-slides",
+      "url": "https://clawhub.ai/skills/popai-powerpoint-slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popai-powerpoint-slides",
+    "url": "https://clawhub.ai/skills/popai-powerpoint-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popai-powerpoint-slides-9466ba7646a91ede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popai-powerpoint-slides@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popai-powerpoint-slides-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d40e4e2c442140fa287c0cc3932e998fbecbe0ae3f35479ab99f8d9ec30893",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:01:09.020Z"
+}

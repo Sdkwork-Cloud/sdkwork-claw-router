@@ -25,7 +25,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/router/model-vendors",
+            "/backend/v3/api/ai/model_vendors",
             r#"{"name":"Acme AI","status":"active","color":"bg-cyan-700","description":"Acme hosted models"}"#,
         ),
     )
@@ -40,7 +40,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/model",
+            "/backend/v3/api/ai/models",
             r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
@@ -64,7 +64,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/model",
+            "/backend/v3/api/ai/models",
             r#"{"vendorId":"1","name":"acme-sfx-pro","type":"sfx","priceIn":"0.010000","priceOut":"0.080000","contextTokens":"8"}"#,
         ),
     )
@@ -77,7 +77,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         router.clone(),
         signed_request(
             "PATCH",
-            "/backend/v3/api/model/1",
+            "/backend/v3/api/ai/models/1",
             r#"{"name":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
@@ -90,7 +90,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
 
     let vendors = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/router/model-vendors", ""),
+        signed_request("GET", "/backend/v3/api/ai/model_vendors", ""),
     )
     .await;
     assert_eq!(1, vendors["data"]["items"].as_array().unwrap().len());
@@ -100,7 +100,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         router.clone(),
         signed_request(
             "POST",
-            "/backend/v3/api/router/models/sync",
+            "/backend/v3/api/ai/models/refresh",
             r#"{"source":"sdkwork_models","mode":"catalog_version_refresh","vendorCodes":["openai","google","openai"],"force":true,"catalogRoot":"D:/catalogs/sdkwork-models","catalogVersion":"2026.05.08.1"}"#,
         ),
     )
@@ -132,7 +132,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
 
     let models = request_json(
         router.clone(),
-        signed_request("POST", "/backend/v3/api/model/list", "{}"),
+        signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
     assert_eq!(2, models["data"]["items"].as_array().unwrap().len());
@@ -142,14 +142,14 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
 
     let delete_model = request_json(
         router.clone(),
-        signed_request("DELETE", "/backend/v3/api/model/1", ""),
+        signed_request("DELETE", "/backend/v3/api/ai/models/1", ""),
     )
     .await;
     assert_eq!(true, delete_model["data"]["deleted"]);
 
     let models = request_json(
         router,
-        signed_request("POST", "/backend/v3/api/model/list", "{}"),
+        signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
     assert_eq!(1, models["data"]["items"].as_array().unwrap().len());
@@ -179,7 +179,7 @@ async fn admin_model_command_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/model-vendors")
+                .uri("/backend/v3/api/ai/model_vendors")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -202,7 +202,7 @@ async fn admin_model_command_route_rejects_invalid_price_without_calling_store()
     let response = router
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/model",
+            "/backend/v3/api/ai/models",
             r#"{"vendorId":"1","name":"acme-chat-large","type":"Chat","priceIn":"-1","priceOut":"0.450000","contextTokens":"128000"}"#,
         ))
         .await
@@ -232,7 +232,7 @@ async fn admin_model_command_route_rejects_integration_provider_as_model_vendor(
             .clone()
             .oneshot(signed_request(
                 "POST",
-                "/backend/v3/api/router/model-vendors",
+                "/backend/v3/api/ai/model_vendors",
                 body,
             ))
             .await

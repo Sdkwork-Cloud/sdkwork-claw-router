@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-onboarding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_onboarding",
+  "skill": {
+    "id": 64254,
+    "skillKey": "clawhub-agent-onboarding",
+    "name": "Agent Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-onboarding",
+    "url": "https://clawhub.ai/skills/agent-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-onboarding-e2791637f0819617.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新成员加入群聊后的快速上手指南。当新 agent 加入 Meeting 群或任何项目群时，使用此 skill 指导其：更新自己的 AGENTS.md、建立群组笔记、掌握发言规范、搭建设记忆体系。触发场景：被要求\"教新成员\"、\"更新 AGENTS.md\"、\"建立项目文档\"、\"快速上手群聊\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biociao",
+      "userId": "s17dtx203kvnxrae9yp2v5epcn83kj3f",
+      "displayName": "Fang, Chao",
+      "image": "https://avatars.githubusercontent.com/u/9637282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777083920399,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:497b18ded77d5f0c1f4fd2ecbafffe99cb3a061d5500a5cddcf83b71aaa7e6de"
+}

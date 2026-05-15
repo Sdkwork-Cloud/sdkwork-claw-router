@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "trigger-evaluator",
+    "displayName": "Trigger Evaluator",
+    "summary": "Evaluate real OpenClaw trigger rules against the current database state. Use for heartbeat-style trigger checks, especially stale mission detection backed by...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773305413688,
+    "updatedAt": 1778307385093
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773305413688,
+    "changelog": "Initial release of the trigger-evaluator skill:\n\n- Evaluates real OpenClaw trigger rules using the current database state.\n- Supports \"stale_missions_alert\" trigger detection based on public.openclaw_* tables.\n- Wraps the production script stale_missions_engine.sh for reliability.\n- Includes commands to run evaluations and inspect current trigger rows.\n- Does not introduce or invent new trigger logic; strictly follows implemented workspace logic.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ecosincronia",
+    "userId": "publishers:ecosincronia",
+    "displayName": "EcosincronIA",
+    "image": "https://avatars.githubusercontent.com/u/242621438?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307385093
+  }
+}

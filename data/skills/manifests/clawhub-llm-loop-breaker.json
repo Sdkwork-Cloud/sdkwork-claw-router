@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45873,
+  "uuid": "skill-clawhub-llm-loop-breaker",
+  "skillKey": "clawhub-llm-loop-breaker",
+  "name": "LLM Loop Breaker",
+  "summary": "Two-layer defense for Openclaw gateway: kills hallucinating LLM streams via entropy analysis, and watchdogs host CPU/RAM/Disk to prevent resource exhaustion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_loop_breaker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hehkcaspar",
+      "features": [
+        "Two-layer defense for Openclaw gateway: kills hallucinating LLM streams via entropy analysis, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-loop-breaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36178242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-loop-breaker",
+      "url": "https://clawhub.ai/skills/llm-loop-breaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-loop-breaker",
+    "url": "https://clawhub.ai/skills/llm-loop-breaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-loop-breaker-91773af94a55ff5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-loop-breaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-loop-breaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50a991e4ed4c663dfbd19e7993ade10b1dad1b9eadabb790598b1851882c6b4b",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:19:31.371Z"
+}

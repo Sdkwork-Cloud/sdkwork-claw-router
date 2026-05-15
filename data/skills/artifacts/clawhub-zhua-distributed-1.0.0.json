@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhua-distributed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhua_distributed",
+  "skill": {
+    "id": 66506,
+    "skillKey": "clawhub-zhua-distributed",
+    "name": "Zhua Distributed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhua-distributed",
+    "url": "https://clawhub.ai/skills/zhua-distributed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhua-distributed-27bdbd02ba2ed68a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爪爪分布式部署系统 —— 实现多实例协同、负载均衡、故障转移。Use when 爪爪需要分布式部署、多设备协同、或构建爪爪网络。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beipian261",
+      "userId": "publishers:beipian261",
+      "displayName": "beipian261",
+      "image": "https://avatars.githubusercontent.com/u/210724771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773768887394,
+      "changelog": "Initial release of zhua-distributed: \n\n- Enables multi-instance deployment of 爪爪 across multiple devices.\n- Supports state synchronization, memory sharing, load balancing, and automatic failover.\n- Provides a scalable network architecture with master, compute, and storage node types.\n- Includes scripts for initialization, adding nodes, task distribution, and state sync.\n- Integrates with neural-memory (HiveMind) and n8n-workflow-automation for synchronization.\n- Adds documentation for deployment scenarios, workflow, and failure handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c86fa32ad6c3d2d646798d641ff08496f5a553cabf2d92601d06d44aaea56af3"
+}

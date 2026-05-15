@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31669,
+  "uuid": "skill-clawhub-agent-session-state",
+  "skillKey": "clawhub-agent-session-state",
+  "name": "Agent Session State",
+  "summary": "Per-channel session isolation, Write-Ahead Log (WAL) protocol, and working buffer management. Prevents cross-session interference, captures decisions and fac...",
+  "version": "2.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_session_state",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rich",
+      "features": [
+        "Per-channel session isolation, Write-Ahead Log (WAL) protocol, and working buffer management",
+        "Prevents cross-session interference, captures decisions and fac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-session-state@2.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61553221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-session-state",
+      "url": "https://clawhub.ai/skills/agent-session-state"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-session-state",
+    "url": "https://clawhub.ai/skills/agent-session-state",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-session-state-52e46a9a27a0ca9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-session-state@2.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-session-state-2.1.4.json",
+      "version": "2.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92e4f50e8091541df190c3db20afb9ef57c5b809897058d7a796dcd181a7ff01",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T18:20:20.866Z"
+}

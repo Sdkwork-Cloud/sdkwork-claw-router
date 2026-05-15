@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-acedatacloud-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_acedatacloud_api",
+  "skill": {
+    "id": 28697,
+    "skillKey": "clawhub-acedatacloud-acedatacloud-api",
+    "name": "Acedatacloud Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-acedatacloud-api",
+    "url": "https://clawhub.ai/skills/acedatacloud-acedatacloud-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-acedatacloud-api-9e384d3c1ca80e53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for using AceDataCloud APIs. Use when authenticating, making API calls, managing credentials, understanding billing, or integrating AceDataCloud servic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150625655,
+      "changelog": "Initial release of the AceDataCloud API usage guide.\n\n- Provides comprehensive instructions on account setup, API authentication, and credential management.\n- Details request patterns for both synchronous and asynchronous APIs.\n- Explains error handling, billing mechanics, and service category endpoints.\n- Includes OpenAI-compatible SDK integration examples for Python and JavaScript.\n- Highlights common issues and important usage notes for effective integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a27d92f97a68e0342a230a43af754603cc0c7478fafd9af6ca77ba70c7e9554"
+}

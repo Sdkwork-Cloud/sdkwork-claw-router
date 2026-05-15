@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-cognition-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_cognition_coach",
+  "skill": {
+    "id": 20961,
+    "skillKey": "clawhub-meta-cognition-coach",
+    "name": "Meta-Cognition Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-cognition-coach",
+    "url": "https://clawhub.ai/skills/meta-cognition-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-cognition-coach-ce5b4d1223a543b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meta-cognition coaching assistant - help students develop thinking-about-thinking skills, reflection habits, and learning strategy awareness"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775125013109,
+      "changelog": "Repackaged Meta-Cognition Coach from a clean minimal skill directory to remove unrelated workspace files and publish only the intended skill assets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4855dcf10fd485613a5ff1ea02aa77629cfb43f44e49440c6032f8a8f889f1d"
+}

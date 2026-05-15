@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-rerun-effectiveness-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_rerun_effectiveness_audit",
+  "skill": {
+    "id": 27438,
+    "skillKey": "clawhub-github-actions-rerun-effectiveness-audit",
+    "name": "GitHub Actions Rerun Effectiveness Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-rerun-effectiveness-audit",
+    "url": "https://clawhub.ai/skills/github-actions-rerun-effectiveness-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-rerun-effectiveness-audit-5c8f90921cdce414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions rerun dependency and success-after-rerun effectiveness to highlight workflows wasting CI time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772899692125,
+      "changelog": "Initial release of github-actions-rerun-effectiveness-audit.\n\n- Audits GitHub Actions workflows for rerun dependency and effectiveness.\n- Measures rerun frequency, recovery rates, and CI time potentially wasted on ineffective reruns.\n- Provides severity assessment (`ok`, `warn`, `critical`) for policy enforcement.\n- Supports customizable filtering and reporting in text or JSON formats.\n- Allows CI gating based on critical rerun metrics with exit code control.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c5cfeb684bc6c71ae3ce1ba3f0a5a2472437521a3f8201d0c9b01854eeacf81"
+}

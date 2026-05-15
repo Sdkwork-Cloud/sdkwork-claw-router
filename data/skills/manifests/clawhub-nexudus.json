@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30397,
+  "uuid": "skill-clawhub-nexudus",
+  "skillKey": "clawhub-nexudus",
+  "name": "Nexudus",
+  "summary": "Nexudus integration. Manage Spaces, Members, Products. Use when the user wants to interact with Nexudus data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexudus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nexudus integration",
+        "Manage Spaces, Members, Products",
+        "Use when the user wants to interact with Nexudus data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexudus@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexudus",
+      "url": "https://clawhub.ai/skills/nexudus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexudus",
+    "url": "https://clawhub.ai/skills/nexudus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexudus-504b0b1d55f64865.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexudus@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexudus-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a136d1da0c697c1a8f64820af7c61906e71765ccf223ac71ea8c837a1ecacc29",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:44.188Z"
+}

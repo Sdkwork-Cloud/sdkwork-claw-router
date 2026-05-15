@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gettr-transcribe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gettr_transcribe",
+  "skill": {
+    "id": 19358,
+    "skillKey": "clawhub-gettr-transcribe",
+    "name": "Gettr Transcribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gettr-transcribe",
+    "url": "https://clawhub.ai/skills/gettr-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gettr-transcribe-85dfd32f4804a71b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download audio from a GETTR post or streaming page and transcribe it locally with MLX Whisper on Apple Silicon (with timestamps via VTT). Use when given a GE..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin37li",
+      "userId": "publishers:kevin37li",
+      "displayName": "Kevin37Li",
+      "image": "https://avatars.githubusercontent.com/u/44332462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 618,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771795452826,
+      "changelog": "Republish to refresh scan-state sync and metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d34ec804799cd645ea84c6d23ee5677bb7bbea94de1cae1e1dfa6f2695cf781c"
+}

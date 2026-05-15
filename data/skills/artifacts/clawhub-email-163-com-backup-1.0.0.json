@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-163-com-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_163_com_backup",
+  "skill": {
+    "id": 25508,
+    "skillKey": "clawhub-email-163-com-backup",
+    "name": "Email 163 Com Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-163-com-backup",
+    "url": "https://clawhub.ai/skills/email-163-com-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-163-com-backup-eca346efd4d7ee72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage 163.com emails with sending (text/HTML, attachments), reading, searching, folder and attachment management via IMAP ID and encrypted connections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "farmerboybi-bot",
+      "userId": "publishers:farmerboybi-bot",
+      "displayName": "farmerboybi-bot",
+      "image": "https://avatars.githubusercontent.com/u/263736108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773779384445,
+      "changelog": "email-163-com-backup v1.0.0\n\n- Initial release.\n- Full-featured 163.com email management tool in Python.\n- Supports sending emails (text/HTML), attachments, and multi-attachment sending.\n- Email reading with IMAP ID authentication.\n- Folder management: list, create, delete.\n- Email search and mail operations: delete, move, mark read/unread.\n- Attachment management: download and view attachments.\n- Command-line friendly interface with secure configuration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a73822145b9d336201a33afacba25f6313b2edf51f6edfe9349c3e10044f6627"
+}

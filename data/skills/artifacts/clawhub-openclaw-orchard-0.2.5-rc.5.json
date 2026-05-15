@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-orchard@0.2.5-rc.5",
+  "version": "0.2.5-rc.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_orchard",
+  "skill": {
+    "id": 32687,
+    "skillKey": "clawhub-openclaw-orchard",
+    "name": "OrchardOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-orchard",
+    "url": "https://clawhub.ai/skills/openclaw-orchard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-orchard-f8f11bdd72ab5a2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agentic project and task management plugin for OpenClaw. Persistent SQLite-backed task board with a queue runner that auto-dispatches ready tasks as subagent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derp42",
+      "userId": "s1720v54y02h061vbx2qn31eah83tnxd",
+      "displayName": "derp42",
+      "image": "https://avatars.githubusercontent.com/u/66216586?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.2.5-rc.5",
+      "createdAt": 1774850262766,
+      "changelog": "Release 0.2.5-rc.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd742f6ec6bd319d36a4cc3a73b529d3458a28e2a269ab426300278ab389dd3b"
+}

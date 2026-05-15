@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34718,
+  "uuid": "skill-clawhub-automation-suggestion",
+  "skillKey": "clawhub-automation-suggestion",
+  "name": "Automation Suggestion",
+  "summary": "Suggest automations only when they make sense, based on objective triggers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automation_suggestion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Szpili",
+      "features": [
+        "Suggest automations only when they make sense, based on objective triggers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automation-suggestion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87379393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automation-suggestion",
+      "url": "https://clawhub.ai/skills/automation-suggestion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automation-suggestion",
+    "url": "https://clawhub.ai/skills/automation-suggestion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automation-suggestion-40cc0b2e5e1af731.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automation-suggestion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automation-suggestion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf2f592ae5c55a8d98f8e4a541f6dcf840bd0a70c5823c7b09d870a9cd20b345",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:21:00.858Z"
+}

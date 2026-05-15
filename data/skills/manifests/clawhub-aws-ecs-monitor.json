@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12895,
+  "uuid": "skill-clawhub-aws-ecs-monitor",
+  "skillKey": "clawhub-aws-ecs-monitor",
+  "name": "aws-ecs-monitor",
+  "summary": "AWS ECS production health monitoring with CloudWatch log analysis — monitors ECS service health, ALB targets, SSL certificates, and provides deep CloudWatch...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_ecs_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Colinger",
+      "features": [
+        "AWS ECS production health monitoring with CloudWatch log analysis — monitors ECS service health."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-ecs-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8125655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-ecs-monitor",
+      "url": "https://clawhub.ai/skills/aws-ecs-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-ecs-monitor",
+    "url": "https://clawhub.ai/skills/aws-ecs-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-ecs-monitor-ea928c28b0d68798.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-ecs-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-ecs-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6207870fd9dd38c386fce961a45ffd32aa9bece1e933916d28978ae74270eba7",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:27:10.156Z"
+}

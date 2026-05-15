@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-easy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_easy",
+  "skill": {
+    "id": 55130,
+    "skillKey": "clawhub-ai-video-editor-easy",
+    "name": "Ai Video Editor Easy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-easy",
+    "url": "https://clawhub.ai/skills/ai-video-editor-easy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-easy-2a911c8fa1e67a76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the pauses, add transitions, and export a clean final video — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776693727572,
+      "changelog": "AI Video Editor Easy 1.0.0 — Initial release\n\n- Launches AI-powered video editing for MP4, MOV, AVI, WebM files up to 500MB.\n- Simple, natural-language workflow: upload, describe edits, and export video in 1–2 minutes.\n- Automatic backend setup with temporary free credits; handles authentication and session creation.\n- Common edit actions include trimming pauses, adding transitions, and exporting 1080p MP4.\n- Exposes status, credits, and export/download via clear chat commands.\n- Cloud GPU rendering with step-by-step API routing; updated user on progress or errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df0dc2538865717a8e7151414c59ade1612e219a4326372f38004d8938a02646"
+}

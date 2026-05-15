@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/activity-log-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activity_log_detector",
+  "skill": {
+    "id": 25209,
+    "skillKey": "clawhub-activity-log-detector",
+    "name": "Activity Log Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activity-log-detector",
+    "url": "https://clawhub.ai/skills/activity-log-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activity-log-detector-8a569bc337e6412a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Azure Activity Logs and Sentinel incidents for suspicious patterns and attack indicators"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772622250031,
+      "changelog": "Initial release of Azure Activity Log & Sentinel Threat Detector.\n\n- Analyze exported Azure Activity Logs and Sentinel incidents for suspicious operations and attack patterns.\n- Guide users on how to export required data securely, with no credentials needed.\n- Detect and summarize high-risk events: role changes, policy deletions, failed logins, resource tampering, and more.\n- Output includes threat summaries, incident timeline, MITRE mappings, KQL detection queries, and remediation guidance.\n- All analysis is instruction-only—no direct Azure or CLI access; user data privacy emphasized.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4f9a675ac4882da5f3fc5d4e10e5a1521625d926a3c577173d77ab92edcde86"
+}

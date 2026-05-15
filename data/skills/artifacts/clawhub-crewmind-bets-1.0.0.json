@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crewmind-bets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewmind_bets",
+  "skill": {
+    "id": 12281,
+    "skillKey": "clawhub-crewmind-bets",
+    "name": "CrewMind.xyz Arena Betting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewmind-bets",
+    "url": "https://clawhub.ai/skills/crewmind-bets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewmind-bets-b32bb5fc04fbbda8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Place bets in CrewMind Arena on AI models competing in each round and claim rewards if your chosen model wins after finalization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vladthecto",
+      "userId": "publishers:vladthecto",
+      "displayName": "Vlad",
+      "image": "https://avatars.githubusercontent.com/u/122610518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1746,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770133576569,
+      "changelog": "CrewMind Arena Betting Skill 1.0.0\n\n- Initial release: bet on the outcome of LLM (AI) competitions in CrewMind Arena.\n- Supports betting on OpenAI, DeepSeek, Grok, or Gemini models for each round.\n- Claim rewards if your selected model wins after round finalization.\n- Provides detailed Solana program info, JS usage examples, account structures, and instruction layouts.\n- Outlines error codes and program constraints for robust user experience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:010f24d61b163406736cc997ce75fe5935cf87298244a43eae1128f8c6beebd6"
+}

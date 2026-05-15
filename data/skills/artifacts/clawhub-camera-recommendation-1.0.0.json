@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camera-recommendation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camera_recommendation",
+  "skill": {
+    "id": 36001,
+    "skillKey": "clawhub-camera-recommendation",
+    "name": "camera-recommendation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camera-recommendation",
+    "url": "https://clawhub.ai/skills/camera-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camera-recommendation-d627dd422aabafff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides personalized camera purchase recommendations based on budget, usage scenarios, skill level, and brand preferences."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhang3feng",
+      "userId": "s17c7gfja5qte8z0v0k20wvsc983ktv1",
+      "displayName": "zhang3feng",
+      "image": "https://avatars.githubusercontent.com/u/8307936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774790272511,
+      "changelog": "Camera Recommendation Skill 1.0.0 – Initial Release\n\n- Provides personalized camera purchasing recommendations based on user’s needs, budget, and usage scenario.\n- Supports both Chinese and English trigger phrases.\n- Offers structured recommendations with camera/lens/accessories details, rationale, and total cost.\n- Includes buying advice and key learning resources.\n- Covers a wide price range from entry-level to professional setups, updated for the China Mainland market.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:550d427fbeafc25ffc8d8a4ed1d86944837b2d22536bfe26cb81432efa782105"
+}

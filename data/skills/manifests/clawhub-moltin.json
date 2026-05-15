@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32185,
+  "uuid": "skill-clawhub-moltin",
+  "skillKey": "clawhub-moltin",
+  "name": "Moltin",
+  "summary": "Moltin integration. Manage data, records, and automate workflows. Use when the user wants to interact with Moltin data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Moltin integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Moltin data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltin@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltin",
+      "url": "https://clawhub.ai/skills/moltin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltin",
+    "url": "https://clawhub.ai/skills/moltin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltin-5aeafb65c463795d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltin@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltin-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0fc2c3c8bc5bdc59025acda9e1de382f1c705a82d3f06e62783fd86b162bd47",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:45:25.540Z"
+}

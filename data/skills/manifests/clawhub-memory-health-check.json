@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53974,
+  "uuid": "skill-clawhub-memory-health-check",
+  "skillKey": "clawhub-memory-health-check",
+  "name": "🩺 memory-health-check",
+  "summary": "Performs a 6-dimension memory health check assessing integrity, freshness, bloat, orphans, duplicates, and coverage with optional auto-repair.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "Performs a 6-dimension memory health check assessing integrity, freshness, bloat, orphans, dupl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-health-check",
+      "url": "https://clawhub.ai/skills/memory-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-health-check",
+    "url": "https://clawhub.ai/skills/memory-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-health-check-1d7ff851907eceaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f811356fdf52ba9fb313da3adfc8d0c7ad296bc2840590ce9068b4dc5b63c81",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:33:08.149Z"
+}

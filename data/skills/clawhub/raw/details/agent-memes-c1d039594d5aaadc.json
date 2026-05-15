@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "agent-memes",
+    "displayName": "Agent Memes",
+    "summary": "Send meme reaction images in chat. One command to pick & send. Multi-platform (Discord, Feishu, Telegram, etc). Use when the conversation calls for a visual...",
+    "tags": {
+      "latest": "2.11.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 24
+    },
+    "createdAt": 1775187701073,
+    "updatedAt": 1777527116147
+  },
+  "latestVersion": {
+    "version": "2.11.0",
+    "createdAt": 1776389486454,
+    "changelog": "Fix stale platform detection: /tmp/openclaw-current-channel now ignored if >5min old. Prevents Discord memes being sent to Telegram when file has stale telegram context. OPENCLAW_CHANNEL env var takes priority over file.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kagura-agent",
+    "userId": "s172k10mer1e1pqnn7x0x5wmbd83xgrx",
+    "displayName": "kagura-agent",
+    "image": "https://avatars.githubusercontent.com/u/268167063?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+2 more)",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527116147
+  }
+}

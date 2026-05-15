@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67073,
+  "uuid": "skill-clawhub-weeek-tasks",
+  "skillKey": "clawhub-weeek-tasks",
+  "name": "weeek-tasks",
+  "summary": "Управление задачами WEEEK через Public API (Task Manager): получать список задач, создавать/обновлять/завершать задачи, перемещать между досками/колонками, получать список досок и колонок. Использовать при интеграции с WEEEK API и работе с.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weeek_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex-indi",
+      "features": [
+        "Управление задачами WEEEK через Public API (Task Manager): получать список задач, создавать/обн.",
+        "Использовать при интеграции с WEEEK API и работе с задачами/досками/колонками."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weeek-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52648395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weeek-tasks",
+      "url": "https://clawhub.ai/skills/weeek-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weeek-tasks",
+    "url": "https://clawhub.ai/skills/weeek-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weeek-tasks-99dccafb181b5194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weeek-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weeek-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddd50839907dad4f9dd59415e3941f90c55503f3dc9f6a6221adfb9258f0df64",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:48:26.990Z"
+}

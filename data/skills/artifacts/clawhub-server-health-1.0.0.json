@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_health",
+  "skill": {
+    "id": 9440,
+    "skillKey": "clawhub-server-health",
+    "name": "Server Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-health",
+    "url": "https://clawhub.ai/skills/server-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-health-83d27e9b05512061.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive server health monitoring showing system stats, top processes, OpenClaw gateway status, and running services. Perfect for quick health checks via Telegram or CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muslimalfatih",
+      "userId": "publishers:muslimalfatih",
+      "displayName": "muslimalfatih",
+      "image": "https://avatars.githubusercontent.com/u/8471024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3745,
+      "installsAllTime": 18,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770598080054,
+      "changelog": "Initial release: System stats, OpenClaw Gateway status, and services monitoring",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d972c103fa15e8bdc57590cbb25288cccb422887fc4f703bdf6585ba919d149"
+}

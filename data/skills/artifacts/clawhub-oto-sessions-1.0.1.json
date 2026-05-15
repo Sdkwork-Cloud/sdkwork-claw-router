@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oto-sessions@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oto_sessions",
+  "skill": {
+    "id": 46859,
+    "skillKey": "clawhub-oto-sessions",
+    "name": "Oto Sessions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oto-sessions",
+    "url": "https://clawhub.ai/skills/oto-sessions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oto-sessions-99cff6d165dfee28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage authenticated browser sessions for any website with Oto, enabling saving, listing, deleting, and automating multiple accounts without re-authenticating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mbahar",
+      "userId": "s177acd7acbantd2m7gf6vywzs844m1s",
+      "displayName": "Murat Bahar",
+      "image": "https://avatars.githubusercontent.com/u/1306604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775952323439,
+      "changelog": "- Updated account labels in all documentation and usage examples from \"jebwa\" and similar to generic names like \"work\" and \"personal\" for clarity.\n- Revised all code samples, session ID formats, and command-line patterns to use these new account label conventions.\n- Improved consistency in example output and instructions across SKILL.md, README.md, and reference files.\n- Minor edits for wording and formatting to improve overall readability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5022f018a0ea18f5e5d4bf25d37f5b3d300b28d7493adb3dedc136ecb6ef79eb"
+}

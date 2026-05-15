@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21534,
+  "uuid": "skill-clawhub-video-clip-skill",
+  "skillKey": "clawhub-video-clip-skill",
+  "name": "video-clip-skill",
+  "summary": "Clips a YouTube video locally using yt-dlp and ffmpeg. Supports auto-highlight detection, translation, and CapCut-style karaoke subtitle burning. Triggers wh...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chiny",
+      "features": [
+        "Clips a YouTube video locally using yt-dlp and ffmpeg",
+        "Supports auto-highlight detection, translation, and CapCut-style karaoke subtitle burning",
+        "Triggers wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-clip-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55974297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-clip-skill",
+      "url": "https://clawhub.ai/skills/video-clip-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip-skill",
+    "url": "https://clawhub.ai/skills/video-clip-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-skill-19534a1453a1e05c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-clip-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-clip-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06a267f1c4d8962eebf86605e4ac90dc1b2cd951f65efaf996c7390cebd4a1d6",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T17:23:57.794Z"
+}

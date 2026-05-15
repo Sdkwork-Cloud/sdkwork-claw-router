@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-qr-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_qr_scanner",
+  "skill": {
+    "id": 21129,
+    "skillKey": "clawhub-invoice-qr-scanner",
+    "name": "invoice-qr-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-qr-scanner",
+    "url": "https://clawhub.ai/skills/invoice-qr-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-qr-scanner-a355d956da758695.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan QR codes from invoice receipts and automatically fill electronic invoice applications. Use when user asks to scan QR codes from images, complete electro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenzhuowen",
+      "userId": "publishers:chenzhuowen",
+      "displayName": "Evan Chen",
+      "image": "https://avatars.githubusercontent.com/u/20341696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772551457989,
+      "changelog": "初始版本：自动扫描发票二维码并填写电子发票申请",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a9df8ffa0f65cc08ca03848bb6a1df5bbd0283c066cb54ca65d38c184e2adc9"
+}

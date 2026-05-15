@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18432,
+  "uuid": "skill-clawhub-grocy-inventory",
+  "skillKey": "clawhub-grocy-inventory",
+  "name": "Grocy Inventory",
+  "summary": "Manage Grocy inventory, shopping list, batteries, and barcodes. Use when user wants to: (1) Check what's in their fridge/pantry, (2) See expiring products, (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grocy_inventory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "septianw",
+      "features": [
+        "Manage Grocy inventory, shopping list, batteries, and barcodes",
+        "Use when user wants to: (1) Check what's in their fridge/pantry, (2) See expiring products, (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grocy-inventory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/512494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grocy-inventory",
+      "url": "https://clawhub.ai/skills/grocy-inventory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grocy-inventory",
+    "url": "https://clawhub.ai/skills/grocy-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grocy-inventory-c396083e42f1194a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grocy-inventory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grocy-inventory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7738793a00641b7ee8ec8f943e9555e2f637cb33e251fa5d653d7c5c83d5179",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:41:39.318Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-cost-optimizer-kryzl19@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_cost_optimizer_kryzl19",
+  "skill": {
+    "id": 42502,
+    "skillKey": "clawhub-api-cost-optimizer-kryzl19",
+    "name": "Api Cost Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-cost-optimizer-kryzl19",
+    "url": "https://clawhub.ai/skills/api-cost-optimizer-kryzl19",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-cost-optimizer-kryzl19-2c11e3ce3d81a417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze OpenClaw agent configuration and API usage patterns to identify cost-saving opportunities. Diagnose inefficient heartbeat configs, estimate daily/wee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455820205,
+      "changelog": "- Initial release of API Cost Optimizer for OpenClaw agents\n- Analyzes agent configs to estimate daily/weekly API spend and prioritize cost-saving recommendations\n- Diagnoses inefficient heartbeat intervals, quantifies wasted API calls, and suggests optimizations\n- Generates detailed markdown reports with model/tool risk factors and savings estimates\n- Includes analysis, heartbeat efficiency, and fast cost estimation scripts for real-time insights\n- Supports customizable pricing for OpenAI, Anthropic, and MiniMax providers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18014d1b80d9c5e419883571577d95202cb7c58399436d764009d1c9b1e0bd28"
+}

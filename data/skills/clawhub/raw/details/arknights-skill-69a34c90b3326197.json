@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "arknights-skill",
+    "displayName": "Arknights Skill",
+    "summary": "回答《明日方舟》的干员定位、技能机制、养成建议、剧情梳理、术语解释与关卡思路；可读取和维护本地结构化博士档案，让建议逐步贴合用户账号练度；并在版本相关问题上明确区分最新检索结论和非最新判断。",
+    "tags": {
+      "latest": "1.3.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1776854527537,
+    "updatedAt": 1777527856541
+  },
+  "latestVersion": {
+    "version": "1.3.0",
+    "createdAt": 1777387901781,
+    "changelog": "arknights-skill v1.3.0 Release Notes\n\n  1. Doctor Profile Storage Path Migration\n     - Default storage moved from inside the skill install directory\n       to ~/.config/arknights-skill/doctor-profile.json\n     - Fully decoupled from the install directory; reinstalling or\n       updating the skill no longer affects profile data\n     - Automatic one-time migration on first run; legacy files preserved\n\n  2. New Commands\n     - confirm --field <field> --apply: apply a pending downgrade/conflict value\n     - dismiss --field <field>: discard a pending confirmation\n     - read now prints a pending-confirmations summary to stderr\n\n  3. Data Safety Improvements\n     - Numeric fields in account.resources and account.progress now use\n       monotonic merge (reject lower values, queue as pending instead of\n       silent overwrite)\n     - 35 unit tests covering all merge logic\n\n  4. Engineering Improvements\n     - update.sh supports --force flag; shows diff when local modifications\n       are detected\n     - CI adds ruff lint, pytest, required-file existence checks\n     - New bump_version.sh script for automated version sync",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "morandot",
+    "userId": "s17fmfw5nxs39nmch12gj4h40n85agev",
+    "displayName": "morandot",
+    "image": "https://avatars.githubusercontent.com/u/274257964?v=4"
+  },
+  "moderation": null
+}

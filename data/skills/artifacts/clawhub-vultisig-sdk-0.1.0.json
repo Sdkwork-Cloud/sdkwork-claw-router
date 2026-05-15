@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vultisig-sdk@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vultisig_sdk",
+  "skill": {
+    "id": 12738,
+    "skillKey": "clawhub-vultisig-sdk",
+    "name": "vultisig-sdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vultisig-sdk",
+    "url": "https://clawhub.ai/skills/vultisig-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vultisig-sdk-9fafd729a2e0ee25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when an agent needs to create crypto wallets, send transactions, swap tokens, check balances, or perform any on-chain operation across 36+ blockchains using threshold signatures (TSS). Vultisig SDK provides self-custodial MP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realpaaao",
+      "userId": "publishers:realpaaao",
+      "displayName": "realpaaao",
+      "image": "https://avatars.githubusercontent.com/u/167348323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1722,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770212104301,
+      "changelog": "MPC crypto wallet for AI agents. Create vaults, send tokens, execute cross-chain swaps across 40+ chains.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43d1aa26583a6d144bea73eb07a1e5ce996e4daa58d5d7224a0e93151bd55208"
+}

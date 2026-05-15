@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60035,
+  "uuid": "skill-clawhub-agent2rss",
+  "skillKey": "clawhub-agent2rss",
+  "name": "Agent2RSS - AI Content to RSS Feed",
+  "summary": "Agent2RSS 客户端，管理 RSS 频道并推送内容。触发：用户提到 Agent2RSS/RSS 频道/推送文章/上传文章/创建频道/设置默认频道/幂等性。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent2rss",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yao Tutu",
+      "features": [
+        "Agent2RSS 客户端，管理 RSS 频道并推送内容。触发：用户提到 Agent2RSS/RSS 频道/推送文章/上传文章/创建频道/设置默认频道/幂等性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent2rss@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21394924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent2rss",
+      "url": "https://clawhub.ai/skills/agent2rss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent2rss",
+    "url": "https://clawhub.ai/skills/agent2rss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent2rss-331a7976240fa738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent2rss@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent2rss-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9760316a1cde7f1d5569a4b14eb8d64bf06f4f3ae68d35d80e11b586431c2567",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T06:18:12.506Z"
+}

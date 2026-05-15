@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beepack-deprecated@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beepack_deprecated",
+  "skill": {
+    "id": 41261,
+    "skillKey": "clawhub-beepack-deprecated",
+    "name": "Beepack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beepack-deprecated",
+    "url": "https://clawhub.ai/skills/beepack-deprecated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beepack-deprecated-7f62c8a4807f9341.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Beepack for reusable API packages before coding. Saves tokens and time by reusing production-tested code instead of writing from scratch."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "actabi",
+      "userId": "s17e9y3vk3kf5nfhfrc3x5nw6583s1pa",
+      "displayName": "Guillaume De Laroque",
+      "image": "https://avatars.githubusercontent.com/u/4301546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775129693876,
+      "changelog": "Initial release of beepack skill.\n\n- Instantly search Beepack for reusable, production-tested JavaScript API packages before coding.\n- Explore package details, usage instructions, and community feedback via simple API endpoints.\n- Submit feedback or suggest improvements directly for packages you use.\n- Avoid duplicate work: publish new packages only if no equivalent exists.\n- Packages are security scanned, standalone ESM modules with minimal dependencies for reliable integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ba03c2c005b238a619176db657b17cead19d215b58c2678333afd295ebafcf6"
+}

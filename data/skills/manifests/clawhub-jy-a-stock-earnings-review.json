@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67425,
+  "uuid": "skill-clawhub-jy-a-stock-earnings-review",
+  "skillKey": "clawhub-jy-a-stock-earnings-review",
+  "name": "jy-a-stock-earnings-review",
+  "summary": "生成 A 股上市公司财报点评报告。基于聚源数据 MCP 接口（通过 mcporter 调用）获取财务数据、行业指标、舆情资讯、估值数据，结合 echarts 图表可视化，按券商研报风格撰写财报点评。使用场景：当用户需要分析 A 股上市公司财报、生成业绩点评报告、查看财务数据分析、了解某公司股票业绩表现时触发。触发...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_a_stock_earnings_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "生成 A 股上市公司财报点评报告。基于聚源数据 MCP 接口（通过 mcporter 调用）获取财务数据、行业指标、舆情资讯、估值数据，结合 echarts 图表可视化，按券商研报风格撰写财."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-a-stock-earnings-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-a-stock-earnings-review",
+      "url": "https://clawhub.ai/skills/jy-a-stock-earnings-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-a-stock-earnings-review",
+    "url": "https://clawhub.ai/skills/jy-a-stock-earnings-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-a-stock-earnings-review-698641cc9dc5f03f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-a-stock-earnings-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-a-stock-earnings-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b3377068cdfa832dd18950c6213a848798ca2e1fcc889eb5f0f1099d8c54fbf",
+      "artifactSizeBytes": 3153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:03:02.043Z"
+}

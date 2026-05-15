@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-flow-code-review@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_flow_code_review",
+  "skill": {
+    "id": 32696,
+    "skillKey": "clawhub-react-flow-code-review",
+    "name": "React Flow Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-flow-code-review",
+    "url": "https://clawhub.ai/skills/react-flow-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-flow-code-review-2ac9d2e2ec47c808.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews React Flow code for anti-patterns, performance issues, and best practices. Use when reviewing code that uses @xyflow/react, checking for common mista..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831303014,
+      "changelog": "- Introduced a sequenced, evidence-based review workflow with explicit pass/fail conditions (“review gates”).\n- Requires file path and line number (or quote) for all issue reports—no critical finding without citation.\n- Moved performance and common mistake checklists into a close-out gate, with explicit status for each item (satisfied, not applicable with reason, or open with evidence).\n- The skill content and examples remain, but guidance is now focused on minimum steps and non-ambiguous outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb076bceab7413fd950e363e5ac031e0aa587305485df74882d363e1b37698ca"
+}

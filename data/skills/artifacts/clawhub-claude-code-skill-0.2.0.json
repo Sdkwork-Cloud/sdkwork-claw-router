@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-skill@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_skill",
+  "skill": {
+    "id": 9946,
+    "skillKey": "clawhub-claude-code-skill",
+    "name": "Claude Code Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-skill",
+    "url": "https://clawhub.ai/skills/claude-code-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-skill-76473eca4684ed1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates MCP tool servers for orchestration, state persistence with IndexedDB/localStorage, and session sync across devices in OpenClaw/Clawdbot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enderfga",
+      "userId": "publishers:enderfga",
+      "displayName": "Enderfga",
+      "image": "https://avatars.githubusercontent.com/u/74981769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3117,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769957617386,
+      "changelog": "## Version 0.2.0\n\n- Initial release with full source code and documentation.\n- Added MCP (Model Context Protocol) orchestration utilities and API.\n- Implemented chat session and config synchronization functions.\n- Provided persistent state store via IndexedDB/localStorage.\n- Added examples and configuration templates for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:974401b873ce36020035afcddd70d1fee86c51b62f6f5da665a5116d3b06914b"
+}

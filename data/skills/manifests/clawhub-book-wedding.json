@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12917,
+  "uuid": "skill-clawhub-book-wedding",
+  "skillKey": "clawhub-book-wedding",
+  "name": "Book Wedding",
+  "summary": "Book wedding services through Lokuli MCP. Use when user needs to find and book wedding. Triggers on requests like \"book a wedding\", \"find wedding near me\", or any wedding service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_wedding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book wedding services through Lokuli MCP",
+        "Use when user needs to find and book wedding",
+        "Triggers on requests like \"book a wedding\", \"find wedding near me\", or any wedding service requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-wedding@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-wedding",
+      "url": "https://clawhub.ai/skills/book-wedding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-wedding",
+    "url": "https://clawhub.ai/skills/book-wedding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-wedding-5b2f858a4fa22754.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-wedding@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-wedding-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:885ee49dc64909ef7c44c1b8576a6836198439be08c3d652ef4564e12b010938",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:22.259Z"
+}

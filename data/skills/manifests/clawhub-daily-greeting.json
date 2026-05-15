@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40126,
+  "uuid": "skill-clawhub-daily-greeting",
+  "skillKey": "clawhub-daily-greeting",
+  "name": "Daily Greeting",
+  "summary": "Give your OpenClaw agents personality! Automatically sends personalized daily greetings to all bound channels. Each agent greets users in their preferred lan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_greeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shz2050",
+      "features": [
+        "Give your OpenClaw agents personality! Automatically sends personalized daily greetings to all.",
+        "Each agent greets users in their preferred lan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-greeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1115110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-greeting",
+      "url": "https://clawhub.ai/skills/daily-greeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-greeting",
+    "url": "https://clawhub.ai/skills/daily-greeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-greeting-6c00c907936aba01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-greeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-greeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d7a14288d2498a0301c70de4f3c39b2d110110c319f862b0b163a165277cba0",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:02:05.627Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-time-management-matrix@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_time_management_matrix",
+  "skill": {
+    "id": 64711,
+    "skillKey": "clawhub-notion-time-management-matrix",
+    "name": "Notion Time Management Matrix (Eisenhower Matrix)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-time-management-matrix",
+    "url": "https://clawhub.ai/skills/notion-time-management-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-time-management-matrix-450ee7e4cadf1e05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "待办事项管理技能，用于通过 exec 调用 Python 脚本完成指定 Notion 数据库的连接，基于四象限法则进行时间管理，支持待办事项的创建、查询、搜索、状态更新、截止日期修改与分析总结。当用户提出\"明天要做\"或\"最近有什么重要的事\"或\"25号前解决\"或\"把任务延期到下周五\"等涉及时间管理内容时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiangtaoxiao",
+      "userId": "s17197rhtkpr9y9a3jm4506hjd845fq0",
+      "displayName": "xiangtaoxiao",
+      "image": "https://avatars.githubusercontent.com/u/65456849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1775492043679,
+      "changelog": "No changes detected in this version.\n\n- Version 1.1.2 contains no code or documentation changes from the previous release.\n- Functionality, configuration, and usage remain the same as version 1.1.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1763457364652445b97a963e943bf8e4ea4a52f99d07cb76da0c791667058f1c"
+}

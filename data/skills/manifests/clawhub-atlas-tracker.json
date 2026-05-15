@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50167,
+  "uuid": "skill-clawhub-atlas-tracker",
+  "skillKey": "clawhub-atlas-tracker",
+  "name": "Atlas Tracker",
+  "summary": "Work with Atlas Tracker (RedForester) mindmaps via MCP tools. Use when reading, creating, or updating nodes and branches in Atlas Tracker maps — including na...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexandr Petrov",
+      "features": [
+        "Work with Atlas Tracker (RedForester) mindmaps via MCP tools",
+        "Use when reading, creating, or updating nodes and branches in Atlas Tracker maps — including na."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atlas-tracker@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/520756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atlas-tracker",
+      "url": "https://clawhub.ai/skills/atlas-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-tracker",
+    "url": "https://clawhub.ai/skills/atlas-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-tracker-48e6f7033a4d6ca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atlas-tracker@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-atlas-tracker-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3292162aadace4aa7735b82b121807978d5e14d35b3e52b76f4338f732d65d4a",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:23:36.761Z"
+}

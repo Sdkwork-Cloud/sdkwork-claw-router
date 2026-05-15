@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37525,
+  "uuid": "skill-clawhub-levity",
+  "skillKey": "clawhub-levity",
+  "name": "Levity",
+  "summary": "Levity integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Levity data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.levity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Levity integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Levity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/levity@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "levity",
+      "url": "https://clawhub.ai/skills/levity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "levity",
+    "url": "https://clawhub.ai/skills/levity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/levity-188764ef6856bdf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/levity@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-levity-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7592229bdaea04416446caf25251aa46a05bd2076f8f895d37be6c208dee470",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:41:27.473Z"
+}

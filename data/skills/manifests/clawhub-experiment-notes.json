@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38475,
+  "uuid": "skill-clawhub-experiment-notes",
+  "skillKey": "clawhub-experiment-notes",
+  "name": "Experiment Notes",
+  "summary": "Track, search, and learn from experiments. Automatic logging of trial-and-error, success/failure patterns, and distilled lessons. Prevents repeating mistakes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experiment_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "besty0121",
+      "features": [
+        "Track, search, and learn from experiments",
+        "Automatic logging of trial-and-error, success/failure patterns, and distilled lessons",
+        "Prevents repeating mistakes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/experiment-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133213023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "experiment-notes",
+      "url": "https://clawhub.ai/skills/experiment-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experiment-notes",
+    "url": "https://clawhub.ai/skills/experiment-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experiment-notes-ac9dd4bc89e383ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/experiment-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-experiment-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7daa8d30f8b61f32702f910f212d8fa575945d62d892ab6a8cb17c696d2b5d3e",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:01:59.862Z"
+}

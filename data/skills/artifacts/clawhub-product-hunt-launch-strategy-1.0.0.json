@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-hunt-launch-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_hunt_launch_strategy",
+  "skill": {
+    "id": 34158,
+    "skillKey": "clawhub-product-hunt-launch-strategy",
+    "name": "Product Hunt Launch Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-hunt-launch-strategy",
+    "url": "https://clawhub.ai/skills/product-hunt-launch-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-hunt-launch-strategy-32b69a7bcf317dda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds a Product Hunt launch timeline and strategy. Use when someone wants help planning, preparing for, or optimizing a Product Hunt launch."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c0ldsmi1e",
+      "userId": "s17aaqvxax2y8387sde2bqs0m183f7bn",
+      "displayName": "Daniel Yu",
+      "image": "https://avatars.githubusercontent.com/u/40680511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774119480980,
+      "changelog": "Major update: The skill is now focused on Product Hunt launch strategy and planning, instead of real-time launch stats.\n\n- Transforms the skill into a Product Hunt launch strategist assistant.\n- Guides users to build a comprehensive launch plan via structured discovery questions.\n- Provides tailored pre-launch, launch week, launch day, and post-launch action steps.\n- Includes a step-by-step weekly checklist and curated further reading.\n- Real-time stat tracking features have been removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46ae038cff944b4ff235261c8fe6fce0722160164d667bfb6f1d2442eb3bfbcf"
+}

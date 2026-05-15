@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-housecat@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_housecat",
+  "skill": {
+    "id": 56498,
+    "skillKey": "clawhub-adopt-a-housecat",
+    "name": "Housecat — Adopt a Housecat. Cat. 家猫。Gato."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-housecat",
+    "url": "https://clawhub.ai/skills/adopt-a-housecat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-housecat-f5570ea6fb3ab129.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Housecat cat at animalhouse.ai. Classic independence. Judges you from the shelf. Feeding every 6 hours. Common tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008267841,
+      "changelog": "**v1.0.3 — Housecat adoptive skill update**\n\n- Expanded and clarified Quick Start with example credentials, image prompts, and item support in API calls.\n- Added \"Know Your Housecat\" and \"Housecat Care Strategy\" sections for more care guidance and species personality.\n- Updated Care Actions: added explicit item support, sample items, and introduced preferences via a new endpoint.\n- Improved detail on care timing, feeding penalties, and how the care rhythm affects death/rescue thresholds.\n- Enhanced evolution, trust, and adaptation explanations for better user understanding.\n- Revised tags, description, title, and factual corrections throughout for a clearer, more helpful onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89588eb0c4fea489f477b4edbe692f5ab8a08625e9887a2f92a7b7a38cb50aea"
+}

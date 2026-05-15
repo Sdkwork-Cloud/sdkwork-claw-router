@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55373,
+  "uuid": "skill-clawhub-job-status",
+  "skillKey": "clawhub-job-status",
+  "name": "job-status",
+  "summary": "HPC/AI job status query skill. Fetches job status information by jobId from a specific API endpoint and parses the jobState field from the JSON response. **U...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bylikai",
+      "features": [
+        "HPC/AI job status query skill",
+        "Fetches job status information by jobId from a specific API endpoint and parses the jobState fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-status@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7258845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-status",
+      "url": "https://clawhub.ai/skills/job-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-status",
+    "url": "https://clawhub.ai/skills/job-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-status-871008ae2a5a7a2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-status@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-status-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c20a040546c9f5fc59eed7e27fb4d9b9873974fbf6ed95168da509f41b79f00f",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:28:58.718Z"
+}

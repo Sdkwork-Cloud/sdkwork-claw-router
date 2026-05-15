@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25267,
+  "uuid": "skill-clawhub-golang-code-review",
+  "skillKey": "clawhub-golang-code-review",
+  "name": "golang-code-review",
+  "summary": "Provides comprehensive Golang code reviews for Git merge commits, checking format, quality, best practices, security, and generating detailed Markdown reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "knifeAn",
+      "features": [
+        "Provides comprehensive Golang code reviews for Git merge commits, checking format, quality, bes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32318545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang-code-review",
+      "url": "https://clawhub.ai/skills/golang-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-code-review",
+    "url": "https://clawhub.ai/skills/golang-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-code-review-61ddd6caf84689ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9165bc2fda73d3dacd4aea5fc4da5ca89a6dfeab53e4752c32e95858a275260c",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:00:05.271Z"
+}

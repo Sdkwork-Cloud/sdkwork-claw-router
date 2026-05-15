@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arch-garch-volatility@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_garch_volatility",
+  "skill": {
+    "id": 63942,
+    "skillKey": "clawhub-arch-garch-volatility",
+    "name": "Arch Garch Volatility"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-garch-volatility",
+    "url": "https://clawhub.ai/skills/arch-garch-volatility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-garch-volatility-9712ca41077e1cf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用 GARCH 族模型进行波动率建模与预测，支持夏普比率统计推断和 SPA 模型比较测试，应用于全球市场风险管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954211682,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows GARCH 波动率模型; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3d9a669d259e943df9836346f57ded5ffa3747322be68fc4fe801d835c778eb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-bearings@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_bearings",
+  "skill": {
+    "id": 66617,
+    "skillKey": "clawhub-find-bearings",
+    "name": "find bearings skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-bearings",
+    "url": "https://clawhub.ai/skills/find-bearings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-bearings-36107887608044c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "轴承型号和品牌搜索与解析工具。用于处理轴承相关的查询任务，包括： (1) 搜索特定轴承型号的信息（尺寸、规格、用途） (2) 搜索轴承品牌及其产品线 (3) 解析轴承型号编码规则（如 6204-2RS、NU208 等） (4) 轴承选型建议和应用场景匹配 当用户询问轴承型号、品牌、规格参数或选型问题时触发此 sk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openfindbearings",
+      "userId": "s1767yndgy5q08xyaht1xrenrd840wh7",
+      "displayName": "openfindbearings",
+      "image": "https://avatars.githubusercontent.com/u/255456289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775185570701,
+      "changelog": "bearing-search 1.0.0 - 首次发布，实现轴承型号与品牌的查询和选型功能\n\n- 支持根据型号搜索轴承详细规格参数及应用信息\n- 可查询主流轴承品牌及其产品线和技术特点\n- 实现标准轴承型号编码规则解析与品牌型号对照\n- 提供按应用场景的轴承选型建议\n- 内置数据结构与参考文档链接，便于后续扩展和查阅",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f2134cf35e1e7874be82f9e753ce1f08b1cd859971e534fec64b51333572f3f"
+}

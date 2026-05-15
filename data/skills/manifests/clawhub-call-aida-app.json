@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27945,
+  "uuid": "skill-clawhub-call-aida-app",
+  "skillKey": "clawhub-call-aida-app",
+  "name": "Call Aida App",
+  "summary": "Invoke Aida chat-messages API with user-provided appid, query, and inputs to generate reports or analyze requests within Aida internal services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.call_aida_app",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "夏广斌",
+      "features": [
+        "Invoke Aida chat-messages API with user-provided appid, query, and inputs to generate reports o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/call-aida-app@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33992785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "call-aida-app",
+      "url": "https://clawhub.ai/skills/call-aida-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "call-aida-app",
+    "url": "https://clawhub.ai/skills/call-aida-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/call-aida-app-7eb1240ce49027d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/call-aida-app@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-call-aida-app-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9211bde316e7c027c5d07858bf5b0b15be9267ba87e0eb386bac8d696d5d7f1b",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:15:09.835Z"
+}

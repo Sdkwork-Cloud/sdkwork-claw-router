@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/media-buyer-ads-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_buyer_ads_helper",
+  "skill": {
+    "id": 24165,
+    "skillKey": "clawhub-media-buyer-ads-helper",
+    "name": "Media Buyer Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-buyer-ads-helper",
+    "url": "https://clawhub.ai/skills/media-buyer-ads-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-buyer-ads-helper-82dc1a3d9256404b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Support media buying execution for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic with account health check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772608110465,
+      "changelog": "- Initial release of media-buyer-ads-helper skill.\n- Supports execution for Meta, Google, TikTok, YouTube, Amazon, and DSP/programmatic ads.\n- Delivers account health checks, bidding analysis, AB test design, and real-time monitoring.\n- Defines clear input and output contracts for diagnostics and recommendations.\n- Provides actionable workflows, decision rules, and quality checklists.\n- Includes examples for bid issues, AB testing, and anomaly detection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b56cbef3fb7dbe107be1e23a89554fc653b0547a4c771f677f5afeaf7178462"
+}

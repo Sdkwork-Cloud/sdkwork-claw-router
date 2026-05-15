@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66649,
+  "uuid": "skill-clawhub-api-sequence-diagram",
+  "skillKey": "clawhub-api-sequence-diagram",
+  "name": "api-sequence-diagram",
+  "summary": "根据指定的Java接口（Controller方法/API路径）分析完整调用链路，生成Mermaid时序图，标注关键判断节点、异常处理分支和业务逻辑。当用户要求分析接口调用链路、生成时序图、分析接口流程、查看接口调用关系时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_sequence_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L",
+      "features": [
+        "根据指定的Java接口（Controller方法/API路径）分析完整调用链路，生成Mermaid时序图，标注关键判断节点、异常处理分支和业务逻辑。当用户要求分析接口调用链路、生成时序图、分."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-sequence-diagram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150664619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-sequence-diagram",
+      "url": "https://clawhub.ai/skills/api-sequence-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-sequence-diagram",
+    "url": "https://clawhub.ai/skills/api-sequence-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-sequence-diagram-e4ec62fd0eedb93b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-sequence-diagram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-sequence-diagram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69532f1b33525eac02341763323d46c97836ed05296350a92542457b83baae5d",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:10:23.207Z"
+}

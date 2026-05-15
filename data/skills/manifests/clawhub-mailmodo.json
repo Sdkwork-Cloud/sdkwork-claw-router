@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25594,
+  "uuid": "skill-clawhub-mailmodo",
+  "skillKey": "clawhub-mailmodo",
+  "name": "Mailmodo",
+  "summary": "Mailmodo integration. Manage Campaigns, Users, Reports. Use when the user wants to interact with Mailmodo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailmodo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mailmodo integration",
+        "Manage Campaigns, Users, Reports",
+        "Use when the user wants to interact with Mailmodo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailmodo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailmodo",
+      "url": "https://clawhub.ai/skills/mailmodo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailmodo",
+    "url": "https://clawhub.ai/skills/mailmodo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailmodo-1978e143e8164cab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailmodo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailmodo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a9315b43884350857c1a97dbb5e918bb3b0ec5e91ed0f024b050f078b14b6b9",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:16.601Z"
+}

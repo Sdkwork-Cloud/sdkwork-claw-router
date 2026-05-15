@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hitl-protocol@0.7.2",
+  "version": "0.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hitl_protocol",
+  "skill": {
+    "id": 50319,
+    "skillKey": "clawhub-hitl-protocol",
+    "name": "HITL Protocol — Workflows and Human Decisions for Autonomous Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hitl-protocol",
+    "url": "https://clawhub.ai/skills/hitl-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hitl-protocol-d6a68745561e4ecf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HITL Protocol — the open standard for human decisions in autonomous agent workflows. When a website or API needs human input, it returns HTTP 202 with a revi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rotorstar",
+      "userId": "s175k6b14b83rhx24459jw2fth84tx2j",
+      "displayName": "Rotorstar",
+      "image": "https://avatars.githubusercontent.com/u/35960900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.7.2",
+      "createdAt": 1772450059971,
+      "changelog": "- Version 0.7.2 Optional quality Improvement in API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8da2422f517e1e06e20a0cfe24e7d5e627417b0c6d6bc125fac8eda858a43c3e"
+}

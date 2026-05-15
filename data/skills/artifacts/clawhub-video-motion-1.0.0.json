@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-motion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_motion",
+  "skill": {
+    "id": 55779,
+    "skillKey": "clawhub-video-motion",
+    "name": "Video Motion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-motion",
+    "url": "https://clawhub.ai/skills/video-motion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-motion-1a39f9a5ba32aa4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add smooth motion blur and dynamic camera movement to my static footage —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776468940556,
+      "changelog": "Video Motion — Add Motion Effects to Videos v1.0.0\n\n- Initial release providing AI-powered motion enhancement for video clips.\n- Supports uploading MP4, MOV, AVI, and WebM files up to 500MB.\n- Automated setup includes free anonymous access with 100 credits for 7 days.\n- Cloud-based editing: add smooth motion blur and dynamic camera movement without complex software.\n- Exports 1080p MP4 videos in 30–90 seconds per clip.\n- Includes simple commands for upload, status, credits, and export workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef9aabfac98c60420b5f3dd9b8bbac84b6d1f4e015914c5c7efd23b7cd1b809d"
+}

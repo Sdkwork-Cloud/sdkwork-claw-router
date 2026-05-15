@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33336,
+  "uuid": "skill-clawhub-text-art",
+  "skillKey": "clawhub-text-art",
+  "name": "Supports generating classic ASCII art and colorful emoji pixel art in various themes and styles.",
+  "summary": "Create text-based art (ASCII art) and emoji pixel art in various styles and themes. Use when user requests creating text art, ASCII art, emoji pixel illustra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_art",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rory",
+      "features": [
+        "Create text-based art (ASCII art) and emoji pixel art in various styles and themes",
+        "Use when user requests creating text art, ASCII art, emoji pixel illustra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-art@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/740817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-art",
+      "url": "https://clawhub.ai/skills/text-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-art",
+    "url": "https://clawhub.ai/skills/text-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-art-6ded9a69764300af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-art@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-art-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:060cc69533e0df6d464e7e1d0e7dd5cf210aa1edbc43d68526eb228725efe89e",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:09:15.571Z"
+}

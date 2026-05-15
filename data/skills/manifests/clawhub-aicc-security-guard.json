@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38612,
+  "uuid": "skill-clawhub-aicc-security-guard",
+  "skillKey": "clawhub-aicc-security-guard",
+  "name": "Aicc Security Guard",
+  "summary": "Ensure the AICC native plugin is active before handling confidential data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicc_security_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "senmud",
+      "features": [
+        "Ensure the AICC native plugin is active before handling confidential data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aicc-security-guard@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83488945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aicc-security-guard",
+      "url": "https://clawhub.ai/skills/aicc-security-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicc-security-guard",
+    "url": "https://clawhub.ai/skills/aicc-security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicc-security-guard-cc5b48c403d00023.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aicc-security-guard@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aicc-security-guard-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c069e6b64410dcb059e2b7ff658ae32372a746cb56aaf496cb21699f48f85b8",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:59:49.300Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24695,
+  "uuid": "skill-clawhub-shoofly-basic",
+  "skillKey": "clawhub-shoofly-basic",
+  "name": "Shoofly Basic",
+  "summary": "Real-time security monitor for AI agents. Watches every tool call, flags threats, and alerts you before damage is done. Works with OpenClaw and Claude Code....",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoofly_basic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow-leeroy-jenkins05",
+      "features": [
+        "Real-time security monitor for AI agents",
+        "Watches every tool call, flags threats, and alerts you before damage is done",
+        "Works with OpenClaw and Claude Code...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shoofly-basic@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266177925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shoofly-basic",
+      "url": "https://clawhub.ai/skills/shoofly-basic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoofly-basic",
+    "url": "https://clawhub.ai/skills/shoofly-basic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoofly-basic-60931841f8c1b27d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shoofly-basic@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shoofly-basic-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d5b45b882332cb61f85c4da24d43d6fe0a4438e8b22f98944dcaf06d29248ae",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:04:29.478Z"
+}

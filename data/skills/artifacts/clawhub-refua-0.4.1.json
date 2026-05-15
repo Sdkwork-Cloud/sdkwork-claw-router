@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/refua@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refua",
+  "skill": {
+    "id": 11775,
+    "skillKey": "clawhub-refua",
+    "name": "Refua"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refua",
+    "url": "https://clawhub.ai/skills/refua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refua-787611042b8cc9d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fold and score biomolecular complexes and optionally profile ADMET to prioritize molecules in drug discovery pipelines via the refua-mcp server."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbenjoseph",
+      "userId": "publishers:jbenjoseph",
+      "displayName": "jbenjoseph",
+      "image": "https://avatars.githubusercontent.com/u/64219063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1916,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1769967991454,
+      "changelog": "Refua 0.4.1 Changelog\n\n- Clarified installation, asset setup, and MCP server launch steps in documentation.\n- Updated usage guidance and safety notes.\n- Improved summary and operator instructions for easier setup.\n- Enhanced tool descriptions and example inputs/outputs.\n- Minor reorganization and simplification of skill documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:007143a87069f0d739c15ea04a9e879b14922eacb11f0f0770ecdfaec5873be1"
+}

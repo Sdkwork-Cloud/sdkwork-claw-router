@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44416,
+  "uuid": "skill-clawhub-log-sift",
+  "skillKey": "clawhub-log-sift",
+  "name": "Log Sift",
+  "summary": "Filter large log files by keywords and date ranges quickly from the command line for efficient troubleshooting and analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_sift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Filter large log files by keywords and date ranges quickly from the command line for efficient."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-sift@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-sift",
+      "url": "https://clawhub.ai/skills/log-sift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-sift",
+    "url": "https://clawhub.ai/skills/log-sift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-sift-a7cf6ed9fa9a744d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-sift@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-sift-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ac682af7252330f78ae95b41bd3dd8c2e7f37d00c3c3bddb411b63e8e9484ba",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:48:39.971Z"
+}

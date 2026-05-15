@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stablecoin-depeg-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_depeg_scanner",
+  "skill": {
+    "id": 34605,
+    "skillKey": "clawhub-stablecoin-depeg-scanner",
+    "name": "stablecoin-depeg-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-depeg-scanner",
+    "url": "https://clawhub.ai/skills/stablecoin-depeg-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-depeg-scanner-3b0295eba632e095.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate stablecoin depeg events for crisis arbitrage opportunities. Use when a user mentions a stablecoin crash, depeg, exploit, hack, or asks whether to bu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "june-kris",
+      "userId": "publishers:june-kris",
+      "displayName": "june-kris",
+      "image": "https://avatars.githubusercontent.com/u/57137875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774199889183,
+      "changelog": "Initial release of stablecoin-depeg-scanner:\n\n- Provides a 3-minute crisis arbitrage evaluator for stablecoin depegs.\n- Offers step-by-step instructions: automated assessment, exploit analysis, and recommendation delivery.\n- Integrates price, TVL, exploit type, and team response for decision-making.\n- Gives clear output format and rules for buy/watch/avoid recommendations.\n- Focuses on actionable intelligence for users considering depeg opportunities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8265c5717192e7cf200c828621111c79698beca3da35396ce7aaf61aaafa6f02"
+}

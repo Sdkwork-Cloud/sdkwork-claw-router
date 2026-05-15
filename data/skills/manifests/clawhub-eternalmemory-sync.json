@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43238,
+  "uuid": "skill-clawhub-eternalmemory-sync",
+  "skillKey": "clawhub-eternalmemory-sync",
+  "name": "EternalClaw Memory Sync",
+  "summary": "Securely backup and restore Openclaw agent memory from remote URLs using AES-256-GCM encryption.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eternalmemory_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Applied-Energetic",
+      "features": [
+        "Securely backup and restore Openclaw agent memory from remote URLs using AES-256-GCM encryption."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eternalmemory-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56194237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eternalmemory-sync",
+      "url": "https://clawhub.ai/skills/eternalmemory-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eternalmemory-sync",
+    "url": "https://clawhub.ai/skills/eternalmemory-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eternalmemory-sync-dd2e5884877dbc89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eternalmemory-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eternalmemory-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:616263bf079a9eb0d5cc494daaea7ba2c6ca35bb8621204ad933428a3b88ee40",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:15:17.626Z"
+}

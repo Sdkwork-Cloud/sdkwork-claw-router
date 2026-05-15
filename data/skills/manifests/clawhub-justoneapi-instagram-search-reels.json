@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48721,
+  "uuid": "skill-clawhub-justoneapi-instagram-search-reels",
+  "skillKey": "clawhub-justoneapi-instagram-search-reels",
+  "name": "Instagram Reels Search API",
+  "summary": "Call GET /api/instagram/search-reels/v1 for Instagram Reels Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_instagram_search_reels",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/instagram/search-reels/v1 for Instagram Reels Search through JustOneAPI with keyw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-instagram-search-reels@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-instagram-search-reels",
+      "url": "https://clawhub.ai/skills/justoneapi-instagram-search-reels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-instagram-search-reels",
+    "url": "https://clawhub.ai/skills/justoneapi-instagram-search-reels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-instagram-search-reels-546ed9dbbe5e5f98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-instagram-search-reels@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-instagram-search-reels-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf00d2761a65eceeeafaf3c6d63ca482b3b2904cbbfff40508928e99e2d9910e",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:12:21.984Z"
+}

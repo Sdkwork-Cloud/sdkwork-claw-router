@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/server-browser-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_browser_automation",
+  "skill": {
+    "id": 60794,
+    "skillKey": "clawhub-server-browser-automation",
+    "name": "Server Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-browser-automation",
+    "url": "https://clawhub.ai/skills/server-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-browser-automation-abd22b39a0273381.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在无桌面 Ubuntu 服务器上通过 XFCE 虚拟桌面和 Chrome 远程调试实现浏览器自动化及持久登录状态管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenzheng9527",
+      "userId": "s170pdrdm0hka9vpsytw1gjhbs83tf44",
+      "displayName": "shenzheng9527",
+      "image": "https://avatars.githubusercontent.com/u/207980092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773824749129,
+      "changelog": "Initial release: browser automation solution for headless Ubuntu servers.\n\n- Provides full OpenClaw browser automation with Chrome in a virtual XFCE desktop via VNC.\n- Supports persistent logins with user profile modes (cookie persistence).\n- Allows AI to operate and automate websites requiring authentication.\n- Includes step-by-step installation (one-click and manual), configuration, troubleshooting, and usage instructions.\n- Suitable for data scraping, automated testing, scheduled jobs, and batch operations on login-required websites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bca120d4da8aa80e66b1b2ab7f4d7c6ae61adff82c6ee20333e754d3cf43107"
+}

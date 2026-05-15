@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64152,
+  "uuid": "skill-clawhub-gsdata-data-search",
+  "skillKey": "clawhub-gsdata-data-search",
+  "name": "gsdata-data-search",
+  "summary": "通过自然语言描述自动解析并调用GSData项目API，搜索多平台新闻数据，支持情感分析和相对时间范围，结果以Markdown格式返回。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsdata_data_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "urhd528",
+      "features": [
+        "通过自然语言描述自动解析并调用GSData项目API，搜索多平台新闻数据，支持情感分析和相对时间范围，结果以Markdown格式返回。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gsdata-data-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211808151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gsdata-data-search",
+      "url": "https://clawhub.ai/skills/gsdata-data-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsdata-data-search",
+    "url": "https://clawhub.ai/skills/gsdata-data-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsdata-data-search-5358d891437a09dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gsdata-data-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gsdata-data-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:566d7243db7a2d97d756d195e5ca7d2a2b45c3fc883f68fd964229b20500d4dc",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:28:16.251Z"
+}

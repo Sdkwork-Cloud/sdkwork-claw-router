@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38745,
+  "uuid": "skill-clawhub-betting-research",
+  "skillKey": "clawhub-betting-research",
+  "name": "Betting Research",
+  "summary": "Multi-source sports betting research tool. Aggregates odds, team form, head-to-head history, weather conditions, and injury data to identify value betting op...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betting_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stigg86",
+      "features": [
+        "Multi-source sports betting research tool",
+        "Aggregates odds, team form, head-to-head history, weather conditions, and injury data to identi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/betting-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106815348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "betting-research",
+      "url": "https://clawhub.ai/skills/betting-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betting-research",
+    "url": "https://clawhub.ai/skills/betting-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betting-research-af58c0725c892b0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/betting-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-betting-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7899988030d7f37c94d79ab6ebda8e7d23ab3fc02c421ee399bf3e02c72b6a2d",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:38:00.518Z"
+}

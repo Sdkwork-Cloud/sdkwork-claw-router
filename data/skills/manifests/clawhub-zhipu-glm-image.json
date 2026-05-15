@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67801,
+  "uuid": "skill-clawhub-zhipu-glm-image",
+  "skillKey": "clawhub-zhipu-glm-image",
+  "name": "Zhipu GLM Image",
+  "summary": "智谱 GLM-Image 网页端图片生成与下载。用于：检查 image.z.ai 登录态、必要时自动打开浏览器登录、抓取浏览器 Cookie、通过网页接口生成图片并下载到本地。适用于“用智谱生图”“生成一张图并保存/发送”“检查智谱登录状态”“自动打开智谱登录页”等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhipu_glm_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangm199",
+      "features": [
+        "智谱 GLM-Image 网页端图片生成与下载。用于：检查 image.z.ai 登录态、必要时自动打开浏览器登录、抓取浏览器 Cookie、通过网页接口生成图片并下载到本地。适用于“用智谱."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhipu-glm-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164614555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhipu-glm-image",
+      "url": "https://clawhub.ai/skills/zhipu-glm-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhipu-glm-image",
+    "url": "https://clawhub.ai/skills/zhipu-glm-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhipu-glm-image-54e2480ed21e30eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhipu-glm-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhipu-glm-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b16b26153a2d3d7e757efe0c4c8739e714f4eb3731b69fa9b461c1d223b6410",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:17:29.862Z"
+}

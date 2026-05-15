@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-performance-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_performance_audit",
+  "skill": {
+    "id": 62042,
+    "skillKey": "clawhub-frontend-performance-audit",
+    "name": "frontend-performance-audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-performance-audit",
+    "url": "https://clawhub.ai/skills/frontend-performance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-performance-audit-dd5d1aeec81a90cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnoder-wgh",
+      "userId": "s177kat3e518801npd0aptksdx83ps2k",
+      "displayName": "cnoder-wgh",
+      "image": "https://avatars.githubusercontent.com/u/15918416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773802472210,
+      "changelog": "frontend-performance-audit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b3f5c02b0c25924ef49284d4ab7a05ba77bf1cd9e68ba7fa68244f7f2767720"
+}

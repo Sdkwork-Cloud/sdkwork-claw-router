@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_maker",
+  "skill": {
+    "id": 53997,
+    "skillKey": "clawhub-free-text-maker",
+    "name": "Free Text Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-maker",
+    "url": "https://clawhub.ai/skills/free-text-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-maker-c8a7af5e7fc0c6d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this text description into a 30-second video with visuals and backgro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777432372453,
+      "changelog": "Initial release of Free Text Maker — turn any text into MP4 videos quickly.\n\n- Instantly generates 30-second videos with visuals and background music from written prompts or uploaded files (TXT, DOCX, PDF, up to 500MB).\n- No video editing skills required; describe your idea and receive a downloadable MP4 in 1–2 minutes.\n- Automatic setup with free credits: connects to cloud GPU video processing using a provided or auto-generated token.\n- Supports balance/credits check, session state queries, and streamlined export/download actions.\n- Error handling includes credit warnings, file restrictions, and troubleshooting guidance for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43c63bf17d995d1ddacdf6ac48c60bfde587afe7b4a7058c65c7e642d3318955"
+}

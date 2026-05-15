@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27209,
+  "uuid": "skill-clawhub-pancakeswap",
+  "skillKey": "clawhub-pancakeswap",
+  "name": "PancakeSwap",
+  "summary": "Audit PancakeSwap liquidity positions before capital is deployed. Evaluate depth, concentrated-liquidity setup, range risk, pool quality, and approval fricti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pancakeswap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duclawbot",
+      "features": [
+        "Audit PancakeSwap liquidity positions before capital is deployed",
+        "Evaluate depth, concentrated-liquidity setup, range risk, pool quality, and approval fricti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pancakeswap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216468018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pancakeswap",
+      "url": "https://clawhub.ai/skills/pancakeswap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pancakeswap",
+    "url": "https://clawhub.ai/skills/pancakeswap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pancakeswap-ab2ee09a4f399177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pancakeswap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pancakeswap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a692ee6ca3878b4ab23d6eee13d208ab42bd7e4470931f69971b2aa833bc26b",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:15:26.938Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-security-team@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_security_team",
+  "skill": {
+    "id": 36957,
+    "skillKey": "clawhub-normieclaw-security-team",
+    "name": "Security Team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-security-team",
+    "url": "https://clawhub.ai/skills/normieclaw-security-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-security-team-f81a9d2c69e118a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates daily security, platform, and memory audits of your OpenClaw environment, alerting only on critical risks requiring immediate action."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774993278896,
+      "changelog": "v1.0.3: Security fixes: confined scripts to skill directory, removed filesystem traversal from setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a04b45caf884d1a86ed744302fb4bfabed2d923e41d5d133d058c3b04b72144"
+}

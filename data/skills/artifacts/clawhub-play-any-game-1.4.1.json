@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-any-game@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_any_game",
+  "skill": {
+    "id": 71350,
+    "skillKey": "clawhub-play-any-game",
+    "name": "Play Any Game - AI游戏伴侣助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-any-game",
+    "url": "https://clawhub.ai/skills/play-any-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-any-game-56fdef1f91c4174a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI游戏伴侣助手 - 当你在游戏中遇到困难、卡关、不知道怎么操作时，AI可以帮你分析游戏画面、解答问题、甚至简单操作界面帮你解决问题。不是全自动代肝，而是你的游戏伙伴，在你需要的时候伸出援手。当用户提到\"帮我看下这个怎么过\"、\"这个怎么操作\"、\"卡关了\"、\"不知道怎么弄\"时使用此技能。支持原神、崩坏星穹铁道等各类游戏。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cgandgameenginelearner",
+      "userId": "s17bn2bkdv37ff9tba48qe551d83nkc7",
+      "displayName": "CGandGameEngineLearner",
+      "image": "https://avatars.githubusercontent.com/u/103875245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1775749649271,
+      "changelog": "版本更新至1.4.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34fe172bc549fdbd91055e26eaf6a5c479983bd5be5d5e8bad69597663f94967"
+}

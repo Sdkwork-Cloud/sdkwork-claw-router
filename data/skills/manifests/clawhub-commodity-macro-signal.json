@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35789,
+  "uuid": "skill-clawhub-commodity-macro-signal",
+  "skillKey": "clawhub-commodity-macro-signal",
+  "name": "commodity-macro-signal",
+  "summary": "Analyze energy, metals, and agricultural commodity markets alongside macro indicators to generate cross-asset macro signals.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commodity_macro_signal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Analyze energy, metals, and agricultural commodity markets alongside macro indicators to genera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commodity-macro-signal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commodity-macro-signal",
+      "url": "https://clawhub.ai/skills/commodity-macro-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commodity-macro-signal",
+    "url": "https://clawhub.ai/skills/commodity-macro-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commodity-macro-signal-76bd34cf870bbd50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commodity-macro-signal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-commodity-macro-signal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4138e09e59937cc86696c78272776f42f1f4f22c181d46860ba90fd1bc169b4f",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:47:52.044Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-graph@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_graph",
+  "skill": {
+    "id": 8822,
+    "skillKey": "clawhub-knowledge-graph",
+    "name": "Knowledge Graph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-graph",
+    "url": "https://clawhub.ai/skills/knowledge-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-graph-21f4f8f2bc86bc89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomic facts (items.json), regenerating entity summaries (summary.md), and keeping IDs consistent. Use when you need deterministic updates to the kno."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "safatinaztepe",
+      "userId": "publishers:safatinaztepe",
+      "displayName": "SafaTinaztepe",
+      "image": "https://avatars.githubusercontent.com/u/8147022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6091,
+      "installsAllTime": 92,
+      "installsCurrent": 83,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770414065298,
+      "changelog": "Initial release of the knowledge-graph skill.\n\n- Enables safe, programmatic updates to Clawdbot's knowledge graph under life/areas/**.\n- Add or supersede atomic facts for any entity via command-line scripts.\n- Ensures fact IDs remain consistent and auto-increment per entity.\n- Supports regenerating entity summaries from active facts.\n- Removes the need for manual JSON edits; prevents deletion of facts by enforcing supersession.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9382b008fc7926c8002ef6ed23767ea6e4ecb6f2fd88c86560465b24b2addefb"
+}

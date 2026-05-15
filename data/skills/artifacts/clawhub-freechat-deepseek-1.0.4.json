@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freechat-deepseek@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freechat_deepseek",
+  "skill": {
+    "id": 20390,
+    "skillKey": "clawhub-freechat-deepseek",
+    "name": "Chat DeepSeek by Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freechat-deepseek",
+    "url": "https://clawhub.ai/skills/freechat-deepseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freechat-deepseek-db8b1dc885d2e1bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "openclaw browser open https://chat.deepseek.com and login it, then input questions from user's messages, extract response of deepseek chat to reply user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qidu",
+      "userId": "s1716ddt8wrq7dhxd61hprgpgs83q1qw",
+      "displayName": "christo",
+      "image": "https://avatars.githubusercontent.com/u/1757861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773717882360,
+      "changelog": "**Major update: Adds direct Chrome (\"user\" profile) browser control for OpenClaw 3.13+ and details new setup.**\n\n- Added full support for OpenClaw versions >= v3.13 using direct Chrome attachment (profile: \"user\"); no relay extension needed.\n- Provided step-by-step setup instructions for enabling Chrome remote debugging.\n- Included profile auto-detection code for backward compatibility with older OpenClaw versions.\n- Retained legacy Chrome relay extension guidance for users on older setups.\n- Expanded troubleshooting and prerequisites sections for easier onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cb8c78d278a46e600988480f98064eccc44ff2439fbc179814c05462597bec3"
+}

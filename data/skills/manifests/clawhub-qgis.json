@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26566,
+  "uuid": "skill-clawhub-qgis",
+  "skillKey": "clawhub-qgis",
+  "name": "qgis",
+  "summary": "Run QGIS geospatial processing with qgis_process for repeatable vector/raster workflows (reproject, clip, dissolve, buffer, merge, raster warping). Use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qgis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Run QGIS geospatial processing with qgis_process for repeatable vector/raster workflows (reproj.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qgis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qgis",
+      "url": "https://clawhub.ai/skills/qgis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qgis",
+    "url": "https://clawhub.ai/skills/qgis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qgis-122bd55703942325.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qgis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qgis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a10ad066bff9baa32e606f6825102381f2efab6b20ebc653a2f4cc7e7a2df24",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:34:07.141Z"
+}

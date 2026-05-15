@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plugineval@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plugineval",
+  "skill": {
+    "id": 39536,
+    "skillKey": "clawhub-plugineval",
+    "name": "PluginEval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plugineval",
+    "url": "https://clawhub.ai/skills/plugineval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plugineval-604048e8cd8d37b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PluginEval Quality Evaluation with enhanced UI. Wraps plugineval-core with vetting and reporting features. Requires plugineval-core."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donmeusi",
+      "userId": "s170xb7fyesxt4gynttf0xzkp183yvaa",
+      "displayName": "Donmeusi",
+      "image": "https://avatars.githubusercontent.com/u/109555289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775662552967,
+      "changelog": "Version 2.0.0: Now wraps plugineval-core. Adds combined security + quality vetting workflow. Gold badge quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8a930a72b8ec33fdbe40169003de205ea096316d633a72f788479f0bf53e12d"
+}

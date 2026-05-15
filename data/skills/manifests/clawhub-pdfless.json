@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36158,
+  "uuid": "skill-clawhub-pdfless",
+  "skillKey": "clawhub-pdfless",
+  "name": "Pdfless",
+  "summary": "Pdfless integration. Manage data, records, and automate workflows. Use when the user wants to interact with Pdfless data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdfless",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pdfless integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Pdfless data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdfless@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdfless",
+      "url": "https://clawhub.ai/skills/pdfless"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdfless",
+    "url": "https://clawhub.ai/skills/pdfless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdfless-00b53c52ab205fa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdfless@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdfless-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cf805990af057aac0e0b36d35acdd89c07a0bc2645b3344b1a9e94b08009552",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:11.326Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65189,
+  "uuid": "skill-clawhub-wenwang-coin",
+  "skillKey": "clawhub-wenwang-coin",
+  "name": "Wenwang Coin Publish",
+  "summary": "提供基于周文王古法的金钱卦占卜、详细卦象解读及针对性占卜建议服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenwang_coin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alisa-xh",
+      "features": [
+        "提供基于周文王古法的金钱卦占卜、详细卦象解读及针对性占卜建议服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wenwang-coin@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271692361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wenwang-coin",
+      "url": "https://clawhub.ai/skills/wenwang-coin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenwang-coin",
+    "url": "https://clawhub.ai/skills/wenwang-coin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenwang-coin-b3d9549974b7b50f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wenwang-coin@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wenwang-coin-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a3a576c3b0ccf289d9f4bdad74e87a561a92406445d58cc95ae3da622a38971",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:22:29.690Z"
+}

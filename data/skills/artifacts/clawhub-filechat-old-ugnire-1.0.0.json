@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filechat-old-ugnire@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filechat_old_ugnire",
+  "skill": {
+    "id": 36574,
+    "skillKey": "clawhub-filechat-old-ugnire",
+    "name": "Google Drive based RAG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filechat-old-ugnire",
+    "url": "https://clawhub.ai/skills/filechat-old-ugnire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filechat-old-ugnire-b13de48602635b1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieve, and chat with documents securely stored in a designated Google Drive folder using semantic vector search (RAG RAG). Use when: (1) a user as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240181715,
+      "changelog": "- Initial release of FileChat skill.\n- Enables secure search, retrieval, and chat with documents stored in a designated Google Drive folder using semantic vector search.\n- Supports storing, syncing, and querying user files, with integration to ChromaDB and Gemini embeddings.\n- Provides guidance for setup, including required environment variables and commands for syncing and querying files.\n- Allows retrieval and direct sending of physical files to users via chat.\n- Automates indexing and embedding of documents uploaded to Google Drive.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a8d2582a5cfae658559c3cfb0de4a973a55a22823be71a2c14640db082ce273"
+}

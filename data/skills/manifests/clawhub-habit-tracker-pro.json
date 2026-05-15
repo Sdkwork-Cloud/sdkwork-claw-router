@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62187,
+  "uuid": "skill-clawhub-habit-tracker-pro",
+  "skillKey": "clawhub-habit-tracker-pro",
+  "name": "Habit Tracker Pro",
+  "summary": "习惯追踪专业版 - 习惯养成、打卡统计、成就系统",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_tracker_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "习惯养成、打卡统计、成就系统"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habit-tracker-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habit-tracker-pro",
+      "url": "https://clawhub.ai/skills/habit-tracker-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-tracker-pro",
+    "url": "https://clawhub.ai/skills/habit-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-tracker-pro-a151d6bc3e2e0f6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habit-tracker-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habit-tracker-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87dfff48325993482eab7598431211e9e6b7ba5b3229f55bd404df18dfe45f59",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:29:01.848Z"
+}

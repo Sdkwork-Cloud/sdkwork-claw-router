@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dairy-queen@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dairy_queen",
+  "skill": {
+    "id": 36457,
+    "skillKey": "clawhub-dairy-queen",
+    "name": "Dairy Queen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dairy-queen",
+    "url": "https://clawhub.ai/skills/dairy-queen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dairy-queen-9711dad4d2f28ddd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides information on Dairy Queen's history, products, global presence, market position, and latest news."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238499038,
+      "changelog": "- Updated documentation to focus on a user-friendly usage guide format  \n- Organized content with clear navigation sections:品牌故事, 产品矩阵, 全球足迹, 行业观察  \n- Added example use scenarios for easier reference  \n- Simplified and clarified the tone for general audiences  \n- Relocated official website and reading advice to the end for quick access",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49b344759e4b8ea853ba4c19ac559709163354f845e9a359c8d7d5c58c146c6b"
+}

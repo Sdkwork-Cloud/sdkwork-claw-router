@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11812,
+  "uuid": "skill-clawhub-clawflow",
+  "skillKey": "clawhub-clawflow",
+  "name": "Clawflow",
+  "summary": "Protocol for multi-agent collaboration via OpenClaw's message-passing and recursive task DAGs. Use this skill whenever the user wants to coordinate work acro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "srikanth235",
+      "features": [
+        "Protocol for multi-agent collaboration via OpenClaw's message-passing and recursive task DAGs",
+        "Use this skill whenever the user wants to coordinate work acro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2303589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawflow",
+      "url": "https://clawhub.ai/skills/clawflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawflow",
+    "url": "https://clawhub.ai/skills/clawflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawflow-6cb6f0cd8dcf12af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56170817e86fc8c573aa779d2b5175a82654e19672138f2cf428c53447924dce",
+      "artifactSizeBytes": 2603
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:32:00.556Z"
+}

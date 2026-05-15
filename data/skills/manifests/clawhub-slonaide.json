@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32858,
+  "uuid": "skill-clawhub-slonaide",
+  "skillKey": "clawhub-slonaide",
+  "name": "SlonAide",
+  "summary": "Query and manage SlonAide voice recording notes - list recordings, get transcriptions and AI summaries.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slonaide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajingmiao",
+      "features": [
+        "Query and manage SlonAide voice recording notes",
+        "list recordings, get transcriptions and AI summaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slonaide@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3364984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slonaide",
+      "url": "https://clawhub.ai/skills/slonaide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slonaide",
+    "url": "https://clawhub.ai/skills/slonaide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slonaide-09bc8ca1eca2c7b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slonaide@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slonaide-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c4271383105f285bf8542a297d162932f27e572de0a9d71ef5eb506f0b314e9",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:24:01.997Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38149,
+  "uuid": "skill-clawhub-dep-graph",
+  "skillKey": "clawhub-dep-graph",
+  "name": "Dep Graph",
+  "summary": "Analyze and visualize project dependency trees from manifest files. Supports Node.js (package.json), Python (requirements.txt, pyproject.toml), Go (go.mod),...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dep_graph",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Analyze and visualize project dependency trees from manifest files",
+        "Supports Node.js (package.json), Python (requirements.txt, pyproject.toml), Go (go.mod),..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dep-graph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dep-graph",
+      "url": "https://clawhub.ai/skills/dep-graph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dep-graph",
+    "url": "https://clawhub.ai/skills/dep-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dep-graph-2f041d6f73618b89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dep-graph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dep-graph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:328166223cda33519fcb37620c47b87275605c76594dc352a249953c69629068",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:07:50.442Z"
+}

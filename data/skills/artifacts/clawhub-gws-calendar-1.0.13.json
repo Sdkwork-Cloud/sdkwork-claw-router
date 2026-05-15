@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-calendar@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_calendar",
+  "skill": {
+    "id": 12405,
+    "skillKey": "clawhub-gws-calendar",
+    "name": "Gws Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-calendar",
+    "url": "https://clawhub.ai/skills/gws-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-calendar-2a36f1f7d290b666.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Calendar: Manage calendars and events."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1462,
+      "installsAllTime": 24,
+      "installsCurrent": 22,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1774981986168,
+      "changelog": "- Updated version metadata from 0.22.4 to 0.22.5 in SKILL.md.\n- No functional or user-facing changes; documentation version information updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ba1d5cc6f526ed1e3cb649f0953e4b10e93be2f1c5f664ed54f053234e3d5b8"
+}

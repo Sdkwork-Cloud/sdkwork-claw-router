@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34760,
+  "uuid": "skill-clawhub-nudgify",
+  "skillKey": "clawhub-nudgify",
+  "name": "Nudgify",
+  "summary": "Nudgify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Nudgify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nudgify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Nudgify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Nudgify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nudgify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nudgify",
+      "url": "https://clawhub.ai/skills/nudgify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nudgify",
+    "url": "https://clawhub.ai/skills/nudgify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nudgify-8d2f67f12cca9c08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nudgify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nudgify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3283e50386ab5eb5328db93560cb7de4bf8acc0492b49b4423cfe5dacf252b94",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:18:26.403Z"
+}

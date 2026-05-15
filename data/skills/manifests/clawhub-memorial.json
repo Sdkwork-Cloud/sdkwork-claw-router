@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72049,
+  "uuid": "skill-clawhub-memorial",
+  "skillKey": "clawhub-memorial",
+  "name": "纪念.skill",
+  "summary": "为逝去的亲人建立纪念档案，让记忆得以延续。支持文字追忆、人格重建、声音克隆。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memorial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry-cyx",
+      "features": [
+        "为逝去的亲人建立纪念档案，让记忆得以延续。支持文字追忆、人格重建、声音克隆。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memorial@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52375812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memorial",
+      "url": "https://clawhub.ai/skills/memorial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memorial",
+    "url": "https://clawhub.ai/skills/memorial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memorial-da1c95dd1a2a9870.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memorial@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memorial-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:228bf13ad950fa39afbbb27c2085a5b5cf5970a82ea928c382401f00430eed6e",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T14:04:41.323Z"
+}

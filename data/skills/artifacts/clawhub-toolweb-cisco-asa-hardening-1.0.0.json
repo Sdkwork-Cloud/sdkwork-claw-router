@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-cisco-asa-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_cisco_asa_hardening",
+  "skill": {
+    "id": 39568,
+    "skillKey": "clawhub-toolweb-cisco-asa-hardening",
+    "name": "Cisco ASA Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-cisco-asa-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-cisco-asa-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-cisco-asa-hardening-41fa0efc4570c9a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates hardened Cisco ASA firewall configurations based on security best practices and specified hardening options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774899015457,
+      "changelog": "Cisco ASA Hardening Tool v1.0.0\n\n- Initial release of a tool for generating hardened Cisco ASA firewall configurations using security best practices.\n- Accepts customizable hardening options and session metadata to produce optimized configurations.\n- Provides organized configuration categories, explicit CLI command sets, and deployment time estimates in the response.\n- Offers clear API documentation for the /api/asa/generate endpoint, including request and response examples and error handling.\n- Introduces tiered pricing plans covering Free, Developer, Professional, and Enterprise levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ef4cc70d3821fb4f84dadff6580db8b7905e148d7b7fbc2af43a70a4277af92"
+}

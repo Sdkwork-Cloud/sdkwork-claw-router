@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26790,
+  "uuid": "skill-clawhub-gitlab-batch-cloner",
+  "skillKey": "clawhub-gitlab-batch-cloner",
+  "name": "GitLab Batch Cloner",
+  "summary": "Batch clone GitLab group projects with branch checkout and Excel indexing. Use when user needs to clone all projects from a GitLab group, organize by group s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_batch_cloner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pangfan",
+      "features": [
+        "Batch clone GitLab group projects with branch checkout and Excel indexing",
+        "Use when user needs to clone all projects from a GitLab group, organize by group s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitlab-batch-cloner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13780091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitlab-batch-cloner",
+      "url": "https://clawhub.ai/skills/gitlab-batch-cloner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-batch-cloner",
+    "url": "https://clawhub.ai/skills/gitlab-batch-cloner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-batch-cloner-853ce6194415813a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitlab-batch-cloner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-batch-cloner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1a75ec027f025bf85faaff98cada9832877268e543c33c20f93a5a8f1557c41",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:29:48.502Z"
+}

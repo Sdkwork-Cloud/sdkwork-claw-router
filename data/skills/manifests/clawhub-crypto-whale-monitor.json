@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9883,
+  "uuid": "skill-clawhub-crypto-whale-monitor",
+  "skillKey": "clawhub-crypto-whale-monitor",
+  "name": "Crypto Whale Monitor",
+  "summary": "Monitors large cryptocurrency wallet balances (whales) on-chain using Web3 RPC to detect potential market-moving activity. Can read from `references/wallets....",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_whale_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waleolapo",
+      "features": [
+        "Monitors large cryptocurrency wallet balances (whales) on-chain using Web3 RPC to detect potent.",
+        "Can read from `references/wallets...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-whale-monitor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12134378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-whale-monitor",
+      "url": "https://clawhub.ai/skills/crypto-whale-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-whale-monitor",
+    "url": "https://clawhub.ai/skills/crypto-whale-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-whale-monitor-9c4c9cec632817b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-whale-monitor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-whale-monitor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9702f059c341e246c8393d6db68eaa8d02394ba08e9b4e8cfcfd60cb108ff889",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T09:16:47.884Z"
+}

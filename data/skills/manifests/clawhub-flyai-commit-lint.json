@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43242,
+  "uuid": "skill-clawhub-flyai-commit-lint",
+  "skillKey": "clawhub-flyai-commit-lint",
+  "name": "Flyai Commit Lint",
+  "summary": "Enforce conventional commit messages with semantic validation, scope checking, and automated fix suggestions for git workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_commit_lint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Enforce conventional commit messages with semantic validation, scope checking, and automated fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-commit-lint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-commit-lint",
+      "url": "https://clawhub.ai/skills/flyai-commit-lint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-commit-lint",
+    "url": "https://clawhub.ai/skills/flyai-commit-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-commit-lint-cf6f9ce2a27aeba4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-commit-lint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-commit-lint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ce89c0cecb8ffdc60be36a84925627beea69254fe9aa97c3c6d9e5f6106b2f0",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:12:02.527Z"
+}

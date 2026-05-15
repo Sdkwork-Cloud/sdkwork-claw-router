@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lark-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_integration",
+  "skill": {
+    "id": 9114,
+    "skillKey": "clawhub-lark-integration",
+    "name": "Lark Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-integration",
+    "url": "https://clawhub.ai/skills/lark-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-integration-f61e623e19302436.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect Lark (Feishu) messaging to OpenClaw via webhook bridge. Supports text, rich text (post), and image messages bidirectionally. Use when setting up Lark/Feishu as a messaging channel, receiving messages with images, sending replies ba."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boyangwang",
+      "userId": "publishers:boyangwang",
+      "displayName": "boyangwang",
+      "image": "https://avatars.githubusercontent.com/u/2408273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4668,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769979378161,
+      "changelog": "Initial release: Full Lark/Feishu integration with text, rich text, and image support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc5ee73cfac131e46c6a73ea5cd476def0b3a9c10f2bef7a8608aaddc5fa29c3"
+}

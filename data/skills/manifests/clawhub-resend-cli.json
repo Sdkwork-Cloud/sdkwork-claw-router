@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25426,
+  "uuid": "skill-clawhub-resend-cli",
+  "skillKey": "clawhub-resend-cli",
+  "name": "Resend CLI",
+  "summary": "Send and manage emails via the Resend CLI. Covers sending, domains, contacts, segments, broadcasts, templates, topics, webhooks, and API keys.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maciejlis",
+      "features": [
+        "Send and manage emails via the Resend CLI",
+        "Covers sending, domains, contacts, segments, broadcasts, templates, topics, webhooks, and API k."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resend-cli@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15613594?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resend-cli",
+      "url": "https://clawhub.ai/skills/resend-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-cli",
+    "url": "https://clawhub.ai/skills/resend-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-cli-e7222533ebbcc3cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resend-cli@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-resend-cli-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c41f002883f772fe1d27dc1c5084c7c46bd3a694fdb963818286f758b7a7ff",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T21:24:21.870Z"
+}

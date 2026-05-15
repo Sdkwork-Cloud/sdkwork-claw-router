@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42149,
+  "uuid": "skill-clawhub-self-improving-support",
+  "skillKey": "clawhub-self-improving-support",
+  "name": "Self-Improving Support",
+  "summary": "Captures ticket resolution delays, misdiagnoses, escalation gaps, SLA breaches, knowledge gaps, and customer churn signals to enable continuous support impro...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_support",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "José I. O.",
+      "features": [
+        "Captures ticket resolution delays, misdiagnoses, escalation gaps, SLA breaches, knowledge gaps,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-support@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30682875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-support",
+      "url": "https://clawhub.ai/skills/self-improving-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-support",
+    "url": "https://clawhub.ai/skills/self-improving-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-support-72d2ae12e0f99316.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-support@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-support-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0af1cf8e0bc1239afb1c21722cc9b534aa7128a1744c3a158012d6aac74473d9",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:32:40.632Z"
+}

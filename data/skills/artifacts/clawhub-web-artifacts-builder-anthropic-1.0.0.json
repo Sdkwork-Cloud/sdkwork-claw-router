@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-artifacts-builder-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_artifacts_builder_anthropic",
+  "skill": {
+    "id": 25620,
+    "skillKey": "clawhub-web-artifacts-builder-anthropic",
+    "name": "Web Artifacts Builder Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-artifacts-builder-anthropic",
+    "url": "https://clawhub.ai/skills/web-artifacts-builder-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-artifacts-builder-anthropic-46640b65877f215b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773509713317,
+      "changelog": "Initial release of web-artifacts-builder:\n\n- Provides a complete tool suite for building advanced claude.ai HTML artifacts using React, Tailwind CSS, and shadcn/ui.\n- Includes initialization and bundling scripts to streamline artifact creation and packaging into a single HTML file.\n- Pre-configures modern frontend stack: React 18, TypeScript, Vite, Parcel, Tailwind CSS, shadcn/ui, and Radix UI.\n- Offers detailed step-by-step usage instructions and design guidelines.\n- Contains 40+ shadcn/ui components and path alias configuration out of the box.\n- Includes optional guidance for testing and sharing artifacts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b53d7bb0d4149d483d226292af835ec3e6d04c452cc3686994ecb8b5ef7e306"
+}

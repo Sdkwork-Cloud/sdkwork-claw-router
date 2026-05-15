@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36586,
+  "uuid": "skill-clawhub-meeting-agenda-creator",
+  "skillKey": "clawhub-meeting-agenda-creator",
+  "name": "meeting-agenda-creator",
+  "summary": "Automatically generate professional meeting agendas with time allocation and discussion points",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_agenda_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huajianjiu",
+      "features": [
+        "Automatically generate professional meeting agendas with time allocation and discussion points"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-agenda-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163974966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-agenda-creator",
+      "url": "https://clawhub.ai/skills/meeting-agenda-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-agenda-creator",
+    "url": "https://clawhub.ai/skills/meeting-agenda-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-agenda-creator-118f46fb6a80386c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-agenda-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-agenda-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93f28c248d541ed9801f9215f3faa4b6936fdd752d082ce7df1eb615f839a8b0",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:32:04.945Z"
+}

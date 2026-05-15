@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53730,
+  "uuid": "skill-clawhub-pixmind-image-compress",
+  "skillKey": "clawhub-pixmind-image-compress",
+  "name": "Pixmind Image Compress",
+  "summary": "Cloud-powered image compression and resize — compress JPG/PNG/WebP/HEIC to WebP/AVIF, resize images, batch process folders. No local dependencies, uses Tence...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixmind_image_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pixmind",
+      "features": [
+        "Cloud-powered image compression and resize — compress JPG/PNG/WebP/HEIC to WebP/AVIF, resize im.",
+        "No local dependencies, uses Tence..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixmind-image-compress@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19215394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixmind-image-compress",
+      "url": "https://clawhub.ai/skills/pixmind-image-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixmind-image-compress",
+    "url": "https://clawhub.ai/skills/pixmind-image-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixmind-image-compress-cf710ce88a7e7764.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixmind-image-compress@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixmind-image-compress-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:945486e8747b8b003cf54719b366b3a58621d36d44e714f46b6c94d6b1fdbb43",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:19:34.971Z"
+}

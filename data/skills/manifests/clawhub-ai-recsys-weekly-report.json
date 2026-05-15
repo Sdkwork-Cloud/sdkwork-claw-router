@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65103,
+  "uuid": "skill-clawhub-ai-recsys-weekly-report",
+  "skillKey": "clawhub-ai-recsys-weekly-report",
+  "name": "AI RecSys Weekly Report",
+  "summary": "自动生成关于\"AI大模型（LLM、VLM等）技术在搜索、广告、推荐（搜广推）领域应用\"的深度技术周报， 并自动同步到 IMA（腾讯文档/知识库）。触发词：AI搜广推技术周报、搜广推周报、大模型推荐报告、 推荐系统技术周报、生成式推荐周报、Transformer推荐系统报告、Scaling Law推荐系统、 MoE...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_recsys_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fandywang87",
+      "features": [
+        "自动生成关于\"AI大模型（LLM、VLM等）技术在搜索、广告、推荐（搜广推）领域应用\"的深度技术周报， 并自动同步到 IMA（腾讯文档/知识库）。触发词：AI搜广推技术周报、搜广推周报、大模."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-recsys-weekly-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255051907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-recsys-weekly-report",
+      "url": "https://clawhub.ai/skills/ai-recsys-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-recsys-weekly-report",
+    "url": "https://clawhub.ai/skills/ai-recsys-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-recsys-weekly-report-ab491188ecb3c135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-recsys-weekly-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-recsys-weekly-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc3f7a97b1adac8cfc84c3a05a02c8d5f21bf593f8caee47b3b4f62145b33a5c",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:56:33.968Z"
+}

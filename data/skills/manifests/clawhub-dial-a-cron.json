@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40819,
+  "uuid": "skill-clawhub-dial-a-cron",
+  "skillKey": "clawhub-dial-a-cron",
+  "name": "Dial A Cron",
+  "summary": "Stateful cron system for OpenClaw with persistent memory, change detection, smart routing, token budget tracking, and self-healing. Requires 'openclaw' and '...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dial_a_cron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenthyjack",
+      "features": [
+        "Stateful cron system for OpenClaw with persistent memory, change detection, smart routing, toke.",
+        "Requires 'openclaw' and '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dial-a-cron@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268943245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dial-a-cron",
+      "url": "https://clawhub.ai/skills/dial-a-cron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dial-a-cron",
+    "url": "https://clawhub.ai/skills/dial-a-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dial-a-cron-9609d61287646f58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dial-a-cron@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dial-a-cron-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d81a0dd30e892f06560061e4b66dabcfc732901af1554f9dad854196c3193477",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T00:00:50.048Z"
+}

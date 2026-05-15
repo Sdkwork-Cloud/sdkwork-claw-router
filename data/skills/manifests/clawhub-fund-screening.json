@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66279,
+  "uuid": "skill-clawhub-fund-screening",
+  "skillKey": "clawhub-fund-screening",
+  "name": "fund-screening",
+  "summary": "基金筛选与定投实战技能。使用五维筛选体系（业绩/经理/风格/持仓/机构）从天天基金网和晨星网筛选优质基金，构建投资组合并执行定投策略。触发场景：用户提到\"基金筛选\"、\"基金定投\"、\"选基\"、\"筛选基金\"、\"基金组合\"、\"定投策略\"、\"fund screening\"、\"fund DCA\"，或要求推荐/分析/对比基金...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_screening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allen Chen",
+      "features": [
+        "基金筛选与定投实战技能。使用五维筛选体系（业绩/经理/风格/持仓/机构）从天天基金网和晨星网筛选优质基金，构建投资组合并执行定投策略。触发场景：用户提到\"基金筛选\"、\"基金定投\"、\"选基\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-screening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2897683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-screening",
+      "url": "https://clawhub.ai/skills/fund-screening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-screening",
+    "url": "https://clawhub.ai/skills/fund-screening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-screening-d2febf910cc546f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-screening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-screening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2847c8af39d011280f67de1a020b662fa24901a9dc5a099ab1bb7344c4f1264",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:07:55.592Z"
+}

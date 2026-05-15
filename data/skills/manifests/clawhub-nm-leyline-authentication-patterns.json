@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32312,
+  "uuid": "skill-clawhub-nm-leyline-authentication-patterns",
+  "skillKey": "clawhub-nm-leyline-authentication-patterns",
+  "name": "Nm Leyline Authentication Patterns",
+  "summary": "Authentication patterns for external services: API keys, OAuth, token management, verification. authentication, API keys, OAuth, token management, credentials.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_leyline_authentication_patterns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Authentication patterns for external services: API keys, OAuth, token management, verification",
+        "authentication, API keys, OAuth, token management, credentials."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-leyline-authentication-patterns@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-leyline-authentication-patterns",
+      "url": "https://clawhub.ai/skills/nm-leyline-authentication-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-leyline-authentication-patterns",
+    "url": "https://clawhub.ai/skills/nm-leyline-authentication-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-leyline-authentication-patterns-f1f41fe67e0919a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-leyline-authentication-patterns@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-leyline-authentication-patterns-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a93de798988a6a61ef2faa632b739247687b33f603683846767057c6421abaed",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:17:40.526Z"
+}

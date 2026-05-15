@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aura-image-gen@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_image_gen",
+  "skill": {
+    "id": 51875,
+    "skillKey": "clawhub-aura-image-gen",
+    "name": "Aura Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-image-gen",
+    "url": "https://clawhub.ai/skills/aura-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-image-gen-6e25d9ad3b28202c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform infographic card generator for Xiaohongshu, Pinterest, Instagram, and more. Provides 8 visual styles × 8 layouts with platform-specific aspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luoboask",
+      "userId": "s174p3mxqgx91w315yr250apk983kqhb",
+      "displayName": "luoboask",
+      "image": "https://avatars.githubusercontent.com/u/67533551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774452939779,
+      "changelog": "Aura Image Gen 2.0.0 introduces a major upgrade with a flexible, multi-platform system and expanded style/layout options:\n\n- Added support for 8 visual styles × 8 layouts × 6+ platforms (Xiaohongshu, Pinterest, Instagram, YouTube).\n- Provides detailed style definitions and layout structures for rich customization.\n- Features a workflow system for analyzing content, selecting presets, and assembling prompts per platform specs.\n- New structure includes platform-specific ratios, style yaml blocks, and visual authenticity tips for professional results.\n- Extensive reference and preset documentation now included for styles, elements, and workflows.\n- Greatly enhances use cases beyond Xiaohongshu to support a wider range of social media visual needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2da78094d0b62c602e27802dfc15f94590c1cd0cfd62029a64cb8aa8ba7d577d"
+}

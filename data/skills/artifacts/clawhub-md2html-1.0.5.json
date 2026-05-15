@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2html@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2html",
+  "skill": {
+    "id": 59249,
+    "skillKey": "clawhub-md2html",
+    "name": "Convert Markdown To HTML And PDF - Markdown和HTML、PDF互转"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2html",
+    "url": "https://clawhub.ai/skills/md2html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2html-22f36e7f62472d12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown 与 HTML 互转，并支持 Markdown 转 PDF。当用户说：把这篇 MD 转成 HTML、导出 PDF，或类似文档格式转换时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 9,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775208594963,
+      "changelog": "Version 1.0.5\n\n- Updated skill name and description for improved clarity and discoverability.\n- Added detailed section about 极速数据 (JisuAPI) and its capabilities.\n- No code changes; documentation and metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a45dae2dc864f2728832d445fb5fe26e3dd3aca71fde9ba567d5ad77af12065c"
+}

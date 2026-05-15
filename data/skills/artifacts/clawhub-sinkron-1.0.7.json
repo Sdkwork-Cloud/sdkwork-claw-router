@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sinkron@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sinkron",
+  "skill": {
+    "id": 50376,
+    "skillKey": "clawhub-sinkron",
+    "name": "Sinkron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sinkron",
+    "url": "https://clawhub.ai/skills/sinkron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sinkron-ce7e6c198d96a14b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide AI agents with permanent email identities using Sinkron CLI and Python SDK. Requires SINKRON_TOKEN (self-issued by the Sinkron backend via `sinkron r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zororaka00",
+      "userId": "publishers:zororaka00",
+      "displayName": "Web3 Hungry",
+      "image": "https://avatars.githubusercontent.com/u/24318495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772426839354,
+      "changelog": "- Added explicit pypi_package_version (\"1.0.2\") and updated the long description to mention this package version.\n- Clarified in the description that SINKRON_TOKEN must be set as an environment variable before use.\n- Improved clarity on token management and environment variable requirements.\n- No changes to core logic or feature set; documentation and metadata updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:602765c8d367da6bd18908b5bd788c627fb213c2a27a713ef9bcd61604763e40"
+}

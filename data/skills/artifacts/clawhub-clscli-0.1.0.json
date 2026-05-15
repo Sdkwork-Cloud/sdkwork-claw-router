@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clscli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clscli",
+  "skill": {
+    "id": 12655,
+    "skillKey": "clawhub-clscli",
+    "name": "Tencent Cloud Log Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clscli",
+    "url": "https://clawhub.ai/skills/clscli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clscli-a8cfba9b217edb6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and analyze Tencent Cloud CLS logs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbwang0130",
+      "userId": "publishers:dbwang0130",
+      "displayName": "dbwang0130",
+      "image": "https://avatars.githubusercontent.com/u/1523197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1709,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770280040897,
+      "changelog": "- Added explicit instruction in setup to specify region via the `--region` flag (e.g. ap-guangzhou).\n- No functional changes; updated documentation to improve clarity about required region usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d9b38e51c9800be570609fa77db5e3bca0d8170f7aeda8cd7a30a587a33e0e5"
+}

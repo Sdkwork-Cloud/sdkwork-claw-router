@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-horror@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_horror",
+  "skill": {
+    "id": 41406,
+    "skillKey": "clawhub-ai-video-generator-free-horror",
+    "name": "Ai Video Generator Free Horror"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-horror",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-horror",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-horror-7c70185dd476a9fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts or images into horror video clips with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. indie filmmakers, horror content cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776758448770,
+      "changelog": "AI Video Generator Free Horror — Initial Release\n\n- Generate free AI horror videos from text prompts or images, processed in 1–2 minutes with 1080p MP4 output.\n- Supports uploads in MP4, MOV, JPG, PNG formats (max 200MB).\n- Sessions handled securely with automatic token management for both registered and anonymous users.\n- Built-in management for credits, timeline state, exports, and error handling.\n- Clear mapping from user prompts to key actions (generate, upload, export, credits, status).\n- Designed for indie filmmakers and horror content creators; optimized for usability and fast horror video generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ac4ec2d2448468e12eccd96e3cce133ffd4e255a266d5179b12b47943a3f6fd"
+}

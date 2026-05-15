@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/civitai-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civitai_api",
+  "skill": {
+    "id": 42655,
+    "skillKey": "clawhub-civitai-api",
+    "name": "Civitai API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civitai-api",
+    "url": "https://clawhub.ai/skills/civitai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civitai-api-e33455f6656b747f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the Civitai public REST API to search models, inspect creators, fetch model or version details, reverse-lookup models by hash, list images or tags, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanestane",
+      "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+      "displayName": "Stanislav Stankovic",
+      "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776098221241,
+      "changelog": "Initial release: Civitai public REST API search, detail, hash lookup, image/tag/creator search, download URL builder, and cursor pagination support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c257b445005a92e18793633e27bf95270d7eea297566bd4d95b8e8398f03a489"
+}

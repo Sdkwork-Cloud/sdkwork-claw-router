@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "voipms-sms",
+    "displayName": "Voipms Sms",
+    "summary": "OpenClaw skill for sending and retrieving SMS messages via the VoIP.ms API (no Bitwarden dependency).",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1772139900914,
+    "updatedAt": 1778388500103
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1772310112879,
+    "changelog": "- Removed Bitwarden vault dependency for API credentials; you now set `VOIPMS_API_USERNAME` and `VOIPMS_API_PASSWORD` directly as environment variables.\n- Updated documentation to reflect new credential setup and recommend using a dedicated sub-account with SMS permissions.\n- Skill functionality for sending and retrieving SMS via VoIP.ms API remains unchanged.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "ccormier",
+    "userId": "s171xrbev0jph2rb4zpqx7v0ax85r4mh",
+    "displayName": "ccormier",
+    "image": "https://avatars.githubusercontent.com/u/1540819?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388500103
+  }
+}

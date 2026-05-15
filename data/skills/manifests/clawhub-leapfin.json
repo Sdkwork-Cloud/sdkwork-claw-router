@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35044,
+  "uuid": "skill-clawhub-leapfin",
+  "skillKey": "clawhub-leapfin",
+  "name": "Leapfin",
+  "summary": "Leapfin integration. Manage data, records, and automate workflows. Use when the user wants to interact with Leapfin data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leapfin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Leapfin integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Leapfin data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leapfin@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leapfin",
+      "url": "https://clawhub.ai/skills/leapfin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leapfin",
+    "url": "https://clawhub.ai/skills/leapfin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leapfin-97f1854df37e8c48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leapfin@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-leapfin-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:727112b1303f533e28316929e8d4a8b3000ac57ab9d0f216421359869ac0ec07",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:06:35.821Z"
+}

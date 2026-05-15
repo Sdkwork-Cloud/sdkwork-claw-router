@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coralos-run-remote-agents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coralos_run_remote_agents",
+  "skill": {
+    "id": 54366,
+    "skillKey": "clawhub-coralos-run-remote-agents",
+    "name": "CoralOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coralos-run-remote-agents",
+    "url": "https://clawhub.ai/skills/coralos-run-remote-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coralos-run-remote-agents-248f522c57737ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end Coral Cloud workflow — discover registry remote agents, compose and launch a session of agents, then monitor and close it."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omni-georgio",
+      "userId": "s17cgadmy8aw59ptgnhzesgckn84s3jq",
+      "displayName": "omni-georgio",
+      "image": "https://avatars.githubusercontent.com/u/82511949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776114673269,
+      "changelog": "Initial release of the Coral Cloud end-to-end workflow skill.\n\n- Discover available registry agents and inspect details.\n- Compose and submit a session payload to launch remote agents.\n- Monitor session progress and manage agent lifecycle.\n- Includes example scripts and payload templates for fast onboarding.\n- API endpoints and command-line helpers documented step-by-step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2008fc8862814ce596ddd151353592bb00c39351bde61240eb95c5b27ea86632"
+}

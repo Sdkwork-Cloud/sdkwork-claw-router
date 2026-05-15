@@ -1,3 +1,4 @@
+use std::collections::HashSet;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
@@ -31,7 +32,7 @@ async fn database_config_app_model_rankings_route_reads_installed_catalog_snapsh
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/model-rankings?limit=5")
+                .uri("/app/v3/api/ai/model_rankings?limit=5")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -53,6 +54,17 @@ async fn database_config_app_model_rankings_route_reads_installed_catalog_snapsh
     assert_eq!("commercial-default", payload["data"]["source"]["rankScope"]);
     let items = payload["data"]["items"].as_array().unwrap();
     assert_eq!(5, items.len());
+    let history_catalog_keys: HashSet<&str> = payload["data"]["history"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .flat_map(|point| point["entries"].as_array().into_iter().flatten())
+        .filter_map(|entry| entry["catalogKey"].as_str())
+        .collect();
+    assert!(
+        !history_catalog_keys.is_empty(),
+        "ranking history must expose stable catalog identities"
+    );
     for item in items {
         assert!(item["rank"].as_u64().is_some_and(|rank| rank > 0));
         assert!(item["name"].as_str().is_some_and(|name| !name.is_empty()));
@@ -63,9 +75,15 @@ async fn database_config_app_model_rankings_route_reads_installed_catalog_snapsh
             .as_str()
             .is_some_and(|vendor_code| !vendor_code.is_empty()));
         assert_eq!("LLM", item["modality"]);
-        assert!(item["id"]
-            .as_str()
-            .is_some_and(|id| id.starts_with("2026-05-08:")));
+        let id = item["id"].as_str().unwrap();
+        assert!(
+            !id.starts_with("2026-05-08:"),
+            "ranking item id must be stable catalog identity, not snapshot-date scoped"
+        );
+        assert!(
+            history_catalog_keys.contains(id),
+            "ranking item id must match ranking history catalogKey"
+        );
     }
 }
 
@@ -137,7 +155,7 @@ async fn database_config_app_startup_worker_auto_refreshes_rankings_and_records_
 
     let payload = request_json(
         router,
-        "/app/v3/api/router/model-rankings?rankScope=commercial-default&limit=5",
+        "/app/v3/api/ai/model_rankings?rankScope=commercial-default&limit=5",
     )
     .await;
     assert_eq!("2000", payload["code"]);
@@ -192,7 +210,7 @@ async fn database_config_app_models_route_reads_global_commercial_catalog() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models?billingMeter=llm_input_token")
+                .uri("/app/v3/api/ai/models?billing_meter=llm_input_token")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -321,7 +339,7 @@ async fn assert_catalog_meter_contains(
             Request::builder()
                 .method("GET")
                 .uri(format!(
-                    "/app/v3/api/router/models?billingMeter={billing_meter}"
+                    "/app/v3/api/ai/models?billing_meter={billing_meter}"
                 ))
                 .body(Body::empty())
                 .unwrap(),

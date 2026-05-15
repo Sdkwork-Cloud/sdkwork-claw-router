@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-green@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_green",
+  "skill": {
+    "id": 55570,
+    "skillKey": "clawhub-subtitle-generator-green",
+    "name": "Subtitle Generator Green"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-green",
+    "url": "https://clawhub.ai/skills/subtitle-generator-green",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-green-7562ef03207c9179.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add green-colored subtitles to my video automatically — and get green-capt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777822481664,
+      "changelog": "Subtitle Generator Green skill — initial release!\n\n- Automatically adds green-colored subtitles to uploaded videos (MP4, MOV, AVI, WebM up to 500MB).\n- Cloud-based processing — no local software required.\n- Simple setup: connects to backend, retrieves access token if needed, and starts session automatically.\n- Supports fast video exports (about 30–60 seconds for a 2-minute clip) at up to 1080p.\n- Includes commands for uploading, exporting, checking credits, and managing session state.\n- Clear feedback and error handling for uploads, exports, and account issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fefe153fe944f114986b44981fbbfee85aa2c607693493ba1cf58233e9cd0574"
+}

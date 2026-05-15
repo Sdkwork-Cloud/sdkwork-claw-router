@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9812,
+  "uuid": "skill-clawhub-munger-observer",
+  "skillKey": "clawhub-munger-observer",
+  "name": "Munger Observer",
+  "summary": "Daily wisdom review applying Charlie Munger's mental models to your work and thinking. Use when asked to review decisions, analyze thinking patterns, detect biases, apply mental models, do a \"Munger review\", or run the Munger Observer. Tri.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.munger_observer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Rhyne",
+      "features": [
+        "Daily wisdom review applying Charlie Munger's mental models to your work and thinking",
+        "Use when asked to review decisions, analyze thinking patterns, detect biases, apply mental mode.",
+        "Triggers on scheduled daily reviews or manual requests like \"run munger observer\", \"review my t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/munger-observer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7828464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "munger-observer",
+      "url": "https://clawhub.ai/skills/munger-observer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "munger-observer",
+    "url": "https://clawhub.ai/skills/munger-observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/munger-observer-702623bb78c08830.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/munger-observer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-munger-observer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8772a84bfff7c0a8f0cb00dcd444b1f21bdf6d2cc5bd305353ecb98f723256e4",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T16:22:25.348Z"
+}

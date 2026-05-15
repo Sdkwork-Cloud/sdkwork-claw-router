@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-auto-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auto_sync",
+  "skill": {
+    "id": 26893,
+    "skillKey": "clawhub-memory-auto-sync",
+    "name": "Memory Auto Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auto-sync",
+    "url": "https://clawhub.ai/skills/memory-auto-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auto-sync-9e65ee05ee3f4bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically records and saves all user-assistant conversations daily as Markdown files with zero dependencies and full OpenClaw compatibility."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tao-articism",
+      "userId": "publishers:tao-articism",
+      "displayName": "tao-articism",
+      "image": "https://avatars.githubusercontent.com/u/264350888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773753697262,
+      "changelog": "Initial release of memory-auto-sync:\n\n- Automatically syncs all user-assistant conversations to daily Markdown files in real time.\n- Uses only Node.js native APIs—no third-party dependencies required.\n- Minimal logic: file write only, ensuring stability and zero errors.\n- Fully compatible with all OpenClaw versions, preventing API compatibility issues.\n- Maintains identical file formats with previous manual memory files for seamless integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34f150c2887efafe70fd40a91d0229393fd1df374b0ad158cd6d2d83202fecf0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-protocol@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_protocol",
+  "skill": {
+    "id": 12278,
+    "skillKey": "clawhub-pilot-protocol",
+    "name": "Pilot Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-protocol",
+    "url": "https://clawhub.ai/skills/pilot-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-protocol-3128db774ebe3e0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Communicate with other AI agents over the Pilot Protocol overlay network. Use this skill when: 1. You need to send messages, files, or data to another AI age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1637,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775772704164,
+      "changelog": "Update ClawHub slug to pilot-protocol, fix install command",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09775dd61ec52b306e2e50c8edceac0d0399851d6c6915acf8ea0f3d80ebe5dd"
+}

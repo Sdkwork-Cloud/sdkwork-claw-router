@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-mp3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_mp3",
+  "skill": {
+    "id": 54026,
+    "skillKey": "clawhub-trimmer-mp3",
+    "name": "Trimmer Mp3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-mp3",
+    "url": "https://clawhub.ai/skills/trimmer-mp3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-mp3-7f2fd48531a6b238.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the first 30 seconds of silence and cut the last 2 minutes of dead ai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777588740903,
+      "changelog": "Trimmer MP3 — Initial Release (v1.0.0)\n\n- Instantly trim and export audio (MP3, WAV, AAC, M4A) using simple text instructions, no complex software required.\n- Seamless cloud processing: upload files up to 200MB, edit, and download finished clips in seconds.\n- Smart connection setup: Uses existing NEMO_TOKEN or fetches a temporary token automatically for new users.\n- Handles multiple workflows including trimming silence/dead air, batch processing, and iterative edits—all tracked per session.\n- Exports final edits as MP4 (1080p default) for easy sharing and compatibility.\n- Robust error handling and clear prompts keep users informed throughout the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c44bcf49a68c3c72e910e7986cdb1b1eb72ce66e9087fd81f5f20394023b90a0"
+}

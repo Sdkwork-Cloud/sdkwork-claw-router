@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supply-chain-optimization-walmart@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supply_chain_optimization_walmart",
+  "skill": {
+    "id": 36295,
+    "skillKey": "clawhub-supply-chain-optimization-walmart",
+    "name": "Supply Chain Optimization Walmart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supply-chain-optimization-walmart",
+    "url": "https://clawhub.ai/skills/supply-chain-optimization-walmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supply-chain-optimization-walmart-05b9907c81807018.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Supply Chain Bottleneck Analyzer for Walmart Marketplace sellers. Diagnose cash flow, inventory, WFS costs, and referral fees. Includes comparison with Amazo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774185776388,
+      "changelog": "Initial release of Walmart Supply Chain Bottleneck Analyzer:\n\n- Diagnose cash flow, inventory, WFS costs, referral fees, and ad spend.\n- Includes side-by-side comparison with Amazon FBA for key supply chain metrics.\n- Provides benchmark indicators for profitability, shipping, inventory, and cash cycle unique to Walmart.\n- Outlines 4-step analysis flow: profile, data collection, diagnosis, and cost plan.\n- No API key needed for basic usage; Walmart API integration details provided.\n- Highlights key advantages of Walmart Marketplace vs Amazon.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:005e9ae58947af9a4fd1357d8474bc590ad770ed424806568e38ee15bb3753bd"
+}

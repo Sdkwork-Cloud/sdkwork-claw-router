@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32920,
+  "uuid": "skill-clawhub-multichannel-sync",
+  "skillKey": "clawhub-multichannel-sync",
+  "name": "Multichannel Sync",
+  "summary": "Plan inventory, pricing, and listing synchronization across multiple sales channels to prevent overselling, maintain consistent branding, and optimize channe...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multichannel_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Plan inventory, pricing, and listing synchronization across multiple sales channels to prevent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multichannel-sync@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multichannel-sync",
+      "url": "https://clawhub.ai/skills/multichannel-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multichannel-sync",
+    "url": "https://clawhub.ai/skills/multichannel-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multichannel-sync-5144e11e3c6637dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multichannel-sync@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multichannel-sync-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbb078c6a61733e9357371fb892c5ba9f77a9ad03a007727f2b15aa4401098e8",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T15:56:03.872Z"
+}

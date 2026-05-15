@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62215,
+  "uuid": "skill-clawhub-cross-verify",
+  "skillKey": "clawhub-cross-verify",
+  "name": "Cross Verify",
+  "summary": "交叉验证信息准确性、识别偏见和逻辑漏洞。当用户说\"这段话有没有问题\"、\"这个数据可靠吗\"、\"帮我看看这段有没有偏见\"、\"这个信息准确吗\"、\"核查一下这段\"，或直接丢入一段文字/数据要求检查时触发。Also triggers when the user pastes any text containing stat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_verify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Irving ZHAO",
+      "features": [
+        "交叉验证信息准确性、识别偏见和逻辑漏洞。当用户说\"这段话有没有问题\"、\"这个数据可靠吗\"、\"帮我看看这段有没有偏见\"、\"这个信息准确吗\"、\"核查一下这段\"，或直接丢入一段文字/数据要求检查时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17263271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-verify",
+      "url": "https://clawhub.ai/skills/cross-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-verify",
+    "url": "https://clawhub.ai/skills/cross-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-verify-3a507d7ae3d55cea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59db9098ae38505b0d0ff80dc100c72882c1c4ce2c03a8dd3868f5222bf67444",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:34:40.841Z"
+}

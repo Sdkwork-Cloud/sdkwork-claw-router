@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-generator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_generator",
+  "skill": {
+    "id": 61422,
+    "skillKey": "clawhub-soul-generator",
+    "name": "soul-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-generator",
+    "url": "https://clawhub.ai/skills/soul-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-generator-e81a821dc50a827b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成专属 AI 人格配置 SOUL.md，支持三种模式： (1) 蒸馏名人：输入人名 → 自动搜索 → 生成 SOUL.md (2) SBTI/MBTI：输入类型 → 匹配预设 → 生成 SOUL.md (3) 自定义：输入描述 → 生成 SOUL.md 触发词：「蒸馏」「生成」「我是」「做一个XX的视角」「SO..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adenzhou1350",
+      "userId": "s17877mfjhdmh62vj476de0afh84qkqj",
+      "displayName": "adenzhou1350",
+      "image": "https://avatars.githubusercontent.com/u/209601943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775993711655,
+      "changelog": "增加新设置人格方法并增加SBTI预设",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ba388fac141a55ea66345a8c1d26ae29a8552ef1d5e7227076360a840fc37c3"
+}

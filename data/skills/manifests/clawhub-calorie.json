@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68128,
+  "uuid": "skill-clawhub-calorie",
+  "skillKey": "clawhub-calorie",
+  "name": "calorie-detective-v1",
+  "summary": "热量侦探 v1.0.2 - AI 食物卡路里计算器。通过照片识别食物并自动计算卡路里、蛋白质、碳水、脂肪等营养数据。支持 Kimi 视觉识别，内置常见食物营养数据库。用于健康饮食管理、减肥健身追踪。再隐蔽的热量也逃不过我的眼睛！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calorie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaa2531349",
+      "features": [
+        "热量侦探 v1.0.2",
+        "AI 食物卡路里计算器。通过照片识别食物并自动计算卡路里、蛋白质、碳水、脂肪等营养数据。支持 Kimi 视觉识别，内置常见食物营养数据库。用于健康饮食管理、减肥健身追踪。再隐蔽的热量也逃不过."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calorie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100289418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calorie",
+      "url": "https://clawhub.ai/skills/calorie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calorie",
+    "url": "https://clawhub.ai/skills/calorie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calorie-492bd6197b168675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calorie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calorie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0121d5304707d8ce9bde34ee69e01a1807a090d8ca0ba539b563ecc17f4c4c5",
+      "artifactSizeBytes": 2825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:29:31.029Z"
+}

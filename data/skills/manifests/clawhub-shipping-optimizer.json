@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31653,
+  "uuid": "skill-clawhub-shipping-optimizer",
+  "skillKey": "clawhub-shipping-optimizer",
+  "name": "Shipping Optimizer",
+  "summary": "Compare shipping strategies across carriers, zones, and fulfillment models to find the lowest-cost configuration that still meets customer delivery expectati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Compare shipping strategies across carriers, zones, and fulfillment models to find the lowest-c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipping-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipping-optimizer",
+      "url": "https://clawhub.ai/skills/shipping-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-optimizer",
+    "url": "https://clawhub.ai/skills/shipping-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-optimizer-6ac96b1c0192eb2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipping-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipping-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:216c6d4ea057e713b58d10b0f5fc95cb97e60e20eb70cadc12b6410a18ce3060",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:21:40.531Z"
+}

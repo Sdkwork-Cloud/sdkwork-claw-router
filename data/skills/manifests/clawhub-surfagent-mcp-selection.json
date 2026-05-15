@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39677,
+  "uuid": "skill-clawhub-surfagent-mcp-selection",
+  "skillKey": "clawhub-surfagent-mcp-selection",
+  "name": "SurfAgent MCP Selection",
+  "summary": "Selection guide for SurfAgent automation layers, showing when to use perception, platform adapters, MCPs, and raw browser control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surfagent_mcp_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "surfagentapp",
+      "features": [
+        "Selection guide for SurfAgent automation layers, showing when to use perception, platform adapt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surfagent-mcp-selection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269739611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surfagent-mcp-selection",
+      "url": "https://clawhub.ai/skills/surfagent-mcp-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surfagent-mcp-selection",
+    "url": "https://clawhub.ai/skills/surfagent-mcp-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surfagent-mcp-selection-911427bd6ad402c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surfagent-mcp-selection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-surfagent-mcp-selection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5fa76be332634149020851954cd3d07ebfed727108226c945a49c101a1f41aa",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:28:04.435Z"
+}

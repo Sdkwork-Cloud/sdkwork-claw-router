@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42851,
+  "uuid": "skill-clawhub-nai-daily-recap",
+  "skillKey": "clawhub-nai-daily-recap",
+  "name": "Daily Recap",
+  "summary": "Generate a daily recap/summary of all agent activity and save it to Obsidian. Use when asked to do a daily recap, end-of-day summary, or when a cron job fire...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_daily_recap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Generate a daily recap/summary of all agent activity and save it to Obsidian",
+        "Use when asked to do a daily recap, end-of-day summary, or when a cron job fire..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-daily-recap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-daily-recap",
+      "url": "https://clawhub.ai/skills/nai-daily-recap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-daily-recap",
+    "url": "https://clawhub.ai/skills/nai-daily-recap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-daily-recap-970e177d852c5a35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-daily-recap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-daily-recap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:908e5766e407cb2e0c1d6bec885cbf2af52f6e05331d697148a45702bda17e42",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:35:22.194Z"
+}

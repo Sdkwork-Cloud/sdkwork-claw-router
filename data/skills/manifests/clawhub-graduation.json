@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47105,
+  "uuid": "skill-clawhub-graduation",
+  "skillKey": "clawhub-graduation",
+  "name": "graduation",
+  "summary": "Book graduation trip flights, post-grad travel and class trip booking with student fare deals. Also supports: flight booking, hotel reservation, train ticket...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graduation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Book graduation trip flights, post-grad travel and class trip booking with student fare deals",
+        "Also supports: flight booking, hotel reservation, train ticket..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graduation@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graduation",
+      "url": "https://clawhub.ai/skills/graduation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graduation",
+    "url": "https://clawhub.ai/skills/graduation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graduation-415473a357d9d696.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graduation@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-graduation-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5da2ef710fa94f7affef507802578f9120e29752d1817f43b5525c8d0dbc8a0",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T22:38:05.782Z"
+}

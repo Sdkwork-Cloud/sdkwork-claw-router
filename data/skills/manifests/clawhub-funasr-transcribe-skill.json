@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16327,
+  "uuid": "skill-clawhub-funasr-transcribe-skill",
+  "skillKey": "clawhub-funasr-transcribe-skill",
+  "name": "Funasr Transcribe Skill",
+  "summary": "Use when the user needs local speech-to-text transcription for audio files, especially Chinese or mixed Chinese-English audio, without relying on cloud trans...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funasr_transcribe_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "limbo",
+      "features": [
+        "Use when the user needs local speech-to-text transcription for audio files, especially Chinese."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funasr-transcribe-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4414032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funasr-transcribe-skill",
+      "url": "https://clawhub.ai/skills/funasr-transcribe-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funasr-transcribe-skill",
+    "url": "https://clawhub.ai/skills/funasr-transcribe-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funasr-transcribe-skill-280932e093ae5e7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funasr-transcribe-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-funasr-transcribe-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b9be1c37ed75314112d0a1b9fc78f28144ae538481b7daa44df744551cb3a82",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:15:52.096Z"
+}

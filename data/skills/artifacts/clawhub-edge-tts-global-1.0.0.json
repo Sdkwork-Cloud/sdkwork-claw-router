@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-tts-global@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_global",
+  "skill": {
+    "id": 43652,
+    "skillKey": "clawhub-edge-tts-global",
+    "name": "Edge Tts Global"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-global",
+    "url": "https://clawhub.ai/skills/edge-tts-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-global-868e21d06a07eadf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the globally installed edge-tts command to generate Chinese or multilingual text-to-speech audio on this machine. Use when the user wants text converted..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrliugangqiang",
+      "userId": "s177arjkyjq4f4505q7fdmnkds83qj48",
+      "displayName": "刘岗强",
+      "image": "https://avatars.githubusercontent.com/u/7357127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776155403988,
+      "changelog": "Initial release of edge-tts-global\n\n- Enables text-to-speech audio generation using the globally installed edge-tts command.\n- Supports fast, multilingual TTS output (with a focus on Chinese), including Telegram voice-bubble style audio.\n- Provides bundled helper script (scripts/tts_edge.py) for audio generation, voice selection, and cleanup.\n- Outputs are stored in the current caller workspace temp/ directory and cleaned up after sending.\n- Allows selection of voices, MP3 generation, and subtitle creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fa7c8a3955e194019c4f3c95691e090b08e9804f31943f8f54730f6e69dc430"
+}

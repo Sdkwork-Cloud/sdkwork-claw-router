@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webserp@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webserp",
+  "skill": {
+    "id": 15532,
+    "skillKey": "clawhub-webserp",
+    "name": "webserp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webserp",
+    "url": "https://clawhub.ai/skills/webserp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webserp-e5037b8c8417b5ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search across 7 engines in parallel with browser impersonation. Use when the agent needs current information from the web — news, documentation, recent e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paperboardofficial",
+      "userId": "publishers:paperboardofficial",
+      "displayName": "PaperBoardOfficial",
+      "image": "https://avatars.githubusercontent.com/u/151846514?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1206,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771671589077,
+      "changelog": "- Removed Bing from the list of supported search engines (now searches 7 engines instead of 8).\n- Documentation updated to reflect only Google, DuckDuckGo, Brave, Yahoo, Mojeek, Startpage, and Presearch as available engines.\n- Usage and example commands adjusted for the new engine list.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b2e034bc5014b9780e61a94b5aaa18c05ff6c91325e46a5e7da739ef800dd62"
+}

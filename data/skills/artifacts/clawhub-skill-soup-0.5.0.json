@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-soup@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_soup",
+  "skill": {
+    "id": 16742,
+    "skillKey": "clawhub-skill-soup",
+    "name": "Skill Soup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-soup",
+    "url": "https://clawhub.ai/skills/skill-soup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-soup-ee2aed9e48c6f1d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous skill generation agent that picks up community ideas, uses evolved builder tools to produce Agent Skills, and publishes them back to the Skill Soup ecosystem. Also supports community actions — submitting ideas, voting on ideas,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bennettphil",
+      "userId": "s17bjfzvss8gke3t61qdke3dp183gds4",
+      "displayName": "Phil Bennett",
+      "image": "https://avatars.githubusercontent.com/u/2929267?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1770995038758,
+      "changelog": "Skill Soup Runner 1.0.0 – Initial Release\n\n- Introduces an autonomous agent for the Skill Soup ecosystem supporting skill generation and community actions.\n- Enables authentication with the Skill Soup API using GitHub device flow.\n- Supports community actions: add new ideas, vote on ideas, and vote on skills directly from the agent.\n- Implements a skill generation workflow: select ideas, choose builder tools, generate and publish new agent skills.\n- Manages builder pool synchronization and workspace setup for seamless operation.\n- Provides detailed user guidance and feedback for all actions and workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8b25a12804a1f97bc6769b8a863352894635e3a62026b53dff9da62079114db"
+}

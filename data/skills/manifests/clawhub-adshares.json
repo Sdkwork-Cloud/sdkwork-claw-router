@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31820,
+  "uuid": "skill-clawhub-adshares",
+  "skillKey": "clawhub-adshares",
+  "name": "Adshares",
+  "summary": "AdShares integration. Manage data, records, and automate workflows. Use when the user wants to interact with AdShares data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adshares",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AdShares integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AdShares data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adshares@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adshares",
+      "url": "https://clawhub.ai/skills/adshares"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adshares",
+    "url": "https://clawhub.ai/skills/adshares",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adshares-57aa4adadec46183.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adshares@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-adshares-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec2e989cb3c181fe79670e00edca9736bd47fbf3ff9a5b450fdb260389f36b68",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:15.394Z"
+}

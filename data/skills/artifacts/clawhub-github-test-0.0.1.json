@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-test@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_test",
+  "skill": {
+    "id": 57872,
+    "skillKey": "clawhub-github-test",
+    "name": "GitHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-test",
+    "url": "https://clawhub.ai/skills/github-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-test-7aec7d1bd9d3f639.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yqghlx",
+      "userId": "s175pwy0avpn2rxb3w44hdsg5s83ypcx",
+      "displayName": "Alex",
+      "image": "https://avatars.githubusercontent.com/u/91515770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774999267848,
+      "changelog": "test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9679314a506cbbdaae490f3462af84276fd5838956b4eb9a3230519d2168f3ba"
+}

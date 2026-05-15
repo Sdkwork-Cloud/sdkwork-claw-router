@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wolt@0.5.4",
+  "version": "0.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolt",
+  "skill": {
+    "id": 19775,
+    "skillKey": "clawhub-wolt",
+    "name": "wolt-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolt",
+    "url": "https://clawhub.ai/skills/wolt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolt-b5b34a7e6fa01579.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Nikita's local Wolt CLI to browse venues, inspect menus/items/options, and run profile, cart, and checkout-preview actions for wolt.com from terminal. Tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mekedron",
+      "userId": "publishers:mekedron",
+      "displayName": "Nikita R",
+      "image": "https://avatars.githubusercontent.com/u/2446589?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 562,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.5.4",
+      "createdAt": 1771621938301,
+      "changelog": "No user-visible changes in this version.\n\n- No file changes detected from the previous release.\n- Functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6814fe36b0661bf4f4146251e55d8d010b508caa136b668df294824d1badfea5"
+}

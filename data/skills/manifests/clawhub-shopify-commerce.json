@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54684,
+  "uuid": "skill-clawhub-shopify-commerce",
+  "skillKey": "clawhub-shopify-commerce",
+  "name": "Shopify",
+  "summary": "Manage products, orders, customers, inventory, storefront content, and store operations in Shopify — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_commerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Manage products, orders, customers, inventory, storefront content, and store operations in Shop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-commerce@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-commerce",
+      "url": "https://clawhub.ai/skills/shopify-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-commerce",
+    "url": "https://clawhub.ai/skills/shopify-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-commerce-16b42d85a5f162bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-commerce@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-commerce-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f23cdd51fb69da9dfaebccea6c9dac2e5d8f7ea79e146e8a788a886516efcd3",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T06:45:34.299Z"
+}

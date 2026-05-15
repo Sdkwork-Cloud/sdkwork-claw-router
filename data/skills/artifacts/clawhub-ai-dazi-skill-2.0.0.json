@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-dazi-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dazi_skill",
+  "skill": {
+    "id": 68852,
+    "skillKey": "clawhub-ai-dazi-skill",
+    "name": "AI搭子匹配平台"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dazi-skill",
+    "url": "https://clawhub.ai/skills/ai-dazi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dazi-skill-35ca904c613f5802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI搭子匹配平台 - 智能用户画像与匹配系统。 基于用户主动提供的 AI 使用数据（token消耗、模型偏好、工具调用习惯等）， 生成多维用户画像，实现AI玩家间的智能匹配。 当用户提到\"搭子\"、\"匹配\"、\"用户画像\"、\"AI使用分析\"、\"token统计\"、 \"使用报告\"、\"玩家等级\"时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dory123456",
+      "userId": "s17d761yndjmpf4r1jex7m7pr983tzxp",
+      "displayName": "Dory123456",
+      "image": "https://avatars.githubusercontent.com/u/205267691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774799731332,
+      "changelog": "Security overhaul: scripts no longer read session logs or home directory. Data collection delegated to AI agent via standard tools. All file access scoped to skill data/ directory only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e236df6c250a274ebd4ceb944fe4504fd41e6e72e2ee20f5fe26ef3a2f161248"
+}

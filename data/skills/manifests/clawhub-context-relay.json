@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34472,
+  "uuid": "skill-clawhub-context-relay",
+  "skillKey": "clawhub-context-relay",
+  "name": "Context Relay",
+  "summary": "Solves the memory fragmentation problem for Agents during session restarts, sub-agent boundaries, and cron/heartbeat isolation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_relay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Solves the memory fragmentation problem for Agents during session restarts, sub-agent boundarie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-relay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-relay",
+      "url": "https://clawhub.ai/skills/context-relay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-relay",
+    "url": "https://clawhub.ai/skills/context-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-relay-3109d0c13a4961f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-relay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-relay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57b9fb8817a61559fafff819d8f1ac46a465c8943d24ebeea2c8c7bdc361fe80",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:33:32.836Z"
+}

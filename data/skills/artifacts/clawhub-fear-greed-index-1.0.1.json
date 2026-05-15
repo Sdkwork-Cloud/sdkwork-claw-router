@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fear-greed-index@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fear_greed_index",
+  "skill": {
+    "id": 42815,
+    "skillKey": "clawhub-fear-greed-index",
+    "name": "Fear Greed Index"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fear-greed-index",
+    "url": "https://clawhub.ai/skills/fear-greed-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fear-greed-index-365405928148bf09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto Fear & Greed Index reporter. Fetches current market sentiment index and provides simple analysis combined with BTC price movement. Use when users want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyiyuleyuli-cloud",
+      "userId": "s178a9m36ca5j973cp03w8e9nx83pckw",
+      "displayName": "yuyiyuleyuli-cloud",
+      "image": "https://avatars.githubusercontent.com/u/269500533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775179850223,
+      "changelog": "- Documentation update: No user-facing or functionality changes; _meta.json updated.\n- All features, usage, and pricing remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39f4771b501af604e256044ff3670e52183eaf084476792e1de965a098edfea1"
+}

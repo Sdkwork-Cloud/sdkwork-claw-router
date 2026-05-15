@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29037,
+  "uuid": "skill-clawhub-zenserp",
+  "skillKey": "clawhub-zenserp",
+  "name": "Zenserp",
+  "summary": "Zenserp integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zenserp data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenserp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zenserp integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zenserp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenserp@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenserp",
+      "url": "https://clawhub.ai/skills/zenserp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenserp",
+    "url": "https://clawhub.ai/skills/zenserp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenserp-3a8b3e4a5c7b57f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenserp@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenserp-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f52dbacb6266e482c6c98fdbfa33426581aa707323d1dc7a061796d167987684",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:11.321Z"
+}

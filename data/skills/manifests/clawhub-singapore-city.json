@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68986,
+  "uuid": "skill-clawhub-singapore-city",
+  "skillKey": "clawhub-singapore-city",
+  "name": "Singapore City",
+  "summary": "提供新加坡旅游景点、文化、美食、住宿和交通信息，助你规划旅行与了解当地生活细节。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singapore_city",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供新加坡旅游景点、文化、美食、住宿和交通信息，助你规划旅行与了解当地生活细节。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/singapore-city@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "singapore-city",
+      "url": "https://clawhub.ai/skills/singapore-city"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singapore-city",
+    "url": "https://clawhub.ai/skills/singapore-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singapore-city-4de6e24c9a17f85a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/singapore-city@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-singapore-city-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:005cf42afc473349b69502a4804588abc83d285a28d9b6d813f2d9c67ab14547",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:46.276Z"
+}

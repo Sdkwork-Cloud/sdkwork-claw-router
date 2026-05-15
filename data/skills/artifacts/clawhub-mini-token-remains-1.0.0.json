@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mini-token-remains@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_token_remains",
+  "skill": {
+    "id": 61284,
+    "skillKey": "clawhub-mini-token-remains",
+    "name": "mini-token-remains"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-token-remains",
+    "url": "https://clawhub.ai/skills/mini-token-remains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-token-remains-be35e2fccfc27651.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 MiniMax API Token 使用情况，支持小时级/周级用量监控，秒级完成。触发词：查 token、查看额度、剩余次数、token 余额。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "regexl",
+      "userId": "s17ddg0a28gmswz08xcr8t86d183x4bw",
+      "displayName": "Vincent",
+      "image": "https://avatars.githubusercontent.com/u/36078463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778223604425,
+      "changelog": "首发版：查询 MiniMax API Token 使用情况，小时级/周级用量，秒级完成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f1e1e7fec1a81ede59ba0e3d8d651cedabec37bb305f60d749bee9ede5f74a4"
+}

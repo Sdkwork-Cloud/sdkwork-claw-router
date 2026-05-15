@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58243,
+  "uuid": "skill-clawhub-dingtalk-bitable",
+  "skillKey": "clawhub-dingtalk-bitable",
+  "name": "Dingtalk Bitable",
+  "summary": "钉钉多维表格 API 集成 - 表格管理、数据 CRUD。Use when: user asks about DingTalk bitable, table, database, spreadsheet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_bitable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "码丁",
+      "features": [
+        "钉钉多维表格 API 集成",
+        "表格管理、数据 CRUD。Use when: user asks about DingTalk bitable, table, database, spreadsheet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-bitable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35951017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-bitable",
+      "url": "https://clawhub.ai/skills/dingtalk-bitable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-bitable",
+    "url": "https://clawhub.ai/skills/dingtalk-bitable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-bitable-c06a4e48c975ee1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-bitable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-bitable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cc99631050b41d933515f7883d40bc2448ad7be460f4443cbc97aa8bbc776f9",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:55:28.727Z"
+}

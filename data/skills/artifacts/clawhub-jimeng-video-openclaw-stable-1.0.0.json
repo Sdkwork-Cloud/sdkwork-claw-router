@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jimeng-video-openclaw-stable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_video_openclaw_stable",
+  "skill": {
+    "id": 69158,
+    "skillKey": "clawhub-jimeng-video-openclaw-stable",
+    "name": "Jimeng Video Stable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-video-openclaw-stable",
+    "url": "https://clawhub.ai/skills/jimeng-video-openclaw-stable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-video-openclaw-stable-9a2610a6fee0c1e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在 Jimeng（即梦）里稳定执行“视频生成→等待完成→下载本地”流程。用于需要生成视频、查找最新视频、下载 mp4 的场景。内置前置健康检查、状态机执行、长等待轮询与防抖规则，降低卡住和误操作概率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohao-ui",
+      "userId": "s17e9wmgb93jxp7expj57560sh83h79g",
+      "displayName": "haohao-ui",
+      "image": "https://avatars.githubusercontent.com/u/183124879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774762531081,
+      "changelog": "stability improvements, state-machine flow, retry policy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df2a2acfdf07af3812d201de34364ce19be7af9a18b8964306ff587a7eeb4f05"
+}

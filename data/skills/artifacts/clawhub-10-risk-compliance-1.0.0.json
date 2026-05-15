@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/10-risk-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.10_risk_compliance",
+  "skill": {
+    "id": 70350,
+    "skillKey": "clawhub-10-risk-compliance",
+    "name": "10 Risk Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "10-risk-compliance",
+    "url": "https://clawhub.ai/skills/10-risk-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/10-risk-compliance-cf6f53a4bd253e61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "社区团购风险与合规全链路技能包。涵盖食品安全合规、法律风险防控、危机公关预案、竞争合规及配套工具。适用于平台运营负责人、法务/合规负责人。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777684742605,
+      "changelog": "Initial release of the \"社区团购风险与合规全链路技能包\" (Community Group Buying Risk & Compliance Skill Package):\n\n- Covers key compliance and risk areas for community group buying: food safety, legal risk, competition compliance, data protection, and crisis management.\n- Provides practical checklists, legal references, and SOPs for incident response, data security, and crisis PR.\n- Includes regulatory requirements and best practices for platforms, group leaders (团长), suppliers, and compliance officers.\n- Suitable for platform operation managers and legal/compliance leads seeking comprehensive risk controls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d35ac358dad3f98e9a1235e47cedcf4a6e61ad4e3dd1c9e18405636a7e1a7d54"
+}

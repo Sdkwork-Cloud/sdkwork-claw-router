@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64510,
+  "uuid": "skill-clawhub-fairygui-tools",
+  "skillKey": "clawhub-fairygui-tools",
+  "name": "fairygui-tools",
+  "summary": "解析 FairyGUI 工程、根据 UI 效果图生成示意图与白模 XML，并输出可直接导入 FairyGUI 编辑器的闭环包结构。适用于工程解析、图转原型、XML 结构讨论、自然语言生成界面原型等场景。",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fairygui_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "slinkz",
+      "features": [
+        "解析 FairyGUI 工程、根据 UI 效果图生成示意图与白模 XML，并输出可直接导入 FairyGUI 编辑器的闭环包结构。适用于工程解析、图转原型、XML 结构讨论、自然语言生成界面."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fairygui-tools@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fairygui-tools",
+      "url": "https://clawhub.ai/skills/fairygui-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fairygui-tools",
+    "url": "https://clawhub.ai/skills/fairygui-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fairygui-tools-30daec8392c31967.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fairygui-tools@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-fairygui-tools-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64fc82e5be68bd4bc7ef72323e70938aa925161665ab9e4371f6f9f50c0449cd",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T11:35:14.938Z"
+}

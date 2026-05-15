@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64338,
+  "uuid": "skill-clawhub-jqzx-news-push",
+  "skillKey": "clawhub-jqzx-news-push",
+  "name": "jqzx-news-push",
+  "summary": "每日科技新闻自动推送服务。 **当用户想要「每日科技新闻」「自动推送新闻」「设置新闻定时任务」时使用此技能。** 功能： - 获取机器之心最新科技热榜 - 定时发送到飞书 - 自动保存到 Get笔记 使用此技能前需要配置： - 机器之心 MCP Token - Get笔记 API Key 和 Client ID...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jqzx_news_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bqcldz",
+      "features": [
+        "每日科技新闻自动推送服务。 **当用户想要「每日科技新闻」「自动推送新闻」「设置新闻定时任务」时使用此技能。** 功能：",
+        "获取机器之心最新科技热榜",
+        "自动保存到 Get笔记 使用此技能前需要配置：",
+        "机器之心 MCP Token"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jqzx-news-push@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42643627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jqzx-news-push",
+      "url": "https://clawhub.ai/skills/jqzx-news-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jqzx-news-push",
+    "url": "https://clawhub.ai/skills/jqzx-news-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jqzx-news-push-c4834868a1c42f62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jqzx-news-push@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jqzx-news-push-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77cfe839ed0a26e489349b95f1a17303ea10877ecc4802cbea76ed1c42b8585d",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:00:24.807Z"
+}

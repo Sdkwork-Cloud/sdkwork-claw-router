@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13819,
+  "uuid": "skill-clawhub-open-persona",
+  "skillKey": "clawhub-open-persona",
+  "name": "Open Persona",
+  "summary": "Meta-skill for building and managing agent persona skill packs (instruction-only; no bundled installer or auto-downloaded binaries). Credentials are never wr...",
+  "version": "0.21.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_persona",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acnlabs",
+      "features": [
+        "Meta-skill for building and managing agent persona skill packs (instruction-only",
+        "no bundled installer or auto-downloaded binaries)",
+        "Credentials are never wr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-persona@0.21.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43027886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-persona",
+      "url": "https://clawhub.ai/skills/open-persona"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-persona",
+    "url": "https://clawhub.ai/skills/open-persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-persona-20f40fa66941e31a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-persona@0.21.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-persona-0.21.1.json",
+      "version": "0.21.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f5a64fae7855ce90262f50bd15812002d81067b7b5d0b3aa44fe45692b64b22",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T10:27:13.092Z"
+}

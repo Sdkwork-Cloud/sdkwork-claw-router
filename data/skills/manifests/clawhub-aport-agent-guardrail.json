@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14986,
+  "uuid": "skill-clawhub-aport-agent-guardrail",
+  "skillKey": "clawhub-aport-agent-guardrail",
+  "name": "Aport Agent Guardrail",
+  "summary": "Set up APort guardrails for OpenClaw. Local-first policy enforcement that checks tool calls against your passport before execution. Zero network calls by def...",
+  "version": "1.1.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aport_agent_guardrail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "APort",
+      "features": [
+        "Set up APort guardrails for OpenClaw",
+        "Local-first policy enforcement that checks tool calls against your passport before execution",
+        "Zero network calls by def..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aport-agent-guardrail@1.1.20",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/aport-agent-guardrail/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aport-agent-guardrail",
+      "url": "https://clawhub.ai/skills/aport-agent-guardrail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aport-agent-guardrail",
+    "url": "https://clawhub.ai/skills/aport-agent-guardrail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aport-agent-guardrail-55c53970ff22e6a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aport-agent-guardrail@1.1.20",
+      "artifactUrl": "data/skills/artifacts/clawhub-aport-agent-guardrail-1.1.20.json",
+      "version": "1.1.20",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2abc18db4a0d1a60742d30f707fa2110fa42771c69cda1e760b880b7cf64699",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:41:20.206Z"
+}

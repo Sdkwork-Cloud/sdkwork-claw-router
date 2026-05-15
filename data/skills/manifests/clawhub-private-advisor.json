@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71991,
+  "uuid": "skill-clawhub-private-advisor",
+  "skillKey": "clawhub-private-advisor",
+  "name": "Private Advisor",
+  "summary": "用人类经典哲学思想解答任何现实困惑。不仅限于个人问题，还能分析国际事件、社会现象、科技伦理、历史争议等任何需要深度思考的话题。调取哲学、文学、政治学、经济学经典智慧进行多元解读。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.private_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiangzhangshe",
+      "features": [
+        "用人类经典哲学思想解答任何现实困惑。不仅限于个人问题，还能分析国际事件、社会现象、科技伦理、历史争议等任何需要深度思考的话题。调取哲学、文学、政治学、经济学经典智慧进行多元解读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/private-advisor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273256937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "private-advisor",
+      "url": "https://clawhub.ai/skills/private-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "private-advisor",
+    "url": "https://clawhub.ai/skills/private-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/private-advisor-a29303aee2ee172e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/private-advisor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-private-advisor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2d32b16a3722e859fb1459334a86dc197eb10275b75ac68c29125deccca9265",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T22:48:53.752Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_checker",
+  "skill": {
+    "id": 28253,
+    "skillKey": "clawhub-gmail-checker",
+    "name": "gmail-checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-checker",
+    "url": "https://clawhub.ai/skills/gmail-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-checker-0c20af3375e8d110.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send, read, search, and manage Gmail emails via the Gmail REST API. Use when asked to send an email, check inbox, read messages, search mail, reply to emails..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cehd5170",
+      "userId": "publishers:cehd5170",
+      "displayName": "cehd5170",
+      "image": "https://avatars.githubusercontent.com/u/218172195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773999569830,
+      "changelog": "Initial release of the gmail-checker skill.\n\n- Send, read, search, draft, and reply to Gmail messages using the Gmail REST API.\n- Manage labels and mark messages as read.\n- Supports OAuth2 authentication via access token or refresh token.\n- Usage examples and shell snippets included for sending, searching, and managing emails.\n- Designed for easy integration with NemoClaw/OpenClaw sandbox environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5df3973289a231a5a0fcb57b01cdc1a891dfd746ab215fba8bfe7f45b6adda6d"
+}

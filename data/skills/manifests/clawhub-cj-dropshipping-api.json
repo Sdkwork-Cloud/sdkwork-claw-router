@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43809,
+  "uuid": "skill-clawhub-cj-dropshipping-api",
+  "skillKey": "clawhub-cj-dropshipping-api",
+  "name": "Cj Dropshipping Api",
+  "summary": "Use when user wants to integrate CJ Dropshipping, search products, create orders, track shipments, manage Shopify listings via CJ, or automate CJ logistics a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cj_dropshipping_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simoncai519",
+      "features": [
+        "Use when user wants to integrate CJ Dropshipping, search products, create orders, track shipmen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cj-dropshipping-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57803232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cj-dropshipping-api",
+      "url": "https://clawhub.ai/skills/cj-dropshipping-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cj-dropshipping-api",
+    "url": "https://clawhub.ai/skills/cj-dropshipping-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cj-dropshipping-api-3e943c00095b7c77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cj-dropshipping-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cj-dropshipping-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d0720517c87df639d2d099e1aa5bdfd0caf8f21e79441a90a1e00e560f7eb76",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:50:02.108Z"
+}

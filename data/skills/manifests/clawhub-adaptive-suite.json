@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9550,
+  "uuid": "skill-clawhub-adaptive-suite",
+  "skillKey": "clawhub-adaptive-suite",
+  "name": "adaptive-suite",
+  "summary": "A continuously adaptive skill suite that empowers Clawdbot to act as a versatile coder, business analyst, project manager, web developer, data analyst, and NAS metadata scraper. It intelligently discovers free resources, adapts to user con.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_suite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afajohn",
+      "features": [
+        "A continuously adaptive skill suite that empowers Clawdbot to act as a versatile coder, busines.",
+        "It intelligently discovers free resources, adapts to user context, and ensures reliable, proven."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106503734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-suite",
+      "url": "https://clawhub.ai/skills/adaptive-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-suite",
+    "url": "https://clawhub.ai/skills/adaptive-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-suite-23b2ce5943577527.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edc6c3ae767f92b04f718bdc786f8eeeb1d85ce13add9c4f25b7dc9ef1bf7dc9",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T08:23:31.586Z"
+}

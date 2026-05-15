@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/belgium@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.belgium",
+  "skill": {
+    "id": 56833,
+    "skillKey": "clawhub-belgium",
+    "name": "belgium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "belgium",
+    "url": "https://clawhub.ai/skills/belgium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/belgium-90d693d30a3fa067.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Country information assistant for Belgium 比利时. Get travel info, economy data, culture, visa policies, and news."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775001627376,
+      "changelog": "- Initial release of the Belgium 比利时 country information assistant.\n- Provides travel info, visa policies, economy data, cultural insights, and local news.\n- Supports real-time updates from official and reliable sources.\n- Designed for easy queries about visiting, investing in, or learning about Belgium.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e135f265dd761d541f73564b5d35cb34f8cd751fc5a43afdaa7af700d420439"
+}

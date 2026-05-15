@@ -51,10 +51,15 @@ SELECT
           )
     ), 0) AS download_count
 FROM plus_app a
-WHERE a.tenant_id = ?1
-  AND (
-      a.organization_id = ?2
-      OR (?2 > 0 AND a.organization_id = 0)
+WHERE (
+      (
+          a.tenant_id = ?1
+          AND (
+              a.organization_id = ?2
+              OR (?2 > 0 AND a.organization_id = 0)
+          )
+      )
+      OR (a.tenant_id = ?9 AND a.organization_id = 0)
   )
   AND COALESCE(a.status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
@@ -65,7 +70,7 @@ WHERE a.tenant_id = ?1
 
 const LOAD_APPS_PAGED_SUFFIX: &str = r#"
 ORDER BY COALESCE(a.updated_at, a.created_at) DESC, a.id DESC
-LIMIT ?9 OFFSET ?10
+LIMIT ?10 OFFSET ?11
 "#;
 
 const LOAD_APPS_UNPAGED_SUFFIX: &str = r#"
@@ -114,10 +119,15 @@ SELECT
           )
     ), 0) AS download_count
 FROM plus_app a
-WHERE a.tenant_id = ?1
-  AND (
-      a.organization_id = ?2
-      OR (?2 > 0 AND a.organization_id = 0)
+WHERE (
+      (
+          a.tenant_id = ?1
+          AND (
+              a.organization_id = ?2
+              OR (?2 > 0 AND a.organization_id = 0)
+          )
+      )
+      OR (a.tenant_id = ?4 AND a.organization_id = 0)
   )
   AND (
       CAST(a.id AS TEXT) = ?3
@@ -125,6 +135,14 @@ WHERE a.tenant_id = ?1
   )
   AND COALESCE(a.status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
+ORDER BY
+    CASE
+        WHEN a.tenant_id = ?1 AND a.organization_id = ?2 THEN 0
+        WHEN a.tenant_id = ?1 AND a.organization_id = 0 THEN 1
+        WHEN a.tenant_id = ?4 AND a.organization_id = 0 THEN 2
+        ELSE 3
+    END,
+    a.id DESC
 LIMIT 1
 "#;
 
@@ -134,10 +152,15 @@ SELECT
     COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
     COALESCE(CAST(a.install_config AS TEXT), '') AS install_config
 FROM plus_app a
-WHERE a.tenant_id = ?1
-  AND (
-      a.organization_id = ?2
-      OR (?2 > 0 AND a.organization_id = 0)
+WHERE (
+      (
+          a.tenant_id = ?1
+          AND (
+              a.organization_id = ?2
+              OR (?2 > 0 AND a.organization_id = 0)
+          )
+      )
+      OR (a.tenant_id = ?3 AND a.organization_id = 0)
   )
   AND COALESCE(a.status, 1) = 1
   AND COALESCE(NULLIF(json_extract(a.config, '$.portal.marketStatus'), ''), NULLIF(json_extract(a.config, '$.marketStatus'), ''), 'DRAFT') = 'PUBLISHED'
@@ -184,6 +207,10 @@ ORDER BY published_at DESC, id DESC
 LIMIT 64
 "#;
 
+const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
+const PUBLIC_APP_STORE_ORGANIZATION_ID: i64 = 0;
+const PUBLIC_APP_STORE_USER_ID: i64 = 0;
+
 #[derive(Debug, Clone)]
 pub struct SqliteAppStoreReadStore {
     pool: SqlitePool,
@@ -202,7 +229,7 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
         subject: Option<AppStoreSubject>,
     ) -> AppStoreReadFuture<'a, Vec<AppStoreItem>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_store_scope(subject);
             let page_size = query.page_size.unwrap_or(100).clamp(1, 100);
             let page_no = query.page_no.unwrap_or(1).max(1);
             let offset = (page_no - 1) * page_size;
@@ -225,7 +252,8 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
                 .bind(query.start_time.as_deref())
                 .bind(query.start_time.as_deref())
                 .bind(query.end_time.as_deref())
-                .bind(query.end_time.as_deref());
+                .bind(query.end_time.as_deref())
+                .bind(PUBLIC_APP_STORE_TENANT_ID);
             if !filter_by_keyword {
                 statement = statement.bind(page_size).bind(offset);
             }
@@ -259,11 +287,12 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
         subject: Option<AppStoreSubject>,
     ) -> AppStoreReadFuture<'a, Option<AppStoreItem>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_store_scope(subject);
             let row = sqlx::query(LOAD_APP_BY_ID)
                 .bind(subject.tenant_id)
                 .bind(subject.organization_id)
                 .bind(app_id)
+                .bind(PUBLIC_APP_STORE_TENANT_ID)
                 .fetch_optional(&self.pool)
                 .await
                 .map_err(sql_error)?;
@@ -283,14 +312,15 @@ impl AppStoreReadStore for SqliteAppStoreReadStore {
         subject: Option<AppStoreSubject>,
     ) -> AppStoreReadFuture<'a, Vec<String>> {
         Box::pin(async move {
-            let subject = require_subject(subject)?;
+            let subject = app_store_scope(subject);
             let rows = sqlx::query(LOAD_CATEGORIES)
                 .bind(subject.tenant_id)
                 .bind(subject.organization_id)
+                .bind(PUBLIC_APP_STORE_TENANT_ID)
                 .fetch_all(&self.pool)
                 .await
                 .map_err(sql_error)?;
-            let mut categories = rows
+            let mut categories: Vec<String> = rows
                 .iter()
                 .map(|row| {
                     app_category_from_raw(
@@ -389,8 +419,12 @@ fn row_to_artifact(row: &sqlx::sqlite::SqliteRow) -> RawCatalogArtifact {
     }
 }
 
-fn require_subject(subject: Option<AppStoreSubject>) -> DomainResult<AppStoreSubject> {
-    subject.ok_or_else(|| DomainError::new("trusted request subject is required for app store"))
+fn app_store_scope(subject: Option<AppStoreSubject>) -> AppStoreSubject {
+    subject.unwrap_or(AppStoreSubject {
+        tenant_id: PUBLIC_APP_STORE_TENANT_ID,
+        organization_id: PUBLIC_APP_STORE_ORGANIZATION_ID,
+        user_id: PUBLIC_APP_STORE_USER_ID,
+    })
 }
 
 fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {

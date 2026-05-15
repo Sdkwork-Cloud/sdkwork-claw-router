@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13527,
+  "uuid": "skill-clawhub-book-appliance-repair",
+  "skillKey": "clawhub-book-appliance-repair",
+  "name": "Book Appliance Repair",
+  "summary": "Book appliance-repair services through Lokuli MCP. Use when user needs to find and book appliance-repair. Triggers on requests like \"book a appliance-repair\", \"find appliance-repair near me\", or any appliance-repair service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_appliance_repair",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book appliance-repair services through Lokuli MCP",
+        "Use when user needs to find and book appliance-repair",
+        "Triggers on requests like \"book a appliance-repair\", \"find appliance-repair near me\", or any ap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-appliance-repair@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-appliance-repair",
+      "url": "https://clawhub.ai/skills/book-appliance-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-appliance-repair",
+    "url": "https://clawhub.ai/skills/book-appliance-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-appliance-repair-527d5a788b1e92c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-appliance-repair@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-appliance-repair-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d441176389553574958ccb633866a2423dfb0f9acd13e80d20da3d379ee05e09",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:25.040Z"
+}

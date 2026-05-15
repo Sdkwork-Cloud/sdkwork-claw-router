@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mirroir@0.13.0",
+  "version": "0.13.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mirroir",
+  "skill": {
+    "id": 30899,
+    "skillKey": "clawhub-mirroir",
+    "name": "Mirroir"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mirroir",
+    "url": "https://clawhub.ai/skills/mirroir",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mirroir-9232840f5e261105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a real iPhone through macOS iPhone Mirroring — screenshot, tap, swipe, type, launch apps, record video, OCR, and run multi-step scenarios. Works with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfarcand",
+      "userId": "publishers:jfarcand",
+      "displayName": "Jeanfrancois Arcand",
+      "image": "https://avatars.githubusercontent.com/u/51285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.13.0",
+      "createdAt": 1771385691853,
+      "changelog": "Align version with iphone-mirroir-mcp v0.13.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cca3e7aaaf8c05c0330a6640d43ca1d0001b55e4a326e2b1c953e0d8b853f6e7"
+}

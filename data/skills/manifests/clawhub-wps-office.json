@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8988,
+  "uuid": "skill-clawhub-wps-office",
+  "skillKey": "clawhub-wps-office",
+  "name": "Wps Skill",
+  "summary": "Automate WPS Office tasks including document creation, opening, format conversion, batch processing, and managing WPS 365 smart forms, docs, sheets, flowchar...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_office",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "Automate WPS Office tasks including document creation, opening, format conversion, batch proces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wps-office@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wps-office",
+      "url": "https://clawhub.ai/skills/wps-office"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-office",
+    "url": "https://clawhub.ai/skills/wps-office",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-office-3cf660bc162dfd82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wps-office@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wps-office-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ac41657ba26574286419eb265b5dc05bb9f642f816855c0932d8571c5558710",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:30:40.233Z"
+}

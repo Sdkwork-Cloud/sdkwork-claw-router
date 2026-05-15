@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-hotel-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_hotel_search",
+  "skill": {
+    "id": 67911,
+    "skillKey": "clawhub-smart-hotel-search",
+    "name": "smart-hotel-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-hotel-search",
+    "url": "https://clawhub.ai/skills/smart-hotel-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-hotel-search-35f2e35559c5b27a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于小红书真实测评挖掘非标准酒店需求，结合飞猪实时预订信息，提供个性化场景化酒店推荐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sgw153759-oss",
+      "userId": "s172hg9kjgqtg423y56cjmwsz183ytey",
+      "displayName": "sgw153759-oss",
+      "image": "https://avatars.githubusercontent.com/u/230663849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775047628433,
+      "changelog": "Smart Hotel Search 1.0.0 - Initial Release\n\n- Enables intelligent hotel recommendations based on non-standard, scenario-based, or user-voiced requirements (e.g., \"pet-friendly\", \"hotel for elderly\", \"quiet rooms\").\n- Integrates Xiaohongshu content search (via opencli) for real user reviews and experience discovery.\n- Connects recommended hotels to Fliggy (via flyai) for real-time pricing and booking.\n- Provides a workflow for extracting hotel names from content platforms, filtering, and finding booking details.\n- Includes troubleshooting for cases where content/recommendations are unavailable or too ambiguous.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5554323c1f4b28c53577e5bf17a69853bac278a71ce520ba2f0792d017cc8229"
+}

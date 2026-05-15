@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61939,
+  "uuid": "skill-clawhub-powpow-financing-plan-openclaw",
+  "skillKey": "clawhub-powpow-financing-plan-openclaw",
+  "name": "powpow-financing-plan-openclaw",
+  "summary": "将 PowPow 的融资计划转化为结构化对话技能，支持项目概述、亮点及联系方式的查询和展示。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powpow_financing_plan_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "度人自度",
+      "features": [
+        "将 PowPow 的融资计划转化为结构化对话技能，支持项目概述、亮点及联系方式的查询和展示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/powpow-financing-plan-openclaw@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38130340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "powpow-financing-plan-openclaw",
+      "url": "https://clawhub.ai/skills/powpow-financing-plan-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powpow-financing-plan-openclaw",
+    "url": "https://clawhub.ai/skills/powpow-financing-plan-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powpow-financing-plan-openclaw-e5b8743acc50b8af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/powpow-financing-plan-openclaw@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-powpow-financing-plan-openclaw-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74a9b6283e20f1a9251123a11a922f19b3a4b32f6b603a011b70d3273aae9884",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:15:02.590Z"
+}

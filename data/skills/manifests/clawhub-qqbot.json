@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60032,
+  "uuid": "skill-clawhub-qqbot",
+  "skillKey": "clawhub-qqbot",
+  "name": "qqbot",
+  "summary": "配置并管理QQ官方机器人，支持身份认证、IP白名单设置、Webhook/WebSocket连接及OpenClaw AI集成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byzgpc",
+      "features": [
+        "配置并管理QQ官方机器人，支持身份认证、IP白名单设置、Webhook/WebSocket连接及OpenClaw AI集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180692389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot",
+      "url": "https://clawhub.ai/skills/qqbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot",
+    "url": "https://clawhub.ai/skills/qqbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-b4a4c75ca00f7d4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc7dd3597b42c6a3ab80e0baa5100527bbda770d6044b277a1163af345c8edae",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T17:55:12.169Z"
+}

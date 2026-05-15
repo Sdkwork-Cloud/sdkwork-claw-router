@@ -251,7 +251,7 @@ impl ChatCompletionRelay for SecretRefOpenAiCompatibleChatCompletionRelay {
                 .provider_secret_ref
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
-            let bearer_token = self.secret_resolver.resolve_bearer_token(&secret_ref)?;
+            let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
             let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_chat_completion_with_runtime(&runtime, &endpoint, request).await
@@ -273,7 +273,7 @@ impl ChatCompletionStreamRelay for SecretRefOpenAiCompatibleChatCompletionStream
                 .provider_secret_ref
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
-            let bearer_token = self.secret_resolver.resolve_bearer_token(&secret_ref)?;
+            let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
             let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_chat_completion_stream_with_runtime(&runtime, &endpoint, request).await
@@ -415,7 +415,7 @@ impl ProviderHealthProbe for SecretRefOpenAiCompatibleProviderHealthProbe {
             let started_at = Instant::now();
             let endpoint = match self
                 .secret_resolver
-                .resolve_bearer_token(&request.provider_secret_ref)
+                .resolve_secret_value(&request.provider_secret_ref)
                 .and_then(|bearer_token| {
                     UpstreamProviderEndpoint::new(&request.provider_base_url, bearer_token)
                 }) {
@@ -541,7 +541,7 @@ impl ResponsesRelay for SecretRefOpenAiCompatibleResponsesRelay {
                 .provider_secret_ref
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
-            let bearer_token = self.secret_resolver.resolve_bearer_token(&secret_ref)?;
+            let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
             let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_response_with_runtime(&runtime, &endpoint, request).await
@@ -563,7 +563,7 @@ impl EmbeddingsRelay for SecretRefOpenAiCompatibleEmbeddingsRelay {
                 .provider_secret_ref
                 .clone()
                 .ok_or_else(|| DomainError::new("provider secret_ref is required for relay"))?;
-            let bearer_token = self.secret_resolver.resolve_bearer_token(&secret_ref)?;
+            let bearer_token = self.secret_resolver.resolve_secret_value(&secret_ref)?;
             let endpoint = UpstreamProviderEndpoint::new(base_url, bearer_token)?;
             let runtime = self.runtime.for_request(request.provider_timeout_ms);
             send_embedding_with_runtime(&runtime, &endpoint, request).await

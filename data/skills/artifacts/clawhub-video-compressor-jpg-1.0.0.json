@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-jpg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_jpg",
+  "skill": {
+    "id": 43761,
+    "skillKey": "clawhub-video-compressor-jpg",
+    "name": "Video Compressor Jpg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-jpg",
+    "url": "https://clawhub.ai/skills/video-compressor-jpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-jpg-8bad876923fa6161.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 200MB MP4 video file into 1080p compressed video files just by typing what you need. Whether it's reducing video file size for sharing or storage or q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776035831593,
+      "changelog": "Video Compressor JPG — Initial Release\n\n- Compress MP4 video files (up to 200MB) down to 1080p for easier sharing or storage.\n- Export video frames as JPG images with a single prompt.\n- Accepts a wide range of file types: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Easy setup: automatic token handling, including free credits for new users.\n- Fast cloud processing (30–90 seconds per job) using cloud GPUs—no local install required.\n- Handles typical workflows: quick edit, batch processing, and iterative refinement; tracks credits and session state for each user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0193f94362e1b73fec27afd0029feff9214488405458bcfa55fc1a5e85ec863f"
+}

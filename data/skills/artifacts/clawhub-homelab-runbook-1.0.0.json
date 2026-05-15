@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homelab-runbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homelab_runbook",
+  "skill": {
+    "id": 52315,
+    "skillKey": "clawhub-homelab-runbook",
+    "name": "Homelab Runbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homelab-runbook",
+    "url": "https://clawhub.ai/skills/homelab-runbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homelab-runbook-82adc0dafef6c732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan and document all running services on this machine — Docker containers, system services (launchd/systemd), and open listening ports. Generates a human-re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774868151524,
+      "changelog": "Initial release: Auto-document running services — Docker containers, system services (launchd/systemd), and open ports. Generates Markdown runbook.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34d3f0cbce50b3a2801653706fd9f033aa17122d0c5846c3911fa3b9dccfe2db"
+}

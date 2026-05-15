@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-merchant-ops@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_merchant_ops",
+  "skill": {
+    "id": 67837,
+    "skillKey": "clawhub-taobao-merchant-ops",
+    "name": "Taobao Merchant Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-merchant-ops",
+    "url": "https://clawhub.ai/skills/taobao-merchant-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-merchant-ops-8f270e3b6f1d08c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "淘宝商家运营自动化客户使用说明。包含功能介绍、安装步骤、卡密激活方式、运行方法和购买信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenjiahui11",
+      "userId": "s178pvhpvps6rt43qfx5mvqv2d83gfh1",
+      "displayName": "GaoBai",
+      "image": "https://avatars.githubusercontent.com/u/88292533?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776543670020,
+      "changelog": "修复capture脚本文件名损坏 + mapping.final.json缺失 + 版本号更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a4e775a6c081ad8e34e4a7b03c07dc102acc3ffbfd0414f7548f945d7a12b9f"
+}

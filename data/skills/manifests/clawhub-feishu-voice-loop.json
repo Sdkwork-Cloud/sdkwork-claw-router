@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22960,
+  "uuid": "skill-clawhub-feishu-voice-loop",
+  "skillKey": "clawhub-feishu-voice-loop",
+  "name": "Feishu Voice Loop",
+  "summary": "Accept text or voice input, transcribe if needed, generate natural OpenAI TTS speech, and send audio output to Feishu chat or web player.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZoePeng",
+      "features": [
+        "Accept text or voice input, transcribe if needed, generate natural OpenAI TTS speech, and send."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-voice-loop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38909779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-voice-loop",
+      "url": "https://clawhub.ai/skills/feishu-voice-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-loop",
+    "url": "https://clawhub.ai/skills/feishu-voice-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-loop-ded74de5adaf8607.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-voice-loop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-loop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0615e2ea5e937088e85a92e2a7b24809429bd5ad471a667d90277d164c03e062",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:04:22.551Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40329,
+  "uuid": "skill-clawhub-self-improving-coding",
+  "skillKey": "clawhub-self-improving-coding",
+  "name": "Self-Improving Coding Skill",
+  "summary": "Captures lint errors, type mismatches, runtime bugs, anti-patterns, refactoring opportunities, language idiom gaps, debugging insights, and tooling issues to...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_coding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "José I. O.",
+      "features": [
+        "Captures lint errors, type mismatches, runtime bugs, anti-patterns, refactoring opportunities,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-coding@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30682875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-coding",
+      "url": "https://clawhub.ai/skills/self-improving-coding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-coding",
+    "url": "https://clawhub.ai/skills/self-improving-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-coding-8e0bb4eb364cca1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-coding@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-coding-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ad54601b0fe49d942a83f8af9ef8ca52dea7103e0a36e0455daa4f3115f24ed",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T21:28:31.598Z"
+}

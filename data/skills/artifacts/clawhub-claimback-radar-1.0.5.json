@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claimback-radar@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claimback_radar",
+  "skill": {
+    "id": 35247,
+    "skillKey": "clawhub-claimback-radar",
+    "name": "Claimback Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claimback-radar",
+    "url": "https://clawhub.ai/skills/claimback-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claimback-radar-1c1ebe8eac62a11d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans emails and bills to extract billing data, detect refund opportunities, subscription risks, and generate actionable savings recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schchit",
+      "userId": "s1792pfv3byw2ah26z463sfgr184xckb",
+      "displayName": "JEP (Judgment Event Protocol)",
+      "image": "https://avatars.githubusercontent.com/u/10815391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777426591873,
+      "changelog": "claimback-radar 1.0.5\n\n- Added project configuration files: `clawhub.json` and `pyproject.toml`.\n- Updated data privacy notice to include identity data, not just financial data.\n- Expanded security notes to warn against storing unrelated secrets in `.env`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0045cac8989684b76989241fcce4e18adf185e7f416106bd46c8ebe80e65eb57"
+}

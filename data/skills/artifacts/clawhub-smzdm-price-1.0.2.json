@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smzdm-price@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smzdm_price",
+  "skill": {
+    "id": 64877,
+    "skillKey": "clawhub-smzdm-price",
+    "name": "什么值得买价格爬取"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smzdm-price",
+    "url": "https://clawhub.ai/skills/smzdm-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smzdm-price-3e5c28639f0cd7e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "什么值得买价格爬取Skill - 从smzdm.com爬取NAS、电脑、手机等商品价格"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773582372209,
+      "changelog": "新增输出格式要求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd8213d087c8d82dc0564dfe3044773101b140c2bb2896be192c81acbcaf7b98"
+}

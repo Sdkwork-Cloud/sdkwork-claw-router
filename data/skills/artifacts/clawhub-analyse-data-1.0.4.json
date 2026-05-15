@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analyse-data@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyse_data",
+  "skill": {
+    "id": 23951,
+    "skillKey": "clawhub-analyse-data",
+    "name": "Analyse Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyse-data",
+    "url": "https://clawhub.ai/skills/analyse-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyse-data-4e196d4cad9cd5d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 414,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778037995944,
+      "changelog": "Summary: Major update — switched to ChartGen API, rewrote workflow, removed Python scripts, added Node.js tooling.\n\n- Migrated from custom Python scripts to the official ChartGen API and Node.js tool.\n- Skill renamed to \"chartgen\" and refocused on ChartGen platform capabilities.\n- Completely revised workflow: every request requires user confirmation; added detailed 5-step process for analysis tasks.\n- Tooling changed: added tools/chartgen_api.js, removed all Python analysis/visualization scripts.\n- Expanded use cases to include dashboards, diagrams, and PPT generation, with detailed handling for all result types.\n- Prerequisites updated: Node.js 14+ required, API key environment setup simplified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a421086ec687a9d626265a32b65d40d334f54506089991a6afdba80b4d19d764"
+}

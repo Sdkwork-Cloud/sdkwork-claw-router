@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognitive-topology@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_topology",
+  "skill": {
+    "id": 64265,
+    "skillKey": "clawhub-cognitive-topology",
+    "name": "Cognitive Topology"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-topology",
+    "url": "https://clawhub.ai/skills/cognitive-topology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-topology-b82fa27be580b368.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent认知拓扑引擎。自动将复杂任务分裂为多个独立分支，并行执行后汇总整合。触发场景：(1)复杂问题需要多角度分析 (2)多独立子任务需要并行执行 (3)需要清晰追踪思维分支 (4)用户说\"分叉\"、\"分支分析\"、\"多线程\"时。使用 sessions_spawn 创建分支，分支结果写入 L2 文件，Main Se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiushang555",
+      "userId": "s173pkfhkth48e2kjtmys6phe983wd4n",
+      "displayName": "qiushang555",
+      "image": "https://avatars.githubusercontent.com/u/268135707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775815881962,
+      "changelog": "Initial release: Agent认知拓扑引擎，支持多分支并行执行和长期记忆整合",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34c7900ed58f07d54e161239ef941ba76df7201b7f80042b822b118662be3c28"
+}

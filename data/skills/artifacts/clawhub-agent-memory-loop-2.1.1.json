@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-loop@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_loop",
+  "skill": {
+    "id": 21912,
+    "skillKey": "clawhub-agent-memory-loop",
+    "name": "Agent Memory Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-loop",
+    "url": "https://clawhub.ai/skills/agent-memory-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-loop-d8473436d093f317.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight self-improvement loop for AI agents. Capture errors, corrections, and discoveries in a fast one-line format, dedup them, queue recurring or criti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773966912815,
+      "changelog": "Tightened the runtime entrypoint, split logging and operating rules into focused references, and updated README messaging and links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51bf64a0d065199cf550ba4939ad81f969084ac33f91400dd7b6992f88ce2b5f"
+}

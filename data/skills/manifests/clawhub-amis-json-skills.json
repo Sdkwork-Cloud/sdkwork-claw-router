@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67747,
+  "uuid": "skill-clawhub-amis-json-skills",
+  "skillKey": "clawhub-amis-json-skills",
+  "name": "amis-ui",
+  "summary": "百度amis低代码框架JSON Schema生成专家。精准理解业务意图，生成正确、交互友好的amis配置，支持复杂交互（点击、回调、重载、弹层），兼容移动端。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amis_json_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonny Looma",
+      "features": [
+        "百度amis低代码框架JSON Schema生成专家。精准理解业务意图，生成正确、交互友好的amis配置，支持复杂交互（点击、回调、重载、弹层），兼容移动端。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amis-json-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179694088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amis-json-skills",
+      "url": "https://clawhub.ai/skills/amis-json-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amis-json-skills",
+    "url": "https://clawhub.ai/skills/amis-json-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amis-json-skills-a005646415e11ad4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amis-json-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amis-json-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec4ae6491e24a24a8477d897543a0f2d212f9ace1e292bf8a474fa28b445f74d",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:36:02.101Z"
+}

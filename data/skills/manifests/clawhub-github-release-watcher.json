@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38661,
+  "uuid": "skill-clawhub-github-release-watcher",
+  "skillKey": "clawhub-github-release-watcher",
+  "name": "Github Release Watcher",
+  "summary": "Monitor specified GitHub repositories for new releases and receive notifications of newly detected tags.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_release_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Monitor specified GitHub repositories for new releases and receive notifications of newly detec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-release-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-release-watcher",
+      "url": "https://clawhub.ai/skills/github-release-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-release-watcher",
+    "url": "https://clawhub.ai/skills/github-release-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-release-watcher-beec2756c4611d15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-release-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-release-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24ab9a83e9ce00e8db416164d13d007c68d4ffd2ce74a5525fc24dd0deada82a",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T19:15:00.167Z"
+}

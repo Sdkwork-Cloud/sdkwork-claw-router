@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-services-secure@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_services_secure",
+  "skill": {
+    "id": 44122,
+    "skillKey": "clawhub-google-services-secure",
+    "name": "Google Services Secure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-services-secure",
+    "url": "https://clawhub.ai/skills/google-services-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-services-secure-7adbc8b1bb15eea5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure Google Workspace integration (Gmail, Drive, Calendar, Sheets, Docs, Contacts, etc.) with enterprise-grade security. Features credential isolation, inp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nelmaz",
+      "userId": "s176x4jhvghz5tsywww6mmywh583gjka",
+      "displayName": "nelmaz",
+      "image": "https://avatars.githubusercontent.com/u/12268467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775261380898,
+      "changelog": "Initial secure release for Google Workspace integration with OAuth 2.0 flow. Features credential isolation, input validation, audit logging, rate limiting, and granular permissions. Supports Gmail, Drive, Calendar, Sheets, Docs, and Contacts. Uses OAuth 2.0 flow for secure authentication with RAM-only token storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92f140390a1537effb4a0ac620e0bbb1e9b0d6902cdbd2ac4d6e6c809f0e1884"
+}

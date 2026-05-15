@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9856,
+  "uuid": "skill-clawhub-lifi-skill",
+  "skillKey": "clawhub-lifi-skill",
+  "name": "LI.FI Skill",
+  "summary": "v4 - Use LI.FI API for cross-chain and same-chain swaps, bridges, and contract calls. Use when quoting routes, validating chains/tokens, building transaction requests, and tracking status.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifi_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fabriziogianni7",
+      "features": [
+        "Use LI.FI API for cross-chain and same-chain swaps, bridges, and contract calls",
+        "Use when quoting routes, validating chains/tokens, building transaction requests, and tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lifi-skill@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46995085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lifi-skill",
+      "url": "https://clawhub.ai/skills/lifi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifi-skill",
+    "url": "https://clawhub.ai/skills/lifi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifi-skill-c6cce53045cd2a50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lifi-skill@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lifi-skill-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6617c6037a2cd76aa44dbd93fa15e487ac7dec91be7879959d6870aea73c91b",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T09:12:59.786Z"
+}

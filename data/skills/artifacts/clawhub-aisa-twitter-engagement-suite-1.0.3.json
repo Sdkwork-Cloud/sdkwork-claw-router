@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-engagement-suite@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_engagement_suite",
+  "skill": {
+    "id": 38012,
+    "skillKey": "clawhub-aisa-twitter-engagement-suite",
+    "name": "AIsa Twitter Engagement Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-engagement-suite",
+    "url": "https://clawhub.ai/skills/aisa-twitter-engagement-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-engagement-suite-0ec122ffbda70510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X/Twitter profiles, tweets, trends, and approved engagement actions through the AIsa relay. Use when the user asks for Twitter/X research, posting, li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778244949953,
+      "changelog": "**Expands engagement features and improves usage guidance.**\n\n- Adds like, unlike, follow, and unfollow action support alongside research and posting.\n- Updates docs and references for new engagement workflows and CLI examples.\n- Clarifies usage boundaries and relay-based API requirements in SKILL.md.\n- Adds homepage and source links for easier access to skill resources.\n- Improves setup instructions and environment variable guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70800c1a48b17964915d6edb5cf09237f09f0037fb71f3539d020b1e27e570d7"
+}

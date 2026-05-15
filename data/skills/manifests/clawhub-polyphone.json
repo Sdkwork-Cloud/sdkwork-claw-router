@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56066,
+  "uuid": "skill-clawhub-polyphone",
+  "skillKey": "clawhub-polyphone",
+  "name": "Polyphone TTS",
+  "summary": "Fix Chinese polyphone (多音字) mispronunciation in TTS by auto-detecting ambiguous characters and applying pinyin annotations. Use when users complain about wro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyphone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Fix Chinese polyphone (多音字) mispronunciation in TTS by auto-detecting ambiguous characters and.",
+        "Use when users complain about wro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyphone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyphone",
+      "url": "https://clawhub.ai/skills/polyphone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyphone",
+    "url": "https://clawhub.ai/skills/polyphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyphone-61285a92777f5b87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyphone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyphone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:308d2739709c7c6fc63090e2bd6c9be25853479e1273b3a8048e53e79a9a5266",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:31:22.069Z"
+}

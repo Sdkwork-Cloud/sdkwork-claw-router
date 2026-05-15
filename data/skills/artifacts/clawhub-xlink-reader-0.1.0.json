@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xlink-reader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xlink_reader",
+  "skill": {
+    "id": 54762,
+    "skillKey": "clawhub-xlink-reader",
+    "name": "⁠X Reader⁠"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xlink-reader",
+    "url": "https://clawhub.ai/skills/xlink-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xlink-reader-05996ca8d653d597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and summarize X/Twitter links with low-token routing. Use when a user shares an x.com/twitter.com/t.co link or asks to read, summarize, extract, or insp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuolicong",
+      "userId": "publishers:zuolicong",
+      "displayName": "AgentLinker",
+      "image": "https://avatars.githubusercontent.com/u/13706290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773795047344,
+      "changelog": "xlink-reader 0.1.0 changelog:\n\n- Initial release of the x-reader skill for reading and summarizing X/Twitter links.\n- Supports tweets, threads (with explicit command), and X articles with minimal token usage.\n- Smart routing: prefers lightweight xreach for tweets/threads, uses Playwright only for article or t.co links that resolve to articles.\n- Requires Node.js, xreach, and valid X auth cookies; no paid API access needed.\n- Outputs structured JSON for simple summarization and reliable link handling.\n- Includes clear documentation for installation, authentication, usage modes, and output contract.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef92e3ef221e2029ff8fc16d9fb4b9c2586ca060c5cc3ff59386676f1997f2a7"
+}

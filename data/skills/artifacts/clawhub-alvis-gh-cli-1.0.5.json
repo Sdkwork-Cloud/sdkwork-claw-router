@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-gh-cli@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_gh_cli",
+  "skill": {
+    "id": 39946,
+    "skillKey": "clawhub-alvis-gh-cli",
+    "name": "Alvis GitHub CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-gh-cli",
+    "url": "https://clawhub.ai/skills/alvis-gh-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-gh-cli-f8c79cc29706f56f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork, issues, pull requests, releases, and basic repo management. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776317699042,
+      "changelog": "- Added a comprehensive setup and usage guide for the GitHub CLI (gh) skill, covering core GitHub operations via CLI.\n- Documented common workflows: authentication, repository creation/cloning/forking, issues, pull requests, and releases, with explicit command examples.\n- Included safety notes for destructive actions and private repository handling.\n- Linked to a complete setup guide for further instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eab59384552ea5e5008f9f0dd24cc609a6a71e6e337c6375d9eb4deaae97ad50"
+}

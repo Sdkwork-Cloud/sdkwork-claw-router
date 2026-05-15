@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10306,
+  "uuid": "skill-clawhub-blockchain",
+  "skillKey": "clawhub-blockchain",
+  "name": "Blockchain",
+  "summary": "Understand blockchain technology, interact with smart contracts, and evaluate when distributed ledgers solve real problems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockchain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Understand blockchain technology, interact with smart contracts, and evaluate when distributed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockchain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockchain",
+      "url": "https://clawhub.ai/skills/blockchain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockchain",
+    "url": "https://clawhub.ai/skills/blockchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockchain-ef7797e13d3a7552.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockchain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockchain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03aaeeb135aa995a6d78aa426ddfe809f4dc9a5db52e7068cd31ca873bb6efbd",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T14:00:28.459Z"
+}

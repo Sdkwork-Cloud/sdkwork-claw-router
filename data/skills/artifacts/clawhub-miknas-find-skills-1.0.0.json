@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miknas-find-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miknas_find_skills",
+  "skill": {
+    "id": 20901,
+    "skillKey": "clawhub-miknas-find-skills",
+    "name": "Find Skills - Universal Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miknas-find-skills",
+    "url": "https://clawhub.ai/skills/miknas-find-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miknas-find-skills-ec44b6bad6b655b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discovers, searches, and installs skills from multiple AI agent skill marketplaces (400K+ skills) using SkillKit CLI. Supports browsing official partner coll..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miknasbh-stack",
+      "userId": "s1760a41jehjr5ta76zjebwvh183nqeq",
+      "displayName": "miknasbh-stack",
+      "image": "https://avatars.githubusercontent.com/u/264503017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773548097280,
+      "changelog": "Initial release: Universal skill discovery across 400K+ AI agent skills from multiple marketplaces",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4af824d9fcca86e288ba54b5824c25ade3a8e4134c541931b4794f792b4d2c06"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62493,
+  "uuid": "skill-clawhub-insight-finder",
+  "skillKey": "clawhub-insight-finder",
+  "name": "Insight Finder",
+  "summary": "数据探索与洞察引擎 | 自动分析CSV/JSON/Excel | 统计检验+模式识别+异常检测+可视化建议 | 输出结构化报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Softboypatrick",
+      "features": [
+        "数据探索与洞察引擎 | 自动分析CSV/JSON/Excel | 统计检验+模式识别+异常检测+可视化建议 | 输出结构化报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insight-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118743484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insight-finder",
+      "url": "https://clawhub.ai/skills/insight-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-finder",
+    "url": "https://clawhub.ai/skills/insight-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-finder-a1fa9136649a462a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insight-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insight-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9e75d32cf8020eb28f06938e691a01508b77bcf475e2ce01d14ba0bea72f283",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:11:41.217Z"
+}

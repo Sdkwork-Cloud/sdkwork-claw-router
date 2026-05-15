@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23416,
+  "uuid": "skill-clawhub-avenir-web",
+  "skillKey": "clawhub-avenir-web",
+  "name": "Avenir Web",
+  "summary": "Execute and improve Avenir-Web autonomous web tasks end-to-end with mode selection, instruction validation, single or batch runs, and next-step recommendations.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avenir_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiden (Yiliu) Li",
+      "features": [
+        "Execute and improve Avenir-Web autonomous web tasks end-to-end with mode selection, instruction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avenir-web@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136968051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avenir-web",
+      "url": "https://clawhub.ai/skills/avenir-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avenir-web",
+    "url": "https://clawhub.ai/skills/avenir-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avenir-web-1badc2923750b06c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avenir-web@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-avenir-web-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ac0299703bb716040793a2e61db6ae93252e2d2b07cbaaa5f171153e048dd17",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:04:18.526Z"
+}

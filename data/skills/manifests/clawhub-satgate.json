@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15696,
+  "uuid": "skill-clawhub-satgate",
+  "skillKey": "clawhub-satgate",
+  "name": "SatGate",
+  "summary": "Manage your API's economic firewall from the terminal. Mint tokens, track spend, revoke agents, enforce budgets. The server-side counterpart to lnget.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.satgate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matt-dean-git",
+      "features": [
+        "Manage your API's economic firewall from the terminal",
+        "Mint tokens, track spend, revoke agents, enforce budgets",
+        "The server-side counterpart to lnget."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/satgate@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258945365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "satgate",
+      "url": "https://clawhub.ai/skills/satgate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "satgate",
+    "url": "https://clawhub.ai/skills/satgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/satgate-56f25d76c87bab26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/satgate@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-satgate-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d03efe88fb571eb486c814111d11d0e21bda09a104196cfd58125057e1938c78",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:23:46.034Z"
+}

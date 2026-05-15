@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63333,
+  "uuid": "skill-clawhub-model-benchmark",
+  "skillKey": "clawhub-model-benchmark",
+  "name": "Model Benchmark",
+  "summary": "深度测评各模型在 OpenClaw 上的实际表现，支持中文理解/代码/推理/工具调用多维度评估。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_benchmark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leosheep821-debug",
+      "features": [
+        "深度测评各模型在 OpenClaw 上的实际表现，支持中文理解/代码/推理/工具调用多维度评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-benchmark@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266247704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-benchmark",
+      "url": "https://clawhub.ai/skills/model-benchmark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-benchmark",
+    "url": "https://clawhub.ai/skills/model-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-benchmark-48b553ed3d44c4ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-benchmark@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-benchmark-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b74bd5128b8395c47eaa1b1d5054214cc6ea668783dbafa3c8c891f9fdb1923a",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:08:04.459Z"
+}

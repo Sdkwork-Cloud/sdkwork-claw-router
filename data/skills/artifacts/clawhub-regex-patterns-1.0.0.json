@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regex-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_patterns",
+  "skill": {
+    "id": 9277,
+    "skillKey": "clawhub-regex-patterns",
+    "name": "Regex Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-patterns",
+    "url": "https://clawhub.ai/skills/regex-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-patterns-2232566c507dee8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical regex patterns across languages and use cases. Use when validating input (email, URL, IP), parsing log lines, extracting data from text, refactoring code with search-and-replace, or debugging why a regex doesn't match."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4154,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770158566113,
+      "changelog": "Initial release: Validation patterns, parsing, extraction, JS/Python/Go/grep usage, search-and-replace, lookahead/lookbehind, gotchas",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8f48c025d967c9cc0d011bc1662c1cf86abfd93507c9e0851b90ea8b556fc1b"
+}

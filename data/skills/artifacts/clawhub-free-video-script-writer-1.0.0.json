@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-script-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_script_writer",
+  "skill": {
+    "id": 44246,
+    "skillKey": "clawhub-free-video-script-writer",
+    "name": "Free Video Script Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-script-writer",
+    "url": "https://clawhub.ai/skills/free-video-script-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-script-writer-68ba5ca98b3921d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate topic or idea into ready-to-use scripts with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, content creators, marketers us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775956907552,
+      "changelog": "Initial release of Free Video Script Writer\n\n- Instantly generates video scripts from user topics or briefs, ready for export as 1080p MP4 files.\n- Supports popular video formats (MP4, MOV, AVI, WebM) up to 500MB.\n- Handles authentication and session setup automatically for a seamless first-time user experience.\n- Provides core actions for uploading, editing, checking credits, exporting, and viewing session state.\n- Efficient cloud processing typically completes script generation and video rendering in 20–40 seconds.\n- Includes robust error handling and clear guidance for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf72891fd4406490aa04cebcf214a1275e2f3d0b71aa1521a2dc5649f3883c7d"
+}

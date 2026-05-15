@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45217,
+  "uuid": "skill-clawhub-pilot-recruitment-pipeline-setup",
+  "skillKey": "clawhub-pilot-recruitment-pipeline-setup",
+  "name": "Pilot Recruitment Pipeline Setup",
+  "summary": "Deploy a recruitment pipeline with 3 agents for candidate sourcing, screening, and interview scheduling. Use this skill when: 1. User wants to set up a recru...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_recruitment_pipeline_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a recruitment pipeline with 3 agents for candidate sourcing, screening, and interview sc.",
+        "Use this skill when: 1",
+        "User wants to set up a recru..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-recruitment-pipeline-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-recruitment-pipeline-setup",
+      "url": "https://clawhub.ai/skills/pilot-recruitment-pipeline-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-recruitment-pipeline-setup",
+    "url": "https://clawhub.ai/skills/pilot-recruitment-pipeline-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-recruitment-pipeline-setup-e0f7987da1794e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-recruitment-pipeline-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-recruitment-pipeline-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fecfb9e129ddc612ba1e7e5039e3306e3ffa8eaad7e78eca39b4997296807a3",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:42:30.802Z"
+}

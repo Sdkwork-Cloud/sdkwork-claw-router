@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-compression@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_compression",
+  "skill": {
+    "id": 27441,
+    "skillKey": "clawhub-image-compression",
+    "name": "Image Compression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-compression",
+    "url": "https://clawhub.ai/skills/image-compression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-compression-07078452ff6af27b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically compresses images exceeding Telegram's 10MB limit by resizing width, adjusting quality, and preserving the original file with a new name."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeholdon",
+      "userId": "publishers:yeholdon",
+      "displayName": "Honcy Ye",
+      "image": "https://avatars.githubusercontent.com/u/26994075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773750276940,
+      "changelog": "- Initial release of image-compression skill.\n- Automatically detects image size and compresses if above Telegram's 10MB limit.\n- Supports width, quality, and format adjustment (PNG, JPEG, GIF) using macOS sips.\n- Compressed images have \"_compressed\" suffix; original files remain unchanged.\n- Includes scripts to compress images and send them to WeChat or Telegram.\n- Configurable max width, quality, and compression size threshold.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b37665502e5e47e89a3860b83821a067dae423dc0dd821f11f052efdebc8f0af"
+}

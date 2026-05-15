@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hbmartin-podcast-intel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hbmartin_podcast_intel",
+  "skill": {
+    "id": 40549,
+    "skillKey": "clawhub-hbmartin-podcast-intel",
+    "name": "podcast-intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hbmartin-podcast-intel",
+    "url": "https://clawhub.ai/skills/hbmartin-podcast-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hbmartin-podcast-intel-c94443fcbcb27d0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your Overcast listening history into actionable intelligence. Syncs episodes, transcripts, and chapters to SQLite, then uses LLM analysis to surface ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hbmartin",
+      "userId": "s172ar0db04dj5gbzsymb7h79x844t68",
+      "displayName": "Harold Martin",
+      "image": "https://avatars.githubusercontent.com/u/745166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775260043997,
+      "changelog": "Initial release – turn your Overcast podcast listening into actionable insights.\n\n- Syncs episode data, transcripts, and chapters from Overcast into a local SQLite database.\n- Supports daily and one-time syncs for up-to-date listening history.\n- Provides SQL queries and search tools to explore recent and starred episodes, transcripts, and chapters.\n- Includes workflow to analyze and surface insights from listened episodes tailored to your projects/interests.\n- Integrates supporting tools for converting and processing podcast transcripts.\n- Offers listening statistics and full-text search across played content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54f9ea4bad5b0b92da898b46ab52fe8a15b4d56f103eba3831d7487f4a6eec5f"
+}

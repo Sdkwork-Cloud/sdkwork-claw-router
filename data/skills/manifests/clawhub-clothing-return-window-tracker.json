@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50004,
+  "uuid": "skill-clawhub-clothing-return-window-tracker",
+  "skillKey": "clawhub-clothing-return-window-tracker",
+  "name": "Clothing Return Window Tracker",
+  "summary": "Track online clothing purchases with a log of return deadlines, conditions, shipping, and refund status, plus customizable deadline alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clothing_return_window_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Track online clothing purchases with a log of return deadlines, conditions, shipping, and refun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clothing-return-window-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clothing-return-window-tracker",
+      "url": "https://clawhub.ai/skills/clothing-return-window-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clothing-return-window-tracker",
+    "url": "https://clawhub.ai/skills/clothing-return-window-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clothing-return-window-tracker-f1e268d6f6b23365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clothing-return-window-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clothing-return-window-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e9d044a644b5eb003cce28b863763ecad4985a269d6835dbc0f11ca0b052c8",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:58:23.615Z"
+}

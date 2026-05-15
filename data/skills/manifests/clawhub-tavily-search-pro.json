@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8644,
+  "uuid": "skill-clawhub-tavily-search-pro",
+  "skillKey": "clawhub-tavily-search-pro",
+  "name": "Tavily Search Pro",
+  "summary": "Tavily AI search platform with 5 modes: Search (web/news/finance), Extract (URL content), Crawl (website crawling), Map (sitemap discovery), and Research (deep research with citations). Use for: web search with LLM answers, content extract.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaharsh",
+      "features": [
+        "Tavily AI search platform with 5 modes: Search (web/news/finance), Extract (URL content), Crawl.",
+        "Use for: web search with LLM answers, content extraction, site crawling, deep research."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11346965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search-pro",
+      "url": "https://clawhub.ai/skills/tavily-search-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-pro",
+    "url": "https://clawhub.ai/skills/tavily-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-pro-9bfa22d86309885e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc1446286f5d6a4aa31e42a831ed788cf805fadbacc13212fd3707abaf6648d2",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T16:21:48.912Z"
+}

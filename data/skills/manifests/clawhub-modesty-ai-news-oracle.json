@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42709,
+  "uuid": "skill-clawhub-modesty-ai-news-oracle",
+  "skillKey": "clawhub-modesty-ai-news-oracle",
+  "name": "ai-news-oracle",
+  "summary": "Fetch real-time AI news briefings powered by SkillBoss API Hub (Hacker News, TechCrunch, The Verge). Uses SkillBoss search and chat capabilities for news agg...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_ai_news_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Fetch real-time AI news briefings powered by SkillBoss API Hub (Hacker News, TechCrunch, The Ve.",
+        "Uses SkillBoss search and chat capabilities for news agg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-ai-news-oracle@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-ai-news-oracle",
+      "url": "https://clawhub.ai/skills/modesty-ai-news-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-ai-news-oracle",
+    "url": "https://clawhub.ai/skills/modesty-ai-news-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-ai-news-oracle-d378f382e28b9248.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-ai-news-oracle@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-ai-news-oracle-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80ea416d8177006c2ffe43da79adbb919e9aad323203d79949198b9394884804",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:17:32.651Z"
+}

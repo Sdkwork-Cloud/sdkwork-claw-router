@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19005,
+  "uuid": "skill-clawhub-realestate",
+  "skillKey": "clawhub-realestate",
+  "name": "RealEstate",
+  "summary": "Real estate transaction support with affordability analysis, property evaluation, and offer strategy. Use when user mentions buying a home, selling property,...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realestate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Real estate transaction support with affordability analysis, property evaluation, and offer str.",
+        "Use when user mentions buying a home, selling property,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realestate@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realestate",
+      "url": "https://clawhub.ai/skills/realestate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realestate",
+    "url": "https://clawhub.ai/skills/realestate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realestate-e59b5bbdf74688ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realestate@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realestate-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a842fb1e35b4ff0d72e0d21adce57279454031641d610eeaf748bbe114c3073",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:59:48.428Z"
+}

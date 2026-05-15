@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65414,
+  "uuid": "skill-clawhub-token-unlock-pro",
+  "skillKey": "clawhub-token-unlock-pro",
+  "name": "Token Unlock Pro",
+  "summary": "专业的代币解锁预警系统 - 支持72h/48h/24h/6h/实时多维度预警，类型分类（种子轮/公募/生态/质押），解锁额度分级，用户自定义监控，解锁日历月/周/日视图，历史数据分析及走势预测。每次调用需支付0.001 USDT。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_unlock_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrchillhigh",
+      "features": [
+        "专业的代币解锁预警系统",
+        "支持72h/48h/24h/6h/实时多维度预警，类型分类（种子轮/公募/生态/质押），解锁额度分级，用户自定义监控，解锁日历月/周/日视图，历史数据分析及走势预测。每次调用需支付0.001."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-unlock-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195327430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-unlock-pro",
+      "url": "https://clawhub.ai/skills/token-unlock-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-unlock-pro",
+    "url": "https://clawhub.ai/skills/token-unlock-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-unlock-pro-f8373af0546179c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-unlock-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-unlock-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb82dbbd16284404ab1aebf9d1676b9ee4da5539fa99cce58a002ad4c32d4512",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:45:46.064Z"
+}

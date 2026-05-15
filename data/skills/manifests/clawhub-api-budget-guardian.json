@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40238,
+  "uuid": "skill-clawhub-api-budget-guardian",
+  "skillKey": "clawhub-api-budget-guardian",
+  "name": "Api Budget Guardian",
+  "summary": "Monitors and optimizes AI API usage costs across multiple providers",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_budget_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Monitors and optimizes AI API usage costs across multiple providers"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-budget-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-budget-guardian",
+      "url": "https://clawhub.ai/skills/api-budget-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-budget-guardian",
+    "url": "https://clawhub.ai/skills/api-budget-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-budget-guardian-e2bfa6200807e03f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-budget-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-budget-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbe45d84f570494808977bc7ce34529f6de9dd7d8393b23e2bd689bc85bd7a02",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:57:18.499Z"
+}

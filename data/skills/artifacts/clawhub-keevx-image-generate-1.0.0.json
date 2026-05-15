@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keevx-image-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keevx_image_generate",
+  "skill": {
+    "id": 15568,
+    "skillKey": "clawhub-keevx-image-generate",
+    "name": "keevx-image-generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keevx-image-generate",
+    "url": "https://clawhub.ai/skills/keevx-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keevx-image-generate-3f61600a08445a83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Keevx API to generate images from prompts and reference images. Supports standard and professional modes, multiple quality levels (1K/2K/4K), various..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baidu-xiling",
+      "userId": "publishers:baidu-xiling",
+      "displayName": "baidu-xiling",
+      "image": "https://avatars.githubusercontent.com/u/218880360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773832958016,
+      "changelog": "Initial release of the Keevx Image Generate Skill.\n\n- Enables AI image generation using the Keevx API from text prompts and/or reference images.\n- Supports standard/professional modes, 1K/2K/4K quality options, multiple aspect ratios, and batch generation.\n- Allows status querying of image generation tasks.\n- Handles both URL and local image inputs (includes upload flow).\n- Includes callback support for asynchronous result notifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bb6b931ca7f256d89422b51f500b8caa9cbb617d92e26ab617fc4c68eaab199"
+}

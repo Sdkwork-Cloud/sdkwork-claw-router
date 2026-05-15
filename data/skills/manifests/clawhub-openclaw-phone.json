@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18533,
+  "uuid": "skill-clawhub-openclaw-phone",
+  "skillKey": "clawhub-openclaw-phone",
+  "name": "Openclaw phone",
+  "summary": "Use CallMyCall API to start, end, and check AI phone calls, and return results in chat. Use when the user asks to call someone, plan a future call, end a cal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_phone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Benjamin Waye",
+      "features": [
+        "Use CallMyCall API to start, end, and check AI phone calls, and return results in chat",
+        "Use when the user asks to call someone, plan a future call, end a cal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-phone@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10989487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-phone",
+      "url": "https://clawhub.ai/skills/openclaw-phone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-phone",
+    "url": "https://clawhub.ai/skills/openclaw-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-phone-c57f8c414dc0a750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-phone@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-phone-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d43ea9665220dfe4be271875f720100a5947d6b5ba67c4bd00a4c2211dea25f",
+      "artifactSizeBytes": 2687
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:05:25.758Z"
+}

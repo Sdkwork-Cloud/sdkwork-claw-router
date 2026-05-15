@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19806,
+  "uuid": "skill-clawhub-intent-router",
+  "skillKey": "clawhub-intent-router",
+  "name": "intent-router",
+  "summary": "Classify text into custom intents with confidence scoring and entity extraction. Use when: intent classification, message routing, multi-agent orchestration,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daisuke Narita",
+      "features": [
+        "Classify text into custom intents with confidence scoring and entity extraction",
+        "Use when: intent classification, message routing, multi-agent orchestration,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140220114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-router",
+      "url": "https://clawhub.ai/skills/intent-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-router",
+    "url": "https://clawhub.ai/skills/intent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-router-830698917b137eee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:437a268683321f5a461c747722ed60cfc041c870e0d9f42500bcbb2300db2e81",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:53:39.520Z"
+}

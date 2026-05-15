@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turnip-prophet@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turnip_prophet",
+  "skill": {
+    "id": 18103,
+    "skillKey": "clawhub-turnip-prophet",
+    "name": "Turnip Prophet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turnip-prophet",
+    "url": "https://clawhub.ai/skills/turnip-prophet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turnip-prophet-9cfe26f247560ae6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict Animal Crossing New Horizons turnip prices using the game's exact algorithm. Use when a user asks about turnip prices, ACNH turnips, stalk market, tu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicholasjackson",
+      "userId": "publishers:nicholasjackson",
+      "displayName": "Nicholas Jackson",
+      "image": "https://avatars.githubusercontent.com/u/773533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1771843074808,
+      "changelog": "Document elevated privileges requirement for package installs (apt-get/brew may require sudo)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:427fb2b50adcfcf34dafaf442efa9cb049dcbd9b14bb12b942e0a2d66a95668f"
+}

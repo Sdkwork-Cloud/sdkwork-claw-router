@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-auto-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_auto_trade",
+  "skill": {
+    "id": 73656,
+    "skillKey": "clawhub-stock-auto-trade",
+    "name": "股票交易下单买卖和查询。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-auto-trade",
+    "url": "https://clawhub.ai/skills/stock-auto-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-auto-trade-af6b79c612e4484b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "股票交易下单和查询功能。需要提供股票代码、价格、数量等信息。支持买入、卖出、持仓查询、账户查询、撤单等操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangheng3",
+      "userId": "s17cr9317rk2y5a0aj60787p3s84aysa",
+      "displayName": "yangheng3",
+      "image": "https://avatars.githubusercontent.com/u/5001470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775460279121,
+      "changelog": "Initial release of stock-auto-trade skill.\n\n- 提供股票交易自动下单和查询功能，包括买入、卖出、持仓查询、账户查询、撤单等操作\n- 通过 HTTP API 与本地股票交易助手集成，需提前安装并配置\n- 支持限价单、市价单及委托查询等多种常用交易指令\n- 明确区分适用与不适用场景，避免误用\n- 提供详细参数填写说明、错误码和请求响应示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5822c911c733e499dcdf3e71d4f967b49d9fbb19d34193915c4d9792b8eea259"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juhe-network-hot-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_network_hot_list",
+  "skill": {
+    "id": 71267,
+    "skillKey": "clawhub-juhe-network-hot-list",
+    "name": "全网热搜榜查询 - 聚合数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-network-hot-list",
+    "url": "https://clawhub.ai/skills/juhe-network-hot-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-network-hot-list-5bc85450abe52427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全网热搜榜查询。查询各大平台（微博、抖音、快手、知乎、百度等）的实时热搜榜单。使用场景：用户说\"查热搜\"、\"看热搜榜\"、\"现在什么最火\"、\"全网热门话题\"、\"微博热搜\"、\"抖音热搜\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juhemcp",
+      "userId": "s177jncsg336bzyjhff66cjn8n83j6jg",
+      "displayName": "juhe-skills",
+      "image": "https://avatars.githubusercontent.com/u/203600343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495362829,
+      "changelog": "juhe-network-hot-list 1.0.0 — 初始发布\n\n- 支持查询全网主流平台（微博、抖音、快手、知乎、百度等）实时热搜榜单\n- 基于聚合数据（juhe.cn）API，需免费注册获取 AppKey\n- 支持环境变量、.env 文件及命令参数多种 Key 配置方式\n- 脚本可自定义展示前 N 条热搜，结果以表格形式输出\n- 包含详细的错误处理与常见问题说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b1df562b5833fd49c66c7cbd83d7e6dca6daa5f53ba1493d755d0ba7bc5afd3"
+}

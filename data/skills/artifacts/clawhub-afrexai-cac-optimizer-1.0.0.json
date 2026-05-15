@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-cac-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_cac_optimizer",
+  "skill": {
+    "id": 18028,
+    "skillKey": "clawhub-afrexai-cac-optimizer",
+    "name": "CAC Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-cac-optimizer",
+    "url": "https://clawhub.ai/skills/afrexai-cac-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-cac-optimizer-4462c3c4fbc2bb9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculates and benchmarks true customer acquisition cost by channel and cohort, identifies savings opportunities, and builds data-driven CAC reduction plans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771251264649,
+      "changelog": "Initial release of the Customer Acquisition Cost (CAC) Optimizer skill:\n\n- Calculates true, fully-loaded CAC including all relevant costs\n- Breaks down CAC by channel, segment, and cohort, with industry benchmarks\n- Models LTV:CAC ratio and payback period for financial health checks\n- Identifies top CAC reduction opportunities and generates a prioritized roadmap\n- Provides actionable playbooks for both quick wins and strategic CAC reduction\n- Supports output in a clear, summarized format for easy decision-making",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83d05fc451696cffc224cee7358c93a11a2931e840eeb0042f5df9ae7b524cff"
+}

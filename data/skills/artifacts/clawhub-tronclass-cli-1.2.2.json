@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tronclass-cli@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tronclass_cli",
+  "skill": {
+    "id": 56021,
+    "skillKey": "clawhub-tronclass-cli",
+    "name": "Tronclass Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tronclass-cli",
+    "url": "https://clawhub.ai/skills/tronclass-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tronclass-cli-a7a77bc74a5a8832.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the TronClass learning management system (currently optimized for FJU) via the `tronclass` CLI — check courses, assignments, deadlines, grades,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujun-bo2",
+      "userId": "s1765651akd81m8m54d6rgb2v583xzda",
+      "displayName": "Yu Chun Huang",
+      "image": "https://avatars.githubusercontent.com/u/211344779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1777110808799,
+      "changelog": "Release 1.2.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c5302fa7bd08b4e228dbb2320e638cdc2b04fcf8d532879db462a240111e4f9"
+}

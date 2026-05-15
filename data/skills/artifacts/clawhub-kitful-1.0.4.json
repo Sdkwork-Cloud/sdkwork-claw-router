@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kitful@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kitful",
+  "skill": {
+    "id": 32872,
+    "skillKey": "clawhub-kitful",
+    "name": "Kitful SEO Article Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kitful",
+    "url": "https://clawhub.ai/skills/kitful",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kitful-54e079d02ca41cb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate full SEO articles using Kitful.ai. Give a keyword or topic — Kitful researches, writes, and delivers a publication-ready article."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eashish93",
+      "userId": "publishers:eashish93",
+      "displayName": "Ashish Rawat",
+      "image": "https://avatars.githubusercontent.com/u/13780952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771440245612,
+      "changelog": "- Added version field to SKILL.md (now 1.0.4).\n- Updated formatting in SKILL.md for improved readability (YAML array style for metadata, indented code blocks, bullet list tweaks).\n- Changed article delivery instructions: now provides only a download link and dashboard access; the full article is no longer rendered inline.\n- Refined completion messaging: clearer download and dashboard instructions after generation.\n- No code or logic changes; documentation and UX guidance improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e13f53605178154d47f588a13d5ae4f2ea0d83d2d3b830dc2728368675eecbac"
+}

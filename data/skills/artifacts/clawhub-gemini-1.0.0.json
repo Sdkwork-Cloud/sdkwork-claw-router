@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini",
+  "skill": {
+    "id": 8271,
+    "skillKey": "clawhub-gemini",
+    "name": "Gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini",
+    "url": "https://clawhub.ai/skills/gemini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-5d72436256ada538.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gemini CLI for one-shot Q&A, summaries, and generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 31434,
+      "installsAllTime": 1430,
+      "installsCurrent": 1388,
+      "stars": 51,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545316392,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:876e1d83b5561cd886e7b017042f9587d67edc9c71cfa9633bed3f9b362f0496"
+}

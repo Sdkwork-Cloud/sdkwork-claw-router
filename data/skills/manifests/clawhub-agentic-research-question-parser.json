@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70321,
+  "uuid": "skill-clawhub-agentic-research-question-parser",
+  "skillKey": "clawhub-agentic-research-question-parser",
+  "name": "研究问题解析 (Agentic AI 科研平台)",
+  "summary": "解析用户的自然语言临床科研问题，输出结构化研究参数（研究类型、终点、变量、推荐workflow）。当用户提出一个科研问题并需要将其转为结构化任务时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_research_question_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EmergencerOnEarth",
+      "features": [
+        "解析用户的自然语言临床科研问题，输出结构化研究参数（研究类型、终点、变量、推荐workflow）。当用户提出一个科研问题并需要将其转为结构化任务时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-research-question-parser@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128658416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-research-question-parser",
+      "url": "https://clawhub.ai/skills/agentic-research-question-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-research-question-parser",
+    "url": "https://clawhub.ai/skills/agentic-research-question-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-research-question-parser-a40d5826c0efd81b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-research-question-parser@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-research-question-parser-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:065a135549afe947bd67aa8c4e2805867ff2b83c77fc20da59c922a353e07aa3",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:41:08.306Z"
+}

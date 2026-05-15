@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33068,
+  "uuid": "skill-clawhub-jetson-info",
+  "skillKey": "clawhub-jetson-info",
+  "name": "Jetson Info",
+  "summary": "Query NVIDIA Jetson device model, JetPack, L4T, CUDA/cuDNN/TensorRT versions, serial number, and hardware specs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jetson_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kunka",
+      "features": [
+        "Query NVIDIA Jetson device model, JetPack, L4T, CUDA/cuDNN/TensorRT versions, serial number, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jetson-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11926106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jetson-info",
+      "url": "https://clawhub.ai/skills/jetson-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jetson-info",
+    "url": "https://clawhub.ai/skills/jetson-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jetson-info-7dd8fd0c17deb7c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jetson-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jetson-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ef061e1dfd798f7c1fffd9f2bb3f809bef81bb1d3800a23f8a4da879223ec8e",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:44:44.403Z"
+}

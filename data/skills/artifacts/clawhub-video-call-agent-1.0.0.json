@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-call-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_call_agent",
+  "skill": {
+    "id": 52652,
+    "skillKey": "clawhub-video-call-agent",
+    "name": "Video Call Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-call-agent",
+    "url": "https://clawhub.ai/skills/video-call-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-call-agent-ef4c1a2b8c04618f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start a video call with a real-time AI avatar using the Runway Characters API. The agent sends the user a call invite link — for standups, urgent alerts, che..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yining1023",
+      "userId": "s173kzvr3fx6060d4v0cspyk5d83ewge",
+      "displayName": "Yining Shi",
+      "image": "https://avatars.githubusercontent.com/u/8662372?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774296763549,
+      "changelog": "video-call-agent 1.0.0\n\n- Initial release: Start video calls with a real-time AI avatar using the Runway Characters API.\n- Agent sends users a call invite link for standups, alerts, or check-ins.\n- Customizable avatar with support for user-provided images and personalities.\n- Full call transcript available for agent actions after call ends.\n- Detailed privacy and setup instructions included for secure and flexible use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3752c5f6a4f2bcb072a4a16267d2402a1a1c18565de1a8a807a26fc2e3fb5d6d"
+}

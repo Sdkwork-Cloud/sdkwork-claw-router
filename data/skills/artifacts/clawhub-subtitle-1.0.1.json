@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle",
+  "skill": {
+    "id": 16145,
+    "skillKey": "clawhub-subtitle",
+    "name": "Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle",
+    "url": "https://clawhub.ai/skills/subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-a02c387e87f68f10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate synchronized subtitles (SRT/VTT/ASS) from video audio with precise timestamps. Use when users need subtitles, captions, or video transcription with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773476028066,
+      "changelog": "- Added explicit metadata block specifying required environment variable (SENSEAUDIO_API_KEY) and dependency on ffmpeg.\n- Updated Python environment variable from API_KEY to SENSEAUDIO_API_KEY in documentation and sample code.\n- Introduced Openclaw metadata fields for dependencies and installation instructions.\n- No changes to code logic or features; documentation and config structure improved for clarity and compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e84635e6c5dce4c016a2f4a67ea1a67585521088b9c82e9706549555c0cfcb01"
+}

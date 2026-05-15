@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36604,
+  "uuid": "skill-clawhub-secureship",
+  "skillKey": "clawhub-secureship",
+  "name": "Secureship",
+  "summary": "Secureship integration. Manage data, records, and automate workflows. Use when the user wants to interact with Secureship data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secureship",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Secureship integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Secureship data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secureship@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secureship",
+      "url": "https://clawhub.ai/skills/secureship"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secureship",
+    "url": "https://clawhub.ai/skills/secureship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secureship-7d04f3a4514afecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secureship@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-secureship-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b8faf820596b7f4f4a8c6aaa6ebcf8b3332c84474116ebe91f04309c913244",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:05.422Z"
+}

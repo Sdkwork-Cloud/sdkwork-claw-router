@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68989,
+  "uuid": "skill-clawhub-daily-song-recommender",
+  "skillKey": "clawhub-daily-song-recommender",
+  "name": "Daily Song Recommender",
+  "summary": "每日歌曲推荐技能。根据用户输入的音乐风格偏好，从多个平台综合推荐歌曲。当用户说\"推荐首歌\"、\"今天听什么\"、\"给我放首歌\"、\"随机推荐\"等时触发。用户提供喜欢的风格（流行/摇滚/爵士/古典/电子/民谣/说唱/日文/韩文/中文等），AI会综合各平台推荐合适的歌曲。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_song_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yjin94606-art",
+      "features": [
+        "每日歌曲推荐技能。根据用户输入的音乐风格偏好，从多个平台综合推荐歌曲。当用户说\"推荐首歌\"、\"今天听什么\"、\"给我放首歌\"、\"随机推荐\"等时触发。用户提供喜欢的风格（流行/摇滚/爵士/古典/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-song-recommender@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237404437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-song-recommender",
+      "url": "https://clawhub.ai/skills/daily-song-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-song-recommender",
+    "url": "https://clawhub.ai/skills/daily-song-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-song-recommender-36cdc74cab49f3fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-song-recommender@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-song-recommender-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32a1facc8f86e4e1df6181a2448df411ee9cf13b994e21fd2050ba2008c033d5",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:57:16.193Z"
+}

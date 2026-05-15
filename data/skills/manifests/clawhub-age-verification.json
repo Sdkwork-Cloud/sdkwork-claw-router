@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18707,
+  "uuid": "skill-clawhub-age-verification",
+  "skillKey": "clawhub-age-verification",
+  "name": "Age Verification",
+  "summary": "Verify user age via ID, face estimation, or third-party services to enforce age restrictions and enable parental controls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.age_verification",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Verify user age via ID, face estimation, or third-party services to enforce age restrictions an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/age-verification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "age-verification",
+      "url": "https://clawhub.ai/skills/age-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "age-verification",
+    "url": "https://clawhub.ai/skills/age-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/age-verification-f599097c699b5dc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/age-verification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-age-verification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8347cc1ce05a72cc00c2171455ba88a45278e35d9621b398b88c3c524cfcdd94",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:32:13.466Z"
+}

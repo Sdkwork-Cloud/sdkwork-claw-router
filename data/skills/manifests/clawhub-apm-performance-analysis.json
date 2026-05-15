@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60663,
+  "uuid": "skill-clawhub-apm-performance-analysis",
+  "skillKey": "clawhub-apm-performance-analysis",
+  "name": "腾讯云APM性能分析skill",
+  "summary": "APM 性能分析工具，通过 MCP 桥接连接腾讯云 APM Server，提供业务系统查询、实例详情、性能指标分析、调用链追踪、火焰图查看等能力。Trigger when user mentions APM, 性能分析, application performance, 业务系统, APM 实例, 调用链, 火焰...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apm_performance_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doycc",
+      "features": [
+        "APM 性能分析工具，通过 MCP 桥接连接腾讯云 APM Server，提供业务系统查询、实例详情、性能指标分析、调用链追踪、火焰图查看等能力。Trigger when user ment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apm-performance-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169504674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apm-performance-analysis",
+      "url": "https://clawhub.ai/skills/apm-performance-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apm-performance-analysis",
+    "url": "https://clawhub.ai/skills/apm-performance-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apm-performance-analysis-66c6b47a14bc424d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apm-performance-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apm-performance-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edd105b7592f30ea54e0982aa8ea3ad9a0499cb8ed43fee83bc917ad454c9e9f",
+      "artifactSizeBytes": 2746
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:54:19.663Z"
+}

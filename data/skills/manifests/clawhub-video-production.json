@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20444,
+  "uuid": "skill-clawhub-video-production",
+  "skillKey": "clawhub-video-production",
+  "name": "Video Production",
+  "summary": "Complete A/B video pipeline — storyboard, Veo 3 batch generation, browser preview with feedback loop, and ffmpeg assembly into final videos. Use when creatin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_production",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omerflo",
+      "features": [
+        "Complete A/B video pipeline — storyboard, Veo 3 batch generation, browser preview with feedback.",
+        "Use when creatin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-production@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48205149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-production",
+      "url": "https://clawhub.ai/skills/video-production"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-production",
+    "url": "https://clawhub.ai/skills/video-production",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-production-d41de80ee254d565.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-production@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-production-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1ff2527f1fddb53d214680e53c0227957493c4f765ea46fd1edaf1d9ac8b412",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T22:24:09.067Z"
+}

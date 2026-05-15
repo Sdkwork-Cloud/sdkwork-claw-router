@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_research",
+  "skill": {
+    "id": 65710,
+    "skillKey": "clawhub-china-research",
+    "name": "China Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-research",
+    "url": "https://clawhub.ai/skills/china-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-research-9348869c4b2550a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内社交媒体调研工具。触发条件：(1) 用户想了解某个领域的真实需求 (2) 用户想调研国内市场机会 (3) 用户想做产品需求验证 (4) 用户问\"最近国内XX有什么动态\" (5) 用户提及\"国内调研\"、\"市场调研\"、\"用户反馈"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuyunfeng8",
+      "userId": "s179yw9draj3f26pxv55gdm34d83shk5",
+      "displayName": "云峰",
+      "image": "https://avatars.githubusercontent.com/u/16048740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774708147614,
+      "changelog": "首次发布：国内社交媒体调研技能，覆盖10个主流平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:689169cfdde8eb9aaed7f5e5b598a443185abf4c7507c31c322e157b6b08cda1"
+}

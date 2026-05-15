@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14320,
+  "uuid": "skill-clawhub-pharmaclaw-chemistry-query",
+  "skillKey": "clawhub-pharmaclaw-chemistry-query",
+  "name": "Pharmaclaw Chemistry Query",
+  "summary": "Chemistry agent skill for PubChem API queries (compound info/properties, structures/SMILES/images, synthesis routes/references) + RDKit cheminformatics (SMIL...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaclaw_chemistry_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cheminem",
+      "features": [
+        "Chemistry agent skill for PubChem API queries (compound info/properties, structures/SMILES/imag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pharmaclaw-chemistry-query@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260304734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pharmaclaw-chemistry-query",
+      "url": "https://clawhub.ai/skills/pharmaclaw-chemistry-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaclaw-chemistry-query",
+    "url": "https://clawhub.ai/skills/pharmaclaw-chemistry-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaclaw-chemistry-query-10d8adf564fabd8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pharmaclaw-chemistry-query@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pharmaclaw-chemistry-query-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f8040d91293307121500a2a673e882d1a0ae1338c4956a7c0daa2fd376b75be",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:15:33.082Z"
+}

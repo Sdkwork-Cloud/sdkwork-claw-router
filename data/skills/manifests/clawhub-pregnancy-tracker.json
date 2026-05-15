@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11701,
+  "uuid": "skill-clawhub-pregnancy-tracker",
+  "skillKey": "clawhub-pregnancy-tracker",
+  "name": "Pregnancy Tracker",
+  "summary": "Track pregnancy journey with weekly updates, symptom logging, and milestone countdowns",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pregnancy_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Track pregnancy journey with weekly updates, symptom logging, and milestone countdowns"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pregnancy-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pregnancy-tracker",
+      "url": "https://clawhub.ai/skills/pregnancy-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pregnancy-tracker",
+    "url": "https://clawhub.ai/skills/pregnancy-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pregnancy-tracker-1cb28606a4a4c894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pregnancy-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pregnancy-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f66faf45af8e164e320f5c269018853a71d5cb976f80c016ad95752e39d0a65",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:35:30.292Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20805,
+  "uuid": "skill-clawhub-agent-session-cost",
+  "skillKey": "clawhub-agent-session-cost",
+  "name": "Agent Session Cost",
+  "summary": "Track and analyze your OpenClaw session costs. Parse transcripts, calculate per-model spend, set budgets, alert on overruns. Stop burning money blindly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_session_cost",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Track and analyze your OpenClaw session costs",
+        "Parse transcripts, calculate per-model spend, set budgets, alert on overruns",
+        "Stop burning money blindly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-session-cost@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-session-cost",
+      "url": "https://clawhub.ai/skills/agent-session-cost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-session-cost",
+    "url": "https://clawhub.ai/skills/agent-session-cost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-session-cost-21df40ca7dbf98c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-session-cost@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-session-cost-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a6f0819d96093a9b1548256033cdf8214727ece1365d610c9d496759ae7c88",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:37:48.511Z"
+}

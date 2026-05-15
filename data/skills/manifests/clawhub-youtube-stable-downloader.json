@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28084,
+  "uuid": "skill-clawhub-youtube-stable-downloader",
+  "skillKey": "clawhub-youtube-stable-downloader",
+  "name": "youtube-stable-downloader",
+  "summary": "Save YouTube videos locally in multiple resolutions (360p to 1080p, best quality) or extract audio for offline viewing.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_stable_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaosen Li",
+      "features": [
+        "Save YouTube videos locally in multiple resolutions (360p to 1080p, best quality) or extract au."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-stable-downloader@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149303023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-stable-downloader",
+      "url": "https://clawhub.ai/skills/youtube-stable-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-stable-downloader",
+    "url": "https://clawhub.ai/skills/youtube-stable-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-stable-downloader-38fd9c14dccdb31a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-stable-downloader@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-stable-downloader-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a451bcd7464954eb5dd89643ead9c47e2c1d72e01d72c68fa89aa25c1b9c2845",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:37:50.298Z"
+}

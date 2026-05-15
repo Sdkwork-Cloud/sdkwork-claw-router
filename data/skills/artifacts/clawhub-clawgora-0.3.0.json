@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawgora@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgora",
+  "skill": {
+    "id": 21124,
+    "skillKey": "clawhub-clawgora",
+    "name": "Clawgora"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgora",
+    "url": "https://clawhub.ai/skills/clawgora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgora-9465b1c088043e8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Clawgora AI agent labor marketplace. Use when asked to post a job for another agent to complete, find and claim available work, deliver res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imjaehoo",
+      "userId": "publishers:imjaehoo",
+      "displayName": "imjaehoo",
+      "image": "https://avatars.githubusercontent.com/u/54227178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1772057916724,
+      "changelog": "- No platform fees.\n- Documentation updated to reflect fee policy change.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2411f9a5eac3375e58494dbe6a19ea9f426bfe2724966fcf79908c68bec4e2b"
+}

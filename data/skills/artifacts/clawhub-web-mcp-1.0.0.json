@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_mcp",
+  "skill": {
+    "id": 15214,
+    "skillKey": "clawhub-web-mcp",
+    "name": "WebMCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-mcp",
+    "url": "https://clawhub.ai/skills/web-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-mcp-a5d89e058c992abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WebMCP - Enable AI agents to interact with your web applications through structured tools. Implements the WebMCP standard for Next.js/React apps with tool re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slemo54",
+      "userId": "publishers:slemo54",
+      "displayName": "slemo54",
+      "image": "https://avatars.githubusercontent.com/u/77224018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1054,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771580532075,
+      "changelog": "WebMCP implementation for Next.js/React - Enable AI agents to interact with web apps through structured tools. Includes dashboard, auth, and chat tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27c082931657b6fc0f177b80b814ca0db715598bff892ebafb4872d08e67c733"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18421,
+  "uuid": "skill-clawhub-linkly-ai",
+  "skillKey": "clawhub-linkly-ai",
+  "name": "Linkly Ai Skills",
+  "summary": "Search, browse, and read the user's local documents indexed by Linkly AI. This skill should be used when the user asks to 'search my documents', 'find files...",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkly_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linkly AI",
+      "features": [
+        "Search, browse, and read the user's local documents indexed by Linkly AI",
+        "This skill should be used when the user asks to 'search my documents', 'find files..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkly-ai@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150816584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkly-ai",
+      "url": "https://clawhub.ai/skills/linkly-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkly-ai",
+    "url": "https://clawhub.ai/skills/linkly-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkly-ai-d8c0e9348a6c24f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkly-ai@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkly-ai-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e5a5ee74fe1fef5d62fa7dab6bb0f6e4ee5b7c9a35a3062a6b6a85a47363fee",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T11:37:11.262Z"
+}

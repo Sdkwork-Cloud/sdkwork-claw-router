@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-causal@0.10.3",
+  "version": "0.10.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_causal",
+  "skill": {
+    "id": 22226,
+    "skillKey": "clawhub-agent-causal",
+    "name": "Agent Causal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-causal",
+    "url": "https://clawhub.ai/skills/agent-causal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-causal-8d86c6e0c5fc43a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Causal Decision Tool helps you and your AI agents answer one question from experiment data: should we ship this change, keep running the test, or roll..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhumorris",
+      "userId": "s17977p9bp8aqeg4qvcakzky5n85syh7",
+      "displayName": "Morris Zhu",
+      "image": "https://avatars.githubusercontent.com/u/13523903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 41
+    },
+    "latestVersion": {
+      "version": "0.10.3",
+      "createdAt": 1778154416976,
+      "changelog": "Skill version 0.10.3 aligned with v0.10.2 git tag — SKILL.md tarball URL now uses v0.10.2 (matching the published skill version). Also creates git tag v0.10.2 on GitHub for reproducibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef2c8e04a3974bc289785d615d2c8175be6eb800442dcbd7e334e5c26742190a"
+}

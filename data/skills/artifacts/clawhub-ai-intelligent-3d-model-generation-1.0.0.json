@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intelligent-3d-model-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligent_3d_model_generation",
+  "skill": {
+    "id": 58443,
+    "skillKey": "clawhub-ai-intelligent-3d-model-generation",
+    "name": "Ai Intelligent 3d Model Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligent-3d-model-generation",
+    "url": "https://clawhub.ai/skills/ai-intelligent-3d-model-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligent-3d-model-generation-63c1a6e1cafd0fb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 3D模型生成，文生3D + 图片转3D。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773774281970,
+      "changelog": "- Initial release of AI 智能3D模型生成 skill.\n- Features include text-to-3D, image-to-3D, model optimization, smart material generation, and batch processing.\n- Supports use cases like game development, VR/AR, architecture, and product design.\n- Available in three pricing tiers: Basic, Pro, and Enterprise.\n- Built with Python and FastAPI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fe2fd2420218d69dbef62faa413fdc7e3760e5a25060abf94038be6151652f9"
+}

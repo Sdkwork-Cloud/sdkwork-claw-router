@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forkzoo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forkzoo",
+  "skill": {
+    "id": 12398,
+    "skillKey": "clawhub-forkzoo",
+    "name": "ForkZoo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forkzoo",
+    "url": "https://clawhub.ai/skills/forkzoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forkzoo-2779171abef550d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt and manage GitHub-native digital pets (tamagotchis) that evolve daily with AI. Use when an agent wants to adopt a pet (monkey, cat, dog, lion), check their pet's status/evolution, interact with their pet, view the community gallery,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levi-law",
+      "userId": "publishers:levi-law",
+      "displayName": "levi-law",
+      "image": "https://avatars.githubusercontent.com/u/215663328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1775,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770321807403,
+      "changelog": "- Initial release of forkzoo: adopt, evolve, and manage GitHub-native digital pets (tamagotchis).\n- Supports adopting monkey, cat, dog, or lion pets that evolve daily via AI.\n- Interact with your pet: check status, feed/pet, view family tree, and see evolution history.\n- Community features: view public pet gallery and leaderboards, and track family lineage.\n- Breeding: fork pets to create new offspring with inherited and mutated traits.\n- Provides troubleshooting guidance and setup requirements for GitHub integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:48cd9345e0be2a71c6272899331f660694688a5969b972215ec5f0a6bbf2f083"
+}

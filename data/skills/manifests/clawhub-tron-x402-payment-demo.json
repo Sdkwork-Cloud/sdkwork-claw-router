@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47065,
+  "uuid": "skill-clawhub-tron-x402-payment-demo",
+  "skillKey": "clawhub-tron-x402-payment-demo",
+  "name": "tron-x402-payment-demo",
+  "summary": "Demo of x402 payment protocol by fetching a protected image. Triggers: '演示x402-payment' or 'demo x402-payment'",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tron_x402_payment_demo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AiBank",
+      "features": [
+        "Demo of x402 payment protocol by fetching a protected image",
+        "Triggers: '演示x402-payment' or 'demo x402-payment'"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tron-x402-payment-demo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116271706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tron-x402-payment-demo",
+      "url": "https://clawhub.ai/skills/tron-x402-payment-demo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tron-x402-payment-demo",
+    "url": "https://clawhub.ai/skills/tron-x402-payment-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tron-x402-payment-demo-009b2b2aaf14f91b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tron-x402-payment-demo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tron-x402-payment-demo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51dedd38a97d9166718cdf08c559dc8a99f8eec0f3083939827f6e3cc78538a0",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T15:34:19.612Z"
+}

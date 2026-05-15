@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-legal-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_legal_skill",
+  "skill": {
+    "id": 29180,
+    "skillKey": "clawhub-claude-legal-skill",
+    "name": "Claude Legal Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-legal-skill",
+    "url": "https://clawhub.ai/skills/claude-legal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-legal-skill-b862d76bd04358b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review legal contracts, NDAs, employment agreements, SaaS terms, and M&A documents. Identifies unfavorable terms, suggests redlines, and compares to market s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youeshopent-debug",
+      "userId": "s17dmcf28t60mp761zvax79q49848pn8",
+      "displayName": "LAU SII LUN",
+      "image": "https://avatars.githubusercontent.com/u/266634203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775417274392,
+      "changelog": "Contract Review Skill v3.0.0 introduces a comprehensive framework for reviewing legal agreements, focusing on risk identification and actionable redlines.\n\n- Adds a detailed pre-review checklist for document completeness (blank fields, missing exhibits, signature status, page check).\n- Guides identification of document type and user’s party/position to tailor risk analysis.\n- Provides clear markdown output templates, including executive summarization, key term extraction, red flags, and negotiation priorities.\n- Supplies quick reference checklists for common contract types (NDA, SaaS/MSA).\n- Recommends prioritized negotiation points and suggested redline language.\n- Emphasizes highlighting missing or problematic terms upfront for efficient review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:694d65731d91e37074778390c541a2bd1e070118abbd464f36c07cea1f840f32"
+}

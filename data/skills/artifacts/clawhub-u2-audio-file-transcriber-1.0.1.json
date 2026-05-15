@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/u2-audio-file-transcriber@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.u2_audio_file_transcriber",
+  "skill": {
+    "id": 57348,
+    "skillKey": "clawhub-u2-audio-file-transcriber",
+    "name": "U2-audio-file-transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "u2-audio-file-transcriber",
+    "url": "https://clawhub.ai/skills/u2-audio-file-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/u2-audio-file-transcriber-291bb12c6877554d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio files via UniCloud ASR (云知声语音识别, recorded audio → text) API from UniSound. Supports multiple formats, optimized for finance, customer servic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaiccee",
+      "userId": "s1730k4v567rph88v35wj1eftn83jpwr",
+      "displayName": "aaiccee",
+      "image": "https://avatars.githubusercontent.com/u/45053675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773727309027,
+      "changelog": "# v1.0.1 Changelog\n\n- Removed all documentation and reference files: README.md and all content in references/.\n- SKILL.md is now the primary and only documentation, with essential usage and configuration info.\n- No user-facing changes to runtime usage or API behavior; update is documentation-only.\n- Reduced redundant or sample guidance—relevant instructions are now consolidated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:991cdcbf6f3879fd1c67fde600d336f015335076e639694df540b4adbbe91ef0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-super-healthcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_super_healthcheck",
+  "skill": {
+    "id": 19710,
+    "skillKey": "clawhub-openclaw-super-healthcheck",
+    "name": "Advanced OpenClaw System Health Check & Repair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-super-healthcheck",
+    "url": "https://clawhub.ai/skills/openclaw-super-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-super-healthcheck-ac8b0ef561c9a694.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform comprehensive security audits, system updates, network and service status checks, and configure scheduled health monitoring for OpenClaw deployments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pettercc2024-create",
+      "userId": "s17dhszvnxdesyvhm6wgj6xww183fmj2",
+      "displayName": "pettercc2024-create",
+      "image": "https://avatars.githubusercontent.com/u/233812286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774207636466,
+      "changelog": "Initial release of OpenClaw system healthcheck.\n\n- Provides comprehensive system health and security checks for OpenClaw deployments.\n- Includes commands for full healthcheck, security audit, cron scheduling, status reporting, and version checks.\n- Generates detailed health reports with summaries, problem lists, and remediation advice.\n- Supports healthcheck configuration and adjustable scheduling.\n- Stores configuration and logs locally for easy review and customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e30ea3751e924b099b4e26d94cd0bf72f02c6e735282e7617c38cdf3d9e8de4"
+}

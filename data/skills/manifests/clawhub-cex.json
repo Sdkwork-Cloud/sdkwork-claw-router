@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32284,
+  "uuid": "skill-clawhub-cex",
+  "skillKey": "clawhub-cex",
+  "name": "Cex",
+  "summary": "Analyze cex operations. Use when you need to understand cex mechanisms, evaluate protocol security, or reference on-chain concepts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Analyze cex operations",
+        "Use when you need to understand cex mechanisms, evaluate protocol security, or reference on-cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cex",
+      "url": "https://clawhub.ai/skills/cex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cex",
+    "url": "https://clawhub.ai/skills/cex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cex-a68357552b136db3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:786d53b91fe0dc185b9f2342b324c2efaee65ea17a63a727005baad01383342f",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:18:21.021Z"
+}

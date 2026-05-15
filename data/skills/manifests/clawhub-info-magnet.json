@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53175,
+  "uuid": "skill-clawhub-info-magnet",
+  "skillKey": "clawhub-info-magnet",
+  "name": "Info Magnet",
+  "summary": "Info Magnet — set up topics you care about and let information come to you. Supports web search, RSS feeds, and URL monitoring. Periodic scans push relevant...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.info_magnet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "besty0121",
+      "features": [
+        "Info Magnet — set up topics you care about and let information come to you",
+        "Supports web search, RSS feeds, and URL monitoring",
+        "Periodic scans push relevant..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/info-magnet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133213023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "info-magnet",
+      "url": "https://clawhub.ai/skills/info-magnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "info-magnet",
+    "url": "https://clawhub.ai/skills/info-magnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/info-magnet-66dc083ed1cb6d5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/info-magnet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-info-magnet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3085e8b10b0fe284ecf9d74a8eebd4cb2d32a177198abbe85e71e7b594c4363c",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:29:18.199Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image2",
+  "skill": {
+    "id": 60367,
+    "skillKey": "clawhub-image2",
+    "name": "image2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image2",
+    "url": "https://clawhub.ai/skills/image2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image2-5bb21ac469b5e7df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 image2 接口创建图片生成任务（文生图/参考生图）。当用户提到\"生成图片\"\"图生图\"\"海报图\"\"封面图\"，或明确要求比例（如 16:9、9:16）时应使用本 skill。调用接口 /api/v1/user_task/asyncCreateWithCost，核心参数含 user_input.modelTy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runninghcm",
+      "userId": "s17cqb0yzmgpva6tj0mfspk02983jga5",
+      "displayName": "cmhan",
+      "image": "https://avatars.githubusercontent.com/u/18439292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777389699857,
+      "changelog": "image2 1.0.0 – 初始版本  \n- 新增 image2 任务创建与查询技能，支持文生图（text2img）与参考生图（img2img）。\n- 支持用户指定图片比例、参考图 URL，自动参数校验与必填项补齐。\n- 完成接口调用后自动执行异步任务查询，直到获得最终结果。\n- 支持 X_API_KEY 环境变量和本地密钥存储，默认优先使用会话变量。\n- 明确限制仅用于图片生成任务，避免视频、OCR、非生成式编辑等场景。\n- 内置详细错误处理、用户确认机制与防重复提交策略。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e8e08d77985ede8ee1c1c76cdde55354264609d2f1481b9b11b8c51499e05c2"
+}

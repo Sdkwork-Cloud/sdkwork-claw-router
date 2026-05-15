@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63915,
+  "uuid": "skill-clawhub-multi-writing-skills",
+  "skillKey": "clawhub-multi-writing-skills",
+  "name": "multi-writing-skills",
+  "summary": "支持将 Markdown 文章转换并一键发布到微信公众号、知乎、今日头条，含代码格式优化、AI写作与封面图生成。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_writing_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuesf",
+      "features": [
+        "支持将 Markdown 文章转换并一键发布到微信公众号、知乎、今日头条，含代码格式优化、AI写作与封面图生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-writing-skills@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20236780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-writing-skills",
+      "url": "https://clawhub.ai/skills/multi-writing-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-writing-skills",
+    "url": "https://clawhub.ai/skills/multi-writing-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-writing-skills-180dc90a311da6ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-writing-skills@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-writing-skills-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1df94bc865d53c1117c68c3c0629e4a6f91e32fa2e1657caea75390cd31efe",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:22:11.931Z"
+}

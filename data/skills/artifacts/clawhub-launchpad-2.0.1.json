@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/launchpad@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launchpad",
+  "skill": {
+    "id": 52515,
+    "skillKey": "clawhub-launchpad",
+    "name": "Launchpad"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launchpad",
+    "url": "https://clawhub.ai/skills/launchpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launchpad-7b3937a5f4397ec6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for blockchain and crypto — covers intro, formulas, regulations and more. Quick lookup for Launchpad concepts, best practices, and implementat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774312971535,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bf5cfde186427b2e7faef491bb0debfdee2f55bff59bffc060c20e0d5d3f816"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32555,
+  "uuid": "skill-clawhub-panews-web-viewer",
+  "skillKey": "clawhub-panews-web-viewer",
+  "name": "Panews Web Viewer",
+  "summary": "Read public PANews website pages as Markdown. Use for homepage, article-page, and column-page reads.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panews_web_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seven Du",
+      "features": [
+        "Read public PANews website pages as Markdown",
+        "Use for homepage, article-page, and column-page reads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/panews-web-viewer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5564821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "panews-web-viewer",
+      "url": "https://clawhub.ai/skills/panews-web-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panews-web-viewer",
+    "url": "https://clawhub.ai/skills/panews-web-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panews-web-viewer-ebf8856b589c0da1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/panews-web-viewer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-panews-web-viewer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83a74200487a6bc09efa11963c3d7df73bced50781f21b7019edb30876141486",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:04:40.198Z"
+}

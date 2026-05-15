@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45680,
+  "uuid": "skill-clawhub-us-open",
+  "skillKey": "clawhub-us-open",
+  "name": "Us Open",
+  "summary": "Provides detailed information on the US Open tennis tournament, including rules, history, top players, schedule, and results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_open",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on the US Open tennis tournament, including rules, history, top p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/us-open@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "us-open",
+      "url": "https://clawhub.ai/skills/us-open"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-open",
+    "url": "https://clawhub.ai/skills/us-open",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-open-531debd30a702eca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/us-open@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-us-open-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1702b9a2786e52bb4e957babb9b3f941df2e3098403c171c3d7735e08ec76bcf",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T05:59:54.595Z"
+}

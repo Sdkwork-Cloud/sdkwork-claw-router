@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30313,
+  "uuid": "skill-clawhub-sourceforge",
+  "skillKey": "clawhub-sourceforge",
+  "name": "Sourceforge",
+  "summary": "Sourceforge integration. Manage Projects. Use when the user wants to interact with Sourceforge data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sourceforge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sourceforge integration",
+        "Manage Projects",
+        "Use when the user wants to interact with Sourceforge data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sourceforge@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sourceforge",
+      "url": "https://clawhub.ai/skills/sourceforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sourceforge",
+    "url": "https://clawhub.ai/skills/sourceforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sourceforge-9cbcc379b1c32d82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sourceforge@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sourceforge-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:181a9ef7c19582ed0fadd4e1337a36bfad990bfd3716291c576fd6e183391973",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:18.719Z"
+}

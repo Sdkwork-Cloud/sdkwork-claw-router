@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72891,
+  "uuid": "skill-clawhub-neuron",
+  "skillKey": "clawhub-neuron",
+  "name": "神经元",
+  "summary": "分布式AI节点系统，实现跨局域网节点的任务分发、并行处理和结果聚合",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neuron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fqch1981",
+      "features": [
+        "分布式AI节点系统，实现跨局域网节点的任务分发、并行处理和结果聚合"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neuron@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6570770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neuron",
+      "url": "https://clawhub.ai/skills/neuron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neuron",
+    "url": "https://clawhub.ai/skills/neuron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neuron-9807b0bde450670b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neuron@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neuron-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3153acd2021dbbd75f27e22bfba4373043ce5349d5bd35ec6a7742148d5e2325",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:28:43.838Z"
+}

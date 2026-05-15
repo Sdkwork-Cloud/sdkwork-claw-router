@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19756,
+  "uuid": "skill-clawhub-pomoclaw",
+  "skillKey": "clawhub-pomoclaw",
+  "name": "PomoClaw",
+  "summary": "Control the PomoClaw pomodoro timer on the Mac. Use when the user asks to start, stop, pause a pomodoro/pomoclaw/focus timer, check timer status, or when a p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pomoclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vladimir Kozlovskyi",
+      "features": [
+        "Control the PomoClaw pomodoro timer on the Mac",
+        "Use when the user asks to start, stop, pause a pomodoro/pomoclaw/focus timer, check timer statu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pomoclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1349630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pomoclaw",
+      "url": "https://clawhub.ai/skills/pomoclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pomoclaw",
+    "url": "https://clawhub.ai/skills/pomoclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pomoclaw-a049beee24ed93d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pomoclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pomoclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdc572df456078f10b46a470ec566432e2676689670dc9a30129204930e09476",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T17:53:22.844Z"
+}

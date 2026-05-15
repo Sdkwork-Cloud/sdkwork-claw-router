@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-searxng@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_searxng",
+  "skill": {
+    "id": 65694,
+    "skillKey": "clawhub-web-searxng",
+    "name": "web-searxng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-searxng",
+    "url": "https://clawhub.ai/skills/web-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-searxng-713ef9a0d12e3c38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于SearXNG的隐私保护搜索引擎，支持快速无追踪的网页搜索和结果聚合。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xumanzi",
+      "userId": "s172kqv9aptph3v0v530hqkfqs83h8py",
+      "displayName": "xumanzi",
+      "image": "https://avatars.githubusercontent.com/u/184940918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776148258385,
+      "changelog": "Version 1.0.2 introduces smart mode detection and automatic Docker port discovery.\n\n- Added automatic discovery of SearXNG Docker service ports.\n- Introduced intelligent query mode detection: switches to stock analysis mode for finance-related queries, and uses standard search mode for others.\n- Stock analysis mode outputs detailed reports with technical analysis and recommendations.\n- Enhanced search output formatting for both modes.\n- Improved reliability by checking environment variables, running containers, and common ports for service connectivity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8a9549f76822baeb32124c67f2d574b13e54a037a249cc11d828d563ebf332e"
+}

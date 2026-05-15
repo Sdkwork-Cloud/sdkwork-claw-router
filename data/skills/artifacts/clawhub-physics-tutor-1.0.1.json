@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/physics-tutor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.physics_tutor",
+  "skill": {
+    "id": 53666,
+    "skillKey": "clawhub-physics-tutor",
+    "name": "Feynman Physics Tutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "physics-tutor",
+    "url": "https://clawhub.ai/skills/physics-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/physics-tutor-c36a7585b62041d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Target users: Chinese high school students (Grade 10-12) studying physics. Goal: Build genuine understanding of physics concepts through the Feynman method —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanxlab",
+      "userId": "s17fanxpssvnt5h3evs93pwdjs83gwm4",
+      "displayName": "FanX",
+      "image": "https://avatars.githubusercontent.com/u/231185438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777876157432,
+      "changelog": "Fix trigger table duplicate entries; add optics and thermodynamics to module trigger",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:939ee7067a209f3e0d52af9091d0c41d4a12ccc2d107de5d6eeb6bb9c1d5f759"
+}

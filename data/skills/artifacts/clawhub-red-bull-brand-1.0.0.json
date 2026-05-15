@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/red-bull-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.red_bull_brand",
+  "skill": {
+    "id": 48289,
+    "skillKey": "clawhub-red-bull-brand",
+    "name": "Red Bull Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "red-bull-brand",
+    "url": "https://clawhub.ai/skills/red-bull-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/red-bull-brand-5b0199bc149d075d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed brand analysis of Red Bull, covering its history, market dominance, sports ownership, content strategy, and founder philosophy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777417497656,
+      "changelog": "- Initial release: comprehensive profile of the Red Bull brand.\n- Includes brand history, timeline of major milestones, and business metrics.\n- Explains Red Bull’s unique marketing, content strategy, and sports ownership.\n- Details brand positioning, product formula, and entrepreneurial philosophy.\n- Provides context on global market share, revenue, and competitive advantages.\n- Covers the origin connection with Krating Daeng and ownership structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b38a152208292e8c93991e8f7036105b2787bab585ecadb243a5236ce2dec13"
+}

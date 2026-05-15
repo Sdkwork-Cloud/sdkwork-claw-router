@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcn-toolkit@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcn_toolkit",
+  "skill": {
+    "id": 32839,
+    "skillKey": "clawhub-mcn-toolkit",
+    "name": "Mcn Toolkit Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcn-toolkit",
+    "url": "https://clawhub.ai/skills/mcn-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcn-toolkit-ef3b4001d19ab507.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCN Toolkit is an AI operations assistant for MCN agencies, influencer managers, and KOL teams handling creators at scale. It helps organize campaign assets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774896733842,
+      "changelog": "- Added a metadata header with name and multilingual description to SKILL.md for platform integration and clarity.\n- Description now includes both English and Chinese (MCN 管理、达人运营、KOL 内容生产、机构工具箱) for wider accessibility.\n- No changes to functional documentation or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:194c13b7f04c4fd75e19989658b05ac2b24ecd20731e1adc1dc28193bb5eaa4e"
+}

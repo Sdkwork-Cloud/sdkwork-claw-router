@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okxprediction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okxprediction",
+  "skill": {
+    "id": 30693,
+    "skillKey": "clawhub-okxprediction",
+    "name": "okxprediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okxprediction",
+    "url": "https://clawhub.ai/skills/okxprediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okxprediction-1190be294874c979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predicts short-term BTC market direction using multi-timeframe analysis, funding rates, and sentiment to signal trade execution, watch, or no trade."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maserati8",
+      "userId": "publishers:maserati8",
+      "displayName": "maserati8",
+      "image": "https://avatars.githubusercontent.com/u/39120860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773939037187,
+      "changelog": "Initial release – prediction framework for BTC short-term trend and trade execution.\n\n- Analyzes BTC direction using multi-timeframe data (K-line, funding, ratio, liquidation).\n- Features a 6-layer evaluation system: Direction, Structure, Position, Sentiment, Liquidity, and Trigger.\n- Employs a scoring system guiding trade/action decisions.\n- Strict rules enforce trade entries only under optimal alignment.\n- Outputs structured JSON for trade signals, including direction, score, entry type, stop loss, and rationale.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f19e553b359db4c5257fa6d98d30a702daaee4bcdf05b56c06498056c0810e4"
+}

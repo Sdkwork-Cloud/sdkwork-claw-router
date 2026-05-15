@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-qrcode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_qrcode",
+  "skill": {
+    "id": 33440,
+    "skillKey": "clawhub-local-qrcode",
+    "name": "Local QR Code Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-qrcode",
+    "url": "https://clawhub.ai/skills/local-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-qrcode-2e6724dbbc2c9467.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR codes locally from text/URL to PNG image or ASCII art. Pure local generation using qrcode library. No API key required. Use when users need to cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alone86136",
+      "userId": "s176skeseatzx5qrqf0a3v701d83gnmp",
+      "displayName": "Alone86136",
+      "image": "https://avatars.githubusercontent.com/u/266516065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774322001976,
+      "changelog": "Initial release: Generate QR codes locally to PNG or ASCII. Supports custom box and border sizes. All generation done locally, no external API calls/keys needed. Requires qrcode and pillow Python packages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b53433ac5f59a30186c7eead67561ece304f7b322891d5679f3c7fdb079944d"
+}

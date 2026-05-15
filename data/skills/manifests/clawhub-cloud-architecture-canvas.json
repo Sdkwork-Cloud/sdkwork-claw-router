@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70056,
+  "uuid": "skill-clawhub-cloud-architecture-canvas",
+  "skillKey": "clawhub-cloud-architecture-canvas",
+  "name": "Cloud Architecture Canvas",
+  "summary": "腾讯云智能顾问助手 — 通过 AK/SK 鉴权调用腾讯云智能顾问 API，管理云架构图（查询目录、获取架构列表和详情、获取架构评估结果）及风险评估（查询评估项、按产品/分组/风险等级筛选），支持开通智能顾问服务。当用户要求查看云架构、查询架构目录、获取架构详情、查看架构评估结果、查看风险评估项、巡检项、云资源风险...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_architecture_canvas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tencent CloudQ Team",
+      "features": [
+        "腾讯云智能顾问助手 — 通过 AK/SK 鉴权调用腾讯云智能顾问 API，管理云架构图（查询目录、获取架构列表和详情、获取架构评估结果）及风险评估（查询评估项、按产品/分组/风险等级筛选），."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-architecture-canvas@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48058550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-architecture-canvas",
+      "url": "https://clawhub.ai/skills/cloud-architecture-canvas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-architecture-canvas",
+    "url": "https://clawhub.ai/skills/cloud-architecture-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-architecture-canvas-4c07a0059f3e9838.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-architecture-canvas@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-architecture-canvas-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:866d2adc194150a7051d79edf34893fe17c210e175644670e1a6621e95ecf283",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:18:28.561Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16782,
+  "uuid": "skill-clawhub-openclaw-hot-skills",
+  "skillKey": "clawhub-openclaw-hot-skills",
+  "name": "OpenClaw Hot Skills",
+  "summary": "Discover trending, must-have, and topic-specific high-value skills from ClawHub. Use when the user asks to see hot/popular/trending OpenClaw skills, wants a...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hot_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "嘟嘟MD",
+      "features": [
+        "Discover trending, must-have, and topic-specific high-value skills from ClawHub",
+        "Use when the user asks to see hot/popular/trending OpenClaw skills, wants a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-hot-skills@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7495019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-hot-skills",
+      "url": "https://clawhub.ai/skills/openclaw-hot-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hot-skills",
+    "url": "https://clawhub.ai/skills/openclaw-hot-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hot-skills-7bf0ebbe43524a9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-hot-skills@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-hot-skills-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:347270c030aecdb8e02c005c040e4e0b52d59ccfc18f99c3956631b264927f8b",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:49:56.465Z"
+}

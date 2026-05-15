@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maps-osrm@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maps_osrm",
+  "skill": {
+    "id": 15903,
+    "skillKey": "clawhub-maps-osrm",
+    "name": "OSRM Maps Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maps-osrm",
+    "url": "https://clawhub.ai/skills/maps-osrm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maps-osrm-7c1f5303e13c9634.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distance, routing, and geocoding using free APIs (OSRM + Nominatim/OSM). Use when the user asks about distance between places, travel time, directions, how f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adhishthite",
+      "userId": "publishers:adhishthite",
+      "displayName": "Adhish Thite",
+      "image": "https://avatars.githubusercontent.com/u/31769894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 934,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771829962808,
+      "changelog": "- Updated requirement: now only requires python3 (3.6+) instead of curl and python3.\n- Updated metadata and description to reflect the change in required dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f1bc1e4e2f0524dab140dbeab53fbc6bdc5ec82e18339ce0fbf304ac6abca22"
+}

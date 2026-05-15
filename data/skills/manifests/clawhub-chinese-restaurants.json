@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34469,
+  "uuid": "skill-clawhub-chinese-restaurants",
+  "skillKey": "clawhub-chinese-restaurants",
+  "name": "Chinese Restaurants",
+  "summary": "Find nearby Chinese restaurants. Invoke when user asks for Chinese food near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_restaurants",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Find nearby Chinese restaurants",
+        "Invoke when user asks for Chinese food near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-restaurants@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-restaurants",
+      "url": "https://clawhub.ai/skills/chinese-restaurants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-restaurants",
+    "url": "https://clawhub.ai/skills/chinese-restaurants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-restaurants-f10ef2ea073095c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-restaurants@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-restaurants-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9382916211bbfd1d33faefae9b28f73977943333efb13bea7f310d09821ee3d4",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:50:51.940Z"
+}

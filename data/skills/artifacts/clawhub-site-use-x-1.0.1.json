@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/site-use-x@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_use_x",
+  "skill": {
+    "id": 32078,
+    "skillKey": "clawhub-site-use-x",
+    "name": "X use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-use-x",
+    "url": "https://clawhub.ai/skills/site-use-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-use-x-279b336efca03064.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to collect tweets, search Twitter/X, get tweet details, set up site-use, or browse cached posts. Examples: 'set up site-use', 'grab l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williampenrose",
+      "userId": "s17bch90k20evyytd72gsa411x8423gn",
+      "displayName": "WilliamPenrose",
+      "image": "https://avatars.githubusercontent.com/u/140290499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775102096656,
+      "changelog": "Add homepage link for source verification",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1c4566c57696cc7d2f4d5c753c0ef6b7be4726fee6b147c95310207947d0324"
+}

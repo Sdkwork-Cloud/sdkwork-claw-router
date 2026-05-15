@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blockchain-developer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockchain_developer",
+  "skill": {
+    "id": 38245,
+    "skillKey": "clawhub-blockchain-developer",
+    "name": "Blockchain Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockchain-developer",
+    "url": "https://clawhub.ai/skills/blockchain-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockchain-developer-428fb65c045ae732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates personalized blockchain development career roadmaps based on user experience, skills, and professional goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774366681871,
+      "changelog": "- Initial release of the Blockchain Developer Roadmap API.\n- Generates personalized blockchain development career roadmaps based on user experience, technical skills, and professional goals.\n- Provides RESTful endpoints for health checks, service info, and roadmap generation.\n- Returns structured learning plans with curated resources, milestones, and recommendations.\n- Flexible pricing plans for individuals, developers, and enterprises.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39d9e44eb4db18a65cd2e8c9e8eff8eb89334456cbd4185d72897b32632ca2d5"
+}

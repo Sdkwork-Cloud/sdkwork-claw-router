@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65020,
+  "uuid": "skill-clawhub-akshare-router-cn",
+  "skillKey": "clawhub-akshare-router-cn",
+  "name": "Akshare Router Cn",
+  "summary": "中文期货期权数据路由器，根据频率、品类和计算需求匹配免费AKShare数据源及对应处理方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_router_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "forevershu",
+      "features": [
+        "中文期货期权数据路由器，根据频率、品类和计算需求匹配免费AKShare数据源及对应处理方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akshare-router-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254035882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akshare-router-cn",
+      "url": "https://clawhub.ai/skills/akshare-router-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-router-cn",
+    "url": "https://clawhub.ai/skills/akshare-router-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-router-cn-84364e18152710f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akshare-router-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-akshare-router-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5aaffd1138952b9ecaa18770a3abd5d15301cc713d3f1728a526e66d7b60f566",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:47:26.388Z"
+}

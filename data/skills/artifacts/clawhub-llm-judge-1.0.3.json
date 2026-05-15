@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-judge@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_judge",
+  "skill": {
+    "id": 26336,
+    "skillKey": "clawhub-llm-judge",
+    "name": "Llm Judge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-judge",
+    "url": "https://clawhub.ai/skills/llm-judge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-judge-ff34cebe5d455f2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when comparing two or more code implementations against a spec or requirements doc. Triggers on \"which repo is better\", \"compare these implementations\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776831006105,
+      "changelog": "- Added an explicit \"hard gates\" section defining concrete, checkable pass conditions between workflow phases (inputs, Phase 1 facts, Phase 2 scores, report file, and result consistency).\n- Clarified that each phase must not proceed until the corresponding gate is passed, improving validation and reliability.\n- Emphasized that parallelism is allowed only within phases, enforcing strict sequencing between them.\n- Updated workflow description to match these new gating and sequencing requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2c20ea68274e6a58539937a84523f1c8af659a0c15280452d067d8e887fc827"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33362,
+  "uuid": "skill-clawhub-download-page-generator",
+  "skillKey": "clawhub-download-page-generator",
+  "name": "download-page-generator",
+  "summary": "When the user wants to create, optimize, or audit a download page for desktop or mobile app. Also use when the user mentions \"download page,\" \"app download,\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or audit a download page for desktop or mobile app",
+        "Also use when the user mentions \"download page,\" \"app download,\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/download-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "download-page-generator",
+      "url": "https://clawhub.ai/skills/download-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-page-generator",
+    "url": "https://clawhub.ai/skills/download-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-page-generator-a977d4935efa647b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/download-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-download-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:446df3a088876a76e67f3d0336c230371fec119afb15e960bfb1a9afb7ac1e21",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:03:58.903Z"
+}

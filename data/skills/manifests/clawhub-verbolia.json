@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35757,
+  "uuid": "skill-clawhub-verbolia",
+  "skillKey": "clawhub-verbolia",
+  "name": "Verbolia",
+  "summary": "Verbolia integration. Manage data, records, and automate workflows. Use when the user wants to interact with Verbolia data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verbolia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Verbolia integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Verbolia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verbolia@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verbolia",
+      "url": "https://clawhub.ai/skills/verbolia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verbolia",
+    "url": "https://clawhub.ai/skills/verbolia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verbolia-0bc3f442e49f26b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verbolia@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-verbolia-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b88107d9ee507eedd34fbbd5e7cc3a56b9e73f51617ad331b05e5eba8ff23b20",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:09:04.743Z"
+}

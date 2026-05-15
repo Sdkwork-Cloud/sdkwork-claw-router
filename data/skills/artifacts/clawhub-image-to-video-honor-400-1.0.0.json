@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-honor-400@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_honor_400",
+  "skill": {
+    "id": 46731,
+    "skillKey": "clawhub-image-to-video-honor-400",
+    "name": "Image To Video Honor 400"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-honor-400",
+    "url": "https://clawhub.ai/skills/image-to-video-honor-400",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-honor-400-446c66d16bff0a54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images into animated photo videos with this skill. Works with JPG, PNG, HEIC, WEBP files up to 200MB. Honor 400 smartphone users use it for convertin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776371256455,
+      "changelog": "Initial release of Image to Video Honor 400 — Convert Photos Into Shareable Videos:\n\n- Converts JPG, PNG, HEIC, and WEBP images (up to 200MB) into 1080p MP4 videos, optimized for Honor 400 smartphone users.\n- Simple upload and prompt-based workflow; cloud GPU processing produces results in 30–60 seconds.\n- Handles authentication and session creation automatically on first use (with 100 free credits for 7 days).\n- Supports advanced features: add transitions, overlays, aspect ratio changes, audio tracks, and more from natural language prompts.\n- Error handling and status updates included; supports querying credit balance, export status, and timeline previews.\n- Provides clear mapping between user requests and backend actions for a streamlined editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af47eb5b4544f7d7b51e52d078ab943b19c292e24e2e3dc83de4a7a2cf59222d"
+}

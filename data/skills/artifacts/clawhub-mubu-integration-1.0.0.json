@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mubu-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mubu_integration",
+  "skill": {
+    "id": 69120,
+    "skillKey": "clawhub-mubu-integration",
+    "name": "Mubu Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mubu-integration",
+    "url": "https://clawhub.ai/skills/mubu-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mubu-integration-f57c55ac2dfc4805.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "幕布笔记集成，支持登录认证、文档管理、文件夹操作、大纲导出等功能。触发词：幕布、mubu、大纲笔记、思维导图导出、幕布同步"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuboacean",
+      "userId": "s1779brgcyhkdmz9tgjpwarx3h84vb82",
+      "displayName": "liuboacean",
+      "image": "https://avatars.githubusercontent.com/u/27935764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776148097781,
+      "changelog": "Initial release of mubu-integration:\n\n- 支持幕布（mubu.com）账号登录与 Token 管理\n- 提供创建、获取、更新、删除文档和文件夹的 API 接口\n- 支持思维导图内容（大纲结构）获取与 Markdown 导出\n- 涵盖基本的 Token 缓存与自动刷新\n- 提供典型操作的 Python 接口实现与使用示例\n- 适配幕布用户的主要大纲笔记和导出需求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42b93445d85965eee6b9763fbb53cb8c1e704c270a8dc60aa2ab7d17d18607d5"
+}

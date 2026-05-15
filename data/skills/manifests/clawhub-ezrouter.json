@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51051,
+  "uuid": "skill-clawhub-ezrouter",
+  "skillKey": "clawhub-ezrouter",
+  "name": "https://openrouter.ezsite.ai - Unified LLM API — one key for Claude, GPT, Gemini. 2x credits, auto-failover, OpenAI-compatible.",
+  "summary": "Set up and use EZRouter — unified LLM API with one key for Claude, GPT, and Gemini. 2x credits on every purchase. Native API compatibility for each provider.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezrouter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luntanwang",
+      "features": [
+        "Set up and use EZRouter — unified LLM API with one key for Claude, GPT, and Gemini",
+        "2x credits on every purchase",
+        "Native API compatibility for each provider."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezrouter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8469467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezrouter",
+      "url": "https://clawhub.ai/skills/ezrouter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezrouter",
+    "url": "https://clawhub.ai/skills/ezrouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezrouter-b6436fc516ec1cad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezrouter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezrouter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d9de861e88a63e490b502c0758cb58bb36349da897931f369c8c7194f5165e4",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:23:57.003Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-competitor-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_competitor_analyzer",
+  "skill": {
+    "id": 18010,
+    "skillKey": "clawhub-shelly-competitor-analyzer",
+    "name": "Competitor Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-competitor-analyzer",
+    "url": "https://clawhub.ai/skills/shelly-competitor-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-competitor-analyzer-54b175d49edd17b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a detailed report on a company's market position, pricing, social activity, recent news, and strengths by analyzing its name or URL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 715,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771792506639,
+      "changelog": "Initial release of the Competitor Analyzer skill.\n\n- Instantly analyzes a company by name or URL to generate a structured competitor report.\n- Covers company overview, pricing, social media presence, recent news, and a brief SWOT analysis.\n- Script can be run standalone or by an OpenClaw agent for enhanced results.\n- Requires only curl and internet access; leverages web search for data gathering.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee48e29a2fb0c12e62b19ba32c40983ddb40929db83db0e97dfc3ef8f6fd6b47"
+}

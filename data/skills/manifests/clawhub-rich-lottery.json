@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63116,
+  "uuid": "skill-clawhub-rich-lottery",
+  "skillKey": "clawhub-rich-lottery",
+  "name": "Rich Lottery",
+  "summary": "🎯 Rich彩票分析 - 双色球/大乐透智能号码推荐，基于历史数据分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rich_lottery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinboh68-prog",
+      "features": [
+        "🎯 Rich彩票分析",
+        "双色球/大乐透智能号码推荐，基于历史数据分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rich-lottery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264225243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rich-lottery",
+      "url": "https://clawhub.ai/skills/rich-lottery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rich-lottery",
+    "url": "https://clawhub.ai/skills/rich-lottery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rich-lottery-2aa99793e5980dd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rich-lottery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rich-lottery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b7b77055e5862fc0cc8ed88c97e5035caa048479cc96335ed78f2742d48f24e",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:25:29.691Z"
+}

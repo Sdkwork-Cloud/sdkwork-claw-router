@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-model-router-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_model_router_v1",
+  "skill": {
+    "id": 71032,
+    "skillKey": "clawhub-free-model-router-v1",
+    "name": "OpenClaw 免费模型智能路由 — 本地代理，自动获取多渠道最佳免费模型，自动轮询，故障切换，兜底救援，配置零侵入"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-model-router-v1",
+    "url": "https://clawhub.ai/skills/free-model-router-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-model-router-v1-4c73b01639518455.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 OpenClaw 提供免费模型智能路由服务，支持本地代理、自动配置、自动轮询、故障切换和配置零侵入。在需要设置免费模型路由、配置 Provider、切换模型或诊断模型可用性问题时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laodao-agent",
+      "userId": "s1795r81v2nhm9vmecrs9562t584xfr3",
+      "displayName": "LaoDao",
+      "image": "https://avatars.githubusercontent.com/u/276148868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778386361425,
+      "changelog": "free-model-router v1.0.0 — 首次发布，为 OpenClaw 提供智能免费模型路由服务。\n\n- 提供本地代理、自动配置、自动轮询、故障切换、零侵入配置能力\n- 支持多 provider 注册和主备 Key 自动管理\n- 内置事件通知系统，定时推送模型切换和故障等状态\n- 完整意图识别和 Setup 流程，引导配置及日常模型管理\n- 命令幂等性保护，多次安装/运行 setup 不影响现有配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f29ee85550601b074f138dd24936c6a27eeb79b449bcab04f4ece2b0d735af4"
+}

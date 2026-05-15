@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blotato-post-everywhere@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blotato_post_everywhere",
+  "skill": {
+    "id": 36548,
+    "skillKey": "clawhub-blotato-post-everywhere",
+    "name": "Blotato Post Everywhere"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blotato-post-everywhere",
+    "url": "https://clawhub.ai/skills/blotato-post-everywhere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blotato-post-everywhere-78f39839cc312338.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post and schedule content across multiple social platforms via Blotato API with automatic format adaptation per platform and media upload support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcbaivn",
+      "userId": "s17eshjzkvkbdnj5rbbbd5a8js849m8g",
+      "displayName": "MCB AI",
+      "image": "https://avatars.githubusercontent.com/u/132585065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776694385364,
+      "changelog": "Add referral links + improved setup guide with signup instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f78d0d5656b2ba8184aecac3273fd53945acb8f260ed98582c6b46842768de3"
+}

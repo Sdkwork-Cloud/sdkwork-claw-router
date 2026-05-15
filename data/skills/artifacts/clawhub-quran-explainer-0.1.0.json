@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quran-explainer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quran_explainer",
+  "skill": {
+    "id": 46755,
+    "skillKey": "clawhub-quran-explainer",
+    "name": "Quran Explainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quran-explainer",
+    "url": "https://clawhub.ai/skills/quran-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quran-explainer-edcaf94d1eb47d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain Qur'an verses respectfully in simple Arabic and English with translation notes, vocabulary, tafsir summaries, context, lessons, and clear limits arou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdullah944",
+      "userId": "s17fc78nds5h3vsph5tnfpzd3h85g3jm",
+      "displayName": "Kw.Hades- Creative Labs",
+      "image": "https://avatars.githubusercontent.com/u/40309465?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777274217940,
+      "changelog": "Initial release: adds a respectful Quran explanation skill with Arabic/English explanations, vocabulary notes, tafsir summaries, and safe fatwa boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28bfefb4342cc7542cea905b66f0b2527e3c20d159be740363d5fdbebf0a987d"
+}

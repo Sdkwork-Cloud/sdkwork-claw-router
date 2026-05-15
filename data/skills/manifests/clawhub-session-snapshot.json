@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61872,
+  "uuid": "skill-clawhub-session-snapshot",
+  "skillKey": "clawhub-session-snapshot",
+  "name": "Session Snapshot",
+  "summary": "会话快照 - 定期保存会话状态，支持断点恢复",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_snapshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon Lau",
+      "features": [
+        "定期保存会话状态，支持断点恢复"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-snapshot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145274992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-snapshot",
+      "url": "https://clawhub.ai/skills/session-snapshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-snapshot",
+    "url": "https://clawhub.ai/skills/session-snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-snapshot-d3bb78192aadef91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-snapshot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-snapshot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adf40a027b8398367a0be46e8028935473918609a7fc8baa756f523fdeba9382",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T18:10:36.555Z"
+}

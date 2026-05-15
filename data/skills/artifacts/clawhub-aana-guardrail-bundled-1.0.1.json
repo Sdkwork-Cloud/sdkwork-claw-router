@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aana-guardrail-bundled@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_guardrail_bundled",
+  "skill": {
+    "id": 33659,
+    "skillKey": "clawhub-aana-guardrail-bundled",
+    "name": "AANA Guardrail Skill Bundled Helper Variant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-guardrail-bundled",
+    "url": "https://clawhub.ai/skills/aana-guardrail-bundled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-guardrail-bundled-2e8eaaaaf4fe4422.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a local Python helper to send minimal review payloads to a trusted AANA HTTP bridge for policy guidance inside the skill package."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindbomber",
+      "userId": "s177cynx168hg36ac5nrkb9wdn85z9dq",
+      "displayName": "mindbomber",
+      "image": "https://avatars.githubusercontent.com/u/42798111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777745159512,
+      "changelog": "- Added compiled Python helper file: bin/__pycache__/aana_guardrail_check.cpython-313.pyc.\n- Updated documentation to clarify the helper sends review payloads only to localhost (removed reference to 127.0.0.1).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e882d73317ceefb2f3aa44b0135a5b0f90e4231702e955053f7b2282d20f90a"
+}

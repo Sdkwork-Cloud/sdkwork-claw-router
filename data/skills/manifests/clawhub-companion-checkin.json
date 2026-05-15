@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45381,
+  "uuid": "skill-clawhub-companion-checkin",
+  "skillKey": "clawhub-companion-checkin",
+  "name": "companion-checkin",
+  "summary": "Run warm, adaptive personal check-ins for habits, mood, sleep, meals, focus, and daily progress. Use when the user wants a habit tracker, daily check-in flow...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.companion_checkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sqizzo",
+      "features": [
+        "Run warm, adaptive personal check-ins for habits, mood, sleep, meals, focus, and daily progress",
+        "Use when the user wants a habit tracker, daily check-in flow..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/companion-checkin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202400488?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "companion-checkin",
+      "url": "https://clawhub.ai/skills/companion-checkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "companion-checkin",
+    "url": "https://clawhub.ai/skills/companion-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/companion-checkin-455891e16c061e70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/companion-checkin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-companion-checkin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:546c86d4a3d7c04ce3cf366762f609817c49bd27c9e00bdf8f17130d761327eb",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T01:50:26.568Z"
+}

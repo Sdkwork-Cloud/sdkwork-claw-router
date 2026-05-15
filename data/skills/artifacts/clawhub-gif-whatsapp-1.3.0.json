@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gif-whatsapp@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gif_whatsapp",
+  "skill": {
+    "id": 12684,
+    "skillKey": "clawhub-gif-whatsapp",
+    "name": "Gif Whatsapp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gif-whatsapp",
+    "url": "https://clawhub.ai/skills/gif-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gif-whatsapp-8b35e65a238b1815.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and send GIFs on WhatsApp. Handles the Tenor→MP4 conversion required for WhatsApp."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaharsha",
+      "userId": "s1731v0zz0xz2rh03mt12r81t983g5b0",
+      "displayName": "shaharsh",
+      "image": "https://avatars.githubusercontent.com/u/11346965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2459,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774964815189,
+      "changelog": "**Added workspace copy requirement for WhatsApp GIF sending**\n\n- Now requires copying the converted MP4 to the workspace directory before sending.\n- Clarifies that sending files from `/tmp` will fail with `LocalMediaAccessError`.\n- Updated workflow steps and one-liner example to include the workspace copy.\n- Improved documentation for file handling and safety notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7a44f6d7a868d5ed49fe55aca2945191bb1b3d796bd29f45daf0b648ddf4a4a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58941,
+  "uuid": "skill-clawhub-hi-light-openclaw",
+  "skillKey": "clawhub-hi-light-openclaw",
+  "name": "hi-light Ear Skill",
+  "summary": "以用户可执行的工作流方式安装、配置和排查 HiLight OpenClaw 插件。用户想把 OpenClaw 连接到 HiLight、安装 `@art_style666/hi-light` 插件、把 `channels[\"hi-light\"]` 写入 OpenClaw 配置、更新 HiLight API Key...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hi_light_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "valo",
+      "features": [
+        "以用户可执行的工作流方式安装、配置和排查 HiLight OpenClaw 插件。用户想把 OpenClaw 连接到 HiLight、安装 `@art_style666/hi-light`."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hi-light-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3215104?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hi-light-openclaw",
+      "url": "https://clawhub.ai/skills/hi-light-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hi-light-openclaw",
+    "url": "https://clawhub.ai/skills/hi-light-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hi-light-openclaw-e5ee396136ecfc59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hi-light-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hi-light-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d6e895f03036115a2a8b693ada3203eb9658f89f293becd922af7ecc675773c",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:30:04.502Z"
+}

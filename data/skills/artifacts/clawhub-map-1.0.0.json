@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/map@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.map",
+  "skill": {
+    "id": 22154,
+    "skillKey": "clawhub-map",
+    "name": "Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "map",
+    "url": "https://clawhub.ai/skills/map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/map-60be9861750facbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn complex business goals into navigable strategic maps. Identify milestones, resource nodes, risk points, bottlenecks, and route logic so users can see th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agisearch",
+      "userId": "publishers:agisearch",
+      "displayName": "AGIsearch",
+      "image": "https://avatars.githubusercontent.com/u/216465592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773172297537,
+      "changelog": "Initial release of the Map skill.\n\n- Convert complex business goals into strategic, navigable logic maps.\n- Identify and visualize milestones, resource nodes, risk zones, bottlenecks, and dependencies.\n- Standardize output with clear sections: terrain overview, resource nodes, risk zones, milestone map, bottlenecks, and recommendations.\n- Designed for strategic planning, not execution or domain expertise replacement.\n- Includes robust guidance for both users and agents on input requirements, output structure, and appropriate scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1f9975ed9265eabbf00d83f828a27cd65a23431afa8e70830141594bc6f1779"
+}

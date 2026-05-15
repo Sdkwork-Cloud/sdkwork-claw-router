@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26744,
+  "uuid": "skill-clawhub-inverter",
+  "skillKey": "clawhub-inverter",
+  "name": "Inverter",
+  "summary": "Inverter and VFD parameter calculator. Use when json inverter tasks, csv inverter tasks, checking inverter status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inverter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Inverter and VFD parameter calculator",
+        "Use when json inverter tasks, csv inverter tasks, checking inverter status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inverter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inverter",
+      "url": "https://clawhub.ai/skills/inverter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inverter",
+    "url": "https://clawhub.ai/skills/inverter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inverter-ded2f3fc9a65888c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inverter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inverter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ccdc5a3b73853e99698a2a1ea45a1e8e137be253787fd24b9e918cddf259238",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:18:06.841Z"
+}

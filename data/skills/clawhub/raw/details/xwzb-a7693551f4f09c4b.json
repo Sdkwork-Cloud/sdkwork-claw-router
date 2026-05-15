@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "xwzb",
+    "displayName": "新闻早报",
+    "summary": "用于拉取并展示最新热点内容（接口为 https://hotspot.api4claw.com/hotspots/latest?timestamp=$TIME_STEMP，返回 JSON 数组）。按模型预估点击率生成 Top 条目（不使用原始热度排序）。默认会提示用户创建定时任务（不自动执行），在用户确认后提供 c...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775790808883,
+    "updatedAt": 1777527376348
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1775790808883,
+    "changelog": "xwzb 0.1.0\n\n- Initial release of the hotspot consumer skill (“今日热点”, “热点新闻” 等).\n- Pulls and presents latest hotspots from https://hotspot.api4claw.com/hotspots/latest?timestamp=$TIME_STEMP using web_fetch.\n- Top items are ranked by estimated click-through rate (not raw hotness), with AI-generated brief summaries.\n- Default workflow prompts users to set up a daily cron job for automated fetching (manual setup required).\n- Grouped display of item titles by `source_name`; provides service status and source filtering.\n- Strict API call and reliability rules: no caching, no fabricated results, and clear error handling.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xltang",
+    "userId": "s170wrbjfn1j0gh5gzae4s384x84g1g8",
+    "displayName": "xltang",
+    "image": "https://avatars.githubusercontent.com/u/1772358?v=4"
+  },
+  "moderation": null
+}

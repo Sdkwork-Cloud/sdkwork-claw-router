@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/offerclaw-cv-writing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offerclaw_cv_writing",
+  "skill": {
+    "id": 57478,
+    "skillKey": "clawhub-offerclaw-cv-writing",
+    "name": "OfferClaw留学申请简历助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offerclaw-cv-writing",
+    "url": "https://clawhub.ai/skills/offerclaw-cv-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offerclaw-cv-writing-04f676d46ecd88e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Writes study abroad admissions CVs and resumes, primarily for master's applications. Covers education, research, internships, publications, and awards. Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "offerclaw",
+      "userId": "s17bwwajp82acg61n4vxwj8e69845kfr",
+      "displayName": "OfferClaw",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775221583300,
+      "changelog": "- Replaced shell-based PDF export scripts with a single Python script (`run.py`) for simpler, cross-platform PDF generation.\n- Removed the watermark overlay component and related setup scripts, consolidating all PDF export logic into one Python entrypoint.\n- Updated export instructions to invoke `python3 scripts/export-pdf/run.py` instead of Bash.\n- Minor documentation improvements for clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ffba9e1f1324e679e29e00d6685235cf849a6525d29dffff2eb341848206d42"
+}

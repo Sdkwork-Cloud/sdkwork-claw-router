@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wolp@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolp",
+  "skill": {
+    "id": 23466,
+    "skillKey": "clawhub-wolp",
+    "name": "WOLP LAN Power Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolp",
+    "url": "https://clawhub.ai/skills/wolp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolp-cc96da93960fc543.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wake or shut down LAN devices by sending WOL-plus packets from the agent host. Use this when the user wants to power on a device with a raw Ethernet magic pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leeyeel",
+      "userId": "s1754hhf6c34qetym96cce8nyx83kz5n",
+      "displayName": "li.yao",
+      "image": "https://avatars.githubusercontent.com/u/11717828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1774031200744,
+      "changelog": "- Renamed the skill from wolp-lan-power-control to wolp.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6681172137b01d3bb5a70a2d4cd3ba8215d92d978a463f430a1281c91eed8c9"
+}

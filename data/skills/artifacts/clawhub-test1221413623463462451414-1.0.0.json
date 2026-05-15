@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test1221413623463462451414@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test1221413623463462451414",
+  "skill": {
+    "id": 57411,
+    "skillKey": "clawhub-test1221413623463462451414",
+    "name": "测试用例表编写"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test1221413623463462451414",
+    "url": "https://clawhub.ai/skills/test1221413623463462451414",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test1221413623463462451414-c032541d59c29402.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating or editing software test case tables in Excel format, adding test cases to existing tables, or ensuring format consistency with test case t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776326762949,
+      "changelog": "- 新增测试用例表管理技能，用于创建和管理软件回归测试用例的Excel文件\n- 提供标准化的14列表格结构，包含序号、用例ID、所属模块等字段\n- 详细定义表头和数据行的格式规范，包括字体、背景色、对齐方式和边框\n- 包含创建新表和添加测试用例的完整代码实现示例\n- 列出常见问题及解决方案，并提供可视化的工作流程图",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df8f45d46a6626ff4d59fc7a2eb870b7df9a54b25536b8ac69063a07a12d4090"
+}

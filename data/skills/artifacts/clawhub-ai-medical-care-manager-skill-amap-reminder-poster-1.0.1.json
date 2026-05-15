@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-medical-care-manager-skill-amap-reminder-poster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_medical_care_manager_skill_amap_reminder_poster",
+  "skill": {
+    "id": 61990,
+    "skillKey": "clawhub-ai-medical-care-manager-skill-amap-reminder-poster",
+    "name": "ai-medical-care-manager-skill-amap-reminder-poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-medical-care-manager-skill-amap-reminder-poster",
+    "url": "https://clawhub.ai/skills/ai-medical-care-manager-skill-amap-reminder-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-medical-care-manager-skill-amap-reminder-poster-bf6e8aa155d29091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向C端门诊就医全流程。先做症状分流和挂号科室判断，再推荐医院/医生 Top 3，并继续完成挂号引导、就医准备卡、自动提醒、诊后解释，以及基于 amap-lbs-skill 的高德到院路线规划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunlinlin-aragon",
+      "userId": "s17c4cacz03n2ffyeshhpf96ed83jcry",
+      "displayName": "sunlinlin-aragon",
+      "image": "https://avatars.githubusercontent.com/u/15337197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774057959897,
+      "changelog": "ai-medical-care-manager-skill-amap-reminder-poster v1.0.1\n\n- 修正了部分文字描述，使诊前、诊中、诊后各阶段说明更清晰，强调流程环节和辅助定位。\n- 细化诊中流程对挂号信息处理细节描述，如需优先按用户提供内容解析，补全缺失项。\n- 优化诊前分流与推荐 Top 3 医院/医生/科室的输出模板说明。\n- 明确诊后阶段主要依赖 AI 做解释，不强制调用脚本，调整相关说明语序。\n- 丰富“流程结束后推荐生成就医内容记录”部分的描述与用户告知原则。\n- 修正部分错别字与部分表达重复，提升整体易读性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a77a6bc204b381a85c63055d939813209303fff1b01d8d092609a425c34fe95"
+}

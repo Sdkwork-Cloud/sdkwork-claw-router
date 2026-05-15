@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-model-router@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_model_router",
+  "skill": {
+    "id": 50369,
+    "skillKey": "clawhub-semantic-model-router",
+    "name": "semantic-model-router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-model-router",
+    "url": "https://clawhub.ai/skills/semantic-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-model-router-72439317054ff5aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart LLM Router — routes every query to the cheapest capable model. Supports 17 models across Anthropic, OpenAI, Google, DeepSeek & xAI (Grok). Uses a pre-t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rayray1218",
+      "userId": "publishers:rayray1218",
+      "displayName": "Ray",
+      "image": "https://avatars.githubusercontent.com/u/91511594?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772094023786,
+      "changelog": "- Updated documentation for model tiers, supported providers, and pricing details.\n- Expanded model support list to 17 models across Anthropic, OpenAI, Google, DeepSeek, and xAI.\n- Clarified routing architecture (ML classifier, semantic fallback, keyword rules).\n- Added examples for runtime model override, CLI usage, and dynamic keyword rules.\n- Documentation now emphasizes zero external calls and no required API keys.\n- Improved quickstart and output explanation for users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7b4b34a984911f912d52502d1467b01ca38877a6a13a1e8e10f8b6507d05c7d"
+}

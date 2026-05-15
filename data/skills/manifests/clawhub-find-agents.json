@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44746,
+  "uuid": "skill-clawhub-find-agents",
+  "skillKey": "clawhub-find-agents",
+  "name": "Find Agents Skill",
+  "summary": "Performs intelligent web and specialized searches, aggregates multi-source results, and delivers summarized, cited answers with credibility scoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "Performs intelligent web and specialized searches, aggregates multi-source results, and deliver."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-agents",
+      "url": "https://clawhub.ai/skills/find-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-agents",
+    "url": "https://clawhub.ai/skills/find-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-agents-e7b5a00b18d80e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58ffab5fc25bd04d8a35a4048646aeba1544c701b1d287c87c9ae9777c9637d7",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:01:10.895Z"
+}

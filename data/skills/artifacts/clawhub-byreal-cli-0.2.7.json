@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byreal-cli@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byreal_cli",
+  "skill": {
+    "id": 18693,
+    "skillKey": "clawhub-byreal-cli",
+    "name": "Byreal Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byreal-cli",
+    "url": "https://clawhub.ai/skills/byreal-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byreal-cli-03a28a9d27cf7d70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Byreal DEX (Solana) data & analytics CLI: query pools, tokens, TVL, APR, k-line charts, farmer rankings, launchpad projects, and DeFi position stats. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggg223399",
+      "userId": "s17f04thpab8stcky696j9pvvd83g2nk",
+      "displayName": "James333",
+      "image": "https://avatars.githubusercontent.com/u/40433945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1773386284471,
+      "changelog": "Reduce security flag surface: remove private key paths from metadata, reframe as data & analytics CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:334254ecbfba4c8edda3bac115aa7ac3c4b347a2c9d0a5effcb194a35427b101"
+}

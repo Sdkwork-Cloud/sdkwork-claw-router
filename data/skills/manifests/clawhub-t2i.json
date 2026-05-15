@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37982,
+  "uuid": "skill-clawhub-t2i",
+  "skillKey": "clawhub-t2i",
+  "name": "T2I",
+  "summary": "Placeholder skill for text-to-image workflows on skills.video. Use when the user is asking about t2i generation and the concrete API contract has not been im...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t2i",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skills-video",
+      "features": [
+        "Placeholder skill for text-to-image workflows on skills.video",
+        "Use when the user is asking about t2i generation and the concrete API contract has not been im.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/t2i@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/t2i/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "t2i",
+      "url": "https://clawhub.ai/skills/t2i"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t2i",
+    "url": "https://clawhub.ai/skills/t2i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t2i-6cffa6dec55f8fa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/t2i@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-t2i-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd8be449d510cc3ff2e655e3a8a968080cb01b456a123c2b9f3e56838e6ec30b",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:47:24.766Z"
+}

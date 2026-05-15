@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32210,
+  "uuid": "skill-clawhub-urdu-translator",
+  "skillKey": "clawhub-urdu-translator",
+  "name": "Urdu Translator",
+  "summary": "Translates text into fluent Urdu or Roman Urdu, supporting cultural idioms and natural language flow in both scripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.urdu_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gamefbs69-spec",
+      "features": [
+        "Translates text into fluent Urdu or Roman Urdu, supporting cultural idioms and natural language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/urdu-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265202901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "urdu-translator",
+      "url": "https://clawhub.ai/skills/urdu-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "urdu-translator",
+    "url": "https://clawhub.ai/skills/urdu-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/urdu-translator-9e829ab10da0995b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/urdu-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-urdu-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57aded65162b3f2c769053a181a5ff669f2d632da82c4bd521dc6dc2527845a1",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:02:56.407Z"
+}

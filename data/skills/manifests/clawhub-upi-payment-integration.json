@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34263,
+  "uuid": "skill-clawhub-upi-payment-integration",
+  "skillKey": "clawhub-upi-payment-integration",
+  "name": "UPI Payment Integration",
+  "summary": "Design and implement robust UPI payment integrations (collect, intent, QR, and autopay mandates) with production-grade webhook handling, idempotency, reconci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upi_payment_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ASP",
+      "features": [
+        "Design and implement robust UPI payment integrations (collect, intent, QR, and autopay mandates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upi-payment-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4218061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upi-payment-integration",
+      "url": "https://clawhub.ai/skills/upi-payment-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upi-payment-integration",
+    "url": "https://clawhub.ai/skills/upi-payment-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upi-payment-integration-6bb19e4772272788.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upi-payment-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upi-payment-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e36f66bb1cb7d4facd0a6820fdad4e77137ad3530be37d454f1a4c8d3d64fdeb",
+      "artifactSizeBytes": 2578
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:09:04.530Z"
+}

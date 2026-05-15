@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/database-design@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_design",
+  "skill": {
+    "id": 58876,
+    "skillKey": "clawhub-database-design",
+    "name": "Database Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-design",
+    "url": "https://clawhub.ai/skills/database-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-design-75f0b9a5f9dbe1b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据库设计助手。表设计、范式化、索引策略、迁移脚本、测试数据、ER图描述。Database designer with normalization, indexing, migration, seeding, ER diagrams. 数据库、MySQL。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1939,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773915705,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4c45cc507bae1325ed250dd1bbadb1225c98b3a37f72e9f641c7de9bb457d68"
+}

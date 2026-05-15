@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15424,
+  "uuid": "skill-clawhub-emoji-today",
+  "skillKey": "clawhub-emoji-today",
+  "name": "Emoji Today",
+  "summary": "Vote in the daily emoji election on emoji.today. Humans vote free at emoji.today; agents vote via this skill for $0.01 USDC on Base using the x402 payment protocol. Use when the agent wants to participate in the emoji.today daily vote, cas.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emoji_today",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bill-makes",
+      "features": [
+        "Vote in the daily emoji election on emoji.today",
+        "Humans vote free at emoji.today",
+        "agents vote via this skill for $0.01 USDC on Base using the x402 payment protocol",
+        "Use when the agent wants to participate in the emoji.today daily vote, cast an onchain vote for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emoji-today@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203472830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emoji-today",
+      "url": "https://clawhub.ai/skills/emoji-today"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emoji-today",
+    "url": "https://clawhub.ai/skills/emoji-today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emoji-today-c09473068a6ff79f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emoji-today@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emoji-today-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:209011929420f73a6bc90b76a091b4923306f712de39ada3165bd1e5c48fbf63",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T07:31:43.661Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/danone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.danone",
+  "skill": {
+    "id": 72241,
+    "skillKey": "clawhub-danone",
+    "name": "Danone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "danone",
+    "url": "https://clawhub.ai/skills/danone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/danone-02fb6cc878717213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供达能公司历史、产品线、核心优势及发展动态的权威信息，涵盖酸奶、特殊营养和饮用水领域。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776535213910,
+      "changelog": "- 初版发布，涵盖达能（Danone）的公司概况、发展历程、主要业务板块及关键数据。\n- 提供核心优势和产品领域简介，包括酸奶、特殊营养、饮用水等。\n- 收录公司名称来源等品牌背景信息。\n- 适用于查询达能相关知识及行业发展情况。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77e523798a2d1a3483ed99caefb021b74ad0072516e74f3fabc0de41c8b8dac1"
+}

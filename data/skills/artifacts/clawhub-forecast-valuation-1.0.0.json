@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forecast-valuation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecast_valuation",
+  "skill": {
+    "id": 61679,
+    "skillKey": "clawhub-forecast-valuation",
+    "name": "Forecast Valuation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecast-valuation",
+    "url": "https://clawhub.ai/skills/forecast-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecast-valuation-e6f0faa77844877e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业财务预测与估值模型生成器。结合高盛 DCF 标准与 Wind Evaluator 框架，自动生成完整三表预测、DCF 估值、相对估值、敏感性分析和 Football Field 估值区间。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cgxxxxxxxxxxxx",
+      "userId": "s17fhwcmxm1yrzr2venv8wjah984a1fg",
+      "displayName": "cgxxxxxxxxxxxx",
+      "image": "https://avatars.githubusercontent.com/u/109221124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775448240199,
+      "changelog": "forecast-valuation 1.0.0\n\n- 首发版本，融合高盛 DCF 估值标准与 Wind Evaluator 框架\n- 自动生成完整三表预测、DCF 估值、相对估值、敏感性分析及 Football Field 可视化\n- 支持历史数据导入、可比公司自动筛选、核心财务假设自定义\n- Excel 模型含 13 大工作表，内嵌估值结果、合理性检验与可视化\n- 集成 Gangtise/Tushare 数据接口及自动配平、质量检测功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a60519ae6d8c72e575f905324c6378b750b613040c3928b98c1ac03fe447c651"
+}

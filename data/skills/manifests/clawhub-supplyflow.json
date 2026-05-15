@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57184,
+  "uuid": "skill-clawhub-supplyflow",
+  "skillKey": "clawhub-supplyflow",
+  "name": "SupplyFlow — 供应链管理",
+  "summary": "Manufacturing supply chain management toolkit. Handle inventory tracking, supplier evaluation, procurement workflows, demand forecasting, risk assessment, co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supplyflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keyong",
+      "features": [
+        "Manufacturing supply chain management toolkit",
+        "Handle inventory tracking, supplier evaluation, procurement workflows, demand forecasting, risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supplyflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18619191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supplyflow",
+      "url": "https://clawhub.ai/skills/supplyflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supplyflow",
+    "url": "https://clawhub.ai/skills/supplyflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supplyflow-b760eac505907504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supplyflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supplyflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e5601e6420063c187041cbd93668d3f517c8f76950d229daf81da0a23216c2f",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:51:29.658Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-gog-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_gog_setup",
+  "skill": {
+    "id": 41305,
+    "skillKey": "clawhub-gmail-gog-setup",
+    "name": "Gmail Gog Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-gog-setup",
+    "url": "https://clawhub.ai/skills/gmail-gog-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-gog-setup-8eaac1e236810edb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up Gog CLI for Gmail access and authenticate agent mailboxes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776150783723,
+      "changelog": "- Initial release of gmail-gog-setup.\n- Provides step-by-step guidance for setting up Gmail access using Gog CLI.\n- Covers Google Cloud OAuth client configuration, Gog installation, and authentication process.\n- Includes troubleshooting tips for common setup and authentication errors.\n- Offers verification commands and notes for maintaining secure access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4faf5b107583dea6288f7e402aad204b41bdacd7d999270cd10c6e15e7f8887"
+}

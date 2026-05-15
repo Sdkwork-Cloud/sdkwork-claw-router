@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysteel-chartgeneration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteel_chartgeneration",
+  "skill": {
+    "id": 69258,
+    "skillKey": "clawhub-mysteel-chartgeneration",
+    "name": "Mysteel_ChartGeneration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteel-chartgeneration",
+    "url": "https://clawhub.ai/skills/mysteel-chartgeneration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteel-chartgeneration-108935f8297dc681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于文本描述或数据自动生成各类图表（趋势图、对比图、结构图等）；当用户需要创建可视化图表、将数据转化为直观表达、生成分析报告插图时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyb92",
+      "userId": "s17d21gfp0r1h8zzn0syb7f90583gsct",
+      "displayName": "mysteel",
+      "image": "https://avatars.githubusercontent.com/u/49762508?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774351782162,
+      "changelog": "Mysteel_ChartGeneration 1.0.0\n\n- Initial release enabling automatic generation of ECharts visualizations from textual descriptions or structured data.\n- Supports multiple chart types (trend, comparison, structural) and auto-generates chart titles for analysis reports.\n- Introduces four generation modes: FREEDOM (default, for natural language and small or embedded data), TEMPLATE (standard chart types), STRICT (large or structured datasets), and AUTO (system auto-select).\n- Requires API key configuration via references/api_key.md; validates presence and loads key for all requests.\n- Provides scripts for both chart config generation and HTML rendering, with sample usage for each mode.\n- Synchronous operation only (asyncEnable fixed as false); newly created HTML files support interactive charts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ab3e793e412308cb9def4efd336b04aeceb01183f4f6ed04b03bbea7b90fc17"
+}

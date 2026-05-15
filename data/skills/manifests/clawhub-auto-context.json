@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12751,
+  "uuid": "skill-clawhub-auto-context",
+  "skillKey": "clawhub-auto-context",
+  "name": "Auto Context",
+  "summary": "Automatically read relevant context before major actions. Loads TODO.md, roadmap.md, handoffs, task plans, and other project context files so the AI operates with full situational awareness. Use when starting a task, implementing a feature.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Automatically read relevant context before major actions",
+        "Loads TODO.md, roadmap.md, handoffs, task plans, and other project context files so the AI oper.",
+        "Use when starting a task, implementing a feature, refactoring, debugging, planning, or resuming."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-context@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-context",
+      "url": "https://clawhub.ai/skills/auto-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-context",
+    "url": "https://clawhub.ai/skills/auto-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-context-4ba418f7a61992f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-context@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-context-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3d093ba3bb187ab1a92ec2d5dac58bbec19adbded6b45efdee1ab745b41142a",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:00:51.667Z"
+}

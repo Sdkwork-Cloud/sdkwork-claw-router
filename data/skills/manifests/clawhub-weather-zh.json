@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65483,
+  "uuid": "skill-clawhub-weather-zh",
+  "skillKey": "clawhub-weather-zh",
+  "name": "中国城市天气Weather In China",
+  "summary": "中文天气查询工具 - 使用中国天气网获取实时天气（无需API密钥，不依赖大模型）",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_zh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenera",
+      "features": [
+        "中文天气查询工具",
+        "使用中国天气网获取实时天气（无需API密钥，不依赖大模型）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-zh@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25951063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-zh",
+      "url": "https://clawhub.ai/skills/weather-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-zh",
+    "url": "https://clawhub.ai/skills/weather-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-zh-d35f62b010163817.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-zh@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-zh-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e256d83b49f72ae4476e30f09d85c33c76acffc36328f2bfbd7e1fbd22093777",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T07:42:07.443Z"
+}

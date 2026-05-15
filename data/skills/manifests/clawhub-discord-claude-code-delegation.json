@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30187,
+  "uuid": "skill-clawhub-discord-claude-code-delegation",
+  "skillKey": "clawhub-discord-claude-code-delegation",
+  "name": "Discord Claude Code Delegation",
+  "summary": "Delegate work from an OpenClaw Discord controller bot to a Claude Code worker bot through a private Discord worker lane, then relay the final result back to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_claude_code_delegation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jini92",
+      "features": [
+        "Delegate work from an OpenClaw Discord controller bot to a Claude Code worker bot through a pri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-claude-code-delegation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43900848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-claude-code-delegation",
+      "url": "https://clawhub.ai/skills/discord-claude-code-delegation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-claude-code-delegation",
+    "url": "https://clawhub.ai/skills/discord-claude-code-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-claude-code-delegation-11ef9936584d0b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-claude-code-delegation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-claude-code-delegation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90dc555d0da9ae6f6117d8ea99874e7dc8ce260edbf77ffcf75f03786e9e0b4e",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:01:28.283Z"
+}

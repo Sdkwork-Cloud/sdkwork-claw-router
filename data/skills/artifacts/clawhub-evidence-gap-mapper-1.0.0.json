@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evidence-gap-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evidence_gap_mapper",
+  "skill": {
+    "id": 59878,
+    "skillKey": "clawhub-evidence-gap-mapper",
+    "name": "Evidence Gap Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evidence-gap-mapper",
+    "url": "https://clawhub.ai/skills/evidence-gap-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evidence-gap-mapper-18918323bbb04334.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在报告、方案或演示稿中定位结论先行但证据不足的位置，并给出补证优先级。；use for evidence, gap-analysis, research workflows；do not use for 伪造数据支撑结论, 忽略高风险假设."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773711504365,
+      "changelog": "Initial release of evidence-gap-mapper.\n\n- Identifies insufficiently evidenced conclusions in reports and presentations.\n- Provides prioritized recommendations for additional evidence collection.\n- Clearly distinguishes suitable and unsuitable use cases to ensure responsible application.\n- Defines a structured workflow and output format for consistency and clarity.\n- Includes built-in safety boundaries to prevent data fabrication, unauthorized actions, and ensure auditability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a33ded050a0aded57093613b1e0162a380925f3516875ca54d08fdef974b659"
+}

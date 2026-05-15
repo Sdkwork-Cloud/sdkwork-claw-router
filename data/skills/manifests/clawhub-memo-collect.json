@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31633,
+  "uuid": "skill-clawhub-memo-collect",
+  "skillKey": "clawhub-memo-collect",
+  "name": "memo-collect",
+  "summary": "This is a simple skill for note-taking, used to quickly record user notes, and provide users with query, delete, and other capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memo_collect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bondli",
+      "features": [
+        "This is a simple skill for note-taking, used to quickly record user notes, and provide users wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memo-collect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6427929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memo-collect",
+      "url": "https://clawhub.ai/skills/memo-collect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memo-collect",
+    "url": "https://clawhub.ai/skills/memo-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memo-collect-2edb3728178330f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memo-collect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memo-collect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd71643fd2f4c6abeff4b869a5a287a559ae268102ad58d304b2c3ababe1d9ab",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:09:51.256Z"
+}

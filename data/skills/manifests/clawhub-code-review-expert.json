@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28159,
+  "uuid": "skill-clawhub-code-review-expert",
+  "skillKey": "clawhub-code-review-expert",
+  "name": "Code Review Expert",
+  "summary": "Multi-agent code review system using Manager-Worker pattern. Provides comprehensive code analysis from syntax, logic, security, and performance perspectives.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banxian87",
+      "features": [
+        "Multi-agent code review system using Manager-Worker pattern",
+        "Provides comprehensive code analysis from syntax, logic, security, and performance perspectives."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-review-expert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264314218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-review-expert",
+      "url": "https://clawhub.ai/skills/code-review-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-expert",
+    "url": "https://clawhub.ai/skills/code-review-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-expert-2b51fe76a6b47481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-review-expert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-review-expert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c5dfa6716d29ef20982c69ed0f30e629c706f6bee14e8de1f461d04dc9c7d80",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:39:02.453Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/registry-broker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.registry_broker",
+  "skill": {
+    "id": 10948,
+    "skillKey": "clawhub-registry-broker",
+    "name": "Discover and Connect to 1m+ AI Agents anywhere on the planet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "registry-broker",
+    "url": "https://clawhub.ai/skills/registry-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/registry-broker-4bf31c24a89dccdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 72,000+ AI agents across 14 registries, chat with any agent, register your own agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kantorcodes",
+      "userId": "publishers:kantorcodes",
+      "displayName": "kantorcodes",
+      "image": "https://avatars.githubusercontent.com/u/6068672?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2057,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769975484445,
+      "changelog": "Initial release of registry-broker.\n\n- Search and discover over 72,000 AI agents across 14 registries.\n- Chat with any agent directly from the command line.\n- Register your own agent with simple CLI commands.\n- Supports both keyword and semantic (vector) search.\n- Unified commands for session management, platform protocol/adapters, and statistics.\n- Optional API key support for authenticated actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:733bd92f88f135290d3cba7598b72cf857a70976b4438301b491901d48ad2e22"
+}

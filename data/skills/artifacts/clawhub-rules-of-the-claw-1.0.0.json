@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rules-of-the-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rules_of_the_claw",
+  "skill": {
+    "id": 53023,
+    "skillKey": "clawhub-rules-of-the-claw",
+    "name": "Rules of the Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rules-of-the-claw",
+    "url": "https://clawhub.ai/skills/rules-of-the-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rules-of-the-claw-5958e69305059df9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A strong, field-tested Guardian baseline for OpenClaw Guardian — 56 deterministic rules protecting against credential theft, data exfiltration, network scann..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bahuleyandr",
+      "userId": "s173mp1za7ckah98evy7tax80583p0fs",
+      "displayName": "Bahuleyan",
+      "image": "https://avatars.githubusercontent.com/u/209914980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774705434938,
+      "changelog": "Initial release: 56 deterministic, regex-based Guardian rules for OpenClaw\nCovers credential theft, data exfiltration, infrastructure destruction, network scanning, and git poisoning\nZero LLM dependency — rules execute at the tool layer, microsecond latency, no prompt injection attack surface\nWorks out of the box; three presets (minimal / standard / strict) for different risk tolerances\nPer-app and per-org exceptions supported via JSON config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a39ed3a580e37ebecb5505547b518dee0a0017e123b2c0d89cdd9a8e5d927bb8"
+}

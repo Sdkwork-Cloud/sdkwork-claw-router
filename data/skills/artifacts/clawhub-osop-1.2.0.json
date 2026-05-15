@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osop@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop",
+  "skill": {
+    "id": 39030,
+    "skillKey": "clawhub-osop",
+    "name": "Osop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop",
+    "url": "https://clawhub.ai/skills/osop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-f3aecc2b79f5b9ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OSOP workflow authoring, validation, risk analysis, and self-optimization for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "archie0125",
+      "userId": "s179s8ypm6jvmks7shkyy813rd840pdv",
+      "displayName": "Archie0125",
+      "image": "https://avatars.githubusercontent.com/u/58622712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775042832111,
+      "changelog": "Initial ClawHub release — OSOP core workflow skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5339025b4847fd9cc7dab9bf431309496b3ed4f8f205406c5d3525dc88014e5b"
+}

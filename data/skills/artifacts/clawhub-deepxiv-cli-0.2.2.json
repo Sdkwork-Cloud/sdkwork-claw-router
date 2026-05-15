@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepxiv-cli@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepxiv_cli",
+  "skill": {
+    "id": 36244,
+    "skillKey": "clawhub-deepxiv-cli",
+    "name": "Deepxiv Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepxiv-cli",
+    "url": "https://clawhub.ai/skills/deepxiv-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepxiv-cli-acf6b3dac02c8594.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, inspect, and progressively read open-access academic papers with the deepxiv CLI. Use when the user wants arXiv / PMC / Semantic Scholar paper search..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xupeng8",
+      "userId": "s17e01kmg9r7k27h4sdh6kfrjs84cpfe",
+      "displayName": "Eric",
+      "image": "https://avatars.githubusercontent.com/u/10356449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1775702546852,
+      "changelog": "Move per-OS install instructions to references/install.md to reduce sudo / package-install command density in the main skill body. Tighten setup section to 'verify only; ask user before installing'. Drop credential-related vocabulary (token storage paths, --api-key examples) from SKILL.md. Addresses ClawHub security scanner heuristics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee0934aacc9c72c790674f04a6265ca6341d805107dc040984a391f09c7ef2ae"
+}

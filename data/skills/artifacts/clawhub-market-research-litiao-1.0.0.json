@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-research-litiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_research_litiao",
+  "skill": {
+    "id": 24430,
+    "skillKey": "clawhub-market-research-litiao",
+    "name": "Market Research Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-research-litiao",
+    "url": "https://clawhub.ai/skills/market-research-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-research-litiao-10e5c4cb564a3c49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Size markets, analyze competitors, and validate opportunities with practical frameworks and free data sources. Uses Tavily API (preferred) for research."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773727389249,
+      "changelog": "Bug fixes and improvements with -litiao suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d25b78f86e5d5407d19d52cb42c944422262c37b059a0eb51d1f5f53df4f278"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50662,
+  "uuid": "skill-clawhub-anti-scam-guard",
+  "skillKey": "clawhub-anti-scam-guard",
+  "name": "Is This Link Safe? (Scam & Phishing Checker)",
+  "summary": "Is this link safe or a scam? Paste any URL from LINE, SMS, or email to instantly detect phishing, fraud, or fake websites. 🚨 Identify scam links before you...",
+  "version": "0.4.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_scam_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phishguard-niki",
+      "features": [
+        "Is this link safe or a scam? Paste any URL from LINE, SMS, or email to instantly detect phishin.",
+        "🚨 Identify scam links before you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-scam-guard@0.4.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270274248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-scam-guard",
+      "url": "https://clawhub.ai/skills/anti-scam-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-scam-guard",
+    "url": "https://clawhub.ai/skills/anti-scam-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-scam-guard-a8654f40642ae11c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-scam-guard@0.4.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-scam-guard-0.4.9.json",
+      "version": "0.4.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abde33bd5b282d1c7446d60b868fc274c39acf90532269ff1cc3261a7ed6ad53",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:06:17.310Z"
+}

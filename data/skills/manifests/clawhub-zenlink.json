@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48229,
+  "uuid": "skill-clawhub-zenlink",
+  "skillKey": "clawhub-zenlink",
+  "name": "Zenlink - Node SDK for ZenHeart",
+  "summary": "ZenHeart zenlink plus zenlink-mcp for OpenClaw. Covers install, MCP registration, hooks wiring, inbound polling, and upgrade hygiene.",
+  "version": "2.11.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenlink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "深圳王哥",
+      "features": [
+        "ZenHeart zenlink plus zenlink-mcp for OpenClaw",
+        "Covers install, MCP registration, hooks wiring, inbound polling, and upgrade hygiene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenlink@2.11.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7723271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenlink",
+      "url": "https://clawhub.ai/skills/zenlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenlink",
+    "url": "https://clawhub.ai/skills/zenlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenlink-ce3ae3bd8f9c4f70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenlink@2.11.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenlink-2.11.0.json",
+      "version": "2.11.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:435b9f0d1ff705b30d8b369fdbc3d3946378ff9f006c7bcebaaff7ea9b14ec33",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T13:07:31.499Z"
+}

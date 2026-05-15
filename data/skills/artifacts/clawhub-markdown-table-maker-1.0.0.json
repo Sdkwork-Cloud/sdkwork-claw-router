@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-table-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_table_maker",
+  "skill": {
+    "id": 46339,
+    "skillKey": "clawhub-markdown-table-maker",
+    "name": "Markdown Table Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-table-maker",
+    "url": "https://clawhub.ai/skills/markdown-table-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-table-maker-03c471dfb073415c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, format, align, sort, transpose, and convert tables between Markdown, CSV, JSON, and TSV using pure Python without dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777370191985,
+      "changelog": "- Initial release of Markdown Table Maker (v1.0.0)\n- Create Markdown tables from scratch or data sources (CSV, JSON, TSV)\n- Align columns (left, center, right) and sort rows by any column\n- Merge multiple tables, transpose rows/columns, and pretty-print tables\n- Pure Python implementation with zero dependencies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3007a9bf10e400b1a2fbd72a75589deffd791bc1a9f5629d8b0f67fa2c7f6d63"
+}

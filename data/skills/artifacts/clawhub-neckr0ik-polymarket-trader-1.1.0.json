@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neckr0ik-polymarket-trader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neckr0ik_polymarket_trader",
+  "skill": {
+    "id": 27885,
+    "skillKey": "clawhub-neckr0ik-polymarket-trader",
+    "name": "Neckr0ik Polymarket Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neckr0ik-polymarket-trader",
+    "url": "https://clawhub.ai/skills/neckr0ik-polymarket-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neckr0ik-polymarket-trader-b1abed8b2c92c96b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect arbitrage opportunities on Polymarket. Monitor spread arbitrage, cross-market correlations, news-driven opportunities. Use for prediction market tradi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neckr0ik",
+      "userId": "s1743ver4v9fjtabxtnwrxe1ms83n31n",
+      "displayName": "Neckr0ik",
+      "image": "https://avatars.githubusercontent.com/u/96146149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772853749402,
+      "changelog": "Polymarket arbitrage detection engine update:\n\n- Improved logic in scripts/arbitrage_detector.py for more precise arbitrage opportunity detection.\n- Enhanced reliability and accuracy of arbitrage alerts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fd5cf4bf381f97285efa18fbdf56f103b83fbd3bbff1310215264005e1cc86e"
+}

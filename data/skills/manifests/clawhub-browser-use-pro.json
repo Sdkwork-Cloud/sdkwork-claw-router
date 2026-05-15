@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16317,
+  "uuid": "skill-clawhub-browser-use-pro",
+  "skillKey": "clawhub-browser-use-pro",
+  "name": "Browser Use Pro",
+  "summary": "AI-powered browser automation for complex multi-step web workflows. Uses Browser-Use framework when OpenClaw's built-in browser tool can't handle login flows...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abczsl520",
+      "features": [
+        "AI-powered browser automation for complex multi-step web workflows",
+        "Uses Browser-Use framework when OpenClaw's built-in browser tool can't handle login flows..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-use-pro@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65114094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-use-pro",
+      "url": "https://clawhub.ai/skills/browser-use-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-pro",
+    "url": "https://clawhub.ai/skills/browser-use-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-pro-de1bf824dc7077c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-use-pro@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-use-pro-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3568d8feafe54270dced78633dcc17910d10054e9549e7842ec9808f443d129",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:50:01.276Z"
+}

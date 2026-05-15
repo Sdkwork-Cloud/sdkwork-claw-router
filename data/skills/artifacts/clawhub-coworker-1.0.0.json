@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coworker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coworker",
+  "skill": {
+    "id": 17056,
+    "skillKey": "clawhub-coworker",
+    "name": "Hannah & Elena client skill for coworker integration by Sokosumi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coworker",
+    "url": "https://clawhub.ai/skills/coworker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coworker-06c2de313d1dfede.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Hannah and Elena agents from Serviceplan - specialized AI coworkers for marketing research and operations planning. Access via email or OpenAI-compatible API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sarthib7",
+      "userId": "publishers:sarthib7",
+      "displayName": "Sarthib7",
+      "image": "https://avatars.githubusercontent.com/u/112841873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 821,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770904679411,
+      "changelog": "- Initial release of the Hannah & Elena client skill for Serviceplan AI coworker integration\n- Connects to specialized AI agents Hannah (marketing research) and Elena (operations/planning) via API or email\n- Supports asynchronous task management with status tracking and result retrieval\n- Enables multi-agent workflows, including Elena delegating to Hannah for research\n- Includes example usage workflows, environment variable setup instructions, and agent best practices\n- Requires human action to obtain and configure API keys and access",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfe27caf95816c0acaa4b5c8e1f82773dd9483f80653f0ed3a12810206528828"
+}

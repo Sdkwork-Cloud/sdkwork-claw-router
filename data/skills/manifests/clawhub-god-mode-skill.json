@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19624,
+  "uuid": "skill-clawhub-god-mode-skill",
+  "skillKey": "clawhub-god-mode-skill",
+  "name": "God Mode Skill",
+  "summary": "God's eye view of your dev repos. Multi-project tracking across GitHub/Azure DevOps. AI learns from your commits to upgrade your agents.md.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.god_mode_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wetzja04@gmail.com",
+      "features": [
+        "God's eye view of your dev repos",
+        "Multi-project tracking across GitHub/Azure DevOps",
+        "AI learns from your commits to upgrade your agents.md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/god-mode-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228270231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "god-mode-skill",
+      "url": "https://clawhub.ai/skills/god-mode-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "god-mode-skill",
+    "url": "https://clawhub.ai/skills/god-mode-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/god-mode-skill-95600b579a65b89a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/god-mode-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-god-mode-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b449283aedeb41f3a36ff3f9d0fd15139ff0c384e8b3c6b01005d3e05b949162",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T17:25:18.821Z"
+}

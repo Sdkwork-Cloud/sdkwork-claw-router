@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/barct-efectivo-vs-cuotas-ipc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barct_efectivo_vs_cuotas_ipc",
+  "skill": {
+    "id": 28795,
+    "skillKey": "clawhub-barct-efectivo-vs-cuotas-ipc",
+    "name": "Efectivo o Cuotas (ARGENTINA)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barct-efectivo-vs-cuotas-ipc",
+    "url": "https://clawhub.ai/skills/barct-efectivo-vs-cuotas-ipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barct-efectivo-vs-cuotas-ipc-700299193c2f8508.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comparar efectivo, cuotas y tarjeta a fin de mes usando valor presente, con salida breve y clara."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barct",
+      "userId": "publishers:barct",
+      "displayName": "Fernando Hidalgo",
+      "image": "https://avatars.githubusercontent.com/u/23461656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773259994109,
+      "changelog": "- Respuesta ahora breve y directa, enfocada solo en valor presente (no nominal).\n- Estructura de salida obligatoria: Resumen, Desglose en valor presente, Conclusion.\n- Se elimina explicación larga: máximo 14 líneas por respuesta.\n- Si no se informa tasa de oportunidad, se estima automáticamente usando el IPC de los últimos 6 meses.\n- Se restringe a cálculos y comparaciones exclusivamente por valor presente; prohibida la comparación nominal.\n- Incluye cálculo de \"recargo máximo soportable\" según inflación proyectada para cuotas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef093fb5020d9709a26a6599062ac4bf6b74bb0c56273245f754c0552ea43eb4"
+}

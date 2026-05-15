@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-news-brief@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_news_brief",
+  "skill": {
+    "id": 26405,
+    "skillKey": "clawhub-market-news-brief",
+    "name": "Market News Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-news-brief",
+    "url": "https://clawhub.ai/skills/market-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-news-brief-e29d85a63e8e84ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a local script to fetch broad market news and tone. Use when: user asks about market conditions, macro news, what's happening in markets, or market senti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youpele52",
+      "userId": "s177cjete9gkkjq09py127x5xx83sfh8",
+      "displayName": "youpele52",
+      "image": "https://avatars.githubusercontent.com/u/43122220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772855752746,
+      "changelog": "**Market News Brief 0.1.1 — major documentation update**\n\n- Clarified when and when NOT to use the skill (e.g., not for single-stock or fundamentals inquiries).\n- Added a detailed, bold warning to only use predefined market scope words (never bare ticker symbols).\n- Introduced a clear table of supported market scopes and regional coverage.\n- Updated all usage examples to use explicit scope words and new invocation path.\n- Provided guidance for mapping user queries to valid scopes.\n- Streamlined instructions on output format and usage, removing ambiguity around arguments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ad05408483cd266fbbce6b23768bafaee76428d3e7a700e16ef94899368c6f2"
+}

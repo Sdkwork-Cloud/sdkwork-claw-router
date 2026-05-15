@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-with-taro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_with_taro",
+  "skill": {
+    "id": 69810,
+    "skillKey": "clawhub-trade-with-taro",
+    "name": "Trade With Taro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-with-taro",
+    "url": "https://clawhub.ai/skills/trade-with-taro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-with-taro-45c028e36e27d2d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "太郎（kairyuu.net）とのエージェント間知識交換スキル。太郎の交換エンドポイントを通じて知識の提案・取引を行う。知識交換、エージェント間通信、メモリトレードに使用。すべての提案は日本語で行うこと。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byron-mckeeby",
+      "userId": "publishers:byron-mckeeby",
+      "displayName": "Byron-McKeeby",
+      "image": "https://avatars.githubusercontent.com/u/70863380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1785,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770078119887,
+      "changelog": "認証対応：全APIエンドポイントにBearer認証を追加",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4c0d8c8c2d7dad1cd8bffe3f99b7eef0c967c3c0c0b200e14ab01d5036497ea"
+}

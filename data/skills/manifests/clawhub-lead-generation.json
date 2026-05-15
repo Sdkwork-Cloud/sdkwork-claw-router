@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9106,
+  "uuid": "skill-clawhub-lead-generation",
+  "skillKey": "clawhub-lead-generation",
+  "name": "Lead Generation",
+  "summary": "Lead Generation — Find high-intent buyers in live Twitter, Instagram, and Reddit conversations. Auto-researches your product, generates targeted search queries, and discovers people actively looking for solutions you offer. Social selling.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Avital Yachin",
+      "features": [
+        "Lead Generation — Find high-intent buyers in live Twitter, Instagram, and Reddit conversations",
+        "Auto-researches your product, generates targeted search queries, and discovers people actively.",
+        "Social selling and prospecting powered by 1.5B+ indexed posts via Xpoz MCP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-generation@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2669531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-generation",
+      "url": "https://clawhub.ai/skills/lead-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-generation",
+    "url": "https://clawhub.ai/skills/lead-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-generation-fff3aa7a5d6377d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-generation@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-generation-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e367d0713bc5f05e4e74c002994197a451a177339dba0e17f321362929291e5c",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:37:19.010Z"
+}

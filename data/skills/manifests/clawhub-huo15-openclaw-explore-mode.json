@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59656,
+  "uuid": "skill-clawhub-huo15-openclaw-explore-mode",
+  "skillKey": "clawhub-huo15-openclaw-explore-mode",
+  "name": "Huo15 Openclaw Explore Mode",
+  "summary": "深度探索模式 — 系统性调研代码库、系统或话题，只读不改。借鉴 Claude Code 的 Explore Agent。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_explore_mode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "深度探索模式 — 系统性调研代码库、系统或话题，只读不改。借鉴 Claude Code 的 Explore Agent。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-openclaw-explore-mode@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-openclaw-explore-mode",
+      "url": "https://clawhub.ai/skills/huo15-openclaw-explore-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-explore-mode",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-explore-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-explore-mode-4dd45dd7fcd8c66a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-openclaw-explore-mode@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-openclaw-explore-mode-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4b48995f92beaae491bf9c21635d7312ab97ed1e429b66d4cd880ff60c64de0",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:16:01.756Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawvitals@1.4.8",
+  "version": "1.4.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvitals",
+  "skill": {
+    "id": 22027,
+    "skillKey": "clawhub-clawvitals",
+    "name": "ClawVitals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvitals",
+    "url": "https://clawhub.ai/skills/clawvitals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvitals-e06f87cd6c6e81b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security vitals checker for OpenClaw. Scans your installation, scores your setup, and shows you exactly what to fix. First scan in seconds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bk-cm",
+      "userId": "s1778cybygeqfrxtsgsrfzq4y183h3fq",
+      "displayName": "BK-CM",
+      "image": "https://avatars.githubusercontent.com/u/235375701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 46
+    },
+    "latestVersion": {
+      "version": "1.4.8",
+      "createdAt": 1776347087054,
+      "changelog": "Fix SKILL.md contradictions flagged by security review: clarify network access claim (skill makes no direct calls; openclaw update status may trigger OpenClaw CLI registry contact), clarify detail field display rule (only permitted per-control values may be shown, not raw detail text)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47f26cc8df6eedb33eb4e0507b276117302715081fcd314253cb3cd61d46265a"
+}

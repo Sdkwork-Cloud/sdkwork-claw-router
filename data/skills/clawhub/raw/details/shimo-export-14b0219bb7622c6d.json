@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "shimo-export",
+    "displayName": "shimo-export",
+    "summary": "石墨文档导出 AI Skill — 通过 AI Agent 与石墨文档 (shimo.im) API 交互， 实现自动登录、文件列表浏览、团队空间扫描、批量导出（支持 Markdown、PDF、Word、Excel、PPT、XMind、图片等格式）。 当用户提到石墨文档、导出文件、下载文档、批量导出、团队空间、文...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775183593033,
+    "updatedAt": 1777527113601
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1775186476527,
+    "changelog": "- Security and credential handling updated: credential files are now required to have 0600 permissions, and the config/ directory is added to .gitignore to prevent accidental commits.\n- Environment variable handling improved: all scripts now require credentials via the SHIMO_COOKIE environment variable only, never from files.\n- The certification preflight script now supports a --raw mode to output only the cookie value for downstream script use.\n- The README.md file was removed; a .gitignore file was added for sensitive configuration.\n- Documentation updated for improved security guidance and clearer step-by-step credential usage for both users and agents.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "navyum",
+    "userId": "s171hw5xdzbt94fch66svfantx842vrs",
+    "displayName": "Navyum",
+    "image": "https://avatars.githubusercontent.com/u/36869790?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527113601
+  }
+}

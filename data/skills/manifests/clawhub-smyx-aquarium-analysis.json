@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57932,
+  "uuid": "skill-clawhub-smyx-aquarium-analysis",
+  "skillKey": "clawhub-smyx-aquarium-analysis",
+  "name": "鱼类水族宠物健康诊断分析工具",
+  "summary": "When a user provides a video URL or file of aquatic pets such as goldfish, koi, betta, shrimp, crab, etc. for analysis, this skill is triggered to perform aq...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_aquarium_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "When a user provides a video URL or file of aquatic pets such as goldfish, koi, betta, shrimp,.",
+        "for analysis, this skill is triggered to perform aq..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-aquarium-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-aquarium-analysis",
+      "url": "https://clawhub.ai/skills/smyx-aquarium-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-aquarium-analysis",
+    "url": "https://clawhub.ai/skills/smyx-aquarium-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-aquarium-analysis-df843052e9d24848.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-aquarium-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-aquarium-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b75258b6b818fbd1221ced87a6f269af0f417ed19bc91beae8bd440a530bd272",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T00:29:39.272Z"
+}

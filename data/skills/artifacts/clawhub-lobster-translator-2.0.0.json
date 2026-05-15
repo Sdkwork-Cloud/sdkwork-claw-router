@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-translator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_translator",
+  "skill": {
+    "id": 69457,
+    "skillKey": "clawhub-lobster-translator",
+    "name": "ranbing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-translator",
+    "url": "https://clawhub.ai/skills/lobster-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-translator-eb1ef8312da8e8c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户发出模糊指令（\"帮我搞个 XXX\"）时；当用户需要理清需求时；当内容过于正式需要翻译成人话时；当多 Agent 协作需要任务委托时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773891185305,
+      "changelog": "lobster-translator v2.0.0\n\n- Major refactor to comply with Anthropic Skill v2.0 standards.\n- Added clear input/output JSON schema and processing modes (clarify, translate, delegate).\n- Introduced extensive \"常见错误\" (pitfalls) section with solutions.\n- Expanded and standardized template and example references.\n- Improved task delegation support for multi-agent scenarios.\n- Enhanced documentation of use cases, boundaries, and core principles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ce25df300f68dde0b799a6e42b3abbb75c85f83363a273d0003dc0594699ce2"
+}

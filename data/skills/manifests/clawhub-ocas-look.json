@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42268,
+  "uuid": "skill-clawhub-ocas-look",
+  "skillKey": "clawhub-ocas-look",
+  "name": "Look",
+  "summary": "Convert user images into validated action drafts like calendar events, meal macros, receipts, products, civic reports, or documents for confirmation and exec...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_look",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigo Karasu",
+      "features": [
+        "Convert user images into validated action drafts like calendar events, meal macros, receipts, p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocas-look@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265148029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocas-look",
+      "url": "https://clawhub.ai/skills/ocas-look"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-look",
+    "url": "https://clawhub.ai/skills/ocas-look",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-look-98c91f5409263896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocas-look@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocas-look-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:287b01f31536a4044d2f5b44b4dd53dc340b2c33e90f4b36958819771d88a93d",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:40:41.940Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37142,
+  "uuid": "skill-clawhub-agnicpay-authenticate-wallet",
+  "skillKey": "clawhub-agnicpay-authenticate-wallet",
+  "name": "Agnic Authenticate Wallet",
+  "summary": "Authenticate Agnic wallet via browser OAuth or headless API token. Use when the user wants to sign in, log in, authenticate, connect wallet, set up CLI, or r...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnicpay_authenticate_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agnic.AI",
+      "features": [
+        "Authenticate Agnic wallet via browser OAuth or headless API token",
+        "Use when the user wants to sign in, log in, authenticate, connect wallet, set up CLI, or r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agnicpay-authenticate-wallet@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240652244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agnicpay-authenticate-wallet",
+      "url": "https://clawhub.ai/skills/agnicpay-authenticate-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnicpay-authenticate-wallet",
+    "url": "https://clawhub.ai/skills/agnicpay-authenticate-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnicpay-authenticate-wallet-d50232e671dba3d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agnicpay-authenticate-wallet@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agnicpay-authenticate-wallet-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f40808e8998be77dfb1a0ec852dd9d04f14424fc38aae15740a92d061a948f11",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:11:38.030Z"
+}

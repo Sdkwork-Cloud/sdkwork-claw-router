@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-agent-with-telegram-group@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agent_with_telegram_group",
+  "skill": {
+    "id": 54912,
+    "skillKey": "clawhub-create-agent-with-telegram-group",
+    "name": "Create Agent With Telegram Group"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agent-with-telegram-group",
+    "url": "https://clawhub.ai/skills/create-agent-with-telegram-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agent-with-telegram-group-623c3338a19c620d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a new OpenClaw agent and bind it to a dedicated Telegram group with workspace ~/claw-<agent-name>. Use when the user asks for one-agent-one-group setu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheetaa",
+      "userId": "publishers:sheetaa",
+      "displayName": "Sheeta",
+      "image": "https://avatars.githubusercontent.com/u/4032009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771688883227,
+      "changelog": "Add explicit user-approval gates for high-privilege actions: browser automation, openclaw.json modification, and gateway restart must each be confirmed before execution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:957cb04626879456f0398663b6fa6f7a491d3ee2140bdf4b73ab4cf05c1a2cfd"
+}

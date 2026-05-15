@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-industry-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_industry_analyzer",
+  "skill": {
+    "id": 66358,
+    "skillKey": "clawhub-stock-industry-analyzer",
+    "name": "stock-industry-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-industry-analyzer",
+    "url": "https://clawhub.ai/skills/stock-industry-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-industry-analyzer-4809c33a29fb543b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动收集国内外财经新闻，分析股票行业趋势，热点公司与技术指标，生成综合评分和买卖建议报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ligo-gao",
+      "userId": "publishers:ligo-gao",
+      "displayName": "ligo-gao",
+      "image": "https://avatars.githubusercontent.com/u/194260668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773423307782,
+      "changelog": "- 首次发布自动化股票行业分析工具\n- 支持新闻收集、行业及个股NLP分析、热点识别和技术指标计算\n- 自动定时抓取与清洗国内外财经新闻\n- 综合评分模型及买卖建议\n- 本地SQLite持久化历史数据与报告\n- 支持OpenClaw平台集成与自定义配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edbdcf84b31d732b94a81bacdc3867ee7dae7c9e89524b615bc14826211a9a19"
+}

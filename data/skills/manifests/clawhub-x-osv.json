@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56578,
+  "uuid": "skill-clawhub-x-osv",
+  "skillKey": "clawhub-x-osv",
+  "name": "x-osv",
+  "summary": "CLI for Google OSV database. Query vulnerabilities for packages, scan local projects for vulnerable dependencies. **Dependency**: This is an x-cmd module. In...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_osv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edwin.JH.Lee",
+      "features": [
+        "CLI for Google OSV database",
+        "Query vulnerabilities for packages, scan local projects for vulnerable dependencies",
+        "**Dependency**: This is an x-cmd module"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-osv@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-osv",
+      "url": "https://clawhub.ai/skills/x-osv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-osv",
+    "url": "https://clawhub.ai/skills/x-osv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-osv-b2439c480c0fc300.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-osv@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-osv-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75f2d3a3d4af942faebe19b9589ae4c8c190f98cfada3a752bb6836753ebbae4",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:52:30.719Z"
+}

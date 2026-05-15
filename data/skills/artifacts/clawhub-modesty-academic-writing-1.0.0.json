@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-academic-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_academic_writing",
+  "skill": {
+    "id": 48807,
+    "skillKey": "clawhub-modesty-academic-writing",
+    "name": "Academic Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-academic-writing",
+    "url": "https://clawhub.ai/skills/modesty-academic-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-academic-writing-122395748191a7e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expertise in scholarly papers, literature reviews, research methodology, and thesis writing with strict adherence to academic standards and citation protocols."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777536033191,
+      "changelog": "Academic-writing skill initial release.\n\n- Provides expert guidance for scholarly papers, literature reviews, research methodology, and thesis writing.\n- Enforces use of Markdown and <ama-doc></ama-doc> tags for all core content.\n- Limits citations to verified academic sources and mandates sequential in-text citation format.\n- Requires formal academic tone, structured writing, and accurate, well-formatted references.\n- Includes clear instructions for using tables, figures (with Mermaid diagrams), and quality assurance steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c01ad27fd577026a43ad5ccc6685a6a57912be44bb00116fbc43e152bae70fc1"
+}

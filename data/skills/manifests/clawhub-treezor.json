@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35635,
+  "uuid": "skill-clawhub-treezor",
+  "skillKey": "clawhub-treezor",
+  "name": "Treezor",
+  "summary": "Treezor integration. Manage data, records, and automate workflows. Use when the user wants to interact with Treezor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treezor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Treezor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Treezor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/treezor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "treezor",
+      "url": "https://clawhub.ai/skills/treezor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treezor",
+    "url": "https://clawhub.ai/skills/treezor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treezor-d1977bcc12ab8ce6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/treezor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-treezor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57ceb76a430b67e5e691a1649df318b516e48d6494e6ebbea08ef0af586f3852",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:06:57.747Z"
+}

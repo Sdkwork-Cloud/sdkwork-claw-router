@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50586,
+  "uuid": "skill-clawhub-raspberry-pi-manager",
+  "skillKey": "clawhub-raspberry-pi-manager",
+  "name": "Raspberry Pi Manager",
+  "summary": "Manage Raspberry Pi devices — GPIO control, system monitoring (CPU/temp/memory), service management, sensor data reading.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raspberry_pi_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Manage Raspberry Pi devices — GPIO control, system monitoring (CPU/temp/memory), service manage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raspberry-pi-manager@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raspberry-pi-manager",
+      "url": "https://clawhub.ai/skills/raspberry-pi-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raspberry-pi-manager",
+    "url": "https://clawhub.ai/skills/raspberry-pi-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raspberry-pi-manager-4884e48baacb98be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raspberry-pi-manager@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-manager-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bf0454e46030d7d70cd6951d0d41313061c28401c7a0b240a751e7833c26840",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:49:20.575Z"
+}

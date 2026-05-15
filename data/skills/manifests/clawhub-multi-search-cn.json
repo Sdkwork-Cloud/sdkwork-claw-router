@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62667,
+  "uuid": "skill-clawhub-multi-search-cn",
+  "skillKey": "clawhub-multi-search-cn",
+  "name": "Multi Search CN",
+  "summary": "聚合国内常用搜索引擎：默认用 DuckDuckGo HTML（cn-zh）零 API Key 抓取可解析结果，并输出必应中国、百度、搜狗、360 的直达搜索链接。当用户需要中文网页检索、国内信息、政策/舆情、对比多个搜索引擎、或 Brave/Google 不可用时使用。依赖 Python 3 标准库与 scrip...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fanzhuo",
+      "features": [
+        "聚合国内常用搜索引擎：默认用 DuckDuckGo HTML（cn-zh）零 API Key 抓取可解析结果，并输出必应中国、百度、搜狗、360 的直达搜索链接。当用户需要中文网页检索、国内."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-search-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128193289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-search-cn",
+      "url": "https://clawhub.ai/skills/multi-search-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-cn",
+    "url": "https://clawhub.ai/skills/multi-search-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-cn-cafa2fe69762430d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-search-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:830d16c6d5bae467880271f1f9bd8d314caee8c833555961d3aabc716b907a85",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:53:15.172Z"
+}

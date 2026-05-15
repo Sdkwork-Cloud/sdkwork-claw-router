@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-compass@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_compass",
+  "skill": {
+    "id": 23889,
+    "skillKey": "clawhub-trade-compass",
+    "name": "Trade Compass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-compass",
+    "url": "https://clawhub.ai/skills/trade-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-compass-460ef9ce211ae2e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Global landed cost calculator for traders shipping to the US. Combines live USITC tariffs, Section 232/301/AD-CVD duties, real-time exchange rates (ECB), oce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoningliu1-lang",
+      "userId": "publishers:zhaoningliu1-lang",
+      "displayName": "zhaoningliu1-lang",
+      "image": "https://avatars.githubusercontent.com/u/262459959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1772671734790,
+      "changelog": "Renamed from tariff-watch to Trade Compass — now covers tariffs + FX rates + ocean freight + compliance + landed cost calculation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57eaff881afb7677ded0dac29e74fe4bb2b3b153591c70892dc336c1b16a6d8f"
+}

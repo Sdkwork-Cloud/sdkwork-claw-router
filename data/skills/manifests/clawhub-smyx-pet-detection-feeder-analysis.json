@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57888,
+  "uuid": "skill-clawhub-smyx-pet-detection-feeder-analysis",
+  "skillKey": "clawhub-smyx-pet-detection-feeder-analysis",
+  "name": "智能喂食器宠物检测识别技能",
+  "summary": "Based on computer vision, automatically detects and recognizes cats and dogs appearing in the target area from the perspective of feeder/IPC cameras, and sup...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_pet_detection_feeder_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Based on computer vision, automatically detects and recognizes cats and dogs appearing in the t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-pet-detection-feeder-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-pet-detection-feeder-analysis",
+      "url": "https://clawhub.ai/skills/smyx-pet-detection-feeder-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-pet-detection-feeder-analysis",
+    "url": "https://clawhub.ai/skills/smyx-pet-detection-feeder-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-pet-detection-feeder-analysis-852b08cbe33292d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-pet-detection-feeder-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-pet-detection-feeder-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:471c7349cb33b6dec01a92d1598d37d8f8ae9c25ed7538a14a04d0aa1b228753",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T05:48:39.766Z"
+}

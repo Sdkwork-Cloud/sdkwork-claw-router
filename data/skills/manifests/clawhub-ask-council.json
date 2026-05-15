@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42186,
+  "uuid": "skill-clawhub-ask-council",
+  "skillKey": "clawhub-ask-council",
+  "name": "Ask Council",
+  "summary": "Ask LLM Council a question directly from Telegram/chat — get the chairman's synthesized answer without opening the web UI. Quick, headless access to multi-mo...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_council",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeadland",
+      "features": [
+        "Ask LLM Council a question directly from Telegram/chat — get the chairman's synthesized answer.",
+        "Quick, headless access to multi-mo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-council@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28848013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-council",
+      "url": "https://clawhub.ai/skills/ask-council"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-council",
+    "url": "https://clawhub.ai/skills/ask-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-council-1d035c9d1136132c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-council@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-council-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:809d0c1b0c67a8d1c8d7f56d4c06d244679262cc315b8bc02c5bb480e7b02a82",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T12:55:54.983Z"
+}

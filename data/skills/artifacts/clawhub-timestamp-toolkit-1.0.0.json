@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timestamp-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timestamp_toolkit",
+  "skill": {
+    "id": 37356,
+    "skillKey": "clawhub-timestamp-toolkit",
+    "name": "Timestamp Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timestamp-toolkit",
+    "url": "https://clawhub.ai/skills/timestamp-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timestamp-toolkit-71a90cf3f76ee504.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Timestamp conversion tool. Convert between Unix timestamp, datetime, and various date formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeter226",
+      "userId": "s173w5m1mkxvbtwycc5tp8r0yx83f0q3",
+      "displayName": "freeter226",
+      "image": "https://avatars.githubusercontent.com/u/264750079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774159801033,
+      "changelog": "首个版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ad2e9c3bb968936c005029a4ebd8ec21267f26b08fcf90af137d58d18efd860"
+}

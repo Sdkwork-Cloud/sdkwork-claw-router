@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9966,
+  "uuid": "skill-clawhub-moltthreats",
+  "skillKey": "clawhub-moltthreats",
+  "name": "MoltThreats",
+  "summary": "Agent-native security signal feed by PromptIntel. Use this skill whenever the agent needs to report threats, fetch protection feeds, apply security rules, or update SHIELD.md. Trigger on any mention of: threat reporting, security feed, MCP.",
+  "version": "0.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltthreats",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fr0gger",
+      "features": [
+        "Agent-native security signal feed by PromptIntel",
+        "Use this skill whenever the agent needs to report threats, fetch protection feeds, apply securi.",
+        "Trigger on any mention of: threat reporting, security feed, MCP threats, malicious skills, prom.",
+        "Also trigger when the agent detects suspicious behavior during normal operation (unexpected too."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltthreats@0.6.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6546250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltthreats",
+      "url": "https://clawhub.ai/skills/moltthreats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltthreats",
+    "url": "https://clawhub.ai/skills/moltthreats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltthreats-63e3a136c6c03ff8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltthreats@0.6.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltthreats-0.6.3.json",
+      "version": "0.6.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f95a0021fce4b54eeaa3d55ba87a7e6d70c724e9ea133756251f5e855b09dd1",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T04:07:46.484Z"
+}

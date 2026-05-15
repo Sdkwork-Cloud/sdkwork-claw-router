@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61117,
+  "uuid": "skill-clawhub-ssa-product-doc-reader",
+  "skillKey": "clawhub-ssa-product-doc-reader",
+  "name": "Product Doc Reader",
+  "summary": "产品工程图纸结构化提取器 v5.0。pdftotext 优先 + Vision 兜底，支持软连字符清理/跨行关联/数据校验。专为 Farreach 线材产品图纸设计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_product_doc_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "产品工程图纸结构化提取器 v5.0。pdftotext 优先 + Vision 兜底，支持软连字符清理/跨行关联/数据校验。专为 Farreach 线材产品图纸设计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-product-doc-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-product-doc-reader",
+      "url": "https://clawhub.ai/skills/ssa-product-doc-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-product-doc-reader",
+    "url": "https://clawhub.ai/skills/ssa-product-doc-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-product-doc-reader-8877495c960f33cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-product-doc-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-product-doc-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52ae6e58c4b6ca33c1a2b1d0c09a74a655b7a7ccff0f52da9fc30f7e36307082",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:44:38.134Z"
+}

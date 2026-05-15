@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17764,
+  "uuid": "skill-clawhub-funding-rate-trader",
+  "skillKey": "clawhub-funding-rate-trader",
+  "name": "Funding Rate Trader",
+  "summary": "Crypto funding rate arbitrage strategy. Scan negative funding rates, auto-trade with stop-loss/take-profit. No API key needed for scanning, Binance API for t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funding_rate_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Crypto funding rate arbitrage strategy",
+        "Scan negative funding rates, auto-trade with stop-loss/take-profit",
+        "No API key needed for scanning, Binance API for t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funding-rate-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funding-rate-trader",
+      "url": "https://clawhub.ai/skills/funding-rate-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funding-rate-trader",
+    "url": "https://clawhub.ai/skills/funding-rate-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funding-rate-trader-33f0b69ba2b7a112.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funding-rate-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-funding-rate-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4c79a18530851df993dd078c5e64a51e29a310de2be5bb7190c64e60a045350",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T05:24:37.269Z"
+}

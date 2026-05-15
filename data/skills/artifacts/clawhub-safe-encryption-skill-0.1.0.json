@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-encryption-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_encryption_skill",
+  "skill": {
+    "id": 50294,
+    "skillKey": "clawhub-safe-encryption-skill",
+    "name": "Safe Encryption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-encryption-skill",
+    "url": "https://clawhub.ai/skills/safe-encryption-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-encryption-skill-a196e99c3e8779a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encrypt, decrypt, and manage keys with the SAFE CLI — a modern GPG alternative with post-quantum support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grittygrease",
+      "userId": "publishers:grittygrease",
+      "displayName": "Nick Sullivan",
+      "image": "https://avatars.githubusercontent.com/u/5125095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771606410018,
+      "changelog": "Initial release of safe-encryption-skill — modern GPG alternative with post-quantum support.\n\n- Encrypt, decrypt, and manage keys using the SAFE CLI and web interface fallback.\n- Automatically installs `safe` binary on supported platforms or uses https://thesafe.dev if unavailable.\n- Guides interactive password entry, environment variable use, and recipient handling.\n- Provides browser automation ARIA labels for web UI integration.\n- Enforces secure defaults: absolute file paths, piped data, no temp files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:426cd0d74484a0f34abd839c441866e5922725ba2deb5f8987d1d6844a1c149c"
+}

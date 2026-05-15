@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/network-ai@5.3.2",
+  "version": "5.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_ai",
+  "skill": {
+    "id": 9795,
+    "skillKey": "clawhub-network-ai",
+    "name": "Network AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-ai",
+    "url": "https://clawhub.ai/skills/network-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-ai-8a70ce3d9d9057df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Python orchestration skill: multi-agent workflows via shared blackboard file, permission gating, token budget scripts, and persistent project context...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jovancoding",
+      "userId": "s171ekwxgx1x85ga807c8zc0ws840q1k",
+      "displayName": "Jovan Marinovic",
+      "image": "https://avatars.githubusercontent.com/u/120467681?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2688,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 6,
+      "versions": 106
+    },
+    "latestVersion": {
+      "version": "5.3.2",
+      "createdAt": 1778345557419,
+      "changelog": "network-ai 5.3.2\n\n- Clarified the \"Data-flow notice\" to explicitly state the skill does not implement or control any inter-agent messaging or sessions_send; such features are entirely the host platform’s responsibility and outside this skill’s scope.\n- Revised protocol sections and bash code examples to simplify instructions for budget checks and sub-task delegation, focusing on what the skill performs locally.\n- Improved warnings and recommendations regarding PII handling, local-only state, and context injection validation.\n- No functional changes to scripts or execution; updates are documentation/clarity only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48b9422867ddd71188dff65a5adc0700547ca62478602f754782b3dddf6d6aef"
+}

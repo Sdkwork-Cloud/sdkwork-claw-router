@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49805,
+  "uuid": "skill-clawhub-masterchef",
+  "skillKey": "clawhub-masterchef",
+  "name": "masterchef",
+  "summary": "Recipe and ingredient query assistant. Use when users ask how to cook X, X recipe, what can I make with X, I have X what can I cook, how to make X, or mentio...",
+  "version": "0.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masterchef",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yummy",
+      "features": [
+        "Recipe and ingredient query assistant",
+        "Use when users ask how to cook X, X recipe, what can I make with X, I have X what can I cook, h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/masterchef@0.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253081582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "masterchef",
+      "url": "https://clawhub.ai/skills/masterchef"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masterchef",
+    "url": "https://clawhub.ai/skills/masterchef",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masterchef-9bb15a7629fbda28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/masterchef@0.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-masterchef-0.6.2.json",
+      "version": "0.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cbfb8e2608619b16c29cfcac9883ade3257ca9131b4205577f5f05bfebe6596",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:12:10.254Z"
+}

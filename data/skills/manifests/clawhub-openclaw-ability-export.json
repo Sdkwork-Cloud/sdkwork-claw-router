@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62143,
+  "uuid": "skill-clawhub-openclaw-ability-export",
+  "skillKey": "clawhub-openclaw-ability-export",
+  "name": "Openclaw Ability Export",
+  "summary": "能力包导出/导入工具。在聊天中直接打包或接收 agent 配置，支持选择性导入、合并规则与隐私提醒。 触发场景： - 导出：\"导出能力包\"、\"打包我的能力\"、\"export ability\" - 导入：\"导入能力包\"、\"学习能力包\"、\"import ability",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ability_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aitowerofbabel-lang",
+      "features": [
+        "能力包导出/导入工具。在聊天中直接打包或接收 agent 配置，支持选择性导入、合并规则与隐私提醒。 触发场景：",
+        "导出：\"导出能力包\"、\"打包我的能力\"、\"export ability\"",
+        "导入：\"导入能力包\"、\"学习能力包\"、\"import ability"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-ability-export@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265811549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-ability-export",
+      "url": "https://clawhub.ai/skills/openclaw-ability-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ability-export",
+    "url": "https://clawhub.ai/skills/openclaw-ability-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ability-export-35c373b6330c0504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-ability-export@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ability-export-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57bfbfc1f4e9a95cb75bc6c37fd45ee2254ad23acf0cd9361b53997c0fc45c49",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:35:33.528Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gbabyzs-sentiment-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gbabyzs_sentiment_analysis",
+  "skill": {
+    "id": 21895,
+    "skillKey": "clawhub-gbabyzs-sentiment-analysis",
+    "name": "Sentiment Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gbabyzs-sentiment-analysis",
+    "url": "https://clawhub.ai/skills/gbabyzs-sentiment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gbabyzs-sentiment-analysis-b33fb5396cda3ccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze social media sentiment related to stocks, providing sentiment scores, trend changes, discussion heat, and bot detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gbabyzs",
+      "userId": "s1751m6g9wq5jpfz5ceb9mkjwd83srqr",
+      "displayName": "GBABYZS",
+      "image": "https://avatars.githubusercontent.com/u/264446239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773559716957,
+      "changelog": "Initial release: 股吧/雪球评论情感分析工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43f7c31727c588b31a1690517854b79337d5f2b05b558d88c0cc79ef7c65990c"
+}

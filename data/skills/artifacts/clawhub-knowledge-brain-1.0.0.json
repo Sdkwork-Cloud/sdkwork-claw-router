@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-brain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_brain",
+  "skill": {
+    "id": 20427,
+    "skillKey": "clawhub-knowledge-brain",
+    "name": "knowledge is what brings us together"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-brain",
+    "url": "https://clawhub.ai/skills/knowledge-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-brain-f232d43e47c419c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture, summarize, and organize knowledge from URLs, YouTube videos, documents, and files. Proactively recall stored knowledge when relevant."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plc",
+      "userId": "publishers:plc",
+      "displayName": "plc",
+      "image": "https://avatars.githubusercontent.com/u/26622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772234335959,
+      "changelog": "Initial release of the knowledge management skill.\n\n- Capture, summarize, and organize knowledge from URLs, YouTube videos, documents, and files.\n- Proactively recall stored knowledge when relevant to user queries.\n- Flexible directory structure with category-based organization and unsorted entries.\n- Automatic summary generation and category indexing for persistent agent memory.\n- Git integration for version control of the knowledge base.\n- Customizable knowledge base location, with persistent path and lightweight structural index.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9c7bf1137efc2b739bc57c21b25dcb11baf5c76bdd254b1c6b8e2cbf27d7ce0"
+}

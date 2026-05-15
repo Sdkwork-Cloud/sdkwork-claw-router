@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dreamina-seedance@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreamina_seedance",
+  "skill": {
+    "id": 38648,
+    "skillKey": "clawhub-dreamina-seedance",
+    "name": "Dreamina Seedance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreamina-seedance",
+    "url": "https://clawhub.ai/skills/dreamina-seedance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreamina-seedance-f4bda067f9eb6ace.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn still images into dance videos using Dreamina SeedAnce. Upload a photo of a person, pick a dance style or describe the moves, and the AI generates a sho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775676439362,
+      "changelog": "- Focus shifted to AI-powered photo-to-dance-video generation—upload a person’s photo, pick a dance, get a smooth dance clip.\n- Simpler display name and description, highlighting dance moves and MP4 output.\n- Clear step-by-step setup: automatic token/session management, no technical jargon shown to users.\n- All instructions, supported formats, and error handling streamlined for quick photo uploads and basic dance animation use cases.\n- New guidance and tips on input photos: full-body shots preferred, PNGs with clear backgrounds yield best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03d26d9017039b01decabfe6aea3827e750bc24b7e0d3141978f43239de7f0b8"
+}

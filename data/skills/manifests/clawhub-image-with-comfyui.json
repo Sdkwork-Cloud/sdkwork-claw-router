@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25134,
+  "uuid": "skill-clawhub-image-with-comfyui",
+  "skillKey": "clawhub-image-with-comfyui",
+  "name": "Image with ComfyUI",
+  "summary": "Call a local ComfyUI instance for text-to-image (T2I), image-to-image/edit (I2I), and image-to-video (I2V) generation. Supports Z-Image, SD3.5 Medium, Qwen I...",
+  "version": "1.4.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_with_comfyui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JnJn",
+      "features": [
+        "Call a local ComfyUI instance for text-to-image (T2I), image-to-image/edit (I2I), and image-to-.",
+        "Supports Z-Image, SD3.5 Medium, Qwen I..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-with-comfyui@1.4.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10294017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-with-comfyui",
+      "url": "https://clawhub.ai/skills/image-with-comfyui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-with-comfyui",
+    "url": "https://clawhub.ai/skills/image-with-comfyui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-with-comfyui-7dc53cc04194de01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-with-comfyui@1.4.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-with-comfyui-1.4.9.json",
+      "version": "1.4.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65f8b2e702b91f451403a361b5679b71f63445829cda21626939841bc58301b3",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T10:28:13.753Z"
+}

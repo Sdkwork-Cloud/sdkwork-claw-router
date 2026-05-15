@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-pro@0.9.1",
+  "version": "0.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_pro",
+  "skill": {
+    "id": 63271,
+    "skillKey": "clawhub-ai-news-pro",
+    "name": "AI News Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-pro",
+    "url": "https://clawhub.ai/skills/ai-news-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-pro-2f9d14b5b585cab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI News Pro 提供 AI 领域早报、晚报、热点新闻和精选内容，基于 AI 评分智能排序，支持定时推送。当用户说\"查询 AI 早报\"、\"查询 AI 晚报\"、\"查询 24H 热点新闻榜\"或\"查询 AI 精选内容\"时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesmenews",
+      "userId": "s177x32ba36jaspp47v9qdzqnh83gzf0",
+      "displayName": "AIMPACT",
+      "image": "https://avatars.githubusercontent.com/u/254596585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.9.1",
+      "createdAt": 1776669033816,
+      "changelog": "Version 0.9.1\n\n- 增加版本号标注到 SKILL.md。\n- 明确要求依赖 curl（二进制）而非 exec 工具。\n- 推送能力调整为“可选”：仅在 OpenClaw 已配置 message 工具和渠道凭据时才支持推送，技能自身不存储任何推送渠道密钥。\n- 去重机制由“历史采集去重”修改为“本次结果去重”，进一步简化实现和避免持久化依赖。\n- 明确技能不负责本地持久化或第三方渠道密钥管理，强化无状态理念。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be630344880ec9790b21b408418904e69f2928c04059e65506daedfcecaa2e08"
+}

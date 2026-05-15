@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22528,
+  "uuid": "skill-clawhub-lark-voice",
+  "skillKey": "clawhub-lark-voice",
+  "name": "Lark (Feishu) Voice",
+  "summary": "Send voice messages on Lark (Feishu) by converting text to speech. Use when the user asks to send a voice message or reply with voice.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cheer",
+      "features": [
+        "Send voice messages on Lark (Feishu) by converting text to speech",
+        "Use when the user asks to send a voice message or reply with voice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-voice@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73086438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-voice",
+      "url": "https://clawhub.ai/skills/lark-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-voice",
+    "url": "https://clawhub.ai/skills/lark-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-voice-e5ab012d6fabea50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-voice@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-voice-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a707b2a1fdadc5a8842822d4b764a84acd4062629835fc6e86537162edce66af",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:09:59.485Z"
+}

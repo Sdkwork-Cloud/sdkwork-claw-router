@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anukar-social-draft@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anukar_social_draft",
+  "skill": {
+    "id": 27674,
+    "skillKey": "clawhub-anukar-social-draft",
+    "name": "Aunkar Social Draft"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anukar-social-draft",
+    "url": "https://clawhub.ai/skills/anukar-social-draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anukar-social-draft-51d96aced4cfa2c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft Twitter and LinkedIn posts in one go. Use when user wants to create social media content for announcements, achievements, or updates. Combines tweet-wr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarasinghrajput",
+      "userId": "publishers:tarasinghrajput",
+      "displayName": "Tara Singh Kharwad",
+      "image": "https://avatars.githubusercontent.com/u/108981084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772515534651,
+      "changelog": "- Initial release of the Social Draft skill.\n- Generate Twitter and LinkedIn posts simultaneously with platform-optimized drafts in one workflow.\n- Includes detailed prompts to gather context on topic, key details, tone, and goal.\n- Applies best practices and formatting specific to each platform for higher engagement.\n- Provides a clear checklist to ensure quality and compliance for both Twitter and LinkedIn posts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8321d8a3d1c22e360c6cb19841a51a74fe489ba677fe4c2b6ab800ebc68a3a1c"
+}

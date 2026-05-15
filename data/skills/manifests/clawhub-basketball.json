@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29089,
+  "uuid": "skill-clawhub-basketball",
+  "skillKey": "clawhub-basketball",
+  "name": "Basketball",
+  "summary": "Analyze basketball games, lineups, players, and practice plans with film-room structure, scouting grids, and possession-based coaching tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basketball",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Analyze basketball games, lineups, players, and practice plans with film-room structure, scouti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/basketball@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "basketball",
+      "url": "https://clawhub.ai/skills/basketball"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basketball",
+    "url": "https://clawhub.ai/skills/basketball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basketball-f02c963574819724.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/basketball@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-basketball-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fc8adde27eb9d26be494e90350bb9def23f1633ea90334bdf78474c690b1248",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:35:43.087Z"
+}

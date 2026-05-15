@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12099,
+  "uuid": "skill-clawhub-arxiv-search-collector",
+  "skillKey": "clawhub-arxiv-search-collector",
+  "name": "Arxiv Search Collector",
+  "summary": "Model-guided arXiv paper collection workflow that plans queries, fetches metadata, filters relevance, and merges deduplicated results by language.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_search_collector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xukp20",
+      "features": [
+        "Model-guided arXiv paper collection workflow that plans queries, fetches metadata, filters rele."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-search-collector@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71265541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-search-collector",
+      "url": "https://clawhub.ai/skills/arxiv-search-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-search-collector",
+    "url": "https://clawhub.ai/skills/arxiv-search-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-search-collector-e9985da1ac3b5a55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-search-collector@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-search-collector-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c565c492731ebc4fed44633d5833f7d3a409e21fc10aaf45846a06d2aafed64",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T12:12:47.907Z"
+}

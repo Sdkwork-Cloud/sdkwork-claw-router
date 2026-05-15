@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workshop-agenda-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workshop_agenda_designer",
+  "skill": {
+    "id": 59610,
+    "skillKey": "clawhub-workshop-agenda-designer",
+    "name": "Workshop Agenda Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workshop-agenda-designer",
+    "url": "https://clawhub.ai/skills/workshop-agenda-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workshop-agenda-designer-504d42e656677b0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把会议目标、参会人、时间与约束拆成可执行议程、分段脚本、产出物与会后跟进。；use for meeting, agenda, facilitation workflows；do not use for 预订会议室, 转写音频."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774239285425,
+      "changelog": "- Initial release of the Workshop Agenda Designer skill.\n- Generates actionable agendas, facilitation runbooks, outputs, and follow-up templates from user inputs about goals, participants, time, and constraints.\n- Adds standalone scripts and resource templates for structured outputs (agenda, checklist, etc.).\n- Removes prior agenda builder scripts, templates, and unused prompt/example files.\n- Updates documentation to emphasize clear task breakdowns, explicit boundaries, and review-first workflows.\n- Now supports both Chinese and English usage guidance, with local resources and smoke tests included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3259fde10a47cbfe8874ecd8db687f850d259c610870cd551c0d080872ee21ce"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/naver-shopping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_shopping",
+  "skill": {
+    "id": 13838,
+    "skillKey": "clawhub-naver-shopping",
+    "name": "Naver Shopping Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-shopping",
+    "url": "https://clawhub.ai/skills/naver-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-shopping-d961ea27ec9c2226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for products on Naver Shopping. Use when the user wants to find product prices, links, or compare items in the Korean market."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dryoo",
+      "userId": "publishers:dryoo",
+      "displayName": "dryoo",
+      "image": "https://avatars.githubusercontent.com/u/799405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770629738906,
+      "changelog": "네이버 쇼핑 검색 API 연동 스킬 초기 버전",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37fcab333376245620d8628d41aaddd3463f63e34ea7fcf5aa1c6d9c1a20c7bb"
+}

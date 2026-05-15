@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-html-creator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_html_creator",
+  "skill": {
+    "id": 66505,
+    "skillKey": "clawhub-xhs-html-creator",
+    "name": "Xhs Html Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-html-creator",
+    "url": "https://clawhub.ai/skills/xhs-html-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-html-creator-2c4b35ea25393e94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书图文创作技能。触发条件：用户说\"生成图文\"、\"创作内容\"、\"做图文矩阵\"、\"生成XX的图文\"时使用。功能：读取素材库 → 生成7张竖屏小红书图文 → AI专家两轮review迭代 → 用户最终确认交付。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anastasiavanzato299-maker",
+      "userId": "s17963cjvwde2p49y1az0vzyeh84kckz",
+      "displayName": "anastasiavanzato299-maker",
+      "image": "https://avatars.githubusercontent.com/u/265453415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775809241551,
+      "changelog": "新增HTML规范章节（notion_v2/baoyu_v2/hospitalNEW/memo的字体/颜色/布局标准）；其他问题修复",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef57dc57c86f2a29eb196c7ae18b8ef099e008a464bc6931f2a2dae287f1b7bc"
+}

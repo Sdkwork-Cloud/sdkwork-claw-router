@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42663,
+  "uuid": "skill-clawhub-context-cleaner-1",
+  "skillKey": "clawhub-context-cleaner-1",
+  "name": "Context Cleaner",
+  "summary": "Automatically compress large contexts and clean up expired sessions, sub-agents, and temporary files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_cleaner_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujc007",
+      "features": [
+        "Automatically compress large contexts and clean up expired sessions, sub-agents, and temporary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-cleaner-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12581949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-cleaner-1",
+      "url": "https://clawhub.ai/skills/context-cleaner-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-cleaner-1",
+    "url": "https://clawhub.ai/skills/context-cleaner-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-cleaner-1-a7d4414e4b5fd4c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-cleaner-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-cleaner-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1858ac04c3b12d7ff7a7597ac8ac219c81b14a71da6d23e2c0c892469bfab8e2",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:16:50.019Z"
+}

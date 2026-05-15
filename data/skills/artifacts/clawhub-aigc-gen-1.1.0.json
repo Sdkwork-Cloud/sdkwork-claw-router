@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aigc-gen@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_gen",
+  "skill": {
+    "id": 69180,
+    "skillKey": "clawhub-aigc-gen",
+    "name": "AIGC Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-gen",
+    "url": "https://clawhub.ai/skills/aigc-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-gen-ca2df20d0a1d2eba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIGC 内容生成助手，支持图片生成（文生图）。当用户想要生成图片、AI 绘画、创作内容时自动触发。支持负面提示词、图片比例、批量生成等参数。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gushenjie",
+      "userId": "s1784kbr58j090nb51pywz58q1847kkc",
+      "displayName": "kinggu",
+      "image": "https://avatars.githubusercontent.com/u/10531802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776345176811,
+      "changelog": "v1.1.0: 修复状态码判断 bug；移除 subprocess 飞书发送，改为 agent 调用 feishu_doc；支持 isolated session 异步生成；统一 API 前缀路径；补全配置文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f917ff7219eb9470ecd2b865cebd1c2671c41c8457dd2b69751de0a36e9c4a34"
+}

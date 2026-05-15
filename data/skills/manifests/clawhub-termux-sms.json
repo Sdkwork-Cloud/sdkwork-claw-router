@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35309,
+  "uuid": "skill-clawhub-termux-sms",
+  "skillKey": "clawhub-termux-sms",
+  "name": "Termux SMS",
+  "summary": "Send SMS text messages directly from the user's Android device using the Termux API. Use this skill when the user asks you to text, SMS, or send a message to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.termux_sms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jerryshane1983-tech",
+      "features": [
+        "Send SMS text messages directly from the user's Android device using the Termux API",
+        "Use this skill when the user asks you to text, SMS, or send a message to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/termux-sms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/279519537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "termux-sms",
+      "url": "https://clawhub.ai/skills/termux-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "termux-sms",
+    "url": "https://clawhub.ai/skills/termux-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/termux-sms-9151d2295398a6cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/termux-sms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-termux-sms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3238026073a2bfa0b2aece19d0202fbe9e89d8bea81b6143721628da39c609",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:27:38.109Z"
+}

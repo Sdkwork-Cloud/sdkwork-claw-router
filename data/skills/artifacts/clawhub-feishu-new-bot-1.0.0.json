@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-new-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_new_bot",
+  "skill": {
+    "id": 70563,
+    "skillKey": "clawhub-feishu-new-bot",
+    "name": "飞书新机器人创建"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-new-bot",
+    "url": "https://clawhub.ai/skills/feishu-new-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-new-bot-c11005066a0fc3d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书新机器人创建工作流。当大哥要求创建新的飞书bot、建立新的飞书机器人、或者新增bot时使用此skill。触发场景包括：大哥说\"创建一个新的飞书bot\"、\"新建一个机器人\"、\"新增bot\"、\"帮我创建一个飞书机器人\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinchenjia",
+      "userId": "s174rgn9my6zrj8v1a9nfqyb7d83mh23",
+      "displayName": "JinchenJia",
+      "image": "https://avatars.githubusercontent.com/u/128867157?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774855610657,
+      "changelog": "feishu-new-bot v1.0.0 – 新增飞书机器人创建全流程 Skill\n\n- 提供完整的飞书新bot创建和配置流程，涵盖从应用注册到工作目录、配置、同步及验证。\n- 明确各步骤操作人（如“必须大哥创建应用，AI不能代劳”）。\n- 增加安全与规范性提示：如修改openclaw.json需大哥同意，不可擅自操作。\n- 引导标准化工作文件同步与自定义身份文件的创建。\n- 提供操作快速检查清单和注意事项，确保流程顺畅且可追溯。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b0801eebfe0a6f4e9bc6cef201a494d452460ab05f37dda7112bb66ee9ee649"
+}

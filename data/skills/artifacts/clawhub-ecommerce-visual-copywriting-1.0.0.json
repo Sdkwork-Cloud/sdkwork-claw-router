@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-visual-copywriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_visual_copywriting",
+  "skill": {
+    "id": 69377,
+    "skillKey": "clawhub-ecommerce-visual-copywriting",
+    "name": "ecommerce-visual-copywriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-visual-copywriting",
+    "url": "https://clawhub.ai/skills/ecommerce-visual-copywriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-visual-copywriting-46766b47014a5fcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商主图+详情页文案设计SOP。输入产品信息和主图初稿，输出合规精简的图文案方案（画面+文案+设计说明）。覆盖全品类合规规则库（保健食品/运动器材/普通食品），内置自审评分表（≥80分才输出）。适用于淘宝、天猫、京东、拼多多、抖音小店等平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776671959949,
+      "changelog": "- Initial release of the ecommerce-visual-copywriting skill.\n- Provides a full SOP for designing visual copy (main image + detail page) for e-commerce products.\n- Built-in compliance rules covering major categories (health supplements, sports equipment, food) tailored for major Chinese platforms.\n- Includes a self-review scoring system; only outputs if the compliance score ≥80.\n- Modular workflow: collects inputs, extracts key selling points, requires user confirmation, then outputs structured, compliant image and copy plans for designers.\n- Supports Markdown output and is suitable for artifact delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:260031b7205cbfbc817b1148c01685c12bbf7883e0a6641baadd033def738397"
+}

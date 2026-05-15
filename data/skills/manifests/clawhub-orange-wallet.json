@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29245,
+  "uuid": "skill-clawhub-orange-wallet",
+  "skillKey": "clawhub-orange-wallet",
+  "name": "Orange Wallet",
+  "summary": "Command-line Lightning wallet for AI agents with graduated custody, enabling instant trusted payments and self-custodial channels via JSON shell commands.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orange_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benthecarman",
+      "features": [
+        "Command-line Lightning wallet for AI agents with graduated custody, enabling instant trusted pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orange-wallet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15256660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orange-wallet",
+      "url": "https://clawhub.ai/skills/orange-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orange-wallet",
+    "url": "https://clawhub.ai/skills/orange-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orange-wallet-b42caa88b0aac8d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orange-wallet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orange-wallet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1401520ea31e8de6e95a708b09b2f036031ffd7ca1354d6a0bfe7179f0e23551",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:24:36.998Z"
+}

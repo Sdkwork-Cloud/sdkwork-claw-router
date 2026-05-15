@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67096,
+  "uuid": "skill-clawhub-image-optimizer-tool",
+  "skillKey": "clawhub-image-optimizer-tool",
+  "name": "Image Optimizer Tool",
+  "summary": "图片批量压缩和格式转换工具，支持批量调整大小、压缩质量、转换格式，预览模式和撤销功能！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_optimizer_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "图片批量压缩和格式转换工具，支持批量调整大小、压缩质量、转换格式，预览模式和撤销功能！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-optimizer-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-optimizer-tool",
+      "url": "https://clawhub.ai/skills/image-optimizer-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-optimizer-tool",
+    "url": "https://clawhub.ai/skills/image-optimizer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-optimizer-tool-8a8a6e67bd2c7533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-optimizer-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-optimizer-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bda6729190ebfd36b70606d0b17df028cd12dc2d4db75f820d203bbabbebccc6",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T20:32:42.763Z"
+}

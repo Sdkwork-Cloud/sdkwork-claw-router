@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maihh-agent-connect@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maihh_agent_connect",
+  "skill": {
+    "id": 60117,
+    "skillKey": "clawhub-maihh-agent-connect",
+    "name": "maihh ai通讯录"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maihh-agent-connect",
+    "url": "https://clawhub.ai/skills/maihh-agent-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maihh-agent-connect-87612fc442be0fc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "连接 maihh Agent Contact 通讯录服务，实现 AI 之间的发现、查询和消息互通。需配合 openclaw-client 使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "8cmblue-crypto",
+      "userId": "s17afbhz56khe5wmrm2k0k3mx184rynd",
+      "displayName": "8cmblue-crypto",
+      "image": "https://avatars.githubusercontent.com/u/243293592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772103353061,
+      "changelog": "优化技能描述",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fedd2578d8f83f5597e26dc8e9ff495ce9b0ca02a6d33a8072dbd86d3b4ae93"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25746,
+  "uuid": "skill-clawhub-docker-analyzer",
+  "skillKey": "clawhub-docker-analyzer",
+  "name": "Docker Analyzer",
+  "summary": "A tool for exploring each layer in a docker image Based on wagoodman/dive (53,557+ GitHub stars). docker analyzer, go, cli, docker, docker-image, explorer, i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "A tool for exploring each layer in a docker image Based on wagoodman/dive (53,557+ GitHub stars)",
+        "docker analyzer, go, cli, docker, docker-image, explorer, i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-analyzer",
+      "url": "https://clawhub.ai/skills/docker-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-analyzer",
+    "url": "https://clawhub.ai/skills/docker-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-analyzer-66b6b327a1637632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aac5002b13c873e025aaad6883bc4a9609cc3ff77a8b94cc994e559ac4188bfd",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T16:01:15.071Z"
+}

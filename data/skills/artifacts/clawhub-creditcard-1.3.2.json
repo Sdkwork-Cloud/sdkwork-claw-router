@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creditcard@1.3.2",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creditcard",
+  "skill": {
+    "id": 15773,
+    "skillKey": "clawhub-creditcard",
+    "name": "CreditClaw - Give your Claw Agent a credit card - spend anywhere"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creditcard",
+    "url": "https://clawhub.ai/skills/creditcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creditcard-e8c031f4d9e49011.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 871,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.2",
+      "createdAt": 1773175466154,
+      "changelog": "- Updated endpoint references: replaced instances of GET /bot/wallet/check with GET /bot/status for checking overall agent status and balances.\n- Updated documentation to clarify per-rail status checks and the main status endpoint.\n- No functional changes; documentation cleanup and endpoint reference updates only.\n- Removed four markdown files: amazon.md, description.md, prepaid-wallet.md, and shopping.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8667e897ab80908bf01f1fb7e0e6a39ae5b993c23d1f6991aed0da535376e606"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38289,
+  "uuid": "skill-clawhub-openclaw-upgrade-standard",
+  "skillKey": "clawhub-openclaw-upgrade-standard",
+  "name": "OpenClaw Upgrade Standard",
+  "summary": "Safe OpenClaw upgrade procedure with backup, doctor fix, service migration, rollback, and post-upgrade testing. Prevents silent failures from Dashboard upgra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_upgrade_standard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gjoham",
+      "features": [
+        "Safe OpenClaw upgrade procedure with backup, doctor fix, service migration, rollback, and post-.",
+        "Prevents silent failures from Dashboard upgra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-upgrade-standard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181919056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-upgrade-standard",
+      "url": "https://clawhub.ai/skills/openclaw-upgrade-standard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-upgrade-standard",
+    "url": "https://clawhub.ai/skills/openclaw-upgrade-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-upgrade-standard-0dedea0917f54a3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-upgrade-standard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-upgrade-standard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ec5b5b35b42d74a93b849f28ef65c6196fffee24155633e3f60d52ea89b1f71",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:32:07.309Z"
+}

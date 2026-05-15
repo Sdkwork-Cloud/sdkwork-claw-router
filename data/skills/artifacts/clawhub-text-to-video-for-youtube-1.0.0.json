@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-for-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_for_youtube",
+  "skill": {
+    "id": 55279,
+    "skillKey": "clawhub-text-to-video-for-youtube",
+    "name": "Text To Video For Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-for-youtube",
+    "url": "https://clawhub.ai/skills/text-to-video-for-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-for-youtube-b3ad6b5e3ec3b5b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this script into a YouTube video with visuals and voiceover — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776360765124,
+      "changelog": "Initial release of Text to Video for YouTube — Convert Scripts into YouTube Videos.\n\n- Instantly converts uploaded scripts (TXT, DOCX, PDF, SRT up to 200MB) into YouTube-ready videos with visuals and AI voiceover.\n- Handles all backend setup, session management, and authentication automatically for a fast start.\n- Supports export to a variety of video and audio formats (MP4, MOV, AVI, MP3, etc).\n- Simple text commands allow users to upload scripts, generate video drafts, check credit balance, and export results.\n- Includes step-by-step guidance, session feedback, and robust error handling for cloud video rendering tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92292cd4370d97f20d4c5723d44cad37cbd939f6be5210ef791f8c523b4666ef"
+}

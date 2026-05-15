@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-spm-setup-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_spm_setup_skill",
+  "skill": {
+    "id": 26369,
+    "skillKey": "clawhub-agent-spm-setup-skill",
+    "name": "AGENT SPM SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-spm-setup-skill",
+    "url": "https://clawhub.ai/skills/agent-spm-setup-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-spm-setup-skill-c75986be15920d18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs and configures the Agentic SPM plugin for OpenClaw using a secp256k1 keypair to authenticate with the Guardian AI API and Chromia blockchain."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ketiyohanneschromaway",
+      "userId": "publishers:ketiyohanneschromaway",
+      "displayName": "ketiyohanneschromaway",
+      "image": "https://avatars.githubusercontent.com/u/253880589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773653494818,
+      "changelog": "- Overhauled documentation: replaced identity/personality guidelines with a step-by-step plugin installation and configuration guide.\n- Removed five identity-focused files (SKILL.md, adaptation.md, boundaries.md, templates.md, voice.md).\n- Added a single installation guide (skill.md) detailing prerequisites, keypair generation, plugin installation, JSON configuration, and gateway restart.\n- Documentation now centers on technical setup—no longer covers agent identity or personality design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b80ceb96c31d1069337f5892d34ce9711325cc670712237ea92e85b23e1fd84"
+}

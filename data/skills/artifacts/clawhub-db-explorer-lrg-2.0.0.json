@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-explorer-lrg@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_explorer_lrg",
+  "skill": {
+    "id": 49940,
+    "skillKey": "clawhub-db-explorer-lrg",
+    "name": "Db Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-explorer-lrg",
+    "url": "https://clawhub.ai/skills/db-explorer-lrg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-explorer-lrg-cb8f72d8f4699b35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to and explore databases (PostgreSQL, MySQL, SQLite, MongoDB, Redis). Run queries, inspect schemas, export data. Use when user wants to query a datab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lrg913427-dot",
+      "userId": "s175nn6ap9fe4ne23bws9svzm185ywrq",
+      "displayName": "lrg913427-dot",
+      "image": "https://avatars.githubusercontent.com/u/279154854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 58,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778321004322,
+      "changelog": "Major update: Expanded instructions and best practices for multi-database exploration from the terminal.\n\n- Added detailed usage guide for connecting, querying, and exploring PostgreSQL, MySQL, SQLite, MongoDB, and Redis.\n- Included explicit safety and confirmation rules for data modification commands.\n- Comprehensive schema exploration and export workflows provided.\n- Introduced common performance and diagnostic queries for PostgreSQL and MySQL.\n- Added backup and restore procedures for supported databases.\n- Clarified install instructions and CLI tool usage per database.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc630f20299037c7f5a2a888a351aea8ab954cf049fb004ea0cbfc53bb6ebf25"
+}

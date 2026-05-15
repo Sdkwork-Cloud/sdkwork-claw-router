@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portfolio-matrix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_matrix",
+  "skill": {
+    "id": 33320,
+    "skillKey": "clawhub-portfolio-matrix",
+    "name": "Portfolio Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-matrix",
+    "url": "https://clawhub.ai/skills/portfolio-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-matrix-beaaaac1e6b39c8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate strategic options by NPV vs ease of implementation. Use for project prioritization, resource allocation, and strategic decision making."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774137908622,
+      "changelog": "portfolio-matrix 1.0.0\n\n- Initial release of the portfolio-matrix skill.\n- Enables evaluation of strategic options by Net Present Value (NPV) versus ease of implementation.\n- Provides a framework for project prioritization, resource allocation, and strategic decision making.\n- Includes a structured output format for portfolio analysis, matrix visualization, and resource allocation guidance.\n- Offers tips and references to support consistent, balanced decision making.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b0fda9dc334bdff445cb97420caead2da3abd8e44d97c302a7ab0b9b1cc7049"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69371,
+  "uuid": "skill-clawhub-content-workflow",
+  "skillKey": "clawhub-content-workflow",
+  "name": "自媒体内容创作大师---一键生成",
+  "summary": "通用内容创作工作流：选题策划→主编审核→文案创作→主编审核，产出平台无关的Markdown定稿。触发词：写文章、内容创作、选题创作、启动创作流程。需先安装 content-creation。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little-ke",
+      "features": [
+        "通用内容创作工作流：选题策划→主编审核→文案创作→主编审核，产出平台无关的Markdown定稿。触发词：写文章、内容创作、选题创作、启动创作流程。需先安装 content-creation。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61963028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-workflow",
+      "url": "https://clawhub.ai/skills/content-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-workflow",
+    "url": "https://clawhub.ai/skills/content-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-workflow-24adff1fcf4eca30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0c19f25cdca8e9250bbe89b6483461ff3a3037617fc0f193af2dc9084ecca55",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:29:23.046Z"
+}

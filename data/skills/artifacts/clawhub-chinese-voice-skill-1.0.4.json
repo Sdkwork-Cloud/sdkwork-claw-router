@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-voice-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_voice_skill",
+  "skill": {
+    "id": 60775,
+    "skillKey": "clawhub-chinese-voice-skill",
+    "name": "chinese-voice-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-voice-skill",
+    "url": "https://clawhub.ai/skills/chinese-voice-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-voice-skill-ffa0bc3171d5fe9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用微软 Edge TTS 生成高质量中文语音，默认使用 XiaoxiaoNeural 语音。当用户需要语音回复时自动触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nufeng1999",
+      "userId": "s176y53b9fw2rmde0nkf86t7v983h5c2",
+      "displayName": "nufeng1999",
+      "image": "https://avatars.githubusercontent.com/u/28748029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 752,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774778292468,
+      "changelog": "- 更新 QQ 语音输出标签，由 `<qqvoice>` 更改为 `<qqmedia>`。\n- 相关示例与说明同步为新标签格式，提升平台适配性。\n- 无其他功能性变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e6c1f11a163d746a823c31d92fad8805fb31fa8b102d7efdb4b392057d5d656"
+}

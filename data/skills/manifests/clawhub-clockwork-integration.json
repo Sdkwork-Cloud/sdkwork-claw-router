@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43640,
+  "uuid": "skill-clawhub-clockwork-integration",
+  "skillKey": "clawhub-clockwork-integration",
+  "name": "Clockwork",
+  "summary": "Clockwork integration. Manage data, records, and automate workflows. Use when the user wants to interact with Clockwork data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clockwork_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Clockwork integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Clockwork data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clockwork-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clockwork-integration",
+      "url": "https://clawhub.ai/skills/clockwork-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clockwork-integration",
+    "url": "https://clawhub.ai/skills/clockwork-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clockwork-integration-6ca6c55b2815820c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clockwork-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clockwork-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08b98edf2a1c330eaf7729b314fae022dc1a46b09b497e96357615b3f70262e0",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:57.762Z"
+}

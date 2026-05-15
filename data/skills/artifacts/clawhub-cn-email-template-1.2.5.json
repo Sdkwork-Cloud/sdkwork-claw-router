@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-email-template@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_email_template",
+  "skill": {
+    "id": 60887,
+    "skillKey": "clawhub-cn-email-template",
+    "name": "邮件模板生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-email-template",
+    "url": "https://clawhub.ai/skills/cn-email-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-email-template-a8ea3d23198a817c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email Template skill. 自动生成，无人工审查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697226113,
+      "changelog": "- Updated SKILL.md to include a new metadata section and a more concise English description.\n- Added a disclosure: \"自动生成，无人工审查\" (auto-generated, not human-reviewed).\n- Changed skill name in YAML header to \"cn-email-template\".\n- No functional code changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae89acfa19f82b2b75bbc5fd0289ea65fcace9a61882413d0f6f777b38e5606f"
+}

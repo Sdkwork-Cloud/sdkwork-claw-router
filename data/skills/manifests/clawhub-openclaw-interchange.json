@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41236,
+  "uuid": "skill-clawhub-openclaw-interchange",
+  "skillKey": "clawhub-openclaw-interchange",
+  "name": "@openclaw/interchange",
+  "summary": "Shared .md interchange library for OpenClaw skills — atomic writes, deterministic serialization, YAML frontmatter, advisory locking, and schema validation. T...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_interchange",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frank-bot07",
+      "features": [
+        "Shared .md interchange library for OpenClaw skills — atomic writes, deterministic serialization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-interchange@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259001718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-interchange",
+      "url": "https://clawhub.ai/skills/openclaw-interchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-interchange",
+    "url": "https://clawhub.ai/skills/openclaw-interchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-interchange-2af1bdae24cb6c3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-interchange@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-interchange-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24e31abe09f8b8f805db4071c63d9d919c89bdfd9a9aec76b5bc2dc6d60c02e3",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T08:35:39.542Z"
+}

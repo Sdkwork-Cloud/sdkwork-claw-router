@@ -337,7 +337,7 @@ export function formatSkillCount(value: number): string {
 
 function deriveSkillCategoryOptions(skills: readonly Skill[], categories: readonly string[]): SkillCategoryOption[] {
   const uniqueCategories = [...new Set(categories.map(normalizeWhitespace).filter(Boolean))]
-    .sort((left, right) => left.localeCompare(right));
+    .sort(compareSkillCategoryNames);
 
   return [
     {
@@ -351,6 +351,11 @@ function deriveSkillCategoryOptions(skills: readonly Skill[], categories: readon
       count: skills.filter((skill) => normalizeSearchText(skill.category) === normalizeSearchText(category)).length,
     })),
   ];
+}
+
+function compareSkillCategoryNames(left: string, right: string): number {
+  const priority = (value: string): number => normalizeSearchText(value) === 'sdkwork official' ? 0 : 1;
+  return priority(left) - priority(right) || left.localeCompare(right);
 }
 
 function deriveSkillCatalogCardView(skill: Skill, installedSkills: readonly InstalledSkill[]): SkillCatalogCardView {

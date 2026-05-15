@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20997,
+  "uuid": "skill-clawhub-ace-step-music",
+  "skillKey": "clawhub-ace-step-music",
+  "name": "ACE-Step Music Generation",
+  "summary": "Generate high-quality music on Apple Silicon Macs using ACE-Step 1.5 with MLX backend, supporting custom prompts, durations, and output formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_step_music",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RichmanDP",
+      "features": [
+        "Generate high-quality music on Apple Silicon Macs using ACE-Step 1.5 with MLX backend, supporti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ace-step-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130766145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ace-step-music",
+      "url": "https://clawhub.ai/skills/ace-step-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-step-music",
+    "url": "https://clawhub.ai/skills/ace-step-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-step-music-b72617f952fe0047.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ace-step-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ace-step-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56de052340ea3ba09b9a2d65def2858d59c773a530d887825fa2efaa2b4522ee",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:30:39.521Z"
+}

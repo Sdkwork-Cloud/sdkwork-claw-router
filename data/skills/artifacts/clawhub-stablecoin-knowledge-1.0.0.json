@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stablecoin-knowledge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_knowledge",
+  "skill": {
+    "id": 57837,
+    "skillKey": "clawhub-stablecoin-knowledge",
+    "name": "Stablecoin & AI Agent Economy Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-knowledge",
+    "url": "https://clawhub.ai/skills/stablecoin-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-knowledge-9f56f727ccba060c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive knowledge base on stablecoins, AI agent economics, and the NBW (New Bretton Woods) protocol, based on the book \"稳定币：AI智能体经济的未来探索\" by Han Feng (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "contact-nbwfoundation",
+      "userId": "publishers:contact-nbwfoundation",
+      "displayName": "contact-nbwfoundation",
+      "image": "https://avatars.githubusercontent.com/u/237510432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773974559383,
+      "changelog": "Initial release: complete knowledge framework from《稳定币：AI智能体经济的未来探索》",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8389cd4bc9c69b34292d20401b5b266b310181f4d06a4d221219e3d6134c2144"
+}

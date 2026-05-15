@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55771,
+  "uuid": "skill-clawhub-travel-bundle",
+  "skillKey": "clawhub-travel-bundle",
+  "name": "Travel Bundle",
+  "summary": "Find package deals combining hotel and flights — often 10-20% cheaper than booking separately. One search, one booking, complete trip. Also supports: flight...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_bundle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Find package deals combining hotel and flights — often 10-20% cheaper than booking separately",
+        "One search, one booking, complete trip",
+        "Also supports: flight..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-bundle@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-bundle",
+      "url": "https://clawhub.ai/skills/travel-bundle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-bundle",
+    "url": "https://clawhub.ai/skills/travel-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-bundle-706ef76fa0c340f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-bundle@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-bundle-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:333fb8894c2c858638b1628f117e5bf25be8d740a644c777301140e03754da6b",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:54:51.650Z"
+}

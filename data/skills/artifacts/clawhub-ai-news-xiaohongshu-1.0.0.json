@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-xiaohongshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_xiaohongshu",
+  "skill": {
+    "id": 66265,
+    "skillKey": "clawhub-ai-news-xiaohongshu",
+    "name": "AI 行业资讯专家与小红书内容创作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-xiaohongshu",
+    "url": "https://clawhub.ai/skills/ai-news-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-xiaohongshu-468d28704848cb65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 行业资讯专家 + 小红书内容创作。检索 24 小时内最新 AI 资讯，生成小红书文案 + 3:4 比例 HTML 封面。使用场景：(1) 每日 AI 资讯汇总，(2) 小红书图文笔记创作，(3) 大模型发布/融资/技术突破等资讯整理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javastarboy",
+      "userId": "s179vpspx54wm7b867v4n6bzeh83hjnv",
+      "displayName": "AGICaptain",
+      "image": "https://avatars.githubusercontent.com/u/43975677?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774408905937,
+      "changelog": "ai-news-xiaohongshu v1.0.0 — 首发版本上线。小红书风格 AI 资讯内容创作自动化。\n\n- 自动检索并整理 24 小时内最新 AI 行业资讯，重点关注大模型发布/技术/商业等领域。\n- 一键生成小红书图文笔记文案，内含热门标签与互动引导，风格活泼、去 AI 化，适合直接发布。\n- 同步输出 3:4 移动端科技感 HTML 封面，可滑动分屏，适配截图使用。\n- 支持演示数据与真实资讯数据（通过 OpenClaw 主流程集成 web_search）。\n- 完整输出文案、HTML、资讯汇总表、来源链接，集中存放于 output/日期-序号 目录。\n- 兼容个性引流话术、资讯偏好等参数配置，适用多场景内容创作与每日资讯分发。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dddd07e441d0287fe40d28a18221675a82a75e9032d5362376e575d43ba385f"
+}

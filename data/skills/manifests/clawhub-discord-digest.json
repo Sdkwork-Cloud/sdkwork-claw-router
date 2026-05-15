@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17307,
+  "uuid": "skill-clawhub-discord-digest",
+  "skillKey": "clawhub-discord-digest",
+  "name": "Discord Digest",
+  "summary": "Generate formatted digests from Discord servers using a user token. Reads messages from selected channels/threads and creates concise summaries with links. U...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikoxyz",
+      "features": [
+        "Generate formatted digests from Discord servers using a user token",
+        "Reads messages from selected channels/threads and creates concise summaries with links"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-digest@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100773227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-digest",
+      "url": "https://clawhub.ai/skills/discord-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-digest",
+    "url": "https://clawhub.ai/skills/discord-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-digest-8a8e149e20c54fa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-digest@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-digest-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:837d3eb524d533154370deccae14eb4f4db88ca9226636a60029307be8233635",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T20:26:33.429Z"
+}

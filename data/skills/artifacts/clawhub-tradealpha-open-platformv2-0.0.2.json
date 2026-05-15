@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradealpha-open-platformv2@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradealpha_open_platformv2",
+  "skill": {
+    "id": 55364,
+    "skillKey": "clawhub-tradealpha-open-platformv2",
+    "name": "Tradealpha Realtime News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradealpha-open-platformv2",
+    "url": "https://clawhub.ai/skills/tradealpha-open-platformv2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradealpha-open-platformv2-ac13290901e3b83c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch realtime TradeAlpha news across Reuters, Bloomberg, Truth Social, research alerts, and domestic news sources via `POST /api/v1/news/realtime_news`. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuwei2",
+      "userId": "s17d1m5rwmkggapwd0e5s018fx85mebe",
+      "displayName": "Jiuwei2",
+      "image": "https://avatars.githubusercontent.com/u/172574568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777385322493,
+      "changelog": "- Added new execution guardrails to handle environments without shell/exec capability; now directly inform the user if local script execution is unavailable.\n- Clarified workflow and execution steps, including additional rules to prevent repeated or circular behavior when ability to run scripts is missing.\n- Adjusted response style and error handling to emphasize clear communication when execution limits are encountered.\n- Updated version to 0.0.2.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87f2d430b7b974ab198d1ad0b85451caa7d6ed315520e9eaf5cdc8c9312c4a6a"
+}

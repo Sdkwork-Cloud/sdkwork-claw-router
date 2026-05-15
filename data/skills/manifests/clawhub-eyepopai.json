@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32051,
+  "uuid": "skill-clawhub-eyepopai",
+  "skillKey": "clawhub-eyepopai",
+  "name": "Eyepopai",
+  "summary": "EyePop.ai integration. Manage data, records, and automate workflows. Use when the user wants to interact with EyePop.ai data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eyepopai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "EyePop.ai integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with EyePop.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eyepopai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eyepopai",
+      "url": "https://clawhub.ai/skills/eyepopai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eyepopai",
+    "url": "https://clawhub.ai/skills/eyepopai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eyepopai-532f9f59bb3f0868.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eyepopai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-eyepopai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7c08270774cd99c24c87d2202a02a0b7ee2cd19be0d89da94a0ce8adf656a45",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:45:37.280Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-compressor-pro-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_compressor_pro_free",
+  "skill": {
+    "id": 46828,
+    "skillKey": "clawhub-image-compressor-pro-free",
+    "name": "Image Compressor Pro Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-compressor-pro-free",
+    "url": "https://clawhub.ai/skills/image-compressor-pro-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-compressor-pro-free-d1ca9120fbcdad1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get compressed image files ready to post, without touching a single slider. Upload your image files (JPG, PNG, WEBP, GIF, up to 200MB), say something like \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775953900664,
+      "changelog": "Initial release of Image Compressor Pro Free.\n\n- Instantly compress JPG, PNG, WEBP, and GIF images up to 200MB with simple prompts—no sliders or manual adjustments.\n- Cloud-based processing: automatically handles user authentication, session creation, and image uploads.\n- Export compressed images as 1080p MP4 (and other formats); download links provided on completion.\n- Supports both single and batch image uploads for faster workflows.\n- User-friendly: explains progress, summarizes results, and handles most errors with clear guidance.\n- Free plan includes 100 credits for anonymous users; supports basic export and common image/video/audio formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98962efd8d38a7c91529565c97e326d6e66e82174aa6253bbb7fe5c59dd03095"
+}

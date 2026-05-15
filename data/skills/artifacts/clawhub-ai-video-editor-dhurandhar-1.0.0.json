@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-dhurandhar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_dhurandhar",
+  "skill": {
+    "id": 46265,
+    "skillKey": "clawhub-ai-video-editor-dhurandhar",
+    "name": "Ai Video Editor Dhurandhar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-dhurandhar",
+    "url": "https://clawhub.ai/skills/ai-video-editor-dhurandhar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-dhurandhar-8f5a606757eb369d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into edited video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for editing raw vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776363788100,
+      "changelog": "- Initial release of AI Video Editor Dhurandhar.\n- Edit raw video footage into polished clips, supporting MP4, MOV, AVI, WEBM files up to 500MB.\n- Cloud-based GPU processing with 1-2 minute turnaround for typical 2-minute clips; export as 1080p MP4.\n- Automatic backend session setup and free token handling (100 free credits, valid for 7 days).\n- Simple upload, edit, export, and credit checking workflows via direct API integration.\n- Supports GUI-like prompts, error handling, and iterative editing with timeline state tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35d557d7850b90a6fffc6a0e24adde51e3623e59099c293b88703ed0e6dbc647"
+}

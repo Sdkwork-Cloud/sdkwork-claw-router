@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-benchmark@1.1.3",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_benchmark",
+  "skill": {
+    "id": 29232,
+    "skillKey": "clawhub-golang-benchmark",
+    "name": "Golang Benchmark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-benchmark",
+    "url": "https://clawhub.ai/skills/golang-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-benchmark-209063d473110991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Golang benchmarking, profiling, and performance measurement. Use when writing, running, or comparing Go benchmarks, profiling hot paths with pprof, interpret..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.3",
+      "createdAt": 1777416431955,
+      "changelog": "golang-benchmark v1.1.3\n\n- Added section on documenting benchstat results in commit messages, with formatting guidelines and rules for reproducible performance evidence.\n- Updated metadata version to 1.1.3.\n- Minor metadata change: included AskUserQuestion in allowed tools.\n- No changes to benchmarking logic or workflow; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2bb86d0a88f99918f17e21cdd043e0e1be0b29e353adaa3906e2e9b594aeb67"
+}

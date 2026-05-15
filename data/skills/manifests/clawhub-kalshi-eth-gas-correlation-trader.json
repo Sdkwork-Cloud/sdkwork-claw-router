@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55020,
+  "uuid": "skill-clawhub-kalshi-eth-gas-correlation-trader",
+  "skillKey": "clawhub-kalshi-eth-gas-correlation-trader",
+  "name": "Kalshi Eth Gas Correlation Trader",
+  "summary": "Trades ETH price markets on Kalshi using on-chain gas prices as a bullish/bearish signal. High gas = strong demand = bullish for ETH. Requires SIMMER_API_KEY...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_gas_correlation_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades ETH price markets on Kalshi using on-chain gas prices as a bullish/bearish signal",
+        "High gas = strong demand = bullish for ETH",
+        "Requires SIMMER_API_KEY..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-eth-gas-correlation-trader@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-eth-gas-correlation-trader",
+      "url": "https://clawhub.ai/skills/kalshi-eth-gas-correlation-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-gas-correlation-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-gas-correlation-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-gas-correlation-trader-992d47c7f2f6aed2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-eth-gas-correlation-trader@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-eth-gas-correlation-trader-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:899f1d35062911b890426680d061346e9944fc32c6a4fa05cbb85eaf802d1637",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:12:23.363Z"
+}

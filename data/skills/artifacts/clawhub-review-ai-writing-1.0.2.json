@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-ai-writing@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_ai_writing",
+  "skill": {
+    "id": 52092,
+    "skillKey": "clawhub-review-ai-writing",
+    "name": "Review Ai Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-ai-writing",
+    "url": "https://clawhub.ai/skills/review-ai-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-ai-writing-8915c69955cc37d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect AI-generated writing patterns in developer text — docs, docstrings, commit messages, PR descriptions, and code comments. Use when reviewing any text a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831071582,
+      "changelog": "- Documentation expanded for step 10 (Verification): final instruction now begins with \"Before completing, all of the…\" (was previously incomplete).\n- No functional or behavioral changes; only documentation in SKILL.md file was updated.\n- All other instructions and format remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:934f6cbb73fe57d1efa9131b074f4c190a4262862d289702ba37df2897db4870"
+}

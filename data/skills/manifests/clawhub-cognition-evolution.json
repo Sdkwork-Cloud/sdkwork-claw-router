@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68499,
+  "uuid": "skill-clawhub-cognition-evolution",
+  "skillKey": "clawhub-cognition-evolution",
+  "name": "Cognition Evolution",
+  "summary": "对话结束自动复盘，将认知沉淀写入长期记忆。识别本次关键决策、教训、未解决问题，转化为可执行洞见。用于用户说\"复盘\"、\"总结\"、\"认知升级\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognition_evolution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primordia",
+      "features": [
+        "对话结束自动复盘，将认知沉淀写入长期记忆。识别本次关键决策、教训、未解决问题，转化为可执行洞见。用于用户说\"复盘\"、\"总结\"、\"认知升级\"。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognition-evolution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224094441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognition-evolution",
+      "url": "https://clawhub.ai/skills/cognition-evolution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognition-evolution",
+    "url": "https://clawhub.ai/skills/cognition-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognition-evolution-868092ec7b15aee6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognition-evolution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognition-evolution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f803ebeec436dae1d4f04bf510c389f04a3f71dec03333d5ead10295f284218",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T18:05:02.231Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenthc-market-intelligence@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenthc_market_intelligence",
+  "skill": {
+    "id": 10840,
+    "skillKey": "clawhub-agenthc-market-intelligence",
+    "name": "Stock Market Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenthc-market-intelligence",
+    "url": "https://clawhub.ai/skills/agenthc-market-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenthc-market-intelligence-0753088830f24e99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market data API for AI agents. Equities, fixed income, crypto, and macro. Bitcoin Lightning micropayments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "traderhc123",
+      "userId": "publishers:traderhc123",
+      "displayName": "agenthc",
+      "image": "https://avatars.githubusercontent.com/u/254811676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1792,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 6,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1773156782564,
+      "changelog": "Strip proprietary details from public listing. Remove MIT license.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68294c6695166222e510a9ebac21f0f0764f1178733da7a2849c4c8ef6d31007"
+}

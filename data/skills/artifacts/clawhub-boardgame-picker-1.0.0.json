@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boardgame-picker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boardgame_picker",
+  "skill": {
+    "id": 44226,
+    "skillKey": "clawhub-boardgame-picker",
+    "name": "Boardgame Picker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boardgame-picker",
+    "url": "https://clawhub.ai/skills/boardgame-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boardgame-picker-eda79a3f5e5047e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Match a group to the right board game style by weighing player count, time, experience level, competition appetite, and social mood. Use when the user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776250998146,
+      "changelog": "- Initial release of Boardgame Picker skill.\n- Helps groups quickly match their situation to suitable board game categories based on player count, time, experience, competition appetite, and social mood.\n- Provides a primary and backup category recommendation, plus a game type to avoid and a quick-start suggestion.\n- Includes table snapshot and reasoning for each recommendation.\n- Tailored for mixed ages, mixed experience, and easy onboarding—no live catalog or title-check included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e541371155b08a404c0430ded93b0d8517880a8e9686e39a707e858c2d2e47ed"
+}

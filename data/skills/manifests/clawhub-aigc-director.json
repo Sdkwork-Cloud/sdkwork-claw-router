@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69690,
+  "uuid": "skill-clawhub-aigc-director",
+  "skillKey": "clawhub-aigc-director",
+  "name": "aigc-director",
+  "summary": "AI 视频生成全流程：通过 6 个阶段（剧本→角色/场景设计→分镜→参考图→视频生成→后期剪辑）将用户想法转化为完整视频。支持临时工作台（单独调用 LLM、VLM、文生图、图生图、视频生成）。触发词：视频生成、AI视频、AIGC、创作视频、制作视频、AI画图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_director",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xinfan Chen",
+      "features": [
+        "AI 视频生成全流程：通过 6 个阶段（剧本→角色/场景设计→分镜→参考图→视频生成→后期剪辑）将用户想法转化为完整视频。支持临时工作台（单独调用 LLM、VLM、文生图、图生图、视频生成）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc-director@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228212877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc-director",
+      "url": "https://clawhub.ai/skills/aigc-director"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-director",
+    "url": "https://clawhub.ai/skills/aigc-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-director-b7d61b110d422bba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc-director@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-director-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0e6e2468ce4b15beba4541ce40030776bcaf8cfce3d5bbc5a9891df6cbedad1",
+      "artifactSizeBytes": 2701
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:37:08.280Z"
+}

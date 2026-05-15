@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69942,
+  "uuid": "skill-clawhub-dream-novel-skill",
+  "skillKey": "clawhub-dream-novel-skill",
+  "name": "Dream Novel Writer",
+  "summary": "基于雪花写作法和三层记忆架构的小说创作辅助技能，支持从核心种子到章节产出的全流程小说架构与长文本记忆维持。包含了独立提示词库与 JS 管理脚本自动化工具。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_novel_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Halcyon",
+      "features": [
+        "基于雪花写作法和三层记忆架构的小说创作辅助技能，支持从核心种子到章节产出的全流程小说架构与长文本记忆维持。包含了独立提示词库与 JS 管理脚本自动化工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dream-novel-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19218414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dream-novel-skill",
+      "url": "https://clawhub.ai/skills/dream-novel-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-novel-skill",
+    "url": "https://clawhub.ai/skills/dream-novel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-novel-skill-34295203f50eff39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dream-novel-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-dream-novel-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1acec76ac95d93c612591743f5f5c0f633bde4297dcf883f43b4836a1bece193",
+      "artifactSizeBytes": 2819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:21:53.909Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-ground-truth@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_ground_truth",
+  "skill": {
+    "id": 25942,
+    "skillKey": "clawhub-data-ground-truth",
+    "name": "Data Ground Truth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-ground-truth",
+    "url": "https://clawhub.ai/skills/data-ground-truth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-ground-truth-1c53d4a15b5ca7d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Before presenting numbers in reports or recommendations, verify facts and check values against industry baselines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutthemustard",
+      "userId": "s173h8p9g1rpxh3vdhvjvhdy9d83kfqn",
+      "displayName": "CutTheMustard",
+      "image": "https://avatars.githubusercontent.com/u/63439451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773104412243,
+      "changelog": "Fix display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2df123e110bd47d55926c50d91dabfe7af59df687162c34c2c4c6d0a7020d90b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68148,
+  "uuid": "skill-clawhub-sbti-test",
+  "skillKey": "clawhub-sbti-test",
+  "name": "SBTI（Sociability, Boldness, Thinking, Independence）人格测试，聚焦**社交性**、**果敢度**、**思维模式**、**独立性**四大核心维度，精准刻画人格特质。 本技能将专业测评体系 AI 化，无需复杂.",
+  "summary": "SBTI 人格测试 - 基于 15 维度人格评估的娱乐性心理测试",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "biggodCheng",
+      "features": [
+        "SBTI 人格测试",
+        "基于 15 维度人格评估的娱乐性心理测试"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbti-test@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21972576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbti-test",
+      "url": "https://clawhub.ai/skills/sbti-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-test",
+    "url": "https://clawhub.ai/skills/sbti-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-test-01b3dda627b2e888.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbti-test@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbti-test-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d717d83dee5e90d5ccb8ec5fb490584296d218866ce3ec8627ba94b6f2b20e3",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:49:54.711Z"
+}

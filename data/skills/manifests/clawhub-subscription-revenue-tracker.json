@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31519,
+  "uuid": "skill-clawhub-subscription-revenue-tracker",
+  "skillKey": "clawhub-subscription-revenue-tracker",
+  "name": "Subscription Revenue Tracker",
+  "summary": "SaaS and subscription business revenue intelligence. Track MRR/ARR, calculate churn rate, net revenue retention (NRR), customer lifetime value (LTV), cohort...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_revenue_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "SaaS and subscription business revenue intelligence",
+        "Track MRR/ARR, calculate churn rate, net revenue retention (NRR), customer lifetime value (LTV)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subscription-revenue-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subscription-revenue-tracker",
+      "url": "https://clawhub.ai/skills/subscription-revenue-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-revenue-tracker",
+    "url": "https://clawhub.ai/skills/subscription-revenue-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-revenue-tracker-b486687ec8b77dba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subscription-revenue-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subscription-revenue-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e1a0c38f8c369b80459a700fcb1b600f6ddd7d119c5a94fcba811ebf636bca4",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:19:09.968Z"
+}

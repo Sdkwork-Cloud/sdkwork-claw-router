@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a11y@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a11y",
+  "skill": {
+    "id": 51971,
+    "skillKey": "clawhub-a11y",
+    "name": "A11y"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a11y",
+    "url": "https://clawhub.ai/skills/a11y",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a11y-b6b8d090aac80aa0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inclusive UI for real users—keyboard and focus, semantics for AT, contrast and motion, forms and errors. Use when fixing WCAG issues, auditing screens, or de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774630315815,
+      "changelog": "Initial release of the a11y skill:\n\n- Provides guidance for building inclusive UIs — including keyboard navigation, focus management, semantic markup, color contrast, and motion considerations.\n- Covers typical accessibility tasks: fixing WCAG issues, auditing interfaces, and designing flows with accessibility in mind.\n- Outlines a practical workflow for identifying, prioritizing, and verifying accessibility barriers.\n- Clarifies the scope: not a replacement for formal audits or compliance certification.\n- Lists key anti-patterns and clear indicators for “done.”",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33e9ec0b0aeb559f546ee6e75450cfb5749a90e8bc560a362782e4a022b0d6af"
+}

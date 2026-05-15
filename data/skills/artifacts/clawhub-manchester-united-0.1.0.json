@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manchester-united@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manchester_united",
+  "skill": {
+    "id": 60867,
+    "skillKey": "clawhub-manchester-united",
+    "name": "manchester-united"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manchester-united",
+    "url": "https://clawhub.ai/skills/manchester-united",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manchester-united-ed9276ae46450862.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "英格兰最成功的足球俱乐部之一"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774681351022,
+      "changelog": "- Initial release of the Manchester United skill.\n- Provides overview, history, facts, latest updates, statistics, useful links, and related topics about Manchester United.\n- Supports real-time web search for up-to-date information.\n- Example queries and usage instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e83957c5d26b09b27afc50057d8221ec4e95a59546e669af79d3d9a495f74325"
+}

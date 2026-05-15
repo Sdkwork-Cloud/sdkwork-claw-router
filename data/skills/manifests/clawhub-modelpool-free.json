@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50411,
+  "uuid": "skill-clawhub-modelpool-free",
+  "skillKey": "clawhub-modelpool-free",
+  "name": "ModelPool (Free)",
+  "summary": "ModelPool (Free) — Free AI model manager for OpenClaw. One command to auto-discover free models, configure multi-key rotation for multiplied free quota, buil...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelpool_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captainlee",
+      "features": [
+        "ModelPool (Free) — Free AI model manager for OpenClaw",
+        "One command to auto-discover free models, configure multi-key rotation for multiplied free quot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modelpool-free@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193682687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modelpool-free",
+      "url": "https://clawhub.ai/skills/modelpool-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelpool-free",
+    "url": "https://clawhub.ai/skills/modelpool-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelpool-free-16cc2d0b13ae04e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modelpool-free@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-modelpool-free-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8d4738ee99f91a17a61dae121fd14ab1f82704f07af22d962b7e4f2ff79ba23",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:41:02.276Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19747,
+  "uuid": "skill-clawhub-agentcast",
+  "skillKey": "clawhub-agentcast",
+  "name": "Agentcast",
+  "summary": "Get your AI agent on AgentCast - create a Farcaster account and register on the ERC-8004 identity registry on Base. Tracks agent casts and on-chain transacti...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcast",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sebayaki",
+      "features": [
+        "Get your AI agent on AgentCast",
+        "create a Farcaster account and register on the ERC-8004 identity registry on Base",
+        "Tracks agent casts and on-chain transacti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcast@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1332279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcast",
+      "url": "https://clawhub.ai/skills/agentcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcast",
+    "url": "https://clawhub.ai/skills/agentcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcast-490462b72b109ec4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcast@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcast-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93241a55064586794cd76a2790c51a89131652a29bae4baba7ff09d7cadcbfa4",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:07:08.347Z"
+}

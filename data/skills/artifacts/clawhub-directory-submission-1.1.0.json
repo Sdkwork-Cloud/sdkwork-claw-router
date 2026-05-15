@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/directory-submission@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.directory_submission",
+  "skill": {
+    "id": 32591,
+    "skillKey": "clawhub-directory-submission",
+    "name": "directory-submission"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "directory-submission",
+    "url": "https://clawhub.ai/skills/directory-submission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/directory-submission-875ecdaac7df931e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to submit a product to directories, launch platforms, curated lists, or app stores. Reads project-context.md when present and generates r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773718017812,
+      "changelog": "Automated batch sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:403706d3d14517d1e57579b1602461302814311187506fbec7a512604b63f3ee"
+}

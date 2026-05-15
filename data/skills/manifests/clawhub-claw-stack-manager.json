@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39093,
+  "uuid": "skill-clawhub-claw-stack-manager",
+  "skillKey": "clawhub-claw-stack-manager",
+  "name": "Claw Stack Manager",
+  "summary": "Manage Docker stacks via Portainer API. v2.41 compatible: preserves env vars during redeploy. Claw stack uses one-shot redeployer; other stacks via PUT update.",
+  "version": "5.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_stack_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyj",
+      "features": [
+        "Manage Docker stacks via Portainer API",
+        "v2.41 compatible: preserves env vars during redeploy",
+        "Claw stack uses one-shot redeployer",
+        "other stacks via PUT update."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-stack-manager@5.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19380087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-stack-manager",
+      "url": "https://clawhub.ai/skills/claw-stack-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-stack-manager",
+    "url": "https://clawhub.ai/skills/claw-stack-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-stack-manager-9462e8a325f177f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-stack-manager@5.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-stack-manager-5.1.0.json",
+      "version": "5.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34201a4986cfe37ecb7bb5ed8137d875ab52d74f877d1fd32736982f0e9bac10",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:26:18.514Z"
+}

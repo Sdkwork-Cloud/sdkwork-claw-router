@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/burger-king@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.burger_king",
+  "skill": {
+    "id": 62122,
+    "skillKey": "clawhub-burger-king",
+    "name": "Burger King"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "burger-king",
+    "url": "https://clawhub.ai/skills/burger-king",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/burger-king-df1ac362228fe48d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "汉堡王品牌介绍和购物指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776232987386,
+      "changelog": "- 在 SKILL.md 文件中添加了 version 字段，当前设为 1.0.4。\n- 其余内容保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12dccc96a2af63831156965c13f0ee94d0db87458dfff193ea42de79d89214d0"
+}

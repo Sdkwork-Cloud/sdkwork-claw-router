@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookkeeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookkeeper",
+  "skill": {
+    "id": 15836,
+    "skillKey": "clawhub-bookkeeper",
+    "name": "Bookkeeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookkeeper",
+    "url": "https://clawhub.ai/skills/bookkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookkeeper-5687fc0c84b1cbb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates invoice intake from Gmail, extracts data via OCR, verifies payment in Stripe, and creates reconciliation-ready accounting entries in Xero."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 962,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771082287258,
+      "changelog": "autonomous-bookkeeper v1.0.0\n\n- Initial release of the autonomous-bookkeeper meta-skill.\n- Orchestrates Gmail, DeepRead OCR, Stripe, and Xero for automated invoice intake, field extraction, payment verification, accounting entry, and traceability.\n- Implements quality gates, manual review safeguards, and audit trail preservation before any posting.\n- Requires configuration of input policies (currency, vendor rules, matching tolerances, posting policies, attachment handling).\n- Provides output summaries for intake, extraction, payment verification, accounting actions, and review queue results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13af840d31475dcadcc9209869cb7958d2b486865139aba1f39bbef18ce6e785"
+}

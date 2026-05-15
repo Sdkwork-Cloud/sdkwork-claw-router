@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-feature-flag-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_feature_flag_manager",
+  "skill": {
+    "id": 55841,
+    "skillKey": "clawhub-skylv-feature-flag-manager",
+    "name": "Skylv Feature Flag Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-feature-flag-manager",
+    "url": "https://clawhub.ai/skills/skylv-feature-flag-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-feature-flag-manager-5e84145ce101c759.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Toggle features instantly without deploying code. A/B test variants, gradual rollouts from 1% to 100%, and emergency kill switches for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777690161351,
+      "changelog": "- Initial release of feature-flag-manager.\n- Instantly toggle features on/off without deploying code.\n- Support for gradual rollouts and percentage-based enablement (1% to 100%).\n- Built-in A/B testing with variant distribution and user targeting.\n- Emergency kill switch to immediately disable buggy features.\n- Includes CLI commands for feature creation, updates, status checks, and exporting config.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4c8a8f97ce8a55e20042822f3d9b5cedaf37207298be78718d7a2f53f74000b"
+}

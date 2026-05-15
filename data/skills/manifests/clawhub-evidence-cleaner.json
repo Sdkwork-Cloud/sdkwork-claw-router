@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70741,
+  "uuid": "skill-clawhub-evidence-cleaner",
+  "skillKey": "clawhub-evidence-cleaner",
+  "name": "Evidence Cleaner",
+  "summary": "LLM通用证据清洗技能。将原始搜索结果、网页片段、OCR残片等原始材料清洗为可用证据，减少脏输入、伪实体、重复片段和错域材料对后续判断的污染。在搜索结果返回后、进入freshness判定或叙事生成前使用。触发条件：搜索结果质量差、证据量大但信噪比低、需要标准化证据格式。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evidence_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z1one0415",
+      "features": [
+        "LLM通用证据清洗技能。将原始搜索结果、网页片段、OCR残片等原始材料清洗为可用证据，减少脏输入、伪实体、重复片段和错域材料对后续判断的污染。在搜索结果返回后、进入freshness判定或叙."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evidence-cleaner@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261777435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evidence-cleaner",
+      "url": "https://clawhub.ai/skills/evidence-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evidence-cleaner",
+    "url": "https://clawhub.ai/skills/evidence-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evidence-cleaner-dfbe9d6244eb0755.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evidence-cleaner@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evidence-cleaner-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62ffba8f1e42ee7c28cee338891bf91fe920109d6bf0ca3f8cbdeaaf1519184f",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:33:57.199Z"
+}

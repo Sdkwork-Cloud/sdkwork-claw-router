@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73702,
+  "uuid": "skill-clawhub-geneplus-health-assistant",
+  "skillKey": "clawhub-geneplus-health-assistant",
+  "name": "智能健康管理与评估助手",
+  "summary": "基于用户提供的多维度健康数据（如基本信息、生理指标、生活方式、既往病史、体检结果等），进行综合分析与风险评估，并生成结构化、个性化的健康评估报告。。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geneplus_health_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lantian888",
+      "features": [
+        "基于用户提供的多维度健康数据（如基本信息、生理指标、生活方式、既往病史、体检结果等），进行综合分析与风险评估，并生成结构化、个性化的健康评估报告。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geneplus-health-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30491114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geneplus-health-assistant",
+      "url": "https://clawhub.ai/skills/geneplus-health-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geneplus-health-assistant",
+    "url": "https://clawhub.ai/skills/geneplus-health-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geneplus-health-assistant-fad3719c216fe4ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geneplus-health-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geneplus-health-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62b8249009c24b8457894bc39ffe28d9932d972278027cad71222d077e872f65",
+      "artifactSizeBytes": 2758
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:43:11.301Z"
+}

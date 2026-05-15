@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-claude-buddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_claude_buddy",
+  "skill": {
+    "id": 64836,
+    "skillKey": "clawhub-openclaw-claude-buddy",
+    "name": "buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-claude-buddy",
+    "url": "https://clawhub.ai/skills/openclaw-claude-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-claude-buddy-fc0bb8871ab2e133.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buddy 宠物系统 — 孵化、互动、查看你的虚拟宠物伙伴"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwin19861218",
+      "userId": "s17f84j0n6x4c05z7mryshdk2583ydmg",
+      "displayName": "edwin19861218",
+      "image": "https://avatars.githubusercontent.com/u/16395211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775710963551,
+      "changelog": "OpenClaw Buddy Companion\n\nsee https://github.com/edwin19861218/openclaw-buddy  for detail",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27b52bc14c3736d347b1d3a1b00f4523cf9648e2b5c3be353a58e86329d68ae6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-avengers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_avengers",
+  "skill": {
+    "id": 61690,
+    "skillKey": "clawhub-agent-avengers",
+    "name": "Agent Avengers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-avengers",
+    "url": "https://clawhub.ai/skills/agent-avengers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-avengers-3b112e7089251c05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "올인원 멀티에이전트 오케스트레이션. 복잡한 태스크를 자동으로 분해하고, 전문 에이전트들을 즉석에서 생성/스폰하여 병렬 처리 후 결과를 통합합니다. TRIGGERS: avengers assemble, 어벤저스, agent-avengers, 멀티에이전트 자동화, 에이전트 팀 구성, 자동 에이전트"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oozoofrog",
+      "userId": "publishers:oozoofrog",
+      "displayName": "oozoofrog",
+      "image": "https://avatars.githubusercontent.com/u/3011832?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1472,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770401158581,
+      "changelog": "agent-avengers 1.0.0\n\n- Initial release of a multi-agent orchestration toolkit for automating complex tasks.\n- Automatically decomposes large tasks and dynamically spawns specialist agents.\n- Supports parallel execution and output integration, with post-task cleanup of temporary agents.\n- Flexible agent modes: leverage existing agents, spawn temporary ones, use multi-profile bots, or combine all approaches in a hybrid workflow.\n- Example configuration and workflow documentation included for rapid adoption.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be80b3562826b270b111244741fcd8685a75309485163d9d2867b4ee325fc0ff"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-parking-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_parking_query",
+  "skill": {
+    "id": 60506,
+    "skillKey": "clawhub-openclaw-parking-query",
+    "name": "台灣即時停車查詢"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-parking-query",
+    "url": "https://clawhub.ai/skills/openclaw-parking-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-parking-query-94e1890a404fc3d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "傳送定位點或 Google Maps 網址，查詢附近台灣停車場即時空位，附 Apple Maps / Google Maps 一鍵導航連結。支援 Telegram、LINE、iMessage。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harperbot",
+      "userId": "publishers:harperbot",
+      "displayName": "Harperbot",
+      "image": "https://avatars.githubusercontent.com/u/258818722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772600794261,
+      "changelog": "Initial release：全台 TDX 即時停車，支援 Telegram/LINE/iMessage，附導航連結",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e17193d73aa3d75d951dc6f07549b5f844757dc5481f03838d77420054bc6e31"
+}

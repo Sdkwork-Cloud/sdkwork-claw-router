@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_calendar",
+  "skill": {
+    "id": 72857,
+    "skillKey": "clawhub-one-calendar",
+    "name": "单向历"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-calendar",
+    "url": "https://clawhub.ai/skills/one-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-calendar-73ad9b4ba5ccc19e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日单向历图片发送工具。自动获取当天日期，构造图片 URL，并通过飞书发送单向历图片。支持配置向导和定时任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chempeng",
+      "userId": "s178p7s18jh3gwcw2vdj2c9a1184w7zx",
+      "displayName": "chempeng",
+      "image": "https://avatars.githubusercontent.com/u/24810120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772722707143,
+      "changelog": "- 首个版本发布，支持每日自动发送单向历图片到飞书。\n- 提供命令行配置向导，轻松设置飞书用户 ID 和图片源信息。\n- 支持手动触发、关键词对话触发和定时任务三种发送方式。\n- 图片自动按当天日期获取，支持自定义时区和图片 URL 设置。\n- 安装文档和使用示例已包括在 SKILL.md 文件中。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a921981e08f979d1f4ff3c1b1782219efb73dd10e45d43bc1299c197ef14912e"
+}

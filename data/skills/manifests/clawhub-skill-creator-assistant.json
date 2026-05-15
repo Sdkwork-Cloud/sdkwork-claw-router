@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39669,
+  "uuid": "skill-clawhub-skill-creator-assistant",
+  "skillKey": "clawhub-skill-creator-assistant",
+  "name": "Skill Creator Assistant",
+  "summary": "Guides non-technical users through targeted questions to create complete OpenClaw skills without coding, including SKILL.md and optional GitHub upload.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zihaowyt5525-max",
+      "features": [
+        "Guides non-technical users through targeted questions to create complete OpenClaw skills withou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237939160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-assistant",
+      "url": "https://clawhub.ai/skills/skill-creator-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-assistant",
+    "url": "https://clawhub.ai/skills/skill-creator-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-assistant-0b3614200cf26ef2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48ace729cccd9ccd1b9a0e1ab1497737aaf0ef350323a0a514fea118b61612c0",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:49:06.970Z"
+}

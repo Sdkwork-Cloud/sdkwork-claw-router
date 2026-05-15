@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10707,
+  "uuid": "skill-clawhub-personality-switcher",
+  "skillKey": "clawhub-personality-switcher",
+  "name": "Personality Switcher",
+  "summary": "Create and switch between AI assistant personalities. Use /personality to list and activate saved personalities. Use /create-personality to design new personas with auto-filled SOUL and IDENTITY. Personalities persist across session bounda.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personality_switcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robb1010",
+      "features": [
+        "Create and switch between AI assistant personalities",
+        "Use /personality to list and activate saved personalities",
+        "Use /create-personality to design new personas with auto-filled SOUL and IDENTITY",
+        "Personalities persist across session boundaries and conversation compacting with automatic hear."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personality-switcher@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11844042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personality-switcher",
+      "url": "https://clawhub.ai/skills/personality-switcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personality-switcher",
+    "url": "https://clawhub.ai/skills/personality-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personality-switcher-8ebd9dd03798db55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personality-switcher@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-personality-switcher-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f003b32937cff4856f458a6246c48dc1beba128856e874b75b3dc67f3cdacbe2",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T00:01:15.247Z"
+}

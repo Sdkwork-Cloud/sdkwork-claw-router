@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcporter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcporter",
+  "skill": {
+    "id": 8239,
+    "skillKey": "clawhub-mcporter",
+    "name": "Mcporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcporter",
+    "url": "https://clawhub.ai/skills/mcporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcporter-eaf1e91296352273.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 61690,
+      "installsAllTime": 1967,
+      "installsCurrent": 1906,
+      "stars": 186,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545355897,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f4d9cf1254d610bd49cc5b781bb97f7021c174fef87379c6fb67efa1829501a"
+}

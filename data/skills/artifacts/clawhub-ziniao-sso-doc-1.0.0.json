@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ziniao-sso-doc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziniao_sso_doc",
+  "skill": {
+    "id": 63704,
+    "skillKey": "clawhub-ziniao-sso-doc",
+    "name": "ziniao-sso-doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziniao-sso-doc",
+    "url": "https://clawhub.ai/skills/ziniao-sso-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziniao-sso-doc-9c8899118519a2e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when 需要理解紫鸟单点登录 OpenAPI 的定位、能力、集成流程或接口清单， 用于 ERP 系统 SSO 对接规划、集成设计或接口评估。 不要用于直接查阅具体接口参数——查阅时读取 reference/ 下对应文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ziniao-open",
+      "userId": "s17daw69gp84x2gww3hnm0tsqh83nv19",
+      "displayName": "ziniao-open",
+      "image": "https://avatars.githubusercontent.com/u/106373185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774492756470,
+      "changelog": "ziniao-sso-doc 1.0.0 changelog:\n\n- Initial release of ziniao-sso-doc, a documentation skill for understanding the positioning, capabilities, integration flow, and interface overview of 紫鸟单点登录 OpenAPI.\n- Provides guidance for ERP SSO integration planning, design, and interface evaluation.\n- Clear usage boundaries: not for direct lookup of interface parameters—these are found in reference/ subfiles.\n- Describes authentication modes, key concepts, supported features, integration flowchart, and interface summary table.\n- Includes directions on when and how to dive deeper into specific reference materials.\n- Establishes clear documentation structure for ease of ERP/integration engineers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cad7258206a03c7a68694daa9d87014660c34e20ce20c3223ab3c9a74820251"
+}

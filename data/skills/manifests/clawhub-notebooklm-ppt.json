@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62634,
+  "uuid": "skill-clawhub-notebooklm-ppt",
+  "skillKey": "clawhub-notebooklm-ppt",
+  "name": "NotebookLM PPT",
+  "summary": "使用 NotebookLM CLI 生成 PPT 演示文稿。从预置风格模板库中选择模板，通过 notebook query 设置风格要求，再生成幻灯片。适用于需要快速将文档转换为演示文稿的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_ppt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "烟灰",
+      "features": [
+        "使用 NotebookLM CLI 生成 PPT 演示文稿。从预置风格模板库中选择模板，通过 notebook query 设置风格要求，再生成幻灯片。适用于需要快速将文档转换为演示文稿的场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-ppt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43025718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-ppt",
+      "url": "https://clawhub.ai/skills/notebooklm-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-ppt",
+    "url": "https://clawhub.ai/skills/notebooklm-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-ppt-e917df709f6d5675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-ppt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-ppt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1bd3ab4400a1260ac9601da7997526715cad4fd97dd49701a9941870773c546",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T11:53:55.986Z"
+}

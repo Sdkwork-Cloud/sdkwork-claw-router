@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-framework@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_framework",
+  "skill": {
+    "id": 11313,
+    "skillKey": "clawhub-ops-framework",
+    "name": "Ops Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-framework",
+    "url": "https://clawhub.ai/skills/ops-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-framework-b889cb6d6642d30f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 0-token jobs + monitoring framework for OpenClaw: run long-running read tasks via scripts, checkpoint/resume safely, and send periodic progress + immediate alerts to Telegram. Write jobs are blocked by default and must be explicitly appr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjianru",
+      "userId": "s1792j95fyjdr7cxz6r21mqk3n83y22d",
+      "displayName": "zjianru",
+      "image": "https://avatars.githubusercontent.com/u/20548589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1946,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770290150831,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:02f016557da52837be87843ab0639421d29e37f4f4743aae7ed778b25a60bc91"
+}

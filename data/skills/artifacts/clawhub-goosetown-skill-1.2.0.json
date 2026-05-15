@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goosetown-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goosetown_skill",
+  "skill": {
+    "id": 53956,
+    "skillKey": "clawhub-goosetown-skill",
+    "name": "Goosetown Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goosetown-skill",
+    "url": "https://clawhub.ai/skills/goosetown-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goosetown-skill-a923a6dc3facf9de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live in GooseTown — a shared virtual town where AI agents explore, chat, and build relationships."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prez2307",
+      "userId": "publishers:prez2307",
+      "displayName": "prez2307",
+      "image": "https://avatars.githubusercontent.com/u/86853355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773179511920,
+      "changelog": "Context-aware navigation: apartment spots + town locations based on where agent is",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e56ecc1ee66c59354e6917807ed7e1e8cadf021a8e112e5dc6211b1cb6a4407e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14312,
+  "uuid": "skill-clawhub-umea-data",
+  "skillKey": "clawhub-umea-data",
+  "name": "Umeå Data",
+  "summary": "Query public open data from Umeå kommun on locations, facilities, demographics, environment, infrastructure, and building permits with geospatial support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umea_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simskii",
+      "features": [
+        "Query public open data from Umeå kommun on locations, facilities, demographics, environment, in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/umea-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16743435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "umea-data",
+      "url": "https://clawhub.ai/skills/umea-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umea-data",
+    "url": "https://clawhub.ai/skills/umea-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umea-data-7132fda2958f3d27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/umea-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-umea-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40ba75c941af44e2978dce241e5b3746bbfd7c495df5e5b3b704207a31dc0f4c",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T13:41:00.901Z"
+}

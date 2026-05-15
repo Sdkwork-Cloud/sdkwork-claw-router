@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25448,
+  "uuid": "skill-clawhub-cap-table-manager",
+  "skillKey": "clawhub-cap-table-manager",
+  "name": "Cap Table Manager",
+  "summary": "Equity cap table management for startups and growth-stage companies. Models SAFEs, convertible notes, priced equity rounds, token allocations, dilution scena...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cap_table_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Equity cap table management for startups and growth-stage companies",
+        "Models SAFEs, convertible notes, priced equity rounds, token allocations, dilution scena..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cap-table-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cap-table-manager",
+      "url": "https://clawhub.ai/skills/cap-table-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cap-table-manager",
+    "url": "https://clawhub.ai/skills/cap-table-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cap-table-manager-aa2f17888f4b9c9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cap-table-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cap-table-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6be636f797b0dd4a9fd2e2089d031bad6ca3b56bca37be512941c1da8b62f785",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:16:25.407Z"
+}

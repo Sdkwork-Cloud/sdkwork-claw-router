@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71128,
+  "uuid": "skill-clawhub-daxiang-daily-report",
+  "skillKey": "clawhub-daxiang-daily-report",
+  "name": "大象沟通日报",
+  "summary": "生成大象（即时通讯工具）每日沟通分析报告。自动汇总个人对话、群聊消息，按时间段分析沟通频率，识别活跃联系人，生成结构化的沟通摘要。使用场景：用户提及'大象日报'、'沟通日报'、'每日沟通'、'daxiang report'、'沟通汇总'时触发。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kindhf",
+      "features": [
+        "生成大象（即时通讯工具）每日沟通分析报告。自动汇总个人对话、群聊消息，按时间段分析沟通频率，识别活跃联系人，生成结构化的沟通摘要。使用场景：用户提及'大象日报'、'沟通日报'、'每日沟通'、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daxiang-daily-report@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32083610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daxiang-daily-report",
+      "url": "https://clawhub.ai/skills/daxiang-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-daily-report",
+    "url": "https://clawhub.ai/skills/daxiang-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-daily-report-7758807276d038b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daxiang-daily-report@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-daxiang-daily-report-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2e52a8a191a62b02530bc7dc3a126f9ff91c6cad88143ec52b6f9c0914b4ed6",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:51:49.188Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fund-trading@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_trading",
+  "skill": {
+    "id": 64481,
+    "skillKey": "clawhub-fund-trading",
+    "name": "Fund Trading Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-trading",
+    "url": "https://clawhub.ai/skills/fund-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-trading-34bf3e47a462aa68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基金实盘交易工具，支持账户管理、基金查询、申购赎回、资产查询"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weitom0902",
+      "userId": "s174btfkrrn0b4k4m9awq08aa5840m4s",
+      "displayName": "weiqt",
+      "image": "https://avatars.githubusercontent.com/u/25564551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775200402798,
+      "changelog": "添加重要声明：真实基金净值，虚拟资金交易",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a921d24a4d69fb5d016ad5d68dd334dbf4db83e6f4fb92284bbcad10f64e024"
+}

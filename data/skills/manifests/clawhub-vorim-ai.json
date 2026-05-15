@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52767,
+  "uuid": "skill-clawhub-vorim-ai",
+  "skillKey": "clawhub-vorim-ai",
+  "name": "Vorim AI — Agent Identity & Trust",
+  "summary": "AI agent identity, permissions, trust scores, and audit trails via Vorim AI. Gives your OpenClaw agent a cryptographic identity so every action is verified,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vorim_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kzino",
+      "features": [
+        "AI agent identity, permissions, trust scores, and audit trails via Vorim AI",
+        "Gives your OpenClaw agent a cryptographic identity so every action is verified,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vorim-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30327181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vorim-ai",
+      "url": "https://clawhub.ai/skills/vorim-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vorim-ai",
+    "url": "https://clawhub.ai/skills/vorim-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vorim-ai-c6b7957876398e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vorim-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vorim-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc88dbf7e8c809cc8e3568f6e09bda2fa69516e4908cd355809408841273c660",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T00:10:03.906Z"
+}

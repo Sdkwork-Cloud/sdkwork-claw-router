@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41463,
+  "uuid": "skill-clawhub-jb-catalyst-edge",
+  "skillKey": "clawhub-jb-catalyst-edge",
+  "name": "Catalyst Edge",
+  "summary": "Identifies high-conviction stock opportunities and tracks JB's retirement portfolio with weekly scans, quarterly reviews, and FIRE signal analysis.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jb_catalyst_edge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "j3m2b",
+      "features": [
+        "Identifies high-conviction stock opportunities and tracks JB's retirement portfolio with weekly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jb-catalyst-edge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203656507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jb-catalyst-edge",
+      "url": "https://clawhub.ai/skills/jb-catalyst-edge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jb-catalyst-edge",
+    "url": "https://clawhub.ai/skills/jb-catalyst-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jb-catalyst-edge-f37ba2f5d2b412ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jb-catalyst-edge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jb-catalyst-edge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ead8363780bfd8e7f0b43d055eaa6d9159a49c06f33903c135956ae6df42f988",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:27:11.343Z"
+}

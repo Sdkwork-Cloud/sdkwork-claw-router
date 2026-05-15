@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bacardi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bacardi",
+  "skill": {
+    "id": 47251,
+    "skillKey": "clawhub-bacardi",
+    "name": "Bacardi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bacardi",
+    "url": "https://clawhub.ai/skills/bacardi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bacardi-f0a36448c29c8438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bacardi is a privately-held global spirits leader known for pioneering smooth white rum and managing a diverse portfolio of iconic brands across 170+ countries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777410157036,
+      "changelog": "- Initial release introducing Bacardi’s history, major milestones, and evolution from Cuban origins to a global spirits leader.\n- Detailed breakdown of Bacardi's multi-brand portfolio, including key acquisitions like Grey Goose and Patrón.\n- Overview of Bacardi’s advantages as a privately-held, family-owned company.\n- Moat analysis highlighting brand heritage, proprietary production elements, and global distribution.\n- Iconic brand lore explained, including the origin of the bat logo and the impact of the Cuban Revolution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ce3153d27c7213f098890d48ea0c9c809feef4d4e34b6c8a9823e88e3dc02d5"
+}

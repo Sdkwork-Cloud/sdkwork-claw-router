@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29229,
+  "uuid": "skill-clawhub-getpost-scrape",
+  "skillKey": "clawhub-getpost-scrape",
+  "name": "GetPost Web Scrape API",
+  "summary": "Scrape any web page with a headless browser. Extract text or screenshots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getpost_scrape",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "domm",
+      "features": [
+        "Scrape any web page with a headless browser",
+        "Extract text or screenshots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getpost-scrape@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4269710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getpost-scrape",
+      "url": "https://clawhub.ai/skills/getpost-scrape"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getpost-scrape",
+    "url": "https://clawhub.ai/skills/getpost-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getpost-scrape-1ab5685d0e9b3a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getpost-scrape@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getpost-scrape-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:770182ad7ba0ca2aec9a0c466cec5090cb68f27e84a9d51712ad7989e30d5cc3",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:20:05.416Z"
+}

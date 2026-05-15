@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43003,
+  "uuid": "skill-clawhub-orchestrator-pm",
+  "skillKey": "clawhub-orchestrator-pm",
+  "name": "Orchestrator PM",
+  "summary": "Strategic project manager that reads between the lines, expands scope intelligently, creates job postings, and routes to spawner. Use when starting a session...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchestrator_pm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KairoKid",
+      "features": [
+        "Strategic project manager that reads between the lines, expands scope intelligently, creates jo.",
+        "Use when starting a session..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orchestrator-pm@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235199066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orchestrator-pm",
+      "url": "https://clawhub.ai/skills/orchestrator-pm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchestrator-pm",
+    "url": "https://clawhub.ai/skills/orchestrator-pm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchestrator-pm-f4ff40f4dd796759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orchestrator-pm@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orchestrator-pm-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d847da9af2b0c7b10f3df04b585de0af8245041c3689af99af288f301ab6c68",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:25:10.650Z"
+}

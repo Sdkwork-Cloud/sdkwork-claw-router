@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42388,
+  "uuid": "skill-clawhub-gate-exchange-transfer-staging",
+  "skillKey": "clawhub-gate-exchange-transfer-staging",
+  "name": "Gate Exchange Transfer",
+  "summary": "Gate Exchange same-UID internal transfer skill. Use when the user asks to move funds between their own Gate accounts. Triggers on 'transfer funds', 'move USD...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_transfer_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate Exchange same-UID internal transfer skill",
+        "Use when the user asks to move funds between their own Gate accounts",
+        "Triggers on 'transfer funds', 'move USD..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-transfer-staging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-transfer-staging",
+      "url": "https://clawhub.ai/skills/gate-exchange-transfer-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-transfer-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-transfer-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-transfer-staging-9945d27710b1c337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-transfer-staging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-transfer-staging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93291c2fc8fb74e9b1800c389024e14c6fd6c831372d92475c971987978c16b4",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:09:14.197Z"
+}

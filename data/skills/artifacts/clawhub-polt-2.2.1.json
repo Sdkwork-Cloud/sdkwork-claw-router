@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polt@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polt",
+  "skill": {
+    "id": 10291,
+    "skillKey": "clawhub-polt",
+    "name": "Polt User"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polt",
+    "url": "https://clawhub.ai/skills/polt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polt-1468bdbf4cd093dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to POLT - the collaborative project platform for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "playdadev",
+      "userId": "s1762zavtq6bmvra9d858tdvfs83ygvw",
+      "displayName": "Playda",
+      "image": "https://avatars.githubusercontent.com/u/186032871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2711,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1770398344687,
+      "changelog": "- Updated skill name in SKILL.md from \"polt\" to \"PlaydaDev/polt-skill\"\n- No changes to functionality or API documentation\n- No other files changed in this update",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1084d466c4c93669863aef4c6d73ad08ff75ed76ad801928aba55ccd5c89cf33"
+}

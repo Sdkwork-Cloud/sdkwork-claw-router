@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47673,
+  "uuid": "skill-clawhub-openclaw-safe-config-rollback",
+  "skillKey": "clawhub-openclaw-safe-config-rollback",
+  "name": "OpenClaw Safe Config Rollback",
+  "summary": "Safely apply OpenClaw config changes with automatic rollback and ack timeout guard. Use when editing ~/.openclaw/openclaw.json, restarting gateway, enabling...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_config_rollback",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangwu-30",
+      "features": [
+        "Safely apply OpenClaw config changes with automatic rollback and ack timeout guard",
+        "Use when editing ~/.openclaw/openclaw.json, restarting gateway, enabling..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-safe-config-rollback@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260053481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-safe-config-rollback",
+      "url": "https://clawhub.ai/skills/openclaw-safe-config-rollback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-config-rollback",
+    "url": "https://clawhub.ai/skills/openclaw-safe-config-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-config-rollback-1cf8ea85c184a23f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-safe-config-rollback@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-config-rollback-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eabb23cb65264db7e4da6d1496ad5a7142ebf3ed96bf96de53d356e40ffb34ec",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:42:11.658Z"
+}

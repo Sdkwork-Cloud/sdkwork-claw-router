@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-plugin-deepwiki@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_plugin_deepwiki",
+  "skill": {
+    "id": 34293,
+    "skillKey": "clawhub-create-plugin-deepwiki",
+    "name": "Create Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-plugin-deepwiki",
+    "url": "https://clawhub.ai/skills/create-plugin-deepwiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-plugin-deepwiki-a2e04a518322b63b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create minimal, convention-matching plugins or extensions for an existing codebase. Use when the user asks for a plugin, extension, custom module, integratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyharry",
+      "userId": "s1791dsxaskb2ycq4gek2dvvh183ejmp",
+      "displayName": "Yi",
+      "image": "https://avatars.githubusercontent.com/u/9788834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774086035908,
+      "changelog": "Initial release: plugin-writing workflow with DeepWiki MCP guidance and CAX example.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb0e0f3ad6c45ad47c536839036ce63296138b1f7d745ce1292ccfc4180ccf39"
+}

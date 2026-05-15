@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55150,
+  "uuid": "skill-clawhub-command-skill-creator",
+  "skillKey": "clawhub-command-skill-creator",
+  "name": "command-skill-creator",
+  "summary": "Create automation command skills (slash commands) for Claude Code projects. Use when building `/slash-commands` that automate multi-step workflows - deploys,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.command_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Create automation command skills (slash commands) for Claude Code projects",
+        "Use when building `/slash-commands` that automate multi-step workflows",
+        "deploys,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/command-skill-creator@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "command-skill-creator",
+      "url": "https://clawhub.ai/skills/command-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "command-skill-creator",
+    "url": "https://clawhub.ai/skills/command-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/command-skill-creator-70f7d8893d1d6b32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/command-skill-creator@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-command-skill-creator-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cde5761c638d4c245fc8aeb448c1bc3c31e105ac09715fcc3287606867cde80",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:04.036Z"
+}

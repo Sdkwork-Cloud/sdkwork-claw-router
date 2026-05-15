@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43101,
+  "uuid": "skill-clawhub-flight-baggage-check",
+  "skillKey": "clawhub-flight-baggage-check",
+  "name": "Flight Baggage Check",
+  "summary": "Check airline baggage compliance, carry-on vs checked rules, excess baggage, and the cheapest compliant packing plan. Use for questions about overweight lugg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_baggage_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tinayunyunyun",
+      "features": [
+        "Check airline baggage compliance, carry-on vs checked rules, excess baggage, and the cheapest c.",
+        "Use for questions about overweight lugg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-baggage-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161930130?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-baggage-check",
+      "url": "https://clawhub.ai/skills/flight-baggage-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-baggage-check",
+    "url": "https://clawhub.ai/skills/flight-baggage-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-baggage-check-2c9be0707597c579.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-baggage-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-baggage-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87502e384abd073eddf685d4ac5462ead0ccdea4bf3c8916c5353004fff72e8c",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:39:33.468Z"
+}

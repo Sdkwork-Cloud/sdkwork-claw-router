@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-data-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_data_hub",
+  "skill": {
+    "id": 28683,
+    "skillKey": "clawhub-social-media-data-hub",
+    "name": "Social Media Data Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-data-hub",
+    "url": "https://clawhub.ai/skills/social-media-data-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-data-hub-bb934856f63664c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified Apify-based retrieval for TikTok, Instagram, X/Twitter, and YouTube profile, post, and comment data with cross-platform normalization for analysis wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galaxy-earth",
+      "userId": "s172bzme1xrr5z7vkj4gfxpk1n83gjk6",
+      "displayName": "Galaxy",
+      "image": "https://avatars.githubusercontent.com/u/76103835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774000306758,
+      "changelog": "Initial release of Social Media Data Hub.\n\n- Unified Apify-based retrieval for TikTok, Instagram, X/Twitter, and YouTube.\n- Supports profile, post, and comment data extraction with cross-platform normalization.\n- Standardized data models for posts and profiles to streamline analysis.\n- Command-line Python scripts for all core functions, returning normalized JSON.\n- Documentation includes usage examples, actor mapping, and cost reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5077ef87bc9ef99eeaab9f89c893c9c7141646f6ed31b94c9d50ab861e00009"
+}

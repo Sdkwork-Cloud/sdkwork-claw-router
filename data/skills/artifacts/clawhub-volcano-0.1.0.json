@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcano@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano",
+  "skill": {
+    "id": 71641,
+    "skillKey": "clawhub-volcano",
+    "name": "Volcano"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano",
+    "url": "https://clawhub.ai/skills/volcano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-06612c2832341c9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供火山引擎公开产品规格、价格、账单概览及服务公告的非敏感信息摘要与整理服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773932042847,
+      "changelog": "Initial release of volcano skill.\n\n- Registers a capability for summarizing public or console-visible information from Volcengine.\n- Supports extraction of specs, pricing summaries, billing overviews, and service announcement digests.\n- Strictly avoids handling sensitive data, account operations, or API interactions.\n- Limits usage to compliant, visible, non-sensitive information only.\n- Includes links to main site, console, and documentation for easy access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e915c312694731b0b01e0c6db7ffe9b4082c549ca7984359c17f4153e5017bfd"
+}

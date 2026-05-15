@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-task-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_task_executor",
+  "skill": {
+    "id": 42130,
+    "skillKey": "clawhub-openclaw-task-executor",
+    "name": "Openclaw Task Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-task-executor",
+    "url": "https://clawhub.ai/skills/openclaw-task-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-task-executor-6e5d5597e266e807.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classifies tasks by complexity, plans execution, spawns and monitors subagents as needed, and reports progress and results continuously."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomuiv",
+      "userId": "s171935xz6xsqmpn3z12w1jnk184m1a9",
+      "displayName": "TOMUIV",
+      "image": "https://avatars.githubusercontent.com/u/232025981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776259131666,
+      "changelog": "- Initial release of openclaw-task-executor with \"The Executor Protocol\"\n- Introduces clear task classification (Simple, Medium, Complex) and requirements for planning before execution\n- Defines strict prohibitions and workflow standards for task management, reporting, retries, and monitoring\n- Establishes protocol for subagent usage and parallel execution limits\n- Details OpenClaw code review standards, including specific documentation and configuration checks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:183ae6f1fe4c71a92dd20f5719a09e2989f4c542eddae77e2f07664b34b917cb"
+}

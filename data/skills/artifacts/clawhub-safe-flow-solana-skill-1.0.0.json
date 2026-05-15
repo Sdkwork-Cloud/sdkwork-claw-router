@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-flow-solana-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_flow_solana_skill",
+  "skill": {
+    "id": 45661,
+    "skillKey": "clawhub-safe-flow-solana-skill",
+    "name": "Sfaeflow Solana Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-flow-solana-skill",
+    "url": "https://clawhub.ai/skills/safe-flow-solana-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-flow-solana-skill-0df5837b9122b8dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when running SafeFlow against a deployed Solana program. Trigger for tasks such as generating an agent keypair, asking the owner to fund gas and create w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwangzil",
+      "userId": "s17998k8hk3q50mknqvwpep89h845q9m",
+      "displayName": "Togo",
+      "image": "https://avatars.githubusercontent.com/u/20198261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775233122959,
+      "changelog": "- Initial release of the SafeFlow Solana Agent Skill.\n- Enables AI agents to perform autonomous, rate-limited payments on Solana.\n- Provides scripts for keypair generation, owner handoff, payment execution, and config saving.\n- Supports on-chain enforcement of rate limit, budget cap, session expiration, and revocation.\n- Payment error handling with actionable agent responses for common failure scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7ba461aa7060f851a3a58f5f22eb28c20f15dd0f569556636cd13e233d48754"
+}

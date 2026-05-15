@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21255,
+  "uuid": "skill-clawhub-ai-dev-runtime",
+  "skillKey": "clawhub-ai-dev-runtime",
+  "name": "AI Dev Runtime",
+  "summary": "AI Dev Runtime tools - read_file, search, edit, run_terminal, run_tests (hybrid semantic+keyword search, learning memory)",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dev_runtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sammytan",
+      "features": [
+        "AI Dev Runtime tools",
+        "read_file, search, edit, run_terminal, run_tests (hybrid semantic+keyword search, learning memo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-dev-runtime@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17334441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-dev-runtime",
+      "url": "https://clawhub.ai/skills/ai-dev-runtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dev-runtime",
+    "url": "https://clawhub.ai/skills/ai-dev-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dev-runtime-534c4db08db5603e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-dev-runtime@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-dev-runtime-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90aaa70815ffd066242705e6ffae0cae4f7e0385cc9d7c34246e0d78a1397c5c",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:03:01.055Z"
+}

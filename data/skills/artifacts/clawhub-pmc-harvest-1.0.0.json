@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pmc-harvest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmc_harvest",
+  "skill": {
+    "id": 14427,
+    "skillKey": "clawhub-pmc-harvest",
+    "name": "PMC Harvest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmc-harvest",
+    "url": "https://clawhub.ai/skills/pmc-harvest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmc-harvest-6ab76330501c38a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and retrieve full-text or abstracts of open-access articles from PubMed Central by journal, year, or PMCID using NCBI's public APIs without an API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angusthefuzz",
+      "userId": "publishers:angusthefuzz",
+      "displayName": "angusthefuzz",
+      "image": "https://avatars.githubusercontent.com/u/226103412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 885,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771094361198,
+      "changelog": "Initial release - NCBI API client for PubMed Central",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bce8eb2813128414a20bda76b0863ec7ef9358ef9fe800f8c1200b1751df6bde"
+}

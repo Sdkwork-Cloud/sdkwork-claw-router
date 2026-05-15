@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memento@0.6.0",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memento",
+  "skill": {
+    "id": 15635,
+    "skillKey": "clawhub-memento",
+    "name": "Memento"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memento",
+    "url": "https://clawhub.ai/skills/memento",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memento-fe432cb211dac676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local persistent memory for OpenClaw agents. Captures conversations, extracts structured facts via LLM, and auto-recalls relevant knowledge before each turn...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "braibaud",
+      "userId": "publishers:braibaud",
+      "displayName": "Benjamin RAIBAUD",
+      "image": "https://avatars.githubusercontent.com/u/3780064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 975,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.6.0",
+      "createdAt": 1772385497294,
+      "changelog": "v0.6.0: Phase 1/2/3 pipeline redesign — history-agnostic extraction (prompt in .md file), embedding-based deduplication (cosine similarity replaces LLM hints), Phase 3 relation sweep background job (auto-builds knowledge graph edges). Secret facts excluded from all LLM operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0cac956ae9802817e5d926594590ccf32941341c8d29530d93c670a81795699"
+}

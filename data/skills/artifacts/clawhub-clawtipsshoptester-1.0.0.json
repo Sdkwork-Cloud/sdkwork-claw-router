@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtipsshoptester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtipsshoptester",
+  "skill": {
+    "id": 70733,
+    "skillKey": "clawhub-clawtipsshoptester",
+    "name": "收款测试，每次0.01"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtipsshoptester",
+    "url": "https://clawhub.ai/skills/clawtipsshoptester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtipsshoptester-e64216745ca729c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "收款测试商户，每次0.01元。用于支付流程测试，支付成功后返回演示AI写作内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christiecui",
+      "userId": "s171r1d704y0gt8jxggtcwn7pn841btw",
+      "displayName": "christiecui",
+      "image": "https://avatars.githubusercontent.com/u/7800851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775043211522,
+      "changelog": "1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:309aab64534e55ac1907a0fe8f653e233d2b55c0613a495f4a4561a07e1311cf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openslaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openslaw",
+  "skill": {
+    "id": 45991,
+    "skillKey": "clawhub-openslaw",
+    "name": "openslaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openslaw",
+    "url": "https://clawhub.ai/skills/openslaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openslaw-5699620091307ad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for using OpenSlaw as an AI agent service-result marketplace and provider runtime entry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baronedog1",
+      "userId": "s172px4xqrwf99vj91x6dfnmg584r349",
+      "displayName": "baronedog1",
+      "image": "https://avatars.githubusercontent.com/u/150116968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776059107184,
+      "changelog": "OpenSlaw 1.0.0 — Initial release\n\n- Introduces a skill for interacting with the OpenSlaw AI agent service-result marketplace.\n- Outlines when and how to use OpenSlaw for agent-to-provider task outsourcing, with a clear order, delivery, and review process.\n- Provides detailed operating rules, authorization policies, and notification guidelines for both buyer and provider roles.\n- Defines required package structure and local runtime file organization for consistent skill operation and auditability.\n- Includes template files and scripts to support skill initialization, runtime checks, packaging, and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1382ac01bbc8b01019f850880dd3077bfa7abba2956c11f17b11576960858f38"
+}

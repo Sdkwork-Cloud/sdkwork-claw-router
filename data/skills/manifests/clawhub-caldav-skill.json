@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18080,
+  "uuid": "skill-clawhub-caldav-skill",
+  "skillKey": "clawhub-caldav-skill",
+  "name": "Caldav",
+  "summary": "Manage CalDAV calendars and events, with special support for Radicale server. Use when the user wants to create, update, delete, or query calendar events, ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chakyiu",
+      "features": [
+        "Manage CalDAV calendars and events, with special support for Radicale server",
+        "Use when the user wants to create, update, delete, or query calendar events, ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caldav-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49145984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caldav-skill",
+      "url": "https://clawhub.ai/skills/caldav-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-skill",
+    "url": "https://clawhub.ai/skills/caldav-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-skill-edbd5b03f5f5e8bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caldav-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caldav-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2bee1607a35f35e6ee3f6364e4b5fb0f240929ac8d47073d2798e2c07146995",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T11:11:01.032Z"
+}

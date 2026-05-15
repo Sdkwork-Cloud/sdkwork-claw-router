@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12601,
+  "uuid": "skill-clawhub-task-sync",
+  "skillKey": "clawhub-task-sync",
+  "name": "Task Sync",
+  "summary": "Synchronize TickTick (Dida) and Google Tasks bidirectionally, including list/project mapping, task content sync, completion sync, and smart-list export (Today, Next 7 Days, All). Use when users ask to set up OAuth, run or schedule sync, fi.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiapeng Chen",
+      "features": [
+        "Synchronize TickTick (Dida) and Google Tasks bidirectionally, including list/project mapping, t.",
+        "Use when users ask to set up OAuth, run or schedule sync, fix mismatched/deleted/completed task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-sync@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130532438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-sync",
+      "url": "https://clawhub.ai/skills/task-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-sync",
+    "url": "https://clawhub.ai/skills/task-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-sync-eb506bd99c7389c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-sync@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-sync-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e9991eccf6bb35fbfb2a08d83c1391fa897cef07ead40437c1bb8ecca80eeb1",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T07:52:36.672Z"
+}

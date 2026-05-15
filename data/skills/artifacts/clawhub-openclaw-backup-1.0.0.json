@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup",
+  "skill": {
+    "id": 8299,
+    "skillKey": "clawhub-openclaw-backup",
+    "name": "OpenClaw Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup",
+    "url": "https://clawhub.ai/skills/openclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-ee7ee37eb61d9452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore OpenClaw data. Use when user asks to create backups, set up automatic backup schedules, restore from backup, or manage backup rotation. Handles ~/.openclaw directory archiving with proper exclusions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex3alex",
+      "userId": "publishers:alex3alex",
+      "displayName": "alex3alex",
+      "image": "https://avatars.githubusercontent.com/u/7851741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 26936,
+      "installsAllTime": 377,
+      "installsCurrent": 354,
+      "stars": 80,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770475997563,
+      "changelog": "Initial release: backup script with rotation, restore guide, cron integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25e50244991c483b3ab83371a3156ffbddb0846a423d0b1646db1916956f805d"
+}

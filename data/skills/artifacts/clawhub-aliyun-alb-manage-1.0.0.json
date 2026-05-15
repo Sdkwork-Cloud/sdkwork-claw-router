@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-alb-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_alb_manage",
+  "skill": {
+    "id": 43625,
+    "skillKey": "clawhub-aliyun-alb-manage",
+    "name": "Aliyun Alb Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-alb-manage",
+    "url": "https://clawhub.ai/skills/aliyun-alb-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-alb-manage-3569fd4af5abf3e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing and troubleshoot Alibaba Cloud ALB (Application Load Balancer), including the user asks to inspect, create, change, or debug ALB instances,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775092654845,
+      "changelog": "Initial release of aliyun-alb-manage skill.\n\n- Supports management and troubleshooting of Alibaba Cloud Application Load Balancer (ALB) resources.\n- Provides Python scripts and workflow guidance for inspecting, creating, modifying, and debugging ALB instances, listeners, server groups, rules, certificates, ACLs, security policies, and health checks.\n- Includes validation steps, output storage conventions, and credential handling instructions.\n- Offers playbooks for common inventory, inspection, health validation, and change workflows.\n- Documentation includes references for APIs, script usage, troubleshooting, and resource dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eebb86046686f2f8c92fe885af48c1abe8cf1178314855456230aba9c26a353c"
+}

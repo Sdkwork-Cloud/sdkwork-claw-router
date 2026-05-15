@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-plugin-tasknotes@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_plugin_tasknotes",
+  "skill": {
+    "id": 12367,
+    "skillKey": "clawhub-obsidian-plugin-tasknotes",
+    "name": "Obsidian Tasknotes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-plugin-tasknotes",
+    "url": "https://clawhub.ai/skills/obsidian-plugin-tasknotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-plugin-tasknotes-7f3b2df70abb98af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks in Obsidian via TaskNotes plugin API. Use when user wants to create tasks, list tasks, query by status or project, update task status, delete tasks, or check what they need to do."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benoitjadinon",
+      "userId": "s171dgmegdmechpx8t2c1nsqd584j2h9",
+      "displayName": "Benoit Jadinon",
+      "image": "https://avatars.githubusercontent.com/u/205116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1709,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769889421114,
+      "changelog": "Initial release of the TaskNotes skill for Obsidian:\n\n- Manage tasks in Obsidian using the TaskNotes plugin HTTP API.\n- Create, list, update, and delete tasks via simple CLI commands.\n- Supports task filtering by status, project, priority, and other properties.\n- Provides options listing for configured statuses, priorities, and projects.\n- Includes detailed usage instructions and example workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4f4de22d235fdfdffb5772f2e741f802618b26b2361b72d450887f6f5ff3c10"
+}

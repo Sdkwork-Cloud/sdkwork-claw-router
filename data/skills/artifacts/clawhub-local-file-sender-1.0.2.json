@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-file-sender@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file_sender",
+  "skill": {
+    "id": 65192,
+    "skillKey": "clawhub-local-file-sender",
+    "name": "Local File Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file-sender",
+    "url": "https://clawhub.ai/skills/local-file-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-sender-2cb74fbd8ec6b12e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地文件发送工具。用户通过自然语言指定本地文件路径，将文件上传到云存储并发送下载链接。支持 Windows/Linux/macOS 路径格式。⚠️ 仅适用于本地部署的 OpenClaw，云端部署无法访问用户本地文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2656255594",
+      "userId": "s172jn4ywc4gbzekdhfser46dx83gcbn",
+      "displayName": "2656255594",
+      "image": "https://avatars.githubusercontent.com/u/199182326?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775871588343,
+      "changelog": "修复：使用 lightclaw_upload_file 上传文件到云存储，解决飞书等平台不支持直接发送本地文件的问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de03da26993ea32c6883631df04954c630117660da6b681c766774f458fa02aa"
+}

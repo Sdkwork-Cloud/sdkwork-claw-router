@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15370,
+  "uuid": "skill-clawhub-slipbot-logseq-importer",
+  "skillKey": "clawhub-slipbot-logseq-importer",
+  "name": "SlipBot Logseq Importer",
+  "summary": "Import notes from Logseq pages into the slipbox. Use when user pastes a Logseq page with properties and bulleted notes. Parses page-level properties, extracts each bullet as an individual note, handles nested bullets by adding parent conte.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot_logseq_importer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaron Swab",
+      "features": [
+        "Import notes from Logseq pages into the slipbox",
+        "Use when user pastes a Logseq page with properties and bulleted notes",
+        "Parses page-level properties, extracts each bullet as an individual note, handles nested bullet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slipbot-logseq-importer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1689426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slipbot-logseq-importer",
+      "url": "https://clawhub.ai/skills/slipbot-logseq-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot-logseq-importer",
+    "url": "https://clawhub.ai/skills/slipbot-logseq-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-logseq-importer-64149e558c32414a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slipbot-logseq-importer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slipbot-logseq-importer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cc91b13f586b4536ae6174f6fba7a0ada62c1afd28813f11f63e1c98da8d2f2",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T03:46:12.813Z"
+}

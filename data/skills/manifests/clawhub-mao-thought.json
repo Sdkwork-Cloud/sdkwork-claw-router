@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70819,
+  "uuid": "skill-clawhub-mao-thought",
+  "skillKey": "clawhub-mao-thought",
+  "name": "mao-thought",
+  "summary": "提供毛泽东思想理论、著作核心观点及相关党史、新民主主义和社会主义革命中国问题的专业问答服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mao_thought",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jennyfun",
+      "features": [
+        "提供毛泽东思想理论、著作核心观点及相关党史、新民主主义和社会主义革命中国问题的专业问答服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mao-thought@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81336433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mao-thought",
+      "url": "https://clawhub.ai/skills/mao-thought"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mao-thought",
+    "url": "https://clawhub.ai/skills/mao-thought",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mao-thought-5060303251e34962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mao-thought@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mao-thought-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4707282033afb518f40e7f7f0b3b41a275714896f1a1b431ff42db6fa1f2af3",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T23:13:05.558Z"
+}

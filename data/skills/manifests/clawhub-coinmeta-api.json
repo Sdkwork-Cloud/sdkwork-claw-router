@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68802,
+  "uuid": "skill-clawhub-coinmeta-api",
+  "skillKey": "clawhub-coinmeta-api",
+  "name": "币界网API",
+  "summary": "查询加密货币快讯。触发场景：查询币圈快讯、获取加密货币新闻、crypto news、币圈资讯。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinmeta_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMeta",
+      "features": [
+        "查询加密货币快讯。触发场景：查询币圈快讯、获取加密货币新闻、crypto news、币圈资讯。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coinmeta-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12593507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coinmeta-api",
+      "url": "https://clawhub.ai/skills/coinmeta-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinmeta-api",
+    "url": "https://clawhub.ai/skills/coinmeta-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinmeta-api-d17fed629e2b50c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coinmeta-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coinmeta-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bf38495c58a87f530cf371ec74aa8330a11c8763f95427950a907f41bbeb553",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:19:39.926Z"
+}

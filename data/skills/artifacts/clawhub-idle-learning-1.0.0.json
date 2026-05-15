@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idle-learning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idle_learning",
+  "skill": {
+    "id": 68015,
+    "skillKey": "clawhub-idle-learning",
+    "name": "AI持续学习系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idle-learning",
+    "url": "https://clawhub.ai/skills/idle-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idle-learning-5907db24de68cc95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI持续学习系统 — 让AI每小时自动学习GitHub趋势、arXiv论文，凌晨自动蒸馏写入长期记忆。ano原创架构，实现AI真正意义上24小时不间断自我进化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freak30",
+      "userId": "s171xm3jz0ny52mpb1fc8v1rbx85zhw8",
+      "displayName": "freak30",
+      "image": "https://avatars.githubusercontent.com/u/56594001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777705624666,
+      "changelog": "首次发布：ano原创AI持续学习系统，每小时自动学习GitHub/论文，凌晨自动蒸馏写入长期记忆",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf85445bc437706999ea96d697282475528248e0d4adf7d8105cbd8f3abec22"
+}

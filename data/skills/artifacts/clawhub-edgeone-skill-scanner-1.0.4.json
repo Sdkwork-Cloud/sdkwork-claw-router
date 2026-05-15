@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeone-skill-scanner@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeone_skill_scanner",
+  "skill": {
+    "id": 54633,
+    "skillKey": "clawhub-edgeone-skill-scanner",
+    "name": "EdgeOne Skill Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeone-skill-scanner",
+    "url": "https://clawhub.ai/skills/edgeone-skill-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeone-skill-scanner-498aae113fdbe394.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan any agent skill for security risks before you install or use it. Powered by Tencent Zhuque Lab A.I.G (AI-Infra-Guard). 100% local static analysis — no f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aigsec",
+      "userId": "s172fyyzpw8844mzehmj0rn4c183hz1j",
+      "displayName": "aigsec",
+      "image": "https://avatars.githubusercontent.com/u/19813635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774322016608,
+      "changelog": "No functional changes in this release.\n\n- No file changes detected compared to the previous version.\n- No updates to features, logic, triggers, or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09f2d29fdf4d0fdc25347e2880f384baea24f740b5d7a12e44a6fb09c60d50ca"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plotlake@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plotlake",
+  "skill": {
+    "id": 69228,
+    "skillKey": "clawhub-plotlake",
+    "name": "Plotlake"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plotlake",
+    "url": "https://clawhub.ai/skills/plotlake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plotlake-233870d86e9a5c9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "订阅微信公众号等信源，获取原始文章内容用于整合日报"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eggyrooch-blip",
+      "userId": "s1714n78j6me0w8cs9asre19sd83mtzf",
+      "displayName": "eggyrooch-blip",
+      "image": "https://avatars.githubusercontent.com/u/226265806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774183267232,
+      "changelog": "Add curated source catalog: 24 bundles across 10 categories. One-click subscribe. Hardcoded API URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb95a1080b8c8015c5ff18170a585f2a5448a49bb6552091fb9ee39ebb99067e"
+}

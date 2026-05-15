@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41336,
+  "uuid": "skill-clawhub-modesty-build-developer-faq-page",
+  "skillKey": "clawhub-modesty-build-developer-faq-page",
+  "name": "build-developer-faq-page",
+  "summary": "Generate customer-facing answers for common developer questions. Use when working on FAQ content for developers, technical founders, product engineers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_build_developer_faq_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Generate customer-facing answers for common developer questions",
+        "Use when working on FAQ content for developers, technical founders, product engineers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-build-developer-faq-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-build-developer-faq-page",
+      "url": "https://clawhub.ai/skills/modesty-build-developer-faq-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-build-developer-faq-page",
+    "url": "https://clawhub.ai/skills/modesty-build-developer-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-build-developer-faq-page-bfb5451b1cfe73aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-build-developer-faq-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-build-developer-faq-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20c49fbd1371e5fe2c9df1d9d2aeb79ad1cffbc6e4d62dce2cb686c5311f2998",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:10:44.435Z"
+}

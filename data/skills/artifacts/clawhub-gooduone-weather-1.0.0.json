@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gooduone-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gooduone_weather",
+  "skill": {
+    "id": 73390,
+    "skillKey": "clawhub-gooduone-weather",
+    "name": "天气查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gooduone-weather",
+    "url": "https://clawhub.ai/skills/gooduone-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gooduone-weather-cea062746b8ae0c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询城市天气情况。使用场景：用户询问某个城市的天气、温度、或天气预报时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gooduone",
+      "userId": "s1724wga7pcjfqsqf1ksys3pyn83h77x",
+      "displayName": "gooduone",
+      "image": "https://avatars.githubusercontent.com/u/11918362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774443520688,
+      "changelog": "Initial release of the weather skill:\n\n- Provides city weather queries and forecasts in Chinese.\n- Supports customizable output formats (full, concise, JSON).\n- Includes example commands for querying current weather and multi-day forecasts.\n- Offers sample conversations for practical usage guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a9185a21eb3b931ce15b45fb0bd36fe36ad1e1c3f04d55457c35f5f7e7df56a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elcano-superpowers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elcano_superpowers",
+  "skill": {
+    "id": 51289,
+    "skillKey": "clawhub-elcano-superpowers",
+    "name": "Elcano Superpowers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elcano-superpowers",
+    "url": "https://clawhub.ai/skills/elcano-superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elcano-superpowers-f2d117670d7a7ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facilita desarrollo estructurado con sub-agentes para features, refactors grandes y cambios multi-archivo siguiendo diseño aprobado y TDD."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elcanoclaw",
+      "userId": "publishers:elcanoclaw",
+      "displayName": "elcano",
+      "image": "https://avatars.githubusercontent.com/u/262467406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772672349520,
+      "changelog": "Structured dev workflow with sub-agents for OpenClaw. Brainstorm → Plan → Execute → Review → Ship. Adapted from obra/superpowers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b63f574ec873e8b6d5e55bba1112312a0a5c40e3e5884dceea3f3d616a039f41"
+}

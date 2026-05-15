@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_monitor",
+  "skill": {
+    "id": 14563,
+    "skillKey": "clawhub-market-monitor",
+    "name": "Market Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-monitor",
+    "url": "https://clawhub.ai/skills/market-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-monitor-5f589c383e0ca014.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor cryptocurrency and financial markets via exchange APIs (Binance, OKX). Track prices, analyze trends, and generate market reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1026,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772796148813,
+      "changelog": "Initial release of market-monitor.\n\n- Provides real-time monitoring of cryptocurrency market data via exchange APIs (Binance, OKX).\n- Supports user-triggered queries, scheduled polling, and price alert triggers.\n- Calculates key technical indicators: MA7/25/99, RSI(14), MACD(12,26,9), Bollinger Bands, and volume analysis.\n- Generates trading signals (strong_buy, buy, neutral, sell, strong_sell) based on indicator rules.\n- Standardized JSON output includes price, 24h change, indicators, signal, confidence, and key levels.\n- Implements robust error handling for rate limits, invalid parameters, and service issues.\n- Enforces security: read-only operations, access-restricted domains, and auditing of all API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eff9fba7bb4f441f78f902703045ce516621a63ab4a722014925f00534651ef7"
+}

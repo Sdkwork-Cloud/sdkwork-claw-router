@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vajra@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vajra",
+  "skill": {
+    "id": 16881,
+    "skillKey": "clawhub-vajra",
+    "name": "Vajra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vajra",
+    "url": "https://clawhub.ai/skills/vajra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vajra-039ddbf8683afd2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze URLs, YouTube videos, tweets, or text for quality, bias, and reliability using the Vajra API (vajra.to). Use when the user asks to fact-check, analyz..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minhyeong112",
+      "userId": "publishers:minhyeong112",
+      "displayName": "Mig",
+      "image": "https://avatars.githubusercontent.com/u/104501046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 641,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771664582128,
+      "changelog": "- Added detailed privacy and data handling information, including caching and public permalink behavior.\n- Clarified setup instructions with explicit environment variable requirements.\n- Revised and expanded documentation for supported content types and limitations.\n- Improved usage instructions for presenting results and fetching prior analyses.\n- Added metadata section specifying required environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecb60e75f0f58af9474243f119ab8025844827071ef695a642b949eb4e9e7df0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73243,
+  "uuid": "skill-clawhub-p",
+  "skillKey": "clawhub-p",
+  "name": "P图",
+  "summary": "提供图片加载、尺寸调整、裁剪、格式转换、增强、滤镜、拼接、背景移除和文字添加等多功能创意图片处理能力。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "提供图片加载、尺寸调整、裁剪、格式转换、增强、滤镜、拼接、背景移除和文字添加等多功能创意图片处理能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/p@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "p",
+      "url": "https://clawhub.ai/skills/p"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p",
+    "url": "https://clawhub.ai/skills/p",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p-148de9c5a7a44d19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/p@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-p-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:978b679bc52cfac858564fbfa6186560dd197e9ccdc34d235b44fd17b474e510",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T01:20:18.550Z"
+}

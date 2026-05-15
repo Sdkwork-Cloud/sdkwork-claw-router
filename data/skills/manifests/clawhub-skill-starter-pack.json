@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57430,
+  "uuid": "skill-clawhub-skill-starter-pack",
+  "skillKey": "clawhub-skill-starter-pack",
+  "name": "Skill Starter Pack",
+  "summary": "One-click install curated skill packs for new OpenClaw users. Use when user says \"install starter pack\", \"setup skills\", \"一键安装\", \"新手套餐\", \"install essential/d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_starter_pack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ironmanc2014",
+      "features": [
+        "One-click install curated skill packs for new OpenClaw users",
+        "Use when user says \"install starter pack\", \"setup skills\", \"一键安装\", \"新手套餐\", \"install essential/d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-starter-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77605535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-starter-pack",
+      "url": "https://clawhub.ai/skills/skill-starter-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-starter-pack",
+    "url": "https://clawhub.ai/skills/skill-starter-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-starter-pack-d65a234eea274a9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-starter-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-starter-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5832202f0f2ed7e87ee954d395756e39fbfa960c55e38c0530a131ae45f8ecb0",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:08:15.728Z"
+}

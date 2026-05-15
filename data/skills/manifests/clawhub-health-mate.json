@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18285,
+  "uuid": "skill-clawhub-health-mate",
+  "skillKey": "clawhub-health-mate",
+  "name": "Health Mate",
+  "summary": "Executable OpenClaw health-report skill with Chinese, English, and Japanese report flows. It reads Markdown logs only from an explicitly configured MEMORY_DI...",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_mate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tankeito",
+      "features": [
+        "Executable OpenClaw health-report skill with Chinese, English, and Japanese report flows",
+        "It reads Markdown logs only from an explicitly configured MEMORY_DI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-mate@1.5.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129169395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-mate",
+      "url": "https://clawhub.ai/skills/health-mate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-mate",
+    "url": "https://clawhub.ai/skills/health-mate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-mate-7102b75597cc780c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-mate@1.5.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-mate-1.5.4.json",
+      "version": "1.5.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b8b023df1cfd4ce28546cef29515fa71372a8051fc68942a9223a5c05c85084",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:09:18.924Z"
+}

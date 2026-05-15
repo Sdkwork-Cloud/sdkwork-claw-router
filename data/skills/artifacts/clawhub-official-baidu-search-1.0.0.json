@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-baidu-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_baidu_search",
+  "skill": {
+    "id": 60994,
+    "skillKey": "clawhub-official-baidu-search",
+    "name": "Official Baidu Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-baidu-search",
+    "url": "https://clawhub.ai/skills/official-baidu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-baidu-search-e01dbb9ceddf67f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过百度 AI 搜索 API 进行网页搜索，获取实时信息和搜索结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erxiza",
+      "userId": "publishers:erxiza",
+      "displayName": "erxiza",
+      "image": "https://avatars.githubusercontent.com/u/104476245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773842501890,
+      "changelog": "Initial release of the Baidu Search skill.\n\n- Enables real-time web search using the Baidu AI Search API.\n- Supports keyword, time-based, and site-specific queries.\n- Requires a BAIDU_API_KEY for authentication.\n- Provides concise API usage instructions and response formats.\n- Suitable for retrieving news, weather, or other Chinese internet content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:268c0cef0b0a21ff8bf6aa69978faa465451078762e7ff30618b3450452fffa0"
+}

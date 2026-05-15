@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-wallet-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_wallet_skill",
+  "skill": {
+    "id": 27370,
+    "skillKey": "clawhub-agentic-wallet-skill",
+    "name": "Unibase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-wallet-skill",
+    "url": "https://clawhub.ai/skills/agentic-wallet-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-wallet-skill-430cb389f7b515f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage agentic wallets with Unibase. Use for autonomous onchain transactions on Ethereum, Solana, and other chains. Triggers on requests involving..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parasyte-x",
+      "userId": "s17272rmmn1x2atzw0aen7exg583gz0r",
+      "displayName": "parasyte-x",
+      "image": "https://avatars.githubusercontent.com/u/16874777?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772782310182,
+      "changelog": "- Initial release of the Unibase Agentic Wallets skill.\n- Enables autonomous creation and management of agent-controlled wallets for onchain transactions on Ethereum, Solana, and other networks.\n- Provides detailed security guidelines for transaction validation, prompt injection protection, and credential management.\n- Requires integration with the Unibase Proxy Service, including JWT-based authentication setup.\n- Offers quick reference for API endpoints to initiate login, check status, list wallets, and execute transactions.\n- Supports major chains including Ethereum, Base, Polygon, Arbitrum, Optimism, Solana, and more.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5aaaead516d4d52ae14cd527f019f2804abd50478cde194bbc889b6160b9c44"
+}

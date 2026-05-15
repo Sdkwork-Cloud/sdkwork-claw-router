@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-migrate-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_migrate_2",
+  "skill": {
+    "id": 25143,
+    "skillKey": "clawhub-openclaw-migrate-2",
+    "name": "Openclaw Migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-migrate-2",
+    "url": "https://clawhub.ai/skills/openclaw-migrate-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-migrate-2-3f875f07f3aad0e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate OpenClaw agents across platforms and servers, preserving identity, memory, config, and skills for deployment, backup, syncing, and upgrades."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haha8d",
+      "userId": "publishers:haha8d",
+      "displayName": "haha8d",
+      "image": "https://avatars.githubusercontent.com/u/260380368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772558702767,
+      "changelog": "Initial release of agent-migrate for OpenClaw agent migration and deployment.\n\n- Provides scripts to export and import complete OpenClaw agent state (identity, memory, config, skills, extensions).\n- Supports cross-platform migrations: local-to-remote, dev-to-prod, Linux/macOS/WSL environments.\n- Enables backup, rollback, disaster recovery, and workspace syncing.\n- Includes workflows for transferring via SSH or GitHub and self-contained restore scripts.\n- Offers platform-specific advice and a security checklist for safe migrations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4faaddb9c8e0205b5ecd1d60bfb3816496b3f9bb5f5b2bbf65850096da2f6042"
+}

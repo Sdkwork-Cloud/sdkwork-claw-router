@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8436,
+  "uuid": "skill-clawhub-agent-orchestrator",
+  "skillKey": "clawhub-agent-orchestrator",
+  "name": "Agent Orchestrator",
+  "summary": "Meta-agent skill for orchestrating complex tasks through autonomous sub-agents. Decomposes macro tasks into subtasks, spawns specialized sub-agents with dynamically generated SKILL.md files, coordinates file-based communication, consolidat.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aatmaan1",
+      "features": [
+        "Meta-agent skill for orchestrating complex tasks through autonomous sub-agents",
+        "Decomposes macro tasks into subtasks, spawns specialized sub-agents with dynamically generated.",
+        "MANDATORY TRIGGERS: orchestrate, multi-agent, decompose task, spawn agents, sub-agents, paralle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-orchestrator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168399420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-orchestrator",
+      "url": "https://clawhub.ai/skills/agent-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestrator",
+    "url": "https://clawhub.ai/skills/agent-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestrator-8c5aaea1391cc105.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-orchestrator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-orchestrator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3ebb856ddc8d65a3fd2ec04541aa5b715d4da756f6428abe9d7c878ab2ea012",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:12:22.777Z"
+}

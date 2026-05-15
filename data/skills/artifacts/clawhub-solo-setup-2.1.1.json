@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-setup@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_setup",
+  "skill": {
+    "id": 19073,
+    "skillKey": "clawhub-solo-setup",
+    "name": "Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-setup",
+    "url": "https://clawhub.ai/skills/solo-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-setup-d8c44174b22f772b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate project workflow config (docs/workflow.md) from existing PRD and CLAUDE.md with zero questions. Use when user says \"set up workflow\", \"configur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunto2",
+      "userId": "publishers:fortunto2",
+      "displayName": "Rust",
+      "image": "https://avatars.githubusercontent.com/u/1236751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 640,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1771711648707,
+      "changelog": "Universalize: remove project-specific references, add SearXNG recommendation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2570d111b027d3049a32a72a3117c71466c4361e3f9f38f64d301df74d6c7762"
+}

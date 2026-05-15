@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-weekly-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_weekly_report_generator",
+  "skill": {
+    "id": 25215,
+    "skillKey": "clawhub-daily-weekly-report-generator",
+    "name": "Ads Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-weekly-report-generator",
+    "url": "https://clawhub.ai/skills/daily-weekly-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-weekly-report-generator-13bedb400497aa74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce daily and weekly performance reports for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic campaigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772513187102,
+      "changelog": "daily-weekly-report-generator v1.0.0\n\n- Initial release of automated report generator for Meta, Google, TikTok, YouTube, Amazon, and DSP ads.\n- Specialized for actionable reporting: assembles daily/weekly ad reports, summarizes findings, and recommends next steps.\n- Includes support for key KPIs (revenue, ROAS, CPA, budget) across channel-specific workflows.\n- Offers clear workflow, decision criteria, and failure handling guidance.\n- Provides multiple practical usage examples and a robust input/output contract for consistent operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0478adc7615273d97bcd410c2b2215b5478f9deadfc77713e04b6aa61b2f2125"
+}

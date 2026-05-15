@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30553,
+  "uuid": "skill-clawhub-uplo-operations",
+  "skillKey": "clawhub-uplo-operations",
+  "name": "Uplo Operations",
+  "summary": "AI-powered operations knowledge management. Search process documentation, capacity plans, resource allocation data, and KPI dashboards with structured extrac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_operations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RooJenkins",
+      "features": [
+        "AI-powered operations knowledge management",
+        "Search process documentation, capacity plans, resource allocation data, and KPI dashboards with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uplo-operations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47111622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uplo-operations",
+      "url": "https://clawhub.ai/skills/uplo-operations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-operations",
+    "url": "https://clawhub.ai/skills/uplo-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-operations-0209435327789160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uplo-operations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uplo-operations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9270a10d940559940ea7864505edb2e9fc917f7a1edb4d9368efb2d659198049",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:49:57.293Z"
+}

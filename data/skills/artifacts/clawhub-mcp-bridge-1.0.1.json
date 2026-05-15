@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-bridge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_bridge",
+  "skill": {
+    "id": 18020,
+    "skillKey": "clawhub-mcp-bridge",
+    "name": "mcp-bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-bridge",
+    "url": "https://clawhub.ai/skills/mcp-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-bridge-7be19a3aee655baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use mcp-bridge-openclaw CLI to connect to and manage Model Context Protocol (MCP) servers with auto-reconnection and retry logic. Install via npm install -g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaggu1999",
+      "userId": "publishers:jaggu1999",
+      "displayName": "jaggu1999",
+      "image": "https://avatars.githubusercontent.com/u/38878571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773081020259,
+      "changelog": "- Added homepage and repository links to SKILL.md for improved discoverability.\n- Noted verified npm publisher (`jaggu37`) in the documentation.\n- Updated config example to emphasize security best practices using environment variables for tokens.\n- Simplified configuration and usage examples for clarity.\n- Minor edits for improved documentation and security guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:400637c4ed62bc74e7eb79513bbb4c347cab48db52e066a69f78db41ddfce839"
+}

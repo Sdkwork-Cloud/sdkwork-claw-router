@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-de-ai-ify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_de_ai_ify",
+  "skill": {
+    "id": 44201,
+    "skillKey": "clawhub-abe-de-ai-ify",
+    "name": "de-ai-ify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-de-ai-ify",
+    "url": "https://clawhub.ai/skills/abe-de-ai-ify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-de-ai-ify-4ae94174537c0285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove AI-generated jargon and restore human voice to text"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776918798747,
+      "changelog": "- Initial release of the de-ai-ify skill.\n- Removes common AI-generated jargon, overused transitions, hedging language, and corporate buzzwords from text.\n- Restores a natural human voice, with varied sentence lengths, conversational tone, and authentic phrasing.\n- Outputs a revised file with \"-HUMAN\" suffix, along with a changelog and a list of spots needing more specific examples.\n- Integrates with the SkillBoss API Hub for intelligent text transformation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c4207e8dcbbad2e7c1ba2d86275110d94397b5376c784a02bf806fdc2dd7478"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61597,
+  "uuid": "skill-clawhub-agent-cluster",
+  "skillKey": "clawhub-agent-cluster",
+  "name": "Agent Cluster",
+  "summary": "亚马逊外贸B2B多CMS Agent协作系统。支持Shopify/WooCommerce/Magento三大平台，A2A架构协调库存/采购/财务/物流四大专家Agent，三层安全网保障审批合规。即装即用，零配置开箱。",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_cluster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "亚马逊外贸B2B多CMS Agent协作系统。支持Shopify/WooCommerce/Magento三大平台，A2A架构协调库存/采购/财务/物流四大专家Agent，三层安全网保障审批合."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-cluster@3.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-cluster",
+      "url": "https://clawhub.ai/skills/agent-cluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-cluster",
+    "url": "https://clawhub.ai/skills/agent-cluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-cluster-5cefd93faa33cb5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-cluster@3.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-cluster-3.0.4.json",
+      "version": "3.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8684402ecc8d49e6884832a965881a9edfcd0165e585dedabdc75b2b83a2b141",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T15:03:39.752Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-pilot@0.4.6",
+  "version": "0.4.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_pilot",
+  "skill": {
+    "id": 23019,
+    "skillKey": "clawhub-skill-pilot",
+    "name": "Skill Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-pilot",
+    "url": "https://clawhub.ai/skills/skill-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-pilot-213380b629878fe0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive skill scheduling engine with environment-aware routing, user preferences, and self-learning optimization. Use when: (1) auto-select best skill for t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "namechenxinyu",
+      "userId": "s173cx6tnhh4xzygea36n0wrkn83gswy",
+      "displayName": "Mr-ChenXY",
+      "image": "https://avatars.githubusercontent.com/u/14796961?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 444,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "0.4.6",
+      "createdAt": 1774339949591,
+      "changelog": "Skill-pilot v0.4.6\n\n- Added SECURITY_DECLARATION.md to document security practices and behaviors.\n- Declared required and optional environment variables in SKILL.md, clarifying integration and API dependencies.\n- Updated security notes: details on file access, network probing, child process execution, and data handling.\n- Internal config and script updates for improved environment and mode management.\n- Added package.json for dependency management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:289fa47e4ec6f7c85518d100508be39a97a69809dd1539417ac63a8d3f5c400b"
+}

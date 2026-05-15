@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49375,
+  "uuid": "skill-clawhub-justoneapi-tiktok-get-post-comment",
+  "skillKey": "clawhub-justoneapi-tiktok-get-post-comment",
+  "name": "TikTok Post Comments API",
+  "summary": "Call GET /api/tiktok/get-post-comment/v1 for TikTok Post Comments through JustOneAPI with awemeId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_tiktok_get_post_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/tiktok/get-post-comment/v1 for TikTok Post Comments through JustOneAPI with aweme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-tiktok-get-post-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-tiktok-get-post-comment",
+      "url": "https://clawhub.ai/skills/justoneapi-tiktok-get-post-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-tiktok-get-post-comment",
+    "url": "https://clawhub.ai/skills/justoneapi-tiktok-get-post-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-tiktok-get-post-comment-7ca543e3ade1665e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-tiktok-get-post-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-tiktok-get-post-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71316ce6ad19d0b072531a9cbeb7daf814698ce24945b45316dbf70290b9f481",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:47:00.220Z"
+}

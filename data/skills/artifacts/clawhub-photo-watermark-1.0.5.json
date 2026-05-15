@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-watermark@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_watermark",
+  "skill": {
+    "id": 68181,
+    "skillKey": "clawhub-photo-watermark",
+    "name": "photo-watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-watermark",
+    "url": "https://clawhub.ai/skills/photo-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-watermark-4f931379a2a45251.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为照片添加可自定义的文字或图片水印。在处理图片、添加水印或批量处理照片时使用。支持JPG、PNG和其他常见图片格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nianxiushi",
+      "userId": "s1734n3h0wnfq3eevde0e2dj8x83gq3w",
+      "displayName": "x0cd",
+      "image": "https://avatars.githubusercontent.com/u/180824527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774376866775,
+      "changelog": "- Added SECURITY_COMPLIANCE.md for improved security documentation.\n- Added backup file install.py.bak.\n- Added compiled Python file scripts/__pycache__/add_watermark.cpython-314.pyc.\n- Removed install.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e0bbe43538b055324485bf04dd49fc1886c10d474cb170fc59a33ac9b9d73d4"
+}

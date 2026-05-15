@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-lightning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_lightning",
+  "skill": {
+    "id": 17531,
+    "skillKey": "clawhub-agent-lightning",
+    "name": "Agent Lightning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-lightning",
+    "url": "https://clawhub.ai/skills/agent-lightning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-lightning-72e210668e5aa6ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Research's agent training framework. Optimizes AI agents with Reinforcement Learning, Automatic Prompt Optimization, and Supervised Fine-tuning. Ze..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olmmlo-cmd",
+      "userId": "publishers:olmmlo-cmd",
+      "displayName": "olmmlo-cmd",
+      "image": "https://avatars.githubusercontent.com/u/256234782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771297784735,
+      "changelog": "Initial release of agent-lightning.\n\n- Microsoft Research’s agent training framework for optimizing AI agents.\n- Supports reinforcement learning, automatic prompt optimization, and supervised fine-tuning.\n- Compatible with LangChain, AutoGen, CrewAI, OpenAI Agent SDK, and more.\n- Zero code change needed with tracer integration or emit helpers.\n- Command-line tools provided for training, evaluation, exporting, and serving agents.\n- Extensive documentation, quick start guide, and resources available.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3dc9742e53bad5ee01b1fce60858d8c21ec71ce0812cc2c6e0a3f8b19287991c"
+}

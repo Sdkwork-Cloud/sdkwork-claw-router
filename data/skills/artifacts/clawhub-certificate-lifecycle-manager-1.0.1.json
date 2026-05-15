@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/certificate-lifecycle-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certificate_lifecycle_manager",
+  "skill": {
+    "id": 52973,
+    "skillKey": "clawhub-certificate-lifecycle-manager",
+    "name": "Certificate Lifecycle Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certificate-lifecycle-manager",
+    "url": "https://clawhub.ai/skills/certificate-lifecycle-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certificate-lifecycle-manager-08a9211b516828e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TLS/SSL certificate lifecycle — discovery, monitoring, renewal planning, and rotation. Track certificates across services, alert before expiry, automa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593617911,
+      "changelog": "Version 1.0.1 of certificate-lifecycle-manager\n\n- No file changes detected in this release.\n- No updates to features, documentation, or commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8727993fd8c6de9cded135a81f6dc27c379afae0fd3b460c72affc03ad3b0f7"
+}

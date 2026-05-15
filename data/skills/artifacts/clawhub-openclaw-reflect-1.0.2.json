@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-reflect@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_reflect",
+  "skill": {
+    "id": 15775,
+    "skillKey": "clawhub-openclaw-reflect",
+    "name": "openclaw-reflect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-reflect",
+    "url": "https://clawhub.ai/skills/openclaw-reflect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-reflect-960af8f79c31732a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improvement layer with evaluation separation, rollback, and tiered operator gates. Observes outcomes across sessions, detects recurring patterns, propos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 921,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771860571230,
+      "changelog": "openclaw-reflect 1.0.2\n\n- Added support for multiple evaluator backends (Anthropic, OpenAI, Ollama, rules) via new optional environment variables in SKILL.md.\n- Updated documentation to describe configuration using ANTHROPIC_API_KEY, OPENAI_API_KEY, OLLAMA_HOST/PORT, REFLECT_EVAL_MODEL, and REFLECT_EVALUATOR.\n- No changes to workflow or operator commands; improvements center on flexible evaluation options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c6fadff2b520c76df9afa16adab6d40ac7f4e9dd3d8da4dbb1bdd6166b8bd7e6"
+}

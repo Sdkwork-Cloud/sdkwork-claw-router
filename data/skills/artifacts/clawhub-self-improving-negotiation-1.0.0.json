@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-negotiation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_negotiation",
+  "skill": {
+    "id": 43437,
+    "skillKey": "clawhub-self-improving-negotiation",
+    "name": "Self-Improving Negotiation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-negotiation",
+    "url": "https://clawhub.ai/skills/self-improving-negotiation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-negotiation-673316f1d9dc61b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures negotiation strategy failures, concession leaks, BATNA weakness, framing misses, objection handling gaps, escalation misalignment, anchor errors, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jose-compu",
+      "userId": "s17bzpdy0evfmqz6nx069npr3n84p7f2",
+      "displayName": "José I. O.",
+      "image": "https://avatars.githubusercontent.com/u/30682875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776169452120,
+      "changelog": "- Initial release of self-improving-negotiation skill.\n- Enables structured logging of negotiation learnings, issues, and feature requests for continuous improvement.\n- Defines clear categories for capturing strategy failures, concession leaks, weak BATNA, objection handling gaps, and agreement risks.\n- Provides markdown logging templates and a quick reference guide for consistent documentation.\n- Supports both OpenClaw and generic agent/CLI usage with setup and file initialization instructions.\n- Promotes validated patterns to reusable assets like playbooks, objection libraries, and checklists.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce77f1a30a10af07703432e1c04775910ba989337f1ba77fd2055761ccdbeeaf"
+}

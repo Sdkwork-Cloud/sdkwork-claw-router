@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34570,
+  "uuid": "skill-clawhub-modulr",
+  "skillKey": "clawhub-modulr",
+  "name": "Modulr",
+  "summary": "Modulr integration. Manage data, records, and automate workflows. Use when the user wants to interact with Modulr data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modulr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Modulr integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Modulr data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modulr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modulr",
+      "url": "https://clawhub.ai/skills/modulr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modulr",
+    "url": "https://clawhub.ai/skills/modulr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modulr-ea354ef27aab00da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modulr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-modulr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4167e1171ea4030e4a382ee564291d5851d914fb34f5eef2d843a562a11be79",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:04.819Z"
+}

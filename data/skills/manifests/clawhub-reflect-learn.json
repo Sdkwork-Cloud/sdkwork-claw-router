@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8650,
+  "uuid": "skill-clawhub-reflect-learn",
+  "skillKey": "clawhub-reflect-learn",
+  "name": "Reflect",
+  "summary": "Self-improvement through conversation analysis. Extracts learnings from corrections and success patterns, proposes updates to agent files or creates new skil...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reflect_learn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Gonsalvez",
+      "features": [
+        "Self-improvement through conversation analysis",
+        "Extracts learnings from corrections and success patterns, proposes updates to agent files or cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reflect-learn@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9320602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reflect-learn",
+      "url": "https://clawhub.ai/skills/reflect-learn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reflect-learn",
+    "url": "https://clawhub.ai/skills/reflect-learn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reflect-learn-011b63ee2196969d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reflect-learn@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reflect-learn-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db98df06e630ef142f33380cbf5b8a860f06c7b30a20e217363a3fd8fe609d6",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T03:02:51.403Z"
+}

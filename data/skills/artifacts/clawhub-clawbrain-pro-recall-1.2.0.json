@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbrain-pro-recall@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro_recall",
+  "skill": {
+    "id": 66408,
+    "skillKey": "clawhub-clawbrain-pro-recall",
+    "name": "ClawBrain Recall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro-recall",
+    "url": "https://clawhub.ai/skills/clawbrain-pro-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-recall-7c15a3907f2dc8ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "v1.2 精准回忆能力：关键词与语义双重搜索、来源标注、相关度排序。精准找回历史对话和决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelfeng",
+      "userId": "s1711ra5rr9r77wq2y5n7mrf7d83gy56",
+      "displayName": "michaelfeng",
+      "image": "https://avatars.githubusercontent.com/u/2228296?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775796982522,
+      "changelog": "精准搜索+相关度百分比+来源标注",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16891b70778a410527ddfd660b456666f4c410c236d0b4b2dc60ade3f5ca099e"
+}

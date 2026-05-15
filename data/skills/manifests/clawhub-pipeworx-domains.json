@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54899,
+  "uuid": "skill-clawhub-pipeworx-domains",
+  "skillKey": "clawhub-pipeworx-domains",
+  "name": "Pipeworx domains",
+  "summary": "Search registered domain names by keyword and TLD — find what's taken via Domainsdb.info",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_domains",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search registered domain names by keyword and TLD — find what's taken via Domainsdb.info"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-domains@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-domains",
+      "url": "https://clawhub.ai/skills/pipeworx-domains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-domains",
+    "url": "https://clawhub.ai/skills/pipeworx-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-domains-78b0d24cf5175da1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-domains@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-domains-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51ca2ba56daf17f245a26cf23ecb427a930f72e48476e0a1f99b5a28c6df8d87",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:01:36.206Z"
+}

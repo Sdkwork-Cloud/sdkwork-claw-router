@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51278,
+  "uuid": "skill-clawhub-tonscan-address-balance",
+  "skillKey": "clawhub-tonscan-address-balance",
+  "name": "TONSCAN wallet balance",
+  "summary": "Look up TON blockchain wallet balances, address information, and token holdings using the free TonScan API — no API key required. Use this skill whenever the...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonscan_address_balance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marius",
+      "features": [
+        "Look up TON blockchain wallet balances, address information, and token holdings using the free.",
+        "Use this skill whenever the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tonscan-address-balance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1552570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tonscan-address-balance",
+      "url": "https://clawhub.ai/skills/tonscan-address-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonscan-address-balance",
+    "url": "https://clawhub.ai/skills/tonscan-address-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonscan-address-balance-f1bcd63ba2d38e57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tonscan-address-balance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tonscan-address-balance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e4200d063b82a8a3e13ddbc9863ae9d039df4b3b37e3911df6fb35241e53fcc",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:22:36.896Z"
+}

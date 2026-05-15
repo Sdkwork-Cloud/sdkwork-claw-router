@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69060,
+  "uuid": "skill-clawhub-zhida-content",
+  "skillKey": "clawhub-zhida-content",
+  "name": "知乎内容搜索分析",
+  "summary": "知乎内容搜索与分析工具。搜索话题热度、分析高价值问题、追踪竞品回答。 面向内容创作者和自媒体运营者，中文优先。 当用户说\"搜一下知乎\"、\"知乎有什么\"、\"分析知乎问题\"、\"知乎选题\"、\"搜知乎\"时触发。 Keywords: 知乎, zhihu, 搜索, 问题分析, 选题, 内容创作, 知乎热榜, 知乎搜索.",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhida_content",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "知乎内容搜索与分析工具。搜索话题热度、分析高价值问题、追踪竞品回答。 面向内容创作者和自媒体运营者，中文优先。 当用户说\"搜一下知乎\"、\"知乎有什么\"、\"分析知乎问题\"、\"知乎选题\"、\"搜知."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhida-content@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhida-content",
+      "url": "https://clawhub.ai/skills/zhida-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhida-content",
+    "url": "https://clawhub.ai/skills/zhida-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhida-content-aa462ce51441b869.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhida-content@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhida-content-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:357a048871f8a0178355263206a00b5414b20de9543e1781efa0df94ece9b091",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:49:32.513Z"
+}

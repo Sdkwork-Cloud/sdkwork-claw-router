@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20910,
+  "uuid": "skill-clawhub-structs-streaming",
+  "skillKey": "clawhub-structs-streaming",
+  "name": "Structs Streaming",
+  "summary": "Connects to the GRASS real-time event system via NATS WebSocket. Use when you need real-time game updates, want to react to events as they happen, need to mo...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_streaming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh McDougall",
+      "features": [
+        "Connects to the GRASS real-time event system via NATS WebSocket",
+        "Use when you need real-time game updates, want to react to events as they happen, need to mo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structs-streaming@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structs-streaming",
+      "url": "https://clawhub.ai/skills/structs-streaming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-streaming",
+    "url": "https://clawhub.ai/skills/structs-streaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-streaming-a6f99dc274583e64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structs-streaming@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structs-streaming-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d63a1f1182f509fbd6a2d74160aea0ed895f4562dd1d836c236efcd8dfa577b",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:46.770Z"
+}

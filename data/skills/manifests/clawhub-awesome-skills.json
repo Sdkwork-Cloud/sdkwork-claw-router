@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14067,
+  "uuid": "skill-clawhub-awesome-skills",
+  "skillKey": "clawhub-awesome-skills",
+  "name": "Awesome Skills",
+  "summary": "Fetch and explore popular OpenClaw skills from the awesome-openclaw-skills repository. Allows searching, filtering, and discovering community skills.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "opswm",
+      "features": [
+        "Fetch and explore popular OpenClaw skills from the awesome-openclaw-skills repository",
+        "Allows searching, filtering, and discovering community skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awesome-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20255706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awesome-skills",
+      "url": "https://clawhub.ai/skills/awesome-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-skills",
+    "url": "https://clawhub.ai/skills/awesome-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-skills-c893989e87f2dda4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awesome-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awesome-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:391a637b6587598dd5c485102c4c7b1a5c17e7af3897bab50c03396dbaecf0bc",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:15:54.766Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67570,
+  "uuid": "skill-clawhub-safety-kb-import",
+  "skillKey": "clawhub-safety-kb-import",
+  "name": "safety-kb-import",
+  "summary": "安全生产法规标准导入工具。当用户需要导入新法规或标准到知识库、PDF文本提取、条款拆分、批量导入、数据质量验证时使用。触发词：导入法规、添加标准、入库、导入知识库、补充标准、PDF提取文本、拆分条款、KB导入、safety-review import",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safety_kb_import",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyz9827",
+      "features": [
+        "安全生产法规标准导入工具。当用户需要导入新法规或标准到知识库、PDF文本提取、条款拆分、批量导入、数据质量验证时使用。触发词：导入法规、添加标准、入库、导入知识库、补充标准、PDF提取文本、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safety-kb-import@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268538652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safety-kb-import",
+      "url": "https://clawhub.ai/skills/safety-kb-import"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safety-kb-import",
+    "url": "https://clawhub.ai/skills/safety-kb-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safety-kb-import-48faaafb7348ee3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safety-kb-import@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safety-kb-import-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32ffe62eea0aceafe8a787d351cbc788bcb5365fffa9a369452ad763c983d3a1",
+      "artifactSizeBytes": 2790
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T08:57:42.513Z"
+}

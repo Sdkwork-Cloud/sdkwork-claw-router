@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39711,
+  "uuid": "skill-clawhub-benchmarked-free-ride",
+  "skillKey": "clawhub-benchmarked-free-ride",
+  "name": "Benchmarked Free Ride",
+  "summary": "Pick the best free OpenRouter models using live benchmark CI results. Use when: user wants performance-ranked free model recommendations, needs a model that...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.benchmarked_free_ride",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChengZhang-98",
+      "features": [
+        "Pick the best free OpenRouter models using live benchmark CI results",
+        "Use when: user wants performance-ranked free model recommendations, needs a model that..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/benchmarked-free-ride@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102538889?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "benchmarked-free-ride",
+      "url": "https://clawhub.ai/skills/benchmarked-free-ride"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "benchmarked-free-ride",
+    "url": "https://clawhub.ai/skills/benchmarked-free-ride",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/benchmarked-free-ride-1c2aff1b714671c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/benchmarked-free-ride@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-benchmarked-free-ride-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac34cbc5fbac3f0428f5c4cb6f01407c047259e5cb53ffaab60cc41b66fef690",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:39:20.096Z"
+}

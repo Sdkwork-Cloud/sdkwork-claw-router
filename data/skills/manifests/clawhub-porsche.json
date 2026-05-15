@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30651,
+  "uuid": "skill-clawhub-porsche",
+  "skillKey": "clawhub-porsche",
+  "name": "Porsche",
+  "summary": "Porsche vehicle information, model specs, pricing, and latest news from the iconic German sports car manufacturer.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porsche",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Porsche vehicle information, model specs, pricing, and latest news from the iconic German sport."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/porsche@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "porsche",
+      "url": "https://clawhub.ai/skills/porsche"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porsche",
+    "url": "https://clawhub.ai/skills/porsche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porsche-9c15e816069946fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/porsche@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-porsche-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65fc0a7d82893540dfa200bb6ed9120f18f555458f06976165976fe6978c1da3",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:38:40.230Z"
+}

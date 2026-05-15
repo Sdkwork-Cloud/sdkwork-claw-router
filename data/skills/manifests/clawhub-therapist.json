@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20623,
+  "uuid": "skill-clawhub-therapist",
+  "skillKey": "clawhub-therapist",
+  "name": "Therapist",
+  "summary": "Evidence-based therapeutic techniques — CBT, ACT, mindfulness, and reframing for anxiety, rumination, and behavioral patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.therapist",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Evidence-based therapeutic techniques — CBT, ACT, mindfulness, and reframing for anxiety, rumin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/therapist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "therapist",
+      "url": "https://clawhub.ai/skills/therapist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "therapist",
+    "url": "https://clawhub.ai/skills/therapist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/therapist-f78fe53a3f107b84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/therapist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-therapist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8613d1bf0e2e7bfa554ac25b8daa6b05f3d6e6348b895f8cf9d7d7988326108",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T04:09:06.019Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goudantest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goudantest",
+  "skill": {
+    "id": 38262,
+    "skillKey": "clawhub-goudantest",
+    "name": "goudantest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goudantest",
+    "url": "https://clawhub.ai/skills/goudantest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goudantest-7addfcbdd4352430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced code review assistant with intelligent analysis, multi-language support, and structured feedback. Performs comprehensive reviews covering correctnes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gou1995",
+      "userId": "s17f9zfyrzvs9k7ye9djazfdhx83k5dw",
+      "displayName": "Gou1995",
+      "image": "https://avatars.githubusercontent.com/u/166381019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504655189,
+      "changelog": "code-review-v2 v1.0.0 initial release\n\n- Introduces an advanced code review assistant supporting intelligent analysis and multi-language code review.\n- Implements structured workflows for context analysis, automated static and security checks, and phased manual review.\n- Provides detailed review dimensions (correctness, security, performance, maintainability, observability, testing) and severity classification.\n- Includes quick reference language-specific checklists for Python, JavaScript/TypeScript, Java, Go, Rust, C#, Ruby, and PHP.\n- Outlines common anti-patterns to flag and offers flexible output formats (Markdown, JSON, checklist).\n- Links to comprehensive checklists, feedback templates, and example reviews for in-depth guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f0ac5bb666fa256bd930cf2777926b89de77705699f860695c71285929f8cd6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolution-state-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_state_analyzer",
+  "skill": {
+    "id": 12334,
+    "skillKey": "clawhub-evolution-state-analyzer",
+    "name": "Evolution State Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-state-analyzer",
+    "url": "https://clawhub.ai/skills/evolution-state-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-state-analyzer-4796c7a74cdaa6ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes the evolution memory graph for stagnation patterns, recurring failures, and success plateaus. Generates actionable insights to guide future evolutio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1799,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771180275358,
+      "changelog": "- Initial release of evolution-state-analyzer.\n- Analyzes the evolution memory graph for stagnation, recurring failures, and plateaus.\n- Detects gene efficacy and groups failure causes for deeper insights.\n- Provides actionable recommendations and trend reports to guide future cycles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80d14f6ef1279af5ce0bf57836604a2ba804e040e8c165c84a51672f13b4c4c9"
+}

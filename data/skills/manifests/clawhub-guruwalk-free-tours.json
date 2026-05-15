@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14328,
+  "uuid": "skill-clawhub-guruwalk-free-tours",
+  "skillKey": "clawhub-guruwalk-free-tours",
+  "name": "GuruWalk Free Tours Search",
+  "summary": "Search GuruWalk free tours through the GuruWalk MCP server and return bookable options by city, dates, and language. Use this skill when the user asks for free tours, walking tours, guided city tours, plans in a city, or availability of to.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guruwalk_free_tours",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gdanielwalk",
+      "features": [
+        "Search GuruWalk free tours through the GuruWalk MCP server and return bookable options by city,.",
+        "Use this skill when the user asks for free tours, walking tours, guided city tours, plans in a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guruwalk-free-tours@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183401345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guruwalk-free-tours",
+      "url": "https://clawhub.ai/skills/guruwalk-free-tours"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guruwalk-free-tours",
+    "url": "https://clawhub.ai/skills/guruwalk-free-tours",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guruwalk-free-tours-3ae1d33b5535fffc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guruwalk-free-tours@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-guruwalk-free-tours-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3727e5fb3a7c1c2b3f180bc0802cf43d0a200a359a75aee04e633d1e73733c07",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T12:30:02.607Z"
+}

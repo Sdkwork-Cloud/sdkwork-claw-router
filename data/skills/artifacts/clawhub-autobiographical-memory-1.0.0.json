@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autobiographical-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autobiographical_memory",
+  "skill": {
+    "id": 49939,
+    "skillKey": "clawhub-autobiographical-memory",
+    "name": "Autobiographical Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autobiographical-memory",
+    "url": "https://clawhub.ai/skills/autobiographical-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autobiographical-memory-3a87e36373849469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured personal memory system that enables agents to persist, consolidate, and recall episodic and semantic memories across sessions. Use when: (1) recor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyucheneureka",
+      "userId": "s17afw0d4ktm6fmpst7chm306h86ca4b",
+      "displayName": "xuyuchen",
+      "image": "https://avatars.githubusercontent.com/u/275321050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 48,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778301729110,
+      "changelog": "Initial release: episodic + semantic memory system with consolidation scripts and recall patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a43975c012bf57ab46af3389eb0c264333e1a7b04f2fd755e070c48afa560083"
+}

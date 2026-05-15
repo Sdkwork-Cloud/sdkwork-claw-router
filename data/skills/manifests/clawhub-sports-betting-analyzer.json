@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69147,
+  "uuid": "skill-clawhub-sports-betting-analyzer",
+  "skillKey": "clawhub-sports-betting-analyzer",
+  "name": "Sports Betting Analyzer",
+  "summary": "智能体育彩票分析助手 - 基于数据分析和简单机器学习的比赛预测辅助工具。支持NBA、足球世界杯等赛事分析，提供数据收集、基础统计、概率预测和投注建议。重点在于辅助决策，而非预测结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_betting_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nopedijah",
+      "features": [
+        "智能体育彩票分析助手",
+        "基于数据分析和简单机器学习的比赛预测辅助工具。支持NBA、足球世界杯等赛事分析，提供数据收集、基础统计、概率预测和投注建议。重点在于辅助决策，而非预测结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sports-betting-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269079192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sports-betting-analyzer",
+      "url": "https://clawhub.ai/skills/sports-betting-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-betting-analyzer",
+    "url": "https://clawhub.ai/skills/sports-betting-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-betting-analyzer-43aad91f28cea690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sports-betting-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sports-betting-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f49d621e60cfb1e8da0133c85202efbdf17b07f0b59577ec4543111b1d6ce67",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:00:48.046Z"
+}

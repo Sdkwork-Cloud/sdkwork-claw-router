@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-reasoning-plus@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_reasoning_plus",
+  "skill": {
+    "id": 63951,
+    "skillKey": "clawhub-adaptive-reasoning-plus",
+    "name": "Adaptive Reasoning Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-reasoning-plus",
+    "url": "https://clawhub.ai/skills/adaptive-reasoning-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-reasoning-plus-15dd5449b5983b6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自适应推理增强版。当用户要求\"评估复杂度\"、\"需要深度分析\"、\"复杂问题\"、\"多步推理\"时激活。 评估每次任务的复杂度，动态决定推理深度。 0-2分快速执行，3-5分标准处理，6-7分深度思考，8+分强制启用 extended thinking。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsangho",
+      "userId": "s17b2ag388tkghrmhncd7wbfm183pgcm",
+      "displayName": "tsangho",
+      "image": "https://avatars.githubusercontent.com/u/143068916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775356369248,
+      "changelog": "Claude Code架构学习后优化：完善复杂度评分标准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1acfe2f18d512f0ffd38e9da657f7458bcbb2dd149089cf9a6a22cd893020e07"
+}

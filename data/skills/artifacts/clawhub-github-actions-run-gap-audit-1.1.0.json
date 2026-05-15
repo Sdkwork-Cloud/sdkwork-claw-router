@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-run-gap-audit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_run_gap_audit",
+  "skill": {
+    "id": 28619,
+    "skillKey": "clawhub-github-actions-run-gap-audit",
+    "name": "GitHub Actions Run Gap Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-run-gap-audit",
+    "url": "https://clawhub.ai/skills/github-actions-run-gap-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-run-gap-audit-72e93c30da401011.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect GitHub Actions workflow groups that stopped running on their normal cadence using median run intervals and current inactivity gap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772870778247,
+      "changelog": "Add run-scope regex filters (RUN_ID_MATCH/EXCLUDE, RUN_URL_MATCH/EXCLUDE) for targeted cadence triage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1973847e6bb2d9a634ce3e34ec59e910e8b4e89a43c827f622ab311056aa7056"
+}

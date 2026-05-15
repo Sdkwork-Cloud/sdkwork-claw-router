@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catgirl-rp@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catgirl_rp",
+  "skill": {
+    "id": 70591,
+    "skillKey": "clawhub-catgirl-rp",
+    "name": "猫娘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catgirl-rp",
+    "url": "https://clawhub.ai/skills/catgirl-rp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catgirl-rp-7d9e46065b30ef19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "猫娘角色扮演技能。用于与用户进行猫娘人设的互动对话。 Use when: 用户要求角色扮演、猫娘对话、陪睡等互动场景，支持进行配置操作。 NOT for: 正常的技术问答、模型咨询等非角色扮演场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nhfy1w",
+      "userId": "s173hwm8mdkqe2wejhv59q96hs84gtad",
+      "displayName": "CAPTAIN 1275",
+      "image": "https://avatars.githubusercontent.com/u/108686782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775786689859,
+      "changelog": "Version 2.1.1 of catgirl-rp\n\n- No file changes detected in this version.\n- Functionality and behavior remain unchanged from the previous release.\n- Documentation and skill instructions remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91c2be4c3aa4e06afed0f3fccfce16fc63095d01c56a19fe14daae0e5e0cff8a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21405,
+  "uuid": "skill-clawhub-oss-contributor",
+  "skillKey": "clawhub-oss-contributor",
+  "name": "OSS Contributor",
+  "summary": "Discover and resolve open source GitHub issues across community repos during idle time. Finds good-first-issue/help-wanted/documentation issues, forks repos,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oss_contributor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Bolander",
+      "features": [
+        "Discover and resolve open source GitHub issues across community repos during idle time",
+        "Finds good-first-issue/help-wanted/documentation issues, forks repos,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oss-contributor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oss-contributor",
+      "url": "https://clawhub.ai/skills/oss-contributor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oss-contributor",
+    "url": "https://clawhub.ai/skills/oss-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oss-contributor-ab258879c173dbc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oss-contributor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oss-contributor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ae2b9495ba84e285b69be62d2da20847265b35c01fdafe4e936946123ba788c",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:27:55.123Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56437,
+  "uuid": "skill-clawhub-ecdysales",
+  "skillKey": "clawhub-ecdysales",
+  "name": "Ecdysales",
+  "summary": "Quick product image processing: add price sticker + watermark + logo. Use when user sends `$price:` with an image. Minimal context, runs fast.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecdysales",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rueshady",
+      "features": [
+        "Quick product image processing: add price sticker + watermark + logo",
+        "Use when user sends `$price:` with an image",
+        "Minimal context, runs fast."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecdysales@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15109833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecdysales",
+      "url": "https://clawhub.ai/skills/ecdysales"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecdysales",
+    "url": "https://clawhub.ai/skills/ecdysales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecdysales-5a05fc3c036bee83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecdysales@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecdysales-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e3b93b446ebc5e7f83fc764eb70b585606fb82d51a33adffdbec440ba50f42b",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T21:25:21.597Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35994,
+  "uuid": "skill-clawhub-auto-updater-tmp",
+  "skillKey": "clawhub-auto-updater-tmp",
+  "name": "Auto Updater.Tmp",
+  "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_tmp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laner",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily",
+        "Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updater-tmp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101982106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updater-tmp",
+      "url": "https://clawhub.ai/skills/auto-updater-tmp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-tmp",
+    "url": "https://clawhub.ai/skills/auto-updater-tmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-tmp-842bc14b66fc3d64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updater-tmp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-tmp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06636428e9a2f79a15c4e0ed7ef3574fb58644c84974054b7f555a809bff646b",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T22:04:12.428Z"
+}

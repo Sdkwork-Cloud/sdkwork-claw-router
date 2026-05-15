@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9864,
+  "uuid": "skill-clawhub-agent-task-manager",
+  "skillKey": "clawhub-agent-task-manager",
+  "name": "Agent Task Manager",
+  "summary": "Manages and orchestrates multi-step, stateful agent workflows; handles task dependencies, persistent state, error recovery, and external rate-limiting. Use for creating new multi-agent systems, improving sequential workflows, or managing t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_task_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dobbybud",
+      "features": [
+        "Manages and orchestrates multi-step, stateful agent workflows",
+        "handles task dependencies, persistent state, error recovery, and external rate-limiting",
+        "Use for creating new multi-agent systems, improving sequential workflows, or managing time-boun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-task-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258559218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-task-manager",
+      "url": "https://clawhub.ai/skills/agent-task-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-task-manager",
+    "url": "https://clawhub.ai/skills/agent-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-task-manager-ef6298bf6fbc3b80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-task-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-task-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:830b42e4b43b99d945bdf1593e1f676a67b630b3800b966aa2ac7fc4d8448c20",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:31:41.965Z"
+}

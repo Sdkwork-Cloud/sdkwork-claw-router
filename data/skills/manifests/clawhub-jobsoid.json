@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30685,
+  "uuid": "skill-clawhub-jobsoid",
+  "skillKey": "clawhub-jobsoid",
+  "name": "Jobsoid",
+  "summary": "Jobsoid integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jobsoid data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobsoid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Jobsoid integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jobsoid data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobsoid@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobsoid",
+      "url": "https://clawhub.ai/skills/jobsoid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobsoid",
+    "url": "https://clawhub.ai/skills/jobsoid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobsoid-ea049b3156326dc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobsoid@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobsoid-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3b230a7ba6cf8af7d2f027e8cd62d4bebd11fc97f5325e745a5e74f4a6356be",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:02:24.450Z"
+}

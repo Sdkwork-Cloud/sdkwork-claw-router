@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-video-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_video_creator",
+  "skill": {
+    "id": 38994,
+    "skillKey": "clawhub-eb-video-creator",
+    "name": "Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-video-creator",
+    "url": "https://clawhub.ai/skills/eb-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-video-creator-8b56b3d2f36c3886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates videos from scratch using ffmpeg, programming, and assets. Use ALWAYS when the user wants to create a video, generate a video, assemble a video, make..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775536832604,
+      "changelog": "video-creator 1.1.0 — Initial release\n\n- Enables programmatic video creation using ffmpeg, Python (moviepy, Pillow), and shell scripts.\n- Supports all common content types: slideshows, videos with text/subtitles, product demos, compilations/montages, and more.\n- Includes platform-specific specs for YouTube, Instagram, TikTok, LinkedIn, Twitter/X, and Shorts.\n- Outlines expert workflows for goal setting, asset collection, script generation, and optimization.\n- Recommends when to use the remotion skill for advanced React/TypeScript-based video needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19ef784d2563e9623b6b58ff0632ebb83c1c705025720a0fbe7a61e6a8ef8be5"
+}

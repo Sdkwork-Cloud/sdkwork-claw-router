@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12026,
+  "uuid": "skill-clawhub-image-resize",
+  "skillKey": "clawhub-image-resize",
+  "name": "Image Magic resizer",
+  "summary": "Resize images using ImageMagick (CLI). Entrypoint is a Bash script.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_resize",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pr1vateer",
+      "features": [
+        "Resize images using ImageMagick (CLI)",
+        "Entrypoint is a Bash script."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-resize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85460639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-resize",
+      "url": "https://clawhub.ai/skills/image-resize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-resize",
+    "url": "https://clawhub.ai/skills/image-resize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-resize-3984aac0977a8e33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-resize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-resize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9b3755e4e2bc664b82fd84983bee372b56da607d5c2a8e92188c9f0d610f16c",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T17:26:17.410Z"
+}

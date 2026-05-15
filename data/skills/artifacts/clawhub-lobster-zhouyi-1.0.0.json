@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-zhouyi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_zhouyi",
+  "skill": {
+    "id": 72803,
+    "skillKey": "clawhub-lobster-zhouyi",
+    "name": "龙虾命理学习"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-zhouyi",
+    "url": "https://clawhub.ai/skills/lobster-zhouyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-zhouyi-3d2c304b8d044eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "龙虾角色，专业学习周易与传统命理知识。每日19:00定时推送一个知识点，以严谨、学术化、非迷信的方式解读传统文化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "112297720",
+      "userId": "s170vae12js1mjm9dtvvd9w6bx83ydny",
+      "displayName": "112297720",
+      "image": "https://avatars.githubusercontent.com/u/39222232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774952874739,
+      "changelog": "- Initial release of lobster-zhouyi skill.\n- Features a scholarly lobster character specializing in Zhouyi and traditional fate studies.\n- Provides daily knowledge points at 19:00 (Beijing time) with academic, non-superstitious cultural interpretations.\n- Follows strict neutrality: only classical sources and authoritative commentaries, avoiding predictive or superstitious statements.\n- Learning scope organized in clearly defined stages, focusing on major classics and academic perspectives.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed30ea7f34bd5dad077b0a3a6367bf072bfb5323782cb15d204d6c4c7234688c"
+}

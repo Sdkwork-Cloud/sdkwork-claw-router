@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ml-experiment-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ml_experiment_tracker",
+  "skill": {
+    "id": 17953,
+    "skillKey": "clawhub-ml-experiment-tracker",
+    "name": "Ml Experiment Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ml-experiment-tracker",
+    "url": "https://clawhub.ai/skills/ml-experiment-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ml-experiment-tracker-ae00a4e5b02b7d4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan reproducible ML experiment runs with explicit parameters, metrics, and artifacts. Use before model training to standardize tracking-ready experiment def..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x-professor",
+      "userId": "s17bg4xm5b50d70ncct7b9shxh83n6jb",
+      "displayName": "Muhammad Mazhar Saeed",
+      "image": "https://avatars.githubusercontent.com/u/160357695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772136555876,
+      "changelog": "Initial release of ml-experiment-tracker.\n\n- Plan ML experiment runs with explicit parameters, metrics, and artifacts.\n- Standardize experiment definitions for tracking and reproducibility.\n- Generate structured run plans before model training.\n- Provides scripts for creating run plans and reference guides for best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a7fb2f52a84e173f6dfd069a2f78b5d7be7346bec17f807b253d17d19945466"
+}

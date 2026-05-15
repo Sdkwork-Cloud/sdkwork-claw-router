@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huangli-query-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangli_query_cn",
+  "skill": {
+    "id": 73721,
+    "skillKey": "clawhub-huangli-query-cn",
+    "name": "黄历查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangli-query-cn",
+    "url": "https://clawhub.ai/skills/huangli-query-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangli-query-cn-611fd6138eb580c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "黄历查询工具。按公历日期查询今日黄历、老黄历、每日宜忌、吉神凶煞、神煞、冲煞、吉日凶日。适合查询今天黄历怎么样、今天宜忌、明天适不适合搬家、结婚开业开工选哪天、最近哪些是吉日。支持单日黄历、批量区间查询、多日筛选吉日。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocdchina",
+      "userId": "s1799fbtfrdh2j5g9vgsgn2r7d83netr",
+      "displayName": "Leocdchina",
+      "image": "https://avatars.githubusercontent.com/u/102421943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777611205640,
+      "changelog": "补足真实文档与触发场景，专门优化黄历关键词检索",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc32fbb4dc0b8854be36172992fae69c96eba03480f097ae14264e1dc1e1eaf7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-styler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_styler",
+  "skill": {
+    "id": 10084,
+    "skillKey": "clawhub-whatsapp-styler",
+    "name": "WhatsApp Styler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-styler",
+    "url": "https://clawhub.ai/skills/whatsapp-styler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-styler-0df3e442616908ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill to ensure all messages sent to WhatsApp follow the platform's specific formatting syntax. It prevents markdown bloat and ensures a clean, mobile-first reading experience."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubenfb23",
+      "userId": "s17cxwc75n6z653vb02yr0cpqs85s8ge",
+      "displayName": "Rubén Fernández Boullón",
+      "image": "https://avatars.githubusercontent.com/u/98909961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2883,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769436044099,
+      "changelog": "Strict WhatsApp formatting rules for clean mobile messaging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc6a190f6f0bfe4daaebbb686811cffe1a7825c38c07e0590bc1b55611b1f2ab"
+}

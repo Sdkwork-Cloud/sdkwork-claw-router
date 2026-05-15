@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31539,
+  "uuid": "skill-clawhub-aisa-perplexity-search-skill",
+  "skillKey": "clawhub-aisa-perplexity-search-skill",
+  "name": "Perplexity Search",
+  "summary": "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_perplexity_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bowen-dotcom",
+      "features": [
+        "Perplexity Sonar search and answer generation through AIsa",
+        "Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-perplexity-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258157479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-perplexity-search-skill",
+      "url": "https://clawhub.ai/skills/aisa-perplexity-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-perplexity-search-skill",
+    "url": "https://clawhub.ai/skills/aisa-perplexity-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-perplexity-search-skill-09b8b341e026ed59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-perplexity-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-perplexity-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f6e6ad3cc201a5960573fc156995fe0fac3d5862c07e3fc719d2f21b4b91894",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:34:59.258Z"
+}

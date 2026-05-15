@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pincaimao-jd-assistants@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_jd_assistants",
+  "skill": {
+    "id": 57793,
+    "skillKey": "clawhub-pincaimao-jd-assistants",
+    "name": "聘才猫（Pincaimao）JD 助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-jd-assistants",
+    "url": "https://clawhub.ai/skills/pincaimao-jd-assistants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-jd-assistants-84975455f90750e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聘才猫 - JD 助手 Use when calling Pincaimao JD Assistant API to generate job postings from job descriptions or generate structured job tags from job titles. Requi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pincaimao",
+      "userId": "s1713pekdpzv03xf9a2xmpv2y183mkb1",
+      "displayName": "聘才猫（Pincaimao）",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775114142960,
+      "changelog": "- Added an invite link to obtain a free API key via registration and authentication.\n- No functional or API changes; documentation improved for onboarding new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df6c174145f1abf7d77c12c9f951ae770f2d294c0356645b54a6dd8524b83787"
+}

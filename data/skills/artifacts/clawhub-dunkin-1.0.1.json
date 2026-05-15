@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dunkin@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dunkin",
+  "skill": {
+    "id": 72151,
+    "skillKey": "clawhub-dunkin",
+    "name": "Dunkin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dunkin",
+    "url": "https://clawhub.ai/skills/dunkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dunkin-2df7b03d1a69954f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供唐恩都乐咖啡、甜甜圈及烘焙食品的菜单、门店信息、会员福利及定制服务等查询与支持。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776238596706,
+      "changelog": "- 简化并重构了品牌介绍文档，聚焦 dunkin 的核心信息与使用场景\n- 新增 summary、read_when 等结构化元数据，提升信息检索体验\n- 明确涵盖内容范围（历史、产品、行业地位等）\n- 调整为面向市场调研和商业决策等场景\n- 建议用户参考官方与权威数据源，保障信息准确",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaf7a4d8dc19a4e473612861be6ebca91c19d6bb79841d2722a24b923cad88be"
+}

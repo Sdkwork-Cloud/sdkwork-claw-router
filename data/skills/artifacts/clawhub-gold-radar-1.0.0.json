@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_radar",
+  "skill": {
+    "id": 41306,
+    "skillKey": "clawhub-gold-radar",
+    "name": "gold-radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-radar",
+    "url": "https://clawhub.ai/skills/gold-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-radar-c5251def10308f3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time gold price monitoring and investment decision support system. Use when users ask about gold prices, gold investment analysis, market trends for pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quiteqiang",
+      "userId": "s175gch0q5f9m83881m90q28q583g5q6",
+      "displayName": "quiteqiang",
+      "image": "https://avatars.githubusercontent.com/u/47837723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774354156513,
+      "changelog": "Gold Intelligence Monitor 1.0.0 — Initial release\n\n- Launches real-time gold price monitoring and alert system.\n- Supports daily briefings, price alerts, weekly outlooks, and investment recommendations.\n- Triggered by user requests about gold prices, XAU/USD, market outlooks, and Fed economic impact.\n- Integrates technical analysis, economic calendar, and configurable alert thresholds.\n- Customizable for user profile, watchlist, time zone, and risk levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a28ffecbdc9fe983e067953a22b18251f7e0e3efb9c13d137609d1e760837e27"
+}

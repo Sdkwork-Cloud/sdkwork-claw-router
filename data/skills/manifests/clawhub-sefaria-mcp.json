@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30408,
+  "uuid": "skill-clawhub-sefaria-mcp",
+  "skillKey": "clawhub-sefaria-mcp",
+  "name": "Sefaria MCP Server",
+  "summary": "Access Jewish texts, commentaries, and daily study materials from Torah, Talmud, and more via the Sefaria MCP server.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sefaria_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abraham Perl",
+      "features": [
+        "Access Jewish texts, commentaries, and daily study materials from Torah, Talmud, and more via t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sefaria-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6117184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sefaria-mcp",
+      "url": "https://clawhub.ai/skills/sefaria-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sefaria-mcp",
+    "url": "https://clawhub.ai/skills/sefaria-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sefaria-mcp-9aa60a250ab7e7ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sefaria-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sefaria-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5839b7c4674e09be5096998e6f7c3f0b623f60c4fa0d16567ac1584399cbdef",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:06:20.746Z"
+}

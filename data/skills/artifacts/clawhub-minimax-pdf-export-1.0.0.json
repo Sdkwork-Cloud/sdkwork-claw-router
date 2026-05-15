@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-pdf-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_pdf_export",
+  "skill": {
+    "id": 60083,
+    "skillKey": "clawhub-minimax-pdf-export",
+    "name": "MiniMax PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-pdf-export",
+    "url": "https://clawhub.ai/skills/minimax-pdf-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-pdf-export-18a9cc10d75dddd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax PDF专业排版导出 - Playwright+ReportLab双引擎，HTML/CSS封面渲染，精准正文排版，输出印刷级、版式稳定的PDF文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776484467529,
+      "changelog": "Initial release of minimax-pdf skill:\n\n- Provides high-quality PDF export with professional layout for printable documents.\n- Utilizes Playwright+ReportLab dual-engine: HTML/CSS cover rendering, precise main content layout.\n- Supports bookmarks, page numbering, hyperlinked TOC, and cross-references.\n- Includes AcroForms, batch export, multiple cover styles, and guaranteed font/image fidelity.\n- Suitable for e-books, reports, contracts, forms, and academic papers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efa7fc262c726ab6aa591a768f9ad7f9804dce1e1af01309ce3dfb547ffd2138"
+}

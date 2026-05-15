@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54139,
+  "uuid": "skill-clawhub-okra",
+  "skillKey": "clawhub-okra",
+  "name": "OkraPDF",
+  "summary": "OkraPDF — upload PDFs, read extracted content, ask questions, extract structured data, and manage collections. Covers MCP, CLI, and HTTP.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Tsao",
+      "features": [
+        "OkraPDF — upload PDFs, read extracted content, ask questions, extract structured data, and mana.",
+        "Covers MCP, CLI, and HTTP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15185301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okra",
+      "url": "https://clawhub.ai/skills/okra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okra",
+    "url": "https://clawhub.ai/skills/okra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okra-7838c44c8f7d9a28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:425d53e95df7fab570d8ac6eaf0b8a7774857dd5baa7ceaf36e9a8aecf14874e",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:53:10.262Z"
+}

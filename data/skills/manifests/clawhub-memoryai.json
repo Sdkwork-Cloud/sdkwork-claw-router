@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18646,
+  "uuid": "skill-clawhub-memoryai",
+  "skillKey": "clawhub-memoryai",
+  "name": "MemoryAI",
+  "summary": "Persistent long-term memory for AI agents. Store, recall, reason, and seamlessly switch sessions with zero context loss.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memoryai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MV- AI REALITY ENGINE",
+      "features": [
+        "Persistent long-term memory for AI agents",
+        "Store, recall, reason, and seamlessly switch sessions with zero context loss."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memoryai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53409161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memoryai",
+      "url": "https://clawhub.ai/skills/memoryai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memoryai",
+    "url": "https://clawhub.ai/skills/memoryai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memoryai-fe1b6192fe791afa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memoryai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memoryai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e40c4ccc22de773261cdc1c464c04b3b96dabd9f9576468487bf6405540580be",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:05:31.024Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-architecture@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_architecture",
+  "skill": {
+    "id": 15283,
+    "skillKey": "clawhub-web-architecture",
+    "name": "Web Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-architecture",
+    "url": "https://clawhub.ai/skills/web-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-architecture-d30e0c758b6012d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent orchestration for complex TypeScript/Next.js/Convex projects. Phased builds, functional verification, the full playbook for delegating to sub-agents without chaos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelmonetized",
+      "userId": "publishers:michaelmonetized",
+      "displayName": "michaelmonetized",
+      "image": "https://avatars.githubusercontent.com/u/162010215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1052,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770862581935,
+      "changelog": "web-architecture 0.1.0\n\n- Initial release introducing a structured, multi-phase workflow for orchestrating large TypeScript/Next.js/Convex projects using multiple agents.\n- Defines strict agent spawn order, directory structure, and locking rules to avoid code conflicts and duplication.\n- Emphasizes functional verification over compilation, with explicit requirements for UI, backend, and E2E testing.\n- Includes policies for schema ownership, code handoff, and parallelization best practices.\n- Provides templates and checklists for each development phase, ensuring quality and coordination.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae06a6911543ccab5db3c68105be7f85739d1dc1e28ca4c2f7b1891009660ea4"
+}

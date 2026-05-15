@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-sarvam-girlfriend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_sarvam_girlfriend",
+  "skill": {
+    "id": 16246,
+    "skillKey": "clawhub-openclaw-sarvam-girlfriend",
+    "name": "rupali"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-sarvam-girlfriend",
+    "url": "https://clawhub.ai/skills/openclaw-sarvam-girlfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-sarvam-girlfriend-1719a8349894c9ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Playful virtual girlfriend voice companion. Use when the user wants short, flirty, friendly text replies returned as Bulbul v3 audio across chat channels (Discord/Telegram/WhatsApp). Generate a brief response, then synthesize and send MP3."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "altonappleton32-ux",
+      "userId": "publishers:altonappleton32-ux",
+      "displayName": "altonappleton32-ux",
+      "image": "https://avatars.githubusercontent.com/u/258215190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 900,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770712407671,
+      "changelog": "Initial release of OpenClaw Virtual Girlfriend (Bulbul v3):\n\n- Playful, supportive virtual girlfriend persona providing short, flirty Indian-English replies.\n- Each text response is synthesized to Bulbul v3 TTS audio (speaker: rupali) and sent as an MP3 file.\n- Works across chat apps (Discord, Telegram, WhatsApp).\n- Enforced safety: PG‑13, avoids exclusivity or dependency, steers clear of explicit content.\n- Requires SARVAM_API_KEY for audio synthesis.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e3dd33d36a2d580cea292336e1acf4af18fdf9c934b5cbe408b9b555046627e"
+}

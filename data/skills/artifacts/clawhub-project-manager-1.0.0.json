@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_manager",
+  "skill": {
+    "id": 9248,
+    "skillKey": "clawhub-project-manager",
+    "name": "Project Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-manager",
+    "url": "https://clawhub.ai/skills/project-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-manager-cecd58be4cefa807.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage internal projects with JSON-based tasks, move them on Kanban, notify David on review/blocked, and sync tasks with Apple Reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr0ziii",
+      "userId": "publishers:fr0ziii",
+      "displayName": "fr0ziii",
+      "image": "https://avatars.githubusercontent.com/u/58311234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3955,
+      "installsAllTime": 35,
+      "installsCurrent": 34,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769387839084,
+      "changelog": "Initial release of the Project Manager skill for Vivi OS.\n\n- Manage internal project tasks using a JSON-based Kanban system.\n- Create, list, and move tasks with support for priority and project association.\n- Sync tasks with Apple Reminders when requested.\n- Notify David automatically in chat when tasks move to review or blocked.\n- Enforces business rules: approval flow, work-in-progress limit, and night shift priorities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39960b5e0be22f165c8c80f7fad25e77fde166794b4367579e6084c13b4a4503"
+}

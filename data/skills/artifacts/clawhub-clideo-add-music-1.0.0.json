@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clideo-add-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clideo_add_music",
+  "skill": {
+    "id": 44500,
+    "skillKey": "clawhub-clideo-add-music",
+    "name": "Clideo Add Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clideo-add-music",
+    "url": "https://clawhub.ai/skills/clideo-add-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clideo-add-music-d1aa3bd7c2dac049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute travel video clip into 1080p music-backed videos just by typing what you need. Whether it's adding background music to videos or quick social..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776505893142,
+      "changelog": "Clideo Add Music — Initial Release\n\n- Instantly add background music to your videos via cloud processing, with no manual timeline editing.\n- Automatic setup: secure token handling and session management on first use (“Connecting…”/“Ready!” status).\n- Upload video/audio files, describe your desired result, and export up to 1080p MP4s in seconds.\n- Supports credits and session state queries; clear feedback on export and file limits.\n- Guides users through cloud rendering, error handling, and optimal workflow best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d5b249eb776803c694e4f417ebc007a059145e6f975563dd3f93fb7132ee175"
+}

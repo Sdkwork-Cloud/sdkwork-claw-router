@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tk-price-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tk_price_monitor",
+  "skill": {
+    "id": 42606,
+    "skillKey": "clawhub-tk-price-monitor",
+    "name": "Price Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tk-price-monitor",
+    "url": "https://clawhub.ai/skills/tk-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tk-price-monitor-b67cede99e47b48b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor competitor and product pricing changes across websites. Set price thresholds, get alerts on drops/increases, track historical pricing, and identify p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tktk-ai",
+      "userId": "s17dae0n2wkh65b6p2v4zvkbt184ey9h",
+      "displayName": "tktk-ai",
+      "image": "https://avatars.githubusercontent.com/u/59158345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775667989980,
+      "changelog": "Initial release — competitor pricing tracking, alerts, historical analysis, reports",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a848933eb34ba6832ef3021d30fe5b6cabc7daee5ae3103ac03406b41644f36"
+}

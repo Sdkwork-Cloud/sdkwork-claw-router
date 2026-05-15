@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21496,
+  "uuid": "skill-clawhub-model-resource-profiler",
+  "skillKey": "clawhub-model-resource-profiler",
+  "name": "Model Resource Profiler",
+  "summary": "Analyze model training or inference resource behavior from profiler artifacts, with focus on GPU memory (VRAM) and CPU hotspots. Uses JSON/JSON.GZ artifacts...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_resource_profiler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daiwk",
+      "features": [
+        "Analyze model training or inference resource behavior from profiler artifacts, with focus on GP.",
+        "Uses JSON/JSON.GZ artifacts..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-resource-profiler@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4243530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-resource-profiler",
+      "url": "https://clawhub.ai/skills/model-resource-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-resource-profiler",
+    "url": "https://clawhub.ai/skills/model-resource-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-resource-profiler-e317d33d9ee1c825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-resource-profiler@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-resource-profiler-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c83fbf3fb4e1dc9cf3e198246f9538f5c528db2c55c37cdb83499e378e2a4f04",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:13:55.999Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price-compare@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_compare",
+  "skill": {
+    "id": 29431,
+    "skillKey": "clawhub-price-compare",
+    "name": "Price Compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-compare",
+    "url": "https://clawhub.ai/skills/price-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-compare-e16f5bd982cd9f93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare product prices across major US e-commerce platforms. Triggers when the user asks \"what's the best price for X\", \"compare prices\", \"where to buy [prod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasye378",
+      "userId": "s17e4df8t4sjvp29fe5batabwd83pgxk",
+      "displayName": "lucasye378",
+      "image": "https://avatars.githubusercontent.com/u/266547926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774211915533,
+      "changelog": "Added: Phase 1 Inversion (pre-search questions), Phase 2 browser fallback for JS-rendered pages, Phase 3 Price Trust Score (Reviewer pattern), Phase 4 Pipeline Gate (anomaly detection), Phase 5 Generator output format. Added Costco + Kroger platforms. Created references/trust-checklist.md. Updated references/platforms.md with price history guide and output flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33805e7e407ee3e04cc3dd63544d0fdad4127cb040be862a1c89c0689a69e471"
+}

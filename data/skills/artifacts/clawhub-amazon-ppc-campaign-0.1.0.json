@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-ppc-campaign@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_ppc_campaign",
+  "skill": {
+    "id": 51768,
+    "skillKey": "clawhub-amazon-ppc-campaign",
+    "name": "Amazon Ppc Campaign"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-ppc-campaign",
+    "url": "https://clawhub.ai/skills/amazon-ppc-campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-ppc-campaign-0e83e4650ea0734a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon PPC campaign builder and optimizer for sellers. Two modes: (A) Build — design a complete campaign structure from scratch with keyword groupings, bid c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774258572705,
+      "changelog": "Initial release: Amazon PPC campaign builder and optimizer.\n\n- Two modes: Build new campaigns or optimize existing ones.\n- Generates campaign structures with keyword groupings, bid calculations, and negative keyword lists.\n- Audits current campaigns using search term reports; suggests bid adjustments and action plans.\n- Integrates with amazon-keyword-research for keyword input.\n- No API key required; prompt-driven, with progressive info gathering and clear follow-up questions.\n- Calculates break-even and target ACoS, and applies industry-standard bid optimization rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88152c5e4e5518bba37591d19f8dd6a98212b3d63a4d8e016d0f7dbb4ab61f67"
+}

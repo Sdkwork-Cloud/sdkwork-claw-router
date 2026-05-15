@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-correction-cn@0.1.10",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_correction_cn",
+  "skill": {
+    "id": 62428,
+    "skillKey": "clawhub-ai-correction-cn",
+    "name": "AI幻觉纠偏 / AI纠偏"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-correction-cn",
+    "url": "https://clawhub.ai/skills/ai-correction-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-correction-cn-d14c73ca5d6023f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI幻觉纠偏 / AI纠偏 alias route into Official VeriClaw. 如果你的真实目标是官方公共安装入口，先安装 `vericlaw`；这个页面只负责把 AI幻觉纠偏、AI纠偏、AI监督、AI纠错、AI校正、模型纠偏、幻觉纠偏、AI幻觉、AI工作幻觉 和 bot纠偏 这些中文意图映射..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheygoodbai",
+      "userId": "s17f0jxkymmhg7fyyxgc6d57ex83gjd9",
+      "displayName": "Sheygoodbai",
+      "image": "https://avatars.githubusercontent.com/u/143479205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.1.10",
+      "createdAt": 1775485888406,
+      "changelog": "Front-load AI幻觉纠偏 in this correction alias so Chinese exact-match traffic is more likely to route into Official VeriClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:713ec2ce7073372a30fa4eac676dd3867e2929a3ae1bd5de99e30cef76501e34"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45786,
+  "uuid": "skill-clawhub-skill-vetter-hermes",
+  "skillKey": "clawhub-skill-vetter-hermes",
+  "name": "Skill Vetter",
+  "summary": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_hermes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "十三香小精灵",
+      "features": [
+        "Security-first skill vetting for AI agents",
+        "Use before installing any skill from ClawdHub, GitHub, or other sources",
+        "Checks for red flags, permission scope,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vetter-hermes@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203436245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vetter-hermes",
+      "url": "https://clawhub.ai/skills/skill-vetter-hermes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-hermes",
+    "url": "https://clawhub.ai/skills/skill-vetter-hermes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-hermes-68b4746d8a08132a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vetter-hermes@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vetter-hermes-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5436c274f22268e15790d0c943bdf7714863c2b26e7abac6286d29ad09635b4",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T05:55:18.297Z"
+}

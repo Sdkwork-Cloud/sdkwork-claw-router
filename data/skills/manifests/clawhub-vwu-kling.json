@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25437,
+  "uuid": "skill-clawhub-vwu-kling",
+  "skillKey": "clawhub-vwu-kling",
+  "name": "vwu.ai kling Models",
+  "summary": "Access and use seven kling language models on vwu.ai platform with OpenAI-compatible chat completions via API key authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_kling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "Access and use seven kling language models on vwu.ai platform with OpenAI-compatible chat compl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vwu-kling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vwu-kling",
+      "url": "https://clawhub.ai/skills/vwu-kling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-kling",
+    "url": "https://clawhub.ai/skills/vwu-kling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-kling-b355e41f6b8cb560.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vwu-kling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vwu-kling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc95ee59ae21a1dd9358ceb1ce3275cff3e9b9dc666134e71d066fef9752ec08",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:38:51.349Z"
+}

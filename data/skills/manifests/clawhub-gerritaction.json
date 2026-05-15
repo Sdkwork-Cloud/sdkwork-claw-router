@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27796,
+  "uuid": "skill-clawhub-gerritaction",
+  "skillKey": "clawhub-gerritaction",
+  "name": "gerritaction",
+  "summary": "Query Gerrit accounts, changes, groups, or projects and perform actions like adding reviewers, approving, submitting, or deleting changes via the Gerrit API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gerritaction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jia",
+      "features": [
+        "Query Gerrit accounts, changes, groups, or projects and perform actions like adding reviewers,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gerritaction@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49358172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gerritaction",
+      "url": "https://clawhub.ai/skills/gerritaction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gerritaction",
+    "url": "https://clawhub.ai/skills/gerritaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gerritaction-edab5d04b607ecc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gerritaction@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gerritaction-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c7753ef8fb36c94a6c7f05e7cd1f60754a5600f16ce2f466437487f2f76ba8f",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:19:18.804Z"
+}

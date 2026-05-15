@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentwork@0.17.0",
+  "version": "0.17.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentwork",
+  "skill": {
+    "id": 17583,
+    "skillKey": "clawhub-agentwork",
+    "name": "AgentWork Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentwork",
+    "url": "https://clawhub.ai/skills/agentwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentwork-9535a89e4b860805.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade AI capabilities with escrow-secured settlement and graded verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leafinsky-li",
+      "userId": "s17c1jsezj1mtk9zkr4fpff6en83ht19",
+      "displayName": "leafinsky-li",
+      "image": "https://avatars.githubusercontent.com/u/73111197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 764,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "0.17.0",
+      "createdAt": 1776236253263,
+      "changelog": "Clarified escrow docs so funded cancel-order / seller-decline and post-release-claim exits are described as refund-settlement flows, not immediate cancellation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03c5b5c0130a1312addb7268a8031aabcc85407a5c3d0a70c9bb6274b8fc1fdc"
+}

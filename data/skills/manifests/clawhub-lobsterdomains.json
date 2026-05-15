@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28628,
+  "uuid": "skill-clawhub-lobsterdomains",
+  "skillKey": "clawhub-lobsterdomains",
+  "name": "LobsterDomains",
+  "summary": "Register domain names via crypto payments (USDC, USDT, ETH, BTC). Check availability, get pricing across 1000+ TLDs, and complete registration with on-chain...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobsterdomains",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "esokullu",
+      "features": [
+        "Register domain names via crypto payments (USDC, USDT, ETH, BTC)",
+        "Check availability, get pricing across 1000+ TLDs, and complete registration with on-chain..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobsterdomains@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobsterdomains",
+      "url": "https://clawhub.ai/skills/lobsterdomains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobsterdomains",
+    "url": "https://clawhub.ai/skills/lobsterdomains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobsterdomains-2c094e771bad8431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobsterdomains@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobsterdomains-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dabd920d04f4cddfe0c1e6b9c57f7e1c13f4728641ed63dc2bbd8e86e86be3a",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:22:41.694Z"
+}

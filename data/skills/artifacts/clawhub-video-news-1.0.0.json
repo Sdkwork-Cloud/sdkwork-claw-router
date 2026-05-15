@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_news",
+  "skill": {
+    "id": 41225,
+    "skillKey": "clawhub-video-news",
+    "name": "Video News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-news",
+    "url": "https://clawhub.ai/skills/video-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-news-a6a8596ad2b725b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get broadcast-ready segments ready to post, without touching a single slider. Upload your raw news footage (MP4, MOV, MXF, AVI, up to 500MB), say something l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776594889956,
+      "changelog": "Initial release of Video News — Edit News Clips for Broadcast.\n\n- Instantly edit raw news footage into 1080p MP4 broadcast-ready segments with AI-powered cloud rendering.\n- Upload video files (MP4, MOV, MXF, AVI up to 500MB) and use natural language to trim, caption, and edit.\n- Connects automatically to the backend; obtains a free token if needed for easy first-time setup.\n- Supports essential workflows: quick edits, iterative changes, and batch processing.\n- Handles video uploads, editing commands, export, credits checking, and timeline status.\n- Fast cloud GPU processing returns downloadable news clips, with clear feedback throughout.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c198704a9443ccee93bd79b6f630a3498390b8cef441475a6c25bde7c1cfcb49"
+}

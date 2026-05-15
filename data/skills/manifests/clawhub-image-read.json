@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63105,
+  "uuid": "skill-clawhub-image-read",
+  "skillKey": "clawhub-image-read",
+  "name": "explain image",
+  "summary": "使用智谱AI的GLM-4V-Flash免费多模态API理解图片内容。当用户需要理解图片内容、描述图片、识别图中物体时使用此skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyzwp",
+      "features": [
+        "使用智谱AI的GLM-4V-Flash免费多模态API理解图片内容。当用户需要理解图片内容、描述图片、识别图中物体时使用此skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-read@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35085062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-read",
+      "url": "https://clawhub.ai/skills/image-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-read",
+    "url": "https://clawhub.ai/skills/image-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-read-c76a7bcd22f7d7d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-read@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-read-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7faa20d3b28073e20d03c88f6ebed13f1ea9b381fec37034f18f88c6388900d0",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:10:33.446Z"
+}

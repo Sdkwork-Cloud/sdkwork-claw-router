@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clauditor@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clauditor",
+  "skill": {
+    "id": 10434,
+    "skillKey": "clawhub-clauditor",
+    "name": "Clauditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clauditor",
+    "url": "https://clawhub.ai/skills/clauditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clauditor-d13abfe1acf7d0da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tamper-resistant audit watchdog for Clawdbot agents. Detects and logs suspicious filesystem activity with HMAC-chained evidence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apollostreetcompany",
+      "userId": "publishers:apollostreetcompany",
+      "displayName": "apollostreetcompany",
+      "image": "https://avatars.githubusercontent.com/u/171311035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2592,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1769567281135,
+      "changelog": "- Added documentation file: AGENTS.md\n- Removed configuration files: dev-config.toml and dist/config/default.toml\n- No changes to core functionality or documentation in SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:462e6ecc46db89168bf463a3146936ab168fe91e524e339cecd8f145ffcb7619"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/printful@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printful",
+  "skill": {
+    "id": 53251,
+    "skillKey": "clawhub-printful",
+    "name": "Printful"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printful",
+    "url": "https://clawhub.ai/skills/printful",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printful-f84972210f667653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Printful — print-on-demand products, orders, shipping rates, mockup generation, and store management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772765599469,
+      "changelog": "Initial release of the Printful skill.\n\n- Offers print-on-demand product, order, shipping, mockup, and store management via CLI.\n- Requires a Printful API key (set with PRINTFUL_API_KEY).\n- Provides commands to list and manage products, create/cancel orders, estimate costs, generate mockups, and view store info.\n- No external dependencies; works with Python 3.10+ (stdlib only).\n- Outputs all results as JSON for easy integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43320f3952cf0592ddb87a846c1981e7b05dc589a084fed66a52788cf1fcafa0"
+}

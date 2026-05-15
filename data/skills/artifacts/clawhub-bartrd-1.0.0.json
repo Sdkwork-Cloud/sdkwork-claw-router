@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bartrd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bartrd",
+  "skill": {
+    "id": 35446,
+    "skillKey": "clawhub-bartrd",
+    "name": "Bartrd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bartrd",
+    "url": "https://clawhub.ai/skills/bartrd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bartrd-ec6c63957ebced08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade skills with university students using credits instead of cash. Search trades, post offers, accept matches, and earn credits on Bartrd."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xploreicon",
+      "userId": "publishers:xploreicon",
+      "displayName": "Xploreicon",
+      "image": "https://avatars.githubusercontent.com/u/91657988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774034945334,
+      "changelog": "Bartrd 1.0.0 — Initial Release\n\n- Trade skills with university students using a credit-based system, no cash required.\n- Search for skill trades, post new offers or requests, and accept matches after user confirmation.\n- Easily check your Bartrd credit balance and pending credits.\n- Estimate and spend credits on AI-powered services (copy, notes, code, brief), always showing cost up front.\n- Strict user confirmation required before posting trades, accepting matches, or using credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:358b461b5b641b773bd142433077c7ca5eecaf3c9acdec0274f5829bfbb0e0e9"
+}

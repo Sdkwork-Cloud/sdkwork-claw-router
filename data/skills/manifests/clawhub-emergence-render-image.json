@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44744,
+  "uuid": "skill-clawhub-emergence-render-image",
+  "skillKey": "clawhub-emergence-render-image",
+  "name": "Emergence Render Image",
+  "summary": "Official Emergence Science Skill for rendering professional diagrams (TikZ, Mermaid, Graphviz, D2) via the Emergence Science Render API.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_render_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emergencescience",
+      "features": [
+        "Official Emergence Science Skill for rendering professional diagrams (TikZ, Mermaid, Graphviz,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emergence-render-image@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264674637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emergence-render-image",
+      "url": "https://clawhub.ai/skills/emergence-render-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-render-image",
+    "url": "https://clawhub.ai/skills/emergence-render-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-render-image-941ab67884681d38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emergence-render-image@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-emergence-render-image-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82ee513fde4760e07160a57a63f2ee8b630db94390e1e1a8a96bf0950aa46636",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:38:59.843Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21525,
+  "uuid": "skill-clawhub-openclaw-receipt-manager",
+  "skillKey": "clawhub-openclaw-receipt-manager",
+  "name": "Openclaw Receipt Manager",
+  "summary": "Manage personal receipts by extracting data from images, storing records, and providing expense searches and monthly financial summaries.",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_receipt_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clinchcc",
+      "features": [
+        "Manage personal receipts by extracting data from images, storing records, and providing expense."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-receipt-manager@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-receipt-manager",
+      "url": "https://clawhub.ai/skills/openclaw-receipt-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-receipt-manager",
+    "url": "https://clawhub.ai/skills/openclaw-receipt-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-receipt-manager-948d08e498377237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-receipt-manager@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-receipt-manager-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa75c9b54bb37657694c197268c44b5f6fef9b0497cccace8f8c9ff640499d88",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:52:53.465Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/page-doc-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.page_doc_generator",
+  "skill": {
+    "id": 41628,
+    "skillKey": "clawhub-page-doc-generator",
+    "name": "page-doc-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "page-doc-generator",
+    "url": "https://clawhub.ai/skills/page-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/page-doc-generator-fe9e8009a528a46d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Word documentation from mini-program/uni-app project screenshots and source code. Use when user wants to document pages with screenshots and code. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyfragments",
+      "userId": "s17c6gv4cym58f8d9fvyrkgtsd83g5h9",
+      "displayName": "SkyFragments",
+      "image": "https://avatars.githubusercontent.com/u/150218224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775239001807,
+      "changelog": "Initial release: Generate Word documentation from mini-program/uni-app source and screenshots.\n\n- Scans project pages and matches each to screenshot images.\n- Generates structured Markdown documentation embedding page info, code, and screenshots.\n- Converts Markdown to Word (.docx) using pandoc.\n- Provides Python scripts for full documentation pipeline.\n- Handles common screenshot naming patterns and large source file truncation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e33f7434d9de224179286b299d01ab02a4f59ad27422d88d611c23dd648689d2"
+}

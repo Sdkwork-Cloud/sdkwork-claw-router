@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dispatching-parallel-agents-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dispatching_parallel_agents_2",
+  "skill": {
+    "id": 36910,
+    "skillKey": "clawhub-dispatching-parallel-agents-2",
+    "name": "Dispatching Parallel Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dispatching-parallel-agents-2",
+    "url": "https://clawhub.ai/skills/dispatching-parallel-agents-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dispatching-parallel-agents-2-eb86d8c283e75ecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovemymobilewebsite-dotcom",
+      "userId": "s175wqxq3d8609kwmf4p6d5qd984zeny",
+      "displayName": "lovemymobilewebsite-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/264335319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774177154473,
+      "changelog": "- Initial release of dispatching-parallel-agents skill.\n- Enables efficient delegation of 2+ independent tasks to parallel agents with isolated context.\n- Offers clear guidelines and patterns for parallel investigation and problem-solving, especially for unrelated test or subsystem failures.\n- Provides detailed best practices for constructing focused agent prompts and avoiding common mistakes.\n- Includes real-world example demonstrating significant time savings through parallel dispatching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae05cc43056c7030403b7f7aa4b084d414bdad99257930bdf76ec9f1ff6456e0"
+}

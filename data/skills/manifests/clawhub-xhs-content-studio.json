@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72580,
+  "uuid": "skill-clawhub-xhs-content-studio",
+  "skillKey": "clawhub-xhs-content-studio",
+  "name": "小红书全能运营助手，AI生图 + 草稿发布",
+  "summary": "小红书博主运营助手，集成AI生图智能路由、爆款文案创作及草稿自动发布功能，支持未登录二维码扫码登录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_content_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shichao666",
+      "features": [
+        "小红书博主运营助手，集成AI生图智能路由、爆款文案创作及草稿自动发布功能，支持未登录二维码扫码登录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-content-studio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41619458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-content-studio",
+      "url": "https://clawhub.ai/skills/xhs-content-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-content-studio",
+    "url": "https://clawhub.ai/skills/xhs-content-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-content-studio-05861eb876ea2529.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-content-studio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-content-studio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21628e465a776c4f0f264bc08d855c81382dcbdaf7b5070e37631c0cdb61292e",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:25:10.114Z"
+}

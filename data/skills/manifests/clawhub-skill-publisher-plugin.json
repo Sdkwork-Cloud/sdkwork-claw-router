@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61035,
+  "uuid": "skill-clawhub-skill-publisher-plugin",
+  "skillKey": "clawhub-skill-publisher-plugin",
+  "name": "Skill Publisher",
+  "summary": "上传和发布技能到 ClawHub 市场。当用户说\"发布skill\"、\"上传到clawhub\"、\"发布到市场\"或需要将本地技能发布到 ClawHub 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vivian",
+      "features": [
+        "上传和发布技能到 ClawHub 市场。当用户说\"发布skill\"、\"上传到clawhub\"、\"发布到市场\"或需要将本地技能发布到 ClawHub 时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-publisher-plugin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6382684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-publisher-plugin",
+      "url": "https://clawhub.ai/skills/skill-publisher-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-plugin",
+    "url": "https://clawhub.ai/skills/skill-publisher-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-plugin-a2a76a0a5c7bc6c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-publisher-plugin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-publisher-plugin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64bd805ef95377c883da008f9cc15a60030386d2d0d4b6d9f7ab3bb55913e4ae",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:24:41.951Z"
+}

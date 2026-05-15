@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70644,
+  "uuid": "skill-clawhub-haohuo-recommend",
+  "skillKey": "clawhub-haohuo-recommend",
+  "name": "电商导购助手",
+  "summary": "电商导购助手，以对话方式为终端买家提供商品推荐、价格查询、优惠提醒、购物建议。基于 haohuo-cps 获取实时商品数据，链接默认为 CPS 推广链接（推广者可赚取佣金）。适合 CPS 推广者接入到自己的 APP 或购物群，作为买家侧的导购入口",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haohuo_recommend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zachariah-77",
+      "features": [
+        "电商导购助手，以对话方式为终端买家提供商品推荐、价格查询、优惠提醒、购物建议。基于 haohuo-cps 获取实时商品数据，链接默认为 CPS 推广链接（推广者可赚取佣金）。适合 CPS 推."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haohuo-recommend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228875721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haohuo-recommend",
+      "url": "https://clawhub.ai/skills/haohuo-recommend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haohuo-recommend",
+    "url": "https://clawhub.ai/skills/haohuo-recommend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haohuo-recommend-5b400ff0c0f73908.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haohuo-recommend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-haohuo-recommend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:292fd99d045efd7461241cd1158c11534fcc6334e4c497ed0d2897f0dcffd986",
+      "artifactSizeBytes": 2828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:22:25.806Z"
+}

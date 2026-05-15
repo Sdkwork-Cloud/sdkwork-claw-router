@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skywork-search@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_search",
+  "skill": {
+    "id": 9479,
+    "skillKey": "clawhub-skywork-search",
+    "name": "Skywork Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-search",
+    "url": "https://clawhub.ai/skills/skywork-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-search-66c891f214d7da4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skywork Search (skywork) - Search the web for real-time information using the Skywork Search API. Use this skill whenever the user needs up-to-date informati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxcun17",
+      "userId": "s174hwb34r6ncgdm62n09a9tbd83hn5x",
+      "displayName": "Skywork AI",
+      "image": "https://avatars.githubusercontent.com/u/5279174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1391,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 25,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1775828081582,
+      "changelog": "- Updated the skill description formatting and added the skill name (\"Skywork Search (skywork)\") for clarity.\n- Revised API key configuration instructions to clarify that SKYWORK_API_KEY must be set \"before use,\" not specifically in OpenClaw.\n- No functional or script changes; only SKILL.md documentation was updated for clarity and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:232512ee7ed53ca57b74a728f717248aeb977361984b95a3febdff57dc14d6b6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72918,
+  "uuid": "skill-clawhub-nyt",
+  "skillKey": "clawhub-nyt",
+  "name": "Nyt",
+  "summary": "提供纽约时报的商业模式、竞争策略、品牌成长和未来风险的深入分析，聚焦数字订阅转型与多元化发展。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供纽约时报的商业模式、竞争策略、品牌成长和未来风险的深入分析，聚焦数字订阅转型与多元化发展。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nyt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nyt",
+      "url": "https://clawhub.ai/skills/nyt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyt",
+    "url": "https://clawhub.ai/skills/nyt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyt-91826add52a73308.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nyt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nyt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:250520c62d4bec7a230accc777db0f9eec47b75cec90f6828303534975081909",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T20:03:53.094Z"
+}

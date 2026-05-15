@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62672,
+  "uuid": "skill-clawhub-chatppt-agent",
+  "skillKey": "clawhub-chatppt-agent",
+  "name": "chatppt-agent",
+  "summary": "使用 ChatPPT CLI 命令行工具通过 AI 自动生成 PPT 演示文稿。适用场景：用户需要根据主题文字或现有文件（Word/PDF/Markdown）生成 PPT 时触发本 skill。支持登录认证、PPT 生成、文件导入生成、结果查询等完整流程。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatppt_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kahn520",
+      "features": [
+        "使用 ChatPPT CLI 命令行工具通过 AI 自动生成 PPT 演示文稿。适用场景：用户需要根据主题文字或现有文件（Word/PDF/Markdown）生成 PPT 时触发本 skil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatppt-agent@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4596778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatppt-agent",
+      "url": "https://clawhub.ai/skills/chatppt-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatppt-agent",
+    "url": "https://clawhub.ai/skills/chatppt-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatppt-agent-ca139c56e9bbd86a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatppt-agent@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatppt-agent-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7140c8f20dcb4956c7d8b0b831c820d18e8029dbb4e7eab6d4e749b8c1d4643",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:33:17.015Z"
+}

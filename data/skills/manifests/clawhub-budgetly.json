@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23418,
+  "uuid": "skill-clawhub-budgetly",
+  "skillKey": "clawhub-budgetly",
+  "name": "Budgetly",
+  "summary": "Set category budgets, log expenses, and visualize spending limits. Use when tracking grocery costs, monitoring subscriptions, or forecasting spend.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budgetly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Set category budgets, log expenses, and visualize spending limits",
+        "Use when tracking grocery costs, monitoring subscriptions, or forecasting spend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budgetly@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budgetly",
+      "url": "https://clawhub.ai/skills/budgetly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budgetly",
+    "url": "https://clawhub.ai/skills/budgetly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budgetly-a44b476b5c1e74a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budgetly@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-budgetly-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a14ed87943314cf39e4082069cc1de0ead560bc3e0710f11096d7ec90c44fb3c",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:36:27.471Z"
+}

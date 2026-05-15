@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9933,
+  "uuid": "skill-clawhub-browser-automation-v2",
+  "skillKey": "clawhub-browser-automation-v2",
+  "name": "Browser Automation V2",
+  "summary": "Enterprise-grade browser automation with automatic tab cleanup, timeout retries, concurrency lock, smart waiting, and configurable environment settings.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Boda Fu",
+      "features": [
+        "Enterprise-grade browser automation with automatic tab cleanup, timeout retries, concurrency lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-automation-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128904770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-automation-v2",
+      "url": "https://clawhub.ai/skills/browser-automation-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation-v2",
+    "url": "https://clawhub.ai/skills/browser-automation-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-v2-42532c8bf55b7cce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-automation-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-automation-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3f402df75f2ca22a7147ab7ff1e6c68a2a22301c5fbd2b780c71ed168e3aa1",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T09:32:36.011Z"
+}

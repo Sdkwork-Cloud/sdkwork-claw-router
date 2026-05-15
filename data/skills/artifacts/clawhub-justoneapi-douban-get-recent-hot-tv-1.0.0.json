@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-douban-get-recent-hot-tv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douban_get_recent_hot_tv",
+  "skill": {
+    "id": 44767,
+    "skillKey": "clawhub-justoneapi-douban-get-recent-hot-tv",
+    "name": "Douban Movie Recent Hot Tv API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douban-get-recent-hot-tv",
+    "url": "https://clawhub.ai/skills/justoneapi-douban-get-recent-hot-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douban-get-recent-hot-tv-4a84ec1bb72d7353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/douban/get-recent-hot-tv/v1 for Douban Movie Recent Hot Tv through JustOneAPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777011768588,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47aa97bd8f2c9087b4e31fae3c8c309869d8449097e4ee2731cd36e20911cc7f"
+}

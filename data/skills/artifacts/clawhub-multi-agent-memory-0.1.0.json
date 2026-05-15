@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_memory",
+  "skill": {
+    "id": 67343,
+    "skillKey": "clawhub-multi-agent-memory",
+    "name": "Multi Agent Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-memory",
+    "url": "https://clawhub.ai/skills/multi-agent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-memory-65fef4d79c312daa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多 agent 共享记忆与项目协作架构。支持项目状态隔离、知识库共享、跨项目搜索、版本控制、里程碑跟踪、周报和交接文档。适用于多个 agent 协作开发多个项目的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucey0017-cloud",
+      "userId": "s17866136xd8estq84ca03k9qs83gr0h",
+      "displayName": "brucey0017-cloud",
+      "image": "https://avatars.githubusercontent.com/u/229282410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773042324094,
+      "changelog": "multi-agent-memory 1.0.0\n\n- Initial release introducing a framework for multi-agent shared memory and project collaboration.\n- Supports project state isolation, shared cross-project knowledge bases, and cross-project search.\n- Includes features for version control (retaining latest 3 file versions), milestone tracking (SMART & RACI), structured weekly reports, and handover documents.\n- Provides detailed folder structure and workflow guidelines for daily, weekly, and milestone-based collaboration.\n- Designed for scenarios involving multiple agents collaborating on multiple projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93f305d99a6bf0fe77d2c963fbeeeba629285603a845f0e1510186011a842b84"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-railil@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_railil",
+  "skill": {
+    "id": 11920,
+    "skillKey": "clawhub-skill-railil",
+    "name": "Railil"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-railil",
+    "url": "https://clawhub.ai/skills/skill-railil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-railil-a78432b7042730c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for Israel Rail train schedules using the railil CLI. Find routes between stations with fuzzy search, filter by date/time, and output in various formats (JSON, Markdown, Table)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lirantal",
+      "userId": "publishers:lirantal",
+      "displayName": "lirantal",
+      "image": "https://avatars.githubusercontent.com/u/316371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1777,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769189763936,
+      "changelog": "- Initial release of the railil skill.\n- Search Israel Rail train schedules by station, date, and time via the railil CLI.\n- Supports fuzzy search for station names.\n- Flexible output formats: text, JSON, table, and Markdown.\n- Easily filter results and limit number of trains shown.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:42e2a332dfdeddb34fb4b164f7f05dbd8e3891a8cf27fd661e9bbf3c7e452aab"
+}

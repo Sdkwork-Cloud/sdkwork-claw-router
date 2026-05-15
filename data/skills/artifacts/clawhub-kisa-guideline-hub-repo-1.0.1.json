@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kisa-guideline-hub-repo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kisa_guideline_hub_repo",
+  "skill": {
+    "id": 56444,
+    "skillKey": "clawhub-kisa-guideline-hub-repo",
+    "name": "Kisa Guideline Hub Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kisa-guideline-hub-repo",
+    "url": "https://clawhub.ai/skills/kisa-guideline-hub-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kisa-guideline-hub-repo-f54a5962f0040a3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically collect and publish security guidelines and guides from KISA and Boho (보호나라) to Notion. Use when you need to (1) collect new security guideline..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rebugui",
+      "userId": "s175zt27th00qfbj07phqnkqtn83k9pg",
+      "displayName": "rebugui",
+      "image": "https://avatars.githubusercontent.com/u/51498462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773474025992,
+      "changelog": "- Added a README.md file to provide additional documentation for the project.\n- No changes to existing functionality; this release focuses on improved documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09f5f33bed7fc229f0f6df630c77030a2dddc6e6454bdb299d45e8859e030727"
+}

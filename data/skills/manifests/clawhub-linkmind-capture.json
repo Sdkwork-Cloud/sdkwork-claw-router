@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52278,
+  "uuid": "skill-clawhub-linkmind-capture",
+  "skillKey": "clawhub-linkmind-capture",
+  "name": "LinkMind Capture",
+  "summary": "Capture social media links (Weibo, Xiaohongshu, WeChat, Xiaoyuzhou) — extract text, images, and metadata, then generate a Markdown note with AI deep summary,...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkmind_capture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tt_bltn",
+      "features": [
+        "Capture social media links (Weibo, Xiaohongshu, WeChat, Xiaoyuzhou) — extract text, images, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkmind-capture@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257342535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkmind-capture",
+      "url": "https://clawhub.ai/skills/linkmind-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkmind-capture",
+    "url": "https://clawhub.ai/skills/linkmind-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkmind-capture-9ea9294f4492630d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkmind-capture@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkmind-capture-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d8c2dca82769df905d4892cbc4130438da3689f8f604f3207d5192db2857da6",
+      "artifactSizeBytes": 2686
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T15:50:56.689Z"
+}

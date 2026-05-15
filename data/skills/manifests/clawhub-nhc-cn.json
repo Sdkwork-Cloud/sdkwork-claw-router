@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71728,
+  "uuid": "skill-clawhub-nhc-cn",
+  "skillKey": "clawhub-nhc-cn",
+  "name": "Nhc Cn",
+  "summary": "提供中国卫生健康政策、疾病防控、药品管理及妇幼健康等官方信息查询服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nhc_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供中国卫生健康政策、疾病防控、药品管理及妇幼健康等官方信息查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nhc-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nhc-cn",
+      "url": "https://clawhub.ai/skills/nhc-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nhc-cn",
+    "url": "https://clawhub.ai/skills/nhc-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nhc-cn-d0505561e4521537.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nhc-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nhc-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c7b76c7b89c49e3188560bf44f481da002fbde58de360949e419b790d7fe8d8",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:30:07.519Z"
+}

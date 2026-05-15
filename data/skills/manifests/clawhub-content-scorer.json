@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26881,
+  "uuid": "skill-clawhub-content-scorer",
+  "skillKey": "clawhub-content-scorer",
+  "name": "Content Scorer",
+  "summary": "Score marketing copy for resonance, hook strength, NLP technique usage, and conversion readiness. Returns a 0-100 Content Resonance Score with per-dimension...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drivenautoplex1",
+      "features": [
+        "Score marketing copy for resonance, hook strength, NLP technique usage, and conversion readiness",
+        "Returns a 0-100 Content Resonance Score with per-dimension..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-scorer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186228539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-scorer",
+      "url": "https://clawhub.ai/skills/content-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-scorer",
+    "url": "https://clawhub.ai/skills/content-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-scorer-47b0b184a0c740e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-scorer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-scorer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e32e8f4de17abafaa4ba071914bcedcdca217dab1aebc63502f3830627bcc3b2",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:40:10.549Z"
+}

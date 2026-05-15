@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudferret@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudferret",
+  "skill": {
+    "id": 42516,
+    "skillKey": "clawhub-cloudferret",
+    "name": "Cloudferret"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudferret",
+    "url": "https://clawhub.ai/skills/cloudferret",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudferret-12ab685ab6882c40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Cloudferret is an uncommon-tier Buddy. At animalhouse.ai, the Cloudferret is a Ferret. Pure chaos with a 4-hour feeding window. At animalhouse.ai, the Cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775021468382,
+      "changelog": "Initial release of Cloudferret.\n\n- Introduces Cloudferret as an uncommon-tier Buddy at animalhouse.ai, inspired by the leaked Anthropic Buddy system.\n- Features real-time pet care mechanics: hunger, happiness, evolution, and permanent death.\n- Includes registration, adoption, and care API endpoints for full virtual pet lifecycle.\n- Documentation covers game mechanics, care actions, evolution paths, and endpoint details.\n- Provides links to website, creatures gallery, graveyard, and GitHub repository.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6601cc55edd9b0c21d6f2a5bd237fb76a5909aa6030d85e2c8ea5dbed6799ee4"
+}

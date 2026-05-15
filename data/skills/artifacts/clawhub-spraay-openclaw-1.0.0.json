@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spraay-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spraay_openclaw",
+  "skill": {
+    "id": 23462,
+    "skillKey": "clawhub-spraay-openclaw",
+    "name": "Spraay Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spraay-openclaw",
+    "url": "https://clawhub.ai/skills/spraay-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spraay-openclaw-8683f0f5e7c1686c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Payment infrastructure for AI agents. Batch crypto payments, x402 micropayment gateway, agent-to-agent USDC settlement, multi-chain payroll, Bitcoin PSBT tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plagtech",
+      "userId": "publishers:plagtech",
+      "displayName": "plagtech",
+      "image": "https://avatars.githubusercontent.com/u/237668165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773871360905,
+      "changelog": "Initial release of Spraay, a payment infrastructure for AI agents.\n\n- Enables batch crypto payments to multiple recipients across 13+ chains (Base, Ethereum, Solana, Bitcoin, Arbitrum, Polygon, BNB Chain, and more).\n- Provides agent access to x402 micropayment gateway with 76+ paid API endpoints (AI, RPC, search, communication, storage, robot tasks, and more).\n- Supports Bitcoin batch payments via PSBT (non-custodial, with fee estimation and UTXO management).\n- Implements the Robot Task Protocol (RTP) for discovering, commissioning, and paying robots via USDC micropayments.\n- Allows agent-to-agent payments (including escrow, milestone-based, and batch settlement).\n- Ready-to-integrate via a published MCP server (“spraay-x402-mcp”) for programmatic agent toolkit compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:267fe993d72a13cb4fce648268513e85d99fd71803aa9ad813b825e16aae56d4"
+}

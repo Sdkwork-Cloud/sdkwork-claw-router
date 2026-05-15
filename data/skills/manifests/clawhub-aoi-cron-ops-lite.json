@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15984,
+  "uuid": "skill-clawhub-aoi-cron-ops-lite",
+  "skillKey": "clawhub-aoi-cron-ops-lite",
+  "name": "AOI Cron Ops (Lite)",
+  "summary": "Audits OpenClaw cron jobs to detect duplicates, noisy notifications, frequent runs, failures, and missing prerequisites, providing report-only optimization s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoi_cron_ops_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Audits OpenClaw cron jobs to detect duplicates, noisy notifications, frequent runs, failures, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoi-cron-ops-lite@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoi-cron-ops-lite",
+      "url": "https://clawhub.ai/skills/aoi-cron-ops-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoi-cron-ops-lite",
+    "url": "https://clawhub.ai/skills/aoi-cron-ops-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoi-cron-ops-lite-fee350b713b007b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoi-cron-ops-lite@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoi-cron-ops-lite-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f7ea3dc794ef9dbb4884c297575ff357167e7cadcc6ff01c59366257ce431dd",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:12:14.667Z"
+}

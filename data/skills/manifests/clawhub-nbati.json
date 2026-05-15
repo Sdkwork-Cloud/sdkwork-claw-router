@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70408,
+  "uuid": "skill-clawhub-nbati",
+  "skillKey": "clawhub-nbati",
+  "name": "NBATI",
+  "summary": "NBATI 篮球人格测试。回答8个关于打球习惯和风格的问题，测出你的篮球人格类型。触发词：NBATI、篮球人格、篮球测试、测篮球风格、篮球类型。当用户提到 NBATI、篮球人格测试、想测篮球风格时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nbati",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "NBATI 篮球人格测试。回答8个关于打球习惯和风格的问题，测出你的篮球人格类型。触发词：NBATI、篮球人格、篮球测试、测篮球风格、篮球类型。当用户提到 NBATI、篮球人格测试、想测篮球."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nbati@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nbati",
+      "url": "https://clawhub.ai/skills/nbati"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nbati",
+    "url": "https://clawhub.ai/skills/nbati",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nbati-659913f7702c6ccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nbati@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nbati-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91677a550de04ce6c986a74b384dad41733876f3bbf45298526d840f126ef292",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T01:20:00.157Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8710,
+  "uuid": "skill-clawhub-telegram-api",
+  "skillKey": "clawhub-telegram-api",
+  "name": "Telegram Bot",
+  "summary": "Telegram Bot API integration with managed authentication. Send messages, manage chats, handle updates, and interact with users through your Telegram bot. Use...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Telegram Bot API integration with managed authentication",
+        "Send messages, manage chats, handle updates, and interact with users through your Telegram bot"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-api@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-api",
+      "url": "https://clawhub.ai/skills/telegram-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-api",
+    "url": "https://clawhub.ai/skills/telegram-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-api-aa2e38f5ea19a28b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-api@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-api-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd4e392c2260a77e989f5aa20d21a44567bb70b4ba28992f1aa568dc6596af49",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:15:49.543Z"
+}

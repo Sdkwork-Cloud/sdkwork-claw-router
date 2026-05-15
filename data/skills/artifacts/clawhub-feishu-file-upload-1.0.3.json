@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-file-upload@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file_upload",
+  "skill": {
+    "id": 51351,
+    "skillKey": "clawhub-feishu-file-upload",
+    "name": "Feishu File Upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file-upload",
+    "url": "https://clawhub.ai/skills/feishu-file-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-upload-90dc43f7d46cc278.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload and send local files to Feishu chats. Requires Feishu app credentials (app_id/app_secret) in ~/.openclaw/openclaw.json. Use when user asks to send/sha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucezhu888",
+      "userId": "s17b4qa3j6xnznhde41q2pdyf583g4yx",
+      "displayName": "brucezhu888",
+      "image": "https://avatars.githubusercontent.com/u/130302745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774864434270,
+      "changelog": "- No changes detected in this version.\n- Version number updated in metadata only.\n- Functionality and documentation remain the same as previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a502a6299aad5b56f387972d62bdda37741331e621b1d3bbd7d4319f1d44841"
+}

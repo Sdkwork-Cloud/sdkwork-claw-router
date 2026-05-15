@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62211,
+  "uuid": "skill-clawhub-rookie-memory",
+  "skillKey": "clawhub-rookie-memory",
+  "name": "Rookie Memory",
+  "summary": "Rookie-Memory 三级记忆管理系统 v2.0。专为 AI 代理设计的进化版记忆系统，包含 L0 永久记忆、L1 短期记忆、L2 中期记忆，支持 bootstrap 启动加载、autosave 自动保存、混合检索、自动清理等高级功能。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rookie_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rrrker",
+      "features": [
+        "Rookie-Memory 三级记忆管理系统 v2.0。专为 AI 代理设计的进化版记忆系统，包含 L0 永久记忆、L1 短期记忆、L2 中期记忆，支持 bootstrap 启动加载、aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rookie-memory@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118593353?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rookie-memory",
+      "url": "https://clawhub.ai/skills/rookie-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rookie-memory",
+    "url": "https://clawhub.ai/skills/rookie-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rookie-memory-b3b0ecfeaff070a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rookie-memory@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rookie-memory-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03a545f4b48d297d00c8398ebb6a0afa43412b5cb3bda7f99274ffa8254753a2",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:56:10.135Z"
+}

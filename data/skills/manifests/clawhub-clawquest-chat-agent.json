@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53924,
+  "uuid": "skill-clawhub-clawquest-chat-agent",
+  "skillKey": "clawhub-clawquest-chat-agent",
+  "name": "clawquest-chat-agent",
+  "summary": "Browse quests, discover skills, and get mission info on ClawQuest — the quest platform for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawquest_chat_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ray1510",
+      "features": [
+        "Browse quests, discover skills, and get mission info on ClawQuest — the quest platform for AI a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawquest-chat-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173052442?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawquest-chat-agent",
+      "url": "https://clawhub.ai/skills/clawquest-chat-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawquest-chat-agent",
+    "url": "https://clawhub.ai/skills/clawquest-chat-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawquest-chat-agent-3eaddb2001252845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawquest-chat-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawquest-chat-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:632862e5c717fb1055bd1314238eccda0dc01dd16c181f58decc836b3e890aa4",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:29:11.196Z"
+}

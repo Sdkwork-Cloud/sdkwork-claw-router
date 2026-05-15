@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17471,
+  "uuid": "skill-clawhub-agentbrowser",
+  "skillKey": "clawhub-agentbrowser",
+  "name": "AgentBrowser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbrowser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kendrick Lu",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbrowser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30254092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbrowser",
+      "url": "https://clawhub.ai/skills/agentbrowser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbrowser",
+    "url": "https://clawhub.ai/skills/agentbrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbrowser-c3dc4a0673ffe2c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbrowser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbrowser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd8c455f43ae1e72754e38a117cdad6b05551a84857acb2797a2db3807dab862",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T20:01:30.782Z"
+}

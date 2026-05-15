@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/champions-league@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.champions_league",
+  "skill": {
+    "id": 67006,
+    "skillKey": "clawhub-champions-league",
+    "name": "Champions League"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "champions-league",
+    "url": "https://clawhub.ai/skills/champions-league",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/champions-league-073c1d7401517578.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供欧洲冠军联赛球队、赛程、比分、球员与数据统计等权威信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238080328,
+      "changelog": "- 精简并优化了skill简介和用途说明，内容更聚焦、更易懂\n- 更新了可获取信息的类别，突出创立故事与发展历程、主营特色及近期动态\n- 使用场景描述更清晰，明确市场调研、产品选型和商业合作等应用\n- 建议优先查阅官方和权威媒体，保障信息准确性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1716cbc9bebad8fd3bec1d026538de96fc215ca0cfa9eaa8d80aa405ccb80e5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-security-auditor@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_security_auditor",
+  "skill": {
+    "id": 42930,
+    "skillKey": "clawhub-alvis-security-auditor",
+    "name": "Alvis Security Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-security-auditor",
+    "url": "https://clawhub.ai/skills/alvis-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-security-auditor-ea7207523711d850.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit OpenClaw/Clawdbot deployments for misconfigurations and attack vectors. Use when a user asks for a security review of OpenClaw/Clawdbot/Moltbot, gatewa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776317761224,
+      "changelog": "**Skill renamed and documentation majorly expanded to focus on read-only, actionable security audits of OpenClaw/Clawdbot environments.**\n\n- Skill name changed to `openclaw-security-audit`, focusing specifically on OpenClaw, Clawdbot, and Moltbot deployments.\n- Comprehensive, step-by-step audit workflow added, detailing required commands and types of findings for 10 specific security domains (e.g., network exposure, credential leakage, privilege escalation, skill risks).\n- Mandates read-only mode by default: no config changes or secret exfiltration, with clear instructions to redact secrets from reports.\n- Standardized, terminal-style audit report format introduced, with explicit reporting for every check (OK/VULNERABLE/UNKNOWN) and actionable fixes for each vulnerability.\n- Includes summary report section and guidance on only performing remediation after explicit user request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e7ec3c953a70c0aaf6b3498dae9f77dd734e08d4eee6ce41c0291276d27cc11"
+}

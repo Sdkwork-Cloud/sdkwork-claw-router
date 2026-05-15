@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mu-pet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mu_pet",
+  "skill": {
+    "id": 14784,
+    "skillKey": "clawhub-mu-pet",
+    "name": "Mu Pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mu-pet",
+    "url": "https://clawhub.ai/skills/mu-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mu-pet-ce11666a6c4bc144.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Animated pixel art desktop pet that roams the screen as an always-on-top Electron overlay. The pet avoids the cursor and active windows, walks along screen e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samskrta",
+      "userId": "publishers:samskrta",
+      "displayName": "samskrta",
+      "image": "https://avatars.githubusercontent.com/u/35246989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771532103992,
+      "changelog": "Initial release: pixel art lobster desktop pet. Transparent Electron overlay, roams full desktop, climbs walls/ceiling, avoids cursor and active windows, speech bubbles, HTTP API for agent state integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:549bc853dcc1ff97848d80bdfb16582e01bdc74d20df86a755c7621c70a69e43"
+}

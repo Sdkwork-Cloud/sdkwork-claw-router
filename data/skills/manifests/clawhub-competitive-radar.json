@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27330,
+  "uuid": "skill-clawhub-competitive-radar",
+  "skillKey": "clawhub-competitive-radar",
+  "name": "Competitor Radar",
+  "summary": "Tracks competitors weekly across 6 signals: pricing page diffs, homepage positioning changes, blog/RSS posts, job postings (hiring as strategy signal), GitHu...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitive_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manjotpahwa",
+      "features": [
+        "Tracks competitors weekly across 6 signals: pricing page diffs, homepage positioning changes, b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitive-radar@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5620682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitive-radar",
+      "url": "https://clawhub.ai/skills/competitive-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitive-radar",
+    "url": "https://clawhub.ai/skills/competitive-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitive-radar-48e332bde72ed75e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitive-radar@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitive-radar-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30de779b2efb5b92fff74b2c1a0ab8affa554bbf5311d4cac3d9fc9a8e88d6e6",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:50:07.069Z"
+}

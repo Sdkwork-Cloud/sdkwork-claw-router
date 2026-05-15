@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9158,
+  "uuid": "skill-clawhub-invoice-generator",
+  "skillKey": "clawhub-invoice-generator",
+  "name": "Invoice Generator",
+  "summary": "Generate professional PDF invoices from JSON data. Use when the user needs to create an invoice, billing document, or payment request with company/client details and line items.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomás Migone",
+      "features": [
+        "Generate professional PDF invoices from JSON data",
+        "Use when the user needs to create an invoice, billing document, or payment request with company."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3076185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-generator",
+      "url": "https://clawhub.ai/skills/invoice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-generator",
+    "url": "https://clawhub.ai/skills/invoice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-generator-c7ac1a91b4b57bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2610c0ce72ba3de2a7ad86406b7d022a45d3d16714da2f0e45b9721a5f8038d",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-22T18:16:57.562Z"
+}

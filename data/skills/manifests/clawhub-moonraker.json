@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52695,
+  "uuid": "skill-clawhub-moonraker",
+  "skillKey": "clawhub-moonraker",
+  "name": "moonraker",
+  "summary": "Control and monitor a Klipper 3D printer via the Moonraker API — print status, temps, pause, resume, cancel, emergency stop.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonraker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogueecho",
+      "features": [
+        "Control and monitor a Klipper 3D printer via the Moonraker API — print status, temps, pause, re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moonraker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19158691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moonraker",
+      "url": "https://clawhub.ai/skills/moonraker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonraker",
+    "url": "https://clawhub.ai/skills/moonraker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonraker-c75cc1b7defe5208.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moonraker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moonraker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f0c5f70596eeefa49ca5e6cd4b34e696248d9fa4b08005d43cb74cff6840be4",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T16:35:06.429Z"
+}

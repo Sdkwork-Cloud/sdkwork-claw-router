@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19229,
+  "uuid": "skill-clawhub-wanikani-sync",
+  "skillKey": "clawhub-wanikani-sync",
+  "name": "Wanikani",
+  "summary": "Sync WaniKani Japanese learning progress data from the API to local storage for analysis and insights. Use when the user wants to backup their WaniKani progr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wanikani_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mart1:n",
+      "features": [
+        "Sync WaniKani Japanese learning progress data from the API to local storage for analysis and in.",
+        "Use when the user wants to backup their WaniKani progr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wanikani-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20109376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wanikani-sync",
+      "url": "https://clawhub.ai/skills/wanikani-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wanikani-sync",
+    "url": "https://clawhub.ai/skills/wanikani-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wanikani-sync-7c09f3582393590c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wanikani-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wanikani-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0226e57ddd5e9058887c99ac50124b2e71ab610a8f6498a9a7506ff4dcd64e77",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:37:26.900Z"
+}

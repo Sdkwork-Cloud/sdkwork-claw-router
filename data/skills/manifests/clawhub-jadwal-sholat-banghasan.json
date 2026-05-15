@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13615,
+  "uuid": "skill-clawhub-jadwal-sholat-banghasan",
+  "skillKey": "clawhub-jadwal-sholat-banghasan",
+  "name": "Jadwal Sholat",
+  "summary": "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indonesia dari API Muslim api.myquran.com (sumber Kemenag Bimas Islam). Gunakan saat user minta jadwal sholat hari ini / tanggal tertentu / 1 bulan un.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jadwal_sholat_banghasan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banghasan",
+      "features": [
+        "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indone.",
+        "Gunakan saat user minta jadwal sholat hari ini / tanggal tertentu / 1 bulan untuk lokasi terten."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jadwal-sholat-banghasan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5436959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jadwal-sholat-banghasan",
+      "url": "https://clawhub.ai/skills/jadwal-sholat-banghasan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jadwal-sholat-banghasan",
+    "url": "https://clawhub.ai/skills/jadwal-sholat-banghasan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jadwal-sholat-banghasan-5afa2032e24f53f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jadwal-sholat-banghasan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jadwal-sholat-banghasan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14974b36083d016ec5efab51e869e5ffd131346722d05154a560926db431b214",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:14:25.760Z"
+}

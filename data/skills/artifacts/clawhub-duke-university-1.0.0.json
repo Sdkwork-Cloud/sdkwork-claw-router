@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duke-university@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duke_university",
+  "skill": {
+    "id": 68104,
+    "skillKey": "clawhub-duke-university",
+    "name": "Duke University"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duke-university",
+    "url": "https://clawhub.ai/skills/duke-university",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duke-university-9409b56d149a49eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "顶尖私立研究型大学，医学院和法学院全美前十，年研究经费超12亿美元，拥有强大体育品牌和120亿美元捐赠基金。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776584622256,
+      "changelog": "Duke University skill v1.0.0 introduces a comprehensive profile for investment, research, and strategic analysis:\n\n- Added detailed history and timeline highlighting key institutional milestones.\n- Provided structured business analysis for core academic units: medicine, law, business, engineering, and data science.\n- Outlined competitive advantages (\"护城河\") including research, endowment, athletics, and alumni network.\n- Included key data points on ranking, enrollment, research funding, and financial strength.\n- Summarized distinctive facts and recent accomplishments relevant to institutional reputation and market position.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23bc7a05245768c2178e48a980b3f21e7ffae02816f90ce9aaf59b781737df48"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60723,
+  "uuid": "skill-clawhub-data-hub",
+  "skillKey": "clawhub-data-hub",
+  "name": "Data Hub",
+  "summary": "数字货币量化交易系统的内存数据中枢，为多 Agent 提供统一的数据共享层。管理行情(market_state)、指标(indicators)、情报(intelligence)、风控(risk_audit)四个命名空间。Use when: Agent 需要读写共享数据、查询行情/指标/研报/风控状态。NOT fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnny",
+      "features": [
+        "数字货币量化交易系统的内存数据中枢，为多 Agent 提供统一的数据共享层。管理行情(market_state)、指标(indicators)、情报(intelligence)、风控(ris."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39037619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-hub",
+      "url": "https://clawhub.ai/skills/data-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-hub",
+    "url": "https://clawhub.ai/skills/data-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-hub-844517428561bcd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4979394503b704f14e7c867d2ef2047d50dc306a074c093cb39d320508084a2",
+      "artifactSizeBytes": 2688
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:31:23.173Z"
+}

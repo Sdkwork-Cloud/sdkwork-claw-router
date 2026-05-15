@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-browser-use@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_browser_use",
+  "skill": {
+    "id": 21898,
+    "skillKey": "clawhub-human-browser-use",
+    "name": "Human Browser Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-browser-use",
+    "url": "https://clawhub.ai/skills/human-browser-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-browser-use-77930b03d42d7607.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides human-like browser automation with stealth features to bypass anti-bot measures using natural mouse, keyboard, and scroll behaviors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyless",
+      "userId": "publishers:andyless",
+      "displayName": "less",
+      "image": "https://avatars.githubusercontent.com/u/30073489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1773481705404,
+      "changelog": "- Added documentation for human-browser-use, detailing usage with CLI, Python, and agent patterns.\n- Outlines API replacements: HumanBrowserSession, HumanBrowserProfile, and HumanBehaviorConfig for superior stealth and human-like interaction.\n- Provides configuration details for customizing mouse, keyboard, scroll, and timing behaviors to mimic real users.\n- Emphasizes best practices: always import from human_browser_use and use HumanElement for actions to ensure human-like automation.\n- Includes installation, usage examples, and a configuration cheatsheet for quick reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8cc305fb6f34dd237d5d269c79a350066cab69c1210aea109f4855772732734"
+}

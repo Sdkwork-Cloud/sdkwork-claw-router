@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67781,
+  "uuid": "skill-clawhub-ai-investment-analyzer",
+  "skillKey": "clawhub-ai-investment-analyzer",
+  "name": "AI Investment Analyzer",
+  "summary": "AI投资分析与决策助手，为用户提供股票、加密货币、房地产投资的分析和建议。支持实时数据分析、风险评估、投资策略优化。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_investment_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liunk",
+      "features": [
+        "AI投资分析与决策助手，为用户提供股票、加密货币、房地产投资的分析和建议。支持实时数据分析、风险评估、投资策略优化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-investment-analyzer@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19990937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-investment-analyzer",
+      "url": "https://clawhub.ai/skills/ai-investment-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-investment-analyzer",
+    "url": "https://clawhub.ai/skills/ai-investment-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-investment-analyzer-59b68d58b9ee5b70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-investment-analyzer@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-investment-analyzer-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:673c9bf978a2eded6e19e40761760f8fd4058941fe5c7d74715814d81415fe68",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:02:47.305Z"
+}

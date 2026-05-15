@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shadows-bug-hunter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadows_bug_hunter",
+  "skill": {
+    "id": 50974,
+    "skillKey": "clawhub-shadows-bug-hunter",
+    "name": "Shadows Bug Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadows-bug-hunter",
+    "url": "https://clawhub.ai/skills/shadows-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadows-bug-hunter-ff6ccbc4a803048a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured debugging with 4 techniques — Log Injection, Screenshot Analysis, Manual Trace, Test-Driven Fix. Use when facing errors, broken UI, regressions, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nakedoshadow",
+      "userId": "publishers:nakedoshadow",
+      "displayName": "NakedoShadow",
+      "image": "https://avatars.githubusercontent.com/u/196211757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772894223855,
+      "changelog": "HIGH TRUST: PREREQUISITES + SECURITY CONSIDERATIONS + CLEANUP GUARANTEE + homepage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ede6b3618c1df73d07167f1210013d89dc11fc0451a5724f614cc6a16914a10e"
+}

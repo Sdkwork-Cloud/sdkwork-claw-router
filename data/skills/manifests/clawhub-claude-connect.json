@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8786,
+  "uuid": "skill-clawhub-claude-connect",
+  "skillKey": "clawhub-claude-connect",
+  "name": "Claude Connect",
+  "summary": "Connect Claude to Clawdbot instantly and keep it connected 24/7. Run after setup to link your subscription, then auto-refreshes tokens forever.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_connect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TunaIssaCoding",
+      "features": [
+        "Connect Claude to Clawdbot instantly and keep it connected 24/7",
+        "Run after setup to link your subscription, then auto-refreshes tokens forever."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-connect@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149756654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-connect",
+      "url": "https://clawhub.ai/skills/claude-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-connect",
+    "url": "https://clawhub.ai/skills/claude-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-connect-78129488566c9437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-connect@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-connect-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a161f9ac3d2303b927c9d276ab32371c2d7b6255dfde172c7ceb269585de18f9",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T03:47:34.595Z"
+}

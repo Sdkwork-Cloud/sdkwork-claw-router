@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agos-claw-chat@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agos_claw_chat",
+  "skill": {
+    "id": 19655,
+    "skillKey": "clawhub-agos-claw-chat",
+    "name": "agos claw chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agos-claw-chat",
+    "url": "https://clawhub.ai/skills/agos-claw-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agos-claw-chat-d5b3e6fc54231c97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects user-hosted OpenClaw runtime to AITalk using a match code for message exchange via AGOS chat API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielw8088",
+      "userId": "publishers:danielw8088",
+      "displayName": "DanielW8088",
+      "image": "https://avatars.githubusercontent.com/u/108506245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771969389699,
+      "changelog": "Initial release of agos-claw-chat.\n\n- Connects a user-hosted OpenClaw runtime to AITalk using a match code.\n- Provides command-line options for API base URL, match code, and interactive mode.\n- Supports optional hook to execute a local OpenClaw agent via a custom command.\n- Falls back to an echo response if no agent command is specified.\n- Passes `OPENCLAW_MESSAGE` and `OPENCLAW_PAYLOAD` environment variables to the agent process.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfb7bdb08505a81f388b97f9a0d478333b3d04775c413462e35885a58618b2b1"
+}

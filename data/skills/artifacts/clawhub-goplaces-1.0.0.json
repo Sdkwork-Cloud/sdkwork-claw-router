@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goplaces@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goplaces",
+  "skill": {
+    "id": 8305,
+    "skillKey": "clawhub-goplaces",
+    "name": "Goplaces"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goplaces",
+    "url": "https://clawhub.ai/skills/goplaces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goplaces-7520ebb5dfce19a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 20580,
+      "installsAllTime": 1230,
+      "installsCurrent": 1201,
+      "stars": 29,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545347454,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0ed1d9d118852c58016f91b8f99c72d91ae949b311860742ecc9e41d342c1fc"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12798,
+  "uuid": "skill-clawhub-book-it-support",
+  "skillKey": "clawhub-book-it-support",
+  "name": "Book IT Support",
+  "summary": "Book it-support services through Lokuli MCP. Use when user needs to find and book it-support. Triggers on requests like \"book a it-support\", \"find it-support near me\", or any it-support service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_it_support",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book it-support services through Lokuli MCP",
+        "Use when user needs to find and book it-support",
+        "Triggers on requests like \"book a it-support\", \"find it-support near me\", or any it-support ser."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-it-support@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-it-support",
+      "url": "https://clawhub.ai/skills/book-it-support"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-it-support",
+    "url": "https://clawhub.ai/skills/book-it-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-it-support-3db2371d7da57cc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-it-support@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-it-support-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8a6bdd2d1f763b7a19b86ee3bea66e3eee2074dedc83b7d076c599acac1daf4",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:43.111Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8416,
+  "uuid": "skill-clawhub-git",
+  "skillKey": "clawhub-git",
+  "name": "Git",
+  "summary": "Git commits, branches, rebases, merges, conflict resolution, history recovery, team workflows, and the commands needed for safe day-to-day version control. U...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Git commits, branches, rebases, merges, conflict resolution, history recovery, team workflows,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git",
+      "url": "https://clawhub.ai/skills/git"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git",
+    "url": "https://clawhub.ai/skills/git",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-9a881b9b9f238494.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47d34c95c20b2a05b5edeb07cd346b6450b16d1f34941ce351cfae369738597f",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T19:03:15.217Z"
+}

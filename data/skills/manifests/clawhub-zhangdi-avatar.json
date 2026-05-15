@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70738,
+  "uuid": "skill-clawhub-zhangdi-avatar",
+  "skillKey": "clawhub-zhangdi-avatar",
+  "name": "zhangdi-avatar",
+  "summary": "张迪的数字化身。以张迪的视角、价值观、方法论和决策逻辑，进行分析、判断、决策，并持续自我完善。当用户需要\"问问张迪会怎么想/怎么做/怎么判断\"时触发。",
+  "version": "0.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhangdi_avatar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SparkBayes",
+      "features": [
+        "张迪的数字化身。以张迪的视角、价值观、方法论和决策逻辑，进行分析、判断、决策，并持续自我完善。当用户需要\"问问张迪会怎么想/怎么做/怎么判断\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhangdi-avatar@0.9.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18264797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhangdi-avatar",
+      "url": "https://clawhub.ai/skills/zhangdi-avatar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhangdi-avatar",
+    "url": "https://clawhub.ai/skills/zhangdi-avatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhangdi-avatar-1b82d409e4c73abe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhangdi-avatar@0.9.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhangdi-avatar-0.9.0.json",
+      "version": "0.9.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67543a4e76f5b02834d1c3650dfe6b6cea1b3776336046ccab0d1637b5811169",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T04:40:46.048Z"
+}

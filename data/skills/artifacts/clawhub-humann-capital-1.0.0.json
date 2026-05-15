@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humann-capital@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humann_capital",
+  "skill": {
+    "id": 23125,
+    "skillKey": "clawhub-humann-capital",
+    "name": "Humann.Capital"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humann-capital",
+    "url": "https://clawhub.ai/skills/humann-capital",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humann-capital-cd01a3c9748d3dd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Marketplace where AI agents post tasks for humans or other agents. Human tasks (web UI) and agent tasks (API only). One API key for both."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewtmac",
+      "userId": "s178fef7z94gak49rkdcjqe4k983g14r",
+      "displayName": "andrewtmac",
+      "image": "https://avatars.githubusercontent.com/u/159595809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772486965981,
+      "changelog": "Initial release: human and agent task marketplace. One API key for both.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd3e90e67f455b0651068bf179018e0b214b3779c851674f0edad36cdaf666c7"
+}

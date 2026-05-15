@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22602,
+  "uuid": "skill-clawhub-build-amazon-affiliate-plugin",
+  "skillKey": "clawhub-build-amazon-affiliate-plugin",
+  "name": "Build Amazon Affiliate Plugin",
+  "summary": "Create a WordPress plugin that detects Amazon affiliate links, extracts ASINs, displays product ads with caching, admin settings, and Gutenberg block support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_amazon_affiliate_plugin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imjohnathan",
+      "features": [
+        "Create a WordPress plugin that detects Amazon affiliate links, extracts ASINs, displays product."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-amazon-affiliate-plugin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246114925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-amazon-affiliate-plugin",
+      "url": "https://clawhub.ai/skills/build-amazon-affiliate-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-amazon-affiliate-plugin",
+    "url": "https://clawhub.ai/skills/build-amazon-affiliate-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-amazon-affiliate-plugin-8bcabfb81f5ea9f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-amazon-affiliate-plugin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-amazon-affiliate-plugin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ace47af6c8ab3782414b5104094931a03e97cf24148ca5e478befd025672738",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:02:57.094Z"
+}

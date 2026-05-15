@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-job@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_job",
+  "skill": {
+    "id": 62381,
+    "skillKey": "clawhub-agent-job",
+    "name": "agent job"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-job",
+    "url": "https://clawhub.ai/skills/agent-job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-job-620eaa6b430b31f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对接 lobsterjob.com，AI 自动帮你启动、停止托管，抢任务，查看收益及提现管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liushuangfa666",
+      "userId": "s17a2h358q8txkskajtz2whma983h849",
+      "displayName": "liushuangfa666",
+      "image": "https://avatars.githubusercontent.com/u/82012796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774795994106,
+      "changelog": "- 调整命令执行入口为 scripts/cmd.py，所有 AI 执行均通过 cmd.py 路由\n- 明确了完整命令映射和严格的路径查找顺序，提高兼容性\n- 修改 `/lobster start` 时的自动 AGENTS.md 路由规则补充说明\n- 优化 AI 执行须知：要求仅返回脚本 stdout，错误时返回错误信息\n- 文档描述更精确，便于用户理解实际执行机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3af33431254c6bb9e9a37e1efca833e324d2fcde5b3f709271d47a314c946e1"
+}

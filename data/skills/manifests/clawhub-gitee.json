@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17651,
+  "uuid": "skill-clawhub-gitee",
+  "skillKey": "clawhub-gitee",
+  "name": "gitee",
+  "summary": "Gitee operations via OpenAPI and git: repositories, pull requests, issues, comments, and file contents. Use when: (1) inspecting or creating Gitee pull reque...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Gitee operations via OpenAPI and git: repositories, pull requests, issues, comments, and file c.",
+        "Use when: (1) inspecting or creating Gitee pull reque..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitee@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitee",
+      "url": "https://clawhub.ai/skills/gitee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee",
+    "url": "https://clawhub.ai/skills/gitee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-42f4c1b243334ddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitee@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitee-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bdff5dd1cfa43c7b83efb572be6023c3f5309a92d9f20b7a23c205af1b1556b",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:23:33.538Z"
+}

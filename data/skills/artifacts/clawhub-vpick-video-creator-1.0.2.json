@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vpick-video-creator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vpick_video_creator",
+  "skill": {
+    "id": 39345,
+    "skillKey": "clawhub-vpick-video-creator",
+    "name": "VPick AI Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vpick-video-creator",
+    "url": "https://clawhub.ai/skills/vpick-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vpick-video-creator-498860b337458a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one AI video production studio on a visual canvas. Generate videos (Kling 3.0, Veo 3.1, Sora 2, Runway, Grok, Midjourney Video), generate images (nano..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774600991467,
+      "changelog": "## vpick-video-creator 1.0.2 Changelog\n\n- Added a new \"Security & Data Handling\" section to the documentation.\n- Clarified authentication: all access is via MCP link with embedded token; no extra API keys needed.\n- Explained data flow, storage, and billing (charges go to VPick credits; prompts/media are routed through VPick and sent to third-party providers).\n- Emphasized no local credentials or environment variables are required.\n- Updated prerequisite steps to reflect the streamlined security and connection process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b3230770ddaa58df9842aec151f65e08af1fb9b3c41a74e1d84ddbffe74c851"
+}

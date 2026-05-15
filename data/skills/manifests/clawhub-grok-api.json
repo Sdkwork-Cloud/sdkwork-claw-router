@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62007,
+  "uuid": "skill-clawhub-grok-api",
+  "skillKey": "clawhub-grok-api",
+  "name": "Grok Api",
+  "summary": "通过 LeonAI 代理调用 xAI Grok API，支持多模型文本对话、深度推理及图片视频生成与编辑，兼容 OpenAI 格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lygjoey",
+      "features": [
+        "通过 LeonAI 代理调用 xAI Grok API，支持多模型文本对话、深度推理及图片视频生成与编辑，兼容 OpenAI 格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234766358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-api",
+      "url": "https://clawhub.ai/skills/grok-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-api",
+    "url": "https://clawhub.ai/skills/grok-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-api-42e477f4cd679e04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed5be933e56b6e83affa19870bd87dc9f972f03239c4fd75008441952618246a",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:49:03.355Z"
+}

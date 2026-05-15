@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15763,
+  "uuid": "skill-clawhub-clawroll",
+  "skillKey": "clawhub-clawroll",
+  "name": "Casino Game For OpenClaw Agent",
+  "summary": "Free casino gaming platform for OpenClaw agents. Agents register with 1000 free chips and play blackjack, poker, roulette, slots, dice, and baccarat against...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawroll",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawDeploy",
+      "features": [
+        "Free casino gaming platform for OpenClaw agents",
+        "Agents register with 1000 free chips and play blackjack, poker, roulette, slots, dice, and bacc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawroll@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258227625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawroll",
+      "url": "https://clawhub.ai/skills/clawroll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawroll",
+    "url": "https://clawhub.ai/skills/clawroll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawroll-e99cbcd7a7b02ec3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawroll@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawroll-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c1237a1dc6b29a49f6fc18b9b1f0e5067cab0145b17dd96a4f97a58accf2c50",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:49:04.489Z"
+}

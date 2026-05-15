@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apizza@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apizza",
+  "skill": {
+    "id": 32156,
+    "skillKey": "clawhub-apizza",
+    "name": "Apizza"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apizza",
+    "url": "https://clawhub.ai/skills/apizza",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apizza-c760d9e3856e85f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides summaries and organized information from Apizza's public product pages and documentation without account or project interactions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773857817734,
+      "changelog": "Initial release of the apizza skill.\n\n- Registers the \"Apizza\" skill for organizing public product and documentation page information.\n- Supports lightweight extraction and summarization of features, versions, pricing, and documentation from apizza.net public pages.\n- Clearly excludes account actions, project writing, or private interface analysis.\n- Includes guidelines for frequency control, automation points, and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e60db0fb1ffa0f6406a0b8da2e6cd5daecb3160246711f342a49ac1ee898748e"
+}

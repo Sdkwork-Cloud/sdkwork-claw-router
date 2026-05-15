@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64293,
+  "uuid": "skill-clawhub-kam-qianlu-doc-standards",
+  "skillKey": "clawhub-kam-qianlu-doc-standards",
+  "name": "KAM 千路文档标准",
+  "summary": "千路=询价管理+出入库/WMS(开发中)。本包权威=询价侧 Excel 表头/文件名(REFERENCE §1–10)、报价对比§12；问价单导出与报价单导入列对齐（含 MOQ/MPQ，无「状态」列）。术语/流程=naming+process。触发：表头命名、单据核验、报价对比矩阵、两子系统边界、filebrow...",
+  "version": "6.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kam_qianlu_doc_standards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linhai",
+      "features": [
+        "千路=询价管理+出入库/WMS(开发中)。本包权威=询价侧 Excel 表头/文件名(REFERENCE §1–10)、报价对比§12；问价单导出与报价单导入列对齐（含 MOQ/MPQ，无「."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kam-qianlu-doc-standards@6.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8407663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kam-qianlu-doc-standards",
+      "url": "https://clawhub.ai/skills/kam-qianlu-doc-standards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kam-qianlu-doc-standards",
+    "url": "https://clawhub.ai/skills/kam-qianlu-doc-standards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kam-qianlu-doc-standards-606adba82dd804c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kam-qianlu-doc-standards@6.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kam-qianlu-doc-standards-6.1.2.json",
+      "version": "6.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13c402f85a7136253a74f53e6c99f79f477b5159ee97ef3ac9ad5a6c686b9ac1",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:50:05.297Z"
+}

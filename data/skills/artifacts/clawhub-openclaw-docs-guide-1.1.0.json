@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-docs-guide@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_docs_guide",
+  "skill": {
+    "id": 61326,
+    "skillKey": "clawhub-openclaw-docs-guide",
+    "name": "OpenClaw Docs Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-docs-guide",
+    "url": "https://clawhub.ai/skills/openclaw-docs-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-docs-guide-bb0a6cec84235a76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 平台完整使用指南。涵盖 Gateway 配置、频道设置（Telegram/Discord/WhatsApp/微信等）、定时任务、会话管理、安全策略、沙盒配置、模型管理、Agent 管理、设备配对、心跳机制、CLI 命令等。当需要：(1) 配置或排查 OpenClaw (2) 添加频道/定时任务/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amazcuter",
+      "userId": "s177qs6wf96arzz9xqh1feq5vn84e93k",
+      "displayName": "amazcuter(神奇可人）",
+      "image": "https://avatars.githubusercontent.com/u/90633247?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776144406563,
+      "changelog": "v1.1.0: 补充 references 目录、文档索引、完善知识库结构、506行核心知识点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:139d691e0324d21d03faf21d1ba59285d062cd8572e83f937de0adb6beae7dcc"
+}

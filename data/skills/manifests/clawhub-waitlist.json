@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31662,
+  "uuid": "skill-clawhub-waitlist",
+  "skillKey": "clawhub-waitlist",
+  "name": "Waitlist",
+  "summary": "Waitlist integration. Manage data, records, and automate workflows. Use when the user wants to interact with Waitlist data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waitlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Waitlist integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Waitlist data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waitlist@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waitlist",
+      "url": "https://clawhub.ai/skills/waitlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waitlist",
+    "url": "https://clawhub.ai/skills/waitlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waitlist-49e749acca3f9f8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waitlist@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-waitlist-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39b7de4e3f9b1cb1629b882f3d8c642b28de07678e40bbd896448cd333a947fa",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:56.045Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49788,
+  "uuid": "skill-clawhub-tosr-test-skill-1778050437",
+  "skillKey": "clawhub-tosr-test-skill-1778050437",
+  "name": "TOSR Test Skill",
+  "summary": "Automated test skill to verify skill creation, inspection, updating, and deletion via the clawhub REST API lifecycle.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1778050437",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuangui",
+      "features": [
+        "Automated test skill to verify skill creation, inspection, updating, and deletion via the clawh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tosr-test-skill-1778050437@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5061317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tosr-test-skill-1778050437",
+      "url": "https://clawhub.ai/skills/tosr-test-skill-1778050437"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1778050437",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1778050437",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1778050437-15ffe92a48668e3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tosr-test-skill-1778050437@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tosr-test-skill-1778050437-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc07ea375efe2e18cecf9335e21d4e9c5d9d8a96bb92381c05acd814602877dd",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:54:05.311Z"
+}

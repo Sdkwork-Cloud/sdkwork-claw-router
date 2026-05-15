@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59673,
+  "uuid": "skill-clawhub-openclaw-obsidian-memory",
+  "skillKey": "clawhub-openclaw-obsidian-memory",
+  "name": "OpenClaw Obsidian Memory",
+  "summary": "OpenClaw + Obsidian Vault 永久记忆体系搭建技能。当用户需要：(1) 搭建本地知识库记忆系统 (2) 将 OpenClaw 的记忆检索与 Obsidian Vault 结合 (3) 实现双通道记忆检索（Vault 优先 + memory 补充）(4) 配置每日/每周自动记忆归档 (5) 管...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_obsidian_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MasterXiaoGu",
+      "features": [
+        "OpenClaw + Obsidian Vault 永久记忆体系搭建技能。当用户需要：(1) 搭建本地知识库记忆系统 (2) 将 OpenClaw 的记忆检索与 Obsidian Vault."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-obsidian-memory@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32923101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-obsidian-memory",
+      "url": "https://clawhub.ai/skills/openclaw-obsidian-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-obsidian-memory",
+    "url": "https://clawhub.ai/skills/openclaw-obsidian-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-obsidian-memory-c53b625e7a979289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-obsidian-memory@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-obsidian-memory-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5512f32ffb52c78de0253c95ec368ddd3565fcf326d8c36d6a1eae3dcd1f6a9",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T11:18:25.467Z"
+}

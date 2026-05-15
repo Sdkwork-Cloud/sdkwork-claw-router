@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51323,
+  "uuid": "skill-clawhub-vidu",
+  "skillKey": "clawhub-vidu",
+  "name": "Vidu — AI Video Generation - Vidu Q3 & Vidu 2.0",
+  "summary": "Generate AI videos using Vidu — featuring text-to-video, image-to-video, reference-to-video, and start-end-to-video with up to 1080p resolution, anime style...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MikeWang",
+      "features": [
+        "Generate AI videos using Vidu — featuring text-to-video, image-to-video, reference-to-video, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vidu@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60566571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vidu",
+      "url": "https://clawhub.ai/skills/vidu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu",
+    "url": "https://clawhub.ai/skills/vidu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-ff6fd86e5da95dd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vidu@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-vidu-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d9820a525245ce5c8e8c63250db497729f5180506e61092baa9aa6e46d3cda7",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:32:23.229Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-show-competitor-radar@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_show_competitor_radar",
+  "skill": {
+    "id": 57596,
+    "skillKey": "clawhub-trade-show-competitor-radar",
+    "name": "Trade Show Competitor Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-show-competitor-radar",
+    "url": "https://clawhub.ai/skills/trade-show-competitor-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-show-competitor-radar-3c702129def250c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structure on-site competitor booth observations into tagged, actionable intelligence notes. \"Log competitor intel from the show floor\" / \"记录展会现场竞品情报\" / \"Konk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775030082006,
+      "changelog": "- Added skill description, usage prompt, and keywords in multiple languages to improve global accessibility and discoverability.\n- Minor language and formatting enhancements in the skill metadata and description.\n- No changes to workflow, tagging, output structure, or overall functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:964a7f313e923aaea9beca001384911c0c27ba3f9d82c08f1c69c41be2a6de21"
+}

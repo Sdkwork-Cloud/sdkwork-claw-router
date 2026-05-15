@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52542,
+  "uuid": "skill-clawhub-storyclaw-x-manager",
+  "skillKey": "clawhub-storyclaw-x-manager",
+  "name": "Storyclaw X Manager",
+  "summary": "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-interact, analyze data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storyclaw_x_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Manage X (Twitter) accounts — post tweets, like, reply, retweet, view timeline, search, auto-in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/storyclaw-x-manager@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "storyclaw-x-manager",
+      "url": "https://clawhub.ai/skills/storyclaw-x-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storyclaw-x-manager",
+    "url": "https://clawhub.ai/skills/storyclaw-x-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storyclaw-x-manager-33eeda4ba305546a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/storyclaw-x-manager@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-storyclaw-x-manager-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a177ba5df8634139ce84fb41efc174f73c5d7911a0691d4b3c709a1c9793924f",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:49:33.196Z"
+}

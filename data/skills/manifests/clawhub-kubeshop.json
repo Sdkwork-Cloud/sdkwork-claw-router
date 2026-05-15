@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35819,
+  "uuid": "skill-clawhub-kubeshop",
+  "skillKey": "clawhub-kubeshop",
+  "name": "Kubeshop",
+  "summary": "Kubeshop (Testkube) integration. Manage data, records, and automate workflows. Use when the user wants to interact with Kubeshop (Testkube) data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubeshop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kubeshop (Testkube) integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Kubeshop (Testkube) data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubeshop@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubeshop",
+      "url": "https://clawhub.ai/skills/kubeshop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubeshop",
+    "url": "https://clawhub.ai/skills/kubeshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubeshop-fec75c121395e0f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubeshop@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubeshop-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6db1b82d302c255f65f9c9cb8e6e6762ee0ff2321f12207104cc3ec39a4b037",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:05:05.818Z"
+}

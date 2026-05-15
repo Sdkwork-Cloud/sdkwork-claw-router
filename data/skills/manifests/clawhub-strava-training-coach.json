@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17991,
+  "uuid": "skill-clawhub-strava-training-coach",
+  "skillKey": "clawhub-strava-training-coach",
+  "name": "Strava Training Coach",
+  "summary": "AI running coach that prevents injuries by monitoring your Strava training load daily. Detects dangerous mileage spikes, intensity imbalances, and recovery g...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava_training_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heqing",
+      "features": [
+        "AI running coach that prevents injuries by monitoring your Strava training load daily",
+        "Detects dangerous mileage spikes, intensity imbalances, and recovery g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava-training-coach@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13338360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava-training-coach",
+      "url": "https://clawhub.ai/skills/strava-training-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava-training-coach",
+    "url": "https://clawhub.ai/skills/strava-training-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-training-coach-6fa953fa1c75eee5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava-training-coach@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-training-coach-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08a438bc2ac4ce1824df113df7db9a46a8b523f222f1f7db18a30f95ca48ae14",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T05:26:53.863Z"
+}

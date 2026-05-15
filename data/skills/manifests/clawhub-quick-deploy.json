@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35398,
+  "uuid": "skill-clawhub-quick-deploy",
+  "skillKey": "clawhub-quick-deploy",
+  "name": "Quick Deploy",
+  "summary": "Deploy projects to Vercel, Netlify, or Fly.io with one command. Auto-detects framework (Next.js, React, Python, Node.js, static HTML). Shows deploy URL when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ha Le",
+      "features": [
+        "Deploy projects to Vercel, Netlify, or Fly.io with one command",
+        "Auto-detects framework (Next.js, React, Python, Node.js, static HTML)",
+        "Shows deploy URL when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156477898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-deploy",
+      "url": "https://clawhub.ai/skills/quick-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-deploy",
+    "url": "https://clawhub.ai/skills/quick-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-deploy-dc2eb843aca94ed3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b07a38f09cef027fe7982fc59e4eaabe86d4377b8bb0cc480673d195664eaab0",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:51:48.531Z"
+}

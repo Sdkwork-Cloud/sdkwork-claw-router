@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/irb-application-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.irb_application_assistant",
+  "skill": {
+    "id": 36363,
+    "skillKey": "clawhub-irb-application-assistant",
+    "name": "IRB Application Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "irb-application-assistant",
+    "url": "https://clawhub.ai/skills/irb-application-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/irb-application-assistant-8911f9acaa260d5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assists researchers with Institutional Review Board (IRB) application tasks, including drafting informed consent documents, reviewing research protocols for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774424987050,
+      "changelog": "Initial release of IRB Application Assistant.\n\n- Assists researchers in preparing, reviewing, and submitting IRB applications.\n- Supports generation of informed consent documents, protocol compliance review, and application form creation.\n- Provides submission checklist validation to ensure completeness before IRB submission.\n- Includes recommended workflow and quality checklist for a streamlined IRB process.\n- Offers command-line examples for all supported tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f856562774c58c6be17d53fdaa0e8a586385a8fd44638f61d072142fc5cc6fe"
+}

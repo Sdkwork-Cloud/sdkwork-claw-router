@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42029,
+  "uuid": "skill-clawhub-video-publish",
+  "skillKey": "clawhub-video-publish",
+  "name": "Video Publish",
+  "summary": "Turn a 2-minute edited product demo in MP4 into 1080p publish-ready videos just by typing what you need. Whether it's publishing finished videos directly to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Turn a 2-minute edited product demo in MP4 into 1080p publish-ready videos just by typing what.",
+        "Whether it's publishing finished videos directly to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-publish",
+      "url": "https://clawhub.ai/skills/video-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-publish",
+    "url": "https://clawhub.ai/skills/video-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-publish-f4ee6fcd23b6b641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d600e32a25ceb3db55a9654642261f24e80304e9e2395b89cf4f0166149d86db",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T20:51:53.084Z"
+}

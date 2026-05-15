@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68743,
+  "uuid": "skill-clawhub-feishu-messenger",
+  "skillKey": "clawhub-feishu-messenger",
+  "name": "Feishu Messenger",
+  "summary": "通过飞书频道发送文本、图片和多格式文件消息，支持私聊和群聊，需使用相对路径提供媒体文件。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_messenger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanl754",
+      "features": [
+        "通过飞书频道发送文本、图片和多格式文件消息，支持私聊和群聊，需使用相对路径提供媒体文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-messenger@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8143555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-messenger",
+      "url": "https://clawhub.ai/skills/feishu-messenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-messenger",
+    "url": "https://clawhub.ai/skills/feishu-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-messenger-4dc01d1a7639b177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-messenger@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-messenger-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2f2c88dc6e144bc34e5e6843cfd46d93eb4b5f45a64fd07ff0e8c7bb421a655",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:58:16.769Z"
+}

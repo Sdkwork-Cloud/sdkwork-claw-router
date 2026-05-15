@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skywork-excel@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_excel",
+  "skill": {
+    "id": 9489,
+    "skillKey": "clawhub-skywork-excel",
+    "name": "Skywork Excel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-excel",
+    "url": "https://clawhub.ai/skills/skywork-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-excel-41ef589c9b875c4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skywork Excel (skywork) - Use for ANY task involving Excel, spreadsheets, tables, data analysis, or file conversion. Has BUILT-IN web search for real-time da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxcun17",
+      "userId": "s174hwb34r6ncgdm62n09a9tbd83hn5x",
+      "displayName": "Skywork AI",
+      "image": "https://avatars.githubusercontent.com/u/5279174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1739,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 21,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1775828198064,
+      "changelog": "- Simplified and shortened the skill description and trigger keywords for easier reading.\n- Clarified prerequisite instructions and API key setup steps.\n- Streamlined language about capabilities and trigger logic.\n- No changes to core workflow, polling, or error handling.\n- Documentation now more concise, focused on usability and key commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15c6ce68e61554caf0a1ef0d070d308a19c2944ba2d42be54a7f2dface073a5a"
+}

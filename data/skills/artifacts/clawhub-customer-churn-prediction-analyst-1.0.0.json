@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-churn-prediction-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_churn_prediction_analyst",
+  "skill": {
+    "id": 27429,
+    "skillKey": "clawhub-customer-churn-prediction-analyst",
+    "name": "Customer Churn Prediction Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-churn-prediction-analyst",
+    "url": "https://clawhub.ai/skills/customer-churn-prediction-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-churn-prediction-analyst-a624bce96428f627.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze customer behavior patterns and predict churn risk across Stripe, Shopify, and SaaS platforms. Identify at-risk accounts, generate personalized interv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncreighton",
+      "userId": "s1796aws4dkha8d1m3anczz2dn83hvxz",
+      "displayName": "ncreighton",
+      "image": "https://avatars.githubusercontent.com/u/15095223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773783798287,
+      "changelog": "Initial release of Customer Churn Prediction Analyst.\n\n- Analyzes customer behavior and predicts churn risk for Stripe, Shopify, and SaaS platforms.\n- Identifies at-risk accounts and provides risk-ranked lists.\n- Generates personalized intervention and win-back recommendations, including campaign templates and outreach strategies.\n- Tracks effectiveness of retention efforts and measures ROI.\n- Integrates with Stripe, Shopify, SaaS APIs, and Slack for alerts and multi-channel campaigns.\n- Supports custom configurations for various environments and data sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6adb0f910821c3a40a1d0bbeb51bb50bfb162f9ef8b0ab8cfa46b786452943e5"
+}

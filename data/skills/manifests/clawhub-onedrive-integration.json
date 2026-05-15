@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17477,
+  "uuid": "skill-clawhub-onedrive-integration",
+  "skillKey": "clawhub-onedrive-integration",
+  "name": "OneDrive Integration",
+  "summary": "Copy large/long files to OneDrive for sharing when the user is on Telegram or WhatsApp and wants to view a full document or long file. Use to place files int...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onedrive_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhihao",
+      "features": [
+        "Copy large/long files to OneDrive for sharing when the user is on Telegram or WhatsApp and want.",
+        "Use to place files int..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onedrive-integration@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19731677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onedrive-integration",
+      "url": "https://clawhub.ai/skills/onedrive-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onedrive-integration",
+    "url": "https://clawhub.ai/skills/onedrive-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onedrive-integration-5ed37d55646e79a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onedrive-integration@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onedrive-integration-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b7ea1f97f2d00d36d15d640a89cd9072664f3b3a497f8effae9d29844c0d4f7",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:03:18.870Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-usage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_usage",
+  "skill": {
+    "id": 10502,
+    "skillKey": "clawhub-telegram-usage",
+    "name": "Telegram Usage Stats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-usage",
+    "url": "https://clawhub.ai/skills/telegram-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-usage-915977ee20ad49a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Display session usage statistics (quota, session time, tokens, context)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-drew",
+      "userId": "publishers:c-drew",
+      "displayName": "c-drew",
+      "image": "https://avatars.githubusercontent.com/u/101952850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2365,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769306847924,
+      "changelog": "SECURITY: Remove bot token from config-example.json (use YOUR_BOT_TOKEN_HERE instead)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a75a798a31d87b9fbe4987899fb08384503196bc7d5d9d43f026551cecba0a7"
+}

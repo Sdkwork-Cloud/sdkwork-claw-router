@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/integration-testing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integration_testing",
+  "skill": {
+    "id": 42402,
+    "skillKey": "clawhub-integration-testing",
+    "name": "Integration Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integration-testing",
+    "url": "https://clawhub.ai/skills/integration-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integration-testing-fbb985a6f54809df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated integration testing with external services using testcontainers, wiremock, localstack. Use when developer needs to set up integration tests for tes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmed181283",
+      "userId": "s177nd0qk7heppjfethwwsmk6x85ea2c",
+      "displayName": "ahmed181283",
+      "image": "https://avatars.githubusercontent.com/u/26248550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777067350855,
+      "changelog": "Added comprehensive security context and warnings. Updated all templates with security disclaimers. Added SECURITY.md documentation explaining legitimate testing purpose. This skill is designed solely for integration testing in isolated environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a83eede5be268589d26b5b25925ab3264305f4f2b2eddea1cd6fbd616491422"
+}

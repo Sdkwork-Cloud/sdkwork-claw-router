@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13169,
+  "uuid": "skill-clawhub-openai-whisper-1-0-0",
+  "skillKey": "clawhub-openai-whisper-1-0-0",
+  "name": "Openai Whisper 1.0.0",
+  "summary": "Local speech-to-text with the Whisper CLI (no API key).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_whisper_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patryk Czubiński",
+      "features": [
+        "Local speech-to-text with the Whisper CLI (no API key)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openai-whisper-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53341780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openai-whisper-1-0-0",
+      "url": "https://clawhub.ai/skills/openai-whisper-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-whisper-1-0-0",
+    "url": "https://clawhub.ai/skills/openai-whisper-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-whisper-1-0-0-28c3233b23c661e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openai-whisper-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openai-whisper-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1a745f273727bb47c9d2ef12f6ed6cc10c249e2a01ebbc821cfba97e3734651",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T09:17:35.238Z"
+}

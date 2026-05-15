@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25040,
+  "uuid": "skill-clawhub-computer-use-windows",
+  "skillKey": "clawhub-computer-use-windows",
+  "name": "Computer Use Windows",
+  "summary": "Top-level Windows computer-use skill with a bundled standalone runtime that bootstraps itself without any local Claude installation, private native modules,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.computer_use_windows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Top-level Windows computer-use skill with a bundled standalone runtime that bootstraps itself w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/computer-use-windows@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "computer-use-windows",
+      "url": "https://clawhub.ai/skills/computer-use-windows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "computer-use-windows",
+    "url": "https://clawhub.ai/skills/computer-use-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/computer-use-windows-e044560d71399336.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/computer-use-windows@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-computer-use-windows-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e69d85da35af6d25c071f5181961f9be517f42a503990830591c3c01e3f317d",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:16:22.718Z"
+}

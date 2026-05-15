@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50905,
+  "uuid": "skill-clawhub-agent-profile-images",
+  "skillKey": "clawhub-agent-profile-images",
+  "name": "Agent Profile Images",
+  "summary": "Agent Profile Images for OpenClaw Control UI — upload custom avatars, generate themed AI profile images, preview before saving, and persist agent avatars acr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_profile_images",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Agent Profile Images for OpenClaw Control UI — upload custom avatars, generate themed AI profil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-profile-images@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-profile-images",
+      "url": "https://clawhub.ai/skills/agent-profile-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-profile-images",
+    "url": "https://clawhub.ai/skills/agent-profile-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-profile-images-9e6977d340a553a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-profile-images@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-profile-images-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:552c8c6537241862ee202c0a9b6ddd9b36dbb99e516578b1518edebf5f9bd78e",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:56:33.182Z"
+}

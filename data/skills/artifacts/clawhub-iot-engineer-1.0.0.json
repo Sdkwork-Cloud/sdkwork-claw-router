@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iot-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iot_engineer",
+  "skill": {
+    "id": 32358,
+    "skillKey": "clawhub-iot-engineer",
+    "name": "IOT Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iot-engineer",
+    "url": "https://clawhub.ai/skills/iot-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iot-engineer-fb948f8b2a2e61b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional entry-level IoT engineering career roadmap platform that generates personalized learning paths based on assessment data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774367428898,
+      "changelog": "- Initial release of the IoT Engineer Roadmap API.\n- Enables generation of personalized, structured IoT engineering career roadmaps based on user assessment data.\n- Provides detailed, multi-phase learning plans with recommended courses, projects, certifications, and skill gap analyses.\n- Includes endpoints for API status and health checks.\n- Designed for use by career counselors, educators, learners, and talent development organizations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39c9a29be4b981b05fa39d3127cb522fe2037a25566c0a88b28c5aa43790f563"
+}

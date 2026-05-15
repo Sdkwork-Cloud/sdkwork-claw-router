@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-skill-clawdbot-workspace-template-review@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_skill_clawdbot_workspace_template_review",
+  "skill": {
+    "id": 11066,
+    "skillKey": "clawhub-clawdbot-skill-clawdbot-workspace-template-review",
+    "name": "Clawdbot Workspace Template Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-skill-clawdbot-workspace-template-review",
+    "url": "https://clawhub.ai/skills/clawdbot-skill-clawdbot-workspace-template-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-skill-clawdbot-workspace-template-review-0f6c566a412986f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare a Clawdbot workspace against the official templates installed with Clawdbot (npm or source) and list missing sections to pull in, especially after upgrades."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xadenryan",
+      "userId": "publishers:xadenryan",
+      "displayName": "xadenryan",
+      "image": "https://avatars.githubusercontent.com/u/165437834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1903,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1768250093121,
+      "changelog": "- Initial release of the clawdbot-workspace-template-review skill.\n- Compares user workspace Markdown files against official Clawdbot templates.\n- Identifies and lists missing sections (excluding frontmatter and bootstrap content) for each relevant file.\n- Provides missing blocks verbatim with explanations and prompts to add them.\n- Includes instructions for locating the official Clawdbot templates and suggested CLI commands for comparison.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4017fb881f1ec57d8ffbed953c2038e3b84fe248ece72f7ecb22f701058a8b6f"
+}

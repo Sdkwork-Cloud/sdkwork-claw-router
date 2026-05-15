@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32300,
+  "uuid": "skill-clawhub-hermes-learning-loop",
+  "skillKey": "clawhub-hermes-learning-loop",
+  "name": "Hermes Learning Loop",
+  "summary": "Self-improving learning loop inspired by Hermes Agent. Automatically extracts successful workflows, creates skills, and persists knowledge across sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_learning_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "陈子昂",
+      "features": [
+        "Self-improving learning loop inspired by Hermes Agent",
+        "Automatically extracts successful workflows, creates skills, and persists knowledge across sess."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-learning-loop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122095082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-learning-loop",
+      "url": "https://clawhub.ai/skills/hermes-learning-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-learning-loop",
+    "url": "https://clawhub.ai/skills/hermes-learning-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-learning-loop-5ae12694f79141aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-learning-loop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-learning-loop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e857c58e763c202561eefaba882cb6bf3da5c3c9cf507057adfcda30785df96",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:53:07.012Z"
+}

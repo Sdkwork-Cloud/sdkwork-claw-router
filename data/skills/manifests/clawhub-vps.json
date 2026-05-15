@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13831,
+  "uuid": "skill-clawhub-vps",
+  "skillKey": "clawhub-vps",
+  "name": "VPS",
+  "summary": "Provision, secure, and manage virtual private servers with practical hosting guidance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Provision, secure, and manage virtual private servers with practical hosting guidance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vps",
+      "url": "https://clawhub.ai/skills/vps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps",
+    "url": "https://clawhub.ai/skills/vps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-cfe062be1bbee227.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:926b1844d4f2eadcfd5e85d7caf52dd331a65628f5a7d3224ed809c4f06bb4bc",
+      "artifactSizeBytes": 1732
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:36:23.263Z"
+}

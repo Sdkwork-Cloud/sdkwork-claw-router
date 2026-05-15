@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auto",
+  "skill": {
+    "id": 25230,
+    "skillKey": "clawhub-memory-auto",
+    "name": "Memory Auto Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auto",
+    "url": "https://clawhub.ai/skills/memory-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auto-5718c1f178ccc7ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically archives daily chat logs with keyword highlights and optional AI summaries into organized memory files without manual setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanshijun607-png",
+      "userId": "s17cm32wtr8hhp8030z7902eps83xz58",
+      "displayName": "yanshijun607-png",
+      "image": "https://avatars.githubusercontent.com/u/257959567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773313527398,
+      "changelog": "- Initial release of openclaw-memory-auto: automatic memory archiving for OpenClaw.\n- Archives daily chat highlights using language-agnostic, customizable keywords.\n- Works out of the box; supports configuration for keywords, paths, and schedule.\n- Cross-platform, zero-setup, and compatible with multiple agents.\n- Optional AI refinement updates MEMORY.md with structured summaries.\n- Non-intrusive: runs on startup or cron, respecting user privacy by archiving only key messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:410fe56cf8e4e43b1d78b45f0bf403a73c4631f12cc5fab5a830606d749ffbcf"
+}

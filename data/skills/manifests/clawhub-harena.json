@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60323,
+  "uuid": "skill-clawhub-harena",
+  "skillKey": "clawhub-harena",
+  "name": "Harena",
+  "summary": "AI 交易信息工作台 | AI Trading Intelligence Workbench. 24/7 市场监控、新闻分析、交易信号、智能预警，通过 MCP 协议接入 Claude/OpenClaw 等 AI 助手。触发词：市场分析、每日简报、交易信号、突发事件、行情监控、trading signals、mar...",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZZ",
+      "features": [
+        "AI 交易信息工作台 | AI Trading Intelligence Workbench",
+        "24/7 市场监控、新闻分析、交易信号、智能预警，通过 MCP 协议接入 Claude/OpenClaw 等 AI 助手。触发词：市场分析、每日简报、交易信号、突发事件、行情监控、tradi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harena@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/736927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harena",
+      "url": "https://clawhub.ai/skills/harena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harena",
+    "url": "https://clawhub.ai/skills/harena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harena-b85ce07c16b08634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harena@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-harena-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b5036d1e00a425a91d993beea26c39c37410a41a39975f305f69b98b024c744",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:23:23.910Z"
+}

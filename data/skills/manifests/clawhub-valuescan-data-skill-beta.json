@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63438,
+  "uuid": "skill-clawhub-valuescan-data-skill-beta",
+  "skillKey": "clawhub-valuescan-data-skill-beta",
+  "name": "valuescan-data-skill",
+  "summary": "ValueScan数据查询Skill。支持代币搜索、K线数据、主力资金流分析、链上数据查询等加密货币市场数据分析功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valuescan_data_skill_beta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ValueScan-ai",
+      "features": [
+        "ValueScan数据查询Skill。支持代币搜索、K线数据、主力资金流分析、链上数据查询等加密货币市场数据分析功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/valuescan-data-skill-beta@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44593427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "valuescan-data-skill-beta",
+      "url": "https://clawhub.ai/skills/valuescan-data-skill-beta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valuescan-data-skill-beta",
+    "url": "https://clawhub.ai/skills/valuescan-data-skill-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valuescan-data-skill-beta-31b7d8476d0d9785.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/valuescan-data-skill-beta@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-valuescan-data-skill-beta-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f5edec1b246b0802160e2fa3c8b34322cf44d2da19f2ff7baeddf727cabe9e3",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:12:33.241Z"
+}

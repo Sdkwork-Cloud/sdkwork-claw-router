@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-bias-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bias_detector",
+  "skill": {
+    "id": 55615,
+    "skillKey": "clawhub-ai-bias-detector",
+    "name": "Ai Bias Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bias-detector",
+    "url": "https://clawhub.ai/skills/ai-bias-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bias-detector-4264c63f25f74072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recognize and mitigate bias in AI outputs — become a more discerning AI user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778148241054,
+      "changelog": "AI Bias Detector v1.0.0\n\n- Initial release focused on educating users about bias in AI outputs.\n- Provides conceptual explanations of training data, representation, cultural, linguistic, and temporal biases.\n- Includes a practical detection checklist with “red flag” patterns to spot bias.\n- Teaches mitigation strategies such as explicit diversity prompts, counterfactual framing, and context specification.\n- Offers practice via examples to build skills in identifying and reducing bias.\n- Strong emphasis on balanced critical thinking and transparency—does not claim to eliminate bias or promote distrust of AI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37b87da3aa52979604320881777b30de528ee15188754470213a1347cb7380a5"
+}

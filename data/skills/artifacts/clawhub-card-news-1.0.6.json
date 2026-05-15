@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/card-news@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_news",
+  "skill": {
+    "id": 50947,
+    "skillKey": "clawhub-card-news",
+    "name": "Card News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-news",
+    "url": "https://clawhub.ai/skills/card-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-news-8ab3fff16c24f79c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Return material news about one major-US credit card from the last 3 months — direct card changes, issuer updates, and major coverage. Covers 11 major US issu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahongc",
+      "userId": "s17bwps1v7fqm560253grqacxn83kpf2",
+      "displayName": "jiahongc",
+      "image": "https://avatars.githubusercontent.com/u/61323260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776259451619,
+      "changelog": "Refresh published skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8db71fadd6169bb4ca4e08ff8dc78086a965ae38b62de6cc66f15ebe99ccf29e"
+}

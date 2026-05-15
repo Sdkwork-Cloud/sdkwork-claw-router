@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58932,
+  "uuid": "skill-clawhub-crypto-trading-bot",
+  "skillKey": "clawhub-crypto-trading-bot",
+  "name": "Crypto Trading Bot",
+  "summary": "加密貨幣交易機器人開發 - 幫你整自動交易Bot，支持Pine Script、Python、CCXT API對接。適用於：(1)整TradingView信號Bot (2)CEX/DEX API自動化 (3)套利機器人 (4)止盈止損策略",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_trading_bot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Katrina-jpg",
+      "features": [
+        "加密貨幣交易機器人開發",
+        "幫你整自動交易Bot，支持Pine Script、Python、CCXT API對接。適用於：(1)整TradingView信號Bot (2)CEX/DEX API自動化 (3)套利機器人."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-trading-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259838385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-trading-bot",
+      "url": "https://clawhub.ai/skills/crypto-trading-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-trading-bot",
+    "url": "https://clawhub.ai/skills/crypto-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-trading-bot-c39cc9f2d5bdbacf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-trading-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-trading-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1209cd646b1344a5f9251f43b8c51836733862a193cc1b4984db314683e9d030",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T23:32:16.527Z"
+}

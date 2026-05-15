@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_test",
+  "skill": {
+    "id": 16254,
+    "skillKey": "clawhub-quick-test",
+    "name": "Quick Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-test",
+    "url": "https://clawhub.ai/skills/quick-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-test-01dfbf24cdd0d3c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run basic system commands to verify Python, working directory, file access, and command execution for OpenClaw environment validation and debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gustavoziaugra",
+      "userId": "publishers:gustavoziaugra",
+      "displayName": "GustavoZiaugra",
+      "image": "https://avatars.githubusercontent.com/u/30840206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 898,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771050164932,
+      "changelog": "Simple system test to verify OpenClaw environment. Runs basic commands and validates output. Use when testing if OpenClaw is working correctly, verifying command execution, or need a simple command run. Perfect for debugging or confirming system status.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8ef68e15437662fe4c4ddbbe900bdfa3133499968792a68ba4d69f4dce4a5c4"
+}

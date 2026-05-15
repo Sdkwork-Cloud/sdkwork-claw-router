@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-ws@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_ws",
+  "skill": {
+    "id": 20435,
+    "skillKey": "clawhub-playwright-ws",
+    "name": "Playwright WS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-ws",
+    "url": "https://clawhub.ai/skills/playwright-ws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-ws-9f329592b1f40109.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation via remote Playwright WebSocket server for screenshots, PDFs and testing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "first-it-consulting",
+      "userId": "s171vfw0jcyt9zzr42zxrq2bhx83pp9d",
+      "displayName": "HW",
+      "image": "https://avatars.githubusercontent.com/u/712975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777626269928,
+      "changelog": "Security: redact PLAYWRIGHT_WS endpoint from logs; add provenance metadata; add privacy notice for remote server visibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:749f126183f8a757057b606d778d5d88b872765f57ef879d85ad5d99bf6d0d57"
+}

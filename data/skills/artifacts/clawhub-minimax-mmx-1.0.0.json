@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-mmx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_mmx",
+  "skill": {
+    "id": 64122,
+    "skillKey": "clawhub-minimax-mmx",
+    "name": "MiniMax MMX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-mmx",
+    "url": "https://clawhub.ai/skills/minimax-mmx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-mmx-e8fc357738051433.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax MMX-CLI 命令行工具，用于 AI Agent 调用 MiniMax 全模态能力（图片生成、视频生成、语音合成、音乐创作、图片理解、网络搜索、文本对话等）。当用户需要生成图片、视频、语音旁白、音乐，或者需要理解图片内容、执行搜索时使用此技能。安装：npm install -g mmx-cli；..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clx20000410",
+      "userId": "s177xrbesctg0rk7c93nv49zkh83k9sw",
+      "displayName": "clx20000410",
+      "image": "https://avatars.githubusercontent.com/u/75774737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775704748288,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e43b84ace0af6b86331b4fa1a5de6d24783c0f69a8b148e5fee830be7260d6e"
+}

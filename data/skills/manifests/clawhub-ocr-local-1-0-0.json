@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53827,
+  "uuid": "skill-clawhub-ocr-local-1-0-0",
+  "skillKey": "clawhub-ocr-local-1-0-0",
+  "name": "Ocr Local 1.0.0",
+  "summary": "Extract text from images using Tesseract.js OCR (100% local, no API key required). Supports Chinese (simplified/traditional) and English.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_local_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NVoiceJacob",
+      "features": [
+        "Extract text from images using Tesseract.js OCR (100% local, no API key required)",
+        "Supports Chinese (simplified/traditional) and English."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocr-local-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98372559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocr-local-1-0-0",
+      "url": "https://clawhub.ai/skills/ocr-local-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-local-1-0-0",
+    "url": "https://clawhub.ai/skills/ocr-local-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-local-1-0-0-3f8299ae2689d91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocr-local-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocr-local-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e7c0c56a7fb1bb701c2457afe3e92fd86745b83f1ddcfb2f48450a703a033e",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:38:18.519Z"
+}

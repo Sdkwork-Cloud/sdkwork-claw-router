@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18839,
+  "uuid": "skill-clawhub-explorium-agentsource",
+  "skillKey": "clawhub-explorium-agentsource",
+  "name": "Explorium AgentSource",
+  "summary": "B2B prospecting via Explorium AgentSource API. Requires EXPLORIUM_API_KEY. Find companies, prospects, enrich with firmographics/contacts, track events, expor...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explorium_agentsource",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yossigolan",
+      "features": [
+        "B2B prospecting via Explorium AgentSource API",
+        "Requires EXPLORIUM_API_KEY",
+        "Find companies, prospects, enrich with firmographics/contacts, track events, expor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/explorium-agentsource@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16289149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "explorium-agentsource",
+      "url": "https://clawhub.ai/skills/explorium-agentsource"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explorium-agentsource",
+    "url": "https://clawhub.ai/skills/explorium-agentsource",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explorium-agentsource-223c81f0d44a82b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/explorium-agentsource@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-explorium-agentsource-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7053ef60a5f4c078b28a444a158cf558edaa68dea25f490004939164d27384df",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:45:26.167Z"
+}

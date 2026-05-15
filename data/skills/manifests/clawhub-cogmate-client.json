@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24788,
+  "uuid": "skill-clawhub-cogmate-client",
+  "skillKey": "clawhub-cogmate-client",
+  "name": "Cogmate Client",
+  "summary": "Access and query Cogmate personal knowledge systems for knowledge retrieval, semantic search, and Q&A using a valid CogNexus access token.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogmate_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxiiWang",
+      "features": [
+        "Access and query Cogmate personal knowledge systems for knowledge retrieval, semantic search, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogmate-client@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62742958?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogmate-client",
+      "url": "https://clawhub.ai/skills/cogmate-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogmate-client",
+    "url": "https://clawhub.ai/skills/cogmate-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogmate-client-4f9ec4cdaaa6c2c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogmate-client@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogmate-client-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbec6c0a3734757a27fda17409a96cd4d563b5447c02e6bdedd01ee74ed26697",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:05:07.581Z"
+}

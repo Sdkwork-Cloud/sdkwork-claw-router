@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supplier-risk-scoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supplier_risk_scoring",
+  "skill": {
+    "id": 26427,
+    "skillKey": "clawhub-supplier-risk-scoring",
+    "name": "supplier-risk-scoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supplier-risk-scoring",
+    "url": "https://clawhub.ai/skills/supplier-risk-scoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supplier-risk-scoring-2d590c9752786a75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a 0-100 Supplier Risk Index score across financial, dependency, compliance, performance, and geographic risks with tiered action plans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772576511077,
+      "changelog": "Supplier Risk Scoring System – Initial Release\n\n- Launches version 1.0.0, introducing the Supplier Risk Index (SRI) framework.\n- Provides a 0–100 risk (\"health\") score across five risk dimensions for every vendor.\n- Defines tier classifications (Green/Yellow/Red) and recommends action plans based on scores.\n- Establishes clear scoring rubrics, data sources, and escalation actions for each risk area.\n- Supports use at vendor onboarding, annual reviews, and change events for objective, consistent risk assessment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89e316b35f64c3cd7dc5867caa28b3483fc366316899faa042f5935e681c4202"
+}

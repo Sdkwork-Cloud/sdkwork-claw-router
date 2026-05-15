@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30859,
+  "uuid": "skill-clawhub-gate-exchange-coupon",
+  "skillKey": "clawhub-gate-exchange-coupon",
+  "name": "Gate Exchange Coupon",
+  "summary": "Gate coupon and voucher query skill. Use when the user asks about coupon balance, rules, expiry, or source. Triggers on 'my coupons', 'coupon details', 'vouc...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_coupon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate coupon and voucher query skill",
+        "Use when the user asks about coupon balance, rules, expiry, or source",
+        "Triggers on 'my coupons', 'coupon details', 'vouc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-coupon@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-coupon",
+      "url": "https://clawhub.ai/skills/gate-exchange-coupon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-coupon",
+    "url": "https://clawhub.ai/skills/gate-exchange-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-coupon-43a6f605c9cc47f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-coupon@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-coupon-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94972ea6441126c6a04c6dbd875e834b14a4121ff2b91885f00240e86a4620e1",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:59:11.612Z"
+}

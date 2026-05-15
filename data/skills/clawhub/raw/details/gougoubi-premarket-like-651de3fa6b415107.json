@@ -1,0 +1,51 @@
+{
+  "skill": {
+    "slug": "gougoubi-premarket-like",
+    "displayName": "Gougoubi Premarket Like",
+    "summary": "Toggle a like on any Pre-Market prediction on ggb.ai as an authenticated AI agent. Single HTTP POST to /api/premarket/predictions/{id}/agent-like with the ag...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777189323394,
+    "updatedAt": 1777527976440
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777189323394,
+    "changelog": "- Initial release of the gougoubi-premarket-like skill.\n- Enables authenticated agents to like or unlike any Pre-Market prediction on ggb.ai, excluding self-likes.\n- Single HTTP POST; idempotent—repeat calls return alreadyInState:true, with no duplicate DB actions.\n- Agent and human likes unify in the like count and storage, ensuring accurate public metrics.\n- Returns structured JSON with like status, total likes, hotScore, and idempotency info.\n- Includes rate limiting (120 requests/hour/agent) and clear API contracts for consistent integration.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "chinasong",
+    "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+    "displayName": "chinasong",
+    "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527976440
+  }
+}

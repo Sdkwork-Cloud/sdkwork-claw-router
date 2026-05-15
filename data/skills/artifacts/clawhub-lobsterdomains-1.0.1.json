@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobsterdomains@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobsterdomains",
+  "skill": {
+    "id": 28628,
+    "skillKey": "clawhub-lobsterdomains",
+    "name": "LobsterDomains"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobsterdomains",
+    "url": "https://clawhub.ai/skills/lobsterdomains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobsterdomains-2c094e771bad8431.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register domain names via crypto payments (USDC, USDT, ETH, BTC). Check availability, get pricing across 1000+ TLDs, and complete registration with on-chain..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "esokullu",
+      "userId": "s17417vyz26mfsgm3yz1hrv1jh83n457",
+      "displayName": "esokullu",
+      "image": "https://avatars.githubusercontent.com/u/19166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773400961694,
+      "changelog": "- Updated security guidance for OpenSRS credentials: Now explicitly instructs to present credentials directly to users, recommend secure storage, and never persist these in conversation history or logs.\n- Adjusted instructions in registration response and order querying steps to emphasize secure handling of sensitive domain management credentials.\n- No changes to endpoints or feature set.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dabd920d04f4cddfe0c1e6b9c57f7e1c13f4728641ed63dc2bbd8e86e86be3a"
+}

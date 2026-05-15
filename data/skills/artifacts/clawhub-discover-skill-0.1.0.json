@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discover-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discover_skill",
+  "skill": {
+    "id": 43374,
+    "skillKey": "clawhub-discover-skill",
+    "name": "Skill Lookup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discover-skill",
+    "url": "https://clawhub.ai/skills/discover-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discover-skill-9d02c3ddba53cd34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drumrobot",
+      "userId": "s17ay1v6v88r2m102pvvc44gz183qcrm",
+      "displayName": "es6kr",
+      "image": "https://avatars.githubusercontent.com/u/819969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776241596412,
+      "changelog": "Initial release: discover and install skills from open agent skills ecosystem via npx skills CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70e70a321a747004114dbf3d4e14bbb17ca4ce099c3ca1d0459c05710d7cb0f4"
+}

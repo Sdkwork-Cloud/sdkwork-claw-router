@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42245,
+  "uuid": "skill-clawhub-immowelt-search",
+  "skillKey": "clawhub-immowelt-search",
+  "name": "Immowelt Real Estate Search",
+  "summary": "Search immowelt.at and immowelt.de real estate listings (apartments, houses) via HTML parsing. No browser needed. Search any Austrian or German location with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.immowelt_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mihaimacarie98",
+      "features": [
+        "Search immowelt.at and immowelt.de real estate listings (apartments, houses) via HTML parsing",
+        "No browser needed",
+        "Search any Austrian or German location with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/immowelt-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9325048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "immowelt-search",
+      "url": "https://clawhub.ai/skills/immowelt-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "immowelt-search",
+    "url": "https://clawhub.ai/skills/immowelt-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/immowelt-search-d4a2ea886df1dbf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/immowelt-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-immowelt-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77c8e6b26df4ffa0e6f2a485cb8bd5f55b0672f2d3c2c95e0de7e13ce81db75a",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:41:48.914Z"
+}

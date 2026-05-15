@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58575,
+  "uuid": "skill-clawhub-pdf-watermark",
+  "skillKey": "clawhub-pdf-watermark",
+  "name": "PDF Watermark",
+  "summary": "PDF文字水印工具 / PDF text watermark tool. 智能检测页面方向，自动调整角度和大小，支持中文，居中显示。Auto-detects page orientation, adjusts angle & size, supports Chinese, centered.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_watermark",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zss04124586",
+      "features": [
+        "PDF文字水印工具 / PDF text watermark tool",
+        "智能检测页面方向，自动调整角度和大小，支持中文，居中显示。Auto-detects page orientation, adjusts angle & size, supports Chin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-watermark@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17841180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-watermark",
+      "url": "https://clawhub.ai/skills/pdf-watermark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-watermark",
+    "url": "https://clawhub.ai/skills/pdf-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-watermark-b055576e7af7ad9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-watermark@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-watermark-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cc4b31cfc6128000c5723707241a3328689d8b530b1e59fbc453434404f0663",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:13:29.981Z"
+}

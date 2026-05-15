@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-index@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_index",
+  "skill": {
+    "id": 73251,
+    "skillKey": "clawhub-stock-index",
+    "name": "指数通"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-index",
+    "url": "https://clawhub.ai/skills/stock-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-index-6a28b966cd2308dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用投资大师的脑子、呼兰的嘴，帮你搞懂指数和市场"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pzc66momo",
+      "userId": "s17c26pn014afdpgcfw26fnbvh84443x",
+      "displayName": "Peizhuan",
+      "image": "https://avatars.githubusercontent.com/u/219092136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777340962332,
+      "changelog": "Rename skill to 指数通",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d09821fce06a43b0ec6d4a30577a533f0bf0f02652d4321316c840e13b009c87"
+}

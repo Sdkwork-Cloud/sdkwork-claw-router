@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stablecoin-depeg-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_depeg_monitor",
+  "skill": {
+    "id": 45539,
+    "skillKey": "clawhub-stablecoin-depeg-monitor",
+    "name": "Stablecoin Depeg Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-depeg-monitor",
+    "url": "https://clawhub.ai/skills/stablecoin-depeg-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-depeg-monitor-fd624b91465df77a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor stablecoin peg stability and review historical depeg events. Covers real-time price deviations and past incidents for USDT, USDC, DAI, USDe, FDUSD, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoyeweb3",
+      "userId": "s17a0sn7zcm1rpn4dqtkmbttth84b3n0",
+      "displayName": "zuoyeweb3",
+      "image": "https://avatars.githubusercontent.com/u/166980078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775503423442,
+      "changelog": "Stablecoin Depeg Monitor v1.0.0 — Initial Release\n\n- Launches real-time monitoring of major stablecoin peg status via Barker's public API.\n- Provides instant alerts on USDT, USDC, DAI, USDe, FDUSD, and others based on price deviation thresholds.\n- Includes a curated database of major historical depeg incidents for user context.\n- Offers clear action steps and safety guidance for users when deviations are detected.\n- Designed for easy integration and responsive to key stablecoin risk and safety queries.\n- Attribution and data powered by Barker — The Stablecoin Yield Map.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31b176337c257bacd2196947dc7b64813c5712f41298528db369a705ff1ad527"
+}

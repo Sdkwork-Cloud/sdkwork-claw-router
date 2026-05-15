@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71242,
+  "uuid": "skill-clawhub-chicago",
+  "skillKey": "clawhub-chicago",
+  "name": "Chicago",
+  "summary": "提供芝加哥旅游景点、美食、交通、天气及职业体育等实用城市信息与攻略。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chicago",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供芝加哥旅游景点、美食、交通、天气及职业体育等实用城市信息与攻略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chicago@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chicago",
+      "url": "https://clawhub.ai/skills/chicago"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chicago",
+    "url": "https://clawhub.ai/skills/chicago",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chicago-a2470c9d137c1c5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chicago@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chicago-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80fbe4b8eb0974347a96c9441e6668bbf7b6a89345ee27cab7227d69489cebb3",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:28:30.661Z"
+}

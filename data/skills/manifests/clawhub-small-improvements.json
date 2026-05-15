@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37657,
+  "uuid": "skill-clawhub-small-improvements",
+  "skillKey": "clawhub-small-improvements",
+  "name": "Small Improvements",
+  "summary": "Small Improvements integration. Manage data, records, and automate workflows. Use when the user wants to interact with Small Improvements data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.small_improvements",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Small Improvements integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Small Improvements data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/small-improvements@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "small-improvements",
+      "url": "https://clawhub.ai/skills/small-improvements"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "small-improvements",
+    "url": "https://clawhub.ai/skills/small-improvements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/small-improvements-7ac1c0e1cd232005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/small-improvements@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-small-improvements-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfd5b3df8e5f8076c97026e65d80eee1f861470b5f9cd2fe548bff4c74a38d86",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:01:04.568Z"
+}

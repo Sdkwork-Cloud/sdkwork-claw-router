@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bmo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmo",
+  "skill": {
+    "id": 54286,
+    "skillKey": "clawhub-bmo",
+    "name": "Bmo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmo",
+    "url": "https://clawhub.ai/skills/bmo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmo-c3a9b82d44e16c34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bank of Montreal, Canada’s oldest bank founded in 1817, operates across Canada and the US with strong historic and cross-border banking expertise."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777971870586,
+      "changelog": "Initial release of the Bank of Montreal (BMO) skill:\n\n- 提供BMO完整历史时间线与主要扩展节点\n- 梳理三大商业板块及其美国市场布局\n- 分析BMO护城河及在北美的行业定位\n- 收录核心业务数据与有趣历史事实\n- 方便查阅加拿大金融史及跨境银行案例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff8911aa6da07e8fd925aef4d4b7c2f5eb5e5ac78f8d9c5fca0f325ff97aa0d2"
+}

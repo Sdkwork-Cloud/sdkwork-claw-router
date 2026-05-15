@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi-touchscreen-alarm-clock-video-production@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_touchscreen_alarm_clock_video_production",
+  "skill": {
+    "id": 70373,
+    "skillKey": "clawhub-xiaomi-touchscreen-alarm-clock-video-production",
+    "name": "小米触屏闹钟视频制作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-touchscreen-alarm-clock-video-production",
+    "url": "https://clawhub.ai/skills/xiaomi-touchscreen-alarm-clock-video-production",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-touchscreen-alarm-clock-video-production-54e60ae3be6f4f01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B站视频下载裁剪压缩工具。下载bilibili视频、裁剪去除边框、压缩到指定大小时使用。支持b23.tv短链和BV号。别名：闹钟视频下载。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mimose101",
+      "userId": "s174rbezqj5857hkv5fxk58d9984h75y",
+      "displayName": "mimose101",
+      "image": "https://avatars.githubusercontent.com/u/119642201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778120918691,
+      "changelog": "1.新增询问是否要裁剪前后10秒和裁剪画面的选项；\n2.保存文件名为BV号。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d332ebabb10d6c8da34d59598779074751dbfd388709606ccb4d89b2c6ba77ac"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16167,
+  "uuid": "skill-clawhub-okx-api",
+  "skillKey": "clawhub-okx-api",
+  "name": "OKX API",
+  "summary": "This skill should be used when the user asks to \"query OKX account balance\", \"place an order on OKX\", \"get OKX market data\", \"check OKX positions\", \"cancel O...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "風魔小次郎",
+      "features": [
+        "This skill should be used when the user asks to \"query OKX account balance\", \"place an order on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35923415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-api",
+      "url": "https://clawhub.ai/skills/okx-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-api",
+    "url": "https://clawhub.ai/skills/okx-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-api-1b28fd3f93a3cf95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41f92fa9158a98b9f4a118cd2292c81743d73d72d285d858db8054de84a7462b",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T08:37:27.856Z"
+}

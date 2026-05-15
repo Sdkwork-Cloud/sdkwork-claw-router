@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/did-you-know@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.did_you_know",
+  "skill": {
+    "id": 17970,
+    "skillKey": "clawhub-did-you-know",
+    "name": "Did You Know"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "did-you-know",
+    "url": "https://clawhub.ai/skills/did-you-know",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/did-you-know-41cf701d4f75d6d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches English Wikipedia's \"Did you know?\" (DYK) facts, caches them locally, and serves them one at a time. No API key required. Does not edit Wikipedia."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathandeamer",
+      "userId": "publishers:jonathandeamer",
+      "displayName": "Jonathan Deamer",
+      "image": "https://avatars.githubusercontent.com/u/202770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1773395264535,
+      "changelog": "- Removed the _meta.json file from the project.\n- No other changes to functionality or user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d69967ff94ce2185a75dae6166059ae5227b243523a34eba3dffc750e90563d3"
+}

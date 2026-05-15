@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67552,
+  "uuid": "skill-clawhub-sec-audit-cn",
+  "skillKey": "clawhub-sec-audit-cn",
+  "name": "Sec Audit Cn",
+  "summary": "在中国等地区进行代码安全审计、安全编码与评审时使用：覆盖 OWASP Top 10、鉴权与授权、密钥与配置、CORS/CSP、 输入校验与防注入、XSS/CSRF、依赖漏洞、日志与错误处理；输出分级结论与可执行修复建议。 适用于 Web/API、移动端后端、小程序服务端、涉及个人信息与支付回调的业务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_audit_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "在中国等地区进行代码安全审计、安全编码与评审时使用：覆盖 OWASP Top 10、鉴权与授权、密钥与配置、CORS/CSP、 输入校验与防注入、XSS/CSRF、依赖漏洞、日志与错误处理；."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-audit-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-audit-cn",
+      "url": "https://clawhub.ai/skills/sec-audit-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-audit-cn",
+    "url": "https://clawhub.ai/skills/sec-audit-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-audit-cn-3ef8522654f96ec9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-audit-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-audit-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2646b4879d2e593145df9afb703c03f2cf924d7e7a1f4aad16493dbaeb1f0c39",
+      "artifactSizeBytes": 2821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:33:16.293Z"
+}

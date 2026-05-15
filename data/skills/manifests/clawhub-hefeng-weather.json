@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66236,
+  "uuid": "skill-clawhub-hefeng-weather",
+  "skillKey": "clawhub-hefeng-weather",
+  "name": "hefengweather",
+  "summary": "查询指定城市的实时天气、逐小时、每日预报及分钟级降水，需配置和风天气API Key后使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hefeng_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronjager92",
+      "features": [
+        "查询指定城市的实时天气、逐小时、每日预报及分钟级降水，需配置和风天气API Key后使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hefeng-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140129711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hefeng-weather",
+      "url": "https://clawhub.ai/skills/hefeng-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hefeng-weather",
+    "url": "https://clawhub.ai/skills/hefeng-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hefeng-weather-ae97017cd3e8ed41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hefeng-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hefeng-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea5900e19a32eb78e95a7c5b999a2a2dfea36a0ba6261d5969c4b32e63678810",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:51:22.563Z"
+}

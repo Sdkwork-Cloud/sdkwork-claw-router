@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/let-me-know@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.let_me_know",
+  "skill": {
+    "id": 14191,
+    "skillKey": "clawhub-let-me-know",
+    "name": "Let Me Know"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "let-me-know",
+    "url": "https://clawhub.ai/skills/let-me-know",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/let-me-know-709a8078ee5ce437.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notify the user before starting any long-running task and keep them updated. Use when a task will take noticeable time (>2-3 minutes). Send a start message, schedule a 5‑minute heartbeat update, and send a completion message immediately wh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fogyoy",
+      "userId": "publishers:fogyoy",
+      "displayName": "fogyoy",
+      "image": "https://avatars.githubusercontent.com/u/229448016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1999,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770353952324,
+      "changelog": "Fix: robust heartbeat cleanup (prefer in-run heartbeat); cron heartbeat deliver=false + dedupe + retry cleanup; document python3",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc85e816cc560bd6dc64139229cb9c740583079eda5a4d382535d2bc55992256"
+}

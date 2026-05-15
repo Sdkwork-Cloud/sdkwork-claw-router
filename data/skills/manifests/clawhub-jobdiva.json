@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34310,
+  "uuid": "skill-clawhub-jobdiva",
+  "skillKey": "clawhub-jobdiva",
+  "name": "Jobdiva",
+  "summary": "JobDiva integration. Manage data, records, and automate workflows. Use when the user wants to interact with JobDiva data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobdiva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "JobDiva integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with JobDiva data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobdiva@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobdiva",
+      "url": "https://clawhub.ai/skills/jobdiva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobdiva",
+    "url": "https://clawhub.ai/skills/jobdiva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobdiva-9c64aa0d42806d53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobdiva@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobdiva-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f6ae8327cbec62338ac2979c820c249dc6b8976731c81bed446a59e282d05a",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:39:15.461Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stealth-proxy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stealth_proxy",
+  "skill": {
+    "id": 16770,
+    "skillKey": "clawhub-stealth-proxy",
+    "name": "Stealth Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stealth-proxy",
+    "url": "https://clawhub.ai/skills/stealth-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stealth-proxy-e304f8611a0ebda3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect geo/IP blocks, securely switch VPN tunnel path with user consent, verify IP/region/DNS safety, retry blocked tasks, and provide auditable connection r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771096724678,
+      "changelog": "Initial public release of the vpn meta-skill for secure VPN tunnel orchestration and geo-access diagnostics.\n\n- Enables secure network tunnel setup (VPN, WireGuard, Tailscale) with explicit geo/IP/DNS verification.\n- Diagnoses and classifies access blockage, switches VPN paths with user consent, and safely resumes blocked workflows.\n- Integrates with MoltGuard and IPinfo for enhanced leak detection and security validation.\n- Enforces compliance gates—user authorization and legal acknowledgment—before making network changes.\n- Provides auditable reporting: block diagnosis, tunnel evidence, DNS safety, security status, and explicit next actions.\n- Supports bounded retry logic, automatic cleanup, and failure explanation when credentials or tunnel paths are missing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aefcfd0acb2ff30629b3ab00c268ba36cea80c0080c4626da64dea4030f9c17d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41182,
+  "uuid": "skill-clawhub-page-fetch",
+  "skillKey": "clawhub-page-fetch",
+  "name": "Page Fetch",
+  "summary": "Extract readable content from webpages with a stable, low-dependency workflow. Use when the user asks to open, inspect, summarize, translate, verify, or quot...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.page_fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ylkangpeter",
+      "features": [
+        "Extract readable content from webpages with a stable, low-dependency workflow",
+        "Use when the user asks to open, inspect, summarize, translate, verify, or quot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/page-fetch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3615280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "page-fetch",
+      "url": "https://clawhub.ai/skills/page-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "page-fetch",
+    "url": "https://clawhub.ai/skills/page-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/page-fetch-37c681d80f675b48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/page-fetch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-page-fetch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80911912c0ded9686f53d0fac7c1eca6f1d55d71ed08f7a29fd45d573ff4d87b",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T12:55:27.924Z"
+}

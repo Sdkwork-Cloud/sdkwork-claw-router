@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48162,
+  "uuid": "skill-clawhub-data-quality-validator",
+  "skillKey": "clawhub-data-quality-validator",
+  "name": "Data Quality Validator",
+  "summary": "Validate data quality in pipelines by checking completeness, consistency, freshness, accuracy, and distribution anomalies. Define expectations, profile data...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_quality_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate data quality in pipelines by checking completeness, consistency, freshness, accuracy,.",
+        "Define expectations, profile data..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-quality-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-quality-validator",
+      "url": "https://clawhub.ai/skills/data-quality-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-quality-validator",
+    "url": "https://clawhub.ai/skills/data-quality-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-quality-validator-01c8cf590c7766ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-quality-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-quality-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27958283a9e713447f87e150770bdffef5b5eb8869bdcefe4d6e4756c72afa84",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:48:43.482Z"
+}

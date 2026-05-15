@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26287,
+  "uuid": "skill-clawhub-mcp-marketplace",
+  "skillKey": "clawhub-mcp-marketplace",
+  "name": "Mcp Marketplace",
+  "summary": "Install, configure, and manage MCP servers. Search 50+ verified servers plus npm and Smithery registries. Auto-generate configs for OpenClaw, Claude Desktop,...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iiizzzyyy",
+      "features": [
+        "Install, configure, and manage MCP servers",
+        "Search 50+ verified servers plus npm and Smithery registries",
+        "Auto-generate configs for OpenClaw, Claude Desktop,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-marketplace@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44321190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-marketplace",
+      "url": "https://clawhub.ai/skills/mcp-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-marketplace",
+    "url": "https://clawhub.ai/skills/mcp-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-marketplace-44258b45c3faa34c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-marketplace@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-marketplace-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13735dfa56ce57673f788d6b053ecd7ea144a52171ec503daae3336aade1f8dd",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:19:13.658Z"
+}

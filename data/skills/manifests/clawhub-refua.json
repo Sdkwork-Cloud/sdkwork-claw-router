@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11775,
+  "uuid": "skill-clawhub-refua",
+  "skillKey": "clawhub-refua",
+  "name": "Refua",
+  "summary": "Fold and score biomolecular complexes and optionally profile ADMET to prioritize molecules in drug discovery pipelines via the refua-mcp server.",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refua",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbenjoseph",
+      "features": [
+        "Fold and score biomolecular complexes and optionally profile ADMET to prioritize molecules in d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/refua@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64219063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "refua",
+      "url": "https://clawhub.ai/skills/refua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refua",
+    "url": "https://clawhub.ai/skills/refua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refua-787611042b8cc9d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/refua@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-refua-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:007143a87069f0d739c15ea04a9e879b14922eacb11f0f0770ecdfaec5873be1",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:46:31.454Z"
+}

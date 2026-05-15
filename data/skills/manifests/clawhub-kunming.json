@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54013,
+  "uuid": "skill-clawhub-kunming",
+  "skillKey": "clawhub-kunming",
+  "name": "Kunming City Skill",
+  "summary": "Provides detailed information on Kunming city’s tourism, culture, food, weather, transport, events, accommodations, and travel tips.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kunming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "58",
+      "features": [
+        "Provides detailed information on Kunming city’s tourism, culture, food, weather, transport, eve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kunming@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/kunming/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kunming",
+      "url": "https://clawhub.ai/skills/kunming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kunming",
+    "url": "https://clawhub.ai/skills/kunming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kunming-bf2f030998f8e5e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kunming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kunming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df1d080dd36bd24aefb9b3d82852ca64a7311b9dfcc63f625b73b7f5213cadda",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:34:33.110Z"
+}

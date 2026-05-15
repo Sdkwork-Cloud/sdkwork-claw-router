@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/venn@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venn",
+  "skill": {
+    "id": 19456,
+    "skillKey": "clawhub-venn",
+    "name": "Venn - Secure Universal MCP (Google Workspace, Jira, GitHub, and more)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venn",
+    "url": "https://clawhub.ai/skills/venn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venn-29901ef03112777f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, describe, and execute enterprise tools (Jira, Salesforce, Gmail, Slack, Google Calendar, Google Drive, GitHub, Notion, Box, etc.) via the Venn tool-r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neil-bd",
+      "userId": "s17cbqvp7vm7btm4fwkt1bphqx83ghbg",
+      "displayName": "Neil",
+      "image": "https://avatars.githubusercontent.com/u/209500651?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 592,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774370586744,
+      "changelog": "venn 2.0.1\n\n- Clarified setup instructions: now details how to set VENN_API_KEY via OpenClaw `.env` file or secrets helper, and setup for sandboxed agents.\n- Metadata updated: VENN_API_KEY is now the only required environment variable; removed VENN_API_URL from `requires`.\n- Improved skill visibility explanation: now explicitly states the skill is hidden until the API key is set.\n- No functional or API changes. Documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83c403ad7ceac9bd79361bfe5b24e50132b8bdffda2fc489f16f66bad6839d72"
+}

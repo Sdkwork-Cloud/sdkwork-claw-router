@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-failover-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_failover_guard",
+  "skill": {
+    "id": 22774,
+    "skillKey": "clawhub-model-failover-guard",
+    "name": "Model Failover Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-failover-guard",
+    "url": "https://clawhub.ai/skills/model-failover-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-failover-guard-cc560de9615651fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically monitors model health and switches between primary and fallback models to maintain stability and recover when possible."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovmanth",
+      "userId": "publishers:bovmanth",
+      "displayName": "BovmantH",
+      "image": "https://avatars.githubusercontent.com/u/48009289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772521453258,
+      "changelog": "Automatic model switching when primary fails",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f8a3df7b438446afdb3e307145da50c9e97b97e5f0b51b22f0c8453504510cd"
+}

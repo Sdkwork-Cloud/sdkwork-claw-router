@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22579,
+  "uuid": "skill-clawhub-fastmail-suite",
+  "skillKey": "clawhub-fastmail-suite",
+  "name": "Fastmail Suite",
+  "summary": "Secure, safe-by-default Fastmail integration (email, contacts, calendar) via JMAP + CalDAV. Use when you want to verify Fastmail setup, triage/search email,...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastmail_suite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TassieDaddy",
+      "features": [
+        "Secure, safe-by-default Fastmail integration (email, contacts, calendar) via JMAP + CalDAV",
+        "Use when you want to verify Fastmail setup, triage/search email,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastmail-suite@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201017288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastmail-suite",
+      "url": "https://clawhub.ai/skills/fastmail-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastmail-suite",
+    "url": "https://clawhub.ai/skills/fastmail-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastmail-suite-bc6f49fa49944131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastmail-suite@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastmail-suite-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa166cf929abafda202c4d7baa83c07929c33865502823f185779473f0305bc4",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T04:41:16.332Z"
+}

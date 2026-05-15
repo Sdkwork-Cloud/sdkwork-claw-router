@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57464,
+  "uuid": "skill-clawhub-smyx-pet-restricted-area-warning-analysis",
+  "skillKey": "clawhub-smyx-pet-restricted-area-warning-analysis",
+  "name": "宠物禁区预警技能",
+  "summary": "Monitors restricted area intrusions, climbing on dining tables, and rummaging through trash cans, and issues real-time alerts, suitable for home pet monitori...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_pet_restricted_area_warning_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Monitors restricted area intrusions, climbing on dining tables, and rummaging through trash can."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-pet-restricted-area-warning-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-pet-restricted-area-warning-analysis",
+      "url": "https://clawhub.ai/skills/smyx-pet-restricted-area-warning-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-pet-restricted-area-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-pet-restricted-area-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-pet-restricted-area-warning-analysis-02c3e84a75353178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-pet-restricted-area-warning-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-pet-restricted-area-warning-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:794ec9fc2ab0c996796b9dde2f59e2c65c1e66fbebc53c64244a108f32ba6e3e",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:34:42.349Z"
+}

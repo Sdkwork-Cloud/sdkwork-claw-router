@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-in-sapphire@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_in_sapphire",
+  "skill": {
+    "id": 12431,
+    "skillKey": "clawhub-soul-in-sapphire",
+    "name": "Soul In Sapphire"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-in-sapphire",
+    "url": "https://clawhub.ai/skills/soul-in-sapphire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-in-sapphire-1afc336ee5833aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Long-term memory, state tracking, continuity review, and identity-change support for OpenClaw. Use for durable memory writes/search in Notion, emotion/state..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextaltair",
+      "userId": "s1769m2r7tj3d8eqerva8kpwkx83nn9e",
+      "displayName": "Altair",
+      "image": "https://avatars.githubusercontent.com/u/1401591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1773,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1775306717970,
+      "changelog": "soul-in-sapphire 1.0.13\n\n- Removed unused/legacy scripts: `emostate_notion.js` and `ltm_common.js`.\n- Updated invocation instructions in `SKILL.md` for dependency installation via ClawHub.\n- Cleaned up documentation for clarity and to match actual invocation and usage patterns.\n- Codebase now focuses on key scripts for memory search/write, state recall, and Notion bridge logic; removed redundant helpers.\n- No changes to external API or skill invocation behavior—primarily docs and internal cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a559a4ff68e8dc916102c9f1141ebf3f6c3dc07c3698ba338618d5228778e3a"
+}

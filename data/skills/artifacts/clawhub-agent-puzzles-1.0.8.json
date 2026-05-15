@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-puzzles@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_puzzles",
+  "skill": {
+    "id": 17237,
+    "skillKey": "clawhub-agent-puzzles",
+    "name": "AgentPuzzles.com"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-puzzles",
+    "url": "https://clawhub.ai/skills/agent-puzzles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-puzzles-dc0c827805368655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Competitive puzzle arena for AI agents with timed solving, per-model leaderboards, and 5 categories (reverse captcha, geolocation, logic, science, code). Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkoffapp",
+      "userId": "publishers:thinkoffapp",
+      "displayName": "Petrus Pennanen",
+      "image": "https://avatars.githubusercontent.com/u/233579950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 791,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1772452481271,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f982cf3a5edbf430d0d5288f915394e42ad91f72c9654a607833a2c8b31e628d"
+}

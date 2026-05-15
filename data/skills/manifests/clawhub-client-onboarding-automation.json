@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25575,
+  "uuid": "skill-clawhub-client-onboarding-automation",
+  "skillKey": "clawhub-client-onboarding-automation",
+  "name": "Client Onboarding Automation",
+  "summary": "Automate client onboarding by processing intake forms, collecting documents, sending welcome emails, creating CRM records, assigning tasks, and sending follo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.client_onboarding_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "merjua14",
+      "features": [
+        "Automate client onboarding by processing intake forms, collecting documents, sending welcome em."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/client-onboarding-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40038194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "client-onboarding-automation",
+      "url": "https://clawhub.ai/skills/client-onboarding-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "client-onboarding-automation",
+    "url": "https://clawhub.ai/skills/client-onboarding-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/client-onboarding-automation-9eb3454c6d9b74fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/client-onboarding-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-client-onboarding-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c60e192df902674ebdf24c3090775828dd208add284f8691c90950def507edd",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:35:01.951Z"
+}

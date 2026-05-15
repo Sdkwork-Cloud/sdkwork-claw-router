@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65403,
+  "uuid": "skill-clawhub-link-saver",
+  "skillKey": "clawhub-link-saver",
+  "name": "Link Saver",
+  "summary": "链接收藏夹，保存和整理有用的网页链接",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_saver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangjingzhi07",
+      "features": [
+        "链接收藏夹，保存和整理有用的网页链接"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/link-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131267927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "link-saver",
+      "url": "https://clawhub.ai/skills/link-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-saver",
+    "url": "https://clawhub.ai/skills/link-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-saver-a05e7512e80a1e34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/link-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-link-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18243c6b6dd633f8b063546b373f26452494ce28d18a867c94fa8412773ba9a1",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:57:41.000Z"
+}

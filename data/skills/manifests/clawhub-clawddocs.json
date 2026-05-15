@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8248,
+  "uuid": "skill-clawhub-clawddocs",
+  "skillKey": "clawhub-clawddocs",
+  "name": "Clawdbot Documentation Expert",
+  "summary": "Clawdbot documentation expert with decision tree navigation, search scripts, doc fetching, version tracking, and config snippets for all Clawdbot features",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawddocs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NicholasSpisak",
+      "features": [
+        "Clawdbot documentation expert with decision tree navigation, search scripts, doc fetching, vers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawddocs@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129075147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawddocs",
+      "url": "https://clawhub.ai/skills/clawddocs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawddocs",
+    "url": "https://clawhub.ai/skills/clawddocs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawddocs-d3ae45a67ef39bc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawddocs@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawddocs-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bfccecd2c2e669b008f204c6c638385817d32bcccbdd93eddc6af97ae0157f8",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-12T18:57:14.558Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40990,
+  "uuid": "skill-clawhub-ledger-transaction-entry",
+  "skillKey": "clawhub-ledger-transaction-entry",
+  "name": "Ledger Transaction Entry",
+  "summary": "Convert natural-language spending/income statements into ledger JSONL records and append them into projects/data/YYYY/YYYY-MM.jsonl. Use when the user descri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledger_transaction_entry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shing19",
+      "features": [
+        "Convert natural-language spending/income statements into ledger JSONL records and append them i.",
+        "Use when the user descri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledger-transaction-entry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38907754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledger-transaction-entry",
+      "url": "https://clawhub.ai/skills/ledger-transaction-entry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledger-transaction-entry",
+    "url": "https://clawhub.ai/skills/ledger-transaction-entry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledger-transaction-entry-dbc03b972bb14b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledger-transaction-entry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledger-transaction-entry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbdde6c21a98d94a79ddb8b9b59ca58db2786fa3056c8aaa78c543c3395adb90",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:48:00.921Z"
+}

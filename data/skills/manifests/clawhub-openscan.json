@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13772,
+  "uuid": "skill-clawhub-openscan",
+  "skillKey": "clawhub-openscan",
+  "name": "OpenScan",
+  "summary": "Scan binaries and scripts for malicious patterns before trusting them. Use when installing skills, evaluating unknown binaries, or auditing tool dependencies.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openscan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dev-null321",
+      "features": [
+        "Scan binaries and scripts for malicious patterns before trusting them",
+        "Use when installing skills, evaluating unknown binaries, or auditing tool dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openscan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17820466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openscan",
+      "url": "https://clawhub.ai/skills/openscan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openscan",
+    "url": "https://clawhub.ai/skills/openscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openscan-ecd7b622530bd3c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openscan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openscan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2be2e100a8df9e9debdeb0f461dc7a17aab4e69767c541b334324e870dba329e",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T22:55:42.370Z"
+}

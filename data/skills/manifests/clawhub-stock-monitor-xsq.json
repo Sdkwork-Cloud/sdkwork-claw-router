@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68169,
+  "uuid": "skill-clawhub-stock-monitor-xsq",
+  "skillKey": "clawhub-stock-monitor-xsq",
+  "name": "stock-monitor",
+  "summary": "股票监控分析技能 - 自定义股票池监控、实时行情、技术指标分析、涨跌趋势预测、信号提醒",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_xsq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leon Xue",
+      "features": [
+        "股票监控分析技能",
+        "自定义股票池监控、实时行情、技术指标分析、涨跌趋势预测、信号提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor-xsq@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17331219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor-xsq",
+      "url": "https://clawhub.ai/skills/stock-monitor-xsq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-xsq",
+    "url": "https://clawhub.ai/skills/stock-monitor-xsq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-xsq-ebe1efe16fa126ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor-xsq@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-xsq-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b056e9865753ee2f3693e98ba428c68008d0a51fa481827f93696a53a9ceaffb",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:00:55.041Z"
+}

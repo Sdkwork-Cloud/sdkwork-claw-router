@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contextstable@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextstable",
+  "skill": {
+    "id": 62126,
+    "skillKey": "clawhub-contextstable",
+    "name": "contextstable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextstable",
+    "url": "https://clawhub.ai/skills/contextstable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextstable-6a102575a77b1b9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "长小说文章上下文稳定输出续写"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiyiyiba",
+      "userId": "s17d99bmxr06zsybahc95rqvkx83gn04",
+      "displayName": "YIYIYIba",
+      "image": "https://avatars.githubusercontent.com/u/89011597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1774342908357,
+      "changelog": "- Added a new metadata file (_meta.json) to the project.\n- No changes to code or main documentation content.\n- Internal skill metadata is now more structured and discoverable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a1d46824cbb055ceea512afa08077f44d3a580f7102d4ed83af60a5aefb02ca"
+}

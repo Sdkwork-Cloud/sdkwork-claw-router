@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46628,
+  "uuid": "skill-clawhub-find-agent",
+  "skillKey": "clawhub-find-agent",
+  "name": "Find Agent",
+  "summary": "OceanBus-powered agent and service discovery via Yellow Pages. Use when users want to find someone, look for a service, reach out to an expert, discover anot...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanbihai",
+      "features": [
+        "OceanBus-powered agent and service discovery via Yellow Pages",
+        "Use when users want to find someone, look for a service, reach out to an expert, discover anot.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-agent@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89728875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-agent",
+      "url": "https://clawhub.ai/skills/find-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-agent",
+    "url": "https://clawhub.ai/skills/find-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-agent-3876cfc30f17eb64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-agent@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-agent-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4aa845238d46767209d65a25a4216189905fbfcca819260ac0d3758c56be3e0",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:18:54.664Z"
+}

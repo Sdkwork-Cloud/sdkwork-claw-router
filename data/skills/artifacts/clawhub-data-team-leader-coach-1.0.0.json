@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-team-leader-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_team_leader_coach",
+  "skill": {
+    "id": 49476,
+    "skillKey": "clawhub-data-team-leader-coach",
+    "name": "Data Team Leader Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-team-leader-coach",
+    "url": "https://clawhub.ai/skills/data-team-leader-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-team-leader-coach-79bc5ce34a553320.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a newly-hired or recently-promoted Head of Data, VP of Data, Director of Data, or Data Platform Lead through their first 90 days and ongoing strategic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778201698334,
+      "changelog": "Initial release of data-team-leader-coach.\n\n- Provides coaching for newly-hired or promoted data leaders (Head/VP/Director/Data Platform Lead) through onboarding and strategic decision-making.\n- Covers role archetypes (analytics-led, platform-led, ML-led, hybrids) and team composition.\n- Guides first 30 days: stakeholder mapping, listening tour, and tech/data stack audit.\n- Includes frameworks for prioritization, buy-vs-build decisions, and addressing common organizational failure modes.\n- Outlines triggers for use and when the skill should not be engaged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fae60bf5cd9b89e40cd04fd472b78cf52eb4fc448694cf11826766dfb1f6fa5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-routing-benchmark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_routing_benchmark",
+  "skill": {
+    "id": 59274,
+    "skillKey": "clawhub-skill-routing-benchmark",
+    "name": "Skill Routing Benchmark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-routing-benchmark",
+    "url": "https://clawhub.ai/skills/skill-routing-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-routing-benchmark-dae3b09a560b9a00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "测试多个 Skill 描述是否会路由冲突，并生成正例、反例与负向触发语句。；use for skills, routing, benchmark workflows；do not use for 只给模糊建议, 忽略高度相近的 skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773985408292,
+      "changelog": "Initial release of skill-routing-benchmark.\n\n- Benchmark tool for testing potential routing conflicts between multiple Skill descriptions.\n- Generates positive cases, negative cases, and regression sets for routing.\n- Prioritizes detecting conflicts and producing explicit review drafts before executable checklists.\n- Clearly distinguishes safe usage scenarios and defines strict boundaries for high-risk or configuration-altering operations.\n- Organizes output into structured sections: potential conflicts, positive and negative examples, modification suggestions, priorities, and regression test sets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb43b554b94ed9f639c52ec96b06c5a4b795144bae9c2b02805425a7a63192f0"
+}

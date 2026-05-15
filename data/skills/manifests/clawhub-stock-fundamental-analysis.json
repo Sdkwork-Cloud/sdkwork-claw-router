@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67134,
+  "uuid": "skill-clawhub-stock-fundamental-analysis",
+  "skillKey": "clawhub-stock-fundamental-analysis",
+  "name": "Stock Fundamental Analysis",
+  "summary": "对上市公司进行深度基本面分析，包括财务健康度评估、估值分析、成长性分析、行业对标、财报解读，输出结构化投研报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_fundamental_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuritu",
+      "features": [
+        "对上市公司进行深度基本面分析，包括财务健康度评估、估值分析、成长性分析、行业对标、财报解读，输出结构化投研报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-fundamental-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105037187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-fundamental-analysis",
+      "url": "https://clawhub.ai/skills/stock-fundamental-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-fundamental-analysis",
+    "url": "https://clawhub.ai/skills/stock-fundamental-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-fundamental-analysis-8bd577376dbda7bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-fundamental-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-fundamental-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3c72f4506bd65ce518153fb60edb6b6c5078384faba3dcf67f7fbce3c203355",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:04:45.515Z"
+}

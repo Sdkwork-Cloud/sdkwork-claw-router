@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "041-llm-wiki",
+    "displayName": "llm-wiki SKILL inspired by Karpathy",
+    "summary": "Karpathy's llm-wiki pattern implementation — cumulative knowledge management for AI agents",
+    "tags": {
+      "latest": "1.4.0",
+      "DEMO": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1776085496044,
+    "updatedAt": 1777527499220
+  },
+  "latestVersion": {
+    "version": "1.4.0",
+    "createdAt": 1777478444925,
+    "changelog": "Version 1.4.0\n\n- Introduced agent-bridge interface (`scripts/agent-bridge.py`) as a unified entry point for all automation and agent interactions.\n- Added dedicated agent logging module (`src/llm_wiki/agent_logger.py`) for improved traceability and debugging.\n- Updated SKILL definition to reference the new agent-bridge script in entry points, workflows, and CLI documentation.\n- Revised ingest, link, and relink function workflows to use the agent-bridge tool for discovery, merging, and batch operations.\n- Enhanced documentation to distinguish between protocol mode, agent bridge usage, and legacy CLI.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "nemo4110",
+    "userId": "s173ycbfz08xfrrqb7xrepkwa1842rdz",
+    "displayName": "T0M0R1N",
+    "image": "https://avatars.githubusercontent.com/u/70043311?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527499220
+  }
+}

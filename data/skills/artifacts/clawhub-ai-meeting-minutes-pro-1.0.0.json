@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-meeting-minutes-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_minutes_pro",
+  "skill": {
+    "id": 72029,
+    "skillKey": "clawhub-ai-meeting-minutes-pro",
+    "name": "AI会议纪要生成器Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-minutes-pro",
+    "url": "https://clawhub.ai/skills/ai-meeting-minutes-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-minutes-pro-247248fbd4fc9684.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 会议纪要生成器 - 自动整理会议录音或文字记录，生成结构化会议纪要。支持提取待办事项、决策点、关键结论，输出专业格式的会议文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-wuxl",
+      "userId": "publishers:ryan-wuxl",
+      "displayName": "ryan-wuxl",
+      "image": "https://avatars.githubusercontent.com/u/21093002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774066505446,
+      "changelog": "Initial release: AI meeting minutes with action items and todo extraction",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a5001b438f54c38e20f072fd90ddcb74fba2cc0cf7f9871926b7bb39ef3dabe"
+}

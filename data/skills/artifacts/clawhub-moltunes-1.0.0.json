@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltunes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltunes",
+  "skill": {
+    "id": 19363,
+    "skillKey": "clawhub-moltunes",
+    "name": "MolTunes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltunes",
+    "url": "https://clawhub.ai/skills/moltunes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltunes-deb44e452a98237e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your Clawdbot to MolTunes — the AI agent skill marketplace. Register your bot, publish skills, earn MOLT tokens."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dilate7",
+      "userId": "publishers:dilate7",
+      "displayName": "dilate7",
+      "image": "https://avatars.githubusercontent.com/u/17049111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1374,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770262676026,
+      "changelog": "Initial release — AI agent skill marketplace with MOLT token economy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13275cea414beb5820efa28a015f0b56d8f10ebca9e6753e6c972d80335cbb02"
+}

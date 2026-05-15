@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27492,
+  "uuid": "skill-clawhub-link-library",
+  "skillKey": "clawhub-link-library",
+  "name": "Link Library",
+  "summary": "Personal knowledge base that captures web content (articles, tweets/threads, videos, podcasts, images, PDFs) and makes it retrievable for future conversation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_library",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "不白",
+      "features": [
+        "Personal knowledge base that captures web content (articles, tweets/threads, videos, podcasts,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/link-library@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31078449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "link-library",
+      "url": "https://clawhub.ai/skills/link-library"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-library",
+    "url": "https://clawhub.ai/skills/link-library",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-library-1abf89ebbfbb99a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/link-library@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-link-library-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b35be7e2698192b26eee4aa3936ee4b0380b81116871b5bcdb4ba0b4a26af41a",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:56:02.179Z"
+}

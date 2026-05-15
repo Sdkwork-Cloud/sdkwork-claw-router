@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61423,
+  "uuid": "skill-clawhub-video-transcribe",
+  "skillKey": "clawhub-video-transcribe",
+  "name": "Video Transcribe - 视频转文字",
+  "summary": "本地视频转文字 - 使用 OpenAI Whisper 进行语音识别，完全免费、离线运行、保护隐私",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaa2531349",
+      "features": [
+        "使用 OpenAI Whisper 进行语音识别，完全免费、离线运行、保护隐私"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transcribe@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100289418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transcribe",
+      "url": "https://clawhub.ai/skills/video-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcribe",
+    "url": "https://clawhub.ai/skills/video-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcribe-52da11a6ad3685a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transcribe@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transcribe-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38e86f8cb10e77fdc36741bddc880b5b2ff495f5a39508cf9bfd9998cca56a98",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:16:51.000Z"
+}

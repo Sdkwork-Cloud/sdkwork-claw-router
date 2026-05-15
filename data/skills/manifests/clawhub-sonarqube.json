@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36191,
+  "uuid": "skill-clawhub-sonarqube",
+  "skillKey": "clawhub-sonarqube",
+  "name": "Sonarqube",
+  "summary": "SonarQube integration. Manage data, records, and automate workflows. Use when the user wants to interact with SonarQube data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonarqube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SonarQube integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SonarQube data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonarqube@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonarqube",
+      "url": "https://clawhub.ai/skills/sonarqube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonarqube",
+    "url": "https://clawhub.ai/skills/sonarqube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonarqube-0f1141ab4d989706.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonarqube@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonarqube-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1783628124846f8dfcfc5cd37367ab27b6e9bfe9527038a1f73d54e3333ebbfe",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:08.434Z"
+}

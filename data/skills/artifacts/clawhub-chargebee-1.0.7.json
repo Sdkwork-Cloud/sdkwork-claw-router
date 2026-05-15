@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chargebee@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chargebee",
+  "skill": {
+    "id": 8968,
+    "skillKey": "clawhub-chargebee",
+    "name": "Chargebee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chargebee",
+    "url": "https://clawhub.ai/skills/chargebee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chargebee-b3e9dea15253218f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chargebee API integration with managed OAuth. Install only if you need Chargebee billing administration. Connect with least-privilege access, verify the inte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5380,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1777768532430,
+      "changelog": "- The skill description and documentation now include prominent security warnings and least-privilege recommendations.\n- Added instructions to always verify the intended Chargebee connection ID before every request, especially for write operations.\n- Clarified that only the documented API endpoints may be used; arbitrary paths are not supported.\n- Required explicit user confirmation with clear resource details and consequences before any write, update, or cancel action.\n- Emphasized the default to read-only operations and the need to summarize financial impact for billing changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:454ae91739feb0b65a2dbef31316bf116b6ffddbaffd757fc62f4ca4aa05140f"
+}

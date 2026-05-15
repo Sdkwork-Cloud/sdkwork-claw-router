@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64008,
+  "uuid": "skill-clawhub-strategy-engine",
+  "skillKey": "clawhub-strategy-engine",
+  "name": "strategy-engine",
+  "summary": "调用Strategy Engine MCP服务器执行量化策略。当用户需要运行因子表达式策略、回测交易策略或执行金融分析时调用此技能。基于MCP Server工具的实际默认值设置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frank",
+      "features": [
+        "调用Strategy Engine MCP服务器执行量化策略。当用户需要运行因子表达式策略、回测交易策略或执行金融分析时调用此技能。基于MCP Server工具的实际默认值设置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strategy-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17841020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strategy-engine",
+      "url": "https://clawhub.ai/skills/strategy-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-engine",
+    "url": "https://clawhub.ai/skills/strategy-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-engine-6ccdfa4a8aa9a7c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strategy-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strategy-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c7416ab8b7ed240243718676b5c3bc15794aa8d264a972c9c4a1de12b43d1c0",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:57:14.213Z"
+}

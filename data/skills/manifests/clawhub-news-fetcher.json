@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18186,
+  "uuid": "skill-clawhub-news-fetcher",
+  "skillKey": "clawhub-news-fetcher",
+  "name": ".Publish Temp",
+  "summary": "Install, configure, validate, and run the news-fetcher Python CLI for aggregating RSS/Atom and HTML news sources with deduplication, clustering, ranking, sou...",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "miniade",
+      "features": [
+        "Install, configure, validate, and run the news-fetcher Python CLI for aggregating RSS/Atom and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-fetcher@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261718829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-fetcher",
+      "url": "https://clawhub.ai/skills/news-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-fetcher",
+    "url": "https://clawhub.ai/skills/news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-fetcher-496a3f4805d96545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-fetcher@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-fetcher-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:447a46c0f86b056f65fa0ec28ec55c2858cd63e70a8d902f77679173b850ca89",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:28:03.994Z"
+}

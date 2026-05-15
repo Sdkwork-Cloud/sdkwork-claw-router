@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53746,
+  "uuid": "skill-clawhub-road-trip",
+  "skillKey": "clawhub-road-trip",
+  "name": "Road Trip",
+  "summary": "Plan self-driving road trips — optimal routes, car rental, scenic stops along the way, fuel stations, and recommended rest areas. Also supports: flight booki...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.road_trip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Plan self-driving road trips — optimal routes, car rental, scenic stops along the way, fuel sta.",
+        "Also supports: flight booki..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/road-trip@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "road-trip",
+      "url": "https://clawhub.ai/skills/road-trip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "road-trip",
+    "url": "https://clawhub.ai/skills/road-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/road-trip-c5b8cc222934d59e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/road-trip@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-road-trip-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc6cee44b1056395480e2408ca4941aa54c47a69247e175fcc77578e778e6d89",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:05:11.526Z"
+}

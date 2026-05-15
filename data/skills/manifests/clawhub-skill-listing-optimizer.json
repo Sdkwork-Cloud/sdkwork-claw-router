@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50345,
+  "uuid": "skill-clawhub-skill-listing-optimizer",
+  "skillKey": "clawhub-skill-listing-optimizer",
+  "name": "Listing Image Optimizer",
+  "summary": "Audit Amazon product listing images for non-square dimensions, auto-pad them to 2000×2000 white background, and push corrected images to live listings via SP...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_listing_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Audit Amazon product listing images for non-square dimensions, auto-pad them to 2000×2000 white."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-listing-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-listing-optimizer",
+      "url": "https://clawhub.ai/skills/skill-listing-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-listing-optimizer",
+    "url": "https://clawhub.ai/skills/skill-listing-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-listing-optimizer-b45b4ed59a8a8c27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-listing-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-listing-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:172a2dc2b7761f039d4be2f675e67aa1e01b9435f1b2fce84b9299022df9bb6f",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:45:42.236Z"
+}

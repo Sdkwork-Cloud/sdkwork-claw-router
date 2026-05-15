@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27471,
+  "uuid": "skill-clawhub-ralph-quick",
+  "skillKey": "clawhub-ralph-quick",
+  "name": "Ralph Quick Security Check",
+  "summary": "Fast security spot-check with 10 iterations (~5-10 min). Use when user says 'quick security check', 'pre-deploy audit', 'ralph quick', 'fast security scan',...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_quick",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorukardahan",
+      "features": [
+        "Fast security spot-check with 10 iterations (~5-10 min)",
+        "Use when user says 'quick security check', 'pre-deploy audit', 'ralph quick', 'fast security sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ralph-quick@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35905596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ralph-quick",
+      "url": "https://clawhub.ai/skills/ralph-quick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-quick",
+    "url": "https://clawhub.ai/skills/ralph-quick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-quick-b86014dd0eac9c56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ralph-quick@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ralph-quick-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a93dd515aa6a68981235a642a96797251e7a8488ff01b25bb3d7b7af7649ff5",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T02:17:13.836Z"
+}

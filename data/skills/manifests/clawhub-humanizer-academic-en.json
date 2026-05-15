@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41947,
+  "uuid": "skill-clawhub-humanizer-academic-en",
+  "skillKey": "clawhub-humanizer-academic-en",
+  "name": "humanizer-academic-en",
+  "summary": "Humanizer Academic English edition. Trigger when the user asks to polish academic prose, remove AI tone, reduce AIGC traces, or says things like \"make this s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_academic_en",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duducoco",
+      "features": [
+        "Humanizer Academic English edition",
+        "Trigger when the user asks to polish academic prose, remove AI tone, reduce AIGC traces, or say."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-academic-en@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69681789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-academic-en",
+      "url": "https://clawhub.ai/skills/humanizer-academic-en"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-academic-en",
+    "url": "https://clawhub.ai/skills/humanizer-academic-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-academic-en-e3c3cf8019683417.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-academic-en@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-academic-en-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1bccda0dee5608e86ebcc29b64e4ebfe1f68ddc188f45a4930c9efacd97e810",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T19:32:58.649Z"
+}

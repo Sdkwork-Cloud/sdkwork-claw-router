@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45545,
+  "uuid": "skill-clawhub-tmp-self-improving-agent",
+  "skillKey": "clawhub-tmp-self-improving-agent",
+  "name": "Tmp Self Improving Agent",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XiongYJ625",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmp-self-improving-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270311120?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmp-self-improving-agent",
+      "url": "https://clawhub.ai/skills/tmp-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-self-improving-agent",
+    "url": "https://clawhub.ai/skills/tmp-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-self-improving-agent-c682f81bf1285509.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmp-self-improving-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmp-self-improving-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fca04715a3c3129fcd8185078ae33cde0cc3426c0f2ba048393e0e7a9670a97",
+      "artifactSizeBytes": 2796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:34:14.943Z"
+}

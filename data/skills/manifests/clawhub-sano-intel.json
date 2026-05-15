@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60979,
+  "uuid": "skill-clawhub-sano-intel",
+  "skillKey": "clawhub-sano-intel",
+  "name": "Sano Intel · 探针资本",
+  "summary": "探针资本出品。中国医疗产业情报引擎，覆盖10万+医疗公司、50万+融资事件、109万条专利、全市场临床试验、A/港/美三地行情。查公司/融资/临床试验/专利/赛道热度/二级市场行情。By Probe Capital. Use when user asks about Chinese healthcare/biot...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sano_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanjj-cmd",
+      "features": [
+        "探针资本出品。中国医疗产业情报引擎，覆盖10万+医疗公司、50万+融资事件、109万条专利、全市场临床试验、A/港/美三地行情。查公司/融资/临床试验/专利/赛道热度/二级市场行情。By P.",
+        "Use when user asks about Chinese healthcare/biot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sano-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261740287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sano-intel",
+      "url": "https://clawhub.ai/skills/sano-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sano-intel",
+    "url": "https://clawhub.ai/skills/sano-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sano-intel-4ed1db7f4b56d6fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sano-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sano-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94cb0c4cb2c403e9ae1dd8372b12dcbaf0714b975ff6a47604c8624b0b61e974",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:14:22.346Z"
+}

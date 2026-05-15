@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50089,
+  "uuid": "skill-clawhub-safari-browser-control",
+  "skillKey": "clawhub-safari-browser-control",
+  "name": "Safari Browser Control",
+  "summary": "Control the user's real Safari browser on macOS using AppleScript and screencapture. Read pages, click elements, type text, take screenshots, navigate tabs —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safari_browser_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SDLLL",
+      "features": [
+        "Control the user's real Safari browser on macOS using AppleScript and screencapture",
+        "Read pages, click elements, type text, take screenshots, navigate tabs —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safari-browser-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74636753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safari-browser-control",
+      "url": "https://clawhub.ai/skills/safari-browser-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safari-browser-control",
+    "url": "https://clawhub.ai/skills/safari-browser-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safari-browser-control-a140bb4c3be7dc30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safari-browser-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safari-browser-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12e3fe034fa4db9ed26ae0cac7a1b8cc8d7ce45c463dbb19090d7ca9d57b6059",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:08:11.975Z"
+}

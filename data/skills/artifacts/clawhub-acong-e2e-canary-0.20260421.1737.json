@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acong-e2e-canary@0.20260421.1737",
+  "version": "0.20260421.1737",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acong_e2e_canary",
+  "skill": {
+    "id": 55084,
+    "skillKey": "clawhub-acong-e2e-canary",
+    "name": "Acong E2E Canary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acong-e2e-canary",
+    "url": "https://clawhub.ai/skills/acong-e2e-canary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acong-e2e-canary-ebe3fdb254c7d8c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated end-to-end test canary for skill-publish-cli. Reused on every test run with a bumped version — never manually installed. Verifies publish → inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yarnovo",
+      "userId": "s17dgrfjc68kknp82hqafqv9kx83h8ks",
+      "displayName": "yarnb",
+      "image": "https://avatars.githubusercontent.com/u/138216172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.20260421.1737",
+      "createdAt": 1776764277297,
+      "changelog": "e2e canary cycle at 2026-04-21T09:37:46Z",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:705ee762bced8296d8e37f2d0de45637e1207e6be16f8a1b016ae7d6c278a19b"
+}

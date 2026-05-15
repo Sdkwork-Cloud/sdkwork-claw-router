@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_best",
+  "skill": {
+    "id": 55340,
+    "skillKey": "clawhub-image-to-video-best",
+    "name": "Image To Video Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-best",
+    "url": "https://clawhub.ai/skills/image-to-video-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-best-6dcb699da2099fbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn my photo into a smooth animated video with music — and get animated v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776592215136,
+      "changelog": "Initial release: Instantly turn images into smooth animated video clips using AI.\n\n- Upload JPG, PNG, WEBP, or HEIC files up to 200MB, and get back MP4 videos in 30–60 seconds.\n- No editing software or technical skills needed; simply describe your desired video (e.g., \"add music\" or \"make it animated\").\n- Automatic backend connection and session handling with up to 100 free credits.\n- Includes commands for checking credits, downloading videos, and customizing output (e.g., aspect ratio, text overlays, background audio).\n- Supports multi-track timelines, previews, and export to popular formats.\n- Ideal for marketers, social media creators, and photographers who want to animate static images quickly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09d98597450bc844fa22574d1cd12e70fec92632e8757154efed2c0ecabd5ec8"
+}

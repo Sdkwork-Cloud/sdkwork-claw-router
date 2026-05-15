@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iceberg-excavation@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iceberg_excavation",
+  "skill": {
+    "id": 68369,
+    "skillKey": "clawhub-iceberg-excavation",
+    "name": "Iceberg Excavation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iceberg-excavation",
+    "url": "https://clawhub.ai/skills/iceberg-excavation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iceberg-excavation-61c2aa6ca6958389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从情绪入口出发，分层挖掘潜意识需求、思维模式及底层操作系统，提供深度情绪分析与系统重构建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-long-2022",
+      "userId": "s17aare0m0rq39d9cswdf6zcan83s2bv",
+      "displayName": "Jack-Long-2022",
+      "image": "https://avatars.githubusercontent.com/u/128901973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775531482796,
+      "changelog": "## Iceberg Excavation v2.0.0 ChangeLog\n\n- Added flexible configuration options: analysis depth, output format, custom layer names, scoring, and suggestions.\n- Introduced error handling: clear input validation, downgrade strategies, and user-friendly prompts.\n- Expanded usage guidance with two practical scenario examples.\n- Declared explicit dependencies for four key module files.\n- Improved use cases: now follow a structured \"Trigger → Input → Output → Effect\" format.\n- Meets L2 sharable standard: configurable parameters, practical examples, clear errors, and complete dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88129e042ce99e301d77c85bccfdc7c7d803195976996dc483d263b0777001db"
+}

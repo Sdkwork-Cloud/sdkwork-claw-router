@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41286,
+  "uuid": "skill-clawhub-epigrass-creator",
+  "skillKey": "clawhub-epigrass-creator",
+  "name": "Epigrass Creator",
+  "summary": "Create Epigrass epidemiological models through step-by-step guided specification. Build metapopulation models (SIR, SEIR, SEIS, SIS, SI) with geographic netw...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epigrass_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flávio Codeço Coelho",
+      "features": [
+        "Create Epigrass epidemiological models through step-by-step guided specification",
+        "Build metapopulation models (SIR, SEIR, SEIS, SIS, SI) with geographic netw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epigrass-creator@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epigrass-creator",
+      "url": "https://clawhub.ai/skills/epigrass-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epigrass-creator",
+    "url": "https://clawhub.ai/skills/epigrass-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epigrass-creator-08a294614fdf1320.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epigrass-creator@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-epigrass-creator-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f35d182f98bc16c2cdf1fd2e9938dc456361f1308f59685b7ff3755d1399b8d",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:16:15.076Z"
+}

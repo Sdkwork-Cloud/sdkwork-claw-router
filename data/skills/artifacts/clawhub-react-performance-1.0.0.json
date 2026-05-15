@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-performance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_performance",
+  "skill": {
+    "id": 11963,
+    "skillKey": "clawhub-react-performance",
+    "name": "React Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-performance",
+    "url": "https://clawhub.ai/skills/react-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-performance-7e314e2479f1af2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React and Next.js performance optimization patterns. Use when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance. Triggers on tasks involving components, data fetching, bundle optimization, re-render reduct."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1762,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728109502,
+      "changelog": "Initial release – performance optimization patterns for React and Next.js:\n\n- Prioritized optimization patterns across critical areas: async/waterfalls, bundle size, server components, re-render reduction, and more\n- Clear examples for eliminating waterfalls, optimizing imports, and reducing bundle size\n- Guidance on parallel data fetching, minimizing client/server serialization, and using Suspense effectively\n- Concrete recommendations for state, memoization, transitions, and event handling\n- Includes installation instructions and describes real-world triggers for usage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b90ef7fdd70e0bb701db3f29d4282a824c1b2bf0239304837a63b3310925576c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orchestration-setups@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchestration_setups",
+  "skill": {
+    "id": 43867,
+    "skillKey": "clawhub-orchestration-setups",
+    "name": "high perf orchestration a la oh my codex & gastown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchestration-setups",
+    "url": "https://clawhub.ai/skills/orchestration-setups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchestration-setups-071e43cdf72c87c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hybrid orchestration skill where OpenClaw stays the control plane and ACP Claude Code is the default execution backend for coding work."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkobject",
+      "userId": "s17arx162s1qhp8j7nq1ka0vdn853beg",
+      "displayName": "Jérémie Kalfon",
+      "image": "https://avatars.githubusercontent.com/u/17239533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776861967347,
+      "changelog": "better name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7b96f5ae95af2013ec3eb8e46325ae73fe846fe88c03f299e8333f633534bdb"
+}

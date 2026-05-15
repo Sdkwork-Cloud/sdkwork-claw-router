@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53808,
+  "uuid": "skill-clawhub-mailbird-mcp",
+  "skillKey": "clawhub-mailbird-mcp",
+  "name": "Mailbird",
+  "summary": "Use the Mailbird MCP server (running locally inside the Mailbird email client) for any email-related task — inbox triage, sending, search, drafts, attachment...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbird_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mailbirdagent",
+      "features": [
+        "Use the Mailbird MCP server (running locally inside the Mailbird email client) for any email-re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailbird-mcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131190617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailbird-mcp",
+      "url": "https://clawhub.ai/skills/mailbird-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbird-mcp",
+    "url": "https://clawhub.ai/skills/mailbird-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbird-mcp-69b13741f03657a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailbird-mcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailbird-mcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc851bc57e7204a17def8b82d7ed02ec6135a46266f67aefb0c97a825b961494",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T07:27:46.410Z"
+}

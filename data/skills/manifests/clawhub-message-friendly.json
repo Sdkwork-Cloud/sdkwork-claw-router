@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31854,
+  "uuid": "skill-clawhub-message-friendly",
+  "skillKey": "clawhub-message-friendly",
+  "name": "message-friendly",
+  "summary": "Optimizes Markdown-formatted messages for IM platforms (WeChat, DingTalk, etc.) by removing unsupported markup and using clean text layouts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_friendly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "70asunflower",
+      "features": [
+        "Optimizes Markdown-formatted messages for IM platforms (WeChat, DingTalk, etc.) by removing uns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-friendly@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97438558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-friendly",
+      "url": "https://clawhub.ai/skills/message-friendly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-friendly",
+    "url": "https://clawhub.ai/skills/message-friendly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-friendly-354be73526b590c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-friendly@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-friendly-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbef08eec598c884ac1c8db90847933df0b01d34ee6100fe46e684ae5de52ca8",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:03:10.517Z"
+}

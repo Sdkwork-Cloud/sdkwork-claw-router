@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19840,
+  "uuid": "skill-clawhub-update-signature-verifier",
+  "skillKey": "clawhub-update-signature-verifier",
+  "name": "Update Signature Verifier",
+  "summary": "Helps verify the cryptographic integrity of skill updates by checking whether each version is signed by the same key as the original install, detecting key c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.update_signature_verifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps verify the cryptographic integrity of skill updates by checking whether each version is s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/update-signature-verifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "update-signature-verifier",
+      "url": "https://clawhub.ai/skills/update-signature-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "update-signature-verifier",
+    "url": "https://clawhub.ai/skills/update-signature-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/update-signature-verifier-260b2f3d4cc83ad6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/update-signature-verifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-update-signature-verifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bca25ef50f482ba41b8a9f3db350a32a900e5da90c7014c270e5144fbcdac9ea",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T08:59:11.251Z"
+}

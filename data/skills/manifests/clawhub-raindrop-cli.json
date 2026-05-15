@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15999,
+  "uuid": "skill-clawhub-raindrop-cli",
+  "skillKey": "clawhub-raindrop-cli",
+  "name": "Raindrop CLI",
+  "summary": "Manage Raindrop.io bookmarks from the command line (search, exists, add, update, remove) using the Raindrop REST API. Use when automating bookmark capture and organization with a personal RAINDROP_TOKEN.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raindrop_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adorostkar",
+      "features": [
+        "Manage Raindrop.io bookmarks from the command line (search, exists, add, update, remove) using.",
+        "Use when automating bookmark capture and organization with a personal RAINDROP_TOKEN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raindrop-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3062660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raindrop-cli",
+      "url": "https://clawhub.ai/skills/raindrop-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raindrop-cli",
+    "url": "https://clawhub.ai/skills/raindrop-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raindrop-cli-ba37e0d42e8105ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raindrop-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raindrop-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:951d620770aca86ee44c119270bc14b0ec38bfb524d01408ea43486742ea58a9",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T22:57:46.926Z"
+}

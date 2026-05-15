@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-conversation-sourcing-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_conversation_sourcing_planner",
+  "skill": {
+    "id": 46607,
+    "skillKey": "clawhub-bookforge-conversation-sourcing-planner",
+    "name": "Conversation Sourcing Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-conversation-sourcing-planner",
+    "url": "https://clawhub.ai/skills/bookforge-conversation-sourcing-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-conversation-sourcing-planner-3a0f810a1809678b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a plan for finding and reaching people to have customer discovery conversations with, including channel selection, outreach messages, and warm intro s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777145787771,
+      "changelog": "- Initial release of the Conversation Sourcing Planner skill.\n- Helps users plan how to find and reach people for customer discovery conversations.\n- Covers channel selection, outreach messaging, and warm introduction strategies.\n- Designed for situations where users lack connections or need new outreach approaches.\n- Requires a clear definition of target customer segment and product stage.\n- Integrates with customer-segment-slicer to ensure focused outreach plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c42ee4261794154f9964b0fce7937e2a598b2427c8d79d813837b8968ede1b5c"
+}

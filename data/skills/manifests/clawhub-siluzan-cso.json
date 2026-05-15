@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65644,
+  "uuid": "skill-clawhub-siluzan-cso",
+  "skillKey": "clawhub-siluzan-cso",
+  "name": "Siluzan CSO",
+  "summary": "当用户提问的内容涉及以下内容时，可以使用本SKILL（1）多媒体平台内容(视频/图文)发布与运营（YouTube、TikTok、Instagram、LinkedIn、X、视频号），以及账号授权、数据报表、任务管理；（2）公众号、小红书等内容文案/选题生成——选题/拆解/口播成稿、三库选题；（3）RAG 知识库检索...",
+  "version": "1.1.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siluzan_cso",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siluzan Dev",
+      "features": [
+        "当用户提问的内容涉及以下内容时，可以使用本SKILL（1）多媒体平台内容(视频/图文)发布与运营（YouTube、TikTok、Instagram、LinkedIn、X、视频号），以及账号授."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siluzan-cso@1.1.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241765122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siluzan-cso",
+      "url": "https://clawhub.ai/skills/siluzan-cso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siluzan-cso",
+    "url": "https://clawhub.ai/skills/siluzan-cso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siluzan-cso-bee301d8978c355a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siluzan-cso@1.1.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-siluzan-cso-1.1.17.json",
+      "version": "1.1.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b4de8470fdbe8382b5c039718f527c432b257671dcf95b232733a08f0b78e0c",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:08:44.573Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-to-ozon@1.0.71",
+  "version": "1.0.71",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_to_ozon",
+  "skill": {
+    "id": 59456,
+    "skillKey": "clawhub-1688-to-ozon",
+    "name": "1688 To Ozon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-to-ozon",
+    "url": "https://clawhub.ai/skills/1688-to-ozon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-to-ozon-c2ca008ca8af8318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1688 商品自动采集并上传到 OZON 平台"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "z4201812",
+      "userId": "s178cr57pwacfff7yg34j3ak6s84ahsx",
+      "displayName": "z4201812",
+      "image": "https://avatars.githubusercontent.com/u/44394501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.71",
+      "createdAt": 1775437804604,
+      "changelog": "- SKILL.md has been reorganized to follow OpenClaw standards.\n- No functional changes to the skill's behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f222c69f8448a13f52c4182020f3bf133e9f1df14b96d98eeddaaa9b4be1d012"
+}

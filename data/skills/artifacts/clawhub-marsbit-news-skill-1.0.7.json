@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marsbit-news-skill@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marsbit_news_skill",
+  "skill": {
+    "id": 24470,
+    "skillKey": "clawhub-marsbit-news-skill",
+    "name": "marsbit-news-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marsbit-news-skill",
+    "url": "https://clawhub.ai/skills/marsbit-news-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marsbit-news-skill-554d346a0b8c6523.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch MarsBit news and flash data through the hosted MCP route in marsbit-co. Use this for latest news, channel lookup, keyword search, detail, related news,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "domilin",
+      "userId": "s174j1rz3a9ggfhwgncj7gsta983k3fe",
+      "displayName": "xinyi-drink",
+      "image": "https://avatars.githubusercontent.com/u/13144769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772615874276,
+      "changelog": "- Added a README.md file with instructions for installing the skill directly from GitHub.\n- Provided example commands for cloning and copying the skill for manual installation.\n- No changes to core features or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8cf173700794bfe6c921d932a26ef8b42efd621958d7165bdb93b73140fd284f"
+}

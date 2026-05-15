@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31999,
+  "uuid": "skill-clawhub-limehouse-calendar",
+  "skillKey": "clawhub-limehouse-calendar",
+  "name": "Limehouse Calendar",
+  "summary": "Read and write calendar events with granular per-calendar permissions. Users control which calendars an agent can access and whether it can read, create, upd...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limehouse_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Madeleine Nakada",
+      "features": [
+        "Read and write calendar events with granular per-calendar permissions",
+        "Users control which calendars an agent can access and whether it can read, create, upd..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/limehouse-calendar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5605370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "limehouse-calendar",
+      "url": "https://clawhub.ai/skills/limehouse-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limehouse-calendar",
+    "url": "https://clawhub.ai/skills/limehouse-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limehouse-calendar-c7a02a258e05236f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/limehouse-calendar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-limehouse-calendar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73b7e563ed006514440f4cdb3dafe6fad4efe517c83b94b6743a5484eb03b6ac",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:47:47.474Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-briefing-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_briefing_generator",
+  "skill": {
+    "id": 72701,
+    "skillKey": "clawhub-daily-briefing-generator",
+    "name": "每日简报生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-briefing-generator",
+    "url": "https://clawhub.ai/skills/daily-briefing-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-briefing-generator-75d1fea892e0dfcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日简报生成器。自动聚合多个信息源（RSS、网页、Tavily搜索），生成结构化每日简报，支持定时推送。当用户需要：生成每日行业简报、汇总多渠道资讯、制作早报/晚报、定时推送简报给团队时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyongliang-eccom",
+      "userId": "s17fp5xmt9fkkpfap18esxa1h183mfev",
+      "displayName": "xuyongliang",
+      "image": "https://avatars.githubusercontent.com/u/105618971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774536478794,
+      "changelog": "首发版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf3ca1ccc946eeeecae40e05d76b430476e1f8bf546235e6265662d83930e0e2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-claw-shell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_claw_shell",
+  "skill": {
+    "id": 25876,
+    "skillKey": "clawhub-taizi-claw-shell",
+    "name": "Taizi Claw Shell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-claw-shell",
+    "url": "https://clawhub.ai/skills/taizi-claw-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-claw-shell-9313e932972620fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs shell commands inside a dedicated tmux session named 'claw', returning command output and prompting before destructive commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633768884,
+      "changelog": "Initial release of taizi-claw-shell.\n\n- Runs shell commands safely inside a dedicated tmux session named \"claw\".\n- Provides a single tool, `claw_shell_run`, for sending commands and reading back output.\n- Strictly avoids interfering with other tmux sessions.\n- Asks for user confirmation before executing potentially destructive commands (e.g., `sudo`, `rm`, `reboot`).\n- Ensures clear separation of safe and dangerous command handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20eeff6ea06b13bbeb1eb2e472dcf2f5f5666823dc2e045d933c9bd1655bfc06"
+}

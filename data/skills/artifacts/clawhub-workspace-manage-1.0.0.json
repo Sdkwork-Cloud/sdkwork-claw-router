@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_manage",
+  "skill": {
+    "id": 68397,
+    "skillKey": "clawhub-workspace-manage",
+    "name": "workspace-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-manage",
+    "url": "https://clawhub.ai/skills/workspace-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-manage-7889832e43779b44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于管理和维护 OpenClaw 工作区的结构。当用户提到工作区混乱、需要整理文件夹、或者希望建立标准目录结构时使用。提供自动归档、分类、清理和健康审计功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mslchy",
+      "userId": "s177rsdcxj54dabd4f6v8ne2j583jjjy",
+      "displayName": "musenlinc",
+      "image": "https://avatars.githubusercontent.com/u/157452377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773937075698,
+      "changelog": "## [1.0.0] - 2026-03-19\n\n### Added\n- SKILL.md — Complete skill with Pipeline + Tool Wrapper design patterns\n- 标准目录结构 — 双 workspace 架构：\n  - Workspace_Human/ — 人类文件（input, output, backup, temp）\n  - Workspace_Agent/ — Agent 文件（memory, skills, subagents, shared_context, artifacts, cache, logs, skills_custom, prompts, kb）\n- Pipeline 总控 (pipeline.sh) — 5 步流水线：Audit → Organize → Clean → Archive → Sync，支持 --all / --dry-run / 单步选择\n- 健康审计 (health-check.sh) — 0-100 健康评分：断链、空目录、大文件、畸形命名检测\n- 规范化 (standardize.sh) — 确保标准目录完整，检测根目录散落文件\n- 整理 (organize.sh) — 将 artifacts/ 文件自动分类到 Workspace_Human/output/\n- 清理 (cleanup.py) — 安全清理，默认 dry-run，用 trash-put 代替 rm\n- 归档 (archive.sh) — 交互式归档，按 YYYY-MM/ 组织\n- 同步 (sync.sh) — 可选扩展，通过 gog CLI 同步到 Google Drive，未安装则自动跳过\n- 配置文件 (patterns.json, sync-config.json)\n\n### 安全特性\n- 所有删除操作通过 trash-put 完成（可恢复）\n- 默认 dry-run 模式\n- 核心配置文件和 Workspace_Human/ 受保护永不删除",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7e73ed3b199178b30d1642af250ed694355c98592f6239fc96d2292f22af4b6"
+}

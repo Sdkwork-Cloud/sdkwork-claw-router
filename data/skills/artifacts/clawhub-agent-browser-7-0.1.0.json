@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-7@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_7",
+  "skill": {
+    "id": 40476,
+    "skillKey": "clawhub-agent-browser-7",
+    "name": "Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-7",
+    "url": "https://clawhub.ai/skills/agent-browser-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-7-f007efcd1c2eed40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thanhde91",
+      "userId": "publishers:thanhde91",
+      "displayName": "thanhde91",
+      "image": "https://avatars.githubusercontent.com/u/44900040?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774145121936,
+      "changelog": "Initial public release of agent-browser: browser automation CLI for AI agents.\n\n- Enables automated navigation, interaction, form filling, and data extraction in Chrome/Chromium via command line.\n- Supports command chaining for efficient multi-step browser workflows with persistent sessions.\n- Multiple authentication strategies included (import from browser, persistent profiles, session management, encrypted auth vault).\n- Provides granular commands: navigate, snapshot for element references, interact (click, fill, select), wait, scroll, download, capture screenshots/PDFs, network/viewport control, clipboard actions.\n- Designed as a robust tool for testing, scraping, and automating complex browser tasks programmatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f95ad4833ed0355c2974f1545bb84b5974b37e93f51658006458798571588b7"
+}

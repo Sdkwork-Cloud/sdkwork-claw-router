@@ -1,6 +1,7 @@
 pub(crate) mod app_catalog_mapping;
 pub(crate) mod app_seed;
 pub mod catalog;
+pub(crate) mod course_seed;
 pub(crate) mod dashboard_overview_metrics;
 pub(crate) mod forum_seed;
 pub mod installer;

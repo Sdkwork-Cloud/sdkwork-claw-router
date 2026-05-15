@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peer-review-response-drafter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peer_review_response_drafter",
+  "skill": {
+    "id": 20357,
+    "skillKey": "clawhub-peer-review-response-drafter",
+    "name": "Peer Review Response Drafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peer-review-response-drafter",
+    "url": "https://clawhub.ai/skills/peer-review-response-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peer-review-response-drafter-0e5b64c1e1fa5c7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist in drafting professional peer review response letters. Trigger when user mentions \"reviewer comments\", \"response letter\", \"peer review\", \"revise and r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772260934389,
+      "changelog": "Peer Review Response Drafter — Initial release\n\n- Drafts professional, structured response letters to academic peer reviewer comments.\n- Automatically generates point-by-point responses with appropriate academic tone (diplomatic, formal, or assertive).\n- Accepts a variety of input formats including pasted text, files, and structured data.\n- Includes interactive and automated modes, with support for Markdown, plain text, or LaTeX output.\n- Ensures responses address all reviewer comments, reference manuscript changes, and maintain a professional style.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3050316d027f9be7df95172a14ef42f1a4de35387e69cf580fd319813dc15a7"
+}

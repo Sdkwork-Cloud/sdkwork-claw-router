@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/berlin-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.berlin_city",
+  "skill": {
+    "id": 48079,
+    "skillKey": "clawhub-berlin-city",
+    "name": "Berlin City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "berlin-city",
+    "url": "https://clawhub.ai/skills/berlin-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/berlin-city-68e98eb7b1e54ab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Berlin is Europe's leading startup hub with 4,000+ startups, a 5B+ tech investment, and a vibrant cultural scene shaped by its unique history."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777388679398,
+      "changelog": "- Initial release of the Berlin skill, providing a comprehensive overview of Berlin's transformation from Cold War division to modern tech hub.\n- Includes a historical timeline highlighting key events in Berlin’s development.\n- Details major business models: tech startups, creative industries, tourism, manufacturing, and public services.\n- Analyzes Berlin's competitive advantages, including talent density, cultural appeal, and government support.\n- Presents key statistics and fun facts about the city’s unique features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:269bf02e6ac8bd7ecfc9b72818d6a9e6f9ab47baa4a6d174d9c9c98e510f8d39"
+}

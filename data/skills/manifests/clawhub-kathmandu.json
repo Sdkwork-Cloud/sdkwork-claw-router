@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71782,
+  "uuid": "skill-clawhub-kathmandu",
+  "skillKey": "clawhub-kathmandu",
+  "name": "Kathmandu",
+  "summary": "尼泊尔加德满都城市指南 — 喜马拉雅门户、佛教与印度教圣地、世界遗产密度最高的城市。当用户询问尼泊尔旅行、喜马拉雅登山时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kathmandu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "尼泊尔加德满都城市指南 — 喜马拉雅门户、佛教与印度教圣地、世界遗产密度最高的城市。当用户询问尼泊尔旅行、喜马拉雅登山时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kathmandu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kathmandu",
+      "url": "https://clawhub.ai/skills/kathmandu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kathmandu",
+    "url": "https://clawhub.ai/skills/kathmandu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kathmandu-cb95e0b07c075742.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kathmandu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kathmandu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a210ef40b696b74151058fbb6dd621e9085186947a295127b1f59da0695d95f4",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T13:06:36.527Z"
+}

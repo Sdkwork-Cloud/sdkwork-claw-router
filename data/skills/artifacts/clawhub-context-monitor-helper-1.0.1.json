@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-monitor-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_monitor_helper",
+  "skill": {
+    "id": 64995,
+    "skillKey": "clawhub-context-monitor-helper",
+    "name": "Context Monitor Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-monitor-helper",
+    "url": "https://clawhub.ai/skills/context-monitor-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-monitor-helper-266e3921e45ccfa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时监控会话上下文Token使用率，回复底部显示百分比和进度条，超过阈值时提醒清理或开启新会话。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rfdiosuao",
+      "userId": "s176m0k7cncqqrh1hnapx8zbz183f0gt",
+      "displayName": "rfdiosuao",
+      "image": "https://avatars.githubusercontent.com/u/190207982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775453218626,
+      "changelog": "- Added type definitions and build output files for distribution.\n- Updated configuration and metadata files for improved packaging.\n- Minor internal adjustments in core logic source file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa47163fd4da70ebb0fba5ae88697e44a88e14adc63c1036c7ea1fc34046b171"
+}

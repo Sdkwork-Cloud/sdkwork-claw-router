@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-init@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_init",
+  "skill": {
+    "id": 21645,
+    "skillKey": "clawhub-workspace-init",
+    "name": "Workspace Init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-init",
+    "url": "https://clawhub.ai/skills/workspace-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-init-6327a9d8b66f37e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap a new OpenClaw agent workspace with best-practice file structure. Creates AGENTS.md, SOUL.md, HEARTBEAT.md, memory system, and configures agent dis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772388096792,
+      "changelog": "workspace-init 1.0.0 — Initial Release\n\n- Bootstraps a new OpenClaw agent workspace with best-practice file structure.\n- Automatically creates AGENTS.md, SOUL.md, HEARTBEAT.md, MEMORY.md, USER.md, TOOLS.md, and organizes the /memory directory.\n- Includes a setup script for quick initialization.\n- Provides clear descriptions and manual editing instructions for each workspace file.\n- Configures agent discovery with OADP metadata in AGENTS.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15775399e2bc62669e6743d3ac1d14236814c742b429856a3186803855bee6bf"
+}

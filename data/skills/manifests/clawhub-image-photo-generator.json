@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47110,
+  "uuid": "skill-clawhub-image-photo-generator",
+  "skillKey": "clawhub-image-photo-generator",
+  "name": "Image Photo Generator",
+  "summary": "generate text prompts into AI generated images with this skill. Works with JPG, PNG, WEBP, SVG files up to 200MB. marketers, content creators, designers use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_photo_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "generate text prompts into AI generated images with this skill",
+        "Works with JPG, PNG, WEBP, SVG files up to 200MB",
+        "marketers, content creators, designers use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-photo-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-photo-generator",
+      "url": "https://clawhub.ai/skills/image-photo-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-photo-generator",
+    "url": "https://clawhub.ai/skills/image-photo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-photo-generator-b73f06f71debf7e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-photo-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-photo-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c31dd7f9445db36125524174c148ad22290761e6c61b8a8f3e620d5c44e38f2",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:47:45.538Z"
+}

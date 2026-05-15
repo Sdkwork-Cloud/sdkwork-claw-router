@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23680,
+  "uuid": "skill-clawhub-lap-access-analyzer",
+  "skillKey": "clawhub-lap-access-analyzer",
+  "name": "Lap Access Analyzer",
+  "summary": "Access Analyzer API skill. Use when working with Access Analyzer for archive-rule, policy, access-preview. Covers 35 endpoints.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_access_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mickmicksh",
+      "features": [
+        "Access Analyzer API skill",
+        "Use when working with Access Analyzer for archive-rule, policy, access-preview",
+        "Covers 35 endpoints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lap-access-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214470470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lap-access-analyzer",
+      "url": "https://clawhub.ai/skills/lap-access-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-access-analyzer",
+    "url": "https://clawhub.ai/skills/lap-access-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-access-analyzer-470b0ea0828782b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lap-access-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lap-access-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ecb40beebae03bbc9e43e5ad07f758db0f57966b3cd536b148f71a8e9c225c2",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:40:10.656Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pocket-lens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_lens",
+  "skill": {
+    "id": 18265,
+    "skillKey": "clawhub-pocket-lens",
+    "name": "PocketLens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-lens",
+    "url": "https://clawhub.ai/skills/pocket-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-lens-edfa852aa4c11461.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to track expenses, scan receipts, upload card payment screenshots, categorize spending, record transactions, check spending summaries, vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edenjw",
+      "userId": "publishers:edenjw",
+      "displayName": "Eden Jeongwoo Hong",
+      "image": "https://avatars.githubusercontent.com/u/2323545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771771244032,
+      "changelog": "PocketLens skill initial release:\n\n- Enables uploading and auto-extraction of expense data from images of receipts, card statements, and payment screenshots.\n- Supports manual transaction entry via natural language, including Korean and English.\n- Provides tools to check PocketLens connection and API key status.\n- Allows users to view and list their expense categories.\n- Delivers spending summaries with category and card breakdowns by month.\n- Offers card billing details, including payment due dates and unpaid amounts.\n- Includes clear error messages for common API issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:021848c948a1868590140ec4be80ba80c001d0a270dfcf814e8ecdff15858210"
+}

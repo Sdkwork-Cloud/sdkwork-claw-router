@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63872,
+  "uuid": "skill-clawhub-research-monitor",
+  "skillKey": "clawhub-research-monitor",
+  "name": "research-monitor",
+  "summary": "뉴스, 트렌드, 경쟁사 동향, 기술 업데이트를 키워드 기반으로 자동 수집하고 요약해 일일 및 주간 리포트를 제공합니다.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryuchanyul",
+      "features": [
+        "뉴스, 트렌드, 경쟁사 동향, 기술 업데이트를 키워드 기반으로 자동 수집하고 요약해 일일 및 주간 리포트를 제공합니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239348978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-monitor",
+      "url": "https://clawhub.ai/skills/research-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-monitor",
+    "url": "https://clawhub.ai/skills/research-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-monitor-0380c953b124716b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dfdf7b84067d3516be46a9164a7be2aa930ca195c686d5414b20fd8498bf897",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:03:23.448Z"
+}

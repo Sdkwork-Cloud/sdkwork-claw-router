@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14761,
+  "uuid": "skill-clawhub-amazon-shopper",
+  "skillKey": "clawhub-amazon-shopper",
+  "name": "Amazon Shopper",
+  "summary": "Buy and return items on Amazon using browser automation. Use for purchasing, reordering, checking order history, and processing returns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_shopper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrennerSpear",
+      "features": [
+        "Buy and return items on Amazon using browser automation",
+        "Use for purchasing, reordering, checking order history, and processing returns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-shopper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12127609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-shopper",
+      "url": "https://clawhub.ai/skills/amazon-shopper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-shopper",
+    "url": "https://clawhub.ai/skills/amazon-shopper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-shopper-2d824951b401a5d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-shopper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-shopper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2511dfbabcc82051228cfcb1fe1fcf3df8db835667d400f27d49bba50dc1f0df",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T12:26:48.847Z"
+}

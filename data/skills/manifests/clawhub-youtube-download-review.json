@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64692,
+  "uuid": "skill-clawhub-youtube-download-review",
+  "skillKey": "clawhub-youtube-download-review",
+  "name": "youtube-download-review",
+  "summary": "处理 YouTube 链接的视频下载与音乐向解读。只要用户提供 YouTube 链接，并提到下载视频、合并 MP4、下载封面、字幕处理（内嵌/忽略）、推荐理由、内容简介时，都应优先使用本技能。默认下载 1080p 视频 + 最高品质 m4a，自动合并为 mp4，并按视频标题创建目录输出全部产物。（此Skill 依...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_download_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve Yang",
+      "features": [
+        "处理 YouTube 链接的视频下载与音乐向解读。只要用户提供 YouTube 链接，并提到下载视频、合并 MP4、下载封面、字幕处理（内嵌/忽略）、推荐理由、内容简介时，都应优先使用本技能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-download-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/574540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-download-review",
+      "url": "https://clawhub.ai/skills/youtube-download-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-download-review",
+    "url": "https://clawhub.ai/skills/youtube-download-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-download-review-5b7a38a55a667107.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-download-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-download-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16ca23701c95ec6672920d2780e7e07dd5f7609d45392d5f4830f185e83b8b30",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:06:31.329Z"
+}

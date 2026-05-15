@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63778,
+  "uuid": "skill-clawhub-trae-code-review-plus",
+  "skillKey": "clawhub-trae-code-review-plus",
+  "name": "trae-code-review-plus",
+  "summary": "专业的代码审查 Skill。当用户要求进行代码评审、安全性检查或性能优化建议时调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trae_code_review_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tom Mcpherson",
+      "features": [
+        "专业的代码审查 Skill。当用户要求进行代码评审、安全性检查或性能优化建议时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trae-code-review-plus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203992026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trae-code-review-plus",
+      "url": "https://clawhub.ai/skills/trae-code-review-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trae-code-review-plus",
+    "url": "https://clawhub.ai/skills/trae-code-review-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trae-code-review-plus-9386a91fa4a5854b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trae-code-review-plus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trae-code-review-plus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10aa249b8bb2a234a3c8dcc2cf24cc7818460013f7045436a449e4d6bea961b7",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:59:00.555Z"
+}

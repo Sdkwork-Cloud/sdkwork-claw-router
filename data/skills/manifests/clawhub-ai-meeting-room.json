@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60510,
+  "uuid": "skill-clawhub-ai-meeting-room",
+  "skillKey": "clawhub-ai-meeting-room",
+  "name": "AI Meeting Room",
+  "summary": "AI 자문단 — 주제를 던지면 전문가 AI 에이전트들이 실제 데이터 기반으로 다각도 토론하고 실행 가능한 결론을 도출한다. 사업성 검토, 전략 회의, 브레인스토밍, 의사결정, 리스크 분석 등에 활용. Use when a user wants multiple perspectives o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_room",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gyeuun97",
+      "features": [
+        "AI 자문단 — 주제를 던지면 전문가 AI 에이전트들이 실제 데이터 기반으로 다각도 토론하고 실행 가능한 결론을 도출한다",
+        "사업성 검토, 전략 회의, 브레인스토밍, 의사결정, 리스크 분석 등에 활용",
+        "Use when a user wants multiple perspectives o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-meeting-room@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258575878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-meeting-room",
+      "url": "https://clawhub.ai/skills/ai-meeting-room"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-room",
+    "url": "https://clawhub.ai/skills/ai-meeting-room",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-room-4dcf0036b77ee337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-meeting-room@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-room-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:895b93a0db4ed60b2c2d707044cad69b7d0b2e8ac14ba3e230683e9e632fc6c3",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:34:23.804Z"
+}

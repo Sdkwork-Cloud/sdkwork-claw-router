@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "mysql-to-oracle-sql",
+    "displayName": "将 MySQL SQL（尤其是建表 DDL）转换为 Oracle SQL。用户提到“转为oracle”或“转换oracle”，或明确要求把 MySQL 语句改成 Oracle 语句时必须使用此技能。转换时强制执行类型、默认值和主键约束命名规则。",
+    "summary": "将 MySQL SQL（尤其是建表 DDL）转换为 Oracle SQL。用户提到“转为oracle”或“转换oracle”，或明确要求把 MySQL 语句改成 Oracle 语句时必须使用此技能。转换时强制执行类型、默认值和主键约束命名规则。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775546955087,
+    "updatedAt": 1777527272080
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775546955087,
+    "changelog": "Initial release of mysql-to-oracle-sql skill.\n\n- Converts MySQL DDL to Oracle SQL with enforced custom mapping rules.\n- Handles data types, default values, nullability, and constraint naming according to strict guidelines.\n- Removes inline primary key definitions; adds named constraints via separate ALTER TABLE statements.\n- Outputs Oracle-compatible SQL, including full table and column comments.\n- Ensures all mappings and output format comply with the documented rules and examples.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "itxonjoe",
+    "userId": "s175qqn3zaw58kt9hgd0xr4rc984dd55",
+    "displayName": "itxonjoe",
+    "image": "https://avatars.githubusercontent.com/u/26762065?v=4"
+  },
+  "moderation": null
+}

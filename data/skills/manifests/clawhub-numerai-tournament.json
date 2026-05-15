@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52174,
+  "uuid": "skill-clawhub-numerai-tournament",
+  "skillKey": "clawhub-numerai-tournament",
+  "name": "Numerai Tournament",
+  "summary": "Autonomous Numerai tournament participation — train models, submit predictions, and earn NMR cryptocurrency.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.numerai_tournament",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veselin Vasilev",
+      "features": [
+        "Autonomous Numerai tournament participation — train models, submit predictions, and earn NMR cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/numerai-tournament@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1297310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "numerai-tournament",
+      "url": "https://clawhub.ai/skills/numerai-tournament"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "numerai-tournament",
+    "url": "https://clawhub.ai/skills/numerai-tournament",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/numerai-tournament-e891abaf5b9364a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/numerai-tournament@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-numerai-tournament-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f97382217591fcd57799813d49056b114f6981c5b9e3b98a1c5f7b318ad49319",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T07:21:08.480Z"
+}

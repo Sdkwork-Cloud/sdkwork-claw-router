@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49552,
+  "uuid": "skill-clawhub-justoneapi-web-rendered-html",
+  "skillKey": "clawhub-justoneapi-web-rendered-html",
+  "name": "Web Page Rendered HTML Content API",
+  "summary": "Call GET /api/web/rendered-html/v1 for Web Page Rendered HTML Content through JustOneAPI with url.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_web_rendered_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/web/rendered-html/v1 for Web Page Rendered HTML Content through JustOneAPI with u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-web-rendered-html@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-web-rendered-html",
+      "url": "https://clawhub.ai/skills/justoneapi-web-rendered-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-web-rendered-html",
+    "url": "https://clawhub.ai/skills/justoneapi-web-rendered-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-web-rendered-html-84893ee102693ee7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-web-rendered-html@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-web-rendered-html-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:141470874f377ec70abb592ebb99c315d057123cd0edc014f8c583194562fbce",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:41:25.980Z"
+}

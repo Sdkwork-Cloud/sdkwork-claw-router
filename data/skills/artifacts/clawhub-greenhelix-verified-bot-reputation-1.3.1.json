@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/greenhelix-verified-bot-reputation@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greenhelix_verified_bot_reputation",
+  "skill": {
+    "id": 32106,
+    "skillKey": "clawhub-greenhelix-verified-bot-reputation",
+    "name": "Verified Trading Bot Reputation: Building Cryptographic PnL Proof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greenhelix-verified-bot-reputation",
+    "url": "https://clawhub.ai/skills/greenhelix-verified-bot-reputation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greenhelix-verified-bot-reputation-f9c813115beb1519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verified Trading Bot Reputation: Building Cryptographic PnL Proof. Build unforgeable cryptographic PnL proof for your trading bot using Ed25519 signatures an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1776237307989,
+      "changelog": "- Added OpenClaw metadata to declare `AGENT_SIGNING_KEY` as a required environment variable.\n- No changes to content, guides, or code examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b38e05e4389fe947039478340271f58164c301cedb8b3e11d09da10b36e5004"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bailian-studio@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_studio",
+  "skill": {
+    "id": 24896,
+    "skillKey": "clawhub-bailian-studio",
+    "name": "Bailian Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-studio",
+    "url": "https://clawhub.ai/skills/bailian-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-studio-bab98b9dd64f0a23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call Aliyun Bailian via DashScope; support OCR, TTS, text-to-image and image-to-image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yab",
+      "userId": "s17b4mwr6dr3mps50hqddcgygn83pe1x",
+      "displayName": "yab",
+      "image": "https://avatars.githubusercontent.com/u/807913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774586327276,
+      "changelog": "Add qwen-image-2.0-pro text-to-image and image-to-image support, local PNG output, requirements, docs, and tests",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:795da6c374cb8c884dfa75772717079db9eabc3a49ae4b4368e874e08c081daa"
+}

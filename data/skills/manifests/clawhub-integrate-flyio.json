@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40553,
+  "uuid": "skill-clawhub-integrate-flyio",
+  "skillKey": "clawhub-integrate-flyio",
+  "name": "Flyio",
+  "summary": "Fly.io integration. Manage Organizations. Use when the user wants to interact with Fly.io data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_flyio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Fly.io integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Fly.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-flyio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-flyio",
+      "url": "https://clawhub.ai/skills/integrate-flyio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-flyio",
+    "url": "https://clawhub.ai/skills/integrate-flyio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-flyio-20dce561b51c25ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-flyio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-flyio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:604d851ef310490daf334fce52e7cfd207d1f26c8dcfd74f2bb6c29cb7c6e5d5",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:36:22.910Z"
+}

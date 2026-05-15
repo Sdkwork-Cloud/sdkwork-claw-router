@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29082,
+  "uuid": "skill-clawhub-addtools",
+  "skillKey": "clawhub-addtools",
+  "name": "add.tools",
+  "summary": "Search engine for AI agents to discover free and paid tools, APIs, and MCP servers",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.addtools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simmmel",
+      "features": [
+        "Search engine for AI agents to discover free and paid tools, APIs, and MCP servers"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/addtools@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106965495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "addtools",
+      "url": "https://clawhub.ai/skills/addtools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "addtools",
+    "url": "https://clawhub.ai/skills/addtools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/addtools-b0326fdae9c3f8eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/addtools@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-addtools-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21bf51d409b762dda62bfcbde7d488246781925c70d773cc5c7a9aaa1c196596",
+      "artifactSizeBytes": 1755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:57:30.835Z"
+}

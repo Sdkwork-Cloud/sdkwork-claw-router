@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56519,
+  "uuid": "skill-clawhub-lego",
+  "skillKey": "clawhub-lego",
+  "name": "lego",
+  "summary": "Information guide for LEGO 乐高. Learn about sets, themes, building guides, and collectibles.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lego",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information guide for LEGO 乐高",
+        "Learn about sets, themes, building guides, and collectibles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lego@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lego",
+      "url": "https://clawhub.ai/skills/lego"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lego",
+    "url": "https://clawhub.ai/skills/lego",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lego-42ee150e0f7c4751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lego@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lego-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6291886d16cba48438bc647efc5d6402bdc9e813e02932bebf83d0a2d3bb4720",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:33:01.757Z"
+}

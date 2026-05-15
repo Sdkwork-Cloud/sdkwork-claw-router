@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28145,
+  "uuid": "skill-clawhub-openclaw-agent-cost-guard",
+  "skillKey": "clawhub-openclaw-agent-cost-guard",
+  "name": "OpenClaw Cost Guard",
+  "summary": "This skill should be used when the user asks to reduce OpenClaw token spend, audit model and cron cost risk, prevent denial-of-wallet incidents, add budget g...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_cost_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "This skill should be used when the user asks to reduce OpenClaw token spend, audit model and cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-agent-cost-guard@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-agent-cost-guard",
+      "url": "https://clawhub.ai/skills/openclaw-agent-cost-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-cost-guard",
+    "url": "https://clawhub.ai/skills/openclaw-agent-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-cost-guard-24f34f6a7d3c0f90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-agent-cost-guard@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-cost-guard-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0abe0bc7533e692c8d6f03248baae3e6c4e63b1420afbc8f6d62b833547987",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:44:39.293Z"
+}

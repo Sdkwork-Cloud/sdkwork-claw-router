@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/internet-archive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internet_archive",
+  "skill": {
+    "id": 60387,
+    "skillKey": "clawhub-internet-archive",
+    "name": "Internet Archive Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internet-archive",
+    "url": "https://clawhub.ai/skills/internet-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internet-archive-015a0f8e27eca8bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索、下载、上传并管理 Internet Archive (archive.org) 公开和私有存档项目及其元数据，支持高级查询和文件操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grill-glitch",
+      "userId": "s178c7vp0kfxrep841mhhfm69983vbj3",
+      "displayName": "grill-glitch",
+      "image": "https://avatars.githubusercontent.com/u/209115024?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774786843419,
+      "changelog": "Initial release of Internet Archive skill.\n\n- Search, download, upload, and manage items on archive.org, including advanced query support and file filtering.\n- Supports editing metadata, listing files, and handling derivatives.\n- Integrates with the `ia` CLI tool; offers automatic installation and configuration guidance.\n- Requires authentication for uploads and metadata changes; public search and download available to all users.\n- Provides comprehensive usage instructions, best practices, error troubleshooting, and links to official documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:454248c93ac683693be144ecfc742f7c09696f6357591be29824a5397f70590c"
+}

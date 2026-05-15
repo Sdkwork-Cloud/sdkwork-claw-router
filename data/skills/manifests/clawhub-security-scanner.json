@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8570,
+  "uuid": "skill-clawhub-security-scanner",
+  "skillKey": "clawhub-security-scanner",
+  "name": "Security Scanner",
+  "summary": "Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform se.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dmx",
+      "features": [
+        "Automated security scanning and vulnerability detection for web applications, APIs, and infrast.",
+        "Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports,.",
+        "Integrates with nmap, nuclei, and other security tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106552255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-scanner",
+      "url": "https://clawhub.ai/skills/security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-scanner",
+    "url": "https://clawhub.ai/skills/security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-scanner-4f79124e12346f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a9c2145bfdd56ab1a10b77adb44531258ed6292e2d3cb1725f1938d29a40f1a",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T19:16:42.049Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62642,
+  "uuid": "skill-clawhub-markdown-table-to-image",
+  "skillKey": "clawhub-markdown-table-to-image",
+  "name": "Table To Image",
+  "summary": "将 Markdown 表格转换为清晰图片。当用户说\"表格看不清\"、\"生成图片\"、\"转成图片\"时触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_table_to_image",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rao Lin",
+      "features": [
+        "将 Markdown 表格转换为清晰图片。当用户说\"表格看不清\"、\"生成图片\"、\"转成图片\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-table-to-image@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16436148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-table-to-image",
+      "url": "https://clawhub.ai/skills/markdown-table-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-table-to-image",
+    "url": "https://clawhub.ai/skills/markdown-table-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-table-to-image-82ef2102948f63b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-table-to-image@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-table-to-image-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2c462875479ba91b0bac384c7711edd9515ebfb661754cbdea703ad3c6ba567",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:25:08.897Z"
+}

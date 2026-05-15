@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38123,
+  "uuid": "skill-clawhub-aisa-twitter-research-engage-relay",
+  "skillKey": "clawhub-aisa-twitter-research-engage-relay",
+  "name": "AIsa Twitter Research Engage Relay",
+  "summary": "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa. Use when: the user already knows which account, tweet, or campaign to act on and...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_research_engage_relay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Run Twitter/X likes, follows, replies, and OAuth-gated posting through AIsa",
+        "Use when: the user already knows which account, tweet, or campaign to act on and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-twitter-research-engage-relay@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-twitter-research-engage-relay",
+      "url": "https://clawhub.ai/skills/aisa-twitter-research-engage-relay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-research-engage-relay",
+    "url": "https://clawhub.ai/skills/aisa-twitter-research-engage-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-research-engage-relay-aee179b72b0150b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-twitter-research-engage-relay@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-twitter-research-engage-relay-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cb9d55d2ca61e1bd160db82c77e6f3fd06fc0e253b2497cbd8358dd2b23fb68",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:09:23.549Z"
+}

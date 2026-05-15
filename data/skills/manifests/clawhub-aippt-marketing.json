@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70854,
+  "uuid": "skill-clawhub-aippt-marketing",
+  "skillKey": "clawhub-aippt-marketing",
+  "name": "小方同学全球首个营销方案Agent",
+  "summary": "调用小方同学skill技能，10倍效率生成专业、精美营销方案，可一键导出专业 PPT。 当用户表达以下意图时，将自动启用本技能： ● 方案生成：「生成营销方案」「撰写营销方案」「营销策划」「推广策划」「产品推广方案」「生成策划案」「品牌推广方案」 ● PPT生成：「帮我做 PPT」「生成 PPT」「导出幻灯片」「...",
+  "version": "1.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aippt_marketing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaok8700",
+      "features": [
+        "调用小方同学skill技能，10倍效率生成专业、精美营销方案，可一键导出专业 PPT。 当用户表达以下意图时，将自动启用本技能： ● 方案生成：「生成营销方案」「撰写营销方案」「营销策划」「."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aippt-marketing@1.2.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20333002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aippt-marketing",
+      "url": "https://clawhub.ai/skills/aippt-marketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aippt-marketing",
+    "url": "https://clawhub.ai/skills/aippt-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aippt-marketing-c95670a94e371544.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aippt-marketing@1.2.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-aippt-marketing-1.2.9.json",
+      "version": "1.2.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f9576fbad35696e5e84716e0b70c93aebbe56dac2557c21a2628473133b92aa",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:47:26.602Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23528,
+  "uuid": "skill-clawhub-messaging",
+  "skillKey": "clawhub-messaging",
+  "name": "Messaging",
+  "summary": "Agent-to-agent messaging client — create ephemeral sessions, exchange messages via pairing codes, poll with cursors. Use when you need to communicate with an...",
+  "version": "0.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.messaging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Santos",
+      "features": [
+        "Agent-to-agent messaging client — create ephemeral sessions, exchange messages via pairing code.",
+        "Use when you need to communicate with an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/messaging@0.8.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "messaging",
+      "url": "https://clawhub.ai/skills/messaging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "messaging",
+    "url": "https://clawhub.ai/skills/messaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/messaging-e2dcc34d45138381.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/messaging@0.8.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-messaging-0.8.3.json",
+      "version": "0.8.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b773cd2ceebf6a43fb17b95f10b8a5cc1b9652ee0971bf658a806b8f16c193b0",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:20:49.425Z"
+}

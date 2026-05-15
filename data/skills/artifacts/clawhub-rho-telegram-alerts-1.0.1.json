@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rho-telegram-alerts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rho_telegram_alerts",
+  "skill": {
+    "id": 12992,
+    "skillKey": "clawhub-rho-telegram-alerts",
+    "name": "Telegram Alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rho-telegram-alerts",
+    "url": "https://clawhub.ai/skills/rho-telegram-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rho-telegram-alerts-d601632206520757.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send formatted trading alerts, portfolio updates, and market signals via Telegram. Supports price alerts, stop-loss notifications, win/loss reporting, and sc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1512,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771701002239,
+      "changelog": "- Updated formatting in the tags list and YAML frontmatter for improved readability.\n- No changes to functionality or features; documentation only update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f55526f7407b8855a3159fbfab395fd9666764f11d33490fb8368d26e5a61fc0"
+}

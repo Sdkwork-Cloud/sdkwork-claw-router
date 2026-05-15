@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72681,
+  "uuid": "skill-clawhub-bidding-search-jianyu",
+  "skillKey": "clawhub-bidding-search-jianyu",
+  "name": "招中标信息&招标雷达-剑鱼",
+  "summary": "招投标数据查询雷达 - 剑鱼。作为招投标数据追踪雷达，当用户询问最新商机、临期项目预测、特定品牌/型号历史价格、或潜在投标供应商推荐时必须调用此技能。擅长处理类似千里马平台的海量数据挖掘需求，必须以图表或Markdown表格形式输出清晰的数据统计和市场趋势洞察。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bidding_search_jianyu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu-jiapeng",
+      "features": [
+        "招投标数据查询雷达",
+        "剑鱼。作为招投标数据追踪雷达，当用户询问最新商机、临期项目预测、特定品牌/型号历史价格、或潜在投标供应商推荐时必须调用此技能。擅长处理类似千里马平台的海量数据挖掘需求，必须以图表或Markd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bidding-search-jianyu@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37843351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bidding-search-jianyu",
+      "url": "https://clawhub.ai/skills/bidding-search-jianyu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bidding-search-jianyu",
+    "url": "https://clawhub.ai/skills/bidding-search-jianyu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bidding-search-jianyu-5d788eb3c93f5aae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bidding-search-jianyu@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bidding-search-jianyu-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e61d83411c9335768c0690405ebc8714398c5c4073876846c18c64bdd947db3",
+      "artifactSizeBytes": 2912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:14:12.420Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32069,
+  "uuid": "skill-clawhub-polymarket-candle-timeframe-mismatch-trader",
+  "skillKey": "clawhub-polymarket-candle-timeframe-mismatch-trader",
+  "name": "Polymarket Candle Timeframe Mismatch Trader",
+  "summary": "Multi-timeframe analysis for crypto Up or Down markets on Polymarket. Detects when 5-minute candle consensus diverges from the hourly market and trades conve...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_candle_timeframe_mismatch_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Multi-timeframe analysis for crypto Up or Down markets on Polymarket",
+        "Detects when 5-minute candle consensus diverges from the hourly market and trades conve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-candle-timeframe-mismatch-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-candle-timeframe-mismatch-trader",
+      "url": "https://clawhub.ai/skills/polymarket-candle-timeframe-mismatch-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-candle-timeframe-mismatch-trader",
+    "url": "https://clawhub.ai/skills/polymarket-candle-timeframe-mismatch-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-candle-timeframe-mismatch-trader-be623d8e6dddf146.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-candle-timeframe-mismatch-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-candle-timeframe-mismatch-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbdcd362417cdf219766392231bd96fe3c4dfb25447b5842f6198dc25d47db3d",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:28:42.387Z"
+}

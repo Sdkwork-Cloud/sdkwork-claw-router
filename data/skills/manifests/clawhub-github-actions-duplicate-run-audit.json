@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29146,
+  "uuid": "skill-clawhub-github-actions-duplicate-run-audit",
+  "skillKey": "clawhub-github-actions-duplicate-run-audit",
+  "name": "GitHub Actions Duplicate Run Audit",
+  "summary": "Detect duplicate GitHub Actions run bursts by workflow/branch/commit and quantify wasted rerun minutes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_duplicate_run_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Detect duplicate GitHub Actions run bursts by workflow/branch/commit and quantify wasted rerun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-duplicate-run-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-duplicate-run-audit",
+      "url": "https://clawhub.ai/skills/github-actions-duplicate-run-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-duplicate-run-audit",
+    "url": "https://clawhub.ai/skills/github-actions-duplicate-run-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-duplicate-run-audit-9b6a090c61caa76e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-duplicate-run-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-duplicate-run-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e93df9e8687446743b5d0ef28a5ddc10a45de9c4559b3a01f759a222ec1cadd",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:07:40.112Z"
+}

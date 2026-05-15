@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23887,
+  "uuid": "skill-clawhub-stream-formatter",
+  "skillKey": "clawhub-stream-formatter",
+  "name": "stream-formatter",
+  "summary": "LLM streaming output formatter with auto buffer, format correction, sentence break optimization, markdown rendering, improve chat UX",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stream_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ayalili",
+      "features": [
+        "LLM streaming output formatter with auto buffer, format correction, sentence break optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stream-formatter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52843161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stream-formatter",
+      "url": "https://clawhub.ai/skills/stream-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stream-formatter",
+    "url": "https://clawhub.ai/skills/stream-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stream-formatter-1a9bc3a8d29e5e63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stream-formatter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stream-formatter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:572b797da4bc4716d5e211503bbc7bbb7fcee96ecf105bae18f894599c71e6ed",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:30:06.886Z"
+}

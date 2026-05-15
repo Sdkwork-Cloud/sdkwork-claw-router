@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kling-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_ai",
+  "skill": {
+    "id": 68436,
+    "skillKey": "clawhub-kling-ai",
+    "name": "Kling Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-ai",
+    "url": "https://clawhub.ai/skills/kling-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-ai-d6aa7c08edd8729a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快手可灵 AI 视频生成助手，精通文生视频、图生视频、口型同步、运动笔刷"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774181662298,
+      "changelog": "Initial release of Kling AI skill:\n\n- Provides detailed guidance on text-to-video, image-to-video, motion brush, lip sync, and camera control features.\n- Includes API usage instructions compatible with OpenAI format.\n- Lists model version differences (v1.0, v1.5, v1.6) and key feature comparisons with competitors.\n- Offers best practice tips for prompt engineering, especially for Chinese language inputs.\n- Suitable for product showcase, digital human, and creative video scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4304a72ea8e84eeac56625938a83450af2dbc54783168a24938688cbe2acb7d"
+}

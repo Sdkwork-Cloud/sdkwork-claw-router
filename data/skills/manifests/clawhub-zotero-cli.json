@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13419,
+  "uuid": "skill-clawhub-zotero-cli",
+  "skillKey": "clawhub-zotero-cli",
+  "name": "Zotero Cli",
+  "summary": "Command-line interface for Zotero - search your Zotero library, add/edit notes, read attachments, and manage bibliographic references from the terminal.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KGTAF",
+      "features": [
+        "Command-line interface for Zotero",
+        "search your Zotero library, add/edit notes, read attachments, and manage bibliographic referenc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32797449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-cli",
+      "url": "https://clawhub.ai/skills/zotero-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-cli",
+    "url": "https://clawhub.ai/skills/zotero-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-cli-7c89c9d037d793ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2ecc34c8c36ec12522cbd95bbe8f8a7e1bbeecca037469f060ee897c5f8ebd2",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T03:13:15.137Z"
+}

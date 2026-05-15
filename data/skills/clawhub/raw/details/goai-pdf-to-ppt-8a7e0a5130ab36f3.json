@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "goai-pdf-to-ppt",
+    "displayName": "GoAI PDF to PPT",
+    "summary": "Convert PDF documents to PowerPoint presentations via GoAI API. Use when the user asks to convert PDF to PPT, turn a PDF into slides, make a presentation fro...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774699636302,
+    "updatedAt": 1777624525741
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774700510995,
+    "changelog": "Summary: Migrated from shell scripts to a Python entrypoint with uv, unified usage and improved environment handling.\n\n- Replaced shell scripts with Python-based scripts and a `pyproject.toml` for uv support.\n- Now requires only `uv` as a manual dependency; Python and libraries are managed automatically.\n- Unified entrypoint: always run via `uv run --project . python scripts/convert_pdf_to_ppt.py ...`.\n- Automatic fallback from direct Python invocation to `uv` for consistency.\n- Improved environment setup and error guidance, with clear instructions for missing dependencies or API keys.\n- Enhanced output contract and user messaging, especially for credit issues and refunds.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "goai",
+    "userId": "s17bth0ecttg4hrp00qrv4evbs83scf8",
+    "displayName": "GoAI",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624525741
+  }
+}

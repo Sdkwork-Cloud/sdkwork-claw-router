@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-plantuml-edit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_plantuml_edit",
+  "skill": {
+    "id": 46068,
+    "skillKey": "clawhub-auto-plantuml-edit",
+    "name": "auto-plantuml-edit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-plantuml-edit",
+    "url": "https://clawhub.ai/skills/auto-plantuml-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-plantuml-edit-4dafbe9bba80f4f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert natural language to UML diagrams, export editable PPT/EMF with individually editable shapes in PowerPoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangjilei123-1",
+      "userId": "s174094zb2ja6yrn95pzmhtpnh85ktmq",
+      "displayName": "zhangjilei123-1",
+      "image": "https://avatars.githubusercontent.com/u/187286261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777208645037,
+      "changelog": "AutoPlantUMLEdit 1.0.0 – Convert natural language to fully editable UML diagrams in PowerPoint.\n\n- Converts user requests in natural language into PlantUML diagrams (sequence, class, activity, state, use case).\n- Exports UML diagrams to PPTX, EMF, SVG, or PNG formats; PPTX/EMF are fully ungroupable/editable in PowerPoint.\n- Provides clear trigger phrases, usage flow, and script commands for generating and exporting diagrams.\n- Includes comprehensive reference and strict notes for filename restrictions, language limitations (swimlane/participant names in English), and dependency setup (Inkscape, JDK, Python packages).\n- Offers detailed user instructions for editing exported diagrams and troubleshooting encoding issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18359b5559796a0eb4e0ad96719c3daa5aa648a533ba90f1e67ffe0f87aaff2d"
+}

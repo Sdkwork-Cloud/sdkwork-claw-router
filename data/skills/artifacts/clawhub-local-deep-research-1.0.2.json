@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-deep-research@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_deep_research",
+  "skill": {
+    "id": 25467,
+    "skillKey": "clawhub-local-deep-research",
+    "name": "Local Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-deep-research",
+    "url": "https://clawhub.ai/skills/local-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-deep-research-89fab8c421662fac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs multi-cycle, iterative deep research on complex topics using a local LDR service, providing detailed reports with citations and source tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eplt",
+      "userId": "s17az0tzqqw8wwzjqje5v23vqx83mm2x",
+      "displayName": "Edward Tsang",
+      "image": "https://avatars.githubusercontent.com/u/206939?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773120952381,
+      "changelog": "- Added pre-installation considerations highlighting security, binary, and environment variable requirements.\n- Updated metadata to explicitly list required environment variables (`LDR_BASE_URL`, `LDR_SERVICE_USER`, `LDR_SERVICE_PASSWORD`).\n- Clarified sourcing of `.env` file and potential exposure of its contents.\n- Improved installation and configuration guidance for increased transparency and safer operation.\n- No logic or behavioral changes to actions or APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdc7aab2375e9952f15ce5fc856f49bc250f5ad741856f0f384094c4a7c28e4d"
+}

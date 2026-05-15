@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17734,
+  "uuid": "skill-clawhub-x402-private-search",
+  "skillKey": "clawhub-x402-private-search",
+  "name": "x402 Private Search",
+  "summary": "Make paid API requests using the x402 HTTP payment protocol (USDC on Base Sepolia). Use when you need to access x402-protected services, pay for API calls wi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_private_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kodos-vibe",
+      "features": [
+        "Make paid API requests using the x402 HTTP payment protocol (USDC on Base Sepolia)",
+        "Use when you need to access x402-protected services, pay for API calls wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-private-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252536103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-private-search",
+      "url": "https://clawhub.ai/skills/x402-private-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-private-search",
+    "url": "https://clawhub.ai/skills/x402-private-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-private-search-59145ae090f84897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-private-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-private-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abe87feab093fcac888fffd0b4263690f80b38ab06e9cc325d202c68cc0a0a38",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T13:41:25.722Z"
+}

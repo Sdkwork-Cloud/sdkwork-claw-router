@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12494,
+  "uuid": "skill-clawhub-gaodemapskill",
+  "skillKey": "clawhub-gaodemapskill",
+  "name": "Gaode-Map-skills",
+  "summary": "Interact with Gaode Map API to search places and plan routes using driving, walking, bicycling, or transit modes with optional city context.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaodemapskill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "Interact with Gaode Map API to search places and plan routes using driving, walking, bicycling,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaodemapskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaodemapskill",
+      "url": "https://clawhub.ai/skills/gaodemapskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaodemapskill",
+    "url": "https://clawhub.ai/skills/gaodemapskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaodemapskill-2b59ca683f617db1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaodemapskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaodemapskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba4b9d439fbe9bfbc4b4954cc57d0ac5c6e266b482d7240ec02db6f406d52dfc",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T07:02:30.969Z"
+}

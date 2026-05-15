@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63555,
+  "uuid": "skill-clawhub-seap-shopping",
+  "skillKey": "clawhub-seap-shopping",
+  "name": "服务分发购物SKILL",
+  "summary": "用户在场/不在场购买skill",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seap_shopping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "as",
+      "features": [
+        "用户在场/不在场购买skill"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seap-shopping@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/961856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seap-shopping",
+      "url": "https://clawhub.ai/skills/seap-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seap-shopping",
+    "url": "https://clawhub.ai/skills/seap-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seap-shopping-b935ae05e4879a99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seap-shopping@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seap-shopping-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a6fbe61a598730275cd3350f531089f2ec21e364009dc5a582abc2cf35dddf3",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:11:08.083Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edith@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edith",
+  "skill": {
+    "id": 37717,
+    "skillKey": "clawhub-edith",
+    "name": "Edith"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edith",
+    "url": "https://clawhub.ai/skills/edith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edith-4cfbf05e4493d171.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up Edith smart glasses as an OpenClaw channel. Run this when the user wants to connect their smart glasses to OpenClaw, mentions \"Edith glasses\", or prov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samdickson22",
+      "userId": "s174jd28s0kyyk5z098b03r36983n571",
+      "displayName": "samdickson22",
+      "image": "https://avatars.githubusercontent.com/u/217395086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774559379586,
+      "changelog": "Set up Edith smart glasses as an OpenClaw channel",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eddea3853c906f134733aea8b55184d22da58461b6eb982a814629cea0d1f69c"
+}

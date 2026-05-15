@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daxiang-daily-report@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_daily_report",
+  "skill": {
+    "id": 71128,
+    "skillKey": "clawhub-daxiang-daily-report",
+    "name": "大象沟通日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-daily-report",
+    "url": "https://clawhub.ai/skills/daxiang-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-daily-report-7758807276d038b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成大象（即时通讯工具）每日沟通分析报告。自动汇总个人对话、群聊消息，按时间段分析沟通频率，识别活跃联系人，生成结构化的沟通摘要。使用场景：用户提及'大象日报'、'沟通日报'、'每日沟通'、'daxiang report'、'沟通汇总'时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kindhf",
+      "userId": "publishers:kindhf",
+      "displayName": "kindhf",
+      "image": "https://avatars.githubusercontent.com/u/32083610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773766309188,
+      "changelog": "修复单人沟通分析：完整展示对话记录（时间|说话人|具体内容），不缩减",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2e52a8a191a62b02530bc7dc3a126f9ff91c6cad88143ec52b6f9c0914b4ed6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63707,
+  "uuid": "skill-clawhub-chrome-automation",
+  "skillKey": "clawhub-chrome-automation",
+  "name": "Chrome Automation",
+  "summary": "Linux服务器Chrome浏览器自动化方案。支持2K高清截图、表单填写、自动登录、绕过反爬虫检测。适用于B站、YouTube等网站自动化操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang Bin",
+      "features": [
+        "Linux服务器Chrome浏览器自动化方案。支持2K高清截图、表单填写、自动登录、绕过反爬虫检测。适用于B站、YouTube等网站自动化操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49835840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-automation",
+      "url": "https://clawhub.ai/skills/chrome-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-automation",
+    "url": "https://clawhub.ai/skills/chrome-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-automation-82cf2dbc15fcf973.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f31e04e88f337ded68020d08bb44644f36586d9775f711d62c6169f12f5fabda",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:20:20.816Z"
+}

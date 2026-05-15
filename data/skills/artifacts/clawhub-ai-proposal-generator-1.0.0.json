@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-proposal-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_proposal_generator",
+  "skill": {
+    "id": 9026,
+    "skillKey": "clawhub-ai-proposal-generator",
+    "name": "AI Proposal Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-proposal-generator",
+    "url": "https://clawhub.ai/skills/ai-proposal-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-proposal-generator-425d05cdf4938b47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional HTML proposals from meeting notes. Features 5 proposal styles (Corporate, Entrepreneur, Creative, Consultant, Minimal), 6+ color themes, and a Design Wizard for custom templates. Triggers on \"create proposal\", \"propos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffjhunter",
+      "userId": "s17fhgfbdhz4g6yqeha2egykyx83grhe",
+      "displayName": "Jeff J Hunter",
+      "image": "https://avatars.githubusercontent.com/u/252698242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4291,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770160673517,
+      "changelog": "v1.0.0 — Initial Release\n\n📄 Core Features\n- Generate professional HTML proposals from meeting notes\n- 5 proposal styles: Corporate, Entrepreneur, Creative, Consultant, Minimal\n- 6 color themes: Ocean Blue, Ember Orange, Forest Green, Slate Dark, Royal Purple, Trust Navy\n- Design Wizard for custom template creation\n- Smart pricing integration from saved SERVICES.md\n\n🎨 Output\n- Beautiful, responsive HTML ready to send\n- Print-ready, PDF-exportable\n- Mobile-friendly design\n\n⚡ Integration\n- Pulls context from ai-meeting-notes\n- Connects with ai-daily-briefing for follow-up reminders\n\nYou had the meeting. You took the notes. Now the proposal writes itself.\n\nBuilt by Jeff J Hunter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:668574c6eebdbfe05ab96d013735591e0141419d7786118c6e576cc45f4917fa"
+}

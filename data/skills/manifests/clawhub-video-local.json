@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55827,
+  "uuid": "skill-clawhub-video-local",
+  "skillKey": "clawhub-video-local",
+  "name": "Video Local",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — trim the intro, add background music, and export for YouTube — and get edi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — trim the intro, add background music, and export for YouTube — and get."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-local",
+      "url": "https://clawhub.ai/skills/video-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-local",
+    "url": "https://clawhub.ai/skills/video-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-local-fbbff9157ede6c6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcf8e3d44672a5c8609935270fce74d5de17898a66a57a8c342ac1bc0d661c79",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:27:23.978Z"
+}

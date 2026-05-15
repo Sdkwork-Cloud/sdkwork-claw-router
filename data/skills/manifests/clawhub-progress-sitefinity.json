@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31719,
+  "uuid": "skill-clawhub-progress-sitefinity",
+  "skillKey": "clawhub-progress-sitefinity",
+  "name": "Progress Sitefinity",
+  "summary": "Progress Sitefinity integration. Manage data, records, and automate workflows. Use when the user wants to interact with Progress Sitefinity data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.progress_sitefinity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Progress Sitefinity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Progress Sitefinity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/progress-sitefinity@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "progress-sitefinity",
+      "url": "https://clawhub.ai/skills/progress-sitefinity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "progress-sitefinity",
+    "url": "https://clawhub.ai/skills/progress-sitefinity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/progress-sitefinity-329a785cc249bb17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/progress-sitefinity@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-progress-sitefinity-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfdc6a2457b33bfb12009fac3678d8629eaa49ee8e7b30463555b7384b7f1bef",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:28:22.261Z"
+}

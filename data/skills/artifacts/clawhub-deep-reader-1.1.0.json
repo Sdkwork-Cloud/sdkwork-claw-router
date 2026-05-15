@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-reader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_reader",
+  "skill": {
+    "id": 68783,
+    "skillKey": "clawhub-deep-reader",
+    "name": "Deep Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-reader",
+    "url": "https://clawhub.ai/skills/deep-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-reader-15810ffe1989ab08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度阅读一本书籍或网页文章并提供系统性内容解读。当用户想要深入分析一本书、了解书籍核心观点与论证逻辑，或提供网页 URL 要求分析文章内容时触发。支持 EPUB、PDF、TXT 等电子书格式，以及网页 URL 内容提取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ltryee",
+      "userId": "s17f15dn3gc74a13v3v4g132vs856fkf",
+      "displayName": "ltryee",
+      "image": "https://avatars.githubusercontent.com/u/854047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778377004176,
+      "changelog": "**deep-reader 1.1.0**\n\n- 新增网页文章深度分析能力，支持输入网页 URL，自动提取并分析正文内容。\n- 适配网页内容类型（新闻、博客、学术等），新增网页类型专属分析模板和判断逻辑。\n- 新增对 URL 请求的关键词触发判断，包括“分析这个网页”“这篇文章讲了什么”等。\n- 内容加载流程增加 WebFetch 工具提取网页正文，支持段落、小标题、核心论点识别。\n- 报告模板增加“网页文章分析输出”格式，输出时自动注明文章出处链接。\n- 新增 LICENSE 文件。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09de37ce501bb5e58f30dd560aeb654d8cc256c791a3845b3b9cfc5bf5a16373"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10160,
+  "uuid": "skill-clawhub-dory-memory",
+  "skillKey": "clawhub-dory-memory",
+  "name": "Dory-Proof Memory System",
+  "summary": "File-based memory system for AI agents that forget between sessions. Implements the \"Dory-Proof\" pattern for continuity across context resets. Use when setting up agent memory, building workspace structure, implementing task tracking, or p.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dory_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justinhartbiz",
+      "features": [
+        "File-based memory system for AI agents that forget between sessions",
+        "Implements the \"Dory-Proof\" pattern for continuity across context resets",
+        "Use when setting up agent memory, building workspace structure, implementing task tracking, or.",
+        "Triggers on \"memory system\", \"remember between sessions\", \"Dory pattern\", \"agent continuity\", o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dory-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27245787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dory-memory",
+      "url": "https://clawhub.ai/skills/dory-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dory-memory",
+    "url": "https://clawhub.ai/skills/dory-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dory-memory-e8900bc88659fe62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dory-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dory-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20fadc72346d85121257a005e7a80aa57c94bd17db9629265cd8f7729589f8d0",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T01:44:12.867Z"
+}

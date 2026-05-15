@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29384,
+  "uuid": "skill-clawhub-retention-drop-checker",
+  "skillKey": "clawhub-retention-drop-checker",
+  "name": "Retention Drop Checker",
+  "summary": "Diagnose why short-video retention drops and suggest practical fixes. Use when views start but audience leaves early.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retention_drop_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Diagnose why short-video retention drops and suggest practical fixes",
+        "Use when views start but audience leaves early."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retention-drop-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retention-drop-checker",
+      "url": "https://clawhub.ai/skills/retention-drop-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retention-drop-checker",
+    "url": "https://clawhub.ai/skills/retention-drop-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retention-drop-checker-f8ceb200da3589c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retention-drop-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-retention-drop-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c639f0c0e5b7cb248ef8fae139d1b215f7b2cf9abe00965630d32f362a9872d",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:01:59.273Z"
+}

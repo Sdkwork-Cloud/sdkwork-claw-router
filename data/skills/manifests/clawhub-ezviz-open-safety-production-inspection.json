@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32667,
+  "uuid": "skill-clawhub-ezviz-open-safety-production-inspection",
+  "skillKey": "clawhub-ezviz-open-safety-production-inspection",
+  "name": "Ezviz Open Safety Production Inspection",
+  "summary": "Ezviz safety production inspection skill. Captures device images and sends to Ezviz AI for workplace safety analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_safety_production_inspection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EzvizOpenTeam",
+      "features": [
+        "Ezviz safety production inspection skill",
+        "Captures device images and sends to Ezviz AI for workplace safety analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezviz-open-safety-production-inspection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16202450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezviz-open-safety-production-inspection",
+      "url": "https://clawhub.ai/skills/ezviz-open-safety-production-inspection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-safety-production-inspection",
+    "url": "https://clawhub.ai/skills/ezviz-open-safety-production-inspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-safety-production-inspection-5fffa3f40a5bdd35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezviz-open-safety-production-inspection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezviz-open-safety-production-inspection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb23e1c5f9818c58bed1184eb098ea022fca3995f73b405462bd89e97b7e31c6",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:48:43.373Z"
+}

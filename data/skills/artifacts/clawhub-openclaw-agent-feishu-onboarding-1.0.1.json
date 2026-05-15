@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-feishu-onboarding@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_feishu_onboarding",
+  "skill": {
+    "id": 34958,
+    "skillKey": "clawhub-openclaw-agent-feishu-onboarding",
+    "name": "openclaw-agent-feishu-onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-feishu-onboarding",
+    "url": "https://clawhub.ai/skills/openclaw-agent-feishu-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-feishu-onboarding-257b4a5d305d60c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create OpenClaw agents and onboard Feishu routing with explicit multi-step confirmations. Use when the user needs to (1) define a new agent role and workspac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "absolins",
+      "userId": "s173atpz188cz1tkd21q1yh1g183hnc1",
+      "displayName": "AbsoLinS",
+      "image": "https://avatars.githubusercontent.com/u/214932309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774088110529,
+      "changelog": "- Added runtime prerequisites, including required binaries and preflight checks.\n- Updated agent spec and validation requirements: `agents.list[]` must include an `identity` object with `identity.name` set.\n- Expanded the execution workflow with additional discovery steps and explicit validation for agent configuration.\n- Clarified routing rules and included a correct `agents.list[]` agent entry example.\n- Added guidance on troubleshooting routing issues and reasons for fallback to the `main` route.\n- Documentation improved for operational clarity and safer onboarding flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c83d4fd14527a729f787e8b3af6503c1874d63d2e718f6496cb3f325f81d0831"
+}

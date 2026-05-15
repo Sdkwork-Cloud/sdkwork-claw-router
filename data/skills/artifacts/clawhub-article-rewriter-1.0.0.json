@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-rewriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_rewriter",
+  "skill": {
+    "id": 25302,
+    "skillKey": "clawhub-article-rewriter",
+    "name": "Article Rewriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-rewriter",
+    "url": "https://clawhub.ai/skills/article-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-rewriter-9a41df4462b6ccbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite and restructure articles, newsletters, threads, scripts, landing pages, and rough notes into clearer, more engaging, more persuasive writing. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujuntao123",
+      "userId": "s178a116yszcjp3n1pw111277n83gd43",
+      "displayName": "liujuntao123",
+      "image": "https://avatars.githubusercontent.com/u/22583601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773286155403,
+      "changelog": "Initial release of article-rewriter skill.\n\n- Restructures and rewrites various content types (articles, newsletters, scripts, landing pages, notes) to be clearer, more engaging, and persuasive.\n- Uses APAG (Attention, Perspective, Advantage, Gamify) as the default framework for rewrites, optimizing for curiosity and action.\n- Maintains the original author’s core facts and intent; avoids fabricating facts or testimonials.\n- Defaults to 3 headline/hook options plus the rewritten article as output.\n- Adapts output length, tone, structure, and target format to user needs; supports both minor polishing and full rewrites.\n- Designed to flexibly support both Chinese and English content audiences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83a056ea7b28634f1e6e01d5322867fb79aa69ab7ab980bc755428db8f600d7a"
+}

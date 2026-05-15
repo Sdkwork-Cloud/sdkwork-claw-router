@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65783,
+  "uuid": "skill-clawhub-anti-996-reminder",
+  "skillKey": "clawhub-anti-996-reminder",
+  "name": "Anti 996 Reminder",
+  "summary": "温馨健康提醒技能，每日12:05（午间）和23:00（睡前）推送暖心内容，支持打卡攒积分，舒缓压力、劝导早睡。适用于微信/QQ通道。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_996_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeviosLang",
+      "features": [
+        "温馨健康提醒技能，每日12:05（午间）和23:00（睡前）推送暖心内容，支持打卡攒积分，舒缓压力、劝导早睡。适用于微信/QQ通道。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-996-reminder@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5735268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-996-reminder",
+      "url": "https://clawhub.ai/skills/anti-996-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-996-reminder",
+    "url": "https://clawhub.ai/skills/anti-996-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-996-reminder-163e31debf93609c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-996-reminder@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-996-reminder-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e425a81fb6e665394d720b49610649f8e15a330c3e3d13d34683ff0b2f37cd8",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:14:24.354Z"
+}

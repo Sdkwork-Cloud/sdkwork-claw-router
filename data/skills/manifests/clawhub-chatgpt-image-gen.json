@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21571,
+  "uuid": "skill-clawhub-chatgpt-image-gen",
+  "skillKey": "clawhub-chatgpt-image-gen",
+  "name": "Chatgpt Image Gen",
+  "summary": "Generate images using ChatGPT/DALL-E through OpenClaw browser automation. Use when the user wants to create images via ChatGPT's web interface with their log...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sonim1",
+      "features": [
+        "Generate images using ChatGPT/DALL-E through OpenClaw browser automation",
+        "Use when the user wants to create images via ChatGPT's web interface with their log..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatgpt-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2497849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatgpt-image-gen",
+      "url": "https://clawhub.ai/skills/chatgpt-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-image-gen",
+    "url": "https://clawhub.ai/skills/chatgpt-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-image-gen-4db9145ba19ec376.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatgpt-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a270818219dd69016b78d631960476a474314938f41028c5082d33b72cb79c04",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:09:05.762Z"
+}

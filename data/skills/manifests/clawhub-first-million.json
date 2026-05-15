@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23866,
+  "uuid": "skill-clawhub-first-million",
+  "skillKey": "clawhub-first-million",
+  "name": "Journey to First Million",
+  "summary": "Personal finance management for recording income/expenses, budgeting, and savings goals. Use when user asks to track spending, create budgets, analyze financ...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.first_million",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cuisine",
+      "features": [
+        "Personal finance management for recording income/expenses, budgeting, and savings goals",
+        "Use when user asks to track spending, create budgets, analyze financ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/first-million@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42954277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "first-million",
+      "url": "https://clawhub.ai/skills/first-million"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "first-million",
+    "url": "https://clawhub.ai/skills/first-million",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/first-million-c1ef912b6c4da297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/first-million@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-first-million-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11a2be9544206f31c3544cb0639d78f7bd7fcc2c145ab6b4628d39444909e61e",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:43:44.912Z"
+}

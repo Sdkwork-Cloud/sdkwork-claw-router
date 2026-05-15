@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23374,
+  "uuid": "skill-clawhub-overlay-market",
+  "skillKey": "clawhub-overlay-market",
+  "name": "Overlay Market (perpetual futures trading)",
+  "summary": "Trade leveraged perpetual futures on Overlay Protocol (BSC). Scan markets, analyze prices with technical indicators, check wallet balance, encode build/unwin...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overlay_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arthur G.",
+      "features": [
+        "Trade leveraged perpetual futures on Overlay Protocol (BSC)",
+        "Scan markets, analyze prices with technical indicators, check wallet balance, encode build/unwi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overlay-market@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9092350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overlay-market",
+      "url": "https://clawhub.ai/skills/overlay-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overlay-market",
+    "url": "https://clawhub.ai/skills/overlay-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overlay-market-81abcf5a2d5cd666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overlay-market@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-overlay-market-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d68bce369aa971f8a9fe442d5326d1b620f1aafb53e500fe26bfe31aba9b408a",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:58:22.925Z"
+}

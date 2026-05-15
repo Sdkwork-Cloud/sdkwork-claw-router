@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64390,
+  "uuid": "skill-clawhub-pubmed-review",
+  "skillKey": "clawhub-pubmed-review",
+  "name": "PubMed Review",
+  "summary": "飞书自然语言触发的 PubMed 文献检索与 AI 综述生成系统。支持专业检索式扩展、限定词过滤、AI 结构化综述（brief+full）、飞书通知、追问回答。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crayfish-ai",
+      "features": [
+        "飞书自然语言触发的 PubMed 文献检索与 AI 综述生成系统。支持专业检索式扩展、限定词过滤、AI 结构化综述（brief+full）、飞书通知、追问回答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pubmed-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270082434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pubmed-review",
+      "url": "https://clawhub.ai/skills/pubmed-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-review",
+    "url": "https://clawhub.ai/skills/pubmed-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-review-11a706d710d0332d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pubmed-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e5f389cc13a6f29b99af0c68c3773141d29d1608e93e2222bb45ee7b26f73aa",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T14:30:12.604Z"
+}

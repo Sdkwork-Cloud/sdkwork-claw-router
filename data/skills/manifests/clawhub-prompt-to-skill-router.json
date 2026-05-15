@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55313,
+  "uuid": "skill-clawhub-prompt-to-skill-router",
+  "skillKey": "clawhub-prompt-to-skill-router",
+  "name": "Prompt To Skill Router",
+  "summary": "Decides the best execution path for a request—direct answer, existing skill, new skill, or multi-skill workflow—favoring lowest friction and value.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_to_skill_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "Decides the best execution path for a request—direct answer, existing skill, new skill, or mult."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-to-skill-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-to-skill-router",
+      "url": "https://clawhub.ai/skills/prompt-to-skill-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-to-skill-router",
+    "url": "https://clawhub.ai/skills/prompt-to-skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-to-skill-router-b8e4291943f754cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-to-skill-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-to-skill-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ee2db09ca329e306d0846a82fc472c5d082b8f52b58fbfd84bf43105b8d7a50",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:38:41.156Z"
+}

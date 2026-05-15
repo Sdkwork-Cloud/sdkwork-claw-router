@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25335,
+  "uuid": "skill-clawhub-openclaw-key-management",
+  "skillKey": "clawhub-openclaw-key-management",
+  "name": "OpenClaw Key Management",
+  "summary": "Secure credential storage system for OpenClaw that encrypts and protects API keys, tokens, and sensitive credentials from memory file compromise.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_key_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keven0706",
+      "features": [
+        "Secure credential storage system for OpenClaw that encrypts and protects API keys, tokens, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-key-management@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3222199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-key-management",
+      "url": "https://clawhub.ai/skills/openclaw-key-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-key-management",
+    "url": "https://clawhub.ai/skills/openclaw-key-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-key-management-7ca8e8f7bec8ba0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-key-management@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-key-management-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9960112b7bc08ff28c27e6a7d4526d460b20a68b40755820cbfc210dd9a16057",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:39:47.555Z"
+}

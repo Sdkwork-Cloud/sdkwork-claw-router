@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-template@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_template",
+  "skill": {
+    "id": 16081,
+    "skillKey": "clawhub-invoice-template",
+    "name": "Invoice Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-template",
+    "url": "https://clawhub.ai/skills/invoice-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-template-4e7ada4bc2157e9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free simple invoice generator. Creates clean, professional invoices with your branding. Use when you need to bill a client quickly without complex tracking o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kambrosgroup",
+      "userId": "publishers:kambrosgroup",
+      "displayName": "Karl Ambrosius",
+      "image": "https://avatars.githubusercontent.com/u/38363945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 921,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771814763663,
+      "changelog": "- Initial release of the invoice-template skill.\n- Instantly generate clean, professional invoices with your branding.\n- Includes: business and client info, line items, payment instructions, and total due.\n- Designed for quick and simple invoicing—no tracking or automation features.\n- Suggestions provided for upgrading to more advanced billing tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76b10753acc5cfdff9fd9a0065adabac0484b388c21c84a1ed04af6b2d6a2319"
+}

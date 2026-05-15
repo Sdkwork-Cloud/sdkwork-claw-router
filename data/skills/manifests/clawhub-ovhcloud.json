@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36962,
+  "uuid": "skill-clawhub-ovhcloud",
+  "skillKey": "clawhub-ovhcloud",
+  "name": "Ovhcloud",
+  "summary": "OVHcloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with OVHcloud data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ovhcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "OVHcloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with OVHcloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ovhcloud@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ovhcloud",
+      "url": "https://clawhub.ai/skills/ovhcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ovhcloud",
+    "url": "https://clawhub.ai/skills/ovhcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ovhcloud-68a5bbea9518e7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ovhcloud@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ovhcloud-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce3fff57be3b9325cfe629c065368c57d176736d920dca7dd870fe7f79a00f17",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:49:29.294Z"
+}

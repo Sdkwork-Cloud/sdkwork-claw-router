@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-ladders@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_ladders",
+  "skill": {
+    "id": 38305,
+    "skillKey": "clawhub-seo-ladders",
+    "name": "Seo Ladders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-ladders",
+    "url": "https://clawhub.ai/skills/seo-ladders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-ladders-f1848539ba250ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full SEO content automation via MCP. Audit websites, check Google rankings, discover site structure, auto-select keywords matched to your DR, research and sw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kwesi-dev",
+      "userId": "s174byh34n87kb4zjbz973t8b583z4ra",
+      "displayName": "Kwesi-dev",
+      "image": "https://avatars.githubusercontent.com/u/84196741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774981017390,
+      "changelog": "- Major update with expanded documentation and usage instructions.\n- Added detailed setup guides for Claude Code, Cursor, Windsurf, and Codex clients.\n- Comprehensive examples provided for typical SEO tasks and commands.\n- Expanded descriptions of all available tools and their features.\n- Clarified outputs for article generation and site audit, including result structures.\n- Detailed workflow for asynchronous tools included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aa74828eb01669251cb22c418b85e72a43d65082e89c06031dae986321ce99e"
+}

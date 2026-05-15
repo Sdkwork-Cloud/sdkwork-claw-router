@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etcd-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etcd_manager",
+  "skill": {
+    "id": 30083,
+    "skillKey": "clawhub-etcd-manager",
+    "name": "etcd-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etcd-manager",
+    "url": "https://clawhub.ai/skills/etcd-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etcd-manager-d44365bca6e841d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage etcd key-value store operations (list, get, put, delete) with safety checks and backup mechanisms. Use when: reading/writing configuration, managing d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fpbear",
+      "userId": "s174q2182dscg46xsx6c4qv8x583gr48",
+      "displayName": "FPbear",
+      "image": "https://avatars.githubusercontent.com/u/35688426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774352646399,
+      "changelog": "Initial release of the etcd-manager skill:\n\n- Provides clean and safe management for etcd key-value store operations: list, get, put, and delete.\n- Enforces safety rules with read-first preference, backups before modification, and explicit confirmation for destructive actions.\n- Distinguishes between dev, test, and prod environments, applying extra caution in production.\n- Standardizes command conventions and output formats to ensure clear, auditable interactions.\n- Supports TLS connections and logging for added security and traceability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5e54ce69afc584f01a507c26adf762ea5cacf6e9e1ad2036207b5219700fe7b"
+}

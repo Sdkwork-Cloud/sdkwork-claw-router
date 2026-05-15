@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import path from 'node:path';
@@ -105,7 +105,7 @@ function postgresIntegrationCargoArgs(extraArgs = []) {
     '-p',
     'sdkwork-claw-product',
     '--test',
-    'postgres_playground_history_sql_contract',
+    'postgres_generation_history_sql_contract',
     '--test',
     'postgres_transaction_integration',
   ];

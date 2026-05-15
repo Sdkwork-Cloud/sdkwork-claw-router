@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blackrock-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blackrock_company",
+  "skill": {
+    "id": 54256,
+    "skillKey": "clawhub-blackrock-company",
+    "name": "Blackrock Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blackrock-company",
+    "url": "https://clawhub.ai/skills/blackrock-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blackrock-company-c3bcdf93b40de7a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BlackRock is the world's largest asset manager with $10+ trillion AUM, offering ETFs and risk management via its Aladdin fintech platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777612223937,
+      "changelog": "- Initial release of the BlackRock skill, covering company history, business model, and key facts.\n- Includes a detailed timeline of major milestones from 1988 to 2024, featuring ETF innovation and Aladdin platform achievements.\n- Explains BlackRock’s dual-engine business (iShares ETFs and active management), with clear revenue breakdown.\n- Highlights scale advantages, network effects of the Aladdin platform, and global influence.\n- Lists up-to-date key metrics (AUM, revenue, employees, global presence).\n- Shares interesting facts about Aladdin and the company’s headquarters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2a23d2004d1b5c316b30c9f667ecc9b1b08218d55fe06b6e514e8dacf04adc8"
+}

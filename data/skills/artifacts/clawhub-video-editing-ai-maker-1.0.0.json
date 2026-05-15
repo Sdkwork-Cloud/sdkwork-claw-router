@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_maker",
+  "skill": {
+    "id": 48033,
+    "skillKey": "clawhub-video-editing-ai-maker",
+    "name": "Video Editing Ai Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-maker",
+    "url": "https://clawhub.ai/skills/video-editing-ai-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-maker-ba8aa022bf05adff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777942071543,
+      "changelog": "Initial public release of Video Editing AI Maker.\n\n- Instantly edit and export polished videos with AI—just upload your clips and describe the edit you want.\n- Supports major video formats (MP4, MOV, AVI, WebM) up to 500MB; outputs 1080p MP4 files.\n- No editing skills required: handles pause removal, transitions, highlight reels, and more via simple text instructions.\n- Built-in secure backend workflow: handles anonymous token generation, session management, uploads, credits, exports, and error handling.\n- Designed for content creators and marketers who need professional results fast, without complex software or local installation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bc953e771169d76e2c468a8d9cd6dba2ffa0cef3ab4ddf3ff690b447ed94b70"
+}

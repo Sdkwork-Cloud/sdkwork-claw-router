@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-context-upgrade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_context_upgrade",
+  "skill": {
+    "id": 51285,
+    "skillKey": "clawhub-openclaw-context-upgrade",
+    "name": "OpenClaw Context Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-context-upgrade",
+    "url": "https://clawhub.ai/skills/openclaw-context-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-context-upgrade-fe5bb6bdb52c698f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and upgrade OpenClaw conversation context limits, especially moving a chat from ~272k to 1M. Use when the user asks to enlarge context, make GPT-5.4..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juan-xin-cai",
+      "userId": "s176vmsw277cbmxftj2h1emcr183hbx1",
+      "displayName": "juan-xin-cai",
+      "image": "https://avatars.githubusercontent.com/u/33806107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369665286,
+      "changelog": "Initial release: diagnose and upgrade OpenClaw chat context limits to 1M, including model pinning, config patching, restart, fresh-session verification, and failure-mode diagnosis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb164f46b12bf16b9c93f734900a5d9bd0af6bde3bf3ee57a93ce677ec1460d0"
+}

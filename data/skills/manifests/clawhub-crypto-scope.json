@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65297,
+  "uuid": "skill-clawhub-crypto-scope",
+  "skillKey": "clawhub-crypto-scope",
+  "name": "Crypto Scope",
+  "summary": "提供加密货币实时价格查询、技术指标分析（MA/RSI/MACD）和交易信号生成，支持多币种批量监控。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_scope",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imgolye",
+      "features": [
+        "提供加密货币实时价格查询、技术指标分析（MA/RSI/MACD）和交易信号生成，支持多币种批量监控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-scope@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7943209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-scope",
+      "url": "https://clawhub.ai/skills/crypto-scope"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-scope",
+    "url": "https://clawhub.ai/skills/crypto-scope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-scope-e5c22a8d10104a57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-scope@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-scope-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1459f74f3875a2e5984645e7ed42c182b750964d46adf27afae89b8525d7eaa4",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:34:08.153Z"
+}

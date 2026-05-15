@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20524,
+  "uuid": "skill-clawhub-ccusage-report",
+  "skillKey": "clawhub-ccusage-report",
+  "name": "Ccusage Report",
+  "summary": "Report Claude Code token consumption and costs using ccusage. Use when the user asks about their Claude Code usage, token consumption, API costs, spending, o...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccusage_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "features": [
+        "Report Claude Code token consumption and costs using ccusage",
+        "Use when the user asks about their Claude Code usage, token consumption, API costs, spending, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccusage-report@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146075220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccusage-report",
+      "url": "https://clawhub.ai/skills/ccusage-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccusage-report",
+    "url": "https://clawhub.ai/skills/ccusage-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccusage-report-c4fd9142ac034f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccusage-report@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccusage-report-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d63dd7a5850d17e7729344ed4ca05e78b8ea597134648ffe391e7e97ac2362c",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:46:31.545Z"
+}

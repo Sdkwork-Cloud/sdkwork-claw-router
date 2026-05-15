@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61629,
+  "uuid": "skill-clawhub-ttpos-agent",
+  "skillKey": "clawhub-ttpos-agent",
+  "name": "TTPOS Agent",
+  "summary": "通过 ttpos-agent API 查询 TTPOS 餐饮系统营业数据，生成报表。使用前必须访问 GET /api/v1/query/guide 获取数据查询指南。Use when: 今日营业额、订单统计、支付方式、菜品排行、会员分析、班次汇总、时段分析等。NOT for: 与 TTPOS 数据无关的问题。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttpos_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BenDaye",
+      "features": [
+        "通过 ttpos-agent API 查询 TTPOS 餐饮系统营业数据，生成报表。使用前必须访问 GET /api/v1/query/guide 获取数据查询指南。Use when: 今日."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ttpos-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26397675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ttpos-agent",
+      "url": "https://clawhub.ai/skills/ttpos-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttpos-agent",
+    "url": "https://clawhub.ai/skills/ttpos-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttpos-agent-2e3fd4381c2194e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ttpos-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ttpos-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:977a1e384f7737b51624d063aad0538066b3a9e043e9dc7d8667dd4a3902d7fb",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:54:39.909Z"
+}

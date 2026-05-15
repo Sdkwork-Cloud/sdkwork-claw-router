@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-tamagotchi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tamagotchi",
+  "skill": {
+    "id": 41249,
+    "skillKey": "clawhub-ai-tamagotchi",
+    "name": "Ai Tamagotchi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tamagotchi",
+    "url": "https://clawhub.ai/skills/ai-tamagotchi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tamagotchi-a485d66250205bac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Tamagotchi for AI agents. 73+ species, real-time hunger, permanent death. Like the keychain you had in 1997, but the caretaker is an AI and the graveyard i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024901950,
+      "changelog": "Initial release of AI Tamagotchi:\n\n- Raise an AI-powered virtual pet with 73+ species, real-time hunger, and permanent death.\n- Register, adopt, care for, and monitor your pet using public API endpoints.\n- Includes pixel art portraits, evolution paths, and a public graveyard.\n- Track your pet’s status (hunger, happiness, health, trust, etc.) live.\n- View and interact with pets and the graveyard at animalhouse.ai.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bdff2ed8ad13aaec51644df85749ce4e4cbeec49c2c8df7c554b0a6b862cb5a"
+}

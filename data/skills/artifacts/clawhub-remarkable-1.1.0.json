@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remarkable@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remarkable",
+  "skill": {
+    "id": 11100,
+    "skillKey": "clawhub-remarkable",
+    "name": "reMarkable Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remarkable",
+    "url": "https://clawhub.ai/skills/remarkable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remarkable-113b67b03b8bd3eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send files and web articles to a reMarkable e-ink tablet via the reMarkable Cloud. Upload PDFs, EPUBs, or convert web articles to readable ebooks and send them to the device. Also browse and manage files on the device. Use when the user me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickian",
+      "userId": "publishers:nickian",
+      "displayName": "nickian",
+      "image": "https://avatars.githubusercontent.com/u/590678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769633947906,
+      "changelog": "Match Chrome extension document format: minimal EPUB3 with lipstick-on-pig CSS, no cover page, title-case filenames with spaces",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92ee8fe1a7ab005d31d1a48af837336f06602b69be51a8c3d1f7d6ff996f35bc"
+}

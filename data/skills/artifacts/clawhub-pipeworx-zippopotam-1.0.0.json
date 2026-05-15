@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-zippopotam@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_zippopotam",
+  "skill": {
+    "id": 54566,
+    "skillKey": "clawhub-pipeworx-zippopotam",
+    "name": "Pipeworx zippopotam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-zippopotam",
+    "url": "https://clawhub.ai/skills/pipeworx-zippopotam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-zippopotam-40fc33b683a00df6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZIP and postal code lookup — get place names, states, and coordinates for postal codes in 60+ countries"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucegutman",
+      "userId": "s17cvgtez7j4kg9j5x0713jyyx84as33",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/138315805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775505838008,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c4f6f6b04239a815f2af269ae1e7ace24636421313c2381b645a41c0db7b371"
+}

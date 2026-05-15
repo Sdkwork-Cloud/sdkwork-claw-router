@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-deep-search@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_deep_search",
+  "skill": {
+    "id": 30719,
+    "skillKey": "clawhub-academic-deep-search",
+    "name": "Academic Deep Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-deep-search",
+    "url": "https://clawhub.ai/skills/academic-deep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-deep-search-e947b092566b8926.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search academic literature and return structured, source-grounded results for questions about methods, markers, findings, or representative figures. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zackz2025",
+      "userId": "s170j68xt01c8f6tms54d7c56h83e533",
+      "displayName": "Zack",
+      "image": "https://avatars.githubusercontent.com/u/224656189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775154349739,
+      "changelog": "Restructured the skill for cleaner source-aware literature search, added query guidance, and improved output rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bfb0b4a2a8a6ff255e582dcbad6089bf0afe8db72b8bd507c4e53cc7466e250"
+}

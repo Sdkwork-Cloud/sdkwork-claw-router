@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-airline-code-lookup-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_airline_code_lookup_api",
+  "skill": {
+    "id": 37621,
+    "skillKey": "clawhub-lap-airline-code-lookup-api",
+    "name": "Lap Airline Code Lookup Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-airline-code-lookup-api",
+    "url": "https://clawhub.ai/skills/lap-airline-code-lookup-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-airline-code-lookup-api-299b86440c006e01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Airline Code Lookup API skill. Use when working with Airline Code Lookup for reference-data. Covers 1 endpoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776677727921,
+      "changelog": "Initial release of Airline Code Lookup API skill.\n\n- Provides an interface to the Amadeus Airline Code Lookup API (v1.2.1)\n- Supports one endpoint: GET /reference-data/airlines for airline information\n- No authentication required\n- Includes setup and usage instructions\n- References full API details in references/api-spec.lap",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:170cbb36ae7fe95039c79201af2dee094411cdfd6d4265251127b5c2c6d3074b"
+}

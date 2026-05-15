@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57471,
+  "uuid": "skill-clawhub-mowenskill-publish",
+  "skillKey": "clawhub-mowenskill-publish",
+  "name": "Mowenskill Publish",
+  "summary": "Publish, edit, or configure notes on Mowen (墨问) via Open API. Use when user mentions 墨问, mowen, 发布笔记, publish note, or wants to create social-media-style not...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mowenskill_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacobluo",
+      "features": [
+        "Publish, edit, or configure notes on Mowen (墨问) via Open API",
+        "Use when user mentions 墨问, mowen, 发布笔记, publish note, or wants to create social-media-style not."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mowenskill-publish@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/841868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mowenskill-publish",
+      "url": "https://clawhub.ai/skills/mowenskill-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mowenskill-publish",
+    "url": "https://clawhub.ai/skills/mowenskill-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mowenskill-publish-1996d6f77c42524c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mowenskill-publish@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mowenskill-publish-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62da36af462ddd753cb57bc2a3a7de7dd794898c2aef7021ed8bc79eb254ce94",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:39:16.555Z"
+}

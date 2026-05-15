@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tqsdk-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tqsdk_skill",
+  "skill": {
+    "id": 23845,
+    "skillKey": "clawhub-tqsdk-skill",
+    "name": "tqsdk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tqsdk-skill",
+    "url": "https://clawhub.ai/skills/tqsdk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tqsdk-skill-43e4155d51ace66d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain, implement, or debug TqSdk Python workflows for wait_update or is_changing update loops, market data retrieval, historical download, account type sel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shinny-xuyida",
+      "userId": "s17fn8xnjv5gqchne8d0mhpck183n1bf",
+      "displayName": "shinny-xuyida",
+      "image": "https://avatars.githubusercontent.com/u/49545435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773643118452,
+      "changelog": "New Knowledge Guide for TqSdk skill. Most content moved from README to detailed topical references and guidance.\n\n- Replaced broad README with modular reference docs: market data, trading, account types, simulation, backtest, order helpers, field meanings, error troubleshooting, and official examples.\n- SKILL.md rewritten to define rules for routing user questions to appropriate references based on intent.\n- Added detailed instructions to distinguish futures and stock trading, multi-account handling, and history retrieval.\n- Stronger guidance on explaining update loops, stale data, and order lifecycle using wait_update.\n- Updated skill name and description to clarify scope as TqSdk API expert and task router.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5894550e99f3b21584232ec16d5bdef33185eda4d7b3ee5ec9487cb3f8f5e77"
+}

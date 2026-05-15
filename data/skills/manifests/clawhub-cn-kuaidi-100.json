@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65162,
+  "uuid": "skill-clawhub-cn-kuaidi-100",
+  "skillKey": "clawhub-cn-kuaidi-100",
+  "name": "中文快递追踪",
+  "summary": "中文快递追踪助手。根据快递单号自动识别快递公司，查询实时物流状态。 支持国内外主流快递，使用快递100免费接口，无需API Key。 当用户说\"快递\"、\"查快递\"、\"物流\"、\"单号\"、\"包裹到哪了\"时触发。 Keywords: 快递, 物流, 单号, 追踪, 包裹, delivery, tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_kuaidi_100",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文快递追踪助手。根据快递单号自动识别快递公司，查询实时物流状态。 支持国内外主流快递，使用快递100免费接口，无需API Key。 当用户说\"快递\"、\"查快递\"、\"物流\"、\"单号\"、\"包裹."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-kuaidi-100@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-kuaidi-100",
+      "url": "https://clawhub.ai/skills/cn-kuaidi-100"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-kuaidi-100",
+    "url": "https://clawhub.ai/skills/cn-kuaidi-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-kuaidi-100-b54934542ebfcf3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-kuaidi-100@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-kuaidi-100-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f9bbb1e93ebdc426b4a28be1d47065c3422a4ca9a56db5f5762b987cc73f24c",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:22:48.564Z"
+}

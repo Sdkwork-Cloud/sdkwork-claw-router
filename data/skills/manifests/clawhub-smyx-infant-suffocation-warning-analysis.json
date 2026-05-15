@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57682,
+  "uuid": "skill-clawhub-smyx-infant-suffocation-warning-analysis",
+  "skillKey": "clawhub-smyx-infant-suffocation-warning-analysis",
+  "name": "婴儿趴睡窒息预警技能",
+  "summary": "Identifies prone sleeping positions, head covering, and occlusion of the mouth/nose by bedding or clothing; provides real-time high-risk alerts to safeguard...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_infant_suffocation_warning_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Identifies prone sleeping positions, head covering, and occlusion of the mouth/nose by bedding.",
+        "provides real-time high-risk alerts to safeguard..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-infant-suffocation-warning-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-infant-suffocation-warning-analysis",
+      "url": "https://clawhub.ai/skills/smyx-infant-suffocation-warning-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-infant-suffocation-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-infant-suffocation-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-infant-suffocation-warning-analysis-eddc4ca7edc9e39c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-infant-suffocation-warning-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-infant-suffocation-warning-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8deb1bab7267aed11e300a06c038a214590dec6a6eeaf6db6b6ea545b82cc51",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:50:40.585Z"
+}

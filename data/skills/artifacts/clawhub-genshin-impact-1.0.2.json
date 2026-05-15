@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genshin-impact@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genshin_impact",
+  "skill": {
+    "id": 60599,
+    "skillKey": "clawhub-genshin-impact",
+    "name": "Genshin Impact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genshin-impact",
+    "url": "https://clawhub.ai/skills/genshin-impact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genshin-impact-ec3e7f0e815dd851.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "原神游戏介绍和玩法指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775634640543,
+      "changelog": "- No file changes detected in this version.\n- Content and documentation remain identical to the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cba2b25995cd75dcb4b6ed3350fbae34ed6a8eb5e5509946b2ecdae2c5125d3c"
+}

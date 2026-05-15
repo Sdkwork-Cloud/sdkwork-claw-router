@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alicloud-ai-audio-tts@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_audio_tts",
+  "skill": {
+    "id": 13784,
+    "skillKey": "clawhub-alicloud-ai-audio-tts",
+    "name": "Alicloud Ai Audio Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-audio-tts",
+    "url": "https://clawhub.ai/skills/alicloud-ai-audio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-audio-tts-a619beed010cda0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate human-like speech audio with Model Studio DashScope Qwen TTS models (qwen3-tts-flash, qwen3-tts-instruct-flash). Use when converting text to speech,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1338,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773221824331,
+      "changelog": "batch publish from alicloud-skills on 2026-03-11",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1595624e393468597fd00d992e380279b8d48fe4489be93481d9fcd56c4dbd1c"
+}

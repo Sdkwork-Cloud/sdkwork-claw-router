@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28710,
+  "uuid": "skill-clawhub-downloaded-file-organizer",
+  "skillKey": "clawhub-downloaded-file-organizer",
+  "name": "Downloads Folder Organizer",
+  "summary": "Organize files from the Downloads folder into appropriate local directories",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.downloaded_file_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XuXinyuan2019",
+      "features": [
+        "Organize files from the Downloads folder into appropriate local directories"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/downloaded-file-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52588193?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "downloaded-file-organizer",
+      "url": "https://clawhub.ai/skills/downloaded-file-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "downloaded-file-organizer",
+    "url": "https://clawhub.ai/skills/downloaded-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/downloaded-file-organizer-949d316c148fc96a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/downloaded-file-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-downloaded-file-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cb5533ee29065397356708bb06263ebfbc7f72b1a95713cf161912b20c7aa9a",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:38:24.270Z"
+}

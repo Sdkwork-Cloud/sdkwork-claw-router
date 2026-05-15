@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18164,
+  "uuid": "skill-clawhub-presale-one-pass-orchestrator",
+  "skillKey": "clawhub-presale-one-pass-orchestrator",
+  "name": "Presale One-pass Orchestrator",
+  "summary": "Run or supervise a one-pass Codex implementation with preflight gates, stepwise plan execution, and strict QA defect loop. Use when executing approved presal...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presale_one_pass_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dima Tsiomo",
+      "features": [
+        "Run or supervise a one-pass Codex implementation with preflight gates, stepwise plan execution,.",
+        "Use when executing approved presal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presale-one-pass-orchestrator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59199852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presale-one-pass-orchestrator",
+      "url": "https://clawhub.ai/skills/presale-one-pass-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presale-one-pass-orchestrator",
+    "url": "https://clawhub.ai/skills/presale-one-pass-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presale-one-pass-orchestrator-a63cd3a6ffb9784c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presale-one-pass-orchestrator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-presale-one-pass-orchestrator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31bac3254abd36883186e02fe211bee6c06cc57fdde6d7a7820566915a9970f9",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T05:43:57.636Z"
+}

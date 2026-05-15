@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-mcp-debugger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mcp_debugger",
+  "skill": {
+    "id": 10804,
+    "skillKey": "clawhub-openclaw-mcp-debugger",
+    "name": "OpenClaw MCP Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mcp-debugger",
+    "url": "https://clawhub.ai/skills/openclaw-mcp-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mcp-debugger-31f41a70a9d3a176.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal adapter diagnostics for Model Context Protocol (MCP). It automatically detects connection issues between agents and external tools, providing deep-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1860,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772634133432,
+      "changelog": "openclaw-mcp-debugger 1.0.0\n\n- Initial release of a universal diagnostics toolkit for Model Context Protocol (MCP).\n- Automatically detects and reports connection issues between agents and external tools.\n- Provides deep-trace debugging, protocol handshake audits, and binary stream inspections.\n- Tracks latency and round-trip time between LLMs and integrated adapters.\n- Auto-fixes by restarting crashed MCP servers (e.g., SQLite, Google Search, custom adapters).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b18a2e0f0c7c66136ac649a346af39c85cf970f819ea9fc3d2d06b4811075182"
+}

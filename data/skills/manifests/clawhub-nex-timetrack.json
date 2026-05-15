@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37844,
+  "uuid": "skill-clawhub-nex-timetrack",
+  "skillKey": "clawhub-nex-timetrack",
+  "name": "Nex Timetrack",
+  "summary": "Billable time logger for freelancers and agencies. Start/stop timers or log manually. Client and project management, rate cascading, 15-minute rounding, bill...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_timetrack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nex AI",
+      "features": [
+        "Billable time logger for freelancers and agencies",
+        "Start/stop timers or log manually",
+        "Client and project management, rate cascading, 15-minute rounding, bill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nex-timetrack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149910894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nex-timetrack",
+      "url": "https://clawhub.ai/skills/nex-timetrack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-timetrack",
+    "url": "https://clawhub.ai/skills/nex-timetrack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-timetrack-8b0966bcece55fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nex-timetrack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nex-timetrack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:774a7d08ad7ea519f831b323df9fbda1042646028e2d476cd1a0be1d9ea58b7c",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T01:27:31.215Z"
+}

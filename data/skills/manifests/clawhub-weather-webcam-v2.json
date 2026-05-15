@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21595,
+  "uuid": "skill-clawhub-weather-webcam-v2",
+  "skillKey": "clawhub-weather-webcam-v2",
+  "name": "Weather-Webcam-V2",
+  "summary": "Fetches current weather from Open-Meteo API and automatically captures a live webcam image from Meteoblue or Windy for the requested location. Use it when th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_webcam_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex1389",
+      "features": [
+        "Fetches current weather from Open-Meteo API and automatically captures a live webcam image from.",
+        "Use it when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-webcam-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22594153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-webcam-v2",
+      "url": "https://clawhub.ai/skills/weather-webcam-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-webcam-v2",
+    "url": "https://clawhub.ai/skills/weather-webcam-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-webcam-v2-8ce02bb1679ad671.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-webcam-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-webcam-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5415caee9c7c75d84c582fa766388038b652aa0c24334f1a76d9370176773181",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T01:28:13.824Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-mode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_mode",
+  "skill": {
+    "id": 66297,
+    "skillKey": "clawhub-deep-research-mode",
+    "name": "Deep Research Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-mode",
+    "url": "https://clawhub.ai/skills/deep-research-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-mode-14b2dae4ab32969f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度研究模式 - 针对高难度科研问题，启动多智能体协作（10-50 个），分工讨论、分析质疑、集体决策，生成详细研究报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776337479906,
+      "changelog": "deep-research-mode v1.0.0\n\n- Initial release of deep-research-mode: a multi-agent collaboration framework for tackling high-difficulty research questions.\n- Supports coordinated work by 10–50 specialized agents, including roles like chief scientist, methodology expert, data analyst, and peer reviewer.\n- Provides structured, staged workflow from problem definition to detailed research report.\n- Includes configuration options for agent count, duration, and model selection based on research complexity.\n- Outputs comprehensive research reports (15,000–25,000 words) and progress tracking.\n- Best suited for complex academic challenges requiring collective analysis and critical discussion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4253e09178e857297e5d9386800373b45ed2f11511cb9c72a044865a275d909"
+}

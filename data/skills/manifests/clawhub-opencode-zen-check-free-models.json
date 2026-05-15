@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49557,
+  "uuid": "skill-clawhub-opencode-zen-check-free-models",
+  "skillKey": "clawhub-opencode-zen-check-free-models",
+  "name": "OpenCode Zen - Check Free Models",
+  "summary": "Monitors the OpenCode Zen pricing page for new free models and offers to update your default configuration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_zen_check_free_models",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pranjal Joshi",
+      "features": [
+        "Monitors the OpenCode Zen pricing page for new free models and offers to update your default co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode-zen-check-free-models@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6128978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode-zen-check-free-models",
+      "url": "https://clawhub.ai/skills/opencode-zen-check-free-models"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-zen-check-free-models",
+    "url": "https://clawhub.ai/skills/opencode-zen-check-free-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-zen-check-free-models-799554d50ae0f487.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode-zen-check-free-models@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-zen-check-free-models-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aee0735d8715ba97708559c1334d6e0a7ed8b028c7cbda2dc4f8b673a7a09a06",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T12:05:49.239Z"
+}

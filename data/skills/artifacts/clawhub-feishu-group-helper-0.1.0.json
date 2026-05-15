@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-group-helper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_helper",
+  "skill": {
+    "id": 29852,
+    "skillKey": "clawhub-feishu-group-helper",
+    "name": "Feishu Group Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-helper",
+    "url": "https://clawhub.ai/skills/feishu-group-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-helper-16452dcf00e90a64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Feishu group info, record join/leave events, and send messages to groups with name lookup and active group confirmation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panmenglin",
+      "userId": "s17cbj29w4txy4nbe9k1ytnp8183mzrh",
+      "displayName": "msx.pan",
+      "image": "https://avatars.githubusercontent.com/u/12044749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773746078258,
+      "changelog": "feishu-group-helper 0.1.0\n\n- Initial release with group information maintenance, add/remove group tracking, and send group message features for Feishu.\n- Independent group records per agent using JSON files in each workspace.\n- Supports group status update on join/leave and user-triggered commands for group operations.\n- Provides utility functions: add, remove, list, find, verify presence, and send messages to groups.\n- Documentation includes Feishu permissions needed and upgrade steps for event-driven group management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4691d681c5b92ee77687c5a1c3d336ca91d3d1d67fbf62c0f9a662a34faae20"
+}

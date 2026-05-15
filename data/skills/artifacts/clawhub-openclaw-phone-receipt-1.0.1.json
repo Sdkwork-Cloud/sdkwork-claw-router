@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-phone-receipt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_phone_receipt",
+  "skill": {
+    "id": 16983,
+    "skillKey": "clawhub-openclaw-phone-receipt",
+    "name": "OpenClaw Phone Receipt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-phone-receipt",
+    "url": "https://clawhub.ai/skills/openclaw-phone-receipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-phone-receipt-011cca49be937244.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger and manage OpenClaw outbound phone receipts via ElevenLabs+Twilio for task completion/failure notifications. Use when user asks to call them after finishing/failing a task, asks to enable/disable fixed command toggles (\"phone-recei."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuofangzhe",
+      "userId": "publishers:tuofangzhe",
+      "displayName": "tuofangzhe",
+      "image": "https://avatars.githubusercontent.com/u/129367165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770619778778,
+      "changelog": "- Added sample environment variable file: references/env-example.txt.\n- Changed all user command examples from Chinese (\"电话回执=开/关\") to English (\"phone-receipt=on/off\").\n- Updated documentation to reflect new English command syntax and examples (“urgent/high-priority”).\n- No changes to behavior or code logic; documentation and sample files only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad0d0438c9af98ed210a244a74e80eb8c95d623a479598409466be19a5153c68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wesley-dashboard-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wesley_dashboard_builder",
+  "skill": {
+    "id": 55941,
+    "skillKey": "clawhub-wesley-dashboard-builder",
+    "name": "wesley dashboard builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wesley-dashboard-builder",
+    "url": "https://clawhub.ai/skills/wesley-dashboard-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wesley-dashboard-builder-18b0ead9b88342ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill de création de dashboards live, sites web complets, et pages de preuve sociale pour Wesley-Agent. Déclencher dès que Georges mentionne : dashboard, sit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773181280102,
+      "changelog": "wesley-dashboard-builder 1.0.0 – Initial release with full web dashboard generation and deployment workflow.\n\n- Creates live dashboards, full websites, and social proof pages for Wesley-Agent, with mobile-first, multi-screen HTML/CSS/JS output.\n- Integrates real-time API data and optional Telegram bot uploads for photo galleries.\n- Produces self-contained files (all inline, no local dependencies) ready for instant VPS deployment via Cloudflare tunnel.\n- Outlines standard project structure, screen types, and design/coding rules (dark theme, fallback data, navigation).\n- Step-by-step instructions provided for dashboard creation, API integration, media usage, and deployment.\n- Includes detailed checklists to ensure quality and functionality before delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e36fba55557c51568911dd2fd19eb6b3d72fe53ab29eb5e4246d9bccb65b5445"
+}

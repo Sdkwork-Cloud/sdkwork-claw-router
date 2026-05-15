@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16981,
+  "uuid": "skill-clawhub-sw-autoresearch",
+  "skillKey": "clawhub-sw-autoresearch",
+  "name": "Autoresearch Loop",
+  "summary": "Conducts autonomous, iterative research by defining goals, generating hypotheses, verifying results, modifying approaches, and repeating until criteria are met.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_autoresearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Conducts autonomous, iterative research by defining goals, generating hypotheses, verifying res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-autoresearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-autoresearch",
+      "url": "https://clawhub.ai/skills/sw-autoresearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-autoresearch",
+    "url": "https://clawhub.ai/skills/sw-autoresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-autoresearch-399aca8b4c4e911c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-autoresearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-autoresearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb304fd6192499b4aab82673217c04ebd7b0e9215f16ccaddcb9013af5fa91bd",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:02:15.318Z"
+}

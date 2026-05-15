@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-browser-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_browser_toolkit",
+  "skill": {
+    "id": 63717,
+    "skillKey": "clawhub-web-browser-toolkit",
+    "name": "Openclaw Web Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-browser-toolkit",
+    "url": "https://clawhub.ai/skills/web-browser-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-browser-toolkit-204877f118e17673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "웹사이트 브라우징, 정보 수집, 데이터 추출, 모니터링을 위한 종합 브라우징 스킬. 정적/동적 웹페이지에서 데이터를 수집하고 JSON으로 구조화하며, 변경사항 모니터링과 정기 수집을 지원한다. 항공(ICAO, FAA 등) 기관 수집에 특화된 프리셋도 포함."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkbeomjun-gkgkgk",
+      "userId": "s1783m6q1m9gbf3fnbgmd720bn84abb6",
+      "displayName": "parkbeomjun-gkgkgk",
+      "image": "https://avatars.githubusercontent.com/u/219679755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775455498497,
+      "changelog": "Initial release - 첫 번째 ClawHub 퍼블리시",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6c37a577f0a2b5110e5cc3bdf0734a47d6037e2e687f8e67f05edaa1583760e"
+}

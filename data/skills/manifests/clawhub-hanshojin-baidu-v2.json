@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58922,
+  "uuid": "skill-clawhub-hanshojin-baidu-v2",
+  "skillKey": "clawhub-hanshojin-baidu-v2",
+  "name": "Official Baidu Search",
+  "summary": "通过百度千帆 V2 AI 搜索 API 进行网页搜索。源自 official/baidu-search 魔改，适配 V2 API。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hanshojin_baidu_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HANSHOJIN",
+      "features": [
+        "通过百度千帆 V2 AI 搜索 API 进行网页搜索。源自 official/baidu-search 魔改，适配 V2 API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hanshojin-baidu-v2@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194571965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hanshojin-baidu-v2",
+      "url": "https://clawhub.ai/skills/hanshojin-baidu-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hanshojin-baidu-v2",
+    "url": "https://clawhub.ai/skills/hanshojin-baidu-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hanshojin-baidu-v2-15013eea6d25ef6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hanshojin-baidu-v2@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hanshojin-baidu-v2-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e57980e964bd5b4bff639a363135a7c2db5425e1a811d6475bb4f7e86ebb6e9b",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:44:40.239Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28600,
+  "uuid": "skill-clawhub-aerobase-travel",
+  "skillKey": "clawhub-aerobase-travel",
+  "name": "Aerobase Travel",
+  "summary": "Jetlag-aware flight intelligence for AI travel agents",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_travel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aerobase",
+      "features": [
+        "Jetlag-aware flight intelligence for AI travel agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerobase-travel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95127236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerobase-travel",
+      "url": "https://clawhub.ai/skills/aerobase-travel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-travel",
+    "url": "https://clawhub.ai/skills/aerobase-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-travel-c63c3ebc630d7bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerobase-travel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerobase-travel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf7dd6763604d3d97fc55725feb0b2d36e17a01818c9df5e54c4b6f86905bc24",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:14:04.460Z"
+}

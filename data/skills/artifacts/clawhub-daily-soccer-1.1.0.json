@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-soccer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_soccer",
+  "skill": {
+    "id": 46421,
+    "skillKey": "clawhub-daily-soccer",
+    "name": "Daily Soccer Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-soccer",
+    "url": "https://clawhub.ai/skills/daily-soccer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-soccer-bb81cac8e4b6cdf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily soccer/football news content and TikTok scripts using free sports news sources. Use when user wants to create content about football matches,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmed181283",
+      "userId": "s177nd0qk7heppjfethwwsmk6x85ea2c",
+      "displayName": "ahmed181283",
+      "image": "https://avatars.githubusercontent.com/u/26248550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777204152447,
+      "changelog": "- Added new configuration file: clawhub.json.\n- No changes to functionality or user-facing features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31415f74dde568de9eed0d16a986f6c8cebc4ccd82f70b08719c785f1395f3d6"
+}

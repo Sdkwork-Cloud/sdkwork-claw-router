@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49590,
+  "uuid": "skill-clawhub-justoneapi-web-markdown",
+  "skillKey": "clawhub-justoneapi-web-markdown",
+  "name": "Web Page Markdown Content API",
+  "summary": "Call GET /api/web/markdown/v1 for Web Page Markdown Content through JustOneAPI with url.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_web_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/web/markdown/v1 for Web Page Markdown Content through JustOneAPI with url."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-web-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-web-markdown",
+      "url": "https://clawhub.ai/skills/justoneapi-web-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-web-markdown",
+    "url": "https://clawhub.ai/skills/justoneapi-web-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-web-markdown-ba1404d2b65d5ba0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-web-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-web-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7fe7b41c2ad242dd09cfc50f912f55274243e8600e2fda0dbff93d9750e758",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:41:16.724Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44001,
+  "uuid": "skill-clawhub-pay-skill",
+  "skillKey": "clawhub-pay-skill",
+  "name": "Pay Clawhub",
+  "summary": "USE THIS SKILL whenever the user needs any API, external service, paid resource, or wants to pay for anything. Trigger on: \"I need an API\", \"find me a servic...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pay-skill.com",
+      "features": [
+        "USE THIS SKILL whenever the user needs any API, external service, paid resource, or wants to pa.",
+        "Trigger on: \"I need an API\", \"find me a servic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pay-skill@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266466365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pay-skill",
+      "url": "https://clawhub.ai/skills/pay-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-skill",
+    "url": "https://clawhub.ai/skills/pay-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-skill-4698adb3d5793edb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pay-skill@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-pay-skill-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:507bfe68dfdf3425da2826fcca178677f483583cc6ac7ad265510c410b4a4f6f",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:41:12.334Z"
+}

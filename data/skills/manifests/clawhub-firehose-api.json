@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32518,
+  "uuid": "skill-clawhub-firehose-api",
+  "skillKey": "clawhub-firehose-api",
+  "name": "Firehose Web Monitor",
+  "summary": "Firehose monitors the web in real-time — you create rules (Lucene queries), and every crawled page that matches gets delivered via an SSE stream. Use when im...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firehose_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tianyi Song",
+      "features": [
+        "Firehose monitors the web in real-time — you create rules (Lucene queries), and every crawled p.",
+        "Use when im..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firehose-api@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42670338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firehose-api",
+      "url": "https://clawhub.ai/skills/firehose-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firehose-api",
+    "url": "https://clawhub.ai/skills/firehose-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firehose-api-4af272f49a33e40b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firehose-api@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firehose-api-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7522beb0c8cf91c90f7920ee87ad1800b48b744228db69d21dd72e7a6dd69e18",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:21:11.637Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28686,
+  "uuid": "skill-clawhub-sticker-manager",
+  "skillKey": "clawhub-sticker-manager",
+  "name": "Sticker Manager",
+  "summary": "Sticker library management for OpenClaw. Use this skill to save, search, tag, rename, clean up, collect, import, and recommend stickers or reaction images. I...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sticker_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuwenzhuang",
+      "features": [
+        "Sticker library management for OpenClaw",
+        "Use this skill to save, search, tag, rename, clean up, collect, import, and recommend stickers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sticker-manager@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8737853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sticker-manager",
+      "url": "https://clawhub.ai/skills/sticker-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sticker-manager",
+    "url": "https://clawhub.ai/skills/sticker-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sticker-manager-bf292fce0c4b30ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sticker-manager@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sticker-manager-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c393955014349e037590ebe4d3ac226e2e20c8f5022aaf67b4f004dd5718075",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:50:28.634Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65524,
+  "uuid": "skill-clawhub-sap-company",
+  "skillKey": "clawhub-sap-company",
+  "name": "Sap Company",
+  "summary": "SAP是欧洲市值最大企业ERP软件商，提供从本地部署到云端S/4HANA的企业资源规划和供应链管理解决方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sap_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "SAP是欧洲市值最大企业ERP软件商，提供从本地部署到云端S/4HANA的企业资源规划和供应链管理解决方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sap-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sap-company",
+      "url": "https://clawhub.ai/skills/sap-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sap-company",
+    "url": "https://clawhub.ai/skills/sap-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sap-company-e59daad4406f5c6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sap-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sap-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b8a1c2e07e7c917fed1aedb478613da21c8c4b91816f98ee324c27c4141606",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T22:06:18.865Z"
+}

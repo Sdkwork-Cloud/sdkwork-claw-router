@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15088,
+  "uuid": "skill-clawhub-roku-control",
+  "skillKey": "clawhub-roku-control",
+  "name": "Roku Control",
+  "summary": "Control Roku devices via local network (ECP protocol). Use when the user wants to control their Roku TV or streaming device, change channels, launch apps (Netflix, YouTube, Hulu, etc.), navigate menus, adjust volume, play/pause content, se.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roku_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IMaloney",
+      "features": [
+        "Control Roku devices via local network (ECP protocol)",
+        "Use when the user wants to control their Roku TV or streaming device, change channels, launch a.",
+        "Works over LAN with no authentication required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roku-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21049395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roku-control",
+      "url": "https://clawhub.ai/skills/roku-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roku-control",
+    "url": "https://clawhub.ai/skills/roku-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roku-control-dd53aab201c41dd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roku-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-roku-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc133a97bbe6b2e29ddbde54b94279c0aaa2dbe6a918921f4dddb7b9732f3c8d",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T04:02:06.959Z"
+}

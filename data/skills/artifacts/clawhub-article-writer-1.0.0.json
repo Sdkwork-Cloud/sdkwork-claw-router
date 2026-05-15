@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_writer",
+  "skill": {
+    "id": 61341,
+    "skillKey": "clawhub-article-writer",
+    "name": "Article Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-writer",
+    "url": "https://clawhub.ai/skills/article-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-writer-8edacfd991224df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文章写作助手 - 根据选题生成高质量文章"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaofenguser",
+      "userId": "publishers:xiaofenguser",
+      "displayName": "xiaofenguser",
+      "image": "https://avatars.githubusercontent.com/u/3362744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2340,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772574006686,
+      "changelog": "- Initial release of the \"article-writer\" skill.\n- Generates high-quality articles based on topic selection.\n- Follows strict writing guidelines for style, structure, and quotable sentences.\n- Supports modular article outlines with numbered sections and impactful key quotes.\n- Ensures all articles feature before vs after comparisons and action-oriented conclusions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88614e7aa97416cd946180a48ba1f8a916cefe2f0167d2f778061703fe8aa7e7"
+}

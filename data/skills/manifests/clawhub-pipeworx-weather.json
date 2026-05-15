@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44552,
+  "uuid": "skill-clawhub-pipeworx-weather",
+  "skillKey": "clawhub-pipeworx-weather",
+  "name": "Pipeworx weather",
+  "summary": "Provides current weather conditions and forecasts up to 16 days for any location using latitude and longitude coordinates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides current weather conditions and forecasts up to 16 days for any location using latitude."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-weather",
+      "url": "https://clawhub.ai/skills/pipeworx-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-weather",
+    "url": "https://clawhub.ai/skills/pipeworx-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-weather-0267b57d9ce7de8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4b59ee5e50f024904b6adb9baf1961242d0f3336c96031ce15e10908815e9a",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:12:25.946Z"
+}

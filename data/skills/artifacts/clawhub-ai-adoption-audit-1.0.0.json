@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-adoption-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_adoption_audit",
+  "skill": {
+    "id": 62295,
+    "skillKey": "clawhub-ai-adoption-audit",
+    "name": "AI Adoption Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-adoption-audit",
+    "url": "https://clawhub.ai/skills/ai-adoption-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-adoption-audit-a7c87ba1786150f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业 AI 落地情况调查工具。输入公司名+简介，输出 AI 成熟度体检报告：推动层级、部署方式、模型选型、解决场景、推广范围、ROI、问题与教训。支持市场调研和客户参考两种输出模式。Triggers: AI落地调查, 企业AI, ai adoption, company AI audit, AI成熟度, 公司AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenwang-dev",
+      "userId": "s176wvqjt3ebsgwx6rkjcfnbtn83rye5",
+      "displayName": "Ken Wang",
+      "image": "https://avatars.githubusercontent.com/u/166790577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775436198365,
+      "changelog": "v1.0.0: 企业AI落地调查工具。支持市场调研/客户参考双模式，10维度评估框架，存档+增量更新+横向对比。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acb3fef091270edfec8fe32924cc7ee2a2b14a764988c31845991fa799d41593"
+}

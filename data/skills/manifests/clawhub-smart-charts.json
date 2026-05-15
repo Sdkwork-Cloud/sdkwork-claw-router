@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20843,
+  "uuid": "skill-clawhub-smart-charts",
+  "skillKey": "clawhub-smart-charts",
+  "name": "smart-charts",
+  "summary": "Intelligent chart generation and data analysis skill. Reads user-supplied data files (CSV/Excel/JSON), analyzes data characteristics with LLM assistance, aut...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_charts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanli",
+      "features": [
+        "Intelligent chart generation and data analysis skill",
+        "Reads user-supplied data files (CSV/Excel/JSON), analyzes data characteristics with LLM assista."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-charts@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133091538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-charts",
+      "url": "https://clawhub.ai/skills/smart-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-charts",
+    "url": "https://clawhub.ai/skills/smart-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-charts-9934061733bebaeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-charts@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-charts-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d95e3fc61f2ce90e1e3047a5ccc16d97f47c099634cd1f8a0450e9b39cdd3128",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:58:04.084Z"
+}

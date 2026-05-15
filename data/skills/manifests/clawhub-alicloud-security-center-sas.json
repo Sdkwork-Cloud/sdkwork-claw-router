@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13877,
+  "uuid": "skill-clawhub-alicloud-security-center-sas",
+  "skillKey": "clawhub-alicloud-security-center-sas",
+  "name": "Alicloud Security Center Sas",
+  "summary": "Manage Alibaba Cloud Security Center (Sas) via OpenAPI/SDK. Use whenever the user needs Security Center resource operations, configuration updates, status qu...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_security_center_sas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Manage Alibaba Cloud Security Center (Sas) via OpenAPI/SDK",
+        "Use whenever the user needs Security Center resource operations, configuration updates, status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-security-center-sas@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-security-center-sas",
+      "url": "https://clawhub.ai/skills/alicloud-security-center-sas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-security-center-sas",
+    "url": "https://clawhub.ai/skills/alicloud-security-center-sas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-security-center-sas-2c371ec37c7aa5a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-security-center-sas@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-security-center-sas-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89f84d3f3ffa6e2a9bd58cfdd2606caf3c40c24f629fe161d65ccc79e5bac279",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:46.183Z"
+}

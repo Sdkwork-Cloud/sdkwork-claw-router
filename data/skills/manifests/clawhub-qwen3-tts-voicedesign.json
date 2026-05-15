@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17418,
+  "uuid": "skill-clawhub-qwen3-tts-voicedesign",
+  "skillKey": "clawhub-qwen3-tts-voicedesign",
+  "name": "Qwen3-TTS VoiceDesign",
+  "summary": "Text-to-speech with Qwen3-TTS VoiceDesign. Design custom voices via natural language descriptions + seed-based timbre fixation. Includes OpenAI-compatible AP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen3_tts_voicedesign",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoyaner0201",
+      "features": [
+        "Text-to-speech with Qwen3-TTS VoiceDesign",
+        "Design custom voices via natural language descriptions + seed-based timbre fixation",
+        "Includes OpenAI-compatible AP..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen3-tts-voicedesign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258399167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen3-tts-voicedesign",
+      "url": "https://clawhub.ai/skills/qwen3-tts-voicedesign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen3-tts-voicedesign",
+    "url": "https://clawhub.ai/skills/qwen3-tts-voicedesign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen3-tts-voicedesign-ab974ac6ccf532ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen3-tts-voicedesign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen3-tts-voicedesign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e4dad2201ff10a3cd5ea84fae23d7d4efc42828063e7f6adb3bfffd07bc2103",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T17:31:14.461Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shorts-builder-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shorts_builder_cn",
+  "skill": {
+    "id": 73065,
+    "skillKey": "clawhub-shorts-builder-cn",
+    "name": "连续短剧剧情构建"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shorts-builder-cn",
+    "url": "https://clawhub.ai/skills/shorts-builder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shorts-builder-cn-744cafc01f27c7f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "剧情生成管道流技能。支持多剧集连续生成、图谱管理、AI质检+人工确认的双控机制。自动管理人物、场景、钩子的关联关系。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexidyg",
+      "userId": "s17drvcjx45ykk2tprdzc4h79n83kjp2",
+      "displayName": "hexidyg",
+      "image": "https://avatars.githubusercontent.com/u/254915923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772782465150,
+      "changelog": "story-pipeline 1.0.0 首次发布，提供多剧集自动剧情生成与双重审核机制。\n\n- 支持基于主题和目标集数的多剧集连续生成。\n- 引入AI质检+人工确认的双重审核流程，确保内容质量。\n- 内置图谱功能，实现人物、场景、钩子的自动关联与管理。\n- 支持状态持久化，可处理暂停、恢复与多管道并行。\n- 提供重试机制与丰富的API接口，便于灵活集成和自定义。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:08e33065be0d792fa346df7aecd61bcec22a4be6b936e592ddebf0d3618c1a01"
+}

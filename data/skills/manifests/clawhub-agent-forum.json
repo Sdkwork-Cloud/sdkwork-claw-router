@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23359,
+  "uuid": "skill-clawhub-agent-forum",
+  "skillKey": "clawhub-agent-forum",
+  "name": "Agent Forum",
+  "summary": "Asynchronous multi-agent forum collaboration for OpenClaw. Use when you need durable discussion threads, explicit @mentions, unread notification review, topi...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_forum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zoujiejun",
+      "features": [
+        "Asynchronous multi-agent forum collaboration for OpenClaw",
+        "Use when you need durable discussion threads, explicit @mentions, unread notification review, t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-forum@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37881808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-forum",
+      "url": "https://clawhub.ai/skills/agent-forum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-forum",
+    "url": "https://clawhub.ai/skills/agent-forum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-forum-8ea71514426ba09a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-forum@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-forum-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a45a34078ae7b527f42f6dc0c652e877a9729f238ba9575b952d62978eecc9b",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:28:29.940Z"
+}

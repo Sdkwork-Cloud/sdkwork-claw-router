@@ -1,23 +1,137 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import json
 import re
 from pathlib import Path
 from typing import Any
 
 
-SDK_DIRECTORIES = ("clawrouter-app-sdk", "clawrouter-backend-sdk")
+SDK_DIRECTORIES = ("clawrouter-app-sdk", "clawrouter-backend-sdk", "clawrouter-open-sdk")
+OFFICIAL_SDK_LANGUAGES = (
+    "typescript",
+    "flutter",
+    "rust",
+    "java",
+    "csharp",
+    "swift",
+    "kotlin",
+    "go",
+    "python",
+)
 SDK_COMMON_VERSION = "^1.0.2"
+SDK_TYPES_NODE_VERSION = "20.19.39"
+SDK_TYPESCRIPT_VERSION = "5.8.3"
+SDK_ROLLUP_VERSION = "4.60.1"
 SDK_TYPES = {
     "clawrouter-app-sdk": "app",
     "clawrouter-backend-sdk": "backend",
+    "clawrouter-open-sdk": "ai",
 }
+SDK_TYPESCRIPT_DIRECTORIES = {
+    "clawrouter-app-sdk": "clawrouter-app-sdk-typescript",
+    "clawrouter-backend-sdk": "clawrouter-backend-sdk-typescript",
+    "clawrouter-open-sdk": "clawrouter-open-sdk-typescript",
+}
+SDK_PACKAGE_NAMES = {
+    "clawrouter-app-sdk": "@sdkwork/clawrouter-app-sdk",
+    "clawrouter-backend-sdk": "@sdkwork/clawrouter-backend-sdk",
+    "clawrouter-open-sdk": "@sdkwork/clawrouter-open-sdk",
+}
+SDK_LANGUAGE_PACKAGE_NAMES = {
+    "clawrouter-app-sdk": {
+        "typescript": "@sdkwork/clawrouter-app-sdk",
+        "flutter": "clawrouter_app_sdk",
+        "rust": "clawrouter-app-sdk",
+        "java": "com.sdkwork.clawrouter:clawrouter-app-sdk",
+        "csharp": "Sdkwork.ClawRouter.App.Sdk",
+        "swift": "ClawRouterAppSdk",
+        "kotlin": "com.sdkwork.clawrouter:clawrouter-app-sdk",
+        "go": "github.com/sdkwork/clawrouter-app-sdk",
+        "python": "sdkwork-clawrouter-app-sdk",
+    },
+    "clawrouter-backend-sdk": {
+        "typescript": "@sdkwork/clawrouter-backend-sdk",
+        "flutter": "clawrouter_backend_sdk",
+        "rust": "clawrouter-backend-sdk",
+        "java": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+        "csharp": "Sdkwork.ClawRouter.Backend.Sdk",
+        "swift": "ClawRouterBackendSdk",
+        "kotlin": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+        "go": "github.com/sdkwork/clawrouter-backend-sdk",
+        "python": "sdkwork-clawrouter-backend-sdk",
+    },
+    "clawrouter-open-sdk": {
+        "typescript": "@sdkwork/clawrouter-open-sdk",
+        "flutter": "clawrouter_open_sdk",
+        "rust": "clawrouter-open-sdk",
+        "java": "com.sdkwork.clawrouter:clawrouter-open-sdk",
+        "csharp": "Sdkwork.ClawRouter.Open.Sdk",
+        "swift": "ClawRouterOpenSdk",
+        "kotlin": "com.sdkwork.clawrouter:clawrouter-open-sdk",
+        "go": "github.com/sdkwork/clawrouter-open-sdk",
+        "python": "sdkwork-clawrouter-open-sdk",
+    },
+}
+SDK_LANGUAGE_NAMESPACES = {
+    "clawrouter-app-sdk": {
+        "java": "com.sdkwork.clawrouter.app",
+        "kotlin": "com.sdkwork.clawrouter.app",
+        "csharp": "Sdkwork.ClawRouter.App",
+    },
+    "clawrouter-backend-sdk": {
+        "java": "com.sdkwork.clawrouter.backend",
+        "kotlin": "com.sdkwork.clawrouter.backend",
+        "csharp": "Sdkwork.ClawRouter.Backend",
+    },
+    "clawrouter-open-sdk": {
+        "java": "com.sdkwork.clawrouter.open",
+        "kotlin": "com.sdkwork.clawrouter.open",
+        "csharp": "Sdkwork.ClawRouter.Open",
+    },
+}
+SDK_LANGUAGE_MANIFESTS = {
+    "typescript": "package.json",
+    "flutter": "pubspec.yaml",
+    "rust": "Cargo.toml",
+    "java": "pom.xml",
+    "csharp": "Sdkwork.ClawRouter.Sdk.Generated.csproj",
+    "swift": "Package.swift",
+    "kotlin": "build.gradle.kts",
+    "go": "go.mod",
+    "python": "pyproject.toml",
+}
+SDK_CLIENTS = {
+    "clawrouter-app-sdk": "SdkworkAppClient",
+    "clawrouter-backend-sdk": "SdkworkBackendClient",
+    "clawrouter-open-sdk": "SdkworkAiClient",
+}
+SDK_API_PREFIXES = {
+    "clawrouter-app-sdk": "/app/v3/api",
+    "clawrouter-backend-sdk": "/backend/v3/api",
+    "clawrouter-open-sdk": "/v1",
+}
+SDK_DESCRIPTIONS = {
+    "clawrouter-app-sdk": "SDKWork Claw Router app API SDK",
+    "clawrouter-backend-sdk": "SDKWork Claw Router backend API SDK",
+    "clawrouter-open-sdk": "SDKWork Claw Router OpenAI-compatible gateway SDK",
+}
+SDK_GENERATED_OPENAPI_PATHS = {
+    "clawrouter-app-sdk": Path("generated/openapi/clawrouter-app-openapi.json"),
+    "clawrouter-backend-sdk": Path("generated/openapi/clawrouter-backend-openapi.json"),
+    "clawrouter-open-sdk": Path("apps/sdkwork-claw-router-portal/public/openapi.json"),
+}
+PROJECT_REQUIRED_TYPE_MODULES: dict[str, tuple[str, str]] = {}
 UNION_ARRAY_TYPE_PATTERN = re.compile(
     r"(?P<operator>\??:\s*)"
     r"(?P<union>(?:(?:'[^'\r\n]+'|\"[^\"\r\n]+\"|\d+)\s*\|\s*)+"
     r"(?:'[^'\r\n]+'|\"[^\"\r\n]+\"|\d+))"
     r"\[\](?P<trailer>\s*[;,])"
+)
+EMPTY_INTERFACE_PATTERN = re.compile(
+    r"(?P<prefix>^\s*export\s+)interface\s+(?P<name>[A-Za-z_$][A-Za-z0-9_$]*)\s*\{\s*\}",
+    flags=re.MULTILINE,
 )
 
 BUILD_SCRIPT = r'''#!/usr/bin/env node
@@ -33,8 +147,8 @@ const tempDir = path.join(projectDir, '.sdkwork', 'build-runtime');
 const tempEsmDir = path.join(tempDir, 'esm');
 
 async function main() {
-  await fs.rm(distDir, { recursive: true, force: true });
-  await fs.rm(tempDir, { recursive: true, force: true });
+  await removeDirectory(distDir);
+  await removeDirectory(tempDir);
   await fs.mkdir(distDir, { recursive: true });
 
   emitDeclarations();
@@ -42,7 +156,16 @@ async function main() {
   await bundleRuntime('es', path.join(distDir, 'index.js'));
   await bundleRuntime('cjs', path.join(distDir, 'index.cjs'));
 
-  await fs.rm(tempDir, { recursive: true, force: true });
+  await removeDirectory(tempDir);
+}
+
+async function removeDirectory(target) {
+  await fs.rm(target, {
+    recursive: true,
+    force: true,
+    maxRetries: 5,
+    retryDelay: 100,
+  });
 }
 
 function loadConfig(overrides) {
@@ -171,19 +294,574 @@ main().catch((error) => {
 class SdkRuntimeStandardizer:
     """Apply the project SDK runtime build standard after generated SDK refreshes."""
 
-    def __init__(self, root: Path) -> None:
+    def __init__(
+        self,
+        root: Path,
+        sdk_directories: tuple[str, ...] | None = None,
+        api_spec_path: Path | None = None,
+    ) -> None:
         self.root = Path(root).resolve()
+        self.sdk_directories = sdk_directories or SDK_DIRECTORIES
+        self.api_spec_path = Path(api_spec_path).resolve() if api_spec_path is not None else None
+        invalid = sorted(set(self.sdk_directories) - set(SDK_DIRECTORIES))
+        if invalid:
+            raise ValueError(f"unsupported SDK directories: {', '.join(invalid)}")
 
     def run(self) -> list[Path]:
         updated: list[Path] = []
-        for sdk_dir in SDK_DIRECTORIES:
-            base = self.root / "sdks" / sdk_dir
+        for sdk_family in self.sdk_directories:
+            family = self.root / "sdks" / sdk_family
+            base = family / SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
             if not base.is_dir():
                 raise FileNotFoundError(f"generated SDK directory is missing: {base}")
-            updated.extend(self._standardize_sdk(base))
+            updated.extend(self._standardize_sdk_family(sdk_family, family, base))
+            updated.extend(self._standardize_sdk(sdk_family, base))
         return updated
 
-    def _standardize_sdk(self, base: Path) -> list[Path]:
+    def _standardize_sdk_family(self, sdk_family: str, family: Path, base: Path) -> list[Path]:
+        updated: list[Path] = []
+        family.mkdir(parents=True, exist_ok=True)
+        openapi_dir = family / "openapi"
+        bin_dir = family / "bin"
+        tests_dir = family / "tests"
+        openapi_dir.mkdir(parents=True, exist_ok=True)
+        bin_dir.mkdir(parents=True, exist_ok=True)
+        tests_dir.mkdir(parents=True, exist_ok=True)
+
+        readme_path = family / "README.md"
+        readme = self._render_family_readme(sdk_family)
+        if not readme_path.is_file() or readme_path.read_text(encoding="utf-8") != readme:
+            readme_path.write_text(readme, encoding="utf-8", newline="\n")
+            updated.append(readme_path)
+
+        source_spec = self._resolve_source_openapi_path(sdk_family)
+        openapi_path = openapi_dir / f"{sdk_family}.openapi.json"
+        sdkgen_path = openapi_dir / f"{sdk_family}.sdkgen.json"
+        if source_spec is not None:
+            updated.extend(self._copy_spec_if_changed(source_spec, openapi_path))
+            updated.extend(self._write_sdkgen_spec_if_changed(sdk_family, source_spec, sdkgen_path))
+        else:
+            placeholder = self._render_placeholder_openapi(sdk_family)
+            for target in (openapi_path, sdkgen_path):
+                if not target.is_file() or target.read_text(encoding="utf-8") != placeholder:
+                    target.write_text(placeholder, encoding="utf-8", newline="\n")
+                    updated.append(target)
+
+        assembly_path = family / ".sdkwork-assembly.json"
+        package = self._read_json_or_none(base / "package.json") or {}
+        assembly = self._build_assembly(sdk_family, family, package)
+        if not assembly_path.is_file() or self._read_json_or_none(assembly_path) != assembly:
+            self._write_json(assembly_path, assembly)
+            updated.append(assembly_path)
+
+        generate_script_path = bin_dir / "generate-sdk.mjs"
+        generate_script = self._render_generate_script(sdk_family)
+        if not generate_script_path.is_file() or generate_script_path.read_text(encoding="utf-8") != generate_script:
+            generate_script_path.write_text(generate_script, encoding="utf-8", newline="\n")
+            updated.append(generate_script_path)
+
+        verify_script_path = bin_dir / "verify-sdk.mjs"
+        verify_script = self._render_verify_script(sdk_family)
+        if not verify_script_path.is_file() or verify_script_path.read_text(encoding="utf-8") != verify_script:
+            verify_script_path.write_text(verify_script, encoding="utf-8", newline="\n")
+            updated.append(verify_script_path)
+
+        smoke_test_path = tests_dir / "sdk-family-smoke.test.mjs"
+        smoke_test = self._render_family_smoke_test(sdk_family)
+        if not smoke_test_path.is_file() or smoke_test_path.read_text(encoding="utf-8") != smoke_test:
+            smoke_test_path.write_text(smoke_test, encoding="utf-8", newline="\n")
+            updated.append(smoke_test_path)
+
+        return updated
+
+    def _resolve_source_openapi_path(self, sdk_family: str) -> Path | None:
+        if self.api_spec_path is not None and len(self.sdk_directories) == 1:
+            return self.api_spec_path if self.api_spec_path.is_file() else None
+        candidate = self.root / SDK_GENERATED_OPENAPI_PATHS[sdk_family]
+        return candidate if candidate.is_file() else None
+
+    def _copy_spec_if_changed(self, source: Path, target: Path) -> list[Path]:
+        if target.is_file():
+            try:
+                if source.read_bytes() == target.read_bytes():
+                    return []
+            except OSError:
+                pass
+        shutil.copyfile(source, target)
+        return [target]
+
+    def _write_sdkgen_spec_if_changed(self, sdk_family: str, source: Path, target: Path) -> list[Path]:
+        if sdk_family != "clawrouter-open-sdk":
+            return self._copy_spec_if_changed(source, target)
+
+        try:
+            payload = json.loads(source.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return self._copy_spec_if_changed(source, target)
+        if not isinstance(payload, dict):
+            return self._copy_spec_if_changed(source, target)
+
+        derived = self._derive_sdkgen_openapi(payload)
+        if target.is_file() and self._read_json_or_none(target) == derived:
+            return []
+        self._write_json(target, derived)
+        return [target]
+
+    def _derive_sdkgen_openapi(self, payload: dict[str, Any]) -> dict[str, Any]:
+        derived = json.loads(json.dumps(payload))
+        schemas = self._openapi_component_schemas(derived)
+        if schemas:
+            self._break_component_schema_ref_cycles(schemas)
+        derived.setdefault("x-sdkwork-derived-contract", {})
+        if isinstance(derived["x-sdkwork-derived-contract"], dict):
+            derived["x-sdkwork-derived-contract"].update(
+                {
+                    "source": "authority-openapi",
+                    "purpose": "sdk-generator-input",
+                    "recursiveSchemaRefs": "dynamic-json-boundary",
+                }
+            )
+        return derived
+
+    def _openapi_component_schemas(self, payload: dict[str, Any]) -> dict[str, Any]:
+        components = payload.get("components")
+        if not isinstance(components, dict):
+            return {}
+        schemas = components.get("schemas")
+        return schemas if isinstance(schemas, dict) else {}
+
+    def _break_component_schema_ref_cycles(self, schemas: dict[str, Any]) -> None:
+        schema_names = list(schemas)
+        for schema_name in schema_names:
+            schemas[schema_name] = self._rewrite_recursive_schema_ref_value(
+                schemas=schema_names,
+                schema_map=schemas,
+                value=schemas[schema_name],
+                stack=(schema_name,),
+            )
+
+    def _rewrite_recursive_schema_ref_value(
+        self,
+        *,
+        schemas: list[str],
+        schema_map: dict[str, Any],
+        value: Any,
+        stack: tuple[str, ...],
+    ) -> Any:
+        if isinstance(value, list):
+            return [
+                self._rewrite_recursive_schema_ref_value(
+                    schemas=schemas,
+                    schema_map=schema_map,
+                    value=item,
+                    stack=stack,
+                )
+                for item in value
+            ]
+        if not isinstance(value, dict):
+            return value
+
+        ref_name = self._component_schema_ref_name(value.get("$ref"))
+        if ref_name is not None:
+            if ref_name in stack:
+                return self._dynamic_json_boundary_schema(value, ref_name)
+            if ref_name in schema_map:
+                schema_map[ref_name] = self._rewrite_recursive_schema_ref_value(
+                    schemas=schemas,
+                    schema_map=schema_map,
+                    value=schema_map[ref_name],
+                    stack=(*stack, ref_name),
+                )
+
+        rewritten: dict[str, Any] = {}
+        for key, item in value.items():
+            if key == "$ref":
+                rewritten[key] = item
+                continue
+            rewritten[key] = self._rewrite_recursive_schema_ref_value(
+                schemas=schemas,
+                schema_map=schema_map,
+                value=item,
+                stack=stack,
+            )
+        return rewritten
+
+    def _component_schema_ref_name(self, ref: Any) -> str | None:
+        if not isinstance(ref, str):
+            return None
+        prefix = "#/components/schemas/"
+        if not ref.startswith(prefix):
+            return None
+        return ref.removeprefix(prefix)
+
+    def _dynamic_json_boundary_schema(self, source: dict[str, Any], ref_name: str) -> dict[str, Any]:
+        description = source.get("description")
+        if not isinstance(description, str) or not description.strip():
+            description = f"Recursive reference to {ref_name} represented as an unrestricted JSON value for SDK generation."
+        return {
+            "description": description,
+            "nullable": True,
+            "x-sdkwork-authority-ref": f"#/components/schemas/{ref_name}",
+            "x-sdkwork-derived-recursive-boundary": True,
+        }
+
+    def _render_placeholder_openapi(self, sdk_family: str) -> str:
+        payload = {
+            "openapi": "3.0.3",
+            "info": {
+                "title": SDK_DESCRIPTIONS[sdk_family],
+                "version": "0.1.0",
+                "description": "Placeholder generated until the project OpenAPI source is available.",
+            },
+            "paths": {},
+            "components": {"schemas": {}},
+            "x-sdk-client": SDK_CLIENTS[sdk_family],
+            "x-sdk-family": sdk_family,
+            "x-api-prefix": SDK_API_PREFIXES[sdk_family],
+        }
+        return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
+    def _build_assembly(self, sdk_family: str, family: Path, package: dict[str, Any]) -> dict[str, Any]:
+        typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        package_name = str(package.get("name") or SDK_PACKAGE_NAMES[sdk_family])
+        version = str(package.get("version") or "0.1.0")
+        languages: list[dict[str, Any]] = [
+            {
+                "language": "typescript",
+                "workspace": typescript_directory,
+                "generationState": "materialized",
+                "releaseState": "not_published",
+                "packagePath": typescript_directory,
+                "manifestPath": f"{typescript_directory}/package.json",
+                "name": package_name,
+                "version": version,
+                "description": SDK_DESCRIPTIONS[sdk_family],
+                "entrypoints": {
+                    "main": "./dist/index.cjs",
+                    "module": "./dist/index.js",
+                    "types": "./dist/index.d.ts",
+                },
+                "consumerSurface": {
+                    "primaryClient": SDK_CLIENTS[sdk_family],
+                    "apiPrefix": SDK_API_PREFIXES[sdk_family],
+                },
+                "packages": [
+                    {
+                        "layer": "root",
+                        "packagePath": typescript_directory,
+                        "manifestPath": f"{typescript_directory}/package.json",
+                        "name": package_name,
+                        "version": version,
+                        "description": SDK_DESCRIPTIONS[sdk_family],
+                        "entrypoints": {
+                            "main": "./dist/index.cjs",
+                            "module": "./dist/index.js",
+                            "types": "./dist/index.d.ts",
+                        },
+                    }
+                ],
+            }
+        ]
+        for language in OFFICIAL_SDK_LANGUAGES:
+            if language == "typescript":
+                continue
+            workspace = f"{sdk_family}-{language}"
+            generated_path = f"{workspace}/generated/server-openapi"
+            manifest = self._language_manifest_file(sdk_family, language)
+            generated_manifest = family / generated_path / manifest
+            language_package_name = SDK_LANGUAGE_PACKAGE_NAMES[sdk_family][language]
+            generation_state = "materialized" if generated_manifest.is_file() else "generation_available"
+            release_state = "not_published" if generated_manifest.is_file() else "reserved"
+            languages.append(
+                {
+                    "language": language,
+                    "workspace": workspace,
+                    "generationState": generation_state,
+                    "releaseState": release_state,
+                    "generatedPath": generated_path,
+                    "manifestPath": f"{generated_path}/{manifest}",
+                    "name": language_package_name,
+                    "version": version,
+                    "description": f"{SDK_DESCRIPTIONS[sdk_family]} {language} generated transport SDK",
+                    "packages": [
+                        {
+                            "layer": "generated",
+                            "packagePath": generated_path,
+                            "manifestPath": f"{generated_path}/{manifest}",
+                            "name": language_package_name,
+                            "version": version,
+                            "description": f"{SDK_DESCRIPTIONS[sdk_family]} {language} generated transport SDK",
+                        },
+                        {
+                            "layer": "composed",
+                            "packagePath": f"{workspace}/composed",
+                            "status": "reserved",
+                            "name": language_package_name,
+                            "version": "",
+                            "description": f"Reserved composed {language} SDK boundary for {sdk_family}",
+                        },
+                    ],
+                }
+            )
+        return {
+            "workspace": sdk_family,
+            "title": SDK_DESCRIPTIONS[sdk_family],
+            "apiVersion": version,
+            "authoritySpec": f"openapi/{sdk_family}.openapi.json",
+            "derivedSpec": f"openapi/{sdk_family}.sdkgen.json",
+            "derivedSpecs": {
+                "default": f"openapi/{sdk_family}.sdkgen.json",
+            },
+            "discoverySurface": {
+                "sdkTarget": SDK_TYPES[sdk_family],
+                "apiPrefix": SDK_API_PREFIXES[sdk_family],
+                "generatedProtocols": ["http"],
+                "manualTransports": [],
+            },
+            "languages": languages,
+        }
+
+    def _language_manifest_file(self, sdk_family: str, language: str) -> str:
+        if language == "csharp":
+            return f"{SDK_LANGUAGE_PACKAGE_NAMES[sdk_family][language]}.csproj"
+        return SDK_LANGUAGE_MANIFESTS[language]
+
+    def _render_family_readme(self, sdk_family: str) -> str:
+        typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        package_name = SDK_PACKAGE_NAMES[sdk_family]
+        language_lines = "\n".join(f"- `{language}`" for language in OFFICIAL_SDK_LANGUAGES)
+        return (
+            f"# {sdk_family}\n\n"
+            f"{SDK_DESCRIPTIONS[sdk_family]}.\n\n"
+            "This directory is the SDK family workspace for one OpenAPI surface. "
+            "Language SDKs live under this family root instead of directly under `sdks/`.\n\n"
+            "## Workspace Layout\n\n"
+            f"- Authority contract: `openapi/{sdk_family}.openapi.json`\n"
+            f"- Derived sdkgen contract: `openapi/{sdk_family}.sdkgen.json`\n"
+            "- Assembly snapshot: `.sdkwork-assembly.json`\n"
+            f"- TypeScript workspace: `{typescript_directory}`\n"
+            "- Other language workspaces: `<family>-<language>/generated/server-openapi`\n"
+            "- Family generator: `bin/generate-sdk.mjs`\n"
+            "- Family verifier: `bin/verify-sdk.mjs`\n\n"
+            "## Official Languages\n\n"
+            f"{language_lines}\n\n"
+            "## TypeScript\n\n"
+            f"The materialized TypeScript package is `{package_name}` and lives under "
+            f"`{typescript_directory}`. Hand-written extensions stay inside "
+            f"`{typescript_directory}/custom`.\n\n"
+            "TypeScript is the workspace dependency consumed by the portal. Other languages are "
+            "generated under their own language workspace and use `generated/server-openapi` as the "
+            "generator-owned transport boundary.\n\n"
+            "Regenerate this SDK family from the project root:\n\n"
+            "```bash\n"
+            f"node ./sdks/{sdk_family}/bin/generate-sdk.mjs\n"
+            "```\n\n"
+            "Regenerate selected languages:\n\n"
+            "```bash\n"
+            f"node ./sdks/{sdk_family}/bin/generate-sdk.mjs --language typescript --language flutter\n"
+            "```\n\n"
+            "Verify this SDK family from the project root:\n\n"
+            "```bash\n"
+            f"node ./sdks/{sdk_family}/bin/verify-sdk.mjs\n"
+            "```\n"
+        )
+
+    def _render_generate_script(self, sdk_family: str) -> str:
+        typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        description = SDK_DESCRIPTIONS[sdk_family]
+        sdk_type = SDK_TYPES[sdk_family]
+        api_prefix = SDK_API_PREFIXES[sdk_family]
+        base_url = {
+            "clawrouter-app-sdk": "http://localhost:18082",
+            "clawrouter-backend-sdk": "http://localhost:18081",
+            "clawrouter-open-sdk": "https://api.sdkwork.com",
+        }[sdk_family]
+        package_names = SDK_LANGUAGE_PACKAGE_NAMES[sdk_family]
+        namespaces = SDK_LANGUAGE_NAMESPACES.get(sdk_family, {})
+        standard_profile_line = (
+            "    '--standard-profile', 'sdkwork-v3',\n"
+            if sdk_family in {"clawrouter-app-sdk", "clawrouter-backend-sdk"}
+            else ""
+        )
+        return (
+            "#!/usr/bin/env node\n"
+            "import { rmSync } from 'node:fs';\n"
+            "import { spawnSync } from 'node:child_process';\n"
+            "import path from 'node:path';\n"
+            "import { fileURLToPath } from 'node:url';\n\n"
+            "const __filename = fileURLToPath(import.meta.url);\n"
+            "const workspaceRoot = path.resolve(path.dirname(__filename), '..', '..', '..');\n"
+            "const command = process.platform === 'win32' ? 'node.exe' : 'node';\n"
+            f"const sdkFamily = '{sdk_family}';\n"
+            f"const sdkType = '{sdk_type}';\n"
+            "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
+            "const sdkgenInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.sdkgen.json`;\n"
+            "void authorityInputPath;\n"
+            f"const baseUrl = '{base_url}';\n"
+            f"const apiPrefix = '{api_prefix}';\n"
+            f"const description = '{description}';\n"
+            "const OFFICIAL_LANGUAGES = ['typescript', 'flutter', 'rust', 'java', 'csharp', 'swift', 'kotlin', 'go', 'python'];\n"
+            f"const packageNames = {json.dumps(package_names, ensure_ascii=False, sort_keys=True)};\n"
+            f"const namespaces = {json.dumps(namespaces, ensure_ascii=False, sort_keys=True)};\n\n"
+            "const languages = parseLanguages(process.argv.slice(2));\n"
+            "for (const language of languages) {\n"
+            "  runLanguage(language);\n"
+            "}\n\n"
+            "function parseLanguages(argv) {\n"
+            "  const selected = [];\n"
+            "  for (let index = 0; index < argv.length; index += 1) {\n"
+            "    const arg = argv[index];\n"
+            "    if (arg === '--language' || arg === '-l') {\n"
+            "      const value = argv[index + 1];\n"
+            "      if (!value || value.startsWith('-')) {\n"
+            "        throw new Error(`${arg} requires a language value`);\n"
+            "      }\n"
+            "      selected.push(...splitLanguages(value));\n"
+            "      index += 1;\n"
+            "      continue;\n"
+            "    }\n"
+            "    if (arg.startsWith('--language=')) {\n"
+            "      selected.push(...splitLanguages(arg.slice('--language='.length)));\n"
+            "      continue;\n"
+            "    }\n"
+            "    if (arg === '--all') {\n"
+            "      selected.push(...OFFICIAL_LANGUAGES);\n"
+            "      continue;\n"
+            "    }\n"
+            "    if (arg === '--help' || arg === '-h') {\n"
+            "      printHelp();\n"
+            "      process.exit(0);\n"
+            "    }\n"
+            "    throw new Error(`Unsupported SDK generation option: ${arg}`);\n"
+            "  }\n"
+            "  const normalized = selected.length === 0 ? ['typescript'] : selected;\n"
+            "  return [...new Set(normalized.map((item) => item.toLowerCase()))].map((language) => {\n"
+            "    if (!OFFICIAL_LANGUAGES.includes(language)) {\n"
+            "      throw new Error(`Unsupported SDK language for ${sdkFamily}: ${language}`);\n"
+            "    }\n"
+            "    return language;\n"
+            "  });\n"
+            "}\n\n"
+            "function splitLanguages(value) {\n"
+            "  return String(value).split(',').map((item) => item.trim()).filter(Boolean);\n"
+            "}\n\n"
+            "function printHelp() {\n"
+            "  console.log(`Usage: node ./sdks/${sdkFamily}/bin/generate-sdk.mjs [--language <language>] [--all]\n"
+            "\n"
+            "Options:\n"
+            "  --language, -l <name>  Generate one language. May be repeated or comma-separated.\n"
+            "  --all                 Generate all official SDK languages.\n"
+            "  --help, -h            Show this help.\n"
+            "\n"
+            "Official languages: ${OFFICIAL_LANGUAGES.join(', ')}`);\n"
+            "}\n\n"
+            "function runLanguage(language) {\n"
+            "  if (language !== 'typescript') {\n"
+            "    rmSync(path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`), { recursive: true, force: true });\n"
+            "  }\n"
+            "  const args = language === 'typescript'\n"
+            "    ? strictTypeScriptArgs()\n"
+            "    : generatorArgs(language);\n"
+            "  const result = spawnSync(command, args, { cwd: workspaceRoot, stdio: 'inherit' });\n"
+            "  if (result.error) {\n"
+            "    throw result.error;\n"
+            "  }\n"
+            "  if ((result.status ?? 1) !== 0) {\n"
+            "    process.exit(result.status ?? 1);\n"
+            "  }\n"
+            "}\n\n"
+            "function strictTypeScriptArgs() {\n"
+            "  return [\n"
+            "    'tools/clawrouter_strict_sdk_generate.mjs',\n"
+            "    'generate',\n"
+            "    '-i', sdkgenInputPath,\n"
+            f"    '-o', 'sdks/{sdk_family}/{typescript_directory}',\n"
+            "    '-n', sdkFamily,\n"
+            "    '-t', sdkType,\n"
+            "    '-l', 'typescript',\n"
+            "    '--base-url', baseUrl,\n"
+            "    '--api-prefix', apiPrefix,\n"
+            "    '--package-name', packageNames.typescript,\n"
+            "    '--description', description,\n"
+            "    '--fixed-sdk-version', '0.1.0',\n"
+            "    '--no-sync-published-version',\n"
+            f"{standard_profile_line}"
+            "  ];\n"
+            "}\n\n"
+            "function generatorArgs(language) {\n"
+            "  const args = [\n"
+            "    path.resolve(workspaceRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'bin', 'sdkgen.js'),\n"
+            "    'generate',\n"
+            "    '-i', sdkgenInputPath,\n"
+            "    '-o', `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`,\n"
+            "    '-n', sdkFamily,\n"
+            "    '-t', sdkType,\n"
+            "    '-l', language,\n"
+            "    '--base-url', baseUrl,\n"
+            "    '--api-prefix', apiPrefix,\n"
+            "    '--package-name', packageNames[language],\n"
+            "    '--description', `${description} ${language} generated transport SDK`,\n"
+            "    '--fixed-sdk-version', '0.1.0',\n"
+            "    '--sdk-root', `sdks/${sdkFamily}`,\n"
+            "    '--sdk-name', sdkFamily,\n"
+            "    '--npm-package-name', packageNames.typescript,\n"
+            "    '--no-sync-published-version',\n"
+            f"{standard_profile_line}"
+            "  ];\n"
+            "  if (namespaces[language]) {\n"
+            "    args.push('--namespace', namespaces[language]);\n"
+            "  }\n"
+            "  return args;\n"
+            "}\n"
+        )
+
+    def _render_verify_script(self, sdk_family: str) -> str:
+        typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        return (
+            "#!/usr/bin/env node\n"
+            "import { existsSync, readFileSync } from 'node:fs';\n"
+            "import path from 'node:path';\n"
+            "import { fileURLToPath } from 'node:url';\n\n"
+            "const __filename = fileURLToPath(import.meta.url);\n"
+            "const workspaceRoot = path.resolve(path.dirname(__filename), '..');\n"
+            "const required = [\n"
+            "  '.sdkwork-assembly.json',\n"
+            f"  'openapi/{sdk_family}.openapi.json',\n"
+            f"  'openapi/{sdk_family}.sdkgen.json',\n"
+            f"  '{typescript_directory}/package.json',\n"
+            f"  '{typescript_directory}/sdkwork-sdk.json',\n"
+            f"  '{typescript_directory}/src/index.ts',\n"
+            "];\n"
+            "const missing = required.filter((entry) => !existsSync(path.join(workspaceRoot, entry)));\n"
+            "if (missing.length > 0) {\n"
+            f"  throw new Error('{sdk_family} SDK family is incomplete: ' + missing.join(', '));\n"
+            "}\n"
+            "const assembly = JSON.parse(readFileSync(path.join(workspaceRoot, '.sdkwork-assembly.json'), 'utf8'));\n"
+            f"if (assembly.workspace !== '{sdk_family}') {{\n"
+            "  throw new Error('SDK assembly workspace drifted');\n"
+            "}\n"
+            "if (!Array.isArray(assembly.languages) || !assembly.languages.some((item) => item.language === 'typescript')) {\n"
+            "  throw new Error('SDK assembly must include the TypeScript workspace');\n"
+            "}\n"
+            f"console.log('Verified {sdk_family} SDK family.');\n"
+        )
+
+    def _render_family_smoke_test(self, sdk_family: str) -> str:
+        typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        return (
+            "import assert from 'node:assert/strict';\n"
+            "import { existsSync } from 'node:fs';\n"
+            "import test from 'node:test';\n"
+            "import path from 'node:path';\n\n"
+            "const workspaceRoot = path.resolve(import.meta.dirname, '..');\n\n"
+            f"test('{sdk_family} family layout is materialized', () => {{\n"
+            f"  assert.equal(existsSync(path.join(workspaceRoot, '{typescript_directory}', 'package.json')), true);\n"
+            f"  assert.equal(existsSync(path.join(workspaceRoot, 'openapi', '{sdk_family}.openapi.json')), true);\n"
+            "  assert.equal(existsSync(path.join(workspaceRoot, '.sdkwork-assembly.json')), true);\n"
+            "});\n"
+        )
+
+    def _standardize_sdk(self, sdk_family: str, base: Path) -> list[Path]:
         updated: list[Path] = []
         package_path = base / "package.json"
         package = self._read_json(package_path)
@@ -202,9 +880,9 @@ class SdkRuntimeStandardizer:
             package["devDependencies"] = dev_dependencies
         dev_dependencies.pop("vite", None)
         dev_dependencies.pop("vite-plugin-dts", None)
-        dev_dependencies.setdefault("@types/node", "^20.0.0")
-        dev_dependencies.setdefault("typescript", "^5.3.0")
-        dev_dependencies.setdefault("rollup", "^4.0.0")
+        dev_dependencies["@types/node"] = SDK_TYPES_NODE_VERSION
+        dev_dependencies["typescript"] = SDK_TYPESCRIPT_VERSION
+        dev_dependencies["rollup"] = SDK_ROLLUP_VERSION
 
         dependencies = package.setdefault("dependencies", {})
         if not isinstance(dependencies, dict):
@@ -232,8 +910,8 @@ class SdkRuntimeStandardizer:
         metadata_path = base / "sdkwork-sdk.json"
         metadata = {
             "language": "typescript",
-            "sdkType": SDK_TYPES[base.name],
-            "name": base.name,
+            "sdkType": SDK_TYPES[sdk_family],
+            "name": sdk_family,
             "packageName": package.get("name"),
             "version": package.get("version"),
         }
@@ -248,7 +926,7 @@ class SdkRuntimeStandardizer:
             manifest = {
                 "generator": "sdk/sdkwork-sdk-generator",
                 "language": "typescript",
-                "sdkType": SDK_TYPES[base.name],
+                "sdkType": SDK_TYPES[sdk_family],
                 "packageName": package.get("name"),
                 "version": package.get("version"),
             }
@@ -269,9 +947,15 @@ class SdkRuntimeStandardizer:
             generated_type_stems = self._manifest_generated_type_stems(generator_manifest)
             if generated_type_stems is not None:
                 updated.extend(self._remove_unmanifested_type_artifacts(base, generated_type_stems))
+            updated.extend(self._ensure_project_required_type_modules(types_dir))
             for type_path in sorted(types_dir.glob("*.ts")):
                 source = type_path.read_text(encoding="utf-8")
                 normalized = self._standardize_union_array_types(source)
+                normalized = self._standardize_closed_empty_interfaces(normalized)
+                if type_path.name == "common.ts":
+                    normalized = self._standardize_common_query_list_form(normalized)
+                elif sdk_family in {"clawrouter-app-sdk", "clawrouter-backend-sdk"} and self._is_request_input_type_file(type_path):
+                    normalized = self._standardize_search_text_properties(normalized)
                 if normalized != source:
                     type_path.write_text(normalized, encoding="utf-8", newline="\n")
                     updated.append(type_path)
@@ -283,7 +967,7 @@ class SdkRuntimeStandardizer:
                     type_index_path.write_text(normalized, encoding="utf-8", newline="\n")
                     updated.append(type_index_path)
 
-        if base.name == "clawrouter-backend-sdk":
+        if sdk_family == "clawrouter-backend-sdk":
             skill_api_path = base / "src" / "api" / "skill.ts"
             if skill_api_path.is_file():
                 source = skill_api_path.read_text(encoding="utf-8")
@@ -298,6 +982,33 @@ class SdkRuntimeStandardizer:
                 if normalized != source:
                     app_api_path.write_text(normalized, encoding="utf-8", newline="\n")
                     updated.append(app_api_path)
+
+        api_dir = base / "src" / "api"
+        if api_dir.is_dir():
+            api_index_path = api_dir / "index.ts"
+            if api_index_path.is_file():
+                source = api_index_path.read_text(encoding="utf-8")
+                normalized = self._standardize_api_index_exports(source)
+                if normalized != source:
+                    api_index_path.write_text(normalized, encoding="utf-8", newline="\n")
+                    updated.append(api_index_path)
+            for api_path in sorted(api_dir.glob("*.ts")):
+                if api_path.name in {"base.ts", "index.ts", "paths.ts"}:
+                    continue
+                source = api_path.read_text(encoding="utf-8")
+                normalized = self._standardize_search_query_parameters(source)
+                if normalized != source:
+                    api_path.write_text(normalized, encoding="utf-8", newline="\n")
+                    updated.append(api_path)
+
+        if sdk_family == "clawrouter-app-sdk":
+            content_api_path = base / "src" / "api" / "content.ts"
+            if content_api_path.is_file():
+                source = content_api_path.read_text(encoding="utf-8")
+                normalized = self._standardize_app_content_multipart_request_bodies(base, sdk_family, source)
+                if normalized != source:
+                    content_api_path.write_text(normalized, encoding="utf-8", newline="\n")
+                    updated.append(content_api_path)
 
         publish_core_path = base / "bin" / "publish-core.mjs"
         if publish_core_path.is_file():
@@ -361,6 +1072,71 @@ class SdkRuntimeStandardizer:
             return f"{match.group('operator')}({match.group('union')})[]{match.group('trailer')}"
 
         return UNION_ARRAY_TYPE_PATTERN.sub(replace, source)
+
+    def _standardize_closed_empty_interfaces(self, source: str) -> str:
+        """Represent closed empty object schemas as a restrictive TypeScript type."""
+
+        def replace(match: re.Match[str]) -> str:
+            return f"{match.group('prefix')}type {match.group('name')} = Record<string, never>;"
+
+        return EMPTY_INTERFACE_PATTERN.sub(replace, source)
+
+    def _standardize_common_query_list_form(self, source: str) -> str:
+        return self._standardize_search_text_properties(source)
+
+    def _standardize_search_query_parameters(self, source: str) -> str:
+        updated = self._standardize_search_text_properties(source)
+        updated = re.sub(
+            r"\{\s*name:\s*['\"](?:search_query|keyword|search|searchQuery)['\"],\s*value:\s*params\?\.(?:searchQuery|search_query|keyword|search)",
+            "{ name: 'q', value: params?.q",
+            updated,
+        )
+        updated = re.sub(
+            r"\{\s*name:\s*['\"](?:search_query|keyword|search|searchQuery)['\"],\s*value:\s*params\.(?:searchQuery|search_query|keyword|search)",
+            "{ name: 'q', value: params.q",
+            updated,
+        )
+        return updated
+
+    def _standardize_search_text_properties(self, source: str) -> str:
+        return re.sub(
+            r"^(\s*)(?:searchQuery|search_query|keyword|search)(\??\s*:\s*)",
+            r"\1q\2",
+            source,
+            flags=re.MULTILINE,
+        )
+
+    def _is_request_input_type_file(self, type_path: Path) -> bool:
+        stem = type_path.stem.lower()
+        return any(
+            stem.endswith(suffix)
+            or f"-{suffix}-" in stem
+            or f"_{suffix}_" in stem
+            for suffix in ("request", "form", "input", "dto", "query")
+        )
+
+    def _standardize_api_index_exports(self, source: str) -> str:
+        """Export full API modules so generated parameter interfaces are public."""
+
+        lines: list[str] = []
+        changed = False
+        for line in source.splitlines():
+            match = re.match(r"\s*export\s+\{[^}]+\}\s+from\s+['\"]\./([^'\"]+)['\"]\s*;?\s*$", line)
+            if match is None:
+                lines.append(line)
+                continue
+
+            stem = match.group(1)
+            if stem in {"base", "paths"}:
+                lines.append(line)
+                continue
+
+            lines.append(f"export * from './{stem}';")
+            changed = True
+
+        if not changed:
+            return source
+        return "\n".join(lines) + "\n"
 
     def _standardize_type_index_exports(
         self,
@@ -441,6 +1217,7 @@ class SdkRuntimeStandardizer:
             stem = Path(normalized_path).stem
             if stem != "index":
                 stems.add(stem)
+        stems.update(PROJECT_REQUIRED_TYPE_MODULES)
         return stems
 
     def _remove_unmanifested_type_artifacts(self, base: Path, generated_type_stems: set[str]) -> list[Path]:
@@ -465,24 +1242,140 @@ class SdkRuntimeStandardizer:
                     updated.append(stale_path)
         return updated
 
-    def _standardize_backend_skill_api_method_names(self, source: str) -> str:
-        """Keep backend skill lifecycle methods aligned with OpenAPI operationId values."""
-
-        replacements = {
-            "async offline(": "async offlineSkill(",
-            "async publish(": "async publishSkill(",
-            "async approve(": "async approveSkill(",
-            "async reject(": "async rejectSkill(",
-        }
-        updated = source
-        for old, new in replacements.items():
-            updated = updated.replace(old, new)
+    def _ensure_project_required_type_modules(self, types_dir: Path) -> list[Path]:
+        updated: list[Path] = []
+        for stem, (_, content) in PROJECT_REQUIRED_TYPE_MODULES.items():
+            type_path = types_dir / f"{stem}.ts"
+            if type_path.is_file() and type_path.read_text(encoding="utf-8") == content:
+                continue
+            type_path.write_text(content, encoding="utf-8", newline="\n")
+            updated.append(type_path)
         return updated
+
+    def _standardize_backend_skill_api_method_names(self, source: str) -> str:
+        """Generated TypeScript SDKs expose skill lifecycle actions as resource-tree create calls."""
+
+        return source
 
     def _standardize_backend_app_api_method_names(self, source: str) -> str:
         """Keep backend app detail method aligned with the OpenAPI operationId."""
 
         return source.replace("async fetch(", "async fetchApp(")
+
+    def _standardize_app_content_multipart_request_bodies(self, base: Path, sdk_family: str, source: str) -> str:
+        """Keep public app SDK multipart methods on operation-specific request DTOs."""
+
+        multipart_schemas = self._multipart_request_schema_names(
+            self._sdk_openapi_spec_candidates(base, sdk_family)
+        )
+        if not multipart_schemas:
+            return source
+
+        updated = source
+        for schema_name in multipart_schemas:
+            pattern = re.compile(r"(\bbody\??\s*:\s*)FormData\b")
+            normalized = pattern.sub(rf"\1{schema_name}", updated)
+            if normalized != updated:
+                updated = normalized
+                updated = self._ensure_type_import_name(updated, "../types", schema_name)
+        return updated
+
+    def _sdk_openapi_spec_candidates(self, base: Path, sdk_family: str) -> list[Path]:
+        spec_name = f"{sdk_family}.sdkgen.json"
+        candidates = [
+            base.parent / "openapi" / spec_name,
+            base / "openapi" / spec_name,
+        ]
+        return list(dict.fromkeys(candidates))
+
+    def _multipart_request_schema_names(self, spec_paths: Path | list[Path]) -> list[str]:
+        names: list[str] = []
+        paths_to_scan = spec_paths if isinstance(spec_paths, list) else [spec_paths]
+        for spec_path in paths_to_scan:
+            spec = self._read_json_or_none(spec_path)
+            if not spec:
+                continue
+            paths = spec.get("paths")
+            if not isinstance(paths, dict):
+                continue
+
+            for path_item in paths.values():
+                if not isinstance(path_item, dict):
+                    continue
+                for operation in path_item.values():
+                    if not isinstance(operation, dict):
+                        continue
+                    request_body = operation.get("requestBody")
+                    if not isinstance(request_body, dict):
+                        continue
+                    content = request_body.get("content")
+                    if not isinstance(content, dict):
+                        continue
+                    media = content.get("multipart/form-data")
+                    if not isinstance(media, dict):
+                        continue
+                    schema_name = self._schema_component_name(media.get("schema"))
+                    if schema_name and schema_name not in names:
+                        names.append(schema_name)
+        return names
+
+    def _schema_component_name(self, schema: Any) -> str:
+        if not isinstance(schema, dict):
+            return ""
+        raw_ref = schema.get("$ref")
+        if isinstance(raw_ref, str) and raw_ref.startswith("#/components/schemas/"):
+            return raw_ref.rsplit("/", 1)[-1]
+        for key in ("allOf", "oneOf", "anyOf"):
+            variants = schema.get(key)
+            if not isinstance(variants, list):
+                continue
+            for variant in variants:
+                schema_name = self._schema_component_name(variant)
+                if schema_name:
+                    return schema_name
+        return ""
+
+    def _ensure_type_import_name(self, source: str, import_path: str, type_name: str) -> str:
+        import_pattern = re.compile(
+            rf"^\s*import\s+type\s+\{{([\s\S]*?)\}}\s+from\s+['\"]{re.escape(import_path)}['\"];\s*$",
+            re.M,
+        )
+        match = import_pattern.search(source)
+        if match:
+            names = [name.strip() for name in match.group(1).split(",") if name.strip()]
+            if type_name in names:
+                return source
+            replacement = f"import type {{ {', '.join([*names, type_name])} }} from '{import_path}';"
+            return source[: match.start()] + replacement + source[match.end() :]
+
+        import_block = re.match(r"((?:import[^\n]*\n)+)", source)
+        if import_block:
+            insertion = f"import type {{ {type_name} }} from '{import_path}';\n"
+            return source[: import_block.end()] + insertion + source[import_block.end() :]
+        return f"import type {{ {type_name} }} from '{import_path}';\n{source}"
+
+    def _remove_type_import_names(self, source: str, import_path: str, type_names: list[str]) -> str:
+        removals = {name for name in type_names if name}
+        if not removals:
+            return source
+
+        import_pattern = re.compile(
+            rf"^\s*import\s+type\s+\{{([\s\S]*?)\}}\s+from\s+['\"]{re.escape(import_path)}['\"];\s*$",
+            re.M,
+        )
+
+        def replace_import(match: re.Match[str]) -> str:
+            names = [name.strip() for name in match.group(1).split(",") if name.strip()]
+            kept = [
+                name
+                for name in names
+                if re.split(r"\s+as\s+", name, maxsplit=1, flags=re.I)[0].strip() not in removals
+            ]
+            if not kept:
+                return ""
+            return f"import type {{ {', '.join(kept)} }} from '{import_path}';"
+
+        return import_pattern.sub(replace_import, source)
 
     def _standardize_publish_core_install_command(self, source: str) -> str:
         """Avoid running dependency prepare scripts during SDK publish build verification."""
@@ -624,9 +1517,25 @@ class SdkRuntimeStandardizer:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Apply sdkwork-claw-router generated SDK runtime build standard.")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="sdkwork-claw-router root directory")
+    parser.add_argument(
+        "--sdk-dir",
+        action="append",
+        choices=SDK_DIRECTORIES,
+        help="Limit standardization to one generated SDK directory. Can be repeated.",
+    )
+    parser.add_argument(
+        "--api-spec-path",
+        type=Path,
+        default=None,
+        help="OpenAPI source path to snapshot into the SDK family root when one SDK is selected.",
+    )
     args = parser.parse_args()
 
-    updated = SdkRuntimeStandardizer(root=args.root).run()
+    updated = SdkRuntimeStandardizer(
+        root=args.root,
+        sdk_directories=tuple(args.sdk_dir) if args.sdk_dir else None,
+        api_spec_path=args.api_spec_path,
+    ).run()
     for path in updated:
         print(path.relative_to(Path(args.root).resolve()).as_posix())
     return 0

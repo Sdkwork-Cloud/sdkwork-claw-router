@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10921,
+  "uuid": "skill-clawhub-claudius",
+  "skillKey": "clawhub-claudius",
+  "name": "Claudius",
+  "summary": "Crypto intelligence powered by Claudius. Get technical analysis, prices, and insights.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudius",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Claudiusaipro",
+      "features": [
+        "Crypto intelligence powered by Claudius",
+        "Get technical analysis, prices, and insights."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claudius@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252755289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claudius",
+      "url": "https://clawhub.ai/skills/claudius"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudius",
+    "url": "https://clawhub.ai/skills/claudius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudius-462ea42052b42946.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claudius@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claudius-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae093bdca818582531962e6faf68e15f62eefebd0349d7efc35aa9e53625432e",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T13:56:19.249Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71530,
+  "uuid": "skill-clawhub-trip-planner-cn",
+  "skillKey": "clawhub-trip-planner-cn",
+  "name": "Trip Planner CN",
+  "summary": "行程规划助手，支持往返/单程行程规划。触发词：规划行程、高铁查询、航班查询、机场周边、时间安排、出行方案、当天往返。 涵盖：航班/高铁时刻查询、中转方案、时间约束筛选、详细时间线生成。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_planner_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doushen-cloud",
+      "features": [
+        "行程规划助手，支持往返/单程行程规划。触发词：规划行程、高铁查询、航班查询、机场周边、时间安排、出行方案、当天往返。 涵盖：航班/高铁时刻查询、中转方案、时间约束筛选、详细时间线生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-planner-cn@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265686125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-planner-cn",
+      "url": "https://clawhub.ai/skills/trip-planner-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-planner-cn",
+    "url": "https://clawhub.ai/skills/trip-planner-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-planner-cn-c8145f5cf00f4216.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-planner-cn@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-planner-cn-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e4318fa71a6f1f3fccb3be37a910a3bbf853cff07e0cf11168488d55804d489",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T23:51:10.628Z"
+}

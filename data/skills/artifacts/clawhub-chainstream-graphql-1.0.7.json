@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chainstream-graphql@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chainstream_graphql",
+  "skill": {
+    "id": 28748,
+    "skillKey": "clawhub-chainstream-graphql",
+    "name": "Chainstream Graphql"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chainstream-graphql",
+    "url": "https://clawhub.ai/skills/chainstream-graphql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chainstream-graphql-25677100527f870f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute flexible GraphQL queries against ChainStream's on-chain data warehouse (27 cubes in 3 chain groups: EVM, Solana, Trading). Use when user needs custom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harry5556",
+      "userId": "s1763qs0j2b2kgwgxyz797x2qh83kfzt",
+      "displayName": "ChainStream",
+      "image": "https://avatars.githubusercontent.com/u/199374592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778146847545,
+      "changelog": "- Updated the schema guide documentation (references/schema-guide.md) for improved query construction guidance.\n- No changes to code, endpoints, or skill logic; this release is documentation-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58b30e1bca51110b916be8176179940ddce569a47a484876f859dfad39d9a34f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67228,
+  "uuid": "skill-clawhub-crypto-radar",
+  "skillKey": "clawhub-crypto-radar",
+  "name": "Crypto Radar",
+  "summary": "数字货币行情监控工具。当用户询问「比特币」「以太坊」「BTC」「ETH」「数字货币行情」「加密货币」「Crypto」「比特币价格」「以太坊价格」时使用。使用 Yahoo Finance（实时价格）和 CoinGecko（市值/交易量）双数据源。📢微信公众号：PM熊叔（打造一人公司的投研团队）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "数字货币行情监控工具。当用户询问「比特币」「以太坊」「BTC」「ETH」「数字货币行情」「加密货币」「Crypto」「比特币价格」「以太坊价格」时使用。使用 Yahoo Finance（实时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-radar",
+      "url": "https://clawhub.ai/skills/crypto-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-radar",
+    "url": "https://clawhub.ai/skills/crypto-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-radar-bf21c6a71e9989c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd79ee2b8c80cef8cd1462850423acb7e99868207aa877f9f5335b04b36ba901",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T01:59:43.978Z"
+}

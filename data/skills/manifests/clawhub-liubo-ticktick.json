@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62244,
+  "uuid": "skill-clawhub-liubo-ticktick",
+  "skillKey": "clawhub-liubo-ticktick",
+  "name": "Liubo's TickTick CLI",
+  "summary": "ticktick, dida365, 滴答清单, 任务管理, 新建任务, 完成任务, 创建任务, 列出任务, 查看任务, 更新任务, 删除任务, 放弃任务, 批量放弃, 任务提醒, 任务优先级, 任务标签, 任务到期, 任务开始时间, 滴答项目, 滴答列表, 创建项目, 更新项目, 滴答附件, 上传附件, tic...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liubo_ticktick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuboacean",
+      "features": [
+        "ticktick, dida365, 滴答清单, 任务管理, 新建任务, 完成任务, 创建任务, 列出任务, 查看任务, 更新任务, 删除任务, 放弃任务, 批量放弃, 任务提醒, 任务优先."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liubo-ticktick@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27935764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liubo-ticktick",
+      "url": "https://clawhub.ai/skills/liubo-ticktick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liubo-ticktick",
+    "url": "https://clawhub.ai/skills/liubo-ticktick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liubo-ticktick-f1fb935d13a4dabf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liubo-ticktick@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liubo-ticktick-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c7e838e992cb99f50c85830732828b9a71ced383957488c1cf1a012212e22cc",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:37:11.586Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-eval-preflight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_eval_preflight",
+  "skill": {
+    "id": 54621,
+    "skillKey": "clawhub-skill-eval-preflight",
+    "name": "Skill Eval Preflight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-eval-preflight",
+    "url": "https://clawhub.ai/skills/skill-eval-preflight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-eval-preflight-26b8519a60e2c6a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate OpenClaw skills during authoring. Use when creating, revising, or preparing a skill for release and you need to scaffold `evals/` files, check readi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stonechen1014",
+      "userId": "s17c5rbmd196r3p0afzz0cmjr183gvw0",
+      "displayName": "Stone Chen",
+      "image": "https://avatars.githubusercontent.com/u/256020424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773381532425,
+      "changelog": "Version 1.0.0\nInitial release of skill-eval-preflight.\n\nA lightweight authoring-side preflight for OpenClaw skills before deeper evaluation.\n\nThis release includes:\n\nscaffolding for evals/ files\nreadiness checks for a first evaluation pass\nreview of positive and negative trigger coverage\nvalidation of eval prompts and expected artifacts\nstatic with-skill / without-skill comparison outputs\ndetection of missing, empty, or unfinished eval scaffolding\nCurrent scope:\n\nfocuses on authoring-side validation and release readiness\ndoes not perform live runtime evaluation or output quality scoring",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a254edac84d067243319cf4492f3f8eb4b10734778fec851960a65f4c0cc1a9a"
+}

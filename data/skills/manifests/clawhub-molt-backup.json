@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53580,
+  "uuid": "skill-clawhub-molt-backup",
+  "skillKey": "clawhub-molt-backup",
+  "name": "Molt",
+  "summary": "Snapshot and back up OpenClaw brain files (AGENTS.md, SOUL.md, MEMORY.md, memory/, etc.) to an offsite git repository — like a lobster shedding its shell, le...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marv",
+      "features": [
+        "Snapshot and back up OpenClaw brain files (AGENTS.md, SOUL.md, MEMORY.md, memory/, etc.) to an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/molt-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264330478?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "molt-backup",
+      "url": "https://clawhub.ai/skills/molt-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-backup",
+    "url": "https://clawhub.ai/skills/molt-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-backup-92a20da44d27eb9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/molt-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-molt-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53b85a145695884afb9c8e6ba20d6d603c26dea66c93facdbfd890568c130b1a",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:43:27.183Z"
+}

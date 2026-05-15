@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32379,
+  "uuid": "skill-clawhub-skill-base-web-deploy",
+  "skillKey": "clawhub-skill-base-web-deploy",
+  "name": "skill-base-web-deploy",
+  "summary": "Skill Base server deployment guide. Covers starting the Skill Base server (npx skill-base), Docker configuration, port mapping, and SQLite database backup. F...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_base_web_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ginuim",
+      "features": [
+        "Skill Base server deployment guide",
+        "Covers starting the Skill Base server (npx skill-base), Docker configuration, port mapping, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-base-web-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/497432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-base-web-deploy",
+      "url": "https://clawhub.ai/skills/skill-base-web-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-base-web-deploy",
+    "url": "https://clawhub.ai/skills/skill-base-web-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-base-web-deploy-22037d2b1f897245.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-base-web-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-base-web-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:315b19cd0bc71973ea4677d540ad947df77e826457255e89032f2cc43a5b2af2",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:13:23.718Z"
+}

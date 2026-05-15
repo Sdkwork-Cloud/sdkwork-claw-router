@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38974,
+  "uuid": "skill-clawhub-alvis-gemini-model",
+  "skillKey": "clawhub-alvis-gemini-model",
+  "name": "Alvis Gemini Model",
+  "summary": "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_gemini_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "LLM one-shot Q&A, summaries, and generation via SkillBoss API Hub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-gemini-model@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-gemini-model",
+      "url": "https://clawhub.ai/skills/alvis-gemini-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-gemini-model",
+    "url": "https://clawhub.ai/skills/alvis-gemini-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-gemini-model-46ccc27767218ea2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-gemini-model@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-gemini-model-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31168a674a7e238eda7d8396c7c1c7ac4f92f856a02e4e9950f481a672d5a7e3",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:34:33.823Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-agent-messenger-v2@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_messenger_v2",
+  "skill": {
+    "id": 30084,
+    "skillKey": "clawhub-feishu-agent-messenger-v2",
+    "name": "Feishu Send Message"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-messenger-v2",
+    "url": "https://clawhub.ai/skills/feishu-agent-messenger-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-messenger-v2-d3fa0086394ef84f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send private or group messages via the current Agent's Feishu app, showing the configured bot name and handling app-isolated open_id."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pikaqiuyaya",
+      "userId": "s176wweqb7cav4zhkbsred489d83nmt8",
+      "displayName": "pikaqiuyaya",
+      "image": "https://avatars.githubusercontent.com/u/146065672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1774010634497,
+      "changelog": "确认移除所有明文 open_id，改为从日志获取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6bc622263376c6a2906fedbdef454cea2997c6747e33eff8254200707e0c6ec"
+}

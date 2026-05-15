@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bm25-rerank-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bm25_rerank_memory",
+  "skill": {
+    "id": 59223,
+    "skillKey": "clawhub-bm25-rerank-memory",
+    "name": "Bm25 Rerank Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bm25-rerank-memory",
+    "url": "https://clawhub.ai/skills/bm25-rerank-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bm25-rerank-memory-4742c86b830edeb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 BM25 + Embedding + Rerank 混合记忆检索。检索 /root/workspace/Remember 下的 Markdown 记忆文件，支持关键词+语义+重排。每次记忆搜索用它替代 mem0。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckqiao",
+      "userId": "s179x0mkmvqmf1906vhf1wr6kx83gwph",
+      "displayName": "CkQiao",
+      "image": "https://avatars.githubusercontent.com/u/75972309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979300970,
+      "changelog": "- Initial release of bm25-rerank-memory skill.\n- Provides local memory retrieval using BM25, Embedding (BGE-M3), and reranking.\n- Searches Markdown memory files under /root/workspace/Remember.\n- Enables hybrid retrieval: keyword (BM25), semantic (BGE-M3), and rerank (BGE-Reranker-v2-m3).\n- Replaces mem0 for each memory search.\n- Includes command-line scripts for searching and reindexing memory files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f2d576ba66255bd240aae5d1039eb8657c3f3807945e3af8439a70d13e2d162"
+}

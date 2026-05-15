@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28681,
+  "uuid": "skill-clawhub-signus-signature-generator",
+  "skillKey": "clawhub-signus-signature-generator",
+  "name": "Signus Signature Generator",
+  "summary": "Generate signature images via the Signus API and return image files for chat delivery. Use when asked for signature generation through Signus API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signus_signature_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "signus-ai",
+      "features": [
+        "Generate signature images via the Signus API and return image files for chat delivery",
+        "Use when asked for signature generation through Signus API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signus-signature-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261976254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signus-signature-generator",
+      "url": "https://clawhub.ai/skills/signus-signature-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signus-signature-generator",
+    "url": "https://clawhub.ai/skills/signus-signature-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signus-signature-generator-5a4433294f43e6ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signus-signature-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-signus-signature-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d026e8116087b0abb3d2d4f36d003b2af4923a4717b5fdc9a78685be9f636a36",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:49:46.706Z"
+}

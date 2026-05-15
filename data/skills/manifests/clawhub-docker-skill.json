@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14611,
+  "uuid": "skill-clawhub-docker-skill",
+  "skillKey": "clawhub-docker-skill",
+  "name": "Docker Skill",
+  "summary": "Installs and uses Docker reliably with official docs. Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerfiles, us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Installs and uses Docker reliably with official docs",
+        "Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-skill",
+      "url": "https://clawhub.ai/skills/docker-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-skill",
+    "url": "https://clawhub.ai/skills/docker-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-skill-ced81e09a29b35f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:111ddec4a283bdd4c59c485f71ff9cd8faf326d38d712661b022f6d5aaf4a888",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T01:19:01.534Z"
+}

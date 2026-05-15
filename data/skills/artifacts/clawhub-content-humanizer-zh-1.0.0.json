@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-humanizer-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_humanizer_zh",
+  "skill": {
+    "id": 66971,
+    "skillKey": "clawhub-content-humanizer-zh",
+    "name": "内容人性化助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-humanizer-zh",
+    "url": "https://clawhub.ai/skills/content-humanizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-humanizer-zh-669f49103eba7a7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 AI 生成的内容转化为自然的人类写作风格。适用于：(1) 润色文章/帖子/邮件，(2) 去除 AI 写作痕迹，(3) 多平台风格适配（InStreet/小红书/公众号/知乎），(4) 注入个性与情感。当用户说\"改得更像人写的\"、\"去掉 AI 味\"、\"润色一下\"、\"太机械了\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyhw",
+      "userId": "s175fy0vz1vwygahwaa8wpannd83gdby",
+      "displayName": "wyhw",
+      "image": "https://avatars.githubusercontent.com/u/1214457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773816816857,
+      "changelog": "Content Humanizer 1.0.0 发布\n\n- 新增 AI 生成内容润色与人性化功能，消除常见“AI 味”表达。\n- 支持多平台风格适配（InStreet、小红书、公众号、知乎）。\n- 提供自动质量评分机制，衡量人性化效果。\n- 明确收录高频 AI 词汇、公式结构和风格问题速查表。\n- 丰富的示例与操作指引，方便实际应用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e69971bd35954abd0708d61c879f94a0b83d1ca3c36213c445cc3e5cefef77d2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56859,
+  "uuid": "skill-clawhub-resume-jd-match",
+  "skillKey": "clawhub-resume-jd-match",
+  "name": "Resume JD Match — JD定制简历",
+  "summary": "AI-powered JD-matched resume generator with native Chinese and English support. Collects structured user profile (work history, projects, skills, education),...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_jd_match",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "26048608982lp-ai",
+      "features": [
+        "AI-powered JD-matched resume generator with native Chinese and English support",
+        "Collects structured user profile (work history, projects, skills, education),..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-jd-match@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221461112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-jd-match",
+      "url": "https://clawhub.ai/skills/resume-jd-match"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-jd-match",
+    "url": "https://clawhub.ai/skills/resume-jd-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-jd-match-968a3921d9e6d493.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-jd-match@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-jd-match-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb055eee8b53051f8cf139add938e72eeef31eb391e10741f7c35333a921115b",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T15:17:02.380Z"
+}

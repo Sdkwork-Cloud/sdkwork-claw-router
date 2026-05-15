@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funnlp@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funnlp",
+  "skill": {
+    "id": 52082,
+    "skillKey": "clawhub-funnlp",
+    "name": "Funnlp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funnlp",
+    "url": "https://clawhub.ai/skills/funnlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funnlp-99b20c7c3a596092.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Funnlp concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1774312738474,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:747c69bc478b2109173a289cbbe240582a10f38f7f3d6b82991eddd68f5a88db"
+}

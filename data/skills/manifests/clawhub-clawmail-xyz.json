@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13231,
+  "uuid": "skill-clawhub-clawmail-xyz",
+  "skillKey": "clawhub-clawmail-xyz",
+  "name": "clawmail.xyz - Give your openclaw an email address, no human required!",
+  "summary": "Email service for AI agents with wallet authentication and crypto payments",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmail_xyz",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "patrickshuff",
+      "features": [
+        "Email service for AI agents with wallet authentication and crypto payments"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmail-xyz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14027036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmail-xyz",
+      "url": "https://clawhub.ai/skills/clawmail-xyz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmail-xyz",
+    "url": "https://clawhub.ai/skills/clawmail-xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmail-xyz-68f8a59cb8f07332.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmail-xyz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmail-xyz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07408779523094462f141528e278bf6ad32789638cfa6aba20a6a1f62499fd45",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:01:52.903Z"
+}

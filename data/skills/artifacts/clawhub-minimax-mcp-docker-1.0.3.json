@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-mcp-docker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_mcp_docker",
+  "skill": {
+    "id": 61931,
+    "skillKey": "clawhub-minimax-mcp-docker",
+    "name": "minimax-mcp-docker版（适配极空间）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-mcp-docker",
+    "url": "https://clawhub.ai/skills/minimax-mcp-docker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-mcp-docker-7e9a888e4c0fa872.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 图片理解 + 网络搜索 MCP 工具。适配 Docker 环境（极空间等），支持图片 OCR 识别、图像内容理解、网络搜索。API Key 安全存储在本地 credentials 文件，不暴露在代码中。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773922603376,
+      "changelog": "明确说明同时支持图片理解+联网搜索两大功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06f8cb85b672d6329d73a82c7947d435defd6565ec1f54c153c25a91f7810201"
+}

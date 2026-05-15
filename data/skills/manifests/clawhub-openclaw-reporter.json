@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22190,
+  "uuid": "skill-clawhub-openclaw-reporter",
+  "skillKey": "clawhub-openclaw-reporter",
+  "name": "OpenClaw Reporter",
+  "summary": "Opt-in reporter for the OpenClaw global claw heatmap. On first use, ASKS the user for consent before registering. Heartbeat (platform + model only) is sent o...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richardwei195",
+      "features": [
+        "Opt-in reporter for the OpenClaw global claw heatmap",
+        "On first use, ASKS the user for consent before registering",
+        "Heartbeat (platform + model only) is sent o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-reporter@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10277079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-reporter",
+      "url": "https://clawhub.ai/skills/openclaw-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-reporter",
+    "url": "https://clawhub.ai/skills/openclaw-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-reporter-cbc36388a5a0cdba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-reporter@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-reporter-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a591a8ed29d2f54ba238855a781b372f4a1b6395b4e7a7a11e0f0277e8b3f250",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:40:55.319Z"
+}

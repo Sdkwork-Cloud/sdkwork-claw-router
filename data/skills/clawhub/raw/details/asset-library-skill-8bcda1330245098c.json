@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "asset-library-skill",
+    "displayName": "Asset Library Skill",
+    "summary": "Asset Library Skill. Use when the user expresses the overall end-to-end intent in one request, including “把这些材料建成资产库”“列出未来 60 天需要续办或补办的事项”“生成暑期实习申请材料包”, when...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1775145949853,
+    "updatedAt": 1777527107837
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775145949853,
+    "changelog": "- Initial release of Asset Library Skill, providing a main entry point when users express an end-to-end intent or are unsure which phase to run.\n- Routes user requests to the minimal necessary child skill based on intent and available inputs.\n- Explains current boundaries, missing inputs, and next steps; guides first-time installation or missing setup to references/install.md.\n- Does not directly invoke MCP tools or combine multiple sub-skills in a single execution.\n- Emphasizes verification of installation, key/config readiness, and retrieval environment before proceeding.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "angjustinl",
+    "userId": "s172vsaenv50m2mja9n27ykp8583nbmy",
+    "displayName": "ANGJustinl",
+    "image": "https://avatars.githubusercontent.com/u/96008766?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527107837
+  }
+}

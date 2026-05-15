@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64515,
+  "uuid": "skill-clawhub-mmxagent-skill-wechat",
+  "skillKey": "clawhub-mmxagent-skill-wechat",
+  "name": "mmxagent-skill-wechat",
+  "summary": "连接个人微信（不是企业微信）。用户说\"连接个人微信\"、\"接入个人微信\"、\"绑定个人微信\"、\"个人微信扫码\"时使用本 skill。注意：如果用户说的是\"企业微信\"或\"企微\"，本 skill 不适用，请使用 wecom-connect skill。一旦匹配本 skill，必须严格按流程执行到底，不得跳步或自由发挥。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmxagent_skill_wechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OreoAndYuumi",
+      "features": [
+        "连接个人微信（不是企业微信）。用户说\"连接个人微信\"、\"接入个人微信\"、\"绑定个人微信\"、\"个人微信扫码\"时使用本 skill。注意：如果用户说的是\"企业微信\"或\"企微\"，本 skill 不."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mmxagent-skill-wechat@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169647655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mmxagent-skill-wechat",
+      "url": "https://clawhub.ai/skills/mmxagent-skill-wechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmxagent-skill-wechat",
+    "url": "https://clawhub.ai/skills/mmxagent-skill-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmxagent-skill-wechat-1c5c3244c9d9021c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mmxagent-skill-wechat@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-wechat-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a2e8a6cf7eeedcf686f38ff2e5620cd5a29ff8e9ded1d0d1568c6aef17ecb04",
+      "artifactSizeBytes": 2839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:09:17.047Z"
+}

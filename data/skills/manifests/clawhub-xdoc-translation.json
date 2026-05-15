@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67566,
+  "uuid": "skill-clawhub-xdoc-translation",
+  "skillKey": "clawhub-xdoc-translation",
+  "name": "xdoc-translation",
+  "summary": "提供文档和文本翻译服务，支持多种文件格式、高质量翻译及术语库和记忆库管理。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xdoc_translation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangsongbai1",
+      "features": [
+        "提供文档和文本翻译服务，支持多种文件格式、高质量翻译及术语库和记忆库管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xdoc-translation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37282474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xdoc-translation",
+      "url": "https://clawhub.ai/skills/xdoc-translation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xdoc-translation",
+    "url": "https://clawhub.ai/skills/xdoc-translation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xdoc-translation-8fa819d4c41ce830.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xdoc-translation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xdoc-translation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a16bb0c62c6321c7b3751391539d61c02d60c448226832fa936488c6bf9638f5",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:16:29.210Z"
+}

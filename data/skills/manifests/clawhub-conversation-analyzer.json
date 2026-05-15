@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33731,
+  "uuid": "skill-clawhub-conversation-analyzer",
+  "skillKey": "clawhub-conversation-analyzer",
+  "name": "Conversation Analyzer",
+  "summary": "Intelligent conversation analysis, summarization, and conclusion recording. Analyzes user personality, tracks tasks, checks incomplete tasks, and writes to m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jason-tiger",
+      "features": [
+        "Intelligent conversation analysis, summarization, and conclusion recording",
+        "Analyzes user personality, tracks tasks, checks incomplete tasks, and writes to m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266066820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-analyzer",
+      "url": "https://clawhub.ai/skills/conversation-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-analyzer",
+    "url": "https://clawhub.ai/skills/conversation-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-analyzer-356c22f6634b6bb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcfe52296b3ec5f14cc23eb665e82b54f846cfba299b48c7844eb99798946d3a",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:56:52.911Z"
+}

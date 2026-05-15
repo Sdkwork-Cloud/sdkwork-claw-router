@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-crm-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_crm_skill",
+  "skill": {
+    "id": 13367,
+    "skillKey": "clawhub-clawdbot-crm-skill",
+    "name": "Crm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-crm-skill",
+    "url": "https://clawhub.ai/skills/clawdbot-crm-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-crm-skill-b306dccc6bcdee42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal CRM for managing contacts, relationships, and follow-ups using markdown files. Use when the user wants to add contacts, track relationships, set fol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xz-cn",
+      "userId": "publishers:xz-cn",
+      "displayName": "xz-cn",
+      "image": "https://avatars.githubusercontent.com/u/46279370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772417300158,
+      "changelog": "- Added MANIFEST.md file to the project.\n- Updated documentation in README.md and SKILL.md; no functionality changes.\n- No breaking changes or new features introduced.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6838011169e6e898e41ad7935c001b984f81ac97e6680ef39117b834e699cffb"
+}

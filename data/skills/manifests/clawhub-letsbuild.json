@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35165,
+  "uuid": "skill-clawhub-letsbuild",
+  "skillKey": "clawhub-letsbuild",
+  "name": "Letsbuild",
+  "summary": "LetsBuild integration. Manage data, records, and automate workflows. Use when the user wants to interact with LetsBuild data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letsbuild",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "LetsBuild integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with LetsBuild data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/letsbuild@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "letsbuild",
+      "url": "https://clawhub.ai/skills/letsbuild"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letsbuild",
+    "url": "https://clawhub.ai/skills/letsbuild",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letsbuild-c25a1e54785cbd07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/letsbuild@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-letsbuild-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df8c7c9f4772a2adcc9f0164ee12941ee856e75ee2cc7b8dbc7ab4f179b4b90",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:41:20.494Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48173,
+  "uuid": "skill-clawhub-hermes-dashboard-extension-builder",
+  "skillKey": "clawhub-hermes-dashboard-extension-builder",
+  "name": "Hermes Dashboard Extension Builder",
+  "summary": "Generate and validate Hermes dashboard extension scaffolds including tabs, plugins, slots, themes, and backend API manifests for OpenClaw/Hermes teams.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_dashboard_extension_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Generate and validate Hermes dashboard extension scaffolds including tabs, plugins, slots, them."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-dashboard-extension-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-dashboard-extension-builder",
+      "url": "https://clawhub.ai/skills/hermes-dashboard-extension-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-dashboard-extension-builder",
+    "url": "https://clawhub.ai/skills/hermes-dashboard-extension-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-dashboard-extension-builder-e2755f0d18ed2987.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-dashboard-extension-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-dashboard-extension-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8b265e0dbf790a1f5cadbc440841a98e6ab95b1ae9a7d175abe018be4512044",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:05:14.162Z"
+}

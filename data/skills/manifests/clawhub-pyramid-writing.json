@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71125,
+  "uuid": "skill-clawhub-pyramid-writing",
+  "skillKey": "clawhub-pyramid-writing",
+  "name": "金字塔写作法",
+  "summary": "金字塔原理（Pyramid Principle）写作与结构化表达工作流。用于把散乱内容改写成“先结论、后论据”的可汇报文稿（方案评审、周报、邮件、PRD 段落、演讲稿、技术传播），输出关键结论、分组论点（MECE）、证据与行动项，并对照目标做最终评估。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyramid_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yamasite",
+      "features": [
+        "金字塔原理（Pyramid Principle）写作与结构化表达工作流。用于把散乱内容改写成“先结论、后论据”的可汇报文稿（方案评审、周报、邮件、PRD 段落、演讲稿、技术传播），输出关键结."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pyramid-writing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10089260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pyramid-writing",
+      "url": "https://clawhub.ai/skills/pyramid-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyramid-writing",
+    "url": "https://clawhub.ai/skills/pyramid-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyramid-writing-df59bd4f0c545a02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pyramid-writing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pyramid-writing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a0c025030e5cf6b3673b651f60e0c5d4a5ee9f1cdb60fdf6ab2268bfb442d55",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:35:35.962Z"
+}

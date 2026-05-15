@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60466,
+  "uuid": "skill-clawhub-zshijie-liver",
+  "skillKey": "clawhub-zshijie-liver",
+  "name": "Zshijie Liver",
+  "summary": "Resolve Z视介频道直播请求到正确 cid 并打开对应直播页。Use when users ask to watch Z视介直播 or specific channels (例如 浙江卫视、钱江都市、经济生活、教科影视、民生休闲、新闻、少儿频道、浙江国际、好易购、之江纪录), or when users m...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zshijie_liver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jkbwfi",
+      "features": [
+        "Resolve Z视介频道直播请求到正确 cid 并打开对应直播页。Use when users ask to watch Z视介直播 or specific channels (例如 浙江."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zshijie-liver@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20609964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zshijie-liver",
+      "url": "https://clawhub.ai/skills/zshijie-liver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zshijie-liver",
+    "url": "https://clawhub.ai/skills/zshijie-liver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zshijie-liver-1afce0231b9871b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zshijie-liver@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-zshijie-liver-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9f9a97cdd1d2c14991e540ad0f822761f8db0ab27bc9cd6e8f7c50338748ec0",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:17:58.672Z"
+}

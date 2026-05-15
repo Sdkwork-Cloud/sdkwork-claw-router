@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-anycaption-summarizer@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_anycaption_summarizer",
+  "skill": {
+    "id": 50872,
+    "skillKey": "clawhub-youtube-anycaption-summarizer",
+    "name": "YouTube AnyCaption Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-anycaption-summarizer",
+    "url": "https://clawhub.ai/skills/youtube-anycaption-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-anycaption-summarizer-556e9ac0bfd6ffc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn YouTube videos into dependable markdown transcripts and polished summaries — even when caption coverage is messy. This skill works with manual closed ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arthurli202602-commits",
+      "userId": "s178jbt416qbq3rtkp2hwbkwbh83hyve",
+      "displayName": "arthurli202602-commits",
+      "image": "https://avatars.githubusercontent.com/u/261630090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1776373301652,
+      "changelog": "Refresh README, clean packaging artifacts, and publish latest skill improvements with minimal metadata churn.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:914d58e7301d83acc2713839f3317849ebf4e447a5ff8fdaeeab34cb05e79c91"
+}

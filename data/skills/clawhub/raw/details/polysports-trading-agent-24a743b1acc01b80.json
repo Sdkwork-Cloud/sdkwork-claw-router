@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "polysports-trading-agent",
+    "displayName": "polymarket-sports-trade",
+    "summary": "Conversational PolySports trading and OpenClaw automation through structured `/skills/v1` endpoints. Use when user needs to look up PolySports markets, inspe...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774185291145,
+    "updatedAt": 1777622444027
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774185291145,
+    "changelog": "Polysports-trading-agent 1.0.0 initial release:\n\n- Enables conversational PolySports trading and automation using structured `/skills/v1` endpoints.\n- Supports discovery, balance/auth checks, trading, monitoring, and workflow automation for PolySports markets only.\n- Enforces strict guardrails: always require explicit order size, user confirmation (unless delegated authority), and valid API key before trading.\n- Provides automated pregame scan, in-game monitoring, and postgame review with OpenClaw cron integration.\n- Keeps PolySports and Polymarket workflows fully separated for compliance and clarity.\n- Directs users to obtain API access via polysports.vip if missing; never infers critical parameters or executes ambiguous trades.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dreamcoin1998",
+    "userId": "s17cqt5t0zh19sdck8pyp8vfzh845rtd",
+    "displayName": "Jerry",
+    "image": "https://avatars.githubusercontent.com/u/47708051?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622444027
+  }
+}

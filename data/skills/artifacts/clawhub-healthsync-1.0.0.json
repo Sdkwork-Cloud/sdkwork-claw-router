@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthsync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthsync",
+  "skill": {
+    "id": 20392,
+    "skillKey": "clawhub-healthsync",
+    "name": "healthsync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthsync",
+    "url": "https://clawhub.ai/skills/healthsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthsync-92bc78e561332920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Queries Apple Health data stored in a local SQLite database. Use this skill to read heart rate, steps, SpO2, VO2 Max, sleep, workouts, resting heart rate, HR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bro3886",
+      "userId": "s17015vd5hd8y9235zr73g4q41840bbk",
+      "displayName": "Siddhartha Varma",
+      "image": "https://avatars.githubusercontent.com/u/39856034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772286433013,
+      "changelog": "healthsync 1.0.0 — Initial Release\n\n- Query Apple Health data from a local SQLite database using the healthsync CLI or direct SQLite.\n- Supports read-only access to heart rate, steps, SpO2, VO2 Max, sleep, workouts, energy, body metrics, mobility, running metrics, mindful sessions, wrist temperature, and more.\n- CLI offers easy commands for filtering, date ranges, and multiple formats (table, JSON, CSV).\n- Database schema and all available tables and data types documented in detail.\n- Strictly enforces read-only access; no write, update, or delete operations allowed.\n- Installation and quick start instructions included for users on macOS and Linux.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fcf11bda80ac9a703723f43c91138c52fddd1fb2f49f915f7d821b0e51237954"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36882,
+  "uuid": "skill-clawhub-alibabacloud-sas-overview",
+  "skillKey": "clawhub-alibabacloud-sas-overview",
+  "name": "Alibabacloud Sas Overview",
+  "summary": "Alibaba Cloud Security Center (SAS) Overview Data Query Skill. Retrieves security score, asset status, risk governance, asset risk trends, and billing info....",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_sas_overview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Security Center (SAS) Overview Data Query Skill",
+        "Retrieves security score, asset status, risk governance, asset risk trends, and billing info...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-sas-overview@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-sas-overview",
+      "url": "https://clawhub.ai/skills/alibabacloud-sas-overview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-sas-overview",
+    "url": "https://clawhub.ai/skills/alibabacloud-sas-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-sas-overview-1483c11960c982ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-sas-overview@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-sas-overview-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74cd95241374a7bdc06e7ff831e2a129aa4a7c88d9be9dc863b02ef6c8ca535e",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:17:26.517Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29867,
+  "uuid": "skill-clawhub-openclaw-md2pdf",
+  "skillKey": "clawhub-openclaw-md2pdf",
+  "name": "md2pdf (Pandoc + Typst)",
+  "summary": "Convert Markdown files to beautifully formatted PDFs using Pandoc and Typst. Supports headings, tables, code blocks, links, emojis, and GitHub-style formatti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_md2pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hansschinkenwurst78-dev",
+      "features": [
+        "Convert Markdown files to beautifully formatted PDFs using Pandoc and Typst",
+        "Supports headings, tables, code blocks, links, emojis, and GitHub-style formatti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-md2pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268605143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-md2pdf",
+      "url": "https://clawhub.ai/skills/openclaw-md2pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-md2pdf",
+    "url": "https://clawhub.ai/skills/openclaw-md2pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-md2pdf-73418592275c4a03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-md2pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-md2pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6278872c4a3e2ffa14f3c30b061f2c9e77106ff6f4de7e818e586af49b960825",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:47:15.473Z"
+}

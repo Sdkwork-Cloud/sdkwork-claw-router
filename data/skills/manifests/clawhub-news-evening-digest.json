@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60145,
+  "uuid": "skill-clawhub-news-evening-digest",
+  "skillKey": "clawhub-news-evening-digest",
+  "name": "News Evening Digest - 新闻晚报",
+  "summary": "每天晚上 8 点自动推送全球新闻晚报到 QQ 和飞书，参考 World Monitor 数据源",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_evening_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "每天晚上 8 点自动推送全球新闻晚报到 QQ 和飞书，参考 World Monitor 数据源"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-evening-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-evening-digest",
+      "url": "https://clawhub.ai/skills/news-evening-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-evening-digest",
+    "url": "https://clawhub.ai/skills/news-evening-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-evening-digest-84b1042844f82bf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-evening-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-evening-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e152bda71dfae78a8b7f4beb90ab7d7bdc1959417a560f6133e4c2b2a12762f",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:25:38.645Z"
+}

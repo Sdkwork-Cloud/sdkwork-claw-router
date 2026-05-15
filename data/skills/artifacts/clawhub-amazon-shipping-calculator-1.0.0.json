@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-shipping-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_shipping_calculator",
+  "skill": {
+    "id": 18972,
+    "skillKey": "clawhub-amazon-shipping-calculator",
+    "name": "Amazon Shipping Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-shipping-calculator",
+    "url": "https://clawhub.ai/skills/amazon-shipping-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-shipping-calculator-d51a13acec4e234e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate Amazon shipping and fulfillment costs for FBA and FBM. Dimensional weight, storage fees, removal fees, and long-term storage cost estimation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774417339218,
+      "changelog": "- Initial release of amazon-shipping-calculator.\n- Calculates Amazon FBA and FBM shipping and fulfillment costs including dimensional weight, storage fees, removal fees, and long-term storage estimates.\n- Supports multiple platforms: Amazon, Shopify, WooCommerce, Walmart, TikTok Shop, Etsy, eBay, and BigCommerce.\n- Provides a structured process for collecting user info, clarifying with follow-up questions, and delivering actionable recommendations.\n- Compares FBA vs FBM costs and includes inbound shipping, storage, and removal fee calculations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eab17587d12d0b4a95710cca642214a87357da0a9b19e493ea6f4a69f5aa02f"
+}

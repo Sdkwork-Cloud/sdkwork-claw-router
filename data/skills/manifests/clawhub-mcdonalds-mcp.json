@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66371,
+  "uuid": "skill-clawhub-mcdonalds-mcp",
+  "skillKey": "clawhub-mcdonalds-mcp",
+  "name": "麦当劳MCP服务集成，支持点餐、优惠券、麦麦商城、积分兑换等功能。",
+  "summary": "麦当劳MCP服务集成，支持点餐、优惠券、麦麦商城、积分兑换等功能。需要用户先在 https://open.mcd.cn 申请MCP Token。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonalds_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jessiondai",
+      "features": [
+        "麦当劳MCP服务集成，支持点餐、优惠券、麦麦商城、积分兑换等功能。需要用户先在 https://open.mcd.cn 申请MCP Token。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcdonalds-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45040101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcdonalds-mcp",
+      "url": "https://clawhub.ai/skills/mcdonalds-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonalds-mcp",
+    "url": "https://clawhub.ai/skills/mcdonalds-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonalds-mcp-577dd6e0707a278c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcdonalds-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcdonalds-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2de5c7b002a505184c09682d6417f711f0bd59d349ad2167097d7f55f981b845",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:30:21.657Z"
+}

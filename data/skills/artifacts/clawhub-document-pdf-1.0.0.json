@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_pdf",
+  "skill": {
+    "id": 33546,
+    "skillKey": "clawhub-document-pdf",
+    "name": "Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-pdf",
+    "url": "https://clawhub.ai/skills/document-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-pdf-2177749b4b1b8055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kidaiangel",
+      "userId": "publishers:kidaiangel",
+      "displayName": "kidaiangel",
+      "image": "https://avatars.githubusercontent.com/u/26027335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773925067103,
+      "changelog": "- Initial release of comprehensive PDF processing toolkit.\n- Supports text and table extraction, PDF creation, merging, splitting, and handling forms.\n- Includes Python and command-line recipes for common operations.\n- Quick start guides and advanced usage references provided for popular libraries.\n- Documentation covers both Python libraries (pypdf, pdfplumber, reportlab) and command-line tools (qpdf, pdftk, pdftotext).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98923e1549d6423b9aa4703c0224a6c5022c7c61a3e648710a1eca5c182c678a"
+}

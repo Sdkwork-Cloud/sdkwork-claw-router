@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_query",
+  "skill": {
+    "id": 18102,
+    "skillKey": "clawhub-taobao-query",
+    "name": "Taobao Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-query",
+    "url": "https://clawhub.ai/skills/taobao-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-query-26ce40dc9a83c9fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Taobao product prices and information through MCP (Model Context Protocol). Use when the user asks about product prices, searches for items on Taobao,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evensix66",
+      "userId": "s1703xrpyp3rk1539c6kr5k9g184cy8s",
+      "displayName": "EvenSix66",
+      "image": "https://avatars.githubusercontent.com/u/108226339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773983624978,
+      "changelog": "Initial release: Taobao product price query with MCP support. Features: specific model search, category analysis, cart/order viewing, smart connection handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03fa3b59337a60a2c80069fc303d2597d3288ff913ad499241a934b14664748c"
+}

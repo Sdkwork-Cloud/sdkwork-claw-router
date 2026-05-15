@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27187,
+  "uuid": "skill-clawhub-conversation-memory-sync",
+  "skillKey": "clawhub-conversation-memory-sync",
+  "name": "Conversation Memory Sync",
+  "summary": "Automatically syncs and maintains detailed conversation logs and activity digests across agent sessions for persistent memory and context recall.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_memory_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harvnk",
+      "features": [
+        "Automatically syncs and maintains detailed conversation logs and activity digests across agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-memory-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265591452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-memory-sync",
+      "url": "https://clawhub.ai/skills/conversation-memory-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-memory-sync",
+    "url": "https://clawhub.ai/skills/conversation-memory-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-memory-sync-1d3b7dc2a94058f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-memory-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-memory-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4957ee627aa0583511e8b82c61e627193458d205b2bf5de70569d996b4287267",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:00:51.436Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67514,
+  "uuid": "skill-clawhub-email-quote-automation",
+  "skillKey": "clawhub-email-quote-automation",
+  "name": "email-quote-automation",
+  "summary": "自动收取奖牌定制客户询价邮件，翻译非中文内容，计算报价并生成专业回复模板，支持本地存档和定时处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_quote_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fankcoder",
+      "features": [
+        "自动收取奖牌定制客户询价邮件，翻译非中文内容，计算报价并生成专业回复模板，支持本地存档和定时处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-quote-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12791032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-quote-automation",
+      "url": "https://clawhub.ai/skills/email-quote-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-quote-automation",
+    "url": "https://clawhub.ai/skills/email-quote-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-quote-automation-976100544ab2c46a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-quote-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-quote-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b939ef94df0d564233c50f4c74834830a6ed425f2104da31ed3c4bab86ecf7cb",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:53:51.340Z"
+}

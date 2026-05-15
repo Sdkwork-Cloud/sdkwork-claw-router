@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-requirement-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_requirement_review",
+  "skill": {
+    "id": 70547,
+    "skillKey": "clawhub-flight-requirement-review",
+    "name": "机票产品需求评审"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-requirement-review",
+    "url": "https://clawhub.ai/skills/flight-requirement-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-requirement-review-68709d89c27e6211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "机票产品需求评审 Agent。对前端、后端、运营类机票需求文档进行结构化评审打分，含独立的流程图治理评审（去If化、卫语句、决策表、FSM、泳道图、分层建模）。输入需求文档（markdown/图片/HTML），输出分项评分、评语和改进建议。使用场景：用户说\"评审需求\"、\"审需求文档\"、\"给需求打分\"、\"需求评审\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arisefx",
+      "userId": "s17cz8db7y50067ts29cmqaxqx83pd5k",
+      "displayName": "AriseFX",
+      "image": "https://avatars.githubusercontent.com/u/41415014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588990279,
+      "changelog": "flight-requirement-review 1.0.0 – Initial Release\n\n- Introduces a structured review agent for flight product requirements (frontend, backend, operations).\n- Supports input in Markdown, images, and HTML; outputs detailed, scored review reports.\n- Includes both general and specialized scoring dimensions for each requirement type.\n- Features independent, standards-based flowchart/logic modeling review (with clear scoring rules).\n- Offers two modes: full requirement review and standalone flowchart review.\n- Provides actionable feedback: scores, comments, key issues, improvement suggestions, and highlights.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69fa67677b4b838f8c971ea5cb0d55e5fcdd54ced44e7cde6af61bf5fa7e616e"
+}

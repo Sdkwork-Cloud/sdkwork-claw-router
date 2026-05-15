@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen3-audio@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen3_audio",
+  "skill": {
+    "id": 20415,
+    "skillKey": "clawhub-qwen3-audio",
+    "name": "Qwen3 Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen3-audio",
+    "url": "https://clawhub.ai/skills/qwen3-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen3-audio-14b09de1dab7bef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance audio library for Apple Silicon with text-to-speech (TTS) and speech-to-text (STT)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darknoah",
+      "userId": "s17ej6pe6hc67ygkxpdwcwpfd583gryy",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/13805682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772602178164,
+      "changelog": "Voice profile management updated to require and support style descriptions.\n\n- Voice profiles now include a mandatory instruct (style description) field.\n- voices/ directory structure updated: each voice now contains ref_instruct.txt.\n- voice create command requires --instruct to describe voice style (used with VoiceDesign model).\n- Listing or using voices now shows and applies the instruct field automatically.\n- Documentation updated to reflect new requirements and workflow for voice profile creation and use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14f42aaa508455a361f46514cf2ec99b9ad28d36be501bfe9c8777ce3fd8410b"
+}

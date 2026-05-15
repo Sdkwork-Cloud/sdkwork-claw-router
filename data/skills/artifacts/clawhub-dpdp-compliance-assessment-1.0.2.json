@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dpdp-compliance-assessment@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dpdp_compliance_assessment",
+  "skill": {
+    "id": 24153,
+    "skillKey": "clawhub-dpdp-compliance-assessment",
+    "name": "Dpdp Compliance Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dpdp-compliance-assessment",
+    "url": "https://clawhub.ai/skills/dpdp-compliance-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dpdp-compliance-assessment-6bfb734e038e1a41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess compliance with India's Digital Personal Data Protection (DPDP) Act 2023 across 7 domains with 41 controls. Use when evaluating DPDP readiness, Indian..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773630597245,
+      "changelog": "- Documentation reverted to a previous version; no functional or API changes.\n- Content in SKILL.md was reverted but no new instructions, fields, or outputs were added or removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:199d9d36e63baa8685e679264e7c33fd365b87692f39fb60525e1a010bd66c1d"
+}

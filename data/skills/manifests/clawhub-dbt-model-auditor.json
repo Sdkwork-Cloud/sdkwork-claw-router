@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48567,
+  "uuid": "skill-clawhub-dbt-model-auditor",
+  "skillKey": "clawhub-dbt-model-auditor",
+  "name": "Dbt Model Auditor",
+  "summary": "Audit dbt (data build tool) projects for model quality, test coverage, documentation completeness, performance, and adherence to best practices. Checks namin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbt_model_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit dbt (data build tool) projects for model quality, test coverage, documentation completene.",
+        "Checks namin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dbt-model-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dbt-model-auditor",
+      "url": "https://clawhub.ai/skills/dbt-model-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbt-model-auditor",
+    "url": "https://clawhub.ai/skills/dbt-model-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbt-model-auditor-a3a1690f34511d71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dbt-model-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dbt-model-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c55eaa76d16deef598dd814210760fbfb70b0d88250e1d1c4d399887a63499",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:48:54.996Z"
+}

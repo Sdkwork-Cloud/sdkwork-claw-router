@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jobtread-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobtread_api",
+  "skill": {
+    "id": 14444,
+    "skillKey": "clawhub-jobtread-api",
+    "name": "JobTread Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobtread-api",
+    "url": "https://clawhub.ai/skills/jobtread-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobtread-api-0b343b9b3535a07f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate JobTread via its Pave API to create, read, update, and manage accounts, jobs, documents, tasks, locations, custom fields, and webhooks programmatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brokenwatch24",
+      "userId": "publishers:brokenwatch24",
+      "displayName": "BrokenWatchCEO",
+      "image": "https://avatars.githubusercontent.com/u/110206505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771016982264,
+      "changelog": "JobTread API skill v1.0.0 initial release:\n\n- Provides full access to JobTread through the Pave Query API (`/pave`) using flexible POST-based queries.\n- Supports creation and management of accounts, jobs, documents, tasks, locations, custom fields, and webhooks.\n- Features granular field selection, GraphQL-like filtering, sorting, grouping, and aggregation.\n- Guides for secure grant key setup, token-based authentication, and webhook management included.\n- Example automation recipes and troubleshooting tips provided for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:acb2a387379a3ebc6c99e022cf7739259a8058e639c1c3676c3386c65034d574"
+}

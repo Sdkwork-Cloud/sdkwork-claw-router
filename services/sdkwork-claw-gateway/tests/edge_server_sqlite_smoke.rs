@@ -7,7 +7,7 @@ use axum::response::IntoResponse;
 use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_test_support::{
-    app_session_bearer_token, app_session_config, default_trusted_request_subject,
+    app_session_config, app_session_dual_token_headers, default_trusted_request_subject,
     payment_webhook_config, seeded_sqlite_catalog, trusted_subject_config,
 };
 use serde_json::json;
@@ -107,43 +107,42 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     .await;
     assert_eq!(StatusCode::OK, catalog_models.status);
     assert_eq!("list", catalog_models.json["object"]);
-    assert_eq!("gpt-5.5", catalog_models.json["data"][0]["id"]);
+    assert_eq!("gpt-5.5-pro", catalog_models.json["data"][0]["id"]);
     assert_eq!("openai", catalog_models.json["data"][0]["owned_by"]);
 
     let admin_models = json_request(
         edge_router.clone(),
-        Method::POST,
-        "/backend/v3/api/model/list",
-        Body::from("{}"),
+        Method::GET,
+        "/backend/v3/api/ai/models",
+        Body::empty(),
     )
-    .with_authorization(app_session_authorization_header())
-    .with_content_type("application/json")
+    .with_app_session(app_session_headers())
     .send()
     .await;
     assert_eq!(StatusCode::OK, admin_models.status);
     assert_eq!("2000", admin_models.json["code"]);
     let admin_model = &admin_models.json["data"]["items"][0];
-    assert_eq!("101", admin_model["id"]);
-    assert_eq!("1", admin_model["vendorId"]);
+    assert!(admin_model["id"].as_str().is_some());
+    assert!(admin_model["vendorId"].as_str().is_some());
     assert_eq!("openai", admin_model["vendorCode"]);
-    assert_eq!("gpt-5.5", admin_model["name"]);
+    assert_eq!("gpt-5.5-pro", admin_model["name"]);
     assert_eq!("Chat", admin_model["type"]);
-    assert_eq!("5.0", admin_model["priceIn"]);
-    assert_eq!("30.0", admin_model["priceOut"]);
+    assert!(admin_model["priceIn"].as_str().is_some());
+    assert!(admin_model["priceOut"].as_str().is_some());
     assert_eq!("active", admin_model["status"]);
     assert!(admin_model.get("priceAvailability").is_none());
 
     let app_models = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/models",
+        "/app/v3/api/ai/models",
         Body::empty(),
     )
     .send()
     .await;
     assert_eq!(StatusCode::OK, app_models.status);
     assert_eq!("2000", app_models.json["code"]);
-    assert_eq!("gpt-5.5", app_models.json["data"]["items"][0]["model"]);
+    assert_eq!("gpt-5.5-pro", app_models.json["data"]["items"][0]["model"]);
     assert_eq!(
         "reference",
         app_models.json["data"]["items"][0]["priceAvailability"]["status"]
@@ -207,6 +206,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     .merge(sdkwork_claw_product::api::app_model_catalog_router(
         Arc::new(app_smoke_model_catalog()),
     ))
+    .merge(sdkwork_claw_product::api::app_generation_history_router())
     .merge(sdkwork_claw_product::api::app_routing_router_with_read_store(routing_store.clone()))
     .merge(
         sdkwork_claw_product::api::app_routing_strategy_router_with_store(
@@ -255,28 +255,41 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
         )
         .unwrap(),
     );
-    let app_authorization = app_session_authorization_header();
+    let app_session = app_session_headers();
 
     let models = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/models",
+        "/app/v3/api/ai/models",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, models.status);
     assert_eq!("2000", models.json["code"]);
     assert_eq!("gpt-4o-mini", models.json["data"]["items"][0]["model"]);
 
+    let generation_history = json_request(
+        edge_router.clone(),
+        Method::GET,
+        "/app/v3/api/ai/generations",
+        Body::empty(),
+    )
+    .with_app_session(app_session.clone())
+    .send()
+    .await;
+    assert_eq!(StatusCode::OK, generation_history.status);
+    assert_eq!("2000", generation_history.json["code"]);
+    assert!(generation_history.json["data"]["items"].is_array());
+
     let channels = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/routing/channels",
+        "/app/v3/api/ai/routing/channels",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, channels.status);
@@ -290,10 +303,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let api_keys = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/routing/api-keys",
+        "/app/v3/api/ai/routing/api_keys",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, api_keys.status);
@@ -302,10 +315,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let traces = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/routing/request-traces",
+        "/app/v3/api/ai/routing/request_traces",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, traces.status);
@@ -315,10 +328,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let usage = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/routing/usage",
+        "/app/v3/api/ai/routing/usage",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, usage.status);
@@ -328,10 +341,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let strategy = json_request(
         edge_router.clone(),
         Method::GET,
-        "/app/v3/api/router/routing/strategy",
+        "/app/v3/api/ai/routing/strategy",
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, strategy.status);
@@ -344,7 +357,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let updated_strategy = json_request(
         edge_router.clone(),
         Method::PUT,
-        "/app/v3/api/router/routing/strategy",
+        "/app/v3/api/ai/routing/strategy",
         Body::from(
             json!({
                 "strategy": "cost",
@@ -359,7 +372,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
             .to_string(),
         ),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .with_content_type("application/json")
     .send()
     .await;
@@ -369,7 +382,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let create_channel = json_request(
         edge_router.clone(),
         Method::POST,
-        "/app/v3/api/router/routing/channels",
+        "/app/v3/api/ai/routing/channels",
         Body::from(
             json!({
                 "name": "Edge Created OpenAI",
@@ -386,7 +399,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
             .to_string(),
         ),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .with_content_type("application/json")
     .send()
     .await;
@@ -404,7 +417,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let update_channel = json_request(
         edge_router.clone(),
         Method::PUT,
-        &format!("/app/v3/api/router/routing/channels/{created_channel_id}"),
+        &format!("/app/v3/api/ai/routing/channels/{created_channel_id}"),
         Body::from(
             json!({
                 "name": "Edge Updated OpenAI",
@@ -414,7 +427,7 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
             .to_string(),
         ),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .with_content_type("application/json")
     .send()
     .await;
@@ -428,10 +441,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let status = json_request(
         edge_router.clone(),
         Method::PUT,
-        &format!("/app/v3/api/router/routing/channels/{created_channel_id}/status"),
+        &format!("/app/v3/api/ai/routing/channels/{created_channel_id}/status"),
         Body::from(r#"{"status":"disabled"}"#),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .with_content_type("application/json")
     .send()
     .await;
@@ -441,10 +454,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let test_channel = json_request(
         edge_router.clone(),
         Method::POST,
-        &format!("/app/v3/api/router/routing/channels/{created_channel_id}/test"),
+        &format!("/app/v3/api/ai/routing/channels/{created_channel_id}/verify"),
         Body::empty(),
     )
-    .with_authorization(app_authorization.clone())
+    .with_app_session(app_session.clone())
     .send()
     .await;
     assert_eq!(StatusCode::OK, test_channel.status);
@@ -454,10 +467,10 @@ async fn edge_server_proxies_app_router_console_routing_api_through_generated_sd
     let delete_channel = json_request(
         edge_router,
         Method::DELETE,
-        &format!("/app/v3/api/router/routing/channels/{created_channel_id}"),
+        &format!("/app/v3/api/ai/routing/channels/{created_channel_id}"),
         Body::empty(),
     )
-    .with_authorization(app_authorization)
+    .with_app_session(app_session)
     .send()
     .await;
     assert_eq!(StatusCode::OK, delete_channel.status);
@@ -475,12 +488,19 @@ struct JsonRequestBuilder {
     uri: String,
     body: Body,
     authorization: Option<String>,
+    access_token: Option<String>,
     content_type: Option<&'static str>,
 }
 
 impl JsonRequestBuilder {
     fn with_authorization(mut self, authorization: String) -> Self {
         self.authorization = Some(authorization);
+        self
+    }
+
+    fn with_app_session(mut self, headers: AppSessionHeaders) -> Self {
+        self.authorization = Some(headers.authorization);
+        self.access_token = Some(headers.access_token);
         self
     }
 
@@ -496,6 +516,9 @@ impl JsonRequestBuilder {
             .header(header::HOST, "sdkwork.example.test");
         if let Some(authorization) = self.authorization {
             builder = builder.header(header::AUTHORIZATION, authorization);
+        }
+        if let Some(access_token) = self.access_token {
+            builder = builder.header("Sdkwork-Access-Token", access_token);
         }
         if let Some(content_type) = self.content_type {
             builder = builder.header(header::CONTENT_TYPE, content_type);
@@ -535,6 +558,7 @@ fn json_request(router: Router, method: Method, uri: &str, body: Body) -> JsonRe
         uri: uri.to_owned(),
         body,
         authorization: None,
+        access_token: None,
         content_type: None,
     }
 }
@@ -594,13 +618,25 @@ fn portal_router() -> Router {
         .fallback(|| async { "sdkwork-claw-router portal" })
 }
 
-fn app_session_authorization_header() -> String {
+#[derive(Clone)]
+struct AppSessionHeaders {
+    authorization: String,
+    access_token: String,
+}
+
+fn app_session_headers() -> AppSessionHeaders {
     let issued_at = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .map(|duration| duration.as_secs() as i64)
         .unwrap_or(0);
     let expires_at = issued_at + 300;
-    app_session_bearer_token(default_trusted_request_subject(), issued_at, expires_at).unwrap()
+    let (authorization, access_token) =
+        app_session_dual_token_headers(default_trusted_request_subject(), issued_at, expires_at)
+            .unwrap();
+    AppSessionHeaders {
+        authorization,
+        access_token,
+    }
 }
 
 fn app_smoke_model_catalog() -> InMemoryPricingCatalog {

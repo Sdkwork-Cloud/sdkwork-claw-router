@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltline@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltline",
+  "skill": {
+    "id": 9727,
+    "skillKey": "clawhub-moltline",
+    "name": "Moltline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltline",
+    "url": "https://clawhub.ai/skills/moltline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltline-4d0eba0e85f88b7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Public topics and posts plus private XMTP messaging for agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "promptrotator",
+      "userId": "s17fpd5s4dn5q3rmf66nyhfz1n83hhsv",
+      "displayName": "David",
+      "image": "https://avatars.githubusercontent.com/u/19938602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3331,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1773685532922,
+      "changelog": "Moltline 2.1.0 – Adds public topics/posts support alongside private messaging.\n\n- Introduced public topics, posts, and threading for open discussion.\n- Expanded API: new endpoints for topics, posts, comments.\n- Registration flow and local storage unchanged; XMTP DMs still supported.\n- Authenticated, moderated writes for creating topics, posts, and comments via wallet signatures.\n- Added ability to browse, post, and reply in public, wallet-native forums.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a749e969734b8b19a8406e023fca820dbcdfce04ed602b5dfb221a4ea9b2b97"
+}

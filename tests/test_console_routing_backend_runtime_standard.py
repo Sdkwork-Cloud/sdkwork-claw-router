@@ -25,10 +25,10 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("app_routing_router_with_read_store", product_api_mod)
 
         for api_path in [
-            "/app/v3/api/router/routing/channels",
-            "/app/v3/api/router/routing/api-keys",
-            "/app/v3/api/router/routing/request-traces",
-            "/app/v3/api/router/routing/usage",
+            "/app/v3/api/ai/routing/channels",
+            "/app/v3/api/ai/routing/api_keys",
+            "/app/v3/api/ai/routing/request_traces",
+            "/app/v3/api/ai/routing/usage",
         ]:
             self.assertIn(api_path, app_routing)
 
@@ -288,10 +288,10 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(export_name, port)
 
         for api_path in [
-            "/app/v3/api/router/routing/channels",
-            "/app/v3/api/router/routing/channels/{channel_id}",
-            "/app/v3/api/router/routing/channels/{channel_id}/status",
-            "/app/v3/api/router/routing/channels/{channel_id}/test",
+            "/app/v3/api/ai/routing/channels",
+            "/app/v3/api/ai/routing/channels/{channel_id}",
+            "/app/v3/api/ai/routing/channels/{channel_id}/status",
+            "/app/v3/api/ai/routing/channels/{channel_id}/verify",
         ]:
             self.assertIn(api_path, router)
 
@@ -366,13 +366,13 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         for operation_marker, schema_name in [
-            ("api_path: /app/v3/api/router/routing/channels", "name: RoutingChannelsResponse"),
-            ("api_path: /app/v3/api/router/routing/api-keys", "name: RoutingApiKeysResponse"),
+            ("api_path: /app/v3/api/ai/routing/channels", "name: RoutingChannelsResponse"),
+            ("api_path: /app/v3/api/ai/routing/api_keys", "name: RoutingApiKeysResponse"),
             (
-                "api_path: /app/v3/api/router/routing/request-traces",
+                "api_path: /app/v3/api/ai/routing/request_traces",
                 "name: RoutingRequestTracesResponse",
             ),
-            ("api_path: /app/v3/api/router/routing/usage", "name: RoutingUsageSnapshot"),
+            ("api_path: /app/v3/api/ai/routing/usage", "name: RoutingUsageSnapshot"),
         ]:
             operation_index = contract.index(operation_marker)
             schema_index = contract.index(schema_name, operation_index)

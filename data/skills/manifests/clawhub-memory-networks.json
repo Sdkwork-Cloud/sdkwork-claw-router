@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60407,
+  "uuid": "skill-clawhub-memory-networks",
+  "skillKey": "clawhub-memory-networks",
+  "name": "Memory Networks",
+  "summary": "基于 Memory Networks 论文的记忆推理系统，让记忆能够参与推理过程",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_networks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1580021414-afk",
+      "features": [
+        "基于 Memory Networks 论文的记忆推理系统，让记忆能够参与推理过程"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-networks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264829074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-networks",
+      "url": "https://clawhub.ai/skills/memory-networks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-networks",
+    "url": "https://clawhub.ai/skills/memory-networks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-networks-622351cedd9c01d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-networks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-networks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e232895e8d747bb7f1b51f9144863832b2ea06603673ee218be6203bc31335d",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:11:27.652Z"
+}

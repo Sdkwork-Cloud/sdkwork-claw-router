@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50199,
+  "uuid": "skill-clawhub-portfolio-tracking-skill",
+  "skillKey": "clawhub-portfolio-tracking-skill",
+  "name": "portfolio tracking",
+  "summary": "An investment portfolio tracker that runs entirely locally. All data stays in ~/.portfolio-tracker/.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_tracking_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aigeneralstore",
+      "features": [
+        "An investment portfolio tracker that runs entirely locally",
+        "All data stays in ~/.portfolio-tracker/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portfolio-tracking-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216262123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portfolio-tracking-skill",
+      "url": "https://clawhub.ai/skills/portfolio-tracking-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-tracking-skill",
+    "url": "https://clawhub.ai/skills/portfolio-tracking-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-tracking-skill-a2df36d8106a6c79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portfolio-tracking-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-portfolio-tracking-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4f4bce054430a50c2db387c1cb2de16d35a374301eddd4c6e2357212d195ffa",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:00:00.604Z"
+}

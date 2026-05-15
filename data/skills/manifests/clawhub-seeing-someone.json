@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54037,
+  "uuid": "skill-clawhub-seeing-someone",
+  "skillKey": "clawhub-seeing-someone",
+  "name": "Seeing Someone",
+  "summary": "Early-stage rapport—phase updates, question relay, and summaries while things are still forming. Same official AILove agent API as loveq.",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seeing_someone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "许晨阳",
+      "features": [
+        "Early-stage rapport—phase updates, question relay, and summaries while things are still forming",
+        "Same official AILove agent API as loveq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seeing-someone@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92981790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seeing-someone",
+      "url": "https://clawhub.ai/skills/seeing-someone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seeing-someone",
+    "url": "https://clawhub.ai/skills/seeing-someone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seeing-someone-ec0d10fffa3a5d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seeing-someone@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-seeing-someone-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:480b13e6263de9e785abcd1bf029d110a1b8b6b8f9eff0a33a3fbff83b12dd95",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:34:37.144Z"
+}

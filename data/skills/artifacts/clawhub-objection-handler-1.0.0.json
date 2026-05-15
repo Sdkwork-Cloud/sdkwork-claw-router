@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/objection-handler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.objection_handler",
+  "skill": {
+    "id": 16834,
+    "skillKey": "clawhub-objection-handler",
+    "name": "Objection Handler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "objection-handler",
+    "url": "https://clawhub.ai/skills/objection-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/objection-handler-b26f2da6ff265608.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles sales objections with proven response frameworks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 835,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770950382780,
+      "changelog": "- Initial release of Objection Handler skill.\n- Supports handling sales objections using the LAER framework: Listen, Acknowledge, Explore, Respond.\n- Provides specific example responses for common objection categories: Price, Timing, Trust/Authority, Status Quo, and Brush-Offs.\n- Includes clear rules for ethical objection handling—focus on understanding, not pressuring.\n- Offers a quick-reference format for responding to objections, including follow-up questions and next steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b0b05d150b580032771b3037fb10d5603fa96b004c849781da26dff274a12100"
+}

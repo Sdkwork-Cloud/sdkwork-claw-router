@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reach",
+  "skill": {
+    "id": 8393,
+    "skillKey": "clawhub-agent-reach",
+    "name": "Agent Reach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reach",
+    "url": "https://clawhub.ai/skills/agent-reach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reach-9eaf81a370cf67d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent eyes to see the entire internet. 7500+ GitHub stars. Search and read 14 platforms: Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panniantong",
+      "userId": "publishers:panniantong",
+      "displayName": "Pnant",
+      "image": "https://avatars.githubusercontent.com/u/73925474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 12364,
+      "installsAllTime": 559,
+      "installsCurrent": 534,
+      "stars": 18,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773124885318,
+      "changelog": "14 channels, 7500+ GitHub stars, homepage link, updated descriptions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbfa0721f4253b416dd5a26f4688db042e19adc50eabcc676084f2760e8038b2"
+}

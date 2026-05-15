@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_api",
+  "skill": {
+    "id": 59875,
+    "skillKey": "clawhub-qwen-api",
+    "name": "Qwen Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-api",
+    "url": "https://clawhub.ai/skills/qwen-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-api-64b1a280d204a13a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通义千问 API 开发助手，精通 Qwen 模型调用、DashScope SDK、多模态、Agent 开发"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774181652805,
+      "changelog": "通义千问 API 接入助手首发版本。\n\n- 提供阿里云百炼/DashScope Qwen 模型详细接入指南\n- 支持多种模型能力说明（包括推理、视觉、音频、长文本等）\n- 展示兼容 OpenAI SDK、如何多模态调用、函数调用\n- 涵盖国际版内容审核绕过方法\n- 支持超长文档与文件上传调用\n- 包含详细 API 端点和定价信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac11c41b71a564cc5c55c4d37359e2957204f6d02843861907d51f19dc19637d"
+}

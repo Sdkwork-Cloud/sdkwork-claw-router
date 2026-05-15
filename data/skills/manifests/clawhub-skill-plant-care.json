@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43301,
+  "uuid": "skill-clawhub-skill-plant-care",
+  "skillKey": "clawhub-skill-plant-care",
+  "name": "Skill Plant Care",
+  "summary": "Identify plants from photos and provide detailed care guidance including environmental suitability, watering, lighting, soil, temperature, fertilization, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_plant_care",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phal studio",
+      "features": [
+        "Identify plants from photos and provide detailed care guidance including environmental suitabil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-plant-care@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-plant-care",
+      "url": "https://clawhub.ai/skills/skill-plant-care"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-plant-care",
+    "url": "https://clawhub.ai/skills/skill-plant-care",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-plant-care-c68a34f8d68dfca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-plant-care@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-plant-care-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f79a6e16db3eabe1ea13d731a2c92c905993504997100f2a4372bfc01d32a7a0",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:28:43.058Z"
+}

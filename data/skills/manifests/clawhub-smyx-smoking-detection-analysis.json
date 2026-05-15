@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57934,
+  "uuid": "skill-clawhub-smyx-smoking-detection-analysis",
+  "skillKey": "clawhub-smyx-smoking-detection-analysis",
+  "name": "公共场所吸烟行为智能检测技能",
+  "summary": "Automatically detects smoking behavior in target areas based on computer vision; supports real-time detection of video streams, images, and video files; iden...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_smoking_detection_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Automatically detects smoking behavior in target areas based on computer vision",
+        "supports real-time detection of video streams, images, and video files"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-smoking-detection-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-smoking-detection-analysis",
+      "url": "https://clawhub.ai/skills/smyx-smoking-detection-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-smoking-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-smoking-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-smoking-detection-analysis-61b05df29f642b7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-smoking-detection-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-smoking-detection-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25d6e0d813881997849bc0b4d7f3f88c812e9ccfa2b5ee9cee5301723651cd1d",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T15:34:41.584Z"
+}

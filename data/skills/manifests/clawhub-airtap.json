@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20037,
+  "uuid": "skill-clawhub-airtap",
+  "skillKey": "clawhub-airtap",
+  "name": "Airtap: Every claw now has a phone",
+  "summary": "Use this skill when the user wants to operate Airtap or complete a request through a mobile app on an Airtap device. It lists receivers and models, creates A...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airtap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skills-airtap",
+      "features": [
+        "Use this skill when the user wants to operate Airtap or complete a request through a mobile app.",
+        "It lists receivers and models, creates A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airtap@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6265636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airtap",
+      "url": "https://clawhub.ai/skills/airtap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airtap",
+    "url": "https://clawhub.ai/skills/airtap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airtap-e15297d1cd4b2238.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airtap@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-airtap-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab16cbc7da0e5287ede7b7936c8d48ca80d66a781033c046972cbf1bcbfdc2f1",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T13:07:08.276Z"
+}

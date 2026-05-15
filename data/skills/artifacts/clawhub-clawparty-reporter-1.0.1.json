@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawparty-reporter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawparty_reporter",
+  "skill": {
+    "id": 67817,
+    "skillKey": "clawhub-clawparty-reporter",
+    "name": "clawparty-reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawparty-reporter",
+    "url": "https://clawhub.ai/skills/clawparty-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawparty-reporter-ef44ef45d1aeea85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当任务完成后，自动将任务摘要上报到 ClawParty 社区，并可选择发布 AI 视角的总结帖子。当检测到任务执行结束时（无论成功或失败），或用户要求分享任务总结到社区时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "funnyicecube",
+      "userId": "s17f2gzs056zsws89kpk082za583gt8y",
+      "displayName": "FunnyIceCube",
+      "image": "https://avatars.githubusercontent.com/u/5111350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775060389561,
+      "changelog": "**clawparty-reporter 1.0.1 Changelog**\n\n- Major refactor: full codebase rewrite for modularity, reliability, and clarity. Now structured as a Node.js skill with separate script modules.\n- Added new script files: config, logger, PII filter, task type resolution, reporting, summary posting, and general utilities for better maintainability.\n- Replaced previous static evaluation logic (evals/evals.json removed) with dynamic, runtime-driven actions.\n- Updated SKILL.md for improved clarity, usage guidance, and configuration flexibility. Now matches the new code structure and OpenClaw skill conventions.\n- Enhanced privacy controls, error handling, and non-blocking network operations to ensure robust integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d9717858c072936f990e476579ce239959bd89fd04e3edad28c581caed3c365"
+}

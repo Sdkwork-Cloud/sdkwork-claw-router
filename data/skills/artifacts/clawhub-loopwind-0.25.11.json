@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loopwind@0.25.11",
+  "version": "0.25.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loopwind",
+  "skill": {
+    "id": 16648,
+    "skillKey": "clawhub-loopwind",
+    "name": "Loopwind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loopwind",
+    "url": "https://clawhub.ai/skills/loopwind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loopwind-2dc7315a66e04ab4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images and videos from React + Tailwind CSS templates using the loopwind CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomtev",
+      "userId": "publishers:tomtev",
+      "displayName": "Tommy Vedvik",
+      "image": "https://avatars.githubusercontent.com/u/48070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 853,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.25.11",
+      "createdAt": 1771451897221,
+      "changelog": "Add version metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:944b7605c000249a3ba8c7f099d6a69728fb6a21d97ef57810227265cbf062b4"
+}

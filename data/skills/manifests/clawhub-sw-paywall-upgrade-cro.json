@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35201,
+  "uuid": "skill-clawhub-sw-paywall-upgrade-cro",
+  "skillKey": "clawhub-sw-paywall-upgrade-cro",
+  "name": "Paywall Upgrade CRO",
+  "summary": "Design and optimize paywall and upgrade flows using feature gating, usage limits, and messaging to convert free users to paid subscribers effectively.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_paywall_upgrade_cro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Design and optimize paywall and upgrade flows using feature gating, usage limits, and messaging."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-paywall-upgrade-cro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-paywall-upgrade-cro",
+      "url": "https://clawhub.ai/skills/sw-paywall-upgrade-cro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-paywall-upgrade-cro",
+    "url": "https://clawhub.ai/skills/sw-paywall-upgrade-cro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-paywall-upgrade-cro-1ef5f74ed9ad7c93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-paywall-upgrade-cro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-paywall-upgrade-cro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d63d3590fb0ef13025a43d6e96364bf1fcea6a7f04715fa2b229bc0fce404d22",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:54:33.871Z"
+}

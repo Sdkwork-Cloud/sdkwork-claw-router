@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trump-invest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_invest",
+  "skill": {
+    "id": 61316,
+    "skillKey": "clawhub-trump-invest",
+    "name": "Trump-invest懂王画k线"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-invest",
+    "url": "https://clawhub.ai/skills/trump-invest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-invest-f427aa8502983323.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 trumpstruth.org/feed 汇总特朗普相关公开推文（RSS），按“Evidence 模式/Latest 模式/Time 模式”输出证据与金融教育分析，并以特朗普口吻进行对话。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vialiceq",
+      "userId": "s176qeqdakmtmgxb37ddz364r18550ez",
+      "displayName": "AliceLIKER",
+      "image": "https://avatars.githubusercontent.com/u/58773870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776594899384,
+      "changelog": "trump-invest v1.0.0\n\n- Initial release with educational/analytical coverage of Trump RSS feed from trumpstruth.org.\n- Supports multiple output modes: Evidence（带推文证据）, Latest, Time, Trump对话, K线艺术家辅助、Watch增量监控。\n- 严格区分推文证据输出（Evidence模式）与教育性情景推演（非Evidence模式）。\n- 输出全部合规，明示风险，不提供个性化买卖建议，用户提问如需买卖，自动引导至“观察/风险/情景推演”。\n- 资产关键词与金融分析方向自动映射，蒸馏要点与观察清单支持持续优化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ca8cc19056b8c851f7fab93dd94bb32717eb3476ff9aa11581338eb7ac7d155"
+}

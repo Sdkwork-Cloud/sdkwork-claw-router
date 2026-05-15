@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71655,
+  "uuid": "skill-clawhub-yingdao-guoke",
+  "skillKey": "clawhub-yingdao-guoke",
+  "name": "YingDao-GuoKe",
+  "summary": "影刀RPA社区技能，支持用户绑定社区账号并查询个人信息，包括基本信息、成就等级、开发统计数据等。当用户需要查询影刀社区账号、查询影刀信息、获取开发统计数据时，使用此技能。例如：'绑定我的影刀账号'、'查询我的影刀信息'、'我的影刀社区信息'、'查看我的影刀账号信息'。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yingdao_guoke",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GuoKe416",
+      "features": [
+        "影刀RPA社区技能，支持用户绑定社区账号并查询个人信息，包括基本信息、成就等级、开发统计数据等。当用户需要查询影刀社区账号、查询影刀信息、获取开发统计数据时，使用此技能。例如：'绑定我的影刀."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yingdao-guoke@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78300586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yingdao-guoke",
+      "url": "https://clawhub.ai/skills/yingdao-guoke"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yingdao-guoke",
+    "url": "https://clawhub.ai/skills/yingdao-guoke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yingdao-guoke-5da62ceecc7f3629.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yingdao-guoke@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yingdao-guoke-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08107bc86a87ac34fb1211bfb30e91823999ce0ab349a23056c54e0cb834f8e6",
+      "artifactSizeBytes": 3715
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:37:25.141Z"
+}

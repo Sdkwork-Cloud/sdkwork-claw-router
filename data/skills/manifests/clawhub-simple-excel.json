@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64793,
+  "uuid": "skill-clawhub-simple-excel",
+  "skillKey": "clawhub-simple-excel",
+  "name": "Simple Excel",
+  "summary": "简单的 Excel 文件处理工具。用于读取、创建、编辑 .xlsx 和 .csv 文件，适合基本的数据操作任务，如读取数据、简单计算、生成表格等。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_excel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anmu14641",
+      "features": [
+        "简单的 Excel 文件处理工具。用于读取、创建、编辑 .xlsx 和 .csv 文件，适合基本的数据操作任务，如读取数据、简单计算、生成表格等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-excel@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239561593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-excel",
+      "url": "https://clawhub.ai/skills/simple-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-excel",
+    "url": "https://clawhub.ai/skills/simple-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-excel-fe143030bee08a40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-excel@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-excel-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e586e185b0c32f5121c4636455054e6a5e3b0fb066040db3e16cab58ef553d1e",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:17:40.459Z"
+}

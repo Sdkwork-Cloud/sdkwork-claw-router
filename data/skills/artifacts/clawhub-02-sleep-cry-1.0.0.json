@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/02-sleep-cry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.02_sleep_cry",
+  "skill": {
+    "id": 66211,
+    "skillKey": "clawhub-02-sleep-cry",
+    "name": "02 Sleep Cry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "02-sleep-cry",
+    "url": "https://clawhub.ai/skills/02-sleep-cry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/02-sleep-cry-cbe4e5a1909652b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Miki睡眠哭声分析 · 输入宝宝作息+哭声描述，诊断睡眠问题类型，给出分步骤改善方案"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777740212651,
+      "changelog": "Initial release of Miki睡眠哭声分析 skill.\n\n- 分析宝宝作息及哭声描述，帮助诊断常见0-18月龄睡眠问题类型\n- 提供每月龄对应睡眠标准表\n- 详细列出五大睡眠问题（如日夜颠倒、落地醒等）及对应分步骤改善方案\n- 标准化输入/输出模板，便于快速获取分析报告与作息建议\n- 附带常见哭声类型和可能含义的对照表",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78ca45463d12e9cb5d23172dec5540ce617a8a69db7c7e0b1dd6d39155512fa3"
+}

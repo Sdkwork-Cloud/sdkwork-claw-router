@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinovnik-ru@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinovnik_ru",
+  "skill": {
+    "id": 70613,
+    "skillKey": "clawhub-chinovnik-ru",
+    "name": "Chinovnik Ru"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinovnik-ru",
+    "url": "https://clawhub.ai/skills/chinovnik-ru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinovnik-ru-45e7309df71aa776.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Переведи официальные письма, постановления, госдокументы и юридические тексты с бюрократического языка на понятный русский."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aggel008",
+      "userId": "publishers:aggel008",
+      "displayName": "aggel008",
+      "image": "https://avatars.githubusercontent.com/u/161417766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772271769643,
+      "changelog": "- Изменена ссылка в блоке Attribution: @maya_logs заменено на t.me/maya_logs.\n- Версия повышена до 1.0.2.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8268cb6fb352e7387226391e8275bb8f3b056e08ae9ce0789d5ab943d43dc1d6"
+}

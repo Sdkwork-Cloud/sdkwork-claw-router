@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38466,
+  "uuid": "skill-clawhub-cloudflare-api-shield",
+  "skillKey": "clawhub-cloudflare-api-shield",
+  "name": "Cloudflare Api Shield",
+  "summary": "Cloudflare API Shield integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cloudflare API Shield data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_api_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cloudflare API Shield integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cloudflare API Shield data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-api-shield@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-api-shield",
+      "url": "https://clawhub.ai/skills/cloudflare-api-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-api-shield",
+    "url": "https://clawhub.ai/skills/cloudflare-api-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-api-shield-ad8a64852dcbfc0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-api-shield@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-api-shield-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:933393644d16d600b33100ac1035145d4c1480b4c96bdca30a09a028c7605bf9",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:14.893Z"
+}

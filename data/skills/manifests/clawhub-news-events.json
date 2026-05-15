@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30396,
+  "uuid": "skill-clawhub-news-events",
+  "skillKey": "clawhub-news-events",
+  "name": "Polymarket News Events",
+  "summary": "Monitors 20+ premium RSS feeds for breaking news and matches stories to Polymarket markets via keyword analysis. Trades when breaking news creates an estimat...",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mibayy",
+      "features": [
+        "Monitors 20+ premium RSS feeds for breaking news and matches stories to Polymarket markets via.",
+        "Trades when breaking news creates an estimat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-events@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97958526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-events",
+      "url": "https://clawhub.ai/skills/news-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-events",
+    "url": "https://clawhub.ai/skills/news-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-events-9597bdc2ea617296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-events@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-events-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9b0e87e7a46279a318a00da1416565c9b08594832d87151ecdb7674962fa7b2",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:30:08.423Z"
+}

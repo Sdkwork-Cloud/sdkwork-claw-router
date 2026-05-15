@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9664,
+  "uuid": "skill-clawhub-sysadmin",
+  "skillKey": "clawhub-sysadmin",
+  "name": "Sysadmin",
+  "summary": "Manage Linux servers with user administration, process control, storage, and system maintenance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sysadmin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage Linux servers with user administration, process control, storage, and system maintenance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sysadmin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sysadmin",
+      "url": "https://clawhub.ai/skills/sysadmin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sysadmin",
+    "url": "https://clawhub.ai/skills/sysadmin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sysadmin-d577adc54e95f42f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sysadmin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sysadmin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:651f182df0bf90d3acfeccdcc719d511c30c08533221ec376b2d8e10e5e4a7fe",
+      "artifactSizeBytes": 1778
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:36:41.137Z"
+}

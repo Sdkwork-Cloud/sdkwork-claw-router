@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54019,
+  "uuid": "skill-clawhub-wacrawl",
+  "skillKey": "clawhub-wacrawl",
+  "name": "Wacrawl",
+  "summary": "Read-only local archive and full-text search of macOS WhatsApp Desktop chats. Snapshots WhatsApp's SQLite databases into ~/.wacrawl/wacrawl.db without modify...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacrawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chase Webb",
+      "features": [
+        "Read-only local archive and full-text search of macOS WhatsApp Desktop chats",
+        "Snapshots WhatsApp's SQLite databases into ~/.wacrawl/wacrawl.db without modify..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wacrawl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26909069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wacrawl",
+      "url": "https://clawhub.ai/skills/wacrawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacrawl",
+    "url": "https://clawhub.ai/skills/wacrawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacrawl-8982a29c72c20e5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wacrawl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wacrawl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:221b538be07e189e42c8a491afd151903c8eff6c11d1e5f079c6212e681770db",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T17:54:18.330Z"
+}

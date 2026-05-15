@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52448,
+  "uuid": "skill-clawhub-writing-credibility-auditor",
+  "skillKey": "clawhub-writing-credibility-auditor",
+  "name": "Writing Credibility Auditor",
+  "summary": "Audit any piece of writing for missing citations, unsupported claims, logical fallacies, weasel words, and misleading statistics — then produce a structured...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_credibility_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arbaz Asif",
+      "features": [
+        "Audit any piece of writing for missing citations, unsupported claims, logical fallacies, weasel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/writing-credibility-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124435828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "writing-credibility-auditor",
+      "url": "https://clawhub.ai/skills/writing-credibility-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-credibility-auditor",
+    "url": "https://clawhub.ai/skills/writing-credibility-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-credibility-auditor-cdf9093f663c94c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/writing-credibility-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-writing-credibility-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29c71c07b83256448b557970913167076703c359f65b83e980c902fe1570db3f",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:17:05.483Z"
+}

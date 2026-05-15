@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-harness-engineering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_harness_engineering",
+  "skill": {
+    "id": 60833,
+    "skillKey": "clawhub-openclaw-harness-engineering",
+    "name": "Harness Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-harness-engineering",
+    "url": "https://clawhub.ai/skills/openclaw-harness-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-harness-engineering-2c78e9f2505ce7ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Harness Engineering — Generator/Evaluator 双 Agent 编码工作流。用于任何需要规划、编码、评审、质量门禁的编程任务。将做事的 Agent 和评判的 Agent 分开，每个阶段通过质量门禁才能进入下一阶段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cindypapa",
+      "userId": "s171tsgfz5gnz75p6mgabptb6x8416qw",
+      "displayName": "Cindypapa",
+      "image": "https://avatars.githubusercontent.com/u/128971646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 59,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778212184766,
+      "changelog": "Initial release: Generator/Evaluator dual-agent coding workflow with quality gates and change audit chain",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04f28e1816b68b79a70efe1e266f22a015b07a82d2221687f52e2c7b53cb86c8"
+}

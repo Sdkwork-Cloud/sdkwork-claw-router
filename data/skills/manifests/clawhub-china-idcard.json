@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57994,
+  "uuid": "skill-clawhub-china-idcard",
+  "skillKey": "clawhub-china-idcard",
+  "name": "China Idcard",
+  "summary": "中国居民身份证号码解析与验证。Use when the user provides a Chinese ID card number and wants to extract information (province, city, district, birthdate, gender, age) or val...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_idcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国居民身份证号码解析与验证。Use when the user provides a Chinese ID card number and wants to extract informa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-idcard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-idcard",
+      "url": "https://clawhub.ai/skills/china-idcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-idcard",
+    "url": "https://clawhub.ai/skills/china-idcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-idcard-adc2d5bb9dfdd63b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-idcard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-idcard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d34f871098d34209daff2d13bb2c3874be8b5ed5637675ac149986c8e643e6a",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:42:53.180Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71592,
+  "uuid": "skill-clawhub-zhoupu-order-import",
+  "skillKey": "clawhub-zhoupu-order-import",
+  "name": "舟谱订单导入",
+  "summary": "舟谱系统订单导入模板生成（自提订单+调拨订单分开，每表只有1个sheet）。当下单表数据需要转化为舟谱系统可导入的Excel格式时使用。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhoupu_order_import",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xyzhangjf",
+      "features": [
+        "舟谱系统订单导入模板生成（自提订单+调拨订单分开，每表只有1个sheet）。当下单表数据需要转化为舟谱系统可导入的Excel格式时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhoupu-order-import@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266643802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhoupu-order-import",
+      "url": "https://clawhub.ai/skills/zhoupu-order-import"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhoupu-order-import",
+    "url": "https://clawhub.ai/skills/zhoupu-order-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhoupu-order-import-8ee724848bd57a5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhoupu-order-import@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhoupu-order-import-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82aeaf3188bd34f710967ea8ec69341145ad02c04de0eb86e78942d43dd50cdd",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:04:17.581Z"
+}

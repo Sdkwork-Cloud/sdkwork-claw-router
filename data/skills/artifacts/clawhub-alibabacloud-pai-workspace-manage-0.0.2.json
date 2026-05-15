@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-pai-workspace-manage@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pai_workspace_manage",
+  "skill": {
+    "id": 39838,
+    "skillKey": "clawhub-alibabacloud-pai-workspace-manage",
+    "name": "Alibabacloud Pai Workspace Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pai-workspace-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-pai-workspace-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pai-workspace-manage-f62c9b7c5925c789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud PAI Workspace Management Skill. Create, query, and list workspaces on the Platform for AI (PAI). Triggers: \"create PAI workspace\", \"query PAI w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776685827846,
+      "changelog": "- Increased the minimum required Aliyun CLI version to 3.3.3; updated installation checks and instructions.\n- Added a mandatory step to run `aliyun plugin update` after installing/updating CLI.\n- Enforced that all CLI commands must include `--user-agent AlibabaCloud-Agent-Skills/alibabacloud-pai-workspace-manage`.\n- Clarified installation instructions with direct update command and explicit user agent requirement.\n- Documentation updates in installation and usage references; core SKILL logic and security guidance remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:687bfaf169ce0fd7e1b2f36ed15ab7b04e35c3797a75edb59c59a15dd1e240c2"
+}

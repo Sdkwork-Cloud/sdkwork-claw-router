@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-audio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_audio",
+  "skill": {
+    "id": 55329,
+    "skillKey": "clawhub-ai-image-to-video-audio",
+    "name": "Ai Image To Video Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-audio",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-audio-d8052848dc8be168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — combine these images with my audio into a video with smooth transitions —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776278773924,
+      "changelog": "Initial release of AI Image to Video with Audio — fast, cloud-based video creation from images and audio.\n\n- Instantly combine uploaded images (JPG/PNG) and audio (MP3/WAV) into animated videos with smooth transitions.\n- Fully automated processing: no need for video editing software or technical setup.\n- Seamless backend connection: handles token authentication and session management automatically.\n- Supports export to 1080p MP4 and other major media formats.\n- Simple error handling and clear feedback for supported formats, file size, and account status.\n- Ideal for content creators and marketers wanting to quickly turn photos and audio into videos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98e2eb8fe05c4d69ccbd7a105f12fd8cd479e89feb91b9d3fdcbbe0439c4af95"
+}

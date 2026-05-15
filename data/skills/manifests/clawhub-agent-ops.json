@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60537,
+  "uuid": "skill-clawhub-agent-ops",
+  "skillKey": "clawhub-agent-ops",
+  "name": "Agent Ops",
+  "summary": "Agent session 运维工具。当需要检测和恢复 API 限速、回收死 session 的知识、在破坏性操作前自动快照、或监控 context 使用率时使用。不用于安装 hook 脚本（用 agent-hooks）或架构设计（用 harness-design-patterns）。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "Agent session 运维工具。当需要检测和恢复 API 限速、回收死 session 的知识、在破坏性操作前自动快照、或监控 context 使用率时使用。不用于安装 hook 脚本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-ops@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-ops",
+      "url": "https://clawhub.ai/skills/agent-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-ops",
+    "url": "https://clawhub.ai/skills/agent-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-ops-d515da910984e8d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-ops@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-ops-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ed816bd565d3565a0987ca168745f29eb774263e881e031e8ff9e752196fddd",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:18:35.040Z"
+}

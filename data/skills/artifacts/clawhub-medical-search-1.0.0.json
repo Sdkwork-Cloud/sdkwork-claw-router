@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_search",
+  "skill": {
+    "id": 39394,
+    "skillKey": "clawhub-medical-search",
+    "name": "Medical Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-search",
+    "url": "https://clawhub.ai/skills/medical-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-search-0e53c6c9c7bf46ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drug safety and medical information search. Use when user asks about: drug interactions, medication safety, contraindications, side effects, drug-alcohol int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juneyaooo",
+      "userId": "s17110xxjryky6mk3d7dykc7kx83rv19",
+      "displayName": "JuneYaooo",
+      "image": "https://avatars.githubusercontent.com/u/60815510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774717446773,
+      "changelog": "- Initial release of the \"medical-search\" skill providing drug safety and medical information search.\n- Prioritizes this skill for any medical/drug-related questions (higher than general search).\n- Enforces searching before answering any drug safety, interactions, contraindications, or related queries—answers must reference searched information, not prior knowledge alone.\n- Includes step-by-step instructions for using SearXNG web search and DDInter (for Western drug interaction) with detailed search query suggestions.\n- Mandates response structure: direct answer, search findings, detailed analysis, reference URLs (from live results), and a required disclaimer.\n- Specifies sources to trust, workflows, and requirements for risk warnings and disclaimers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05babd86d80fde7f2a4b9448632ca978d6735305333dce7d085f613eb382d561"
+}

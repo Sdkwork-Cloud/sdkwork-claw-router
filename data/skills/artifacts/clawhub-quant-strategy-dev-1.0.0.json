@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-strategy-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_strategy_dev",
+  "skill": {
+    "id": 68023,
+    "skillKey": "clawhub-quant-strategy-dev",
+    "name": "Quant Strategy Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-strategy-dev",
+    "url": "https://clawhub.ai/skills/quant-strategy-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-strategy-dev-5b061f77ea018281.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化策略开发主技能。当用户说\"开发量化策略\"、\"设计量化策略\"、\"写策略代码\"、\"量化策略开发\"时自动触发。提供标准开发流程、代码规范、检查清单、代码模板。适用于量化策略项目的开发阶段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueylee-dotcom",
+      "userId": "s17cfbpghyxeebsx1t64sx4ck583q0e9",
+      "displayName": "xueylee-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/260164558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774583275041,
+      "changelog": "v1.0.0: 量化策略开发主技能。提供标准开发流程、代码规范、检查清单、代码模板。支持自动触发：开发量化策略、设计量化策略、写策略代码。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04df068822b81c6f8416a3027ecfadd115c22567dacdd15a958e075e11814973"
+}

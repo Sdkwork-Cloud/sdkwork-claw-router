@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64141,
+  "uuid": "skill-clawhub-jiajiaoy-morning",
+  "skillKey": "clawhub-jiajiaoy-morning",
+  "name": "Jiajiaoy Morning",
+  "summary": "每日早晚全套推送 skill： - 08:00 早间简报（11个模块：早报/科技/财经/天气/运势/历史/菜谱/名言/正念/运动/英语） - 18:00 明日运势（结合八字个性化推算） 支持任意 agent 执行，首次使用可向用户询问开关偏好后自动注册。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiajiaoy_morning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cosmos Fang",
+      "features": [
+        "每日早晚全套推送 skill：",
+        "08:00 早间简报（11个模块：早报/科技/财经/天气/运势/历史/菜谱/名言/正念/运动/英语）",
+        "18:00 明日运势（结合八字个性化推算） 支持任意 agent 执行，首次使用可向用户询问开关偏好后自动注册。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiajiaoy-morning@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255512740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiajiaoy-morning",
+      "url": "https://clawhub.ai/skills/jiajiaoy-morning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiajiaoy-morning",
+    "url": "https://clawhub.ai/skills/jiajiaoy-morning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiajiaoy-morning-761afbd82a006e7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiajiaoy-morning@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiajiaoy-morning-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95a54d5d1d67a272103c2e8660d8d9b50407bd976e3bde8f11d70148c3fc7a19",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:39:47.275Z"
+}

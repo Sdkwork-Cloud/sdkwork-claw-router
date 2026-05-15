@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-checkout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_checkout",
+  "skill": {
+    "id": 21666,
+    "skillKey": "clawhub-shopify-checkout",
+    "name": "Shopify Checkout API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-checkout",
+    "url": "https://clawhub.ai/skills/shopify-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-checkout-a7de6c53691f4da2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete online shopping purchases on any online store using the Credpay Checkout API with x402 payments. Trigger when a user wants to buy, order, or checkou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jelilat",
+      "userId": "publishers:jelilat",
+      "displayName": "Jelilat Anofiu",
+      "image": "https://avatars.githubusercontent.com/u/23613565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772203505073,
+      "changelog": "- Initial release: enables users to complete online shopping purchases on any store via the Credpay Checkout API using x402 payments.\n- Collects essential details (product URL, quantity, options, email, goods total, shipping address) before starting checkout.\n- Supports step-by-step process: quote request, checkout submission with payment, polling for status, and handling extra payment if needed.\n- Provides clear status handling: processing, authorization required, completed, and failed orders.\n- Designed to work with any online store product page URL.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:340f1724d461b1303b8874160f80d3dc8c9e59e2bd77d3cfb95a81d6f8b38f97"
+}

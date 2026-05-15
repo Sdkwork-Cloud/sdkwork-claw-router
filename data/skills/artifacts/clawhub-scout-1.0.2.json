@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scout@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scout",
+  "skill": {
+    "id": 13186,
+    "skillKey": "clawhub-scout",
+    "name": "Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scout",
+    "url": "https://clawhub.ai/skills/scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scout-3608e4bd0e693177.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent trust intelligence for Moltbook and x402 Bazaar. Use when you need to check if an agent or service is trustworthy before paying, compare agents side-by-side, scan feeds for quality agents, or make trust-gated USDC payments. Answers t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaooooooooooooooo",
+      "userId": "s17dxa2c8qpfm4ysagv07m6kbh866fkb",
+      "displayName": "Operon",
+      "image": "https://avatars.githubusercontent.com/u/62118705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1459,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770501142414,
+      "changelog": "Cleaned up: removed duplicate files and unrelated scripts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f87502705d7b9740a459b55e931a6e0f22e12880b0a4ee091f32daab5c840d44"
+}

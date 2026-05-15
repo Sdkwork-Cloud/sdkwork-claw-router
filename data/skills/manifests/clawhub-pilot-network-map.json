@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34003,
+  "uuid": "skill-clawhub-pilot-network-map",
+  "skillKey": "clawhub-pilot-network-map",
+  "name": "Pilot Network Map",
+  "summary": "Visualize network topology, trust graphs, and latency. Use this skill when: 1. Generating network topology diagrams or adjacency matrices 2. Visualizing trus...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_network_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Visualize network topology, trust graphs, and latency",
+        "Use this skill when: 1",
+        "Generating network topology diagrams or adjacency matrices 2",
+        "Visualizing trus..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-network-map@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-network-map",
+      "url": "https://clawhub.ai/skills/pilot-network-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-network-map",
+    "url": "https://clawhub.ai/skills/pilot-network-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-network-map-835cab51402d0973.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-network-map@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-network-map-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:528ce2fdd26b057ee4e2eaa491408caca9ebab6e1ee9c7405dae35cfaa2aba9f",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:25:32.134Z"
+}

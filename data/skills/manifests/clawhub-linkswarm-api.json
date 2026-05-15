@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19221,
+  "uuid": "skill-clawhub-linkswarm-api",
+  "skillKey": "clawhub-linkswarm-api",
+  "name": "LinkSwarm API",
+  "summary": "Manage backlink exchanges for AI-created sites by registering domains, requesting and contributing links, tracking credits, and receiving placement notificat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkswarm_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heyw00d",
+      "features": [
+        "Manage backlink exchanges for AI-created sites by registering domains, requesting and contribut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkswarm-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39588901?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkswarm-api",
+      "url": "https://clawhub.ai/skills/linkswarm-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkswarm-api",
+    "url": "https://clawhub.ai/skills/linkswarm-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkswarm-api-4a999f1ee7d32087.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkswarm-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkswarm-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:537d4a1fe70430d07c5a4c095a77432f47db7528f4fb68e6cc11aec31939580d",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T02:06:17.291Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tender-deadline-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_deadline_tracker",
+  "skill": {
+    "id": 28643,
+    "skillKey": "clawhub-tender-deadline-tracker",
+    "name": "Tender Deadline Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-deadline-tracker",
+    "url": "https://clawhub.ai/skills/tender-deadline-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-deadline-tracker-d42d66d87532f2ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help a bid manager track multiple tender submissions, deadlines, required documents, and document completeness for construction bids."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitevity",
+      "userId": "publishers:nitevity",
+      "displayName": "nitevity",
+      "image": "https://avatars.githubusercontent.com/u/206263748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774208934996,
+      "changelog": "Version 1.0.0 — Initial Release\n\n- Enables bid managers to track multiple construction tenders with deadlines, document requirements, and completeness.\n- Maintains a detailed tender register including project info, submission status, and assigned team.\n- Proactively warns users about approaching tender deadlines by urgency level.\n- Tracks document completion for every bid, calculating and reporting completeness percentage and listing missing documents.\n- Provides standard and customizable document checklists for each tender submission.\n- Supports bid/no-bid decision-making by prompting evaluation criteria.\n- Offers clear, dashboard-style summaries of all active tenders and their statuses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5512ca15b9e7c1390c59bf7fe60cd8dd9ce9b93daa2170ea188404cc1d1ec7fc"
+}

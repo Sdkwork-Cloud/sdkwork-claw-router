@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/printmaster-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printmaster_pro",
+  "skill": {
+    "id": 69619,
+    "skillKey": "clawhub-printmaster-pro",
+    "name": "PrintMaster Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printmaster-pro",
+    "url": "https://clawhub.ai/skills/printmaster-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printmaster-pro-e897fa7c1cceb0f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "印刷排版全能助手。商用表格/名片/宣传单/包装/书籍的排版、预检、色彩转换、PDF导出全流程。遇到印刷、打印、CMYK、PDF导出、出血位、表格跨页问题时调用此技能。融合全球排版最佳实践，专为印刷行业定制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlcyqj2023",
+      "userId": "s17eyg25wdfar2hgps3pfq5z4183gp56",
+      "displayName": "tlcyqj2023",
+      "image": "https://avatars.githubusercontent.com/u/71183635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774524448934,
+      "changelog": "PrintMaster Pro v1.0.0 初始发布：\n\n- 提供印刷排版全流程辅助，包括商用表格、名片、宣传单、包装、书籍等多场景规范。\n- 内含详细的需求分析、尺寸速查、预检清单、字体与色彩标准、分辨率规范和PDF导出流程。\n- 针对表格跨页、装订方式、页边距等实际印刷难题给出最佳实践与模板建议。\n- 汇集常见错误案例与正确做法，提升零失败交付率。\n- 借鉴全球排版最佳实践，专为印刷行业定制使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4f7e2397142e9969c85da1a5c09a3190642972c1dfa454fb3a0abc7b9c7abb8"
+}

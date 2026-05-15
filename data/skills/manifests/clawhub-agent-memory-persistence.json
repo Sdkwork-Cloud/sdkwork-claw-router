@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18842,
+  "uuid": "skill-clawhub-agent-memory-persistence",
+  "skillKey": "clawhub-agent-memory-persistence",
+  "name": "Agent Memory Persistence",
+  "summary": "Provide long-term memory persistence for AI agents with SQLite-backed storage, structured metadata, vector embeddings, semantic retrieval, lifecycle manageme...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_persistence",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imgolye",
+      "features": [
+        "Provide long-term memory persistence for AI agents with SQLite-backed storage, structured metad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-persistence@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7943209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-persistence",
+      "url": "https://clawhub.ai/skills/agent-memory-persistence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-persistence",
+    "url": "https://clawhub.ai/skills/agent-memory-persistence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-persistence-a444a3ee641caf46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-persistence@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-persistence-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2dc80b7d392a141371367bd06247ab0e0e7aaa9be21d0c2bca52618f1c6f2a4",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:59:10.817Z"
+}

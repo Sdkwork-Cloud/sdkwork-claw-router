@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faa-wsl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faa_wsl",
+  "skill": {
+    "id": 59746,
+    "skillKey": "clawhub-faa-wsl",
+    "name": "FastapiAdmin WSL 自动部署"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faa-wsl",
+    "url": "https://clawhub.ai/skills/faa-wsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faa-wsl-fcb56634e8653f5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 FastapiAdmin 在 Windows WSL2 Ubuntu 环境下自动部署。包括环境检查、依赖安装（pip/pnpm/MySQL/Redis/Nginx）、前后端代码克隆与构建、Nginx SPA 路由修复（alias+try_files 循环问题）、WSL2 网络访问（宿主机浏览器访问）、SSL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bamboo-art",
+      "userId": "s17bn1rjcp6syy99ft2m2nr9a983y8a5",
+      "displayName": "bamboo-art",
+      "image": "https://avatars.githubusercontent.com/u/78297989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774940673000,
+      "changelog": "Initial release: Automates FastapiAdmin deployment in WSL2 Ubuntu, covering environment setup, service installation, and cross-platform access.\n\n- Supports automated installation of pip, pnpm, MySQL, Redis, and Nginx within WSL2.\n- Guides cloning, configuring, and initializing both backend and frontend of FastapiAdmin.\n- Provides Nginx configuration with SPA routing fix (alias + try_files loop issue workaround).\n- Includes instructions for setting up SSL certificates and configuring network for host access.\n- Summarizes troubleshooting steps and essential operational commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db2611a33d1ebcd5b2c37c697b4b93ce25453b9d6ddb815e6ebe2ce3826814a2"
+}

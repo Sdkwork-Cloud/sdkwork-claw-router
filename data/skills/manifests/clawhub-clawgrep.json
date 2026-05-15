@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34288,
+  "uuid": "skill-clawhub-clawgrep",
+  "skillKey": "clawhub-clawgrep",
+  "name": "clawgrep",
+  "summary": "Grep-like CLI with hybrid semantic and keyword search. Combines semantic embedding search with keyword matching for high-quality code and document retrieval....",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgrep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Schonhoffer",
+      "features": [
+        "Grep-like CLI with hybrid semantic and keyword search",
+        "Combines semantic embedding search with keyword matching for high-quality code and document ret."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgrep@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/835577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgrep",
+      "url": "https://clawhub.ai/skills/clawgrep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgrep",
+    "url": "https://clawhub.ai/skills/clawgrep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgrep-54593d2935696311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgrep@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgrep-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad0235f3c2df1a07e4232463cfb896e8fa670466f00ad9f9c05358be17746caa",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:27:23.855Z"
+}

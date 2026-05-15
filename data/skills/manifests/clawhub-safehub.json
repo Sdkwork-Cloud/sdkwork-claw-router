@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21560,
+  "uuid": "skill-clawhub-safehub",
+  "skillKey": "clawhub-safehub",
+  "name": "SafeHub",
+  "summary": "Scan OpenClaw skills for malware and security issues before installation. Use when the user wants to verify a skill is safe, audit a ClawHub skill, or check...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safehub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sumeetghimire",
+      "features": [
+        "Scan OpenClaw skills for malware and security issues before installation",
+        "Use when the user wants to verify a skill is safe, audit a ClawHub skill, or check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safehub@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42274174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safehub",
+      "url": "https://clawhub.ai/skills/safehub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safehub",
+    "url": "https://clawhub.ai/skills/safehub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safehub-56e7dd97ab58da46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safehub@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-safehub-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e451103df50ceb4aae5d1a94ed2ecdd5edda8f93f9c5b0014d0db5e3cb73653c",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:32:52.651Z"
+}

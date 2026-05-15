@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66766,
+  "uuid": "skill-clawhub-little-steve-task-manager",
+  "skillKey": "clawhub-little-steve-task-manager",
+  "name": "Little Steve Task Manager",
+  "summary": "小史任务管理器：面向 IM 场景的轻量任务系统，快速可用、与工作流高度融合，可在聊天中直接管理任务并支持每日汇总与自动状态更新。",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.little_steve_task_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EchoOfZion",
+      "features": [
+        "小史任务管理器：面向 IM 场景的轻量任务系统，快速可用、与工作流高度融合，可在聊天中直接管理任务并支持每日汇总与自动状态更新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/little-steve-task-manager@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212151438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "little-steve-task-manager",
+      "url": "https://clawhub.ai/skills/little-steve-task-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "little-steve-task-manager",
+    "url": "https://clawhub.ai/skills/little-steve-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/little-steve-task-manager-0cf5fee61eaf2212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/little-steve-task-manager@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-little-steve-task-manager-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd2b2d5435ceab069f834571b0dd2f32b91906e412787dc764d495c8423710df",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:44:13.000Z"
+}

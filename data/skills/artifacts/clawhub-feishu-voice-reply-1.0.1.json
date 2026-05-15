@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-voice-reply@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_voice_reply",
+  "skill": {
+    "id": 60248,
+    "skillKey": "clawhub-feishu-voice-reply",
+    "name": "feishu voice reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-voice-reply",
+    "url": "https://clawhub.ai/skills/feishu-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-voice-reply-505e1bf293e16086.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书语音消息自动回复技能 - 使用 Edge TTS 生成语音并通过飞书 API 发送"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xmx0632",
+      "userId": "publishers:xmx0632",
+      "displayName": "xmx0632",
+      "image": "https://avatars.githubusercontent.com/u/220372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773183068370,
+      "changelog": "v1.0.1 (2026-03-11) — Security and dependency structure overhaul\n\n- 移除了全局和持久化规则文件操作，所有文件仅限于技能目录内\n- 语音回复规则内置于 SKILL.md，无需外部 .voice-reply-rules.txt\n- 发送语音消息全面切换为 OpenClaw 内置消息工具，不再直接依赖本地 API 服务\n- 删除多余的发布/文档/脚本文件，简化目录结构\n- 增加和完善依赖声明与安全说明（新添加 SECURITY.md）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cff42a0506033ad7828f05f0c56e5966a48ffe52aab2131be3834df60ff04da"
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24490,
+  "uuid": "skill-clawhub-xproof",
+  "skillKey": "clawhub-xproof",
+  "name": "xProof — Blockchain Proof for Agents",
+  "summary": "Proof and accountability layer for AI agents. Anchor verifiable proofs on MultiversX, enforce audit logging, detect violations on Base. REST API, MCP, x402....",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xproof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xKensei",
+      "features": [
+        "Proof and accountability layer for AI agents",
+        "Anchor verifiable proofs on MultiversX, enforce audit logging, detect violations on Base",
+        "REST API, MCP, x402...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xproof@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260305565?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xproof",
+      "url": "https://clawhub.ai/skills/xproof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xproof",
+    "url": "https://clawhub.ai/skills/xproof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xproof-33fdf16a6d149258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xproof@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xproof-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f90177017089bee671064bd37ca467533325dc560c390fec42c0b39ccfcb93c2",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T12:55:23.433Z"
+}

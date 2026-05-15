@@ -4,8 +4,8 @@ use std::time::Duration;
 use axum::middleware::from_fn_with_state;
 use axum::Router;
 use sdkwork_claw_config::{
-    ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, PaymentWebhookConfig,
-    ProviderSecretMapConfig, TrustedSubjectConfig,
+    ApiKeySecurityConfig, AppSessionConfig, DatabaseConfig, DatabaseEngine, DeploymentMode,
+    PaymentWebhookConfig, ProviderSecretMapConfig, StartupInstallMode, TrustedSubjectConfig,
 };
 use sdkwork_claw_http::AppSubjectBoundaryConfig;
 use sdkwork_claw_product::application::{
@@ -22,41 +22,44 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAccountSummaryReadStore, PostgresAppAuthStore, PostgresAppGatewayTracesReadStore,
-    PostgresAppMessagesReadStore, PostgresAppPlaygroundHistoryReadStore,
+    PostgresAppGenerationHistoryReadStore, PostgresAppMessagesReadStore,
     PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
     PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppSessionEventStore,
     PostgresAppSkillsReadStore, PostgresAppStoreReadStore, PostgresAppUserProfileReadStore,
-    PostgresBillingStore, PostgresCatalogLoadError, PostgresCheckoutStore,
+    PostgresBillingStore, PostgresCatalogLoadError, PostgresCheckoutStore, PostgresCourseStore,
     PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresGatewayApiKeyCommandStore,
     PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPricingCatalogLoader, PostgresRechargeStore, PostgresSettingsStore,
     PostgresSettlementsDashboardReadStore, PostgresUsageLogsReadStore,
+    PostgresVerificationDeliveryConfigStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAccountSummaryReadStore, SqliteAppAuthStore,
-    SqliteAppGatewayTracesReadStore, SqliteAppMessagesReadStore,
-    SqliteAppPlaygroundHistoryReadStore, SqliteAppProvidersReadStore,
-    SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore,
-    SqliteAppSessionEventStore, SqliteAppSkillsReadStore, SqliteAppStoreReadStore,
-    SqliteAppUserProfileReadStore, SqliteBillingStore, SqliteCheckoutStore,
-    SqliteDashboardOverviewReadStore, SqliteForumStore, SqliteGatewayApiKeyCommandStore,
-    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePaymentCallbackStore,
-    SqlitePricingCatalogLoader, SqliteRechargeStore, SqliteSettingsStore,
-    SqliteSettlementsDashboardReadStore, SqliteUsageLogsReadStore,
+    SqliteAppGatewayTracesReadStore, SqliteAppGenerationHistoryReadStore,
+    SqliteAppMessagesReadStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
+    SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppSessionEventStore,
+    SqliteAppSkillsReadStore, SqliteAppStoreReadStore, SqliteAppUserProfileReadStore,
+    SqliteBillingStore, SqliteCheckoutStore, SqliteCourseStore, SqliteDashboardOverviewReadStore,
+    SqliteForumStore, SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore,
+    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePricingCatalogLoader,
+    SqliteRechargeStore, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
+    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
-    AccountSummaryReadStore, AppAuthStore, AppGatewayTracesReadStore, AppMessagesReadStore,
-    AppPlaygroundHistoryReadStore, AppProvidersReadStore, AppRoutingChannelCommandStore,
-    AppRoutingReadStore, AppRoutingStrategyStore, AppSessionEventStore, AppSkillsCommandStore,
-    AppSkillsReadStore, AppStoreReadStore, AppUserProfileReadStore, BillingStore, CheckoutStore,
-    DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
+    AccountSummaryReadStore, AppAuthStore, AppGatewayTracesReadStore,
+    AppGenerationHistoryReadStore, AppMessagesReadStore, AppProvidersReadStore,
+    AppRoutingChannelCommandStore, AppRoutingReadStore, AppRoutingStrategyStore,
+    AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore,
+    AppUserProfileReadStore, BillingStore, CheckoutStore, CourseApplicationCommandStore,
+    CourseReadStore, DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
     ForumFeedCommandStore, ForumFeedReadStore, GatewayApiKeyCommandStore,
     GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
     ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
     PaymentCallbackStore, ProviderHealthProbe, RechargeStore, SettingsStore,
     SettlementsDashboardReadStore, UnconfiguredProviderHealthProbe, UsageLogsReadStore,
+    VerificationCodeSender,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::{PgPool, SqlitePool};
@@ -68,18 +71,21 @@ type ApiKeyManagementReadStore = Arc<dyn GatewayApiKeyManagementReadStore + Send
 type AccountSummaryStore = Arc<dyn AccountSummaryReadStore + Send + Sync>;
 type AppGatewayTracesStore = Arc<dyn AppGatewayTracesReadStore + Send + Sync>;
 type AppMessagesStore = Arc<dyn AppMessagesReadStore + Send + Sync>;
-type AppPlaygroundHistoryStore = Arc<dyn AppPlaygroundHistoryReadStore + Send + Sync>;
+type AppGenerationHistoryStore = Arc<dyn AppGenerationHistoryReadStore + Send + Sync>;
 type AppProvidersStore = Arc<dyn AppProvidersReadStore + Send + Sync>;
 type AppRoutingChannelCommandRuntimeStore = Arc<dyn AppRoutingChannelCommandStore + Send + Sync>;
 type AppRoutingStore = Arc<dyn AppRoutingReadStore + Send + Sync>;
 type AppRoutingStrategyRuntimeStore = Arc<dyn AppRoutingStrategyStore + Send + Sync>;
 type AppAuthRuntimeStore = Arc<dyn AppAuthStore + Send + Sync>;
 type AppSessionAuditStore = Arc<dyn AppSessionEventStore + Send + Sync>;
+type AppVerificationCodeSender = Arc<dyn VerificationCodeSender + Send + Sync>;
 type AppPasswordHasher = Arc<dyn PasswordHasher + Send + Sync>;
 type AppSkillsRuntimeStore = Arc<dyn AppSkillsReadStore + Send + Sync>;
 type AppSkillsCommandRuntimeStore = Arc<dyn AppSkillsCommandStore + Send + Sync>;
 type AppStoreRuntimeStore = Arc<dyn AppStoreReadStore + Send + Sync>;
 type AppUserProfileStore = Arc<dyn AppUserProfileReadStore + Send + Sync>;
+type CourseReadRuntimeStore = Arc<dyn CourseReadStore + Send + Sync>;
+type CourseCommandRuntimeStore = Arc<dyn CourseApplicationCommandStore + Send + Sync>;
 type ForumFeedReadRuntimeStore = Arc<dyn ForumFeedReadStore + Send + Sync>;
 type ForumFeedCommandRuntimeStore = Arc<dyn ForumFeedCommandStore + Send + Sync>;
 type ForumCommentReadRuntimeStore = Arc<dyn ForumCommentReadStore + Send + Sync>;
@@ -98,7 +104,7 @@ type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send +
 type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sync>;
 
 pub fn router() -> Router {
-    router_with_database_status(None)
+    merge_commerce_foundation_router(router_with_database_status(None))
         .merge(sdkwork_claw_product::api::app_account_summary_router())
         .merge(sdkwork_claw_product::api::app_user_profile_router())
         .merge(sdkwork_claw_product::api::app_billing_router())
@@ -112,9 +118,10 @@ pub fn router() -> Router {
         .merge(sdkwork_claw_product::api::app_usage_logs_router())
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
-        .merge(sdkwork_claw_product::api::app_playground_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_history_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
+        .merge(sdkwork_claw_product::api::app_course_router())
         .merge(sdkwork_claw_product::api::app_forum_router())
         .merge(sdkwork_claw_product::api::app_providers_router())
         .merge(sdkwork_claw_product::api::app_routing_router())
@@ -155,6 +162,10 @@ pub fn router_with_api_key_management_read_store_command_store_and_api_key_secur
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
+        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        true,
+        None,
+        None,
         None,
         None,
         None,
@@ -190,7 +201,7 @@ pub fn router_with_app_session_event_store_and_config(
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
 ) -> Router {
-    router_with_database_status(None)
+    merge_commerce_foundation_router(router_with_database_status(None))
         .merge(sdkwork_claw_product::api::app_account_summary_router())
         .merge(sdkwork_claw_product::api::app_user_profile_router())
         .merge(sdkwork_claw_product::api::app_billing_router())
@@ -204,19 +215,24 @@ pub fn router_with_app_session_event_store_and_config(
         .merge(sdkwork_claw_product::api::app_usage_logs_router())
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
-        .merge(sdkwork_claw_product::api::app_playground_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_history_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
+        .merge(sdkwork_claw_product::api::app_course_router())
         .merge(sdkwork_claw_product::api::app_forum_router())
         .merge(sdkwork_claw_product::api::app_providers_router())
         .merge(sdkwork_claw_product::api::app_routing_router())
         .merge(sdkwork_claw_product::api::app_routing_strategy_router())
         .merge(sdkwork_claw_product::api::app_routing_channel_command_router())
-        .merge(app_session_router_with_trusted_subject_boundary(
+        .merge(app_sessions_router(
+            None,
             app_session_event_store,
             Arc::new(OsApiKeySecretGenerator),
             trusted_subject_config,
             app_session_config,
+            Arc::new(Pbkdf2Sha256PasswordHasher),
+            Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+            true,
         ))
 }
 
@@ -227,7 +243,7 @@ fn router_with_product_catalog_and_database_status<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    router_with_database_status(config)
+    merge_commerce_foundation_router(router_with_database_status(config))
         .merge(sdkwork_claw_product::api::app_account_summary_router())
         .merge(sdkwork_claw_product::api::app_user_profile_router())
         .merge(sdkwork_claw_product::api::app_billing_router())
@@ -241,9 +257,10 @@ where
         .merge(sdkwork_claw_product::api::app_usage_logs_router())
         .merge(sdkwork_claw_product::api::app_gateway_traces_router())
         .merge(sdkwork_claw_product::api::app_messages_router())
-        .merge(sdkwork_claw_product::api::app_playground_history_router())
+        .merge(sdkwork_claw_product::api::app_generation_history_router())
         .merge(sdkwork_claw_product::api::app_store_router())
         .merge(sdkwork_claw_product::api::app_skills_router())
+        .merge(sdkwork_claw_product::api::app_course_router())
         .merge(sdkwork_claw_product::api::app_forum_router())
         .merge(sdkwork_claw_product::api::app_providers_router())
         .merge(sdkwork_claw_product::api::app_routing_router())
@@ -265,6 +282,8 @@ fn router_with_api_key_management_store_and_database_status(
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     password_hasher: AppPasswordHasher,
+    verification_code_sender: AppVerificationCodeSender,
+    expose_debug_verification_code: bool,
     payment_webhook_config: Option<PaymentWebhookConfig>,
     account_summary_read_store: Option<AccountSummaryStore>,
     app_user_profile_read_store: Option<AppUserProfileStore>,
@@ -278,10 +297,12 @@ fn router_with_api_key_management_store_and_database_status(
     usage_logs_read_store: Option<UsageLogsStore>,
     app_gateway_traces_read_store: Option<AppGatewayTracesStore>,
     app_messages_read_store: Option<AppMessagesStore>,
-    app_playground_history_read_store: Option<AppPlaygroundHistoryStore>,
+    app_generation_history_read_store: Option<AppGenerationHistoryStore>,
     app_store_read_store: Option<AppStoreRuntimeStore>,
     app_skills_read_store: Option<AppSkillsRuntimeStore>,
     app_skills_command_store: Option<AppSkillsCommandRuntimeStore>,
+    course_read_store: Option<CourseReadRuntimeStore>,
+    course_command_store: Option<CourseCommandRuntimeStore>,
     forum_feed_read_store: Option<ForumFeedReadRuntimeStore>,
     forum_feed_command_store: Option<ForumFeedCommandRuntimeStore>,
     forum_comment_read_store: Option<ForumCommentReadRuntimeStore>,
@@ -295,11 +316,15 @@ fn router_with_api_key_management_store_and_database_status(
 ) -> Router {
     let subject_boundary_config =
         AppSubjectBoundaryConfig::new(trusted_subject_config.clone(), app_session_config.clone());
-    let app_session_router = app_session_router_with_trusted_subject_boundary(
+    let app_session_router = app_sessions_router(
+        app_auth_store.clone(),
         Arc::clone(&app_session_event_store),
         Arc::clone(&entity_uuid_generator),
         trusted_subject_config,
         app_session_config.clone(),
+        Arc::clone(&password_hasher),
+        verification_code_sender,
+        expose_debug_verification_code,
     );
     let api_key_router =
         sdkwork_claw_product::api::app_api_key_router_with_read_store_and_command_store(
@@ -312,18 +337,9 @@ fn router_with_api_key_management_store_and_database_status(
             subject_boundary_config.clone(),
             sdkwork_claw_http::app_request_subject_boundary,
         ));
-    let mut router = router_with_database_status(config)
+    let mut router = merge_commerce_foundation_router(router_with_database_status(config))
         .merge(app_session_router)
         .merge(api_key_router);
-    if let Some(app_auth_store) = app_auth_store {
-        router = router.merge(sdkwork_claw_product::api::app_auth_router_with_store(
-            app_auth_store,
-            Arc::clone(&app_session_event_store),
-            Arc::clone(&entity_uuid_generator),
-            app_session_config.clone(),
-            password_hasher,
-        ));
-    }
     if let Some(model_catalog_router) = model_catalog_router {
         router = router.merge(model_catalog_router);
     }
@@ -356,7 +372,7 @@ fn router_with_api_key_management_store_and_database_status(
             )
             .layer(from_fn_with_state(
                 subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
+                sdkwork_claw_http::optional_app_request_subject_boundary,
             )),
         ),
         None => router.merge(sdkwork_claw_product::api::app_billing_router()),
@@ -380,7 +396,7 @@ fn router_with_api_key_management_store_and_database_status(
             )
             .layer(from_fn_with_state(
                 subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
+                sdkwork_claw_http::optional_app_request_subject_boundary,
             )),
         ),
         None => router.merge(sdkwork_claw_product::api::app_recharge_router()),
@@ -442,22 +458,22 @@ fn router_with_api_key_management_store_and_database_status(
         ),
         None => router.merge(sdkwork_claw_product::api::app_messages_router()),
     };
-    router = match app_playground_history_read_store {
+    router = match app_generation_history_read_store {
         Some(read_store) => router.merge(
-            sdkwork_claw_product::api::app_playground_history_router_with_read_store(read_store)
+            sdkwork_claw_product::api::app_generation_history_router_with_read_store(read_store)
                 .layer(from_fn_with_state(
                     subject_boundary_config.clone(),
                     sdkwork_claw_http::app_request_subject_boundary,
                 )),
         ),
-        None => router.merge(sdkwork_claw_product::api::app_playground_history_router()),
+        None => router.merge(sdkwork_claw_product::api::app_generation_history_router()),
     };
     router = match app_store_read_store {
         Some(read_store) => router.merge(
             sdkwork_claw_product::api::app_store_router_with_read_store(read_store).layer(
                 from_fn_with_state(
                     subject_boundary_config.clone(),
-                    sdkwork_claw_http::app_request_subject_boundary,
+                    sdkwork_claw_http::optional_app_request_subject_boundary,
                 ),
             ),
         ),
@@ -475,10 +491,28 @@ fn router_with_api_key_management_store_and_database_status(
             };
             router.merge(skills_router.layer(from_fn_with_state(
                 subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
+                sdkwork_claw_http::optional_app_request_subject_boundary,
             )))
         }
         None => router.merge(sdkwork_claw_product::api::app_skills_router()),
+    };
+    router = match (course_read_store, course_command_store) {
+        (Some(read_store), Some(command_store)) => router.merge(
+            sdkwork_claw_product::api::app_course_router_with_store(read_store, command_store)
+                .layer(from_fn_with_state(
+                    subject_boundary_config.clone(),
+                    sdkwork_claw_http::optional_app_request_subject_boundary,
+                )),
+        ),
+        (Some(read_store), None) => router.merge(
+            sdkwork_claw_product::api::app_course_router_with_read_store(read_store).layer(
+                from_fn_with_state(
+                    subject_boundary_config.clone(),
+                    sdkwork_claw_http::optional_app_request_subject_boundary,
+                ),
+            ),
+        ),
+        _ => router.merge(sdkwork_claw_product::api::app_course_router()),
     };
     router = match (
         forum_feed_read_store,
@@ -491,19 +525,14 @@ fn router_with_api_key_management_store_and_database_status(
             Some(feed_command_store),
             Some(comment_read_store),
             Some(comment_command_store),
-        ) => router.merge(
-            sdkwork_claw_product::api::app_forum_router_with_store(
-                feed_read_store,
-                feed_command_store,
-                comment_read_store,
-                comment_command_store,
-                Arc::new(OsApiKeySecretGenerator),
-            )
-            .layer(from_fn_with_state(
-                subject_boundary_config.clone(),
-                sdkwork_claw_http::app_request_subject_boundary,
-            )),
-        ),
+        ) => router.merge(app_forum_router_with_store_and_subject_boundary(
+            feed_read_store,
+            feed_command_store,
+            comment_read_store,
+            comment_command_store,
+            subject_boundary_config.trusted_subject().clone(),
+            subject_boundary_config.app_session().clone(),
+        )),
         _ => router.merge(sdkwork_claw_product::api::app_forum_router()),
     };
     router = match app_providers_read_store {
@@ -580,20 +609,141 @@ fn router_with_api_key_management_store_and_database_status(
     router
 }
 
-fn app_session_router_with_trusted_subject_boundary(
+fn merge_commerce_foundation_router(router: Router) -> Router {
+    router.merge(sdkwork_claw_product::api::app_commerce_foundation_router())
+}
+
+fn app_sessions_router(
+    app_auth_store: Option<AppAuthRuntimeStore>,
     app_session_event_store: AppSessionAuditStore,
     entity_uuid_generator: EntityUuidGen,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
+    password_hasher: AppPasswordHasher,
+    verification_code_sender: AppVerificationCodeSender,
+    expose_debug_verification_code: bool,
 ) -> Router {
-    sdkwork_claw_product::api::app_session_router_with_event_store(
-        app_session_config,
+    sdkwork_claw_product::api::app_sessions_router_with_store_and_verification_sender(
+        app_auth_store,
         app_session_event_store,
         entity_uuid_generator,
+        trusted_subject_config,
+        app_session_config,
+        password_hasher,
+        verification_code_sender,
+        expose_debug_verification_code,
+    )
+}
+
+async fn sqlite_verification_code_sender(
+    pool: &SqlitePool,
+    deployment_mode: DeploymentMode,
+) -> Result<(AppVerificationCodeSender, bool), sqlx::Error> {
+    Ok(match deployment_mode {
+        DeploymentMode::Desktop => (
+            Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+            true,
+        ),
+        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
+            let subject = sqlite_default_verification_delivery_subject(pool).await?;
+            (
+                Arc::new(
+                    sdkwork_claw_product::ports::ConfiguredVerificationCodeSender::new(Arc::new(
+                        SqliteVerificationDeliveryConfigStore::new(pool.clone()),
+                    ))
+                    .with_subject(subject.0, subject.1),
+                ),
+                false,
+            )
+        }
+    })
+}
+
+async fn postgres_verification_code_sender(
+    pool: &PgPool,
+    deployment_mode: DeploymentMode,
+) -> Result<(AppVerificationCodeSender, bool), sqlx::Error> {
+    Ok(match deployment_mode {
+        DeploymentMode::Desktop => (
+            Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+            true,
+        ),
+        DeploymentMode::Server | DeploymentMode::Docker | DeploymentMode::Kubernetes => {
+            let subject = postgres_default_verification_delivery_subject(pool).await?;
+            (
+                Arc::new(
+                    sdkwork_claw_product::ports::ConfiguredVerificationCodeSender::new(Arc::new(
+                        PostgresVerificationDeliveryConfigStore::new(pool.clone()),
+                    ))
+                    .with_subject(subject.0, subject.1),
+                ),
+                false,
+            )
+        }
+    })
+}
+
+async fn sqlite_default_verification_delivery_subject(
+    pool: &SqlitePool,
+) -> Result<(i64, i64), sqlx::Error> {
+    let tenant_id_raw: String =
+        sqlx::query_scalar("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
+            .fetch_one(pool)
+            .await?;
+    let organization_id_raw: String = sqlx::query_scalar(
+        "SELECT id FROM iam_organization WHERE tenant_id = ? AND status = 'active' ORDER BY id LIMIT 1",
+    )
+    .bind(&tenant_id_raw)
+    .fetch_one(pool)
+    .await?;
+    let tenant_id = parse_numeric_subject_id("iam_tenant.id", &tenant_id_raw)?;
+    let organization_id = parse_numeric_subject_id("iam_organization.id", &organization_id_raw)?;
+    Ok((tenant_id, organization_id))
+}
+
+async fn postgres_default_verification_delivery_subject(
+    pool: &PgPool,
+) -> Result<(i64, i64), sqlx::Error> {
+    let tenant_id_raw: String =
+        sqlx::query_scalar("SELECT id FROM iam_tenant WHERE status = 'active' ORDER BY id LIMIT 1")
+            .fetch_one(pool)
+            .await?;
+    let organization_id_raw: String = sqlx::query_scalar(
+        "SELECT id FROM iam_organization WHERE tenant_id = $1 AND status = 'active' ORDER BY id LIMIT 1",
+    )
+    .bind(&tenant_id_raw)
+    .fetch_one(pool)
+    .await?;
+    let tenant_id = parse_numeric_subject_id("iam_tenant.id", &tenant_id_raw)?;
+    let organization_id = parse_numeric_subject_id("iam_organization.id", &organization_id_raw)?;
+    Ok((tenant_id, organization_id))
+}
+
+fn parse_numeric_subject_id(column: &'static str, value: &str) -> Result<i64, sqlx::Error> {
+    value
+        .trim()
+        .parse::<i64>()
+        .map_err(|error| sqlx::Error::Protocol(format!("{column} must be numeric: {error}")))
+}
+
+pub fn app_forum_router_with_store_and_subject_boundary(
+    feed_read_store: Arc<dyn ForumFeedReadStore + Send + Sync>,
+    feed_command_store: Arc<dyn ForumFeedCommandStore + Send + Sync>,
+    comment_read_store: Arc<dyn ForumCommentReadStore + Send + Sync>,
+    comment_command_store: Arc<dyn ForumCommentCommandStore + Send + Sync>,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+) -> Router {
+    sdkwork_claw_product::api::app_forum_router_with_store(
+        feed_read_store,
+        feed_command_store,
+        comment_read_store,
+        comment_command_store,
+        Arc::new(OsApiKeySecretGenerator),
     )
     .layer(from_fn_with_state(
-        trusted_subject_config,
-        sdkwork_claw_http::trusted_request_subject_boundary,
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config),
+        sdkwork_claw_http::optional_app_request_subject_boundary,
     ))
 }
 
@@ -629,10 +779,11 @@ pub async fn router_with_sqlite_product_catalog(
     let app_gateway_traces_read_store =
         Arc::new(SqliteAppGatewayTracesReadStore::new(pool.clone()));
     let app_messages_read_store = Arc::new(SqliteAppMessagesReadStore::new(pool.clone()));
-    let app_playground_history_read_store =
-        Arc::new(SqliteAppPlaygroundHistoryReadStore::new(pool.clone()));
+    let app_generation_history_read_store =
+        Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
     let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
+    let course_store = Arc::new(SqliteCourseStore::new(pool.clone()));
     let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::new(pool.clone()));
@@ -650,6 +801,8 @@ pub async fn router_with_sqlite_product_catalog(
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
+        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        true,
         Some(payment_webhook_config),
         Some(account_summary_read_store),
         Some(app_user_profile_read_store),
@@ -663,10 +816,12 @@ pub async fn router_with_sqlite_product_catalog(
         Some(usage_logs_read_store),
         Some(app_gateway_traces_read_store),
         Some(app_messages_read_store),
-        Some(app_playground_history_read_store),
+        Some(app_generation_history_read_store),
         Some(app_store_read_store),
         Some(app_skills_store.clone()),
         Some(app_skills_store),
+        Some(course_store.clone()),
+        Some(course_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -712,10 +867,11 @@ pub async fn router_with_postgres_product_catalog(
     let app_gateway_traces_read_store =
         Arc::new(PostgresAppGatewayTracesReadStore::new(pool.clone()));
     let app_messages_read_store = Arc::new(PostgresAppMessagesReadStore::new(pool.clone()));
-    let app_playground_history_read_store =
-        Arc::new(PostgresAppPlaygroundHistoryReadStore::new(pool.clone()));
+    let app_generation_history_read_store =
+        Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
     let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
     let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
+    let course_store = Arc::new(PostgresCourseStore::new(pool.clone()));
     let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
     let app_providers_read_store = Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
     let app_routing_read_store = Arc::new(PostgresAppRoutingReadStore::new(pool.clone()));
@@ -733,6 +889,8 @@ pub async fn router_with_postgres_product_catalog(
         trusted_subject_config,
         app_session_config,
         Arc::new(Pbkdf2Sha256PasswordHasher),
+        Arc::new(sdkwork_claw_product::ports::DebugVerificationCodeSender),
+        true,
         Some(payment_webhook_config),
         Some(account_summary_read_store),
         Some(app_user_profile_read_store),
@@ -746,10 +904,12 @@ pub async fn router_with_postgres_product_catalog(
         Some(usage_logs_read_store),
         Some(app_gateway_traces_read_store),
         Some(app_messages_read_store),
-        Some(app_playground_history_read_store),
+        Some(app_generation_history_read_store),
         Some(app_store_read_store),
         Some(app_skills_store.clone()),
         Some(app_skills_store),
+        Some(course_store.clone()),
+        Some(course_store),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
         Some(forum_store.clone()),
@@ -787,6 +947,7 @@ pub async fn router_with_database_config(
         app_session_config,
         payment_webhook_config,
         provider_secret_map_config,
+        DeploymentMode::from_env(),
     )
     .await
 }
@@ -805,6 +966,27 @@ pub async fn router_with_database_config_api_key_trusted_subject_and_app_session
         app_session_config,
         payment_webhook_config,
         None,
+        DeploymentMode::from_env(),
+    )
+    .await
+}
+
+pub async fn router_with_database_config_api_key_trusted_subject_app_session_deployment_mode_config(
+    config: DatabaseConfig,
+    api_key_security_config: ApiKeySecurityConfig,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+    payment_webhook_config: PaymentWebhookConfig,
+    deployment_mode: DeploymentMode,
+) -> Result<Router, ProductCatalogRouterError> {
+    router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config(
+        config,
+        api_key_security_config,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        None,
+        deployment_mode,
     )
     .await
 }
@@ -824,6 +1006,28 @@ pub async fn router_with_database_config_api_key_trusted_subject_app_session_and
         app_session_config,
         payment_webhook_config,
         Some(provider_secret_map_config),
+        DeploymentMode::from_env(),
+    )
+    .await
+}
+
+pub async fn router_with_database_config_api_key_trusted_subject_app_session_provider_secret_map_and_deployment_mode_config(
+    config: DatabaseConfig,
+    api_key_security_config: ApiKeySecurityConfig,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+    payment_webhook_config: PaymentWebhookConfig,
+    provider_secret_map_config: ProviderSecretMapConfig,
+    deployment_mode: DeploymentMode,
+) -> Result<Router, ProductCatalogRouterError> {
+    router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config(
+        config,
+        api_key_security_config,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        Some(provider_secret_map_config),
+        deployment_mode,
     )
     .await
 }
@@ -835,6 +1039,30 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
     app_session_config: AppSessionConfig,
     payment_webhook_config: PaymentWebhookConfig,
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    deployment_mode: DeploymentMode,
+) -> Result<Router, ProductCatalogRouterError> {
+    router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+        config,
+        api_key_security_config,
+        trusted_subject_config,
+        app_session_config,
+        payment_webhook_config,
+        provider_secret_map_config,
+        deployment_mode,
+        StartupInstallMode::Ensure,
+    )
+    .await
+}
+
+async fn router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+    config: DatabaseConfig,
+    api_key_security_config: ApiKeySecurityConfig,
+    trusted_subject_config: TrustedSubjectConfig,
+    app_session_config: AppSessionConfig,
+    payment_webhook_config: PaymentWebhookConfig,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    deployment_mode: DeploymentMode,
+    startup_install_mode: StartupInstallMode,
 ) -> Result<Router, ProductCatalogRouterError> {
     let api_key_hasher = api_key_hasher_from_config(api_key_security_config)?;
     let provider_health_probe = build_provider_health_probe(provider_secret_map_config);
@@ -852,10 +1080,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 .map_err(|error| {
                     ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
                 })?;
-            DatabaseInstaller::for_sqlite(pool.clone())
-                .with_env_options()?
-                .ensure_installed()
-                .await?;
+            if startup_install_mode.should_ensure() {
+                DatabaseInstaller::for_sqlite(pool.clone())
+                    .with_env_options()?
+                    .ensure_installed()
+                    .await?;
+            }
             let read_store = SqlitePricingCatalogLoader::new(pool.clone());
             let model_catalog_snapshot = read_store.load_snapshot().await?;
             let model_rankings_store =
@@ -892,10 +1122,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_gateway_traces_read_store =
                 Arc::new(SqliteAppGatewayTracesReadStore::new(pool.clone()));
             let app_messages_read_store = Arc::new(SqliteAppMessagesReadStore::new(pool.clone()));
-            let app_playground_history_read_store =
-                Arc::new(SqliteAppPlaygroundHistoryReadStore::new(pool.clone()));
+            let app_generation_history_read_store =
+                Arc::new(SqliteAppGenerationHistoryReadStore::new(pool.clone()));
             let app_store_read_store = Arc::new(SqliteAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(SqliteAppSkillsReadStore::new(pool.clone()));
+            let course_store = Arc::new(SqliteCourseStore::new(pool.clone()));
             let forum_store = Arc::new(SqliteForumStore::new(pool.clone()));
             let app_providers_read_store = Arc::new(SqliteAppProvidersReadStore::new(pool.clone()));
             let app_routing_read_store = Arc::new(SqliteAppRoutingReadStore::new(pool.clone()));
@@ -907,16 +1138,24 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     provider_health_probe.clone(),
                 ),
             );
+            let (verification_code_sender, expose_debug_verification_code) =
+                sqlite_verification_code_sender(&pool, deployment_mode)
+                    .await
+                    .map_err(|error| {
+                        ProductCatalogRouterError::Sqlite(SqlCatalogLoadError::Database(error))
+                    })?;
             Ok(router_with_api_key_management_store_and_database_status(
                 Arc::new(read_store),
                 Arc::new(SqliteGatewayApiKeyCommandStore::new(pool.clone())),
                 Arc::new(SqliteAppSessionEventStore::new(pool.clone())),
-                Some(Arc::new(SqliteAppAuthStore::new(pool))),
+                Some(Arc::new(SqliteAppAuthStore::new(pool.clone()))),
                 api_key_hasher,
                 Arc::new(OsApiKeySecretGenerator),
                 trusted_subject_config,
                 app_session_config,
                 Arc::new(Pbkdf2Sha256PasswordHasher),
+                verification_code_sender,
+                expose_debug_verification_code,
                 Some(payment_webhook_config),
                 Some(account_summary_read_store),
                 Some(app_user_profile_read_store),
@@ -930,10 +1169,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(usage_logs_read_store),
                 Some(app_gateway_traces_read_store),
                 Some(app_messages_read_store),
-                Some(app_playground_history_read_store),
+                Some(app_generation_history_read_store),
                 Some(app_store_read_store),
                 Some(app_skills_store.clone()),
                 Some(app_skills_store),
+                Some(course_store.clone()),
+                Some(course_store),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
@@ -954,10 +1195,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 .map_err(|error| {
                     ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(error))
                 })?;
-            DatabaseInstaller::for_postgres(pool.clone())
-                .with_env_options()?
-                .ensure_installed()
-                .await?;
+            if startup_install_mode.should_ensure() {
+                DatabaseInstaller::for_postgres(pool.clone())
+                    .with_env_options()?
+                    .ensure_installed()
+                    .await?;
+            }
             let read_store = PostgresPricingCatalogLoader::new(pool.clone());
             let model_catalog_snapshot = read_store.load_snapshot().await?;
             let model_rankings_store =
@@ -994,10 +1237,11 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             let app_gateway_traces_read_store =
                 Arc::new(PostgresAppGatewayTracesReadStore::new(pool.clone()));
             let app_messages_read_store = Arc::new(PostgresAppMessagesReadStore::new(pool.clone()));
-            let app_playground_history_read_store =
-                Arc::new(PostgresAppPlaygroundHistoryReadStore::new(pool.clone()));
+            let app_generation_history_read_store =
+                Arc::new(PostgresAppGenerationHistoryReadStore::new(pool.clone()));
             let app_store_read_store = Arc::new(PostgresAppStoreReadStore::new(pool.clone()));
             let app_skills_store = Arc::new(PostgresAppSkillsReadStore::new(pool.clone()));
+            let course_store = Arc::new(PostgresCourseStore::new(pool.clone()));
             let forum_store = Arc::new(PostgresForumStore::new(pool.clone()));
             let app_providers_read_store =
                 Arc::new(PostgresAppProvidersReadStore::new(pool.clone()));
@@ -1010,16 +1254,26 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                     provider_health_probe,
                 ),
             );
+            let (verification_code_sender, expose_debug_verification_code) =
+                postgres_verification_code_sender(&pool, deployment_mode)
+                    .await
+                    .map_err(|error| {
+                        ProductCatalogRouterError::Postgres(PostgresCatalogLoadError::Database(
+                            error,
+                        ))
+                    })?;
             Ok(router_with_api_key_management_store_and_database_status(
                 Arc::new(read_store),
                 Arc::new(PostgresGatewayApiKeyCommandStore::new(pool.clone())),
                 Arc::new(PostgresAppSessionEventStore::new(pool.clone())),
-                Some(Arc::new(PostgresAppAuthStore::new(pool))),
+                Some(Arc::new(PostgresAppAuthStore::new(pool.clone()))),
                 api_key_hasher,
                 Arc::new(OsApiKeySecretGenerator),
                 trusted_subject_config,
                 app_session_config,
                 Arc::new(Pbkdf2Sha256PasswordHasher),
+                verification_code_sender,
+                expose_debug_verification_code,
                 Some(payment_webhook_config),
                 Some(account_summary_read_store),
                 Some(app_user_profile_read_store),
@@ -1033,10 +1287,12 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(usage_logs_read_store),
                 Some(app_gateway_traces_read_store),
                 Some(app_messages_read_store),
-                Some(app_playground_history_read_store),
+                Some(app_generation_history_read_store),
                 Some(app_store_read_store),
                 Some(app_skills_store.clone()),
                 Some(app_skills_store),
+                Some(course_store.clone()),
+                Some(course_store),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
                 Some(forum_store.clone()),
@@ -1062,7 +1318,11 @@ pub async fn router_with_optional_database_config(
 }
 
 pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
-    let config = DatabaseConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
+    let config = require_database_config(
+        DatabaseConfig::from_env().map_err(ProductCatalogRouterError::Config)?,
+    )?;
+    let startup_install_mode =
+        StartupInstallMode::from_env().map_err(ProductCatalogRouterError::Config)?;
     let api_key_security_config =
         ApiKeySecurityConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
     let trusted_subject_config =
@@ -1073,20 +1333,17 @@ pub async fn router_from_env() -> Result<Router, ProductCatalogRouterError> {
         PaymentWebhookConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
     let provider_secret_map_config =
         ProviderSecretMapConfig::from_env().map_err(ProductCatalogRouterError::Config)?;
-    match config {
-        Some(config) => {
-            router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config(
-                config,
-                require_api_key_security_config(api_key_security_config)?,
-                require_trusted_subject_config(trusted_subject_config)?,
-                require_app_session_config(app_session_config)?,
-                require_payment_webhook_config(payment_webhook_config)?,
-                provider_secret_map_config,
-            )
-            .await
-        }
-        None => Ok(router()),
-    }
+    router_with_database_config_api_key_trusted_subject_app_session_and_optional_provider_secret_map_config_and_startup_install_mode(
+        config,
+        require_api_key_security_config(api_key_security_config)?,
+        require_trusted_subject_config(trusted_subject_config)?,
+        require_app_session_config(app_session_config)?,
+        require_payment_webhook_config(payment_webhook_config)?,
+        provider_secret_map_config,
+        DeploymentMode::from_env(),
+        startup_install_mode,
+    )
+    .await
 }
 
 fn api_key_hasher_from_config(
@@ -1521,6 +1778,17 @@ fn require_payment_webhook_config(
     })
 }
 
+fn require_database_config(
+    config: Option<DatabaseConfig>,
+) -> Result<DatabaseConfig, ProductCatalogRouterError> {
+    config.ok_or_else(|| {
+        ProductCatalogRouterError::Config(
+            "SDKWORK_CLAW_DATABASE_URL is required for sdkwork-claw-app-api startup so install checks can run"
+                .to_owned(),
+        )
+    })
+}
+
 #[derive(Debug)]
 pub enum ProductCatalogRouterError {
     Config(String),
@@ -1570,8 +1838,8 @@ pub async fn serve(bind_addr: &str) -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::{
-        model_ranking_refresh_worker_config_from_env, should_invalidate_model_ranking_cache,
-        sqlite_model_ranking_schema_ready,
+        model_ranking_refresh_worker_config_from_env, router_from_env,
+        should_invalidate_model_ranking_cache, sqlite_model_ranking_schema_ready,
     };
     use sdkwork_claw_product::ports::{ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus};
     use sqlx::sqlite::SqlitePoolOptions;
@@ -1635,6 +1903,27 @@ mod tests {
         for name in names {
             std::env::remove_var(name);
         }
+    }
+
+    #[tokio::test(flavor = "current_thread")]
+    async fn router_from_env_requires_database_url_for_install_checked_startup() {
+        let _guard = env_guard().lock().unwrap();
+        let saved_database_url = std::env::var("SDKWORK_CLAW_DATABASE_URL").ok();
+        std::env::remove_var("SDKWORK_CLAW_DATABASE_URL");
+
+        let error = router_from_env()
+            .await
+            .expect_err("app-api startup must fail instead of serving an empty App Center store");
+
+        if let Some(value) = saved_database_url {
+            std::env::set_var("SDKWORK_CLAW_DATABASE_URL", value);
+        }
+        assert!(
+            error
+                .to_string()
+                .contains("SDKWORK_CLAW_DATABASE_URL is required"),
+            "unexpected startup error: {error}"
+        );
     }
 
     #[test]

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-repair@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_repair",
+  "skill": {
+    "id": 38620,
+    "skillKey": "clawhub-auto-repair",
+    "name": "Auto Repair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-repair",
+    "url": "https://clawhub.ai/skills/auto-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-repair-0618214bb57374db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby auto repair. Invoke when user asks for car repair near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774226994791,
+      "changelog": "Initial release of \"附近汽车维修\" (Nearby Auto Repair) skill:\n\n- Provides a list of nearby auto repair services based on user location.\n- Standardized input parameters (location, radius, limit, filters) for ease of integration.\n- Returns results in a unified format; category fixed as \"auto-repair\".\n- Handles specific errors such as invalid location, excessive radius, unavailable providers, and rate limiting.\n- Runs only with user location authorization; includes privacy considerations like coordinate blurring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91808a41d451bda0c84c9b6205f6362a41a484a11cc21f4640ce045408f9b5e8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58130,
+  "uuid": "skill-clawhub-pincaimao-interview-question",
+  "skillKey": "clawhub-pincaimao-interview-question",
+  "name": "聘才猫（Pincaimao）面试出题大师",
+  "summary": "聘才猫 - 面试出题大师 Use when calling Pincaimao Interview Question Master API to generate interview questions based on a job description and candidate resume. Requir...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_interview_question",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "面试出题大师 Use when calling Pincaimao Interview Question Master API to generate interview questions.",
+        "Requir..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-interview-question@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-interview-question/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-interview-question",
+      "url": "https://clawhub.ai/skills/pincaimao-interview-question"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-interview-question",
+    "url": "https://clawhub.ai/skills/pincaimao-interview-question",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-interview-question-9bfe7fa92a0879d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-interview-question@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-interview-question-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abdf1323aadb72f94da81dc7060ce54d19f8f698872d54226485cc9d70441e2f",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:22:56.010Z"
+}

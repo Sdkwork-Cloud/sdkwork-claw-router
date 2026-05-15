@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-acquisition-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_acquisition_analysis",
+  "skill": {
+    "id": 69878,
+    "skillKey": "clawhub-stock-acquisition-analysis",
+    "name": "my skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-acquisition-analysis",
+    "url": "https://clawhub.ai/skills/stock-acquisition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-acquisition-analysis-e872797ecbac3b0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取A股股票实时行情数据并进行技术分析。适用于投资者查询股票价格、涨跌幅、成交量等行情信息，以及进行MA、RSI、MACD等技术指标分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "will1189",
+      "userId": "s17ah1p5scsj5ywectjbc6972h842nvs",
+      "displayName": "will1189",
+      "image": "https://avatars.githubusercontent.com/u/263107365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775119629858,
+      "changelog": "Initial release of the A股实时行情与技术分析技能:\n\n- 实现A股股票实时价格、涨跌幅、成交量等行情数据查询\n- 支持计算MA（均线）、RSI、MACD等主流技术指标\n- 能生成基础的技术分析报告和买卖信号\n- 适配东方财富网数据源，自动识别沪深市场\n- 提供详尽使用方法、错误处理和注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efb3b4d7193f43b9b8df3af7882615ff3df7471e9952689cd689d77276b0591c"
+}

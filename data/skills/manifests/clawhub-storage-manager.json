@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62184,
+  "uuid": "skill-clawhub-storage-manager",
+  "skillKey": "clawhub-storage-manager",
+  "name": "Storage Manager",
+  "summary": "飞书收纳管家完整版 - 智能位置匹配 + 位置图片管理 + 一键入库",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storage_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruoruochen",
+      "features": [
+        "飞书收纳管家完整版",
+        "智能位置匹配 + 位置图片管理 + 一键入库"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/storage-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62226539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "storage-manager",
+      "url": "https://clawhub.ai/skills/storage-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storage-manager",
+    "url": "https://clawhub.ai/skills/storage-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storage-manager-099f3097c341e7e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/storage-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-storage-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d7166632a846631f9bac5f9680c3ef4b21f4284a6427a42edb0478427fc5192",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:18:53.050Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/site-overview-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_overview_audit",
+  "skill": {
+    "id": 38704,
+    "skillKey": "clawhub-site-overview-audit",
+    "name": "Site Overview Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-overview-audit",
+    "url": "https://clawhub.ai/skills/site-overview-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-overview-audit-35196ac10ac1db8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize one supported site's current snapshot records and highest-signal items."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojiou176",
+      "userId": "s170nkfkw4w7zm8rkrxee73k4984et24",
+      "displayName": "Yifeng[Terry] Yu",
+      "image": "https://avatars.githubusercontent.com/u/125581657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775816982984,
+      "changelog": "Initial release: site-overview-audit offers a concise, read-only summary of a single site's snapshot.\n\n- Supports inspection of one site: canvas, gradescope, edstem, or myuw.\n- Loads overview data from workspace-imported snapshots and lists top assignments, messages, or events.\n- Provides site-specific counts and recent updates for context validation.\n- Output remains grounded in normalized snapshot entities; no live state changes or private API claims.\n- Designed for focused, site-scoped Codex/Claude audits or validation of site data richness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e2c28a9c522eef1ff27245af273ade5e70f1167caacc4522d374ec921416aaf"
+}

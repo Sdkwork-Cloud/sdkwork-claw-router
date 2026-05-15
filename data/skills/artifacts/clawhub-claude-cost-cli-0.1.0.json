@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-cost-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_cost_cli",
+  "skill": {
+    "id": 14293,
+    "skillKey": "clawhub-claude-cost-cli",
+    "name": "Claude Cost Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-cost-cli",
+    "url": "https://clawhub.ai/skills/claude-cost-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-cost-cli-8116654f7916c8e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Claude API usage and cost reports from the command line. Secure macOS Keychain storage for Admin API key. Table/JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberash-dev",
+      "userId": "s176yqa5a6eagme0n69vzybevs85ndz6",
+      "displayName": "cyberash-dev",
+      "image": "https://avatars.githubusercontent.com/u/20923684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1208,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770838076783,
+      "changelog": "claude-cost-cli 0.1.0 initial release\n\n- Query Anthropic Claude Admin API usage and cost data from the command line on macOS.\n- Securely stores Admin API key in macOS Keychain; no plaintext or config files on disk.\n- Supports both tabular and JSON output for usage and cost reports.\n- Flexible querying: filter by model, API key, date range, and more; group and sum data.\n- Easy global install via npm; open source with detailed audit and provenance guidance.\n- Designed for scripting and automation—no caching, local storage, or unnecessary network calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f598b0d8b19e05c08e7e66de6a79db58a5f85f7751a278107a146ef7d893515"
+}

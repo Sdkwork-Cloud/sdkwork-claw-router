@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perceptron@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perceptron",
+  "skill": {
+    "id": 20239,
+    "skillKey": "clawhub-perceptron",
+    "name": "Perceptron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perceptron",
+    "url": "https://clawhub.ai/skills/perceptron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perceptron-d6cc6bc3180d72ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Image and video analysis powered by Isaac vision models. Capabilities include visual Q&A, object detection, OCR, captioning, counting, and grounded spatial r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subraiz",
+      "userId": "s171nsk3nmcbd0ravpfzkacvfx83jggv",
+      "displayName": "Subraiz Ahmed",
+      "image": "https://avatars.githubusercontent.com/u/25074637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772825259537,
+      "changelog": "- Simplified and clarified the description for general audiences; removed strict usage enforcement and emphasized capabilities.\n- Added structured metadata for required environment variables.\n- Focused documentation on capability overview, setup, SDK usage, and CLI, omitting mandatory language about routing all vision through Perceptron.\n- Removed internal enforcement instructions and narrowed guidance to user-facing APIs and practical usage.\n- No code or file-level changes; documentation and presentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0366b6c9d5c421b4485138faf353e4bc64ca442a9e5c299fbe02c7e0805e869"
+}

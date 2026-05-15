@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ach-volume-estimator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ach_volume_estimator",
+  "skill": {
+    "id": 42331,
+    "skillKey": "clawhub-ach-volume-estimator",
+    "name": "Ach Volume Estimator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ach-volume-estimator",
+    "url": "https://clawhub.ai/skills/ach-volume-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ach-volume-estimator-82547f1a9ec32a78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Estimate Dwolla's end-of-month ACH transaction volume from daily KPI emails. Use when processing ACH KPI emails, when Dave asks about monthly volume projecti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daveglaser0823",
+      "userId": "s177np9xgjfcqn18zqse6b7cq983feps",
+      "displayName": "Daveglaser0823",
+      "image": "https://avatars.githubusercontent.com/u/156377708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775773788012,
+      "changelog": "- Initial release of the ACH volume estimator skill.\n- Estimates Dwolla’s monthly ACH transaction volume using metrics from daily KPI emails and PDF attachments.\n- Calculates per-business-day rates and projects end-of-month totals using US Federal Reserve holiday calendar.\n- Provides concise, one-line estimates and integrates with ACH KPI summary reports and dashboard generation workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34b5046602770092b08f0ea08aec26922d559455e0be6ff8a22aaa60c6d664d4"
+}

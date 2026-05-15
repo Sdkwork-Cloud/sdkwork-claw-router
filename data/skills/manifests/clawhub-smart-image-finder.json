@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38421,
+  "uuid": "skill-clawhub-smart-image-finder",
+  "skillKey": "clawhub-smart-image-finder",
+  "name": "Smart Image Finder",
+  "summary": "Smart image search and download tool for AI agents. Three methods: news website extraction, Brave image search, AI generation. Use cases: article illustratio...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_image_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justinbao19",
+      "features": [
+        "Smart image search and download tool for AI agents",
+        "Three methods: news website extraction, Brave image search, AI generation",
+        "Use cases: article illustratio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-image-finder@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97433668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-image-finder",
+      "url": "https://clawhub.ai/skills/smart-image-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-image-finder",
+    "url": "https://clawhub.ai/skills/smart-image-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-image-finder-d8accd9ba6ecd12a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-image-finder@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-image-finder-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c15a26d62a48a4b0ea403ab16534081bdb0630fcc55ca1b36d6fe0d9a1a868b6",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:04:06.064Z"
+}

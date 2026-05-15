@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15570,
+  "uuid": "skill-clawhub-submit-limit-order",
+  "skillKey": "clawhub-submit-limit-order",
+  "name": "Uniswap Submit Limit Order",
+  "summary": "Submit a UniswapX Dutch auction limit order. Use when user wants to set a limit price, get MEV-protected execution, or submit an order that fills at the best available price. No gas cost until filled.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_limit_order",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Submit a UniswapX Dutch auction limit order",
+        "Use when user wants to set a limit price, get MEV-protected execution, or submit an order that.",
+        "No gas cost until filled."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/submit-limit-order@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "submit-limit-order",
+      "url": "https://clawhub.ai/skills/submit-limit-order"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-limit-order",
+    "url": "https://clawhub.ai/skills/submit-limit-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-limit-order-41ddedb9f5d76dfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/submit-limit-order@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-submit-limit-order-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0169b298d8253c9978b91eb3ea623a2ffeffc37d2c8c18bd9ee77800b09b413e",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:52:54.656Z"
+}

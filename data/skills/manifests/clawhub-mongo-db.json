@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20838,
+  "uuid": "skill-clawhub-mongo-db",
+  "skillKey": "clawhub-mongo-db",
+  "name": "Mongo Db Client Tool",
+  "summary": "Interact with a MongoDB database for persistent document storage. Supports full CRUD operations (find, insert, update, delete), aggregation pipelines, collec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mongo_db",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JithinM",
+      "features": [
+        "Interact with a MongoDB database for persistent document storage",
+        "Supports full CRUD operations (find, insert, update, delete), aggregation pipelines, collec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mongo-db@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12230840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mongo-db",
+      "url": "https://clawhub.ai/skills/mongo-db"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mongo-db",
+    "url": "https://clawhub.ai/skills/mongo-db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mongo-db-624035cf2f3b17a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mongo-db@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mongo-db-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c3608b23038b5cae36f58a41ad8078323a11441661983d0d037ee94a880307",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:30:06.694Z"
+}

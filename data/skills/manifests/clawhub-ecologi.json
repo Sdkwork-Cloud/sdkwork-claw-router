@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29619,
+  "uuid": "skill-clawhub-ecologi",
+  "skillKey": "clawhub-ecologi",
+  "name": "Ecologi",
+  "summary": "Ecologi integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Ecologi data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecologi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ecologi integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Ecologi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecologi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecologi",
+      "url": "https://clawhub.ai/skills/ecologi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecologi",
+    "url": "https://clawhub.ai/skills/ecologi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecologi-84a0fc9a0fc6acb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecologi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecologi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f711dda8e63559f25303fe488370af2e15045c0b1fd78358bfe7b71992591d6",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:26.459Z"
+}

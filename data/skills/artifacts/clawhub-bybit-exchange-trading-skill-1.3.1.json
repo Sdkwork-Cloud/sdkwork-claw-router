@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bybit-exchange-trading-skill@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bybit_exchange_trading_skill",
+  "skill": {
+    "id": 51969,
+    "skillKey": "clawhub-bybit-exchange-trading-skill",
+    "name": "Bybit Exchange AI Trading Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bybit-exchange-trading-skill",
+    "url": "https://clawhub.ai/skills/bybit-exchange-trading-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bybit-exchange-trading-skill-86a919afc4b28d8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bybit Exchange Trading Skill — trade on Bybit using natural language. Covers spot, derivatives, earn, and more. Requires Bybit API credentials and explicit c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "victorwu-bybit",
+      "userId": "s17021y052qfqsndcp0pk3trws85r2hz",
+      "displayName": "victorwu-bybit",
+      "image": "https://avatars.githubusercontent.com/u/267869761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1777883766709,
+      "changelog": "- Bumped version to 1.3.1 in metadata to reflect the latest release.\n- No changes to code or functional behavior; documentation and environment requirements remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35dc32c394d5cd775e6fb98c17cdfd48a94ae566b241f7476f2ad5ccf4dbbe77"
+}

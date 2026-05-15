@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nlb@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nlb",
+  "skill": {
+    "id": 12988,
+    "skillKey": "clawhub-nlb",
+    "name": "NLB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nlb",
+    "url": "https://clawhub.ai/skills/nlb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nlb-84d10d96ddb45ce6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "check loans and search resources from the National Library Board of Singapore"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kk17",
+      "userId": "publishers:kk17",
+      "displayName": "kk17",
+      "image": "https://avatars.githubusercontent.com/u/3477852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1483,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770394992990,
+      "changelog": "- Initial release of the nlb skill.\n- Lets users check loan and overdue items, and view recommendations by logging into their National Library Board (Singapore) account.\n- Provides guidance on searching the NLB catalogue with filters for availability, location, collection, material type, and language.\n- Includes detailed collection and location ID mappings for refined searches.\n- Example search URLs and instructions on opening result and card pages are provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f57b3a6651d7412be4b0e8650ef2be424445b745063a1d86075666d475be9fbf"
+}

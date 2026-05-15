@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdfreader@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdfreader",
+  "skill": {
+    "id": 15939,
+    "skillKey": "clawhub-pdfreader",
+    "name": "Pdfreader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdfreader",
+    "url": "https://clawhub.ai/skills/pdfreader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdfreader-d790db7330d3bbae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text and metadata from PDF files using PyMuPDF, supporting large files and outputting results in JSON format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771728338759,
+      "changelog": "Fixed instruction mismatch: Separated input (.pdf) and output (.json) validation. Added security documentation to SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:415b6500ccc7487ab18ffcd539aa840e20cb0ccab1e4b965f4420a817853b7d0"
+}

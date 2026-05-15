@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66948,
+  "uuid": "skill-clawhub-ppt-generator-ai-pro",
+  "skillKey": "clawhub-ppt-generator-ai-pro",
+  "name": "PPT 生成器 AI Pro",
+  "summary": "一键生成乔布斯风极简科技感 PPT，支持 HTML/PDF 导出。当用户需要制作演示文稿、工作汇报、产品发布、融资路演时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_generator_ai_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "-A1ert",
+      "features": [
+        "一键生成乔布斯风极简科技感 PPT，支持 HTML/PDF 导出。当用户需要制作演示文稿、工作汇报、产品发布、融资路演时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-generator-ai-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38743387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-generator-ai-pro",
+      "url": "https://clawhub.ai/skills/ppt-generator-ai-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-generator-ai-pro",
+    "url": "https://clawhub.ai/skills/ppt-generator-ai-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-generator-ai-pro-5dfb91b41db7ddd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-generator-ai-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-generator-ai-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8603d3e8ac27594c420f1ec4467370695604acf15bc51b60c1bf03cf385f982",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:59:40.885Z"
+}

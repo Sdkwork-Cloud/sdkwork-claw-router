@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21626,
+  "uuid": "skill-clawhub-data-harvester-v2",
+  "skillKey": "clawhub-data-harvester-v2",
+  "name": "Data Harvester Pro",
+  "summary": "Batch web scraping for competitor analysis, price monitoring and market research",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_harvester_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windy-001-crypto",
+      "features": [
+        "Batch web scraping for competitor analysis, price monitoring and market research"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-harvester-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258460660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-harvester-v2",
+      "url": "https://clawhub.ai/skills/data-harvester-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-harvester-v2",
+    "url": "https://clawhub.ai/skills/data-harvester-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-harvester-v2-172ca3f739437337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-harvester-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-harvester-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37df34d10c79eded89124ceb9a53992de6533ed6de3160562718d199255d9522",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:14:38.967Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basecamp@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basecamp",
+  "skill": {
+    "id": 9264,
+    "skillKey": "clawhub-basecamp",
+    "name": "Basecamp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basecamp",
+    "url": "https://clawhub.ai/skills/basecamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basecamp-5f3e3024675ba4b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Basecamp API integration with managed OAuth. Manage projects, to-dos, messages, schedules, documents, and team collaboration. Use this skill when users want..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3963,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777590875527,
+      "changelog": "- Changed all API and connection endpoints from `gateway.maton.ai`/`ctrl.maton.ai` to `api.maton.ai`.\n- Updated code examples and documentation to use the new `api.maton.ai` base URL format.\n- Clarified connection management instructions and emphasized specifying `Maton-Connection` when multiple connections exist.\n- Added a Security & Permissions section, highlighting the need for explicit user approval before write operations.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48c1612b5f055fe44cf34c84a1acb6eee619415b8ec4bf7bf6a6e858c78061f6"
+}

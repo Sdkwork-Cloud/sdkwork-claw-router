@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49723,
+  "uuid": "skill-clawhub-legal-intake-pilot",
+  "skillKey": "clawhub-legal-intake-pilot",
+  "name": "Legal Intake Pilot",
+  "summary": "A high-security legal intake agent for law firms. Prevents unauthorized legal advice and PHI leaks via ThumbGate.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_intake_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "A high-security legal intake agent for law firms",
+        "Prevents unauthorized legal advice and PHI leaks via ThumbGate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-intake-pilot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-intake-pilot",
+      "url": "https://clawhub.ai/skills/legal-intake-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-intake-pilot",
+    "url": "https://clawhub.ai/skills/legal-intake-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-intake-pilot-e90589b9b7bc3a6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-intake-pilot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-intake-pilot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a71ddfaba31f14cf86081203769ce795d92ae4d898b26ac85ae2157b6653dd74",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T21:14:49.593Z"
+}

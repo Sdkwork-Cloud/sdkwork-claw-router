@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gep-immune-auditor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gep_immune_auditor",
+  "skill": {
+    "id": 18449,
+    "skillKey": "clawhub-gep-immune-auditor",
+    "name": "GEP Immune Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gep-immune-auditor",
+    "url": "https://clawhub.ai/skills/gep-immune-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gep-immune-auditor-b9a6a99d6099201b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit agent for GEP/EvoMap ecosystem. Scans Gene/Capsule assets using immune-system-inspired 3-layer detection: L1 pattern scan, L2 intent inference..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771713908974,
+      "changelog": "Version 1.0.1\n\n- Added \"G0: Self-Audit Rule\" section to require L1 pattern scan of all external protocol documents before following their instructions.\n- Outlined four mandatory pre-checks for protocol docs: instruction extraction, data leak check, privilege escalation check, and identity binding check.\n- Specified requirement to alert the user if any threat or critical issue is detected in protocol documents before proceeding.\n- No changes to functionality or workflow for auditing GEP assets.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1eff67c40879d78d373dfcc84fe98657c162ecae7d146ac8ccac27ae58c1831"
+}

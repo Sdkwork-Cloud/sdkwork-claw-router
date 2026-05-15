@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18684,
+  "uuid": "skill-clawhub-model-fallback",
+  "skillKey": "clawhub-model-fallback",
+  "name": "Multi-model automatic fallback system",
+  "summary": "Multi-model automatic fallback system. Monitors model availability and automatically falls back to backup models when the primary model fails. Supports MiniM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_fallback",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azure5100",
+      "features": [
+        "Multi-model automatic fallback system",
+        "Monitors model availability and automatically falls back to backup models when the primary mode.",
+        "Supports MiniM..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-fallback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207019459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-fallback",
+      "url": "https://clawhub.ai/skills/model-fallback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-fallback",
+    "url": "https://clawhub.ai/skills/model-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-fallback-d697a95806cb5548.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-fallback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-fallback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba69c1d8ef137942a47acf0b189d6fc5e98ca8212aaa5fb01f139b61aa8f6caf",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T07:07:40.419Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35536,
+  "uuid": "skill-clawhub-tribe-payments",
+  "skillKey": "clawhub-tribe-payments",
+  "name": "Tribe Payments",
+  "summary": "Tribe Payments integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tribe Payments data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tribe_payments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Tribe Payments integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tribe Payments data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tribe-payments@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tribe-payments",
+      "url": "https://clawhub.ai/skills/tribe-payments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tribe-payments",
+    "url": "https://clawhub.ai/skills/tribe-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tribe-payments-73b226a600752ece.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tribe-payments@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tribe-payments-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b46fc510983e7ef0fd2f5dc9baf59f3c5b377d7b5c71829cf1d98e08cf1ed183",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:07:01.075Z"
+}

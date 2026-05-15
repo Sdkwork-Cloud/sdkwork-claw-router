@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15414,
+  "uuid": "skill-clawhub-neynar-inbox",
+  "skillKey": "clawhub-neynar-inbox",
+  "name": "Neynar Inbox",
+  "summary": "Email for AI agents. Create mailboxes, send and receive emails via API. No browser, no OAuth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neynar_inbox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rishavmukherji",
+      "features": [
+        "Email for AI agents",
+        "Create mailboxes, send and receive emails via API",
+        "No browser, no OAuth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neynar-inbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5431161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neynar-inbox",
+      "url": "https://clawhub.ai/skills/neynar-inbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neynar-inbox",
+    "url": "https://clawhub.ai/skills/neynar-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neynar-inbox-2e1456b948e0675b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neynar-inbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neynar-inbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7745170b0f57dea3a888fc30b4f3f14f3f470b80fac21d54941e516aac333670",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T06:18:12.458Z"
+}

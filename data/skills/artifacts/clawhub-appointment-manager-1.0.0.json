@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appointment-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appointment_manager",
+  "skill": {
+    "id": 37800,
+    "skillKey": "clawhub-appointment-manager",
+    "name": "Appointment Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appointment-manager",
+    "url": "https://clawhub.ai/skills/appointment-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appointment-manager-4859f04f196fa876.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Books, tracks, and reminds you of appointments through online booking or phone-call scripts, managing the full appointment lifecycle and reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rednix",
+      "userId": "s170cvfh9s59w5610ah2tznmxd83fyk2",
+      "displayName": "Nico Lumma",
+      "image": "https://avatars.githubusercontent.com/u/3120412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784610847,
+      "changelog": "- Initial release of appointment-manager skill.\n- Book, track, and remind users about appointments of any type.\n- Supports both online booking (automated) and phone-only providers (call script provided).\n- Customizable multi-stage reminder chain with prep notes and follow-ups.\n- Maintains provider and appointment log files for tracking and rebooking.\n- Integrates with Google Calendar (if connected) and adapts reminders to user preferences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:580d3ab412c996e4341bc5d87e147074d59b15414b1c53f9ac58ac8220c5af97"
+}

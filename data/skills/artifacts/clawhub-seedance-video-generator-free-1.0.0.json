@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-video-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_generator_free",
+  "skill": {
+    "id": 51981,
+    "skillKey": "clawhub-seedance-video-generator-free",
+    "name": "Seedance Video Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-generator-free",
+    "url": "https://clawhub.ai/skills/seedance-video-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-generator-free-a78b4a1076cc39f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop an image or type a scene description and watch it transform into a smooth, dynamic video clip — no editing software, no subscriptions required. The seed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775142067585,
+      "changelog": "Seedance Video Generator Free — Initial Release\n\n- Instantly generate AI-powered videos from text prompts or uploaded images with no subscriptions required.\n- Seamlessly handles authentication by auto-acquiring a free token if missing.\n- Supports exporting generated video in multiple formats, with status tracking and error handling.\n- Built-in workflow for checking credits, session state, and export progress.\n- Designed to keep technical details hidden, ensuring a simple, user-friendly experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b11023c4834330662a8e3436fccb715febcc1b9b6aa4c55ddc370aee8d3fa4f"
+}

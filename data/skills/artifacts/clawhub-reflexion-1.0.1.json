@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reflexion@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reflexion",
+  "skill": {
+    "id": 33572,
+    "skillKey": "clawhub-reflexion",
+    "name": "reflexion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reflexion",
+    "url": "https://clawhub.ai/skills/reflexion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reflexion-97ebeac829a08232.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Closed-loop learning for AI coding agents. Auto-captures errors and corrections, recalls relevant past solutions when similar situations arise, and promotes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharoonsharif",
+      "userId": "s17cbqpc05capj08csqdymywcs83haev",
+      "displayName": "Sharoon Sharif",
+      "image": "https://avatars.githubusercontent.com/u/150296639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774995053498,
+      "changelog": "Add paper citation: Shinn et al. (2023) Reflexion: Language Agents with Verbal Reinforcement Learning (arXiv:2303.11366)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1731c8b828c7486d31965b03edc701f6ebee91b2a91b1db9c4d2973333e7d10e"
+}

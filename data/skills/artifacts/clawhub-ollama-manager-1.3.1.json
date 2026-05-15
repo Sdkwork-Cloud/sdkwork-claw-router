@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-manager@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_manager",
+  "skill": {
+    "id": 51047,
+    "skillKey": "clawhub-ollama-manager",
+    "name": "Ollama Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-manager",
+    "url": "https://clawhub.ai/skills/ollama-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-manager-de2de333a675c3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Ollama models across your machines — see what's loaded, what's eating disk, what's never used, and what you should pull next. Get AI-powered recommend..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1775254713800,
+      "changelog": "Cross-platform support: macOS, Linux, and Windows. Updated OS metadata, descriptions, and hardware recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86a28304790db2a69188e5312821906d4e0b7e5e3babf4d7124e1a67cf77d6ba"
+}

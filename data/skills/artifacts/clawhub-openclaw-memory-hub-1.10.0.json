@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-hub@1.10.0",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_hub",
+  "skill": {
+    "id": 58543,
+    "skillKey": "clawhub-openclaw-memory-hub",
+    "name": "OpenClaw Memory Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-hub",
+    "url": "https://clawhub.ai/skills/openclaw-memory-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-hub-89e0249425db7565.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "三层记忆架构 (Three-tier memory architecture for OpenClaw AI agents). 提供 L0 运行时语义检索 (Ollama bge-m3 + SQLite-vec 向量库)、L1 工作记忆 (每日 Markdown 日志)、L2 长期记忆 (只读基底)、Dreami..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "victorqr",
+      "userId": "s175qsdgwdkzn5wes1h4qnq9fx84sfq1",
+      "displayName": "VictorQR",
+      "image": "https://avatars.githubusercontent.com/u/42757940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.10.0",
+      "createdAt": 1778385387680,
+      "changelog": "recall_filter, memos-extractor dual-channel, memos-cloud isolation, index sanitization, REM Backfill reschedule",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e62dbf8ec625df8050bed40741dc73b2ee9a516e57c0ea8af8354be33801844d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44061,
+  "uuid": "skill-clawhub-actualize",
+  "skillKey": "clawhub-actualize",
+  "name": "Actualize",
+  "summary": "Reconcile the project's FPF state with recent repository changes",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actualize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hahamumu08",
+      "features": [
+        "Reconcile the project's FPF state with recent repository changes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/actualize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202640507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "actualize",
+      "url": "https://clawhub.ai/skills/actualize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actualize",
+    "url": "https://clawhub.ai/skills/actualize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actualize-57cec82511851cfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/actualize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-actualize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe9e212fb236c99f6c0268fb266616a2e6b1d9a55d33b4bdf13e821885c228e5",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:42:22.080Z"
+}

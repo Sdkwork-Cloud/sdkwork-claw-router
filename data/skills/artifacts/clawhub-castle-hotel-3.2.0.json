@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/castle-hotel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.castle_hotel",
+  "skill": {
+    "id": 45710,
+    "skillKey": "clawhub-castle-hotel",
+    "name": "castle-hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "castle-hotel",
+    "url": "https://clawhub.ai/skills/castle-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/castle-hotel-c423765165ec8eb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights to castle hotels and heritage stay destinations. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777018150246,
+      "changelog": "Castle Hotel Flights — Heritage Stay skill 3.2.0 update:\n\n- Strengthened rules: Answers must always source real-time data from the flyai CLI, never training data.\n- Enforced mandatory `[Book](detailUrl)` links; outputs with missing links trigger self-test and re-execution.\n- Expanded travel services: now supports hotel booking, train/attraction tickets, car rental, insurance, and more (powered by Fliggy).\n- Added comprehensive output formatting requirements: conclusion-first, castle hotel tips, comparison tables, brand tags.\n- Added step-by-step CLI command playbooks for different user intents (recommended, cheapest, fastest, direct routes).\n- Provided clearer parameter mappings for castle hotel and heritage stay travel queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:342c412d68c3bccb08b2d2c33c5a2545213286e809f1c50cabb3e3607259e007"
+}

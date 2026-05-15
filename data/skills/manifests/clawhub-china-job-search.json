@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71459,
+  "uuid": "skill-clawhub-china-job-search",
+  "skillKey": "clawhub-china-job-search",
+  "name": "Job Search",
+  "summary": "中国招聘平台搜索技能。支持BOSS直聘、智联招聘、前程无忧三大平台，提供关键词搜索、地点筛选、薪资范围过滤等功能。专门针对中国本土招聘市场设计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_job_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JarryK",
+      "features": [
+        "中国招聘平台搜索技能。支持BOSS直聘、智联招聘、前程无忧三大平台，提供关键词搜索、地点筛选、薪资范围过滤等功能。专门针对中国本土招聘市场设计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-job-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42598403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-job-search",
+      "url": "https://clawhub.ai/skills/china-job-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-job-search",
+    "url": "https://clawhub.ai/skills/china-job-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-job-search-7db58fc5d3c18b43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-job-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-job-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f0655b709d8efb58c3fa06456b30cee327c549a07765ce9894b2d734b07f4d5",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:12:49.475Z"
+}

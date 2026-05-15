@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/konto-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.konto_api",
+  "skill": {
+    "id": 20558,
+    "skillKey": "clawhub-konto-api",
+    "name": "Konto API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "konto-api",
+    "url": "https://clawhub.ai/skills/konto-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/konto-api-18fa03992cf9647d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access personal finance data from Konto including accounts, transactions, investments, assets, loans, subscriptions, and net worth summaries via API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angelstreet",
+      "userId": "publishers:angelstreet",
+      "displayName": "angelstreet",
+      "image": "https://avatars.githubusercontent.com/u/405908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772284356264,
+      "changelog": "Initial release — query personal finance data from Konto instance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bc0948e1081c354a8f72df51c1a43d602b02d9f4be81ba7c8755ae23d316a7b"
+}

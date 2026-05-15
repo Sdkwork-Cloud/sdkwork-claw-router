@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aana-data-export-guardrail-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_data_export_guardrail_skill",
+  "skill": {
+    "id": 35976,
+    "skillKey": "clawhub-aana-data-export-guardrail-skill",
+    "name": "AANA Data Export Guardrail Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-data-export-guardrail-skill",
+    "url": "https://clawhub.ai/skills/aana-data-export-guardrail-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-data-export-guardrail-skill-00655fb6979cfde8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Checks and enforces narrow, authorized, privacy-safe controls on data exports before file, record, or dataset sharing to prevent unauthorized or excessive da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindbomber",
+      "userId": "s177cynx168hg36ac5nrkb9wdn85z9dq",
+      "displayName": "mindbomber",
+      "image": "https://avatars.githubusercontent.com/u/42798111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777943210268,
+      "changelog": "- Initial release of the AANA Data Export Guardrail Skill.\n- Provides comprehensive instructions to ensure exports are narrow, authorized, necessary, privacy-safe, and reversible.\n- Includes clear checklists for required verifications, risk classes, scope minimization, and destination/retention rules.\n- Details how to construct minimal review payloads for compliance checks.\n- Outlines decision rules and a standardized output pattern for data export actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f832187fb3c7f2b1a5b1eeada0ceda48eb50aeb27b3206400d39ca2f5d9f4199"
+}

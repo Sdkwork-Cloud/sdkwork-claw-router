@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15834,
+  "uuid": "skill-clawhub-zerodust-chain-exit",
+  "skillKey": "clawhub-zerodust-chain-exit",
+  "name": "ZeroDust Chain Exit",
+  "summary": "Sweep 100% of native gas tokens from EIP-7702 compatible chains. Leaves exactly zero balance. Supports 25 mainnet chains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerodust_chain_exit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zerodustxyz",
+      "features": [
+        "Sweep 100% of native gas tokens from EIP-7702 compatible chains",
+        "Leaves exactly zero balance",
+        "Supports 25 mainnet chains."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerodust-chain-exit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223935047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerodust-chain-exit",
+      "url": "https://clawhub.ai/skills/zerodust-chain-exit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerodust-chain-exit",
+    "url": "https://clawhub.ai/skills/zerodust-chain-exit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerodust-chain-exit-801f781c169bf439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerodust-chain-exit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerodust-chain-exit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ee2ff4267907161c968f46fc974a76903a9bbc038f3c61f0a4cb18d49caef7c",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T16:19:41.303Z"
+}

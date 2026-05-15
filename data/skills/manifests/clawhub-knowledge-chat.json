@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64697,
+  "uuid": "skill-clawhub-knowledge-chat",
+  "skillKey": "clawhub-knowledge-chat",
+  "name": "Knowledge Chat",
+  "summary": "Knowledge Chat 知识库对话助手 - 支持连接外部知识库、语义搜索、上下文对话、图片/附件理解。具备思考进度提示、Markdown渲染、后续建议、向量索引构建等功能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "franksteinwen007-git",
+      "features": [
+        "Knowledge Chat 知识库对话助手",
+        "支持连接外部知识库、语义搜索、上下文对话、图片/附件理解。具备思考进度提示、Markdown渲染、后续建议、向量索引构建等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-chat@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265703165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-chat",
+      "url": "https://clawhub.ai/skills/knowledge-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-chat",
+    "url": "https://clawhub.ai/skills/knowledge-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-chat-0c639729e2e50bfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-chat@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-chat-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dfc4cda00648fc6c408f1e7bad9d03046b85d8083bc63de62092f3e2b436e63",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:56:40.810Z"
+}

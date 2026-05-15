@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openhumancy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openhumancy",
+  "skill": {
+    "id": 49454,
+    "skillKey": "clawhub-openhumancy",
+    "name": "Open Humancy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openhumancy",
+    "url": "https://clawhub.ai/skills/openhumancy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openhumancy-b7eff56ab737924e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate real-world tasks to human workers via the OpenHumancy API. Use when the user needs physical actions (field verification, photography, deliveries, my..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openhumancy",
+      "userId": "s177hfcsccrf9bbc2vg10z2nvd84xn7f",
+      "displayName": "openhumancy",
+      "image": "https://avatars.githubusercontent.com/u/276285725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777534215301,
+      "changelog": "- Initial release of the OpenHumancy skill.\n- Delegate real-world tasks to human workers via the OpenHumancy API.\n- Supports worker search, task creation, application management, chat, and payments on the TON blockchain.\n- Provides endpoints for agent profile, tasks, applications, chats, file uploads, webhooks, and transaction history.\n- Includes guidelines and a typical workflow for hiring and managing tasks with human workers.\n- Optionally usable via MCP server setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84797f95dc16714b0ccd75b53fc20022f2b38bae044bc5b722965aa33709587d"
+}

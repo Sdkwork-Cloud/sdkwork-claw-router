@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-scrape@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_scrape",
+  "skill": {
+    "id": 44997,
+    "skillKey": "clawhub-kirk-scrape",
+    "name": "scrape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-scrape",
+    "url": "https://clawhub.ai/skills/kirk-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-scrape-c1b61504d1100363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs compliant web scraping with robots.txt checks, rate limiting, GDPR/CCPA-aware data handling, using direct HTTP or SkillBoss API Hub integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776238487808,
+      "changelog": "- Initial release of the \"Scrape\" skill focused on compliant web scraping.\n- Features built-in robots.txt checking and pre-scrape compliance checklist.\n- Supports both direct HTTP scraping and managed scraping via SkillBoss API Hub.\n- Enforces rate limiting, legal guidelines (GDPR/CCPA), and ethical data handling practices.\n- Documentation included for legal boundaries, request discipline, and data minimization.\n- Requires `SKILLBOSS_API_KEY` for API Hub integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23a8a942e7798793c11f4dabda71ab4f2290d9eebaedb07cff18ce32ddebe06f"
+}

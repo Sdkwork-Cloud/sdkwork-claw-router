@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38588,
+  "uuid": "skill-clawhub-thai-post",
+  "skillKey": "clawhub-thai-post",
+  "name": "Thai Post",
+  "summary": "Thai Post integration. Manage Tracks, Searchs. Use when the user wants to interact with Thai Post data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thai_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Thai Post integration",
+        "Manage Tracks, Searchs",
+        "Use when the user wants to interact with Thai Post data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thai-post@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thai-post",
+      "url": "https://clawhub.ai/skills/thai-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thai-post",
+    "url": "https://clawhub.ai/skills/thai-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thai-post-91793c554fc5f31d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thai-post@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-thai-post-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fdf452d0623a4d0ebe2e1f34aa3f56de507253827ee354c753817c651c80d1b",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:35.762Z"
+}

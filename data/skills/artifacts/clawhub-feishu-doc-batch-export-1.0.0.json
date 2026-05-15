@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-batch-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_batch_export",
+  "skill": {
+    "id": 66300,
+    "skillKey": "clawhub-feishu-doc-batch-export",
+    "name": "Feishu Doc Batch Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-batch-export",
+    "url": "https://clawhub.ai/skills/feishu-doc-batch-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-batch-export-a4b4e9e87083abce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量导出飞书文档（docx）到本地Markdown格式，支持保留文档格式、图片、链接，支持指定文件夹/文档链接批量导出。触发场景：当用户需要导出飞书文档、批量下载飞书文档、飞书文档转Markdown时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "technologyliu",
+      "userId": "s174724z1q6r995tk674er9gh583jkb8",
+      "displayName": "TechnologyLiu",
+      "image": "https://avatars.githubusercontent.com/u/43312856?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775125597062,
+      "changelog": "Initial release: support batch export Feishu docx documents to Markdown format, retain formatting and images",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b493c0bea7ed223e0d35f2425451298e254af6a635439af2dd723a1cca2384a2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analyzing-attendance-record-zhzh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyzing_attendance_record_zhzh",
+  "skill": {
+    "id": 43070,
+    "skillKey": "clawhub-analyzing-attendance-record-zhzh",
+    "name": "work attendance skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyzing-attendance-record-zhzh",
+    "url": "https://clawhub.ai/skills/analyzing-attendance-record-zhzh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyzing-attendance-record-zhzh-d03d0baf7e9fdd79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze the weekly attendance records of employees at Zhuihui Branch and generate an attendance report in docx format. At the same time, output an xlsx file..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wang2y",
+      "userId": "publishers:wang2y",
+      "displayName": "wang2y",
+      "image": "https://avatars.githubusercontent.com/u/135349334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774145049673,
+      "changelog": "1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f95c78a73feaec5f6e1a258ae6cfbde3000119e05118104b2967037a08f732e"
+}

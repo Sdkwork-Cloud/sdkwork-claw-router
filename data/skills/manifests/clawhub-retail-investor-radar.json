@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69393,
+  "uuid": "skill-clawhub-retail-investor-radar",
+  "skillKey": "clawhub-retail-investor-radar",
+  "name": "Retail Investor Radar",
+  "summary": "A股个股体检报告，输入股票代码或名称，自动拉取公开数据，AI用大白话生成全面体检报告，包含基本面、估值、资金流向、近期新闻和风险提示。触发词：A股分析、个股体检、股票体检、帮我看看XXX这只股票、分析一下股票代码XXXXXX、这只股票怎么样、值不值得买、查一下XXXXXX",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_investor_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack James",
+      "features": [
+        "A股个股体检报告，输入股票代码或名称，自动拉取公开数据，AI用大白话生成全面体检报告，包含基本面、估值、资金流向、近期新闻和风险提示。触发词：A股分析、个股体检、股票体检、帮我看看XXX这只."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retail-investor-radar@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72848907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retail-investor-radar",
+      "url": "https://clawhub.ai/skills/retail-investor-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-investor-radar",
+    "url": "https://clawhub.ai/skills/retail-investor-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-investor-radar-8fead55df5a7b3ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retail-investor-radar@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retail-investor-radar-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da09020689dc429a2c7d92e89db8a6adfaa021b699868fb32926e5bdc35dfe1f",
+      "artifactSizeBytes": 2639
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:25:02.342Z"
+}

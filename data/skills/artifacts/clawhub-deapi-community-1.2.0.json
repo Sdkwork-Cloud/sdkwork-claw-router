@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deapi-community@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deapi_community",
+  "skill": {
+    "id": 23729,
+    "skillKey": "clawhub-deapi-community",
+    "name": "deAPI AI Media Suite (Community)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deapi-community",
+    "url": "https://clawhub.ai/skills/deapi-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deapi-community-6ae986cf1d49c1a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The cheapest AI media API on the market. Generate images (Flux), music (AceStep), speech with voice cloning, transcribe video/audio, OCR, video generation, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zrewolwerowanykaloryfer",
+      "userId": "s17db8nbv9chw976am8z7dajp583gb7s",
+      "displayName": "zrewolwerowanykaloryfer",
+      "image": "https://avatars.githubusercontent.com/u/229982695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773307766589,
+      "changelog": "Added: Music generation (AceStep 1.5), TTS voice cloning & voice design, Prompt Enhancement boosters (5 endpoints), file upload transcription, Model Selection Guide, dynamic model discovery. Security: all curl examples now use jq for safe JSON construction, added Agent Safety input sanitization section, URL/file path validation in examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6248a44485b6c47ca0073bd1fc1d59ba14e2c6c39c16538e38fd14fc34f0543c"
+}

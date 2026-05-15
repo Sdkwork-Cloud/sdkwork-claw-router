@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-xhs-note@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_xhs_note",
+  "skill": {
+    "id": 68296,
+    "skillKey": "clawhub-tianshu-xhs-note",
+    "name": "Tianshu XHS Note"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-xhs-note",
+    "url": "https://clawhub.ai/skills/tianshu-xhs-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-xhs-note-dca15974de20f0fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把素材整理成小红书笔记结构：标题建议、正文分段、字数统计、话题标签草稿、合规小提示。 Use when: 用户要写小红书、排版笔记、加话题标签、控制字数；用户说「小红书文案」「笔记结构」「XHS」。 NOT for: 自动生成需深度创意的全文代写（可配合模型润色后再用本 skill 结构化）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774013359012,
+      "changelog": "Initial: 小红书笔记结构化（标题/分段/话题草稿/自检），纯 Node",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b46588ab2abe7782a15fca56f6b9c91ea3387f6f2ac14107c1d438c729528b29"
+}

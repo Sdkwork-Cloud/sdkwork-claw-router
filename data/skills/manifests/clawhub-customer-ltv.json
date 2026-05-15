@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32410,
+  "uuid": "skill-clawhub-customer-ltv",
+  "skillKey": "clawhub-customer-ltv",
+  "name": "Customer LTV",
+  "summary": "Segment customers by lifetime value and design tailored retention, upsell, and reactivation strategies for each cohort to maximize long-term revenue.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_ltv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Segment customers by lifetime value and design tailored retention, upsell, and reactivation str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-ltv@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-ltv",
+      "url": "https://clawhub.ai/skills/customer-ltv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-ltv",
+    "url": "https://clawhub.ai/skills/customer-ltv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-ltv-76878009d05c8d0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-ltv@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-ltv-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b25a0f6843c3e6e0504ea4ee93959636916adb950c011d843b1f529bf698bd13",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T18:32:22.871Z"
+}

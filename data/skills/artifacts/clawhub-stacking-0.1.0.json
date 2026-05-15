@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stacking@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stacking",
+  "skill": {
+    "id": 66673,
+    "skillKey": "clawhub-stacking",
+    "name": "Stacking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stacking",
+    "url": "https://clawhub.ai/skills/stacking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stacking-cab3163e80b28cf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供双十一/618等大促多重优惠叠加计算器及最优凑单方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773947400803,
+      "changelog": "- Initial release of \"Stacking\": a calculator for combining multiple discounts during major sales events (Double 11/618) and finding optimal purchase solutions.\n- Includes filters such as price range, discount strength, historical lowest price comparison, delivery speed, and seller trustworthiness.\n- Returns key order details: amount paid, discount breakdown, logistics updates, after-sales info, price protection status, return/exchange record, and user reviews.\n- Offers example requests for quick usage and latest promotions.\n- Data and recommendations update daily based on sales activity, inventory, and user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e71dfac01802f00053e58866c18ea01cb63f6dc1865dfca4c01e6ffbb20b37fb"
+}

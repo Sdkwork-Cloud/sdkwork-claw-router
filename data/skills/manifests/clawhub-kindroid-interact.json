@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12152,
+  "uuid": "skill-clawhub-kindroid-interact",
+  "skillKey": "clawhub-kindroid-interact",
+  "name": "Kindroid Interact",
+  "summary": "Interact with Kindroid companions via their official API. Send messages, handle chat breaks, and manage multi-bot conversations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kindroid_interact",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lumenlemons",
+      "features": [
+        "Interact with Kindroid companions via their official API",
+        "Send messages, handle chat breaks, and manage multi-bot conversations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kindroid-interact@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258702769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kindroid-interact",
+      "url": "https://clawhub.ai/skills/kindroid-interact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kindroid-interact",
+    "url": "https://clawhub.ai/skills/kindroid-interact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kindroid-interact-1042bf0b85207003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kindroid-interact@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kindroid-interact-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df9e3f4d405226a003a72960858c24ee75e47dafff9ef5362dbcd1cf0349d941",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T01:19:07.555Z"
+}

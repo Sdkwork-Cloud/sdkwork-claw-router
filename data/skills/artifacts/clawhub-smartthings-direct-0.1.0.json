@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smartthings-direct@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartthings_direct",
+  "skill": {
+    "id": 34877,
+    "skillKey": "clawhub-smartthings-direct",
+    "name": "SmartThings Direct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartthings-direct",
+    "url": "https://clawhub.ai/skills/smartthings-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartthings-direct-b504fbfed173bf73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Direct SmartThings hub control via the official SmartThings CLI. List devices, read device status, and execute capability commands without going through Home..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keenranger",
+      "userId": "s179sc0t9j7kad632bpas97des855nnw",
+      "displayName": "Hankyeol Kyung",
+      "image": "https://avatars.githubusercontent.com/u/18392918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776608701956,
+      "changelog": "Initial release: direct SmartThings CLI skill for device listing, status, and commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53b3d2b29e9812154ac1ffd98ac0c898a14c11cb5caea50ca66fd55a61df3f5d"
+}

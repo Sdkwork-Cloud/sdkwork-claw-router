@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67944,
+  "uuid": "skill-clawhub-humanizer-rewrite",
+  "skillKey": "clawhub-humanizer-rewrite",
+  "name": "Humanizer Rewrite",
+  "summary": "拟人化写作优化。当用户说\"拟人优化\"、\"去AI味重写\"、\"让文章像人写的\"、\"拟人化改写\"时触发。对文章进行三角迭代式拟人化改写，检测并消除12种AI写作高危特征，注入口语锚点、观点突袭、自我矛盾等拟人化技术。不适用于：仅检测AI味评分不改写（用 humanizer-zh）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_rewrite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "莫循",
+      "features": [
+        "拟人化写作优化。当用户说\"拟人优化\"、\"去AI味重写\"、\"让文章像人写的\"、\"拟人化改写\"时触发。对文章进行三角迭代式拟人化改写，检测并消除12种AI写作高危特征，注入口语锚点、观点突袭、自."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-rewrite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68231637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-rewrite",
+      "url": "https://clawhub.ai/skills/humanizer-rewrite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-rewrite",
+    "url": "https://clawhub.ai/skills/humanizer-rewrite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-rewrite-b07953615f4535d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-rewrite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-rewrite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b3a84e763f53ad8bf90065a44d18d0602db08c87c5c5d56a716c29256f10790",
+      "artifactSizeBytes": 2753
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:22:18.687Z"
+}

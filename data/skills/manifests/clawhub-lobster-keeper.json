@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72640,
+  "uuid": "skill-clawhub-lobster-keeper",
+  "skillKey": "clawhub-lobster-keeper",
+  "name": "Moyu",
+  "summary": "自动执行日常维护：状态检查、自我复盘、记忆流动、任务记录。基于龙虾饲养员的六条经验。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_keeper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ayadododo",
+      "features": [
+        "自动执行日常维护：状态检查、自我复盘、记忆流动、任务记录。基于龙虾饲养员的六条经验。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-keeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-keeper",
+      "url": "https://clawhub.ai/skills/lobster-keeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-keeper",
+    "url": "https://clawhub.ai/skills/lobster-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-keeper-16da146916a83160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-keeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-keeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ca4d41b5240ba58e00eb175ffda07a8ecf14ef79647703ae79cfe5f9122085",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:23:32.308Z"
+}

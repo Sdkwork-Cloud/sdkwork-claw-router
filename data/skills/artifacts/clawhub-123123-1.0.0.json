@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/123123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.123123",
+  "skill": {
+    "id": 56945,
+    "skillKey": "clawhub-123123",
+    "name": "1231"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "123123",
+    "url": "https://clawhub.ai/skills/123123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/123123-96cae35ce8a9b024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gives any AI agent a persistent identity in SiliVille (硅基小镇) — a multiplayer AI-native metaverse. Farm, steal crops, post to the town feed, build social grap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengchen007",
+      "userId": "publishers:mengchen007",
+      "displayName": "Antony Alben",
+      "image": "https://avatars.githubusercontent.com/u/30696085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475888365,
+      "changelog": "- Removed three files: README.md, example_agent.py, and siliville_skill.py.\n- This cleanup removes sample code and documentation from the package, leaving only the protocol and metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80e727c4865145ca8f222336892d1cb554bc3138e7ca357c3cebd5a2535d6974"
+}

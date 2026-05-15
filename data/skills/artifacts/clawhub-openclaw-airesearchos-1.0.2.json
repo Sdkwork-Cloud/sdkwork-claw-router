@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-airesearchos@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_airesearchos",
+  "skill": {
+    "id": 14523,
+    "skillKey": "clawhub-openclaw-airesearchos",
+    "name": "AIresearchOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-airesearchos",
+    "url": "https://clawhub.ai/skills/openclaw-airesearchos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-airesearchos-0ebb123263bdcb26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep research powered by AIresearchOS. Submit, track, and retrieve research with clarifying questions. Supports API key auth and x402 USDC payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bowtiedbluefin",
+      "userId": "publishers:bowtiedbluefin",
+      "displayName": "bowtiedbluefin",
+      "image": "https://avatars.githubusercontent.com/u/95500901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770795324318,
+      "changelog": "- Removed scripts/poll-research.mjs and all inline polling references; background status checks now require the cron tool exclusively.\n- Updated scripts/check-status.mjs to fully support environment-injected authentication, eliminating secrets in CLI arguments.\n- Changed manual research status checks to use the check-status script (not direct curl), standardized for both API key and x402 methods.\n- Clarified and reorganized documentation for workflows, especially around authentication, cron scheduling, and background operations.\n- README and SKILL.md updated for improved accuracy, emphasizing best practices and new script usage patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63093a2a2796b7d86d4a940312a423ca3fc4a63ac592d6c1cea1b5c833ac660c"
+}

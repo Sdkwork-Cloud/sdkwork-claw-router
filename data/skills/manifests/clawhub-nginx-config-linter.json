@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36377,
+  "uuid": "skill-clawhub-nginx-config-linter",
+  "skillKey": "clawhub-nginx-config-linter",
+  "name": "Nginx Config Linter",
+  "summary": "Lint, validate, and audit nginx configuration files for syntax errors, security issues, and performance problems.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginx_config_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Lint, validate, and audit nginx configuration files for syntax errors, security issues, and per."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nginx-config-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nginx-config-linter",
+      "url": "https://clawhub.ai/skills/nginx-config-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginx-config-linter",
+    "url": "https://clawhub.ai/skills/nginx-config-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginx-config-linter-6aa3c8a606ce0b8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nginx-config-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nginx-config-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ebc9aa39d8d1cf9ad74a2f486d7f020c3ff69a58a5c86ecce0b140656b43ff3",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:09.011Z"
+}

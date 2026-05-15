@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64657,
+  "uuid": "skill-clawhub-51mee-position-parse",
+  "skillKey": "clawhub-51mee-position-parse",
+  "name": "51mee Position Parse",
+  "summary": "职位解析。触发场景：用户提供职位描述要求解析；用户想分析JD的核心要求。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_position_parse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "职位解析。触发场景：用户提供职位描述要求解析；用户想分析JD的核心要求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-position-parse@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-position-parse",
+      "url": "https://clawhub.ai/skills/51mee-position-parse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-position-parse",
+    "url": "https://clawhub.ai/skills/51mee-position-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-position-parse-c59ee826f62e8336.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-position-parse@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-position-parse-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b79554690cd68e771c75cbebd71814a0e5af30de15e32cade0004c4299df4781",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:41:31.586Z"
+}

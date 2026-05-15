@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61975,
+  "uuid": "skill-clawhub-coze-image-2",
+  "skillKey": "clawhub-coze-image-2",
+  "name": "Coze Image",
+  "summary": "扣子(Coze) Seedream 4.5 图片生成工具。通过 Coze API 调用图片生成工作流，支持文本生成图片。 当用户要求\"生成图片\"、\"AI画图\"、\"用Coze生成图片\"时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_image_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afeng",
+      "features": [
+        "扣子(Coze) Seedream 4.5 图片生成工具。通过 Coze API 调用图片生成工作流，支持文本生成图片。 当用户要求\"生成图片\"、\"AI画图\"、\"用Coze生成图片\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coze-image-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137253423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coze-image-2",
+      "url": "https://clawhub.ai/skills/coze-image-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-image-2",
+    "url": "https://clawhub.ai/skills/coze-image-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-image-2-4d26a2488fc836d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coze-image-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coze-image-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef0830912da66dbe3dc4356e130354b91c3dbc788fac121db1e832b92474d2b6",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:13:21.521Z"
+}

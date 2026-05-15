@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-token-screener@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_token_screener",
+  "skill": {
+    "id": 51259,
+    "skillKey": "clawhub-nansen-token-screener",
+    "name": "Nansen Token Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-token-screener",
+    "url": "https://clawhub.ai/skills/nansen-token-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-token-screener-0269967b556cf111.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover trending tokens — screener, SM holdings, Nansen indicators, and flow intelligence for promising finds. Use when scanning for new tokens or screening..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776997948904,
+      "changelog": "Major update: Adds Nansen Score Top Tokens endpoint, full field reference, and discovery workflow.\n\n- Introduces `nansen research token top-tokens` command for direct discovery of \"what should I buy?\" candidates, including market cap filters.\n- Documents all Performance and Risk Score fields, their contributions, and sort order for top-tokens results.\n- Provides clear workflow for using top-tokens, indicators, and flow-intelligence endpoints together.\n- Expands SKILL.md with tables and detailed definitions for each indicator contribution and field.\n- Advises filtering stablecoins from candidate shortlist, with canonical stablecoin list location.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56b240de17e910ba0210c62c6c7aab5084a8c633374a5d953d81aa1c2765bc17"
+}

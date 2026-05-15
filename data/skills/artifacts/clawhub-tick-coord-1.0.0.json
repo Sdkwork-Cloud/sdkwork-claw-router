@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tick-coord@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tick_coord",
+  "skill": {
+    "id": 42015,
+    "skillKey": "clawhub-tick-coord",
+    "name": "Tick-Coord: Multi-Agent Task Coordination"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tick-coord",
+    "url": "https://clawhub.ai/skills/tick-coord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tick-coord-c7bd76c926af1eaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent task coordination via Git-backed Markdown (tick-md). Use when coordinating work across avatars or agents, managing tasks, tracking dependencies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptoreumd",
+      "userId": "publishers:cryptoreumd",
+      "displayName": "CryptoReuMD",
+      "image": "https://avatars.githubusercontent.com/u/106553699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774194563320,
+      "changelog": "Initial release of tick-coord: Multi-agent task coordination with Git-backed Markdown.\n\n- Enables structured task management using TICK.md and a Git-backed workflow.\n- Supports command-line and MCP integration for adding, editing, and tracking tasks and agents.\n- Provides dependency visualization, bulk imports, batch operations, and real-time project monitoring.\n- Transparent audit trail via local versioned Markdown—no cloud required.\n- Includes comprehensive guides for common workflows and command references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6f04e95d93a42dc0e994a92e4615923d27bc12e6159cf643b486ac94f29bef5"
+}

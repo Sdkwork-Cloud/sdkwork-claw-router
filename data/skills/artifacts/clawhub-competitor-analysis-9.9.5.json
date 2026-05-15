@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-analysis@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_analysis",
+  "skill": {
+    "id": 11062,
+    "skillKey": "clawhub-competitor-analysis",
+    "name": "Competitor Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-analysis",
+    "url": "https://clawhub.ai/skills/competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-analysis-a3a3dcf3e25c7c0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share gaps. 竞品分析/竞争对手"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7566,
+      "installsAllTime": 77,
+      "installsCurrent": 77,
+      "stars": 6,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349126601,
+      "changelog": "Published from v9.9.5 @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2032904ae02281a4e201ecd0e821e030f8123de5abb9fafd3683f20f7b35d8c6"
+}

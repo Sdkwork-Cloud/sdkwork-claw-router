@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22924,
+  "uuid": "skill-clawhub-felo-youtube-subtitling",
+  "skillKey": "clawhub-felo-youtube-subtitling",
+  "name": "Felo YouTube Subtitling",
+  "summary": "Fetch YouTube video subtitles/captions using Felo YouTube Subtitling API. Use when users ask to get YouTube subtitles, extract captions from a video, fetch t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_youtube_subtitling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Fetch YouTube video subtitles/captions using Felo YouTube Subtitling API",
+        "Use when users ask to get YouTube subtitles, extract captions from a video, fetch t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo-youtube-subtitling@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo-youtube-subtitling",
+      "url": "https://clawhub.ai/skills/felo-youtube-subtitling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-youtube-subtitling",
+    "url": "https://clawhub.ai/skills/felo-youtube-subtitling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-youtube-subtitling-8f96977b2ec1dfc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo-youtube-subtitling@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-youtube-subtitling-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4865bdb75e32b7849da068a652559eb8c0a94edeb886c60a47b270fd8be98280",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:29:26.300Z"
+}

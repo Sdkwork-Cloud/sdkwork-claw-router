@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68400,
+  "uuid": "skill-clawhub-jimeng-ai",
+  "skillKey": "clawhub-jimeng-ai",
+  "name": "Jimeng AI",
+  "summary": "基于火山引擎即梦AI的文生图/文生视频能力，支持通过文本描述生成图片和视频。",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ogenes",
+      "features": [
+        "基于火山引擎即梦AI的文生图/文生视频能力，支持通过文本描述生成图片和视频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimeng-ai@1.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76425503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimeng-ai",
+      "url": "https://clawhub.ai/skills/jimeng-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-ai",
+    "url": "https://clawhub.ai/skills/jimeng-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-ai-61db0261f613c9df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimeng-ai@1.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimeng-ai-1.3.3.json",
+      "version": "1.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51c7e78101a812af2f1b6ec88abe5cbba43fa218123fb864226432433110be7c",
+      "artifactSizeBytes": 1791
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T05:02:17.611Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pack-monet-works@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pack_monet_works",
+  "skill": {
+    "id": 40431,
+    "skillKey": "clawhub-pack-monet-works",
+    "name": "Monet Works Content Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pack-monet-works",
+    "url": "https://clawhub.ai/skills/pack-monet-works",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pack-monet-works-495e04f4f396acde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content quality and compliance tools for financial writing. Automated QA remediation pipeline detects and fixes banned phrases, missing disclaimers, missing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdiri-ai",
+      "userId": "s175fgn0tz50thkr5e819czrnd83fsx9",
+      "displayName": "RunByDaVinci",
+      "image": "https://avatars.githubusercontent.com/u/266047309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774630973385,
+      "changelog": "Initial release: Content QA pipeline for compliance + humanizer to remove AI writing patterns. Automated remediation for banned phrases, missing disclaimers, and 24 AI fingerprints. Essential for financial content creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bf891b6e93151ba7a31c26c349a55972f7b5fe45bd4ca86ce20af977451d5c0"
+}

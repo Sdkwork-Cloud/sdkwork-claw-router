@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55726,
+  "uuid": "skill-clawhub-long-run-harness",
+  "skillKey": "clawhub-long-run-harness",
+  "name": "long-run-harness",
+  "summary": "Use when building a Planner→Generator→Evaluator multi-agent harness with the Claude SDK. Triggers: \"build a harness\", \"multi-agent pipeline\", \"agent loop\", \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_run_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小白",
+      "features": [
+        "Use when building a Planner→Generator→Evaluator multi-agent harness with the Claude SDK",
+        "Triggers: \"build a harness\", \"multi-agent pipeline\", \"agent loop\", \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-run-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268746679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-run-harness",
+      "url": "https://clawhub.ai/skills/long-run-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-run-harness",
+    "url": "https://clawhub.ai/skills/long-run-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-run-harness-792a024c0a287418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-run-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-run-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5080a215806ae7fafd5b4a31201b69cb57f2bb5374bf043f1aca60fa02d5675",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:36:33.480Z"
+}

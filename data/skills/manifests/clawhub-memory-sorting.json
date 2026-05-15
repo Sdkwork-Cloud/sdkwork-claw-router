@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63172,
+  "uuid": "skill-clawhub-memory-sorting",
+  "skillKey": "clawhub-memory-sorting",
+  "name": "Memory Sorting",
+  "summary": "像整理衣柜一样整理记忆，检测重复/过时/冲突，生成提案等你批准 / 触发词：整理记忆、记忆整理 / 命令：/memory-sorting",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_sorting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Zhenweisi",
+      "features": [
+        "像整理衣柜一样整理记忆，检测重复/过时/冲突，生成提案等你批准 / 触发词：整理记忆、记忆整理 / 命令：/memory-sorting"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-sorting@3.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253879682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-sorting",
+      "url": "https://clawhub.ai/skills/memory-sorting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-sorting",
+    "url": "https://clawhub.ai/skills/memory-sorting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-sorting-b5b192b807c8f611.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-sorting@3.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-sorting-3.0.7.json",
+      "version": "3.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac09a05b535b5d54185242130fb7515ebed167f15b69c6391ab22fe86039ad29",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:34:27.753Z"
+}

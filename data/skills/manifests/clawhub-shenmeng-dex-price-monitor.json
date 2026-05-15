@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64603,
+  "uuid": "skill-clawhub-shenmeng-dex-price-monitor",
+  "skillKey": "clawhub-shenmeng-dex-price-monitor",
+  "name": "DEX Price Monitor DEX价格监控",
+  "summary": "DEX价格监控与差价追踪助手。当用户需要实时监控多个DEX的代币价格、发现套利价差、设置价格预警、分析价格趋势或获取最优交易路径时使用。支持Uniswap、SushiSwap、Curve等主流DEX，涵盖以太坊、Arbitrum、BSC等多链生态的价格监控。",
+  "version": "2025.4.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_dex_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "DEX价格监控与差价追踪助手。当用户需要实时监控多个DEX的代币价格、发现套利价差、设置价格预警、分析价格趋势或获取最优交易路径时使用。支持Uniswap、SushiSwap、Curve等主."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-dex-price-monitor@2025.4.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-dex-price-monitor",
+      "url": "https://clawhub.ai/skills/shenmeng-dex-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-dex-price-monitor",
+    "url": "https://clawhub.ai/skills/shenmeng-dex-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-dex-price-monitor-e9401cd754d4a962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-dex-price-monitor@2025.4.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-dex-price-monitor-2025.4.12.json",
+      "version": "2025.4.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6411df58b9fa943d6ebbbd3dc4484d6a39ddb1470009aadddaf1d793d83a41bf",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:12:51.528Z"
+}

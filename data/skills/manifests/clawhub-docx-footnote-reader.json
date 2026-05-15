@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33207,
+  "uuid": "skill-clawhub-docx-footnote-reader",
+  "skillKey": "clawhub-docx-footnote-reader",
+  "name": "docx-footnote-reader",
+  "summary": "Extract footnotes, endnotes, and body text from .docx files using Node.js. Use this skill when you need to read footnote/endnote content from Word documents,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_footnote_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "landylai0604",
+      "features": [
+        "Extract footnotes, endnotes, and body text from .docx files using Node.js",
+        "Use this skill when you need to read footnote/endnote content from Word documents,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-footnote-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52626751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-footnote-reader",
+      "url": "https://clawhub.ai/skills/docx-footnote-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-footnote-reader",
+    "url": "https://clawhub.ai/skills/docx-footnote-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-footnote-reader-cab1d8dd852e23d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-footnote-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-footnote-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:988f4da3c75a2b991f340c200ce438f57c7a6d3a0e19e1bf4e5774e2beb80e6b",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:41:03.941Z"
+}

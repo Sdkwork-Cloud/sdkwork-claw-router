@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-semantic-search@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_semantic_search",
+  "skill": {
+    "id": 42643,
+    "skillKey": "clawhub-arxiv-semantic-search",
+    "name": "ArXiv Semantic Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-semantic-search",
+    "url": "https://clawhub.ai/skills/arxiv-semantic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-semantic-search-ec9872519491c3af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic arXiv search for AI agents. Ask complex research questions and get ranked papers with summaries, metadata, and source links, powered by RobinSignal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nim42",
+      "userId": "s17c9pz30nv0m6v51v8a768aed85bpfm",
+      "displayName": "Nim42",
+      "image": "https://avatars.githubusercontent.com/u/267392001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776926213287,
+      "changelog": "Initial release of ArXiv Semantic Search skill, enabling semantic discovery of research papers with RobinSignal.\n\n- Supports natural language queries for semantic, filtered, and ranked arXiv paper search.\n- Returns paper summaries, metadata, and original source links.\n- Allows author, institution, date, and topic constraints.\n- Optionally searches selected technical articles when explicitly requested.\n- Guided onboarding flow for API key setup via the RobinSignal sign-in and verification process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:738cd14371a9b3f720ecd129e5d302e61033a7ee1b3331cc7f40bcac8343ed10"
+}

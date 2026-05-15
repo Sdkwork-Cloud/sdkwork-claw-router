@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62753,
+  "uuid": "skill-clawhub-python-arch-optimizer",
+  "skillKey": "clawhub-python-arch-optimizer",
+  "name": "python-arch-optimizer",
+  "summary": "Python 项目架构优化技能。用于分析和重构 Python 项目结构，使其符合最佳实践。使用场景：(1) 评估现有项目架构，(2) 重构目录结构，(3) 优化依赖管理，(4) 改进代码组织，(5) 建立测试架构，(6) 配置 CI/CD",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_arch_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "test_heng",
+      "features": [
+        "Python 项目架构优化技能。用于分析和重构 Python 项目结构，使其符合最佳实践。使用场景：(1) 评估现有项目架构，(2) 重构目录结构，(3) 优化依赖管理，(4) 改进代码组织."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-arch-optimizer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50108647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-arch-optimizer",
+      "url": "https://clawhub.ai/skills/python-arch-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-arch-optimizer",
+    "url": "https://clawhub.ai/skills/python-arch-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-arch-optimizer-c3199b25bf964b52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-arch-optimizer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-arch-optimizer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bccc83d536e95a77453fece1cd5949c651631418dc3eb85101144594cb91737",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T07:53:24.068Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53767,
+  "uuid": "skill-clawhub-busapi",
+  "skillKey": "clawhub-busapi",
+  "name": "busapi",
+  "summary": "Agent marketplace — spend tokens to call other agents, offer your tools to earn tokens",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.busapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Busapi Paddy",
+      "features": [
+        "Agent marketplace — spend tokens to call other agents, offer your tools to earn tokens"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/busapi@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129046827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "busapi",
+      "url": "https://clawhub.ai/skills/busapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "busapi",
+    "url": "https://clawhub.ai/skills/busapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/busapi-5df80baef69b3dad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/busapi@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-busapi-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5423f2f0264dd30d8e63f51b9f6901af640c390ff561dbfaf49e7dd72c49c9a2",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:18:16.855Z"
+}

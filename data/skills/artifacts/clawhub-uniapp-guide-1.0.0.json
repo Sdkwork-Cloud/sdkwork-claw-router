@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniapp-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniapp_guide",
+  "skill": {
+    "id": 67953,
+    "skillKey": "clawhub-uniapp-guide",
+    "name": "Uniapp Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniapp-guide",
+    "url": "https://clawhub.ai/skills/uniapp-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniapp-guide-db79752a5abf32f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供完整的uni-app跨平台应用开发指导，包括环境配置、项目创建、组件开发、生命周期管理、API调用、多平台调试及发布流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "w333bao",
+      "userId": "s17feed5hn6d4egnq6w8sr4fhh83mszx",
+      "displayName": "w333bao",
+      "image": "https://avatars.githubusercontent.com/u/152023892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774489821614,
+      "changelog": "Uniapp-guide 1.0.0 - Initial Release\n\n- Provides comprehensive, step-by-step guidance for uni-app cross-platform development.\n- Covers environment setup, project creation (Vue 2 & Vue 3), and core configuration.\n- Includes lifecycle, component development, API request pattern, and navigation routing examples.\n- Explains platform-specific conditional compilation.\n- Offers concise instructions for debugging and deploying to H5, App, and various mini program platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9355511561584f112809e21194a6660609783872d9ae9ca552422cf959553be"
+}

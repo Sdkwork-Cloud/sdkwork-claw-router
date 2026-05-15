@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gyms@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gyms",
+  "skill": {
+    "id": 57404,
+    "skillKey": "clawhub-gyms",
+    "name": "健身房"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gyms",
+    "url": "https://clawhub.ai/skills/gyms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gyms-729b5ddd6fdbcacf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby gyms. Invoke when user asks for fitness centers near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774231379048,
+      "changelog": "- Initial release of the \"附近健身房\" skill for finding nearby gyms.\n- Supports search by user location with customizable radius and result limit.\n- Allows optional filters (personal training, swimming pool, rating, etc.).\n- Standardized response format for easy frontend/API integration.\n- Includes detailed error codes and privacy controls (requires location permission, protects user coordinates).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebb7baa0f56163717efd10c6f42bdaf897bba33e8621af8d4bbc9875750b5338"
+}

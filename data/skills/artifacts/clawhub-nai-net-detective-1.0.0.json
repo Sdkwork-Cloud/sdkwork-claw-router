@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nai-net-detective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_net_detective",
+  "skill": {
+    "id": 39646,
+    "skillKey": "clawhub-nai-net-detective",
+    "name": "Net Detective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-net-detective",
+    "url": "https://clawhub.ai/skills/nai-net-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-net-detective-0034ac83b765db4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run detailed network diagnostics including DNS resolution, traceroute, MTU, and speed tests, then provide a clear plain-English report explaining any issues..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774534662428,
+      "changelog": "- Initial release of Net Detective: a structured network diagnostics tool.\n- Supports DNS checks (Google, Cloudflare, system), traceroute, MTU detection, and speed tests with no external dependencies.\n- Adds automated result comparison against historical baselines for anomaly detection.\n- Generates plain-English diagnostic reports suitable for non-technical users.\n- Modular scripts (diagnose, dns_check, speedtest, history, report) for flexible workflows.\n- Cross-platform (macOS and Linux); Python standard library only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b852db2bf1ba72ccbcd416497b3f35c6789df430904f2095c2c777fd0ce44c3d"
+}

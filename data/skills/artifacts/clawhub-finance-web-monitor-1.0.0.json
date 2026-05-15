@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-web-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_web_monitor",
+  "skill": {
+    "id": 23899,
+    "skillKey": "clawhub-finance-web-monitor",
+    "name": "Finance Web Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-web-monitor",
+    "url": "https://clawhub.ai/skills/finance-web-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-web-monitor-639ef67a511617b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and summarize finance websites for fund-investing support. Use when user asks to fetch finance site text, track changes, or schedule periodic monitor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "warriorfan",
+      "userId": "publishers:warriorfan",
+      "displayName": "warriorfan",
+      "image": "https://avatars.githubusercontent.com/u/225373486?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772791842158,
+      "changelog": "finance-web-monitor 1.0.0 – Initial release\n\n- Monitor and summarize finance websites for fund-investing support.\n- Schedule periodic monitoring or run one-off checks from user-defined or default URL lists (no login required).\n- Fetch and extract site text; summarize into market overview, key headlines, and fund insights with risk emphasis as requested.\n- Detect and report changes across monitoring periods using workspace state snapshots.\n- Use cron for automated scheduling; support immediate briefings on demand.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6879a5574534ac9ea702cb1b75b7ffb6e5e96c6375b1ae573ed607959d9f119e"
+}

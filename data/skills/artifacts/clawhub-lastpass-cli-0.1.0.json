@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lastpass-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lastpass_cli",
+  "skill": {
+    "id": 11624,
+    "skillKey": "clawhub-lastpass-cli",
+    "name": "LastPass CLI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lastpass-cli",
+    "url": "https://clawhub.ai/skills/lastpass-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lastpass-cli-28c335e7d60a4eb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely fetch credentials from LastPass vault via lpass CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitchrisqueen",
+      "userId": "publishers:gitchrisqueen",
+      "displayName": "gitchrisqueen",
+      "image": "https://avatars.githubusercontent.com/u/10469301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1860,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770013355687,
+      "changelog": "Initial release of LastPass CLI skill.\n\n- Enables secure credential retrieval from a local LastPass vault using the lpass CLI.\n- Provides the lastpass_get_secret tool to fetch passwords, usernames, notes, or raw data from specific vault entries.\n- Designed for use in automation flows to inject secrets as needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:319c0471af9933ba40d5504f3e466a6f51be1e783787af87e9f0ce1ed5e8843c"
+}

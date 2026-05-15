@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-happyhorse1-0@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_happyhorse1_0",
+  "skill": {
+    "id": 51247,
+    "skillKey": "clawhub-dlazy-happyhorse1-0",
+    "name": "Dlazy Happyhorse1 0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-happyhorse1-0",
+    "url": "https://clawhub.ai/skills/dlazy-happyhorse1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-happyhorse1-0-aee13359f6fcfc86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Happy Horse 1.0 video model — one model covers text-to-video (t2v), first-frame-to-video (i2v), reference-to-video (r2v), and video editing (edit). The selec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777721408942,
+      "changelog": "- Added detailed usage instructions, authentication methods, and error handling guidance for the Happy Horse 1.0 video model.\n- Described all supported generation modes (t2v, i2v, r2v, edit) and automatic routing based on input.\n- Outlined all CLI options, parameters, output formats, and example commands.\n- Included explicit instructions for handling insufficient balance and missing API key errors.\n- Provided links to documentation, CLI source code, and support resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9288ba72f946a282e41dba46039e8525b3e62a77962aaf073cc1ae10d06c27bf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29338,
+  "uuid": "skill-clawhub-polymarket-48h-precipitation-range-trader",
+  "skillKey": "clawhub-polymarket-48h-precipitation-range-trader",
+  "name": "Polymarket 48h Precipitation Range Trader",
+  "summary": "Trades mispricings in precipitation-range markets by reconstructing the implied probability distribution across bins for the same city and period, detecting...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_48h_precipitation_range_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades mispricings in precipitation-range markets by reconstructing the implied probability dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-48h-precipitation-range-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-48h-precipitation-range-trader",
+      "url": "https://clawhub.ai/skills/polymarket-48h-precipitation-range-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-48h-precipitation-range-trader",
+    "url": "https://clawhub.ai/skills/polymarket-48h-precipitation-range-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-48h-precipitation-range-trader-00d504c49d05a5d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-48h-precipitation-range-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-48h-precipitation-range-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6d872e413875f1fd1962c94ac91dbf8174669bea29de04f236bc50539d3b6c6",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:23:53.748Z"
+}

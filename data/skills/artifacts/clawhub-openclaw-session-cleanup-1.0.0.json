@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-session-cleanup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_cleanup",
+  "skill": {
+    "id": 21552,
+    "skillKey": "clawhub-openclaw-session-cleanup",
+    "name": "OpenClaw Session Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-cleanup",
+    "url": "https://clawhub.ai/skills/openclaw-session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-cleanup-5bb5bf344711a54c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and stabilize long-running OpenClaw deployments that accumulate stale sessions, unreaped agents, browser-control timeouts, gateway websocket 1006 cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neoch3n",
+      "userId": "publishers:neoch3n",
+      "displayName": "NeoCh3n",
+      "image": "https://avatars.githubusercontent.com/u/83340236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772888287832,
+      "changelog": "Initial release: Provides tools and guidance for stabilizing long-running OpenClaw deployments affected by stale sessions and resource exhaustion.\n\n- Diagnose and resolve high session and agent counts, browser-service timeouts, and gateway websocket closures.\n- Add step-by-step cleanup and escalation instructions to restore a healthy runtime.\n- Offer safe default configuration recommendations for low-resource VPS hosts.\n- Include scripts and commands for automating session pruning and watchdog installation.\n- Provide references to runbooks, config templates, and service files for further customization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78c7fd41362bbd4b4e09830902f9a62bed15ccfc7c25f72ee9f450b4a059d9b2"
+}

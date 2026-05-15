@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29027,
+  "uuid": "skill-clawhub-range",
+  "skillKey": "clawhub-range",
+  "name": "Range",
+  "summary": "Range integration. Manage Workspaces. Use when the user wants to interact with Range data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.range",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Range integration",
+        "Manage Workspaces",
+        "Use when the user wants to interact with Range data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/range@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "range",
+      "url": "https://clawhub.ai/skills/range"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "range",
+    "url": "https://clawhub.ai/skills/range",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/range-2269c0be009b610c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/range@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-range-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c83e9a9cdbf972811eb1e887ff801d088d0f43d1165861be94749ff5644be859",
+      "artifactSizeBytes": 1776
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:19.677Z"
+}

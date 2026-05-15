@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28838,
+  "uuid": "skill-clawhub-dingtalk-openapi-skill",
+  "skillKey": "clawhub-dingtalk-openapi-skill",
+  "name": "DingTalk OpenAPI Skill",
+  "summary": "Operate DingTalk messaging APIs through UXC with a curated OpenAPI schema, app-token bearer auth, and robot/service-group guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate DingTalk messaging APIs through UXC with a curated OpenAPI schema, app-token bearer aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-openapi-skill",
+      "url": "https://clawhub.ai/skills/dingtalk-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-openapi-skill",
+    "url": "https://clawhub.ai/skills/dingtalk-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-openapi-skill-24c6a0c488966c4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08cbd48022e1f43844729596517c6245326cdd49054e2aceb5d060f4ac728fd4",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:24:16.994Z"
+}

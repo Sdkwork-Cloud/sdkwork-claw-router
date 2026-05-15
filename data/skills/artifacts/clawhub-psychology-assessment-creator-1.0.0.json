@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psychology-assessment-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psychology_assessment_creator",
+  "skill": {
+    "id": 67227,
+    "skillKey": "clawhub-psychology-assessment-creator",
+    "name": "Psychology Assessment Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psychology-assessment-creator",
+    "url": "https://clawhub.ai/skills/psychology-assessment-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psychology-assessment-creator-0c76667346f40fa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "心理测评内容制作技能，帮助从选题策划、题目设计、评分规则编写到结果内容创作的全流程管理。适用于需要创建心理测评类内容的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hackzjl",
+      "userId": "s172dbj5feem4pw1nmp5kezpks83gvg1",
+      "displayName": "zhujianlong",
+      "image": "https://avatars.githubusercontent.com/u/96516292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774329253187,
+      "changelog": "psychology-assessment-creator 1.0.0\n\n- Initial release of the psychology-assessment-creator skill.\n- Provides end-to-end support for creating psychological assessments, covering topic planning, question design, scoring rules, result content, and optimization.\n- Integrates core psychological theory, structured design principles, and data-driven iteration processes.\n- Includes best practices, quality checklists, and ethical guidelines for professional content production.\n- Suitable for various use cases needing development of high-quality psychological evaluation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5571ecedc90f3bf865c80d05289c17033cc429c5d0894734f587174e69838668"
+}

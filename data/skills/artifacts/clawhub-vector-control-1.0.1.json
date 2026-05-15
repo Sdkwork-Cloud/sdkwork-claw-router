@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vector-control@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_control",
+  "skill": {
+    "id": 12221,
+    "skillKey": "clawhub-vector-control",
+    "name": "Vector Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-control",
+    "url": "https://clawhub.ai/skills/vector-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-control-4365bef7d2e88738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a Vector robot via Wirepod’s local HTTP API on the same network. Use when you need to move Vector, tilt head/lift, speak text, capture camera frames, or run patrol/explore routines from the Pi/Wirepod host. Includes a CLI helper sc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dbeadle1",
+      "userId": "publishers:dbeadle1",
+      "displayName": "dbeadle1",
+      "image": "https://avatars.githubusercontent.com/u/158857972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1992,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770137231876,
+      "changelog": "Add patrol/explore, audio streaming, camera snapshots",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:62e291895ef16854b674360aa4c3750ce40424c9ed859b680e39687681c66e39"
+}

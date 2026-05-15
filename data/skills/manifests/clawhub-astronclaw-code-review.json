@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65142,
+  "uuid": "skill-clawhub-astronclaw-code-review",
+  "skillKey": "clawhub-astronclaw-code-review",
+  "name": "Astronclaw Code Review",
+  "summary": "基于AI自动化分析代码质量、安全漏洞和性能瓶颈，提供多维度智能审查与详细报告生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astronclaw_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShiXiangYu2",
+      "features": [
+        "基于AI自动化分析代码质量、安全漏洞和性能瓶颈，提供多维度智能审查与详细报告生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/astronclaw-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215228006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "astronclaw-code-review",
+      "url": "https://clawhub.ai/skills/astronclaw-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astronclaw-code-review",
+    "url": "https://clawhub.ai/skills/astronclaw-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astronclaw-code-review-c788c5b1c79779d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/astronclaw-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-astronclaw-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d97491ad8e8515b7a33e44a49e65ae08f4436b46d19919e8156bb6d502a4e0c3",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T00:33:41.049Z"
+}

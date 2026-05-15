@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46571,
+  "uuid": "skill-clawhub-text-to-video-benchmark",
+  "skillKey": "clawhub-text-to-video-benchmark",
+  "name": "Text To Video Benchmark",
+  "summary": "Get benchmark video clips ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, CSV, JSON, up to 500MB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_benchmark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get benchmark video clips ready to post, without touching a single slider",
+        "Upload your text prompts (TXT, DOCX, CSV, JSON, up to 500MB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-benchmark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-benchmark",
+      "url": "https://clawhub.ai/skills/text-to-video-benchmark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-benchmark",
+    "url": "https://clawhub.ai/skills/text-to-video-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-benchmark-90db7ad7e0bd632a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-benchmark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-benchmark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c405e5a9254ddf0bc194e78c5adf730dccccec62f4a96d1a201d58c1c4430037",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T18:42:37.679Z"
+}

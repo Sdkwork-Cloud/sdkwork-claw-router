@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42807,
+  "uuid": "skill-clawhub-dateguard",
+  "skillKey": "clawhub-dateguard",
+  "name": "dateguard",
+  "summary": "Date/time anti-pattern scanner -- detects timezone bugs, naive datetime usage, hardcoded timestamps, non-ISO formats, incorrect epoch handling, DST-unsafe co...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dateguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Date/time anti-pattern scanner -",
+        "detects timezone bugs, naive datetime usage, hardcoded timestamps, non-ISO formats, incorrect e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dateguard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dateguard",
+      "url": "https://clawhub.ai/skills/dateguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dateguard",
+    "url": "https://clawhub.ai/skills/dateguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dateguard-9f2a8d2bc75457ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dateguard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dateguard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5e9cb1cf32b8458a2603acd776df3f1eeca69bddfc0efdfe6547386b4b124dc",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:22:07.023Z"
+}

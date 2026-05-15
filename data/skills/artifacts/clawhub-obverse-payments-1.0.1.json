@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obverse-payments@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obverse_payments",
+  "skill": {
+    "id": 17153,
+    "skillKey": "clawhub-obverse-payments",
+    "name": "Obverse Payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obverse-payments",
+    "url": "https://clawhub.ai/skills/obverse-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obverse-payments-35d1e32faca3df9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, track, and manage USDC/USDT stablecoin payment links for sales, fundraising, and invoices across Telegram, WhatsApp, and Discord with dashboards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ofuzorchukwuemeke",
+      "userId": "publishers:ofuzorchukwuemeke",
+      "displayName": "OFUZORCHUKWUEMEKE",
+      "image": "https://avatars.githubusercontent.com/u/64340112?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 809,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771070461984,
+      "changelog": "Updated description, USDC only (removed USDT)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:520f0f0eff0786c78974599c1606d55b4e97cb4e968620b2a3403379c6681888"
+}

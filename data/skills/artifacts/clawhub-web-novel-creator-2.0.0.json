@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-novel-creator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_novel_creator",
+  "skill": {
+    "id": 60564,
+    "skillKey": "clawhub-web-novel-creator",
+    "name": "Web Novel Creator (网文创作协调层)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-novel-creator",
+    "url": "https://clawhub.ai/skills/web-novel-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-novel-creator-0ab75040fd58749e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网文创作兼容协调层。 定位：不做一个独立的创作引擎，而是让现有的优秀创作Skill（如 novel-generator、open-novel-writing、novel-orchestrator 等）能够无缝对接 Memory Manager Pro 的索引系统。 核心价值：(1) 提供统一的项目目录规范，让各S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guojiuben",
+      "userId": "s17e76760h5g5h5cddj74we86n83gvzr",
+      "displayName": "Cappuccino",
+      "image": "https://avatars.githubusercontent.com/u/31878199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777211671501,
+      "changelog": "重大重构：从独立创作引擎改为兼容协调层。兼容 novel-generator、open-novel-writing、novel-orchestrator 等外部Skill，提供统一目录规范和索引归档入口；新增对接规范和兼容检测机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2d3b9820524be478081ec21ab8d893b706d98c30577bdb775fd8956fee5b4e3"
+}

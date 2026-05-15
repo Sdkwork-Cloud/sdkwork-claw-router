@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68515,
+  "uuid": "skill-clawhub-official-feishu-toolkit",
+  "skillKey": "clawhub-official-feishu-toolkit",
+  "name": "Official Feishu Toolkit",
+  "summary": "飞书开放平台全面集成工具包。支持日历与会议室预约、消息发送、审批流程、多维表格操作、通讯录查询和考勤管理六大核心办公模块。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_feishu_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Radium",
+      "features": [
+        "飞书开放平台全面集成工具包。支持日历与会议室预约、消息发送、审批流程、多维表格操作、通讯录查询和考勤管理六大核心办公模块。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official-feishu-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60953903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official-feishu-toolkit",
+      "url": "https://clawhub.ai/skills/official-feishu-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-feishu-toolkit",
+    "url": "https://clawhub.ai/skills/official-feishu-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-feishu-toolkit-ddbd96ddc8e54e1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official-feishu-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-feishu-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d02c607380820f8a6199d74ddbf77983a02ae7dc867d559e7fe066a029834192",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:02:07.541Z"
+}

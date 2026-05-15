@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69111,
+  "uuid": "skill-clawhub-long-text-tracker",
+  "skillKey": "clawhub-long-text-tracker",
+  "name": "Long Text Tracker",
+  "summary": "长文本追踪系统 - 让分段内容保持连贯。 触发条件（必须全部满足）：分段数≥3 且 总字数≥3000 且 段落间需逻辑连贯。 适用：推文系列、教程系列、报告系列、连载内容。 触发词：写系列推文、写教程系列、写报告系列、连载创作、分段创作长文本 不触发： - 单篇文章（分段数<3） - 独立短文（总字数<3000）...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_text_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sjj2026",
+      "features": [
+        "让分段内容保持连贯。 触发条件（必须全部满足）：分段数≥3 且 总字数≥3000 且 段落间需逻辑连贯。 适用：推文系列、教程系列、报告系列、连载内容。 触发词：写系列推文、写教程系列、写报.",
+        "单篇文章（分段数<3）",
+        "独立短文（总字数<3000）..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-text-tracker@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271952160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-text-tracker",
+      "url": "https://clawhub.ai/skills/long-text-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-text-tracker",
+    "url": "https://clawhub.ai/skills/long-text-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-text-tracker-c9fae91f05681725.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-text-tracker@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-text-tracker-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f0111d2c930a8967a7d149f98b652c7daeaad3cdb9a5cd862503256493b46c4",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:24:53.478Z"
+}

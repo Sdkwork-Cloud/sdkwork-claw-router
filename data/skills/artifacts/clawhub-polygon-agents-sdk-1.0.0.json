@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polygon-agents-sdk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polygon_agents_sdk",
+  "skill": {
+    "id": 19119,
+    "skillKey": "clawhub-polygon-agents-sdk",
+    "name": "Polygon Agents SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polygon-agents-sdk",
+    "url": "https://clawhub.ai/skills/polygon-agents-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polygon-agents-sdk-e5440da1cdc0230e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Polygon agent toolkit. Session-based smart contract wallets (Sequence), token ops (send/swap/bridge/deposit via Trails), ERC-8004 on-chain identity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameslawton",
+      "userId": "publishers:jameslawton",
+      "displayName": "JamesLawton",
+      "image": "https://avatars.githubusercontent.com/u/19821370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772127475246,
+      "changelog": "Initial public release of polygon-agent-kit — an all-in-one toolkit for building Polygon smart agent experiences.\n\n- Provides a session-based CLI for creating and managing smart contract wallets, sending, bridging and use tokens for any onchain action, onchain identity registration and reputation with 8004, and x402 micropayments.\n- Encrypted local storage for wallet/session data with built-in smart sessions to control daily limits, thresholds, and contract calls to execute onchain transactions safely for your agent.\n- Requires minimal env setup; operates via dry-run by default, with explicit broadcast mode for writes.\n- Built-in interactive wallet creation/approval flow using Cloudflare Quick Tunnel for secure session handshakes.\n- Supports troubleshooting, debug logging, flexible session controls, and robust funding/approval safeguards.\n- Comprehensive built-in CLI reference and practical setup guides included for common flows",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8042f6b8566dca5875d7dd7894af5315e9801116441d306b82f9116b9d05ef78"
+}

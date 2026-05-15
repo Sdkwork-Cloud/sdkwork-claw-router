@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lottery-ssq@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lottery_ssq",
+  "skill": {
+    "id": 70245,
+    "skillKey": "clawhub-lottery-ssq",
+    "name": "双色球选号系统 v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lottery-ssq",
+    "url": "https://clawhub.ai/skills/lottery-ssq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lottery-ssq-a22c7ab014bf116d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "双色球选号辅助系统 v2 - 基于历史数据的概率优化选号工具，支持动态冷热周期、AC 值/极距/尾数形态筛选、蓝球细化分析、多策略输出（稳健/均衡/激进）。每期输出 2 注主推 +3 注备选。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nasplycc",
+      "userId": "s17awvdy31r2yyyb547xqanc4183kzk1",
+      "displayName": "nasplycc",
+      "image": "https://avatars.githubusercontent.com/u/257000910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773891927002,
+      "changelog": "初始发布：动态冷热周期、AC 值/极距/尾数形态筛选、蓝球细化、多策略支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a228c5348e9aac1c45c4606cb1c35d52496b1523dc06408597f1566ece344889"
+}

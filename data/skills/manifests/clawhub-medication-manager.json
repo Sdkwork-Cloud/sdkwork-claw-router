@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41475,
+  "uuid": "skill-clawhub-medication-manager",
+  "skillKey": "clawhub-medication-manager",
+  "name": "Medication Manager",
+  "summary": "Family medication management skill using file-based storage (no database required). Supports medication entry via photo/image (prescription, medicine box), t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medication_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "佐岸流年L",
+      "features": [
+        "Family medication management skill using file-based storage (no database required)",
+        "Supports medication entry via photo/image (prescription, medicine box), t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medication-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14542879?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medication-manager",
+      "url": "https://clawhub.ai/skills/medication-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medication-manager",
+    "url": "https://clawhub.ai/skills/medication-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medication-manager-7c30569f97c6e351.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medication-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-medication-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbb41f4f5abda7c64bcb7bba52929b77e78bda429102fd11568994177ea78346",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:54:28.372Z"
+}

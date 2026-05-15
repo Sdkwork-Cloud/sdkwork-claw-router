@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-paper-parse-en@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_parse_en",
+  "skill": {
+    "id": 35644,
+    "skillKey": "clawhub-academic-paper-parse-en",
+    "name": "Academic Paper Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-parse-en",
+    "url": "https://clawhub.ai/skills/academic-paper-parse-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-parse-en-4cc3dd7efba3920c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct in-depth dual-mode reading of academic papers from PDFs or URLs, providing detailed analysis for researchers and concise summaries for quick understa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sterlingfrank1",
+      "userId": "s17b6b70t7g2pbcgs3tk0endj983mqm3",
+      "displayName": "Sterlingfrank1",
+      "image": "https://avatars.githubusercontent.com/u/175074472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775757949320,
+      "changelog": "V1.2.0: A English version.\nV1.1.0: Resolved the absolute path issue mentioned in SKILL.md\nV1.0.0: The Paper-Parse skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3591b72135689ae61f723aad7e61a267e545c1692408cc5f23ba8809bb838e73"
+}

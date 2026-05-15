@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiered-context-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiered_context_manager",
+  "skill": {
+    "id": 63005,
+    "skillKey": "clawhub-tiered-context-manager",
+    "name": "Tiered Context Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiered-context-manager",
+    "url": "https://clawhub.ai/skills/tiered-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiered-context-manager-51ab29696d1b4b95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多Agent协作的智能会话上下文管理系统。当需要管理AI agent的长会话压缩、多层记忆分层、跨Agent知识共享时激活。支持L1/L2/L3分层压缩、实时监控、统计分析。用于OpenClaw agent的上下文管理优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scorpioxyb",
+      "userId": "s174aq9cz93djkt6v54manbkt98469kn",
+      "displayName": "Scorpioxyb",
+      "image": "https://avatars.githubusercontent.com/u/77651269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775306058914,
+      "changelog": "- Initial release of tiered-context-manager, an intelligent multi-agent conversation context management system.\n- Supports tiered context compression (L1, L2, L3) for long conversations.\n- Implements memory tiering: Persistent, Normal, and Ephemeral memory layers.\n- Enables cross-agent knowledge sharing, inbox task queue, and conflict avoidance.\n- Provides real-time monitoring, statistical analysis, and reporting tools.\n- Modular design with configurable thresholds and multiple entry points for compression and management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c0dab091a4679106aef2b1cada494c69a22df78dc9a5d9e5367528386f1055f"
+}

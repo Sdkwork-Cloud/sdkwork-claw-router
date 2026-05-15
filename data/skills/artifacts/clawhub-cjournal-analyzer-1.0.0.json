@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cjournal-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cjournal_analyzer",
+  "skill": {
+    "id": 71394,
+    "skillKey": "clawhub-cjournal-analyzer",
+    "name": "c刊期刊分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cjournal-analyzer",
+    "url": "https://clawhub.ai/skills/cjournal-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cjournal-analyzer-6d40a3cf5e091259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "C刊（CSSCI来源期刊）论文全面分析工具。当用户提供一个具体的C刊期刊名称（如\"管理世界\"、 \"社会学研究\"、\"经济研究\"等）时，自动通过知网（CNKI）查询该期刊最近5年所有期次的文章 目录、作者和摘要信息，并生成专业的Word分析报告。报告包含：选题热点趋势、高频关键词、 研究方法偏好、核心作者群、栏目主题..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yipng05-max",
+      "userId": "s17e7y2rfdj7a3t1zc44g22dk983ncaz",
+      "displayName": "yipng05-max",
+      "image": "https://avatars.githubusercontent.com/u/256726987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773211093535,
+      "changelog": "cjournal-analyzer 1.0.0\n\n- Initial release of a comprehensive CSSCI (C刊) journal analysis tool.\n- Automatically fetches the last 5 years of all articles, authors, and abstracts from CNKI for a specified journal.\n- Generates a professional Word report covering topic trends, keyword frequency, research methods, core authors, column analysis, research gaps, and submission advice.\n- Incorporates browser automation for data collection, progress reporting, and user-friendly handling of CNKI verification steps.\n- Includes Python-based data analysis with visualizations and structured Word report output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba8dee5d3312509f62d9102471f4ee706f88cb8b650d23c4b5214eaa0d9bb999"
+}

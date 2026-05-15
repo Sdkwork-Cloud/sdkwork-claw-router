@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59567,
+  "uuid": "skill-clawhub-eo-ability-multi-expert",
+  "skillKey": "clawhub-eo-ability-multi-expert",
+  "name": "Eo Ability Multi Expert",
+  "summary": "多专家编排能力(Multi-Expert Orchestrator)，协调多个专家并行/串行工作，结果自动汇流",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eo_ability_multi_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "467718584",
+      "features": [
+        "多专家编排能力(Multi-Expert Orchestrator)，协调多个专家并行/串行工作，结果自动汇流"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eo-ability-multi-expert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57902585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eo-ability-multi-expert",
+      "url": "https://clawhub.ai/skills/eo-ability-multi-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eo-ability-multi-expert",
+    "url": "https://clawhub.ai/skills/eo-ability-multi-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eo-ability-multi-expert-e410dea453438a51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eo-ability-multi-expert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eo-ability-multi-expert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01854eb6881d6498f7aa4677b122efdbb8206025b1e74617b59b50c9e994ed12",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:00:19.700Z"
+}

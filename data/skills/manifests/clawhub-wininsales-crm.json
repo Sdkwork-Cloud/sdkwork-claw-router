@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70964,
+  "uuid": "skill-clawhub-wininsales-crm",
+  "skillKey": "clawhub-wininsales-crm",
+  "name": "Wininsales crm",
+  "summary": "赢在销客CRM（24个API）。覆盖：客户录入/查重/归属查询、跟进记录、客户分析、团队业绩、客户分配/共享、合同回款、到期客户、未跟进客户、商机管理、线索管理（添加/查询/分配/通话标记）、公海捡回、产品查询、员工查询、日报。触发词：CRM、客户、录入、查重、在谁名下、谁的客户、客户存在吗、公司存在吗、跟进、合...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wininsales_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hijasongithub",
+      "features": [
+        "赢在销客CRM（24个API）。覆盖：客户录入/查重/归属查询、跟进记录、客户分析、团队业绩、客户分配/共享、合同回款、到期客户、未跟进客户、商机管理、线索管理（添加/查询/分配/通话标记）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wininsales-crm@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53066561?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wininsales-crm",
+      "url": "https://clawhub.ai/skills/wininsales-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wininsales-crm",
+    "url": "https://clawhub.ai/skills/wininsales-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wininsales-crm-c33b187a8a4c9ee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wininsales-crm@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-wininsales-crm-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e565fc16cdc8e442d528b5609644dd8fbdd26e63166c651eeed9727e38ab6a8",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:47:55.333Z"
+}

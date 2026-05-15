@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70932,
+  "uuid": "skill-clawhub-context-optimizer-by-waleychenyue",
+  "skillKey": "clawhub-context-optimizer-by-waleychenyue",
+  "name": "上下文优化器",
+  "summary": "智能上下文优化器。自动分析、精简和优化OpenClaw工作空间上下文文件，提取可复用组件为独立技能，大幅减少token消耗。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_optimizer_by_waleychenyue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waleychenyue",
+      "features": [
+        "智能上下文优化器。自动分析、精简和优化OpenClaw工作空间上下文文件，提取可复用组件为独立技能，大幅减少token消耗。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-optimizer-by-waleychenyue@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105055225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-optimizer-by-waleychenyue",
+      "url": "https://clawhub.ai/skills/context-optimizer-by-waleychenyue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-optimizer-by-waleychenyue",
+    "url": "https://clawhub.ai/skills/context-optimizer-by-waleychenyue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-optimizer-by-waleychenyue-2529cd6436dd7f4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-optimizer-by-waleychenyue@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-optimizer-by-waleychenyue-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d3a0c6724e05bcb151855563bf62212b24bfa6b58eb3e9c18f15720bb886bb9",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T05:41:25.580Z"
+}

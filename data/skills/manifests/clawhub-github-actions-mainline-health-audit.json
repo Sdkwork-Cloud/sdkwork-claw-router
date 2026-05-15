@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25048,
+  "uuid": "skill-clawhub-github-actions-mainline-health-audit",
+  "skillKey": "clawhub-github-actions-mainline-health-audit",
+  "name": "GitHub Actions Mainline Health Audit",
+  "summary": "Audit GitHub Actions mainline branch reliability by scoring failure rate, consecutive failures, and stale-success risk for critical workflows.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_mainline_health_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions mainline branch reliability by scoring failure rate, consecutive failures,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-mainline-health-audit@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-mainline-health-audit",
+      "url": "https://clawhub.ai/skills/github-actions-mainline-health-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-mainline-health-audit",
+    "url": "https://clawhub.ai/skills/github-actions-mainline-health-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-mainline-health-audit-ccddb2fbcaedc597.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-mainline-health-audit@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-mainline-health-audit-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7f3ce0d25c93493819b71868b351d606fb63a87521b022780758f4e49efc2a",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:12:01.957Z"
+}

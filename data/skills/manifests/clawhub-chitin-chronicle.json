@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22170,
+  "uuid": "skill-clawhub-chitin-chronicle",
+  "skillKey": "clawhub-chitin-chronicle",
+  "name": "chitin-chronicle",
+  "summary": "Coordinates multi-agent content publishing by preventing duplicates, tracking timeline, managing claims, and recording immutable publication history with git...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chitin_chronicle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adroidian",
+      "features": [
+        "Coordinates multi-agent content publishing by preventing duplicates, tracking timeline, managin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chitin-chronicle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7563431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chitin-chronicle",
+      "url": "https://clawhub.ai/skills/chitin-chronicle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chitin-chronicle",
+    "url": "https://clawhub.ai/skills/chitin-chronicle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chitin-chronicle-f2b4cc782f097808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chitin-chronicle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chitin-chronicle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03df22528d178bfbfbd42a8081e86700e4abd254d022ee9ff508eae7b9b1ba6c",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T17:28:07.771Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16472,
+  "uuid": "skill-clawhub-truthcheck",
+  "skillKey": "clawhub-truthcheck",
+  "name": "Truthcheck",
+  "summary": "Verify claims, fact-check content, check URL trustworthiness, and trace claims to their origin using the TruthCheck CLI. Use when: (1) user asks to fact-chec...",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truthcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobing Li",
+      "features": [
+        "Verify claims, fact-check content, check URL trustworthiness, and trace claims to their origin.",
+        "Use when: (1) user asks to fact-chec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/truthcheck@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3783600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "truthcheck",
+      "url": "https://clawhub.ai/skills/truthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truthcheck",
+    "url": "https://clawhub.ai/skills/truthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truthcheck-9d56c80edc224437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/truthcheck@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-truthcheck-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6743f8abfc29c3f86730134f82900a3af52f90facb1e1f06b5d9aeb39a5bedf",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T22:14:43.346Z"
+}

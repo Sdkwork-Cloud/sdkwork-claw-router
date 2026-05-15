@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structs-reconnaissance@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_reconnaissance",
+  "skill": {
+    "id": 22197,
+    "skillKey": "clawhub-structs-reconnaissance",
+    "name": "Structs Reconnaissance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-reconnaissance",
+    "url": "https://clawhub.ai/skills/structs-reconnaissance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-reconnaissance-d47e42f1d8280a13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gathers intelligence on players, guilds, planets, and the galaxy in Structs. Use when scouting enemy players, checking planet defenses, monitoring fleet move..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstrct",
+      "userId": "s17cc5kakaxpzqm7102vd7gsax83srkw",
+      "displayName": "Josh McDougall",
+      "image": "https://avatars.githubusercontent.com/u/196776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774840362642,
+      "changelog": "structstestnet-111 compatible, synced with upstream",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcb64b293d2db34d6d311d016fdc93b0308157d1372a3ce0020686defd1e1789"
+}

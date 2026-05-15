@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12111,
+  "uuid": "skill-clawhub-weather-api",
+  "skillKey": "clawhub-weather-api",
+  "name": "Weather Api",
+  "summary": "Fetch weather data for construction scheduling. Historical data, forecasts, and risk assessment for outdoor work.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Fetch weather data for construction scheduling",
+        "Historical data, forecasts, and risk assessment for outdoor work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-api@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-api",
+      "url": "https://clawhub.ai/skills/weather-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-api",
+    "url": "https://clawhub.ai/skills/weather-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-api-758e5696a907ca7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-api@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-api-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a636f128064df32f8ede987fb0e5be67f40982ce42026705e5ba4de4766d2e4",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:13:38.781Z"
+}

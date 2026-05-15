@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65077,
+  "uuid": "skill-clawhub-ecommerce-product-selector",
+  "skillKey": "clawhub-ecommerce-product-selector",
+  "name": "ecommerce-product-selector",
+  "summary": "电商平台爆款产品筛选分析 - 基于数据分析的智能选品工具，支持淘宝、京东、拼多多、抖音、亚马逊等平台",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_product_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wensen2024",
+      "features": [
+        "电商平台爆款产品筛选分析",
+        "基于数据分析的智能选品工具，支持淘宝、京东、拼多多、抖音、亚马逊等平台"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-product-selector@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160041531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-product-selector",
+      "url": "https://clawhub.ai/skills/ecommerce-product-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-product-selector",
+    "url": "https://clawhub.ai/skills/ecommerce-product-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-product-selector-e2c4cb3387e65341.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-product-selector@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-product-selector-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c78769a3f819c0bfc3a8eca0e04c80579ad23d47ae3ca6ff0bc52241c44e629",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:41:38.945Z"
+}

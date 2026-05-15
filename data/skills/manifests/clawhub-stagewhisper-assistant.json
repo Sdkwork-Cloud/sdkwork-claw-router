@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37251,
+  "uuid": "skill-clawhub-stagewhisper-assistant",
+  "skillKey": "clawhub-stagewhisper-assistant",
+  "name": "StageWhisper Assistant",
+  "summary": "Handle tasks that arrive from StageWhisper live calls",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stagewhisper_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PiotrAleksander",
+      "features": [
+        "Handle tasks that arrive from StageWhisper live calls"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stagewhisper-assistant@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6314591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stagewhisper-assistant",
+      "url": "https://clawhub.ai/skills/stagewhisper-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stagewhisper-assistant",
+    "url": "https://clawhub.ai/skills/stagewhisper-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stagewhisper-assistant-6a0d2582218b9af2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stagewhisper-assistant@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stagewhisper-assistant-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:051ab0d72b18b056f4c89134bcc75f6382909063834c9617ad9cca38e7663599",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:11:46.304Z"
+}

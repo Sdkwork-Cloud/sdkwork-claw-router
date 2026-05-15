@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23659,
+  "uuid": "skill-clawhub-ai-content-detection",
+  "skillKey": "clawhub-ai-content-detection",
+  "name": "Ai Content Detection",
+  "summary": "Use this skill whenever a user wants to verify whether content (text, images, audio, video, or documents) was created by AI; detect deepfakes or AI-synthesiz...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_content_detection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chat2dev",
+      "features": [
+        "Use this skill whenever a user wants to verify whether content (text, images, audio, video, or.",
+        "detect deepfakes or AI-synthesiz..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-content-detection@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217951755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-content-detection",
+      "url": "https://clawhub.ai/skills/ai-content-detection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-content-detection",
+    "url": "https://clawhub.ai/skills/ai-content-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-content-detection-707173c596427396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-content-detection@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-content-detection-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bbf5e3a111f75c129daadc15990f086bbf82c30ca2a6ba359d3d3bc79b0296c",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:51:23.029Z"
+}

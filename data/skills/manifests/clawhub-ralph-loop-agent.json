@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9938,
+  "uuid": "skill-clawhub-ralph-loop-agent",
+  "skillKey": "clawhub-ralph-loop-agent",
+  "name": "Ralph Loop (Agent Mode)",
+  "summary": "Guide OpenClaw agents to execute Ralph Wiggum loops using exec and process tools. Agent orchestrates coding agents (Codex, Claude Code, OpenCode, Goose) with proper TTY support via pty:true. Plans/builds code via PROMPT.md + AGENTS.md, SPE.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_loop_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Addo.Zhang",
+      "features": [
+        "Guide OpenClaw agents to execute Ralph Wiggum loops using exec and process tools",
+        "Agent orchestrates coding agents (Codex, Claude Code, OpenCode, Goose) with proper TTY support.",
+        "Plans/builds code via PROMPT.md + AGENTS.md, SPECS and IMPLEMENTATION_PLAN.md",
+        "Includes PLANNING vs BUILDING modes, backpressure, sandboxing, and completion conditions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ralph-loop-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2224492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ralph-loop-agent",
+      "url": "https://clawhub.ai/skills/ralph-loop-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-loop-agent",
+    "url": "https://clawhub.ai/skills/ralph-loop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-loop-agent-bbb819bfd8ecbf94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ralph-loop-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ralph-loop-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e6ab498439c93218cd8d9017364bc0fb2576b1da912eaee277cec7c473653a7",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T05:03:22.802Z"
+}

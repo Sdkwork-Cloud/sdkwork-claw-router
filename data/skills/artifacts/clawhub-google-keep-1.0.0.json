@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-keep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_keep",
+  "skill": {
+    "id": 16631,
+    "skillKey": "clawhub-google-keep",
+    "name": "Google Keep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-keep",
+    "url": "https://clawhub.ai/skills/google-keep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-keep-4e0e0420403ee458.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, create, edit, search, and manage Google Keep notes and lists via CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tag-assistant",
+      "userId": "publishers:tag-assistant",
+      "displayName": "Tag",
+      "image": "https://avatars.githubusercontent.com/u/260167501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 854,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771174842257,
+      "changelog": "Initial release: Manage Google Keep notes and lists via the command line.\n\n- Read, create, search, edit, and delete Google Keep notes and checklists using CLI commands.\n- Authenticate with Google using oauth_token or master token; credentials stored securely.\n- Supports filtering, archiving, pinning, labeling, color, and exporting notes to JSON.\n- Bulk list and item management, including check/uncheck and label operations.\n- Uses unofficial gkeepapi and gpsoauth for backend functionality.\n- Credentials and state cached locally for convenience and performance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ce60b73448bdc78207098b7debdba62ddf7af1e523ed0db99449a7a632d18f9"
+}

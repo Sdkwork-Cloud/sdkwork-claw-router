@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34081,
+  "uuid": "skill-clawhub-rancher-labs",
+  "skillKey": "clawhub-rancher-labs",
+  "name": "Rancher Labs",
+  "summary": "Rancher Labs integration. Manage data, records, and automate workflows. Use when the user wants to interact with Rancher Labs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rancher_labs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rancher Labs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Rancher Labs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rancher-labs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rancher-labs",
+      "url": "https://clawhub.ai/skills/rancher-labs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rancher-labs",
+    "url": "https://clawhub.ai/skills/rancher-labs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rancher-labs-916e3dc9027c95a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rancher-labs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rancher-labs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66e7df2c6873037d9fbb4fc28fab56eec029845530b42f3d4385c829ee517ac5",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:15.930Z"
+}

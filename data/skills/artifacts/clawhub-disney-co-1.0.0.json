@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disney-co@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disney_co",
+  "skill": {
+    "id": 49262,
+    "skillKey": "clawhub-disney-co",
+    "name": "Disney Co"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disney-co",
+    "url": "https://clawhub.ai/skills/disney-co",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disney-co-d3c7aca7aa340584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed analysis of Disney's corporate structure, financials, and strategy across theme parks, ESPN, streaming services, and leadership under CEO B..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778069075845,
+      "changelog": "- Initial release with comprehensive corporate overview of The Walt Disney Company.\n- Covers Disney's business structure, historical milestones, financial highlights, and strategic priorities under CEO Bob Iger.\n- Details the unique strengths of Disney's theme parks, content library, ESPN rights, and streaming bundling.\n- Includes key 2024 data on revenue, subscribers, and park attendance.\n- Shares an interesting fact about the architectural design of Disney parks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6b9e9481b029863f7a54b4f514bc88e2270ccbd936a189bd3bb1d46a93e251a"
+}

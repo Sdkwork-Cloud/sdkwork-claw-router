@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_pack",
+  "skill": {
+    "id": 20912,
+    "skillKey": "clawhub-wechat-pack",
+    "name": "wechat-pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-pack",
+    "url": "https://clawhub.ai/skills/wechat-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-pack-76d5394a2e37b8eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert local .docx or Markdown files into WeChat-ready HTML and generate a publish folder (source/assets/cover/wechat). Use when packaging documents for WeC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rockbotclub",
+      "userId": "publishers:rockbotclub",
+      "displayName": "rockbotclub",
+      "image": "https://avatars.githubusercontent.com/u/144894546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772291754397,
+      "changelog": "Initial release of wechat-pack.\n\n- Converts local .docx or Markdown files into WeChat-ready HTML.\n- Generates a publish folder containing source files, local assets, HTML, and metadata.\n- Supports image extraction and rewriting to local assets folder.\n- Optionally generates cover images in multiple sizes if Pillow is installed.\n- Requires pandoc for .docx conversion.\n- Command-line tool with options for output directory, title, and cover image.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ea8e0468d0b7288d8da5e73eea00ce058b83e05cd1df3b0604679c843238b9d"
+}

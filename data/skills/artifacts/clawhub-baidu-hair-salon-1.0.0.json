@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-hair-salon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_hair_salon",
+  "skill": {
+    "id": 71789,
+    "skillKey": "clawhub-baidu-hair-salon",
+    "name": "百度理发店预约"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-hair-salon",
+    "url": "https://clawhub.ai/skills/baidu-hair-salon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-hair-salon-0bc5c63d60cd97d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户说\"预约理发\"、\"剪头发\"、\"预约发型师\"、\"查看预约记录\"时触发。用于百度理发店预约。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fjjzy",
+      "userId": "s179215d4bdyqqm97m2cpahtcs83j1gz",
+      "displayName": "fjjzy",
+      "image": "https://avatars.githubusercontent.com/u/169604091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425065831,
+      "changelog": "初始版本，支持百度理发店预约",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6db538d71e580ed226c4fc7818c35af40c7d1e56eed50b20046397cec04be363"
+}

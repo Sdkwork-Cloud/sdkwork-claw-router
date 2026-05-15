@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/t138-imea-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t138_imea_clawhub",
+  "skill": {
+    "id": 65309,
+    "skillKey": "clawhub-t138-imea-clawhub",
+    "name": "T138 Imea Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t138-imea-clawhub",
+    "url": "https://clawhub.ai/skills/t138-imea-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t138-imea-clawhub-f38e0e10bdfa75d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整合三層記憶系統、自進化引擎與行動模式，提升 Agent 記憶完整性、自我改進及執行任務能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775344882129,
+      "changelog": "IMEA Skill v1.0.0\n\n- Initial release of the Integrated Memory Evolution Action (IMEA) skill.\n- Combines a three-tier memory system, self-evolution engine, and enforced action mode.\n- Features L1/L2/L3 memory hierarchy, proactive error learning, and before-action checklist.\n- Includes monitoring metrics and auto-fuse (circuit breaker) mechanisms to prevent repeated errors and action failures.\n- Provides full installation, configuration, and usage instructions for seamless integration with ClawHub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bed7a743dcbefb76b6a8854e660042e89815a7c75bbde46ac2cb10aee029309d"
+}

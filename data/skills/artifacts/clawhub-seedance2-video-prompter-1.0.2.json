@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance2-video-prompter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance2_video_prompter",
+  "skill": {
+    "id": 63454,
+    "skillKey": "clawhub-seedance2-video-prompter",
+    "name": "Seedance 2.0 video prompter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance2-video-prompter",
+    "url": "https://clawhub.ai/skills/seedance2-video-prompter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance2-video-prompter-b3f6cf3cdee2dc93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Seedance 2.0（即梦）视频生成提示词工程（中文优化版）。当用户提到 Seedance、即梦、视频提示词、视频生成、AI视频、prompt、镜头语言、分镜、电商视频、产品展示视频 等关键词时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wild-river2016",
+      "userId": "s1728prhxha43xjrpyn59ng27183qh9v",
+      "displayName": "狂野的河",
+      "image": "https://avatars.githubusercontent.com/u/24984406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774862384232,
+      "changelog": "- 移除文件：bilibili-tutorial-script.md\n- 输出格式和自检清单更加突出声音层要求，明确叙事场景须增加 Dialogue/Narration 和 Sound 层，不再仅限对话短剧\n- 更新平台硬限制，明确 Seedance 2.0 支持原生音视频同步生成，并补充声音设计指导\n- 自检清单、负面约束、核心规则等说明更聚焦于新功能和当前业务约束",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f13acd4f58917ad88909a6c76e3909ab253f37555c1b8d1b348e4e58f276196"
+}

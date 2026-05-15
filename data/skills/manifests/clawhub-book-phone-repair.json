@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12963,
+  "uuid": "skill-clawhub-book-phone-repair",
+  "skillKey": "clawhub-book-phone-repair",
+  "name": "Book Phone Repair",
+  "summary": "Book phone-repair services through Lokuli MCP. Use when user needs to find and book phone-repair. Triggers on requests like \"book a phone-repair\", \"find phone-repair near me\", or any phone-repair service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_phone_repair",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book phone-repair services through Lokuli MCP",
+        "Use when user needs to find and book phone-repair",
+        "Triggers on requests like \"book a phone-repair\", \"find phone-repair near me\", or any phone-repa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-phone-repair@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-phone-repair",
+      "url": "https://clawhub.ai/skills/book-phone-repair"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-phone-repair",
+    "url": "https://clawhub.ai/skills/book-phone-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-phone-repair-820b31f4127612d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-phone-repair@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-phone-repair-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eb8e51f67305a31936d35499eb49b3db718c485b3aa217b091f218c6168d6e1",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:40.454Z"
+}

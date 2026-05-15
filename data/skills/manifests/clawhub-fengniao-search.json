@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68941,
+  "uuid": "skill-clawhub-fengniao-search",
+  "skillKey": "clawhub-fengniao-search",
+  "name": "Company search fengniao",
+  "summary": "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行、失信、限高、经营异常、严重违法、行政处罚等风险数据，适用于企业尽调、合作方背景调查、供应商准入、客户风险识别、签约前核...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengniao_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Elijah-Pi",
+      "features": [
+        "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fengniao-search@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77263364?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fengniao-search",
+      "url": "https://clawhub.ai/skills/fengniao-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengniao-search",
+    "url": "https://clawhub.ai/skills/fengniao-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengniao-search-674534a48425e283.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fengniao-search@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-fengniao-search-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46d024358c3a8ad58f4374b5e0cbdac3c0820f79886e4e78824322b209d14d58",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:49:34.076Z"
+}

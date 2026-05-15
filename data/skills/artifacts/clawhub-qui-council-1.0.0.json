@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qui-council@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_council",
+  "skill": {
+    "id": 42440,
+    "skillKey": "clawhub-qui-council",
+    "name": "qui-council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-council",
+    "url": "https://clawhub.ai/skills/qui-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-council-cfde835d647986d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send an idea to the Council of the Wise for multi-perspective feedback. Spawns sub-agents to analyze from multiple expert perspectives. Auto-discovers agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quincygunter",
+      "userId": "s17d0tr1e37k04dr1j7gy5ff0584nmyw",
+      "displayName": "QuincyGunter",
+      "image": "https://avatars.githubusercontent.com/u/260427166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776916744664,
+      "changelog": "**Council skill is now auto-discoverable and easier to use with flexible expert input.**\n\n- Automatically detects and includes council members based on agent files in the `agents/` folder—no config needed.\n- Output revamped with a clear structure: moderator synthesis first, followed by detailed expert perspectives, prioritized action items, and a confidence signal.\n- Easily add new expert roles by dropping `.md` files with YAML frontmatter into the `agents/` folder.\n- Five-minute timeout ensures thorough yet timely council feedback, providing partial results on timeout.\n- Ideal for in-depth review of business plans, projects, or major decisions—not for quick answers or simple tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dad0a33e6ef66e131d72dfd372aeb5bbc3ddaa1c7c79ea718a2fdb38dd901ae"
+}

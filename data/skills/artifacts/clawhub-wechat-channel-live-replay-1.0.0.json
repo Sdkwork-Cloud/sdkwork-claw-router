@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-channel-live-replay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_channel_live_replay",
+  "skill": {
+    "id": 63850,
+    "skillKey": "clawhub-wechat-channel-live-replay",
+    "name": "WeChat Channel Live Replay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-channel-live-replay",
+    "url": "https://clawhub.ai/skills/wechat-channel-live-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-channel-live-replay-48f002891b0aa4b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(已验证) 根据视频号名称搜索用户并下载指定日期的直播回放视频，支持自动转写直播稿。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774506587338,
+      "changelog": "wechat-channel-live-replay v1.0.0\n\n- 首次发布：支持根据微信视频号名称搜索用户并下载指定日期的直播回放视频。\n- 支持自动转写直播视频为文字稿，输出到指定目录，便于后续复盘分析。\n- 可通过参数选择是否转写或仅下载视频文件。\n- 输出包含：回放视频、文字稿、和详细的汇总报告（JSON）。\n- 与 live-replay-analyzer 技能深度集成，实现自动化复盘数据流。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a11eab3f12c1de39adea15d8fc90435b00841c7bda326405cf374b96ef7e8128"
+}

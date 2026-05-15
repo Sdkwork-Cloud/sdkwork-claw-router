@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yoloutils@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yoloutils",
+  "skill": {
+    "id": 60738,
+    "skillKey": "clawhub-yoloutils",
+    "name": "Yolo Utilities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yoloutils",
+    "url": "https://clawhub.ai/skills/yoloutils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yoloutils-f3bf589e54999bea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 yoloutils 的命令级技能。用户需要执行 yoloutils 的 label、merge、copy、remove、change、crop、labelimg、resize、classify、test 任一子命令时使用。以源码真实行为为准，提供每个子命令的参数定义、执行逻辑、副作用、限制和示例。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netkiller",
+      "userId": "s17acbmkz49yne3s4rmmfwgxth84dczb",
+      "displayName": "Neo Chan",
+      "image": "https://avatars.githubusercontent.com/u/245179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775824497114,
+      "changelog": "YOLOUtils 1.0.0 — Initial Release\n\n- Introduces command-line toolkit \"yoloutils\" for dataset management and YOLO workflows.\n- Supports 10 subcommands: label, merge, copy, remove, change, crop, labelimg, resize, classify, test.\n- Documents each command’s parameters, behaviors, requirements, and examples based on source code.\n- Ensures pre-checks on dependencies, paths, and critical files before execution.\n- Describes workflow details, such as label statistics, merging, selective copying, batch removals, index replacement, model-based cropping, and structured dataset conversion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bcab7103f8548e3f5dbf02f0abcb1986095c4f8e79c43677c911d8bca986f3d"
+}

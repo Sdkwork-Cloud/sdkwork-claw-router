@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23585,
+  "uuid": "skill-clawhub-koreader-highlights",
+  "skillKey": "clawhub-koreader-highlights",
+  "name": "koreader-highlights",
+  "summary": "Use this skill when the user asks about reading highlights, book notes, annotations, or reading history from KOReader. Triggers: \"what books\", \"show highligh...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.koreader_highlights",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myugan",
+      "features": [
+        "Use this skill when the user asks about reading highlights, book notes, annotations, or reading.",
+        "Triggers: \"what books\", \"show highligh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/koreader-highlights@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20453528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "koreader-highlights",
+      "url": "https://clawhub.ai/skills/koreader-highlights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "koreader-highlights",
+    "url": "https://clawhub.ai/skills/koreader-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/koreader-highlights-1f831ace401ea71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/koreader-highlights@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-koreader-highlights-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2623907e6011376cf7ca11f95bb096ffb9c4a6f7bfd8c7ad5d3a0b44f4f409e",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T15:02:11.584Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-repurposing-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_repurposing_engine",
+  "skill": {
+    "id": 10557,
+    "skillKey": "clawhub-content-repurposing-engine",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-repurposing-engine",
+    "url": "https://clawhub.ai/skills/content-repurposing-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-repurposing-engine-aae54098f450d727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn one piece of content into 10+ formats. Transform blog posts, podcasts, videos, or talks into tweets, LinkedIn posts, newsletters, carousels, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2290,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770951172765,
+      "changelog": "Initial release of Content Repurposer.\n\n- Transform any single piece of content into 10+ formats, including threads, posts, carousels, scripts, outlines, and more.\n- Repurposing Matrix: Covers Twitter/X threads, LinkedIn posts, Instagram carousels, newsletters, video scripts, blog outlines, quote graphics, email sequences, podcast points, and YouTube descriptions.\n- Platform-native approach ensures each format fits its respective audience and style conventions.\n- Built-in rules for hooks, CTA variation, and standalone value in every output.\n- Flexible input handling: Works with blogs, transcripts, slides, notes, or even a single idea.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c2d42c836a7169e7035ca3c42a9d6a7c86580981720fa3b35126cc882e0b95f"
+}

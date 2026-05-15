@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30776,
+  "uuid": "skill-clawhub-zeit",
+  "skillKey": "clawhub-zeit",
+  "name": "Zeit",
+  "summary": "ZEIT integration. Manage data, records, and automate workflows. Use when the user wants to interact with ZEIT data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ZEIT integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ZEIT data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeit@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeit",
+      "url": "https://clawhub.ai/skills/zeit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeit",
+    "url": "https://clawhub.ai/skills/zeit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeit-e4aafd8b49031749.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeit@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeit-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98f94e1c5b3629ff6cfdb8d926050ad04448ae68062e05fc185e731ed0e15394",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:44.797Z"
+}

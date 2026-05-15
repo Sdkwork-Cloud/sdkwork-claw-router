@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turn-any-book-into-a-working-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turn_any_book_into_a_working_agent",
+  "skill": {
+    "id": 64468,
+    "skillKey": "clawhub-turn-any-book-into-a-working-agent",
+    "name": "Turn Any Book into a Working Agent 一键把书变成员工"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turn-any-book-into-a-working-agent",
+    "url": "https://clawhub.ai/skills/turn-any-book-into-a-working-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turn-any-book-into-a-working-agent-25b7da7a0f435e14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将上传的书籍内容自动提取和分析，生成基于该书核心知识和方法论的专属AI员工角色，助力相关任务执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenshuo-03",
+      "userId": "s177dj8cv1tarm8t0z7cfg3k7h840qwh",
+      "displayName": "shenshuo-03",
+      "image": "https://avatars.githubusercontent.com/u/262797904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773075015426,
+      "changelog": "Initial release: Instantly turn any book into a custom AI working agent.\n\n- Upload a book (PDF, TXT, EPUB, etc.) to auto-extract its core knowledge and workflow.\n- Auto-generate a fully defined AI employee role (Skill) based on the book's content.\n- Includes scripts for text extraction, key knowledge analysis, and agent Skill file generation.\n- Supports one-click conversion via provided shell and Windows batch scripts.\n- Output is a ready-to-use AI agent in your skills library, based on the uploaded book.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dff976bdc6e09bbf636743f4df824c1a408de3f2202de2d9f91deb5c75927ee"
+}

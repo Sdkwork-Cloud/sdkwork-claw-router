@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kiwi-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiwi_voice",
+  "skill": {
+    "id": 26652,
+    "skillKey": "clawhub-kiwi-voice",
+    "name": "Kiwi Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiwi-voice",
+    "url": "https://clawhub.ai/skills/kiwi-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiwi-voice-984d025d2b20e64d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and configure Kiwi Voice assistant service. Use when starting/stopping Kiwi, editing voice config, checking logs, troubleshooting audio issues, or man..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuangu260",
+      "userId": "publishers:yuangu260",
+      "displayName": "yuangu260",
+      "image": "https://avatars.githubusercontent.com/u/185619238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773796712101,
+      "changelog": "- Initial release of kiwi-voice skill.\n- Provides management and configuration for the standalone Kiwi Voice assistant service.\n- Supports flexible TTS (ElevenLabs, Piper, Qwen3) and STT model selection.\n- Includes detailed configuration options for LLM, audio devices, and security settings.\n- Voice profile management and basic voice security/approval workflows included.\n- Troubleshooting tips and log file locations documented for easier support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24b3c66bad511925d034b97f3b77a2ddb132d0def7ac07214b17efbdea4ee14d"
+}

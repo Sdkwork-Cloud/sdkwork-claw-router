@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61507,
+  "uuid": "skill-clawhub-onelap-sync-strava",
+  "skillKey": "clawhub-onelap-sync-strava",
+  "name": "onelap sync strava",
+  "summary": "因为顽鹿在 2026 年 3 月关闭了自动同步 Strava 的功能，这个SKILL专门用来帮你把顽鹿运动的骑行记录顺畅地同步到 Strava。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onelap_sync_strava",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kermit R. Wood",
+      "features": [
+        "因为顽鹿在 2026 年 3 月关闭了自动同步 Strava 的功能，这个SKILL专门用来帮你把顽鹿运动的骑行记录顺畅地同步到 Strava。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onelap-sync-strava@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39365774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onelap-sync-strava",
+      "url": "https://clawhub.ai/skills/onelap-sync-strava"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onelap-sync-strava",
+    "url": "https://clawhub.ai/skills/onelap-sync-strava",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onelap-sync-strava-313a0ceb8430d252.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onelap-sync-strava@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-onelap-sync-strava-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67811e18397d987101226a0ae1e5fcaaa7ba8500dd33a4a4cc42fddd9e07439d",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:52:10.020Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plagiarism-checker-pre-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plagiarism_checker_pre_screener",
+  "skill": {
+    "id": 32068,
+    "skillKey": "clawhub-plagiarism-checker-pre-screener",
+    "name": "Plagiarism Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plagiarism-checker-pre-screener",
+    "url": "https://clawhub.ai/skills/plagiarism-checker-pre-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plagiarism-checker-pre-screener-de2aaeff0e75982b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: User provides text/document and asks to check originality, detect plagiarism, assess similarity, or rewrite high-duplicate content. Triggers: \"chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774860690415,
+      "changelog": "- Initial release of Plagiarism Checker Pre-Screener.\n- Detects highly similar or potentially plagiarized text segments using TF-IDF, cosine similarity, and semantic embeddings.\n- Provides an overall originality score and highlights flagged sections.\n- Offers AI-powered paraphrasing suggestions for duplicate content.\n- Supports text inputs and document files (txt, md, docx - via text extraction).\n- All processing is local for privacy and data security.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c735d0f2b9445e5d5f5998f347c849a4ea7f6b398c3b55811999dd9aa229d1a"
+}

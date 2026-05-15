@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19460,
+  "uuid": "skill-clawhub-api-monitor-dashboard",
+  "skillKey": "clawhub-api-monitor-dashboard",
+  "name": "Api Monitor Dashboard",
+  "summary": "Real-time monitoring dashboard for API uptime, response times, error rates, custom health checks, and alert notifications via email or Slack.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_monitor_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Real-time monitoring dashboard for API uptime, response times, error rates, custom health check."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-monitor-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-monitor-dashboard",
+      "url": "https://clawhub.ai/skills/api-monitor-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-monitor-dashboard",
+    "url": "https://clawhub.ai/skills/api-monitor-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-monitor-dashboard-790a9b13a825c592.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-monitor-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-monitor-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd257f3b5e48857a48257fe258e632cc02ef6e1b60f9743de2e9002a1e668f37",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:37:01.626Z"
+}

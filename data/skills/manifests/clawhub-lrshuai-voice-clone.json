@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67209,
+  "uuid": "skill-clawhub-lrshuai-voice-clone",
+  "skillKey": "clawhub-lrshuai-voice-clone",
+  "name": "LrshuAI Voice Clone",
+  "summary": "声音克隆技能。当你需要提供一段参考音频，并生成使用该声音说话的新音频时调用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lrshuai_voice_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazyAI",
+      "features": [
+        "声音克隆技能。当你需要提供一段参考音频，并生成使用该声音说话的新音频时调用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lrshuai-voice-clone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153581534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lrshuai-voice-clone",
+      "url": "https://clawhub.ai/skills/lrshuai-voice-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lrshuai-voice-clone",
+    "url": "https://clawhub.ai/skills/lrshuai-voice-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lrshuai-voice-clone-3d8cb60bf0f06cfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lrshuai-voice-clone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lrshuai-voice-clone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43af5ef65b3a2d6a5627c0602a3fa2cc33a65a7dd175a24b3938bc67c6d8101d",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:16:34.857Z"
+}

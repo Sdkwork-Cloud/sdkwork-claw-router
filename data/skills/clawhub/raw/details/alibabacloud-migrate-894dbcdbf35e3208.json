@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "alibabacloud-migrate",
+    "displayName": "Alibabacloud Migrate",
+    "summary": "Assess and migrate workloads from AWS to Alibaba Cloud. Follows a 4-phase methodology: Phase 1 (source architecture assessment), Phase 2 (migration plan gene...",
+    "tags": {
+      "latest": "0.0.1-beta.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775721414423,
+    "updatedAt": 1777527356772
+  },
+  "latestVersion": {
+    "version": "0.0.1-beta.1",
+    "createdAt": 1775721414423,
+    "changelog": "alibabacloud-migrate 0.0.1-beta.1\n\n- Initial release: assess and migrate workloads from AWS to Alibaba Cloud following a 4-phase methodology (assessment, planning, infrastructure provisioning, data/application migration).\n- Supports EC2→ECS, RDS→ApsaraDB, S3→OSS, Lambda→Function Compute, and common network/DNS migrations.\n- Uses Terraform for infrastructure provisioning and Alibaba Cloud CLI for migration operations.\n- Strict credential checks and security rules enforced; phases are gated by verified AWS/Alibaba Cloud credentials.\n- Requires explicit user choice of interaction mode before any scan or migration begins (interactive/autonomous).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sdk-team",
+    "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+    "displayName": "alibabacloud-skills-team",
+    "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527356772
+  }
+}

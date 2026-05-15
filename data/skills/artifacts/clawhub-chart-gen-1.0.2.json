@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chart-gen@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_gen",
+  "skill": {
+    "id": 30560,
+    "skillKey": "clawhub-chart-gen",
+    "name": "Chart Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-gen",
+    "url": "https://clawhub.ai/skills/chart-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-gen-232217d592a46def.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774616624907,
+      "changelog": "- Reference to the external file `references/runtime-and-security.md` was removed.\n- Instructions about environment/config setup are now provided directly in the skill, streamlining onboarding.\n- API key configuration guidance is clarified and now contained within the SKILL.md itself.\n- \"Never expose API key. Never fabricate visualizations.\" was added to rules for clearer security/compliance.\n- General workflow and error-handling instructions remain unchanged.\n- No code changes—documentation and onboarding improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f801b963cea0ab9c6164125140297abe0e9a42d5905239e504d0be3ce6d0f35"
+}

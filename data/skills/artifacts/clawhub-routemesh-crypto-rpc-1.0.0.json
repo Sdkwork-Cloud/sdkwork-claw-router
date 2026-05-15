@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/routemesh-crypto-rpc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.routemesh_crypto_rpc",
+  "skill": {
+    "id": 14626,
+    "skillKey": "clawhub-routemesh-crypto-rpc",
+    "name": "RouteMesh Crypto RPC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "routemesh-crypto-rpc",
+    "url": "https://clawhub.ai/skills/routemesh-crypto-rpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/routemesh-crypto-rpc-359564d009144746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call RouteMesh's unified JSON-RPC endpoint (lb.routeme.sh) for any EVM chainId using a helper script. Use when you need to fetch onchain data (eth_* methods), debug RPC responses, or demo RouteMesh routing for a chain/method."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kermankohli",
+      "userId": "publishers:kermankohli",
+      "displayName": "kermankohli",
+      "image": "https://avatars.githubusercontent.com/u/2050929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1570,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770194232741,
+      "changelog": "Initial release: call RouteMesh unified JSON-RPC endpoint",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb0d56570586d0f3d90402f73ffd2bcde8feb94ab5507d296c263127efb855e6"
+}

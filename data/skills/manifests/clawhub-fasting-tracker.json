@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11143,
+  "uuid": "skill-clawhub-fasting-tracker",
+  "skillKey": "clawhub-fasting-tracker",
+  "name": "Fasting Tracker",
+  "summary": "Track intermittent fasting windows, extended fasts, and autophagy milestones",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fasting_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Track intermittent fasting windows, extended fasts, and autophagy milestones"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fasting-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fasting-tracker",
+      "url": "https://clawhub.ai/skills/fasting-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fasting-tracker",
+    "url": "https://clawhub.ai/skills/fasting-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fasting-tracker-b6d68524609fd8bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fasting-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fasting-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f0c71024bd0aca633c4b517843592526c7c5e65da1e4368de588a6d43615361",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:33:58.156Z"
+}

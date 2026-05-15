@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-mp4-pptzc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_mp4_pptzc",
+  "skill": {
+    "id": 67432,
+    "skillKey": "clawhub-free-mp4-pptzc",
+    "name": "free-mp4-pptzc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-mp4-pptzc",
+    "url": "https://clawhub.ai/skills/free-mp4-pptzc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-mp4-pptzc-b829e0fc76bee42f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将PPT或文本脚本转换为带讲解配音的演示视频，支持多种幻灯片模板和中英文配音。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawzhangchong",
+      "userId": "s178cqx9kma3mpnvqe8evteyr983hvb4",
+      "displayName": "张翀",
+      "image": "https://avatars.githubusercontent.com/u/270544860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777901126452,
+      "changelog": "Presentation Video Maker v1.0.0 – 初始发布\n\n- 自动将PPT/文本脚本转换为带配音的演示视频\n- 支持文本与专业HTML模板两种幻灯片生成模式\n- 内置多种中英文AI配音方案\n- 提供分步命令行操作流程（幻灯片生成、配音、视频合成）\n- 附详细示例、脚本格式说明与故障排查指南\n- 支持自定义显示时长、转场效果和背景音乐",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4da9623e4839ae64c413f91bbd80aeea5271d9bdfd0143b45b0247e093c370cf"
+}

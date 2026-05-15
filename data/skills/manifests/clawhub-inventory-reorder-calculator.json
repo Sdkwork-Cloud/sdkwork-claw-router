@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17963,
+  "uuid": "skill-clawhub-inventory-reorder-calculator",
+  "skillKey": "clawhub-inventory-reorder-calculator",
+  "name": "Inventory Reorder Calculator",
+  "summary": "Estimate ecommerce reorder timing and quantity using demand, lead time, and safety stock assumptions so teams can set reorder points and reduce stockout risk...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_reorder_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Estimate ecommerce reorder timing and quantity using demand, lead time, and safety stock assump."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-reorder-calculator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-reorder-calculator",
+      "url": "https://clawhub.ai/skills/inventory-reorder-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-reorder-calculator",
+    "url": "https://clawhub.ai/skills/inventory-reorder-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-reorder-calculator-00924abbcdca62a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-reorder-calculator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-reorder-calculator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd37c74fa069b2ec24d0221c05042e7a70817824938dc822729e83a222d7253d",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:16:52.109Z"
+}

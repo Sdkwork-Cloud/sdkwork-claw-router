@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-egregore-uninstall-watchdog@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_egregore_uninstall_watchdog",
+  "skill": {
+    "id": 34852,
+    "skillKey": "clawhub-nm-egregore-uninstall-watchdog",
+    "name": "Nm Egregore Uninstall Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-egregore-uninstall-watchdog",
+    "url": "https://clawhub.ai/skills/nm-egregore-uninstall-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-egregore-uninstall-watchdog-a2026bc91a8409e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove the egregore watchdog daemon and clean up all associated files (plist/unit, pidfile, watchdog log)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778293017331,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcf69d40a350a433f2a32f4bad0fc1e768a550b7d054a105f99debf625e89802"
+}

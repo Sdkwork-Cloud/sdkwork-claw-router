@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24919,
+  "uuid": "skill-clawhub-openfin-enable-banking",
+  "skillKey": "clawhub-openfin-enable-banking",
+  "name": "openfin-enable-banking",
+  "summary": "PSD2 Open Banking integration via Enable Banking API. Connect DACH bank accounts (Sparkasse, Volksbank, Deutsche Bank, Commerzbank, DKB, ING, Postbank + Aust...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfin_enable_banking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Prof. Dr. Paul Pronobis",
+      "features": [
+        "PSD2 Open Banking integration via Enable Banking API",
+        "Connect DACH bank accounts (Sparkasse, Volksbank, Deutsche Bank, Commerzbank, DKB, ING, Postban."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openfin-enable-banking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50087465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openfin-enable-banking",
+      "url": "https://clawhub.ai/skills/openfin-enable-banking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfin-enable-banking",
+    "url": "https://clawhub.ai/skills/openfin-enable-banking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfin-enable-banking-2893bb721c475afa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openfin-enable-banking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openfin-enable-banking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8461681ca7ce152e33f95adc558d3d96324afe02d3130eae2a48201e2fa14b9e",
+      "artifactSizeBytes": 2669
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:33:26.928Z"
+}

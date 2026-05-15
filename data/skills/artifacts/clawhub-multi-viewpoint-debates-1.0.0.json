@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-viewpoint-debates@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_viewpoint_debates",
+  "skill": {
+    "id": 10428,
+    "skillKey": "clawhub-multi-viewpoint-debates",
+    "name": "Multi-viewpoint Debates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-viewpoint-debates",
+    "url": "https://clawhub.ai/skills/multi-viewpoint-debates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-viewpoint-debates-4f1525d82362f750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn isolated sub-agents representing distinct worldviews (Elon, Capitalist, Monkey) to debate decisions from multiple angles. Expose blind spots by forcing genuine disagreement on important questions. Use when facing decisions where you."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "latentfreedom",
+      "userId": "publishers:latentfreedom",
+      "displayName": "LatentFreedom",
+      "image": "https://avatars.githubusercontent.com/u/19758184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2547,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769457824133,
+      "changelog": "Multi-Viewpoint Debates 1.0.0\n\n- Initial release introducing three isolated sub-agent personas (Elon, Capitalist, Monkey) to debate decisions from distinct worldviews.\n- Automatically archives debate outputs for future reference and pattern analysis.\n- Provides scripts and templates for running debates, saving outputs, and maintaining a searchable archive.\n- Offers detailed persona frameworks and step-by-step guidance to challenge assumptions and stress-test ideas from fundamentally different perspectives.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c13d15e5b768a9f4dcf0cca8ee9ca42ba5fd6e517d5c8ece75aba926769f770a"
+}

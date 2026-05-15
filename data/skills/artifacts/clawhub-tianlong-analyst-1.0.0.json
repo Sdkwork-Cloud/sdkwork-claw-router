@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianlong-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianlong_analyst",
+  "skill": {
+    "id": 73473,
+    "skillKey": "clawhub-tianlong-analyst",
+    "name": "天龙需求分析专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianlong-analyst",
+    "url": "https://clawhub.ai/skills/tianlong-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianlong-analyst-51568c084782ea3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于天龙引擎，提供需求本质挖掘、复杂度评估和结构化分析报告，助力产品和决策高效落地。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guilinleolee",
+      "userId": "publishers:guilinleolee",
+      "displayName": "guilinleolee",
+      "image": "https://avatars.githubusercontent.com/u/190466955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772760595280,
+      "changelog": "tianlong-analyst 1.0.0\n\n- 首次发布，集成天龙引擎 V7.4 需求分析能力\n- 支持需求解构、复杂度评估、批判性思维质疑及行动建议输出\n- 提供清晰结构化报告模板及场景化使用方法\n- 适用于产品分析、技术选型、可行性判断和决策辅助",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9ba8e81167c7e89b18de62c698d139a59c89ba6063d465ef61bf18d96d7f070"
+}

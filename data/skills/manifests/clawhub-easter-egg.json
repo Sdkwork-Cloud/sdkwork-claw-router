@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38153,
+  "uuid": "skill-clawhub-easter-egg",
+  "skillKey": "clawhub-easter-egg",
+  "name": "Easter Egg",
+  "summary": "Adopt and care for a virtual Easter Bunny that hatches from an egg, requiring real-time feeding, play, and health management at animalhouse.ai.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easter_egg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiveNeon.ai",
+      "features": [
+        "Adopt and care for a virtual Easter Bunny that hatches from an egg, requiring real-time feeding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easter-egg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261327260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easter-egg",
+      "url": "https://clawhub.ai/skills/easter-egg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easter-egg",
+    "url": "https://clawhub.ai/skills/easter-egg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easter-egg-8cbffd67cd71ad6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easter-egg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easter-egg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:763b549c7c5c627689b8a07e3934298baf979b4e4694aa632be4c25050c69a4f",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T00:04:20.875Z"
+}

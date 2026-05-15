@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_research",
+  "skill": {
+    "id": 23808,
+    "skillKey": "clawhub-token-research",
+    "name": "Token Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-research",
+    "url": "https://clawhub.ai/skills/token-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-research-1079e64e084c92f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive token research for EVM chains (Base, ETH, Arbitrum) and Solana. Use this skill when you want to research crypto tokens, deep-dive projects or m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xartex",
+      "userId": "s17ac9rr9rxwdz696r2aeqrn05841x94",
+      "displayName": "0xArtex",
+      "image": "https://avatars.githubusercontent.com/u/108491869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773101759204,
+      "changelog": "Initial release — introduces structured workflow for comprehensive token research across EVM and Solana.\n\n- Mandatory call-and-message protocol for high-potential tokens (WATCH/APE), with strict volume-driven triggers.\n- Enforces social research on X/Twitter for every token; mandates skipping pure memes except in specific high-volume cases.\n- Outlines deep and shallow research procedures, including use of APIs (DexScreener, GoPlus, Etherscan/Basescan, Twitter).\n- Implements systematic directory structure for research reports and monthly tiered watchlists with clear update rules.\n- Provides detailed, step-by-step research process template for fundamentals and Twitter-based due diligence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9f639a4903d6ca305157cd202ef5c0efd8738c3596e1795d8c380f7c3662abd"
+}

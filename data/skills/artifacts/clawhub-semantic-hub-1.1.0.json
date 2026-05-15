@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-hub@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_hub",
+  "skill": {
+    "id": 24976,
+    "skillKey": "clawhub-semantic-hub",
+    "name": "Semantic Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-hub",
+    "url": "https://clawhub.ai/skills/semantic-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-hub-f04f83920c51c73b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collaborative task and project management for Human + AI Agent teamwork. Organize work on visual boards with drag-and-drop columns, table views, and calendar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simplysemantics",
+      "userId": "publishers:simplysemantics",
+      "displayName": "Simply Semantics",
+      "image": "https://avatars.githubusercontent.com/u/261688099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772829356788,
+      "changelog": "**New in 1.1.0: Added file upload and attachment support for tasks and comments.**\n\n- Agents can now upload and attach files or URLs to cards and comments.\n- Activation triggers updated to include requests to upload or attach files.\n- Documentation and example instructions expanded with file handling capabilities.\n- Skill description updated for file upload/attachment functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bc6aeceadd9876412b9779690fa332e12a804455d5c9926a74815ef384ff847"
+}

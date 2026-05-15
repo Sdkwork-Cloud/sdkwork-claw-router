@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68763,
+  "uuid": "skill-clawhub-generate-docx",
+  "skillKey": "clawhub-generate-docx",
+  "name": "Generate DOCX",
+  "summary": "将大模型生成或修改的内容，按照对应中文文档排版国家标准与行业规范， 输出为格式严格正确的 Word (.docx) 文档。 支持 19 种文档类型，依据《Word文档类型与风格指南》全量实现所有排版规范， 包括党政公文、商业文档、学术论文、技术文档、医疗文档、营销策划、 法律文书、金融报告、工程文档等。 v4.1...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FtoIS",
+      "features": [
+        "将大模型生成或修改的内容，按照对应中文文档排版国家标准与行业规范， 输出为格式严格正确的 Word (.docx) 文档。 支持 19 种文档类型，依据《Word文档类型与风格指南》全量实现."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-docx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49223291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-docx",
+      "url": "https://clawhub.ai/skills/generate-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-docx",
+    "url": "https://clawhub.ai/skills/generate-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-docx-5097c4fb478cbe23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-docx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-docx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671147bb01d4764b27e34af8d09d3a197fed20a8ffff3c052e8d19f36e5cf530",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:16:19.121Z"
+}

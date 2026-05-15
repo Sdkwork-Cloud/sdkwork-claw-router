@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-framework-sender@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_framework_sender",
+  "skill": {
+    "id": 67915,
+    "skillKey": "clawhub-design-framework-sender",
+    "name": "设计框架套件 - 主控路由"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-framework-sender",
+    "url": "https://clawhub.ai/skills/design-framework-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-framework-sender-17672a0e56fb4af6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "设计框架自动生成套件（主控路由）：监听群消息 @mention，根据状态路由到对应子 skill"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "807209066",
+      "userId": "s17ev069wj6x7pf8cqcnjhkf4583jhzj",
+      "displayName": "807209066",
+      "image": "https://avatars.githubusercontent.com/u/86033938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776841919030,
+      "changelog": "v2.0 拆分重构：单一职责，主控路由，配合 builder/confirm/generate 三件套使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90dac8b07834d9af014e77ec471d0e4afe3fcf73e30e958c59a02442f46c6641"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12949,
+  "uuid": "skill-clawhub-llm-models",
+  "skillKey": "clawhub-llm-models",
+  "name": "Llm Models",
+  "summary": "Access Claude, Gemini, Kimi, GLM and 100+ LLMs via inference.sh CLI using OpenRouter. Models: Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 3...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_models",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Access Claude, Gemini, Kimi, GLM and 100+ LLMs via inference.sh CLI using OpenRouter",
+        "Models: Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, Gemini 3..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-models@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-models",
+      "url": "https://clawhub.ai/skills/llm-models"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-models",
+    "url": "https://clawhub.ai/skills/llm-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-models-ee38996286948956.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-models@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-models-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ee87b942f520e0246eb933effa99762fdc73d046c65c0d81a6ecb99fec5446f",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:27:26.477Z"
+}

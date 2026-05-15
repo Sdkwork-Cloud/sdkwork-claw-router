@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26474,
+  "uuid": "skill-clawhub-local-config-model-recommender",
+  "skillKey": "clawhub-local-config-model-recommender",
+  "name": "local-config-model-recommender",
+  "summary": "Intelligently recommends optimal AI models based on task requirements. Dynamically reads the user's OpenCLAW configuration and provides context-aware model s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_config_model_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "garygou1024",
+      "features": [
+        "Intelligently recommends optimal AI models based on task requirements",
+        "Dynamically reads the user's OpenCLAW configuration and provides context-aware model s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-config-model-recommender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10525253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-config-model-recommender",
+      "url": "https://clawhub.ai/skills/local-config-model-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-config-model-recommender",
+    "url": "https://clawhub.ai/skills/local-config-model-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-config-model-recommender-fe6b4e0623092664.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-config-model-recommender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-config-model-recommender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a06c0f95d55e55cc1e35c9452194e20243bb6e829993944288719be36ec842a1",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:46:19.456Z"
+}

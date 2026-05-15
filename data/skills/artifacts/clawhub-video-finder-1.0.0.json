@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_finder",
+  "skill": {
+    "id": 45920,
+    "skillKey": "clawhub-video-finder",
+    "name": "Video Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-finder",
+    "url": "https://clawhub.ai/skills/video-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-finder-3645f0a5e37289c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "find search query into matched video results with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for searching a video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776469442757,
+      "changelog": "Video Finder — Initial Release\n\n- Launches the Video Finder skill for fast AI-powered video search and export.\n- Supports searching a video library by topic or description; processes and returns 1080p MP4 videos in seconds.\n- Works with MP4, MOV, AVI, WebM files up to 500MB; various file types accepted for upload.\n- Handles user intents such as upload, export, balance check, and timeline state queries.\n- Integrates with a cloud backend supporting anonymous token creation, session management, credits, state polling, and export workflows.\n- Includes robust error handling and tips for best performance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a357f437681fd899b9affa5c59ee205fb1f3b917d3627d33cbac001b618ea0e4"
+}

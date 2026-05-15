@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18540,
+  "uuid": "skill-clawhub-ai-customer-service",
+  "skillKey": "clawhub-ai-customer-service",
+  "name": "AI Customer Service KB Builder",
+  "summary": "Build AI-powered customer service knowledge bases by extracting FAQs from documents or websites, enabling automated replies and multi-format exports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_customer_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Build AI-powered customer service knowledge bases by extracting FAQs from documents or websites."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-customer-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-customer-service",
+      "url": "https://clawhub.ai/skills/ai-customer-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-customer-service",
+    "url": "https://clawhub.ai/skills/ai-customer-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-customer-service-0f2c6c3d7541566e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-customer-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-customer-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:080d89c7d433bf3b6a6a48689a39df4d49284204f7021879dbe9106f5fe2fbb2",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T09:15:40.335Z"
+}

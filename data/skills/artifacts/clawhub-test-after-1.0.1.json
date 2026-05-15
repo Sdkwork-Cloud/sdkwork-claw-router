@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-after@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_after",
+  "skill": {
+    "id": 49206,
+    "skillKey": "clawhub-test-after",
+    "name": "test after"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-after",
+    "url": "https://clawhub.ai/skills/test-after",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-after-ecb9e45bd815f3ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test skill for static scan validation. Manages agentic wallets via the caw CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengjunquan-l",
+      "userId": "s1770q1x4ymcwxb53abmkgkqtn840bkr",
+      "displayName": "Junquan",
+      "image": "https://avatars.githubusercontent.com/u/149011780?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777345347005,
+      "changelog": "Version 1.0.1 of cobo-agentic-wallet-test refines skill behavior and safety for agentic wallet operations.\n\n- Clarified operating principles: proactive, precise, and bounded authority.\n- Detailed stepwise guidance for on-chain actions, including balance checks and explicit approval requirements.\n- Expanded safety checklist to prevent operations from untrusted sources and prompt injection attacks.\n- Explicit guidelines on when to pause and seek owner approval.\n- Clearly defined agent limitations for security and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5449403bd801b8afb3ce0c55e4387b04d42145d83d9300fcb1dd98c6b1226c22"
+}

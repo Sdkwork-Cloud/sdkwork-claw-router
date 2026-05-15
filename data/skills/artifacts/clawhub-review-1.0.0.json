@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review",
+  "skill": {
+    "id": 14816,
+    "skillKey": "clawhub-review",
+    "name": "Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review",
+    "url": "https://clawhub.ai/skills/review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-c97ace4c8fef2cee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional reviewer and critic. Trigger whenever the user wants structured feedback on anything: documents, plans, code, decisions, strategies, designs, pi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethagent",
+      "userId": "publishers:ethagent",
+      "displayName": "EthAgent",
+      "image": "https://avatars.githubusercontent.com/u/216467966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 865,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772985435640,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6066da6781128846b90ce5f22e5909bd8b5e108ef376838757c8a80ffbcd1651"
+}

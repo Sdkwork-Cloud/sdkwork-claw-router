@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9592,
+  "uuid": "skill-clawhub-xpoz-setup",
+  "skillKey": "clawhub-xpoz-setup",
+  "name": "Xpoz Setup",
+  "summary": "Set up and authenticate the Xpoz MCP server for social media intelligence. Required by all Xpoz skills. Handles server configuration, OAuth login, and connection verification with minimal user interaction.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpoz_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Avital Yachin",
+      "features": [
+        "Set up and authenticate the Xpoz MCP server for social media intelligence",
+        "Required by all Xpoz skills",
+        "Handles server configuration, OAuth login, and connection verification with minimal user intera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpoz-setup@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2669531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpoz-setup",
+      "url": "https://clawhub.ai/skills/xpoz-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpoz-setup",
+    "url": "https://clawhub.ai/skills/xpoz-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpoz-setup-c6743daa2feec0bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpoz-setup@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpoz-setup-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae618e6f962c2334e1487a968011f5294bf58893fbc8ca3452e953bca3e40e75",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T18:35:59.918Z"
+}

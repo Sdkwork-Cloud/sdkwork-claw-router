@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33680,
+  "uuid": "skill-clawhub-git-hooks-toolkit",
+  "skillKey": "clawhub-git-hooks-toolkit",
+  "name": "Git Hooks Toolkit",
+  "summary": "Generate, install, and manage Git hooks with pre-built templates. Includes hooks for linting staged files, enforcing conventional commits, blocking debug sta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_hooks_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Generate, install, and manage Git hooks with pre-built templates",
+        "Includes hooks for linting staged files, enforcing conventional commits, blocking debug sta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-hooks-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-hooks-toolkit",
+      "url": "https://clawhub.ai/skills/git-hooks-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-hooks-toolkit",
+    "url": "https://clawhub.ai/skills/git-hooks-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-hooks-toolkit-86ea94d0c905f206.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-hooks-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-hooks-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dd07abfc65b8cfa0786369d485d65a69beb4d60188ab6bb36d1f0e6392dd4a8",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:06:40.039Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20702,
+  "uuid": "skill-clawhub-agentgo-browser",
+  "skillKey": "clawhub-agentgo-browser",
+  "name": "AgentGo Cloud Browser",
+  "summary": "Automates browser interactions using AgentGo's distributed cloud browser cluster via playwright@1.51.0. Use when the user needs to navigate websites, interac...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentgo_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pangolinfo & AgentGo",
+      "features": [
+        "Automates browser interactions using AgentGo's distributed cloud browser cluster via playwright.",
+        "Use when the user needs to navigate websites, interac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentgo-browser@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256019276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentgo-browser",
+      "url": "https://clawhub.ai/skills/agentgo-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentgo-browser",
+    "url": "https://clawhub.ai/skills/agentgo-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentgo-browser-f920fb93359717bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentgo-browser@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentgo-browser-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38bb6f41537453fdcaa11b72ad6a7a0052678eb362065195ec37deae47b9178b",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:56:44.626Z"
+}

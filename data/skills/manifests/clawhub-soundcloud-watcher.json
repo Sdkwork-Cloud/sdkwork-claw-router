@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15121,
+  "uuid": "skill-clawhub-soundcloud-watcher",
+  "skillKey": "clawhub-soundcloud-watcher",
+  "name": "SoundCloud Watcher",
+  "summary": "Monitor your SoundCloud account, track artist releases, and get notified about new followers and likes.",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soundcloud_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Akilles Admin",
+      "features": [
+        "Monitor your SoundCloud account, track artist releases, and get notified about new followers an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soundcloud-watcher@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41084946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soundcloud-watcher",
+      "url": "https://clawhub.ai/skills/soundcloud-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soundcloud-watcher",
+    "url": "https://clawhub.ai/skills/soundcloud-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soundcloud-watcher-db857388a49bb249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soundcloud-watcher@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soundcloud-watcher-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b6f20d85bc384ab54f97937332276738367171283e60df490e20e86271e2e23",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T19:05:13.800Z"
+}

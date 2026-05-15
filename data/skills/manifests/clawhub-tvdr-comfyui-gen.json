@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69100,
+  "uuid": "skill-clawhub-tvdr-comfyui-gen",
+  "skillKey": "clawhub-tvdr-comfyui-gen",
+  "name": "ComfyUI图像生成",
+  "summary": "提供基于 ComfyUI 的图像生成，强制使用正确提示词字段，避免重复生成，具备工作流与错误检查机制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvdr_comfyui_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "admirobot",
+      "features": [
+        "提供基于 ComfyUI 的图像生成，强制使用正确提示词字段，避免重复生成，具备工作流与错误检查机制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tvdr-comfyui-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5316996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tvdr-comfyui-gen",
+      "url": "https://clawhub.ai/skills/tvdr-comfyui-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvdr-comfyui-gen",
+    "url": "https://clawhub.ai/skills/tvdr-comfyui-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvdr-comfyui-gen-270b29677d0d10e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tvdr-comfyui-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tvdr-comfyui-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdf29011fbe779469123300f29200c544d5b8337afae9116a754d8906538ecab",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:23:20.539Z"
+}

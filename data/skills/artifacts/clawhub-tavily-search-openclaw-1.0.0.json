@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_openclaw",
+  "skill": {
+    "id": 29543,
+    "skillKey": "clawhub-tavily-search-openclaw",
+    "name": "Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-openclaw",
+    "url": "https://clawhub.ai/skills/tavily-search-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-openclaw-74c1b69c547ff1e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tavily AI Search API integration for OpenClaw. Provides web search capabilities using Tavily's AI-powered search engine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-wuxl",
+      "userId": "publishers:ryan-wuxl",
+      "displayName": "ryan-wuxl",
+      "image": "https://avatars.githubusercontent.com/u/21093002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150732505,
+      "changelog": "- Initial release of Tavily Search skill for OpenClaw.\n- Integrates Tavily AI-powered web search API.\n- Supports configuration via OpenClaw config file or environment variable.\n- Provides search options such as depth, result count, AI answers, and image inclusion.\n- Includes code examples and usage instructions in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:966ce25c6a16cfbfb124879513f81093d7f4335c5fb07a4154042e2de5827019"
+}

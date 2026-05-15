@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31597,
+  "uuid": "skill-clawhub-x-comment-feed-posts",
+  "skillKey": "clawhub-x-comment-feed-posts",
+  "name": "X Comment Feed Posts",
+  "summary": "Find posts in the user's X feed and leave comments on them one by one. Use when the user wants to comment on N posts from the feed, usually about indie tech...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_comment_feed_posts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Find posts in the user's X feed and leave comments on them one by one",
+        "Use when the user wants to comment on N posts from the feed, usually about indie tech..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-comment-feed-posts@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-comment-feed-posts",
+      "url": "https://clawhub.ai/skills/x-comment-feed-posts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-comment-feed-posts",
+    "url": "https://clawhub.ai/skills/x-comment-feed-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-comment-feed-posts-4085f617c9458bcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-comment-feed-posts@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-comment-feed-posts-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9b273bbdfbebce0148cf0f5c37adca7787116efc5009c3608764412f2b39685",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:19:54.684Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-auto-reply@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_auto_reply",
+  "skill": {
+    "id": 26303,
+    "skillKey": "clawhub-whatsapp-auto-reply",
+    "name": "Whatsapp Auto Reply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-auto-reply",
+    "url": "https://clawhub.ai/skills/whatsapp-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-auto-reply-75153e80aa9109a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates polite, context-aware reply suggestions for WhatsApp messages to assist in personal chats, customer support, and AI response planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iqbalpak",
+      "userId": "s171qkzrwd4axzq5f8m9b3bs4d83n7j7",
+      "displayName": "iqbalpak",
+      "image": "https://avatars.githubusercontent.com/u/79856893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773486733744,
+      "changelog": "WhatsApp Auto Reply Skill 0.1.0\n\n- Initial release.\n- Generates natural, polite, and context-aware reply suggestions for WhatsApp messages.\n- Designed for personal assistants, customer service, and AI chat agents.\n- Accepts a single message or short conversation as input.\n- Outputs one suggested reply for use or further processing.\n- Does not connect to or access WhatsApp directly; operates solely on given text.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cd520ef7516e2be6d1bfc392cffe6a687630d46d03e85962202579ecf9c9ae1"
+}

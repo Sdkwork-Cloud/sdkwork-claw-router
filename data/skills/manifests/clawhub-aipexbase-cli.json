@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32652,
+  "uuid": "skill-clawhub-aipexbase-cli",
+  "skillKey": "clawhub-aipexbase-cli",
+  "name": "aipexbase-cli",
+  "summary": "Use aipexbase-cli to operate AiPexBase BaaS service, supporting database operations, application management, user authentication, etc.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aipexbase_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KuaFuAI",
+      "features": [
+        "Use aipexbase-cli to operate AiPexBase BaaS service, supporting database operations, applicatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aipexbase-cli@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/aipexbase-cli/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aipexbase-cli",
+      "url": "https://clawhub.ai/skills/aipexbase-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aipexbase-cli",
+    "url": "https://clawhub.ai/skills/aipexbase-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aipexbase-cli-3b492994ebb29359.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aipexbase-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aipexbase-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eab15b20a3933f24345424d6ff3e0a5db0bc4fc59b2bcd7b9928d398a53dc4d7",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:40:09.250Z"
+}

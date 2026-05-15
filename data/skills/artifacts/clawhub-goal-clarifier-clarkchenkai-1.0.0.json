@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goal-clarifier-clarkchenkai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_clarifier_clarkchenkai",
+  "skill": {
+    "id": 53215,
+    "skillKey": "clawhub-goal-clarifier-clarkchenkai",
+    "name": "Goal Clarifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-clarifier-clarkchenkai",
+    "url": "https://clawhub.ai/skills/goal-clarifier-clarkchenkai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-clarifier-clarkchenkai-2dbfef567f10f92d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Goal Clarifier — A purpose-first skill for turning vague requests into executable briefs before design or execution begins. Inspired by Aristotle's idea of t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarkchenkai",
+      "userId": "s17ajkxsb44wpgrcm6e0s5bbj5849c81",
+      "displayName": "Cubic AI",
+      "image": "https://avatars.githubusercontent.com/u/242906237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775700590251,
+      "changelog": "Initial release — clarify vague requests into actionable briefs before design or execution.\n\n- Introduces a four-step protocol to define goals, constraints, success criteria, and scope.\n- Provides a structured six-part output contract for every clarified brief.\n- Emphasizes purpose-first questioning before discussing solutions or tools.\n- Includes special safeguards for high-stakes or irreversible requests.\n- Outlines direct, outcome-focused response style and limits on overreach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:197312c4886d11836222fe1e3e7fc941f3121c1cd3a033ced516062c88987d3c"
+}

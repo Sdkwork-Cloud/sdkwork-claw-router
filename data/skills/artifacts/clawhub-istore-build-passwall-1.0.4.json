@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/istore-build-passwall@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.istore_build_passwall",
+  "skill": {
+    "id": 58445,
+    "skillKey": "clawhub-istore-build-passwall",
+    "name": "Istore Build Passwall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "istore-build-passwall",
+    "url": "https://clawhub.ai/skills/istore-build-passwall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/istore-build-passwall-8c69eac9581827b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "克隆 istoreos 仓库，创建 PassWall GitHub Actions 构建 workflow 并推送到指定 GitHub 仓库。触发词：构建 PassWall、istore-build-passwall、创建 PassWall workflow"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veelove",
+      "userId": "s17dmjbc6fb2b7tpsde7744bt98660m2",
+      "displayName": "VEE",
+      "image": "https://avatars.githubusercontent.com/u/47690181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778201004221,
+      "changelog": "从 SourceForge 补齐 GitHub zip 中缺失的 arch-specific 包(dns2socks、microsocks、shadowsocks-libev 等)，彻底解决 luci-app-passwall 安装时的依赖缺失问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1745aa23041bb210090b89992a55618d5d7a41aff3b00efd1c2b2521de09f271"
+}

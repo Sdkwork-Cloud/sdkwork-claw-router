@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14860,
+  "uuid": "skill-clawhub-character-design-sheet",
+  "skillKey": "clawhub-character-design-sheet",
+  "name": "Character Design Sheet",
+  "summary": "Character consistency across AI-generated images with reference sheets and LoRA techniques. Covers turnaround views, expression sheets, color palettes, and s...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.character_design_sheet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Character consistency across AI-generated images with reference sheets and LoRA techniques",
+        "Covers turnaround views, expression sheets, color palettes, and s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/character-design-sheet@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "character-design-sheet",
+      "url": "https://clawhub.ai/skills/character-design-sheet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "character-design-sheet",
+    "url": "https://clawhub.ai/skills/character-design-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/character-design-sheet-48c610a5beff60af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/character-design-sheet@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-character-design-sheet-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2e4c658a039bb1a74f1be406b15c89b8664dd86742962a81e49793bc7be5dcd",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:25:01.408Z"
+}

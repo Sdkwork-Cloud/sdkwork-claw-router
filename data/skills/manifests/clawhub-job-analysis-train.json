@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58471,
+  "uuid": "skill-clawhub-job-analysis-train",
+  "skillKey": "clawhub-job-analysis-train",
+  "name": "job-analysis-train",
+  "summary": "在对话中辅助学习\"工作分析/Job Analysis\"第 8 章\"Staffing and Training\"。基于 c8.pdf 课本章节。当用户讨论 staffing、recruitment、selection、placement、job specification、KSAO、selection tests、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_train",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Do",
+      "features": [
+        "在对话中辅助学习\"工作分析/Job Analysis\"第 8 章\"Staffing and Training\"。基于 c8.pdf 课本章节。当用户讨论 staffing、recruitme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-analysis-train@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44743340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-analysis-train",
+      "url": "https://clawhub.ai/skills/job-analysis-train"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-train",
+    "url": "https://clawhub.ai/skills/job-analysis-train",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-train-cf5d9eb4026758d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-analysis-train@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-analysis-train-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d28ddebead6412d9422c5cf54ae5300e2bb2721009010bde74fd250412eeeceb",
+      "artifactSizeBytes": 2741
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:18:00.072Z"
+}

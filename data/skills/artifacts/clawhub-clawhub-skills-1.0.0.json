@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skills",
+  "skill": {
+    "id": 12361,
+    "skillKey": "clawhub-clawhub-skills",
+    "name": "Clawhub Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skills",
+    "url": "https://clawhub.ai/skills/clawhub-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skills-58958fe88262ed10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade K-pop lightstick tokens on a bonding curve market using artist popularity, news trends, and price signals to guide buy and sell decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hans1329",
+      "userId": "publishers:hans1329",
+      "displayName": "hans1329",
+      "image": "https://avatars.githubusercontent.com/u/171954957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1659,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770280130078,
+      "changelog": "K-Trendz Lightstick Trading Skill v1.0.0\n\n- Initial release for trading K-pop artist lightstick tokens using a bonding curve market.\n- Supports buy and sell operations through API endpoints with price and trend checks.\n- Includes trading strategy guidance, leveraging trending scores, external news, and early position advantages.\n- Lists available artists and tokens, with daily trading and transaction frequency limits.\n- Defines fees, slippage settings, and circuit breaker protections.\n- Provides authentication and example pseudocode for trading logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcad56e3103b26cd63f2f0b2b44333e800a6241d0271ae223381b5db199708a9"
+}

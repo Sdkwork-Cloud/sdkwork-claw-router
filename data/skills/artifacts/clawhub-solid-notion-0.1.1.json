@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solid-notion@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solid_notion",
+  "skill": {
+    "id": 27712,
+    "skillKey": "clawhub-solid-notion",
+    "name": "solid-notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solid-notion",
+    "url": "https://clawhub.ai/skills/solid-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solid-notion-8580eb089ab1d1b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Notion pages locally as Markdown: pull, edit with JSON patches, write changes, submit edits with rollback, and handle API authentication via solid-not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentdchan",
+      "userId": "publishers:vincentdchan",
+      "displayName": "vincentdchan",
+      "image": "https://avatars.githubusercontent.com/u/2352832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772639647334,
+      "changelog": "solid-notion 0.1.1 Changelog\n\n- Added clear instructions for obtaining a Notion API token by creating and configuring a Notion integration.\n- Expanded the authentication setup section to guide users through integration setup steps.\n- No other functional or command changes; documentation quality improved for onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85f9e803b509685d56026505da5c9c0c247d61cdffae2df34cd3ca9c15c1cbed"
+}

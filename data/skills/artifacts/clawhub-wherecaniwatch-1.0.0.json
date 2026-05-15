@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wherecaniwatch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wherecaniwatch",
+  "skill": {
+    "id": 18525,
+    "skillKey": "clawhub-wherecaniwatch",
+    "name": "WhereCanIWatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wherecaniwatch",
+    "url": "https://clawhub.ai/skills/wherecaniwatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wherecaniwatch-b3333b83c22bc49d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find where to stream any movie or TV show in the US using the WhereCanIWatch.tv API. Use when a user asks \"where can I watch [title]?\", wants streaming avail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samthewise2855",
+      "userId": "publishers:samthewise2855",
+      "displayName": "samthewise2855",
+      "image": "https://avatars.githubusercontent.com/u/261645873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771834003350,
+      "changelog": "Initial release: streaming availability lookup via WhereCanIWatch.tv API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0670f103a07f13cd51c3082fa85070181f15437566e1ae3ba1b85c7f78e53e2b"
+}

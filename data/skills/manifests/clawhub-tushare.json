@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8489,
+  "uuid": "skill-clawhub-tushare",
+  "skillKey": "clawhub-tushare",
+  "name": "Tushare Pro",
+  "summary": "Fetch Chinese stock and futures market data via Tushare API. Supports stock quotes, futures data, company fundamentals, and macroeconomic indicators. Use whe...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tushare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manifold",
+      "features": [
+        "Fetch Chinese stock and futures market data via Tushare API",
+        "Supports stock quotes, futures data, company fundamentals, and macroeconomic indicators",
+        "Use whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tushare@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62403180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tushare",
+      "url": "https://clawhub.ai/skills/tushare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tushare",
+    "url": "https://clawhub.ai/skills/tushare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tushare-bb880b5de83195f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tushare@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-tushare-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06831454bc7cb003ff3dcabb233644743b86ddefdad55760577f1362046b7ef3",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:19:37.210Z"
+}

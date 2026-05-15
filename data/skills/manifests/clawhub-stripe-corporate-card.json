@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30270,
+  "uuid": "skill-clawhub-stripe-corporate-card",
+  "skillKey": "clawhub-stripe-corporate-card",
+  "name": "Stripe Corporate Card",
+  "summary": "Stripe Corporate Card integration. Manage data, records, and automate workflows. Use when the user wants to interact with Stripe Corporate Card data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_corporate_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stripe Corporate Card integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Stripe Corporate Card data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-corporate-card@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-corporate-card",
+      "url": "https://clawhub.ai/skills/stripe-corporate-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-corporate-card",
+    "url": "https://clawhub.ai/skills/stripe-corporate-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-corporate-card-91d0c758f2c73704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-corporate-card@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-corporate-card-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:676dd9f811b8c1b1118cdc44a6037f878486e422c6e2c82477193858428e1014",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:47:41.567Z"
+}

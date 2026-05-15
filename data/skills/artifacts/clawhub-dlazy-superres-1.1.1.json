@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-superres@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_superres",
+  "skill": {
+    "id": 14298,
+    "skillKey": "clawhub-dlazy-superres",
+    "name": "Dlazy Superres"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-superres",
+    "url": "https://clawhub.ai/skills/dlazy-superres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-superres-1d17b792c84ddc93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhances image resolution and clarity from a URL or local path, returning an improved image URL for low-res restoration and upscaling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1226,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076656443,
+      "changelog": "- Version bumped from 1.1.0 to 1.1.1.\n- Documentation updated in SKILL.md and SKILL-cn.md.\n- No changes to core functionality or interface.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9c457a5253fe6e77758648b1be2e009b10e978c341f869993b5e92554782c00"
+}

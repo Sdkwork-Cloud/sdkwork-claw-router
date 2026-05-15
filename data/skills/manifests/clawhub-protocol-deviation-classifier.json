@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28813,
+  "uuid": "skill-clawhub-protocol-deviation-classifier",
+  "skillKey": "clawhub-protocol-deviation-classifier",
+  "name": "Protocol Deviation Classifier",
+  "summary": "Determine whether an incident in a clinical trial is a \"major deviation\" or \"minor deviation\". Function: Automatically classify protocol deviations in clinic...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protocol_deviation_classifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ewankeynes",
+      "features": [
+        "Determine whether an incident in a clinical trial is a \"major deviation\" or \"minor deviation\"",
+        "Function: Automatically classify protocol deviations in clinic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protocol-deviation-classifier@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68137408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protocol-deviation-classifier",
+      "url": "https://clawhub.ai/skills/protocol-deviation-classifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protocol-deviation-classifier",
+    "url": "https://clawhub.ai/skills/protocol-deviation-classifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protocol-deviation-classifier-55594028f0d14ceb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protocol-deviation-classifier@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-protocol-deviation-classifier-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cedc865f3f7c26164714c6cee98d47282ac9b613f0e6dff55b8c29cd33dccaa8",
+      "artifactSizeBytes": 2645
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:42:03.825Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_agent",
+  "skill": {
+    "id": 43603,
+    "skillKey": "clawhub-ui-agent",
+    "name": "UI-Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-agent",
+    "url": "https://clawhub.ai/skills/ui-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-agent-288e86c4a7800ca0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal UI automation for browsers and desktops. Chrome DevTools Protocol + native APIs. 15/15 verified tests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimaansari",
+      "userId": "s174r0htpq7skja1v1n3b0z0zn83e8x4",
+      "displayName": "Nima Ansari",
+      "image": "https://avatars.githubusercontent.com/u/80389946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774498968585,
+      "changelog": "UIAgent v1.0.0 – Initial public release\n\n- Universal UI automation framework for browsers (CDP) and desktops (OS-native APIs)\n- 100% test coverage: 15/15 real-world verified tests passing\n- Supports automation for web workflows, dynamic UIs, and desktop applications\n- Evidence-based verification: screenshot hashing, DOM checks, file checks\n- Reliable cross-browser session management and persistence, including headless Chrome\n- Includes robust API: JavaScript execution, mouse/keyboard simulation, screenshots, and more",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82a1bf92bbf44b8b2a53d1ffa7749459a6f2a83c5e4ec7beaabca80373a38a7a"
+}

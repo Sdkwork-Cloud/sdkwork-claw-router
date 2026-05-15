@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28759,
+  "uuid": "skill-clawhub-github-actions-incident-timeline-audit",
+  "skillKey": "clawhub-github-actions-incident-timeline-audit",
+  "name": "GitHub Actions Incident Timeline Audit",
+  "summary": "Cluster failed GitHub Actions runs into incident windows by repo to expose outage duration, impact scope, and escalation severity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_incident_timeline_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Cluster failed GitHub Actions runs into incident windows by repo to expose outage duration, imp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-incident-timeline-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-incident-timeline-audit",
+      "url": "https://clawhub.ai/skills/github-actions-incident-timeline-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-incident-timeline-audit",
+    "url": "https://clawhub.ai/skills/github-actions-incident-timeline-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-incident-timeline-audit-f35d1ebbb4a35c15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-incident-timeline-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-incident-timeline-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c2fdc41878a71f5de8db4ae7cd5aeb55e1d20cc1c5649c17fd9c49e4614d7b4",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T00:07:47.757Z"
+}

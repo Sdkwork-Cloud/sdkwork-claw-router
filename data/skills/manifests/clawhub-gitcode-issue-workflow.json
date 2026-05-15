@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32054,
+  "uuid": "skill-clawhub-gitcode-issue-workflow",
+  "skillKey": "clawhub-gitcode-issue-workflow",
+  "name": "gitcode-issue-workflow",
+  "summary": "End-to-end GitCode issue workflow covering issue pickup, analysis, code modification, and PR submission. Use when user asks to handle/fix/resolve a GitCode i...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_issue_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hummel mao",
+      "features": [
+        "End-to-end GitCode issue workflow covering issue pickup, analysis, code modification, and PR su.",
+        "Use when user asks to handle/fix/resolve a GitCode i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitcode-issue-workflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22017608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitcode-issue-workflow",
+      "url": "https://clawhub.ai/skills/gitcode-issue-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-issue-workflow",
+    "url": "https://clawhub.ai/skills/gitcode-issue-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-issue-workflow-e2d33649d7e1b26e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitcode-issue-workflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-issue-workflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6988da905931859f3f7cc31b7d6478373eb77e4b406fa901e8b73438e4d8f530",
+      "artifactSizeBytes": 2645
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T01:37:00.426Z"
+}

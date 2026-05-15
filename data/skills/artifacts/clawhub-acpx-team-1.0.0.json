@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acpx-team@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx_team",
+  "skill": {
+    "id": 32033,
+    "skillKey": "clawhub-acpx-team",
+    "name": "acpx-team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx-team",
+    "url": "https://clawhub.ai/skills/acpx-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-team-10cbb2f429b6f6cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent collaboration and task delegation via the Agent Client Protocol (ACP) using acpx. Form agent teams from Claude Code, Codex, OpenCode, Gemini, Cur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "csuwl",
+      "userId": "s17afpny6a45btjyr34p4sm49n83rpkq",
+      "displayName": "Wang Lei",
+      "image": "https://avatars.githubusercontent.com/u/16048250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774670875038,
+      "changelog": "Initial release: multi-agent collaboration via ACP with council protocol, 8 role presets, 7 collaboration patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84acfb5c6351b88a484594478e2cfade47ddc29978412ea687cf60a13073fe6e"
+}

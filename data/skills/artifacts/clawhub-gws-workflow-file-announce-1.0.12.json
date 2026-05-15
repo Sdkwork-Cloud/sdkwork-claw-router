@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-workflow-file-announce@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workflow_file_announce",
+  "skill": {
+    "id": 22002,
+    "skillKey": "clawhub-gws-workflow-file-announce",
+    "name": "Gws Workflow File Announce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workflow-file-announce",
+    "url": "https://clawhub.ai/skills/gws-workflow-file-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workflow-file-announce-515ea31f493ca6e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workflow: Announce a Drive file in a Chat space."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982104438,
+      "changelog": "- Updated internal metadata version from 0.22.4 to 0.22.5 in SKILL.md.  \n- No changes to functionality or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:393e50f5671863f4a24a3883d87751c47c9028790a82918cfd95e1bbfaa7ad04"
+}

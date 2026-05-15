@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67820,
+  "uuid": "skill-clawhub-ai-mediakit-videoedit",
+  "skillKey": "clawhub-ai-mediakit-videoedit",
+  "name": "AI MEDIAKIT VIDEO EDIT",
+  "summary": "AI 视频智能剪辑 Skill。输入视频文件路径（支持多个）、可选弹幕文件路径、可选字幕文件路径， 结合弹幕和字幕内容理解视频语境，根据用户剪辑诉求（如\"截取所有高能时刻\"、 \"剪出讲解xxx的部分\"）自动提取对应时间段、拼接并添加转场效果，最终用 FFmpeg 合成输出视频。 当用户提及\"视频剪辑\"、\"根据弹幕...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_mediakit_videoedit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Volc-AI-MediaKit",
+      "features": [
+        "AI 视频智能剪辑 Skill。输入视频文件路径（支持多个）、可选弹幕文件路径、可选字幕文件路径， 结合弹幕和字幕内容理解视频语境，根据用户剪辑诉求（如\"截取所有高能时刻\"、 \"剪出讲解xx."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-mediakit-videoedit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137325527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-mediakit-videoedit",
+      "url": "https://clawhub.ai/skills/ai-mediakit-videoedit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-mediakit-videoedit",
+    "url": "https://clawhub.ai/skills/ai-mediakit-videoedit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-mediakit-videoedit-aede976ad402fbf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-mediakit-videoedit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-mediakit-videoedit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:224e5e8943a22468ca9dd039331ed4ce3b74c66128610d8cf681d19caa72fd49",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:00:44.612Z"
+}

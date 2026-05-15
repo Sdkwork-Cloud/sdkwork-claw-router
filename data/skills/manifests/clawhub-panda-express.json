@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69555,
+  "uuid": "skill-clawhub-panda-express",
+  "skillKey": "clawhub-panda-express",
+  "name": "Panda Express",
+  "summary": "提供美式中式融合快餐，支持线上线下点餐，含多样主菜、素食、套餐及会员积分兑换服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panda_express",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供美式中式融合快餐，支持线上线下点餐，含多样主菜、素食、套餐及会员积分兑换服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/panda-express@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "panda-express",
+      "url": "https://clawhub.ai/skills/panda-express"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panda-express",
+    "url": "https://clawhub.ai/skills/panda-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panda-express-81b9aea4cbedb737.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/panda-express@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-panda-express-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53ba4394484299224a1c8483297097bbc3e72329711989294d4a7d3790810369",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:25:25.800Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52941,
+  "uuid": "skill-clawhub-kv-database-designer",
+  "skillKey": "clawhub-kv-database-designer",
+  "name": "Diseñador base de datos",
+  "summary": "Design, analyze, optimize and evolve database schemas. Use when the user asks to design schemas from scratch, choose between SQL and NoSQL engines, analyze o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kv_database_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felix-antonio-sl",
+      "features": [
+        "Design, analyze, optimize and evolve database schemas",
+        "Use when the user asks to design schemas from scratch, choose between SQL and NoSQL engines, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kv-database-designer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143637936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kv-database-designer",
+      "url": "https://clawhub.ai/skills/kv-database-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kv-database-designer",
+    "url": "https://clawhub.ai/skills/kv-database-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kv-database-designer-b822551b777fed61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kv-database-designer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kv-database-designer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ca16549806b6e088d85bcaeecb8af619bc3df0aff267e1d64d3faf9924b9105",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:15:08.111Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feature-evolution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_evolution",
+  "skill": {
+    "id": 70806,
+    "skillKey": "clawhub-feature-evolution",
+    "name": "Feature Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-evolution",
+    "url": "https://clawhub.ai/skills/feature-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-evolution-2531eca2e096e547.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "功能变更管理。当用户对一个已有规划（或已开发完成）的功能提出修改、补充或扩展需求时触发。覆盖两种场景：1）功能已开发完成，事后想迭代；2）功能开发进行中，中途想加东西或调整方向。触发词如'这个功能我想加一个XX'、'这里的逻辑需要调整'、'开发到一半发现还需要XX'、'想给XX功能扩展一下'。注意：如果功能连需求..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cping6",
+      "userId": "s1766ykq2g7ss5qqcrbfmtzkkh83hbj2",
+      "displayName": "p1866",
+      "image": "https://avatars.githubusercontent.com/u/20664106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774421536876,
+      "changelog": "Initial release of feature-evolution, a skill for managing feature change requests in ongoing or completed functionality.\n\n- Supports incremental modification, extension, or adjustment of planned or developed features.\n- Distinguishes between in-progress and post-completion iteration scenarios.\n- Guides impact analysis, incremental documentation updates, and generation of change task plans (with CR numbering).\n- Enforces minimum requirements (existing requirements doc) and integrates with related skills for new features or bug fixes.\n- Limits to analysis and planning; does not handle business code implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64fe73addb56a8366320f0d6b69e2755f106cfadec6dacf464114a67acb35c8f"
+}

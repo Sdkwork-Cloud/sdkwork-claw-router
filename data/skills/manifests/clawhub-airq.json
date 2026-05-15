@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22447,
+  "uuid": "skill-clawhub-airq",
+  "skillKey": "clawhub-airq",
+  "name": "airq",
+  "summary": "Check air quality, AQI, PM2.5, PM10, pollution levels for any city from the terminal using airq CLI. Installs, configures, and runs air quality queries. Use...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Check air quality, AQI, PM2.5, PM10, pollution levels for any city from the terminal using airq.",
+        "Installs, configures, and runs air quality queries"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airq@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airq",
+      "url": "https://clawhub.ai/skills/airq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airq",
+    "url": "https://clawhub.ai/skills/airq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airq-fae50378f9c3d737.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airq@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airq-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:892509651ee8660ebfde3374b443c779343d91611d22ffb4a262389f64980af7",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:44:40.188Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pangolinfo-amazon-scraper@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pangolinfo_amazon_scraper",
+  "skill": {
+    "id": 24183,
+    "skillKey": "clawhub-pangolinfo-amazon-scraper",
+    "name": "Pangolinfo Amazon Scraper: Products + Keywords + Reviews + Categories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pangolinfo-amazon-scraper",
+    "url": "https://clawhub.ai/skills/pangolinfo-amazon-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pangolinfo-amazon-scraper-b60aaf8c24266336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape Amazon as JSON — products, keywords, reviews, BSR. 13 regions. Anti-bot. 60 free credits. Claude Code, Cursor, LangChain."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pangolinfo",
+      "userId": "s1713qcay2x7frr7y0mm908crx83hmg8",
+      "displayName": "Pangolinfo",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1777451338977,
+      "changelog": "**Streamlined onboarding and skill instructions for faster user success.**\n\n- Rewrote the documentation for faster \"first win\": clearer prompts, shorter quick-start, and simplified step-by-step setup.\n- Updated agent instructions for API key setup to be more concise and unambiguous.\n- Moved detailed feature lists and examples below a practical getting-started section.\n- All original capabilities, error handling, and marketplace support remain unchanged.\n- No code changes; SKILL.md only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ce8ea3f4e4dccf87680e58f32dedf501bb1fd811fd1b1728c54625203bb6558"
+}

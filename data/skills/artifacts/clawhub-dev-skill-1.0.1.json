@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_skill",
+  "skill": {
+    "id": 26841,
+    "skillKey": "clawhub-dev-skill",
+    "name": "Dev Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-skill",
+    "url": "https://clawhub.ai/skills/dev-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-skill-d3ca7a4e8312893b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate SwiftUI iOS application code from PRD documents. Use when a PRD document is available and needs to be transformed into a working iOS application wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tc1993",
+      "userId": "s1730wphfenf75zqajhj3w6xx583h199",
+      "displayName": "唐超",
+      "image": "https://avatars.githubusercontent.com/u/26533199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774343093219,
+      "changelog": "- Updated SKILL.md with a complete English rewrite and greater detail.\n- Expanded documentation for architecture, workflow, project structure, and integration requirements.\n- Added explicit example outputs and code snippets, including models, view models, and views.\n- Clarified input, output, and auto-trigger logic for downstream skills.\n- Set higher minimum requirements (iOS 16+, Xcode 15+), code quality, and best practice adherence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fad988f04d0ca9e2c5fe63ad83a87361bcc508784c87d43b2827bc6a86ab76d6"
+}

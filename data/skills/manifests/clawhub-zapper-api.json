@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13459,
+  "uuid": "skill-clawhub-zapper-api",
+  "skillKey": "clawhub-zapper-api",
+  "name": "zapper-api",
+  "summary": "Query DeFi portfolios, token holdings, NFTs, transactions, and prices via Zapper API. Supports 50+ chains. Use when user asks about wallet balances, DeFi positions, NFT collections, token prices, or transaction history.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapper_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zivhm",
+      "features": [
+        "Query DeFi portfolios, token holdings, NFTs, transactions, and prices via Zapper API",
+        "Supports 50+ chains",
+        "Use when user asks about wallet balances, DeFi positions, NFT collections, token prices, or tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zapper-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136268229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zapper-api",
+      "url": "https://clawhub.ai/skills/zapper-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapper-api",
+    "url": "https://clawhub.ai/skills/zapper-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapper-api-8b880e9c3e126448.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zapper-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zapper-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9996201dc18cc96231558249b83035cc41cd9d6d6fb357baeaac2503067887c1",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T21:33:12.542Z"
+}

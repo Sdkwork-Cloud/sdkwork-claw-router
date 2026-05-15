@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_3",
+  "skill": {
+    "id": 25225,
+    "skillKey": "clawhub-humanizer-3",
+    "name": "Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-3",
+    "url": "https://clawhub.ai/skills/humanizer-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-3-897c4622e921ad56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahendernath",
+      "userId": "publishers:mahendernath",
+      "displayName": "mahendernath",
+      "image": "https://avatars.githubusercontent.com/u/6275419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772027148491,
+      "changelog": "Version 0.1.0 — Initial release of the Humanizer skill.\n\n- Identifies and removes common signs of AI-generated text based on Wikipedia’s \"Signs of AI writing\" guide.\n- Targets patterns like inflated symbolism, promotional language, vague attributions, em dash overuse, and excessive conjunctive phrases.\n- Rewrites text to preserve original meaning while introducing a more natural, human voice.\n- Adds “soul” to writing by varying sentence structure, acknowledging complexity, and encouraging opinions when appropriate.\n- Step-by-step workflow for editors, including a final pass for remaining AI tells.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:882aea501c67f1333b15dfa2125fdbacb5b98c49613286e5c19fe5c6747bfb5b"
+}

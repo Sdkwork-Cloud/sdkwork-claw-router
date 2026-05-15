@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boktoshi@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boktoshi",
+  "skill": {
+    "id": 12127,
+    "skillKey": "clawhub-boktoshi",
+    "name": "Boktoshi Bot Trading Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boktoshi",
+    "url": "https://clawhub.ai/skills/boktoshi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boktoshi-53a6e26ebe9443fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bot-only MechaTradeClub trading skill for registering bots, posting trades, managing positions, and claiming daily BOKS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsmfc",
+      "userId": "publishers:rsmfc",
+      "displayName": "rahul",
+      "image": "https://avatars.githubusercontent.com/u/98571965?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1803,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1772127221644,
+      "changelog": "Split credential scope: bot-only skill now requires only MTC_API_KEY as primaryEnv.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bff43061641051c7e5d176297433450c345843aaa1ce62bb7eab7a7cd077df1f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67904,
+  "uuid": "skill-clawhub-daily-hot-ai-news",
+  "skillKey": "clawhub-daily-hot-ai-news",
+  "name": "daily-hot-ai-news",
+  "summary": "当用户想要获取AI领域的最新新闻、热点、动态、资讯或话题时使用此技能。 触发场景包括：询问\"今天AI有什么新闻\"、\"最近AI热点\"、\"最新AI资讯\"、 \"AI圈发生了什么\"、\"帮我看看AI动态\"等类似表达。 不需要定时任务，仅当用户主动请求时执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_ai_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenhao11235813",
+      "features": [
+        "当用户想要获取AI领域的最新新闻、热点、动态、资讯或话题时使用此技能。 触发场景包括：询问\"今天AI有什么新闻\"、\"最近AI热点\"、\"最新AI资讯\"、 \"AI圈发生了什么\"、\"帮我看看AI动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-hot-ai-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220284256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-hot-ai-news",
+      "url": "https://clawhub.ai/skills/daily-hot-ai-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-ai-news",
+    "url": "https://clawhub.ai/skills/daily-hot-ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-ai-news-69eaa34de89a6f08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-hot-ai-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-hot-ai-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c01422908b15734e4a73fdcc916736d51407362ec9505bc3d932d1f70c93d54",
+      "artifactSizeBytes": 2780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:26:09.618Z"
+}

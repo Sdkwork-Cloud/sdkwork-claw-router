@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-contract-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_contract_review",
+  "skill": {
+    "id": 58814,
+    "skillKey": "clawhub-openclaw-contract-review",
+    "name": "OpenClaw Contract Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-contract-review",
+    "url": "https://clawhub.ai/skills/openclaw-contract-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-contract-review-534206d2e7f40003.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公开发布的合同审核 Skill，通过统一工具入口触发 OpenClaw Contract Review Plugin。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renzhiping",
+      "userId": "s17c4qy62v076mpc7wkjd83dwd83mtkp",
+      "displayName": "renzhiping",
+      "image": "https://avatars.githubusercontent.com/u/4640832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776145026679,
+      "changelog": "- Added strict information pre-check (“submit 信息预检”) at the end of stage 1 for contract submissions: now requires all four fields (contract file, review position, review mode, review requirements) to be confirmed in the current user input before proceeding.\n- If any required field is missing, only outputs a follow-up question and immediately stops processing—does not call any tool or enter login.\n- Incorporated “review mode” (standard/deep) as a mandatory element in review submissions.\n- Strengthened global rule: pre-check must pass before any tool invocation or login step.\n- Updated documentation and summaries to clarify the new pre-check process and enforce separation between follow-up queries and tool actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:359df1d3b13e638b0fe7ce8bbdb5aa88c1d51d1c4bb2ce8e62cfadb1c6502f61"
+}

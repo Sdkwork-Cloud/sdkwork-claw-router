@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-via-gemini-cli-extension@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_via_gemini_cli_extension",
+  "skill": {
+    "id": 52054,
+    "skillKey": "clawhub-deep-research-via-gemini-cli-extension",
+    "name": "Deep Research via Gemini CLI Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-via-gemini-cli-extension",
+    "url": "https://clawhub.ai/skills/deep-research-via-gemini-cli-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-via-gemini-cli-extension-7e72f94ebb08796d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute Gemini Deep Research using the gemini-deep-research MCP extension for the Gemini CLI. Use when user wants deep, comprehensive research on a topic — m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skywalker-lili",
+      "userId": "s176hejhygpc5498ynfb5vqxx583n1w3",
+      "displayName": "Skywalker326",
+      "image": "https://avatars.githubusercontent.com/u/5773915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774498582583,
+      "changelog": "v1.1: Refactored to background polling — research_start, poll-research, and save-report split into separate scripts. Agent sets up task and exits immediately; a background Bash process handles polling. Matches the notebooklm-content-creation pattern.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3328a9212e07ab1b0da5d29fa8b3cc6d4dace2395d549d943fbefed5d1e45ce"
+}

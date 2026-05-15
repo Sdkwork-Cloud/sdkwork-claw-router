@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-mover-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_mover_skill",
+  "skill": {
+    "id": 60757,
+    "skillKey": "clawhub-data-mover-skill",
+    "name": "Data Mover Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-mover-skill",
+    "url": "https://clawhub.ai/skills/data-mover-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-mover-skill-21695a9f70a15020.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨系统数据自动搬运工 - OCR 识别 + 自动复制粘贴 + 多系统支持"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxliuyu",
+      "userId": "publishers:sxliuyu",
+      "displayName": "SxLiuYu",
+      "image": "https://avatars.githubusercontent.com/u/95198625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773655022273,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7de585bd52b884fcb4f3b7e061c965b46e1fbf9ee177c1e4361ef857652d6cb3"
+}

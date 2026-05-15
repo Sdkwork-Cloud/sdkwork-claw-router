@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hershey-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hershey_company",
+  "skill": {
+    "id": 69058,
+    "skillKey": "clawhub-hershey-company",
+    "name": "Hershey Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hershey-company",
+    "url": "https://clawhub.ai/skills/hershey-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hershey-company-3dc5cbcaf63fb81b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供好时公司的历史、业务模式、市场地位及治理结构，助力分析美国糖果行业和健康消费趋势。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777150992920,
+      "changelog": "- 首次发布 Hershey Company 技能，全面介绍好时的发展历史、商业模式及行业地位\n- 提供详细时间线，涵盖好时创立、产品创新、重大收购与业绩里程碑\n- 解析信托基金主导的特殊公司治理结构及其对长期战略的影响\n- 分析市场份额、供应链优势、品牌护城河和分销渠道\n- 补充北美糖果行业数据及好时在健康零食领域的布局\n- 收录好时巧克力镇的历史趣闻",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bd40c9e5ba9008a61e05e107e9cbfa4d728cca93f00d569de949852bf3c2621"
+}

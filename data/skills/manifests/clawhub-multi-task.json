@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21152,
+  "uuid": "skill-clawhub-multi-task",
+  "skillKey": "clawhub-multi-task",
+  "name": "multi task",
+  "summary": "Orchestrate parallel execution of batch tasks by splitting work into independent units and dispatching them to multiple subagents simultaneously. Use this sk...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bright Ween",
+      "features": [
+        "Orchestrate parallel execution of batch tasks by splitting work into independent units and disp.",
+        "Use this sk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1567099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-task",
+      "url": "https://clawhub.ai/skills/multi-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-task",
+    "url": "https://clawhub.ai/skills/multi-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-task-409763af4caeaf61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaed31b799b55499868963e42ed563a5d62561e318f09ad01823a0e8125182e8",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:11:51.564Z"
+}

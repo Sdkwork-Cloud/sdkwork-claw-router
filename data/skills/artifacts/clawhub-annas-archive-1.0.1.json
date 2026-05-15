@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/annas-archive@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annas_archive",
+  "skill": {
+    "id": 22112,
+    "skillKey": "clawhub-annas-archive",
+    "name": "Annas Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annas-archive",
+    "url": "https://clawhub.ai/skills/annas-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annas-archive-ffe7500e08d876b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and download ebooks or papers from Anna's Archive with EPUB-first selection and /tmp storage. Use when a user asks to fetch a book/article, especially w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricardodpalmeida",
+      "userId": "s175vs3fbfrfxhb9kfg8tyhtc583vssr",
+      "displayName": "Ricardo Almeida",
+      "image": "https://avatars.githubusercontent.com/u/100843099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773007234096,
+      "changelog": "Remove absolute runner path, align workflow instructions, and keep packaging agnostic runtime",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a908392ee098c9aca7ca6781de20b7967a81b3303362d155c74999875a1cfe0"
+}

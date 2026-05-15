@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawy@0.2.9",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawy",
+  "skill": {
+    "id": 19761,
+    "skillKey": "clawhub-clawy",
+    "name": "Clawy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawy",
+    "url": "https://clawhub.ai/skills/clawy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawy-b9b35dc9c9e4a072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bring your agent to life. Generate stable agent avatars and short image-driven adventure arcs. Use when creating or refining a mascot/agent identity, preserv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ocean7322",
+      "userId": "s17dj16g3db3c3ab29tx8t9bp5841wnf",
+      "displayName": "Ocean7322",
+      "image": "https://avatars.githubusercontent.com/u/36991653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "0.2.9",
+      "createdAt": 1774256739925,
+      "changelog": "Merge playbook v2 into the official image-edit playbook, clarify DM Mode vs Plot Mode, refine image cadence around text-only clue reading vs visual event peaks, and clean the package before publish without changing the reviewed metadata/fallback strategy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f4969d5f5afd4f64f9083f52b7f54dd05bb4d0b053080b3db6f59a560bcd495"
+}

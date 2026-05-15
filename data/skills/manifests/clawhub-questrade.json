@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25867,
+  "uuid": "skill-clawhub-questrade",
+  "skillKey": "clawhub-questrade",
+  "name": "Questrade",
+  "summary": "Access Questrade brokerage accounts and Canadian/US market data for balances, positions, orders, executions, Level 1 quotes, historical candles, and symbol s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.questrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jose Herrera",
+      "features": [
+        "Access Questrade brokerage accounts and Canadian/US market data for balances, positions, orders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/questrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20531507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "questrade",
+      "url": "https://clawhub.ai/skills/questrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "questrade",
+    "url": "https://clawhub.ai/skills/questrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/questrade-b19cfd2df2168f4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/questrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-questrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:183a9ddb5f033c464e489dab80b96ef6bafbe28a46b735bd76744dadfd4e0545",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T20:01:11.496Z"
+}

@@ -14,13 +14,14 @@ class FrontendNativeDialogStandardTest(unittest.TestCase):
         )
         offenders: list[str] = []
 
-        for path in FRONTEND_ROOT.rglob("*"):
-            if path.suffix not in {".ts", ".tsx"}:
-                continue
-            source = path.read_text(encoding="utf-8")
-            for match in native_dialog_pattern.finditer(source):
-                line = source.count("\n", 0, match.start()) + 1
-                offenders.append(f"{path.relative_to(ROOT)}:{line}: {match.group(0)}")
+        for src_root in sorted(FRONTEND_ROOT.glob("*/src")):
+            for path in src_root.rglob("*"):
+                if path.suffix not in {".ts", ".tsx"}:
+                    continue
+                source = path.read_text(encoding="utf-8")
+                for match in native_dialog_pattern.finditer(source):
+                    line = source.count("\n", 0, match.start()) + 1
+                    offenders.append(f"{path.relative_to(ROOT)}:{line}: {match.group(0)}")
 
         self.assertEqual(
             [],

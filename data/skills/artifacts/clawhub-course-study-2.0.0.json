@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/course-study@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.course_study",
+  "skill": {
+    "id": 15786,
+    "skillKey": "clawhub-course-study",
+    "name": "Course Study"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "course-study",
+    "url": "https://clawhub.ai/skills/course-study",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/course-study-be05ebdd25f0618c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive course study, exam revision, and structured study note generation from lecture slides, course PDFs, or topic outlines. Use when the user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentjiang06",
+      "userId": "s1784t4rkmx28018kynwsymwvn83hk4s",
+      "displayName": "VincentJiang06",
+      "image": "https://avatars.githubusercontent.com/u/89259282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773142404417,
+      "changelog": "**v2.0.0 – Major upgrade with deeper study and output enhancements**\n\n- Introduced a dedicated intake phase (Phase 0) with its own workflow (`rules/phase-intake.md`) for structured and faster material processing.\n- Added Quick Reference and Exam Q&A appendices (\"Exam Ready\" mode) to final study materials.\n- Expanded output rules: All final notes are Markdown-based and can be exported as high-fidelity PDFs using strict formatting rules (`rules/pdf-export.md`).\n- Enhanced priority topic handling: User-flagged topics now receive deeper coverage and appear in all appendices.\n- Updated global rules for traceability, multi-format output, and enforcing worked examples for all key concepts.\n- Added changelog tracking and modularized references for all workflow phases and formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2b49e8b85a2997036914d40e2b257fcf04cd764bbfdb7eb8e4a778690556e77"
+}

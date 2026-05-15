@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18495,
+  "uuid": "skill-clawhub-openclaw-notion-sync",
+  "skillKey": "clawhub-openclaw-notion-sync",
+  "name": "Notion Sync",
+  "summary": "Sync local workspace directories and files to Notion pages using the notion-sync CLI or programmatic API. Use when the user wants to push files to Notion, mi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_notion_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kitakitsune0x",
+      "features": [
+        "Sync local workspace directories and files to Notion pages using the notion-sync CLI or program.",
+        "Use when the user wants to push files to Notion, mi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-notion-sync@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108195681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-notion-sync",
+      "url": "https://clawhub.ai/skills/openclaw-notion-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-notion-sync",
+    "url": "https://clawhub.ai/skills/openclaw-notion-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-notion-sync-b06b86c7a7377401.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-notion-sync@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-notion-sync-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1004a3e1cfabf9ee3aec373e7a3539e8ceeae21f1ab627101c1bc80a9dae52fe",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T05:06:02.250Z"
+}

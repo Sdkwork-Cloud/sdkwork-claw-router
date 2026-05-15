@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41057,
+  "uuid": "skill-clawhub-whatsapp-monitor",
+  "skillKey": "clawhub-whatsapp-monitor",
+  "name": "whatsapp-monitor",
+  "summary": "Monitor specified WhatsApp chats for keywords in real time and batch export matched messages to Feishu multi-dimensional tables with optional alerts.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrHanson",
+      "features": [
+        "Monitor specified WhatsApp chats for keywords in real time and batch export matched messages to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-monitor@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25410935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-monitor",
+      "url": "https://clawhub.ai/skills/whatsapp-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-monitor",
+    "url": "https://clawhub.ai/skills/whatsapp-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-monitor-dab6495112f50a3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-monitor@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-monitor-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:445378065998039d99d6d82c2034f269378fa7d7001b60a88940c27ac8d8855d",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:57:13.896Z"
+}

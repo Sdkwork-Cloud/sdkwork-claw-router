@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chocolate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chocolate",
+  "skill": {
+    "id": 56889,
+    "skillKey": "clawhub-chocolate",
+    "name": "chocolate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chocolate",
+    "url": "https://clawhub.ai/skills/chocolate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chocolate-7499aced43869b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information guide for Chocolate 巧克力. Learn about chocolate brands, origins, types, and tasting guides."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775194536454,
+      "changelog": "Initial release of the Chocolate skill.\n\n- Provides a comprehensive guide to chocolate brands, origins, types, and tasting guides.\n- Includes expert tips, recommendations, and news about chocolate.\n- Helps users find places to buy chocolate and learn about its history and varieties.\n- Supports example queries like \"Tell me about Chocolate\" and \"Best Chocolate recommendations.\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f363c615ad7f50c5b7fcd09108d6f0b7e8266eec1e3488a4f33c6d734135eb8"
+}

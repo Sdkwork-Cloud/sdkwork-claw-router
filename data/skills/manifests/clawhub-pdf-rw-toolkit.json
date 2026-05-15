@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39652,
+  "uuid": "skill-clawhub-pdf-rw-toolkit",
+  "skillKey": "clawhub-pdf-rw-toolkit",
+  "name": "PDF Read/Write Toolkit",
+  "summary": "Read, extract, and generate PDF files. Use when user asks to read PDF content, extract text/tables, merge PDFs, fill forms, or generate PDFs from HTML/Markdown.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_rw_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roman Matyuschenko",
+      "features": [
+        "Read, extract, and generate PDF files",
+        "Use when user asks to read PDF content, extract text/tables, merge PDFs, fill forms, or generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-rw-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3207738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-rw-toolkit",
+      "url": "https://clawhub.ai/skills/pdf-rw-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-rw-toolkit",
+    "url": "https://clawhub.ai/skills/pdf-rw-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-rw-toolkit-7f0dc9aac54db51e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-rw-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-rw-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f6545997e3c2f6f7328dc2bf01db794dc92f0f76ed176264e8f2a9123396493",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:45:31.133Z"
+}

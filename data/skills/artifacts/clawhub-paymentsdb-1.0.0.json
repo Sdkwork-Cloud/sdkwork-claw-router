@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paymentsdb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paymentsdb",
+  "skill": {
+    "id": 13002,
+    "skillKey": "clawhub-paymentsdb",
+    "name": "Stripe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paymentsdb",
+    "url": "https://clawhub.ai/skills/paymentsdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paymentsdb-3568804f17dffb2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Stripe customer and billing data from a synced PostgreSQL database. Use when the user asks about Stripe customers, subscriptions, invoices, charges, or any Stripe-related data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramonverse",
+      "userId": "publishers:ramonverse",
+      "displayName": "ramonverse",
+      "image": "https://avatars.githubusercontent.com/u/121360087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1599,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770731924247,
+      "changelog": "Go to https://paymentsdb.com to provision a read only postgres database and then modify `query.sh` with your username & password.\n\nThis is a secure implementation with major advantages compared to calling the Stripe API directly:\n- OpenClaw has no access to your Stripe API Key.\n- You cannot hit rate limits and break your Stripe, you are just querying a replica postgres database",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:942fc846117c3443adb20cd4b99e1ef1f5366048845b90fa4e4d6f5cd9dda740"
+}

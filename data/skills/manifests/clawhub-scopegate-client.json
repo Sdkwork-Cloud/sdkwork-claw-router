@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48292,
+  "uuid": "skill-clawhub-scopegate-client",
+  "skillKey": "clawhub-scopegate-client",
+  "name": "ScopeGate Client",
+  "summary": "Use ScopeGate to verify agent scope before any consequential action involving money, data writes, external API calls, or file system changes. Required safety...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scopegate_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clauderodriguez2026-boop",
+      "features": [
+        "Use ScopeGate to verify agent scope before any consequential action involving money, data write.",
+        "Required safety..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scopegate-client@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273888671?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scopegate-client",
+      "url": "https://clawhub.ai/skills/scopegate-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scopegate-client",
+    "url": "https://clawhub.ai/skills/scopegate-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scopegate-client-fc48fcfc0d1c4881.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scopegate-client@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scopegate-client-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fb5a60247d30d1ffe80bf7c2492f14411ab6b6866c4bd4cedd0ba7e9ce072b0",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:10:53.314Z"
+}

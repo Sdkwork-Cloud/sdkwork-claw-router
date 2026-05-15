@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saizeriya@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saizeriya",
+  "skill": {
+    "id": 47140,
+    "skillKey": "clawhub-saizeriya",
+    "name": "saizeriya"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saizeriya",
+    "url": "https://clawhub.ai/skills/saizeriya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saizeriya-da322a27ed3db38e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the saizeriya.js command-line interface on behalf of a user. Use when the user wants an AI agent to start or resume a Saizeriya mobile-ordering sessi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nakasyou",
+      "userId": "s17crgnkp90ffm1r7fpvd6ybzd865e92",
+      "displayName": "Shotaro Nakamura",
+      "image": "https://avatars.githubusercontent.com/u/79000684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777990763021,
+      "changelog": "- Added instructions to support QR code photo input using qr-scanner-cli.\n- Described how to scan QR code images and extract the QR URL for session start.\n- Clarified to treat scanned QR values as untrusted input until used for the requested command.\n- No other workflow or usage changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a715ba82845f783adcc278949e57e160250108d3e616b2d21c315d2297a2991"
+}

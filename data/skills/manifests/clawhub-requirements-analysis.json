@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64650,
+  "uuid": "skill-clawhub-requirements-analysis",
+  "skillKey": "clawhub-requirements-analysis",
+  "name": "requirements-analysis",
+  "summary": "专业需求分析师，通过多轮对话将简短想法转化为详细需求文档。使用此技能当用户需要：(1) 分析和记录需求，(2) 将 EPIC 分解为需求和用户故事，(3) 对多个需求进行优先级排序，(4) 识别利益相关者和依赖关系，(5) 定义验收标准，(6) 创建需求文档。支持单个需求分析、EPIC 分解、MoSCoW/RIC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirements_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuanguan2020",
+      "features": [
+        "专业需求分析师，通过多轮对话将简短想法转化为详细需求文档。使用此技能当用户需要：(1) 分析和记录需求，(2) 将 EPIC 分解为需求和用户故事，(3) 对多个需求进行优先级排序，(4)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requirements-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74335362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requirements-analysis",
+      "url": "https://clawhub.ai/skills/requirements-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirements-analysis",
+    "url": "https://clawhub.ai/skills/requirements-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirements-analysis-72507ad30a603540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requirements-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-requirements-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e2681a78bf8ecb18702766780ea9dec7324ef291fa5b485c3f425e272eb918e",
+      "artifactSizeBytes": 2694
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:20:37.477Z"
+}

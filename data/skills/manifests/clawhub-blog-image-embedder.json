@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24108,
+  "uuid": "skill-clawhub-blog-image-embedder",
+  "skillKey": "clawhub-blog-image-embedder",
+  "name": "blog-image-embedder",
+  "summary": "Analyze polished zh-CN blog markdown, generate hero + per-section image prompts, embed image placeholders into the markdown, and save updated version.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_image_embedder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff Yang",
+      "features": [
+        "Analyze polished zh-CN blog markdown, generate hero + per-section image prompts, embed image pl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-image-embedder@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-image-embedder",
+      "url": "https://clawhub.ai/skills/blog-image-embedder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-image-embedder",
+    "url": "https://clawhub.ai/skills/blog-image-embedder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-image-embedder-82aa0ba8957750e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-image-embedder@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-image-embedder-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1a355d7fd2011793eb8ff9ddf0ea2b44e58dd597d97013058705f745de4f0b",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:18:38.901Z"
+}

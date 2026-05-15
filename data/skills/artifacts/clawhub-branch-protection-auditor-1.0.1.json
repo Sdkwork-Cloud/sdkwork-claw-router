@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/branch-protection-auditor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.branch_protection_auditor",
+  "skill": {
+    "id": 42647,
+    "skillKey": "clawhub-branch-protection-auditor",
+    "name": "Branch Protection Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "branch-protection-auditor",
+    "url": "https://clawhub.ai/skills/branch-protection-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/branch-protection-auditor-c989979d36ac24cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub/GitLab branch protection rules across repositories. Check required reviews, status checks, force push restrictions, admin bypass, and CODEOWNERS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593598799,
+      "changelog": "No user-visible changes in this version.\n\n- Version bumped to 1.0.1 with no file changes detected.\n- No updates to functionality, documentation, or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db15eb41356a11c50c234f5f98a1a7510ab17d0a569cb8d9c3a5d7a330ad9904"
+}

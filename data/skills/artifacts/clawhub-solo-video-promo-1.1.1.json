@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-video-promo@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_video_promo",
+  "skill": {
+    "id": 17146,
+    "skillKey": "clawhub-solo-video-promo",
+    "name": "Video Promo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-video-promo",
+    "url": "https://clawhub.ai/skills/solo-video-promo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-video-promo-0ea473b70ab9b17e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate promo video plan with 30-45s script, shot-by-shot storyboard, and optional Remotion/Montage-tool config. Use when user says \"create video\", \"promo v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunto2",
+      "userId": "publishers:fortunto2",
+      "displayName": "Rust",
+      "image": "https://avatars.githubusercontent.com/u/1236751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 791,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771711668776,
+      "changelog": "Universalize: remove project-specific references, add SearXNG recommendation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d97341b6d943875610bb55fcdb0b90214084209241413e69a86d8f24065738a4"
+}

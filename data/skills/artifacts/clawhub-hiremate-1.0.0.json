@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hiremate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiremate",
+  "skill": {
+    "id": 56962,
+    "skillKey": "clawhub-hiremate",
+    "name": "HireMate — AI招聘助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiremate",
+    "url": "https://clawhub.ai/skills/hiremate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiremate-6795d47ecca31542.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI recruiting assistant for generating job descriptions, resume screening criteria, interview questions, candidate scoring, match analysis, salary reports, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keybryant",
+      "userId": "s17cd4bpfd9aafmqsqjm91ztk185ss8c",
+      "displayName": "keyong",
+      "image": "https://avatars.githubusercontent.com/u/18619191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777459871015,
+      "changelog": "Initial release of HireMate — a comprehensive AI-powered recruiting assistant.\n\n- Generate job descriptions, screening criteria, and interview questions (free).\n- Premium features: resume scoring, candidate-job match analysis, salary reports, and interview evaluation.\n- Supports multiple roles and regions, with flexible input for company, level, language, and frameworks.\n- Reference data includes JD templates, interview question banks, and salary benchmarks.\n- Modular CLI scripts for each feature, supporting markdown and JSON output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b7825d0ea395c62adc69b2a189ebc790a3acbbcc709c8140cb209289ffe349b"
+}

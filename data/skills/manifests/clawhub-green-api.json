@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38895,
+  "uuid": "skill-clawhub-green-api",
+  "skillKey": "clawhub-green-api",
+  "name": "GREEN-API",
+  "summary": "Send and receive WhatsApp messages, manage groups, contacts, and instances via GREEN-API MCP gateway.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.green_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Green API",
+      "features": [
+        "Send and receive WhatsApp messages, manage groups, contacts, and instances via GREEN-API MCP ga."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/green-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153885128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "green-api",
+      "url": "https://clawhub.ai/skills/green-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "green-api",
+    "url": "https://clawhub.ai/skills/green-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/green-api-79c4714c5ada410e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/green-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-green-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f8c0f8403a9320e98658798e5582ffbb792df180089808454f25ee1092aabeb",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:50:46.095Z"
+}

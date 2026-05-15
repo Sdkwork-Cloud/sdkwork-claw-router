@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40587,
+  "uuid": "skill-clawhub-pilot-formation",
+  "skillKey": "clawhub-pilot-formation",
+  "name": "Pilot Formation",
+  "summary": "Deploy predefined network topologies (star, ring, mesh, tree) for structured swarms. Use this skill when: 1. You need specific communication patterns (star c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_formation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy predefined network topologies (star, ring, mesh, tree) for structured swarms",
+        "Use this skill when: 1",
+        "You need specific communication patterns (star c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-formation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-formation",
+      "url": "https://clawhub.ai/skills/pilot-formation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-formation",
+    "url": "https://clawhub.ai/skills/pilot-formation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-formation-569dbec3fcc482da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-formation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-formation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0269cd581a439e42bf5c69e42a3b559c57d2c5aeb6a083c3fa98fd0ae02d73d1",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:20:30.657Z"
+}

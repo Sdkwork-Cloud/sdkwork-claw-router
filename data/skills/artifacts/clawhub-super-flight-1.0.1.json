@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-flight@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_flight",
+  "skill": {
+    "id": 57700,
+    "skillKey": "clawhub-super-flight",
+    "name": "机票捡漏 · 多日比价神器/Smart Flight Deal Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-flight",
+    "url": "https://clawhub.ai/skills/super-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-flight-c8676b935969fbdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare multi-date one-way flight prices within 7 days by persona-based hard constraints, sorting by history, and providing explainable recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangxchao",
+      "userId": "s172wbq91pxj2p5mkm7hsckw9x83w8tr",
+      "displayName": "zhangxchao",
+      "image": "https://avatars.githubusercontent.com/u/3321261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776821858499,
+      "changelog": "super-flight 1.0.1\n\n- Added .sync.sh script file for synchronization or development utility.\n- No changes to functional logic; this is a tooling/maintenance update only.\n- All existing skill features and data handling remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08007ef4579239bc5d167c04f0e6436ad981b612685478b2f04ab07fe075fd84"
+}

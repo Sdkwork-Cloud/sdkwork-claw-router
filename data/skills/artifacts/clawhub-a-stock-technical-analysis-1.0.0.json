@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-technical-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_technical_analysis",
+  "skill": {
+    "id": 73199,
+    "skillKey": "clawhub-a-stock-technical-analysis",
+    "name": "A股技术分析报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-technical-analysis",
+    "url": "https://clawhub.ai/skills/a-stock-technical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-technical-analysis-18d31c31ab40919c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股个股技术分析报告生成工具。当用户请求生成股票技术分析报告、查询A股个股行情、分析个股走势时触发。支持输入股票代码和股票名称，自动抓取东方财富实时数据并生成结构化技术分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyuqi98",
+      "userId": "s173mjn64xvgb8q3gk4h4qp7as83xm1t",
+      "displayName": "zhangyuqi98",
+      "image": "https://avatars.githubusercontent.com/u/74645439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776095306220,
+      "changelog": "初始版本：基于东方财富数据生成A股/港股/美股技术分析报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fea389d6417724fc6475aace6585bdd3466214bc2b2ead76046a04ba39177c8d"
+}

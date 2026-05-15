@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-debug@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_debug",
+  "skill": {
+    "id": 19769,
+    "skillKey": "clawhub-openclaw-debug",
+    "name": "OpenClaw Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-debug",
+    "url": "https://clawhub.ai/skills/openclaw-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-debug-434219eb49261a81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When users encounter OpenClaw-related issues or errors, search official docs and GitHub issues first, then provide solutions. Use for: feature malfunctions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyan",
+      "userId": "s17582j1ey5mb0fgpa0wc422p583kwn1",
+      "displayName": "Sky Yan",
+      "image": "https://avatars.githubusercontent.com/u/945860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 582,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772257844930,
+      "changelog": "Initial release: OpenClaw issue diagnosis workflow with docs and GitHub issue search",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e36c5280610b14b2c08412b578b6f40393e53ba068c617d3e08acc899bd99493"
+}

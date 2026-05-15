@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19400,
+  "uuid": "skill-clawhub-seedance-2-ai-video-generator",
+  "skillKey": "clawhub-seedance-2-ai-video-generator",
+  "name": "Seedance 2.0 Al Video Generator",
+  "summary": "Generates video via Loova Seedance 2.0 API (Seedance 2.0 video). Requires LOOVA_API_KEY from .env or environment (get API key at loova.ai). Use when the user...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_ai_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loova",
+      "features": [
+        "Generates video via Loova Seedance 2.0 API (Seedance 2.0 video)",
+        "Requires LOOVA_API_KEY from .env or environment (get API key at loova.ai)",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-2-ai-video-generator@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17350820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-2-ai-video-generator",
+      "url": "https://clawhub.ai/skills/seedance-2-ai-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-ai-video-generator",
+    "url": "https://clawhub.ai/skills/seedance-2-ai-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-ai-video-generator-55946c0cd5b3d8c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-2-ai-video-generator@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-2-ai-video-generator-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54265c37103463bbac78251651a3e3b46f6031019a97a47d887de6409f4ead57",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:35:37.474Z"
+}

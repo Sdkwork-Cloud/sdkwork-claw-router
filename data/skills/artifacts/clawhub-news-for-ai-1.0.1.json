@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-for-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_for_ai",
+  "skill": {
+    "id": 38283,
+    "skillKey": "clawhub-news-for-ai",
+    "name": "news-for-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-for-ai",
+    "url": "https://clawhub.ai/skills/news-for-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-for-ai-3a3b02772678374c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches real-time AI industry news, daily AI digests, and searches AI topics including products, models, and MCP services. Outputs structured JSON with clean..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sskun",
+      "userId": "s17fk13j4b7c60dcyfemy1gmss83hx6c",
+      "displayName": "sskun",
+      "image": "https://avatars.githubusercontent.com/u/28060476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774860324061,
+      "changelog": "news-for-ai 1.0.1\n\n- CLI entrypoint is now news_cli.py (aibase_cli.py removed).\n- Added schemas.md for clear output data structure reference.\n- SKILL.md greatly simplified: clearer usage, output format, and article-writing workflow instructions.\n- Commands, options, and field schemas are now easier to understand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79a9232421e548712ecf3f90c1f9062d9617bc654fe9acf92bc38ee8e5fdeefe"
+}

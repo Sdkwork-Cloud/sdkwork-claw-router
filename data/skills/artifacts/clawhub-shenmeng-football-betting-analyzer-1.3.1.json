@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-football-betting-analyzer@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_football_betting_analyzer",
+  "skill": {
+    "id": 70456,
+    "skillKey": "clawhub-shenmeng-football-betting-analyzer",
+    "name": "Football Betting Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-football-betting-analyzer",
+    "url": "https://clawhub.ai/skills/shenmeng-football-betting-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-football-betting-analyzer-6df62cb600305c54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "足彩分析助手 - 提供足球比赛数据分析、赔率分析、投注建议。支持基本面分析（球队战绩、伤停、对战历史）、赔率面分析（亚盘、欧赔、凯利指数）、投注策略建议。当用户需要分析足球比赛、获取投注建议、查询球队数据时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1774666431684,
+      "changelog": "SkillPay 付费集成 - 0.01 USDT/次调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03e8d0c8ca06287c00eb832c9fa1463d46173d0351e0fe44e6fb2b71944aaa93"
+}

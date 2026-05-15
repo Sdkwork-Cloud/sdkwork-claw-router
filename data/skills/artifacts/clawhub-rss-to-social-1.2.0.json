@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-to-social@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_to_social",
+  "skill": {
+    "id": 20307,
+    "skillKey": "clawhub-rss-to-social",
+    "name": "Rss To Social"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-to-social",
+    "url": "https://clawhub.ai/skills/rss-to-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-to-social-448c4084fe7f9b2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically monitor RSS feeds and post to social media. Schedule content, generate posts with AI, and publish to Twitter/LinkedIn."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fly3094",
+      "userId": "s1784gsbcw6rz5jsfg0z1g6z2n84sdcc",
+      "displayName": "fly3094",
+      "image": "https://avatars.githubusercontent.com/u/23025507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776675553225,
+      "changelog": "- Version updated to 1.2.0.\n- No feature, configuration, or usage changes—documentation version number increment only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffe1645feada867183d52f18b7f9c87b39532b8989637e2860e9b8bd136be89c"
+}

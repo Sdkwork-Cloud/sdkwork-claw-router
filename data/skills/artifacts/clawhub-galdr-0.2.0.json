@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/galdr@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.galdr",
+  "skill": {
+    "id": 34392,
+    "skillKey": "clawhub-galdr",
+    "name": "Galdr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "galdr",
+    "url": "https://clawhub.ai/skills/galdr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/galdr-3025c8d1e59f8e13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze music and generate impressionistic listening experiences using galdr, an open-source audio analysis CLI. Use when a user asks to analyze a song or tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sellemain",
+      "userId": "s17cwxrmjj7vay9dv4v9s329z585e399",
+      "displayName": "Sellemain",
+      "image": "https://avatars.githubusercontent.com/u/269647807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777497606698,
+      "changelog": "Update install guidance for galdr 0.2.0 and document doctor/update-deps reliability workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adfbb42411992db1349839e866ea973a0c8d0d652fee0e86de506ebd9cb55259"
+}

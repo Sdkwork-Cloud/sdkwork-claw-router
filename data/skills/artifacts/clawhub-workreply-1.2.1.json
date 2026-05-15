@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workreply@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workreply",
+  "skill": {
+    "id": 27079,
+    "skillKey": "clawhub-workreply",
+    "name": "Workreply Skill Pub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workreply",
+    "url": "https://clawhub.ai/skills/workreply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workreply-1eeec1fc11068b73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WorkReply is an AI workplace reply coach for professional messages that need the right balance of clarity, diplomacy, and authority. It drafts responses for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwyvern",
+      "userId": "s17as2pe33fqm26ag8dqnwe0gx83gd3q",
+      "displayName": "wes",
+      "image": "https://avatars.githubusercontent.com/u/1765672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776348917804,
+      "changelog": "会议发言模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd9471da569d5fac493ef94264bc73c4bf75e1f4e2edd1c7965144d86b610484"
+}

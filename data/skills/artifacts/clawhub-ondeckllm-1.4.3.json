@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ondeckllm@1.4.3",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ondeckllm",
+  "skill": {
+    "id": 38686,
+    "skillKey": "clawhub-ondeckllm",
+    "name": "OnDeckLLM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ondeckllm",
+    "url": "https://clawhub.ai/skills/ondeckllm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ondeckllm-cffa7375c0038f06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Localhost dashboard for managing LLM providers, model routing, and batting-order fallback chains. Auto-discovers providers from OpenClaw config or works stan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canonflip-git",
+      "userId": "publishers:canonflip-git",
+      "displayName": "canonflip-git",
+      "image": "https://avatars.githubusercontent.com/u/265405415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.3",
+      "createdAt": 1774237900595,
+      "changelog": "Republished under canonflip-git; LLM dashboard skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb7cf8f92e46992cd8ddeda060532c40e42e8589f21506c3575ef4707bbd0bf0"
+}

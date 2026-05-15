@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-store-screenshots@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_store_screenshots",
+  "skill": {
+    "id": 13998,
+    "skillKey": "clawhub-app-store-screenshots",
+    "name": "App Store Screenshots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-store-screenshots",
+    "url": "https://clawhub.ai/skills/app-store-screenshots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-store-screenshots-b77177c8db657d1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "App Store and Google Play screenshot creation with exact platform specs. Covers iOS/Android dimensions, gallery ordering, device mockups, and preview videos...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1079,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403068492,
+      "changelog": "- Added full documentation and best practices for app store and Google Play screenshot creation, gallery ordering, device mockups, and preview videos.\n- Includes exact Apple App Store and Google Play specs (dimensions, formats, ordering, and localization).\n- Provides step-by-step CLI usage examples for generating screenshots and preview videos with inference.sh.\n- Covers styles, caption tips, common mistakes, and A/B testing for effective app store optimization (ASO).\n- No functional code changes; this update delivers comprehensive usage guides and spec references.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:faf4913463c8e83b7973fc96a8fa4e9932315b942feefee5c1f8305f2c7bc5fd"
+}

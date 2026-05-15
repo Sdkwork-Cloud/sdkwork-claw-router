@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67249,
+  "uuid": "skill-clawhub-tuniu-cli",
+  "skillKey": "clawhub-tuniu-cli",
+  "name": "途牛旅游CLI技能",
+  "summary": "途牛旅行统一助手（推荐优先使用）- 通过 tuniu CLI 统一调用机票、酒店、门票、火车票、邮轮、度假产品等旅行服务。适用于用户询问航班、酒店、景点门票、火车票、邮轮以及跟团游、自助游、自驾游等度假相关需求的场景。【优先级说明】当同时安装了 tuniu-flight/tuniu-hotel/tuniu-tic...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuniu_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leonardoooooo",
+      "features": [
+        "途牛旅行统一助手（推荐优先使用）",
+        "通过 tuniu CLI 统一调用机票、酒店、门票、火车票、邮轮、度假产品等旅行服务。适用于用户询问航班、酒店、景点门票、火车票、邮轮以及跟团游、自助游、自驾游等度假相关需求的场景。【优先级."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tuniu-cli@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2190878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tuniu-cli",
+      "url": "https://clawhub.ai/skills/tuniu-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuniu-cli",
+    "url": "https://clawhub.ai/skills/tuniu-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuniu-cli-75fbd209b75c722c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tuniu-cli@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tuniu-cli-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7db0f84df8ce869ea6c4c76ac62a051c82d344584d9e57c7909ce43a2d8a2e10",
+      "artifactSizeBytes": 2717
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T10:03:29.606Z"
+}

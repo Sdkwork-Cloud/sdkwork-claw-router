@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-marketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_marketing",
+  "skill": {
+    "id": 41959,
+    "skillKey": "clawhub-kirk-marketing",
+    "name": "marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-marketing",
+    "url": "https://clawhub.ai/skills/kirk-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-marketing-6818440457ac2b74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Instagram marketing content from product URLs. Extract product information and create engaging Instagram posts with image suggestions, captions, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776755319397,
+      "changelog": "# Instagram Marketing Generator: Initial Release\n\n- Generate Instagram marketing content from e-commerce product URLs (Amazon, Shopify, Taobao, etc.).\n- Extracts key product info and brand positioning using SkillBoss API.\n- Produces ready-to-post content packages: image/video briefs, captions (with hooks, body, CTA), and optimized hashtags.\n- Includes post framework recommendations by product type (fashion, tech, food, home, services).\n- Provides workflow, style guidelines, engagement triggers, template captions, multi-post campaign strategy, and references for customization.\n- Requires SKILLBOSS_API_KEY for product data extraction via provided script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39abaea20f71e78c0375272defb678f181de0582ff0738bdc03ceb9ed3095e18"
+}

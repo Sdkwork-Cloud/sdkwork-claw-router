@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10929,
+  "uuid": "skill-clawhub-x-search-x402",
+  "skillKey": "clawhub-x-search-x402",
+  "name": "X Search (x402)",
+  "summary": "AI-powered X/Twitter search for real-time trends, breaking news, sentiment analysis, and social media insights. Use when users want to search Twitter/X for topics, hashtags, viral content, or public opinion. Costs $0.05 USDC per request vi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_x402",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TzannetosGiannis",
+      "features": [
+        "AI-powered X/Twitter search for real-time trends, breaking news, sentiment analysis, and social.",
+        "Use when users want to search Twitter/X for topics, hashtags, viral content, or public opinion",
+        "Costs $0.05 USDC per request via x402 protocol on Base network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-search-x402@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32258946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-search-x402",
+      "url": "https://clawhub.ai/skills/x-search-x402"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-x402",
+    "url": "https://clawhub.ai/skills/x-search-x402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-x402-3fcd198d3a4c0983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-search-x402@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-search-x402-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fbf993be8fded525440e1f27d2e5714f0fc0f4e9b288f9efe6de2a67e5feb40",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T14:03:47.276Z"
+}

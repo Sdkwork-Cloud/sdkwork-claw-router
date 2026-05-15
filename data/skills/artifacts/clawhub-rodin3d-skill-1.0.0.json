@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rodin3d-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rodin3d_skill",
+  "skill": {
+    "id": 27412,
+    "skillKey": "clawhub-rodin3d-skill",
+    "name": "rodin3d-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rodin3d-skill",
+    "url": "https://clawhub.ai/skills/rodin3d-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rodin3d-skill-1dd6e61359a9fc48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts input images or prompt to 3D models using Hyper3D Rodin Gen-2 API. Use this skill when users want to generate 3D models from images or text, such as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitegiven",
+      "userId": "publishers:whitegiven",
+      "displayName": "WhiteGiven",
+      "image": "https://avatars.githubusercontent.com/u/51637999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773385159914,
+      "changelog": "Initial release of rodin3d-skill v1.0.0:\n\n- Generate 3D models from input images or text prompts using the Hyper3D Rodin Gen-2 API.\n- Supports multiple tiers and 3D output formats (glb, usdz, fbx, obj, stl).\n- Handles API key setup, task submission, status polling, and automatic result downloading.\n- Includes Python scripts for fast integration and example usage.\n- Provides clear guidance on tier selection, input limits, and best usage practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbaee8ee26ac772e6b48471f1610aa34820e70c979e05fdb2f7999857d18bb3d"
+}

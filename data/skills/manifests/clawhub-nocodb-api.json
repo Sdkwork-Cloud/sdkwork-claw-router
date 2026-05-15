@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24472,
+  "uuid": "skill-clawhub-nocodb-api",
+  "skillKey": "clawhub-nocodb-api",
+  "name": "NocoDB API",
+  "summary": "Connect to NocoDB databases via REST API v3. Query records, manage database structure (tables, fields, views), handle linked records, filters, sorts, and att...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nocodb_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dofbi.eth",
+      "features": [
+        "Connect to NocoDB databases via REST API v3",
+        "Query records, manage database structure (tables, fields, views), handle linked records, filter."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nocodb-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nocodb-api",
+      "url": "https://clawhub.ai/skills/nocodb-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nocodb-api",
+    "url": "https://clawhub.ai/skills/nocodb-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nocodb-api-66e411cf35cd08a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nocodb-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nocodb-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f3860f6e5ebec6ac84d3bbe3bfb7441165188dbcfbe646889b134e53ccf3ff9",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:49:41.943Z"
+}

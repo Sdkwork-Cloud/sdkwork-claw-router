@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30690,
+  "uuid": "skill-clawhub-neetokb",
+  "skillKey": "clawhub-neetokb",
+  "name": "Neetokb",
+  "summary": "NeetoKB integration. Manage Articles, Categories. Use when the user wants to interact with NeetoKB data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neetokb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NeetoKB integration",
+        "Manage Articles, Categories",
+        "Use when the user wants to interact with NeetoKB data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neetokb@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neetokb",
+      "url": "https://clawhub.ai/skills/neetokb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neetokb",
+    "url": "https://clawhub.ai/skills/neetokb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neetokb-864f94321306db76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neetokb@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-neetokb-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73cb30d7602f6ba714c81020df4e61165e86502938a352b444303fbb0f2e0e63",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:53.948Z"
+}

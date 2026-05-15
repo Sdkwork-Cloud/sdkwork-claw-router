@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68847,
+  "uuid": "skill-clawhub-yixin",
+  "skillKey": "clawhub-yixin",
+  "name": "Yixin",
+  "summary": "易信（已停运）- 网易电信合作社交应用历史存档",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yixin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "网易电信合作社交应用历史存档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yixin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yixin",
+      "url": "https://clawhub.ai/skills/yixin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yixin",
+    "url": "https://clawhub.ai/skills/yixin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yixin-b5b7b2ebada723db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yixin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yixin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9387a6feffd9985ef60f9fd4bf351a737d98869881066e96e06cce30d8c26ce1",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:21:39.291Z"
+}

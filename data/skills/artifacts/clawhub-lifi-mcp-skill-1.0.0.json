@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lifi-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifi_mcp_skill",
+  "skill": {
+    "id": 30530,
+    "skillKey": "clawhub-lifi-mcp-skill",
+    "name": "LI.FI MCP Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifi-mcp-skill",
+    "url": "https://clawhub.ai/skills/lifi-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifi-mcp-skill-44cbd8d3c45ed58f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the LI.FI MCP server through UXC for cross-chain route discovery, bridge/DEX availability checks, token and chain lookup, gas/balance/allowance checks, q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773707608469,
+      "changelog": "lifi-mcp-skill v1.0.0\n\n- Initial release: Enables discovery and monitoring of cross-chain swaps and bridges using the LI.FI MCP server via UXC.\n- Supports chain and token lookup, provider availability checks, quote generation, allowance and gas checks, and transfer status tracking.\n- Recommends using `lifi-mcp-cli` as a linked command for all operations.\n- Ensures clear guardrails: no transaction signing/broadcasting, output is for planning and monitoring only.\n- Includes robust usage guidance and best practices for read-only interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c136a82403f3e700f9b62dde26550cd5b6507d616240fa8da00eb59b7cec600a"
+}

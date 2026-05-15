@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71666,
+  "uuid": "skill-clawhub-bimdown-zh",
+  "skillKey": "clawhub-bimdown-zh",
+  "name": "BimDown 中文",
+  "summary": "AI与建筑信息的桥梁。像写代码一样读写BIM数据！让智能体自动完成建筑建模、按图建模、工程量统计或模型审查，甚至只是为你建一栋专属的数据化房屋！",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bimdown_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NovaShang",
+      "features": [
+        "AI与建筑信息的桥梁。像写代码一样读写BIM数据！让智能体自动完成建筑建模、按图建模、工程量统计或模型审查，甚至只是为你建一栋专属的数据化房屋！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bimdown-zh@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16094842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bimdown-zh",
+      "url": "https://clawhub.ai/skills/bimdown-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bimdown-zh",
+    "url": "https://clawhub.ai/skills/bimdown-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bimdown-zh-e60cb09c040f79cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bimdown-zh@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bimdown-zh-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0634065442b7abba30a2eda08244649c83a6f54f47cb05f56fb530b8d89a1b96",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T20:06:32.125Z"
+}

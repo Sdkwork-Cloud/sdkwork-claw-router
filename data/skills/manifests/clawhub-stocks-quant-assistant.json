@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66768,
+  "uuid": "skill-clawhub-stocks-quant-assistant",
+  "skillKey": "clawhub-stocks-quant-assistant",
+  "name": "Stocks Quant Assistant",
+  "summary": "A股股票量化监控与每日推送系统。用户配置股票池后自动分析 MA/MACD/RSI/布林带，生成信号评分和操作建议，每日4次定时推送。支持持仓跟踪、板块轮动、美股隔夜。下载后只需填写配置文件，即可每日自动推送到飞书/Telegram。",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stocks_quant_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuliwenjing",
+      "features": [
+        "A股股票量化监控与每日推送系统。用户配置股票池后自动分析 MA/MACD/RSI/布林带，生成信号评分和操作建议，每日4次定时推送。支持持仓跟踪、板块轮动、美股隔夜。下载后只需填写配置文件，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stocks-quant-assistant@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23123229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stocks-quant-assistant",
+      "url": "https://clawhub.ai/skills/stocks-quant-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stocks-quant-assistant",
+    "url": "https://clawhub.ai/skills/stocks-quant-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stocks-quant-assistant-075e2816d569a210.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stocks-quant-assistant@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stocks-quant-assistant-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f163ba80eef18889c30ef9e4317c0d22c3de08cbc331d265a3442dea983f0a2",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:51:03.684Z"
+}

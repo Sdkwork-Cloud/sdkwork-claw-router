@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67758,
+  "uuid": "skill-clawhub-claw-aliyun-drive-uploader",
+  "skillKey": "clawhub-claw-aliyun-drive-uploader",
+  "name": "Aliyun Drive Uploader",
+  "summary": "阿里云盘文件上传与管理。使用 refresh_token 认证，支持大文件分片上传、自动创建文件夹、文件搜索、分享链接等。当用户需要上传文件到阿里云盘、创建文件夹、搜索文件、管理分享链接时使用。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_aliyun_drive_uploader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjcly",
+      "features": [
+        "阿里云盘文件上传与管理。使用 refresh_token 认证，支持大文件分片上传、自动创建文件夹、文件搜索、分享链接等。当用户需要上传文件到阿里云盘、创建文件夹、搜索文件、管理分享链接时使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-aliyun-drive-uploader@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188730191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-aliyun-drive-uploader",
+      "url": "https://clawhub.ai/skills/claw-aliyun-drive-uploader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-aliyun-drive-uploader",
+    "url": "https://clawhub.ai/skills/claw-aliyun-drive-uploader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-aliyun-drive-uploader-7677e6c72500b8a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-aliyun-drive-uploader@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-aliyun-drive-uploader-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0681655fe2a4e01e34c88bef4f79fc8df6ebae22c0fa57f25cbc35b1d08d6274",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:13:58.047Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-imaging-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_imaging_suite",
+  "skill": {
+    "id": 23798,
+    "skillKey": "clawhub-medical-imaging-suite",
+    "name": "Medical Imaging Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-imaging-suite",
+    "url": "https://clawhub.ai/skills/medical-imaging-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-imaging-suite-e8b966d4580bda08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete medical imaging solution with OHIF viewer, DICOMweb integration, segmentation, and MONAI workflows, deployable via Docker."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772642777557,
+      "changelog": "Medical Imaging Suite 1.0.0\n\n- Initial release of a complete medical imaging solution.\n- Features OHIF viewer deployment and DICOMweb integration (tbidea, orthanc, DCM4CHEE).\n- Integrates TotalSegmentator and supports MONAI workflows.\n- Includes simple Docker-based deployment options.\n- Minimum requirement: Docker and 4GB RAM.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70d337bbfdec1e35be96e16e8bc5a73836855ef9d4ced4eaeaa841a7ba791966"
+}

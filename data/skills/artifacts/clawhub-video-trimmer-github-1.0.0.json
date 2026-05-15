@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-github@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_github",
+  "skill": {
+    "id": 41523,
+    "skillKey": "clawhub-video-trimmer-github",
+    "name": "Video Trimmer Github"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-github",
+    "url": "https://clawhub.ai/skills/video-trimmer-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-github-b4d9a244e442eac6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. developers and content creators use it for cutti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776032736216,
+      "changelog": "Video Trimmer — First Release (v1.0.0)\n\n- Launches a cloud-powered video trimmer supporting MP4, MOV, AVI, WebM videos up to 500MB.\n- Allows trimming, cutting, and exporting of video clips as 1080p MP4s—no installation required.\n- Automatic setup with free anonymous token (100 credits, 7 days) for new users.\n- Fast processing (20–40 seconds typical) with simple upload and text instruction prompts.\n- Includes error handling and clear instructions for common workflows and API integrations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e4c41a721060748b11934885db00b5cc0e2aac3cc71276bef38f5de9786c1bc"
+}

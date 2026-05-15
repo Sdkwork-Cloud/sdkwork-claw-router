@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57524,
+  "uuid": "skill-clawhub-generate-import-template-data",
+  "skillKey": "clawhub-generate-import-template-data",
+  "name": "生成导入模板数据",
+  "summary": "Generate import-ready data from user-provided Excel or CSV import templates based on the customer's described business scenario. Use when Codex receives an u...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_import_template_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huahuaweiwei",
+      "features": [
+        "Generate import-ready data from user-provided Excel or CSV import templates based on the custom.",
+        "Use when Codex receives an u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-import-template-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136433144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-import-template-data",
+      "url": "https://clawhub.ai/skills/generate-import-template-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-import-template-data",
+    "url": "https://clawhub.ai/skills/generate-import-template-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-import-template-data-88d0151092072e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-import-template-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-import-template-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71756aa2599ce78cfd905bd054e8ad445eec013c6daba4a3fdbd25ed19bbca4b",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:49:15.647Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memoriesai-upload@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memoriesai_upload",
+  "skill": {
+    "id": 49657,
+    "skillKey": "clawhub-memoriesai-upload",
+    "name": "luci-upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memoriesai-upload",
+    "url": "https://clawhub.ai/skills/memoriesai-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memoriesai-upload-d221681ebcdcd1e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload a video or image to memories.ai. Use when the user wants to upload media, add a video/photo to their memory, or send a file to Luci. This skill is des..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "memories-ai-official",
+      "userId": "s17at2353t9phxw9pn66nspqad84vrax",
+      "displayName": "memories-ai-official",
+      "image": "https://avatars.githubusercontent.com/u/258160197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778164972502,
+      "changelog": "Realse under official name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:652d827701fd6b54ae31720e8737fadefac3bf200c0e9ccd3637244ae2c32de8"
+}

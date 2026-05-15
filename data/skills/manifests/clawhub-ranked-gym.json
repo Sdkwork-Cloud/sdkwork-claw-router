@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11724,
+  "uuid": "skill-clawhub-ranked-gym",
+  "skillKey": "clawhub-ranked-gym",
+  "name": "Ranked Gym",
+  "summary": "Gamify your gym sessions with XP, levels, achievements, and workout streaks",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ranked_gym",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Gamify your gym sessions with XP, levels, achievements, and workout streaks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ranked-gym@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ranked-gym",
+      "url": "https://clawhub.ai/skills/ranked-gym"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ranked-gym",
+    "url": "https://clawhub.ai/skills/ranked-gym",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ranked-gym-11b03fabd5343d7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ranked-gym@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ranked-gym-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03df67dd788ee6d2763514c20d43995effc03a05fc9b23e38008b508c1f0b02e",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:36:48.286Z"
+}

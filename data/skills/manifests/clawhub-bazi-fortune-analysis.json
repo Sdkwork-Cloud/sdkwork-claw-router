@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66045,
+  "uuid": "skill-clawhub-bazi-fortune-analysis",
+  "skillKey": "clawhub-bazi-fortune-analysis",
+  "name": "Bazi Fortune Analysis",
+  "summary": "精通中国传统八字命理的资深大师。支持八字排盘、五行分析、十神解读、格局判定、大运流年分析，以及婚姻感情、事业财运、健康状况、子女运势、学业考试等命理咨询。支持公历/农历生辰输入，考虑真太阳时和节气交接。Trigger keywords: 八字, 命理, 五行, 排盘, 大运, 流年, 十神, 格局, BaZi,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_fortune_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianheihei002",
+      "features": [
+        "精通中国传统八字命理的资深大师。支持八字排盘、五行分析、十神解读、格局判定、大运流年分析，以及婚姻感情、事业财运、健康状况、子女运势、学业考试等命理咨询。支持公历/农历生辰输入，考虑真太阳时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi-fortune-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193375545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi-fortune-analysis",
+      "url": "https://clawhub.ai/skills/bazi-fortune-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-fortune-analysis",
+    "url": "https://clawhub.ai/skills/bazi-fortune-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-fortune-analysis-bf121a860c1bdc14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi-fortune-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-fortune-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fdadcd8471d4a9b8340c19bcff38484141cd3433b70b1cb28a51482acd502a2",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:03:43.252Z"
+}

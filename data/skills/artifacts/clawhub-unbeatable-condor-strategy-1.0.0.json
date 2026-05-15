@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unbeatable-condor-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unbeatable_condor_strategy",
+  "skill": {
+    "id": 57804,
+    "skillKey": "clawhub-unbeatable-condor-strategy",
+    "name": "Unbeatable Condor Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unbeatable-condor-strategy",
+    "url": "https://clawhub.ai/skills/unbeatable-condor-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unbeatable-condor-strategy-77f8f9c88bdc4917.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check daily if given stocks hit the 4% volatility threshold condor signal. 无敌鹰式策略"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinntrance",
+      "userId": "s17e1wmadbdx8ccxwfheq13sc183fvb0",
+      "displayName": "jinntrance",
+      "image": "https://avatars.githubusercontent.com/u/2414660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776613685162,
+      "changelog": "Initial release of the unbeatable-condor-strategy skill.\n\n- Detects daily if specific stocks meet a 4% volatility threshold for triggering the Condor signal.\n- Uses LightGBM quantile regression on historic price data to predict safe and profitable short iron condor or strangle opportunities.\n- Provides recommended strike prices for selling options if a signal is triggered.\n- Advises risk management steps and allocation limits when a signal occurs.\n- Clearly informs users if the volatility threshold isn't met, suggesting no trade.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3e561c029acf2242afb6e7b8d69928e2a079348c6958ce354f24efa39dcc346"
+}

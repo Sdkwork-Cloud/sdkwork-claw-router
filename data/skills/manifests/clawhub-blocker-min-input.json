@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25447,
+  "uuid": "skill-clawhub-blocker-min-input",
+  "skillKey": "clawhub-blocker-min-input",
+  "name": "Blocker Minimum Input",
+  "summary": "When blocked, report exact blocker + attempts made + minimum user input needed. Enable fast unblock without back-and-forth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blocker_min_input",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "When blocked, report exact blocker + attempts made + minimum user input needed",
+        "Enable fast unblock without back-and-forth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blocker-min-input@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blocker-min-input",
+      "url": "https://clawhub.ai/skills/blocker-min-input"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blocker-min-input",
+    "url": "https://clawhub.ai/skills/blocker-min-input",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blocker-min-input-4624088795d64981.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blocker-min-input@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blocker-min-input-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d47b06c0741a3e2324cd73f2a7d67935dde39097a42f36692d54d48ef400c3a",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:08:41.755Z"
+}

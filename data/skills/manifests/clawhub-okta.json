@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21026,
+  "uuid": "skill-clawhub-okta",
+  "skillKey": "clawhub-okta",
+  "name": "Okta",
+  "summary": "Okta integration. Manage Users. Use when the user wants to interact with Okta data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Okta integration",
+        "Manage Users",
+        "Use when the user wants to interact with Okta data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okta@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okta",
+      "url": "https://clawhub.ai/skills/okta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okta",
+    "url": "https://clawhub.ai/skills/okta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okta-65819e198c32566a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okta@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-okta-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dc6e7501a6f3554be5e7beaa86e0f8ca6d155a77046f6becdc6d1c00813cd79",
+      "artifactSizeBytes": 1762
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:18:59.838Z"
+}

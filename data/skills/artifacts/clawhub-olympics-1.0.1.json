@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olympics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olympics",
+  "skill": {
+    "id": 37539,
+    "skillKey": "clawhub-olympics",
+    "name": "Olympics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olympics",
+    "url": "https://clawhub.ai/skills/olympics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olympics-5caddc4c49deec8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on Olympic Games history, sports events, schedules, medal tables, host cities, and famous athletes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295503876,
+      "changelog": "- Simplified and refocused the skill description into a concise knowledge card format.\n- Updated summary and usage instructions for quick reference.\n- Added a table of key facts for easier information access.\n- Included practical usage tips for business and academic scenarios.\n- Provided recommendations for further research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:097c2e9709853653b67ed24cca944e004660ba9d91d4d832c42f6e2efc497fcd"
+}

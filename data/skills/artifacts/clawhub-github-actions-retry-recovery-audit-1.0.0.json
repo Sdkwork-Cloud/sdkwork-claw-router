@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-retry-recovery-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_retry_recovery_audit",
+  "skill": {
+    "id": 27439,
+    "skillKey": "clawhub-github-actions-retry-recovery-audit",
+    "name": "GitHub Actions Retry Recovery Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-retry-recovery-audit",
+    "url": "https://clawhub.ai/skills/github-actions-retry-recovery-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-retry-recovery-audit-811720973797ecf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions runs for fail-then-success retry recovery patterns to quantify flaky rerun waste."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772817557282,
+      "changelog": "Initial release of github-actions-retry-recovery-audit.\n\n- Audits GitHub Actions workflow run JSON exports for fail-then-success retry patterns.\n- Groups runs by repository, workflow, branch, and commit.\n- Calculates wasted minutes from retries before a success.\n- Configurable reporting (text or JSON), filters, and fail gates based on waste thresholds.\n- Provides output suitable for dashboards and CI enforcement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:debd4a5134fbd77859c3670f82ceaf4f0177e497a11ba6566803d770ef57df3c"
+}

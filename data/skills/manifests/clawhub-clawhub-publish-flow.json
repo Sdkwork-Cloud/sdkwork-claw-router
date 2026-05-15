@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23631,
+  "uuid": "skill-clawhub-clawhub-publish-flow",
+  "skillKey": "clawhub-clawhub-publish-flow",
+  "name": "clawhub-publish-flow",
+  "summary": "Publish or update an OpenClaw skill on ClawHub using the local authenticated ClawHub session and direct API upload. Use when the user wants to publish a new...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G-Hanasq",
+      "features": [
+        "Publish or update an OpenClaw skill on ClawHub using the local authenticated ClawHub session an.",
+        "Use when the user wants to publish a new..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publish-flow@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74138794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publish-flow",
+      "url": "https://clawhub.ai/skills/clawhub-publish-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-flow",
+    "url": "https://clawhub.ai/skills/clawhub-publish-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-flow-a2917165afd8268a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publish-flow@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publish-flow-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8cc200251e5419f58f5a6973b065596161d1fe96e2b4463eebec2ad0c61d71b",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:13:57.880Z"
+}

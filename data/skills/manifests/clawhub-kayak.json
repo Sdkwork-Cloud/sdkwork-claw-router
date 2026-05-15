@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60251,
+  "uuid": "skill-clawhub-kayak",
+  "skillKey": "clawhub-kayak",
+  "name": "Kayak",
+  "summary": "KAYAK 旅行搜索平台指南",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kayak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "KAYAK 旅行搜索平台指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kayak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kayak",
+      "url": "https://clawhub.ai/skills/kayak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kayak",
+    "url": "https://clawhub.ai/skills/kayak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kayak-9e2bce7d425e3aa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kayak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kayak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032ea40f9ae944011cf5244227c4170a980b90400fb4a03a52e7cca84fa206a2",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:11:07.179Z"
+}

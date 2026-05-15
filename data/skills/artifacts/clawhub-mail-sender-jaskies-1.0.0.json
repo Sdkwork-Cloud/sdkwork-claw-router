@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mail-sender-jaskies@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail_sender_jaskies",
+  "skill": {
+    "id": 58301,
+    "skillKey": "clawhub-mail-sender-jaskies",
+    "name": "Mail Sender (Jaskies)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail-sender-jaskies",
+    "url": "https://clawhub.ai/skills/mail-sender-jaskies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-sender-jaskies-bcbff8504235237a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gửi email qua giao thức SMTP. Hỗ trợ tùy chỉnh tiêu đề, nội dung và người nhận. Yêu cầu cấu hình tài khoản email (như Gmail App Password) để hoạt động."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaskies",
+      "userId": "s171rw4dgsj7r2amq25j89gmfs83v7he",
+      "displayName": "Trần Anh Vũ",
+      "image": "https://avatars.githubusercontent.com/u/19165770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773311427428,
+      "changelog": "Bổ sung hướng dẫn chi tiết cách tạo Gmail App Password.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1e0c43b5c50d907a28f718bb293268a9c8738ad20a811a5386e710bf342b69a"
+}

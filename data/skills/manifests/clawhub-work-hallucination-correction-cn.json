@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62471,
+  "uuid": "skill-clawhub-work-hallucination-correction-cn",
+  "skillKey": "clawhub-work-hallucination-correction-cn",
+  "name": "工作幻觉纠偏",
+  "summary": "工作幻觉纠偏 primary symptom alias route into Official VeriClaw. 如果你的真实目标是官方公共安装入口，先安装 `vericlaw`；这个页面优先承接 工作幻觉纠偏、AI工作幻觉、工作幻觉 和 幻觉纠偏 这些症状词，再映射回官方主 skill。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_hallucination_correction_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheygoodbai",
+      "features": [
+        "工作幻觉纠偏 primary symptom alias route into Official VeriClaw",
+        "如果你的真实目标是官方公共安装入口，先安装 `vericlaw`；这个页面优先承接 工作幻觉纠偏、AI工作幻觉、工作幻觉 和 幻觉纠偏 这些症状词，再映射回官方主 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/work-hallucination-correction-cn@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143479205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "work-hallucination-correction-cn",
+      "url": "https://clawhub.ai/skills/work-hallucination-correction-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-hallucination-correction-cn",
+    "url": "https://clawhub.ai/skills/work-hallucination-correction-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-hallucination-correction-cn-013b94b80612f00e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/work-hallucination-correction-cn@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-work-hallucination-correction-cn-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8232e159e70c95d8e551b7981e26aa34584c7fd97d52af90d624847da696c330",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T10:46:51.406Z"
+}

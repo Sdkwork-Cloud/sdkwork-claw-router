@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53015,
+  "uuid": "skill-clawhub-opencli-autofix",
+  "skillKey": "clawhub-opencli-autofix",
+  "name": "opencli-autofix",
+  "summary": "Automatically fix broken OpenCLI adapters when commands fail. Load this skill when an opencli command fails — it guides you through diagnosing the failure vi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_autofix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chang",
+      "features": [
+        "Automatically fix broken OpenCLI adapters when commands fail",
+        "Load this skill when an opencli command fails — it guides you through diagnosing the failure vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencli-autofix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79965108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencli-autofix",
+      "url": "https://clawhub.ai/skills/opencli-autofix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-autofix",
+    "url": "https://clawhub.ai/skills/opencli-autofix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-autofix-1255dc7e540b63f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencli-autofix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencli-autofix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2295f55ecbdebf053d5b74edff9db78df8dc1f3d115371571de1842a00785a8",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T08:19:17.225Z"
+}

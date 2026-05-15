@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-draw@0.9.20",
+  "version": "0.9.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_draw",
+  "skill": {
+    "id": 14635,
+    "skillKey": "clawhub-claw-draw",
+    "name": "Claw Draw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-draw",
+    "url": "https://clawhub.ai/skills/claw-draw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-draw-8f8ba09c37e24fe2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create algorithmic art on ClawDraw's infinite multiplayer canvas. Use when asked to draw, paint, create visual art, generate patterns, or make algorithmic ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kajukabla",
+      "userId": "publishers:kajukabla",
+      "displayName": "kajukabla",
+      "image": "https://avatars.githubusercontent.com/u/106099463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1012,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.9.20",
+      "createdAt": 1772835006077,
+      "changelog": "Image placement command (clawdraw image), image generation commands (inspect-area, propose-pgs, generate with extend/insert/modify tools)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9356ec023591036255093d72ffdc1245865386cf3a6af4227d55b7acf43f7b4"
+}

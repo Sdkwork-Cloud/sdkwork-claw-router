@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15556,
+  "uuid": "skill-clawhub-ollama-model-tuner",
+  "skillKey": "clawhub-ollama-model-tuner",
+  "name": "Ollama Model Tuner",
+  "summary": "Locally fine-tune Ollama models, prompts, and LoRAs using custom datasets and evaluation metrics without requiring cloud resources.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_model_tuner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Goroni",
+      "features": [
+        "Locally fine-tune Ollama models, prompts, and LoRAs using custom datasets and evaluation metric."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-model-tuner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86142972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-model-tuner",
+      "url": "https://clawhub.ai/skills/ollama-model-tuner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-model-tuner",
+    "url": "https://clawhub.ai/skills/ollama-model-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-model-tuner-79b9d8160398c9a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-model-tuner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-model-tuner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebb16c0373ddf0282ad2a25a02c3f8779213577c3573513462309e9539130793",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T14:41:35.700Z"
+}

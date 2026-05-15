@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-supply-chain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_supply_chain",
+  "skill": {
+    "id": 14009,
+    "skillKey": "clawhub-afrexai-supply-chain",
+    "name": "Supply Chain Risk Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-supply-chain",
+    "url": "https://clawhub.ai/skills/afrexai-supply-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-supply-chain-953bfa5c3c74cdf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze supplier risks, map dependencies, score vulnerabilities, and generate data-driven mitigation plans with risk dashboards and scenario modeling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1247,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770997401306,
+      "changelog": "Supply Chain Risk Monitor 1.0.0 — Initial Release\n\n- Maps supply chain dependencies and highlights tier-based concentration risks.\n- Scores supplier vulnerabilities based on geography, sourcing, lead time, financials, and compliance.\n- Generates risk mitigation plans, including diversification and inventory strategies.\n- Produces dashboards with heat maps, supplier scorecards, and disruption scenarios.\n- Includes a risk scoring framework and disruption cost formula for consistent evaluations.\n- Offers executive summaries, scenario analysis, and actionable mitigation roadmaps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c79e16c35c112ab3f5a9135ffb16cf6da7e01517fe0dec38824769f85f652bd3"
+}

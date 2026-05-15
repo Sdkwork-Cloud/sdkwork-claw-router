@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-music-ultra@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_music_ultra",
+  "skill": {
+    "id": 20179,
+    "skillKey": "clawhub-youtube-music-ultra",
+    "name": "Youtube Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-music-ultra",
+    "url": "https://clawhub.ai/skills/youtube-music-ultra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-music-ultra-1897834bbd199025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control YouTube Music with natural language. Play, pause, skip, search, manage playlists, and queue tracks. Full playback control via browser automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oki3505f",
+      "userId": "s172b99x0vgz561j4w455a82b983hkgr",
+      "displayName": "om yarewara",
+      "image": "https://avatars.githubusercontent.com/u/186946154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772118481337,
+      "changelog": "Major update with extensive documentation and feature overview.\n\n- Added comprehensive SKILL.md with detailed usage, commands, configuration, and advanced features.\n- Clarified playback, search, playlist, queue, and information command syntax.\n- Documented browser automation with OpenClaw, error handling, and dynamic selector use.\n- Listed advanced and planned features, limitations, and example interactions.\n- Included quick start info, testing instructions, and dependency notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95a33cac71312626b47d17aaca418cad1fb702f2e7e284f6d972c5139a6cfd17"
+}

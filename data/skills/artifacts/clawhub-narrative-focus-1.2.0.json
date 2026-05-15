@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/narrative-focus@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.narrative_focus",
+  "skill": {
+    "id": 53083,
+    "skillKey": "clawhub-narrative-focus",
+    "name": "Narrative Focus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "narrative-focus",
+    "url": "https://clawhub.ai/skills/narrative-focus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/narrative-focus-28e98d3beaf1ba02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Narrative Focus — detect and fix \"narrative weight misalignment\" in technical tutorials and interview prep articles. Trigger when users ask to review technic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "co-kyo",
+      "userId": "s1715ak03q4mxp7cmxy628tpjx85es9m",
+      "displayName": "Co-Kyo",
+      "image": "https://avatars.githubusercontent.com/u/76800873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777092472363,
+      "changelog": "**Expanded to support narrative focus detection and correction in technical tutorials and interview prep articles, with improved guidance for correct proposition analysis.**\n\n- Now explicitly targets technical tutorials, deep dives, interview prep, and framework comparison articles; excludes API references, news, and non-technical content.\n- Substitution test clarified: requires proposition identification before substitution, with examples and guidance for granular analysis.\n- Added role label examples and proposition granularity guide (references/proposition-granularity-guide.md).\n- Post-processing mode now includes an authoritative verification step: all corrections are checked against official sources; unfixable semantic errors are reported to the user.\n- Added bilingual (EN/zh-CN) documentation files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ae19ac41f09754111e21e176584644add4ae8800a28e1fc471099bad9aa5c13"
+}

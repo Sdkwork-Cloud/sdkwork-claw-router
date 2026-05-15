@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usd1transaction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usd1transaction",
+  "skill": {
+    "id": 13715,
+    "skillKey": "clawhub-usd1transaction",
+    "name": "USD1 Transaction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usd1transaction",
+    "url": "https://clawhub.ai/skills/usd1transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usd1transaction-a558bf97eafed7d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely transfer USD1 (USDC on Wormhole) between wallets using Wormhole Liquidity Facility on Testnet by default."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asgherali",
+      "userId": "publishers:asgherali",
+      "displayName": "AsgherAli",
+      "image": "https://avatars.githubusercontent.com/u/35127781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770314746965,
+      "changelog": "Initial release of USD1 WLF Transfer Skill.\n\n- Enables secure transfer of USD1 (USDC on Wormhole) between wallets via Wormhole Liquidity Facility.\n- Supports Testnet by default for safer testing.\n- Allows balance checking, transaction sending, and returns transaction hash, status, and detailed messages.\n- Requires sender’s private key and recipient address as input.\n- Emphasizes secure handling of private keys and testnet-only usage until production.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09ad86012dd69471ab74a07c502835f4c3f43941be8d0343dafbee735a509661"
+}

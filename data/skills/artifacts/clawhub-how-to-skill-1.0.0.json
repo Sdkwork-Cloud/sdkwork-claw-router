@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/how-to-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.how_to_skill",
+  "skill": {
+    "id": 23431,
+    "skillKey": "clawhub-how-to-skill",
+    "name": "How To Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "how-to-skill",
+    "url": "https://clawhub.ai/skills/how-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/how-to-skill-bb9856ab9f3cfb6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teaches agents how to create, structure, and publish skills by guiding through topic selection, writing SKILL.md, trigger phrases, and advanced strategies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "potdealer",
+      "userId": "s172y9vn3tdh7z86b9q2yyy4r983ebrg",
+      "displayName": "Potdealer",
+      "image": "https://avatars.githubusercontent.com/u/172426319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772037185972,
+      "changelog": "- Initial release of \"how-to-skill\": a concise, humorous guide on how to create and publish new skills.\n- Includes step-by-step instructions, formatting guidance for SKILL.md, and tips on triggers and publishing.\n- Offers advanced strategies such as wrapper, bundle, and meta skills.\n- Frequently asked questions and real talk section for additional clarity and entertainment.\n- Created by potdealer x Ollie.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:911e9a42a4559c03b9d6d5a9b19128217d5702d0bb9259eca7b64760ad6ca564"
+}

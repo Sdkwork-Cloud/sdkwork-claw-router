@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "mult-call",
+    "displayName": "Mult Call",
+    "summary": "多路召回skill ,用于将意图识别skill中的指标和维度信息进行分析，通过向量知识库召回QA问答对，通过图数据库召回表的定义结构。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773710927770,
+    "updatedAt": 1778310516156
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773710927770,
+    "changelog": "Summary: Initial public release for multi_call skill, enabling multi-path recall of QA pairs and table schema based on intent recognition results.\n\n- Retrieves QA pairs using a vector knowledge base (Milvus) and table definitions using a graph database (Neo4j).\n- Extracts and analyzes metric and dimension information from recognized intent outputs.\n- Outputs include table DDL structure and similar QA pairs, with configurable recall weights for each data source.\n- Independent failure handling: gracefully degrades if either Milvus or Neo4j service fails.\n- Includes .env configuration for service credentials and supports standalone execution from the command line.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "lovenervermore",
+    "userId": "s179eehz3gk12qcjky3an7t6sx83pxjj",
+    "displayName": "LoveNerverMore",
+    "image": "https://avatars.githubusercontent.com/u/68802221?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310516156
+  }
+}

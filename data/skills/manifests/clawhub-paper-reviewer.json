@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70028,
+  "uuid": "skill-clawhub-paper-reviewer",
+  "skillKey": "clawhub-paper-reviewer",
+  "name": "Paper Reviewer",
+  "summary": "论文审稿专家 - 中英文论文的学术评审，从研究意义、创新性、研究价值、写作水平等多维度评估。生成详细的审稿意见和修改建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "中英文论文的学术评审，从研究意义、创新性、研究价值、写作水平等多维度评估。生成详细的审稿意见和修改建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-reviewer",
+      "url": "https://clawhub.ai/skills/paper-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reviewer",
+    "url": "https://clawhub.ai/skills/paper-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reviewer-865ca5df8290d808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c59304195470a742ab055f91e19c92f1ce547b403eeb86c4f226c20237f987ed",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T15:48:48.109Z"
+}

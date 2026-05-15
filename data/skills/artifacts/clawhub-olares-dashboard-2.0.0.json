@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olares-dashboard@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olares_dashboard",
+  "skill": {
+    "id": 53105,
+    "skillKey": "clawhub-olares-dashboard",
+    "name": "Olares Dashboard (olares-cli dashboard)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olares-dashboard",
+    "url": "https://clawhub.ai/skills/olares-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olares-dashboard-8d7b9bd5201a210f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "olares-cli dashboard command tree — AI-agent-oriented mirror of the dashboard SPA's Overview2 + Applications2 routes. Covers: the strict dual-shape JSON enve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengpeng",
+      "userId": "s174507xmb894228wwnc0z209s85vcfx",
+      "displayName": "Peng Peng",
+      "image": "https://avatars.githubusercontent.com/u/921131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777555415497,
+      "changelog": "Automated publish from cli/skills/publish.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5dd1e28542bef824e992a1472d89665305cbd4eb64df01405cbbf6c46f7d4c9"
+}

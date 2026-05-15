@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heath-bar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heath_bar",
+  "skill": {
+    "id": 65509,
+    "skillKey": "clawhub-heath-bar",
+    "name": "Heath Bar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heath-bar",
+    "url": "https://clawhub.ai/skills/heath-bar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heath-bar-c51094a8cd80a453.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Heath Bar品牌历史、行业地位、核心竞争力及投资价值的深入分析与解读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 33,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778367865780,
+      "changelog": "Heath Bar skill version 1.0.0 initial release:\n\n- Introduces a detailed overview of Heath Bar’s history and brand development from its Illinois origin to Hershey ownership.\n- Outlines Heath Bar’s core business model and unique competitive advantages in the toffee-chocolate bar and baking ingredient markets.\n- Summarizes major historical milestones and product evolution, including key acquisition events.\n- Highlights lesser-known facts about product development and market differentiation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46610735fd2558ff83f2a72d11ca53f67b1fa2a4cda07932195bdd5b8f2e642b"
+}

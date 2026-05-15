@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/selenium-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.selenium_browser",
+  "skill": {
+    "id": 34993,
+    "skillKey": "clawhub-selenium-browser",
+    "name": "Selenium Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "selenium-browser",
+    "url": "https://clawhub.ai/skills/selenium-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/selenium-browser-4c893436d6ed34d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start a Selenium‑controlled Chrome browser, open a URL, take a screenshot, and report progress. Supports headless mode and optional proxy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreybespalov89",
+      "userId": "publishers:andreybespalov89",
+      "displayName": "Andrei Bespalov",
+      "image": "https://avatars.githubusercontent.com/u/68327988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 783,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772188738593,
+      "changelog": "Initial release of selenium-browser skill.\n\n- Launches a Selenium-controlled Chrome (or Chromium) browser.\n- Opens a specified URL, takes a screenshot, and saves it.\n- Supports headless mode and optional proxy configuration.\n- Reports screenshot location or errors back to the chat.\n- Includes user instructions, script examples, and troubleshooting notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43b67f18450e62a0b64a677d49238e3d11f1f08ccbadfdcdf474e6c3cddb4e09"
+}

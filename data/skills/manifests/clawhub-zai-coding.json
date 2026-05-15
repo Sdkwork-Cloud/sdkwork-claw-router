@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38847,
+  "uuid": "skill-clawhub-zai-coding",
+  "skillKey": "clawhub-zai-coding",
+  "name": "Z.AI Coding Plan Setup",
+  "summary": "Configure OpenClaw to use Z.AI GLM Coding Plan models with optimal settings, region selection, API key setup, model choice, and MCP tools for enhanced coding...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_coding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nelmaz",
+      "features": [
+        "Configure OpenClaw to use Z.AI GLM Coding Plan models with optimal settings, region selection,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zai-coding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12268467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zai-coding",
+      "url": "https://clawhub.ai/skills/zai-coding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-coding",
+    "url": "https://clawhub.ai/skills/zai-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-coding-e9683485814f5909.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zai-coding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zai-coding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ff5afa50e54a505ff8e0fa73de820b1181f0bbb471219d2459e6f5a93c57e07",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:08:38.076Z"
+}

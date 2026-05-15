@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69653,
+  "uuid": "skill-clawhub-tencentcloud-cos-skills",
+  "skillKey": "clawhub-tencentcloud-cos-skills",
+  "name": "Tencent Cloud COS",
+  "summary": "腾讯云对象存储(COS)和数据万象(CI)集成技能。覆盖文件存储管理、AI处理和知识库三大核心场景。 存储场景：上传文件到云端、下载云端文件、批量管理存储桶文件、获取文件签名链接分享、查看文件元信息。 图片处理场景：图片质量评估打分、AI超分辨率放大、AI智能裁剪、二维码/条形码识别、添加文字水印、获取图片EXI...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_cos_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShawnmZhang",
+      "features": [
+        "腾讯云对象存储(COS)和数据万象(CI)集成技能。覆盖文件存储管理、AI处理和知识库三大核心场景。 存储场景：上传文件到云端、下载云端文件、批量管理存储桶文件、获取文件签名链接分享、查看文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-cos-skills@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31064728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-cos-skills",
+      "url": "https://clawhub.ai/skills/tencentcloud-cos-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-cos-skills",
+    "url": "https://clawhub.ai/skills/tencentcloud-cos-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-cos-skills-d5ef8b14722a85ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-cos-skills@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-cos-skills-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccb80991925e984141980cb5c2c1433811df16baf71a49c8070a888987a4c853",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:20:13.520Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freebeatfit-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freebeatfit_ai",
+  "skill": {
+    "id": 41298,
+    "skillKey": "clawhub-freebeatfit-ai",
+    "name": "Freebeat Music Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freebeatfit-ai",
+    "url": "https://clawhub.ai/skills/freebeatfit-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freebeatfit-ai-a62e5c7ebbd3d469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music videos from any MCP client. Turn text prompts into cinematic music videos with multiple styles and modes. Existing features include charact..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "d3ter28",
+      "userId": "s17d7mqzer1st2p4qy045psbj584pmbc",
+      "displayName": "d3ter28",
+      "image": "https://avatars.githubusercontent.com/u/250344417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776154445831,
+      "changelog": "- Expanded the skill description to explicitly cover generating AI music videos from any MCP client, text-to-video, cinematic styles, character consistency, lip-sync, and special effects.\n- No changes to code or workflow logic.\n- Documentation now emphasizes advanced features and broader use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:016b051b436d6e0ae7aa9ec92c268ceef9e008de6f00a653f5a34e793bf8fb6a"
+}

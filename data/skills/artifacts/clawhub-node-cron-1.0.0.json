@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/node-cron@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_cron",
+  "skill": {
+    "id": 55883,
+    "skillKey": "clawhub-node-cron",
+    "name": "Node Cron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-cron",
+    "url": "https://clawhub.ai/skills/node-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-cron-b4ba5abd2d3cfc5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Node.js cron job scheduling with the `cron` npm package. Use when the user needs to schedule recurring tasks, create cron jobs, validate cron expressions, se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778040496206,
+      "changelog": "Initial release of node-cron skill.\n\n- Provides concise guidance for scheduling cron jobs in Node.js using the `cron` npm package.\n- Documents six-field (second-precision) cron patterns and syntax.\n- Details the CronJob class, including constructor parameters, methods, and properties.\n- Includes common scheduling examples and recommended usage patterns.\n- Offers utility functions for validating cron expressions and calculating next run times.\n- Notes differences from standard Unix cron and important migration gotchas.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2867790d45042fb8ef942add7aa0c748271699de8190b02c9fea2c4b440bcb41"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rsshub-route-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsshub_route_generator",
+  "skill": {
+    "id": 60937,
+    "skillKey": "clawhub-rsshub-route-generator",
+    "name": "RSSHub Route Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsshub-route-generator",
+    "url": "https://clawhub.ai/skills/rsshub-route-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsshub-route-generator-3d884307c7dd430c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析任意网站结构，自动生成符合 RSSHub 规范的路由 TypeScript 代码及栏目和文章选择器配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benzking",
+      "userId": "s17eytpmak0fh78xhm4nyk35hh841jw4",
+      "displayName": "benzking",
+      "image": "https://avatars.githubusercontent.com/u/2979921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775808321130,
+      "changelog": "- Initial release of RSSHub 路由生成器.\n- Analyzes any website's structure to generate RSSHub-compliant route code files.\n- Supports auto-detection of article lists, full-text RSS (optional), and RSSHub Radar rules.\n- Offers a detailed website analysis report alongside usable TypeScript route code.\n- Activates via specific trigger phrases or direct website URLs.\n- Follows best practices for crawler routing, error handling, and code organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6804497597355c34eb97ea50dd29c5eb38fb6bdbaaa7b6a4269605649ae4a975"
+}

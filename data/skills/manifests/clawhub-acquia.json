@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30616,
+  "uuid": "skill-clawhub-acquia",
+  "skillKey": "clawhub-acquia",
+  "name": "Acquia",
+  "summary": "Acquia integration. Manage data, records, and automate workflows. Use when the user wants to interact with Acquia data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acquia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Acquia integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Acquia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acquia@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acquia",
+      "url": "https://clawhub.ai/skills/acquia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acquia",
+    "url": "https://clawhub.ai/skills/acquia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acquia-8d5946703c3824c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acquia@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-acquia-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f9494763640ca5332b5d9b9bc707472b9d4907dc72f245d9a60b86b942debf2",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:47.152Z"
+}

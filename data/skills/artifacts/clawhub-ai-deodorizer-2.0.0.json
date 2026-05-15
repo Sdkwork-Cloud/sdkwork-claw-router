@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-deodorizer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_deodorizer",
+  "skill": {
+    "id": 39077,
+    "skillKey": "clawhub-ai-deodorizer",
+    "name": "Ai-Deodorizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-deodorizer",
+    "url": "https://clawhub.ai/skills/ai-deodorizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-deodorizer-a2c3ae8e50c8b9c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text, making it sound more natural and human-written. Based on 25 AI writing pattern detectors + two-round rewritin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xx235300",
+      "userId": "s174wnerfygcp6t1w8642p88bx83gkn8",
+      "displayName": "xx235300",
+      "image": "https://avatars.githubusercontent.com/u/66450912?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774846688795,
+      "changelog": "ai-deodorizer 2.0.0 introduces major enhancements and usability improvements:\n\n- Added support for more tools: Grep, Glob, and WebFetch.\n- Documented the full two-round rewriting prompt logic in detail.\n- Introduced and documented granular \"strength modes\" (light, medium, strong) with clear usage and effect.\n- Clarified AI pattern categories and examples in the documentation.\n- Added a README.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46b84847bb4574d448d053ad863e7903fc223a832198783825986e78d4734f61"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anticipation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anticipation",
+  "skill": {
+    "id": 17050,
+    "skillKey": "clawhub-anticipation",
+    "name": "Anticipation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anticipation",
+    "url": "https://clawhub.ai/skills/anticipation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anticipation-24dfc16f0ca60df9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Erkenne Patterns aus User-History und handle proaktiv"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcben90",
+      "userId": "publishers:mcben90",
+      "displayName": "Mcben90",
+      "image": "https://avatars.githubusercontent.com/u/26381418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 781,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771155801741,
+      "changelog": "Anticipation Skill 1.0.0 – Initial release for proactive, pattern-based UX:\n\n- Recognizes user patterns from history to proactively address needs.\n- Incorporates anticipatory UX principles: reduce friction, minimize decision fatigue, and ensure seamless transitions.\n- Provides reactive and adaptive actions based on conversation, open files, commands, and browser-tabs at session start.\n- Predicts user needs using specific behavioral patterns and offers tailored actions.\n- Learns from user responses (success, error, frustration) to improve interactions.\n- Highlights anti-patterns to avoid passive or generic behavior, endorsing specific, context-aware assistance.\n- Outlines roadmap for advanced user intent understanding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d1e5d2ff0c5e6a6ce4ecc29d0f3647047fd112dd2b9866775665f52dabab498"
+}

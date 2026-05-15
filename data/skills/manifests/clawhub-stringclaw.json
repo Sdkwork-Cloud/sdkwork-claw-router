@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22395,
+  "uuid": "skill-clawhub-stringclaw",
+  "skillKey": "clawhub-stringclaw",
+  "name": "Stringclaw",
+  "summary": "Make real phone calls via Stringclaw. Use when the user says 'call me', 'give me a call', 'phone me', or wants to talk by voice. Initiates an outbound voice...",
+  "version": "0.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stringclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oscar W. Halland",
+      "features": [
+        "Make real phone calls via Stringclaw",
+        "Use when the user says 'call me', 'give me a call', 'phone me', or wants to talk by voice",
+        "Initiates an outbound voice..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stringclaw@0.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3245494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stringclaw",
+      "url": "https://clawhub.ai/skills/stringclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stringclaw",
+    "url": "https://clawhub.ai/skills/stringclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stringclaw-01606936adfc75e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stringclaw@0.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-stringclaw-0.0.9.json",
+      "version": "0.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee10e5ae1ba78386d792a9f0867810829f09e6384de8efceed94f108bfff57a0",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:03:25.050Z"
+}

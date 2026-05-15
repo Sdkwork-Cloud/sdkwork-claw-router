@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-esa-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_esa_manage",
+  "skill": {
+    "id": 53409,
+    "skillKey": "clawhub-aliyun-esa-manage",
+    "name": "Aliyun Esa Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-esa-manage",
+    "url": "https://clawhub.ai/skills/aliyun-esa-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-esa-manage-9416138308bcd2eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud ESA — deploy HTML/static sites via Pages, manage Edge Routines (ER) for serverless edge functions, use Edge KV for distribute..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775092621894,
+      "changelog": "Initial release of aliyun-esa-manage skill\n\n- Manage Alibaba Cloud ESA, including Pages (HTML/static site deployment), Edge Routines (serverless edge functions), Edge KV (distributed key-value storage), site management (DNS, cache, certificates), and traffic analytics.\n- Uniformly uses the official Python SDK for all ESA OpenAPI operations.\n- Provides detailed guides and best practices for ESA deployment flows, code/package structure, function naming, edge storage, and API usage.\n- Includes references for quickstart, API documentation, and common operational scripts for inventory or analytics.\n- Supports comprehensive automation and management of ESA resources and configurations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfb6bbf7d12405345254482ecd9c255e73a00b5f0dac141b4816721235d6fb68"
+}

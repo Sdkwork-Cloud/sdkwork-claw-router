@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71634,
+  "uuid": "skill-clawhub-item-management",
+  "skillKey": "clawhub-item-management",
+  "name": "Item Management",
+  "summary": "物品电子信息管理技能。用于记录、整理、查询个人物品数据。触发关键词：物品管理、记录物品、添加物品、物品清单、物品统计、物品到期、物品过期、物品搜索、整理物品、我的物品、物品架、盘点、断舍离、我的物品架、物品架管理、归物、my-item。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.item_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi",
+      "features": [
+        "物品电子信息管理技能。用于记录、整理、查询个人物品数据。触发关键词：物品管理、记录物品、添加物品、物品清单、物品统计、物品到期、物品过期、物品搜索、整理物品、我的物品、物品架、盘点、断舍离、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/item-management@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48824215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "item-management",
+      "url": "https://clawhub.ai/skills/item-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "item-management",
+    "url": "https://clawhub.ai/skills/item-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/item-management-ff1bb545107d6e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/item-management@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-item-management-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2254bd70e89ca25260b28237297e4ff6d35aea9ecba2371364cd6c9c319d8c1c",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:02:25.685Z"
+}

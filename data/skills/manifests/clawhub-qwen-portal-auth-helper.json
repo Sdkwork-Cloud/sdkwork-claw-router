@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26002,
+  "uuid": "skill-clawhub-qwen-portal-auth-helper",
+  "skillKey": "clawhub-qwen-portal-auth-helper",
+  "name": "Qwen Portal Auth Helper",
+  "summary": "Automate qwen-portal OAuth authentication - solves the interactive TTY problem with tmux, provides monitoring and recovery tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_portal_auth_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jazzqi",
+      "features": [
+        "Automate qwen-portal OAuth authentication",
+        "solves the interactive TTY problem with tmux, provides monitoring and recovery tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-portal-auth-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1389319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-portal-auth-helper",
+      "url": "https://clawhub.ai/skills/qwen-portal-auth-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-portal-auth-helper",
+    "url": "https://clawhub.ai/skills/qwen-portal-auth-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-portal-auth-helper-6cfbd2fd7c189000.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-portal-auth-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-portal-auth-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a52fbb646060bc3e1b4b3629f2c0572e690bbc67fc0497c255d8ad336b7133b9",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:05:43.535Z"
+}

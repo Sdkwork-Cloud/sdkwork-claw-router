@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68511,
+  "uuid": "skill-clawhub-silver",
+  "skillKey": "clawhub-silver",
+  "name": "Silver Price Inquiry - 白银价格查询",
+  "summary": "查询国内白银期货/现货相关及伦敦银等参考行情。当用户说：白银现在什么价？伦敦银涨跌多少？或类似白银价格问题时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "查询国内白银期货/现货相关及伦敦银等参考行情。当用户说：白银现在什么价？伦敦银涨跌多少？或类似白银价格问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silver@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silver",
+      "url": "https://clawhub.ai/skills/silver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silver",
+    "url": "https://clawhub.ai/skills/silver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silver-78cde64c3e47f2cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silver@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-silver-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a124ebe62319756e3512bc1d7ff7df08c3f2a0567c18415f257b43ab283b0bb6",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:50:25.156Z"
+}

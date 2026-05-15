@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44274,
+  "uuid": "skill-clawhub-memorable-image-gen",
+  "skillKey": "clawhub-memorable-image-gen",
+  "name": "Memorable Image Generator",
+  "summary": "Science-backed image generation agent that scores and optimizes images for memorability using ResMem (Brain Bridge Lab, University of Chicago) before returni...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memorable_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kiwi-phantomworks",
+      "features": [
+        "Science-backed image generation agent that scores and optimizes images for memorability using R."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memorable-image-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270056198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memorable-image-gen",
+      "url": "https://clawhub.ai/skills/memorable-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memorable-image-gen",
+    "url": "https://clawhub.ai/skills/memorable-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memorable-image-gen-05e39a978312b68f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memorable-image-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memorable-image-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ffd0109c85989bf2d88990a31dd742068928bda8c0eaad95fc311d82dd064be",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:57:33.099Z"
+}

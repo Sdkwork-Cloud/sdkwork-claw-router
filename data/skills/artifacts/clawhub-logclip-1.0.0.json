@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logclip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logclip",
+  "skill": {
+    "id": 45296,
+    "skillKey": "clawhub-logclip",
+    "name": "Logclip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logclip",
+    "url": "https://clawhub.ai/skills/logclip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logclip-e29ed13f99e8458b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and reformat timestamped log entries from text within a specified date range using custom patterns and output formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776331223788,
+      "changelog": "Initial release of LogClip.\n\n- Enables filtering of timestamped log entries between specific date ranges from raw or unstructured log text.\n- Supports custom timestamp patterns for flexible log parsing.\n- Allows output timestamp reformatting with user-defined formats.\n- Works with both stdin and file inputs for convenient integration.\n- Simple command-line interface for fast and easy usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:613e8f9493621a4e636b5754851c52dfa57d87d2dde8c681af124bd369fad0fe"
+}

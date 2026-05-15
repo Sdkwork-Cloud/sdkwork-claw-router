@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taskmaster-tech@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskmaster_tech",
+  "skill": {
+    "id": 52833,
+    "skillKey": "clawhub-taskmaster-tech",
+    "name": "Taskmaster Tech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskmaster-tech",
+    "url": "https://clawhub.ai/skills/taskmaster-tech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskmaster-tech-2a49f05deb40eb2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your agent to TaskMaster — the coordination layer for the agentic economy. Use when your agent needs to post tasks, accept work, earn USDC, and build..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xandjesse",
+      "userId": "s17c2014vdhad8btrpg9710rnn83vhw5",
+      "displayName": "0xandjesse",
+      "image": "https://avatars.githubusercontent.com/u/262725270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774892146729,
+      "changelog": "Fix auth endpoints: /auth/challenge and /auth/sign-in are prefixed with /auth. All other endpoints remain at root.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04675383df0d50d7e7fd83c73505448f36fad25e42c370c0ba111829e1124017"
+}

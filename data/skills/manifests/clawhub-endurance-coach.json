@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10079,
+  "uuid": "skill-clawhub-endurance-coach",
+  "skillKey": "clawhub-endurance-coach",
+  "name": "Endurance Coach",
+  "summary": "Create personalized triathlon, marathon, and ultra-endurance training plans. Use when athletes ask for training plans, workout schedules, race preparation, or coaching advice. Can sync with Strava to analyze training history, or work from.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.endurance_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiv19",
+      "features": [
+        "Create personalized triathlon, marathon, and ultra-endurance training plans",
+        "Use when athletes ask for training plans, workout schedules, race preparation, or coaching advi.",
+        "Can sync with Strava to analyze training history, or work from manually provided fitness data",
+        "Generates periodized plans with sport-specific workouts, zones, and race-day strategies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/endurance-coach@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9407019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "endurance-coach",
+      "url": "https://clawhub.ai/skills/endurance-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "endurance-coach",
+    "url": "https://clawhub.ai/skills/endurance-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/endurance-coach-4cd69e7c9a1c5695.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/endurance-coach@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-endurance-coach-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8e6fd015f94f1f2aba388378f5331506d9d107fa1a8667ff114055bc4014274",
+      "artifactSizeBytes": 2693
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T07:24:55.855Z"
+}

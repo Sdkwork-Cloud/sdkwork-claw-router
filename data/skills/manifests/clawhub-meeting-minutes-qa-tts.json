@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27444,
+  "uuid": "skill-clawhub-meeting-minutes-qa-tts",
+  "skillKey": "clawhub-meeting-minutes-qa-tts",
+  "name": "meeting-minutes-qa-tts",
+  "summary": "Read meeting minutes, produce a short summary with the current conversation model, save the meeting text and summary into local memory, answer follow-up ques...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_qa_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "曹广雨",
+      "features": [
+        "Read meeting minutes, produce a short summary with the current conversation model, save the mee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-minutes-qa-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182621823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-minutes-qa-tts",
+      "url": "https://clawhub.ai/skills/meeting-minutes-qa-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-qa-tts",
+    "url": "https://clawhub.ai/skills/meeting-minutes-qa-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-qa-tts-c7474912b7d97149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-minutes-qa-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-qa-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09b603d953df2316cc2935dec4d40a6bdbf368e10f5ae335bfff2e373397a4d3",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:35:33.515Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57512,
+  "uuid": "skill-clawhub-tcm-clinic",
+  "skillKey": "clawhub-tcm-clinic",
+  "name": "中医诊所管理系统",
+  "summary": "A full-featured management tool for solo Traditional Chinese Medicine (TCM) practitioners. Manages patient records, medical charts (Four Diagnostic Methods,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcm_clinic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phal studio",
+      "features": [
+        "A full-featured management tool for solo Traditional Chinese Medicine (TCM) practitioners",
+        "Manages patient records, medical charts (Four Diagnostic Methods,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcm-clinic@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcm-clinic",
+      "url": "https://clawhub.ai/skills/tcm-clinic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcm-clinic",
+    "url": "https://clawhub.ai/skills/tcm-clinic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcm-clinic-b749ee0bf43d0e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcm-clinic@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcm-clinic-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63e404f3adc6b6a8a7cbb676b572f62989e8be098f1d3b4cf5d75414617f970d",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T09:32:44.317Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64705,
+  "uuid": "skill-clawhub-intent-translator",
+  "skillKey": "clawhub-intent-translator",
+  "name": "Intent Translation Skill",
+  "summary": "引导用户表达模糊想法，挖掘真实需求，生成结构化指令，帮助AI精准理解和执行用户意图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wesley138cn",
+      "features": [
+        "引导用户表达模糊想法，挖掘真实需求，生成结构化指令，帮助AI精准理解和执行用户意图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197040006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-translator",
+      "url": "https://clawhub.ai/skills/intent-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-translator",
+    "url": "https://clawhub.ai/skills/intent-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-translator-d646546f89db63ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:845758c6fc094add8ac82d27ce5ceb2339ee9d53bb6f824501efb6eaa8e5b8d6",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:48:47.025Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57331,
+  "uuid": "skill-clawhub-doubao-ai-image",
+  "skillKey": "clawhub-doubao-ai-image",
+  "name": "豆包AI图像生成",
+  "summary": "Generate free AI images via Doubao web interface using automated browser interaction for detailed and styled visual content without API costs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_ai_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FANXI-JU",
+      "features": [
+        "Generate free AI images via Doubao web interface using automated browser interaction for detail."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-ai-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242884535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-ai-image",
+      "url": "https://clawhub.ai/skills/doubao-ai-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-ai-image",
+    "url": "https://clawhub.ai/skills/doubao-ai-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-ai-image-c5e248c0a1877764.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-ai-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-ai-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5e84b93193c9adcbd2a32ce35d74375e20079c40d4de6f15a1e5e0bcce64fe1",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:35:04.790Z"
+}

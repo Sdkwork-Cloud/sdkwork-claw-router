@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17257,
+  "uuid": "skill-clawhub-comprehensive-tech-documentation",
+  "skillKey": "clawhub-comprehensive-tech-documentation",
+  "name": "Comprehensive Tech Documentation",
+  "summary": "Creates layered, comprehensive technical documentation for projects, skills, or systems. Use when user requests 'write technical documentation', 'explain how...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comprehensive_tech_documentation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuxxxu",
+      "features": [
+        "Creates layered, comprehensive technical documentation for projects, skills, or systems",
+        "Use when user requests 'write technical documentation', 'explain how..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comprehensive-tech-documentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96455140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comprehensive-tech-documentation",
+      "url": "https://clawhub.ai/skills/comprehensive-tech-documentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comprehensive-tech-documentation",
+    "url": "https://clawhub.ai/skills/comprehensive-tech-documentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comprehensive-tech-documentation-05fc7f05bc949788.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comprehensive-tech-documentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comprehensive-tech-documentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4b5f602e34c7796fd100e7be5a18a502ece8e4fdfb7e50bc61237cdf5079f74",
+      "artifactSizeBytes": 2655
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T13:28:00.023Z"
+}

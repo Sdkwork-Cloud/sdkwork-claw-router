@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fridge@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fridge",
+  "skill": {
+    "id": 26030,
+    "skillKey": "clawhub-fridge",
+    "name": "Fridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fridge",
+    "url": "https://clawhub.ai/skills/fridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fridge-997bc249599b7419.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track fridge and pantry inventory with expiry reminders and grocery lists. Use when logging groceries, checking expiry dates, or building shopping lists."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773798389665,
+      "changelog": "v2.5 retry: desc+homepage+source+security",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9e04a8b31b8bc5516552f52bebdcac46f5626cd16a7cf2cc31eae40e56839ab"
+}

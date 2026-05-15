@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30937,
+  "uuid": "skill-clawhub-online-price-comparison",
+  "skillKey": "clawhub-online-price-comparison",
+  "name": "ShopGeni",
+  "summary": "AI-powered shopping assistant. Search for products by text or image, and find the best prices across Amazon, Google Shopping, and brand stores.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_price_comparison",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jun Liu",
+      "features": [
+        "AI-powered shopping assistant",
+        "Search for products by text or image, and find the best prices across Amazon, Google Shopping,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/online-price-comparison@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8846616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "online-price-comparison",
+      "url": "https://clawhub.ai/skills/online-price-comparison"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-price-comparison",
+    "url": "https://clawhub.ai/skills/online-price-comparison",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-price-comparison-31bd036e6b2a2a40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/online-price-comparison@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-online-price-comparison-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21c63741174cb004a8edbdc504dda4093878067da0e585b852a04072ac5d4941",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T15:52:50.661Z"
+}

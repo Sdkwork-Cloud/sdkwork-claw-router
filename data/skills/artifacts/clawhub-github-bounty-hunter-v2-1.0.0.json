@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-bounty-hunter-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bounty_hunter_v2",
+  "skill": {
+    "id": 52401,
+    "skillKey": "clawhub-github-bounty-hunter-v2",
+    "name": "github-bounty-hunter-v2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bounty-hunter-v2",
+    "url": "https://clawhub.ai/skills/github-bounty-hunter-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bounty-hunter-v2-7b18078e4d59ef61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically search for low-competition GitHub bounty tasks (comments < 5) and generate a clean report with details and estimated difficulty."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "santosparra651-arch",
+      "userId": "s176exjqhrw3bf1x1fg812vgkx83fjmq",
+      "displayName": "santosparra651-arch",
+      "image": "https://avatars.githubusercontent.com/u/263135120?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774077282065,
+      "changelog": "Initial release with streamlined Node.js-based bounty search.\n\n- Transitioned from a Python-based autonomous agent to a lightweight Node.js utility\n- Finds and reports low-competition GitHub bounty issues, filtering by comment count\n- Generates clean, sorted reports with bounty details and estimated difficulty\n- Removed prior automation features (proposal submission, payment management, etc.)\n- Simplified installation and usage via `npx` commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cb2e7059b2ba06e8120606d61c840d6eaa3e1eaa733e35a60999b9c8ff40f62"
+}

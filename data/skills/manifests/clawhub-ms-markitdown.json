@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36268,
+  "uuid": "skill-clawhub-ms-markitdown",
+  "skillKey": "clawhub-ms-markitdown",
+  "name": "Microsoft MarkItDown",
+  "summary": "Convert various document formats (PDF, Word, PowerPoint, Excel, images, audio, HTML, etc.) to Markdown using Microsoft's markitdown tool. Supports OCR, audio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_markitdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "Convert various document formats (PDF, Word, PowerPoint, Excel, images, audio, HTML, etc.) to M.",
+        "Supports OCR, audio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-markitdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-markitdown",
+      "url": "https://clawhub.ai/skills/ms-markitdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-markitdown",
+    "url": "https://clawhub.ai/skills/ms-markitdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-markitdown-6c715271e058da50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-markitdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-markitdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c22d49cc485bb1eb9d5669253241d30f56e7bb4fc115eb4dccef72865b4056ee",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:05:30.470Z"
+}

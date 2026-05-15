@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63485,
+  "uuid": "skill-clawhub-kaiwu8",
+  "skillKey": "clawhub-kaiwu8",
+  "name": "开悟吧",
+  "summary": "开悟吧平台型 Skill - 管理并激活已购功能。用户说\"开悟吧\"时执行 activate.py 脚本。",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaiwu8",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarkMa84",
+      "features": [
+        "开悟吧平台型 Skill",
+        "管理并激活已购功能。用户说\"开悟吧\"时执行 activate.py 脚本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaiwu8@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19796416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaiwu8",
+      "url": "https://clawhub.ai/skills/kaiwu8"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaiwu8",
+    "url": "https://clawhub.ai/skills/kaiwu8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaiwu8-99e121865b4968ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaiwu8@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaiwu8-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:068b31c052128f1716f156a86fae6542a8f08dcb6d03e85af11c10cdb890ea2b",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:32:06.821Z"
+}

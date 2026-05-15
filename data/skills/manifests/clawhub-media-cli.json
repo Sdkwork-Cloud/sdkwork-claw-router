@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52291,
+  "uuid": "skill-clawhub-media-cli",
+  "skillKey": "clawhub-media-cli",
+  "name": "Media Cli",
+  "summary": "Single-file bash CLI for the *arr media stack with SSH remote support. For agents running on a different machine than the media services (e.g., VPS agent man...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Single-file bash CLI for the *arr media stack with SSH remote support",
+        "For agents running on a different machine than the media services (e.g., VPS agent man..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-cli@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-cli",
+      "url": "https://clawhub.ai/skills/media-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-cli",
+    "url": "https://clawhub.ai/skills/media-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-cli-64f295a4088ede27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-cli@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-cli-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be16c3cf5c74d76bf12d9c85f017efa580be19b0a3df5819cb4f5844dc89633b",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:48:56.653Z"
+}

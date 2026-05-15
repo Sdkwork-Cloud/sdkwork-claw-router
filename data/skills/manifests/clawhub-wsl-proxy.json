@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46386,
+  "uuid": "skill-clawhub-wsl-proxy",
+  "skillKey": "clawhub-wsl-proxy",
+  "name": "WSL Proxy",
+  "summary": "WSL2 HTTP proxy setup via Windows host. Automatically detects proxy running on Windows (Clash/V2Ray/SS/Surge etc.) and configures WSL2 environment variables....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wsl_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ham-5on",
+      "features": [
+        "WSL2 HTTP proxy setup via Windows host",
+        "Automatically detects proxy running on Windows (Clash/V2Ray/SS/Surge etc.) and configures WSL2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wsl-proxy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211765505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wsl-proxy",
+      "url": "https://clawhub.ai/skills/wsl-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wsl-proxy",
+    "url": "https://clawhub.ai/skills/wsl-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wsl-proxy-54353c0498ca7519.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wsl-proxy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wsl-proxy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ed16d7a01d96c2253dfd29217e7d076f9fccdfddf77e663d3b9004c0dfe666a",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:23:38.858Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63047,
+  "uuid": "skill-clawhub-louisvuitton",
+  "skillKey": "clawhub-louisvuitton",
+  "name": "Louisvuitton",
+  "summary": "提供Louis Vuitton箱包、皮具、时装信息，价格查询、门店位置及真伪鉴定支持。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.louisvuitton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Louis Vuitton箱包、皮具、时装信息，价格查询、门店位置及真伪鉴定支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/louisvuitton@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "louisvuitton",
+      "url": "https://clawhub.ai/skills/louisvuitton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "louisvuitton",
+    "url": "https://clawhub.ai/skills/louisvuitton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/louisvuitton-bbd4b13180c53057.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/louisvuitton@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-louisvuitton-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2691eb22e8d806d39d3385f58aa3d35fe6619ec7816b436da3550dd8f7f10fd7",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:23:37.190Z"
+}

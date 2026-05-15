@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llmconclave@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llmconclave",
+  "skill": {
+    "id": 23452,
+    "skillKey": "clawhub-llmconclave",
+    "name": "LLMs-Conclave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llmconclave",
+    "url": "https://clawhub.ai/skills/llmconclave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llmconclave-97379da5b57b48c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-model AI debate platform. Submit a topic and multiple AIs deliberate across rounds, producing structured insights and a polished research report."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreamarc77",
+      "userId": "s1732rjxdcdy8dfbar6x80kbrx8412z4",
+      "displayName": "DreamArc77",
+      "image": "https://avatars.githubusercontent.com/u/124174526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773721470833,
+      "changelog": "llmconclave 1.2.0 adds advanced multi-model AI debate features.\n\n- Introduces a platform where multiple AI models debate research topics over several rounds to generate structured insights and a polished report.\n- Provides clear installation, authentication, and agent usage instructions, including required trigger actions and sample prompts.\n- Details all API endpoints: model listing, balance checking, debate initiation (with streaming status events), and report retrieval.\n- Outlines proper handling of SSE events and includes strict instructions for agent notifications during debates.\n- Presents a model selection guide and notes on credit/billing system with welcome credits for new accounts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86801c62a5f3140f0165b42b9bcd5afbb00a10f3798344fd0f196eb6140ea129"
+}

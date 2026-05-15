@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34575,
+  "uuid": "skill-clawhub-okra-integration",
+  "skillKey": "clawhub-okra-integration",
+  "name": "Okra",
+  "summary": "Okra integration. Manage data, records, and automate workflows. Use when the user wants to interact with Okra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okra_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Okra integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Okra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okra-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okra-integration",
+      "url": "https://clawhub.ai/skills/okra-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okra-integration",
+    "url": "https://clawhub.ai/skills/okra-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okra-integration-711d2ff413996b92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okra-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-okra-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:361f18c634ce94a22b6daecf60df1fdabebce7ed82033235774e612df881c25a",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:47:48.640Z"
+}

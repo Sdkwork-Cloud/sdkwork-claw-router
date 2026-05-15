@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-to-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_to_free",
+  "skill": {
+    "id": 48762,
+    "skillKey": "clawhub-music-to-free",
+    "name": "Music To Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-to-free",
+    "url": "https://clawhub.ai/skills/music-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-to-free-9f89c5bea58f34e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute video with background music into 1080p music-free videos just by typing what you need. Whether it's stripping background music from videos to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777398015219,
+      "changelog": "Music to Free 1.0.0 — Initial Release\n\n- Instantly remove background music from videos, keeping clean audio or just the voice.\n- No editing timeline or export settings required; process and download in 30–60 seconds.\n- Supports videos up to 3 minutes and outputs 1080p MP4 files.\n- Simple upload and request flow—describe what you want, get your music-free result.\n- Includes cloud-based processing, session management, and supports key audio/video formats.\n- Guidance for credits, export, and handling common issues provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f3e0a2b25ac268a780bf117963517eb2baaf7dec3e901287bc8498263e77038"
+}

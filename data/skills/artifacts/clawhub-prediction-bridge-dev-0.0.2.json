@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-bridge-dev@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_bridge_dev",
+  "skill": {
+    "id": 14751,
+    "skillKey": "clawhub-prediction-bridge-dev",
+    "name": "Prediction Bridge Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-bridge-dev",
+    "url": "https://clawhub.ai/skills/prediction-bridge-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-bridge-dev-1a6504593179b71b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Prediction Bridge prediction-market events by text or X (Twitter) link via the backend API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallyunet",
+      "userId": "publishers:smallyunet",
+      "displayName": "smallyunet",
+      "image": "https://avatars.githubusercontent.com/u/20765689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1770893401500,
+      "changelog": "Expanded guidance for when and how to use the skill; clarified output parsing and presentation.\n\n- Added usage scenarios and outlined ideal vs. non-ideal use cases.\n- Described expected API response format in detail, including field explanation.\n- Provided clear agent instructions on validating, ranking, and presenting results (including output shape and ranking).\n- Added best practices for market snapshot extraction and optional news inclusion.\n- Improved error and empty-result handling guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9abb9b48a4298d066c2419d618de2b8a56e0263d85aac246bf87f71132c044b7"
+}

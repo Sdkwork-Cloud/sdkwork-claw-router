@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shop@0.0.28",
+  "version": "0.0.28",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shop",
+  "skill": {
+    "id": 8504,
+    "skillKey": "clawhub-shop",
+    "name": "Shop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shop",
+    "url": "https://clawhub.ai/skills/shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shop-8d9001d32c6a703d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your personal shopping assistant — Search, Buy, Track, Return, and Re-order products through the best product catalog in the world."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shopify",
+      "userId": "s17fzb320neysj8qkd5p0kxaqn83nnvh",
+      "displayName": "Shopify",
+      "image": "https://cdn.shopify.com/s/files/1/0056/5916/4694/files/shopify_glyph.jpg?v=1776147885"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1415,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 124,
+      "versions": 26
+    },
+    "latestVersion": {
+      "version": "0.0.28",
+      "createdAt": 1775570494069,
+      "changelog": "Version 0.0.28\n\n- Updated authentication endpoints: now use `/agents/auth/device-code`, `/agents/auth/token`, and `/agents/auth/userinfo` with plain text markdown responses.\n- Device authorization flow no longer requires `client_id` or `scope` parameters; these are handled by the proxy.\n- Clarified the required use of `similarTo.id` or `similarTo.media` for \"Find Similar Products\" requests.\n- Minor restructuring of documentation for improved clarity and consistency.\n- Session state storage requirements are moved and more clearly described under authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dc65038565fabe4492d47ddc27f60283e7dbd7c3477a8bbd5e8f428f1faf7a5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_query",
+  "skill": {
+    "id": 56277,
+    "skillKey": "clawhub-feishu-bitable-query",
+    "name": "Feishu Bitable Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-query",
+    "url": "https://clawhub.ai/skills/feishu-bitable-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-query-1e0b97a365ad6d56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Feishu Bitable (多维表格) with server-side filter, sort, field selection, and multiple output formats. Activate when querying bitable records with conditio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadblue22",
+      "userId": "publishers:deadblue22",
+      "displayName": "deadblue",
+      "image": "https://avatars.githubusercontent.com/u/448649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772605563035,
+      "changelog": "- Initial release of the feishu-bitable-query skill: enables server-side querying of Feishu Bitable records with advanced options.\n- Provides efficient filters, sorting, and field selection for large data sets, supporting TSV and JSONL output.\n- Offers both formula and structured JSON filtering, with guidance on when to use each mode.\n- Supports local time-based filtering and advanced field formatting for cleaner output.\n- Designed for scenarios where built-in bitable record listing tools are insufficient (complex filtering, full pagination).\n- Automatically handles authentication and output piping patterns for integration with other scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4ac57c5f58b20edb80b5a4e1a79b2dafe262071930774d41e7d0a07f3d559cc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45120,
+  "uuid": "skill-clawhub-pipeworx-sports",
+  "skillKey": "clawhub-pipeworx-sports",
+  "name": "Pipeworx sports",
+  "summary": "Provides live scores, standings, team and player info across major sports leagues including football, basketball, baseball, and hockey.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_sports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides live scores, standings, team and player info across major sports leagues including foo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-sports@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-sports",
+      "url": "https://clawhub.ai/skills/pipeworx-sports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-sports",
+    "url": "https://clawhub.ai/skills/pipeworx-sports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-sports-750d7cd24e199080.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-sports@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-sports-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d1c58c73e599f6bb260fbafe17d178b195f6e9149e867bf008e4301daa16f43",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:02:15.246Z"
+}

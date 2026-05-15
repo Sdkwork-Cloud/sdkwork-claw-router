@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69995,
+  "uuid": "skill-clawhub-ai-legal-assistant-pro",
+  "skillKey": "clawhub-ai-legal-assistant-pro",
+  "name": "AI Legal Assistant Pro",
+  "summary": "面向中国用户的法律辅助 skill，用于合同风险初筛、劳动纠纷与诉讼成本估算，以及民事起诉状 / 答辩状 / 证据提纲等结构化文书骨架生成。适用于用户想看合同有没有坑、估算赔偿或诉讼费、判断是否值得起诉、或先生成一版可修改的法律文书框架时使用。本 skill 仅提供初步结构化辅助，不替代执业律师的正式法律意见。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_legal_assistant_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "面向中国用户的法律辅助 skill，用于合同风险初筛、劳动纠纷与诉讼成本估算，以及民事起诉状 / 答辩状 / 证据提纲等结构化文书骨架生成。适用于用户想看合同有没有坑、估算赔偿或诉讼费、判断."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-legal-assistant-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-legal-assistant-pro",
+      "url": "https://clawhub.ai/skills/ai-legal-assistant-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-legal-assistant-pro",
+    "url": "https://clawhub.ai/skills/ai-legal-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-legal-assistant-pro-a8ae5824374bc3a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-legal-assistant-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-legal-assistant-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b24f1fd5eec6d2f527b43722326dc34d393ec5e8161fd5cb9f99104cc9f6f04d",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T23:41:23.183Z"
+}

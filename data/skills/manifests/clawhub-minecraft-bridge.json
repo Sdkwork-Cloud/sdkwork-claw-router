@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23235,
+  "uuid": "skill-clawhub-minecraft-bridge",
+  "skillKey": "clawhub-minecraft-bridge",
+  "name": "minecraft-bridge",
+  "summary": "Local HTTP bridge for Mineflayer-based live control of a Minecraft Java bot. Trigger when the user wants to connect a bot to their world, check bot status/in...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minecraft_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "en1r0py1865",
+      "features": [
+        "Local HTTP bridge for Mineflayer-based live control of a Minecraft Java bot",
+        "Trigger when the user wants to connect a bot to their world, check bot status/in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minecraft-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/175953756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minecraft-bridge",
+      "url": "https://clawhub.ai/skills/minecraft-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minecraft-bridge",
+    "url": "https://clawhub.ai/skills/minecraft-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minecraft-bridge-1eb8be8472078f74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minecraft-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minecraft-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97cc50201ec4f4f656876a75c794d7d48c985f81c06b1b388f2ae6c9085dab77",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:24:55.922Z"
+}

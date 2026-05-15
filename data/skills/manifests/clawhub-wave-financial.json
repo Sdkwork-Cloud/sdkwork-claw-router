@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37266,
+  "uuid": "skill-clawhub-wave-financial",
+  "skillKey": "clawhub-wave-financial",
+  "name": "Wave Financial",
+  "summary": "Wave Financial integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wave Financial data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wave_financial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wave Financial integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wave Financial data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wave-financial@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wave-financial",
+      "url": "https://clawhub.ai/skills/wave-financial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wave-financial",
+    "url": "https://clawhub.ai/skills/wave-financial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wave-financial-d149caa830e1644f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wave-financial@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wave-financial-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2f251573de5036d944fdfdff6bd41b1e8f2c6fa1bb1239065af2dafc6861d24",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:00:22.139Z"
+}

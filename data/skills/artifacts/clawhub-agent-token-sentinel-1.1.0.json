@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-token-sentinel@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_token_sentinel",
+  "skill": {
+    "id": 19331,
+    "skillKey": "clawhub-agent-token-sentinel",
+    "name": "Agent Token Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-token-sentinel",
+    "url": "https://clawhub.ai/skills/agent-token-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-token-sentinel-fe892a6e556b3c54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time cost & quota guardian for AI Agents. It monitors API usage and automatically kills recursive loops or excessive reasoning to protect your wallet. O..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772634140254,
+      "changelog": "- Updated category from \"Utility\" to \"Security\".\n- Expanded description for clarity, emphasizing monitoring of token burn rates and session quotas in real-time.\n- Replaced \"Quota Management\" with \"Budget Enforcer\" and detailed USD/Token consumption limits.\n- Added an \"Alert System\" feature for high-priority notifications before hitting quotas.\n- Revised \"Architect's Note\" to highlight the importance of efficiency in 2026.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56f1882bc041adc1c63226e32923ed69b5a244b7f364e21ded2e87cd3685fda9"
+}

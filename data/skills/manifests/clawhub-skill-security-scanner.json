@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13955,
+  "uuid": "skill-clawhub-skill-security-scanner",
+  "skillKey": "clawhub-skill-security-scanner",
+  "name": "Skill Security Scanner",
+  "summary": "Scan OpenClaw skills for security risks, suspicious permissions, and provide a trust score to help evaluate skill safety before use or installation.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevSef",
+      "features": [
+        "Scan OpenClaw skills for security risks, suspicious permissions, and provide a trust score to h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-scanner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142841909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-scanner",
+      "url": "https://clawhub.ai/skills/skill-security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scanner",
+    "url": "https://clawhub.ai/skills/skill-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scanner-dc98391f836d3c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-scanner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-scanner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e371cc3923d196085094838108e8bca3939732bca5ce882aa083cbdb0dd92d29",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:41:04.546Z"
+}

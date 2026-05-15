@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/localudpmessenger@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localudpmessenger",
+  "skill": {
+    "id": 18688,
+    "skillKey": "clawhub-localudpmessenger",
+    "name": "LocalUDPMessenger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localudpmessenger",
+    "url": "https://clawhub.ai/skills/localudpmessenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localudpmessenger-526ffa2a11ff3569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when agents need to communicate over the local network — \"send message to agent\", \"discover agents\", \"check for messages\", \"coordinate with other agents\", \"approve agent\", \"agent status\", \"add peer\", \"message log\""
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turfptax",
+      "userId": "publishers:turfptax",
+      "displayName": "turfptax",
+      "image": "https://avatars.githubusercontent.com/u/40579046?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 893,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1770949984367,
+      "changelog": "Stable agent IDs across restarts, hostname trust migration, dynamic address tracking",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cf3984b00298ac22c7e67a3a80c67d1662cc886cc5e43a37c2a257184279d8d"
+}

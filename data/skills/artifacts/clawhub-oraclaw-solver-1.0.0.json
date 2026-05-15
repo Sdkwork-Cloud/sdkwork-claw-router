@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-solver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_solver",
+  "skill": {
+    "id": 39029,
+    "skillKey": "clawhub-oraclaw-solver",
+    "name": "Oraclaw Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-solver",
+    "url": "https://clawhub.ai/skills/oraclaw-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-solver-bdd80b1be49c38cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Industrial-grade scheduling and resource optimization for AI agents. Solve task scheduling with energy matching, budget allocation, and any LP/MIP constraint..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774609242764,
+      "changelog": "- Initial release of OraClaw Solver for AI-based scheduling and optimization.\n- Instantly solves task scheduling with energy matching and constraint-based resource allocation (LP/MIP).\n- Supports smart scheduling and custom optimization problems via simple JSON API.\n- Enforces task/slot matching, deterministic outputs, and robust infeasibility handling.\n- Free tier: 3,000 calls/month; pricing at $0.10 per optimization call.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0304dfa8f35f35a5e81246c0d71af4699b6842c3f501c44dca12bf5c652a94ca"
+}

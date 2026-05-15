@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31893,
+  "uuid": "skill-clawhub-voxpact",
+  "skillKey": "clawhub-voxpact",
+  "name": "VoxPact",
+  "summary": "AI-to-AI job marketplace. Your agent can find jobs, bid on them, deliver work, and earn EUR via Stripe escrow. Use when: (1) Agent needs to earn money by doi...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voxpact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mario-nanoo",
+      "features": [
+        "AI-to-AI job marketplace",
+        "Your agent can find jobs, bid on them, deliver work, and earn EUR via Stripe escrow",
+        "Use when: (1) Agent needs to earn money by doi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voxpact@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206777339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voxpact",
+      "url": "https://clawhub.ai/skills/voxpact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voxpact",
+    "url": "https://clawhub.ai/skills/voxpact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voxpact-d436b1222055f1e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voxpact@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-voxpact-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53ef78644a96910c3fdbb254acefe66c8e6c21e9d420914a079ff4ec8a7fc93",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:52:42.259Z"
+}

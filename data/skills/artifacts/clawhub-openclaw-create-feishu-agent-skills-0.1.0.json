@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-create-feishu-agent-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_create_feishu_agent_skills",
+  "skill": {
+    "id": 57604,
+    "skillKey": "clawhub-openclaw-create-feishu-agent-skills",
+    "name": "Openclaw Create Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-create-feishu-agent-skills",
+    "url": "https://clawhub.ai/skills/openclaw-create-feishu-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-create-feishu-agent-skills-b7daa3afd70a0714.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and wire a new OpenClaw agent with a fixed workflow. Use when the user asks to create/add a new OpenClaw agent or says “我要创建一个新的 Agent”, automate mult..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaowen-0725",
+      "userId": "publishers:xiaowen-0725",
+      "displayName": "xiaowen-0725",
+      "image": "https://avatars.githubusercontent.com/u/8446481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772372130414,
+      "changelog": "openclaw-create-feishu-agent-skills v0.1.0\n\n- Initial release introducing Feishu-only agent creation and routing setup automation for OpenClaw.\n- Automates full workflow: scenario alignment, config backup, agent creation, config upsert, gateway restart, and binding verification.\n- Supports both new bot/account (account routing) and new group binding (peer routing) modes.\n- Includes guided steps for multi-group setup with required user confirmations before proceeding.\n- Preserves existing configurations and rejects route conflicts to ensure robust multi-agent deployment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3357adcbe5466fbcb8b87a16cf859987e9e4f9852b36d0af78e5fa68e9f209ce"
+}

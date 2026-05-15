@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/language-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.language_editor",
+  "skill": {
+    "id": 41165,
+    "skillKey": "clawhub-language-editor",
+    "name": "Language Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "language-editor",
+    "url": "https://clawhub.ai/skills/language-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/language-editor-c1589732ac5238e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get translated dubbed videos ready to post, without touching a single slider. Upload your video with audio (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776914982858,
+      "changelog": "- Initial release of Language Editor for instant video translation and dubbing.\n- Upload videos (up to 500MB), specify target language, and receive dubbed 1080p MP4 output.\n- Automatic handling of session, credits, and cloud processing setup — no manual configuration required.\n- Supports export, credit checking, timeline state, and multiple file types.\n- Optimized for fast workflows for content creators and educators needing quick language adaptation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f74cd1bb10e732ffa8c3434a255d1a5511099e9dd8d5b89701a0575025fba082"
+}

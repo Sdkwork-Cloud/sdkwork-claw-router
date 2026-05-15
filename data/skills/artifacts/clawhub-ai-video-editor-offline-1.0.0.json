@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-offline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_offline",
+  "skill": {
+    "id": 53156,
+    "skillKey": "clawhub-ai-video-editor-offline",
+    "name": "Ai Video Editor Offline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-offline",
+    "url": "https://clawhub.ai/skills/ai-video-editor-offline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-offline-e8939af61944a6c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the silences, add transitions, and export without uploading to the cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776316423324,
+      "changelog": "Initial release of AI Video Editor Offline — local, cloud-powered video editing with no cloud uploads required.\n\n- Instantly edit and export video files (MP4, MOV, AVI, MKV up to 500MB) using AI, all processed via secure cloud GPUs.\n- No installation or steep learning curve: just upload your footage and describe your edits (e.g., \"trim silences, add transitions\").\n- No cloud uploads or subscriptions required; files remain local until export is ready for download.\n- Handles common workflows: trimming, transitions, text overlays, audio tracks, and batch processing.\n- Automatic token management and session handling; supports anonymous and registered users.\n- Full support for exporting high-quality MP4 videos, with clear error handling and workflow guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd7663f5047b6d9286862c811cab9951d6b7b6f2d9af209f237c1602dec7ef52"
+}

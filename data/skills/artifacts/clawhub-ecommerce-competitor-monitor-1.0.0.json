@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-competitor-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_competitor_monitor",
+  "skill": {
+    "id": 73105,
+    "skillKey": "clawhub-ecommerce-competitor-monitor",
+    "name": "电商竞品价格监控系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-competitor-monitor",
+    "url": "https://clawhub.ai/skills/ecommerce-competitor-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-competitor-monitor-c7187b4a4ce0b986.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商竞品价格监控系统 — 自动监控京东/淘宝/亚马逊等平台竞品价格变动、促销活动、库存变化。 定时抓取指定商品页面，比对历史数据，价格异常时立即告警。适合电商卖家、代运营、品牌方。 零代码配置，改个产品链接就能用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijinhao123-dot",
+      "userId": "s17am2bnqk4tga6qbtkcd6z9bn83q86n",
+      "displayName": "Lijinhao123-Dot",
+      "image": "https://avatars.githubusercontent.com/u/263565226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778386106125,
+      "changelog": "首发版本：支持多平台竞品价格监控、促销追踪、库存变动告警、历史报表生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c12cc8c5a23ca452c0021ce40d7e5a49774e79947024e0b01e642c4b6730f765"
+}

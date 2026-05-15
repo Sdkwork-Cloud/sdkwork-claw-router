@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-dld-product-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_dld_product_search",
+  "skill": {
+    "id": 65995,
+    "skillKey": "clawhub-linkfox-dld-product-search",
+    "name": "Dld Product Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-dld-product-search",
+    "url": "https://clawhub.ai/skills/linkfox-dld-product-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-dld-product-search-2e66c54291a47eb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在中国1688批发平台（阿里巴巴国内B2B市场）上搜索和分析商品，用于找货源、供应商发现和选品。当用户提到1688商品搜索、1688找货源、在1688上找供应商、批发商品查询、工厂货源、一件代发供应商搜索、1688关键词选品、批发价格对比、按销量筛选、任何1688平台上的选品调研、1688 search, 168..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774926468222,
+      "changelog": "No significant code changes detected. Minor update to the skill description for clarity:\n\n- Expanded the skill description trigger phrase list to include both Chinese and English trigger terms within one sentence.\n- No changes to functionality or underlying logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f21e90575dfb8fe8494ef9a86bbb7b6525830d79f7b2f51493298d9ce1367596"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62607,
+  "uuid": "skill-clawhub-marila-skill-publish",
+  "skillKey": "clawhub-marila-skill-publish",
+  "name": "Marila Skill Publish",
+  "summary": "用于发布和更新 OpenClaw 技能到 ClawHub，并同步 GitHub Release。用户提到“发布技能”“发到 ClawHub”“发布这个 skill”“写完就发布”“上线这个技能”等场景时使用。包含完整发布步骤、版本规范、发布前检查清单、GitHub Release 同步规则和常见问题处理。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marila_skill_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marila Wang",
+      "features": [
+        "用于发布和更新 OpenClaw 技能到 ClawHub，并同步 GitHub Release。用户提到“发布技能”“发到 ClawHub”“发布这个 skill”“写完就发布”“上线这个技."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marila-skill-publish@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8380339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marila-skill-publish",
+      "url": "https://clawhub.ai/skills/marila-skill-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marila-skill-publish",
+    "url": "https://clawhub.ai/skills/marila-skill-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marila-skill-publish-741efc5fea88d20f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marila-skill-publish@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-marila-skill-publish-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce0c487407b0e7eb94212a5c88b79bb4ac65623bde596cbdc221e91869f53a70",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:08:51.795Z"
+}

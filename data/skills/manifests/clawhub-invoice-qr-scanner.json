@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21129,
+  "uuid": "skill-clawhub-invoice-qr-scanner",
+  "skillKey": "clawhub-invoice-qr-scanner",
+  "name": "invoice-qr-scanner",
+  "summary": "Scan QR codes from invoice receipts and automatically fill electronic invoice applications. Use when user asks to scan QR codes from images, complete electro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_qr_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evan Chen",
+      "features": [
+        "Scan QR codes from invoice receipts and automatically fill electronic invoice applications",
+        "Use when user asks to scan QR codes from images, complete electro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-qr-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20341696?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-qr-scanner",
+      "url": "https://clawhub.ai/skills/invoice-qr-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-qr-scanner",
+    "url": "https://clawhub.ai/skills/invoice-qr-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-qr-scanner-a355d956da758695.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-qr-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-qr-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a9df8ffa0f65cc08ca03848bb6a1df5bbd0283c066cb54ca65d38c184e2adc9",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:24:17.989Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65855,
+  "uuid": "skill-clawhub-stainless-chain-analyzer",
+  "skillKey": "clawhub-stainless-chain-analyzer",
+  "name": "Stainless Chain Analyzer",
+  "summary": "深入分析不锈钢产业链上下游关系，提供客户关联度评级、产品匹配、价格趋势及风险评估支持。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stainless_chain_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuxi304-collab",
+      "features": [
+        "深入分析不锈钢产业链上下游关系，提供客户关联度评级、产品匹配、价格趋势及风险评估支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stainless-chain-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232284953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stainless-chain-analyzer",
+      "url": "https://clawhub.ai/skills/stainless-chain-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stainless-chain-analyzer",
+    "url": "https://clawhub.ai/skills/stainless-chain-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stainless-chain-analyzer-f188d51927fcd587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stainless-chain-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stainless-chain-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7758f9716a663daf1c3d97f9893a9a343249039473459e287627e42d726138bd",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:31:27.642Z"
+}

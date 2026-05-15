@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34102,
+  "uuid": "skill-clawhub-whoareyou",
+  "skillKey": "clawhub-whoareyou",
+  "name": "WayID Identity Card",
+  "summary": "Show your verified WayID identity card. Use whenever the user asks who you are, who owns you, who you belong to, who's behind you, who runs you, who's respon...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoareyou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lineage Labs",
+      "features": [
+        "Show your verified WayID identity card",
+        "Use whenever the user asks who you are, who owns you, who you belong to, who's behind you, who."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoareyou@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263388898?s=400&u=913a578bd93269d236513fe2d158c08296766199&v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoareyou",
+      "url": "https://clawhub.ai/skills/whoareyou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoareyou",
+    "url": "https://clawhub.ai/skills/whoareyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoareyou-8d60ef6493681058.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoareyou@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoareyou-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cec429798f636936fc907c5fb76f4b90149c55ee73bdf59e62ee3c918db04f5b",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T11:00:02.835Z"
+}

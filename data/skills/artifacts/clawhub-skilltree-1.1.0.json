@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skilltree@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skilltree",
+  "skill": {
+    "id": 71039,
+    "skillKey": "clawhub-skilltree",
+    "name": "SkillTree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skilltree",
+    "url": "https://clawhub.ai/skills/skilltree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skilltree-27a61b563507a692.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动分析对话历史，推荐职业与成长方向，实时反馈能力进化，助力提升效率、伙伴感和专业度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xraini",
+      "userId": "publishers:0xraini",
+      "displayName": "0xRaini",
+      "image": "https://avatars.githubusercontent.com/u/190923101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1186,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770567808723,
+      "changelog": "Added bilingual support (English + Chinese)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20046adabb2309372d80a9abdca9e4df94e0ade0fa05685dd8d57baaca2864bd"
+}

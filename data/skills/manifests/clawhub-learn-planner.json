@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37949,
+  "uuid": "skill-clawhub-learn-planner",
+  "skillKey": "clawhub-learn-planner",
+  "name": "learn-planner",
+  "summary": "Generate 7-day learning plans, quizzes, and track your study progress locally for 20+ topics without needing an internet connection or account.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Generate 7-day learning plans, quizzes, and track your study progress locally for 20+ topics wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-planner",
+      "url": "https://clawhub.ai/skills/learn-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-planner",
+    "url": "https://clawhub.ai/skills/learn-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-planner-8d2e250808a4317b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e07bb927cd724bb71bc1191df7c862762773e7b11aa887cc31a666db405c3d9f",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:13:32.567Z"
+}

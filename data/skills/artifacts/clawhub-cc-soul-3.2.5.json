@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-soul@3.2.5",
+  "version": "3.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_soul",
+  "skill": {
+    "id": 50448,
+    "skillKey": "clawhub-cc-soul",
+    "name": "Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-soul",
+    "url": "https://clawhub.ai/skills/cc-soul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-soul-b072a457b9a089a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-vector AI memory engine with self-learning. LOCOMO 76.2% (4th place). 15 original algorithms, open source (MIT)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenroudeyu-collab",
+      "userId": "s17fhxgejmcq3teph4f0xgjssx83e5g4",
+      "displayName": "wenroudeyu-collab",
+      "image": "https://avatars.githubusercontent.com/u/263342295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 607,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 37
+    },
+    "latestVersion": {
+      "version": "3.2.5",
+      "createdAt": 1776175587427,
+      "changelog": "fix: memory state sync with SQLite for multi-process scenarios",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c61679c3fecdef9dc2d5c7c8ecc86349307e16db8b9b1b62987176aa42d93a4c"
+}

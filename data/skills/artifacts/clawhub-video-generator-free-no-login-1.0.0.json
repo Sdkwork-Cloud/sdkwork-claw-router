@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-no-login@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_no_login",
+  "skill": {
+    "id": 46379,
+    "skillKey": "clawhub-video-generator-free-no-login",
+    "name": "Video Generator Free No Login"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-no-login",
+    "url": "https://clawhub.ai/skills/video-generator-free-no-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-no-login-894801c180e3a87a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. casual creators and marketers use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776248437105,
+      "changelog": "Initial release: Instantly generate and edit videos from text or images — no account required.\n\n- Generate 1080p MP4 videos from text prompts or uploaded images/files up to 200MB.\n- No login or registration needed; free anonymous token system included.\n- Cloud GPU-powered processing delivers results in 30–90 seconds.\n- Supports multiple video, audio, and image formats.\n- Simple workflows: upload, edit, export, and check status or credits directly.\n- Includes built-in error handling and step-by-step session setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd0b9696207e756b1cb59d763d4724983f52d46f18834c329141a73706a48e13"
+}

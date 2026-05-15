@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-readability-extractor@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_readability_extractor",
+  "skill": {
+    "id": 61713,
+    "skillKey": "clawhub-cn-readability-extractor",
+    "name": "Cn Readability Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-readability-extractor",
+    "url": "https://clawhub.ai/skills/cn-readability-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-readability-extractor-7a63c19c066b0a03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页内容提取器。输入URL，提取正文内容，去除广告和导航。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1777687371224,
+      "changelog": "v1.3.0: 移除certifi外部依赖，移除ssl模块，使用urllib默认连接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a83c6997b26458c9e1d8bd07cb511bc29107fbc66543527c3785e320486347a8"
+}

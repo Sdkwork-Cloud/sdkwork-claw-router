@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62430,
+  "uuid": "skill-clawhub-toubiao-wenan",
+  "skillKey": "clawhub-toubiao-wenan",
+  "name": "Bidding Document Generator",
+  "summary": "自动生成施工企业全套投标书，包括投标函、技术标、商务标和报价单，支持Word、PDF和Excel格式导出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toubiao_wenan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "13977660642",
+      "features": [
+        "自动生成施工企业全套投标书，包括投标函、技术标、商务标和报价单，支持Word、PDF和Excel格式导出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toubiao-wenan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141215083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toubiao-wenan",
+      "url": "https://clawhub.ai/skills/toubiao-wenan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toubiao-wenan",
+    "url": "https://clawhub.ai/skills/toubiao-wenan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toubiao-wenan-ecd8a335bc86cfa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toubiao-wenan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toubiao-wenan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:789fdb75997bd14081690e6af38cea835de3b57aab11f93b2521e5e24dc710ae",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:24:59.464Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-postmoore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_postmoore",
+  "skill": {
+    "id": 42335,
+    "skillKey": "clawhub-agent-postmoore",
+    "name": "agent-Postmoore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-postmoore",
+    "url": "https://clawhub.ai/skills/agent-postmoore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-postmoore-c87769f47887f817.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously post, schedule, upload media, save drafts, and manage content across Instagram, TikTok, YouTube Shorts, LinkedIn, Facebook, Threads, and Bluesky..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rkotchamp",
+      "userId": "s17256k9m1cw0q4b2n53kwwzrd84tscy",
+      "displayName": "Omaano Tetteh",
+      "image": "https://avatars.githubusercontent.com/u/106193123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776254522728,
+      "changelog": "Version 1.1.0 (Postmoore): Major documentation update and workflow clarification.\n\n- Added detailed usage instructions for the Postmoore API in SKILL.md, covering setup, authentication, endpoints, and content management.\n- Included multi-platform posting support information (Instagram, TikTok, YouTube Shorts, LinkedIn, Facebook, Threads, Bluesky).\n- Documented recommended workflow for video content creation and scheduling.\n- Outlined tips for best practices and troubleshooting per-platform posting results.\n- Specified required environment variable and binary dependencies (POSTMOORE_API_KEY, ffmpeg).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76d3dd3c21fac9646d0297e449cca1ba8ade32dfedcf28b2c346c72fc5f734f4"
+}

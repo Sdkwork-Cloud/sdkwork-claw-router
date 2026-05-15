@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64002,
+  "uuid": "skill-clawhub-family-mart",
+  "skillKey": "clawhub-family-mart",
+  "name": "Family Mart",
+  "summary": "提供全家 FamilyMart 的历史、产品服务、市场地位、全球布局及最新动态信息查询。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_mart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供全家 FamilyMart 的历史、产品服务、市场地位、全球布局及最新动态信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-mart@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-mart",
+      "url": "https://clawhub.ai/skills/family-mart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-mart",
+    "url": "https://clawhub.ai/skills/family-mart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-mart-bbacc0c34ea770bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-mart@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-mart-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:402675bf50993fcec38a47b9ed31a6c13b5787aeff1fb254549f45cd6d29ed6a",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:37:04.562Z"
+}

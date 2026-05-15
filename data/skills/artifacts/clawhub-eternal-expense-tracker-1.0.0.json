@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eternal-expense-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eternal_expense_tracker",
+  "skill": {
+    "id": 39618,
+    "skillKey": "clawhub-eternal-expense-tracker",
+    "name": "Eternal Expense Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eternal-expense-tracker",
+    "url": "https://clawhub.ai/skills/eternal-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eternal-expense-tracker-da0eed5b2944abc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track, categorize, and analyze personal expenses via receipt scans, manual input, CSV imports, budget tracking, and detailed spending reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eternal0404",
+      "userId": "s175br5s8f0a4xqv4q2tfbt79x83yzv0",
+      "displayName": "Eternal0404",
+      "image": "https://avatars.githubusercontent.com/u/204033647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774981241071,
+      "changelog": "Personal finance tracker with receipt scanning, auto-categorization, and budget reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b5f8688fb394ab9f6a78bfd745ba5bc20ee6f76192d661eae1567607e6b6a75"
+}

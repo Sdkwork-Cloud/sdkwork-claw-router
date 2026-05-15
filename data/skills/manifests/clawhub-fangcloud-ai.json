@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40686,
+  "uuid": "skill-clawhub-fangcloud-ai",
+  "skillKey": "clawhub-fangcloud-ai",
+  "name": "fangcloud-api skills",
+  "summary": "Automation skill for fangcloud-api skills.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fangcloud_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiema123",
+      "features": [
+        "Automation skill for fangcloud-api skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fangcloud-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3347781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fangcloud-ai",
+      "url": "https://clawhub.ai/skills/fangcloud-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fangcloud-ai",
+    "url": "https://clawhub.ai/skills/fangcloud-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fangcloud-ai-fc70a75a61b72738.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fangcloud-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fangcloud-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a56b90710dc0e0f2fc9f88680246f5869b89657a37436db7a4d9e293c9a46a42",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:17:52.080Z"
+}

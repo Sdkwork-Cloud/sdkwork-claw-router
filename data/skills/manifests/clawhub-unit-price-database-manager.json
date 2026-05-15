@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13113,
+  "uuid": "skill-clawhub-unit-price-database-manager",
+  "skillKey": "clawhub-unit-price-database-manager",
+  "name": "Unit Price Database Manager",
+  "summary": "Manage construction unit price databases: update prices, track vendors, apply location factors, maintain historical records. Essential for accurate estimating.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unit_price_database_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Manage construction unit price databases: update prices, track vendors, apply location factors,.",
+        "Essential for accurate estimating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unit-price-database-manager@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unit-price-database-manager",
+      "url": "https://clawhub.ai/skills/unit-price-database-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unit-price-database-manager",
+    "url": "https://clawhub.ai/skills/unit-price-database-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unit-price-database-manager-8693cc7f269862b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unit-price-database-manager@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unit-price-database-manager-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2779e55cb9606006c4678dbdf94fac3da7becd91ec36e39742307160fbe1843",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T15:56:37.274Z"
+}

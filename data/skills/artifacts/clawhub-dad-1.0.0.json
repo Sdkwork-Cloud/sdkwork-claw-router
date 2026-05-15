@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dad@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dad",
+  "skill": {
+    "id": 43228,
+    "skillKey": "clawhub-dad",
+    "name": "Dad.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dad",
+    "url": "https://clawhub.ai/skills/dad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dad-6fe8ecbc1deafa51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parenting co-pilot for fathers. Stay in sync with mom, know what happened while you were at work, track bonding moments, coordinate schedules. Never ask 'wha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realteamprinz",
+      "userId": "s17209ssa988mpg9pegvdzfz6x83vvr4",
+      "displayName": "realteamprinz",
+      "image": "https://avatars.githubusercontent.com/u/267227604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775830110356,
+      "changelog": "dad-skill 1.0.0 – Initial Release\n\n- Introduces a \"parenting co-pilot\" to help fathers stay in sync with parenting routines and bonding moments.\n- Provides daily briefings, schedule coordination, and personalized bonding logs.\n- Tracks night shift duties and offers practical tips during overnight care.\n- Suggests age-appropriate activities and injects humor with \"Dad Humor Mode\".\n- Ensures all data is stored locally with strict privacy—no cloud sync, no external data collection.\n- Syncs seamlessly with mom.skill for unified family tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f28ae25e6827c86031e03c771c6224a15b99b3e92e17b8768e512355dbbeeef8"
+}

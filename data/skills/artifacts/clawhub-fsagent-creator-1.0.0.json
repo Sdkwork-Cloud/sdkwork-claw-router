@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fsagent-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fsagent_creator",
+  "skill": {
+    "id": 69096,
+    "skillKey": "clawhub-fsagent-creator",
+    "name": "添加飞书机器人"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fsagent-creator",
+    "url": "https://clawhub.ai/skills/fsagent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fsagent-creator-cb9e708a63699a45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速创建、删除和管理飞书机器人，支持配置App ID、App Secret及模型，自动更新相关配置和目录结构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1054570699",
+      "userId": "s177jvhvcq1y92tpnad0c8x53x83nr13",
+      "displayName": "1054570699",
+      "image": "https://avatars.githubusercontent.com/u/144434096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774921034941,
+      "changelog": "Initial release with major workflow and tooling changes:\n\n- Replaced Python-based agent creation and packaging with simple shell scripts: create-agent.sh, delete-agent.sh, and list-agents.sh.\n- Removed prior asset templates and Python scripts for generating and bundling agent identity files.\n- New workflow supports rapid creation, deletion, and listing of agents via command-line, with clear required/optional parameters.\n- Agent setup now includes automated directory creation and configuration updates in openclaw.json.\n- Documentation updated to reflect changed commands, configuration structure, and post-creation steps.\n- Focus shifted from packaging agent personas for ClawHub to direct management of agent instances and workspace structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3101c017d647cec6ebfadd5113bdca0f4a6e0cb08a58ac50e49ad878bd71909d"
+}

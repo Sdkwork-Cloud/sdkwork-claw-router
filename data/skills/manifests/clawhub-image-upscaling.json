@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12342,
+  "uuid": "skill-clawhub-image-upscaling",
+  "skillKey": "clawhub-image-upscaling",
+  "name": "Image Upscaling",
+  "summary": "Upscale and enhance images with Real-ESRGAN, Thera, Topaz, FLUX Upscaler via inference.sh CLI. Models: Real-ESRGAN, Thera (any size), FLUX Dev Upscaler, Topa...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_upscaling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Upscale and enhance images with Real-ESRGAN, Thera, Topaz, FLUX Upscaler via inference.sh CLI",
+        "Models: Real-ESRGAN, Thera (any size), FLUX Dev Upscaler, Topa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-upscaling@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-upscaling",
+      "url": "https://clawhub.ai/skills/image-upscaling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-upscaling",
+    "url": "https://clawhub.ai/skills/image-upscaling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-upscaling-3510a25a012d632f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-upscaling@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-upscaling-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2daa439c3773637a7bd39af7c96dbd4fd846d2aa9b82de8d196cf2b1af783f23",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:26:52.166Z"
+}

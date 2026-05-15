@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11147,
+  "uuid": "skill-clawhub-nameserver-reverse",
+  "skillKey": "clawhub-nameserver-reverse",
+  "name": "DomainKts",
+  "summary": "Perform reverse lookup of gTLD domains hosted on a specified nameserver with optional filters by TLD and domain prefix length.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nameserver_reverse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abtdomain",
+      "features": [
+        "Perform reverse lookup of gTLD domains hosted on a specified nameserver with optional filters b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nameserver-reverse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219991333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nameserver-reverse",
+      "url": "https://clawhub.ai/skills/nameserver-reverse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nameserver-reverse",
+    "url": "https://clawhub.ai/skills/nameserver-reverse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nameserver-reverse-8425f6b46f2b271f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nameserver-reverse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nameserver-reverse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3b2fc7a5ae50be28b3777fc79e58ddb78dbeb40cd9aa59a737a5c80d0d83e69",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T11:46:12.882Z"
+}

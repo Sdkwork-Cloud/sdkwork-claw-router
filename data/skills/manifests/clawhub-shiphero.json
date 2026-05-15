@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35076,
+  "uuid": "skill-clawhub-shiphero",
+  "skillKey": "clawhub-shiphero",
+  "name": "Shiphero",
+  "summary": "ShipHero integration. Manage data, records, and automate workflows. Use when the user wants to interact with ShipHero data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shiphero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ShipHero integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ShipHero data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shiphero@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shiphero",
+      "url": "https://clawhub.ai/skills/shiphero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shiphero",
+    "url": "https://clawhub.ai/skills/shiphero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shiphero-183a98d5a0b6a9cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shiphero@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shiphero-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35798fa5e3b27223654191eef8791133f3b8a3ce7bb083d236ab162e407fb353",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:37.336Z"
+}

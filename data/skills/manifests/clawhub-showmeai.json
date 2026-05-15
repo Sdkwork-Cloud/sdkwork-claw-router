@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22980,
+  "uuid": "skill-clawhub-showmeai",
+  "skillKey": "clawhub-showmeai",
+  "name": "Showmeai",
+  "summary": "Generate images, videos, and 3D models via Showmeai API. Image gen uses OpenAI-compatible Images API (nano-banana and gpt-image models). Video gen uses Seeda...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showmeai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hulebaji",
+      "features": [
+        "Generate images, videos, and 3D models via Showmeai API",
+        "Image gen uses OpenAI-compatible Images API (nano-banana and gpt-image models)",
+        "Video gen uses Seeda..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/showmeai@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62818915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "showmeai",
+      "url": "https://clawhub.ai/skills/showmeai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showmeai",
+    "url": "https://clawhub.ai/skills/showmeai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showmeai-3e58c0e56fc4e331.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/showmeai@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-showmeai-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70b6c7d826031772dd8d98df455b3f4d37124904052429220b96275e6832ebae",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:19:01.988Z"
+}

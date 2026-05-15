@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29965,
+  "uuid": "skill-clawhub-timezone-toolkit",
+  "skillKey": "clawhub-timezone-toolkit",
+  "name": "Timezone Toolkit",
+  "summary": "Convert times between timezones, show world clocks, find meeting overlap across zones, and look up UTC offsets and DST status. Use when converting between ti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timezone_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Convert times between timezones, show world clocks, find meeting overlap across zones, and look.",
+        "Use when converting between ti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timezone-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timezone-toolkit",
+      "url": "https://clawhub.ai/skills/timezone-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timezone-toolkit",
+    "url": "https://clawhub.ai/skills/timezone-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timezone-toolkit-b7b6cbaa7bb9bfba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timezone-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timezone-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe91798127bd401aa4286c944cfee309f19553e36f931e2045704c81d303e559",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:06:49.446Z"
+}

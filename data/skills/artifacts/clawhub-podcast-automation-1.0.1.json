@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-automation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_automation",
+  "skill": {
+    "id": 58374,
+    "skillKey": "clawhub-podcast-automation",
+    "name": "Podcast Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-automation",
+    "url": "https://clawhub.ai/skills/podcast-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-automation-53349e3975374d38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "播客自动化全流程技能——支持播客抓取、Whisper转录、Sonos播放、飞书Wiki归档。Use when you need to scrape podcast episodes, transcribe audio, play on Sonos speakers, or archive to Feishu Wiki."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778098177303,
+      "changelog": "支持播客抓取、转录、Sonos播放、飞书归档全流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1de8bec5a225d8f5afd9ef4c3cf5943c28e86aab2caa11932c123f435ce3414e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31469,
+  "uuid": "skill-clawhub-finmo",
+  "skillKey": "clawhub-finmo",
+  "name": "Finmo",
+  "summary": "Finmo integration. Manage Organizations. Use when the user wants to interact with Finmo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finmo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Finmo integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Finmo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finmo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finmo",
+      "url": "https://clawhub.ai/skills/finmo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finmo",
+    "url": "https://clawhub.ai/skills/finmo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finmo-814c1e353390e45e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finmo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-finmo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d3e4e3b1705ac27f54e05de8b794710738f1d04517864dba50560624140139b",
+      "artifactSizeBytes": 1787
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:29.782Z"
+}

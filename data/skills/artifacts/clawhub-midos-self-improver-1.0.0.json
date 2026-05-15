@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midos-self-improver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midos_self_improver",
+  "skill": {
+    "id": 50648,
+    "skillKey": "clawhub-midos-self-improver",
+    "name": "Midos Self Improver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midos-self-improver",
+    "url": "https://clawhub.ai/skills/midos-self-improver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midos-self-improver-0ac45c6548fbbd6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured learning pipeline with quality-gated promotion. Captures corrections, errors, and patterns — promotes only what proves itself through recurrence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msruruguay",
+      "userId": "publishers:msruruguay",
+      "displayName": "msruruguay",
+      "image": "https://avatars.githubusercontent.com/u/85544849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772647603125,
+      "changelog": "Initial release of midos-self-improver—a self-improving agent with a structured, quality-gated learning pipeline.\n\n- Captures corrections, errors, knowledge gaps, best practices, and recurring patterns via five detection triggers.\n- Introduces deduplication and quality gates to filter out low-value or duplicate learnings before storing.\n- Implements a four-axis scoring system (recurrence, freshness, specificity, impact) to determine which learnings are promoted, pruned, or kept in staging.\n- Automates rule promotion into permanent project memory once patterns prove recurring value.\n- Provides ready-to-use capture hooks and guides for both standalone and integrated usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47246339bef8b59b6342b68b9ee3fd6d63ae7b15944b257d6baa01be4b12241d"
+}

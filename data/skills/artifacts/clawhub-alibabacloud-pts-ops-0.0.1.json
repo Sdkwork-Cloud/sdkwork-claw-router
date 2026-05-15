@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-pts-ops@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pts_ops",
+  "skill": {
+    "id": 34112,
+    "skillKey": "clawhub-alibabacloud-pts-ops",
+    "name": "Alibabacloud Pts Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pts-ops",
+    "url": "https://clawhub.ai/skills/alibabacloud-pts-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pts-ops-aea5713516283e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud PTS (Performance Testing Service) scenario-based skill for creating and managing stress testing scenarios. Supports both PTS native HTTP/HTTPS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775715913418,
+      "changelog": "Initial release: Alibaba Cloud PTS (Performance Testing Service) scenario management skill.\n\n- Enables creation and management of stress testing scenarios via Alibaba Cloud PTS.\n- Supports both PTS native HTTP/HTTPS and JMeter-based stress testing.\n- Enforces confirmation of all user-customizable parameters before running any operations.\n- Details required permissions and provides pre-checks for Aliyun CLI setup.\n- Documents idempotency practices to prevent duplicate scenarios or tests.\n- Outlines core workflows for creating, running, and managing PTS and JMeter scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fac437b3be66cc3271b079cb0352327f30aa0faa1906c3cbc6727a9097c36031"
+}

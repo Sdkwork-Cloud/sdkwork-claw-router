@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rhaios-staging@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rhaios_staging",
+  "skill": {
+    "id": 56531,
+    "skillKey": "clawhub-rhaios-staging",
+    "name": "Rhaios Staging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rhaios-staging",
+    "url": "https://clawhub.ai/skills/rhaios-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rhaios-staging-927f497a28c7e4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Rhaios staging REST API for yield operations. Discover -> prepare -> setup-if-needed -> sign -> execute flow with pluggable signer backend...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xtimepunk",
+      "userId": "publishers:0xtimepunk",
+      "displayName": "João",
+      "image": "https://avatars.githubusercontent.com/u/45543880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773603899492,
+      "changelog": "Remove undeclared env reads (CHAIN_RPC_URL, X402_PAYMENT_HEADER) — staging uses managed forks and x402 is disabled",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9099dc283c1bb37244c8aa289dccc50c5952b8334e40a6d2d11c192a340481f"
+}

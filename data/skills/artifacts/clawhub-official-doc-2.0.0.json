@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-doc@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_doc",
+  "skill": {
+    "id": 58734,
+    "skillKey": "clawhub-official-doc",
+    "name": "Official Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-doc",
+    "url": "https://clawhub.ai/skills/official-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-doc-661fb66926c7261e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "公文写作助手。通知、报告、请示、批复、会议纪要、工作总结、格式检查、语气检查、模板库。Official document writer for notices, reports, requests, meeting minutes with format check, tone check, template l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 843,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773757874,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61491727b94cb6d945f35ba8441ff28d60ddb5ddb757ece291200b3c3605ce2e"
+}

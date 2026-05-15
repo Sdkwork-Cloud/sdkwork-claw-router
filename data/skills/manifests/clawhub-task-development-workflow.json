@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10658,
+  "uuid": "skill-clawhub-task-development-workflow",
+  "skillKey": "clawhub-task-development-workflow",
+  "name": "Task Development Workflow",
+  "summary": "TDD-first development workflow with structured planning, task tracking, and PR-based code review. Use when building software projects that require clarificat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_development_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Md. Mushraful Hoque Anik",
+      "features": [
+        "TDD-first development workflow with structured planning, task tracking, and PR-based code review",
+        "Use when building software projects that require clarificat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-development-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1005616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-development-workflow",
+      "url": "https://clawhub.ai/skills/task-development-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-development-workflow",
+    "url": "https://clawhub.ai/skills/task-development-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-development-workflow-ce5a153491b2f93c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-development-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-development-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f026ad434e7e0d7542073151038c26a93b5c2beed58dac5d27c6271b0d08d08",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T14:36:33.753Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19667,
+  "uuid": "skill-clawhub-totp",
+  "skillKey": "clawhub-totp",
+  "name": "TOTP",
+  "summary": "TOTP-based OTP verification for sensitive operations (env vars, gateway restarts, backup deletions, critical config changes). Uses otplib with window:2 (1 mi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.totp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Diego Cornejo",
+      "features": [
+        "TOTP-based OTP verification for sensitive operations (env vars, gateway restarts, backup deleti.",
+        "Uses otplib with window:2 (1 mi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/totp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7274655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "totp",
+      "url": "https://clawhub.ai/skills/totp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "totp",
+    "url": "https://clawhub.ai/skills/totp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/totp-00a00074dc9e4ebf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/totp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-totp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3920750cf3588535c609a1a0eeaeed6238fbfc4693087e18826ad53c2a00431",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T19:28:24.313Z"
+}

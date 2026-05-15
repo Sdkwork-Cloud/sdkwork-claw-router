@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64991,
+  "uuid": "skill-clawhub-claw-local-knowledge",
+  "skillKey": "clawhub-claw-local-knowledge",
+  "name": "claw-local-knowledge",
+  "summary": "本地知识库技能，用于添加和检索知识。当用户需要将文档（docx/pdf/xlsx/pptx）添加到知识库时使用本技能，或在需要从知识库中检索相关知识时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_local_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zexun Lin",
+      "features": [
+        "本地知识库技能，用于添加和检索知识。当用户需要将文档（docx/pdf/xlsx/pptx）添加到知识库时使用本技能，或在需要从知识库中检索相关知识时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-local-knowledge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95264762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-local-knowledge",
+      "url": "https://clawhub.ai/skills/claw-local-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-local-knowledge",
+    "url": "https://clawhub.ai/skills/claw-local-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-local-knowledge-db5838eaeb5d6c38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-local-knowledge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-local-knowledge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:026d319818534932b413120cc62e143b4c6f2179ffb25054da888cc83a4cc4a9",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:36:34.431Z"
+}

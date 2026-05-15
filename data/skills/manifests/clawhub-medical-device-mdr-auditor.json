@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33557,
+  "uuid": "skill-clawhub-medical-device-mdr-auditor",
+  "skillKey": "clawhub-medical-device-mdr-auditor",
+  "name": "Medical Device MDR Auditor",
+  "summary": "Audit medical device technical files against EU MDR 2017/745 regulations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_device_mdr_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Audit medical device technical files against EU MDR 2017/745 regulations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-device-mdr-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-device-mdr-auditor",
+      "url": "https://clawhub.ai/skills/medical-device-mdr-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-device-mdr-auditor",
+    "url": "https://clawhub.ai/skills/medical-device-mdr-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-device-mdr-auditor-caee42de877b43f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-device-mdr-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-device-mdr-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bffb37838ef140e72cf0903027c134367cf8c0a946e0481cbe3ebe83939e4585",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:21:23.464Z"
+}

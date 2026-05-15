@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/likec4-dsl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.likec4_dsl",
+  "skill": {
+    "id": 56805,
+    "skillKey": "clawhub-likec4-dsl",
+    "name": "Likec4 Dsl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "likec4-dsl",
+    "url": "https://clawhub.ai/skills/likec4-dsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/likec4-dsl-d4939741c08335bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when working with `.c4`/`.likec4` files or LikeC4 CLI/config questions where exact DSL/CLI syntax is required, especially for strict command/snippet-firs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dc-ai-gh",
+      "userId": "s174dp24ncwn8v04hh9hsds95583nbha",
+      "displayName": "dc-ai-gh",
+      "image": "https://avatars.githubusercontent.com/u/262829576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777345581381,
+      "changelog": "Initial release of likec4-dsl skill:\n\n- Enables precise responses for `.c4`/`.likec4` files, LikeC4 CLI, and DSL syntax queries.\n- Enforces strict command/snippet-first answering and prohibits substitutions for key CLI commands.\n- Details required contracts for validation and export commands, flags, and multi-file usage.\n- Documents DSL syntax rules, file/project scoping, FQN handling, and scope/syntax correctness.\n- Sets clear response discipline for minimal and exact output when required by prompt.\n- Includes guardrails for deployment, relationship matching, dynamic views, and CLI flag usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52f5142bace6861cc0fb4e06205ce9e245bf9a19269aea0670006e7cf94e0a0f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64679,
+  "uuid": "skill-clawhub-aliyun-oss",
+  "skillKey": "clawhub-aliyun-oss",
+  "name": "Aliyun Oss",
+  "summary": "阿里云OSS文件上传工具 - 安全、高效的文件上传和临时链接生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_oss",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jixson",
+      "features": [
+        "阿里云OSS文件上传工具",
+        "安全、高效的文件上传和临时链接生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-oss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20365468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-oss",
+      "url": "https://clawhub.ai/skills/aliyun-oss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-oss",
+    "url": "https://clawhub.ai/skills/aliyun-oss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-oss-96643cef0ca5073e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-oss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-oss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c3143938cbfe460c8674465143ae69bc1cfd28290f09fded79e7ea336eef15f",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T10:56:35.820Z"
+}

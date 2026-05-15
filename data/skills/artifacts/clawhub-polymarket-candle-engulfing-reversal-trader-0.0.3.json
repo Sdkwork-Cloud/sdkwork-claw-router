@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-candle-engulfing-reversal-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_candle_engulfing_reversal_trader",
+  "skill": {
+    "id": 30648,
+    "skillKey": "clawhub-polymarket-candle-engulfing-reversal-trader",
+    "name": "Polymarket Candle Engulfing Reversal Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-candle-engulfing-reversal-trader",
+    "url": "https://clawhub.ai/skills/polymarket-candle-engulfing-reversal-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-candle-engulfing-reversal-trader-2aecba87f678662e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects engulfing reversal patterns in crypto 5-minute interval markets on Polymarket. A bullish engulfing occurs when an interval completely reverses the pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386580728,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93c4e6194c5f6ef96fa66ec90aacc5173919304c30a9577860185536d3c643aa"
+}

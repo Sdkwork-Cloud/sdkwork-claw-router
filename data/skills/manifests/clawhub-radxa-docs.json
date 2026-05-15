@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41647,
+  "uuid": "skill-clawhub-radxa-docs",
+  "skillKey": "clawhub-radxa-docs",
+  "name": "radxa docs",
+  "summary": "Use when one Radxa skill should cover the full offline documentation workflow: detect the current board model, map it to the correct product series, deploy o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.radxa_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xzl01",
+      "features": [
+        "Use when one Radxa skill should cover the full offline documentation workflow: detect the curre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/radxa-docs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31403725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "radxa-docs",
+      "url": "https://clawhub.ai/skills/radxa-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "radxa-docs",
+    "url": "https://clawhub.ai/skills/radxa-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/radxa-docs-1c8896e11639f58c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/radxa-docs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-radxa-docs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:529a559c137b1f8a0f14959d217b42235b79e921224abe58e798bb5e4ea019c8",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:14:39.841Z"
+}

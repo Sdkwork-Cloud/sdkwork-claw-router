@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sre-operator@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sre_operator",
+  "skill": {
+    "id": 71739,
+    "skillKey": "clawhub-sre-operator",
+    "name": "sre-operator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sre-operator",
+    "url": "https://clawhub.ai/skills/sre-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sre-operator-bab6505a823a9cd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供结构化的服务器运维工作流程，包含系统识别、安全检查、命令验证和故障排查；当用户需要系统管理、性能优化、日志分析或服务器维护时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoanco",
+      "userId": "s1765fp55cyc3pn3xj96s47dv983jtn0",
+      "displayName": "zuoanCo",
+      "image": "https://avatars.githubusercontent.com/u/45746796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772703543706,
+      "changelog": "- Initial release of the **openclaw** skill for server operations and maintenance.\n- Provides structured workflows for system identification, security checks, command validation, risk assessment, troubleshooting, performance monitoring, and log analysis.\n- Includes clear operating principles emphasizing security, system verification, and auditability.\n- Defines step-by-step standard procedures for common scenarios such as performance diagnostics, disk cleanup, process management, network troubleshooting, log analysis, and package management.\n- Supplies references and checklists for command safety, troubleshooting, and best practices to ensure safe and effective maintenance.\n- Offers practical usage examples and recommendations to minimize risk during server operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:510d0458914504ddb044c676f708aadfac744273418535982f7502aab5f688f8"
+}

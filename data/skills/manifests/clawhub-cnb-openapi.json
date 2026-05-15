@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60880,
+  "uuid": "skill-clawhub-cnb-openapi",
+  "skillKey": "clawhub-cnb-openapi",
+  "name": "CNB OpenAPI Skills",
+  "summary": "与 CNB (Cloud Native Build) Open API 交互，用于代码管理和开发协作。当用户需要查询项目、代码仓库、问题、合并请求或其他开发相关数据时使用。需要 CNB_TOKEN 环境变量进行身份认证。API 请求地址从环境变量 CNB_API_ENDPOINT 获取，默认为 https://a...",
+  "version": "1.18.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnb_openapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sixther-dc",
+      "features": [
+        "与 CNB (Cloud Native Build) Open API 交互，用于代码管理和开发协作。当用户需要查询项目、代码仓库、问题、合并请求或其他开发相关数据时使用。需要 CNB_TO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnb-openapi@1.18.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10322318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnb-openapi",
+      "url": "https://clawhub.ai/skills/cnb-openapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnb-openapi",
+    "url": "https://clawhub.ai/skills/cnb-openapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnb-openapi-c8671b92130276ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnb-openapi@1.18.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnb-openapi-1.18.9.json",
+      "version": "1.18.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d05fa7151dc81df3c6425924f570b817a72bb58cb50f36c1903837534d6777d8",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:59:09.626Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17937,
+  "uuid": "skill-clawhub-agent-emacs",
+  "skillKey": "clawhub-agent-emacs",
+  "name": "Agent Emacs",
+  "summary": "Unified persistent text-based environment for AI agents. Use when an agent needs to maintain state across sessions, perform structural code editing, or manag...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_emacs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pi",
+      "features": [
+        "Unified persistent text-based environment for AI agents",
+        "Use when an agent needs to maintain state across sessions, perform structural code editing, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-emacs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90173669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-emacs",
+      "url": "https://clawhub.ai/skills/agent-emacs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-emacs",
+    "url": "https://clawhub.ai/skills/agent-emacs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-emacs-92a4c88b4585ce6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-emacs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-emacs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c0133da454276febe88c708ef969f8b601dbc8007d36b610ec669afe9ef09e9",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T11:55:05.295Z"
+}

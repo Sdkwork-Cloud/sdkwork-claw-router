@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59985,
+  "uuid": "skill-clawhub-calorie-lookup",
+  "skillKey": "clawhub-calorie-lookup",
+  "name": "Calorie Lookup",
+  "summary": "Spoonacular 营养查询与热量估算（主数据源，USDA 后备）。支持搜寻优化、烹饪系数、交叉验证及图像识别。需要 API key 环境变量 SPOONACULAR_API_KEY 或 USDA_FDC_API_KEY。",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calorie_lookup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiuZX886",
+      "features": [
+        "Spoonacular 营养查询与热量估算（主数据源，USDA 后备）。支持搜寻优化、烹饪系数、交叉验证及图像识别。需要 API key 环境变量 SPOONACULAR_API_KEY 或."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calorie-lookup@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56762048?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calorie-lookup",
+      "url": "https://clawhub.ai/skills/calorie-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calorie-lookup",
+    "url": "https://clawhub.ai/skills/calorie-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calorie-lookup-9f2b29db9f3710f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calorie-lookup@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calorie-lookup-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4468701b5cd52f58c9b548b309ed7124a7f3908acdd89d7a953b02d5c28d9949",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T23:03:02.744Z"
+}

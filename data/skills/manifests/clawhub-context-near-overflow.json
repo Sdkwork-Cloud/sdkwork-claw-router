@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47544,
+  "uuid": "skill-clawhub-context-near-overflow",
+  "skillKey": "clawhub-context-near-overflow",
+  "name": "Context Near Overflow",
+  "summary": "Context window is near capacity, causing the model to drop earlier content silently and produce degraded, partial, or inconsistent output.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_near_overflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mvogt99",
+      "features": [
+        "Context window is near capacity, causing the model to drop earlier content silently and produce."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-near-overflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/911083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-near-overflow",
+      "url": "https://clawhub.ai/skills/context-near-overflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-near-overflow",
+    "url": "https://clawhub.ai/skills/context-near-overflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-near-overflow-7034fab11cec3f62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-near-overflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-near-overflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8d19eab39d5707dcc8fe2772e6c972ccc9431e990c98e700d99f65d470b7a77",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:00:15.911Z"
+}

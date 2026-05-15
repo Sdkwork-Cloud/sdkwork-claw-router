@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29960,
+  "uuid": "skill-clawhub-rsi",
+  "skillKey": "clawhub-rsi",
+  "name": "Rsi",
+  "summary": "Calculate RSI for any asset. Use when checking overbought/oversold conditions, spotting divergence signals, comparing multi-timeframe RSI, or setting trading...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Calculate RSI for any asset",
+        "Use when checking overbought/oversold conditions, spotting divergence signals, comparing multi-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rsi@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rsi",
+      "url": "https://clawhub.ai/skills/rsi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsi",
+    "url": "https://clawhub.ai/skills/rsi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsi-f0f8270db484173c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rsi@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rsi-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f759e7f7ce44ca7b7e22af05cba2b36bbd7e24085d4e63aa2040bd634482f57",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:55:07.988Z"
+}

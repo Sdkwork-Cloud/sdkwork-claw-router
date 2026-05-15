@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_manager",
+  "skill": {
+    "id": 27045,
+    "skillKey": "clawhub-image-manager",
+    "name": "Image Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-manager",
+    "url": "https://clawhub.ai/skills/image-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-manager-8cfbce7b7ee46cfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage local images by category with original and thumbnail storage, enabling fast tag, date, and keyword search through a JSON index file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaobu2020",
+      "userId": "s1773p9g7kx8e7k8d5h3zbez2983g0v5",
+      "displayName": "xiaobu2020",
+      "image": "https://avatars.githubusercontent.com/u/71875436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773939566283,
+      "changelog": "Image Manager Skill v1.0.0\n\n- Initial release with local image management capabilities.\n- Supports automatic image categorization (pets, people, food, scenery, receipts, other).\n- Features dual storage: original image and 300x300 thumbnail for quick preview.\n- Provides fast search by tags, category, date, and keywords using a JSON index file.\n- Allows multi-tag system and summary browsing by category or tag.\n- Index records include metadata such as path, tags, description, date, source, and size.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66ac42b1d1e29e6c090b41fd00f1c96e970af0a46d12d1452122193c94b7be90"
+}

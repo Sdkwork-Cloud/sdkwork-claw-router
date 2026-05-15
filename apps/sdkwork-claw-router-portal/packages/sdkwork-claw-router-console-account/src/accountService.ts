@@ -47,7 +47,7 @@ export interface AccountStats {
 
 export class AccountService {
   static async fetchAccountDetails(): Promise<AccountStats> {
-    const result = await getClawRouterAppSdkClient().account.fetchAccountDetails();
+    const result = await getClawRouterAppSdkClient().billing.account.summary.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch account details');
     return normalizeAccountStats(readApiRecord(result));
   }

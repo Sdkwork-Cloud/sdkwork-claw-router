@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pc-game-deals@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pc_game_deals",
+  "skill": {
+    "id": 33169,
+    "skillKey": "clawhub-pc-game-deals",
+    "name": "PC Game Deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pc-game-deals",
+    "url": "https://clawhub.ai/skills/pc-game-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pc-game-deals-87e0c50a71a372dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track PC game discounts across Steam, Epic Games, GOG, Humble Store and 30+ stores via CheapShark API. Use when user asks: 'any deals on [game]', 'game disco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pazzilivo",
+      "userId": "s17cjeqkz32htpjehh9e9eg3gs83j772",
+      "displayName": "Pazzilivo",
+      "image": "https://avatars.githubusercontent.com/u/1618972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774007388729,
+      "changelog": "Initial release - track PC game discounts across Steam, Epic, GOG and 30+ stores via CheapShark API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:218abae192cff83f43cbb13cdfe48044072716d48d51b1b59641e8cb67e7974c"
+}

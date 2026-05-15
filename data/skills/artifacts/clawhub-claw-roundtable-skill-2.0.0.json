@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-roundtable-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_roundtable_skill",
+  "skill": {
+    "id": 61527,
+    "skillKey": "clawhub-claw-roundtable-skill",
+    "name": "Claw Roundtable Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-roundtable-skill",
+    "url": "https://clawhub.ai/skills/claw-roundtable-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-roundtable-skill-58b65b99b0e44886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多 Agent 深度讨论系统 V2。需求驱动的智能专家匹配系统，模拟真实圆桌会议。 集成 146 个全领域专家（engineering/design/marketing/sales/product 等），支持任何复杂问题的多专家讨论。 核心改进： 1. 需求智能拆解 → 精准匹配专家（从 146 个专家库中选择）..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krislu1221",
+      "userId": "s1722js5hsngdpp170necz8fgn83r9q4",
+      "displayName": "Krislu",
+      "image": "https://avatars.githubusercontent.com/u/258380416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777126858806,
+      "changelog": "RoundTable Skill V2.0.0 — Major platform overhaul introducing demand-driven expert matching and flexible discussion flow.\n\n- Added requirement analyzer and new roundtable V2 engine for intelligent demand parsing and expert selection.\n- Discussions now organized by dynamically identified topics, not fixed rounds; experts assigned per-issue.\n- Excludes irrelevant experts and adapts flow to task complexity (low/medium/high).\n- Expanded API and documentation, significant refactor with 24 new and 6 updated files.\n- Dramatically reduces resource usage for simple/moderate requests; improves relevance and efficiency for all cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaaf21a54a14d60204a6d935fb3be95f73b1abb51fb935cb7623e656b35e5c73"
+}

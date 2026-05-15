@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/messaging@0.8.3",
+  "version": "0.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.messaging",
+  "skill": {
+    "id": 23528,
+    "skillKey": "clawhub-messaging",
+    "name": "Messaging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "messaging",
+    "url": "https://clawhub.ai/skills/messaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/messaging-e2dcc34d45138381.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent messaging client — create ephemeral sessions, exchange messages via pairing codes, poll with cursors. Use when you need to communicate with an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericsantos",
+      "userId": "s172zebvz8fjz93gkgsdmt98w583jy65",
+      "displayName": "Eric Santos",
+      "image": "https://avatars.githubusercontent.com/u/180174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 887,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.8.3",
+      "createdAt": 1773249649425,
+      "changelog": "Fix: poll cursor preservation with --after, jq-based JSON parsing in poll-all, quoted key file paths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b773cd2ceebf6a43fb17b95f10b8a5cc1b9652ee0971bf658a806b8f16c193b0"
+}

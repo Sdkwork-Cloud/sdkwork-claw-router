@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14192,
+  "uuid": "skill-clawhub-cavos-cli-skill",
+  "skillKey": "clawhub-cavos-cli-skill",
+  "name": "Cavos Cli",
+  "summary": "Interact with the Cavos CLI for Starknet wallet operations. Use for transfers, approvals, contract calls, session management, and transaction monitoring.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cavos_cli_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adrianvrj",
+      "features": [
+        "Interact with the Cavos CLI for Starknet wallet operations",
+        "Use for transfers, approvals, contract calls, session management, and transaction monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cavos-cli-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111903096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cavos-cli-skill",
+      "url": "https://clawhub.ai/skills/cavos-cli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cavos-cli-skill",
+    "url": "https://clawhub.ai/skills/cavos-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cavos-cli-skill-c433d2b724cf56da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cavos-cli-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cavos-cli-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d27fdc1048833e7ad7174d5bd23fcd26abaf112535186ff65b249781629ccdb",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T17:07:16.311Z"
+}

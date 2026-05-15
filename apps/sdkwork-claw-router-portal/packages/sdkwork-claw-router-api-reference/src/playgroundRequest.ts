@@ -1,4 +1,4 @@
-import type { ParamRow } from './apiPlaygroundRows';
+﻿import type { ParamRow } from './apiPlaygroundRows';
 import { resolveApiRequestUrl } from 'sdkwork-claw-router-commons/runtime';
 
 type AuthType = 'current_user' | 'api_key';
@@ -6,6 +6,7 @@ type RequestTab = 'params' | 'headers' | 'auth' | 'body';
 
 export const FORBIDDEN_HEADER_NAMES = new Set([
   'accept-encoding',
+  'access-token',
   'authorization',
   'connection',
   'content-length',
@@ -18,6 +19,7 @@ export const FORBIDDEN_HEADER_NAMES = new Set([
   'sec-fetch-dest',
   'sec-fetch-mode',
   'sec-fetch-site',
+  'sdkwork-access-token',
   'user-agent',
   'x-forwarded-for',
   'x-forwarded-host',
@@ -45,8 +47,9 @@ export interface BuildPlaygroundRequestInput {
   headerParams: ParamRow[];
   bodyValue: string;
   authType: AuthType;
+  accessToken?: string;
   apiKey?: string;
-  sessionToken?: string;
+  authToken?: string;
 }
 
 export interface PlaygroundResponse {
@@ -303,8 +306,13 @@ function buildHeaders(input: BuildPlaygroundRequestInput): Record<string, string
 
   if (input.authType === 'api_key' && input.apiKey?.trim()) {
     headers.Authorization = `Bearer ${input.apiKey.trim()}`;
-  } else if (input.authType === 'current_user' && input.sessionToken?.trim()) {
-    headers.Authorization = `Bearer ${input.sessionToken.trim()}`;
+  } else if (input.authType === 'current_user') {
+    if (input.authToken?.trim()) {
+      headers.Authorization = `Bearer ${input.authToken.trim()}`;
+    }
+    if (input.accessToken?.trim()) {
+      headers['Sdkwork-Access-Token'] = input.accessToken.trim();
+    }
   }
 
   for (const param of input.headerParams) {

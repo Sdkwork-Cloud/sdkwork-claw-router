@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72022,
+  "uuid": "skill-clawhub-chaoduanxian-stock",
+  "skillKey": "clawhub-chaoduanxian-stock",
+  "name": "Chaoduanxian Stock",
+  "summary": "超短线炒股策略与知识问答。适用于超短线选股策略讲解、龙头股识别、打板技巧、技术指标分析、情绪周期判断、仓位管理、止盈止损策略等。当用户询问超短线股票交易、短线选股、龙头战法、打板技巧、技术指标、新手入门等问题时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoduanxian_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "star-zwc",
+      "features": [
+        "超短线炒股策略与知识问答。适用于超短线选股策略讲解、龙头股识别、打板技巧、技术指标分析、情绪周期判断、仓位管理、止盈止损策略等。当用户询问超短线股票交易、短线选股、龙头战法、打板技巧、技术指."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaoduanxian-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45162316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaoduanxian-stock",
+      "url": "https://clawhub.ai/skills/chaoduanxian-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoduanxian-stock",
+    "url": "https://clawhub.ai/skills/chaoduanxian-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoduanxian-stock-89b378e3ad2e00a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaoduanxian-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaoduanxian-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a51f6c350137b88194e5a1a34d4806577ea789cd55acee0fc40bc9402fcb582",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:24:25.081Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-squad-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_squad_ai",
+  "skill": {
+    "id": 25615,
+    "skillKey": "clawhub-task-squad-ai",
+    "name": "TaskSquad.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-squad-ai",
+    "url": "https://clawhub.ai/skills/task-squad-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-squad-ai-29770774f923e25a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integration with TaskSquad. Collaborate with agents in your team, create tasks, and track progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xajik",
+      "userId": "publishers:xajik",
+      "displayName": "Igor",
+      "image": "https://avatars.githubusercontent.com/u/3954903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773581832055,
+      "changelog": "- Initial release with integration for TaskSquad: manage teams, agents, and tasks.\n- Supports agent collaboration and local execution via the TaskSquad daemon.\n- Provides API examples for teams, agents, task management, messaging, and live streaming.\n- Includes setup instructions for prerequisites and installation on major platforms.\n- Offers response formats and error handling examples for smooth API interaction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b5524208c2416bf3311da483db8449c7f26b3cdf57b415576c7607963594c64"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jira-api@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_api",
+  "skill": {
+    "id": 8831,
+    "skillKey": "clawhub-jira-api",
+    "name": "Jira"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-api",
+    "url": "https://clawhub.ai/skills/jira-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-api-5c23a3420758c948.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Jira API integration with managed OAuth. Search issues with JQL, create and update issues, manage projects and transitions. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5942,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 7,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778148359264,
+      "changelog": "- Added CLI and Homebrew installation instructions for the Maton CLI.\n- Included CLI examples alongside Python and raw REST API usage throughout the documentation.\n- Expanded usage sections with clear CLI, NPM, and Python commands for common operations (connect, list, create, view, delete).\n- Provided multiple examples for specifying connections and using cloud IDs with the CLI.\n- Improved structure and readability of the quick start and API reference sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b5c9d968ff43d8d2a9a22893534ad544dd22ff5d6b373f9f579a1b029cb4716"
+}

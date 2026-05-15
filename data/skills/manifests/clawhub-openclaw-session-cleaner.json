@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59838,
+  "uuid": "skill-clawhub-openclaw-session-cleaner",
+  "skillKey": "clawhub-openclaw-session-cleaner",
+  "name": "openclaw-session-cleaner",
+  "summary": "OpenClaw 会话清理助手，自动清理旧会话文件、重建 sessions.json、解决文件膨胀问题",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c-3po",
+      "features": [
+        "OpenClaw 会话清理助手，自动清理旧会话文件、重建 sessions.json、解决文件膨胀问题"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-cleaner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44689813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-cleaner",
+      "url": "https://clawhub.ai/skills/openclaw-session-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-cleaner",
+    "url": "https://clawhub.ai/skills/openclaw-session-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-cleaner-137507829b214ea1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-cleaner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-cleaner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4c694e3d858b039c53a528ab2ba9bd6fe779ad483ee527c1c887ff2aac603a",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:51:45.086Z"
+}

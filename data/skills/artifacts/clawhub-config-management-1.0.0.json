@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/config-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_management",
+  "skill": {
+    "id": 31827,
+    "skillKey": "clawhub-config-management",
+    "name": "Config Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-management",
+    "url": "https://clawhub.ai/skills/config-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-management-40b34531b86f2740.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configuration backup, drift detection, and golden config validation across Cisco IOS-XE/NX-OS, Juniper JunOS, and Arista EOS. Covers running vs startup compa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahagn-madatyan",
+      "userId": "s172e0s6wm08gdxkw6pxzkwzgh841b69",
+      "displayName": "Vahagn Madatyan",
+      "image": "https://avatars.githubusercontent.com/u/74753362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774158994991,
+      "changelog": "Initial release of the config-management skill:\n\n- Provides configuration backup, drift detection, and golden config validation for Cisco IOS-XE/NX-OS, Juniper JunOS, and Arista EOS.\n- Supports running vs startup comparison, section-level drift analysis, and ongoing compliance validation.\n- Includes both read-only assessment steps and ⚠️ write-operations for config archival and remediation.\n- Offers clear operational procedures, compliance pattern checks, and step-by-step remediation guidance.\n- Designed for ongoing configuration assurance and security compliance in multi-vendor network environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:affe789af6c86f7971594c180c03ff126a9124da9f312a5fc6a7b163536253bc"
+}

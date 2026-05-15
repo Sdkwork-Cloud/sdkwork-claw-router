@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harness-evolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harness_evolve",
+  "skill": {
+    "id": 60440,
+    "skillKey": "clawhub-harness-evolve",
+    "name": "Harness Evolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harness-evolve",
+    "url": "https://clawhub.ai/skills/harness-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harness-evolve-397e8cca85ac20ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 自进化引擎——消费研究日志 → 系统自检 → 架构优化（分级执行/提案）→ 写入当日进化摘要。 适用于任何 AI Agent 系统：OpenClaw、Claude Code agent、AutoGPT、LangGraph 或自研框架。 触发词：自进化、self-evolve、架构优化、agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dottythehomeless",
+      "userId": "s17bffj1j6wjk2sswaa27ypxps83ncys",
+      "displayName": "DottytheHomeless",
+      "image": "https://avatars.githubusercontent.com/u/118527088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774956641144,
+      "changelog": "**harness-evolve v1.1.0** — Major update: Refined architecture for self-evolving AI Agents with step-wise, auditable action pipeline.\n\n- Adds detailed multi-stage workflow: research log consumption, system self-check, graded architectural optimization, daily evolved summary, and optional notifications.\n- Enforces strict responsibility boundaries: only allows safe (non-runtime) file edits; runtime configuration changes require review/approval.\n- Provides explicit config/interface parsing rules and fallback interactive prompts for missing info.\n- Implements granular system self-checks (e.g., rule redundancy, expiration, backlog, regressions, anomalies, complexity, abstraction opportunities).\n- Outputs concise, standardized daily evolution summaries for downstream tasks (e.g., daily reports).\n- Introduces no-action transparency: documents if no evolution is required (\"system status healthy\").",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea7e7a35f728790948d408d325d24f54a5bcde2ea0b7fab7fe68a6d8ca3266b2"
+}

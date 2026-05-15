@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27967,
+  "uuid": "skill-clawhub-project-bootstrap",
+  "skillKey": "clawhub-project-bootstrap",
+  "name": "Project Bootstrap",
+  "summary": "Bootstrap a multi-agent software project from idea to running CI/CD. Use when starting a new project that needs agent team design, task management, GitHub re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bingji Guo",
+      "features": [
+        "Bootstrap a multi-agent software project from idea to running CI/CD",
+        "Use when starting a new project that needs agent team design, task management, GitHub re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-bootstrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20468259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-bootstrap",
+      "url": "https://clawhub.ai/skills/project-bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-bootstrap",
+    "url": "https://clawhub.ai/skills/project-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-bootstrap-9846e627ccfc9fbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-bootstrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-bootstrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7c928208dfe43e54e609b95f35661fec90e2134a2f55755a451cf27845ce458",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:20:41.153Z"
+}

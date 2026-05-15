@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baton@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baton",
+  "skill": {
+    "id": 54441,
+    "skillKey": "clawhub-baton",
+    "name": "Baton"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baton",
+    "url": "https://clawhub.ai/skills/baton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baton-418c01e890606d2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Baton — AI orchestrator for OpenClaw. Routes every request to subagents. Never does work itself."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "entrebear",
+      "userId": "s175yykjdj7jd48qteng7xjd3583q4jt",
+      "displayName": "Entrebear",
+      "image": "https://avatars.githubusercontent.com/u/104825096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773861766059,
+      "changelog": "- Added package.json to define package metadata and dependencies.\n- No changes to skill logic or orchestration behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1519e287658c4ab2146b02ca2fffea524f0885a00f41bb469567e85edf506cb6"
+}

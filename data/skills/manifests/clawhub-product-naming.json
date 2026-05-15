@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42874,
+  "uuid": "skill-clawhub-product-naming",
+  "skillKey": "clawhub-product-naming",
+  "name": "Product Naming",
+  "summary": "Test product names and listing titles for TikTok Shop conversion potential before going live by scoring hook strength, search fit, and compliance risk.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_naming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Test product names and listing titles for TikTok Shop conversion potential before going live by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-naming@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-naming",
+      "url": "https://clawhub.ai/skills/product-naming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-naming",
+    "url": "https://clawhub.ai/skills/product-naming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-naming-d1f982a46afcf47e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-naming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-naming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0618887c8fc3230a99f2561f119417c8a9c2ef53d8c5874b79566376d21e4a00",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:19:13.152Z"
+}

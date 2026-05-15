@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ab-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test",
+  "skill": {
+    "id": 30129,
+    "skillKey": "clawhub-ab-test",
+    "name": "Ab Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test",
+    "url": "https://clawhub.ai/skills/ab-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-2e60f3f2508b1a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage A/B tests"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774483955940,
+      "changelog": "- Initial release of jpeng-ab-test.\n- Manage and automate A/B tests for marketing and testing operations.\n- Command-line interface for running tests and exporting results.\n- Requires API key configuration via environment variable.\n- Outputs results in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad4e831eabf464ec4f9fa53f1caebf94374c3311be6c49c20e714dbd179c8c06"
+}

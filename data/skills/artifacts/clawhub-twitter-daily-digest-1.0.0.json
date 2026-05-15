@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-daily-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_daily_digest",
+  "skill": {
+    "id": 66481,
+    "skillKey": "clawhub-twitter-daily-digest",
+    "name": "Twitter Daily Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-daily-digest",
+    "url": "https://clawhub.ai/skills/twitter-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-daily-digest-685b0755298286ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量获取并整理用户关注的所有 Twitter/X 账号最近 24 小时内的更新。当用户提到“每日推文摘要”“今日推文”“关注的人最近发了什么”“Twitter digest”“推特日报”“帮我看看推特”“刷推”，或要求查看单个/多个指定 X 账号最近动态时，都应触发此 skill。默认输出中文整合版正文；如需测试..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceylonlatte",
+      "userId": "s179239ypavm39xrfa17031ga983mzx6",
+      "displayName": "sycamore",
+      "image": "https://avatars.githubusercontent.com/u/24859127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774534222815,
+      "changelog": "twitter-daily-digest 1.0.0 — 首个版本上线\n\n- 支持批量获取并整理关注账号过去 24 小时的推文，按需支持全部/指定/部分账号。\n- 新增 JSON 事实层与 agent 主观整理层分离，结构更清晰，自由组合各端输出。\n- 标准工作流涵盖本地Markdown生成、Telegram 推送及 Notion 同步，保证内容一致。\n- 抓取事实包括账号列表、推文原文、互动数据与失败信息，agent 决定摘要重点与中文整合。\n- 所有主观判断和中文输出交由 agent 完成，脚本仅生成事实数据。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11cad39298d7beabdbee7412cc131e3a27f398fdf2fae8a4be1f2d88d8750c94"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62376,
+  "uuid": "skill-clawhub-budweiser",
+  "skillKey": "clawhub-budweiser",
+  "name": "Budweiser",
+  "summary": "提供关于百威啤酒品牌历史、发展、核心特点及其母公司Anheuser-Busch InBev的详细信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budweiser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于百威啤酒品牌历史、发展、核心特点及其母公司Anheuser-Busch InBev的详细信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budweiser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budweiser",
+      "url": "https://clawhub.ai/skills/budweiser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budweiser",
+    "url": "https://clawhub.ai/skills/budweiser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budweiser-448d6731ee98ea8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budweiser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-budweiser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da0e9eee6e97fb739afe08c81f74bcd6afc454f72bc366bbc8384ab036f44172",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:57:00.982Z"
+}

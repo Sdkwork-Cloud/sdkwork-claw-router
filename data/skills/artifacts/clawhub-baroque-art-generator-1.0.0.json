@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baroque-art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baroque_art_generator",
+  "skill": {
+    "id": 37697,
+    "skillKey": "clawhub-baroque-art-generator",
+    "name": "Baroque Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baroque-art-generator",
+    "url": "https://clawhub.ai/skills/baroque-art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baroque-art-generator-db9caf1c2babca04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "any subject into dramatic baroque oil painting art with rich chiaroscuro lighting, opulent Caravaggio and Rembrandt style textures, and classical Renaissance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776543473221,
+      "changelog": "Initial release of Baroque Art Generator.\n\n- Transforms any subject into dramatic baroque-style oil paintings with rich chiaroscuro lighting and classical Renaissance composition.\n- Supports style options inspired by Caravaggio and Rembrandt.\n- Allows size customization (`portrait`, `landscape`, `square`, `tall`) and style inheritance via reference image.\n- Designed for art collectors, Etsy sellers, and lovers of classical aesthetics.\n- Requires a free Neta AI API token for image generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcd5aa34cc695f40d37f1af32e903e9dabe209fa715391afa294b28e8db93916"
+}

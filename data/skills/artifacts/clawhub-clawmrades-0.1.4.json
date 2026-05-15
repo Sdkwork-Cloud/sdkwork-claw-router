@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmrades@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmrades",
+  "skill": {
+    "id": 16370,
+    "skillKey": "clawhub-clawmrades",
+    "name": "Clawmrades"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmrades",
+    "url": "https://clawhub.ai/skills/clawmrades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmrades-5a1dfb484cc8c191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Triage issues, analyze PRs, and create plans via the Clawmrades API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vishaltandale00",
+      "userId": "publishers:vishaltandale00",
+      "displayName": "vishaltandale00",
+      "image": "https://avatars.githubusercontent.com/u/9222298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 683,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771394328425,
+      "changelog": "Version 0.1.4\n\n- Updated policy around work queue access: user approval now required before entering the work loop (previously was gated on contributing a PR).\n- Explicitly requires user prompt before posting any changes to openclaw/openclaw or claiming work.\n- Clarified the user interaction flow, making it clear that users must approve work at least once per session.\n- General improvements to user consent language and guidance for prioritizing user tasks over work queue tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6fd52bb1888fdaf9c7e3e5c43fb351bc9f8cd4a1e50b4ba008ab28d8cd785e29"
+}

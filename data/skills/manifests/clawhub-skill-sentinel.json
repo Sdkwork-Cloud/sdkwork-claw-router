@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34019,
+  "uuid": "skill-clawhub-skill-sentinel",
+  "skillKey": "clawhub-skill-sentinel",
+  "name": "Skill Sentinel",
+  "summary": "Scan OpenClaw skill directories for high-signal security risks such as download-and-execute chains, obfuscated execution, and suspicious callbacks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike007jd",
+      "features": [
+        "Scan OpenClaw skill directories for high-signal security risks such as download-and-execute cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31256541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-sentinel",
+      "url": "https://clawhub.ai/skills/skill-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sentinel",
+    "url": "https://clawhub.ai/skills/skill-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sentinel-30295f6155258e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:197a97e24e9282e28c34495a24f08186aed76315172de1310cd44a8f26a51824",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:15:00.055Z"
+}

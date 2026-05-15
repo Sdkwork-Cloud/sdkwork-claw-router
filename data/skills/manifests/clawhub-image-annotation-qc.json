@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23962,
+  "uuid": "skill-clawhub-image-annotation-qc",
+  "skillKey": "clawhub-image-annotation-qc",
+  "name": "Image Annotation QC",
+  "summary": "Image Annotation Quality Control Tool - Automatically detect quality issues in bounding box and polygon segmentation annotations, generate visual reports. Su...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_annotation_qc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Image Annotation Quality Control Tool",
+        "Automatically detect quality issues in bounding box and polygon segmentation annotations, gener."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-annotation-qc@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-annotation-qc",
+      "url": "https://clawhub.ai/skills/image-annotation-qc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-annotation-qc",
+    "url": "https://clawhub.ai/skills/image-annotation-qc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-annotation-qc-d6502bf596219cdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-annotation-qc@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-annotation-qc-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9385b2070fbc995bbd48986251d2be9563e8fe05336d36067aaaf7b3503c6b1",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:23:15.594Z"
+}

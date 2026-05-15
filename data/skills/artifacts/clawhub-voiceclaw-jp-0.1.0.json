@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voiceclaw-jp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voiceclaw_jp",
+  "skill": {
+    "id": 26433,
+    "skillKey": "clawhub-voiceclaw-jp",
+    "name": "voiceclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voiceclaw-jp",
+    "url": "https://clawhub.ai/skills/voiceclaw-jp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voiceclaw-jp-cfbc3a7bc3249aa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voice conversation interface for OpenClaw using wake word detection, streaming LLM responses, and text-to-speech. Use when a user wants to talk to their Open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kentoku24",
+      "userId": "publishers:kentoku24",
+      "displayName": "kentoku24",
+      "image": "https://avatars.githubusercontent.com/u/975196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772585565836,
+      "changelog": "Release 0.1.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97f2c1b6f9c08997d0ec6dfd957c90db06969ceaccd2737445b38e98c388e2fa"
+}

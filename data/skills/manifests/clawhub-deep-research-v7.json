@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63216,
+  "uuid": "skill-clawhub-deep-research-v7",
+  "skillKey": "clawhub-deep-research-v7",
+  "name": "Deep Research v7",
+  "summary": "深度研究技能，用于进行领域调研、文献调研、survey研究。当用户说\"做一个survey\"、\"深度研究一下XX\"、\"文献调研\"、\"研究一下XX领域的最新进展\"、\"帮我调研XX\"、\"学术调研\"时自动触发。支持arXiv、PubMed、PMC、Google Scholar等多个数据源，自动下载PDF并解析全文，生成三...",
+  "version": "7.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_v7",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "深度研究技能，用于进行领域调研、文献调研、survey研究。当用户说\"做一个survey\"、\"深度研究一下XX\"、\"文献调研\"、\"研究一下XX领域的最新进展\"、\"帮我调研XX\"、\"学术调研\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-v7@7.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-v7",
+      "url": "https://clawhub.ai/skills/deep-research-v7"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-v7",
+    "url": "https://clawhub.ai/skills/deep-research-v7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-v7-721e488bd9165790.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-v7@7.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-v7-7.0.0.json",
+      "version": "7.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d2b85e964e82a16cb24270e9430423e4642211831aca472dc61f1ab6590317a",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:25:42.428Z"
+}

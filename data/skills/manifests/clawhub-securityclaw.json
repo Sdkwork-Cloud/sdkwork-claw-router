@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10697,
+  "uuid": "skill-clawhub-securityclaw",
+  "skillKey": "clawhub-securityclaw",
+  "name": "SecurityClaw",
+  "summary": "Security-first skill auditing and quarantine for OpenClaw skills. Use when installing new skills, reviewing skills from unknown sources, scanning skills for prompt injection/exfiltration/supply-chain risks, or when a bot suspects a skill i.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.securityclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mallen-lbx",
+      "features": [
+        "Security-first skill auditing and quarantine for OpenClaw skills",
+        "Use when installing new skills, reviewing skills from unknown sources, scanning skills for prom.",
+        "Guides static + optional sandbox checks, quarantines suspicious skills, and produces an owner-a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/securityclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122564472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "securityclaw",
+      "url": "https://clawhub.ai/skills/securityclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "securityclaw",
+    "url": "https://clawhub.ai/skills/securityclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/securityclaw-8ee714f7c20527d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/securityclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-securityclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbda9138580f258eecf47cd0fe8cbb67bf3994f4f7ef70892535ef1351d9b964",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T06:25:50.718Z"
+}

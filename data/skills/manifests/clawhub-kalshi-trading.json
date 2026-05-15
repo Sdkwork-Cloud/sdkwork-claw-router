@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10712,
+  "uuid": "skill-clawhub-kalshi-trading",
+  "skillKey": "clawhub-kalshi-trading",
+  "name": "Kalshi Trading",
+  "summary": "Trade on Kalshi prediction markets: check portfolio, search markets, analyze orderbooks, place/cancel orders, and manage binary contract positions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_trading",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ghsmc",
+      "features": [
+        "Trade on Kalshi prediction markets: check portfolio, search markets, analyze orderbooks, place/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68118719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-trading",
+      "url": "https://clawhub.ai/skills/kalshi-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-trading",
+    "url": "https://clawhub.ai/skills/kalshi-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-trading-c655af6357820176.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f00adb20d74d8c8135230664bbec9b9a77d70e2af6a09221a382da7d02f79ee9",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:18:01.309Z"
+}

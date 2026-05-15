@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/triple-memory-lake@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triple_memory_lake",
+  "skill": {
+    "id": 45548,
+    "skillKey": "clawhub-triple-memory-lake",
+    "name": "Triple Memory Lake"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triple-memory-lake",
+    "url": "https://clawhub.ai/skills/triple-memory-lake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triple-memory-lake-31f5a98b7d659dcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quad-layer memory system integration - unifies OpenClaw, Claude Code, and self-improving agent memories into a single knowledge lake"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxiao-bot",
+      "userId": "s177wn48nxdm9a73g3sj4awv1583gddz",
+      "displayName": "hanxiao-bot",
+      "image": "https://avatars.githubusercontent.com/u/262316041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775151083306,
+      "changelog": "Upgrade to quad-layer memory system with reviews (Layer 4), updated directory structure, self-review trigger conditions, quality scoring criteria",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d67b0a7a7e0ca9a0f0b27a32b5bde59bbaa22baf73787784ba5aa463e8bf3a87"
+}

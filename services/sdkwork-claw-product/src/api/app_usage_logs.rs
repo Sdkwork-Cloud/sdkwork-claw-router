@@ -22,11 +22,11 @@ const MAX_USAGE_LOGS_RANGE_DAYS: i64 = 1096;
 const SECONDS_PER_DAY: i64 = 86_400;
 const NANOS_PER_SECOND: i128 = 1_000_000_000;
 const USAGE_LOGS_START_TIME_INVALID_MESSAGE: &str =
-    "usage logs startTime must be a valid UTC timestamp";
+    "usage logs start_time must be a valid UTC timestamp";
 const USAGE_LOGS_END_TIME_INVALID_MESSAGE: &str =
-    "usage logs endTime must be a valid UTC timestamp";
+    "usage logs end_time must be a valid UTC timestamp";
 const USAGE_LOGS_REVERSED_RANGE_MESSAGE: &str =
-    "usage logs endTime must be greater than or equal to startTime";
+    "usage logs end_time must be greater than or equal to start_time";
 
 #[derive(Clone)]
 struct AppUsageLogsState {
@@ -35,11 +35,10 @@ struct AppUsageLogsState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AppUsageLogsQuery {
-    page_no: Option<i64>,
+    page: Option<i64>,
     page_size: Option<i64>,
-    keyword: Option<String>,
+    q: Option<String>,
     status: Option<String>,
     start_time: Option<String>,
     end_time: Option<String>,
@@ -106,7 +105,7 @@ fn app_usage_logs_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/router/usage/logs", get(fetch_usage_logs))
+        .route("/app/v3/api/ai/usage/logs", get(fetch_usage_logs))
         .with_state(AppUsageLogsState {
             read_store,
             require_subject,
@@ -165,27 +164,27 @@ async fn fetch_usage_logs(
 fn validate_usage_logs_query(
     query: AppUsageLogsQuery,
 ) -> Result<ValidatedUsageLogsQuery, UsageLogsQueryValidationError> {
-    let page_no = query.page_no.unwrap_or(DEFAULT_USAGE_LOGS_PAGE_NO);
+    let page_no = query.page.unwrap_or(DEFAULT_USAGE_LOGS_PAGE_NO);
     if page_no < 1 {
         return Err(UsageLogsQueryValidationError::new(
-            "usage logs pageNo must be greater than or equal to 1",
+            "usage logs page must be greater than or equal to 1",
         ));
     }
 
     let page_size = query.page_size.unwrap_or(DEFAULT_USAGE_LOGS_PAGE_SIZE);
     if !(1..=MAX_USAGE_LOGS_PAGE_SIZE).contains(&page_size) {
         return Err(UsageLogsQueryValidationError::new(format!(
-            "usage logs pageSize must be between 1 and {MAX_USAGE_LOGS_PAGE_SIZE}"
+            "usage logs page_size must be between 1 and {MAX_USAGE_LOGS_PAGE_SIZE}"
         )));
     }
 
-    let keyword = normalize_usage_logs_query_string(query.keyword);
+    let keyword = normalize_usage_logs_query_string(query.q);
     if keyword
         .as_ref()
         .is_some_and(|value| value.chars().count() > MAX_USAGE_LOGS_KEYWORD_LEN)
     {
         return Err(UsageLogsQueryValidationError::new(format!(
-            "usage logs keyword must not exceed {MAX_USAGE_LOGS_KEYWORD_LEN} characters"
+            "usage logs q must not exceed {MAX_USAGE_LOGS_KEYWORD_LEN} characters"
         )));
     }
 
@@ -194,11 +193,11 @@ fn validate_usage_logs_query(
     let end_time = normalize_usage_logs_query_string(query.end_time);
     let parsed_start = start_time
         .as_deref()
-        .map(|value| parse_usage_logs_timestamp(value, "startTime"))
+        .map(|value| parse_usage_logs_timestamp(value, "start_time"))
         .transpose()?;
     let parsed_end = end_time
         .as_deref()
-        .map(|value| parse_usage_logs_timestamp(value, "endTime"))
+        .map(|value| parse_usage_logs_timestamp(value, "end_time"))
         .transpose()?;
 
     if let (Some(start), Some(end)) = (parsed_start.as_ref(), parsed_end.as_ref()) {
@@ -348,8 +347,8 @@ fn invalid_usage_logs_timestamp<T>(field_name: &str) -> Result<T, UsageLogsQuery
 
 fn invalid_usage_logs_timestamp_error(field_name: &str) -> UsageLogsQueryValidationError {
     UsageLogsQueryValidationError::new(match field_name {
-        "startTime" => USAGE_LOGS_START_TIME_INVALID_MESSAGE,
-        "endTime" => USAGE_LOGS_END_TIME_INVALID_MESSAGE,
+        "start_time" => USAGE_LOGS_START_TIME_INVALID_MESSAGE,
+        "end_time" => USAGE_LOGS_END_TIME_INVALID_MESSAGE,
         _ => "usage logs timestamp must be a valid UTC timestamp",
     })
 }

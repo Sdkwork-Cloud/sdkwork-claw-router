@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sudocode-nano-banana2@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudocode_nano_banana2",
+  "skill": {
+    "id": 34257,
+    "skillKey": "clawhub-sudocode-nano-banana2",
+    "name": "sudocode-nano-banana2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudocode-nano-banana2",
+    "url": "https://clawhub.ai/skills/sudocode-nano-banana2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudocode-nano-banana2-b20ac12ca2b0cd37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate or edit images with Sudocode's nano-banana2 image service. Use when the user wants text-to-image or image-to-image generation through the bundled Su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shengy983",
+      "userId": "publishers:shengy983",
+      "displayName": "shengy983",
+      "image": "https://avatars.githubusercontent.com/u/6728036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773759450444,
+      "changelog": "- Clarified that the skill is an API client for Sudocode's remote nano-banana2 service, not a local inference model.\n- Updated the description to reflect use of the Sudocode API client and remote model naming.\n- Added a section explaining the difference between the skill name (`sudocode-nano-banana2`) and the upstream model identifier (`gemini-3.1-flash-image-preview`).\n- Noted that generated images and logs are written to disk near the output path, and credentials are stored only via the initializer.\n- Improved instructions for packaging, delivery, and environment setup for consistency with remote API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:028c202c950a07a670720a195934ddb14eebcda91f66d1645ad394ea58f13c7a"
+}

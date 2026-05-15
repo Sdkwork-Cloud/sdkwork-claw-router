@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65149,
+  "uuid": "skill-clawhub-mem-rag-milvus",
+  "skillKey": "clawhub-mem-rag-milvus",
+  "name": "mem-rag-milvus",
+  "summary": "智能记忆系统，支持 SQLite（零配置）和 Milvus（向量搜索）后端。用于存储、检索和管理 AI 助手的记忆，支持语义搜索和自动备份。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem_rag_milvus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liushuangfa666",
+      "features": [
+        "智能记忆系统，支持 SQLite（零配置）和 Milvus（向量搜索）后端。用于存储、检索和管理 AI 助手的记忆，支持语义搜索和自动备份。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mem-rag-milvus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82012796?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mem-rag-milvus",
+      "url": "https://clawhub.ai/skills/mem-rag-milvus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem-rag-milvus",
+    "url": "https://clawhub.ai/skills/mem-rag-milvus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem-rag-milvus-79a657292f99ce35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mem-rag-milvus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mem-rag-milvus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dff3a8e9ebbb6e5d248de87e6909d297540b6cbf7025df4183dab97c6c16ef7c",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:21:40.789Z"
+}

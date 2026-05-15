@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54063,
+  "uuid": "skill-clawhub-context-shrink",
+  "skillKey": "clawhub-context-shrink",
+  "name": "Context Shrink",
+  "summary": "Auto-compress session memories when context usage exceeds 85%",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_shrink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rao Lin",
+      "features": [
+        "Auto-compress session memories when context usage exceeds 85%"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-shrink@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16436148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-shrink",
+      "url": "https://clawhub.ai/skills/context-shrink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-shrink",
+    "url": "https://clawhub.ai/skills/context-shrink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-shrink-8904903a6cb8ab89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-shrink@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-shrink-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60fb6f29c42fa38df9caaf4edcc36bb6902571ff31bdc8197043152243332ba9",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:22:33.680Z"
+}

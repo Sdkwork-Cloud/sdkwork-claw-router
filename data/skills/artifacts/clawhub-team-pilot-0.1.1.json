@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-pilot@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_pilot",
+  "skill": {
+    "id": 27606,
+    "skillKey": "clawhub-team-pilot",
+    "name": "TeamPilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-pilot",
+    "url": "https://clawhub.ai/skills/team-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-pilot-748eccd6ae40ef58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and operate TeamPilot from zero on a clean machine. Use when cloning the TeamPilot repository, installing dependencies, starting the multi-agent runti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moolean",
+      "userId": "publishers:moolean",
+      "displayName": "Tiankuo Yao",
+      "image": "https://avatars.githubusercontent.com/u/24516967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772786318661,
+      "changelog": "Republish TeamPilot; remove legacy Team Ops Only; keep privacy-safe zero-to-run setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:03454395f23688150bf0721ac9c5d22587f61f7ab65acfadd74ede0ae49620cb"
+}

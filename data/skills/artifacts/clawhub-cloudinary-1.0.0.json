@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudinary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudinary",
+  "skill": {
+    "id": 54323,
+    "skillKey": "clawhub-cloudinary",
+    "name": "Cloudinary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudinary",
+    "url": "https://clawhub.ai/skills/cloudinary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudinary-4afcef5dd73bf324.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloudinary — manage images/videos, upload, transform, and search assets via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772078781465,
+      "changelog": "Initial release of the Cloudinary skill.\n\n- Manage images and videos via Cloudinary's REST API.\n- Supports asset upload, transformation, search, renaming, and deletion.\n- Includes commands for listing resources, tags, folders, transformations, and usage stats.\n- Requires Python 3.10+ (no external dependencies).\n- All commands output JSON; use --human for readable formatting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cd457c93a471977d75e0d5a6bceb0625bf5379531aa0e2ec06d5af72ff9db68"
+}

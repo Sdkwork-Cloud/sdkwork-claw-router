@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-quality-operations@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_quality_operations",
+  "skill": {
+    "id": 21394,
+    "skillKey": "clawhub-data-quality-operations",
+    "name": "1.2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-quality-operations",
+    "url": "https://clawhub.ai/skills/data-quality-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-quality-operations-5fa34f893d05246c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data quality validation patterns for daily checks and anomaly follow-up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiarani",
+      "userId": "publishers:jiarani",
+      "displayName": "Yikun Fu",
+      "image": "https://avatars.githubusercontent.com/u/121741034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772881332418,
+      "changelog": "- Added a structured report template for post-task summaries.\n- Introduced the command: workflow report --from templates/report.md.\n- Updated documentation to reflect new reporting workflow.\n- Minor updates to asset and script files for version 1.2.0.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78a5f9bb6b94f1312d351d94f6a01a342a89607c8bd252336c1d612be31ea306"
+}

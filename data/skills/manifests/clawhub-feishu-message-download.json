@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73315,
+  "uuid": "skill-clawhub-feishu-message-download",
+  "skillKey": "clawhub-feishu-message-download",
+  "name": "飞书消息文件下载",
+  "summary": "从飞书消息中下载文件（视频、图片、文档等）到本地",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_message_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cindypapa",
+      "features": [
+        "从飞书消息中下载文件（视频、图片、文档等）到本地"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-message-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128971646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-message-download",
+      "url": "https://clawhub.ai/skills/feishu-message-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-message-download",
+    "url": "https://clawhub.ai/skills/feishu-message-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-message-download-32a80cb8252fd158.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-message-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-message-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1dcea2f8875399ae7fc54c0f72a2d1018334d42729a261b6598edb4c0a04c5b",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:08:35.317Z"
+}

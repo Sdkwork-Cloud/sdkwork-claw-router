@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70714,
+  "uuid": "skill-clawhub-a-stock-review",
+  "skillKey": "clawhub-a-stock-review",
+  "name": "a-stock-review",
+  "summary": "A股股票复盘分析工具，基于AkShare库提供全面的股票复盘报告。支持行情走势、财务指标、资金流向、板块概念、技术分析等多维度分析。用于回答个股复盘、行情分析、基本面分析、技术面分析等问题。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianxiangbing",
+      "features": [
+        "A股股票复盘分析工具，基于AkShare库提供全面的股票复盘报告。支持行情走势、财务指标、资金流向、板块概念、技术分析等多维度分析。用于回答个股复盘、行情分析、基本面分析、技术面分析等问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1968778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-review",
+      "url": "https://clawhub.ai/skills/a-stock-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-review",
+    "url": "https://clawhub.ai/skills/a-stock-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-review-8ee62af26a3421e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b928350da295e7079ed008d11e60859eb514f691c792a629b862818739705a2",
+      "artifactSizeBytes": 2702
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T00:23:19.888Z"
+}

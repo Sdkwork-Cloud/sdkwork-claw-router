@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63425,
+  "uuid": "skill-clawhub-dp-ops-advisor",
+  "skillKey": "clawhub-dp-ops-advisor",
+  "name": "AI-powered DP Platform Operations Advisor",
+  "summary": "DP 数据处理平台运维顾问。当用户提到检查平台、作业失败、作业状态、吞吐量分析、故障诊断、运维报告等运维需求时激活。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dp_ops_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hxp365",
+      "features": [
+        "DP 数据处理平台运维顾问。当用户提到检查平台、作业失败、作业状态、吞吐量分析、故障诊断、运维报告等运维需求时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dp-ops-advisor@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85484481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dp-ops-advisor",
+      "url": "https://clawhub.ai/skills/dp-ops-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dp-ops-advisor",
+    "url": "https://clawhub.ai/skills/dp-ops-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dp-ops-advisor-83d8ce51ce765268.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dp-ops-advisor@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dp-ops-advisor-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a29f9a90f5056344214d20f6bb7e416f01140cf1707a00099a512a36c79b231",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:09:52.038Z"
+}

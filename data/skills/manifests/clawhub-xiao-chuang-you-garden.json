@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69294,
+  "uuid": "skill-clawhub-xiao-chuang-you-garden",
+  "skillKey": "clawhub-xiao-chuang-you-garden",
+  "name": "Xiao Chuang You Garden",
+  "summary": "小窗幽园艺子技能。当用户询问园艺、种花、阳台、花草、绿植、盆栽、花期等话题时激活。提供节气种花指南、阳台绿植推荐、日常养护知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_chuang_you_garden",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张城瑞",
+      "features": [
+        "小窗幽园艺子技能。当用户询问园艺、种花、阳台、花草、绿植、盆栽、花期等话题时激活。提供节气种花指南、阳台绿植推荐、日常养护知识。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiao-chuang-you-garden@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48597146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiao-chuang-you-garden",
+      "url": "https://clawhub.ai/skills/xiao-chuang-you-garden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-chuang-you-garden",
+    "url": "https://clawhub.ai/skills/xiao-chuang-you-garden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-chuang-you-garden-d46d6c90db31b7ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiao-chuang-you-garden@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiao-chuang-you-garden-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b05bb867039087ecaddb2ae1cccbfcc440ffb1248d70495dd19cdfa1b6ff2e60",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:03:56.957Z"
+}

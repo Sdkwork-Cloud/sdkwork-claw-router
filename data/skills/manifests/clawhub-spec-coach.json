@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49161,
+  "uuid": "skill-clawhub-spec-coach",
+  "skillKey": "clawhub-spec-coach",
+  "name": "Spec Coach",
+  "summary": "Strict specification interviewer for features, products, automations, or systems. Use when the user asks to define, write, refine, or clarify a spec before i...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Strict specification interviewer for features, products, automations, or systems",
+        "Use when the user asks to define, write, refine, or clarify a spec before i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-coach@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-coach",
+      "url": "https://clawhub.ai/skills/spec-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-coach",
+    "url": "https://clawhub.ai/skills/spec-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-coach-a7c76962dd0df051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-coach@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-coach-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82109841c9c0bcdd902d1103780251e0a000a193a8981e10f50616793789b89a",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:38.556Z"
+}

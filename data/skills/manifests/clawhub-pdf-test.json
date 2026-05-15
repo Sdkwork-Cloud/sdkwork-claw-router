@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34859,
+  "uuid": "skill-clawhub-pdf-test",
+  "skillKey": "clawhub-pdf-test",
+  "name": "test skill publish",
+  "summary": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multipl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GitAsura",
+      "features": [
+        "Use this skill whenever the user wants to do anything with PDF files",
+        "This includes reading or extracting text/tables from PDFs, combining or merging multipl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10495342?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-test",
+      "url": "https://clawhub.ai/skills/pdf-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-test",
+    "url": "https://clawhub.ai/skills/pdf-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-test-b461f79e6ffe119d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e3720ce11b823ba02afcf23d79025b5b8996626fd12f5ec5e5dc60837a860bc",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:33:09.162Z"
+}

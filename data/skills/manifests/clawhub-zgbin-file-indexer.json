@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67704,
+  "uuid": "skill-clawhub-zgbin-file-indexer",
+  "skillKey": "clawhub-zgbin-file-indexer",
+  "name": "File Indexer Publish",
+  "summary": "智能文件索引与检索系统 - 自动监控文件变化，快速查找代码文件、脚本和技能。支持关键词搜索、意图推荐、文件统计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zgbin_file_indexer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zgbin",
+      "features": [
+        "智能文件索引与检索系统",
+        "自动监控文件变化，快速查找代码文件、脚本和技能。支持关键词搜索、意图推荐、文件统计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zgbin-file-indexer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126647178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zgbin-file-indexer",
+      "url": "https://clawhub.ai/skills/zgbin-file-indexer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zgbin-file-indexer",
+    "url": "https://clawhub.ai/skills/zgbin-file-indexer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zgbin-file-indexer-30483f40878af027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zgbin-file-indexer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zgbin-file-indexer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1086d7af8b1bb71c455d0ce1e8259010e59832a3942dba94bdcfb23b32d5a1f8",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T21:43:16.450Z"
+}

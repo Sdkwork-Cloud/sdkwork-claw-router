@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_online",
+  "skill": {
+    "id": 44721,
+    "skillKey": "clawhub-ai-video-generator-free-online",
+    "name": "Ai Video Generator Free Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-online",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-online-08825ed13e8a8255.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "content creators, small business owners, students generate text or images into ready-to-share videos using this skill. Accepts MP4, MOV, PNG, JPG up to 200MB..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775847155621,
+      "changelog": "- Initial release of AI Video Generator Free Online skill.\n- Generate ready-to-share videos from text prompts or image uploads (MP4, MOV, PNG, JPG; up to 200MB).\n- Renders videos on cloud GPUs at 1080p, returning downloadable MP4 files in 1–2 minutes.\n- Supports basic editing workflows—add BGM, overlays, export, preview timelines, and manage credits.\n- Handles authentication seamlessly (NEMO_TOKEN or auto-generated free tokens).\n- Designed for easy video creation without editing experience; robust error and event handling included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daa34139e45fef22058a755c80acd2e1672bded009d10782161ae7a7a4df5954"
+}

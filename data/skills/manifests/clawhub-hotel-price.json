@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59068,
+  "uuid": "skill-clawhub-hotel-price",
+  "skillKey": "clawhub-hotel-price",
+  "name": "hotel-price-check",
+  "summary": "酒店比价助手，对比携程、美团、同程、去哪儿、华住会、锦江会、飞猪等OTA平台相同酒店房型价格，给出最优推荐。Invoke when user wants to compare hotel prices across multiple OTA platforms or find the best hotel deal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "酒店比价助手，对比携程、美团、同程、去哪儿、华住会、锦江会、飞猪等OTA平台相同酒店房型价格，给出最优推荐。Invoke when user wants to compare hotel p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-price@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-price",
+      "url": "https://clawhub.ai/skills/hotel-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-price",
+    "url": "https://clawhub.ai/skills/hotel-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-price-434c05bcf78d8e6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-price@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-price-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f44e530c3ac8feb70b23a481093c9d840b5328a34f7af288193fff3064c17585",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:46:19.791Z"
+}

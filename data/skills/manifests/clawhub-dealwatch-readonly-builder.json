@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33604,
+  "uuid": "skill-clawhub-dealwatch-readonly-builder",
+  "skillKey": "clawhub-dealwatch-readonly-builder",
+  "name": "DealWatch Read-only Builder",
+  "summary": "Teach the agent how to connect the published DealWatch MCP package, choose the right read-only tool, and guide the user through the compare-first safe path w...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dealwatch_readonly_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Teach the agent how to connect the published DealWatch MCP package, choose the right read-only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dealwatch-readonly-builder@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dealwatch-readonly-builder",
+      "url": "https://clawhub.ai/skills/dealwatch-readonly-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dealwatch-readonly-builder",
+    "url": "https://clawhub.ai/skills/dealwatch-readonly-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dealwatch-readonly-builder-ab8ca530666a53a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dealwatch-readonly-builder@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dealwatch-readonly-builder-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b635fb32f34f7d04d963e845ee4c394ea9702918c897d221a22092b093428822",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:18:29.527Z"
+}

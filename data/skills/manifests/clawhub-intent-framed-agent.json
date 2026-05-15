@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26117,
+  "uuid": "skill-clawhub-intent-framed-agent",
+  "skillKey": "clawhub-intent-framed-agent",
+  "name": "Intent Framed Agent",
+  "summary": "Frames coding-agent work sessions with explicit intent capture and drift monitoring. Use when a session transitions from planning/Q&A to implementation for c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_framed_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiao1804",
+      "features": [
+        "Frames coding-agent work sessions with explicit intent capture and drift monitoring",
+        "Use when a session transitions from planning/Q&A to implementation for c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-framed-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34759843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-framed-agent",
+      "url": "https://clawhub.ai/skills/intent-framed-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-framed-agent",
+    "url": "https://clawhub.ai/skills/intent-framed-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-framed-agent-9e0f1235fce71dfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-framed-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-framed-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1df578ee3e375b9fe07149edc98b15355da31684387bac791b3e5555e8d79da",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:05:08.840Z"
+}

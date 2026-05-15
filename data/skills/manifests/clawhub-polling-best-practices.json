@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37235,
+  "uuid": "skill-clawhub-polling-best-practices",
+  "skillKey": "clawhub-polling-best-practices",
+  "name": "Polling Best Practices",
+  "summary": "Best practices for automating long-running, asynchronous tasks via cron-style polling. Use when the user wants to monitor a background CLI command or API cal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polling_best_practices",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywalker326",
+      "features": [
+        "Best practices for automating long-running, asynchronous tasks via cron-style polling",
+        "Use when the user wants to monitor a background CLI command or API cal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polling-best-practices@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5773915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polling-best-practices",
+      "url": "https://clawhub.ai/skills/polling-best-practices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polling-best-practices",
+    "url": "https://clawhub.ai/skills/polling-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polling-best-practices-1e11d794988b9b6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polling-best-practices@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polling-best-practices-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d7ce1656e58f7627a9ab5178ddfd4032a861e5522e82754e04cf4926017b71a",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:46:35.804Z"
+}

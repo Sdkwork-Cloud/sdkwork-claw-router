@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19579,
+  "uuid": "skill-clawhub-chatgpt-image-generation",
+  "skillKey": "clawhub-chatgpt-image-generation",
+  "name": "Chatgpt Image Generation",
+  "summary": "Generate images from ChatGPT using Playwright browser automation. Opens ChatGPT, sends prompts, waits for generation, and saves the resulting images.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anum Mian",
+      "features": [
+        "Generate images from ChatGPT using Playwright browser automation",
+        "Opens ChatGPT, sends prompts, waits for generation, and saves the resulting images."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatgpt-image-generation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2462466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatgpt-image-generation",
+      "url": "https://clawhub.ai/skills/chatgpt-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-image-generation",
+    "url": "https://clawhub.ai/skills/chatgpt-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-image-generation-2d1f370eee08ad57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatgpt-image-generation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-image-generation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcd12f6bc08b99b5be40ceaa6c3672ebc04fb8e7ee832fc49192d1a88f7f9148",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T20:50:27.224Z"
+}

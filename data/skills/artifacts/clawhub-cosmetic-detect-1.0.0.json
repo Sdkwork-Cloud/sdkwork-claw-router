@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cosmetic-detect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosmetic_detect",
+  "skill": {
+    "id": 28612,
+    "skillKey": "clawhub-cosmetic-detect",
+    "name": "cosmetic-detect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosmetic-detect",
+    "url": "https://clawhub.ai/skills/cosmetic-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosmetic-detect-d6c9188159c3c1c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze facial/body photos to detect signs of cosmetic surgery or aesthetic procedures. Use when the user uploads a photo and asks to identify cosmetic work,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deusyu",
+      "userId": "s179bbz2mxt1jgta0f5jsdqnjs85qrsd",
+      "displayName": "Rainman",
+      "image": "https://avatars.githubusercontent.com/u/42929363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773326933699,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2922047923f3e32af56c6839b59b2284de3b0f77254f27007de8ed6bcd1f4286"
+}

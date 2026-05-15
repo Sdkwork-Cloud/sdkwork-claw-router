@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klaviyo@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klaviyo",
+  "skill": {
+    "id": 8427,
+    "skillKey": "clawhub-klaviyo",
+    "name": "Klaviyo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klaviyo",
+    "url": "https://clawhub.ai/skills/klaviyo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klaviyo-5879f1047a9e1138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Klaviyo API integration with managed OAuth. Access profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, and webhooks. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 16261,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 8,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777592988777,
+      "changelog": "- Changed all API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for simplified and unified access.\n- Updated connection management instructions and examples to use the new api.maton.ai base URL.\n- Clarified that all write operations require explicit user approval to enhance security guidance.\n- Added a section about security and permissions, specifying access scope and user confirmation for sensitive operations.\n- Removed LICENSE.txt file from the package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ecf11a2f8b54ac12609aa05a36b4d03964144ecf4063252b83bfea137dc41b4"
+}

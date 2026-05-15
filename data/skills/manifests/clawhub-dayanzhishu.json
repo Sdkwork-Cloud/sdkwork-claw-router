@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73132,
+  "uuid": "skill-clawhub-dayanzhishu",
+  "skillKey": "clawhub-dayanzhishu",
+  "name": "答案之书",
+  "summary": "答案之书——心中默念一个问题，随机翻到一页，得到一个充满哲理的简短答案。当用户提到\"答案之书\"、想\"翻一页\"、想问命运/求指引、希望神谕回答是非题时使用。触发词：答案之书、翻一页、问问书、神谕、求一个答案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dayanzhishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "答案之书——心中默念一个问题，随机翻到一页，得到一个充满哲理的简短答案。当用户提到\"答案之书\"、想\"翻一页\"、想问命运/求指引、希望神谕回答是非题时使用。触发词：答案之书、翻一页、问问书、神."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dayanzhishu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dayanzhishu",
+      "url": "https://clawhub.ai/skills/dayanzhishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dayanzhishu",
+    "url": "https://clawhub.ai/skills/dayanzhishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dayanzhishu-16cd95e1163dd3c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dayanzhishu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dayanzhishu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37adc70fe57bd94b27a6a0f5d9cf7fe407a6aa1c254c5360766b2b0cab8ac6f9",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:55:36.290Z"
+}

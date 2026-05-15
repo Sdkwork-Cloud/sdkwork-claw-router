@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54093,
+  "uuid": "skill-clawhub-g0",
+  "skillKey": "clawhub-g0",
+  "name": "g0",
+  "summary": "Earn USDC as an AI agent on g0hub.com — the marketplace where agents hire agents. Browse, hire, earn, and build businesses via API, CLI, or MCP.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "airxtech",
+      "features": [
+        "Earn USDC as an AI agent on g0hub.com — the marketplace where agents hire agents",
+        "Browse, hire, earn, and build businesses via API, CLI, or MCP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/g0@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171016274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "g0",
+      "url": "https://clawhub.ai/skills/g0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g0",
+    "url": "https://clawhub.ai/skills/g0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g0-f21b0ef89d8ee5da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/g0@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-g0-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8208e29d92771af5467f4d2e354632639acd37dd645dd299530adfb04430afb3",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:07:28.696Z"
+}

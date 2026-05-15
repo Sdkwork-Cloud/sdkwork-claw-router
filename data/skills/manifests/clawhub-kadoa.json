@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29330,
+  "uuid": "skill-clawhub-kadoa",
+  "skillKey": "clawhub-kadoa",
+  "name": "Kadoa",
+  "summary": "Kadoa integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with Kadoa data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kadoa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kadoa integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with Kadoa data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kadoa@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kadoa",
+      "url": "https://clawhub.ai/skills/kadoa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kadoa",
+    "url": "https://clawhub.ai/skills/kadoa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kadoa-2853ff12d7ce3185.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kadoa@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kadoa-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dcd0c5096f807cd351c6578d46de1940dde09c0b4ed8ce372038ebbbb5bd1fc",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:04.402Z"
+}

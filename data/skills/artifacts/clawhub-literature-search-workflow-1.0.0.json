@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-search-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_search_workflow",
+  "skill": {
+    "id": 20057,
+    "skillKey": "clawhub-literature-search-workflow",
+    "name": "Literature Search Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-search-workflow",
+    "url": "https://clawhub.ai/skills/literature-search-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-search-workflow-001b0039995df4b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standardized literature search workflow integrating tavily-search, pubmed-database, bgpt-paper-search, openalex-database and other academic search skills. Pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773466397153,
+      "changelog": "Initial release - Standardized literature search workflow with 6 stages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fae0f97a307704b54fa590ece48f5f3b73cf7a072ce066fe4a717ddb88b3f5e"
+}

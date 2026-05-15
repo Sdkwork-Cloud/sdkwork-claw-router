@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codebox-qrcode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebox_qrcode",
+  "skill": {
+    "id": 21941,
+    "skillKey": "clawhub-codebox-qrcode",
+    "name": "CodeBox QR Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebox-qrcode",
+    "url": "https://clawhub.ai/skills/codebox-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebox-qrcode-edb1a6989976f997.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, manage, and track QR codes via CodeBox API. Create dynamic QR codes with 200+ style templates, track scans with analytics (device, location, time),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gdfsdjj145",
+      "userId": "publishers:gdfsdjj145",
+      "displayName": "gdfsdjj145",
+      "image": "https://avatars.githubusercontent.com/u/41331442?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774253070621,
+      "changelog": "Initial release: 9 QR code operations via CodeBox API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9684b3a95e3accd146f793e01798aa0cb84eb161d694d07bf711c00186da7a0c"
+}

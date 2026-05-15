@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-email-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_email_manager",
+  "skill": {
+    "id": 66911,
+    "skillKey": "clawhub-qq-email-manager",
+    "name": "QQ Email Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-email-manager",
+    "url": "https://clawhub.ai/skills/qq-email-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-email-manager-84a7cfa554642bdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业邮箱管理（腾讯企业邮箱）。触发场景：用户说\"查邮件\"、\"发邮件\"、\"回复邮件\"、\"转发邮件\"、 \"邮件列表\"、\"未读邮件\"、\"搜索邮件\"、\"邮箱统计\"、\"标记已读\"等邮箱相关操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangmu-git2",
+      "userId": "publishers:liangmu-git2",
+      "displayName": "liangmu-git2",
+      "image": "https://avatars.githubusercontent.com/u/59187617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773377212527,
+      "changelog": "Initial release: IMAP/SMTP email client supporting QQ Enterprise Mail, QQ Mail, 163, Gmail and more",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad10eb0072cdcbeb15ce3526658c420ba838c7c18df0798942b9a9c46f097f33"
+}

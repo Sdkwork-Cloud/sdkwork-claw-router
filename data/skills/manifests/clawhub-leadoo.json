@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34662,
+  "uuid": "skill-clawhub-leadoo",
+  "skillKey": "clawhub-leadoo",
+  "name": "Leadoo",
+  "summary": "Leadoo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Leadoo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadoo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Leadoo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Leadoo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadoo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadoo",
+      "url": "https://clawhub.ai/skills/leadoo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadoo",
+    "url": "https://clawhub.ai/skills/leadoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadoo-3d21bd83a7977569.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadoo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadoo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0562e5ecb1daccc99e14a5b20208d59106d91a32410542b98974bae143e1aafb",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:06:17.104Z"
+}

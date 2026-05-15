@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw2ui@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2ui",
+  "skill": {
+    "id": 22082,
+    "skillKey": "clawhub-claw2ui",
+    "name": "claw2ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2ui",
+    "url": "https://clawhub.ai/skills/claw2ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2ui-e0c934c128cda673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate interactive web pages (dashboards, charts, tables, reports) and serve them via public URL. Use this skill when the user explicitly asks for data vis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xsegfaulted",
+      "userId": "publishers:0xsegfaulted",
+      "displayName": "0xsegfaulted",
+      "image": "https://avatars.githubusercontent.com/u/37236264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773751578373,
+      "changelog": "Claw2UI 1.1.0 introduces a new TypeScript DSL for page specs and richer CLI integration.\n\n- Added support for authoring interactive web pages using a TypeScript DSL, with type checking by default.\n- CLI now accepts `.ts` spec files; type-checks before publishing unless `--no-check` is used.\n- Retains compatibility with legacy JSON specs, but TypeScript is now the recommended format.\n- Enhanced documentation of CLI options and DSL function reference.\n- Improved metadata including bin requirements and side effects.\n- No code file changes detected, this is a documentation and workflow update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c40963b9693a0098fe1c241b16f3e38aaaf288e31f83ce99a0bf5ccc42b90d57"
+}

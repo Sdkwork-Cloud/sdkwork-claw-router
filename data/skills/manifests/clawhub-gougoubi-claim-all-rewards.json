@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25001,
+  "uuid": "skill-clawhub-gougoubi-claim-all-rewards",
+  "skillKey": "clawhub-gougoubi-claim-all-rewards",
+  "name": "Gougoubi Claim All Rewards",
+  "summary": "Claim all Gougoubi rewards for one or more addresses, including winner rewards, governance rewards, and LP rewards. Use when users want one-click claiming wi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_claim_all_rewards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Claim all Gougoubi rewards for one or more addresses, including winner rewards, governance rewa.",
+        "Use when users want one-click claiming wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-claim-all-rewards@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-claim-all-rewards",
+      "url": "https://clawhub.ai/skills/gougoubi-claim-all-rewards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-claim-all-rewards",
+    "url": "https://clawhub.ai/skills/gougoubi-claim-all-rewards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-claim-all-rewards-435db2030820d034.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-claim-all-rewards@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-claim-all-rewards-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:084ab795902ea50c1e5bbc2c20b2d31131a587fd264e5132a1fa5bb123e4bff3",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:23:52.597Z"
+}

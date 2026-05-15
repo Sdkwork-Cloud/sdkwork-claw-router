@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "skill-sandbox",
+    "displayName": "Skill Sandbox",
+    "summary": "Sandboxed ClawHub skill installation with automated security scanning. Use when: (1) Installing any new skill from ClawHub, (2) Auditing an already-installed...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772792633673,
+    "updatedAt": 1778304872175
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772792633673,
+    "changelog": "Initial release: sandboxed skill installation with 5-layer security scanning. Auto-quarantine on critical findings, auto-promote on clean scan. Checks for eval/exec, network calls, secret access, symlinks, install scripts, obfuscation, and dangerous SKILL.md instructions.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zurbrick",
+    "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+    "displayName": "Don Zurbrick",
+    "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.dynamic_code_execution",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.dynamic_code_execution, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304872175
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20785,
+  "uuid": "skill-clawhub-agent-slackbot",
+  "skillKey": "clawhub-agent-slackbot",
+  "name": "Agent Slackbot",
+  "summary": "Interact with Slack workspaces using bot tokens - send messages, read channels, manage reactions",
+  "version": "1.10.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_slackbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeon Suyeol",
+      "features": [
+        "Interact with Slack workspaces using bot tokens",
+        "send messages, read channels, manage reactions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-slackbot@1.10.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/931655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-slackbot",
+      "url": "https://clawhub.ai/skills/agent-slackbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-slackbot",
+    "url": "https://clawhub.ai/skills/agent-slackbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-slackbot-450f893dd02eb38a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-slackbot@1.10.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-slackbot-1.10.5.json",
+      "version": "1.10.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dd1a9bffd6dca059e492a4b7b3e73721997f84505695dd3dc4a523cb777bd2a",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:40:21.577Z"
+}

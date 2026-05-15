@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/differential-gene-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.differential_gene_analysis",
+  "skill": {
+    "id": 28338,
+    "skillKey": "clawhub-differential-gene-analysis",
+    "name": "Differential Gene Expression Analysis (RNA-seq)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "differential-gene-analysis",
+    "url": "https://clawhub.ai/skills/differential-gene-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/differential-gene-analysis-8421ba5d378cdaed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs differential gene expression analysis on RNA-seq count data using DESeq2 and outputs significant genes, volcano plot, PCA, and heatmap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenthompson2088",
+      "userId": "s172hjym9vrw2gnv5yxwgzxec183q932",
+      "displayName": "kenthompson2088",
+      "image": "https://avatars.githubusercontent.com/u/189254864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774095051072,
+      "changelog": "- Adds initial support for differential gene expression analysis using DESeq2 on RNA-seq count data.\n- Generates key output files: volcano plot, PCA plot, heatmap of significant genes, and CSV with significant differential genes.\n- Uses simulated group assignments (Control vs Treat) for analysis.\n- Outputs visualizations and results to an output directory.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c603a60ac5a29d2da468611919a4cc30a8812f26e2fcd18b1adc5031ad24b619"
+}

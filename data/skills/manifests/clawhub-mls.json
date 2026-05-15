@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71995,
+  "uuid": "skill-clawhub-mls",
+  "skillKey": "clawhub-mls",
+  "name": "Mls",
+  "summary": "提供美国职业足球大联盟MLS的赛制规则、历史沿革、知名球员及最新赛程与比赛结果信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mls",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供美国职业足球大联盟MLS的赛制规则、历史沿革、知名球员及最新赛程与比赛结果信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mls@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mls",
+      "url": "https://clawhub.ai/skills/mls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mls",
+    "url": "https://clawhub.ai/skills/mls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mls-fbb31a6f7c8d6b0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mls@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mls-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a94b74864baaf3171d2229499a2b3f4e8cb48bf5266410bea99102fb93998f2",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:29:36.978Z"
+}

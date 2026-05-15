@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23671,
+  "uuid": "skill-clawhub-dlazy-script",
+  "skillKey": "clawhub-dlazy-script",
+  "name": "Dlazy Script",
+  "summary": "Storyboard script generator. Given a brief and optional reference images, returns a structured script (subjects + storyboards) plus a flat canvas shape list...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Storyboard script generator",
+        "Given a brief and optional reference images, returns a structured script (subjects + storyboard."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-script@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-script",
+      "url": "https://clawhub.ai/skills/dlazy-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-script",
+    "url": "https://clawhub.ai/skills/dlazy-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-script-f9d5f00826ce1297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-script@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-script-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71c52ab4e423195c3fea30b3a27d5852859b9ad2fb0aefc598f9429e28e2d5d4",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:09:37.931Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecloud-long-term-memory@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecloud_long_term_memory",
+  "skill": {
+    "id": 63327,
+    "skillKey": "clawhub-ecloud-long-term-memory",
+    "name": "Ecloud Long Term Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecloud-long-term-memory",
+    "url": "https://clawhub.ai/skills/ecloud-long-term-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecloud-long-term-memory-71b7ff305d502c16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于移动云记忆服务的长期记忆系统，支持语义搜索和云端存储。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloofyoursffsf",
+      "userId": "s179a5r0rf7pgtwpxdgs3bgw8h85pmvg",
+      "displayName": "helloofyoursffsf",
+      "image": "https://avatars.githubusercontent.com/u/44646072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1778292997661,
+      "changelog": "- Clarified that user configuration and preferences must be recorded to a local preferences file, not just \"用户偏好记忆系统\"\n- Updated wording for configuration step to specify the actual command usage for setup\n- Minor editing to configuration and notes sections for accuracy and consistency with implementation\n- No breaking changes to the command interface",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dabb67c761a03cb26795f2a83a7528a1e87235e4a9df4b0c149b597eb651b70"
+}

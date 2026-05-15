@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semanticfs@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semanticfs",
+  "skill": {
+    "id": 26528,
+    "skillKey": "clawhub-semanticfs",
+    "name": "Semanticfs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semanticfs",
+    "url": "https://clawhub.ai/skills/semanticfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semanticfs-59041179b7a05d1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search your local filesystem and codebase semantically. Use instead of grep/find/ls/cat chains when looking for files, functions, symbols, or code patterns...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "navneeth08k",
+      "userId": "publishers:navneeth08k",
+      "displayName": "Navneeth",
+      "image": "https://avatars.githubusercontent.com/u/52849887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773935610932,
+      "changelog": "Initial release of the semanticfs skill for semantic code and filesystem search.\n\n- Quickly search files, functions, symbols, or code patterns with semantic queries.\n- Returns exact file paths, line numbers, and code snippets for each result.\n- Designed as a fast, read-only alternative to manual grep/find/ls/cat command chains.\n- Supports Linux, macOS, and Windows (requires the semanticfs binary).\n- Requires directory indexing before use; integrates via local HTTP server.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:641645b0e639d2205825db6cf9a58f2b55eb5573d642760fbc956e30cde47456"
+}

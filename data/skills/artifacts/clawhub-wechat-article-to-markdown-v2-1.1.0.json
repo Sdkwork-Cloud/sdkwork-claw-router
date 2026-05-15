@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-to-markdown-v2@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_to_markdown_v2",
+  "skill": {
+    "id": 56877,
+    "skillKey": "clawhub-wechat-article-to-markdown-v2",
+    "name": "Wechat Article To Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-to-markdown-v2",
+    "url": "https://clawhub.ai/skills/wechat-article-to-markdown-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-to-markdown-v2-36fd704c3450c0ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill converts WeChat Official Account (微信公众号) article pages into high-quality, clean Markdown format. It should be used when the user provides a WeChat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benzking",
+      "userId": "s17eytpmak0fh78xhm4nyk35hh841jw4",
+      "displayName": "benzking",
+      "image": "https://avatars.githubusercontent.com/u/2979921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775884456819,
+      "changelog": "Fix temp link support: mobile Chromium viewport + iPhone UA, lazy image loading",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96fef5dd39a9a34780f6868fe3b3b17071cc6258185baacb2754e3c14ad1fde6"
+}

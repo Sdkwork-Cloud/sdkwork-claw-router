@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graphql-builder@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphql_builder",
+  "skill": {
+    "id": 20554,
+    "skillKey": "clawhub-graphql-builder",
+    "name": "Graphql Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphql-builder",
+    "url": "https://clawhub.ai/skills/graphql-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphql-builder-a80ba1b3f554c47b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and validate GraphQL queries, mutations, and schemas. Use when working with GraphQL APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 529,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773922194421,
+      "changelog": "v3.0.0: Complete rewrite with real functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d5e67a6cdbf580d1af6c9e6c42e5fa1f2832f085f04e81e3292e2e4869093bd"
+}

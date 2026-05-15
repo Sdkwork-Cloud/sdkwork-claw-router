@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19053,
+  "uuid": "skill-clawhub-comman-felo-slides",
+  "skillKey": "clawhub-comman-felo-slides",
+  "name": "Felo Slides",
+  "summary": "Generate PPT/slides with Felo PPT Task API in Claude Code. Use when users ask to create/make/generate/export presentations or slide decks, or when explicit c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comman_felo_slides",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "comman-kaide",
+      "features": [
+        "Generate PPT/slides with Felo PPT Task API in Claude Code",
+        "Use when users ask to create/make/generate/export presentations or slide decks, or when explici."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comman-felo-slides@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138638755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comman-felo-slides",
+      "url": "https://clawhub.ai/skills/comman-felo-slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comman-felo-slides",
+    "url": "https://clawhub.ai/skills/comman-felo-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comman-felo-slides-1115f6046b7783b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comman-felo-slides@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comman-felo-slides-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf9c7d27f582019551c5ab87a69389295e63d14e5fb27af6b874c3c525244cee",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:18:28.238Z"
+}

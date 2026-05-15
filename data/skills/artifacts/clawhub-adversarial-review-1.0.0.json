@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adversarial-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_review",
+  "skill": {
+    "id": 33807,
+    "skillKey": "clawhub-adversarial-review",
+    "name": "Adversarial Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-review",
+    "url": "https://clawhub.ai/skills/adversarial-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-review-86c43a9a02fd9789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured adversarial multi-agent review loop on any significant document. Spawns parallel Opus reviewers with different critical lenses, collects str..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scott3j",
+      "userId": "s17683mmc9crbg86b5grcw1pq583jjx4",
+      "displayName": "Scott Jensen",
+      "image": "https://avatars.githubusercontent.com/u/39978007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774462009420,
+      "changelog": "- Initial release of adversarial-review skill.\n- Enables structured, multi-agent review loops for significant documents with automated complexity self-assessment.\n- Spawns parallel Opus reviewers with diverse critical lenses, collects structured redlines, and guides agreement/disagreement and v2 document production.\n- Provides clear review process, positioning rules, and quality expectations.\n- Includes comprehensive reviewer type selection and session directory guidelines for workflow transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:227bbed086a47a53e19211b0faa0ea008a8a916ecccaf80d3f33a6544801759d"
+}

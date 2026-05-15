@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16445,
+  "uuid": "skill-clawhub-axelrod",
+  "skillKey": "clawhub-axelrod",
+  "name": "Axelrod",
+  "summary": "AI-powered Base-chain trading and on-chain query agent via natural language. Use when the user wants to trade crypto (buy/sell/swap tokens), set up automated strategies (DCA, limit orders, RSI), check portfolio balances, view token prices,.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axelrod",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aixvcteam",
+      "features": [
+        "AI-powered Base-chain trading and on-chain query agent via natural language",
+        "Use when the user wants to trade crypto (buy/sell/swap tokens), set up automated strategies (DC.",
+        "Always run scripts/axelrod_chat.py to fetch real-time results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axelrod@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199195154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axelrod",
+      "url": "https://clawhub.ai/skills/axelrod"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axelrod",
+    "url": "https://clawhub.ai/skills/axelrod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axelrod-7c04d4fca7d609a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axelrod@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axelrod-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b618fde63ac02711ae3690991065671769619159891773762ca571ca55f658c",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T09:20:22.574Z"
+}

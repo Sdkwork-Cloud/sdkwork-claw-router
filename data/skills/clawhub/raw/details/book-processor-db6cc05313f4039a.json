@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "book-processor",
+    "displayName": "Book Processor",
+    "summary": "自动化处理 EPUB 电子书，提取全文、封面、概要和框架解读，支持案例库、每日清单、5-Why 分析、思维模型速查卡、流程图和 FAQ 等多种资产生成。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774173576905,
+    "updatedAt": 1777622467594
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774173576905,
+    "changelog": "Initial release of book-processor skill.\n\n- Automates EPUB processing: extracts full text, cover, summary, and framework analysis.\n- Supports generating case studies, daily checklists, 5-Why worksheets, thinking model quick cards, flowcharts, and FAQ.\n- Allows custom output control via `process_config.json`; defaults to 4 main files.\n- Triggered automatically when an `.epub` file is received.\n- Lists required dependencies: `jq`, `python3`, and `unzip`.\n- Provides detailed usage, sample output structure, troubleshooting, and extension guidance.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ntsnail",
+    "userId": "publishers:ntsnail",
+    "displayName": "ntsnail",
+    "image": "https://avatars.githubusercontent.com/u/7533677?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622467594
+  }
+}

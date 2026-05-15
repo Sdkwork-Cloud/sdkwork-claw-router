@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11051,
+  "uuid": "skill-clawhub-google-maps-search-api",
+  "skillKey": "clawhub-google-maps-search-api",
+  "name": "Google Maps Search Api",
+  "summary": "This skill is designed to help users automatically extract business data from Google Maps search results. When a user asks to \"find coffee shops in New York,\" \"search for dental clinics,\" or \"extract business leads from Google Maps,\" the a.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_maps_search_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "This skill is designed to help users automatically extract business data from Google Maps searc.",
+        "When a user asks to \"find coffee shops in New York,\" \"search for dental clinics,\" or \"extract b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-maps-search-api@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-maps-search-api",
+      "url": "https://clawhub.ai/skills/google-maps-search-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-maps-search-api",
+    "url": "https://clawhub.ai/skills/google-maps-search-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-maps-search-api-9988a1dbe97dd5cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-maps-search-api@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-search-api-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:536d2875d4903bb76770ac1308678bb660790d07ad3bf279b74b0d9c061250e9",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T15:18:22.446Z"
+}

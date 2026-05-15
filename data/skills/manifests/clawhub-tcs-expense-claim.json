@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33513,
+  "uuid": "skill-clawhub-tcs-expense-claim",
+  "skillKey": "clawhub-tcs-expense-claim",
+  "name": "TCS Expense Claim Processor",
+  "summary": "End-to-end business travel expense claim processor. Use this skill whenever a user uploads receipts, bills, invoices, or screenshots of expenses and wants to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcs_expense_claim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arun Prasad",
+      "features": [
+        "End-to-end business travel expense claim processor",
+        "Use this skill whenever a user uploads receipts, bills, invoices, or screenshots of expenses an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcs-expense-claim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16806106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcs-expense-claim",
+      "url": "https://clawhub.ai/skills/tcs-expense-claim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcs-expense-claim",
+    "url": "https://clawhub.ai/skills/tcs-expense-claim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcs-expense-claim-096610ba8bf59e5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcs-expense-claim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcs-expense-claim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ea8014bfd4463a30e516f15d4ae7099b4d01c02f0e995f3693e4c75a1fc1e1d",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:28:04.748Z"
+}

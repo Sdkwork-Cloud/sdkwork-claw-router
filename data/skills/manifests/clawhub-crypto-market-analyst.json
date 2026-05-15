@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41282,
+  "uuid": "skill-clawhub-crypto-market-analyst",
+  "skillKey": "clawhub-crypto-market-analyst",
+  "name": "crypto-market-analyst",
+  "summary": "Analyze Bitcoin, Ethereum, and major altcoins using real-time price, on-chain signals, and macro context from the Finskills API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Analyze Bitcoin, Ethereum, and major altcoins using real-time price, on-chain signals, and macr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-market-analyst@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-market-analyst",
+      "url": "https://clawhub.ai/skills/crypto-market-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-analyst",
+    "url": "https://clawhub.ai/skills/crypto-market-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-analyst-116a3b264957a44d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-market-analyst@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-market-analyst-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3ceedd3bd4e9aaf0f487b90aeca9883fa074ed45a31613972c1d26b68152fa5",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:46:56.886Z"
+}

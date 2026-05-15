@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stocktoday-skill@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stocktoday_skill",
+  "skill": {
+    "id": 18837,
+    "skillKey": "clawhub-stocktoday-skill",
+    "name": "Stocktoday Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stocktoday-skill",
+    "url": "https://clawhub.ai/skills/stocktoday-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stocktoday-skill-6474a1d799a5b162.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides 200+ interfaces for A-share market data including stock basics, real-time quotes, financials, funds, futures, indexes, funds, bonds, macro, HK/US st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "usa2046",
+      "userId": "s176pqe456bxvkzdvarf3j2f8n84etac",
+      "displayName": "wglink",
+      "image": "https://avatars.githubusercontent.com/u/35352424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1777260247016,
+      "changelog": "- Updated documentation and metadata.\n- Removed note about not needing the Tushare official token in SKILL.md.\n- Minor cleanup and formatting improvements in documentation files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59a09792e4583419cc03036de02ef4eef3aeddf5e96449f816519c2e4ad5aa9a"
+}

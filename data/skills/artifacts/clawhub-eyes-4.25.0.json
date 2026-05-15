@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eyes@4.25.0",
+  "version": "4.25.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eyes",
+  "skill": {
+    "id": 72086,
+    "skillKey": "clawhub-eyes",
+    "name": "Eyes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eyes",
+    "url": "https://clawhub.ai/skills/eyes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eyes-d8fe183f5b8e7324.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球热点事件监控与影响分析。覆盖战争冲突、地缘摩擦、重大政策、疫情、自然灾害、创新技术等可能影响经济、市场和投资的事件，并按行业、汇率、大宗商品链路分析影响。也用于 Cron 定时推送热点摘要(早8点开盘前瞻/晚8点收盘复盘/整点扫描)。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kobenfang",
+      "userId": "s17d3b7awhw6q33gb5epw1jkqn85c871",
+      "displayName": "kobenfang",
+      "image": "https://avatars.githubusercontent.com/u/20209461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 59
+    },
+    "latestVersion": {
+      "version": "4.25.0",
+      "createdAt": 1778382303688,
+      "changelog": "- 增强通用分段推送规则，新增【强制要求】：所有定时推送的完整内容必须通过 openclaw message send 逐段发送，严禁通过 announce 投递长内容。\n- 明确规定：cron流程的最终回复只允许输出一句确认，严禁完整内容作为 announce 输出，以防单条长消息被截断。\n- 其余行为与格式、推送逻辑保持一致，主要为分段投递进一步标准化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0f044d40cbe0ef0ce9a0101bb9d94f78f45e95415771995e6fded8e2f2ab6e5"
+}

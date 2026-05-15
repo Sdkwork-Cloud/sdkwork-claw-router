@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trust-protocol@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_protocol",
+  "skill": {
+    "id": 10640,
+    "skillKey": "clawhub-trust-protocol",
+    "name": "Agent Trust Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-protocol",
+    "url": "https://clawhub.ai/skills/trust-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-protocol-996f827911c4fe9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and update agent trust scores with Bayesian updates, domain-specific trust, revocation, forgetting, and visualize trust via dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felmonon",
+      "userId": "publishers:felmonon",
+      "displayName": "FELMONON",
+      "image": "https://avatars.githubusercontent.com/u/125313419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1769898815341,
+      "changelog": "Bayesian trust scoring for AI agent networks. Domain-specific trust, revocation, forgetting curves, challenge-response\n  verification, and visual dashboard. Pairs with skillsign for ed25519 identity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8dc2b6bbfbfcc0c37fd6ead338a808b8b512d458df1d201a52211b75829e1707"
+}

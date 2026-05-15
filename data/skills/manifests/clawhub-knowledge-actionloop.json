@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71580,
+  "uuid": "skill-clawhub-knowledge-actionloop",
+  "skillKey": "clawhub-knowledge-actionloop",
+  "name": "知行迭代",
+  "summary": "基于《实践论》的自我迭代系统。当需要自动整理记忆、反思改进、或创建新技能时使用。包含Heartbeat检查清单、Cron定时任务配置、和技能创建工作流。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_actionloop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "空城",
+      "features": [
+        "基于《实践论》的自我迭代系统。当需要自动整理记忆、反思改进、或创建新技能时使用。包含Heartbeat检查清单、Cron定时任务配置、和技能创建工作流。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-actionloop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47630628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-actionloop",
+      "url": "https://clawhub.ai/skills/knowledge-actionloop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-actionloop",
+    "url": "https://clawhub.ai/skills/knowledge-actionloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-actionloop-59debd619a36e281.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-actionloop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-actionloop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2f91826bb784053228cb3e06b787c7789bf28603d2d33efa79d727d0fdc5650",
+      "artifactSizeBytes": 3326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:45:32.608Z"
+}

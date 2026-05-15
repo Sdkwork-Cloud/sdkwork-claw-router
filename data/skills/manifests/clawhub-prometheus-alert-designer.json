@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53362,
+  "uuid": "skill-clawhub-prometheus-alert-designer",
+  "skillKey": "clawhub-prometheus-alert-designer",
+  "name": "Prometheus Alert Designer",
+  "summary": "Design Prometheus alerting rules and recording rules — analyze PromQL queries, set meaningful thresholds, reduce alert fatigue, and build multi-window multi-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prometheus_alert_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Design Prometheus alerting rules and recording rules — analyze PromQL queries, set meaningful t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prometheus-alert-designer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prometheus-alert-designer",
+      "url": "https://clawhub.ai/skills/prometheus-alert-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prometheus-alert-designer",
+    "url": "https://clawhub.ai/skills/prometheus-alert-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prometheus-alert-designer-1b5aca285e30e122.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prometheus-alert-designer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prometheus-alert-designer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:047e0028b5db2a672a20d5bc728d664f6430268604dec160fcc7344760e2d4e6",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:45:23.668Z"
+}

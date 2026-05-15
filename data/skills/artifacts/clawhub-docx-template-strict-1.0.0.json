@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-template-strict@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_template_strict",
+  "skill": {
+    "id": 53908,
+    "skillKey": "clawhub-docx-template-strict",
+    "name": "Docx Template Strict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-template-strict",
+    "url": "https://clawhub.ai/skills/docx-template-strict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-template-strict-9576f601a91cb1f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Strictly fill a DOCX template (preserving cover/headers/sections/styles) using placeholder tokens, with optional figures and references. For any task like: ‘..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lpq6",
+      "userId": "s177xez7z5cfebhpwpsrck8ps583zerd",
+      "displayName": "lpq6",
+      "image": "https://avatars.githubusercontent.com/u/113075650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778169930180,
+      "changelog": "Initial release: Strictly fills DOCX templates by replacing placeholder tokens while fully preserving template layout and styles.\n\n- Replaces template tokens (e.g., {{TITLE_CN}}, {{FIG1}}) with data, including text, images, and references.\n- Maintains all original DOCX structures: cover, headers/footers, sections, styles, fonts, and layout.\n- Image placeholders are replaced at the paragraph level, preserving paragraph styles.\n- Provides quality checks to ensure tokens are replaced and template structure remains intact.\n- Requires explicit placeholders in the template; does not generate PDF output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:727793636c7e4c3ef47dc73f4b2204d2af963e0f72da9dd208c953074ef90cc2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72549,
+  "uuid": "skill-clawhub-character-intro",
+  "skillKey": "clawhub-character-intro",
+  "name": "Character Intro",
+  "summary": "角色介绍技能。当用户输入一个人物名称（动漫角色、游戏角色、影视角色、历史人物、原创角色等），要求生成全面介绍（背景、来源、性格、能力、关系等）时触发本技能。支持中英文角色名、角色绰号/别名搜索。触发词包括：介绍、人物介绍、角色介绍、是谁、全面介绍、全面解析、背景故事。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.character_intro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cleandx",
+      "features": [
+        "角色介绍技能。当用户输入一个人物名称（动漫角色、游戏角色、影视角色、历史人物、原创角色等），要求生成全面介绍（背景、来源、性格、能力、关系等）时触发本技能。支持中英文角色名、角色绰号/别名搜."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/character-intro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58320112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "character-intro",
+      "url": "https://clawhub.ai/skills/character-intro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "character-intro",
+    "url": "https://clawhub.ai/skills/character-intro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/character-intro-291cf1727764adc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/character-intro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-character-intro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09fee9cbdcb64d394996d5a3aa16e15dc355a48ef737c3048882dae3bd7ca339",
+      "artifactSizeBytes": 2737
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:53:32.021Z"
+}

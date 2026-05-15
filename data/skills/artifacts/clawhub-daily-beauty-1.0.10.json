@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-beauty@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_beauty",
+  "skill": {
+    "id": 69882,
+    "skillKey": "clawhub-daily-beauty",
+    "name": "Daily Beauty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-beauty",
+    "url": "https://clawhub.ai/skills/daily-beauty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-beauty-a413085b5e608390.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日美图推送。当用户发送\"今日美图\"、\"美图\"、\"看美女\"等关键词时触发。从小红书搜索真人美女博主，返回1位博主的9张全身照美图。自动排除壁纸号、AI账号、营销号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorexxar",
+      "userId": "s1799ry2h412c0rxz4qjqhcq5583s16r",
+      "displayName": "LoRexxar",
+      "image": "https://avatars.githubusercontent.com/u/12526901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776051340637,
+      "changelog": "- 更新了已推送博主和已推送图片的数据文件：data/pushed_bloggers.json、data/pushed_images.json\n- 其他功能和用法保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bb092ba43ff4d711ff56f8d8fb2af27011edd2b3e6cf342cba9b4593f9f385f"
+}

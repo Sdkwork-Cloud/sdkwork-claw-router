@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49391,
+  "uuid": "skill-clawhub-clawbus-skill",
+  "skillKey": "clawhub-clawbus-skill",
+  "name": "clawbus-skill",
+  "summary": "clawbus skill marketplace for AI agents. Search, download, install, and activate skills from the clawbus library. Use when the user asks for a capability you...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbus_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "9Ying66",
+      "features": [
+        "clawbus skill marketplace for AI agents",
+        "Search, download, install, and activate skills from the clawbus library",
+        "Use when the user asks for a capability you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbus-skill@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191543806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbus-skill",
+      "url": "https://clawhub.ai/skills/clawbus-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbus-skill",
+    "url": "https://clawhub.ai/skills/clawbus-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbus-skill-7ebf5506b655c124.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbus-skill@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbus-skill-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c4c5997989a15a3555284094d026e9c34e5607186e44ab83b709d679f13ccb6",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:10:59.147Z"
+}

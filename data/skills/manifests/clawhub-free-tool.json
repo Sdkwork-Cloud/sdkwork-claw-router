@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47411,
+  "uuid": "skill-clawhub-free-tool",
+  "skillKey": "clawhub-free-tool",
+  "name": "Free Tool",
+  "summary": "Display amount of free and used memory in the system. Use for monitoring memory usage and diagnosing performance issues.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display amount of free and used memory in the system",
+        "Use for monitoring memory usage and diagnosing performance issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-tool",
+      "url": "https://clawhub.ai/skills/free-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-tool",
+    "url": "https://clawhub.ai/skills/free-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-tool-47f4f54c832fc656.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a6bf3fbb4259664f3b68a82f80c71e6927ba076e46202a246c1deae2b47cdcf",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T16:52:42.611Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16474,
+  "uuid": "skill-clawhub-ucloud-deepseek-ocr",
+  "skillKey": "clawhub-ucloud-deepseek-ocr",
+  "name": "ucloud-deepseek-ocr",
+  "summary": "OCR text recognition using DeepSeek-OCR model. Use when user asks for OCR, text recognition, image text extraction, screenshot recognition, or converting ima...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucloud_deepseek_ocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianjunye",
+      "features": [
+        "OCR text recognition using DeepSeek-OCR model",
+        "Use when user asks for OCR, text recognition, image text extraction, screenshot recognition, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ucloud-deepseek-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ucloud-deepseek-ocr",
+      "url": "https://clawhub.ai/skills/ucloud-deepseek-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucloud-deepseek-ocr",
+    "url": "https://clawhub.ai/skills/ucloud-deepseek-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucloud-deepseek-ocr-3886ad4a9aa9fbae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ucloud-deepseek-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ucloud-deepseek-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd7a4374a0fa3ab8070908146cd33095102b9354f40fafc1148110949d63b898",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:54:39.429Z"
+}

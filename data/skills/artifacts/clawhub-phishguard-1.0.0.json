@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phishguard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phishguard",
+  "skill": {
+    "id": 26348,
+    "skillKey": "clawhub-phishguard",
+    "name": "phishguard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phishguard",
+    "url": "https://clawhub.ai/skills/phishguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phishguard-768e6d78e40c0188.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitorea las bandejas de Gmail y Outlook en busca de correos de phishing. Analiza cada correo entrante usando reglas estaticas e IA (Claude API). Asigna un..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lichq1337",
+      "userId": "publishers:lichq1337",
+      "displayName": "lichq1337",
+      "image": "https://avatars.githubusercontent.com/u/105398914?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773635959700,
+      "changelog": "- Primera versión de PhishGuard.\n- Monitorea automáticamente bandejas de Gmail y Outlook en busca de correos de phishing.\n- Analiza cada correo usando reglas estáticas e IA (Claude API) para asignar niveles de riesgo (BAJO/MEDIO/ALTO/CRÍTICO).\n- Actúa automáticamente: pone en cuarentena, etiqueta, y alerta según el riesgo; puede notificar por Slack/Teams.\n- Diseñado para organizaciones de 20 a 200 usuarios, con configuración y comandos simples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6223cb990e82e6d5135e9107531c822f0510a348d34574f9201f87a5dc94f545"
+}

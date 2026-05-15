@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17469,
+  "uuid": "skill-clawhub-activityclaw-usage",
+  "skillKey": "clawhub-activityclaw-usage",
+  "name": "ActivityClaw Plugin Usage",
+  "summary": "Monitors and reports agent activities including file operations, command executions, web actions, messages, and sub-agent sessions via dashboard and status c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activityclaw_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rmruss2022",
+      "features": [
+        "Monitors and reports agent activities including file operations, command executions, web action."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activityclaw-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50064453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activityclaw-usage",
+      "url": "https://clawhub.ai/skills/activityclaw-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activityclaw-usage",
+    "url": "https://clawhub.ai/skills/activityclaw-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activityclaw-usage-d48607f377299e56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activityclaw-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-activityclaw-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48670e4e096e0ea92b5b7caff2b106b08bbaabde241a2cfc80b86e3ed33cd0f7",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:11:48.538Z"
+}

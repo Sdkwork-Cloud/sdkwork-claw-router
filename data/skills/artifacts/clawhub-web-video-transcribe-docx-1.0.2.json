@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-video-transcribe-docx@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_video_transcribe_docx",
+  "skill": {
+    "id": 44468,
+    "skillKey": "clawhub-web-video-transcribe-docx",
+    "name": "Web Video Transcribe DOCX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-video-transcribe-docx",
+    "url": "https://clawhub.ai/skills/web-video-transcribe-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-video-transcribe-docx-74e4266613977ca1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline-first workflow for turning Chinese web page video or audio into text and Word deliverables. Use when Codex needs to (1) extract playable media stream..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-narcissus",
+      "userId": "s177jw27anm32qt3dm1c7dq0jh851mjz",
+      "displayName": "c-narcissus",
+      "image": "https://avatars.githubusercontent.com/u/168325551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776439518058,
+      "changelog": "Initial release of web-video-transcribe-docx.\n\n- Provides an offline-first workflow for converting Chinese web page video/audio into text and Word documents.\n- Supports extraction of media streams (video/audio) from web pages, including MP4, M3U8, MPD, and split audio streams.\n- Includes pipelines and scripts for media extraction, download (with custom headers), offline transcription using SenseVoice ASR, and rendering to TXT/DOCX.\n- Special handling for Toutiao pages alongside generic web sources.\n- Raw and refined transcripts are managed separately for accuracy and auditability.\n- Stays within ethical and legal boundaries (no DRM bypass, no credential handling, no unauthorized downloads).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:875f1c6395966513b0b82b0acba09871304b72dc60d344dbd4f24ae0694b696a"
+}

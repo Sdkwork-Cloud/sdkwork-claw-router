@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31426,
+  "uuid": "skill-clawhub-pro-ledger",
+  "skillKey": "clawhub-pro-ledger",
+  "name": "Pro Ledger",
+  "summary": "Pro Ledger integration. Manage Accounts, Contacts, Invoices, Reports. Use when the user wants to interact with Pro Ledger data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pro_ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Pro Ledger integration",
+        "Manage Accounts, Contacts, Invoices, Reports",
+        "Use when the user wants to interact with Pro Ledger data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pro-ledger@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pro-ledger",
+      "url": "https://clawhub.ai/skills/pro-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pro-ledger",
+    "url": "https://clawhub.ai/skills/pro-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pro-ledger-3204e7a8fb17b60c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pro-ledger@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pro-ledger-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fa38d9658049d8d677a1131d72fad72c3044d6c8d7a11aa0c9758dbd5c07416",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:04.032Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53745,
+  "uuid": "skill-clawhub-okx-a2a-payment",
+  "skillKey": "clawhub-okx-a2a-payment",
+  "name": "OKX a2a Payment",
+  "summary": "Use this skill when the user mentions creating a payment link, paying a paymentId / a2a_... link, or checking a2a payment status. Wraps `onchainos payment a2...",
+  "version": "3.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_a2a_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ok-james-01",
+      "features": [
+        "Use this skill when the user mentions creating a payment link, paying a paymentId / a2a_..",
+        "link, or checking a2a payment status",
+        "Wraps `onchainos payment a2..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-a2a-payment@3.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144679206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-a2a-payment",
+      "url": "https://clawhub.ai/skills/okx-a2a-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-a2a-payment",
+    "url": "https://clawhub.ai/skills/okx-a2a-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-a2a-payment-141deecb0d0bee6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-a2a-payment@3.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-a2a-payment-3.1.3.json",
+      "version": "3.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9d9877cdbbc03a980309de6313350b6d4c964e5fe80998e0702d2fd848ec970",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:17:08.861Z"
+}

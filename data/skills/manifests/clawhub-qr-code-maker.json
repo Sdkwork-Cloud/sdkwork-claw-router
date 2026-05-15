@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26525,
+  "uuid": "skill-clawhub-qr-code-maker",
+  "skillKey": "clawhub-qr-code-maker",
+  "name": "Qr Generator",
+  "summary": "QR code generator. Use when user needs to create QR codes for text, URLs, WiFi, vCards, or any data. Supports custom colors, sizes, logos, and formats (PNG/S...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr_code_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "QR code generator",
+        "Use when user needs to create QR codes for text, URLs, WiFi, vCards, or any data",
+        "Supports custom colors, sizes, logos, and formats (PNG/S..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qr-code-maker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qr-code-maker",
+      "url": "https://clawhub.ai/skills/qr-code-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr-code-maker",
+    "url": "https://clawhub.ai/skills/qr-code-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-code-maker-b217560d02899515.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qr-code-maker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qr-code-maker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:053a02d03b540cb9483f2887047dffe8d767524787b363fbbfa8aea0673ea1e6",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:22:43.384Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21628,
+  "uuid": "skill-clawhub-dr-context-pipeline",
+  "skillKey": "clawhub-dr-context-pipeline",
+  "name": "dr-context-pipeline",
+  "summary": "Deterministic memory/context pipeline for agents: route a user message, retrieve relevant memory snippets, compress into a cited Context Pack (sources are sn...",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dr_context_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Refahi",
+      "features": [
+        "Deterministic memory/context pipeline for agents: route a user message, retrieve relevant memor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dr-context-pipeline@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201202982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dr-context-pipeline",
+      "url": "https://clawhub.ai/skills/dr-context-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dr-context-pipeline",
+    "url": "https://clawhub.ai/skills/dr-context-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dr-context-pipeline-6ba98a501f60cace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dr-context-pipeline@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dr-context-pipeline-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c1ed909c76b40ccbe1d466f63a7136681bf34f7f37ecc064b0c43c65002e6bb",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T00:53:03.480Z"
+}

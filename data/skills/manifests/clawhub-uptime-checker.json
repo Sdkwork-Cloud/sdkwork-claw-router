@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29877,
+  "uuid": "skill-clawhub-uptime-checker",
+  "skillKey": "clawhub-uptime-checker",
+  "name": "Uptime Checker",
+  "summary": "Lightweight URL uptime checker and response time monitor. Check if websites and APIs are up, measure response times, track history, and detect SSL issues. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uptime_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Lightweight URL uptime checker and response time monitor",
+        "Check if websites and APIs are up, measure response times, track history, and detect SSL issues"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uptime-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uptime-checker",
+      "url": "https://clawhub.ai/skills/uptime-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uptime-checker",
+    "url": "https://clawhub.ai/skills/uptime-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uptime-checker-7b0cbe460a5b19df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uptime-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uptime-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f781d15ba40868053f296bbe3023233f06b94374926ea354a841c7e99955f1ff",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:06:59.719Z"
+}

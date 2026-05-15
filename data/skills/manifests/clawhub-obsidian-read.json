@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59786,
+  "uuid": "skill-clawhub-obsidian-read",
+  "skillKey": "clawhub-obsidian-read",
+  "name": "Obsidian Read",
+  "summary": "读取 Obsidian Publish 发布的文档链接。当用户发送 publish.obsidian.md 链接，或需要读取 Obsidian 笔记文章时使用。 适用于从 Obsidian Publish 平台获取完整文章内容、笔记、Essay 等场景。 优先使用 web_fetch，失败时使用 browser...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theopenbase",
+      "features": [
+        "读取 Obsidian Publish 发布的文档链接。当用户发送 publish.obsidian.md 链接，或需要读取 Obsidian 笔记文章时使用。 适用于从 Obsidian."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-read@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215621800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-read",
+      "url": "https://clawhub.ai/skills/obsidian-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-read",
+    "url": "https://clawhub.ai/skills/obsidian-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-read-e1c2543444abb9f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-read@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-read-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca63696a2508054da42abaf09013d06c528bfa32b8fc93b343a40565f105a073",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:23:42.202Z"
+}

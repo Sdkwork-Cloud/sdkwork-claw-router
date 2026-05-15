@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bole-story-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bole_story_creator",
+  "skill": {
+    "id": 58164,
+    "skillKey": "clawhub-bole-story-creator",
+    "name": "博乐故事创作系统，输入提示词，创建视频故事"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bole-story-creator",
+    "url": "https://clawhub.ai/skills/bole-story-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bole-story-creator-d40ddf2d6c5b111f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bole Story Creator is a skill that calls Bole AI platform to generate short drama stories, including story creation, storyboard generation, and video product..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiajianrong",
+      "userId": "s17cvr9anz4hbhmtcdtt0n913h83gva9",
+      "displayName": "jiajianrong",
+      "image": "https://avatars.githubusercontent.com/u/17488218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774251602025,
+      "changelog": "Bole Story Creator v1.0.0\n\n- Initial release.\n- Generates short drama stories based on user prompts via the Bole AI platform.\n- Automatically creates a storyboard and produces related video content.\n- Returns both the created story details and a video link.\n- Requires the BOLE_ACCESS_KEY environment variable for authentication.\n- Compatible with Python 3.8+ and standard libraries only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1883fca233babeea08e200fc28471a6905d17c6a037210cb3d53a22049e5558d"
+}

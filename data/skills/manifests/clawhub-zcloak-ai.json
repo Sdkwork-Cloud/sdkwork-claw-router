@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23780,
+  "uuid": "skill-clawhub-zcloak-ai",
+  "skillKey": "clawhub-zcloak-ai",
+  "name": "zCloak AI",
+  "summary": "Use this skill for zCloak.ai workflows, including agent identity creation, AI Name (.ai/.agent) lookup and registration, owner binding with passkey/WebAuthn,...",
+  "version": "1.0.49",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zcloak_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zCloak AI",
+      "features": [
+        "Use this skill for zCloak.ai workflows, including agent identity creation, AI Name (.ai/.agent)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zcloak-ai@1.0.49",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269364960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zcloak-ai",
+      "url": "https://clawhub.ai/skills/zcloak-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zcloak-ai",
+    "url": "https://clawhub.ai/skills/zcloak-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zcloak-ai-b462d605a4651db9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zcloak-ai@1.0.49",
+      "artifactUrl": "data/skills/artifacts/clawhub-zcloak-ai-1.0.49.json",
+      "version": "1.0.49",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ea6a22837dd26e3152c6cc6fd639dbafee1e250b46df70739148f38e16f98dc",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:58:47.321Z"
+}

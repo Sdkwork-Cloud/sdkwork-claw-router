@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghostbot-aclm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostbot_aclm",
+  "skill": {
+    "id": 17823,
+    "skillKey": "clawhub-ghostbot-aclm",
+    "name": "ghostbot-uniswap-v4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostbot-aclm",
+    "url": "https://clawhub.ai/skills/ghostbot-aclm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostbot-aclm-571dbf4eea84770e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GhostBot ACLM — AI-powered Automated Concentrated Liquidity Manager for Uniswap v4. Manage liquidity positions, auto-rebalance out-of-range positions, optimize LP fees dynamically, execute limit orders (stop-loss, take-profit), and monitor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aqiljaafree",
+      "userId": "publishers:aqiljaafree",
+      "displayName": "AqilJaafree",
+      "image": "https://avatars.githubusercontent.com/u/73504832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770556254009,
+      "changelog": "GhostBot ACLM 1.0.0 — Initial Release\n\n- Launches GhostBot ACLM: an AI-powered automated concentrated liquidity manager (ACLM) for Uniswap v4 on Ethereum Sepolia.\n- Features auto-rebalancing liquidity positions, dynamic fee optimization, native limit orders (stop-loss/take-profit), and oracle-integrated AI signals.\n- Provides user commands for adding liquidity, monitoring positions, checking oracle signals, and viewing pool stats from chat.\n- Includes complete setup instructions, test token contract addresses, and usage guidelines for the Sepolia testnet.\n- Thorough documentation on architecture, workflow, and key DeFi concepts for new users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2422905b3886cbc13a283759f0ae8e296263afdbf2874522501c489ab0fabdcf"
+}

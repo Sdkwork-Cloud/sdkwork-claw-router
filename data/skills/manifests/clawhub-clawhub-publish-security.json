@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48055,
+  "uuid": "skill-clawhub-clawhub-publish-security",
+  "skillKey": "clawhub-clawhub-publish-security",
+  "name": "Clawhub Publish Security",
+  "summary": "Automated pre-publish scanner that detects and blocks sensitive data like credentials, tokens, emails, and personal paths in ClawHub skills.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vilém Kužel",
+      "features": [
+        "Automated pre-publish scanner that detects and blocks sensitive data like credentials, tokens,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publish-security@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39015391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publish-security",
+      "url": "https://clawhub.ai/skills/clawhub-publish-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-security",
+    "url": "https://clawhub.ai/skills/clawhub-publish-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-security-544dd324afe2bd49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publish-security@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publish-security-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90fc953c69d13ef24c379923f21e5522ff37134774a3aebab4ba319775952903",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:19:56.734Z"
+}

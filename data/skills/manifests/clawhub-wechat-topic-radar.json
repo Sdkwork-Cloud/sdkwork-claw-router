@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73531,
+  "uuid": "skill-clawhub-wechat-topic-radar",
+  "skillKey": "clawhub-wechat-topic-radar",
+  "name": "公众号爆款选题雷达",
+  "summary": "聚合多平台热点，智能评估选题潜力，提供爆款切入角度、竞品分析及差异化内容方案，助力公众号内容创作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_topic_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sxzxlj",
+      "features": [
+        "聚合多平台热点，智能评估选题潜力，提供爆款切入角度、竞品分析及差异化内容方案，助力公众号内容创作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-topic-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49936671?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-topic-radar",
+      "url": "https://clawhub.ai/skills/wechat-topic-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-topic-radar",
+    "url": "https://clawhub.ai/skills/wechat-topic-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-topic-radar-5bbd805b7ad67dbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-topic-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-topic-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24de3b45085753767f30efaac6406d9b57f767ce348e9ff8b1767a60adcce609",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:56:53.804Z"
+}

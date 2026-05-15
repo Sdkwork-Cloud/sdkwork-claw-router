@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-library-curator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_library_curator",
+  "skill": {
+    "id": 14429,
+    "skillKey": "clawhub-prompt-library-curator",
+    "name": "Prompt Library Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-library-curator",
+    "url": "https://clawhub.ai/skills/prompt-library-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-library-curator-a59c627ba8951da0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curate multi-category prompt libraries in EN/ES with basic/pro levels and export in Markdown/JSON/CSV. Use when users want prompt packs, prompt catalogs, or reusable prompt templates across popular categories (marketing, sales, dev, design."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerdcuba",
+      "userId": "publishers:nerdcuba",
+      "displayName": "nerdcuba",
+      "image": "https://avatars.githubusercontent.com/u/121952866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1185,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770680611396,
+      "changelog": "Initial release: multi-category prompt library in EN/ES with Basic/Pro and Markdown/JSON/CSV exports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fba77f1143230e26b29c7c539a9038746f8c6f5d7a39abe22757ba112c5fcff"
+}

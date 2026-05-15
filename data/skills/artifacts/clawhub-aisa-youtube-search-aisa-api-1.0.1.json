@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-youtube-search-aisa-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_youtube_search_aisa_api",
+  "skill": {
+    "id": 49640,
+    "skillKey": "clawhub-aisa-youtube-search-aisa-api",
+    "name": "AIsa Youtube Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-youtube-search-aisa-api",
+    "url": "https://clawhub.ai/skills/aisa-youtube-search-aisa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-youtube-search-aisa-api-91d1f4249b1e4b64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search YouTube videos, channels, and playlists through the AIsa YouTube relay with one API key. Use when the user asks for YouTube discovery, query expansion..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778245013672,
+      "changelog": "- Improved documentation for setup, usage scenarios, and security notes.\n- Clarified required environment variable (`AISA_API_KEY`) and endpoint details.\n- Added common curl command examples for video, channel, and playlist searches.\n- Expanded instructions on filtering (region, language, and pagination) via API parameters.\n- Updated guidance on when to use or not use this skill, including limitations and guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a5c7d9dabbf3c240da23643f6758aab6b292ee485119984fe7a383fc2d2dcdf"
+}

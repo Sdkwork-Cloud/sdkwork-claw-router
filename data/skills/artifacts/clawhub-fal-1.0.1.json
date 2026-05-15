@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fal",
+  "skill": {
+    "id": 10869,
+    "skillKey": "clawhub-fal",
+    "name": "fal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fal",
+    "url": "https://clawhub.ai/skills/fal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fal-2834e64f3da4f1eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, explore, and run fal.ai generative AI models (image generation, video, audio, 3D). Use when user wants to generate images, videos, or other media with AI models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apekshik",
+      "userId": "publishers:apekshik",
+      "displayName": "apekshik",
+      "image": "https://avatars.githubusercontent.com/u/46071272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2257,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770401688601,
+      "changelog": "- Updated supported model count to \"1000+\" (was \"600+\"), reflecting expanded model availability.\n- Added a `version: 1.0.1` field to metadata.\n- No functional or command changes; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3db8cbcac57449adc24986a4f815fbb75ca399cc5de579d49ededc351c92d23"
+}

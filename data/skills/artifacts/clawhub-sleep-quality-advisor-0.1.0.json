@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sleep-quality-advisor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_quality_advisor",
+  "skill": {
+    "id": 41207,
+    "skillKey": "clawhub-sleep-quality-advisor",
+    "name": "Sleep Quality Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-quality-advisor",
+    "url": "https://clawhub.ai/skills/sleep-quality-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-quality-advisor-375e9f285018a5a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze sleep habits to assess quality, score restfulness, and provide prioritized improvement tips and basic sleep hygiene guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775529219092,
+      "changelog": "- Initial release of Sleep Quality Advisor.\n- Analyzes user sleep habits and assesses sleep quality.\n- Provides personalized improvement suggestions and bedtime ritual guidance.\n- Returns results in structured JSON, including assessment, recommendations, sleep hygiene tips, and medical advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41ce21eeb125430e8e043f9f69a3ca9c7f982ccb29040dab9b7e6cf438356a3f"
+}

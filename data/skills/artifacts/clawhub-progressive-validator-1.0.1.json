@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/progressive-validator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.progressive_validator",
+  "skill": {
+    "id": 51942,
+    "skillKey": "clawhub-progressive-validator",
+    "name": "Progressive Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "progressive-validator",
+    "url": "https://clawhub.ai/skills/progressive-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/progressive-validator-89fffbbccd4cfd3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-stage backtest validation framework — fail fast with short windows (smoke/stress/medium/full) before committing to expensive full-period backtests, sav..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tltby12341",
+      "userId": "s17b0eq3j5h16t0deanr16r2hx83qchd",
+      "displayName": "tltby12341",
+      "image": "https://avatars.githubusercontent.com/u/30487767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773762358395,
+      "changelog": "- Clarified that this skill coordinates validation, but actual backtest submission is handled by the separate backtest-poller skill.\n- Added concrete command examples for both submitting backtests (with backtest-poller) and recording results using validator.py.\n- Updated documentation to specify the dependency on the backtest-poller skill for submission and early-stop functionality.\n- Improved guidance on workflow: check \"what to run next\" and explicitly record each stage’s outcome.\n- No changes to validation logic or core features. Documentation and interface instructions enhanced for ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ccd07fcf4c314583cea63630a0637f471590834166fed806231c86096fe8be9"
+}

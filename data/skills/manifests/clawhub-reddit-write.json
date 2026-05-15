@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20173,
+  "uuid": "skill-clawhub-reddit-write",
+  "skillKey": "clawhub-reddit-write",
+  "name": "Reddit Write",
+  "summary": "Drafts posts and comments in Luka's voice based on research and subreddit rules for manual review and posting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_write",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lknezic",
+      "features": [
+        "Drafts posts and comments in Luka's voice based on research and subreddit rules for manual revi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-write@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104674295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-write",
+      "url": "https://clawhub.ai/skills/reddit-write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-write",
+    "url": "https://clawhub.ai/skills/reddit-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-write-73aaaede2ac820fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-write@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-write-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4ac959cd48a87d0bb1c01db2e930f72e305fc548da76773c29aa1da6887a41a",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:12:08.633Z"
+}

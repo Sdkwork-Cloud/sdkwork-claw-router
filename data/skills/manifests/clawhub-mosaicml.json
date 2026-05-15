@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32186,
+  "uuid": "skill-clawhub-mosaicml",
+  "skillKey": "clawhub-mosaicml",
+  "name": "Mosaicml",
+  "summary": "MosaicML integration. Manage data, records, and automate workflows. Use when the user wants to interact with MosaicML data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mosaicml",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MosaicML integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MosaicML data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mosaicml@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mosaicml",
+      "url": "https://clawhub.ai/skills/mosaicml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mosaicml",
+    "url": "https://clawhub.ai/skills/mosaicml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mosaicml-487897c94fa840fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mosaicml@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mosaicml-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbdcef9ff14ddc4d8208ac99dc846e25ccb585f24d67b3ab6f71930f957453c1",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:38.177Z"
+}

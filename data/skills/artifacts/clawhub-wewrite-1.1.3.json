@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wewrite@1.1.3",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wewrite",
+  "skill": {
+    "id": 69351,
+    "skillKey": "clawhub-wewrite",
+    "name": "WeWrite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wewrite",
+    "url": "https://clawhub.ai/skills/wewrite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wewrite-2ed9ea1632a71de0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号内容全流程助手：热点抓取 → 选题 → 框架 → 写作 → SEO/去AI痕迹 → 视觉AI → 排版推送草稿箱。 触发关键词：公众号、推文、微信文章、微信推文、草稿箱、微信排版、选题、热搜、 热点抓取、封面图、配图、写公众号、写一篇、主题画廊、排版主题、容器语法。 也覆盖：markdown 转微信格式..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oaker-io",
+      "userId": "s17bjy5qd9k3eg921kqmx4jqjd83sed3",
+      "displayName": "Ray Wang",
+      "image": "https://avatars.githubusercontent.com/u/16276127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.3",
+      "createdAt": 1774936041935,
+      "changelog": "**WeWrite 1.1.3 — Major update: 进度追踪、范文库和参数优化全面增强**\n\n- 全新进度追踪：主管道 8 步全过程自动生成任务，支持 step 级 in_progress/completed 状态、随时可见当前进度。\n- 范文风格注入：支持 references/exemplars/index.yaml 范文库，写作自动模仿真实段落节奏和结构。范文库为空时用 seeds 兜底，导入命令和建库规则已明确。\n- 配套脚本新增：scripts/diagnose.py（配置/反AI检测诊断）、scripts/extract_exemplar.py（文章自动提取范文段落），支持自然语言触发。\n- 写作参数自动优化：支持参数文件写优化闭环流程，替换原 optimize_loop.py 脚本，支持人感分多轮自适应调整和最优快照推荐。\n- 版本检查与升级提醒：自动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:320a00146328dc04c105d15a743d609f61fee5c69962b2b381d2f16192854044"
+}

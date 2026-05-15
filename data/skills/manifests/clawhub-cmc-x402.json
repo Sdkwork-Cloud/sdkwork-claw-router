@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19973,
+  "uuid": "skill-clawhub-cmc-x402",
+  "skillKey": "clawhub-cmc-x402",
+  "name": "CoinMarketCap x402 APIs",
+  "summary": "Access CoinMarketCap data via x402 pay-per-request protocol with USDC payments on Base. Use when users mention x402, want CMC data without API keys, ask abou...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_x402",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMarketCap",
+      "features": [
+        "Access CoinMarketCap data via x402 pay-per-request protocol with USDC payments on Base",
+        "Use when users mention x402, want CMC data without API keys, ask abou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmc-x402@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158990050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmc-x402",
+      "url": "https://clawhub.ai/skills/cmc-x402"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-x402",
+    "url": "https://clawhub.ai/skills/cmc-x402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-x402-5668430572aacb51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmc-x402@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmc-x402-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de6890364911c697a322297999936577236e9e31e6fd4f578d3776d1920289f8",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:35:28.126Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssa-product-doc-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_product_doc_reader",
+  "skill": {
+    "id": 61117,
+    "skillKey": "clawhub-ssa-product-doc-reader",
+    "name": "Product Doc Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-product-doc-reader",
+    "url": "https://clawhub.ai/skills/ssa-product-doc-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-product-doc-reader-8877495c960f33cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "产品工程图纸结构化提取器 v5.0。pdftotext 优先 + Vision 兜底，支持软连字符清理/跨行关联/数据校验。专为 Farreach 线材产品图纸设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjboy007",
+      "userId": "s17c8f5qp6wpzyxcf0v2588kmd83qzw7",
+      "displayName": "Jaden's built a claw",
+      "image": "https://avatars.githubusercontent.com/u/64246343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774597478134,
+      "changelog": "Initial release: Extract product specs from documents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52ae6e58c4b6ca33c1a2b1d0c09a74a655b7a7ccff0f52da9fc30f7e36307082"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64093,
+  "uuid": "skill-clawhub-doc-visualizer",
+  "skillKey": "clawhub-doc-visualizer",
+  "name": "文档可视化",
+  "summary": "一键将飞书文档/Word/PDF/Excel/Txt转换成深色指挥中心风格HTML看板，支持5主题，可导出PDF和长图。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_visualizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LZM2023",
+      "features": [
+        "一键将飞书文档/Word/PDF/Excel/Txt转换成深色指挥中心风格HTML看板，支持5主题，可导出PDF和长图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-visualizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133074322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-visualizer",
+      "url": "https://clawhub.ai/skills/doc-visualizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-visualizer",
+    "url": "https://clawhub.ai/skills/doc-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-visualizer-90cacd8dfa7aac5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-visualizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-visualizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bc294c126d39ef03ab412ddad658121e5fa1d9402f7ac6d6128924d2028d4dd",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T06:26:09.425Z"
+}

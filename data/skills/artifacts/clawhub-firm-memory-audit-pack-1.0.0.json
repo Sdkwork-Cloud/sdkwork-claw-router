@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-memory-audit-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_memory_audit_pack",
+  "skill": {
+    "id": 26393,
+    "skillKey": "clawhub-firm-memory-audit-pack",
+    "name": "Firm Memory Audit Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-memory-audit-pack",
+    "url": "https://clawhub.ai/skills/firm-memory-audit-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-memory-audit-pack-6e500f797db1013f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory infrastructure audit pack. pgvector configuration validation and knowledge graph integrity check. 2 memory tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772455271605,
+      "changelog": "Initial release of the firm-memory-audit-pack skill.\n\n- Provides tools to audit memory infrastructure, specifically pgvector configuration and knowledge graph integrity.\n- Includes two tools: `openclaw_pgvector_memory_check` and `openclaw_knowledge_graph_check`.\n- Validates pgvector extension settings (dimensions, index type, distance metric).\n- Audits knowledge graph for node connectivity, orphan detection, and cycle detection.\n- Requires `mcp-openclaw-extensions >= 3.0.0`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a005b2415165d2c845ee2ad72c37622f963f5a76716aea027a86f47883b69ee8"
+}

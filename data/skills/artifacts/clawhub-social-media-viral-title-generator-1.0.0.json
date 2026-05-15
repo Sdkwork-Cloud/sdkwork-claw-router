@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-viral-title-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_viral_title_generator",
+  "skill": {
+    "id": 38706,
+    "skillKey": "clawhub-social-media-viral-title-generator",
+    "name": "social-media-viral-title-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-viral-title-generator",
+    "url": "https://clawhub.ai/skills/social-media-viral-title-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-viral-title-generator-1c0c7d39f3ab87c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high CTR titles for social media platforms including Instagram, TikTok, Twitter, and YouTube. Based on viral title pattern analysis, generates 10-20..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776568234463,
+      "changelog": "Initial release with streamlined, international focus and multi-platform support.\n\n- Broadens supported platforms to Instagram, TikTok, Twitter/X, YouTube, LinkedIn\n- Generates 10-20 alternative viral titles with CTR prediction scores and optimization suggestions\n- Provides platform-specific guidance and viral title pattern analysis\n- Simplifies content for an international audience; Chinese material and previous reference files removed\n- Adds advanced parameters for audience, style, platform, and batch title count\n- Removes in-repo reference material and sample scripts for a leaner release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ccb19e21ef6215fe28ad93d25f309f5aaeb66dff70f4f227544ddac59c2fd0b"
+}

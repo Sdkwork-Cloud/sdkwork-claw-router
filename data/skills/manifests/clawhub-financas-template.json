@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55815,
+  "uuid": "skill-clawhub-financas-template",
+  "skillKey": "clawhub-financas-template",
+  "name": "Finanças Template",
+  "summary": "Gerencia finanças pessoais com registro detalhado de gastos/receitas por categoria, processamento de extratos/faturas e resumos mensais e anuais.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financas_template",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evandrotho",
+      "features": [
+        "Gerencia finanças pessoais com registro detalhado de gastos/receitas por categoria, processamen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financas-template@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261009611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financas-template",
+      "url": "https://clawhub.ai/skills/financas-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financas-template",
+    "url": "https://clawhub.ai/skills/financas-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financas-template-e9078963fe7c8b17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financas-template@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financas-template-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4ea6020e1184a36323254d7b2d13a44191deea8ff99807bfae8381a3de8cf45",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T03:30:45.442Z"
+}

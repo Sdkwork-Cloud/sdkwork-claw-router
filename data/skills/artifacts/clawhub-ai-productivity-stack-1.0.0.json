@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-productivity-stack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_productivity_stack",
+  "skill": {
+    "id": 48791,
+    "skillKey": "clawhub-ai-productivity-stack",
+    "name": "Ai Productivity Stack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-productivity-stack",
+    "url": "https://clawhub.ai/skills/ai-productivity-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-productivity-stack-3b87057dfd381795.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design a personal AI-enhanced workflow that saves time without creating tech debt."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778148228069,
+      "changelog": "AI Productivity Stack 1.0.0 – Initial release\n\n- Guides users through assessing their workflow and identifying where AI can enhance productivity.\n- Provides a step-by-step prompt flow: task audit, AI fit assessment, workflow design, and stack building.\n- Recommends human-in-the-loop checkpoints and boundaries to prevent over-automation.\n- Suggests personalized AI tool stacks based on user comfort and needs.\n- Includes staged implementation advice and compliance/safety guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a05da66aa3a959e8d0f41a24d08d7117b32565081494a905a5f96e7394c2680"
+}

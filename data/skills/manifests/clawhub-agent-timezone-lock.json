@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43779,
+  "uuid": "skill-clawhub-agent-timezone-lock",
+  "skillKey": "clawhub-agent-timezone-lock",
+  "name": "Timezone",
+  "summary": "Stops your OpenClaw agent from reporting the wrong time. Prevents the common UTC-as-local mistake that makes agents look broken. Install this if your agent h...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_timezone_lock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ferrentinomj-dev",
+      "features": [
+        "Stops your OpenClaw agent from reporting the wrong time",
+        "Prevents the common UTC-as-local mistake that makes agents look broken",
+        "Install this if your agent h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-timezone-lock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257645185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-timezone-lock",
+      "url": "https://clawhub.ai/skills/agent-timezone-lock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-timezone-lock",
+    "url": "https://clawhub.ai/skills/agent-timezone-lock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-timezone-lock-d6870b269f308f03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-timezone-lock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-timezone-lock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cfabe0a83af8e78c49642caf2fd49b68f65388d7e02f157670c749c60935504",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:41:31.714Z"
+}

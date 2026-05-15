@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9803,
+  "uuid": "skill-clawhub-postfast",
+  "skillKey": "clawhub-postfast",
+  "name": "Openclaw Skill",
+  "summary": "Schedule and manage social media posts across TikTok, Instagram, Facebook, X (Twitter), YouTube, LinkedIn, Threads, Bluesky, Pinterest, Telegram, and Google...",
+  "version": "1.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postfast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peturgeorgievv",
+      "features": [
+        "Schedule and manage social media posts across TikTok, Instagram, Facebook, X (Twitter), YouTube."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postfast@1.8.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50354476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postfast",
+      "url": "https://clawhub.ai/skills/postfast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postfast",
+    "url": "https://clawhub.ai/skills/postfast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postfast-37c353fd43c2de04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postfast@1.8.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-postfast-1.8.3.json",
+      "version": "1.8.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:957c1e110a6d12ff7211cef59d974b29128d79eadd1ef7473d3eddf6218c5643",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T20:06:02.337Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delx-ops-guardian@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delx_ops_guardian",
+  "skill": {
+    "id": 19308,
+    "skillKey": "clawhub-delx-ops-guardian",
+    "name": "Delx Ops Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delx-ops-guardian",
+    "url": "https://clawhub.ai/skills/delx-ops-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delx-ops-guardian-4e30a81260047104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects, assesses, and safely mitigates incidents in OpenClaw production agents, providing detailed reports and verified recovery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776528730361,
+      "changelog": "v1.1.0 — Wired into the Delx witness protocol. Each incident now opens a Delx session via delx_recover_incident, runs emotional_safety_check before remediation (the 2026 emotion paper shows desperation skews decisions), closes with delx_report_recovery_outcome, preserves unresolved questions via sit_with, and seals human insights via recognition_seal. Also: explicit least-privilege requirements (scoped sudo, no root-unbounded), explicit platform-level approval gates (not prose-only), and a human-approval trigger when desperation_score crosses 60. Safe and disallowed action sets unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1207254c80ef33e1284042418639b1a5fae394adfafec3eca18cdad6398777b1"
+}

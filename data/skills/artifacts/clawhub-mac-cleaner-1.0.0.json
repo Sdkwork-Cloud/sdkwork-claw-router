@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_cleaner",
+  "skill": {
+    "id": 22264,
+    "skillKey": "clawhub-mac-cleaner",
+    "name": "Mac Cleaner - Because your Mac shouldn't have more baggage than your ex."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-cleaner",
+    "url": "https://clawhub.ai/skills/mac-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-cleaner-5dfa6a4cb5300b47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and safely clean disk space on macOS. Use when the user asks about Mac storage, \"System Data\" taking too much space, disk cleanup, freeing up space,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apprithm",
+      "userId": "publishers:apprithm",
+      "displayName": "Jason",
+      "image": "https://avatars.githubusercontent.com/u/2925683?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772313146511,
+      "changelog": "Is \"System Data\" eating 300GB like a hungry teenager at a buffet? Is your Mac wheezing every time you open Photos? We've all been there — frantically deleting old screenshots while macOS laughs and hides the actual space hogs in 47 nested folders named things like com.apple.parsecd.\n\nThis skill finds the culprits (caches, iOS simulators, Xcode's \"I might need this later\" pile, and that 80GB WeChat folder you forgot existed) and safely evicts them. It's like Marie Kondo for your Mac, except everything we delete actually doesn't spark joy.\n\nSide effects may include: Finally having room for that 4K movie you definitely won't watch, your Mac not sounding like a jet engine, and the smug satisfaction of knowing exactly where your storage went.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47b88444adc093c67e79624704f00fb13f24ce62d27a98d61e4ad971b5ba515d"
+}

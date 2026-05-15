@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_cn",
+  "skill": {
+    "id": 59190,
+    "skillKey": "clawhub-proxy-cn",
+    "name": "Proxy Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-cn",
+    "url": "https://clawhub.ai/skills/proxy-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-cn-099741a161dcedb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在中国大陆或受限网络环境下，为访问 GitHub、OpenAI、npm、PyPI、Docker Hub 等境外服务自动或按需注入 http_proxy / https_proxy / ALL_PROXY（本地 SOCKS5 + HTTP 端口）。 在用户需要执行 curl、git、npm、pip、docker p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775618903269,
+      "changelog": "Initial release of proxy-cn:\n\n- Auto-injects http_proxy / https_proxy / ALL_PROXY for GitHub, OpenAI, npm, PyPI, Docker Hub and similar services in restricted network environments.\n- Supports macOS, Linux, WSL, Windows (PowerShell, Git Bash/MSYS2), with user-friendly shell (bash, PowerShell) scripts.\n- Provides both single-command wrapper and persistent session environment injection.\n- Default local proxy ports: HTTP 10809, SOCKS5 10808; configurable via environment variables.\n- Includes heuristic domain detection, manual override, and failsafe guidance for various OS and proxy client setups.\n- Documentation covers usage scenarios, troubleshooting, environment variables, CIDR/no_proxy handling, and security notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3c4114234b43fba093c020f32f5dfb80dbd88b4016ae5f09744a734be6a72c4"
+}

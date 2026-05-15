@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-taxonomist-clarkchenkai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_taxonomist_clarkchenkai",
+  "skill": {
+    "id": 52882,
+    "skillKey": "clawhub-memory-taxonomist-clarkchenkai",
+    "name": "Memory Taxonomist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-taxonomist-clarkchenkai",
+    "url": "https://clawhub.ai/skills/memory-taxonomist-clarkchenkai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-taxonomist-clarkchenkai-9d5c2ebb66f5b088.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory Taxonomist — Structured Memory Skill for Turning Raw Notes into Stable Knowledge. Use it when the user needs a disciplined protocol and fixed output c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarkchenkai",
+      "userId": "s17ajkxsb44wpgrcm6e0s5bbj5849c81",
+      "displayName": "Cubic AI",
+      "image": "https://avatars.githubusercontent.com/u/242906237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775700615136,
+      "changelog": "- Initial release of the Memory Taxonomist skill.\n- Provides a structured protocol for turning raw notes into stable, classified knowledge.\n- Breaks down input into atomic claims, classifies each as fact, preference, procedure, unresolved question, or exception.\n- Emphasizes careful separation of durable and provisional information, flagging conflicts and exceptions.\n- Outputs results in a fixed six-part markdown structure for clear, consistent memory storage and retrieval.\n- Designed for disciplined knowledge management when retrieval quality is prioritized over storage volume.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:473e20bae80f84eec158d91616fd66eeb6a954d053ad35b649a5ad483c7ec36c"
+}

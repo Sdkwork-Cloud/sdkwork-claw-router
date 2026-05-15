@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11607,
+  "uuid": "skill-clawhub-kameleondb",
+  "skillKey": "clawhub-kameleondb",
+  "name": "KameleonDB",
+  "summary": "Store and query structured data without planning schemas upfront. Use when you need to remember information, track entities across conversations, build knowledge bases, ingest API data, store user preferences, create CRM systems, or mainta.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kameleondb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Santos",
+      "features": [
+        "Store and query structured data without planning schemas upfront",
+        "Use when you need to remember information, track entities across conversations, build knowledge.",
+        "Automatically evolves data structure as you discover new fields",
+        "No migrations, no schema design"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kameleondb@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29627996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kameleondb",
+      "url": "https://clawhub.ai/skills/kameleondb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kameleondb",
+    "url": "https://clawhub.ai/skills/kameleondb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kameleondb-cf229d44ccdf22ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kameleondb@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kameleondb-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a51c0c2de73c9dc98e376e412994197a1f7f95537491af62edcaec83d36d29cf",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T03:35:55.862Z"
+}

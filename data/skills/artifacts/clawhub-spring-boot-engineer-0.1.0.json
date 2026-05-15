@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spring-boot-engineer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spring_boot_engineer",
+  "skill": {
+    "id": 10235,
+    "skillKey": "clawhub-spring-boot-engineer",
+    "name": "Spring Boot Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spring-boot-engineer",
+    "url": "https://clawhub.ai/skills/spring-boot-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spring-boot-engineer-1675626aef103898.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring Cloud integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2416,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838994315,
+      "changelog": "Initial release of spring-boot-engineer skill.\n\n- Provides expert guidance for developing Spring Boot 3.x applications, microservices, and reactive Java solutions.\n- Invokes for topics including Spring Data JPA, Spring Security 6, WebFlux, and Spring Cloud integration.\n- Defines clear workflow for requirements analysis, secure implementation, testing, and cloud deployment.\n- Enforces best practices and constraints for project structure, validation, dependency injection, and configuration.\n- Includes output templates for entities, repositories, services, controllers, DTOs, configuration, testing, and documentation.\n- References modern Java and Spring technologies and related roles for collaborative development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0bbe0e7c7eb63318bbf43f9958812ac95e4f9f6e86ee31635a18f5befdae1b3"
+}

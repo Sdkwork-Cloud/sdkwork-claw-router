@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8515,
+  "uuid": "skill-clawhub-zoho-inventory",
+  "skillKey": "clawhub-zoho-inventory",
+  "name": "Zoho Inventory",
+  "summary": "Zoho Inventory API integration with managed OAuth. Manage items, sales orders, invoices, purchase orders, bills, contacts, and shipments. Use this skill when...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_inventory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Zoho Inventory API integration with managed OAuth",
+        "Manage items, sales orders, invoices, purchase orders, bills, contacts, and shipments",
+        "Use this skill when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-inventory@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-inventory",
+      "url": "https://clawhub.ai/skills/zoho-inventory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-inventory",
+    "url": "https://clawhub.ai/skills/zoho-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-inventory-610ad9c8798e647d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-inventory@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-inventory-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b55b36b8ba569d68756a4860be3bb038e989b54a053085575a95ba355a52cb3c",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:22:33.245Z"
+}

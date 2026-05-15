@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nova-video@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_video",
+  "skill": {
+    "id": 27112,
+    "skillKey": "clawhub-nova-video",
+    "name": "NovaVideo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-video",
+    "url": "https://clawhub.ai/skills/nova-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-video-6971158b9dbde210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images or videos using the Nova Video OpenAPI with a single sentence. Use when the user wants to generate an image, create a video, check video gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onesoloapp",
+      "userId": "s17d7qnds38jr331c1q8zej8wd83pwt1",
+      "displayName": "onesoloapp",
+      "image": "https://avatars.githubusercontent.com/u/264346510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773844503933,
+      "changelog": "- Added a note about a free tier: every user now gets 60 free text-to-image generations per month at no cost.\n- New \"Install this skill\" section with direct install and OpenClaw instructions.\n- No changes to API or workflow; usage remains the same for generating images and videos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffea0d107ca5b9e7df7d3392f3e5bd3e692dfb4335947c11475334a28d02cfb3"
+}

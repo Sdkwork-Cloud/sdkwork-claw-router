@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15092,
+  "uuid": "skill-clawhub-obsidian-task",
+  "skillKey": "clawhub-obsidian-task",
+  "name": "Obsidian Task",
+  "summary": "Manage Obsidian tasks via obsidian-cli. List, toggle, create, and update tasks from the terminal.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang Jun",
+      "features": [
+        "Manage Obsidian tasks via obsidian-cli",
+        "List, toggle, create, and update tasks from the terminal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-task@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/815438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-task",
+      "url": "https://clawhub.ai/skills/obsidian-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-task",
+    "url": "https://clawhub.ai/skills/obsidian-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-task-affdf29cf6f33c76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-task@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-task-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e35e69eb749e1340cd69ae4125602bc1088832d6a78ecc1d21ad983f6ebf3a4",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:03:05.058Z"
+}

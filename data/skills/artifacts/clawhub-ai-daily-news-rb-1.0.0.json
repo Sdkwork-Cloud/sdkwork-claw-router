@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-daily-news-rb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_daily_news_rb",
+  "skill": {
+    "id": 72556,
+    "skillKey": "clawhub-ai-daily-news-rb",
+    "name": "AI日报测试版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-daily-news-rb",
+    "url": "https://clawhub.ai/skills/ai-daily-news-rb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-daily-news-rb-65c3c67c999c08f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专门用于整理、汇总和深度分析每日最前沿的 AI 资讯，包括行业大事件、大模型更新、学术论文、开源工具及新技术标准。当用户提到“生成 AI 日报”、“今日 AI 资讯”、“行业动态汇总”或类似的请求时，请务必使用此技能。即使没有明确说“日报”，只要是请求汇总最新 AI 领域进展，都应触发本技能以确保内容的深度和准确性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ranbin",
+      "userId": "s175x2jvb5rntsw3pem4y6fy3h843p2k",
+      "displayName": "ranbin",
+      "image": "https://avatars.githubusercontent.com/u/1539770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775093683375,
+      "changelog": "- Initial release of ai-news-daily skill for curating, summarizing, and analyzing daily front-line AI news.\n- Supports structured bilingual search covering global AI updates from top sources.\n- Organizes news into major industry events, model updates, academic research, open-source tools, and new tech standards.\n- Emphasizes in-depth technical analysis, accurate terminology, and relevance to current developments.\n- Outputs structured, Markdown-formatted daily digests suitable for professional and technical audiences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06dd55f6f4613dec507be5252c3bee4103fc110bc994a80af2ff680a53a97f60"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17009,
+  "uuid": "skill-clawhub-safe-multisig-skill",
+  "skillKey": "clawhub-safe-multisig-skill",
+  "name": "Safe Multisig Skill",
+  "summary": "Propose, confirm, and execute Safe multisig transactions using the Safe{Core} SDK (protocol-kit v6 / api-kit v4). TypeScript strict. Use when an agent needs to operate a Safe smart account — (1) create/predict a new Safe, (2) fetch Safe ow.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_multisig_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openclaw-consensus-bot",
+      "features": [
+        "Propose, confirm, and execute Safe multisig transactions using the Safe{Core} SDK (protocol-kit.",
+        "TypeScript strict",
+        "Use when an agent needs to operate a Safe smart account — (1) create/predict a new Safe, (2) fe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-multisig-skill@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258721376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-multisig-skill",
+      "url": "https://clawhub.ai/skills/safe-multisig-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-multisig-skill",
+    "url": "https://clawhub.ai/skills/safe-multisig-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-multisig-skill-82b2a4e3b57fe5bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-multisig-skill@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-multisig-skill-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2e9b36e4317f736f9658ef26adeffdfb95e14378d65a254e75fc816394a71cb",
+      "artifactSizeBytes": 2714
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T05:41:29.367Z"
+}

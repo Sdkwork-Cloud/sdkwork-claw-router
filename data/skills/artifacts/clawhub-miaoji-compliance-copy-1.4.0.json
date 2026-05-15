@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miaoji-compliance-copy@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoji_compliance_copy",
+  "skill": {
+    "id": 66818,
+    "skillKey": "clawhub-miaoji-compliance-copy",
+    "name": "Miaoji Compliance Copy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoji-compliance-copy",
+    "url": "https://clawhub.ai/skills/miaoji-compliance-copy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoji-compliance-copy-969b08a3e0531aee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速扫描并清洗亚马逊产品文案违规词，注入场景和用户意图，生成符合平台规则的多版本合规文案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777736175075,
+      "changelog": "Added scripts/compliance-checker.py: Prohibited word scanner with CN/EN support and Rufus keyword coverage analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:873b6058f3db13f706fc3e66b659ca72cdf0565458a9b85404df560e274d8552"
+}

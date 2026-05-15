@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/primevue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.primevue",
+  "skill": {
+    "id": 39900,
+    "skillKey": "clawhub-primevue",
+    "name": "primevue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "primevue",
+    "url": "https://clawhub.ai/skills/primevue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/primevue-3c308bc59b36d03e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PrimeVue UI component library for Vue.js with 100+ components. Covers design token theming, unstyled mode, pass-through (pt) styling, forms with validation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuexiaoliang",
+      "userId": "s17abx7v3nrc7rzp3m6ayc06mn83p4at",
+      "displayName": "岳晓亮",
+      "image": "https://avatars.githubusercontent.com/u/37929159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776060806569,
+      "changelog": "- Initial release of the PrimeVue skill.\n- Introduces 100+ Vue.js UI components with both styled and unstyled (pass-through) modes.\n- Supports design token-based theming system, including custom and runtime theme updates.\n- Features forms library with integrated validation for popular schema resolvers.\n- Provides comprehensive configuration options, including icons, z-index, and global styling.\n- Quick installation and setup guides for Vite, Nuxt, Laravel, and CDN usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44e1d5c116134bea3e12e6d963c98b9b8ac4aeebd5f5d493c8eff3d1269a3911"
+}

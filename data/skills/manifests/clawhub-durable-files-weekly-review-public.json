@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26198,
+  "uuid": "skill-clawhub-durable-files-weekly-review-public",
+  "skillKey": "clawhub-durable-files-weekly-review-public",
+  "name": "Durable Files Weekly Review (Public)",
+  "summary": "Run a weekly token-optimization audit for durable instruction files in any OpenClaw workspace, generate a markdown report, and propose approval-gated cleanup...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.durable_files_weekly_review_public",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy",
+      "features": [
+        "Run a weekly token-optimization audit for durable instruction files in any OpenClaw workspace,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/durable-files-weekly-review-public@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51783311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "durable-files-weekly-review-public",
+      "url": "https://clawhub.ai/skills/durable-files-weekly-review-public"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "durable-files-weekly-review-public",
+    "url": "https://clawhub.ai/skills/durable-files-weekly-review-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/durable-files-weekly-review-public-df24239c4cbc9194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/durable-files-weekly-review-public@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-durable-files-weekly-review-public-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76805e6ccf6ab99d9b2346cf27af6653e2a736fdbc66e1659b0f0d92bb55227e",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:16:49.875Z"
+}

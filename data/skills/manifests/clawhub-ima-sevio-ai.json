@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29368,
+  "uuid": "skill-clawhub-ima-sevio-ai",
+  "skillKey": "clawhub-ima-sevio-ai",
+  "name": "IMA Studio Sevio AI Generation - Sevio 1.0 ,Sevio 1.0-Fast",
+  "summary": "IMA model generation with exactly two Sevio models: Ima Sevio 1.0 and Ima Sevio 1.0-Fast. Supports text-to-video, image-to-video, first-last-frame, and refer...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_sevio_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "allenfancy-gan",
+      "features": [
+        "IMA model generation with exactly two Sevio models: Ima Sevio 1.0 and Ima Sevio 1.0-Fast",
+        "Supports text-to-video, image-to-video, first-last-frame, and refer..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ima-sevio-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224295706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ima-sevio-ai",
+      "url": "https://clawhub.ai/skills/ima-sevio-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-sevio-ai",
+    "url": "https://clawhub.ai/skills/ima-sevio-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-sevio-ai-7782052d1fcdfc17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ima-sevio-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ima-sevio-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b102bfb4c3c73eb7fa2a6c21a892f7d02562bf67c1e9066f1540d803c99c779",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:51:22.286Z"
+}

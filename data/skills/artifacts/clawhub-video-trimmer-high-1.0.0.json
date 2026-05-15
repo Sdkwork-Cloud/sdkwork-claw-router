@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-high@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_high",
+  "skill": {
+    "id": 49210,
+    "skillKey": "clawhub-video-trimmer-high",
+    "name": "Video Trimmer High"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-high",
+    "url": "https://clawhub.ai/skills/video-trimmer-high",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-high-55f5e8039b32e63a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get trimmed HD clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777588262268,
+      "changelog": "- Initial public release: \"Video Trimmer High — Trim and Export HD Videos\".\n- Upload raw MP4, MOV, AVI, or WebM files (up to 500MB) and describe how you'd like them trimmed.\n- AI-based precision trimming via text instructions; process and export to 1080p MP4 in under 2 minutes.\n- Designed for quick, slider-free workflow — no manual editing suite required.\n- Integrated cloud render pipeline, session handling, and automatic credit/token management.\n- Supports common video/audio/image formats and provides real-time status updates during editing and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a30eac2bf37f75f862138054ee4c1c2454be1f1c8aa616d2fdeaccfdd43eef66"
+}

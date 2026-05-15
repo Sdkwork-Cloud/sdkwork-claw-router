@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21016,
+  "uuid": "skill-clawhub-7shifts",
+  "skillKey": "clawhub-7shifts",
+  "name": "7Shifts",
+  "summary": "7shifts integration. Manage Companies. Use when the user wants to interact with 7shifts data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.7shifts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "7shifts integration",
+        "Manage Companies",
+        "Use when the user wants to interact with 7shifts data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/7shifts@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "7shifts",
+      "url": "https://clawhub.ai/skills/7shifts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "7shifts",
+    "url": "https://clawhub.ai/skills/7shifts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/7shifts-08639dcddaa15c51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/7shifts@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-7shifts-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c344a4b220f3290916276f606999155c9c6ec87edcc18a17570a366f101f1f7e",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:12.921Z"
+}

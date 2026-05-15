@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agnicpay-pay-for-service@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnicpay_pay_for_service",
+  "skill": {
+    "id": 40634,
+    "skillKey": "clawhub-agnicpay-pay-for-service",
+    "name": "Agnic Pay for Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnicpay-pay-for-service",
+    "url": "https://clawhub.ai/skills/agnicpay-pay-for-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnicpay-pay-for-service-fe05f41a95234c8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make paid requests to x402-enabled APIs using USDC on Base. Use when the user explicitly asks to call a paid API, make an x402 payment, pay for a request, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agnicpay-prog",
+      "userId": "s1777853tw7s2n47974ggs0xad84d8pq",
+      "displayName": "Agnic.AI",
+      "image": "https://avatars.githubusercontent.com/u/240652244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776953289218,
+      "changelog": "v2.0.2 — Synced with upstream agnic-wallet-skills:\n- Security fix: now requires explicit user invocation (disable-model-invocation: true) — prevents auto-spend of USDC\n- Added context: fork for execution isolation\n- Added reference/x402-protocol.md for progressive disclosure\n- Standardized authentication (browser OAuth + headless AGNIC_TOKEN)\n- Rebranded references from \"AgnicPay\" to \"Agnic\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8e18446be349de7df776fce42920ebd3d319e1859d9a04314833f65134d69f6"
+}

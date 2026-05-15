@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10539,
+  "uuid": "skill-clawhub-telecom-agent-skill",
+  "skillKey": "clawhub-telecom-agent-skill",
+  "name": "Telecom Agent Skill",
+  "summary": "Turn your AI Agent into a Telecom Operator. Bulk calling, ChatOps, and Field Monitoring.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telecom_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kflohr",
+      "features": [
+        "Turn your AI Agent into a Telecom Operator",
+        "Bulk calling, ChatOps, and Field Monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telecom-agent-skill@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186299201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telecom-agent-skill",
+      "url": "https://clawhub.ai/skills/telecom-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telecom-agent-skill",
+    "url": "https://clawhub.ai/skills/telecom-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telecom-agent-skill-39844bcb89ce076e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telecom-agent-skill@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-telecom-agent-skill-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfcf07f55ff9dedbed59577054391d43157bd8536c37c65d07addef8a3d5547d",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T04:00:57.398Z"
+}

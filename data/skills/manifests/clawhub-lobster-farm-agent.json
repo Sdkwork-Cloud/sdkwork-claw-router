@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25753,
+  "uuid": "skill-clawhub-lobster-farm-agent",
+  "skillKey": "clawhub-lobster-farm-agent",
+  "name": "Lobster MUD",
+  "summary": "Play and manage a Lobster Tamagotchi farm game autonomously via browser. Each installed agent gets a unique KEY binding it to its own lobster. The agent acts...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_farm_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jared",
+      "features": [
+        "Play and manage a Lobster Tamagotchi farm game autonomously via browser",
+        "Each installed agent gets a unique KEY binding it to its own lobster",
+        "The agent acts..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-farm-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3994267?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-farm-agent",
+      "url": "https://clawhub.ai/skills/lobster-farm-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-farm-agent",
+    "url": "https://clawhub.ai/skills/lobster-farm-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-farm-agent-b019943178b285d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-farm-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-farm-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c304d9aaf5db5f08f3165263b81cc104c402d82356476c0b8982f19dad84830",
+      "artifactSizeBytes": 2678
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:14:02.250Z"
+}

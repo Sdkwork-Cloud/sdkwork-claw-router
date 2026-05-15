@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56053,
+  "uuid": "skill-clawhub-grab-douyin",
+  "skillKey": "clawhub-grab-douyin",
+  "name": "Grab Douyin - Video Downloader",
+  "summary": "Download Douyin (抖音) videos via the TikHub API — no login required. USE THIS SKILL whenever the user: - Shares a Douyin link (v.douyin.com, douyin.com, or an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grab_douyin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mfang0126",
+      "features": [
+        "Download Douyin (抖音) videos via the TikHub API — no login required",
+        "USE THIS SKILL whenever the user:",
+        "Shares a Douyin link (v.douyin.com, douyin.com, or an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grab-douyin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8330659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grab-douyin",
+      "url": "https://clawhub.ai/skills/grab-douyin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grab-douyin",
+    "url": "https://clawhub.ai/skills/grab-douyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grab-douyin-9927911403ab72a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grab-douyin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grab-douyin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d65cd54bd33b13591e26bf58aa8d2f8943487050354d52dd02abf5cd3531d0a8",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:03:59.225Z"
+}

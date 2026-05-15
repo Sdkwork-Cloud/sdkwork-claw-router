@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13311,
+  "uuid": "skill-clawhub-kimi-usage-monitor",
+  "skillKey": "clawhub-kimi-usage-monitor",
+  "name": "Kimi Usage Monitor",
+  "summary": "Monitor Kimi K2.5 API usage and quota from the Kimi console. Use when the agent needs to (1) Check remaining usage percentage and reset timers, (2) Make autonomous decisions about task prioritization based on available quota, (3) Monitor r.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_usage_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xD4O",
+      "features": [
+        "Monitor Kimi K2.5 API usage and quota from the Kimi console",
+        "Use when the agent needs to (1) Check remaining usage percentage and reset timers, (2) Make aut.",
+        "Essential for self-managing agents operating under quota constraints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kimi-usage-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28035859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kimi-usage-monitor",
+      "url": "https://clawhub.ai/skills/kimi-usage-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-usage-monitor",
+    "url": "https://clawhub.ai/skills/kimi-usage-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-usage-monitor-f4bff8d7c653c86f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kimi-usage-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kimi-usage-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57f4b7abe2d9071529fd354c511fc49e9f92763b31c3db2175e6afae0eb3dd8b",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:35:14.496Z"
+}

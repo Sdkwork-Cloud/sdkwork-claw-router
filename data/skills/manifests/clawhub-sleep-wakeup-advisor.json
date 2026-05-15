@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21136,
+  "uuid": "skill-clawhub-sleep-wakeup-advisor",
+  "skillKey": "clawhub-sleep-wakeup-advisor",
+  "name": "sleep-wakeup advisor",
+  "summary": "Calculate and recommend optimal wake-up times aligned with sleep cycles based on bedtime, workday or holiday constraints, prioritizing 5-cycle options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_wakeup_advisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nathanshan",
+      "features": [
+        "Calculate and recommend optimal wake-up times aligned with sleep cycles based on bedtime, workd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sleep-wakeup-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5919807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sleep-wakeup-advisor",
+      "url": "https://clawhub.ai/skills/sleep-wakeup-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-wakeup-advisor",
+    "url": "https://clawhub.ai/skills/sleep-wakeup-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-wakeup-advisor-9752bb42f1ad2ad1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sleep-wakeup-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sleep-wakeup-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32771d1009f6a7d2e7fed26f77719b2c24248c6bf390fc3957b220e61941e3a9",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T10:52:23.040Z"
+}

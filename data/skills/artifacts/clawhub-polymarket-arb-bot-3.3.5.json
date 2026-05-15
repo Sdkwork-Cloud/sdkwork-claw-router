@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-arb-bot@3.3.5",
+  "version": "3.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_arb_bot",
+  "skill": {
+    "id": 21742,
+    "skillKey": "clawhub-polymarket-arb-bot",
+    "name": "Polymarket Arb Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-arb-bot",
+    "url": "https://clawhub.ai/skills/polymarket-arb-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-arb-bot-c19789da0438e25c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Polymarket 5-minute crypto UP/DOWN market automated trading bot. AI-powered prediction using Binance technical analysis (Position, Momentum, RSI, Volume), au..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanguang254",
+      "userId": "publishers:hanguang254",
+      "displayName": "0xshahai",
+      "image": "https://avatars.githubusercontent.com/u/79915694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.3.5",
+      "createdAt": 1772980436616,
+      "changelog": "- Added Kelly dynamic position sizing: bet size now automatically adjusts (3–10 units) based on confidence and EV.\n- Introduced Bayesian real-time confidence updating using ATR deviation for smarter stop-loss management.\n- Implemented pre-listing of sell orders 60–90 seconds before market close to secure liquidity.\n- Optimized stop-loss: immediate exit if confidence <60%, or 60–70% after 30s.\n- Fine-tuned risk for small balances by removing strict balance checks; Kelly strategy handles risk control.\n- Improved bet sizing granularity for specific Kelly ranges.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:396c2f10d5473dc8e5e0ba7f341059cddc5df1ed3bc111a2fdfd5e85f700a1ba"
+}

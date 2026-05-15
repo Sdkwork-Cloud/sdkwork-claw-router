@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-casual-lucas@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_casual_lucas",
+  "skill": {
+    "id": 14162,
+    "skillKey": "clawhub-workspace-casual-lucas",
+    "name": "Workspace Casual Lucas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-casual-lucas",
+    "url": "https://clawhub.ai/skills/workspace-casual-lucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-casual-lucas-7280fbd55eb0bfac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offers a casual interface to list files, run commands, read files, and automate tasks in your OpenClaw workspace."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasseeley",
+      "userId": "publishers:lucasseeley",
+      "displayName": "LucasSeeley",
+      "image": "https://avatars.githubusercontent.com/u/69803592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1244,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770859955048,
+      "changelog": "- Internal updates to index.js and skill.json for improved functionality.\n- No changes to commands or user-facing features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af0f43ce0decb0ea5b800952cfd05a9bee6f6cf0d812aeb274902f646dc541d7"
+}

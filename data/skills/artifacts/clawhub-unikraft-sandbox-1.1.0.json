@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unikraft-sandbox@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unikraft_sandbox",
+  "skill": {
+    "id": 52721,
+    "skillKey": "clawhub-unikraft-sandbox",
+    "name": "Unikraft Cloud Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unikraft-sandbox",
+    "url": "https://clawhub.ai/skills/unikraft-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unikraft-sandbox-7c0ea7f426c95301.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run agent tasks inside an isolated Unikraft Cloud (UKC) sandbox VM. Use when the agent needs a clean, isolated execution environment — e.g. running untrusted..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "procub3r",
+      "userId": "s173gxar2b4jn4xqmdn64g6y6183xd9a",
+      "displayName": "procub3r",
+      "image": "https://avatars.githubusercontent.com/u/54534811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774871120410,
+      "changelog": "unikraft-sandbox 1.1.0\n\n- Improved sandbox creation: now checks for existing sandbox names and errors if a name is reused.\n- Updated file synchronization details: local → sandbox sync uses a destructive method (`--delete`), warning users that files not present locally will be deleted from the sandbox.\n- SSH instructions now use an `openssl s_client` proxy for connections.\n- Removed outdated notes about script TODO stubs.\n- Clarified and streamlined procedure steps and usage notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a416eb85172605209e90ffc3b75d729db0ff8cfefa7e399cbf74f2613a16bae9"
+}

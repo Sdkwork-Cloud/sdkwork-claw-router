@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31115,
+  "uuid": "skill-clawhub-lip-sync-videoany",
+  "skillKey": "clawhub-lip-sync-videoany",
+  "name": "Lip Sync",
+  "summary": "Guide users to VideoAny Lip Sync Studio to create lip-sync videos from an image and audio.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lip_sync_videoany",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Colin",
+      "features": [
+        "Guide users to VideoAny Lip Sync Studio to create lip-sync videos from an image and audio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lip-sync-videoany@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15179604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lip-sync-videoany",
+      "url": "https://clawhub.ai/skills/lip-sync-videoany"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lip-sync-videoany",
+    "url": "https://clawhub.ai/skills/lip-sync-videoany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lip-sync-videoany-bd5e65a5d5b0fcf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lip-sync-videoany@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lip-sync-videoany-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c0fb052c97a59fbc3e4e88f7223248dfec073bf2e818d8576796fdf8ef75654",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:08:22.617Z"
+}

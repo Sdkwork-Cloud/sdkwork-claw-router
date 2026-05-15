@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/placed-resume-builder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.placed_resume_builder",
+  "skill": {
+    "id": 24609,
+    "skillKey": "clawhub-placed-resume-builder",
+    "name": "Placed Resume Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "placed-resume-builder",
+    "url": "https://clawhub.ai/skills/placed-resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/placed-resume-builder-947ea662ba58c341.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to \"build a resume\", \"create a resume\", \"update my resume\", \"export resume as PDF\", \"change resume template\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitsingh25",
+      "userId": "s17f3x4tze40mv0zt71rgpkbtn8541ee",
+      "displayName": "Ajit Singh",
+      "image": "https://avatars.githubusercontent.com/u/34647819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774130457072,
+      "changelog": "Added rich search tags for better discoverability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30f2213cdddbc7761c1856bffd9ebdd416b92e313a2ac61a74bb859cd9179902"
+}

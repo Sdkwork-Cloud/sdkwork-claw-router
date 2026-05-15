@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23338,
+  "uuid": "skill-clawhub-g2-chart",
+  "skillKey": "clawhub-g2-chart",
+  "name": "AntV Skills",
+  "summary": "Generate G2 v5 chart code. Use when user asks for G2 charts, bar charts, line charts, pie charts, scatter plots, area charts, or any data visualization with...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g2_chart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joel Alan",
+      "features": [
+        "Generate G2 v5 chart code",
+        "Use when user asks for G2 charts, bar charts, line charts, pie charts, scatter plots, area char."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/g2-chart@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31396322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "g2-chart",
+      "url": "https://clawhub.ai/skills/g2-chart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g2-chart",
+    "url": "https://clawhub.ai/skills/g2-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g2-chart-266b86b47d0c6347.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/g2-chart@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-g2-chart-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09d290cc1ce340113f55f7c4b523297873573e8a82e5288fce9c928c5f094d22",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T09:23:42.341Z"
+}

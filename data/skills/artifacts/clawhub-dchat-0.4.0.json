@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dchat@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dchat",
+  "skill": {
+    "id": 25314,
+    "skillKey": "clawhub-dchat",
+    "name": "dchat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dchat",
+    "url": "https://clawhub.ai/skills/dchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dchat-8cbc38f3e2e374d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized P2P bot-to-bot messaging over NKN. Send and receive text, images, audio, and files without any centralized server. Private, encrypted, serverless."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zbruceli",
+      "userId": "s17fh39caqc78j7a0kk6ywp4bx83e3s2",
+      "displayName": "Zheng \"Bruce\" Li",
+      "image": "https://avatars.githubusercontent.com/u/24281959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1773696682965,
+      "changelog": "Add contact aliases (dchat contacts add/remove/list), use aliases in send/history/listen. Clean up debug logs, update docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67c69a320dc8c1dec7a99720b8ef495c585b81361c09111db4066e380af9f2a8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tasker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tasker",
+  "skill": {
+    "id": 51031,
+    "skillKey": "clawhub-tasker",
+    "name": "Tasker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tasker",
+    "url": "https://clawhub.ai/skills/tasker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tasker-d5f6a22d14757778.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for task execution, debugging, implementation, analysis, review, planning, workflow execution, and user dissatisfaction handling in agent interactions. 任..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tealun",
+      "userId": "s17exyncwvaashrrdbq1j0b7c983kcym",
+      "displayName": "tealun",
+      "image": "https://avatars.githubusercontent.com/u/5262320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775099374921,
+      "changelog": "Version 1.1.1 — Introduces strict execution safeguards to enforce real tool usage and verifiable changes for task steps.\n\n- Added \"Execution Guarantees\" section: mandates that all executive steps require real tool calls, verifiable artifacts, and post-action verification.\n- Agents are now prohibited from outputting completion statements before tool actions are confirmed and results returned.\n- Every executive sub-step must produce a checkable artifact; otherwise, it remains in a `[pending]` state.\n- Tool-Call Audit is now required in the verification phase to explicitly map all execution tools to deliverables.\n- Clarifies that if an external change can't be made due to missing tools, execution is blocked and clarified to the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83f7ff5db702aa88d50e654403e94c0f40d478b29362bc0d6972b4812f6e05e5"
+}

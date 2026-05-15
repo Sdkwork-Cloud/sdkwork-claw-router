@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11218,
+  "uuid": "skill-clawhub-resume",
+  "skillKey": "clawhub-resume",
+  "name": "Resume",
+  "summary": "Analyze and optimize resumes for ATS compatibility, tailor to specific jobs, highlight achievements, and address career level and transition challenges to bo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Analyze and optimize resumes for ATS compatibility, tailor to specific jobs, highlight achievem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume",
+      "url": "https://clawhub.ai/skills/resume"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume",
+    "url": "https://clawhub.ai/skills/resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-a83a31320d921b88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2306e79ab04708b6fe9e4967c9906f0e9cd14eff36a6c3025fbfc8c3f2bd3c9",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:47:40.850Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhsmander@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhsmander",
+  "skill": {
+    "id": 68186,
+    "skillKey": "clawhub-xhsmander",
+    "name": "xhsmander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhsmander",
+    "url": "https://clawhub.ai/skills/xhsmander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhsmander-c282f421820fcfa0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书自动化发布技能。通过 Docker 容器中的 xiaohongshu-mcp 服务，实现登录、发布图文、搜索、互动等操作。 当用户提到发小红书、发笔记、发布内容、扫码登录小红书、小红书自动化、小红书发布时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "279458179",
+      "userId": "s172tnbzze795e1dcwzac5127983pqdg",
+      "displayName": "xiaohuozi",
+      "image": "https://avatars.githubusercontent.com/u/79885733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776238506184,
+      "changelog": "xhsmander v1.0.1 introduces a structured file organization and provides ready-to-use scripts for end-to-end automated publishing on 小红书 via Docker.\n\n- Added initial scripts: check_status.py, get_qr.py, publish_post.py for status check, QR code login, and post publishing.\n- Introduced docker-compose.yml for easy container deployment.\n- Provided _meta.json for metadata and updated SKILL.md with detailed workflow and usage instructions.\n- Clarified container vs. host path requirements for image publishing.\n- Expanded documentation for deployment, code structure, and session handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e25724b8a42e94c01fb2b1021432e1e6df3ab133886b3b85dfbf71b05a009fec"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25801,
+  "uuid": "skill-clawhub-reddi-self-improving-agent",
+  "skillKey": "clawhub-reddi-self-improving-agent",
+  "name": "Reddi Self Improving Agent",
+  "summary": "reddi.tech fork of self-improving-agent. Captures learnings, errors, and corrections to enable continuous improvement. Use when: a command fails, user correc...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddi_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "reddi.tech fork of self-improving-agent",
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: a command fails, user correc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddi-self-improving-agent@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddi-self-improving-agent",
+      "url": "https://clawhub.ai/skills/reddi-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddi-self-improving-agent",
+    "url": "https://clawhub.ai/skills/reddi-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddi-self-improving-agent-a0bab256f3aedefe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddi-self-improving-agent@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddi-self-improving-agent-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4b03520acd6b9fdc075813eb4d1f2c63f724af3ba215affd4ad335831ca706",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:20:03.799Z"
+}

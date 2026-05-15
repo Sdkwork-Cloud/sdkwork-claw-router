@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-shopping@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_shopping",
+  "skill": {
+    "id": 13015,
+    "skillKey": "clawhub-jd-shopping",
+    "name": "JD Shopping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-shopping",
+    "url": "https://clawhub.ai/skills/jd-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-shopping-0f887d8e5de59c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JD.com shopping agent for search, comparison, review analysis, seller trust checks, SKU selection, cart preparation, and coupon/cart organization in a user-o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1534,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1778161011219,
+      "changelog": "Restore agentic shopping utility: support logged-in cart preparation with user consent while keeping login, checkout settlement, final confirmation, and payment user-controlled.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32b90f00264d858ba973c2b1511c0d251ab4fc742770734713649f6a1c7377df"
+}

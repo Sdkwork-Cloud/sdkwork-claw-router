@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-scrapling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_scrapling",
+  "skill": {
+    "id": 13892,
+    "skillKey": "clawhub-openclaw-scrapling",
+    "name": "OpenClaw Scrapling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-scrapling",
+    "url": "https://clawhub.ai/skills/openclaw-scrapling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-scrapling-6cec1bf7602c6e50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced web scraping with anti-bot bypass, JavaScript support, and adaptive selectors. Use when scraping websites with Cloudflare protection, dynamic conten..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptos3c",
+      "userId": "s17arkq7wvxnrd4rgr45pa8f0n83qcbn",
+      "displayName": "cryptos3c",
+      "image": "https://avatars.githubusercontent.com/u/46215964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1259,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772173904689,
+      "changelog": "Initial release of Scrapling skill for advanced, resilient web scraping.\n\n- Supports scraping sites with anti-bot protection, JavaScript-rendered content, and frequent UI changes.\n- Features stealth mode to bypass Cloudflare, bot detection, and use browser fingerprint spoofing.\n- Handles dynamic content via Playwright-based automation and adaptive selectors for robust scraping across redesigns.\n- Includes session management for login-required sites and support for proxies, rate limiting, and custom headers.\n- Offers multiple extraction modes (text, markdown, attributes, multi-field) and output formats (JSON, CSV, TXT, MD, HTML).\n- Provides both CLI commands and a Python API for flexibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:820a98623c4ed47f3cfe79781ab11c3b1dc92b97bccc4ee5d8f2110f8000a78c"
+}

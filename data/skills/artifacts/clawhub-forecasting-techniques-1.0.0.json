@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forecasting-techniques@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecasting_techniques",
+  "skill": {
+    "id": 25582,
+    "skillKey": "clawhub-forecasting-techniques",
+    "name": "Forecasting Techniques"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecasting-techniques",
+    "url": "https://clawhub.ai/skills/forecasting-techniques",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecasting-techniques-ae7c83eb0ce6a82f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project future using time series, derived demand, and expert opinion methods. Use for market sizing, growth projections, and revenue planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774058709159,
+      "changelog": "- Initial release of the \"forecasting-techniques\" skill.\n- Provides frameworks for time series extrapolation, derived demand, and expert opinion forecasting.\n- Includes step-by-step instructions for each method, selection criteria, and example outputs.\n- Outlines standard output formats featuring projections, scenarios, drivers, and confidence intervals.\n- Offers practical tips and references for improved forecast accuracy and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36ce57e473ff69d326db64f3c3842fda018298fab0cc63068271e6eadd7edf71"
+}

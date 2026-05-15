@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/restaurant-crosscheck-cn@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurant_crosscheck_cn",
+  "skill": {
+    "id": 57017,
+    "skillKey": "clawhub-restaurant-crosscheck-cn",
+    "name": "Restaurant Crosscheck CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurant-crosscheck-cn",
+    "url": "https://clawhub.ai/skills/restaurant-crosscheck-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurant-crosscheck-cn-82a21f1490cacc6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-reference restaurant recommendations from Xiaohongshu (小红书) and Dianping (大众点评) to validate restaurant quality and consistency. Use when querying resta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhongrenfei1-hub",
+      "userId": "publishers:zhongrenfei1-hub",
+      "displayName": "RenfeiZhong",
+      "image": "https://avatars.githubusercontent.com/u/231221504?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 915,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771237146293,
+      "changelog": "v2.0: 大众点评×小红书交叉验证，修复async/sync，支持28城市，模块化重构",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17dd1cbb912287cc414a16789533d329d2df2aa743e02abdb4390fa43494cb8b"
+}

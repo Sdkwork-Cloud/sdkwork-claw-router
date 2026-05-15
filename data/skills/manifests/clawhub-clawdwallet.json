@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11676,
+  "uuid": "skill-clawhub-clawdwallet",
+  "skillKey": "clawhub-clawdwallet",
+  "name": "Clawdwallet",
+  "summary": "Install and control ClawdWallet - a multi-chain Web3 wallet Chrome extension controlled by Clawdbot agents. Use when setting up agent-controlled wallet, connecting to dApps, signing transactions, or managing crypto across 20+ chains (EVM,.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdwallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NeOMakinG",
+      "features": [
+        "Install and control ClawdWallet",
+        "a multi-chain Web3 wallet Chrome extension controlled by Clawdbot agents",
+        "Use when setting up agent-controlled wallet, connecting to dApps, signing transactions, or mana.",
+        "Powered by ShapeShift hdwallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdwallet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14963751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdwallet",
+      "url": "https://clawhub.ai/skills/clawdwallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdwallet",
+    "url": "https://clawhub.ai/skills/clawdwallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdwallet-338eddce0bd563d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdwallet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdwallet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6566ef67329de0cb7bf21d678e3fd5d41f09b1c885ad1859fcab3ca186729621",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T03:55:58.860Z"
+}

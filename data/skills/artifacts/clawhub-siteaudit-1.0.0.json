@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siteaudit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siteaudit",
+  "skill": {
+    "id": 39047,
+    "skillKey": "clawhub-siteaudit",
+    "name": "Siteaudit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siteaudit",
+    "url": "https://clawhub.ai/skills/siteaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siteaudit-d8338ea669f0c1eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive website audit combining uptime check, TLS certificate inspection, and security headers grading in one command. Use when asked to audit a websit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774646830400,
+      "changelog": "- Initial release of siteaudit: an all-in-one website audit tool.\n- Combines uptime checking, TLS certificate inspection, and security headers grading in a single command.\n- Reports response time, status code, certificate details, and grades security headers.\n- Clearly flags site issues such as downtime, slow response, expiring certificates, TLS errors, and weak security headers.\n- Provides JSON output for automation and specific exit codes for health status.\n- Zero dependencies—runs with pure Python.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c93cc1fbda700d87cc90e920ceb014b041dbc0bd360f85884ccade77ff4dac7"
+}

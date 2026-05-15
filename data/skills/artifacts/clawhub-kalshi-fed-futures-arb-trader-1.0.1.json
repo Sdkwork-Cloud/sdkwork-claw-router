@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-fed-futures-arb-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_fed_futures_arb_trader",
+  "skill": {
+    "id": 38672,
+    "skillKey": "clawhub-kalshi-fed-futures-arb-trader",
+    "name": "Kalshi Fed Futures Arb Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-fed-futures-arb-trader",
+    "url": "https://clawhub.ai/skills/kalshi-fed-futures-arb-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-fed-futures-arb-trader-a1f7636d9222b340.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compares CME FedWatch implied rate probabilities to Kalshi Fed rate decision market prices and trades when divergence exceeds threshold. Requires SIMMER_API_..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775478344687,
+      "changelog": "Rescan",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59a30a015f53474633cf435889e0dc60ce1fea4c286046ef3e9934d70a5fe2bf"
+}

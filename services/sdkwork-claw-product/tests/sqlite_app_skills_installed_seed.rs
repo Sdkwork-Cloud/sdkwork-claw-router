@@ -41,7 +41,7 @@ async fn sqlite_app_skills_reads_installed_seed_assets_artifacts_and_user_instal
     assert_eq!("8101", skill.id);
     assert_eq!("Prompt Optimizer", skill.name);
     assert_eq!("SDKWork", skill.developer);
-    assert_eq!("Agent Productivity", skill.category);
+    assert_eq!("SDKWork Official", skill.category);
     assert_eq!("SDKWork Commercial", skill.license);
     assert_eq!("2026-05-08", skill.last_updated);
     assert_eq!(

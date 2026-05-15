@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60806,
+  "uuid": "skill-clawhub-scientific-drawing",
+  "skillKey": "clawhub-scientific-drawing",
+  "name": "Scientific Drawing",
+  "summary": "科研绘图工具 - 支持技术路线图、流程图、原理图、架构图等科研图形绘制。基于 Python matplotlib/pillow，支持 SVG/PNG 高清输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scientific_drawing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "支持技术路线图、流程图、原理图、架构图等科研图形绘制。基于 Python matplotlib/pillow，支持 SVG/PNG 高清输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scientific-drawing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scientific-drawing",
+      "url": "https://clawhub.ai/skills/scientific-drawing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scientific-drawing",
+    "url": "https://clawhub.ai/skills/scientific-drawing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scientific-drawing-58828968695ff8b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scientific-drawing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scientific-drawing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe920d006e72fcf162266a0cd37bf00fa845f625eeb48642ccad5500e5828ac8",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T12:30:10.725Z"
+}

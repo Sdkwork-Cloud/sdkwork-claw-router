@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41498,
+  "uuid": "skill-clawhub-semgrep-integration",
+  "skillKey": "clawhub-semgrep-integration",
+  "name": "Semgrep",
+  "summary": "Semgrep integration. Manage Rules, Scans. Use when the user wants to interact with Semgrep data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semgrep_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Semgrep integration",
+        "Manage Rules, Scans",
+        "Use when the user wants to interact with Semgrep data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semgrep-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semgrep-integration",
+      "url": "https://clawhub.ai/skills/semgrep-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semgrep-integration",
+    "url": "https://clawhub.ai/skills/semgrep-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semgrep-integration-839c683d12058b3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semgrep-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-semgrep-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72f33a10b55df0665d0bc42c3c0c69e442c7f1315ce3d2875a7ff09bd5737b23",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:22.990Z"
+}

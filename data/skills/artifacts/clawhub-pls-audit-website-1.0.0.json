@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pls-audit-website@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pls_audit_website",
+  "skill": {
+    "id": 14082,
+    "skillKey": "clawhub-pls-audit-website",
+    "name": "PLS Website Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pls-audit-website",
+    "url": "https://clawhub.ai/skills/pls-audit-website",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pls-audit-website-3fbe029ba15d8142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform comprehensive website health checks covering performance, broken links, security headers, accessibility, and SEO issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattvalenta",
+      "userId": "publishers:mattvalenta",
+      "displayName": "Matt Valenta",
+      "image": "https://avatars.githubusercontent.com/u/153394211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1260,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771802009289,
+      "changelog": "Initial release: comprehensive website audit skill\n\n- Provides step-by-step methods to audit website performance, broken links, accessibility, security headers, and SEO.\n- Includes code snippets (curl, Python, bash) for programmatic checks and automated scripts.\n- Offers guidance on using popular open-source tools (Lighthouse, axe-core, pa11y, LinkChecker).\n- Supplies a Markdown website audit report template.\n- Designed for thorough technical and user experience site health checks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ade8121ce410780001bca742630fc62e0b2d3c39967b32186a51edc3450c86c2"
+}

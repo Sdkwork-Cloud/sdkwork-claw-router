@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/popeye-health@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_health",
+  "skill": {
+    "id": 67602,
+    "skillKey": "clawhub-popeye-health",
+    "name": "Popeye Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-health",
+    "url": "https://clawhub.ai/skills/popeye-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-health-4bbfd4d3cd7892ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "健康助手 - 运动计划、饮食建议、睡眠优化。触发词：运动计划、饮食建议、改善睡眠"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangtaoid",
+      "userId": "s173q7zgrdwdp52gefcv2ymp5983g6d4",
+      "displayName": "jiangtaoid",
+      "image": "https://avatars.githubusercontent.com/u/62326134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774515827001,
+      "changelog": "添加定制服务联系方式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e1752b5eba855672672b2ff996ad9bdce0309c7176b65dd0a9790930bb01208"
+}

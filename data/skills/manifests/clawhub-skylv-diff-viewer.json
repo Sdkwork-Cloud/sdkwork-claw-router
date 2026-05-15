@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43586,
+  "uuid": "skill-clawhub-skylv-diff-viewer",
+  "skillKey": "clawhub-skylv-diff-viewer",
+  "name": "Skylv Diff Viewer",
+  "summary": "Generates beautiful side-by-side diff comparisons for code review",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_diff_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates beautiful side-by-side diff comparisons for code review"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-diff-viewer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-diff-viewer",
+      "url": "https://clawhub.ai/skills/skylv-diff-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-diff-viewer",
+    "url": "https://clawhub.ai/skills/skylv-diff-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-diff-viewer-a0be356a6dcacf39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-diff-viewer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-diff-viewer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2251427ab5a373126969e01bc6836966193571f0186f7c3b0006ac522b70a86",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:37:08.994Z"
+}

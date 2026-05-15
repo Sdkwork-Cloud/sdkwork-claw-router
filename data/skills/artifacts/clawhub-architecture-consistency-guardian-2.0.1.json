@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/architecture-consistency-guardian@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_consistency_guardian",
+  "skill": {
+    "id": 33422,
+    "skillKey": "clawhub-architecture-consistency-guardian",
+    "name": "Architecture Consistency Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-consistency-guardian",
+    "url": "https://clawhub.ai/skills/architecture-consistency-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-consistency-guardian-29ed6f87133042c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce system-wide consistency before code changes. Activate for any task involving: refactoring across files, unifying variable/field/parameter names, cons..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upsightx",
+      "userId": "s17exdt2qpdm7p8x6gbbsx37v584gr15",
+      "displayName": "upsightx",
+      "image": "https://avatars.githubusercontent.com/u/127651198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776163288785,
+      "changelog": "Add default/lite/strict scan modes, reference-aware drift filtering, and regression tests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d40cf1313027e93e0b4f673fc5834d20052796cf6fc66b62c783bdb7be43d58"
+}

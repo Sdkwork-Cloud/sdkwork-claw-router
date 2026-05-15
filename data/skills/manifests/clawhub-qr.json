@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14940,
+  "uuid": "skill-clawhub-qr",
+  "skillKey": "clawhub-qr",
+  "name": "QR",
+  "summary": "Generate, customize, and deploy QR codes with proper sizing, error correction, and use-case optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate, customize, and deploy QR codes with proper sizing, error correction, and use-case opt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qr",
+      "url": "https://clawhub.ai/skills/qr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qr",
+    "url": "https://clawhub.ai/skills/qr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qr-d847acf7bab1b6f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73816b3c672dafdadea8100b982ca9363f2c9d088b4a61b8a8dcbebfd7c9492f",
+      "artifactSizeBytes": 1743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:51:05.652Z"
+}

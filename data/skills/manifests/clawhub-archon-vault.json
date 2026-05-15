@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20160,
+  "uuid": "skill-clawhub-archon-vault",
+  "skillKey": "clawhub-archon-vault",
+  "name": "Archon Vault",
+  "summary": "Encrypted distributed storage using Archon DID vaults. Manage vaults, backup and restore workspace/config/memory with multi-party access control. Use for cre...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archon_vault",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "macterra",
+      "features": [
+        "Encrypted distributed storage using Archon DID vaults",
+        "Manage vaults, backup and restore workspace/config/memory with multi-party access control",
+        "Use for cre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archon-vault@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/434644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archon-vault",
+      "url": "https://clawhub.ai/skills/archon-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archon-vault",
+    "url": "https://clawhub.ai/skills/archon-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archon-vault-b3eb37a2fe5cd795.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archon-vault@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-archon-vault-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7187620d9811d86091b1aaafd79d4be4eab5f9f6fa739eca553e8633e7e9ebb3",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:42:34.289Z"
+}

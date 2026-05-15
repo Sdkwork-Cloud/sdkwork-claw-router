@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62861,
+  "uuid": "skill-clawhub-scenario-analyzer",
+  "skillKey": "clawhub-scenario-analyzer",
+  "name": "Scenario Analyzer",
+  "summary": "ニュースヘッドラインを入力として18ヶ月シナリオを分析するスキル。 scenario-analystエージェントで主分析を実行し、 strategy-reviewerエージェントでセカンドオピニオンを取得。 1次・2次・3次影響、推奨銘柄、レビューを含む包括的レポートを日本語で生成。 使用例: /scenario-analyzer \"Fed raises rates by 50bp\" トリガー: ニュース分析、シナリオ分析、18ヶ月展望、中長期投資戦略",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scenario_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "ニュースヘッドラインを入力として18ヶ月シナリオを分析するスキル。 scenario-analystエージェントで主分析を実行し、 strategy-reviewerエージェントでセカンドオ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scenario-analyzer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scenario-analyzer",
+      "url": "https://clawhub.ai/skills/scenario-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scenario-analyzer",
+    "url": "https://clawhub.ai/skills/scenario-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scenario-analyzer-7179d445eb4e95d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scenario-analyzer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scenario-analyzer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ab3a414608b9cdb2bb0f7670cab2b2bde8b91cc1319846db6425026c5f779d7",
+      "artifactSizeBytes": 2869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:41:07.624Z"
+}

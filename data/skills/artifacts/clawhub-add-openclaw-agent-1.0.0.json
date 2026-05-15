@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-openclaw-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_openclaw_agent",
+  "skill": {
+    "id": 26875,
+    "skillKey": "clawhub-add-openclaw-agent",
+    "name": "add-openclaw-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-openclaw-agent",
+    "url": "https://clawhub.ai/skills/add-openclaw-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-openclaw-agent-475e5e42308fe638.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a new OpenClaw agent via exec (openclaw agents add) and configure its identity + operating rules by editing the new workspace files (IDENTITY.md, AGEN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiguazhiprince",
+      "userId": "s173st3pmb2psgm8y4j8v2vzt984vt38",
+      "displayName": "xiguazhiPrince",
+      "image": "https://avatars.githubusercontent.com/u/34903051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773906467610,
+      "changelog": "- Initial release: Enables creation and configuration of a new OpenClaw agent using the OpenClaw CLI.\n- Guides users to specify agent purpose, constraints, and desired identity before automated creation.\n- Adds non-interactive CLI flow for agent creation, ensuring user confirmation before execution.\n- Details strict editing rules for workspace files (IDENTITY.md, AGENTS.md), including safe appending of custom content after separators.\n- Provides workflow for syncing identity and setting agent operating rules post-creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0bf6b4864c25b3ae7548aa762b1078ea2f5e9571f6fb962e80d95487128c2e0"
+}

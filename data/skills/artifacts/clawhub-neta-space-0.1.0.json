@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neta-space@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neta_space",
+  "skill": {
+    "id": 56170,
+    "skillKey": "clawhub-neta-space",
+    "name": "Neta Space"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neta-space",
+    "url": "https://clawhub.ai/skills/neta-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neta-space-4b8d6f6215bcd93e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Neta API space and world‑view browsing skill — browse worldbuilding, sub‑spaces, and playable content by space/hashtag. Use this skill when the user talks ab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huxiuhan",
+      "userId": "publishers:huxiuhan",
+      "displayName": "Hu Xiuhan",
+      "image": "https://avatars.githubusercontent.com/u/1184998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773742668692,
+      "changelog": "Initial release of neta-space skill.\n\n- Browse and explore Neta API worldbuilding, spaces, sub-spaces, and playable content.\n- View space structure, lore, characters, events, and activity-based collections.\n- Use for informative and gameplay queries; content creation is handled separately by neta-creative.\n- Includes CLI instructions and workflow for listing spaces, fetching details, and exploring sub-spaces and collections.\n- Requires NETA_TOKEN environment variable and Neta CLI 0.8.0 or later.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32127a965e62f146277c5f4fd647273fdc83f25eaee1c81585d55995d81bb9fa"
+}

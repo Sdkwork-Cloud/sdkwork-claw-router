@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14470,
+  "uuid": "skill-clawhub-prompt-injection-protection",
+  "skillKey": "clawhub-prompt-injection-protection",
+  "name": "PROMPT INJECTION PROTECTION",
+  "summary": "Protects against prompt injection attacks by sanitizing, validating, and securely processing untrusted external content from websites, emails, and documents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_injection_protection",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blackworm",
+      "features": [
+        "Protects against prompt injection attacks by sanitizing, validating, and securely processing un."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-injection-protection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5106762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-injection-protection",
+      "url": "https://clawhub.ai/skills/prompt-injection-protection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-injection-protection",
+    "url": "https://clawhub.ai/skills/prompt-injection-protection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-injection-protection-90395fb8d3772794.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-injection-protection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-injection-protection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:841e6c41a1f2043b665f21737f1088c6f158b2fd195d2f7531f60cc865cd42de",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:55:52.068Z"
+}

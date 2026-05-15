@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rescueclaw@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rescueclaw",
+  "skill": {
+    "id": 18188,
+    "skillKey": "clawhub-rescueclaw",
+    "name": "RescueClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rescueclaw",
+    "url": "https://clawhub.ai/skills/rescueclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rescueclaw-ac56fa1a18862cc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides automatic checkpoint creation and rollback to safely recover from failures during risky operations like config changes or updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harman314",
+      "userId": "publishers:harman314",
+      "displayName": "harman314",
+      "image": "https://avatars.githubusercontent.com/u/2232809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771925910345,
+      "changelog": "Downloads platform-specific binary from GitHub Releases (no curl|bash). User-local paths (~/.openclaw/rescueclaw). Supports linux/arm64, linux/amd64, macos/arm64, macos/amd64.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5de3a452dbb6e74693bf13fe2e85e28b00bd1f79ece0c3ece0dd08f4100696b5"
+}

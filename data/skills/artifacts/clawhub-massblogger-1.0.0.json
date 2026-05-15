@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/massblogger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.massblogger",
+  "skill": {
+    "id": 22898,
+    "skillKey": "clawhub-massblogger",
+    "name": "massbloger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "massblogger",
+    "url": "https://clawhub.ai/skills/massblogger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/massblogger-a650b932c59f2611.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and automate multiple WordPress sites via Massblogger MCP server with AI content generation, editing, publishing, and bulk operations, no local instal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klitmose",
+      "userId": "publishers:klitmose",
+      "displayName": "klitmose",
+      "image": "https://avatars.githubusercontent.com/u/114300911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773126574978,
+      "changelog": "Initial release of the Massblogger skill, enabling AI-powered WordPress and content operations via Massblogger's hosted MCP server.\n\n- Connects OpenClaw agents to Massblogger for full remote management of WordPress sites (posts, pages, categories, tags, media, menus, users, and more).\n- Supports native Massblogger features: AI content generation, pSEO, bulk automation, and cross-site pipelines without any local install.\n- Requires only an MCP token; all sensitive WordPress credentials are managed inside Massblogger.\n- Includes setup instructions for easy configuration in OpenClaw, with options for secure token management and header interpolation.\n- Comprehensive tool catalog for granular control of WordPress functions, plus safety features like server-enforced publish guard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0344b492a4961d8618032de34be7ab5537f2dd0afeb89f5cf2336ef59ad5dc5"
+}

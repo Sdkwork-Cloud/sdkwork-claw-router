@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway-1-0-64@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_1_0_64",
+  "skill": {
+    "id": 33965,
+    "skillKey": "clawhub-api-gateway-1-0-64",
+    "name": "Api Gateway 1.0.64"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-1-0-64",
+    "url": "https://clawhub.ai/skills/api-gateway-1-0-64",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-1-0-64-fe74ed5e994fe11b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larry-at",
+      "userId": "s174708kdb362km7jxjfkrh3k183mvm9",
+      "displayName": "Larry-at",
+      "image": "https://avatars.githubusercontent.com/u/266457147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774525067978,
+      "changelog": "Initial release of API Gateway skill:\n\n- Provides a secure passthrough proxy to connect with 100+ third-party APIs using managed OAuth via Maton.\n- Supports direct native API calls for services like Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, and more.\n- Includes connection management endpoints to list, create, fetch, and delete service authorizations.\n- Requires a Maton API key for authentication; service access is strictly scoped to user-authorized OAuth connections.\n- Allows specifying a particular connection via the Maton-Connection header for multi-account scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69268890f86fe92a0b8852b4b88efa39ba7580281bcad0fdf41d114a3807c24e"
+}

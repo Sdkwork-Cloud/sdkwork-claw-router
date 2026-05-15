@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33151,
+  "uuid": "skill-clawhub-intelligent-scheduler",
+  "skillKey": "clawhub-intelligent-scheduler",
+  "name": "Intelligent Scheduler",
+  "summary": "Schedule tasks, manage priorities, resolve conflicts, and handle time zones. Auto-optimizes your agent's workload and prevents double-booking.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Schedule tasks, manage priorities, resolve conflicts, and handle time zones",
+        "Auto-optimizes your agent's workload and prevents double-booking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligent-scheduler@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligent-scheduler",
+      "url": "https://clawhub.ai/skills/intelligent-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-scheduler",
+    "url": "https://clawhub.ai/skills/intelligent-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-scheduler-0c93ece18c3c8388.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligent-scheduler@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligent-scheduler-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ceac2f793d393198e458cdb52aad975cbbb717b420da5d69c4a501d009b21991",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:06:26.744Z"
+}

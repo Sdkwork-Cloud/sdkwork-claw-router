@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geminis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geminis",
+  "skill": {
+    "id": 25949,
+    "skillKey": "clawhub-geminis",
+    "name": "Pub Gemini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geminis",
+    "url": "https://clawhub.ai/skills/geminis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geminis-0b66408c191d214c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gemini CLI for one-shot Q and A, summaries, and generation. And also 50+ models for image generation, video generation, text-to-speech, speech-to-text, music..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martinpollitt",
+      "userId": "publishers:martinpollitt",
+      "displayName": "MartinPollitt",
+      "image": "https://avatars.githubusercontent.com/u/255053539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773296337722,
+      "changelog": "Initial release of the Gemini CLI skill with multi-model API support.\n\n- Supports one-shot Q&A, summaries, and content generation via command line.\n- Access 50+ models for chat, image, video, TTS, STT, music, search, document parsing, email, and SMS.\n- Single API key unlocks models from Bedrock, OpenAI, Vertex, Replicate, ElevenLabs, Minimax, and more.\n- Includes smart routing to auto-select the cheapest or highest-quality model for a given task.\n- Detailed usage examples and model parameters provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17b85b1a60d8dce538a2a2ad3fb068f5f340b6d127b5f8caa8e798545ec28f71"
+}

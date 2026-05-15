@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64452,
+  "uuid": "skill-clawhub-joycode",
+  "skillKey": "clawhub-joycode",
+  "name": "Joycode",
+  "summary": "通过 shell 控制 JoyCode CLI 工具进行代码生成和 AI 辅助编程。使用场景：(1) 用户要求代码生成、代码补全或编程帮助 (2) 需要使用 AI 助手进行代码审查 (3) 需要在终端中进行交互式编程对话 (4) 需要执行自动化代码任务",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joycode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nicholas",
+      "features": [
+        "通过 shell 控制 JoyCode CLI 工具进行代码生成和 AI 辅助编程。使用场景：(1) 用户要求代码生成、代码补全或编程帮助 (2) 需要使用 AI 助手进行代码审查 (3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joycode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13535216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joycode",
+      "url": "https://clawhub.ai/skills/joycode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joycode",
+    "url": "https://clawhub.ai/skills/joycode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joycode-249fb6aee3eb00ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joycode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joycode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c3f871d2553974f75fa28d406a3ae36b4168c13074a33d0ae7938caccb6f06e",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:58:19.326Z"
+}

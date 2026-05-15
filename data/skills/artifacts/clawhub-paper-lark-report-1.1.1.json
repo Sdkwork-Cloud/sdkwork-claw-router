@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-lark-report@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_lark_report",
+  "skill": {
+    "id": 62766,
+    "skillKey": "clawhub-paper-lark-report",
+    "name": "paper-lark-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-lark-report",
+    "url": "https://clawhub.ai/skills/paper-lark-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-lark-report-e74bd2b97fbdc0f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动科研论文日报/周报生成。通过 arXiv RSS 抓取最新论文，arXiv API 获取完整摘要，LLM 语义评分筛选，生成基于原文的学术报告，推送飞书 Wiki。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leogoat2004",
+      "userId": "s17aqv0kfmdqqq7sdx0rkbx7dh83rbx7",
+      "displayName": "LeoGoat2004",
+      "image": "https://avatars.githubusercontent.com/u/115774938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775057481683,
+      "changelog": "- Added installation instructions for ClawHub and OpenClaw CLI to the documentation.\n- Removed the introductory file paper_lark_report_intro.md.\n- No changes to core workflow or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:003f77f1b4417c9f7c10c02f41b57e42e8c93be20742deb3a31b532bd5364900"
+}

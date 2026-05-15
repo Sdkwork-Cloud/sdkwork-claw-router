@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cairn-cli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cairn_cli",
+  "skill": {
+    "id": 12540,
+    "skillKey": "clawhub-cairn-cli",
+    "name": "letcairn.work"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cairn-cli",
+    "url": "https://clawhub.ai/skills/cairn-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cairn-cli-561fadb98b0027c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project management for AI agents using markdown files. Install and use the cairn CLI to create projects, manage tasks, track status, and coordinate human-AI collaboration through a shared workspace of markdown files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gregoryehill",
+      "userId": "publishers:gregoryehill",
+      "displayName": "gregoryehill",
+      "image": "https://avatars.githubusercontent.com/u/59191663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1743,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770356991335,
+      "changelog": "- Updated documentation in SKILL.md with a comprehensive CLI reference, usage tips, and detailed workspace structure.\n- Expanded descriptions for installation, core commands, statuses, and autonomy levels.\n- Added community links and support resources.\n- Clarified task workflow and project/task creation processes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1870ef85c14818c7a8f8342fa02f7153425e856bb06fa307679384197577eed"
+}

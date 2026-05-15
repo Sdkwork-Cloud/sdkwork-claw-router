@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66282,
+  "uuid": "skill-clawhub-python-use-agent",
+  "skillKey": "clawhub-python-use-agent",
+  "name": "Python Use Agent",
+  "summary": "智能执行用户描述的Python任务，自动生成、执行代码并反馈结果，无需额外配置，兼容旧命令用法。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_use_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "智能执行用户描述的Python任务，自动生成、执行代码并反馈结果，无需额外配置，兼容旧命令用法。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-use-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-use-agent",
+      "url": "https://clawhub.ai/skills/python-use-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-use-agent",
+    "url": "https://clawhub.ai/skills/python-use-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-use-agent-5774f0298eaf909c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-use-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-use-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d95d90438e66a06adbff0de662c59e73a0c1fc021a741a3a8299121252cbe3c",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:57:30.614Z"
+}

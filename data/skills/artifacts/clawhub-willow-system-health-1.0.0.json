@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/willow-system-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willow_system_health",
+  "skill": {
+    "id": 46250,
+    "skillKey": "clawhub-willow-system-health",
+    "name": "Willow System Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willow-system-health",
+    "url": "https://clawhub.ai/skills/willow-system-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willow-system-health-0b8e99517a08037a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit the Willow local AI stack for subsystem failures, drift, and resource bloat. Use when a user asks to check Willow health, diagnose a slow or broken Wil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudi193-cmd",
+      "userId": "s17ekax2rasmfrwg7yp6nm3bk9852hmb",
+      "displayName": "Sean  Campbell",
+      "image": "https://avatars.githubusercontent.com/u/236912655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777090014654,
+      "changelog": "Initial release of willow-system-health for auditing Willow's local AI stack:\n\n- Audits Willow system health across boot, daily, and weekly tiers, reporting HEALTHY / WARN / CRITICAL status for each subsystem.\n- Identifies issues with core services (Postgres, Ollama, MCP), orphaned forks, open tasks, store bloat, and more.\n- Provides actionable recommendations and next steps for any WARN or CRITICAL flags detected.\n- Supports user-triggered checks and tier selection (quick, daily, weekly, or all).\n- Offers interactive cleanup actions (e.g., merge/delete orphaned forks, remove dead models) with user confirmation.\n- Optionally appends summary results to memory logs when enabled.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:860f4b27d1d3b341348b1699e40f608f79d091d58c52cb6dcbc27b8c541820e4"
+}

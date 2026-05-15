@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63847,
+  "uuid": "skill-clawhub-gf-realtime-stock",
+  "skillKey": "clawhub-gf-realtime-stock",
+  "name": "股票实时行情",
+  "summary": "查询股票实时行情。适用于用户用中文询问股票最新价、实时行情、涨跌幅、成交金额、市值、PE/PB，或按股票代码、股票名称、股票简称查询行情；会先用 news_stock_know_all 模糊解析股票代码，再用 fund_data_test 批量查询行情。Requires GF_MCP_AUTH_TOKEN.",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gf_realtime_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jollyzhang",
+      "features": [
+        "查询股票实时行情。适用于用户用中文询问股票最新价、实时行情、涨跌幅、成交金额、市值、PE/PB，或按股票代码、股票名称、股票简称查询行情；会先用 news_stock_know_all 模糊."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gf-realtime-stock@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54718342?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gf-realtime-stock",
+      "url": "https://clawhub.ai/skills/gf-realtime-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gf-realtime-stock",
+    "url": "https://clawhub.ai/skills/gf-realtime-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gf-realtime-stock-9429fb37e781a7e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gf-realtime-stock@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gf-realtime-stock-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeb706055c3d99251f083995c3983ce2f6385bb367f732f02d0ff7500f88d1e2",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:18:53.055Z"
+}

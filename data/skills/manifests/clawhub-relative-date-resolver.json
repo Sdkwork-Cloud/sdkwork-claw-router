@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29110,
+  "uuid": "skill-clawhub-relative-date-resolver",
+  "skillKey": "clawhub-relative-date-resolver",
+  "name": "Relative Date Resolver",
+  "summary": "Converts natural language day references into the soonest future calendar date in ISO format (YYYY-MM-DD) for accurate scheduling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relative_date_resolver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jtheodas",
+      "features": [
+        "Converts natural language day references into the soonest future calendar date in ISO format (Y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relative-date-resolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42776766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relative-date-resolver",
+      "url": "https://clawhub.ai/skills/relative-date-resolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relative-date-resolver",
+    "url": "https://clawhub.ai/skills/relative-date-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relative-date-resolver-d6b9e605fb25db75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relative-date-resolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-relative-date-resolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e407a3eecc79faa4adf0b2b1753965e7b6560fcd5f8eb35c99b63b0282a56d6",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:21:49.697Z"
+}

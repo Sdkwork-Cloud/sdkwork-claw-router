@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-action-figure-generators-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_action_figure_generators_openapi_skill",
+  "skill": {
+    "id": 56187,
+    "skillKey": "clawhub-ai-action-figure-generators-openapi-skill",
+    "name": "AI Action Figure Generator – Turn Your Photo into a Custom Toy Version – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-action-figure-generators-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-action-figure-generators-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-action-figure-generators-openapi-skill-ec9ddfcabd4ef0d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI action figure generator — turn a photo or character into a collectible action figure display"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775813609179,
+      "changelog": "Initial release of AI Action Figure Generators OpenAPI Skill.\n\n- Generate collectible action figure images from character photos or descriptions.\n- Supports HTTPS access and requires a WeShop API key for authentication.\n- API endpoints: start a run, poll run status, upload images.\n- Customizable input: upload an image, add text description, and specify number of figures to generate (1-16).\n- Secure: API key should only be used with the official WeShop OpenAPI endpoint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3623b22ab10533307354cf2e50ef689b2a215ea0717fb9937043172f03145f1f"
+}

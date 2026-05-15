@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-chat-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_chat_bot",
+  "skill": {
+    "id": 73592,
+    "skillKey": "clawhub-feishu-chat-bot",
+    "name": "飞书群聊机器人"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-chat-bot",
+    "url": "https://clawhub.ai/skills/feishu-chat-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-chat-bot-00b96b90c4477eb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书群聊机器人支持定时消息、自动回复、投票收集和富文本卡片发送，提升群聊自动化和管理效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "young-joey",
+      "userId": "s179a1hc0q79dprdtxz2krr4hh869mzn",
+      "displayName": "Young-Joey",
+      "image": "https://avatars.githubusercontent.com/u/25998415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778137488132,
+      "changelog": "新增: 飞书群聊AI机器人技能 - 定时消息/自动回复/投票收集/富文本卡片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fa8cdc7dad171710910145d6f7d3cc165f689b4f52dcd82b7a4f2345539c154"
+}

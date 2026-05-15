@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-ttt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_ttt",
+  "skill": {
+    "id": 17580,
+    "skillKey": "clawhub-skills-ttt",
+    "name": "first skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-ttt",
+    "url": "https://clawhub.ai/skills/skills-ttt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-ttt-0b82eea31dfda1a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating effective skills that extend agent capabilities with specialized knowledge, workflows, or tool integrations. Use this skill when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengxindl",
+      "userId": "s17ac8wsqsy3kx8d8628cvvbb583hwvv",
+      "displayName": "Colin_DL",
+      "image": "https://avatars.githubusercontent.com/u/6344820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771773318464,
+      "changelog": "skills-ttt v1.0.1\n\n- No file changes detected in this version.\n- No functional or documentation updates; package remains unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdf6230a6426ce1a8056466a36f2aa7d7cd73c5ad86046fb8e9b509da31ba562"
+}

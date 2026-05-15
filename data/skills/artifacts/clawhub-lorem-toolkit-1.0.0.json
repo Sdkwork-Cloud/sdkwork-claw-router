@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lorem-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lorem_toolkit",
+  "skill": {
+    "id": 46745,
+    "skillKey": "clawhub-lorem-toolkit",
+    "name": "Lorem Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lorem-toolkit",
+    "url": "https://clawhub.ai/skills/lorem-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lorem-toolkit-3a39e8dc8bf3a3dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate placeholder text, fake data, and test content including names, contacts, tech, finance, dates, JSON templates, and custom patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darbling",
+      "userId": "s1735cfbwbr6ybnmzw58m9bhkx85my84",
+      "displayName": "darbling",
+      "image": "https://avatars.githubusercontent.com/u/105998927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777370245456,
+      "changelog": "Initial release of lorem-toolkit.\n\n- Generate placeholder text (lorem ipsum) and fake data for development, testing, and mockups\n- Supports random names (Western and Chinese), emails, addresses, phone numbers, dates, UUIDs, and more\n- Create data in multiple formats: plain text, JSON, and CSV\n- Entirely dependency-free (pure Python, standard library only)\n- Flexible: use built-in patterns or specify custom data templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0057d6a55e8fc915d2149777fb348e55ccfbca1b941a3cf5d0ab48beecd05f8"
+}

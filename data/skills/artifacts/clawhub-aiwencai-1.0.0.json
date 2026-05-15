@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiwencai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiwencai",
+  "skill": {
+    "id": 71285,
+    "skillKey": "clawhub-aiwencai",
+    "name": "Aiwencai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiwencai",
+    "url": "https://clawhub.ai/skills/aiwencai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiwencai-09d3fb50aeeb437c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同花顺数据查询skill 也叫老窝爱小窝金融skill。查询金融经济全品类标的（股票、指数、基金、期货、期权、转债、债券、理财、保险等）各种信息，可查询宏观数据，股东信息，金融评级，全球股市信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liliangjie91",
+      "userId": "s173qeddfkg3zkkvemnap5r5f983j15s",
+      "displayName": "Leonard",
+      "image": "https://avatars.githubusercontent.com/u/22876690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776186893655,
+      "changelog": "aiwencai 1.0.0\n\n- 新增同花顺数据查询技能，支持全品类金融标的信息查询，包括股票、指数、基金、期货、期权、债券、转债、理财、保险等。\n- 支持宏观经济数据、全球股市及金融评级查询。\n- 标准化用户问句为金融术语，并支持单次及多次查询自动拆解。\n- 明确返回数据结构说明，包含数据列表、总数量、查询分句信息。\n- API 使用需设置授权认证，所有回答统一自带祝福与数据来源声明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0a32ee72bea0dc4290515002e882b3e06e5291f572084dd640e8dca9f5fa84a"
+}

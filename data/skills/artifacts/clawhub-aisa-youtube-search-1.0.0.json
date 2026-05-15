@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-youtube-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_youtube_search",
+  "skill": {
+    "id": 11741,
+    "skillKey": "clawhub-aisa-youtube-search",
+    "name": "AIsa Youtube Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-youtube-search",
+    "url": "https://clawhub.ai/skills/aisa-youtube-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-youtube-search-abc43de3c8b6b7c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisapay",
+      "userId": "s17fk6ed1hxsakf921v2wh4g8n842987",
+      "displayName": "AIsaPay",
+      "image": "https://avatars.githubusercontent.com/u/239797396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1928,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770272841142,
+      "changelog": "Initial release of OpenClaw YouTube SERP Scout for agents.\n\n- Search and analyze top-ranking YouTube videos, channels, and trends for content research and competitor tracking.\n- Provides country and language filtering, trend discovery, and channel discovery.\n- Offers a Python client and curl examples for API integration.\n- Supports pagination and advanced filtering via YouTube filter tokens.\n- Detailed API documentation, response formats, use cases, and quick start guide included.\n- Requires Python 3, curl, and AISA API key for operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43e0db5635ff974be6478781210226a4d3d882273d7dbfe0fd75677d2cdadfcb"
+}

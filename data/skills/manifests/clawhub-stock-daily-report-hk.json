@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66644,
+  "uuid": "skill-clawhub-stock-daily-report-hk",
+  "skillKey": "clawhub-stock-daily-report-hk",
+  "name": "港股日报Agent",
+  "summary": "港股日报分析Agent - 每日发送《港股每日动量报告》到飞书",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_daily_report_hk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuchhao",
+      "features": [
+        "港股日报分析Agent",
+        "每日发送《港股每日动量报告》到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-daily-report-hk@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53897023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-daily-report-hk",
+      "url": "https://clawhub.ai/skills/stock-daily-report-hk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-daily-report-hk",
+    "url": "https://clawhub.ai/skills/stock-daily-report-hk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-daily-report-hk-3afd429b8d398457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-daily-report-hk@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-daily-report-hk-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44b0cfb19da00c064d18e2c813b1cf31c3749b6b960d41a51134852ffc1cc3ba",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:25:07.575Z"
+}

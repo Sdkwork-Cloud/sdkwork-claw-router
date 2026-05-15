@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perf-prof@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perf_prof",
+  "skill": {
+    "id": 30698,
+    "skillKey": "clawhub-perf-prof",
+    "name": "Perf Profiler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perf-prof",
+    "url": "https://clawhub.ai/skills/perf-prof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perf-prof-8625e5d8cd69db3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Linux system performance analysis using perf-prof for real-time event processing and profiling CPU, memory, IO, scheduling, virtualization, and custom scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanery",
+      "userId": "s178a52csxwpe6zws18yz7wdxh83pv37",
+      "displayName": "duanery",
+      "image": "https://avatars.githubusercontent.com/u/42316014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774601984491,
+      "changelog": "Initial release of perf-prof skill\n\n- Provides a comprehensive workflow to use perf-prof for Linux system performance diagnosis.\n- Details installation, including dependency handling and user confirmation for source builds.\n- Includes a full decision tree for selecting the right profiler based on system symptoms (CPU, memory, IO, virtualization, etc.).\n- Categorizes and explains available profilers; links to documentation when available, and outlines core analysis techniques.\n- Adds step-by-step instructions for both kernel-space and user-space diagnostics.\n- Features both Chinese and English descriptions for broader accessibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bf4591f3c7b3d52e9cd2efb37d7e4ccc129626fb1c58506912e26449fdbd34f"
+}

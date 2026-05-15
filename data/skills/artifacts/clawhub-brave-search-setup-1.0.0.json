@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-search-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_search_setup",
+  "skill": {
+    "id": 13370,
+    "skillKey": "clawhub-brave-search-setup",
+    "name": "Brave Search Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-search-setup",
+    "url": "https://clawhub.ai/skills/brave-search-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-search-setup-1fcf20d109e037db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure Brave Search API and troubleshoot network/proxy issues for web_search functionality. Use when user needs to (1) Set up Brave Search API key, (2) Fix web_search fetch failures, (3) Configure proxy for OpenClaw tools on macOS with."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingliu1617-art",
+      "userId": "publishers:qingliu1617-art",
+      "displayName": "qingliu1617-art",
+      "image": "https://avatars.githubusercontent.com/u/232344309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1439,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770721085583,
+      "changelog": "Initial release: Brave Search API config and macOS proxy setup for OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c349b0881703e3502cfdf68be6da8f687308a70301421b7f5336a82fc9929d07"
+}

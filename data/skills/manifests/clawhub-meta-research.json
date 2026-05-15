@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18532,
+  "uuid": "skill-clawhub-meta-research",
+  "skillKey": "clawhub-meta-research",
+  "name": "Meta Research",
+  "summary": "Autonomous research workflow agent for AI and scientific research. Use when the user wants to brainstorm research ideas, conduct a literature review, design...",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiachen LIU",
+      "features": [
+        "Autonomous research workflow agent for AI and scientific research",
+        "Use when the user wants to brainstorm research ideas, conduct a literature review, design..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-research@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42296458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-research",
+      "url": "https://clawhub.ai/skills/meta-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-research",
+    "url": "https://clawhub.ai/skills/meta-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-research-d50a97a8177b509a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-research@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-research-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87877efced354147b68928aed226022eb00625297618c9c53bd9710b0ed43015",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:53:46.812Z"
+}

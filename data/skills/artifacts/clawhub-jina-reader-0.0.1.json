@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jina-reader@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jina_reader",
+  "skill": {
+    "id": 8918,
+    "skillKey": "clawhub-jina-reader",
+    "name": "Jina Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jina-reader",
+    "url": "https://clawhub.ai/skills/jina-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jina-reader-685bea262d8f25d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web content extraction via Jina AI Reader API. Three modes: read (URL to markdown), search (web search + full content), ground (fact-checking). Extracts clea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericsantos",
+      "userId": "s172zebvz8fjz93gkgsdmt98w583jy65",
+      "displayName": "Eric Santos",
+      "image": "https://avatars.githubusercontent.com/u/180174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4942,
+      "installsAllTime": 66,
+      "installsCurrent": 65,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771616486769,
+      "changelog": "Initial release.\n\n- Web content extraction via Jina AI Reader API with three modes: read, search, and ground.\n- Supports clean content extraction to markdown, HTML, text, or screenshot.\n- Allows region-specific extraction, removal, and waiting with CSS selectors.\n- Enables web search with full content and fact-checking from the command line.\n- Protects server IP and supports geo-proxying.\n- Free tier API key with 10M tokens (no signup required).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0cb2d5ce869c35942f2f07a78d84676e08727ee36c6114d085cda87d05c37bde"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solidity-guardian@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solidity_guardian",
+  "skill": {
+    "id": 16004,
+    "skillKey": "clawhub-solidity-guardian",
+    "name": "Solidity Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solidity-guardian",
+    "url": "https://clawhub.ai/skills/solidity-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solidity-guardian-c8409e9cd37f9fc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart contract security analysis skill. Detect vulnerabilities, suggest fixes, generate audit reports. Supports Hardhat/Foundry projects. Uses pattern matchi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 920,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771193882828,
+      "changelog": "Smart contract security auditor - v1.0.3",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d72a63d35de15ebe80d2c8aeb77dc4eb786d8e06d717c400ae621c9c11fcc3fd"
+}

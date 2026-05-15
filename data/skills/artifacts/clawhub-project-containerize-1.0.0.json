@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-containerize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_containerize",
+  "skill": {
+    "id": 62799,
+    "skillKey": "clawhub-project-containerize",
+    "name": "project-containerize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-containerize",
+    "url": "https://clawhub.ai/skills/project-containerize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-containerize-c23ba7e8c04e3674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对项目进行完整的容器化适配。自动检测分析项目代码和文档，配置和优化代码容器化打包方案，生成专用Dockerfile，生成专用compose.yaml用于快捷部署，输出说明文档，最终生成适配项目的容器化部署方案。触发词：容器化、Docker、docker run、docker-compose、Dockerfile、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuyifeiruichuang",
+      "userId": "s17epvhrds2pfme2p93kw1bdjh84yc0r",
+      "displayName": "zhu",
+      "image": "https://avatars.githubusercontent.com/u/209306256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776328765936,
+      "changelog": "Initial release with full project containerization workflow and documentation generation.\n\n- Analyzes project structure, technology stack, and existing containerization files.\n- Generates build and deploy Dockerfiles, docker-compose files, and config templates.\n- Automates the detection and externalization of configuration and environment variables.\n- Outputs comprehensive documentation including build, deploy, configuration, quickstart, and architecture reports.\n- Supports multi-component and microservice project layouts.\n- Produces clear, organized deployment artifacts and scripts for both Docker and Compose workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a18923fd3134b9a6da857bf0444fc4f7a4c8083bd5037fe69632182e368c154"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30994,
+  "uuid": "skill-clawhub-modesty-crawling",
+  "skillKey": "clawhub-modesty-crawling",
+  "name": "crawling",
+  "summary": "Use for TikTok crawling, content retrieval, and analysis",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_crawling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Use for TikTok crawling, content retrieval, and analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-crawling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-crawling",
+      "url": "https://clawhub.ai/skills/modesty-crawling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-crawling",
+    "url": "https://clawhub.ai/skills/modesty-crawling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-crawling-d4ec8664daa761d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-crawling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-crawling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45b1748c0a1f10cb242d18cc660f0880671e174f6ff49e1e3cfe7d6e1a82da88",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:07:36.410Z"
+}

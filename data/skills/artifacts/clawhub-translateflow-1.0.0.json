@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/translateflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translateflow",
+  "skill": {
+    "id": 50144,
+    "skillKey": "clawhub-translateflow",
+    "name": "TranslateFlow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translateflow",
+    "url": "https://clawhub.ai/skills/translateflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translateflow-14e03c55429c9d61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI translation via TranslateFlow API — multi-language content translation, localization, tone adaptation, batch translation. Use when user needs text transla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbennett111",
+      "userId": "publishers:jbennett111",
+      "displayName": "Jbennett111",
+      "image": "https://avatars.githubusercontent.com/u/86585533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772548662703,
+      "changelog": "Initial release — AI translation API client (50+ languages, tone adaptation, batch). Free tier: 100 req/day.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0011a14e2a58b118390f0af3693d57cc3e45d85f1faff29e1c825b36360974b"
+}

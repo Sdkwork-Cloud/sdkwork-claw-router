@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14570,
+  "uuid": "skill-clawhub-web-tools-guide",
+  "skillKey": "clawhub-web-tools-guide",
+  "name": "web-tools-guide",
+  "summary": "MANDATORY before calling web_search, web_fetch, browser, or opencli. Contains required error-handling procedures (web_search failure → must guide user to con...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_tools_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FMLS",
+      "features": [
+        "MANDATORY before calling web_search, web_fetch, browser, or opencli",
+        "Contains required error-handling procedures (web_search failure → must guide user to con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-tools-guide@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12793501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-tools-guide",
+      "url": "https://clawhub.ai/skills/web-tools-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-tools-guide",
+    "url": "https://clawhub.ai/skills/web-tools-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-tools-guide-9b6e3daa8230cd53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-tools-guide@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-tools-guide-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b14ac0b249c5179160ef70095cbbb2ad40f61fce4ae00188d555b1316324880",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:55:00.895Z"
+}

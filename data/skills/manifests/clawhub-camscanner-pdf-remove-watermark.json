@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48415,
+  "uuid": "skill-clawhub-camscanner-pdf-remove-watermark",
+  "skillKey": "clawhub-camscanner-pdf-remove-watermark",
+  "name": "CamScanner Remove PDF Watermark",
+  "summary": "Use CamScanner to remove watermarks from PDF documents while preserving the underlying text, images, and original layout. Powered by a high-precision documen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_pdf_remove_watermark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CamScanner-AI",
+      "features": [
+        "Use CamScanner to remove watermarks from PDF documents while preserving the underlying text, im.",
+        "Powered by a high-precision documen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camscanner-pdf-remove-watermark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269073986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camscanner-pdf-remove-watermark",
+      "url": "https://clawhub.ai/skills/camscanner-pdf-remove-watermark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-pdf-remove-watermark",
+    "url": "https://clawhub.ai/skills/camscanner-pdf-remove-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-pdf-remove-watermark-a84c2e1c0e858a3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camscanner-pdf-remove-watermark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-pdf-remove-watermark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e44a49f9f06ec26ee8b96ea7bff1727dea572e9a3efcd97e7b7d0ba4bf8a21b",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:59:14.870Z"
+}

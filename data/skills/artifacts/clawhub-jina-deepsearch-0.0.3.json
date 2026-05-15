@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jina-deepsearch@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jina_deepsearch",
+  "skill": {
+    "id": 22152,
+    "skillKey": "clawhub-jina-deepsearch",
+    "name": "jina-deepsearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jina-deepsearch",
+    "url": "https://clawhub.ai/skills/jina-deepsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jina-deepsearch-0db5079754adacbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Jina DeepSearch API access via AIHubMix - use curl to call the HTTP API directly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ansatzx",
+      "userId": "publishers:ansatzx",
+      "displayName": "ansatzX",
+      "image": "https://avatars.githubusercontent.com/u/47290706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1772520544087,
+      "changelog": "- Removed web-search-wrapper.py, simplifying the skill to direct API usage.\n- Updated documentation to focus solely on using curl for API access.\n- Clarified that configuration is via the AIHUBMIX_API_KEY environment variable.\n- Streamlined instructions and removed references to previous wrapper or OpenClaw config setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8ec7803c8602df8a98cc287ebb8c518cf3fbce52100fcf331ddab45181778726"
+}

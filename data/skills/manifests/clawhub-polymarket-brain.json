@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28017,
+  "uuid": "skill-clawhub-polymarket-brain",
+  "skillKey": "clawhub-polymarket-brain",
+  "name": "Polymarket Brain",
+  "summary": "Automates geopolitical and macroeconomic news analysis, matches expert insights to Polymarket odds, and posts actionable trade recommendations to Discord.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_brain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimas Chandra",
+      "features": [
+        "Automates geopolitical and macroeconomic news analysis, matches expert insights to Polymarket o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34400000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-brain",
+      "url": "https://clawhub.ai/skills/polymarket-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-brain",
+    "url": "https://clawhub.ai/skills/polymarket-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-brain-3fba492a4be92eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e11aae4df33efc5b754bbb638ef7f3720db4b722a3d758cd67657455989c4167",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T21:25:41.903Z"
+}

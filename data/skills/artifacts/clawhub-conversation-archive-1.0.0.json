@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conversation-archive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_archive",
+  "skill": {
+    "id": 61361,
+    "skillKey": "clawhub-conversation-archive",
+    "name": "Conversation Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-archive",
+    "url": "https://clawhub.ai/skills/conversation-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-archive-9dc98b6f6e0d49c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对话记忆仓库：自动归档 session 对话，保留原始记录，支持检索和误解纠正。可与 memory-never-forget 联动形成完整记忆体系。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anfengxiaoguo",
+      "userId": "s177xhcj1xygxacxsb22g0cj4x84dma1",
+      "displayName": "AnFengxiaoGuo",
+      "image": "https://avatars.githubusercontent.com/u/139884360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775556632623,
+      "changelog": "Initial release of Conversation Archive: a session-based conversation memory system.\n\n- Automatically archives sessions, preserving original conversation JSON and generating structured summaries.\n- Supports keyword-based search, retrieval of original sessions, and memory extraction for integration with memory-never-forget.\n- Includes auto-archiving rules (on session restart/compact, inactivity, and daily force-archive).\n- Prevents storage of sensitive data (API keys, passwords) via message scanning and redaction.\n- Designed for future upgrade to vector (semantic) search.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1257877b4a5a547fe9ed480a46350165bed4ff908d31f1d6cc5bba65f79fd45"
+}

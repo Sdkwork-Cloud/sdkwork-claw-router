@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_image",
+  "skill": {
+    "id": 43177,
+    "skillKey": "clawhub-video-editing-ai-image",
+    "name": "Video Editing Ai Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-image",
+    "url": "https://clawhub.ai/skills/video-editing-ai-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-image-9cc8e033728a813f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images or video into animated video clips with this skill. Works with JPG, PNG, MP4, MOV files up to 200MB. social media creators and marketers use i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776078509676,
+      "changelog": "- Initial release of Video Editing AI Image skill.\n- Convert JPG, PNG, MP4, and MOV files (up to 200MB) into animated 1080p MP4 video clips using cloud GPUs.\n- Supports social media creators and marketers in turning static images into dynamic video content.\n- Enables quick uploads, customization with transitions, background music, and text overlays.\n- Intuitive workflows: upload files, describe the desired video, and receive the result in about 30–60 seconds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b27fe37d84de1715880212bfe6421ee8740f34e17bbfd5406aab2dff7410bbed"
+}

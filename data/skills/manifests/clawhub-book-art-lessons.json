@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12975,
+  "uuid": "skill-clawhub-book-art-lessons",
+  "skillKey": "clawhub-book-art-lessons",
+  "name": "Book Art Lessons",
+  "summary": "Book art-lessons services through Lokuli MCP. Use when user needs to find and book art-lessons. Triggers on requests like \"book a art-lessons\", \"find art-lessons near me\", or any art-lessons service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_art_lessons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book art-lessons services through Lokuli MCP",
+        "Use when user needs to find and book art-lessons",
+        "Triggers on requests like \"book a art-lessons\", \"find art-lessons near me\", or any art-lessons."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-art-lessons@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-art-lessons",
+      "url": "https://clawhub.ai/skills/book-art-lessons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-art-lessons",
+    "url": "https://clawhub.ai/skills/book-art-lessons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-art-lessons-2d9af6676843ac1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-art-lessons@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-art-lessons-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12b1094d46bdf907c3c098ca12e8543b97179c0f6b11811276514b2032935be5",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:31.404Z"
+}

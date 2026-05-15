@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68482,
+  "uuid": "skill-clawhub-file-uploader",
+  "skillKey": "clawhub-file-uploader",
+  "name": "文件上传，本地文件转网络路径",
+  "summary": "将本地文件（图片、文档、视频等）上传到 tiaowulan.com.cn 并返回网络访问路径。触发场景：(1) 用户说\"上传文件\"、\"上传图片\"、\"上传文档\"，(2) 需要将本地文件转换为网络 URL，(3) 用户提供文件并要求生成可直接网页引用的链接。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_uploader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piaoleaf",
+      "features": [
+        "将本地文件（图片、文档、视频等）上传到 tiaowulan.com.cn 并返回网络访问路径。触发场景：(1) 用户说\"上传文件\"、\"上传图片\"、\"上传文档\"，(2) 需要将本地文件转换为网."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-uploader@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103726242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-uploader",
+      "url": "https://clawhub.ai/skills/file-uploader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-uploader",
+    "url": "https://clawhub.ai/skills/file-uploader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-uploader-2956a3d80c41d25b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-uploader@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-uploader-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73781ac459b60996c6a487e4406e8cee54cb3bc4ade500c7e9552acbe579bc7f",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T06:27:19.252Z"
+}

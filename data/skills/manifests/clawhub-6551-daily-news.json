@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10976,
+  "uuid": "skill-clawhub-6551-daily-news",
+  "skillKey": "clawhub-6551-daily-news",
+  "name": "Daily News",
+  "summary": "Daily news and hot topics via the 6551 API. Supports news categories, hot news articles, and trending tweets by category.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.6551_daily_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "infra403",
+      "features": [
+        "Daily news and hot topics via the 6551 API",
+        "Supports news categories, hot news articles, and trending tweets by category."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/6551-daily-news@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117965724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "6551-daily-news",
+      "url": "https://clawhub.ai/skills/6551-daily-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "6551-daily-news",
+    "url": "https://clawhub.ai/skills/6551-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/6551-daily-news-29e27255f52bc9ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/6551-daily-news@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-6551-daily-news-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36b6e18893f72dd9d34215518b992b7f013bd074b22b6104597f43f8c18d624b",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:35:22.529Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-pipedream@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_pipedream",
+  "skill": {
+    "id": 12087,
+    "skillKey": "clawhub-linkedin-pipedream",
+    "name": "Linkedin Pipedream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-pipedream",
+    "url": "https://clawhub.ai/skills/linkedin-pipedream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-pipedream-5736a601c9469bb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post to LinkedIn, comment, like, search organizations, and manage profiles via Pipedream OAuth integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1869,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770175096281,
+      "changelog": "- Initial release of linkedin-pipedream skill.\n- Enables posting, commenting, liking, searching organizations, and managing LinkedIn profiles via Pipedream OAuth integration.\n- Includes 19 tools for LinkedIn automation; most work via MCP, with organization posting requiring a workaround.\n- Requires prior installation and configuration of the pdauth skill for authentication.\n- Detailed usage examples and tool reference provided in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2f961ba131f6e5982e793e5226946ab83eac6a99d5ba38bdaae634b7f81aa3c"
+}

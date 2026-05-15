@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "gateway-watchdog-v2",
+    "displayName": "Gateway Watchdog",
+    "summary": "Production-grade bash watchdog for the OpenClaw gateway. Runs via launchd every 5 minutes. Handles boot grace periods, progressive retry with backoff, port-l...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774109640244,
+    "updatedAt": 1777622163698
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774109640244,
+    "changelog": "Initial release of gateway-watchdog for OpenClaw gateway.\n\n- Production-ready bash watchdog designed for maximum reliability and false positive prevention.\n- Five defensive layers: HTTP check, boot grace period, port-level fallback, progressive retry with backoff, and restart cooldown.\n- Runs automatically via launchd every 5 minutes on macOS.\n- Prevents restart loops and ensures the gateway remains available.\n- Logs written to `~/.openclaw/logs/watchdog.log`.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bryantegomoh",
+    "userId": "s172jpve568dfnqpcddngz9d8s83sxnk",
+    "displayName": "Bryan Tegomoh, MD, MPH",
+    "image": "https://avatars.githubusercontent.com/u/67350434?v=4"
+  },
+  "moderation": null
+}

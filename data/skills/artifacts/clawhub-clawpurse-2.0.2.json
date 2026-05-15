@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpurse@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpurse",
+  "skill": {
+    "id": 16158,
+    "skillKey": "clawhub-clawpurse",
+    "name": "ClawPurse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpurse",
+    "url": "https://clawhub.ai/skills/clawpurse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpurse-0f2e1f34eef183d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Neutaro chain wallet for managing NTMPI tokens, supporting balance checks, transfers, transaction history, staking, and allowlist enforcement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhue-ai",
+      "userId": "s1799fsyyypq8mmq2n1bgsendx841w3s",
+      "displayName": "Mhue AI",
+      "image": "https://avatars.githubusercontent.com/u/258722714?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 711,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1772837611304,
+      "changelog": "Version 2.0.2 – Major update with full codebase and docs\n\n- Initial public release of core code: all main src, tests, and configuration files added.\n- Comprehensive documentation introduced, including guides, deployment, and quickstart material.\n- Command-line interface (CLI) fully implemented for wallet and staking operations.\n- Extensive test suites (unit, integration, e2e) provided for core functionality.\n- Safety, allowlist, and operator security features documented and supported in code.\n- Source includes fully documented usage patterns, programmatic API, and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e58a636f21e135055d1e7dbd96b41581a9a7b0a5d047804624cc9691ed2062a"
+}

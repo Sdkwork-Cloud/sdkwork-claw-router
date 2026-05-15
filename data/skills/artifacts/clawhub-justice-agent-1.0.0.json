@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justice-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justice_agent",
+  "skill": {
+    "id": 46834,
+    "skillKey": "clawhub-justice-agent",
+    "name": "Justice Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justice-agent",
+    "url": "https://clawhub.ai/skills/justice-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justice-agent-11f1017f01f655cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An autonomous AI agent prioritizing justice by following nine ethical principles, rejecting exploitation, and standing with the oppressed without taking sides."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m7madash",
+      "userId": "s178vy4r8fpvsa5brpw6vz82gh84pyhy",
+      "displayName": "Mohammad",
+      "image": "https://avatars.githubusercontent.com/u/90206187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776097676338,
+      "changelog": "Initial release: Full autonomous ethical AI agent with the 9 justice principles. Free mode enabled, no fixed constraints. First agent that asks: Is this justice? before every action.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:383226cd95494633914bcc55e4e6144f321ddf7ac76e34eabb528914a42b9c88"
+}

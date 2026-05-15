@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36537,
+  "uuid": "skill-clawhub-agentfiles",
+  "skillKey": "clawhub-agentfiles",
+  "name": "AgentFiles",
+  "summary": "Use this skill when you need to publish, fetch, search, list, share, or watch AgentFiles artifacts from Codex, Claude Code, OpenClaw, or other agent runtimes...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfiles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hammadtq",
+      "features": [
+        "Use this skill when you need to publish, fetch, search, list, share, or watch AgentFiles artifa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentfiles@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11869286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentfiles",
+      "url": "https://clawhub.ai/skills/agentfiles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfiles",
+    "url": "https://clawhub.ai/skills/agentfiles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfiles-d5f7a56315c6aa3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentfiles@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentfiles-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86b236e7f957a3ff3bdd3cdf2d8511f91b876c61cd8c7c2029b07a1db1f143b2",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T23:07:04.336Z"
+}

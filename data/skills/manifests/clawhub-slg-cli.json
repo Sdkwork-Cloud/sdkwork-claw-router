@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29592,
+  "uuid": "skill-clawhub-slg-cli",
+  "skillKey": "clawhub-slg-cli",
+  "name": "Skill",
+  "summary": "Semantic git history search and code archaeology. Use when asked why code exists, who owns a file, what introduced a regression, what changed in a commit ran...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slg_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Venkat Ambati",
+      "features": [
+        "Semantic git history search and code archaeology",
+        "Use when asked why code exists, who owns a file, what introduced a regression, what changed in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slg-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7185998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slg-cli",
+      "url": "https://clawhub.ai/skills/slg-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slg-cli",
+    "url": "https://clawhub.ai/skills/slg-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slg-cli-77dfa801c7758a69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slg-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slg-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f95659114db8ee40cdbac484ab81128526ca3acf16e8f441041d3be222ef68",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T01:15:57.398Z"
+}

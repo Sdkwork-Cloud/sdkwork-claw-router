@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/19-api-gateway@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.19_api_gateway",
+  "skill": {
+    "id": 42619,
+    "skillKey": "clawhub-19-api-gateway",
+    "name": "19 API Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "19-api-gateway",
+    "url": "https://clawhub.ai/skills/19-api-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/19-api-gateway-8f369f370e2ba9ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 100+ APIs (Google Workspace, Microsoft 365, GitHub, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776323461003,
+      "changelog": "Initial release of the api-gateway skill, enabling secure, OAuth-managed connections to 100+ third-party APIs via Maton.\n\n- Provides passthrough proxy to native API endpoints for popular services (Google Workspace, Microsoft 365, Slack, Notion, GitHub, Airtable, etc.)\n- Secure access via Maton API key; user grants explicit OAuth authorization for each connected service\n- Supports connection management: list, create, get, and delete connections through dedicated endpoints\n- Allows specifying connections using the Maton-Connection header when multiple connections exist\n- Includes comprehensive documentation and code samples for quick integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50d45cfaab58f7d47ccb1b2e5d93d87fe8651c3a7076edaeb166f0c4ce282cca"
+}

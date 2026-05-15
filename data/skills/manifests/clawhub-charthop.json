@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34118,
+  "uuid": "skill-clawhub-charthop",
+  "skillKey": "clawhub-charthop",
+  "name": "Charthop",
+  "summary": "ChartHop integration. Manage data, records, and automate workflows. Use when the user wants to interact with ChartHop data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.charthop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ChartHop integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ChartHop data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/charthop@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "charthop",
+      "url": "https://clawhub.ai/skills/charthop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "charthop",
+    "url": "https://clawhub.ai/skills/charthop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/charthop-89de1bc546846df5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/charthop@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-charthop-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:664e40cd73204ab710d5e3d3782133a5ef2ac486d43f710a8087703da6eedb1d",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:17:27.832Z"
+}

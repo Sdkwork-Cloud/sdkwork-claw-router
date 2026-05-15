@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40429,
+  "uuid": "skill-clawhub-owner-briefing",
+  "skillKey": "clawhub-owner-briefing",
+  "name": "Owner Briefing",
+  "summary": "Generate and send a daily briefing to your owner covering today's meetings, urgent emails, open tasks, and anything that needs attention. Use when: it's the...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.owner_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Generate and send a daily briefing to your owner covering today's meetings, urgent emails, open.",
+        "Use when: it's the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/owner-briefing@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "owner-briefing",
+      "url": "https://clawhub.ai/skills/owner-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "owner-briefing",
+    "url": "https://clawhub.ai/skills/owner-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/owner-briefing-d07d656d0906eed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/owner-briefing@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-owner-briefing-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10c7664411e840a4bc2e0a0cae2d61daabad6f54d2e930903a021c7b073a616",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T19:59:47.147Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-free-ai-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_free_ai_generator",
+  "skill": {
+    "id": 45494,
+    "skillKey": "clawhub-image-to-video-free-ai-generator",
+    "name": "Image To Video Free Ai Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-free-ai-generator",
+    "url": "https://clawhub.ai/skills/image-to-video-free-ai-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-free-ai-generator-cb0ef4da71a676e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three product photos in JPG format into 1080p animated video clips just by typing what you need. Whether it's converting static images into short videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776008963772,
+      "changelog": "Image to Video Free AI Generator — Initial Release\n\n- Launches free AI-powered tool to convert up to three JPG product photos into 1080p animated video clips within 30–60 seconds.\n- Simple upload interface: just send images and describe the desired video outcome; no manual editing or export settings required.\n- Automatic cloud session setup, including free 7-day token generation for new users.\n- Supports common workflows like quick edits, batch processing, and iterative video refinements.\n- Handles video rendering, export (MP4 and more), credits, project state, and error management directly through backend APIs.\n- Guides users with prompt suggestions, real-time status updates, and user-friendly error messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3926909577261eead520b8dd2c23f34f96f4a4e841b625e252120e46e552a4ba"
+}

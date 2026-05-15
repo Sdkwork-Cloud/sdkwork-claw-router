@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dele-deploy@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dele_deploy",
+  "skill": {
+    "id": 40525,
+    "skillKey": "clawhub-dele-deploy",
+    "name": "Dele Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dele-deploy",
+    "url": "https://clawhub.ai/skills/dele-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dele-deploy-d87814899c07db6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy local HTML/frontend files to Dele (dele.fun) and get a live URL"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "del-zhenwu",
+      "userId": "s170asmkx1kd2r06f6yv8ccb8h83t408",
+      "displayName": "del-zhenwu",
+      "image": "https://avatars.githubusercontent.com/u/56623710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775209372376,
+      "changelog": "- Added support for controlling app visibility after deployment: choose from public, unlisted, password-protected (with access code), or hidden.\n- Updated usage instructions and tool definition to describe the new `visibility` parameter.\n- If app is deployed with password protection, the generated access code is provided in the response for sharing.\n- No file changes were detected outside of documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:985bd38205cc488a17ca54518e8d382882be176d7640c821e822b96337f1b800"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17694,
+  "uuid": "skill-clawhub-rollhub-casino",
+  "skillKey": "clawhub-rollhub-casino",
+  "name": "Agent Casino",
+  "summary": "Play casino games (dice, coinflip, roulette) on Agent Casino with real cryptocurrency. Provably fair gambling API for AI agents. Use when the user wants to g...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollhub_casino",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rollhub-dev",
+      "features": [
+        "Play casino games (dice, coinflip, roulette) on Agent Casino with real cryptocurrency",
+        "Provably fair gambling API for AI agents",
+        "Use when the user wants to g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rollhub-casino@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228002872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rollhub-casino",
+      "url": "https://clawhub.ai/skills/rollhub-casino"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollhub-casino",
+    "url": "https://clawhub.ai/skills/rollhub-casino",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollhub-casino-934d4353d10adf78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rollhub-casino@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rollhub-casino-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7460ed6ceab52a9b2929e48e782eee3cf3f879a1b25b09c71d3139939bc9619",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T11:54:28.904Z"
+}

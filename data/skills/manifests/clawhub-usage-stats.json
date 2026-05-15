@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62703,
+  "uuid": "skill-clawhub-usage-stats",
+  "skillKey": "clawhub-usage-stats",
+  "name": "usage-stats",
+  "summary": "OpenClaw 使用统计技能。自动分析会话记录，生成 token 消耗、费用、工具使用等完整报告。 触发场景：用户提到\"使用统计\"、\"token 消耗\"、\"费用分析\"、\"使用报告\"、\"使用情况\"、 \"usage stats\"、\"token usage\"、\"消费记录\"、\"我用了多少\"、\"统计\"等关键词时使用。 关...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_stats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qq pq",
+      "features": [
+        "OpenClaw 使用统计技能。自动分析会话记录，生成 token 消耗、费用、工具使用等完整报告。 触发场景：用户提到\"使用统计\"、\"token 消耗\"、\"费用分析\"、\"使用报告\"、\"使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usage-stats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267515131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usage-stats",
+      "url": "https://clawhub.ai/skills/usage-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-stats",
+    "url": "https://clawhub.ai/skills/usage-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-stats-f96ab49dc985487d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usage-stats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usage-stats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c25a3284631d8d50662e82ed4d7278b21f642ba6f48ec852b636109fe5f80d6",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T17:56:12.285Z"
+}

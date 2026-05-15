@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/artifact-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artifact_analysis",
+  "skill": {
+    "id": 42351,
+    "skillKey": "clawhub-artifact-analysis",
+    "name": "Artifact Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artifact-analysis",
+    "url": "https://clawhub.ai/skills/artifact-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artifact-analysis-846a9c814946b11e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants a cited, structured read of local documents and project knowledge. Triggers on: \"analyze these docs\", \"scan my project for context\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776830997803,
+      "changelog": "Initial release of artifact-analysis skill.\n\n- Provides a structured, citation-backed analysis of local documents and project knowledge.\n- Produces all output on disk: creates a scan plan, parallel subagent findings, and a synthesized report, each with sources.\n- Supports intent-driven or generic extraction over user-specified paths or auto-discovered project knowledge folders.\n- Strictly does not process codebase lookups, web searches, document editing, OCR, or remote sources—local plain text and markdown only.\n- Enforces an auditable four-step workflow with verification and failure-mode reporting.\n- Designed for invocation by users or programmatically by other beagle skills; never returns inline prose.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc8d17ebf68727ada3038d27c67672573698602008a95ad056e06aa1d6281f52"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61441,
+  "uuid": "skill-clawhub-zan-gongde",
+  "skillKey": "clawhub-zan-gongde",
+  "name": "Zan Gongde",
+  "summary": "烧token攒功德Skill - 全自动消耗 OpenClaw 套餐 Token 核心原理：循环调用 OpenClaw LLM，每次生成一个经文念诵响应， **实时估算并累加 token 消耗，达到目标后立即停止**。 当用户说\"攒功德\"、\"念经\"、\"烧token\"、\"消耗token\"时调用此 skill。 四种...",
+  "version": "2.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zan_gongde",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jageri",
+      "features": [
+        "烧token攒功德Skill",
+        "全自动消耗 OpenClaw 套餐 Token 核心原理：循环调用 OpenClaw LLM，每次生成一个经文念诵响应， **实时估算并累加 token 消耗，达到目标后立即停止**。 当用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zan-gongde@2.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14195779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zan-gongde",
+      "url": "https://clawhub.ai/skills/zan-gongde"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zan-gongde",
+    "url": "https://clawhub.ai/skills/zan-gongde",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zan-gongde-5fdaffbb79f25a31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zan-gongde@2.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zan-gongde-2.3.2.json",
+      "version": "2.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:299083da17955d28e284c2ef67f91415ffa988a6c430f3dbaf061c25fe353127",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:59:03.892Z"
+}

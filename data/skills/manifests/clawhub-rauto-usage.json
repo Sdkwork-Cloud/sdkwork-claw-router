@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25064,
+  "uuid": "skill-clawhub-rauto-usage",
+  "skillKey": "clawhub-rauto-usage",
+  "name": "rauto-usage",
+  "summary": "Execute rauto directly for the user: run device commands, template execution, tx block, tx workflow, multi-device orchestration, replay, backup/restore, and...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rauto_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "demohiiiii",
+      "features": [
+        "Execute rauto directly for the user: run device commands, template execution, tx block, tx work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rauto-usage@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69758517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rauto-usage",
+      "url": "https://clawhub.ai/skills/rauto-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rauto-usage",
+    "url": "https://clawhub.ai/skills/rauto-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rauto-usage-cd0bf73be5edc736.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rauto-usage@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rauto-usage-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b4c9c4c2f8944e11f06e166255263b9c56151ab3cf4a7ea61ab8ae3106147c4",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:42:24.793Z"
+}

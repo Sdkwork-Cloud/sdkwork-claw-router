@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21960,
+  "uuid": "skill-clawhub-skill-tracker",
+  "skillKey": "clawhub-skill-tracker",
+  "name": "skill-tracker",
+  "summary": "Track skill execution details including matched skills, decomposed tasks, execution status, outputs, and timestamps. Called at the start of every conversatio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abo-hub",
+      "features": [
+        "Track skill execution details including matched skills, decomposed tasks, execution status, out.",
+        "Called at the start of every conversatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33709514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-tracker",
+      "url": "https://clawhub.ai/skills/skill-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-tracker",
+    "url": "https://clawhub.ai/skills/skill-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-tracker-bbbe9fbe0cf1eab8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472f8a23f1b848f5bba9f301ae7dc64223c81440a221179ce64f6f01e7f5fcf4",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:53:46.147Z"
+}

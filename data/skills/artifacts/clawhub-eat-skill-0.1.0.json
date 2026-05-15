@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eat-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eat_skill",
+  "skill": {
+    "id": 68031,
+    "skillKey": "clawhub-eat-skill",
+    "name": "干饭 skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eat-skill",
+    "url": "https://clawhub.ai/skills/eat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eat-skill-b6aa854a0457b3be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "干饭决策助手。帮你决定今天吃什么，发现附近餐馆，一键生成餐馆 Skill。 支持 /eat 系列命令。问\"吃什么\"、\"附近有什么吃的\"、\"帮我选\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hash-panda",
+      "userId": "s170a8h7mm0ky2sr1jkvtz8std83zx62",
+      "displayName": "hash panda",
+      "image": "https://avatars.githubusercontent.com/u/110599333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775650386060,
+      "changelog": "eat-skill 0.3.0\n\n- 全面升级干饭决策体验，帮你更快决定今天吃什么，集成趣味机制与时间适配。\n- 新增用户画像系统，首次使用自动收集口味、预算、忌口等，并支持随时更新。\n- 推荐流程升级：结合历史、天气与时间避免重复，支持多场景模式（如约会/团建/老板请客等）。\n- 高德地图集成，一键发现附近餐馆、导航、餐馆Skill生成。\n- 完善命令体系，支持“换一个”、“吃饭PK”、“减肥餐”、“夜宵”等常用需求。\n- 品类覆盖中餐、日韩、西餐、东南亚及轻食，多维推荐更贴心。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70cdec8f0cc2a626f5b993b8e41cccb50e7a9768d1a77b039e71f31fa81edea5"
+}

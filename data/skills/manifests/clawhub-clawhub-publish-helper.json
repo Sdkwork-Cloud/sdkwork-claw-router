@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39606,
+  "uuid": "skill-clawhub-clawhub-publish-helper",
+  "skillKey": "clawhub-clawhub-publish-helper",
+  "name": "ClawdHub Publish Helper",
+  "summary": "Prepare and publish an OpenClaw skill to ClawHub. Handles PII/secret auditing, generalization, env var extraction, directory scaffolding, git init, and the c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cdmichaelb",
+      "features": [
+        "Prepare and publish an OpenClaw skill to ClawHub",
+        "Handles PII/secret auditing, generalization, env var extraction, directory scaffolding, git ini."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publish-helper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1451709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publish-helper",
+      "url": "https://clawhub.ai/skills/clawhub-publish-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-helper",
+    "url": "https://clawhub.ai/skills/clawhub-publish-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-helper-bffc87f179efa35a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publish-helper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publish-helper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:babf6478be3637bda32b84b9595aab4e6853059ea198e00117596708b5b9092e",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:24:43.691Z"
+}

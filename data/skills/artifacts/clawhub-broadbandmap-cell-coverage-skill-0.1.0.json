@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broadbandmap-cell-coverage-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadbandmap_cell_coverage_skill",
+  "skill": {
+    "id": 37489,
+    "skillKey": "clawhub-broadbandmap-cell-coverage-skill",
+    "name": "Broadbandmap Cell Coverage Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadbandmap-cell-coverage-skill",
+    "url": "https://clawhub.ai/skills/broadbandmap-cell-coverage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadbandmap-cell-coverage-skill-adc5d200dbfcbb7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PRELIMINARY/ITERATING SKILL (v0.x) - Query BroadbandMap-style public APIs for cellular coverage at a location, normalize results, and return a concise human..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hobbesoccc",
+      "userId": "s171gvwmyy648q51bnv6z5td1h83qcm1",
+      "displayName": "hobbesoccc",
+      "image": "https://avatars.githubusercontent.com/u/267166052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774635905679,
+      "changelog": "- Initial release of broadbandmap-cell-coverage skill (v0.1.0).\n- Provides location-based cell coverage lookup using BroadbandMap-style public APIs.\n- Supports flexible queries by address or lat/lon with optional network and technology filters.\n- Normalizes API results and returns both concise human summaries and raw JSON output.\n- Includes simple CLI workflow, default endpoint, response contract, and usage examples.\n- Notes preliminary status, known API limitations, and response style guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b1ff9e7ce8b70252909e465ffea658b0ee9be17e8e69d3cf6271cc44d351f79"
+}

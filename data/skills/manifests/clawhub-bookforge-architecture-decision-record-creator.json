@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39602,
+  "uuid": "skill-clawhub-bookforge-architecture-decision-record-creator",
+  "skillKey": "clawhub-bookforge-architecture-decision-record-creator",
+  "name": "Architecture Decision Record Creator",
+  "summary": "Create structured Architecture Decision Records (ADRs) with 7 sections to document architecture decisions with full justification. Use this skill whenever th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_architecture_decision_record_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Create structured Architecture Decision Records (ADRs) with 7 sections to document architecture.",
+        "Use this skill whenever th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-architecture-decision-record-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-architecture-decision-record-creator",
+      "url": "https://clawhub.ai/skills/bookforge-architecture-decision-record-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-architecture-decision-record-creator",
+    "url": "https://clawhub.ai/skills/bookforge-architecture-decision-record-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-architecture-decision-record-creator-57b46c217351dd41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-architecture-decision-record-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-architecture-decision-record-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92d4796e2f36b1cccea888b2f5e066cd55c051b9c63e14ec231a5f43e253780c",
+      "artifactSizeBytes": 2834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T12:23:02.568Z"
+}

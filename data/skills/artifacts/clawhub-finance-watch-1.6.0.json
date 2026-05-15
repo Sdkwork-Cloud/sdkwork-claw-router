@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-watch@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_watch",
+  "skill": {
+    "id": 73397,
+    "skillKey": "clawhub-finance-watch",
+    "name": "财经监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-watch",
+    "url": "https://clawhub.ai/skills/finance-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-watch-9fa4cac18ac575d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时盯盘工具，帮助上班族工作时间查询股票、贵金属价格走势并推送到指定频道"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1774956267065,
+      "changelog": "修复合并问题，优化推送格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e582593a37cf045268df4d17d61d7f5905baa6f3b600a3600390eb0b825449"
+}

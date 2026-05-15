@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cxx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cxx",
+  "skill": {
+    "id": 23396,
+    "skillKey": "clawhub-cxx",
+    "name": "C/C++ Comprehensive Cheat Sheets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cxx",
+    "url": "https://clawhub.ai/skills/cxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cxx-191389ca390f80c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive C/C++ reference with examples from C11-C23 and C++11-C++23, covering system programming, CUDA, debugging, performance, and advanced topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazyguitar",
+      "userId": "s177c2946np1x2kkwk081ry5kh83pt19",
+      "displayName": "CHANG-NING TSAI",
+      "image": "https://avatars.githubusercontent.com/u/3689606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633823170,
+      "changelog": "**Major update: Skill completely reworked for comprehensive C/C++ development reference.**\n\n- Replaced previous \"cc\" (Claude relay command wrapper) with new C/C++ programming assistant skill\n- Added detailed coverage: C11–C23, C++11–C++23, system programming, CUDA, debugging/profiling, build systems, Rust interop, and advanced topics\n- Introduced live fetching of authoritative code examples and explanations from cppcheatsheet.com\n- Includes new structured topic map and usage guidelines references\n- Removed relay session script and prior relay-specific documentation files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a3f2678947b1a9780cefe6595a0152f7bee1509e93deaf9b92003f640ccf699"
+}

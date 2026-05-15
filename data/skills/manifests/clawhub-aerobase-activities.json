@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28363,
+  "uuid": "skill-clawhub-aerobase-activities",
+  "skillKey": "clawhub-aerobase-activities",
+  "name": "Aerobase Activities",
+  "summary": "Discover Viator tours, attractions, and activities near airports with ratings, reviews, and booking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_activities",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aerobase",
+      "features": [
+        "Discover Viator tours, attractions, and activities near airports with ratings, reviews, and boo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerobase-activities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95127236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerobase-activities",
+      "url": "https://clawhub.ai/skills/aerobase-activities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-activities",
+    "url": "https://clawhub.ai/skills/aerobase-activities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-activities-fc4b92a5f0ef2497.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerobase-activities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerobase-activities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6890da14daaf554624dc7b166cfaa4edd3002644ced106a4eb768c51f6901be",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T02:00:18.318Z"
+}

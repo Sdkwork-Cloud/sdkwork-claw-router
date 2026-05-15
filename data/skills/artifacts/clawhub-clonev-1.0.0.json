@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clonev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clonev",
+  "skill": {
+    "id": 11120,
+    "skillKey": "clawhub-clonev",
+    "name": "Clonev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clonev",
+    "url": "https://clawhub.ai/skills/clonev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clonev-8b92629be00b0131.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clone any voice and generate speech using Coqui XTTS v2. SUPER SIMPLE - provide a voice sample (6-30 sec WAV) and text, get cloned voice audio. Supports 14+ languages. Use when the user wants to (1) Clone their voice or someone else's voic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "instant-picture",
+      "userId": "publishers:instant-picture",
+      "displayName": "instant-picture",
+      "image": "https://avatars.githubusercontent.com/u/27382780?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2233,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770219757606,
+      "changelog": "Initial release of CloneV skill – voice cloning made simple.\n\n- Provides a one-command solution for cloning any voice and generating speech using Coqui XTTS v2.\n- Supports 14+ languages; easily specify language code for multi-lingual speech.\n- Requires a 6–30 second WAV voice sample and text; outputs an OGG file with cloned voice.\n- Strict instructions: use only the included `scripts/clonev.sh` script (no direct Docker/API use).\n- Detailed usage, troubleshooting, and reference provided in SKILL.md for quick, efficient deployment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61a8f7b5e2b43749c7c5b7f46d468ca0252ca0c7da55ef2fcf2e6dcf59efa296"
+}

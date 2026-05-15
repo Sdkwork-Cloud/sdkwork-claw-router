@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66824,
+  "uuid": "skill-clawhub-szzg007-customer-crm",
+  "skillKey": "clawhub-szzg007-customer-crm",
+  "name": "SZZG007 Customer CRM",
+  "summary": "统一管理跨境电商客户资料，支持双向云端同步、自动状态更新、客户分级和定期数据维护。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.szzg007_customer_crm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "szzg007",
+      "features": [
+        "统一管理跨境电商客户资料，支持双向云端同步、自动状态更新、客户分级和定期数据维护。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/szzg007-customer-crm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3382996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "szzg007-customer-crm",
+      "url": "https://clawhub.ai/skills/szzg007-customer-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "szzg007-customer-crm",
+    "url": "https://clawhub.ai/skills/szzg007-customer-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/szzg007-customer-crm-222536af59e117bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/szzg007-customer-crm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-szzg007-customer-crm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b21b932050dd9eb15ca60a90799b6091bc2ff8ba838b6cc20eb147ef7274d6e",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:31:28.773Z"
+}

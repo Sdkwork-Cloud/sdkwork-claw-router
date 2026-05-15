@@ -42,13 +42,12 @@ pub struct ForumAuthor {
 #[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct ForumFeedItem {
-    pub id: String,
+    pub id: i64,
     pub title: String,
     pub content: String,
     pub summary: String,
     pub cover_image: String,
     pub content_type: String,
-    pub content_id: i64,
     pub category_id: i64,
     pub tags: Vec<String>,
     pub author: ForumAuthor,
@@ -56,7 +55,6 @@ pub struct ForumFeedItem {
     pub like_count: i64,
     pub comment_count: i64,
     pub share_count: i64,
-    pub favorite_count: i64,
     pub is_liked: bool,
     pub is_collected: bool,
     pub is_top: bool,
@@ -124,8 +122,38 @@ pub struct ForumCommentStatistics {
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
-pub struct ForumBooleanResult {
-    pub ok: bool,
+pub struct ForumOverviewStats {
+    pub total_posts: i64,
+    pub total_comments: i64,
+    pub member_count: i64,
+    pub online_members: i64,
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct ForumCommunityLink {
+    pub id: String,
+    pub label: String,
+    pub url: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub qr_code_url: Option<String>,
+    pub tone: String,
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct ForumOverviewSource {
+    pub source_label: String,
+    pub source_description: String,
+    pub source_tables: Vec<String>,
+    pub observed_at: String,
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct ForumOverview {
+    pub stats: ForumOverviewStats,
+    pub source: ForumOverviewSource,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -164,20 +192,20 @@ pub trait ForumFeedReadStore {
 
     fn load_feed_detail<'a>(
         &'a self,
-        feed_id: String,
+        feed_id: i64,
         subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, Option<ForumFeedItem>>;
-
-    fn load_feed_categories<'a>(
-        &'a self,
-        subject: Option<ForumSubject>,
-    ) -> ForumReadFuture<'a, Vec<String>>;
 
     fn is_feed_collected<'a>(
         &'a self,
         feed_id: i64,
         subject: Option<ForumSubject>,
     ) -> ForumReadFuture<'a, bool>;
+
+    fn load_overview<'a>(
+        &'a self,
+        subject: Option<ForumSubject>,
+    ) -> ForumReadFuture<'a, ForumOverview>;
 }
 
 pub trait ForumFeedCommandStore {
@@ -221,7 +249,7 @@ pub trait ForumFeedCommandStore {
     fn share_feed<'a>(
         &'a self,
         feed_id: i64,
-        subject: Option<ForumSubject>,
+        subject: ForumSubject,
     ) -> ForumCommandFuture<'a, ForumFeedItem>;
 }
 

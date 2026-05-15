@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12337,
+  "uuid": "skill-clawhub-monkeytype-tracker",
+  "skillKey": "clawhub-monkeytype-tracker",
+  "name": "Monkeytype Tracker and Advisor",
+  "summary": "Track and analyze Monkeytype typing statistics with improvement tips. Use when user mentions \"monkeytype\", \"typing stats\", \"typing speed\", \"WPM\", \"typing practice\", \"typing progress\", or wants to check their typing performance. Features on.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monkeytype_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qrucio",
+      "features": [
+        "Track and analyze Monkeytype typing statistics with improvement tips",
+        "Use when user mentions \"monkeytype\", \"typing stats\", \"typing speed\", \"WPM\", \"typing practice\",.",
+        "Features on-demand stats, test history analysis, personal bests, progress comparison, leaderboa.",
+        "Requires user's Monkeytype ApeKey for API access."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monkeytype-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72081900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monkeytype-tracker",
+      "url": "https://clawhub.ai/skills/monkeytype-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monkeytype-tracker",
+    "url": "https://clawhub.ai/skills/monkeytype-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monkeytype-tracker-1174cf6d27e47d9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monkeytype-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monkeytype-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5442865c491926bca8a2715af31682ef7480063411e3628bcb555af3f2b5340",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T12:05:40.815Z"
+}

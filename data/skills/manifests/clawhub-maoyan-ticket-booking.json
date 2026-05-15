@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72271,
+  "uuid": "skill-clawhub-maoyan-ticket-booking",
+  "skillKey": "clawhub-maoyan-ticket-booking",
+  "name": "猫眼电影票购票助手",
+  "summary": "猫眼电影票全自动购票助手。支持影片搜索、热映查询、影院查找、场次选择、智能选座、支付引导、出票查询、取票二维码展示等完整购票流程。使用场景：用户说\"买电影票\"、\"购票\"、\"用猫眼购票\"、\"帮我买电影票\"、\"我想看电影\"、\"最近有什么电影\"、\"附近有什么影院\"、\"选座\"、\"查场次\"时触发。关键词：电影票、猫眼、购票...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maoyan_ticket_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaoyanTech",
+      "features": [
+        "猫眼电影票全自动购票助手。支持影片搜索、热映查询、影院查找、场次选择、智能选座、支付引导、出票查询、取票二维码展示等完整购票流程。使用场景：用户说\"买电影票\"、\"购票\"、\"用猫眼购票\"、\"帮."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maoyan-ticket-booking@1.0.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/maoyan-ticket-booking/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maoyan-ticket-booking",
+      "url": "https://clawhub.ai/skills/maoyan-ticket-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maoyan-ticket-booking",
+    "url": "https://clawhub.ai/skills/maoyan-ticket-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maoyan-ticket-booking-3ab2887caddd4446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maoyan-ticket-booking@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-maoyan-ticket-booking-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff434ef002cdae459a60779e779e8851ddde639833714b7fff9fbb3001780e3b",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:39:09.097Z"
+}

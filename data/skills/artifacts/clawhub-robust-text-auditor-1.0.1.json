@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/robust-text-auditor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robust_text_auditor",
+  "skill": {
+    "id": 70618,
+    "skillKey": "clawhub-robust-text-auditor",
+    "name": "高可靠性文本审核器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robust-text-auditor",
+    "url": "https://clawhub.ai/skills/robust-text-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robust-text-auditor-719aeed21705864c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(已验证) 高可靠性文本审核器，结合本地规则、百度 API 和 AI 深度分析，提供三层合规性审查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774512715258,
+      "changelog": "- Updated SKILL.md with detailed usage instructions, prerequisites, and output information.\n- Clarified the multi-layered auditing approach: local rule scanning, Baidu API review, and AI-based deep analysis.\n- Specified required configuration of Baidu Cloud API credentials.\n- Provided invocation examples for both file-based and string-based auditing.\n- Described output format and expected workflow for integrating with language models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6170f3eb2303aa58301fd33283f30c659228b8194b298bb99230d81070940649"
+}

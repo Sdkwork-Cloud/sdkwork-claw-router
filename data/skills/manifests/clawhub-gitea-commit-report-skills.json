@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60348,
+  "uuid": "skill-clawhub-gitea-commit-report-skills",
+  "skillKey": "clawhub-gitea-commit-report-skills",
+  "name": "gitea-commit-report-skills",
+  "summary": "获取 Gitea 各仓库提交记录，调用 AI 生成进度报告，并发送 HTML 邮件给仓库管理员",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitea_commit_report_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myd2002",
+      "features": [
+        "获取 Gitea 各仓库提交记录，调用 AI 生成进度报告，并发送 HTML 邮件给仓库管理员"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitea-commit-report-skills@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165788146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitea-commit-report-skills",
+      "url": "https://clawhub.ai/skills/gitea-commit-report-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitea-commit-report-skills",
+    "url": "https://clawhub.ai/skills/gitea-commit-report-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitea-commit-report-skills-c3b1da0a69fc35d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitea-commit-report-skills@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitea-commit-report-skills-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a7bd185af0ba470f7f3bfb7b1ff7f0c3aaa7d01398a68bd20f5b53e45be6941",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:07:32.497Z"
+}

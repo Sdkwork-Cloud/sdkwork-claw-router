@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19165,
+  "uuid": "skill-clawhub-agnt-os",
+  "skillKey": "clawhub-agnt-os",
+  "name": "AGENT-OS",
+  "summary": "The operating system layer for AI agents. Routes goals to the right skills. Executes with checkpoints.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnt_os",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hlias Staurou",
+      "features": [
+        "The operating system layer for AI agents",
+        "Routes goals to the right skills",
+        "Executes with checkpoints."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agnt-os@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12682510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agnt-os",
+      "url": "https://clawhub.ai/skills/agnt-os"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnt-os",
+    "url": "https://clawhub.ai/skills/agnt-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnt-os-04642f7588edc634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agnt-os@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agnt-os-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ecbfd4a5228ddb881785329ca69df5554b719d94620ee0d1de902a63f2ebdaa",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:52:37.100Z"
+}

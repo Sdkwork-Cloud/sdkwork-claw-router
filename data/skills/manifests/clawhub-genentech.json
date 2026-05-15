@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48350,
+  "uuid": "skill-clawhub-genentech",
+  "skillKey": "clawhub-genentech",
+  "name": "Genentech",
+  "summary": "Genentech pioneered biotech with gene-engineered drugs, leading antibody therapies and forming Roche's core in oncology and immunology.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genentech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Genentech pioneered biotech with gene-engineered drugs, leading antibody therapies and forming."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genentech@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genentech",
+      "url": "https://clawhub.ai/skills/genentech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genentech",
+    "url": "https://clawhub.ai/skills/genentech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genentech-0e073a66ac24cdc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genentech@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-genentech-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a31bc5d3a4b56c0ffe75609eb163536a76abf6bbd4e1458843342c323dda0002",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T02:07:13.868Z"
+}

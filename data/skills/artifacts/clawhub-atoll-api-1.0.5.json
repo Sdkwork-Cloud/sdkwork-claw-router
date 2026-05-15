@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atoll-api@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atoll_api",
+  "skill": {
+    "id": 35443,
+    "skillKey": "clawhub-atoll-api",
+    "name": "Atoll Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atoll-api",
+    "url": "https://clawhub.ai/skills/atoll-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atoll-api-1f13b39c35cb35a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Atoll project management API for managing tasks, projects, goals, KPIs, initiatives, milestones, comments, members, teams, labels, dependen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doubledipcode",
+      "userId": "s173wqtqa7r6h197tyn77szgdd862hkc",
+      "displayName": "DoubleDipCode",
+      "image": "https://avatars.githubusercontent.com/u/85987575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778328172159,
+      "changelog": "Clarify feedback handling guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d06a754ae454a48c4afcf0806a6e24787b011f705f8e0efd557880c7379ba353"
+}

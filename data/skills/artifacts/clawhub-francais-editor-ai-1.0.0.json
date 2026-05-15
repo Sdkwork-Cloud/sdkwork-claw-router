@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/francais-editor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.francais_editor_ai",
+  "skill": {
+    "id": 40274,
+    "skillKey": "clawhub-francais-editor-ai",
+    "name": "Francais Editor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "francais-editor-ai",
+    "url": "https://clawhub.ai/skills/francais-editor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/francais-editor-ai-11b31c903856068c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "French-speaking content creators edit raw video footage into edited French videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775863745274,
+      "changelog": "Français Editor AI — Version 1.0.0\n\n- First release: French-language video editing and export via AI-powered cloud GPU backend.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB; returns 1080p MP4 files in 1-2 minutes.\n- Provides automatic French subtitles and smart cuts for raw footage.\n- Anonymous session setup and token management included (100 free credits).\n- Simple workflows for upload, edit, preview, and export.\n- Status, credits, export, and edit requests mapped to API actions for a seamless experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:548485e94edc840b6f19ee09b3fc3709cdf83b4f7179eea21f66ce7c19252a6b"
+}

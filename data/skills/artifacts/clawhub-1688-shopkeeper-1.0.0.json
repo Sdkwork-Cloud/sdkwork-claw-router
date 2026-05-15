@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-shopkeeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_shopkeeper",
+  "skill": {
+    "id": 63835,
+    "skillKey": "clawhub-1688-shopkeeper",
+    "name": "1688 Shopkeeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-shopkeeper",
+    "url": "https://clawhub.ai/skills/1688-shopkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-shopkeeper-f8b9e7f8e0723f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1688选品铺货专家。用于：(1) 在1688搜索商品/选品找货源 (2) 查询已绑定的下游店铺 (3) 将商品铺货到抖音/拼多多/小红书/淘宝等平台 (4) 配置1688 AK密钥。 触发词：帮我找商品、在1688搜、选品、铺货、上架、查店铺、配置AK、1688找货。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yclovebf-stack",
+      "userId": "publishers:yclovebf-stack",
+      "displayName": "yclovebf-stack",
+      "image": "https://avatars.githubusercontent.com/u/264936622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773691260350,
+      "changelog": "1688-shopkeeper 1.0.0 初始版本发布\n\n- 支持在1688搜索选品、查询已绑定下游店铺、铺货到抖音/拼多多/小红书/淘宝等平台\n- 支持配置1688 AK密钥，检查配置状态\n- 提供完整命令行入口和标准使用流程说明\n- 包含AK配置与开店操作引导话术\n- FAQ支持，按需加载常见经营问题知识文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:039eeccd0df3a5d0cffe803f874c2a892fa1292e0562e57a1dcfb7388dec13c7"
+}

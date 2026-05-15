@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41095,
+  "uuid": "skill-clawhub-auto-pilot",
+  "skillKey": "clawhub-auto-pilot",
+  "name": "AutoPilot",
+  "summary": "Enables an agent to autonomously decide, act, predict outcomes, and plan next steps in a continuous goal-driven loop without waiting for instructions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theshimaw-svg",
+      "features": [
+        "Enables an agent to autonomously decide, act, predict outcomes, and plan next steps in a contin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-pilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266850601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-pilot",
+      "url": "https://clawhub.ai/skills/auto-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-pilot",
+    "url": "https://clawhub.ai/skills/auto-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-pilot-eebc1701cff78b5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-pilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-pilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dc3be80ea7b6d03646fc21dbd8f67e8974ddc5978442df02f4cf95578d12f12",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T19:43:51.186Z"
+}

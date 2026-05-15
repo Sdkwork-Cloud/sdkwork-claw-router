@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/split-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.split_pdf",
+  "skill": {
+    "id": 42295,
+    "skillKey": "clawhub-split-pdf",
+    "name": "Split PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "split-pdf",
+    "url": "https://clawhub.ai/skills/split-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/split-pdf-e1c99556bb0be3b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Split a single PDF into multiple parts. Supports page ranges, per-page splitting, and fixed chunk splitting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabhdugar",
+      "userId": "s17er4205vjg2p2hpn1fxtpqz1850q84",
+      "displayName": "Rishabh Dugar",
+      "image": "https://avatars.githubusercontent.com/u/7722125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776449574780,
+      "changelog": "Split a single PDF into multiple parts. Supports page ranges (1-3,5,8-10), per-page splitting, and fixed N-chunk splitting. Output is always a zip containing the split PDFs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ed05b41d0524afe08e972d6e97840e28d1a286d718e010180504486568b4451"
+}

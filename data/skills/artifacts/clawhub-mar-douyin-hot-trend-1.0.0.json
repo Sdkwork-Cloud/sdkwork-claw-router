@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-douyin-hot-trend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_douyin_hot_trend",
+  "skill": {
+    "id": 68817,
+    "skillKey": "clawhub-mar-douyin-hot-trend",
+    "name": "mar-douyin-hot-trend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-douyin-hot-trend",
+    "url": "https://clawhub.ai/skills/mar-douyin-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-douyin-hot-trend-d0bde1ddf119dbaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777002015732,
+      "changelog": "douyin-hot-trend v1.1.0 introduces enhanced output and new fields:\n\n- 新增封面图（cover）字段，支持显示热点封面图片链接\n- 优化输出格式，展示更清晰\n- 改进错误处理机制，提高稳定性\n- 保持原有功能，继续支持获取抖音热榜数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21228aaf01e28c3fb80cd0743a1380f64074bec570e2df391c1a1ad43fed28b3"
+}

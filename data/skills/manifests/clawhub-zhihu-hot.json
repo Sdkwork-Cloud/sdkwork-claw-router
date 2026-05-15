@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68821,
+  "uuid": "skill-clawhub-zhihu-hot",
+  "skillKey": "clawhub-zhihu-hot",
+  "name": "知乎热搜",
+  "summary": "获取知乎每日热搜榜单，支持搜索、统计、范围分析。数据从 2021-01-08 至今。",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_hot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dorad",
+      "features": [
+        "获取知乎每日热搜榜单，支持搜索、统计、范围分析。数据从 2021-01-08 至今。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-hot@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23170065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-hot",
+      "url": "https://clawhub.ai/skills/zhihu-hot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-hot",
+    "url": "https://clawhub.ai/skills/zhihu-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-hot-3642716b2a279804.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-hot@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-hot-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449b5116524ed8a89ff48e8e7cf14a645cf7105d01a665e905e86eb49279e332",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:07:46.935Z"
+}

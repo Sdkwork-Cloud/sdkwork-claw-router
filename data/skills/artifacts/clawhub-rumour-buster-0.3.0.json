@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rumour-buster@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rumour_buster",
+  "skill": {
+    "id": 60030,
+    "skillKey": "clawhub-rumour-buster",
+    "name": "Rumour Buster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rumour-buster",
+    "url": "https://clawhub.ai/skills/rumour-buster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rumour-buster-b449f527c7e0d82e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "谣言终结者。双引擎验证消息真假：中文搜索（kimi_search + multi-search-engine）+ 英文搜索（Tavily + multi-search-engine），交叉验证，溯源消息来源。首次使用自动运行 setup 配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harry720320",
+      "userId": "s179jmvwtqbnssrx3d35h41w6h83xmb3",
+      "displayName": "harry720320",
+      "image": "https://avatars.githubusercontent.com/u/15187103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1775199820303,
+      "changelog": "**Major update: Adds automatic setup, cross-language source tracing, and enhanced dual-engine fact-checking.**\n\n- Introduced automatic setup on first use, guiding users to configure search engines and optional Tavily API.\n- Enhanced verification by combining Chinese (kimi_search + multi-search-engine) and English (Tavily + multi-search-engine) searches.\n- Added cross-language source tracing, earliest source detection, and path tracking for forwarded information.\n- Output now features structured verification reports with trust scores, sources, and step-by-step findings.\n- Manual (re)setup supported via setup commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aeb82e07040c931a35a4307647c382e609f46ad9841af37c1619a260e223dd6c"
+}

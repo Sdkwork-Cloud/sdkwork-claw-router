@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compass@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compass",
+  "skill": {
+    "id": 51310,
+    "skillKey": "clawhub-compass",
+    "name": "Compass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compass",
+    "url": "https://clawhub.ai/skills/compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compass-d1068beeb96a6a79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Compass concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1774314773259,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adaa6e14ed68ae7eb2144997941604beef44eff607d642d524701501406f86a3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmpz3kwrq8c@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmpz3kwrq8c",
+  "skill": {
+    "id": 64000,
+    "skillKey": "clawhub-tmpz3kwrq8c",
+    "name": "article-taster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmpz3kwrq8c",
+    "url": "https://clawhub.ai/skills/tmpz3kwrq8c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmpz3kwrq8c-e018b32e118c6f03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文章品鉴师 - 多维度评估文章质量、检测AI味/大便味、识别原创内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forealmy",
+      "userId": "s17d4esfzgz8wrg6e6y93yfsm1842ryh",
+      "displayName": "forealmy",
+      "image": "https://avatars.githubusercontent.com/u/34614792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775705767213,
+      "changelog": "Test with tags and changelog args",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59742fa9ee206e9537995039bd11b96eb3bc12e5b4a4c32fcc92365ecaee5edb"
+}

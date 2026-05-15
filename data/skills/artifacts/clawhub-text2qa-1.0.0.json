@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text2qa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text2qa",
+  "skill": {
+    "id": 51925,
+    "skillKey": "clawhub-text2qa",
+    "name": "get QA pairs from text or session"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text2qa",
+    "url": "https://clawhub.ai/skills/text2qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text2qa-8a342e01c1fd3c56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured Q&A pairs and Selection Preferences from any text source — especially the current chat session or uploaded documents. Use this skill whene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775807341223,
+      "changelog": "Initial release of text2qa skill.\n\n- Extracts structured Q&A pairs and selection preferences from chat sessions or any text source.\n- Automatically identifies both explicit and implicit questions and answers.\n- Synthesizes related dialog into standalone, clearly formatted Q&A pairs.\n- Detects and lists user preferences, constraints, and decision criteria, marking each as direct or inferred.\n- Outputs results in two sections: Q&A Pairs and Selection Preferences, with counts for each.\n- Designed to support summarizing sessions, creating quizzes/flashcards, and building reusable knowledge bases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d40ea9594dfd20ea5e54bb60205555bb661c66b75d4594bf65776ce0cceb461"
+}

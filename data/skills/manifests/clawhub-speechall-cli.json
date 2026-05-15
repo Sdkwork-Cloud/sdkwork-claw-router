@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13445,
+  "uuid": "skill-clawhub-speechall-cli",
+  "skillKey": "clawhub-speechall-cli",
+  "name": "Speechall command-line tool for fast speech-to-text transcription using multiple providers",
+  "summary": "Install and use the speechall CLI tool for speech-to-text transcription. Use when the user wants to: (1) transcribe audio or video files to text, (2) install speechall on macOS or Linux, (3) list available STT models and their capabilities.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speechall_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "atacan",
+      "features": [
+        "Install and use the speechall CLI tool for speech-to-text transcription",
+        "Use when the user wants to: (1) transcribe audio or video files to text, (2) install speechall.",
+        "Triggers on mentions of speechall, audio transcription CLI, or speech-to-text from the command."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speechall-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/765873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speechall-cli",
+      "url": "https://clawhub.ai/skills/speechall-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speechall-cli",
+    "url": "https://clawhub.ai/skills/speechall-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speechall-cli-44bdc1231188763f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speechall-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-speechall-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1a48a85f2bb315ebeccc90efe321092605c21a399ed4c6f77ec5a884e0e04ff",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T19:13:29.426Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caldav-cli@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_cli",
+  "skill": {
+    "id": 12481,
+    "skillKey": "clawhub-caldav-cli",
+    "name": "Caldav Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-cli",
+    "url": "https://clawhub.ai/skills/caldav-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-cli-d864b041931f216d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage CalDAV calendars (iCloud, Google, Yandex) from the command line. Supports OAuth2 and Basic auth, multi-account, table/JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberash-dev",
+      "userId": "s176yqa5a6eagme0n69vzybevs85ndz6",
+      "displayName": "cyberash-dev",
+      "image": "https://avatars.githubusercontent.com/u/20923684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1646,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1770839737079,
+      "changelog": "- Metadata updated to document new requirements: path to config file (`~/.config/caldav-cli/config.json`) and keychain usage.\n- No changes to commands, features, or usage; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab2c0deebee11fc30f9f1c1c78bd8907329500367c576355fd1506e9746a5e58"
+}

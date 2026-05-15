@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10397,
+  "uuid": "skill-clawhub-confidant",
+  "skillKey": "clawhub-confidant",
+  "name": "Confidant",
+  "summary": "Secure secret handoff and credential setup wizard for AI agents. Use when you need sensitive information from the user (API keys, passwords, tokens) or need...",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confidant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Santos",
+      "features": [
+        "Secure secret handoff and credential setup wizard for AI agents",
+        "Use when you need sensitive information from the user (API keys, passwords, tokens) or need..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/confidant@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "confidant",
+      "url": "https://clawhub.ai/skills/confidant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confidant",
+    "url": "https://clawhub.ai/skills/confidant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confidant-4624d3c24fc39e5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/confidant@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-confidant-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5159efe7512cab10974d85d64d04a2e6bcd4d76f0163017944431cf5765cec30",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T01:20:01.771Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-release-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_release_watcher",
+  "skill": {
+    "id": 38661,
+    "skillKey": "clawhub-github-release-watcher",
+    "name": "Github Release Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-release-watcher",
+    "url": "https://clawhub.ai/skills/github-release-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-release-watcher-beec2756c4611d15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor specified GitHub repositories for new releases and receive notifications of newly detected tags."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774638900167,
+      "changelog": "Initial release of GitHub Release Watcher.\n\n- Monitor one or more GitHub repositories for new releases.\n- Requires GitHub CLI (`gh`) and a simple config file (`repos.txt`).\n- Provides an easy shell script workflow for checking and notification.\n- Supports integration with cron jobs and heartbeat checks.\n- Outputs concise status for new and existing releases.\n- Tracks last seen releases in a local JSON state file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24ab9a83e9ce00e8db416164d13d007c68d4ffd2ce74a5525fc24dd0deada82a"
+}

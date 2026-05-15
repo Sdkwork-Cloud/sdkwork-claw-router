@@ -30,6 +30,21 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_provider_routes(),
             )
             .await?,
+            provider_account_pool_routes: row_mapping::load_provider_account_pool_routes(
+                &self.pool,
+                PricingCatalogSql::load_provider_account_pool_routes(),
+            )
+            .await?,
+            routing_policies: row_mapping::load_routing_policies(
+                &self.pool,
+                PricingCatalogSql::load_routing_policies(),
+            )
+            .await?,
+            routing_rules: row_mapping::load_routing_rules(
+                &self.pool,
+                PricingCatalogSql::load_routing_rules(),
+            )
+            .await?,
             pricing_plans: row_mapping::load_pricing_plans(
                 &self.pool,
                 PricingCatalogSql::load_pricing_plans(),

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54586,
+  "uuid": "skill-clawhub-nm-conserve-clear-context",
+  "skillKey": "clawhub-nm-conserve-clear-context",
+  "name": "Nm Conserve Clear Context",
+  "summary": "Automatic context management with graceful handoff to a continuation subagent at 80% usage",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_conserve_clear_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Automatic context management with graceful handoff to a continuation subagent at 80% usage"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-conserve-clear-context@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-conserve-clear-context",
+      "url": "https://clawhub.ai/skills/nm-conserve-clear-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-conserve-clear-context",
+    "url": "https://clawhub.ai/skills/nm-conserve-clear-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-conserve-clear-context-ce1cef7d0dbd252e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-conserve-clear-context@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-conserve-clear-context-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9f9d2513b9ac453e174eeecb2101d32b4903d914df6346ea2dcaa5595ab2cdb",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:32.550Z"
+}

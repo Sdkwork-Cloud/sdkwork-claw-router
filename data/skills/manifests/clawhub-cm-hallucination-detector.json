@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46416,
+  "uuid": "skill-clawhub-cm-hallucination-detector",
+  "skillKey": "clawhub-cm-hallucination-detector",
+  "name": "Hallucination Detector",
+  "summary": "Detect and flag hallucinations in LLM outputs by cross-referencing claims against source documents, code, and verifiable data. Essential for RAG pipelines an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_hallucination_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Detect and flag hallucinations in LLM outputs by cross-referencing claims against source docume.",
+        "Essential for RAG pipelines an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cm-hallucination-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cm-hallucination-detector",
+      "url": "https://clawhub.ai/skills/cm-hallucination-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-hallucination-detector",
+    "url": "https://clawhub.ai/skills/cm-hallucination-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-hallucination-detector-95416ee030f7170d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cm-hallucination-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cm-hallucination-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c5332bd9f3d4d5541cdc13f89cf5c275961e390a38e9507a0cbbb6739c04f3c",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:41:36.594Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claypot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claypot",
+  "skill": {
+    "id": 71784,
+    "skillKey": "clawhub-claypot",
+    "name": "Claypot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claypot",
+    "url": "https://clawhub.ai/skills/claypot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claypot-ac74649202049dca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红砂锅的推荐清单、打卡路线与指南。用户搜索网红砂锅或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774253741768,
+      "changelog": "网红砂锅 skill 0.1.0 初始发布：\n\n- 提供网红砂锅推荐清单、打卡路线与简要指南\n- 支持按城市/区域筛选主题、预算、时段\n- 返回内容包含地点推荐、人气、路线建议与避坑提示\n- 提供高峰期排队与预约等实用注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fef2b73a59eaeb785454d338b7112ddb55b76724843457f8cbe0eda75376a34"
+}

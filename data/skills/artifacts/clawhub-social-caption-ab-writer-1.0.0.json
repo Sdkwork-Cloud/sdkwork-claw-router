@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-caption-ab-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_caption_ab_writer",
+  "skill": {
+    "id": 52246,
+    "skillKey": "clawhub-social-caption-ab-writer",
+    "name": "Social Caption Ab Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-caption-ab-writer",
+    "url": "https://clawhub.ai/skills/social-caption-ab-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-caption-ab-writer-090ab509164dbd22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Caption A/B variant writer for social media. Generate 5 caption variations for any post with different angles, tones, and CTAs — ready to split test across I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774257220739,
+      "changelog": "- Initial release of social-caption-ab-writer.\n- Generates 5 varied caption options for any social media post, ready for A/B testing.\n- Provides 3 optimized hashtag sets per caption variant.\n- Includes diverse CTA styles, recommended posting times, and an A/B testing framework.\n- Offers a prediction for the most likely winning variant, with reasoning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcc4091ba64c911a45c23ae2eac7115457583066db464cb513157be3242c4f52"
+}

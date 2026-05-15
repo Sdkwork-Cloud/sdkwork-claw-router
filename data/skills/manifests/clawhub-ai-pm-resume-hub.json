@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72720,
+  "uuid": "skill-clawhub-ai-pm-resume-hub",
+  "skillKey": "clawhub-ai-pm-resume-hub",
+  "name": "AI产品经理简历维护",
+  "summary": "用于维护 AI 产品经理校招简历中枢。当用户要提炼工作日志、去重沉淀简历要点、维护要点池、生成或更新中文一页纸简历、输出 gap 清单时使用。适合触发词包括“提炼本周日志”“更新简历”“生成一页简历”“整理简历要点池”。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pm_resume_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "songnb1021",
+      "features": [
+        "用于维护 AI 产品经理校招简历中枢。当用户要提炼工作日志、去重沉淀简历要点、维护要点池、生成或更新中文一页纸简历、输出 gap 清单时使用。适合触发词包括“提炼本周日志”“更新简历”“生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-pm-resume-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205056624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-pm-resume-hub",
+      "url": "https://clawhub.ai/skills/ai-pm-resume-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pm-resume-hub",
+    "url": "https://clawhub.ai/skills/ai-pm-resume-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pm-resume-hub-a4611970716873ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-pm-resume-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-pm-resume-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e822772c09b503d84cd2b86f4a7b6dc8410187e9eef4b5b7b42f0658b5c74764",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:17:04.649Z"
+}

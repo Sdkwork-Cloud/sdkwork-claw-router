@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24585,
+  "uuid": "skill-clawhub-auto-config-skiller",
+  "skillKey": "clawhub-auto-config-skiller",
+  "name": "Auto Config Skiller",
+  "summary": "Provides one-click environment initialization, core skill installation, and configuration for OpenClaw users to streamline setup and dependencies.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_config_skiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuhongchen",
+      "features": [
+        "Provides one-click environment initialization, core skill installation, and configuration for O."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-config-skiller@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7197517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-config-skiller",
+      "url": "https://clawhub.ai/skills/auto-config-skiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-config-skiller",
+    "url": "https://clawhub.ai/skills/auto-config-skiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-config-skiller-10b4de0cccdbaabb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-config-skiller@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-config-skiller-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d908a621e8a92a49374e3a6732afb7c14142beded882d2509a31e426c6061f8",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:02:17.132Z"
+}

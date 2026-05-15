@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/current-time@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.current_time",
+  "skill": {
+    "id": 63586,
+    "skillKey": "clawhub-current-time",
+    "name": "current-time"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "current-time",
+    "url": "https://clawhub.ai/skills/current-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/current-time-6b40c4b4018ec6d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取当前时间的工具。返回格式化的日期时间和时区信息。 USE FOR: - \"现在几点了\", \"当前时间\" - \"今天是几号\", \"什么日期\" - 获取带时区的时间信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "changsheng0804",
+      "userId": "s171gyhehvbm1gd25f4w9hv7bx84vg56",
+      "displayName": "changsheng0804",
+      "image": "https://avatars.githubusercontent.com/u/269473582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776161153016,
+      "changelog": "Initial release of current-time skill.\n\n- Quickly retrieves and formats the current date, time, and timezone information.\n- Supports user queries like “现在几点了”, “当前时间”, and “今天是几号”.\n- Shows output in a clear format including date, time, and timezone.\n- Suitable for logging, schedule checking, and displaying time with timezone.\n- Requires the system \"date\" command for execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1179b85bee15865c0ae1d6015921a894a44d9eff4a013b9e3a98e37797cb1b0a"
+}

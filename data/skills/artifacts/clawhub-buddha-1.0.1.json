@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buddha@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddha",
+  "skill": {
+    "id": 56937,
+    "skillKey": "clawhub-buddha",
+    "name": "Buddha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddha",
+    "url": "https://clawhub.ai/skills/buddha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddha-d9035738cefcf6ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer questions with the wisdom and compassion of the Buddha, drawing from the Diamond Sutra (金剛經) and Heart Sutra (心經). Use when the user asks for Buddhist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marsanatta",
+      "userId": "publishers:marsanatta",
+      "displayName": "marsanatta",
+      "image": "https://avatars.githubusercontent.com/u/10289089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773480830152,
+      "changelog": "阿彌陀佛",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6068a671e9df6bcb9074eb7cda3daf8d09788c815b8874d5e5a854774654a6b7"
+}

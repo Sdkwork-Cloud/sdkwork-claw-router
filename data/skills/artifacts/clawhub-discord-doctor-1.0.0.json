@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-doctor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_doctor",
+  "skill": {
+    "id": 10822,
+    "skillKey": "clawhub-discord-doctor",
+    "name": "Discord Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-doctor",
+    "url": "https://clawhub.ai/skills/discord-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-doctor-5aea4d860d18b957.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quick diagnosis and repair for Discord bot, Gateway, OAuth token, and legacy config issues. Checks connectivity, token expiration, and cleans up old Clawdis artifacts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillock",
+      "userId": "publishers:jhillock",
+      "displayName": "jhillock",
+      "image": "https://avatars.githubusercontent.com/u/15968045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2321,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767836337375,
+      "changelog": "Initial release: diagnose and repair Discord bot, Gateway, OAuth token, and legacy Clawdis config issues",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27d2d551cb9e4644786d553137ac3eb35587d7906445a1f5257a582d3ad7c641"
+}

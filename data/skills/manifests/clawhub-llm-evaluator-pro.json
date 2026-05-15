@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15938,
+  "uuid": "skill-clawhub-llm-evaluator-pro",
+  "skillKey": "clawhub-llm-evaluator-pro",
+  "name": "LLM Evaluator Pro",
+  "summary": "LLM-as-a-Judge evaluator via Langfuse. Scores traces on relevance, accuracy, hallucination, and helpfulness using GPT-5-nano as judge. Supports single trace...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_evaluator_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "LLM-as-a-Judge evaluator via Langfuse",
+        "Scores traces on relevance, accuracy, hallucination, and helpfulness using GPT-5-nano as judge",
+        "Supports single trace..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-evaluator-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-evaluator-pro",
+      "url": "https://clawhub.ai/skills/llm-evaluator-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-evaluator-pro",
+    "url": "https://clawhub.ai/skills/llm-evaluator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-evaluator-pro-4b110b55d6e0a74b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-evaluator-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-evaluator-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7e5c0c6993cbfb52fbfcc10994ce4de6e1c2324cbf2ddb5b4cf84c3269cd6df",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T07:21:32.289Z"
+}

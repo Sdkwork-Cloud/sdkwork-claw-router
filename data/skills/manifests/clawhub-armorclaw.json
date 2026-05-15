@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40933,
+  "uuid": "skill-clawhub-armorclaw",
+  "skillKey": "clawhub-armorclaw",
+  "name": "ArmorClaw",
+  "summary": "AES-256 encrypted secrets manager for OpenClaw agents. Store API keys, tokens, and credentials in a secure local vault instead of plain-text .env files. Feat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.armorclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SuperTechGod",
+      "features": [
+        "AES-256 encrypted secrets manager for OpenClaw agents",
+        "Store API keys, tokens, and credentials in a secure local vault instead of plain-text .env files"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/armorclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "armorclaw",
+      "url": "https://clawhub.ai/skills/armorclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "armorclaw",
+    "url": "https://clawhub.ai/skills/armorclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/armorclaw-39b95afdda61d6f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/armorclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-armorclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c59d1150a974dfe8402d6e29f3bfc8b08b3b5cf0679def46e49e90c60488136a",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T02:18:34.122Z"
+}

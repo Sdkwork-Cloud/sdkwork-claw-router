@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_2",
+  "skill": {
+    "id": 13845,
+    "skillKey": "clawhub-coding-2",
+    "name": "Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-2",
+    "url": "https://clawhub.ai/skills/coding-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-2-8e71e6d8a5980b6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design database structures from given data, create backend APIs using the specified endpoint, and develop dynamic HTML dashboards with 60-second polling for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realroc",
+      "userId": "publishers:realroc",
+      "displayName": "YuPeng Wu",
+      "image": "https://avatars.githubusercontent.com/u/44936809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1321,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771141305271,
+      "changelog": "coding-2 v0.1.0 changelog:\n\n- Initial release with instructions for designing database structures and creating dynamic HTML dashboards.\n- Provides guidance for periodic API polling (every 60 seconds) to update dashboard charts in real time.\n- Outlines integration requirements for data insertion into created database structures using specified API endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c26bb027baf10cb54bd418443ecc2de4269adc4d818c54da4e8f3a283cdbcae8"
+}

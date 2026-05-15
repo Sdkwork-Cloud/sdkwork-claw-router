@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40375,
+  "uuid": "skill-clawhub-baidu-smart-search",
+  "skillKey": "clawhub-baidu-smart-search",
+  "name": "Baidu Smart Search",
+  "summary": "Call Baidu Qianfan web search APIs to search the live web with AppBuilder credentials and return structured results. Use when a task specifically needs Baidu...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_smart_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Winrunner_20",
+      "features": [
+        "Call Baidu Qianfan web search APIs to search the live web with AppBuilder credentials and retur.",
+        "Use when a task specifically needs Baidu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-smart-search@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65005620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-smart-search",
+      "url": "https://clawhub.ai/skills/baidu-smart-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-smart-search",
+    "url": "https://clawhub.ai/skills/baidu-smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-smart-search-5700baad07f78250.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-smart-search@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-smart-search-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edf19e1857939e134a7be260b8a48751b5bbce1de83eabecb8053e92e46c0328",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:47:54.077Z"
+}

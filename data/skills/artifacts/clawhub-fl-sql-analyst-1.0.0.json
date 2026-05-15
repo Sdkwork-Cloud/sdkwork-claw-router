@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fl-sql-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fl_sql_analyst",
+  "skill": {
+    "id": 18711,
+    "skillKey": "clawhub-fl-sql-analyst",
+    "name": "SQL Data Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fl-sql-analyst",
+    "url": "https://clawhub.ai/skills/fl-sql-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fl-sql-analyst-caf1455ee3447916.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Natural language to SQL. Ask questions about your data in plain English, get queries, results, and explanations. Supports SQLite, PostgreSQL, and MySQL. Impo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philipstark",
+      "userId": "publishers:philipstark",
+      "displayName": "PhilipStark",
+      "image": "https://avatars.githubusercontent.com/u/186941063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773332935270,
+      "changelog": "Initial release - natural language to SQL, multi-DB support, CSV import, saved queries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c4a10814746025a1caa4a42d15bd2e3f47bd979a5df5893f3f27e943934e7ed"
+}

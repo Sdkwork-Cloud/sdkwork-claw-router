@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62363,
+  "uuid": "skill-clawhub-claw-value",
+  "skillKey": "clawhub-claw-value",
+  "name": "Claw-Value-Judge",
+  "summary": "OpenClaw Claw度评估系统 - 量化你的 AI 自动化能力，生成龙虾能力估值趣味评估报告。支持16套主题、5级Mock数据、游戏化展示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_value",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LazyYoun",
+      "features": [
+        "OpenClaw Claw度评估系统",
+        "量化你的 AI 自动化能力，生成龙虾能力估值趣味评估报告。支持16套主题、5级Mock数据、游戏化展示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-value@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10864203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-value",
+      "url": "https://clawhub.ai/skills/claw-value"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-value",
+    "url": "https://clawhub.ai/skills/claw-value",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-value-6eb0fb71347549f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-value@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-value-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67ceb6b57321fc9b705b6429e8491c0e4d68687065e16f5b5d43b8d7ef01a83c",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:58:31.939Z"
+}

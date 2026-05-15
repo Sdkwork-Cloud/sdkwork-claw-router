@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24449,
+  "uuid": "skill-clawhub-agentic-lending-evk",
+  "skillKey": "clawhub-agentic-lending-evk",
+  "name": "Agentic Lending EVK",
+  "summary": "Plan and execute the current EVK-first agentic lending workflow for Api3-backed markets. Use when a user wants an agent to resolve the oracle route for selec...",
+  "version": "0.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_lending_evk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dave",
+      "features": [
+        "Plan and execute the current EVK-first agentic lending workflow for Api3-backed markets",
+        "Use when a user wants an agent to resolve the oracle route for selec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-lending-evk@0.1.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49767509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-lending-evk",
+      "url": "https://clawhub.ai/skills/agentic-lending-evk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-lending-evk",
+    "url": "https://clawhub.ai/skills/agentic-lending-evk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-lending-evk-f448cfca7ae3ecb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-lending-evk@0.1.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-lending-evk-0.1.13.json",
+      "version": "0.1.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:036d67bfa2d1fa92e65edb1e4a1763b5474a39f1451ae29fdf54ebc51a0476fb",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:39:38.313Z"
+}

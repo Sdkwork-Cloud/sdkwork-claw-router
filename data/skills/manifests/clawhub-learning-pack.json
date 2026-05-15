@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60143,
+  "uuid": "skill-clawhub-learning-pack",
+  "skillKey": "clawhub-learning-pack",
+  "name": "Learning Pack",
+  "summary": "适合新手的 OpenClaw 技能学习包，包含 10 个核心技能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_pack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tpc1009",
+      "features": [
+        "适合新手的 OpenClaw 技能学习包，包含 10 个核心技能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43206207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-pack",
+      "url": "https://clawhub.ai/skills/learning-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-pack",
+    "url": "https://clawhub.ai/skills/learning-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-pack-ba9e12d325a9694a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370a2c16ad80b0d0dd3b1639edb5339510b7c1e873f8df07daffeeed15de5ff0",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:29:08.642Z"
+}

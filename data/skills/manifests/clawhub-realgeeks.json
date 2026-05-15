@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31794,
+  "uuid": "skill-clawhub-realgeeks",
+  "skillKey": "clawhub-realgeeks",
+  "name": "Realgeeks",
+  "summary": "RealGeeks integration. Manage Leads, Persons, Organizations, Deals, Activities, Notes and more. Use when the user wants to interact with RealGeeks data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realgeeks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "RealGeeks integration",
+        "Manage Leads, Persons, Organizations, Deals, Activities, Notes and more",
+        "Use when the user wants to interact with RealGeeks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realgeeks@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realgeeks",
+      "url": "https://clawhub.ai/skills/realgeeks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realgeeks",
+    "url": "https://clawhub.ai/skills/realgeeks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realgeeks-8561ae3ffb56ca03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realgeeks@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-realgeeks-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf0fcda026ac95c554b5380694fe4ded9ba2a89088a8a332d3ddc022d1e221a8",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:02.569Z"
+}

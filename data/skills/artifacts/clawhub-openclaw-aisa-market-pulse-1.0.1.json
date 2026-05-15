@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-market-pulse@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_market_pulse",
+  "skill": {
+    "id": 19292,
+    "skillKey": "clawhub-openclaw-aisa-market-pulse",
+    "name": "MarketPulse (Stocks + Crypto Data)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-market-pulse",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-market-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-market-pulse-5c17af37b4568f15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaimengphp",
+      "userId": "s176gjzd7rb2en9j7fcxwyp5qs83gbwb",
+      "displayName": "chaimengphp",
+      "image": "https://avatars.githubusercontent.com/u/18716845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1132,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773813908578,
+      "changelog": "Version 1.0.1 of openclaw-aisa-market-pulse\n\n- No file changes detected; content, features, and documentation remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0366b3ab0ee6fa2cf0e0c610cef0b7af93b15d040e83d7db7030ef3bef3d8c1b"
+}

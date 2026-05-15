@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reprompter@7.0.0",
+  "version": "7.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reprompter",
+  "skill": {
+    "id": 26439,
+    "skillKey": "clawhub-reprompter",
+    "name": "RePrompter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reprompter",
+    "url": "https://clawhub.ai/skills/reprompter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reprompter-fbe69831ffdf17df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform messy prompts into well-structured, effective prompts — single or multi-agent. Use when: \"reprompt\", \"reprompt this\", \"clean up this prompt\", \"stru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aytuncyildizli",
+      "userId": "publishers:aytuncyildizli",
+      "displayName": "AytuncYildizli",
+      "image": "https://avatars.githubusercontent.com/u/47717026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 932,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "7.0.0",
+      "createdAt": 1771191889061,
+      "changelog": "v7.0 — Score 9.1/10, Repromptception pipeline, Agent Teams support, 12 task templates, smart complexity routing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc357f00b7a59baa8b3f1e2cc8b713dd84760f4055367a50c659f67af80909b0"
+}

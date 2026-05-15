@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73238,
+  "uuid": "skill-clawhub-english-learning-checkin",
+  "skillKey": "clawhub-english-learning-checkin",
+  "name": "英语打卡（每日学习 每日练）",
+  "summary": "每日记录并管理托福、雅思等多类型英语学习进度，附带每日自动生成中英对照名言激励。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_learning_checkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike Dai",
+      "features": [
+        "每日记录并管理托福、雅思等多类型英语学习进度，附带每日自动生成中英对照名言激励。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/english-learning-checkin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7587755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "english-learning-checkin",
+      "url": "https://clawhub.ai/skills/english-learning-checkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-learning-checkin",
+    "url": "https://clawhub.ai/skills/english-learning-checkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-learning-checkin-12e87421e89931b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/english-learning-checkin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-english-learning-checkin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e33435e4abf5c49b5969aede49aee2ddf487bd3d187d133f0ebf5503793501d",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:12:54.943Z"
+}

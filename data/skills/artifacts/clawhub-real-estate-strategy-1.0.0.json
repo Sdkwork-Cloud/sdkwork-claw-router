@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/real-estate-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_strategy",
+  "skill": {
+    "id": 72679,
+    "skillKey": "clawhub-real-estate-strategy",
+    "name": "地产项目前期产策报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-strategy",
+    "url": "https://clawhub.ai/skills/real-estate-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-strategy-2177e5936f62f3a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "地产项目前期产策定位专业技能。覆盖新项目立项研判、竞品分析报告、产品定位方案、投前风险排查、客户研究报告。 触发条件：用户提及\"产策定位\"\"竞品分析\"\"土地研判\"\"产品定位\"\"投前风险\"等关键词，或用户提供项目名称+城市时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luojiangyong",
+      "userId": "s179tgrbsc9h48r6jgk4wcjm9n8451xk",
+      "displayName": "LuoJiangYong",
+      "image": "https://avatars.githubusercontent.com/u/34528708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775929490458,
+      "changelog": "地产项目前期产策定位专业技能。覆盖新项目立项研判、竞品分析报告、产品定位方案、投前风险排查、客户研究报告。用户提及\"产策定位\"\"竞品分析\"\"土地研判\"\"产品定位\"\"投前风险\"等关键词，或用户提供项目名称+城市时激活。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e079852b0823181dc5ab12960a3ec42655d7fa649cdb8588dd3842cce1b2a44e"
+}

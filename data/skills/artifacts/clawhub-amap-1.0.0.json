@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap",
+  "skill": {
+    "id": 65872,
+    "skillKey": "clawhub-amap",
+    "name": "amap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap",
+    "url": "https://clawhub.ai/skills/amap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-19e7cd7be5efe4a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用高德地图Web服务API进行地点搜索、天气查询和路线规划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dboy233",
+      "userId": "publishers:dboy233",
+      "displayName": "Dboy233",
+      "image": "https://avatars.githubusercontent.com/u/37604230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4749,
+      "installsAllTime": 56,
+      "installsCurrent": 54,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769696427545,
+      "changelog": "- Initial release of the amap skill.\n- Provides location search, weather queries, and route planning using Gaode (Amap) Web Service API.\n- Requires users to set the AMAP_KEY environment variable with their API Key.\n- Supports real-time weather, weather forecast, POI search, route planning, geocoding, reverse geocoding, and administrative code lookup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa6525dbef60b21ac11fa0c2c23f1ec4425380d112136b058980f09b21ea067f"
+}

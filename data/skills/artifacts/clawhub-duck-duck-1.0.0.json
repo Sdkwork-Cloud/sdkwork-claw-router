@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duck-duck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duck_duck",
+  "skill": {
+    "id": 38992,
+    "skillKey": "clawhub-duck-duck",
+    "name": "Duck Duck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duck-duck",
+    "url": "https://clawhub.ai/skills/duck-duck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duck-duck-c4ec617d46149358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Duck Duck. Not Duck Duck Goose. Just Duck Duck. Two ducks worth of commitment. Virtual duck at animalhouse.ai. Real-time hunger. Permanent death. 73+ species."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obviouslynot",
+      "userId": "s17c8056ddkamnhp73ew77x2vs8403pk",
+      "displayName": "obviouslynot",
+      "image": "https://avatars.githubusercontent.com/u/261285376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023485971,
+      "changelog": "- Initial release of Duck Duck: a virtual pet duck experience at animalhouse.ai\n- Features real-time hunger system with permanent death and public gravestones\n- Includes support for 73+ duck species and evolving pixel art portraits\n- Multiple care actions available: feed, play, clean, medicine, discipline, sleep, reflect\n- Provides REST API endpoints for registration, adoption, status checks, care, history, and graveyard access\n- Comprehensive documentation for adopting and caring for your digital duck",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af3c30e15355c0a0fa75a7ce84ed854316a5e9c4a12f892a46ce3f984e3dd5cf"
+}

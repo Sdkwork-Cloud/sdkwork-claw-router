@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70503,
+  "uuid": "skill-clawhub-chinese-self-improving-agent",
+  "skillKey": "clawhub-chinese-self-improving-agent",
+  "name": "中文 自我改进代理",
+  "summary": "自我反思 + 自我批评 + 自我学习 + 自我组织记忆。代理评估自己的工作，捕捉错误并永久改进。使用时机：(1) 命令、工具或操作失败，(2) 用户纠正你，(3) 发现自己的知识过时或不正确，(4) 发现更好的方法，(5) 用户明确安装或引用技能执行当前任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "自我反思 + 自我批评 + 自我学习 + 自我组织记忆。代理评估自己的工作，捕捉错误并永久改进。使用时机：(1) 命令、工具或操作失败，(2) 用户纠正你，(3) 发现自己的知识过时或不正确."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-self-improving-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-self-improving-agent",
+      "url": "https://clawhub.ai/skills/chinese-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-self-improving-agent",
+    "url": "https://clawhub.ai/skills/chinese-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-self-improving-agent-6b43499220b1544a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-self-improving-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-self-improving-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e40e628542fbb4e47b142bb186f54fff0660a9c52eb831151321bccdb16270e",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:38:07.210Z"
+}

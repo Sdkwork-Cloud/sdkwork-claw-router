@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9963,
+  "uuid": "skill-clawhub-polymarket-copytrading",
+  "skillKey": "clawhub-polymarket-copytrading",
+  "name": "Polymarket Copytrading",
+  "summary": "Mirror positions from top Polymarket traders. Polling mode (free) for portfolio-style copying, Reactor mode (Pro) for event-driven real-time mirroring via Si...",
+  "version": "1.10.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_copytrading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "Mirror positions from top Polymarket traders",
+        "Polling mode (free) for portfolio-style copying, Reactor mode (Pro) for event-driven real-time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-copytrading@1.10.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-copytrading",
+      "url": "https://clawhub.ai/skills/polymarket-copytrading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-copytrading",
+    "url": "https://clawhub.ai/skills/polymarket-copytrading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-copytrading-b71bdaff820a6174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-copytrading@1.10.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-copytrading-1.10.2.json",
+      "version": "1.10.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0de3e25d2a56d9bd499e68d07392b7405a235e02fa78e873979891299436bdd",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:06:35.875Z"
+}

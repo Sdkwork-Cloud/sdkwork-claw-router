@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coauthoring@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coauthoring",
+  "skill": {
+    "id": 37163,
+    "skillKey": "clawhub-coauthoring",
+    "name": "Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coauthoring",
+    "url": "https://clawhub.ai/skills/coauthoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coauthoring-e5f370a9b2ae2d99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774318787865,
+      "changelog": "doc-coauthoring 1.0.0 initial release:\n\n- Introduces a structured workflow for co-authoring documentation, including proposals, specs, and decision docs.\n- Guides users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.\n- Supports flexible input, integrating with document and messaging platforms when possible.\n- Offers section-by-section document building, brainstorming, and iterative refinement.\n- Provides recommendations for accessibility improvements, such as alt-text for images.\n- Ensures finished documents are effective for readers, including through simulated fresh reads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8fec993eb83c2b5068cf25975b57b78cdafc9c5b2c7070e205d81b0ea08b12d"
+}

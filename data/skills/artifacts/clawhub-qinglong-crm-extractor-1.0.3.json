@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qinglong-crm-extractor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qinglong_crm_extractor",
+  "skill": {
+    "id": 18967,
+    "skillKey": "clawhub-qinglong-crm-extractor",
+    "name": "Qinglong Crm Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qinglong-crm-extractor",
+    "url": "https://clawhub.ai/skills/qinglong-crm-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qinglong-crm-extractor-a792557036acc4fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates CRM login, extracts business data and HTML source, and generates structured data reports from CRM pages using Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandasun",
+      "userId": "publishers:pandasun",
+      "displayName": "qinlong",
+      "image": "https://avatars.githubusercontent.com/u/4972175?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772637728575,
+      "changelog": "- Major rebranding: Skill renamed from QingLong CRM 数据提取工具 to 太空登录 (space-login), with all documentation updated.\n- Core functionality changed from CRM data extraction to an imaginative space login and management system.\n- Added new files for example configuration, login demonstration, dependency management, and the main script (config.example.json, login_example.py, requirements.txt, space_login.py).\n- Removed previous CRM extractor scripts and project files (main.py, pyproject.toml, qinglong_crm_extractor.py).\n- Comprehensive new documentation with setup instructions, usage examples, API reference, feature list, supported destinations, and FAQ.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b5e0040a81051650da815670680becb7f4489b900a6b546c7403534621cca173"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aviasales-flights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviasales_flights",
+  "skill": {
+    "id": 40646,
+    "skillKey": "clawhub-aviasales-flights",
+    "name": "Aviasales Flight Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviasales-flights",
+    "url": "https://clawhub.ai/skills/aviasales-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviasales-flights-8a40cc70429c1c06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for cheap flights and airfare via Travelpayouts/Aviasales API. Supports date-specific search, price calendar, round-trip, cheapest-price monitoring, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aspalagin",
+      "userId": "s1782txy28kn20fv5e6a02850x84gjhq",
+      "displayName": "aspalagin",
+      "image": "https://avatars.githubusercontent.com/u/263096044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775764659676,
+      "changelog": "Initial release: search cheap flights via Aviasales/Travelpayouts API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31fbaa7d623e7a5441a26a53b53c7eefe7f021cbfc9691ee37738129e8eb94b1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/localhost-bridge@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localhost_bridge",
+  "skill": {
+    "id": 19347,
+    "skillKey": "clawhub-localhost-bridge",
+    "name": "Localhost Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localhost-bridge",
+    "url": "https://clawhub.ai/skills/localhost-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localhost-bridge-274ed506e49439c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge Docker containers to host localhost services via socat. Solves the #1 networking issue in containerized AI agent deployments: containers can't reach s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superworldsavior",
+      "userId": "s1780dfmwpjesx1ngmtvpg2bds858vsj",
+      "displayName": "Erwan Lee Pesle",
+      "image": "https://avatars.githubusercontent.com/u/20945750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 619,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772184107176,
+      "changelog": "v2: Updated naming convention socat-source-target-port. Removed ITIL references. Set privileged false.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f25720649838fdf5792425e2504d4da7eef70d39edda240a0df4839352c911d"
+}

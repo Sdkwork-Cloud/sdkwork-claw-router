@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26745,
+  "uuid": "skill-clawhub-matrix-openapi-skill",
+  "skillKey": "clawhub-matrix-openapi-skill",
+  "name": "Matrix OpenAPI Skill",
+  "summary": "Operate Matrix Client-Server API through UXC with a curated OpenAPI schema, bearer-token auth, and homeserver-aware messaging guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.matrix_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Matrix Client-Server API through UXC with a curated OpenAPI schema, bearer-token auth,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/matrix-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "matrix-openapi-skill",
+      "url": "https://clawhub.ai/skills/matrix-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "matrix-openapi-skill",
+    "url": "https://clawhub.ai/skills/matrix-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/matrix-openapi-skill-4eaf027fefab4955.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/matrix-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-matrix-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7b18aec19e534bfc3a39858185a67f85987a185a076eff477785d20835f56a1",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:07:21.215Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-pathfind@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_pathfind",
+  "skill": {
+    "id": 52690,
+    "skillKey": "clawhub-oraclaw-pathfind",
+    "name": "Oraclaw Pathfind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-pathfind",
+    "url": "https://clawhub.ai/skills/oraclaw-pathfind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-pathfind-b2450cf17390c4a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A* pathfinding and task sequencing for AI agents. Find the optimal path through workflows, dependencies, and decision trees. K-shortest paths via Yen's algor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774616571294,
+      "changelog": "- Initial release of OraClaw Pathfind: A* pathfinding and task sequencing for AI agents.\n- Supports optimal pathfinding through workflows, dependency networks, and decision trees.\n- Provides K-shortest paths via Yen's algorithm with configurable heuristics (cost, time, risk, weighted).\n- Returns full cost, time, and risk breakdowns for each route.\n- Free tier (3,000 calls/month); pricing set at $0.03 per query.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8223dda9f9c341d198c25af8d40f2e1d9a850091a452d87d1c81d267fe453e1"
+}

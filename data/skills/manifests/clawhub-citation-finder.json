@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22698,
+  "uuid": "skill-clawhub-citation-finder",
+  "skillKey": "clawhub-citation-finder",
+  "name": "citation-finder",
+  "summary": "Academic citation lookup and formatter. Given a fuzzy paper title (Chinese or English), searches CrossRef, Semantic Scholar, Baidu Scholar, and CNKI, then re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "Academic citation lookup and formatter",
+        "Given a fuzzy paper title (Chinese or English), searches CrossRef, Semantic Scholar, Baidu Scho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-finder",
+      "url": "https://clawhub.ai/skills/citation-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-finder",
+    "url": "https://clawhub.ai/skills/citation-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-finder-ba66fecf971188f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f4c2a2913e7a28da11c0745d2f73976aaaacd1accae094fa3a3c05bc74e008d",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:50:12.151Z"
+}

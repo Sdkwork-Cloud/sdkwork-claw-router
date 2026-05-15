@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/globepilot-ai-agent-2@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.globepilot_ai_agent_2",
+  "skill": {
+    "id": 10935,
+    "skillKey": "clawhub-globepilot-ai-agent-2",
+    "name": "GlobePilot AI Agent 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "globepilot-ai-agent-2",
+    "url": "https://clawhub.ai/skills/globepilot-ai-agent-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/globepilot-ai-agent-2-7c0b472b4b847568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered global travel assistant providing visa info, currency conversion, airport status, events, cultural tips, emergency contacts, and travel recommenda..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sarqovik",
+      "userId": "publishers:sarqovik",
+      "displayName": "sarqovik",
+      "image": "https://avatars.githubusercontent.com/u/42547245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770280096207,
+      "changelog": "- Added .meta.json file for improved metadata and discoverability.  \n- No changes to commands or user-facing functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf57cfec813ae576751de4388a6a128eb006614a13b39de92bb352aab69f1f9d"
+}

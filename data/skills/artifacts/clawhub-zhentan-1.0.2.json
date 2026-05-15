@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhentan@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhentan",
+  "skill": {
+    "id": 32456,
+    "skillKey": "clawhub-zhentan",
+    "name": "Zhentan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhentan",
+    "url": "https://clawhub.ai/skills/zhentan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhentan-a4e0401a72360dae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zhentan is your personal onchain security agent and co-signer. It monitors pending multisig transactions, screens them against behavioral patterns and securi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koshikraj",
+      "userId": "s17bw700try6c9hj6wvs33kmr583m332",
+      "displayName": "koshikraj",
+      "image": "https://avatars.githubusercontent.com/u/4023530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774776173903,
+      "changelog": "Changes for multi-user\n\n- Removed dmScore",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be008902144bdc9430291d344863cee943011902bc11262071cf4cb4d3d8a171"
+}

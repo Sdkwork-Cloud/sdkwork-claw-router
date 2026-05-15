@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_generator_free",
+  "skill": {
+    "id": 42476,
+    "skillKey": "clawhub-youtube-generator-free",
+    "name": "Youtube Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-generator-free",
+    "url": "https://clawhub.ai/skills/youtube-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-generator-free-14d5505d1109ad46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short blog post about travel tips into 1080p ready-to-upload videos just by typing what you need. Whether it's generating YouTube videos from text or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775981377662,
+      "changelog": "YouTube Generator Free v1.0.0 — Initial Release\n\n- Instantly generate 1080p YouTube-ready videos from text or short blog posts; simply type your content and desired output.\n- Automatically handles user authentication and session creation for free (100 credits, valid 7 days).\n- Supports quick file upload (video, audio, images, text) and instant video rendering (1–2 minutes for 30s clips).\n- Simple command-based workflow: check credits, view timeline state, export/download your project.\n- All video processing is cloud-based — nothing to install locally.\n- Error handling and feedback for common issues like file size, format, or credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb666af051e820c219887f44d27d2537877b12b75a5f17673955e8b02e8b556c"
+}

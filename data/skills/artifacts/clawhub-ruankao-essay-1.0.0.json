@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ruankao-essay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ruankao_essay",
+  "skill": {
+    "id": 69730,
+    "skillKey": "clawhub-ruankao-essay",
+    "name": "软考论文生成 | Ruankao Essay Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ruankao-essay",
+    "url": "https://clawhub.ai/skills/ruankao-essay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ruankao-essay-0b831e8b3ab4b43e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成中国软考系统架构设计师论文。根据论题和要求，按照万能模板结构生成高分论文。 论文包含摘要（300-330字）和正文（2000-2500字）五段式结构：项目背景、理论过渡、技术实践、总结展望。 使用场景：当用户提供软考论文题目、系统架构设计师考试论文、软考论文练习时触发。 触发词：软考论文、架构设计师论文、系统..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wujiaming88",
+      "userId": "s171ccng28wdj2n2tdtw8q70zd83ha4q",
+      "displayName": "Garming",
+      "image": "https://avatars.githubusercontent.com/u/7887545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774243092182,
+      "changelog": "初始发布：系统架构设计师论文万能模板，五段式结构，支持多主题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d959e9e598ab06db7a3b2a5949be9dfcce34cf538aa4353426c5129e1c7c41f"
+}

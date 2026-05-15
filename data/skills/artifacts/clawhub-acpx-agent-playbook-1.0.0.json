@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acpx-agent-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx_agent_playbook",
+  "skill": {
+    "id": 25776,
+    "skillKey": "clawhub-acpx-agent-playbook",
+    "name": "ACPX Agent Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx-agent-playbook",
+    "url": "https://clawhub.ai/skills/acpx-agent-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-agent-playbook-1f138d61ceda397e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical playbook for running agents through acpx in persistent sessions, especially when Claude, Codex, Pi, Gemini, OpenCode, or other ACP-compatible agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spyfree",
+      "userId": "s175y9e87xpst713zv7cffhc4983g4ca",
+      "displayName": "Li Xin",
+      "image": "https://avatars.githubusercontent.com/u/2403860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773723011913,
+      "changelog": "Initial public release: generalize acpx-codex-playbook into a multi-agent acpx delivery playbook with verification ladder, permission-policy guidance, agent matrix, migration notes, and PPT/artifact workflow references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e73bf07c093bfca7f03965cf8b56883dbe091f22a63307aca8ab30d440e49ee7"
+}

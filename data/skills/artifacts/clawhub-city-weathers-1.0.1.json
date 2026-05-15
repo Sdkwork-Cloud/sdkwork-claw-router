@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/city-weathers@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_weathers",
+  "skill": {
+    "id": 26583,
+    "skillKey": "clawhub-city-weathers",
+    "name": "mycityweather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-weathers",
+    "url": "https://clawhub.ai/skills/city-weathers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-weathers-d9e9b20406606266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured weather data including temperature, humidity, wind, precipitation, and clothing advice for specified cities and dates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shilingong",
+      "userId": "s17114q8zbn6cfqapngk376ebh83h9yk",
+      "displayName": "shilingong",
+      "image": "https://avatars.githubusercontent.com/u/29935757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775199636471,
+      "changelog": "- No changes detected in this version.\n- The skill’s documentation, features, and version fields remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75b5064a7ff2b45c15fd963d4a6b2d74204fa859f66fea3ce526dd3e6a922c7f"
+}

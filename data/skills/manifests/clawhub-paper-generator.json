@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41816,
+  "uuid": "skill-clawhub-paper-generator",
+  "skillKey": "clawhub-paper-generator",
+  "name": "Paper Generator",
+  "summary": "Automatically generate complete academic papers in Chinese or English from experimental code, supporting LaTeX templates and PDF conversion.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laojun",
+      "features": [
+        "Automatically generate complete academic papers in Chinese or English from experimental code, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-generator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26532654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-generator",
+      "url": "https://clawhub.ai/skills/paper-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-generator",
+    "url": "https://clawhub.ai/skills/paper-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-generator-1c0a5e823519418a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-generator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-generator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:034b891d4068431f00636e2273de52865f3e0d1db0a3e7cb47dde7dad490c78a",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:58:01.806Z"
+}

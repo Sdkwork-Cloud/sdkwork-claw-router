@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44989,
+  "uuid": "skill-clawhub-image-to-video-grok",
+  "skillKey": "clawhub-image-to-video-grok",
+  "name": "Image To Video Grok",
+  "summary": "convert static images into animated video clips with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. content creators and marketers use it for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_grok",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "convert static images into animated video clips with this skill",
+        "Works with JPG, PNG, WEBP, GIF files up to 200MB",
+        "content creators and marketers use it for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-video-grok@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-video-grok",
+      "url": "https://clawhub.ai/skills/image-to-video-grok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-grok",
+    "url": "https://clawhub.ai/skills/image-to-video-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-grok-a3a0b30b2ecd3bd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-video-grok@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-grok-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d52d33fef130c93cf66678f853e0a4600c6b35cb1053d1aa4c70f88ccf025284",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:20:47.246Z"
+}

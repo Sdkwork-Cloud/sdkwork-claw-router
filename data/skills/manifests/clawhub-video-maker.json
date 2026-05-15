@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42906,
+  "uuid": "skill-clawhub-video-maker",
+  "skillKey": "clawhub-video-maker",
+  "name": "Video Maker",
+  "summary": "Get polished MP4 videos ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, AVI, WebM, up to 500MB), say something...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get polished MP4 videos ready to post, without touching a single slider",
+        "Upload your video clips or images (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-maker",
+      "url": "https://clawhub.ai/skills/video-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker",
+    "url": "https://clawhub.ai/skills/video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-72be99d86045dc2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5fa63bcfcadc91225fdec6953deddc9923be94a1ff52b79ee4252b646ab2e7a",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T17:17:10.212Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mckinsey-presentation-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mckinsey_presentation_generator",
+  "skill": {
+    "id": 19157,
+    "skillKey": "clawhub-mckinsey-presentation-generator",
+    "name": "McKinsey Presentation Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mckinsey-presentation-generator",
+    "url": "https://clawhub.ai/skills/mckinsey-presentation-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mckinsey-presentation-generator-b80f02b968cf885d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "McKinsey consulting-style multi-page HTML presentation generator. Creates data-rich, visually compelling slide decks with rigorous research, SVG charts, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinin2005",
+      "userId": "s172qp83r8yqx1mzkgzf64t4pd83m838",
+      "displayName": "yinin2005",
+      "image": "https://avatars.githubusercontent.com/u/26345670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774510427567,
+      "changelog": "McKinsey-Style Presentation Generator v1.0.0\n\n- Launches a tool to create consulting-style, data-driven HTML presentations with rigorous research and SVG charts.\n- Enforces a strict research-first workflow requiring at least 15 sourced data points from a minimum of 5 different sources.\n- Implements a professional design system: square corners, limited accent colors, information-dense layouts, and precise color usage.\n- Each slide requires at least 4 distinct content zones; source citations are included on every content page.\n- Gradients allowed only on cover/section dividers; generated images are prohibited except for rare, data-driven cases.\n- Covers the complete process: research → planning → slide creation → deployment, with clear templates for research summaries, tables of sources, and slide structures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b080af30ca30b6b28ee55b6448845ed747b0157b8b49445cf5d1231fe230b84"
+}

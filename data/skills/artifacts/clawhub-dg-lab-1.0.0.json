@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dg-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dg_lab",
+  "skill": {
+    "id": 56639,
+    "skillKey": "clawhub-dg-lab",
+    "name": "DG-LAB Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dg-lab",
+    "url": "https://clawhub.ai/skills/dg-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dg-lab-22fe20e0886f3ce6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control DG-LAB Coyote 3.0 (郊狼) pulse device via WebSocket. Manage strength, send waveform patterns, handle device pairing. Use when the user mentions 郊狼, DG-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuuluo",
+      "userId": "publishers:yuuluo",
+      "displayName": "YuuLuo",
+      "image": "https://avatars.githubusercontent.com/u/69673808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773488993520,
+      "changelog": "Initial release of the DG-LAB Coyote 3.0 local control skill.\n\n- Enables control of pulse device via WebSocket and HTTP API on localhost.\n- Guides users through environment checks, component installation, server startup, pairing, and all safety precautions.\n- Supports device pairing with QR code, channel selection (A/B), strength and waveform management, and emergency stop.\n- Enforces strict safety and privacy measures: local-only communication, explicit user safety confirmation, and no data collection or upload.\n- Provides preset and custom waveform support, plus extensive references and user instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58b8365781d6535cbc5a2ca734d8bcf24e91987057e98d799cbef5c67df58d02"
+}

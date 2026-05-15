@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_helper",
+  "skill": {
+    "id": 72717,
+    "skillKey": "clawhub-resume-helper",
+    "name": "简历优化助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-helper",
+    "url": "https://clawhub.ai/skills/resume-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-helper-b0fe15e47a8650fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历优化助手。帮我写简历，改简历、导出PDF、准备面试问答。适用于：更新简历、补充项目经验、排版调整、导出PDF、准备面试问答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beikeliu",
+      "userId": "s17eepqg51ss61a59a7t8bhz5184gte3",
+      "displayName": "beikeliu",
+      "image": "https://avatars.githubusercontent.com/u/49637524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773506603029,
+      "changelog": "resume-helper 1.0.0 - Initial release\n\n- 简历优化助手上线，支持写简历、改简历、导出PDF、准备面试问答全流程。\n- 支持 HTML 格式简历，蓝白配色、简约现代风格。\n- 实现简历格式调整（缩小/加大边距和行距）。\n- 支持保存简历和问答至 workspace 目录。\n- 根据简历内容预测面试问题并给出思路。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4242c0e21c22a7489031384af93a3c87522db72c074e67fe7a44141738a33b1"
+}

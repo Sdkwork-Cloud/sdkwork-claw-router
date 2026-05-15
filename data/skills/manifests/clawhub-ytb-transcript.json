@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29781,
+  "uuid": "skill-clawhub-ytb-transcript",
+  "skillKey": "clawhub-ytb-transcript",
+  "name": "YouTube Transcript & Summary",
+  "summary": "Fetch YouTube video transcripts, subtitles, and generate summaries. Use when the user wants to extract text from a YouTube video, download subtitles (similar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ytb_transcript",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junhao",
+      "features": [
+        "Fetch YouTube video transcripts, subtitles, and generate summaries",
+        "Use when the user wants to extract text from a YouTube video, download subtitles (similar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ytb-transcript@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20661419?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ytb-transcript",
+      "url": "https://clawhub.ai/skills/ytb-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ytb-transcript",
+    "url": "https://clawhub.ai/skills/ytb-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ytb-transcript-9f60c8efd54b66f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ytb-transcript@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ytb-transcript-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b18e44e707fb18ba03e0bb9f2d40a73eba237efcf6c48155de7f04e7ace65ca",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:37:58.858Z"
+}

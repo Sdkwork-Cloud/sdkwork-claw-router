@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fake-international-brand-detector@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fake_international_brand_detector",
+  "skill": {
+    "id": 63013,
+    "skillKey": "clawhub-fake-international-brand-detector",
+    "name": "Fake International Brand Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fake-international-brand-detector",
+    "url": "https://clawhub.ai/skills/fake-international-brand-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fake-international-brand-detector-c02ea2154845c249.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过七项国际化维度综合验证品牌真实性，判断是否为真国际品牌、存疑或假国际品牌。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tompchen",
+      "userId": "s17756ambqah96h36f86znjeq5844p8j",
+      "displayName": "Tom Chen",
+      "image": "https://avatars.githubusercontent.com/u/207491982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776305405589,
+      "changelog": "**v2.1.0 优化大集团品牌识别，完善假国际品牌检测体验**\n\n- 新增集团品牌白名单校验，确保如 Reckitt、MegaRed 这类母集团旗下品牌不会因缺乏独立海外官网被误判为“存疑品牌”\n- 优化品牌归属逻辑，提升对大型集团品牌的准确识别率\n- 增加 reference/brand-examples.json，丰富已知品牌示例数据库\n- 更新维护日志，详细记录变更内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:890ae6e604fe3eebc12bfb87dcc3cb831efef0ed8a07b7e314beed0e1e6fc832"
+}

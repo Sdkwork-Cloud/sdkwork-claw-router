@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fizzread-skill@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fizzread_skill",
+  "skill": {
+    "id": 50307,
+    "skillKey": "clawhub-fizzread-skill",
+    "name": "Fizzread"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fizzread-skill",
+    "url": "https://clawhub.ai/skills/fizzread-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fizzread-skill-44b65de1001f0e8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instant access to 100K+ nonfiction book summaries with 1-minute audio previews. Free demo key included — no signup needed. Search, browse, and listen via Fiz..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1997434",
+      "userId": "publishers:yang1997434",
+      "displayName": "yang1997434",
+      "image": "https://avatars.githubusercontent.com/u/73219621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1772777984755,
+      "changelog": "- API base URLs updated from `https://api.fizzread.ai/v1` to `https://skill.fizzread.ai/v1` throughout all command and documentation examples.\n- Connectivity test instructions for user-provided API keys now use the new base URL.\n- No other functional or output changes; only endpoint addresses have been changed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3a9f3b429381b2b8b5ae32a514c0bb916c28c16595468c688f52184d5cd5ee8"
+}

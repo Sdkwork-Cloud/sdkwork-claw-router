@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52759,
+  "uuid": "skill-clawhub-pingcode-timelogger",
+  "skillKey": "clawhub-pingcode-timelogger",
+  "name": "Pingcode Timelogger",
+  "summary": "Automate PingCode timesheet filling — create sub-tasks and log work hours. Use when asked to fill PingCode timesheets, log work hours, create work items, or...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingcode_timelogger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huuuwnnn-droid",
+      "features": [
+        "Automate PingCode timesheet filling — create sub-tasks and log work hours",
+        "Use when asked to fill PingCode timesheets, log work hours, create work items, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pingcode-timelogger@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242397261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pingcode-timelogger",
+      "url": "https://clawhub.ai/skills/pingcode-timelogger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingcode-timelogger",
+    "url": "https://clawhub.ai/skills/pingcode-timelogger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingcode-timelogger-5432ca83c495e1ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pingcode-timelogger@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pingcode-timelogger-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b57325f03176c252b254440a2e6c77c9aad0fbc856d1b09bad5482a3fa4a492",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:17:57.915Z"
+}

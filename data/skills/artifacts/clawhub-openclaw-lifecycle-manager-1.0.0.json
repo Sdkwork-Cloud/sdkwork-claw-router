@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-lifecycle-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_lifecycle_manager",
+  "skill": {
+    "id": 41972,
+    "skillKey": "clawhub-openclaw-lifecycle-manager",
+    "name": "OpenClaw Lifecycle Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-lifecycle-manager",
+    "url": "https://clawhub.ai/skills/openclaw-lifecycle-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-lifecycle-manager-6cc3a899fb2205e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gestiona el ciclo de vida de agentes y skills OpenClaw dentro de ClawForge. Usar para clasificar, validar, publicar, instalar, actualizar, deprecar o retirar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-antonio-sl",
+      "userId": "s17301x2y8n5dbvbsbv42fvgxx83n922",
+      "displayName": "felix-antonio-sl",
+      "image": "https://avatars.githubusercontent.com/u/143637936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774520160795,
+      "changelog": "Initial release. Adds a ClawForge skill that manages the lifecycle of OpenClaw agents and skills with mandatory SSOT preflight against the local OpenClaw manuals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04167de782fe76b5bc34668c7a790ac5d2b12696bb1ca23abd656520210dbf97"
+}

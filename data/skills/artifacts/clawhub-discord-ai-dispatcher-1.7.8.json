@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-ai-dispatcher@1.7.8",
+  "version": "1.7.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_ai_dispatcher",
+  "skill": {
+    "id": 35142,
+    "skillKey": "clawhub-discord-ai-dispatcher",
+    "name": "Discord AI Dispatcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-ai-dispatcher",
+    "url": "https://clawhub.ai/skills/discord-ai-dispatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-ai-dispatcher-e994142a093b8aa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routes Discord notifications with a two-tier system using hardcoded rules and local AI, supports message updates to reduce clutter, and optimizes resource use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bhupendrafire-ai",
+      "userId": "s17c26y1a8ktd4syqbmnjyyqs983wje1",
+      "displayName": "bhupendrafire-ai",
+      "image": "https://avatars.githubusercontent.com/u/230803491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.7.8",
+      "createdAt": 1775026546632,
+      "changelog": "Version 1.7.8\n\n- Added a new \"AI Improvement Layer\" section to the documentation, outlining diagnostic and self-healing workflows for missed or failed notifications.\n- Included details on how to perform root cause analysis (RCA) from logs, state realignment, logic tuning, and recovery best practices.\n- No code changes; this release focuses on expanded usage guidance and troubleshooting strategies in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f89d3780a903d658fee3a6ea210415668779a5dd7b5e80db65ae603be51db10e"
+}

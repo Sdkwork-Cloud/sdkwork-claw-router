@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16071,
+  "uuid": "skill-clawhub-docs-pdf",
+  "skillKey": "clawhub-docs-pdf",
+  "name": "docs-pdf",
+  "summary": "Use this skill whenever the user wants to do anything with PDF files. Triggers include: reading or extracting text/tables from PDFs, combining or merging mul...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_pdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "echodjx",
+      "features": [
+        "Use this skill whenever the user wants to do anything with PDF files",
+        "Triggers include: reading or extracting text/tables from PDFs, combining or merging mul..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docs-pdf@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41465013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docs-pdf",
+      "url": "https://clawhub.ai/skills/docs-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-pdf",
+    "url": "https://clawhub.ai/skills/docs-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-pdf-c54b6a875c1313b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docs-pdf@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-docs-pdf-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16f59311aa60967a1b91383985fbee3959e74da9c961b382ea0780d6c6347ca3",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:00:48.564Z"
+}

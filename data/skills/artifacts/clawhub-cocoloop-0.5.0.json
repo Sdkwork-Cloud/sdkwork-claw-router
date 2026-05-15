@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cocoloop@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cocoloop",
+  "skill": {
+    "id": 60927,
+    "skillKey": "clawhub-cocoloop",
+    "name": "CocoLoop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cocoloop",
+    "url": "https://clawhub.ai/skills/cocoloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cocoloop-6e450a1c4bf450b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个更快速、更安全的 Skill 管理器。CLI 只负责网络 API wrapper 和已知安装流程 wrapper；搜索判断、fallback 探索和复杂编排由 Agent 自己完成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catrefuse",
+      "userId": "s1768eg87kddn8jfvabsrdrnz184h1q1",
+      "displayName": "CatREFuse",
+      "image": "https://avatars.githubusercontent.com/u/8400960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1776317817028,
+      "changelog": "Cocoloop v0.5.0\n\n- 全面重写项目文档，明确 CLI 与 Agent 的边界与职责分工\n- 优化 skill 搜索与安装流程，CLI 只处理 API/network 操作，搜索策略和复杂编排交由 Agent 自主完成\n- 明确多平台 skill 安装目录选择和软链接策略\n- 新增主站分类与精选推荐 Skill 展示流程\n- 强化首次安装和高危来源 Skill 的安全提示与引导",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b68bd1c5e17557e662985e8f21ddbe7a707c0c73cb297e630bde5f6ad5c6b54"
+}

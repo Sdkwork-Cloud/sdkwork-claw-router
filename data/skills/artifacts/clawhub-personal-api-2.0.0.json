@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-api@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_api",
+  "skill": {
+    "id": 39418,
+    "skillKey": "clawhub-personal-api",
+    "name": "Personal API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-api",
+    "url": "https://clawhub.ai/skills/personal-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-api-9b312da89574c729.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your Obsidian vault into a personal identity layer for AI. Any agent reads ME.md and AGENT.md and instantly knows who you are, how you think, and how to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beiyuii",
+      "userId": "s179whenw12q7k8236eq89espd86bhbp",
+      "displayName": "beiyuii",
+      "image": "https://avatars.githubusercontent.com/u/105758977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778228885208,
+      "changelog": "- Major release introducing Personal API 2.0.0: a full identity layer for AI in your Obsidian vault.\n- Scaffolds a second-brain system (Knowledge Palace v2) blending PARA, Johnny.Decimal, Zettelkasten, MOC, LLM Wiki, and Memory Palace methodologies.\n- Creates standardized `ME.md` (identity contract) and `AGENT.md` (behavior contract) for instant AI onboarding.\n- Provides a complete, agent-agnostic folder structure for dual-track identity and knowledge production.\n- Includes onboarding instructions and automated setup script for quick installation and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:113f045b95eef5f3d472e411b46f9c1ba2b21d93dd8ef347852c087cd0a419b8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xianyu-auto-lister@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_auto_lister",
+  "skill": {
+    "id": 73028,
+    "skillKey": "clawhub-xianyu-auto-lister",
+    "name": "闲鱼自动上架助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-auto-lister",
+    "url": "https://clawhub.ai/skills/xianyu-auto-lister",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-auto-lister-1094d8d86133f041.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "闲鱼自动上架助手 - 一键生成优化标题、描述、定价建议，自动发布商品到闲鱼。适合二手卖家、无货源电商。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "3313145040",
+      "userId": "s174d7sscckh43e75br3x29a55846tsp",
+      "displayName": "-A1ert",
+      "image": "https://avatars.githubusercontent.com/u/38743387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775323776032,
+      "changelog": "xianyu-auto-lister 1.0.0 released!\n\n- Initial release of the Xianyu auto-listing assistant, providing optimized product titles, descriptions, pricing suggestions, and recommended posting times.\n- Features include AI-powered title optimization, automated description generation, pricing strategy, traffic tag suggestion, and image tips.\n- Supports both individual and business product templates, with strategies to maximize exposure and conversion rates on Xianyu.\n- Includes detailed guides on optimal listing times, photo tips, and best practices for increasing sales performance.\n- Batch optimization available for monthly and yearly plan users; supports all product categories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:043c4098d6f154e8504fb002da6c4e6b6435495e7183bc7ada222f7a93ab5b6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bitable-upload@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_upload",
+  "skill": {
+    "id": 57719,
+    "skillKey": "clawhub-feishu-bitable-upload",
+    "name": "飞书多维表格文件上传"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-upload",
+    "url": "https://clawhub.ai/skills/feishu-bitable-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-upload-df0cc02e1f875459.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files (images, videos, attachments) to Feishu (Lark) Bitable (multi-dimensional table) and return the file_token. Auto-selects direct upload for files..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billzhuang6569",
+      "userId": "s17d7mdp9nn22faex2cbvcrzy183wr4c",
+      "displayName": "Bill Zhuang",
+      "image": "https://avatars.githubusercontent.com/u/68314048?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774928051151,
+      "changelog": "移除无效的 lark-cli 鉴权路径（lark-cli 不支持 /drive/v1/medias/ 素材接口）；明确本 Skill 定位为官方 lark-* Skills 的补强",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7eb972f1a62e50ecc9c49b34c8eff6aca4d19a46b82029df6f928dc440f7b11d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilimclass@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilimclass",
+  "skill": {
+    "id": 57704,
+    "skillKey": "clawhub-bilimclass",
+    "name": "BilimClass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilimclass",
+    "url": "https://clawhub.ai/skills/bilimclass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilimclass-168c5659088dacad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access BilimClass school platform (Kazakhstan) for schedule, homework, grades, and diary via API. Triggers on schedule/raspisanie/расписание, homework/domash..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "podberezovk",
+      "userId": "s177w60p5bbepx9wh25kzd8frx849ksg",
+      "displayName": "podberezovk",
+      "image": "https://avatars.githubusercontent.com/u/225475743?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775399056096,
+      "changelog": "**Adds support for grades and improved multi-token configuration.**\n\n- Added detailed instructions for obtaining and refreshing both main and journal tokens.\n- Expanded API info: now supports quarterly and yearly grades via a new grades service.\n- Updated environment configuration requirements to include `journalToken`, `eduYear`, `userId`, `studentSchoolUuid`, and `studentGroups`.\n- Added command-line usage for new grades features (e.g., `grades`, `quarter-report`).\n- Clarified subject mapping for grade reporting, and provided grading scale reference.\n- Included comprehensive setup, troubleshooting, and token expiry details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:896f732b48f4f75164633c31ac25e30867dfd359837dc5ab5b3b14bbd6874e2f"
+}

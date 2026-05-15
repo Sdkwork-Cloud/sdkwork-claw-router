@@ -33,7 +33,7 @@ export interface CheckoutStatus {
 export class CheckoutService {
   static async fetchCheckoutStatus(orderNo: string): Promise<CheckoutStatus> {
     const normalizedOrderNo = requiredSafePathSegment(orderNo, 'orderNo');
-    const result = await getClawRouterAppSdkClient().payment.fetchCheckoutStatus(normalizedOrderNo);
+    const result = await getClawRouterAppSdkClient().billing.payments.checkout.retrieve(normalizedOrderNo);
     ensurePlusApiSuccess(result, 'Failed to fetch checkout status');
     return normalizeCheckoutStatus(readApiRecord(result));
   }

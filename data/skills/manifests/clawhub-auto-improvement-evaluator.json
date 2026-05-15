@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59693,
+  "uuid": "skill-clawhub-auto-improvement-evaluator",
+  "skillKey": "clawhub-auto-improvement-evaluator",
+  "name": "Improvement Evaluator",
+  "summary": "当需要验证 Skill 改进是否真正提升了 AI 执行效果时使用。通过预定义任务集（YAML）运行 AI 任务，判定 pass/fail，输出 execution_pass_rate。不用于文档结构评分（用 improvement-learner）或候选打分（用 improvement-discriminator）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_improvement_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当需要验证 Skill 改进是否真正提升了 AI 执行效果时使用。通过预定义任务集（YAML）运行 AI 任务，判定 pass/fail，输出 execution_pass_rate。不用于."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-improvement-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-improvement-evaluator",
+      "url": "https://clawhub.ai/skills/auto-improvement-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-improvement-evaluator",
+    "url": "https://clawhub.ai/skills/auto-improvement-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-improvement-evaluator-de9852cc0ccd74b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-improvement-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-improvement-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0402aea821add2959e3dfcb36dfe55c257e4d2e1ce1a8099d4e774ea599f6cff",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:18:26.433Z"
+}

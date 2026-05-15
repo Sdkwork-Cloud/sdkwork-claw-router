@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_daily_report",
+  "skill": {
+    "id": 60703,
+    "skillKey": "clawhub-x-daily-report",
+    "name": "A real-time intelligence feed tracking the top 50 AI organizations and influencers globally."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-daily-report",
+    "url": "https://clawhub.ai/skills/x-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-daily-report-d012d45ce8480d84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日自动监控全球Top AI领域X/Twitter账号动态，生成结构化日报。包含重点动态推荐、完整活跃度总览、分层关注建议。支持免费无API爬虫模式和官方API模式，完全自动化无需人工干预。使用场景：(1) 每日8:30自动推送AI行业动态 (2) 监控特定账号最新动态 (3) 生成行业趋势报告 (4) 提到\"X..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongxiaodan20001201-alt",
+      "userId": "publishers:kongxiaodan20001201-alt",
+      "displayName": "kongxiaodan20001201-alt",
+      "image": "https://avatars.githubusercontent.com/u/249401852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773502703627,
+      "changelog": "x-daily-report 1.0.0\n\n- 首次发布，支持每日自动监控全球45个AI领域核心X/Twitter账号并生成结构化日报\n- 提供免费无API爬虫模式和官方API模式，零成本可选高可用方案\n- 日报输出涵盖重点动态推荐、账号活跃度总览、分层关注建议三大部分\n- 默认每日8:30自动推送最新汇总，也支持自定义监控账号和推送时间\n- 清晰目录结构及快速上手文档，便于安装和扩展",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd4cf04f9d031ce2bab9e23c9185b8f713a8fb2e445f34e1ad3c98651cb1397f"
+}

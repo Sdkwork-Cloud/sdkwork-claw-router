@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-watermark@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_watermark",
+  "skill": {
+    "id": 51130,
+    "skillKey": "clawhub-youtube-watermark",
+    "name": "YouTube Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-watermark",
+    "url": "https://clawhub.ai/skills/youtube-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-watermark-e8ac6b7b573724be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube watermarks. Use this skill to set or unset watermarks for channel videos. Useful when working with YouTube watermark — provides commands to se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773497922138,
+      "changelog": "- Updated metadata to declare requirements using the Openclaw format, specifying required environment variables, binaries, and config files.\n- Added homepage, install instructions, and emoji to metadata section.\n- Compatibility info moved from plain text to structured metadata. No changes to user-facing commands or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0245f85e38aeaf87c8630e30b056a25a51d71bce6af7933095696d1dfe4a6400"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17390,
+  "uuid": "skill-clawhub-json-toolkit",
+  "skillKey": "clawhub-json-toolkit",
+  "name": "JSON Toolkit",
+  "summary": "Swiss-army knife for JSON files. Pretty-print, validate, minify, sort keys, and query with dot-notation paths. Zero dependencies.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudiodrusus",
+      "features": [
+        "Swiss-army knife for JSON files",
+        "Pretty-print, validate, minify, sort keys, and query with dot-notation paths",
+        "Zero dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-toolkit@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258132540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-toolkit",
+      "url": "https://clawhub.ai/skills/json-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-toolkit",
+    "url": "https://clawhub.ai/skills/json-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-toolkit-ad02bf756506231a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-toolkit@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-toolkit-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66bf183d187a968a934738ea8cf20b96776fbf0f3f3d1a5bc49c4fd7c0a4cd11",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:33:51.840Z"
+}

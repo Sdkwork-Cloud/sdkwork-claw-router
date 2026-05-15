@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-image-2-prompts-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image_2_prompts_search",
+  "skill": {
+    "id": 42544,
+    "skillKey": "clawhub-gpt-image-2-prompts-search",
+    "name": "GPT Image 2 Prompt Recommender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image-2-prompts-search",
+    "url": "https://clawhub.ai/skills/gpt-image-2-prompts-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image-2-prompts-search-cf3eca89e959d575.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend suitable prompts from 1,000+ GPT Image 2 image generation prompts based on user needs. Optimized for GPT Image 2 (OpenAI), but prompts also work wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindy-youmind",
+      "userId": "s174bttv13nwwj8qdhvmxvzqjx83xzpv",
+      "displayName": "YouMind",
+      "image": "https://avatars.githubusercontent.com/u/265348597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776914922927,
+      "changelog": "feat: auto-publish to ClawHub on version bump",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a0d17916189a5e072d2f71c58799fac94b8fe77dce41b6ac53e00284f0da7ac"
+}

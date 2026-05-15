@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-toolkit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_toolkit",
+  "skill": {
+    "id": 71679,
+    "skillKey": "clawhub-chinese-toolkit",
+    "name": "中文工具包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-toolkit",
+    "url": "https://clawhub.ai/skills/chinese-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-toolkit-562a4da41d53ce57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为OpenClaw提供中文文本处理、翻译、OCR、语音识别等功能的综合工具包。支持中文分词、拼音转换、中英文翻译、关键词提取、文本分析等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopia013-droid",
+      "userId": "publishers:utopia013-droid",
+      "displayName": "utopia013-droid",
+      "image": "https://avatars.githubusercontent.com/u/257645967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1280,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771790711738,
+      "changelog": "- No user-facing changes in this release.\n- Version number updated to 1.0.1; documentation and features remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:62adcda006f5254d27e80fa2fe7adc825cab52aa210dee74d93c3eab47acdc97"
+}

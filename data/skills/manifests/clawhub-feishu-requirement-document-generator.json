@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70949,
+  "uuid": "skill-clawhub-feishu-requirement-document-generator",
+  "skillKey": "clawhub-feishu-requirement-document-generator",
+  "name": "飞书需求整理",
+  "summary": "客户需求智能整理与文档生成专家。从沟通记录（飞书文档、妙记、会议纪要等）中提取、分析并整理成结构化的需求文档，自动生成飞书文档。触发场景：(1) 用户需要整理客户需求文档 (2) 需要将会议纪要转换为需求文档 (3) 需要从沟通记录提取关键需求 (4) 需要生成项目需求说明书 (5) 需要创建业务需求文档 (BR...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_requirement_document_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "641",
+      "features": [
+        "客户需求智能整理与文档生成专家。从沟通记录（飞书文档、妙记、会议纪要等）中提取、分析并整理成结构化的需求文档，自动生成飞书文档。触发场景：(1) 用户需要整理客户需求文档 (2) 需要将会议."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-requirement-document-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49388494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-requirement-document-generator",
+      "url": "https://clawhub.ai/skills/feishu-requirement-document-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-requirement-document-generator",
+    "url": "https://clawhub.ai/skills/feishu-requirement-document-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-requirement-document-generator-bd42199e07c70975.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-requirement-document-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-requirement-document-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c8d384f36317fdd0317ef05e34e4fac74c0ef75966275defb32e4c236ff9d4a",
+      "artifactSizeBytes": 2834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:01:25.884Z"
+}

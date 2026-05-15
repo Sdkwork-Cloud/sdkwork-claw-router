@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amber-md@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_md",
+  "skill": {
+    "id": 31451,
+    "skillKey": "clawhub-amber-md",
+    "name": "Amber Molecular Dynamics Simulation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-md",
+    "url": "https://clawhub.ai/skills/amber-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-md-8f0ea7a57b1cd2e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official-style Amber24 molecular dynamics workflow guide for proteins. Includes a standard end-to-end Amber MD procedure, command templates, input-file templ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ning-kun",
+      "userId": "s1793t9ymha9akcjnvdf34p37584zr5m",
+      "displayName": "ning-kun",
+      "image": "https://avatars.githubusercontent.com/u/181131131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777112694717,
+      "changelog": "v1.0.4: upgraded public documentation into an official-style manual page with standard command templates and a complete step-by-step manual example.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3ca1a14a43ec9cdd9c4a9ff80b70f35cab5c84cefaa0be3ebb8126107fbe04d"
+}

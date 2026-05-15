@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40042,
+  "uuid": "skill-clawhub-receiptextract",
+  "skillKey": "clawhub-receiptextract",
+  "name": "ReceiptExtract - OCR, Photo/PDF to CSV",
+  "summary": "Extract structured transaction data from image or PDF receipts using the ReceiptExtract API (https://www.receiptextract.com). Use when the user wants merchan...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receiptextract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yura Borunov",
+      "features": [
+        "Extract structured transaction data from image or PDF receipts using the ReceiptExtract API (ht.",
+        "Use when the user wants merchan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/receiptextract@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3818541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "receiptextract",
+      "url": "https://clawhub.ai/skills/receiptextract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receiptextract",
+    "url": "https://clawhub.ai/skills/receiptextract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receiptextract-c7a681007de11a74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/receiptextract@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-receiptextract-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f95acb93e7f7d3c58afd25a3d2732fe200c6f250163b990b0ea56ffd7e6150a",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:04:27.789Z"
+}

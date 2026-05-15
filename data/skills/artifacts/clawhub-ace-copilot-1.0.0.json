@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ace-copilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_copilot",
+  "skill": {
+    "id": 29501,
+    "skillKey": "clawhub-ace-copilot",
+    "name": "ACE Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-copilot",
+    "url": "https://clawhub.ai/skills/ace-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-copilot-5855aa0a65b7a50b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when working with IBM App Connect Enterprise (ACE) 12.0, including message flow development, ESQL scripting, BAR file deployment, integration..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shoaibkhan",
+      "userId": "s17a2g4ppd34g28jqtrh00762n83kv4c",
+      "displayName": "Shoaib Khan",
+      "image": "https://avatars.githubusercontent.com/u/23154062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774407605861,
+      "changelog": "Initial release of IBM ACE Copilot.\n\n- Provides expert guidance for IBM App Connect Enterprise (ACE) 12.0 development.\n- Supports message flow design, ESQL scripting, BAR file deployment, and integration node/server management.\n- Helps troubleshoot, debug, and follow best practices for ACE projects.\n- Activated when users mention key ACE tasks, commands, or development scenarios.\n- Assists with implementing JIRA development workflows within ACE environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdfc93ad36ff2419759bdf8dee3219c5db660d9388b31374c4deb853ee503e58"
+}

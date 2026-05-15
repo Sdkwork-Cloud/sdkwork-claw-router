@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18624,
+  "uuid": "skill-clawhub-excel-translator",
+  "skillKey": "clawhub-excel-translator",
+  "name": "Excel Translator",
+  "summary": "Translates Excel files (.xlsx) from English to Chinese while preserving all formatting, images, and charts. Use for any task where a user provides an Excel f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_translator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilove323",
+      "features": [
+        "Translates Excel files (.xlsx) from English to Chinese while preserving all formatting, images,.",
+        "Use for any task where a user provides an Excel f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excel-translator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14835165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excel-translator",
+      "url": "https://clawhub.ai/skills/excel-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-translator",
+    "url": "https://clawhub.ai/skills/excel-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-translator-083fb52b682f4abc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excel-translator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-excel-translator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d5fd5ec0a1fad4b9196819851af27914fb301d76f301b0d68adb5b3dccf42d6",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:59:36.996Z"
+}

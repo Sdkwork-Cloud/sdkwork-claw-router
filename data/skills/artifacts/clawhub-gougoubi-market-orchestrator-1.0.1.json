@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-market-orchestrator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_market_orchestrator",
+  "skill": {
+    "id": 27240,
+    "skillKey": "clawhub-gougoubi-market-orchestrator",
+    "name": "Gougoubi Market Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-market-orchestrator",
+    "url": "https://clawhub.ai/skills/gougoubi-market-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-market-orchestrator-98316a9f0aad461f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate end-to-end Gougoubi market operations by routing to the right skill for creation, activation, risk LP, result submission, reward claiming, or rec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774239843139,
+      "changelog": "- Documentation updated in INSTALL.md; no changes to code or functionality.\n- No impact for users or downstream skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9defeaa44db9ddd458fef9b98e8a1316fe681faa78b3f78f103804ca3e8ea07a"
+}

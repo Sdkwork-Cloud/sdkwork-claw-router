@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60187,
+  "uuid": "skill-clawhub-desktop-monitor-widget",
+  "skillKey": "clawhub-desktop-monitor-widget",
+  "name": "Desktop Monitor Widget",
+  "summary": "桌面监控悬浮球 - 实时显示系统资源状态",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_monitor_widget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1173910773",
+      "features": [
+        "实时显示系统资源状态"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-monitor-widget@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265417424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-monitor-widget",
+      "url": "https://clawhub.ai/skills/desktop-monitor-widget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-monitor-widget",
+    "url": "https://clawhub.ai/skills/desktop-monitor-widget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-monitor-widget-a3dc50593d04ebab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-monitor-widget@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-monitor-widget-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1d14fcfb229213bff8647bd9d7a97744d3c5f97a77a91b9400ce087d1f69fe1",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:33:46.829Z"
+}

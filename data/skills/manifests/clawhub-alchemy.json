@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51578,
+  "uuid": "skill-clawhub-alchemy",
+  "skillKey": "clawhub-alchemy",
+  "name": "Alchemy",
+  "summary": "Alchemy — blockchain data, NFTs, token balances, transactions, gas prices, and webhooks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alchemy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Alchemy — blockchain data, NFTs, token balances, transactions, gas prices, and webhooks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alchemy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alchemy",
+      "url": "https://clawhub.ai/skills/alchemy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alchemy",
+    "url": "https://clawhub.ai/skills/alchemy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alchemy-924b68a85ca13710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alchemy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alchemy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baca81c6ec53f68bab0336b39139aa3c18216a3ec931021fff7c3088a10e139a",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T22:05:03.595Z"
+}

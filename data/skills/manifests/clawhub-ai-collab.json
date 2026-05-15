@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16282,
+  "uuid": "skill-clawhub-ai-collab",
+  "skillKey": "clawhub-ai-collab",
+  "name": "Ai Collab",
+  "summary": "Multi-agent autonomous collaboration system for two OpenClaw agents working in parallel. Use when setting up agent-to-agent communication, running a daemon a...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_collab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeremysommerfeld8910-cpu",
+      "features": [
+        "Multi-agent autonomous collaboration system for two OpenClaw agents working in parallel",
+        "Use when setting up agent-to-agent communication, running a daemon a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-collab@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240074820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-collab",
+      "url": "https://clawhub.ai/skills/ai-collab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-collab",
+    "url": "https://clawhub.ai/skills/ai-collab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-collab-d2958acede7f2624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-collab@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-collab-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9726222792e130ad0ecbe33678fad13ba212aeb850ed0260106ee79fa7a4a817",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T22:32:57.288Z"
+}

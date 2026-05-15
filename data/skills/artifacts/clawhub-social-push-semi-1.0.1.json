@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-push-semi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_push_semi",
+  "skill": {
+    "id": 68359,
+    "skillKey": "clawhub-social-push-semi",
+    "name": "Social Push Semi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-push-semi",
+    "url": "https://clawhub.ai/skills/social-push-semi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-push-semi-80c5ee83e7a7c643.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书半自动发布脚手架：自动生成文案、自动抽封面图、产出发布包；最后由人工确认发布。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yugulugulu",
+      "userId": "publishers:yugulugulu",
+      "displayName": "yugulugulu",
+      "image": "https://avatars.githubusercontent.com/u/141218505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772523587196,
+      "changelog": "Add mandatory post-install onboarding trigger: reply full template when user says 开始小红书流程.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c8bebc4952e773f34874093939cdc9707b6a16037adb998463a4e4346d4912a"
+}

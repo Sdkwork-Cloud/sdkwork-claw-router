@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-maker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_maker",
+  "skill": {
+    "id": 64054,
+    "skillKey": "clawhub-ppt-maker",
+    "name": "AI PPT Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-maker",
+    "url": "https://clawhub.ai/skills/ppt-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-maker-63b4823d36fba8b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用Markdown快速生成专业PPT，支持自动图表转换、多主题、多类型列表、引用和代码块，自动识别感谢页。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agilight",
+      "userId": "publishers:agilight",
+      "displayName": "beiling",
+      "image": "https://avatars.githubusercontent.com/u/219949395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2925,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774166054605,
+      "changelog": "No user-facing changes in this release.\n\n- No file or documentation changes detected from previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e431c3a5ddb0fec76aead8cbf5aeb374d10716d33aca024dfc5ab29f6ca14daa"
+}

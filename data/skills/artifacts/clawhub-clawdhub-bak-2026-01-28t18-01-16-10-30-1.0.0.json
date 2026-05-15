@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdhub-bak-2026-01-28t18-01-16-10-30@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdhub_bak_2026_01_28t18_01_16_10_30",
+  "skill": {
+    "id": 11577,
+    "skillKey": "clawhub-clawdhub-bak-2026-01-28t18-01-16-10-30",
+    "name": "Clawdhub.Bak 2026 01 28T18:01:16+10:30"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdhub-bak-2026-01-28t18-01-16-10-30",
+    "url": "https://clawhub.ai/skills/clawdhub-bak-2026-01-28t18-01-16-10-30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdhub-bak-2026-01-28t18-01-16-10-30-eec0c81742c29445.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawdHub CLI to search, install, update, and publish agent skills from clawdhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicoataiza",
+      "userId": "publishers:nicoataiza",
+      "displayName": "nicoataiza",
+      "image": "https://avatars.githubusercontent.com/u/65964857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1876,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769585534439,
+      "changelog": "Initial release of ClawdHub skill.\n\n- Provides concise documentation for installing, searching, installing, updating, listing, and publishing skills via ClawdHub CLI.\n- Includes usage examples and recommended commands for skill management.\n- Details authentication steps for publishing and available CLI flags/options.\n- Notes registry and working directory configuration defaults.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:905efa963d39698139d73850f3d4337371fdb93fc2ad77d26b42c9cb7bc54d07"
+}

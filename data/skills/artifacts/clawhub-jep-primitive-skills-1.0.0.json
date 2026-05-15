@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jep-primitive-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jep_primitive_skills",
+  "skill": {
+    "id": 54314,
+    "skillKey": "clawhub-jep-primitive-skills",
+    "name": "JEP Primitive Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jep-primitive-skills",
+    "url": "https://clawhub.ai/skills/jep-primitive-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jep-primitive-skills-6eaa0792a74643d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JEP Primitive Skills — Atomic Reference Implementations of Judge, Delegate, Terminate, Verify for Agent Collaboration Grammar"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schchit",
+      "userId": "s1792pfv3byw2ah26z463sfgr184xckb",
+      "displayName": "JEP (Judgment Event Protocol)",
+      "image": "https://avatars.githubusercontent.com/u/10815391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777212261809,
+      "changelog": "Initial release of jep-primitive-skills — atomic JEP primitives for agent collaboration.\n\n- Implements four core primitives: judge, delegate, terminate, and verify, each with strict input/output JSON schemas.\n- Provides reference API for decomposing agent collaboration into atomic JEP-04 compliant events.\n- Facilitates protocol alignment for judgment, delegation, validation, and termination of assertions.\n- Ready for integration with systems such as Determinability-Checker, COE-Consensus, and JEP-Guard-Audit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa81fedc97a9c5a0b44f0bbf4069dbdca3f3cc8ba05c041c671f7abb7deeb983"
+}

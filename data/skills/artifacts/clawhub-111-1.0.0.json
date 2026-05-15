@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/111@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.111",
+  "skill": {
+    "id": 72676,
+    "skillKey": "clawhub-111",
+    "name": "111"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "111",
+    "url": "https://clawhub.ai/skills/111",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/111-f6e0a1e2ac41945a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据「会议纪要」任务细化的操作流程与使用说明，支持步骤拆解与最佳实践。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cora007-debug",
+      "userId": "publishers:cora007-debug",
+      "displayName": "cora007-debug",
+      "image": "https://avatars.githubusercontent.com/u/173976541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772070162392,
+      "changelog": "111",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0faf3eec015524415170985055af8ca2ce9cb78c63e2f59632739bae0be49a4e"
+}

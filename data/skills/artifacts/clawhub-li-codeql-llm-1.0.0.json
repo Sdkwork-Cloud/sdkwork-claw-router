@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/li-codeql-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.li_codeql_llm",
+  "skill": {
+    "id": 61085,
+    "skillKey": "clawhub-li-codeql-llm",
+    "name": "Li_codeQL_LLM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "li-codeql-llm",
+    "url": "https://clawhub.ai/skills/li-codeql-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/li-codeql-llm-3eca97f21c9c4637.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CodeQL 安全扫描与 LLM 智能分析融合工具。自动检测 CodeQL 安装、扫描指定目录、生成漏洞报告、LLM 分析、Jenkins 集成、输出验证 Checklist。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "43622283",
+      "userId": "s17f1wyr24sxwd869zaes8zkvx83eecs",
+      "displayName": "Terry S Fisher",
+      "image": "https://avatars.githubusercontent.com/u/42956557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887723295,
+      "changelog": "初始版本 - CodeQL+LLM 融合安全扫描器，作者：北京老李",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68693684a00239fff2c8766a259db29cd864a2e72ea9693d3f5f2b5ae126fdeb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36094,
+  "uuid": "skill-clawhub-ralph-security",
+  "skillKey": "clawhub-ralph-security",
+  "name": "Ralph Security Audit",
+  "summary": "Comprehensive security audit with 100 iterations (~30-60 min). Use when user says 'security audit', 'ralph security', 'weekly security check', 'audit this pr...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_security",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorukardahan",
+      "features": [
+        "Comprehensive security audit with 100 iterations (~30-60 min)",
+        "Use when user says 'security audit', 'ralph security', 'weekly security check', 'audit this pr.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ralph-security@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35905596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ralph-security",
+      "url": "https://clawhub.ai/skills/ralph-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-security",
+    "url": "https://clawhub.ai/skills/ralph-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-security-72db1a1e637f562e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ralph-security@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ralph-security-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43ca2f2383bc2256bdaf41665bcc2084a8edede39cf53432e0b13dc09c78239f",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T02:17:16.311Z"
+}

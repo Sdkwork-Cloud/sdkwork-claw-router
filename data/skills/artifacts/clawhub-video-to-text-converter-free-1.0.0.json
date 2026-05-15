@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-converter-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_converter_free",
+  "skill": {
+    "id": 43908,
+    "skillKey": "clawhub-video-to-text-converter-free",
+    "name": "Video To Text Converter Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-converter-free",
+    "url": "https://clawhub.ai/skills/video-to-text-converter-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-converter-free-dfe93a6189289d53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert video files into transcribed text files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. students, journalists, content creators us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775895930031,
+      "changelog": "Video to Text Converter Free — Initial Release\n\n- Convert video files (MP4, MOV, AVI, WebM up to 500MB) into transcribed text using cloud GPU processing.\n- Easy, quick workflow: upload video, request transcription, receive 1080p MP4 output in 30–90 seconds.\n- Automatic setup: generates and manages free API tokens (100 credits, 7 days) for new users.\n- Session-based processing allows batch uploads, timeline editing, and repeated refinements.\n- Built-in guidance for typical actions: transcribe, export, check credits, and monitor job status.\n- Clear error handling for unsupported files, quota limits, and network issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae310b9e60152bc5385f97b1017306bccfc17cb107ba72702f56ecf79a3b2935"
+}

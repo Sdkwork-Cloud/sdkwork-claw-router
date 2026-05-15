@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/overrec-screen@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overrec_screen",
+  "skill": {
+    "id": 47852,
+    "skillKey": "clawhub-overrec-screen",
+    "name": "OverRec Screen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overrec-screen",
+    "url": "https://clawhub.ai/skills/overrec-screen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overrec-screen-a80050b9967aa64e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use OverRec CLI to take screenshots, draw overlay rectangles, list monitors, find windows by title, or snap any app window to an exact position and size. Tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "metaphorproj",
+      "userId": "s176gc22kx2jd22asj4gry9q3x84f4z9",
+      "displayName": "metaphorproj",
+      "image": "https://avatars.githubusercontent.com/u/273570263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777474604002,
+      "changelog": "- Added detailed skill instructions for using OverRec CLI to capture screenshots, draw overlays, manage window positions, and list monitors on Windows or WSL.\n- Now supports highlighting/hinting regions, capturing areas, snapping windows, and finding windows by title in response to user requests.\n- Included comprehensive usage examples and best practices for common workflows like tiling, watching regions, and dealing with multi-monitor setups.\n- Added guidance for error handling if OverRec is not installed or not on the PATH.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22bd6c6cc60b489e1bab2c4a8475641974386de4e7a1caafc6ce8013672cb61f"
+}

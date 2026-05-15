@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23662,
+  "uuid": "skill-clawhub-aoineco-starter-pack",
+  "skillKey": "clawhub-aoineco-starter-pack",
+  "name": "AOI Starter Pack",
+  "summary": "Install a curated starter pack of @edmonddantesj ClawHub skills (security, stability, memory, ops) in one command via the ClawHub CLI. Use when a user asks t...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoineco_starter_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Install a curated starter pack of @edmonddantesj ClawHub skills (security, stability, memory, o.",
+        "Use when a user asks t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoineco-starter-pack@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoineco-starter-pack",
+      "url": "https://clawhub.ai/skills/aoineco-starter-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoineco-starter-pack",
+    "url": "https://clawhub.ai/skills/aoineco-starter-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoineco-starter-pack-68d05eddfbe9a615.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoineco-starter-pack@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoineco-starter-pack-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:056358c33f824756b1d6f88fbf39117d31b850ede5318e1fc7b8e26f04a0a998",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T13:21:45.884Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-korean@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_korean",
+  "skill": {
+    "id": 43094,
+    "skillKey": "clawhub-editor-ai-korean",
+    "name": "Editor Ai Korean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-korean",
+    "url": "https://clawhub.ai/skills/editor-ai-korean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-korean-bb1f1d196e29512e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based editor-ai-korean tool that handles adding Korean subtitles and edits to videos. Upload MP4, MOV, AVI, WebM files (up to 500MB), describe what you..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775864579910,
+      "changelog": "Initial release of editor-ai-korean 1.0.0:\n\n- Upload and edit videos with Korean subtitles and captions in the cloud, supporting MP4, MOV, AVI, and WebM files up to 500MB.\n- Automatic session management, including free token acquisition and backend connection with status feedback.\n- Export 1080p MP4 video with AI-powered edits, including subtitle generation and timeline manipulation.\n- Built-in credit balance checking, file upload, export workflows, and comprehensive error handling.\n- Korean-first editing experience intended for fast, iterative, cloud-based processing with minimal user setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2fe03a1a3bc9373929d68948033a95554a0b391c97209d11659a706d9923e97"
+}

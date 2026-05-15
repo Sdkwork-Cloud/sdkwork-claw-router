@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10374,
+  "uuid": "skill-clawhub-super-skills",
+  "skillKey": "clawhub-super-skills",
+  "name": "Decomposes complex user requests into executable subtasks, identifies required capabilities, searches for existing skills at sk.",
+  "summary": "Decomposes complex user requests into executable subtasks, identifies required capabilities, searches for existing skills at skills.sh, and creates new skills when no solution exists. This skill should be used when the user submits a compl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "10e9928a",
+      "features": [
+        "Decomposes complex user requests into executable subtasks, identifies required capabilities, se.",
+        "This skill should be used when the user submits a complex multi-step request, wants to automate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99306962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-skills",
+      "url": "https://clawhub.ai/skills/super-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-skills",
+    "url": "https://clawhub.ai/skills/super-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-skills-a34330bb937c6a0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a44a5c15c323a2eaeb686cdb2bbb9ac6afebe675740388353ccc5fd6b8f3ae88",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:21:47.164Z"
+}

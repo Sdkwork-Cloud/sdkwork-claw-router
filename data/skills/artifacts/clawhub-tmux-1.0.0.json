@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmux@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmux",
+  "skill": {
+    "id": 8285,
+    "skillKey": "clawhub-tmux",
+    "name": "Tmux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmux",
+    "url": "https://clawhub.ai/skills/tmux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmux-adb519257aeb1f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 25904,
+      "installsAllTime": 1375,
+      "installsCurrent": 1330,
+      "stars": 41,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545387948,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04ecb2e2c0eb21f0373c2ee699335ed099955056f85e968a4dc322d5bfd01b81"
+}

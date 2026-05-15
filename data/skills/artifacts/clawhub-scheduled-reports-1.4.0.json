@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scheduled-reports@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scheduled_reports",
+  "skill": {
+    "id": 36060,
+    "skillKey": "clawhub-scheduled-reports",
+    "name": "Scheduled Reports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scheduled-reports",
+    "url": "https://clawhub.ai/skills/scheduled-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scheduled-reports-69a2c68df75b0787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define, preview, approve, and manage recurring reports for OpenClaw. Use when the user asks for a scheduled report, daily or weekly report, automatic report,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohamed-hammane",
+      "userId": "s1741t73nrt7q2vnxcrxcxxtjh83hfew",
+      "displayName": "Umbra",
+      "image": "https://avatars.githubusercontent.com/u/35642940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1776494493384,
+      "changelog": "Hardened scheduled report approval and delivery flow: previews must be generated and sent inline with the approval request, missing previews must be regenerated/resend instead of repeated as text, chat deliveries now require caption context, preview validation now requires a real artifact file, filename guidance is more human-readable, and workflow docs now clarify schedule ambiguity handling, inbound chat-target defaults, and known host-enforced limitations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ea16ab446833d187c9fc0dee80c103d23acd5776b2de558b2fcd4480051d00a"
+}

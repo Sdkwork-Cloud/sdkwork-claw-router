@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/isitwater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isitwater",
+  "skill": {
+    "id": 12412,
+    "skillKey": "clawhub-isitwater",
+    "name": "IsItWater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isitwater",
+    "url": "https://clawhub.ai/skills/isitwater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isitwater-968a1151a0ed5188.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check if geographic coordinates are over water or land using the IsItWater API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnagro",
+      "userId": "publishers:johnnagro",
+      "displayName": "johnnagro",
+      "image": "https://avatars.githubusercontent.com/u/31442?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770341110963,
+      "changelog": "Initial release of isitwater—quickly check if coordinates are over land or water.\n\n- Added setup instructions for configuring the IsItWater API key and environment.\n- Provides API endpoints to check whether coordinates are over water or land.\n- Includes endpoint to get account info and check credit balance.\n- Detailed API response fields and error handling explained.\n- Tips for usage and handling place names (geocoding requirement) included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf104b3c10d4b5dc44e48bdbc6e4d171df8bce9dc7923f40fd4d2a6eb3d4eb97"
+}

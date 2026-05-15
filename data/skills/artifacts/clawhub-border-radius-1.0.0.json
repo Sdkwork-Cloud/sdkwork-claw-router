@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/border-radius@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.border_radius",
+  "skill": {
+    "id": 35010,
+    "skillKey": "clawhub-border-radius",
+    "name": "Border Radius"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "border-radius",
+    "url": "https://clawhub.ai/skills/border-radius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/border-radius-56cdad3adf1d8f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate CSS border-radius code. Use when the user asks to generate rounded corners, create a border radius, make a blob shape, or produce border-radius CSS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohernandez-dev-blossom",
+      "userId": "publishers:ohernandez-dev-blossom",
+      "displayName": "Omar Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/86250007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774221099421,
+      "changelog": "- Initial release of the border-radius skill.\n- Generates CSS border-radius code and matching Tailwind class from user input.\n- Supports both uniform and per-corner radius values.\n- Handles shape presets (e.g., none, small, medium, large, full, blob, leaf).\n- Performs error handling for negative values and unit restrictions.\n- Outputs both standard CSS and Tailwind utility class.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ac96e93480e58d54ea94cfc73a1765753b595f645e4987282c0a0776d017c20"
+}

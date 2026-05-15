@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-producer-scene@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_producer_scene",
+  "skill": {
+    "id": 19707,
+    "skillKey": "clawhub-movie-producer-scene",
+    "name": "Movie Producer Scene"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-producer-scene",
+    "url": "https://clawhub.ai/skills/movie-producer-scene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-producer-scene-6fabd42a376c920d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create high-end cinematic scene prompts and production-ready scene briefs in a Hollywood producer voice. Use when the user asks for movie scene generation, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cryptobro-man",
+      "userId": "publishers:cryptobro-man",
+      "displayName": "cryptobro-man",
+      "image": "https://avatars.githubusercontent.com/u/78248519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772270976610,
+      "changelog": "Initial release: Hollywood-style cinematic scene prompt skill with structured output and examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a186e443e8832c60f5c3abedcb3b40574645bba16cced2d4a06721783234f6ec"
+}

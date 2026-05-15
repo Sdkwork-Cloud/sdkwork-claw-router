@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mplx-genesis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mplx_genesis",
+  "skill": {
+    "id": 12408,
+    "skillKey": "clawhub-mplx-genesis",
+    "name": "Launch a Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mplx-genesis",
+    "url": "https://clawhub.ai/skills/mplx-genesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mplx-genesis-bfa4421fdee0d4f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch tokens on Solana using Metaplex Genesis protocol"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockiosaurus",
+      "userId": "publishers:blockiosaurus",
+      "displayName": "blockiosaurus",
+      "image": "https://avatars.githubusercontent.com/u/90809591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1701,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770069402136,
+      "changelog": "Initial release with core Metaplex Genesis launch features:\n\n- Enables users to launch tokens on Solana using the Metaplex Genesis protocol.\n- Supports LaunchPool (fair token distribution), Unlocked Buckets, and Raydium liquidity pool graduation.\n- Step-by-step guidance for creating launches, configuring allocation splits, and finalizing token launches.\n- Provides thorough documentation on lifecycle, configuration, wallet setup, and important usage notes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2dc86a47aa3b3e638285df8114d0c989c5e6e3ca007fd83cce596d7cd01edbe7"
+}

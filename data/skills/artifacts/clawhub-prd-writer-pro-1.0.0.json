@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-writer-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_writer_pro",
+  "skill": {
+    "id": 65828,
+    "skillKey": "clawhub-prd-writer-pro",
+    "name": "PRD文档撰写助手Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-writer-pro",
+    "url": "https://clawhub.ai/skills/prd-writer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-writer-pro-62922d36bca906d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的产品需求文档（PRD）撰写助手。用于将产品需求转化为结构清晰、内容完整的 PRD 文档。 **使用场景：** (1) 新产品功能的需求文档撰写 (2) 现有功能的优化需求文档 (3) 将用户故事转化为 PRD (4) 快速生成 PRD 初稿 **触发词：** \"写PRD\"、\"生成PRD\"、\"产品需求文档\"、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryan-wuxl",
+      "userId": "publishers:ryan-wuxl",
+      "displayName": "ryan-wuxl",
+      "image": "https://avatars.githubusercontent.com/u/21093002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1046,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774066526418,
+      "changelog": "Initial release: Professional PRD writer for product managers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85103866acfbe600b6b21cdbff9a17fb4830c2be95bd062974c30cbfe9287f72"
+}

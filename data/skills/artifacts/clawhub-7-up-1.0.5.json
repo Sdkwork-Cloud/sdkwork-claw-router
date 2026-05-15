@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/7-up@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.7_up",
+  "skill": {
+    "id": 70207,
+    "skillKey": "clawhub-7-up",
+    "name": "7 Up"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "7-up",
+    "url": "https://clawhub.ai/skills/7-up",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/7-up-784f52d29698ee5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供7-up品牌的历史、产品、市场表现及最新动态等详尽信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776237847582,
+      "changelog": "- 精简和更新了文件结构与内容描述，使信息更易读和检索\n- 强化了信息模块，包括“历史沿革”“业务范围”等详细分类\n- 明确适用场景，覆盖商业、研究、教学等多领域\n- 内容表达更为简洁明了，去除冗余信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75e698138a374d9bb68d9a1764d280d50fa2e5cff1390a9e5a88d063179282a0"
+}

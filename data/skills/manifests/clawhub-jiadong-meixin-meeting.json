@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63611,
+  "uuid": "skill-clawhub-jiadong-meixin-meeting",
+  "skillKey": "clawhub-jiadong-meixin-meeting",
+  "name": "Meixin Meeting Assistant",
+  "summary": "镁信健康内部会议纪要生成技能。接收会议录音 → Fun-ASR全量转录 → 结合镁信/健康险行业术语 → 输出结构化会议纪要。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiadong_meixin_meeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiadong0723",
+      "features": [
+        "镁信健康内部会议纪要生成技能。接收会议录音 → Fun-ASR全量转录 → 结合镁信/健康险行业术语 → 输出结构化会议纪要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiadong-meixin-meeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267246555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiadong-meixin-meeting",
+      "url": "https://clawhub.ai/skills/jiadong-meixin-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiadong-meixin-meeting",
+    "url": "https://clawhub.ai/skills/jiadong-meixin-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiadong-meixin-meeting-18d8162b4bdfe6d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiadong-meixin-meeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiadong-meixin-meeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c9ad8e6f4814e3b76c0966d12cbe08114a7fed84c66d0f6bf3577582747b54",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T15:56:12.733Z"
+}

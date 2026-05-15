@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69977,
+  "uuid": "skill-clawhub-biga",
+  "skillKey": "clawhub-biga",
+  "name": "Biga",
+  "summary": "A股智能分析与选股工具。维护动态股票池(最多30支),按高科技×中小市值×好业绩原则筛选,推送买卖信号。含独立技术面择时分(-10~+10)用于判断买入卖出时机。",
+  "version": "1.34.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biga",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kobenfang",
+      "features": [
+        "A股智能分析与选股工具。维护动态股票池(最多30支),按高科技×中小市值×好业绩原则筛选,推送买卖信号。含独立技术面择时分(-10~+10)用于判断买入卖出时机。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biga@1.34.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20209461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biga",
+      "url": "https://clawhub.ai/skills/biga"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biga",
+    "url": "https://clawhub.ai/skills/biga",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biga-a80df9a44e823ff1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biga@1.34.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-biga-1.34.0.json",
+      "version": "1.34.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46693a9f7a590df7413b7c13ce56f42819bac1ff553d2beed78f901aa70e37fe",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:05:10.529Z"
+}

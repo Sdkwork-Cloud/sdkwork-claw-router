@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72978,
+  "uuid": "skill-clawhub-medical-health-bid-radar-yiliaozhaobiaocaigouwang",
+  "skillKey": "clawhub-medical-health-bid-radar-yiliaozhaobiaocaigouwang",
+  "name": "医疗大健康采招雷达-医疗招标采购网",
+  "summary": "医疗大健康采招雷达-医疗招标采购网，当搜索词包含医院、医疗、卫生、体检时触发，重点提取采购方（医院）和中标方（医药公司/代理商），分析特定医院的Top供应商体系。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_health_bid_radar_yiliaozhaobiaocaigouwang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangppp",
+      "features": [
+        "医疗大健康采招雷达-医疗招标采购网，当搜索词包含医院、医疗、卫生、体检时触发，重点提取采购方（医院）和中标方（医药公司/代理商），分析特定医院的Top供应商体系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-health-bid-radar-yiliaozhaobiaocaigouwang@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273566082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-health-bid-radar-yiliaozhaobiaocaigouwang",
+      "url": "https://clawhub.ai/skills/medical-health-bid-radar-yiliaozhaobiaocaigouwang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-health-bid-radar-yiliaozhaobiaocaigouwang",
+    "url": "https://clawhub.ai/skills/medical-health-bid-radar-yiliaozhaobiaocaigouwang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-health-bid-radar-yiliaozhaobiaocaigouwang-3041e3a8061dba5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-health-bid-radar-yiliaozhaobiaocaigouwang@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-health-bid-radar-yiliaozhaobiaocaigouwang-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4237f966896d79bd8782deacce5144d6b4f6afe1d2a029534ebb89f6a1f8f35",
+      "artifactSizeBytes": 2751
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:33:56.058Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-workflow@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_workflow",
+  "skill": {
+    "id": 66748,
+    "skillKey": "clawhub-knowledge-workflow",
+    "name": "knowledge-workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-workflow",
+    "url": "https://clawhub.ai/skills/knowledge-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-workflow-f2c3985a1bcd34ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识管理工作流 - 完整的知识管理工作流：收集→打标→存储→发芽→产出。支持飞书/微信读书/URL，5 种发芽类型（灵光/心智模型/跨界/微习惯/潜意识）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777203939980,
+      "changelog": "完善 5 种发芽类型（spark/model/cross/habit/subconscious），全部实现真实可用的 AI 生成逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88e8713767e4682d8a80f7bbadb6eca3b984cd0d404ab0cda1da2197fa851374"
+}

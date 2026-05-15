@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44326,
+  "uuid": "skill-clawhub-ai-memory-system",
+  "skillKey": "clawhub-ai-memory-system",
+  "name": "AI Memory System",
+  "summary": "Automatically sets up a 3-layer memory system with long-term MEMORY.md, daily notes, and nightly fact extraction cron job.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_memory_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zinou",
+      "features": [
+        "Automatically sets up a 3-layer memory system with long-term MEMORY.md, daily notes, and nightl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-memory-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-memory-system",
+      "url": "https://clawhub.ai/skills/ai-memory-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-memory-system",
+    "url": "https://clawhub.ai/skills/ai-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-memory-system-32044e1dd14423c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-memory-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-memory-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bad0d6939ee41df538e04df078dd5934c63c204c26c7be7f8f6265d94411b679",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:51:33.769Z"
+}

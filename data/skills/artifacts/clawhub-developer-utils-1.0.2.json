@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/developer-utils@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.developer_utils",
+  "skill": {
+    "id": 24300,
+    "skillKey": "clawhub-developer-utils",
+    "name": "Developer Utils"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "developer-utils",
+    "url": "https://clawhub.ai/skills/developer-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/developer-utils-5ed7e283445d356c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one developer toolkit for encoding, formatting, time conversion, regex testing, encryption, code snippets, and network utilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luduoxin",
+      "userId": "s17cnpmrsw54h2vbr823362y3183hxgt",
+      "displayName": "路多辛",
+      "image": "https://avatars.githubusercontent.com/u/3434402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773552984297,
+      "changelog": "- Expanded feature list: Over 80 developer tools now included, covering text, encoding, formatting, time, regex, cryptography, data conversion, network, color, code, Unix, finance, and geo utilities.\n- Feature descriptions updated for clarity and detail in both English and Chinese.\n- New tools added in multiple categories, such as Punycode, HTML beautify/minify, data converters (CSV, XML, YAML), password strength, NanoID, code snippet generators, palette generators, unit converters, and geo coordinate converters.\n- SKILL.md structure improved for readability and navigation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0b99b002befb44e159cd02cb005ec34094d4a6f19b457403ac8fef6b15e5a4a"
+}

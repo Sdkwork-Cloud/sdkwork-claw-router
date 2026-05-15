@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netstat@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netstat",
+  "skill": {
+    "id": 22460,
+    "skillKey": "clawhub-netstat",
+    "name": "Netstat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netstat",
+    "url": "https://clawhub.ai/skills/netstat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netstat-9a990e354cd9648e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Display network connections, listening ports, and routing tables. Use when diagnosing network issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773928727024,
+      "changelog": "v3.0.0: rewrite",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af2c17f211abb100b40774757c4ee9c0b2e1f4d79c4cba8f29692a43cae87332"
+}

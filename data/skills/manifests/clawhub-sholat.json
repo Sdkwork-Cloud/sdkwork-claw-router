@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11520,
+  "uuid": "skill-clawhub-sholat",
+  "skillKey": "clawhub-sholat",
+  "name": "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indonesia dari API Muslim api.myquran..",
+  "summary": "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indonesia dari API Muslim api.myquran.com (sumber Kemenag Bimas Islam). Gunakan saat user minta jadwal sholat hari ini / tanggal tertentu / 1 bulan un.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sholat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banghasan",
+      "features": [
+        "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indone.",
+        "Gunakan saat user minta jadwal sholat hari ini / tanggal tertentu / 1 bulan untuk lokasi terten."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sholat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5436959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sholat",
+      "url": "https://clawhub.ai/skills/sholat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sholat",
+    "url": "https://clawhub.ai/skills/sholat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sholat-b7830946d41a0f19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sholat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sholat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf5f740df82a33e2ce777b01e55b071684da3fe5622b1ba4b26e127a3affc09c",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:31:29.425Z"
+}

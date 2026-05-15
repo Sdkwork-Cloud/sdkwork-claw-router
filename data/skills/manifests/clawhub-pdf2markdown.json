@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20945,
+  "uuid": "skill-clawhub-pdf2markdown",
+  "skillKey": "clawhub-pdf2markdown",
+  "name": "PDF to markdown converter",
+  "summary": "Convert PDF and image documents to clean Markdown via the PDF2Markdown CLI. Use when the user wants to extract text from PDFs, convert PDFs to markdown, pars...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QThans",
+      "features": [
+        "Convert PDF and image documents to clean Markdown via the PDF2Markdown CLI",
+        "Use when the user wants to extract text from PDFs, convert PDFs to markdown, pars..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf2markdown@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18275400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf2markdown",
+      "url": "https://clawhub.ai/skills/pdf2markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2markdown",
+    "url": "https://clawhub.ai/skills/pdf2markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2markdown-c77d9c5b218d2469.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf2markdown@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf2markdown-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dafe1af3978312b7098d0c7bdad2b95deefe77a9294d0574a8f838b10e3405e9",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:12:21.981Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor_youtube",
+  "skill": {
+    "id": 45090,
+    "skillKey": "clawhub-highlight-editor-youtube",
+    "name": "Highlight Editor Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor-youtube",
+    "url": "https://clawhub.ai/skills/highlight-editor-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-youtube-44ba6d7fa281b7e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 45-minute YouTube gaming stream into 1080p highlight reel clips just by typing what you need. Whether it's generating short highlight clips from long..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775937350185,
+      "changelog": "Initial release: Instantly turn long YouTube videos into AI-generated highlight reels.\n\n- Upload YouTube video footage and describe desired clips — no timeline editing or export settings needed.\n- Handles automatic authentication with NEMO backend for free, rapid processing.\n- Supports exports in multiple formats (mp4, mov, avi, webm, and more) up to 1080p.\n- Includes workflows for exports, credit checks, timeline previews, and iterative editing.\n- Automatic error handling covers tokens, sessions, credits, file size/format, and API usage limits.\n- Optimized for fast highlight extraction: typical export is ready to download within 1-2 minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6511f682e05fcec11955e4c8f1f05fdebbf73e839e3207438747058d0cf39967"
+}

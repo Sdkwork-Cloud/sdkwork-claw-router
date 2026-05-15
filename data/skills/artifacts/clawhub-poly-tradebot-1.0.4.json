@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poly-tradebot@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poly_tradebot",
+  "skill": {
+    "id": 30882,
+    "skillKey": "clawhub-poly-tradebot",
+    "name": "Poly Tradebot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poly-tradebot",
+    "url": "https://clawhub.ai/skills/poly-tradebot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poly-tradebot-7e556919f9360226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated news analysis pipeline that fetches CNBC world news, classifies articles by topic (geopolitics vs macroeconomics), and invokes specialized skills (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rafimchmd",
+      "userId": "publishers:rafimchmd",
+      "displayName": "Rafi Mochamad Fahreza",
+      "image": "https://avatars.githubusercontent.com/u/57250467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773844825737,
+      "changelog": "- Added a new odds filter: only include Polymarket markets with Yes% probability below 70% (contrarian edge).\n- Updated requirements for the unified trading table: all markets must now pass both volume (> $1,000,000) and odds (<70%) filters.\n- Documentation updated to reflect odds filter and changed the skill version to 3.1.\n- No code changes, but clarifies market selection and summary output rules for trading recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:497a012dee6683ea41e5a8723e679560356ead288263743d215efff82583fc25"
+}

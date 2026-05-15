@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19195,
+  "uuid": "skill-clawhub-local-coding-orchestrator",
+  "skillKey": "clawhub-local-coding-orchestrator",
+  "name": "local-coding-orchestrator",
+  "summary": "Use OpenClaw as a supervisor-driven orchestration scaffold for local coding CLIs such as Codex, Claude Code, and OpenCode. Supports task records, lifecycle t...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_coding_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lijiejoy",
+      "features": [
+        "Use OpenClaw as a supervisor-driven orchestration scaffold for local coding CLIs such as Codex,.",
+        "Supports task records, lifecycle t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-coding-orchestrator@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17918251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-coding-orchestrator",
+      "url": "https://clawhub.ai/skills/local-coding-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-coding-orchestrator",
+    "url": "https://clawhub.ai/skills/local-coding-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-coding-orchestrator-79275078b61f1b3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-coding-orchestrator@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-coding-orchestrator-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a5aa6c71f839e35d44902f2fafbcc6c00bb099d2e2f0d32b341ea2d7a180262",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T05:05:21.920Z"
+}

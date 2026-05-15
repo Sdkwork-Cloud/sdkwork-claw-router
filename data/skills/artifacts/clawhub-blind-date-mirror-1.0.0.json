@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blind-date-mirror@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blind_date_mirror",
+  "skill": {
+    "id": 57109,
+    "skillKey": "clawhub-blind-date-mirror",
+    "name": "相亲照妖镜 Blind Date Mirror"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blind-date-mirror",
+    "url": "https://clawhub.ai/skills/blind-date-mirror",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blind-date-mirror-dcaaa7509086148a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan someone's public social media profiles before a date — generate a data-driven \"Date Intel Report\" with personality traits, interests, lifestyle, values,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophie-xin9",
+      "userId": "s173ct06qcsk0pk1rah6ysms3983m2cc",
+      "displayName": "Sophieyou",
+      "image": "https://avatars.githubusercontent.com/u/243932536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775732344085,
+      "changelog": "Initial release: scan public social profiles before a date, generate intel report with red/green flags",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a1b9f48d2008748feebb45bc7aae60d50e9b580df7c6381b73e2893d4e48bca"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10005,
+  "uuid": "skill-clawhub-pamela-call",
+  "skillKey": "clawhub-pamela-call",
+  "name": "Pamela Calls",
+  "summary": "Make AI phone calls instantly. No lag, no setup, unlimited scale.",
+  "version": "1.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pamela_call",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pamela AI Calls",
+      "features": [
+        "Make AI phone calls instantly",
+        "No lag, no setup, unlimited scale."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pamela-call@1.1.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243853180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pamela-call",
+      "url": "https://clawhub.ai/skills/pamela-call"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pamela-call",
+    "url": "https://clawhub.ai/skills/pamela-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pamela-call-2a4053e890b5bdb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pamela-call@1.1.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-pamela-call-1.1.12.json",
+      "version": "1.1.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4b507141e7e300e8980402284c364285d11b6aeb87d82a930ca674aa17faac9",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:49:42.427Z"
+}

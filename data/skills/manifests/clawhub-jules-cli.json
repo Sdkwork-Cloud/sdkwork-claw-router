@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11086,
+  "uuid": "skill-clawhub-jules-cli",
+  "skillKey": "clawhub-jules-cli",
+  "name": "Jules CLI",
+  "summary": "Interact with the Jules CLI to manage asynchronous coding sessions. Use this skill sparingly for complex, isolated tasks that benefit from a remote VM.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jules_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Stafford",
+      "features": [
+        "Interact with the Jules CLI to manage asynchronous coding sessions",
+        "Use this skill sparingly for complex, isolated tasks that benefit from a remote VM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jules-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1449222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jules-cli",
+      "url": "https://clawhub.ai/skills/jules-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jules-cli",
+    "url": "https://clawhub.ai/skills/jules-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jules-cli-8d26db7c3bcb9634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jules-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jules-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a18826800c64ddf2e1e54a53560bf148fc61923282a28a13f4d89429ded7c293",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:12:02.767Z"
+}

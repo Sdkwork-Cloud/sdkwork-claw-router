@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-research-proposal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_research_proposal",
+  "skill": {
+    "id": 52899,
+    "skillKey": "clawhub-auto-research-proposal",
+    "name": "auto-research-proposal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-research-proposal",
+    "url": "https://clawhub.ai/skills/auto-research-proposal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-research-proposal-7100b4027c0ee1ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent research war room. Personas debate in sequential turns through two phases — ideation and proposal writing. Persona persistence and drift detectio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankaging",
+      "userId": "s176w22x2v42vjrmqxwvqxwg8h83r78z",
+      "displayName": "Zhengxuan Wu",
+      "image": "https://avatars.githubusercontent.com/u/15223704?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774766745843,
+      "changelog": "- Introduced \"war-room\": a multi-agent research debate and proposal-writing environment enforcing persona persistence and drift detection.\n- Two-phase protocol: ideation (structured debate with consensus rules) and collaborative research proposal drafting.\n- Supports dynamic team configurations (full or 1-on-1) with persona-specific memos and drift management.\n- Includes detailed orchestrator playbook, live monitoring, checkpoints, and synthesised progress snapshots.\n- Outputs full session logs, summarised ideas, and final proposals in a clearly organised project structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60a08e9a211ca53e019b109c7155c1cf404117453e2af3a653dae58d5a3ef6d1"
+}

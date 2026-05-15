@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/senseaudio-tts-dubbing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseaudio_tts_dubbing",
+  "skill": {
+    "id": 71427,
+    "skillKey": "clawhub-senseaudio-tts-dubbing",
+    "name": "senseaudio的tts工具，根据用户需求生成文案完成配音"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseaudio-tts-dubbing",
+    "url": "https://clawhub.ai/skills/senseaudio-tts-dubbing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseaudio-tts-dubbing-1760f47b4d26df80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: 用户说“文本转语音”“生成配音”“朗读文案”“生成短视频旁白”时触发。 适用于营销内容与短视频配音场景：将文案快速转换为可直接用于剪辑的软件配音文件，并支持音色、语速、音调、音量和输出格式控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klilyz",
+      "userId": "s1722vtv476cm18sc2h967dygd85txnp",
+      "displayName": "KLilyZ",
+      "image": "https://avatars.githubusercontent.com/u/106950436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773724976198,
+      "changelog": "senseaudio-tts-dubbing 1.0.0 — Initial release\n\n- Provides text-to-speech and dubbing for marketing and short video content using the SenseAudio TTS API.\n- Supports selection of voice, speed, pitch, volume, and output format.\n- Requires users to configure `SENSEAUDIO_API_KEY` before use; guides users through setup if missing.\n- Ensures that only the official SenseAudio cloud service is used for TTS (no local/third-party engines).\n- Saves audio output by default to `./outputs/`, with support for user-specified paths.\n- Includes commands for non-streaming/streaming synthesis, voice listing, and authentication checking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac8d04c2e92381f4f36cf9d8f69e365562c7a364e3c8284db11d6c41fea1b9d9"
+}

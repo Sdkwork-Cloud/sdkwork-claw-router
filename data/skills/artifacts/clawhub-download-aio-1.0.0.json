@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/download-aio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_aio",
+  "skill": {
+    "id": 43649,
+    "skillKey": "clawhub-download-aio",
+    "name": "Download AIO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-aio",
+    "url": "https://clawhub.ai/skills/download-aio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-aio-837726004c7e67fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos, audio, playlists, subtitles, and thumbnails from ANY platform (YouTube, TikTok, Instagram, Facebook, Twitter/X, Twitch, Vimeo, SoundCloud, R..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcbaivn",
+      "userId": "s17eshjzkvkbdnj5rbbbd5a8js849m8g",
+      "displayName": "MCB AI",
+      "image": "https://avatars.githubusercontent.com/u/132585065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775373796650,
+      "changelog": "Initial release - Download video/audio from 1000+ platforms",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6580c094661242497c5ee586909f892a094372688d47831a0706ae13b355ad9c"
+}

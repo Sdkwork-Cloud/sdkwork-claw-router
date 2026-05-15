@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/splitwise@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.splitwise",
+  "skill": {
+    "id": 17835,
+    "skillKey": "clawhub-splitwise",
+    "name": "Splitwise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "splitwise",
+    "url": "https://clawhub.ai/skills/splitwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/splitwise-b404beee516203b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage expenses on Splitwise. Use this skill when the user wants to log a new expense, split a bill, or check their Splitwise balance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richieforeman",
+      "userId": "publishers:richieforeman",
+      "displayName": "Richie Foreman",
+      "image": "https://avatars.githubusercontent.com/u/1050799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771539704314,
+      "changelog": "Initial release of the Splitwise skill.\n\n- Enables logging and splitting expenses through the Splitwise API.\n- Allows agents to automate expense sharing using a long-lived Splitwise API key.\n- Provides scripts and usage examples for 50/50 expense splits between users.\n- Securely manages sensitive data, sending details only to Splitwise.\n- Instructions included for setup, authentication, and parameter options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57fd68d13406d955aab581b41ad620007efb6467e1b2c2ddb7d79a20812bdf14"
+}

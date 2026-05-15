@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-to-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_to_obsidian",
+  "skill": {
+    "id": 63884,
+    "skillKey": "clawhub-douyin-to-obsidian",
+    "name": "douyin-to-obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-to-obsidian",
+    "url": "https://clawhub.ai/skills/douyin-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-to-obsidian-1d94cc0d1cfe00a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频文案自动提取工具，一键将抖音视频转为结构化 Obsidian 笔记。支持绕过风控、本地 Whisper 语音识别、长视频分段处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scutlhp",
+      "userId": "s173cn8qrc3ebyzpw2tyxhm0qd84aw6g",
+      "displayName": "scutlhp",
+      "image": "https://avatars.githubusercontent.com/u/17611275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184219626,
+      "changelog": "douyin-to-obsidian v1.0.0\n\n- Initial release.\n- Extract Douyin (TikTok China) video transcripts and convert to structured Obsidian markdown notes in one click.\n- Supports bypassing Douyin anti-bot measures and local Whisper AI speech recognition.\n- Handles both short links and share codes; supports long video segmentation.\n- Includes automatic FFmpeg download; no manual setup needed.\n- Outputs notes with YAML frontmatter, ready for Obsidian.\n- Designed for easy installation and use on Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88b0b6b26be06cf87ceaa1c4799c92a2131bbdf3eb3c4895f9faf7de049adf0e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31024,
+  "uuid": "skill-clawhub-branch",
+  "skillKey": "clawhub-branch",
+  "name": "Branch",
+  "summary": "Branch integration. Manage data, records, and automate workflows. Use when the user wants to interact with Branch data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.branch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Branch integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Branch data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/branch@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "branch",
+      "url": "https://clawhub.ai/skills/branch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "branch",
+    "url": "https://clawhub.ai/skills/branch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/branch-f38c764c8aa00b65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/branch@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-branch-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e227f8aa06ab729d9ea181c9a7c3c7d23dade2ed83e5a7136580556aeb20ec2f",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:17.257Z"
+}

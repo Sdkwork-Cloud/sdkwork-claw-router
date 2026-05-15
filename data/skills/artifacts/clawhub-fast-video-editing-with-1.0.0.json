@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fast-video-editing-with@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_video_editing_with",
+  "skill": {
+    "id": 43958,
+    "skillKey": "clawhub-fast-video-editing-with",
+    "name": "Fast Video Editing With"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-video-editing-with",
+    "url": "https://clawhub.ai/skills/fast-video-editing-with",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-video-editing-with-a8ef6f0824214f61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based fast-video-editing-with tool that handles quickly trimming and enhancing raw footage without manual editing. Upload MP4, MOV, AVI, WebM files (up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775870422516,
+      "changelog": "Initial release: fast cloud-based AI video editing for raw footage.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB), describe edits, and get 1080p MP4 output in 30-60 seconds.\n- Automatic setup: handles token generation, session creation, and backend connection.\n- Supports rapid trimming, transitions, aspect ratio changes, audio tracks, and text overlays via natural language prompts.\n- User-friendly error handling for file types, size, credits, and rate limits.\n- Detailed session and job handling to ensure smooth cloud processing and export.\n- Designed for content creators and marketers needing fast, hands-off video editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44c2ea892e6fe17ebcb93b18a441a4c5cdf79fef44f0567481b54370da171668"
+}

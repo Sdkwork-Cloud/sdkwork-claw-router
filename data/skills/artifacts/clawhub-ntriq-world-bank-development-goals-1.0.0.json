@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-world-bank-development-goals@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_world_bank_development_goals",
+  "skill": {
+    "id": 46558,
+    "skillKey": "clawhub-ntriq-world-bank-development-goals",
+    "name": "Ntriq World Bank Development Goals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-world-bank-development-goals",
+    "url": "https://clawhub.ai/skills/ntriq-world-bank-development-goals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-world-bank-development-goals-a4b50a88ceb2a430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free API for UN Sustainable Development Goals (SDG) tracking. No subscription. Track progress by country for poverty, health, education, development metrics...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776279629984,
+      "changelog": "Initial release — free API for tracking UN Sustainable Development Goals using World Bank data.\n\n- Provides progress monitoring by country, region, or globally across 17 SDGs and 232 indicators.\n- No subscription required; pay-per-use with USDC micropayments.\n- Supports queries by country code, SDG numbers, indicators, and year range.\n- Use cases include SDG alignment reporting, program monitoring, and sustainability scoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70e11eb0567abe20d7240cdf877bd854069a5d553cf177fee4b4c489cea3c626"
+}

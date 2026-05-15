@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runpod@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runpod",
+  "skill": {
+    "id": 13203,
+    "skillKey": "clawhub-runpod",
+    "name": "RunPod pod management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runpod",
+    "url": "https://clawhub.ai/skills/runpod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runpod-31d1b3d540ecf852.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage RunPod GPU cloud instances - create, start, stop, connect to pods via SSH and API. Use when working with RunPod infrastructure, GPU instances, or need SSH access to remote GPU machines. Handles pod lifecycle, SSH proxy connections,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewharp",
+      "userId": "publishers:andrewharp",
+      "displayName": "andrewharp",
+      "image": "https://avatars.githubusercontent.com/u/3376817?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1503,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770515915744,
+      "changelog": "Updated scripts/mount_pod.sh to address warning about stricthostchecking. SSH keys for known pods will now be stored in ~/.runpod/ssh/known_hosts on first connect and verified thereafter.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cff665c8886d336c66383755eac5916a22982e1eac47739d94257f6ade20fb23"
+}

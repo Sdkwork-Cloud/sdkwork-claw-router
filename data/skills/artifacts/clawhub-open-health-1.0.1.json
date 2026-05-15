@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-health@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_health",
+  "skill": {
+    "id": 51111,
+    "skillKey": "clawhub-open-health",
+    "name": "Open Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-health",
+    "url": "https://clawhub.ai/skills/open-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-health-b41cea8ee9ae4abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book real virtual appointments with licensed providers in the US — through conversation, no forms or portals. One install, no API keys, works immediately. Sa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gljirain",
+      "userId": "s1750w2qcpha5ctas3rhnyx76583e01q",
+      "displayName": "gljirain",
+      "image": "https://avatars.githubusercontent.com/u/33655696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773353040124,
+      "changelog": "Security: hardcode API URL, declare runtime deps, strengthen PII rules, fix carrier URL encoding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6340d53d3b641dc8a8902d95d1c20da05ae2ba0277286a727ae07bef8bf3240b"
+}

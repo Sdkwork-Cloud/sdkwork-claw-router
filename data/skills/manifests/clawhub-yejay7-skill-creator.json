@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40770,
+  "uuid": "skill-clawhub-yejay7-skill-creator",
+  "skillKey": "clawhub-yejay7-skill-creator",
+  "name": "OpenClaw Skill Creator (yejay7)",
+  "summary": "Crea skills para OpenClaw con el formato correcto. YAML frontmatter, _meta.json, estructura de archivos. Publicar en ClawHub es opcional.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yejay7_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yejay7",
+      "features": [
+        "Crea skills para OpenClaw con el formato correcto",
+        "YAML frontmatter, _meta.json, estructura de archivos",
+        "Publicar en ClawHub es opcional."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yejay7-skill-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265100366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yejay7-skill-creator",
+      "url": "https://clawhub.ai/skills/yejay7-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yejay7-skill-creator",
+    "url": "https://clawhub.ai/skills/yejay7-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yejay7-skill-creator-040de3a32c951742.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yejay7-skill-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yejay7-skill-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef4b4c0a19c1d0930fd69216112ccb62a103be9773d2b702afc3e61788b2a135",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:07:26.543Z"
+}

@@ -45,7 +45,7 @@ fn app_user_profile_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/user/profile", get(fetch_user_profile))
+        .route("/app/v3/api/iam/users/current", get(fetch_user_profile))
         .with_state(AppUserProfileState {
             read_store,
             require_subject,

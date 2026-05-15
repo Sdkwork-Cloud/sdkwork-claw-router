@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67038,
+  "uuid": "skill-clawhub-baidu-image-classify",
+  "skillKey": "clawhub-baidu-image-classify",
+  "name": "Baidu Image Classify",
+  "summary": "支持通用物体识别、商品识别和场景识别，输入图片返回标签、商品信息或场景标签及置信度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_image_classify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maple-8899",
+      "features": [
+        "支持通用物体识别、商品识别和场景识别，输入图片返回标签、商品信息或场景标签及置信度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-image-classify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208060357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-image-classify",
+      "url": "https://clawhub.ai/skills/baidu-image-classify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-image-classify",
+    "url": "https://clawhub.ai/skills/baidu-image-classify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-image-classify-62e6fd6bc7ba4450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-image-classify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-image-classify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a3929d3de72af4b426c3e6de4eeda3a9a4b3a432d9d6066e5493e1995f6ffd2",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:05:18.901Z"
+}

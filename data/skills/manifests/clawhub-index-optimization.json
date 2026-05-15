@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70887,
+  "uuid": "skill-clawhub-index-optimization",
+  "skillKey": "clawhub-index-optimization",
+  "name": "index-optimization",
+  "summary": "针对指定表或集合做查询模式分析、可复用索引设计与 explain 迭代验证。支持两种优化模式：默认全量模式（定位该表/集合所有查询）与单查询模式（用户指定某条查询时，仅分析该查询并查询数据库现有索引）；支持两种执行确认模式：需确认模式与免确认模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.index_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiang-zx",
+      "features": [
+        "针对指定表或集合做查询模式分析、可复用索引设计与 explain 迭代验证。支持两种优化模式：默认全量模式（定位该表/集合所有查询）与单查询模式（用户指定某条查询时，仅分析该查询并查询数据库."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/index-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25993096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "index-optimization",
+      "url": "https://clawhub.ai/skills/index-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "index-optimization",
+    "url": "https://clawhub.ai/skills/index-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/index-optimization-030df38ecf1f1b2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/index-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-index-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a28a4193f03e13e9b47dadc1c99679c49e12585b007721763e510efb5e1672e4",
+      "artifactSizeBytes": 2867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:56:09.051Z"
+}

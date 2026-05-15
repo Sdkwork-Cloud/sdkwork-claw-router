@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-video-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_video_search",
+  "skill": {
+    "id": 61511,
+    "skillKey": "clawhub-wechat-video-search",
+    "name": "WeChat Channels Video Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-video-search",
+    "url": "https://clawhub.ai/skills/wechat-video-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-video-search-d0fbedf71cda3276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(已验证) 通过 TikHub API 搜索微信视频号视频(需要翻墙)，支持关键词搜索，返回视频下载链接和分析数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776049564511,
+      "changelog": "Fixed encoding issues on Windows and corrected API endpoint to api.tikhub.dev.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffba0933aa0e197f8187e16b8e79c6b5183d48bf04f54a07c31f24f31de450af"
+}

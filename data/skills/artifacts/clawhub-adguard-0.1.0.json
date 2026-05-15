@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adguard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adguard",
+  "skill": {
+    "id": 9737,
+    "skillKey": "clawhub-adguard",
+    "name": "Adguard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adguard",
+    "url": "https://clawhub.ai/skills/adguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adguard-253c581cf9cdef5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control AdGuard Home DNS filtering via HTTP API. Use when managing blocklists/allowlists, checking domain filtering status, toggling protection, or clearing DNS cache. Supports blocking/allowing domains, viewing statistics, and protecting/."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rowbotik",
+      "userId": "publishers:rowbotik",
+      "displayName": "Alex Buchan",
+      "image": "https://avatars.githubusercontent.com/u/4590280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2889,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769898450395,
+      "changelog": "- Initial release of AdGuard Home Controller skill.\n- Manage AdGuard Home DNS filtering from the command line via REST API.\n- Supports checking, blocking, and allowing domains; viewing DNS filtering status and statistics; toggling protection; and clearing DNS cache.\n- Configuration via environment variables or optional JSON config file.\n- Provides troubleshooting tips and advanced batch operation examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf3306a32e541d1bd5467774997032e3bab1f29b70445d3c1f2dbf54c1dfe057"
+}

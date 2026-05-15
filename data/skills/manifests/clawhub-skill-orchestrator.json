@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57005,
+  "uuid": "skill-clawhub-skill-orchestrator",
+  "skillKey": "clawhub-skill-orchestrator",
+  "name": "技能编排器",
+  "summary": "Multi-skill orchestrator: decompose complex asks, discover skills, plan parallel/serial steps, checkpoints, merge outputs; optional JSON bundle for hosts. Us...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Windymonkeys",
+      "features": [
+        "Multi-skill orchestrator: decompose complex asks, discover skills, plan parallel/serial steps,.",
+        "optional JSON bundle for hosts"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-orchestrator@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48813551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-orchestrator",
+      "url": "https://clawhub.ai/skills/skill-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-orchestrator",
+    "url": "https://clawhub.ai/skills/skill-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-orchestrator-03a6fe22cce3a65a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-orchestrator@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-orchestrator-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a06d19005a69202c45d9f8460b834d873349c5b1bbbf75108d58bc28e28e3630",
+      "artifactSizeBytes": 2639
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:04:35.510Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readme-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readme_generator",
+  "skill": {
+    "id": 14622,
+    "skillKey": "clawhub-readme-generator",
+    "name": "README Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readme-generator",
+    "url": "https://clawhub.ai/skills/readme-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readme-generator-e440cdb2c3656d1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a production-quality README.md by analyzing project structure, framework, and code"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fratua",
+      "userId": "publishers:fratua",
+      "displayName": "Fratua",
+      "image": "https://avatars.githubusercontent.com/u/130244023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1136,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771181330052,
+      "changelog": "- Initial release of readme-generator.\n- Analyzes project files and structure to generate a production-quality README.md.\n- Detects frameworks, dependencies, and project configuration across multiple languages (Node.js, Python, Rust, Go, etc.).\n- Infers install/run commands, generates relevant badges, and tailors documentation sections based on detected tools and frameworks.\n- Handles monorepos, missing config files, and existing READMEs with user prompts and sensible defaults.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:08f78cb25c209f4421f83f759bfe998dd53ffc29d9d56ffd7044f50562cb372d"
+}

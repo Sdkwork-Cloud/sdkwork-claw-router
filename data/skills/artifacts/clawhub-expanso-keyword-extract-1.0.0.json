@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expanso-keyword-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_keyword_extract",
+  "skill": {
+    "id": 15374,
+    "skillKey": "clawhub-expanso-keyword-extract",
+    "name": "Expanso keyword-extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-keyword-extract",
+    "url": "https://clawhub.ai/skills/expanso-keyword-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-keyword-extract-8db11bb7214b0d8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract keywords and key phrases from text using Expanso Edge for SEO, tagging, and indexing purposes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aronchick",
+      "userId": "publishers:aronchick",
+      "displayName": "Expanso",
+      "image": "https://avatars.githubusercontent.com/u/51317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1026,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770753125248,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84b3ce38132f0ad7a04fa3abcd5fc7488d22ce68e04a2d3d16df7985cc3f090d"
+}

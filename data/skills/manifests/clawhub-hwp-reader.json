@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19600,
+  "uuid": "skill-clawhub-hwp-reader",
+  "skillKey": "clawhub-hwp-reader",
+  "name": "hwp-reader",
+  "summary": "Extract and analyze text, tables, images, and metadata from Korean HWP and HWPX documents, supporting both legacy and modern formats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hwp_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Extract and analyze text, tables, images, and metadata from Korean HWP and HWPX documents, supp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hwp-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hwp-reader",
+      "url": "https://clawhub.ai/skills/hwp-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hwp-reader",
+    "url": "https://clawhub.ai/skills/hwp-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hwp-reader-c2e800d25f377da3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hwp-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hwp-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22337d7debfc127cd6c6a195f61a8fa2952922f6c930afda4a15292c0f1bd1c9",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:33:38.716Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13090,
+  "uuid": "skill-clawhub-search-cluster",
+  "skillKey": "clawhub-search-cluster",
+  "name": "Search Cluster",
+  "summary": "Aggregated search aggregator using Google CSE, GNews RSS, Wikipedia, Reddit, and Scrapling.",
+  "version": "3.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_cluster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Aggregated search aggregator using Google CSE, GNews RSS, Wikipedia, Reddit, and Scrapling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-cluster@3.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-cluster",
+      "url": "https://clawhub.ai/skills/search-cluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-cluster",
+    "url": "https://clawhub.ai/skills/search-cluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-cluster-5a53b71269f22cef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-cluster@3.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-cluster-3.5.1.json",
+      "version": "3.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b37bd5e6733aeb8c653a9e7701f964205212002357203bebd1bb563afa2362c",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:37:25.029Z"
+}

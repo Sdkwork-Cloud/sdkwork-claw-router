@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37495,
+  "uuid": "skill-clawhub-column",
+  "skillKey": "clawhub-column",
+  "name": "Column",
+  "summary": "Column integration. Manage data, records, and automate workflows. Use when the user wants to interact with Column data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.column",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Column integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Column data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/column@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "column",
+      "url": "https://clawhub.ai/skills/column"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "column",
+    "url": "https://clawhub.ai/skills/column",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/column-881d5fb60090f59a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/column@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-column-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:196d0a831e84f6e8ae7d913e77dc38409c5ab55ff473e16957f1b94a5976f2ca",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:20:08.878Z"
+}

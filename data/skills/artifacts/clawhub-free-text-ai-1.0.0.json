@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_ai",
+  "skill": {
+    "id": 54332,
+    "skillKey": "clawhub-free-text-ai",
+    "name": "Free Text Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-ai",
+    "url": "https://clawhub.ai/skills/free-text-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-ai-f51c32f71a5f3ca4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn this text into a 30-second promotional video with visuals and backgro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778382589450,
+      "changelog": "Initial release of Free Text AI — Create Videos From Text.\n\n- Instantly create 30-second promotional videos from text prompts, scripts, or documents (TXT, DOCX, PDF; up to 500MB).\n- Simple, chat-based workflow — describe your desired video, and receive an MP4 with visuals and background music in 1–2 minutes.\n- No need for video editing skills or software installation; everything powered by a cloud GPU backend.\n- Seamless handling of uploads, export requests, credits, and editing actions, with clear error guidance.\n- Ideal for marketers and content creators needing rapid video content from text without recording footage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52edd00827af7d38df079f5b6edeba6d2e167213b0387bd45efc91bec6976b65"
+}

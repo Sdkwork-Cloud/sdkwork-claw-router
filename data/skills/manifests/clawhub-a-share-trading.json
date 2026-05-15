@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71340,
+  "uuid": "skill-clawhub-a-share-trading",
+  "skillKey": "clawhub-a-share-trading",
+  "name": "A股数据SKILL",
+  "summary": "查询A股实时行情、历史数据、技术指标、事件、资金面与个股行业信息。Use when 用户提到股票代码、板块、技术分析、财务指标、指数成分、交易日历、宏观数据或个股所属行业。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "calm",
+      "features": [
+        "查询A股实时行情、历史数据、技术指标、事件、资金面与个股行业信息。Use when 用户提到股票代码、板块、技术分析、财务指标、指数成分、交易日历、宏观数据或个股所属行业。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-trading@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20592210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-trading",
+      "url": "https://clawhub.ai/skills/a-share-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-trading",
+    "url": "https://clawhub.ai/skills/a-share-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-trading-dd98269ed467553f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-trading@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-trading-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8314f3552c0e370d2aefc43cda8bf9f89d44928f744f660ac8ff11f0938e10d",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T16:05:10.952Z"
+}

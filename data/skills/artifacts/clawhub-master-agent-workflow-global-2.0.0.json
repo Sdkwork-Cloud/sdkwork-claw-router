@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/master-agent-workflow-global@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_agent_workflow_global",
+  "skill": {
+    "id": 65228,
+    "skillKey": "clawhub-master-agent-workflow-global",
+    "name": "Master Agent Workflow Global"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-agent-workflow-global",
+    "url": "https://clawhub.ai/skills/master-agent-workflow-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-agent-workflow-global-2f0adecd5fb38b5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持跨平台的一键安装全局主控代理工作流，具备多级代理调度、错误处理、配置迁移和模板管理能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shujianming",
+      "userId": "s17bax8pd2rqn5cnm9pycd5q1983q266",
+      "displayName": "shujianming",
+      "image": "https://avatars.githubusercontent.com/u/32048731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774580706470,
+      "changelog": "全局可迁移的主控代理工作流技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35567acaddaa9472a917f919f8de0b4564934f9112f8d5ef03a60b2759f9cf10"
+}

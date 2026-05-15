@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72520,
+  "uuid": "skill-clawhub-smic",
+  "skillKey": "clawhub-smic",
+  "name": "Smic",
+  "summary": "提供中芯国际企业信息、工艺技术、产能布局、股票行情及半导体产业动态查询服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供中芯国际企业信息、工艺技术、产能布局、股票行情及半导体产业动态查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smic@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smic",
+      "url": "https://clawhub.ai/skills/smic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smic",
+    "url": "https://clawhub.ai/skills/smic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smic-e1401bc4339b5212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smic@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smic-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0e0805e244c7b32529f0908e9f12a9209d841fc9c9a2e2ccb98d9fee5fc91cf",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:49.704Z"
+}

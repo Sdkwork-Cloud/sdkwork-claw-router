@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39949,
+  "uuid": "skill-clawhub-anthropic-cost-optimizer",
+  "skillKey": "clawhub-anthropic-cost-optimizer",
+  "name": "Anthropic Cost Optimizer",
+  "summary": "Audits and rewrites your OpenClaw config to minimize API token costs. Use this skill whenever the user mentions high bills, API costs, billing changes, \"too...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthropic_cost_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Next Frontier AI",
+      "features": [
+        "Audits and rewrites your OpenClaw config to minimize API token costs",
+        "Use this skill whenever the user mentions high bills, API costs, billing changes, \"too..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anthropic-cost-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257253317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anthropic-cost-optimizer",
+      "url": "https://clawhub.ai/skills/anthropic-cost-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthropic-cost-optimizer",
+    "url": "https://clawhub.ai/skills/anthropic-cost-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthropic-cost-optimizer-5e4047c312ca266c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anthropic-cost-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-cost-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:483e8492ef9e3bab281c4ab0e132507c01ea18ae41ba615eeff1ed2a417c1ad7",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T07:47:01.403Z"
+}

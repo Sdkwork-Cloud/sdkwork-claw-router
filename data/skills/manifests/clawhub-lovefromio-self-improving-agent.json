@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46848,
+  "uuid": "skill-clawhub-lovefromio-self-improving-agent",
+  "skillKey": "clawhub-lovefromio-self-improving-agent",
+  "name": "Lovefromio Self Improving Agent",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovefromio_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovefromio-self-improving-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235840214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovefromio-self-improving-agent",
+      "url": "https://clawhub.ai/skills/lovefromio-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovefromio-self-improving-agent",
+    "url": "https://clawhub.ai/skills/lovefromio-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovefromio-self-improving-agent-4ce2941e2eb556e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovefromio-self-improving-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovefromio-self-improving-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69f2ba5dc6017f9f338980f97c9431a575fb272f055c9ca927242dfab2f38680",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:05:40.364Z"
+}

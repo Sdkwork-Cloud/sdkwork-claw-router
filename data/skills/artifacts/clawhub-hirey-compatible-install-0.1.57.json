@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hirey-compatible-install@0.1.57",
+  "version": "0.1.57",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hirey_compatible_install",
+  "skill": {
+    "id": 46094,
+    "skillKey": "clawhub-hirey-compatible-install",
+    "name": "Install Hirey AI on OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hirey-compatible-install",
+    "url": "https://clawhub.ai/skills/hirey-compatible-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hirey-compatible-install-707a9c8896b00ee4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install or repair Hirey AI on a local OpenClaw host through the official ClawHub package path, then complete the local MCP, receiver, registration, and healt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yzlee",
+      "userId": "s173ync9g4tzcxng1n4jk7vr0n842cap",
+      "displayName": "yzlee",
+      "image": "https://avatars.githubusercontent.com/u/7793722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.57",
+      "createdAt": 1778339655541,
+      "changelog": "refactor(platform): retire taxonomy_review_status / listing_role_review_queue + bump bundle 0.1.57",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14f929b4b066bc51666409ae885b4a1d516193a4f5cb180e7b7aafe399261b56"
+}

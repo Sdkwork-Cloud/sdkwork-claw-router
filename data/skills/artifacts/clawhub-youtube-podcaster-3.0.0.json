@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-podcaster@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_podcaster",
+  "skill": {
+    "id": 21278,
+    "skillKey": "clawhub-youtube-podcaster",
+    "name": "Youtube Podcast Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-podcaster",
+    "url": "https://clawhub.ai/skills/youtube-podcaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-podcaster-80960e9fcc80b4f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts the original text of a Youtube video and converts it into a multi-voice AI podcast using Gemini for script generation, OpenAI for TTS, and a local N..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaudata",
+      "userId": "s174a5ejgjphhkpwek64fdt20183jfhq",
+      "displayName": "kaudata",
+      "image": "https://avatars.githubusercontent.com/u/26302916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773724580660,
+      "changelog": "Major upgrade: Adds OpenAI TTS support and updates credentials.\n\n- Audio synthesis now uses OpenAI TTS (\"tts-1\") instead of Gemini TTS.\n- Requires both Gemini and OpenAI API keys (.env updated).\n- Documentation updated for new API usage and setup steps.\n- No longer mentions Gemini TTS in synthesis; process now specifies OpenAI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0945c5aa6578671ab638cc722b68fa134aa985747c447764253d20d3e3192a0e"
+}

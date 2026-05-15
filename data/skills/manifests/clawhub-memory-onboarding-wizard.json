@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36261,
+  "uuid": "skill-clawhub-memory-onboarding-wizard",
+  "skillKey": "clawhub-memory-onboarding-wizard",
+  "name": "Memory Onboarding Wizard",
+  "summary": "Bootstrap a new OpenClaw agent's memory system in one command. Sets up MEMORY.md, daily memory files, HEARTBEAT.md, and USER.md by asking 3 quick questions....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_onboarding_wizard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Bootstrap a new OpenClaw agent's memory system in one command",
+        "Sets up MEMORY.md, daily memory files, HEARTBEAT.md, and USER.md by asking 3 quick questions...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-onboarding-wizard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-onboarding-wizard",
+      "url": "https://clawhub.ai/skills/memory-onboarding-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-onboarding-wizard",
+    "url": "https://clawhub.ai/skills/memory-onboarding-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-onboarding-wizard-64dff4e1cf39658b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-onboarding-wizard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-onboarding-wizard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0d99da11cf942240e96dd673ca29dc75f2216136124b1563affb2a73fab88b5",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:02:21.464Z"
+}

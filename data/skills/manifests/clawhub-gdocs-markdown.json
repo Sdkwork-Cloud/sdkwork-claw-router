@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11311,
+  "uuid": "skill-clawhub-gdocs-markdown",
+  "skillKey": "clawhub-gdocs-markdown",
+  "name": "Google Docs from Markdown",
+  "summary": "Create Google Docs from Markdown files. Use when the user wants to create a Google Doc from Markdown content, or when working with gog CLI and need to populate Google Docs with content. This skill handles the conversion Markdown → DOCX → G.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdocs_markdown",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "techlaai",
+      "features": [
+        "Create Google Docs from Markdown files",
+        "Use when the user wants to create a Google Doc from Markdown content, or when working with gog.",
+        "This skill handles the conversion Markdown → DOCX → Google Docs via Drive upload, since gog doc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gdocs-markdown@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249414167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gdocs-markdown",
+      "url": "https://clawhub.ai/skills/gdocs-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdocs-markdown",
+    "url": "https://clawhub.ai/skills/gdocs-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdocs-markdown-a5ea93aa002b4a1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gdocs-markdown@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gdocs-markdown-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f6164188e5860219a41ae335eab6e44c9761203739ee43ea8d73018048276ee",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T08:27:02.392Z"
+}

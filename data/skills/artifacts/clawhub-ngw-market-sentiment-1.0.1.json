@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ngw-market-sentiment@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ngw_market_sentiment",
+  "skill": {
+    "id": 34574,
+    "skillKey": "clawhub-ngw-market-sentiment",
+    "name": "ngw_market_sentiment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ngw-market-sentiment",
+    "url": "https://clawhub.ai/skills/ngw-market-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ngw-market-sentiment-08c1ba15c60383a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for ngw_market_sentiment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lbl581581",
+      "userId": "s17fp4w0gqar49bzs1tx2he3v983z8vj",
+      "displayName": "lbl581581",
+      "image": "https://avatars.githubusercontent.com/u/8969104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774935850661,
+      "changelog": "- 品牌尾注数据源网址由 www.niuguwang.com 更新为 https://www.stockhn.com/#/appDownload  \n- 其他内容均未更改",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:303f9b1eb1e1de3b4687ca9092da4a490bdfeb190951d401347b64f3c19aefa2"
+}

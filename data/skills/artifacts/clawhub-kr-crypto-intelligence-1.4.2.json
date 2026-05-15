@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kr-crypto-intelligence@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kr_crypto_intelligence",
+  "skill": {
+    "id": 50980,
+    "skillKey": "clawhub-kr-crypto-intelligence",
+    "name": "Kr Crypto Intelligence Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kr-crypto-intelligence",
+    "url": "https://clawhub.ai/skills/kr-crypto-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kr-crypto-intelligence-7df9046194b992d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean crypto market data + AI analysis for trading agents. 13 tools — dual-basis Kimchi Premium (official USD/KRW + USDT live rate) across 180+ tokens, exch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bakyang2",
+      "userId": "s1765hv7ze2189ms2yv82mb98x84srr3",
+      "displayName": "bakyang2",
+      "image": "https://avatars.githubusercontent.com/u/265296881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1777642596736,
+      "changelog": "Add USDT-based Kimchi Premium (premium_pct_usdt) for dual-basis arbitrage measurement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45125efcf96f6929a395f6e20bf6818f0dcd3fac4a8f87e64b4ecf0b70338a60"
+}

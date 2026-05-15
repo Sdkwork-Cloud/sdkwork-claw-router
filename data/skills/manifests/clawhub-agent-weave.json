@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16293,
+  "uuid": "skill-clawhub-agent-weave",
+  "skillKey": "clawhub-agent-weave",
+  "name": "Agent Weave",
+  "summary": "Master-Worker Agent Cluster for parallel task execution. Use when building distributed agent systems with parallel processing needs, task orchestration, or M...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_weave",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gl813788-byte",
+      "features": [
+        "Master-Worker Agent Cluster for parallel task execution",
+        "Use when building distributed agent systems with parallel processing needs, task orchestration,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-weave@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226122087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-weave",
+      "url": "https://clawhub.ai/skills/agent-weave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-weave",
+    "url": "https://clawhub.ai/skills/agent-weave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-weave-bdf5622ec9c0c6a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-weave@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-weave-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b507732453f1c56fb297151b913c5c0a7f87e071b013178617b9ecabac479cd2",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T04:21:40.520Z"
+}

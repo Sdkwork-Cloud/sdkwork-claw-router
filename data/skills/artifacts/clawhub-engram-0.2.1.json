@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/engram@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engram",
+  "skill": {
+    "id": 11463,
+    "skillKey": "clawhub-engram",
+    "name": "Engram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engram",
+    "url": "https://clawhub.ai/skills/engram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engram-450dcf23e621ff10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent semantic memory layer for AI agents. Local-first storage (SQLite+LanceDB) with Ollama embeddings. Store and recall facts, decisions, preferences, events, relationships across sessions. Supports memory decay, deduplication, typed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannydvm",
+      "userId": "publishers:dannydvm",
+      "displayName": "Dannydvm",
+      "image": "https://avatars.githubusercontent.com/u/128923887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2029,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1770279365531,
+      "changelog": "Persistent semantic memory with biological decay, typed memories, relationships, and agent scoping. Zero API cost.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d15171ebb044e06621290d8fc161ba2a962a94638b29df4efd45d5592d4c5310"
+}

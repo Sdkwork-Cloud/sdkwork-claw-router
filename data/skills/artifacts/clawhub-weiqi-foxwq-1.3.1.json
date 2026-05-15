@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weiqi-foxwq@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_foxwq",
+  "skill": {
+    "id": 68308,
+    "skillKey": "clawhub-weiqi-foxwq",
+    "name": "野狐棋谱下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-foxwq",
+    "url": "https://clawhub.ai/skills/weiqi-foxwq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-foxwq-3e0a8efbe18fa289.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "weiqi-foxwq 野狐棋谱下载 - 自动从野狐围棋网站下载棋谱，支持分享链接提取（API历史棋谱/WebSocket实时）、按日期下载，含性能计时报告。当用户需要\"下载野狐棋谱\"、\"野狐围棋\"、\"棋谱下载\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangbin2025",
+      "userId": "s172smqj3myyxf7bjeyvyvse5183em11",
+      "displayName": "tokener",
+      "image": "https://avatars.githubusercontent.com/u/39153812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 27
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1775953929122,
+      "changelog": "docs: 添加绝艺解说棋谱文档; 更新功能概述和 WebSocket 协议说明; feat: 支持绝艺解说直播棋谱提取; refactor: 使用 sgf_parser 替代正则解析 SGF",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fc5109370b0f64cd9cbe15bf684dd4b3d9ca7ff5e3b5e80ddf0ae9f0f364b21"
+}

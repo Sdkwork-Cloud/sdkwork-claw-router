@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grounding-anything@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grounding_anything",
+  "skill": {
+    "id": 29019,
+    "skillKey": "clawhub-grounding-anything",
+    "name": "grounding-anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grounding-anything",
+    "url": "https://clawhub.ai/skills/grounding-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grounding-anything-f220c7205e5dc279.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use GLM-4.7V's multimodal grounding capability to detect and locate objects/text in images. Activate when user asks to find, locate, detect, or ground specif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qijimrc",
+      "userId": "s17dxhxp6n7b66j7evz56mb7zn83w4q2",
+      "displayName": "Ji Qi",
+      "image": "https://avatars.githubusercontent.com/u/28889175?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773662789507,
+      "changelog": "Grounding-anything 1.0.0 – initial release\n\n- Introduces multimodal grounding using GLM-4.7V to detect and locate objects or text in images.\n- Activates when prompted to find, locate, detect, or ground specific elements in an image, including Chinese language triggers.\n- Provides a step-by-step workflow: API call, bounding box parsing, and visual output with labeled boxes.\n- Includes utility functions for API interaction, response parsing, coordinate normalization, and visualization.\n- Emphasizes configuration steps and environment variable setup for internal network access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d886d0835fcb234e9e52e49cdc1acd36ea53817a011122b07934da7102aa04c"
+}

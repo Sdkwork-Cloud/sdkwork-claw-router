@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-twitter-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_collector",
+  "skill": {
+    "id": 64058,
+    "skillKey": "clawhub-x-twitter-collector",
+    "name": "X Twitter Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-collector",
+    "url": "https://clawhub.ai/skills/x-twitter-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-collector-1f31eeb7852b51e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动收集指定公开 X/Twitter 用户过去24小时内原创及转帖推文，生成包含中英双语、截图、链接和互动数据的报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pinotao",
+      "userId": "s17c85km6rq3m41c0c1r8c6r9983za82",
+      "displayName": "pinotao",
+      "image": "https://avatars.githubusercontent.com/u/4969884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 968,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772215789160,
+      "changelog": "x-twitter-collector v1.0.0\n\n- 首次发布，支持自动收集指定 X/Twitter 用户过去 24 小时的推文（原创及转帖）。\n- 输出包含中英双语对照、截图、推文链接及互动数据的完整报告。\n- 支持数据统计、主题分析与汇总。\n- 提供 Markdown 报告及长网页截图。\n- 简单命令即可收集、整理和分析公开账号的最新动态。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ae6e0212404fb4b8a79edb538bd420da49c7b2cd1730fe365fa0dce1fde8793"
+}

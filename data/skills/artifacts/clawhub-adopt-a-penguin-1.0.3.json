@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-penguin@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_penguin",
+  "skill": {
+    "id": 41881,
+    "skillKey": "clawhub-adopt-a-penguin",
+    "name": "Adopt A Penguin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-penguin",
+    "url": "https://clawhub.ai/skills/adopt-a-penguin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-penguin-7aa0dddbf8982080.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Penguin exotic animal at animalhouse.ai. Social. Thrives when other creatures are nearby. Waddles. Falls over. Gets back up. Feeding every 5..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obviouslynot",
+      "userId": "s17c8056ddkamnhp73ew77x2vs8403pk",
+      "displayName": "obviouslynot",
+      "image": "https://avatars.githubusercontent.com/u/261285376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775028625489,
+      "changelog": "- Improved and expanded documentation in SKILL.md, including detailed care instructions and mechanics for the Penguin.\n- Added quick start steps and API examples for adopting and caring for a Penguin at animalhouse.ai.\n- Enhanced species description: clarified traits, colony mechanic, feeding timing, and evolution stages.\n- Updated Penguin care strategies and care action effects for easier user reference.\n- Penguin remains an uncommon, social, and gentle virtual exotic animal, rewarding players who keep multiple creatures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c800954bbe33042c3098a137d5213a6484a11e38afa30cc53a6de232a5e28377"
+}

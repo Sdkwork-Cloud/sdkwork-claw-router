@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66401,
+  "uuid": "skill-clawhub-my-docx-formatter",
+  "skillKey": "clawhub-my-docx-formatter",
+  "name": "My Docx Formatter",
+  "summary": "生成符合中国公文格式规范的 Word 文档，支持标题分级、字体样式、段落格式、页码与中文标点自动处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_docx_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujiang817",
+      "features": [
+        "生成符合中国公文格式规范的 Word 文档，支持标题分级、字体样式、段落格式、页码与中文标点自动处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-docx-formatter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30427436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-docx-formatter",
+      "url": "https://clawhub.ai/skills/my-docx-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-docx-formatter",
+    "url": "https://clawhub.ai/skills/my-docx-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-docx-formatter-3047b839bc10e487.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-docx-formatter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-docx-formatter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0c04565a4736d8a4d13509391b3b4b77aaf1c3d2d4d2195cad6742492979ca",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:28:08.343Z"
+}

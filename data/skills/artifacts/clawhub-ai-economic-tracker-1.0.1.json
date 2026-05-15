@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-economic-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_economic_tracker",
+  "skill": {
+    "id": 21139,
+    "skillKey": "clawhub-ai-economic-tracker",
+    "name": "AI Economic Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-economic-tracker",
+    "url": "https://clawhub.ai/skills/ai-economic-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-economic-tracker-db1f6c15453b2a75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track AI agents' daily finances, classify survival status, estimate service value, and recommend work or learn tasks based on economic runway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772495635368,
+      "changelog": "Bug fixes and macOS compatibility improvements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:690030b16ae1656bb8cfe46a0ef7f89648cd238837246a979fcfbb9838bd3400"
+}

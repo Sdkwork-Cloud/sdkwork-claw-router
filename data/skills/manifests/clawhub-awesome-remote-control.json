@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34198,
+  "uuid": "skill-clawhub-awesome-remote-control",
+  "skillKey": "clawhub-awesome-remote-control",
+  "name": "Awesome Remote Control",
+  "summary": "Start a Claude Code remote control session in tmux with bypass permissions. Use when asked to start a remote session, start a Claude Code session, spin up Cl...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_remote_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden Watson",
+      "features": [
+        "Start a Claude Code remote control session in tmux with bypass permissions",
+        "Use when asked to start a remote session, start a Claude Code session, spin up Cl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awesome-remote-control@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90632701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awesome-remote-control",
+      "url": "https://clawhub.ai/skills/awesome-remote-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-remote-control",
+    "url": "https://clawhub.ai/skills/awesome-remote-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-remote-control-66c0612f6846b3de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awesome-remote-control@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-awesome-remote-control-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09df776b09029340d77994597c11be0a660dc931b738af37cd80cb7a2ec1bc2d",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T10:14:16.896Z"
+}

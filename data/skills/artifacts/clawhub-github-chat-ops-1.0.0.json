@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-chat-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_chat_ops",
+  "skill": {
+    "id": 19076,
+    "skillKey": "clawhub-github-chat-ops",
+    "name": "GitHub Chat Assistant (Whatsapp)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-chat-ops",
+    "url": "https://clawhub.ai/skills/github-chat-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-chat-ops-c74518c24ba4860c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a single GitHub repository via chat for non-technical requesters—after they share the repo URL and a temporary personal token, pull status, summarize who did what and when, and create/follow up on issues directly through the GitHub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamkalio",
+      "userId": "publishers:iamkalio",
+      "displayName": "iamkalio",
+      "image": "https://avatars.githubusercontent.com/u/89003403?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1001,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770630662155,
+      "changelog": "- Initial release of github-chat-ops skill to manage a single GitHub repository via chat for non-technical users.\n- Enables real-time status checks, commit summaries, and issue/PR management using only a repo URL and a temporary personal access token.\n- Strong focus on session-based token handling and security—no tokens persisted beyond session.\n- Summarizes repo activity in plain language with bullet points tailored for WhatsApp-style communication.\n- Deep repo inspection without cloning, with guidance on safely viewing file content and repository structure via the GitHub API.\n- Includes support for daily automation scripts using environment variables and cron jobs, with clear documentation for non-technical end users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f76ac2be37965b83f8e4babfb299dabc50fd273c5bd34fd867f330cc96722496"
+}

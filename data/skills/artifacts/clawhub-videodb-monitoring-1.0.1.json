@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/videodb-monitoring@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.videodb_monitoring",
+  "skill": {
+    "id": 26572,
+    "skillKey": "clawhub-videodb-monitoring",
+    "name": "VideoDB Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "videodb-monitoring",
+    "url": "https://clawhub.ai/skills/videodb-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/videodb-monitoring-12babacbfe2d207e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Screen recording capabilities. Generate stream URLs, search recordings, get transcripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omgate234",
+      "userId": "publishers:omgate234",
+      "displayName": "omgate234",
+      "image": "https://avatars.githubusercontent.com/u/195273810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773723901714,
+      "changelog": "Version 1.0.1\n\n- Removed `child_process` dependency from `monitor.ts` for writing config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dd7c50e8b70bc8768b6af456c93275d3ec34872daafa7dcaef28cdfb3ee87f0"
+}

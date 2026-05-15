@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preflight-checks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preflight_checks",
+  "skill": {
+    "id": 12507,
+    "skillKey": "clawhub-preflight-checks",
+    "name": "Preflight Checks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preflight-checks",
+    "url": "https://clawhub.ai/skills/preflight-checks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preflight-checks-7bdc8494f0613ba8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test-driven behavioral verification for AI agents. Catches silent degradation when agent loads memory but doesn't apply learned behaviors. Use when building agent with persistent memory, testing after updates, or ensuring behavioral consis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivanmmm",
+      "userId": "publishers:ivanmmm",
+      "displayName": "IvanMMM",
+      "image": "https://avatars.githubusercontent.com/u/3692403?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1627,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770388215038,
+      "changelog": "Initial release: behavioral verification framework for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:328dfef51c7c7912bc40648bc6f69fd823b0c6750933b401199e534a639dabd2"
+}

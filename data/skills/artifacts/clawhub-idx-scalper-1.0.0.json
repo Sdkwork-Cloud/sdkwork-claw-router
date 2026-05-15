@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idx-scalper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idx_scalper",
+  "skill": {
+    "id": 24911,
+    "skillKey": "clawhub-idx-scalper",
+    "name": "The Titan Scalper IDX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idx-scalper",
+    "url": "https://clawhub.ai/skills/idx-scalper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idx-scalper-d4d5bbb2d61c6e71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides scalping and day trading signals for IDX stocks using M5/M15 charts with entry, cut loss, target prices, momentum, volume, and risk management analy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alfathsyahrian",
+      "userId": "publishers:alfathsyahrian",
+      "displayName": "alfathsyahrian",
+      "image": "https://avatars.githubusercontent.com/u/227016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772731421317,
+      "changelog": "Initial release - IDX scalping & day trading assistant with full\n technical analysis framework (momentum, volume, S/R), M5/M15 timeframe focus, Stockbit integration, and risk management rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6210512081d7b6782b4561f943e8357fec1901785eb606ee9abd90e01ccb77f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhipu-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhipu_tts",
+  "skill": {
+    "id": 14848,
+    "skillKey": "clawhub-zhipu-tts",
+    "name": "Zhipu AI TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhipu-tts",
+    "url": "https://clawhub.ai/skills/zhipu-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhipu-tts-4b8cf0b8e27d8325.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion using Zhipu AI (BigModel) GLM-TTS model. Use when you need to convert text to audio files with various voice options. Supports Chin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franklu0819-lang",
+      "userId": "s178vhkrfj7fyecavdqnte98p583hvqc",
+      "displayName": "xiaofei",
+      "image": "https://avatars.githubusercontent.com/u/236318269?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 967,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771684745050,
+      "changelog": "Initial release: Text-to-speech conversion using Zhipu AI GLM-TTS model with 7 voice personas, speed control, and multiple output formats",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d235adb5317433299cc328d0315e4840dc624f7b47fa84a396c2685d2da2dba4"
+}

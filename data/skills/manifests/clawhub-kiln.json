@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29395,
+  "uuid": "skill-clawhub-kiln",
+  "skillKey": "clawhub-kiln",
+  "name": "Kiln",
+  "summary": "Control 3D printers with AI agents — 430 MCP tools, 114 CLI commands, text/sketch-to-3D generation, model marketplace search, multi-printer fleet support, sa...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiln",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeofaxel",
+      "features": [
+        "Control 3D printers with AI agents — 430 MCP tools, 114 CLI commands, text/sketch-to-3D generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiln@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254173508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiln",
+      "url": "https://clawhub.ai/skills/kiln"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiln",
+    "url": "https://clawhub.ai/skills/kiln",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiln-cdfe9ad58b46226d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiln@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiln-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61738e813a464b92d1e0610614dca1e5c16d193240f12177b0de3463e1e87128",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T09:44:43.637Z"
+}

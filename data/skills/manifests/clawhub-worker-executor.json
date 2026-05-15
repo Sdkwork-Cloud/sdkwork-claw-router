@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24004,
+  "uuid": "skill-clawhub-worker-executor",
+  "skillKey": "clawhub-worker-executor",
+  "name": "Worker Executor",
+  "summary": "Performs specific tasks like research, writing, coding, or analysis with concrete, fast execution while staying strictly within assigned scope.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worker_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kiril-Shturman",
+      "features": [
+        "Performs specific tasks like research, writing, coding, or analysis with concrete, fast executi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worker-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69124328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worker-executor",
+      "url": "https://clawhub.ai/skills/worker-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worker-executor",
+    "url": "https://clawhub.ai/skills/worker-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worker-executor-0daeea8c82da5051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worker-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-worker-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bb0309f684ddab0f46c3cc2c57e4b57d90eada4688e9a692f938a60271f06a5",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:27:53.319Z"
+}

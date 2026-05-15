@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-cksync-plan@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cksync_plan",
+  "skill": {
+    "id": 40485,
+    "skillKey": "clawhub-alibabacloud-cksync-plan",
+    "name": "Alibabacloud Cksync Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cksync-plan",
+    "url": "https://clawhub.ai/skills/alibabacloud-cksync-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cksync-plan-3b90e607395ccbe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClickHouse cluster migration planner. Use when planning data migration between ClickHouse clusters, including cross-cluster migrations, horizontal scaling, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774941160525,
+      "changelog": "Initial release of alibabacloud-cksync-plan\n\n- Provides an end-to-end planner for ClickHouse cluster data migrations, covering cross-cluster, scaling, disk, and zone migrations, including self-built to Alibaba Cloud scenarios.\n- Guides users through required data collection (database/table details, cluster types/versions) before selection of migration methods.\n- Recommends migration plans with rationale, risks, rollback steps, and timelines; always outputs a plan even when inputs are incomplete (with provisional analysis).\n- Supports multiple migration strategies including cksync, BACKUP/RESTORE, INSERT FROM REMOTE, business double-write, Kafka, and large cluster federation.\n- Adheres to a single-plan deliverable format, with supplementary files/scripts only upon user request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cff277698b385aa14e1a77fa448e3a9329dda9ac93348539aad69646478623d9"
+}

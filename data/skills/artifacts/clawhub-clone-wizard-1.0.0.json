@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clone-wizard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clone_wizard",
+  "skill": {
+    "id": 57689,
+    "skillKey": "clawhub-clone-wizard",
+    "name": "Clone Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clone-wizard",
+    "url": "https://clawhub.ai/skills/clone-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clone-wizard-eef26d7d06f2d4e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guided voice cloning workflow — from recording tips to first playback. Use when users want to clone their voice, create a custom voice, or ask \"怎么克隆声音\", \"我想用..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773558720951,
+      "changelog": "senseaudio-clone-wizard 1.0.0\n\n- Introduces a step-by-step guided workflow for voice cloning via SenseAudio, supporting both English and Chinese requests.\n- Helps users prepare optimal recordings with practical tips and sample texts.\n- Automates audio quality checks and provides user-friendly feedback and actionable suggestions.\n- Guides users through the required steps on the SenseAudio platform for actual cloning.\n- Assists with first-time playback by using the new cloned voice for an instant preview and recommends next steps to use their custom voice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:650ef3f1a04ea312cf11938a3e3de9e5c5c065d8ab2ab07ca2e84bb5739a6edc"
+}

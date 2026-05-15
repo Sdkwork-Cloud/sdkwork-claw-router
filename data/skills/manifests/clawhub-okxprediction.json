@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30693,
+  "uuid": "skill-clawhub-okxprediction",
+  "skillKey": "clawhub-okxprediction",
+  "name": "okxprediction",
+  "summary": "Predicts short-term BTC market direction using multi-timeframe analysis, funding rates, and sentiment to signal trade execution, watch, or no trade.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okxprediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maserati8",
+      "features": [
+        "Predicts short-term BTC market direction using multi-timeframe analysis, funding rates, and sen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okxprediction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39120860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okxprediction",
+      "url": "https://clawhub.ai/skills/okxprediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okxprediction",
+    "url": "https://clawhub.ai/skills/okxprediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okxprediction-1190be294874c979.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okxprediction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okxprediction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f19e553b359db4c5257fa6d98d30a702daaee4bcdf05b56c06498056c0810e4",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:50:37.187Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67746,
+  "uuid": "skill-clawhub-xiao-chuang-you-handcraft",
+  "skillKey": "clawhub-xiao-chuang-you-handcraft",
+  "name": "Xiao Chuang You Handcraft",
+  "summary": "小窗幽手工子技能。当用户询问手工、非遗、手作、小饰物DIY、编织、结艺、绣花等话题时激活。提供非遗手作介绍、节气手作方案、小饰品制作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiao_chuang_you_handcraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张城瑞",
+      "features": [
+        "小窗幽手工子技能。当用户询问手工、非遗、手作、小饰物DIY、编织、结艺、绣花等话题时激活。提供非遗手作介绍、节气手作方案、小饰品制作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiao-chuang-you-handcraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48597146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiao-chuang-you-handcraft",
+      "url": "https://clawhub.ai/skills/xiao-chuang-you-handcraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiao-chuang-you-handcraft",
+    "url": "https://clawhub.ai/skills/xiao-chuang-you-handcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiao-chuang-you-handcraft-934175f753f1f409.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiao-chuang-you-handcraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiao-chuang-you-handcraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:891c058454253b715fc5c5c6062a9b9d1ba67d8c16c5e30ded69828d346203dc",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:00:01.068Z"
+}

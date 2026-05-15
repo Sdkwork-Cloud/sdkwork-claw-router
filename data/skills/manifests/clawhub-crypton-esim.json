@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12532,
+  "uuid": "skill-clawhub-crypton-esim",
+  "skillKey": "clawhub-crypton-esim",
+  "name": "Purchase Anonymous Data eSIM (Crypton.sh)",
+  "summary": "Purchase anonymous eSIMs with BTC/XMR/card - no account required",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypton_esim",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajarmoszuk",
+      "features": [
+        "Purchase anonymous eSIMs with BTC/XMR/card",
+        "no account required"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypton-esim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5645408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypton-esim",
+      "url": "https://clawhub.ai/skills/crypton-esim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypton-esim",
+    "url": "https://clawhub.ai/skills/crypton-esim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypton-esim-1a82435f2fb80b22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypton-esim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypton-esim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:750f6ca6a7c42f06024b6f0d4b6bcaf73d80962446c6d32833e5a5ff8b99dedd",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T17:03:52.728Z"
+}

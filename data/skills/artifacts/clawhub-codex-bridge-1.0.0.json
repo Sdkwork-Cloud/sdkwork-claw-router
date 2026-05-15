@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_bridge",
+  "skill": {
+    "id": 22287,
+    "skillKey": "clawhub-codex-bridge",
+    "name": "Codex Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-bridge",
+    "url": "https://clawhub.ai/skills/codex-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-bridge-1f2cbfb172fc6f24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dispatch coding tasks to the local OpenAI Codex CLI with background execution, status polling, and answerable clarifying questions. Use when OpenClaw should..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeperl",
+      "userId": "s179r66g7maj6y0rkwffexrhvs85mrx3",
+      "displayName": "Abraham Perl",
+      "image": "https://avatars.githubusercontent.com/u/6117184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772682617669,
+      "changelog": "Initial release of codex-bridge skill.\n\n- Enable OpenClaw to delegate complex coding tasks to the local OpenAI Codex CLI.\n- Support for asynchronous task dispatch, background execution, and status polling.\n- Relay clarifying questions and collect user answers to keep multi-step tasks interactive.\n- Expose CLI commands for task dispatch, status checks, and answer submission.\n- Designed for use cases needing script building, code refactoring, or multi-file project work beyond simple code completion.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbd55e91b0748a6b865e9841c86a81e618556235f7be87b88660c7ae89927dd0"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10161,
+  "uuid": "skill-clawhub-web-scraper-jina",
+  "skillKey": "clawhub-web-scraper-jina",
+  "name": "Web Scraper Jina",
+  "summary": "Bypass Cloudflare and scrape any website using r.jina.ai API. Works on sites with strong protection like Truth Social, Cloudflare Turnstile, etc.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_jina",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itonlyforfun-AI",
+      "features": [
+        "Bypass Cloudflare and scrape any website using r.jina.ai API",
+        "Works on sites with strong protection like Truth Social, Cloudflare Turnstile, etc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-scraper-jina@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260163371?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-scraper-jina",
+      "url": "https://clawhub.ai/skills/web-scraper-jina"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-jina",
+    "url": "https://clawhub.ai/skills/web-scraper-jina",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-jina-824a4454ab941844.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-scraper-jina@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-scraper-jina-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfb287fb0b5f8c8a8cf999c13b68ffc2fa6a833dd8b8a75e5d47c67894350eb6",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:55:25.759Z"
+}

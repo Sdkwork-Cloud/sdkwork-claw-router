@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-email-address@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_email_address",
+  "skill": {
+    "id": 33603,
+    "skillKey": "clawhub-create-email-address",
+    "name": "Create And Use New Agent Email Address"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-email-address",
+    "url": "https://clawhub.ai/skills/create-email-address",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-email-address-68153a481aa5b051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "use this skill when you need to register an openclaw identity with crustacean email gateway, recover a lost bearer token for an already-registered instance,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nycomar",
+      "userId": "s17dcwmkv3n3m6p7c70bjjvdnh8477vq",
+      "displayName": "Omar",
+      "image": "https://avatars.githubusercontent.com/u/4052151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775310429544,
+      "changelog": "Crustacean Email Gateway Skill v1.0.0\n\n- Initial release for managing OpenClaw identity mailboxes via the Crustacean Email Gateway API.\n- Supports mailbox registration, bearer token recovery, status updates, forwarding configuration, inbox/outbox management, and outbound mail sending.\n- Includes clear API usage defaults, behavior rules, and error handling protocols.\n- Documents strict rate limits, usage caps, and security constraints.\n- No support for attachments; only one mailbox per OpenClaw instance; crustacean.email domain only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:508a0e64d7e8789c5d445727b7e7cb129cc42fd4c976aed77abe4b82d5f69028"
+}

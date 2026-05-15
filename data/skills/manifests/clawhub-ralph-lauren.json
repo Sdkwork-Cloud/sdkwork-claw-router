@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60501,
+  "uuid": "skill-clawhub-ralph-lauren",
+  "skillKey": "clawhub-ralph-lauren",
+  "name": "Ralph Lauren",
+  "summary": "提供 Ralph Lauren 品牌历史、产品线及美学解析，涵盖 Polo、Purple Label 等系列和品牌战略信息查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_lauren",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供 Ralph Lauren 品牌历史、产品线及美学解析，涵盖 Polo、Purple Label 等系列和品牌战略信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ralph-lauren@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ralph-lauren",
+      "url": "https://clawhub.ai/skills/ralph-lauren"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-lauren",
+    "url": "https://clawhub.ai/skills/ralph-lauren",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-lauren-04e451b5f19d7a23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ralph-lauren@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ralph-lauren-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3faf8a6e1c8cf72a97085a0f98d6d456db233903621076e7cfdd709b49db0f30",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T22:58:16.961Z"
+}

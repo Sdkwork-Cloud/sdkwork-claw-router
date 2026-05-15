@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18385,
+  "uuid": "skill-clawhub-shelly-invoice-generator",
+  "skillKey": "clawhub-shelly-invoice-generator",
+  "name": "Invoice Generator Pro",
+  "summary": "Generate professional invoices in Markdown or HTML by specifying client, items, tax, currency, dates, and output format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_invoice_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudiodrusus",
+      "features": [
+        "Generate professional invoices in Markdown or HTML by specifying client, items, tax, currency,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shelly-invoice-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258132540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shelly-invoice-generator",
+      "url": "https://clawhub.ai/skills/shelly-invoice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-invoice-generator",
+    "url": "https://clawhub.ai/skills/shelly-invoice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-invoice-generator-c37c6482ab598ff3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shelly-invoice-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shelly-invoice-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f191ad75d4bee812a28326312c64fd025557a21570a059239fc8a5f1c9ddca7",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:34:30.067Z"
+}

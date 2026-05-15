@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-video-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_video_maker",
+  "skill": {
+    "id": 55691,
+    "skillKey": "clawhub-generator-video-maker",
+    "name": "Generator Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-video-maker",
+    "url": "https://clawhub.ai/skills/generator-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-video-maker-e43657aa575875ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second promotional video from this text — and get ready-to-s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777867275459,
+      "changelog": "Generator Video Maker 1.0.0 — initial release.\n\n- Instantly generates 30-second promotional videos from text or uploaded media (MP4, MOV, PNG, JPG up to 500MB).\n- Fully automated cloud rendering: no editing software or installations required.\n- Simple, anonymous token setup with 100 free credits for new users (7-day expiry).\n- Built-in session management keeps your video drafts and timeline state for iterative editing.\n- Supports fast export to MP4, MOV, and popular image/audio formats.\n- Handles user prompts for credits, export, upload, and video editing actions intelligently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8c2abd5a13d6727d090056f937a54dbbfcbec45cd04550d35f57e6630537432"
+}

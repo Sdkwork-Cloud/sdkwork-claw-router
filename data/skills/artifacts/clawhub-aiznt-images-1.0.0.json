@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiznt-images@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiznt_images",
+  "skill": {
+    "id": 59395,
+    "skillKey": "clawhub-aiznt-images",
+    "name": "TS Images"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiznt-images",
+    "url": "https://clawhub.ai/skills/aiznt-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiznt-images-18152ae29f3f384c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用图生图（OpenAI 风格）与 Gemini generateContent 文生图。Use when: 文生图、异步出图、Gemini 图像模型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774099407955,
+      "changelog": "Publish from ts-claw bundled-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c48df463cb9daedaf0a39b21362ea8578fd1f4b0b927d77408b3c49455872b0e"
+}

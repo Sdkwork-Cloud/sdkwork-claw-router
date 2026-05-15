@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-disabled@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_disabled",
+  "skill": {
+    "id": 44600,
+    "skillKey": "clawhub-auto-updater-disabled",
+    "name": "Auto Updater.Disabled"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-disabled",
+    "url": "https://clawhub.ai/skills/auto-updater-disabled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-disabled-adc4150d8f672ada.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiyuechuimeng",
+      "userId": "s17a17w5vp4ky1mbb77bfv93vx842vnd",
+      "displayName": "xiyuechuimeng",
+      "image": "https://avatars.githubusercontent.com/u/240420301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775096832098,
+      "changelog": "- Initial release of the auto-updater skill.\n- Sets up a daily cron job to automatically update Clawdbot and all installed skills.\n- Sends a summary message to the user after updates are applied.\n- Includes instructions for setup, configuration, manual commands, troubleshooting, and disabling auto-updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b5f45bbff5ff6c5358f102468f315cab24cdad6ab09270929ada03cac9d5723"
+}

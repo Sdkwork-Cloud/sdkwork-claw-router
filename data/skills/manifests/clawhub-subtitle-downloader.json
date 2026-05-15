@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37121,
+  "uuid": "skill-clawhub-subtitle-downloader",
+  "skillKey": "clawhub-subtitle-downloader",
+  "name": "Subtitle Downloader",
+  "summary": "extract video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for downloading sub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "extract video files into captioned video files with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for downloading sub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subtitle-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subtitle-downloader",
+      "url": "https://clawhub.ai/skills/subtitle-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-downloader",
+    "url": "https://clawhub.ai/skills/subtitle-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-downloader-08dff98a45ace7eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subtitle-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39084a16619224dd85df5b7121252976215b09e91610e0f81e7a64040e30ef3c",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T15:04:52.592Z"
+}

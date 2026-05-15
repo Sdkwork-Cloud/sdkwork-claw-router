@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ah-project-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_project_analyzer",
+  "skill": {
+    "id": 56765,
+    "skillKey": "clawhub-ah-project-analyzer",
+    "name": "project-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-project-analyzer",
+    "url": "https://clawhub.ai/skills/ah-project-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-project-analyzer-b18ba2d25788b335.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are a **Project Analyzer Agent** specialized in deep analysis of existing codebases. Use when: phase 1: project discovery, phase 2: architecture mapping,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtsatryan",
+      "userId": "s17bvyvkfhp17ybx0q3ak5dcsn85nqpv",
+      "displayName": "Michael Tsatryan",
+      "image": "https://avatars.githubusercontent.com/u/9057374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778066633142,
+      "changelog": "Initial release — part of 188 AI agent skills collection by MTNT Solutions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7e4fcde99163c01d4324d4d8a53d2891e7c4a5c3a5cb9819037507e465c44c1"
+}

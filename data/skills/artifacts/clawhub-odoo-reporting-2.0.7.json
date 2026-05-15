@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/odoo-reporting@2.0.7",
+  "version": "2.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odoo_reporting",
+  "skill": {
+    "id": 16375,
+    "skillKey": "clawhub-odoo-reporting",
+    "name": "Odoo Reporting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odoo-reporting",
+    "url": "https://clawhub.ai/skills/odoo-reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odoo-reporting-4daf6ed2d4d509fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Odoo data including salesperson performance, customer analytics, orders, invoices, CRM, accounting, VAT, inventory, and AR/AP. Generates WhatsApp cards..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashrf-in",
+      "userId": "publishers:ashrf-in",
+      "displayName": "ashrf-in",
+      "image": "https://avatars.githubusercontent.com/u/62379097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 882,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.7",
+      "createdAt": 1771320209309,
+      "changelog": "Version 2.0.7\n\n- Improved documentation in SKILL.md, providing detailed guidance on required models, security, setup, and reporting practices.\n- Enforced a strict read-only, user-invocation-only policy for all Odoo data queries.\n- Expanded security section with clear setup instructions for API key usage, credential isolation, and local processing.\n- Highlighted critical best practices: always clarify company, period, accounts, breakdowns, and output format before reporting.\n- Added detailed explanation of Odoo reporting requirements, including correct handling of Chart of Accounts and equity calculation.\n- Outlined all required environment variables and step-by-step installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92a433c950bf8e8839315ca55baa76317e2f8b379ceef40b01a81e74c28a00cb"
+}

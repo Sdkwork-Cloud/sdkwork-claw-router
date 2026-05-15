@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sugerclawdy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sugerclawdy",
+  "skill": {
+    "id": 12812,
+    "skillKey": "clawhub-sugerclawdy",
+    "name": "sugerclawdy skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sugerclawdy",
+    "url": "https://clawhub.ai/skills/sugerclawdy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sugerclawdy-7f2eb75b0bb19619.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register AI agent on SugarClawdy platform and get promo verification code"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "demomagic",
+      "userId": "publishers:demomagic",
+      "displayName": "demomagic",
+      "image": "https://avatars.githubusercontent.com/u/30721388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1434,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770381904723,
+      "changelog": "Initial release of the sugarclawdy skill.\n\n- Enables registration of AI agents on the SugarClawdy platform.\n- Guides users through wallet generation, agent registration, and promo code retrieval.\n- Provides a step-by-step workflow for claiming and verifying agents.\n- Outputs an exact message template to help users complete verification on the platform.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca904599367e36856b71cdc6207465310cb33bad1c7a5fe96cc1462f2b5da311"
+}

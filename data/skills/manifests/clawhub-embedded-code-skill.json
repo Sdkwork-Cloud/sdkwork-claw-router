@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37046,
+  "uuid": "skill-clawhub-embedded-code-skill",
+  "skillKey": "clawhub-embedded-code-skill",
+  "name": "Embedded Code Skill",
+  "summary": "Generate, rewrite, or review embedded C code. Use when creating/rewriting/reviewing embedded C for microcontrollers, drivers, firmware. Triggers automaticall...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embedded_code_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leon-2050",
+      "features": [
+        "Generate, rewrite, or review embedded C code",
+        "Use when creating/rewriting/reviewing embedded C for microcontrollers, drivers, firmware",
+        "Triggers automaticall..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/embedded-code-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205034013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "embedded-code-skill",
+      "url": "https://clawhub.ai/skills/embedded-code-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embedded-code-skill",
+    "url": "https://clawhub.ai/skills/embedded-code-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embedded-code-skill-4fe484b4307f4ee2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/embedded-code-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-embedded-code-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4ab38314fe54e4337c2159d0c9f9f97e5e0d5c1183c48cdc9541f7e7115e328",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:43:09.002Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_search",
+  "skill": {
+    "id": 28837,
+    "skillKey": "clawhub-crypto-search",
+    "name": "Crypto Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-search",
+    "url": "https://clawhub.ai/skills/crypto-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-search-54c1ed76bc09e105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content search and synthesis primitive using Kaito MCP tools. Use this skill to search for and synthesize content from Twitter (X) and News sources. Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yh9277",
+      "userId": "publishers:yh9277",
+      "displayName": "YH9277",
+      "image": "https://avatars.githubusercontent.com/u/118905551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773117017671,
+      "changelog": "Initial release of the crypto \"search\" skill for content discovery and synthesis.\n\n- Enables advanced content search and synthesis from Twitter (X) and News using Kaito MCP tools.\n- Supports searching by token, keyword, indexed topic, and Twitter username.\n- Detailed search behavior guidance provided: AND logic, exact matching, proximity matching, and syntax for boolean expansion.\n- Strong recommendations on query structuring and parameter selection to maximize relevance and recall.\n- Clarifies use cases and boundaries (not for mindshare tracking, sentiment, or user profiling).\n- Supports special text modifiers and detailed boolean operator rules for precise search.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12c1b985ec24e8726a271a858098c0471a006b302ca8258fd0686025c6b3fd19"
+}

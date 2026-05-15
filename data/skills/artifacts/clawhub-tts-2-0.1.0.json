@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_2",
+  "skill": {
+    "id": 19342,
+    "skillKey": "clawhub-tts-2",
+    "name": "Pywayne Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-2",
+    "url": "https://clawhub.ai/skills/tts-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-2-f03c922a7b4f838b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion tool. Use when converting text to speech audio files (opus or mp3 format). Supports macOS native 'say' command and Google TTS (gTTS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771259050131,
+      "changelog": "Initial release of pywayne-tts – a cross-platform text-to-speech tool.\n\n- Adds functions to convert text to speech audio files in Opus or MP3 formats.\n- Supports macOS native 'say' command and Google TTS (gTTS) service.\n- Utilizes ffmpeg for format conversion and handles temporary file cleanup.\n- Automatic platform detection and prompts for ffmpeg installation if needed.\n- Provides clear usage examples and requirements in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c287f707dc8aa6484ba092f3b6c9ef1097bdb58124511c0c902f8c9de4619f7"
+}

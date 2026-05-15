@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yihui-git-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_git_monitor",
+  "skill": {
+    "id": 62074,
+    "skillKey": "clawhub-yihui-git-monitor",
+    "name": "YiHui GIT MONITOR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-git-monitor",
+    "url": "https://clawhub.ai/skills/yihui-git-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-git-monitor-08fd5a517e527b1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用 Git 项目监控工具。支持 GitHub、GitLab、Gitee 等所有 Git 平台。可以添加、删除、检查任意 Git 仓库的更新，自动拉取代码并生成变更摘要。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1yihui",
+      "userId": "s17dkj69epg7yy8vn06c46hemn85dcap",
+      "displayName": "辉哥",
+      "image": "https://avatars.githubusercontent.com/u/197358991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777366214459,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c81c33f869ab45e3af8a37e22e0dd1779deec9a14e61cf5c2edf47f6a507d815"
+}

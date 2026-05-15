@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69813,
+  "uuid": "skill-clawhub-paypal-skill",
+  "skillKey": "clawhub-paypal-skill",
+  "name": "Paypal",
+  "summary": "整理PayPal官网公开的产品说明、费率规则、服务边界及帮助信息，不涉及账户操作或交易执行。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paypal_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "整理PayPal官网公开的产品说明、费率规则、服务边界及帮助信息，不涉及账户操作或交易执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paypal-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paypal-skill",
+      "url": "https://clawhub.ai/skills/paypal-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paypal-skill",
+    "url": "https://clawhub.ai/skills/paypal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paypal-skill-7650d16307e422f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paypal-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paypal-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76c26fe09ecc442cc728a4c915e98b5dc39063e7d1b7dd5f71fb4c1428c4e99b",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:42:51.444Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43752,
+  "uuid": "skill-clawhub-tcg-strategy-advisor",
+  "skillKey": "clawhub-tcg-strategy-advisor",
+  "name": "Tcg Strategy Advisor",
+  "summary": "Clarify a card game win condition and turn it into a stable structure across main engine, draw, interaction, finishers, and backup lines. Use when the user w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcg_strategy_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Clarify a card game win condition and turn it into a stable structure across main engine, draw,.",
+        "Use when the user w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcg-strategy-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcg-strategy-advisor",
+      "url": "https://clawhub.ai/skills/tcg-strategy-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcg-strategy-advisor",
+    "url": "https://clawhub.ai/skills/tcg-strategy-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcg-strategy-advisor-40ce1e681107c9ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcg-strategy-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcg-strategy-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b763d1feee1b49f45aff019b2538a1fb64b63f6237a92ca521dc47e835c238ed",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:03:32.779Z"
+}

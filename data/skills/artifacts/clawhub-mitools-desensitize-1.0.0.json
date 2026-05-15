@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mitools-desensitize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mitools_desensitize",
+  "skill": {
+    "id": 66256,
+    "skillKey": "clawhub-mitools-desensitize",
+    "name": "mitools-desensitize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mitools-desensitize",
+    "url": "https://clawhub.ai/skills/mitools-desensitize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mitools-desensitize-c87a00f74f56b04a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据脱敏工具，支持手机号、身份证、银行卡、邮箱、IP地址、中文姓名等多种敏感信息脱敏"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bianchengyy",
+      "userId": "s176njmgw35r6k6pe9tmewhc4s83h91r",
+      "displayName": "bianchengyy",
+      "image": "https://avatars.githubusercontent.com/u/265675639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774106650870,
+      "changelog": "Initial release of mitools-desensitize – a data desensitization tool supporting multiple sensitive information types:\n\n- Supports desensitization of phone numbers, ID cards, bank cards, emails, Chinese names, IP addresses, usernames in paths, long digit sequences, and field names.\n- Allows custom wildcard replacement rules and custom regex rules.\n- Provides both text and file desensitization commands.\n- Supports desensitized data restoration via mapping tables.\n- Automatically manages configuration files for rules and levels.\n- Suitable for log cleaning, data sharing, test data generation, and document processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:068883fac03d74679e6fbae34c745d5bfa0ed65dddeff2ee4b8ef51423ef59c8"
+}

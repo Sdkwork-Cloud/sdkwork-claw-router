@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49206,
+  "uuid": "skill-clawhub-test-after",
+  "skillKey": "clawhub-test-after",
+  "name": "test after",
+  "summary": "Test skill for static scan validation. Manages agentic wallets via the caw CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_after",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junquan",
+      "features": [
+        "Test skill for static scan validation",
+        "Manages agentic wallets via the caw CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-after@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149011780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-after",
+      "url": "https://clawhub.ai/skills/test-after"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-after",
+    "url": "https://clawhub.ai/skills/test-after",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-after-ecb9e45bd815f3ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-after@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-after-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5449403bd801b8afb3ce0c55e4387b04d42145d83d9300fcb1dd98c6b1226c22",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T03:02:27.005Z"
+}

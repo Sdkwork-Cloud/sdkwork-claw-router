@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47590,
+  "uuid": "skill-clawhub-tr-tool",
+  "skillKey": "clawhub-tr-tool",
+  "name": "Tr Tool",
+  "summary": "Translate or delete characters from input streams. Use for character substitution, deletion, and squeezing repeated characters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tr_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Translate or delete characters from input streams",
+        "Use for character substitution, deletion, and squeezing repeated characters."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tr-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tr-tool",
+      "url": "https://clawhub.ai/skills/tr-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tr-tool",
+    "url": "https://clawhub.ai/skills/tr-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tr-tool-8fc0ca31686dfe63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tr-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tr-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d551c3d75eb1df13d835c6c7e41ab2817670db64d1e5aa9a3a0ae717bf1a94c",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T21:58:06.374Z"
+}

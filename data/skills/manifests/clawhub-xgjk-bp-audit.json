@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71863,
+  "uuid": "skill-clawhub-xgjk-bp-audit",
+  "skillKey": "clawhub-xgjk-bp-audit",
+  "name": "XGJK BP Audit",
+  "summary": "BP目标体系全面审计工具：对BP进行五大板块审计——基础合规性审计、向上对齐审计、向下承接审计、GAP 差异分析、数值对齐审计。 覆盖结构完整性、内容质量、逻辑自洽、对齐正确性、承接覆盖率、数值定义与算法、上下级差异识别等维度。 内置数据查询能力，当用户需要对BP目标体系进行系统性审计诊断时使用。",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xgjk_bp_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houtonghoutong",
+      "features": [
+        "BP目标体系全面审计工具：对BP进行五大板块审计——基础合规性审计、向上对齐审计、向下承接审计、GAP 差异分析、数值对齐审计。 覆盖结构完整性、内容质量、逻辑自洽、对齐正确性、承接覆盖率、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xgjk-bp-audit@3.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210855804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xgjk-bp-audit",
+      "url": "https://clawhub.ai/skills/xgjk-bp-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xgjk-bp-audit",
+    "url": "https://clawhub.ai/skills/xgjk-bp-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xgjk-bp-audit-b3730e0ebe8d72b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xgjk-bp-audit@3.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xgjk-bp-audit-3.5.0.json",
+      "version": "3.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6512369e85fc3f56295ae5f716676dd7fa1fc1050ded10937e6bb36300aebbe4",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:44:46.060Z"
+}

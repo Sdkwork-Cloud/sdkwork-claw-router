@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edith-augment-code@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edith_augment_code",
+  "skill": {
+    "id": 41579,
+    "skillKey": "clawhub-edith-augment-code",
+    "name": "Edith Augment Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edith-augment-code",
+    "url": "https://clawhub.ai/skills/edith-augment-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edith-augment-code-5a18f7d1f81abe64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Augment Code (Auggie CLI) to analyze, generate, and modify code through Edith smart glasses or OpenClaw. Triggers when the user asks to build, code, debu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samdickson22",
+      "userId": "s174jd28s0kyyk5z098b03r36983n571",
+      "displayName": "samdickson22",
+      "image": "https://avatars.githubusercontent.com/u/217395086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774736269448,
+      "changelog": "Augment Code via Auggie CLI for Edith glasses",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78b5a708d6f06e247a3a24ee8afb194b1eee65eeab0f6582dcddae9911733cd4"
+}

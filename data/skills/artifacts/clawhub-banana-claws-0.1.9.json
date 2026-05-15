@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/banana-claws@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banana_claws",
+  "skill": {
+    "id": 27182,
+    "skillKey": "clawhub-banana-claws",
+    "name": "Banana Claws"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banana-claws",
+    "url": "https://clawhub.ai/skills/banana-claws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banana-claws-c1b7a3a64830c005.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via OpenRouter API (text-to-image) with automation-ready local scripts and a queue-first workflow. Use for single images or batched variants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ironystock",
+      "userId": "publishers:ironystock",
+      "displayName": "ironystock",
+      "image": "https://avatars.githubusercontent.com/u/43087795?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1773464273739,
+      "changelog": "- Added homepage and user-invocable fields to skill metadata.\n- Updated metadata to include emoji icon and clarify required environment variables.\n- No changes made to usage or functional code; documentation/metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de906589dc67368fc2191e70b3f0c0c095709e98a436a2b0d640fe172384be87"
+}

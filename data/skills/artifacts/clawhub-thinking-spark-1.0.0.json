@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thinking-spark@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thinking_spark",
+  "skill": {
+    "id": 70542,
+    "skillKey": "clawhub-thinking-spark",
+    "name": "Thinking Spark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thinking-spark",
+    "url": "https://clawhub.ai/skills/thinking-spark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thinking-spark-71c06dd347ca0b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "记录思考火花与沉淀的系统。用于用户想要记录临时思考、想法、灵感火花，或者将思考整理沉淀为有条理的内容时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianyn1990",
+      "userId": "s177s5q87h775ayy8h545cscp983jzty",
+      "displayName": "tianyn1990",
+      "image": "https://avatars.githubusercontent.com/u/7401433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773122292228,
+      "changelog": "Thinking Spark 1.0.0 released!\n\n- Introduces a system for recording and refining spontaneous thoughts and structured insights.\n- Provides a flexible JSON data structure for storing sparks, refinement state, tags, priorities, and history.\n- Offers clear commands for recording, refining, organizing, and linking thoughts within and across projects.\n- Supports integration with reading lists, open source projects, and long-term memory modules.\n- Includes scripts for deterministic updating and manipulation of spark data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:478b49c5a77e8b3ab96beed9de36ff45cc33273156c270bb5a66d8635c37259e"
+}

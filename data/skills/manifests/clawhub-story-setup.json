@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62627,
+  "uuid": "skill-clawhub-story-setup",
+  "skillKey": "clawhub-story-setup",
+  "name": "Story Setup",
+  "summary": "网文写作工具集基础设施部署。将 hooks/rules/agents/CLAUDE.md 等基础设施部署到用户项目目录。 触发方式：/story-setup、「准备写书」「帮我搭一下环境」「配置写作项目」",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "worldwonderer",
+      "features": [
+        "网文写作工具集基础设施部署。将 hooks/rules/agents/CLAUDE.md 等基础设施部署到用户项目目录。 触发方式：/story-setup、「准备写书」「帮我搭一下环境」「."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49583093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-setup",
+      "url": "https://clawhub.ai/skills/story-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-setup",
+    "url": "https://clawhub.ai/skills/story-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-setup-2520c2b96588763c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16f11c881c57041d228175c86c99b984de9f6f7e22bedf6296de36e04c08a758",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:09:48.655Z"
+}

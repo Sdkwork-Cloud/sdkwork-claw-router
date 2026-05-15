@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54813,
+  "uuid": "skill-clawhub-alicloud-ai-misc-crawl-and-skill",
+  "skillKey": "clawhub-alicloud-ai-misc-crawl-and-skill",
+  "name": "Alicloud Ai Misc Crawl And Skill",
+  "summary": "Refresh the Model Studio models crawl and regenerate derived summaries and `skills/ai/**` skills. Use when the models list or generated skills must be updated.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_misc_crawl_and_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Refresh the Model Studio models crawl and regenerate derived summaries and `skills/ai/**` skills",
+        "Use when the models list or generated skills must be updated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-ai-misc-crawl-and-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-ai-misc-crawl-and-skill",
+      "url": "https://clawhub.ai/skills/alicloud-ai-misc-crawl-and-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-misc-crawl-and-skill",
+    "url": "https://clawhub.ai/skills/alicloud-ai-misc-crawl-and-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-misc-crawl-and-skill-084e32f57051264c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-ai-misc-crawl-and-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-ai-misc-crawl-and-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e73143a8fd75a32a3e4f187e7c32a755298fc05e456647e84568e4dffaf2469c",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:37:36.140Z"
+}

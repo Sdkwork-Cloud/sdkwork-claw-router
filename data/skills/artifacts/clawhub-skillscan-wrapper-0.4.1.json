@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillscan-wrapper@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillscan_wrapper",
+  "skill": {
+    "id": 39911,
+    "skillKey": "clawhub-skillscan-wrapper",
+    "name": "Publish Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillscan-wrapper",
+    "url": "https://clawhub.ai/skills/skillscan-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillscan-wrapper-7d6bb8f8d78935dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit tool for AI agent skills. Scans skill packages for malware, credential theft, and suspicious patterns before installation. Defensive security..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyzlmh",
+      "userId": "s171nn815hk3s0ht69bn9d96hn858ye2",
+      "displayName": "cyzlmh",
+      "image": "https://avatars.githubusercontent.com/u/24603258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1776747021905,
+      "changelog": "Updated description with security guarantees, permissions disclosure, and checksums",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:244d63d9899b4f503dda3488ad3915ba6019169dec6351ba640984e6b7eef54c"
+}

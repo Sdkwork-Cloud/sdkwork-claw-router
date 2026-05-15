@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19418,
+  "uuid": "skill-clawhub-crisis-detector",
+  "skillKey": "clawhub-crisis-detector",
+  "name": "Crisis Detector",
+  "summary": "Detects suicide ideation, self-harm, and mental health crises using NLP and sentiment analysis, providing real-time alerts and connecting users to help resou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crisis_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Detects suicide ideation, self-harm, and mental health crises using NLP and sentiment analysis,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crisis-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crisis-detector",
+      "url": "https://clawhub.ai/skills/crisis-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crisis-detector",
+    "url": "https://clawhub.ai/skills/crisis-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crisis-detector-fa61df06dbf3e4b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crisis-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crisis-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92a0f6b3fb437711282b7b61eb99e9973cb82c31605afeeadb3f9dba2b75d2c1",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:32:20.768Z"
+}

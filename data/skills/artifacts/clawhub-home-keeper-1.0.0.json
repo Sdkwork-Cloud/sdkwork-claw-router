@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-keeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_keeper",
+  "skill": {
+    "id": 58241,
+    "skillKey": "clawhub-home-keeper",
+    "name": "可以登錄家電的保固，並且歸檔，提供查詢"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-keeper",
+    "url": "https://clawhub.ai/skills/home-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-keeper-0725fa412cbe4438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create or update AgentSkills. Use when designing, structuring, or packaging skills with scripts, references, and assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucasgo24601",
+      "userId": "publishers:lucasgo24601",
+      "displayName": "lucasgo24601",
+      "image": "https://avatars.githubusercontent.com/u/34028542?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 463,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928510401,
+      "changelog": "Skill 1.0.0 introduces the Skill Creator, a comprehensive guide and template for structuring Codex AgentSkills.\n\n- Provides detailed principles for designing modular, efficient AgentSkills.\n- Introduces best practices for concise context usage and progressive disclosure of information.\n- Explains directory conventions for scripts, references, and assets.\n- Includes guidance on organizing information by degree of workflow specificity.\n- Clarifies what to avoid including in a skill to reduce clutter and maximize effectiveness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c26a6d653eef7c309eb1964cd46db6d4a73d6ab08b89f6755609d2b17178d70a"
+}

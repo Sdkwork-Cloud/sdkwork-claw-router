@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt-backup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_backup",
+  "skill": {
+    "id": 53580,
+    "skillKey": "clawhub-molt-backup",
+    "name": "Molt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-backup",
+    "url": "https://clawhub.ai/skills/molt-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-backup-92a20da44d27eb9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Snapshot and back up OpenClaw brain files (AGENTS.md, SOUL.md, MEMORY.md, memory/, etc.) to an offsite git repository — like a lobster shedding its shell, le..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robin-marv",
+      "userId": "s1728m8dxc0x6z44kdarknhg1183jsxv",
+      "displayName": "Marv",
+      "image": "https://avatars.githubusercontent.com/u/264330478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774446207183,
+      "changelog": "Add Security Model section; set display name to Molt",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53b85a145695884afb9c8e6ba20d6d603c26dea66c93facdbfd890568c130b1a"
+}

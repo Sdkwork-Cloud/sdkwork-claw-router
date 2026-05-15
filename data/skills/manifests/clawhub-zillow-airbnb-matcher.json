@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21778,
+  "uuid": "skill-clawhub-zillow-airbnb-matcher",
+  "skillKey": "clawhub-zillow-airbnb-matcher",
+  "name": "Zillow × Airbnb Matcher",
+  "summary": "Find properties for sale that are already generating Airbnb income. Cross-references Zillow listings with active Airbnb rentals using geo-matching and calcul...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zillow_airbnb_matcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freemountaindeer",
+      "features": [
+        "Find properties for sale that are already generating Airbnb income",
+        "Cross-references Zillow listings with active Airbnb rentals using geo-matching and calcul..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zillow-airbnb-matcher@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107143373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zillow-airbnb-matcher",
+      "url": "https://clawhub.ai/skills/zillow-airbnb-matcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zillow-airbnb-matcher",
+    "url": "https://clawhub.ai/skills/zillow-airbnb-matcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zillow-airbnb-matcher-b18921253e3d63b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zillow-airbnb-matcher@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zillow-airbnb-matcher-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c47bec964a55aacbf05889787d5f2b0ec8efa2697176b0846d18e2db47ec45e2",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T13:33:22.463Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73460,
+  "uuid": "skill-clawhub-feishu-calendar-suite",
+  "skillKey": "clawhub-feishu-calendar-suite",
+  "name": "飞书日历管理工具",
+  "summary": "飞书日历与日程管理工具集。包含日历管理、日程管理、参会人管理、忙闲查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_calendar_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3152557994-ship-it",
+      "features": [
+        "飞书日历与日程管理工具集。包含日历管理、日程管理、参会人管理、忙闲查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-calendar-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248589521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-calendar-suite",
+      "url": "https://clawhub.ai/skills/feishu-calendar-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-calendar-suite",
+    "url": "https://clawhub.ai/skills/feishu-calendar-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-calendar-suite-a0102235c6137b2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-calendar-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-calendar-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2478f547a642a660f89502d9de20978c7d2262f28d64821d7c1540748dd7509b",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:34:37.308Z"
+}

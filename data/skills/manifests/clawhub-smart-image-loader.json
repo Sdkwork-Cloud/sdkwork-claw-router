@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11340,
+  "uuid": "skill-clawhub-smart-image-loader",
+  "skillKey": "clawhub-smart-image-loader",
+  "name": "smart-image-loader",
+  "summary": "Smart image loader that handles both URLs and local files, automatically downloads URLs to temporary locations, and displays images using the read tool. Use when a user wants to view or display an image, whether it's a web URL or a file in.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_image_loader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tingwei1123",
+      "features": [
+        "Smart image loader that handles both URLs and local files, automatically downloads URLs to temp.",
+        "Use when a user wants to view or display an image, whether it's a web URL or a file in the work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-image-loader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112472562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-image-loader",
+      "url": "https://clawhub.ai/skills/smart-image-loader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-image-loader",
+    "url": "https://clawhub.ai/skills/smart-image-loader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-image-loader-4f8273690fff47ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-image-loader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-image-loader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3593ba5be5379d96f56ea9fa44e69973567467f212e692358898c139bc0c0b52",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T08:55:48.185Z"
+}

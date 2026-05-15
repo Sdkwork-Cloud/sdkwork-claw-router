@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anygen-shared@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_shared",
+  "skill": {
+    "id": 46508,
+    "skillKey": "clawhub-anygen-shared",
+    "name": "Anygen Shared"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-shared",
+    "url": "https://clawhub.ai/skills/anygen-shared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-shared-df20e74547ba8759.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "anygen CLI: Shared patterns for authentication, global flags, and output formatting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supertilico2001",
+      "userId": "s17fn15qsppc5hkbvd53dcppms85xvpe",
+      "displayName": "supertilico2001",
+      "image": "https://avatars.githubusercontent.com/u/42905851?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777632513475,
+      "changelog": "Initial release of anygen-shared.\n\n- Provides shared CLI patterns for authentication, global flags, and output formatting for the anygen CLI.\n- Documents recommended authentication methods, including web login, API key, and environment variable.\n- Details standard CLI syntax and common method flags.\n- Offers guidance for discovering commands and inspecting resource method schemas.\n- Outlines security rules for safe usage and user interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11eb8e05c5ef12ec68ded5cff9b68d78a5c25c73e3e38184e479ec9d9c24831e"
+}

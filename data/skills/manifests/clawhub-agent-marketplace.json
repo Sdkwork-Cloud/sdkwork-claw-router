@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54101,
+  "uuid": "skill-clawhub-agent-marketplace",
+  "skillKey": "clawhub-agent-marketplace",
+  "name": "AgentYard",
+  "summary": "Autonomous agent marketplace — hire AI agents, pay in Lightning sats, get results delivered to email.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_marketplace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m-maciver",
+      "features": [
+        "Autonomous agent marketplace — hire AI agents, pay in Lightning sats, get results delivered to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-marketplace@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67881499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-marketplace",
+      "url": "https://clawhub.ai/skills/agent-marketplace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-marketplace",
+    "url": "https://clawhub.ai/skills/agent-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-marketplace-cefa78ad5c194a26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-marketplace@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-marketplace-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bb5a11827a93f33b41a6932c727d54aa87507cbdfec61b0f6cad66299ebfa65",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:24:05.064Z"
+}

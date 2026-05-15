@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dep-vuln-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dep_vuln_scanner",
+  "skill": {
+    "id": 29617,
+    "skillKey": "clawhub-dep-vuln-scanner",
+    "name": "Dep Vuln Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dep-vuln-scanner",
+    "url": "https://clawhub.ai/skills/dep-vuln-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dep-vuln-scanner-760ac782d11bca3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan project dependencies for known security vulnerabilities using the OSV.dev API. Supports npm (package.json), Python/pip (requirements.txt), and Go (go.mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774098399373,
+      "changelog": "Initial release of dep-vuln-scanner.\n\n- Scans npm (package.json), Python/pip (requirements.txt), and Go (go.mod) dependencies for known vulnerabilities via the OSV.dev API.\n- Zero configuration required and no API key needed.\n- Supports color-coded output by severity and includes CVE information.\n- Offers JSON output for CI/CD workflows and ecosystem filtering options.\n- Returns non-zero exit code if vulnerabilities are found, aiding automated checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91e6fb262490ef8353d53b51292f8be324a00f6eb3ba7fcffb235d6da40887fd"
+}

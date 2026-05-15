@@ -1,0 +1,39 @@
+{
+  "skill": {
+    "slug": "tasker",
+    "displayName": "Tasker",
+    "summary": "Use for task execution, debugging, implementation, analysis, review, planning, workflow execution, and user dissatisfaction handling in agent interactions. 任...",
+    "tags": {
+      "latest": "1.1.1",
+      "execution": "1.0.0",
+      "planning": "1.0.0",
+      "review": "1.0.0",
+      "task": "1.0.0",
+      "workflow": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1774071424655,
+    "updatedAt": 1777621946398
+  },
+  "latestVersion": {
+    "version": "1.1.1",
+    "createdAt": 1775099374921,
+    "changelog": "Version 1.1.1 — Introduces strict execution safeguards to enforce real tool usage and verifiable changes for task steps.\n\n- Added \"Execution Guarantees\" section: mandates that all executive steps require real tool calls, verifiable artifacts, and post-action verification.\n- Agents are now prohibited from outputting completion statements before tool actions are confirmed and results returned.\n- Every executive sub-step must produce a checkable artifact; otherwise, it remains in a `[pending]` state.\n- Tool-Call Audit is now required in the verification phase to explicitly map all execution tools to deliverables.\n- Clarifies that if an external change can't be made due to missing tools, execution is blocked and clarified to the user.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tealun",
+    "userId": "s17exyncwvaashrrdbq1j0b7c983kcym",
+    "displayName": "tealun",
+    "image": "https://avatars.githubusercontent.com/u/5262320?v=4"
+  },
+  "moderation": null
+}

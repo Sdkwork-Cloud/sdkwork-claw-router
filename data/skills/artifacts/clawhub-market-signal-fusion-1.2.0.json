@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-signal-fusion@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_signal_fusion",
+  "skill": {
+    "id": 22090,
+    "skillKey": "clawhub-market-signal-fusion",
+    "name": "Market Signal Fusion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-signal-fusion",
+    "url": "https://clawhub.ai/skills/market-signal-fusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-signal-fusion-8da722eefce1ca65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive-language stock-analysis skill that interprets macro and political news, fuses it with retail/social sentiment, applies quantified value fallback rul..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yellowzijian",
+      "userId": "publishers:yellowzijian",
+      "displayName": "yellowzijian",
+      "image": "https://avatars.githubusercontent.com/u/14797230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772948077925,
+      "changelog": "Market Signal Fusion v1.2.0 — This version introduces key functional upgrades for structured, auditable multi-signal stock analysis.\n\n- Adds a structured retail/social sentiment data-module contract for more reliable sentiment measurement.\n- Implements a market regime detector to dynamically adjust style bias and sector weighting.\n- Introduces confidence gates and reason codes, ensuring each decision is auditable and gracefully handled when data is incomplete.\n- Refines language handling: fully adaptive to user prompt language (English/Chinese), strict separation of narrative and JSON, and stable finance notation.\n- Expands core workflow: five-stage integration of macro/news, retail sentiment, sector fusion, quantamental signal, and technical plan.\n- Enforces stricter rules for recency, sourcing, and confidence tagging for every stock idea.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f94de35a6a37111e6bb048b412991b153a1c591eacfd344bddeb4128052ee78d"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50679,
+  "uuid": "skill-clawhub-cursor-tui",
+  "skillKey": "clawhub-cursor-tui",
+  "name": "Cursor Tui",
+  "summary": "Spawn and relay Cursor Agent's CLI (`agent` binary) as an interactive passthrough. Use when the user wants to run Cursor Agent in a directory, ask it questio...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_tui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waldyrious",
+      "features": [
+        "Spawn and relay Cursor Agent's CLI (`agent` binary) as an interactive passthrough",
+        "Use when the user wants to run Cursor Agent in a directory, ask it questio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cursor-tui@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/478237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cursor-tui",
+      "url": "https://clawhub.ai/skills/cursor-tui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-tui",
+    "url": "https://clawhub.ai/skills/cursor-tui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-tui-3863f55b9bd80286.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cursor-tui@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cursor-tui-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9bf6fed768478d41b3f0532d3a4c1d22889682ca6724eacd81c5ac6f165a8eb",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:41:22.535Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70709,
+  "uuid": "skill-clawhub-liuyao-bagua",
+  "skillKey": "clawhub-liuyao-bagua",
+  "name": "Liuyao Bagua",
+  "summary": "六爻八卦算命技能。当用户请求算命、排盘、八字分析、看卦、看相、命运预测、或提供出生年月日时激活。执行Python脚本进行四柱八字、五行分析、今年卦象解读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyao_bagua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray1012",
+      "features": [
+        "六爻八卦算命技能。当用户请求算命、排盘、八字分析、看卦、看相、命运预测、或提供出生年月日时激活。执行Python脚本进行四柱八字、五行分析、今年卦象解读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liuyao-bagua@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26787843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liuyao-bagua",
+      "url": "https://clawhub.ai/skills/liuyao-bagua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyao-bagua",
+    "url": "https://clawhub.ai/skills/liuyao-bagua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyao-bagua-210cffc6c7175109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liuyao-bagua@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liuyao-bagua-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d62db55890baf6be36aaec7ac84ae5e4d36b8e524f9e11835559060436e78932",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:59:22.045Z"
+}

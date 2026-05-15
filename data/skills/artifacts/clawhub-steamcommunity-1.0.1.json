@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steamcommunity@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steamcommunity",
+  "skill": {
+    "id": 15376,
+    "skillKey": "clawhub-steamcommunity",
+    "name": "Steamcommunity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steamcommunity",
+    "url": "https://clawhub.ai/skills/steamcommunity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steamcommunity-51affc0206493d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieves Steam inventory data and manages trade offers on steamcommunity.com"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluesyparty-src",
+      "userId": "publishers:bluesyparty-src",
+      "displayName": "bluesyparty-src",
+      "image": "https://avatars.githubusercontent.com/u/258582047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1016,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770940182248,
+      "changelog": "- Added support for managing Steam trade offers, including sending items and requesting items from other users.\n- Expanded setup instructions to include Steam Web API key and session ID requirements.\n- Updated environment variables: now requires STEAM_API_KEY and STEAM_SESSION_ID in addition to STEAM_ID and STEAM_COOKIES.\n- Documented new curl examples and parameters for making trade offers, with detailed explanations for partner identification and payload construction.\n- Skill name updated from \"steamcommunity\" to \"steam-community-inventory\".\n- Description now reflects inventory retrieval and trade management capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8fbbde53aa2f44d434d718bb4e050838d8d834d8ef50fe370032230d36431c54"
+}

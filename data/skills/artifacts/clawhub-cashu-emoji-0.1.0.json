@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cashu-emoji@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashu_emoji",
+  "skill": {
+    "id": 17036,
+    "skillKey": "clawhub-cashu-emoji",
+    "name": "Cashu Emoji"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashu-emoji",
+    "url": "https://clawhub.ai/skills/cashu-emoji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashu-emoji-2078c05aa1133b00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encode and decode Cashu tokens that are hidden inside emojis using Unicode variation selectors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robwoodgate",
+      "userId": "publishers:robwoodgate",
+      "displayName": "Rob Woodgate",
+      "image": "https://avatars.githubusercontent.com/u/12084212?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 813,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771273048345,
+      "changelog": "Initial release of cashu-emoji.\n\n- Encode Cashu tokens or any hidden message inside emojis using Unicode variation selectors.\n- Decode emoji messages to extract embedded Cashu tokens or plain hidden text.\n- Detect Cashu tokens (text starts with `cashu`) and provide optional mint/unit/amount metadata.\n- Supports structured JSON output for agent/programmatic use.\n- CLI includes encode and decode commands with metadata and formatting options.\n- Designed to help safely transmit hidden tokens/messages through chat apps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e11a1b632f7459443dd7ec388e413a1569700495fb4e78eb16c4f757309dfa74"
+}

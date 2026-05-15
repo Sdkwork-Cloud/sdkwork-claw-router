@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66767,
+  "uuid": "skill-clawhub-ebook-downloader",
+  "skillKey": "clawhub-ebook-downloader",
+  "name": "电子书下载",
+  "summary": "下载中文电子书到用户电脑。通过搜索读书派(dushupai.com)等资源站获取城通网盘下载链接，自动完成密码输入、API调用获取直链、curl下载、zip解压等全流程。当用户提到\"下载电子书\"、\"下载这本书\"、\"找一下某本书的电子版\"、\"帮我下个epub/mobi/azw3\"、\"下载 XX 到电脑\"等与获取电子...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebook_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoyishuai",
+      "features": [
+        "下载中文电子书到用户电脑。通过搜索读书派(dushupai.com)等资源站获取城通网盘下载链接，自动完成密码输入、API调用获取直链、curl下载、zip解压等全流程。当用户提到\"下载电子."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ebook-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12783386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ebook-downloader",
+      "url": "https://clawhub.ai/skills/ebook-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebook-downloader",
+    "url": "https://clawhub.ai/skills/ebook-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebook-downloader-fda2e52115434810.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ebook-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ebook-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01c9f415c7eaa5d179f2e98e8ec6bdea34ad3afdd2d5ce60cfc05b21724c986b",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:17:20.423Z"
+}

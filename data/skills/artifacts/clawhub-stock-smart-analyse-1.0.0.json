@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-smart-analyse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_smart_analyse",
+  "skill": {
+    "id": 72957,
+    "skillKey": "clawhub-stock-smart-analyse",
+    "name": "PJ选股智能评分12维模型"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-smart-analyse",
+    "url": "https://clawhub.ai/skills/stock-smart-analyse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-smart-analyse-834393907afe8a53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "12维股票智能分析评分模型。基于行业、头部玩家、市场环境、管理团队、市值规模、主营业务、收入、利润、分红、回购、机构持股、大股东增减持12个维度对股票进行综合评分。触发词：股票分析、选股评分、股票评分、智能选股。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankxpj",
+      "userId": "s177gvj0kgrw0065af9q2kh2v583hxm9",
+      "displayName": "frankxpj",
+      "image": "https://avatars.githubusercontent.com/u/100115985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774949579305,
+      "changelog": "初始版本：12维度股票智能分析评分系统，支持交互式评分和报告生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5161d070531b33e487e3f5f37733f2f0abfe146e598e9c0f218ef4bd8c161c0b"
+}

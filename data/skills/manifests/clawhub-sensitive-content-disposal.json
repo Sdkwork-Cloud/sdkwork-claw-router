@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73611,
+  "uuid": "skill-clawhub-sensitive-content-disposal",
+  "skillKey": "clawhub-sensitive-content-disposal",
+  "name": "敏感内容处置器",
+  "summary": "支持关键词脱敏、文件加密和水印添加，对扫描出的敏感内容进行合规处置并可发送通知，需先使用敏感内容扫描器。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sensitive_content_disposal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qing",
+      "features": [
+        "支持关键词脱敏、文件加密和水印添加，对扫描出的敏感内容进行合规处置并可发送通知，需先使用敏感内容扫描器。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sensitive-content-disposal@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38747302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sensitive-content-disposal",
+      "url": "https://clawhub.ai/skills/sensitive-content-disposal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sensitive-content-disposal",
+    "url": "https://clawhub.ai/skills/sensitive-content-disposal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sensitive-content-disposal-5658d95e9e085841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sensitive-content-disposal@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sensitive-content-disposal-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23379d3a4d78c849493ae6584748f76bb1b202128421a4e9063d6ecefd1add5c",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T08:18:35.425Z"
+}

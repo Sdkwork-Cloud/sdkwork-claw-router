@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46200,
+  "uuid": "skill-clawhub-memos-dreaming",
+  "skillKey": "clawhub-memos-dreaming",
+  "name": "MemOS Dreaming",
+  "summary": "Automatically consolidates daily memories by scoring and filtering entries from MemOS SQLite and daily logs, writing top insights to MEMORY.md each morning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_dreaming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rongtianhua",
+      "features": [
+        "Automatically consolidates daily memories by scoring and filtering entries from MemOS SQLite an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memos-dreaming@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45085618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memos-dreaming",
+      "url": "https://clawhub.ai/skills/memos-dreaming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-dreaming",
+    "url": "https://clawhub.ai/skills/memos-dreaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-dreaming-436dbb00431d6152.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memos-dreaming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memos-dreaming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9477ac09f2e44e0b9b2b368258214366913f678aeacdba80938e19c5ab5da982",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:53:02.958Z"
+}

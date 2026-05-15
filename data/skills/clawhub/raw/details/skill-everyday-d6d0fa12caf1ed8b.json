@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "skill-everyday",
+    "displayName": "skill everyday",
+    "summary": "每天抓取 Clawhub 热门技能，深入分析并生成报告。每次执行获取一个未分析过的热门技能，避免重复。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774084816945,
+    "updatedAt": 1777622041407
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774084816945,
+    "changelog": "- Initial release of skill-everyday: daily analysis and reporting on trending Clawhub skills.\n- Automatically avoids duplicates by tracking analyzed skills in data/analyzed.json.\n- No platform login or API Key required; data is scraped from public Clawhub pages using Playwright and Chromium.\n- Generates and saves structured reports for each new skill in data/reports/.\n- Simple command-line execution: node scripts/runner.mjs.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "autoxj",
+    "userId": "s178rh9mw9vwnrg2m6bg7jh53183hv34",
+    "displayName": "do_while_true",
+    "image": "https://avatars.githubusercontent.com/u/30582182?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dynamic_code_execution",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.dynamic_code_execution, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622041407
+  }
+}

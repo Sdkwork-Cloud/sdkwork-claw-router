@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47256,
+  "uuid": "skill-clawhub-burp-mcp",
+  "skillKey": "clawhub-burp-mcp",
+  "name": "burp-mcp",
+  "summary": "Connect to a local Burp Suite MCP Server over SSE and list or call Burp tools from the workspace. Use when Burp Suite is running with the PortSwigger MCP ext...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.burp_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Huỳnh Ngọc Quang",
+      "features": [
+        "Connect to a local Burp Suite MCP Server over SSE and list or call Burp tools from the workspace",
+        "Use when Burp Suite is running with the PortSwigger MCP ext..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/burp-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50787038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "burp-mcp",
+      "url": "https://clawhub.ai/skills/burp-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "burp-mcp",
+    "url": "https://clawhub.ai/skills/burp-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/burp-mcp-3da3b9421a2e6a85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/burp-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-burp-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:229baf32ac448d13064a236040c509c14c113ed26a9853465a23ab483e292f20",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T14:10:04.569Z"
+}

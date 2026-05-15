@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58129,
+  "uuid": "skill-clawhub-purchase-record",
+  "skillKey": "clawhub-purchase-record",
+  "name": "purchase-record",
+  "summary": "Automatically parses input like \"采购 <日期> <物品名称> <价格>\" and records the purchase details into purchase_record.xlsx on the desktop.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.purchase_record",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbei2007",
+      "features": [
+        "Automatically parses input like \"采购 <日期> <物品名称> <价格>\" and records the purchase details into pur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/purchase-record@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155340142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "purchase-record",
+      "url": "https://clawhub.ai/skills/purchase-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "purchase-record",
+    "url": "https://clawhub.ai/skills/purchase-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/purchase-record-b62a610ec26c4e44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/purchase-record@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-purchase-record-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:090cd7cb9d5c30642b0189094e5cbf53e08fac6fd4a6381cd8837e4f42824ca0",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:16:15.561Z"
+}

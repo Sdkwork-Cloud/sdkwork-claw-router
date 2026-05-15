@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60243,
+  "uuid": "skill-clawhub-figma-desktop",
+  "skillKey": "clawhub-figma-desktop",
+  "name": "figma-desktop",
+  "summary": "Figma 桌面 MCP Skill - 通过 Figma 桌面应用本地 MCP 服务访问完整功能，包括 Figma Make 设计生成、代码生成、设计系统管理等，无需 OAuth 认证",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_desktop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samuel-qin",
+      "features": [
+        "Figma 桌面 MCP Skill",
+        "通过 Figma 桌面应用本地 MCP 服务访问完整功能，包括 Figma Make 设计生成、代码生成、设计系统管理等，无需 OAuth 认证"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/figma-desktop@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223211268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "figma-desktop",
+      "url": "https://clawhub.ai/skills/figma-desktop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-desktop",
+    "url": "https://clawhub.ai/skills/figma-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-desktop-b9b0fb4815d132a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/figma-desktop@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-figma-desktop-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac819909ff4c1210b999aa3d13954cc9488b35f2d16148a876f7af4633f3eabc",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:40:59.391Z"
+}

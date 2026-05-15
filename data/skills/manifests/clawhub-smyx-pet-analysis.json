@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57911,
+  "uuid": "skill-clawhub-smyx-pet-analysis",
+  "skillKey": "clawhub-smyx-pet-analysis",
+  "name": "猫狗宠物健康诊断分析工具",
+  "summary": "Analyzes cat, dog, or bird videos to generate health reports by assessing fur, body, and facial features for potential diseases and care advice.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_pet_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Analyzes cat, dog, or bird videos to generate health reports by assessing fur, body, and facial."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-pet-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-pet-analysis",
+      "url": "https://clawhub.ai/skills/smyx-pet-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-pet-analysis",
+    "url": "https://clawhub.ai/skills/smyx-pet-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-pet-analysis-4e1fd6fcde500528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-pet-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-pet-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:203759e1fab60c46d78724544d1103b2c81124d1396334c01b89f3b67230a6e7",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T13:22:48.243Z"
+}

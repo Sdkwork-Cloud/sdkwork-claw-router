@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58946,
+  "uuid": "skill-clawhub-trains",
+  "skillKey": "clawhub-trains",
+  "name": "train",
+  "summary": "分贝通火车预订助手，实时查询火车票、展示车次列表、预订火车票、查看订单、取消订单。Invoke when user wants to search trains, book train tickets, check train orders, or cancel train bookings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trains",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "分贝通火车预订助手，实时查询火车票、展示车次列表、预订火车票、查看订单、取消订单。Invoke when user wants to search trains, book train ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trains@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trains",
+      "url": "https://clawhub.ai/skills/trains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trains",
+    "url": "https://clawhub.ai/skills/trains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trains-3e2b8f7655a26936.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trains@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trains-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8215f49f337eedb6a945a656a56be6e8f1b0fed84e08a996869c037b61a66746",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:36:01.647Z"
+}

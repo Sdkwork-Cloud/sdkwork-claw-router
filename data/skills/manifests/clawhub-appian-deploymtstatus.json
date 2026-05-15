@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39706,
+  "uuid": "skill-clawhub-appian-deploymtstatus",
+  "skillKey": "clawhub-appian-deploymtstatus",
+  "name": "Appian Deploymtstatus",
+  "summary": "Check the status of an Appian deployment by UUID and optionally download its artifacts (log, package ZIP). Use after appian-export or appian-deploy to monito...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_deploymtstatus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "Check the status of an Appian deployment by UUID and optionally download its artifacts (log, pa.",
+        "Use after appian-export or appian-deploy to monito..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-deploymtstatus@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-deploymtstatus",
+      "url": "https://clawhub.ai/skills/appian-deploymtstatus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-deploymtstatus",
+    "url": "https://clawhub.ai/skills/appian-deploymtstatus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-deploymtstatus-691d314128fa14fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-deploymtstatus@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-deploymtstatus-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dc622c3f215ca7a2975f999efc9e4a39a46b043ab7fe2a2b09f6433a07ad523",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:21:30.210Z"
+}

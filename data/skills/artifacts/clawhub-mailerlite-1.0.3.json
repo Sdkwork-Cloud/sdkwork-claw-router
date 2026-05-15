@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailerlite@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailerlite",
+  "skill": {
+    "id": 9475,
+    "skillKey": "clawhub-mailerlite",
+    "name": "MailerLite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailerlite",
+    "url": "https://clawhub.ai/skills/mailerlite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailerlite-03bdb8ee2b814210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MailerLite API integration with managed OAuth. Manage email subscribers, groups, campaigns, automations, and forms. Use this skill when users want to add sub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3638,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777589166566,
+      "changelog": "- Updated all API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency.\n- Clarified connection management instructions and emphasized using the Maton-Connection header when handling multiple MailerLite accounts.\n- Added a Security & Permissions section stressing explicit user confirmation for all write operations.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02a3555a466f5a1cc90bf8a5ee704819e8133f9e4d91b132082937d28bf24916"
+}

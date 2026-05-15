@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veed-ugc@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veed_ugc",
+  "skill": {
+    "id": 12454,
+    "skillKey": "clawhub-veed-ugc",
+    "name": "VEED UGC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veed-ugc",
+    "url": "https://clawhub.ai/skills/veed-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veed-ugc-dcea6c710080973b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UGC-style promotional videos with AI lip-sync. Takes an image (person with product from Morpheus/Ad-Ready) and a script (pure dialogue), creates a video of the person speaking. Uses ElevenLabs for voice synthesis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldelavallaz",
+      "userId": "publishers:pauldelavallaz",
+      "displayName": "Paul de Lavallaz",
+      "image": "https://avatars.githubusercontent.com/u/51497690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1254,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770856234796,
+      "changelog": "Update: Changed from brief to pure script dialogue input (no annotations, symbols, or tone directions)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:700d73189b7a0d395a318ade56b479fa4da8a8da17d791491dce91effa7dab90"
+}

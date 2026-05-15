@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25912,
+  "uuid": "skill-clawhub-openclaw-agent-mesh",
+  "skillKey": "clawhub-openclaw-agent-mesh",
+  "name": "OpenClaw Agent Mesh",
+  "summary": "Peer discovery and agent-to-agent communication for OpenClaw instances. Use when the user wants nearby OpenClaw nodes to discover each other, request contact...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_mesh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawdPI-AI",
+      "features": [
+        "Peer discovery and agent-to-agent communication for OpenClaw instances",
+        "Use when the user wants nearby OpenClaw nodes to discover each other, request contact..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-agent-mesh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189876277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-agent-mesh",
+      "url": "https://clawhub.ai/skills/openclaw-agent-mesh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-mesh",
+    "url": "https://clawhub.ai/skills/openclaw-agent-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-mesh-d03d55cd97d3fdcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-agent-mesh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-mesh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a4341d81304f2211b206facaa63772fd37083fde2d362476a721e1a41328a9e",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:13:53.071Z"
+}

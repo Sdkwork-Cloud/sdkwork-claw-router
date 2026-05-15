@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comprehensive-tech-documentation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comprehensive_tech_documentation",
+  "skill": {
+    "id": 17257,
+    "skillKey": "clawhub-comprehensive-tech-documentation",
+    "name": "Comprehensive Tech Documentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comprehensive-tech-documentation",
+    "url": "https://clawhub.ai/skills/comprehensive-tech-documentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comprehensive-tech-documentation-05fc7f05bc949788.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates layered, comprehensive technical documentation for projects, skills, or systems. Use when user requests 'write technical documentation', 'explain how..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuxxxu",
+      "userId": "s17f9qtd89hqa7exkbvz5zvgfx83yjg5",
+      "displayName": "liuxxxu",
+      "image": "https://avatars.githubusercontent.com/u/96455140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 778,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772717280023,
+      "changelog": "- Introduces a skill that generates comprehensive, layered technical documentation for projects, skills, or systems.\n- Provides a four-part documentation suite: Technical Principles, Architecture Visualization (with Mermaid diagrams), Quick Reference Guide, and Navigation Index—each serving distinct audiences.\n- Adapts the output based on user requests and system complexity, guided by an included decision tree.\n- Supplies detailed workflow, document templates, and best practices for building and verifying documentation sets.\n- Focuses on clarity, navigability, and role-based learning paths to meet needs from quick referencing to deep technical dives.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4b5f602e34c7796fd100e7be5a18a502ece8e4fdfb7e50bc61237cdf5079f74"
+}

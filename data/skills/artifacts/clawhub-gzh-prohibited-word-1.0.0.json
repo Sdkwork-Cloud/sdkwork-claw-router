@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gzh-prohibited-word@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gzh_prohibited_word",
+  "skill": {
+    "id": 70082,
+    "skillKey": "clawhub-gzh-prohibited-word",
+    "name": "gzh-prohibited-word（公众号违禁词检测）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gzh-prohibited-word",
+    "url": "https://clawhub.ai/skills/gzh-prohibited-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gzh-prohibited-word-b67e2339986875f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于官方违禁词库实时同步，覆盖广告法、医疗美容、金融风险等10+类目，支持文本、文件、图片多形式检测，10秒内输出违禁词标红+替换建议+优化文案，帮你避开封号限流风险。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "if530770",
+      "userId": "s17dj64hf08x3mak1j99vesphd84gs9c",
+      "displayName": "if530770",
+      "image": "https://avatars.githubusercontent.com/u/46310539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778316194096,
+      "changelog": "- 首发版本，提供微信公众号多类目违禁词检测与优化建议。\n- 支持文本、文件（TXT/DOC/DOCX）、网页和图片多种输入形式，10秒内输出标红违禁词、替换建议和优化文案。\n- 检测范围涵盖广告法、医美、金融等10+类目，实时同步官方违禁词库。\n- 实现分批检测和自然断句切割，单次支持最长10000字符，自动根据长度引导用户操作。\n- 有违禁词时自动生成无HTML优化文案txt，并通过文件卡片交付。\n- 严格遵循 references/core_workflow.md 的操作流程和输出模板。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c85d04f0d7d8bc87d0a1f0139483553f66e15dc1e78e4aea570c58109aefa50d"
+}

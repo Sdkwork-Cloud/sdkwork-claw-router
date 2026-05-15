@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ride-xiaoshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ride_xiaoshu",
+  "skill": {
+    "id": 43533,
+    "skillKey": "clawhub-free-ride-xiaoshu",
+    "name": "Free Ride Xiaoshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ride-xiaoshu",
+    "url": "https://clawhub.ai/skills/free-ride-xiaoshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ride-xiaoshu-93672fdd68235adb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaomaju-888",
+      "userId": "s170yv0m5gz6jparmgp94178xx849yqr",
+      "displayName": "xiaomaju-888",
+      "image": "https://avatars.githubusercontent.com/u/267942803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775375708507,
+      "changelog": "Initial release of FreeRide for OpenClaw\n\n- Automatically configures OpenClaw to use free AI models from OpenRouter.\n- Ranks and selects the best free model as primary; adds automatic fallbacks for seamless switching.\n- Writes only model-related keys to config, preserving all other user settings.\n- Provides CLI commands for setup, model switching, fallback management, and troubleshooting.\n- Includes optional watcher for handling automatic model rotation on rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7487e8bc5bcb0dbadf940478c666f567e9b09706990dae321cfffe707b3e0370"
+}

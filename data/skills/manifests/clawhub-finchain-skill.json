@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54640,
+  "uuid": "skill-clawhub-finchain-skill",
+  "skillKey": "clawhub-finchain-skill",
+  "name": "finchain-skill",
+  "summary": "Answer questions and generate responses for Finchain Skill, a FinChain and FUSD focused finance skill. Use when the user asks about FUSD, FUSDLP, FinChain星鏈,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finchain_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joyboy",
+      "features": [
+        "Answer questions and generate responses for Finchain Skill, a FinChain and FUSD focused finance.",
+        "Use when the user asks about FUSD, FUSDLP, FinChain星鏈,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finchain-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43311360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finchain-skill",
+      "url": "https://clawhub.ai/skills/finchain-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finchain-skill",
+    "url": "https://clawhub.ai/skills/finchain-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finchain-skill-1697ade05844956d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finchain-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finchain-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69f6e0f4e941a3e486dfd48e36970edf066b18fa2487d5fa7f613b26e3679729",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:45:12.311Z"
+}

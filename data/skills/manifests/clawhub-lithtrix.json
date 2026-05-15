@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53030,
+  "uuid": "skill-clawhub-lithtrix",
+  "skillKey": "clawhub-lithtrix",
+  "name": "lithtrix-skills-api",
+  "summary": "Operate Lithtrix (lithtrix.ai) from an agent — self-serve API keys, credibility-scored web discovery, page browse, per-agent JSON memory, opt-in commons laye...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lithtrix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "learningloons-hash",
+      "features": [
+        "Operate Lithtrix (lithtrix.ai) from an agent — self-serve API keys, credibility-scored web disc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lithtrix@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264562756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lithtrix",
+      "url": "https://clawhub.ai/skills/lithtrix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lithtrix",
+    "url": "https://clawhub.ai/skills/lithtrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lithtrix-5111720d101185ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lithtrix@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lithtrix-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9c7bb8bd8d39cea3b2e797be03224e8a4350ce0df3eb789ba391cd5d33fdc73",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:23:53.477Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-hot-trend@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_hot_trend",
+  "skill": {
+    "id": 71834,
+    "skillKey": "clawhub-toutiao-hot-trend",
+    "name": "Toutiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-hot-trend",
+    "url": "https://clawhub.ai/skills/toutiao-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-hot-trend-31171c09e3e8ace6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供今日头条公开文章和视频的关键词搜索、内容摘要及热点频道分布的轻量化检索与分析服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773652214001,
+      "changelog": "Initial release of 今日头条热门内容技能：\n\n- 支持对今日头条公开文章、视频、话题页的内容检索与摘要\n- 可按关键词/频道提取标题、作者、发布时间、互动等公开信息统计\n- 仅用于公开页面的轻量分析与提醒，不支持批量抓取或接口逆向\n- 视频摘要功能仅抽取元信息，不支持下载或去水印\n- 符合平台合规要求，所有结果均标注采集时间",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:186b3cfe6c40807056ff42727336f04c0be49de4fff0b6e777e4778c1fbc8a78"
+}

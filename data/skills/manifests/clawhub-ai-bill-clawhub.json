@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12915,
+  "uuid": "skill-clawhub-ai-bill-clawhub",
+  "skillKey": "clawhub-ai-bill-clawhub",
+  "name": "Ai Bill Clawhub",
+  "summary": "Real-time AI API usage tracking and cost monitoring for OpenClaw. Track spending across OpenAI, Claude, Gemini, Kimi, DeepSeek, and Grok with live dashboard....",
+  "version": "2.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bill_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fumarole16-afk",
+      "features": [
+        "Real-time AI API usage tracking and cost monitoring for OpenClaw",
+        "Track spending across OpenAI, Claude, Gemini, Kimi, DeepSeek, and Grok with live dashboard...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-bill-clawhub@2.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256977228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-bill-clawhub",
+      "url": "https://clawhub.ai/skills/ai-bill-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bill-clawhub",
+    "url": "https://clawhub.ai/skills/ai-bill-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bill-clawhub-562794adebfaa4d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-bill-clawhub@2.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-bill-clawhub-2.2.5.json",
+      "version": "2.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a38f724485df33dd7ab96d3c6251f6376080f32be075138ac72c0c791dd7a4a",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T14:13:21.851Z"
+}

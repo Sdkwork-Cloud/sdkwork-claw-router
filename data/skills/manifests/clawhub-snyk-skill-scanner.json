@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25522,
+  "uuid": "skill-clawhub-snyk-skill-scanner",
+  "skillKey": "clawhub-snyk-skill-scanner",
+  "name": "Snyk Skill Scanner",
+  "summary": "Scan installed agent components (MCP servers, skills, agent tools) for security vulnerabilities using snyk-agent-scan. Use only when running uvx snyk-agent-s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snyk_skill_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SwiftKing100",
+      "features": [
+        "Scan installed agent components (MCP servers, skills, agent tools) for security vulnerabilities.",
+        "Use only when running uvx snyk-agent-s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snyk-skill-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16414610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snyk-skill-scanner",
+      "url": "https://clawhub.ai/skills/snyk-skill-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snyk-skill-scanner",
+    "url": "https://clawhub.ai/skills/snyk-skill-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snyk-skill-scanner-f7a20383ce5dbf1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snyk-skill-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snyk-skill-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9e061ecb3b17197740bd2dba6a28ba141c16dc8fe54b24f21a3b213bed2b342",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T03:38:19.355Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-marketing-faq@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_marketing_faq",
+  "skill": {
+    "id": 65151,
+    "skillKey": "clawhub-email-marketing-faq",
+    "name": "email-marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-marketing-faq",
+    "url": "https://clawhub.ai/skills/email-marketing-faq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-marketing-faq-4055c0c9cc4812f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行邮件营销任务，包括 AI 智能生成 HTML、个性化群发、自动化回信监控、FAQ 知识库智能匹配、多语种自动对齐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlrlyy",
+      "userId": "s17ey0da7bwkypvdpt9r5r1x9x83ha8s",
+      "displayName": "zlrlyy",
+      "image": "https://avatars.githubusercontent.com/u/78633588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774337516154,
+      "changelog": "- Renamed skill from \"email-marketing-faq\" to \"email-marketing\".\n- Added three support/configuration files: .env.example, .gitignore, and .npmignore for improved setup and environment management.\n- Updated SKILL.md: streamlined troubleshooting, clarified doc structure, and improved guidance for HTML生成 and FAQ匹配。\n- No changes to technical features; this update focuses on usability, documentation, and project structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:401da8ff465a9d61ead417f86b9b684484bf9aabd4b7287e068322840e7eb0c6"
+}

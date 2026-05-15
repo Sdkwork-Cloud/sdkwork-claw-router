@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45850,
+  "uuid": "skill-clawhub-drift-testing",
+  "skillKey": "clawhub-drift-testing",
+  "name": "drift-testing",
+  "summary": "Verifies API implementations against OpenAPI specifications using the Drift CLI, catching spec drift and supporting Bi-Directional Contract Testing (BDCT). U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Rohan Vaz",
+      "features": [
+        "Verifies API implementations against OpenAPI specifications using the Drift CLI, catching spec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drift-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36708857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drift-testing",
+      "url": "https://clawhub.ai/skills/drift-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift-testing",
+    "url": "https://clawhub.ai/skills/drift-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-testing-451287cbbb097bc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drift-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drift-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2291a331727d5797c0f1b9c211fc27a439d2dd27df340bf2063f4fd85bcb6e2a",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:20:43.584Z"
+}

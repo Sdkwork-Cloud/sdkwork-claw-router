@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-surfing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_surfing",
+  "skill": {
+    "id": 37402,
+    "skillKey": "clawhub-context-surfing",
+    "name": "context-surfing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-surfing",
+    "url": "https://clawhub.ai/skills/context-surfing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-surfing-9aac3f2828c77469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors context window health throughout a session and rides peak context quality for maximum output fidelity. Activates automatically after plan-interview..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pskoett",
+      "userId": "s1794qsnpbjfkfnp0k226sefv583hfzt",
+      "displayName": "pskoett",
+      "image": "https://avatars.githubusercontent.com/u/177305814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776306309409,
+      "changelog": "- Initial release of context-surfing.\n- Monitors context window quality throughout a multi-step agent session to maximize output fidelity.\n- Activates automatically after plan-interview and intent-framed-agent, handling handoff to simplify-and-harden and self-improvement upon completion or context drift.\n- Detects and prevents degraded context states (drift, contradiction, hallucination), exiting cleanly and preserving session continuity.\n- Integrates with Entire CLI when available to use persistent session state as an anchor for context checks.\n- Scans and leverages key project context files (CLAUDE.md, AGENTS.md, README.md, etc.) to maintain strong session grounding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:417ccde368cd4858658af990fc36cb7595c8cba5b8b6d7d38d5ec60fe2b31033"
+}

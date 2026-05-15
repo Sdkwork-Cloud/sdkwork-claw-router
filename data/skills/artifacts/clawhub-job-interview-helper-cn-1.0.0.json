@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/job-interview-helper-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_interview_helper_cn",
+  "skill": {
+    "id": 72059,
+    "skillKey": "clawhub-job-interview-helper-cn",
+    "name": "求职&面试智能助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-interview-helper-cn",
+    "url": "https://clawhub.ai/skills/job-interview-helper-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-interview-helper-cn-eeddc5e82b58f23c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大学生求职面试全流程智能助手。支持简历优化、面试模拟、求职进度管理、行业信息速查。触发场景：(1) 简历优化、简历修改、简历润色、简历匹配JD (2) 面试模拟、面试练习、面试准备、群面模拟 (3) 求职进度管理、投递跟踪、面试提醒 (4) 行业信息查询、岗位分析、薪资查询、职业发展路径"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777692757004,
+      "changelog": "首个版本：支持简历优化、面试模拟、求职进度管理、行业信息速查四大功能模块",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d9bd41ea6534699a2a671503f469f16873124dcb0ff8ede908d9a57cab4dd1c"
+}

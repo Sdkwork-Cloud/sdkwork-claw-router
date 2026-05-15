@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-crawler-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_crawler_architect",
+  "skill": {
+    "id": 63764,
+    "skillKey": "clawhub-python-crawler-architect",
+    "name": "Python Crawler Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-crawler-architect",
+    "url": "https://clawhub.ai/skills/python-crawler-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-crawler-architect-54709d430ae859ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "资深Python爬虫与数据工程专家。当用户需要设计网络爬虫系统、构建数据采集管道、设计数据库模型(SQLAlchemy ORM)、实现反爬虫策略（代理池、断点续传、重试机制）、异步并发编程(asyncio/aiohttp)、或进行数据清洗时，使用此技能。关键词：爬虫、crawler、scraper、数据采集、代理..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strong-cyber",
+      "userId": "s173yp9y4h6svhwycqz7n59z1x85njae",
+      "displayName": "strong-Cyber",
+      "image": "https://avatars.githubusercontent.com/u/193666612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777321069726,
+      "changelog": "python-crawler-architect 1.0.0\n\n- Initial release of the Python 爬虫架构师 skill.\n- Defines workflow and best practices for designing large-scale Python web crawlers.\n- Includes detailed guidelines for database modeling with SQLAlchemy ORM.\n- Provides templates for anti-blocking strategies, proxy pool management, fault tolerance, and data cleaning.\n- Specifies technical stack, project structure, and code style norms for robust, production-grade crawler systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e073693fbe50c86229af03a06f9051a23c9a204a10d5ad8efe8e4855c9048f1a"
+}

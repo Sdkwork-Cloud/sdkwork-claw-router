@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18520,
+  "uuid": "skill-clawhub-standx-cli",
+  "skillKey": "clawhub-standx-cli",
+  "name": "Standx Cli",
+  "summary": "Crypto trading CLI for StandX exchange v0.3.5. Use when users need to: (1) Query crypto market data (prices, order books, klines, funding rates), (2) Manage...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.standx_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lance",
+      "features": [
+        "Crypto trading CLI for StandX exchange v0.3.5",
+        "Use when users need to: (1) Query crypto market data (prices, order books, klines, funding rate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/standx-cli@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11880337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "standx-cli",
+      "url": "https://clawhub.ai/skills/standx-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "standx-cli",
+    "url": "https://clawhub.ai/skills/standx-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/standx-cli-45175d82f47abb0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/standx-cli@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-standx-cli-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:287d0963c6a7e06a377cc193857549a2724fcb57d1072860ed8b70d639b0901d",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T08:18:37.649Z"
+}

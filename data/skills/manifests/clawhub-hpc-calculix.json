@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55289,
+  "uuid": "skill-clawhub-hpc-calculix",
+  "skillKey": "clawhub-hpc-calculix",
+  "name": "Hpc Calculix",
+  "summary": "Build, review, debug, and automate CalculiX finite-element workflows. Use when working with CalculiX `.inp` decks, Abaqus-style keywords, materials, steps, c...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpc_calculix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fzj",
+      "features": [
+        "Build, review, debug, and automate CalculiX finite-element workflows",
+        "Use when working with CalculiX `.inp` decks, Abaqus-style keywords, materials, steps, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hpc-calculix@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183976049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hpc-calculix",
+      "url": "https://clawhub.ai/skills/hpc-calculix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpc-calculix",
+    "url": "https://clawhub.ai/skills/hpc-calculix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpc-calculix-ab32c297111d2363.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hpc-calculix@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hpc-calculix-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a9f8f9f8969ee68c13df800f9f3a2750738bdd6d80a72d2b589b044288a1f5b",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:09:29.651Z"
+}

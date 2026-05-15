@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-online-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_online_ai",
+  "skill": {
+    "id": 47198,
+    "skillKey": "clawhub-free-video-generator-online-ai",
+    "name": "Free Video Generator Online Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-online-ai",
+    "url": "https://clawhub.ai/skills/free-video-generator-online-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-online-ai-20415c63587763c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text or images into AI-generated videos with this skill. Works with MP4, MOV, PNG, JPG files up to 200MB. content creators and marketers use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776100115416,
+      "changelog": "Initial release of Free Video Generator Online AI\n\n- Generate AI-powered videos from text or images; output as 1080p MP4.\n- Supports common formats (MP4, MOV, PNG, JPG; up to 200MB).\n- Fast cloud rendering pipeline; typical processing time: 1–2 minutes.\n- Automatic setup with free 7-day/100-credit anonymous token if needed.\n- User commands mapped to upload, edit, export, and session actions.\n- Helpful error handling, timeline summary, and format guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3034d2d16f1cc45aa9f5d863cb1437627a37d37885364cc678166d5e6017069"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-japanese-to-english@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_japanese_to_english",
+  "skill": {
+    "id": 42922,
+    "skillKey": "clawhub-ai-subtitle-japanese-to-english",
+    "name": "Ai Subtitle Japanese To English"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-japanese-to-english",
+    "url": "https://clawhub.ai/skills/ai-subtitle-japanese-to-english",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-japanese-to-english-1860f9b301de9362.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get English-captioned videos ready to post, without touching a single slider. Upload your Japanese video files (MP4, MOV, AVI, WebM, up to 500MB), say someth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776030434388,
+      "changelog": "- Initial release of \"AI Subtitle Japanese to English\" skill.\n- Translate Japanese speech in video files (MP4, MOV, AVI, WebM, up to 500MB) into English subtitles, automatically burned into the video.\n- Simple workflow: upload video, give instructions (e.g., \"translate Japanese speech to English subtitles\"), download 1080p MP4.\n- Handles common tasks: export, show credits, view status, upload files, and edit tracks via keyword/intent recognition.\n- All cloud processing is automatic—no manual transcription or video editing needed.\n- Includes error handling for common issues (token expiry, file size/format, rate limits) and clear user prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf1895c04ef5d08161825f71da51beab6c96852f95b43db4d7dfe55229f66240"
+}

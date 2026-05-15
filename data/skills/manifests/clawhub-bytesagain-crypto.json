@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58194,
+  "uuid": "skill-clawhub-bytesagain-crypto",
+  "skillKey": "clawhub-bytesagain-crypto",
+  "name": "Bytesagain Crypto",
+  "summary": "Real-time crypto prices and 100+ technical indicators (RSI, MACD, etc.) using Binance API. 支持实时行情监控、指标计算及全网资产扫描。Pure technical reference, zero external ads.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_crypto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Real-time crypto prices and 100+ technical indicators (RSI, MACD, etc.) using Binance API",
+        "支持实时行情监控、指标计算及全网资产扫描。Pure technical reference, zero external ads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-crypto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-crypto",
+      "url": "https://clawhub.ai/skills/bytesagain-crypto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-crypto",
+    "url": "https://clawhub.ai/skills/bytesagain-crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-crypto-43f26b31fb58449c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-crypto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-crypto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:267c054241a449bd3bbc18c78a73ce885c5610bb87a1c87e58c19b95e1ce4d15",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:46:13.328Z"
+}

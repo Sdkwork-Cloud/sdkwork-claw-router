@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63241,
+  "uuid": "skill-clawhub-beancount-plaintext-ledger",
+  "skillKey": "clawhub-beancount-plaintext-ledger",
+  "name": "Beancount Plaintext Ledger",
+  "summary": "Beancount 纯文本复式记账框架，支持导入银行对账单和交易数据，自动生成资产负债表和损益表等财务报表。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beancount_plaintext_ledger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "Beancount 纯文本复式记账框架，支持导入银行对账单和交易数据，自动生成资产负债表和损益表等财务报表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beancount-plaintext-ledger@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beancount-plaintext-ledger",
+      "url": "https://clawhub.ai/skills/beancount-plaintext-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beancount-plaintext-ledger",
+    "url": "https://clawhub.ai/skills/beancount-plaintext-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beancount-plaintext-ledger-6667935dd14c2715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beancount-plaintext-ledger@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-beancount-plaintext-ledger-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1801c162212bcea7ebd5fe46b3f9818eda21a9f94577b0af9b786e27683cdab",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:23:53.117Z"
+}

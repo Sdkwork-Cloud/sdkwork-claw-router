@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57558,
+  "uuid": "skill-clawhub-audio-to-wechat-article",
+  "skillKey": "clawhub-audio-to-wechat-article",
+  "name": "Audio to WeChat Article",
+  "summary": "Turn meeting audio or a transcript plus optional images into a publish-ready WeChat Official Account article. Use when the user wants to go from 录音/文字稿/会议内容/...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_to_wechat_article",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koi",
+      "features": [
+        "Turn meeting audio or a transcript plus optional images into a publish-ready WeChat Official Ac.",
+        "Use when the user wants to go from 录音/文字稿/会议内容/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-to-wechat-article@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135015309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-to-wechat-article",
+      "url": "https://clawhub.ai/skills/audio-to-wechat-article"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-to-wechat-article",
+    "url": "https://clawhub.ai/skills/audio-to-wechat-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-to-wechat-article-abc7d4c21205a383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-to-wechat-article@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-to-wechat-article-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28be829d7f3842725f4e0b058f58d8a000b23e96682c728b4998e0490f9bb83d",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T12:55:09.754Z"
+}

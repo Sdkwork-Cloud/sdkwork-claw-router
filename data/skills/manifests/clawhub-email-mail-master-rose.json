@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68693,
+  "uuid": "skill-clawhub-email-mail-master-rose",
+  "skillKey": "clawhub-email-mail-master-rose",
+  "name": "Email Mail Master Rose",
+  "summary": "通过阿里云邮箱、QQ邮箱或163邮箱等发送和接收邮件。支持发送普通邮件、带附件邮件、接收邮件、检查新邮件。当用户要求发送邮件、查看邮件、检查新邮件时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_mail_master_rose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "roseknife520",
+      "features": [
+        "通过阿里云邮箱、QQ邮箱或163邮箱等发送和接收邮件。支持发送普通邮件、带附件邮件、接收邮件、检查新邮件。当用户要求发送邮件、查看邮件、检查新邮件时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-mail-master-rose@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242541187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-mail-master-rose",
+      "url": "https://clawhub.ai/skills/email-mail-master-rose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-mail-master-rose",
+    "url": "https://clawhub.ai/skills/email-mail-master-rose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-mail-master-rose-dbca7810e9b62318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-mail-master-rose@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-mail-master-rose-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59e24431936dc8356ad2ae564bfdf4f4e7dc7019fb0e84c25d2882ec573f8aef",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:02:22.398Z"
+}

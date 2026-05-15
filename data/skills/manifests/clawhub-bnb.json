@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15224,
+  "uuid": "skill-clawhub-bnb",
+  "skillKey": "clawhub-bnb",
+  "name": "BNB",
+  "summary": "Assist with BNB Chain transactions, BEP-20 tokens, gas fees, and cross-chain transfers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bnb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with BNB Chain transactions, BEP-20 tokens, gas fees, and cross-chain transfers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bnb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bnb",
+      "url": "https://clawhub.ai/skills/bnb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bnb",
+    "url": "https://clawhub.ai/skills/bnb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bnb-f3162cabd3be0f9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bnb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bnb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb16aa60fabc7bd7183fbaadfed94ff8d4455c8a57f8171697af6e2b18a2dfa6",
+      "artifactSizeBytes": 1732
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:04:45.886Z"
+}

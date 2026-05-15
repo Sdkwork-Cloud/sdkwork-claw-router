@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-xiaoshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_xiaoshu",
+  "skill": {
+    "id": 42483,
+    "skillKey": "clawhub-agent-browser-xiaoshu",
+    "name": "Agent Browser Xiaoshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-xiaoshu",
+    "url": "https://clawhub.ai/skills/agent-browser-xiaoshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-xiaoshu-b66c9a316fc5448f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaomaju-888",
+      "userId": "s170yv0m5gz6jparmgp94178xx849yqr",
+      "displayName": "xiaomaju-888",
+      "image": "https://avatars.githubusercontent.com/u/267942803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775375590351,
+      "changelog": "Agent Browser 1.0.0\n\n- Initial release of a fast, Rust-based headless browser automation CLI with Node.js fallback.\n- Enables navigation, clicking, typing, and structured page interactions using concise commands.\n- Supports advanced features: snapshots, element references, semantic locators, screenshots, PDF/video recording, JS evaluation, cookies/storage management, network control, tab/window/frame handling, and session state.\n- Ideal for automation, data extraction, UI testing, and form filling.\n- Includes detailed usage examples and workflows for quick start.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d59c10a87e169fec65ce2c27cc5c992da8781b9fb5c744cd6e33705754f4741b"
+}

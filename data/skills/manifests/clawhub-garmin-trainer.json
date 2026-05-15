@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25095,
+  "uuid": "skill-clawhub-garmin-trainer",
+  "skillKey": "clawhub-garmin-trainer",
+  "name": "Garmin Trainer",
+  "summary": "Adaptive 12-week training plan generator using Garmin Connect data. Creates structured workouts and schedules them on your Garmin calendar. Use this skill wh...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_trainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Burkhard Pauli",
+      "features": [
+        "Adaptive 12-week training plan generator using Garmin Connect data",
+        "Creates structured workouts and schedules them on your Garmin calendar",
+        "Use this skill wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-trainer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/689884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-trainer",
+      "url": "https://clawhub.ai/skills/garmin-trainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-trainer",
+    "url": "https://clawhub.ai/skills/garmin-trainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-trainer-78d3f5f0d817ae16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-trainer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-trainer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c504c13d84bfc1ceccbe11c0301ccd8275a8d05be75ada48d10a9a2e85002711",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T21:09:19.388Z"
+}

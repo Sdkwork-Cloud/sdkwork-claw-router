@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-sift@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_sift",
+  "skill": {
+    "id": 25142,
+    "skillKey": "clawhub-ocas-sift",
+    "name": "Sift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-sift",
+    "url": "https://clawhub.ai/skills/ocas-sift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-sift-7bdcf2120d61e9f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search, research synthesis, fact verification, and entity extraction. The system's general research engine. Use for topic research, web lookups, fact-che..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774683481676,
+      "changelog": "ocas-sift v2.3.0\n\n- Added self-update command: `sift.update` pulls latest version from GitHub and preserves journals/data.\n- New initialization flow: skill auto-initializes storage and cron jobs on first run via `sift.init`.\n- Daily background auto-update: registers a `sift:update` cron job to keep the skill current.\n- Expanded documentation on installation, update mechanism, initialization, run completion, and trigger phrases.\n- Minor tweaks to config (`skill_version` updated) and improved clarity in usage and skill boundary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6406cff8dac8f320c3297ee70a49464f46d05e14170ca828352d430319de3250"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_research",
+  "skill": {
+    "id": 12098,
+    "skillKey": "clawhub-x-research",
+    "name": "X Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-research",
+    "url": "https://clawhub.ai/skills/x-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-research-b2d809877d36a990.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "General-purpose X/Twitter research agent. Searches X for real-time perspectives, dev discussions, product feedback, cultural takes, breaking news, and expert..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1546,
+      "installsAllTime": 37,
+      "installsCurrent": 35,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771157707955,
+      "changelog": "x-research 1.0.0 — Initial release\n\n- General-purpose agent for real-time research on X/Twitter, synthesizing perspectives, product feedback, news, and expert opinions.\n- Provides CLI tool for searching tweets, profiles, threads, individual tweets, and managing a watchlist.\n- Supports advanced filtering (by time, likes, engagement, replies, etc.), sorting, noise reduction, and output formats (JSON, markdown).\n- Includes caching to reduce duplicate API calls and optimize cost.\n- Features an agentic research loop: decompose questions, run targeted searches, follow threads, deep-dive linked content, and synthesize findings.\n- Integrated watchlist and heartbeat system for monitoring key accounts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ffdd5c1d36c8d66b8d59f9a09b3abcd27cffb1b9cbe5d6b6f698722747c28be"
+}

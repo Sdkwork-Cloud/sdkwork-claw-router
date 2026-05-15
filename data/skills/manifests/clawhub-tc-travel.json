@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67558,
+  "uuid": "skill-clawhub-tc-travel",
+  "skillKey": "clawhub-tc-travel",
+  "name": "travel-customizer",
+  "summary": "智能旅游定制助手，收集用户需求后自动提交飞书多维表，助力个性化行程规划与跟进。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tc_travel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lijingxu007",
+      "features": [
+        "智能旅游定制助手，收集用户需求后自动提交飞书多维表，助力个性化行程规划与跟进。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tc-travel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27415257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tc-travel",
+      "url": "https://clawhub.ai/skills/tc-travel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tc-travel",
+    "url": "https://clawhub.ai/skills/tc-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tc-travel-d22647a701e53b54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tc-travel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tc-travel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bfc160eef6d8305e71fdf64b5ed10f7efcac87f43f48d4ec200bf9b6d8e898d",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:17:19.106Z"
+}

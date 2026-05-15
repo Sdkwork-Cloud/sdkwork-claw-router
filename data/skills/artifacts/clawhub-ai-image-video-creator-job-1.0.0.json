@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-video-creator-job@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_video_creator_job",
+  "skill": {
+    "id": 41704,
+    "skillKey": "clawhub-ai-image-video-creator-job",
+    "name": "Ai Image Video Creator Job"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-video-creator-job",
+    "url": "https://clawhub.ai/skills/ai-image-video-creator-job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-video-creator-job-a9252a24cad70632.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create images or clips into AI-generated videos with this skill. Works with JPG, PNG, MP4, MOV files up to 500MB. content creators and marketers use it for t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792359663,
+      "changelog": "AI Image Video Creator — Initial Release\n\n- Turn images or video clips (JPG, PNG, MP4, MOV, and more) into AI-generated 1080p MP4 videos.\n- Simple automatic setup: connects to cloud API and manages session/token flow for you.\n- Supports file uploads up to 500MB; optimized for marketers and content creators.\n- Handles editing commands (transitions, background music, text overlays) via natural language.\n- Exports processed videos in ~1-2 minutes with cloud GPU rendering.\n- Tracks credit usage, session state, and provides clear error handling for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0073dc710739927bb139100840b41ff2e9498f885bace279e4e8cdcc6d49fac"
+}

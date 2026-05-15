@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51424,
+  "uuid": "skill-clawhub-afrexai-compliance-readiness",
+  "skillKey": "clawhub-afrexai-compliance-readiness",
+  "name": "Compliance Readiness",
+  "summary": "AI Compliance Readiness Assessment — evaluate how prepared an organization is for AI governance regulations (EU AI Act, NIST AI RMF, HHS mandates, state bar...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_compliance_readiness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afrexai-cto",
+      "features": [
+        "AI Compliance Readiness Assessment — evaluate how prepared an organization is for AI governance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-compliance-readiness@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261321054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-compliance-readiness",
+      "url": "https://clawhub.ai/skills/afrexai-compliance-readiness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-compliance-readiness",
+    "url": "https://clawhub.ai/skills/afrexai-compliance-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-compliance-readiness-680020077c30c41d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-compliance-readiness@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-compliance-readiness-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d1fb5359d3a03ea662c7280288ec6c752213c146a3f4c8b7efff4819a29d58e",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:00:56.806Z"
+}

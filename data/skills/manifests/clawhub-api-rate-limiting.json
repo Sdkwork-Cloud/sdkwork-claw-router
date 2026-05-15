@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12148,
+  "uuid": "skill-clawhub-api-rate-limiting",
+  "skillKey": "clawhub-api-rate-limiting",
+  "name": "API Rate Limiting",
+  "summary": "Rate limiting algorithms, implementation strategies, HTTP conventions, tiered limits, distributed patterns, and client-side handling. Use when protecting APIs from abuse, implementing usage tiers, or configuring gateway-level throttling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_rate_limiting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Rate limiting algorithms, implementation strategies, HTTP conventions, tiered limits, distribut.",
+        "Use when protecting APIs from abuse, implementing usage tiers, or configuring gateway-level thr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-rate-limiting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-rate-limiting",
+      "url": "https://clawhub.ai/skills/api-rate-limiting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-rate-limiting",
+    "url": "https://clawhub.ai/skills/api-rate-limiting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-rate-limiting-d27cc5ad21176db5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-rate-limiting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-rate-limiting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7157a29044d9ff4bc1d7716bf61915cd906ae824af0a29b854c988685cd028da",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:09:32.249Z"
+}

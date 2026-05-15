@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16606,
+  "uuid": "skill-clawhub-agent-teleport",
+  "skillKey": "clawhub-agent-teleport",
+  "name": "agent-teleport",
+  "summary": "Seamlessly migrate your agent's configuration and memory to a new machine using TiDB Zero.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_teleport",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lux",
+      "features": [
+        "Seamlessly migrate your agent's configuration and memory to a new machine using TiDB Zero."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-teleport@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20071273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-teleport",
+      "url": "https://clawhub.ai/skills/agent-teleport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-teleport",
+    "url": "https://clawhub.ai/skills/agent-teleport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-teleport-597fa3201b99690f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-teleport@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-teleport-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55ad7a870d4f010674b30d3b8cca8dd8e5d145cbe9989553a2fbba04f81fadd9",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:55:12.765Z"
+}

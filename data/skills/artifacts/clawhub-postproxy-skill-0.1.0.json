@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postproxy-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postproxy_skill",
+  "skill": {
+    "id": 12300,
+    "skillKey": "clawhub-postproxy-skill",
+    "name": "Postproxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postproxy-skill",
+    "url": "https://clawhub.ai/skills/postproxy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postproxy-skill-b5dfced6e72cd73c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call PostProxy API to create and manage social media posts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danbaranov",
+      "userId": "publishers:danbaranov",
+      "displayName": "danbaranov",
+      "image": "https://avatars.githubusercontent.com/u/79311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1628,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770334128492,
+      "changelog": "Initial release of postproxy-skill for managing social media posts via PostProxy API.\n\n- Supports creating, listing, retrieving, and deleting posts across multiple platforms (Facebook, Instagram, TikTok, LinkedIn, YouTube, Twitter/X, Threads).\n- Allows media uploads, scheduled posting, and draft creation/publishing.\n- Supports platform-specific parameters (e.g., Instagram reels, YouTube privacy).\n- Requires API key in environment variable POSTPROXY_API_KEY for authentication.\n- Includes detailed usage examples for all major endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:722965cad1c22c59ed38035d7731b28ce3b97996f5f6f17200b471db0dc4c518"
+}

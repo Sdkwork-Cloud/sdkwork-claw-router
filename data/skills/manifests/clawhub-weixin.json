@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70683,
+  "uuid": "skill-clawhub-weixin",
+  "skillKey": "clawhub-weixin",
+  "name": "Weixin",
+  "summary": "微信生态开发助手，精通公众号、小程序、支付、企业号全栈开发",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "微信生态开发助手，精通公众号、小程序、支付、企业号全栈开发"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin",
+      "url": "https://clawhub.ai/skills/weixin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin",
+    "url": "https://clawhub.ai/skills/weixin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-6701119c9eb31cd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c45fa050dddbe934c3ed7f2957ca43e3fc81e1235ada2fbe3104e09c5ef763",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:17:36.076Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27491,
+  "uuid": "skill-clawhub-ledgi",
+  "skillKey": "clawhub-ledgi",
+  "name": "Ledgi",
+  "summary": "Interact with the user's Ledgi personal finance data. Use when the user asks about their accounts, balances, net worth, holdings, investments, ISA allowances...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ledgi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nelsongallardo",
+      "features": [
+        "Interact with the user's Ledgi personal finance data",
+        "Use when the user asks about their accounts, balances, net worth, holdings, investments, ISA al."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ledgi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2769300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ledgi",
+      "url": "https://clawhub.ai/skills/ledgi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ledgi",
+    "url": "https://clawhub.ai/skills/ledgi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ledgi-37c62e5b19706330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ledgi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ledgi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9d3a614b58586c14e89a7ece0b8ae55b7f8d1185afb32c5483527f74960cf7e",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:19:58.379Z"
+}

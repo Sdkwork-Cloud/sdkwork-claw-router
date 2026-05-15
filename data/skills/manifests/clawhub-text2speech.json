@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25246,
+  "uuid": "skill-clawhub-text2speech",
+  "skillKey": "clawhub-text2speech",
+  "name": "Text-to-Speech",
+  "summary": "SenseAudio Text-to-Speech (TTS) API for converting text to natural speech. Supports synchronous and SSE streaming modes, multiple voices, emotion control, sp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text2speech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "SenseAudio Text-to-Speech (TTS) API for converting text to natural speech",
+        "Supports synchronous and SSE streaming modes, multiple voices, emotion control, sp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text2speech@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text2speech",
+      "url": "https://clawhub.ai/skills/text2speech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text2speech",
+    "url": "https://clawhub.ai/skills/text2speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text2speech-89fcdd6b8843b5b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text2speech@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text2speech-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47f96ab677e4c89db24e20d5a2756a89e497594a9fd7777d6faa38b32eef4201",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:16:38.116Z"
+}

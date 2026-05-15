@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kling-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_3",
+  "skill": {
+    "id": 56948,
+    "skillKey": "clawhub-kling-3",
+    "name": "Kling 3.0 video generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-3",
+    "url": "https://clawhub.ai/skills/kling-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-3-ba89c2adc46c7463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kling 3.0 video generation on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`; use for `kling-3.0/standard`, `kling-3.0/pro`, single-shot, multi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolhackboy",
+      "userId": "s177pant1v4gn5k13ffg1fp5b183nb02",
+      "displayName": "coolhackboy",
+      "image": "https://avatars.githubusercontent.com/u/13427145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773372916350,
+      "changelog": "Initial release of Kling 3.0 video generation on PoYo.\n\n- Supports single-shot, multi-shot, and structured multi-prompt video creation.\n- Covers both standard and pro models (`kling-3.0/standard`, `kling-3.0/pro`).\n- Enables use of element-based prompts, reference frames (`image_urls`), and sound-enabled output.\n- Provides payload building guidance and clear reporting of submitted `task_id` for follow-up.\n- Directs users to official API documentation and example scripts for advanced scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5359c1b51f97583f54d074e8d49b5dd328f3647769a8be936c43f45f9bf51a37"
+}

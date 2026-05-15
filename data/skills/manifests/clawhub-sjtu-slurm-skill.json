@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56104,
+  "uuid": "skill-clawhub-sjtu-slurm-skill",
+  "skillKey": "clawhub-sjtu-slurm-skill",
+  "name": "SJTU SLURM Skill",
+  "summary": "Log in to the SJTU HPC platform (also known as \"交我算\") as the user to perform job queries, submissions, cancellations, and data management. Use this skill whe...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjtu_slurm_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hermes",
+      "features": [
+        "Log in to the SJTU HPC platform (also known as \"交我算\") as the user to perform job queries, submi.",
+        "Use this skill whe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sjtu-slurm-skill@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8164697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sjtu-slurm-skill",
+      "url": "https://clawhub.ai/skills/sjtu-slurm-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjtu-slurm-skill",
+    "url": "https://clawhub.ai/skills/sjtu-slurm-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjtu-slurm-skill-d4e8f2f32a95ef5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sjtu-slurm-skill@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sjtu-slurm-skill-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e12a81ca8246e9541e48de93c60db6b0160baad624ee968bade00c78fd7aed0",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:32:18.183Z"
+}

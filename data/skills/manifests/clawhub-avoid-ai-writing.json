@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18310,
+  "uuid": "skill-clawhub-avoid-ai-writing",
+  "skillKey": "clawhub-avoid-ai-writing",
+  "name": "Avoid AI Writing",
+  "summary": "Audit and rewrite content to remove AI writing patterns (\"AI-isms\"). Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avoid_ai_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Conor Bronsdon",
+      "features": [
+        "Audit and rewrite content to remove AI writing patterns (\"AI-isms\")",
+        "Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avoid-ai-writing@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120674402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avoid-ai-writing",
+      "url": "https://clawhub.ai/skills/avoid-ai-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avoid-ai-writing",
+    "url": "https://clawhub.ai/skills/avoid-ai-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avoid-ai-writing-0edc033673f64874.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avoid-ai-writing@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avoid-ai-writing-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:447c6d1cc9280592c55b7003f77352a525f39182612d304cc48e17ce4aa6436e",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:53:17.823Z"
+}

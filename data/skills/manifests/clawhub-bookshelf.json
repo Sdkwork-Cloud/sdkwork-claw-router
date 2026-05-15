@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24782,
+  "uuid": "skill-clawhub-bookshelf",
+  "skillKey": "clawhub-bookshelf",
+  "name": "Bookshelf",
+  "summary": "Track reading progress, rate finished books, and manage your library. Use when logging books, reviewing reading stats, or planning reading goals.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookshelf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Track reading progress, rate finished books, and manage your library",
+        "Use when logging books, reviewing reading stats, or planning reading goals."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookshelf@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookshelf",
+      "url": "https://clawhub.ai/skills/bookshelf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookshelf",
+    "url": "https://clawhub.ai/skills/bookshelf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookshelf-c636e2ea2ff0106c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookshelf@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookshelf-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09dc2128dc0d069ce5b91d5ce08bc67f657f3a387ec92f5deda00d4a9bc433d9",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:36:06.861Z"
+}

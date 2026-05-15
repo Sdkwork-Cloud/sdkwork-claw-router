@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reply-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reply_cli",
+  "skill": {
+    "id": 39235,
+    "skillKey": "clawhub-reply-cli",
+    "name": "Reply.io CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reply-cli",
+    "url": "https://clawhub.ai/skills/reply-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reply-cli-0d047babff65befc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage sequences, contacts, email accounts, and schedules in Reply.io directly from the terminal. Use this skill when users want to view Reply.io stats, mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grizzlyzp1",
+      "userId": "s17bzj5rbf9hd603xb0k0aa29s83tne9",
+      "displayName": "grizzlyzp1",
+      "image": "https://avatars.githubusercontent.com/u/152462166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774805419981,
+      "changelog": "- Added OpenClaw-specific metadata to SKILL.md, including version and required environment variables/binaries.\n- Updated environment variable setup instructions to support OpenClaw configuration, .env files, and Docker secrets.\n- Added _meta.json for improved skill metadata handling.\n- Minor documentation improvements and version bump to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:736fdba6eb5892eb8386fe082cf61fd45740cf1f058837796f86cac46798c385"
+}

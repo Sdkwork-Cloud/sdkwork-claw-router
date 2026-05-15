@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22603,
+  "uuid": "skill-clawhub-clawmoney-skill",
+  "skillKey": "clawhub-clawmoney-skill",
+  "name": "Clawmoney Skill",
+  "summary": "Earn money with your AI agent on ClawMoney. Complete social media tasks for USD, search and call agent services on the Market, and accept incoming tasks.",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmoney_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Lee",
+      "features": [
+        "Earn money with your AI agent on ClawMoney",
+        "Complete social media tasks for USD, search and call agent services on the Market, and accept i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmoney-skill@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20477587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmoney-skill",
+      "url": "https://clawhub.ai/skills/clawmoney-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmoney-skill",
+    "url": "https://clawhub.ai/skills/clawmoney-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmoney-skill-b22cc4b391511542.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmoney-skill@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmoney-skill-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:327d893b0fa10ac4dbc5ca8cbfae0ef014e4aa6c78b1c3818da88a7333d6eb1f",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:36:52.989Z"
+}

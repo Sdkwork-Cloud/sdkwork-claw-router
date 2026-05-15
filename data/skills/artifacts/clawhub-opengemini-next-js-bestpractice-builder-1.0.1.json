@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opengemini-next-js-bestpractice-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opengemini_next_js_bestpractice_builder",
+  "skill": {
+    "id": 40427,
+    "skillKey": "clawhub-opengemini-next-js-bestpractice-builder",
+    "name": "OpenGemini Next.js Bestpractice Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opengemini-next-js-bestpractice-builder",
+    "url": "https://clawhub.ai/skills/opengemini-next-js-bestpractice-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opengemini-next-js-bestpractice-builder-4158626b8dcce7e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and document a solo SaaS project using a fixed Next.js/Tailwind/Prisma stack, with FastAPI only for Python workloads and strict architecture rules."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hiromps",
+      "userId": "s178rht6tqnsj51tcza9nmv67583zb0p",
+      "displayName": "hiromps",
+      "image": "https://avatars.githubusercontent.com/u/48875637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774973060612,
+      "changelog": "Pin Prisma to 6.x and clarify Neon PostgreSQL as the production database standard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a71097da3112c3ccc92c62372fce605035c6dd6da4abc14ff7fa32fcf9cd770f"
+}

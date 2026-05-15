@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41586,
+  "uuid": "skill-clawhub-ffmpeg-video-to-mp3",
+  "skillKey": "clawhub-ffmpeg-video-to-mp3",
+  "name": "Ffmpeg Video To Mp3",
+  "summary": "Turn raw video files into clean, ready-to-use MP3 audio tracks in seconds. This ffmpeg-video-to-mp3 skill strips the audio layer from your footage and delive...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_video_to_mp3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Turn raw video files into clean, ready-to-use MP3 audio tracks in seconds",
+        "This ffmpeg-video-to-mp3 skill strips the audio layer from your footage and delive..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffmpeg-video-to-mp3@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffmpeg-video-to-mp3",
+      "url": "https://clawhub.ai/skills/ffmpeg-video-to-mp3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-video-to-mp3",
+    "url": "https://clawhub.ai/skills/ffmpeg-video-to-mp3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-video-to-mp3-991ffb103699c1b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffmpeg-video-to-mp3@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-video-to-mp3-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0812522d281accbd48b48bc925efef7ee8037646343da2ac0944e42f640eae41",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T22:18:53.731Z"
+}

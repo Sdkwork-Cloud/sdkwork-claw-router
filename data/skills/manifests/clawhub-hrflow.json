@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41311,
+  "uuid": "skill-clawhub-hrflow",
+  "skillKey": "clawhub-hrflow",
+  "name": "Hrflow",
+  "summary": "Automate HR workflows including benefits enrollment, onboarding, and payroll integration. Use when the user needs to streamline employee processes, reduce ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hrflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ncreighton",
+      "features": [
+        "Automate HR workflows including benefits enrollment, onboarding, and payroll integration",
+        "Use when the user needs to streamline employee processes, reduce ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hrflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15095223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hrflow",
+      "url": "https://clawhub.ai/skills/hrflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hrflow",
+    "url": "https://clawhub.ai/skills/hrflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hrflow-845cd62315fb67b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hrflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hrflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11daad295908ead4a0f04d547539a3b3b3c04be9a6c2773c3d1025a93600a53a",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:06:16.671Z"
+}

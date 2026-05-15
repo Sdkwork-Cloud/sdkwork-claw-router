@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slipbot-kindle-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot_kindle_importer",
+  "skill": {
+    "id": 16089,
+    "skillKey": "clawhub-slipbot-kindle-importer",
+    "name": "SlipBot Kindle Importer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot-kindle-importer",
+    "url": "https://clawhub.ai/skills/slipbot-kindle-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-kindle-importer-b3d0e6834e7e83b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Import reading notes from Kindle HTML exports into the slipbox. Use when user sends a Kindle notebook export file (HTML/XHTML). Parses book title and author, extracts only user's Notes (skips Highlights), then runs slipbot for each."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrswab",
+      "userId": "publishers:jrswab",
+      "displayName": "Jaron Swab",
+      "image": "https://avatars.githubusercontent.com/u/1689426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 930,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770838656390,
+      "changelog": "Initial release of Kindle Importer for slipbox.\n\n- Parses Kindle notebook HTML/XHTML exports to import only user-created Notes (not Highlights).\n- Extracts and displays book title, author, and user note count for confirmation before import.\n- Imports each note as a slipbox entry with appropriate source tagging.\n- Handles edge cases: missing authors, special characters, no user notes.\n- Supports .html and XHTML files sent via Telegram or compatible channels.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:356dcbbebcef3f5ecadafe04c3a96aa63fa99c327725a65f834bd6193dc34f1d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-remind-me@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_remind_me",
+  "skill": {
+    "id": 9635,
+    "skillKey": "clawhub-apple-remind-me",
+    "name": "Apple Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-remind-me",
+    "url": "https://clawhub.ai/skills/apple-remind-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-remind-me-607d2e8a1fa45278.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Natural language reminders that create actual Apple Reminders.app entries (macOS-native)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plgonzalezrx8",
+      "userId": "publishers:plgonzalezrx8",
+      "displayName": "Pedro Gonzalez",
+      "image": "https://avatars.githubusercontent.com/u/19900049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3233,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769973845023,
+      "changelog": "- Changed skill metadata source from \"clawdbot\" to \"openclaw\".\n- No functional or command changes; documentation and features remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbaa3ef33133ecf439170018de4786ccc14dcb715ac0b50d0e4bb296f2ce898f"
+}

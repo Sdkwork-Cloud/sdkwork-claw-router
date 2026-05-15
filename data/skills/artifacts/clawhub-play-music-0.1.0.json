@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/play-music@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_music",
+  "skill": {
+    "id": 14212,
+    "skillKey": "clawhub-play-music",
+    "name": "Play Local Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-music",
+    "url": "https://clawhub.ai/skills/play-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-music-2a51ab28b6e6e30a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control local music playback with play, pause, resume, stop commands; supports listing and playing specified songs from a configured music directory."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awspace",
+      "userId": "publishers:awspace",
+      "displayName": "awspace",
+      "image": "https://avatars.githubusercontent.com/u/131568675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1222,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770649953512,
+      "changelog": "Initial release providing a streamlined, controllable music player skill.\n\n- Single entry point script (`./play-music`) for all playback and control commands\n- Full music control: play, pause, resume, stop, list songs, and check status\n- Background server auto-starts/stops as needed for resource efficiency\n- Supports custom music directories and default songs via environment variables\n- Based on Pygame for cross-platform, high-quality playback",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b531a44c2c6af6078848b1214ae1877b8f3336cc7580f57bbbbe6ada747eb677"
+}

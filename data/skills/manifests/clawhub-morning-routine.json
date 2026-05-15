@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10260,
+  "uuid": "skill-clawhub-morning-routine",
+  "skillKey": "clawhub-morning-routine",
+  "name": "Morning Routine",
+  "summary": "Build a powerful morning routine with habit checklists, timing, and streak tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_routine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Build a powerful morning routine with habit checklists, timing, and streak tracking"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-routine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-routine",
+      "url": "https://clawhub.ai/skills/morning-routine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-routine",
+    "url": "https://clawhub.ai/skills/morning-routine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-routine-09e21598fde05f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-routine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-routine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95a07b2cdbc96be26f1a7a74de3561d1353d0e96f9ba00abcbb845df5a3b7108",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:34:50.344Z"
+}

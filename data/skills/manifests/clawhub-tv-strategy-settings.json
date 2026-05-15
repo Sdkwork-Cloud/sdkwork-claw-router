@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16976,
+  "uuid": "skill-clawhub-tv-strategy-settings",
+  "skillKey": "clawhub-tv-strategy-settings",
+  "name": "TradingView Strategy Settings",
+  "summary": "Open and modify TradingView strategy settings on the current chart page. Use when: user wants to change strategy parameters, adjust inputs like stop-loss/tak...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tv_strategy_settings",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marius Wang",
+      "features": [
+        "Open and modify TradingView strategy settings on the current chart page",
+        "Use when: user wants to change strategy parameters, adjust inputs like stop-loss/tak..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tv-strategy-settings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4271618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tv-strategy-settings",
+      "url": "https://clawhub.ai/skills/tv-strategy-settings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tv-strategy-settings",
+    "url": "https://clawhub.ai/skills/tv-strategy-settings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tv-strategy-settings-f2d47272f813a2f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tv-strategy-settings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tv-strategy-settings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28086d0c1903cad02d54d6f69ac78baef541c65a2eb840404e5a7182abb59754",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T13:25:24.347Z"
+}

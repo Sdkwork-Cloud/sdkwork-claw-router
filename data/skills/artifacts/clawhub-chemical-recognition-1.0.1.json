@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chemical-recognition@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chemical_recognition",
+  "skill": {
+    "id": 54311,
+    "skillKey": "clawhub-chemical-recognition",
+    "name": "αExtractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chemical-recognition",
+    "url": "https://clawhub.ai/skills/chemical-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chemical-recognition-2e50cdced98b9d88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optical chemical structure recognition workflow for extracting molecule structures and names from images through SciMiner."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sciminer",
+      "userId": "s170qp1q4twz35wa85ppa8894h83w461",
+      "displayName": "SciMiner",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777815807764,
+      "changelog": "- Credential management switched from environment variable to a persistent config file at `~/.config/sciminer/credentials.json`.\n- Agents are now instructed to load the SciMiner API key from this config file, not from environment variables.\n- Instructions were added for agents to remember only the credential file path, never the credential value.\n- New error handling guidance: if the credential file or `api_key` field is missing, prompt the user to create it instead of proceeding or switching tools.\n- Result summarization clarified: always attach the `share_url` for each completed task rather than file download links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f6d4d35263ac8b26c853cb92e30c2ecb3686b54fb784c33cde34f2e82b2ef5f"
+}

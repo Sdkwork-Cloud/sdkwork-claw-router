@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47836,
+  "uuid": "skill-clawhub-github-trending-scraper",
+  "skillKey": "clawhub-github-trending-scraper",
+  "name": "GitHub Trending Scraper",
+  "summary": "Scrape GitHub Trending repos into structured JSON. Use when the user asks about GitHub trending, hottest repos, trending repositories, what's popular on GitH...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yes999zc",
+      "features": [
+        "Scrape GitHub Trending repos into structured JSON",
+        "Use when the user asks about GitHub trending, hottest repos, trending repositories, what's popu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-trending-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127926029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-trending-scraper",
+      "url": "https://clawhub.ai/skills/github-trending-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-scraper",
+    "url": "https://clawhub.ai/skills/github-trending-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-scraper-bc21c3aff1918eef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-trending-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b09eda0f27ff85888c636379966e17c7e6c36b2eae386716b1ece7213519228",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:22:56.408Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-collector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_collector",
+  "skill": {
+    "id": 70012,
+    "skillKey": "clawhub-news-collector",
+    "name": "news-collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-collector",
+    "url": "https://clawhub.ai/skills/news-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-collector-219ae31ecccc881a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个性化信息简报生成技能。支持按需生成一次性简报或定期推送，涵盖信息搜索、筛选、整理与输出全流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "winsaney",
+      "userId": "s170khqjrawekexhyqjwg2k85s83mwks",
+      "displayName": "Nick Wong",
+      "image": "https://avatars.githubusercontent.com/u/55632678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775456641802,
+      "changelog": "news-collector v1.0.1 Changelog\n\n- 新增详细使用文档 SKILL.md，系统梳理技能定位、配置方法与使用流程\n- 明确简报模式分为一次性和定期两种，分别介绍典型工作流\n- 提供栏目策划、信源配置与模板定制的 Day 0 指南\n- 细化输出模板（基础版、高级版、自定义）选择思路\n- 补充信息筛选原则与持续优化建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3350156446167d621d78aff4afd0beed5bb070867e6e2effa43922f6565c748"
+}

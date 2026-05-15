@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-image-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_image_generator",
+  "skill": {
+    "id": 62337,
+    "skillKey": "clawhub-xiaohongshu-image-generator",
+    "name": "xiaohongshu-image-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-image-generator",
+    "url": "https://clawhub.ai/skills/xiaohongshu-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-image-generator-28846429f8e19a4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提示词生成小红书配图。使用 HTML + CSS 设计可视化卡片，通过 Playwright 浏览器截图生成图片。触发场景：(1) 用户要求生成小红书笔记配图 (2) 需要生成竖版封面卡片图 (3) 用 HTML 模板生成营销配图"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parker-y",
+      "userId": "publishers:parker-y",
+      "displayName": "Parker-Y",
+      "image": "https://avatars.githubusercontent.com/u/203812402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773305958456,
+      "changelog": "xiaohongshu-image-generator v1.0.0 - Initial release\n\n- Generates Xiaohongshu-style vertical cover images (800x1000px) based on user prompts.\n- Uses HTML + CSS templates for card design, emphasizing centered layout, gradient backgrounds, and shadowed white cards.\n- Renders screenshots via browser automation (e.g., Playwright), after serving HTML locally.\n- Supports scenarios such as note cover images, marketing visuals, and generic vertical cards.\n- Includes workflow instructions and template guidelines for consistent image generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f55defef918f0b37f53f65a8e6b336b74f3da1747394cbf93d0666e0c977c5e0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16381,
+  "uuid": "skill-clawhub-upbit-market-data-skill",
+  "skillKey": "clawhub-upbit-market-data-skill",
+  "name": "UPBIT market data get skill",
+  "summary": "Fetch market data from Upbit via CLI commands including pairs, candles, trades, tickers, orderbooks, and watchlist with JSON output.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upbit_market_data_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kuns9",
+      "features": [
+        "Fetch market data from Upbit via CLI commands including pairs, candles, trades, tickers, orderb."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upbit-market-data-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207683320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upbit-market-data-skill",
+      "url": "https://clawhub.ai/skills/upbit-market-data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upbit-market-data-skill",
+    "url": "https://clawhub.ai/skills/upbit-market-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upbit-market-data-skill-9617d0941e895d4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upbit-market-data-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-upbit-market-data-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29cc7a3cc1bfcbffaea96d9cd22281d5b63fe198bef6692f7663a3f12457eb60",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T23:02:36.756Z"
+}

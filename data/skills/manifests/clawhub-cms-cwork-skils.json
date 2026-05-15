@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70209,
+  "uuid": "skill-clawhub-cms-cwork-skils",
+  "skillKey": "clawhub-cms-cwork-skils",
+  "name": "Cms Cwork Skils",
+  "summary": "CWork 工作协同原子能力集，覆盖员工搜索、文件上传下载、发送/回复汇报、收发件箱、汇报详情、任务、待办、事项、插件聚合、新消息、已读状态与 AI 问答；适用于“汇报、待办、任务、附件、消息、已读、员工查询”等场景；仅支持 appKey 鉴权并按需加载接口执行组合调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_cwork_skils",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "CWork 工作协同原子能力集，覆盖员工搜索、文件上传下载、发送/回复汇报、收发件箱、汇报详情、任务、待办、事项、插件聚合、新消息、已读状态与 AI 问答；适用于“汇报、待办、任务、附件、消."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-cwork-skils@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-cwork-skils",
+      "url": "https://clawhub.ai/skills/cms-cwork-skils"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-cwork-skils",
+    "url": "https://clawhub.ai/skills/cms-cwork-skils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-cwork-skils-3dadd4838cdd7721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-cwork-skils@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-cwork-skils-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ee258e1373ad4bd28e2dfbbe459dc33cc393d32881c8b82d4ae6706ade4747",
+      "artifactSizeBytes": 2677
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:38:29.341Z"
+}

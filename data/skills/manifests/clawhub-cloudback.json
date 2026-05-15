@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37915,
+  "uuid": "skill-clawhub-cloudback",
+  "skillKey": "clawhub-cloudback",
+  "name": "Cloudback",
+  "summary": "Cloudback integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cloudback data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cloudback integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cloudback data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudback@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudback",
+      "url": "https://clawhub.ai/skills/cloudback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudback",
+    "url": "https://clawhub.ai/skills/cloudback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudback-863454b8bbf7f6df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudback@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudback-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b46a19026a3da7b596083ece567c91c2256826b62876191fe23a19f2680cefac",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:08.263Z"
+}

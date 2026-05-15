@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lastxdays@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lastxdays",
+  "skill": {
+    "id": 16598,
+    "skillKey": "clawhub-lastxdays",
+    "name": "lastXdays"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lastxdays",
+    "url": "https://clawhub.ai/skills/lastxdays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lastxdays-19576dceaa1ac134.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and summarize what happened in the last N days (or a date range) about a topic, optionally using Reddit API and X ingestion via x-cli/API/archive wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levineam",
+      "userId": "s176d9bn1j0ncqa4vm4xx8d3s183pxae",
+      "displayName": "levineam",
+      "image": "https://avatars.githubusercontent.com/u/1668898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 857,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771695781669,
+      "changelog": "Fix model guidance: sonnet default, flash only for simple single-source runs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bde9b6368c9b605bbfa68a6f57882e4fcff75032fba6b133348643f427858b6"
+}

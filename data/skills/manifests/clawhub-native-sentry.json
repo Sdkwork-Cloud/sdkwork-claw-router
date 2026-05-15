@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16119,
+  "uuid": "skill-clawhub-native-sentry",
+  "skillKey": "clawhub-native-sentry",
+  "name": "Native Sentry",
+  "summary": "Read Sentry issues, events, and production errors via the Sentry REST API. Use when the user wants to inspect errors, list recent issues, get stack traces, o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_sentry",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeninja23",
+      "features": [
+        "Read Sentry issues, events, and production errors via the Sentry REST API",
+        "Use when the user wants to inspect errors, list recent issues, get stack traces, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/native-sentry@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34013241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "native-sentry",
+      "url": "https://clawhub.ai/skills/native-sentry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-sentry",
+    "url": "https://clawhub.ai/skills/native-sentry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-sentry-fc5d672da9bf7eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/native-sentry@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-native-sentry-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e61724a0af6e2830c06376c2128ece08214b018b0cd4099792aa3903427be154",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T10:00:32.270Z"
+}

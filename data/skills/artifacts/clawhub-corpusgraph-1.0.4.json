@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corpusgraph@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corpusgraph",
+  "skill": {
+    "id": 32097,
+    "skillKey": "clawhub-corpusgraph",
+    "name": "CorpusGraph Document ETL and entity relationship engine for AI agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corpusgraph",
+    "url": "https://clawhub.ai/skills/corpusgraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corpusgraph-91950628ccdd5d84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document ETL, entity extraction, and relationship graphing engine. Convert 1,000+ file formats into searchable, structured data with automatic entity and rel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aingestigate",
+      "userId": "s177167y99vj40h69k18fe1b9h83gwrr",
+      "displayName": "aingestigate",
+      "image": "https://avatars.githubusercontent.com/u/162054607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773935442535,
+      "changelog": "- Added homepage link for the skill (`homepage: https://ingestigate.com/corpusgraph`).\n- No other changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83e520f1c8f3ef7d66e0948239150b3c7d6b293f0452d02b57e20f50a1d8c941"
+}

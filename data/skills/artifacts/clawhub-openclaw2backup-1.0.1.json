@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw2backup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw2backup",
+  "skill": {
+    "id": 62845,
+    "skillKey": "clawhub-openclaw2backup",
+    "name": "openclaw2backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw2backup",
+    "url": "https://clawhub.ai/skills/openclaw2backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw2backup-61fa667046c0fef2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键备份和恢复 OpenClaw 工作空间、Skills 及配置，支持快速和完整备份、选择性恢复及备份管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sucriss",
+      "userId": "s17dwq70j1k7m3kj86ndkpzkvs83j6fg",
+      "displayName": "Criss_Su",
+      "image": "https://avatars.githubusercontent.com/u/37565038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773733627454,
+      "changelog": "- Removed redundant release and packaging documentation files: CLAWHUB_PACKAGE.md, PUBLISHING.md, READY_TO_PUBLISH.md, and 发布说明.md.\n- No user-facing feature or functional changes; this update streamlines the repository by cleaning up documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c6557021b9475a2262e22ac655ce9a5f734fff220837a1f309c6d6d1daa6a11"
+}

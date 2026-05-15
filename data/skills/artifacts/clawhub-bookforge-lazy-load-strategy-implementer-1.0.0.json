@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-lazy-load-strategy-implementer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_lazy_load_strategy_implementer",
+  "skill": {
+    "id": 38453,
+    "skillKey": "clawhub-bookforge-lazy-load-strategy-implementer",
+    "name": "Lazy Load Strategy Implementer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-lazy-load-strategy-implementer",
+    "url": "https://clawhub.ai/skills/bookforge-lazy-load-strategy-implementer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-lazy-load-strategy-implementer-509d707170163dd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implement Lazy Load (deferred loading) correctly in a persistence layer to avoid N+1 queries, ripple loading, and proxy identity traps. Use when encountering..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776758304583,
+      "changelog": "Initial release: Implements correct Lazy Load strategy selection and planning for persistence layers to avoid N+1 queries and related pitfalls.\n\n- Identifies data-source pattern and ORM/framework in use.\n- Classifies associations for appropriate lazy/eager loading strategies.\n- Detects and addresses ripple loading and proxy identity traps.\n- Selects the best Lazy Load variant with trade-off analysis.\n- Produces a tailored implementation plan including batch loading, eager-load overrides, Identity Map integration, and a ripple-loading audit.\n- Applicable to major ORMs (Hibernate, SQLAlchemy, Django, EF Core, TypeORM, Rails) and hand-rolled mappers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a08bf398c8fcaa583f0224219aa0a214a43d0dc8adbb2f1ab1e182db7439f0d0"
+}

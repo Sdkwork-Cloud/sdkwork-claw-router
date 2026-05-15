@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickfunnels@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickfunnels",
+  "skill": {
+    "id": 9516,
+    "skillKey": "clawhub-clickfunnels",
+    "name": "ClickFunnels"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickfunnels",
+    "url": "https://clawhub.ai/skills/clickfunnels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickfunnels-3987e8f923df69e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClickFunnels API integration with managed OAuth. Manage contacts, products, orders, courses, forms, and webhooks. Use this skill when users want to create sa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777590802986,
+      "changelog": "- Changed all API endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for a unified API base URL.\n- Updated all code examples and connection management instructions to use the new api.maton.ai domain.\n- Added a new \"Security & Permissions\" section explaining access scope and safety requirements for write operations.\n- Clarified instructions for specifying connections via the Maton-Connection header, especially for multiple accounts.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7f8e863ec1afcca3cbf1b494c464f6c33ac27ca5e3284f2bbbeaf63e36231a5"
+}

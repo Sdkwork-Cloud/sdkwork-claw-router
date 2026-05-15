@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31042,
+  "uuid": "skill-clawhub-job-search-agent",
+  "skillKey": "clawhub-job-search-agent",
+  "name": "Job Search Agent",
+  "summary": "AI-powered job search assistant that searches multiple job boards, matches opportunities against your CV, and helps you apply faster.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_search_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zy42905163-web",
+      "features": [
+        "AI-powered job search assistant that searches multiple job boards, matches opportunities agains."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-search-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224392718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-search-agent",
+      "url": "https://clawhub.ai/skills/job-search-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-search-agent",
+    "url": "https://clawhub.ai/skills/job-search-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-search-agent-382936ad92b460d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-search-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-search-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aa208b95fa214de717afcd197e20b5dc3a71706ff93c41194338803a4ead2f2",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:07:15.004Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-a2a@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_a2a",
+  "skill": {
+    "id": 12670,
+    "skillKey": "clawhub-skills-a2a",
+    "name": "Praesidia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-a2a",
+    "url": "https://clawhub.ai/skills/skills-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-a2a-d2072a97911425e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agents, apply guardrails for security and compliance. Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msoica",
+      "userId": "publishers:msoica",
+      "displayName": "msoica",
+      "image": "https://avatars.githubusercontent.com/u/13220606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1602,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770311862372,
+      "changelog": "Praesidia skill v1.1.1 introduces guardrail management and content validation:\n\n- Added support for viewing, applying, and validating guardrails (security, compliance, moderation) on agents.\n- Expanded description and usage examples to include security policies, content moderation, and compliance guardrails.\n- Documented new API endpoints for listing available guardrail templates and managing guardrails per agent.\n- Updated quick reference and user pattern sections to cover guardrail-related workflows.\n- Added guidance for validating content against configured guardrails for improved agent security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7068b803123b09329759468ece73bd1e58028d6159a3626b4fac153fad0c863b"
+}

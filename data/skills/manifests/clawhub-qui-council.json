@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42440,
+  "uuid": "skill-clawhub-qui-council",
+  "skillKey": "clawhub-qui-council",
+  "name": "qui-council",
+  "summary": "Send an idea to the Council of the Wise for multi-perspective feedback. Spawns sub-agents to analyze from multiple expert perspectives. Auto-discovers agent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_council",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Send an idea to the Council of the Wise for multi-perspective feedback",
+        "Spawns sub-agents to analyze from multiple expert perspectives",
+        "Auto-discovers agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-council@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-council",
+      "url": "https://clawhub.ai/skills/qui-council"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-council",
+    "url": "https://clawhub.ai/skills/qui-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-council-cfde835d647986d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-council@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-council-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dad0a33e6ef66e131d72dfd372aeb5bbc3ddaa1c7c79ea718a2fdb38dd901ae",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:59:04.664Z"
+}

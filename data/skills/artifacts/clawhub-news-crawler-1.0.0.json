@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-crawler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_crawler",
+  "skill": {
+    "id": 67509,
+    "skillKey": "clawhub-news-crawler",
+    "name": "News Crawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-crawler",
+    "url": "https://clawhub.ai/skills/news-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-crawler-7bed86cb60b273cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻自动爬取与总结工具。用于抓取指定网站或RSS源的新闻内容，并生成摘要报告。 使用场景： 1. 用户要求\"获取今日新闻\"、\"爬取某网站内容\" 2. 用户需要\"总结新闻\"、\"生成日报\" 3. 用户指定具体URL要求抓取内容 4. 需要监控特定新闻源的最新动态"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oshin123456",
+      "userId": "publishers:oshin123456",
+      "displayName": "Oshin123456",
+      "image": "https://avatars.githubusercontent.com/u/109133347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 967,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773407304052,
+      "changelog": "- Initial release of \"news-crawler\": an automated tool for fetching and summarizing news from specified websites or RSS feeds.\n- Provides scripts for retrieving news lists and detailed content: `rss_fetcher.py` for RSS sources, `crawl.py` for web pages.\n- Supports structured daily news report generation, including content extraction and summarization.\n- Includes usage instructions, workflow, and output formats.\n- Features guidance on ethical crawling and extensibility for additional features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dfa3aa0db056115865f2e61d73d558638b0133cd34bcd8d2c8aeaba6f76becb"
+}

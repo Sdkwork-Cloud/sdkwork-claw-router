@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20043,
+  "uuid": "skill-clawhub-pipeline",
+  "skillKey": "clawhub-pipeline",
+  "name": "Pipeline",
+  "summary": "Diagnose pipeline health, detect stalled deals, and surface what needs attention this week. Built for sales teams managing active opportunities.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "depinHQ",
+      "features": [
+        "Diagnose pipeline health, detect stalled deals, and surface what needs attention this week",
+        "Built for sales teams managing active opportunities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeline@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeline",
+      "url": "https://clawhub.ai/skills/pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeline",
+    "url": "https://clawhub.ai/skills/pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeline-23bf0d244a4cb62c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeline@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeline-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f26320554f55b1f381e2881f63c45ff5efe2696582fd01998ef449bea153e8a8",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:41:15.096Z"
+}

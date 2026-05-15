@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10967,
+  "uuid": "skill-clawhub-k8s-capi",
+  "skillKey": "clawhub-k8s-capi",
+  "name": "Kubernetes Skills",
+  "summary": "Cluster API lifecycle management for provisioning, scaling, and upgrading Kubernetes clusters. Use when managing cluster infrastructure or multi-cluster operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_capi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Ghumare",
+      "features": [
+        "Cluster API lifecycle management for provisioning, scaling, and upgrading Kubernetes clusters",
+        "Use when managing cluster infrastructure or multi-cluster operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-capi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48523873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-capi",
+      "url": "https://clawhub.ai/skills/k8s-capi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-capi",
+    "url": "https://clawhub.ai/skills/k8s-capi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-capi-7894fe6154834017.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-capi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-capi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4810d4d51a0f413bab39b2da4d2cbd77f4a81851d47d28341b77dcf2ef3d6022",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:20:48.764Z"
+}

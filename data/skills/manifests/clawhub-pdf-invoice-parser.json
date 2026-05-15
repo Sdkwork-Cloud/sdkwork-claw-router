@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35060,
+  "uuid": "skill-clawhub-pdf-invoice-parser",
+  "skillKey": "clawhub-pdf-invoice-parser",
+  "name": "Pdf Invoice Parser",
+  "summary": "Extract structured data from PDF invoices and documents. Handles scanned PDFs (OCR) and digital PDFs. Outputs clean CSV/Excel with vendor, invoice number, da...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_invoice_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tktk-ai",
+      "features": [
+        "Extract structured data from PDF invoices and documents",
+        "Handles scanned PDFs (OCR) and digital PDFs",
+        "Outputs clean CSV/Excel with vendor, invoice number, da..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-invoice-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59158345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-invoice-parser",
+      "url": "https://clawhub.ai/skills/pdf-invoice-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-invoice-parser",
+    "url": "https://clawhub.ai/skills/pdf-invoice-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-invoice-parser-bce2321f93e674f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-invoice-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-invoice-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eba428be6474cde9ca6925c851fbe208d658eb0ca9279f11b0518cf32d854124",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T22:08:53.327Z"
+}

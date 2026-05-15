@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-to-adr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_to_adr",
+  "skill": {
+    "id": 43588,
+    "skillKey": "clawhub-spec-to-adr",
+    "name": "Spec to ADR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-to-adr",
+    "url": "https://clawhub.ai/skills/spec-to-adr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-to-adr-e385fb46b94667ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert agent execution plans into MADR-format Architecture Decision Records for audit trails and architecture progression. Use when the user asks to create..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rawc0der",
+      "userId": "s1748srkkfgtzepyam9bg7mwnx851frc",
+      "displayName": "rawc0der",
+      "image": "https://avatars.githubusercontent.com/u/1760897?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776414927797,
+      "changelog": "- Initial release: Convert execution plans into numbered MADR-format Architecture Decision Records (ADRs) for audit trails and architecture documentation.\n- Supports detection and extraction from GSD phase plans, Cursor CreatePlan output, and generic markdown plans.\n- Automates mapping plan content to MADR fields, handling various sources and inferring fields as needed.\n- Generates and numbers ADR files using a standardized filename format and manages the ADR directory structure.\n- Updates and maintains an index of all ADRs in `README.md`.\n- Handles multi-decision plans, ADR superseding, sparse plans, and directory creation according to best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29bbb82c621904973761c5d3decc056586bcede3448f8e414e936e3fecef42fc"
+}

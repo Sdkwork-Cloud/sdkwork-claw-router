@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51568,
+  "uuid": "skill-clawhub-re-blog-writer",
+  "skillKey": "clawhub-re-blog-writer",
+  "name": "Re Blog Writer",
+  "summary": "Research a topic using the browser then write a complete blog post saved as a .md file in ~/blogs. Use when the user provides a subject and wants a full, hum...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.re_blog_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dishant Sharma",
+      "features": [
+        "Research a topic using the browser then write a complete blog post saved as a .md file in ~/blo.",
+        "Use when the user provides a subject and wants a full, hum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/re-blog-writer@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90952604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "re-blog-writer",
+      "url": "https://clawhub.ai/skills/re-blog-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "re-blog-writer",
+    "url": "https://clawhub.ai/skills/re-blog-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/re-blog-writer-d3d6e30e34ea3683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/re-blog-writer@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-re-blog-writer-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:532df64a42017f1928e2c6f9631479443e5cc7627a7752891d379f6633dfa329",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:20:07.211Z"
+}

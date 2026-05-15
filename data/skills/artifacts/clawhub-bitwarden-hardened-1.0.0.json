@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitwarden-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitwarden_hardened",
+  "skill": {
+    "id": 33818,
+    "skillKey": "clawhub-bitwarden-hardened",
+    "name": "Bitwarden Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitwarden-hardened",
+    "url": "https://clawhub.ai/skills/bitwarden-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitwarden-hardened-1cf072028f7282bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage Bitwarden/Vaultwarden passwords securely using the rbw CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776810363864,
+      "changelog": "Initial release of bitwarden-hardened.\n\n- Securely access and manage Bitwarden/Vaultwarden passwords using the rbw CLI.\n- Includes detailed setup, usage, and agent guidance for Linux and macOS.\n- Introduces strong, opinionated security guardrails for all credential access and vault-modifying operations.\n- Ensures confirmation and explicit user intent before any destructive changes or sensitive actions.\n- Prevents exposure of secrets via command arguments, shell exports, and networked processes.\n- Supports tmux and pinentry-curses integration for password prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adb408e3eba3fe54cc8d672932e5d554cb2b771270aa173864a9e53a0e5f4df7"
+}

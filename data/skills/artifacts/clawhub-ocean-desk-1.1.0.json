@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocean-desk@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocean_desk",
+  "skill": {
+    "id": 53829,
+    "skillKey": "clawhub-ocean-desk",
+    "name": "Ocean Desk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocean-desk",
+    "url": "https://clawhub.ai/skills/ocean-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocean-desk-80287e02a051a8dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backend human-agent desk infrastructure for OceanBus brand agents. Not customer-facing — used by brand agents to escalate to human operators. Responds to -hu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanbihai",
+      "userId": "s171em0jpp8yeqxqds2n145fyx83q5q8",
+      "displayName": "ryanbihai",
+      "image": "https://avatars.githubusercontent.com/u/89728875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778310462623,
+      "changelog": "v1.1.0: 重新定位为品牌Agent的人工坐席基础设施。新增 -humanservice 协议。不publish到黄页，客户无感。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21d589c21b927b81138a63b0e4bdf471de9950f72f6947be8cf93044b565790f"
+}

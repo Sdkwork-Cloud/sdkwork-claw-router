@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71476,
+  "uuid": "skill-clawhub-loreal",
+  "skillKey": "clawhub-loreal",
+  "name": "Loreal",
+  "summary": "提供欧莱雅产品信息、品牌介绍、门店查询、新品资讯及美妆护肤建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loreal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供欧莱雅产品信息、品牌介绍、门店查询、新品资讯及美妆护肤建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loreal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loreal",
+      "url": "https://clawhub.ai/skills/loreal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loreal",
+    "url": "https://clawhub.ai/skills/loreal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loreal-727056edb013b138.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loreal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-loreal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcbea910c1c13cf6dbbfc27cb084ade55df90045276c36734fd02d11393af5ea",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:28:15.775Z"
+}

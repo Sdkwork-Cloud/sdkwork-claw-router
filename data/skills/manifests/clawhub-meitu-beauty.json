@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65082,
+  "uuid": "skill-clawhub-meitu-beauty",
+  "skillKey": "clawhub-meitu-beauty",
+  "name": "Meitu Beauty",
+  "summary": "对人像照片进行 AI 美颜处理（磨皮、美白、精修五官）。当用户提到美颜、磨皮、美白、精修、beautify、beauty enhance、让照片更好看时触发。仅支持单人照片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meitu_beauty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meitu",
+      "features": [
+        "对人像照片进行 AI 美颜处理（磨皮、美白、精修五官）。当用户提到美颜、磨皮、美白、精修、beautify、beauty enhance、让照片更好看时触发。仅支持单人照片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meitu-beauty@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/meitu-beauty/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meitu-beauty",
+      "url": "https://clawhub.ai/skills/meitu-beauty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meitu-beauty",
+    "url": "https://clawhub.ai/skills/meitu-beauty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meitu-beauty-008ec6722a694ab3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meitu-beauty@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meitu-beauty-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7825cfdd1e19d6511bae115993b7c9ff04e87022076f07ea6a694480fc502252",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:35:10.875Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63022,
+  "uuid": "skill-clawhub-qa-reviewer",
+  "skillKey": "clawhub-qa-reviewer",
+  "name": "QA Reviewer",
+  "summary": "提供代码审查、单元测试、覆盖率分析和问题追踪，支持C++/Python/JavaScript，确保项目质量和文档完整度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SamuelPang",
+      "features": [
+        "提供代码审查、单元测试、覆盖率分析和问题追踪，支持C++/Python/JavaScript，确保项目质量和文档完整度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5119154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-reviewer",
+      "url": "https://clawhub.ai/skills/qa-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-reviewer",
+    "url": "https://clawhub.ai/skills/qa-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-reviewer-869e53916286ab5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3c375fa1ade6b4808e11e56d8986c463cc17b1193e7684adce300e588bd4a1a",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:10:28.839Z"
+}

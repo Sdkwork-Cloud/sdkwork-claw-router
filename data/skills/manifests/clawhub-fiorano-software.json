@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37049,
+  "uuid": "skill-clawhub-fiorano-software",
+  "skillKey": "clawhub-fiorano-software",
+  "name": "Fiorano Software",
+  "summary": "Fiorano Software integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fiorano Software data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fiorano_software",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Fiorano Software integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fiorano Software data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fiorano-software@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fiorano-software",
+      "url": "https://clawhub.ai/skills/fiorano-software"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fiorano-software",
+    "url": "https://clawhub.ai/skills/fiorano-software",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fiorano-software-1f97fb383dd7f42c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fiorano-software@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fiorano-software-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30190e7a3b797506983fd77fd67535a48a0eded35d5154448f3c356ee64e2068",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:46.994Z"
+}

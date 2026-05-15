@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70937,
+  "uuid": "skill-clawhub-med-llm-wiki",
+  "skillKey": "clawhub-med-llm-wiki",
+  "name": "Med-LLM-Wiki",
+  "summary": "管理医疗领域患者临床咨询知识库，结构化存储患者信息、问答、干预方案及循证概念，支持精准细节检索与推理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.med_llm_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyingf",
+      "features": [
+        "管理医疗领域患者临床咨询知识库，结构化存储患者信息、问答、干预方案及循证概念，支持精准细节检索与推理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/med-llm-wiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90393772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "med-llm-wiki",
+      "url": "https://clawhub.ai/skills/med-llm-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "med-llm-wiki",
+    "url": "https://clawhub.ai/skills/med-llm-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/med-llm-wiki-5c454dd03eee4ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/med-llm-wiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-med-llm-wiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3ab992d7dfbeb7bc709b117273ec88dd19d1104551d78b2e0922b288957fdff",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T02:42:27.216Z"
+}

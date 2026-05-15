@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pytest-code-review@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pytest_code_review",
+  "skill": {
+    "id": 51848,
+    "skillKey": "clawhub-pytest-code-review",
+    "name": "Pytest Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pytest-code-review",
+    "url": "https://clawhub.ai/skills/pytest-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pytest-code-review-2b4542adb2660366.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews pytest test code for async patterns, fixtures, parametrize, and mocking. Use when reviewing test_*.py files, checking async test functions, fixture u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831261961,
+      "changelog": "- Introduced a \"Review gates\" section, outlining step-by-step requirements to be met before asserting pytest-specific issues.\n- Clarified that all findings must reference specific file paths and lines or node IDs.\n- Specified review process for async vs sync tests, fixtures, and mocking, with explicit criteria for each.\n- No changes to review checklist or quick reference content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48d697859b3372b0a8569d1854ad374a5f8db1ef961ebe1f3634f1503c4f7c7f"
+}

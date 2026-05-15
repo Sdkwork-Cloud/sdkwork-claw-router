@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "wechat-comic-factory",
+    "displayName": "wechat-comic-factory",
+    "summary": "Generate WeChat comic articles and publish them to the WeChat Official Account draft box by executing local Python pipeline scripts. Use when the user wants...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1773374117085,
+    "updatedAt": 1778307799737
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773374117085,
+    "changelog": "- Initial release of wechat-comic-factory with strict, script-based WeChat comic generation and publishing workflow.\n- All commands map directly to specified python scripts; only allowed publish target is the WeChat Official Account draft box.\n- Automatic extraction and validation of comic_type, topic, and count; prompts for missing or unsupported parameters.\n- Ambiguous publishing requests are refused until clarified; only clear, fully supported instructions are executed.\n- Only factual script JSON results are returned; no creativity, intermediate suggestions, or alternative publishing channels allowed.\n- Clear separation of successful and failed states based strictly on script output.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "archibald80000-ai",
+    "userId": "publishers:archibald80000-ai",
+    "displayName": "archibald80000-ai",
+    "image": "https://avatars.githubusercontent.com/u/254137298?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307799737
+  }
+}

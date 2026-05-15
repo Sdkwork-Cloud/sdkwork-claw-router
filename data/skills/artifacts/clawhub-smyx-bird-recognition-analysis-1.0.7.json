@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-bird-recognition-analysis@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_bird_recognition_analysis",
+  "skill": {
+    "id": 57116,
+    "skillKey": "clawhub-smyx-bird-recognition-analysis",
+    "name": "鸟类识别工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-bird-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-bird-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-bird-recognition-analysis-68cbf8369a1508f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies bird species in images/videos of target areas. Supports recognition of no less than 500 common bird species, supports customized model training, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778146058605,
+      "changelog": "Version 1.0.7\n\n- Internal script updates applied to skills/face_analysis/scripts/skill.py and skills/smyx_common/scripts/skill.py.\n- No changes to user-facing documentation or instructions.\n- Core skill functionality and usage remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd6a721ed5f7c8541bb603f4ae3e4ec5609d06a8ce265a5522b4e3e505c8e8d2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rfc-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rfc_writer",
+  "skill": {
+    "id": 30110,
+    "skillKey": "clawhub-rfc-writer",
+    "name": "RFC Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rfc-writer",
+    "url": "https://clawhub.ai/skills/rfc-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rfc-writer-63d7585f900d03b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft a technical Request for Comments (RFC) or technical proposal document based on a rough idea or scattered requirements. Triggers when the user asks to w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunny0826",
+      "userId": "s1771ge6btfxw88pj48v2asgbs83zeqa",
+      "displayName": "Xudong Guo",
+      "image": "https://avatars.githubusercontent.com/u/24563928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775120561789,
+      "changelog": "Initial release of RFC Writer skill.\n\n- Converts rough ideas or scattered requirements into a well-structured technical RFC or proposal document.\n- Automatically detects user language (English/Chinese) for RFC output.\n- Organizes input into standard RFC sections: Background, Problem Statement, Proposed Solution, Alternatives Considered, and Unresolved Questions.\n- Expands brief technical suggestions into fully fleshed-out proposals, including pros, cons, and alternative solutions.\n- Includes placeholders or prompts for missing information to guide user completion.\n- Maintains a professional, objective tone and flags critical issues in appropriate sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66af58cc52ac9ecef3b1eec165028bf71b42a5dc40fc0fb53e6ecd601be9a6f6"
+}

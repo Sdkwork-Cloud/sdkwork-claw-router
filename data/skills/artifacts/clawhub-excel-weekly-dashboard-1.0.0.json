@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-weekly-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_weekly_dashboard",
+  "skill": {
+    "id": 9120,
+    "skillKey": "clawhub-excel-weekly-dashboard",
+    "name": "Excel weekly dashboards at scale"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-weekly-dashboard",
+    "url": "https://clawhub.ai/skills/excel-weekly-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-weekly-dashboard-41b0dfa41a0fc740.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs refreshable Excel dashboards (Power Query + structured tables + validation + pivot reporting). Use when you need a repeatable weekly KPI workbook that updates from files with minimal manual work."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kowl64",
+      "userId": "publishers:kowl64",
+      "displayName": "KOwl64",
+      "image": "https://avatars.githubusercontent.com/u/59417033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4321,
+      "installsAllTime": 28,
+      "installsCurrent": 27,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768664081350,
+      "changelog": "Initial release of excel-weekly-dashboard.\n\n- Designs refreshable Excel dashboards using Power Query, structured tables, validation, and pivot reporting.\n- Focuses on creating repeatable weekly KPI workbooks that update from files with minimal manual work.\n- Supports ingestion from CSV, XLSX, and exported table formats (DOCX/PDF).\n- Provides clear input requirements, step-by-step workflow, and sample output formats.\n- Defines robust validation, error detection, and refresh status features to ensure reliable weekly reporting.\n- Includes safety guidelines to prevent accidental overwrites and highlight extraction risks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbc033990c54fe1b42c9719fe1ee73ff88bececbf439fcd82fa51fa9d25714eb"
+}

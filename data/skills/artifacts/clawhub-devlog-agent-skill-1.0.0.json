@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devlog-agent-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devlog_agent_skill",
+  "skill": {
+    "id": 12928,
+    "skillKey": "clawhub-devlog-agent-skill",
+    "name": "DevLog Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devlog-agent-skill",
+    "url": "https://clawhub.ai/skills/devlog-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devlog-agent-skill-7790f3d93e4bcef6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Allows agents to log, list, search, and manage developer journal entries for projects using dev-log-cli in a structured SQLite database."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crimsondevil333333",
+      "userId": "s1744z3a1b8mpdjzvrgn6tz82985gp0p",
+      "displayName": "CrimsonDevil333333",
+      "image": "https://avatars.githubusercontent.com/u/49252920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1507,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770279983047,
+      "changelog": "Initial publish with unique slug",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f65ea5279442022311d4f6b5433d64c0ea59749c412386613a73a62935d2f1a9"
+}

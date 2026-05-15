@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codebase-documenter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebase_documenter",
+  "skill": {
+    "id": 9814,
+    "skillKey": "clawhub-codebase-documenter",
+    "name": "Codebase Documenter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebase-documenter",
+    "url": "https://clawhub.ai/skills/codebase-documenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebase-documenter-afbc2c5118675966.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when writing documentation for codebases, including README files, architecture documentation, code comments, and API documentation. Use this skill when users request help documenting their code, creating getting-s."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3036,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769869622469,
+      "changelog": "Initial release of codebase-documenter: a skill for generating clear, structured documentation for codebases.\n\n- Provides templates and best practices for READMEs, architecture docs, code comments, and API documentation.\n- Emphasizes beginner-friendly documentation principles: clear \"why\" explanations, examples, context, and visual aids.\n- Outlines step-by-step workflow for analyzing codebases and choosing appropriate documentation types.\n- Includes detailed templates for README, architecture, and API docs in assets/templates/.\n- Covers inline code comment patterns for explaining complex or non-obvious code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99a164ec5759dfab2b2897973328e6128f283ec1f29141ba17f6f3e940991455"
+}

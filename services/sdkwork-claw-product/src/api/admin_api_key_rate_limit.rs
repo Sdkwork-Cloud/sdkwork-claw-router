@@ -88,7 +88,7 @@ pub fn admin_api_key_rate_limit_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/router/rate-limits/api-keys",
+            "/backend/v3/api/router/rate_limits/api_keys",
             get(fetch_api_key_rate_limits).post(create_api_key_rate_limit),
         )
         .with_state(AdminApiKeyRateLimitState {

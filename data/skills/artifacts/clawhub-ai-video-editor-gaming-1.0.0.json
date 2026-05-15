@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-gaming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_gaming",
+  "skill": {
+    "id": 41710,
+    "skillKey": "clawhub-ai-video-editor-gaming",
+    "name": "Ai Video Editor Gaming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-gaming",
+    "url": "https://clawhub.ai/skills/ai-video-editor-gaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-gaming-f8777da9fca9bea2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited gaming clips ready to post, without touching a single slider. Upload your raw gaming footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776918389489,
+      "changelog": "Initial release of AI Video Editor Gaming — fast highlight editing for gamers.\n\n- Upload raw gaming footage (MP4, MOV, AVI, WebM, up to 500MB) and describe how you want it edited.\n- Automatically cuts highlights, adds transitions, syncs background music, and renders 1080p MP4, all in the cloud.\n- Simple session and token management; free credits for new users.\n- Supports instant exports, track previews, and various file formats.\n- Built for creators needing quick, shareable highlight reels with minimal effort.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fed4dc923c1330ef230dc11d822561c7ada4c9214300b06368188f75042600d"
+}

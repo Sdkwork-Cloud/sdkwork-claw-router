@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25094,
+  "uuid": "skill-clawhub-fixer",
+  "skillKey": "clawhub-fixer",
+  "name": "Fixer",
+  "summary": "Fixer integration. Manage Organizations, Users. Use when the user wants to interact with Fixer data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Fixer integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Fixer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fixer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fixer",
+      "url": "https://clawhub.ai/skills/fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fixer",
+    "url": "https://clawhub.ai/skills/fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fixer-508e7896192355de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fixer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fixer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75f4654c185639c7be91aab4debfd90c53db366382461c6ca23ca3a1e03af36a",
+      "artifactSizeBytes": 1768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:55:01.731Z"
+}

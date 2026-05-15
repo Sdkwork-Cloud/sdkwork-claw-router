@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-markdown-editor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_markdown_editor",
+  "skill": {
+    "id": 57038,
+    "skillKey": "clawhub-local-markdown-editor",
+    "name": "Local Markdown Editor with Live Preview 本地Markdown网页编辑器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-markdown-editor",
+    "url": "https://clawhub.ai/skills/local-markdown-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-markdown-editor-ff8b4ee2ee9441ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Markdown Editor with Live Preview - A web-based markdown editor that opens a Flask server and provides real-time editing with live preview, sync scroll..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiyunnet",
+      "userId": "s17829vbh5h7ghkadt0zctk20583jxyd",
+      "displayName": "小潴",
+      "image": "https://avatars.githubusercontent.com/u/71431953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773488183787,
+      "changelog": "**Version 1.0.1 changelog — adds explicit security information**\n\n- Added security-related fields to the skill manifest (local-only, file-read/write, low risk).\n- Inserted a prominent security notice in the documentation, clarifying no external connections, local-only server, and open/inspectable code.\n- Minor adjustment: removed batch script details from Quick Start.\n- No functional code changes; documentation and metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7dd9f48e6576681f68eca59d008db656620d34f554bf7cd01dc111f18906f16"
+}

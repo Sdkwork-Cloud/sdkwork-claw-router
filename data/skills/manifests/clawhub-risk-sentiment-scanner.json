@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69994,
+  "uuid": "skill-clawhub-risk-sentiment-scanner",
+  "skillKey": "clawhub-risk-sentiment-scanner",
+  "name": "risk-sentiment-scanner",
+  "summary": "企业舆情信用风险扫描。当用户提供企业名称列表时，自动抓取各企业最新公开舆情（新闻、公告、监管信息），结合风险评分模型输出结构化信用风险报告。触发场景：（1）用户说\"扫描风险\"、\"舆情分析\"、\"信用风险评级\"；（2）用户提供了一份企业名单需要批量评估；（3）用户上传含企业名称的CSV/TXT文件；（4）定期复检提醒...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_sentiment_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yukirang",
+      "features": [
+        "企业舆情信用风险扫描。当用户提供企业名称列表时，自动抓取各企业最新公开舆情（新闻、公告、监管信息），结合风险评分模型输出结构化信用风险报告。触发场景：（1）用户说\"扫描风险\"、\"舆情分析\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/risk-sentiment-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14137707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "risk-sentiment-scanner",
+      "url": "https://clawhub.ai/skills/risk-sentiment-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-sentiment-scanner",
+    "url": "https://clawhub.ai/skills/risk-sentiment-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-sentiment-scanner-ef7ea266990771a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/risk-sentiment-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-risk-sentiment-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86f2cd250296444c02d9e2bbe04b31e03a6501f4256ca73fa019fb81d4d4655b",
+      "artifactSizeBytes": 2892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:43:36.060Z"
+}

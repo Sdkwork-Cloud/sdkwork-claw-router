@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24156,
+  "uuid": "skill-clawhub-flomo-to-obsidian",
+  "skillKey": "clawhub-flomo-to-obsidian",
+  "name": "Flomo to Obsidian Sync Tool",
+  "summary": "Parse and sync flomo exported HTML data to Obsidian vault with attachment support. Supports one-time manual export conversion and automatic sync. Use when us...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flomo_to_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "月开",
+      "features": [
+        "Parse and sync flomo exported HTML data to Obsidian vault with attachment support",
+        "Supports one-time manual export conversion and automatic sync",
+        "Use when us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flomo-to-obsidian@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17445000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flomo-to-obsidian",
+      "url": "https://clawhub.ai/skills/flomo-to-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flomo-to-obsidian",
+    "url": "https://clawhub.ai/skills/flomo-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flomo-to-obsidian-a9c87d2875b894f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flomo-to-obsidian@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flomo-to-obsidian-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac539ac79aaec49f133a93b4bb443d4efe8d34c75d15a88f5c3ab09063ffdc75",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:50:00.545Z"
+}

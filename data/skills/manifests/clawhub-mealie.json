@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18105,
+  "uuid": "skill-clawhub-mealie",
+  "skillKey": "clawhub-mealie",
+  "name": "Mealie API skill",
+  "summary": "Interact with a self‑hosted Mealie instance (recipe manager & meal planner) via its REST API. Use for adding, updating, retrieving recipes, meal plans and generating shopping lists. Trigger when the user mentions their Mealie URL, wants to.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mealie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "g1mb01d",
+      "features": [
+        "Interact with a self‑hosted Mealie instance (recipe manager & meal planner) via its REST API",
+        "Use for adding, updating, retrieving recipes, meal plans and generating shopping lists",
+        "Trigger when the user mentions their Mealie URL, wants to import a recipe, create a meal plan o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mealie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107146749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mealie",
+      "url": "https://clawhub.ai/skills/mealie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mealie",
+    "url": "https://clawhub.ai/skills/mealie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mealie-45e7090c069607c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mealie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mealie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ce1e6b3c056b9d6a46f6ae8da339fdf39241f94b5cab25da197bf57eba9fd8d",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:32:33.323Z"
+}

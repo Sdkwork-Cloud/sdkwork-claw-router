@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36856,
+  "uuid": "skill-clawhub-verve",
+  "skillKey": "clawhub-verve",
+  "name": "Verve",
+  "summary": "Verve Group integration. Manage data, records, and automate workflows. Use when the user wants to interact with Verve Group data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Verve Group integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Verve Group data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verve@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verve",
+      "url": "https://clawhub.ai/skills/verve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verve",
+    "url": "https://clawhub.ai/skills/verve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verve-89f968fc271a1fd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verve@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-verve-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef5f62072b20effc208def228853b073844e8b1fd9aa50dd8e07f84beac7b872",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:09:17.431Z"
+}

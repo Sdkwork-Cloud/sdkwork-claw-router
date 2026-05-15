@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fgo-invoicing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fgo_invoicing",
+  "skill": {
+    "id": 23446,
+    "skillKey": "clawhub-fgo-invoicing",
+    "name": "FGO Invoicing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fgo-invoicing",
+    "url": "https://clawhub.ai/skills/fgo-invoicing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fgo-invoicing-70b751c15c05623a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Issue FGO.ro invoices through the FGO API with local automation. Use for FGO tasks such as validating invoice payloads, issuing invoices, checking invoice st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-ai-tech",
+      "userId": "s1739hrwh7208jxhr18qg7tgas85tx88",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772198423213,
+      "changelog": "- Adds strict `--input` file safety: only `.json` files under allowed directories are accepted.\n- Rejects any `--input` path using directory traversal or absolute references that escape approved workspaces.\n- Prevents accidental access to sensitive files (e.g. `/etc/passwd`, private keys) via input arguments.\n- No changes to workflow or API usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4df7cff8af788ba626af1a27875da722e8f6fab23f7c08563b7bb11d8955bd2c"
+}

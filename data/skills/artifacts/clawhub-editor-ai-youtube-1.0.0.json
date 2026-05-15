@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_youtube",
+  "skill": {
+    "id": 40827,
+    "skillKey": "clawhub-editor-ai-youtube",
+    "name": "Editor Ai Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-youtube",
+    "url": "https://clawhub.ai/skills/editor-ai-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-youtube-634314870faddec7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTubers edit raw video footage into edited YouTube videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at 1080p, and re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775860016764,
+      "changelog": "- Initial release of the AI Editor for YouTube skill.\n- Allows users to upload raw video footage (MP4, MOV, AVI, WebM up to 500MB) and edit it using AI automation on cloud GPUs.\n- Supports fast 1080p MP4 exports (1-2 minutes for typical videos), with all processing done server-side.\n- Handles uploads, editing requests, export, credit checks, and session management via a dedicated backend API.\n- Automatic error handling for common issues like expired tokens, unsupported files, or insufficient credits.\n- Designed specifically for YouTube-focused workflows, including timeline editing, silences removal, transitions, and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cef158bf74d88d12597a8f97ab07de40b62c6b563188116df7e8724f9ced8d6"
+}

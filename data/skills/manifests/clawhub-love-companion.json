@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70351,
+  "uuid": "skill-clawhub-love-companion",
+  "skillKey": "clawhub-love-companion",
+  "name": "Love Companion - AI恋人陪伴技能包",
+  "summary": "全AI Agent通用恋人主题陪伴技能。当用户提及恋人、男/女朋友、情感陪伴、人设配置、角色扮演、情感对话，或使用本Skill的标准化触发指令时激活。提供多轮情感对话、用户自定义人设配置、长时记忆存储、情绪识别与反馈、预设人设模板套用、配置导入导出等完整恋人伴侣交互能力。即插即用，兼容所有主流AI Agent框架。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.love_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MoYan1638",
+      "features": [
+        "全AI Agent通用恋人主题陪伴技能。当用户提及恋人、男/女朋友、情感陪伴、人设配置、角色扮演、情感对话，或使用本Skill的标准化触发指令时激活。提供多轮情感对话、用户自定义人设配置、长."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/love-companion@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274993014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "love-companion",
+      "url": "https://clawhub.ai/skills/love-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "love-companion",
+    "url": "https://clawhub.ai/skills/love-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/love-companion-7c03f4f56f5c94cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/love-companion@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-love-companion-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9e7d9937f19418e15b023e06118ee618a2b90ada5d36633a6fea2f296861147",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:33:32.449Z"
+}

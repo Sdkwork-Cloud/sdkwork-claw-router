@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29884,
+  "uuid": "skill-clawhub-z-api",
+  "skillKey": "clawhub-z-api",
+  "name": "Z Api",
+  "summary": "Z-API integration. Manage data, records, and automate workflows. Use when the user wants to interact with Z-API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.z_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Z-API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Z-API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/z-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "z-api",
+      "url": "https://clawhub.ai/skills/z-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "z-api",
+    "url": "https://clawhub.ai/skills/z-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/z-api-befa6ea4127edfff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/z-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-z-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92ca78a5b0049ee404242d80fe8d8bae166d06a24d2c6ef100f827c4ab14564",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:30.548Z"
+}

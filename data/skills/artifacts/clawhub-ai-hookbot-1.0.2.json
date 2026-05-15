@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-hookbot@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_hookbot",
+  "skill": {
+    "id": 24748,
+    "skillKey": "clawhub-ai-hookbot",
+    "name": "AI Hookbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-hookbot",
+    "url": "https://clawhub.ai/skills/ai-hookbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-hookbot-5f1a63eaea0b61eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape viral hooks from YouTube Shorts creators and stitch them with a CTA video to produce ready-to-post TikTok/Reels/Shorts content. Use when asked to make..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jean-maradiaga",
+      "userId": "s174tgzqtchdfpp41be48f675x83zwgh",
+      "displayName": "jean-maradiaga",
+      "image": "https://avatars.githubusercontent.com/u/23649098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773428679721,
+      "changelog": "Republish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27c9f6dcd76a8c69c2bdb81d234fcbf5465f11cee19d7a156a552ce49c82d830"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/numerology-reading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.numerology_reading",
+  "skill": {
+    "id": 52378,
+    "skillKey": "clawhub-numerology-reading",
+    "name": "Numerology Reading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "numerology-reading",
+    "url": "https://clawhub.ai/skills/numerology-reading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/numerology-reading-18493725ddf9fd62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Western-style numerology (Pythagorean-style)—life path and related numbers from birth date and name, with symbolic themes. Use when the user asks for life pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425595254,
+      "changelog": "- Initial release of numerology-reading skill for Western (Pythagorean) numerology.\n- Calculates life path, expression, and birthday numbers with transparent, step-by-step math.\n- Supports both birth date and name-based readings; preserves master numbers (11/22/33) where applicable.\n- Provides symbolic themes for self-reflection; emphasizes this is for entertainment only, not science or advice.\n- Output includes method, inputs, calculations, and clear disclaimers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e8bd94b869d8e763bef6a4bece577277f72874797b9e4864315627b6046b9cb"
+}

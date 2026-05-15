@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixelhub-api-tools@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixelhub_api_tools",
+  "skill": {
+    "id": 25799,
+    "skillKey": "clawhub-pixelhub-api-tools",
+    "name": "pixelhub-api-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixelhub-api-tools",
+    "url": "https://clawhub.ai/skills/pixelhub-api-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixelhub-api-tools-6fff8b9e39138acf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for Pixelhub API direct calls when users need image generation/editing, video generation/post-processing, or audio/music generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leik1000",
+      "userId": "publishers:leik1000",
+      "displayName": "leik1000",
+      "image": "https://avatars.githubusercontent.com/u/23701027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773471086781,
+      "changelog": "- Added metadata file (_meta.json) to the package.\n- Updated skill description to refer to \"Pixelle API\" instead of \"Pixelhub API\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb457095bb37ddeded8a5a4ad94774ec8da2cfe3cebede777ed6ea8435828c25"
+}

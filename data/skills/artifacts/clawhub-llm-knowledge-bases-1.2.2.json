@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-knowledge-bases@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_knowledge_bases",
+  "skill": {
+    "id": 29154,
+    "skillKey": "clawhub-llm-knowledge-bases",
+    "name": "LLM Knowledge Bases"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-knowledge-bases",
+    "url": "https://clawhub.ai/skills/llm-knowledge-bases",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-knowledge-bases-325f5d756e43d961.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspired by a public workflow shared by Andrej Karpathy (@karpathy). From raw research to a living Markdown knowledge base that compounds with every question..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1775441566609,
+      "changelog": "Add stronger natural-language routing and compact Chinese one-line prompts for common wiki workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccafdcabff8b2a5d5963e43e4d8b837f369507bdc18e03c6b5cf6fe43f307a64"
+}

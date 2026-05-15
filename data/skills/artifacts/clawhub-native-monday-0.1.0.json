@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/native-monday@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_monday",
+  "skill": {
+    "id": 15904,
+    "skillKey": "clawhub-native-monday",
+    "name": "Native Monday"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-monday",
+    "url": "https://clawhub.ai/skills/native-monday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-monday-e4ae9392f1aa858a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and query Monday.com boards, items, workspaces, and users directly via the Monday.com GraphQL API. Use when you need project/task data, board contents,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeninja23",
+      "userId": "s173w4sv23s5bb8w4kjv1t143n842den",
+      "displayName": "codeninja23",
+      "image": "https://avatars.githubusercontent.com/u/34013241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771927815743,
+      "changelog": "Initial release of Monday.com integration with direct GraphQL API access.\n\n- Read and query Monday.com boards, items, workspaces, and users.\n- Commands for listing boards, retrieving board details, listing items, workspaces, and users.\n- Requires a personal MONDAY_API_TOKEN for authentication.\n- No third-party proxy; communicates directly with api.monday.com.\n- Supports common Monday.com API tasks through Python scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a24dbc2aa3881bf55956347f2d1e2ee5808f4062159977f7a4a5143827b3586"
+}

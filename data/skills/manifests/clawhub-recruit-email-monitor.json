@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63257,
+  "uuid": "skill-clawhub-recruit-email-monitor",
+  "skillKey": "clawhub-recruit-email-monitor",
+  "name": "Recruit Email Monitor",
+  "summary": "招聘邮件监控系统 - 自动检查邮箱、记录到表格、飞书通知、每日简报",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruit_email_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haoxianniu528-bit",
+      "features": [
+        "招聘邮件监控系统",
+        "自动检查邮箱、记录到表格、飞书通知、每日简报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recruit-email-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255651350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recruit-email-monitor",
+      "url": "https://clawhub.ai/skills/recruit-email-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruit-email-monitor",
+    "url": "https://clawhub.ai/skills/recruit-email-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruit-email-monitor-6630a22479ad5241.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recruit-email-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recruit-email-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a40cffea0b6745a3f5b3cb41b852bdfb8dd6daf86a0a32077c21b0d1bc0a48f4",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:22:34.224Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66441,
+  "uuid": "skill-clawhub-bilibiliextractor",
+  "skillKey": "clawhub-bilibiliextractor",
+  "name": "bilibiliextractor",
+  "summary": "从 B 站视频提取字幕并自动总结核心观点、主要话题与关键结论，支持完整字幕输出请求。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibiliextractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kongym1234",
+      "features": [
+        "从 B 站视频提取字幕并自动总结核心观点、主要话题与关键结论，支持完整字幕输出请求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibiliextractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37609239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibiliextractor",
+      "url": "https://clawhub.ai/skills/bilibiliextractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibiliextractor",
+    "url": "https://clawhub.ai/skills/bilibiliextractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibiliextractor-296004c3262864a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibiliextractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibiliextractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d7bca96e0233b0f377e5d06dbefa592ffdc8f099b7cb04176f12f6dc3e6377b",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:53:04.943Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22839,
+  "uuid": "skill-clawhub-open-code-review",
+  "skillKey": "clawhub-open-code-review",
+  "name": "Open Code Review",
+  "summary": "Scan AI-generated code for hallucinated packages, stale APIs, security anti-patterns, and over-engineering. Use when: (1) reviewing PRs with AI-generated cod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raye-deng",
+      "features": [
+        "Scan AI-generated code for hallucinated packages, stale APIs, security anti-patterns, and over-.",
+        "Use when: (1) reviewing PRs with AI-generated cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7322118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-code-review",
+      "url": "https://clawhub.ai/skills/open-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-code-review",
+    "url": "https://clawhub.ai/skills/open-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-code-review-b116f42fcb1a1a3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75626d26f1a95a354c2b67a7912b33596ffdb33939f0b3a7cc605ab8e5517ff8",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:24:56.574Z"
+}

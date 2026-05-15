@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "agent-summary",
+    "displayName": "Agent Summary",
+    "summary": "Agent进度摘要系统，定期检查子Agent状态并生成简短进度报告。参考Claude Code的AgentSummary机制，每30秒对子Agent生成3-5词状态摘要。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775301524550,
+    "updatedAt": 1777527160684
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775301524550,
+    "changelog": "- Initial release of agent-summary, an Agent进度摘要系统.\n- Periodically summarizes each subAgent's status (every 30 seconds) with a concise 3–5 word description.\n- Only notifies users if there is a change or when subAgents complete or fail.\n- Optimizes queries for minimal token usage and high cache hit rate.\n- Integrates with subagents, sessions_history, and supports both manual and heartbeat/coordinator modes.\n- Quiet hours respected (23:00–08:00): no user notifications during this period.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "wangxiaofei860208-source",
+    "userId": "s17937syhc72vf48t0a5914v8d847evs",
+    "displayName": "wangxiaofei860208-source",
+    "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+  },
+  "moderation": null
+}

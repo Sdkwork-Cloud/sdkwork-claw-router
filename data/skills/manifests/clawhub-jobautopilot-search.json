@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27879,
+  "uuid": "skill-clawhub-jobautopilot-search",
+  "skillKey": "clawhub-jobautopilot-search",
+  "name": "Jobautopilot Search",
+  "summary": "Reads your resume pool to build a candidate profile, then searches LinkedIn, Indeed, Glassdoor, ZipRecruiter, Google Jobs, and company career pages for match...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobautopilot_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jerronl",
+      "features": [
+        "Reads your resume pool to build a candidate profile, then searches LinkedIn, Indeed, Glassdoor,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobautopilot-search@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28072469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobautopilot-search",
+      "url": "https://clawhub.ai/skills/jobautopilot-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobautopilot-search",
+    "url": "https://clawhub.ai/skills/jobautopilot-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobautopilot-search-4f34001116a2b030.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobautopilot-search@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobautopilot-search-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22c0e8304607d4ab76915d4b44bd2ddbc3fa11e53336c42797fa1b1e39ac2d16",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T18:38:04.640Z"
+}

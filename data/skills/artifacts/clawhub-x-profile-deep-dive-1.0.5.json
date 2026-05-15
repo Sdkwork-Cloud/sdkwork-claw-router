@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-profile-deep-dive@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_profile_deep_dive",
+  "skill": {
+    "id": 61030,
+    "skillKey": "clawhub-x-profile-deep-dive",
+    "name": "X Profile Deep Dive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-profile-deep-dive",
+    "url": "https://clawhub.ai/skills/x-profile-deep-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-profile-deep-dive-943bc4d317119a7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度分析 X/Twitter 用户画像——通过 tweety-ns 抓取推文、关注和粉丝， 生成中文深度档案（主题分类、内容风格、社交网络）。 Use when: (1) 用户说\"深挖 @xxx\"/\"分析这个博主\"/\"analyze @xxx\", (2) 用户说\"看看他都发了什么\"/\"这个人什么水平\"/\"值不值得..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovensky1992-wk",
+      "userId": "s17dsprt4znvnqphy9hhy68va983nsqs",
+      "displayName": "lovensky1992-wk",
+      "image": "https://avatars.githubusercontent.com/u/264908128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778048972256,
+      "changelog": "Weekly sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:965b2b247d874658293a8d550877faf518b8585eb92198dd6d38e05e420a6b71"
+}

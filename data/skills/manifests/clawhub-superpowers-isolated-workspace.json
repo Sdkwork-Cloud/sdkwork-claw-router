@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30056,
+  "uuid": "skill-clawhub-superpowers-isolated-workspace",
+  "skillKey": "clawhub-superpowers-isolated-workspace",
+  "name": "Isolated Workspace",
+  "summary": "Use when starting feature work that needs isolation from current workspace - creates isolated git branches with clean setup and safety verification, adapted...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers_isolated_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "Use when starting feature work that needs isolation from current workspace",
+        "creates isolated git branches with clean setup and safety verification, adapted..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superpowers-isolated-workspace@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superpowers-isolated-workspace",
+      "url": "https://clawhub.ai/skills/superpowers-isolated-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers-isolated-workspace",
+    "url": "https://clawhub.ai/skills/superpowers-isolated-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-isolated-workspace-dd35adda9f81ffb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superpowers-isolated-workspace@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-superpowers-isolated-workspace-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:456c22a7a547ac9a770ce06d40903bd910892e1ab92711e5e36d91f497383ca8",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:05:33.417Z"
+}

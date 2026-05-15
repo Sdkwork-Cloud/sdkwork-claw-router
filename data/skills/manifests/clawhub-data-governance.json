@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69914,
+  "uuid": "skill-clawhub-data-governance",
+  "skillKey": "clawhub-data-governance",
+  "name": "Data Governance",
+  "summary": "数据治理与资产管理技能。用于数据质量评估、元数据管理、数据血缘追踪、数据标准制定、数据合规检查等任务。",
+  "version": "1.10.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_governance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XingjianLiu0417",
+      "features": [
+        "数据治理与资产管理技能。用于数据质量评估、元数据管理、数据血缘追踪、数据标准制定、数据合规检查等任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-governance@1.10.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206952079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-governance",
+      "url": "https://clawhub.ai/skills/data-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-governance",
+    "url": "https://clawhub.ai/skills/data-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-governance-72e01b6ce727994b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-governance@1.10.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-governance-1.10.1.json",
+      "version": "1.10.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1db14061dbfbce23ae32794b6a20ce6b13583300ec5c48a0bf02c99c84036216",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:02:54.254Z"
+}

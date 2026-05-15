@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/y@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.y",
+  "skill": {
+    "id": 36867,
+    "skillKey": "clawhub-y",
+    "name": "yoga"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "y",
+    "url": "https://clawhub.ai/skills/y",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/y-a1fce4363854ff88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill that provides yoga pose guidance, breathing techniques, and meditation practices for daily wellness."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775454321503,
+      "changelog": "- Renamed the skill from \"cool\" to \"yoga\" with a new focus on yoga and wellness.\n- Updated the description, tags, and author details to reflect the yoga guidance functionality.\n- Rewrote the SKILL.md to provide instructions, feature list, usage examples, and command syntax for yoga poses, breathing, meditation, routines, and progress tracking.\n- Removed all previous content related to creative content generation and replaced it with wellness-oriented guidance and features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bb3130ede899a0152c7a0d7182cd6122e7c2ff49591e58d393edd79614a8096"
+}

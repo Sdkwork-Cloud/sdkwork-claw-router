@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vision-ocr@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_ocr",
+  "skill": {
+    "id": 66342,
+    "skillKey": "clawhub-vision-ocr",
+    "name": "vision ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-ocr",
+    "url": "https://clawhub.ai/skills/vision-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-ocr-a22da1e35f927b38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于识别图片和 PDF 文档，调用你已配置的 OCR 与多模态服务输出 Markdown 结果，并可按需发送到飞书。适合截图、扫描件、表格、票据和技术文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangxusong637",
+      "userId": "s17c4c9xbhzwedxdg97qtzs1kn83kr6h",
+      "displayName": "zhangxusong637",
+      "image": "https://avatars.githubusercontent.com/u/252850179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 589,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774918344015,
+      "changelog": "1.1.2 安全增强版发布：\n- 附件下载增加 SSRF 安全过滤（禁止下载 localhost 和私有网络段文件）。\n- 下载功能支持超时和最大文件大小限制。\n- PDF helper 调用新增 maxBuffer 和 PYTHON_PATH 配置项，提升兼容性。\n- 修订说明和文档同步更新。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04498d9f1b52d51b1732f2b32a460a74e395414c96bdc304368e16cf0432655f"
+}

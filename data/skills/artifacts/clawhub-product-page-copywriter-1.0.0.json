@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-page-copywriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_page_copywriter",
+  "skill": {
+    "id": 39902,
+    "skillKey": "clawhub-product-page-copywriter",
+    "name": "Product Page Copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-page-copywriter",
+    "url": "https://clawhub.ai/skills/product-page-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-page-copywriter-cb2d2bbd8e95e873.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn product briefs, pain points, competitor notes, and platform constraints into product page titles, hero benefit blocks, detail-module structure, and FAQ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131173688,
+      "changelog": "Initial release of Product Page Copywriter.\n\n- Converts product briefs and market context into structured product page copy packs.\n- Generates title candidates, hero benefits, detail-module structure, FAQ/closing copy, and compliance notes in markdown format.\n- Built for teams needing multi-version, conversion-oriented copy before design or compliance review.\n- Does not connect to live CMS, feeds, or compliance tools; relies on provided briefs and constraints.\n- Enables preparation of copy suitable for various platforms and tones with clear separation of user benefits and features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1030730f716a9648f31cb573f3fec330dcabdc71d9be331253ec6c73497f8443"
+}

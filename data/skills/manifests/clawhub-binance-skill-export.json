@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21390,
+  "uuid": "skill-clawhub-binance-skill-export",
+  "skillKey": "clawhub-binance-skill-export",
+  "name": "binance-trading",
+  "summary": "Provides Binance API integration for spot and futures trading including balance, orders, market data, leverage, and position management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_skill_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ly5201314gjx",
+      "features": [
+        "Provides Binance API integration for spot and futures trading including balance, orders, market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-skill-export@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204307131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-skill-export",
+      "url": "https://clawhub.ai/skills/binance-skill-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-skill-export",
+    "url": "https://clawhub.ai/skills/binance-skill-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-skill-export-b333cd1b81a2f96d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-skill-export@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-skill-export-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48aba377ad16e29b5b5248033eeff22ca92ae1d6d1ae35ab68752b15a3863d53",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:02:13.894Z"
+}

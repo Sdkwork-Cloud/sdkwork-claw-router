@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-sdk-ui@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_sdk_ui",
+  "skill": {
+    "id": 12804,
+    "skillKey": "clawhub-ai-sdk-ui",
+    "name": "Ai Sdk Ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-sdk-ui",
+    "url": "https://clawhub.ai/skills/ai-sdk-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-sdk-ui-6e46512ad2425e27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build React chat interfaces with Vercel AI SDK v6. Covers useChat/useCompletion/useObject hooks, message parts structure, tool approval workflows, and 18 UI error solutions. Prevents documented issues with React Strict Mode, concurrent req."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1732,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871189588,
+      "changelog": "ai-sdk-ui v0.1.0\n\n- Initial release of ai-sdk-ui for building React chat interfaces with Vercel AI SDK v6.\n- Supports new message parts structure, type-safe agent integration, tool approval workflows, and auto-submit.\n- Provides 18 documented UI error solutions, addressing issues with React Strict Mode, concurrent requests, and stale closures.\n- Includes migration guidance from v5 to v6, highlighting breaking changes in hooks and state management.\n- Offers best practices and troubleshooting for common chat UI errors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d83d23a95f460710477f01004ac4181d43bed2dd951d3f72a807299a1bcfae9f"
+}

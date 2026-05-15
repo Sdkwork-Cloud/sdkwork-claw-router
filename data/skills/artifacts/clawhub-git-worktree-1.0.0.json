@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-worktree@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_worktree",
+  "skill": {
+    "id": 62655,
+    "skillKey": "clawhub-git-worktree",
+    "name": "Git Worktree"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-worktree",
+    "url": "https://clawhub.ai/skills/git-worktree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-worktree-abf60bb649d7d691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Git Worktree 多需求并行开发助手。在当前 worktree 目录下独立开发、修改、提交代码，不跨目录操作。基于目录命名规范自动识别仓库归属（如 main-repo-feature-a → main-repo 仓库）。遵循最小改动原则，从需求分析到 commit 交付全流程负责。触发场景：用户在 wor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776678881723,
+      "changelog": "Initial release: Git Worktree parallel development skill with directory naming conventions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73109a2cdaa8b0059f1a61f7bad15b53c84361032e10e4b072430020e84873f9"
+}

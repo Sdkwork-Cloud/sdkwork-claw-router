@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raysurfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raysurfer",
+  "skill": {
+    "id": 13103,
+    "skillKey": "clawhub-raysurfer",
+    "name": "Raysurfer Code Caching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raysurfer",
+    "url": "https://clawhub.ai/skills/raysurfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raysurfer-14014fddf2766b4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cache and reuse code from prior AI agent executions via Raysurfer. Search before coding, upload after success."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryx2",
+      "userId": "publishers:ryx2",
+      "displayName": "ryx2",
+      "image": "https://avatars.githubusercontent.com/u/21298347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1547,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770437687950,
+      "changelog": "- Initial release of the raysurfer skill.\n- Enables searching and reusing cached code from past AI executions and public code snippets.\n- Allows uploading new successful code for future reuse through the Raysurfer API.\n- Includes scripts for search and upload in multiple languages (Python, Bun, Bash).\n- Requires the RAYSURFER_API_KEY environment variable for authentication.\n- Provides detailed workflow and API usage instructions in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d59fbccfc403003c56dd68b6c73262b8e1c03abc97133a67ca11cf08775800b9"
+}

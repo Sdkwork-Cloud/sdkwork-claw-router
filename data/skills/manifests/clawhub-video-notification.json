@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64192,
+  "uuid": "skill-clawhub-video-notification",
+  "skillKey": "clawhub-video-notification",
+  "name": "unisk_video_notification",
+  "summary": "向指定手机号发送视频通知（基于 IVVR 平台）。需要提供服务器上已存在的视频文件绝对路径，文件大小不超过 5MB。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_notification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhangKai",
+      "features": [
+        "向指定手机号发送视频通知（基于 IVVR 平台）。需要提供服务器上已存在的视频文件绝对路径，文件大小不超过 5MB。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-notification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64352733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-notification",
+      "url": "https://clawhub.ai/skills/video-notification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-notification",
+    "url": "https://clawhub.ai/skills/video-notification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-notification-005f341e5faaccd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-notification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-notification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76e823cc8b312768d20aff832f8dded4483e6412d5a006cd69063653147d0d55",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:04:43.849Z"
+}

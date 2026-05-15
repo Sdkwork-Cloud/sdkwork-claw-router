@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feed-diet@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feed_diet",
+  "skill": {
+    "id": 49085,
+    "skillKey": "clawhub-feed-diet",
+    "name": "feed-diet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feed-diet",
+    "url": "https://clawhub.ai/skills/feed-diet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feed-diet-8717a9558b760c95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit your information diet across HN and RSS feeds — beautiful reports with category breakdowns, ASCII charts, and personalized recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tkuehnl",
+      "userId": "s1796xcga59f855vmh35x909yh84742a",
+      "displayName": "Todd Kuehnl",
+      "image": "https://avatars.githubusercontent.com/u/25701510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 713,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771717266531,
+      "changelog": "Rebrand to Anvil AI. Remove CacheForge marketing copy. Normalize install commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:31f6d586aff744642eb756a457d8d24fb57e9798485d12a9886a52b203e250bd"
+}

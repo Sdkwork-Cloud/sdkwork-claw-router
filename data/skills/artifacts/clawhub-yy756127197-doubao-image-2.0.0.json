@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yy756127197-doubao-image@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yy756127197_doubao_image",
+  "skill": {
+    "id": 59857,
+    "skillKey": "clawhub-yy756127197-doubao-image",
+    "name": "Doubao Image Generator — AI 文生图工具 based on SeeDream 5.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yy756127197-doubao-image",
+    "url": "https://clawhub.ai/skills/yy756127197-doubao-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yy756127197-doubao-image-3ffc96b8e4e9e840.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用字节跳动豆包 Doubao SeeDream 模型生成高质量图片。支持文生图、AI 绘图、插画创作等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yy756127197",
+      "userId": "s177rtr8fksf06xcjhpygnqpcn842nb2",
+      "displayName": "yy756127197",
+      "image": "https://avatars.githubusercontent.com/u/13255952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775762412915,
+      "changelog": "v2.0.0: Refactored code, added Python implementation, improved error handling and documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9eb8412804bb39efc3db4be804b4f017629956b8241141cb3e0023b5294880d7"
+}

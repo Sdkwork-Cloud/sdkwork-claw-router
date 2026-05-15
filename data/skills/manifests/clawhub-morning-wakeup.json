@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33074,
+  "uuid": "skill-clawhub-morning-wakeup",
+  "skillKey": "clawhub-morning-wakeup",
+  "name": "Morning Wake-Up",
+  "summary": "Morning wake-up automation that fetches today's weather and matches a Sonos playback preset. Use when setting up daily alarm routines, weather-driven music w...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_wakeup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Morning wake-up automation that fetches today's weather and matches a Sonos playback preset",
+        "Use when setting up daily alarm routines, weather-driven music w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-wakeup@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-wakeup",
+      "url": "https://clawhub.ai/skills/morning-wakeup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-wakeup",
+    "url": "https://clawhub.ai/skills/morning-wakeup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-wakeup-ddf6fc2c4fdcda51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-wakeup@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-wakeup-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f722f489062a22e39a2da0c51ccf29501dded9dbf2903691460988ab70cc605b",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T20:45:59.858Z"
+}

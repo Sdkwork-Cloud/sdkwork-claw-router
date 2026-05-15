@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32854,
+  "uuid": "skill-clawhub-review-analyzer",
+  "skillKey": "clawhub-review-analyzer",
+  "name": "Review Analyzer",
+  "summary": "Extract sentiment patterns, repeated pain points, and feature requests from customer reviews to prioritize product fixes and copy improvements.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Extract sentiment patterns, repeated pain points, and feature requests from customer reviews to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-analyzer",
+      "url": "https://clawhub.ai/skills/review-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-analyzer",
+    "url": "https://clawhub.ai/skills/review-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-analyzer-aa28d4b1c4d5e047.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bc5786ea3a805ac9df96780e796ab836883111297878cfdbb52e3756114b26f",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T10:09:15.466Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evogo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evogo",
+  "skill": {
+    "id": 14777,
+    "skillKey": "clawhub-evogo",
+    "name": "Evolution Api Go - Evo Go"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evogo",
+    "url": "https://clawhub.ai/skills/evogo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evogo-6072122b4c7f8ac6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete WhatsApp automation via Evolution API Go v3 - instances, messages (text/media/polls/carousels), groups, contacts, chats, communities, newsletters, and real-time webhooks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "impa365",
+      "userId": "publishers:impa365",
+      "displayName": "impa365",
+      "image": "https://avatars.githubusercontent.com/u/91766929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770702580039,
+      "changelog": "evogo 1.0.0\n\n- Initial release.\n- Provides full WhatsApp automation via Evolution API Go v3.\n- Features include instance management, text/media/poll/carousel messaging, group and contact management, chat and community functions, newsletters, and real-time webhooks.\n- Supports detailed authentication and advanced settings for automation use-cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97b3d167f283a532f66f7572b9ccb933869f99db98034626691f35a3fe27830a"
+}

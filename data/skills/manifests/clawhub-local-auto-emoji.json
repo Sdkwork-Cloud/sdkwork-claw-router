@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66140,
+  "uuid": "skill-clawhub-local-auto-emoji",
+  "skillKey": "clawhub-local-auto-emoji",
+  "name": "Local Auto Emoji",
+  "summary": "阿狸的专属表情系统 - 根据情绪自动发送表情，支持头像生成、增量更新、图文混排",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_auto_emoji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deric",
+      "features": [
+        "阿狸的专属表情系统",
+        "根据情绪自动发送表情，支持头像生成、增量更新、图文混排"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-auto-emoji@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29499992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-auto-emoji",
+      "url": "https://clawhub.ai/skills/local-auto-emoji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-auto-emoji",
+    "url": "https://clawhub.ai/skills/local-auto-emoji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-auto-emoji-1e1f974f8895a318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-auto-emoji@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-auto-emoji-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d87b0cd209b71308c345a49a03b5f60875b3fc15da5ec82d41b388ed9c747994",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:40:23.857Z"
+}

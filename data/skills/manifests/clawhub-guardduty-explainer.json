@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27241,
+  "uuid": "skill-clawhub-guardduty-explainer",
+  "skillKey": "clawhub-guardduty-explainer",
+  "name": "Guardduty Explainer",
+  "summary": "Translate GuardDuty findings into plain-English incident summaries with actionable response steps",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardduty_explainer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Translate GuardDuty findings into plain-English incident summaries with actionable response ste."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guardduty-explainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guardduty-explainer",
+      "url": "https://clawhub.ai/skills/guardduty-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardduty-explainer",
+    "url": "https://clawhub.ai/skills/guardduty-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardduty-explainer-e970f5589f332c9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guardduty-explainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guardduty-explainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83a7f2ba6b2ffaa402614dc89bc16a5c33163c6d7aa4f56e1bb9480221992b21",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:52:01.963Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29967,
+  "uuid": "skill-clawhub-twexapi-cli",
+  "skillKey": "clawhub-twexapi-cli",
+  "name": "Twexapi CLI",
+  "summary": "Use this skill when the task should be done through the twexapi command-line client, including installing the CLI, configuring app or profile auth, previewin...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twexapi_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yeahjjyy",
+      "features": [
+        "Use this skill when the task should be done through the twexapi command-line client, including."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twexapi-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47559180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twexapi-cli",
+      "url": "https://clawhub.ai/skills/twexapi-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twexapi-cli",
+    "url": "https://clawhub.ai/skills/twexapi-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twexapi-cli-b690c8e9e53a747a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twexapi-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-twexapi-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d685df96a258b0141c03411763de134c496460df5d00d2654e67df663cf3b8ac",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:30:25.574Z"
+}

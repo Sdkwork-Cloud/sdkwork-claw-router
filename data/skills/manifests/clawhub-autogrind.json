@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30131,
+  "uuid": "skill-clawhub-autogrind",
+  "skillKey": "clawhub-autogrind",
+  "name": "Autogrind",
+  "summary": "Let the agent work continuously and fully autonomously without stopping. Use this skill for long-running grind sessions across code, ML/data, research, desig...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autogrind",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ttttonyhe",
+      "features": [
+        "Let the agent work continuously and fully autonomously without stopping",
+        "Use this skill for long-running grind sessions across code, ML/data, research, desig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autogrind@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21199796?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autogrind",
+      "url": "https://clawhub.ai/skills/autogrind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autogrind",
+    "url": "https://clawhub.ai/skills/autogrind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autogrind-b49bfb4eb8eb3103.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autogrind@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autogrind-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af583f353f2cf818aeb8c8e33c91dc703e805e80c37b755499b6b9ba419d1f4f",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:58:20.593Z"
+}

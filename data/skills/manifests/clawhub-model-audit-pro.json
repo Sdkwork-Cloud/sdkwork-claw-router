@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49891,
+  "uuid": "skill-clawhub-model-audit-pro",
+  "skillKey": "clawhub-model-audit-pro",
+  "name": "Model Audit Pro",
+  "summary": "Monthly LLM stack audit — compare your current models against latest benchmarks and pricing from OpenRouter. Identifies potential savings, upgrades, and bett...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_audit_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Monthly LLM stack audit — compare your current models against latest benchmarks and pricing fro.",
+        "Identifies potential savings, upgrades, and bett..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-audit-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-audit-pro",
+      "url": "https://clawhub.ai/skills/model-audit-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-audit-pro",
+    "url": "https://clawhub.ai/skills/model-audit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-audit-pro-8ea9ddce37c1c85b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-audit-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-audit-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d51414b25461e7c63a7856265610c18eb88e83f753e19369db861f4a836b43db",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T09:27:58.432Z"
+}

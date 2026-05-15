@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "skill-eval",
+    "displayName": "Skill-Eval",
+    "summary": "Autonomous engine that systematically evaluates and ranks agent skills across models using rubric grading, error taxonomy, and improvement feedback loops.",
+    "tags": {
+      "latest": "0.4.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773141189019,
+    "updatedAt": 1778306354571
+  },
+  "latestVersion": {
+    "version": "0.4.0",
+    "createdAt": 1773141189019,
+    "changelog": "Skill-Eval v0.4.0 introduces multi-model evaluation and improvement capabilities.\n\n- Added support for evaluating skills across multiple execution models, enabling per-model scoring and consistency analysis.\n- Introduced distinct roles for execution, judge, and improvement models; these can be configured globally or per-skill.\n- Output reports (skill cards) and the leaderboard now display per-model results and highlight cross-model performance.\n- Improved handling for unavailable models, dependency-gated and phantom tooling skills, and unsubstantiated claims.\n- Expanded knowledge base with an improvement engine for skill rewrites based on evaluation outcomes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jensen-srp",
+    "userId": "publishers:jensen-srp",
+    "displayName": "jensen-srp",
+    "image": "https://avatars.githubusercontent.com/u/178291187?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306354571
+  }
+}

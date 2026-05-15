@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53807,
+  "uuid": "skill-clawhub-token-kill",
+  "skillKey": "clawhub-token-kill",
+  "name": "token-kill",
+  "summary": "Reduce OpenClaw token consumption by 95%+ using three optimization techniques (slash commands, script-first principle, and model tiering)",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_kill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Timmy",
+      "features": [
+        "Reduce OpenClaw token consumption by 95%+ using three optimization techniques (slash commands,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-kill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1646678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-kill",
+      "url": "https://clawhub.ai/skills/token-kill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-kill",
+    "url": "https://clawhub.ai/skills/token-kill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-kill-c0eaacf410c24eed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-kill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-kill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6805260257d4e1f5f00d3163aa179f251ad4f2021cb27a92144464c178c4cdf3",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:49:40.296Z"
+}

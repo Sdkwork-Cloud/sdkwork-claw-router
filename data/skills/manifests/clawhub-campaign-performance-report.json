@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51683,
+  "uuid": "skill-clawhub-campaign-performance-report",
+  "skillKey": "clawhub-campaign-performance-report",
+  "name": "Campaign Performance Report",
+  "summary": "Multi-channel marketing performance agent. Pulls together Meta, Google, email, and organic data into a unified weekly report with AI executive commentary — e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_performance_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Multi-channel marketing performance agent",
+        "Pulls together Meta, Google, email, and organic data into a unified weekly report with AI execu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campaign-performance-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campaign-performance-report",
+      "url": "https://clawhub.ai/skills/campaign-performance-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-performance-report",
+    "url": "https://clawhub.ai/skills/campaign-performance-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-performance-report-6c6845eeb56a13b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campaign-performance-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-campaign-performance-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:559f7692632233ef29bbef2c4669d12a6c38545d6f75141153aacf8f0d496cf2",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:42:45.884Z"
+}

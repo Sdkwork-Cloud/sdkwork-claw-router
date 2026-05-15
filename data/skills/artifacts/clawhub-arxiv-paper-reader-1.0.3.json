@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-paper-reader@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_reader",
+  "skill": {
+    "id": 30424,
+    "skillKey": "clawhub-arxiv-paper-reader",
+    "name": "Arxiv Paper Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-reader",
+    "url": "https://clawhub.ai/skills/arxiv-paper-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-reader-5a9e73ca6cda811f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search arXiv by keyword, filter by submitted date range, fetch arXiv papers from an arXiv ID or URL, convert papers into Markdown and PDF files in the worksp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elio040208",
+      "userId": "s170wn39f51ajq4jmg45fv7y6x83qrkr",
+      "displayName": "elio040208",
+      "image": "https://avatars.githubusercontent.com/u/215843197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774608927658,
+      "changelog": "**arxiv-paper-reader 1.0.3 changelog**\n\n- Added support for filtering keyword searches by submitted date range.\n- Introduced recurring topic sync with daily archive folders and summary generation.\n- Added references/topics.example.json and scripts/sync_arxiv_topics.py to support topic management and sync features.\n- Fetch workflow now produces both Markdown and PDF files for each paper.\n- Updated documentation to reflect new inputs, workflows, and file outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75f833b298749d40d8a1efe4a332e7aec4b7fd354100fa4a1835e6d8860f6558"
+}

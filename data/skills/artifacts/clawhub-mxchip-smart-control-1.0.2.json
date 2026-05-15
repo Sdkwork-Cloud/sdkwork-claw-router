@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mxchip-smart-control@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mxchip_smart_control",
+  "skill": {
+    "id": 26991,
+    "skillKey": "clawhub-mxchip-smart-control",
+    "name": "mxchip-smart-control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mxchip-smart-control",
+    "url": "https://clawhub.ai/skills/mxchip-smart-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mxchip-smart-control-778931b67974a26c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control smart home devices configured in Smart Plus APP. Use when you need to: (1) Query devices and scenes (lights, AC, switches), (2) Control device power..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mxchipyun",
+      "userId": "s17drq2t1q4m8g50enn4bzq3s583hy2g",
+      "displayName": "mxchip",
+      "image": "https://avatars.githubusercontent.com/u/23303414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774344191192,
+      "changelog": "No user-facing changes detected in this release.\n\n- Version 1.0.2 contains no file or documentation changes.\n- Functionality and interface remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d66872d1b095e00a4d7964a846cec5b5fdfd7b7c266deee7c0a30afdb3eef83b"
+}

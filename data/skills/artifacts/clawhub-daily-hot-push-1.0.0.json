@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-hot-push@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_push",
+  "skill": {
+    "id": 66785,
+    "skillKey": "clawhub-daily-hot-push",
+    "name": "Daily Hot Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-push",
+    "url": "https://clawhub.ai/skills/daily-hot-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-push-83695ddff0448e32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日推送中国热榜TOP10到飞书。从微博、知乎、百度、36氪筛选最重要的新闻，智能排除明星八卦和主观评论。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imgolye",
+      "userId": "publishers:imgolye",
+      "displayName": "imgolye",
+      "image": "https://avatars.githubusercontent.com/u/7943209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1555,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772367210650,
+      "changelog": "首次发布：支持微博/知乎/百度/36氪热榜，AI智能筛选，飞书推送",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b0cb050a300527a7c3b2e9b67df26e8ee47d8e8a1b86a59fde519dcb54dd15e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51540,
+  "uuid": "skill-clawhub-persona-hr-coordinator",
+  "skillKey": "clawhub-persona-hr-coordinator",
+  "name": "Persona Hr Coordinator",
+  "summary": "Handle HR workflows — onboarding, announcements, and employee comms.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_hr_coordinator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Handle HR workflows — onboarding, announcements, and employee comms."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-hr-coordinator@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-hr-coordinator",
+      "url": "https://clawhub.ai/skills/persona-hr-coordinator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-hr-coordinator",
+    "url": "https://clawhub.ai/skills/persona-hr-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-hr-coordinator-b68efba97f853ab1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-hr-coordinator@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-hr-coordinator-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:870e5f92af7161f573082eda7a4fe9012e94472e7bbf3b25d16bf654d36fd98a",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:24.146Z"
+}

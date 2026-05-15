@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66270,
+  "uuid": "skill-clawhub-elderly-assistant",
+  "skillKey": "clawhub-elderly-assistant",
+  "name": "Elderly Voice Assistant",
+  "summary": "银发族语音助手——老年人对着手机说话就能发消息、查天气、设闹钟、听戏曲，无需学任何操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elderly_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "银发族语音助手——老年人对着手机说话就能发消息、查天气、设闹钟、听戏曲，无需学任何操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elderly-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elderly-assistant",
+      "url": "https://clawhub.ai/skills/elderly-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elderly-assistant",
+    "url": "https://clawhub.ai/skills/elderly-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elderly-assistant-1b1794317cfbe491.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elderly-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elderly-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:091103b99d48ebe92bb6a117bfafe13b56f1ec2b9b7d6b695d06574499c33e00",
+      "artifactSizeBytes": 2589
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T10:56:30.809Z"
+}

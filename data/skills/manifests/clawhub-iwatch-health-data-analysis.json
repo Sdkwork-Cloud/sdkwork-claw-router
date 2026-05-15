@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60730,
+  "uuid": "skill-clawhub-iwatch-health-data-analysis",
+  "skillKey": "clawhub-iwatch-health-data-analysis",
+  "name": "iwatch health data analysis",
+  "summary": "Apple Health 数据全景分析。从 export.zip 流式解析 XML（支持 1-2GB 大文件），提取 RHR/HRV/VO₂Max/睡眠/步数/血氧等核心指标，基于用户个人信息（年龄/性别/身高/体重/病史）动态校准参考范围，生成个性化交互式 HTML 报告（含 6 张 Chart.js 图表）。...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iwatch_health_data_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gloriaameng",
+      "features": [
+        "Apple Health 数据全景分析。从 export.zip 流式解析 XML（支持 1-2GB 大文件），提取 RHR/HRV/VO₂Max/睡眠/步数/血氧等核心指标，基于用户个人信."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iwatch-health-data-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201033209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iwatch-health-data-analysis",
+      "url": "https://clawhub.ai/skills/iwatch-health-data-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iwatch-health-data-analysis",
+    "url": "https://clawhub.ai/skills/iwatch-health-data-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iwatch-health-data-analysis-b6229f8d4025c4b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iwatch-health-data-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iwatch-health-data-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9db4f8a10981305db61103588a6bd5ec33ceaad3033bf5b3b82387e11f4da86",
+      "artifactSizeBytes": 4408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:38:27.921Z"
+}

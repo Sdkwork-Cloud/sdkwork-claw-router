@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19210,
+  "uuid": "skill-clawhub-recipe-find-free-time",
+  "skillKey": "clawhub-recipe-find-free-time",
+  "name": "Recipe Find Free Time",
+  "summary": "Query Google Calendar free/busy status for multiple users to find a meeting slot.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_find_free_time",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Query Google Calendar free/busy status for multiple users to find a meeting slot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-find-free-time@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-find-free-time",
+      "url": "https://clawhub.ai/skills/recipe-find-free-time"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-find-free-time",
+    "url": "https://clawhub.ai/skills/recipe-find-free-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-find-free-time-39c9fa1ab5be2df8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-find-free-time@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-find-free-time-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aacda2d1e627e395a0194d350e52555737ca7449e096bdc606cc207ab1fbad0",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:29.656Z"
+}

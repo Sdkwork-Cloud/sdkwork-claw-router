@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67506,
+  "uuid": "skill-clawhub-trending-news-aggregator",
+  "skillKey": "clawhub-trending-news-aggregator",
+  "name": "Trending News Aggregator",
+  "summary": "智能热点新闻聚合器 - 自动抓取多平台热点新闻， AI分析趋势，支持定时推送和热度评分。 核心功能： - 每天自动聚合多平台热点（微博、知乎、百度等） - 智能分类（科技、财经、社会、国际等） - 热度评分算法 - 增量检测（标记新增热点） - AI趋势分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_news_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "19X19BTR",
+      "features": [
+        "智能热点新闻聚合器",
+        "自动抓取多平台热点新闻， AI分析趋势，支持定时推送和热度评分。 核心功能：",
+        "每天自动聚合多平台热点（微博、知乎、百度等）",
+        "智能分类（科技、财经、社会、国际等）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trending-news-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154751675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trending-news-aggregator",
+      "url": "https://clawhub.ai/skills/trending-news-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-news-aggregator",
+    "url": "https://clawhub.ai/skills/trending-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-news-aggregator-107aa5466c6a0dc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trending-news-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trending-news-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fb67ba69beee5726320afd13900b0e595c1a6e8b7ba925a62ab0b010e17c2fd",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:23:47.850Z"
+}

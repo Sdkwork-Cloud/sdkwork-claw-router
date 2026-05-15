@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kv-senior-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kv_senior_architect",
+  "skill": {
+    "id": 41794,
+    "skillKey": "clawhub-kv-senior-architect",
+    "name": "Arquitecto Senior"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kv-senior-architect",
+    "url": "https://clawhub.ai/skills/kv-senior-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kv-senior-architect-eecf04c2fd330eea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design system architecture, evaluate patterns, and produce architecture artifacts. Use when designing a new system or reviewing an existing one, choosing bet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-antonio-sl",
+      "userId": "s17301x2y8n5dbvbsbv42fvgxx83n922",
+      "displayName": "felix-antonio-sl",
+      "image": "https://avatars.githubusercontent.com/u/143637936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774973988898,
+      "changelog": "Senior Architect skill v1.0.0 initial release.\n\n- Provides structured workflows for system architecture design, review, and decision-making.\n- Supports generation of architecture diagrams and Architecture Decision Records (ADRs) using Python scripts.\n- Enforces clear trade-offs for all architecture recommendations, defaulting to modular monoliths for small teams.\n- Includes strict guardrails to focus output on architecture—no implementation details or unwarranted microservices.\n- Outputs one key artifact per request, annotated and coupled with actionable next steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbbe05b8634bbf89c95f7ae7d0762622eee424ea594726d10b1f31d2cc763c74"
+}

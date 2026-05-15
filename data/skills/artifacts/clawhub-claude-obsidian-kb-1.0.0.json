@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-obsidian-kb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_obsidian_kb",
+  "skill": {
+    "id": 64086,
+    "skillKey": "clawhub-claude-obsidian-kb",
+    "name": "Claude-Obsidian 知识引擎"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-obsidian-kb",
+    "url": "https://clawhub.ai/skills/claude-obsidian-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-obsidian-kb-9797bb7d0bccf82c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude-Obsidian 风格个人知识库构建与自动整理。当用户提到以下任何场景时激活： 知识库、笔记整理、自动双向链接、Obsidian、第二大脑、卡片笔记、原子化笔记、 个人知识管理、PKM、Zettelkasten、卢曼笔记法、笔记原子化、笔记链接、 知识图谱笔记、raw/wiki/output三层、知..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmy1006-sudo",
+      "userId": "s178943e0sqbs17b9qd9x38x7583wvdq",
+      "displayName": "mingyuan",
+      "image": "https://avatars.githubusercontent.com/u/267627552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776777003450,
+      "changelog": "Initial release: AI自动整理个人知识库，raw/wiki/output三层架构，双向链接自动织网",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05b1a8ecae3a55746d61ea26791f559c37a29235cc7a039a73ef50fdffe33163"
+}

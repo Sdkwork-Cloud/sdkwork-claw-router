@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-to-video-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_to_video_llm",
+  "skill": {
+    "id": 53356,
+    "skillKey": "clawhub-free-text-to-video-llm",
+    "name": "Free Text To Video Llm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-to-video-llm",
+    "url": "https://clawhub.ai/skills/free-text-to-video-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-to-video-llm-3ea6fc0ea3106f29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second video of a futuristic city at dusk with cinematic lig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776072581087,
+      "changelog": "Initial release of Free Text to Video LLM — generate videos from text prompts.\n\n- Instantly generate AI videos (up to 30 seconds) from text descriptions or uploaded documents.\n- Supports TXT, DOCX, PDF, and plain text files up to 500MB.\n- Cloud-powered: no local installation needed; auto-connects and handles authentication with 100 free credits to start.\n- Export videos in multiple formats including MP4, MOV, AVI, and more.\n- Built for easy workflows: upload, prompt, preview changes, and export videos in minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d694b56f69528be393c842a5f3fda88469a8856cea2b4ef63e6cd634b32353c3"
+}

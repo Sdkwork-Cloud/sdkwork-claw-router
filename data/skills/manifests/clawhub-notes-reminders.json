@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18678,
+  "uuid": "skill-clawhub-notes-reminders",
+  "skillKey": "clawhub-notes-reminders",
+  "name": "Notes Reminders",
+  "summary": "Manage quick notes and time-based reminders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notes_reminders",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yusaku-0426",
+      "features": [
+        "Manage quick notes and time-based reminders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notes-reminders@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225117374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notes-reminders",
+      "url": "https://clawhub.ai/skills/notes-reminders"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notes-reminders",
+    "url": "https://clawhub.ai/skills/notes-reminders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notes-reminders-5b532925633165c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notes-reminders@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notes-reminders-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a729443262dc41a0c5769601e59b9f01201266545d957ae7f7a4a51b3bc883d",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:07:08.490Z"
+}

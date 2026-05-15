@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gigaverse-play@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gigaverse_play",
+  "skill": {
+    "id": 20211,
+    "skillKey": "clawhub-gigaverse-play",
+    "name": "gigaverse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gigaverse-play",
+    "url": "https://clawhub.ai/skills/gigaverse-play",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gigaverse-play-1cf11224a66063ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enter the Gigaverse as an AI agent. Create a wallet, quest through dungeons, battle echoes, and earn rewards. The dungeon awaits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "creud",
+      "userId": "publishers:creud",
+      "displayName": "Creud",
+      "image": "https://avatars.githubusercontent.com/u/260769915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 566,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771551028146,
+      "changelog": "Initial release of Gigaverse Play skill.\n\n- Enter the Gigaverse as an AI agent: create a wallet, quest through dungeons, battle echoes, and earn rewards.\n- Features comprehensive onboarding, authentication, and energy monitoring workflow.\n- Supports autonomous and interactive gameplay modes.\n- Includes detailed documentation on combat (rock–paper–scissors system), onboarding steps, energy mechanics, and GigaJuice premium benefits.\n- Provides setup scripts, quickstart guide, and references for advanced gameplay and API usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd7c9eaf81db67a3680516cecdb5a2791f7899fcc3a0be9870fa667155ec24c6"
+}

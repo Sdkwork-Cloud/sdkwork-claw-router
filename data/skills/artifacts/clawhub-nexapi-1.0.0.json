@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexapi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexapi",
+  "skill": {
+    "id": 59788,
+    "skillKey": "clawhub-nexapi",
+    "name": "Nexapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexapi",
+    "url": "https://clawhub.ai/skills/nexapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexapi-a1cd3e05844e18b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NexAPI 工具类接口调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avrinbai",
+      "userId": "s179b6hmfk2qrgffacfq5cna0n85jn40",
+      "displayName": "Avrinbai",
+      "image": "https://avatars.githubusercontent.com/u/42914528?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777177262013,
+      "changelog": "NexAPI Skill 1.0.0 – Initial Release\n\n- 提供 NexAPI 工具类接口的高效调用能力，极致优化网络请求、输出和 token 消耗\n- 标准化执行流程：意图识别、Key 检查、智能缓存、接口选择与参数确认\n- 本地缓存和 TTL 策略支持，降低重复 API 拉取和输出量\n- 支持常用接口（如 ip 查询、视频解析等）直达调用\n- 严格限制输出结构，默认精简，需完整响应时需加 --verbose\n- 明确安全与配置要求，禁止把 Key 写入脚本，支持环境变量与本地文件",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71eb9855bb91a184b4c041225aef9d107defeb5379529ac0e5bfdcf3a698fd36"
+}

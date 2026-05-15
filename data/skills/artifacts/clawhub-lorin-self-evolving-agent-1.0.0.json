@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lorin-self-evolving-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lorin_self_evolving_agent",
+  "skill": {
+    "id": 59137,
+    "skillKey": "clawhub-lorin-self-evolving-agent",
+    "name": "Self-Evolving Agent (Lorin)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lorin-self-evolving-agent",
+    "url": "https://clawhub.ai/skills/lorin-self-evolving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lorin-self-evolving-agent-cbd3067102376096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自我进化智能体 — 自动捕获错误+主动提炼经验+自动生成SKILL，三位一体持续进化。灵感来源：Hermes Agent skill_manage + pskoett self-improving-agent"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorinwei",
+      "userId": "s1733tyb59vqwrwmm0zy5k78en83s29v",
+      "displayName": "lorinwei",
+      "image": "https://avatars.githubusercontent.com/u/100334628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775913119463,
+      "changelog": "Combined skill_evolve + pskoett/self-improving-agent: 3-layer闭环 - Hook自动捕获 + Skill进化 + Promote升华",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f55249a8795e2f63d9dc74437ed78974b832a5853ee20a7d69c541d3033a5746"
+}

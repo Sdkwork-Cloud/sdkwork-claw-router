@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60859,
+  "uuid": "skill-clawhub-onelap-ride-download",
+  "skillKey": "clawhub-onelap-ride-download",
+  "name": "onelap-ride-download",
+  "summary": "从顽鹿竞技 (Onelap) 下载骑行记录 FIT 文件。用于批量导出用户的骑行数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onelap_ride_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "码代码的猿猿",
+      "features": [
+        "从顽鹿竞技 (Onelap) 下载骑行记录 FIT 文件。用于批量导出用户的骑行数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onelap-ride-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4272491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onelap-ride-download",
+      "url": "https://clawhub.ai/skills/onelap-ride-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onelap-ride-download",
+    "url": "https://clawhub.ai/skills/onelap-ride-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onelap-ride-download-d83492b30fcd8541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onelap-ride-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onelap-ride-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d4981e8faad5bfc785b590e8f732ae9ea6622b89f636a39736ecc6a31b50831",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:08:41.944Z"
+}

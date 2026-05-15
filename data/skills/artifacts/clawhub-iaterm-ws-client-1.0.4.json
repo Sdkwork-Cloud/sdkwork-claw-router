@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iaterm-ws-client@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iaterm_ws_client",
+  "skill": {
+    "id": 25510,
+    "skillKey": "clawhub-iaterm-ws-client",
+    "name": "IATerm WebSocket Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iaterm-ws-client",
+    "url": "https://clawhub.ai/skills/iaterm-ws-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iaterm-ws-client-249c8c03a29177db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with IATerm terminals via the local WebSocket API (ws://127.0.0.1:19790/ws). Use when the user asks to list workspaces, displays, or panels, view ac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sutaixu",
+      "userId": "publishers:sutaixu",
+      "displayName": "sutaixu",
+      "image": "https://avatars.githubusercontent.com/u/6648687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773389903866,
+      "changelog": "Version 1.0.4\n\n- No code or documentation changes detected in this release.\n- Functionality and interface remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30c900db8793aeb5b9acf74bb4056483576c7fb614ab24e054f25677d28a42f6"
+}

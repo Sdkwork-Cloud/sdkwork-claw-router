@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34045,
+  "uuid": "skill-clawhub-archbee",
+  "skillKey": "clawhub-archbee",
+  "name": "Archbee",
+  "summary": "Archbee integration. Manage data, records, and automate workflows. Use when the user wants to interact with Archbee data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archbee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Archbee integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Archbee data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archbee@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archbee",
+      "url": "https://clawhub.ai/skills/archbee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archbee",
+    "url": "https://clawhub.ai/skills/archbee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archbee-f62b16bae007a8c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archbee@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-archbee-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a338254a59f1cea6394ad1254a3c667af94502b488e5731d922dbe640811680",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:50.163Z"
+}

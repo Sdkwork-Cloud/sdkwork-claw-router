@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-security-engineer@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_security_engineer",
+  "skill": {
+    "id": 12177,
+    "skillKey": "clawhub-cyber-security-engineer",
+    "name": "Cyber Security Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-security-engineer",
+    "url": "https://clawhub.ai/skills/cyber-security-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-security-engineer-9a4bb1428ac4ad63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security engineering workflow for OpenClaw privilege governance and hardening. Use for least-privilege execution, approval-first privileged actions, idle tim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fletcherfrimpong",
+      "userId": "s1760j6tbd1r9g3hbjrr6vk6cd83pfen",
+      "displayName": "FletcherFrimpong",
+      "image": "https://avatars.githubusercontent.com/u/44358531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1773,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1774653914722,
+      "changelog": "Sudo shim is now opt-in (not installed by default). LaunchAgent plist modification requires interactive confirmation. Bootstrap logs explain how to enable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82dd5c62ca555bda068c13b42ec06c89eec3808201f39336bd5583671e1f4f99"
+}

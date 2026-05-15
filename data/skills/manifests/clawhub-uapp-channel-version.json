@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65837,
+  "uuid": "skill-clawhub-uapp-channel-version",
+  "skillKey": "clawhub-uapp-channel-version",
+  "name": "渠道与版本分析查询",
+  "summary": "友盟 U-App 渠道/版本分析技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 5 个只读查询接口，涵盖渠道/版本单日快照与渠道/版本的启动次数、活跃用户、新增用户趋势分析。当用户需要查询各渠道或版本表现对比、单个渠道/版本的趋势时使用。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_channel_version",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umeng+",
+      "features": [
+        "友盟 U-App 渠道/版本分析技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 5 个只读查询接口，涵盖渠道/版本单."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapp-channel-version@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195273084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapp-channel-version",
+      "url": "https://clawhub.ai/skills/uapp-channel-version"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-channel-version",
+    "url": "https://clawhub.ai/skills/uapp-channel-version",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-channel-version-15b9d90cb37398d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapp-channel-version@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapp-channel-version-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fbc9aa63d45532fa2186d6dbe50e0a8d8f38eedb1fc8382b93d25b360eb4e98",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:37:11.532Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12999,
+  "uuid": "skill-clawhub-agent-skills-tools",
+  "skillKey": "clawhub-agent-skills-tools",
+  "name": "Agent Skills Tools",
+  "summary": "Security audit and validation tools for the Agent Skills ecosystem. Scan skill packages for common vulnerabilities like credential leaks, unauthorized file access, and Git history secrets. Use when you need to audit skills for security bef.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_skills_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rongself",
+      "features": [
+        "Security audit and validation tools for the Agent Skills ecosystem",
+        "Scan skill packages for common vulnerabilities like credential leaks, unauthorized file access,.",
+        "Use when you need to audit skills for security before installation, validate skill packages aga."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-skills-tools@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3364626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-skills-tools",
+      "url": "https://clawhub.ai/skills/agent-skills-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-skills-tools",
+    "url": "https://clawhub.ai/skills/agent-skills-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-skills-tools-4396b43f516866ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-skills-tools@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-skills-tools-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77d6744e03d8e76f517330539273960c01549c7f808ab3167283c5bda7f67176",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T15:39:19.918Z"
+}

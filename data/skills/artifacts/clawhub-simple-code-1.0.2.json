@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simple-code@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_code",
+  "skill": {
+    "id": 22419,
+    "skillKey": "clawhub-simple-code",
+    "name": "Simple Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-code",
+    "url": "https://clawhub.ai/skills/simple-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-code-88a9a4d9f5c86e53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and build small, readable coding projects in three reliable modes: start, continue, and review. Think first, make a short plan, then delegate implementa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyharry",
+      "userId": "s1791dsxaskb2ycq4gek2dvvh183ejmp",
+      "displayName": "Yi",
+      "image": "https://avatars.githubusercontent.com/u/9788834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775760480603,
+      "changelog": "Refine simple coding workflow guidance for start, continue, and review modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f60b5e8c0f9b87eae66879561c98f6d81165ff7e8bde729e0fe190fb3c11b89"
+}

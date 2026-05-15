@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62481,
+  "uuid": "skill-clawhub-eo-ability-code-review",
+  "skillKey": "clawhub-eo-ability-code-review",
+  "name": "Eo Ability Code Review",
+  "summary": "代码审查能力，调用CodeReviewer专家进行安全、性能、风格全面审查，输出问题列表和改进建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eo_ability_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "467718584",
+      "features": [
+        "代码审查能力，调用CodeReviewer专家进行安全、性能、风格全面审查，输出问题列表和改进建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eo-ability-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57902585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eo-ability-code-review",
+      "url": "https://clawhub.ai/skills/eo-ability-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eo-ability-code-review",
+    "url": "https://clawhub.ai/skills/eo-ability-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eo-ability-code-review-70bc86dd9437be04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eo-ability-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eo-ability-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9641a1988f92a84c949056a568eb391e7952fb1ddfacc506a7e329d974ac2065",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:00:08.438Z"
+}

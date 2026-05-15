@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23295,
+  "uuid": "skill-clawhub-feishu-bot-send-image",
+  "skillKey": "clawhub-feishu-bot-send-image",
+  "name": "Feishu Send Image",
+  "summary": "Send images directly in Feishu chat as native image messages (not file attachments). Use when: need to send a generated image, chart, screenshot, or any loca...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_send_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PL Uncle",
+      "features": [
+        "Send images directly in Feishu chat as native image messages (not file attachments)",
+        "Use when: need to send a generated image, chart, screenshot, or any loca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bot-send-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10780985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bot-send-image",
+      "url": "https://clawhub.ai/skills/feishu-bot-send-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-send-image",
+    "url": "https://clawhub.ai/skills/feishu-bot-send-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-send-image-20b4302cb07cb384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bot-send-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bot-send-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1903ce59265a49b9d222ea8f8984e42005abd6a2a203bcf9311dc3d84ee65144",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:06:03.326Z"
+}

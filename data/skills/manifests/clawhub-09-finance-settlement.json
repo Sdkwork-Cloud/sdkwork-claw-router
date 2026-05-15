@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69877,
+  "uuid": "skill-clawhub-09-finance-settlement",
+  "skillKey": "clawhub-09-finance-settlement",
+  "name": "09 Finance Settlement",
+  "summary": "社区团购财务与结算全链路技能包。涵盖平台盈利模型、团长佣金结算、供应商采购结算、资金流管理及配套工具。适用于平台财务负责人、运营管理者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.09_finance_settlement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "社区团购财务与结算全链路技能包。涵盖平台盈利模型、团长佣金结算、供应商采购结算、资金流管理及配套工具。适用于平台财务负责人、运营管理者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/09-finance-settlement@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "09-finance-settlement",
+      "url": "https://clawhub.ai/skills/09-finance-settlement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "09-finance-settlement",
+    "url": "https://clawhub.ai/skills/09-finance-settlement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/09-finance-settlement-8c00348d29e84aba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/09-finance-settlement@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-09-finance-settlement-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaa60208617bccbcd0bd26d580985f71fd8c0eca68242376d8f7adac3ae6c4b0",
+      "artifactSizeBytes": 2593
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T14:42:33.358Z"
+}

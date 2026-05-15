@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72387,
+  "uuid": "skill-clawhub-01-ai",
+  "skillKey": "clawhub-01-ai",
+  "name": "01 Ai",
+  "summary": "整理零一万物大模型公开页面信息，包括模型能力、定价、文档目录与示例链接的检索与摘要。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.01_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "整理零一万物大模型公开页面信息，包括模型能力、定价、文档目录与示例链接的检索与摘要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/01-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "01-ai",
+      "url": "https://clawhub.ai/skills/01-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "01-ai",
+    "url": "https://clawhub.ai/skills/01-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/01-ai-4f27ea294089dc34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/01-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-01-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1435e96a773d5ade87082c0cdccc23d05ad18355d3f3059505eba290850198c5",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:11:06.746Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prada-milan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prada_milan",
+  "skill": {
+    "id": 48197,
+    "skillKey": "clawhub-prada-milan",
+    "name": "Prada Milan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prada-milan",
+    "url": "https://clawhub.ai/skills/prada-milan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prada-milan-ae2f0b4587cbba3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into Prada's history, design innovations, business model, and its impact on the global luxury fashion industry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778008000838,
+      "changelog": "- 首次发布 Prada 品牌技能，涵盖品牌历史、商业模式及创新设计哲学  \n- 详尽历史时间线，从1913年创立到近期重大里程碑  \n- 深入分析家族企业到上市公司、尼龙包颠覆及核心护城河  \n- 提供2023年关键营收及门店数据  \n- 精选有趣事实，介绍 Miuccia Prada 背景及艺术文化参与",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9f11e99dfb767df2c105ee8123abcdcce5815da3ecdad261bb9c1fdc7f3ba58"
+}

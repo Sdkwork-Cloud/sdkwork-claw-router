@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-search-fast@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_search_fast",
+  "skill": {
+    "id": 19422,
+    "skillKey": "clawhub-flight-search-fast",
+    "name": "Google Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-search-fast",
+    "url": "https://clawhub.ai/skills/flight-search-fast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-search-fast-7a2264e622ccdccc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google Flights for flight prices and schedules using browser automation. Use when user asks to search flights, find airfare, compare prices, check fli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skillhq-ai",
+      "userId": "s170mz62e9kg0yg49p4x2z6wzd84rjra",
+      "displayName": "skillhq-ai",
+      "image": "https://avatars.githubusercontent.com/u/257330909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776044197440,
+      "changelog": "Optimize for domestic flights: economy-only default, fewer tool calls\n\nDomestic US flights now skip the business class comparison (3-5x price,\nrarely useful) and use 2 tool calls instead of 4+. International flights\nstill get the full economy + business delta with parallel snapshots.\n\nCo-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edb3440c6118bb6701c58c8e217a7f99c0df1769a90a6f7d579e0ddc2859e246"
+}

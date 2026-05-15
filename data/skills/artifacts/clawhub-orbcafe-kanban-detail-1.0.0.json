@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orbcafe-kanban-detail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orbcafe_kanban_detail",
+  "skill": {
+    "id": 43713,
+    "skillKey": "clawhub-orbcafe-kanban-detail",
+    "name": "orbcafe-kanban-detail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orbcafe-kanban-detail",
+    "url": "https://clawhub.ai/skills/orbcafe-kanban-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orbcafe-kanban-detail-13d04937e395e8d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build ORBCAFE Kanban boards with CKanbanBoard/CKanbanBucket/CKanbanCard/useKanbanBoard and wire card clicks into DetailInfo using official examples patterns...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775147969831,
+      "changelog": "- Major update: Focus shifted from generic UI module routing to specialized Kanban board creation and detail linking.\n- Updated description and examples to emphasize Kanban board workflows using CKanbanBoard, card drag/drop, and detail integration.\n- All previous generic reference and contract files removed; replaced with targeted guardrails and recipes for Kanban-specific flows.\n- Output contract now centers on providing minimal Hook-first Kanban implementation, with clear verification and troubleshooting steps for Kanban and DetailInfo behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:416b55a76a9e0a5770c5fe2c2049edbc4c372a95e4127a8eb815ca077a714785"
+}

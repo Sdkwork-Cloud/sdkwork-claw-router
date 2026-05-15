@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54723,
+  "uuid": "skill-clawhub-trust-my-agent-ai",
+  "skillKey": "clawhub-trust-my-agent-ai",
+  "name": "TrustMyAgent",
+  "summary": "🛡️ TrustMyAgent - Security posture monitoring for AI agents. Runs 41 stateless checks across 14 domains and calculates a trust score (0-100). Supports local...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_my_agent_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anecdotes-Yair",
+      "features": [
+        "🛡️ TrustMyAgent",
+        "Security posture monitoring for AI agents",
+        "Runs 41 stateless checks across 14 domains and calculates a trust score (0-100)",
+        "Supports local..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trust-my-agent-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66201365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trust-my-agent-ai",
+      "url": "https://clawhub.ai/skills/trust-my-agent-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-my-agent-ai",
+    "url": "https://clawhub.ai/skills/trust-my-agent-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-my-agent-ai-89bb9c4427e28052.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trust-my-agent-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trust-my-agent-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0b76ea1018adf4a879dd9e5b6ee65ade6ecd1900c34d7e7f0e840bf1c329518",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T12:57:12.756Z"
+}

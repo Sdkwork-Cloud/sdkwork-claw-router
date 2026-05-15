@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dupe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dupe",
+  "skill": {
+    "id": 13057,
+    "skillKey": "clawhub-dupe",
+    "name": "Dupe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dupe",
+    "url": "https://clawhub.ai/skills/dupe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dupe-4356f4252f6d90ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uses dupe.com APIs in order to find similar products for the product found in the input URL given by the user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crisanmm",
+      "userId": "publishers:crisanmm",
+      "displayName": "crisanmm",
+      "image": "https://avatars.githubusercontent.com/u/61682879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1162,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770667260224,
+      "changelog": "Initial release of the dupe skill.\n\n- Provides commands to find similar products using dupe.com APIs via curl, supporting both product and image URLs.\n- Allows customization of the number of results with an optional limit parameter.\n- Returns detailed product match results, including title, price, store, and link.\n- Includes clear formatting instructions for presenting API results to users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d08b2ed5f09bf3355d82d5df7d8f084cbc084475b0d76cf893f54cd486f38a28"
+}

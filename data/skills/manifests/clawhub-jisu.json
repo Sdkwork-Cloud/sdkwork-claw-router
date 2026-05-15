@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66651,
+  "uuid": "skill-clawhub-jisu",
+  "skillKey": "clawhub-jisu",
+  "name": "Summary of JisuAPI - 极速数据API汇总",
+  "summary": "统一入口：一个 Key 调用多类极速数据接口（天气、黄金、股票、快递等），通过 call 路由。当用户说：用同一个接口查天气又查黄金、不想配很多个 skill，或类似一站式数据网关时，使用本技能。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "统一入口：一个 Key 调用多类极速数据接口（天气、黄金、股票、快递等），通过 call 路由。当用户说：用同一个接口查天气又查黄金、不想配很多个 skill，或类似一站式数据网关时，使用本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisu@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisu",
+      "url": "https://clawhub.ai/skills/jisu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu",
+    "url": "https://clawhub.ai/skills/jisu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-e5d26dd3d532c337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisu@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisu-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92152b1dfd00cbe8ad3b78d3e924dbb93e007a5b86dc23f512201fbf5d39993f",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:17:58.199Z"
+}

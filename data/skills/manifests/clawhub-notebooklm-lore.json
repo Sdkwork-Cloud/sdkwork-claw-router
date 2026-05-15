@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49806,
+  "uuid": "skill-clawhub-notebooklm-lore",
+  "skillKey": "clawhub-notebooklm-lore",
+  "name": "notebooklm-lore",
+  "summary": "OpenClaw skill wrapper for installing and operating Lore (NotebookLM automation toolkit) via CLI + MCP.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_lore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Prantik Medhi",
+      "features": [
+        "OpenClaw skill wrapper for installing and operating Lore (NotebookLM automation toolkit) via CL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-lore@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140103052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-lore",
+      "url": "https://clawhub.ai/skills/notebooklm-lore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-lore",
+    "url": "https://clawhub.ai/skills/notebooklm-lore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-lore-e75614dff8161cf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-lore@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-lore-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e48af489400dd82a2e84524293d0464575791406f1a93ecd6212d932089e581f",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T04:33:23.114Z"
+}

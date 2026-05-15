@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63482,
+  "uuid": "skill-clawhub-guide-creator",
+  "skillKey": "clawhub-guide-creator",
+  "name": "revol-guide-creator",
+  "summary": "通用项目文档指南生成器：为任何项目创建和维护标准化的 guide 文档体系（start.md + guide/ 目录），覆盖设计理念、技术架构、更新日志、踩坑记录等完整生命周期。支持三种模式：(1) 初始化模式 — 一键创建标准化文档骨架；(2) 更新模式 — 追加 changelog/pitfalls/版本号同...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guide_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RevolGMPHL",
+      "features": [
+        "通用项目文档指南生成器：为任何项目创建和维护标准化的 guide 文档体系（start.md + guide/ 目录），覆盖设计理念、技术架构、更新日志、踩坑记录等完整生命周期。支持三种模式."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guide-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39905085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guide-creator",
+      "url": "https://clawhub.ai/skills/guide-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guide-creator",
+    "url": "https://clawhub.ai/skills/guide-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guide-creator-6c59df8db259121c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guide-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guide-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da6dc7576bc1948ebe9521f636dd9398a126e89908181e3efa9f75fae55c80d4",
+      "artifactSizeBytes": 2720
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T06:24:10.903Z"
+}

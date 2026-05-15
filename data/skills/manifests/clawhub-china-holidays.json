@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71089,
+  "uuid": "skill-clawhub-china-holidays",
+  "skillKey": "clawhub-china-holidays",
+  "name": "China Holidays",
+  "summary": "获取中国国家法定节假日安排。当用户询问\"节假日安排\"、\"放假通知\"、\"某年节假日\"、\"法定假日\"、\"调休安排\"时使用。支持查询任意年份的元旦、春节、清明节、劳动节、端午节、中秋节、国庆节放假调休安排。未指定年份时默认查询当年。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_holidays",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xzxiaoshan",
+      "features": [
+        "获取中国国家法定节假日安排。当用户询问\"节假日安排\"、\"放假通知\"、\"某年节假日\"、\"法定假日\"、\"调休安排\"时使用。支持查询任意年份的元旦、春节、清明节、劳动节、端午节、中秋节、国庆节放假."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-holidays@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16459864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-holidays",
+      "url": "https://clawhub.ai/skills/china-holidays"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-holidays",
+    "url": "https://clawhub.ai/skills/china-holidays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-holidays-7e83060c47f12862.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-holidays@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-holidays-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90c64104b7894270e6ad872efdddd99c2465274b3214f08d2dd5487ae0d2fcf7",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:58:29.544Z"
+}

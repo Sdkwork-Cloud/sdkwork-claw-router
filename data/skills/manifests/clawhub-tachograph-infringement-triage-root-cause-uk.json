@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15898,
+  "uuid": "skill-clawhub-tachograph-infringement-triage-root-cause-uk",
+  "skillKey": "clawhub-tachograph-infringement-triage-root-cause-uk",
+  "name": "Tachograph Triage & Root-Cause Prompts (UK)",
+  "summary": "Triages tachograph infringements, identifies common patterns, and outputs “what to check next” prompts and weekly review notes. USE WHEN doing weekly tacho/WTD reviews.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tachograph_infringement_triage_root_cause_uk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KOwl64",
+      "features": [
+        "Triages tachograph infringements, identifies common patterns, and outputs “what to check next”.",
+        "USE WHEN doing weekly tacho/WTD reviews."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tachograph-infringement-triage-root-cause-uk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59417033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tachograph-infringement-triage-root-cause-uk",
+      "url": "https://clawhub.ai/skills/tachograph-infringement-triage-root-cause-uk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tachograph-infringement-triage-root-cause-uk",
+    "url": "https://clawhub.ai/skills/tachograph-infringement-triage-root-cause-uk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tachograph-infringement-triage-root-cause-uk-c578e968efc74ae2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tachograph-infringement-triage-root-cause-uk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tachograph-infringement-triage-root-cause-uk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fabbeb7e7bc52d4bcbd921c1501c37df3fdfe47a56c3676d094d8205ba871fd3",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T14:38:59.717Z"
+}

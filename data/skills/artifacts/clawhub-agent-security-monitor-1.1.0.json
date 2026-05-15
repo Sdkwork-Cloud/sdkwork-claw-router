@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-security-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_monitor",
+  "skill": {
+    "id": 11517,
+    "skillKey": "clawhub-agent-security-monitor",
+    "name": "Agent Security Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-monitor",
+    "url": "https://clawhub.ai/skills/agent-security-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-monitor-721d4170854590be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security monitoring and alerting tool for AI agents. Automatically checks for exposed secrets, unverified skills, insecure keys, suspicious commands, and mal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suzxclaw",
+      "userId": "publishers:suzxclaw",
+      "displayName": "suzxclaw",
+      "image": "https://avatars.githubusercontent.com/u/260190635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1887,
+      "installsAllTime": 13,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771146100631,
+      "changelog": "Added permission manifest validation (isnad-inspired maṣlaḥah test), false-positive filtering, supply chain protection, enhanced log sanitization detection, script permission checks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3ae03d8bfeee7c9bdfa36e516d9d38f5c9b2bde264f1c9e1adcf987950312f4"
+}

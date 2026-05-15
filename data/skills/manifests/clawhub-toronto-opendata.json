@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39804,
+  "uuid": "skill-clawhub-toronto-opendata",
+  "skillKey": "clawhub-toronto-opendata",
+  "name": "City of Toronto Open Data",
+  "summary": "Access 537+ datasets from the City of Toronto open data portal. Search, fetch, and analyze city data on transit, traffic, housing, environment, and more via...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toronto_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 537+ datasets from the City of Toronto open data portal",
+        "Search, fetch, and analyze city data on transit, traffic, housing, environment, and more via..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toronto-opendata@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toronto-opendata",
+      "url": "https://clawhub.ai/skills/toronto-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toronto-opendata",
+    "url": "https://clawhub.ai/skills/toronto-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toronto-opendata-d625d40b390550fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toronto-opendata@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-toronto-opendata-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:463ccb51a399e35741585975617a34ebe02070da2931439dab1954727470fc80",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:30:26.353Z"
+}

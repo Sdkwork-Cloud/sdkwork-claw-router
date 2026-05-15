@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33654,
+  "uuid": "skill-clawhub-x-prospecting",
+  "skillKey": "clawhub-x-prospecting",
+  "name": "X/Twitter Prospecting",
+  "summary": "Find and engage potential leads on X (Twitter) by searching for keywords and buying-intent posts via Brave Search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_prospecting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbopps",
+      "features": [
+        "Find and engage potential leads on X (Twitter) by searching for keywords and buying-intent post."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-prospecting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130667201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-prospecting",
+      "url": "https://clawhub.ai/skills/x-prospecting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-prospecting",
+    "url": "https://clawhub.ai/skills/x-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-prospecting-a94eaedcc4db0c81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-prospecting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-prospecting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f48ed40a7e7158933cf5f4f2b321cff9ad1066d24e3992716b02ac4f40288bb",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:15:43.005Z"
+}

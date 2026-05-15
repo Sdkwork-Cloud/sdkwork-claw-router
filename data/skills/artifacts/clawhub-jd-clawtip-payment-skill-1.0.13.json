@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-clawtip-payment-skill@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_clawtip_payment_skill",
+  "skill": {
+    "id": 22292,
+    "skillKey": "clawhub-jd-clawtip-payment-skill",
+    "name": "jd-clawtip-payment-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-clawtip-payment-skill",
+    "url": "https://clawhub.ai/skills/jd-clawtip-payment-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-clawtip-payment-skill-767d80d5535ae09d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes a jd-clawtip payment transaction for third-party skills. Trigger this tool strictly when a third-party service initiates a valid jd-clawtip payment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingyeyouran",
+      "userId": "s179qaevp1bqr2grb7vyxw2zys83ksk7",
+      "displayName": "ClawTip.team",
+      "image": "https://avatars.githubusercontent.com/u/43158513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1774851807879,
+      "changelog": "No code or documentation changes detected in this release.\n\n- Version incremented to 1.0.13 with no file changes.\n- No impact on usage or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9777d44007ede6d591809bb6a8a2d03da22bdbbebe45d4f78b0afba1e7d0dc73"
+}

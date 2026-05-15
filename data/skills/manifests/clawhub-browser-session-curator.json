@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29356,
+  "uuid": "skill-clawhub-browser-session-curator",
+  "skillKey": "clawhub-browser-session-curator",
+  "name": "browser-session-curator",
+  "summary": "Turn an overwhelming set of tabs, bookmarks, and snippets into a structured session digest with tasks, reading queue, and archive plan.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_session_curator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "Turn an overwhelming set of tabs, bookmarks, and snippets into a structured session digest with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-session-curator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-session-curator",
+      "url": "https://clawhub.ai/skills/browser-session-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-session-curator",
+    "url": "https://clawhub.ai/skills/browser-session-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-session-curator-8a573f2ce529d1d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-session-curator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-session-curator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25147188ee65f26b8535a2a4a2e2b1d2a379bbc66f4c9b30453746537da29d34",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:27:36.251Z"
+}

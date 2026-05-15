@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slide-editor@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slide_editor",
+  "skill": {
+    "id": 58295,
+    "skillKey": "clawhub-slide-editor",
+    "name": "Slide Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slide-editor",
+    "url": "https://clawhub.ai/skills/slide-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slide-editor-5320ae0d8a311021.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visual editor for HTML presentations. Self-contained, offline-capable, designed for AI agent control. HTML 演示文稿可视化编辑器，自包含可离线，支持 AI Agent 控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dtacheng",
+      "userId": "s17bg152wk3rk1rf4vpekm44x583r0hz",
+      "displayName": "DTacheng",
+      "image": "https://avatars.githubusercontent.com/u/191015020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773507484910,
+      "changelog": "- Added multi-language (i18n) support infrastructure.\n- Changed quickstart and CLI instructions to use `bun` for installing, building, and running the injector, with prerequisites and platform-specific notes.\n- Updated documentation for improved clarity, including installation and workflow details.\n- Added new test HTML files for debugging and cleaner presentation testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdab75853d917be7a543ee5e1a87e1dc7704a9c0ba3ae88709c6f9279ba50a41"
+}

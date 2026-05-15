@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_free",
+  "skill": {
+    "id": 40711,
+    "skillKey": "clawhub-maker-free",
+    "name": "Maker Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-free",
+    "url": "https://clawhub.ai/skills/maker-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-free-af1479c47f95aa54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get finished video files ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775946247003,
+      "changelog": "- Initial public release of Maker Free, a cloud-based video creation and export tool for fast, free editing.\n- Supports uploading raw video clips (MP4, MOV, AVI, WebM, up to 500MB) and generating finished 1080p MP4 videos with music and transitions using simple prompts.\n- Anonymous login with 100 free credits (valid for 7 days); automatic backend setup and session management.\n- Handles video processing, editing instructions, downloads, and format conversions via cloud GPU.\n- Includes transparent error handling, status updates, and detailed API mappings for common workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:670133d3792e1f83100e4889665a0fc9a21668184460590d30231d715f435dc6"
+}

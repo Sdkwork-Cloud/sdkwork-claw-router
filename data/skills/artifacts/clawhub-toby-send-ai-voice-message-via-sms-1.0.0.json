@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-send-ai-voice-message-via-sms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_send_ai_voice_message_via_sms",
+  "skill": {
+    "id": 42163,
+    "skillKey": "clawhub-toby-send-ai-voice-message-via-sms",
+    "name": "send-ai-voice-message-via-sms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-send-ai-voice-message-via-sms",
+    "url": "https://clawhub.ai/skills/toby-send-ai-voice-message-via-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-send-ai-voice-message-via-sms-506626e98074e408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a personalized message, converts to natural speech, and sends as an SMS notification with audio link. Use when sending voice notifications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012319189,
+      "changelog": "Initial release of the \"Send AI Voice Message via SMS\" skill.\n\n- Generates personalized messages, converts them to natural speech, and sends as SMS notifications with an audio link.\n- Designed for use in customer communication, especially for business owners and operations managers.\n- Utilizes chat, text-to-speech (TTS), and SMS verification APIs.\n- Includes workflow and prompt suggestions for efficient, actionable output.\n- Skill details, best practices, and SEO keywords included for easy discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1924572b9f89f2f603254659f7afe3afc7f5cefa2f6234416c2aba64fca81b07"
+}

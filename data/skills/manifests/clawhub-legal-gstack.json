@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70980,
+  "uuid": "skill-clawhub-legal-gstack",
+  "skillKey": "clawhub-legal-gstack",
+  "name": "Legal Gstack",
+  "summary": "法律工作流程自动化套件。8 个专家角色：法律检索、文书起草、证据分析、庭审准备、直播运营、客户接待、利益冲突审查、案件管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_gstack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarcoChen823",
+      "features": [
+        "法律工作流程自动化套件。8 个专家角色：法律检索、文书起草、证据分析、庭审准备、直播运营、客户接待、利益冲突审查、案件管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-gstack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126429751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-gstack",
+      "url": "https://clawhub.ai/skills/legal-gstack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-gstack",
+    "url": "https://clawhub.ai/skills/legal-gstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-gstack-aaf76b0fc7b21d69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-gstack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-gstack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbe4a40bb296cc6f25cbb19a60d8c3d00ebceda9b7d5b09dec736914de59fb6e",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:26:26.980Z"
+}

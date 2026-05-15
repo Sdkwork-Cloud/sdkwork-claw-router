@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11493,
+  "uuid": "skill-clawhub-ttt",
+  "skillKey": "clawhub-ttt",
+  "name": "Tiny Talking Todos",
+  "summary": "Manage TinyTalkingTodos lists and items via the ttt CLI",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joshuacrowley",
+      "features": [
+        "Manage TinyTalkingTodos lists and items via the ttt CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ttt@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/312676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ttt",
+      "url": "https://clawhub.ai/skills/ttt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttt",
+    "url": "https://clawhub.ai/skills/ttt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttt-3f7c54571faee024.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ttt@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ttt-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b41430df7f3135a285671d829e54c2c49ca0a06beef40617178754198c75fe0",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T11:31:05.769Z"
+}

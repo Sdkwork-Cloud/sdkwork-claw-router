@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52064,
+  "uuid": "skill-clawhub-statb",
+  "skillKey": "clawhub-statb",
+  "name": "Agent Dashboard — real-time progress board for any task",
+  "summary": "Push real-time progress and key metrics to a live statb.io dashboard during any long-running task. Use this skill whenever the agent is performing work that...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.statb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianlong2005",
+      "features": [
+        "Push real-time progress and key metrics to a live statb.io dashboard during any long-running ta.",
+        "Use this skill whenever the agent is performing work that..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/statb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54908481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "statb",
+      "url": "https://clawhub.ai/skills/statb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "statb",
+    "url": "https://clawhub.ai/skills/statb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/statb-25f8098d7b28e977.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/statb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-statb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21fe7990d839087522e1f68b33e6d486a3bce31fdc94c4d91b5d74342bcd30d9",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:54:34.146Z"
+}

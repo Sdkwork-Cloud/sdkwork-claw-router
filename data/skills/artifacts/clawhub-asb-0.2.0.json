@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asb@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asb",
+  "skill": {
+    "id": 59429,
+    "skillKey": "clawhub-asb",
+    "name": "Asb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asb",
+    "url": "https://clawhub.ai/skills/asb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asb-0ca95a6716edcdc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Service Bus - 智能服务编排和协作平台，通过 MCP Server 集成所有 ASB 能力"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiyueqiu",
+      "userId": "s17d7bsw31qsd8z4v73k9j6j8s83qdw5",
+      "displayName": "qiyueqiu",
+      "image": "https://avatars.githubusercontent.com/u/95924501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774938188523,
+      "changelog": "- Added SKILL.md with detailed documentation on ASB usage, integration, and available tools.\n- Introduced quick start instructions for using ASB with Claude Desktop.\n- Listed core ASB features and general utilities with descriptions.\n- Provided examples for MCP Server integration, A2A Agent collaboration, and CLI usage.\n- Included installation steps and links to further resources.\n- Updated metadata for supported platforms and installation requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a56409f14387403a0f07f61ab3f9fabd183a6aeabff0ff3752bd15480e720e0e"
+}

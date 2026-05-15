@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-to-speech@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_to_speech",
+  "skill": {
+    "id": 61762,
+    "skillKey": "clawhub-ppt-to-speech",
+    "name": "PPT to Speech Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-to-speech",
+    "url": "https://clawhub.ai/skills/ppt-to-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-to-speech-4fb2cc709b577780.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 PPT/PPTX 文件转换为结构化演讲稿。当用户说\"帮我整理这份PPT\"、\"把这个PPT转成演讲稿/文章\"、\"提取PPT内容\"、\"生成演讲稿\"、\"PPT转markdown\"、\"分析这份幻灯片\"，或提供了 .pptx 文件路径并要求处理时，立即使用此 skill。无需用户配置任何 API Key，由 Agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qigaiai",
+      "userId": "s170qw869h13vcp6bg2c1yahth83m8yh",
+      "displayName": "qigaiAI",
+      "image": "https://avatars.githubusercontent.com/u/244190097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774515797171,
+      "changelog": "- 新增依赖说明，详细介绍 LibreOffice 和 poppler-utils 的自动下载及路径处理方式\n- 说明首次运行时依赖下载过程、网络和权限要求，提升用户知情度和操作可控性\n- 明确告知如不愿自动下载，用户可手动安装并配置环境\n- 其余使用流程、输出规范与注意事项未做变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d9cef46e2f11aecaa7136d86bc35bbf2d2c6cff1843c0c632f917b03a70b6b8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-generation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_generation",
+  "skill": {
+    "id": 8642,
+    "skillKey": "clawhub-image-generation",
+    "name": "AI Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-generation",
+    "url": "https://clawhub.ai/skills/image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-generation-1b18d6aa1cfbad5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI images with GPT Image, Gemini Nano Banana, FLUX, Imagen, and top providers using prompt engineering, style control, and smart editing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7853,
+      "installsAllTime": 88,
+      "installsCurrent": 80,
+      "stars": 9,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772451932596,
+      "changelog": "Updated for 2026 with benchmark-backed model selection and clearer guidance for modern image generation stacks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7a0dbfccdaafd3048b7500f06e68bfc7e3ba07ff9633ce0e3b7f861365b4226"
+}

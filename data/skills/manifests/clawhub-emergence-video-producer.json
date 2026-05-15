@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48639,
+  "uuid": "skill-clawhub-emergence-video-producer",
+  "skillKey": "clawhub-emergence-video-producer",
+  "name": "Emergence Video Producer",
+  "summary": "Automated video production pipeline for product demos and academic tutorials. Uses WebReel for browser recording, DashScope/Edge-TTS for narration, and FFmpe...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_video_producer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emergencescience",
+      "features": [
+        "Automated video production pipeline for product demos and academic tutorials",
+        "Uses WebReel for browser recording, DashScope/Edge-TTS for narration, and FFmpe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emergence-video-producer@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264674637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emergence-video-producer",
+      "url": "https://clawhub.ai/skills/emergence-video-producer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-video-producer",
+    "url": "https://clawhub.ai/skills/emergence-video-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-video-producer-9808a24436b66890.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emergence-video-producer@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-emergence-video-producer-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:847b9f0133e496fb9c9c3a110d5df697d0273074ddf6b9e5872aac3b218fde71",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T10:09:19.184Z"
+}

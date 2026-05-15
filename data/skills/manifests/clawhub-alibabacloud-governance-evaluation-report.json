@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37013,
+  "uuid": "skill-clawhub-alibabacloud-governance-evaluation-report",
+  "skillKey": "clawhub-alibabacloud-governance-evaluation-report",
+  "name": "Alibabacloud Governance Evaluation Report",
+  "summary": "Alibaba Cloud Governance Center evaluation report skill. Use for querying governance maturity check results, generating structured risk reports, and account...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_governance_evaluation_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Governance Center evaluation report skill",
+        "Use for querying governance maturity check results, generating structured risk reports, and acc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-governance-evaluation-report@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-governance-evaluation-report",
+      "url": "https://clawhub.ai/skills/alibabacloud-governance-evaluation-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-governance-evaluation-report",
+    "url": "https://clawhub.ai/skills/alibabacloud-governance-evaluation-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-governance-evaluation-report-59e31640b6323e3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-governance-evaluation-report@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-governance-evaluation-report-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b407c6d18c8c11bb4d3e937f4542dfa2f809c52c8b34af423dc477cacfc410b1",
+      "artifactSizeBytes": 2644
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:56:31.785Z"
+}

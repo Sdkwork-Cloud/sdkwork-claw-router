@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63184,
+  "uuid": "skill-clawhub-claw-graceful-recovery",
+  "skillKey": "clawhub-claw-graceful-recovery",
+  "name": "claw-graceful-recovery",
+  "summary": "Claw 微信指令权限错误恢复。当 AI 通过微信接收用户指令后，执行操作遭遇 权限拒绝、系统限制或访问被拒，导致任务卡住、循环重试或无法继续接受新指令时触发。 触发词：权限不足、没有权限、Permission denied、EACCES、Operation not permitted、 拒绝访问、卡住了、无响应...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_graceful_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brandon114",
+      "features": [
+        "Claw 微信指令权限错误恢复。当 AI 通过微信接收用户指令后，执行操作遭遇 权限拒绝、系统限制或访问被拒，导致任务卡住、循环重试或无法继续接受新指令时触发。 触发词：权限不足、没有权限、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-graceful-recovery@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53056581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-graceful-recovery",
+      "url": "https://clawhub.ai/skills/claw-graceful-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-graceful-recovery",
+    "url": "https://clawhub.ai/skills/claw-graceful-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-graceful-recovery-c0c277b1c3dc5e06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-graceful-recovery@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-graceful-recovery-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b18cbc6e24cbca70b312cc20ba16e3eca370e7d4bd6b15cafe991b9bced633c",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T16:11:37.457Z"
+}

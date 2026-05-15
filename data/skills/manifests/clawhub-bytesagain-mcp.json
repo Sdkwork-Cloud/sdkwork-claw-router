@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39721,
+  "uuid": "skill-clawhub-bytesagain-mcp",
+  "skillKey": "clawhub-bytesagain-mcp",
+  "name": "Bytesagain Mcp",
+  "summary": "Connect AI agents to BytesAgain skill search via MCP SSE. Shows setup commands for OpenClaw, Claude Desktop, and curl. No files modified.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Connect AI agents to BytesAgain skill search via MCP SSE",
+        "Shows setup commands for OpenClaw, Claude Desktop, and curl",
+        "No files modified."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-mcp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-mcp",
+      "url": "https://clawhub.ai/skills/bytesagain-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-mcp",
+    "url": "https://clawhub.ai/skills/bytesagain-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-mcp-a6c147254cc67185.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-mcp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-mcp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:009223b1e689b38ac7aba7770a2e18de35352a0db322d07603988b9ac8fe5c6f",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:14:49.462Z"
+}

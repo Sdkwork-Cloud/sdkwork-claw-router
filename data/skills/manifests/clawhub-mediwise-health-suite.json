@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16295,
+  "uuid": "skill-clawhub-mediwise-health-suite",
+  "skillKey": "clawhub-mediwise-health-suite",
+  "name": "Mediwise Health Suite",
+  "summary": "Family health management suite: health records, diet tracking, weight management, wearable sync. Local SQLite storage by default; optional cloud features req...",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediwise_health_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JuneYaooo",
+      "features": [
+        "Family health management suite: health records, diet tracking, weight management, wearable sync",
+        "Local SQLite storage by default",
+        "optional cloud features req..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mediwise-health-suite@2.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60815510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mediwise-health-suite",
+      "url": "https://clawhub.ai/skills/mediwise-health-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediwise-health-suite",
+    "url": "https://clawhub.ai/skills/mediwise-health-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediwise-health-suite-ca14feb02fda2b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mediwise-health-suite@2.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-mediwise-health-suite-2.0.8.json",
+      "version": "2.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c59f542ff9c0f24acb3c8c903df9d0e960575ac4ca85dc6372e0eb42e295571f",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:54:51.654Z"
+}

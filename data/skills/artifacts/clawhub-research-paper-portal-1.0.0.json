@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-paper-portal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_paper_portal",
+  "skill": {
+    "id": 70619,
+    "skillKey": "clawhub-research-paper-portal",
+    "name": "Research Paper Portal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-paper-portal",
+    "url": "https://clawhub.ai/skills/research-paper-portal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-paper-portal-2b212d950a2011ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为研究人员创建个性化学术论文导航网站。根据用户的研究领域，自动收集最新论文、生成AI背景图、发布到网站。触发词：创建论文导航网站、学术门户、研究论文网站、论文聚合站、论文导航页。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiaxiliao",
+      "userId": "s176syphc974d0v6g6svhqg2eh841z21",
+      "displayName": "JiaxiLiao",
+      "image": "https://avatars.githubusercontent.com/u/69626340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774235849787,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7128e2bcf6a58af47e92d391442de348558c29e2e5504272cfcb952ff7551c0a"
+}

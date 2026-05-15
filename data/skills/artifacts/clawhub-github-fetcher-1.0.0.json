@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_fetcher",
+  "skill": {
+    "id": 40843,
+    "skillKey": "clawhub-github-fetcher",
+    "name": "github-fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-fetcher",
+    "url": "https://clawhub.ai/skills/github-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-fetcher-9e05c187ca7d594a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user mentions a GitHub URL or asks to analyze, review, explore, or understand any GitHub project, repository, or codebase. Triggers o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiscofield12-beep",
+      "userId": "s178p52vkn81775qqfykygkqf984pa71",
+      "displayName": "shiscofield12-beep",
+      "image": "https://avatars.githubusercontent.com/u/271162902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979760335,
+      "changelog": "init",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c95908a8a70834f02e334ee3f8655d8282a6535764ff6f68a71e0d2b6ed6d679"
+}

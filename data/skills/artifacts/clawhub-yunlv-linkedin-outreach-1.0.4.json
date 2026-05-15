@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yunlv-linkedin-outreach@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunlv_linkedin_outreach",
+  "skill": {
+    "id": 47458,
+    "skillKey": "clawhub-yunlv-linkedin-outreach",
+    "name": "Skill Linkedin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunlv-linkedin-outreach",
+    "url": "https://clawhub.ai/skills/yunlv-linkedin-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunlv-linkedin-outreach-22e6049830d498ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to generate personalized LinkedIn connection requests or outreach messages. Use when assisting LinkedIn lead generation and engagement. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777537702009,
+      "changelog": "Version 1.0.4\n\n- Updated SKILL.md to clarify that the skill does not send LinkedIn messages directly and requires user/manual or third-party configuration for sending.\n- Adjusted security and privacy statements: removed mention of LinkedIn API auto-send and OAuth authorization, emphasizing user-driven sending/copying.\n- Updated permissions: now only allows content generation and file operations, not API-based sending.\n- No code or feature changes beyond documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d409d6ac93139ddcbb9838267bcd3366068de557f63592acb3859016ab87977d"
+}

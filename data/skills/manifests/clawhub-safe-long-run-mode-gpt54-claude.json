@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32700,
+  "uuid": "skill-clawhub-safe-long-run-mode-gpt54-claude",
+  "skillKey": "clawhub-safe-long-run-mode-gpt54-claude",
+  "name": "Safe Long-Run Mode GPT5.4 + Claude",
+  "summary": "Operate long-running AI tasks safely across GPT-5.4 and Claude by using model selection rules, phased execution, checkpoints, resumable workflows, API thrott...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_long_run_mode_gpt54_claude",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bwiley1989",
+      "features": [
+        "Operate long-running AI tasks safely across GPT-5.4 and Claude by using model selection rules,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-long-run-mode-gpt54-claude@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249144466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-long-run-mode-gpt54-claude",
+      "url": "https://clawhub.ai/skills/safe-long-run-mode-gpt54-claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-long-run-mode-gpt54-claude",
+    "url": "https://clawhub.ai/skills/safe-long-run-mode-gpt54-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-long-run-mode-gpt54-claude-a84b522ea2da107f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-long-run-mode-gpt54-claude@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-long-run-mode-gpt54-claude-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64a45655fd155e2735684554d38115cbf6c6cbce90532362267fc2001354bb39",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:31:55.358Z"
+}

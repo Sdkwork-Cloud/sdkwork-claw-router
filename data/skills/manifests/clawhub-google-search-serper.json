@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46042,
+  "uuid": "skill-clawhub-google-search-serper",
+  "skillKey": "clawhub-google-search-serper",
+  "name": "Google Search (Serper.dev)",
+  "summary": "Google Search powered by Serper.dev API — 9 search types: web, news, images, videos, places, shopping, scholar, patents, autocomplete. Returns Knowledge Grap...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_serper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minilozio",
+      "features": [
+        "Google Search powered by Serper.dev API — 9 search types: web, news, images, videos, places, sh.",
+        "Returns Knowledge Grap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-search-serper@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261203432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-search-serper",
+      "url": "https://clawhub.ai/skills/google-search-serper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-serper",
+    "url": "https://clawhub.ai/skills/google-search-serper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-serper-16e12bf891d88068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-search-serper@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-search-serper-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f542e30083b24228e6479f54ff9c33987cc5371f8b46a24990717b274dea54b4",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:55:02.260Z"
+}

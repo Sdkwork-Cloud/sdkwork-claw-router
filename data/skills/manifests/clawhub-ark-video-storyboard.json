@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24188,
+  "uuid": "skill-clawhub-ark-video-storyboard",
+  "skillKey": "clawhub-ark-video-storyboard",
+  "name": "ark-video-storyboard",
+  "summary": "Generate a storyboard and prompts from a scene or reference images, confirm the script with the user, then optionally submit multi-segment video generation t...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ark_video_storyboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heaven",
+      "features": [
+        "Generate a storyboard and prompts from a scene or reference images, confirm the script with the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ark-video-storyboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23333359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ark-video-storyboard",
+      "url": "https://clawhub.ai/skills/ark-video-storyboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ark-video-storyboard",
+    "url": "https://clawhub.ai/skills/ark-video-storyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ark-video-storyboard-2b2c8187bcc35499.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ark-video-storyboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ark-video-storyboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:046ce53b5fe49ca2f185b92a84e242e25e3cdba166362f8fe6645745e0b6eafc",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:36:06.175Z"
+}

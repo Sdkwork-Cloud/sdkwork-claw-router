@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/device-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.device_assistant",
+  "skill": {
+    "id": 12271,
+    "skillKey": "clawhub-device-assistant",
+    "name": "Device Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "device-assistant",
+    "url": "https://clawhub.ai/skills/device-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/device-assistant-f2ab7682ad71e6ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal device and appliance manager with error code lookup and troubleshooting. Tracks all your devices (appliances, electronics, software) with model numbers, manuals, and warranty info. When something breaks, tell it the error code and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "udiedrichsen",
+      "userId": "publishers:udiedrichsen",
+      "displayName": "udiedrichsen",
+      "image": "https://avatars.githubusercontent.com/u/4386398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769433983734,
+      "changelog": "Initial release: Device registry, error code lookup, warranty tracking, troubleshooting",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33218b400b258f204f85a1999fc8ba740b5fb77a8a57caaa977cf377c0308580"
+}

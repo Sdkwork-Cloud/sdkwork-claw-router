@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentgen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentgen",
+  "skill": {
+    "id": 54143,
+    "skillKey": "clawhub-agentgen",
+    "name": "AgentGen — HTML to PDF & Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentgen",
+    "url": "https://clawhub.ai/skills/agentgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentgen-0cadf2f9a3d9e41b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PDFs and images from HTML. No sign-up required — the free tier works out of the box (1 req/min, small watermark). For higher volume and no watermark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyair1",
+      "userId": "publishers:lyair1",
+      "displayName": "Yair levi",
+      "image": "https://avatars.githubusercontent.com/u/3097680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772562621268,
+      "changelog": "Initial release — generate PDFs and images from HTML with agentgen CLI and API.\n\n- Convert HTML to PDF or image via simple CLI commands\n- Free tier: no sign-up, 1 request/min, watermark on output\n- Authenticated tier: remove watermark, higher volume, supports multi-page PDFs\n- Upload temp assets for 24 hours to use in HTML\n- Supports custom output formats and viewport sizes\n- Clear guidance for inlining styles and referencing uploaded assets",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e97561e1dde41b30728d965899f856d373c10a0f11ad27aa4ac86298f26dc9a8"
+}

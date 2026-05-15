@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visa@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visa",
+  "skill": {
+    "id": 23185,
+    "skillKey": "clawhub-visa",
+    "name": "Visa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visa",
+    "url": "https://clawhub.ai/skills/visa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visa-e759968ca9278b8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visa application guidance with document tracking and timeline management. Use when user mentions travel visas, visa applications, visa documents, consulate i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenticio",
+      "userId": "publishers:agenticio",
+      "displayName": "agenticio",
+      "image": "https://avatars.githubusercontent.com/u/259287600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773117403991,
+      "changelog": "Major update: Added visa type identification, document checklists, timeline tracking, interview preparation, and comprehensive visa application workflows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d10adafea412e1e8ab62f176af4733a4e57adbd77fc783884ee344ac871ef510"
+}

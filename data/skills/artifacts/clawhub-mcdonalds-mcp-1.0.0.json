@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcdonalds-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonalds_mcp",
+  "skill": {
+    "id": 66371,
+    "skillKey": "clawhub-mcdonalds-mcp",
+    "name": "麦当劳MCP服务集成，支持点餐、优惠券、麦麦商城、积分兑换等功能。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonalds-mcp",
+    "url": "https://clawhub.ai/skills/mcdonalds-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonalds-mcp-577dd6e0707a278c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "麦当劳MCP服务集成，支持点餐、优惠券、麦麦商城、积分兑换等功能。需要用户先在 https://open.mcd.cn 申请MCP Token。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessiondai",
+      "userId": "publishers:jessiondai",
+      "displayName": "jessiondai",
+      "image": "https://avatars.githubusercontent.com/u/45040101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773837021657,
+      "changelog": "Initial release of mcdonalds-mcp skill.\n\n- Integrates McDonald's MCP platform for ordering, coupons, mall, and points redemption.\n- Requires users to provide an MCP Token obtained from https://open.mcd.cn.\n- Supports features such as menu and store queries, placing delivery orders, managing addresses, coupon retrieval, and points exchange.\n- Full API usage details provided, including required headers and usage limits.\n- Notes on token security and supported MCP server versions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2de5c7b002a505184c09682d6417f711f0bd59d349ad2167097d7f55f981b845"
+}

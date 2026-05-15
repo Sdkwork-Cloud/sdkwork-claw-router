@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skill",
+  "skill": {
+    "id": 8379,
+    "skillKey": "clawhub-find-skill",
+    "name": "Find Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skill",
+    "url": "https://clawhub.ai/skills/find-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skill-b248ee93a043ae78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "breckengan",
+      "userId": "publishers:breckengan",
+      "displayName": "Breckengan",
+      "image": "https://avatars.githubusercontent.com/u/155859853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 17675,
+      "installsAllTime": 195,
+      "installsCurrent": 186,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772774583040,
+      "changelog": "- Initial release of the \"find-skills\" skill.\n- Helps users discover and install agent skills based on their queries (e.g., \"how do I do X?\").\n- Provides guidance on using the Skills CLI (`npx skills`) for searching and installing skills.\n- Includes examples, tips for effective searches, and common categories to assist users.\n- Offers instructions for situations when no suitable skills are found.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3d985117b481c128133843c944442d126234275ce6321f7fcc789392a50cccf"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9177,
+  "uuid": "skill-clawhub-triple-memory",
+  "skillKey": "clawhub-triple-memory",
+  "name": "Triple Memory",
+  "summary": "Complete memory system combining LanceDB auto-recall, Git-Notes structured memory, and file-based workspace search. Use when setting up comprehensive agent memory, when you need persistent context across sessions, or when managing decision.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triple_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ktpriyatham",
+      "features": [
+        "Complete memory system combining LanceDB auto-recall, Git-Notes structured memory, and file-bas.",
+        "Use when setting up comprehensive agent memory, when you need persistent context across session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/triple-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4175700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "triple-memory",
+      "url": "https://clawhub.ai/skills/triple-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triple-memory",
+    "url": "https://clawhub.ai/skills/triple-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triple-memory-13f283ce563e7734.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/triple-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-triple-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f04deb5353099e4a9d2b017f161e92d2ee1832a46ca3018623e716dd85117302",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T18:32:42.197Z"
+}

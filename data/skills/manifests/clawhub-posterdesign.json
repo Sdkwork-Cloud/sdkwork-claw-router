@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69000,
+  "uuid": "skill-clawhub-posterdesign",
+  "skillKey": "clawhub-posterdesign",
+  "name": "claw_poster",
+  "summary": "自动生成设计海报/图片。当用户提出设计需求（如「帮我做个促销海报」「做一张活动通知图」「生成一张小红书封面」）时使用此技能。通过 visual-rag MCP 服务直接生成 PNG 图片，图片实时返回对话，无需管理文件或服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.posterdesign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZooAgentPM",
+      "features": [
+        "自动生成设计海报/图片。当用户提出设计需求（如「帮我做个促销海报」「做一张活动通知图」「生成一张小红书封面」）时使用此技能。通过 visual-rag MCP 服务直接生成 PNG 图片，图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/posterdesign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250828062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "posterdesign",
+      "url": "https://clawhub.ai/skills/posterdesign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "posterdesign",
+    "url": "https://clawhub.ai/skills/posterdesign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/posterdesign-45dbe7b5be46f2d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/posterdesign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-posterdesign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66646fc481f997dcb10ef77e24e40cde02ea43f1ab7bda6c07878774b1abbd2d",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:31:35.662Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49177,
+  "uuid": "skill-clawhub-asana-remote-mcp",
+  "skillKey": "clawhub-asana-remote-mcp",
+  "name": "Asana Remote Mcp",
+  "summary": "Use Asana through mcporter-backed remote MCP tools. Use when working with tasks, projects, portfolios, goals, or team workspaces via the hosted mcp.asana.com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asana_remote_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Damian Bostan",
+      "features": [
+        "Use Asana through mcporter-backed remote MCP tools",
+        "Use when working with tasks, projects, portfolios, goals, or team workspaces via the hosted mcp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asana-remote-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62200289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asana-remote-mcp",
+      "url": "https://clawhub.ai/skills/asana-remote-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asana-remote-mcp",
+    "url": "https://clawhub.ai/skills/asana-remote-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asana-remote-mcp-b60d3d614be9bbe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asana-remote-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asana-remote-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5784c3148fd90262a76177f51488bf4bfe44661cf3c515f81c1d31dea2713739",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:07:14.241Z"
+}

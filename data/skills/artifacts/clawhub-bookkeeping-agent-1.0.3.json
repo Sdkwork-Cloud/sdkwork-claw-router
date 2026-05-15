@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookkeeping-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookkeeping_agent",
+  "skill": {
+    "id": 70004,
+    "skillKey": "clawhub-bookkeeping-agent",
+    "name": "Bookkeeping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookkeeping-agent",
+    "url": "https://clawhub.ai/skills/bookkeeping-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookkeeping-agent-455b7d6144a60217.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "导入账单、检查重复、查询交易、查看汇总，并通过本地 bookkeeping CLI 执行。优先处理当前消息里已经落到本地的账单附件；当用户要求导入支付宝、微信或本地账单时，优先直接使用当前消息上下文中已有的本地文件路径。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lastarla",
+      "userId": "s1786rxezzvety93wewhhg41nn83gmnr",
+      "displayName": "lastarla",
+      "image": "https://avatars.githubusercontent.com/u/8232389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774852003095,
+      "changelog": "本次更新明确了账单附件导入的实际处理链路，并同步到 skill 规则中：\n\n优先使用当前消息上下文里已经存在的本地附件路径\n优先消费 OpenClaw 已落盘的 inbound 文件\n只有没有本地路径时，才使用当前环境可用的附件下载能力作为 fallback\n当 message_attachment_download 可用时，优先调用它\n文件类型判断优先依据附件原始文件名或 MIME 信息，不只依赖 inbound 本地文件名后缀\n补回了自然语言单笔记账、预算设置 / 检查、reminders 协议和分类规则",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d5daec9e1d567258f610f1cdc654b07957a47c02dc829061121cf1de7f3982e"
+}

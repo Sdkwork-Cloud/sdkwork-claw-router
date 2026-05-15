@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31020,
+  "uuid": "skill-clawhub-airops",
+  "skillKey": "clawhub-airops",
+  "name": "Airops",
+  "summary": "AirOps integration. Manage data, records, and automate workflows. Use when the user wants to interact with AirOps data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AirOps integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AirOps data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airops@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airops",
+      "url": "https://clawhub.ai/skills/airops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airops",
+    "url": "https://clawhub.ai/skills/airops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airops-21605c0df42c0259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airops@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-airops-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6d5beb838008ee8b483d27c96dc44dacddb491aa837e988fb97e21eb5f80ab7",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:17:15.297Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-translate@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_translate",
+  "skill": {
+    "id": 34418,
+    "skillKey": "clawhub-ppt-translate",
+    "name": "Translate Chinese PPT to English"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-translate",
+    "url": "https://clawhub.ai/skills/ppt-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-translate-6dd88710804cb348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate Chinese PowerPoint presentations to English while preserving all images, charts, shapes, and media content. Adjusts fonts to Calibri and optimizes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "birkhoff-china",
+      "userId": "s1785zxp0vdg7bhgy4yk455pyd83hd5y",
+      "displayName": "Birkhoff-China",
+      "image": "https://avatars.githubusercontent.com/u/9637693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774595814850,
+      "changelog": "- Updated the skill to support any OpenAI-compatible LLM endpoint (local or cloud), not just Ollama.\n- Added Qoderwork usage instructions and cloud API support for maximum flexibility.\n- Revised prerequisites, quick start, and CLI options to reflect greater endpoint compatibility (including new `--api-base` and `--api-key` parameters).\n- Clarified that users can use available models in Qoderwork or their preferred LLM endpoint.\n- Ollama is now just one option—other endpoints like OpenAI or DeepSeek are supported.\n- \"Requires\" section updated to only specify Python 3. Ollama is now optional.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a1dafc21fd7040ea908d344cfff5d465ea1cfb266c36f1efd4e0c06aa3ffc24"
+}

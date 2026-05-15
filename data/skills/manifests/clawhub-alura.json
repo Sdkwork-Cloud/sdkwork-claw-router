@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19128,
+  "uuid": "skill-clawhub-alura",
+  "skillKey": "clawhub-alura",
+  "name": "Alura",
+  "summary": "Integrate with Alura Trading testnet API for user auth, trading sessions, market data, leaderboard, referrals, and USDC verification using Bearer token.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alura",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajay Gautam",
+      "features": [
+        "Integrate with Alura Trading testnet API for user auth, trading sessions, market data, leaderbo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alura@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16292031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alura",
+      "url": "https://clawhub.ai/skills/alura"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alura",
+    "url": "https://clawhub.ai/skills/alura",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alura-4519845a8b947dc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alura@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alura-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:141703896eb44f1c33173e8310e3e8441ecbe0faede2058df14bbb0a173a29cf",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T07:02:30.100Z"
+}

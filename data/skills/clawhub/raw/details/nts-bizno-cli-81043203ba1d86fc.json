@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "nts-bizno-cli",
+    "displayName": "NTS BizNo CLI",
+    "summary": "Verify Korean business registration numbers (사업자등록번호) via the official NTS (국세청) public API. Operating-status lookup (계속/휴업/폐업), full authenticity check (b_n...",
+    "tags": {
+      "api": "0.1.0",
+      "business": "0.1.0",
+      "cli": "0.1.0",
+      "korea": "0.1.0",
+      "kyb": "0.1.0",
+      "latest": "0.1.0",
+      "nts": "0.1.0",
+      "sajaeoja": "0.1.0",
+      "tax": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777162138639,
+    "updatedAt": 1777527964722
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1777162138639,
+    "changelog": "Initial release.\n\n- status:   POST /v1/status   — 사업자 상태조회 (계속/휴업/폐업, 과세유형). Up to 100 b_no per call.\n- validate: POST /v1/validate — 진위확인 (b_no + 개업일 + 대표자명 NTS match).\n- format:   local checksum + XXX-XX-XXXXX formatter. No API key required.\n- bulk:     file-driven sweep with checksum pre-filter, auto-batched 100/req.\n\nPure bash + curl + jq. JSONL output for jq pipelines.\nPairs with unified-invoice, opendart-cli, juso-address-cli.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "chloepark85",
+    "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+    "displayName": "Chloe Park",
+    "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527964722
+  }
+}

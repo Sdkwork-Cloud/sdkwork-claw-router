@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhang-xuefeng-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhang_xuefeng_ai",
+  "skill": {
+    "id": 73104,
+    "skillKey": "clawhub-zhang-xuefeng-ai",
+    "name": "张雪峰AI助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhang-xuefeng-ai",
+    "url": "https://clawhub.ai/skills/zhang-xuefeng-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhang-xuefeng-ai-6068b01ed5d42534.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供张雪峰风格的高考志愿、专业选择、院校分析及职业规划咨询，回答直白实在、有态度有观点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silbosu",
+      "userId": "s17fvqqstgtc4a11pw7pj0yqz983s35x",
+      "displayName": "silbosu",
+      "image": "https://avatars.githubusercontent.com/u/1893427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775139094144,
+      "changelog": "修复作者名称为vdoob Team",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4c504fbf8621a425165ba1f218b8d8ebaf64787f31d8628c8a63450abf16ad1"
+}

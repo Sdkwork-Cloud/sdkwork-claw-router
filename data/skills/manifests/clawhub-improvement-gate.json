@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59830,
+  "uuid": "skill-clawhub-improvement-gate",
+  "skillKey": "clawhub-improvement-gate",
+  "name": "Improvement Gate",
+  "summary": "当执行完变更需要验证是否应保留、候选被标记 pending 需要人工审批、或想查看待审队列时使用。6 层机械门禁: Schema→Compile→Lint→Regression→Review→HumanReview，其中 Schema/Compile/Regression/Review 为阻塞层（失败即拒绝），L...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improvement_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当执行完变更需要验证是否应保留、候选被标记 pending 需要人工审批、或想查看待审队列时使用。6 层机械门禁: Schema→Compile→Lint→Regression→Review."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/improvement-gate@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "improvement-gate",
+      "url": "https://clawhub.ai/skills/improvement-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improvement-gate",
+    "url": "https://clawhub.ai/skills/improvement-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improvement-gate-13940e1d03f4d4e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/improvement-gate@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-improvement-gate-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fe15804ceeac88ef6523a43219195e7656cbb5ed2700a2025e17f609a6cc4c4",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:14:06.515Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70336,
+  "uuid": "skill-clawhub-china-tax-calculator",
+  "skillKey": "clawhub-china-tax-calculator",
+  "name": "China Tax Calculator",
+  "summary": "中国个人所得税计算器，支持月度工资、年终奖、专项附加扣除、年度汇算清缴、多收入来源计算。适用于个税咨询、工资计算、年终奖优化、跳槽薪资谈判等场景。",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_tax_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarLiao",
+      "features": [
+        "中国个人所得税计算器，支持月度工资、年终奖、专项附加扣除、年度汇算清缴、多收入来源计算。适用于个税咨询、工资计算、年终奖优化、跳槽薪资谈判等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-tax-calculator@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17423843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-tax-calculator",
+      "url": "https://clawhub.ai/skills/china-tax-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-tax-calculator",
+    "url": "https://clawhub.ai/skills/china-tax-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-tax-calculator-63f1fff576fa2e9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-tax-calculator@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-tax-calculator-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02a8377f770b61d0a270ad5142cfa0068218bc35996c0bca2e99fdd533bb3a5c",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:59:03.157Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38896,
+  "uuid": "skill-clawhub-hermes-lsp-client",
+  "skillKey": "clawhub-hermes-lsp-client",
+  "name": "Lsp Client",
+  "summary": "Connects to external Language Server Protocol (LSP) servers via stdio to provide code intelligence like goto definition, find references, hover, and symbol s...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_lsp_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ECsss",
+      "features": [
+        "Connects to external Language Server Protocol (LSP) servers via stdio to provide code intellige."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-lsp-client@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226646360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-lsp-client",
+      "url": "https://clawhub.ai/skills/hermes-lsp-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-lsp-client",
+    "url": "https://clawhub.ai/skills/hermes-lsp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-lsp-client-4a723147cd915f69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-lsp-client@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-lsp-client-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98af4d889a3f17e63af384590226b0afa966db9aa4e38ea478459ff5bbc835b5",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:55:04.329Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wine-cellar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine_cellar",
+  "skill": {
+    "id": 27979,
+    "skillKey": "clawhub-wine-cellar",
+    "name": "Wine Cellar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine-cellar",
+    "url": "https://clawhub.ai/skills/wine-cellar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-cellar-5f60106c4d924eea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive wine cellar management skill for tracking inventory, providing meal-based recommendations, acting as a virtual sommelier, tracking consumption/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzysb",
+      "userId": "publishers:fuzzysb",
+      "displayName": "fuzzysb",
+      "image": "https://avatars.githubusercontent.com/u/16162689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773583677471,
+      "changelog": "Initial release with barcode lookup, inventory tracking, and meal-based recommendations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbbc5b64f7f1dc082efa90f2698869107b7db3e179c9b1fb7fa89e9ac1dc3f8a"
+}

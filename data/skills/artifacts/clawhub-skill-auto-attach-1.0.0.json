@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-auto-attach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_auto_attach",
+  "skill": {
+    "id": 16696,
+    "skillKey": "clawhub-skill-auto-attach",
+    "name": "Skill Auto Attach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-auto-attach",
+    "url": "https://clawhub.ai/skills/skill-auto-attach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-auto-attach-52c2f0120945331d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors workspace for new or updated .html, .md, .txt files and automatically attaches them to Telegram messages instead of showing code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elodyzen",
+      "userId": "publishers:elodyzen",
+      "displayName": "elodyzen",
+      "image": "https://avatars.githubusercontent.com/u/175480204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 839,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771152905611,
+      "changelog": "Initial release of skill-auto-attach.\n\n- Monitors the OpenClaw workspace for new or updated documentation files (.html, .md, .txt).\n- Automatically attaches these files to Telegram messages as file attachments, rather than displaying code.\n- Uses the message tool with filePath for Telegram compatibility.\n- Copies files to /tmp and assigns unique filenames.\n- Operates silently unless a relevant file is updated.\n- Requires OpenClaw v2026.2+ and Telegram channel access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f4c272db01fdd783c45c0a7202f15618e7c73879d84538a89d030bf8a9bfac8"
+}

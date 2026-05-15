@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60824,
+  "uuid": "skill-clawhub-bce-cert-skill-pkg",
+  "skillKey": "clawhub-bce-cert-skill-pkg",
+  "name": "Bce Cert Skill Pkg",
+  "summary": "百度智能云 DNS 自动申请/续期 Let's Encrypt SSL 证书技能。支持申请证书、查看状态、自动续期、Windows 计划任务配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bce_cert_skill_pkg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xzhower",
+      "features": [
+        "百度智能云 DNS 自动申请/续期 Let's Encrypt SSL 证书技能。支持申请证书、查看状态、自动续期、Windows 计划任务配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bce-cert-skill-pkg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35962762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bce-cert-skill-pkg",
+      "url": "https://clawhub.ai/skills/bce-cert-skill-pkg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bce-cert-skill-pkg",
+    "url": "https://clawhub.ai/skills/bce-cert-skill-pkg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bce-cert-skill-pkg-017817347ce6b369.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bce-cert-skill-pkg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bce-cert-skill-pkg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7c3789553753841380fe1466adbb68a8495158cbf744338cbfd9e8c743816b3",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:24:50.877Z"
+}

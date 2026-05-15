@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16862,
+  "uuid": "skill-clawhub-ironclaw-pipeline-analytics",
+  "skillKey": "clawhub-ironclaw-pipeline-analytics",
+  "name": "Ironclaw Pipeline Analytics",
+  "summary": "Generate interactive analytics dashboards from CRM data. Use when asked to \"show pipeline stats\", \"create a report\", \"analyze leads\", \"show conversion rates\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironclaw_pipeline_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrick Smith",
+      "features": [
+        "Generate interactive analytics dashboards from CRM data",
+        "Use when asked to \"show pipeline stats\", \"create a report\", \"analyze leads\", \"show conversion r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ironclaw-pipeline-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25066580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ironclaw-pipeline-analytics",
+      "url": "https://clawhub.ai/skills/ironclaw-pipeline-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironclaw-pipeline-analytics",
+    "url": "https://clawhub.ai/skills/ironclaw-pipeline-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironclaw-pipeline-analytics-0810467f91d53f15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ironclaw-pipeline-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ironclaw-pipeline-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86266149793e8af1329e53c50fbca730ec4cda1a267682b2e99ecbb3b3a6734b",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T14:55:13.568Z"
+}

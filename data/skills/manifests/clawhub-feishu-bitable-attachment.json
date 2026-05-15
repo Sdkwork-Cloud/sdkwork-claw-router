@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51864,
+  "uuid": "skill-clawhub-feishu-bitable-attachment",
+  "skillKey": "clawhub-feishu-bitable-attachment",
+  "name": "Feishu Bitable Attachment",
+  "summary": "uploads files from local/url/feishu-message to any accessible feishu bitable attachment field via material upload flow (parent_type=bitable_file)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_attachment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gyjbazinga-stack",
+      "features": [
+        "uploads files from local/url/feishu-message to any accessible feishu bitable attachment field v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-attachment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259223731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-attachment",
+      "url": "https://clawhub.ai/skills/feishu-bitable-attachment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-attachment",
+    "url": "https://clawhub.ai/skills/feishu-bitable-attachment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-attachment-0f8f6a1419eb0263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-attachment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-attachment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a21937d221f33a8ecdb3853ddcb40a31df5d9ff1426ea7b417d64b13bf9629df",
+      "artifactSizeBytes": 2613
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:52:01.037Z"
+}

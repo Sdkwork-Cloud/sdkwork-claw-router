@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawstore@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawstore",
+  "skill": {
+    "id": 43509,
+    "skillKey": "clawhub-clawstore",
+    "name": "Clawstore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawstore",
+    "url": "https://clawhub.ai/skills/clawstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawstore-728b0ec9026e92c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, install, and publish OpenClaw agent packages from the Clawstore registry. Use when the user wants to find agents, install them, or publish their own."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saba-ch",
+      "userId": "s17bbf8aqre17pdm754ty12tsx843yvd",
+      "displayName": "Saba Tchikhinashvili",
+      "image": "https://avatars.githubusercontent.com/u/38084512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775509003652,
+      "changelog": "- No changes were made in this version.\n- The skill, documentation, and all files remain identical to the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1e4747f6663d71092c85389d329ae9a0fa0c0da8d8fbdf6e5e721cadcd3ecae"
+}

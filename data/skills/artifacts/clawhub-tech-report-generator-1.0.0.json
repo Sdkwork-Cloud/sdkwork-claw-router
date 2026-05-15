@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_report_generator",
+  "skill": {
+    "id": 66562,
+    "skillKey": "clawhub-tech-report-generator",
+    "name": "深度技术报告生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-report-generator",
+    "url": "https://clawhub.ai/skills/tech-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-report-generator-8caed5b24f1609c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向新人培训的深度技术报告生成器。输入任意技术点（如 FlashAttention、MoE、LoRA、RLHF 等）， 自动产出结构化技术报告（Markdown + HTML），包含丰富的 SVG 可视化图示， 并自动同步至 IMA 知识库和腾讯文档。适用于：生成技术报告、创建培训材料、产出技术分享文档、 写技术..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fandywang87",
+      "userId": "s17czwytgebtz5mxnn62cn9zth855nvb",
+      "displayName": "fandywang87",
+      "image": "https://avatars.githubusercontent.com/u/255051907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 55,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778220570335,
+      "changelog": "Initial release: 6-phase tech report generator with SVG visualizations, dual-format output (MD+HTML), IMA & Tencent Docs sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ca0b1d8627b8e6cf987c77279dea8160fa4dbe8344f25f7d4d4cd946441bb4d"
+}

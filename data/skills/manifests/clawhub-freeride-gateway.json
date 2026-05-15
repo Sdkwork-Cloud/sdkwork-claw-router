@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53994,
+  "uuid": "skill-clawhub-freeride-gateway",
+  "skillKey": "clawhub-freeride-gateway",
+  "name": "FreeRide -Gateway",
+  "summary": "Use this skill when the user has FreeRide installed (binary at ~/.local/bin/freeride, gateway on http://localhost:11343) or asks how to route their AI worklo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeride_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shaishav Pidadi",
+      "features": [
+        "Use this skill when the user has FreeRide installed (binary at ~/.local/bin/freeride, gateway o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freeride-gateway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26166520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freeride-gateway",
+      "url": "https://clawhub.ai/skills/freeride-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeride-gateway",
+    "url": "https://clawhub.ai/skills/freeride-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeride-gateway-fab6f9c1469be1b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freeride-gateway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freeride-gateway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b530b434debf89cc8733eb706d6d2a983bbf57649947f1789aeedb4da813573",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T17:40:02.821Z"
+}

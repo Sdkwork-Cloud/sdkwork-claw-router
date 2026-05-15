@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import {
+  Bookmark,
   ChevronLeft,
   MessageCircle,
   MessageSquare,
   Share2,
   ThumbsUp,
 } from 'lucide-react';
+import {
+  buildPortalAuthLoginRedirect,
+  hasStoredPortalSession,
+} from 'sdkwork-claw-router-commons/runtime';
 
 import {
-  FORUM_POSTS,
   deriveForumPostDetailView,
   type ForumComment,
   type ForumPost,
@@ -22,11 +26,13 @@ function CommentThread({
   comment,
   depth = 0,
   onReply,
+  onStartReply,
   onLike,
 }: {
   comment: ForumComment;
   depth?: number;
   onReply: (commentId: string, content: string) => Promise<void>;
+  onStartReply: () => boolean;
   onLike: (commentId: string) => Promise<void>;
 }) {
   const [isReplying, setIsReplying] = useState(false);
@@ -105,7 +111,12 @@ function CommentThread({
           </button>
           <button
             type="button"
-            onClick={() => setIsReplying((value) => !value)}
+            onClick={() => {
+              if (!isReplying && !onStartReply()) {
+                return;
+              }
+              setIsReplying((value) => !value);
+            }}
             className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             Reply
@@ -156,6 +167,7 @@ function CommentThread({
                 comment={reply}
                 depth={depth + 1}
                 onReply={onReply}
+                onStartReply={onStartReply}
                 onLike={onLike}
               />
             ))}
@@ -168,7 +180,10 @@ function CommentThread({
 
 export function ForumPostView() {
   const { id } = useParams<{ id: string }>();
-  const [detail, setDetail] = useState<ForumPostDetailViewModel | null>(() => deriveForumPostDetailView(FORUM_POSTS, id));
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [detail, setDetail] = useState<ForumPostDetailViewModel | null>(null);
+  const [detailLoadFailed, setDetailLoadFailed] = useState(false);
   const [commentText, setCommentText] = useState('');
   const [isSubmittingComment, setIsSubmittingComment] = useState(false);
   const [isMutatingFeed, setIsMutatingFeed] = useState(false);
@@ -182,17 +197,27 @@ export function ForumPostView() {
         cancelled = true;
       };
     }
+    const numericPostId = parsePositiveIntegerId(id);
+    if (!numericPostId) {
+      setDetail(null);
+      setDetailLoadFailed(false);
+      return () => {
+        cancelled = true;
+      };
+    }
 
-    loadLiveForumPostDetail(id)
+    loadLiveForumPostDetail(numericPostId)
       .then((nextDetail) => {
         if (cancelled) {
           return;
         }
-        setDetail(nextDetail ?? deriveForumPostDetailView(FORUM_POSTS, id));
+        setDetail(nextDetail);
+        setDetailLoadFailed(false);
       })
       .catch(() => {
         if (!cancelled) {
-          setDetail(deriveForumPostDetailView(FORUM_POSTS, id));
+          setDetail(null);
+          setDetailLoadFailed(true);
         }
       });
 
@@ -210,7 +235,7 @@ export function ForumPostView() {
             <span>Back to Forum</span>
           </Link>
           <div className="bg-white dark:bg-[#0d1117] rounded-2xl border border-slate-200 dark:border-white/10 p-8 text-center text-slate-600 dark:text-slate-300">
-            Discussion not found.
+            {detailLoadFailed ? 'Unable to load discussion.' : 'Discussion not found.'}
           </div>
         </div>
       </div>
@@ -225,11 +250,29 @@ export function ForumPostView() {
       if (!current) {
         return current;
       }
-      return deriveLiveForumPostDetail(updater(current.post));
+      const nextDetail = deriveLiveForumPostDetail(updater(current.post));
+      if (!nextDetail) {
+        return current;
+      }
+      return {
+        ...nextDetail,
+        relatedPosts: current.relatedPosts,
+      };
     });
   };
 
+  const requirePortalLoginForAction = () => {
+    if (hasStoredPortalSession()) {
+      return true;
+    }
+    navigate(buildPortalAuthLoginRedirect(location));
+    return false;
+  };
+
   const mutateFeed = async (operation: (feedId: string) => Promise<ForumPost>) => {
+    if (!requirePortalLoginForAction()) {
+      return;
+    }
     setIsMutatingFeed(true);
     setActionError(null);
     try {
@@ -237,6 +280,7 @@ export function ForumPostView() {
       updateCurrentPost((currentPost) => ({
         ...updatedPost,
         comments: currentPost.comments,
+        commentCount: Math.max(updatedPost.commentCount, currentPost.commentCount),
       }));
     } catch (error) {
       setActionError(error instanceof Error ? error.message : 'Failed to update discussion.');
@@ -247,6 +291,9 @@ export function ForumPostView() {
 
   const submitComment = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!requirePortalLoginForAction()) {
+      return;
+    }
     const content = commentText.trim();
     if (!content) {
       setActionError('Comment content is required.');
@@ -267,6 +314,7 @@ export function ForumPostView() {
       });
       updateCurrentPost((currentPost) => ({
         ...currentPost,
+        commentCount: currentPost.commentCount + 1,
         comments: appendRootComment(currentPost.comments, createdComment),
       }));
       setCommentText('');
@@ -278,27 +326,40 @@ export function ForumPostView() {
   };
 
   const replyToComment = async (commentId: string, content: string) => {
-    if (!contentId) {
-      throw new Error('Discussion id must be a positive integer before replying.');
+    if (!requirePortalLoginForAction()) {
+      return;
     }
     const createdReply = await forumService.replyForumComment(commentId, {
-      contentType: 'feeds',
-      contentId,
       content,
-      parentId: parsePositiveIntegerId(commentId) ?? undefined,
     });
     updateCurrentPost((currentPost) => ({
       ...currentPost,
+      commentCount: currentPost.commentCount + 1,
       comments: appendReplyToComment(currentPost.comments, commentId, createdReply),
     }));
   };
 
   const likeComment = async (commentId: string) => {
+    if (!requirePortalLoginForAction()) {
+      return;
+    }
     const updatedComment = await forumService.likeForumComment(commentId);
     updateCurrentPost((currentPost) => ({
       ...currentPost,
       comments: replaceComment(currentPost.comments, updatedComment),
     }));
+  };
+
+  const toggleLikeFeed = async () => {
+    await mutateFeed((feedId) => (
+      detail.isLiked ? forumService.unlikeForumFeed(feedId) : forumService.likeForumFeed(feedId)
+    ));
+  };
+
+  const toggleCollectFeed = async () => {
+    await mutateFeed((feedId) => (
+      detail.isCollected ? forumService.uncollectForumFeed(feedId) : forumService.collectForumFeed(feedId)
+    ));
   };
 
   return (
@@ -315,7 +376,6 @@ export function ForumPostView() {
               {post.category}
             </span>
             <span className="text-slate-400 dark:text-slate-500 text-sm">{detail.publishedAtLabel}</span>
-            <span className="text-slate-400 dark:text-slate-500 text-sm hidden sm:inline">Published snapshot</span>
             <span className="text-slate-400 dark:text-slate-500 text-sm">{detail.viewsLabel} views</span>
           </div>
 
@@ -354,12 +414,29 @@ export function ForumPostView() {
             <div className="flex gap-4">
               <button
                 type="button"
-                onClick={() => void mutateFeed((feedId) => forumService.likeForumFeed(feedId))}
+                onClick={() => void toggleLikeFeed()}
                 disabled={isMutatingFeed}
-                className="flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-slate-100 dark:bg-white/5 dark:hover:bg-white/10 rounded-full transition-colors text-slate-700 dark:text-slate-300 font-medium text-sm disabled:cursor-not-allowed disabled:opacity-60"
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors font-medium text-sm disabled:cursor-not-allowed disabled:opacity-60 ${
+                  detail.isLiked
+                    ? 'bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-500/10 dark:text-blue-300 dark:hover:bg-blue-500/20'
+                    : 'bg-slate-50 text-slate-700 hover:bg-slate-100 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10'
+                }`}
               >
                 <ThumbsUp className="w-4 h-4" />
                 {detail.likesLabel}
+              </button>
+              <button
+                type="button"
+                onClick={() => void toggleCollectFeed()}
+                disabled={isMutatingFeed}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors font-medium text-sm disabled:cursor-not-allowed disabled:opacity-60 ${
+                  detail.isCollected
+                    ? 'bg-amber-50 text-amber-700 hover:bg-amber-100 dark:bg-amber-500/10 dark:text-amber-300 dark:hover:bg-amber-500/20'
+                    : 'bg-slate-50 text-slate-700 hover:bg-slate-100 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10'
+                }`}
+              >
+                <Bookmark className="w-4 h-4" />
+                {detail.isCollected ? 'Saved' : 'Save'}
               </button>
               <button
                 type="button"
@@ -368,7 +445,7 @@ export function ForumPostView() {
                 className="flex items-center gap-2 px-4 py-2 bg-slate-50 hover:bg-slate-100 dark:bg-white/5 dark:hover:bg-white/10 rounded-full transition-colors text-slate-700 dark:text-slate-300 font-medium text-sm disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <Share2 className="w-4 h-4" />
-                Share
+                {detail.shareCountLabel}
               </button>
             </div>
           </div>
@@ -416,6 +493,7 @@ export function ForumPostView() {
                 key={comment.id}
                 comment={comment}
                 onReply={replyToComment}
+                onStartReply={requirePortalLoginForAction}
                 onLike={likeComment}
               />
             ))}
@@ -450,10 +528,12 @@ export function ForumPostView() {
   );
 }
 
-async function loadLiveForumPostDetail(postId: string): Promise<ForumPostDetailViewModel | null> {
-  const [post, comments] = await Promise.all([
-    forumService.fetchForumFeedDetail(postId),
-    forumService.fetchForumComments({ contentType: 'feeds', contentId: Number(postId) }),
+async function loadLiveForumPostDetail(postId: number): Promise<ForumPostDetailViewModel | null> {
+  const postIdText = String(postId);
+  const [post, comments, relatedPosts] = await Promise.all([
+    forumService.fetchForumFeedDetail(postIdText),
+    forumService.fetchForumComments({ contentType: 'feeds', contentId: postId }),
+    forumService.fetchForumFeeds({ size: 50 }),
   ]);
   if (!post) {
     return null;
@@ -461,13 +541,13 @@ async function loadLiveForumPostDetail(postId: string): Promise<ForumPostDetailV
   return deriveLiveForumPostDetail({
     ...post,
     comments,
-  });
+  }, relatedPosts);
 }
 
-function deriveLiveForumPostDetail(post: ForumPost): ForumPostDetailViewModel | null {
+function deriveLiveForumPostDetail(post: ForumPost, relatedPosts: ForumPost[] = []): ForumPostDetailViewModel | null {
   const livePosts = [
     post,
-    ...FORUM_POSTS.filter((candidate) => candidate.id !== post.id),
+    ...relatedPosts.filter((candidate) => candidate.id !== post.id),
   ];
   return deriveForumPostDetailView(livePosts, post.id);
 }

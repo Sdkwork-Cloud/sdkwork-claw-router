@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60420,
+  "uuid": "skill-clawhub-football-prediction-optimized",
+  "skillKey": "clawhub-football-prediction-optimized",
+  "name": "Football Prediction Optimized",
+  "summary": "使用优化后的提示词对足球比赛进行预测，支持批量筛选(stage1)和单场比赛预测(stage2)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.football_prediction_optimized",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KingVergil",
+      "features": [
+        "使用优化后的提示词对足球比赛进行预测，支持批量筛选(stage1)和单场比赛预测(stage2)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/football-prediction-optimized@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8462171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "football-prediction-optimized",
+      "url": "https://clawhub.ai/skills/football-prediction-optimized"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "football-prediction-optimized",
+    "url": "https://clawhub.ai/skills/football-prediction-optimized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/football-prediction-optimized-96a93b426246733e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/football-prediction-optimized@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-football-prediction-optimized-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:418a1fe3137b0ba729ef477cfc7f7a938ec41ebb512357794b8c6d11969c929a",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:36:22.867Z"
+}

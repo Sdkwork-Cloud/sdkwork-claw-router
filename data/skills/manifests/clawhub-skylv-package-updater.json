@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48465,
+  "uuid": "skill-clawhub-skylv-package-updater",
+  "skillKey": "clawhub-skylv-package-updater",
+  "name": "Skylv Package Updater",
+  "summary": "Auto-checks and updates outdated dependencies. Shows changelogs and breaking changes before updating. Triggers: update dependencies, upgrade packages, check...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_package_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Auto-checks and updates outdated dependencies",
+        "Shows changelogs and breaking changes before updating",
+        "Triggers: update dependencies, upgrade packages, check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-package-updater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-package-updater",
+      "url": "https://clawhub.ai/skills/skylv-package-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-package-updater",
+    "url": "https://clawhub.ai/skills/skylv-package-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-package-updater-256d0f5470aa9e57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-package-updater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-package-updater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df19aaef71e70790644a7ec128b991d4e79270ef5bb92c6aa534a428ab18319",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T04:49:04.019Z"
+}

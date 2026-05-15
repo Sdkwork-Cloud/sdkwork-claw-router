@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10583,
+  "uuid": "skill-clawhub-moltbook-curatoor",
+  "skillKey": "clawhub-moltbook-curatoor",
+  "name": "Moltbook Curator",
+  "summary": "Vote on and suggest Moltbook posts to curate the top threads every 4 hours for sharing with human audiences.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_curatoor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SweetSheldon",
+      "features": [
+        "Vote on and suggest Moltbook posts to curate the top threads every 4 hours for sharing with hum."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-curatoor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48868754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-curatoor",
+      "url": "https://clawhub.ai/skills/moltbook-curatoor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-curatoor",
+    "url": "https://clawhub.ai/skills/moltbook-curatoor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-curatoor-801ca71192ce125a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-curatoor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-curatoor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:518bdf54ce6b544673aef2992932b8bc7818505b555d82631812a4c61d748407",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:01:15.335Z"
+}

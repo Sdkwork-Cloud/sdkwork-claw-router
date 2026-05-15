@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50655,
+  "uuid": "skill-clawhub-ai-usage-audit",
+  "skillKey": "clawhub-ai-usage-audit",
+  "name": "AI Usage Audit — Monthly Retrospective & Insights",
+  "summary": "Generates a monthly HTML report analyzing your recent AI conversations by theme, efficiency patterns, output value, and collaboration quality with actionable...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_usage_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junjie Liu",
+      "features": [
+        "Generates a monthly HTML report analyzing your recent AI conversations by theme, efficiency pat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-usage-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126896304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-usage-audit",
+      "url": "https://clawhub.ai/skills/ai-usage-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-usage-audit",
+    "url": "https://clawhub.ai/skills/ai-usage-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-usage-audit-1ebf4437fb77d68d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-usage-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-usage-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:256e516b38a4e19cd042d869b2c58c644eea08bd721ecfe75a49a85e63c6e7a8",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:22:04.133Z"
+}

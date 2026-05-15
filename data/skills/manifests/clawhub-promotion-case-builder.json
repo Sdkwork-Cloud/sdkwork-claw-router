@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49074,
+  "uuid": "skill-clawhub-promotion-case-builder",
+  "skillKey": "clawhub-promotion-case-builder",
+  "name": "Promotion Case Builder",
+  "summary": "Builds a promotion case by analyzing accomplishments and feedback against leveling criteria to identify strengths, gaps, and prepare a manager conversation p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promotion_case_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Builds a promotion case by analyzing accomplishments and feedback against leveling criteria to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/promotion-case-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "promotion-case-builder",
+      "url": "https://clawhub.ai/skills/promotion-case-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promotion-case-builder",
+    "url": "https://clawhub.ai/skills/promotion-case-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promotion-case-builder-ae2b9d05c5ab53a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/promotion-case-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-promotion-case-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4036e861787990347fa2c78ac7534dc1ab80c1be08683f963f6c51350b9073c6",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:28:20.580Z"
+}

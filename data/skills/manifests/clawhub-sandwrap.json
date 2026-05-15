@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12815,
+  "uuid": "skill-clawhub-sandwrap",
+  "skillKey": "clawhub-sandwrap",
+  "name": "Sandwrap",
+  "summary": "Run untrusted skills safely with soft-sandbox protection. Wraps skills in multi-layer prompt-based defense (~85% attack prevention). Use when: (1) Running third-party skills from unknown sources, (2) Processing untrusted content that might.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sandwrap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruben Quispe",
+      "features": [
+        "Run untrusted skills safely with soft-sandbox protection",
+        "Wraps skills in multi-layer prompt-based defense (~85% attack prevention)",
+        "Use when: (1) Running third-party skills from unknown sources, (2) Processing untrusted content.",
+        "Supports manual mode ('run X in sandwrap') and auto-wrap for risky skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sandwrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44844199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sandwrap",
+      "url": "https://clawhub.ai/skills/sandwrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sandwrap",
+    "url": "https://clawhub.ai/skills/sandwrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sandwrap-154706635aa19840.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sandwrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sandwrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0d56aabdf7d1327bce2dcd2f3dc558c2386d3faa78251797953feffc48938bc",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T04:35:06.987Z"
+}

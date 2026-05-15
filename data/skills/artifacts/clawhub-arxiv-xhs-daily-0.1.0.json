@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-xhs-daily@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_xhs_daily",
+  "skill": {
+    "id": 22312,
+    "skillKey": "clawhub-arxiv-xhs-daily",
+    "name": "arXiv XHS Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-xhs-daily",
+    "url": "https://clawhub.ai/skills/arxiv-xhs-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-xhs-daily-8c41575f2a200d07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read newly announced arXiv papers from cs.AI and cs.CL, filter them by user-defined research topics such as diffusion llm, summarize matching papers into rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhrli324",
+      "userId": "publishers:zhrli324",
+      "displayName": "Zherui Li",
+      "image": "https://avatars.githubusercontent.com/u/78266119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772906098156,
+      "changelog": "Initial release: configurable arXiv topic survey, note generation, custom cover creation, and Xiaohongshu publishing workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d176e84f273dacaff9deeaef7a19e5afcb0c1a905b2ddacf98f5868058a94145"
+}

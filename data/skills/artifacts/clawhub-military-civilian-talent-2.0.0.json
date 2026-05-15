@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/military-civilian-talent@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.military_civilian_talent",
+  "skill": {
+    "id": 35280,
+    "skillKey": "clawhub-military-civilian-talent",
+    "name": "Military Civilian Talent (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "military-civilian-talent",
+    "url": "https://clawhub.ai/skills/military-civilian-talent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/military-civilian-talent-5a8ca48f84133ca7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Military-Civilian Dual-Use Talent Assistant based on the classic Military-Civilian Dual-Use Talent Handbook. Covers agriculture, machinery, construction, ele..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777201577960,
+      "changelog": "v2.0.0: English-only rewrite. Index-only SKILL.md. Added references/method-patterns.md, prompts/01-implement-method.md, prompts/02-robustness-checks.md. Full coverage: agriculture, machinery, cooking, rural business, construction, electrical.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1d1e0a18ec32b07b3b3851d21ee704ba797a5ff07610ec58975d428c853eb78"
+}

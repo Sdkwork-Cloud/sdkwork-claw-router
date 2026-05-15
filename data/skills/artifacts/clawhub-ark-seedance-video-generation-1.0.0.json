@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ark-seedance-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ark_seedance_video_generation",
+  "skill": {
+    "id": 43074,
+    "skillKey": "clawhub-ark-seedance-video-generation",
+    "name": "ark-seedance-video-generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ark-seedance-video-generation",
+    "url": "https://clawhub.ai/skills/ark-seedance-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ark-seedance-video-generation-35fe9f87adf0ff20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end Volcengine Ark Seedance video generation using ARK_API_KEY and the bundled Node.js runner. Use when an agent needs to generate videos, handle text..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iunclear",
+      "userId": "s176baj7kgk2x0shtqhm77gqs18446g6",
+      "displayName": "iunclear",
+      "image": "https://avatars.githubusercontent.com/u/133342444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775327625505,
+      "changelog": "Ark Seedance Video Generation skill initial release:\n\n- Provides end-to-end Volcengine Ark video generation via a Node.js runner and the ARK_API_KEY.\n- Handles text-to-video, image-to-video, asset downloads, task polling, task management, and deletion.\n- Enforces strict model selection, requiring users to choose one of two approved model IDs before generation.\n- Clearly informs users when local media files will be uploaded to Volcengine Ark.\n- Ensures workflow steps for input mapping, command execution, output verification, and structured reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7e4e7c0710f269452d9cd1069dbf1ce34534b2124fb5d1764a92b88376a134c"
+}

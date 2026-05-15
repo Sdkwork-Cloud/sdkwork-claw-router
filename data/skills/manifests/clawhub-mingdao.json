@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68362,
+  "uuid": "skill-clawhub-mingdao",
+  "skillKey": "clawhub-mingdao",
+  "name": "Mingdao",
+  "summary": "明道云低代码助手，精通应用搭建、工作流、数据管理、开放API",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mingdao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "明道云低代码助手，精通应用搭建、工作流、数据管理、开放API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mingdao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mingdao",
+      "url": "https://clawhub.ai/skills/mingdao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mingdao",
+    "url": "https://clawhub.ai/skills/mingdao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mingdao-532adcf858f14145.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mingdao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mingdao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7149c8046dea18e77bf02ca0177ed1c8a6d1b9c0f9b935b4047e386385854a4",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:24:17.958Z"
+}

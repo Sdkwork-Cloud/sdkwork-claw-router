@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40867,
+  "uuid": "skill-clawhub-ocas-taste",
+  "skillKey": "clawhub-ocas-taste",
+  "name": "Taste",
+  "summary": "Generates personalized recommendations from real consumption data by scanning email/calendar, enriching venues, and explaining suggestions with prior behavior.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_taste",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigo Karasu",
+      "features": [
+        "Generates personalized recommendations from real consumption data by scanning email/calendar, e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocas-taste@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265148029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocas-taste",
+      "url": "https://clawhub.ai/skills/ocas-taste"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-taste",
+    "url": "https://clawhub.ai/skills/ocas-taste",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-taste-8674db221edec967.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocas-taste@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocas-taste-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a49c2fa67eec642a7171d77e0340469f3deb3223d134ae8727ac0cb20fdafd",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:37:31.842Z"
+}

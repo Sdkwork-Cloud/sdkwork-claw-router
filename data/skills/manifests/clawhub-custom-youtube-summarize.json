@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34051,
+  "uuid": "skill-clawhub-custom-youtube-summarize",
+  "skillKey": "clawhub-custom-youtube-summarize",
+  "name": "custom-youtube-summarize",
+  "summary": "Extract transcript from a YouTube video using Python and summarize it.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_youtube_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "5eun",
+      "features": [
+        "Extract transcript from a YouTube video using Python and summarize it."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/custom-youtube-summarize@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169572743?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "custom-youtube-summarize",
+      "url": "https://clawhub.ai/skills/custom-youtube-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-youtube-summarize",
+    "url": "https://clawhub.ai/skills/custom-youtube-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-youtube-summarize-3b1ebd7481e35256.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/custom-youtube-summarize@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-custom-youtube-summarize-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92fa762c7cb17da09983514fd417a9889f1a9139b6ba94de735524dadbf23544",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:07:52.654Z"
+}

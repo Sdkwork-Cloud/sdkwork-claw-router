@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64018,
+  "uuid": "skill-clawhub-system-log-analyzer",
+  "skillKey": "clawhub-system-log-analyzer",
+  "name": "Log Analyzer Dashboard",
+  "summary": "纯本地日志分析系统，支持日志统计、重复检测、错误分析和异常识别",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GodYoung",
+      "features": [
+        "纯本地日志分析系统，支持日志统计、重复检测、错误分析和异常识别"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-log-analyzer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82840619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-log-analyzer",
+      "url": "https://clawhub.ai/skills/system-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-log-analyzer",
+    "url": "https://clawhub.ai/skills/system-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-log-analyzer-29fd87776014a4bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-log-analyzer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-log-analyzer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc9b8e7ca0eec7eb27aa7200a6e17c2011b64fbe128514d15c2889b076d2487a",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:16:13.344Z"
+}

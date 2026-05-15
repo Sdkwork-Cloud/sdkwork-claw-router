@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72841,
+  "uuid": "skill-clawhub-viral-video-predictor",
+  "skillKey": "clawhub-viral-video-predictor",
+  "name": "短视频爆款预测脚本",
+  "summary": "输入短视频脚本，自动预测爆款概率（钩子分析/节奏/情绪曲线/优化建议）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_video_predictor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amaxclaw",
+      "features": [
+        "输入短视频脚本，自动预测爆款概率（钩子分析/节奏/情绪曲线/优化建议）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/viral-video-predictor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269517300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "viral-video-predictor",
+      "url": "https://clawhub.ai/skills/viral-video-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-video-predictor",
+    "url": "https://clawhub.ai/skills/viral-video-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-video-predictor-b8e3e7517e05a194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/viral-video-predictor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-viral-video-predictor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73d192f096db3f9002011414033214a7399c44c95f7e0c4eef0e7dde2b64b703",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:58:28.675Z"
+}

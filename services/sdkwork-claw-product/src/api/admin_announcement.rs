@@ -102,11 +102,11 @@ pub fn admin_announcement_router_with_store(
 ) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/router/announcements",
+            "/backend/v3/api/content/announcements",
             get(fetch_announcements).post(create_announcement),
         )
         .route(
-            "/backend/v3/api/router/announcements/{announcement_id}",
+            "/backend/v3/api/content/announcements/{announcement_id}",
             patch(update_announcement).delete(delete_announcement),
         )
         .with_state(AdminAnnouncementState {

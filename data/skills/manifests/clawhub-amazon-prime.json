@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43926,
+  "uuid": "skill-clawhub-amazon-prime",
+  "skillKey": "clawhub-amazon-prime",
+  "name": "Amazon Prime",
+  "summary": "Amazon Prime is a subscription service offering free shipping, streaming, gaming, and discounts with over 200 million global members.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_prime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Amazon Prime is a subscription service offering free shipping, streaming, gaming, and discounts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-prime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-prime",
+      "url": "https://clawhub.ai/skills/amazon-prime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-prime",
+    "url": "https://clawhub.ai/skills/amazon-prime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-prime-3e56a14fae20dcd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-prime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-prime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c79c0002762aaa1d9bd003202de45fab998385fb75d36592345ccfffc38f373",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:07:38.010Z"
+}

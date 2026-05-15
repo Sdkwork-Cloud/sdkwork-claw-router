@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28058,
+  "uuid": "skill-clawhub-mealmastery",
+  "skillKey": "clawhub-mealmastery",
+  "name": "Mealmastery",
+  "summary": "Plan meals, manage recipes, and build grocery lists with AI through natural language conversation.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mealmastery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rooster-Cogburn77",
+      "features": [
+        "Plan meals, manage recipes, and build grocery lists with AI through natural language conversati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mealmastery@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68574260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mealmastery",
+      "url": "https://clawhub.ai/skills/mealmastery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mealmastery",
+    "url": "https://clawhub.ai/skills/mealmastery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mealmastery-ffa95a3f1df178cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mealmastery@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mealmastery-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95757b7f0ab2201eee13131419385b3aa5bbef08a8ba708111a9c8a11b7b631d",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:17:42.894Z"
+}

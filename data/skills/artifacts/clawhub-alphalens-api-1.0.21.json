@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alphalens-api@1.0.21",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphalens_api",
+  "skill": {
+    "id": 26313,
+    "skillKey": "clawhub-alphalens-api",
+    "name": "AlphaLens API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphalens-api",
+    "url": "https://clawhub.ai/skills/alphalens-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphalens-api-a658af987f70c435.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to discover companies, search for products, build market maps, manage pipelines, or run enrichment workflows using Alp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "walidmustapha",
+      "userId": "s17faewyg5cbtd2t29b2088me983kg3k",
+      "displayName": "WalidMustapha",
+      "image": "https://avatars.githubusercontent.com/u/148945003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "1.0.21",
+      "createdAt": 1775635930938,
+      "changelog": "alphanlens-api 1.0.21\n\n- Documentation updated: README.md refreshed and clarified for easier usage.\n- No logic or endpoint changes; skill functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:688a14b072acefcf614513e824927df4452bf53a3a02cd8e70cfb5619d3c67c2"
+}

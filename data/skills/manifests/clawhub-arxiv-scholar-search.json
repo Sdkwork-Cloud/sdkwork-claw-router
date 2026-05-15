@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14944,
+  "uuid": "skill-clawhub-arxiv-scholar-search",
+  "skillKey": "clawhub-arxiv-scholar-search",
+  "name": "ArXiv Scholar Search",
+  "summary": "Use the arXiv API for academic paper discovery, relevance screening, and structured output. Suitable for topic-based search, latest-paper discovery, fixed-te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_scholar_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lyq",
+      "features": [
+        "Use the arXiv API for academic paper discovery, relevance screening, and structured output",
+        "Suitable for topic-based search, latest-paper discovery, fixed-te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-scholar-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89641669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-scholar-search",
+      "url": "https://clawhub.ai/skills/arxiv-scholar-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-scholar-search",
+    "url": "https://clawhub.ai/skills/arxiv-scholar-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-scholar-search-950a7bc8a7c00fba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-scholar-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-scholar-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09d1d06150ee823f16dc238ed15978cd6e3a707310f76e67974493a8932c120b",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:10:55.937Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25262,
+  "uuid": "skill-clawhub-compliance-checker",
+  "skillKey": "clawhub-compliance-checker",
+  "name": "Compliance Checker",
+  "summary": "Verify product listings, promotional claims, and creator practices against TikTok Shop policies to catch violations before they trigger penalties.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Verify product listings, promotional claims, and creator practices against TikTok Shop policies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-checker",
+      "url": "https://clawhub.ai/skills/compliance-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-checker",
+    "url": "https://clawhub.ai/skills/compliance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-checker-7a373198339ccdd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ecb41bf9c9195e68686ef6ded2aaca38de6940535c8db8a884efa9145fd8832",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:07:55.658Z"
+}

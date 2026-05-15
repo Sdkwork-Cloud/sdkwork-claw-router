@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25469,
+  "uuid": "skill-clawhub-mangadex",
+  "skillKey": "clawhub-mangadex",
+  "name": "MangaDex CLI",
+  "summary": "MangaDex CLI skill for search, manga/chapter lookup, follow-feed checks, and recommendations.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mangadex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matsku",
+      "features": [
+        "MangaDex CLI skill for search, manga/chapter lookup, follow-feed checks, and recommendations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mangadex@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123153312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mangadex",
+      "url": "https://clawhub.ai/skills/mangadex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mangadex",
+    "url": "https://clawhub.ai/skills/mangadex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mangadex-f7e7824f1edd2d38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mangadex@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mangadex-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81471e0096013a29a28e9a6e64929a370d2e4747412ebe7dc48bad99051619c5",
+      "artifactSizeBytes": 1775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:52:52.634Z"
+}

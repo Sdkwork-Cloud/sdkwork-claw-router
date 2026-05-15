@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60523,
+  "uuid": "skill-clawhub-openclaw-coe",
+  "skillKey": "clawhub-openclaw-coe",
+  "name": "OpenClaw Chain of Execution (CoE)",
+  "summary": "OpenClaw 原生执行链（Chain of Execution, CoE）技能。让 OpenClaw 在处理复杂任务时，实时分步输出执行过程：拆解问题 → 选择 skill → 调用 skill → 调用模型 → 等待响应 → 拿到结果 → 最终汇总，完全贴合 OpenClaw 实际运行流程，让用户清楚看到每...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuyh17",
+      "features": [
+        "OpenClaw 原生执行链（Chain of Execution, CoE）技能。让 OpenClaw 在处理复杂任务时，实时分步输出执行过程：拆解问题 → 选择 skill → 调用 s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-coe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33861257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-coe",
+      "url": "https://clawhub.ai/skills/openclaw-coe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coe",
+    "url": "https://clawhub.ai/skills/openclaw-coe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coe-2a0e0c9b7fd444bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-coe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-coe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48b60979e66f481a4855630d8d02da0e244cda53a5b70e540185132c721032bb",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:16:21.213Z"
+}

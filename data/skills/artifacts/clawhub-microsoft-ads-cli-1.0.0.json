@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-ads-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_ads_cli",
+  "skill": {
+    "id": 44654,
+    "skillKey": "clawhub-microsoft-ads-cli",
+    "name": "Microsoft Ads CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-ads-cli",
+    "url": "https://clawhub.ai/skills/microsoft-ads-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-ads-cli-6ffa4a4fcf1ca810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft Ads data analysis and reporting via microsoft-ads-cli. Use when the user wants to check Microsoft/Bing ad performance, pull campaign/ad group/keywo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bin-huang",
+      "userId": "s1739hnztbtdx615kbwmdfzz6x84d57g",
+      "displayName": "Bin-Huang",
+      "image": "https://avatars.githubusercontent.com/u/20723142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775552331838,
+      "changelog": "Initial release of microsoft-ads-cli Skill.\n\n- Enables read-only analysis and reporting of Microsoft/Bing Ads data using the microsoft-ads-cli.\n- Supports querying ad accounts, campaigns, ad groups, keywords, ads, audiences, UET tags, conversion goals, budgets, bid strategies, and labels.\n- Provides detailed usage instructions and CLI command references for each supported entity.\n- All commands output data in pretty-printed JSON by default.\n- Authentication via Microsoft OAuth2 access token and developer token required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:985527deb1528cda40961e33e7f42667c1adb604e5f672e69453c18dadeb0096"
+}

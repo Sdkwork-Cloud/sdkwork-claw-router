@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/circle-chain-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circle_chain_skill",
+  "skill": {
+    "id": 54931,
+    "skillKey": "clawhub-circle-chain-skill",
+    "name": "circle chain skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circle-chain-skill",
+    "url": "https://clawhub.ai/skills/circle-chain-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circle-chain-skill-705833e9dd9fa994.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JavaScript SDK and CLI for Circle Chain (@lidh04/circle-chain-sdk): user auth, wallet, block, miner, transfers, contacts. Global CLI binary `circle`. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lidh04",
+      "userId": "publishers:lidh04",
+      "displayName": "Charles",
+      "image": "https://avatars.githubusercontent.com/u/8481113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773972748616,
+      "changelog": "Version 1.1.1 (circle-chain-js-sdk)\n\n- Updated documentation to cover global CLI installation via `npm install -g @lidh04/circle-chain-sdk`.\n- Added usage instructions for the `circle` CLI, including the `--dev` flag and subcommand examples.\n- Documented development setup and commands for the CLI (e.g., `npm run cli`, direct node execution).\n- Ensured coverage for CLI usage, development workflow, and key command groups in the README.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:817233fcb23855b9ae45b9314c91ec77d265038cee431cdc371d26ed34a9c822"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apipick-ip-geolocation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_ip_geolocation",
+  "skill": {
+    "id": 18270,
+    "skillKey": "clawhub-apipick-ip-geolocation",
+    "name": "Get IP Geo Location"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-ip-geolocation",
+    "url": "https://clawhub.ai/skills/apipick-ip-geolocation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-ip-geolocation-c895679842013989.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up geographic location and network information for any IPv4 or IPv6 address using the apipick IP Geolocation API. Returns country, continent, city, lati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javainthinking",
+      "userId": "s179pwr839zxxcs8hgrqv73jv583ma9f",
+      "displayName": "javainthinking",
+      "image": "https://avatars.githubusercontent.com/u/2844583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771756035093,
+      "changelog": "apipick-ip-geolocation version 1.0.0 initial release:\n\n- Enables geographic and network lookups for any IPv4 or IPv6 address via apipick IP Geolocation API.\n- Returns country, continent, city, latitude/longitude, timezone, currency, ISP, and ASN for queried IPs.\n- Supports looking up user's own public IP if no IP is specified.\n- Requires APIPICK_API_KEY for authentication.\n- Provides error codes for invalid IPs, missing/invalid API key, insufficient credits, and unavailable data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:daaf252ac1eaa57f68164ec984fe2ca824329a1a4e371726bde6805a8da66d1f"
+}

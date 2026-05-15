@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/demo-video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_video_free",
+  "skill": {
+    "id": 55335,
+    "skillKey": "clawhub-demo-video-free",
+    "name": "Demo Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-video-free",
+    "url": "https://clawhub.ai/skills/demo-video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-video-free-2fa5bab8ef68fd89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the intro, add title cards, and export as a free demo video — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776596065786,
+      "changelog": "- Initial release of Demo Video Free: create and export demo videos from raw footage with simple prompts.\n- Supports uploading MP4, MOV, AVI, and WebM files up to 500MB.\n- Automated AI workflow for editing: trim intros, add title cards, and export polished demo videos in 1–2 minutes.\n- Cloud-based rendering and free export in MP4 format; no paid software required.\n- Easy session setup with free starter token for new users; 100 free credits included.\n- Designed for marketers to quickly produce demo videos without technical knowledge.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c80c2f5d3772708ccf48f905202394797feba8df8932f2e51a71598441ce3757"
+}

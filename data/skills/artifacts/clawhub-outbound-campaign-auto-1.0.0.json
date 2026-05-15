@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outbound-campaign-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outbound_campaign_auto",
+  "skill": {
+    "id": 46752,
+    "skillKey": "clawhub-outbound-campaign-auto",
+    "name": "Outbound Campaign Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outbound-campaign-auto",
+    "url": "https://clawhub.ai/skills/outbound-campaign-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outbound-campaign-auto-2dca0eda864a6a8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates full outbound campaigns by scraping qualified leads, segmenting them, creating personalized email and LinkedIn sequences, ad hooks, video assets, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775856923174,
+      "changelog": "Initial release automates outbound campaign creation in under 15 minutes.\n\n- Scrapes 50 qualified B2B leads matching your niche and ICP using Apify.\n- Segments leads by intent and enriches profiles with company and personal data.\n- Writes 15 hyper-personalized emails (5 per segment) with Claude AI, plus LinkedIn outreach sequence.\n- Generates 3 paid ad hooks and a personalized video asset via InVideo AI.\n- Delivers a full campaign brief including messaging pillars, objection handlers, A/B subject lines, and discovery talk tracks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3d0d69f8e7677fba6b75b0e76880f8ffbf551d5f7fb0d38c96cd0e4d222eac5"
+}

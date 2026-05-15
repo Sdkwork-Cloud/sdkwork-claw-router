@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15496,
+  "uuid": "skill-clawhub-shipment-tracker",
+  "skillKey": "clawhub-shipment-tracker",
+  "name": "Shipment Tracker",
+  "summary": "Track packages across carriers (USPS, UPS, FedEx, DHL, Amazon, OnTrac, LaserShip). Use when: user asks about package status, adds a tracking number, wants de...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipment_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Track packages across carriers (USPS, UPS, FedEx, DHL, Amazon, OnTrac, LaserShip)",
+        "Use when: user asks about package status, adds a tracking number, wants de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipment-tracker@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipment-tracker",
+      "url": "https://clawhub.ai/skills/shipment-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipment-tracker",
+    "url": "https://clawhub.ai/skills/shipment-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipment-tracker-ab48bd5c207d5404.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipment-tracker@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipment-tracker-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82fc33d9e7d1a1c35d5b17269e8ba8da9c979cd3df8c60610bfb40a8491f6ebc",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T22:54:51.233Z"
+}

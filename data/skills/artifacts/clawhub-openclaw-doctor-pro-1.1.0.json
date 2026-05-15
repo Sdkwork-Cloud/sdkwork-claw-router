@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-doctor-pro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doctor_pro",
+  "skill": {
+    "id": 12395,
+    "skillKey": "clawhub-openclaw-doctor-pro",
+    "name": "Oc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doctor-pro",
+    "url": "https://clawhub.ai/skills/openclaw-doctor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doctor-pro-b45f9e9daa9bd092.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive diagnostic, error-fixing, and skill recommendation tool for OpenClaw"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phenixstar",
+      "userId": "publishers:phenixstar",
+      "displayName": "PhenixStar",
+      "image": "https://avatars.githubusercontent.com/u/14149927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1746,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770517310439,
+      "changelog": "- Added new modules for complementary skills, diagnostic integrations, recovery integrations, and enhanced notification hooks.\n- Introduced data files to track complementary skills, fix execution history, and integration hooks.\n- Enhanced error fixing, recommendation, and cache handling logic in core scripts.\n- Improved display and scoring for skill recommendations and error fixing processes.\n- Updated codebase with improved modularity for diagnostics and integration management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa400a6c0755983157f6bfa5083bb5b04be8caa5ede6fbb9aca8cdd0f7259aa1"
+}

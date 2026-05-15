@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/character@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.character",
+  "skill": {
+    "id": 63388,
+    "skillKey": "clawhub-character",
+    "name": "MBTI Personality Test - MBTI性格测试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "character",
+    "url": "https://clawhub.ai/skills/character",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/character-4bcef3de76eaf574.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MBTI 完整版或简版逐题作答，提交后获取性格类型结果。当用户说：我想测个 MBTI、给我性格测试题，或类似 MBTI 测评时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 566,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 10,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775208822755,
+      "changelog": "- 简化并优化了技能描述，更直接表明适用场景和触发条件。\n- SKILL.md 内的介绍说明部分有小幅精简，使内容更易读。\n- 对 description 字段进行了调整，突出逐题模式和自动适配 MBTI 相关用户需求。\n- 技能核心功能、接口和使用方式未发生变化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9effabbe647576943104313d5955052c02ed33e0a8ff4e98014c09fd3ff27d81"
+}

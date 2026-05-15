@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-loggedin-tag-browsing@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_loggedin_tag_browsing",
+  "skill": {
+    "id": 62437,
+    "skillKey": "clawhub-brave-loggedin-tag-browsing",
+    "name": "Brave Loggedin Tag Browsing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-loggedin-tag-browsing",
+    "url": "https://clawhub.ai/skills/brave-loggedin-tag-browsing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-loggedin-tag-browsing-80580192385c36ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Brave 瀏覽器（已登入狀態）瀏覽 X/Twitter、Facebook 用戶頁面並提取最新帖子。 自動化社交媒體監控，支援登入狀態檢查、帖子提取、互動數據抓取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sean810720",
+      "userId": "s17e9m05k6d4g3wg0rjcvq8gxs83ggyw",
+      "displayName": "https://github.com/account/ssh",
+      "image": "https://avatars.githubusercontent.com/u/888016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773818044721,
+      "changelog": "- Minor maintenance update; no user-facing changes.\n- Internal files updated (cli.js, package.json, skill.json).\n- Documentation and features remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:987a44863ee251b497d4fa90fb74f4a84fd5453c07e396bf8548957a95af977e"
+}

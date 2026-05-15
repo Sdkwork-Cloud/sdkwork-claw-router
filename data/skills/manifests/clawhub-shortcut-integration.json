@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32856,
+  "uuid": "skill-clawhub-shortcut-integration",
+  "skillKey": "clawhub-shortcut-integration",
+  "name": "Shortcut",
+  "summary": "Shortcut integration. Manage data, records, and automate workflows. Use when the user wants to interact with Shortcut data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortcut_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shortcut integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Shortcut data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortcut-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortcut-integration",
+      "url": "https://clawhub.ai/skills/shortcut-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortcut-integration",
+    "url": "https://clawhub.ai/skills/shortcut-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortcut-integration-0a939d23ea701031.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortcut-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortcut-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d4500bc7912f3d96e3b5fcf77c9d990161c6616be3e14243202f949f65a50df",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:07.806Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51617,
+  "uuid": "skill-clawhub-tuebingen-weather-graphics",
+  "skillKey": "clawhub-tuebingen-weather-graphics",
+  "name": "Tübingen Weather Graphics",
+  "summary": "Generate and send a 5-day Tübingen weather graphic (PNG) from open-meteo.com. Use when Master wants a nicer visual forecast plus summary text for the next few days.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuebingen_weather_graphics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andreas Jung",
+      "features": [
+        "Generate and send a 5-day Tübingen weather graphic (PNG) from open-meteo.com",
+        "Use when Master wants a nicer visual forecast plus summary text for the next few days."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tuebingen-weather-graphics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/594239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tuebingen-weather-graphics",
+      "url": "https://clawhub.ai/skills/tuebingen-weather-graphics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuebingen-weather-graphics",
+    "url": "https://clawhub.ai/skills/tuebingen-weather-graphics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuebingen-weather-graphics-d4c55150ad51cb5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tuebingen-weather-graphics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tuebingen-weather-graphics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb886cd11a1672d12bb94154b1019724572ce253c314918590c44991f445805f",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T06:17:23.712Z"
+}

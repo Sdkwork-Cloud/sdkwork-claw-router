@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51922,
+  "uuid": "skill-clawhub-odoo-assistant-manager",
+  "skillKey": "clawhub-odoo-assistant-manager",
+  "name": "Odoo Assistant Store Manager",
+  "summary": "Odoo ERP via XML-RPC — sales, web orders, stock, products (CLI). Optional Discuss listener.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odoo_assistant_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juan de la cruz Garrido Rodríguez",
+      "features": [
+        "Odoo ERP via XML-RPC — sales, web orders, stock, products (CLI)",
+        "Optional Discuss listener."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/odoo-assistant-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183765911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "odoo-assistant-manager",
+      "url": "https://clawhub.ai/skills/odoo-assistant-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odoo-assistant-manager",
+    "url": "https://clawhub.ai/skills/odoo-assistant-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odoo-assistant-manager-2b1379e565207587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/odoo-assistant-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-odoo-assistant-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:348dc305733e1d41613e867d685b21e7327901ffc671103f7270fdd6fe292a1d",
+      "artifactSizeBytes": 2612
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T20:02:26.886Z"
+}

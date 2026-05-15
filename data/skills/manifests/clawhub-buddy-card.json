@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52650,
+  "uuid": "skill-clawhub-buddy-card",
+  "skillKey": "clawhub-buddy-card",
+  "name": "Claude Buddy Card",
+  "summary": "Generate a personalized premium holographic Claude Buddy trading card using your Claude Code account ID, showing your Buddy’s species, rarity, stats, and acc...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddy_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dyz2102",
+      "features": [
+        "Generate a personalized premium holographic Claude Buddy trading card using your Claude Code ac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buddy-card@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21371785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buddy-card",
+      "url": "https://clawhub.ai/skills/buddy-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddy-card",
+    "url": "https://clawhub.ai/skills/buddy-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddy-card-a38ebb22c30217cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buddy-card@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buddy-card-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:157172a4201d8aea518b6d491a1f6ece25fb7f4e653702b805545057dec2a7f1",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T21:47:16.105Z"
+}

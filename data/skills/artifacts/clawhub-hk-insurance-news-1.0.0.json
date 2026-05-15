@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-insurance-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_insurance_news",
+  "skill": {
+    "id": 66960,
+    "skillKey": "clawhub-hk-insurance-news",
+    "name": "hk-insurance-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-insurance-news",
+    "url": "https://clawhub.ai/skills/hk-insurance-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-insurance-news-dd1318c3ab0c2dfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动收集整理香港保险行业上周重要动态，生成图文并茂的微信公众号周报文章。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "castlewang",
+      "userId": "publishers:castlewang",
+      "displayName": "castle",
+      "image": "https://avatars.githubusercontent.com/u/22645299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773564797464,
+      "changelog": "香港保险市场周报生成器 1.0.0 发布\n\n- 新增自动收集和整理香港保险行业一周动态的功能。\n- 支持行业动态、产品更新、公司要闻三大板块的分区筛选与摘要。\n- 自动生成适合微信公众号的文章（含标题、Markdown排版、配图）。\n- 支持主要新闻来源采集，并在文末标注明确数据出处。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b79db72ba73413f46e94c69199012b12bebdad43eb5fb037b6b65e6bf66c2079"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brain-evolution-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brain_evolution_skill",
+  "skill": {
+    "id": 68303,
+    "skillKey": "clawhub-brain-evolution-skill",
+    "name": "Brain Evolution Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brain-evolution-skill",
+    "url": "https://clawhub.ai/skills/brain-evolution-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brain-evolution-skill-7517cd2e5e75bee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于人脑进化机制的智能记忆管理，实现高频请求条件反射，加速缓存查询，自动强化与遗忘记忆，提高多线程安全性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "king-nan",
+      "userId": "publishers:king-nan",
+      "displayName": "king-nan",
+      "image": "https://avatars.githubusercontent.com/u/141407435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774073404796,
+      "changelog": "brain-evolution-skill v0.1.0\n\n- Initial release inspired by human brain evolution principles: neuroplasticity, myelination, hippocampus-driven memory transfer, Ebbinghaus forgetting curve, and synaptic pruning.\n- Implements a layered memory system (reflex layer, smart cache, neural pathways) for efficient knowledge storage and retrieval.\n- Features dual-layer caching (memory LRU + SQLite), thread-safety, customizable parameters, and performance optimizations.\n- Supports command-line management and Python API (compatible with both v2.0 and v1.0).\n- Provides mechanisms for memory reinforcement, intelligent forgetting, and traceable learning processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e3b8ab789742cdde2c09a5caf522e982b1fd0704829eb24e88694d3536d784f"
+}

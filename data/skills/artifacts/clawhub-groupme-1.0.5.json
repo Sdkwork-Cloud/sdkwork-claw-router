@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/groupme@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groupme",
+  "skill": {
+    "id": 27630,
+    "skillKey": "clawhub-groupme",
+    "name": "GroupMe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groupme",
+    "url": "https://clawhub.ai/skills/groupme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groupme-5fd8d8f96cbe3755.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge OpenClaw to GroupMe for team communication. Send scheduled messages, broadcast announcements, run shift reminders, and automate group messaging via cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bgoodwinstudio",
+      "userId": "s17dh2a8cmkt2ge0f5ywjgakj984ywfy",
+      "displayName": "bgoodwinstudio",
+      "image": "https://avatars.githubusercontent.com/u/205076654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776424798801,
+      "changelog": "- No changes detected in this release.\n- Version number remains the same; documentation and configuration are unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e4ae4b634e44736cce471ad5d6ccbbae0b02ab3637ea3c4c65bfaa3a3fb2c7b"
+}

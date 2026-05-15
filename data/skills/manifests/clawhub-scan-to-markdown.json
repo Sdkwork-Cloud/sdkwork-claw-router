@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29961,
+  "uuid": "skill-clawhub-scan-to-markdown",
+  "skillKey": "clawhub-scan-to-markdown",
+  "name": "Scan To Markdown",
+  "summary": "OCR document extraction - extract text from scanned documents, photos, and images using OCR. Use when reading scanned PDFs, photographed pages, handwritten n...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scan_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanis90",
+      "features": [
+        "OCR document extraction",
+        "extract text from scanned documents, photos, and images using OCR",
+        "Use when reading scanned PDFs, photographed pages, handwritten n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scan-to-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22654397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scan-to-markdown",
+      "url": "https://clawhub.ai/skills/scan-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scan-to-markdown",
+    "url": "https://clawhub.ai/skills/scan-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scan-to-markdown-ad1aa819df984dd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scan-to-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scan-to-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f2dd0f93c7969a792560e862573ada0732194d3987555e4cd9c8a6b02418e3d",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:51:46.285Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61772,
+  "uuid": "skill-clawhub-qweather",
+  "skillKey": "clawhub-qweather",
+  "name": "和风天气查询功能",
+  "summary": "天气查询：使用和风天气（JWT+Host）获取实时天气与未来预报；支持城市名/LocationID/经纬度；缺省地点可用 QWEATHER_DEFAULT_LOCATION。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qweather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "murphys7017",
+      "features": [
+        "天气查询：使用和风天气（JWT+Host）获取实时天气与未来预报；支持城市名/LocationID/经纬度；缺省地点可用 QWEATHER_DEFAULT_LOCATION。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qweather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54226881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qweather",
+      "url": "https://clawhub.ai/skills/qweather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qweather",
+    "url": "https://clawhub.ai/skills/qweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qweather-f9f4c0a062a4e215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qweather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qweather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ad3b10884cc8fcb3c2548ab186807929181f62b99e24d6aee383609808539c5",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:51:35.476Z"
+}

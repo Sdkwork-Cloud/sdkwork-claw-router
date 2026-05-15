@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73036,
+  "uuid": "skill-clawhub-intent-classifier",
+  "skillKey": "clawhub-intent-classifier",
+  "name": "意图分类器",
+  "summary": "意图分类器 - 原创技能。实时分析用户输入，识别真实意图并路由到对应处理流程。支持代码、提问、请求、闲聊等类型识别，适用于AI助手任务调度、智能路由、对话理解等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_classifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "原创技能。实时分析用户输入，识别真实意图并路由到对应处理流程。支持代码、提问、请求、闲聊等类型识别，适用于AI助手任务调度、智能路由、对话理解等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intent-classifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intent-classifier",
+      "url": "https://clawhub.ai/skills/intent-classifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-classifier",
+    "url": "https://clawhub.ai/skills/intent-classifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-classifier-fc812033ed41e503.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intent-classifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intent-classifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abdca4d73f75913ae20d0643847d15febefea0e8f3594bc9b9089594e5a41130",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T05:36:55.416Z"
+}

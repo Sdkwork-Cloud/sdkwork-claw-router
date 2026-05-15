@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/draw-images-by-apiyi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draw_images_by_apiyi",
+  "skill": {
+    "id": 20897,
+    "skillKey": "clawhub-draw-images-by-apiyi",
+    "name": "Draw Images By Apiyi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draw-images-by-apiyi",
+    "url": "https://clawhub.ai/skills/draw-images-by-apiyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draw-images-by-apiyi-212b5202882ac083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using APIYI API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengwuzhi",
+      "userId": "s17e1gvambfkcpg8b16gkk5wcd83wrt7",
+      "displayName": "mengwuzhi",
+      "image": "https://avatars.githubusercontent.com/u/16465718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772276908448,
+      "changelog": "- Initial release of draw-images-by-apiyi skill.\n- Generate images using the APIYI API via slash command, natural language, or command line.\n- Supports customizable prompts, resolutions (1K, 2K, 4K), and API key management.\n- Output images can be saved to relative or absolute paths.\n- Includes detailed usage instructions and configuration options for API keys.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4ee051f9c992cb955f4d1c26dadfd21f7ba8b424876c8cd6a0db70d86cd7a8d"
+}

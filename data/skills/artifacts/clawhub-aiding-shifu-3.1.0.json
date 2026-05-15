@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiding-shifu@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiding_shifu",
+  "skill": {
+    "id": 58161,
+    "skillKey": "clawhub-aiding-shifu",
+    "name": "Aiding Shifu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiding-shifu",
+    "url": "https://clawhub.ai/skills/aiding-shifu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiding-shifu-8588095b00adc7d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "艾登师傅平台专家。Use this skill when user asks about finding installation workers (找师傅), dispatching work orders (派单/工单), logging in to 艾登师傅 platform, or managing ho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinhuihua",
+      "userId": "s171b1b97vax978pyvhe28cggd83tbdc",
+      "displayName": "Yinhuihua",
+      "image": "https://avatars.githubusercontent.com/u/106876549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774885467403,
+      "changelog": "修复搜索师傅API参数：province/city/county代替provinceCode/cityCode/districtCode；默认使用账号所在省市县；完善姓名电话脱敏规则；更新示例对话",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f7dd1031b9f6aa913442b2b74d9b89c1951c2e4e7981b83920883ffbca209fc"
+}

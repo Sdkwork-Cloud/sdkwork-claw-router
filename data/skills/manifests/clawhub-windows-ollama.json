@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53198,
+  "uuid": "skill-clawhub-windows-ollama",
+  "skillKey": "clawhub-windows-ollama",
+  "name": "Windows Ollama",
+  "summary": "Windows Ollama — run Ollama on Windows with fleet routing across multiple Windows PCs. Windows Ollama setup for Llama, Qwen, DeepSeek, Phi, Mistral. Route Ol...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_ollama",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Windows Ollama — run Ollama on Windows with fleet routing across multiple Windows PCs",
+        "Windows Ollama setup for Llama, Qwen, DeepSeek, Phi, Mistral",
+        "Route Ol..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-ollama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-ollama",
+      "url": "https://clawhub.ai/skills/windows-ollama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-ollama",
+    "url": "https://clawhub.ai/skills/windows-ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-ollama-ccba8ce16e12ad43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-ollama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-ollama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc39a1a45ab8e2dda21a1a2bedf3936cabdbf59dd041312471ca5c537c2e3f8d",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:54:01.003Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-person-company@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_person_company",
+  "skill": {
+    "id": 51395,
+    "skillKey": "clawhub-one-person-company",
+    "name": "One Person Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-person-company",
+    "url": "https://clawhub.ai/skills/one-person-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-person-company-4ccd5f34659780bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your personal AI assistant platform — multi-agent orchestration, task management, and autonomous workflow execution for one-person companies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiyanhui",
+      "userId": "s17eaqmgxy9y905e3xk32nbzx183my80",
+      "displayName": "Lime",
+      "image": "https://avatars.githubusercontent.com/u/7406269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773892212994,
+      "changelog": "- Initial release of One Person Company skill.\n- Enables personal AI assistant platform for solo founders and one-person teams.\n- Features multi-agent orchestration, autonomous task management, and workflow automation.\n- Requires a ONEPERSON_API_KEY for use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d6661d626d56941eb2c90425f9ce518e1deb978d389bc8207bf86265d0b5e9e"
+}

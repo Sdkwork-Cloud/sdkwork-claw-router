@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26227,
+  "uuid": "skill-clawhub-skillforge",
+  "skillKey": "clawhub-skillforge",
+  "name": "skillforge",
+  "summary": "Generate production-grade Agent Skill packages through a structured 7-step pipeline: requirement analysis, architecture decisions, metadata crafting, body ge...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillforge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "猫叔",
+      "features": [
+        "Generate production-grade Agent Skill packages through a structured 7-step pipeline: requiremen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillforge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112069064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillforge",
+      "url": "https://clawhub.ai/skills/skillforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillforge",
+    "url": "https://clawhub.ai/skills/skillforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillforge-40c395094c403d25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillforge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillforge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:475f466d7a14691a917370b66c636c1b799ddf5b55700eb86d671283de9cd1ba",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:15:36.051Z"
+}

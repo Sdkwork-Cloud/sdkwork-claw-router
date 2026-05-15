@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghost-closer-web-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost_closer_web_scraper",
+  "skill": {
+    "id": 45967,
+    "skillKey": "clawhub-ghost-closer-web-scraper",
+    "name": "Ghost Closer Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost-closer-web-scraper",
+    "url": "https://clawhub.ai/skills/ghost-closer-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-closer-web-scraper-957d1e68fd60b572.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape complete business intelligence from Google Maps, Facebook, and Instagram for any local business. Returns structured JSON with ratings, contact info, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dreamsarts",
+      "userId": "s17cvn6cs7781epax050y1y28x84hhs5",
+      "displayName": "DreamsArts",
+      "image": "https://avatars.githubusercontent.com/u/270395753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775746951056,
+      "changelog": "Initial release of Ghost Closer Web Scraper.\n\n- Scrapes Google Maps, Facebook, and Instagram for structured business intelligence.\n- Returns detailed JSON profiles including ratings, contact info, hours, services, and social data.\n- Command line and Python usage supported.\n- Handles missing data gracefully (fields set to null if not found).\n- Requires running Chrome instance with remote debugging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a81c09492a171cc4298260d55c8f122eaeffb153a392ffd238fb6466e4ea476"
+}

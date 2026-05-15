@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-role-launchkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_role_launchkit",
+  "skill": {
+    "id": 45425,
+    "skillKey": "clawhub-team-role-launchkit",
+    "name": "Team Role Launchkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-role-launchkit",
+    "url": "https://clawhub.ai/skills/team-role-launchkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-role-launchkit-b31905f4c6ac712a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch clone-like multi-agent workflows using explicit role prompts (researcher, builder, editor), strict handoff contracts, and shared behavior files for co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cwheeler67",
+      "userId": "s17eqz1krtmt1wb7s4p0430zgx84xqh2",
+      "displayName": "Christopher Wheeler",
+      "image": "https://avatars.githubusercontent.com/u/30331975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776430750377,
+      "changelog": "Initial release: clone-like multi-role workflow with handoff contracts and role prompts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68157277b71c19dc5905bf671a6a68bf878c146dfffb223ea8906d93559abca9"
+}

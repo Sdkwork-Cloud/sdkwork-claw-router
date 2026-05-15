@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14506,
+  "uuid": "skill-clawhub-renderful-generation",
+  "skillKey": "clawhub-renderful-generation",
+  "name": "Renderful Generation",
+  "summary": "Use Renderful from OpenClaw for image/video/audio/3D creation with model discovery, quote-before-generate workflow, deterministic polling, and insufficient-funds/x402 fallback.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renderful_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luv005",
+      "features": [
+        "Use Renderful from OpenClaw for image/video/audio/3D creation with model discovery, quote-befor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/renderful-generation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179096862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "renderful-generation",
+      "url": "https://clawhub.ai/skills/renderful-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renderful-generation",
+    "url": "https://clawhub.ai/skills/renderful-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renderful-generation-74512985285c478a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/renderful-generation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-renderful-generation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f3d07302a0f4153cd91dcd716da25b043aa400665b150ffff4a8d5c8d887515",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:17:54.087Z"
+}

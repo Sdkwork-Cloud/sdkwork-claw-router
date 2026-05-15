@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wol-wakeup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol_wakeup",
+  "skill": {
+    "id": 65249,
+    "skillKey": "clawhub-wol-wakeup",
+    "name": "WoL Wakeup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol-wakeup",
+    "url": "https://clawhub.ai/skills/wol-wakeup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-wakeup-605b689088814705.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "局域网唤醒 (WoL) 自动化技能。支持工作流模式和单行命令模式，多轮对话添加设备，无需大模型。使用方式：1) \"帮我开机\"→列表 2) \"开机 - 设备名\"→唤醒 3) \"添加网络唤醒\"→工作流 4) \"列表\"→查看 5) \"删除 - 设备名\"→删除"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xunone11",
+      "userId": "s17c1pqqpb6xvyr7hx85x8kwns83z7cq",
+      "displayName": "sharecode",
+      "image": "https://avatars.githubusercontent.com/u/67742893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774244459226,
+      "changelog": "Initial release - WoL automation with workflow mode and single-line commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eed8a6b9d27c7b120d4c54d26ee7cbfa3f7e017fd31006391224e8542e26990b"
+}

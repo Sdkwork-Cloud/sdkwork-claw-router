@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-bug-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_bug_finder",
+  "skill": {
+    "id": 24893,
+    "skillKey": "clawhub-auto-bug-finder",
+    "name": "Auto Bug Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-bug-finder",
+    "url": "https://clawhub.ai/skills/auto-bug-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-bug-finder-c370a99201d52df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Iteratively scans, analyzes, fixes, and verifies Solidity contracts using Hardhat and Slither until no critical, high, or medium security bugs remain or max..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jengajojo",
+      "userId": "publishers:jengajojo",
+      "displayName": "jengajojo",
+      "image": "https://avatars.githubusercontent.com/u/86045556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773655090867,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69cc954c54930f2a938ccea646cfb58d992356db2b81c6ebcd4985a7f80375ca"
+}

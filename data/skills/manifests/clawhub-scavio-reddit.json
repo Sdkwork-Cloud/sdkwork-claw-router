@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47438,
+  "uuid": "skill-clawhub-scavio-reddit",
+  "skillKey": "clawhub-scavio-reddit",
+  "name": "Scavio Reddit",
+  "summary": "Search Reddit posts or fetch a full post with threaded comments by URL. Use for discussion research, brand monitoring, sentiment analysis, or RAG pipelines n...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scavio_reddit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scavio-ai",
+      "features": [
+        "Search Reddit posts or fetch a full post with threaded comments by URL",
+        "Use for discussion research, brand monitoring, sentiment analysis, or RAG pipelines n..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scavio-reddit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264839281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scavio-reddit",
+      "url": "https://clawhub.ai/skills/scavio-reddit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scavio-reddit",
+    "url": "https://clawhub.ai/skills/scavio-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scavio-reddit-27bd290563e1ad98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scavio-reddit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scavio-reddit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:327ad298d446c2ccf5b16fc6189c71f2412d22d2ad028456c36a67d6ad7c8a8f",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:42:42.566Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13422,
+  "uuid": "skill-clawhub-mupeng-notification-hub",
+  "skillKey": "clawhub-mupeng-notification-hub",
+  "name": "Notification Hub",
+  "summary": "Unified notification hub collecting all skill alerts and delivering by priority",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mupeng_notification_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "Unified notification hub collecting all skill alerts and delivering by priority"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mupeng-notification-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mupeng-notification-hub",
+      "url": "https://clawhub.ai/skills/mupeng-notification-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mupeng-notification-hub",
+    "url": "https://clawhub.ai/skills/mupeng-notification-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mupeng-notification-hub-d800b08b5809e3e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mupeng-notification-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mupeng-notification-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdee6ffdea1df4cde7a1c5fba868e97d57399760227a169757bdba08f7eadebf",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T23:31:21.611Z"
+}

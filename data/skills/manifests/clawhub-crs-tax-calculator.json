@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62674,
+  "uuid": "skill-clawhub-crs-tax-calculator",
+  "skillKey": "clawhub-crs-tax-calculator",
+  "name": "CRS Tax Calculator",
+  "summary": "CRS境外补税计算工具 - 上传券商月结单PDF/Excel，AI自动解析交易数据，FIFO/ACB成本法计算资本利得，生成Excel税务审计底稿。支持多文件年度汇总。",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crs_tax_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Halley",
+      "features": [
+        "CRS境外补税计算工具",
+        "上传券商月结单PDF/Excel，AI自动解析交易数据，FIFO/ACB成本法计算资本利得，生成Excel税务审计底稿。支持多文件年度汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crs-tax-calculator@3.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123431732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crs-tax-calculator",
+      "url": "https://clawhub.ai/skills/crs-tax-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crs-tax-calculator",
+    "url": "https://clawhub.ai/skills/crs-tax-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crs-tax-calculator-54624d3ba78d2dac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crs-tax-calculator@3.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crs-tax-calculator-3.4.0.json",
+      "version": "3.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63954c1293d4a3e0dc96b8b9d8756eb1f06dc3efe49900b22247176752cb3591",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T18:53:52.447Z"
+}

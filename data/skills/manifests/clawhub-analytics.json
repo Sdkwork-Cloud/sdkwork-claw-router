@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9625,
+  "uuid": "skill-clawhub-analytics",
+  "skillKey": "clawhub-analytics",
+  "name": "Analytics",
+  "summary": "Deploy privacy-first analytics with correct API patterns, rate limits, and GDPR compliance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Deploy privacy-first analytics with correct API patterns, rate limits, and GDPR compliance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analytics",
+      "url": "https://clawhub.ai/skills/analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analytics",
+    "url": "https://clawhub.ai/skills/analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analytics-65f98121a162a56a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5c344deb7306b82819c3fff1b9659c04dc229fc785773dc468264de9a946b9b",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T20:12:07.313Z"
+}

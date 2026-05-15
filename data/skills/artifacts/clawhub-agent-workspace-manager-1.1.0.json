@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-workspace-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_workspace_manager",
+  "skill": {
+    "id": 35767,
+    "skillKey": "clawhub-agent-workspace-manager",
+    "name": "Agent Workspace Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-workspace-manager",
+    "url": "https://clawhub.ai/skills/agent-workspace-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-workspace-manager-88763f49f28adf29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize and maintain agent workspace directories by initializing structure, classifying files, auditing placement, cleaning content, and suggesting expansions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaql",
+      "userId": "s178vt5zs569w6qbemt34n5fzn83jsjy",
+      "displayName": "zhaql",
+      "image": "https://avatars.githubusercontent.com/u/4433277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774432097149,
+      "changelog": "新增代码文件分类规则（SQL/Python/Shell）、重复文件检测方法、文件命名最佳实践",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6526727074afb3466f87da04d9389ec44426db387fe48718b39213a86ccf616"
+}

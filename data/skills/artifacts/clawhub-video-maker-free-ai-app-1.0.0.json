@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-ai-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_ai_app",
+  "skill": {
+    "id": 34096,
+    "skillKey": "clawhub-video-maker-free-ai-app",
+    "name": "Video Maker Free Ai App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-ai-app",
+    "url": "https://clawhub.ai/skills/video-maker-free-ai-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-ai-app-81d59a6488a5f7c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips or images into polished MP4 videos with this skill. Works with MP4, MOV, JPG, PNG files up to 500MB. TikTok creators and small business ow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776641413661,
+      "changelog": "Initial release of Video Maker Free AI App skill:\n\n- Create and export polished MP4 videos from clips or images without editing software.\n- Supports MP4, MOV, JPG, PNG files up to 500MB; ideal for TikTok creators and small businesses.\n- Simple connection workflow using anonymous tokens with 100 free credits.\n- All processing happens on cloud GPUs; clips are rendered to 1080p MP4 in under 60 seconds.\n- Supports timeline editing, text overlays, background music, and video preview before export.\n- Comprehensive error handling, format support, and session management documented for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:008872d83e91021db4c63c866f61068678450ed6f339bb8121d2b080a9fe81e3"
+}

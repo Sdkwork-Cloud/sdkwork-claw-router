@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway-zito@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_zito",
+  "skill": {
+    "id": 51303,
+    "skillKey": "clawhub-api-gateway-zito",
+    "name": "Api Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-zito",
+    "url": "https://clawhub.ai/skills/api-gateway-zito",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-zito-5896fb2a9327bbd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gateway universal para APIs. Conecta cualquier API REST/GraphQL con configuración simple. Gestiona autenticación, rate limiting y caching."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miguelguerra200022-sudo",
+      "userId": "publishers:miguelguerra200022-sudo",
+      "displayName": "Miguel Guerra",
+      "image": "https://avatars.githubusercontent.com/u/239301714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1088,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772275780778,
+      "changelog": "Universal API gateway—simple setup, powerful integration\n\n- Conecta el bot a cualquier API REST/GraphQL con configuración mínima.\n- Gestiona autenticación, cache, rate limiting y reintentos automáticos de forma centralizada.\n- Incluye comandos para agregar, listar y llamar APIs fácilmente, además de gestión (logs, stats, tests).\n- Soporta múltiples tipos de autenticación: header, query, Basic, OAuth 2.0, y personalizados.\n- Ejemplo detallado de configuración y uso con una API de clima.\n- Integración con otras skills (proactive-triggers, daily-digest, multi-agent) para automatización y uso avanzado.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e9a635df1f1f06441196a7e73e430231ef2eba2150e569e05ea408b400747a1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24562,
+  "uuid": "skill-clawhub-moss-platform-quick-auth",
+  "skillKey": "clawhub-moss-platform-quick-auth",
+  "name": "Moss Platform Quick Auth",
+  "summary": "B-only Quick Auth for Moss platform. Use only api-login / api-register (no email code flow).",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_platform_quick_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helloeveryworlds",
+      "features": [
+        "B-only Quick Auth for Moss platform",
+        "Use only api-login / api-register (no email code flow)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moss-platform-quick-auth@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58319337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moss-platform-quick-auth",
+      "url": "https://clawhub.ai/skills/moss-platform-quick-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-platform-quick-auth",
+    "url": "https://clawhub.ai/skills/moss-platform-quick-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-platform-quick-auth-bc6834e51e139033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moss-platform-quick-auth@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moss-platform-quick-auth-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd1915bf6e66652fdeff591686f2dcbfc08af27d42b5224529c1668800e0f4af",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:11:14.832Z"
+}

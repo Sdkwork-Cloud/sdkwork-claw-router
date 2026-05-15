@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yahoo-finance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_finance",
+  "skill": {
+    "id": 8356,
+    "skillKey": "clawhub-yahoo-finance",
+    "name": "Yahoo Finance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-finance",
+    "url": "https://clawhub.ai/skills/yahoo-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-finance-2f779bf6e3a60bfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get stock prices, quotes, fundamentals, earnings, options, dividends, and analyst ratings using Yahoo Finance. Uses yfinance library - no API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajanraj",
+      "userId": "publishers:ajanraj",
+      "displayName": "ajanraj",
+      "image": "https://avatars.githubusercontent.com/u/55903526?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 18614,
+      "installsAllTime": 182,
+      "installsCurrent": 173,
+      "stars": 41,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767817868261,
+      "changelog": "Initial release - Stock data CLI powered by yfinance\n\n  Commands:\n  - price: Quick price check with day/52W range\n  - quote: Detailed quote with volume, market cap\n  - fundamentals: PE, EPS, margins, analyst targets\n  - earnings: Next earnings date + historical EPS surprises\n  - profile: Company sector, industry, employees, description\n  - dividends: Yield, ex-date, payout ratio, recent history\n  - ratings: Buy/hold/sell distribution, upgrades/downgrades\n  - options: Near-the-money calls/puts with IV, volume, OI\n  - history: Historical OHLCV (1d to max)\n  - compare: Side-by-side multi-stock comparison\n  - search: Find symbols by company name\n\n  Features:\n  - No API key required (uses yfinance)\n  - Auto-installs deps via uv (PEP 723)\n  - Supports US stocks, NSE/BSE, crypto, forex, ETFs\n  - Rich formatted tables",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec6a9baf354364c6aa76ae0ff2ea4214d3a0698503e64677a8ab7a58ac0312d4"
+}

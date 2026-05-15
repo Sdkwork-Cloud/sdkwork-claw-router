@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equity-research-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_research_analyst",
+  "skill": {
+    "id": 46304,
+    "skillKey": "clawhub-equity-research-analyst",
+    "name": "equity-research-analyst-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-research-analyst",
+    "url": "https://clawhub.ai/skills/equity-research-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-research-analyst-778bf5e72fbef672.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks for institutional-style equity research on a public company, ETF, or TradingView-resolvable ticker, including initiation reports, earn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hypier",
+      "userId": "s1754he4gdd5c620m48ny4hff983mmqs",
+      "displayName": "hypier",
+      "image": "https://avatars.githubusercontent.com/u/20377329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777243990435,
+      "changelog": "- Initial release of the Equity Research Analyst skill.\n- Supports nine institutional equity research workflows, each triggered by specific user requests and dispatched to dedicated workflow files.\n- Integrates TradingView API as the primary data source for financials, consensus, technicals, and calendar data.\n- Implements strict conventions for data citation, ticker resolution, and output formatting.\n- Defines a clear fallback strategy for missing data or ambiguous requests.\n- Enforces single-workflow discipline with detailed guidance for initiation reports and deliverable standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b080fba8cd863aa73d68fa5bf20e31d39e2427ccfb5ea44c86adc1cd92fbe0c7"
+}

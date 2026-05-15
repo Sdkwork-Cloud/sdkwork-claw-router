@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36414,
+  "uuid": "skill-clawhub-use-ts-sdk",
+  "skillKey": "clawhub-use-ts-sdk",
+  "name": "Use Ts Sdk",
+  "summary": "Orchestrates TypeScript SDK integration for Aptos dApps. Routes to granular skills for specific tasks (client setup, accounts, transactions, view functions,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_ts_sdk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iskysun96",
+      "features": [
+        "Orchestrates TypeScript SDK integration for Aptos dApps",
+        "Routes to granular skills for specific tasks (client setup, accounts, transactions, view functi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/use-ts-sdk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52557585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "use-ts-sdk",
+      "url": "https://clawhub.ai/skills/use-ts-sdk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-ts-sdk",
+    "url": "https://clawhub.ai/skills/use-ts-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-ts-sdk-c59625251a3cf969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/use-ts-sdk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-use-ts-sdk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4862d5a318ea05c01838c6a608a1214bd95b51efb32f0be0095e50fef8563f9a",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:40:40.760Z"
+}

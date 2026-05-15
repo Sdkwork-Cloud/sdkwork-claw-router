@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-gif-creator-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_gif_creator_anthropic",
+  "skill": {
+    "id": 25873,
+    "skillKey": "clawhub-slack-gif-creator-anthropic",
+    "name": "Slack Gif Creator Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-gif-creator-anthropic",
+    "url": "https://clawhub.ai/skills/slack-gif-creator-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-gif-creator-anthropic-8ad84d6d638fdd04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users reques..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773509664323,
+      "changelog": "Initial release with utilities and guidelines for creating animated GIFs optimized for Slack.\n\n- Provides Slack-specific requirements: dimensions, colors, duration, FPS.\n- Includes a GIFBuilder class for assembling and optimizing GIFs.\n- Offers validation tools to ensure GIFs meet Slack's constraints.\n- Supplies animation concepts (shake, pulse, bounce, spin, particle burst, etc.) and drawing tips for polished results.\n- Features helper functions for drawing and composing frames using PIL.\n- Contains strategies for file size optimization and guidance for handling user-uploaded images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f9c1a0825a46380ce6cdc2ee50e1d6630d0fba439e28883f0df6856a0d1d86e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62953,
+  "uuid": "skill-clawhub-fundreport-scrape",
+  "skillKey": "clawhub-fundreport-scrape",
+  "name": "Fundreport Scrape",
+  "summary": "基金月报信息提取。支持文本+OCR 双重提取，自动处理双月对比。从 PDF 月报提取数据并填充 Excel 模板。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fundreport_scrape",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ymzhang",
+      "features": [
+        "基金月报信息提取。支持文本+OCR 双重提取，自动处理双月对比。从 PDF 月报提取数据并填充 Excel 模板。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fundreport-scrape@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90312381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fundreport-scrape",
+      "url": "https://clawhub.ai/skills/fundreport-scrape"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fundreport-scrape",
+    "url": "https://clawhub.ai/skills/fundreport-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fundreport-scrape-92329fae6087ae5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fundreport-scrape@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fundreport-scrape-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e17a103502f77183c0232014b57dc1ff7ec334a64cc7e2d4b13f40ded8662b85",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:15:26.983Z"
+}

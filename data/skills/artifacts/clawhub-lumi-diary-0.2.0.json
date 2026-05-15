@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lumi-diary@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lumi_diary",
+  "skill": {
+    "id": 54255,
+    "skillKey": "clawhub-lumi-diary",
+    "name": "Lumi Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lumi-diary",
+    "url": "https://clawhub.ai/skills/lumi-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lumi-diary-e2213113bd5f7dbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your local-first memory guardian and cyber bestie. Lumi collects life fragments — a sigh, a snapshot, a roast — and stitches them into radiant, interactive m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thhoho",
+      "userId": "s178386vebfv7yhfc2x177rffn83j81h",
+      "displayName": "Thhoho",
+      "image": "https://avatars.githubusercontent.com/u/34635761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773677408094,
+      "changelog": "Version 0.2.0 (Major Update)\n\n- Introduced the \"Time Echoes Protocol\" to surface milestones and anniversaries in greetings, with automatic keepsake retrieval.\n- Updated \"Chameleon & Tone Mirroring\": added support for profiling personality traits and milestones via Portraits.\n- Renamed “Meme Vault” to “Keepsakes” with new save_keepsake functionality and broader archiving (collects legendary moments, not just memes).\n- \"Circle Mode\" now archives highlights as keepsakes rather than just memes, with enhanced monthly review generation.\n- Refined event annotation and memory stitching protocols for improved multi-perspective storytelling.\n- Significant underlying file and structural changes,",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faf1fe22070efbbc205c473bdca3b03cb371a2a81c06a88544c55c0097d32e17"
+}

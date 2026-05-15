@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25289,
+  "uuid": "skill-clawhub-whois",
+  "skillKey": "clawhub-whois",
+  "name": "agent-init",
+  "summary": "Initialize and configure OpenClaw agent workspace MD files (AGENTS.md, SOUL.md, IDENTITY.md, USER.md, TOOLS.md, BOOTSTRAP.md, HEARTBEAT.md). Use when: settin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whois",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamclaw",
+      "features": [
+        "Initialize and configure OpenClaw agent workspace MD files (AGENTS.md, SOUL.md, IDENTITY.md, US.",
+        "Use when: settin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whois@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88223778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whois",
+      "url": "https://clawhub.ai/skills/whois"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whois",
+    "url": "https://clawhub.ai/skills/whois",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whois-b1140742ba42ab97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whois@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whois-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:354febc1cd4e23af0cb7cc17f6cc7e7e4800d9d002d01e95f55eac6aeac88cfc",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:06:29.149Z"
+}

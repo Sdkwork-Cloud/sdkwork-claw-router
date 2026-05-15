@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39986,
+  "uuid": "skill-clawhub-food-channel",
+  "skillKey": "clawhub-food-channel",
+  "name": "Food Channel",
+  "summary": "Handle messages in a food-tracking channel by routing food intake events through a deterministic food tracker. Use when working in a dedicated food channel,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cdmichaelb",
+      "features": [
+        "Handle messages in a food-tracking channel by routing food intake events through a deterministi.",
+        "Use when working in a dedicated food channel,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-channel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1451709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-channel",
+      "url": "https://clawhub.ai/skills/food-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-channel",
+    "url": "https://clawhub.ai/skills/food-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-channel-b462609d35c64d07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-channel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-channel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52814a7de660fbdbca6ddc9e4367666f0c9ff5742ddb6b5938c804203eb09aea",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:31:12.746Z"
+}

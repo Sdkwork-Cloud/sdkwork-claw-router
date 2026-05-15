@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xperf-pre-flight@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xperf_pre_flight",
+  "skill": {
+    "id": 51041,
+    "skillKey": "clawhub-xperf-pre-flight",
+    "name": "AI Cluster Pre-flight Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xperf-pre-flight",
+    "url": "https://clawhub.ai/skills/xperf-pre-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xperf-pre-flight-15a03dfe595553bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-flight check for GPU cluster nodes — node validation before training, check cluster node health, is my GPU node ready. 26 health checks covering GPU, PCI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ops-xperf",
+      "userId": "publishers:ops-xperf",
+      "displayName": "Xperf Inc.",
+      "image": "https://avatars.githubusercontent.com/u/234442309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773774292481,
+      "changelog": "xperf-pre-flight 1.0.1\n\n- Added an \"Example Prompts\" section to improve usability and show natural prompt phrasing.\n- Updated the description for greater clarity and keyword coverage, especially for users seeking pre-flight checks for GPU cluster nodes.\n- No code or functional changes; documentation enhancements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5e2732236783f31f0f4c548b27349637694b5ba1e321a9bf01d7bbe28c20e4a"
+}

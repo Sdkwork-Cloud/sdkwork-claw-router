@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27334,
+  "uuid": "skill-clawhub-echo-memory",
+  "skillKey": "clawhub-echo-memory",
+  "name": "Echo",
+  "summary": "Sync, encode, embed, and upsert OpenClaw markdown memory files to Supabase, with commands to restore and check sync status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kobe",
+      "features": [
+        "Sync, encode, embed, and upsert OpenClaw markdown memory files to Supabase, with commands to re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/echo-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81384641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "echo-memory",
+      "url": "https://clawhub.ai/skills/echo-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-memory",
+    "url": "https://clawhub.ai/skills/echo-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-memory-01d8d59944be8753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/echo-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-echo-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d82289635bed26235f90bd0de864c424e49eccfd158f5d0b577a790286729501",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:52:23.653Z"
+}

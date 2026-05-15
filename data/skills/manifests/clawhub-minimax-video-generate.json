@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59017,
+  "uuid": "skill-clawhub-minimax-video-generate",
+  "skillKey": "clawhub-minimax-video-generate",
+  "name": "minimax-video",
+  "summary": "MiniMax 视频生成技能 - 支持文生视频(Text-to-Video)、图生视频(Image-to-Video)、首尾帧视频(Frame-to-Frame)、主体参考视频(Subject-to-Video)。使用模型 MiniMax-Hailuo-2.3，默认生成 5 秒 720P MP4 视频，自动下载保...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_video_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "silingyuan0",
+      "features": [
+        "MiniMax 视频生成技能",
+        "支持文生视频(Text-to-Video)、图生视频(Image-to-Video)、首尾帧视频(Frame-to-Frame)、主体参考视频(Subject-to-Video)。使用模型."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-video-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26161065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-video-generate",
+      "url": "https://clawhub.ai/skills/minimax-video-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-video-generate",
+    "url": "https://clawhub.ai/skills/minimax-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-video-generate-6ded795219b3aea2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-video-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-video-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82e7de340623684bf96ffe160b7531eb1b85ea2b78b90b7065986770c757f4e1",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T15:01:09.879Z"
+}

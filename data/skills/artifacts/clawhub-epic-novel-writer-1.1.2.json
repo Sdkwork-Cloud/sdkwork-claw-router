@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epic-novel-writer@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epic_novel_writer",
+  "skill": {
+    "id": 51609,
+    "skillKey": "clawhub-epic-novel-writer",
+    "name": "Epic Novel Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epic-novel-writer",
+    "url": "https://clawhub.ai/skills/epic-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epic-novel-writer-43b309a1f24f22e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Novel writing full workflow — from world-building and character design to chapter planning, manuscript writing, version archiving, and HTML guide generation...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshinejnjn",
+      "userId": "s17ehnmpwm46zw2010e8g6j2z583gzv3",
+      "displayName": "JnJn",
+      "image": "https://avatars.githubusercontent.com/u/10294017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777319551468,
+      "changelog": "Removed unsupported license field from SKILL.md frontmatter (ClawHub CLI v0.8.0 defaults to MIT-0 regardless; BSD-3-Clause license text preserved in README).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1b3a444e4831437f805b15fbb3a9c2957d46685b1dfdb784c17af9a5e31663f"
+}

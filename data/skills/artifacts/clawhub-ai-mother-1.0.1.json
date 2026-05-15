@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-mother@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_mother",
+  "skill": {
+    "id": 25029,
+    "skillKey": "clawhub-ai-mother",
+    "name": "Ai Mother"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-mother",
+    "url": "https://clawhub.ai/skills/ai-mother",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-mother-9d70ade93b4a3856.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Mother - Monitor and manage other AI agents (Claude Code, Codex, Gemini, etc.). Use when asked to check AI execution status, supervise AI agents, help stu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guguoyi",
+      "userId": "s173z9v716amvgptffp12ym39n83gd3p",
+      "displayName": "将军王谷",
+      "image": "https://avatars.githubusercontent.com/u/20290298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773841659765,
+      "changelog": "**Major update: Adds flexible permission handling, duplicate cleanup, dynamic patrols, and more triggers.**\n\n- Now handles owner permission responses (e.g. \"AI Mother: yes 756882\") for stuck AIs needing confirmation.\n- Added scripts for duplicate AI detection/cleanup and smarter patrol frequency management.\n- New triggers: listens for \"cleanup duplicates\" and owner responses in chat, not just status/dash.\n- Expanded agent support to include OpenCode, Aider, etc.; improved documentation and onboarding hints.\n- Additional scripts enhance health checks, stuck AI detection, and safe duplicate cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:877bf5459b0474d828d3f093659d0fd2778fb1d818a413adc975ccca44b7b465"
+}

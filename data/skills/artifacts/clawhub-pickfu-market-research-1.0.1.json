@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pickfu-market-research@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pickfu_market_research",
+  "skill": {
+    "id": 51780,
+    "skillKey": "clawhub-pickfu-market-research",
+    "name": "Pickfu Market Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pickfu-market-research",
+    "url": "https://clawhub.ai/skills/pickfu-market-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pickfu-market-research-7f56af28c72587ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run consumer research surveys with PickFu to get real human feedback in minutes — generate images, validate product names, compare logos and packaging, test..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justinchen",
+      "userId": "s17ds3efrwmns5b4f14namsrpx84f0hc",
+      "displayName": "justinchen",
+      "image": "https://avatars.githubusercontent.com/u/122463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777934718707,
+      "changelog": "Sharpen survey-wait guidance: replace prose 'poll every 60s' with a copy-pasteable until/done bash loop. Document the Claude Code Bash tool 10-min single-command cap and 4-hour bail-out. Add brand-faithful variant pattern using --reference-image-url with one-hypothesis-per-variant in the asset-generation step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:996bb811de2f63db7a3cf425e64d66763b27822fb070e2ccc8d412f1da1ac0df"
+}

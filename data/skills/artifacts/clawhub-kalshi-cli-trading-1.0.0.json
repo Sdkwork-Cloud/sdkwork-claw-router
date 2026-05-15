@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-cli-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_cli_trading",
+  "skill": {
+    "id": 16901,
+    "skillKey": "clawhub-kalshi-cli-trading",
+    "name": "Kalshi CLI Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-cli-trading",
+    "url": "https://clawhub.ai/skills/kalshi-cli-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-cli-trading-2641b9aba23b5357.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade prediction markets on Kalshi using the kalshi-cli command-line tool. Use when the user wants to trade event contracts, browse prediction markets, place..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lacymorrow",
+      "userId": "publishers:lacymorrow",
+      "displayName": "lacymorrow",
+      "image": "https://avatars.githubusercontent.com/u/1311301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 808,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772600797354,
+      "changelog": "Initial production release: full Kalshi CLI integration with market discovery, trading, portfolio management, streaming, and ASCII charts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:acb233e8f00dd67f0c5a12a7e66c186cad6d76d4ac5b847f5a25a511e593083f"
+}

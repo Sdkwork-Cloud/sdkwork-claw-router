@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-project-structure@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_project_structure",
+  "skill": {
+    "id": 64629,
+    "skillKey": "clawhub-agent-project-structure",
+    "name": "agent-project-structure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-project-structure",
+    "url": "https://clawhub.ai/skills/agent-project-structure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-project-structure-5514f5c338e2f28e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent project directory structure规范。指导agent生成规范的项目文件结构，包括：项目文件单独存放在项目目录下，日志文件统一放在log目录，临时文件（截图、缓存等）与正式文件分离。使用时检查现有结构是否符合规范，或根据规范创建/调整目录结构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "songxf1024",
+      "userId": "s170pn6fx2zfkbvmt45x2928e983g69p",
+      "displayName": "Song Xianfeng",
+      "image": "https://avatars.githubusercontent.com/u/111047002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778253595192,
+      "changelog": "- Added explicit instructions specifying trigger phrases (in both Chinese and English) that activate this skill by default.\n- Clarified that the standard project structure should be used unless the user requests an alternative.\n- No code or logic changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dd5ffa68a7582b3d2817546603110fac67cbe762665d3225144f256347456d0"
+}

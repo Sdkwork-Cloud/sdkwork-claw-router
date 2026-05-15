@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73356,
+  "uuid": "skill-clawhub-nickname-creator",
+  "skillKey": "clawhub-nickname-creator",
+  "name": "昵称专家",
+  "summary": "创意起外号技能，帮助用户生成个性化的昵称、网名、代号。适用于游戏ID、社交账号、公司群名、情侣昵称、宠物名等各种场景。当用户提到起外号、起名字、取昵称、求个名字、想换个网名、帮我起个名、游戏昵称推荐、给宠物起名、取个代号等需求时触发此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nickname_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaosai",
+      "features": [
+        "创意起外号技能，帮助用户生成个性化的昵称、网名、代号。适用于游戏ID、社交账号、公司群名、情侣昵称、宠物名等各种场景。当用户提到起外号、起名字、取昵称、求个名字、想换个网名、帮我起个名、游戏."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nickname-creator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2424882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nickname-creator",
+      "url": "https://clawhub.ai/skills/nickname-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nickname-creator",
+    "url": "https://clawhub.ai/skills/nickname-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nickname-creator-1377fef527a44aaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nickname-creator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nickname-creator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d7ec86371713e1b010a75e285ada89a484be032a68b0d0a02cdd0efd1e79fcc",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:57:24.064Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61847,
+  "uuid": "skill-clawhub-server-test-converter",
+  "skillKey": "clawhub-server-test-converter",
+  "name": "Server Test Converter",
+  "summary": "将服务器测试命令 txt 文件转换为 pytest 测试用例。每个 txt 文件对应生成一个独立的 pytest 文件，命令合并到一个函数中执行。包含通用框架 test_framework.py，适配各种测试环境。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_test_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuyun2025",
+      "features": [
+        "将服务器测试命令 txt 文件转换为 pytest 测试用例。每个 txt 文件对应生成一个独立的 pytest 文件，命令合并到一个函数中执行。包含通用框架 test_framework.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-test-converter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198372617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-test-converter",
+      "url": "https://clawhub.ai/skills/server-test-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-test-converter",
+    "url": "https://clawhub.ai/skills/server-test-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-test-converter-9c842388b0ffdb2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-test-converter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-test-converter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e4d85745bbeb17cf4232283a605a758b0127a9f3fd0fb88cd98e00851b622dd",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:58:43.492Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-ai-hairstyle-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_ai_hairstyle_generator",
+  "skill": {
+    "id": 33992,
+    "skillKey": "clawhub-mediaio-ai-hairstyle-generator",
+    "name": "AI Hairstyle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-ai-hairstyle-generator",
+    "url": "https://clawhub.ai/skills/mediaio-ai-hairstyle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-ai-hairstyle-generator-7d9d4ec3fb51708e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Try different hairstyles and accessories on photos using AI via Media.io OpenAPI. Preview new haircuts, hair colors, glasses, hats. AI hairstyle generator, h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773887724659,
+      "changelog": "- Updated metadata to include \"openclaw\" section with homepage, required binaries, and environment variable references.\n- Removed previous \"mediaio\" publisher and source information from metadata.\n- No significant functional or behavioral changes to the skill otherwise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f149c486acd587e3bf2345a3609a4cd6229ccde8d4530f73ffca16645e104339"
+}

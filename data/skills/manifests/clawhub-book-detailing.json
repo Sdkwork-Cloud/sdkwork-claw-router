@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13565,
+  "uuid": "skill-clawhub-book-detailing",
+  "skillKey": "clawhub-book-detailing",
+  "name": "Book Detailing",
+  "summary": "Book detailing services through Lokuli MCP. Use when user needs to find and book detailing. Triggers on requests like \"book a detailing\", \"find detailing near me\", or any detailing service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_detailing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book detailing services through Lokuli MCP",
+        "Use when user needs to find and book detailing",
+        "Triggers on requests like \"book a detailing\", \"find detailing near me\", or any detailing servic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-detailing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-detailing",
+      "url": "https://clawhub.ai/skills/book-detailing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-detailing",
+    "url": "https://clawhub.ai/skills/book-detailing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-detailing-afcd9669455eb034.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-detailing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-detailing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:748a78301bc8ba86db400731bd61dc72de8a755ecda0e6d9db407c92362205bc",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:22.389Z"
+}

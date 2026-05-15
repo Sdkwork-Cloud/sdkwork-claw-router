@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12832,
+  "uuid": "skill-clawhub-gh-action-gen",
+  "skillKey": "clawhub-gh-action-gen",
+  "name": "GitHub Action Generator",
+  "summary": "Generate GitHub Actions workflows from plain English. Use when setting up CI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_action_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "branexp",
+      "features": [
+        "Generate GitHub Actions workflows from plain English",
+        "Use when setting up CI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-action-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148727817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-action-gen",
+      "url": "https://clawhub.ai/skills/gh-action-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-action-gen",
+    "url": "https://clawhub.ai/skills/gh-action-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-action-gen-6de9c19d9cd0ef5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-action-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-action-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ba044175a06dc41041548031dfba5879816c812ded9fb8ff88e47b478292077",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:16:56.701Z"
+}

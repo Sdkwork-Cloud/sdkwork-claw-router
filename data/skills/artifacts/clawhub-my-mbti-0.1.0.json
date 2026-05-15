@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-mbti@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_mbti",
+  "skill": {
+    "id": 67359,
+    "skillKey": "clawhub-my-mbti",
+    "name": "My MBTI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-mbti",
+    "url": "https://clawhub.ai/skills/my-mbti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-mbti-ca84becbbd79b934.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据本地 MBTI 人格资料切换对话风格的技能。用于用户要求按 MBTI 人格风格说话、模拟某种人格语气、在多个 MBTI 风格之间切换、按特定人格设定持续问答时。支持 16 种 MBTI 类型（如 INTJ、ENFP、ISTJ 等），并在同一会话中根据用户最新指定的人格类型立即切换输出风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuetsui",
+      "userId": "s176ggpedb2a9em1j7m9x4e6n9840gxa",
+      "displayName": "Fue Tsui",
+      "image": "https://avatars.githubusercontent.com/u/39769490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775041989033,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35ab9fd08de5ebd450945cc03d9453ae25754a645947ad883ad1eec90d529e32"
+}

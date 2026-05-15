@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-samber-lo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_samber_lo",
+  "skill": {
+    "id": 51813,
+    "skillKey": "clawhub-golang-samber-lo",
+    "name": "Golang Samber Lo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-samber-lo",
+    "url": "https://clawhub.ai/skills/golang-samber-lo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-samber-lo-a5cecab7181c4216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Functional programming helpers for Golang using samber/lo — 500+ type-safe generic functions for slices, maps, channels, strings, math, tuples, and concurren..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775082701990,
+      "changelog": "- Version incremented to 1.0.3 and metadata updated accordingly.\n- Compatibility note: Added AskUserQuestion to allowed tools.\n- Minor text fix: \"more informations\" corrected to \"more information\" in documentation.\n- No functional or feature changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e2eb2fdd9a580fda60ebe83f8de137a697d5d5d75f85f4a65ea7bf0d907c799"
+}

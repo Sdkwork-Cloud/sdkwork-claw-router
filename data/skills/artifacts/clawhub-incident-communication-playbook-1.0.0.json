@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-communication-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_communication_playbook",
+  "skill": {
+    "id": 44990,
+    "skillKey": "clawhub-incident-communication-playbook",
+    "name": "Status page & incident communication by openstatus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-communication-playbook",
+    "url": "https://clawhub.ai/skills/incident-communication-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-communication-playbook-c111a5ed8db90936.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write professional incident updates, blameless postmortems, maintenance announcements, and status reports for your status page. Includes real-world examples..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openstatus",
+      "userId": "s17ba5jfpwvh6xdbv0hcyz0qpn84y0ed",
+      "displayName": "openstatus",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776330643804,
+      "changelog": "Initial release of incident-communication skill.\n\n- Enables writing professional incident updates for any incident phase: investigating, identified, monitoring, resolved.\n- Integrates real-world communication examples from Vercel, Stripe, GitHub, and Cloudflare.\n- Automatically uses your status page’s tone, components, and SLAs by referencing status-page-context.\n- Bundled with templates, principles, anti-patterns, and quality checklists to ensure effective updates.\n- Designed for on-call engineers, SREs, DevOps, engineering managers, and anyone responsible for status page communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa40d680ab969efc72d21b79a3615a498039db4ef651bcfe81f8a26a264ae456"
+}

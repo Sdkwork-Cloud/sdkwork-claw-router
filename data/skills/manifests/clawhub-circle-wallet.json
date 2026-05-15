@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9171,
+  "uuid": "skill-clawhub-circle-wallet",
+  "skillKey": "clawhub-circle-wallet",
+  "name": "circle-wallet",
+  "summary": "USDC wallet capabilities for OpenClaw agents via Circle Developer-Controlled Wallets",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circle_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eltontay",
+      "features": [
+        "USDC wallet capabilities for OpenClaw agents via Circle Developer-Controlled Wallets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/circle-wallet@1.0.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57287843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "circle-wallet",
+      "url": "https://clawhub.ai/skills/circle-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circle-wallet",
+    "url": "https://clawhub.ai/skills/circle-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circle-wallet-82deb365c84bc54f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/circle-wallet@1.0.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-circle-wallet-1.0.17.json",
+      "version": "1.0.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f61ae6769f4b53a70bb981149b9cb374191308ec1949161633e1b110842690c5",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:30:01.511Z"
+}

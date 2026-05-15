@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41577,
+  "uuid": "skill-clawhub-eb-video-editor",
+  "skillKey": "clawhub-eb-video-editor",
+  "name": "Video Editor",
+  "summary": "Edits existing videos using ffmpeg and Python. Use ALWAYS when the user wants to edit a video, cut a video, join videos, add subtitles, add music, remove aud...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_video_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Edits existing videos using ffmpeg and Python",
+        "Use ALWAYS when the user wants to edit a video, cut a video, join videos, add subtitles, add mu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-video-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-video-editor",
+      "url": "https://clawhub.ai/skills/eb-video-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-video-editor",
+    "url": "https://clawhub.ai/skills/eb-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-video-editor-8ff123ee56383988.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-video-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-video-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9fff91979317eb341ea542001d5e4f3a623cdaf9826a4f747d2513a176ae96c",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:40:47.864Z"
+}

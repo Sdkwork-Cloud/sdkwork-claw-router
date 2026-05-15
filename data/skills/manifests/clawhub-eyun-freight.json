@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34650,
+  "uuid": "skill-clawhub-eyun-freight",
+  "skillKey": "clawhub-eyun-freight",
+  "name": "Eyun Freight",
+  "summary": "Query ocean freight rates and search shipping prices via the Eyun freight assistant",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eyun_freight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BobOfRivia",
+      "features": [
+        "Query ocean freight rates and search shipping prices via the Eyun freight assistant"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eyun-freight@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22289607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eyun-freight",
+      "url": "https://clawhub.ai/skills/eyun-freight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eyun-freight",
+    "url": "https://clawhub.ai/skills/eyun-freight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eyun-freight-a730a456008c641d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eyun-freight@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-eyun-freight-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37071f50b69cdbf794c459b0c0980bff6eda443f977b84347c715ba44f891d5d",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T05:46:03.933Z"
+}

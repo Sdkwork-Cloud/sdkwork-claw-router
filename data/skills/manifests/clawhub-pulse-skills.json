@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43146,
+  "uuid": "skill-clawhub-pulse-skills",
+  "skillKey": "clawhub-pulse-skills",
+  "name": "Pulse Skills",
+  "summary": "Use this skill when the user wants to share their AI agent with others, sync files/context to Pulse, search/read/create/edit notes, create shareable agent li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pulse_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Awassi",
+      "features": [
+        "Use this skill when the user wants to share their AI agent with others, sync files/context to P."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pulse-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118058822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pulse-skills",
+      "url": "https://clawhub.ai/skills/pulse-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pulse-skills",
+    "url": "https://clawhub.ai/skills/pulse-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pulse-skills-3c56d013801b6541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pulse-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pulse-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06c6852951a606419a5e1555255d78e209c294c2fee855511c87f293e4580c99",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T22:23:39.947Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15644,
+  "uuid": "skill-clawhub-quickintel-scan",
+  "skillKey": "clawhub-quickintel-scan",
+  "name": "Quick Intel Token Security Scanner",
+  "summary": "Scan any token for security risks, honeypots, and scams using Quick Intel's contract analysis API. Use when: checking if a token is safe to buy, detecting ho...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quickintel_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ninja Dev (QI)",
+      "features": [
+        "Scan any token for security risks, honeypots, and scams using Quick Intel's contract analysis A.",
+        "Use when: checking if a token is safe to buy, detecting ho..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quickintel-scan@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142059473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quickintel-scan",
+      "url": "https://clawhub.ai/skills/quickintel-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quickintel-scan",
+    "url": "https://clawhub.ai/skills/quickintel-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quickintel-scan-8483d5bd5c1252e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quickintel-scan@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-quickintel-scan-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34db283a42da4b1c88facf0a50009aa9f2e42f31fbe32ee7711650a508e43dc0",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:40:43.533Z"
+}

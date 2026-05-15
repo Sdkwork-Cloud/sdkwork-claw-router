@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_cli",
+  "skill": {
+    "id": 11795,
+    "skillKey": "clawhub-git-cli",
+    "name": "Git cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-cli",
+    "url": "https://clawhub.ai/skills/git-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-cli-d38e231f52223229.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helper for using the Git CLI to inspect, stage, commit, branch, and synchronize code changes. Use when the user wants to understand or perform Git operations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1718,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773629679251,
+      "changelog": "- Major update: Added reference, assets, and scripts directories to provide quick references, check scripts, and templates.\n- Added quick reference table for common Git tasks and commands.\n- Introduced scripts for checking Git repo state, status summary, and branch listing.\n- Included assets with commit message and .gitignore templates for easy reuse.\n- Added detailed reference and troubleshooting guides in the reference directory.\n- Emphasized safety and context confirmation, with improved workflow and pointers to reusable content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46a0c8709efba49370e11850aa554473645f1ba135e0108ad69393eea95dff21"
+}

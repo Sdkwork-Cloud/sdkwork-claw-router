@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63898,
+  "uuid": "skill-clawhub-openclaw-persona-forge",
+  "skillKey": "clawhub-openclaw-persona-forge",
+  "name": "OpenClaw 龙虾灵魂锻造炉",
+  "summary": "为 OpenClaw AI Agent 锻造完整的龙虾灵魂方案。根据用户偏好或随机抽卡， 输出身份定位、灵魂描述(SOUL.md)、角色化底线规则、名字和头像生图提示词。 如已安装 baoyu-image-gen skill，可自动生成统一风格头像图片。 当用户需要创建、设计或定制 OpenClaw 龙虾灵魂时使...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_persona_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eamanc",
+      "features": [
+        "为 OpenClaw AI Agent 锻造完整的龙虾灵魂方案。根据用户偏好或随机抽卡， 输出身份定位、灵魂描述(SOUL.md)、角色化底线规则、名字和头像生图提示词。 如已安装 baoy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-persona-forge@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33925426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-persona-forge",
+      "url": "https://clawhub.ai/skills/openclaw-persona-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-persona-forge",
+    "url": "https://clawhub.ai/skills/openclaw-persona-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-persona-forge-3c65947d21507bfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-persona-forge@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-persona-forge-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a88bcbd9c2f55ac9e7c67c454f9cddcd904d15d5a8df845f8acd71b872b5bf3",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T11:18:29.322Z"
+}

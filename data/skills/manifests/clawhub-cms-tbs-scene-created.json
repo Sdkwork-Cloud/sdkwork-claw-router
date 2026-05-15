@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62945,
+  "uuid": "skill-clawhub-cms-tbs-scene-created",
+  "skillKey": "clawhub-cms-tbs-scene-created",
+  "name": "cms-tbs-scene-created",
+  "summary": "提供【TBS场景创建】全流程编排能力（Step1-4）。当用户表达\"创建场景/新建场景/开始创建/训战场景/对练场景/生成场景\"时，按 references/step1-4 编排并在用户确认且知识齐全后落库。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_tbs_scene_created",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "提供【TBS场景创建】全流程编排能力（Step1-4）。当用户表达\"创建场景/新建场景/开始创建/训战场景/对练场景/生成场景\"时，按 references/step1-4 编排并在用户确认."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-tbs-scene-created@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-tbs-scene-created",
+      "url": "https://clawhub.ai/skills/cms-tbs-scene-created"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-tbs-scene-created",
+    "url": "https://clawhub.ai/skills/cms-tbs-scene-created",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-tbs-scene-created-d73238d4c3296437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-tbs-scene-created@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-tbs-scene-created-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01207f96943c0b8188bf33eed56656c1bdb05a6782f774dbb3faa0759c1a516f",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T06:30:30.277Z"
+}

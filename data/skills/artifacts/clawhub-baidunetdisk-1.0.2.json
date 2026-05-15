@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidunetdisk@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidunetdisk",
+  "skill": {
+    "id": 13261,
+    "skillKey": "clawhub-baidunetdisk",
+    "name": "Baidunetdisk Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidunetdisk",
+    "url": "https://clawhub.ai/skills/baidunetdisk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidunetdisk-9122f3f84b4f4a42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage your Baidu Netdisk files: list, search, extract share links, transfer, create directories, rename, move, and delete files securely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lilei0311",
+      "userId": "publishers:lilei0311",
+      "displayName": "MaxStormSpace",
+      "image": "https://avatars.githubusercontent.com/u/67162380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1273,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771182302008,
+      "changelog": "- 更新版本号至 1.0.2，并在文档底部同步\n- 其余文档内容无变更",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7dcfcfc2083e982c79a4052fe6c8634d7df438528dcee032cb3a5ee62a83d5f3"
+}

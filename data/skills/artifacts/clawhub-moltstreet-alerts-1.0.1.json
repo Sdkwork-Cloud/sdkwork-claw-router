@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltstreet-alerts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltstreet_alerts",
+  "skill": {
+    "id": 53626,
+    "skillKey": "clawhub-moltstreet-alerts",
+    "name": "MoltStreet Alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltstreet-alerts",
+    "url": "https://clawhub.ai/skills/moltstreet-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltstreet-alerts-04ef41da41f9b03e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-conviction AI trading signals — only the strongest ETF calls from 6 opposing analysts. Free, no API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fredxyt",
+      "userId": "s176qsnjwhrwjc03zrzdpxpa2x83eqzr",
+      "displayName": "fredxyt",
+      "image": "https://avatars.githubusercontent.com/u/25228964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773444308699,
+      "changelog": "v1.0.1: Fix dead /etf/ endpoints — now uses /signals/actionable for pre-filtered high-conviction signals",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38b8b26065c3d78e1304e14c93e29f5abf74c2a32fa556a994cd5150b04292b3"
+}

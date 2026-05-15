@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28415,
+  "uuid": "skill-clawhub-content-system-humanizer-zh",
+  "skillKey": "clawhub-content-system-humanizer-zh",
+  "name": "Content System Humanizer Zh",
+  "summary": "Remove obvious AI-writing traces from Chinese text in a constrained way. Use when Codex needs to reduce AI smell without changing facts, data, or the article...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_humanizer_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Remove obvious AI-writing traces from Chinese text in a constrained way",
+        "Use when Codex needs to reduce AI smell without changing facts, data, or the article..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-system-humanizer-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-system-humanizer-zh",
+      "url": "https://clawhub.ai/skills/content-system-humanizer-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-humanizer-zh",
+    "url": "https://clawhub.ai/skills/content-system-humanizer-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-humanizer-zh-82f39c7ab566e318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-system-humanizer-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-system-humanizer-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:201d49b771f9d1f8132f24d89b4120590f11e839041a225db9d303a32d279129",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:14:36.287Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67522,
+  "uuid": "skill-clawhub-peter-ci-gate",
+  "skillKey": "clawhub-peter-ci-gate",
+  "name": "Peter Ci Gate",
+  "summary": "CI 绿灯门禁。负责远端检查状态、失败定位、单次重跑策略，并输出“是否可合并”。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peter_ci_gate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasilva",
+      "features": [
+        "CI 绿灯门禁。负责远端检查状态、失败定位、单次重跑策略，并输出“是否可合并”。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peter-ci-gate@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16743182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peter-ci-gate",
+      "url": "https://clawhub.ai/skills/peter-ci-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peter-ci-gate",
+    "url": "https://clawhub.ai/skills/peter-ci-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peter-ci-gate-fbcf8281c440051e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peter-ci-gate@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-peter-ci-gate-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c192dc4c63af779dd8f807438265d121bdd9ba47f511283c1397f5b5e6bc49cc",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:55:35.463Z"
+}

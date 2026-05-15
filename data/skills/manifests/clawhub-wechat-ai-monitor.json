@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25024,
+  "uuid": "skill-clawhub-wechat-ai-monitor",
+  "skillKey": "clawhub-wechat-ai-monitor",
+  "name": "WeChat AI Monitor",
+  "summary": "Monitor multiple WeChat public accounts for AI/tech content, filter articles by 200+ keywords, and generate daily Markdown reports with RSS support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_ai_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haloha",
+      "features": [
+        "Monitor multiple WeChat public accounts for AI/tech content, filter articles by 200+ keywords,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-ai-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62683337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-ai-monitor",
+      "url": "https://clawhub.ai/skills/wechat-ai-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-ai-monitor",
+    "url": "https://clawhub.ai/skills/wechat-ai-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-ai-monitor-bedd9c9e1283389b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-ai-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-ai-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80cecb8ae97f901c37d3342f4f2c48af0bd4de20a72a16272ee453b0f9191eb9",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:04:12.533Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-conversion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_conversion",
+  "skill": {
+    "id": 64846,
+    "skillKey": "clawhub-wechat-article-conversion",
+    "name": "微信文章格式转换"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-conversion",
+    "url": "https://clawhub.ai/skills/wechat-article-conversion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-conversion-766cb526248afbf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章抓取与转换，支持 Markdown/HTML/Text/JSON/Excel 五种格式。 触发条件：用户发送微信文章链接（https://mp.weixin.qq.com/s/xxx）、 多链接（换行分隔）、或「帮我转这篇文章」「保存微信文章」等表达。 格式选择前必须询问用户，支持单选或多选。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luojiangyong",
+      "userId": "s179tgrbsc9h48r6jgk4wcjm9n8451xk",
+      "displayName": "LuoJiangYong",
+      "image": "https://avatars.githubusercontent.com/u/34528708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776010273477,
+      "changelog": "将微信文章转换为 Markdown/HTML/Text/JSON/Excel五种格式，无需登录，直接抓取，图片和样式本地化保留。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa6c82d9bfc7ae26f9e5dc8a7c3b10ebd5c71b7651654b20c4c734cae7f1eec5"
+}

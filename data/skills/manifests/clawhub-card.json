@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24149,
+  "uuid": "skill-clawhub-card",
+  "skillKey": "clawhub-card",
+  "name": "Shop Car Insurance",
+  "summary": "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TripleHippo",
+      "features": [
+        "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/card@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261665182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "card",
+      "url": "https://clawhub.ai/skills/card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card",
+    "url": "https://clawhub.ai/skills/card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-8367cd66fdd136bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/card@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-card-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ea8c909c07e5663c6ed674174e5aa52f735eb338f416ecc8e919823f821d17f",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:26:47.915Z"
+}

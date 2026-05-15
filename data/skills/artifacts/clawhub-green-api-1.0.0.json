@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/green-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.green_api",
+  "skill": {
+    "id": 38895,
+    "skillKey": "clawhub-green-api",
+    "name": "GREEN-API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "green-api",
+    "url": "https://clawhub.ai/skills/green-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/green-api-79c4714c5ada410e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive WhatsApp messages, manage groups, contacts, and instances via GREEN-API MCP gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "support-greenapi",
+      "userId": "s17erhhjhhrf0sp2wqs0p9q2ah84crky",
+      "displayName": "Green API",
+      "image": "https://avatars.githubusercontent.com/u/153885128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775566246095,
+      "changelog": "Release of the skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f8c0f8403a9320e98658798e5582ffbb792df180089808454f25ee1092aabeb"
+}

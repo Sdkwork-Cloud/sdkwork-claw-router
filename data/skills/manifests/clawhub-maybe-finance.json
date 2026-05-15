@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57106,
+  "uuid": "skill-clawhub-maybe-finance",
+  "skillKey": "clawhub-maybe-finance",
+  "name": "Maybe Finance - 个人财务助手",
+  "summary": "Personal finance management skill using Maybe Finance OS. Use when users need to track expenses, analyze budgets, monitor net worth, or manage personal finan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maybe_finance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "Personal finance management skill using Maybe Finance OS",
+        "Use when users need to track expenses, analyze budgets, monitor net worth, or manage personal f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maybe-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maybe-finance",
+      "url": "https://clawhub.ai/skills/maybe-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maybe-finance",
+    "url": "https://clawhub.ai/skills/maybe-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maybe-finance-8ec0bdf6bbb58f4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maybe-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maybe-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d37cd3914f4bf097e20328310de33285ddfa11837d4d513eb2b3c07033920b71",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:02:23.584Z"
+}

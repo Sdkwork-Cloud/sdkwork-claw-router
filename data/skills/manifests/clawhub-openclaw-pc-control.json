@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68315,
+  "uuid": "skill-clawhub-openclaw-pc-control",
+  "skillKey": "clawhub-openclaw-pc-control",
+  "name": "OpenClaw PC Control",
+  "summary": "PC控制工具，远程操控Windows电脑。当需要操作主人电脑时使用，如截屏、键鼠控制、文件操作、进程管理、浏览器自动化、Shell命令执行等。触发词：控制电脑、操作PC、截图、键盘、鼠标、文件管理、浏览器。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_pc_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LukeBryan",
+      "features": [
+        "PC控制工具，远程操控Windows电脑。当需要操作主人电脑时使用，如截屏、键鼠控制、文件操作、进程管理、浏览器自动化、Shell命令执行等。触发词：控制电脑、操作PC、截图、键盘、鼠标、文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-pc-control@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65474137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-pc-control",
+      "url": "https://clawhub.ai/skills/openclaw-pc-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-pc-control",
+    "url": "https://clawhub.ai/skills/openclaw-pc-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-pc-control-e1f4f0ff917878dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-pc-control@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-pc-control-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ef36bb983fb0d816e3bae5f0d0de734cf1bf2fc39d65f55cf639a6d9d623148",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:39:20.997Z"
+}

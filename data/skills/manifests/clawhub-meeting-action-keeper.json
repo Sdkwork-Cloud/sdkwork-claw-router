@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49839,
+  "uuid": "skill-clawhub-meeting-action-keeper",
+  "skillKey": "clawhub-meeting-action-keeper",
+  "name": "Meeting Action Keeper",
+  "summary": "Organizes meeting notes into decisions, action items with owners and deadlines, flags uncertainties, and drafts clear follow-up communications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_action_keeper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Organizes meeting notes into decisions, action items with owners and deadlines, flags uncertain."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-action-keeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-action-keeper",
+      "url": "https://clawhub.ai/skills/meeting-action-keeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-action-keeper",
+    "url": "https://clawhub.ai/skills/meeting-action-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-action-keeper-b902b56ab99d6fb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-action-keeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-action-keeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fa7213ef89b96ca73a9eece99d50207e33ee5ad96d9a87caf642c9da614d07c",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:07:26.770Z"
+}

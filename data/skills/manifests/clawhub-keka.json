@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39219,
+  "uuid": "skill-clawhub-keka",
+  "skillKey": "clawhub-keka",
+  "name": "Keka",
+  "summary": "Keka integration. Manage data, records, and automate workflows. Use when the user wants to interact with Keka data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Keka integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Keka data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keka@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keka",
+      "url": "https://clawhub.ai/skills/keka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keka",
+    "url": "https://clawhub.ai/skills/keka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keka-0ce9aff717bb6e36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keka@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-keka-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62f817f97d99a3f30495efb4e628d369706726686659032c2c1ff775c0132051",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:28.973Z"
+}

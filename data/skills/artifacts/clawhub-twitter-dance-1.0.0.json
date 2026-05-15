@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-dance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_dance",
+  "skill": {
+    "id": 64845,
+    "skillKey": "clawhub-twitter-dance",
+    "name": "twitter-dance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-dance",
+    "url": "https://clawhub.ai/skills/twitter-dance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-dance-33e7397b7c79281a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 apidance.pro API，自动生成并发布推文，支持账户统计、通知管理、自动回复和互动分析，适合日常社媒运营自动化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evan-y25",
+      "userId": "publishers:evan-y25",
+      "displayName": "Evan",
+      "image": "https://avatars.githubusercontent.com/u/96123524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773299041882,
+      "changelog": "twitter-dance 1.0.0\n\n- Initial release of a fully automated Twitter posting and management system based on apidance.pro API\n- Supports AI-powered tweet generation (Kimi), automated posting, bulk scheduling, and draft mode\n- Includes tweet analytics, account stats, interaction and engagement analysis, and notification management\n- Offers advanced features: auto-reply to comments, conversation threading, bulk like/retweet, and best posting time analysis\n- Command-line scripts provided for quick start, automation, and interactive workflows\n- Extremely low operating cost compared to popular alternatives",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a84219bf6bb7e6073fa6d1bb5c01054b9918a94a3f0ad1378b159c20606b7de"
+}

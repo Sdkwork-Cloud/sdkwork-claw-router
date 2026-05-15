@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44880,
+  "uuid": "skill-clawhub-lapse-video-maker",
+  "skillKey": "clawhub-lapse-video-maker",
+  "name": "Lapse Video Maker",
+  "summary": "Get time-lapse MP4 ready to post, without touching a single slider. Upload your sequential images (JPG, PNG, MP4, MOV, up to 500MB), say something like \"turn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lapse_video_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Get time-lapse MP4 ready to post, without touching a single slider",
+        "Upload your sequential images (JPG, PNG, MP4, MOV, up to 500MB), say something like \"turn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lapse-video-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lapse-video-maker",
+      "url": "https://clawhub.ai/skills/lapse-video-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lapse-video-maker",
+    "url": "https://clawhub.ai/skills/lapse-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lapse-video-maker-d215d90e193a9f52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lapse-video-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lapse-video-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d1c7fe40c5dc6fceff3ae1e20f0744c297808c647826897676009d4d3344e60",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:15:40.891Z"
+}

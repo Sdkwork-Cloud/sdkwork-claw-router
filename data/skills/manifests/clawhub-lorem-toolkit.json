@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46745,
+  "uuid": "skill-clawhub-lorem-toolkit",
+  "skillKey": "clawhub-lorem-toolkit",
+  "name": "Lorem Toolkit",
+  "summary": "Generate placeholder text, fake data, and test content including names, contacts, tech, finance, dates, JSON templates, and custom patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lorem_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darbling",
+      "features": [
+        "Generate placeholder text, fake data, and test content including names, contacts, tech, finance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lorem-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105998927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lorem-toolkit",
+      "url": "https://clawhub.ai/skills/lorem-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lorem-toolkit",
+    "url": "https://clawhub.ai/skills/lorem-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lorem-toolkit-3a39e8dc8bf3a3dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lorem-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lorem-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0057d6a55e8fc915d2149777fb348e55ccfbca1b941a3cf5d0ab48beecd05f8",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:57:25.456Z"
+}

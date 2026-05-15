@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21439,
+  "uuid": "skill-clawhub-skill-sanitizer",
+  "skillKey": "clawhub-skill-sanitizer",
+  "name": "Clawhub Publish",
+  "summary": "Scans SKILL.md files with 7 regex layers to block prompt injection, reverse shells, memory tampering, encoding evasion, and trust abuse before LLM processing.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sanitizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyber-X.B.X",
+      "features": [
+        "Scans SKILL.md files with 7 regex layers to block prompt injection, reverse shells, memory tamp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-sanitizer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257848154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-sanitizer",
+      "url": "https://clawhub.ai/skills/skill-sanitizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sanitizer",
+    "url": "https://clawhub.ai/skills/skill-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sanitizer-0575e75061601751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-sanitizer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-sanitizer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f07541653da396ec0688cee07be2478959e113a615701d3ee523a50c166bf10c",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T20:57:05.449Z"
+}

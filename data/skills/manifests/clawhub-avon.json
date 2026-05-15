@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71727,
+  "uuid": "skill-clawhub-avon",
+  "skillKey": "clawhub-avon",
+  "name": "Avon",
+  "summary": "提供雅芳（Avon）品牌介绍、产品信息、市场数据、全球布局及最新动态，助您全面了解该美容护肤公司。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供雅芳（Avon）品牌介绍、产品信息、市场数据、全球布局及最新动态，助您全面了解该美容护肤公司。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avon@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avon",
+      "url": "https://clawhub.ai/skills/avon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avon",
+    "url": "https://clawhub.ai/skills/avon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avon-3f703a8dd95c6210.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avon@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-avon-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c0c50848662dd0bdffabf002ef5d259838cb8b6c72cfae362261ad926ae1211",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:36.955Z"
+}

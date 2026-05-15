@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14468,
+  "uuid": "skill-clawhub-ollama-web-search",
+  "skillKey": "clawhub-ollama-web-search",
+  "name": "Ollama Web Search",
+  "summary": "Web search via Ollama API. Returns relevant results from Ollama web search for AI agents.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cndaqiang",
+      "features": [
+        "Web search via Ollama API",
+        "Returns relevant results from Ollama web search for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26620270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-web-search",
+      "url": "https://clawhub.ai/skills/ollama-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-web-search",
+    "url": "https://clawhub.ai/skills/ollama-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-web-search-7df6a51422fd9a62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:323b67ad7b839fdd170fd68375986292edcf950aa6080f084a44ec3b5ff76b61",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:11:21.640Z"
+}

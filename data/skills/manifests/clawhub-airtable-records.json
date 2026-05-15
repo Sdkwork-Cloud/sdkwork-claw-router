@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53972,
+  "uuid": "skill-clawhub-airtable-records",
+  "skillKey": "clawhub-airtable-records",
+  "name": "Airtable",
+  "summary": "Browse Airtable bases and tables, inspect records, create records, and manage fields, comments, and table actions — powered by ClawLink.",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airtable_records",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Browse Airtable bases and tables, inspect records, create records, and manage fields, comments,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airtable-records@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airtable-records",
+      "url": "https://clawhub.ai/skills/airtable-records"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airtable-records",
+    "url": "https://clawhub.ai/skills/airtable-records",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airtable-records-79997fad00f6a3b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airtable-records@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-airtable-records-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0077bf4c23939f6382eef481b2e05fffefe968c5f0906dafab2338954e6ae1cd",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:30:45.215Z"
+}

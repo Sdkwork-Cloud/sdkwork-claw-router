@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10538,
+  "uuid": "skill-clawhub-alpaca",
+  "skillKey": "clawhub-alpaca",
+  "name": "Alpaca Trading",
+  "summary": "Trade stocks and crypto via Alpaca API. Use for market data (quotes, bars, news), placing orders (market, limit, stop), checking positions, portfolio management, and account info. Supports both paper and live trading. Use when user asks ab.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpaca",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vamzi",
+      "features": [
+        "Trade stocks and crypto via Alpaca API",
+        "Use for market data (quotes, bars, news), placing orders (market, limit, stop), checking positi.",
+        "Supports both paper and live trading",
+        "Use when user asks about stock prices, wants to buy/sell securities, check portfolio, or manage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alpaca@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9899519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alpaca",
+      "url": "https://clawhub.ai/skills/alpaca"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpaca",
+    "url": "https://clawhub.ai/skills/alpaca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpaca-4de6702c739d8c9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alpaca@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51bad64891e07acbaf27807d50b05badc8d7721730ed0d16bb5ef72b75852681",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T03:09:13.866Z"
+}

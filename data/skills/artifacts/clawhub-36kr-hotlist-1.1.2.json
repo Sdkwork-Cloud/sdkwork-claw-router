@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/36kr-hotlist@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.36kr_hotlist",
+  "skill": {
+    "id": 59601,
+    "skillKey": "clawhub-36kr-hotlist",
+    "name": "36氪热榜 - 36kr Hot List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "36kr-hotlist",
+    "url": "https://clawhub.ai/skills/36kr-hotlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/36kr-hotlist-8b9481b304daaa02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取36氪官方24小时热榜文章数据. Use when the user asks about 36kr hot articles, 热榜, 36kr热榜, 热门文章, 今日热榜, 最热文章, 热点资讯, 科技热榜, 创业热榜, 今天最热, 查热榜, 看热榜."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "36kr-com",
+      "userId": "s17eeby345tdwynfggjkkg1bmn83x2tx",
+      "displayName": "36kr",
+      "image": "https://avatars.githubusercontent.com/u/27681803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 891,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774842095755,
+      "changelog": "36kr-hotlist v1.1.2\n\n- 更新描述与触发词，简化并聚焦“获取36氪官方24小时热榜文章数据”\n- 精简 description 字段，移除冗余英文及渠道参数说明\n- 保留核心功能及详细执行流程、接口规则、输出格式、推荐说明\n- 无代码或主要功能变更，仅优化文档和 skill 描述文本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77c848f52c976c08bfafc77f91d720c8df937fd01ec096299810038ec2f75c2f"
+}

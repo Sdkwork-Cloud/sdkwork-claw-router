@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61963,
+  "uuid": "skill-clawhub-inter-control-07-risk-dashboard",
+  "skillKey": "clawhub-inter-control-07-risk-dashboard",
+  "name": "07 Risk Dashboard",
+  "summary": "为内控负责人提供全链路风险全景视图， 整合投诉、物流异常、供应商评分三个维度， 生成实时风险热力图、预警推送和趋势预判，支持管理层快速决策。 v1.7 新增：统一引用 GLOSSARY.md、INSUFFICIENCY-HANDLING.md、RULE-UPDATE-SOP.md。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inter_control_07_risk_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "为内控负责人提供全链路风险全景视图， 整合投诉、物流异常、供应商评分三个维度， 生成实时风险热力图、预警推送和趋势预判，支持管理层快速决策。 v1.7 新增：统一引用 GLOSSARY.md."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inter-control-07-risk-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inter-control-07-risk-dashboard",
+      "url": "https://clawhub.ai/skills/inter-control-07-risk-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inter-control-07-risk-dashboard",
+    "url": "https://clawhub.ai/skills/inter-control-07-risk-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inter-control-07-risk-dashboard-24cf86500029fa12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inter-control-07-risk-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inter-control-07-risk-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98b257756db530b6409c20dcfac21e7b1bc779d1c54f35f4168fe01e0b92ee34",
+      "artifactSizeBytes": 2555
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:36:22.743Z"
+}

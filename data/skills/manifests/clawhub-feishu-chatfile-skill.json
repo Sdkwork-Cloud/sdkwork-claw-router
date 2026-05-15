@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64273,
+  "uuid": "skill-clawhub-feishu-chatfile-skill",
+  "skillKey": "clawhub-feishu-chatfile-skill",
+  "name": "feishu-chatfile-skill",
+  "summary": "飞书发送本地图片和文件技能。支持向飞书私聊（ou_）和群聊（oc_）发送图片（JPEG/PNG/WEBP 等）及文件（PDF/HTML/ZIP 等）。采用官方推荐的两步法（上传获取 key -> 发送消息），确保内容在飞书客户端正常显示并获得最佳体验。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_chatfile_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "calm",
+      "features": [
+        "飞书发送本地图片和文件技能。支持向飞书私聊（ou_）和群聊（oc_）发送图片（JPEG/PNG/WEBP 等）及文件（PDF/HTML/ZIP 等）。采用官方推荐的两步法（上传获取 key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-chatfile-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20592210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-chatfile-skill",
+      "url": "https://clawhub.ai/skills/feishu-chatfile-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-chatfile-skill",
+    "url": "https://clawhub.ai/skills/feishu-chatfile-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-chatfile-skill-f4d192cf0707932e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-chatfile-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-chatfile-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b434fe8c2fa5090404881022feee1e06bddfd9fbae7ddd2bdaeafd91b1bfad90",
+      "artifactSizeBytes": 2835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:46:59.804Z"
+}

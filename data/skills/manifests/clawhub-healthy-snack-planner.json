@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49584,
+  "uuid": "skill-clawhub-healthy-snack-planner",
+  "skillKey": "clawhub-healthy-snack-planner",
+  "name": "Healthy Snack Planner",
+  "summary": "Simple snack planning around satiety and nutritional balance -- no calorie counting, no meal replacement advice.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthy_snack_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Simple snack planning around satiety and nutritional balance -",
+        "no calorie counting, no meal replacement advice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthy-snack-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthy-snack-planner",
+      "url": "https://clawhub.ai/skills/healthy-snack-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthy-snack-planner",
+    "url": "https://clawhub.ai/skills/healthy-snack-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthy-snack-planner-473f337dc3a13a54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthy-snack-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthy-snack-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:822f30c3978dc0b6330cab679473545e9ae977f76a81756de100f8b35d7dede9",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:03:03.079Z"
+}

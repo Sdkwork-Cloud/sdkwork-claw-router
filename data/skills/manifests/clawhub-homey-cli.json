@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10532,
+  "uuid": "skill-clawhub-homey-cli",
+  "skillKey": "clawhub-homey-cli",
+  "name": "Homey - Home Automation",
+  "summary": "Control Homey home automation hub via CLI. Use when you need to control smart home devices (lights, thermostats, sockets, etc.), check device status, list zones, trigger flows, or perform any Homey automation tasks. Supports on/off, dimmin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homey_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KrauseFx",
+      "features": [
+        "Control Homey home automation hub via CLI",
+        "Use when you need to control smart home devices (lights, thermostats, sockets, etc.), check dev.",
+        "Supports on/off, dimming, color changes, temperature control, and device inspection",
+        "Safe, capability-allowlisted operations only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/homey-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/869950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "homey-cli",
+      "url": "https://clawhub.ai/skills/homey-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homey-cli",
+    "url": "https://clawhub.ai/skills/homey-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homey-cli-b85fddbba5415f2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/homey-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-homey-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f88904ce8f9702bff102580af545f3b8af31675eab78032305af40c3c60bd37",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T15:06:30.616Z"
+}

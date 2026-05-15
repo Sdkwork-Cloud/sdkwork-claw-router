@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitee-implement-issue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee_implement_issue",
+  "skill": {
+    "id": 24910,
+    "skillKey": "clawhub-gitee-implement-issue",
+    "name": "Implement Issue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee-implement-issue",
+    "url": "https://clawhub.ai/skills/gitee-implement-issue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-implement-issue-b4db442f62f97073.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks to implement an issue, \"work on this issue\", \"implement issue\", \"develop based on an issue\", \"implement-issue\". Requires Gi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oschina",
+      "userId": "publishers:oschina",
+      "displayName": "开源中国",
+      "image": "https://avatars.githubusercontent.com/u/1540855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773043804518,
+      "changelog": "Version 1.0.0 — Initial Release\n\n- Introduces a skill to help users implement Gitee issues from requirements analysis to PR creation.\n- Guides through fetching issue details, analyzing requirements, and proposing implementation plans.\n- Assists with coding tasks and suggests code modification strategies.\n- Automates updating Gitee issues with progress and links to pull requests.\n- Requires Gitee MCP server and the local repository path for operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14f9535160473d4f3cd704b1276725190d1370000afb930aaeef4218164b835d"
+}

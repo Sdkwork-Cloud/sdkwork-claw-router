@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12081,
+  "uuid": "skill-clawhub-veeam-mcp",
+  "skillKey": "clawhub-veeam-mcp",
+  "name": "Veeam MCP",
+  "summary": "Query Veeam Backup & Replication and Veeam ONE via MCP server running in Docker. Provides intelligent backup monitoring, job analysis, capacity planning, and infrastructure health checks.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veeam_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JGM2025",
+      "features": [
+        "Query Veeam Backup & Replication and Veeam ONE via MCP server running in Docker",
+        "Provides intelligent backup monitoring, job analysis, capacity planning, and infrastructure hea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veeam-mcp@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213201384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veeam-mcp",
+      "url": "https://clawhub.ai/skills/veeam-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veeam-mcp",
+    "url": "https://clawhub.ai/skills/veeam-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veeam-mcp-b9c631af824ca800.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veeam-mcp@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-veeam-mcp-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b91d26b3da34970e67bd894469fbdca119441afac201524fbf605094528b537c",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T15:37:02.161Z"
+}

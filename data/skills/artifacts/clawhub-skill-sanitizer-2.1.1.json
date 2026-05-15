@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-sanitizer@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sanitizer",
+  "skill": {
+    "id": 21439,
+    "skillKey": "clawhub-skill-sanitizer",
+    "name": "Clawhub Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sanitizer",
+    "url": "https://clawhub.ai/skills/skill-sanitizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sanitizer-0575e75061601751.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans SKILL.md files with 7 regex layers to block prompt injection, reverse shells, memory tampering, encoding evasion, and trust abuse before LLM processing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberxuan-xbx",
+      "userId": "s17eqkzw6fweznap36j3wrmm2x83v9nz",
+      "displayName": "cyber-X.B.X",
+      "image": "https://avatars.githubusercontent.com/u/257848154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1772312225449,
+      "changelog": "v2.1: code block awareness, 85% fewer false positives, 15 test vectors",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f07541653da396ec0688cee07be2478959e113a615701d3ee523a50c166bf10c"
+}

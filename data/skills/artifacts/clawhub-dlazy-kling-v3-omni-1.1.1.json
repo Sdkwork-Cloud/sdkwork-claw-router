@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-kling-v3-omni@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_kling_v3_omni",
+  "skill": {
+    "id": 14070,
+    "skillKey": "clawhub-dlazy-kling-v3-omni",
+    "name": "Dlazy Kling V3 Omni"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-kling-v3-omni",
+    "url": "https://clawhub.ai/skills/dlazy-kling-v3-omni",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-kling-v3-omni-cd8680ac5d3cf7d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Versatile video generation with Kling v3 Omni. Supports multi-modal inputs to generate stunning dynamic videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076453274,
+      "changelog": "- Minor update to usage documentation in SKILL.md and SKILL-cn.md.\n- Clarified the meaning of the \"generation_mode\" option (frames=Frames; components=Components) for better user understanding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a880ff085a827012bee70d588a1c7d86cca525cc901d01e385ab5a5ec8db21d"
+}

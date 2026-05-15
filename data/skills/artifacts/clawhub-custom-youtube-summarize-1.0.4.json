@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/custom-youtube-summarize@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_youtube_summarize",
+  "skill": {
+    "id": 34051,
+    "skillKey": "clawhub-custom-youtube-summarize",
+    "name": "custom-youtube-summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-youtube-summarize",
+    "url": "https://clawhub.ai/skills/custom-youtube-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-youtube-summarize-3b1ebd7481e35256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract transcript from a YouTube video using Python and summarize it."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "5eun",
+      "userId": "s174xz7epwfkfspq6g84zapkws845859",
+      "displayName": "5eun",
+      "image": "https://avatars.githubusercontent.com/u/169572743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775581672654,
+      "changelog": "- Expanded the \"Example\" section with additional sample YouTube link input formats in both English and Korean.  \n- No changes to code or functionality; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92fa762c7cb17da09983514fd417a9889f1a9139b6ba94de735524dadbf23544"
+}

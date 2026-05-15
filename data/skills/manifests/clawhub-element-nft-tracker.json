@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20601,
+  "uuid": "skill-clawhub-element-nft-tracker",
+  "skillKey": "clawhub-element-nft-tracker",
+  "name": "Element Nft Tracker",
+  "summary": "Element Market API integration. This skill strictly requires the 'ELEMENT_API_KEY' environment variable to function.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.element_nft_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beelzebub520",
+      "features": [
+        "Element Market API integration",
+        "This skill strictly requires the 'ELEMENT_API_KEY' environment variable to function."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/element-nft-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35790233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "element-nft-tracker",
+      "url": "https://clawhub.ai/skills/element-nft-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "element-nft-tracker",
+    "url": "https://clawhub.ai/skills/element-nft-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/element-nft-tracker-a5e60fddb2452438.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/element-nft-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-element-nft-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79f4efa5a0ac87d734862cb95df72f5815fe3080cfe0e01d95c9417cc183b5fe",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:48:03.984Z"
+}

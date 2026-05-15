@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "sl-trafiklab-api",
+    "displayName": "Stockholm Public Traffic Planner",
+    "summary": "Fetch real-time SL (Stockholm public transport) departures and deviation information. Use when checking upcoming departures from stops, querying active train...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774299549686,
+    "updatedAt": 1777622801004
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774699817328,
+    "changelog": "- Adds references/api.md, consolidating all endpoint details, payload formats, and filtering instructions.\n- State file path changes to .sl/preferences.json; preference structure updated to favourite_stops and favourite_routes (see api.md for format).\n- Now allows on-demand queries for any stop/route without prior registration; favourites are only used for autonomous monitoring.\n- Departures and deviations can be fetched for any site/line at any time; autonomous logic strictly filters disruptions as specified in api.md.\n- All action specifics (curl usage, jq filtering, input/output formats) are now defined in references/api.md for cleaner documentation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "patello",
+    "userId": "s178t29f61bmma8whfnmacavhx83eknq",
+    "displayName": "Patrik Ekenberg",
+    "image": "https://avatars.githubusercontent.com/u/31476631?v=4"
+  },
+  "moderation": null
+}

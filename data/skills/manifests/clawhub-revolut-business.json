@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13545,
+  "uuid": "skill-clawhub-revolut-business",
+  "skillKey": "clawhub-revolut-business",
+  "name": "Revolut Business",
+  "summary": "Revolut Business API CLI — accounts, balances, transactions, counterparties, payments, FX exchange, CSV export. Auto-refreshes OAuth tokens. Business accounts only (not personal).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revolut_business",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christianhaberl",
+      "features": [
+        "Revolut Business API CLI — accounts, balances, transactions, counterparties, payments, FX excha.",
+        "Auto-refreshes OAuth tokens",
+        "Business accounts only (not personal)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revolut-business@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116439789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revolut-business",
+      "url": "https://clawhub.ai/skills/revolut-business"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revolut-business",
+    "url": "https://clawhub.ai/skills/revolut-business",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revolut-business-fd6030a00a5f3569.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revolut-business@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-revolut-business-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64fad239a840cd13417a1890e3c29913a1de5416b8080a77089171eb969d0145",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T18:07:24.961Z"
+}

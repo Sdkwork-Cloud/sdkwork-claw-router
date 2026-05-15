@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zfont-cli@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zfont_cli",
+  "skill": {
+    "id": 64640,
+    "skillKey": "clawhub-zfont-cli",
+    "name": "ZFONT-CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zfont-cli",
+    "url": "https://clawhub.ai/skills/zfont-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zfont-cli-73d1ab887c488a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 zfont.cn 智能搜索、推荐并下载免费商用字体，支持递归解压字体包提取 TTF、OTF、TTC 格式文件并提供安装或传输方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanmin-x",
+      "userId": "s17c9ekrnq7fa4kd7e2cmj3gj583pp2v",
+      "displayName": "LANMIN-X",
+      "image": "https://avatars.githubusercontent.com/u/155052516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1773578449052,
+      "changelog": "zfont-agent-cli 1.5.3\n\n- 优化用户收到字体后的指引：发送文件后，指引内容从代码块样式改为分条说明，更清晰易读\n- 发送压缩包或字体文件时，分别用更符合用户习惯的文本格式化说明解压和安装方式\n- 其余功能及接口保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc8daa0ab44f58f2fe5dfacde10e41ea594a0b6d8cf3442dfeaeaa9a12d96b0c"
+}

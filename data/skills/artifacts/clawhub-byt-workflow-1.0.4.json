@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byt-workflow@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byt_workflow",
+  "skill": {
+    "id": 18958,
+    "skillKey": "clawhub-byt-workflow",
+    "name": "Byt Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byt-workflow",
+    "url": "https://clawhub.ai/skills/byt-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byt-workflow-bab4354ed874389e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube video translation workflow, download audio, launch Doubao, play audio, capture translation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banner90",
+      "userId": "publishers:banner90",
+      "displayName": "banner90",
+      "image": "https://avatars.githubusercontent.com/u/25845636?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 527,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772960836501,
+      "changelog": "- Updated descriptions in SKILL.md and plugin files for greater clarity and consistency.\n- Minor text formatting change: simplified description punctuation and style.\n- No functional or workflow logic changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1428218fe866fa13d915c44b5d1322f9ef15359b55ad932f9fb1ff510af52757"
+}

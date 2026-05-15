@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/math-arithmetic-orc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_arithmetic_orc",
+  "skill": {
+    "id": 69643,
+    "skillKey": "clawhub-math-arithmetic-orc",
+    "name": "arithmetic-orc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-arithmetic-orc",
+    "url": "https://clawhub.ai/skills/math-arithmetic-orc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-arithmetic-orc-96b5005753b8bea8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "识别图片中的K12算式（加减乘除、竖式计算、分数、方程等），返回结构化文本结果。 支持手写体和印刷体，可拒绝非算式图片。 触发条件：用户要求识别算式、数学题、计算题图片，或上传数学题图片时调用。 关键词：算式识别、数学题、OCR、竖式计算、ArithmeticOCR"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hzheigege",
+      "userId": "publishers:hzheigege",
+      "displayName": "hzheigege",
+      "image": "https://avatars.githubusercontent.com/u/7932520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773391132986,
+      "changelog": "math-arithmetic-ocr 1.0.0 — 首发上线！\n\n- 支持识别K12数学算式图片（含手写体/印刷体），包括加减乘除、竖式计算、分数和方程。\n- 返回结构化文本及详细检测信息，可拒绝非算式图片。\n- 适用于用户上传数学题图片或请求提取算式内容。\n- 需配置腾讯云密钥以调用 ArithmeticOCR API。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36e668703718ed9e86d33a5aa09753a8a2c81c792821e6b2a654e2d3240d1355"
+}

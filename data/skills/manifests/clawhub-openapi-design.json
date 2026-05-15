@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35056,
+  "uuid": "skill-clawhub-openapi-design",
+  "skillKey": "clawhub-openapi-design",
+  "name": "Api Design",
+  "summary": "API design specification and best practices skill. Use when: designing new APIs, reviewing existing APIs, generating API documentation, standardizing interfa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openapi_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BingWang",
+      "features": [
+        "API design specification and best practices skill",
+        "Use when: designing new APIs, reviewing existing APIs, generating API documentation, standardiz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openapi-design@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4160015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openapi-design",
+      "url": "https://clawhub.ai/skills/openapi-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openapi-design",
+    "url": "https://clawhub.ai/skills/openapi-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openapi-design-6e12391c0f8734f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openapi-design@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openapi-design-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f17ca472726270524a3502c09aa7cf4bec781bbfb2f04020e97f571420e32ac",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:50:18.870Z"
+}

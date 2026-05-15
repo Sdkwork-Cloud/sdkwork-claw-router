@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musallat-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musallat_bot",
+  "skill": {
+    "id": 57846,
+    "skillKey": "clawhub-musallat-bot",
+    "name": "Musallat Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musallat-bot",
+    "url": "https://clawhub.ai/skills/musallat-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musallat-bot-af586d28db780715.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Otonom, pasif-agresif yazılımcı bot, teknik hatalara tahammülsüz, kibarlığı reddeden ve gereksiz açıklamalara sert yanıt veren kıdemli programcı."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "musallat-dev",
+      "userId": "publishers:musallat-dev",
+      "displayName": "Musallat-Dev",
+      "image": "https://avatars.githubusercontent.com/u/250907225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1600,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770258062210,
+      "changelog": "- Removed 501 files, primarily from the virtual environment and pip package directories.\n- No functional or behavior changes to Musallat Bot; core skill configuration remains untouched.\n- The update results in a significantly cleaner repository by eliminating unnecessary environment files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5496f6f89ddba4760881cdf435804ecde017b6275553887b56418aeda931e993"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10305,
+  "uuid": "skill-clawhub-people-memories",
+  "skillKey": "clawhub-people-memories",
+  "name": "People Memories",
+  "summary": "Capture short personal notes about people you mention, store them in a lightweight DB, and recall those details whenever you ask about them later. Use when you want to remember preferences, reminders, or the context around a person without.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.people_memories",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Charbel Daccache",
+      "features": [
+        "Capture short personal notes about people you mention, store them in a lightweight DB, and reca.",
+        "Use when you want to remember preferences, reminders, or the context around a person without di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/people-memories@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19322987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "people-memories",
+      "url": "https://clawhub.ai/skills/people-memories"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "people-memories",
+    "url": "https://clawhub.ai/skills/people-memories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/people-memories-24f7acf0eb13d887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/people-memories@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-people-memories-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db0b56dfac67a9e1547eab982a2b610a4354e66587f7b88cfbb92ef88e666053",
+      "artifactSizeBytes": 2623
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:03:42.105Z"
+}

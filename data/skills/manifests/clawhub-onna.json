@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34576,
+  "uuid": "skill-clawhub-onna",
+  "skillKey": "clawhub-onna",
+  "name": "Onna",
+  "summary": "Onna integration. Manage data, records, and automate workflows. Use when the user wants to interact with Onna data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onna",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Onna integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Onna data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onna@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onna",
+      "url": "https://clawhub.ai/skills/onna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onna",
+    "url": "https://clawhub.ai/skills/onna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onna-d2d0390e7f272a75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onna@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onna-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41d25badd0950e635f18977d7b4407ff438817da4db6a910967dcf64b7d46686",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:19:30.671Z"
+}

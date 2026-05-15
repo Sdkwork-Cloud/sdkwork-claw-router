@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-generator-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_generator_skill",
+  "skill": {
+    "id": 26294,
+    "skillKey": "clawhub-rss-generator-skill",
+    "name": "RSS & Atom Feed Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-generator-skill",
+    "url": "https://clawhub.ai/skills/rss-generator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-generator-skill-3db5b607647b8cd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate valid RSS 2.0 or Atom 1.0 feeds from web pages that contain post lists but lack a native feed. Triggers on phrases like \"generate a feed for\", \"crea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kidehen",
+      "userId": "s1773wqn3fkz8v78zj1bq7jpv9842m4y",
+      "displayName": "Kingsley Idehen",
+      "image": "https://avatars.githubusercontent.com/u/1541745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773507929538,
+      "changelog": "Major change: The skill is now completely refocused as an OPML/RSS/Atom query assistant for OpenLink linked-data.\n\n- Replaced previous AI summary + Feishu push skill with a new assistant for managing and troubleshooting OPML, RSS, and Atom feeds via SPARQL/SPASQL queries.\n- All implementation, documentation, and user guidance now center on protocol-based feed exploration, query templates, error handling, and linked-data infrastructure.\n- Added structured query execution details, protocol routing information, and predefined prompt templates.\n- Removed all previous Python code, package files, and documentation related to fetching, summarizing, or pushing RSS content with AI analysis.\n- License and all operational details have been updated to match the OpenLink-centric focus.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1db1b0f54bed176af18914b671ca5ae0bbf1b976f3c24ea1a35834bd9f6d444"
+}

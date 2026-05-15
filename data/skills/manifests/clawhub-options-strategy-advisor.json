@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10174,
+  "uuid": "skill-clawhub-options-strategy-advisor",
+  "skillKey": "clawhub-options-strategy-advisor",
+  "name": "Options Strategy Advisor",
+  "summary": "Options trading strategy analysis and simulation tool. Provides theoretical pricing using Black-Scholes model, Greeks calculation, strategy P/L simulation, and risk management guidance. Use when user requests options strategy analysis, cov.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_strategy_advisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Options trading strategy analysis and simulation tool",
+        "Provides theoretical pricing using Black-Scholes model, Greeks calculation, strategy P/L simula.",
+        "Use when user requests options strategy analysis, covered calls, protective puts, spreads, iron.",
+        "Includes volatility analysis, position sizing, and earnings-based strategy recommendations"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/options-strategy-advisor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "options-strategy-advisor",
+      "url": "https://clawhub.ai/skills/options-strategy-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-strategy-advisor",
+    "url": "https://clawhub.ai/skills/options-strategy-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-strategy-advisor-48ac02059356db9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/options-strategy-advisor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-options-strategy-advisor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dab03b1b9e1bd027c94fae173f39c695e697a1ec36efac17b8d656240f71a3d",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:41:14.222Z"
+}

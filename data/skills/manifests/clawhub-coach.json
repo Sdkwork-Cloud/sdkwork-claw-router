@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19616,
+  "uuid": "skill-clawhub-coach",
+  "skillKey": "clawhub-coach",
+  "name": "Coach",
+  "summary": "Goal-oriented coaching for any domain — accountability, clarity, action plans, and breakthrough thinking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Goal-oriented coaching for any domain — accountability, clarity, action plans, and breakthrough."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coach",
+      "url": "https://clawhub.ai/skills/coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coach",
+    "url": "https://clawhub.ai/skills/coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coach-e0f167bc84b881bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bd49855dde406d8eff4183889003402e98e6ee34bf44dd8eec338e6322eb2e4",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T04:05:50.762Z"
+}

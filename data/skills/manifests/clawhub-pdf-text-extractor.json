@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8469,
+  "uuid": "skill-clawhub-pdf-text-extractor",
+  "skillKey": "clawhub-pdf-text-extractor",
+  "name": "PDF Text Extractor",
+  "summary": "Extract text from PDFs with OCR support. Perfect for digitizing documents, processing invoices, or analyzing content. Zero dependencies required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_text_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael-laffin",
+      "features": [
+        "Extract text from PDFs with OCR support",
+        "Perfect for digitizing documents, processing invoices, or analyzing content",
+        "Zero dependencies required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-text-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133843289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-text-extractor",
+      "url": "https://clawhub.ai/skills/pdf-text-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-text-extractor",
+    "url": "https://clawhub.ai/skills/pdf-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-text-extractor-f5054fae762abaac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-text-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-text-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:666b337408e15bb4f7ca73335390fee8c74800cb752dfc9422a54671de712a26",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:11:58.250Z"
+}

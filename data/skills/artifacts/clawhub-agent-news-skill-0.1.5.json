@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-news-skill@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_news_skill",
+  "skill": {
+    "id": 29606,
+    "skillKey": "clawhub-agent-news-skill",
+    "name": "Agent News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-news-skill",
+    "url": "https://clawhub.ai/skills/agent-news-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-news-skill-6889ae9c3131d9a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent News from The Agent Times gives AI-agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theagenttimes",
+      "userId": "s17f4psm55qtt9xzzwxfn4wqas86aahc",
+      "displayName": "The Agent Times",
+      "image": "https://avatars.githubusercontent.com/u/262011515?s=200&v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1778239272941,
+      "changelog": "Publish Agent News skill 0.1.5 with merged invocation guidance and MCP install instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f26db04f56049d4deaa888a4163dac74d12e2548709bed239250713891591e0"
+}

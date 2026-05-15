@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72041,
+  "uuid": "skill-clawhub-hik-cloud-open-video-recording",
+  "skillKey": "clawhub-hik-cloud-open-video-recording",
+  "name": "海康云眸视频录像管理",
+  "summary": "调用海康云眸开放平台视频云录制能力，包括云录制项目、转码录制任务、文件管理、流量管理、资源上传和视频剪辑。用户提到云录制、录像转码、抽帧、文件下载、项目流量、视频剪辑等场景时使用。本技能自动处理 access_token 获取与刷新，不向用户暴露 token 调用流程。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_cloud_open_video_recording",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hik-cloud",
+      "features": [
+        "调用海康云眸开放平台视频云录制能力，包括云录制项目、转码录制任务、文件管理、流量管理、资源上传和视频剪辑。用户提到云录制、录像转码、抽帧、文件下载、项目流量、视频剪辑等场景时使用。本技能自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hik-cloud-open-video-recording@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269703506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hik-cloud-open-video-recording",
+      "url": "https://clawhub.ai/skills/hik-cloud-open-video-recording"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-cloud-open-video-recording",
+    "url": "https://clawhub.ai/skills/hik-cloud-open-video-recording",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-cloud-open-video-recording-9856b482d116a1b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hik-cloud-open-video-recording@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hik-cloud-open-video-recording-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c43d15921c41041e4d1c2c1b7383705eee2dae3a803159fe6c1e666624142069",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:03:28.018Z"
+}

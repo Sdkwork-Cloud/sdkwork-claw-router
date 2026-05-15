@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biznetgio@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biznetgio",
+  "skill": {
+    "id": 26924,
+    "skillKey": "clawhub-biznetgio",
+    "name": "Biznet GIO CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biznetgio",
+    "url": "https://clawhub.ai/skills/biznetgio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biznetgio-32107b0ce2367df7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Biznet Gio cloud infrastructure (servers, VMs, storage, IPs) via CLI and MCP server"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biznetgio",
+      "userId": "s17cbzjqdyrva5fdvpnm33ww0983s2a7",
+      "displayName": "Biznet Gio",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777887503249,
+      "changelog": "- Adds secure login workflow: now uses `biznetgio login` to create a local credential file (`~/.biznetgio.json`), which is preferred over environment variables.\n- Introduces an explicit `whoami` check before any command, improving authentication flow and user guidance if not logged in.\n- Updates environment variable usage: API key now acts only as a fallback; `BIZNETGIO_PORTAL_URL` is added for portal host overrides.\n- Documents logout procedure to cleanly remove credentials.\n- Clarifies and prioritizes credential sources: CLI flag > credential file > environment variable.\n- Enhances user security by never asking for raw API keys, always guiding users through the CLI login flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baa9e3ab8e2ed0354cf8ebf506a8bb836c5929d22555c17333892d3b8ba0e3dc"
+}

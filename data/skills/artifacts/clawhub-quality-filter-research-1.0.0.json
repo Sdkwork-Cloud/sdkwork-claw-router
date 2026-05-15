@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quality-filter-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_filter_research",
+  "skill": {
+    "id": 21690,
+    "skillKey": "clawhub-quality-filter-research",
+    "name": "Research Paper Quality Filter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-filter-research",
+    "url": "https://clawhub.ai/skills/quality-filter-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-filter-research-9a3468a0d87e9313.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Academic paper quality filtering agent with rigorous scoring system and comprehensive audit trail. Filters papers based on relevance and quality criteria for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nomorecoding",
+      "userId": "publishers:nomorecoding",
+      "displayName": "nomorecoding",
+      "image": "https://avatars.githubusercontent.com/u/39555764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772285604475,
+      "changelog": "Systematic quality filtering with scoring system and audit trail",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68c829567c07671fff6a8a24b181d52e3f4cc9da306a1c2d0b49c1a1cc4d77df"
+}

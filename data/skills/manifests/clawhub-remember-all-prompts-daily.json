@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11402,
+  "uuid": "skill-clawhub-remember-all-prompts-daily",
+  "skillKey": "clawhub-remember-all-prompts-daily",
+  "name": "Remember All Prompts Daily",
+  "summary": "Preserve conversation continuity across token compaction cycles by extracting and archiving all prompts with date-wise entries. Automatically triggers at 95% token usage (pre-compaction) and 1% (new sprint start) to export session history,.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remember_all_prompts_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Syed Ateebul Islam",
+      "features": [
+        "Preserve conversation continuity across token compaction cycles by extracting and archiving all.",
+        "Automatically triggers at 95% token usage (pre-compaction) and 1% (new sprint start) to export."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remember-all-prompts-daily@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32341313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remember-all-prompts-daily",
+      "url": "https://clawhub.ai/skills/remember-all-prompts-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remember-all-prompts-daily",
+    "url": "https://clawhub.ai/skills/remember-all-prompts-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remember-all-prompts-daily-67a6a308011c30f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remember-all-prompts-daily@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-remember-all-prompts-daily-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c668aab9a52a768f90a24ab3e16c050ee5494038385c28227cd95e0826cf17e",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T16:37:08.408Z"
+}

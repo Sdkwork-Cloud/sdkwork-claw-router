@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19888,
+  "uuid": "skill-clawhub-strikeradar",
+  "skillKey": "clawhub-strikeradar",
+  "name": "strikeradar",
+  "summary": "Monitor US-Iran strike probability using open-source indicators - news alerts, Iran internet connectivity, oil prices, flight traffic, military tanker detect...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strikeradar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexpolonsky",
+      "features": [
+        "Monitor US-Iran strike probability using open-source indicators",
+        "news alerts, Iran internet connectivity, oil prices, flight traffic, military tanker detect..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strikeradar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7319921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strikeradar",
+      "url": "https://clawhub.ai/skills/strikeradar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strikeradar",
+    "url": "https://clawhub.ai/skills/strikeradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strikeradar-ee7532f547f2dd6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strikeradar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strikeradar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43216c8bfb422cc84f5aa2bbaf91263bd5a73106040eea97e96270363161f6d0",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T22:15:25.362Z"
+}

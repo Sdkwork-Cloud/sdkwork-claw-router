@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64342,
+  "uuid": "skill-clawhub-skill-security-audit-enhanced",
+  "skillKey": "clawhub-skill-security-audit-enhanced",
+  "name": "Skill Security Audit Enhanced",
+  "summary": "🔍 增强版技能安全审计 - 检测AI代理技能中的恶意模式，包含13种检测器，覆盖后门、凭证窃取、数据外传和供应链攻击。基于SlowMist的ClawHub威胁情报(472+恶意技能)。纯Python实现，零外部依赖。优化清理版，移除无关文件，性能更佳。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_audit_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kvs-GoN",
+      "features": [
+        "🔍 增强版技能安全审计",
+        "检测AI代理技能中的恶意模式，包含13种检测器，覆盖后门、凭证窃取、数据外传和供应链攻击。基于SlowMist的ClawHub威胁情报(472+恶意技能)。纯Python实现，零外部依赖。优."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-audit-enhanced@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35253862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-audit-enhanced",
+      "url": "https://clawhub.ai/skills/skill-security-audit-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-audit-enhanced",
+    "url": "https://clawhub.ai/skills/skill-security-audit-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-audit-enhanced-a65a0135a32ff6b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-audit-enhanced@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-audit-enhanced-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02b9ef16ce1a5b15a266f546324daeec5789d79e87bdc836588e4c0476ed5f0a",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:52:14.345Z"
+}

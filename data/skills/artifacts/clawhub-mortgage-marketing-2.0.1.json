@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mortgage-marketing@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mortgage_marketing",
+  "skill": {
+    "id": 52032,
+    "skillKey": "clawhub-mortgage-marketing",
+    "name": "Mortgage Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mortgage-marketing",
+    "url": "https://clawhub.ai/skills/mortgage-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mortgage-marketing-213c684784cb1664.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-channel mortgage marketing campaign engine — one brief generates email + social + ad copy with audience segmentation and A/B variants. Not a content ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drivenautoplex1",
+      "userId": "s17amw9603tjt6jg530q93xzvx83syaf",
+      "displayName": "drivenautoplex1",
+      "image": "https://avatars.githubusercontent.com/u/186228539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774723262634,
+      "changelog": "**v2.0 introduces a multi-channel campaign engine for mortgage marketing:**\n\n- Generate coordinated campaigns (email, social, ads, listings) from a single brief, instead of isolated content per call.\n- Supports 6 key audience segments, each with tailored messaging and copy angles.\n- Every piece includes A/B split variants (gain vs. loss framing), plus usage guidance for each variant.\n- Inline compliance flags and disclosures are applied per claim, not just at the end.\n- Output is structured by channel and platform, with tailored formatting, audience insights, and compliance details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:188acbd10ececca4a70ae6942ed609633e3a252669d5137f14c2ca5216840cf8"
+}

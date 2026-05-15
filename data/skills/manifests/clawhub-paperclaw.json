@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20256,
+  "uuid": "skill-clawhub-paperclaw",
+  "skillKey": "clawhub-paperclaw",
+  "name": "paper claw",
+  "summary": "Fetch, classify, and summarize papers from multiple sources (arXiv, etc.) with AI-powered multi-language summaries and email delivery.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PigeonDan1",
+      "features": [
+        "Fetch, classify, and summarize papers from multiple sources (arXiv, etc.) with AI-powered multi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143288982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperclaw",
+      "url": "https://clawhub.ai/skills/paperclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperclaw",
+    "url": "https://clawhub.ai/skills/paperclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperclaw-9c1d936bae18d332.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4de10bd27d025f3748210f3dd78258d84327dbb9c5362c9918adb246ea05eb0d",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:59:47.225Z"
+}

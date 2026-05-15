@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64253,
+  "uuid": "skill-clawhub-error-message-decoder",
+  "skillKey": "clawhub-error-message-decoder",
+  "name": "Error Message Decoder",
+  "summary": "解析常见错误代码，提供错误原因及对应解决方案，支持多语言显示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_message_decoder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "解析常见错误代码，提供错误原因及对应解决方案，支持多语言显示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/error-message-decoder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "error-message-decoder",
+      "url": "https://clawhub.ai/skills/error-message-decoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-message-decoder",
+    "url": "https://clawhub.ai/skills/error-message-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-message-decoder-597fded737cc6263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/error-message-decoder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-error-message-decoder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61745118c26958a250bcf5f2fa9b0f87dba4050462175c4c9234d25a5462831d",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T04:06:10.707Z"
+}

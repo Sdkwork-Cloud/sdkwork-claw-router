@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technical-deep-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_deep_analysis",
+  "skill": {
+    "id": 69808,
+    "skillKey": "clawhub-technical-deep-analysis",
+    "name": "Technical Deep Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-deep-analysis",
+    "url": "https://clawhub.ai/skills/technical-deep-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-deep-analysis-b21c8d8f1e790eaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技术深度分析方法论。用于对新兴技术、技术趋势、技术产品进行系统化深度分析。 当需要分析新技术、写技术报告、做竞品分析、评估投资机会时使用此 skill。 触发词：深度分析、技术分析、竞品分析、技术报告、行业分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776448278768,
+      "changelog": "ClawHub 规范化改造，移除硬编码路径，添加安全合规配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15d14202b45787a7e9cf6e971b494e3e83110fabd1cd850e88b1133f55dedeae"
+}

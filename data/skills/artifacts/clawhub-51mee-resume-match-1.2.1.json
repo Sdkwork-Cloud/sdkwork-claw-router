@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/51mee-resume-match@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_match",
+  "skill": {
+    "id": 68973,
+    "skillKey": "clawhub-51mee-resume-match",
+    "name": "51mee Resume Match"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-match",
+    "url": "https://clawhub.ai/skills/51mee-resume-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-match-281bb0e1cd0a5162.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人岗匹配。触发场景：用户要求匹配简历和职位；用户问这个候选人适合这个职位吗；用户要筛选最匹配的候选人。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "51mee-com",
+      "userId": "publishers:51mee-com",
+      "displayName": "51mee",
+      "image": "https://avatars.githubusercontent.com/u/226007355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773657753023,
+      "changelog": "51mee-resume-match 1.0.0\n\n- 首次发布人岗匹配技能，实现简历与职位描述的自动匹配评分。\n- 支持多维度评估（技能、经验、学历、薪资），并生成结构化匹配报告。\n- 提供核心优势、差距、面试建议及面试推荐。\n- 支持批量候选人筛选与对比排序。\n- 明确API调用方式与数据结构，便于集成和使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3d261ee29a06ea46e9b5fe7173a4654e5239d32a0ea47031e47f613556796c3"
+}

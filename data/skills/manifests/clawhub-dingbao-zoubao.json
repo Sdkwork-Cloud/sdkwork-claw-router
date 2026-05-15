@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73497,
+  "uuid": "skill-clawhub-dingbao-zoubao",
+  "skillKey": "clawhub-dingbao-zoubao",
+  "name": "定时早报生成",
+  "summary": "每天定时生成综合、财经、科技等主题的个性化早报，自动推送到飞书并支持手动触发查看。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingbao_zoubao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "每天定时生成综合、财经、科技等主题的个性化早报，自动推送到飞书并支持手动触发查看。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingbao-zoubao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingbao-zoubao",
+      "url": "https://clawhub.ai/skills/dingbao-zoubao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingbao-zoubao",
+    "url": "https://clawhub.ai/skills/dingbao-zoubao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingbao-zoubao-7bf57dba864c0eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingbao-zoubao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingbao-zoubao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:532e92a342ddfc92a1774a91526018ef536af928117d7b6a7ddb8470cac103c5",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:14:47.583Z"
+}

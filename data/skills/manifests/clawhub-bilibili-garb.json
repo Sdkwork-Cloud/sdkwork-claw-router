@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56737,
+  "uuid": "skill-clawhub-bilibili-garb",
+  "skillKey": "clawhub-bilibili-garb",
+  "name": "Bilibili Garb",
+  "summary": "Bilibili garb (个性装扮) data collection and management. Search garb items, query suit/collection details, scan benefit data for owned items (including discontin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_garb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kuangzhanzhiwang",
+      "features": [
+        "Bilibili garb (个性装扮) data collection and management",
+        "Search garb items, query suit/collection details, scan benefit data for owned items (including."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-garb@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246948152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-garb",
+      "url": "https://clawhub.ai/skills/bilibili-garb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-garb",
+    "url": "https://clawhub.ai/skills/bilibili-garb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-garb-d22853ef222781e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-garb@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-garb-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2e29c37bcefe3ab81f4990d1f9186d2e6bffa58fc8dfd209b1a4fd91d532939",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:31:24.500Z"
+}

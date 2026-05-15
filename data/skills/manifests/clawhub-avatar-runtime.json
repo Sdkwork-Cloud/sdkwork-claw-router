@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20267,
+  "uuid": "skill-clawhub-avatar-runtime",
+  "skillKey": "clawhub-avatar-runtime",
+  "name": "Avatar Runtime",
+  "summary": "Embeds and controls a virtual avatar using the avatar-runtime npm package. Provides Live2D rendering, VRM 3D, vector fallback, and control-driven expression/...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar_runtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acnlabs",
+      "features": [
+        "Embeds and controls a virtual avatar using the avatar-runtime npm package",
+        "Provides Live2D rendering, VRM 3D, vector fallback, and control-driven expression/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avatar-runtime@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43027886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avatar-runtime",
+      "url": "https://clawhub.ai/skills/avatar-runtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar-runtime",
+    "url": "https://clawhub.ai/skills/avatar-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-runtime-d94e56dae1e01d1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avatar-runtime@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-avatar-runtime-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e3d6cdecb091ae3dbb3c027d2c925cbfff0276266e65f741784e5cff4ae9e1c",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:09:02.116Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/limehouse-calendar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limehouse_calendar",
+  "skill": {
+    "id": 31999,
+    "skillKey": "clawhub-limehouse-calendar",
+    "name": "Limehouse Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limehouse-calendar",
+    "url": "https://clawhub.ai/skills/limehouse-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limehouse-calendar-c7a02a258e05236f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and write calendar events with granular per-calendar permissions. Users control which calendars an agent can access and whether it can read, create, upd..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madeleinenakada",
+      "userId": "s17fmdq7v7p4f2cvyb24w8dta583g5dh",
+      "displayName": "Madeleine Nakada",
+      "image": "https://avatars.githubusercontent.com/u/5605370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773942467474,
+      "changelog": "- Added _meta.json file to the project.\n- No changes to calendar API or functionality; this update is metadata-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73b7e563ed006514440f4cdb3dafe6fad4efe517c83b94b6743a5484eb03b6ac"
+}

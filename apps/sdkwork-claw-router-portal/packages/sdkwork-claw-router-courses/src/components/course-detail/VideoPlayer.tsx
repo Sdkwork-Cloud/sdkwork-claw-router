@@ -5,7 +5,14 @@ import type { CourseVideoView } from '../../data';
 export function VideoPlayer({ video }: { video: CourseVideoView }) {
   return (
     <div className="bg-black overflow-hidden shadow-xl border border-slate-200 dark:border-white/10 rounded-none sm:rounded-xl aspect-video relative group w-full">
-      {video.embedUrl ? (
+      {video.embedUrl && video.sourceProvider === 'local' ? (
+        <video
+          src={video.embedUrl}
+          title={video.title}
+          controls
+          className="w-full h-full absolute inset-0 rounded-none sm:rounded-xl bg-black"
+        />
+      ) : video.embedUrl ? (
         <iframe
           src={video.embedUrl}
           title={video.title}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24401,
+  "uuid": "skill-clawhub-space-duck",
+  "skillKey": "clawhub-space-duck",
+  "name": "Space Duck",
+  "summary": "Connect and manage your AI agent's identity on the Space Duck network for status, trust tier, connections, activity, sending pecks, and navigation commands.",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.space_duck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "askegor",
+      "features": [
+        "Connect and manage your AI agent's identity on the Space Duck network for status, trust tier, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/space-duck@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206782078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "space-duck",
+      "url": "https://clawhub.ai/skills/space-duck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "space-duck",
+    "url": "https://clawhub.ai/skills/space-duck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/space-duck-e484d2de3643b815.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/space-duck@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-space-duck-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f9631727ba987c26e801803f5af3f9c9e8e0dab63c6dd01ba141e3322d17801",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T00:41:52.592Z"
+}

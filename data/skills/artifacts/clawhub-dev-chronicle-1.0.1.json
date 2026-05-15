@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev-chronicle@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_chronicle",
+  "skill": {
+    "id": 15705,
+    "skillKey": "clawhub-dev-chronicle",
+    "name": "Dev Chronicle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-chronicle",
+    "url": "https://clawhub.ai/skills/dev-chronicle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-chronicle-02364effe570594a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate narrative chronicles of developer work from git history, session transcripts, and memory files. Use when the user asks \"what did I do today/this wee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sssamuelll",
+      "userId": "publishers:sssamuelll",
+      "displayName": "Samuel Ballesteros",
+      "image": "https://avatars.githubusercontent.com/u/21190969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771512863473,
+      "changelog": "Tighter daily format, no metrics sections, more personal voice",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:885d01a4df2d1642c28f1982d1d26b6c3699a682490822e11dcbfa1ba074db0a"
+}

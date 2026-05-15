@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sprite-animator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sprite_animator",
+  "skill": {
+    "id": 14277,
+    "skillKey": "clawhub-sprite-animator",
+    "name": "Sprite Animator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sprite-animator",
+    "url": "https://clawhub.ai/skills/sprite-animator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sprite-animator-e49e0c820cc9c54d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate animated pixel art sprites from any image using AI. Send a photo, get a 16-frame animated GIF."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awlevin",
+      "userId": "publishers:awlevin",
+      "displayName": "Aaron Levin",
+      "image": "https://avatars.githubusercontent.com/u/8488209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770705032168,
+      "changelog": "Initial release: 16-frame animated pixel art sprites from any image",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8748542a7b659f75bdff8a44f16b87833e40c8f03d477e5c101a0cd26fe8bb14"
+}

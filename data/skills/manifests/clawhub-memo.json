@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24689,
+  "uuid": "skill-clawhub-memo",
+  "skillKey": "clawhub-memo",
+  "name": "Voice Memos",
+  "summary": "Transcribe and organize voice memos with automatic categorization and information extraction. Use when users have voice notes, audio memos, or spoken notes t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Transcribe and organize voice memos with automatic categorization and information extraction",
+        "Use when users have voice notes, audio memos, or spoken notes t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memo",
+      "url": "https://clawhub.ai/skills/memo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memo",
+    "url": "https://clawhub.ai/skills/memo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memo-9c225a950b92172f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f14bd999c2e52c0931a9d25104de4eae4440aff541499ad0a86ea97a61d55a1c",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:33:34.006Z"
+}

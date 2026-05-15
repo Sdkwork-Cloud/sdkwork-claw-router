@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13340,
+  "uuid": "skill-clawhub-local-booking",
+  "skillKey": "clawhub-local-booking",
+  "name": "Local Booking",
+  "summary": "Book real-world services through Lokuli MCP. Use when user needs to find, check availability, or book local services like plumbers, electricians, cleaners, mechanics, barbers, personal trainers, etc. Triggers on requests like \"book me a ha.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_booking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book real-world services through Lokuli MCP",
+        "Use when user needs to find, check availability, or book local services like plumbers, electric.",
+        "Triggers on requests like \"book me a haircut\", \"find a plumber near me\", \"I need a smog check\",.",
+        "75+ service categories available."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-booking",
+      "url": "https://clawhub.ai/skills/local-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-booking",
+    "url": "https://clawhub.ai/skills/local-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-booking-34575075fbec4c21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:171d6dc37ea6844db7f34030a6e5348c0234ab0fb694c5c6b4c3ac39bf82fd8e",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T00:52:19.748Z"
+}

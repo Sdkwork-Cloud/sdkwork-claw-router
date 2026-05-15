@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xcrawl-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcrawl_scraper",
+  "skill": {
+    "id": 58583,
+    "skillKey": "clawhub-xcrawl-scraper",
+    "name": "XCrawl Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcrawl-scraper",
+    "url": "https://clawhub.ai/skills/xcrawl-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcrawl-scraper-24d6845fdd45fabf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "XCrawl - AI-Powered Web Scraping API / AI 驱动网页爬虫，支持结构化数据提取"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangss110",
+      "userId": "s176w4xw71aa6xwf0csnddt3fd83m4v4",
+      "displayName": "zhangss110",
+      "image": "https://avatars.githubusercontent.com/u/151543341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774529162735,
+      "changelog": "XCrawl Scraper 1.0.0 – Initial Release\n\n- Launches an AI-powered web scraping tool supporting output in Markdown, HTML, JSON, and screenshots.\n- Enables structured data extraction using JSON Schema.\n- Features web crawling, site search, site mapping, and batch site scraping.\n- Supports global proxy and easy configuration via command line.\n- Provides simple installation and usage instructions for quick setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02820f3d237d3427ac45cef78223448abe6a634104b1ee96ae5d389a565ddd34"
+}

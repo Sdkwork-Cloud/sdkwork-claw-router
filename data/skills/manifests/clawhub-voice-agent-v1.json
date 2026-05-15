@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28324,
+  "uuid": "skill-clawhub-voice-agent-v1",
+  "skillKey": "clawhub-voice-agent-v1",
+  "name": "Voice Agent",
+  "summary": "Enables autonomous cloning of your voice via ElevenLabs, converts text to speech, and deploys AI voice agents for automated inbound/outbound calls with Twili...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_agent_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Enables autonomous cloning of your voice via ElevenLabs, converts text to speech, and deploys A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-agent-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-agent-v1",
+      "url": "https://clawhub.ai/skills/voice-agent-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-agent-v1",
+    "url": "https://clawhub.ai/skills/voice-agent-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-agent-v1-1f9f29c6e6e25108.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-agent-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-agent-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbd76a5677d662cbeb1e5d461a703fec1f45135082d8de048037120d127da207",
+      "artifactSizeBytes": 2759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:54:18.796Z"
+}

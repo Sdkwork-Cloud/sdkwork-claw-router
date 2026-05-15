@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-strategy-backtester-clean@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_strategy_backtester_clean",
+  "skill": {
+    "id": 16012,
+    "skillKey": "clawhub-stock-strategy-backtester-clean",
+    "name": "Stock Strategy Backtester Clean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-strategy-backtester-clean",
+    "url": "https://clawhub.ai/skills/stock-strategy-backtester-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-strategy-backtester-clean-9a05cf3d2ebea5b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backtest stock trading strategies on historical OHLCV data and report win rate, return, CAGR, drawdown, Sharpe ratio, and trade logs. Use when evaluating or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taylen",
+      "userId": "s17cz561ssh3ebhyavpxcrp3px83h2qf",
+      "displayName": "taylen",
+      "image": "https://avatars.githubusercontent.com/u/3099544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 800,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772275258274,
+      "changelog": "Security hardening aligned with main slug: simplified runtime script and reduced suspicious pattern surface.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:02242e06f4d42f9651eae3052f8ce810d98bca43489d695191ce4f482252aee5"
+}

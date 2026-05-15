@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/second-hand-house@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_hand_house",
+  "skill": {
+    "id": 63260,
+    "skillKey": "clawhub-second-hand-house",
+    "name": "Second Hand House"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-hand-house",
+    "url": "https://clawhub.ai/skills/second-hand-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-hand-house-8795578d0f54809a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供二手房源搜索、VR带看服务及存量房交易流程指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773969916218,
+      "changelog": "Second-hand House v0.1.0 – Initial Release\n\n- 提供二手房源搜索、VR带看服务及存量房交易流程指引\n- 支持多维筛选（距离、热度、消费档次）\n- 返回实时队列、预约、营业及停车信息\n- 集成社区图库、探店笔记与避坑清单\n- 示例用法和注意事项说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91a4793682396485d4e73fa3edabf8145db6df263c1dec2b7cdb5362099c93d1"
+}

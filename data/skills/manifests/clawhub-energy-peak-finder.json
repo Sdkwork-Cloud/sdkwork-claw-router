@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41582,
+  "uuid": "skill-clawhub-energy-peak-finder",
+  "skillKey": "clawhub-energy-peak-finder",
+  "name": "Energy Peak Finder",
+  "summary": "Turn several days of observation into a simple energy pattern review with likely peak windows, low windows, disruptors, task matching, and a one-week experim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.energy_peak_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn several days of observation into a simple energy pattern review with likely peak windows,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/energy-peak-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "energy-peak-finder",
+      "url": "https://clawhub.ai/skills/energy-peak-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "energy-peak-finder",
+    "url": "https://clawhub.ai/skills/energy-peak-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/energy-peak-finder-66f9af78676f39de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/energy-peak-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-energy-peak-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0824f76c48c164faf109ae78fdc2ffe832b72890635ea726842626d30b709378",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:07:42.858Z"
+}

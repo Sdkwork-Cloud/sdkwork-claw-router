@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/celtics-nba@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.celtics_nba",
+  "skill": {
+    "id": 68198,
+    "skillKey": "clawhub-celtics-nba",
+    "name": "Celtics Nba"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "celtics-nba",
+    "url": "https://clawhub.ai/skills/celtics-nba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/celtics-nba-05a601b96f8353a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍波士顿凯尔特人队的历史、荣誉、商业模式及其在NBA中独特的绿色品牌和18次总冠军成就。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 63,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778252774454,
+      "changelog": "- 首个版本发布，涵盖波士顿凯尔特人队的历史、商业模式与品牌价值\n- 新增凯尔特人队18次NBA夺冠历史时间线\n- 介绍NBA球队商业运营模式和核心竞争力\n- 加入福布斯估值、收入及主场等关键数据\n- 收录队史趣事与独特传统",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c188d8c8c8a6687e9932b584262bdc43ff7a165205ddd14ddfe61939ce8a9f8c"
+}

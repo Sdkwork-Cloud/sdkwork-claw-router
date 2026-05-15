@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58067,
+  "uuid": "skill-clawhub-json-editor",
+  "skillKey": "clawhub-json-editor",
+  "name": "Json Editor",
+  "summary": "Prettify, minify, and query JSON data with path notation. 支持 JSON 格式美化、压缩及路径提取 (JQ 风格)。Use when debugging APIs, cleaning nested data, or extracting specific...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Prettify, minify, and query JSON data with path notation",
+        "支持 JSON 格式美化、压缩及路径提取 (JQ 风格)。Use when debugging APIs, cleaning nested data, or extracting speci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-editor@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-editor",
+      "url": "https://clawhub.ai/skills/json-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-editor",
+    "url": "https://clawhub.ai/skills/json-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-editor-ccd7f5d7e38291ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-editor@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-editor-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08ecaa86f4503f4f46f22cfd579ed6862d4847d425787d154f4e1adf337a679c",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:08:10.634Z"
+}

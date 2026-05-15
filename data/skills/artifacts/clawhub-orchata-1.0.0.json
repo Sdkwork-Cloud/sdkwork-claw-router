@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orchata@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchata",
+  "skill": {
+    "id": 15259,
+    "skillKey": "clawhub-orchata",
+    "name": "Orchata"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchata",
+    "url": "https://clawhub.ai/skills/orchata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchata-2be1f16f53fc043d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge management and RAG platform with tree-based document indexing. Use this skill to search, browse, and manage Orchata knowledge bases via MCP tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ehudsn",
+      "userId": "publishers:ehudsn",
+      "displayName": "ehudsn",
+      "image": "https://avatars.githubusercontent.com/u/46681118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 856,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770900679116,
+      "changelog": "Orchata 1.0.0 – Initial public release\n\n- Introduces Orchata, a knowledge management and retrieval-augmented generation (RAG) platform with tree-based document indexing.\n- Supports management of \"Spaces\" (logical collections of related documents) and advanced document management (upload, update, search, and delete).\n- Enables semantic searching and hierarchical navigation of documents parsed into structured trees with sections, summaries, and page ranges.\n- Provides a comprehensive set of MCP tools for programmatically listing, creating, updating, and querying both spaces and documents.\n- Supports multiple file formats: PDF, Word, Excel, PowerPoint, Markdown, text, and images.\n- Offers two core search methods: direct document queries (`query_spaces`) and space recommendations (`smart_query`).\n- Detailed documentation included for all major operations and configuration options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d0bb903f7d6e7747c178450014262af096383023ee242b5cea11598fb80dc8f"
+}

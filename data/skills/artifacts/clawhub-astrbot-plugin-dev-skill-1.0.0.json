@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astrbot-plugin-dev-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astrbot_plugin_dev_skill",
+  "skill": {
+    "id": 31542,
+    "skillKey": "clawhub-astrbot-plugin-dev-skill",
+    "name": "AstrBot plugin dev skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astrbot-plugin-dev-skill",
+    "url": "https://clawhub.ai/skills/astrbot-plugin-dev-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astrbot-plugin-dev-skill-3fb1d7d144c6303c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for developing AstrBot plugins that match the AstrBot main repo, pass astr-plugin-reviewer checks, and cover commands, filters, hooks, LLM integrations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "camera-2018",
+      "userId": "s179n026p32wbhpb6e1ge45qrd8426b1",
+      "displayName": "若月千鸮",
+      "image": "https://avatars.githubusercontent.com/u/40380042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775996246211,
+      "changelog": "Initial release: AstrBot plugin development workflow guide.\n\n- Introduces comprehensive SKILL.md guiding AstrBot plugin development in alignment with `astr-plugin-reviewer` requirements and AstrBot repo standards.\n- Details essential workflows for project setup, metadata, commands, filters, message handling, LLM/agent integrations, and advanced plugin features.\n- Provides minimal plugin code template and key best practices for reviewer compliance.\n- Emphasizes reviewer-first, auto-discovery workflows and non-blocking async patterns for network and I/O operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34f5ad82d7cc7795e76c7d1fdbaa658dabf38dbc465f2f1274efe0cc78f94b79"
+}

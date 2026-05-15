@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15698,
+  "uuid": "skill-clawhub-skulk-skill-scanner",
+  "skillKey": "clawhub-skulk-skill-scanner",
+  "name": "Skulk Skill Scanner",
+  "summary": "Scan OpenClaw skill folders for security red flags before installing or publishing. Detects data exfiltration, credential theft, prompt injection, destructiv...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skulk_skill_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ada Vale",
+      "features": [
+        "Scan OpenClaw skill folders for security red flags before installing or publishing",
+        "Detects data exfiltration, credential theft, prompt injection, destructiv..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skulk-skill-scanner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104856138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skulk-skill-scanner",
+      "url": "https://clawhub.ai/skills/skulk-skill-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skulk-skill-scanner",
+    "url": "https://clawhub.ai/skills/skulk-skill-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skulk-skill-scanner-3bb79f6c9b5ecd75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skulk-skill-scanner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skulk-skill-scanner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38b332328eace8ab9bf16a83905da99fc5e6314ce4bd6e1d4f1118c31a53a24d",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T12:01:58.453Z"
+}

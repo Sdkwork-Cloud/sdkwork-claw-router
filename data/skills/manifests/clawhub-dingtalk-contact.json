@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65571,
+  "uuid": "skill-clawhub-dingtalk-contact",
+  "skillKey": "clawhub-dingtalk-contact",
+  "name": "Dingtalk Contact",
+  "summary": "钉钉通讯录与联系人查询。当用户提到\"钉钉通讯录\"、\"查找员工\"、\"搜索用户\"、\"查用户信息\"、\"获取用户详情\"、\"用户手机号\"、\"员工姓名\"、\"员工工号\"、\"查部门\"、\"搜索部门\"、\"部门成员\"、\"部门列表\"、\"部门详情\"、\"子部门\"、\"父部门\"、\"部门路径\"、\"员工总数\"、\"通讯录搜索\"、\"userId 转 u...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_contact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "breath57",
+      "features": [
+        "钉钉通讯录与联系人查询。当用户提到\"钉钉通讯录\"、\"查找员工\"、\"搜索用户\"、\"查用户信息\"、\"获取用户详情\"、\"用户手机号\"、\"员工姓名\"、\"员工工号\"、\"查部门\"、\"搜索部门\"、\"部门成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-contact@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48155693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-contact",
+      "url": "https://clawhub.ai/skills/dingtalk-contact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-contact",
+    "url": "https://clawhub.ai/skills/dingtalk-contact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-contact-e24f8fea5325e941.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-contact@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-contact-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90963f433a756c5fdfeed688dcceafaa6615d0062d5caa61768b17ae503a5a6d",
+      "artifactSizeBytes": 2689
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:45:17.566Z"
+}

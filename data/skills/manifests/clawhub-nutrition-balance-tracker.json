@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28142,
+  "uuid": "skill-clawhub-nutrition-balance-tracker",
+  "skillKey": "clawhub-nutrition-balance-tracker",
+  "name": "Nutrition Balance Tracker",
+  "summary": "Track daily nutrition intake, hydration, and energy balance against fat-loss, maintenance, or muscle-gain goals. Use when the user wants to log meals, water,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_balance_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Track daily nutrition intake, hydration, and energy balance against fat-loss, maintenance, or m.",
+        "Use when the user wants to log meals, water,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nutrition-balance-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nutrition-balance-tracker",
+      "url": "https://clawhub.ai/skills/nutrition-balance-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-balance-tracker",
+    "url": "https://clawhub.ai/skills/nutrition-balance-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-balance-tracker-402810904b00947a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nutrition-balance-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nutrition-balance-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:991be6b93187265a9c3633f35fbbd6091ceb94c2f70bb339f751df92fdef26b8",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T00:52:44.584Z"
+}

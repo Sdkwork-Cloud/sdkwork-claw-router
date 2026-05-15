@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/truenas-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truenas_skill",
+  "skill": {
+    "id": 12884,
+    "skillKey": "clawhub-truenas-skill",
+    "name": "Truenas Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truenas-skill",
+    "url": "https://clawhub.ai/skills/truenas-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truenas-skill-9104358b7d9a1367.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TrueNAS SCALE via API. Check pool health, manage datasets and snapshots, monitor alerts, control services, manage apps, orchestrate Dockge container stacks, and manage bookmarks. Use when the user asks about their NAS, storage, back."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anotb",
+      "userId": "publishers:anotb",
+      "displayName": "anotb",
+      "image": "https://avatars.githubusercontent.com/u/28667903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1580,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770871878082,
+      "changelog": "- Added TLS control: new TRUENAS_VERIFY_TLS environment variable lets you enforce or relax certificate validation for TrueNAS connections.\n- Declared required environment variables and system binaries in skill metadata for compatibility checks.\n- Updated documentation to clarify security posture and TLS/self-signed certificate handling.\n- Added homepage field to metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:158e1719c0bc37a3a90ea2915d91a7736a9e3178f46420dea9521d11d00cf3ff"
+}

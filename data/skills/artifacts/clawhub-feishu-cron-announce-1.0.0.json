@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-cron-announce@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cron_announce",
+  "skill": {
+    "id": 64981,
+    "skillKey": "clawhub-feishu-cron-announce",
+    "name": "Feishu Cron Announce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cron-announce",
+    "url": "https://clawhub.ai/skills/feishu-cron-announce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cron-announce-73ce44d052157d44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建定时任务并通过 OpenClaw cron announce 直接推送结果到飞书。当需要设置定时监控任务（如版本发布、天气、股票等）并让结果自动推送到飞书时使用。关键词：飞书定时推送、cron 定时任务、飞书 announce、定时监控、飞书监控通知。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bbj375767338-arch",
+      "userId": "s17b5kwskwkzxd0efcd0vm7r5n84stbk",
+      "displayName": "bbj375767338-arch",
+      "image": "https://avatars.githubusercontent.com/u/274388308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776836392238,
+      "changelog": "Initial release of feishu-cron-announce.\n\n- Enables creation of scheduled monitoring tasks with results auto-pushed to Feishu via OpenClaw.\n- Supports isolated session, timezone configuration (Asia/Shanghai), and direct Feishu push with user open_id.\n- Includes command templates, detailed parameter explanations, error troubleshooting, and delivery verification steps.\n- Ideal for automated Feishu notifications such as releases, weather, stock monitoring, etc.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c904050db3ff6d848b73d46bdade0ca86e4c1e6b5ff2e609d843b3bb973efe72"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23520,
+  "uuid": "skill-clawhub-nsg-firewall-auditor",
+  "skillKey": "clawhub-nsg-firewall-auditor",
+  "name": "Nsg Firewall Auditor",
+  "summary": "Audit Azure NSG rules and Azure Firewall policies for dangerous internet exposure",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsg_firewall_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Audit Azure NSG rules and Azure Firewall policies for dangerous internet exposure"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nsg-firewall-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nsg-firewall-auditor",
+      "url": "https://clawhub.ai/skills/nsg-firewall-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsg-firewall-auditor",
+    "url": "https://clawhub.ai/skills/nsg-firewall-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsg-firewall-auditor-409e07034cdffb07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nsg-firewall-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nsg-firewall-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f794866ae9c9c5e01d6f3286f60fa8445a4e27945c744509f80108fded4b6f8",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:04:33.722Z"
+}

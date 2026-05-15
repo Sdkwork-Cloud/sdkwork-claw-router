@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writing-credibility-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_credibility_auditor",
+  "skill": {
+    "id": 52448,
+    "skillKey": "clawhub-writing-credibility-auditor",
+    "name": "Writing Credibility Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-credibility-auditor",
+    "url": "https://clawhub.ai/skills/writing-credibility-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-credibility-auditor-cdf9093f663c94c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit any piece of writing for missing citations, unsupported claims, logical fallacies, weasel words, and misleading statistics — then produce a structured..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arbazex",
+      "userId": "s1796zx7mth14phfvq45028d7983s0s3",
+      "displayName": "Arbaz Asif",
+      "image": "https://avatars.githubusercontent.com/u/124435828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775323025483,
+      "changelog": "**Initial Release – writing-credibility-auditor 1.0.0**\n\n- Launches a writing audit tool to check for missing citations, unsupported claims, logical fallacies, weasel words, and misleading statistics.\n- Produces a structured credibility report highlighting issues with flagged excerpts, fallacy names, severity ratings, and suggested fixes.\n- Designed for users needing critical review of articles, essays, reports, arguments, or research summaries.\n- Supports detailed user guidance, including when to trigger or not trigger the skill.\n- Self-contained analysis without relying on external APIs or live web search.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29c71c07b83256448b557970913167076703c359f65b83e980c902fe1570db3f"
+}

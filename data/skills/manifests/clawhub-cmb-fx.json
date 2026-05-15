@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58859,
+  "uuid": "skill-clawhub-cmb-fx",
+  "skillKey": "clawhub-cmb-fx",
+  "name": "CMB HKD-CNY Exchange caculator in REALTIME",
+  "summary": "查询招商银行外汇牌价（中间价）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmb_fx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Horsley Lee",
+      "features": [
+        "查询招商银行外汇牌价（中间价）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmb-fx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1982676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmb-fx",
+      "url": "https://clawhub.ai/skills/cmb-fx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmb-fx",
+    "url": "https://clawhub.ai/skills/cmb-fx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmb-fx-d27cb7ff402f8330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmb-fx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmb-fx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:192dd0af770359b7818a7a1203d262bb04a49b9caafaf6ee6ff003dcf27a496c",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T11:57:36.233Z"
+}

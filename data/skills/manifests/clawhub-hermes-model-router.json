@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43676,
+  "uuid": "skill-clawhub-hermes-model-router",
+  "skillKey": "clawhub-hermes-model-router",
+  "name": "hermes-model-router",
+  "summary": "Automatically routes tasks to local or cloud AI models based on complexity, ensuring context continuity and single-entry model selection.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_model_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freepengyang",
+      "features": [
+        "Automatically routes tasks to local or cloud AI models based on complexity, ensuring context co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-model-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18629902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-model-router",
+      "url": "https://clawhub.ai/skills/hermes-model-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-model-router",
+    "url": "https://clawhub.ai/skills/hermes-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-model-router-2b0d63f5b0a72076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-model-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-model-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c04d6fcf9c9ca1a19b40de1899985b27c8d7180834eb9a9e6eb8939823de198e",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:13:39.042Z"
+}

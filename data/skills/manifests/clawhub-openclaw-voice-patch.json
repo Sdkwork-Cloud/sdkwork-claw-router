@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52055,
+  "uuid": "skill-clawhub-openclaw-voice-patch",
+  "skillKey": "clawhub-openclaw-voice-patch",
+  "name": "Voice Input Patch – Dual Mic Buttons",
+  "summary": "Patch OpenClaw Control UI to add dual voice input buttons (auto-send + continuous). Use when OpenClaw voice input needs patching, after OpenClaw updates (pat...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_voice_patch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ErForscht",
+      "features": [
+        "Patch OpenClaw Control UI to add dual voice input buttons (auto-send + continuous)",
+        "Use when OpenClaw voice input needs patching, after OpenClaw updates (pat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-voice-patch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/429883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-voice-patch",
+      "url": "https://clawhub.ai/skills/openclaw-voice-patch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-voice-patch",
+    "url": "https://clawhub.ai/skills/openclaw-voice-patch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-voice-patch-dfe3e19b95ffbc61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-voice-patch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-voice-patch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:389d953d9810f550c2575cbffae074d6d5a909e45e12dae2ddc69aa064e354c3",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:24:05.076Z"
+}

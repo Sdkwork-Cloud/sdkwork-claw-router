@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27659,
+  "uuid": "skill-clawhub-uni-image",
+  "skillKey": "clawhub-uni-image",
+  "name": "uni-image",
+  "summary": "Unified multi-platform AI image generation. Supports Volcengine Seedream, Alibaba Qwen Image, and Google Gemini (Nano Banana). Switch between models with a d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uni_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "以码悟道",
+      "features": [
+        "Unified multi-platform AI image generation",
+        "Supports Volcengine Seedream, Alibaba Qwen Image, and Google Gemini (Nano Banana)",
+        "Switch between models with a d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uni-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59449516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uni-image",
+      "url": "https://clawhub.ai/skills/uni-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uni-image",
+    "url": "https://clawhub.ai/skills/uni-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uni-image-f64dad804436b8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uni-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uni-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d1a5a5fcd4b3944d840572b092bef0bedc879c151c6a393358fddd38090eee7",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:57:27.541Z"
+}

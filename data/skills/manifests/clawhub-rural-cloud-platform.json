@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68245,
+  "uuid": "skill-clawhub-rural-cloud-platform",
+  "skillKey": "clawhub-rural-cloud-platform",
+  "name": "rural-cloud-platform",
+  "summary": "自动登录数字乡村云平台，支持手机号、姓名、身份证号查询村民信息，提取数据并导出，完成后自动退出登录。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rural_cloud_platform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rookcat",
+      "features": [
+        "自动登录数字乡村云平台，支持手机号、姓名、身份证号查询村民信息，提取数据并导出，完成后自动退出登录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rural-cloud-platform@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48896347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rural-cloud-platform",
+      "url": "https://clawhub.ai/skills/rural-cloud-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rural-cloud-platform",
+    "url": "https://clawhub.ai/skills/rural-cloud-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rural-cloud-platform-e97f00366c3b773c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rural-cloud-platform@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rural-cloud-platform-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:929a996ab2ca126b11105b9d3fee36e0cbca0d737cc73c93904fadfb67c80cdc",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:20:32.693Z"
+}

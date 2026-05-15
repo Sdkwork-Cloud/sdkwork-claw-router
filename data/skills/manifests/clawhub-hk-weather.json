@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43388,
+  "uuid": "skill-clawhub-hk-weather",
+  "skillKey": "clawhub-hk-weather",
+  "name": "Hong Kong Weather",
+  "summary": "Hong Kong weather information from the Hong Kong Observatory (HKO) official open data API. Use when: user asks about Hong Kong weather, temperature, rainfall...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MIC007P",
+      "features": [
+        "Hong Kong weather information from the Hong Kong Observatory (HKO) official open data API",
+        "Use when: user asks about Hong Kong weather, temperature, rainfall..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125548586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-weather",
+      "url": "https://clawhub.ai/skills/hk-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-weather",
+    "url": "https://clawhub.ai/skills/hk-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-weather-162a92be27151f82.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b90ccbe661929d3b268c79c2141c34950659c36262476721f96d5bcbf53d884",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T14:03:51.660Z"
+}

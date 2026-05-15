@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idealista@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idealista",
+  "skill": {
+    "id": 11597,
+    "skillKey": "clawhub-idealista",
+    "name": "Idealista"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idealista",
+    "url": "https://clawhub.ai/skills/idealista",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idealista-b8bb1888454f2ffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Idealista API via idealista-cli (OAuth2 client credentials)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quifago",
+      "userId": "s17b4h8hadf8rbsgwq4r2vwjbs84vsd7",
+      "displayName": "quifago",
+      "image": "https://avatars.githubusercontent.com/u/2972550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1992,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1768642872777,
+      "changelog": "Initial release of the idealista skill.\n\n- Provides documentation for querying the Idealista API using idealista-cli.\n- Details environment variable setup for OAuth2 client credentials.\n- Includes example CLI commands for token management, searching listings, and computing stats.\n- Lists prompt examples for natural language agent queries.\n- Specifies installation method and configuration file locations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5bacc017866aa245d84301e7bf90b002515946f4375c2e661dd9b2dbcabab544"
+}

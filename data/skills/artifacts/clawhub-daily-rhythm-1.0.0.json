@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-rhythm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_rhythm",
+  "skill": {
+    "id": 9692,
+    "skillKey": "clawhub-daily-rhythm",
+    "name": "Daily Rhythm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-rhythm",
+    "url": "https://clawhub.ai/skills/daily-rhythm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-rhythm-dde67747fae4e7eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated daily planning and reflection system with morning briefs, wind-down prompts, sleep nudges, and weekly reviews. Use when the user wants to set up a structured daily routine, morning briefings, evening reflection prompts, or weekly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anthonyfrancis",
+      "userId": "s174m0mda941ckfy30qp453cxh83k214",
+      "displayName": "Anthony Francis",
+      "image": "https://avatars.githubusercontent.com/u/3010099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3124,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769943388253,
+      "changelog": "Daily Rhythm 1.0.0 – Initial Release\n\n- Introduces a comprehensive system for automated daily planning and reflection, including morning briefs, wind-down prompts, sleep nudges, and weekly reviews.\n- Integrates with Google Tasks (for task management), Stripe (optional ARR tracking), and calendar ICS feeds.\n- Fully documented setup: installation, configuration, automation via cron jobs or OpenClaw cron, and detailed customization options.\n- Morning briefings include daily intentions, calendar, focus area, progress tracking, actionable steps, and weather.\n- Evening wind-down and weekly review flows help users set priorities, reflect, and plan upcoming tasks.\n- Provides troubleshooting, best practices, and modular scripts for easy adoption and personal tailoring.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26055e021e95273957142cc2bb8a1ea3aa0558dcfa0c950e5b5c4c7ab73a61fe"
+}

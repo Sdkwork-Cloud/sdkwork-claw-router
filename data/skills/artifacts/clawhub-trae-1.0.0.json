@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trae@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trae",
+  "skill": {
+    "id": 22690,
+    "skillKey": "clawhub-trae",
+    "name": "Trae"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trae",
+    "url": "https://clawhub.ai/skills/trae",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trae-de85c72a1f4d833c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expertise in TRAE IDE's modular Skills architecture, enabling creation, management, and automation of custom workflows for enhanced AI-driven development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duanc-chao",
+      "userId": "publishers:duanc-chao",
+      "displayName": "wow",
+      "image": "https://avatars.githubusercontent.com/u/178591028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773937305321,
+      "changelog": "- Initial release of the TRAE IDE & Workflow Architect skill.\n- Provides in-depth guidance on TRAE's \"Skills\" architecture, including file structures, triggers, and best practices.\n- Clarifies distinctions between Rules, Skills, and Context for optimal AI performance and workflow management.\n- Includes instructions for creating, deploying, and sharing custom Skills.\n- Covers leveraging agentic capabilities, such as sub-agents and Skill chaining, for advanced automation.\n- Offers troubleshooting tips for common pitfalls and suggestions for extending skill functionality with scripts, enterprise governance, and multi-agent collaboration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a51ef68ab84a5ed535abac3f5f2128522da92a2f0b102a5dd21f66cbb5fb51b0"
+}

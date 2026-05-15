@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35267,
+  "uuid": "skill-clawhub-inline-asset-probe",
+  "skillKey": "clawhub-inline-asset-probe",
+  "name": "inline-asset-probe",
+  "summary": "Fetch a URL with curl/wget, extract inline base64 data URIs, and best-effort decode any content to inspect embedded assets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inline_asset_probe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yibeiqingtian-ai",
+      "features": [
+        "Fetch a URL with curl/wget, extract inline base64 data URIs, and best-effort decode any content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inline-asset-probe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237400549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inline-asset-probe",
+      "url": "https://clawhub.ai/skills/inline-asset-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inline-asset-probe",
+    "url": "https://clawhub.ai/skills/inline-asset-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inline-asset-probe-2b435f8f52758887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inline-asset-probe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inline-asset-probe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c642faaadc43a24cba00dbb578684647cd4952ef5776f257e2907b955766bb7b",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:36:09.182Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forgejo-fj-api@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forgejo_fj_api",
+  "skill": {
+    "id": 27744,
+    "skillKey": "clawhub-forgejo-fj-api",
+    "name": "Forgejo Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forgejo-fj-api",
+    "url": "https://clawhub.ai/skills/forgejo-fj-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forgejo-fj-api-3c79e97f02c498b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forgejo via fj and REST API for repos, issues, PRs, wiki, CI, and reviews."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerasse",
+      "userId": "s171ecaaf30phe300z8gtb3dy584gt2d",
+      "displayName": "nerasse",
+      "image": "https://avatars.githubusercontent.com/u/56534106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775762136982,
+      "changelog": "Rename the published skill to Forgejo Workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77b0b799c9bbdcd6fa5658d5eac3d4c548aa2adaf8e0184eaecfd2e86bebb5be"
+}

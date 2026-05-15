@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9000,
+  "uuid": "skill-clawhub-n8n-monitor",
+  "skillKey": "clawhub-n8n-monitor",
+  "name": "N8n Monitor",
+  "summary": "Monitora o estado, saúde, logs recentes e uso de CPU/memória dos containers N8N via comandos Docker.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Smitti7971",
+      "features": [
+        "Monitora o estado, saúde, logs recentes e uso de CPU/memória dos containers N8N via comandos Do."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/n8n-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199005793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "n8n-monitor",
+      "url": "https://clawhub.ai/skills/n8n-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-monitor",
+    "url": "https://clawhub.ai/skills/n8n-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-monitor-15616c0bdc6e4091.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/n8n-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-n8n-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aae7b7e4430b7d1bb65fa1a89d7801675dee5a35d82262ce1184905c58b5d6a",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T20:30:06.443Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-deploy@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_deploy",
+  "skill": {
+    "id": 10527,
+    "skillKey": "clawhub-openclaw-deploy",
+    "name": "Openclaw Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-deploy",
+    "url": "https://clawhub.ai/skills/openclaw-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-deploy-668bb407f5548e00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and deploy OpenClaw as Docker images or portable packages. Package OpenClaw with or without personal configuration for easy deployment to other servers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfanmy",
+      "userId": "s17a9n0kykchma2r1hmwr1dheh83hyv2",
+      "displayName": "zfanmy",
+      "image": "https://avatars.githubusercontent.com/u/33675069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2574,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771301255757,
+      "changelog": "v1.0.4\n\n- No file changes detected in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:655f128d20adb5c396c9f52cb039be8817788d9cd15347498f009777a2d0258b"
+}

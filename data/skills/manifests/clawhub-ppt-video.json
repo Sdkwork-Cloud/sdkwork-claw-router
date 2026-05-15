@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63665,
+  "uuid": "skill-clawhub-ppt-video",
+  "skillKey": "clawhub-ppt-video",
+  "name": "Ppt Video",
+  "summary": "将PPTX/PDF/HTML演示文稿及背景材料自动转换成1280×720口语化播报视频，支持内容风格识别和语速调节。",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "将PPTX/PDF/HTML演示文稿及背景材料自动转换成1280×720口语化播报视频，支持内容风格识别和语速调节。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-video@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-video",
+      "url": "https://clawhub.ai/skills/ppt-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-video",
+    "url": "https://clawhub.ai/skills/ppt-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-video-450299a8cfca23df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-video@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-video-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73ee1b96bfc2641258d8d6fef47f40eb1ee650daa9f64a28525ca3cdebaeefb",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:12:42.312Z"
+}

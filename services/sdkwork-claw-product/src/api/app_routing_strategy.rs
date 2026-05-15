@@ -97,7 +97,7 @@ fn app_routing_strategy_router_with_state(
 ) -> Router {
     Router::new()
         .route(
-            "/app/v3/api/router/routing/strategy",
+            "/app/v3/api/ai/routing/strategy",
             get(fetch_routing_strategy).put(update_routing_strategy),
         )
         .with_state(AppRoutingStrategyState {
@@ -140,7 +140,7 @@ async fn update_routing_strategy(
     let command = match build_update_routing_strategy_command(state.clone(), subject, snapshot) {
         Ok(command) => command,
         Err(error) => {
-            return routing_strategy_system_response("routing strategy command is invalid", error)
+            return routing_strategy_system_response("routing strategy command is invalid", error);
         }
     };
 

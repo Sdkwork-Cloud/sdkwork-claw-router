@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51372,
+  "uuid": "skill-clawhub-qwen-orchestrator",
+  "skillKey": "clawhub-qwen-orchestrator",
+  "name": "Qwen Orchestrator",
+  "summary": "Qwen Chat (chat.qwen.ai) access via Puppeteer browser automation with CDP interceptor. Persistent daemon (~35ms startup), health checks, graceful shutdown, P...",
+  "version": "1.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ciklopentan",
+      "features": [
+        "Qwen Chat (chat.qwen.ai) access via Puppeteer browser automation with CDP interceptor",
+        "Persistent daemon (~35ms startup), health checks, graceful shutdown, P..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-orchestrator@1.5.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259757332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-orchestrator",
+      "url": "https://clawhub.ai/skills/qwen-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-orchestrator",
+    "url": "https://clawhub.ai/skills/qwen-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-orchestrator-f28a52b126c57e6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-orchestrator@1.5.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-orchestrator-1.5.8.json",
+      "version": "1.5.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4992a761606b509dad34f2a120f76689143f1fabccd6b140d84787f8abeb35fd",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T13:40:48.956Z"
+}

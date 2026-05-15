@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51233,
+  "uuid": "skill-clawhub-modelsense",
+  "skillKey": "clawhub-modelsense",
+  "name": "Modelsense",
+  "summary": "ModelSense — The right model for the right job. Recommends the best LLM model and effort level for any task, based on benchmark data, task analysis, and the...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelsense",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xinbenlv",
+      "features": [
+        "ModelSense — The right model for the right job",
+        "Recommends the best LLM model and effort level for any task, based on benchmark data, task anal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modelsense@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/640325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modelsense",
+      "url": "https://clawhub.ai/skills/modelsense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelsense",
+    "url": "https://clawhub.ai/skills/modelsense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelsense-df63f4b94f3333c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modelsense@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modelsense-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18038be33f480ee195cd99c952fa32c79950af76e9d4f72cd715bc9800822da8",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T17:21:04.319Z"
+}

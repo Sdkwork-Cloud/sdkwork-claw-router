@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37269,
+  "uuid": "skill-clawhub-wsl-screenshot",
+  "skillKey": "clawhub-wsl-screenshot",
+  "name": "wsl-screenshot",
+  "summary": "Capture screenshots from WSL by calling Windows PowerShell. Use when user wants to take a screenshot from WSL environment, or needs screenshot functionality...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wsl_screenshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WxuanYuan",
+      "features": [
+        "Capture screenshots from WSL by calling Windows PowerShell",
+        "Use when user wants to take a screenshot from WSL environment, or needs screenshot functionalit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wsl-screenshot@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83860738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wsl-screenshot",
+      "url": "https://clawhub.ai/skills/wsl-screenshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wsl-screenshot",
+    "url": "https://clawhub.ai/skills/wsl-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wsl-screenshot-ddabb26b918c7704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wsl-screenshot@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wsl-screenshot-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b2a1b0309c13b8e74f485b9bb213dbaf8d04ce2ea97c4914a1b48dd30c884f5",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:10:24.057Z"
+}

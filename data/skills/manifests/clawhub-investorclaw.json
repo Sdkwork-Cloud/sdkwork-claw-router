@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54844,
+  "uuid": "skill-clawhub-investorclaw",
+  "skillKey": "clawhub-investorclaw",
+  "name": "InvestorClaw",
+  "summary": "Deterministic-first portfolio analyzer — holdings, performance, Sharpe + Sortino, FRED yield curves, bond duration, sector breakdowns, scenario rebalancing —...",
+  "version": "4.1.36",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investorclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason Perlow",
+      "features": [
+        "Deterministic-first portfolio analyzer — holdings, performance, Sharpe + Sortino, FRED yield cu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investorclaw@4.1.36",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162375972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investorclaw",
+      "url": "https://clawhub.ai/skills/investorclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investorclaw",
+    "url": "https://clawhub.ai/skills/investorclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investorclaw-695c1b2b52bf114a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investorclaw@4.1.36",
+      "artifactUrl": "data/skills/artifacts/clawhub-investorclaw-4.1.36.json",
+      "version": "4.1.36",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f9ebe968700143c699e83cf63a9816e940bf11c2d2f90b80bac1be2734bdc55",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T16:48:56.254Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-genomics@4.2.0",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_genomics",
+  "skill": {
+    "id": 10267,
+    "skillKey": "clawhub-personal-genomics",
+    "name": "Personal Genomics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-genomics",
+    "url": "https://clawhub.ai/skills/personal-genomics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-genomics-6627b41da5b3540d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze raw DNA data from consumer genetics services (23andMe, AncestryDNA, etc.). Extract health markers, pharmacogenomics, traits, ancestry composition, ancient DNA comparisons, and generate comprehensive reports. Uses open-source bioinf."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wkyleg",
+      "userId": "publishers:wkyleg",
+      "displayName": "wkyleg",
+      "image": "https://avatars.githubusercontent.com/u/16677991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2831,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "4.2.0",
+      "createdAt": 1770441092039,
+      "changelog": "Interactive web dashboard, type hints, defensive programming, 200 tests",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc45f1906c95f848a11ae5f8e91ff86338fcd9c88ae74ed25569e22e7c2c59e1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmb-salary-import@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmb_salary_import",
+  "skill": {
+    "id": 65540,
+    "skillKey": "clawhub-cmb-salary-import",
+    "name": "Cmb Salary Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmb-salary-import",
+    "url": "https://clawhub.ai/skills/cmb-salary-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmb-salary-import-bca1b23bb1acc2d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "招商银行工资批量导入工具。当用户提到\"招行工资导入\"、\"工资表导入银行模板\"、\"AgencyPayment\"、\"批量代发\"、\"工资文件导入银行\"时触发。功能：将工资表（工资.xlsx）中的税后实发金额、姓名、银行卡号、开户行等信息，不改格式地填入银行代发模板（AgencyPayment.xlsx）。支持：读取任意..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loverun321",
+      "userId": "s17bn6068w1enskxy8393kgbax83jhkc",
+      "displayName": "loverun321",
+      "image": "https://avatars.githubusercontent.com/u/222489895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774407914927,
+      "changelog": "接入SkillPay完整计费：SKILL_ID已配置，charge接口对接完成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61187fa29565af90e683be6d7741e2379d789ec839ba49da7a6ddf67ff8411da"
+}

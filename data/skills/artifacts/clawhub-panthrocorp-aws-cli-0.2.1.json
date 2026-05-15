@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/panthrocorp-aws-cli@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panthrocorp_aws_cli",
+  "skill": {
+    "id": 45519,
+    "skillKey": "clawhub-panthrocorp-aws-cli",
+    "name": "Aws Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panthrocorp-aws-cli",
+    "url": "https://clawhub.ai/skills/panthrocorp-aws-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panthrocorp-aws-cli-9221bfba8d215dd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AWS CLI v2 for OpenClaw agents (repackaged official binary)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panthrocorp",
+      "userId": "s174crf4872n02q9tktnd619js83vvf5",
+      "displayName": "PanthroCorp",
+      "image": "https://avatars.githubusercontent.com/u/264519014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775640573466,
+      "changelog": "- Updated documentation with detailed installation, usage, and authentication instructions.  \n- Clarified platform compatibility (Linux, arm64, and amd64 support).  \n- Emphasized no external dependencies: includes official AWS CLI v2 binary and bundled Python runtime.  \n- Added notes on EC2/ECS authentication and IMDS hop limit requirements for containerized environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:670203a5db40d47c3a2150cae2c45c65e26f63c955610326f52d3dd2877f8c2b"
+}

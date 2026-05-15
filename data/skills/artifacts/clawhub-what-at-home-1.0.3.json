@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/what-at-home@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.what_at_home",
+  "skill": {
+    "id": 71609,
+    "skillKey": "clawhub-what-at-home",
+    "name": "What At Home(家里有什么)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "what-at-home",
+    "url": "https://clawhub.ai/skills/what-at-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/what-at-home-797ad9bf9673d205.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能家庭物品管理。解决\"东西在哪\"、\"家里有什么\"的困惑。支持四级结构：套房→房间→家具→物品。关键词：收纳、整理、居家、存储、物品管理、找东西、家里有什么、东西放在哪、清点物品。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yixj",
+      "userId": "s172bv6fsybt7sr0z1h8j687pn83tawb",
+      "displayName": "Yixj",
+      "image": "https://avatars.githubusercontent.com/u/35226605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774777141103,
+      "changelog": "- Added version field (1.0.3) and updated frontmatter metadata in SKILL.md.\n- Minor formatting improvements for better readability.\n- No changes to core features or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f51695690deb03e92c2d2f4aeb0fad0f38af332950730fd9ae435cd136e6bb09"
+}

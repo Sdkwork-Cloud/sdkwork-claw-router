@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miaoji-video-script@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoji_video_script",
+  "skill": {
+    "id": 66973,
+    "skillKey": "clawhub-miaoji-video-script",
+    "name": "Miaoji Video Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoji-video-script",
+    "url": "https://clawhub.ai/skills/miaoji-video-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoji-video-script-fb8dd24c0663c0a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于爆款视频结构和产品信息，快速生成适配不同平台的高转化带货视频脚本与分镜方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777736173113,
+      "changelog": "Added scripts/video-script-generator.py: 5 script styles with timing, shot guidance, and 5 hook templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b379d03b056ca680eb47baa8b78a69ef816f9f6538dc0381af1494b0cf9e91d"
+}

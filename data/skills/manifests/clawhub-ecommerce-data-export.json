@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63221,
+  "uuid": "skill-clawhub-ecommerce-data-export",
+  "skillKey": "clawhub-ecommerce-data-export",
+  "name": "Ecommerce Data Export",
+  "summary": "导出电商数据为 Excel/PDF 报告，支持价格历史、销量分析、竞品对比。适合电商卖家、市场分析师。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_data_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "275254cl-hash",
+      "features": [
+        "导出电商数据为 Excel/PDF 报告，支持价格历史、销量分析、竞品对比。适合电商卖家、市场分析师。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-data-export@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246240596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-data-export",
+      "url": "https://clawhub.ai/skills/ecommerce-data-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-data-export",
+    "url": "https://clawhub.ai/skills/ecommerce-data-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-data-export-7bc08788047a4453.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-data-export@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-data-export-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77e524ea9bcda7e47bd88f6939a9bb6bfd8afc5466be527064fae4989390acac",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:42:11.440Z"
+}

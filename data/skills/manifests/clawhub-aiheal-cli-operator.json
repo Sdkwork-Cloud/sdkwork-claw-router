@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55383,
+  "uuid": "skill-clawhub-aiheal-cli-operator",
+  "skillKey": "clawhub-aiheal-cli-operator",
+  "name": "aiheal cli",
+  "summary": "Operate and troubleshoot the AIHealingMe CLI through the npm package (`aihealingmecli`). Use when tasks involve auth/user/audio/plan/chat/emotion/subscriptio...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiheal_cli_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yujian li",
+      "features": [
+        "Operate and troubleshoot the AIHealingMe CLI through the npm package (`aihealingmecli`)",
+        "Use when tasks involve auth/user/audio/plan/chat/emotion/subscriptio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiheal-cli-operator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105866222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiheal-cli-operator",
+      "url": "https://clawhub.ai/skills/aiheal-cli-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiheal-cli-operator",
+    "url": "https://clawhub.ai/skills/aiheal-cli-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiheal-cli-operator-1d6a6b55048ddbf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiheal-cli-operator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiheal-cli-operator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b05c11a01a7480bf737d7802a8224315d2350fdcdfc1fe67fc13f888ad80bd9",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:55:03.156Z"
+}

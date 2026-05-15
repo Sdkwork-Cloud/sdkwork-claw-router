@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22877,
+  "uuid": "skill-clawhub-xerg",
+  "skillKey": "clawhub-xerg",
+  "name": "Xerg",
+  "summary": "Audit OpenClaw and Hermes workflows in dollars. Local-first audits with init, compare mode, OpenClaw remote support, CI gates, and optional hosted follow-up.",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xerg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason Curry",
+      "features": [
+        "Audit OpenClaw and Hermes workflows in dollars",
+        "Local-first audits with init, compare mode, OpenClaw remote support, CI gates, and optional hos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xerg@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5985221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xerg",
+      "url": "https://clawhub.ai/skills/xerg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xerg",
+    "url": "https://clawhub.ai/skills/xerg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xerg-0fb613e36a39fb68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xerg@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xerg-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b97df72e1497151717f0d27c27dff11b481e33f7e7559439bbce631c18a8768d",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T16:49:33.386Z"
+}

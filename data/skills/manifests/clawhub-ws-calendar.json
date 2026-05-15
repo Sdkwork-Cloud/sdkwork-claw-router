@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67547,
+  "uuid": "skill-clawhub-ws-calendar",
+  "skillKey": "clawhub-ws-calendar",
+  "name": "Calendar",
+  "summary": "日程管理。创建日程、设置提醒、查看安排。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ws_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fhbillwer",
+      "features": [
+        "日程管理。创建日程、设置提醒、查看安排。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ws-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42957828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ws-calendar",
+      "url": "https://clawhub.ai/skills/ws-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ws-calendar",
+    "url": "https://clawhub.ai/skills/ws-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ws-calendar-af0531e800a66228.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ws-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ws-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbf85981d0ce7e48b06957c9cb8610461ddb993e1f527fc25b85b6f3a5e8ee92",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:59:35.789Z"
+}

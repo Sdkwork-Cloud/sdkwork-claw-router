@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50304,
+  "uuid": "skill-clawhub-goal-agent",
+  "skillKey": "clawhub-goal-agent",
+  "name": "goal-agent",
+  "summary": "Scaffold a self-learning goal-oriented agent. Set a goal, define a metric, and the agent iterates toward it — measuring, learning, and adapting its strategy...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ash Bhat",
+      "features": [
+        "Scaffold a self-learning goal-oriented agent",
+        "Set a goal, define a metric, and the agent iterates toward it — measuring, learning, and adapti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155024029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-agent",
+      "url": "https://clawhub.ai/skills/goal-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-agent",
+    "url": "https://clawhub.ai/skills/goal-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-agent-41160e8aecc9e8ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:175b1fc1e12bd4496ac81bda6bad77ed650875a717892e4f7f4769f9af65893a",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T19:55:00.908Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-ai-mediakit@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_mediakit",
+  "skill": {
+    "id": 68029,
+    "skillKey": "clawhub-volcengine-ai-mediakit",
+    "name": "Volcengine AI MediaKit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-mediakit",
+    "url": "https://clawhub.ai/skills/volcengine-ai-mediakit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-mediakit-01ead65f579c2e12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "火山引擎 AI MediaKit 音视频处理 Skill。当用户需要对音视频进行加工处理时触发。处理完成后自动查询任务状态并返回产物播放链接。核心能力分为七类：1. 视频处理：多片段拼接、片段裁剪、画面翻转、视频播放调速、音频播放调速、图片合成视频、音画合成、提取音轨、音频混音; 2. 音频处理：人声/伴奏分离、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volc-ai-mediakit",
+      "userId": "s171dsq7d6kwkp84z3y0kp27z983gk8r",
+      "displayName": "Volc-AI-MediaKit",
+      "image": "https://avatars.githubusercontent.com/u/137325527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776098463448,
+      "changelog": "## volcengine-ai-mediakit 1.0.5 Changelog\n- Added `metadata.openclaw.requires.env` section specifying mandatory environment variables (`VOLCENGINE_ACCESS_KEY`, `VOLCENGINE_SECRET_KEY`, `VOD_SPACE_NAME`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:587b9e176591deba835735c66e844050b35abe5553089f9d003953c825e0ca80"
+}

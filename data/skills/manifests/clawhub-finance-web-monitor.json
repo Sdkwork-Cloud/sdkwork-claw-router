@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23899,
+  "uuid": "skill-clawhub-finance-web-monitor",
+  "skillKey": "clawhub-finance-web-monitor",
+  "name": "Finance Web Monitor",
+  "summary": "Monitor and summarize finance websites for fund-investing support. Use when user asks to fetch finance site text, track changes, or schedule periodic monitor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_web_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "warriorfan",
+      "features": [
+        "Monitor and summarize finance websites for fund-investing support",
+        "Use when user asks to fetch finance site text, track changes, or schedule periodic monitor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-web-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225373486?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-web-monitor",
+      "url": "https://clawhub.ai/skills/finance-web-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-web-monitor",
+    "url": "https://clawhub.ai/skills/finance-web-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-web-monitor-639ef67a511617b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-web-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-web-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6879a5574534ac9ea702cb1b75b7ffb6e5e96c6375b1ae573ed607959d9f119e",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:10:42.158Z"
+}

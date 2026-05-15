@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/release-notes-humanizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_notes_humanizer",
+  "skill": {
+    "id": 47649,
+    "skillKey": "clawhub-release-notes-humanizer",
+    "name": "Release Notes Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-notes-humanizer",
+    "url": "https://clawhub.ai/skills/release-notes-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-notes-humanizer-c68beef41e517301.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a raw git log, PR title list, or changelog dump into customer-facing release notes that read like a human wrote them. Detects categories (new feature /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777851386621,
+      "changelog": "- Initial release of Release Notes Humanizer skill.\n- Converts raw git logs, PR lists, or changelog drafts into polished, audience-targeted release notes.\n- Detects and categorizes changes (new, improved, fixed, breaking, removed), filtering internal and irrelevant details.\n- Rewrites updates from an end-user benefit perspective, grouping and prioritizing by user value.\n- Supports output for multiple audiences: in-app changelog, emails, developer notes, marketing, and status-page formats.\n- Adapts tone and templates to match styles from notable companies (Linear, Stripe, Vercel, Figma, Tailwind, Notion).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6545d55d349d5d42c5a35edec9536ee9937237f8d49bec520d3c7554995bfe90"
+}

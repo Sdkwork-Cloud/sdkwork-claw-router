@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-travel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_travel",
+  "skill": {
+    "id": 28600,
+    "skillKey": "clawhub-aerobase-travel",
+    "name": "Aerobase Travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-travel",
+    "url": "https://clawhub.ai/skills/aerobase-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-travel-c63c3ebc630d7bbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Jetlag-aware flight intelligence for AI travel agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772856844460,
+      "changelog": "Aerobase Travel skill initial release:\n\n- Provides AI-powered, jetlag-aware flight search and analysis for travel agents\n- Features flight scoring, jetlag recovery estimates, and actionable travel strategies\n- Supports searching and ranking flights by jetlag impact, not just price or duration\n- Offers detailed airport info for recovery facilities, lounges, and transit options\n- Includes comprehensive route analysis and highlights travel deals optimized for jetlag",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf7dd6763604d3d97fc55725feb0b2d36e17a01818c9df5e54c4b6f86905bc24"
+}

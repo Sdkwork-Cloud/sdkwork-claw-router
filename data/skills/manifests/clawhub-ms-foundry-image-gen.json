@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15323,
+  "uuid": "skill-clawhub-ms-foundry-image-gen",
+  "skillKey": "clawhub-ms-foundry-image-gen",
+  "name": "Microsoft Foundry image generation",
+  "summary": "Azure Foundry image generation skill for OpenClaw; generates images via a Foundry deployment and returns image bytes or URLs.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_foundry_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacques Kang",
+      "features": [
+        "Azure Foundry image generation skill for OpenClaw",
+        "generates images via a Foundry deployment and returns image bytes or URLs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-foundry-image-gen@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15269748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-foundry-image-gen",
+      "url": "https://clawhub.ai/skills/ms-foundry-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-foundry-image-gen",
+    "url": "https://clawhub.ai/skills/ms-foundry-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-foundry-image-gen-20d27baac49aa078.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-foundry-image-gen@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-foundry-image-gen-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03481a7c3e7dd0ffdbe79becdbb4da41796a769fb82768d142431b20d6387922",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T12:37:53.738Z"
+}

@@ -2,10 +2,8 @@ import {
   ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
-  pruneUndefinedQueryParams,
   readApiRecord,
   readRequiredNonNegativeNumber,
-  standardListQueryArguments,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { DashboardOverviewResponse as SdkDashboardOverviewResponse } from '@sdkwork/clawrouter-app-sdk';
@@ -94,7 +92,7 @@ export class DashboardService {
   static async fetchDashboardOverview(timeRange: DashboardTimeRange): Promise<DashboardSnapshot> {
     const client = getClawRouterAppSdkClient();
     const params = buildTimeRangeParams(timeRange);
-    const result = await client.router.fetchDashboardOverview(...dashboardOverviewQueryArguments(params));
+    const result = await client.ai.dashboard.overview.retrieve(params);
 
     ensurePlusApiSuccess(result, 'Failed to fetch dashboard overview');
     return normalizeDashboardSnapshot(readApiRecord(result));
@@ -116,12 +114,8 @@ function buildTimeRangeParams(timeRange: DashboardTimeRange): Record<string, str
   return {
     startTime: start.toISOString(),
     endTime: end.toISOString(),
-    keyword: timeRange,
+    timeRange,
   };
-}
-
-function dashboardOverviewQueryArguments(params: Record<string, string>) {
-  return standardListQueryArguments(pruneUndefinedQueryParams(params));
 }
 
 function normalizeDashboardSnapshot(record: ApiRecord): DashboardSnapshot {

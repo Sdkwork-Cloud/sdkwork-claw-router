@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29766,
+  "uuid": "skill-clawhub-narrative-topology",
+  "skillKey": "clawhub-narrative-topology",
+  "name": "narrative-topology",
+  "summary": "Extract semantic relationships from long narratives, architectures, or complex discussions using RDF-style triple notation. Generate adjacency matrices to re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.narrative_topology",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TurinFohlen",
+      "features": [
+        "Extract semantic relationships from long narratives, architectures, or complex discussions usin.",
+        "Generate adjacency matrices to re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/narrative-topology@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208427613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "narrative-topology",
+      "url": "https://clawhub.ai/skills/narrative-topology"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "narrative-topology",
+    "url": "https://clawhub.ai/skills/narrative-topology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/narrative-topology-bb1abaa102e7bc58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/narrative-topology@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-narrative-topology-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c00ac939a6c5b41f74b97d3854dd80c49aec9020503f5a7b1559d525e0479fa",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:57:16.943Z"
+}

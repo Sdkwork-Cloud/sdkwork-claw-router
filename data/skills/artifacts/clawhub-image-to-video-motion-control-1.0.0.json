@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-motion-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_motion_control",
+  "skill": {
+    "id": 45094,
+    "skillKey": "clawhub-image-to-video-motion-control",
+    "name": "Image To Video Motion Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-motion-control",
+    "url": "https://clawhub.ai/skills/image-to-video-motion-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-motion-control-550054bc730af1ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 50MB. marketers, social media creators, filmmakers use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776847385466,
+      "changelog": "Version 1.0.0 — Initial release\n\n- Launches image-to-video motion control skill: turn still images into animated 1080p MP4 clips with AI-driven, controlled camera motion.\n- Supports JPG, PNG, WEBP, HEIC images up to 50MB; delivers results in 30–60 seconds using cloud GPUs.\n- Handles uploads, animation requests, video export, credits, and session management via an integrated API backend.\n- Offers user-friendly commands for edits, exports, credits checks, and timeline management, with seamless cloud processing.\n- Provides error handling, credit system, multiple export formats, and detailed workflow tips for optimal results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53870f4c9198cca8bdc558afe9ddfe34094ab31aa7c65218087d16d1c7b6fe16"
+}

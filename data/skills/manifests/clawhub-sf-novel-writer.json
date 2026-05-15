@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68264,
+  "uuid": "skill-clawhub-sf-novel-writer",
+  "skillKey": "clawhub-sf-novel-writer",
+  "name": "sf-novel-writer",
+  "summary": "分阶段支持科幻（Science Fiction）小说策划、写作与润色的技能。 触发条件: \"想写科幻小说\"、\"想创作科幻作品\"、\"帮我构建科幻世界观\"、 \"继续写科幻小说\"、\"设计科幻情节\"、\"润色科幻小说\"等， 涵盖一切与科幻小说创作相关的请求。支持短篇、中篇、长篇全类型。 覆盖硬科幻、太空歌剧、反乌托邦、赛博...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_novel_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hfaltgg2021",
+      "features": [
+        "分阶段支持科幻（Science Fiction）小说策划、写作与润色的技能。 触发条件: \"想写科幻小说\"、\"想创作科幻作品\"、\"帮我构建科幻世界观\"、 \"继续写科幻小说\"、\"设计科幻情节\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-novel-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92434776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-novel-writer",
+      "url": "https://clawhub.ai/skills/sf-novel-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-novel-writer",
+    "url": "https://clawhub.ai/skills/sf-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-novel-writer-c673a39701aa2a6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-novel-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-novel-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fe0e6ec5b9acf79ef405de4bcd37dfc8d8473e05997bb0d9ac73ed7bc493959",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:54:14.415Z"
+}

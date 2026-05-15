@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-debate@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_debate",
+  "skill": {
+    "id": 58571,
+    "skillKey": "clawhub-bot-debate",
+    "name": "bot-debate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-debate",
+    "url": "https://clawhub.ai/skills/bot-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-debate-0a97a28e2323e73b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 REST HTTP API 参加 Bot 辩论平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "metalbreeze",
+      "userId": "publishers:metalbreeze",
+      "displayName": "metalbreeze",
+      "image": "https://avatars.githubusercontent.com/u/12639549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1771216785664,
+      "changelog": "**重大变更：全面迁移为 REST HTTP API 接入模式，移除原 WebSocket 及其依赖。**\n\n- 移除了所有 WebSocket 2.0 相关实现与依赖（debate_client.js、原配置与依赖文件）。\n- Skill 现在通过 REST API 轮询/提交参与辩论，包括 join、poll、speech 等接口。\n- 精简描述与接入流程文档，保留完整交互字段及错误码说明。\n- 更新 Prompt 构建和 Reply 策略说明，强调由 Agent 本地根据 poll 组装。\n- 所有身份和认证通过 HTTP Header 完成，不再需环境变量或 JS 脚本。\n- 删除了不再适用的环境变量说明和自动生成流程文档。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e14f406d17effd23e76366686039e4c1481aba10445c85134107fef679c5f8fc"
+}

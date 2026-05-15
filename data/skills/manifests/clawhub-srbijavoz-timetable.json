@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38314,
+  "uuid": "skill-clawhub-srbijavoz-timetable",
+  "skillKey": "clawhub-srbijavoz-timetable",
+  "name": "SrbijaVoz Timetable and Announcements",
+  "summary": "Check official Srbija Voz notices, station matches, and timetable metadata. Use when verifying live train delays, cancellations, stoppages, or replacement bu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.srbijavoz_timetable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aleksandar Tomašević",
+      "features": [
+        "Check official Srbija Voz notices, station matches, and timetable metadata",
+        "Use when verifying live train delays, cancellations, stoppages, or replacement bu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/srbijavoz-timetable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39856297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "srbijavoz-timetable",
+      "url": "https://clawhub.ai/skills/srbijavoz-timetable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "srbijavoz-timetable",
+    "url": "https://clawhub.ai/skills/srbijavoz-timetable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/srbijavoz-timetable-76079d0cbf9432a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/srbijavoz-timetable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-srbijavoz-timetable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ca559d4f1b0f5bcd9d7fdae5ea996565425f32116e3f24e2f9ea8c6ca299142",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:17:34.589Z"
+}

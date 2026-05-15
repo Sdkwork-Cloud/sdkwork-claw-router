@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cb-platform-selection-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cb_platform_selection_guide",
+  "skill": {
+    "id": 46413,
+    "skillKey": "clawhub-cb-platform-selection-guide",
+    "name": "Cb Platform Selection Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cb-platform-selection-guide",
+    "url": "https://clawhub.ai/skills/cb-platform-selection-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cb-platform-selection-guide-90968b373435f7e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A descriptive decision guide for selecting overseas ecommerce, marketplace, DTC, or social commerce channels based on category, market, margin, and operation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777098209372,
+      "changelog": "- Initial release of the Global E-commerce Platform Selection Guide skill.\n- Provides structured, descriptive frameworks for overseas channel selection (marketplace, DTC, social commerce, distributor).\n- Includes modules for channel fit, platform comparison, margin/fee checklist, operational readiness, pilot planning, and risk evaluation.\n- Requires context on market, product category, go-to-market goals, and operational capabilities; returns outputs as tables, checklists, and actionable steps.\n- Stresses assumptions, validation, and localized adaptation for effective global expansion planning.\n- No code execution, API calls, or external actions; outputs are advisory only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4957a91aab09151ae71f10c2dc6ac576dbb128c310105e5a23f0f4e37f3e82a8"
+}

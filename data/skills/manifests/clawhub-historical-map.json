@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36577,
+  "uuid": "skill-clawhub-historical-map",
+  "skillKey": "clawhub-historical-map",
+  "name": "Historical Map",
+  "summary": "Generate beautiful vintage-style historical maps from GeoJSON data. Supports multiple projections, color palettes, timelines, compass roses, parchment overla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.historical_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "muxueqingze",
+      "features": [
+        "Generate beautiful vintage-style historical maps from GeoJSON data",
+        "Supports multiple projections, color palettes, timelines, compass roses, parchment overla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/historical-map@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248113054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "historical-map",
+      "url": "https://clawhub.ai/skills/historical-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "historical-map",
+    "url": "https://clawhub.ai/skills/historical-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/historical-map-82b83c1dd43f8fc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/historical-map@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-historical-map-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccbaca13d3bd42eec6d936277f4cec6fc0dffae05f83cd1de257b639c0005460",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:00:35.410Z"
+}

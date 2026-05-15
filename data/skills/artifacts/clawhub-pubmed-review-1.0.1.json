@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pubmed-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_review",
+  "skill": {
+    "id": 64390,
+    "skillKey": "clawhub-pubmed-review",
+    "name": "PubMed Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-review",
+    "url": "https://clawhub.ai/skills/pubmed-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-review-11a706d710d0332d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书自然语言触发的 PubMed 文献检索与 AI 综述生成系统。支持专业检索式扩展、限定词过滤、AI 结构化综述（brief+full）、飞书通知、追问回答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crayfish-ai",
+      "userId": "s172k14n492gjdn59cs251gvb584dmkf",
+      "displayName": "crayfish-ai",
+      "image": "https://avatars.githubusercontent.com/u/270082434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775831412604,
+      "changelog": "- Added bug fixes and minor improvements to the core scripts.\n- Updated internal logic in pubmed_followup_handler.py and pubmed_intent_handler.py.\n- Improved task handling in task_dispatcher.py.\n- No changes to user-facing features or workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e5f389cc13a6f29b99af0c68c3773141d29d1608e93e2222bb45ee7b26f73aa"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71028,
+  "uuid": "skill-clawhub-hermes-memory-cn",
+  "skillKey": "clawhub-hermes-memory-cn",
+  "name": "Hermes Memory CN",
+  "summary": "给AI装一个「人脑级」记忆系统。它能记住你说过的一切重要信息，下次聊天自动想起来。 不用云端、不用API Key、不花一分钱——全部数据存在你自己的电脑上。 说「记住这个」它就记住，问「我上次说了什么」它就找到。自动整理、自动遗忘过时信息。 适合：想让自己的AI助手拥有长期记忆的用户。 触发词：记忆、记住、之前说...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_memory_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DREAM978",
+      "features": [
+        "给AI装一个「人脑级」记忆系统。它能记住你说过的一切重要信息，下次聊天自动想起来。 不用云端、不用API Key、不花一分钱——全部数据存在你自己的电脑上。 说「记住这个」它就记住，问「我上."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-memory-cn@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14180057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-memory-cn",
+      "url": "https://clawhub.ai/skills/hermes-memory-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-memory-cn",
+    "url": "https://clawhub.ai/skills/hermes-memory-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-memory-cn-15728cf065357d60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-memory-cn@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-memory-cn-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf2c57cb72a9f5a242770acb7850450beeedfcc466f86fd06419159e05eb27cf",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:39:56.407Z"
+}

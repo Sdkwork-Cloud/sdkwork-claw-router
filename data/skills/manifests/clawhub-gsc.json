@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8684,
+  "uuid": "skill-clawhub-gsc",
+  "skillKey": "clawhub-gsc",
+  "name": "Google Search Console",
+  "summary": "Query Google Search Console for SEO data - search queries, top pages, CTR opportunities, URL inspection, and sitemaps. Use when analyzing search performance,...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Rhyne",
+      "features": [
+        "Query Google Search Console for SEO data",
+        "search queries, top pages, CTR opportunities, URL inspection, and sitemaps",
+        "Use when analyzing search performance,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gsc@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7828464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gsc",
+      "url": "https://clawhub.ai/skills/gsc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsc",
+    "url": "https://clawhub.ai/skills/gsc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsc-45728ac5dd6a6ee9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gsc@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gsc-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c6167c4ba28aedfb41816c4bf178c935ef8e880fc03476ed6e15d2eb643f95c",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:01:21.909Z"
+}

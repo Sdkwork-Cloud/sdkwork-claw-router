@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64142,
+  "uuid": "skill-clawhub-p2p-lending-data",
+  "skillKey": "clawhub-p2p-lending-data",
+  "name": "P2p Lending Data",
+  "summary": "验证 Frappe Lending 贷款模块核心流程，包括贷款申请创建、放款计划生成、还款处理及结清退款的自动化测试能力。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p2p_lending_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "验证 Frappe Lending 贷款模块核心流程，包括贷款申请创建、放款计划生成、还款处理及结清退款的自动化测试能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/p2p-lending-data@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "p2p-lending-data",
+      "url": "https://clawhub.ai/skills/p2p-lending-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p2p-lending-data",
+    "url": "https://clawhub.ai/skills/p2p-lending-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p2p-lending-data-2344aec1f294faca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/p2p-lending-data@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-p2p-lending-data-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e22d6f1ea96226ed7bed7aeb87bee820ee54d44c4180347bf5d745cb6c92434",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:28:41.750Z"
+}

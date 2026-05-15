@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serper-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper_search",
+  "skill": {
+    "id": 9939,
+    "skillKey": "clawhub-serper-search",
+    "name": "serper-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper-search",
+    "url": "https://clawhub.ai/skills/serper-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-search-891638416dbfd420.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches real Google search or news results with links, snippets, knowledge graph data, and related questions via the Serper.dev API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samoppakiks",
+      "userId": "publishers:samoppakiks",
+      "displayName": "Samoppakiks",
+      "image": "https://avatars.githubusercontent.com/u/87269875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2787,
+      "installsAllTime": 21,
+      "installsCurrent": 20,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769958016789,
+      "changelog": "- Initial release of the Serper Google Search Plugin.\n- Provides real Google Search and News results via the Serper.dev API.\n- Supports web, news, and knowledge graph queries with links, snippets, facts, and \"People Also Ask\".\n- Easy setup: Just add your Serper.dev API key to the configuration.\n- Registers a simple tool with query, result count, and type (web/news) parameters.\n- Returns structured JSON with relevant search information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ae449449e4cab52f6ad679bef121b0aa285390f7620039510d65fc1221ee082"
+}

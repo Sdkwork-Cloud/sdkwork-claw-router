@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49402,
+  "uuid": "skill-clawhub-jt-meeting-summary",
+  "skillKey": "clawhub-jt-meeting-summary",
+  "name": "JT Meeting Summary",
+  "summary": "Pure prompt guidance for generating faithful meeting and call summaries. Use when the model should summarize transcripts into meeting minutes, concise summar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jt_meeting_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quent1nQ",
+      "features": [
+        "Pure prompt guidance for generating faithful meeting and call summaries",
+        "Use when the model should summarize transcripts into meeting minutes, concise summar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jt-meeting-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128338389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jt-meeting-summary",
+      "url": "https://clawhub.ai/skills/jt-meeting-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jt-meeting-summary",
+    "url": "https://clawhub.ai/skills/jt-meeting-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jt-meeting-summary-ff53c399711bce7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jt-meeting-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jt-meeting-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e6bfe84ca80e7f24680e3b431d11839bdf407730a77d6a75d135f7b8da55a52",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T08:47:18.614Z"
+}

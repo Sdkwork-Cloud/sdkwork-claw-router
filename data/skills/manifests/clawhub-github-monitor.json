@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21146,
+  "uuid": "skill-clawhub-github-monitor",
+  "skillKey": "clawhub-github-monitor",
+  "name": "GitHub Monitor",
+  "summary": "Monitor one or more GitHub repositories and send low-noise alerts with configurable policy modes (major_only, balanced, verbose). Use when setting up recurri...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samwei12",
+      "features": [
+        "Monitor one or more GitHub repositories and send low-noise alerts with configurable policy mode.",
+        "Use when setting up recurri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12758352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-monitor",
+      "url": "https://clawhub.ai/skills/github-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-monitor",
+    "url": "https://clawhub.ai/skills/github-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-monitor-e67d78d72da91db7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38e4a1772cc90ce8d8ea8be3d4e2151117111361207c3cec2f5149f19e81c78b",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:41:35.857Z"
+}

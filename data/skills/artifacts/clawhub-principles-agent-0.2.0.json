@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/principles-agent@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.principles_agent",
+  "skill": {
+    "id": 67307,
+    "skillKey": "clawhub-principles-agent",
+    "name": "Principles Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "principles-agent",
+    "url": "https://clawhub.ai/skills/principles-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/principles-agent-55a779e0abaf33bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于第一性原理思维的迭代式 Agent，拆解复杂目标为原子任务，自动验证调试并依赖感知执行保证最终交付质量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lingxinsuixing",
+      "userId": "s171c8yhytaat647cb010141cs83x8bx",
+      "displayName": "lingxinsuixing",
+      "image": "https://avatars.githubusercontent.com/u/17476121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774866581248,
+      "changelog": "**principles-agent 0.2.0 — 架构更新，权限边界细化**\n\n- 明确分离 skill 与主 Agent 职责，skill 仅负责任务规划与验证，主 Agent 负责所有实际操作与 LLM 调用\n- 新增权限边界声明：skill 不直接访问网络、不读环境变量、不主动写文件，全部 IO 由主 Agent 托管\n- 工作流程和架构目录细化，增强分层质量验证和依赖识别逻辑\n- 文档更侧重安全与最小权限原则，提升透明度",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ced1705a23603a18b01c8c7c7269bff882f679e4cf69ce1f68dc0bb25ab17ec"
+}

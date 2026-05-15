@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmall@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmall",
+  "skill": {
+    "id": 72394,
+    "skillKey": "clawhub-tmall",
+    "name": "Tmall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmall",
+    "url": "https://clawhub.ai/skills/tmall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmall-999e524f02e0c1ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供天猫品牌旗舰店和商品详情的价格、销量与评价摘要及同类商品对比，供内部分析和提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773775467696,
+      "changelog": "- Initial release of the tmall-hot-trend skill.\n- Enables summary and comparison of brand flagship store and product page data on Tmall (price, reviews, sales).\n- Supports lightweight, manual-triggered analysis of public pages only; ordering and bypassing security are not provided.\n- Use cases include product lists, price/feature summaries, and simple product comparisons.\n- Adheres to Tmall platform rules and strictly avoids batch scraping or violating usage policies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e92019c1fbfa890079abc1567d473326ca5cdba0060f758bb159ecd886274c61"
+}

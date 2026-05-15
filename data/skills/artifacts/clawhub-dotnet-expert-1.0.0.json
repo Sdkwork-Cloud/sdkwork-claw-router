@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dotnet-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dotnet_expert",
+  "skill": {
+    "id": 11332,
+    "skillKey": "clawhub-dotnet-expert",
+    "name": "Dotnet Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dotnet-expert",
+    "url": "https://clawhub.ai/skills/dotnet-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dotnet-expert-abb36871b5cbdfc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building .NET 8/9 applications, ASP.NET Core APIs, Entity Framework Core, MediatR CQRS, modular monolith architecture, FluentValidation, Result pattern, JWT authentication, or any C# backend development question."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgarrison929",
+      "userId": "publishers:jgarrison929",
+      "displayName": "jgarrison929",
+      "image": "https://avatars.githubusercontent.com/u/21370704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2089,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770008200713,
+      "changelog": "Initial release of dotnet-expert skill.\n\n- Provides guidance for building .NET 8/9 applications using ASP.NET Core APIs, Entity Framework Core, MediatR CQRS, modular monolith architecture, FluentValidation, JWT authentication, and strongly-typed C# code practices.\n- Emphasizes clean architecture, modular monolith project structure, CQRS with MediatR, the Result pattern over exceptions, and async-first development.\n- Includes code patterns for minimal APIs, CQRS request handlers, and robust input validation using FluentValidation.\n- Demonstrates a recommended Result type and error handling pattern for business logic.\n- Outlines best practices for structuring production-grade .NET backend applications.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b64bb06128a0f6dac3dfa8c4e649238fe43beb25b854c48811dc6956f67d136"
+}

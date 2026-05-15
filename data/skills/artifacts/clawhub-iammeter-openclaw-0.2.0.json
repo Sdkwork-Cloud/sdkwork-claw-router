@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iammeter-openclaw@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iammeter_openclaw",
+  "skill": {
+    "id": 17892,
+    "skillKey": "clawhub-iammeter-openclaw",
+    "name": "IAMMETER"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iammeter-openclaw",
+    "url": "https://clawhub.ai/skills/iammeter-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iammeter-openclaw-0ded2d5da4e06c2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and export device/site data via the iammeter API (based on https://www.iammeter.com/swaggerui/swagger.json). Triggers: list sites/devices, get real-tim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iammeter",
+      "userId": "publishers:iammeter",
+      "displayName": "IAMMETER",
+      "image": "https://avatars.githubusercontent.com/u/4953389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 625,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772178476574,
+      "changelog": "iammeter-openclaw v0.2.0\n\n- Added detailed documentation and usage instructions in SKILL.md, including setup, configuration options, and CLI usage examples.\n- Clarified how API tokens are loaded, supporting both environment variable and local configuration file methods.\n- Listed available API triggers and analysis features, including site/device querying and energy data export.\n- Provided reference links and notes on integration, protocols, and IAMMETER platform capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:146c42b274967aebc4db725b1e3aa9916a57836772515eb87143f3ff409b0b7b"
+}

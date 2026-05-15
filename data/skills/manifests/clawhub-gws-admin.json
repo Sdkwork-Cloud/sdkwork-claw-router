@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20734,
+  "uuid": "skill-clawhub-gws-admin",
+  "skillKey": "clawhub-gws-admin",
+  "name": "Gws Admin",
+  "summary": "Google Workspace Admin SDK: Manage users, groups, and devices.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Admin SDK: Manage users, groups, and devices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-admin@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-admin",
+      "url": "https://clawhub.ai/skills/gws-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-admin",
+    "url": "https://clawhub.ai/skills/gws-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-admin-8f3eee4d4d7b9dcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-admin@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-admin-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df11a9d678002faa7f1589047df6be18f32308ec6d81acbf9d127baf79b5a2be",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T23:04:27.966Z"
+}

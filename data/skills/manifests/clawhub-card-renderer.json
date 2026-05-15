@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71023,
+  "uuid": "skill-clawhub-card-renderer",
+  "skillKey": "clawhub-card-renderer",
+  "name": "小红书卡片生成器",
+  "summary": "为小红书文案生成不同风格的知识卡片附图（如 Mac Pro、赛博朋克、包豪斯风）。当用户需要将 Markdown 文案渲染成美观的图片卡片时使用。支持自动分段渲染封面和详情页。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_renderer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrQ",
+      "features": [
+        "为小红书文案生成不同风格的知识卡片附图（如 Mac Pro、赛博朋克、包豪斯风）。当用户需要将 Markdown 文案渲染成美观的图片卡片时使用。支持自动分段渲染封面和详情页。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/card-renderer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183293891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "card-renderer",
+      "url": "https://clawhub.ai/skills/card-renderer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-renderer",
+    "url": "https://clawhub.ai/skills/card-renderer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-renderer-abf9451d6e9a5296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/card-renderer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-card-renderer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b55e8f35cb5100296c35a16eace185474352bfc94fbf710f29c1d74334ef0ba",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:51:16.881Z"
+}

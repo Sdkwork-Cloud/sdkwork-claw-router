@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16384,
+  "uuid": "skill-clawhub-x-reader-skill",
+  "skillKey": "clawhub-x-reader-skill",
+  "name": "X Reader",
+  "summary": "Read X (Twitter) posts without official API. Supports both Nitter (free) and RapidAPI (detailed) methods.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_reader_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dkimiscoding",
+      "features": [
+        "Read X (Twitter) posts without official API",
+        "Supports both Nitter (free) and RapidAPI (detailed) methods."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-reader-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68261026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-reader-skill",
+      "url": "https://clawhub.ai/skills/x-reader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-reader-skill",
+    "url": "https://clawhub.ai/skills/x-reader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-reader-skill-608177faf87f5d09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-reader-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-reader-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:149425160ae24abac14b49b1526fb98f0765cc71223bdd61e5ccf00abdd62d55",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:30:02.539Z"
+}

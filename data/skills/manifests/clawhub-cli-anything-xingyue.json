@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59936,
+  "uuid": "skill-clawhub-cli-anything-xingyue",
+  "skillKey": "clawhub-cli-anything-xingyue",
+  "name": "Cli Anything",
+  "summary": "基于 HKUDS/CLI-Anything 仓库重构的 OpenClaw Skill。为任意软件生成 CLI 工具，让 AI Agent 可以控制它。通过分析软件源代码，自动生成可被 AI 调用的命令行接口。支持 GIMP、Blender、LibreOffice、OBS 等软件。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_anything_xingyue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kay",
+      "features": [
+        "基于 HKUDS/CLI-Anything 仓库重构的 OpenClaw Skill。为任意软件生成 CLI 工具，让 AI Agent 可以控制它。通过分析软件源代码，自动生成可被 AI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cli-anything-xingyue@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101537032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cli-anything-xingyue",
+      "url": "https://clawhub.ai/skills/cli-anything-xingyue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-anything-xingyue",
+    "url": "https://clawhub.ai/skills/cli-anything-xingyue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-anything-xingyue-0536a0fb552ad02f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cli-anything-xingyue@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cli-anything-xingyue-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da38690edcdd70099e7427d8b9484b673e28eae39241a34bab726b0316598400",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T07:51:16.369Z"
+}

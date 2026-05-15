@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58892,
+  "uuid": "skill-clawhub-amap-search-skill",
+  "skillKey": "clawhub-amap-search-skill",
+  "name": "Amap Search Skill",
+  "summary": "高德地图全功能工具 - 集成POI搜索、路径规划、天气查询、公交查询、实时路况等。/Gaode Map All-in-One - POI search, route planning, weather, bus, traffic.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahongting",
+      "features": [
+        "高德地图全功能工具",
+        "集成POI搜索、路径规划、天气查询、公交查询、实时路况等。/Gaode Map All-in-One",
+        "POI search, route planning, weather, bus, traffic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-search-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61448287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-search-skill",
+      "url": "https://clawhub.ai/skills/amap-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-search-skill",
+    "url": "https://clawhub.ai/skills/amap-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-search-skill-d16f138a811854a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-search-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-search-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31863482c7452b5f325b967dca65286400b9d7ba3958d86e6d76649e575d0816",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:40:11.991Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/depth-memory@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.depth_memory",
+  "skill": {
+    "id": 70828,
+    "skillKey": "clawhub-depth-memory",
+    "name": "Depth Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "depth-memory",
+    "url": "https://clawhub.ai/skills/depth-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/depth-memory-2395cdd0d6cdc9b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深层记忆系统。处理知识积累、技能经验、长期档案类任务时触发。提供关键字检索、记忆存取、索引更新功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qshfu",
+      "userId": "s176qhj9skyjk88kd2j0hsnbhd86461f",
+      "displayName": "qshfu",
+      "image": "https://avatars.githubusercontent.com/u/15900749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1778288291861,
+      "changelog": "depth-memory v0.3.1\n\n- Renamed the skill from \"deep-memory\" to \"depth-memory\" in metadata.\n- No changes to logic, code, or workflow—documentation and usage remain consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d8dedc4a94b5f89ee772c6b6fd3cc8ea1492421abf6403d707a89c692219f74"
+}

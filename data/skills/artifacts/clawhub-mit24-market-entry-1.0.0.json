@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mit24-market-entry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mit24_market_entry",
+  "skill": {
+    "id": 64988,
+    "skillKey": "clawhub-mit24-market-entry",
+    "name": "Mit24 Market Entry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mit24-market-entry",
+    "url": "https://clawhub.ai/skills/mit24-market-entry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mit24-market-entry-03b421a31268664f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MIT有序创业24步法第四阶段（步骤15-18）。当用户需要计算获客成本CAC、设计销售流程、识别和测试商业假设、制定市场进入策略时使用。触发词：获客成本、CAC、销售流程、销售漏斗、商业假设、假设验证、MVP测试、Landing Page、A/B测试、市场进入、GTM、Go-to-Market、客户开发"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775027425748,
+      "changelog": "Initial release focusing on the market entry phase (steps 15–18) of the MIT 24-step Disciplined Entrepreneurship Method:\n\n- Calculates Customer Acquisition Cost (CAC) and evaluates business health.\n- Guides users in designing a repeatable, scalable sales process for B2B and B2C.\n- Helps identify and prioritize critical business assumptions.\n- Provides structured methods for hypothesis testing (e.g., interviews, A/B tests, Landing Pages).\n- Generates a comprehensive market entry strategy report with actionable outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67c3633f98579c1fc86716105d1865786bf6adf7c2542064b540c330f3a49cc9"
+}

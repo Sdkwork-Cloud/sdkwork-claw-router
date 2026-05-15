@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28679,
+  "uuid": "skill-clawhub-sandbox",
+  "skillKey": "clawhub-sandbox",
+  "name": "Sandbox",
+  "summary": "Sandbox reference tool. Use when working with sandbox in sysops contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Sandbox reference tool",
+        "Use when working with sandbox in sysops contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sandbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sandbox",
+      "url": "https://clawhub.ai/skills/sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sandbox",
+    "url": "https://clawhub.ai/skills/sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sandbox-b7ad567477c83756.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sandbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sandbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba2a64da2eac79661c2a9b79566dfb710353dcb11384a64585cd2e7834f3115",
+      "artifactSizeBytes": 1755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:18:40.817Z"
+}

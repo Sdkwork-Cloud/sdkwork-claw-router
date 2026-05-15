@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faq-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faq_generator",
+  "skill": {
+    "id": 27792,
+    "skillKey": "clawhub-faq-generator",
+    "name": "Faq Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faq-generator",
+    "url": "https://clawhub.ai/skills/faq-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faq-generator-0950159f3273ff8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates FAQ lists from complex medical policies or protocols. Trigger when user provides medical documents, policies, or protocols and requests FAQ generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773984787648,
+      "changelog": "Initial release of the faq-generator skill.\n\n- Automatically generates FAQ lists from complex medical policies and protocols.\n- Supports interpretation and simplification for different audiences (patients, researchers, general public).\n- Offers configurable output format: JSON, markdown, or text.\n- Ensures medically accurate, patient-friendly language.\n- Includes risk assessment and security checklist for safe usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:544ffa5784466e9124e615830ad2970a83a27d390eb255f9396453360feda1f1"
+}

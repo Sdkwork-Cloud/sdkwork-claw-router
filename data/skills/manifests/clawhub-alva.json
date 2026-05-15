@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13143,
+  "uuid": "skill-clawhub-alva",
+  "skillKey": "clawhub-alva",
+  "name": "alva",
+  "summary": "Use this skill when the user asks for financial data (\"price of BTC\", \"P/E ratio of NVDA\"), market analysis, stock or crypto research, quant strategies, back...",
+  "version": "1.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alva",
+      "features": [
+        "Use this skill when the user asks for financial data (\"price of BTC\", \"P/E ratio of NVDA\"), mar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alva@1.7.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149285747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alva",
+      "url": "https://clawhub.ai/skills/alva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alva",
+    "url": "https://clawhub.ai/skills/alva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alva-93ce57525b05a995.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alva@1.7.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alva-1.7.1.json",
+      "version": "1.7.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:244750f02efbef527de9beac8b843f4e63345a1df85dae238bd0450aa4a4366b",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T12:51:21.053Z"
+}

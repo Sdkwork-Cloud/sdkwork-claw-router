@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/config-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_manager",
+  "skill": {
+    "id": 57154,
+    "skillKey": "clawhub-config-manager",
+    "name": "Config Manager - 配置管理器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-manager",
+    "url": "https://clawhub.ai/skills/config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-manager-99c048b9eedcedfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage dynamic, type-safe string, int, and bool configurations via key=value files for configurable, multi-environment applications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gatsby047-oss",
+      "userId": "publishers:gatsby047-oss",
+      "displayName": "Light F Star",
+      "image": "https://avatars.githubusercontent.com/u/251987713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772497443638,
+      "changelog": "Config Refactor - 配置驱动重构工具 v1.0.0\n\n- Initial release.\n- Supports string, integer, and boolean configuration types.\n- Dynamic configuration management with type-safe access.\n- Load and save configuration files in key=value format.\n- Includes configuration validation and default values.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc87e82e215c269048d807ef60df06208b320eb14970be86c3d12d066ece8959"
+}

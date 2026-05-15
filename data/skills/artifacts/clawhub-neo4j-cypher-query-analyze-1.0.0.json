@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neo4j-cypher-query-analyze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo4j_cypher_query_analyze",
+  "skill": {
+    "id": 60134,
+    "skillKey": "clawhub-neo4j-cypher-query-analyze",
+    "name": "neo4j-cypher-query-analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo4j-cypher-query-analyze",
+    "url": "https://clawhub.ai/skills/neo4j-cypher-query-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo4j-cypher-query-analyze-4132198374419050.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能图数据库查询助手 - 自动感知 Schema 结构，根据自然语言生成精准的 Cypher 查询"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffrao",
+      "userId": "s174s72dza9jtmb24r2xtm3qkh83zcgs",
+      "displayName": "jeffRao",
+      "image": "https://avatars.githubusercontent.com/u/33320518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773113673436,
+      "changelog": "neo4j-cypher-query-analyze 1.0.0 – Initial Release\n\n- Introduces schema-aware Cypher query generation: automatically detects graph schema, caches structure, and builds accurate queries from natural language.\n- Implements smart intent analysis to classify user queries (entity lookup, relationship exploration, path finding, analytics, etc.).\n- Integrates multi-layer safety checks to prevent destructive operations and mask sensitive fields.\n- Provides auto-formatting of query results (tables, relationship paths, statistics, or JSON) for clear output.\n- Connects via Neo4j HTTP API with error categorization and user-friendly troubleshooting.\n- Supports schema caching for faster subsequent queries and efficient memory usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efb512c24389e05231bd37f60fc2a8a184764bf462411714952f773dc27b6223"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boss-zhipin@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_zhipin",
+  "skill": {
+    "id": 67551,
+    "skillKey": "clawhub-boss-zhipin",
+    "name": "Boss Zhipin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-zhipin",
+    "url": "https://clawhub.ai/skills/boss-zhipin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-zhipin-dbdc2b4c0fb02ed3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供BOSS直聘公开职位与公司信息检索与摘要，不支持登录、投递或批量抓取功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773771153594,
+      "changelog": "boss-zhipin-hot-trend v0.1.0\n\n- Initial release of the BOSS直聘热门技能分析技能\n- 支持公开职位及公司页的信息检索与摘要功能\n- 实现职位关键词/城市摘要、职位详情字段整理、公司信息提取等常见任务\n- 明确合规和频率控制要求；不支持自动投递、登录或聊天等功能\n- 用于内部分析，严格遵守平台规定",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99556c21bf243fca07d5307639924c049f88acd495314e5042e403f866b802ad"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55923,
+  "uuid": "skill-clawhub-claw-monitor",
+  "skillKey": "clawhub-claw-monitor",
+  "name": "Claw Monitor",
+  "summary": "Use the `clawmonitor` CLI/TUI to inspect OpenClaw sessions, model health, token usage, and gateway service health.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bread time",
+      "features": [
+        "Use the `clawmonitor` CLI/TUI to inspect OpenClaw sessions, model health, token usage, and gate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-monitor@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258709591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-monitor",
+      "url": "https://clawhub.ai/skills/claw-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-monitor",
+    "url": "https://clawhub.ai/skills/claw-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-monitor-ea584c2bf224b3fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-monitor@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-monitor-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d93a2bc72b994e154cf861992b685a68ee3fb5a9b6d973e6445c7c7d3a9b9f2",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:49:34.390Z"
+}

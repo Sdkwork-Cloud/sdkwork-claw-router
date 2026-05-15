@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30365,
+  "uuid": "skill-clawhub-sql-query-reviewer",
+  "skillKey": "clawhub-sql-query-reviewer",
+  "name": "SQL Query Reviewer",
+  "summary": "Reviews SQL queries for correctness, security risks, and performance issues; provides a structured report with severity ratings and optimized rewrites.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_query_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lnguyen1996",
+      "features": [
+        "Reviews SQL queries for correctness, security risks, and performance issues",
+        "provides a structured report with severity ratings and optimized rewrites."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-query-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97846628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-query-reviewer",
+      "url": "https://clawhub.ai/skills/sql-query-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-query-reviewer",
+    "url": "https://clawhub.ai/skills/sql-query-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-query-reviewer-1286b827332ed274.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-query-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-query-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d01a9f789390c69748c70bd3f97a779cad118fbdb09215b9756bf185766b4ff4",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:03:26.622Z"
+}

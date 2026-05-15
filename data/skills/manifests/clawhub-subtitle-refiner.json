@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63572,
+  "uuid": "skill-clawhub-subtitle-refiner",
+  "skillKey": "clawhub-subtitle-refiner",
+  "name": "subtitle-refiner",
+  "summary": "智能优化 SRT 字幕，去除语气词并修正 ASR 错误，保持时间戳不变，输出优化文件并发送飞书通知及 token 报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_refiner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TrueTechLabs",
+      "features": [
+        "智能优化 SRT 字幕，去除语气词并修正 ASR 错误，保持时间戳不变，输出优化文件并发送飞书通知及 token 报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subtitle-refiner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49872902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subtitle-refiner",
+      "url": "https://clawhub.ai/skills/subtitle-refiner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-refiner",
+    "url": "https://clawhub.ai/skills/subtitle-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-refiner-3395a652306b7193.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subtitle-refiner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-refiner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7b4e484bf63e52aae71342d30934b9c86bee9338a0d21ade21bda34a48aca1c",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:05:55.825Z"
+}

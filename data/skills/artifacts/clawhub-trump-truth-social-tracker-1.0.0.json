@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trump-truth-social-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_truth_social_tracker",
+  "skill": {
+    "id": 60875,
+    "skillKey": "clawhub-trump-truth-social-tracker",
+    "name": "Trump Truth Social Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-truth-social-tracker",
+    "url": "https://clawhub.ai/skills/trump-truth-social-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-truth-social-tracker-577f99be75aca3d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跟踪特朗普 Truth Social 帖子数据。从 CNN 归档 API 获取数据并同步到本地 SQLite 数据库，支持查询、统计和分析。触发场景：(1) 用户要求同步/更新 Truth Social 数据 (2) 查询特朗普帖子内容、互动数据 (3) 分析帖子趋势或统计信息 (4) 用户提到\"Truth So..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776158787756,
+      "changelog": "Initial release - Track Trump Truth Social posts, detect market impact keywords, sync to SQLite database",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ed1c7e79a235542c233e96190b466068c3ab8bd76496050eb1fe16df934d2c4"
+}

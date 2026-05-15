@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-bilibili@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_bilibili",
+  "skill": {
+    "id": 62308,
+    "skillKey": "clawhub-maxhub-bilibili",
+    "name": "Maxhub Bilibili"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-bilibili",
+    "url": "https://clawhub.ai/skills/maxhub-bilibili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-bilibili-ced76564cb37d4af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B站/Bilibili平台B站视频数据、UP主分析与弹幕采集。当用户提到b站、bilibili、弹幕、视频、番剧等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778341850893,
+      "changelog": "v1.1.1 - 修复YAML元数据格式，统一repository地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c6b34a89bc9d512f7db9f480e3b0147192b86652dd23775dc9e9df3c27911ae"
+}

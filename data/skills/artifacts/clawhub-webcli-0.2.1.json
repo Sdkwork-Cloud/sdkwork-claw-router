@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webcli@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webcli",
+  "skill": {
+    "id": 16401,
+    "skillKey": "clawhub-webcli",
+    "name": "webcli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webcli",
+    "url": "https://clawhub.ai/skills/webcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webcli-da9c06be8699466a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse the web, read page content, click buttons, fill forms, take screenshots, and get accessibility snapshots using the webcli headless browser. Use when t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erdinccurebal",
+      "userId": "publishers:erdinccurebal",
+      "displayName": "Erdinç Cürebal",
+      "image": "https://avatars.githubusercontent.com/u/51272273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771836185085,
+      "changelog": "Update website URL to webcli.erdinc.curebal.dev",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:726ef209440d88ad2eb42770be707437cb16c5fb237ca183e1e651dbd903a8d3"
+}

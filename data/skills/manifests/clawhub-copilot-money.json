@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9893,
+  "uuid": "skill-clawhub-copilot-money",
+  "skillKey": "clawhub-copilot-money",
+  "name": "Copilot Money Skill",
+  "summary": "Query Copilot Money personal finance data (accounts, transactions, net worth, holdings, asset allocation) and refresh bank connections. Use when the user asks about finances, account balances, recent transactions, net worth, investment all.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_money",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jayhickey",
+      "features": [
+        "Query Copilot Money personal finance data (accounts, transactions, net worth, holdings, asset a.",
+        "Use when the user asks about finances, account balances, recent transactions, net worth, invest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot-money@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1676460?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot-money",
+      "url": "https://clawhub.ai/skills/copilot-money"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-money",
+    "url": "https://clawhub.ai/skills/copilot-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-money-0031821812502e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot-money@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-money-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daa5397b71b70d2586254547c2ec38f0394e6f572fb4b95ae39e4317b82e0964",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T08:53:08.374Z"
+}

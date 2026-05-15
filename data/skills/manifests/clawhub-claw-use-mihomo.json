@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40951,
+  "uuid": "skill-clawhub-claw-use-mihomo",
+  "skillKey": "clawhub-claw-use-mihomo",
+  "name": "mihomo Proxy Manager",
+  "summary": "Manage mihomo proxy - install, configure from subscriptions, monitor health, auto-switch nodes. Supports vmess/ss/trojan/vless protocols.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_use_mihomo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "傅洋",
+      "features": [
+        "Manage mihomo proxy",
+        "install, configure from subscriptions, monitor health, auto-switch nodes",
+        "Supports vmess/ss/trojan/vless protocols."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-use-mihomo@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5648066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-use-mihomo",
+      "url": "https://clawhub.ai/skills/claw-use-mihomo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-use-mihomo",
+    "url": "https://clawhub.ai/skills/claw-use-mihomo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-use-mihomo-a14086ae524c91fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-use-mihomo@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-use-mihomo-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:012fd2169c717cf9b4f89d390cb776fb45608bcf8c3760f757b95df01a4ac00e",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:50:07.322Z"
+}

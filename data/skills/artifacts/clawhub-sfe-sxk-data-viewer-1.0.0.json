@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sfe-sxk-data-viewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sfe_sxk_data_viewer",
+  "skill": {
+    "id": 68191,
+    "skillKey": "clawhub-sfe-sxk-data-viewer",
+    "name": "Sfe Sxk Data Viewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sfe-sxk-data-viewer",
+    "url": "https://clawhub.ai/skills/sfe-sxk-data-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sfe-sxk-data-viewer-9b851fd5ed2c1c07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SFE深西康专属数据查询工具，用于快速查询深西康专属采集项目报表的数据，如新活素查房日采集反馈V2等特定项目的明细报表或汇总报表"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774922620117,
+      "changelog": "Initial release of SFE深西康数据查询 (sfe-sxk-data-viewer) skill.\n\n- 提供深西康专属采集项目（如新活素查房日采集反馈V2）明细及汇总报表查询能力\n- 所有接口均需通过 Python 脚本调用，结果统一经 TOON 编码输出\n- 依赖 cms-auth-skills 组件，实现标准化鉴权流程\n- 严格分离模块，先文档后脚本，强制按需加载，保障数据安全与生产环境规范\n- 提供标准化能力树、意图路由与实用示例模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c373562164e871d15f5efd39367a14ad2c6fb5f6d0e5eb7086f14ba9f95d9bb"
+}

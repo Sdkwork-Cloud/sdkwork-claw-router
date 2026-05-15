@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26297,
+  "uuid": "skill-clawhub-search-workflow",
+  "skillKey": "clawhub-search-workflow",
+  "name": "Search Workflow",
+  "summary": "Standardized search workflow integrating tavily-search, web_search, web_fetch and other search skills. Provides complete search process from query analysis t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roma",
+      "features": [
+        "Standardized search workflow integrating tavily-search, web_search, web_fetch and other search.",
+        "Provides complete search process from query analysis t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105550312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-workflow",
+      "url": "https://clawhub.ai/skills/search-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-workflow",
+    "url": "https://clawhub.ai/skills/search-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-workflow-97779828036fe100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abf44fd87afb2a2fd5688eabc7a320b5574039012fc42a7d9bcb53336c60978",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:42:33.055Z"
+}

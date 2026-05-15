@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-vefaas-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_vefaas_skills",
+  "skill": {
+    "id": 43937,
+    "skillKey": "clawhub-byted-vefaas-skills",
+    "name": "Byted Vefaas Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-vefaas-skills",
+    "url": "https://clawhub.ai/skills/byted-vefaas-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-vefaas-skills-934844840c161590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage serverless applications on Volcengine veFaaS. Use when the user wants to deploy web apps, manage functions (pull code, upload and deploy),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774851478515,
+      "changelog": "Initial release of the vefaas skill for Volcengine FaaS CLI.\n\n- Enables deploying and managing serverless applications on Volcengine veFaaS.\n- Supports authentication, environment variable configuration, code deployment, and function management.\n- Provides concise CLI commands and workflow instructions.\n- Includes references and quickstart guides for common usage scenarios.\n- Offers troubleshooting advice and non-interactive mode for automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:073dcecdf14cc4d4e6961cb2878e6b6fed0650a90a8fcbee14b3bcb5d88b3423"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33694,
+  "uuid": "skill-clawhub-mutinynet-cli",
+  "skillKey": "clawhub-mutinynet-cli",
+  "name": "Mutinynet CLI",
+  "summary": "Interact with the Mutinynet Bitcoin testnet faucet. Get testnet bitcoin on-chain, pay lightning invoices, open lightning channels, and generate bolt11 invoic...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mutinynet_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benthecarman",
+      "features": [
+        "Interact with the Mutinynet Bitcoin testnet faucet",
+        "Get testnet bitcoin on-chain, pay lightning invoices, open lightning channels, and generate bol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mutinynet-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15256660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mutinynet-cli",
+      "url": "https://clawhub.ai/skills/mutinynet-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mutinynet-cli",
+    "url": "https://clawhub.ai/skills/mutinynet-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mutinynet-cli-34887ab42bb2b2fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mutinynet-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mutinynet-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:352edb7e89117e1b19934d4b27dced1254f9abecffb4cd3ae55e9cd9a50360cf",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:23:13.276Z"
+}

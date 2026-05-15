@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vps-health-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps_health_auditor",
+  "skill": {
+    "id": 16418,
+    "skillKey": "clawhub-vps-health-auditor",
+    "name": "VPS Health Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps-health-auditor",
+    "url": "https://clawhub.ai/skills/vps-health-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-health-auditor-21ea858f3638fff7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs automated VPS health checks on CPU, memory, disk, network, and services, generating detailed Ollama-powered reports with recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gblockchainnetwork",
+      "userId": "publishers:gblockchainnetwork",
+      "displayName": "Goroni",
+      "image": "https://avatars.githubusercontent.com/u/86142972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 888,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771598486345,
+      "changelog": "v1 launch: VPS health checks + Ollama reports for OpenClaw.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:084ae89405e86fddbeabdad03dfccd62f9d98d9005d97b6c25304a4f29451538"
+}

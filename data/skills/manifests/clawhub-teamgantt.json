@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34881,
+  "uuid": "skill-clawhub-teamgantt",
+  "skillKey": "clawhub-teamgantt",
+  "name": "Teamgantt",
+  "summary": "TeamGantt integration. Manage data, records, and automate workflows. Use when the user wants to interact with TeamGantt data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamgantt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TeamGantt integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TeamGantt data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamgantt@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamgantt",
+      "url": "https://clawhub.ai/skills/teamgantt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamgantt",
+    "url": "https://clawhub.ai/skills/teamgantt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamgantt-df4ee3a9ee95ece5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamgantt@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamgantt-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a400e97791726c4186269e2591add805e54e7aaf1d57767b4c1203d7bfaceda8",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:43.886Z"
+}

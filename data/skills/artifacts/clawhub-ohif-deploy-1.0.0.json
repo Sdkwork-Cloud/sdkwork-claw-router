@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ohif-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohif_deploy",
+  "skill": {
+    "id": 21521,
+    "skillKey": "clawhub-ohif-deploy",
+    "name": "Ohif Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohif-deploy",
+    "url": "https://clawhub.ai/skills/ohif-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohif-deploy-1152f925c7628191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy OHIF medical imaging viewer with Docker, configure DICOMweb sources, SSL, and integrate servers like tbidea, orthanc, and DCM4CHEE."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772639241423,
+      "changelog": "Initial release of OHIF Medical Imaging Viewer deployment tool.\n\n- One-click Docker deployment of the OHIF viewer\n- Supports configuration for tbidea, orthanc, DCM4CHEE, and AWS S3 DICOMweb servers\n- Allows easy SSL/TLS setup and custom domain configuration\n- Production-ready with simple deployment script\n- Requires Docker, Docker Compose, and at least 2GB RAM",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5a0c27daf773bd0dda91a85983fd6303f03671552c0aa80f254fdb9d9cc45e8"
+}

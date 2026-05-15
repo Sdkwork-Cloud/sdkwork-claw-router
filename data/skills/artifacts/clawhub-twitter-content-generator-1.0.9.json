@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-content-generator@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_content_generator",
+  "skill": {
+    "id": 21930,
+    "skillKey": "clawhub-twitter-content-generator",
+    "name": "Twitter Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-content-generator",
+    "url": "https://clawhub.ai/skills/twitter-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-content-generator-8933437a9a61a178.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered Twitter/X content generator. Generate engaging tweets, threads, and content strategies using Sloan agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icepopma",
+      "userId": "publishers:icepopma",
+      "displayName": "icepopma",
+      "image": "https://avatars.githubusercontent.com/u/259024160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1772672008411,
+      "changelog": "Security fix: Move merchant_key to code, remove from SKILL.md to avoid false positive",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b923fdf93a6ccb8805b3ab428b3046fd69a865982c3c5b61cc4280a1372c3627"
+}

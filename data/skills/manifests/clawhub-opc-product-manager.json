@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31342,
+  "uuid": "skill-clawhub-opc-product-manager",
+  "skillKey": "clawhub-opc-product-manager",
+  "name": "OPC Product Manager",
+  "summary": "Product spec generation for solo entrepreneurs. Turns a one-sentence idea into a build-ready spec that AI coding agents (Claude Code, etc.) can execute direc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opc_product_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leon Fan",
+      "features": [
+        "Product spec generation for solo entrepreneurs",
+        "Turns a one-sentence idea into a build-ready spec that AI coding agents (Claude Code, etc.) can."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opc-product-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130567704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opc-product-manager",
+      "url": "https://clawhub.ai/skills/opc-product-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opc-product-manager",
+    "url": "https://clawhub.ai/skills/opc-product-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opc-product-manager-48d35ec2a02edd35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opc-product-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opc-product-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c33dd56424ae54dad5d9b504f22ccfca58a520f385c19d79c9d0cd4255ae37d8",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:04:31.281Z"
+}

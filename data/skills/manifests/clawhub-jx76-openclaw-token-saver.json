@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63799,
+  "uuid": "skill-clawhub-jx76-openclaw-token-saver",
+  "skillKey": "clawhub-jx76-openclaw-token-saver",
+  "name": "OpenClaw Token Saver",
+  "summary": "OpenClaw Token 节省指南。提供5大类20+种减少Token消耗的方法，包括上下文瘦身、工具优化、缓存复用、模型控制和本地替代方案。当Token使用超过阈值时自动触发优化建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx76_openclaw_token_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jjx",
+      "features": [
+        "OpenClaw Token 节省指南。提供5大类20+种减少Token消耗的方法，包括上下文瘦身、工具优化、缓存复用、模型控制和本地替代方案。当Token使用超过阈值时自动触发优化建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx76-openclaw-token-saver@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152524220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx76-openclaw-token-saver",
+      "url": "https://clawhub.ai/skills/jx76-openclaw-token-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx76-openclaw-token-saver",
+    "url": "https://clawhub.ai/skills/jx76-openclaw-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx76-openclaw-token-saver-eedfb2e33cfa9b5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx76-openclaw-token-saver@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx76-openclaw-token-saver-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fff7658fcc460f314f9d5669392348d1dadbdef24f846d3e3cc3e38f2543a468",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:18:18.108Z"
+}

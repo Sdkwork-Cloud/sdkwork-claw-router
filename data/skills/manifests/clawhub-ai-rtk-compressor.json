@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38444,
+  "uuid": "skill-clawhub-ai-rtk-compressor",
+  "skillKey": "clawhub-ai-rtk-compressor",
+  "name": "Ai Rtk Compressor",
+  "summary": "Get compressed MP4 files ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, MKV, up to 2GB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_rtk_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get compressed MP4 files ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, MKV, up to 2GB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-rtk-compressor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-rtk-compressor",
+      "url": "https://clawhub.ai/skills/ai-rtk-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-rtk-compressor",
+    "url": "https://clawhub.ai/skills/ai-rtk-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-rtk-compressor-0701485308ac367f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-rtk-compressor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-rtk-compressor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07a8afd97354a77d33324ed7d821848bc89740308fff30808da6d61aefc051e1",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:57:38.846Z"
+}

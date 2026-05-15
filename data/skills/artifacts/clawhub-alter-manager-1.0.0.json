@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alter-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alter_manager",
+  "skill": {
+    "id": 64280,
+    "skillKey": "clawhub-alter-manager",
+    "name": "Alter Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alter-manager",
+    "url": "https://clawhub.ai/skills/alter-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alter-manager-a354d12dc280d73e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分身管理 - 创建、列出、删除独立的 agent session（分身）。触发场景：用户要求创建分身、创建独立 session、管理多个对话、列出分身、删除分身、移除 session。支持 label 从用户指令中识别或主动询问。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnluicn",
+      "userId": "s178xr2r7m6hghx3bn87qbckhx845cc2",
+      "displayName": "johnluicn",
+      "image": "https://avatars.githubusercontent.com/u/52063631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775207995166,
+      "changelog": "分身管理：创建/列出/删除分身，切换路由，一次性处理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58d9eeb60d7b046c617377b73d0d49e41cc00f694785621e83939aa415a5cf55"
+}

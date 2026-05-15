@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdd-dev-workflow@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_dev_workflow",
+  "skill": {
+    "id": 59780,
+    "skillKey": "clawhub-sdd-dev-workflow",
+    "name": "Sdd Dev Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-dev-workflow",
+    "url": "https://clawhub.ai/skills/sdd-dev-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-dev-workflow-3cd605d6a6b8bd46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "规范驱动开发工作流（SDD + Speckit + Claude Code）。用于复杂软件开发项目。⚠️ 必需环境变量: ZHIPU_API_KEY。可选: GITHUB_TOKEN, ANTHROPIC_API_KEY。当用户需要开发复杂应用、进行多迭代开发项目、使用 sessions_spawn 自动化开发时..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mydearzsy",
+      "userId": "s17c4sh7gjhrxz0m04w738q56183g4ym",
+      "displayName": "mydearzsy",
+      "image": "https://avatars.githubusercontent.com/u/5027137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 671,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 27
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1773385709947,
+      "changelog": "移除 systemd/gateway 配置指导，改由用户自行配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:118cd395d22b680096fed84dc489dbd2a133253721b406e56e3a062c435833e9"
+}

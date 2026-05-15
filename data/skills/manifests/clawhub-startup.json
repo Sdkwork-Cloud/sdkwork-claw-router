@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10888,
+  "uuid": "skill-clawhub-startup",
+  "skillKey": "clawhub-startup",
+  "name": "Startup",
+  "summary": "Orchestrate startup work by spawning specialized agents and applying stage-appropriate priorities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Orchestrate startup work by spawning specialized agents and applying stage-appropriate prioriti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/startup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "startup",
+      "url": "https://clawhub.ai/skills/startup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup",
+    "url": "https://clawhub.ai/skills/startup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-8e7e3ff9c84fb08d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/startup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-startup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3693ba2fc1ac37a0c4a8feddc037926c649c6419ff00e4d20d8038526f4c6fd5",
+      "artifactSizeBytes": 1772
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:21:27.448Z"
+}

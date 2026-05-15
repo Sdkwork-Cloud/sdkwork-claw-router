@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35515,
+  "uuid": "skill-clawhub-qwencloud-text",
+  "skillKey": "clawhub-qwencloud-text",
+  "name": "qwencloud-text",
+  "summary": "[QwenCloud] Generate text, have conversations, write code, reason, and call functions with Qwen models. TRIGGER when: user asks to chat with Qwen, generate t...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cuixiaoyang123",
+      "features": [
+        "[QwenCloud] Generate text, have conversations, write code, reason, and call functions with Qwen.",
+        "TRIGGER when: user asks to chat with Qwen, generate t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwencloud-text@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42457946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwencloud-text",
+      "url": "https://clawhub.ai/skills/qwencloud-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-text",
+    "url": "https://clawhub.ai/skills/qwencloud-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-text-60edf991e629fd55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwencloud-text@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwencloud-text-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e87ccab151654814d3552f3915e75605c9228fe8627d8fe6f9b832911c3ee94a",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:20:04.530Z"
+}

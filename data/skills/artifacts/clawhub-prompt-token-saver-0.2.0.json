@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-token-saver@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_token_saver",
+  "skill": {
+    "id": 50643,
+    "skillKey": "clawhub-prompt-token-saver",
+    "name": "https://github.com/ckpxgfnksd-max/prompt-compressor-openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-token-saver",
+    "url": "https://clawhub.ai/skills/prompt-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-token-saver-00881946248ccdd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Saves 20-40% of LLM tokens by teaching the agent to write compressed responses, compressed memory logs, and compressed pre-compaction summaries. Works via SO..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckpxgfnksd-max",
+      "userId": "publishers:ckpxgfnksd-max",
+      "displayName": "ckpxgfnksd-max",
+      "image": "https://avatars.githubusercontent.com/u/252361165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773436864105,
+      "changelog": "- 154 compression rules optimized through 300+ evolutionary variants\n- Scored 96.3% on a 24-test benchmark\n- Architecture research (217 variants) evaluated hooks, proxies, plugins, and SOUL.md approaches\n- SOUL.md won for Clawdbot v2026.1.x: zero deps, zero config, two-command install",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2889b2168d2570581157051f62e5fbd73669a8fea7331d45d4354cdac56206f7"
+}

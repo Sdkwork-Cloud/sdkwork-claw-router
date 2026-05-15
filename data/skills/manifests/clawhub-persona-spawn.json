@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27162,
+  "uuid": "skill-clawhub-persona-spawn",
+  "skillKey": "clawhub-persona-spawn",
+  "name": "Persona Spawn",
+  "summary": "Spawn subagents with personas from a local workspace library or the Emblem persona marketplace. Use when a task needs a different voice, expertise, or operat...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_spawn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Decentraliser🌵",
+      "features": [
+        "Spawn subagents with personas from a local workspace library or the Emblem persona marketplace",
+        "Use when a task needs a different voice, expertise, or operat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-spawn@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36499647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-spawn",
+      "url": "https://clawhub.ai/skills/persona-spawn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-spawn",
+    "url": "https://clawhub.ai/skills/persona-spawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-spawn-941c88a2f33d0533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-spawn@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-spawn-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8af4b5bb1b66f848d8b38ed0c2f32492273d15c54a112254056b700f5e918d7e",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T07:06:29.819Z"
+}

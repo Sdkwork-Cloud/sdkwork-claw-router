@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canvas-study-helper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_study_helper",
+  "skill": {
+    "id": 61262,
+    "skillKey": "clawhub-canvas-study-helper",
+    "name": "Canvas Study Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-study-helper",
+    "url": "https://clawhub.ai/skills/canvas-study-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-study-helper-5509ec09f4499f9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监控 Canvas 课程公告和作业，下载课程文件，并生成支持中文与数学公式的 Markdown 学习笔记和 PDF。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huaruoji",
+      "userId": "publishers:huaruoji",
+      "displayName": "Yuno Wang",
+      "image": "https://avatars.githubusercontent.com/u/79401001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772439971406,
+      "changelog": "canvas-study-helper v1.1.0\n\n- 增加详细的 WSLg + Chromium 获取 Cookie 方案说明，支持 Chrome DevTools Protocol，简化在 WSL 环境的身份认证流程。\n- 更新 SKILL.md 安装与使用文档，补充脚本 `canvas_browser.sh` 的使用方法和自动化 Cookie 提取步骤。\n- 明确区分多种 Cookie 获取方式，并给出操作指引和注意事项。\n- 依赖需求与安全提示区无变动。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:109b41fcafe156337031741053d34601931dd6fab708df18036d04c5b7e188ab"
+}

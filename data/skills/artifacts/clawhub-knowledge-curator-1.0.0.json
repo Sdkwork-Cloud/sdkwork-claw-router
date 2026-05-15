@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-curator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_curator",
+  "skill": {
+    "id": 67692,
+    "skillKey": "clawhub-knowledge-curator",
+    "name": "Knowledge Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-curator",
+    "url": "https://clawhub.ai/skills/knowledge-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-curator-e0165e5724a7b931.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动抓取用户指定链接内容，整理分类为结构化知识库，支持增量更新和多条件内容检索。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayuyang-study",
+      "userId": "publishers:mayuyang-study",
+      "displayName": "Mayuyang-study",
+      "image": "https://avatars.githubusercontent.com/u/52929237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633392895,
+      "changelog": "knowledge-curator v1.0.0\n\n- 初始版本发布，支持自动整理小红书、B 站、知乎、YouTube 等主流平台的内容到本地知识库\n- 按内容主题自动分类，支持增量更新和去重\n- 支持通过指令收藏和检索知识，提供关键词、分类、时间等多种查询方式\n- 知识库条目采用标准 Markdown 格式，并维护索引文件\n- 提供知识库导出、删除、统计等基础管理命令",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42b2f4eb373171ea81cc7d71e4b2de64459d29f6fd11a7231e03d833462a7e7a"
+}

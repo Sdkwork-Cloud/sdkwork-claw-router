@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airadar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airadar",
+  "skill": {
+    "id": 12745,
+    "skillKey": "clawhub-airadar",
+    "name": "ai-github-radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airadar",
+    "url": "https://clawhub.ai/skills/airadar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airadar-9f4995312ca5c802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks and analyzes AI-native tools and GitHub repos with fast growth or major updates to reveal emerging trends in AI workflows and ecosystems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lopushok9",
+      "userId": "publishers:lopushok9",
+      "displayName": "Yuri",
+      "image": "https://avatars.githubusercontent.com/u/216768289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1387,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771837360312,
+      "changelog": "ai-tools-github-radar v1.0.0 – Initial Release\n\n- Introduces a structured approach for tracking fast-growing or emerging AI tools and their GitHub repositories.\n- Summarizes major signals such as funding rounds, product launches, and rapid star growth, distinguishing true momentum from hype.\n- Separates reporting into “Tools & Apps” and “GitHub Radar,” each with concise, analytical entries.\n- Connects product news with open source community traction to highlight ecosystem impact.\n- Ends each summary with a “What to Watch” section to flag notable trends or projects.\n- Prioritizes transparent sourcing and actionable insights for users seeking focused AI tooling updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdfc128f72e3869d440448c656108318eb28af0393e4c0ded410be86381a6514"
+}

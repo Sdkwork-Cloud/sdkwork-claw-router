@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glab-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glab_cli",
+  "skill": {
+    "id": 9956,
+    "skillKey": "clawhub-glab-cli",
+    "name": "Gitlab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glab-cli",
+    "url": "https://clawhub.ai/skills/glab-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glab-cli-691a58d930294830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with GitLab using the `glab` CLI. Use when Claude needs to work with GitLab merge requests, CI/CD pipelines, issues, releases, or make API requests. Supports gitlab.com and self-hosted instances."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "portavion",
+      "userId": "publishers:portavion",
+      "displayName": "Portavion",
+      "image": "https://avatars.githubusercontent.com/u/156545430?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3177,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768381287925,
+      "changelog": "Initial release of the glab skill based on @steipete gh skill.\n\n- Enables interaction with GitLab via the `glab` CLI for merge requests, CI/CD pipelines, issues, releases, and API queries.\n- Supports both gitlab.com and self-hosted GitLab instances.\n- Allows advanced API usage (REST and GraphQL) and JSON output piping for automation.\n- Includes key workflow commands with examples for MR handling, CI/CD operations, issue management, and release creation.\n- Documents key differences between `glab` and GitHub CLI for smoother onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2423b18ca5ff9fd78ff1d986cfc4d9f263aa6b36d4433930ea896e922027c68"
+}

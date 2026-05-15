@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67815,
+  "uuid": "skill-clawhub-gnss-tracker",
+  "skillKey": "clawhub-gnss-tracker",
+  "name": "iwown device gnss tracker",
+  "summary": "识别智能设备二维码并查询定位位置。触发场景：用户发送包含设备二维码的图片、查询设备定位、识别设备二维码获取位置、根据IMEI查询设备最后定位。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gnss_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scow",
+      "features": [
+        "识别智能设备二维码并查询定位位置。触发场景：用户发送包含设备二维码的图片、查询设备定位、识别设备二维码获取位置、根据IMEI查询设备最后定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gnss-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13182210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gnss-tracker",
+      "url": "https://clawhub.ai/skills/gnss-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gnss-tracker",
+    "url": "https://clawhub.ai/skills/gnss-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gnss-tracker-d23a83cf17d2779c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gnss-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gnss-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e36b6eedf8644cfcaefa0cd2ace0e3e9cfe70e0f329dce66890ec7bf45dd6cc4",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T03:04:52.997Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/two-sample-mr-research-planner-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.two_sample_mr_research_planner_3",
+  "skill": {
+    "id": 41515,
+    "skillKey": "clawhub-two-sample-mr-research-planner-3",
+    "name": "Two Sample Mr Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "two-sample-mr-research-planner-3",
+    "url": "https://clawhub.ai/skills/two-sample-mr-research-planner-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/two-sample-mr-research-planner-3-4e6e88001e88d1f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates comprehensive two-sample Mendelian randomization study designs with four workload options from user-specified exposures and outcomes for causal inf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775100827185,
+      "changelog": "two-sample-mr-research-planner 1.0.0 – initial release\n\n- Generates a complete design for two-sample Mendelian randomization research, starting from a user’s research question.\n- Supports multiple study types: single exposure, multi-exposure screening, bidirectional, behavioral/lifestyle, biomarker, and publication-focused MR.\n- Always produces four workload configurations (Lite, Standard, Advanced, Publication+) with plans, detailed workflows, figure lists, validation, minimal version, and upgrade advice.\n- Robust failure and risk management: provides fallback strategies for weak instruments, data gaps, and common challenges in MR.\n- Includes best-practice R code frameworks (using the TwoSampleMR package), with clear prompts for users to supply their own GWAS IDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e1138db6d08f5d7d2a7b71610353e597ef6f6c5729441341152f03dc661901f"
+}

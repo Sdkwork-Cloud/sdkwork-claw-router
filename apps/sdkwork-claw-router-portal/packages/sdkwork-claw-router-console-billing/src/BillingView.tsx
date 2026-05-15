@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { BusinessStatePanel, BusinessStateTableRow, CopyButton } from 'sdkwork-claw-router-commons';
 import { AccountService, AccountStats } from 'sdkwork-claw-router-console-account';
+import { RechargePackage, RechargeService } from 'sdkwork-claw-router-console-recharge';
 import { BillingService, RedeemHistoryItem, RechargeHistoryItem } from './billingService';
 
 function getBillingErrorMessage(error: unknown, fallback: string): string {
@@ -12,6 +13,8 @@ function getBillingErrorMessage(error: unknown, fallback: string): string {
 
 const readOnlyBillingDownloads =
   'Promotion poster downloads require an explicit billing download command contract before they can be enabled.';
+const referralContractUnavailable =
+  '专属邀请码接口尚未在 app contract 中定义，当前不可复制或展示占位码。';
 
 export function BillingView() {
   const navigate = useNavigate();
@@ -39,6 +42,9 @@ export function BillingView() {
   const [accountSummary, setAccountSummary] = useState<AccountStats | null>(null);
   const [accountLoading, setAccountLoading] = useState(true);
   const [accountLoadError, setAccountLoadError] = useState<string | null>(null);
+  const [rechargePackages, setRechargePackages] = useState<RechargePackage[]>([]);
+  const [packagesLoading, setPackagesLoading] = useState(true);
+  const [packagesLoadError, setPackagesLoadError] = useState<string | null>(null);
   const [redeemSuccessMsg, setRedeemSuccessMsg] = useState('');
   const [redeemErrorMsg, setRedeemErrorMsg] = useState('');
 
@@ -46,7 +52,7 @@ export function BillingView() {
   const [rechargeHistory, setRechargeHistory] = useState<RechargeHistoryItem[]>([]);
   const [loadingHistory, setLoadingHistory] = useState(true);
   const [historyLoadError, setHistoryLoadError] = useState<string | null>(null);
-  const loadError = accountLoadError || historyLoadError;
+  const loadError = accountLoadError || historyLoadError || packagesLoadError;
 
   const loadAccountSummary = useCallback(async (isActive: () => boolean = () => true) => {
     setAccountLoading(true);
@@ -99,6 +105,26 @@ export function BillingView() {
     }
   }, [historyTab]);
 
+  const loadRechargePackages = useCallback(async (isActive: () => boolean = () => true) => {
+    setPackagesLoading(true);
+    setPackagesLoadError(null);
+    try {
+      const data = await RechargeService.fetchPackages();
+      if (isActive()) {
+        setRechargePackages(data);
+      }
+    } catch (error) {
+      if (isActive()) {
+        setRechargePackages([]);
+        setPackagesLoadError(getBillingErrorMessage(error, 'Failed to load recharge packages.'));
+      }
+    } finally {
+      if (isActive()) {
+        setPackagesLoading(false);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     let active = true;
     void loadHistory(() => active);
@@ -110,17 +136,18 @@ export function BillingView() {
   useEffect(() => {
     let active = true;
     void loadAccountSummary(() => active);
+    void loadRechargePackages(() => active);
     return () => {
       active = false;
     };
-  }, [loadAccountSummary]);
+  }, [loadAccountSummary, loadRechargePackages]);
 
   const availableCredits = accountSummary ? accountSummary.availableCredits : 0;
   const monthlyConsumption = accountSummary ? accountSummary.monthlyConsumption : 0;
   const estDaysRemaining = accountSummary ? accountSummary.estDaysRemaining : 0;
 
-  const presetAmounts = ['10.00', '50.00', '100.00', '200.00', '500.00', '1000.00', '2000.00', '5000.00'];
-  const currentRechargeAmount = selectedAmount || normalizeCustomAmount(rechargeAmount);
+  const selectedPackage = selectedAmount ? rechargePackages.find(item => item.id === selectedAmount) : undefined;
+  const currentRechargeAmount = selectedPackage?.rmb || normalizeCustomAmount(rechargeAmount);
   const currentRechargeCents = moneyCents(currentRechargeAmount);
 
   const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -314,18 +341,39 @@ export function BillingView() {
                     <div>
                       <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">选择充值金额 (USD)</label>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                        {presetAmounts.map(amt => (
+                        {packagesLoading ? (
+                          <BusinessStatePanel
+                            kind="loading"
+                            title="Loading recharge packages..."
+                            className="col-span-full min-h-32 rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e]"
+                          />
+                        ) : packagesLoadError ? (
+                          <BusinessStatePanel
+                            kind="error"
+                            title="Recharge packages could not be loaded"
+                            description={packagesLoadError}
+                            onRetry={() => { void loadRechargePackages(); }}
+                            className="col-span-full min-h-32 rounded-xl border border-red-200 bg-red-50 dark:border-red-500/20 dark:bg-red-500/10"
+                          />
+                        ) : rechargePackages.length === 0 ? (
+                          <BusinessStatePanel
+                            kind="empty"
+                            title="No recharge packages"
+                            description="Use a custom amount to create a recharge order."
+                            className="col-span-full min-h-32 rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e]"
+                          />
+                        ) : rechargePackages.map(pkg => (
                           <button
-                            key={amt}
-                            onClick={() => { setSelectedAmount(amt); setRechargeAmount(''); }}
+                            key={pkg.id}
+                            onClick={() => { setSelectedAmount(pkg.id); setRechargeAmount(''); }}
                             className={`py-3 rounded-xl border flex flex-col items-center justify-center transition-all ${
-                              selectedAmount === amt
+                              selectedAmount === pkg.id
                               ? 'border-lobster-500 bg-lobster-50 dark:bg-lobster-500/10 text-lobster-600 dark:text-white shadow-sm ring-1 ring-lobster-500/50'
                               : 'border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#1e1e1e] text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-white/30 hover:bg-slate-100 dark:hover:bg-[#2a2a2a]'
                             }`}
                           >
-                            <span className="text-xl font-bold">${formatMoneyAmount(amt)}</span>
-                            <span className="text-xs mt-1 text-slate-500 dark:text-slate-400">得 {pointsForAmount(amt).toLocaleString()} 积分</span>
+                            <span className="text-xl font-bold">${formatMoneyAmount(pkg.rmb)}</span>
+                            <span className="text-xs mt-1 text-slate-500 dark:text-slate-400">得 {pkg.points.toLocaleString()} 积分</span>
                           </button>
                         ))}
                       </div>
@@ -349,7 +397,7 @@ export function BillingView() {
                       <div className="flex items-center justify-between mb-4">
                         <span className="text-sm font-medium text-slate-500 dark:text-slate-400">获得积分:</span>
                         <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
-                          {pointsForAmount(currentRechargeAmount).toLocaleString()} 积分
+                          {selectedPackage ? `${selectedPackage.points.toLocaleString()} 积分` : '创建订单后确认'}
                         </span>
                       </div>
 
@@ -400,15 +448,15 @@ export function BillingView() {
                    <input
                      type="text"
                      readOnly
-                     value="https://sdkwork.com/ref/U8912"
+                     value={referralContractUnavailable}
                      className="flex-1 bg-white dark:bg-[#151515] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2.5 text-sm text-slate-700 dark:text-slate-300 font-mono focus:outline-none shadow-sm dark:shadow-none"
                    />
                    <CopyButton
-                     text="https://sdkwork.com/ref/U8912"
-                     label="复制链接"
-                     copiedLabel="已复制链接"
-                     className="bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white p-2.5 rounded-lg transition-colors shadow-sm dark:shadow-none"
-                     title="复制链接"
+                     text={referralContractUnavailable}
+                     label="Copy promotion link"
+                     title="Copy promotion link"
+                     disabled
+                     className="h-10 w-10 border border-slate-200 bg-white dark:border-white/10 dark:bg-white/5"
                    />
                 </div>
               </div>
@@ -419,15 +467,13 @@ export function BillingView() {
                   <Gift className="w-3.5 h-3.5" /> 专属邀请码
                 </label>
                 <div className="flex items-center justify-between bg-white dark:bg-[#151515] border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 shadow-sm dark:shadow-none">
-                  <span className="text-lg font-bold tracking-widest text-slate-800 dark:text-white font-mono">U8912</span>
+                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{referralContractUnavailable}</span>
                   <CopyButton
-                    text="U8912"
-                    label="复制"
-                    copiedLabel="已复制"
-                    variant="inline"
-                    className="border-0 bg-transparent px-0 py-0 text-lobster-500 hover:text-lobster-600 dark:text-lobster-400 dark:hover:text-lobster-300 text-sm font-medium transition-colors shadow-none dark:bg-transparent"
-                    iconClassName="w-3.5 h-3.5"
-                    title="复制邀请码"
+                    text={referralContractUnavailable}
+                    label="Copy invitation code"
+                    title="Copy invitation code"
+                    disabled
+                    className="ml-3"
                   />
                 </div>
               </div>
@@ -601,11 +647,6 @@ function moneyCents(amount: string): number {
   const [whole, fraction = ''] = value.split('.');
   const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
   return Number.isSafeInteger(cents) ? cents : 0;
-}
-
-function pointsForAmount(amount: string): number {
-  const cents = moneyCents(amount);
-  return cents > 0 ? Math.max(1, Math.floor((cents + 5) / 10)) : 0;
 }
 
 function formatMoneyAmount(amount: string): string {

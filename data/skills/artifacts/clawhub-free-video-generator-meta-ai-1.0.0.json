@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-meta-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_meta_ai",
+  "skill": {
+    "id": 47488,
+    "skillKey": "clawhub-free-video-generator-meta-ai",
+    "name": "Free Video Generator Meta Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-meta-ai",
+    "url": "https://clawhub.ai/skills/free-video-generator-meta-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-meta-ai-996fd869e4c8fae8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text description of a product demo scene into 1080p AI-generated videos just by typing what you need. Whether it's generating short videos from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777224746901,
+      "changelog": "- Initial release of Free Video Generator Meta AI.\n- Generate 1080p AI videos from short text prompts or uploaded clips.\n- Simple workflow: connect to backend, upload or describe prompts, generate and download videos in 1–2 minutes.\n- Supports exporting in multiple formats (mp4, mov, avi, gif, etc.), with 100 free credits available for new users.\n- Session management, automatic token acquisition, error handling, and timeline summarization included for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ef0a48793b5c322bf4a26c4aa2f950c4ffed8430448c69b2de8be062d004d55"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40387,
+  "uuid": "skill-clawhub-cbs-news",
+  "skillKey": "clawhub-cbs-news",
+  "name": "Cbs News",
+  "summary": "CBS News, part of Paramount Global, is a historic US news organization known for 60 Minutes and trusted journalism since the Walter Cronkite era.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cbs_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "CBS News, part of Paramount Global, is a historic US news organization known for 60 Minutes and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cbs-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cbs-news",
+      "url": "https://clawhub.ai/skills/cbs-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cbs-news",
+    "url": "https://clawhub.ai/skills/cbs-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cbs-news-9954c0631de3bd32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cbs-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cbs-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03a34c229883133282c1f5d9624aa61be4c980fbf3b8ceb3caabad758df00d2b",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T17:06:55.155Z"
+}

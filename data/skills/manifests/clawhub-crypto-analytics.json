@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33361,
+  "uuid": "skill-clawhub-crypto-analytics",
+  "skillKey": "clawhub-crypto-analytics",
+  "name": "Crypto Analytics",
+  "summary": "Multi-chain blockchain analytics for wallet balances, transaction history, and address validation. Supports 60+ EVM chains via Etherscan V2, plus Bitcoin and...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SolidMind",
+      "features": [
+        "Multi-chain blockchain analytics for wallet balances, transaction history, and address validati.",
+        "Supports 60+ EVM chains via Etherscan V2, plus Bitcoin and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-analytics@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98870910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-analytics",
+      "url": "https://clawhub.ai/skills/crypto-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-analytics",
+    "url": "https://clawhub.ai/skills/crypto-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-analytics-e5af650874acf0a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-analytics@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-analytics-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:740a54ddd6427af93373b5e9c99d1d014ad1e99f4d86edad2e997bb43871a6ad",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:21:57.150Z"
+}

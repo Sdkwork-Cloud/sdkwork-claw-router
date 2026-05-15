@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price-check@0.6.4",
+  "version": "0.6.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_check",
+  "skill": {
+    "id": 69162,
+    "skillKey": "clawhub-price-check",
+    "name": "price-check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-check",
+    "url": "https://clawhub.ai/skills/price-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-check-62280bb8fdde11e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索国内主流电商平台（淘宝/天猫、京东、拼多多、苏宁、唯品会、考拉、抖音、快手、1688）的实时价格，自动找到最合适的可信购买点并给出'值不值得买'建议 + 直接可点击的购买链接；本地积累历史价数据，能识别当前价是历史低位还是高位。Keywords: 比价, 值不值得买, 哪里买最便宜, 历史价, 价格监控, X..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuxiaoyang2007-prog",
+      "userId": "s1722jsd1mg0sjhd8qa91nas7983pyxs",
+      "displayName": "yuxiaoyang2007-prog",
+      "image": "https://avatars.githubusercontent.com/u/258562502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.6.4",
+      "createdAt": 1777187783058,
+      "changelog": "v0.6.4: publish-side fix — restore ClawHub display name to 'price-check' (v0.6.3 publish accidentally polluted it). Source identical to v0.6.3, no functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2d3e0e299c1f4064c16b75c9d827fd019f61632d09a77d9bb8c7aa67203a08b"
+}

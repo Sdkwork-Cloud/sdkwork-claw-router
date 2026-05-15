@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41833,
+  "uuid": "skill-clawhub-seedance-video-creation",
+  "skillKey": "clawhub-seedance-video-creation",
+  "name": "Seedance Video Creation",
+  "summary": "Generate AI videos using ByteDance Seedance. Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first frame,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_creation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AsikoChen",
+      "features": [
+        "Generate AI videos using ByteDance Seedance",
+        "Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedance-video-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48797225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedance-video-creation",
+      "url": "https://clawhub.ai/skills/seedance-video-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-creation",
+    "url": "https://clawhub.ai/skills/seedance-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-creation-26988969059b115c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedance-video-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedance-video-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:618bf057e8ebae709eabefca566ac260b37b8cdee0c5925cb755001f45aaeb6e",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:58:18.533Z"
+}

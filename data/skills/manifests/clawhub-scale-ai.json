@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26422,
+  "uuid": "skill-clawhub-scale-ai",
+  "skillKey": "clawhub-scale-ai",
+  "name": "Scale Ai",
+  "summary": "Scale AI integration. Manage Organizations, Users, Goals. Use when the user wants to interact with Scale AI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scale_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Scale AI integration",
+        "Manage Organizations, Users, Goals",
+        "Use when the user wants to interact with Scale AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scale-ai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scale-ai",
+      "url": "https://clawhub.ai/skills/scale-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scale-ai",
+    "url": "https://clawhub.ai/skills/scale-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scale-ai-59c5204e6b81208b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scale-ai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-scale-ai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06d52796589f06d99fbd2d9befb1e7430f831043c6509dacac6fe3445ee0ea55",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:32.500Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strands@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strands",
+  "skill": {
+    "id": 12202,
+    "skillKey": "clawhub-strands",
+    "name": "Strands Agents SDK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strands",
+    "url": "https://clawhub.ai/skills/strands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strands-11e0e34bd35e1218.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and run Python-based AI agents using the AWS Strands SDK. Use when you need to create autonomous agents, multi-agent workflows, custom tools, or integrate with MCP servers. Supports Ollama (local), Anthropic, OpenAI, Bedrock, and oth."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trippingkelsea",
+      "userId": "publishers:trippingkelsea",
+      "displayName": "TrippingKelsea",
+      "image": "https://avatars.githubusercontent.com/u/132861539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1875,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1770259966892,
+      "changelog": "v2.0.3: Debug publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d73b6868a5162a069fd96ad8aed1babc3918d6359d8f35660172416c6f6dd18e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40396,
+  "uuid": "skill-clawhub-ethyca",
+  "skillKey": "clawhub-ethyca",
+  "name": "Ethyca",
+  "summary": "Ethyca integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ethyca data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethyca",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ethyca integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ethyca data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ethyca@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ethyca",
+      "url": "https://clawhub.ai/skills/ethyca"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethyca",
+    "url": "https://clawhub.ai/skills/ethyca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethyca-61ffa14449a4cce5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ethyca@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ethyca-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4db11dbb6ac5da373e3d1615c2605f021090ea6cce99c35b651386f25769228",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:00:30.144Z"
+}

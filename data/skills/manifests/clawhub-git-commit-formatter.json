@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57375,
+  "uuid": "skill-clawhub-git-commit-formatter",
+  "skillKey": "clawhub-git-commit-formatter",
+  "name": "Git Commit Formatter",
+  "summary": "Format commit message theo Conventional Commits standard (Conventional Commits v1.0.0). Input là git diff hoặc mô tả thay đổi, output là commit message có ty...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_commit_formatter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wi",
+      "features": [
+        "Format commit message theo Conventional Commits standard (Conventional Commits v1.0.0)",
+        "Input là git diff hoặc mô tả thay đổi, output là commit message có ty..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-commit-formatter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11458415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-commit-formatter",
+      "url": "https://clawhub.ai/skills/git-commit-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-commit-formatter",
+    "url": "https://clawhub.ai/skills/git-commit-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-commit-formatter-99eec30911f4c9ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-commit-formatter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-commit-formatter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ae94b3a84349eaab2bc2dd845ad80d3350d74488214606a696011e545d73cde",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:35:24.637Z"
+}

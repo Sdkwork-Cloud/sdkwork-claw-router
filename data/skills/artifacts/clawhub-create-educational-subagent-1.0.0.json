@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-educational-subagent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_educational_subagent",
+  "skill": {
+    "id": 64851,
+    "skillKey": "clawhub-create-educational-subagent",
+    "name": "Create Educational Subagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-educational-subagent",
+    "url": "https://clawhub.ai/skills/create-educational-subagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-educational-subagent-c4f72c3964f5abf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "如何创建一个教务子 agent 来记录和追踪各个班级的上课进度。TRIGGER 当用户提到创建子 agent 记录课程进度、管理班级上课情况、追踪教学进度、或任何涉及长期记录和追踪任务的需求时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2070super",
+      "userId": "s17bjv4vt85jne20ekh32xkh6983kzkx",
+      "displayName": "2070super",
+      "image": "https://avatars.githubusercontent.com/u/74180810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777831306374,
+      "changelog": "Initial release of the \"create-educational-subagent\" skill.\n\n- Provides step-by-step guidance for creating a subagent to track and record class progress.\n- Details troubleshooting steps for permission and runtime selection issues.\n- Includes sample commands and configuration for device approval and agent creation.\n- Defines core responsibilities and workflow for the educational subagent.\n- Lists key prerequisite conditions and companion automation scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27c99ab4af09850c376a1a9027a704cade955013f4146160f9c1217fe6f51469"
+}

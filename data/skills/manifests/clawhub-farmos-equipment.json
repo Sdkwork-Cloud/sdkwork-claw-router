@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17370,
+  "uuid": "skill-clawhub-farmos-equipment",
+  "skillKey": "clawhub-farmos-equipment",
+  "name": "Farmos Equipment",
+  "summary": "Query equipment status, maintenance schedules, and service history for the farm fleet. Uses integration endpoints (no auth required).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farmos_equipment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brianppetty",
+      "features": [
+        "Query equipment status, maintenance schedules, and service history for the farm fleet",
+        "Uses integration endpoints (no auth required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/farmos-equipment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26852668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "farmos-equipment",
+      "url": "https://clawhub.ai/skills/farmos-equipment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farmos-equipment",
+    "url": "https://clawhub.ai/skills/farmos-equipment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farmos-equipment-b3abd086e5921f75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/farmos-equipment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-farmos-equipment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43a58ee433241635f1e46dae21a79ed8644c3a696135368a065010f46a63089e",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T09:04:26.930Z"
+}

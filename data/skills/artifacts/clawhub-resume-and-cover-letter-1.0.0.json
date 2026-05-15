@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-and-cover-letter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_and_cover_letter",
+  "skill": {
+    "id": 14347,
+    "skillKey": "clawhub-resume-and-cover-letter",
+    "name": "Resume & Cover Letter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-and-cover-letter",
+    "url": "https://clawhub.ai/skills/resume-and-cover-letter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-and-cover-letter-de27bec8ff172eae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ATS-optimized resumes and tailored cover letters matched to specific job descriptions. Use when creating resumes, CVs, cover letters, or career documents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanwyngaard",
+      "userId": "s17cbgx0qmxw2p9k4mvca4z40n83mae0",
+      "displayName": "Sean Wyngaard",
+      "image": "https://avatars.githubusercontent.com/u/187758643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1180,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770986088342,
+      "changelog": "Initial release – Generate ATS-optimized resumes and tailored cover letters from job descriptions and personal profiles.\n\n- Parses job descriptions to extract key requirements, ATS keywords, and company values.\n- Accepts candidate information interactively or via existing files for customization.\n- Matches and highlights relevant experience and skills for keyword optimization.\n- Generates resumes (Markdown, HTML, LaTeX) and cover letters (Markdown, HTML) using ATS-friendly structure and formatting rules.\n- Provides a detailed keyword match report showing strengths and gaps.\n- Organizes outputs in a clean, print-ready format and offers suggestions for further improvement.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf17fc1367209942a4ba5d9ea2c549a4c90b57d8817b8d9863657f09346ee1f4"
+}

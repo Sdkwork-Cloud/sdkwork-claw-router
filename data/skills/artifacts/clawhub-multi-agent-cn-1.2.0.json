@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-cn@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_cn",
+  "skill": {
+    "id": 61373,
+    "skillKey": "clawhub-multi-agent-cn",
+    "name": "Multi-Agent CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-cn",
+    "url": "https://clawhub.ai/skills/multi-agent-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-cn-eb3477b7a9de9f16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用多Agent调度系统（中文版）：将主Agent变为纯调度员，所有任务通过 sessions_spawn 委派给5个持久化子Agent。支持轮询调度、先回复再派遣协议、 sessionKey固定复用。用户可自定义调度员角色和子Agent名称/人设。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "be1human",
+      "userId": "s1798dprk0qksrtzsejrwbq541841fgp",
+      "displayName": "CLOUD BOY",
+      "image": "https://avatars.githubusercontent.com/u/40425943?v=4"
+    },
+    "stats": {
+      "comments": 9,
+      "downloads": 5209,
+      "installsAllTime": 46,
+      "installsCurrent": 45,
+      "stars": 24,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770918519591,
+      "changelog": "Fix: 强化 sessionKey 必传说明，加正确/错误示例对比，解决 session 不复用一直新增的问题",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a26ae2cf8ec94b3786a534340f5a36b5efcd6df7dc1bb5b0e70875b883d48b28"
+}

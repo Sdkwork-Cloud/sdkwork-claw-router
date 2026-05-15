@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-devops-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_devops_deploy",
+  "skill": {
+    "id": 38768,
+    "skillKey": "clawhub-eb-devops-deploy",
+    "name": "Devops Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-devops-deploy",
+    "url": "https://clawhub.ai/skills/eb-devops-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-devops-deploy-51cf90e3dbc6b59a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy applications and set up infrastructure. Use this skill when the user mentions: deploy, CI/CD, Docker, containerize, put this online, GitHub Actions, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775521214041,
+      "changelog": "Initial release of eb-devops-deploy — a practical deployment skill for solo founders.\n\n- Provides clear, opinionated DevOps guidance for common deployment and infrastructure tasks.\n- Includes platform recommendations (Vercel, Railway, Fly.io, etc.) with pros, cons, and costs.\n- Offers sample Dockerfiles, GitHub Actions CI/CD pipelines, and .env management practices.\n- Details best practices for domains, SSL, monitoring, and security essentials.\n- Highlights anti-patterns and pitfalls to avoid for reliable solo founder deployments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:508b3a654039bd8cd7d1aa8991b21d4a9e6561b95ac2b7d25aa4659a73da33d7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/current-view-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.current_view_triage",
+  "skill": {
+    "id": 32892,
+    "skillKey": "clawhub-current-view-triage",
+    "name": "Current View Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "current-view-triage",
+    "url": "https://clawhub.ai/skills/current-view-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/current-view-triage-793bac9c31f8faec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn one Campus Copilot snapshot or MCP-backed current view into a plain-language what-to-do-first answer for a student."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojiou176",
+      "userId": "s170nkfkw4w7zm8rkrxee73k4984et24",
+      "displayName": "Yifeng[Terry] Yu",
+      "image": "https://avatars.githubusercontent.com/u/125581657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775701628275,
+      "changelog": "Initial public release with expanded documentation and references.\n\n- Added full set of reference files for setup, capabilities, demos, configuration, and troubleshooting.\n- Updated documentation to point to new references, including INSTALL, DEMO, and TROUBLESHOOTING guides.\n- Introduced configuration samples for OPENHANDS and OPENCLAW MCP environments.\n- Expanded companion references for easier onboarding and usage support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ccb57ca30dbd045f6f7f4936e56ca51fb2b4707bc39188aeb21060c1baba551"
+}

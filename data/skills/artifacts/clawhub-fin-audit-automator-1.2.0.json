@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fin-audit-automator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fin_audit_automator",
+  "skill": {
+    "id": 69969,
+    "skillKey": "clawhub-fin-audit-automator",
+    "name": "Fin Audit Automator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fin-audit-automator",
+    "url": "https://clawhub.ai/skills/fin-audit-automator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fin-audit-automator-ab0fe235644e9d89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "金融合规审计自动化技能。支持反洗钱 (AML) 监测、关联交易识别、发票合规性校验、监管报表自动生成。内置中国金融监管规则库（人行/银保监/证监会），所有数据处理均在本地沙箱完成，支持审计日志不可篡改。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxcg",
+      "userId": "publishers:andyxcg",
+      "displayName": "joe",
+      "image": "https://avatars.githubusercontent.com/u/26564438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774144400284,
+      "changelog": "fin-audit-automator v1.2.0\n\n- Added subscription management script (scripts/subscription.py).\n- Major update to SKILL.md: introduced new promotional activities, expanded and clarified pricing plans, and added user/testimonials and usage statistics.\n- Highlighted new user free trial quotas and special discounts.\n- Updated plan details to better reflect subscription, credit packages, and special offers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d59b8d1249112f1724bf581772711d07ecdd1615ef115c508c93c26b5c76519"
+}

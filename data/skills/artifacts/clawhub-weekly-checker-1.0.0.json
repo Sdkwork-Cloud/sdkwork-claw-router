@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_checker",
+  "skill": {
+    "id": 62838,
+    "skillKey": "clawhub-weekly-checker",
+    "name": "Weekly Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-checker",
+    "url": "https://clawhub.ai/skills/weekly-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-checker-0db8e8eb65dd9342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 每周例行检查 - 检查系统状态、安全风险、技能库健康，生成检查报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776342500839,
+      "changelog": "Initial release of weekly-checker.\n\n- Automates weekly system checks for OpenClaw, including gateway, skills, security, and Windows system health.\n- Generates detailed JSON reports and Feishu notifications for issues found.\n- Separates issue severity: immediate alerts for critical problems and summary notifications for warnings.\n- Supports both scheduled (Monday 09:00) and manual triggering.\n- Outlines clear notification and issue handling procedures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd2ffa123e445c53f4538873db1a49128954839ba67618d4d560b50785954298"
+}

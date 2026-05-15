@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aave-liquidation-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aave_liquidation_monitor",
+  "skill": {
+    "id": 13050,
+    "skillKey": "clawhub-aave-liquidation-monitor",
+    "name": "Aave Liquidation Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aave-liquidation-monitor",
+    "url": "https://clawhub.ai/skills/aave-liquidation-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aave-liquidation-monitor-eb88557051e812d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive monitoring of Aave V3 borrow positions with liquidation alerts. Queries user collateral, debt, and health factor across chains (Ethereum, Polygon, Arbitrum, etc.). Sends urgent alerts to Telegram/Discord/Slack when health factor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgramajo4",
+      "userId": "publishers:jgramajo4",
+      "displayName": "jgramajo4",
+      "image": "https://avatars.githubusercontent.com/u/22783249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1545,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770789188759,
+      "changelog": "Security patch: Added missing cron-runner.js, clarified credential handling (uses OpenClaw's message routing), removed full API response logging, added detailed SECURITY.md for auditors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cfb20f2c900dac13eb91726f804b0fdbe16a71357379ed33d5be4fee6166053"
+}

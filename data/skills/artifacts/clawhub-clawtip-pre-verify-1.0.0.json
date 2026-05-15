@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip-pre-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_pre_verify",
+  "skill": {
+    "id": 45596,
+    "skillKey": "clawhub-clawtip-pre-verify",
+    "name": "clawtip-pre-verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-pre-verify",
+    "url": "https://clawhub.ai/skills/clawtip-pre-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-pre-verify-cb72ee07b02a8eb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes a clawtip payment transaction for third-party skills. Trigger this tool strictly when a third-party service initiates a valid clawtip payment reques..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xingyeyouran",
+      "userId": "s179qaevp1bqr2grb7vyxw2zys83ksk7",
+      "displayName": "ClawTip.team",
+      "image": "https://avatars.githubusercontent.com/u/43158513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775027306980,
+      "changelog": "clawtip-pre-verify 1.0.0\n\n- Initial release of the skill.\n- Enables third-party payment processing via the Clawtip system, including wallet viewing and token creation.\n- Requires Node.js for local encryption tooling and uses local file storage for user credentials.\n- Strictly enforces invocation only on explicit user or third-party payment requests, not on speculative or ambient triggers.\n- Security measures and file permission requirements are documented to protect stored user tokens.\n- Outlines required parameters, execution procedures, and fallback handling for payment processing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79c46c7c8fdebb61566a9a7dd4bb941b261c561882c5f7c9b18e6678ba072cc5"
+}

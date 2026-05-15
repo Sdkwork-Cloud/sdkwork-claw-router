@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontman-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontman_dev",
+  "skill": {
+    "id": 52318,
+    "skillKey": "clawhub-frontman-dev",
+    "name": "Frontman — Visual Frontend Editing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontman-dev",
+    "url": "https://clawhub.ai/skills/frontman-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontman-dev-518606483823a236.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered visual frontend editing in your browser. Click any element in your running app, describe changes in plain English, and get real source file edits..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluehotdog",
+      "userId": "s17519hyyt023hsjcmp3kq5gxd83h8s4",
+      "displayName": "Danni Friedland",
+      "image": "https://avatars.githubusercontent.com/u/231539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774362154901,
+      "changelog": "Initial release of frontman-dev — AI-powered visual frontend editing in your browser.\n\n- Click on any element in your running Next.js, Astro, or Vite app and describe UI changes in plain English.\n- Instantly applies real source file edits with hot reload; no IDE needed.\n- Accessible setup instructions for major frameworks.\n- Allows designers/PMs to make UI changes directly from the browser.\n- Fully open-source, dev-only, and supports your own API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d0b8c58bc8e11fef529f893f5b57d6fca929b28534f43e31e8b5276f8645e6f"
+}

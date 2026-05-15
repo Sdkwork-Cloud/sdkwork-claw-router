@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doge-oss-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doge_oss_skill",
+  "skill": {
+    "id": 58039,
+    "skillKey": "clawhub-doge-oss-skill",
+    "name": "Doge Oss Upload"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doge-oss-skill",
+    "url": "https://clawhub.ai/skills/doge-oss-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doge-oss-skill-33e244b5c012f5a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload a local file to DogeCloud OSS (DogeCloud 对象存储) and return a public URL + metadata. Use when the user asks to “upload to doge/dogecloud”, “生成公网链接”, “把截..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "white0dew",
+      "userId": "s17bn8vxjtm8914hp7k9gr722d83nnc9",
+      "displayName": "青玉白露",
+      "image": "https://avatars.githubusercontent.com/u/49017390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772176257157,
+      "changelog": "- Initial release of the doge-oss-upload skill: easily upload local files to DogeCloud OSS and retrieve a public URL plus metadata.\n- Supports both camelCase and DOGECLOUD_* environment variables for credentials and configuration.\n- Provides a command-line uploader script with machine-readable JSON output including public URL, upload metadata, and token info.\n- Includes clear guardrails for credentials and URL usage to ensure security and proper environment setup.\n- Offers quick-start instructions, workflow description, and references for API details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a59c307dad312cfd622198df619d2327f0826c539874b6e756e357412f7f1b7"
+}

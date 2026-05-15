@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-notion-sync@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_notion_sync",
+  "skill": {
+    "id": 18495,
+    "skillKey": "clawhub-openclaw-notion-sync",
+    "name": "Notion Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-notion-sync",
+    "url": "https://clawhub.ai/skills/openclaw-notion-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-notion-sync-b06b86c7a7377401.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync local workspace directories and files to Notion pages using the notion-sync CLI or programmatic API. Use when the user wants to push files to Notion, mi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kitakitsune0x",
+      "userId": "s17cr2jsygqv7ez7yhsa5b9jbd8598z0",
+      "displayName": "kitakitsune0x",
+      "image": "https://avatars.githubusercontent.com/u/108195681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771650362250,
+      "changelog": "notion-sync 0.1.0 initial release\n\n- Syncs local directories and files into Notion, mirroring folders as pages and files as sub-pages.\n- CLI commands for initializing config, syncing, ignore pattern management, and checking sync status.\n- Programmatic API for custom integrations.\n- Uses checksums for efficient diff-based syncing and supports dry-run previews.\n- Automatic chunking of file contents and robust Notion page handling.\n- Easily configurable via `.notion-sync.json` with sensible defaults and ignore patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1004a3e1cfabf9ee3aec373e7a3539e8ceeae21f1ab627101c1bc80a9dae52fe"
+}

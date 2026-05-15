@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-installer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_installer",
+  "skill": {
+    "id": 64794,
+    "skillKey": "clawhub-clawhub-installer",
+    "name": "ClawHub Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-installer",
+    "url": "https://clawhub.ai/skills/clawhub-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-installer-4489deb81702bba2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据当前任务需求，使用 ClawHub 搜索、筛选并安装最合适的技能；支持指定版本安装与安装后验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoxiaofeng44",
+      "userId": "publishers:zhaoxiaofeng44",
+      "displayName": "zhaoxiaofeng44",
+      "image": "https://avatars.githubusercontent.com/u/6308868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772936892503,
+      "changelog": "Initial release: task-driven skill search and install flow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abd8e76a4a5bddb9aa78d5b77fa95e914c832042aa8363415b6d90c811871854"
+}

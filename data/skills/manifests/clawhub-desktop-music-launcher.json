@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60777,
+  "uuid": "skill-clawhub-desktop-music-launcher",
+  "skillKey": "clawhub-desktop-music-launcher",
+  "name": "desktop-music-launcher",
+  "summary": "检索本机已安装音乐软件，启动它，并根据用户需求推荐、搜索或播放歌曲；在 macOS 上可用 AppleScript 控制 Spotify 和 Apple Music，并为 Spotify 增加可选的精确点播链路。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_music_launcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "检索本机已安装音乐软件，启动它，并根据用户需求推荐、搜索或播放歌曲；在 macOS 上可用 AppleScript 控制 Spotify 和 Apple Music，并为 Spotify 增."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-music-launcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-music-launcher",
+      "url": "https://clawhub.ai/skills/desktop-music-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-music-launcher",
+    "url": "https://clawhub.ai/skills/desktop-music-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-music-launcher-c1c443166f708193.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-music-launcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-music-launcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60f50058e30088726cb1f73a1ac7b8e37f6193966e1e5f763b9b1880b71a4542",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:17:54.079Z"
+}

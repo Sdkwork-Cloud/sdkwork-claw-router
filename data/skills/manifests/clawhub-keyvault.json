@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52344,
+  "uuid": "skill-clawhub-keyvault",
+  "skillKey": "clawhub-keyvault",
+  "name": "Keyvault",
+  "summary": "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Keyvault concepts, best practices, and implementation patterns.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keyvault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Reference tool for devtools — covers intro, quickstart, patterns and more",
+        "Quick lookup for Keyvault concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keyvault@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keyvault",
+      "url": "https://clawhub.ai/skills/keyvault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keyvault",
+    "url": "https://clawhub.ai/skills/keyvault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keyvault-21b26737b4435090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keyvault@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-keyvault-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:541c3f95b4d2b0199f278a82b43e95476c9ec5eaee6c50144a3cb5727b45d2a0",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:42:42.631Z"
+}

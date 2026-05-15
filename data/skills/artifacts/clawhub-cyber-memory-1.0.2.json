@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-memory@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_memory",
+  "skill": {
+    "id": 53955,
+    "skillKey": "clawhub-cyber-memory",
+    "name": "Cyber Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-memory",
+    "url": "https://clawhub.ai/skills/cyber-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-memory-5c0836d69468af73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Five-layer memory system with automatic fact extraction via local LLM (Ollama). Processes session transcripts locally — no external API required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "witnesssun",
+      "userId": "s176cajtgh2ept4y0q46e7z1es845x88",
+      "displayName": "witnesssun",
+      "image": "https://avatars.githubusercontent.com/u/111419902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775195983369,
+      "changelog": "v1.0.2 switches fact extraction to run locally using Ollama — no external API required.\n\n- Fact extraction now uses your local LLM (Ollama) for processing session transcripts, improving privacy and data control.\n- Default setup requires no API key or external service; configuration simplified for local use.\n- External OpenAI-compatible APIs are still supported via optional config.\n- Documentation updated to reflect local-first architecture and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a670963b9b77f24cc0b195e7d906f379f347b2209713ec9a42f8de029d66205"
+}

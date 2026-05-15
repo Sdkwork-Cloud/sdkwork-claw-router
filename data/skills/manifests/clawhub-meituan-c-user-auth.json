@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69648,
+  "uuid": "skill-clawhub-meituan-c-user-auth",
+  "skillKey": "clawhub-meituan-c-user-auth",
+  "name": "美团C端用户Agent认证工具",
+  "summary": "美团C端用户Agent认证工具。为需要美团用户身份的 Skill（如发券、查订单等）提供手机号验证码登录认证，管理用户Token，实现“一次认证、持续有效”。当其他 Skill 需要校验用户身份、获取用户Token时，作为前置认证模块调用。触发词：美团登录、用户认证、手机号验证、发送验证码、获取Token、切换账...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_c_user_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meituan-zhengchang",
+      "features": [
+        "美团C端用户Agent认证工具。为需要美团用户身份的 Skill（如发券、查订单等）提供手机号验证码登录认证，管理用户Token，实现“一次认证、持续有效”。当其他 Skill 需要校验用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meituan-c-user-auth@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131349149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meituan-c-user-auth",
+      "url": "https://clawhub.ai/skills/meituan-c-user-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-c-user-auth",
+    "url": "https://clawhub.ai/skills/meituan-c-user-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-c-user-auth-329372236116b5f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meituan-c-user-auth@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-meituan-c-user-auth-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13ac2746a199085036b87185a549c05e1e9ce12aef298b2dc94fc866b10aa68f",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T09:06:29.370Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ncbi-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ncbi_search",
+  "skill": {
+    "id": 25794,
+    "skillKey": "clawhub-ncbi-search",
+    "name": "ncbi-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ncbi-search",
+    "url": "https://clawhub.ai/skills/ncbi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ncbi-search-daa4cbaa0376c920.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search NCBI databases using E-Utilities API (official, free). Supports multiple databases: PubMed (literature), Gene, Protein, Nucleotide, dbSNP, ClinVar, Ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "side-peng",
+      "userId": "s17aekg632asgherqtq9f5bx4583wdzm",
+      "displayName": "Pengside",
+      "image": "https://avatars.githubusercontent.com/u/221703153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773401174380,
+      "changelog": "- Initial release of the ncbi-search skill.\n- Search multiple NCBI databases (PubMed, Gene, Protein, Nucleotide, dbSNP, ClinVar, Taxonomy, etc.) using the official E-Utilities API.\n- Automatically detects the query's intent and selects the most appropriate database.\n- Returns formatted results with key information for biomedical literature, gene/protein information, variants, and more.\n- Supports both automatic search mode and manual database selection.\n- Optional: Configure NCBI API Key for higher query rates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad57783616a3e774731c04e2fccc1c4d80520b3c000bdbaa5ce9901a225f6718"
+}

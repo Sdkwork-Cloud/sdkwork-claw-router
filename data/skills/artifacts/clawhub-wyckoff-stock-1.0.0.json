@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wyckoff-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wyckoff_stock",
+  "skill": {
+    "id": 63811,
+    "skillKey": "clawhub-wyckoff-stock",
+    "name": "Wyckoff Stock Diagnosis (A股诊股工具)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wyckoff-stock",
+    "url": "https://clawhub.ai/skills/wyckoff-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wyckoff-stock-3af28ff107892c4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股诊股工具，基于Wyckoff 2.0方法论分析股票。支持获取实时K线数据、技术指标计算、趋势分析、支撑阻力识别、Wyckoff结构判断、风险收益评估。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxarch1980",
+      "userId": "s17asgsynj8gv8dhze0vwn607983gvv6",
+      "displayName": "Dxarch1980",
+      "image": "https://avatars.githubusercontent.com/u/124499783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775627445985,
+      "changelog": "Initial release: Wyckoff 2.0 analysis, Volume Profile, Weis Wave, historical signal statistics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b03421eb0cda00c03152f1f58f663966304d25bdcc356104e275de6b73d10744"
+}

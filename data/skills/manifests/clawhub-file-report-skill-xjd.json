@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70597,
+  "uuid": "skill-clawhub-file-report-skill-xjd",
+  "skillKey": "clawhub-file-report-skill-xjd",
+  "name": "统计指定目录的文件类型和数量，生成Markdown格式报表",
+  "summary": "统计指定目录下文件类型及数量，生成包含路径和统计时间的Markdown格式报表，不包含子目录文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_report_skill_xjd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xujiangdong",
+      "features": [
+        "统计指定目录下文件类型及数量，生成包含路径和统计时间的Markdown格式报表，不包含子目录文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-report-skill-xjd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20439065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-report-skill-xjd",
+      "url": "https://clawhub.ai/skills/file-report-skill-xjd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-report-skill-xjd",
+    "url": "https://clawhub.ai/skills/file-report-skill-xjd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-report-skill-xjd-5daba5529b015046.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-report-skill-xjd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-report-skill-xjd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f9c2cad9864fed01d76c9e9c6556a8c2002f632d48b088d426a9f5c3c340cfd",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:08:53.727Z"
+}

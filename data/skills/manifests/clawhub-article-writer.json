@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61341,
+  "uuid": "skill-clawhub-article-writer",
+  "skillKey": "clawhub-article-writer",
+  "name": "Article Writer",
+  "summary": "文章写作助手 - 根据选题生成高质量文章",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofenguser",
+      "features": [
+        "根据选题生成高质量文章"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3362744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-writer",
+      "url": "https://clawhub.ai/skills/article-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-writer",
+    "url": "https://clawhub.ai/skills/article-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-writer-8edacfd991224df4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88614e7aa97416cd946180a48ba1f8a916cefe2f0167d2f778061703fe8aa7e7",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T21:40:06.686Z"
+}

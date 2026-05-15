@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21430,
+  "uuid": "skill-clawhub-main-image-editor",
+  "skillKey": "clawhub-main-image-editor",
+  "name": "Main Image Editor",
+  "summary": "Orchestrate screenshot + Chinese instruction into PSD batch edits with transaction rollback by reusing psd-automator.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.main_image_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhrxy",
+      "features": [
+        "Orchestrate screenshot + Chinese instruction into PSD batch edits with transaction rollback by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/main-image-editor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51009660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "main-image-editor",
+      "url": "https://clawhub.ai/skills/main-image-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "main-image-editor",
+    "url": "https://clawhub.ai/skills/main-image-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/main-image-editor-3d81694ec7bf6290.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/main-image-editor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-main-image-editor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e36adbeba68aee957bcb158b22f11bc05569c2b523dfa5f2504c2b79994d4c4c",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:47:14.874Z"
+}

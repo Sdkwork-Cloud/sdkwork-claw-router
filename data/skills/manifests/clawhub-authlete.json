@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38619,
+  "uuid": "skill-clawhub-authlete",
+  "skillKey": "clawhub-authlete",
+  "name": "Authlete",
+  "summary": "Authlete integration. Manage data, records, and automate workflows. Use when the user wants to interact with Authlete data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authlete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Authlete integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Authlete data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authlete@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authlete",
+      "url": "https://clawhub.ai/skills/authlete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authlete",
+    "url": "https://clawhub.ai/skills/authlete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authlete-6c1672b290793383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authlete@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-authlete-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c58837daebf88bc3eeba89f4e3860c3317e23134bc4c5ef3f222117f920ad4a8",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:21:30.627Z"
+}

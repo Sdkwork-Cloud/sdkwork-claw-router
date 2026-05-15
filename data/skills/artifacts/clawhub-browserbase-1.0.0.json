@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browserbase@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserbase",
+  "skill": {
+    "id": 12959,
+    "skillKey": "clawhub-browserbase",
+    "name": "Browserbase Persist with captcha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserbase",
+    "url": "https://clawhub.ai/skills/browserbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserbase-9d800b766e839951.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage persistent Browserbase cloud browser sessions with authentication persistence. Use when the user needs to automate browsers, maintain logged-in sessions across interactions, scrape authenticated pages, or manage cloud bro."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesfincher",
+      "userId": "publishers:jamesfincher",
+      "displayName": "JamesFincher",
+      "image": "https://avatars.githubusercontent.com/u/92679844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1350,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770748803191,
+      "changelog": "Browserbase Sessions Skill 2.0.0\n\n- New skill to create and manage persistent Browserbase cloud browser sessions with authentication, captcha solving, and session recording.\n- Supports context-based authentication persistence, allowing users to stay logged in across sessions.\n- Enables browser automation: navigation, screenshots, JavaScript execution, and cookie management.\n- Provides workflow for setup, environment configuration, and running session management commands.\n- Includes session recording and playback, keep-alive features, and session logs for debugging and reproducibility.\n- Intended for automating logins, scraping authenticated pages, research documentation, and robust cloud browser management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:121e952cf0ba9319517c8e71938cf6f9767ee84dbabf6126540b4de7af0e0ee8"
+}

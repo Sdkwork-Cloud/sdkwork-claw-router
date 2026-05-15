@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70695,
+  "uuid": "skill-clawhub-fun-skills",
+  "skillKey": "clawhub-fun-skills",
+  "name": "Fun Skills",
+  "summary": "提供游戏管理、笑话生成、派对与儿童活动建议及多种娱乐工具，支持游戏跟踪和趣味互动。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fun_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JI",
+      "features": [
+        "提供游戏管理、笑话生成、派对与儿童活动建议及多种娱乐工具，支持游戏跟踪和趣味互动。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fun-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10844222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fun-skills",
+      "url": "https://clawhub.ai/skills/fun-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fun-skills",
+    "url": "https://clawhub.ai/skills/fun-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fun-skills-b73c1bb961ab3ee4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fun-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fun-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9341fd2f9b3a3ea3b7c2111c9c2cf8a683369ec192026beadf379c410fb9cce5",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:49:58.400Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-init123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_init123",
+  "skill": {
+    "id": 60438,
+    "skillKey": "clawhub-project-init123",
+    "name": "project-init"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-init123",
+    "url": "https://clawhub.ai/skills/project-init123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-init123-ef914b600a6a2472.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动初始化 Gitea 科研项目仓库。通过对话收集仓库名称、描述、创建者、成员、可见性等信息，自动创建仓库并写入标准目录结构（meeting/ docs/ src/ data/ reports/ profiles/）、README.md、CONTRIBUTING.md 及各成员档案文件（profiles/用户名...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myd2002",
+      "userId": "s175zrvz5m28epr76c6rt4dtex8474t6",
+      "displayName": "myd2002",
+      "image": "https://avatars.githubusercontent.com/u/165788146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777470368004,
+      "changelog": "Initial release: 完成科研项目初始化自动化\n\n- 新增标准仓库结构自动生成（meeting/ docs/ src/ data/ reports/ profiles/）\n- 支持通过对话收集仓库名称、描述、成员、可见性等信息\n- 自动生成 README.md、CONTRIBUTING.md 和各成员档案文件\n- 自动设置协作者权限（创建者为 admin，其余为 read）\n- 初始化启动期 Issue 并邮件通知所有成员\n- 幂等保护，防止重复初始化\n- 详细错误处理和通知机制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca9eb0c0b8667c71bc8eaf709b0ee6912b5ab2cc612e83b8a05bc8d4ccc1e3b8"
+}

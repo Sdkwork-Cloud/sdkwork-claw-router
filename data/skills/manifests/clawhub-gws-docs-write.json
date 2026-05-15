@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17340,
+  "uuid": "skill-clawhub-gws-docs-write",
+  "skillKey": "clawhub-gws-docs-write",
+  "name": "Gws Docs Write",
+  "summary": "Google Docs: Append text to a document.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_docs_write",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Docs: Append text to a document."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-docs-write@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-docs-write",
+      "url": "https://clawhub.ai/skills/gws-docs-write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-docs-write",
+    "url": "https://clawhub.ai/skills/gws-docs-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-docs-write-2100316185e9d027.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-docs-write@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-docs-write-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92fd4433c5abdfe026f01a28950efd417562cc2b6ca0d2c277a18ed4b17dc29c",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:36.146Z"
+}

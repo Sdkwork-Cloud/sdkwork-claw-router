@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22746,
+  "uuid": "skill-clawhub-pushover",
+  "skillKey": "clawhub-pushover",
+  "name": "Pushover",
+  "summary": "Pushover integration. Manage Users, Groups. Use when the user wants to interact with Pushover data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pushover",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pushover integration",
+        "Manage Users, Groups",
+        "Use when the user wants to interact with Pushover data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pushover@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pushover",
+      "url": "https://clawhub.ai/skills/pushover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pushover",
+    "url": "https://clawhub.ai/skills/pushover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pushover-bf9f9d1b7f006b1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pushover@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pushover-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16cd66eb027e86343dd0a64168a67a934fb96937518f82574b6c32a1801cafdc",
+      "artifactSizeBytes": 1788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:47:43.341Z"
+}

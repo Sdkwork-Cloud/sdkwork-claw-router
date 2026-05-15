@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chill-institute@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chill_institute",
+  "skill": {
+    "id": 22277,
+    "skillKey": "clawhub-chill-institute",
+    "name": "chill.institute"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chill-institute",
+    "url": "https://clawhub.ai/skills/chill-institute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chill-institute-3b8b07ec689467e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use chill.institute (web UI) to search for content and click “send to put.io” (best paired with the putio skill) — set sail, pick the best 1080p/x265 loot, and ship it."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baanish",
+      "userId": "s17eb791g1b5jezjemtd6ghd5985qn9q",
+      "displayName": "Aanish Bhirud",
+      "image": "https://avatars.githubusercontent.com/u/47579874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2010,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769239161210,
+      "changelog": "Initial release. Send treasure from chill.institute straight into put.io — works best with the putio skill installed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:799cafa96511a8650671fb549571c55241cc1772282f3a5174ffc3f260bf619f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-model-router@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_model_router",
+  "skill": {
+    "id": 42824,
+    "skillKey": "clawhub-free-model-router",
+    "name": "Free Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-model-router",
+    "url": "https://clawhub.ai/skills/free-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-model-router-bc3935ebbcb9a780.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricksmartbrain-boop",
+      "userId": "s17570bp5v62w035fw0b6q3t55843brr",
+      "displayName": "Rick AI",
+      "image": "https://avatars.githubusercontent.com/u/264822655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775130876980,
+      "changelog": "Initial public release. Auto-ranks free OpenRouter models, configures fallback chains, updates openclaw.json. Zero-cost AI for any OpenClaw agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ea83b78d437751c4f53a5ab90d8ed9bf8c201080c2a1a5eaca2e20c006c0aeb"
+}

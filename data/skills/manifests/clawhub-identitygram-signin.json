@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15493,
+  "uuid": "skill-clawhub-identitygram-signin",
+  "skillKey": "clawhub-identitygram-signin",
+  "name": "Identitygram Signin",
+  "summary": "Sign in to IdentityGram by calling the /auth/signin endpoint.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identitygram_signin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waqas-orcalo",
+      "features": [
+        "Sign in to IdentityGram by calling the /auth/signin endpoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/identitygram-signin@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152472554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "identitygram-signin",
+      "url": "https://clawhub.ai/skills/identitygram-signin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identitygram-signin",
+    "url": "https://clawhub.ai/skills/identitygram-signin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identitygram-signin-c433c4430b875372.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/identitygram-signin@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-identitygram-signin-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7ad569a7baf47e81dc340cf7adc14e0f6bfd7551c685303e0e4a64f7afa7ffe",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T05:23:45.788Z"
+}

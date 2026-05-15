@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24309,
+  "uuid": "skill-clawhub-openclaw-memory-canonical",
+  "skillKey": "clawhub-openclaw-memory-canonical",
+  "name": "OpenClaw Memory Canonical",
+  "summary": "Lightweight file-based memory system for single-user AI agents. Uses markdown files only: HOT/WARM/COLD/BUFFER plus SCRATCH learnings, with tiered loading, W...",
+  "version": "4.6.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_canonical",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ciklopentan",
+      "features": [
+        "Lightweight file-based memory system for single-user AI agents",
+        "Uses markdown files only: HOT/WARM/COLD/BUFFER plus SCRATCH learnings, with tiered loading, W..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-canonical@4.6.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259757332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-canonical",
+      "url": "https://clawhub.ai/skills/openclaw-memory-canonical"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-canonical",
+    "url": "https://clawhub.ai/skills/openclaw-memory-canonical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-canonical-2b0ac8544a98b30a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-canonical@4.6.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-canonical-4.6.14.json",
+      "version": "4.6.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b82d2380c767cddc76f63b28e3bd6676c5a83ee9ff167a974d8f42b95382e186",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:30:58.357Z"
+}

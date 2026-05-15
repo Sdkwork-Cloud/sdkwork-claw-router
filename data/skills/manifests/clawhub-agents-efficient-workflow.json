@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28953,
+  "uuid": "skill-clawhub-agents-efficient-workflow",
+  "skillKey": "clawhub-agents-efficient-workflow",
+  "name": "agents efficient workflow",
+  "summary": "Coordinate multiple agents with minimal token waste by using direct agent-to-agent spawning and file-based handoffs. Use when work should be split across spe...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_efficient_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wewehg",
+      "features": [
+        "Coordinate multiple agents with minimal token waste by using direct agent-to-agent spawning and.",
+        "Use when work should be split across spe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agents-efficient-workflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227321197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agents-efficient-workflow",
+      "url": "https://clawhub.ai/skills/agents-efficient-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-efficient-workflow",
+    "url": "https://clawhub.ai/skills/agents-efficient-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-efficient-workflow-1a6fe46b7645395d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agents-efficient-workflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agents-efficient-workflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e5db6d46bc3147c21d2978a457cd23c36506809ed02bc6bad4ef29f73126e91",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T19:50:04.638Z"
+}

@@ -90,8 +90,12 @@ export function Rankings() {
     selectedWeekIndex,
     historyLength: rankingHistory.length,
   });
+  const vendorOptions = useMemo(
+    () => deriveVendorOptionsForRankings(rankingCatalog, rankingVendors),
+    [rankingCatalog, rankingVendors],
+  );
   const selectedVendorCode = selectedVendor
-    ? deriveVendorOptionsForRankings(rankingCatalog, rankingVendors).vendorCodesByLabel[selectedVendor]
+    ? vendorOptions.vendorCodesByLabel[selectedVendor]
     : undefined;
   const rankingView = useMemo(
     () => deriveRankingViewModel({
@@ -106,8 +110,9 @@ export function Rankings() {
       },
       activeWeekIndex,
       vendors: rankingVendors,
+      vendorOptions,
     }),
-    [activeModality, activeWeekIndex, licenseFilter, rankingCatalog, rankingHistory, rankingVendors, searchQuery, selectedVendor, selectedVendorCode],
+    [activeModality, activeWeekIndex, licenseFilter, rankingCatalog, rankingHistory, rankingVendors, searchQuery, selectedVendor, selectedVendorCode, vendorOptions],
   );
   const {
     chartData,
@@ -116,7 +121,6 @@ export function Rankings() {
     dynamicStats,
     modalityCounts,
     panelStats,
-    vendorOptions,
   } = rankingView;
   const { vendorModelCounts, vendors } = vendorOptions;
   const activeBackendModality = activeModality === 'All' ? undefined : activeModality.toLowerCase();
@@ -155,8 +159,7 @@ export function Rankings() {
       .then((vendors) => {
         setRankingVendors(vendors);
       })
-      .catch((error) => {
-        console.error('Failed to fetch model vendors from app SDK', error);
+      .catch(() => {
         setVendorLoadError(t('rankings.vendorLoadError'));
       });
   };
@@ -179,8 +182,13 @@ export function Rankings() {
         setHoveredWeekIndex(null);
         setSelectedWeekIndex(null);
       })
-      .catch((error) => {
-        console.error('Failed to fetch runtime model rankings from app SDK', error);
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+        setRankingCatalog(EMPTY_RANKING_CATALOG);
+        setRankingHistory(EMPTY_RANKING_HISTORY);
+        setRankingSnapshotSource(DEFAULT_RANKING_SNAPSHOT_SOURCE);
       });
     return () => {
       cancelled = true;
@@ -197,11 +205,10 @@ export function Rankings() {
         }
         setRankingVendors(vendors);
       })
-      .catch((error) => {
+      .catch(() => {
         if (cancelled) {
           return;
         }
-        console.error('Failed to fetch model vendors from app SDK', error);
         setVendorLoadError(t('rankings.vendorLoadError'));
       });
     return () => {
@@ -360,7 +367,7 @@ export function Rankings() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-slate-300 pt-20 flex flex-col relative overflow-hidden font-sans">
+    <div className="theme-aware-dark-surface min-h-screen bg-slate-50 dark:bg-[#050505] text-slate-700 dark:text-slate-300 pt-20 flex flex-col relative overflow-hidden font-sans">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
       <div className="absolute left-[20%] top-[-10%] z-0 h-[500px] w-[500px] rounded-full bg-indigo-600/[0.04] blur-[120px] pointer-events-none" />
       <div className="absolute right-[10%] top-[40%] z-0 h-[400px] w-[400px] rounded-full bg-amber-600/[0.03] blur-[100px] pointer-events-none" />
@@ -683,7 +690,7 @@ export function Rankings() {
                     onMouseLeave={() => setHoveredWeekIndex(null)}
                     onClick={handleChartClick}
                   >
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#334155" opacity={0.3} />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--theme-aware-chart-grid)" opacity={1} />
                     <XAxis
                       dataKey="name"
                       axisLine={{ stroke: '#334155', opacity: 0.5 }}
@@ -699,7 +706,7 @@ export function Rankings() {
                       tick={{ fill: '#64748b', fontSize: 11 }}
                       dx={-10}
                     />
-                    <RechartsTooltip cursor={{ fill: '#ffffff', opacity: 0.05 }} content={() => null} />
+                    <RechartsTooltip cursor={{ fill: 'var(--theme-aware-tooltip-cursor)', opacity: 1 }} content={() => null} />
 
                     {chartKeys.map(key => (
                       <Bar
@@ -708,7 +715,7 @@ export function Rankings() {
                         stackId="a"
                         fill={findRankingColor(key, displayRankings)}
                         isAnimationActive={false}
-                        stroke="#050505"
+                        stroke="var(--theme-aware-surface)"
                         strokeWidth={1}
                       />
                     ))}

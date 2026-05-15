@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-conflict@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_conflict",
+  "skill": {
+    "id": 24869,
+    "skillKey": "clawhub-humanizer-conflict",
+    "name": ".Humanizer.Conflict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-conflict",
+    "url": "https://clawhub.ai/skills/humanizer-conflict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-conflict-5650280466fb0009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beelkic",
+      "userId": "publishers:beelkic",
+      "displayName": "深山大柠檬",
+      "image": "https://avatars.githubusercontent.com/u/34309188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773777745266,
+      "changelog": "- Initial public release of the humanizer skill (version 1.0.0).\n- Provides tools and guidance to identify and remove signs of AI-generated writing, making text sound more natural and human.\n- Based on Wikipedia's \"Signs of AI writing\" guide, covering patterns like inflated symbolism, promotional language, superficial \"-ing\" analyses, and vague attributions.\n- Includes detailed strategies for not just removing formulas but also injecting human personality, voice, and variety into writing.\n- Defines specific problematic patterns to fix, such as overuse of certain vocabulary, soulless structure, and formulaic section headers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3695c4b3084cf1c2a3ad3f2a6ffdfd187ee667b69158aaddc6b21b5ff665f0d"
+}

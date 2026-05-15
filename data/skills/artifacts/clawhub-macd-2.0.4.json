@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macd@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macd",
+  "skill": {
+    "id": 31333,
+    "skillKey": "clawhub-macd",
+    "name": "Macd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macd",
+    "url": "https://clawhub.ai/skills/macd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macd-ed9760edaeb4467f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate MACD from price data. Use when computing MACD/signal/histogram from a price series, spotting crossovers, reading momentum, or planning MACD-based e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1774543377365,
+      "changelog": "Real MACD calculation from price series, declared python3 requirement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:477e36241613c5618a93416db0a46da28fd4ef4a6ff5abef7774716e28edf6cf"
+}

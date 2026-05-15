@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26421,
+  "uuid": "skill-clawhub-roll",
+  "skillKey": "clawhub-roll",
+  "name": "Roll",
+  "summary": "Roll integration. Manage Organizations. Use when the user wants to interact with Roll data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roll",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Roll integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Roll data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roll@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roll",
+      "url": "https://clawhub.ai/skills/roll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roll",
+    "url": "https://clawhub.ai/skills/roll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roll-acfe1fecda8bf79f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roll@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-roll-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8420d75411254dfe1bca6b67e2dbc761118da97f237857eb047f3ef27b4a8073",
+      "artifactSizeBytes": 1778
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:56:34.907Z"
+}

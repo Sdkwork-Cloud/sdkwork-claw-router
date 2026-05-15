@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16063,
+  "uuid": "skill-clawhub-usewhisper",
+  "skillKey": "clawhub-usewhisper",
+  "name": "usewhisper",
+  "summary": "Official Whisper Context skill for OpenClaw. Cuts context tokens via delta compression + caching, and adds long-term memory across sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usewhisper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alinxus",
+      "features": [
+        "Official Whisper Context skill for OpenClaw",
+        "Cuts context tokens via delta compression + caching, and adds long-term memory across sessions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usewhisper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81990934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usewhisper",
+      "url": "https://clawhub.ai/skills/usewhisper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usewhisper",
+    "url": "https://clawhub.ai/skills/usewhisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usewhisper-8f13a20cd0b420d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usewhisper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usewhisper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff6c82ebaf0d7bcdb0d281da075a75bb8d4f4c7935aae6402c0bfb9d6e478d18",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T05:25:38.204Z"
+}

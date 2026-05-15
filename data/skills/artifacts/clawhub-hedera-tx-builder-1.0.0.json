@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hedera-tx-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hedera_tx_builder",
+  "skill": {
+    "id": 16199,
+    "skillKey": "clawhub-hedera-tx-builder",
+    "name": "Hedera Transaction Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hedera-tx-builder",
+    "url": "https://clawhub.ai/skills/hedera-tx-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hedera-tx-builder-663d38be0cd986b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, sign, and submit Hedera transactions including HBAR transfers, token operations, and smart contract calls to the Hedera network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harleyscodes",
+      "userId": "publishers:harleyscodes",
+      "displayName": "HarleysCodes",
+      "image": "https://avatars.githubusercontent.com/u/116604105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 915,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771109052732,
+      "changelog": "Initial release of Hedera Transaction Builder.\n\n- Build and sign Hedera transactions, including HBAR transfers, token operations, and smart contract calls.\n- Provides code examples for creating accounts, transferring HBAR, associating tokens, and sending topic messages.\n- Lists important Hedera network concepts and endpoints for mainnet and testnet.\n- Instructional setup using @hashgraph/sdk.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bddb9dc7d1e028afa858b03494329a6d408106967d19b7dcaac7ec5c970f008a"
+}

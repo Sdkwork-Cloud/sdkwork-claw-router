@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-search@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search",
+  "skill": {
+    "id": 14158,
+    "skillKey": "clawhub-multi-search",
+    "name": "Multi Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search",
+    "url": "https://clawhub.ai/skills/multi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-09c8e685afc290d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent multi-topic deep research tool supporting arbitrary material input, using independent research agents for parallel deep retrieval and systematic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neverchenx",
+      "userId": "s17adhez2g5qn4xyd2v6wrdn2984541c",
+      "displayName": "Never",
+      "image": "https://avatars.githubusercontent.com/u/142883982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1085,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773571333851,
+      "changelog": "Translated to English",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b260400eff83d214619aff0da897afaa0b5aefbed37c1d792b6bf07658b16ba3"
+}

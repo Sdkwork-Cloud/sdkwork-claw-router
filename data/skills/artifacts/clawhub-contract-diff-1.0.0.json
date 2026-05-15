@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contract-diff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_diff",
+  "skill": {
+    "id": 44847,
+    "skillKey": "clawhub-contract-diff",
+    "name": "Contract Diff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-diff",
+    "url": "https://clawhub.ai/skills/contract-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-diff-8c50bf4eede627fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare contract templates with scanned stamped contracts, list all differences (additions, deletions, modifications). Output as Word document for easy downl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russell-yu",
+      "userId": "s17d8tpt69jn5v4z9cn8f34d818492vq",
+      "displayName": "russell-yu",
+      "image": "https://avatars.githubusercontent.com/u/253503690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775374907584,
+      "changelog": "contract-diff v1.0.0\n\n- Initial release of contract-diff tool.\n- Compares contract templates (Word/PDF) with scanned stamped contracts (PDF/images).\n- Detects and lists all differences: additions, deletions, and modifications.\n- Generates a detailed Word report and (optionally) a highlighted image showing modified areas.\n- Supports extraction via OCR, and provides summary plus detailed, side-by-side difference listings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26dde6a7c1e6650b1caa76a67e96f3ec216239fdd50aa0175c9ce543fd27384d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-code-suite-clean@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_code_suite_clean",
+  "skill": {
+    "id": 44731,
+    "skillKey": "clawhub-claw-code-suite-clean",
+    "name": "Claw Code Suite (Python-Only Edition)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-code-suite-clean",
+    "url": "https://clawhub.ai/skills/claw-code-suite-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-code-suite-clean-965bcf36cb086eea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python-only integration of Claw Code harness engineering project with OpenClaw. Provides access to 184 tools and 200+ commands for security analysis, code qu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devita3323",
+      "userId": "s17dakb8cs9ec0t7as4jts6pws83kzet",
+      "displayName": "devita3323",
+      "image": "https://avatars.githubusercontent.com/u/69653227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775538472388,
+      "changelog": "Claw Code Suite v1.0.1 is a clean, Python-only edition with enhanced security compliance.\n\n- Removed all Rust components and networking/server/AI provider code for complete offline operation.\n- Updated documentation to emphasize Python-only implementation and full source transparency.\n- Skill now fully passes ClawHub security scanner with no flags or compliance issues.\n- Retains all 184 tools and 207 commands from the original suite with no functional loss.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9518bb946ae5f042df5334c59e0837b9f4ac0c718803ddf4bfe686f54baa7fb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltblock@0.11.8",
+  "version": "0.11.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltblock",
+  "skill": {
+    "id": 12225,
+    "skillKey": "clawhub-moltblock",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltblock",
+    "url": "https://clawhub.ai/skills/moltblock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltblock-7b2d1e24a84f1668.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verification gating for AI-generated artifacts. Policy checks to catch dangerous patterns before execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meshailabs",
+      "userId": "publishers:meshailabs",
+      "displayName": "meshailabs",
+      "image": "https://avatars.githubusercontent.com/u/224324308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "0.11.8",
+      "createdAt": 1773872295209,
+      "changelog": "Skill metadata cleanup for ClaWHub scan compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b9eb8555773d0e7821dc9c4743e070c30b82b371b9f14b631abd53fb02eafb3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72259,
+  "uuid": "skill-clawhub-disease-distance-simulator",
+  "skillKey": "clawhub-disease-distance-simulator",
+  "name": "重大疾病距离模拟器",
+  "summary": "AI驱动的个性化\"疾病距离\"可视化工具。用户说一句\"帮我看看我离重大疾病有多远\"，Agent通过自然对话逐步解析用户画像（性别、年龄、地域、生活习惯、职业、家族史等），结合最新精算表+癌症统计+流行病学数据，生成\"你的重大疾病还有多远\"的动态时间轴报告。 输出形式：2段式教育报告 —— ①距离可视化（预警期时间轴...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disease_distance_simulator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wwbwin",
+      "features": [
+        "AI驱动的个性化\"疾病距离\"可视化工具。用户说一句\"帮我看看我离重大疾病有多远\"，Agent通过自然对话逐步解析用户画像（性别、年龄、地域、生活习惯、职业、家族史等），结合最新精算表+癌症统."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disease-distance-simulator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137308189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disease-distance-simulator",
+      "url": "https://clawhub.ai/skills/disease-distance-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disease-distance-simulator",
+    "url": "https://clawhub.ai/skills/disease-distance-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disease-distance-simulator-8fdc9a50a6c05c7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disease-distance-simulator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-disease-distance-simulator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6fc5e769bb49fc12193012a01aa80cff7d442cca3e12c29960a8d98c7359be9",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:57:34.420Z"
+}

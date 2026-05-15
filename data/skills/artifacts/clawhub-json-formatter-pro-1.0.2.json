@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/json-formatter-pro@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_formatter_pro",
+  "skill": {
+    "id": 30924,
+    "skillKey": "clawhub-json-formatter-pro",
+    "name": "json-formatter-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-formatter-pro",
+    "url": "https://clawhub.ai/skills/json-formatter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-formatter-pro-b00f8280a0801da1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format and validate JSON files with options for pretty-printing, indentation, key sorting, and output to files or stdout."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775045965647,
+      "changelog": "Version 1.0.2 of json-formatter-pro\n\n- No changes detected in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:426e352ee474d33c3e90c82b27586fe9fcdae049826888aaeffbd97ea596bdcd"
+}

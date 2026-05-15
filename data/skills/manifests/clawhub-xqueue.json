@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49427,
+  "uuid": "skill-clawhub-xqueue",
+  "skillKey": "clawhub-xqueue",
+  "name": "xqueue",
+  "summary": "File-based X/Twitter post scheduler. Drop tweets into day/time folders, they post automatically. No frontend, no app — your file system is the UI.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqueue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mei Park",
+      "features": [
+        "File-based X/Twitter post scheduler",
+        "Drop tweets into day/time folders, they post automatically",
+        "No frontend, no app — your file system is the UI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xqueue@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223051250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xqueue",
+      "url": "https://clawhub.ai/skills/xqueue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqueue",
+    "url": "https://clawhub.ai/skills/xqueue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqueue-b02434e2cefc30c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xqueue@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-xqueue-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c7e5fe162afcfec4f9dd8a81d6bac1299291d7543588518ca1754f2ab4aaed",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:00:31.523Z"
+}

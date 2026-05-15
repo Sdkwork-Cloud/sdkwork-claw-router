@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20694,
+  "uuid": "skill-clawhub-feedback-loop",
+  "skillKey": "clawhub-feedback-loop",
+  "name": "Feedback Loop",
+  "summary": "Feedback Loop - Collect, analyze, and act on user feedback for continuous agent improvement",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Feedback Loop",
+        "Collect, analyze, and act on user feedback for continuous agent improvement"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedback-loop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedback-loop",
+      "url": "https://clawhub.ai/skills/feedback-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-loop",
+    "url": "https://clawhub.ai/skills/feedback-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-loop-5282c524c53e8bab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedback-loop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedback-loop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad445f670d182704a06ff657801d846e8fe5f53fae6397429a1e17f244827d52",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:33:18.968Z"
+}

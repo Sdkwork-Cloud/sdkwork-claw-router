@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32894,
+  "uuid": "skill-clawhub-date-calculator",
+  "skillKey": "clawhub-date-calculator",
+  "name": "Date Calculator",
+  "summary": "Calculates gestational age and follow-up date windows.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.date_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Calculates gestational age and follow-up date windows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/date-calculator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "date-calculator",
+      "url": "https://clawhub.ai/skills/date-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "date-calculator",
+    "url": "https://clawhub.ai/skills/date-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/date-calculator-198147ade242a830.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/date-calculator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-date-calculator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16247d3e6853c4cc70bac1deb54e0ab8514680c272c3ba0fcd80e468566b36bd",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:50:39.971Z"
+}

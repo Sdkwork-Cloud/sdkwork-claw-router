@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70531,
+  "uuid": "skill-clawhub-dy-caption",
+  "skillKey": "clawhub-dy-caption",
+  "name": "dy-caption",
+  "summary": "提取抖音视频语音内容并转成文字，支持提交视频链接转写，查询转写余额及历史记录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dy_caption",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xwchris",
+      "features": [
+        "提取抖音视频语音内容并转成文字，支持提交视频链接转写，查询转写余额及历史记录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dy-caption@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13817144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dy-caption",
+      "url": "https://clawhub.ai/skills/dy-caption"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dy-caption",
+    "url": "https://clawhub.ai/skills/dy-caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dy-caption-9ee164182abcdefe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dy-caption@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dy-caption-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88c665565cb36986fba30a5f71a8f5f5d77129e4bf81013d27a63c4b4ddd5dbb",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T11:00:37.979Z"
+}

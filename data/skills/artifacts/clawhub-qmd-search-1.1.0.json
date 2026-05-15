@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-search@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_search",
+  "skill": {
+    "id": 10042,
+    "skillKey": "clawhub-qmd-search",
+    "name": "qmd Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-search",
+    "url": "https://clawhub.ai/skills/qmd-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-search-5e9737d9d9c77912.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast local search for markdown files, notes, and docs using qmd CLI. Use instead of `find` for file discovery. Combines BM25 full-text search, vector semantic search, and LLM reranking—all running locally. Use when searching for files, fin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bheemreddy181",
+      "userId": "publishers:bheemreddy181",
+      "displayName": "bheemreddy181",
+      "image": "https://avatars.githubusercontent.com/u/101338506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3595,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769486344205,
+      "changelog": "Updated skill with comprehensive docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b3ddf46b088059fe2acc492ce4382631672d3ab94a2f3145ea6b121e7da8f4d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/premium-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premium_pdf",
+  "skill": {
+    "id": 33857,
+    "skillKey": "clawhub-premium-pdf",
+    "name": "Premium PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premium-pdf",
+    "url": "https://clawhub.ai/skills/premium-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premium-pdf-ef17e8118cc71128.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate premium enterprise-style PDFs from markdown content, with automatic de-AI text humanization (removes em dashes, AI filler phrases, overly formal lan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreasozzo",
+      "userId": "publishers:andreasozzo",
+      "displayName": "bulldozzer",
+      "image": "https://avatars.githubusercontent.com/u/131347676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774124099955,
+      "changelog": "Initial release of premium-pdf.\n\n- Generate enterprise-grade PDFs from markdown content.\n- Automatically \"de-AI\" text for natural, human-sounding results.\n- Features a professional Navy + Gold design system.\n- Supports markdown elements including headings, lists, code blocks, and more.\n- Allows custom document titles and optional logo in the PDF header.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc1dd3f23c6f2679bb79f662e9790fd6b8534e511aa324b07f7acd28460497e"
+}

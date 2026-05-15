@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-butler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_butler",
+  "skill": {
+    "id": 68147,
+    "skillKey": "clawhub-movie-butler",
+    "name": "🎬 观影小管家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-butler",
+    "url": "https://clawhub.ai/skills/movie-butler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-butler-ae21a62b2efb6daf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整合TMDB与Emby/Plex，提供电影查询、媒体库管理、观影记录和个性化推荐服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzhilei951",
+      "userId": "s17528wr0s8te7wbngrh6y2jz183w2mt",
+      "displayName": "duzhilei951",
+      "image": "https://avatars.githubusercontent.com/u/22375450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772558146295,
+      "changelog": "初始版本发布 - 完整的观影管理技能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8943c8b0073e7e0a1c9ce8a385c53d27facf37eedabc96aec4c9eac88ede78b1"
+}

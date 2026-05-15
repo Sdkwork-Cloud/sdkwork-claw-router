@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poster-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poster_forge",
+  "skill": {
+    "id": 33631,
+    "skillKey": "clawhub-poster-forge",
+    "name": "Poster Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poster-forge",
+    "url": "https://clawhub.ai/skills/poster-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poster-forge-526ec8a3744c85bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal image and poster generator with Chinese/English text support. Use when asked to create posters, social media images, cover images, infographics, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huuuwnnn-droid",
+      "userId": "s17fh14wkysybyc95n01s71ghd84cqfy",
+      "displayName": "huuuwnnn-droid",
+      "image": "https://avatars.githubusercontent.com/u/242397261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775552499430,
+      "changelog": "Universal image/poster generator. 3 engines: AI (Pollinations.ai), HTML (Chromium screenshot), PIL text. Chinese text support. Presets for Xiaohongshu/WeChat/Instagram/Twitter.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8074afd9bcee00b68f26de1a0f1baa51cd2bb17b6dd3f6bdca4c013638c0ea6b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11660,
+  "uuid": "skill-clawhub-dual-brain",
+  "skillKey": "clawhub-dual-brain",
+  "name": "Dual-Brain",
+  "summary": "Automatically generates and saves alternative perspectives from a secondary LLM for every user message to enhance reasoning and response quality.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dannydvm",
+      "features": [
+        "Automatically generates and saves alternative perspectives from a secondary LLM for every user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dual-brain@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128923887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dual-brain",
+      "url": "https://clawhub.ai/skills/dual-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-brain",
+    "url": "https://clawhub.ai/skills/dual-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-brain-a33e96c88eac290b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dual-brain@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dual-brain-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e9c07b3159b3bf9fb6a5bc6c3e778c6b5852bfc736a40c4ba973f69221ae994",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T08:16:15.319Z"
+}

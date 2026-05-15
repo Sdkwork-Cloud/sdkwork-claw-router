@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-paragraph-rewriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_paragraph_rewriter",
+  "skill": {
+    "id": 41246,
+    "skillKey": "clawhub-ai-paragraph-rewriter",
+    "name": "AI Paragraph Rewriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-paragraph-rewriter",
+    "url": "https://clawhub.ai/skills/ai-paragraph-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-paragraph-rewriter-9152eb82ee97c086.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite paragraphs to sound natural and human-written, bypassing AI detectors (GPTZero, Turnitin, Originality.ai)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131566568,
+      "changelog": "- Initial release of ai-paragraph-rewriter skill.\n- Converts AI-generated or mechanical-sounding text into natural, human-like paragraphs optimized to pass AI detectors (GPTZero, Turnitin, Originality.ai).\n- Offers three rewriting modes: Light, Medium, and Bypass, for varying levels of AI artifact removal.\n- Provides step-by-step rewriting guidance and quality checks to ensure meaning is preserved and the output feels genuinely human.\n- Includes prompt templates and tips to maximize human-like writing and minimize detectable AI patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:507ab8d2e9fe1fde8eb1b94c1eea08c8ce603b4e1336b69d487fc7a3d55c7d77"
+}

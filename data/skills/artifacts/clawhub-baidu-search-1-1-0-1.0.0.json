@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search-1-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_1_1_0",
+  "skill": {
+    "id": 10280,
+    "skillKey": "clawhub-baidu-search-1-1-0",
+    "name": "Baidu Search 1.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-1-1-0",
+    "url": "https://clawhub.ai/skills/baidu-search-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-1-1-0-864fe752a1be8fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leileitian",
+      "userId": "publishers:leileitian",
+      "displayName": "leileitian",
+      "image": "https://avatars.githubusercontent.com/u/5440371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2542,
+      "installsAllTime": 28,
+      "installsCurrent": 24,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772720068976,
+      "changelog": "Initial release of Baidu Search skill.\n\n- Enables web searches using the Baidu AI Search Engine (BDSE) via API.\n- Supports search filters for site, date, resource type, recency, and safe search.\n- Allows blocking specific websites from results.\n- Includes detailed usage instructions and request parameter documentation.\n- Command-line interface using Python 3 is provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a7ce8f45e8f2a40e74c7bf2bfac6610bc9c020ed7f12b9c0ead23a3d1ea5272"
+}

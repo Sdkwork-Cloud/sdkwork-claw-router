@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58412,
+  "uuid": "skill-clawhub-precise-coding-principles",
+  "skillKey": "clawhub-precise-coding-principles",
+  "name": "精准编程四大原则",
+  "summary": "编程原则技能，源于 Andrej Karpathy 的 LLM 编程四大通病与核心原则。 Use when: (1) writing or reviewing code, (2) user asks to build/create/refactor a feature, (3) code is becoming...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.precise_coding_principles",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nmww",
+      "features": [
+        "编程原则技能，源于 Andrej Karpathy 的 LLM 编程四大通病与核心原则。 Use when: (1) writing or reviewing code, (2) user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/precise-coding-principles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6917516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "precise-coding-principles",
+      "url": "https://clawhub.ai/skills/precise-coding-principles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "precise-coding-principles",
+    "url": "https://clawhub.ai/skills/precise-coding-principles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/precise-coding-principles-57cdd772e6c915fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/precise-coding-principles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-precise-coding-principles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8612290957891ddbff7b6a6531aa8d5215512cf5f35429b08f313b1099d0863",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:05:44.554Z"
+}

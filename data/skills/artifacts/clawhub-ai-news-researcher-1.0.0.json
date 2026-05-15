@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_researcher",
+  "skill": {
+    "id": 12260,
+    "skillKey": "clawhub-ai-news-researcher",
+    "name": "Ai News Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-researcher",
+    "url": "https://clawhub.ai/skills/ai-news-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-researcher-4cd85926bd3279fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Researches latest AI news, summarizes 5 top stories with sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timbu306",
+      "userId": "publishers:timbu306",
+      "displayName": "timbu306",
+      "image": "https://avatars.githubusercontent.com/u/67196638?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1733,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772583960988,
+      "changelog": "AI News Researcher Skill 1.0.0 – Initial Release\n\n- Searches top sources for the latest AI news.\n- Summarizes 5 leading stories with key facts, trends, and impacts.\n- Provides source links for each news item.\n- Saves results as a dated Markdown report.\n- Supports optional email delivery of summaries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5dd8ecfc41b164baf26fe5ae48ad592ec2cd68c9a7a9a3b8cbccfc11a9722ec9"
+}

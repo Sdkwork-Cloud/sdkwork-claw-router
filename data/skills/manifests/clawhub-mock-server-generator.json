@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46460,
+  "uuid": "skill-clawhub-mock-server-generator",
+  "skillKey": "clawhub-mock-server-generator",
+  "name": "Mock Server Generator",
+  "summary": "Generate customizable mock HTTP servers with dynamic data, delay, error simulation, and OpenAPI import for API testing and development.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mock_server_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generate customizable mock HTTP servers with dynamic data, delay, error simulation, and OpenAPI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mock-server-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mock-server-generator",
+      "url": "https://clawhub.ai/skills/mock-server-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mock-server-generator",
+    "url": "https://clawhub.ai/skills/mock-server-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mock-server-generator-732ccd267e1bedb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mock-server-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mock-server-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1a62a0ac841cecea71882483bfb5281da9d2389a737596c2d6a974d213f3b45",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T22:04:16.772Z"
+}

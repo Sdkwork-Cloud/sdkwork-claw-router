@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39528,
+  "uuid": "skill-clawhub-openclaw-administrator",
+  "skillKey": "clawhub-openclaw-administrator",
+  "name": "OpenClaw Admin",
+  "summary": "Operate, configure, and troubleshoot the OpenClaw CLI for installation, agents, routing, messaging, API, plugins, memory, security, diagnostics, and multi-ag...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_administrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EncryptShawn",
+      "features": [
+        "Operate, configure, and troubleshoot the OpenClaw CLI for installation, agents, routing, messag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-administrator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56897824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-administrator",
+      "url": "https://clawhub.ai/skills/openclaw-administrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-administrator",
+    "url": "https://clawhub.ai/skills/openclaw-administrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-administrator-ceedf6f478e982c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-administrator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-administrator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6d77c64e4e065e8b5cc24435cc401df6f3a4a133a1d15102dfc397e89132278",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T22:48:58.720Z"
+}

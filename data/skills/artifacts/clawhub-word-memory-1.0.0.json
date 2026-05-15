@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_memory",
+  "skill": {
+    "id": 65282,
+    "skillKey": "clawhub-word-memory",
+    "name": "Word Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-memory",
+    "url": "https://clawhub.ai/skills/word-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-memory-3b8b6b7e6f81c29e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "单词记忆助手 - 艾宾浩斯记忆曲线、每日打卡、词汇测试"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp3d1455926-svg",
+      "userId": "s177dnrcxaj8y42437mjj0m9y583t54n",
+      "displayName": "cp3d1455926-svg",
+      "image": "https://avatars.githubusercontent.com/u/268315927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774955019193,
+      "changelog": "word-memory 1.0.0\n\n- Initial release of the word-memory skill.\n- Supports Ebbinghaus memory curve scheduling for vocabulary review.\n- Allows selection from multiple word lists (CET-4, CET-6, TOEFL, IELTS, GRE, etc.) and custom lists.\n- Provides daily word push, memory testing (English/Chinese, spelling, listening), and detailed word information.\n- Includes progress tracking and learning statistics.\n- Sample dialogues and data structure outlined for user reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4af1389a23aacc5dd19c1ace634b03c1086990b2bf0cfbafc4ceeabe0a46921"
+}

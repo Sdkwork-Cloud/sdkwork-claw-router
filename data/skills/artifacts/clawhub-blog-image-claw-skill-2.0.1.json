@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blog-image-claw-skill@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_image_claw_skill",
+  "skill": {
+    "id": 22758,
+    "skillKey": "clawhub-blog-image-claw-skill",
+    "name": "Blog Image Claw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-image-claw-skill",
+    "url": "https://clawhub.ai/skills/blog-image-claw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-image-claw-skill-de3790fc9a1c5fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ai blog image generator images with AI via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barbaraledbettergq",
+      "userId": "s17cdh3qbqwjv3b81j7va5t8hx83gnds",
+      "displayName": "BarbaraLedbettergq",
+      "image": "https://avatars.githubusercontent.com/u/260827804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774580602089,
+      "changelog": "- Documentation updates in README.md and SKILL.md; no user-facing changes to functionality.\n- Package metadata updated in package.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0c10cc20f94b5e3602802277b1885889f7f65233b8b76aa6f37ecd900a1ee01"
+}

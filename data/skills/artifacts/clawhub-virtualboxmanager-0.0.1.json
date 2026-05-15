@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtualboxmanager@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtualboxmanager",
+  "skill": {
+    "id": 16279,
+    "skillKey": "clawhub-virtualboxmanager",
+    "name": "Virtual Box Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtualboxmanager",
+    "url": "https://clawhub.ai/skills/virtualboxmanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtualboxmanager-83c52342523237b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and manage VirtualBox virtual machines directly from openclaw. Start, stop, snapshot, clone, configure and monitor VMs using VBoxManage CLI. Supports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xfratex",
+      "userId": "publishers:0xfratex",
+      "displayName": "0xFratex",
+      "image": "https://avatars.githubusercontent.com/u/187872179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 875,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1771191429563,
+      "changelog": "Control and manage VirtualBox virtual machines directly from openclaw. Supports full lifecycle management including VM creation, network configuration, shared folders, and performance monitoring.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91ee99ad0f4ac22962d9b5a84bc5a5098642d898f404fc70f3ae5135e612b02b"
+}

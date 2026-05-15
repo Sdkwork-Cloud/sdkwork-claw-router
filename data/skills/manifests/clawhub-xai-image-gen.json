@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14089,
+  "uuid": "skill-clawhub-xai-image-gen",
+  "skillKey": "clawhub-xai-image-gen",
+  "name": "xAI Image Generator",
+  "summary": "Generate images from text prompts using xAI's Grok API with options for format, batch size, and automatic media attachment in OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xai_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mexicanamerican",
+      "features": [
+        "Generate images from text prompts using xAI's Grok API with options for format, batch size, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xai-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1307985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xai-image-gen",
+      "url": "https://clawhub.ai/skills/xai-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xai-image-gen",
+    "url": "https://clawhub.ai/skills/xai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xai-image-gen-e8cdd4f101bba130.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xai-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xai-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45d16f347227dcc3a90186f9b512a7a70c62611748ff5ac97a276be731652d67",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T03:25:47.253Z"
+}

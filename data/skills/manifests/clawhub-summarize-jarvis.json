@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40450,
+  "uuid": "skill-clawhub-summarize-jarvis",
+  "skillKey": "clawhub-summarize-jarvis",
+  "name": "Summarize Jarvis",
+  "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_jarvis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summarize-jarvis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summarize-jarvis",
+      "url": "https://clawhub.ai/skills/summarize-jarvis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-jarvis",
+    "url": "https://clawhub.ai/skills/summarize-jarvis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-jarvis-25e33f16bb5f5d0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summarize-jarvis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-summarize-jarvis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb752e003f59c18dcd67803f4463fcad5dac92159eb65b5d193b9840e850ed4c",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T00:01:46.540Z"
+}

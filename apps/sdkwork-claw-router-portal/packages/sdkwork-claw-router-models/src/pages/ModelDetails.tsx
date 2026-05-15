@@ -29,8 +29,7 @@ export function ModelDetails() {
         }
         navigate('/models');
       })
-      .catch((error) => {
-        console.error('Failed to fetch runtime model catalog detail from app SDK', error);
+      .catch(() => {
         if (!cancelled) {
           navigate('/models');
         }
@@ -158,18 +157,18 @@ export function ModelDetails() {
                 <Code2 className="w-6 h-6 text-indigo-500" />
                 {t('models.details.apiExample', 'API Example')}
               </h2>
-              <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-[#0d1117] shadow-sm">
-                <div className="flex items-center justify-between px-4 py-3 bg-[#161b22] border-b border-white/5">
-                  <span className="text-[13px] font-medium text-slate-400">TypeScript / Node.js</span>
+              <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm dark:border-white/10 dark:bg-[#0d1117]">
+                <div className="flex items-center justify-between px-4 py-3 bg-slate-100 border-b border-slate-200 dark:bg-[#161b22] dark:border-white/5">
+                  <span className="text-[13px] font-medium text-slate-500 dark:text-slate-400">TypeScript / Node.js</span>
                   <CopyButton
                     text={detail.apiExample}
                     label={t('models.details.copy')}
                     copiedLabel={t('models.details.copied')}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
                   />
                 </div>
                 <div className="p-4 overflow-x-auto">
-                  <pre className="text-[13px] font-mono text-slate-300 leading-relaxed">
+                  <pre className="text-[13px] font-mono text-slate-700 dark:text-slate-300 leading-relaxed">
                     <code>{detail.apiExample}</code>
                   </pre>
                 </div>

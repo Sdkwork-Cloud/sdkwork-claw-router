@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11646,
+  "uuid": "skill-clawhub-doubleword-api",
+  "skillKey": "clawhub-doubleword-api",
+  "name": "Doubleword API",
+  "summary": "Create, submit, monitor, and retrieve asynchronous batch AI inference jobs via the Doubleword API using JSONL files for large or cost-sensitive workloads.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubleword_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pjb157",
+      "features": [
+        "Create, submit, monitor, and retrieve asynchronous batch AI inference jobs via the Doubleword A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubleword-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84070455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubleword-api",
+      "url": "https://clawhub.ai/skills/doubleword-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubleword-api",
+    "url": "https://clawhub.ai/skills/doubleword-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubleword-api-8a423139bdf7e3fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubleword-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubleword-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5936a2354b887cb691e857b8f3938a7e0024c815f8a597fd35d612daf327f921",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T20:34:13.909Z"
+}

@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "articuler",
+    "displayName": "articuler",
+    "summary": "AI-powered professional networking assistant. Generate personalized cold emails and outreach playbooks to accelerate career growth and business development.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1773720067945,
+    "updatedAt": 1777620351257
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773893257749,
+    "changelog": "**Summary:** This release introduces a two-step authentication and a new async API workflow for playbook generation.\n\n- Added a mandatory login step: users must submit a verification code received by email, then log in to receive a `token` for all business API calls.\n- Changed the playbook generation API to an asynchronous process; now returns a `sessionId` and requires polling for completion.\n- Updated API parameters: all main functions now require a `token` instead of raw email/captcha.\n- Clarified user flow: steps must be performed in order—verification, login, submit job, then poll for results.\n- Updated documentation to match the new authentication and async job design.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "hotwheelsbo",
+    "userId": "publishers:hotwheelsbo",
+    "displayName": "hotwheelsBo",
+    "image": "https://avatars.githubusercontent.com/u/1224488?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44754,
+  "uuid": "skill-clawhub-gate-info-trend-analysis-staging",
+  "skillKey": "clawhub-gate-info-trend-analysis-staging",
+  "name": "gate-info-trendanalysis",
+  "summary": "Trend and technical analysis. Use this skill ONLY when the user's query is exclusively about technical indicators or trend analysis for one coin with no othe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_trend_analysis_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Trend and technical analysis",
+        "Use this skill ONLY when the user's query is exclusively about technical indicators or trend an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-trend-analysis-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-trend-analysis-staging",
+      "url": "https://clawhub.ai/skills/gate-info-trend-analysis-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-trend-analysis-staging",
+    "url": "https://clawhub.ai/skills/gate-info-trend-analysis-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-trend-analysis-staging-ef79fe6420294203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-trend-analysis-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-trend-analysis-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c983fb5dfc385e969a2f370db481fc9aba4ec960b152588e3b25dd48c33dae07",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:16:10.856Z"
+}

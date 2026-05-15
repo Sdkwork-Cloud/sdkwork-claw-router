@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66831,
+  "uuid": "skill-clawhub-captionstranslation",
+  "skillKey": "clawhub-captionstranslation",
+  "name": "本地视频字幕提取与翻译工具",
+  "summary": "自动化音视频字幕提取与翻译工具，利用 FFmpeg 和本地 Python 脚本生成双语 SRT。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captionstranslation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kongym1234",
+      "features": [
+        "自动化音视频字幕提取与翻译工具，利用 FFmpeg 和本地 Python 脚本生成双语 SRT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captionstranslation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37609239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captionstranslation",
+      "url": "https://clawhub.ai/skills/captionstranslation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captionstranslation",
+    "url": "https://clawhub.ai/skills/captionstranslation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captionstranslation-942ca4f798c47fc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captionstranslation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-captionstranslation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d66dfa5bb379e201f0f1864486a2de263725ca527c6d01cfea5480fc6263ad8",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:14:50.539Z"
+}

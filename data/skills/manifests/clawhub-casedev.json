@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50113,
+  "uuid": "skill-clawhub-casedev",
+  "skillKey": "clawhub-casedev",
+  "name": "case.dev",
+  "summary": "case.dev — a legal AI platform with encrypted document vaults, OCR, audio transcription, and legal search. This skill installs the casedev CLI and provides s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casedev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "max",
+      "features": [
+        "case.dev — a legal AI platform with encrypted document vaults, OCR, audio transcription, and le.",
+        "This skill installs the casedev CLI and provides s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/casedev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7064363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "casedev",
+      "url": "https://clawhub.ai/skills/casedev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casedev",
+    "url": "https://clawhub.ai/skills/casedev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casedev-a05ae0012277a046.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/casedev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-casedev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3325b07feedc09682a6715cb1fd03d110af214a1cf3cf50dbe0cc70d80e35dd8",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:40:34.148Z"
+}

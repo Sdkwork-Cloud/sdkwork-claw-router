@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minium-test-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minium_test_generator",
+  "skill": {
+    "id": 65854,
+    "skillKey": "clawhub-minium-test-generator",
+    "name": "minium-test-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minium-test-generator",
+    "url": "https://clawhub.ai/skills/minium-test-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minium-test-generator-91e6ecf3128419d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minium 录制脚本转测试用例工具。自动解析录制脚本，生成符合规范的测试用例和页面对象，确保步骤完整、逻辑一致。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiziria",
+      "userId": "s175cdnj9sqhw7fzwxwxa463ad83gbp3",
+      "displayName": "梦中大侠",
+      "image": "https://avatars.githubusercontent.com/u/28681113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774347116220,
+      "changelog": "minium-test-generator 11.0.0 更新概要：\n\n- 全面更新技能规范，强化录制脚本自动转测试用例的流程和规则。\n- 严格提升目录/文件检查，确保每一步操作都与用户现有目录结构和代码风格保持一致。\n- 明确区分“新建项目”和“添加到已有项目”两大场景，杜绝误操作和文件覆盖。\n- 新增多项强制开发规范，细化 Page Object、测试用例生成和元素封装细则。\n- 新增对不同触发场景的具体应答流程和完整对话示例，提升易用性与透明度。\n- 优化录制脚本解析与生成流程，确保步骤完整、命名统一，极大减少人工干预。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee98cb9a9317e7842cf4e93850971657754c22181bea58061a89bc12280c388c"
+}

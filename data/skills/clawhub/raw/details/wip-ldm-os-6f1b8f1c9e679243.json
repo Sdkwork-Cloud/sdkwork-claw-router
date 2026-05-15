@@ -1,0 +1,53 @@
+{
+  "skill": {
+    "slug": "wip-ldm-os",
+    "displayName": "Wip Ldm Os Private",
+    "summary": "LDM OS installer and updater. Use when asked to install, update, or check status of LDM OS. Use when user pastes an install prompt mentioning wip.computer/in...",
+    "tags": {
+      "latest": "0.4.84"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 100
+    },
+    "createdAt": 1773380753571,
+    "updatedAt": 1778307836295
+  },
+  "latestVersion": {
+    "version": "0.4.84",
+    "createdAt": 1777416688999,
+    "changelog": "# Universal Installer docs: align SPEC, TECHNICAL, README on the eight interfaces + install spec URL\n\nThe three docs in `docs/universal-installer/` were drifting and missing two interfaces and the install-spec URL story. This PR aligns them so a new AI can boot from the docs alone and follow Parker's acceptance sentence:\n\n> Use the install spec URL to learn the safe install flow; use catalog to resolve the slug; use `ldm install` with stable/alpha/beta track flags; installer detects and installs the product's declared interfaces; stacks install bundles.\n\n## Canonical interface order (now in the spec)\n\n1. CLI\n2. Module\n3. MCP Server (local stdio)\n4. **Remote MCP** (HTTP/SSE or streamable HTTP) ... new\n5. OpenClaw Plugin\n6. Skill\n7. Claude Code Hook\n8. **Claude Code Plugin** ... was already in TECHNICAL, now in SPEC\n\nLocal and Remote MCP sit next to each other because they are sibling transports. CC Plugin sits last because it bundles the others.\n\n## Remote MCP contract (pinned)\n\n> Remote MCP endpoint is **declared by package/catalog metadata** and **registered by `ldm install`**.\n\nConvention: `mcp.remote = { url, transport, auth }` in `package.json`. No filesystem-sniffing fallback. The repo opts in by writing the field. The catalog can override `url` if the package ships a placeholder.\n\nDetection and install action are tracked in `ai/product/bugs/installer/` (see Master Plan below). The spec is canonical now; the detector and installer catch up next.\n\n## What changed in this PR\n\n**SPEC.md**\n- New **Architecture Layers** section: Interface / Installer / Catalog / Install Spec / Stacks. One table. Acceptance sentence verbatim.\n- Renamed Six Interfaces to **Eight**, in the canonical order above.\n- Added **#3 MCP Server (local stdio)** clarifier and cross-link to #4.\n- Added **#4 Remote MCP** with pinned contract, convention, detection, install, and a \"how it differs from #3\" table.\n- Added **#8 Claude Code Plugin**.\n- Renamed \"The Reference Installer\" to **The Installer**. Added `--alpha` / `--beta` track flag examples.\n- New **Install Spec** section: URL convention, behavior contract (check, explain, dry-run, install, update, pair), origin (gen from / mirror of / alongside SKILL.md ... contract is URL+behavior), tracks, **install spec vs `agent.txt`** distinction, `wip-codex-remote-control` as worked example.\n\n**TECHNICAL.md**\n- Interface table updated to eight rows with numbering. Local and Remote MCP labeled.\n- Added **#4 Remote MCP** section with convention/detection/install/auth and pointers to the implementation tickets.\n- Detection table: added Remote MCP row, sharpened MCP row to \"local stdio\".\n- Replaced stale install prompt template (`{product-init} init --dry-run`) with canonical `ldm install --dry-run <slug>`.\n- Added Codex Remote Control to examples table.\n\n**README.md (docs/universal-installer/README.md)**\n- Pointer line updated to name all eight interfaces and reference the install spec URL convention + tracks.\n\n## Master plan and tickets\n\nFiled under `ai/product/bugs/installer/`:\n\n- [Master plan: eight interfaces alignment](ai/product/bugs/installer/2026-04-28--cc-mini--installer-eight-interfaces-master-plan.md)\n- [Remote MCP detection (#4)](ai/product/bugs/installer/2026-04-28--cc-mini--installer-remote-mcp-detection.md)\n- [Remote MCP install action (#4)](ai/product/bugs/installer/2026-04-28--cc-mini--installer-remote-mcp-install.md)\n- [Install spec URL publish pipeline](ai/product/bugs/installer/2026-04-28--cc-mini--install-spec-url-publish-pipeline.md)\n- [CC Plugin (#8) detection verified end-to-end](ai/product/bugs/installer/2026-04-28--cc-mini--installer-cc-plugin-detect-verified.md)\n- [Catalog audit for install-spec URL field](ai/product/bugs/installer/2026-04-28--cc-mini--catalog-install-spec-url-audit.md)\n\nThe PR delivers the canonical spec language. The tickets carry the implementation work to make Remote MCP, the install-spec publish pipeline, and the catalog field actually exist.\n\n## Sibling PR\n\n`tools/wip-universal-installer/SKILL.md` and `REFERENCE.md` in `wip-ai-devops-toolbox-private` still describe the older six-interface story. Refresh to the eight-interface taxonomy + install-spec URL pointer is a sibling PR (out of scope here).\n\n## Acceptance check\n\nAfter this PR, a new AI reading only `docs/universal-installer/SPEC.md` should be able to:\n\n1. Name the eight interfaces in canonical order.\n2. State the acceptance sentence verbatim (it is in the Architecture Layers section).\n3. Distinguish install spec URL from `agent.txt`.\n4. State the Remote MCP contract: declared by package/catalog metadata, registered by `ldm install`.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "parkertoddbrooks",
+    "userId": "s17620xzyc7kfan8m36at57m6n83h8he",
+    "displayName": "Parker Todd Brooks",
+    "image": "https://avatars.githubusercontent.com/u/585456?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.destructive_delete_command",
+      "suspicious.env_credential_access",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.destructive_delete_command, suspicious.env_credential_access (+4 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307836295
+  }
+}

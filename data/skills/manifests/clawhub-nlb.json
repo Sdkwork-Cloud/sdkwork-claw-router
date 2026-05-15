@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12988,
+  "uuid": "skill-clawhub-nlb",
+  "skillKey": "clawhub-nlb",
+  "name": "NLB",
+  "summary": "check loans and search resources from the National Library Board of Singapore",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nlb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kk17",
+      "features": [
+        "check loans and search resources from the National Library Board of Singapore"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nlb@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3477852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nlb",
+      "url": "https://clawhub.ai/skills/nlb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nlb",
+    "url": "https://clawhub.ai/skills/nlb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nlb-84d10d96ddb45ce6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nlb@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nlb-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f57b3a6651d7412be4b0e8650ef2be424445b745063a1d86075666d475be9fbf",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T16:23:12.990Z"
+}

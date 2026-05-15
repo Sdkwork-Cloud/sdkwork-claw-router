@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41847,
+  "uuid": "skill-clawhub-thundarr-browser",
+  "skillKey": "clawhub-thundarr-browser",
+  "name": "Thundarr Browser",
+  "summary": "Provides real-time web browsing and content extraction by navigating URLs and summarizing page text up to 2000 characters.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thundarr_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zrslu01",
+      "features": [
+        "Provides real-time web browsing and content extraction by navigating URLs and summarizing page."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thundarr-browser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50145180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thundarr-browser",
+      "url": "https://clawhub.ai/skills/thundarr-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thundarr-browser",
+    "url": "https://clawhub.ai/skills/thundarr-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thundarr-browser-d2d80a8b43a67144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thundarr-browser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-thundarr-browser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e63940da91f8a43ee0c1643d154c7049d95697c560bb1620551dbdd3827478e0",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:28:26.987Z"
+}

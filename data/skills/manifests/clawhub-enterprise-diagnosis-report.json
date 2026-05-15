@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68185,
+  "uuid": "skill-clawhub-enterprise-diagnosis-report",
+  "skillKey": "clawhub-enterprise-diagnosis-report",
+  "name": "enterprise-diagnosis-report",
+  "summary": "整合企业基本信息、财税诊断、政策匹配三份报告，生成综合诊断分析报告；当用户需要企业诊断报告汇总、财税分析整合或政策匹配综合分析时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_diagnosis_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangl271",
+      "features": [
+        "整合企业基本信息、财税诊断、政策匹配三份报告，生成综合诊断分析报告；当用户需要企业诊断报告汇总、财税分析整合或政策匹配综合分析时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-diagnosis-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10293674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-diagnosis-report",
+      "url": "https://clawhub.ai/skills/enterprise-diagnosis-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-diagnosis-report",
+    "url": "https://clawhub.ai/skills/enterprise-diagnosis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-diagnosis-report-4e057d8861c427b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-diagnosis-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-diagnosis-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fd866ea5fd75fb4e079ce6a2d2124df264a9ff05ce93df256e29626a8eeb466",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:55:59.631Z"
+}

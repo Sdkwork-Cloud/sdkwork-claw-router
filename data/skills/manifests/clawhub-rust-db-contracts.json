@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59826,
+  "uuid": "skill-clawhub-rust-db-contracts",
+  "skillKey": "clawhub-rust-db-contracts",
+  "name": "Rust + SeaORM Database Explicit Contracts",
+  "summary": "Rust + SeaORM 数据库显式契约规范。当项目涉及 Rust + SeaORM 数据库开发时自动激活。 核心：Entity 文件完全表达数据表，消灭隐式契约。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_db_contracts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiamu-ssr",
+      "features": [
+        "Rust + SeaORM 数据库显式契约规范。当项目涉及 Rust + SeaORM 数据库开发时自动激活。 核心：Entity 文件完全表达数据表，消灭隐式契约。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rust-db-contracts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77220168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rust-db-contracts",
+      "url": "https://clawhub.ai/skills/rust-db-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-db-contracts",
+    "url": "https://clawhub.ai/skills/rust-db-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-db-contracts-e05659cd175680bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rust-db-contracts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rust-db-contracts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:102630e6ca9c00a55888be46d479894fd958ec9abd2cd1818ab7901c75b04c55",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:34:07.348Z"
+}

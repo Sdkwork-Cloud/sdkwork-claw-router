@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bridging@1.0.2008",
+  "version": "1.0.2008",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bridging",
+  "skill": {
+    "id": 28747,
+    "skillKey": "clawhub-bridging",
+    "name": "bridging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bridging",
+    "url": "https://clawhub.ai/skills/bridging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bridging-d636295364c041fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge assets to and from Celo. Use when transferring tokens between Celo and other chains like Ethereum."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "san-npm",
+      "userId": "s175kbdsmv0pprwq28drz7prq983g5bj",
+      "displayName": "San Clemente",
+      "image": "https://avatars.githubusercontent.com/u/40546417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2008",
+      "createdAt": 1773067804503,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:826cae1c1a3ad279f1488c79af597d3bed5bf2da8a8f787afe2f2b7ba13f9768"
+}

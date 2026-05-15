@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/images-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.images_sender",
+  "skill": {
+    "id": 22346,
+    "skillKey": "clawhub-images-sender",
+    "name": "Images Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "images-sender",
+    "url": "https://clawhub.ai/skills/images-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/images-sender-e2c6ad9b2def0d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send images from Mac to phone via iMessage"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzyyyyyyyy",
+      "userId": "publishers:wzyyyyyyyy",
+      "displayName": "Wzyyyyyyyy",
+      "image": "https://avatars.githubusercontent.com/u/110662553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772964122074,
+      "changelog": "- Initial release of images-sender skill.\n- Send images from Mac to a phone number using iMessage via the Messages app.\n- Supports both automatic sending and manual commands for image transfer.\n- Stores all sent images in ~/Pictures/openclaw-send/ for reliable access.\n- Includes setup and configuration instructions for recipient phone number.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99315adc27862f89f7b919080a710644e7fa9c92689aa3c045882bbd71a880a8"
+}

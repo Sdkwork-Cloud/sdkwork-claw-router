@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66024,
+  "uuid": "skill-clawhub-adversarial-verification",
+  "skillKey": "clawhub-adversarial-verification",
+  "name": "Adversarial Verification",
+  "summary": "主动寻找系统漏洞和失败点，执行真实命令验证变更，识别自我借口，确保明确的通过或失败判决。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MiniJoy-B",
+      "features": [
+        "主动寻找系统漏洞和失败点，执行真实命令验证变更，识别自我借口，确保明确的通过或失败判决。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adversarial-verification@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265717845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adversarial-verification",
+      "url": "https://clawhub.ai/skills/adversarial-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-verification",
+    "url": "https://clawhub.ai/skills/adversarial-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-verification-0166e33449733d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adversarial-verification@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-verification-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63aeba1051be32602efca0eea7ea57676413999ac7b52fc9a77d42b4a7c6a2d4",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:17:38.093Z"
+}

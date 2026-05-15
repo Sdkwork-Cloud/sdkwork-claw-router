@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37994,
+  "uuid": "skill-clawhub-word-letter-frequency",
+  "skillKey": "clawhub-word-letter-frequency",
+  "name": "word-letter-frequency",
+  "summary": "Count how many times each letter appears in a word or short phrase. Trigger when a user asks for per-letter frequencies, distributions, or statistics inside...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_letter_frequency",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simmus",
+      "features": [
+        "Count how many times each letter appears in a word or short phrase",
+        "Trigger when a user asks for per-letter frequencies, distributions, or statistics inside..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-letter-frequency@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178979024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-letter-frequency",
+      "url": "https://clawhub.ai/skills/word-letter-frequency"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-letter-frequency",
+    "url": "https://clawhub.ai/skills/word-letter-frequency",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-letter-frequency-e245c6009aa00c75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-letter-frequency@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-letter-frequency-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f43487b55e112f03a6554cf90da556f30433e7bc105f4d1a9bb63c7cf23305a1",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:25:08.298Z"
+}

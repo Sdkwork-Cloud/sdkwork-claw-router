@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55830,
+  "uuid": "skill-clawhub-phonebase",
+  "skillKey": "clawhub-phonebase",
+  "name": "phonebase",
+  "summary": "Control Android cloud phones via the `pb` CLI. Make sure to use this skill whenever the user mentions logging into apps, installing apps, browsing on a phone...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phonebase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phonebase-cloud",
+      "features": [
+        "Control Android cloud phones via the `pb` CLI",
+        "Make sure to use this skill whenever the user mentions logging into apps, installing apps, brow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phonebase@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phonebase",
+      "url": "https://clawhub.ai/skills/phonebase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phonebase",
+    "url": "https://clawhub.ai/skills/phonebase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phonebase-67b5ec15a074c160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phonebase@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phonebase-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ebe3bba7255ed363aa9b36063d158488b36fd55032a50dd06a21b725e9ca203",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:35:45.067Z"
+}

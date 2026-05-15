@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57521,
+  "uuid": "skill-clawhub-lanhu-design",
+  "skillKey": "clawhub-lanhu-design",
+  "name": "Lanhu Design",
+  "summary": "Read Lanhu UI designs, extract slices, and download Web/iOS/Android assets using lh-design. Use when the user mentions 蓝湖, Lanhu, UI稿, 设计稿, 切图, iOS @2x/@3x,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lanhu_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuwenxindeai",
+      "features": [
+        "Read Lanhu UI designs, extract slices, and download Web/iOS/Android assets using lh-design",
+        "Use when the user mentions 蓝湖, Lanhu, UI稿, 设计稿, 切图, iOS @2x/@3x,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lanhu-design@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11506134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lanhu-design",
+      "url": "https://clawhub.ai/skills/lanhu-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lanhu-design",
+    "url": "https://clawhub.ai/skills/lanhu-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lanhu-design-1bce3e29efc14ff2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lanhu-design@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lanhu-design-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc30afa1928818e51c189076317bd8056356bd3c9f441556bd0704259f0772c8",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:50:48.555Z"
+}

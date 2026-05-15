@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40862,
+  "uuid": "skill-clawhub-neckr0ik-youtube-transcript",
+  "skillKey": "clawhub-neckr0ik-youtube-transcript",
+  "name": "Openclaw Youtube Transcript",
+  "summary": "Transcribe and extract subtitles from YouTube videos using yt-dlp by providing the video URL for text-based captions or transcripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neckr0ik_youtube_transcript",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neckr0ik",
+      "features": [
+        "Transcribe and extract subtitles from YouTube videos using yt-dlp by providing the video URL fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neckr0ik-youtube-transcript@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96146149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neckr0ik-youtube-transcript",
+      "url": "https://clawhub.ai/skills/neckr0ik-youtube-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neckr0ik-youtube-transcript",
+    "url": "https://clawhub.ai/skills/neckr0ik-youtube-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neckr0ik-youtube-transcript-ad952e75f3214185.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neckr0ik-youtube-transcript@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neckr0ik-youtube-transcript-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9467620338ddaabce70cf40d325ea6fdf2cd65eb14b6dd9eaff14c67d6a51090",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:53:33.341Z"
+}

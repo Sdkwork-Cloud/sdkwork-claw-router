@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69232,
+  "uuid": "skill-clawhub-feishu-bitable-tasker",
+  "skillKey": "clawhub-feishu-bitable-tasker",
+  "name": "Feishu Bitable Tasker",
+  "summary": "基于飞书知识库多维表格和文档能力的任务管理技能。提供创建任务、创建任务关联文档、修改任务状态等功能，可与外部工具灵活集成。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_tasker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KwokKwok",
+      "features": [
+        "基于飞书知识库多维表格和文档能力的任务管理技能。提供创建任务、创建任务关联文档、修改任务状态等功能，可与外部工具灵活集成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-tasker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22879367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-tasker",
+      "url": "https://clawhub.ai/skills/feishu-bitable-tasker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-tasker",
+    "url": "https://clawhub.ai/skills/feishu-bitable-tasker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-tasker-b581a94728a6c390.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-tasker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-tasker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8f2269a30127d99582ac9d933ab3716264ee34683dba1161d83fdd1fd572050",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:24:02.807Z"
+}

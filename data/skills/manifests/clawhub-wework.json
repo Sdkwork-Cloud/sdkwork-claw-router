@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68618,
+  "uuid": "skill-clawhub-wework",
+  "skillKey": "clawhub-wework",
+  "name": "Wework",
+  "summary": "企业微信开发助手，精通应用开发、客户联系、消息推送等企业 API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wework",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "企业微信开发助手，精通应用开发、客户联系、消息推送等企业 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wework@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wework",
+      "url": "https://clawhub.ai/skills/wework"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wework",
+    "url": "https://clawhub.ai/skills/wework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wework-5b81d52d431080c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wework@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wework-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4920400e3f8cdbfb15eec7d04879b45075cd3cd61897f97d48294b179077a04",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:17:42.892Z"
+}

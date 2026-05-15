@@ -3,7 +3,14 @@ import { Play, Loader2, X, CheckCircle2, XCircle, Trash2, Wand2, Eraser, AlertCi
 import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import { CopyButton, JsonSyntaxHighlight } from 'sdkwork-claw-router-commons';
-import { API_BASE_URL, getStoredAppSessionToken } from 'sdkwork-claw-router-commons/runtime';
+import {
+  API_BASE_URL,
+  buildPortalAuthLoginRedirect,
+  getStoredAppSessionAccessToken,
+  getStoredAppSessionAuthToken,
+  hasStoredPortalSession,
+} from 'sdkwork-claw-router-commons/runtime';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ApiPlaygroundParamsTable } from './ApiPlaygroundParamsTable';
 import type { ParamRow } from '../apiPlaygroundRows';
 import {
@@ -25,6 +32,8 @@ interface ApiPlaygroundProps {
 
 export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<PlaygroundResponse | null>(null);
   const [activeTab, setActiveTab] = useState<'params' | 'headers' | 'auth' | 'body'>('params');
@@ -174,7 +183,12 @@ export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
   };
 
   const handleSend = async (): Promise<PlaygroundResponse | null> => {
-    const sessionToken = getStoredAppSessionToken();
+    if (authType === 'current_user' && !hasStoredPortalSession()) {
+      navigate(buildPortalAuthLoginRedirect(location));
+      return null;
+    }
+    const authToken = getStoredAppSessionAuthToken();
+    const accessToken = getStoredAppSessionAccessToken();
     const request = buildPlaygroundRequest({
       baseUrl: API_BASE_URL,
       endpoint,
@@ -183,8 +197,9 @@ export function ApiPlayground({ endpoint, onClose }: ApiPlaygroundProps) {
       headerParams,
       bodyValue,
       authType,
+      accessToken,
       apiKey,
-      sessionToken,
+      authToken,
     });
 
     if (request.ok === false) {

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28549,
+  "uuid": "skill-clawhub-skill-crypto-threshold-watcher",
+  "skillKey": "clawhub-skill-crypto-threshold-watcher",
+  "name": "Crypto Threshold Watcher",
+  "summary": "Monitor any crypto token against configurable price/volume thresholds. Fires alerts when entry conditions are met. Use when you need proactive notification t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_crypto_threshold_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Monitor any crypto token against configurable price/volume thresholds",
+        "Fires alerts when entry conditions are met",
+        "Use when you need proactive notification t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-crypto-threshold-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-crypto-threshold-watcher",
+      "url": "https://clawhub.ai/skills/skill-crypto-threshold-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-crypto-threshold-watcher",
+    "url": "https://clawhub.ai/skills/skill-crypto-threshold-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-crypto-threshold-watcher-f0016e62f31abaef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-crypto-threshold-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-crypto-threshold-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f17b883051c64bc71684e94c22b7bfcd31ef86b536a927c851e78066264b995e",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:13:12.680Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63900,
+  "uuid": "skill-clawhub-rsa-ctf-skills",
+  "skillKey": "clawhub-rsa-ctf-skills",
+  "name": "rsa-ctf-skills",
+  "summary": "集成11种RSA攻击算法的CTF解题工具，支持factordb在线分解；当用户需要解密RSA密文、分解n模数、分析CTF密码学题目或实现特定RSA攻击场景时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rsa_ctf_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "集成11种RSA攻击算法的CTF解题工具，支持factordb在线分解；当用户需要解密RSA密文、分解n模数、分析CTF密码学题目或实现特定RSA攻击场景时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rsa-ctf-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rsa-ctf-skills",
+      "url": "https://clawhub.ai/skills/rsa-ctf-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rsa-ctf-skills",
+    "url": "https://clawhub.ai/skills/rsa-ctf-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rsa-ctf-skills-c76b5d80a2bc540b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rsa-ctf-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rsa-ctf-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feacf975a998967ba6f5140c9b8b9770330a999c520788d0efae30fb281c8c2d",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T21:28:59.726Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48103,
+  "uuid": "skill-clawhub-jhu",
+  "skillKey": "clawhub-jhu",
+  "name": "Jhu",
+  "summary": "Johns Hopkins University pioneered the modern American research university model, excelling in medical, public health, and federal research funding for over...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jhu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Johns Hopkins University pioneered the modern American research university model, excelling in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jhu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jhu",
+      "url": "https://clawhub.ai/skills/jhu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jhu",
+    "url": "https://clawhub.ai/skills/jhu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jhu-d260551d407e7aa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jhu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jhu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ef79be5e9136dd7c1e2a557fb206a9ef6441c5d4b2b4133e91a0e9faf8113b8",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T22:05:15.744Z"
+}

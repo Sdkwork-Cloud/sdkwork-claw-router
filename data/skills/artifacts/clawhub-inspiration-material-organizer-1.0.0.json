@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inspiration-material-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspiration_material_organizer",
+  "skill": {
+    "id": 73693,
+    "skillKey": "clawhub-inspiration-material-organizer",
+    "name": "灵感素材整理器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspiration-material-organizer",
+    "url": "https://clawhub.ai/skills/inspiration-material-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspiration-material-organizer-75df57133f12c464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将聊天记录、截图文字、链接和随手记等碎片灵感整理为可检索知识库。支持快速收录、智能分类、语义检索和灵感反刍。用户提到灵感整理、素材归档、笔记分类、找不到收藏内容、旧素材回顾时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nycxk",
+      "userId": "s17b0f0w4e62esdw83n137qs2h8577ph",
+      "displayName": "nycxk",
+      "image": "https://avatars.githubusercontent.com/u/57032061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776764264624,
+      "changelog": "Initial release: organize inspiration and material fragments into a searchable local knowledge base.\n\n- Supports fast capture of chat logs, screenshots, links, and notes as standardized cards.\n- Automatically classifies material using external, editable rule files; adds topic and keyword tags.\n- Enables keyword and simple semantic (token overlap) search for easy retrieval.\n- Provides scheduled review (rumination) of old material to prevent forgetting.\n- All data is stored locally in a JSON database, ensuring easy migration and privacy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9c7c88796d98a6e1c706fcaee9b0fa2f73aa6f8dee7e55974ff24bfc171d36d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solopreneur@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solopreneur",
+  "skill": {
+    "id": 20967,
+    "skillKey": "clawhub-solopreneur",
+    "name": "Solopreneur"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solopreneur",
+    "url": "https://clawhub.ai/skills/solopreneur",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solopreneur-c4cfbf4c17e2c64a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solo business management with dashboard, pipeline tracking, invoicing, and weekly reviews. Use when user mentions solo business, clients, revenue, pipeline,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773122995008,
+      "changelog": "Major update: Added business dashboard, pipeline tracking, invoicing, priority management, and weekly business reviews",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b00271b2d69ad44feace50cd9b349550895e120c19085ab15de59078df2fdf9b"
+}

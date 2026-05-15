@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34172,
+  "uuid": "skill-clawhub-write-adr",
+  "skillKey": "clawhub-write-adr",
+  "name": "Write Adr",
+  "summary": "Use when you want to generate Architecture Decision Records from this session. Triggers on \"write ADRs\", \"document our decisions\", \"create decision records\",...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_adr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Use when you want to generate Architecture Decision Records from this session",
+        "Triggers on \"write ADRs\", \"document our decisions\", \"create decision records\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/write-adr@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "write-adr",
+      "url": "https://clawhub.ai/skills/write-adr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-adr",
+    "url": "https://clawhub.ai/skills/write-adr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-adr-9dc69d91528c42ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/write-adr@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-write-adr-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dadd5a9a2377173e5793b5c60b17fa5195e0bf30103688a2f46942e8fc1ab71",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:04:50.111Z"
+}

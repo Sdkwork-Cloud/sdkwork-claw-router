@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33187,
+  "uuid": "skill-clawhub-wicked-reports",
+  "skillKey": "clawhub-wicked-reports",
+  "name": "Wicked Reports",
+  "summary": "Wicked Reports integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wicked Reports data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wicked_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wicked Reports integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wicked Reports data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wicked-reports@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wicked-reports",
+      "url": "https://clawhub.ai/skills/wicked-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wicked-reports",
+    "url": "https://clawhub.ai/skills/wicked-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wicked-reports-05f1389aa2f1d3e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wicked-reports@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wicked-reports-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a09606d75827930d005dd51936307eb8af5bbc3fcd96277227b326f865a99bed",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:15.019Z"
+}

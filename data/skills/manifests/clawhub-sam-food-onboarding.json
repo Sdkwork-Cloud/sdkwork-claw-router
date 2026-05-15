@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72338,
+  "uuid": "skill-clawhub-sam-food-onboarding",
+  "skillKey": "clawhub-sam-food-onboarding",
+  "name": "samOnboarding山姆超市产品上架指导",
+  "summary": "指导食品企业完成山姆超市产品上架全流程，包含客户需求分析、合规准备、申请提交、审核跟进、上架执行各阶段操作要点；当用户需要山姆上架指导、食品合规咨询或上架问题应对时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sam_food_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tinker",
+      "features": [
+        "指导食品企业完成山姆超市产品上架全流程，包含客户需求分析、合规准备、申请提交、审核跟进、上架执行各阶段操作要点；当用户需要山姆上架指导、食品合规咨询或上架问题应对时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sam-food-onboarding@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3884483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sam-food-onboarding",
+      "url": "https://clawhub.ai/skills/sam-food-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sam-food-onboarding",
+    "url": "https://clawhub.ai/skills/sam-food-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sam-food-onboarding-2e578e52baf8fcf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sam-food-onboarding@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sam-food-onboarding-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ed52a3a4b1f87289cefda66e086708c6bcd1eeafa08d31811c8cb6a9469f109",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:10:07.182Z"
+}

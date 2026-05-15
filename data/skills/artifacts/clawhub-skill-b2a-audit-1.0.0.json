@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-b2a-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_b2a_audit",
+  "skill": {
+    "id": 38521,
+    "skillKey": "clawhub-skill-b2a-audit",
+    "name": "B2A Agent-Discoverability Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-b2a-audit",
+    "url": "https://clawhub.ai/skills/skill-b2a-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-b2a-audit-cf3b5991008daf11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audits e-commerce sites for AI shopping agent discoverability, scoring product data, APIs, feeds, checkout compatibility, and description quality with priori..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774912347444,
+      "changelog": "Initial release: audit e-commerce sites for AI agent discoverability and readiness.\n\n- Generates a scored report and prioritized fix list for WooCommerce, Shopify, or custom storefronts.\n- Checks structured data (schema.org/Product), machine-readable catalog APIs, Google Shopping feed presence, agent checkout compatibility, and product description quality.\n- Uses a 5-dimension scorecard (0–10 per facet) and outputs results to a notes file.\n- Highlights quick wins for boosting agent-driven product visibility, especially ensuring GTINs and Merchant Center feed integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58274a4da8fbbee62e4eebb153225af291842f4e3f2cb9e6ff1c2f7730c97422"
+}

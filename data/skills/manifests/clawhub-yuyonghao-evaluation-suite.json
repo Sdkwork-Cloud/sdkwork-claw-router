@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28598,
+  "uuid": "skill-clawhub-yuyonghao-evaluation-suite",
+  "skillKey": "clawhub-yuyonghao-evaluation-suite",
+  "name": "Evaluation Suite",
+  "summary": "Provides API for evaluating RAG quality, logical reasoning, and detecting hallucinations in AI-generated content with batch support.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_evaluation_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "Provides API for evaluating RAG quality, logical reasoning, and detecting hallucinations in AI-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-evaluation-suite@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-evaluation-suite",
+      "url": "https://clawhub.ai/skills/yuyonghao-evaluation-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-evaluation-suite",
+    "url": "https://clawhub.ai/skills/yuyonghao-evaluation-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-evaluation-suite-c4ce9c325d0f26fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-evaluation-suite@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-evaluation-suite-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e78248e698bc1b2709540f7bb486f83028856e813a6279a0b0e4ac07662eeb2e",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:52:04.709Z"
+}

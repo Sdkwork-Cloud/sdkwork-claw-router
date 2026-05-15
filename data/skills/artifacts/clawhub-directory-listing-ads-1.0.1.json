@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/directory-listing-ads@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.directory_listing_ads",
+  "skill": {
+    "id": 21423,
+    "skillKey": "clawhub-directory-listing-ads",
+    "name": "directory-listing-ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "directory-listing-ads",
+    "url": "https://clawhub.ai/skills/directory-listing-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/directory-listing-ads-607412162dadd59e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to run paid ads within directories or marketplaces. Also use when the user mentions \"Taaft ads,\" \"Shopify App Store ads,\" \"G2 sponsored,\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 500,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775125951696,
+      "changelog": "Batch: ctv through google-ads",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:643bd401bebcfb352e48036343eba6d7b64325b3ce528c16cd7f464980ef5812"
+}

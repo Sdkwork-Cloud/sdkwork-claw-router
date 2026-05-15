@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41185,
+  "uuid": "skill-clawhub-pilot-expense-tracker-setup",
+  "skillKey": "clawhub-pilot-expense-tracker-setup",
+  "name": "Pilot Expense Tracker Setup",
+  "summary": "Deploy an expense tracking pipeline with 3 agents that automate receipt collection, categorization, and report generation. Use this skill when: 1. User wants...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_expense_tracker_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy an expense tracking pipeline with 3 agents that automate receipt collection, categorizat.",
+        "Use this skill when: 1",
+        "User wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-expense-tracker-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-expense-tracker-setup",
+      "url": "https://clawhub.ai/skills/pilot-expense-tracker-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-expense-tracker-setup",
+    "url": "https://clawhub.ai/skills/pilot-expense-tracker-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-expense-tracker-setup-639257eaf7bbf9a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-expense-tracker-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-expense-tracker-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b4e6d0a6190eb6b229b6c927385931c46524365af72b19c4635f8ecaddc5d3a",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:33:21.027Z"
+}

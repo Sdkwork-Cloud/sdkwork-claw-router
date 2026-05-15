@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mee6@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mee6",
+  "skill": {
+    "id": 55927,
+    "skillKey": "clawhub-mee6",
+    "name": "mee6"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mee6",
+    "url": "https://clawhub.ai/skills/mee6",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mee6-86a1ded79bb0e47a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mee6 operations via Discord message tool (channel=discord)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilmn25",
+      "userId": "publishers:ilmn25",
+      "displayName": "illu k",
+      "image": "https://avatars.githubusercontent.com/u/128434866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772034700656,
+      "changelog": "- Initial release of Mee6 skill for managing Mee6 bot via Discord messages.\n- Supports level checks, XP management, role creation, enabling/disabling plugins, and prefix changes.\n- Requires Discord channel to be set and Mee6 to be addressed using the server's prefix.\n- No extra permissions needed beyond standard Discord skill configuration.\n- Commands are sent only when specifically interacting with the Mee6 bot.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:374ae65a347f8e7e4d3d7707e0cab0958b0f3c700e4f2856fb278a2001954911"
+}

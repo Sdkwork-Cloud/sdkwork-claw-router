@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10831,
+  "uuid": "skill-clawhub-java-change-with-tests",
+  "skillKey": "clawhub-java-change-with-tests",
+  "name": "Java changing with tests",
+  "summary": "Guide Java changes with minimal edits, verify using unit/integration tests as needed, and provide a PR-ready summary including plans, changes, test results,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_change_with_tests",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanerilyazov",
+      "features": [
+        "Guide Java changes with minimal edits, verify using unit/integration tests as needed, and provi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/java-change-with-tests@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40195717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "java-change-with-tests",
+      "url": "https://clawhub.ai/skills/java-change-with-tests"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-change-with-tests",
+    "url": "https://clawhub.ai/skills/java-change-with-tests",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-change-with-tests-01568e5e4c982d1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/java-change-with-tests@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-java-change-with-tests-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76927199a5bd8ac1e8af7d84a4a3cee592b6d10c793b5a51abae0af32600e20f",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T09:00:42.627Z"
+}

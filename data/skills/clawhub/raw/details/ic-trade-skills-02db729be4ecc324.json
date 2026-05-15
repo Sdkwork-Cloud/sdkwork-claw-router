@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "ic-trade-skills",
+    "displayName": "chip-trade-skills",
+    "summary": "Connects local ERP inventory with IC Trade Navigator API for real-time IC pricing, risk scores, and trade advice without exposing your financial data.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775313740769,
+    "updatedAt": 1777527166550
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775313740769,
+    "changelog": "IC Trade Navigator — MCP Connector 1.0.0\n\n- First public release of a privacy-focused connector between local ERP inventory and the IC Trade Navigator API.\n- Reads local inventory Excel files (part numbers and stock quantities only); never transmits sensitive pricing or financial data.\n- Returns real-time quotes, risk scores, and language-localized trade advisories, merging API data with local stock information before display.\n- Provides three MCP tool endpoints for Claude Desktop: single part quote, inventory lookup, and unified local+market view.\n- Easy setup via environment variables and supports custom Excel column mapping.\n- Enforces strict field blocking to guarantee your business data remains local.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "oppstie",
+    "userId": "s17bcg3ck950f0tg66cy8prx9h846eyw",
+    "displayName": "Jayictw",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527166550
+  }
+}

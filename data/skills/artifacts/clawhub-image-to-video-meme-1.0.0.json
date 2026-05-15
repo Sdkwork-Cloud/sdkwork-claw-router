@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-meme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_meme",
+  "skill": {
+    "id": 44400,
+    "skillKey": "clawhub-image-to-video-meme",
+    "name": "Image To Video Meme"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-meme",
+    "url": "https://clawhub.ai/skills/image-to-video-meme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-meme-6aff65714c37f274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single reaction image or meme template PNG into 1080p animated meme videos just by typing what you need. Whether it's turning static meme images into..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776169983654,
+      "changelog": "Image-to-Video Meme Skill 1.0.0 — Initial Release\n\n- Instantly convert static meme images (JPG, PNG, GIF, WEBP) to 1080p animated meme videos via cloud processing.\n- Simple workflow: upload an image, describe your desired meme video, and get an MP4 output in 20–40 seconds.\n- No manual editing or export settings required—just describe the effect or format you want.\n- Supports meme video creation with animated text, audio tracks, aspect ratio changes, and social-media-ready formats.\n- Automatic backend/session handling, with free credits and concise error feedback for a smooth first-time experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e1d407eeb3900d71494d37e798dec34a505f6a9a8fc9c5c118501bc2b8ae7a3"
+}

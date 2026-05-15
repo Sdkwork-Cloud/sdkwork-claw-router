@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69144,
+  "uuid": "skill-clawhub-game-theory-debate",
+  "skillKey": "clawhub-game-theory-debate",
+  "name": "Game Theory Debate",
+  "summary": "博弈论决策引擎：当用户请求决策时，自动启动多策略博弈分析，找到优势策略，均衡思维，接受失败作为学习代价。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_theory_debate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AnFengxiaoGuo",
+      "features": [
+        "博弈论决策引擎：当用户请求决策时，自动启动多策略博弈分析，找到优势策略，均衡思维，接受失败作为学习代价。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-theory-debate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139884360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-theory-debate",
+      "url": "https://clawhub.ai/skills/game-theory-debate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-theory-debate",
+    "url": "https://clawhub.ai/skills/game-theory-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-theory-debate-45d1521098cfe8ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-theory-debate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-theory-debate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c57dce18b1cef384b40b7abae52a346358a7a193b1a2e67b0f4c3e7b32b6dc1d",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:24:35.974Z"
+}

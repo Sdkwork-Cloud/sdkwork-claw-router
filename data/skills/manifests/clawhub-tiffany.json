@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71961,
+  "uuid": "skill-clawhub-tiffany",
+  "skillKey": "clawhub-tiffany",
+  "name": "Tiffany",
+  "summary": "提供蒂芙尼珠宝系列、订婚戒指建议、价格信息及门店查询，助您了解美国顶级奢侈品牌产品详情。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiffany",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供蒂芙尼珠宝系列、订婚戒指建议、价格信息及门店查询，助您了解美国顶级奢侈品牌产品详情。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiffany@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiffany",
+      "url": "https://clawhub.ai/skills/tiffany"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiffany",
+    "url": "https://clawhub.ai/skills/tiffany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiffany-834d79caa6e0efb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiffany@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiffany-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:979f4efacfdf3a34f5655cb1c83760873244582fd9357ec43246d4a44e050f61",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:27:27.799Z"
+}

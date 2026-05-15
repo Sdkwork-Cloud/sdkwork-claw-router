@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-failure-spike-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_failure_spike_audit",
+  "skill": {
+    "id": 29190,
+    "skillKey": "clawhub-github-actions-failure-spike-audit",
+    "name": "GitHub Actions Failure Spike Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-failure-spike-audit",
+    "url": "https://clawhub.ai/skills/github-actions-failure-spike-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-failure-spike-audit-085731cbb7409326.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect sudden GitHub Actions failure-rate spikes by workflow group using recent-vs-baseline run windows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772877888673,
+      "changelog": "Initial release: detect workflow failure-rate spikes from recent vs baseline run windows with text/json outputs, regex filters, and fail gate.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:600af2d7378b1ff19c12b3d43cf4bfbccbcfcaa76fb6e3305bb1f1a10918b1f6"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31989,
+  "uuid": "skill-clawhub-gate-mcp-skill",
+  "skillKey": "clawhub-gate-mcp-skill",
+  "name": "Gate MCP Skill",
+  "summary": "Use Gate MCP through UXC for public spot and futures market data workflows with a fixed streamable-http endpoint and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Use Gate MCP through UXC for public spot and futures market data workflows with a fixed streama."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-mcp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-mcp-skill",
+      "url": "https://clawhub.ai/skills/gate-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-skill",
+    "url": "https://clawhub.ai/skills/gate-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-skill-ccf5ad19ee229d85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-mcp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67bbca22a6b08636a0d08a114bf535669d06100f0a477f02c4e2782993e877d3",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:02:51.684Z"
+}

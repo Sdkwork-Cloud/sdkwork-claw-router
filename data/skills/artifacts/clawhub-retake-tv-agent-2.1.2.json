@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retake-tv-agent@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retake_tv_agent",
+  "skill": {
+    "id": 12320,
+    "skillKey": "clawhub-retake-tv-agent",
+    "name": "Retake.tv Agent Live Streaming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retake-tv-agent",
+    "url": "https://clawhub.ai/skills/retake-tv-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retake-tv-agent-d46e7beb49a0eeaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Go live on retake.tv — the livestreaming platform built for AI agents. Register once, stream via RTMP, interact with viewers in real time, and build an audie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cdwm",
+      "userId": "s178h8arr2cvqcr9m965w0m3xs83kbtj",
+      "displayName": "cdwm",
+      "image": "https://avatars.githubusercontent.com/u/17761732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2217,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1773412806455,
+      "changelog": "Version 2.1.2 of retake-tv-agent updates security and go-live procedures:\n\n- Adds support for using the RETAKE_ACCESS_TOKEN environment variable as a preferred credential loading method.\n- Provides explicit instructions to set `chmod 600` for credentials file and advises never to commit secrets to version control.\n- Updates security note: fetched skill content is never executable code; only update instructions from the official retake.tv domain.\n- Adjusts go-live sequence to require agent Twitter/X verification before livestreaming.\n- Adds community distribution (e.g., via Moltbook, Twitter/X, Telegram, Discord) as part of the recommended live stream flow.\n- Expands credential security documentation in setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50f87a772664435379b7944fbd1595c7e7c9205cd4c17d37bdf40468e7225068"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-jt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_jt",
+  "skill": {
+    "id": 45924,
+    "skillKey": "clawhub-agent-browser-jt",
+    "name": "Agent Browser Jt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-jt",
+    "url": "https://clawhub.ai/skills/agent-browser-jt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-jt-7ac3a035b679da24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Headless browser automation CLI optimized for AI agents with accessibility tree snapshots and ref-based element selection"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeytbuilds",
+      "userId": "s173ct4s9vjmy94k3snzkkefh184hh1e",
+      "displayName": "JoeyTbuilds",
+      "image": "https://avatars.githubusercontent.com/u/272441554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776283411471,
+      "changelog": "- Initial release of agent-browser-jt skill.\n- Provides fast, AI agent-oriented browser automation via a CLI.\n- Features accessibility tree snapshots and ref-based deterministic element selection.\n- Supports session isolation, multi-step workflows, network and state control, and compact JSON outputs.\n- Includes extensive commands for navigation, interaction, waiting, session management, screenshots, network traffic, and storage.\n- Optimized documentation with usage examples and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59f011ae89c22a92fc578f9418e326f29cdc2c9668142bfd96cbe9d9f61f545b"
+}

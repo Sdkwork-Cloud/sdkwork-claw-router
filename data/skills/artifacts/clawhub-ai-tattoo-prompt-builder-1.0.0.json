@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-tattoo-prompt-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_tattoo_prompt_builder",
+  "skill": {
+    "id": 41707,
+    "skillKey": "clawhub-ai-tattoo-prompt-builder",
+    "name": "AI Tattoo Prompt Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-tattoo-prompt-builder",
+    "url": "https://clawhub.ai/skills/ai-tattoo-prompt-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-tattoo-prompt-builder-f309a79657d656ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn vague tattoo ideas into stronger AI-ready prompts by combining motif, style, placement, scale, and mood into one clearer instruction. Use when Codex nee..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alpha777778",
+      "userId": "s17d3szs10zeh89gvbj3vdv7ds84hscj",
+      "displayName": "Alpha777778",
+      "image": "https://avatars.githubusercontent.com/u/192169224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775753587296,
+      "changelog": "ai-tattoo-prompt-builder v1.0.0\n\n- Initial release.\n- Converts vague tattoo ideas into clear, AI-ready prompts by combining motif, style, placement, scale, and mood.\n- Provides structured workflow, prompt formula, and rewrite guidelines to improve prompt quality.\n- Outputs improved prompts with variants and a clarity note for image generation or artist discussion.\n- Ensures prompts remain visually specific and placement-aware.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:816a7888e0cd71d9f8a3c995c849aa295145a6a234d789b0bf418fbbe3d18ddf"
+}

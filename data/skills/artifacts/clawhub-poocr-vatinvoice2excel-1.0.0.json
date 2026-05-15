@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poocr-vatinvoice2excel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poocr_vatinvoice2excel",
+  "skill": {
+    "id": 62652,
+    "skillKey": "clawhub-poocr-vatinvoice2excel",
+    "name": "poocr vatinvoice2excel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poocr-vatinvoice2excel",
+    "url": "https://clawhub.ai/skills/poocr-vatinvoice2excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poocr-vatinvoice2excel-845130939d816c22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 poocr 库识别发票并导出 Excel。当用户需要识别增值税发票、批量处理发票文件或提取发票信息到 Excel 时调用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwanfeng",
+      "userId": "publishers:coderwanfeng",
+      "displayName": "程序员晚枫",
+      "image": "https://avatars.githubusercontent.com/u/40364228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773681643691,
+      "changelog": "poocr-vatinvoice2excel 1.0.0 initial release:\n\n- 新增发票识别技能，基于 poocr 库和腾讯云 AI，实现增值税发票 OCR，并导出结果为 Excel。\n- 支持单张和批量发票识别，兼容 PDF、JPG、PNG 格式。\n- 自动提取发票号码、开票日期、金额、税额等关键信息。\n- 提供详细使用说明和代码示例，方便集成与调用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc3a3c5b74b78e722a6f23b111646f647dbdfe34ad5ab79774ebd5d6195d9db6"
+}

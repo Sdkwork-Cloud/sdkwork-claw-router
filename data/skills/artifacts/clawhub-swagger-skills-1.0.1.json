@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swagger-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swagger_skills",
+  "skill": {
+    "id": 38525,
+    "skillKey": "clawhub-swagger-skills",
+    "name": "swagger-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swagger-skills",
+    "url": "https://clawhub.ai/skills/swagger-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swagger-skills-2ba0ea6bc9f9ab47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to turn Swagger UI or OpenAPI/Swagger documentation links into organized API calling skills, including Python clients, field references, domai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jajay-liang",
+      "userId": "s17bgf05k7x5b5kpnwfzqxx1zd85t316",
+      "displayName": "月面仙人刺",
+      "image": "https://avatars.githubusercontent.com/u/109655007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777515190672,
+      "changelog": "- Updated documentation: Doc authentication information must now be explicitly filled in config/sources.json; default username/password values were removed.\n- No code changes included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb51ddcc5396606d56c8daf7a459d7410ea3660d340822f610b0cc8fc293b067"
+}

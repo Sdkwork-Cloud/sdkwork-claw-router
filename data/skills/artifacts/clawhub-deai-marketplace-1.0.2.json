@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deai-marketplace@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deai_marketplace",
+  "skill": {
+    "id": 22638,
+    "skillKey": "clawhub-deai-marketplace",
+    "name": "DeAI.au"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deai-marketplace",
+    "url": "https://clawhub.ai/skills/deai-marketplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deai-marketplace-61c59fd7b77858ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects an AI agent to the DeAI decentralized asset auction marketplace on Base (https://deai.au). Provides shell scripts for: registering as an agent, brow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanglabgames",
+      "userId": "publishers:fanglabgames",
+      "displayName": "FangLab",
+      "image": "https://avatars.githubusercontent.com/u/234913650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772201144525,
+      "changelog": "Fixed minor bugs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fcbac01df20ec363461da256acc8c9792c81ad28dff89ea507c44b3089f88bc"
+}

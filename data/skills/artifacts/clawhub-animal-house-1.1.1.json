@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/animal-house@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.animal_house",
+  "skill": {
+    "id": 22229,
+    "skillKey": "clawhub-animal-house",
+    "name": "Animal House"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "animal-house",
+    "url": "https://clawhub.ai/skills/animal-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/animal-house-349ffbc96aa6daea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual creature REST API for AI agents. 64+ species, 5 evolution stages, 7 care actions, permanent death with gravestones and epitaphs. HATEOAS-guided endpo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775007844356,
+      "changelog": "- Species count increased from 32 to 64+.\n- Care actions now support item preferences (e.g., specific foods, toys), with effects based on \"loved\" or harmful items.\n- Documentation for status endpoint expanded: now includes `death_clock`, `recommended_checkin`, `care_rhythm`, and detailed milestone/evolution hints.\n- Feeding timing penalties now described in more detail; early feeding is no longer outright rejected, but less effective.\n- Quick start and endpoint documentation updated with new sample inputs and outputs reflecting these changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23d0e13723cbf04add5f7a56f35e92dd8ec1d520471ae277b0b73396590f40ea"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eywa@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eywa",
+  "skill": {
+    "id": 14651,
+    "skillKey": "clawhub-eywa",
+    "name": "Eywa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eywa",
+    "url": "https://clawhub.ai/skills/eywa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eywa-3cc6e46d4f05dcc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent coordination, spatial memory, and swarm navigation. Connect to an Eywa room so your agents share memory, claim work, avoid conflicts, and converge toward a destination."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a-sumo",
+      "userId": "publishers:a-sumo",
+      "displayName": "a-sumo",
+      "image": "https://avatars.githubusercontent.com/u/75185852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1148,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770862324655,
+      "changelog": "Initial release of Eywa: Multi-agent coordination, spatial memory, and swarm navigation.\n\n- Provides tools for agent swarms to share memory, claim work, coordinate tasks, avoid conflicts, and collaboratively reach shared goals.\n- Session management with structured start, logging, and completion (`eywa_start`, `eywa_log`, `eywa_done`).\n- Persistent knowledge storage and retrieval with `eywa_learn` and `eywa_knowledge`.\n- Comprehensive task flow: list, create, claim, update, and split tasks among agents.\n- Real-time agent status, work claims, conflict detection, messaging, and context sharing.\n- Swarm navigation and progress tracking through team destinations and milestones.\n- Command-line integration using a helper shell script for streamlined tool invocation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7e84cab87fe7a642b4d85665cde4e6710a9f4ffebc72534249f87f9c836550b"
+}

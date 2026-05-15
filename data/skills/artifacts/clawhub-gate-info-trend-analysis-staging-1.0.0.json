@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-info-trend-analysis-staging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_trend_analysis_staging",
+  "skill": {
+    "id": 44754,
+    "skillKey": "clawhub-gate-info-trend-analysis-staging",
+    "name": "gate-info-trendanalysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-trend-analysis-staging",
+    "url": "https://clawhub.ai/skills/gate-info-trend-analysis-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-trend-analysis-staging-ef79fe6420294203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trend and technical analysis. Use this skill ONLY when the user's query is exclusively about technical indicators or trend analysis for one coin with no othe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775524570856,
+      "changelog": "Initial release of gate-info-trendanalysis — a dedicated Trend and Technical Analysis skill.\n\n- Provides structured technical analysis reports based on user queries about a single coin's price trends or indicators.\n- Triggers only for technical-analysis-focused queries; routes broader/multi-dimensional queries to gate-info-research.\n- Aggregates data from 4 MCP tools: K-line, indicator history, multi-timeframe signals, and market snapshot.\n- Includes detailed intent checks, parameter extraction, and parallel tool execution.\n- Outputs a comprehensive report covering trend, indicators (RSI, MACD, Bollinger), support/resistance, and multi-timeframe signals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c983fb5dfc385e969a2f370db481fc9aba4ec960b152588e3b25dd48c33dae07"
+}

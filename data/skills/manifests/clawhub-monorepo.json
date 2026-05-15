@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19746,
+  "uuid": "skill-clawhub-monorepo",
+  "skillKey": "clawhub-monorepo",
+  "name": "Monorepo Management",
+  "summary": "Build and manage monorepos with Turborepo, Nx, and pnpm workspaces — covering workspace structure, dependency management, task orchestration, caching, CI/CD, and publishing. Use when setting up monorepos, optimizing builds, or managing sha.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monorepo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Build and manage monorepos with Turborepo, Nx, and pnpm workspaces — covering workspace structu.",
+        "Use when setting up monorepos, optimizing builds, or managing shared packages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monorepo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monorepo",
+      "url": "https://clawhub.ai/skills/monorepo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monorepo",
+    "url": "https://clawhub.ai/skills/monorepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monorepo-8912ed2aea0e32a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monorepo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monorepo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fab4a0096c9b7c6e6d6c8c7199d38129cd73af2bd3233e29fe27d11616145033",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:17:15.113Z"
+}

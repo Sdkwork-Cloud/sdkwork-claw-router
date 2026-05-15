@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54746,
+  "uuid": "skill-clawhub-tdd",
+  "skillKey": "clawhub-tdd",
+  "name": "TDD Workflow",
+  "summary": "Test-Driven Development for coding and bug fixing. cycle - Red→Green→Refactor cycle, defining expected behavior, bug-fix TDD, anti-patterns [cycle.md], run -...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "es6kr",
+      "features": [
+        "Test-Driven Development for coding and bug fixing",
+        "Red→Green→Refactor cycle, defining expected behavior, bug-fix TDD, anti-patterns [cycle.md], ru."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tdd@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/819969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tdd",
+      "url": "https://clawhub.ai/skills/tdd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdd",
+    "url": "https://clawhub.ai/skills/tdd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdd-17c706b273e4f19e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tdd@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tdd-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fba6575ad41087b1610c41c4fbd8c9a77867f7f013134c24663b4616f54fee2",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T04:14:06.615Z"
+}

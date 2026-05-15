@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/little-steve-agent-guard@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.little_steve_agent_guard",
+  "skill": {
+    "id": 22293,
+    "skillKey": "clawhub-little-steve-agent-guard",
+    "name": "Little Steve Agent Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "little-steve-agent-guard",
+    "url": "https://clawhub.ai/skills/little-steve-agent-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/little-steve-agent-guard-7c544bcf7155761d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-evolving security system for agent skills enforcing risk assessment, audit logging, tiered approvals, and continuous rule updates on all skill commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echoofzion",
+      "userId": "s17ej02800d0dg2kqsy5rw9rm183krqd",
+      "displayName": "EchoOfZion",
+      "image": "https://avatars.githubusercontent.com/u/212151438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772874906416,
+      "changelog": "Add path whitelist and input validation to rule operations (blocks path traversal and injection)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db813766969c3484e06aa9f72ea0bdfc0a15a27eafd93894c5f09479bd5ec50d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swap",
+  "skill": {
+    "id": 54840,
+    "skillKey": "clawhub-swap",
+    "name": "swap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swap",
+    "url": "https://clawhub.ai/skills/swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swap-da47c2f450a4f9d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure Linux swap — create swap file, set swappiness, persist via fstab, resize swap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjxylc",
+      "userId": "s1786jfbpn6hbdjmwa5tvkhmcx83hy91",
+      "displayName": "zjxylc",
+      "image": "https://avatars.githubusercontent.com/u/3221085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774950013517,
+      "changelog": "- Initial release of the swap skill for Linux.\n- Supports creating, resizing, and configuring swap files.\n- Guides persisting swap via /etc/fstab.\n- Includes steps for setting and persisting the swappiness parameter.\n- Offers verification commands after each operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:822a9d0c72b04e1c38a9a02bfa41950f6e49dc7c713b78960eb1c7f8e381fb8a"
+}

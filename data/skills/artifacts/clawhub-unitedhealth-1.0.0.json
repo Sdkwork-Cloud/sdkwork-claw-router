@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unitedhealth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unitedhealth",
+  "skill": {
+    "id": 44933,
+    "skillKey": "clawhub-unitedhealth",
+    "name": "Unitedhealth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unitedhealth",
+    "url": "https://clawhub.ai/skills/unitedhealth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unitedhealth-5e9ceb28244d0645.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides background information on Unitedhealth including history, core services, global presence, and recent news for market research and analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776491975428,
+      "changelog": "- Initial release of the unitedhealth skill, providing background information on UnitedHealth.\n- Covers founding story, key products/services, global presence, and recent news or strategies.\n- Designed for market research, product comparison, and business background investigation.\n- Encourages using official and reputable sources for the most accurate data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91fd2e6f9438ba57fb4f6b77c104a1b3f4ae39629b9e1e404b2f8a83b775068d"
+}

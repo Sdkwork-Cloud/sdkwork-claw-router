@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/changebrief@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changebrief",
+  "skill": {
+    "id": 27869,
+    "skillKey": "clawhub-changebrief",
+    "name": "ChangeBrief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changebrief",
+    "url": "https://clawhub.ai/skills/changebrief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changebrief-7e1495f2d27fac4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Change intelligence skill that compares previous and current knowledge snapshots, surfaces what was newly added, which claims changed, what conclusions are n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775294331508,
+      "changelog": "Fix the published package path so ChangeBrief ships the correct skill files and metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86598b7c5bd491089db8aff51364dcb71b8c7f5446a538e7d82de89b5951d138"
+}

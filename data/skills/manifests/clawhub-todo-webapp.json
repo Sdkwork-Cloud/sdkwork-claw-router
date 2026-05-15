@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22470,
+  "uuid": "skill-clawhub-todo-webapp",
+  "skillKey": "clawhub-todo-webapp",
+  "name": "TODO Web App",
+  "summary": "Deploy a local TODO web app that reads and writes a Markdown TODO.md file. Serves a beautiful dark-themed, glassmorphism UI on the LAN (no HTTPS needed). Fea...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_webapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwhowa",
+      "features": [
+        "Deploy a local TODO web app that reads and writes a Markdown TODO.md file",
+        "Serves a beautiful dark-themed, glassmorphism UI on the LAN (no HTTPS needed)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-webapp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83919605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-webapp",
+      "url": "https://clawhub.ai/skills/todo-webapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-webapp",
+    "url": "https://clawhub.ai/skills/todo-webapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-webapp-a2712688bc9b0a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-webapp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-webapp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d338ae75486d454205a33cfeb4bb22de208986744b06c5f455acdc5bbd2e4f9d",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:52:12.227Z"
+}

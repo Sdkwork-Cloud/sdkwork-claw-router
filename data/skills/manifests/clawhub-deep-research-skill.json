@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65863,
+  "uuid": "skill-clawhub-deep-research-skill",
+  "skillKey": "clawhub-deep-research-skill",
+  "name": "Deep Research",
+  "summary": "深度调研的多Agent编排工作流：把一个调研目标拆成可并行子目标，用 Claude Code 非交互模式（`claude -p`）运行子进程；联网与采集优先使用已安装的 skills，其次使用 MCP 工具；用脚本聚合子结果并分章精修，最终交付\"成品报告文件路径 + 关键结论/建议摘要\"。用于：系统性网页/资料调...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengfei Ni",
+      "features": [
+        "深度调研的多Agent编排工作流：把一个调研目标拆成可并行子目标，用 Claude Code 非交互模式（`claude -p`）运行子进程；联网与采集优先使用已安装的 skills，其次使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/676637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-skill",
+      "url": "https://clawhub.ai/skills/deep-research-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-skill",
+    "url": "https://clawhub.ai/skills/deep-research-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-skill-014400b211b19648.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:031bbf4adb80ade33b387d7015230269b90c73a485ec8019f8f7cbd5d352286b",
+      "artifactSizeBytes": 3022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:07:48.670Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9927,
+  "uuid": "skill-clawhub-memory-lancedb-hybrid",
+  "skillKey": "clawhub-memory-lancedb-hybrid",
+  "name": "LanceDB Hybrid Search Memory Plugin",
+  "summary": "LanceDB long-term memory plugin with BM25 + vector hybrid search (RRF or linear reranking).",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_lancedb_hybrid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joeykrug",
+      "features": [
+        "LanceDB long-term memory plugin with BM25 + vector hybrid search (RRF or linear reranking)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-lancedb-hybrid@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5925937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-lancedb-hybrid",
+      "url": "https://clawhub.ai/skills/memory-lancedb-hybrid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-lancedb-hybrid",
+    "url": "https://clawhub.ai/skills/memory-lancedb-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-lancedb-hybrid-90f680f6b6a172d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-lancedb-hybrid@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-lancedb-hybrid-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc77d1606c6c4ef15eb041f4c80bfc6b3cb51fc764ee36429fdfa3dbff95c629",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:42:12.598Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopyo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopyo",
+  "skill": {
+    "id": 30550,
+    "skillKey": "clawhub-shopyo",
+    "name": "shopyo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopyo",
+    "url": "https://clawhub.ai/skills/shopyo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopyo-1148c7ee63eb1379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Modular Flask framework for building scalable, maintainable web apps with isolated modules, event-driven communication, CLI tools, and built-in auth and data..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdur-rahmaanj",
+      "userId": "publishers:abdur-rahmaanj",
+      "displayName": "Abdur-rahmaanJ",
+      "image": "https://avatars.githubusercontent.com/u/22630684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773902569132,
+      "changelog": "Initial release of Shopyo skill.\n\n- Introduces Shopyo, a modular Flask framework designed for maintainability, extensibility, and real-world scale.\n- Provides detailed project structure, CLI commands, and conventions for modular development.\n- Documentation includes module creation patterns, configuration, event system usage, and testing strategies.\n- Lists default credentials and requirements for local development and static files.\n- Emphasizes isolation between modules and the use of Shopyo’s event system for communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e24bbd4c7d8960c3f333a4f601851ca54b5d21e329d0783a53eebad6a5e9634e"
+}

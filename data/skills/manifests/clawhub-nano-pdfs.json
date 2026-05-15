@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26944,
+  "uuid": "skill-clawhub-nano-pdfs",
+  "skillKey": "clawhub-nano-pdfs",
+  "name": "Pub Nanopdf",
+  "summary": "Edit PDFs with natural-language instructions using the nano-pdf CLI. And also 50+ models for image generation, video generation, text-to-speech, speech-to-te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_pdfs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Edit PDFs with natural-language instructions using the nano-pdf CLI",
+        "And also 50+ models for image generation, video generation, text-to-speech, speech-to-te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-pdfs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-pdfs",
+      "url": "https://clawhub.ai/skills/nano-pdfs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-pdfs",
+    "url": "https://clawhub.ai/skills/nano-pdfs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-pdfs-f51867f8d70b9bd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-pdfs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-pdfs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e43d81105684a217a4877a57a64b8e4d8c26ce57e52ad3507041b581c3eb5d1d",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:08:22.802Z"
+}

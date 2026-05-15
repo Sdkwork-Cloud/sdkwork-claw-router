@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12907,
+  "uuid": "skill-clawhub-paste-rs",
+  "skillKey": "clawhub-paste-rs",
+  "name": "Paste Rs",
+  "summary": "Paste text, Markdown, or HTML snippets to https://paste.rs and return a shareable URL. Use when the user asks to \"paste\"/\"upload\" text to paste.rs, share logs/config snippets safely as a link, or quickly publish command output without send.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paste_rs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banghasan",
+      "features": [
+        "Paste text, Markdown, or HTML snippets to https://paste.rs and return a shareable URL",
+        "Use when the user asks to \"paste\"/\"upload\" text to paste.rs, share logs/config snippets safely."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paste-rs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5436959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paste-rs",
+      "url": "https://clawhub.ai/skills/paste-rs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paste-rs",
+    "url": "https://clawhub.ai/skills/paste-rs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paste-rs-895e155ee6374bdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paste-rs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paste-rs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73c000607d95f75609d4d3e36114c903aa51490ac4e76975a5bb83a017f8ddcf",
+      "artifactSizeBytes": 2313
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T14:43:46.749Z"
+}

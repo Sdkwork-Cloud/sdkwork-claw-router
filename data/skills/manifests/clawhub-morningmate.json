@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33005,
+  "uuid": "skill-clawhub-morningmate",
+  "skillKey": "clawhub-morningmate",
+  "name": "Morningmate",
+  "summary": "Morningmate integration. Manage Users, Organizations. Use when the user wants to interact with Morningmate data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morningmate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Morningmate integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with Morningmate data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morningmate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morningmate",
+      "url": "https://clawhub.ai/skills/morningmate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morningmate",
+    "url": "https://clawhub.ai/skills/morningmate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morningmate-1cf2878492e9d33c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morningmate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-morningmate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37d19d247a590a5d400a96e0c0dc1ee980a9cbdd2d895d5e578acf568454e9b6",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:34.852Z"
+}

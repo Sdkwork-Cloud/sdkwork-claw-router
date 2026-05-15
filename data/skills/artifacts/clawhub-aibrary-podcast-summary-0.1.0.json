@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aibrary-podcast-summary@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibrary_podcast_summary",
+  "skill": {
+    "id": 27135,
+    "skillKey": "clawhub-aibrary-podcast-summary",
+    "name": "Aibrary Podcast Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibrary-podcast-summary",
+    "url": "https://clawhub.ai/skills/aibrary-podcast-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibrary-podcast-summary-62756fab672d0113.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Aibrary] Generate a book summary podcast script in a single-narrator storytelling style. Use when the user wants to turn a book into a podcast, create an au..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asoiso",
+      "userId": "s173h1jpw4kgmsawn20r1fhjtd83nwy1",
+      "displayName": "asoiso",
+      "image": "https://avatars.githubusercontent.com/u/479822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772713997339,
+      "changelog": "aibrary-podcast-summary v0.1.0\n\n- Initial release.\n- Generates engaging podcast scripts that summarize any book in a single-narrator, storytelling style.\n- Script structure includes a hook, book context, 3–5 key ideas with stories and takeaways, synthesis, and a call to action.\n- Supports optional input for author, focus areas, and tone.\n- Detects and writes in the user's input language.\n- Outputs scripts designed for natural aloud reading, with [pause] markers and conversational language.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:700791c658f31d4ef6080b8ce6f65b7d64f6124d4a5cf50fd54de009e3021c43"
+}

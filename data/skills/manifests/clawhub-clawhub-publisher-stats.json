@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37587,
+  "uuid": "skill-clawhub-clawhub-publisher-stats",
+  "skillKey": "clawhub-clawhub-publisher-stats",
+  "name": "ClawHub Publisher Stats",
+  "summary": "Fetch live ClawHub publisher metrics for a specific user, including published skills, author rank, total downloads, stars, current installs, all-time install...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publisher_stats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Fetch live ClawHub publisher metrics for a specific user, including published skills, author ra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publisher-stats@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publisher-stats",
+      "url": "https://clawhub.ai/skills/clawhub-publisher-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publisher-stats",
+    "url": "https://clawhub.ai/skills/clawhub-publisher-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publisher-stats-294a9a29c41a4475.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publisher-stats@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publisher-stats-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:527c96e8b2cbe8ad6d3ffe6866825ac389e2a6798f2a38548ff9b886f72bb83d",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:25:24.388Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biomorphic-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biomorphic_memory",
+  "skill": {
+    "id": 52382,
+    "skillKey": "clawhub-biomorphic-memory",
+    "name": "Biomorphic Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biomorphic-memory",
+    "url": "https://clawhub.ai/skills/biomorphic-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biomorphic-memory-bfa8933820da7c18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Brain-inspired memory for AI agents. Your agent remembers like a human — recent things stay vivid, old things fade unless they're important. Uses spreading a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dario-github",
+      "userId": "s17f18nhhssgtbsjjaf6vc8z6n83kwr4",
+      "displayName": "Dario Zhang",
+      "image": "https://avatars.githubusercontent.com/u/40749119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774432764235,
+      "changelog": "- Initial release of Biomorphic Memory: brain-inspired, semantic graph-based memory for AI agents.\n- Implements spreading activation for contextually relevant recall.\n- Supports natural decay of old memories with reinforcement of important ones.\n- Integrates Q-value learning to prioritize useful memories.\n- Achieves state-of-the-art accuracy in LongMemEval (89.8%), surpassing previous methods.\n- Requires Python ≥ 3.11 and an embedding API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff48ce0892c952a6d64196e726b96864a674d80f9e9daca181b83cbaa37a4396"
+}

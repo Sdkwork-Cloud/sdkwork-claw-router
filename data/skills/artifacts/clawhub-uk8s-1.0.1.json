@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uk8s@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk8s",
+  "skill": {
+    "id": 58679,
+    "skillKey": "clawhub-uk8s",
+    "name": "uk8s"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk8s",
+    "url": "https://clawhub.ai/skills/uk8s",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk8s-5620bcb4df8436f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建 UK8S Kubernetes 集群。通过 ucloud-cli 调用 API，自动获取 VPC/Subnet/版本/镜像，生成配置并创建集群。Use when user wants to create a UK8S cluster."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellohjc",
+      "userId": "s17a8tvnk1dd27qvg4dg9bn6ks84v9dn",
+      "displayName": "HelloHJC",
+      "image": "https://avatars.githubusercontent.com/u/14997240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776151557727,
+      "changelog": "1. 使用 GetUK8SVersions 自动获得 uk8s 版本\n2. 设置 ucloud-cli 下载链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:000dc0f09be4193b8bf9d92f40f06581f40b16a5c95743fac60660728f2a438c"
+}

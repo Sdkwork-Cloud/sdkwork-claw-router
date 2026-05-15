@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-extension-chrome@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_extension_chrome",
+  "skill": {
+    "id": 44686,
+    "skillKey": "clawhub-subtitle-generator-extension-chrome",
+    "name": "Subtitle Generator Extension Chrome"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-extension-chrome",
+    "url": "https://clawhub.ai/skills/subtitle-generator-extension-chrome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-extension-chrome-a04fe49a297f21fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute YouTube tutorial video into 1080p captioned video files just by typing what you need. Whether it's adding auto-generated subtitles to videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776246586392,
+      "changelog": "Subtitle Generator Extension Chrome 1.0.0\n\n- Initial release of the Chrome extension for AI-powered subtitle generation and video export.\n- Upload video files or paste video URLs for automatic subtitle creation and embedding.\n- Supports quick workflows: generate subtitles, edit, preview, and export videos in 1080p MP4 and more formats.\n- Processes videos entirely in the cloud—no installation required, results in 30–60 seconds for short clips.\n- Anonymous users receive free trial credits and session management is fully automatic.\n- Extensive API error handling, session recovery, and common edit/export workflows described for easy use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43f9dce1631ec7d0373f3623a6edde0d921b18faaedc4c3c5a6bd21481c6b64a"
+}

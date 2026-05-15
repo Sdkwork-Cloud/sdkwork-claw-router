@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12087,
+  "uuid": "skill-clawhub-linkedin-pipedream",
+  "skillKey": "clawhub-linkedin-pipedream",
+  "name": "Linkedin Pipedream",
+  "summary": "Post to LinkedIn, comment, like, search organizations, and manage profiles via Pipedream OAuth integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_pipedream",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "Post to LinkedIn, comment, like, search organizations, and manage profiles via Pipedream OAuth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-pipedream@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-pipedream",
+      "url": "https://clawhub.ai/skills/linkedin-pipedream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-pipedream",
+    "url": "https://clawhub.ai/skills/linkedin-pipedream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-pipedream-5736a601c9469bb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-pipedream@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-pipedream-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2f961ba131f6e5982e793e5226946ab83eac6a99d5ba38bdaae634b7f81aa3c",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T03:18:16.281Z"
+}

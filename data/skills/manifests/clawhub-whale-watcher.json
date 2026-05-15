@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24289,
+  "uuid": "skill-clawhub-whale-watcher",
+  "skillKey": "clawhub-whale-watcher",
+  "name": "Whale Watcher",
+  "summary": "Monitor crypto whale wallets for large transactions. Track big moves on Ethereum, BSC, and other chains. Get alerts when whales move significant amounts.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eddie",
+      "features": [
+        "Monitor crypto whale wallets for large transactions",
+        "Track big moves on Ethereum, BSC, and other chains",
+        "Get alerts when whales move significant amounts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whale-watcher@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26967962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whale-watcher",
+      "url": "https://clawhub.ai/skills/whale-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-watcher",
+    "url": "https://clawhub.ai/skills/whale-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-watcher-9c3b72bc0fe41829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whale-watcher@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-whale-watcher-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06a56421fd07e153f88c6cc4398c27d6342853be7bcecc930f1efc748da49848",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:13:05.471Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11459,
+  "uuid": "skill-clawhub-dokku",
+  "skillKey": "clawhub-dokku",
+  "name": "dokku",
+  "summary": "Installs, upgrades, and manages Dokku apps, deploys code or images, runs tasks, and cleans up containers on Dokku hosts via CLI commands.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dokku",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dFlow",
+      "features": [
+        "Installs, upgrades, and manages Dokku apps, deploys code or images, runs tasks, and cleans up c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dokku@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11688537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dokku",
+      "url": "https://clawhub.ai/skills/dokku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dokku",
+    "url": "https://clawhub.ai/skills/dokku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dokku-c903a60c5340f58b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dokku@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dokku-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cdeecd304c69348d54e42517c41982b4cea92036373c9cc9ebca5a8d6ccbbdb",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T23:16:27.508Z"
+}

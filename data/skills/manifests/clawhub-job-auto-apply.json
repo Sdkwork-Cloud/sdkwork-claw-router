@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8746,
+  "uuid": "skill-clawhub-job-auto-apply",
+  "skillKey": "clawhub-job-auto-apply",
+  "name": "Job Auto Apply",
+  "summary": "Automated job search and application system for Clawdbot. Use when the user wants to search for jobs and automatically apply to positions matching their criteria. Handles job searching across LinkedIn, Indeed, Glassdoor, ZipRecruiter, and.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_auto_apply",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veeky-kumar",
+      "features": [
+        "Automated job search and application system for Clawdbot",
+        "Use when the user wants to search for jobs and automatically apply to positions matching their.",
+        "Handles job searching across LinkedIn, Indeed, Glassdoor, ZipRecruiter, and Wellfound, generate.",
+        "Use when user says things like \"find and apply to jobs\", \"auto-apply for [job title]\", \"search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-auto-apply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74824911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-auto-apply",
+      "url": "https://clawhub.ai/skills/job-auto-apply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-auto-apply",
+    "url": "https://clawhub.ai/skills/job-auto-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-auto-apply-b79c6804aec0820a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-auto-apply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-auto-apply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cc42d03fc417a91d4866150b11728d6c805202f79ba288438b5347ed873e0a2",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T10:15:15.707Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22625,
+  "uuid": "skill-clawhub-time-analyzer",
+  "skillKey": "clawhub-time-analyzer",
+  "name": "Time Analyzer",
+  "summary": "Time tracking and analysis skill for automatic activity monitoring and productivity insights. Use when the user wants to track time spent on activities, anal...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Time tracking and analysis skill for automatic activity monitoring and productivity insights",
+        "Use when the user wants to track time spent on activities, anal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-analyzer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-analyzer",
+      "url": "https://clawhub.ai/skills/time-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-analyzer",
+    "url": "https://clawhub.ai/skills/time-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-analyzer-6e600c3cb02757be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-analyzer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-analyzer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa48112b48e6a0f1f6b8990a6ab456a928ee8612a66fbe06a6c56856691dd603",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:46:50.832Z"
+}

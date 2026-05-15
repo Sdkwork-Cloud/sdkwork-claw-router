@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50443,
+  "uuid": "skill-clawhub-agentsmail",
+  "skillKey": "clawhub-agentsmail",
+  "name": "Agents Mail — Free Email for AI Agents, with No sign-up, No API key needed",
+  "summary": "Free email for AI agents. No sign-up needed. One call to get a mailbox and send.",
+  "version": "0.4.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agents Mail",
+      "features": [
+        "Free email for AI agents",
+        "No sign-up needed",
+        "One call to get a mailbox and send."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentsmail@0.4.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257402224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentsmail",
+      "url": "https://clawhub.ai/skills/agentsmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsmail",
+    "url": "https://clawhub.ai/skills/agentsmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsmail-ea49f2253231fe16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentsmail@0.4.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentsmail-0.4.6.json",
+      "version": "0.4.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b67c166507b8fbf507adb28a5b563e59eeffd2435dfa476c00ff71f84ff22b5",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:46:48.411Z"
+}

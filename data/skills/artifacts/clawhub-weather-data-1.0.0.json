@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_data",
+  "skill": {
+    "id": 17459,
+    "skillKey": "clawhub-weather-data",
+    "name": "Weather Data API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-data",
+    "url": "https://clawhub.ai/skills/weather-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-data-a32dd62eebe81454.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides weather forecast data from NOAA. Free tier returns 3-day forecast, premium tier returns 7-day with hourly data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "letorresmeza",
+      "userId": "publishers:letorresmeza",
+      "displayName": "letorresmeza",
+      "image": "https://avatars.githubusercontent.com/u/253571911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 758,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771886678957,
+      "changelog": "- Initial release of the weather-data skill.\n- Provides 3-day weather forecasts from NOAA for free.\n- Premium tier adds a 7-day forecast with hourly data for a small fee (0.05 USDC).\n- Includes endpoints for forecast, premium forecast, and service health check.\n- Supports user-invocable requests with customizable latitude and longitude parameters.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e01576a2768a7d891ea71570f9f8f8beaef1f641ce90922009762460cc86851"
+}

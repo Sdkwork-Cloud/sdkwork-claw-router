@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image2prompt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image2prompt",
+  "skill": {
+    "id": 9411,
+    "skillKey": "clawhub-image2prompt",
+    "name": "Image2Prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image2prompt",
+    "url": "https://clawhub.ai/skills/image2prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image2prompt-2eb4b186a2417fd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze images and generate detailed prompts for image generation. Supports portrait, landscape, product, animal, illustration categories with structured or natural output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhang-shubo",
+      "userId": "publishers:zhang-shubo",
+      "displayName": "Zhang-Shubo",
+      "image": "https://avatars.githubusercontent.com/u/31588446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3470,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770107419565,
+      "changelog": "- Initial release of image2prompt skill.\n- Analyze images and auto-detect category: portrait, landscape, product, animal, illustration, or other.\n- Generate detailed natural-language or structured JSON prompts for AI image generation based on the detected category.\n- Optional \"dimension extraction\": get tagged visual aspects (backgrounds, objects, styles, etc.) for more granular prompt composition.\n- Extensive category-specific analysis, covering detailed elements for portraits, landscapes, products, animals, and illustrations.\n- Supports flexible output formats (flowing prompt, structured object, with or without dimension tags).\n more about image2prompt see <a href=\"https://image2prompt.art\">here</a>",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80cebc3a402c1a40bc2c1dfb0486df79b4bacba53880dd90c4ad061498f6c42e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29408,
+  "uuid": "skill-clawhub-coin-identifier",
+  "skillKey": "clawhub-coin-identifier",
+  "name": "Coin Identifier",
+  "summary": "Identify coins from photos using evidence-based visual checks, ranked candidates, mint-mark reasoning, and a reusable local catalog.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coin_identifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Identify coins from photos using evidence-based visual checks, ranked candidates, mint-mark rea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coin-identifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coin-identifier",
+      "url": "https://clawhub.ai/skills/coin-identifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coin-identifier",
+    "url": "https://clawhub.ai/skills/coin-identifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coin-identifier-2ddb72dbb2d78ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coin-identifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coin-identifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64563c51e20718b70118e8c94aa00ccf197cad22d85d53866496a3a13d775cc6",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:12:40.297Z"
+}

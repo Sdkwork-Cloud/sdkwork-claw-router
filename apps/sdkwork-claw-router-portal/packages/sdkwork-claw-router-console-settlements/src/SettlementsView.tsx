@@ -76,7 +76,7 @@ export function SettlementsView() {
   const hasSettlementData = chartData.length > 0 || settlementBills.length > 0;
 
   return (
-    <div className="p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-[#1e1e1e] dark:bg-[#1e1e1e]">
+    <div className="theme-aware-dark-surface p-4 lg:p-6 w-full mx-auto space-y-6 animate-in fade-in duration-500 min-h-[calc(100vh-72px)] bg-slate-50 dark:bg-[#1e1e1e]">
 
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/5">
@@ -190,11 +190,11 @@ export function SettlementsView() {
            <div className="h-[220px] w-full">
              <ResponsiveContainer width="100%" height="100%">
                <AreaChart data={chartDataForRendering} margin={{ top: 5, right: 0, left: -20, bottom: 0 }}>
-                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
+                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--theme-aware-chart-grid)" />
                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11 }} dy={10} />
                  <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 11 }} tickFormatter={(v)=>v} />
                  <RechartsTooltip
-                    contentStyle={{ backgroundColor: '#1e1e1e', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px' }}
+                    contentStyle={{ backgroundColor: 'var(--theme-aware-tooltip)', border: '1px solid var(--theme-aware-border)', borderRadius: '8px' }}
                     itemStyle={{ fontSize: 12, fontWeight: 500 }}
                     formatter={(value: number) => [formatCurrency(String(value)), '']}
                   />

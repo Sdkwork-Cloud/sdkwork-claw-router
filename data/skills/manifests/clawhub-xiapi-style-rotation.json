@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72716,
+  "uuid": "skill-clawhub-xiapi-style-rotation",
+  "skillKey": "clawhub-xiapi-style-rotation",
+  "name": "虾皮市场风格轮动分析",
+  "summary": "分析A股大小盘风格轮动，通过中证2000与沪深300的相对强弱差值判断风格偏向与切换信号。触发词：大小盘风格、风格轮动、大盘股小盘股、风格切换、沪深300、中证2000、微盘股投资策略。适用场景：判断市场风格偏向、识别风格切换信号、大盘小盘配置决策。不适用场景：个股分析、行业板块分析、债券分析。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_style_rotation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三水清",
+      "features": [
+        "分析A股大小盘风格轮动，通过中证2000与沪深300的相对强弱差值判断风格偏向与切换信号。触发词：大小盘风格、风格轮动、大盘股小盘股、风格切换、沪深300、中证2000、微盘股投资策略。适用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiapi-style-rotation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiapi-style-rotation",
+      "url": "https://clawhub.ai/skills/xiapi-style-rotation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-style-rotation",
+    "url": "https://clawhub.ai/skills/xiapi-style-rotation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-style-rotation-629ff08bfec6a708.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiapi-style-rotation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiapi-style-rotation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aec43f01eb5ed62ee5ef274eda1f34ad28fcf143bf669dd8d5f19153f1d1232d",
+      "artifactSizeBytes": 2762
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:01:53.900Z"
+}

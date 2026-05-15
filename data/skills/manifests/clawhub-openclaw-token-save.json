@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9237,
+  "uuid": "skill-clawhub-openclaw-token-save",
+  "skillKey": "clawhub-openclaw-token-save",
+  "name": "OpenClaw Token Optimizer",
+  "summary": "Optimize OpenClaw token usage and cost by auditing context injection, trimming workspace files (AGENTS.md/SOUL.md/MEMORY.md and daily memory), enabling promp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_token_save",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ccjingeth",
+      "features": [
+        "Optimize OpenClaw token usage and cost by auditing context injection, trimming workspace files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-token-save@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137643209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-token-save",
+      "url": "https://clawhub.ai/skills/openclaw-token-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-token-save",
+    "url": "https://clawhub.ai/skills/openclaw-token-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-token-save-f6b6540c66f52229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-token-save@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-token-save-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01e10e2d28b8fd6ac005ed3cc32f3f73489dfa89e46f740baeb360ce9d0dc4c6",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T14:35:11.138Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73011,
+  "uuid": "skill-clawhub-resume-interview-generator",
+  "skillKey": "clawhub-resume-interview-generator",
+  "name": "简历面试题生成器",
+  "summary": "基于候选人简历自动生成面试题、笔试题、追问路径和评分标准的 AI Skill。当用户需要准备技术面试、生成笔试题目、评估候选人简历、或设计面试评估方案时使用。输入简历内容和岗位信息后，自动输出结构化的题目与评估内容，支持面试题模式、笔试题模式、综合评估模式等多种输出形式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_interview_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sundy Yang",
+      "features": [
+        "基于候选人简历自动生成面试题、笔试题、追问路径和评分标准的 AI Skill。当用户需要准备技术面试、生成笔试题目、评估候选人简历、或设计面试评估方案时使用。输入简历内容和岗位信息后，自动输."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-interview-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2383724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-interview-generator",
+      "url": "https://clawhub.ai/skills/resume-interview-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-interview-generator",
+    "url": "https://clawhub.ai/skills/resume-interview-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-interview-generator-45400e0cd1c4211b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-interview-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-interview-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c978d9b3f2edfbcead667481d72ee23c26afd1c536e44c50e7eba262c4f3376c",
+      "artifactSizeBytes": 2785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:05:14.722Z"
+}

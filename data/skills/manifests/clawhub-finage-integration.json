@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41289,
+  "uuid": "skill-clawhub-finage-integration",
+  "skillKey": "clawhub-finage-integration",
+  "name": "Finage",
+  "summary": "Finage integration. Manage data, records, and automate workflows. Use when the user wants to interact with Finage data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finage_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Finage integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Finage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finage-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finage-integration",
+      "url": "https://clawhub.ai/skills/finage-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finage-integration",
+    "url": "https://clawhub.ai/skills/finage-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finage-integration-8343789a6e55df37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finage-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-finage-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6950d0a8df761ece2f31a057f91df3acc95f17605f75ff8c3a70be14dd2bd04",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:23.073Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visible-text-extractor@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visible_text_extractor",
+  "skill": {
+    "id": 36088,
+    "skillKey": "clawhub-visible-text-extractor",
+    "name": "Visible Text Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visible-text-extractor",
+    "url": "https://clawhub.ai/skills/visible-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visible-text-extractor-a4ced173abb14935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and reconstruct as much visible text as possible from webpage URLs, article pages, screenshots, long images, image directories, and GIFs. Use when th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wunianze666-netizen",
+      "userId": "s1757jqm8fsar1gjw9z1az50zx83ge2y",
+      "displayName": "wunianze666-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226919216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774617928317,
+      "changelog": "Visible Text Extractor 1.0.0 – Initial release\n\n- Initial public release with support for webpage, article, screenshot, long image, GIF, and image directory text extraction.\n- Adds dedicated scripts for WeChat article order reconstruction, high-accuracy OCR, and multi-stage cleanup.\n- Introduces specialized pipelines for clean, human-readable output (markdown/Word/JSON).\n- Provides workflow and reference documentation for usage, publishing, and release notes.\n- Includes multiple extraction and deliverable pipelines, especially tailored for WeChat articles and complex, image-heavy sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9e3ae04c105088c349e2db24ca9a73aff7b86fc8bebde90d731031585506f59"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62156,
+  "uuid": "skill-clawhub-ai-report-generator",
+  "skillKey": "clawhub-ai-report-generator",
+  "name": "Ai Report Generator",
+  "summary": "根据飞书表格中的小红书数据，生成运营报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_report_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangfeng1995",
+      "features": [
+        "根据飞书表格中的小红书数据，生成运营报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-report-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113488508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-report-generator",
+      "url": "https://clawhub.ai/skills/ai-report-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-report-generator",
+    "url": "https://clawhub.ai/skills/ai-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-report-generator-fc62748a8f0388a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-report-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-report-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d5b0244fdcc7feb5d2eab5b6319eddb7dad731ae76fb521f920d74662c61f09",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:12:32.139Z"
+}

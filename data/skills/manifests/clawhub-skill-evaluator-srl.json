@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59317,
+  "uuid": "skill-clawhub-skill-evaluator-srl",
+  "skillKey": "clawhub-skill-evaluator-srl",
+  "name": "skill-evaluator-srl",
+  "summary": "对 Skill 进行质量评估打分的 Skill，输出评分报告与改进建议。评估 skill、skill 评分、SRL 评估、skill 质量、检查 skill、skill review、skill score",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evaluator_srl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vuact",
+      "features": [
+        "对 Skill 进行质量评估打分的 Skill，输出评分报告与改进建议。评估 skill、skill 评分、SRL 评估、skill 质量、检查 skill、skill review、ski."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-evaluator-srl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74364990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-evaluator-srl",
+      "url": "https://clawhub.ai/skills/skill-evaluator-srl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evaluator-srl",
+    "url": "https://clawhub.ai/skills/skill-evaluator-srl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evaluator-srl-8269ba2efa957b0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-evaluator-srl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-evaluator-srl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2be93f53a2a6439e063d91548eeee187ebcc5b3b5230727c66fe7d9a775f6951",
+      "artifactSizeBytes": 2661
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:10:53.421Z"
+}

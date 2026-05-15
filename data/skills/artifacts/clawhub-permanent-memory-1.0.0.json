@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/permanent-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permanent_memory",
+  "skill": {
+    "id": 50300,
+    "skillKey": "clawhub-permanent-memory",
+    "name": "Auto Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permanent-memory",
+    "url": "https://clawhub.ai/skills/permanent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permanent-memory-b232e0fb00d731c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Indestructible agent memory — permanently stored, never lost. Save decisions, identity, and context as a memory chain on the Autonomys Network. Rebuild your..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xautonomys",
+      "userId": "s17aqvaaw49j03p00fgh3pmckd842rd3",
+      "displayName": "0xautonomys",
+      "image": "https://avatars.githubusercontent.com/u/262559771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133242396,
+      "changelog": "Initial release of the permanent-memory skill.\n\n- Provides permanent, decentralized memory for agents using the Autonomys Network.\n- Supports uploading and downloading files, with immutable CIDs for permanent storage.\n- Enables building a chain of memory entries for full agent history reconstruction (\"resurrection\") from a single CID.\n- Requires AUTO_DRIVE_API_KEY for uploading, saving, and recalling memories.\n- Includes scripts for upload, download, save memory, and chain recall operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3de27cdda537ad95be673d1db94d2f1758c8da933e69ad3207fec97d86bff502"
+}

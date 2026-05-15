@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42275,
+  "uuid": "skill-clawhub-pdf-text-extract",
+  "skillKey": "clawhub-pdf-text-extract",
+  "name": "Pdf Text Extract",
+  "summary": "Extract clean, readable text from any PDF using PyPDF2 via command line for easy processing, summarizing, or archiving.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_text_extract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Extract clean, readable text from any PDF using PyPDF2 via command line for easy processing, su."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-text-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-text-extract",
+      "url": "https://clawhub.ai/skills/pdf-text-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-text-extract",
+    "url": "https://clawhub.ai/skills/pdf-text-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-text-extract-63a1a464576164c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-text-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-text-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d45fbe99ac3d1a574e0c939d1d9ca1cd007f518b2604bc195b06c430af470458",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:18:42.898Z"
+}

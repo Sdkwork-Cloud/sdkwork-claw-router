@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_analyst",
+  "skill": {
+    "id": 10924,
+    "skillKey": "clawhub-investment-analyst",
+    "name": "Investment Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-analyst",
+    "url": "https://clawhub.ai/skills/investment-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-analyst-48e6651f77bc8017.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agente especialista em analise de investimentos com foco em analise fundamentalista e tecnica. Suporta: get_market_data, calculate_roi, portfolio_analysis, g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edsoneras",
+      "userId": "s176mvpxmj1291ahavvaayc4s183yc2n",
+      "displayName": "Edson Cavalca Jr.",
+      "image": "https://avatars.githubusercontent.com/u/60100458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2024,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772393220295,
+      "changelog": "- Lançamento inicial do agente especialista em análise de investimentos, com foco em análise fundamentalista e técnica.\n- Habilita obtenção de dados de mercado, cálculo de ROI, análise e sugestões para carteiras, geração de relatórios e classificação de perfil de risco.\n- Inclui métricas e critérios objetivos para ações e FIIs, além de princípios básicos de análise técnica.\n- Define processo estruturado de análise e padroniza formato de resposta para maior clareza e transparência.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa75bf780dda1816807866ac0458f7d74b74731f99a48b17fd28d30c27efbf4d"
+}

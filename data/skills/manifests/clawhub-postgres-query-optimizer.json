@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44012,
+  "uuid": "skill-clawhub-postgres-query-optimizer",
+  "skillKey": "clawhub-postgres-query-optimizer",
+  "name": "Postgres Query Optimizer",
+  "summary": "Analyze slow PostgreSQL queries, interpret EXPLAIN ANALYZE output, identify performance bottlenecks, and recommend indexes, query rewrites, and configuration...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_query_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze slow PostgreSQL queries, interpret EXPLAIN ANALYZE output, identify performance bottlen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgres-query-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgres-query-optimizer",
+      "url": "https://clawhub.ai/skills/postgres-query-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-query-optimizer",
+    "url": "https://clawhub.ai/skills/postgres-query-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-query-optimizer-077aae37e3f78ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgres-query-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgres-query-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee27bafb00cad86309e1eb9a37ccae93bce8333b2b588e9d1e9f3998cefacddd",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:23.156Z"
+}

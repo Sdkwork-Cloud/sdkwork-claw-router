@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/study-and-port@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_and_port",
+  "skill": {
+    "id": 38586,
+    "skillKey": "clawhub-study-and-port",
+    "name": "Study And Port"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-and-port",
+    "url": "https://clawhub.ai/skills/study-and-port",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-and-port-8811ff3e72afca1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research new AI frameworks or technologies, extract their best features, evaluate feasibility, and implement as OpenClaw skills. Triggered when: (1) user men..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenjin113",
+      "userId": "s17c5x8jn7raqq9zr8r3175md983h8se",
+      "displayName": "邪恶耄耋",
+      "image": "https://avatars.githubusercontent.com/u/227716743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776690741243,
+      "changelog": "Added user confirmation, declared permissions, specified search endpoint, added safety boundaries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae5ce978636435d244452ddf3c15a6a95835c68d395c6ac364b655acc0ccd325"
+}

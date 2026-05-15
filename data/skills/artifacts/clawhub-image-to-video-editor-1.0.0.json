@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_editor",
+  "skill": {
+    "id": 53371,
+    "skillKey": "clawhub-image-to-video-editor",
+    "name": "Image To Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-editor",
+    "url": "https://clawhub.ai/skills/image-to-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-editor-321195a37dc1f28e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn these photos into a 30-second slideshow video with transitions and ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776028007944,
+      "changelog": "Initial release of Image to Video Editor\n\n- Instantly convert uploaded images (JPG, PNG, WEBP, HEIC) into shareable video clips using natural language instructions.\n- Automatic cloud rendering with transitions, background music, and 1080p MP4 export by default.\n- No editing software required—just upload photos and describe your desired video.\n- Fast processing: get results in 30–60 seconds for typical 30-second slideshows.\n- Seamless session management, balance checks, and multi-language prompts supported.\n- Designed for social media creators and marketers seeking quick, professional video outputs from images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd2a65e16830cb12db6d4ece08a14e7549cc25dff00c1a636f910802eab56e09"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62490,
+  "uuid": "skill-clawhub-alibabacloud-alert-intent-router",
+  "skillKey": "clawhub-alibabacloud-alert-intent-router",
+  "name": "Alibabacloud Alert Intent Router",
+  "summary": "阿里云告警智能路由技能。解析告警消息，提取关键参数，查询CMDB获取资源关系， 根据意图分类路由到数据库诊断、网络可达性分析或ECS实例诊断，最终生成根因分析报告。 触发词: \"告警\", \"alert\", \"异常\", \"故障\", \"error\", \"网络不通\", \"端口异常\", \"使用率\", \"连接失败\", \"服...",
+  "version": "0.0.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_alert_intent_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "阿里云告警智能路由技能。解析告警消息，提取关键参数，查询CMDB获取资源关系， 根据意图分类路由到数据库诊断、网络可达性分析或ECS实例诊断，最终生成根因分析报告。 触发词: \"告警\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-alert-intent-router@0.0.1-beta.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-alert-intent-router",
+      "url": "https://clawhub.ai/skills/alibabacloud-alert-intent-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-alert-intent-router",
+    "url": "https://clawhub.ai/skills/alibabacloud-alert-intent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-alert-intent-router-1ee6e6e08e1d8d5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-alert-intent-router@0.0.1-beta.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-alert-intent-router-0.0.1-beta.1.json",
+      "version": "0.0.1-beta.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa9d59c9871348ce8f8c22ce87d1f6c90221c34796442ae947cbd0584b5101d8",
+      "artifactSizeBytes": 2715
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:58:44.406Z"
+}

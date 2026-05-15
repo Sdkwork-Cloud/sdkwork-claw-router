@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaming-backlog-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaming_backlog_guide",
+  "skill": {
+    "id": 53073,
+    "skillKey": "clawhub-gaming-backlog-guide",
+    "name": "Gaming Backlog Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaming-backlog-guide",
+    "url": "https://clawhub.ai/skills/gaming-backlog-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaming-backlog-guide-33ed1bf5ae39bbc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Match the user’s current mood, available time, platform habits, and energy level to the right kind of game experience, then suggest a low-friction way to sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776251067393,
+      "changelog": "Initial release of Gaming Backlog Guide.\n\n- Helps match your current mood, time, platform, and energy to the right kind of gaming experience.\n- Suggests specific directions to play now, for the weekend, and one type to avoid for now.\n- Provides a low-friction recommendation for the easiest way to get started.\n- Focuses on fit and reducing choice paralysis—no live news, prices, or review data included.\n- Designed for solo, family, or reward-based play planning with a plain, dialogue-based workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6e321354df052403882c0f68f2200f2a53c538e1b738a65d1b5f6b989df70a6"
+}

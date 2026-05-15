@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infographic-image@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infographic_image",
+  "skill": {
+    "id": 69557,
+    "skillKey": "clawhub-infographic-image",
+    "name": "Infographic Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infographic-image",
+    "url": "https://clawhub.ai/skills/infographic-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infographic-image-75cc6c8ddfaa6722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将任意主题、长文、报告、纪要或说明文本稳定转换成中文视觉生图提示词， 然后调用 DashScope Qwen 图像模型直接出图。适用于“把这段内容做成信息图”、 “做成故事漫画长图”、“长文转图”、“生成中文生图 prompt”、“根据文档出图” 等场景；默认采用白色磁吸会议板手写风格，也支持切换到其他内置模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeyitech",
+      "userId": "s17d1zgzjsw3eb2v4h9t09ayvd83kk8r",
+      "displayName": "yeyitech",
+      "image": "https://avatars.githubusercontent.com/u/231244789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772964966465,
+      "changelog": "Initial public release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c56777b3cc589be0c10be48bedd2c97eda65370473b7c69cc165d246e50e3467"
+}

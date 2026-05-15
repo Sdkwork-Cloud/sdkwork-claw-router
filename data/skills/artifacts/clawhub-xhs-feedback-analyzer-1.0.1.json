@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-feedback-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_feedback_analyzer",
+  "skill": {
+    "id": 69439,
+    "skillKey": "clawhub-xhs-feedback-analyzer",
+    "name": "redbook-feedback-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-feedback-analyzer",
+    "url": "https://clawhub.ai/skills/xhs-feedback-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-feedback-analyzer-9f72c3a877ebb095.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书跑腿类帖子监控与用户反馈分析工具。多关键词搜索（美团跑腿/跑腿/帮买/帮送等），按发帖日期过滤，相关性筛选，深度分类（服务类型/情感/反馈类型），输出 Markdown 报告写入 KM 学城文档。当用户需要分析跑腿产品在小红书的用户口碑、定期舆情监控、竞品用户反馈时使用。触发词：小红书反馈分析、跑腿帖子监控..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinghuan2000",
+      "userId": "s170j2ttpsmx57gd1ksfzptb7584e4sd",
+      "displayName": "qinghuan2000",
+      "image": "https://avatars.githubusercontent.com/u/274455786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777465202948,
+      "changelog": "**使用反馈** [欢迎体验后填写问卷，掉落红包](https://v.wjx.cn/vm/mBfHfGS.aspx#)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba22d50fa6e2962d9182b4d519c41df6b9f766a06fda66df2d3e963c3b8f3fb2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payment-skill-demo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_skill_demo",
+  "skill": {
+    "id": 60965,
+    "skillKey": "clawhub-payment-skill-demo",
+    "name": "Payment Skill Demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-skill-demo",
+    "url": "https://clawhub.ai/skills/payment-skill-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-skill-demo-534c9b645586cbd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 原生支付解决方案 - 提供安全、可靠的支付功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neversatrabbit",
+      "userId": "s174tmk7dh1h6p3rtgwpht0qq584ty1j",
+      "displayName": "neverSatRabbit",
+      "image": "https://avatars.githubusercontent.com/u/27465824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "v1.0.3",
+      "createdAt": 1773994870075,
+      "changelog": "- Added skill_cli.py script for unified command-line tool invocation.\n- Updated documentation: usage is now based on CLI instead of direct Python API, with new examples and return formats.\n- Redesigned environment variable requirements and removed support for development.env configuration.\n- Expanded and updated tool parameter and return value definitions for better clarity.\n- Dropped server mode support (has_server set to false).\n- Cleaned up and modernized configuration files and install scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55d0f0e44dd287adc278032a829330e9699dc87c291b24fe5eef8bdd3e9197ec"
+}

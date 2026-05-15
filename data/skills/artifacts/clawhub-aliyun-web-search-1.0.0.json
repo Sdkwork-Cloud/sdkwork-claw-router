@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-web-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_web_search",
+  "skill": {
+    "id": 58073,
+    "skillKey": "clawhub-aliyun-web-search",
+    "name": "Aliyun Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-web-search",
+    "url": "https://clawhub.ai/skills/aliyun-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-web-search-e412d6857ab00372.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云实时搜索 | Aliyun Real-time Web Search with Quark Engine"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoyunbowen",
+      "userId": "publishers:xiaoyunbowen",
+      "displayName": "xiaoyunbowen",
+      "image": "https://avatars.githubusercontent.com/u/65074933?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 966,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771581882276,
+      "changelog": "Initial release of aliyun-web-search skill.\n\n- Supports real-time Chinese web search using Aliyun Open Search Platform with Quark search engine.\n- Easy configuration guide for API activation, API key setup, and service URL by region.\n- Flexible options for result count, time range, and advanced filters.\n- Provides troubleshooting, usage examples, and security best practices.\n- Designed for integration with OpenClaw, including full environment variable setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7cf1d3fc1f46f100215a721c37ac65b1c5735f7ebda8d190aaa336aba2f36bd7"
+}

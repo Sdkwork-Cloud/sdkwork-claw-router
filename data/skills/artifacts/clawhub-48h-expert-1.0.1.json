@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/48h-expert@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.48h_expert",
+  "skill": {
+    "id": 25882,
+    "skillKey": "clawhub-48h-expert",
+    "name": "48h-Expert-Methodology"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "48h-expert",
+    "url": "https://clawhub.ai/skills/48h-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/48h-expert-011760b9511f3e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A meta-learning method compressing deep expertise into 48 hours by extracting core mental models, expert debates, and critical assessment questions for mastery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lawliet-ai",
+      "userId": "s172j47366kee2r44s4x7w5f5h83v6et",
+      "displayName": "Lawliet-ai",
+      "image": "https://avatars.githubusercontent.com/u/261297622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774004256765,
+      "changelog": "- Introduced a strictly structured output format; all results must be serialized to the new `schema.json`.\n- Added a new phase: Data serialization and validation, with outputs written to `~/.openclaw/swarm_tmp/expert_output.json`.\n- Expanded source requirements to include government and industry white papers.\n- Enforced several hard constraints: referenceability, strict schema validation, and deterministic output with no extraneous text.\n- Replaced unstructured analysis with schema-driven, interoperable data for more robust downstream integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c1e6d449a5a34409062f162f75519cbe814f1bac6745e8ca7932597f2872967"
+}

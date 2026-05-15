@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategy-voting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_voting",
+  "skill": {
+    "id": 67649,
+    "skillKey": "clawhub-strategy-voting",
+    "name": "Strategy Voting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-voting",
+    "url": "https://clawhub.ai/skills/strategy-voting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-voting-138a134d06783e38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多策略投票交易系统。当用户说\"投票策略\"、\"多策略\"、\"策略投票\"、\"综合信号\"时触发。整合突破、RSI均值回归、MACD金叉、布林带四个策略，加权投票决定交易信号。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huili203",
+      "userId": "s1743hrhjxw3n8600rpxyjpk6s83hhcb",
+      "displayName": "huiLI203",
+      "image": "https://avatars.githubusercontent.com/u/242090028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774134051197,
+      "changelog": "多策略投票交易系统：突破、RSI、MACD、布林带加权投票",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ce59a502aea17a7981bea955e4fc4a1bc15b11e1bb942ed7a96fdb0d3719a3b"
+}

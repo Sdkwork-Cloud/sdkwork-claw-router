@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37089,
+  "uuid": "skill-clawhub-nm-sanctum-do-issue",
+  "skillKey": "clawhub-nm-sanctum-do-issue",
+  "name": "Nm Sanctum Do Issue",
+  "summary": "Parallel subagent execution with code review gates between task batches for issue resolution",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_sanctum_do_issue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Parallel subagent execution with code review gates between task batches for issue resolution"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-sanctum-do-issue@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-sanctum-do-issue",
+      "url": "https://clawhub.ai/skills/nm-sanctum-do-issue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-sanctum-do-issue",
+    "url": "https://clawhub.ai/skills/nm-sanctum-do-issue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-sanctum-do-issue-ca055ebbbdcb3c90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-sanctum-do-issue@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-sanctum-do-issue-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59394272c4d7be6b03d65e48bcb96717026c971a1869392515bc86622dba11e2",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:19:42.757Z"
+}

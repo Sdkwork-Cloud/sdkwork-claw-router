@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22269,
+  "uuid": "skill-clawhub-openclaw-safe-upgrade",
+  "skillKey": "clawhub-openclaw-safe-upgrade",
+  "name": "OpenClaw Safe Upgrade",
+  "summary": "Safe OpenClaw upgrade with instant rollback. Use when user says \"upgrade openclaw\", \"update openclaw\", \"check for updates\", or any request to upgrade/update...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_safe_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ali Aziz",
+      "features": [
+        "Safe OpenClaw upgrade with instant rollback",
+        "Use when user says \"upgrade openclaw\", \"update openclaw\", \"check for updates\", or any request t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-safe-upgrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5584771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-safe-upgrade",
+      "url": "https://clawhub.ai/skills/openclaw-safe-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-safe-upgrade",
+    "url": "https://clawhub.ai/skills/openclaw-safe-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-safe-upgrade-85277f8314938e23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-safe-upgrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-upgrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a591bbeaa4815cfb8620c0fe5e8c247d7a4f053b35ca4b7b7110a1c59368a5c1",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:47:21.699Z"
+}

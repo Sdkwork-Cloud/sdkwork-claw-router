@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-speaker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_speaker",
+  "skill": {
+    "id": 62070,
+    "skillKey": "clawhub-feishu-speaker",
+    "name": "Feishu Speaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-speaker",
+    "url": "https://clawhub.ai/skills/feishu-speaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-speaker-ef3d83a6373e7d47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书双向语音消息工具 - 支持语音转文字接收和文字转语音发送（TTS+Whisper）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tel18610240060-collab",
+      "userId": "publishers:tel18610240060-collab",
+      "displayName": "Buck",
+      "image": "https://avatars.githubusercontent.com/u/249694746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 575,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772454586544,
+      "changelog": "v1.1.0 introduces a new one-click voice reply script.\n\n- 新增 `reply-voice` 脚本，实现一键语音回复流程：语音消息自动转文字，生成语音回复并发送\n- `reply-voice` 支持只转录不回复，或指定回复内容后自动发送语音\n- 补充使用说明和完整处理流程\n- 升级版本号至 1.1.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6573e361c8fe094e43fd1093192cd8c4dda3cb6286de1a8510ddfbca82d29d4"
+}

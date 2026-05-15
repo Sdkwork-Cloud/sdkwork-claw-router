@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction",
+  "skill": {
+    "id": 17067,
+    "skillKey": "clawhub-prediction",
+    "name": "Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction",
+    "url": "https://clawhub.ai/skills/prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-70ad7b8f9a1c6c89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forecast uncertain outcomes with base rates, reference classes, calibration loops, and explicit scorekeeping."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773705525489,
+      "changelog": "Initial release with question design, calibration, forecast review, and post-mortem workflows for probabilistic forecasting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b163e2681d1066044dfa04c33c617dfec2f17b1e07db527458e0e386a6eef9a5"
+}

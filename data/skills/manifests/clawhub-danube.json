@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10491,
+  "uuid": "skill-clawhub-danube",
+  "skillKey": "clawhub-danube",
+  "name": "Danube Tools Marketplace",
+  "summary": "Connect your AI agent to a growing marketplace of services and tools through a single API key — discover, search, and execute anything available",
+  "version": "8.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.danube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danube",
+      "features": [
+        "Connect your AI agent to a growing marketplace of services and tools through a single API key —."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/danube@8.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59702577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "danube",
+      "url": "https://clawhub.ai/skills/danube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "danube",
+    "url": "https://clawhub.ai/skills/danube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/danube-ebf340b317c044d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/danube@8.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-danube-8.0.12.json",
+      "version": "8.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fab07c40e4b36c807b2e6096d16dbec9f356059576053fecfc5a3fef00252878",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:38:26.145Z"
+}

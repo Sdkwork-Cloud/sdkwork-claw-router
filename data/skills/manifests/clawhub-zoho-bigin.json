@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8519,
+  "uuid": "skill-clawhub-zoho-bigin",
+  "skillKey": "clawhub-zoho-bigin",
+  "name": "Zoho Bigin",
+  "summary": "Zoho Bigin API integration with managed OAuth. Manage contacts, companies, pipelines, and products in Bigin CRM. Use this skill when users want to read, crea...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_bigin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Zoho Bigin API integration with managed OAuth",
+        "Manage contacts, companies, pipelines, and products in Bigin CRM",
+        "Use this skill when users want to read, crea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-bigin@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-bigin",
+      "url": "https://clawhub.ai/skills/zoho-bigin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-bigin",
+    "url": "https://clawhub.ai/skills/zoho-bigin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-bigin-06212d23ece2ac45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-bigin@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-bigin-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b8f00b3db020835694944b3f4024dcc2aecd04a94bc91414553c862182c9ee6",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:46:08.791Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akshare-integrated@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_integrated",
+  "skill": {
+    "id": 64728,
+    "skillKey": "clawhub-akshare-integrated",
+    "name": "Akshare Integrated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-integrated",
+    "url": "https://clawhub.ai/skills/akshare-integrated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-integrated-db8b9ed1dab0d750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于AKShare实时数据，智能评分和动态权重调整，提供多市场多维度股票选股与风险控制建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haosongyi-star",
+      "userId": "publishers:haosongyi-star",
+      "displayName": "haosongyi-star",
+      "image": "https://avatars.githubusercontent.com/u/248486714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773460369912,
+      "changelog": "- 首发版本，集成 AKShare 实时数据与多市场股票分析能力\n- 提供三层九维智能评分系统和动态权重调整\n- 支持多行业差异化评分与 A/B/C/D 四级证据体系\n- 实现完善风险控制和失效判定机制\n- 提供命令行、Python、API 多种接口及批量处理能力",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cfd179e96d8ca702cbb0a5dda4b360b40dc13ca55fbf89591346a4aae7e063f"
+}

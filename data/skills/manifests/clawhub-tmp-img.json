@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66781,
+  "uuid": "skill-clawhub-tmp-img",
+  "skillKey": "clawhub-tmp-img",
+  "name": "upload img temp 临时图床上传技能",
+  "summary": "临时图床上传工具。上传图片到临时图床，默认30天过期，获取公开链接。零配置，开箱即用。当用户说\"临时上传\"、\"上传到临时图床\"、\"tmp upload\" 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmp_img",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "咕咚",
+      "features": [
+        "临时图床上传工具。上传图片到临时图床，默认30天过期，获取公开链接。零配置，开箱即用。当用户说\"临时上传\"、\"上传到临时图床\"、\"tmp upload\" 时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmp-img@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3887626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmp-img",
+      "url": "https://clawhub.ai/skills/tmp-img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmp-img",
+    "url": "https://clawhub.ai/skills/tmp-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmp-img-c1523b6d0cbae9db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmp-img@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmp-img-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3b7ff67d902cb077ba74cf7e596471fd000bbae065714f2b31c98ccc9c2be60",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T00:59:17.418Z"
+}

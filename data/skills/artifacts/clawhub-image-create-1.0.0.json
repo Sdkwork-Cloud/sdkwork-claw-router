@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-create@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_create",
+  "skill": {
+    "id": 26469,
+    "skillKey": "clawhub-image-create",
+    "name": "Image Create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-create",
+    "url": "https://clawhub.ai/skills/image-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-create-5c601e79051ed083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts and iterate on style/composition for posters, thumbnails, product mockups, logos, concept art, and social visuals. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wallaby16",
+      "userId": "s1756tnxw569br8j3qsz49jgd183hb8h",
+      "displayName": "wallaby16",
+      "image": "https://avatars.githubusercontent.com/u/39937317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774318785008,
+      "changelog": "Initial release of image-create: Generate and iterate images from text prompts.\n\n- Quickly gather user goals and constraints for personalized image creation.\n- Provide three prompt variants (safe, creative, minimal) for flexibility.\n- Structured prompt template ensures consistent, high-quality output.\n- Defaults to photorealistic style, clean composition, and realistic camera cues.\n- Includes a clear workflow for refining images with user feedback and constraints.\n- Supports fast iteration with suggested settings and revision planning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0340e72295449bed6fea93e2850819fc7361d6e2db17fbfd9ff7011b58abfa2"
+}

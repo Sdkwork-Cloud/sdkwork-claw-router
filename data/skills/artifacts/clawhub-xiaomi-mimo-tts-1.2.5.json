@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaomi-mimo-tts@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_mimo_tts",
+  "skill": {
+    "id": 59787,
+    "skillKey": "clawhub-xiaomi-mimo-tts",
+    "name": "Xiaomi MiMo TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-mimo-tts",
+    "url": "https://clawhub.ai/skills/xiaomi-mimo-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-mimo-tts-d8bfab1cb0885ccc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用小米 MiMo TTS (mimo-v2-tts) 生成语音。 支持多种音色、风格控制、情感标签和方言。 需要 MIMO_API_KEY。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jazzqi",
+      "userId": "publishers:jazzqi",
+      "displayName": "jazzqi",
+      "image": "https://avatars.githubusercontent.com/u/1389319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1774088827185,
+      "changelog": "Refactor + stability: unified implementations; robust error handling; dry-run; ffmpeg checks; smart-mode opt-in.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5103c2b0988dbf30ea7f704b144ed239dd58dcc7ef4b901a67a772b20934fb00"
+}

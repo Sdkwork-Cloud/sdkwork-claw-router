@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-audit-modeio@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_audit_modeio",
+  "skill": {
+    "id": 23560,
+    "skillKey": "clawhub-skill-audit-modeio",
+    "name": "Skill Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-audit-modeio",
+    "url": "https://clawhub.ai/skills/skill-audit-modeio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-audit-modeio-f1e92c020c8d6097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a deterministic static safety audit for third-party AI skill or plugin repositories before install or execution. Use when asked to scan a skill repo, as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modeioai",
+      "userId": "publishers:modeioai",
+      "displayName": "modeioai",
+      "image": "https://avatars.githubusercontent.com/u/244495891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773209607826,
+      "changelog": "Initial release of skill-audit-modeio.\n\n- Runs static, deterministic safety audits for third-party AI skill and plugin repositories before install or execution.\n- Provides commands for audit evaluation, prompt generation, evidence validation, and merge adjudication without executing code.\n- Excludes maintainer-only benchmarks and validation assets from public uploads.\n- Requires Python 3; optionally supports git and GitHub tokens for enhanced metadata and rate-limiting.\n- Designed to help users assess repository safety with evidence-backed, reproducible findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85e60b29f54139972c56bfe61479acc598b7ecf32c6fddfac16843a52ec99541"
+}

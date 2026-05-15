@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-sls-log-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_sls_log_query",
+  "skill": {
+    "id": 53124,
+    "skillKey": "clawhub-aliyun-sls-log-query",
+    "name": "Aliyun Sls Log Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-sls-log-query",
+    "url": "https://clawhub.ai/skills/aliyun-sls-log-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-sls-log-query-a2ee5ea2a73047d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when querying or troubleshooting logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775096414856,
+      "changelog": "Initial release of aliyun-sls-log-query skill.\n\n- Enables querying and troubleshooting logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK.\n- Provides setup instructions, environment variable configuration, and Python quickstart examples.\n- Includes script usage examples for both log queries and troubleshooting workflows.\n- Documents key workflow steps, validation, output standards, and reproducibility requirements.\n- Reference materials linked for syntax, SDK usage, and troubleshooting templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86ae5dc57c37bb5206334b8dcf65f3d876581271c5462b34c07167e0d96d3f46"
+}

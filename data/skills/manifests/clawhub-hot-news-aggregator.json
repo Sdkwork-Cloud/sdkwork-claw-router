@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66180,
+  "uuid": "skill-clawhub-hot-news-aggregator",
+  "skillKey": "clawhub-hot-news-aggregator",
+  "name": "hot-news-aggregator",
+  "summary": "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use When 需要获取最新的国内外社会、科技、军事新闻，并且希望自动筛选和整理新闻要点时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_news_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "henryzhuhr",
+      "features": [
+        "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。Use When 需要获取最新的国内外社会、科技、军事新闻，并且希望自动筛选和整理新闻要点时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-news-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38650110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-news-aggregator",
+      "url": "https://clawhub.ai/skills/hot-news-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-news-aggregator",
+    "url": "https://clawhub.ai/skills/hot-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-news-aggregator-9011eb0a5c21d455.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-news-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-news-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:770193782a35023e9109138e3aede4a673453654de0b26aa49e53c6e97560df3",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:22:23.098Z"
+}

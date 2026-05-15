@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52434,
+  "uuid": "skill-clawhub-vecml-automl",
+  "skillKey": "clawhub-vecml-automl",
+  "name": "VecML AutoML",
+  "summary": "VecML AutoML — Drop a CSV, train an ML model, get predictions. One command. Use when the user asks to: train a model, upload data, run predictions, classify,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vecml_automl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tin Le",
+      "features": [
+        "VecML AutoML — Drop a CSV, train an ML model, get predictions",
+        "One command",
+        "Use when the user asks to: train a model, upload data, run predictions, classify,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vecml-automl@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101690568?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vecml-automl",
+      "url": "https://clawhub.ai/skills/vecml-automl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vecml-automl",
+    "url": "https://clawhub.ai/skills/vecml-automl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vecml-automl-d99f78bc48fa4dc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vecml-automl@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vecml-automl-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:416046197edccf9084bcb099f2e682994de2fcd262f981d79f211b23436943db",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T20:29:48.319Z"
+}

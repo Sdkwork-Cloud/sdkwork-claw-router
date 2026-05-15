@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-space-agent-os-mothership@1.1.3",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_space_agent_os_mothership",
+  "skill": {
+    "id": 36831,
+    "skillKey": "clawhub-s2-space-agent-os-mothership",
+    "name": "S2 Mothership [3.22 Native]"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-space-agent-os-mothership",
+    "url": "https://clawhub.ai/skills/s2-space-agent-os-mothership",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-space-agent-os-mothership-f40c42b2dd90f549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A spatial logic framework for Openclaw. Provides local state compression and coordinate management safely isolated in user space."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.3",
+      "createdAt": 1774454866943,
+      "changelog": "- Added 17 new files, primarily under the s2-clean-v112/.git/ directory, including hooks and info folders.\n- No changes to core skill logic or user-facing documentation.\n- No visible updates to SKILL.md; version number remains at 1.1.0 in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ad9de060e8918ce96176cdb62889bd282adc05d0b4cb3c7042dc4e78d27f002"
+}

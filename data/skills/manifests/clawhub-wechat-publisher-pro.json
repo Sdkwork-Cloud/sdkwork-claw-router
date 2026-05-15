@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66329,
+  "uuid": "skill-clawhub-wechat-publisher-pro",
+  "skillKey": "clawhub-wechat-publisher-pro",
+  "name": "微信公众号自动发布增强版",
+  "summary": "一键发布 Markdown/HTML 文章到微信公众号草稿箱，支持自动配图、美化排版、UTF-8 编码",
+  "version": "3.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publisher_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robot_Qu",
+      "features": [
+        "一键发布 Markdown/HTML 文章到微信公众号草稿箱，支持自动配图、美化排版、UTF-8 编码"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-publisher-pro@3.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117743580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-publisher-pro",
+      "url": "https://clawhub.ai/skills/wechat-publisher-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publisher-pro",
+    "url": "https://clawhub.ai/skills/wechat-publisher-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publisher-pro-a43b1b87de6838a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-publisher-pro@3.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-publisher-pro-3.1.3.json",
+      "version": "3.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:408458179152a5a8478844e5a8125aa070c355bd3f8b128b169c48ca7c568ee0",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:17:49.503Z"
+}

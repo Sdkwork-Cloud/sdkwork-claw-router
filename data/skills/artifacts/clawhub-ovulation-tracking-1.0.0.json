@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ovulation-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ovulation_tracking",
+  "skill": {
+    "id": 34000,
+    "skillKey": "clawhub-ovulation-tracking",
+    "name": "ovulation-tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ovulation-tracking",
+    "url": "https://clawhub.ai/skills/ovulation-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ovulation-tracking-6f9fe1dc6fc1a783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered fertility tracking with personalized temperature pattern detection and multi-signal fusion. Learns YOUR unique ovulation pattern over 2-3 cycles f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayi12345",
+      "userId": "s174rf58at28w4130x161vcwfd8427yy",
+      "displayName": "mayi12345",
+      "image": "https://avatars.githubusercontent.com/u/2958450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775159416754,
+      "changelog": "Major update: Now AI-powered with personalized multi-signal ovulation prediction.\n\n- Learns your unique temperature rise pattern over 2–3 cycles (Types A–D), preventing missed ovulation for less typical patterns.\n- Combines up to 5 signals (temperature, HRV, LH, cervical mucus, symptoms) for 80–90% prediction accuracy using Bayesian fusion.\n- Detects pre-ovulatory temperature dips automatically and alerts ahead of ovulation.\n- Smarter with every cycle: improves accuracy as it learns your data.\n- Partner alerting, local privacy-first processing, and new integrations (Oura Ring, OpenClaw agent).\n- Fully open source with detailed documentation and real-world validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c569090e8d63aaa8aa5f3945b2743da3cbadc73308397b12a71692896c548c0"
+}

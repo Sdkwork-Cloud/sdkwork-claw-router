@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-test@3.1.5",
+  "version": "3.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_test",
+  "skill": {
+    "id": 49125,
+    "skillKey": "clawhub-temp-test",
+    "name": "Temp Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-test",
+    "url": "https://clawhub.ai/skills/temp-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-test-964de4e91f03464d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a medium-sized demonstration skill for testing and bypassing limitations on minimal content descriptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidme6",
+      "userId": "s17aperbk8h3dswpc0vbsayk4d83hweb",
+      "displayName": "davidme6",
+      "image": "https://avatars.githubusercontent.com/u/198009354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.5",
+      "createdAt": 1777349894689,
+      "changelog": "- Updated SKILL.md with a longer description to address the \"too thin\" error.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b804b4a6862b6ca0df53801db3450bd4d565dda3aa41416dd1b26b4fed1acefa"
+}

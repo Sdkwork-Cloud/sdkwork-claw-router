@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56667,
+  "uuid": "skill-clawhub-export-reply",
+  "skillKey": "clawhub-export-reply",
+  "name": "Export Reply",
+  "summary": "Save any agent reply or full conversation to a local file. Triggers on: 保存 / 导出 / save / export. Supports MD, TXT, HTML, PDF, DOCX. Two modes: verbatim or co...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.export_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan-owo",
+      "features": [
+        "Save any agent reply or full conversation to a local file",
+        "Triggers on: 保存 / 导出 / save / export",
+        "Supports MD, TXT, HTML, PDF, DOCX",
+        "Two modes: verbatim or co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/export-reply@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194656525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "export-reply",
+      "url": "https://clawhub.ai/skills/export-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "export-reply",
+    "url": "https://clawhub.ai/skills/export-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/export-reply-cdb94ed8ae940f9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/export-reply@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-export-reply-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6e4bdb1084d244dac4a4554c1cc49e1e21563695a31bbe281830188ea32d7c1",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:01:21.418Z"
+}

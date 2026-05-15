@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bot-send-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_send_image",
+  "skill": {
+    "id": 23295,
+    "skillKey": "clawhub-feishu-bot-send-image",
+    "name": "Feishu Send Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-send-image",
+    "url": "https://clawhub.ai/skills/feishu-bot-send-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-send-image-20b4302cb07cb384.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send images directly in Feishu chat as native image messages (not file attachments). Use when: need to send a generated image, chart, screenshot, or any loca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonzhang2015",
+      "userId": "s176m6r1kkv4wv92134rj0mw2h83k827",
+      "displayName": "PL Uncle",
+      "image": "https://avatars.githubusercontent.com/u/10780985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773932763326,
+      "changelog": "First release: Sends local image files as native image messages in Feishu via Bot API, not as attachments.\n\n- Added script (feishu_send_image.sh) to send PNG/JPG/GIF/WEBP images directly to Feishu users or groups\n- Usage requires specifying image path, receiver ID/type, app ID, and app secret\n- Uses Feishu Bot API: authenticates, uploads image, sends message\n- Credentials must be manually extracted from ~/.openclaw/openclaw.json\n- Replaces previous tool which could only send attachments, enabling true image messages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1903ce59265a49b9d222ea8f8984e42005abd6a2a203bcf9311dc3d84ee65144"
+}

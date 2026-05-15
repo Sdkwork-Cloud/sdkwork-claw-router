@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sticker-manager@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sticker_manager",
+  "skill": {
+    "id": 28686,
+    "skillKey": "clawhub-sticker-manager",
+    "name": "Sticker Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sticker-manager",
+    "url": "https://clawhub.ai/skills/sticker-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sticker-manager-bf292fce0c4b30ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sticker library management for OpenClaw. Use this skill to save, search, tag, rename, clean up, collect, import, and recommend stickers or reaction images. I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuwenzhuang",
+      "userId": "s17cfphgveb4qraeapwjwbhs8183gf99",
+      "displayName": "zhuwenzhuang",
+      "image": "https://avatars.githubusercontent.com/u/8737853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1774331428634,
+      "changelog": "Animation preservation: generic rule, GIPHY support, reject static fallbacks for animated sources",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c393955014349e037590ebe4d3ac226e2e20c8f5022aaf67b4f004dd5718075"
+}

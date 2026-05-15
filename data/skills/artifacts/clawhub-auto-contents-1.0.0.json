@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-contents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_contents",
+  "skill": {
+    "id": 62789,
+    "skillKey": "clawhub-auto-contents",
+    "name": "Auto Contents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-contents",
+    "url": "https://clawhub.ai/skills/auto-contents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-contents-ea3baaa463c0e0df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MakeContents AI 资讯 Agent 技能。当用户需要自动执行资讯拉取、筛选推送（AINews/AITopics/AITools）、内容创作、内容发布、内容归档等任务时使用此技能。此技能调用本地运行的 MakeContents 应用 API，无需人工干预即可完成完整的内容创作和分发流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775221216216,
+      "changelog": "makecontents skill v1.0.0 – 自动化资讯拉取、筛选、创作与分发全流程\n\n- 新增自动资讯获取、筛选、内容创作与归档功能，无需人工干预\n- 支持对 RSS/RSSHub 资讯的推送与内容分发到微信、飞书、小红书等平台\n- 引入基于用户习惯的智能筛选与推送规律记忆机制\n- 提供 API 调用、服务健康检查和详细内容创作流程说明\n- 增加飞书多维表归档与小红书笔记私有发布支持\n- 加强错误处理和消息通知，支持流程中断与人工审核",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a87893c421ff9c1d0dbf984113ffd082e0d38e49335c129988273016420d767d"
+}

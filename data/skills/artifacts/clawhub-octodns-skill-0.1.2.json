@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/octodns-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octodns_skill",
+  "skill": {
+    "id": 19663,
+    "skillKey": "clawhub-octodns-skill",
+    "name": "Octodns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octodns-skill",
+    "url": "https://clawhub.ai/skills/octodns-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octodns-skill-074aa8d7a6c5f776.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage DNS zones across multiple providers using octoDNS (\"DNS as code\"). Use when you need to (1) manage DNS records in YAML format, (2) sync DNS zones betw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markjr",
+      "userId": "publishers:markjr",
+      "displayName": "Mark E. Jeftovic",
+      "image": "https://avatars.githubusercontent.com/u/33878?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 499,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773189668782,
+      "changelog": "- Added scripts/lib/secure-creds.sh and scripts/verify-security.sh for enhanced credential and security handling.\n- Updated scripts/lib/config.sh to integrate new security features.\n- Improved management and verification of sensitive credential information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abdbfe6bf4d8bc20b4142be6bf9a28d33f31d96a25fdb259c6f6f496e8b7f74d"
+}

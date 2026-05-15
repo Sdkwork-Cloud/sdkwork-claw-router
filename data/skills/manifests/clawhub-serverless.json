@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22467,
+  "uuid": "skill-clawhub-serverless",
+  "skillKey": "clawhub-serverless",
+  "name": "Serverless",
+  "summary": "Serverless integration. Manage data, records, and automate workflows. Use when the user wants to interact with Serverless data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serverless",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Serverless integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Serverless data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serverless@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serverless",
+      "url": "https://clawhub.ai/skills/serverless"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serverless",
+    "url": "https://clawhub.ai/skills/serverless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serverless-e97b1c01299966c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serverless@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-serverless-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9bfc2ad07546084e0355c40e813b5caaf29e5ad89477e3a2247368e2de68ad7",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:20.809Z"
+}

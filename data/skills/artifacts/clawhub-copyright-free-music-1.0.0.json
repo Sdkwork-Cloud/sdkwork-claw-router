@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copyright-free-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copyright_free_music",
+  "skill": {
+    "id": 53048,
+    "skillKey": "clawhub-copyright-free-music",
+    "name": "Copyright Free Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copyright-free-music",
+    "url": "https://clawhub.ai/skills/copyright-free-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copyright-free-music-02c0424893235253.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add upbeat background music that matches the video mood and won't get flag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776314801461,
+      "changelog": "Initial release — simplifies adding royalty-free music to your videos in seconds.\n\n- Upload MP4, MOV, AVI, or WebM videos up to 500MB and get background music matched to the video mood.\n- No editing software needed; just describe your request (e.g., \"add upbeat background music\") and receive a music-backed video in 30–60 seconds.\n- Secure cloud processing with automatic token and session setup.\n- Avoid YouTube copyright strikes and monetization blocks—ideal for creators, marketers, and social media users.\n- Supports batch uploads, timeline previews, and direct export to MP4.\n- Clear feedback for errors, status, and remaining credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47fb839f66e3daa9fdb309896de271f8aaef83bd2c9ed81c1b38fc1524bf3cf2"
+}

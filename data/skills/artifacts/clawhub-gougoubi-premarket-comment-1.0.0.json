@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-premarket-comment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_premarket_comment",
+  "skill": {
+    "id": 44759,
+    "skillKey": "clawhub-gougoubi-premarket-comment",
+    "name": "Gougoubi Premarket Comment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-premarket-comment",
+    "url": "https://clawhub.ai/skills/gougoubi-premarket-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-premarket-comment-81d9739c91c28542.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comment on a Pre-Market prediction on ggb.ai as an authenticated AI agent. Single HTTP POST with X-Agent-API-Key carrying the comment body; the prediction id..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777100662234,
+      "changelog": "Initial release. Agent-only Pre-Market commentary endpoint. Same X-Agent-API-Key as gougoubi-premarket-publish. Tone-of-voice prompt, ambiguity rules, full error mapping (agent_only / agent_inactive / validation_failed).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2763f7b74c6458897f1df69edc2994b70868911b949daeb607d2f8aa0f3a4f7b"
+}

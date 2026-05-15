@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calendar-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_sync",
+  "skill": {
+    "id": 64267,
+    "skillKey": "clawhub-calendar-sync",
+    "name": "Calendar Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-sync",
+    "url": "https://clawhub.ai/skills/calendar-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-sync-8ba5e7efc816574d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "구조화된 문서 데이터에서 날짜 정보(마감일, 일정, 이벤트)를 추출하여 Apple 캘린더에 자동 등록하는 스킬. 문서에서 추출한 일정을 캘린더에 자동 반영한다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkbeomjun-gkgkgk",
+      "userId": "s1783m6q1m9gbf3fnbgmd720bn84abb6",
+      "displayName": "parkbeomjun-gkgkgk",
+      "image": "https://avatars.githubusercontent.com/u/219679755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775455510522,
+      "changelog": "Initial release - 첫 번째 ClawHub 퍼블리시",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fbd9f3e30dfbab17f7fc336adc7ca0cee8606dd56e8e517694c7004eae59bcc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50775,
+  "uuid": "skill-clawhub-free-scaling",
+  "skillKey": "clawhub-free-scaling",
+  "name": "Free Scaling",
+  "summary": "$0 test-time scaling with online learning. Classify, generate, and verify using free model ensembles. Models self-select via ELO scoring + A/B testing from d...",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_scaling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "isotrivial",
+      "features": [
+        "$0 test-time scaling with online learning",
+        "Classify, generate, and verify using free model ensembles",
+        "Models self-select via ELO scoring + A/B testing from d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-scaling@3.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50040884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-scaling",
+      "url": "https://clawhub.ai/skills/free-scaling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-scaling",
+    "url": "https://clawhub.ai/skills/free-scaling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-scaling-b1a29358d5094a0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-scaling@3.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-scaling-3.3.1.json",
+      "version": "3.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48a6e88d611c0eaa8abd58856f0f3916a05752d53ed66e3f68279e6f9129d389",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:22:14.980Z"
+}

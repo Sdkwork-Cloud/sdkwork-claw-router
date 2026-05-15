@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56890,
+  "uuid": "skill-clawhub-lambda-compression",
+  "skillKey": "clawhub-lambda-compression",
+  "name": "Λ-Compression — 90% - 98% Lossless Reasoning Compression",
+  "summary": "Physics-based lossless compression for AI output — prose AND structured data. Strips 60-98% of tokens with zero information loss. Prose mode compresses reaso...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lambda_compression",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Physics-based lossless compression for AI output — prose AND structured data",
+        "Strips 60-98% of tokens with zero information loss",
+        "Prose mode compresses reaso..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lambda-compression@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lambda-compression",
+      "url": "https://clawhub.ai/skills/lambda-compression"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lambda-compression",
+    "url": "https://clawhub.ai/skills/lambda-compression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lambda-compression-ccda02bf3e22306b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lambda-compression@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lambda-compression-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:978eb8f90799cb122e2f3ff34606932984367645faed9261846c209ab10f547f",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T18:10:56.710Z"
+}

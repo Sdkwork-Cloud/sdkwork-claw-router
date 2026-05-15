@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27158,
+  "uuid": "skill-clawhub-monday-for-agents",
+  "skillKey": "clawhub-monday-for-agents",
+  "name": "Monday For Agents",
+  "summary": "Set up a monday.com account for an OpenClaw agent and work with monday.com boards, items, and updates via the GraphQL API or MCP server. Use when: creating a...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_for_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Set up a monday.com account for an OpenClaw agent and work with monday.com boards, items, and u.",
+        "Use when: creating a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monday-for-agents@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monday-for-agents",
+      "url": "https://clawhub.ai/skills/monday-for-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-for-agents",
+    "url": "https://clawhub.ai/skills/monday-for-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-for-agents-f06acede7f2e3cbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monday-for-agents@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-monday-for-agents-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8755459b845d7b4198b01dcd62303cdd7b1fed9005ddc184635b0ffc23be49ff",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:25:24.438Z"
+}

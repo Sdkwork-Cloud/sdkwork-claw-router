@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jumpstart@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jumpstart",
+  "skill": {
+    "id": 38908,
+    "skillKey": "clawhub-jumpstart",
+    "name": "Jumpstart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jumpstart",
+    "url": "https://clawhub.ai/skills/jumpstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jumpstart-72fe5c6d96b2e276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sets up and manages a long-running agent harness for complex, multi-session coding projects. Use this skill whenever a user invokes jumpstart, jumpsession, j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kzac313",
+      "userId": "s17czv1bd0cehm860203hjgx0183ms1c",
+      "displayName": "kzac313",
+      "image": "https://avatars.githubusercontent.com/u/264057881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775614949372,
+      "changelog": "**Summary:**  \nAdds checkpoints/milestones and improves robustness in project initialization.\n\n- Introduced support for `jumploop --n` command to batch multiple feature sessions.\n- Enhances `jumpstart` to check for (and create if missing) required design files.\n- Feature list now includes 3–6 human verification checkpoints at key milestones.\n- Checkpoints appear as special items in the feature list; agent now pauses for user review at these milestones.\n- Other prompt and documentation improvements for clarity and thoroughness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16a9c2bb1d66b4b45b9dee87944d18a758150583e2e0e83b8b5453a8e1bd2975"
+}

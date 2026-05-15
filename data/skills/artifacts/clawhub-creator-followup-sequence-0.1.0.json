@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-followup-sequence@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_followup_sequence",
+  "skill": {
+    "id": 29564,
+    "skillKey": "clawhub-creator-followup-sequence",
+    "name": "Creator Followup Sequence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-followup-sequence",
+    "url": "https://clawhub.ai/skills/creator-followup-sequence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-followup-sequence-ed53f92924388b1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write short, human follow-up messages for creator outreach when the first message gets ignored, delayed, or half-answered. Use when the user needs second-tou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773366742359,
+      "changelog": "- Initial release of the creator-followup-sequence skill.\n- Generates short, human follow-up messages for creator outreach after no or partial replies.\n- Supports various conversation states and adjusts message style and timing accordingly.\n- Includes clear guidelines to avoid pressure or spammy tactics.\n- Output includes message sequence, timing advice, and stop rules.\n- Licensed for non-commercial use with attribution; commercial use requires permission.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84d9bbfb7b107553a43ac81ac04bdf3273c00e3d6202970b81e8485100b6fc20"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63459,
+  "uuid": "skill-clawhub-liqun-context-manager",
+  "skillKey": "clawhub-liqun-context-manager",
+  "name": "LiQun Context Manager",
+  "summary": "管理对话上下文和记忆提取。根据关键词高效检索历史记忆。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liqun_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaxint",
+      "features": [
+        "管理对话上下文和记忆提取。根据关键词高效检索历史记忆。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liqun-context-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190134904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liqun-context-manager",
+      "url": "https://clawhub.ai/skills/liqun-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liqun-context-manager",
+    "url": "https://clawhub.ai/skills/liqun-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liqun-context-manager-70948e32f5017fb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liqun-context-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liqun-context-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8d65308c23f944a9cd371a2780282431fd98f20f0c427f0bdede7ecec9fcc63",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T01:02:02.183Z"
+}

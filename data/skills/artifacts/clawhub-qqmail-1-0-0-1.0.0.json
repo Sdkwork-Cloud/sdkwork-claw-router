@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qqmail-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqmail_1_0_0",
+  "skill": {
+    "id": 55795,
+    "skillKey": "clawhub-qqmail-1-0-0",
+    "name": "Qqmail 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqmail-1-0-0",
+    "url": "https://clawhub.ai/skills/qqmail-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqmail-1-0-0-62f41221f50760e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage QQ Mail (QQ邮箱) via IMAP/SMTP. Use when the user wants to read, send, search, or manage emails from their QQ mailbox. Supports reading inbox, sending e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunyue1977",
+      "userId": "s175rt0962sq081rw8jpv65xmx83f1e9",
+      "displayName": "SunYue1977",
+      "image": "https://avatars.githubusercontent.com/u/267276324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777312105321,
+      "changelog": "Initial release of QQ Mail Manager.  \n- Read, send, and search emails in your QQ邮箱 using IMAP/SMTP.\n- Supports displaying inbox, reading specific emails, listing folders, and folder selection.\n- Send emails with subject, body, and optional attachments.\n- Search emails by subject, sender, or date.\n- All actions run from simple Python 3 scripts with no extra dependencies.\n- Requires IMAP/SMTP enabled and QQMail authorization code for login.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4fef298cfb40ed258225a84d0b3c06274c3dec3e9ebde87f1c4ee7290be070b"
+}

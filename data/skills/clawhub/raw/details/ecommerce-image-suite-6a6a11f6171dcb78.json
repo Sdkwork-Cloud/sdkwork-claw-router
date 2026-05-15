@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "ecommerce-image-suite",
+    "displayName": "ecommerce-image-suite",
+    "summary": "电商套图生成助手。用户明确提出需要生成电商套图、商品主图、卖点图、场景图、模特图等图片内容时触发。 支持国内平台（淘宝、京东、拼多多、抖音）与国际跨境平台（Amazon、独立站）的尺寸规范。 触发示例：「帮我生成这件T恤的电商套图」「做一套淘宝主图」「生成亚马逊listing图片」。 不应在用户仅上传图片但未明确...",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "createdAt": 1775618591848,
+    "updatedAt": 1777527300098
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1776063210915,
+    "changelog": "ecommerce-image-suite 1.0.6\n\n- 新增所有图像供应商支持自定义模型名：可通过`--model`参数或`*_MODEL`环境变量切换模型版本（如DASHSCOPE_MODEL、ARK_MODEL等）。\n- 更新各供应商默认模型名及使用说明，完善多云API配置方式。\n- generate.py 增加`--model`参数，适配自定义模型场景，模型优先级明确：命令行 > 环境变量 > 默认值。\n- 扩展SKILL.md说明，详细注明各供应商模型配置、参数用法、代理配置方式及用法示例。\n- 优化API Key与代理地址、模型参数的环境变量说明，支持更多国内直连及多版本覆盖。\n- 细化各供应商表述与参数文档，提升跨云能力与易用性。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "wzj177",
+    "userId": "s1700wfrpe2qdfg3ftsfyj38ax83xcgc",
+    "displayName": "🍡",
+    "image": "https://avatars.githubusercontent.com/u/189321723?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527300098
+  }
+}

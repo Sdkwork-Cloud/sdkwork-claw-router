@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47045,
+  "uuid": "skill-clawhub-text-compressor",
+  "skillKey": "clawhub-text-compressor",
+  "name": "Text Compressor",
+  "summary": "Compress and decompress text files using smart abbreviation and whitespace normalization. Use when user asks to compress, shrink, reduce, or optimize text fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Compress and decompress text files using smart abbreviation and whitespace normalization",
+        "Use when user asks to compress, shrink, reduce, or optimize text fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-compressor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-compressor",
+      "url": "https://clawhub.ai/skills/text-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-compressor",
+    "url": "https://clawhub.ai/skills/text-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-compressor-94ddf28fbd8c035a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-compressor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-compressor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04ecd79a9b63ce7f4fc8ee55530e916beda5b8afff67c890dfbf7cf046ea6efa",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T09:13:36.925Z"
+}

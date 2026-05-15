@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-earnfi@1.10.0",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_earnfi",
+  "skill": {
+    "id": 49922,
+    "skillKey": "clawhub-x402-earnfi",
+    "name": "EarnFi x402 - Execute real-world human work and social engagement (feedback, opinions, data labelling, reviews, small tasks), s."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-earnfi",
+    "url": "https://clawhub.ai/skills/x402-earnfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-earnfi-36cf7fe42638eead.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute real-world human work and social engagement (feedback, opinions, data labelling, reviews,small tasks), social tasks (likes, followers, reposts, raids..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earnfidotfun",
+      "userId": "s176tdy6vxvzgvps83c63j4cys85n0ns",
+      "displayName": "earnfidotfun",
+      "image": "https://avatars.githubusercontent.com/u/253838090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.10.0",
+      "createdAt": 1777315350493,
+      "changelog": "EarnFi Agent API x402 1.10.0\n\n- Updated skill to v1.1.0, reflecting OpenClaw as the authoritative agent API.\n- Clarified execution model: only human execution is supported; agent/hybrid modes return errors.\n- Improved documentation for registration and payment flow, emphasizing Ed25519 message signature for registration and full Solana USDC transfer for payments.\n- Expanded and detailed quick start instructions and endpoint references.\n- Defined new tables outlining API file locations, registration vs. payment, and free vs. paid endpoints for clearer onboarding.\n- Emphasized stateless, no-key workflow and per-job polling using secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:813e3122a3a6284782fbb9c6addc190014b254c323a792b6812934df51efe7b6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14546,
+  "uuid": "skill-clawhub-instagram-photo-find",
+  "skillKey": "clawhub-instagram-photo-find",
+  "name": "Instagram Photo Find",
+  "summary": "Find high-quality Instagram photos for any destination or place. Searches for Instagram posts via web search, downloads candidate images, vision-scores them...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_photo_find",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyduckler",
+      "features": [
+        "Find high-quality Instagram photos for any destination or place",
+        "Searches for Instagram posts via web search, downloads candidate images, vision-scores them..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-photo-find@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260153069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-photo-find",
+      "url": "https://clawhub.ai/skills/instagram-photo-find"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-photo-find",
+    "url": "https://clawhub.ai/skills/instagram-photo-find",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-photo-find-0c66672df3bf9481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-photo-find@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-photo-find-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:371d1d0e48c2cd44fb6bc2865ec7f0221656a44529f33e078ab5b3493ad167fb",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T00:48:36.061Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-infra@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_infra",
+  "skill": {
+    "id": 9718,
+    "skillKey": "clawhub-azure-infra",
+    "name": "Azure Infra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-infra",
+    "url": "https://clawhub.ai/skills/azure-infra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-infra-754b0f6d8ff2e38c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat-based Azure infrastructure assistance using Azure CLI and portal context. Use for querying, auditing, and monitoring Azure resources (VMs, Storage, IAM, Functions, AKS, App Service, Key Vault, Azure Monitor, billing, etc.), and for pr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bmdhodl",
+      "userId": "publishers:bmdhodl",
+      "displayName": "bmdhodl",
+      "image": "https://avatars.githubusercontent.com/u/11544320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3228,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769528070364,
+      "changelog": "azure-infra 1.0.0 – Initial release\n\n- Provides chat-based Azure infrastructure assistance using Azure CLI and portal context.\n- Defaults to read-only queries; requires explicit user confirmation for any write or destructive actions.\n- Supports querying, auditing, and monitoring resources like VMs, Storage, IAM, Functions, AKS, App Service, Key Vault, Azure Monitor, and billing.\n- Follows strict safety rules: no secret logging, prefer dry-run, and confirmation for all changes.\n- Handles multiple subscriptions and highlights the active subscription in results.\n- Includes a task guide for common infrastructure and security queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8556192094236851bff084dba9a8acf15c3061846ba8ac1116a33d1d5e434ff9"
+}

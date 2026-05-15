@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15678,
+  "uuid": "skill-clawhub-robot",
+  "skillKey": "clawhub-robot",
+  "name": "Robot",
+  "summary": "Build robots from hobby to industrial with hardware wiring, ROS2, motion planning, and safety constraints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build robots from hobby to industrial with hardware wiring, ROS2, motion planning, and safety c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robot",
+      "url": "https://clawhub.ai/skills/robot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robot",
+    "url": "https://clawhub.ai/skills/robot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robot-18d63be10ad544a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-robot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28bac8051ec817c7fa2a8ee84b417482e971977891f5a29fa841c3d61b2f7a62",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:07:45.971Z"
+}

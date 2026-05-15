@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57823,
+  "uuid": "skill-clawhub-news-research-summary-skill",
+  "skillKey": "clawhub-news-research-summary-skill",
+  "name": "根据你的要求总结资讯摘要",
+  "summary": "Researches news and factual information on the web, then produces a cited, deduplicated summary tailored to constraints (topic, time range, region, sources,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_research_summary_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darinouyang",
+      "features": [
+        "Researches news and factual information on the web, then produces a cited, deduplicated summary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-research-summary-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215459223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-research-summary-skill",
+      "url": "https://clawhub.ai/skills/news-research-summary-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-research-summary-skill",
+    "url": "https://clawhub.ai/skills/news-research-summary-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-research-summary-skill-ff05f79196fc3c0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-research-summary-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-research-summary-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f176146836880d3f10058a5974ba03669eac592b4868a5773fdb8333a09f5fd",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:41:20.685Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31303,
+  "uuid": "skill-clawhub-campaign-cleaner",
+  "skillKey": "clawhub-campaign-cleaner",
+  "name": "Campaign Cleaner",
+  "summary": "Campaign Cleaner integration. Manage data, records, and automate workflows. Use when the user wants to interact with Campaign Cleaner data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Campaign Cleaner integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Campaign Cleaner data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campaign-cleaner@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campaign-cleaner",
+      "url": "https://clawhub.ai/skills/campaign-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-cleaner",
+    "url": "https://clawhub.ai/skills/campaign-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-cleaner-62dac10434a762c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campaign-cleaner@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-campaign-cleaner-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9720c264b3edbae09df7bc08a1c72db3a2d492cedbe1f41ce1a8d733f764bbf0",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:27:15.595Z"
+}

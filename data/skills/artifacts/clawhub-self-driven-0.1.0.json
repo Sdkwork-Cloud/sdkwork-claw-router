@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-driven@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_driven",
+  "skill": {
+    "id": 18573,
+    "skillKey": "clawhub-self-driven",
+    "name": "Self Driven"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-driven",
+    "url": "https://clawhub.ai/skills/self-driven",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-driven-a891282a463d0a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI to autonomously select, execute, evaluate, and record tasks in a closed loop without human prompts, prioritizing efficiency and continuous improve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773227523901,
+      "changelog": "Initial release of Self-Driven AI skill.\n\n- Enables AI to autonomously select, execute, evaluate, and record tasks without waiting for user commands.\n- Establishes a 5-step loop: read memory, pick task, execute, self-assess, record/report.\n- Uses a task pool and execution log for complete traceability.\n- Prioritizes tasks based on context and current progress.\n- Automates regular execution via 30-minute cron triggers.\n- Designed for continuous self-improvement and minimal human intervention.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6acd3a2a82a709238dafbb99fbb6fb8a0b95ba12591f7b8861aa63c96b54ad24"
+}

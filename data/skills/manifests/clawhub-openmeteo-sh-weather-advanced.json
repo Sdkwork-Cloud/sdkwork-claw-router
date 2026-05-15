@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11321,
+  "uuid": "skill-clawhub-openmeteo-sh-weather-advanced",
+  "skillKey": "clawhub-openmeteo-sh-weather-advanced",
+  "name": "Weather via OpenMeteo (via openmeteo-sh cli; advanced ver)",
+  "summary": "Advanced weather from free OpenMeteo API: historical data, detailed variable selection, model choice, past-days, and in-depth forecasts. Use when the user as...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmeteo_sh_weather_advanced",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikita Shkoda",
+      "features": [
+        "Advanced weather from free OpenMeteo API: historical data, detailed variable selection, model c.",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmeteo-sh-weather-advanced@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40822400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmeteo-sh-weather-advanced",
+      "url": "https://clawhub.ai/skills/openmeteo-sh-weather-advanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmeteo-sh-weather-advanced",
+    "url": "https://clawhub.ai/skills/openmeteo-sh-weather-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmeteo-sh-weather-advanced-0a7b09d613880a33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmeteo-sh-weather-advanced@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmeteo-sh-weather-advanced-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0138c7dfbd55c8b3b01ae5691cb9ce6aedb38dbbcc0ca48ddc0c451adb9eed59",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:06:41.099Z"
+}

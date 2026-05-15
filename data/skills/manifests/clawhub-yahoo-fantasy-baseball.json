@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18088,
+  "uuid": "skill-clawhub-yahoo-fantasy-baseball",
+  "skillKey": "clawhub-yahoo-fantasy-baseball",
+  "name": "Yahoo Fantasy Baseball",
+  "summary": "Query your Yahoo Fantasy Baseball league: view roster, standings, matchups, free agents, draft results, transactions, and injuries. Daily roster optimization...",
+  "version": "0.1.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_fantasy_baseball",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Haney",
+      "features": [
+        "Query your Yahoo Fantasy Baseball league: view roster, standings, matchups, free agents, draft.",
+        "Daily roster optimization..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yahoo-fantasy-baseball@0.1.26",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13684640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yahoo-fantasy-baseball",
+      "url": "https://clawhub.ai/skills/yahoo-fantasy-baseball"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-fantasy-baseball",
+    "url": "https://clawhub.ai/skills/yahoo-fantasy-baseball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-fantasy-baseball-8d6da3b130020839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yahoo-fantasy-baseball@0.1.26",
+      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-fantasy-baseball-0.1.26.json",
+      "version": "0.1.26",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5cd807e3c7e7324ee982ccf2f2de1a4db7cb04b1666524847ab2f5fe9541227",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:20:45.113Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63355,
+  "uuid": "skill-clawhub-email-analyzer",
+  "skillKey": "clawhub-email-analyzer",
+  "name": "Email Analyzer",
+  "summary": "分析并清理 biqiang@126.com 邮箱中的邮件，按固化关键词分类后生成报告，待确认后执行安全删除操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "farmerboybi-bot",
+      "features": [
+        "分析并清理 biqiang@126.com 邮箱中的邮件，按固化关键词分类后生成报告，待确认后执行安全删除操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263736108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-analyzer",
+      "url": "https://clawhub.ai/skills/email-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-analyzer",
+    "url": "https://clawhub.ai/skills/email-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-analyzer-0e3066a58c45c9e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32693be06bc6a66927ed6a344af153e111c6a24073eab13658a1316ac009bb4c",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T20:29:51.658Z"
+}

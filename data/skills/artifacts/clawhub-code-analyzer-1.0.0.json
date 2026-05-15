@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_analyzer",
+  "skill": {
+    "id": 68171,
+    "skillKey": "clawhub-code-analyzer",
+    "name": "Code Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-analyzer",
+    "url": "https://clawhub.ai/skills/code-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-analyzer-89599c17a1965550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度代码分析工具。分析代码架构、执行流程、数据流、业务规则、外部依赖、数据模型，支持 DDD 模式识别（聚合根、实体、值对象、领域服务、仓储、领域事件、限界上下文）。使用场景：新代码库熟悉、架构文档生成、代码审查准备、技术债务评估、知识传承、DDD 模式识别。支持 Python、JavaScript、TypeSc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerry-guo-mys",
+      "userId": "publishers:jerry-guo-mys",
+      "displayName": "jerry-guo-mys",
+      "image": "https://avatars.githubusercontent.com/u/188930677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1609,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772838838398,
+      "changelog": "Initial release of code-analyzer.\n\n- 提供深度代码分析，涵盖架构风格、执行流程、数据流、业务规则、外部依赖、数据模型及 DDD 模式识别\n- 支持 20+ 主流编程语言，包括 Python、JavaScript、TypeScript、Rust、Java、Go 等\n- 生成结构化分析报告，包含质量评分、问题清单、架构图和改进建议\n- 支持特定目录排除、DDD 专项分析、多场景（架构文档生成、代码审查、技术债务评估等）\n- 提供与 AI 助手协作用例和最佳实践文档",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:614197d21bffed36180debf2deec48c833cbee1738d577e6bf4a1ae019e8f389"
+}

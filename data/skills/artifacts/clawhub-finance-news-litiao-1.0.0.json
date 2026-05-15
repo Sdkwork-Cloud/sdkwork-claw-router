@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finance-news-litiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_news_litiao",
+  "skill": {
+    "id": 24909,
+    "skillKey": "clawhub-finance-news-litiao",
+    "name": "Finance News Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-news-litiao",
+    "url": "https://clawhub.ai/skills/finance-news-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-news-litiao-beaf0bda683c1b30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market news briefings with AI summaries. Use when asked about stock news, market updates, portfolio performance, morning/evening briefings, financial headlin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773719935753,
+      "changelog": "Bug fixes and improvements with -litiao suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3efe41630e558bcb07ae044172b4944270d0214f234b3ee3344848361dd75bc2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/card-news-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_news_gen",
+  "skill": {
+    "id": 61325,
+    "skillKey": "clawhub-card-news-gen",
+    "name": "Card News Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-news-gen",
+    "url": "https://clawhub.ai/skills/card-news-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-news-gen-983bf339bd6b6739.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "인스타그램/SNS용 카드뉴스를 자동 생성하는 스킬. 주제를 입력하면 → HTML 디자인 → Playwright 스크린샷 → 업로드용 이미지 생성. 다크 에디토리얼 스타일(사진 커버 + 다크 텍스트 카드) 기본 제공. \"카드뉴스\", \"인스타 콘텐츠\", \"캐러셀\", \"card news..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyeuun97",
+      "userId": "s1796m24tmhzb94tat4vqwkanx83k5nx",
+      "displayName": "gyeuun97",
+      "image": "https://avatars.githubusercontent.com/u/258575878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774434851898,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e903b5b11c132e0aed96559c4daf7ff2cdfbc22ecfd939919e69effa749ebdb"
+}

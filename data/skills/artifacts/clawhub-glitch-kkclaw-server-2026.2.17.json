@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glitch-kkclaw-server@2026.2.17",
+  "version": "2026.2.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_kkclaw_server",
+  "skill": {
+    "id": 17424,
+    "skillKey": "clawhub-glitch-kkclaw-server",
+    "name": "Kkclaw Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-kkclaw-server",
+    "url": "https://clawhub.ai/skills/glitch-kkclaw-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-kkclaw-server-e5775d82daff6bb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Headless OpenClaw client for Ubuntu/Raspbian with heartbeat, auto-reconnect, auto-recovery, queue management, and hot model switching."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris6970barbarian-hue",
+      "userId": "publishers:chris6970barbarian-hue",
+      "displayName": "Glitch",
+      "image": "https://avatars.githubusercontent.com/u/258746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 780,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.2.17",
+      "createdAt": 1771342385576,
+      "changelog": "KKClaw Server 2026.2.17\n\n- Introduces a headless, server-optimized version of KKClaw for Ubuntu and Raspbian (no GUI; suitable for Raspberry Pi/cloud).\n- Adds configurable heartbeat, auto reconnect with exponential backoff, and automatic recovery features.\n- Implements advanced queue management (FIFO, size/retry limits, resume after disconnect).\n- Enables hot model switching with fallback and auto-rollback protection.\n- Includes detailed CLI usage instructions and sample systemd service setup for easy deployment.\n- Provides comprehensive configuration via `config.json`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0017ffd645d5d0c9c2a49d760f41c0058a889487ef18d1a7634dd8561d528c2"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "openclaw-memory-pensieve-algorand",
+    "displayName": "pensieve-algorand",
+    "summary": "Long-term episodic memory for OpenClaw with append-only hash-chained local layers, daily dream-cycle consolidation, AES-GCM encrypted Algorand anchoring, and...",
+    "tags": {
+      "latest": "3.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 7
+    },
+    "createdAt": 1772281574766,
+    "updatedAt": 1778302673825
+  },
+  "latestVersion": {
+    "version": "3.0.0",
+    "createdAt": 1773497996534,
+    "changelog": "OpenClaw Pensieve v3.0.0 is a major update — all scripts replaced by a streamlined MCP server.\n\n- Migrated from multiple standalone scripts to a single `server.py` providing all functionality.\n- All tools (capture, dream-cycle, anchoring, validation, recovery, status) now exposed via MCP commands.\n- Removed dependence on separate virtual environments and per-script invocations.\n- Secrets are now read from environment variables (with file-based fallback for dev only).\n- Simplified installation and deployment: just install `mcp`, `algosdk`, and `cryptography`.\n- Usage and operational rules updated for single-server operation.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "pitertxus",
+    "userId": "publishers:pitertxus",
+    "displayName": "pitertxus",
+    "image": "https://avatars.githubusercontent.com/u/86043927?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302673825
+  }
+}

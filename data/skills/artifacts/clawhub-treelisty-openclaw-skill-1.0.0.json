@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/treelisty-openclaw-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treelisty_openclaw_skill",
+  "skill": {
+    "id": 10973,
+    "skillKey": "clawhub-treelisty-openclaw-skill",
+    "name": "TreeListy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treelisty-openclaw-skill",
+    "url": "https://clawhub.ai/skills/treelisty-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treelisty-openclaw-skill-c19adea63fdd7fa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hierarchical project decomposition and planning. Use when breaking down complex projects, structuring information, planning multi-step workflows, or organizing any nested hierarchy. Supports 21 specialized patterns (WBS, GTD, Philosophy, S."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prairie2cloud",
+      "userId": "publishers:prairie2cloud",
+      "displayName": "Prairie2Cloud",
+      "image": "https://avatars.githubusercontent.com/u/207639265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1970,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770128658704,
+      "changelog": "Initial release of TreeListy skill for hierarchical project decomposition and planning.\n\n- Supports breaking down complex projects and structuring information in nested hierarchies.\n- Includes 21 specialized patterns (WBS, Roadmap, Sales, Philosophy, Film, etc.).\n- Exports trees to JSON, Markdown, Mermaid, CSV, checklist, and HTML formats.\n- Command-line utilities for pattern discovery, decomposition, export, validation, and browser push.\n- No external API or tokens required; all processing is local.\n- Provides clear documentation and workflow examples for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26b65637bf76018c07e6e37ae9fb09f2bbc70ee268eaef438c5effa310abe71a"
+}

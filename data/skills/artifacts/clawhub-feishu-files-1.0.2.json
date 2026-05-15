@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-files@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_files",
+  "skill": {
+    "id": 28841,
+    "skillKey": "clawhub-feishu-files",
+    "name": "feishu-files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-files",
+    "url": "https://clawhub.ai/skills/feishu-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-files-78c2a48e74468947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A simple skill send files to feishu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingothreed",
+      "userId": "s178d9x7e01rxtxfs6h4ke37y184zssb",
+      "displayName": "Bingo",
+      "image": "https://avatars.githubusercontent.com/u/15133787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774207169257,
+      "changelog": "- Updated documentation to retrieve APP_ID dynamically from the config file, instead of requiring manual entry.\n- Improved instructions for generating tenant_access_token with both APP_ID and APP_SECRET.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8466a835d7852ab7dcce186de9a3d870453b5cc2bd72315147a14941c437f96"
+}

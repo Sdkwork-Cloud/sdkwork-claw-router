@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-planning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_planning",
+  "skill": {
+    "id": 15220,
+    "skillKey": "clawhub-task-planning",
+    "name": "Task Planning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-planning",
+    "url": "https://clawhub.ai/skills/task-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-planning-cb9c2fd051b86584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and organize software development tasks effectively. Use when breaking down features, creating user stories, or planning sprints. Handles task breakdown..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yumoezhung",
+      "userId": "s178rbmy9m5wbpjezx6k0pxwgs83pnyh",
+      "displayName": "YumoeZhung",
+      "image": "https://avatars.githubusercontent.com/u/49787045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 954,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772682623363,
+      "changelog": "- Initial release of the task-planning skill.\n- Provides clear processes for task breakdown, user stories (INVEST principle), epic-story-task decomposition, and sprint planning.\n- Includes templates, MoSCoW prioritization, and backlog management practices.\n- Outlines best practices and essential constraints for effective agile planning.\n- Supports usage on Claude, ChatGPT, and Gemini platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:578e804ea4b5f6d77358821fb438f1beaf7a8c034de62b2b15ed734197eca37e"
+}

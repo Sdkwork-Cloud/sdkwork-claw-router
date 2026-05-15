@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-pipeline@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_pipeline",
+  "skill": {
+    "id": 56168,
+    "skillKey": "clawhub-coding-pipeline",
+    "name": "Coding Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-pipeline",
+    "url": "https://clawhub.ai/skills/coding-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-pipeline-0d7d790d24b023da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforces a disciplined 4-phase pipeline for non-trivial coding tasks: Plan (hypothesis) → Code (one fix) → Validate (root cause) → Debug (max 3 tries, escala..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778140712162,
+      "changelog": "Polish phase-gated workflow explanation, clarify when to use, add stronger validation rules, and update metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bb2e77b33971310e82e4d1f8566acc070db28c9665b58a816b4220d1226dc41"
+}

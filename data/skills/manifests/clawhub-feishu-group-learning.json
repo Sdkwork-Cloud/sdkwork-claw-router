@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73143,
+  "uuid": "skill-clawhub-feishu-group-learning",
+  "skillKey": "clawhub-feishu-group-learning",
+  "name": "飞书群学习分析",
+  "summary": "自动分析飞书群消息，提取学习点和进化建议。 每6小时自动运行，支持多群监控、关键词提取、学习建议生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group_learning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolvzhao-lab",
+      "features": [
+        "自动分析飞书群消息，提取学习点和进化建议。 每6小时自动运行，支持多群监控、关键词提取、学习建议生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group-learning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232293808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group-learning",
+      "url": "https://clawhub.ai/skills/feishu-group-learning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group-learning",
+    "url": "https://clawhub.ai/skills/feishu-group-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-learning-a6485a0d956b95fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group-learning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-learning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a2dcfb43720ddcfa99443916b096df1eaba05b48f6b2e06dfbd7c4e1bcd5386",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:56:18.029Z"
+}

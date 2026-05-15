@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accessibility-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accessibility_checker",
+  "skill": {
+    "id": 56317,
+    "skillKey": "clawhub-accessibility-checker",
+    "name": "Accessibility Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accessibility-checker",
+    "url": "https://clawhub.ai/skills/accessibility-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accessibility-checker-b5d06981dd60dbab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prüft UI-Komponenten auf WCAG-Verstöße, identifiziert Accessibility-Probleme und implementiert Verbesserungen wie ARIA-Labels und Farbkontrast."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hupmann86-cell",
+      "userId": "s174beq5jvk51cswb4xhsy9fy983y3j5",
+      "displayName": "hupmann86-cell",
+      "image": "https://avatars.githubusercontent.com/u/242008639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775458392466,
+      "changelog": "- Erstveröffentlichung des accessibility-checker Skills.\n- Automatischer Scan von UI-Komponenten auf Accessibility-Probleme.\n- Identifizierung von WCAG-Verstößen (wie fehlende Alt-Texte, mangelhafte Keyboard-Navigation).\n- Vorschlag und Umsetzung von Verbesserungen (z. B. ARIA-Labels, Farbkontraste).\n- Validierung der Barrierefreiheit mit Tools wie Lighthouse oder Screenreadern.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56023a178863a38abaad593f791ba9833e09a164ddfc58e4c5e2405a849dea5f"
+}

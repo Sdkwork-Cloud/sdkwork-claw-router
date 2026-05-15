@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_log",
+  "skill": {
+    "id": 24266,
+    "skillKey": "clawhub-expense-log",
+    "name": "ExpenseLog Conversational Expense Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-log",
+    "url": "https://clawhub.ai/skills/expense-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-log-5d81c485f87ed8e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track expenses by talking to your agent. Spent 45 on groceries. Categories, monthly reports, budget tracking. No spreadsheet needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773180006637,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e25905359e033e5bc42c8aef92a87932ae9f6bc505267b191bedb66aea915a5"
+}

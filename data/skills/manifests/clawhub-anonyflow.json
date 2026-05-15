@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27376,
+  "uuid": "skill-clawhub-anonyflow",
+  "skillKey": "clawhub-anonyflow",
+  "name": "Anonyflow",
+  "summary": "AnonyFlow integration. Manage data, records, and automate workflows. Use when the user wants to interact with AnonyFlow data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anonyflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AnonyFlow integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AnonyFlow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anonyflow@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anonyflow",
+      "url": "https://clawhub.ai/skills/anonyflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anonyflow",
+    "url": "https://clawhub.ai/skills/anonyflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anonyflow-23cbf51be5adac66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anonyflow@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-anonyflow-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85aea837ef1d0f6cdfbc045269f670961be3168e9f4e9c36245f415f91088ac5",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:28.329Z"
+}

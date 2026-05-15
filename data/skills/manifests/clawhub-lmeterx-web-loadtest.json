@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56926,
+  "uuid": "skill-clawhub-lmeterx-web-loadtest",
+  "skillKey": "clawhub-lmeterx-web-loadtest",
+  "name": "lmeterx-web-loadtest",
+  "summary": "LMeterX Web Load test tool。When a user provides a **webpage/website URL**, the script executes immediately to perform: Page Analysis + API Pre-checks + Batch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lmeterx_web_loadtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Charmy",
+      "features": [
+        "LMeterX Web Load test tool。When a user provides a **webpage/website URL**, the script executes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lmeterx-web-loadtest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26536133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lmeterx-web-loadtest",
+      "url": "https://clawhub.ai/skills/lmeterx-web-loadtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lmeterx-web-loadtest",
+    "url": "https://clawhub.ai/skills/lmeterx-web-loadtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lmeterx-web-loadtest-9e229887bdb6dede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lmeterx-web-loadtest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lmeterx-web-loadtest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f048ee6e20a9a020b7a9090d97494e510023db69567493b0a0fb606d745dc3c5",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:32:54.118Z"
+}

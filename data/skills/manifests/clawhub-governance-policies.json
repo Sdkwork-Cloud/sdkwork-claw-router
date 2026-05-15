@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49875,
+  "uuid": "skill-clawhub-governance-policies",
+  "skillKey": "clawhub-governance-policies",
+  "name": "AxonFlow Governance Policies",
+  "summary": "AxonFlow governance for OpenClaw — author policies, explain decisions, and handle approvals. Self-host AxonFlow for production workloads.",
+  "version": "2.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governance_policies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxonFlow: Runtime control layer for production AI",
+      "features": [
+        "AxonFlow governance for OpenClaw — author policies, explain decisions, and handle approvals",
+        "Self-host AxonFlow for production workloads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/governance-policies@2.4.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/governance-policies/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "governance-policies",
+      "url": "https://clawhub.ai/skills/governance-policies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governance-policies",
+    "url": "https://clawhub.ai/skills/governance-policies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governance-policies-15f0d898effaa1dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/governance-policies@2.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-governance-policies-2.4.2.json",
+      "version": "2.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d470c38490b1f84c02e01af15baddb2849dd18281fa7ff089581397a2262272f",
+      "artifactSizeBytes": 3063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:57:27.061Z"
+}

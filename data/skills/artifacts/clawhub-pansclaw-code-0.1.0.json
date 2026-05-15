@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pansclaw-code@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansclaw_code",
+  "skill": {
+    "id": 32929,
+    "skillKey": "clawhub-pansclaw-code",
+    "name": "PansClaw Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansclaw-code",
+    "url": "https://clawhub.ai/skills/pansclaw-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansclaw-code-bd920466f1993cb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the PansClaw Code CLI (Rust reimplementation of Claude Code) for AI-assisted coding. Triggers when: user wants to run coding tasks via pansclaw code, del..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775536800831,
+      "changelog": "Initial release of pansclaw-code — a Rust reimplementation of the Claude Code CLI.  \n\n- Provides a local AI-assisted coding CLI, supporting both local (Ollama) and remote (Minimax, Anthropic, OpenAI) models.\n- Automatically builds the binary if missing or outdated.\n- Detailed instructions for prerequisites, available models, usage patterns, and example commands.\n- Usage triggers and exclusions are clearly outlined for effective integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:177198b829750fa188d0a30cf83314278faa8d8fc11342d8a157a5b9f334208e"
+}

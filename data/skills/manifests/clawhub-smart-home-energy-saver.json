@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13072,
+  "uuid": "skill-clawhub-smart-home-energy-saver",
+  "skillKey": "clawhub-smart-home-energy-saver",
+  "name": "Smart Home Energy Saver",
+  "summary": "Analyze home energy usage and propose safe, read-only automation plans for savings. Use when a user wants Home Assistant energy insights, optimization ideas, or draft automation YAML without directly controlling devices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_home_energy_saver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "Analyze home energy usage and propose safe, read-only automation plans for savings",
+        "Use when a user wants Home Assistant energy insights, optimization ideas, or draft automation Y."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-home-energy-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-home-energy-saver",
+      "url": "https://clawhub.ai/skills/smart-home-energy-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-home-energy-saver",
+    "url": "https://clawhub.ai/skills/smart-home-energy-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-home-energy-saver-e67236ff45b80037.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-home-energy-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-home-energy-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8815664acdbd1655205051dc7c31dbf3a88ecbcc2533a11efbfb920ce951e7f2",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T09:56:22.909Z"
+}

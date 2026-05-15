@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/franchise-evaluation-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.franchise_evaluation_coach",
+  "skill": {
+    "id": 53655,
+    "skillKey": "clawhub-franchise-evaluation-coach",
+    "name": "Franchise Evaluation Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "franchise-evaluation-coach",
+    "url": "https://clawhub.ai/skills/franchise-evaluation-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/franchise-evaluation-coach-7a9fd5c71f31aa50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach a prospective franchisee through evaluating a franchise opportunity end-to-end — reading the FDD (Franchise Disclosure Document) Items 1-23 with red-fl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778111117083,
+      "changelog": "franchise-evaluation-coach v1.0.0 – Initial release\n\n- Guides prospects through end-to-end franchise evaluation, focusing on critical due diligence steps.\n- Explains how to read all 23 FDD Items with an emphasis on red flags and deal-breaking clauses.\n- Provides best practices for validating Item 19 financial disclosures against real franchisee data.\n- Outlines methods for conducting effective current and ex-franchisee calls.\n- Helps compare franchise investment/ROI with starting an independent business in the same sector.\n- Surfaces common traps in fee structures, territory terms, renewals, transfers, and terminations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6a34a176a864fbaf77700993e19efde1d278575872b2cf7882db2c65d496381"
+}

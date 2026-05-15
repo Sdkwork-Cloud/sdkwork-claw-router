@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-tech-analysis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_tech_analysis",
+  "skill": {
+    "id": 10007,
+    "skillKey": "clawhub-stock-tech-analysis",
+    "name": "Stock Tech Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-tech-analysis",
+    "url": "https://clawhub.ai/skills/stock-tech-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-tech-analysis-5b7b62b55cd8c190.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple technical analysis for stocks (Tencent, Xiaomi, Tesla, NVIDIA, etc.). Calculates moving averages (SMA20, SMA50), RSI (14-day), price position in 20-da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loda13",
+      "userId": "publishers:loda13",
+      "displayName": "loda13",
+      "image": "https://avatars.githubusercontent.com/u/10447318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2893,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773249616928,
+      "changelog": "Initial release of simple stock technical analysis tool.\n\n- Calculates SMA20, SMA50, and 14-day RSI using Yahoo Finance data.\n- Determines price position in 20-day high/low range.\n- Provides buy/hold/sell signals and a concise technical summary for each ticker.\n- Works with major stocks (Tencent, Xiaomi, Tesla, NVIDIA) and any Yahoo Finance ticker.\n- No additional dependencies; uses only Python standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0025bffdde5b6d694f8bce6f8a7c302a48f55881ee340317fc0fa955e61600ba"
+}

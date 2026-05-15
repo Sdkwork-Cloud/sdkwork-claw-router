@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-wiki-auto@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wiki_auto",
+  "skill": {
+    "id": 44280,
+    "skillKey": "clawhub-obsidian-wiki-auto",
+    "name": "obsidian-wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wiki-auto",
+    "url": "https://clawhub.ai/skills/obsidian-wiki-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wiki-auto-6f569bb0f34e7541.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain a personal knowledge Wiki using the LLM Wiki pattern with OpenClaw-optimized step-by-step execution. Use sub-agents for parallel processin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayxjw",
+      "userId": "s17frncn5c4d4xg6q10wp9w3z584pzvm",
+      "displayName": "jayxjw",
+      "image": "https://avatars.githubusercontent.com/u/70039288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776043174633,
+      "changelog": "obsidian-wiki-auto v1.0.1\n\n- Added clear instructions for initial setup and usage, including guidance on cron scheduling and vault access.\n- Emphasized autonomous, OpenClaw-native workflow with automatic vault creation and environment setup.\n- Clarified file ingestion process: users should send files to ~/Obsidian Wiki/raw/ for processing.\n- Noted automatic Python environment and library management for PDF/Word support.\n- Streamlined documentation to focus on practical usage and integration with OpenClaw workflows; technical operation details remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:959c5caa5ddeb16f058d02a7edd9d7fd92738a3ff2287a9ce9e11ae20102088c"
+}

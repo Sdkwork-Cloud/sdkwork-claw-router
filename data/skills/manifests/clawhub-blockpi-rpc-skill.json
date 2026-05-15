@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37486,
+  "uuid": "skill-clawhub-blockpi-rpc-skill",
+  "skillKey": "clawhub-blockpi-rpc-skill",
+  "name": "blockpi-rpc.skill",
+  "summary": "Multi-protocol BlockPI access skill for discovering documented methods, routing requests by protocol, mapping RU pricing, and calling BlockPI endpoints acros...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockpi_rpc_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NeganZhao",
+      "features": [
+        "Multi-protocol BlockPI access skill for discovering documented methods, routing requests by pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockpi-rpc-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147230368?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockpi-rpc-skill",
+      "url": "https://clawhub.ai/skills/blockpi-rpc-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockpi-rpc-skill",
+    "url": "https://clawhub.ai/skills/blockpi-rpc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockpi-rpc-skill-96344ddcc51fb6c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockpi-rpc-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockpi-rpc-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cc37cf3b5376fc769108ea2a5d78456ced32cb2213fe00b70b05bb1e6eab6cd",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T02:51:28.558Z"
+}

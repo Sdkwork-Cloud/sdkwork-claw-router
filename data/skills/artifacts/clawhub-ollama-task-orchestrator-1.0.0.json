@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-task-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_task_orchestrator",
+  "skill": {
+    "id": 43996,
+    "skillKey": "clawhub-ollama-task-orchestrator",
+    "name": "ollama-task-orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-task-orchestrator",
+    "url": "https://clawhub.ai/skills/ollama-task-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-task-orchestrator-580eec44f0ded308.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and execute Ollama tasks via SSH on a remote worker, providing queue status, exclusive task locking, and code generation commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rajeshhuria",
+      "userId": "s175fgwz2pzydd2vmjtmc6dq6h83hgvk",
+      "displayName": "Rajesh Huria",
+      "image": "https://avatars.githubusercontent.com/u/551780?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775668936044,
+      "changelog": "Ollama Task Orchestrator 1.0.0 – Initial Release\n\n- Manage remote Ollama task queues and trigger code generation via SSH.\n- Health check and queue management commands, including stale lock cleanup and server restarts.\n- Execute various tasks on the worker: codegen, write to file, test, shell command execution, and project listing.\n- Exclusivity locking ensures tasks do not overlap.\n- Easy configuration using environment variables for hosts, directories, and model selection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5b400864a15cac6c7b6150d3832e234a03f1cf86b193c4072a62094390b149f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-cover-image-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_cover_image_2",
+  "skill": {
+    "id": 22989,
+    "skillKey": "clawhub-baoyu-cover-image-2",
+    "name": "Baoyu Cover Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-cover-image-2",
+    "url": "https://clawhub.ai/skills/baoyu-cover-image-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-cover-image-2-68204c6fa5119be3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 10 color palettes and 7 rendering styles. Supports cinemati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nengnengz",
+      "userId": "publishers:nengnengz",
+      "displayName": "nengnengZ",
+      "image": "https://avatars.githubusercontent.com/u/124799184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773907435248,
+      "changelog": "baoyu-cover-image-2 v0.1.1\n\n- No file changes detected in this release.\n- Functionality and documentation remain the same as previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6963b04eba306f6b327cc4e584573f9b949791bf874c458385c0096ea8f7d4ab"
+}

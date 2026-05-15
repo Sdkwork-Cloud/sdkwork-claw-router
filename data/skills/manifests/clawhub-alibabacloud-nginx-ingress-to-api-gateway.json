@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43624,
+  "uuid": "skill-clawhub-alibabacloud-nginx-ingress-to-api-gateway",
+  "skillKey": "clawhub-alibabacloud-nginx-ingress-to-api-gateway",
+  "name": "Alibabacloud Nginx Ingress To Api Gateway",
+  "summary": "Alibaba Cloud APIG Migration Skill. Migrate Kubernetes nginx Ingress resources to Alibaba Cloud API Gateway (APIG, ingressClass: apig). Users provide Ingress...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_nginx_ingress_to_api_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud APIG Migration Skill",
+        "Migrate Kubernetes nginx Ingress resources to Alibaba Cloud API Gateway (APIG, ingressClass: ap.",
+        "Users provide Ingress..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-nginx-ingress-to-api-gateway@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-nginx-ingress-to-api-gateway",
+      "url": "https://clawhub.ai/skills/alibabacloud-nginx-ingress-to-api-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-nginx-ingress-to-api-gateway",
+    "url": "https://clawhub.ai/skills/alibabacloud-nginx-ingress-to-api-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-nginx-ingress-to-api-gateway-ea48162e0a1bf80c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-nginx-ingress-to-api-gateway@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-nginx-ingress-to-api-gateway-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ea3e05277a29e8c3256e14cead0971210b5063e9fcf8cc9db14c8a19795a2c8",
+      "artifactSizeBytes": 2796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:38:42.723Z"
+}

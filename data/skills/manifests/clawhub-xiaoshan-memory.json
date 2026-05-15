@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45436,
+  "uuid": "skill-clawhub-xiaoshan-memory",
+  "skillKey": "clawhub-xiaoshan-memory",
+  "name": "Xiaoshan Memory Publish",
+  "summary": "XiaoShan Memory Engine - Persistent AI memory with semantic search and knowledge graph. Triggers: remember/search memory/recall/forget/knowledge graph/memory...",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoshan_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "waychan8",
+      "features": [
+        "XiaoShan Memory Engine",
+        "Persistent AI memory with semantic search and knowledge graph",
+        "Triggers: remember/search memory/recall/forget/knowledge graph/memory..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoshan-memory@3.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171555614?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoshan-memory",
+      "url": "https://clawhub.ai/skills/xiaoshan-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoshan-memory",
+    "url": "https://clawhub.ai/skills/xiaoshan-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoshan-memory-3d399a562a45daaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoshan-memory@3.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoshan-memory-3.3.0.json",
+      "version": "3.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2fd52f6fc52d0803a0019b977caba248283ef557bb93ffabd2a3cda05ec6991",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T20:45:46.513Z"
+}

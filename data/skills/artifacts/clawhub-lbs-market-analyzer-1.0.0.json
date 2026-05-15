@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lbs-market-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lbs_market_analyzer",
+  "skill": {
+    "id": 19451,
+    "skillKey": "clawhub-lbs-market-analyzer",
+    "name": "LBS Market Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lbs-market-analyzer",
+    "url": "https://clawhub.ai/skills/lbs-market-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lbs-market-analyzer-f2dd4a7b1744ef97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive geo-spatial market intelligence and site selection evaluation using AMAP (Gaode) LBS API. Use when the user needs: (1) Competitor distribution..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raphaelxiao",
+      "userId": "s176p0gck942r4jekwpc39caks85byry",
+      "displayName": "raphaelxiao",
+      "image": "https://avatars.githubusercontent.com/u/6494074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 602,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773254466570,
+      "changelog": "- Initial release of lbs-market-analyzer.\n- Provides geo-spatial competitor mapping and market analysis using the AMAP (Gaode) LBS API.\n- Features include competitor distribution scan, site selection evaluation, \"Golden Path\" flow analysis, and market gap identification.\n- Automated AMAP API Key provisioning with browser-based login flow.\n- Includes scripts for both API Key setup and competitor data analysis.\n- Reference guides supplied for data interpretation and API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6fe36731f12f3938d2bb0d310f6ce20f86248e2ff89dc26bb298c23f75e9e6b"
+}

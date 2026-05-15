@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60368,
+  "uuid": "skill-clawhub-linkfox-amazon-ads-entity",
+  "skillKey": "clawhub-linkfox-amazon-ads-entity",
+  "name": "Amazon Ads Entity",
+  "summary": "亚马逊广告（Amazon Ads）基础实体查询技能，覆盖 Sponsored Products (SP) 的广告活动/广告组/关键词/否定关键词/商品广告/定向 6 个 list，以及 Sponsored Brands (SB v4) 的广告活动/广告组/广告 3 个 list；自动处理分页、令牌，以及各实体在...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_amazon_ads_entity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "亚马逊广告（Amazon Ads）基础实体查询技能，覆盖 Sponsored Products (SP) 的广告活动/广告组/关键词/否定关键词/商品广告/定向 6 个 list，以及 Sp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-amazon-ads-entity@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-amazon-ads-entity",
+      "url": "https://clawhub.ai/skills/linkfox-amazon-ads-entity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-amazon-ads-entity",
+    "url": "https://clawhub.ai/skills/linkfox-amazon-ads-entity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-amazon-ads-entity-53c91989308f573f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-amazon-ads-entity@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-amazon-ads-entity-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6ca32677e896562bb9b46dbd520b57908bc0d26746b1962a7a0cb3ac5913d51",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T11:42:12.344Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35346,
+  "uuid": "skill-clawhub-chargent",
+  "skillKey": "clawhub-chargent",
+  "name": "Chargent",
+  "summary": "Chargent integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chargent data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chargent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chargent integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chargent data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chargent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chargent",
+      "url": "https://clawhub.ai/skills/chargent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chargent",
+    "url": "https://clawhub.ai/skills/chargent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chargent-b9f4abb044e0d9b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chargent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chargent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a06d94369b5d4efb8607c39c9c49300720c858c7d74f9b10dc5611cf266163d2",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:53.755Z"
+}

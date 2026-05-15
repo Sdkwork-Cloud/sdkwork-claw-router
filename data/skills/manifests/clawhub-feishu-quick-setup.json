@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39621,
+  "uuid": "skill-clawhub-feishu-quick-setup",
+  "skillKey": "clawhub-feishu-quick-setup",
+  "name": "feishu-quick-setup",
+  "summary": "One-click Feishu bot creation. Uses the Feishu App Registration API (Device Flow) to create a new Feishu Bot and save credentials to the OpenClaw config file...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_quick_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HashSTACS-HK",
+      "features": [
+        "One-click Feishu bot creation",
+        "Uses the Feishu App Registration API (Device Flow) to create a new Feishu Bot and save credenti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-quick-setup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269660284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-quick-setup",
+      "url": "https://clawhub.ai/skills/feishu-quick-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-quick-setup",
+    "url": "https://clawhub.ai/skills/feishu-quick-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-quick-setup-83788f44ac6249ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-quick-setup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-quick-setup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8407706f6a3ef607ab3bfd005a34165f3f2192dd1a95537e397bee4e25958d24",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:30:36.240Z"
+}

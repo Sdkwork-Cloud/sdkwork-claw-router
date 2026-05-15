@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "facebook-openclaw",
+    "displayName": "fboc",
+    "summary": "CLI tool to manage Facebook Pages: list, create, read, hide, delete posts; list, create, delete comments; and get page info via the Graph API.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1777254044765,
+    "updatedAt": 1778116728493
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1778059838737,
+    "changelog": "- Added allowlist.json and exec-approvals.json for managing permissions and command approvals.\n- Removed .clawhub/origin.json.\n- Updated cron job instructions to use US/Eastern timezone instead of Asia/Ho_Chi_Minh.\n- Added section on setup.ps1 for making the CLI executable on Windows.\n- Documented error handling and how to resolve missing dependency issues (e.g., \"Cannot find module 'commander'\").\n- Expanded references to configuration and permission control files.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "phuongsky",
+    "userId": "s17dea2bjny34c0tbhmp4rf8s584xh2a",
+    "displayName": "phuongsky",
+    "image": "https://avatars.githubusercontent.com/u/9261566?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.exposed_secret_literal (+3 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778116489825
+  }
+}

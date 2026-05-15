@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/observer-effect-probe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.observer_effect_probe",
+  "skill": {
+    "id": 50260,
+    "skillKey": "clawhub-observer-effect-probe",
+    "name": "Observer Effect Probe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "observer-effect-probe",
+    "url": "https://clawhub.ai/skills/observer-effect-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/observer-effect-probe-56e7a2202bb8e524.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps detect skills that behave differently when they sense they are being monitored — catching the class of evasion where conditional activation logic speci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771754357824,
+      "changelog": "observer-effect-probe 1.0.0\n\n- Initial release of observer-effect-probe.\n- Detects skills that change behavior when they sense they are being monitored, targeting attestation/sandbox evasion techniques.\n- Probes five key evasion axes: sandbox fingerprinting, probe timing sensitivity, observer API usage, behavioral consistency, and metacognitive detection.\n- Provides a detailed report including detected evasion signals, behavioral comparisons across environments, an evasion probability score, and a final verdict.\n- Designed to complement existing attestation tools by catching skills that evade specifically during security review.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23c2f272ae4afb0073da5e1a2c511c7d0f4a07c9e17fbed41cc747f617db52a3"
+}

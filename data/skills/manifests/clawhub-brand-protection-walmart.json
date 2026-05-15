@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28331,
+  "uuid": "skill-clawhub-brand-protection-walmart",
+  "skillKey": "clawhub-brand-protection-walmart",
+  "name": "Brand Protection Walmart",
+  "summary": "Walmart brand protection toolkit. Detect unauthorized sellers, counterfeits, and MAP violations. Includes Walmart Brand Portal reporting, WFS seller monitori...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_protection_walmart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "Walmart brand protection toolkit",
+        "Detect unauthorized sellers, counterfeits, and MAP violations",
+        "Includes Walmart Brand Portal reporting, WFS seller monitori..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brand-protection-walmart@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brand-protection-walmart",
+      "url": "https://clawhub.ai/skills/brand-protection-walmart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-protection-walmart",
+    "url": "https://clawhub.ai/skills/brand-protection-walmart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-protection-walmart-6213d5e86ed18097.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brand-protection-walmart@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brand-protection-walmart-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e39c12f8c3670717ac6a1305a4a70dab86d826b3963286485798b3bb5f529856",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:54:11.601Z"
+}

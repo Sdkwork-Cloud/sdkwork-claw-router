@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30752,
+  "uuid": "skill-clawhub-logdna",
+  "skillKey": "clawhub-logdna",
+  "name": "Logdna",
+  "summary": "LogDNA integration. Manage data, records, and automate workflows. Use when the user wants to interact with LogDNA data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logdna",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "LogDNA integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with LogDNA data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logdna@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logdna",
+      "url": "https://clawhub.ai/skills/logdna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logdna",
+    "url": "https://clawhub.ai/skills/logdna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logdna-39df8e118530ee1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logdna@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-logdna-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a507c1ecbae4f3611e97a8f5c08836911b1bc1f985a2663ba646b9a720e7d26",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:08:43.568Z"
+}

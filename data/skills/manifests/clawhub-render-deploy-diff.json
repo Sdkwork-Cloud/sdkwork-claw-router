@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27069,
+  "uuid": "skill-clawhub-render-deploy-diff",
+  "skillKey": "clawhub-render-deploy-diff",
+  "name": "Render Deploy Diff",
+  "summary": "Detect config drift between required local env keys and a Render service before deploy; fails when required keys are missing remotely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.render_deploy_diff",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Detect config drift between required local env keys and a Render service before deploy",
+        "fails when required keys are missing remotely."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/render-deploy-diff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "render-deploy-diff",
+      "url": "https://clawhub.ai/skills/render-deploy-diff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "render-deploy-diff",
+    "url": "https://clawhub.ai/skills/render-deploy-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/render-deploy-diff-f5770d1dbe930732.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/render-deploy-diff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-render-deploy-diff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:498d0aa442f2bb90fae3b7fb4e8220c6c8cc5338b077edc449204a1ca4684726",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:07:28.230Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35813,
+  "uuid": "skill-clawhub-ibm-cloud",
+  "skillKey": "clawhub-ibm-cloud",
+  "name": "Ibm Cloud",
+  "summary": "IBM Cloud integration. Manage data, records, and automate workflows. Use when the user wants to interact with IBM Cloud data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibm_cloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "IBM Cloud integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with IBM Cloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ibm-cloud@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ibm-cloud",
+      "url": "https://clawhub.ai/skills/ibm-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibm-cloud",
+    "url": "https://clawhub.ai/skills/ibm-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibm-cloud-3e20d871056eacf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ibm-cloud@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ibm-cloud-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7ee404dfc3f495fa522f04394d6553a576753142978535affee08341404cf1a",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:30.356Z"
+}

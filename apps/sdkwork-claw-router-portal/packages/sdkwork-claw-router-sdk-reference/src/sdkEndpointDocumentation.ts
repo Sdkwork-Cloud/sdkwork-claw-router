@@ -254,7 +254,7 @@ const client = new ${sdkData.name}({
 async function main() {
   try {
     const response = await ${methodCall};
-    console.log(response);
+    return response;
     // Example Response:
 ${responseComment}
   } catch (error) {

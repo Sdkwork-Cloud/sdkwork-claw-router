@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8476,
+  "uuid": "skill-clawhub-image-ocr",
+  "skillKey": "clawhub-image-ocr",
+  "name": "Image Ocr",
+  "summary": "Extract text from images using Tesseract OCR",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_ocr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Extract text from images using Tesseract OCR"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-ocr",
+      "url": "https://clawhub.ai/skills/image-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-ocr",
+    "url": "https://clawhub.ai/skills/image-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-ocr-bf98859f1d4d4a97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ba042a5e9df97eb01232140e82720e54d53428229c5f1a9ac59bdca3a9130b3",
+      "artifactSizeBytes": 1718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:21:17.206Z"
+}

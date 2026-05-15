@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexusweb3-safety@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexusweb3_safety",
+  "skill": {
+    "id": 51747,
+    "skillKey": "clawhub-nexusweb3-safety",
+    "name": "NexusWeb3 Safety & Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexusweb3-safety",
+    "url": "https://clawhub.ai/skills/nexusweb3-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexusweb3-safety-8bc178035ef6935c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only API reference for NexusWeb3 safety protocols 21-30 on Base mainnet — kill switch status, KYA verification, audit logs, bounties, licensing, milesto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexusweb3dev",
+      "userId": "s175ht93vqvrpgq87pjcgdwnj183h46m",
+      "displayName": "nexusweb3dev",
+      "image": "https://avatars.githubusercontent.com/u/259958882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773746970225,
+      "changelog": "- Updated AgentKillSwitch contract address for Protocol 21.\n- No other changes to features, functions, or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:121901575329a63062c5a0661ea30c5a6c3af78257a446bf1c059ebdb0c8a99b"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12271,
+  "uuid": "skill-clawhub-device-assistant",
+  "skillKey": "clawhub-device-assistant",
+  "name": "Device Assistant",
+  "summary": "Personal device and appliance manager with error code lookup and troubleshooting. Tracks all your devices (appliances, electronics, software) with model numbers, manuals, and warranty info. When something breaks, tell it the error code and.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.device_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "udiedrichsen",
+      "features": [
+        "Personal device and appliance manager with error code lookup and troubleshooting",
+        "Tracks all your devices (appliances, electronics, software) with model numbers, manuals, and wa.",
+        "When something breaks, tell it the error code and get instant solutions",
+        "Use when: device shows error, need manual, warranty check, adding new device, maintenance remin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/device-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "device-assistant",
+      "url": "https://clawhub.ai/skills/device-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "device-assistant",
+    "url": "https://clawhub.ai/skills/device-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/device-assistant-f2ab7682ad71e6ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/device-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-device-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33218b400b258f204f85a1999fc8ba740b5fb77a8a57caaa977cf377c0308580",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:26:23.734Z"
+}

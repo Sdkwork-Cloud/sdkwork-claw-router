@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32580,
+  "uuid": "skill-clawhub-agent-subagents-ui",
+  "skillKey": "clawhub-agent-subagents-ui",
+  "name": "Agent Subagents UI",
+  "summary": "Add, extend, fix, or document the Subagents panel inside the OpenClaw Control UI Agents page. Use when implementing an Agents-page Subagents tab, wiring edit...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_subagents_ui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Add, extend, fix, or document the Subagents panel inside the OpenClaw Control UI Agents page",
+        "Use when implementing an Agents-page Subagents tab, wiring edit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-subagents-ui@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-subagents-ui",
+      "url": "https://clawhub.ai/skills/agent-subagents-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-subagents-ui",
+    "url": "https://clawhub.ai/skills/agent-subagents-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-subagents-ui-64ec2ec564b5ed76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-subagents-ui@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-subagents-ui-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:683f038b85b14a6d04b73357837f0242c8e290f585ede74cc1138ffd3b7f569b",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:37:35.751Z"
+}

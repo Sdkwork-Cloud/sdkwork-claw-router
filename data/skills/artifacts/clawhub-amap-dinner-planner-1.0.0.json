@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-dinner-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_dinner_planner",
+  "skill": {
+    "id": 69092,
+    "skillKey": "clawhub-amap-dinner-planner",
+    "name": "Amap Dinner Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-dinner-planner",
+    "url": "https://clawhub.ai/skills/amap-dinner-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-dinner-planner-3fa51e763ee01b1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多人聚餐选址神器。输入每个人的位置，自动计算最佳中间点，搜索附近餐厅，生成可在高德地图 App 扫码打开的聚餐地图，一键分享给朋友。再也不用为\"在哪吃\"纠结了。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "770600682-cyber",
+      "userId": "s170hh1asz5mp3w3w80qd7y0b584wcq6",
+      "displayName": "SmartVicky",
+      "image": "https://avatars.githubusercontent.com/u/270828245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776259780069,
+      "changelog": "约饭地图 Dinner Planner v1.0.0 初始版本上线！\n\n- 支持多人输入各自位置，自动计算最佳中间点\n- 提供中间点附近高德地图餐厅推荐，支持筛选菜系、人均消费、步行距离等条件\n- 综合计算每个人到餐厅的通勤时间与距离，智能排序推荐列表\n- 一键生成高德地图个人地图二维码，便捷扫码查看和分享\n- 全程通过高德 Web 服务 API 获取数据，隐私保障，无需本地部署",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c78b79c480ada865ffd41f22cd1914660011f5eac9af221a5fbe5f822bc5affc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40051,
+  "uuid": "skill-clawhub-skill-param-confirmer",
+  "skillKey": "clawhub-skill-param-confirmer",
+  "name": "Skill Param Confirmer",
+  "summary": "Downstream skill execution preflight layer. It inspects a target skill, extracts explicit and implicit confirmation fields, normalizes candidate parameters,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_param_confirmer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGI2Go",
+      "features": [
+        "Downstream skill execution preflight layer",
+        "It inspects a target skill, extracts explicit and implicit confirmation fields, normalizes cand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-param-confirmer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143123392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-param-confirmer",
+      "url": "https://clawhub.ai/skills/skill-param-confirmer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-param-confirmer",
+    "url": "https://clawhub.ai/skills/skill-param-confirmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-param-confirmer-f056403bfcabf7de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-param-confirmer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-param-confirmer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:388f0cc83224b15aca6a25f2e6c21f3cc081daf5303c6c91e83856ea88248fba",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:46:49.424Z"
+}

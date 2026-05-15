@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/i-logisitics-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i_logisitics_skill",
+  "skill": {
+    "id": 70492,
+    "skillKey": "clawhub-i-logisitics-skill",
+    "name": "海外物流Skill合集"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i-logisitics-skill",
+    "url": "https://clawhub.ai/skills/i-logisitics-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i-logisitics-skill-74d8a8a4254f7eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "京东国际物流数据查询技能 核心能力：支持物流轨迹追踪、国际运营指标查询、跨境小包体验指标查询三大功能模块。 1.国际物流轨迹追踪技能 功能描述：查询国际物流单号的实时物流轨迹信息。 支持的单号类型： - FS 开头的京东订单号 - JDW 开头的京东运单号 - 客户运单号 - 承运商运单号 核心能力： - 实时查..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdl-external-skills",
+      "userId": "s17am77zph65txgvh539x9f7ns84c1k1",
+      "displayName": "jdl-external-skills",
+      "image": "https://avatars.githubusercontent.com/u/274197181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776950003877,
+      "changelog": "- Skill name updated from joy-logistics-indicator to i-logistics-skill.\n- No file changes detected; only SKILL.md metadata updated.\n- Core functionality and description remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11887d7fad12f6b636c495ae4081ab07060e7126b2e855ccf661250763cd4269"
+}

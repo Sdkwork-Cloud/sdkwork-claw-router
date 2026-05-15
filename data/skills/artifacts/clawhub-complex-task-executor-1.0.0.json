@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/complex-task-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complex_task_executor",
+  "skill": {
+    "id": 58722,
+    "skillKey": "clawhub-complex-task-executor",
+    "name": "complex-task-executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complex-task-executor",
+    "url": "https://clawhub.ai/skills/complex-task-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complex-task-executor-0cd4c055c60c3c70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于“谋事、干事、总结”方法论执行复杂任务，并自动将经验教训写入短期记忆。Invoke when user asks to handle complex tasks, plan strategies, or execute multi-step operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q450770953-boop",
+      "userId": "s172bnee76qqxr50srmv5rqw6h83j25t",
+      "displayName": "q450770953",
+      "image": "https://avatars.githubusercontent.com/u/245096556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774516867157,
+      "changelog": "使用教员的方法论，谋事-干事-总结，最后形成短期记忆",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae5289da6534e7b2ccd94b0bfd96acf2a0ce46067b036d0c7574139265ec69b8"
+}

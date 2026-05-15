@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70817,
+  "uuid": "skill-clawhub-ths-financial-data",
+  "skillKey": "clawhub-ths-financial-data",
+  "name": "股票",
+  "summary": "该skill用于获取股票市场数据，包括实时行情、中文名称查询、键盘缩写转换、资金流向和日K线数据。使用thsdk库提供同花顺数据接口支持。支持自动将中文、缩写、短代码转换为thsdk所需的完整ths_code格式。当匹配到多只股票时，会返回候选列表供用户选择。如未安装thsdk，会自动安装。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ths_financial_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bensema",
+      "features": [
+        "该skill用于获取股票市场数据，包括实时行情、中文名称查询、键盘缩写转换、资金流向和日K线数据。使用thsdk库提供同花顺数据接口支持。支持自动将中文、缩写、短代码转换为thsdk所需的完."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ths-financial-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5534112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ths-financial-data",
+      "url": "https://clawhub.ai/skills/ths-financial-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ths-financial-data",
+    "url": "https://clawhub.ai/skills/ths-financial-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ths-financial-data-2f8256f54ecf5782.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ths-financial-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ths-financial-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d9b0e50fea999d3735b4a8b3b67d5c5a25471a942754e9cdb9ba298d92c257b",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:15:53.464Z"
+}

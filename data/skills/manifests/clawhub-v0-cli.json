@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32390,
+  "uuid": "skill-clawhub-v0-cli",
+  "skillKey": "clawhub-v0-cli",
+  "name": "v0-cli",
+  "summary": "Command-line tool for creating, refining, and listing AI-generated websites using v0.dev API without interactive prompts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v0_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hlongvu",
+      "features": [
+        "Command-line tool for creating, refining, and listing AI-generated websites using v0.dev API wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v0-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1598865?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v0-cli",
+      "url": "https://clawhub.ai/skills/v0-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v0-cli",
+    "url": "https://clawhub.ai/skills/v0-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v0-cli-fe47db16625c39a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v0-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-v0-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb07b6d9e04be9322731b9f0d660bc8dcc4b3c6531b815dc5b4c7d1d810a6af8",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:50:23.903Z"
+}

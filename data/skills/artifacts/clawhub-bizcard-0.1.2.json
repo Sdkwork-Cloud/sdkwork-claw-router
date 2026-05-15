@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bizcard@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizcard",
+  "skill": {
+    "id": 20247,
+    "skillKey": "clawhub-bizcard",
+    "name": "Bizcard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizcard",
+    "url": "https://clawhub.ai/skills/bizcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizcard-a50b6afcf6b52370.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Business card scanner + Google Contacts manager. Auto-detects business card images, extracts contact info via OCR (imageModel), confirms with user, saves to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "project820",
+      "userId": "publishers:project820",
+      "displayName": "project820",
+      "image": "https://avatars.githubusercontent.com/u/239489026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771583457114,
+      "changelog": "v0.1.2: Added templates/ folder with SOUL.md and AGENTS.md templates for dedicated bizcard agent setup. No personal data — ready to copy and use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e11035520738d9fe79382a2975dc051efee5845cf08616a0387eb8865da8af04"
+}

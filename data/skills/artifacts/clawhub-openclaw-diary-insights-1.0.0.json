@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-diary-insights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diary_insights",
+  "skill": {
+    "id": 68057,
+    "skillKey": "clawhub-openclaw-diary-insights",
+    "name": "OpenClaw Diary Insights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diary-insights",
+    "url": "https://clawhub.ai/skills/openclaw-diary-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diary-insights-8c50015b40fd2f45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日记洞察提取与可视化系统。从日记中提取思维卡片、情绪轨迹和成长维度，生成可交互的本地可视化页面。 **立即触发当**：用户说「分析日记」「生成洞察」「我的思考花园」「insights」「提取笔记」「/note-extractor」。 **主动建议当**：用户连续记录日记超过 7 天，或月末时主动提醒用户可以生成本..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smorzandos",
+      "userId": "publishers:smorzandos",
+      "displayName": "smorzandos",
+      "image": "https://avatars.githubusercontent.com/u/124900390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773553144734,
+      "changelog": "自动提取思维卡片、情绪轨迹、成长维度分析和知识图谱",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85845c4843f7b7ac0d23cd95609d3c195f2e5cba9da6f3bb8ba98fd840766bd5"
+}

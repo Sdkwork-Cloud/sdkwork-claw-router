@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-budget-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_budget_optimizer",
+  "skill": {
+    "id": 54865,
+    "skillKey": "clawhub-context-budget-optimizer",
+    "name": "Context Budget Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-budget-optimizer",
+    "url": "https://clawhub.ai/skills/context-budget-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-budget-optimizer-7e33bff9eecf40ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audits your agent’s context token usage to identify waste and provides a 3-week actionable roadmap to reduce AI cost by 30-40% without quality loss."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flynndavid",
+      "userId": "publishers:flynndavid",
+      "displayName": "flynndavid",
+      "image": "https://avatars.githubusercontent.com/u/11565009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772923380434,
+      "changelog": "Initial release of Context Budget Optimizer.\n\n- Audits agent context usage to identify token waste across all context layers.\n- Introduces the Token Efficiency Matrix for cost/ROI scoring and context pruning.\n- Provides a practical inventory template for estimating per-item and model token costs.\n- Includes a 3-phase workflow: inventory mapping, Matrix scoring, and a step-by-step cost reduction playbook.\n- Offers actionable playbooks: instant cuts, lazy loading, memory tiering, content compression, and model downgrade tactics.\n- Guides users to cut 30–40% token bloat with clear, prioritized actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45ebc5c7a42ea9bd40ab3182c40ccee272b690e0f5ae45340de609ec8d4bb327"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_monitor",
+  "skill": {
+    "id": 61039,
+    "skillKey": "clawhub-auto-monitor",
+    "name": "Auto Monitor - System Monitoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-monitor",
+    "url": "https://clawhub.ai/skills/auto-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-monitor-5f3677e4adbdc83d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xaiohuangningde",
+      "userId": "publishers:xaiohuangningde",
+      "displayName": "xaiohuangningde",
+      "image": "https://avatars.githubusercontent.com/u/143916959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3450,
+      "installsAllTime": 34,
+      "installsCurrent": 33,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772077203799,
+      "changelog": "Initial release of auto-monitor: proactive system status monitoring and reporting.\n\n- Periodically checks disk, memory, CPU, network, and process status.\n- Automatically generates health reports and sends alerts when thresholds are exceeded.\n- Alerts triggered for disk usage >80%, memory >85%, or CPU load > (cores × 0.8).\n- Proactively reports issues without waiting for user inquiries.\n- Supports immediate auto-remediation for fixable problems.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecb0107fe2f72f5f92e8b2fcbc9332ae18f2a1eda833c5502cf199b2ae15853c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34938,
+  "uuid": "skill-clawhub-image-collect",
+  "skillKey": "clawhub-image-collect",
+  "name": "image-collect",
+  "summary": "This skill extracts knowledge from an image and saves it locally.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_collect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bondli",
+      "features": [
+        "This skill extracts knowledge from an image and saves it locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-collect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6427929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-collect",
+      "url": "https://clawhub.ai/skills/image-collect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-collect",
+    "url": "https://clawhub.ai/skills/image-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-collect-0962b328670b1ae7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-collect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-collect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6afa3beb1ec126706db3647bbcedd24ec328a908434ce0a05e893d812478c9c1",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:15:52.325Z"
+}

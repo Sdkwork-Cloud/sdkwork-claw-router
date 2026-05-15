@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12399,
+  "uuid": "skill-clawhub-locu",
+  "skillKey": "clawhub-locu",
+  "name": "Locu",
+  "summary": "Manage tasks and projects via Locu's Public API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidsmorais",
+      "features": [
+        "Manage tasks and projects via Locu's Public API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/locu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22729436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "locu",
+      "url": "https://clawhub.ai/skills/locu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locu",
+    "url": "https://clawhub.ai/skills/locu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locu-c86a86486b5cd761.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/locu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-locu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:280dc0affaa2a4a9b9bb6a2877615e609e10ce9a86156ed66bce18b40b420ecd",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:06:28.944Z"
+}

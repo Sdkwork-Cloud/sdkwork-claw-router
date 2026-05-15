@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/service-health-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_health_checker",
+  "skill": {
+    "id": 39908,
+    "skillKey": "clawhub-service-health-checker",
+    "name": "Uptime Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-health-checker",
+    "url": "https://clawhub.ai/skills/service-health-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-health-checker-35cf0e3bfdab95b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor uptime of websites/services and alert when down. Use when checking if a website is reachable, monitoring service health, or getting alerted on downtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774453271168,
+      "changelog": "- Initial release of uptime-monitor, a website/service uptime checker with alerting.\n- Monitors URLs and sends alerts via webhook or email when services are down.\n- Includes scripts for health checks, sending alerts, and generating daily uptime reports.\n- Configurable via environment variables for URLs, check interval, and notification settings.\n- Uses curl for HTTP checks and logs status/results for reporting.\n- Supports Markdown-formatted uptime summaries and alerting compatible with Discord/Slack/PagerDuty.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e320f6293278f5b5023a8f8484d840313f97647c59e1b08f5894ea2319d58a24"
+}

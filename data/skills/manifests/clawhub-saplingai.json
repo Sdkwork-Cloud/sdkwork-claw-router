@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24398,
+  "uuid": "skill-clawhub-saplingai",
+  "skillKey": "clawhub-saplingai",
+  "name": "Saplingai",
+  "summary": "Sapling.ai integration. Manage Organizations, Pipelines, Projects, Users, Filters. Use when the user wants to interact with Sapling.ai data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saplingai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sapling.ai integration",
+        "Manage Organizations, Pipelines, Projects, Users, Filters",
+        "Use when the user wants to interact with Sapling.ai data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saplingai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saplingai",
+      "url": "https://clawhub.ai/skills/saplingai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saplingai",
+    "url": "https://clawhub.ai/skills/saplingai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saplingai-5b0469be485c3dc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saplingai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-saplingai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71cad0bbb7f7e666906ef971871ec8ff0903f0747158942864145d30d34dbc63",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:29.489Z"
+}

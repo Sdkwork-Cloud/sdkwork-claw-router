@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30658,
+  "uuid": "skill-clawhub-shuzhi-weather",
+  "skillKey": "clawhub-shuzhi-weather",
+  "name": "Shuzhi Weather",
+  "summary": "This skill should be used when users need to query weather information via the Shuzhi Weather API with HMAC-SHA256 authentication. It provides hourly weather...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuzhi_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex098929",
+      "features": [
+        "This skill should be used when users need to query weather information via the Shuzhi Weather A.",
+        "It provides hourly weather..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuzhi-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217886385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuzhi-weather",
+      "url": "https://clawhub.ai/skills/shuzhi-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuzhi-weather",
+    "url": "https://clawhub.ai/skills/shuzhi-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuzhi-weather-03e9d432a07757be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuzhi-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuzhi-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d51ae568ccd385a2fd3978a7417712ca4fb17f6487360b3358aa375da62d377",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:08:09.481Z"
+}

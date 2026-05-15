@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21368,
+  "uuid": "skill-clawhub-email-campaign",
+  "skillKey": "clawhub-email-campaign",
+  "name": "PayLessTax Email Campaign",
+  "summary": "PayLessTax email automation system - 4x daily, 250 emails each",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_campaign",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carl Luis Olivier",
+      "features": [
+        "PayLessTax email automation system",
+        "4x daily, 250 emails each"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-campaign@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178078524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-campaign",
+      "url": "https://clawhub.ai/skills/email-campaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-campaign",
+    "url": "https://clawhub.ai/skills/email-campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-campaign-f64d92db92a84367.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-campaign@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-campaign-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c58b89fa68132491c93af5c3a096039b0a76266e09128ae6873db949d767a8e0",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:42:47.952Z"
+}

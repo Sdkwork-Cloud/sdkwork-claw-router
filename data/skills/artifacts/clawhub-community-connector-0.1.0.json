@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/community-connector@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.community_connector",
+  "skill": {
+    "id": 43371,
+    "skillKey": "clawhub-community-connector",
+    "name": "Community Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "community-connector",
+    "url": "https://clawhub.ai/skills/community-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/community-connector-781fd9fa5e5e8097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users find local community resources, events, and support groups based on their interests, location, and availability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775529216460,
+      "changelog": "Initial release of Community Connector.\n\n- Helps users find and connect with local community resources, events, volunteer opportunities, and support groups.\n- Provides personalized recommendations based on user interests, location, and availability.\n- Supports commands to find resources, search for events by date, and get tailored recommendations.\n- Returns curated lists with contact info, event details, and guidance on connecting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3343ac946bdaa989063b73942923416ee3849b311300b551ebab9a9a964fa81b"
+}

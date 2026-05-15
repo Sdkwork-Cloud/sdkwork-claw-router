@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiang-irac-refusal@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiang_irac_refusal",
+  "skill": {
+    "id": 68884,
+    "skillKey": "clawhub-jiang-irac-refusal",
+    "name": "蒋道理｜CNIPA商标驳回复审证据推理引擎（SJ-IRAC）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiang-irac-refusal",
+    "url": "https://clawhub.ai/skills/jiang-irac-refusal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiang-irac-refusal-d724abdf2d3ad2a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "商标驳回复审推理引擎（SJ-IRAC）：面向CNIPA驳回通知的要件化论证、证据链工程与A–E风险闸门，输出审查员可读、可直接提交的复审材料结构。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisngzhongling",
+      "userId": "s17ctvc3830j0xf3regb3jsez9857xg2",
+      "displayName": "Jiang Zhongling｜SJ-IRAC Trademark Systems",
+      "image": "https://avatars.githubusercontent.com/u/188891781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1739,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1770107811682,
+      "changelog": "**Summary: Major rewrite with new bilingual skill metadata and fully restructured documentation.**\n\n- Added bilingual YAML frontmatter with detailed skill metadata, tags, and summary.\n- Completely rewrote and expanded documentation with clearer structure and advanced legal reasoning guides.\n- Introduced new sections: Typical Refusal Problems, Legal Basis, Core Framework, and Versioning Rules.\n- Emphasized strict evidence requirements, risk assessment methodology, and stop-loss decision gates.\n- Shifted to examiner-centric, evidence-driven output principles; clarified non-template positioning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00059e09d5b05541200b822d2b34f065e63842e2f0c880253014cfc0bae869b1"
+}

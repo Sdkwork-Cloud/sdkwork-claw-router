@@ -1,0 +1,13 @@
+/** Forum author schema exposed by Claw Router. */
+export interface ForumAuthor {
+  /** Avatar field on forum author. */
+  avatar?: string;
+  /** Bio field on forum author. */
+  bio?: string;
+  /** Id field on forum author. */
+  id: number;
+  /** Is following field on forum author. */
+  isFollowing: boolean;
+  /** Name field on forum author. */
+  name: string;
+}

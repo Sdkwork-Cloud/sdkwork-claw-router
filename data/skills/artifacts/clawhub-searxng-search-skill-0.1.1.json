@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-search-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_search_skill",
+  "skill": {
+    "id": 20174,
+    "skillKey": "clawhub-searxng-search-skill",
+    "name": "Advanced Searxng Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-search-skill",
+    "url": "https://clawhub.ai/skills/searxng-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-search-skill-943d2d7913187796.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform privacy-focused metasearch using local or remote SearXNG instances with retries, timeouts, category, time, and engine-specific filters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elmaslouhymouaad",
+      "userId": "s178345et6k6ww0w9bpbffk6ws83hhd3",
+      "displayName": "Mouaad",
+      "image": "https://avatars.githubusercontent.com/u/105790058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772110191555,
+      "changelog": "- Updated skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09d43c3ddcef71cad926ec5d4700a81559d991268459ec99476f0c225018e58c"
+}

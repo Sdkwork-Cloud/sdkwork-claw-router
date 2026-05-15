@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-bitwarden@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bitwarden",
+  "skill": {
+    "id": 10464,
+    "skillKey": "clawhub-openclaw-bitwarden",
+    "name": "Bitwarden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bitwarden",
+    "url": "https://clawhub.ai/skills/openclaw-bitwarden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bitwarden-c1ef47f00315ba96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and use Bitwarden CLI (bw). Use when installing the CLI, unlocking vault, or reading/generating secrets via bw. Handles session management with BW_SESSION."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimihford",
+      "userId": "publishers:jimihford",
+      "displayName": "JimiHFord",
+      "image": "https://avatars.githubusercontent.com/u/1879448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2336,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769899433301,
+      "changelog": "Initial release of openclaw-bitwarden skill.\n\n- Set up and use the Bitwarden CLI (`bw`) with required session management via `BW_SESSION`.\n- Enforces use of a dedicated tmux session for all authenticated Bitwarden operations.\n- Provides reference workflows for install, login, unlock, and basic vault commands.\n- Includes guardrails to prevent accidental exposure of secrets and ensure secure usage.\n- Offers local testing setup using Vaultwarden (Docker Compose) with mkcert for self-hosted testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2df2b0c059feab9c01c854000f196b5bd7745a8f48ed510b441c87f4ed215e05"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17334,
+  "uuid": "skill-clawhub-youtube-master",
+  "skillKey": "clawhub-youtube-master",
+  "name": "Youtube Master",
+  "summary": "Get YouTube video info, statistics, descriptions, thumbnails, and optionally transcripts. Uses YouTube Data API (free) for basic info and Apify (optional) fo...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_master",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TevfikGulep",
+      "features": [
+        "Get YouTube video info, statistics, descriptions, thumbnails, and optionally transcripts",
+        "Uses YouTube Data API (free) for basic info and Apify (optional) fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-master@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33700963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-master",
+      "url": "https://clawhub.ai/skills/youtube-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-master",
+    "url": "https://clawhub.ai/skills/youtube-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-master-1982989565f221eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-master@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-master-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aee451aa8814824175d27e12d645c1855f5a6aa174169c3867935c6b7011b860",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:13:59.055Z"
+}

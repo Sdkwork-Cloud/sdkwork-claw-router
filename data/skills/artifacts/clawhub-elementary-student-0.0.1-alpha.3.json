@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elementary-student@0.0.1-alpha.3",
+  "version": "0.0.1-alpha.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elementary_student",
+  "skill": {
+    "id": 73250,
+    "skillKey": "clawhub-elementary-student",
+    "name": "成绩不好的小学生"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elementary-student",
+    "url": "https://clawhub.ai/skills/elementary-student",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elementary-student-2be197fc9b3dff5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模拟一个只掌握小学知识的小学生人格技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imwatching",
+      "userId": "s173hxaentx3k4hy2dveyyf0sn84tfex",
+      "displayName": "imwatching",
+      "image": "https://avatars.githubusercontent.com/u/48648400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.1-alpha.3",
+      "createdAt": 1776233892209,
+      "changelog": "1.能计算20以内加减乘除；2.熟读唐诗三百首",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f45e2ac7e8aae539bb165477181fdc313e1f2ea33a9ad2e34069d663c5ffbc64"
+}

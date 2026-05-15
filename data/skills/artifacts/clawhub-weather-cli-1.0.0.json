@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_cli",
+  "skill": {
+    "id": 60105,
+    "skillKey": "clawhub-weather-cli",
+    "name": "Weather Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-cli",
+    "url": "https://clawhub.ai/skills/weather-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-cli-ff056e5155918963.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取全球城市天气预报（使用 wttr.in 免费 API）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickcen",
+      "userId": "publishers:nickcen",
+      "displayName": "nickcen",
+      "image": "https://avatars.githubusercontent.com/u/1256408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773443309306,
+      "changelog": "- Initial release of weather-cli.\n- Provides free global weather forecasts via the wttr.in API, no API key required.\n- Supports querying by city name (Chinese or English).\n- Allows unit selection (Celsius or Fahrenheit) and optional full or JSON output.\n- Requires curl (all modes) and jq (for JSON mode).\n- Example usage and parameter descriptions included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34d6091b915e93315e56723c50adf616352b305c53e571934370837f39717f73"
+}

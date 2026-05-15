@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37146,
+  "uuid": "skill-clawhub-alibabacloud-migrate",
+  "skillKey": "clawhub-alibabacloud-migrate",
+  "name": "Alibabacloud Migrate",
+  "summary": "Assess and migrate workloads from AWS to Alibaba Cloud. Follows a 4-phase methodology: Phase 1 (source architecture assessment), Phase 2 (migration plan gene...",
+  "version": "0.0.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_migrate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Assess and migrate workloads from AWS to Alibaba Cloud",
+        "Follows a 4-phase methodology: Phase 1 (source architecture assessment), Phase 2 (migration pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-migrate@0.0.1-beta.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-migrate",
+      "url": "https://clawhub.ai/skills/alibabacloud-migrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-migrate",
+    "url": "https://clawhub.ai/skills/alibabacloud-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-migrate-894dbcdbf35e3208.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-migrate@0.0.1-beta.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-migrate-0.0.1-beta.1.json",
+      "version": "0.0.1-beta.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91121249a88622179e7d46dce9406d93c8ccb44d3ade67f72d10f00b4e9d3f57",
+      "artifactSizeBytes": 2613
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:56:54.423Z"
+}

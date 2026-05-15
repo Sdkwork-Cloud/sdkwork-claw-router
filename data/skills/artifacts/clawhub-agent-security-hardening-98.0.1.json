@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-security-hardening@98.0.1",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_hardening",
+  "skill": {
+    "id": 22879,
+    "skillKey": "clawhub-agent-security-hardening",
+    "name": "Agent Security Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-hardening",
+    "url": "https://clawhub.ai/skills/agent-security-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-hardening-4f3ba346ed40169c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security hardening patterns for production AI agents. Covers prompt injection defense (7 rules), data boundary enforcement, read-only defaults for external i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "98.0.1",
+      "createdAt": 1773724916597,
+      "changelog": "Corrected display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d620e7519d240127b392e24ca0838e52a7d5bdd2f096437412edc3425cff78ee"
+}

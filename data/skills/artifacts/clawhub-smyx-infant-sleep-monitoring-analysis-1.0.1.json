@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-infant-sleep-monitoring-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_infant_sleep_monitoring_analysis",
+  "skill": {
+    "id": 57664,
+    "skillKey": "clawhub-smyx-infant-sleep-monitoring-analysis",
+    "name": "婴儿睡眠状态监测技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-infant-sleep-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-infant-sleep-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-infant-sleep-monitoring-analysis-bf0e407f1a08345f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies sleep states like deep sleep, light sleep, waking, and restlessness. Generates daily sleep reports and schedule analysis to help parents understan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smyx-sunjinhui",
+      "userId": "s17cfv2h26b7hq5w47tgfy23xx83z9x6",
+      "displayName": "smyx-sunjinhui",
+      "image": "https://avatars.githubusercontent.com/u/272464691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777831861406,
+      "changelog": "- Updated internal scripts and configuration files in the skill, including config.py and YAML configuration files.\n- No user-facing feature or behavior changes.\n- Documentation and usage instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f52d538525b8166bc91afd5e2008030839729793b0311b6c827fca241f7b8104"
+}

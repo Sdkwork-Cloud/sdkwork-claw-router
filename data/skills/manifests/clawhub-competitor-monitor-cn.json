@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66075,
+  "uuid": "skill-clawhub-competitor-monitor-cn",
+  "skillKey": "clawhub-competitor-monitor-cn",
+  "name": "Competitor Monitor",
+  "summary": "竞品价格监控助手，自动追踪竞品价格变动、上下架状态，支持淘宝/京东/拼多多/亚马逊。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitor_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zt6558609-cpu",
+      "features": [
+        "竞品价格监控助手，自动追踪竞品价格变动、上下架状态，支持淘宝/京东/拼多多/亚马逊。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-monitor-cn@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233548982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-monitor-cn",
+      "url": "https://clawhub.ai/skills/competitor-monitor-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitor-cn",
+    "url": "https://clawhub.ai/skills/competitor-monitor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitor-cn-0fce5f4c495f5b83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-monitor-cn@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-monitor-cn-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e45eb239f1959c9331751bac31ff3cc0ff5cb0279ab43d8a038ba5374412d57d",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:22:50.925Z"
+}

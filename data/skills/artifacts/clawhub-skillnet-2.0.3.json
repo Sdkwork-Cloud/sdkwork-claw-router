@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillnet@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillnet",
+  "skill": {
+    "id": 12708,
+    "skillKey": "clawhub-skillnet",
+    "name": "skillnet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillnet",
+    "url": "https://clawhub.ai/skills/skillnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillnet-4695825cfba9d599.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, download, create, evaluate, and analyze reusable agent skills via SkillNet — the open skill supply chain for AI agents. Use when: (1) Before any mult..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icarus-chen",
+      "userId": "s1784ekp7pc5f5yjkd1t09z7tx83hj4z",
+      "displayName": "Icarus_Chen",
+      "image": "https://avatars.githubusercontent.com/u/186902045?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1244,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 10,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1774600995938,
+      "changelog": "Skillnet 2.0.3 — No functional changes\n\n- No file changes detected in this version.\n- Documentation, functionality, and installation remain identical to the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18ceeb20f70385935864533ca9c6d5df1357cdd12b988251ad1abadc90cff44a"
+}

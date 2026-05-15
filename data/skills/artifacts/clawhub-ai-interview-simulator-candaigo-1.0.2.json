@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-interview-simulator-candaigo@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_interview_simulator_candaigo",
+  "skill": {
+    "id": 12742,
+    "skillKey": "clawhub-ai-interview-simulator-candaigo",
+    "name": "AI Interview Simulator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-interview-simulator-candaigo",
+    "url": "https://clawhub.ai/skills/ai-interview-simulator-candaigo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-interview-simulator-candaigo-c1dfd611042c0cc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and interact with AI group interview simulations: browse jobs, create/join rooms, speak, advance interviews, upload resumes, and view history and eval..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hangeaiagent",
+      "userId": "publishers:hangeaiagent",
+      "displayName": "hangeaiagent",
+      "image": "https://avatars.githubusercontent.com/u/203139500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1617,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771096722021,
+      "changelog": "**Summary: Interview simulation flow now requires explicit room start.**\n\n- Added a new \"启动群面房间\" (Start Group Interview Room) API endpoint: /api/v2/agent/rooms/ROOM_ID/start.\n- Room is now created in `waiting` state; must be started by creator before interview begins.\n- Only the room creator can start the interview; this triggers host opening, AI introductions, and moves the room to `active`.\n- Documentation updated to clarify step-by-step group interview sequence and new required start action.\n- No other existing API or workflow changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13603aa6e519dcd1812dd38796032b6d429e726f64e9a21b4e5c6a2d2098693d"
+}

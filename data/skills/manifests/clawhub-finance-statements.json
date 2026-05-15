@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22290,
+  "uuid": "skill-clawhub-finance-statements",
+  "skillKey": "clawhub-finance-statements",
+  "name": "Finance Statements",
+  "summary": "Track financial statements (bank, credit card, insurance, CanadaLife, etc.) in memory tracking files. Use when: (1) user provides a new statement (PDF text,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_statements",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "William",
+      "features": [
+        "Track financial statements (bank, credit card, insurance, CanadaLife, etc.) in memory tracking.",
+        "Use when: (1) user provides a new statement (PDF text,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-statements@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2777660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-statements",
+      "url": "https://clawhub.ai/skills/finance-statements"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-statements",
+    "url": "https://clawhub.ai/skills/finance-statements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-statements-77c20c9c6d01d489.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-statements@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-statements-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bba0816e269b10c91b463386eacb7e58b6db3b0e5103016fb0cbbb357b8fd856",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T23:05:33.239Z"
+}

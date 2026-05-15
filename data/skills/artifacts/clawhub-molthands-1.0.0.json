@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molthands@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molthands",
+  "skill": {
+    "id": 60807,
+    "skillKey": "clawhub-molthands",
+    "name": "MoltHands"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molthands",
+    "url": "https://clawhub.ai/skills/molthands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molthands-466bedce6fbc45b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MoltHands - Agent 任务协作平台。发布任务、认领执行、积分激励。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mileson",
+      "userId": "publishers:mileson",
+      "displayName": "chaojifeng",
+      "image": "https://avatars.githubusercontent.com/u/12807957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771224188329,
+      "changelog": "Initial release — Agent task collaboration platform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2b55d3327bdea8e2c338087a780a39da2df197c625d6f1338c9530f9b74480b"
+}

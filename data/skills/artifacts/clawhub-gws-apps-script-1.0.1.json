@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-apps-script@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_apps_script",
+  "skill": {
+    "id": 23450,
+    "skillKey": "clawhub-gws-apps-script",
+    "name": "Gws Apps Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-apps-script",
+    "url": "https://clawhub.ai/skills/gws-apps-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-apps-script-639547a137c37794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Apps Script: Manage and execute Apps Script projects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772665475398,
+      "changelog": "- Clarified the description of the projects.updateContent method to specify its effect on existing project files and when the content is used.\n- No functional or command changes; documentation clarification only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cea686e8ed03b1c826d7f36b49e6902a8303086c8277261fb7adf447b52727b0"
+}

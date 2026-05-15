@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57472,
+  "uuid": "skill-clawhub-smyx-human-posture-recognition-analysis",
+  "skillKey": "clawhub-smyx-human-posture-recognition-analysis",
+  "name": "人体姿态识别技能",
+  "summary": "Recognizes various poses such as standing, sitting, lying down, bending, raising hands, running, and falling. Supports abnormal pose recognition and fall war...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_human_posture_recognition_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Recognizes various poses such as standing, sitting, lying down, bending, raising hands, running.",
+        "Supports abnormal pose recognition and fall war..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-human-posture-recognition-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-human-posture-recognition-analysis",
+      "url": "https://clawhub.ai/skills/smyx-human-posture-recognition-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-human-posture-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-human-posture-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-human-posture-recognition-analysis-27d5d8bc17916bb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-human-posture-recognition-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-human-posture-recognition-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68c774247cabf05636bbf75e62838256144f06e0149189d6ee5ad0c6dd4a8aff",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:38:41.645Z"
+}

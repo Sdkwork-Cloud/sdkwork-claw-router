@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jftech-open-pro-video-record@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jftech_open_pro_video_record",
+  "skill": {
+    "id": 69787,
+    "skillKey": "clawhub-jftech-open-pro-video-record",
+    "name": "jftech-open-pro-video-record"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jftech-open-pro-video-record",
+    "url": "https://clawhub.ai/skills/jftech-open-pro-video-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jftech-open-pro-video-record-addd4cae77121b8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "杰峰设备录像回放技能。支持获取设备云存储录像和设备本地录像回放地址，包括录像列表查询、回放地址获取、录像下载等功能。使用场景：云存回放、本地卡录像回放、录像下载、历史视频查看。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jftech",
+      "userId": "s174gzt1b9vjabkvgdmp64k4t985nzhw",
+      "displayName": "jftech",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777270913790,
+      "changelog": "Initial release of jf-open-pro-video-record.\n\n- 支持获取杰峰设备的云存储和本地录像回放地址。\n- 提供云存录像列表查询、回放地址获取、录像下载等功能。\n- 本地录像支持多种类型与过滤模式，回放协议/格式可选。\n- 所有接口均基于环境变量凭据调用，安全控制严格。\n- 适用于云存回放、本地卡录像回放、录像下载、历史视频查看等场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3c7310e9ff22cf838dc4477713b29d651a916b28ace946173236730c509ad5b"
+}

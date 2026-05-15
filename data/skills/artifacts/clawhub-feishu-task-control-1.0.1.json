@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-task-control@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_control",
+  "skill": {
+    "id": 26110,
+    "skillKey": "clawhub-feishu-task-control",
+    "name": "Feishu Task Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-control",
+    "url": "https://clawhub.ai/skills/feishu-task-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-control-25b9603cafdd4d66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use in Feishu chats when the user wants to inspect, stop, or clean up background tasks spawned from the current chat. Uses subagents and session tools to lis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wd041216-bit",
+      "userId": "s17djcs4rd60zq6rxnpn9xv3d583g4ew",
+      "displayName": "Da Wei",
+      "image": "https://avatars.githubusercontent.com/u/258555668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773476109243,
+      "changelog": "feishu-task-control 1.0.1\n\n- Clarified guidance and response flow for managing background tasks in Feishu chats.\n- Expanded documentation in SKILL.md with examples and safety notes.\n- Detailed how to resolve task targets (by id, label, or summary) and handle ambiguous cases.\n- Added instructions to avoid exposing internal details in user replies.\n- Emphasized concise, explicit replies and appropriate handling of task control intents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73e5c773852bc3a4d889af52564f9fe23d238c58cdc37ffd5812dd2f9c0e47cc"
+}

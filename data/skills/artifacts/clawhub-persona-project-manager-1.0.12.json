@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-project-manager@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_project_manager",
+  "skill": {
+    "id": 50206,
+    "skillKey": "clawhub-persona-project-manager",
+    "name": "Persona Project Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-project-manager",
+    "url": "https://clawhub.ai/skills/persona-project-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-project-manager-01d7f609ff640e6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate projects — track tasks, schedule meetings, and share docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 959,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982129911,
+      "changelog": "- Updated skill version from 0.22.4 to 0.22.5 in metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a329de2cce02b690caaa632c00c81a02f471e80109092e5f4423120f35ea1aee"
+}

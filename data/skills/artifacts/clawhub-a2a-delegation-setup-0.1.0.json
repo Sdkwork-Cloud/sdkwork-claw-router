@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-delegation-setup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_delegation_setup",
+  "skill": {
+    "id": 27081,
+    "skillKey": "clawhub-a2a-delegation-setup",
+    "name": "A2A Delegation Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-delegation-setup",
+    "url": "https://clawhub.ai/skills/a2a-delegation-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-delegation-setup-e4c01bc085d982dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guided setup and troubleshooting for installing, enabling, configuring, verifying, and updating @aramisfa/openclaw-a2a-outbound in OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aramisfacchinetti",
+      "userId": "publishers:aramisfacchinetti",
+      "displayName": "Aramis Facchinetti",
+      "image": "https://avatars.githubusercontent.com/u/78740887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772993569396,
+      "changelog": "Initial release with full guided setup and troubleshooting for installing, configuring, enabling, verifying, and updating @aramisfa/openclaw-a2a-outbound in OpenClaw.\n\n- Provides step-by-step instructions, shell commands, and pre-checks for plugin setup.\n- Includes checks for current state and validation steps.\n- Covers installation, updates, config, readiness, activation, and verification.\n- Lists clear criteria for when to use this skill and conditions for handoff to routine operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35b3666d9010996ef048bf7e2d2c108715b8458a6c27e672dbd81c4616313d98"
+}

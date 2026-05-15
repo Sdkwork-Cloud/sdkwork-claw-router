@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52598,
+  "uuid": "skill-clawhub-blocket-watch",
+  "skillKey": "clawhub-blocket-watch",
+  "name": "Blocket Watcher - Sweden",
+  "summary": "Poll Swedish Blocket.se via the blocket CLI on a schedule, dedupe listings by ad id, and send new matches to Telegram with openclaw message send — no LLM on...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blocket_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "x3r081",
+      "features": [
+        "Poll Swedish Blocket.se via the blocket CLI on a schedule, dedupe listings by ad id, and send n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blocket-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91406935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blocket-watch",
+      "url": "https://clawhub.ai/skills/blocket-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blocket-watch",
+    "url": "https://clawhub.ai/skills/blocket-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blocket-watch-a2310585605658e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blocket-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blocket-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e975ef005594d45f1b96d5f6af2b87e58d80d9c860f747f4740c0def358e05e",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:03:19.609Z"
+}

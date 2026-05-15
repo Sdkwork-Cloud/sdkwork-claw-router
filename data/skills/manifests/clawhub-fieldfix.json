@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11289,
+  "uuid": "skill-clawhub-fieldfix",
+  "skillKey": "clawhub-fieldfix",
+  "name": "FieldFix",
+  "summary": "Query and manage your heavy equipment fleet through FieldFix's API. Track machines, log maintenance, monitor expenses, and get AI diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fieldfix",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "blueprintstudioco",
+      "features": [
+        "Query and manage your heavy equipment fleet through FieldFix's API",
+        "Track machines, log maintenance, monitor expenses, and get AI diagnostics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fieldfix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200171821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fieldfix",
+      "url": "https://clawhub.ai/skills/fieldfix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fieldfix",
+    "url": "https://clawhub.ai/skills/fieldfix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fieldfix-78fc80d2394a1851.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fieldfix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fieldfix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5320a2e791a751bda55f9377cd4501b37019f1305c1c13f263b64009ff1c74c",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T21:07:48.609Z"
+}

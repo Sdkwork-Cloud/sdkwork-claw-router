@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22218,
+  "uuid": "skill-clawhub-overstory-integration",
+  "skillKey": "clawhub-overstory-integration",
+  "name": "Overstory Integration",
+  "summary": "Integrates overstory Claude Code agent swarm with nanobot orchestrator. Manages agent lifecycle, SQLite mail bridge, and git worktree coordination.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overstory_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Integrates overstory Claude Code agent swarm with nanobot orchestrator",
+        "Manages agent lifecycle, SQLite mail bridge, and git worktree coordination."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overstory-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overstory-integration",
+      "url": "https://clawhub.ai/skills/overstory-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overstory-integration",
+    "url": "https://clawhub.ai/skills/overstory-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overstory-integration-3192e27da9b3e3cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overstory-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-overstory-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e559524364f1e8bc25482e84cdd2551ffe293640a555ee094d6f5ca29be75eff",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:10:09.581Z"
+}

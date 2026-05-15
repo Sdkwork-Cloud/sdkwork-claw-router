@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12672,
+  "uuid": "skill-clawhub-freshbooks-cli",
+  "skillKey": "clawhub-freshbooks-cli",
+  "name": "FreshBooks CLI",
+  "summary": "FreshBooks CLI for managing invoices, clients, and billing. Use when the user mentions freshbooks, invoicing, billing, clients, or accounting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freshbooks_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haseebuchiha",
+      "features": [
+        "FreshBooks CLI for managing invoices, clients, and billing",
+        "Use when the user mentions freshbooks, invoicing, billing, clients, or accounting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freshbooks-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19784907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freshbooks-cli",
+      "url": "https://clawhub.ai/skills/freshbooks-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freshbooks-cli",
+    "url": "https://clawhub.ai/skills/freshbooks-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freshbooks-cli-113cb13167a8a9f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freshbooks-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freshbooks-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd973e5a4f80f523f506d353f12d0afac97e749d04785b27fd3a14ca6e1453b7",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T05:24:05.387Z"
+}

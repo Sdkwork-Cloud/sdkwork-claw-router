@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10019,
+  "uuid": "skill-clawhub-heartbeat",
+  "skillKey": "clawhub-heartbeat",
+  "name": "Heartbeat",
+  "summary": "Design better OpenClaw HEARTBEAT.md files with adaptive cadence, safe checks, and cron handoffs for precise schedules.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartbeat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Design better OpenClaw HEARTBEAT.md files with adaptive cadence, safe checks, and cron handoffs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heartbeat@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heartbeat",
+      "url": "https://clawhub.ai/skills/heartbeat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartbeat",
+    "url": "https://clawhub.ai/skills/heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartbeat-6b20e9b742e448a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heartbeat@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f66ff1c33b89eb9dce1e8737dc05d976841eff4e8f7c48eb842f37b0f8d5fbe",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T21:19:41.605Z"
+}

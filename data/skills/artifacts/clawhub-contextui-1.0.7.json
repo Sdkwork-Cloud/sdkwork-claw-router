@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contextui@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextui",
+  "skill": {
+    "id": 12531,
+    "skillKey": "clawhub-contextui",
+    "name": "Contextui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextui",
+    "url": "https://clawhub.ai/skills/contextui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextui-7a7ec2a75554def1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, run, and publish visual workflows on ContextUI — a local-first desktop platform for AI agents. Create React TSX workflows (dashboards, tools, apps, vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "midz99",
+      "userId": "publishers:midz99",
+      "displayName": "Midz99",
+      "image": "https://avatars.githubusercontent.com/u/33822055?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2315,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771220838589,
+      "changelog": "- Added SECURITY.md to clearly document security boundaries and trust model.\n- Updated SKILL.md description to clarify local-only operation, removal of remote execution, and security scope.\n- Declared new environment variable CONTEXTUI_API_KEY for using the ContextUI Exchange.\n- Provided Exchange dashboard and YouTube links in metadata.\n- Emphasized that all workflow execution and Python backends are strictly local, with no privilege escalation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9362786682b20b43082a3b1b72580c6b1bbba841fdb050f2c815dd5a954123f"
+}

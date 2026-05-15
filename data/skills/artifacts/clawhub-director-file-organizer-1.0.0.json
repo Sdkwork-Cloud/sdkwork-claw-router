@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/director-file-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.director_file_organizer",
+  "skill": {
+    "id": 36665,
+    "skillKey": "clawhub-director-file-organizer",
+    "name": "File Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "director-file-organizer",
+    "url": "https://clawhub.ai/skills/director-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/director-file-organizer-1d8e8b8e0e62b361.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically organize, categorize, and clean up files. Use when user wants to (1) organize downloads or folders, (2) sort files by type/date/size, (3) find..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775581153913,
+      "changelog": "Initial release - organize files, find duplicates, bulk rename, cleanup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dfd89ccb22e83bf635e0311539d91b52196138722ae73d641473eeda82df55d"
+}

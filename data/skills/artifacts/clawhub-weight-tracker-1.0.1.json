@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weight-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weight_tracker",
+  "skill": {
+    "id": 68708,
+    "skillKey": "clawhub-weight-tracker",
+    "name": "减肥打卡记录"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weight-tracker",
+    "url": "https://clawhub.ai/skills/weight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weight-tracker-4dc668785814a6af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "减肥进度追踪助手。用户告诉 AI 今天的体重，AI 自动帮您记录并生成漂亮的图表，清晰展示减肥进度。支持中英文界面，macOS/Windows/Linux 多平台使用。当用户说\"记录体重\"、\"今天体重\"、\"减肥打卡\"、\"体重多少\"时自动触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mixinan",
+      "userId": "s17894wtkf0j6bm2kv68mbaxcn83tskj",
+      "displayName": "万码千钧",
+      "image": "https://avatars.githubusercontent.com/u/15697850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774774366437,
+      "changelog": "- 更新了技能描述，突出简洁自动记录、进度展示和打卡触发词，增强易用性和智能感受\n- 触发词由“体重记录、减肥追踪”等调整为“记录体重、今天体重、减肥打卡、体重多少”等更自然表达\n- 突出 AI 自动记录与生成图表的体验\n- 说明未涉及功能或实现的改动，主要为描述和触发逻辑优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b21652367a9af4c8f89364aba090f9accb2da4884a2c99335eb694e49f2a4e54"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-prompt-builder@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_prompt_builder",
+  "skill": {
+    "id": 65526,
+    "skillKey": "clawhub-smart-prompt-builder",
+    "name": "Smart Prompt Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-prompt-builder",
+    "url": "https://clawhub.ai/skills/smart-prompt-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-prompt-builder-a51b292b006efb23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能提示构建器 - 根据语料库检索结果生成优化的写作提示。当需要为小说创作场景生成结构化提示词时使用，支持描写/对话/动作/情感 4 种场景类型，可注入 Voice Profile 和上下文信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzhihui886",
+      "userId": "s171q47tfc9tb8mpczgympghws83jcja",
+      "displayName": "yuzhihui886",
+      "image": "https://avatars.githubusercontent.com/u/213567314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776154526815,
+      "changelog": "v2.0 LLM 版本：新增 build_prompt_llm.py，通过 LLM 构建高质量写作提示词，默认 qwen3.6-plus",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77821646fba10f1599db61af20e12399257e718f13710e737490c7f398fe12aa"
+}

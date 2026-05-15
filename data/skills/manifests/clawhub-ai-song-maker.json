@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41535,
+  "uuid": "skill-clawhub-ai-song-maker",
+  "skillKey": "clawhub-ai-song-maker",
+  "name": "Ai Song Maker",
+  "summary": "Cloud-based ai-song-maker tool that handles generating original songs from text prompts. Upload MP3, WAV, MP4, AAC files (up to 200MB), describe what you nee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_song_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Cloud-based ai-song-maker tool that handles generating original songs from text prompts",
+        "Upload MP3, WAV, MP4, AAC files (up to 200MB), describe what you nee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-song-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-song-maker",
+      "url": "https://clawhub.ai/skills/ai-song-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-song-maker",
+    "url": "https://clawhub.ai/skills/ai-song-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-song-maker-c239db9be869a261.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-song-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-song-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370cce5636baa3170e2813a6720614d32639c1d5a238e09c2322e45f127424ca",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T20:12:31.129Z"
+}

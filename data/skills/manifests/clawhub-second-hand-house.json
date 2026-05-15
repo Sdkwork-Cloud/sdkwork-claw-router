@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63260,
+  "uuid": "skill-clawhub-second-hand-house",
+  "skillKey": "clawhub-second-hand-house",
+  "name": "Second Hand House",
+  "summary": "提供二手房源搜索、VR带看服务及存量房交易流程指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_hand_house",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供二手房源搜索、VR带看服务及存量房交易流程指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/second-hand-house@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "second-hand-house",
+      "url": "https://clawhub.ai/skills/second-hand-house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-hand-house",
+    "url": "https://clawhub.ai/skills/second-hand-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-hand-house-8795578d0f54809a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/second-hand-house@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-second-hand-house-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91a4793682396485d4e73fa3edabf8145db6df263c1dec2b7cdb5362099c93d1",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:25:16.218Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28812,
+  "uuid": "skill-clawhub-plydb",
+  "skillKey": "clawhub-plydb",
+  "name": "plydb",
+  "summary": "Skill for using the PlyDB CLI to perform SQL analysis of connected data sources. Use for SQL queries across heterogeneous databases and files such as Postgre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plydb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ypt",
+      "features": [
+        "Skill for using the PlyDB CLI to perform SQL analysis of connected data sources",
+        "Use for SQL queries across heterogeneous databases and files such as Postgre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plydb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2073178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plydb",
+      "url": "https://clawhub.ai/skills/plydb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plydb",
+    "url": "https://clawhub.ai/skills/plydb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plydb-a4e03e17f8cb8e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plydb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plydb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1a28618fcd1dc9ce1319c918c21f4033cc39543c60213cddc5ed0573e8cabbf",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:08:39.684Z"
+}

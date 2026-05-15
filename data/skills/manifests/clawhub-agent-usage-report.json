@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61380,
+  "uuid": "skill-clawhub-agent-usage-report",
+  "skillKey": "clawhub-agent-usage-report",
+  "name": "Agent Usage Report",
+  "summary": "生成 OpenClaw Agent 使用周报。当用户说\"周报\"、\"生成周报\"、\"工作周报\"、\"agent usage report\"、\"usage report\"、\"帮我写周报\"、\"生成使用报告\"时使用此技能。自动读取 session 日志和 memory 文件，统计任务量、工具调用、成本、高频功能，并输出结构化周报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_usage_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "56xiaoli123",
+      "features": [
+        "生成 OpenClaw Agent 使用周报。当用户说\"周报\"、\"生成周报\"、\"工作周报\"、\"agent usage report\"、\"usage report\"、\"帮我写周报\"、\"生成使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-usage-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66256268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-usage-report",
+      "url": "https://clawhub.ai/skills/agent-usage-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-usage-report",
+    "url": "https://clawhub.ai/skills/agent-usage-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-usage-report-1d90468ab5704a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-usage-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-usage-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f67f6a8ce769bc9490f01be94f30549b3f230e8eae044f4352987cc23fe3ef63",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:01:53.596Z"
+}

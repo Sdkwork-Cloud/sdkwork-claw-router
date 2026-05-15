@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37332,
+  "uuid": "skill-clawhub-nai-rss-digest",
+  "skillKey": "clawhub-nai-rss-digest",
+  "name": "Rss Digest",
+  "summary": "Generate a structured daily or weekly markdown digest from an OPML list of RSS/Atom feeds, optionally filtered by keywords, for Obsidian or Discord.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_rss_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Generate a structured daily or weekly markdown digest from an OPML list of RSS/Atom feeds, opti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-rss-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-rss-digest",
+      "url": "https://clawhub.ai/skills/nai-rss-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-rss-digest",
+    "url": "https://clawhub.ai/skills/nai-rss-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-rss-digest-660fd5646521f1f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-rss-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-rss-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff12cdf90d49f5ad0de58aa240964ba5b8530e2efb69094519971d96bdf48cd6",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:49:07.499Z"
+}

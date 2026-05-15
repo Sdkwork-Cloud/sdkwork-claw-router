@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecocompute@3.0.7",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecocompute",
+  "skill": {
+    "id": 18212,
+    "skillKey": "clawhub-ecocompute",
+    "name": "EcoCompute — LLM Energy Efficiency Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecocompute",
+    "url": "https://clawhub.ai/skills/ecocompute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecocompute-541d277ed435e865.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evidence-first, stateless consulting skill for LLM inference energy optimization using measured benchmark priors and anti-pattern detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongping-zh",
+      "userId": "s17fazq80es7pkdpeejesjxxj183ehpy",
+      "displayName": "hongping-zh",
+      "image": "https://avatars.githubusercontent.com/u/133202211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1225,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.0.7",
+      "createdAt": 1778294233518,
+      "changelog": "**EcoCompute v3.0.7 — transparent grounding and framework-ready recommendations**\n\n- **Framework integration mappings** — every NF4 / INT8 / FP8 recommendation now ships with one-line snippets for transformers · vLLM · TGI · Ollama · llama.cpp · TensorRT-LLM, with explicit caveats where framework flags don't expose fine-grained controls.\n- **Transparent default handling** — when GPU / model / precision / batch-size inputs are incomplete, the skill degrades gracefully via explicit rules (closest-platform fallback, built-in name → parameter lookup, conservative FP16 / BS=1 assumptions) and always states the assumption and confidence downgrade.\n- **Dataset version binding** — every response ends with a traceable footer `Evidence: zenodo.org/records/18900289 (2025-Q1) · skill v3.0.7`, so the data lineage is never ambiguous.\n- **Requirements clarified** — no installation, no GPU, no dependencies on the user side; the skill operates fully read-only via prompt and response.\n- **Changelog history** — prior releases (v3.0.5 cleanup, v3.0.6 architecture-aware crossover + anti-pattern split) are now documented inline so users can see the evolution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c64d9e33b4e9d3c7dffb9ab0c4b5d30b5d7cea0df46f95fbd61aa1d54a934f85"
+}

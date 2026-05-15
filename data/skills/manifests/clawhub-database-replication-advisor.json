@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45076,
+  "uuid": "skill-clawhub-database-replication-advisor",
+  "skillKey": "clawhub-database-replication-advisor",
+  "name": "Database Replication Advisor",
+  "summary": "Analyze database replication topology, detect lag, and recommend replication strategy based on CAP tradeoffs",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_replication_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze database replication topology, detect lag, and recommend replication strategy based on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/database-replication-advisor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "database-replication-advisor",
+      "url": "https://clawhub.ai/skills/database-replication-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-replication-advisor",
+    "url": "https://clawhub.ai/skills/database-replication-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-replication-advisor-276d89caa16eeca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/database-replication-advisor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-database-replication-advisor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d66df5f70708786b684b761e5366474112e3d9344ebb9d8cc520c4c40773e8e",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:00.274Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-find-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_find_skills",
+  "skill": {
+    "id": 23571,
+    "skillKey": "clawhub-claw-find-skills",
+    "name": "Claw Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-find-skills",
+    "url": "https://clawhub.ai/skills/claw-find-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-find-skills-dca986f038ca9083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang-wh",
+      "userId": "s172rhar6d3wa14s0z6j1e0pbs83wt9z",
+      "displayName": "Williamwang-wh",
+      "image": "https://avatars.githubusercontent.com/u/75006654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774853823064,
+      "changelog": "Initial release of the find-skills skill.\n\n- Helps users discover and install agent skills based on queries like \"how do I do X?\" or interest in new capabilities.\n- Provides guidance on using the Skills CLI (`npx skills`) to search for, add, check, and update skills.\n- Suggests relevant skill categories and practical search tips.\n- Includes example command usage and response templates for assisting users.\n- Offers fallback options when no relevant skills are found, including direct help or creating a new skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6703b7982b2056cce6c9c324867aecdaec805b424a02e5ace32596efe32a9e24"
+}

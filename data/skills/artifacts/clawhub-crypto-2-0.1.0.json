@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_2",
+  "skill": {
+    "id": 18775,
+    "skillKey": "clawhub-crypto-2",
+    "name": "Pywayne Crypto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-2",
+    "url": "https://clawhub.ai/skills/crypto-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-2-92e4463b88ee9300.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encryption and decryption toolkit for string and byte data. Supports Fernet (AES-128) symmetric encryption, fallback XOR encryption, custom password protecti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 652,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771165876407,
+      "changelog": "pywayne-crypto v0.1.0 initial release\n\n- Provides encryption and decryption toolkit for strings and bytes with Fernet (AES-128) and fallback XOR encryption.\n- Supports custom password protection for data, batch encryption/decryption, and config file (JSON) encryption.\n- Offers code obfuscation features including base64 hiding and namespace cleanup.\n- Includes detailed parameter validation and error handling for type errors and decryption failures.\n- Documentation includes practical usage, API details, best practices, and comprehensive code examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1e63c0ae721d30f1ebf76f261c4ad49a06685c7d23d40608a5d2a573d96b009"
+}

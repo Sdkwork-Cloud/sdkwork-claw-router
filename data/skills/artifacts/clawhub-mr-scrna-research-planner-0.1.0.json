@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mr-scrna-research-planner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mr_scrna_research_planner",
+  "skill": {
+    "id": 27445,
+    "skillKey": "clawhub-mr-scrna-research-planner",
+    "name": "Mr Scrna Research Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mr-scrna-research-planner",
+    "url": "https://clawhub.ai/skills/mr-scrna-research-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mr-scrna-research-planner-b5c9df2ea5922576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates complete Mendelian Randomization + single-cell transcriptomics (scRNA-seq) research designs from a user-provided direction. Always use this skill w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773403498453,
+      "changelog": "mr-scrna-research-planner v0.1.0\n\n- Initial release with full automatic research design for studies integrating Mendelian Randomization (MR) and single-cell RNA-seq (scRNA-seq).\n- Supports five major study patterns (mechanism gene-set, key-cell, candidate-gene reverse validation, exposure-disease-cell triangulation, translational biomarker).\n- Outputs four workload configurations for every request: Lite, Standard, Advanced, and Publication+.\n- Always recommends one best-fit plan, with a step-by-step workflow, full validation, and publication upgrade path.\n- Includes strict input validation, scope handling, and explicit sectioned output for complete research planning.\n- For computational study designs only; redirects non-computational/clinical requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b30dcd5957ff9b38671e53d1f4a634a6f93424d27e2aa212f50ee7ede3b5bb1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-2@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_2",
+  "skill": {
+    "id": 47160,
+    "skillKey": "clawhub-skills-2",
+    "name": "Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-2",
+    "url": "https://clawhub.ai/skills/skills-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-2-b9790480be4b454c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute AI workflow orchestration flows using the AetherLang Ω DSL. Run multi-step AI pipelines for recipes, business strategy, market analysis, molecular ga..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "contrario",
+      "userId": "s1792c5vx84nge37ssxtv8y23h83gyvv",
+      "displayName": "Hlias Staurou",
+      "image": "https://avatars.githubusercontent.com/u/12682510?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 716,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1772830524646,
+      "changelog": "v2.0.2: Removed unicode control characters, clean SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71a12e8986992dc7483edf727653cee8e76450ab390b235ff0a472bb0b83d040"
+}

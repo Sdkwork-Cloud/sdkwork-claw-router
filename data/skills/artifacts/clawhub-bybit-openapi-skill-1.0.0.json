@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bybit-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bybit_openapi_skill",
+  "skill": {
+    "id": 29318,
+    "skillKey": "clawhub-bybit-openapi-skill",
+    "name": "Bybit OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bybit-openapi-skill",
+    "url": "https://clawhub.ai/skills/bybit-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bybit-openapi-skill-caefd2f324c74211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Bybit V5 public market APIs through UXC with a curated OpenAPI schema, market-first discovery, and explicit private-auth boundary notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773622300373,
+      "changelog": "Bybit OpenAPI Skill v1.0.0 – initial release\n\n- Enables access to Bybit V5 public market data via UXC and a curated OpenAPI schema.\n- Supports server time, instruments info, tickers, order book, and kline reads.\n- Public-data-only: private/account/order endpoints are not included in this version.\n- Clear guidance on setup, region restrictions, and recommended workflows provided in documentation.\n- Authentication not required for supported endpoints; private endpoint access is planned for future versions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c54f4c3f072da9ca5b04c2453dc4fae31bcd07b276307eacdcf9db440d38195"
+}

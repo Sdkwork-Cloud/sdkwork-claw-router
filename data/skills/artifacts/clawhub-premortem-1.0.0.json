@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/premortem@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premortem",
+  "skill": {
+    "id": 24802,
+    "skillKey": "clawhub-premortem",
+    "name": "Premortem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premortem",
+    "url": "https://clawhub.ai/skills/premortem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premortem-65739e8b0c941122.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cognitive immune system for AI agents. Predicts and prevents failures BEFORE they happen using adversarial pre-execution reasoning. Zero dependencies, zero c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcools1977",
+      "userId": "publishers:jcools1977",
+      "displayName": "John DeVere Cooley",
+      "image": "https://avatars.githubusercontent.com/u/75928463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772379582124,
+      "changelog": "Initial release — Cognitive immune system for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cb07c9a9a431f2b94f3fa0f85d1c1c8eac5fc36ef263c67f0b9517256cc408d"
+}

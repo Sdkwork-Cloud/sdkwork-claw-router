@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17212,
+  "uuid": "skill-clawhub-lead-storage",
+  "skillKey": "clawhub-lead-storage",
+  "name": "Lead Storage",
+  "summary": "Persist validated lead objects through write-only storage operations after Supervisor provides explicit confirmation. Use when users ask to save approved lea...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_storage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vishal",
+      "features": [
+        "Persist validated lead objects through write-only storage operations after Supervisor provides.",
+        "Use when users ask to save approved lea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-storage@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254436161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-storage",
+      "url": "https://clawhub.ai/skills/lead-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-storage",
+    "url": "https://clawhub.ai/skills/lead-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-storage-d29dcee5fce7a7a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-storage@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-storage-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:097139ce788d2e6a8fe9d4af18c27435a33b90501dd30b50619b2f5256d02c6a",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:46:56.785Z"
+}

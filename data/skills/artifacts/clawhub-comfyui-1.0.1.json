@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui",
+  "skill": {
+    "id": 9203,
+    "skillKey": "clawhub-comfyui",
+    "name": "ComfyUI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui",
+    "url": "https://clawhub.ai/skills/comfyui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-422332977c41eb77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run local ComfyUI workflows via the HTTP API. Use when the user asks to run ComfyUI, execute a workflow by file path/name, or supply raw API-format JSON; supports the default workflow bundled in assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kelvincai522",
+      "userId": "publishers:kelvincai522",
+      "displayName": "kelvincai522",
+      "image": "https://avatars.githubusercontent.com/u/42686240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4102,
+      "installsAllTime": 38,
+      "installsCurrent": 31,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770278426321,
+      "changelog": "Weight downloads with pget, install-if-missing; server install instructions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ff9ed9eea5aafed41e2d5080fdfc55316fa325e35260a6ade00d529eab8c5b7"
+}

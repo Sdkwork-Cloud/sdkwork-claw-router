@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-report-interpreter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_report_interpreter",
+  "skill": {
+    "id": 40136,
+    "skillKey": "clawhub-financial-report-interpreter",
+    "name": "Financial Report Interpreter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-report-interpreter",
+    "url": "https://clawhub.ai/skills/financial-report-interpreter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-report-interpreter-bd499d203cdc4d51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interprets income statements, balance sheets, and cash flows into plain-language insights, ratio analysis, and management questions for financial review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776579534769,
+      "changelog": "Financial Report Interpreter 1.0.0\n\n- Initial release of the skill.\n- Translates income statement, balance sheet, and cash flow data into clear, plain-language explanations.\n- Provides commentary on financial ratios and key signals.\n- Suggests management follow-up questions to support financial analysis.\n- Supports generating templates and checklists for financial planning and review.\n- Offers example prompts to guide users in interpreting financial reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57f00aa25a18504c4b87ff8b4d1ce067ef8512ea2e41713738dab8c24e01a89d"
+}

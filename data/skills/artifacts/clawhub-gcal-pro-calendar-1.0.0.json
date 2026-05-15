@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gcal-pro-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcal_pro_calendar",
+  "skill": {
+    "id": 13136,
+    "skillKey": "clawhub-gcal-pro-calendar",
+    "name": "gcal-pro - Google Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcal-pro-calendar",
+    "url": "https://clawhub.ai/skills/gcal-pro-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcal-pro-calendar-5f62da1cc121fb84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Calendar integration for viewing, creating, and managing calendar events. Use when the user asks about their schedule, wants to add/edit/delete events, check availability, or needs a morning brief. Supports natural language like \"Wh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bilalmohamed187-cpu",
+      "userId": "publishers:bilalmohamed187-cpu",
+      "displayName": "bilalmohamed187-cpu",
+      "image": "https://avatars.githubusercontent.com/u/257391889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1678,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769462698900,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:300f84e9be6fb0573dbfbd1c63d434de4a7d21f797007fb3ec2b0712a41e0b42"
+}

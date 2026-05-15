@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-to-feishu-bitable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_to_feishu_bitable",
+  "skill": {
+    "id": 73646,
+    "skillKey": "clawhub-web-search-to-feishu-bitable",
+    "name": "网页搜索整理到飞书多维表格知识库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-to-feishu-bitable",
+    "url": "https://clawhub.ai/skills/web-search-to-feishu-bitable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-to-feishu-bitable-a139b141c826af58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动搜索关键词网页内容，提取标题、摘要等信息，批量整理存入飞书多维表格个人知识库并返回链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mildnes",
+      "userId": "s17475ej4h2qgjf45wz8kmekhh8451g2",
+      "displayName": "mildnes",
+      "image": "https://avatars.githubusercontent.com/u/14357871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775302283251,
+      "changelog": "Initial release — automatically organizes web search results into Feishu Bitable as a personal knowledge base.\n\n- Accepts a list of keywords, searches the web, and fetches relevant content.\n- Extracts and standardizes information: title, URL, summary, tags, and category.\n- Automatically creates or updates a Feishu Bitable with the processed data.\n- Supports personal knowledge management, prompt/tech article collections, and categorized data storage.\n- Returns a Feishu link to the newly created or updated table.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b62d3c6b16a1d664311acf398133ca066e424aa2d82a8b26d89b57c43acba551"
+}

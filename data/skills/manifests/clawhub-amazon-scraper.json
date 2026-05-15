@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9898,
+  "uuid": "skill-clawhub-amazon-scraper",
+  "skillKey": "clawhub-amazon-scraper",
+  "name": "Amazon Scraper",
+  "summary": "High-performance containerized Amazon scraper (Docker + playwright-extra + Stealth plugin). Bypasses Amazon headless detection. Supports Amazon BSR, search r...",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiafar",
+      "features": [
+        "High-performance containerized Amazon scraper (Docker + playwright-extra + Stealth plugin)",
+        "Bypasses Amazon headless detection",
+        "Supports Amazon BSR, search r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-scraper@3.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94378558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-scraper",
+      "url": "https://clawhub.ai/skills/amazon-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-scraper",
+    "url": "https://clawhub.ai/skills/amazon-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-scraper-52aa979d555db1b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-scraper@3.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-scraper-3.4.1.json",
+      "version": "3.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5583f6cf3d21f9bb222eb9e9a654f7d7880a3a98202247fded8deefa450ab2c9",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:09:42.546Z"
+}

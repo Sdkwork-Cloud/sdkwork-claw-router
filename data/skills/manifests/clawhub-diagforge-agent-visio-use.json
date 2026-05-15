@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29848,
+  "uuid": "skill-clawhub-diagforge-agent-visio-use",
+  "skillKey": "clawhub-diagforge-agent-visio-use",
+  "name": "Agent Visio Use",
+  "summary": "Bootstrap skill for DiagForge. Use this skill to onboard an agent into the DiagForge GitHub repository, understand the project structure, run the canonical c...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diagforge_agent_visio_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qweadzchn",
+      "features": [
+        "Bootstrap skill for DiagForge",
+        "Use this skill to onboard an agent into the DiagForge GitHub repository, understand the project."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diagforge-agent-visio-use@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176938253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diagforge-agent-visio-use",
+      "url": "https://clawhub.ai/skills/diagforge-agent-visio-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diagforge-agent-visio-use",
+    "url": "https://clawhub.ai/skills/diagforge-agent-visio-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diagforge-agent-visio-use-e43b78dd314e279c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diagforge-agent-visio-use@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-diagforge-agent-visio-use-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8694b0db109b9397451f7e85c5eca07e662f0ff6b7dbeaead8173c48b86ee8ab",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:43:09.000Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70322,
+  "uuid": "skill-clawhub-q-erp",
+  "skillKey": "clawhub-q-erp",
+  "name": "Q Erp",
+  "summary": "千易 ERP 管理查询技能（一期增强）。覆盖老板快报、今日经营动态、商品销售情况、增长潜力、平台/站点/店铺/店铺组/店铺负责人销售战绩、七日销售走势；所有查询必须通过 q-claw。",
+  "version": "1.0.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.q_erp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lee",
+      "features": [
+        "千易 ERP 管理查询技能（一期增强）。覆盖老板快报、今日经营动态、商品销售情况、增长潜力、平台/站点/店铺/店铺组/店铺负责人销售战绩、七日销售走势；所有查询必须通过 q-claw。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/q-erp@1.0.19",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3345915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "q-erp",
+      "url": "https://clawhub.ai/skills/q-erp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "q-erp",
+    "url": "https://clawhub.ai/skills/q-erp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/q-erp-95a13a8afa998c0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/q-erp@1.0.19",
+      "artifactUrl": "data/skills/artifacts/clawhub-q-erp-1.0.19.json",
+      "version": "1.0.19",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11fd9367603b426dd54dc21b5ba5c88ed41f9a40d46f75ad80606e0bb68adcd4",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:41:52.058Z"
+}

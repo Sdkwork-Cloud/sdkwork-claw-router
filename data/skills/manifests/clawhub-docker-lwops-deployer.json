@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64696,
+  "uuid": "skill-clawhub-docker-lwops-deployer",
+  "skillKey": "clawhub-docker-lwops-deployer",
+  "name": "Lerwee Docker Lwops Deployer",
+  "summary": "本地 Docker 容器自动化部署技能，支持乐维监控 8.1 环境的一键部署。 适用于：本地开发环境搭建、测试环境快速部署、容器化服务管理。 优势：自动检测系统架构、智能端口管理、Docker 自动安装、cgroup 兼容性处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_lwops_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lerwee",
+      "features": [
+        "本地 Docker 容器自动化部署技能，支持乐维监控 8.1 环境的一键部署。 适用于：本地开发环境搭建、测试环境快速部署、容器化服务管理。 优势：自动检测系统架构、智能端口管理、Docke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-lwops-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162661167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-lwops-deployer",
+      "url": "https://clawhub.ai/skills/docker-lwops-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-lwops-deployer",
+    "url": "https://clawhub.ai/skills/docker-lwops-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-lwops-deployer-ece78e8fcdeb7278.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-lwops-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-lwops-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7b53f7dee91bbea03f3cfd4046050e6adfe06d578eb3d9bbf2cf20f4b94300e",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:52:35.812Z"
+}

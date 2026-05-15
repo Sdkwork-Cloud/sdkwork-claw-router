@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10412,
+  "uuid": "skill-clawhub-skillzmarket",
+  "skillKey": "clawhub-skillzmarket",
+  "name": "SkillzMarket",
+  "summary": "Search and call monetized AI skills from Skillz Market with automatic USDC payments on Base. Use when the user wants to find paid AI services, call external skills with cryptocurrency payments, or integrate with the Skillz Market ecosystem.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillzmarket",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hiich",
+      "features": [
+        "Search and call monetized AI skills from Skillz Market with automatic USDC payments on Base",
+        "Use when the user wants to find paid AI services, call external skills with cryptocurrency paym."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillzmarket@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56564585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillzmarket",
+      "url": "https://clawhub.ai/skills/skillzmarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillzmarket",
+    "url": "https://clawhub.ai/skills/skillzmarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillzmarket-1a84ec7a049fbb67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillzmarket@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillzmarket-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3741f4673ca71b0a67b33c3584a3e515a5b8d933779066fec8c64a2fca575250",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:44:23.417Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tuniu-cli@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuniu_cli",
+  "skill": {
+    "id": 67249,
+    "skillKey": "clawhub-tuniu-cli",
+    "name": "途牛旅游CLI技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuniu-cli",
+    "url": "https://clawhub.ai/skills/tuniu-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuniu-cli-75fbd209b75c722c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "途牛旅行统一助手（推荐优先使用）- 通过 tuniu CLI 统一调用机票、酒店、门票、火车票、邮轮、度假产品等旅行服务。适用于用户询问航班、酒店、景点门票、火车票、邮轮以及跟团游、自助游、自驾游等度假相关需求的场景。【优先级说明】当同时安装了 tuniu-flight/tuniu-hotel/tuniu-tic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardoooooo",
+      "userId": "s17d6t2hs932r87kcz0tqx8jz583pkw5",
+      "displayName": "Leonardoooooo",
+      "image": "https://avatars.githubusercontent.com/u/2190878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775210609606,
+      "changelog": "tuniu-cli 1.0.4\n\n- Added comprehensive documentation (SKILL.md) detailing usage scenarios, environment setup, CLI commands, and all supported travel services.\n- Clarified integration and usage priority when multiple tuniu-related skills are installed.\n- Provided quick reference tables for intent recognition and required parameters for each travel service.\n- Expanded privacy and PII handling instructions.\n- Documented dynamic service discovery features and best practices for keeping services updated.\n- Detailed step-by-step usage and required parameters for flights, hotels, tickets, trains, cruises, and holiday product workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7db0f84df8ce869ea6c4c76ac62a051c82d344584d9e57c7909ce43a2d8a2e10"
+}

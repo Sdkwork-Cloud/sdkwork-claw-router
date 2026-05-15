@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29156,
+  "uuid": "skill-clawhub-markdown-to-word",
+  "skillKey": "clawhub-markdown-to-word",
+  "name": "markdown-to-word",
+  "summary": "Convert a Markdown file or raw Markdown string into a polished Word DOCX document. Supports custom Word template files, includes built-in DOCX templates, and...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_word",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "King",
+      "features": [
+        "Convert a Markdown file or raw Markdown string into a polished Word DOCX document",
+        "Supports custom Word template files, includes built-in DOCX templates, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-to-word@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2281525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-to-word",
+      "url": "https://clawhub.ai/skills/markdown-to-word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-word",
+    "url": "https://clawhub.ai/skills/markdown-to-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-word-10325fca43325039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-to-word@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-to-word-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7b28e1a43e60c282167b2a85be2541bc943140e44a090d0c044a9f8ba1c6115",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:34:40.976Z"
+}

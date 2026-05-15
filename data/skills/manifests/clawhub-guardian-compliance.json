@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32905,
+  "uuid": "skill-clawhub-guardian-compliance",
+  "skillKey": "clawhub-guardian-compliance",
+  "name": "Guardian Compliance",
+  "summary": "Immigration, tax, and business compliance alerts. Check your STEM OPT, H-1B, I-140, CPT status, upcoming deadlines, risk findings, and tax filing obligations...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardian_compliance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chenyu Li",
+      "features": [
+        "Immigration, tax, and business compliance alerts",
+        "Check your STEM OPT, H-1B, I-140, CPT status, upcoming deadlines, risk findings, and tax filing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guardian-compliance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60654356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guardian-compliance",
+      "url": "https://clawhub.ai/skills/guardian-compliance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardian-compliance",
+    "url": "https://clawhub.ai/skills/guardian-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardian-compliance-adb502b5e6d80850.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guardian-compliance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guardian-compliance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7d41efc80495c2a566db49d93928d944df6189298e342d6d6ff4b2a639a997d",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T23:20:21.321Z"
+}

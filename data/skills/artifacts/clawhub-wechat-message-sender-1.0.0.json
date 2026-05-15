@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-message-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_message_sender",
+  "skill": {
+    "id": 22786,
+    "skillKey": "clawhub-wechat-message-sender",
+    "name": "WeChat Send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-message-sender",
+    "url": "https://clawhub.ai/skills/wechat-message-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-message-sender-483b24c04c53914e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate sending text messages and images/files in the macOS WeChat desktop app by controlling the UI via AppleScript and JXA. This is NOT a WeChat chat chan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeholdon",
+      "userId": "publishers:yeholdon",
+      "displayName": "Honcy Ye",
+      "image": "https://avatars.githubusercontent.com/u/26994075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674896630,
+      "changelog": "- Initial release of WeChat message sending automation for macOS.\n- Send text messages and images/files to individual WeChat contacts by controlling the WeChat desktop app’s UI.\n- Uses AppleScript and JXA to automate contact search, message pasting, and sending.\n- Requires WeChat for Mac, Accessibility permissions, and the app window to be open.\n- Does not support reading messages, group management, or use as a chat channel.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7242b885722ce93fd8994efafb002b9780793ab9371cf9469daab1050ba79306"
+}

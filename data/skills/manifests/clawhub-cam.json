@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30430,
+  "uuid": "skill-clawhub-cam",
+  "skillKey": "clawhub-cam",
+  "name": "Cam",
+  "summary": "Use when calculating CNC speeds and feeds, selecting cutting tools, referencing G-code commands, looking up material cutting data, or computing machining par...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cam",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Use when calculating CNC speeds and feeds, selecting cutting tools, referencing G-code commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cam@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cam",
+      "url": "https://clawhub.ai/skills/cam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cam",
+    "url": "https://clawhub.ai/skills/cam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cam-707a3c64c7c00e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cam@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cam-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:562af3e14de55d0dc1b4dc97c25d4f7cc1724f8f49c9f8d3ea7bf0a6e111fa3f",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:55:47.445Z"
+}

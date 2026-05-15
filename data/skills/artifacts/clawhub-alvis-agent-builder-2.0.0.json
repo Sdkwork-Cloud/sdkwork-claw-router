@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-agent-builder@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_agent_builder",
+  "skill": {
+    "id": 43489,
+    "skillKey": "clawhub-alvis-agent-builder",
+    "name": "Agent Builder Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-agent-builder",
+    "url": "https://clawhub.ai/skills/alvis-agent-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-agent-builder-f71ff6a4920b5e99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and update OpenClaw agents by designing personas, rules, autonomy, and generating complete agent workspace files with safety and behavior checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776305378321,
+      "changelog": "No visible file changes detected between this and the previous version.\n\n- Version updated to 2.0.0\n- No modifications found in SKILL.md or other files\n- No new features, fixes, or documentation changes detected in this release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:325551539c23bfba0a59ee4c6e79ae8ebc4a064ea3fa8fb36cd07ccf656c5aac"
+}

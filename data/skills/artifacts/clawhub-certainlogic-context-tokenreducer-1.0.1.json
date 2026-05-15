@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/certainlogic-context-tokenreducer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.certainlogic_context_tokenreducer",
+  "skill": {
+    "id": 43368,
+    "skillKey": "clawhub-certainlogic-context-tokenreducer",
+    "name": "CertainLogic Context Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "certainlogic-context-tokenreducer",
+    "url": "https://clawhub.ai/skills/certainlogic-context-tokenreducer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/certainlogic-context-tokenreducer-13f24e13a4030055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevent AI session token bloat and runaway costs. Tracks query count per session, warns at a configurable threshold, auto-writes a dense handoff summary befo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certainlogicai",
+      "userId": "s177n1vqbbxjdapw2fqneax5qd8461jb",
+      "displayName": "CertainLogicAI",
+      "image": "https://avatars.githubusercontent.com/u/270056974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776348861602,
+      "changelog": "License updated to MIT (attribution required).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3be2c68e6b5a05e3c4cdb3089d53e5d4e7236663bffc1d57be82a03f1a0b233"
+}

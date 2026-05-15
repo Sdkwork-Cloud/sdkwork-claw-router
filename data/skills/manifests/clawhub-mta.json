@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49816,
+  "uuid": "skill-clawhub-mta",
+  "skillKey": "clawhub-mta",
+  "name": "NYC MTA Transit",
+  "summary": "NYC MTA transit — real-time subway arrivals, bus predictions, service alerts, and route info for the New York City subway and bus system. Use when the user a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mta",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Leach",
+      "features": [
+        "NYC MTA transit — real-time subway arrivals, bus predictions, service alerts, and route info fo.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mta@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1900805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mta",
+      "url": "https://clawhub.ai/skills/mta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mta",
+    "url": "https://clawhub.ai/skills/mta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mta-f3787cb0fcafe15c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mta@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mta-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d66edfb0570ae9752a38e16df3382ec95ba842462644726060ede2d945228d61",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:02:27.657Z"
+}

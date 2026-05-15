@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25583,
+  "uuid": "skill-clawhub-frameo",
+  "skillKey": "clawhub-frameo",
+  "name": "Frameo Photo Frame Control",
+  "summary": "Control Frameo digital photo frames via cloud API for frame info or ADB for full control including photo upload, brightness, screen, and navigation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frameo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael",
+      "features": [
+        "Control Frameo digital photo frames via cloud API for frame info or ADB for full control includ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/frameo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257654157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "frameo",
+      "url": "https://clawhub.ai/skills/frameo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frameo",
+    "url": "https://clawhub.ai/skills/frameo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frameo-b0dd29941fd4806f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/frameo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-frameo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc792bca762a62779dfbd3e98119474caa0aec2a22c9be39f8cd70aebf4f20cb",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:09:03.397Z"
+}

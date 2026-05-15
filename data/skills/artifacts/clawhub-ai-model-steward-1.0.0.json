@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-model-steward@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_model_steward",
+  "skill": {
+    "id": 69721,
+    "skillKey": "clawhub-ai-model-steward",
+    "name": "AI 模型智能管家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-model-steward",
+    "url": "https://clawhub.ai/skills/ai-model-steward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-model-steward-832cdc27deb422ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动监控 AI 模型动态，搜集免费 tokens，生成周度部署建议，支持一键审批上线及安全回滚管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hhbb2221",
+      "userId": "s17f4ymcmzzjnrj6zwhjeks42x83yt69",
+      "displayName": "HHBB2221",
+      "image": "https://avatars.githubusercontent.com/u/204304406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774948784917,
+      "changelog": "- Initial release of AI 模型智能管家 (version 0.1.0)\n- Features automated monitoring of latest AI model updates across major platforms.\n- Collects daily free token offers and weekly deployment insights.\n- Provides automated report generation, one-click approval for deployments, and secure rollback support.\n- Includes built-in scheduled tasks for intelligence gathering and weekly recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d7a3ef45183add5f506b3c3f7ac00f0a10cf272f053aea88bd9b9a8eb5c6bd9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/understand-dashboard@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.understand_dashboard",
+  "skill": {
+    "id": 28151,
+    "skillKey": "clawhub-understand-dashboard",
+    "name": "Understand-Anything-Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "understand-dashboard",
+    "url": "https://clawhub.ai/skills/understand-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/understand-dashboard-660c388e577bad7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch the interactive web dashboard to visualize a codebase's knowledge graph"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lum1104",
+      "userId": "publishers:lum1104",
+      "displayName": "Yuxiang Lin",
+      "image": "https://avatars.githubusercontent.com/u/87774050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773972231137,
+      "changelog": "- Added detailed instructions to launch the interactive web dashboard for visualizing a codebase's knowledge graph.\n- Improved guidance for locating the knowledge graph and dashboard directory.\n- Included user messages for missing knowledge graphs and successful dashboard startup.\n- Clarified dependency installation and dev server startup steps.\n- Noted auto-opening in browser and port selection behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cdb3135e48fa7970cb9a42138760c4f87ddecc12d65853c615f8011eee75571"
+}

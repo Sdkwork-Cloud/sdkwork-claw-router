@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-subtitle-viewer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_subtitle_viewer",
+  "skill": {
+    "id": 22349,
+    "skillKey": "clawhub-movie-subtitle-viewer",
+    "name": "Movie Subtitle Viewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-subtitle-viewer",
+    "url": "https://clawhub.ai/skills/movie-subtitle-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-subtitle-viewer-86ec2075a7fbdaa4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, download, parse, and summarize movie subtitles from OpenSubtitles in .srt or .ass formats using movie name and year."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773103794270,
+      "changelog": "Movie Subtitle Viewer Skill 0.1.0\n\n- Initial release with support for searching and downloading movie subtitles from OpenSubtitles.\n- Allows parsing .srt and .ass subtitle files to extract movie dialogue.\n- Generates AI-powered plot summaries from parsed subtitles.\n- Provides trigger phrases for easy access to search, download, and analyze subtitles.\n- Includes setup instructions for required OpenSubtitles API credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa43f5d3b74bce78f201bc95b36aa5e9d8c47f6fc7bbbdcd85b1b5512baea835"
+}

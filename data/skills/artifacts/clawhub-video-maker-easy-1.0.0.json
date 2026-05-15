@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-easy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_easy",
+  "skill": {
+    "id": 37880,
+    "skillKey": "clawhub-video-maker-easy",
+    "name": "Video Maker Easy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-easy",
+    "url": "https://clawhub.ai/skills/video-maker-easy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-easy-b915713179873b51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get finished MP4 videos ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, JPG, PNG, up to 500MB), say something l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776680736661,
+      "changelog": "Initial release of Video Maker Easy — create and export videos fast!\n\n- Upload video clips or images (MP4, MOV, JPG, PNG, up to 500MB) and generate 1080p MP4 videos with simple instructions.\n- Automatic cloud processing—no editing software or skills required.\n- Handles session setup and token management seamlessly; first use gives 100 free credits.\n- Supports quick actions: file upload, export, credits check, timeline state, and AI-guided editing.\n- Converts user prompts into video actions: combine clips, add music, overlay text, and more.\n- Reliable cloud export pipeline; jobs complete in 30–90 seconds for typical projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c419f72da3f0682971e8eda7022e219d168399da7857d04fc921da63454caa33"
+}

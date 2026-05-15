@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46564,
+  "uuid": "skill-clawhub-quincy-agentic-paper-digest-skill",
+  "skillKey": "clawhub-quincy-agentic-paper-digest-skill",
+  "name": "Agentic Paper Digest Skill",
+  "summary": "Fetches and summarizes recent arXiv and Hugging Face papers with Agentic Paper Digest. Use when the user wants a paper digest, a JSON feed of recent papers,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quincy_agentic_paper_digest_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Fetches and summarizes recent arXiv and Hugging Face papers with Agentic Paper Digest",
+        "Use when the user wants a paper digest, a JSON feed of recent papers,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quincy-agentic-paper-digest-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quincy-agentic-paper-digest-skill",
+      "url": "https://clawhub.ai/skills/quincy-agentic-paper-digest-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quincy-agentic-paper-digest-skill",
+    "url": "https://clawhub.ai/skills/quincy-agentic-paper-digest-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quincy-agentic-paper-digest-skill-0b4eca8215751494.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quincy-agentic-paper-digest-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quincy-agentic-paper-digest-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b561e4dcdacbd0dbb5c64cbf320bf641abbd615cc989b6bc51076e74c40b531",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:44:01.845Z"
+}

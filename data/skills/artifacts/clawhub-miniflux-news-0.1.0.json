@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miniflux-news@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniflux_news",
+  "skill": {
+    "id": 10074,
+    "skillKey": "clawhub-miniflux-news",
+    "name": "Miniflux News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniflux-news",
+    "url": "https://clawhub.ai/skills/miniflux-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniflux-news-b00b8b10f2b3afb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and triage the latest unread RSS/news entries from a Miniflux instance via its REST API using an API token. Use when the user asks to get the latest Miniflux unread items, list recent entries with titles/links, or generate short summ."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hartlco",
+      "userId": "publishers:hartlco",
+      "displayName": "hartlco",
+      "image": "https://avatars.githubusercontent.com/u/1497750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3061,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769158886872,
+      "changelog": "Initial release: list unread, filter by category, show full content, explicit mark-read (+confirm).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19abe6662d003e9ba0a97c690989f0713cc507515f95a61cce6f713db2c8eac9"
+}

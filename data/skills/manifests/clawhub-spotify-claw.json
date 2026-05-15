@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14723,
+  "uuid": "skill-clawhub-spotify-claw",
+  "skillKey": "clawhub-spotify-claw",
+  "name": "Spotify",
+  "summary": "Full Spotify Premium control + music analysis. Playback: play/pause/next/prev/volume/shuffle/queue. Analysis: top tracks, top artists, liked songs, genre pro...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mixx",
+      "features": [
+        "Full Spotify Premium control + music analysis",
+        "Playback: play/pause/next/prev/volume/shuffle/queue",
+        "Analysis: top tracks, top artists, liked songs, genre pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-claw@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16016631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-claw",
+      "url": "https://clawhub.ai/skills/spotify-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-claw",
+    "url": "https://clawhub.ai/skills/spotify-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-claw-1fa2bcdc961dedbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-claw@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-claw-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcf95cf98578ebedadce8eac97ab755595f8517a25d502c4a9cfc2a219da8bee",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:25:14.318Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71501,
+  "uuid": "skill-clawhub-rag-optimization",
+  "skillKey": "clawhub-rag-optimization",
+  "name": "RAG检索增强",
+  "summary": "当需要RAG检索内容时触发；完整的RAG系统优化方案，涵盖21+种策略（含Self-RAG、命题分块、片段提取、上下文压缩、引用溯源、查询意图、多跳检索、文档预处理）；提供诊断工具、实现代码、配置模板与评估框架；帮助构建高准确率生产级RAG应用；当用户需要优化知识库问答、提升检索准确率、评估RAG系统效果、解决检...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kiwifruit13",
+      "features": [
+        "当需要RAG检索内容时触发；完整的RAG系统优化方案，涵盖21+种策略（含Self-RAG、命题分块、片段提取、上下文压缩、引用溯源、查询意图、多跳检索、文档预处理）；提供诊断工具、实现代码."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rag-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143737192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rag-optimization",
+      "url": "https://clawhub.ai/skills/rag-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-optimization",
+    "url": "https://clawhub.ai/skills/rag-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-optimization-90449982508c8499.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rag-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rag-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73b1908fe36604756a1621cefa0ae52e7662f74352d180bacb976c0cded71e0b",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:00:09.130Z"
+}

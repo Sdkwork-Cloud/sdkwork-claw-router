@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-notes@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_notes",
+  "skill": {
+    "id": 16763,
+    "skillKey": "clawhub-book-notes",
+    "name": "BookNotes Reading Notes and Book Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-notes",
+    "url": "https://clawhub.ai/skills/book-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-notes-f0de649dc9068a3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture reading notes through conversation, organize by book, generate summaries, track reading list. Never lose an insight from a book again."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777853251861,
+      "changelog": "Fix: getList() now detects loose .md files and unregistered subdirectories, not just reading-list.json entries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e802d38c7a8d5a24e5a42d227b21bf2a9140c3a29483b28a2b291a47da2c30f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34941,
+  "uuid": "skill-clawhub-install",
+  "skillKey": "clawhub-install",
+  "name": "CatchClaw",
+  "summary": "Search, install, and export agentars from the CatchClaw marketplace. Use when the user wants to find, install, or package agent templates.",
+  "version": "3.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kissrain",
+      "features": [
+        "Search, install, and export agentars from the CatchClaw marketplace",
+        "Use when the user wants to find, install, or package agent templates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/install@3.5.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4645149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "install",
+      "url": "https://clawhub.ai/skills/install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install",
+    "url": "https://clawhub.ai/skills/install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-1e142e6277b12b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/install@3.5.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-install-3.5.8.json",
+      "version": "3.5.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a62417971ddfa4f151eb49855035a1f41943da40445508702793f51cfb168ff",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:40:57.097Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning",
+  "skill": {
+    "id": 19662,
+    "skillKey": "clawhub-morning",
+    "name": "Morning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning",
+    "url": "https://clawhub.ai/skills/morning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-c23b31a0179b550f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily journaling, reflection, and planning. Use when user says 'morning', 'let's plan the day', 'journal', or similar. Reviews yesterday, updates journals, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netcetera",
+      "userId": "publishers:netcetera",
+      "displayName": "Netcetera",
+      "image": "https://avatars.githubusercontent.com/u/676931?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772352672401,
+      "changelog": "- Integration with Brain: Added use of Brain actions and projects, surfacing relevant tasks and projects each morning.\n- Updated context gathering: Now retrieves tasks with `mcp__claude_ai_Actions_Team__listActions` and projects with `mcp__claude_ai_Actions_Team__listProjects`.\n- Active decisions logic improved: Scans journal entries for open decisions instead of requiring a dedicated directory.\n- Added README.md and package.json for documentation and project setup.\n- Removed legacy reference.md file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a024e43226a0df516769a09d6b9bdb9fd010ce0b23c56b33b56841b5d79a1f72"
+}

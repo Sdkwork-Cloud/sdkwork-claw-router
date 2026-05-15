@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenttax@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenttax",
+  "skill": {
+    "id": 54692,
+    "skillKey": "clawhub-agenttax",
+    "name": "AgentTax"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenttax",
+    "url": "https://clawhub.ai/skills/agenttax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenttax-8a43beb44859438d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tax compliance for AI agent transactions — sales tax, capital gains, nexus monitoring, 1099 tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenttax",
+      "userId": "s172an5bdxveedg4wngq575wxn83qj25",
+      "displayName": "AgentTax",
+      "image": "https://avatars.githubusercontent.com/u/263984765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774642222931,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:520f8b08932874e3db5ee040e5eed68132fc688c45da7b8e9348fb87a705c76f"
+}

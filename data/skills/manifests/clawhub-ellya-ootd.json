@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43095,
+  "uuid": "skill-clawhub-ellya-ootd",
+  "skillKey": "clawhub-ellya-ootd",
+  "name": "Ellya--OOTD",
+  "summary": "OpenClaw virtual companion skill. Use it to bootstrap runtime files (SOUL and base image), guide user personalization, learn and store style prompts from upl...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ellya_ootd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laogiant",
+      "features": [
+        "OpenClaw virtual companion skill",
+        "Use it to bootstrap runtime files (SOUL and base image), guide user personalization, learn and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ellya-ootd@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261174351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ellya-ootd",
+      "url": "https://clawhub.ai/skills/ellya-ootd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ellya-ootd",
+    "url": "https://clawhub.ai/skills/ellya-ootd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ellya-ootd-9675f02ec7c16f7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ellya-ootd@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ellya-ootd-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fad792224c4dae961329f6c223d983155354b358ae7926eec2d191940e5abc43",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:32:15.074Z"
+}

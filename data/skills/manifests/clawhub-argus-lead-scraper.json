@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26374,
+  "uuid": "skill-clawhub-argus-lead-scraper",
+  "skillKey": "clawhub-argus-lead-scraper",
+  "name": "B2B Lead Generation Scraper",
+  "summary": "Extracts verified B2B leads (name, email, company, LinkedIn, job title) from target sources and exports them as CRM-ready CSV files.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.argus_lead_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neo1307",
+      "features": [
+        "Extracts verified B2B leads (name, email, company, LinkedIn, job title) from target sources and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/argus-lead-scraper@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196853531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "argus-lead-scraper",
+      "url": "https://clawhub.ai/skills/argus-lead-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "argus-lead-scraper",
+    "url": "https://clawhub.ai/skills/argus-lead-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/argus-lead-scraper-de01f4f07f287d4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/argus-lead-scraper@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-argus-lead-scraper-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:786bb1ae494c84e242879e079576e3b5da8f37ce7cece0113b2b6c5345c39755",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:20:28.110Z"
+}

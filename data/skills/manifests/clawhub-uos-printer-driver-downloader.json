@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63754,
+  "uuid": "skill-clawhub-uos-printer-driver-downloader",
+  "skillKey": "clawhub-uos-printer-driver-downloader",
+  "name": "uos-printer-driver-downloader",
+  "summary": "本技能用于从统信UOS驱动中心搜索并下载打印机驱动程序。技能包含多个Python脚本，提供分离式和一体化两种使用方式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uos_printer_driver_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ykjack2005",
+      "features": [
+        "本技能用于从统信UOS驱动中心搜索并下载打印机驱动程序。技能包含多个Python脚本，提供分离式和一体化两种使用方式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uos-printer-driver-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157005435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uos-printer-driver-downloader",
+      "url": "https://clawhub.ai/skills/uos-printer-driver-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uos-printer-driver-downloader",
+    "url": "https://clawhub.ai/skills/uos-printer-driver-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uos-printer-driver-downloader-3b46372f14ea0e19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uos-printer-driver-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uos-printer-driver-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:471c5db057533e357f4bd85d920c181f5c7de18c0be8a335233b3337ad123ff0",
+      "artifactSizeBytes": 2651
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:30:27.161Z"
+}

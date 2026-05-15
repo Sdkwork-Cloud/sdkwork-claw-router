@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wakatime-skill@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wakatime_skill",
+  "skill": {
+    "id": 36995,
+    "skillKey": "clawhub-wakatime-skill",
+    "name": "WakaTime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wakatime-skill",
+    "url": "https://clawhub.ai/skills/wakatime-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wakatime-skill-042667bb6eb79c97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query WakaTime coding statistics including time ranges, projects, languages, categories, editors, and machines. Use when the user asks about WakaTime, coding..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chensoul",
+      "userId": "s1715wyb0drabkytpc8wrxtnnx83jetq",
+      "displayName": "chensoul",
+      "image": "https://avatars.githubusercontent.com/u/826932?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774849024644,
+      "changelog": "Release v0.0.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a548b465c203e86d08dfeda1ba5def8574bd47479057a7f48c443bb2dfd9550"
+}

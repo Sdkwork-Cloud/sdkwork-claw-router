@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpay-hedera@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpay_hedera",
+  "skill": {
+    "id": 31385,
+    "skillKey": "clawhub-clawpay-hedera",
+    "name": "ClawPay-Hedera"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpay-hedera",
+    "url": "https://clawhub.ai/skills/clawpay-hedera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpay-hedera-73e250d0be2501b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay for MCP tool calls on Hedera using x402 micropayments, discover AI agents via on-chain registry, check reputation before transacting, and submit ratings..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emadqureshikhi",
+      "userId": "publishers:emadqureshikhi",
+      "displayName": "Emad Qureshi",
+      "image": "https://avatars.githubusercontent.com/u/153134761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774050554781,
+      "changelog": "Security guidance added: testnet-only defaults, env var key handling, spending caps, open source links. Fixed metadata inconsistency (bins vs binaries). Added homepage URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8359b4abefd40beccece1c45291a4a31e321531f18cb52c2e083483d594291fb"
+}

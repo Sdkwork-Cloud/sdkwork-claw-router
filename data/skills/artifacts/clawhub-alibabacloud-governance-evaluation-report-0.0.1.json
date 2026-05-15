@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-governance-evaluation-report@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_governance_evaluation_report",
+  "skill": {
+    "id": 37013,
+    "skillKey": "clawhub-alibabacloud-governance-evaluation-report",
+    "name": "Alibabacloud Governance Evaluation Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-governance-evaluation-report",
+    "url": "https://clawhub.ai/skills/alibabacloud-governance-evaluation-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-governance-evaluation-report-59e31640b6323e3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Governance Center evaluation report skill. Use for querying governance maturity check results, generating structured risk reports, and account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775721391785,
+      "changelog": "Initial release of Alibaba Cloud Governance Center evaluation report skill.\n\n- Provides interactive maturity, risk, and compliance reporting powered by the Alibaba Cloud Governance Center APIs.\n- Supports progressive drill-down workflow: overview → pillar analysis → check detail → non-compliant resource listing.\n- Outputs are structured and formatted for chat, not as files.\n- Requires Alibaba Cloud CLI (≥3.3.0) with Governance Center read permissions.\n- All user-specific parameters (profile, pillar, check ID, etc.) must be confirmed before execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b407c6d18c8c11bb4d3e937f4542dfa2f809c52c8b34af423dc477cacfc410b1"
+}

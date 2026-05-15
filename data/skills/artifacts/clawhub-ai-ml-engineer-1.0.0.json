@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ml-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ml_engineer",
+  "skill": {
+    "id": 34361,
+    "skillKey": "clawhub-ai-ml-engineer",
+    "name": "AI ML Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ml-engineer",
+    "url": "https://clawhub.ai/skills/ai-ml-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ml-engineer-f84e7873f78134fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized AI/ML engineering career roadmaps based on individual experience, skills, and goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774253822379,
+      "changelog": "AI/ML Engineer Roadmap (v1.0.0) — Initial release\n\n- Launches a personalized AI/ML engineering career roadmap generator based on user experience, skills, and goals.\n- Provides skill gap analysis, curriculum recommendations, and milestone tracking through session management.\n- Includes detailed API documentation with usage examples, endpoint descriptions, and response schemas.\n- Offers multiple pricing plans, including a free tier.\n- Supports both authenticated and anonymous assessments with session tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8ea136e952f430f1ade3746f33593a4b2fa2b80291130477da6d80a02d8d857"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ontology@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontology",
+  "skill": {
+    "id": 8217,
+    "skillKey": "clawhub-ontology",
+    "name": "ontology"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontology",
+    "url": "https://clawhub.ai/skills/ontology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontology-c205f711aa5d8773.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Typed knowledge graph for structured agent memory and composable skills. Use when creating/querying entities (Person, Project, Task, Event, Document), linkin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oswalpalash",
+      "userId": "publishers:oswalpalash",
+      "displayName": "oswalpalash",
+      "image": "https://avatars.githubusercontent.com/u/6431196?v=4"
+    },
+    "stats": {
+      "comments": 7,
+      "downloads": 178020,
+      "installsAllTime": 1294,
+      "installsCurrent": 1248,
+      "stars": 592,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773249559725,
+      "changelog": "- Initial release of the ontology skill for typed, constraint-validated knowledge graphs.\n- Supports entity and relation CRUD, property and relation validation, and graph traversal for common types such as Person, Project, Task, Event, and Document.\n- Provides schema-driven constraints including required properties, enums, forbidden fields, cardinality, and acyclicity.\n- Enables multi-step planning and shared memory across skills via structured ontology objects.\n- Includes CLI tooling for creating, querying, linking, and validating graph data using JSONL storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5d10639826f2bd846ea34fc3b6a1ee9b9653b935cc3d63a160c4acad17e836f"
+}

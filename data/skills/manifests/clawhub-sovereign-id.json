@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17605,
+  "uuid": "skill-clawhub-sovereign-id",
+  "skillKey": "clawhub-sovereign-id",
+  "name": "Sovereign Identity",
+  "summary": "Manages decentralized identities, generates pairwise DIDs for B2C, signs mandates for B2B, and provides selective disclosure proofs without revealing private...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_id",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TamTunnel",
+      "features": [
+        "Manages decentralized identities, generates pairwise DIDs for B2C, signs mandates for B2B, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sovereign-id@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186722292?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sovereign-id",
+      "url": "https://clawhub.ai/skills/sovereign-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-id",
+    "url": "https://clawhub.ai/skills/sovereign-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-id-572b4a100fca8936.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sovereign-id@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-id-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6956bcfc84c5d3a1bfcd672912274c9f801e0e577db72c20edfa1f6ae5dd1e7f",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T02:41:04.012Z"
+}

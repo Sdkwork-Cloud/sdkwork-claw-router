@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiml-music-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiml_music_generator",
+  "skill": {
+    "id": 17947,
+    "skillKey": "clawhub-aiml-music-generator",
+    "name": "AIML Music Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiml-music-generator",
+    "url": "https://clawhub.ai/skills/aiml-music-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiml-music-generator-45faeeebcdfb67f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality music/songs via AIMLAPI. Supports Suno, Udio, Minimax, and ElevenLabs music models. Use when the user asks for music, songs, or soundtr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aimlapihello",
+      "userId": "publishers:aimlapihello",
+      "displayName": "AI/ML API",
+      "image": "https://avatars.githubusercontent.com/u/187510884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772120949661,
+      "changelog": "Initial release: Generate high-quality music or songs via AIMLAPI using multiple AI music models.\n\n- Supports ElevenLabs and Minimax  models.\n- Generate music tracks with custom styles, lyrics, and length.\n- Flexible script with arguments for prompt, lyrics, model choice, and output directory.\n- Two-step API workflow for track generation and result polling.\n- Requires AIMLAPI API key for authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9dc2b41a4adcb029e42372316dfba5ebbd0967e1148604fc9568fcc203fe4ad"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27013,
+  "uuid": "skill-clawhub-youtube-playlist-item",
+  "skillKey": "clawhub-youtube-playlist-item",
+  "name": "YouTube Playlist Item",
+  "summary": "Manage YouTube playlist items. Use this skill to list items in a playlist, add new items, update items, or remove items. Useful when working with YouTube pla...",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_playlist_item",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenWaygate",
+      "features": [
+        "Manage YouTube playlist items",
+        "Use this skill to list items in a playlist, add new items, update items, or remove items",
+        "Useful when working with YouTube pla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-playlist-item@0.10.7-dev",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27287694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-playlist-item",
+      "url": "https://clawhub.ai/skills/youtube-playlist-item"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-playlist-item",
+    "url": "https://clawhub.ai/skills/youtube-playlist-item",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-playlist-item-59e0f765999b9a3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-playlist-item@0.10.7-dev",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-playlist-item-0.10.7-dev.json",
+      "version": "0.10.7-dev",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8966adca3c24f7e604086dbe2c02e7e50a7ea2e4088c55a2e0aa2e3b9b3c8a",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:08:32.844Z"
+}

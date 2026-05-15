@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67119,
+  "uuid": "skill-clawhub-industry-news-agent",
+  "skillKey": "clawhub-industry-news-agent",
+  "name": "Industry News Agent",
+  "summary": "每日行业资讯追踪助手。通过 RSS 订阅获取科技媒体的最新文章（最近24小时），过滤后推送。支持自定义关键词和新闻来源媒体。",
+  "version": "3.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_news_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongrebeccahhh-boop",
+      "features": [
+        "每日行业资讯追踪助手。通过 RSS 订阅获取科技媒体的最新文章（最近24小时），过滤后推送。支持自定义关键词和新闻来源媒体。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/industry-news-agent@3.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259530351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "industry-news-agent",
+      "url": "https://clawhub.ai/skills/industry-news-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-news-agent",
+    "url": "https://clawhub.ai/skills/industry-news-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-news-agent-8560c3df140d6e01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/industry-news-agent@3.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-industry-news-agent-3.1.1.json",
+      "version": "3.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fd2c91605a9c15d8c461dcd019614878864530b2e23fd25ad63d9e1e0a405c8",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:52:01.200Z"
+}

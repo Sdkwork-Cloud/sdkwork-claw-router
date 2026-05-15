@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58315,
+  "uuid": "skill-clawhub-x-followings-digest",
+  "skillKey": "clawhub-x-followings-digest",
+  "name": "X Followings Digest",
+  "summary": "Auto-fetch latest tweets from your X/Twitter followings and generate structured AI digest. Supports custom time ranges: 1 day, 3 days, 7 days, or custom. 自动抓取X/Twitter关注列表的最新推文，并使用AI分析师提示词生成结构化日报。支持自定义时间段：1天、3天、7天或自定义天数。 **Trigger Words:**.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_followings_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Ma",
+      "features": [
+        "Auto-fetch latest tweets from your X/Twitter followings and generate structured AI digest",
+        "Supports custom time ranges: 1 day, 3 days, 7 days, or custom",
+        "自动抓取X/Twitter关注列表的最新推文，并使用AI分析师提示词生成结构化日报。支持自定义时间段：1天、3天、7天或自定义天数。 **Trigger Words:**",
+        "\"summarize my followings\", \"X digest\", \"Twitter summary\", \"tweets from last 3 days\", \"weekly su."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-followings-digest@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112575352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-followings-digest",
+      "url": "https://clawhub.ai/skills/x-followings-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-followings-digest",
+    "url": "https://clawhub.ai/skills/x-followings-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-followings-digest-962c15671f60536b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-followings-digest@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-followings-digest-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f568c2da5136a4bf22b86a6acd2d92c69b82c2f7fe2fe50948aed256373ccde",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:41:31.744Z"
+}

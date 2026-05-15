@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-prices@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_prices",
+  "skill": {
+    "id": 10256,
+    "skillKey": "clawhub-stock-prices",
+    "name": "Stock Prices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-prices",
+    "url": "https://clawhub.ai/skills/stock-prices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-prices-0bfe2461b394fcba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time stock prices and market data using the Stock Prices API. Responses are in TOON format—decode with @toon-format/toon. Use when fetching stock..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anthonylee1994",
+      "userId": "publishers:anthonylee1994",
+      "displayName": "anthonylee1994",
+      "image": "https://avatars.githubusercontent.com/u/2138598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3276,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771311482314,
+      "changelog": "- Responses are now provided in TOON (Token-Oriented Object Notation) format instead of JSON, saving ~40% tokens.\n- Added instructions for decoding TOON responses using the @toon-format/toon package.\n- Updated sample code and usage sections to demonstrate decoding and handling TOON data.\n- Clarified that all API consumers must decode responses before use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c67ad7017a208bf6e1a6b1cbf49784e227ae6141b98bf43471c4ee65fdd315de"
+}

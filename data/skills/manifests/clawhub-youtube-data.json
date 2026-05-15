@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9628,
+  "uuid": "skill-clawhub-youtube-data",
+  "skillKey": "clawhub-youtube-data",
+  "name": "youtube-data",
+  "summary": "Use when structured YouTube data is needed: pasted video/channel/playlist links, transcripts for analysis, video metadata, channel upload history, search res...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Use when structured YouTube data is needed: pasted video/channel/playlist links, transcripts fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-data@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-data",
+      "url": "https://clawhub.ai/skills/youtube-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-data",
+    "url": "https://clawhub.ai/skills/youtube-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-data-31168829ac7b688d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-data@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-data-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:364985c91aae4e54bea8db5146a16334e431e011cc66d311e1f8ad04129c7dd7",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:05:36.603Z"
+}

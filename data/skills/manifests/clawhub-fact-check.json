@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14551,
+  "uuid": "skill-clawhub-fact-check",
+  "skillKey": "clawhub-fact-check",
+  "name": "Fact Check",
+  "summary": "Verify claims, statements, and information against reliable sources. Use when user asks to fact-check, verify, confirm, validate, or check the accuracy of an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fact_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "古 晖",
+      "features": [
+        "Verify claims, statements, and information against reliable sources",
+        "Use when user asks to fact-check, verify, confirm, validate, or check the accuracy of an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fact-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11729740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fact-check",
+      "url": "https://clawhub.ai/skills/fact-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fact-check",
+    "url": "https://clawhub.ai/skills/fact-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fact-check-2aaf6ce2cba42556.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fact-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fact-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5acc0adc743e5bcb601d7b0b9386f6b9094b0bd0bdde4a285d4bacda7284da2",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:26:29.653Z"
+}

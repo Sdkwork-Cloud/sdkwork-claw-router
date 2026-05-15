@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-coordinator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_coordinator",
+  "skill": {
+    "id": 34219,
+    "skillKey": "clawhub-hermes-coordinator",
+    "name": "Coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-coordinator",
+    "url": "https://clawhub.ai/skills/hermes-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-coordinator-5ee3a8f28708a9ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms the agent into a coordinator that breaks down goals, dispatches tasks to workers, and synthesizes results without direct execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olveww-dot",
+      "userId": "s174qw7qntjf9hdpsxsyek8mcd83s0kq",
+      "displayName": "ECsss",
+      "image": "https://avatars.githubusercontent.com/u/226646360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776664483733,
+      "changelog": "v1.0.2: 添加一键安装命令，ClaWHub安装后可直接使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1daa565fe3d2902f8b5b586c2411cad7ccd15617c657d716d601d841ab1274f"
+}

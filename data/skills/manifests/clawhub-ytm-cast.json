@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11491,
+  "uuid": "skill-clawhub-ytm-cast",
+  "skillKey": "clawhub-ytm-cast",
+  "name": "YouTube Music Cast",
+  "summary": "Download music from YouTube/YouTube Music and stream to Chromecast via Home Assistant. Complete CLI toolset with web server integration, configuration wizard, and playback controls.",
+  "version": "6.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ytm_cast",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aidan",
+      "features": [
+        "Download music from YouTube/YouTube Music and stream to Chromecast via Home Assistant",
+        "Complete CLI toolset with web server integration, configuration wizard, and playback controls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ytm-cast@6.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84136868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ytm-cast",
+      "url": "https://clawhub.ai/skills/ytm-cast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ytm-cast",
+    "url": "https://clawhub.ai/skills/ytm-cast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ytm-cast-79bea637957c3d0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ytm-cast@6.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ytm-cast-6.0.0.json",
+      "version": "6.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f801342b310538d6b0b46bd254e58c4e5f6976415354b59c84123bb4b54402a",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:01:52.443Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66382,
+  "uuid": "skill-clawhub-qiniu-kodo-qshell",
+  "skillKey": "clawhub-qiniu-kodo-qshell",
+  "name": "七牛云对象存储操作",
+  "summary": "使用七牛云 Kodo 与 qshell 执行对象存储操作，包含下载 qshell、配置账号、查询 bucket、上传文件、下载文件。适用于用户提到七牛云、七牛 Kodo、qshell、对象存储上传下载、AK/SK、bucket、key、文件中转、把文件上传到七牛或从七牛下载到本地的场景。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiniu_kodo_qshell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "宁伟",
+      "features": [
+        "使用七牛云 Kodo 与 qshell 执行对象存储操作，包含下载 qshell、配置账号、查询 bucket、上传文件、下载文件。适用于用户提到七牛云、七牛 Kodo、qshell、对象存."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qiniu-kodo-qshell@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1631544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qiniu-kodo-qshell",
+      "url": "https://clawhub.ai/skills/qiniu-kodo-qshell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiniu-kodo-qshell",
+    "url": "https://clawhub.ai/skills/qiniu-kodo-qshell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiniu-kodo-qshell-4eb0dbd4476c48ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qiniu-kodo-qshell@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qiniu-kodo-qshell-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86a20d12bf025fdbf65a53ea10da5acbe44bb7d7e61bf1a5b97b26e4b9047228",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:54:32.436Z"
+}

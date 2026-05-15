@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doorstep-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_video_editor",
+  "skill": {
+    "id": 62583,
+    "skillKey": "clawhub-doorstep-video-editor",
+    "name": "Video Editor - 视频剪辑"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-video-editor",
+    "url": "https://clawhub.ai/skills/doorstep-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-video-editor-91d8625ee79a2cca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频剪辑技能 - 基于moviepy + ffmpeg的视频处理工具箱。功能：(1) 裁剪/合并/分割视频，(2) 添加中文文字/字幕，(3) 添加/替换背景音乐，(4) 变速/调整尺寸，(5) 提取/替换音频，(6) 纯文字讲解视频生成。Use when: (1) 需要剪辑短视频（抖音/小红书），(2) 需要给..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncsimok",
+      "userId": "s17c962yfsevawab1qf1f7z8v984g5tn",
+      "displayName": "ncsimok",
+      "image": "https://avatars.githubusercontent.com/u/128122169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777454902036,
+      "changelog": "初版：基于moviepy+ffmpeg的本地视频剪辑，支持裁剪/合并/加文字/字幕/背景音乐/变速/尺寸调整/音频操作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc7b50487d7a6e39b70510286ebd753813e7cbe1ab9a2e10a054304b3822919d"
+}

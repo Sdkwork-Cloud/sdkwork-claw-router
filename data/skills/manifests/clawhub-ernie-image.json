@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56204,
+  "uuid": "skill-clawhub-ernie-image",
+  "skillKey": "clawhub-ernie-image",
+  "name": "ERNIE-Image文生图SKILL",
+  "summary": "Generate images with ERNIE-Image. Use for image create requests incl. edits. Supports text-to-image ; - 1024x1024/1376x768/1264x848/ 1200x896/896x1200/848x12...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ernie_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "livingbody",
+      "features": [
+        "Generate images with ERNIE-Image",
+        "Use for image create requests incl",
+        "Supports text-to-image",
+        "1024x1024/1376x768/1264x848/ 1200x896/896x1200/848x12..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ernie-image@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8059137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ernie-image",
+      "url": "https://clawhub.ai/skills/ernie-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ernie-image",
+    "url": "https://clawhub.ai/skills/ernie-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ernie-image-885a0ee6050ce48e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ernie-image@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ernie-image-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e093443607444a7c6486f6278cae55051c9f80391a51822a73e7972bbc2c19eb",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T03:25:45.967Z"
+}

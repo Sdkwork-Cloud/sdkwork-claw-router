@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22226,
+  "uuid": "skill-clawhub-agent-causal",
+  "skillKey": "clawhub-agent-causal",
+  "name": "Agent Causal",
+  "summary": "Agent Causal Decision Tool helps you and your AI agents answer one question from experiment data: should we ship this change, keep running the test, or roll...",
+  "version": "0.10.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_causal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morris Zhu",
+      "features": [
+        "Agent Causal Decision Tool helps you and your AI agents answer one question from experiment dat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-causal@0.10.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13523903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-causal",
+      "url": "https://clawhub.ai/skills/agent-causal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-causal",
+    "url": "https://clawhub.ai/skills/agent-causal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-causal-8d86c6e0c5fc43a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-causal@0.10.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-causal-0.10.3.json",
+      "version": "0.10.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef2c8e04a3974bc289785d615d2c8175be6eb800442dcbd7e334e5c26742190a",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T11:46:56.976Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_generator",
+  "skill": {
+    "id": 47538,
+    "skillKey": "clawhub-auto-generator",
+    "name": "Auto Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-generator",
+    "url": "https://clawhub.ai/skills/auto-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-generator-f7233c700c87c42a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw screen recording into 1080p auto-generated videos just by typing what you need. Whether it's automatically generating edited videos from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777230129671,
+      "changelog": "Auto-generator 1.0.0 initial release\n\n- Generate 1080p edited videos from raw screen recordings in 1-2 minutes by describing the result you want.\n- Automatic cloud connection with 100 free credits—no setup needed, just upload footage and type instructions.\n- Supports common video, audio, and image formats; max file size 500MB.\n- Handles video edits, exports, credit checks, and session management via cloud API.\n- Error handling for expiration, file size, formats, and rate limits.\n- Simplified user flow: no manual editing or export settings—upload and describe your goal.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa310a9d51be77504436a2920fe9c4e64731406eb00fbe602caf3d45db65bc89"
+}

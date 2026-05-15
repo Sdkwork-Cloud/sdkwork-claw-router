@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentvibes-openclaw-skill@4.6.6",
+  "version": "4.6.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentvibes_openclaw_skill",
+  "skill": {
+    "id": 17412,
+    "skillKey": "clawhub-agentvibes-openclaw-skill",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentvibes-openclaw-skill",
+    "url": "https://clawhub.ai/skills/agentvibes-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentvibes-openclaw-skill-c13ecac89270fc73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎤 AgentVibes TTS for Claude Code & OpenClaw — Switch voices, set personality, control speed, background music, language learning mode, reverb/effects, and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulpreibisch",
+      "userId": "s1731xm1yn4ds1j9t8bsz5dpz18440hy",
+      "displayName": "Paul Preibisch",
+      "image": "https://avatars.githubusercontent.com/u/19810611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1845,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "4.6.6",
+      "createdAt": 1775250749179,
+      "changelog": "914+ voices, personality styles, speed control, background music,  reverb/effects, language learning mode, verbosity control, Windows SAPI + Soprano  providers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43fadeda5b7e15ea70e5d8b4dfa2819da495b42cd0d8c9ca0c243b98e4843a41"
+}

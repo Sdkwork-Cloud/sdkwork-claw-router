@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21847,
+  "uuid": "skill-clawhub-polymarket-btc-weekend-volatility-trader",
+  "skillKey": "clawhub-polymarket-btc-weekend-volatility-trader",
+  "name": "Polymarket Btc Weekend Volatility Trader",
+  "summary": "Trades BTC weekend price threshold markets on Polymarket by exploiting the systematic gap between first-passage probability (\"will BTC touch 150k at ANY POIN...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_btc_weekend_volatility_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades BTC weekend price threshold markets on Polymarket by exploiting the systematic gap betwe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-btc-weekend-volatility-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-btc-weekend-volatility-trader",
+      "url": "https://clawhub.ai/skills/polymarket-btc-weekend-volatility-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-btc-weekend-volatility-trader",
+    "url": "https://clawhub.ai/skills/polymarket-btc-weekend-volatility-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-btc-weekend-volatility-trader-7212d0def3930d34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-btc-weekend-volatility-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-btc-weekend-volatility-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a08748cd71e4018a586a6fb4d3906c955efca058ffad620ee0589d8c33aafe58",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:21:35.571Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60384,
+  "uuid": "skill-clawhub-vispatrol-alarm-query",
+  "skillKey": "clawhub-vispatrol-alarm-query",
+  "name": "vispatrol-alarm-query",
+  "summary": "在 Windows 上查询 VisPatrol 报警与抓拍；仅允许在用户明确批准后读取本机 %TEMP%/vpup.json 以执行只读报警与抓拍查询。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vispatrol_alarm_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baymax1957",
+      "features": [
+        "在 Windows 上查询 VisPatrol 报警与抓拍；仅允许在用户明确批准后读取本机 %TEMP%/vpup.json 以执行只读报警与抓拍查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vispatrol-alarm-query@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263845230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vispatrol-alarm-query",
+      "url": "https://clawhub.ai/skills/vispatrol-alarm-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vispatrol-alarm-query",
+    "url": "https://clawhub.ai/skills/vispatrol-alarm-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vispatrol-alarm-query-c45de31e9eb50a0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vispatrol-alarm-query@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vispatrol-alarm-query-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:068508a8174beff2e68415d55f50526d09bbea52eccf372ee2253ab4fd2cc070",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:54:30.002Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28853,
+  "uuid": "skill-clawhub-nvidia-cuda",
+  "skillKey": "clawhub-nvidia-cuda",
+  "name": "NVIDIA CUDA",
+  "summary": "Use when work targets NVIDIA GPUs for deep learning training, inference, distributed execution, CUDA/Triton kernels, or AI infra tuning. Enforces GPU-aware c...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_cuda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "刘旭凯",
+      "features": [
+        "Use when work targets NVIDIA GPUs for deep learning training, inference, distributed execution,.",
+        "Enforces GPU-aware c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia-cuda@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196036180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia-cuda",
+      "url": "https://clawhub.ai/skills/nvidia-cuda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-cuda",
+    "url": "https://clawhub.ai/skills/nvidia-cuda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-cuda-6d8f7caa86025233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia-cuda@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-cuda-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae46403296b23f9c7e0e3c23fa036f88de135368f3375f2d115183f81637745b",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T09:11:55.823Z"
+}

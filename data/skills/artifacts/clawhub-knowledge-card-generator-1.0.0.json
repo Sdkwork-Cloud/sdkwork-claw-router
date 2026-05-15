@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-card-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_card_generator",
+  "skill": {
+    "id": 27881,
+    "skillKey": "clawhub-knowledge-card-generator",
+    "name": "Knowledge Card Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-card-generator",
+    "url": "https://clawhub.ai/skills/knowledge-card-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-card-generator-bb6b61017ae0ac7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for Knowledge Card Generator."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaodbb",
+      "userId": "s177c1ebzqa9z8r6e24m22b4en83g6fe",
+      "displayName": "zhaodbb",
+      "image": "https://avatars.githubusercontent.com/u/259515884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773895945711,
+      "changelog": "knowledge-card-generator v1.0.0\n\n- 初始版本发布，支持知识卡片/海报自动生成。\n- 标准流程：信息检索 → 草稿整理 → 图片生成 → 修审反馈。\n- 强制草稿确认步骤，未经确认不能直接生成图片。\n- 默认图片风格为儿童简笔画，并每次生成前询问风格选项。\n- 图片输出规格统一为1080×1920竖版、2K分辨率（9:16）。\n- 支持新增风格并纳入风格定义库。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bb2d618ac90a6e5fe72044345cb4d34ff69bf12f8962f9b974c63453863e15b"
+}

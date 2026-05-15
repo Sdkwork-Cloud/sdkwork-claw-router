@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-news-listing-staging@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_listing_staging",
+  "skill": {
+    "id": 38161,
+    "skillKey": "clawhub-gate-news-listing-staging",
+    "name": "gate-news-listing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-listing-staging",
+    "url": "https://clawhub.ai/skills/gate-news-listing-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-listing-staging-4627e1d20c7a6a08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exchange listing tracker. Use this skill whenever the user asks about exchange listing, delisting, or maintenance announcements. Trigger phrases include: any..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775472856516,
+      "changelog": "- Reference rule files moved to dedicated `references/` directory; updated all links in SKILL.md accordingly\n- Removed redundant project docs: CHANGELOG.md and README.md\n- Added new shared runtime rules: `gate-runtime-rules.md` and `info-news-runtime-rules.md`\n- Cleaned up SKILL.md: improved rule references, clarified fallback/maintenance behaviors, and reorganized general rules section\n- No changes to user-facing workflow, dependencies, or features",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f82b396222cb277c2ea3c5bc5b01613b9129b3e38d1dd4102631c309b23e412e"
+}

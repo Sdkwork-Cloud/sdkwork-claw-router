@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/id-emas-pro@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.id_emas_pro",
+  "skill": {
+    "id": 39752,
+    "skillKey": "clawhub-id-emas-pro",
+    "name": "Id Emas Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "id-emas-pro",
+    "url": "https://clawhub.ai/skills/id-emas-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/id-emas-pro-66cb4c7e6721617d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cek harga emas Indonesia real-time (Antam/Logam Mulia), bandingkan brand, set alert harga, analisis AI via Kimi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rhaone21",
+      "userId": "s1703y7wn0rszxp5wpj9ay78j583nnvq",
+      "displayName": "Rhaone21",
+      "image": "https://avatars.githubusercontent.com/u/98638798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774553615951,
+      "changelog": "Version 1.3.0 — Adds new features and enhancements for gold price monitoring.\n\n- Added cron job handlers for periodic alert checks and morning brief price updates (see new CRON.md).\n- Introduced portfolio and history tracking scripts to expand Pro and AI tier features.\n- Implemented new script modules: cache, health monitoring, retry logic, and script testing.\n- Updated skill documentation (SKILL.md) to reflect new cron features and usage instructions.\n- Enhanced error handling and clarified tier rules across commands.\n- Improved brand config and script structure for maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0e15bf3a9883e78b4bedb601b8fb9209fa3af3b57ebd00f777a9dd4f387adad"
+}

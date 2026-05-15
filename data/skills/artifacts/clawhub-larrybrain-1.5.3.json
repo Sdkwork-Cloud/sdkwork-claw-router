@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/larrybrain@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.larrybrain",
+  "skill": {
+    "id": 9811,
+    "skillKey": "clawhub-larrybrain",
+    "name": "Larrybrain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "larrybrain",
+    "url": "https://clawhub.ai/skills/larrybrain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/larrybrain-ca691dd65536668f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill marketplace for OpenClaw agents. One subscription, unlimited tools. Search, download, and install skills from the LarryBrain library."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olliewazza",
+      "userId": "s17dt0z8np6kz954afqtv4w5fh853gxr",
+      "displayName": "OliverHenry",
+      "image": "https://avatars.githubusercontent.com/u/159768186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3099,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1772092018486,
+      "changelog": "**LarryBrain v1.5.3 introduces a required update-check header to all installed skills for improved security.**\n\n- Every time a skill is installed, a standardized update-check block is prepended to the SKILL.md file.\n- The header instructs any agent to always check for updates and review remote changes before using the skill.\n- The install API example and instructions are updated to reference version 1.5.3.\n- No changes to the API structure or permissions; this is a documentation and process enhancement to make update checking universal and explicit.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e2da47ce2491a1603089aa4025f395dc3313334d1297170fa9d4fa0d6cacd59"
+}

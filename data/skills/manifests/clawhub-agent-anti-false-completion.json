@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69473,
+  "uuid": "skill-clawhub-agent-anti-false-completion",
+  "skillKey": "clawhub-agent-anti-false-completion",
+  "name": "Agent 防假完成工具",
+  "summary": "用于减少 AI agent 假完成行为，通过任务约束、结果校验和执行规范，确保复杂任务真实执行与可信交付。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_anti_false_completion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dry3",
+      "features": [
+        "用于减少 AI agent 假完成行为，通过任务约束、结果校验和执行规范，确保复杂任务真实执行与可信交付。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-anti-false-completion@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30338314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-anti-false-completion",
+      "url": "https://clawhub.ai/skills/agent-anti-false-completion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-anti-false-completion",
+    "url": "https://clawhub.ai/skills/agent-anti-false-completion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-anti-false-completion-df54f275c4809750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-anti-false-completion@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-anti-false-completion-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23181ad54aef5825e3da82788339ca13a252f734d56e3838c126e65771adaa2a",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:27:56.337Z"
+}

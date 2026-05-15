@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402georeport@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402georeport",
+  "skill": {
+    "id": 37677,
+    "skillKey": "clawhub-x402georeport",
+    "name": "x402geo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402georeport",
+    "url": "https://clawhub.ai/skills/x402georeport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402georeport-277022600388dfc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an agent needs to run GEO/SEO audits through x402geo.com with payment gating, status tracking, and report delivery via MCP or ACP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sagztudio",
+      "userId": "s178saz1g10ynxrzxp37xv1fj584g951",
+      "displayName": "Sagar",
+      "image": "https://avatars.githubusercontent.com/u/86024774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776833032731,
+      "changelog": "x402georeport v1.0.2 Changelog\n\n- Updated payment flow to use AgentCash MCP wallet methods (`mcp__agentcash__get_balance`, `mcp__agentcash__fetch`) in place of previous CLI-based wallet commands.\n- Clarified agent instructions for agentic wallet checks, confirmations, and error handling using AgentCash MCP APIs.\n- Added guidance for surfacing deposit links to users via `mcp__agentcash__list_accounts` if wallet balance is insufficient.\n- Improved instructions for both ACP and MCP integration flows, detailing new payment method steps and user communication requirements.\n- No code changes; documentation and workflow instructions updated for new MCP-based payment integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:656bd667a3a4bfc379c4e01cda840247de5da1b7c25fa3bf2e31d5a349804eed"
+}

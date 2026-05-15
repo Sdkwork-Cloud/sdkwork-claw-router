@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hsciq-mcp@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hsciq_mcp",
+  "skill": {
+    "id": 57022,
+    "skillKey": "clawhub-hsciq-mcp",
+    "name": "HSCIQ MCP - 海关编码查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hsciq-mcp",
+    "url": "https://clawhub.ai/skills/hsciq-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hsciq-mcp-f33d08ff454601a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "HS Code Lookup for Chinese Products. Query customs codes, tariff rates, declaration elements, and regulatory requirements via HSCIQ MCP API. Create classific..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toucao",
+      "userId": "s176t6kkw20eybaqj6fs7h4p1983h4p9",
+      "displayName": "TouCao",
+      "image": "https://avatars.githubusercontent.com/u/39644881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1777993129265,
+      "changelog": "新增 create_guilei_form 工具：支持 AI 自动创建 HS 归类咨询单，包含产品信息提交与图片上传（base64），提交给平台专业归类师人工审核。每人每天独立配额限制（默认5次）。更新 SKILL.md/README.md/Node.js 客户端/Python 客户端。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45af9d4eda7ea1284c40f90d63c6653f92096c6044030a667c36efa72f3e5ec9"
+}

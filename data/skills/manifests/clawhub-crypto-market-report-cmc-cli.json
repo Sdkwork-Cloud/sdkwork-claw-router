@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32230,
+  "uuid": "skill-clawhub-crypto-market-report-cmc-cli",
+  "skillKey": "clawhub-crypto-market-report-cmc-cli",
+  "name": "market-report-using-cmc-cli",
+  "summary": "Daily coin market report and crypto snapshot via CoinMarketCap (CMC) CLI. Covers BTC and ETH prices, top coin gainers and losers, trending crypto tokens, and...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_market_report_cmc_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoinMarketCap",
+      "features": [
+        "Daily coin market report and crypto snapshot via CoinMarketCap (CMC) CLI",
+        "Covers BTC and ETH prices, top coin gainers and losers, trending crypto tokens, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-market-report-cmc-cli@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264930810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-market-report-cmc-cli",
+      "url": "https://clawhub.ai/skills/crypto-market-report-cmc-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-market-report-cmc-cli",
+    "url": "https://clawhub.ai/skills/crypto-market-report-cmc-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-market-report-cmc-cli-4c5df0c4556303e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-market-report-cmc-cli@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-market-report-cmc-cli-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:655b786bb4e2e191f6a7a41718025ad19c0ab36a458357ad66d74536f41d58f0",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:35:18.194Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44073,
+  "uuid": "skill-clawhub-alibabacloud-odps-cost-analysis",
+  "skillKey": "clawhub-alibabacloud-odps-cost-analysis",
+  "name": "Alibabacloud Odps Cost Analysis",
+  "summary": "Alibaba Cloud MaxCompute Cost Analysis Skill. Analyze MaxCompute pay-as-you-go costs including billing, storage metrics, and compute metrics. Triggers: \"maxc...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_odps_cost_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud MaxCompute Cost Analysis Skill",
+        "Analyze MaxCompute pay-as-you-go costs including billing, storage metrics, and compute metrics",
+        "Triggers: \"maxc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-odps-cost-analysis@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-odps-cost-analysis",
+      "url": "https://clawhub.ai/skills/alibabacloud-odps-cost-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-odps-cost-analysis",
+    "url": "https://clawhub.ai/skills/alibabacloud-odps-cost-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-odps-cost-analysis-8e6f87076fccca46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-odps-cost-analysis@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-odps-cost-analysis-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:545ef1048f8a32831b058c2d49cd1d2913cf4f528b856c165a7f94bceef83cb7",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:14:52.844Z"
+}

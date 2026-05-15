@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8316,
+  "uuid": "skill-clawhub-duckduckgo-search",
+  "skillKey": "clawhub-duckduckgo-search",
+  "name": "Performs web searches using DuckDuckGo to retrieve real-time information from the internet. Use when the user needs to search f.",
+  "summary": "Performs web searches using DuckDuckGo to retrieve real-time information from the internet. Use when the user needs to search for current events, documentation, tutorials, or any information that requires web search capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duckduckgo_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "10e9928a",
+      "features": [
+        "Performs web searches using DuckDuckGo to retrieve real-time information from the internet",
+        "Use when the user needs to search for current events, documentation, tutorials, or any informat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duckduckgo-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99306962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duckduckgo-search",
+      "url": "https://clawhub.ai/skills/duckduckgo-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duckduckgo-search",
+    "url": "https://clawhub.ai/skills/duckduckgo-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duckduckgo-search-9b6b6757ee170eb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duckduckgo-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duckduckgo-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ad0360a33db6fb53f4418c08dc69c6177f99a80705cf770a5b26991dd304135",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T15:53:11.079Z"
+}

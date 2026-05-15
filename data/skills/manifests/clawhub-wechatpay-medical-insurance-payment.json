@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66928,
+  "uuid": "skill-clawhub-wechatpay-medical-insurance-payment",
+  "skillKey": "clawhub-wechatpay-medical-insurance-payment",
+  "name": "微信支付医保支付接入skill",
+  "summary": "微信支付医保支付（移动医保支付2.0）接入解决方案，覆盖医保自费混合下单、订单查询、医保退款通知、医保收款回调全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when user mentions \"医保支付\", \"移动医保支付2.0\", \"医保自费混合\", \"医保电子凭证\", \"医保混合收款...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatpay_medical_insurance_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpeng",
+      "features": [
+        "微信支付医保支付（移动医保支付2.0）接入解决方案，覆盖医保自费混合下单、订单查询、医保退款通知、医保收款回调全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechatpay-medical-insurance-payment@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70940892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechatpay-medical-insurance-payment",
+      "url": "https://clawhub.ai/skills/wechatpay-medical-insurance-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatpay-medical-insurance-payment",
+    "url": "https://clawhub.ai/skills/wechatpay-medical-insurance-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatpay-medical-insurance-payment-92e7f460ef54ccef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechatpay-medical-insurance-payment@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechatpay-medical-insurance-payment-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3218a3e3dead7a244a56ae4629f2a3ac470ae8332c848743e04bc0414476a725",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:35:36.714Z"
+}

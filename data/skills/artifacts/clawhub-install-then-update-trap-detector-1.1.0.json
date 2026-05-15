@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/install-then-update-trap-detector@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_then_update_trap_detector",
+  "skill": {
+    "id": 48740,
+    "skillKey": "clawhub-install-then-update-trap-detector",
+    "name": "Install Then Update Trap Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-then-update-trap-detector",
+    "url": "https://clawhub.ai/skills/install-then-update-trap-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-then-update-trap-detector-e14e6719481d0f0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps detect the install-then-update attack pattern — where a skill passes initial security review cleanly, then silently introduces malicious behavior throu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771988649978,
+      "changelog": "v1.1.0 introduces cryptographic chain-of-custody verification to improve update integrity tracking.\n\n- Added chain-of-custody verification: update sequences are checked for cryptographic signing and hash chaining, detecting breaks in verifiable update history.\n- SKILL.md updated with new detection dimension, examples, and limitations.\n- Capability metadata now includes chain-of-custody-verification. \n- No changes to input or output format for standard trap assessments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e41563e7003b470f1615a1e26335fa09ec76d17d3462056f9d75766a423b155c"
+}

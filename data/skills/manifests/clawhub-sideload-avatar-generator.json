@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21649,
+  "uuid": "skill-clawhub-sideload-avatar-generator",
+  "skillKey": "clawhub-sideload-avatar-generator",
+  "name": "Sideload Avatar Generator",
+  "summary": "Generate 3D avatars (VRM/GLB/MML) from text or images via Sideload.gg, paying $2 USDC per generation using any x402 wallet on Base.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sideload_avatar_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DirectiveCreator",
+      "features": [
+        "Generate 3D avatars (VRM/GLB/MML) from text or images via Sideload.gg, paying $2 USDC per gener."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sideload-avatar-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13805336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sideload-avatar-generator",
+      "url": "https://clawhub.ai/skills/sideload-avatar-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sideload-avatar-generator",
+    "url": "https://clawhub.ai/skills/sideload-avatar-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sideload-avatar-generator-498e9ec9b735a71a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sideload-avatar-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sideload-avatar-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92abc2301230f9531d810490dfc628700e7b905f15fe69f4f1a3144569d867c1",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T22:49:35.567Z"
+}

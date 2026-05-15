@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69971,
+  "uuid": "skill-clawhub-shucheng-budget-data-model",
+  "skillKey": "clawhub-shucheng-budget-data-model",
+  "name": "Budget Data Model Skills",
+  "summary": "提供预算系统数据模型的完整定义，包括所有表名、字段名、数据类型等。当用户需要查询预算相关数据模型结构、编写数据查询脚本、或需要了解特定表的字段信息时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shucheng_budget_data_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lan2898408767",
+      "features": [
+        "提供预算系统数据模型的完整定义，包括所有表名、字段名、数据类型等。当用户需要查询预算相关数据模型结构、编写数据查询脚本、或需要了解特定表的字段信息时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shucheng-budget-data-model@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134391587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shucheng-budget-data-model",
+      "url": "https://clawhub.ai/skills/shucheng-budget-data-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shucheng-budget-data-model",
+    "url": "https://clawhub.ai/skills/shucheng-budget-data-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shucheng-budget-data-model-e9e8e3898efd239f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shucheng-budget-data-model@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shucheng-budget-data-model-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e54f5d45ba6874ba73bdcb9468aa72b6af2b193f558c0cd36facc21a76a299f3",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:51:02.836Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shortcut-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortcut_skill",
+  "skill": {
+    "id": 18658,
+    "skillKey": "clawhub-shortcut-skill",
+    "name": "Shortcut Epic and Story skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortcut-skill",
+    "url": "https://clawhub.ai/skills/shortcut-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortcut-skill-6856e74e698e54f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage Shortcut.com (formerly Clubhouse) project management. Use when the user asks to: list stories, view backlog, search issues, check epics, up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "incognos",
+      "userId": "publishers:incognos",
+      "displayName": "Sina Khelil",
+      "image": "https://avatars.githubusercontent.com/u/1743697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 572,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771952860345,
+      "changelog": "**Major update: Adds mandatory safe JSON construction using jq for all API requests.**\n\n- All commands for creating or updating data now require using jq (`jq -n --arg/--argjson`) to build JSON, preventing shell injection and quoting errors.\n- Added a prominent section explaining and enforcing the safe JSON construction rule.\n- Updated all write and some read examples to demonstrate proper, secure variable handling with jq.\n- Improved comments and code samples for clarity and best security practices.\n- No functional API/interface changes; all updates reinforce secure scripting usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f65fb5319943e56e5f9f0e475db87d34562d880d52660f68a03997adea419e6"
+}

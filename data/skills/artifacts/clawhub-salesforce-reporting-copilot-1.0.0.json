@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salesforce-reporting-copilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_reporting_copilot",
+  "skill": {
+    "id": 26810,
+    "skillKey": "clawhub-salesforce-reporting-copilot",
+    "name": "Salesforce Reporting Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-reporting-copilot",
+    "url": "https://clawhub.ai/skills/salesforce-reporting-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-reporting-copilot-bda541eaf15f4702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a Salesforce report blueprint from real org metadata. Use this skill when someone asks to build a report in Salesforce, understand how to query thei..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "breynol01",
+      "userId": "publishers:breynol01",
+      "displayName": "Benjamin Reynolds",
+      "image": "https://avatars.githubusercontent.com/u/22324195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773695841678,
+      "changelog": "Salesforce Reporting Copilot v1.0.0\n\n- Initial release of the skill.\n- Generates Salesforce report blueprints using real org metadata.\n- Maps user reporting questions to relevant Salesforce objects, fields, and relationships.\n- Guides users through authenticating, pulling metadata, and mapping data for reporting.\n- Provides clear constraints: only works with live metadata, avoids assumptions, and assists users with SF CLI setup if needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3392cac00389bedc7f51f0a9002a3d7f27f97432f72c5af015b63b0280430626"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invassistant@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invassistant",
+  "skill": {
+    "id": 57973,
+    "skillKey": "clawhub-invassistant",
+    "name": "InvAssistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invassistant",
+    "url": "https://clawhub.ai/skills/invassistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invassistant-58c291b03c9545d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Investment portfolio management system covering A-shares (A股), US stocks (美股), and HK stocks (港股). A-shares: Three-condition entry system (引擎评分≥80 + 价格≤目标 +..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haiyangchenbj",
+      "userId": "s17672gh0nx9qr7sjp84kz7xen83jv7v",
+      "displayName": "haiyangchen",
+      "image": "https://avatars.githubusercontent.com/u/135641704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1776920161626,
+      "changelog": "v2.1.0: Upgrade to v1.4 strategy - add A-share 3-condition system (elastic window, dynamic target, resilience downgrade, momentum dual-track, earnings rules), HK stock strategy, remove specific tickers from SKILL.md, add Q2 2026 strategy doc",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a50270bdc77e51f9cea29d4451223781d8b9e2e9f77e30ae375de5ca5961855d"
+}

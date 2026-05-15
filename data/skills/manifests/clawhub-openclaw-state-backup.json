@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23966,
+  "uuid": "skill-clawhub-openclaw-state-backup",
+  "skillKey": "clawhub-openclaw-state-backup",
+  "name": "OpenClaw State Backup",
+  "summary": "Create, inspect, and restore versioned OpenClaw state backups with rollback safety. Use when backing up or migrating OpenClaw memory, workspace state, gatewa...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_state_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danielwangyy",
+      "features": [
+        "Create, inspect, and restore versioned OpenClaw state backups with rollback safety",
+        "Use when backing up or migrating OpenClaw memory, workspace state, gatewa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-state-backup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32700482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-state-backup",
+      "url": "https://clawhub.ai/skills/openclaw-state-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-state-backup",
+    "url": "https://clawhub.ai/skills/openclaw-state-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-state-backup-07c8b9cb7cc93378.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-state-backup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-state-backup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caf9fc136deb4fa30b6e31332a9681d543e5bdb232fd7addea90ed5016a1c6ef",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:22:08.179Z"
+}

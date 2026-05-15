@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-viz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_viz",
+  "skill": {
+    "id": 38228,
+    "skillKey": "clawhub-context-viz",
+    "name": "Context Visualization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-viz",
+    "url": "https://clawhub.ai/skills/context-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-viz-01837ba62f1e6ff1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize the current context window usage — token estimates per component (system prompt, tools, workspace files, messages, free space). Use when the user a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "furukama",
+      "userId": "s173zrqxja3p5fvf7pqdm8zm0984am63",
+      "displayName": "Benedikt Koehler",
+      "image": "https://avatars.githubusercontent.com/u/198717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 739,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771316872289,
+      "changelog": "Initial release – visualize and break down current context window usage.\n\n- Estimates token usage per component: system prompt, tools, workspace files, messages, and free space.\n- Provides a visual, proportional bar chart in monospace format.\n- Includes script to estimate tokens for workspace files.\n- Details a \"Memory on Disk\" inventory, showing files not loaded into context.\n- Designed for user questions about context size, usage breakdown, or context fullness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9928981f4dbbb15cbc3eb7764e966f99c362147847f579eaefcc927e3a4bd78"
+}

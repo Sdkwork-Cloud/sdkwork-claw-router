@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dsb-task-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dsb_task_extractor",
+  "skill": {
+    "id": 34543,
+    "skillKey": "clawhub-dsb-task-extractor",
+    "name": "Task Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dsb-task-extractor",
+    "url": "https://clawhub.ai/skills/dsb-task-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dsb-task-extractor-f11c3eeabf953611.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract, track, and verify completion of multiple tasks from a single user message. Use when a message contains 3+ actionable items or mixes multiple unrelat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dodge1218",
+      "userId": "s178b280ymzfwn2195mq3dph2h83wdh2",
+      "displayName": "KairoKid",
+      "image": "https://avatars.githubusercontent.com/u/235199066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775705159600,
+      "changelog": "Initial release: Extract and track multiple tasks from compound user messages. Prevents dropped tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:399884f0df92492caaa478091a664eadcca725c282375964fb51502feed5c3a2"
+}

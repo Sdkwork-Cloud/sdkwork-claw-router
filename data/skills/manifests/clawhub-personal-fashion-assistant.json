@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65506,
+  "uuid": "skill-clawhub-personal-fashion-assistant",
+  "skillKey": "clawhub-personal-fashion-assistant",
+  "name": "smart personal fashion assistant",
+  "summary": "个人时尚助手 - 管理你的穿搭风格、电子衣橱，并提供每日穿搭推荐。支持身材肤色录入、衣橱增删改查、冲突检测、统计与智能推荐。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_fashion_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yunaiikim",
+      "features": [
+        "管理你的穿搭风格、电子衣橱，并提供每日穿搭推荐。支持身材肤色录入、衣橱增删改查、冲突检测、统计与智能推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-fashion-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255781739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-fashion-assistant",
+      "url": "https://clawhub.ai/skills/personal-fashion-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-fashion-assistant",
+    "url": "https://clawhub.ai/skills/personal-fashion-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-fashion-assistant-cded6c4882b0c642.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-fashion-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-fashion-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:689c601225ae448efef32d132cce634847e814105140d427f25ca542991b27a7",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:52:26.642Z"
+}

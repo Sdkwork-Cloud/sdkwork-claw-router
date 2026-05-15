@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17301,
+  "uuid": "skill-clawhub-spotlight",
+  "skillKey": "clawhub-spotlight",
+  "name": "Spotlight",
+  "summary": "Search files and content using macOS Spotlight indexing (mdfind). Use when the user asks to search local files, documents, or directories on macOS. Supports...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotlight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HONGMIN LI",
+      "features": [
+        "Search files and content using macOS Spotlight indexing (mdfind)",
+        "Use when the user asks to search local files, documents, or directories on macOS",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotlight@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14259647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotlight",
+      "url": "https://clawhub.ai/skills/spotlight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotlight",
+    "url": "https://clawhub.ai/skills/spotlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotlight-be46a22b1f8cddcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotlight@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotlight-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05cac09623bb3cbb3201076112be701b262198b51e1225a034b9cdc38cafad02",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:42:36.971Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iaworker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iaworker",
+  "skill": {
+    "id": 52098,
+    "skillKey": "clawhub-iaworker",
+    "name": "iaworker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iaworker",
+    "url": "https://clawhub.ai/skills/iaworker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iaworker-1972471c88680ef9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent Automation Worker — analyzes video/image streams and generates structured, real-time operating steps for physical tasks (debug, repair, assembly,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinleunglai",
+      "userId": "s17b2b8cmpqjn4fsm2s3ctcjbh8572q5",
+      "displayName": "yinleunglai",
+      "image": "https://avatars.githubusercontent.com/u/15664382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776846777752,
+      "changelog": "Initial release of iaworker: Intelligent Automation Worker for real-time physical task guidance.\n\n- Analyze images, videos, or live camera feeds to detect physical issues (repair, debug, assembly, inspection).\n- Generate structured, step-by-step operating instructions with estimated difficulty and tool requirements.\n- Delivers guidance both visually (markdown display) and audibly (TTS spoken aloud) with optional step-by-step confirmation.\n- Supports multiple task types, per-step safety warnings, and mistake avoidance tips.\n- Highly configurable TTS, display, and workflow settings via YAML config file.\n- Includes modular scripts: video/image analyzer, step generator, and TTS/display handler.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b578a126b8da105572c755ef165529bda19e0dd916c69f8015d33bad9a08bd91"
+}

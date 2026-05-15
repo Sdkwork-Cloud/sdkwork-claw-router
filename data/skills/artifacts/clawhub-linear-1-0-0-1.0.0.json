@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_1_0_0",
+  "skill": {
+    "id": 27838,
+    "skillKey": "clawhub-linear-1-0-0",
+    "name": "Linear 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-1-0-0",
+    "url": "https://clawhub.ai/skills/linear-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-1-0-0-87a1b2351451496c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage Linear issues, projects, and team workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terryren2024",
+      "userId": "s177he4jph962pkdzt06htm1eh83gmxc",
+      "displayName": "TerryRen2024",
+      "image": "https://avatars.githubusercontent.com/u/192179498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773542132926,
+      "changelog": "- Initial release of the Linear skill for querying and managing Linear issues, projects, and team workflows.\n- Provides bash CLI commands for issue management, team/project browsing, and workflow automation.\n- Integrates GitHub branch naming for automated Linear issue tracking.\n- Supports standup summaries, issue creation, assignment, status, and priority updates.\n- Requires a Linear API key and (optionally) a default team for streamlined commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38c2b179de830e7ccaf55e796e16ac152fbe1f62bff93c6948d7b170366e0573"
+}

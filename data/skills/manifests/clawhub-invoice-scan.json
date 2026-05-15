@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19194,
+  "uuid": "skill-clawhub-invoice-scan",
+  "skillKey": "clawhub-invoice-scan",
+  "name": "Invoice Scan",
+  "summary": "AI-powered invoice OCR, scanning, and data extraction. Use when: (1) user needs OCR or text extraction from invoice images, scanned documents, or PDFs, (2) s...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mr-muddle",
+      "features": [
+        "AI-powered invoice OCR, scanning, and data extraction",
+        "Use when: (1) user needs OCR or text extraction from invoice images, scanned documents, or PDFs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-scan@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75946571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-scan",
+      "url": "https://clawhub.ai/skills/invoice-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-scan",
+    "url": "https://clawhub.ai/skills/invoice-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-scan-e9af104d28c87d7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-scan@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-scan-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:909de77336bd7b5749a99c6a47b9c895d6328cf0dd38246aeffb1f4e9b4ba517",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:33:56.157Z"
+}

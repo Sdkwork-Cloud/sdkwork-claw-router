@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lead-processor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_processor",
+  "skill": {
+    "id": 19485,
+    "skillKey": "clawhub-lead-processor",
+    "name": "Lead Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-processor",
+    "url": "https://clawhub.ai/skills/lead-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-processor-1568e3e959e487a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates B2B lead cleaning and classification by analyzing client websites, grading leads A/B/C, updating Feishu tables, and sending reports to Feishu groups."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clonbrowser",
+      "userId": "publishers:clonbrowser",
+      "displayName": "clonbrowser",
+      "image": "https://avatars.githubusercontent.com/u/117975853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772178783638,
+      "changelog": "Version 1.0.2 of lead-processor\n\n- No file changes detected; functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd3e6d54056763b902bbb0cd0af31714424f4b3d5708070c438a84dcbd24aa88"
+}

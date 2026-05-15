@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26078,
+  "uuid": "skill-clawhub-ometria",
+  "skillKey": "clawhub-ometria",
+  "name": "Ometria",
+  "summary": "Ometria integration. Manage Persons, Organizations, Deals, Pipelines, Activities, Notes and more. Use when the user wants to interact with Ometria data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ometria",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ometria integration",
+        "Manage Persons, Organizations, Deals, Pipelines, Activities, Notes and more",
+        "Use when the user wants to interact with Ometria data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ometria@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ometria",
+      "url": "https://clawhub.ai/skills/ometria"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ometria",
+    "url": "https://clawhub.ai/skills/ometria",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ometria-6cb1472ec89ad5ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ometria@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ometria-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb6b4e9bea285786c8582f538b1a44f1639058b7992e9d80590825db13724394",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:19:02.960Z"
+}

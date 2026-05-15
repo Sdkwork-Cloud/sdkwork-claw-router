@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guide@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guide",
+  "skill": {
+    "id": 63904,
+    "skillKey": "clawhub-guide",
+    "name": "Cultural Relics Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guide",
+    "url": "https://clawhub.ai/skills/guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guide-83ca68be6227af2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文物讲解词一键生成。用户只需提供文物名称和 API 信息，系统自动判断讲解风格并生成400-500字的专业讲解词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangzw0707",
+      "userId": "s17dyy1aktnk3ga2nepyy1563d83qar8",
+      "displayName": "jiangzw0707",
+      "image": "https://avatars.githubusercontent.com/u/171780894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774859300750,
+      "changelog": "- 增加 metadata 字段，明确 skill 对本地配置文件 config/user_config.json 结构的校验和依赖说明\n- 其它功能、使用方法、流程无更改",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:955da3b58336a627deb14c82c97ed1f9be8190b04f90137aeeb51f91b4937ecc"
+}

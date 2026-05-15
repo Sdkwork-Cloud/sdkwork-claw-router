@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61692,
+  "uuid": "skill-clawhub-stock-price-alert",
+  "skillKey": "clawhub-stock-price-alert",
+  "name": "Stock Price Alert",
+  "summary": "股价异动实时提醒 — 对接行情接口、邮件通知与 Sonos 语音播报",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_price_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "股价异动实时提醒 — 对接行情接口、邮件通知与 Sonos 语音播报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-price-alert@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-price-alert",
+      "url": "https://clawhub.ai/skills/stock-price-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-price-alert",
+    "url": "https://clawhub.ai/skills/stock-price-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-price-alert-e45bf096556274c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-price-alert@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-price-alert-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e4b17466343f61141fe7a3525c9a1d15e946f24e0ade5e2f2ac8149c3dec3aa",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T19:47:06.435Z"
+}

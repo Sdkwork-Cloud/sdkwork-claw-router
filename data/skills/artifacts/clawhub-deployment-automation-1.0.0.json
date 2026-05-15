@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deployment-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deployment_automation",
+  "skill": {
+    "id": 47625,
+    "skillKey": "clawhub-deployment-automation",
+    "name": "Deployment Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deployment-automation",
+    "url": "https://clawhub.ai/skills/deployment-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deployment-automation-85c72204595ea198.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated deployment pipeline for AI agents. Build, test, and deploy applications with zero-downtime. Triggers: deployment, CI/CD, release automation, deploy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777510151936,
+      "changelog": "Initial release of deployment-automation (v1.0.0):\n\n- Provides a fully automated deployment pipeline for AI agents and applications.\n- Supports multi-stage pipelines (build, test, stage, deploy) and custom pipeline definitions.\n- Enables blue-green, canary, and rolling deployment strategies with optional canary percentage and batch controls.\n- Includes automated health checks and instant, configurable rollback on deployment failure.\n- Offers multi-environment promotion, approval gates, environment diffing, and notification integration.\n- Designed for zero-downtime releases and instant rollback, supporting modern continuous deployment workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f99ca1bc7acdb41f611a74d11828ec79190e27f75c42837fcea70fa4dbeeb5c4"
+}

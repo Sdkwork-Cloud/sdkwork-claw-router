@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quark-subtitle-rescue@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quark_subtitle_rescue",
+  "skill": {
+    "id": 41642,
+    "skillKey": "clawhub-quark-subtitle-rescue",
+    "name": "Quark Subtitle Rescue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quark-subtitle-rescue",
+    "url": "https://clawhub.ai/skills/quark-subtitle-rescue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quark-subtitle-rescue-cfd5f73d13b9d944.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bulk add subtitles to Quark movie folders with high success and low wrong-match risk. Best for \"all subfolders\" jobs, interrupted runs, and retrying failed t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangqi00987",
+      "userId": "s175jk8x8771a37x13zbvw79wd83j3mp",
+      "displayName": "tangqi",
+      "image": "https://avatars.githubusercontent.com/u/100181282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774450894193,
+      "changelog": "Optimize marketplace description for clearer value proposition and trigger scenarios; add expected inputs; switch default success target to bilingual subtitles (zh+en) with optional Chinese-only fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24a98b3b6783ba4c9d427c9555c411b14a62283aa4cd2d40d9212c4c3cb9f59a"
+}

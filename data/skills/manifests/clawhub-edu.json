@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64197,
+  "uuid": "skill-clawhub-edu",
+  "skillKey": "clawhub-edu",
+  "name": "education-learning-aggregation",
+  "summary": "聚合28个教育类子技能，自动匹配用户需求，支持教师教学和学生学习全场景，统一格式输出高效便捷结果",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI遇见天马",
+      "features": [
+        "聚合28个教育类子技能，自动匹配用户需求，支持教师教学和学生学习全场景，统一格式输出高效便捷结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129256359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edu",
+      "url": "https://clawhub.ai/skills/edu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edu",
+    "url": "https://clawhub.ai/skills/edu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edu-e613bb442bf089c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b132f5908619062078d5277c788c2c40f89e3ea0358ee51525d74568a2f41cd4",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:49:58.664Z"
+}

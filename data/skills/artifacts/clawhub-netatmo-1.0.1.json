@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netatmo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netatmo",
+  "skill": {
+    "id": 12678,
+    "skillKey": "clawhub-netatmo",
+    "name": "Netatmo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netatmo",
+    "url": "https://clawhub.ai/skills/netatmo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netatmo-d74bb423fc14da95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Netatmo thermostat and read weather station data. Use for heating control (set temperature, change mode), checking indoor/outdoor temperatures, CO₂ levels, humidity, noise, and pressure readings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianbeer",
+      "userId": "s178qb3qnn3qkjvv09p3dn4v4583we9e",
+      "displayName": "Florian Beer",
+      "image": "https://avatars.githubusercontent.com/u/800047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2074,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769377861317,
+      "changelog": "Added ASCII sparkline graphs to history command",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20f0cac076f7fd7ecd420070223b25c7b9e846c2b13ed48da2d0057b389cdb3c"
+}

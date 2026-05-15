@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "skill-integrity-auditor",
+    "displayName": "Skill Auditor",
+    "summary": "Audit core: a classification taxonomy and a severity scoring function, kept orthogonal. Operates on the whole skill bundle (SKILL.md plus any referenced scri...",
+    "tags": {
+      "latest": "0.1.9"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1777358046605,
+    "updatedAt": 1777538915277
+  },
+  "latestVersion": {
+    "version": "0.1.9",
+    "createdAt": 1777538343051,
+    "changelog": "skill-integrity-auditor v0.1.9\n\n- Added new behaviors for higher-precision analysis in several categories:\n  - `NET.OutboundUntrustedSink` for outbound to untrusted destinations (see §5.1.1).\n  - `CRED.HardcodedInjected` for hardcoded credentials the skill directs to inject into user systems.\n  - `LLM.PromptOverrideActionable` for LLM override directives that resolve to malicious actions.\n- Enhanced the definition of some behaviors, such as explicitly referencing `find ... -delete` in `FS.DeleteBroad`.\n- Updated the `IntentMarker` table to clarify criteria for `malicious_confirmed` (listing sufficiency conditions).\n- Refined and extended severity classifications and behavior taxonomy for more granularity.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ambarion",
+    "userId": "s17cgv21szfdm9pm3sv5rhwtn983g3yc",
+    "displayName": "ambarion",
+    "image": "https://avatars.githubusercontent.com/u/48558592?v=4"
+  },
+  "moderation": null
+}

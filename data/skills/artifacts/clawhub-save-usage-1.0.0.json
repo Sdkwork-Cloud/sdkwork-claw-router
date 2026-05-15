@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_usage",
+  "skill": {
+    "id": 37473,
+    "skillKey": "clawhub-save-usage",
+    "name": "Save Usage ~4x (Codex oAuth users)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-usage",
+    "url": "https://clawhub.ai/skills/save-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-usage-7457987bf4d95b69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classifies tasks by safety and complexity to route safe, negligible queries to gpt-5.1-codex-mini and escalates critical or executable tasks to gpt-5.3-codex."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacks3tr",
+      "userId": "publishers:jacks3tr",
+      "displayName": "jacks3tr",
+      "image": "https://avatars.githubusercontent.com/u/54018717?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771109172201,
+      "changelog": "- Initial release of save-usage skill.\n- Auto-detects task complexity and routes safe/negligible tasks to gpt-5.1-codex-mini.\n- Escalates any executable, uncertain, or high-impact tasks to gpt-5.3-codex.\n- Enforces strict classification before responding; always escalate when in doubt.\n- Provides clear lists of escalation triggers and safe cases for gpt-5.1-codex-mini.\n- Includes extended documentation on routing logic and usage rationale.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cbf87f17cc4ac947e3b83d7b12697b3164f852b8b4c482d7b6e0d74cdcaa9f1"
+}

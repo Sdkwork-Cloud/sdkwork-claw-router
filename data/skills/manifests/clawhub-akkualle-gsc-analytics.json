@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52189,
+  "uuid": "skill-clawhub-akkualle-gsc-analytics",
+  "skillKey": "clawhub-akkualle-gsc-analytics",
+  "name": "Google Search Console Analytics",
+  "summary": "Ruft Google Search Console Daten für akku-alle.de ab - Klicks, Impressionen, CTR, Rankings und Top-Keywords. Nutze das shell Tool um /root/.openclaw/skills/g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akkualle_gsc_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Akkualle",
+      "features": [
+        "Ruft Google Search Console Daten für akku-alle.de ab",
+        "Klicks, Impressionen, CTR, Rankings und Top-Keywords",
+        "Nutze das shell Tool um /root/.openclaw/skills/g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akkualle-gsc-analytics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257129674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akkualle-gsc-analytics",
+      "url": "https://clawhub.ai/skills/akkualle-gsc-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akkualle-gsc-analytics",
+    "url": "https://clawhub.ai/skills/akkualle-gsc-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akkualle-gsc-analytics-689b1c5643de3b94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akkualle-gsc-analytics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-akkualle-gsc-analytics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d45792e0853c7bc02ff1001565ce3c6d993cdc70ff3cb4fd1ab60ce2658e643f",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:16:29.789Z"
+}

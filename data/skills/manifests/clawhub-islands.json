@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73451,
+  "uuid": "skill-clawhub-islands",
+  "skillKey": "clawhub-islands",
+  "name": "网红海岛",
+  "summary": "提供关于网红海岛的推荐清单、打卡路线与指南。用户搜索网红海岛或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.islands",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红海岛的推荐清单、打卡路线与指南。用户搜索网红海岛或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/islands@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "islands",
+      "url": "https://clawhub.ai/skills/islands"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "islands",
+    "url": "https://clawhub.ai/skills/islands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/islands-cdce8218c199fd2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/islands@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-islands-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55006f240391276b20ed659558a33031ad98ec7b555814f2f59a4a35e04ddc8a",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:15:44.372Z"
+}

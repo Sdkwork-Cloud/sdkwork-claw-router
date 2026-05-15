@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65507,
+  "uuid": "skill-clawhub-academic-literature-search",
+  "skillKey": "clawhub-academic-literature-search",
+  "name": "Academic Literature Search",
+  "summary": "提供多权威数据库的学术文献检索，支持自然语言、多字段搜索、高级过滤、去重排序及多格式结果输出。",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_literature_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jibeilindong",
+      "features": [
+        "提供多权威数据库的学术文献检索，支持自然语言、多字段搜索、高级过滤、去重排序及多格式结果输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-literature-search@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45553044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-literature-search",
+      "url": "https://clawhub.ai/skills/academic-literature-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-literature-search",
+    "url": "https://clawhub.ai/skills/academic-literature-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-literature-search-cf52af652cded223.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-literature-search@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-literature-search-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f03ca2a3961a91eec4b69aa630fc51c863f1c29e08a875084be351f2b078674",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:13:12.039Z"
+}

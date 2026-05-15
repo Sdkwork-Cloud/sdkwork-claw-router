@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45103,
+  "uuid": "skill-clawhub-logfmt-parser",
+  "skillKey": "clawhub-logfmt-parser",
+  "name": "Logfmt Parser",
+  "summary": "Parses and converts various log formats into clean JSON for improved analysis and debugging, with options for timestamp extraction and format control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logfmt_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Parses and converts various log formats into clean JSON for improved analysis and debugging, wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logfmt-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logfmt-parser",
+      "url": "https://clawhub.ai/skills/logfmt-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logfmt-parser",
+    "url": "https://clawhub.ai/skills/logfmt-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logfmt-parser-47bc113919554045.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logfmt-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logfmt-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d60be8d3802f3e7a7a1f65341f7aac2e2d77597a71b7317ea433a9e246cc898",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:50:23.259Z"
+}

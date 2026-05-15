@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15215,
+  "uuid": "skill-clawhub-channels-setup",
+  "skillKey": "clawhub-channels-setup",
+  "name": "Channels Setup",
+  "summary": "Guide to set up and configure IM channels(Telegram, Discord, Slack, Feishu, Dingtalk) for OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channels_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peter",
+      "features": [
+        "Guide to set up and configure IM channels(Telegram, Discord, Slack, Feishu, Dingtalk) for OpenC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channels-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160676084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channels-setup",
+      "url": "https://clawhub.ai/skills/channels-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channels-setup",
+    "url": "https://clawhub.ai/skills/channels-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channels-setup-28246518f34a2c1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channels-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-channels-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e47e7ee3c6b994d0ddd2d9c0a44af004322a8afe0b8a23d26716dbef38f3045c",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T21:16:26.631Z"
+}

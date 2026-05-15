@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funnel-ads-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funnel_ads_helper",
+  "skill": {
+    "id": 25694,
+    "skillKey": "clawhub-funnel-ads-helper",
+    "name": "Funnel Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funnel-ads-helper",
+    "url": "https://clawhub.ai/skills/funnel-ads-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funnel-ads-helper-2a0d9d42025abeb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and optimize full conversion funnels for paid traffic from Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772756150956,
+      "changelog": "Initial release of funnel-ads-helper – a skill for diagnosing and optimizing paid traffic conversion funnels.\n\n- Analyzes funnel drop-off by stage across Meta, Google, TikTok, YouTube, Amazon, and Shopify Ads.\n- Identifies conversion bottlenecks and prioritizes optimization actions.\n- Provides a structured experiment roadmap tied to campaign goals (ROAS/CPA).\n- Includes clear input/output contract and practical guided examples.\n- Built-in decision rules, platform-specific guidance, and failure handling protocols.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f80424497d949c0881c31e27f4fd7149299f65d42ce6ee8f9cb0a17abb66d8d5"
+}

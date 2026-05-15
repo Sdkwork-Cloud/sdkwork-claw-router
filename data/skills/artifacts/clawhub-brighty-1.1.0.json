@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brighty@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brighty",
+  "skill": {
+    "id": 19274,
+    "skillKey": "clawhub-brighty",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brighty",
+    "url": "https://clawhub.ai/skills/brighty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brighty-6eead29bcdc27290.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Banking interface for AI bots and automation. Get a bank account, issue a Mastercard, buy and sell crypto, send payments and invoices — all via API. Use when the user needs a bank account for a bot, wants to manage balances, make transfers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maay",
+      "userId": "publishers:maay",
+      "displayName": "Maay",
+      "image": "https://avatars.githubusercontent.com/u/159617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 972,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770997252583,
+      "changelog": "Add config/mcporter.json for automatic MCP server registration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:842bc1ddc3b8b981410516ca88fadcaf186c47c12f93f4a6683ae5f7e883daa9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-sg-invoice-parser@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_sg_invoice_parser",
+  "skill": {
+    "id": 28062,
+    "skillKey": "clawhub-my-sg-invoice-parser",
+    "name": "MY/SG Invoice & Receipt Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-sg-invoice-parser",
+    "url": "https://clawhub.ai/skills/my-sg-invoice-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-sg-invoice-parser-2c4e63fe76a7da8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from Malaysian & Singaporean invoices/receipts. SST/GST-aware. Supports BM/EN/CN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wms2537",
+      "userId": "publishers:wms2537",
+      "displayName": "wms2537",
+      "image": "https://avatars.githubusercontent.com/u/51080539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772815803558,
+      "changelog": "Version 2.0.0\n\n- Major revamp: Redesigned documentation and workflow.\n- Now supports both Malaysian and Singaporean invoices/receipts with SST/GST detection.\n- Multi-language support: Bahasa Malaysia, English, and Chinese (Simplified and Traditional).\n- Added detailed instructions and sample output for structured data extraction.\n- Pricing information and authentication using SKILLPAY_API_KEY clarified.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:26e6258542dbecdc43254235a88a03086a5ed7d449bca531ec8566a2eb644758"
+}

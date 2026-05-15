@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58245,
+  "uuid": "skill-clawhub-decker-polymarket",
+  "skillKey": "clawhub-decker-polymarket",
+  "name": "Decker + Polymarket",
+  "summary": "Use when user asks about Polymarket prediction market via Decker. Triggers: Polymarket, 폴리마켓, 예측시장, PM 매수, PM 시장 검색, PM 카테고리, PM 이벤트, 시장 slug, YES/NO.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decker_polymarket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gigshow",
+      "features": [
+        "Use when user asks about Polymarket prediction market via Decker",
+        "Triggers: Polymarket, 폴리마켓, 예측시장, PM 매수, PM 시장 검색, PM 카테고리, PM 이벤트, 시장 slug, YES/NO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decker-polymarket@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196129111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decker-polymarket",
+      "url": "https://clawhub.ai/skills/decker-polymarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decker-polymarket",
+    "url": "https://clawhub.ai/skills/decker-polymarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decker-polymarket-7de2a077a6b9bfcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decker-polymarket@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decker-polymarket-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b17af5304537a2566e2e84d6a4c65784e31ac5c35b1d1e39e235402234a015e4",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:02:50.370Z"
+}

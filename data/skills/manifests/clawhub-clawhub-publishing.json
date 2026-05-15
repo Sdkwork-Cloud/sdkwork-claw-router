@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42360,
+  "uuid": "skill-clawhub-clawhub-publishing",
+  "skillKey": "clawhub-clawhub-publishing",
+  "name": "ClawHub Publishing Workflow",
+  "summary": "Manages publishing, distribution, and versioning of OpenClaw skills via ClawHub registry with CLI authentication and batch sync support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publishing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HYBRID1LABS",
+      "features": [
+        "Manages publishing, distribution, and versioning of OpenClaw skills via ClawHub registry with C."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publishing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262363800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publishing",
+      "url": "https://clawhub.ai/skills/clawhub-publishing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publishing",
+    "url": "https://clawhub.ai/skills/clawhub-publishing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publishing-3da76962c0f54c7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publishing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publishing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42ec8399e076cd0309671f05aee41bfa2f5e1a3cabcc8421b977f542a902b34d",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:16:00.974Z"
+}

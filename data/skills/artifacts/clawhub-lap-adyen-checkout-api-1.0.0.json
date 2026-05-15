@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-adyen-checkout-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_checkout_api",
+  "skill": {
+    "id": 42696,
+    "skillKey": "clawhub-lap-adyen-checkout-api",
+    "name": "Lap Adyen Checkout Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-checkout-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-checkout-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-checkout-api-e945f959bf817033.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adyen Checkout API skill. Use when working with Adyen Checkout for applePay, cancels, cardDetails. Covers 28 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775466745271,
+      "changelog": "- Initial release of lap-adyen-checkout-api skill, supporting Adyen Checkout API v70.\n- Covers 28 endpoints across 15 endpoint groups, including applePay, cancels, cardDetails, payments, paymentLinks, and more.\n- Provides authentication guidance using API key or Bearer token.\n- Includes endpoint mapping patterns to help match user requests to API operations.\n- Requires the environment variable ADYEN_CHECKOUT_API_KEY for access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a88b991fa0694ac33286ee2e34e9251dc938f72f13b728f5ea3bfec2ec3ff443"
+}

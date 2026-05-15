@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/norman-expense-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_expense_report",
+  "skill": {
+    "id": 48551,
+    "skillKey": "clawhub-norman-expense-report",
+    "name": "Norman: Expense report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-expense-report",
+    "url": "https://clawhub.ai/skills/norman-expense-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-expense-report-fa73e9b30de440b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a detailed expense breakdown by category for a given period. Use when the user asks for an expense report, spending summary, Ausgabenübersicht, cost..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanlee000",
+      "userId": "s17cbmkhac7cryh3kwmg7jc0ch83qty9",
+      "displayName": "Stan Kharlap",
+      "image": "https://avatars.githubusercontent.com/u/117379032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771581595149,
+      "changelog": "- Initial release: Generate comprehensive expense reports by period, grouped by categories and top vendors.\n- Provides detailed breakdown by category (amount, percentage, transaction count).\n- Ranks top 10 vendors by total spend.\n- Includes trends and insights for longer periods, such as month-over-month changes and recurring vs. one-time expenses.\n- Offers comparison with previous periods if data is available.\n- Presents a clear, structured, and readable report format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7380ef692c87fffd5e1884391c2c341d5aa79a21f59e6318b7514253a759b651"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30624,
+  "uuid": "skill-clawhub-contentclaw",
+  "skillKey": "clawhub-contentclaw",
+  "name": "Content Claw",
+  "summary": "Automated content generation engine. Transform source material (papers, podcasts, case studies) into platform-ready content using recipes and brand graphs. U...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contentclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thierrypdamiba",
+      "features": [
+        "Automated content generation engine",
+        "Transform source material (papers, podcasts, case studies) into platform-ready content using re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contentclaw@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177760997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contentclaw",
+      "url": "https://clawhub.ai/skills/contentclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contentclaw",
+    "url": "https://clawhub.ai/skills/contentclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contentclaw-0c58ae17cc567a51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contentclaw@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-contentclaw-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d21a1502f3c9cdf8cb80641cb280bff37691e03686978b72f68a65d0279aff59",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:06:34.238Z"
+}

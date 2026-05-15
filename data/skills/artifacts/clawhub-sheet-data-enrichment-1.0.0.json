@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sheet-data-enrichment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sheet_data_enrichment",
+  "skill": {
+    "id": 39242,
+    "skillKey": "clawhub-sheet-data-enrichment",
+    "name": "Sheet Data Enrichment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sheet-data-enrichment",
+    "url": "https://clawhub.ai/skills/sheet-data-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sheet-data-enrichment-6c2858dd60137d66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enrich spreadsheet data by fetching external sources (URLs, APIs) to fill missing columns, then aggregate results into summary sheets. Use when: (1) a spread..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylinr",
+      "userId": "s1762zn98mnjwa52gqaffygph983jy8y",
+      "displayName": "Rong",
+      "image": "https://avatars.githubusercontent.com/u/220700654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774600325301,
+      "changelog": "Initial release: spreadsheet data enrichment from URLs + aggregation/summary workflow. Includes extraction patterns for Chinese and English media bylines, browser vs web_fetch decision guide, row alignment safety, and Feishu Sheets specifics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c97ef910b810714a2dcb36612e72591ad7d550eb123d8660e2630055d87b0d7"
+}

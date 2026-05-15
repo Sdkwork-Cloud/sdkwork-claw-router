@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmanager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmanager",
+  "skill": {
+    "id": 16670,
+    "skillKey": "clawhub-agentmanager",
+    "name": "Agent-manager-for-AI-planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmanager",
+    "url": "https://clawhub.ai/skills/agentmanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmanager-7fa32ddf48006b90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates external AI planners by validating, scheduling, executing tools, enforcing budgets, and providing replayable telemetry for plans and runs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nonightwatch",
+      "userId": "publishers:nonightwatch",
+      "displayName": "NoNightWatch",
+      "image": "https://avatars.githubusercontent.com/u/218358556?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 850,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771459213180,
+      "changelog": "- Added new core modules: `src/config.ts` for validated configuration and `src/lib/safe-fetch.ts` for safe network requests.\n- Introduced basic tests for provider gateway and safe fetch logic (`tests/gateway-provider.test.ts`, `tests/safe-fetch.test.ts`).\n- Updated documentation to clarify environment variable requirements and outbound data handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d29de541071d5fad14bfe762766dd5caf53c250a13a4b76a724d15c68312573"
+}

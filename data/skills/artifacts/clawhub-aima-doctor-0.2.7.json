@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aima-doctor@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aima_doctor",
+  "skill": {
+    "id": 30130,
+    "skillKey": "clawhub-aima-doctor",
+    "name": "AIMA Doctor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aima-doctor",
+    "url": "https://clawhub.ai/skills/aima-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aima-doctor-90b83c7c87fb0051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and repair OpenClaw when your agent is stuck, confused, or failing. One-command rescue for process health, config breakage, and device registration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyguan92",
+      "userId": "s177n0dbrhmx9txkk6tr7thchx83gpeg",
+      "displayName": "guanjiawei",
+      "image": "https://avatars.githubusercontent.com/u/128683929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1774335797135,
+      "changelog": "Agent auto-downloads runtime from GitHub Releases with SHA256 verification when missing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fa475c298ddd08999141ab5a75ef97deecdb30a60273cff1974e5fea5bb3099"
+}

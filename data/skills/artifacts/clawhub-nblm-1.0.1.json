@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nblm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nblm",
+  "skill": {
+    "id": 11345,
+    "skillKey": "clawhub-nblm",
+    "name": "NotebookLM Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nblm",
+    "url": "https://clawhub.ai/skills/nblm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nblm-02ece19fbb81240e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. Browser automati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "magicseek",
+      "userId": "publishers:magicseek",
+      "displayName": "Deheng Huang",
+      "image": "https://avatars.githubusercontent.com/u/446252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1811,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771685899941,
+      "changelog": "nblm v1.0.1 changelog:\n\n- Introduced NotebookLM querying commands with robust Google authentication and library management.\n- New commands for managing notebooks and sources, including upload, syncing, and AI-powered summaries.\n- Media artifact generation added: podcast, briefing, debate, slides, infographic, with download and status features.\n- User-friendly prompts when uploading, ensuring clarity about notebook targets.\n- Automated environment setup: dependencies and authentication handled on first run, no manual steps needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c117c57cab05e579a5d974773479defa34c6be10171fa8deee8d52b92f1667b5"
+}

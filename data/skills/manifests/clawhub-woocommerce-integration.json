@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20953,
+  "uuid": "skill-clawhub-woocommerce-integration",
+  "skillKey": "clawhub-woocommerce-integration",
+  "name": "Woocommerce",
+  "summary": "Woocommerce integration. Manage Products, Orders, Customers, Reports, TaxRates, ShippingMethods. Use when the user wants to interact with Woocommerce data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.woocommerce_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Woocommerce integration",
+        "Manage Products, Orders, Customers, Reports, TaxRates, ShippingMethods",
+        "Use when the user wants to interact with Woocommerce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/woocommerce-integration@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "woocommerce-integration",
+      "url": "https://clawhub.ai/skills/woocommerce-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "woocommerce-integration",
+    "url": "https://clawhub.ai/skills/woocommerce-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/woocommerce-integration-01472179929ac19e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/woocommerce-integration@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-woocommerce-integration-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c9aaeade9e283533a915234eb099b3da9b78500e4076f0b2f66c62d6891f502",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:42.408Z"
+}

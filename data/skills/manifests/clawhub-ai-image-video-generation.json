@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39590,
+  "uuid": "skill-clawhub-ai-image-video-generation",
+  "skillKey": "clawhub-ai-image-video-generation",
+  "name": "AI Image & Video Generation",
+  "summary": "Generate images and videos using the VibeVideo API. Use when the user asks to create AI images or videos, check generation status, list available models, or...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytevirts",
+      "features": [
+        "Generate images and videos using the VibeVideo API",
+        "Use when the user asks to create AI images or videos, check generation status, list available m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-image-video-generation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204438200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-image-video-generation",
+      "url": "https://clawhub.ai/skills/ai-image-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-video-generation",
+    "url": "https://clawhub.ai/skills/ai-image-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-video-generation-2bac68862524c5b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-image-video-generation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-image-video-generation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d3d1e392d6aa4d4a488656a81aea9472130604b9ef42a935b34234b53c84dc0",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:52:59.966Z"
+}

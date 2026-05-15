@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25916,
+  "uuid": "skill-clawhub-openclaw-skill-langchain-local",
+  "skillKey": "clawhub-openclaw-skill-langchain-local",
+  "name": "Openclaw Skill Langchain Local",
+  "summary": "Run LangChain AI pipelines locally and offline using Ollama and phi4-mini for coding, devops, chat, or document-based queries without requiring cloud or API...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_langchain_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manoj kumar",
+      "features": [
+        "Run LangChain AI pipelines locally and offline using Ollama and phi4-mini for coding, devops, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-langchain-local@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6479005?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-langchain-local",
+      "url": "https://clawhub.ai/skills/openclaw-skill-langchain-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-langchain-local",
+    "url": "https://clawhub.ai/skills/openclaw-skill-langchain-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-langchain-local-39ea304ce06aa2da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-langchain-local@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-langchain-local-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49583f064fd187102ed29af333e37d4567b87d86c6efbda519cf0f02c4a5157d",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:14:07.893Z"
+}

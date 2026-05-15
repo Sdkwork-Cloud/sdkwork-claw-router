@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32050,
+  "uuid": "skill-clawhub-exdoc-config",
+  "skillKey": "clawhub-exdoc-config",
+  "name": "Exdoc Config",
+  "summary": "Configures ExDoc for Elixir projects including mix.exs setup, extras, groups, cheatsheets, and livebooks. Use when setting up or modifying ExDoc documentatio...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exdoc_config",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Configures ExDoc for Elixir projects including mix.exs setup, extras, groups, cheatsheets, and.",
+        "Use when setting up or modifying ExDoc documentatio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exdoc-config@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exdoc-config",
+      "url": "https://clawhub.ai/skills/exdoc-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exdoc-config",
+    "url": "https://clawhub.ai/skills/exdoc-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exdoc-config-3945743475e0f53d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exdoc-config@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exdoc-config-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f524e168566e47fdf8c74903552bdb0c66020cc18bb20b148ee19d89e71a756d",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:40.442Z"
+}

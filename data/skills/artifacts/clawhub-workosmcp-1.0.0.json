@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workosmcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workosmcp",
+  "skill": {
+    "id": 53839,
+    "skillKey": "clawhub-workosmcp",
+    "name": "WorkOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workosmcp",
+    "url": "https://clawhub.ai/skills/workosmcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workosmcp-4aaf11c238953ff4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw and other AI agents to WorkOS — a self-hosted workspace platform with documents, databases, tasks, meeting transcription, and sharing. Expos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zecurecode",
+      "userId": "s178chfrfdc2haq5hvdgzdrdks85fs30",
+      "displayName": "zecurecode",
+      "image": "https://avatars.githubusercontent.com/u/12563439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777073220566,
+      "changelog": "Initial release — WorkOS skill for AI agent integration with self-hosted workspace platform.\n\n- Provides access to documents, databases, tasks, meetings, and sharing via a remote MCP server.\n- Exposes 60+ tools to create, update, search, and manage content at workos.no.\n- Includes detailed setup, usage patterns, and troubleshooting guidance in documentation files.\n- Requires OAuth 2.1 authentication; supports both read and write scopes.\n- Includes examples and best practices for common workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd403049c7202cf72266456697785d314f6c92814c4dfede9b9c9622b75ab430"
+}

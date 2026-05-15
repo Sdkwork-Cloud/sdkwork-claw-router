@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60879,
+  "uuid": "skill-clawhub-openclaw-smart-search",
+  "skillKey": "clawhub-openclaw-smart-search",
+  "name": "Openclaw Smart Search",
+  "summary": "统一智能搜索技能，整合多个搜索引擎（百炼 MCP、Tavily、Serper、Exa、Firecrawl），自动选择最佳引擎并融合结果",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_smart_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fdenny11gg",
+      "features": [
+        "统一智能搜索技能，整合多个搜索引擎（百炼 MCP、Tavily、Serper、Exa、Firecrawl），自动选择最佳引擎并融合结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-smart-search@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264869681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-smart-search",
+      "url": "https://clawhub.ai/skills/openclaw-smart-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-smart-search",
+    "url": "https://clawhub.ai/skills/openclaw-smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-smart-search-6d23f76a9d0735fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-smart-search@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-smart-search-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fcb5e63d9b00e8c58bf5f282e34a8875b1b5369ac713eb62c66368b38f7e1fe",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T19:58:24.069Z"
+}

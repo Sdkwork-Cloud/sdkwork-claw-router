@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50804,
+  "uuid": "skill-clawhub-flyio",
+  "skillKey": "clawhub-flyio",
+  "name": "Flyio",
+  "summary": "Fly.io edge deployment platform — manage apps, machines, volumes, secrets, and certificates via the Fly.io Machines API. Deploy containers globally, scale to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Fly.io edge deployment platform — manage apps, machines, volumes, secrets, and certificates via.",
+        "Deploy containers globally, scale to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyio",
+      "url": "https://clawhub.ai/skills/flyio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyio",
+    "url": "https://clawhub.ai/skills/flyio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyio-05f4b4eb984387de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8713162150cb5ed03806180435e1471f84a4b34ed998bed5812acc3f003efca3",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T02:52:26.112Z"
+}

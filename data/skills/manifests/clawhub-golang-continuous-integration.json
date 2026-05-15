@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28847,
+  "uuid": "skill-clawhub-golang-continuous-integration",
+  "skillKey": "clawhub-golang-continuous-integration",
+  "name": "Golang Continuous Integration",
+  "summary": "Provides CI/CD pipeline configuration using GitHub Actions for Golang projects. Covers testing, linting, SAST, security scanning, code coverage, Dependabot,...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_continuous_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Berthe",
+      "features": [
+        "Provides CI/CD pipeline configuration using GitHub Actions for Golang projects",
+        "Covers testing, linting, SAST, security scanning, code coverage, Dependabot,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang-continuous-integration@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2951285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang-continuous-integration",
+      "url": "https://clawhub.ai/skills/golang-continuous-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-continuous-integration",
+    "url": "https://clawhub.ai/skills/golang-continuous-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-continuous-integration-8bedf5dd06390e62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang-continuous-integration@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-continuous-integration-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8c70167102381def607d33c8c77a41add6e50923a164a5dc8c260dd1dc00551",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:23:51.605Z"
+}

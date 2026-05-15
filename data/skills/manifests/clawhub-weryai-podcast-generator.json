@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36862,
+  "uuid": "skill-clawhub-weryai-podcast-generator",
+  "skillKey": "clawhub-weryai-podcast-generator",
+  "name": "Weryai Podcast Generator",
+  "summary": "Generate, query, and deliver WeryAI podcasts through the official podcast generation API. Use when the user needs podcast speaker lookup, podcast text genera...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_podcast_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeryAI-Developer",
+      "features": [
+        "Generate, query, and deliver WeryAI podcasts through the official podcast generation API",
+        "Use when the user needs podcast speaker lookup, podcast text genera..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weryai-podcast-generator@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254698481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weryai-podcast-generator",
+      "url": "https://clawhub.ai/skills/weryai-podcast-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-podcast-generator",
+    "url": "https://clawhub.ai/skills/weryai-podcast-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-podcast-generator-0d9f006af065213e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weryai-podcast-generator@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weryai-podcast-generator-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b6f349df15184394bc00efcfad40ba6e92d23e940c82c2768a0c036293bbcc5",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:34:35.013Z"
+}

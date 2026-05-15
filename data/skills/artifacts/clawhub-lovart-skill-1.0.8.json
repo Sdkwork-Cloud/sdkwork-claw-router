@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovart-skill@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovart_skill",
+  "skill": {
+    "id": 13833,
+    "skillKey": "clawhub-lovart-skill",
+    "name": "Lovart Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovart-skill",
+    "url": "https://clawhub.ai/skills/lovart-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovart-skill-c0469f770e837333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images, videos, and audio/music via Lovart AI. Also manages Lovart projects, threads (conversation history), and user settings. Trigger on: (1) any..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovart-admin",
+      "userId": "s175m4rj7y879d1de1y626wb8n84h28q",
+      "displayName": "lovart-admin",
+      "image": "https://avatars.githubusercontent.com/u/218042550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 944,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776926188400,
+      "changelog": "- Improved error handling: now uses the server's user-facing error messages directly for quota, billing, risk control, and other 402 errors, instead of parsing internal error codes.\n- Minor clarifications to confirmation flow: highlights that some premium image variants also require explicit user approval before consuming credits.\n- Slightly expanded instructions in error handling and confirmation to reduce ambiguity and ensure consistent user communication.\n- No command/API/behavior changes—documentation and guidance were updated for clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66176c16babeda8a18252e101e64777658aec3383349b775ae95aee2e98fc66f"
+}

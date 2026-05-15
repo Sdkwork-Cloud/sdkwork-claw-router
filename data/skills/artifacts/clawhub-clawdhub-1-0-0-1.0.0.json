@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdhub-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdhub_1_0_0",
+  "skill": {
+    "id": 14218,
+    "skillKey": "clawhub-clawdhub-1-0-0",
+    "name": "Clawdhub 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdhub-1-0-0",
+    "url": "https://clawhub.ai/skills/clawdhub-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdhub-1-0-0-5d1a632adf714267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawdHub CLI to search, install, update, and publish agent skills from clawdhub.com. Use when you need to fetch new skills on the fly, sync installed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djmarkd38",
+      "userId": "publishers:djmarkd38",
+      "displayName": "djmarkd38",
+      "image": "https://avatars.githubusercontent.com/u/116039842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 42,
+      "installsCurrent": 38,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771196212928,
+      "changelog": "Initial release of ClawdHub skill.\n\n- Enables searching, installing, updating, and publishing agent skills using the ClawdHub CLI.\n- Supports authenticating (login), syncing skills to latest or specific versions, and managing skill installations.\n- Provides full CLI command documentation for install, search, update, list, and publish operations.\n- Customizable registry and working directory options included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:504625605c93051140b4273c95259ff0c69c7cb880448d260813728ae5365c42"
+}

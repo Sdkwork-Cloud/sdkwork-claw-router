@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36504,
+  "uuid": "skill-clawhub-skills-seo",
+  "skillKey": "clawhub-skills-seo",
+  "name": "Skill Seo",
+  "summary": "Analyze and optimize a skill for discoverability on ClawHub, skills.sh, and similar skill directories. Use when you need to improve naming, slug choice, SKIL...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_seo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Weiwei Fan",
+      "features": [
+        "Analyze and optimize a skill for discoverability on ClawHub, skills.sh, and similar skill direc.",
+        "Use when you need to improve naming, slug choice, SKIL..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-seo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3015434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-seo",
+      "url": "https://clawhub.ai/skills/skills-seo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-seo",
+    "url": "https://clawhub.ai/skills/skills-seo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-seo-4b09dca46eb128b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-seo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-seo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae1ac4741f0408f24b5b18194064bc864636b727bb448dea54a11b57c8153a11",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:28:37.628Z"
+}

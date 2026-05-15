@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15372,
+  "uuid": "skill-clawhub-aisp",
+  "skillKey": "clawhub-aisp",
+  "name": "AISP",
+  "summary": "Enables AI agents to interact with AISP (Agent Inference Sharing Protocol) for renting or providing DIEM API capacity. Use when working with diem-marketplace, Venice API keys, USDC escrow, listings, rentals, or when the user wants to rent.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DaveO280",
+      "features": [
+        "Enables AI agents to interact with AISP (Agent Inference Sharing Protocol) for renting or provi.",
+        "Use when working with diem-marketplace, Venice API keys, USDC escrow, listings, rentals, or whe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisp@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154396849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisp",
+      "url": "https://clawhub.ai/skills/aisp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisp",
+    "url": "https://clawhub.ai/skills/aisp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisp-cc7be83bd6eba4fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisp@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisp-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79fea46fb526773f791ff863153bbdbffba8c6e0ea6ddedeb7f5489f0225a74b",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T17:53:24.302Z"
+}

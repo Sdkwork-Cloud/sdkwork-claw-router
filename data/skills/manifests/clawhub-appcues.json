@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34457,
+  "uuid": "skill-clawhub-appcues",
+  "skillKey": "clawhub-appcues",
+  "name": "Appcues",
+  "summary": "Appcues integration. Manage data, records, and automate workflows. Use when the user wants to interact with Appcues data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appcues",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Appcues integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Appcues data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appcues@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appcues",
+      "url": "https://clawhub.ai/skills/appcues"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appcues",
+    "url": "https://clawhub.ai/skills/appcues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appcues-56ffd8dfe53379d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appcues@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-appcues-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3eeee91bde39e834eb359c17ca6f7d4040652d362cf407e1799d0f7473265e20",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:20.273Z"
+}

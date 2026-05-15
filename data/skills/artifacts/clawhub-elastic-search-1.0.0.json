@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elastic-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elastic_search",
+  "skill": {
+    "id": 64658,
+    "skillKey": "clawhub-elastic-search",
+    "name": "Elastic Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elastic-search",
+    "url": "https://clawhub.ai/skills/elastic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elastic-search-3b2cfce21b1834de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于Elastic Stack的开源全文搜索和企业级数据检索解决方案，支持日志分析、可观测性和安全场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777054224907,
+      "changelog": "- Initial release of the Elastic Search skill.\n- Overview of Elastic's evolution from a simple log search tool to an \"enterprise search layer.\"\n- Includes historical timeline, business model details, and analysis of competitive advantages.\n- Summarizes key financial and adoption metrics as of 2024.\n- Highlights interesting facts, such as Elastic's origins and notable large-scale deployments like Netflix.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33352cb4ac8d08f45fa6566d729391a107f210b1664708399d66d2c859b0e080"
+}

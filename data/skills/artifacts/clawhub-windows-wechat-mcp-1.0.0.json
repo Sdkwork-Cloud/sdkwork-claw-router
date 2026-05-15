@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-wechat-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_wechat_mcp",
+  "skill": {
+    "id": 35097,
+    "skillKey": "clawhub-windows-wechat-mcp",
+    "name": "Windows WeChat MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-wechat-mcp",
+    "url": "https://clawhub.ai/skills/windows-wechat-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-wechat-mcp-18d4af7a1b878085.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor WeChat window status, search contacts, and send messages on Windows via automated screenshots and input control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777425629119,
+      "changelog": "Initial release of Windows WeChat MCP – automates message monitoring and sending using window automation.\n\n- Send messages to specified or current WeChat contacts directly from your Windows desktop.\n- Capture screenshots of the WeChat window.\n- Detect and interact with detached chat (“Dragon”) windows.\n- Check WeChat window status, including position and running state.\n- Use via Python or call built-in MCP tools for integration with other workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cec2ea2dfae16439e2253bfdc166dab2561131c9b40f78450141fb808aad1ab0"
+}

@@ -27,6 +27,18 @@ impl SqlitePricingCatalogLoader {
                 queries::LOAD_PROVIDER_ROUTES,
             )
             .await?,
+            provider_account_pool_routes: row_mapping::load_provider_account_pool_routes(
+                &self.pool,
+                queries::LOAD_PROVIDER_ACCOUNT_POOL_ROUTES,
+            )
+            .await?,
+            routing_policies: row_mapping::load_routing_policies(
+                &self.pool,
+                queries::LOAD_ROUTING_POLICIES,
+            )
+            .await?,
+            routing_rules: row_mapping::load_routing_rules(&self.pool, queries::LOAD_ROUTING_RULES)
+                .await?,
             pricing_plans: row_mapping::load_pricing_plans(&self.pool, queries::LOAD_PRICING_PLANS)
                 .await?,
             api_key_groups: row_mapping::load_api_key_groups(

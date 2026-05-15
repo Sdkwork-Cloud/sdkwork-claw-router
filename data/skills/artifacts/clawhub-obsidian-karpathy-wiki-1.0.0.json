@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-karpathy-wiki@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_karpathy_wiki",
+  "skill": {
+    "id": 27963,
+    "skillKey": "clawhub-obsidian-karpathy-wiki",
+    "name": "Obsidian Karpathy Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-karpathy-wiki",
+    "url": "https://clawhub.ai/skills/obsidian-karpathy-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-karpathy-wiki-11975377edf457b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate an Obsidian knowledge base as a persistent LLM wiki using a raw-to-source-to-wiki pattern. Use when Codex or another agent needs to ingest raw notes,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ducheneadas-source",
+      "userId": "s17fr573my0hc31f9jcm8epv4h84eysm",
+      "displayName": "dpz_03",
+      "image": "https://avatars.githubusercontent.com/u/269077380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775652827356,
+      "changelog": "obsidian-karpathy-wiki 1.0.0\n- Initial release introducing a structured skill for maintaining an Obsidian vault as a living, compounding knowledge base.\n- Implements a raw-to-source-to-wiki workflow for ingesting, summarizing, formalizing, and updating knowledge.\n- Provides guidelines for organizing vault folders (raw, sources, wiki, outputs) and formal knowledge structures (questions, methods, decisions, principles).\n- Details core maintenance loops: ingest, query, weekly compile, lint, backfill, and heartbeat rules.\n- Includes publishing safety recommendations and writing conventions for interoperability and durability.\n- Designed for agent-driven, recurring maintenance rather than one-time cleanups.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4bed16d37b0d92e35a02f8272d8a68f2857177e69a51eec891464d485db3dea9"
+}

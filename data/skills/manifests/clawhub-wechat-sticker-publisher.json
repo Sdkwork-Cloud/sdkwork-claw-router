@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58381,
+  "uuid": "skill-clawhub-wechat-sticker-publisher",
+  "skillKey": "clawhub-wechat-sticker-publisher",
+  "name": "微信公众号贴图发布器",
+  "summary": "Publish WeChat Official Account image-first sticker posts (图片消息 / 发贴图) into the draft box via the official API. Use when the user wants to create公众号“发贴图”草稿、图...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sticker_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hzlawliet",
+      "features": [
+        "Publish WeChat Official Account image-first sticker posts (图片消息 / 发贴图) into the draft box via t.",
+        "Use when the user wants to create公众号“发贴图”草稿、图..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-sticker-publisher@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13872913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-sticker-publisher",
+      "url": "https://clawhub.ai/skills/wechat-sticker-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sticker-publisher",
+    "url": "https://clawhub.ai/skills/wechat-sticker-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sticker-publisher-1b0930735038454c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-sticker-publisher@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-sticker-publisher-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c2ea4aa6d798aa19f4f6b813dbcb3e13903d858644f6fe7d189565355ba8900",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T12:44:30.122Z"
+}

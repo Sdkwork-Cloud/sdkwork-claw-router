@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28717,
+  "uuid": "skill-clawhub-groundlight",
+  "skillKey": "clawhub-groundlight",
+  "name": "Groundlight",
+  "summary": "Groundlight integration. Manage data, records, and automate workflows. Use when the user wants to interact with Groundlight data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundlight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Groundlight integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Groundlight data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groundlight@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groundlight",
+      "url": "https://clawhub.ai/skills/groundlight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundlight",
+    "url": "https://clawhub.ai/skills/groundlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundlight-544ee98614ec0211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groundlight@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-groundlight-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f033f3ce7f124600424f047af66edbfa7ff00b1fb52e215ad25554bd38eabd5",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:54:50.319Z"
+}

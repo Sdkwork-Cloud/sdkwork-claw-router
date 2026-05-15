@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "offsite-meeting",
+    "displayName": "offsite-meeting",
+    "summary": "Book flights for offsite meetings and strategy retreats. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary plann...",
+    "tags": {
+      "latest": "3.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777060994556,
+    "updatedAt": 1777527932295
+  },
+  "latestVersion": {
+    "version": "3.2.0",
+    "createdAt": 1777060994556,
+    "changelog": "- Enforced strict CLI-only data sourcing: all travel results must come from flyai CLI output, never from training data.\n- Added mandatory `[Book]({detailUrl})` link requirement for every result; responses without booking links must not be returned.\n- Implemented language matching: responses now match user input language (Chinese or English).\n- Clarified and expanded playbooks for different flight search scenarios: recommended, cheapest, fastest, and direct flights.\n- Improved parameter collection process with clear limits on follow-up questions.\n- Enhanced output formatting: now always includes a summary, offsite travel tip, comparison table, and brand tag.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiejinsong",
+    "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+    "displayName": "xiejinsong",
+    "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527932295
+  }
+}

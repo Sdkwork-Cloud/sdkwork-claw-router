@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_publish",
+  "skill": {
+    "id": 63349,
+    "skillKey": "clawhub-douyin-publish",
+    "name": "Douyin Video Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-publish",
+    "url": "https://clawhub.ai/skills/douyin-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-publish-48f2557eaf7a6a9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动登录抖音账号，上传并发布视频到抖音创作者平台，支持视频标签管理和登录状态检查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gonghaiquan",
+      "userId": "s17cq1dqctd6dp71ts0qjafex583ypt8",
+      "displayName": "gonghaiquan",
+      "image": "https://avatars.githubusercontent.com/u/48919419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6482,
+      "installsAllTime": 53,
+      "installsCurrent": 50,
+      "stars": 25,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770963413746,
+      "changelog": "Initial release: Auto login, upload and publish videos to Douyin Creator Platform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b52167b0c9ff260cf73bbde0c3abce1b5b7f49c764052276b7fad87ac3edad6f"
+}

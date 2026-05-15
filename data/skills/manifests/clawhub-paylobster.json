@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11611,
+  "uuid": "skill-clawhub-paylobster",
+  "skillKey": "clawhub-paylobster",
+  "name": "PayLobster",
+  "summary": "Agent payment infrastructure on Base. Trustless escrow, agent treasury, token swaps, cross-chain bridges, fiat on/off ramp, on-chain identity & reputation, s...",
+  "version": "4.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paylobster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itsGustav",
+      "features": [
+        "Agent payment infrastructure on Base",
+        "Trustless escrow, agent treasury, token swaps, cross-chain bridges, fiat on/off ramp, on-chain."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paylobster@4.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257398059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paylobster",
+      "url": "https://clawhub.ai/skills/paylobster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paylobster",
+    "url": "https://clawhub.ai/skills/paylobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paylobster-69c8fdfc36fb7b7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paylobster@4.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paylobster-4.6.0.json",
+      "version": "4.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47b56e95435428ddf1287bf9c9b0d56d9d758b3d540f83e70ef81da24ed841c3",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:06:00.071Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pingharbor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingharbor",
+  "skill": {
+    "id": 29247,
+    "skillKey": "clawhub-pingharbor",
+    "name": "PingHarbor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingharbor",
+    "url": "https://clawhub.ai/skills/pingharbor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingharbor-593b0595cdc559e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query uptime monitors, heartbeat monitors, manage sites, retrieve incidents, create monitors, and fetch SLA reports from your PingHarbor account."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "captain-cole",
+      "userId": "s17ffbx3bxd5s38cbepgxg579h83ysec",
+      "displayName": "captain-cole",
+      "image": "https://avatars.githubusercontent.com/u/269148771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775561558848,
+      "changelog": "- Updated MCP endpoint to https://api.pingharbor.com/functions/v1/mcp.\n- Reordered and grouped the \"Available Tools\" list for improved clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92e1e261a6d7cf666789803e0c67395043ad94413226c9a7ebcf337c3bdcc772"
+}

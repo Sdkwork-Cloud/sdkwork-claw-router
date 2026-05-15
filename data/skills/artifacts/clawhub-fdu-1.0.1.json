@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fdu@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fdu",
+  "skill": {
+    "id": 55899,
+    "skillKey": "clawhub-fdu",
+    "name": "复旦"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fdu",
+    "url": "https://clawhub.ai/skills/fdu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fdu-2bf317591d53f915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive skill about Fudan University, one of China's top universities, covering its history, academics, campus life, and research achievements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775479722098,
+      "changelog": "- Skill renamed and repurposed from a personal productivity assistant to a comprehensive guide on Fudan University.\n- Updated description, overview, and content to focus on Fudan University's history, academics, research, campus life, and notable alumni.\n- Tags and metadata revised to reflect the education and university focus.\n- Previous features related to coding assistance and workflow automation have been removed.\n- Suitable for anyone seeking detailed information about Fudan University.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f641f7735592005d1c7b22056f8b0f1c1b38815588df5a0310af3e62888f0d3"
+}

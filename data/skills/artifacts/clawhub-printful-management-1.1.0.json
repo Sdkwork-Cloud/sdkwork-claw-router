@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/printful-management@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printful_management",
+  "skill": {
+    "id": 48288,
+    "skillKey": "clawhub-printful-management",
+    "name": "Printful Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printful-management",
+    "url": "https://clawhub.ai/skills/printful-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printful-management-5652f62b1e6fd955.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a Printful account through the Printful REST API using a private API token. Use when the user wants to inspect or manage Printful stores, connected-st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanestane",
+      "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+      "displayName": "Stanislav Stankovic",
+      "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777376084616,
+      "changelog": "Add auto-export product reports to markdown/csv/json, improve marketplace-facing skill copy, and polish docs/examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:201b23f35f178df69e1b154c4d13f7892065dcd64dfa1da4cc817ae1dfc6d768"
+}

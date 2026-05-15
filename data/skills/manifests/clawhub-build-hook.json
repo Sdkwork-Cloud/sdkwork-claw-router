@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16086,
+  "uuid": "skill-clawhub-build-hook",
+  "skillKey": "clawhub-build-hook",
+  "name": "Uniswap Build Hook",
+  "summary": "Build a Uniswap V4 hook. Use when user wants to create a custom V4 hook contract. Generates Solidity code, Foundry tests, mines CREATE2 address for hook flags, and produces deployment scripts. Handles the full hook development lifecycle.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_hook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Build a Uniswap V4 hook",
+        "Use when user wants to create a custom V4 hook contract",
+        "Generates Solidity code, Foundry tests, mines CREATE2 address for hook flags, and produces depl.",
+        "Handles the full hook development lifecycle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-hook@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-hook",
+      "url": "https://clawhub.ai/skills/build-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-hook",
+    "url": "https://clawhub.ai/skills/build-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-hook-29f160345f12f0ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-hook@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-hook-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fa0e79b430cb4c5da867c3a5b06a79f84fe1e68afdb59e68862786b53e0ae5f",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:33:50.545Z"
+}

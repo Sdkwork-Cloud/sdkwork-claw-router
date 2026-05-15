@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52079,
+  "uuid": "skill-clawhub-terraform-iac",
+  "skillKey": "clawhub-terraform-iac",
+  "name": "Terraform Iac",
+  "summary": "Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_iac",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, sec.",
+        "Use when building i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terraform-iac@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terraform-iac",
+      "url": "https://clawhub.ai/skills/terraform-iac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-iac",
+    "url": "https://clawhub.ai/skills/terraform-iac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-iac-289fdf94b9d66eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terraform-iac@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terraform-iac-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:081c7ba52a0655fa488fe2e53a50c7c3ecee0f55fe6a4e7b43eb67c89ff7914c",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:02:24.904Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52346,
+  "uuid": "skill-clawhub-ca-file-processor",
+  "skillKey": "clawhub-ca-file-processor",
+  "name": "Ca File Processor",
+  "summary": "Process financial documents for Indian CA firms. Use when any PDF, Excel (.xlsx/.xls), CSV, JPG, or PNG file is received or uploaded — including GST returns,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ca_file_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "purvik6062",
+      "features": [
+        "Process financial documents for Indian CA firms",
+        "Use when any PDF, Excel (.xlsx/.xls), CSV, JPG, or PNG file is received or uploaded — including."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ca-file-processor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75006080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ca-file-processor",
+      "url": "https://clawhub.ai/skills/ca-file-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ca-file-processor",
+    "url": "https://clawhub.ai/skills/ca-file-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ca-file-processor-7ca9a582d6ea2521.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ca-file-processor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ca-file-processor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bf310e36f5f4a28e277d7f82334b54d23dce835042b778947d8a46eeff2861f",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:48:38.458Z"
+}

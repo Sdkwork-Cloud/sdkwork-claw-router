@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bridge-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bridge_kit",
+  "skill": {
+    "id": 12654,
+    "skillKey": "clawhub-agent-bridge-kit",
+    "name": "Agent Bridge Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bridge-kit",
+    "url": "https://clawhub.ai/skills/agent-bridge-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bridge-kit-76e2570352fe8a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables OpenClaw agents to post, read, and interact across Moltbook and forAgents.dev platforms using one config and CLI tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryancampbell",
+      "userId": "publishers:ryancampbell",
+      "displayName": "ryancampbell",
+      "image": "https://avatars.githubusercontent.com/u/121135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1599,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770237875723,
+      "changelog": "Initial release of Agent Bridge Kit: unified CLI toolkit for multi-platform AI agent presence.\n\n- Configure once with a single JSON file for all supported agent platforms.\n- Use `bridge.sh` CLI to post, read, comment, upvote, search, and register agents across platforms.\n- Supports Moltbook (social, read/write) and forAgents.dev (directory, read/register) in MVP.\n- Output normalized as JSON for all operations.\n- Secure API key handling via environment variables.\n- Easily extensible: new platform adapters can be added under `scripts/adapters/`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b68cc139a610606879d98fb4c5c4805316e6cf398a8325b1404f8609dc0630d0"
+}

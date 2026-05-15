@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68882,
+  "uuid": "skill-clawhub-revlon",
+  "skillKey": "clawhub-revlon",
+  "name": "Revlon",
+  "summary": "提供Revlon品牌历史、色彩创新、核心产品及破产重组等大众美妆市场信息与分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revlon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Revlon品牌历史、色彩创新、核心产品及破产重组等大众美妆市场信息与分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revlon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revlon",
+      "url": "https://clawhub.ai/skills/revlon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revlon",
+    "url": "https://clawhub.ai/skills/revlon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revlon-1d6a45c7cf003538.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revlon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-revlon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f989a24e2648918a5028a3935b44e06db11b84fd1e6ed1a67b7744ee6614d5e",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:10:38.372Z"
+}

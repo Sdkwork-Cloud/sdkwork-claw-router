@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/behavioral-interview-story-bank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.behavioral_interview_story_bank",
+  "skill": {
+    "id": 49990,
+    "skillKey": "clawhub-behavioral-interview-story-bank",
+    "name": "Behavioral Interview Story Bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "behavioral-interview-story-bank",
+    "url": "https://clawhub.ai/skills/behavioral-interview-story-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/behavioral-interview-story-bank-2776edea58ed19ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn real work history into a reusable STAR/CARL interview story bank with tags, variants, probes, and practice prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778304460663,
+      "changelog": "Initial release of the Behavioral Interview Story Bank skill:\n\n- Converts real work history into a structured STAR/CARL interview story bank.\n- Tags stories by competency, relevance, and risk flags; supports multi-length variants.\n- Includes evidence checks and ethical guardrails—does not invent or exaggerate experience.\n- Generates practice prompts, follow-up probes, and a rehearsal plan.\n- Provides a comprehensive output: story table, detailed cards, question mapping, and practice guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52577dae1a99867246309856b6708db8e60bba2e6012642b1df623e967630841"
+}

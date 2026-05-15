@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaidihelp-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaidihelp_skill",
+  "skill": {
+    "id": 42555,
+    "skillKey": "clawhub-kuaidihelp-skill",
+    "name": "kuaidihelp-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaidihelp-skill",
+    "url": "https://clawhub.ai/skills/kuaidihelp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaidihelp-skill-5819a6ef9ca213fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with express delivery services including shipping cost estimation, logistics tracking, order creation with QR code, and order cancellation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanghai-kb",
+      "userId": "s17cb5txfv9932jvf2e5zjf6xn84pfr2",
+      "displayName": "Shanghai-kb",
+      "image": "https://avatars.githubusercontent.com/u/110798918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776049468686,
+      "changelog": "查价 （查运费/预估运费，查物流信息 （查物流轨迹），寄件 （寄快递/创建订单），取消订单",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:742dd714d59b64fd08bfdf067a8e8b5c606e1ae3a7b106f02ba41fd3da77c6be"
+}

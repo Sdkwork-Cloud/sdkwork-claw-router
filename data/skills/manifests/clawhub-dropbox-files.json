@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54544,
+  "uuid": "skill-clawhub-dropbox-files",
+  "skillKey": "clawhub-dropbox-files",
+  "name": "Dropbox",
+  "summary": "Browse, search, upload, download, and manage files and folders in Dropbox — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Browse, search, upload, download, and manage files and folders in Dropbox — powered by ClawLink."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dropbox-files@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dropbox-files",
+      "url": "https://clawhub.ai/skills/dropbox-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-files",
+    "url": "https://clawhub.ai/skills/dropbox-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-files-8aacffc947d069ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dropbox-files@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dropbox-files-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c8cffe34eb7b8259ef329cc56af8f6111eee15cd9e5fe564ced276ccf584fba",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:18:08.155Z"
+}

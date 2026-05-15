@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-oracle@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_oracle",
+  "skill": {
+    "id": 21244,
+    "skillKey": "clawhub-digital-oracle",
+    "name": "Digital Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-oracle",
+    "url": "https://clawhub.ai/skills/digital-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-oracle-d2d49cf41b1ec6ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer prediction questions using market trading data, not opinions. Use when the user asks probability questions about geopolitics, economics, markets, indu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "komako-workshop",
+      "userId": "s17ae3zfv2emyves1f53khxaxx83xgd7",
+      "displayName": "Komako",
+      "image": "https://avatars.githubusercontent.com/u/4157988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776220950185,
+      "changelog": "Add Fear&Greed, Stooq providers; fix BIS Credit Gap; replace FRED with Stooq; Python 3.9 compat; bilingual README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21c63c7020fd69bda1e57116e458e70caed5cc527d9e8eae821e83673b86c727"
+}

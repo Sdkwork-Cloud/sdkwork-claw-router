@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibetrading-code-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibetrading_code_gen",
+  "skill": {
+    "id": 16154,
+    "skillKey": "clawhub-vibetrading-code-gen",
+    "name": "vibetrading-ai-trading-code-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibetrading-code-gen",
+    "url": "https://clawhub.ai/skills/vibetrading-code-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibetrading-code-gen-042556d941013649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate executable Hyperliquid trading strategy code from natural language prompts. Use when a user wants to create automated trading strategies for Hyperliquid exchange based on their trading ideas, technical indicators, or VibeTrading s."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuhaonan00",
+      "userId": "s179d565mgw055b64640nx3yps842jhx",
+      "displayName": "Haonan Liu",
+      "image": "https://avatars.githubusercontent.com/u/7401465?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 902,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770985294120,
+      "changelog": "- Initial release of vibetrading-code-gen: Generate executable Hyperliquid trading strategy code from natural language prompts.\n- Produces complete Python trading strategy files, configs, usage docs, and requirements.\n- Includes an automatic code validation and auto-fix system for syntax, imports, and Python 3.5+ compatibility.\n- Supports technical indicator, grid, mean reversion, arbitrage, and signal-driven strategies.\n- Enforces best practices: API keys via environment, error handling, logging, configuration, and no hardcoded credentials.\n- Automatic validator fixes common code issues (imports, f-strings, encoding, pathlib, logger init order).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d598ca3e2b2d281f3b9d4d32d3ea992ac9159613c5cadf1671a7b0b23586294f"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22494,
+  "uuid": "skill-clawhub-hotel-price-finder",
+  "skillKey": "clawhub-hotel-price-finder",
+  "name": "Hotel Price Finder - Multi OTA",
+  "summary": "Compare hotel prices across Booking.com, Agoda, Trip.com in real-time. Free multi-OTA price comparison with direct booking links. No API key required.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_price_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang",
+      "features": [
+        "Compare hotel prices across Booking.com, Agoda, Trip.com in real-time",
+        "Free multi-OTA price comparison with direct booking links",
+        "No API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-price-finder@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86237798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-price-finder",
+      "url": "https://clawhub.ai/skills/hotel-price-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-price-finder",
+    "url": "https://clawhub.ai/skills/hotel-price-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-price-finder-926da0f32f1da75e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-price-finder@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-price-finder-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5f315832bda433fefccd94b8cea02ea0345f4a7384225a2ccd91f22e99a6fb0",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:23:27.460Z"
+}

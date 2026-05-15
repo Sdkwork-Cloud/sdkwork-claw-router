@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keats-deep-research@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keats_deep_research",
+  "skill": {
+    "id": 51550,
+    "skillKey": "clawhub-keats-deep-research",
+    "name": "Academic Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keats-deep-research",
+    "url": "https://clawhub.ai/skills/keats-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keats-deep-research-dad30f291840dcad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transparent, rigorous research with full methodology — not a black-box API wrapper. Conducts exhaustive investigation through mandated 2-cycle research per t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774833774501,
+      "changelog": "Added adaptive depth with budget-gated extension cycles (P7) and topological entity expansion (P11) for deeper primary-source investigation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b08a59098fe1f83082b10bfbe28af718b710d4baa3d9d8e3c9085f43e2cf787b"
+}

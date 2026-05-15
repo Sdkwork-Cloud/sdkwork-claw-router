@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32287,
+  "uuid": "skill-clawhub-clinchpad",
+  "skillKey": "clawhub-clinchpad",
+  "name": "Clinchpad",
+  "summary": "ClinchPad integration. Manage data, records, and automate workflows. Use when the user wants to interact with ClinchPad data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinchpad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ClinchPad integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ClinchPad data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinchpad@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinchpad",
+      "url": "https://clawhub.ai/skills/clinchpad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinchpad",
+    "url": "https://clawhub.ai/skills/clinchpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinchpad-636b6a1c8d554024.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinchpad@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinchpad-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dce4726a4d8752b2fd7dfd1c1b932793260375183e7dae9642cdcb02819d6930",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:31:35.564Z"
+}

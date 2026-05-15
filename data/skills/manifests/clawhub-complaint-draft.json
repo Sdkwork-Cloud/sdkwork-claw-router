@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58296,
+  "uuid": "skill-clawhub-complaint-draft",
+  "skillKey": "clawhub-complaint-draft",
+  "name": "complaint draft",
+  "summary": "Generate civil complaint document frameworks based on case facts. Use when the user asks about 起诉状、起诉书、怎么起诉、民事起诉、我要起诉、写诉状, or wants to draft a civil complain...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complaint_draft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Generate civil complaint document frameworks based on case facts",
+        "Use when the user asks about 起诉状、起诉书、怎么起诉、民事起诉、我要起诉、写诉状, or wants to draft a civil complain..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/complaint-draft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "complaint-draft",
+      "url": "https://clawhub.ai/skills/complaint-draft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complaint-draft",
+    "url": "https://clawhub.ai/skills/complaint-draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complaint-draft-8961d5e4d46978e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/complaint-draft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-complaint-draft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:debd794b26479d14f92e9c9fb44cb219397c42cf6d820f90ba8d9adb69e18102",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:18:36.484Z"
+}

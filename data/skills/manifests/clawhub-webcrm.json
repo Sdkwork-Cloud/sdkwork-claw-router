@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34988,
+  "uuid": "skill-clawhub-webcrm",
+  "skillKey": "clawhub-webcrm",
+  "name": "Webcrm",
+  "summary": "WebCRM integration. Manage data, records, and automate workflows. Use when the user wants to interact with WebCRM data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webcrm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WebCRM integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WebCRM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webcrm@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webcrm",
+      "url": "https://clawhub.ai/skills/webcrm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webcrm",
+    "url": "https://clawhub.ai/skills/webcrm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webcrm-716e0ef140ffba7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webcrm@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-webcrm-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cf6add7bb75886873724b45d5d0bfa2de5baf50825ffde791f6cf633bdbec9e",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:00:46.066Z"
+}

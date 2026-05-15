@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48009,
+  "uuid": "skill-clawhub-skylv-mock-server-generator",
+  "skillKey": "clawhub-skylv-mock-server-generator",
+  "name": "Skylv Mock Server Generator",
+  "summary": "Generate mock HTTP servers with custom endpoints, dynamic fake data, delay and error simulation, and OpenAPI import for API testing and development.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_mock_server_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generate mock HTTP servers with custom endpoints, dynamic fake data, delay and error simulation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-mock-server-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-mock-server-generator",
+      "url": "https://clawhub.ai/skills/skylv-mock-server-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-mock-server-generator",
+    "url": "https://clawhub.ai/skills/skylv-mock-server-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-mock-server-generator-1d65db5d4bb3bb00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-mock-server-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-mock-server-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7553fdc26b3c4b56c7342850e9bc54bb8af4d3fa1d3e6f58a6b61e0f357227c",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T02:49:15.192Z"
+}

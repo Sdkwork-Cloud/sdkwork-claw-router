@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-effect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_effect",
+  "skill": {
+    "id": 44066,
+    "skillKey": "clawhub-ai-image-to-video-effect",
+    "name": "Ai Image To Video Effect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-effect",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-effect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-effect-4835ef68d3b61caa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. TikTok creators use it for turning still photos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776849564892,
+      "changelog": "- Initial release of \"AI Image to Video Effect\" skill.\n- Convert JPG, PNG, WEBP, HEIC images (up to 200MB) into animated 1080p MP4 video clips, optimized for social media and TikTok creators.\n- Supports basic authentication and automatic backend session management with 100 free credits for new users.\n- Direct uploading, timeline editing, and export workflows with detailed error handling.\n- Cloud GPU rendering delivers video in about 20-40 seconds; multiple export formats supported.\n- User intent automatically mapped to actions like upload, credits check, video export, and editing commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09ccaf1595381b2e2e37ef8bce9180f952a4e4663c0e55955f2721dd4f81da1c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/succession-plan@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.succession_plan",
+  "skill": {
+    "id": 21015,
+    "skillKey": "clawhub-succession-plan",
+    "name": "Succession Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "succession-plan",
+    "url": "https://clawhub.ai/skills/succession-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/succession-plan-b6f359ef9df1dd8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design succession plans with role mapping and transition roadmaps. Use when adding positions, listing candidates, prioritizing paths, planning transfers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773831081878,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b39e010f97dd5f3954dbd51c264ebb839dc197b65135b8eda168b2164699658"
+}

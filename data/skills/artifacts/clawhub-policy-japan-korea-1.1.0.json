@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/policy-japan-korea@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_japan_korea",
+  "skill": {
+    "id": 71171,
+    "skillKey": "clawhub-policy-japan-korea",
+    "name": "🇯🇵🇰🇷 日韩市场政策查询Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-japan-korea",
+    "url": "https://clawhub.ai/skills/policy-japan-korea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-japan-korea-872b99e7cfb8e2be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供日韩市场政策、法规及投资环境的智能查询与分析，支持多语言和多数据源配置。无需API Key，安装即用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yezhaowang888-stack",
+      "userId": "s17ffxprqs0jtaf8w6n5gtnprd84cx12",
+      "displayName": "yezhaowang888-stack",
+      "image": "https://avatars.githubusercontent.com/u/274244352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777617292573,
+      "changelog": "校准框架完整性检查：温情模式+专业模式就绪，联系邮箱配置，名称统一规范化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b20d6a3244aae3466930bc2ff88c9f1f0b6d446b12bdd996f4259aa0554602d1"
+}

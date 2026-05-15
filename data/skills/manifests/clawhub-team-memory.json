@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66918,
+  "uuid": "skill-clawhub-team-memory",
+  "skillKey": "clawhub-team-memory",
+  "name": "team-memory",
+  "summary": "私人团队记忆管理系统 - 记录成员观察、生成绩效报告、辅助管理决策",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jichengkai",
+      "features": [
+        "私人团队记忆管理系统",
+        "记录成员观察、生成绩效报告、辅助管理决策"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-memory@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262377838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-memory",
+      "url": "https://clawhub.ai/skills/team-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-memory",
+    "url": "https://clawhub.ai/skills/team-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-memory-0885fff8b9ff8624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-memory@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-memory-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148f6df0dca7c115d82bc747c8dd9f46874040eff02b54664af37a7a54e7cf21",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T16:47:13.115Z"
+}

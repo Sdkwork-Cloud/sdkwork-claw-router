@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64773,
+  "uuid": "skill-clawhub-office-web-slide",
+  "skillKey": "clawhub-office-web-slide",
+  "name": "web-slide",
+  "summary": "网页端 Slide 生成 Skill。当用户需要制作演示文稿（Slide / PPT / 演示）、生成幻灯片、创建展示页面时触发。 用户提供素材或通过对话引导，Agent 自动生成可在浏览器中直接打开的交互式 HTML Slide。 支持多种布局类型、16 套高品质预设主题（8 风格 × 浅色/深色，含液态玻璃/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_web_slide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Balancegogogo",
+      "features": [
+        "网页端 Slide 生成 Skill。当用户需要制作演示文稿（Slide / PPT / 演示）、生成幻灯片、创建展示页面时触发。 用户提供素材或通过对话引导，Agent 自动生成可在浏览器."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/office-web-slide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24697086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "office-web-slide",
+      "url": "https://clawhub.ai/skills/office-web-slide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-web-slide",
+    "url": "https://clawhub.ai/skills/office-web-slide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-web-slide-baab329ae798c1e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/office-web-slide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-office-web-slide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db001d7845d2814c3c5d7883b7c5be997f9e09be3617c9e59a41325a19c54003",
+      "artifactSizeBytes": 2852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:53:41.032Z"
+}

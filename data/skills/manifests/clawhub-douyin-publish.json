@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63349,
+  "uuid": "skill-clawhub-douyin-publish",
+  "skillKey": "clawhub-douyin-publish",
+  "name": "Douyin Video Publisher",
+  "summary": "自动登录抖音账号，上传并发布视频到抖音创作者平台，支持视频标签管理和登录状态检查。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gonghaiquan",
+      "features": [
+        "自动登录抖音账号，上传并发布视频到抖音创作者平台，支持视频标签管理和登录状态检查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48919419?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-publish",
+      "url": "https://clawhub.ai/skills/douyin-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-publish",
+    "url": "https://clawhub.ai/skills/douyin-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-publish-48f2557eaf7a6a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b52167b0c9ff260cf73bbde0c3abce1b5b7f49c764052276b7fad87ac3edad6f",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T06:16:53.746Z"
+}

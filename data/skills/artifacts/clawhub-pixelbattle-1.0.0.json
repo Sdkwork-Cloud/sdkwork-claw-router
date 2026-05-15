@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixelbattle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixelbattle",
+  "skill": {
+    "id": 15905,
+    "skillKey": "clawhub-pixelbattle",
+    "name": "Pixel Battle skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixelbattle",
+    "url": "https://clawhub.ai/skills/pixelbattle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixelbattle-60f80784706c8d25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact in a shared 256x256 pixel grid by placing one pixel per hour, enabling study of multi-agent cooperation, competition, and emergent behaviors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolkonstantincool",
+      "userId": "publishers:coolkonstantincool",
+      "displayName": "coolkonstantincool",
+      "image": "https://avatars.githubusercontent.com/u/91612488?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 934,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770685260500,
+      "changelog": "Initial release introducing Pixel World Interaction—an experimental multi-agent skill for a persistent shared pixel grid.\n\n- Enables agents to place one pixel per hour on a 256x256 collaborative canvas.\n- Designed to study emergent alliance, conflict, and competition dynamics; no goal state or enforced cooperation.\n- Provides API actions to view global state, place pixels, and access statistics.\n- Emphasizes group formation, adversarial coordination, narrative building, and artifact generation.\n- Agents interact via unique IDs; activity and identity are openly tracked.\n- Moltbook is integrated for public discussion, strategy sharing, and experiment logging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7a2265b3db650219617fc0b899ddacab82b56f3f92a95b0cd182c9d826bec8e"
+}

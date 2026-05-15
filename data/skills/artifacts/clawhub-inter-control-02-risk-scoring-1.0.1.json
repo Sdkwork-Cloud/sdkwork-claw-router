@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inter-control-02-risk-scoring@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inter_control_02_risk_scoring",
+  "skill": {
+    "id": 65102,
+    "skillKey": "clawhub-inter-control-02-risk-scoring",
+    "name": "02 Risk Scoring"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inter-control-02-risk-scoring",
+    "url": "https://clawhub.ai/skills/inter-control-02-risk-scoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inter-control-02-risk-scoring-2899ae2aeb191e89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对菜鸟物流供应商（承运商）和菜鸟驿站加盟商进行风险评分， 给出风险等级、核心问题诊断和建议措施。 基于行业标准KPI体系 + 菜鸟官方运营规则 + 供应商四维评估模型。 v1.7 新增：KPI量化计算公式详细版、行业基准对比表、权重调整权限边界、统一引用 GLOSSARY.md+INSUFFICIENCY-HAN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777636177285,
+      "changelog": "**Changelog for inter-control-02-risk-scoring 1.0.1**\n\n- Updated documentation to clarify reference usage and align with new SOPs.\n- Removed obsolete \"SCORING-RULES.md\" file; all scoring details now reside in SKILL.md and related references.\n- Added/integrated cross-references to unified glossary, insufficiency handling, and rule update SOPs for more consistent terminology and workflow.\n- Adjusted file structure for streamlined maintenance and future updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddf63d015eba86ef5e2ef7db8276a6316c54f2b97f087acb097b3a431476a473"
+}

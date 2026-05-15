@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65201,
+  "uuid": "skill-clawhub-test-txt",
+  "skillKey": "clawhub-test-txt",
+  "name": "test-txt",
+  "summary": "根据用户输入的选项输出对应古诗。输入A输出《咏柳》，输入B输出《春晓》。运行结果输出到/workspace/assets目录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_txt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luokeer52",
+      "features": [
+        "根据用户输入的选项输出对应古诗。输入A输出《咏柳》，输入B输出《春晓》。运行结果输出到/workspace/assets目录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-txt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5510712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-txt",
+      "url": "https://clawhub.ai/skills/test-txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-txt",
+    "url": "https://clawhub.ai/skills/test-txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-txt-ea91f086a6b71528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-txt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-txt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a38d5ec96800977cd5881cd3650562a7df8ece9b68571fe45210d1595fc7b82",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:32:46.760Z"
+}

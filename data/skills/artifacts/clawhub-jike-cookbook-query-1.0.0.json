@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-cookbook-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_cookbook_query",
+  "skill": {
+    "id": 72328,
+    "skillKey": "clawhub-jike-cookbook-query",
+    "name": "菜谱查询 - 即刻数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-cookbook-query",
+    "url": "https://clawhub.ai/skills/jike-cookbook-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-cookbook-query-24c2aab1c7052f4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "菜谱查询。支持食材列表查询、菜谱搜索、菜谱详情和随机菜谱，返回菜名、分类、耗时、口味、烹饪方式、主料辅料和做法步骤。适用场景：用户说“搜一下西红柿炒鸡蛋菜谱”“随机推荐几个菜”“查菜谱 ID 6 的做法”“鸡蛋相关食材信息”等。数据由即刻数据（jikeapi.cn）开放接口提供。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jikeapi-cn",
+      "userId": "s1748e0m2nvjyq8jm7s2y4man185q081",
+      "displayName": "jikeapi",
+      "image": "https://avatars.githubusercontent.com/u/26078515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777445469415,
+      "changelog": "首次发布菜谱查询 - 即刻数据 Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2eb85bec9269dabb612f5ed47e5a0ec9a202155c41fddc5c63016c18133cc027"
+}

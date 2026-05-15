@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61580,
+  "uuid": "skill-clawhub-ai-commentary-zh",
+  "skillKey": "clawhub-ai-commentary-zh",
+  "name": "AI 解说",
+  "summary": "面向解说/讲解场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 commentary 场景定位。",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_commentary_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "面向解说/讲解场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 commentary 场景定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-commentary-zh@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-commentary-zh",
+      "url": "https://clawhub.ai/skills/ai-commentary-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-commentary-zh",
+    "url": "https://clawhub.ai/skills/ai-commentary-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-commentary-zh-4b0ded5869ecce9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-commentary-zh@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-commentary-zh-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59fee55eb5c06d8c93d63b1af4e5b87ca6ad9d7a647681e4df2d3bb94c0d48fe",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:14:58.612Z"
+}

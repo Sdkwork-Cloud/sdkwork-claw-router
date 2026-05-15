@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reson8-activator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reson8_activator",
+  "skill": {
+    "id": 25655,
+    "skillKey": "clawhub-reson8-activator",
+    "name": "Meta-Skill Orchestration Surface"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reson8-activator",
+    "url": "https://clawhub.ai/skills/reson8-activator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reson8-activator-b5671e51d37d5e3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The meta-skill that knows its own activation surface. Use this skill whenever the user wants to \"activate\" a capability, asks \"what can you do\", wants to cha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toolate28",
+      "userId": "publishers:toolate28",
+      "displayName": "toolated",
+      "image": "https://avatars.githubusercontent.com/u/105518313?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773326610992,
+      "changelog": "- Initial release of reson8-activate as the meta-skill orchestration layer (\"Tapestry of Skills\").\n- Enables inventory, routing, composition, teaching, and extending of all skills, tools, servers, APIs, and external integrations in Reson8-Labs.\n- Implements natural language intent parsing to activate appropriate capabilities or skill chains.\n- Integrates WAVE scoring for coherence at each step of skill chaining, ensuring reliable transitions.\n- Supports discovery of new skills/connectors and capability extension via skill/plugin/server creation workflows.\n- Includes marketplace publishing guidance and maintains full inventory awareness for agent interoperability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67b6537c5ed015832c009abdb2ba39975c883402b40ddbb10ef580c25055f97e"
+}

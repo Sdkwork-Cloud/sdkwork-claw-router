@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aic-dashboard@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aic_dashboard",
+  "skill": {
+    "id": 14357,
+    "skillKey": "clawhub-aic-dashboard",
+    "name": "AI Commander Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aic-dashboard",
+    "url": "https://clawhub.ai/skills/aic-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aic-dashboard-e6ea83d07372e078.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Commander Management Dashboard. A lightweight companion web UI for monitoring inbound emails received via the email-webhook skill and browser session stat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lksrz",
+      "userId": "publishers:lksrz",
+      "displayName": "Coder AI",
+      "image": "https://avatars.githubusercontent.com/u/72931508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1198,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1771405198802,
+      "changelog": "Zero-config: auto-generates random token on start, binds to 0.0.0.0 by default, prints full URL with token. Just run node scripts/server.js and go.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ffa8991a88e32adf278e1a9da7447608357ee609217a589c808c8da3422738f"
+}

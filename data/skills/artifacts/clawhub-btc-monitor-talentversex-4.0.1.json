@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/btc-monitor-talentversex@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_monitor_talentversex",
+  "skill": {
+    "id": 22482,
+    "skillKey": "clawhub-btc-monitor-talentversex",
+    "name": "BTC Monitor TalentverseX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-monitor-talentversex",
+    "url": "https://clawhub.ai/skills/btc-monitor-talentversex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-monitor-talentversex-28912b115453dd0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BTC and ETH market monitor with public API data, six bottom-fishing signals, and optional Discord delivery. TalentverseX"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liammme",
+      "userId": "publishers:liammme",
+      "displayName": "Liammme",
+      "image": "https://avatars.githubusercontent.com/u/125541119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1773139393908,
+      "changelog": "Include install and scheduler helper scripts in the ClawHub package",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:148724a791a6dc92d531156cd505666c8d7a1ecaf198fa1998cffe276681d521"
+}

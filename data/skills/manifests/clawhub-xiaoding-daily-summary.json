@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63824,
+  "uuid": "skill-clawhub-xiaoding-daily-summary",
+  "skillKey": "clawhub-xiaoding-daily-summary",
+  "name": "Daily Summary",
+  "summary": "自动生成包含Token用量和任务完成情况的每日学习总结报告并保存为指定日期Markdown文件。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoding_daily_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asterisk622",
+      "features": [
+        "自动生成包含Token用量和任务完成情况的每日学习总结报告并保存为指定日期Markdown文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoding-daily-summary@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4076262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoding-daily-summary",
+      "url": "https://clawhub.ai/skills/xiaoding-daily-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoding-daily-summary",
+    "url": "https://clawhub.ai/skills/xiaoding-daily-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoding-daily-summary-01285b31b963b19f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoding-daily-summary@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoding-daily-summary-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78f3fae3161740b861e2780a990fd5403cdf0dfebe2f66041ab388f74ac868db",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:05:09.577Z"
+}

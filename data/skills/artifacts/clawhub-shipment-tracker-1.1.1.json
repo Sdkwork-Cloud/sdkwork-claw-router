@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shipment-tracker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipment_tracker",
+  "skill": {
+    "id": 15496,
+    "skillKey": "clawhub-shipment-tracker",
+    "name": "Shipment Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipment-tracker",
+    "url": "https://clawhub.ai/skills/shipment-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipment-tracker-ab48bd5c207d5404.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track packages across carriers (USPS, UPS, FedEx, DHL, Amazon, OnTrac, LaserShip). Use when: user asks about package status, adds a tracking number, wants de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pfrederiksen",
+      "userId": "s17fk3ter6h1bve6rnejmqxjfx83eymx",
+      "displayName": "Paul Frederiksen",
+      "image": "https://avatars.githubusercontent.com/u/908172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771887291233,
+      "changelog": "Privacy disclosure: document that browser-use fallback transmits tracking data to cloud services",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82fc33d9e7d1a1c35d5b17269e8ba8da9c979cd3df8c60610bfb40a8491f6ebc"
+}

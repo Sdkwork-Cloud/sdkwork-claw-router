@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20585,
+  "uuid": "skill-clawhub-looki-memory",
+  "skillKey": "clawhub-looki-memory",
+  "name": "Looki Memory",
+  "summary": "Access the user's digital personal memory to retrieve context and generate more personalized, data-driven responses.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.looki_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "looki-claw",
+      "features": [
+        "Access the user's digital personal memory to retrieve context and generate more personalized, d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/looki-memory@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188132547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "looki-memory",
+      "url": "https://clawhub.ai/skills/looki-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "looki-memory",
+    "url": "https://clawhub.ai/skills/looki-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/looki-memory-7004ff58858855a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/looki-memory@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-looki-memory-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:421617c754110b8dfc237a124bf31b4e5520c48e1d30a61b446a74eed35de465",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T11:12:06.158Z"
+}

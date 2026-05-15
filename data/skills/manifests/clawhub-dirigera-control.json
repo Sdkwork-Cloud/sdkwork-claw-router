@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10614,
+  "uuid": "skill-clawhub-dirigera-control",
+  "skillKey": "clawhub-dirigera-control",
+  "name": "Dirigera Control (IKEA smart home)",
+  "summary": "Control IKEA Dirigera smart home devices (lights, outlets, scenes, controllers). Use when the user asks to control smart home devices, check device status, turn lights on/off, adjust brightness/color, control outlets, trigger scenes, check.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dirigera_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frederik Lind",
+      "features": [
+        "Control IKEA Dirigera smart home devices (lights, outlets, scenes, controllers)",
+        "Use when the user asks to control smart home devices, check device status, turn lights on/off,.",
+        "Also use when the user needs help finding the Dirigera hub IP address or generating an API token",
+        "Accessible via Cloudflare tunnel on VPS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dirigera-control@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61952615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dirigera-control",
+      "url": "https://clawhub.ai/skills/dirigera-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dirigera-control",
+    "url": "https://clawhub.ai/skills/dirigera-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dirigera-control-404e05a436b5b62d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dirigera-control@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-dirigera-control-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f2e4b98ac5ba1a7783eb9c8292c76ce0872b359bc13b5d9d415d8ace8a924eb",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T08:46:12.710Z"
+}

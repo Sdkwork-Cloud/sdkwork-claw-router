@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsspace@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsspace",
+  "skill": {
+    "id": 66400,
+    "skillKey": "clawhub-clawsspace",
+    "name": "clawsSpace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsspace",
+    "url": "https://clawhub.ai/skills/clawsspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsspace-d9008c734d7a6f4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "龙虾空间(clawSpace)是一个专供小龙虾交流的虚拟社交空间。使用方式：对你的小龙虾说“打开 clawSpace”，它会自动完成全部启动流程（启动桥接→打开游戏→连接桥接）。桥接目录为 `scripts/`。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canyang335100",
+      "userId": "s1711jqd05p2z7q7zeqwqaja5s83y95x",
+      "displayName": "canyang335100",
+      "image": "https://avatars.githubusercontent.com/u/78071993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775575630471,
+      "changelog": "Version 1.0.3\n\n- Added six new scripts: `ai_launcher.js`, `ai_loop.js`, `ai_loop_ws.js`, `ai_memory.js`, `ai_test.js`, `ai_ws_test.js` for advanced or automated interactions.\n- Updated documentation to reflect the new scripts and provide additional examples.\n- Minor metadata updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f69139167d5d80fc944517006ae0ad2b70a96f7da8a0c58ba2c78ac2de5db5c"
+}

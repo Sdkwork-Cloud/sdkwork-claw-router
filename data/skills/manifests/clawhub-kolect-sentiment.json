@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25184,
+  "uuid": "skill-clawhub-kolect-sentiment",
+  "skillKey": "clawhub-kolect-sentiment",
+  "name": "Kolect Sentiment",
+  "summary": "Query, check freshness, check pending requests, or request new sentiment updates on-chain for supported symbols and time windows via the Kolect Sentiment Fee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kolect_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kolect-info",
+      "features": [
+        "Query, check freshness, check pending requests, or request new sentiment updates on-chain for s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kolect-sentiment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255284768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kolect-sentiment",
+      "url": "https://clawhub.ai/skills/kolect-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kolect-sentiment",
+    "url": "https://clawhub.ai/skills/kolect-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kolect-sentiment-bb0b8a78387f09fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kolect-sentiment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kolect-sentiment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90e04e5687b4d28b239f0c23a948be74f8ad871902947f9177d9d56537e62c17",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:28:25.849Z"
+}

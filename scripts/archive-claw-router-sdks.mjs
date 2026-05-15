@@ -28,8 +28,18 @@ function defaultSdkArchiveRoot(root = workspaceRoot) {
 
 function defaultSdkArchiveSpecs(root = workspaceRoot) {
   return [
-    sdkArchiveSpecFromDirectory(path.join(root, 'sdks', 'clawrouter-app-sdk'), root),
-    sdkArchiveSpecFromDirectory(path.join(root, 'sdks', 'clawrouter-backend-sdk'), root),
+    sdkArchiveSpecFromDirectory(
+      path.join(root, 'sdks', 'clawrouter-app-sdk', 'clawrouter-app-sdk-typescript'),
+      root,
+    ),
+    sdkArchiveSpecFromDirectory(
+      path.join(root, 'sdks', 'clawrouter-backend-sdk', 'clawrouter-backend-sdk-typescript'),
+      root,
+    ),
+    sdkArchiveSpecFromDirectory(
+      path.join(root, 'sdks', 'clawrouter-open-sdk', 'clawrouter-open-sdk-typescript'),
+      root,
+    ),
   ];
 }
 

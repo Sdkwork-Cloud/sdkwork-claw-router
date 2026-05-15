@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echosync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echosync",
+  "skill": {
+    "id": 55901,
+    "skillKey": "clawhub-echosync",
+    "name": "EchoSync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echosync",
+    "url": "https://clawhub.ai/skills/echosync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echosync-c246a6e98302d182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "echosync.io — OAuth, Hyperliquid copy-trade, market info, and trading."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ly95",
+      "userId": "s17374v65t7a9vnc1a2ka4b59n83gjyt",
+      "displayName": "ly95",
+      "image": "https://avatars.githubusercontent.com/u/1676886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774312503591,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1899cae0a615cbd4331ebe52e3362486bc3a81eb5140f9b7e910118bf6a8d522"
+}

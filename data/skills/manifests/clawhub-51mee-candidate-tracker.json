@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65377,
+  "uuid": "skill-clawhub-51mee-candidate-tracker",
+  "skillKey": "clawhub-51mee-candidate-tracker",
+  "name": "51mee Candidate Tracker",
+  "summary": "候选人追踪系统。触发场景：用户要求管理候选人池，记录状态、设置提醒、生成标签。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_candidate_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "候选人追踪系统。触发场景：用户要求管理候选人池，记录状态、设置提醒、生成标签。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-candidate-tracker@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-candidate-tracker",
+      "url": "https://clawhub.ai/skills/51mee-candidate-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-candidate-tracker",
+    "url": "https://clawhub.ai/skills/51mee-candidate-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-candidate-tracker-69034dc23745258f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-candidate-tracker@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-candidate-tracker-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:336f44293ce1510b1e9e8728a02d86b8cee2c82c921c52d64a857136f6df3ea1",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:22:10.849Z"
+}

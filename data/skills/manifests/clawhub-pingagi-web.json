@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22244,
+  "uuid": "skill-clawhub-pingagi-web",
+  "skillKey": "clawhub-pingagi-web",
+  "name": "pingagi-web",
+  "summary": "Browse and extract text content, titles, and partial HTML from webpages using a local browser service.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingagi_web",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PingAGI",
+      "features": [
+        "Browse and extract text content, titles, and partial HTML from webpages using a local browser s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pingagi-web@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152257426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pingagi-web",
+      "url": "https://clawhub.ai/skills/pingagi-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingagi-web",
+    "url": "https://clawhub.ai/skills/pingagi-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingagi-web-a33baa4c89767400.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pingagi-web@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pingagi-web-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e7626c4c99a5f354a25b67cecdc7538c6380fb7d054a06e86cb4ee4b03bbe95",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:00:42.457Z"
+}

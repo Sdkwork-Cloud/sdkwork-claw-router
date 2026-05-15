@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/san-antonio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.san_antonio",
+  "skill": {
+    "id": 44679,
+    "skillKey": "clawhub-san-antonio",
+    "name": "San Antonio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "san-antonio",
+    "url": "https://clawhub.ai/skills/san-antonio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/san-antonio-c16ee125fa508aba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides travel info, history, culture, landmarks, cuisine, and tips for planning trips to San Antonio, Texas, including the Alamo and River Walk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776392185634,
+      "changelog": "San Antonio skill – initial release\n\n- 提供圣安东尼奥城市简介及阿拉莫等主要地标介绍\n- 覆盖 Tex-Mex 等本地美食与餐饮推荐\n- 收录游船、主题乐园、NBA 马刺队等文化与体验活动\n- 汇总人口、气候、出行等实用旅行信息\n- 适合旅游规划、历史与文化了解",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e935e8d5e4ea2d4f0ed5f7944ecc2ac8db99619ffec12ecc5b676b6e4bf0629d"
+}

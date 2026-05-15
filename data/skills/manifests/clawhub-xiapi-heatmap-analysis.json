@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73268,
+  "uuid": "skill-clawhub-xiapi-heatmap-analysis",
+  "skillKey": "clawhub-xiapi-heatmap-analysis",
+  "name": "虾皮市场宽度热力图",
+  "summary": "分析 A 股板块热力图，识别领涨、上升、反转行业。触发词：板块热力图、行业轮动、热门板块、领涨板块、板块分析、热力图。适用场景：分析板块热力图、识别热门行业、判断行业轮动。不适用场景：个股分析、指数分析、债券分析。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiapi_heatmap_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三水清",
+      "features": [
+        "分析 A 股板块热力图，识别领涨、上升、反转行业。触发词：板块热力图、行业轮动、热门板块、领涨板块、板块分析、热力图。适用场景：分析板块热力图、识别热门行业、判断行业轮动。不适用场景：个股分."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiapi-heatmap-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiapi-heatmap-analysis",
+      "url": "https://clawhub.ai/skills/xiapi-heatmap-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiapi-heatmap-analysis",
+    "url": "https://clawhub.ai/skills/xiapi-heatmap-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiapi-heatmap-analysis-2ac80af712d231c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiapi-heatmap-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiapi-heatmap-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58eed63f7d5bb8f6072b06784466595826f3f91f7b669d9f4ec21920671df5c1",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:22:52.002Z"
+}

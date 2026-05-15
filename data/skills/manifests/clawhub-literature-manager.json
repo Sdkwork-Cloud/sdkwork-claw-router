@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14108,
+  "uuid": "skill-clawhub-literature-manager",
+  "skillKey": "clawhub-literature-manager",
+  "name": "Literature Manager",
+  "summary": "Search, download, convert, organize, and audit academic literature collections. Use when asked to find papers, build a literature library, add papers to refe...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IsonaEi",
+      "features": [
+        "Search, download, convert, organize, and audit academic literature collections",
+        "Use when asked to find papers, build a literature library, add papers to refe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/literature-manager@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103190225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "literature-manager",
+      "url": "https://clawhub.ai/skills/literature-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-manager",
+    "url": "https://clawhub.ai/skills/literature-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-manager-235e6f346fe3cfee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/literature-manager@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-literature-manager-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e582d4f214c2937c38227666b9f6bc68f14effd567c1574297a8226278bca61",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:32:08.261Z"
+}

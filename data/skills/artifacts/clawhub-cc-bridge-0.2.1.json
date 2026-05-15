@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-bridge@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_bridge",
+  "skill": {
+    "id": 19438,
+    "skillKey": "clawhub-cc-bridge",
+    "name": "Claude Code Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-bridge",
+    "url": "https://clawhub.ai/skills/cc-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-bridge-aea18af72322bfca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridges OpenClaw (QQ, Telegram, WeChat, and other messaging channels) to a persistent Claude Code CLI session running in a background tmux process. Enables s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlhad",
+      "userId": "publishers:zlhad",
+      "displayName": "Linghaoz",
+      "image": "https://avatars.githubusercontent.com/u/55875143?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 582,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1773087922455,
+      "changelog": "Improved marketplace description for better discoverability. Renamed display name to Claude Code Bridge.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d95fbaaea4b48e31b243e7a91896e0e1ef75d124df7de08b4f0dd995812b7d4e"
+}

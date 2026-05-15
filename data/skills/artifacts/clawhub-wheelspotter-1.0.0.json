@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wheelspotter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wheelspotter",
+  "skill": {
+    "id": 46982,
+    "skillKey": "clawhub-wheelspotter",
+    "name": "WheelSpotter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wheelspotter",
+    "url": "https://clawhub.ai/skills/wheelspotter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wheelspotter-d95459d36c34b659.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A wheel-spotting scout that finds reusable solutions before you build from scratch. Cost-controlled intelligent search with complexity-aware filtering, inten..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garylooop",
+      "userId": "s178t4sqr2v7dt4qmb6422h0v184s99p",
+      "displayName": "GARYLOooP",
+      "image": "https://avatars.githubusercontent.com/u/274400577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777386854375,
+      "changelog": "WheelSpotter v1.0.0 – Initial release\n\n- Launches an intelligent tool for finding reusable code solutions (\"wheels\") with complexity-aware search, intent classification, and hard filtering.\n- Supports natural language and structured input; offers actionable, integrable recommendations with clear cost and time savings reports.\n- Implements adaptive platform selection, multi-stage evaluation, and progressive learning via feedback and caching.\n- Provides robust input/output specifications and avoids false positives for non-integrable solutions.\n- Triggers on common \"wheel-spotting\" intents to prevent redundant effort and maximize developer efficiency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:075d4db6edda9f925e408d58c3f60437b63ddf50192d4232a0c971dd9b766b88"
+}

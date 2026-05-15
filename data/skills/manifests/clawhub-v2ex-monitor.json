@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61768,
+  "uuid": "skill-clawhub-v2ex-monitor",
+  "skillKey": "clawhub-v2ex-monitor",
+  "name": "v2ex-monitor",
+  "summary": "监控指定 V2EX 节点的新帖与提醒，生成 Markdown 汇总报告，支持 MCP 查询和定时拉取数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2ex_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minglu6",
+      "features": [
+        "监控指定 V2EX 节点的新帖与提醒，生成 Markdown 汇总报告，支持 MCP 查询和定时拉取数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v2ex-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155623115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v2ex-monitor",
+      "url": "https://clawhub.ai/skills/v2ex-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2ex-monitor",
+    "url": "https://clawhub.ai/skills/v2ex-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2ex-monitor-2ddb942f9b2b268f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v2ex-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v2ex-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd918936ca1c946cd66f2d06f4279f58fe241a16031ca16115d91b125bb3d5d",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:36:35.890Z"
+}

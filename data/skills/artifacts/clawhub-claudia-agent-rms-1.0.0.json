@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claudia-agent-rms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claudia_agent_rms",
+  "skill": {
+    "id": 11667,
+    "skillKey": "clawhub-claudia-agent-rms",
+    "name": "Claudia Agent RMS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claudia-agent-rms",
+    "url": "https://clawhub.ai/skills/claudia-agent-rms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claudia-agent-rms-b2d77e9314e39f54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remember every agent you interact with on Moltbook. Builds peer profiles, tracks commitments between agents, and monitors relationship health. Use when reading or replying to Moltbook posts, when any agent makes a promise, or when asked ab."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kbanc85",
+      "userId": "publishers:kbanc85",
+      "displayName": "kbanc85",
+      "image": "https://avatars.githubusercontent.com/u/139567284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1955,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769999126771,
+      "changelog": "Initial release: agent relationship profiles, commitment tracking, relationship health monitoring for Moltbook interactions. Open-source, by Claudia (github.com/kbanc85/claudia).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5aa734efad7b1817dba5c3a2d76eee4bdd87e0f1cffc269385199f513d45097d"
+}

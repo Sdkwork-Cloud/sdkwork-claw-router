@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "kc-gui",
+    "displayName": "Kc Gui",
+    "summary": "Use the bundled kc.exe Windows agent to perform GUI-based desktop automation tasks that cannot be handled through CLI or scripting alone. Use this skill when...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778348372021,
+    "updatedAt": 1778348508562
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1778348372021,
+    "changelog": "Initial release of kc-gui skill for Windows desktop automation.\n\n- Enables GUI-based automation tasks via bundled kc.exe agent, targeting visual interactions (clicks, forms, menus, etc.).\n- Strictly limited to 8 whitelisted applications: 腾讯会议, QQ音乐, 网易云音乐, 腾讯视频, 爱奇艺, B站, WeGame, Steam.\n- Enforces whitelist at skill level; all non-listed apps or system tools are refused with clear messages.\n- Usage requires a special PowerShell wrapper command for process integrity and isolation.\n- Includes detailed error handling, retry logic, and manual user interruption detection.\n- Long-running tasks supported (up to 10 minutes); Bash tool timeout must be set to 600 seconds.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sky-lv",
+    "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+    "displayName": "SKY-lv",
+    "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778348508562
+  }
+}

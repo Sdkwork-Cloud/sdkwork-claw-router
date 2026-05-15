@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightningprox@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightningprox",
+  "skill": {
+    "id": 25975,
+    "skillKey": "clawhub-lightningprox",
+    "name": "Lightningprox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightningprox",
+    "url": "https://clawhub.ai/skills/lightningprox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightningprox-7cd8298c38546f8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay-per-use AI gateway via Bitcoin Lightning. No API keys, no account — pay sats, get inference. Supports Anthropic (claude-opus-4-5-20251101, claude-sonnet-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 932,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775263089045,
+      "changelog": "Updated to inline L402 flow, new model IDs, added /v1/models endpoint",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c0cc479d2fc878bcbd1df92400fd2c839b570f9b5df30fa7ed9bdf2f39cdd6d"
+}

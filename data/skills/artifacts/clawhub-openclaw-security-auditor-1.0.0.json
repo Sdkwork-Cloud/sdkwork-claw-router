@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_auditor",
+  "skill": {
+    "id": 10373,
+    "skillKey": "clawhub-openclaw-security-auditor",
+    "name": "OpenClaw Security Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-auditor",
+    "url": "https://clawhub.ai/skills/openclaw-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-auditor-3a7f5930e1fd912b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit OpenClaw configuration for security risks and generate a remediation report using the user's configured LLM."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muhammad-waleed381",
+      "userId": "s1745nkqaq31gdap0b53gh0c2s83gnd7",
+      "displayName": "Muhammad Waleed",
+      "image": "https://avatars.githubusercontent.com/u/76522443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2478,
+      "installsAllTime": 17,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769936971348,
+      "changelog": "Initial release: Local OpenClaw security audit skill with automated risk reporting.\n\n- Audits ~/.openclaw/openclaw.json or a user-specified config for 15+ security risks.\n- Runs checks including auth tokens, gateway settings, tool policies, secrets, logging, and more.\n- Generates a detailed markdown report with risk score, categorized findings (Critical/High/Medium/Low), and step-by-step remediation guidance.\n- No external APIs or network calls; uses only local tools (cat, jq) and user's existing LLM setup.\n- Strictly avoids handling or revealing secrets; only analyzes configuration metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab058a84c539f309e3a25e29d4b5a319a6c99e94ec26d795d92ed13c536be8f3"
+}

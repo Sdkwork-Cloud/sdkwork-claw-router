@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73682,
+  "uuid": "skill-clawhub-visual-note-prompt",
+  "skillKey": "clawhub-visual-note-prompt",
+  "name": "知识卡片提示词生成器",
+  "summary": "将简短文本转换为知识卡片图片的提示词生成器（社区精简版）。基于严格的格式规则，自动分析输入内容并生成符合视觉笔记标准的图片提示词。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_note_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "八点虾",
+      "features": [
+        "将简短文本转换为知识卡片图片的提示词生成器（社区精简版）。基于严格的格式规则，自动分析输入内容并生成符合视觉笔记标准的图片提示词。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-note-prompt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/514586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-note-prompt",
+      "url": "https://clawhub.ai/skills/visual-note-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-note-prompt",
+    "url": "https://clawhub.ai/skills/visual-note-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-note-prompt-e32a0f894fdc6b3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-note-prompt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-note-prompt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1b7bae4f21e2b061ed21cda9ec0012d1a40024d0ab4b7abe279450374f77b8f",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:14:46.231Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40128,
+  "uuid": "skill-clawhub-decompose-plan",
+  "skillKey": "clawhub-decompose-plan",
+  "name": "Decompose Plan",
+  "summary": "Forces M2.7 to produce an explicit structured plan before writing code. This makes Tree-of-Thought reasoning explicit instead of implicit, which is how Sonne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decompose_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stephen Thorn",
+      "features": [
+        "Forces M2.7 to produce an explicit structured plan before writing code",
+        "This makes Tree-of-Thought reasoning explicit instead of implicit, which is how Sonne..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decompose-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49094234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decompose-plan",
+      "url": "https://clawhub.ai/skills/decompose-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decompose-plan",
+    "url": "https://clawhub.ai/skills/decompose-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decompose-plan-232d074e315f54af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decompose-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decompose-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e15c95f8582e6d78f473628d39a55c5bf4114d00265653cd9c7cba291ffa15d7",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:46:00.365Z"
+}

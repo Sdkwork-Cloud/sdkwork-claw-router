@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63189,
+  "uuid": "skill-clawhub-li-mvp-kanban-skill",
+  "skillKey": "clawhub-li-mvp-kanban-skill",
+  "name": "Mvp Kanban Skill",
+  "summary": "提供任务与泳道管理、批量操作、AI分析和语义搜索的看板系统，支持Web界面、REST API及MCP工具调用。",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.li_mvp_kanban_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry S Fisher",
+      "features": [
+        "提供任务与泳道管理、批量操作、AI分析和语义搜索的看板系统，支持Web界面、REST API及MCP工具调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/li-mvp-kanban-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42956557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "li-mvp-kanban-skill",
+      "url": "https://clawhub.ai/skills/li-mvp-kanban-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "li-mvp-kanban-skill",
+    "url": "https://clawhub.ai/skills/li-mvp-kanban-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/li-mvp-kanban-skill-70a443affcf5c33b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/li-mvp-kanban-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-li-mvp-kanban-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54a30cdb08b714bb325138ded0ec5b4d7a202265c01e26f22defa156be3f7aca",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:24:00.964Z"
+}

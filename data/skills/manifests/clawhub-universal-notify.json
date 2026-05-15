@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14296,
+  "uuid": "skill-clawhub-universal-notify",
+  "skillKey": "clawhub-universal-notify",
+  "name": "Universal Notify",
+  "summary": "Send notifications through multiple channels with a single script. Supports ntfy.sh (free, no signup), Gotify (self-hosted), generic webhooks, email (SMTP/curl), Telegram Bot API, and Pushover. Use when sending alerts, monitoring notificat.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_notify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonas Pfalzgraf",
+      "features": [
+        "Send notifications through multiple channels with a single script",
+        "Supports ntfy.sh (free, no signup), Gotify (self-hosted), generic webhooks, email (SMTP/curl),.",
+        "Use when sending alerts, monitoring notifications, deployment notices, or any event that needs.",
+        "Unified interface with priority levels (low/normal/high/urgent)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/universal-notify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20913954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "universal-notify",
+      "url": "https://clawhub.ai/skills/universal-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-notify",
+    "url": "https://clawhub.ai/skills/universal-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-notify-90fdc0cb36380911.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/universal-notify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-universal-notify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb153bd1edb53338a5b3b27c29af04154ccf8714e6f3059fb9f5a7d5165ad1b9",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:31:26.173Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63808,
+  "uuid": "skill-clawhub-test-buddy",
+  "skillKey": "clawhub-test-buddy",
+  "name": "buddy",
+  "summary": "Buddy 抽卡体验。基于 Claude Code 原版 Buddy 系统的抽卡，让用户体验抽到什么稀有度的电子宠物。触发词：抽卡、buddy、电子宠物抽卡。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_buddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuhao Zhang",
+      "features": [
+        "Buddy 抽卡体验。基于 Claude Code 原版 Buddy 系统的抽卡，让用户体验抽到什么稀有度的电子宠物。触发词：抽卡、buddy、电子宠物抽卡。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-buddy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143550483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-buddy",
+      "url": "https://clawhub.ai/skills/test-buddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-buddy",
+    "url": "https://clawhub.ai/skills/test-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-buddy-b77bdd24ee6f7249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-buddy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-buddy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a77cccf1b332e29f86fb36833c2d7b59cc615b3b8d5c794d25348c9a40ca8de",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:27:14.067Z"
+}

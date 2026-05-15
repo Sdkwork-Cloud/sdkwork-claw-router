@@ -196,7 +196,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
   await withRoutingSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/app/v3/api/router/routing/channels" && method === "GET") {
+      if (url === "/app/v3/api/ai/routing/channels" && method === "GET") {
         return {
           items: [
             {
@@ -214,7 +214,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           ],
         };
       }
-      if (url === "/app/v3/api/router/routing/channels" && method === "POST") {
+      if (url === "/app/v3/api/ai/routing/channels" && method === "POST") {
         return {
           item: {
             id: "4001",
@@ -229,7 +229,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           },
         };
       }
-      if (url === "/app/v3/api/router/routing/channels/4001" && method === "PUT") {
+      if (url === "/app/v3/api/ai/routing/channels/4001" && method === "PUT") {
         return {
           item: {
             id: "4001",
@@ -244,7 +244,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           },
         };
       }
-      if (url === "/app/v3/api/router/routing/channels/4001/status" && method === "PUT") {
+      if (url === "/app/v3/api/ai/routing/channels/4001/status" && method === "PUT") {
         return {
           item: {
             id: "4001",
@@ -259,7 +259,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           },
         };
       }
-      if (url === "/app/v3/api/router/routing/channels/4001/test" && method === "POST") {
+      if (url === "/app/v3/api/ai/routing/channels/4001/verify" && method === "POST") {
         return {
           channelId: "4001",
           success: true,
@@ -278,10 +278,10 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           },
         };
       }
-      if (url === "/app/v3/api/router/routing/channels/4001" && method === "DELETE") {
+      if (url === "/app/v3/api/ai/routing/channels/4001" && method === "DELETE") {
         return { deleted: true };
       }
-      if (url === "/app/v3/api/router/routing/api-keys") {
+      if (url === "/app/v3/api/ai/routing/api_keys") {
         return {
           items: [
             {
@@ -295,7 +295,7 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           ],
         };
       }
-      if (url === "/app/v3/api/router/routing/request-traces") {
+      if (url === "/app/v3/api/ai/routing/request_traces") {
         return {
           items: [
             {
@@ -310,19 +310,19 @@ test("routing service calls generated app SDK paths and normalizes routing respo
           ],
         };
       }
-      if (url === "/app/v3/api/router/routing/usage") {
+      if (url === "/app/v3/api/ai/routing/usage") {
         return {
           chartData: [{ time: "2026-04-29", requests: 1, latency: 345 }],
           modelStats: [{ m: "gpt-4o-mini", req: "1", sr: "100.0%", tok: "150", lat: "345ms" }],
         };
       }
-      if (url === "/app/v3/api/router/routing/strategy" && method === "GET") {
+      if (url === "/app/v3/api/ai/routing/strategy" && method === "GET") {
         return {
           strategy: "weighted",
           mappingRules: [{ id: "rule-1", sourceModel: "gpt-4", targetModel: "azure-gpt4-32k" }],
         };
       }
-      if (url === "/app/v3/api/router/routing/strategy" && method === "PUT") {
+      if (url === "/app/v3/api/ai/routing/strategy" && method === "PUT") {
         return { success: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -367,17 +367,17 @@ test("routing service calls generated app SDK paths and normalizes routing respo
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /app/v3/api/router/routing/channels",
-          "POST /app/v3/api/router/routing/channels",
-          "PUT /app/v3/api/router/routing/channels/4001",
-          "PUT /app/v3/api/router/routing/channels/4001/status",
-          "POST /app/v3/api/router/routing/channels/4001/test",
-          "DELETE /app/v3/api/router/routing/channels/4001",
-          "GET /app/v3/api/router/routing/api-keys",
-          "GET /app/v3/api/router/routing/request-traces",
-          "GET /app/v3/api/router/routing/usage",
-          "GET /app/v3/api/router/routing/strategy",
-          "PUT /app/v3/api/router/routing/strategy",
+          "GET /app/v3/api/ai/routing/channels",
+          "POST /app/v3/api/ai/routing/channels",
+          "PUT /app/v3/api/ai/routing/channels/4001",
+          "PUT /app/v3/api/ai/routing/channels/4001/status",
+          "POST /app/v3/api/ai/routing/channels/4001/verify",
+          "DELETE /app/v3/api/ai/routing/channels/4001",
+          "GET /app/v3/api/ai/routing/api_keys",
+          "GET /app/v3/api/ai/routing/request_traces",
+          "GET /app/v3/api/ai/routing/usage",
+          "GET /app/v3/api/ai/routing/strategy",
+          "PUT /app/v3/api/ai/routing/strategy",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
@@ -469,7 +469,7 @@ test("routing service rejects unsafe channel path ids before calling generated a
 test("routing channel test fails closed when app SDK success response omits the tested channel item", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/channels/4001/test" && init?.method === "POST") {
+      if (url === "/app/v3/api/ai/routing/channels/4001/verify" && init?.method === "POST") {
         return {
           channelId: "4001",
           success: true,
@@ -491,7 +491,7 @@ test("routing channel test fails closed when app SDK success response omits the 
 test("routing channel list fails closed when app SDK omits stable channel ids", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/channels" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/channels" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -521,7 +521,7 @@ test("routing channel list fails closed when app SDK omits stable channel ids", 
 test("routing channel list fails closed when app SDK returns malformed channel rows", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/channels" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/channels" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -553,7 +553,7 @@ test("routing channel list fails closed when app SDK returns malformed channel r
 test("routing channel list fails closed when app SDK omits channel models", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/channels" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/channels" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -583,7 +583,7 @@ test("routing channel list fails closed when app SDK omits channel models", asyn
 test("routing API key list fails closed when app SDK returns malformed key rows", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/api-keys" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/api_keys" && (init?.method ?? "GET") === "GET") {
         return {
           items: ["malformed-api-key-row"],
         };
@@ -602,7 +602,7 @@ test("routing API key list fails closed when app SDK returns malformed key rows"
 test("routing API key list fails closed when app SDK omits masked key values", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/api-keys" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/api_keys" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -629,7 +629,7 @@ test("routing API key list fails closed when app SDK omits masked key values", a
 test("routing request traces fail closed when app SDK omits stable trace ids", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/request-traces" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/request_traces" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -657,7 +657,7 @@ test("routing request traces fail closed when app SDK omits stable trace ids", a
 test("routing request traces fail closed when app SDK returns malformed trace rows", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/request-traces" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/request_traces" && (init?.method ?? "GET") === "GET") {
         return {
           items: ["malformed-trace-row"],
         };
@@ -676,7 +676,7 @@ test("routing request traces fail closed when app SDK returns malformed trace ro
 test("routing request traces fail closed when app SDK omits token counts", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/request-traces" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/request_traces" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -704,7 +704,7 @@ test("routing request traces fail closed when app SDK omits token counts", async
 test("routing usage data fails closed when app SDK returns malformed chart rows", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/usage" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/usage" && (init?.method ?? "GET") === "GET") {
         return {
           chartData: ["malformed-chart-row"],
           modelStats: [{ m: "gpt-4o-mini", req: "1", sr: "100.0%", tok: "150", lat: "345ms" }],
@@ -724,7 +724,7 @@ test("routing usage data fails closed when app SDK returns malformed chart rows"
 test("routing strategy fails closed when app SDK returns malformed mapping rules", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/strategy" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/strategy" && (init?.method ?? "GET") === "GET") {
         return {
           strategy: "weighted",
           mappingRules: ["malformed-mapping-rule-row"],
@@ -744,7 +744,7 @@ test("routing strategy fails closed when app SDK returns malformed mapping rules
 test("routing strategy fails closed when app SDK returns unsupported strategy type", async () => {
   await withRoutingSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/router/routing/strategy" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/routing/strategy" && (init?.method ?? "GET") === "GET") {
         return {
           strategy: "random",
           mappingRules: [],

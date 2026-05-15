@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lucky-tmux@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_tmux",
+  "skill": {
+    "id": 38066,
+    "skillKey": "clawhub-lucky-tmux",
+    "name": "Lucky Tmux Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-tmux",
+    "url": "https://clawhub.ai/skills/lucky-tmux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-tmux-ab156152fd889e00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rmbell09-lang",
+      "userId": "s17frvc418yasm08c8400wcxph83n0wy",
+      "displayName": "rmbell09-lang",
+      "image": "https://avatars.githubusercontent.com/u/238621327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774505920796,
+      "changelog": "- No changes detected in this release.\n- Version number updated to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad748eab649b99ef317653076fea0c0c74bd0f31a8814bc8e7fb375bb54997d2"
+}

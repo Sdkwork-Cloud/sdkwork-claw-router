@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook",
+  "skill": {
+    "id": 8529,
+    "skillKey": "clawhub-outlook",
+    "name": "Outlook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook",
+    "url": "https://clawhub.ai/skills/outlook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-4f53c6c301f98610.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, search, and manage Outlook emails and calendar via Microsoft Graph API. Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar events, or scheduling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jotamed",
+      "userId": "publishers:jotamed",
+      "displayName": "jotamed",
+      "image": "https://avatars.githubusercontent.com/u/76839132?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 9593,
+      "installsAllTime": 97,
+      "installsCurrent": 91,
+      "stars": 19,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1769367682148,
+      "changelog": "Added calendar support (view/create/update/delete events, check availability)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5874688711aba409527835d8aabe3a42e81fb1a99a6fe4fc8dbbdc0b9e70bd9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research",
+  "skill": {
+    "id": 32754,
+    "skillKey": "clawhub-industry-research",
+    "name": "Industry Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research",
+    "url": "https://clawhub.ai/skills/industry-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-fde2132410a35f23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to conduct industry research, keyword research for a campaign, search demand analysis, intent mapping, audience research, or understand w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774294189477,
+      "changelog": "Initial release of the industry-research skill:\n\n- Provides a structured workflow for deep, intent-driven industry and keyword research using Ahrefs, Firecrawl, and Exa tools.\n- Supports keyword clustering, search intent classification, audience question mining, pain point extraction, and SERP/content gap analysis.\n- Integrates competitor research and positioning analysis, aligning with specific campaign and market needs.\n- Outputs a comprehensive Markdown artifact summarizing keyword clusters, audience insights, content gaps, and competitor landscape.\n- Includes clear fallback logic and instructions for cases where specific data sources (e.g., Ahrefs API) are unavailable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8453535af9a9b24f45b21283bcb42fcd4118c4297e6df8a93192d5e4ad2bf605"
+}

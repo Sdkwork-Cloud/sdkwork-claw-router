@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62543,
+  "uuid": "skill-clawhub-browser-search",
+  "skillKey": "clawhub-browser-search",
+  "name": "Browser Search",
+  "summary": "浏览器搜索技能 - 安全的网页搜索工具 使用本地浏览器进行自动化搜索和内容提取 支持 Bing、Google、Baidu、DuckDuckGo 等公开搜索引擎 无需 API 配置，路径输出受限",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "中国山东肥城林水科技",
+      "features": [
+        "安全的网页搜索工具 使用本地浏览器进行自动化搜索和内容提取 支持 Bing、Google、Baidu、DuckDuckGo 等公开搜索引擎 无需 API 配置，路径输出受限"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-search@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129362705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-search",
+      "url": "https://clawhub.ai/skills/browser-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-search",
+    "url": "https://clawhub.ai/skills/browser-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-search-083378ccbb8a518a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-search@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-search-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:711f17a1aca19009466859020c2d8ced72a5a1c5cf084da2bfb6a9b638ceeed2",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:21:36.517Z"
+}

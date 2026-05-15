@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73258,
+  "uuid": "skill-clawhub-legal-case-validator-mctmilk",
+  "skillKey": "clawhub-legal-case-validator-mctmilk",
+  "name": "类案检索验证",
+  "summary": "用真实案例验证法条分析结果，分析司法实践中的裁判分歧、高频败诉原因和法官审查重点。AI生成的分析必须用真实案例验证。当用户想检验法条分析是否符合司法实践时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_case_validator_mctmilk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MctMilk",
+      "features": [
+        "用真实案例验证法条分析结果，分析司法实践中的裁判分歧、高频败诉原因和法官审查重点。AI生成的分析必须用真实案例验证。当用户想检验法条分析是否符合司法实践时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-case-validator-mctmilk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51847435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-case-validator-mctmilk",
+      "url": "https://clawhub.ai/skills/legal-case-validator-mctmilk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-case-validator-mctmilk",
+    "url": "https://clawhub.ai/skills/legal-case-validator-mctmilk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-case-validator-mctmilk-5306502de2be3dbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-case-validator-mctmilk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-case-validator-mctmilk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5c2e0617e04987ae968417ff1d09431e3de47bc7f4a5fe2d5ae0c3d3715b000",
+      "artifactSizeBytes": 2679
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:51:23.786Z"
+}

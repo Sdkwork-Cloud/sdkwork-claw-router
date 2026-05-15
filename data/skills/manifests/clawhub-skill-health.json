@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20045,
+  "uuid": "skill-clawhub-skill-health",
+  "skillKey": "clawhub-skill-health",
+  "name": "Skill Health",
+  "summary": "Analyze wearable health CSV exports (steps, heart rate, sleep, calories, SpO2, exercise, distance) and produce compact JSON reports for hourly, daily, weekly...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javiersgjavi",
+      "features": [
+        "Analyze wearable health CSV exports (steps, heart rate, sleep, calories, SpO2, exercise, distan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-health@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49660521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-health",
+      "url": "https://clawhub.ai/skills/skill-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-health",
+    "url": "https://clawhub.ai/skills/skill-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-health-d43e3d0a0c31bb63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-health@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-health-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5388f3980a5ccbd1b90693cdc5906c304e4fe23d57b3733a4ffef48b0ec58e5e",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:39:26.591Z"
+}

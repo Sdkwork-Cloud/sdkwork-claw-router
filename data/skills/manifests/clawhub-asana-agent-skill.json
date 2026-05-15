@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12104,
+  "uuid": "skill-clawhub-asana-agent-skill",
+  "skillKey": "clawhub-asana-agent-skill",
+  "name": "Asana",
+  "summary": "Manage Asana tasks, projects, briefs, status updates, custom fields, dependencies, attachments, events, and timelines via Personal Access Token (PAT).",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asana_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L-U-C-K-Y",
+      "features": [
+        "Manage Asana tasks, projects, briefs, status updates, custom fields, dependencies, attachments,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asana-agent-skill@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14868134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asana-agent-skill",
+      "url": "https://clawhub.ai/skills/asana-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asana-agent-skill",
+    "url": "https://clawhub.ai/skills/asana-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asana-agent-skill-f6d47a5cce65378b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asana-agent-skill@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asana-agent-skill-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a170c7e7b68237ad4e9af7e5df2db1637c76a055642a885e222f296ece876fe",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:08:10.004Z"
+}

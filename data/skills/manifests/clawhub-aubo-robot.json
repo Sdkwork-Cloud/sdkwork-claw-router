@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62742,
+  "uuid": "skill-clawhub-aubo-robot",
+  "skillKey": "clawhub-aubo-robot",
+  "name": "AUBO Robot",
+  "summary": "通过 Python 和 RTDE 协议实现对 AUBO 协作机器人关节与笛卡尔空间运动的控制与状态实时反馈。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aubo_robot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robot_Qu",
+      "features": [
+        "通过 Python 和 RTDE 协议实现对 AUBO 协作机器人关节与笛卡尔空间运动的控制与状态实时反馈。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aubo-robot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117743580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aubo-robot",
+      "url": "https://clawhub.ai/skills/aubo-robot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aubo-robot",
+    "url": "https://clawhub.ai/skills/aubo-robot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aubo-robot-5bfa2cd1b2d7287e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aubo-robot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aubo-robot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11303eb36181985116f63617cbec9b48f6ccf2aaa9c92d9d705715cb82535d06",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T04:00:54.383Z"
+}

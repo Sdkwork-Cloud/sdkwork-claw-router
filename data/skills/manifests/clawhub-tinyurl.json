@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33514,
+  "uuid": "skill-clawhub-tinyurl",
+  "skillKey": "clawhub-tinyurl",
+  "name": "Tinyurl",
+  "summary": "TinyURL integration. Manage data, records, and automate workflows. Use when the user wants to interact with TinyURL data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tinyurl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "TinyURL integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TinyURL data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tinyurl@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tinyurl",
+      "url": "https://clawhub.ai/skills/tinyurl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tinyurl",
+    "url": "https://clawhub.ai/skills/tinyurl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tinyurl-17b8e410a6c47f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tinyurl@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tinyurl-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3e690ab93ebc06b9000cc14aecc058f2cbbbc62cee691019131ed60598f1e76",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:06:02.251Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-multimodal@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_multimodal",
+  "skill": {
+    "id": 8909,
+    "skillKey": "clawhub-minimax-multimodal",
+    "name": "Minimax-Multimodal-Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-multimodal",
+    "url": "https://clawhub.ai/skills/minimax-multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-multimodal-0ae7d05163d2f1ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform. Use when the user wants to create media content, chat with MiniMax mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minimax-ai-dev",
+      "userId": "s17e3wmgte783ff2e9fwb0cpgh83hcx2",
+      "displayName": "MiniMax-AI",
+      "image": "https://avatars.githubusercontent.com/u/192945411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4032,
+      "installsAllTime": 21,
+      "installsCurrent": 20,
+      "stars": 18,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775685718739,
+      "changelog": "**Switch to `mmx-cli`: major simplification and platform change**\n\n- Replaces all separate bash scripts and API reference docs with a unified command-line interface (`mmx`).\n- Removes 15 legacy shell script and markdown reference files.\n- Updates skill name and description to reflect the new `mmx-cli` interface.\n- New workflow: install `mmx-cli` via npm and use a single CLI for text, image, video, speech, and music generation.\n- All instructions, options, and usage details are consolidated into the new SKILL.md focused on `mmx` commands and agent-friendly flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:accaf599a98290768c23a71c64bf358bfc1f899a1318c2ffd4ea156efd295d2a"
+}

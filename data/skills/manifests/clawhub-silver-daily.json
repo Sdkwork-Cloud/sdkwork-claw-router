@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69742,
+  "uuid": "skill-clawhub-silver-daily",
+  "skillKey": "clawhub-silver-daily",
+  "name": "Silver Daily",
+  "summary": "银发头条（Silver Age Daily）—— 一键生成当日银发经济精选资讯简报。 覆盖：政策解读、银发消费、老年金融、银发科技、医疗健康、银发文娱、居家养老、银发就业八大板块。 每次生成一份带新闻链接、带摘要的 HTML 格式日报，风格简洁大方，适合老年产业从业者、研究者、投资人及关注银发经济的人士阅读。 U...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.silver_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean zheng",
+      "features": [
+        "银发头条（Silver Age Daily）—— 一键生成当日银发经济精选资讯简报。 覆盖：政策解读、银发消费、老年金融、银发科技、医疗健康、银发文娱、居家养老、银发就业八大板块。 每次生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/silver-daily@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/299900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "silver-daily",
+      "url": "https://clawhub.ai/skills/silver-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "silver-daily",
+    "url": "https://clawhub.ai/skills/silver-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/silver-daily-26eb8eeacda79d62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/silver-daily@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-silver-daily-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78ab7b1ce0c1f9e8b522f3357f96c4b85acfab04d5b69e58ffb91f2ccf799616",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:35:30.020Z"
+}

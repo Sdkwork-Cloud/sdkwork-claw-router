@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-ad-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_ad_generator",
+  "skill": {
+    "id": 57410,
+    "skillKey": "clawhub-auto-ad-generator",
+    "name": "自动广告生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-ad-generator",
+    "url": "https://clawhub.ai/skills/auto-ad-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-ad-generator-4350e1e782db55ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional advertisement posters for multiple industries including automotive, cultural tourism, fragrance, tea, and more. Create commercial layou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snakeruru",
+      "userId": "s176teadca1szgt8ypa72q5cr5847vng",
+      "displayName": "snakeruru",
+      "image": "https://avatars.githubusercontent.com/u/116704776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775467314044,
+      "changelog": "**Changelog v1.0.1**\n\n- Added `.github/workflows/ci.yml` to enable CI integration.\n- Added `.gitignore` to improve repository hygiene.\n- Declared required binaries (`python3`, `dreamina`) and environment variables (`DREAMINA_API_KEY`, `REMOVE_BG_API_KEY`) in skill metadata for clarity and dependency management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04d272f694e8798fee84e75ce8cbba90ee83bb480663340e183525e1b80614aa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45396,
+  "uuid": "skill-clawhub-gemini-browser-image",
+  "skillKey": "clawhub-gemini-browser-image",
+  "name": "Gemini Browser Image",
+  "summary": "Generate images with the user's own Chrome session and Gemini web UI. Use for article covers, illustrations, and social media visuals when the user explicitl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_browser_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiao1yin2he3",
+      "features": [
+        "Generate images with the user's own Chrome session and Gemini web UI",
+        "Use for article covers, illustrations, and social media visuals when the user explicitl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-browser-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61444244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-browser-image",
+      "url": "https://clawhub.ai/skills/gemini-browser-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-browser-image",
+    "url": "https://clawhub.ai/skills/gemini-browser-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-browser-image-6cd1e1bed0a694c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-browser-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-browser-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f07faae35345b51a976b34919074625e17ae296d9a20161807cda5350b3cd572",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T01:55:32.020Z"
+}

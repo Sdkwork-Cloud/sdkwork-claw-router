@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70866,
+  "uuid": "skill-clawhub-xiaohongshu-title-generator",
+  "skillKey": "clawhub-xiaohongshu-title-generator",
+  "name": "小红书标题生成器",
+  "summary": "批量生成小红书爆款标题，支持多种模板和 emoji 自动添加",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_title_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising050708",
+      "features": [
+        "批量生成小红书爆款标题，支持多种模板和 emoji 自动添加"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-title-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78123001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-title-generator",
+      "url": "https://clawhub.ai/skills/xiaohongshu-title-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-title-generator",
+    "url": "https://clawhub.ai/skills/xiaohongshu-title-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-title-generator-7f245106e0a5b1dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-title-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-title-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e266010efd7a6bfe075c14de95c2e2f3ef653ffc458ba510242fd968914ba1a6",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:14:21.630Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/9ma-mata-human@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.9ma_mata_human",
+  "skill": {
+    "id": 73220,
+    "skillKey": "clawhub-9ma-mata-human",
+    "name": "九马免费对口型数字人"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "9ma-mata-human",
+    "url": "https://clawhub.ai/skills/9ma-mata-human",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/9ma-mata-human-3a7825e00fce82e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "这是一个免费生成对口型数字人对口型的工具, 工具安装需要下载二进制文件到电脑上，只需根据文本和性别生成数字人视频并返回一个下载链接"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalos-chen",
+      "userId": "s17e2pv1z3wnv8pbvj1gt7mp0n83g6t3",
+      "displayName": "kalos-chen",
+      "image": "https://avatars.githubusercontent.com/u/51595132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774323354766,
+      "changelog": "- Added support for both Windows and Linux environments for binary downloads and execution.\n- Updated download instructions to select appropriate binary based on the operating system.\n- Improved execution steps to specify separate commands for Windows and Linux.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61db0ea0672dfcda6ef5699767b2f6e726d63c9903959d1b7ab360ffc9edbdb6"
+}

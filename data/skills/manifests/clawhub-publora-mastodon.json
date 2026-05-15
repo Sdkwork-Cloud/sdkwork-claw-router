@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19792,
+  "uuid": "skill-clawhub-publora-mastodon",
+  "skillKey": "clawhub-publora-mastodon",
+  "name": "Publora Mastodon",
+  "summary": "Post or schedule content to Mastodon using the Publora API. Use this skill when the user wants to publish or schedule Mastodon posts via Publora.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_mastodon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Post or schedule content to Mastodon using the Publora API",
+        "Use this skill when the user wants to publish or schedule Mastodon posts via Publora."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora-mastodon@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora-mastodon",
+      "url": "https://clawhub.ai/skills/publora-mastodon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-mastodon",
+    "url": "https://clawhub.ai/skills/publora-mastodon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-mastodon-f3284815f1bda3ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora-mastodon@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-mastodon-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea4e02a5cd6247a4c5ea98793750852c92ad3427a331398230282a0640a0735e",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:45:18.288Z"
+}

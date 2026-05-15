@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68254,
+  "uuid": "skill-clawhub-united",
+  "skillKey": "clawhub-united",
+  "name": "United",
+  "summary": "提供联合航空航班搜索、预订、值机、航班管理及MileagePlus会员服务，支持里程兑换和贵宾室查询等功能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.united",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供联合航空航班搜索、预订、值机、航班管理及MileagePlus会员服务，支持里程兑换和贵宾室查询等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/united@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "united",
+      "url": "https://clawhub.ai/skills/united"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "united",
+    "url": "https://clawhub.ai/skills/united",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/united-ca52e7d1c18961a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/united@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-united-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc8ba5ed98ec02b17bd78dc4fd10f38d33d4a0e5e946a9028ae5f4846040eb19",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:28:09.402Z"
+}

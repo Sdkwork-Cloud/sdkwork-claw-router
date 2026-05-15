@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-capcut@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_capcut",
+  "skill": {
+    "id": 47887,
+    "skillKey": "clawhub-generator-capcut",
+    "name": "Generator Capcut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-capcut",
+    "url": "https://clawhub.ai/skills/generator-capcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-capcut-682d3fc3c5df5ce2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second raw video clip into 1080p edited video clips just by typing what you need. Whether it's generating CapCut-style videos with effects and text..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777394472245,
+      "changelog": "Generator CapCut 1.0.0 — Initial Release\n\n- Instantly generate CapCut-style edited videos (1080p, with effects, text, BGM) from raw clips in 30-60 seconds.\n- Seamless cloud workflow: upload clip, describe your desired edits, and download the result—no manual timeline editing or export config.\n- Automatic setup: creates a cloud session and acquires a free-use token if not detected.\n- Supports batch and iterative editing with session state for refining results.\n- Provides real-time status, credit checks, export, and troubleshooting for uploads (max 500MB, most standard formats).\n- All API requests include required attribution headers for correct operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43a7f56bd3a70bbbccdea57ed73196ac54d18918cc882a0c905bf139b817c638"
+}

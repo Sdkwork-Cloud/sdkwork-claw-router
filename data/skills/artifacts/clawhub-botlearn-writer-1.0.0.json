@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlearn-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_writer",
+  "skill": {
+    "id": 20919,
+    "skillKey": "clawhub-botlearn-writer",
+    "name": "botlearn-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-writer",
+    "url": "https://clawhub.ai/skills/botlearn-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-writer-ce9844d3cf9317d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produces well-structured, evidence-based articles with clear theses, diverse support, consistent style, and optimized topic coverage for target audiences."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvinxhk",
+      "userId": "s170r0gdb982qwb1dm5b48fsb183mz8n",
+      "displayName": "邢怀康",
+      "image": "https://avatars.githubusercontent.com/u/32790342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772364293625,
+      "changelog": "Initial release of the \"writer\" skill.\n\n- Provides structured, evidence-based article writing on demand.\n- Integrates research summarization and keyword extraction to optimize coverage and SEO.\n- Ensures every article has a clear thesis, diversified supporting evidence, and consistent style throughout.\n- Adapts structure and voice to the topic, audience, and publication context.\n- Enforces strict quality constraints for argument progression, evidence use, and purpose-driven content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7333fbf7709d5d5f3c944fd0e54b52efa6f6cbbe8d1034a2d970c6fede1e19c8"
+}

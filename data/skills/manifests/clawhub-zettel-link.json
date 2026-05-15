@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18366,
+  "uuid": "skill-clawhub-zettel-link",
+  "skillKey": "clawhub-zettel-link",
+  "name": "Zettel Link",
+  "summary": "This skill maintains the Note Embeddings for Zettelkasten, to search notes, retrieve notes, and discover connections between notes.",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zettel_link",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaoyu Kevin Hu",
+      "features": [
+        "This skill maintains the Note Embeddings for Zettelkasten, to search notes, retrieve notes, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zettel-link@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3738091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zettel-link",
+      "url": "https://clawhub.ai/skills/zettel-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zettel-link",
+    "url": "https://clawhub.ai/skills/zettel-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zettel-link-d7d00a3d6d9268e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zettel-link@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-zettel-link-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:707c1affad831a971f3383f22add6435a3fb7f23b383b276412685f801a14431",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:32:55.391Z"
+}

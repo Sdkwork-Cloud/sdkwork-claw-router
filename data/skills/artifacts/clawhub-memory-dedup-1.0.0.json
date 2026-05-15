@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-dedup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_dedup",
+  "skill": {
+    "id": 20628,
+    "skillKey": "clawhub-memory-dedup",
+    "name": "Memory Deduplication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-dedup",
+    "url": "https://clawhub.ai/skills/memory-dedup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-dedup-55454c0fe229846b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically identify, merge, and clean duplicate or outdated entries in MEMORY.md to maintain concise, organized, and up-to-date information."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidadong2359",
+      "userId": "publishers:weidadong2359",
+      "displayName": "ceelo",
+      "image": "https://avatars.githubusercontent.com/u/111347656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772325895966,
+      "changelog": "初始版本：记忆去重与合并，自动识别并合并重复内容，保持MEMORY.md清洁",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d665a879e3e2750c42a59f6463ae067a78119215709a6b52cfadf7408cc7631"
+}

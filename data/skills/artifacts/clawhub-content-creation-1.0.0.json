@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-creation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creation",
+  "skill": {
+    "id": 68375,
+    "skillKey": "clawhub-content-creation",
+    "name": "自媒体内容创作大师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creation",
+    "url": "https://clawhub.ai/skills/content-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creation-b3b99b749eab0104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "部署内容创作Agent团队（墨白主编+探风选题+锦书文案），平台无关的内容生产核心。使用 /content-creation 触发，交互式引导配置品牌信息并自动部署。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "little-ke",
+      "userId": "s178xfv6xqv6bf6e5bhptm9sd183h3zx",
+      "displayName": "Little-ke",
+      "image": "https://avatars.githubusercontent.com/u/61963028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774196520422,
+      "changelog": "content-creation 1.0.0\n\n- 新增一键部署内容创作团队（墨白主编、探风选题、锦书文案），适用于多平台内容生产。\n- 采用交互式引导，分三轮收集品牌与创作需求，自动整理信息。\n- 自动创建目录结构和用户文档，并依次注册三大内容 Agent。\n- 提供部署进度、结构化报告及后续使用指引。\n- 完善安装检查和错误处理，最大化操作友好性与幂等性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:789449027a1251da4e83a3cbb93dc6e596ec542463dc36f31d13aba7914749c6"
+}

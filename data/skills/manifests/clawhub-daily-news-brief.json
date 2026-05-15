@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69040,
+  "uuid": "skill-clawhub-daily-news-brief",
+  "skillKey": "clawhub-daily-news-brief",
+  "name": "Daily News Brief",
+  "summary": "每天早上8点自动搜集并发布国际时事、经济形势、科技发展新闻的skill。基于历史模式和近期国际动向（如特朗普即将访华等），提供专业的新闻简报。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zwang2sz",
+      "features": [
+        "每天早上8点自动搜集并发布国际时事、经济形势、科技发展新闻的skill。基于历史模式和近期国际动向（如特朗普即将访华等），提供专业的新闻简报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-brief@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224695467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-brief",
+      "url": "https://clawhub.ai/skills/daily-news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-brief",
+    "url": "https://clawhub.ai/skills/daily-news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-brief-4dba4644a733b534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-brief@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-brief-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d88febbef209bb7bab03e198fe3ce9c3b517344cb82b920f6e7680b1ea39152b",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:31:33.816Z"
+}

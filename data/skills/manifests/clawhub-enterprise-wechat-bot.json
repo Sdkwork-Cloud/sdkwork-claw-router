@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62541,
+  "uuid": "skill-clawhub-enterprise-wechat-bot",
+  "skillKey": "clawhub-enterprise-wechat-bot",
+  "name": "Wechat Automation",
+  "summary": "企业微信自动化工具，支持通过Webhook发送文本和Markdown消息，群消息推送及定时任务管理。",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_wechat_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "企业微信自动化工具，支持通过Webhook发送文本和Markdown消息，群消息推送及定时任务管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-wechat-bot@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-wechat-bot",
+      "url": "https://clawhub.ai/skills/enterprise-wechat-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-wechat-bot",
+    "url": "https://clawhub.ai/skills/enterprise-wechat-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-wechat-bot-8c0d54b6c3ab77b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-wechat-bot@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-wechat-bot-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02a0fae75c4cc7f97b29c7f964e85fa82ce1efe5b1709917384b5f3eb23d3b79",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T04:19:15.048Z"
+}

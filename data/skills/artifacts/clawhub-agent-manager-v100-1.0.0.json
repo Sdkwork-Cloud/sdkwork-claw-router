@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-manager-v100@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_manager_v100",
+  "skill": {
+    "id": 47388,
+    "skillKey": "clawhub-agent-manager-v100",
+    "name": "Agents-Manager-and-IM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-manager-v100",
+    "url": "https://clawhub.ai/skills/agent-manager-v100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-manager-v100-4e4ec6534399634a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Agent conversation management platform with Gemini-style UI. Manage all your OpenClaw agents in one place with image upload, chat history, and message..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "szzg007",
+      "userId": "s175ybwegnb0z4bbpdvtvmfdqh843yjk",
+      "displayName": "szzg007",
+      "image": "https://avatars.githubusercontent.com/u/3382996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773078324523,
+      "changelog": "A skill featuring a user interface that enables direct interaction with the Agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f51343379ac8af994046805c1ffbd17558153859ee3fd9a03def83f5ef6aeff"
+}

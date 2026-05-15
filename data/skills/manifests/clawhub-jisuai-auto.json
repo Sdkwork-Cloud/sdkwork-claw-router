@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59651,
+  "uuid": "skill-clawhub-jisuai-auto",
+  "skillKey": "clawhub-jisuai-auto",
+  "name": "jisuai-auto",
+  "summary": "一键配置 OpenClaw 对接 aicodee.com MiniMax 模型中转服务。当用户需要配置、设置、激活 aicodee 的 MiniMax API 时触发。触发词：jisuai-auto、配置jisuai、配置爱代码、配置MiniMax。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisuai_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "outRice",
+      "features": [
+        "一键配置 OpenClaw 对接 aicodee.com MiniMax 模型中转服务。当用户需要配置、设置、激活 aicodee 的 MiniMax API 时触发。触发词：jisuai-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisuai-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20294997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisuai-auto",
+      "url": "https://clawhub.ai/skills/jisuai-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisuai-auto",
+    "url": "https://clawhub.ai/skills/jisuai-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisuai-auto-8aa1562774f61fff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisuai-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisuai-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4eefa9a66b18dfbe9906aacc940a63b05f9249597bbd6a1c976aebaf5c94309",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:31:51.798Z"
+}

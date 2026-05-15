@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46744,
+  "uuid": "skill-clawhub-learning-aggregator",
+  "skillKey": "clawhub-learning-aggregator",
+  "name": "learning-aggregator",
+  "summary": "[Beta] Cross-session analysis of accumulated .learnings/ files. Reads all entries, groups by pattern_key, computes recurrence across sessions, and outputs ra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pskoett",
+      "features": [
+        "[Beta] Cross-session analysis of accumulated .learnings/ files",
+        "Reads all entries, groups by pattern_key, computes recurrence across sessions, and outputs ra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177305814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-aggregator",
+      "url": "https://clawhub.ai/skills/learning-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-aggregator",
+    "url": "https://clawhub.ai/skills/learning-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-aggregator-cd77867e3b384cfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf3cc7530b79a55d6c7478b140f07cd835df23f4648c2550778cb715b00c37fe",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:18:28.141Z"
+}

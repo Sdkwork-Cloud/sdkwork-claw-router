@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19536,
+  "uuid": "skill-clawhub-clawguarddevin",
+  "skillKey": "clawhub-clawguarddevin",
+  "name": "Devin Floyd",
+  "summary": "Security scanner for OpenClaw/Clawdbot skills - detect malicious patterns before installation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguarddevin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Devin Floyd",
+      "features": [
+        "Security scanner for OpenClaw/Clawdbot skills",
+        "detect malicious patterns before installation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguarddevin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85371107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguarddevin",
+      "url": "https://clawhub.ai/skills/clawguarddevin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguarddevin",
+    "url": "https://clawhub.ai/skills/clawguarddevin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguarddevin-88c68b04200fd7e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguarddevin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguarddevin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8961a2244fe2d6778844207236b0063d3ec5c3419d9f3cc4ce6767d811de61e",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T20:51:15.529Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69714,
+  "uuid": "skill-clawhub-smart-ledger",
+  "skillKey": "clawhub-smart-ledger",
+  "name": "Smart Ledger",
+  "summary": "智能收支追踪器 — 通过自然语言快速记账，自动分类，生成日/周/月报告和趋势分析。 支持中文自然语言输入(\"今天午饭花了35元\")，数据本地JSON存储保护隐私。 适用于个人财务管理、预算追踪和消费分析场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_ledger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dyby99-gif",
+      "features": [
+        "智能收支追踪器 — 通过自然语言快速记账，自动分类，生成日/周/月报告和趋势分析。 支持中文自然语言输入(\"今天午饭花了35元\")，数据本地JSON存储保护隐私。 适用于个人财务管理、预算追."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-ledger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257656835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-ledger",
+      "url": "https://clawhub.ai/skills/smart-ledger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-ledger",
+    "url": "https://clawhub.ai/skills/smart-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-ledger-1f7d5374ba86e3ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-ledger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-ledger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09b2422de6056e60518c65c309ddcc7f8061a50a1f62562b6b6e3868b08349ea",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:04:00.781Z"
+}

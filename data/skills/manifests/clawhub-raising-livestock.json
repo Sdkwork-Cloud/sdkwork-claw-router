@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37110,
+  "uuid": "skill-clawhub-raising-livestock",
+  "skillKey": "clawhub-raising-livestock",
+  "name": "Raising Livestock",
+  "summary": "Practical small livestock management starting with chickens and progressing to goats. Use when someone wants to raise chickens for eggs, keep goats for milk...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raising_livestock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Practical small livestock management starting with chickens and progressing to goats",
+        "Use when someone wants to raise chickens for eggs, keep goats for milk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raising-livestock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raising-livestock",
+      "url": "https://clawhub.ai/skills/raising-livestock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raising-livestock",
+    "url": "https://clawhub.ai/skills/raising-livestock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raising-livestock-a1abcd45a0ba26b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raising-livestock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raising-livestock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8717ab97e00bddcdd9dbaccb7425503f7bcbc25be50c70d0e2e3d07516f5f208",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T20:35:59.023Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icosmos-shopify@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icosmos_shopify",
+  "skill": {
+    "id": 62713,
+    "skillKey": "clawhub-icosmos-shopify",
+    "name": "icosmos shopify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icosmos-shopify",
+    "url": "https://clawhub.ai/skills/icosmos-shopify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icosmos-shopify-1937b1ab0a71cde4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopify 店铺运营/诊断技能：从 Supabase 拉取店铺域名与 token，做装修/产品/结账/指标异常检测，并支持发布引流博文（唯一写操作）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taceywong",
+      "userId": "s171s4hhp24nh04nx1spgp6mdd83jzmj",
+      "displayName": "王新勇(Tacey Wong)",
+      "image": "https://avatars.githubusercontent.com/u/5282810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773759859835,
+      "changelog": "Initial release of icosmos-shopify: Shopify store operation and diagnostics tool.\n\n- Provides read-only diagnostic capabilities for store auditing, theme/product checks, checkout testing, and metrics monitoring.\n- Only write action is publishing Shopify blog posts, requires explicit --confirm flag.\n- Syncs store domains and tokens from Supabase at setup.\n- Outputs data in a unified JSON structure for OpenClaw; sensitive data is masked by default.\n- Includes robust error handling and security boundaries for safe diagnostics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf928ca259926d29a44cbd9a9486e740f52ad7e2c184783d30c68c9008af44d6"
+}

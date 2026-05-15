@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21643,
+  "uuid": "skill-clawhub-tearsheet-generator",
+  "skillKey": "clawhub-tearsheet-generator",
+  "name": "Tearsheet Generator",
+  "summary": "Generate professional tearsheets with custom SVG visualizations using the QuantStats library. Creates performance reports with MAE analysis, leverage recomme...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tearsheet_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dan Repaci",
+      "features": [
+        "Generate professional tearsheets with custom SVG visualizations using the QuantStats library",
+        "Creates performance reports with MAE analysis, leverage recomme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tearsheet-generator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99930580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tearsheet-generator",
+      "url": "https://clawhub.ai/skills/tearsheet-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tearsheet-generator",
+    "url": "https://clawhub.ai/skills/tearsheet-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tearsheet-generator-20b824b526170918.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tearsheet-generator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tearsheet-generator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:138a08eef6c0e5eea2c3efdd4cae1c1e7be9b8d0b5f5f8a846de6e1764fd8f85",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:46:33.510Z"
+}

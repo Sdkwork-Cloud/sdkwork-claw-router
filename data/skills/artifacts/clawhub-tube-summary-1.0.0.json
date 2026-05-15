@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tube-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tube_summary",
+  "skill": {
+    "id": 10183,
+    "skillKey": "clawhub-tube-summary",
+    "name": "tube-summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tube-summary",
+    "url": "https://clawhub.ai/skills/tube-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tube-summary-1319d0dd5e4e3b3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search YouTube videos on any topic, extract English subtitles, and generate detailed summaries with key topics, quotes, and timestamps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dillera",
+      "userId": "publishers:dillera",
+      "displayName": "dillera",
+      "image": "https://avatars.githubusercontent.com/u/123479?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2647,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769653406198,
+      "changelog": "Search YouTube videos and extract/summarize subtitles for any topic. Workflow: search → pick video → download subs → analyze and provide key topics, summary, quotes, and notable moments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6db0d0c239eea13e45b8799f868ca809c67063fdb2cbfe2fca6b182f3a67d3a2"
+}

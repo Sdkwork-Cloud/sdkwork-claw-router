@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19620,
+  "uuid": "skill-clawhub-dogfood",
+  "skillKey": "clawhub-dogfood",
+  "name": "Dogfood",
+  "summary": "Systematically explore and test a web application to find bugs, UX issues, and other problems. Use when asked to \"dogfood\", \"QA\", \"exploratory test\", \"find i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dogfood",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thedalbee",
+      "features": [
+        "Systematically explore and test a web application to find bugs, UX issues, and other problems",
+        "Use when asked to \"dogfood\", \"QA\", \"exploratory test\", \"find i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dogfood@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262329684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dogfood",
+      "url": "https://clawhub.ai/skills/dogfood"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dogfood",
+    "url": "https://clawhub.ai/skills/dogfood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dogfood-e674f78d2bf55fd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dogfood@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dogfood-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c1e7de8b1b0130724ef26fcaade242b9c322fc03db62b37fe4bc537ce3e535b",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:24:17.094Z"
+}

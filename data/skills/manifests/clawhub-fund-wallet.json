@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28500,
+  "uuid": "skill-clawhub-fund-wallet",
+  "skillKey": "clawhub-fund-wallet",
+  "name": "Fund Wallet",
+  "summary": "Add funds to the wallet. Use when you or the user want to fund, deposit, top up, load, add funds, onramp, buy crypto, or get tokens into the wallet. Also use...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rachid Jarray",
+      "features": [
+        "Add funds to the wallet",
+        "Use when you or the user want to fund, deposit, top up, load, add funds, onramp, buy crypto, or.",
+        "Also use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-wallet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111736103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-wallet",
+      "url": "https://clawhub.ai/skills/fund-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-wallet",
+    "url": "https://clawhub.ai/skills/fund-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-wallet-739fbc9fc452e0e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-wallet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-wallet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7f1c63dc8d72def03cc0a089db684963866a01bab66020545e8de575f401361",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T04:47:50.985Z"
+}

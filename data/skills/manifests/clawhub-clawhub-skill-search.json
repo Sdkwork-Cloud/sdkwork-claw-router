@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57860,
+  "uuid": "skill-clawhub-clawhub-skill-search",
+  "skillKey": "clawhub-clawhub-skill-search",
+  "name": "Clawhub Skill Search",
+  "summary": "Use this skill when users need help finding, discovering, or selecting OpenClaw skills from the Clawhub marketplace. Triggers include: '哪个技能适合', '怎么找到', '技能搜...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roma",
+      "features": [
+        "Use this skill when users need help finding, discovering, or selecting OpenClaw skills from the.",
+        "Triggers include: '哪个技能适合', '怎么找到', '技能搜..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105550312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-search",
+      "url": "https://clawhub.ai/skills/clawhub-skill-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-search",
+    "url": "https://clawhub.ai/skills/clawhub-skill-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-search-092f870878d2a174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc97c6e85d65190026b2742acb66ecf3cb42175f2ff14eb9a67747189ab07b01",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:33:29.136Z"
+}

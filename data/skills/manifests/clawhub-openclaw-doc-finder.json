@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64100,
+  "uuid": "skill-clawhub-openclaw-doc-finder",
+  "skillKey": "clawhub-openclaw-doc-finder",
+  "name": "OpenClaw Doc Finder",
+  "summary": "OpenClaw 文档检索专家。当用户询问 OpenClaw 配置、维护、故障排除、通道接入、技能安装、模型配置等问题时使用。支持快速定位官方文档、给出精确 URL 和关键命令。高价值触发场景包括：（1）配置 gateway、channels、plugins；（2）排查连接/认证/权限问题；（3）安装/管理技能（...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doc_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mslclaw",
+      "features": [
+        "OpenClaw 文档检索专家。当用户询问 OpenClaw 配置、维护、故障排除、通道接入、技能安装、模型配置等问题时使用。支持快速定位官方文档、给出精确 URL 和关键命令。高价值触发场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-doc-finder@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265845934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-doc-finder",
+      "url": "https://clawhub.ai/skills/openclaw-doc-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doc-finder",
+    "url": "https://clawhub.ai/skills/openclaw-doc-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doc-finder-f316f9559aeb0aa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-doc-finder@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-doc-finder-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d17055f952c5fae2deb7ce4c6451ea338056abf2711776ed5af7818470cdab1",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:47:10.603Z"
+}

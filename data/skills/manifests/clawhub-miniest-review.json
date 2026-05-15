@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70669,
+  "uuid": "skill-clawhub-miniest-review",
+  "skillKey": "clawhub-miniest-review",
+  "name": "Minimalist Review",
+  "summary": "通过极简主义创业者框架审查任何业务决策、计划或策略。 当有人想对业务决策进行直觉检验、想简化方法，或需要在选项之间做决定时使用。 核心：用8个原则检验任何决策。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniest_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ethan-china",
+      "features": [
+        "通过极简主义创业者框架审查任何业务决策、计划或策略。 当有人想对业务决策进行直觉检验、想简化方法，或需要在选项之间做决定时使用。 核心：用8个原则检验任何决策。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miniest-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272385452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miniest-review",
+      "url": "https://clawhub.ai/skills/miniest-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniest-review",
+    "url": "https://clawhub.ai/skills/miniest-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniest-review-7c52585b89c8a8c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miniest-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miniest-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96ab34fb8c9e791f430b6f134ac03cb4a0cab5bf136a2f912a28a85122b7f57c",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:04:08.390Z"
+}

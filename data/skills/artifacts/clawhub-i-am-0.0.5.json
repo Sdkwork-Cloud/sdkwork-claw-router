@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/i-am@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i_am",
+  "skill": {
+    "id": 20231,
+    "skillKey": "clawhub-i-am",
+    "name": "i-am"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i-am",
+    "url": "https://clawhub.ai/skills/i-am",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i-am-5b9462af844b8ee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple personality analysis. Consolidated SKILL.md with embedded code. AI-guided installation and IM-adaptive file sending."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "designer-awei",
+      "userId": "publishers:designer-awei",
+      "displayName": "Designer-Awei",
+      "image": "https://avatars.githubusercontent.com/u/200909454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1773420055030,
+      "changelog": "# i-am v0.0.5 changelog\n\n- Updated installation workflow: now only the temp directory and `ChangeLog.md` file are created at setup (USER.md initial backup to be handled by future analysis steps)\n- Refined setup code and instructions for file and folder management during installation\n- No changes to analysis logic or user interaction flow\n- Documentation clarified to match actual initialization and backup behavior",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae45555eaf20c95ad6332ab2b90b8aea199a864188e389ecb0b859f2c7c6758d"
+}

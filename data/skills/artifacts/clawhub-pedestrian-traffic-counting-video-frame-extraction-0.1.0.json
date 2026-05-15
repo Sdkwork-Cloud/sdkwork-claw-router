@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pedestrian-traffic-counting-video-frame-extraction@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pedestrian_traffic_counting_video_frame_extraction",
+  "skill": {
+    "id": 44285,
+    "skillKey": "clawhub-pedestrian-traffic-counting-video-frame-extraction",
+    "name": "video-frame-extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pedestrian-traffic-counting-video-frame-extraction",
+    "url": "https://clawhub.ai/skills/pedestrian-traffic-counting-video-frame-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pedestrian-traffic-counting-video-frame-extraction-d3eb09e6d7e84426.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract frames from video files and save them as images using OpenCV"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnj22",
+      "userId": "s17d639v6hjv5h7zr9b9h1s1ed84v9vq",
+      "displayName": "lnj22",
+      "image": "https://avatars.githubusercontent.com/u/234027299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776263851088,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f194f873e239918f8971260b67c061b48776283c7359fd2044f31521a423feea"
+}

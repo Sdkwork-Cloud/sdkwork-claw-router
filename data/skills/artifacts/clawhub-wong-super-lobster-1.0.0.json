@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wong-super-lobster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wong_super_lobster",
+  "skill": {
+    "id": 65641,
+    "skillKey": "clawhub-wong-super-lobster",
+    "name": "Super Lobster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wong-super-lobster",
+    "url": "https://clawhub.ai/skills/wong-super-lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wong-super-lobster-ff2e76bea6e9338c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🦞 Super Lobster | 超级龙虾 - 桥哥的私人 AI 助理 整合了飞书文档管理、会议纪要整理、每日待办推送、工作模块分类等核心技能。 能够自动读取会议纪要、按工作模块分类整理待办事项、创建飞书文档并推送。 核心能力： - 📄 飞书文档创建（支持 100+ blocks 大文档） - 📋 会议纪..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ybridge",
+      "userId": "s17934zznz02gz0y94rkzcgdxn84as6h",
+      "displayName": "YBridge",
+      "image": "https://avatars.githubusercontent.com/u/45400384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775485761122,
+      "changelog": "Super Lobster v1.0.0 - Initial Release\n\n- 全面重构为飞书高效工作助手，聚焦文档管理、会议纪要整理、每日待办推送与自动分类。\n- 新增支持百块飞书文档自动生成、待办与会议纪要智能抓取、分类与自动推送。\n- 增强飞书权限管理、定时任务和多模板支持。\n- 移除原有通用网络爬取与脚本工具，全面切换为飞书场景与生产力自动化。\n- 补充详实 API 参数用法、模板与最佳实践文档。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4edef49ab02345a5029b7d9715617741113c6e98753936df6191ddfc455e8ce2"
+}

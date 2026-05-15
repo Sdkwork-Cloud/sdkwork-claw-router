@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linuxdo-application@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linuxdo_application",
+  "skill": {
+    "id": 56140,
+    "skillKey": "clawhub-linuxdo-application",
+    "name": "Linux.do Application Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linuxdo-application",
+    "url": "https://clawhub.ai/skills/linuxdo-application",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linuxdo-application-876b820cc4f9bdac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Craft high-pass-rate, de-AI'd Chinese applications (小作文) for Linux.do registration. Conducts an adaptive survey to learn the applicant's real background, the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarezoe",
+      "userId": "s178sk484g47vwcbvvfcjpftfx8461fz",
+      "displayName": "clarezoe",
+      "image": "https://avatars.githubusercontent.com/u/460084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776339615081,
+      "changelog": "Initial release: adaptive survey + de-AI'd Chinese application generator for Linux.do registration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a3f6f8354a28fe8fdd9617914c5bbf60d1f22d97752cbabff7aef6c385d71f7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72866,
+  "uuid": "skill-clawhub-ucap-sensitive-check",
+  "skillKey": "clawhub-ucap-sensitive-check",
+  "name": "错敏信息检测",
+  "summary": "通过调用UCAP安全接口，检测文本或网页内容中的多种敏感信息，支持智能静态和动态抓取模式，保障数据合规。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucap_sensitive_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1227323804",
+      "features": [
+        "通过调用UCAP安全接口，检测文本或网页内容中的多种敏感信息，支持智能静态和动态抓取模式，保障数据合规。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ucap-sensitive-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43328708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ucap-sensitive-check",
+      "url": "https://clawhub.ai/skills/ucap-sensitive-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucap-sensitive-check",
+    "url": "https://clawhub.ai/skills/ucap-sensitive-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucap-sensitive-check-9857fa16546456f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ucap-sensitive-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ucap-sensitive-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2925cb34ed3ba1901c578ee76b46768689f1e00658dd2d9ee4a124057a44061",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T02:23:58.095Z"
+}

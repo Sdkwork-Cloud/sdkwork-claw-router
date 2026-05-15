@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12395,
+  "uuid": "skill-clawhub-openclaw-doctor-pro",
+  "skillKey": "clawhub-openclaw-doctor-pro",
+  "name": "Oc",
+  "summary": "Comprehensive diagnostic, error-fixing, and skill recommendation tool for OpenClaw",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_doctor_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhenixStar",
+      "features": [
+        "Comprehensive diagnostic, error-fixing, and skill recommendation tool for OpenClaw"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-doctor-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14149927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-doctor-pro",
+      "url": "https://clawhub.ai/skills/openclaw-doctor-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-doctor-pro",
+    "url": "https://clawhub.ai/skills/openclaw-doctor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-doctor-pro-b45f9e9daa9bd092.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-doctor-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-doctor-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa400a6c0755983157f6bfa5083bb5b04be8caa5ede6fbb9aca8cdd0f7259aa1",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T02:21:50.439Z"
+}

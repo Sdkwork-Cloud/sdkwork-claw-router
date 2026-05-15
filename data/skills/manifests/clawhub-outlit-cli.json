@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22191,
+  "uuid": "skill-clawhub-outlit-cli",
+  "skillKey": "clawhub-outlit-cli",
+  "name": "Outlit Cli",
+  "summary": "Use when running Outlit CLI commands, setting up Outlit for AI agents, authenticating with Outlit, querying customer data from the terminal, or troubleshooti...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlit_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rafael Thayto",
+      "features": [
+        "Use when running Outlit CLI commands, setting up Outlit for AI agents, authenticating with Outl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlit-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26434195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlit-cli",
+      "url": "https://clawhub.ai/skills/outlit-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlit-cli",
+    "url": "https://clawhub.ai/skills/outlit-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlit-cli-499391a9d59b8d3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlit-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlit-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba9f9ff9c104b2952f10ba973c2b6a1e1080ec491509542552beb746772ed650",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T20:02:45.480Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13820,
+  "uuid": "skill-clawhub-dividend-growth-pullback-screener",
+  "skillKey": "clawhub-dividend-growth-pullback-screener",
+  "name": "Dividend Growth Pullback Screener",
+  "summary": "Use this skill to find high-quality dividend growth stocks (12%+ annual dividend growth, 1.5%+ yield) that are experiencing temporary pullbacks, identified by RSI oversold conditions (RSI ≤40). This skill combines fundamental dividend anal.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dividend_growth_pullback_screener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Use this skill to find high-quality dividend growth stocks (12%+ annual dividend growth, 1.5%+.",
+        "This skill combines fundamental dividend analysis with technical timing indicators to identify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dividend-growth-pullback-screener@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dividend-growth-pullback-screener",
+      "url": "https://clawhub.ai/skills/dividend-growth-pullback-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dividend-growth-pullback-screener",
+    "url": "https://clawhub.ai/skills/dividend-growth-pullback-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dividend-growth-pullback-screener-3c461b492e8acd74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dividend-growth-pullback-screener@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dividend-growth-pullback-screener-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e82eb80490359575eb7487f042ac1e68b344e0f870d30292c508632e41b8d8f6",
+      "artifactSizeBytes": 2716
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:34:05.357Z"
+}

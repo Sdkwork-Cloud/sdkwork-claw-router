@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34248,
+  "uuid": "skill-clawhub-searxng-search-cli",
+  "skillKey": "clawhub-searxng-search-cli",
+  "name": "SearXNG Search CLI (Free, Self-hosted, Auto-deploy, Multi-Channel)",
+  "summary": "Use self-hosted SearXNG search engine (Free, Self-hosted, Auto-deploy, Multi-Channel). SearXNG is a free meta search engine that aggregates 200+ search engin...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_search_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kinema.",
+      "features": [
+        "Use self-hosted SearXNG search engine (Free, Self-hosted, Auto-deploy, Multi-Channel)",
+        "SearXNG is a free meta search engine that aggregates 200+ search engin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searxng-search-cli@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54445332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searxng-search-cli",
+      "url": "https://clawhub.ai/skills/searxng-search-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-search-cli",
+    "url": "https://clawhub.ai/skills/searxng-search-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-search-cli-37b57f1b08c9e507.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searxng-search-cli@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-searxng-search-cli-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:722977ceb5a6b7f1dd52eba2c77e2e156e328d795a0c32298d9a1d7da390e876",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:16:35.567Z"
+}

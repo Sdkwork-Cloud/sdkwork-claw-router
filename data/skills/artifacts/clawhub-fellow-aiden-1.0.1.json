@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fellow-aiden@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fellow_aiden",
+  "skill": {
+    "id": 19545,
+    "skillKey": "clawhub-fellow-aiden",
+    "name": "Fellow Aiden Precision Coffee Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fellow-aiden",
+    "url": "https://clawhub.ai/skills/fellow-aiden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fellow-aiden-5a72ab8ac377bd5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control your Fellow Aiden smart coffee brewer via AI assistant. Manage brew profiles, view brewer status, create and tweak recipes, add shared brew links, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mogglemoss",
+      "userId": "publishers:mogglemoss",
+      "displayName": "Mogglemoss",
+      "image": "https://avatars.githubusercontent.com/u/10966195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771781845553,
+      "changelog": "The Fellow API changed — profiles and schedules are no longer embedded in the device response. The library is expecting parsed[0]['profiles'] but that key doesn't exist anymore.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:112c28440315217d717b7d0c77436652d481d275bc08fb86706a5b0e3019a2ee"
+}

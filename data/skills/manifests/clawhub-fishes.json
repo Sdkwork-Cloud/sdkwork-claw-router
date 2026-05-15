@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40689,
+  "uuid": "skill-clawhub-fishes",
+  "skillKey": "clawhub-fishes",
+  "name": "japan fish recipe search",
+  "summary": "Search 300 Japan fish & seafood recipes from Cookpad. Use when user asks about fish recipes, seafood dishes, Japanese fish cooking, or wants to find recipes...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fishes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Search 300 Japan fish & seafood recipes from Cookpad",
+        "Use when user asks about fish recipes, seafood dishes, Japanese fish cooking, or wants to find."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fishes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fishes",
+      "url": "https://clawhub.ai/skills/fishes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fishes",
+    "url": "https://clawhub.ai/skills/fishes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fishes-9fd13a8c6c17da6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fishes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fishes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0765ce1df40c5d2e292889f4bd202ef429cbf1481cc6a0aff07bf08973dbeb07",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:23:45.410Z"
+}

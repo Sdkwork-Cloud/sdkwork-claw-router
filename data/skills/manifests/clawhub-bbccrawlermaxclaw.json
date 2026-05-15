@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21805,
+  "uuid": "skill-clawhub-bbccrawlermaxclaw",
+  "skillKey": "clawhub-bbccrawlermaxclaw",
+  "name": "test_skill",
+  "summary": "Web crawler using BFS and anti-scraping to extract and save structured BBC and general news content in Markdown with multi-site and dedup support.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbccrawlermaxclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felixopt17",
+      "features": [
+        "Web crawler using BFS and anti-scraping to extract and save structured BBC and general news con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bbccrawlermaxclaw@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31496933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bbccrawlermaxclaw",
+      "url": "https://clawhub.ai/skills/bbccrawlermaxclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbccrawlermaxclaw",
+    "url": "https://clawhub.ai/skills/bbccrawlermaxclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbccrawlermaxclaw-98a3f2c8393911a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bbccrawlermaxclaw@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-bbccrawlermaxclaw-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a02b1a961df15815c6ef065d940ba8ff339164a5c6057f59e5eac33653788fa",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:41:55.223Z"
+}

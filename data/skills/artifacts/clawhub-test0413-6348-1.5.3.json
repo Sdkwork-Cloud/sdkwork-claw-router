@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test0413-6348@1.5.3",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test0413_6348",
+  "skill": {
+    "id": 40902,
+    "skillKey": "clawhub-test0413-6348",
+    "name": "test0413-6348"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test0413-6348",
+    "url": "https://clawhub.ai/skills/test0413-6348",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test0413-6348-b1e1e9a7068e98dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit + append-only logging + monitoring for OpenClaw skills (file-level diff, baseline approval, SHA-256 integrity)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucloud-sec",
+      "userId": "s17725g09nefvkq8yt04a3tb4n83hevg",
+      "displayName": "ucloud-securiry",
+      "image": "https://avatars.githubusercontent.com/u/78222203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.3",
+      "createdAt": 1776066817038,
+      "changelog": "Fork for publication test after compliance cleanup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e4edd1618ff29048542adc8c19a5030f73ae883c1959a313715d7e43769b484"
+}

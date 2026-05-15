@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-product-builder@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_product_builder",
+  "skill": {
+    "id": 38884,
+    "skillKey": "clawhub-digital-product-builder",
+    "name": "Digital Product Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-product-builder",
+    "url": "https://clawhub.ai/skills/digital-product-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-product-builder-e117acbc3be7d358.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and launch zero-cost digital products on Gumroad, itch.io, and DriveThruRPG. Use when creating cover images, asset sheets, or product listings. Generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sabroo3-commits",
+      "userId": "s172m5e7h81s6vr8w8892wsk4s83h2jb",
+      "displayName": "sabroo3-commits",
+      "image": "https://avatars.githubusercontent.com/u/266194833?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774385283237,
+      "changelog": "Cross-platform font discovery (Linux/macOS/Windows), improved Pillow install instructions, broader skill description for better agent triggering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81839a9ad0b7c2088abe98161eab91401d190df59662483dcbee5481cdceb686"
+}

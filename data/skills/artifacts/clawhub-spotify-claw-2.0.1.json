@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spotify-claw@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_claw",
+  "skill": {
+    "id": 14723,
+    "skillKey": "clawhub-spotify-claw",
+    "name": "Spotify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-claw",
+    "url": "https://clawhub.ai/skills/spotify-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-claw-1fa2bcdc961dedbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full Spotify Premium control + music analysis. Playback: play/pause/next/prev/volume/shuffle/queue. Analysis: top tracks, top artists, liked songs, genre pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mixx85",
+      "userId": "publishers:mixx85",
+      "displayName": "Mixx",
+      "image": "https://avatars.githubusercontent.com/u/16016631?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 953,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773696314318,
+      "changelog": "spotify-claw 2.0.1\n\n- Major SKILL.md rewrite with better structure, concise English instructions, and improved formatting\n- Clarified setup, playback, analysis, discovery, and playlist builder commands\n- New metadata: homepage link, emoji, install dependencies for OpenClaw\n- Updated triggers, clearer agent usage tips, and critical notes about blocked Spotify APIs\n- Now suitable and readable for all users, not just the original author",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf95cf98578ebedadce8eac97ab755595f8517a25d502c4a9cfc2a219da8bee"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viq-bc-optimiser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viq_bc_optimiser",
+  "skill": {
+    "id": 21567,
+    "skillKey": "clawhub-viq-bc-optimiser",
+    "name": "productOptimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viq-bc-optimiser",
+    "url": "https://clawhub.ai/skills/viq-bc-optimiser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viq-bc-optimiser-ae5ca56a7bc3c550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous BigCommerce product content optimizer. Bulk-update, rewrite, optimize, or generate product titles and descriptions on a BigCommerce store. Trigger..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veevortexiq",
+      "userId": "publishers:veevortexiq",
+      "displayName": "veevortexiq",
+      "image": "https://avatars.githubusercontent.com/u/183384871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 505,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772208225579,
+      "changelog": "Initial release of BigCommerce Content Optimizer.\n\n- Automates the bulk rewriting and optimization of product titles and descriptions on a BigCommerce store.\n- Manages the full workflow: fetches products page-by-page, generates improved content with SEO and HTML best practices, updates products, and tracks progress in real-time.\n- Requires only the BigCommerce store hash and API token to operate.\n- Includes robust progress tracking and error handling to ensure uninterrupted operation—processes all products in a single run unless an unrecoverable error occurs.\n- Supports seamless resumption from the last unfinished page using `progress.json`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:778b1dd30a6103bccef139ccb337af7d8731afd17bcc4d5c773096074b792006"
+}

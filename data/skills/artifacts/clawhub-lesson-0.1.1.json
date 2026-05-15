@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lesson@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lesson",
+  "skill": {
+    "id": 71692,
+    "skillKey": "clawhub-lesson",
+    "name": "Lesson"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lesson",
+    "url": "https://clawhub.ai/skills/lesson",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lesson-b78e58750d4f05fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成今日菜单推荐。根据用户手头的食材、口味偏好、人数和烹饪时间， 从内置食材库和菜谱库中智能匹配，输出完整的菜单方案和分步烹饪指南。 当用户提到\"今天吃什么\"\"做什么菜\"\"菜单\"\"菜谱推荐\"\"晚饭吃啥\"等意图时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yequanzheng",
+      "userId": "s177918deqfx02m7rdwh338scx83hcvp",
+      "displayName": "yequanzheng",
+      "image": "https://avatars.githubusercontent.com/u/107382370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773826355476,
+      "changelog": "Initial release of the daily-menu skill for personalized meal recommendations.\n\n- Generates daily menu suggestions based on available ingredients, taste preferences, number of diners, and cooking time.\n- Pulls from built-in ingredient and recipe references to match suitable dishes.\n- Outputs a full menu, ingredient prep list, step-by-step cooking guides, and a recommended cooking timeline.\n- Interactive follow-up: suggests swapping dishes, adding soups/salads, or providing more detailed recipes.\n- Friendly, conversational prompts with practical and clear instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eebcdda9f29043a78877ff5a1a540202f105159aae002b4c8e89c5f90fcb7952"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11653,
+  "uuid": "skill-clawhub-word",
+  "skillKey": "clawhub-word",
+  "name": "Word",
+  "summary": "Control Word app sessions, documents, selections, comments, export, and review state with osascript workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Control Word app sessions, documents, selections, comments, export, and review state with osasc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word",
+      "url": "https://clawhub.ai/skills/word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word",
+    "url": "https://clawhub.ai/skills/word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-98c1eb4ee9347674.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d39bb614b24e5012610989a2b99736f6e80a2492e2a313740e3c532276f006ea",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:01:57.663Z"
+}

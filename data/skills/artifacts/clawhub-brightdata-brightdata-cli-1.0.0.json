@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brightdata-brightdata-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brightdata_brightdata_cli",
+  "skill": {
+    "id": 56762,
+    "skillKey": "clawhub-brightdata-brightdata-cli",
+    "name": "Brightdata Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brightdata-brightdata-cli",
+    "url": "https://clawhub.ai/skills/brightdata-brightdata-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brightdata-brightdata-cli-94c73a831c5c346d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for using the Bright Data CLI (`brightdata` / `bdata`) to scrape websites, search the web, extract structured data from 40+ platforms, manage proxy zon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meirk-brd",
+      "userId": "s1785kqh67tb9awftjs3e67kds83ga1a",
+      "displayName": "Meir Kadosh",
+      "image": "https://avatars.githubusercontent.com/u/182499612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777381051641,
+      "changelog": "Initial publish from brightdata-plugin repo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b42e2a98c5a0b005d3f559261988a668a191cbf9f2004a898d70c204ae5f6c4"
+}

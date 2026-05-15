@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53417,
+  "uuid": "skill-clawhub-whisk",
+  "skillKey": "clawhub-whisk",
+  "name": "Whisk",
+  "summary": "Drop a video and describe the look you're after — Whisk reads your footage and remixes its visual style, pacing, and mood on the fly. Whether you want to tur...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Drop a video and describe the look you're after — Whisk reads your footage and remixes its visu.",
+        "Whether you want to tur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisk@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisk",
+      "url": "https://clawhub.ai/skills/whisk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisk",
+    "url": "https://clawhub.ai/skills/whisk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisk-19312273f4c0fc72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisk@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisk-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74bffde10041d182b15f10725bd9095839c469efe0676a08919fbd5c98964fbf",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:16:53.025Z"
+}

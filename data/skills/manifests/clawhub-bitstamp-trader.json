@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22254,
+  "uuid": "skill-clawhub-bitstamp-trader",
+  "skillKey": "clawhub-bitstamp-trader",
+  "name": "Bitstamp Trader",
+  "summary": "Safety-first Bitcoin and crypto trading on Bitstamp via CLI. Use when the user wants to check crypto prices, view account balance, place buy/sell orders, man...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitstamp_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhen",
+      "features": [
+        "Safety-first Bitcoin and crypto trading on Bitstamp via CLI",
+        "Use when the user wants to check crypto prices, view account balance, place buy/sell orders, ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitstamp-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/778081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitstamp-trader",
+      "url": "https://clawhub.ai/skills/bitstamp-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitstamp-trader",
+    "url": "https://clawhub.ai/skills/bitstamp-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitstamp-trader-10e1948eb350edcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitstamp-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitstamp-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:458f5182676c87ef15daff61ba4387c43097055a1b918e84e453571a62a900fa",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:47:04.276Z"
+}

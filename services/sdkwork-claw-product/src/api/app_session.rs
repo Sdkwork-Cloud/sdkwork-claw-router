@@ -1,5 +1,4 @@
 use std::sync::Arc;
-use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::extract::State;
 use axum::http::{HeaderMap, StatusCode};
@@ -7,39 +6,30 @@ use axum::response::{IntoResponse, Response};
 use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_config::AppSessionConfig;
-use sdkwork_claw_http::{sign_app_session_token, TrustedRequestSubject};
-use serde::Serialize;
-use sha2::{Digest, Sha256};
+use sdkwork_claw_http::TrustedRequestSubject;
+use serde::Deserialize;
 
+use crate::api::app_auth::{
+    issue_iam_session, normalize_language, normalize_request_id, AppSessionCreateError,
+    IamSessionIssueUser,
+};
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
-use crate::ports::{AppSessionEventStore, RecordAppSessionIssuedEventCommand};
+use crate::ports::AppSessionEventStore;
 
-const REQUEST_ID_HEADER: &str = "X-Request-Id";
+const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";
 
+#[derive(Clone)]
 struct AppSessionState {
     app_session_config: AppSessionConfig,
     event_store: Arc<dyn AppSessionEventStore + Send + Sync>,
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 }
 
-impl Clone for AppSessionState {
-    fn clone(&self) -> Self {
-        Self {
-            app_session_config: self.app_session_config.clone(),
-            event_store: Arc::clone(&self.event_store),
-            entity_uuid_generator: Arc::clone(&self.entity_uuid_generator),
-        }
-    }
-}
-
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-struct AppSessionCreateResponse {
-    token: String,
-    token_type: &'static str,
-    expires_at: i64,
-    expires_in_seconds: u64,
+struct IamSessionBridgeRequest {
+    grant_type: Option<String>,
 }
 
 pub fn app_session_router_with_event_store(
@@ -48,7 +38,7 @@ pub fn app_session_router_with_event_store(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/auth/session", post(create_app_session))
+        .route(APP_SESSION_PATH, post(create_app_session))
         .with_state(AppSessionState {
             app_session_config,
             event_store,
@@ -56,12 +46,27 @@ pub fn app_session_router_with_event_store(
         })
 }
 
-async fn create_app_session(State(state): State<AppSessionState>, headers: HeaderMap) -> Response {
-    match create_app_session_inner(state, headers).await {
+async fn create_app_session(
+    State(state): State<AppSessionState>,
+    headers: HeaderMap,
+    Json(request): Json<IamSessionBridgeRequest>,
+) -> Response {
+    match create_app_session_inner(state, headers, request).await {
         Ok(response) => Json(PlusApiResult::success(response)).into_response(),
-        Err(AppSessionCreateError::Unauthorized(message)) => (
+        Err(AppSessionCreateError::Unauthorized) => (
             StatusCode::UNAUTHORIZED,
-            Json(PlusApiResult::error("4010", message)),
+            Json(PlusApiResult::error(
+                "4010",
+                "trusted request subject is required",
+            )),
+        )
+            .into_response(),
+        Err(AppSessionCreateError::TrustedSubjectRequired) => (
+            StatusCode::UNAUTHORIZED,
+            Json(PlusApiResult::error(
+                "4010",
+                "trusted request subject is required",
+            )),
         )
             .into_response(),
         Err(AppSessionCreateError::BadRequest(message)) => (
@@ -80,84 +85,65 @@ async fn create_app_session(State(state): State<AppSessionState>, headers: Heade
 async fn create_app_session_inner(
     state: AppSessionState,
     headers: HeaderMap,
-) -> Result<AppSessionCreateResponse, AppSessionCreateError> {
-    let subject = TrustedRequestSubject::from_headers(&headers)
-        .map_err(|error| AppSessionCreateError::Unauthorized(error.to_string()))?;
+    request: IamSessionBridgeRequest,
+) -> Result<crate::api::app_auth::IamSessionResponse, AppSessionCreateError> {
+    let grant_type = request
+        .grant_type
+        .as_deref()
+        .map(|value| value.trim().replace('-', "_").to_ascii_lowercase())
+        .unwrap_or_else(|| "session_bridge".to_owned());
+    if grant_type != "session_bridge" {
+        return Err(AppSessionCreateError::BadRequest(format!(
+            "grantType {grant_type} is not supported by this endpoint"
+        )));
+    }
     let request_id = normalize_request_id(&headers)?;
-    let issued_at = current_unix_seconds();
-    let expires_at = expires_at(&state.app_session_config, issued_at)?;
-    let token = sign_app_session_token(&state.app_session_config, subject, issued_at, expires_at);
-    let session_id_hash = sha256_hex(&token);
-    let event_uuid = state
-        .entity_uuid_generator
-        .generate_entity_uuid()
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-
-    state
-        .event_store
-        .record_app_session_issued(RecordAppSessionIssuedEventCommand {
-            event_uuid,
-            tenant_id: subject.tenant_id,
-            organization_id: subject.organization_id,
-            user_id: subject.user_id,
-            request_id,
-            auth_provider: None,
-            session_id_hash,
-        })
-        .await
-        .map_err(|error| AppSessionCreateError::System(error.to_string()))?;
-
-    Ok(AppSessionCreateResponse {
-        token,
-        token_type: "Bearer",
-        expires_at,
-        expires_in_seconds: state.app_session_config.session_ttl_seconds(),
-    })
+    create_session_bridge_response(
+        &state.app_session_config,
+        state.event_store.as_ref(),
+        state.entity_uuid_generator.as_ref(),
+        &headers,
+        request_id,
+    )
+    .await
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
-enum AppSessionCreateError {
-    Unauthorized(String),
-    BadRequest(String),
-    System(String),
-}
-
-fn normalize_request_id(headers: &HeaderMap) -> Result<Option<String>, AppSessionCreateError> {
-    let Some(value) = headers.get(REQUEST_ID_HEADER) else {
-        return Ok(None);
+pub(crate) async fn create_session_bridge_response(
+    app_session_config: &AppSessionConfig,
+    event_store: &(dyn AppSessionEventStore + Send + Sync),
+    entity_uuid_generator: &(dyn EntityUuidGenerator + Send + Sync),
+    headers: &HeaderMap,
+    request_id: Option<String>,
+) -> Result<crate::api::app_auth::IamSessionResponse, AppSessionCreateError> {
+    let subject = TrustedRequestSubject::from_headers(headers)
+        .map_err(|_| AppSessionCreateError::TrustedSubjectRequired)?;
+    let user = IamSessionIssueUser {
+        id: subject.user_id,
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        username: format!("user-{}", subject.user_id),
+        display_name: format!("SDKWork User {}", subject.user_id),
+        email: String::new(),
+        avatar_url: String::new(),
+        phone: String::new(),
+        language: normalize_language(String::new()),
+        is_verified: true,
+        status: "active".to_owned(),
+        registered_at: String::new(),
+        last_login: String::new(),
+        last_login_ip: String::new(),
+        password_last_changed: String::new(),
+        two_factor_enabled: false,
+        third_party_bound: String::new(),
     };
-    let value = value
-        .to_str()
-        .map_err(|_| {
-            AppSessionCreateError::BadRequest("X-Request-Id header is invalid".to_owned())
-        })?
-        .trim();
-    if value.is_empty() {
-        return Ok(None);
-    }
-    if value.len() > 128 {
-        return Err(AppSessionCreateError::BadRequest(
-            "X-Request-Id header must be at most 128 characters".to_owned(),
-        ));
-    }
-    Ok(Some(value.to_owned()))
-}
 
-fn expires_at(config: &AppSessionConfig, issued_at: i64) -> Result<i64, AppSessionCreateError> {
-    let ttl = i64::try_from(config.session_ttl_seconds())
-        .map_err(|_| AppSessionCreateError::System("app session ttl is too large".to_owned()))?;
-    issued_at.checked_add(ttl).ok_or_else(|| {
-        AppSessionCreateError::System("app session expiration overflowed".to_owned())
-    })
-}
-
-fn current_unix_seconds() -> i64 {
-    SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|duration| duration.as_secs() as i64)
-        .unwrap_or(0)
-}
-
-fn sha256_hex(value: &str) -> String {
-    hex::encode(Sha256::digest(value.as_bytes()))
+    issue_iam_session(
+        app_session_config,
+        event_store,
+        entity_uuid_generator,
+        user,
+        "system",
+        request_id,
+    )
+    .await
 }

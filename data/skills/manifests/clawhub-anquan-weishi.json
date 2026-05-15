@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70199,
+  "uuid": "skill-clawhub-anquan-weishi",
+  "skillKey": "clawhub-anquan-weishi",
+  "name": "安全卫士",
+  "summary": "安全卫士 v2.1 - 智能威胁检测、权限控制、隐私保护。L1-L4四级安全等级，13种攻击模式自动识别，中央库单点修改全局生效",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anquan_weishi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xingjihome",
+      "features": [
+        "安全卫士 v2.1",
+        "智能威胁检测、权限控制、隐私保护。L1-L4四级安全等级，13种攻击模式自动识别，中央库单点修改全局生效"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anquan-weishi@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164947284?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anquan-weishi",
+      "url": "https://clawhub.ai/skills/anquan-weishi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anquan-weishi",
+    "url": "https://clawhub.ai/skills/anquan-weishi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anquan-weishi-a48337fe63347efe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anquan-weishi@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-anquan-weishi-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ac1fa4205136a6248c0d5c7fb14a065f6d75f5ae73896bd7771c0c834e27f11",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:55:32.875Z"
+}

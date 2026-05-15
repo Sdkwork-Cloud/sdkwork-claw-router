@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_bridge",
+  "skill": {
+    "id": 44886,
+    "skillKey": "clawhub-memory-bridge",
+    "name": "Memory Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-bridge",
+    "url": "https://clawhub.ai/skills/memory-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-bridge-088056681dab33e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI to retain and access previous session context across restarts by automatically saving and loading user identity, tasks, and preferences from memor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwertyu7894",
+      "userId": "s17a0sp0nm46mhx3e4eaj4d20s83epzr",
+      "displayName": "qwertyu7894",
+      "image": "https://avatars.githubusercontent.com/u/136090345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774934454709,
+      "changelog": "- Initial release of the memory-bridge skill.\n- Enables persistent memory for AI: remembers user identity, ongoing tasks, and conversation context across new sessions and window restarts.\n- Offers auto-initialization and manual activation via trigger phrases (e.g., \"初始化记忆\", \"开启记忆\").\n- Introduces efficient memory structure: MEMORY.md (short index, auto-loaded), with supporting task and learning files loaded on demand.\n- Ensures previous user-specific settings and tools are not altered.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f50352718fb7a6b6772628d9daaaad757c86bb82f4655b7fa9c71e3382044dab"
+}

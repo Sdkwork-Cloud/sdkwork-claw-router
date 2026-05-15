@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10555,
+  "uuid": "skill-clawhub-system-architect",
+  "skillKey": "clawhub-system-architect",
+  "name": "System Architect",
+  "summary": "Acts as a Senior System Architect to design robust, scalable, and maintainable software architectures. Enforces industry standards (PEP 8 for Python, ESLint for JS/TS), modular design, and security best practices. Use this skill when the u.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_architect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Acts as a Senior System Architect to design robust, scalable, and maintainable software archite.",
+        "Enforces industry standards (PEP 8 for Python, ESLint for JS/TS), modular design, and security.",
+        "Use this skill when the user wants to start a new project, refactor an existing one, or discuss."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-architect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-architect",
+      "url": "https://clawhub.ai/skills/system-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-architect",
+    "url": "https://clawhub.ai/skills/system-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-architect-42487641f54106ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-architect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-architect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a04b6d311edef36e9f8f789fad938230bcc77bb60782b7a870a8a44beb12293",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:30:15.246Z"
+}

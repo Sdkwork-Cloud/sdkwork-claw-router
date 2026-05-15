@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/111-111-contacts-org-pos-finding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.111_111_contacts_org_pos_finding",
+  "skill": {
+    "id": 62612,
+    "skillKey": "clawhub-111-111-contacts-org-pos-finding",
+    "name": "111-111-contacts-org-pos-finding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "111-111-contacts-org-pos-finding",
+    "url": "https://clawhub.ai/skills/111-111-contacts-org-pos-finding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/111-111-contacts-org-pos-finding-b288ddf5192eab5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过111通讯录按机构路径和职位名称查询人员信息，需先确认提供机构和职位名称后执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockcloud",
+      "userId": "publishers:blockcloud",
+      "displayName": "blockcloud",
+      "image": "https://avatars.githubusercontent.com/u/19220974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773580054883,
+      "changelog": "Initial release of 111通讯录组织机构及职位人员信息查询技能:\n\n- 查询仅支持通过“组织机构 + 职位名称”方式查找人员，不支持直接按人名搜索。\n- 用户必须先了解查询方式并确认输入，系统才会执行查询。\n- 支持单行和多行机构/职位查询，自动处理多页数据。\n- 输出包含机构、职位、员工编号、111ID、姓名、座机、手机等详细信息。\n- 查询过程中需处理登录、分页、模糊匹配与无结果反馈等常见场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4a249f36a52488eb6679399c9e8760adda37ac944f9c51c10b50d796e06cced"
+}

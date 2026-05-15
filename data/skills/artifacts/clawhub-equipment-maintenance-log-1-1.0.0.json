@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equipment-maintenance-log-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equipment_maintenance_log_1",
+  "skill": {
+    "id": 42084,
+    "skillKey": "clawhub-equipment-maintenance-log-1",
+    "name": "Equipment Maintenance Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equipment-maintenance-log-1",
+    "url": "https://clawhub.ai/skills/equipment-maintenance-log-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equipment-maintenance-log-1-08c4c3e8cd2438c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track lab equipment calibration dates and send maintenance reminders for pipettes, balances, centrifuges, and other instruments. Validates date formats and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112586914,
+      "changelog": "Initial release of equipment-maintenance-log.\n\n- Track calibration dates and maintenance intervals for lab equipment.\n- Supports add, update, delete, list, and compliance report commands.\n- Validates calibration date format (YYYY-MM-DD) with clear error messages.\n- Generates JSON compliance reports with next due dates and maintenance status.\n- Provides structured, audit-ready maintenance reminders and overdue alerts.\n- Strictly scoped to lab equipment calibration and maintenance scheduling only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6719c9a16e5ebdfb5dfcf95c7a196b2d289fb95a6af7f543b13b0cb4822ebe9"
+}

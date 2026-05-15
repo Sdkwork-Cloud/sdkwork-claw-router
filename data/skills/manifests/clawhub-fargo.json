@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17365,
+  "uuid": "skill-clawhub-fargo",
+  "skillKey": "clawhub-fargo",
+  "name": "FargoRate",
+  "summary": "Look up pool player ratings and handicap data from FargoRate. Use when the user asks about a pool player's rating, FargoRate ID, match odds, race-to recommen...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fargo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Greg Stephens",
+      "features": [
+        "Look up pool player ratings and handicap data from FargoRate",
+        "Use when the user asks about a pool player's rating, FargoRate ID, match odds, race-to recommen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fargo@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/846052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fargo",
+      "url": "https://clawhub.ai/skills/fargo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fargo",
+    "url": "https://clawhub.ai/skills/fargo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fargo-157ae3a816b8fa12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fargo@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fargo-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e290f314d73c6e0a3fe878dc45e143436953b140dc0929a2ded46ceef0018e",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:04:37.403Z"
+}

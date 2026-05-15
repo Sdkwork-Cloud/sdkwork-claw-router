@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67009,
+  "uuid": "skill-clawhub-openclaw-trust-validation",
+  "skillKey": "clawhub-openclaw-trust-validation",
+  "name": "OpenClaw: trust validation",
+  "summary": "为 OpenClaw 4.2 添加记忆信任验证规则，防止模型盲目信任记忆内容。当模型要基于记忆内容做决策、改代码、发消息时触发验证流程。适用于记忆内容可能过时、用户问\"记忆准确吗\"、或要求验证记忆的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_trust_validation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NICSHLIU",
+      "features": [
+        "为 OpenClaw 4.2 添加记忆信任验证规则，防止模型盲目信任记忆内容。当模型要基于记忆内容做决策、改代码、发消息时触发验证流程。适用于记忆内容可能过时、用户问\"记忆准确吗\"、或要求验."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-trust-validation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264651867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-trust-validation",
+      "url": "https://clawhub.ai/skills/openclaw-trust-validation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-trust-validation",
+    "url": "https://clawhub.ai/skills/openclaw-trust-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-trust-validation-0aed0a9c7b7614ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-trust-validation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-trust-validation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d73f137d97bc3e8103c674f9491ba16d92cdd52cfc4f50f4269eab0655ba98",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T02:31:05.073Z"
+}

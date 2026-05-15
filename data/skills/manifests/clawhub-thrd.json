@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13647,
+  "uuid": "skill-clawhub-thrd",
+  "skillKey": "clawhub-thrd",
+  "name": "Thrd Skill",
+  "summary": "Provision a dedicated inbox for your AI agent and manage email safely via thrd.email. Includes instant onboarding, inbound polling, reply/send (idempotent +...",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thrd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thrd.",
+      "features": [
+        "Provision a dedicated inbox for your AI agent and manage email safely via thrd.email",
+        "Includes instant onboarding, inbound polling, reply/send (idempotent +..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thrd@1.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51226753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thrd",
+      "url": "https://clawhub.ai/skills/thrd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thrd",
+    "url": "https://clawhub.ai/skills/thrd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thrd-8a5b8918bba6524b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thrd@1.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-thrd-1.4.3.json",
+      "version": "1.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c55cc74867dae3c0a33275e93097489d6b2dfa97f8af7f483d2fc92242aed298",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:24:25.161Z"
+}

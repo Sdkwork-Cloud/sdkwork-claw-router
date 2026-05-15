@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-batchqueryexpress@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_batchqueryexpress",
+  "skill": {
+    "id": 72870,
+    "skillKey": "clawhub-skill-batchqueryexpress",
+    "name": "小递查查-快递批量查询API技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-batchqueryexpress",
+    "url": "https://clawhub.ai/skills/skill-batchqueryexpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-batchqueryexpress-4c1645fa887c563a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量查询快递物流信息；当用户需要查询多个快递单号、获取物流状态或追踪包裹位置时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xdccycom",
+      "userId": "s171920223v0z2nv8kqskws34x84ncbf",
+      "displayName": "xdccycom",
+      "image": "https://avatars.githubusercontent.com/u/275297155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777216957444,
+      "changelog": "Initial release of express-batch-query skill:\n\n- Enables batch query of logistics tracking information for multiple express numbers.\n- Supports multiple courier companies, including special handling for Shunfeng (SF) numbers requiring phone suffix.\n- Allows reading of express numbers from user input or file (CSV/JSON).\n- Provides flexible output: list display, and export to Excel, CSV, TXT, or JSON.\n- Handles exceptions (wrong numbers, missing info), with clear user prompts.\n- Includes full documentation and usage examples for common scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:927f13b79e9c017b780fb1a7227f97c4e349bfe854f29eb685ce3f4a89d742b7"
+}

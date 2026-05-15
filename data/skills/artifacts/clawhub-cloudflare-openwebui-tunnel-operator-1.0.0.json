@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-openwebui-tunnel-operator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_openwebui_tunnel_operator",
+  "skill": {
+    "id": 56366,
+    "skillKey": "clawhub-cloudflare-openwebui-tunnel-operator",
+    "name": "Cloudflare Open WebUI Tunnel Operator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-openwebui-tunnel-operator",
+    "url": "https://clawhub.ai/skills/cloudflare-openwebui-tunnel-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-openwebui-tunnel-operator-ae0b8ff698f242ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and maintain a Cloudflare Tunnel for Open WebUI using a 1Password-managed API token, Docker runtime, and optional systemd persistence. 使用 1Password 管理..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grey0758",
+      "userId": "s17d34x1ad5mvb8sv7rbz30ws1840n4w",
+      "displayName": "grey0758",
+      "image": "https://avatars.githubusercontent.com/u/110289906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773909499196,
+      "changelog": "Initial release of cloudflare-openwebui-tunnel-operator.\n\n- Enables setup and management of a Cloudflare Tunnel for Open WebUI using a 1Password API token, Docker, and optional systemd persistence.\n- Includes bilingual (EN/中文) documentation outlining workflow, rules, safe operations, and constraints.\n- Defines safe command set and strong heuristics for security and troubleshooting.\n- Specifies always-returned response format for workflow status, missing artifacts, next action, and verification.\n- Emphasizes explicit hostname mapping and protection of sensitive credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc478d7f9ceaa65f0a7268eef63a3d6c9c3816cce2e86e764d4e11951aebddab"
+}

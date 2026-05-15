@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-stock-tracker@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_stock_tracker",
+  "skill": {
+    "id": 68862,
+    "skillKey": "clawhub-industry-stock-tracker",
+    "name": "Stock/Industry Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-stock-tracker",
+    "url": "https://clawhub.ai/skills/industry-stock-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-stock-tracker-2b87c4bd07612a7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "依托东方财富数据库，面向行业或个股，产出跟踪类报告（含日报/周报/月报、研报及结构化跟踪解读）。 满足以下任一条件即触发：（1）用户明确索要「报告」「研报」「跟踪分析」或定期跟踪类文稿；（2）用户点名的行业、板块、指数、个股（名称或代码），并期望系统化、可成文的近况跟踪或梳理。 典型说法如「写一份 XX 行业报告..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7798,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776424714311,
+      "changelog": "Publish 1.0.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc00eb173d3954d4e05927ac091170a834912e0b73a61821201c94da70f3cbc8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilingual-humanizer-clean@3.1.4",
+  "version": "3.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilingual_humanizer_clean",
+  "skill": {
+    "id": 56716,
+    "skillKey": "clawhub-bilingual-humanizer-clean",
+    "name": "Bilingual Humanizer Clean"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilingual-humanizer-clean",
+    "url": "https://clawhub.ai/skills/bilingual-humanizer-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilingual-humanizer-clean-99cf5e2f5d8c3b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detecta y elimina patrones de escritura generada por IA en español e inglés. Por defecto opera en español. Usar --lang en para inglés. Detecta vocabulario in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sitost",
+      "userId": "s179arkhy7szew257ey6gx8aax863x38",
+      "displayName": "Sito",
+      "image": "https://avatars.githubusercontent.com/u/69246460?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.4",
+      "createdAt": 1778355017690,
+      "changelog": "- Incluye descripción ampliada sobre detección y eliminación de patrones de escritura generada por IA en español e inglés.\n- Añade lista detallada de patrones léxicos, gramaticales y estructurales a identificar en español, junto a explicaciones de indicadores estadísticos.\n- Introduce instrucciones claras para reescritura natural, promoviendo variedad, datos reales y voz personal.\n- Extiende soporte al inglés con descripciones de los 28 detectores y ejemplos concretos de patrones a flaggear.\n- Detalla el proceso de análisis y humanización, orientado a preservar el significado y aumentar la naturalidad.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98aae12f8193d0fab5f7d4305c5b538ad1cd7d8973b0817d1a85bab3b68a0276"
+}

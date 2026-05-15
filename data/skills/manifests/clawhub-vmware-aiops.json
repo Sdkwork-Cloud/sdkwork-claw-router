@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16125,
+  "uuid": "skill-clawhub-vmware-aiops",
+  "skillKey": "clawhub-vmware-aiops",
+  "name": "Vmware Aiops",
+  "summary": "Use this skill whenever the user needs to manage VMs in VMware/vSphere/ESXi — it's the entry point for all VM operations. Directly handles: power on/off, clo...",
+  "version": "1.5.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_aiops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zw008",
+      "features": [
+        "Use this skill whenever the user needs to manage VMs in VMware/vSphere/ESXi — it's the entry po.",
+        "Directly handles: power on/off, clo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vmware-aiops@1.5.22",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10613299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vmware-aiops",
+      "url": "https://clawhub.ai/skills/vmware-aiops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-aiops",
+    "url": "https://clawhub.ai/skills/vmware-aiops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-aiops-bf34c741d53ca79b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vmware-aiops@1.5.22",
+      "artifactUrl": "data/skills/artifacts/clawhub-vmware-aiops-1.5.22.json",
+      "version": "1.5.22",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f04a733b23b744d554651f8e076b015a8ee1eb483883d715136dfb292989b99",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T23:24:57.717Z"
+}

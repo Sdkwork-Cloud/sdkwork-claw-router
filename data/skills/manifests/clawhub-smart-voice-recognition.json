@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49523,
+  "uuid": "skill-clawhub-smart-voice-recognition",
+  "skillKey": "clawhub-smart-voice-recognition",
+  "name": "Voice Recognition",
+  "summary": "Intelligent speech-to-text using local OpenAI Whisper (no API key needed, fully private). Use when you need to transcribe audio files, convert voice messages...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_voice_recognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "08Jacky04",
+      "features": [
+        "Intelligent speech-to-text using local OpenAI Whisper (no API key needed, fully private)",
+        "Use when you need to transcribe audio files, convert voice messages..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-voice-recognition@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189535931?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-voice-recognition",
+      "url": "https://clawhub.ai/skills/smart-voice-recognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-voice-recognition",
+    "url": "https://clawhub.ai/skills/smart-voice-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-voice-recognition-7132b0088f1a8414.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-voice-recognition@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-voice-recognition-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:205972fd4790a4110e420b4b10bfc76ee3dc74cf1c5e63bb2cbfb271bdaab391",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:34:54.901Z"
+}

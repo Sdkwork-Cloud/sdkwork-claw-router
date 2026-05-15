@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72645,
+  "uuid": "skill-clawhub-chinese-students-textbook",
+  "skillKey": "clawhub-chinese-students-textbook",
+  "name": "中国学生教科书目录",
+  "summary": "教科书目录读取。用户问「这学期要学哪些古诗词」「《朝花夕拾》在哪个单元」时，直接读取对应 JSON 文件回答。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_students_textbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MakiWinster72",
+      "features": [
+        "教科书目录读取。用户问「这学期要学哪些古诗词」「《朝花夕拾》在哪个单元」时，直接读取对应 JSON 文件回答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-students-textbook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201584298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-students-textbook",
+      "url": "https://clawhub.ai/skills/chinese-students-textbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-students-textbook",
+    "url": "https://clawhub.ai/skills/chinese-students-textbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-students-textbook-1c674b09a09d87e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-students-textbook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-students-textbook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ffcbd66a9543a5414ed32f31a6fb8bdd77005a4294196c58d5187e0fac2c1af",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:42:44.194Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-seo-engine@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_seo_engine",
+  "skill": {
+    "id": 48410,
+    "skillKey": "clawhub-agent-seo-engine",
+    "name": "Agent SEO Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-seo-engine",
+    "url": "https://clawhub.ai/skills/agent-seo-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-seo-engine-d0387341643a3f71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run local agent-first SEO scoring, search-intent classification, and opportunity prioritization before content changes. Use when an AI agent needs setup, usa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778077112444,
+      "changelog": "Initial Delx ClawHub skill for agent-first open-source discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b63fd315cfa960f1d27ff76ec67bf1499a34b45e77185782cebd60b79c250306"
+}

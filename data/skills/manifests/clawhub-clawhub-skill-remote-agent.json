@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14225,
+  "uuid": "skill-clawhub-clawhub-skill-remote-agent",
+  "skillKey": "clawhub-clawhub-skill-remote-agent",
+  "name": "clawhub-skill-remote-agent",
+  "summary": "Bridge to external vertical agents (Google ADK, VeADK, etc.) for specialized tasks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_remote_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sqsge",
+      "features": [
+        "Bridge to external vertical agents (Google ADK, VeADK, etc.) for specialized tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-remote-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74439428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-remote-agent",
+      "url": "https://clawhub.ai/skills/clawhub-skill-remote-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-remote-agent",
+    "url": "https://clawhub.ai/skills/clawhub-skill-remote-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-remote-agent-3db2396019c834f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-remote-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-remote-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9deda6824598ebadbe83de4576f74da9d9a3148c8b72451d52f4ebc1de41cee5",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T19:13:36.730Z"
+}

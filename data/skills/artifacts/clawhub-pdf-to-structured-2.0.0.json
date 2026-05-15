@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-structured@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_structured",
+  "skill": {
+    "id": 9076,
+    "skillKey": "clawhub-pdf-to-structured",
+    "name": "Pdf To Structured"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-structured",
+    "url": "https://clawhub.ai/skills/pdf-to-structured",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-structured-d318b5e5c9b00b67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from construction PDFs. Convert specifications, BOMs, schedules, and reports from PDF to Excel/CSV/JSON. Use OCR for scanned documents and pdfplumber for native PDFs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3900,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 9,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771001127063,
+      "changelog": "Major update with enhanced extraction features and expanded documentation.\n\n- Added detailed README covering ETL workflow, quick start, and advanced use cases.\n- Now supports both native (pdfplumber) and scanned (OCR) PDF extraction.\n- Includes construction-specific examples for specifications, BOMs, and schedules.\n- Provides code samples for extracting tables, text, and specific areas from PDFs.\n- Outlines recommended packages and installation instructions for various extraction scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2e13135a20403aa031684f5046c3c6f4aeb0d179f2e5e2699886c1499cdfc85"
+}

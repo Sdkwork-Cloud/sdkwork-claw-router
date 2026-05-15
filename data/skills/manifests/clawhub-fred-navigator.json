@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15080,
+  "uuid": "skill-clawhub-fred-navigator",
+  "skillKey": "clawhub-fred-navigator",
+  "name": "FRED-Navigator",
+  "summary": "Navigate FRED categories and series using fredapi, supporting natural-language queries with intent recognition and double validation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fred_navigator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kiszly",
+      "features": [
+        "Navigate FRED categories and series using fredapi, supporting natural-language queries with int."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fred-navigator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157223919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fred-navigator",
+      "url": "https://clawhub.ai/skills/fred-navigator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fred-navigator",
+    "url": "https://clawhub.ai/skills/fred-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fred-navigator-07d00f5565a9e24b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fred-navigator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fred-navigator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c03c59c539ac4d2bc5517cf561d54e867bdba07e86c6dd30f2ca819c292bfb9",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T12:11:02.830Z"
+}

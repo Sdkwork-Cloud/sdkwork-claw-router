@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-channel-banner@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_channel_banner",
+  "skill": {
+    "id": 50934,
+    "skillKey": "clawhub-youtube-channel-banner",
+    "name": "YouTube Channel Banner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-channel-banner",
+    "url": "https://clawhub.ai/skills/youtube-channel-banner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-channel-banner-98c1c268b58c2674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube channel banners. Use this skill to insert or upload channel banners. Useful when working with YouTube channel banner — provides commands to in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773496699764,
+      "changelog": "- Updated skill metadata to include OpenClaw compatibility fields.\n- Added required binaries, config paths, environment variables, and install instructions to metadata.\n- Linked to a homepage and set OpenClaw emoji and primary environment variable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a00c32164bbd42a96389a6543c3a3c10eec222cf8f82ffb49a608dfefc78f142"
+}

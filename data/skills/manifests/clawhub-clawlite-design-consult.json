@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66471,
+  "uuid": "skill-clawhub-clawlite-design-consult",
+  "skillKey": "clawhub-clawlite-design-consult",
+  "name": "clawlite-design-consult",
+  "summary": "中文：高级产品设计系统顾问，具备强观点但可解释的设计决策能力。支持先导式需求澄清、系统化设计输出，生成 DESIGN.md 与 CLAUDE.md 设计章节，提升视觉系统一致性与产品体验。 日本語：鋭い視点のあるデザインコンサルタント。要件を引き出し、設計判断を説明可能な形で提示し、DESIGN.mdとCLAUD...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlite_design_consult",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "中文：高级产品设计系统顾问，具备强观点但可解释的设计决策能力。支持先导式需求澄清、系统化设计输出，生成 DESIGN.md 与 CLAUDE.md 设计章节，提升视觉系统一致性与产品体验。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlite-design-consult@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlite-design-consult",
+      "url": "https://clawhub.ai/skills/clawlite-design-consult"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlite-design-consult",
+    "url": "https://clawhub.ai/skills/clawlite-design-consult",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlite-design-consult-392a16f490685a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlite-design-consult@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlite-design-consult-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41eea5e1e9bd1c68f16e0cc9d0ffb4537f0db4d74b907098ed62c518522d5741",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:14:17.900Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52897,
+  "uuid": "skill-clawhub-icloud-cal",
+  "skillKey": "clawhub-icloud-cal",
+  "name": "iCloud Calendar — Full CRUD",
+  "summary": "Manage your iCloud calendars via natural language to create, query, update, and delete events synced to your iPhone calendar using CalDAV.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icloud_cal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RickHuang28",
+      "features": [
+        "Manage your iCloud calendars via natural language to create, query, update, and delete events s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icloud-cal@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267562758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icloud-cal",
+      "url": "https://clawhub.ai/skills/icloud-cal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icloud-cal",
+    "url": "https://clawhub.ai/skills/icloud-cal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icloud-cal-3ee7540a44a7d21d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icloud-cal@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-icloud-cal-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9f5ed17f8089b1c052b3a6265b2ba68ce075a4824791205d6dcc68945ca0c77",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:23:00.134Z"
+}

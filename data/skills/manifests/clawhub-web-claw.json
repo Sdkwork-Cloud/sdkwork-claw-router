@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23978,
+  "uuid": "skill-clawhub-web-claw",
+  "skillKey": "clawhub-web-claw",
+  "name": "Web Claw",
+  "summary": "Web dashboard for OpenClaw. Browser-based UI for any installed skill. Schema-driven rendering, JWT auth, RBAC, AI chat, real-time updates. Install web dashbo...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikhil Jathar",
+      "features": [
+        "Web dashboard for OpenClaw",
+        "Browser-based UI for any installed skill",
+        "Schema-driven rendering, JWT auth, RBAC, AI chat, real-time updates",
+        "Install web dashbo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-claw@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22786232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-claw",
+      "url": "https://clawhub.ai/skills/web-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-claw",
+    "url": "https://clawhub.ai/skills/web-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-claw-af936c216e97b614.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-claw@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-claw-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dfc11dbc54742af22a195354bce6c0e78165d8b49b5407825a8fe70e8374938",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:50:53.426Z"
+}

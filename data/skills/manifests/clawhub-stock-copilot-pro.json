@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9649,
+  "uuid": "skill-clawhub-stock-copilot-pro",
+  "skillKey": "clawhub-stock-copilot-pro",
+  "name": "Stock Copilot Pro",
+  "summary": "OpenClaw stock analysis skill for US/HK/CN markets. Combines QVeris data sources (THS, Caidazi, Alpha Vantage, Finnhub, X sentiment) for quote, fundamentals,...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_copilot_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxj",
+      "features": [
+        "OpenClaw stock analysis skill for US/HK/CN markets",
+        "Combines QVeris data sources (THS, Caidazi, Alpha Vantage, Finnhub, X sentiment) for quote, fun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-copilot-pro@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3839922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-copilot-pro",
+      "url": "https://clawhub.ai/skills/stock-copilot-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-copilot-pro",
+    "url": "https://clawhub.ai/skills/stock-copilot-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-copilot-pro-893383ae1f268533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-copilot-pro@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-copilot-pro-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d181f4e694c0bc82cacc4786a2c266ef3a7250c785b53b3c577f585af4894b93",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:27:28.082Z"
+}

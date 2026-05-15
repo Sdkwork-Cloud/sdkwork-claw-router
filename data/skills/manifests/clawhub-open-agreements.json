@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36383,
+  "uuid": "skill-clawhub-open-agreements",
+  "skillKey": "clawhub-open-agreements",
+  "name": "Open Agreements",
+  "summary": "Fill standard legal agreement templates (NDAs, cloud service agreements, SAFEs) and produce signable DOCX files. Supports Common Paper, Bonterms, and Y Combi...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_agreements",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Obiajulu",
+      "features": [
+        "Fill standard legal agreement templates (NDAs, cloud service agreements, SAFEs) and produce sig.",
+        "Supports Common Paper, Bonterms, and Y Combi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-agreements@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183783362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-agreements",
+      "url": "https://clawhub.ai/skills/open-agreements"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-agreements",
+    "url": "https://clawhub.ai/skills/open-agreements",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-agreements-2902bf135cf0701b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-agreements@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-agreements-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c03e9391630ba99a4ddda45f099e6d77d2fc836aeddfbca61d7d781141a858b",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T23:19:35.830Z"
+}

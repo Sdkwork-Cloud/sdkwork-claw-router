@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/institutional-flow-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.institutional_flow_tracker",
+  "skill": {
+    "id": 9336,
+    "skillKey": "clawhub-institutional-flow-tracker",
+    "name": "Institutional Flow Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "institutional-flow-tracker",
+    "url": "https://clawhub.ai/skills/institutional-flow-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/institutional-flow-tracker-5332c00c070d4245.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to track institutional investor ownership changes and portfolio flows using 13F filings data. Analyzes hedge funds, mutual funds, and other institutional holders to identify stocks with significant smart money accumulation o."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3589,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769870251206,
+      "changelog": "Institutional Flow Tracker 0.1.0 – Initial Release\n\n- Track institutional investor ownership changes and portfolio flows using 13F filings data.\n- Analyze hedge funds, mutual funds, and other institutional holders to identify stocks with significant \"smart money\" accumulation or distribution.\n- Includes scripts for screening top stocks, sector-specific scans, and custom institutional flow analysis.\n- Provides tools for deep dives into specific stocks and tracking the portfolio moves of selected institutional investors.\n- Generates structured markdown reports detailing ownership trends, top holders, flows, and actionable insights.\n- Supports use of FMP API and guides users through required setup and interpretation frameworks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:958f94b346e3d210574d8cd9ef00b720771723985103f5971d841eedc4a648e2"
+}

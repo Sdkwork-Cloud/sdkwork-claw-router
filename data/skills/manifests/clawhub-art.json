@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12352,
+  "uuid": "skill-clawhub-art",
+  "skillKey": "clawhub-art",
+  "name": "Art",
+  "summary": "Guide art creation, technique development, and appreciation with practical, medium-specific advice.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.art",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Guide art creation, technique development, and appreciation with practical, medium-specific adv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/art@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "art",
+      "url": "https://clawhub.ai/skills/art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "art",
+    "url": "https://clawhub.ai/skills/art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/art-d3cec99112255db9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/art@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-art-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dbf243d2171ca116e0fc6ab58a7eac681c3a39ae3413eee71a39915b19ee235",
+      "artifactSizeBytes": 1747
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T22:32:42.657Z"
+}

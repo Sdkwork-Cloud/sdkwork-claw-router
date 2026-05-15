@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mycelium-io@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mycelium_io",
+  "skill": {
+    "id": 15946,
+    "skillKey": "clawhub-mycelium-io",
+    "name": "Mycelium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mycelium-io",
+    "url": "https://clawhub.ai/skills/mycelium-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mycelium-io-5b314f99de0439e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the mycelium CLI to join coordination rooms, negotiate with other agents via CognitiveEngine, and share persistent memory across sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juliarvalenti",
+      "userId": "s17akxsjr7cxs1cp424agkx4d983fbe0",
+      "displayName": "Julia Valenti",
+      "image": "https://avatars.githubusercontent.com/u/42276144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 58
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1777931145399,
+      "changelog": "See https://github.com/mycelium-io/mycelium/releases/tag/v1.0.9",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:945453a89233724b25452bc95b9cf809c4ac3d60ab46e448a838e7c3817e88f4"
+}

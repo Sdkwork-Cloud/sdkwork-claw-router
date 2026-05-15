@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-dropshipping-product-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_dropshipping_product_research",
+  "skill": {
+    "id": 39493,
+    "skillKey": "clawhub-ecommerce-dropshipping-product-research",
+    "name": "Dropshipping Product Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-dropshipping-product-research",
+    "url": "https://clawhub.ai/skills/ecommerce-dropshipping-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-dropshipping-product-research-962090fbc7324a60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates dropshipping products by scoring demand, competition, margin, creative fit, and risk to recommend go, test, or reject decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776074768571,
+      "changelog": "Initial release of Dropshipping Product Research skill.\n\n- Provides structured evaluation and scoring for dropshipping product ideas.\n- Outputs a viability score with demand, competition, margin, creative fit, and risk sub-scores.\n- Delivers clear Go / Test / Reject recommendations with supporting memo.\n- Designed for beginners and small operators to shortlist and compare products.\n- No marketplace scraping or live trend data; all recommendations are heuristic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:648423a2a866c428b93ede2db423b80748eec7ceddcf2349bcf75bea21744b3c"
+}

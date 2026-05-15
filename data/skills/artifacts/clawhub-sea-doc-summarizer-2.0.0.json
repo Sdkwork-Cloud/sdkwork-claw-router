@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sea-doc-summarizer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sea_doc_summarizer",
+  "skill": {
+    "id": 25065,
+    "skillKey": "clawhub-sea-doc-summarizer",
+    "name": "SEA Multilingual Document Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sea-doc-summarizer",
+    "url": "https://clawhub.ai/skills/sea-doc-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sea-doc-summarizer-8e5ac0700bfae2f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize documents in EN/CN/BM/ID with cross-language support. Optimized for Southeast Asian languages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wms2537",
+      "userId": "publishers:wms2537",
+      "displayName": "wms2537",
+      "image": "https://avatars.githubusercontent.com/u/51080539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772815791870,
+      "changelog": "- Major update: Redesigned for multilingual (EN/CN/BM/ID) document summarization optimized for Southeast Asia.\n- Cross-language support: Summarize documents in any of the four languages, with automatic source language detection and optional translation.\n- Three summarization styles supported: brief (bullet points), detailed (paragraph), and action items (list of next steps).\n- Named entity extraction now includes people, organizations, monetary amounts, dates, and locations.\n- Output returns structured JSON including summary, key points, extracted entities, source language, and word count.\n- Usage instructions and payment process updated for SkillPay integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9056f9d2bdf760839b9317b31cf5defd97929af3cfc79d2482716d29e728869d"
+}

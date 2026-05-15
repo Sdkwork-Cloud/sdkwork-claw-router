@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/51mee-resume-parse@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_parse",
+  "skill": {
+    "id": 65382,
+    "skillKey": "clawhub-51mee-resume-parse",
+    "name": "51mee Resume Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-parse",
+    "url": "https://clawhub.ai/skills/51mee-resume-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-parse-aeb4daffd8ede2a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历解析。触发场景：用户上传简历文件要求解析、提取结构化信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "51mee-com",
+      "userId": "publishers:51mee-com",
+      "displayName": "51mee",
+      "image": "https://avatars.githubusercontent.com/u/226007355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773657779724,
+      "changelog": "Initial release: Automated extraction of structured data from resumes in multiple file formats.\n\n- Supports PDF, DOC, DOCX, JPG, and PNG resume files for parsing.\n- Extracts and returns structured resume information (basic details, work/education/project experience, contact, skills, etc.) in a consistent JSON schema.\n- Uses a detailed prompt to guide analysis, ensuring no fields are invented or omitted.\n- Standardizes dates and phone formats.\n- Provides a suggested Markdown output structure for easy presentation of parsed resume details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19912baf1f7f95842a2d345099c435f1da9af036646535a2973d88179b7bb05c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19864,
+  "uuid": "skill-clawhub-openclaw-continuity",
+  "skillKey": "clawhub-openclaw-continuity",
+  "name": "OpenClaw Continuity",
+  "summary": "Structured continuity and follow-up skill for OpenClaw agents. Use when an agent needs to decide whether natural user dialogue should stay as casual chat, be...",
+  "version": "2.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_continuity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wakame",
+      "features": [
+        "Structured continuity and follow-up skill for OpenClaw agents",
+        "Use when an agent needs to decide whether natural user dialogue should stay as casual chat, be.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-continuity@2.0.21",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264813137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-continuity",
+      "url": "https://clawhub.ai/skills/openclaw-continuity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-continuity",
+    "url": "https://clawhub.ai/skills/openclaw-continuity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-continuity-705b22ccf2d9fb4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-continuity@2.0.21",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-continuity-2.0.21.json",
+      "version": "2.0.21",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dbe9dcc5e7a18034b93f1b8216df3f6789cef78b6b64196acccf6371227e073",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T23:58:39.524Z"
+}

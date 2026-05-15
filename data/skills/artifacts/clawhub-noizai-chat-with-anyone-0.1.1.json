@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/noizai-chat-with-anyone@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noizai_chat_with_anyone",
+  "skill": {
+    "id": 23801,
+    "skillKey": "clawhub-noizai-chat-with-anyone",
+    "name": "Chat With Anyone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noizai-chat-with-anyone",
+    "url": "https://clawhub.ai/skills/noizai-chat-with-anyone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noizai-chat-with-anyone-32a62e7db48e52b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat with any real person or fictional character in their own voice by automatically finding their speech online, extracting a clean reference sample, and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksuriuri",
+      "userId": "publishers:ksuriuri",
+      "displayName": "kusuriuri",
+      "image": "https://avatars.githubusercontent.com/u/84056810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773838097471,
+      "changelog": "- Added support for generating a matching voice from an uploaded image when the person is not recognizable from their name alone.\n- Introduced two workflows: A) Voice cloning from online video (name-based), and B) Voice design using an image and description (image-based).\n- Included new automation scripts `extract_ref_segment.py` (to select/extract clean audio samples) and `voice_design.py` (to generate voice profiles from photos).\n- Updated usage instructions, dependencies, and expanded ethical guidelines (only use public figures, inform users of synthetic speech, decline harmful requests).\n- Added `yt-dlp` as a required dependency and improved clarity of prerequisites and setup steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9253ad8bd88321a21990b1763bf7a5249b3bc9a9b2f71efe489720c351351510"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-send-file-safe@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send_file_safe",
+  "skill": {
+    "id": 57908,
+    "skillKey": "clawhub-feishu-send-file-safe",
+    "name": "飞书文件发送技能（安全版）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send-file-safe",
+    "url": "https://clawhub.ai/skills/feishu-send-file-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-file-safe-3b106f35f17fec11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send files, images, and audio messages via Feishu Lark API using the mandatory two-step process. Use when needing to send files, images, or voice messages to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773807584372,
+      "changelog": "修复安全问题：config.json 改用占位符，添加到.clawhubignore",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0fd2fddb9c0f6f8a85c35d8084ec787eaa4ec064b30a39363ba3d42e6737f44"
+}

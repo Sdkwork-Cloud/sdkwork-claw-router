@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/architecture-inventory-risk-assessment@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_inventory_risk_assessment",
+  "skill": {
+    "id": 42932,
+    "skillKey": "clawhub-architecture-inventory-risk-assessment",
+    "name": "Architecture Inventory & Risk Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-inventory-risk-assessment",
+    "url": "https://clawhub.ai/skills/architecture-inventory-risk-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-inventory-risk-assessment-eea506af100c144e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inventory your cloud architectures and assess risks. Query architecture blueprints, evaluate Well-Architected scores, and identify governance gaps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stinggit",
+      "userId": "s172h8emybqwq68fpsvedb4c0n83hqhy",
+      "displayName": "stinggit",
+      "image": "https://avatars.githubusercontent.com/u/11748515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774326315829,
+      "changelog": "Initial publish - Tencent Cloud Smart Advisor for architecture visualization and governance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:882ac79f92c75d8c6f5edab58b650fd204cc6ba827eab980facc112ee32e763c"
+}

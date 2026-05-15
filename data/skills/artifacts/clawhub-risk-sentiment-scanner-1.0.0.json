@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/risk-sentiment-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_sentiment_scanner",
+  "skill": {
+    "id": 69994,
+    "skillKey": "clawhub-risk-sentiment-scanner",
+    "name": "risk-sentiment-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-sentiment-scanner",
+    "url": "https://clawhub.ai/skills/risk-sentiment-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-sentiment-scanner-ef7ea266990771a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业舆情信用风险扫描。当用户提供企业名称列表时，自动抓取各企业最新公开舆情（新闻、公告、监管信息），结合风险评分模型输出结构化信用风险报告。触发场景：（1）用户说\"扫描风险\"、\"舆情分析\"、\"信用风险评级\"；（2）用户提供了一份企业名单需要批量评估；（3）用户上传含企业名称的CSV/TXT文件；（4）定期复检提醒..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yukirang",
+      "userId": "s17ebzz3039ghna5c35head9w183jkz5",
+      "displayName": "yukirang",
+      "image": "https://avatars.githubusercontent.com/u/14137707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773902616060,
+      "changelog": "Initial release of Risk Sentiment Scanner:\n\n- Supports batch scanning of enterprises for public sentiment and credit risk, triggered by direct input, file upload, or scheduled tasks.\n- Crawls up-to-date news, regulatory, and financial information from prioritized Chinese media sources.\n- Extracts relevant report content and summarizes enterprise risk factors with LLM-driven risk scoring (R1–R4) and structured JSON output.\n- Generates aggregated and company-level risk reports, output to chat, file, or Feishu document as needed.\n- Automated high-risk (R4) alerts with actionable recommendations.\n- Includes tools for managing and updating enterprise monitoring lists.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86f2cd250296444c02d9e2bbe04b31e03a6501f4256ca73fa019fb81d4d4655b"
+}

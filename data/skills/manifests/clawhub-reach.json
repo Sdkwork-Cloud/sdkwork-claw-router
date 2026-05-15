@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29340,
+  "uuid": "skill-clawhub-reach",
+  "skillKey": "clawhub-reach",
+  "name": "Reach",
+  "summary": "Agent web interface. Browse websites, fill forms, login to services, sign transactions, send/receive email, solve CAPTCHAs, and interact with the web autonom...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Potdealer",
+      "features": [
+        "Agent web interface",
+        "Browse websites, fill forms, login to services, sign transactions, send/receive email, solve CA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reach@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reach",
+      "url": "https://clawhub.ai/skills/reach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reach",
+    "url": "https://clawhub.ai/skills/reach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reach-ed4561f685f13353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reach@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reach-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:841389e15e37ac92e55a0091982a265732a1c4ba5cb6323320bb6feb56da439f",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T21:13:28.895Z"
+}

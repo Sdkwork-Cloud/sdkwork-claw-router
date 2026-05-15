@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66722,
+  "uuid": "skill-clawhub-huahua-daily",
+  "skillKey": "clawhub-huahua-daily",
+  "name": "HuaHuaDailyMCP",
+  "summary": "花花日记助手 - 查询用户的基金持仓、今日收益、累计收益、市场行情等数据，并可向 App 发送交易请求信号",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huahua_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baiye",
+      "features": [
+        "查询用户的基金持仓、今日收益、累计收益、市场行情等数据，并可向 App 发送交易请求信号"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huahua-daily@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177515848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huahua-daily",
+      "url": "https://clawhub.ai/skills/huahua-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huahua-daily",
+    "url": "https://clawhub.ai/skills/huahua-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huahua-daily-534e861f8a105429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huahua-daily@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huahua-daily-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94908bea7f60b1324eb7c1153e413f4a5297c79688e15fc95606e44aeb3bb355",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:00:21.511Z"
+}

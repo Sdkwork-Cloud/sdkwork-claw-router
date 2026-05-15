@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14182,
+  "uuid": "skill-clawhub-qqbrowser-skill",
+  "skillKey": "clawhub-qqbrowser-skill",
+  "name": "QQBrowserSkill",
+  "summary": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking...",
+  "version": "0.7.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbrowser_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QQBrowserTeam",
+      "features": [
+        "Browser automation CLI for AI agents",
+        "Use when the user needs to interact with websites, including navigating pages, filling forms, c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbrowser-skill@0.7.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/399620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbrowser-skill",
+      "url": "https://clawhub.ai/skills/qqbrowser-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbrowser-skill",
+    "url": "https://clawhub.ai/skills/qqbrowser-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbrowser-skill-abc6e1b9cfb71d07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbrowser-skill@0.7.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbrowser-skill-0.7.4.json",
+      "version": "0.7.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea96dca7f4a55ff486fb6c06e1254b026bbc0bddb2f1141adf07767497bdea31",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:40:57.811Z"
+}

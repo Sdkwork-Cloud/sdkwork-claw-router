@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59884,
+  "uuid": "skill-clawhub-cms-create-skill",
+  "skillKey": "clawhub-cms-create-skill",
+  "name": "Cms Create Skill",
+  "summary": "用于\"创建新 Skill / 新建 Skill / 写一个 Skill / 按 XGJK 协议生成 Skill 包 / 浏览查看平台已有 Skill / 搜索 Skill\"。多轮引导从零生成符合协议的 Skill 目录与 SKILL.md。仅负责发现与创建——发布上架请用 cms-push-skill，问题反馈请...",
+  "version": "1.21.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_create_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "用于\"创建新 Skill / 新建 Skill / 写一个 Skill / 按 XGJK 协议生成 Skill 包 / 浏览查看平台已有 Skill / 搜索 Skill\"。多轮引导从零生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-create-skill@1.21.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-create-skill",
+      "url": "https://clawhub.ai/skills/cms-create-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-create-skill",
+    "url": "https://clawhub.ai/skills/cms-create-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-create-skill-87dc62cbaacedfb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-create-skill@1.21.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-create-skill-1.21.3.json",
+      "version": "1.21.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:565480404a3391009e7d538efd1376425aba441849f252ab35764123014e7156",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:18:54.167Z"
+}

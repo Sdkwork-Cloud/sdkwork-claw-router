@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28124,
+  "uuid": "skill-clawhub-clawmart-upload",
+  "skillKey": "clawhub-clawmart-upload",
+  "name": "Clawmart Upload",
+  "summary": "Upload your current OpenClaw configuration to the ClawMart marketplace",
+  "version": "1.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rxdaozhang",
+      "features": [
+        "Upload your current OpenClaw configuration to the ClawMart marketplace"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmart-upload@1.5.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37535540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmart-upload",
+      "url": "https://clawhub.ai/skills/clawmart-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart-upload",
+    "url": "https://clawhub.ai/skills/clawmart-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-upload-4feae73ed03f77db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmart-upload@1.5.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmart-upload-1.5.5.json",
+      "version": "1.5.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f62b8c4541f6f8501a316a485d1ac8fce169db431a55fa473be00144d263ecf2",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:30:42.927Z"
+}

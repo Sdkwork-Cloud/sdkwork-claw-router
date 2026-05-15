@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24846,
+  "uuid": "skill-clawhub-skill-eval",
+  "skillKey": "clawhub-skill-eval",
+  "name": "Skill-Eval",
+  "summary": "Autonomous engine that systematically evaluates and ranks agent skills across models using rubric grading, error taxonomy, and improvement feedback loops.",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jensen-srp",
+      "features": [
+        "Autonomous engine that systematically evaluates and ranks agent skills across models using rubr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-eval@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178291187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-eval",
+      "url": "https://clawhub.ai/skills/skill-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-eval",
+    "url": "https://clawhub.ai/skills/skill-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-eval-f195433408961092.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-eval@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-eval-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b650a3f5d1f65490ebd1940a49bb907fdad24f8b281cc2953fa568dbbc1ab15",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:13:09.019Z"
+}

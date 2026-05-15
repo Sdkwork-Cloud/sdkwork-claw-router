@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fxiaoke-sales-record-publish@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fxiaoke_sales_record_publish",
+  "skill": {
+    "id": 62540,
+    "skillKey": "clawhub-fxiaoke-sales-record-publish",
+    "name": "Fxiaoke Sales Record Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fxiaoke-sales-record-publish",
+    "url": "https://clawhub.ai/skills/fxiaoke-sales-record-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fxiaoke-sales-record-publish-cd488322436f494f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测登录并使用保存的cookies，智能填写销售记录必填项，一键发布纷享销客CRM销售记录，保证100%成功率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandasun",
+      "userId": "publishers:pandasun",
+      "displayName": "qinlong",
+      "image": "https://avatars.githubusercontent.com/u/4972175?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772637116095,
+      "changelog": "- Initial release of the space-login skill (v1.0.1)\n- Added main script (space_login.py) for space login simulation\n- Included sample configuration (config.example.json) and requirements.txt\n- Provided a usage example (login_example.py)\n- Added comprehensive documentation (README.md)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:864c36d04b63d1ecc9631bbfa5e08457811b50e090ad95754eda6e06583192cd"
+}

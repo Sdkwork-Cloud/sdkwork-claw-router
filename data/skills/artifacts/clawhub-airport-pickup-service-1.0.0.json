@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airport-pickup-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airport_pickup_service",
+  "skill": {
+    "id": 53299,
+    "skillKey": "clawhub-airport-pickup-service",
+    "name": "airport-pickup-service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airport-pickup-service",
+    "url": "https://clawhub.ai/skills/airport-pickup-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airport-pickup-service-caff7f7db031cdad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book airport transfer services — private cars, shared shuttles, and limo services for comfortable, stress-free arrivals and departures. Also supports: flight..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112601394,
+      "changelog": "Airport Pickup Service v2.0.0 — Major Update\n\n- Adds multi-modal airport transfer booking: private car, shared shuttle, limo, with clear CLI-driven workflows.\n- Expands supported travel services: flight, hotel, train, attractions, car rental, and more, all powered by Fliggy.\n- Strictly enforces data sourcing from the flyai CLI; no fallback to knowledge-based answers.\n- Enhances multi-language support: outputs match user's language (Chinese or English).\n- Requires `[Book]({detailUrl})` links in all responses to guarantee data integrity.\n- Compatibility expanded to major SKILL.md agents (Claude Code, Codex, etc).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4d883b212507e5087f2123da7bf1d48e36e494054ffe3899c3099ff2877b4ca"
+}

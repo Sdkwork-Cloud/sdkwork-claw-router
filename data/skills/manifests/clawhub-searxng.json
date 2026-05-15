@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8340,
+  "uuid": "skill-clawhub-searxng",
+  "skillKey": "clawhub-searxng",
+  "name": "Searxng",
+  "summary": "Privacy-respecting metasearch using your local SearXNG instance. Search the web, images, news, and more without external API dependencies.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Avinash Venkatswamy",
+      "features": [
+        "Privacy-respecting metasearch using your local SearXNG instance",
+        "Search the web, images, news, and more without external API dependencies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searxng@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192931312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searxng",
+      "url": "https://clawhub.ai/skills/searxng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng",
+    "url": "https://clawhub.ai/skills/searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-7da65835ed9c2ecb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searxng@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-searxng-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aefcc221b354922542c404f714988f8f99bd1b7e2cb8b3819d8290111e0b7d97",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T00:16:32.634Z"
+}

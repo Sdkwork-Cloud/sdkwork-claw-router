@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hash@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hash",
+  "skill": {
+    "id": 17864,
+    "skillKey": "clawhub-hash",
+    "name": "Hash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hash",
+    "url": "https://clawhub.ai/skills/hash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hash-d04b98f48e8f8bcc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate MD5 and SHA checksums, verify integrity, and compare hash values. Use when computing checksums, verifying downloads, or comparing hash outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 699,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773914004029,
+      "changelog": "v3.0.1: SKILL.md rewritten to match new script commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c743bfd16aeb56d64de03e575106c6c54b0a4216f7cd4b487e934407d46b2e31"
+}

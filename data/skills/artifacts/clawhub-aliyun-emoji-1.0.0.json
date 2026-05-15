@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-emoji@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_emoji",
+  "skill": {
+    "id": 55620,
+    "skillKey": "clawhub-aliyun-emoji",
+    "name": "Aliyun Emoji"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-emoji",
+    "url": "https://clawhub.ai/skills/aliyun-emoji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-emoji-e2b69d908505e870.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating template-driven emoji videos with Alibaba Cloud Model Studio Emoji (`emoji-v1`) from a detected portrait image. Use when producing fixed-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775073718560,
+      "changelog": "Initial release of aliyun-emoji skill:\n\n- Supports generating template-driven emoji videos from a single detected face image using Alibaba Cloud Model Studio.\n- Provides clear guidance for model selection (`emoji-detect-v1` for detection, `emoji-v1` for generation).\n- Includes interface details for detection and generation requests and responses.\n- Captures and saves all relevant inputs, outputs, and process snapshots for traceability.\n- Requires images as public URLs and operation in China mainland (Beijing) region.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59f6209a49ad055d076647c1e982ff3bbc3c84872b4db3ea20236f17175cb94b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agntdata-youtube@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_youtube",
+  "skill": {
+    "id": 26312,
+    "skillKey": "clawhub-agntdata-youtube",
+    "name": "YouTube API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-youtube",
+    "url": "https://clawhub.ai/skills/agntdata-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-youtube-d4b755e1255b67e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use one API key to pull YouTube data (channels, videos, search, and trends) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaencarrodine",
+      "userId": "s17d5p6q94jb97qnamxbnpkvq984rfwm",
+      "displayName": "Jaen",
+      "image": "https://avatars.githubusercontent.com/u/53541106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1778370275468,
+      "changelog": "- Updated version to 1.0.15.\n- Documentation improvements in SKILL.md, no user-facing functionality changes.\n- No new endpoints or breaking changes introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f2dd610707fdb4d835d723dab10e312c6e894bc773871bfb096b25edb08c10d"
+}

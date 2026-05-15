@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66691,
+  "uuid": "skill-clawhub-stock-assistant-pro",
+  "skillKey": "clawhub-stock-assistant-pro",
+  "name": "Stock Assistant Pro",
+  "summary": "专业股票分析助手，基于五日线+MACD+基本面三维选股策略。提供实时行情分析、买卖点提示、财报健康度检查、做 T 策略建议。适合 A 股投资者使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_assistant_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vip8607",
+      "features": [
+        "专业股票分析助手，基于五日线+MACD+基本面三维选股策略。提供实时行情分析、买卖点提示、财报健康度检查、做 T 策略建议。适合 A 股投资者使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-assistant-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190703025?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-assistant-pro",
+      "url": "https://clawhub.ai/skills/stock-assistant-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-assistant-pro",
+    "url": "https://clawhub.ai/skills/stock-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-assistant-pro-a0f92d9f8de160c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-assistant-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-assistant-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:823f39f888593f48582d7e7f75f99f980be4793f6063f741213a38d413200b89",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:28:16.093Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crate-music-research@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crate_music_research",
+  "skill": {
+    "id": 50269,
+    "skillKey": "clawhub-crate-music-research",
+    "name": "Music Research (Crate)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crate-music-research",
+    "url": "https://clawhub.ai/skills/crate-music-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crate-music-research-7b54b1602ebbe2e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered music research with 92+ tools across 17 sources — MusicBrainz, Bandcamp, Discogs, Genius, Last.fm, Wikipedia, and more. Influence tracing, track v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmoody1973",
+      "userId": "publishers:tmoody1973",
+      "displayName": "Tarik Moody",
+      "image": "https://avatars.githubusercontent.com/u/81526818?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 537,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1772056683881,
+      "changelog": "Initial release — 92 tools across 17 sources. Influence tracing, track verification, playlist building, and publishing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df8cb023a366c9e3f29cbf51d2f3a6855ad3c428559eca022083998f22a6ef3b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32745,
+  "uuid": "skill-clawhub-go-middleware",
+  "skillKey": "clawhub-go-middleware",
+  "name": "Go Middleware",
+  "summary": "Idiomatic Go HTTP middleware patterns with context propagation, structured logging via slog, centralized error handling, and panic recovery. Use when writing...",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_middleware",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Idiomatic Go HTTP middleware patterns with context propagation, structured logging via slog, ce.",
+        "Use when writing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-middleware@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-middleware",
+      "url": "https://clawhub.ai/skills/go-middleware"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-middleware",
+    "url": "https://clawhub.ai/skills/go-middleware",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-middleware-f0787760d0bbb34b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-middleware@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-middleware-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6709850175800759de54a8c8cd2450d54ae93fb1865a836bf0add49178e9d5bd",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:12:30.001Z"
+}

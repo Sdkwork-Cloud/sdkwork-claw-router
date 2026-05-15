@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-local-bridge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_local_bridge",
+  "skill": {
+    "id": 61611,
+    "skillKey": "clawhub-cloud-local-bridge",
+    "name": "Cloud-Local Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-local-bridge",
+    "url": "https://clawhub.ai/skills/cloud-local-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-local-bridge-6d2c97f7170bee35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现云端 OpenClaw 与本地 OpenClaw 之间的双向通信桥接。支持自然语言配对、命令执行、文件同步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "84191879",
+      "userId": "publishers:84191879",
+      "displayName": "默水",
+      "image": "https://avatars.githubusercontent.com/u/262069785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 611,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772073476949,
+      "changelog": "Bug fixes and improvements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f2627ce2eb5c34d979e36cc3c967ea6f30cb8b524dbaa497d939a6805565f03"
+}

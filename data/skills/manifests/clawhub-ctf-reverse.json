@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26105,
+  "uuid": "skill-clawhub-ctf-reverse",
+  "skillKey": "clawhub-ctf-reverse",
+  "name": "Ctf Reverse",
+  "summary": "Provides reverse engineering techniques for CTF challenges. Use when analyzing binaries, game clients, obfuscated code, esoteric languages, custom VMs, anti-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_reverse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli",
+      "features": [
+        "Provides reverse engineering techniques for CTF challenges",
+        "Use when analyzing binaries, game clients, obfuscated code, esoteric languages, custom VMs, ant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-reverse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85359251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-reverse",
+      "url": "https://clawhub.ai/skills/ctf-reverse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-reverse",
+    "url": "https://clawhub.ai/skills/ctf-reverse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-reverse-69781b23ac53bb25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-reverse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-reverse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fdbe990678fadd8a05b28853055d0369b8c29de16e92c9e04586d81a412ae36",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:24:12.448Z"
+}

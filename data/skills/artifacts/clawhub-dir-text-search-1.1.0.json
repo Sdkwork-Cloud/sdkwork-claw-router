@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dir-text-search@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dir_text_search",
+  "skill": {
+    "id": 41750,
+    "skillKey": "clawhub-dir-text-search",
+    "name": "Dir Text Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dir-text-search",
+    "url": "https://clawhub.ai/skills/dir-text-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dir-text-search-ae4840c143b6ca9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to search for text or regex patterns inside a directory, including inside ZIP / RAR / TAR / 7z archives recursi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trylovecatch",
+      "userId": "s178ezahpa1hj1vnchxdmn36bn83v4en",
+      "displayName": "TryLoveCatch",
+      "image": "https://avatars.githubusercontent.com/u/5811464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776241212345,
+      "changelog": "dir-text-search 1.1.0\n\n- Updated scripts/search_tool.py (details not shown).\n- No changes to user-facing features or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da652937fff71e5d3b6cecffa884dae2e953126ef8bf099066c2cb0fb0d22333"
+}

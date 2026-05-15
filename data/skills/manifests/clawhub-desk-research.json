@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33282,
+  "uuid": "skill-clawhub-desk-research",
+  "skillKey": "clawhub-desk-research",
+  "name": "Desk Research",
+  "summary": "Structured desk research workflow for market, company, policy, product, and competitor questions. Use when a user asks for secondary research, landscape scan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desk_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "draco-kzn",
+      "features": [
+        "Structured desk research workflow for market, company, policy, product, and competitor questions",
+        "Use when a user asks for secondary research, landscape scan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desk-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174134659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desk-research",
+      "url": "https://clawhub.ai/skills/desk-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desk-research",
+    "url": "https://clawhub.ai/skills/desk-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desk-research-fbd92a5a6b392899.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desk-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desk-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03747298848fb3be7362a4b4fa63d7d8f4c61fccbe49ecc75ecfc91998977795",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:50:46.071Z"
+}

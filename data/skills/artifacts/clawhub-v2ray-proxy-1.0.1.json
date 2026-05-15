@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v2ray-proxy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2ray_proxy",
+  "skill": {
+    "id": 66194,
+    "skillKey": "clawhub-v2ray-proxy",
+    "name": "V2ray Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2ray-proxy",
+    "url": "https://clawhub.ai/skills/v2ray-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2ray-proxy-1d6210cd83b2b1a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "V2Ray代理管理 - 自动开关代理、根据网络状况自动配置系统代理。使用场景：OpenClaw需要访问外网时自动开启代理、不需要时关闭。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felixqian4160",
+      "userId": "publishers:felixqian4160",
+      "displayName": "Felixqian4160",
+      "image": "https://avatars.githubusercontent.com/u/128769490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 733,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772019422275,
+      "changelog": "fix: stop命令自动清除系统代理",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52540b926a1927e200e4152aa12d23bdc70e2f495ba0456d80e9bd91aba330fb"
+}

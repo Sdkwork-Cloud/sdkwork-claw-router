@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59827,
+  "uuid": "skill-clawhub-fortigate-config",
+  "skillKey": "clawhub-fortigate-config",
+  "name": "Fortigate Configuration Skill",
+  "summary": "自动配置 FortiGate 防火墙，支持基础策略管理及工控协议（Modbus、IEC104、S7等）的安全配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortigate_config",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiansiting",
+      "features": [
+        "自动配置 FortiGate 防火墙，支持基础策略管理及工控协议（Modbus、IEC104、S7等）的安全配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortigate-config@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28823754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortigate-config",
+      "url": "https://clawhub.ai/skills/fortigate-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortigate-config",
+    "url": "https://clawhub.ai/skills/fortigate-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortigate-config-b67e3792652e97bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortigate-config@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortigate-config-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d129810f35a2a1dabb76ddd3848049097fa1c84341d8ea284fd3b07a7fadf59",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:58:53.606Z"
+}

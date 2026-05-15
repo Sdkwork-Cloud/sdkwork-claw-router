@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-hindi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_hindi",
+  "skill": {
+    "id": 40757,
+    "skillKey": "clawhub-video-editing-with-hindi",
+    "name": "Video Editing With Hindi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-hindi",
+    "url": "https://clawhub.ai/skills/video-editing-with-hindi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-hindi-bb3a4d6bc10e4dce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based video-editing-with-hindi tool that handles adding Hindi subtitles to videos for Indian audiences. Upload MP4, MOV, AVI, WebM files (up to 500MB),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775872570022,
+      "changelog": "Initial release of Video Editing With Hindi — cloud-based tool for Hindi subtitles:\n\n- Upload MP4, MOV, AVI, or WebM videos (up to 500MB) and automatically add Hindi subtitles and captions.\n- 1080p MP4 export supported; output is typically ready within 1–2 minutes.\n- Simple authentication: get 100 free credits with an anonymous token valid for 7 days.\n- Seamless workflow with session management, fast cloud GPU processing, and support for quick edits and batch processing.\n- Friendly prompts and clear error handling for a smooth, user-focused editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e09b5ccd4bdb55c816a081842bf45afd14c014538fa038e471a6d22a6a5c0b93"
+}

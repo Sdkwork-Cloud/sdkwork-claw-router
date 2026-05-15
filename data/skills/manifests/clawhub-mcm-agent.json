@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49995,
+  "uuid": "skill-clawhub-mcm-agent",
+  "skillKey": "clawhub-mcm-agent",
+  "name": "MCM Agent",
+  "summary": "Help users manage cross-device AI memory. When user explicitly asks to save or recall information, sync it to their cloud memory account. Categorizes saved c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcm_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "biocherry",
+      "features": [
+        "Help users manage cross-device AI memory",
+        "When user explicitly asks to save or recall information, sync it to their cloud memory account",
+        "Categorizes saved c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcm-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262560567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcm-agent",
+      "url": "https://clawhub.ai/skills/mcm-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcm-agent",
+    "url": "https://clawhub.ai/skills/mcm-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcm-agent-a7585502b37ba60a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcm-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcm-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:481d4afb81a8fec7fe6f2371e8077d05cc5dc5db835d7e0d4362ee52ae8baa69",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:25:34.244Z"
+}

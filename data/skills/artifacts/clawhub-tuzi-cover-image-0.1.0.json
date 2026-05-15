@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tuzi-cover-image@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuzi_cover_image",
+  "skill": {
+    "id": 27173,
+    "skillKey": "clawhub-tuzi-cover-image",
+    "name": "Tuzi Cover Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuzi-cover-image",
+    "url": "https://clawhub.ai/skills/tuzi-cover-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuzi-cover-image-c9b7524d5d4e0214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates article cover images with 5 dimensions (type, palette, rendering, text, mood) combining 9 color palettes and 6 rendering styles. Supports cinematic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljquan",
+      "userId": "publishers:ljquan",
+      "displayName": "ljquan",
+      "image": "https://avatars.githubusercontent.com/u/3754268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772720437232,
+      "changelog": "- Initial release of the tuzi-cover-image skill: generate customizable article cover images with 5 dimensions (type, palette, rendering, text, mood)\n- Supports 9 color palettes, 6 rendering styles, and multiple aspect ratios (2.35:1 cinematic, 16:9 widescreen, 1:1 square, etc.)\n- CLI interface with options for quick mode, explicit dimension control, style presets, reference images, and direct content input\n- Auto-selection of dimensions based on content; workflow includes content analysis, option confirmation, prompt creation, image generation, and completion report\n- Clear file structure and output location; supports custom user/project preferences via EXTEND.md configuration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a43141e1a8ba1406e4f0ef966318663c7ca55edb64abe5db5049473332c5f80a"
+}

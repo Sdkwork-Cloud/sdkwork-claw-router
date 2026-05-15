@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41127,
+  "uuid": "skill-clawhub-email-fortress",
+  "skillKey": "clawhub-email-fortress",
+  "name": "Email Fortress",
+  "summary": "Treat email as untrusted input. Prevent prompt injection through your inbox by enforcing channel trust boundaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_fortress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeyTbuilds",
+      "features": [
+        "Treat email as untrusted input",
+        "Prevent prompt injection through your inbox by enforcing channel trust boundaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-fortress@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272441554?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-fortress",
+      "url": "https://clawhub.ai/skills/email-fortress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-fortress",
+    "url": "https://clawhub.ai/skills/email-fortress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-fortress-301dea9e2849cd05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-fortress@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-fortress-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7690f5e9e63f21b0502d3205391915d9c2f1d142804ebeceea74f8577eb76b96",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:01:24.929Z"
+}

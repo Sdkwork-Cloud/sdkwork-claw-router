@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8783,
+  "uuid": "skill-clawhub-zero-trust",
+  "skillKey": "clawhub-zero-trust",
+  "name": "Zero Trust",
+  "summary": "Security-first behavioral guidelines for cautious agent operation. Use this skill for ALL operations involving external resources, installations, credentials, or actions with external effects. Triggers on - any URL/link interaction, packag.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zero_trust",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doonot",
+      "features": [
+        "Security-first behavioral guidelines for cautious agent operation",
+        "Use this skill for ALL operations involving external resources, installations, credentials, or.",
+        "Triggers on",
+        "any URL/link interaction, package installations, API key handling, sending emails/messages, soc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zero-trust@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/767984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zero-trust",
+      "url": "https://clawhub.ai/skills/zero-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zero-trust",
+    "url": "https://clawhub.ai/skills/zero-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zero-trust-6c0e1b737c1cf846.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zero-trust@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zero-trust-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5192e7f9376215cd68392bd66440fe854d0b1fb07f6f92a1fa8febe66af30518",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:23:19.717Z"
+}

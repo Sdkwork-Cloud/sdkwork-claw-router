@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-security-scan-dxx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scan_dxx",
+  "skill": {
+    "id": 36503,
+    "skillKey": "clawhub-skill-security-scan-dxx",
+    "name": "Skill Security Scanner by dxx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scan-dxx",
+    "url": "https://clawhub.ai/skills/skill-security-scan-dxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scan-dxx-2c9bd1e75fc0d7b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan installed OpenClaw skills for potential security risks. Use when you want to check if skills contain dangerous commands, access sensitive paths, or have..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntaffffff",
+      "userId": "s178h8rgjjj5ctbk1bkky72vph8439t6",
+      "displayName": "ntaffffff",
+      "image": "https://avatars.githubusercontent.com/u/186145692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775607655993,
+      "changelog": "Initial release of skill-security-scan\n\n- Scans all installed OpenClaw skills for potential security risks.\n- Detects dangerous commands (e.g., rm -rf /, fork bombs).\n- Checks for access to sensitive paths and risky use of eval/exec.\n- Reviews network request security (such as missing SSL verification).\n- Generates a detailed risk report to help identify and manage threats.\n- Includes usage guidance and security best practices for skill management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3bb7fb1291f050375a80a4cec0418db426432bddb33b5ed0626ae75110d23ce"
+}

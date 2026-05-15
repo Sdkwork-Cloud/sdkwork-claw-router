@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48441,
+  "uuid": "skill-clawhub-justoneapi-xiaohongshu-search-note",
+  "skillKey": "clawhub-justoneapi-xiaohongshu-search-note",
+  "name": "Xiaohongshu (RedNote) Note Search API",
+  "summary": "Call 2 search-note versions for Xiaohongshu (RedNote) Note Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_search_note",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call 2 search-note versions for Xiaohongshu (RedNote) Note Search through JustOneAPI with keywo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-xiaohongshu-search-note@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-xiaohongshu-search-note",
+      "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-search-note"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-search-note",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-search-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-search-note-f647c188036db158.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-search-note@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-xiaohongshu-search-note-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:738030afc7b7e0df09a5a0c00509640828416b52a2439d4532f5b1fe40ba790c",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T10:20:06.585Z"
+}

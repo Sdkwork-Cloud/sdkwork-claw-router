@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ainative-agent-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ainative_agent_framework",
+  "skill": {
+    "id": 37384,
+    "skillKey": "clawhub-ainative-agent-framework",
+    "name": "Ainative Agent Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ainative-agent-framework",
+    "url": "https://clawhub.ai/skills/ainative-agent-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ainative-agent-framework-2a37415426b1d03b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build multi-agent systems and swarms on AINative. Use when (1) Orchestrating multiple specialized AI agents, (2) Dispatching tasks to OpenClaw agents (aurora..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urbantech",
+      "userId": "s1705vnaxvfmy5a3t55qeprr4d83hnbz",
+      "displayName": "Toby Morning",
+      "image": "https://avatars.githubusercontent.com/u/2746731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774311010910,
+      "changelog": "AINative Agent Framework v1.0.0 — Initial release\n\n- Introduces OpenClaw agent swarm with 9 specialized AI agents for orchestration, deployment, frontend, backend, data, security, documentation, performance, and testing.\n- Provides CLI and Cody Script commands for dispatching tasks and communicating with agents.\n- Outlines patterns for agent-to-agent communication (ACP), autonomous workflows, and multi-agent handoffs.\n- Includes a Python class for building custom agents with memory and recall capabilities.\n- Documents RLHF feedback collection and real-time monitoring of agent activities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d18fa1bd6d16a222db7927fbd9fba53a06fc0737f93e70b10d3c280b1e8cba0c"
+}

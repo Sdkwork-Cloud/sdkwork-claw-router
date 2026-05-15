@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9606,
+  "uuid": "skill-clawhub-vet",
+  "skillKey": "clawhub-vet",
+  "name": "vet",
+  "summary": "Run vet immediately after ANY logical unit of code changes. Do not batch your changes, do not wait to be asked to run vet, make sure you are proactive.",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andrewlaack-collab",
+      "features": [
+        "Run vet immediately after ANY logical unit of code changes",
+        "Do not batch your changes, do not wait to be asked to run vet, make sure you are proactive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vet@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225986495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vet",
+      "url": "https://clawhub.ai/skills/vet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vet",
+    "url": "https://clawhub.ai/skills/vet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vet-5f9276129b845b99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vet@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-vet-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf39eda9e0fede4b430040e9fe51143c02c6584da8f036f5e571a27282ef2471",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T21:18:11.021Z"
+}

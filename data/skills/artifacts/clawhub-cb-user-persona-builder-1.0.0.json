@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cb-user-persona-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cb_user_persona_builder",
+  "skill": {
+    "id": 45831,
+    "skillKey": "clawhub-cb-user-persona-builder",
+    "name": "Cb User Persona Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cb-user-persona-builder",
+    "url": "https://clawhub.ai/skills/cb-user-persona-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cb-user-persona-builder-b4c70c5ef381e566.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides structured creation and validation of evidence-based user personas for foreign markets using multidimensional insights and cultural context overlays."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777088823009,
+      "changelog": "Initial release of Overseas Market User Persona Builder.\n\n- Provides a structured, research-backed workflow for building user personas for new markets.\n- Supports multi-source data triangulation and overlays cultural value frameworks.\n- Guides creation of at least eight persona dimensions beyond demographics, with evidence labels.\n- Includes tools for jobs-to-be-done mapping, segment prioritization, and validation planning.\n- Offers example prompts and warnings to avoid stereotyping.\n- Outputs comprehensive persona frameworks to support product, marketing, and sales decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79b4b93e488d4ef7bbc531e230ab4002857c941547ea82a32020cb9962a1e99b"
+}

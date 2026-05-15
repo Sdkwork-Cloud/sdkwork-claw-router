@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freebeat-ai-music-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freebeat_ai_music_video_generator",
+  "skill": {
+    "id": 55322,
+    "skillKey": "clawhub-freebeat-ai-music-video-generator",
+    "name": "Freebeat Ai Music Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freebeat-ai-music-video-generator",
+    "url": "https://clawhub.ai/skills/freebeat-ai-music-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freebeat-ai-music-video-generator-f51a236f738fd9ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a music video for my beat with matching visuals and effects — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777863717570,
+      "changelog": "Initial release of Freebeat AI Music Video Generator.\n\n- Instantly generate synced music videos from your audio files (MP3, WAV, MP4, MOV, up to 200MB).\n- Seamless cloud rendering: upload, describe your video, receive an MP4 in 1–2 minutes.\n- Automatic connection handling with free 7-day token and up to 100 credits.\n- Chat-based interface for easy editing, export, and credit balance queries.\n- Robust error handling for unsupported files, expired sessions, and rate limits.\n- Batch workflow support—process multiple audio files in a single session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2de2056ff55992aaea9ef666483a52c06465afa6d964041efb9a5da315247156"
+}

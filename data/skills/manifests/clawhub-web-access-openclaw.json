@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71173,
+  "uuid": "skill-clawhub-web-access-openclaw",
+  "skillKey": "clawhub-web-access-openclaw",
+  "name": "web-access-openclaw",
+  "summary": "所有联网操作必须通过此 skill 处理，包括：搜索、网页抓取、登录后操作、网络交互等。 触发场景：用户要求搜索信息、查看网页内容、访问需要登录的网站、操作网页界面、抓取社交媒体内容（小红书、微博、推特等）、读取动态渲染页面、以及任何需要真实浏览器环境的网络任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_access_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ysyyrps777",
+      "features": [
+        "所有联网操作必须通过此 skill 处理，包括：搜索、网页抓取、登录后操作、网络交互等。 触发场景：用户要求搜索信息、查看网页内容、访问需要登录的网站、操作网页界面、抓取社交媒体内容（小红书."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-access-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46524868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-access-openclaw",
+      "url": "https://clawhub.ai/skills/web-access-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-access-openclaw",
+    "url": "https://clawhub.ai/skills/web-access-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-access-openclaw-55f8a1b89f042267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-access-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-access-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9388a7861f1eceeb7ee66e97da965a606e3b98f900df207d1023f9cae4a4eb6",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:55:46.607Z"
+}

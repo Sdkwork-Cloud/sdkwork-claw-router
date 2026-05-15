@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soho@1.0.17",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soho",
+  "skill": {
+    "id": 20965,
+    "skillKey": "clawhub-soho",
+    "name": "soho"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soho",
+    "url": "https://clawhub.ai/skills/soho",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soho-5289f9a5ca053a22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Initiate payments on the SOHO Pay credit layer using EIP-712 signatures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amitbiswas1992",
+      "userId": "publishers:amitbiswas1992",
+      "displayName": "Amit  Biswas",
+      "image": "https://avatars.githubusercontent.com/u/17978637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.17",
+      "createdAt": 1773530072145,
+      "changelog": "**Summary: Simplified SOHO Pay agent skill, now using local wallet key for all actions and clearer helper scripts.**\n\n- Refactored skill to use a single local PRIVATE_KEY for signing all authorizations (removed support for remote/abstract wallet signers).\n- Added new helper scripts: `register.js`, `repay.js`, and `status.js` for agent registration, credit repayment, and borrower profile/status checks.\n- Removed `src/signer/` logic and old `pay.js` in favor of simplified script structure under `scripts/`.\n- Updated documentation for easier setup, natural-language mapping, and explicit security warnings about PRIVATE_KEY usage.\n- Switched to a plain, default contract set for both Base mainnet and Base Sepolia, with hardcoded addresses and config checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc3a40d6834b8ff1e78104ba02d2857f2277053eac0bb7dfb0d0290152bef923"
+}

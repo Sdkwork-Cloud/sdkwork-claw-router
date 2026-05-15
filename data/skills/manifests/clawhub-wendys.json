@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64456,
+  "uuid": "skill-clawhub-wendys",
+  "skillKey": "clawhub-wendys",
+  "name": "Wendys",
+  "summary": "温迪汉堡快餐品牌介绍",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wendys",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "温迪汉堡快餐品牌介绍"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wendys@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wendys",
+      "url": "https://clawhub.ai/skills/wendys"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wendys",
+    "url": "https://clawhub.ai/skills/wendys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wendys-c143fc18eb6b6efe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wendys@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wendys-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53146712df70c6fb73f7cf92c0cd2ae73a9d4a9043d3eee54368898621926392",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:28:54.538Z"
+}

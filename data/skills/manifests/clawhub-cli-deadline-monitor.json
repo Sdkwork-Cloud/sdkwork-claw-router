@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16653,
+  "uuid": "skill-clawhub-cli-deadline-monitor",
+  "skillKey": "clawhub-cli-deadline-monitor",
+  "name": "Cli Deadline Monitor",
+  "summary": "CLI tool for tracking Greek tax deadlines (AADE, EFKA). Real-time monitoring with configurable alerts via Slack, SMS, email, or local files.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_deadline_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stems",
+      "features": [
+        "CLI tool for tracking Greek tax deadlines (AADE, EFKA)",
+        "Real-time monitoring with configurable alerts via Slack, SMS, email, or local files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cli-deadline-monitor@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70470779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cli-deadline-monitor",
+      "url": "https://clawhub.ai/skills/cli-deadline-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-deadline-monitor",
+    "url": "https://clawhub.ai/skills/cli-deadline-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-deadline-monitor-281204dd28bee9a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cli-deadline-monitor@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cli-deadline-monitor-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7580965b4c2a65be51f78d05f6f264e9cd7f6ca6eb72c3d435dd44af04dcf7ea",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:53:17.315Z"
+}

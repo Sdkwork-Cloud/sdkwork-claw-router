@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picture-book-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picture_book_maker",
+  "skill": {
+    "id": 70289,
+    "skillKey": "clawhub-picture-book-maker",
+    "name": "picture-book-maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picture-book-maker",
+    "url": "https://clawhub.ai/skills/picture-book-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picture-book-maker-500b62e773c12dcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "制作图文并茂的绘本，支持从主题策划、故事创作、角色设定到分镜设计和最终打包输出的完整流程，适用于教育绘本、儿童故事、寓言故事等场景"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lishuailibertine",
+      "userId": "s175w3s9ppnbnscsgg49kzzrg983gtey",
+      "displayName": "lishuailibertine",
+      "image": "https://avatars.githubusercontent.com/u/7145192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773367769922,
+      "changelog": "Initial release of picture-book-maker skill:\n\n- Enables end-to-end creation of illustrated picture books, covering theme planning, story writing, character design, storyboard layout, image generation, and packaging.\n- Guides users through story structure, character cards, and page design with detailed references and instructions.\n- Supports saving pages and metadata in a standardized directory structure, with robust handling for both local and URL-based images.\n- Provides a packaging script to generate a responsive HTML picture book with flipping animation.\n- Includes troubleshooting tips and usage examples for educational, fable, and emotional education scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf03daf9a89b3c5f78623d01d69b357925092991e4a996ce146df8cf235b5c38"
+}

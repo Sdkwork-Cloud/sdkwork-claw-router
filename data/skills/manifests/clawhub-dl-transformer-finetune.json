@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19265,
+  "uuid": "skill-clawhub-dl-transformer-finetune",
+  "skillKey": "clawhub-dl-transformer-finetune",
+  "name": "Dl Transformer Finetune",
+  "summary": "Build transformer fine-tuning run plans with task settings, hyperparameters, and model-card outputs. Use for repeatable Hugging Face or PyTorch finetuning wo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dl_transformer_finetune",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad Mazhar Saeed",
+      "features": [
+        "Build transformer fine-tuning run plans with task settings, hyperparameters, and model-card out.",
+        "Use for repeatable Hugging Face or PyTorch finetuning wo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dl-transformer-finetune@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160357695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dl-transformer-finetune",
+      "url": "https://clawhub.ai/skills/dl-transformer-finetune"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dl-transformer-finetune",
+    "url": "https://clawhub.ai/skills/dl-transformer-finetune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dl-transformer-finetune-2eca912d3d1bb095.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dl-transformer-finetune@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dl-transformer-finetune-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:679bee73b3af4cced3b99d6429baa6f6a36374b444b8d2fd29a43db211fb2f12",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T20:06:31.248Z"
+}

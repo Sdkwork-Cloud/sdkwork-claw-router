@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/extract-tables-from-pdf@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_tables_from_pdf",
+  "skill": {
+    "id": 26027,
+    "skillKey": "clawhub-extract-tables-from-pdf",
+    "name": "Extract Tables From Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-tables-from-pdf",
+    "url": "https://clawhub.ai/skills/extract-tables-from-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-tables-from-pdf-3333d07a37bad46e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract tables from PDF documents using MinerU's table detection engine. Identifies and extracts structured table data from both native and scanned PDFs. Fea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzlzyca",
+      "userId": "s177m2xppsth4a69xqx30k6kds83haz0",
+      "displayName": "mzlzyCA",
+      "image": "https://avatars.githubusercontent.com/u/87289074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775210295786,
+      "changelog": "SEO: expand description for better ClawHub vector search discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebf8f65e972644005f9321691d01b822e76c420508b1049f55223c88d21ccf2c"
+}

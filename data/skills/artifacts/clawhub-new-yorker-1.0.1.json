@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-yorker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_yorker",
+  "skill": {
+    "id": 53176,
+    "skillKey": "clawhub-new-yorker",
+    "name": "New Yorker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-yorker",
+    "url": "https://clawhub.ai/skills/new-yorker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-yorker-ad935bd1339985ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The New Yorker is a weekly magazine renowned for its long-form journalism, literary fiction, cultural criticism, and iconic cartoons. Published by Condé Nast..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776870148973,
+      "changelog": "- Initial release of the skill documentation with detailed information on The New Yorker magazine.\n- Provides history, business model, competitive advantages, key data, and interesting facts about the magazine.\n- Includes a historical timeline, revenue streams, and unique editorial practices.\n- Document available in SKILL.md format for easy reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2566197aa69c61790551fdec9e43589a2f493c3ac0db231af4eb0bfa913fbd50"
+}

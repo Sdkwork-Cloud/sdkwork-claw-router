@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73067,
+  "uuid": "skill-clawhub-chinese-writing-assistant",
+  "skillKey": "clawhub-chinese-writing-assistant",
+  "name": "专业中文写稿助手",
+  "summary": "专业中文写稿助手，支持洗稿改写、仿写、文案优化功能。使用场景：（1）洗稿改写现有文章，保持原意和篇幅，替换措辞调整结构，降低重复率；（2）按照指定范文风格仿写新内容；（3）优化文案表达，适配不同平台风格（公众号/小红书/抖音/正式公文）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_writing_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duzhilei951",
+      "features": [
+        "专业中文写稿助手，支持洗稿改写、仿写、文案优化功能。使用场景：（1）洗稿改写现有文章，保持原意和篇幅，替换措辞调整结构，降低重复率；（2）按照指定范文风格仿写新内容；（3）优化文案表达，适配."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-writing-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22375450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-writing-assistant",
+      "url": "https://clawhub.ai/skills/chinese-writing-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-writing-assistant",
+    "url": "https://clawhub.ai/skills/chinese-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-writing-assistant-0dbd606dfbbb7c52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-writing-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-writing-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48738de73d671b922c02a412ebfd67d944e8ebb4ff88c83cfc85eac4833dc4bf",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:54:50.575Z"
+}

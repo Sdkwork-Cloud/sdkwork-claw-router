@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56064,
+  "uuid": "skill-clawhub-moses-audit",
+  "skillKey": "clawhub-moses-audit",
+  "name": "Moses Audit",
+  "summary": "MO§ES™ Audit Trail — SHA-256 chained append-only governance ledger. Every agent appends before final response. Provides moses_log_action and moses_verify_cha...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moses_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "burnmydays",
+      "features": [
+        "MO§ES™ Audit Trail — SHA-256 chained append-only governance ledger",
+        "Every agent appends before final response",
+        "Provides moses_log_action and moses_verify_cha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moses-audit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223053814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moses-audit",
+      "url": "https://clawhub.ai/skills/moses-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moses-audit",
+    "url": "https://clawhub.ai/skills/moses-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moses-audit-dadd9ab70425d393.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moses-audit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-moses-audit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c085a025929d30354418ed97c48ccba6b9ad6dfd3c5b19eae57d421eb5af22f",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:07:29.012Z"
+}

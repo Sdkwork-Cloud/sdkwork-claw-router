@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23839,
+  "uuid": "skill-clawhub-psd-automator-screenshot",
+  "skillKey": "clawhub-psd-automator-screenshot",
+  "name": "Psd Automator Screenshot",
+  "summary": "Use screenshot + natural language instruction to locate PSD text layers and dispatch automated edits with confidence gating. Requires psd-automator core.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psd_automator_screenshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhrxy",
+      "features": [
+        "Use screenshot + natural language instruction to locate PSD text layers and dispatch automated.",
+        "Requires psd-automator core."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psd-automator-screenshot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51009660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psd-automator-screenshot",
+      "url": "https://clawhub.ai/skills/psd-automator-screenshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psd-automator-screenshot",
+    "url": "https://clawhub.ai/skills/psd-automator-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psd-automator-screenshot-c9884b7b551502c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psd-automator-screenshot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-psd-automator-screenshot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd2b47c10d30851b25b9ee83bedaf1ac4320b48fd5a40b7bb145993624b7eaa1",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:47:10.412Z"
+}

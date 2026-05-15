@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-session-cost@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_session_cost",
+  "skill": {
+    "id": 20805,
+    "skillKey": "clawhub-agent-session-cost",
+    "name": "Agent Session Cost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-session-cost",
+    "url": "https://clawhub.ai/skills/agent-session-cost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-session-cost-21df40ca7dbf98c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and analyze your OpenClaw session costs. Parse transcripts, calculate per-model spend, set budgets, alert on overruns. Stop burning money blindly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 536,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772383068511,
+      "changelog": "Session-cost 1.0.0 initial release.\n\n- Track and analyze OpenClaw session costs in detail.\n- Scripts provided to summarize spend, give per-model breakdowns, and set/alert on budgets.\n- Quick cost check, daily summary, and budget alert examples included for easy integration.\n- Helps prevent unexpected token usage and spending overruns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2a6f0819d96093a9b1548256033cdf8214727ece1365d610c9d496759ae7c88"
+}

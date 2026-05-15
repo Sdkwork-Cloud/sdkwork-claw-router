@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test1234131231242314214124@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test1234131231242314214124",
+  "skill": {
+    "id": 73051,
+    "skillKey": "clawhub-test1234131231242314214124",
+    "name": "测试审核记录保存2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test1234131231242314214124",
+    "url": "https://clawhub.ai/skills/test1234131231242314214124",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test1234131231242314214124-d35fe50009b9112b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在代码提交前或任务完成后使用，进行代码审查"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776931149479,
+      "changelog": "- 技能名称从 `core-brainstorming` 更改为 `core-code-review`\n- 技能描述从“在任何创造性工作之前使用”变更为“在代码提交前或任务完成后使用，进行代码审查”\n- 核心内容完全重构，从“头脑风暴”流程转变为“代码审查”的维度和规范\n- 新增了代码审查的问题分级标准和输出报告格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96ce968da986f921f4832a0907f61adadbedeb9ede8aa58dc310a4b39dc6d14c"
+}

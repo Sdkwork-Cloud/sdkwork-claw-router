@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66083,
+  "uuid": "skill-clawhub-yuque-skill",
+  "skillKey": "clawhub-yuque-skill",
+  "name": "语雀 Skill",
+  "summary": "通过语雀开放API对语雀(Yuque)文档与知识库执行端到端自动化操作 —— 创建/读取/更新/删除文档、管理知识库目录(TOC)、调整Markdown排版(字号、颜色、标题、表格、代码块、提示框)、全文搜索及批量导入导出。任何用户提到\"语雀\"\"yuque\"\"知识库\"\"文档目录\"\"TOC\"\"语雀文档格式调整\"\"语...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuque_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "feixuelingcloud",
+      "features": [
+        "通过语雀开放API对语雀(Yuque)文档与知识库执行端到端自动化操作 —— 创建/读取/更新/删除文档、管理知识库目录(TOC)、调整Markdown排版(字号、颜色、标题、表格、代码块、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuque-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161189517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuque-skill",
+      "url": "https://clawhub.ai/skills/yuque-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuque-skill",
+    "url": "https://clawhub.ai/skills/yuque-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuque-skill-248bc72138ad2cc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuque-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuque-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15dc71a5f5c0116be5759a47dae3efb2863fe3c1af6f2d5ad789ae2e39afc299",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:16:22.753Z"
+}

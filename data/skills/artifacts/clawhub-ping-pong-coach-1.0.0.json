@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ping-pong-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ping_pong_coach",
+  "skill": {
+    "id": 72177,
+    "skillKey": "clawhub-ping-pong-coach",
+    "name": "ping-pong-coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ping-pong-coach",
+    "url": "https://clawhub.ai/skills/ping-pong-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ping-pong-coach-958ac9ffd051ab2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "乒乓球教学方案生成。当用户说\"帮我出一份乒乓球教学方案\"、\"生成乒乓球学习计划\"、\"帮我出一份乒乓球培训方案\"，或询问乒乓球教学内容、训练计划、阶段安排时触发。输入学员性别、年龄、学乒乓球几年后，输出完整的分阶段教学方案，包括各阶段时长、技术要点、当前阶段判断和剩余学习时间估算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taradl7347c",
+      "userId": "s175ytzw151shj386adjcan2k583kmc3",
+      "displayName": "taradl7347c",
+      "image": "https://avatars.githubusercontent.com/u/254493655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774606131479,
+      "changelog": "ping-pong-coach 1.0.0 – Initial Release\n\n- Generates personalized, multi-stage ping pong coaching plans based on student’s age, gender, and training years.\n- Includes stage duration, technical focus, current stage analysis, and estimated time to progression.\n- Adapts output to missing input information and provides tailored age group advice.\n- Offers actionable next-step recommendations for students.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c34c370926da7b7fb22ecb92bb8f005d21f30f7312d99568a97c68a3fa510e57"
+}

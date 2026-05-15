@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s3-sort@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s3_sort",
+  "skill": {
+    "id": 17955,
+    "skillKey": "clawhub-s3-sort",
+    "name": "Create and manage a sorted directory structure in AWS S3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s3-sort",
+    "url": "https://clawhub.ai/skills/s3-sort",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s3-sort-a203267c7e3e4649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload many files to S3 with automatic organization by first-character prefixes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "6mile-puppet",
+      "userId": "publishers:6mile-puppet",
+      "displayName": "6mile-puppet",
+      "image": "https://avatars.githubusercontent.com/u/258696802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771225356679,
+      "changelog": "Added the bash script to actually do the sorting and managing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96630c91278054c655acec85bed3e3780c473db3bd57ceb799c66af669f5cba2"
+}

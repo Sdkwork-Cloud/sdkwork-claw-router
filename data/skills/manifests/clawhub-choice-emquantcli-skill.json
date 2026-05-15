@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68562,
+  "uuid": "skill-clawhub-choice-emquantcli-skill",
+  "skillKey": "clawhub-choice-emquantcli-skill",
+  "name": "Emq",
+  "summary": "使用 emq-cli 命令行进行安装与环境准备、认证登录、行情查询（market）、组合创建与下单（portfolio）、额度查询（quota）、以及 raw 透传命令调用与常见排障。遇到“如何安装 emq”“如何登录”“如何查快照/序列”“如何创建组合/下单”“参数报错如何修复”等场景时使用本技能。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.choice_emquantcli_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "彭泳翔",
+      "features": [
+        "使用 emq-cli 命令行进行安装与环境准备、认证登录、行情查询（market）、组合创建与下单（portfolio）、额度查询（quota）、以及 raw 透传命令调用与常见排障。遇到“."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/choice-emquantcli-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51920111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "choice-emquantcli-skill",
+      "url": "https://clawhub.ai/skills/choice-emquantcli-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "choice-emquantcli-skill",
+    "url": "https://clawhub.ai/skills/choice-emquantcli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/choice-emquantcli-skill-67f22445c72430cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/choice-emquantcli-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-choice-emquantcli-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69dc6a7bdbdc16831bd68c4d77ca8dccde6febcaa06d0d2d6fbd512b34b582c1",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:34:41.809Z"
+}

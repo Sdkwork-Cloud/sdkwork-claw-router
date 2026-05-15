@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23239,
+  "uuid": "skill-clawhub-pdf-anthropic",
+  "skillKey": "clawhub-pdf-anthropic",
+  "name": "Pdf Anthropic",
+  "summary": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multipl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_anthropic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pupuking723",
+      "features": [
+        "Use this skill whenever the user wants to do anything with PDF files",
+        "This includes reading or extracting text/tables from PDFs, combining or merging multipl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-anthropic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169750518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-anthropic",
+      "url": "https://clawhub.ai/skills/pdf-anthropic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-anthropic",
+    "url": "https://clawhub.ai/skills/pdf-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-anthropic-1d1c0283492a5d83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-anthropic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-anthropic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52723a9bd5a97a88ccc691bc704b133c5708e8f56492ffb04bae4c1c0c6d791d",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:38:41.673Z"
+}

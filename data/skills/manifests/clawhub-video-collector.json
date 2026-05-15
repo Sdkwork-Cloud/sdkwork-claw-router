@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72617,
+  "uuid": "skill-clawhub-video-collector",
+  "skillKey": "clawhub-video-collector",
+  "name": "一键收藏抖音B站视频到你的飞书多维表格",
+  "summary": "抖音/B站视频收藏入库——接收视频链接，自动抓取信息、生成总结、分类、入库飞书多维表格。触发词：视频入库 / 收藏视频 / 帮我整理这个视频。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "黎可升",
+      "features": [
+        "抖音/B站视频收藏入库——接收视频链接，自动抓取信息、生成总结、分类、入库飞书多维表格。触发词：视频入库 / 收藏视频 / 帮我整理这个视频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62740990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-collector",
+      "url": "https://clawhub.ai/skills/video-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-collector",
+    "url": "https://clawhub.ai/skills/video-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-collector-72f179f8445511d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0c40cf18b9a24a4f13b450062c5127a23575c762d97004bff6596a9441bfb42",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:36:14.291Z"
+}

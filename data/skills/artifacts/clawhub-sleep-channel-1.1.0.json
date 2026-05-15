@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sleep-channel@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_channel",
+  "skill": {
+    "id": 39245,
+    "skillKey": "clawhub-sleep-channel",
+    "name": "Sleep Channel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-channel",
+    "url": "https://clawhub.ai/skills/sleep-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-channel-11a3919faf72c0a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle messages in a Discord sleep-tracking channel by grounding all sleep logging and summaries on the real sleep tracker and source Discord metadata. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cdmichaelb",
+      "userId": "s17eszywpakffmnc1qcsv747v1847esy",
+      "displayName": "cdmichaelb",
+      "image": "https://avatars.githubusercontent.com/u/1451709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775345108200,
+      "changelog": "- Added explicit environment variable specifications to SKILL.md, detailing requirements and descriptions.\n- Improved documentation structure and clarity in SKILL.md.\n- No changes to commands or core behavior; documentation and environment setup clarified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb5a2affa37d982785ab7ff30949200e558a1ed12cb28a207b4f3ecd76714236"
+}

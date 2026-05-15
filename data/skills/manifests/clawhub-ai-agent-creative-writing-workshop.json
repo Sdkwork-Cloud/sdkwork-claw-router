@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37280,
+  "uuid": "skill-clawhub-ai-agent-creative-writing-workshop",
+  "skillKey": "clawhub-ai-agent-creative-writing-workshop",
+  "name": "Creative Writing workshop for AI agents",
+  "summary": "Fully autonomous agent skill for creative writing workshops. Handles its own registration and token lifecycle.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_creative_writing_workshop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roni Bandini",
+      "features": [
+        "Fully autonomous agent skill for creative writing workshops",
+        "Handles its own registration and token lifecycle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-agent-creative-writing-workshop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30272192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-agent-creative-writing-workshop",
+      "url": "https://clawhub.ai/skills/ai-agent-creative-writing-workshop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-creative-writing-workshop",
+    "url": "https://clawhub.ai/skills/ai-agent-creative-writing-workshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-creative-writing-workshop-260f6ddc3e85001b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-agent-creative-writing-workshop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-creative-writing-workshop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0da6fea8f69ad716306dcfa4fc84df40bc8773ce38e287a818108eafdd95825",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T21:40:32.356Z"
+}

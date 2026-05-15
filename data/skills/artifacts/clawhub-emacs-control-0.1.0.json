@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emacs-control@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emacs_control",
+  "skill": {
+    "id": 44238,
+    "skillKey": "clawhub-emacs-control",
+    "name": "Emacs Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emacs-control",
+    "url": "https://clawhub.ai/skills/emacs-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emacs-control-18e41d8a72ae17db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Emacs. Search, edit, navigate, and pair programming with user"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calsys456",
+      "userId": "s170jyjmg13cbwn1mj3jy0vkg183ns88",
+      "displayName": "April & May & June",
+      "image": "https://avatars.githubusercontent.com/u/58899952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774507220354,
+      "changelog": "Initial release of emacs-control skill.\n\n- Enables programmatic control of a running Emacs instance via the `emacsctl` command-line utility.\n- Supports insertion and replacement of text, buffer navigation, saving, and buffer selection.\n- Provides CLI options for precise positioning, line/column selection, and range replacements.\n- Documents special Emacs Lisp helper functions for interacting with point, mark, buffer info, windows, kill-ring, and environment inquiries.\n- Warns users to use this skill judiciously, preferring file-based tools unless Emacs interaction is specifically needed or requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd6c0bb1b921710a63eb9f0c39ca99f8bc271037c487a0fdd964282eace225e0"
+}

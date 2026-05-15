@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-hair-color-changer-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_hair_color_changer_cli_skill",
+  "skill": {
+    "id": 56230,
+    "skillKey": "clawhub-ai-hair-color-changer-cli-skill",
+    "name": "AI Hair Color Changer – Try Hair Colors Online Free with Virtual Try-On – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-hair-color-changer-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-hair-color-changer-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-hair-color-changer-cli-skill-778a7ddc30630672.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI hair color changer — change a person's hair color while preserving hairstyle and details"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776047786748,
+      "changelog": "- Initial release of AI Hair Color Changer CLI skill.\n- Enables natural hair color changes in portrait photos while preserving hairstyle and details.\n- Requires installation of weshop-cli and setting the WESHOP_API_KEY environment variable.\n- Provides a default prompt and customizable parameters for image and color options.\n- Outputs URLs for processed images after successful transformation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:add0cb5beb0ccedd312d8f00a52510d64cb5828e5bd0ca58a106d99cd6be94c9"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11227,
+  "uuid": "skill-clawhub-intervals-icu-api",
+  "skillKey": "clawhub-intervals-icu-api",
+  "name": "Intervals Icu Api",
+  "summary": "Complete guide for accessing and managing training data with the intervals.icu API. Use when working with Intervals.icu athlete profiles, activities, workouts, events, wellness data, and training plans. Covers authentication, retrieving ac.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intervals_icu_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pseuss",
+      "features": [
+        "Complete guide for accessing and managing training data with the intervals.icu API",
+        "Use when working with Intervals.icu athlete profiles, activities, workouts, events, wellness da.",
+        "Covers authentication, retrieving activities with combined data fields, managing calendar event.",
+        "Includes curl examples for all major operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intervals-icu-api@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35190385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intervals-icu-api",
+      "url": "https://clawhub.ai/skills/intervals-icu-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intervals-icu-api",
+    "url": "https://clawhub.ai/skills/intervals-icu-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intervals-icu-api-a0858280a837be28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intervals-icu-api@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-intervals-icu-api-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec796a9729b37750a49df555cb99cc0b8e4a497ffb043be3540a0396c170bb68",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T07:04:24.687Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51280,
+  "uuid": "skill-clawhub-jrv-env-doctor",
+  "skillKey": "clawhub-jrv-env-doctor",
+  "name": "Env Doctor",
+  "summary": "Validate .env files for common issues — detect leaked secrets (AWS keys, GitHub tokens, Stripe keys, JWTs), find duplicate variables, flag empty values, comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_env_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Validate .env files for common issues — detect leaked secrets (AWS keys, GitHub tokens, Stripe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jrv-env-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jrv-env-doctor",
+      "url": "https://clawhub.ai/skills/jrv-env-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-env-doctor",
+    "url": "https://clawhub.ai/skills/jrv-env-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-env-doctor-8af38e6844ae08ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jrv-env-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jrv-env-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77756e2e85fd4847c7d58c74a5e46d215aa8cf1ad928758631be9a7a1a6e408d",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:07:57.497Z"
+}

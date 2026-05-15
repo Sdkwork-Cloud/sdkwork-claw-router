@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/happy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.happy",
+  "skill": {
+    "id": 40143,
+    "skillKey": "clawhub-happy",
+    "name": "happy stories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "happy",
+    "url": "https://clawhub.ai/skills/happy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/happy-489f719cadf91909.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pick 2-3 random happy moment stories from the HappyDB dataset and retell them as short stand-up comedy bits. Use this skill whenever the user wants to hear f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776041599236,
+      "changelog": "- Removed the file `pick.py` from the codebase.\n- No changes to documentation or functionality in the skill guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0387db3f0eea4748fd2cd999be4222893324a2b86ad7bceaac518d82376a7e48"
+}

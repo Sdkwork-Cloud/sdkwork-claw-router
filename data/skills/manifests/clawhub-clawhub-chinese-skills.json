@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63841,
+  "uuid": "skill-clawhub-clawhub-chinese-skills",
+  "skillKey": "clawhub-clawhub-chinese-skills",
+  "name": "ClawHub 中文 Skill 查询",
+  "summary": "从 ClawHub 最新上传的 skill 中筛选中文用户上传的 skill 并汇报给用户。当用户要求查看最新中文 skill、查看新上传的中文技能、或类似需求时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_chinese_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "n0nsense",
+      "features": [
+        "从 ClawHub 最新上传的 skill 中筛选中文用户上传的 skill 并汇报给用户。当用户要求查看最新中文 skill、查看新上传的中文技能、或类似需求时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-chinese-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49099455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-chinese-skills",
+      "url": "https://clawhub.ai/skills/clawhub-chinese-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-chinese-skills",
+    "url": "https://clawhub.ai/skills/clawhub-chinese-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-chinese-skills-6e58a096d25e69cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-chinese-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-chinese-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1f27b91f7ec21152abf8ee4e9da6a4d2f8ed8eb897b9396baa3bc23c5ac7583",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:17:14.555Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genealogy-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genealogy_agent",
+  "skill": {
+    "id": 43382,
+    "skillKey": "clawhub-genealogy-agent",
+    "name": "Genealogy Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genealogy-agent",
+    "url": "https://clawhub.ai/skills/genealogy-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genealogy-agent-d4604d470f191d44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract, structure, research, and visualize family history from raw text. Builds knowledge graphs, generates Mermaid trees, Obsidian vaults, and GEDCOM exports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flobo3",
+      "userId": "s179zg9xncbgjedmxmj0yx1q2983sn3q",
+      "displayName": "Flo",
+      "image": "https://avatars.githubusercontent.com/u/268352850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775217764801,
+      "changelog": "Clean republish: unified single commit, no leftover references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd9094710953250854cabf271f18ec4faa16bec511eead0e6e9f98b9eff7d37f"
+}

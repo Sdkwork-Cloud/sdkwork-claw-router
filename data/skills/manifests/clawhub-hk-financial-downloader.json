@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67260,
+  "uuid": "skill-clawhub-hk-financial-downloader",
+  "skillKey": "clawhub-hk-financial-downloader",
+  "name": "Hk Financial Downloader",
+  "summary": "港股公司财报完整下载器。自动从东方财富/同花顺/披露易获取年报、中期报告、季报、招股书，完整报告优先于业绩公告。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_financial_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cgxxxxxxxxxxxx",
+      "features": [
+        "港股公司财报完整下载器。自动从东方财富/同花顺/披露易获取年报、中期报告、季报、招股书，完整报告优先于业绩公告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-financial-downloader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109221124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-financial-downloader",
+      "url": "https://clawhub.ai/skills/hk-financial-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-financial-downloader",
+    "url": "https://clawhub.ai/skills/hk-financial-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-financial-downloader-03f939c6e24e040c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-financial-downloader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-financial-downloader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ab7516ed153bf6ebc00ff56fe053fd22646b9e0af903869a94ded5760b2b170",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:42:48.879Z"
+}

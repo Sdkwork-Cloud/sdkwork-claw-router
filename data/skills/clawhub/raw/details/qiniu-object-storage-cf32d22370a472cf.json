@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "qiniu-object-storage",
+    "displayName": "七牛云对象存储",
+    "summary": "上传本地文件到七牛对象存储，返回可交付的下载链接。当用户提到\"上传\"\"七牛\"\"对象存储\"\"OSS\"\"交付链接\"\"公网链接\"\"签名链接\"时引用；当已有本地文件需要上传并获得可访问的 URL 时引用；当工作流完成内容生成后进入交付阶段时引用。自动按扩展名判定文件类型，私有空间返回签名链接，公开空间返回公网链接。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775311714149,
+    "updatedAt": 1777527165947
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775311714149,
+    "changelog": "- Initial release of the qiniu_object_storage skill.\n- Upload local files to Qiniu Object Storage and return accessible download links.\n- Automatically generates object keys based on date, file type, and filename.\n- Supports private and public spaces: returns signed URLs for private, public URLs for public spaces, with override options.\n- Configured via environment variables only.\n- Outputs JSON including storage provider, bucket, object key, access mode, and delivery URL.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "showtimewalker",
+    "userId": "s17ac5m184sth0bw38q289e43583grgv",
+    "displayName": "王新平（Wang-Xin-ping）",
+    "image": "https://avatars.githubusercontent.com/u/50769299?v=4"
+  },
+  "moderation": null
+}

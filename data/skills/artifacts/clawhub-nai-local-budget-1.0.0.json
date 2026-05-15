@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nai-local-budget@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_local_budget",
+  "skill": {
+    "id": 37220,
+    "skillKey": "clawhub-nai-local-budget",
+    "name": "Local Budget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-local-budget",
+    "url": "https://clawhub.ai/skills/nai-local-budget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-local-budget-4e4b7025c402d62e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze exported bank/credit card CSV files locally to track spending, categorize transactions with LLM reasoning, compare against user-defined budgets, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774507758908,
+      "changelog": "Local Budget 1.0.0 — Initial Release\n\n- Analyze bank and credit card CSV exports fully locally for spending and budgeting.\n- Parse, categorize, and report on transactions without third-party services.\n- Supports category customization, multi-format CSVs, and user-defined budgets.\n- Generates markdown reports with budget comparisons, trends, and spending analysis for Obsidian.\n- Emphasizes privacy: no data leaves the user's device.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af393ce94d98f0bfec8dc406bd5645bc5ad5c216c87b632e6ce5de35afeaea95"
+}

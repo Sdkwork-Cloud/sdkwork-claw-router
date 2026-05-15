@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50394,
+  "uuid": "skill-clawhub-create-video",
+  "skillKey": "clawhub-create-video",
+  "name": "Create Video",
+  "summary": "Create videos from a text prompt using HeyGen's Video Agent (POST /v3/video-agents). The default for most video requests — AI handles script, avatar, visuals...",
+  "version": "2.23.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Wang",
+      "features": [
+        "Create videos from a text prompt using HeyGen's Video Agent (POST /v3/video-agents)",
+        "The default for most video requests — AI handles script, avatar, visuals..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-video@2.23.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11284232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-video",
+      "url": "https://clawhub.ai/skills/create-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-video",
+    "url": "https://clawhub.ai/skills/create-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-video-0eb6d82d042bd323.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-video@2.23.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-video-2.23.0.json",
+      "version": "2.23.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:134725e3277c017ed4a44bcf7d5612f5d8b8b39a51ec1658453bcbaee0dbf54b",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:11:55.674Z"
+}

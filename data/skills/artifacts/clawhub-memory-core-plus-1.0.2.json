@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-core-plus@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_core_plus",
+  "skill": {
+    "id": 24020,
+    "skillKey": "clawhub-memory-core-plus",
+    "name": "memory-core-plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-core-plus",
+    "url": "https://clawhub.ai/skills/memory-core-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-core-plus-c79a0b47e40221d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhances OpenClaw memory by auto-recalling relevant past data before each turn and auto-capturing key info after each run for persistent context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhoulf1006",
+      "userId": "publishers:zhoulf1006",
+      "displayName": "zhoulf1006",
+      "image": "https://avatars.githubusercontent.com/u/35586967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773757349341,
+      "changelog": "Fix sessionKey recursion guard: use :memory-capture: prefix to match includes() check, preventing recursive hook execution",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47f55725bb7070124b3e53d9f5fb03807f45bc4678c57e101d9005a5576b9a4c"
+}

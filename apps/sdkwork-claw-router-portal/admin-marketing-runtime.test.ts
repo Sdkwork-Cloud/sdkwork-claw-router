@@ -7,6 +7,7 @@ import { MarketingService } from "./packages/sdkwork-claw-router-admin-marketing
 import {
   createCouponBatchGenerateInputFromForm,
   createCouponInputFromForm,
+  createRechargePackageInputFromForm,
 } from "./packages/sdkwork-claw-router-admin-marketing/src/marketingForm.ts";
 
 const originalFetch = globalThis.fetch;
@@ -114,6 +115,36 @@ test("admin coupon batch generate input defaults invalid numeric count safely", 
   });
 });
 
+test("admin recharge package input normalizes form values", () => {
+  const form = new FormData();
+  form.set("rmb", " 12 ");
+  form.set("bonus", " 30 ");
+  form.set("status", " inactive ");
+
+  assert.deepEqual(createRechargePackageInputFromForm(form), {
+    rmb: "12.00",
+    bonus: 30,
+    status: "inactive",
+  });
+});
+
+test("admin recharge package input rejects invalid form values", () => {
+  for (const [patch, message] of [
+    [["rmb", "0"], /rmb must be greater than zero/],
+    [["rmb", "10.001"], /rmb must be a positive money amount/],
+    [["bonus", "-1"], /bonus must be a non-negative integer/],
+    [["status", "archived"], /status must be active or inactive/],
+  ] as const) {
+    const form = new FormData();
+    form.set("rmb", "10.00");
+    form.set("bonus", "0");
+    form.set("status", "active");
+    form.set(patch[0], patch[1]);
+
+    assert.throws(() => createRechargePackageInputFromForm(form), message);
+  }
+});
+
 test("admin marketing service reads generated batch data returned by the generated backend SDK", async () => {
   await withBackendSdkResponse(
     {
@@ -145,10 +176,101 @@ test("admin marketing service reads generated batch data returned by the generat
         prefix: "LAUNCH",
       });
 
-      assert.equal(captured[0].url, "/backend/v3/api/router/coupon-batches/generate");
+      assert.equal(captured[0].url, "/backend/v3/api/billing/coupon_batches");
       assert.equal(captured[0].method, "POST");
       assert.equal(result.batch.id, "batch-1");
       assert.deepEqual(result.codes.map((item) => item.code), ["LAUNCH-001"]);
+    },
+  );
+});
+
+test("admin marketing service reads recharge packages returned by the generated backend SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: [
+        {
+          id: "pkg-10",
+          rmb: "10",
+          bonus: 25,
+          points: 125,
+        },
+      ],
+    },
+    async (captured) => {
+      const packages = await MarketingService.listRechargePackages();
+
+      assert.equal(captured[0].url, "/backend/v3/api/billing/recharges/packages");
+      assert.equal(captured[0].method, "GET");
+      assert.deepEqual(packages, [
+        {
+          id: "pkg-10",
+          rmb: "10.00",
+          bonus: 25,
+          points: 125,
+          status: "active",
+        },
+      ]);
+    },
+  );
+});
+
+test("admin marketing service creates and updates recharge packages through generated backend SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "pkg-12",
+          rmb: "12.00",
+          bonus: 30,
+          points: 150,
+          status: "inactive",
+        },
+      },
+    },
+    async (captured) => {
+      const created = await MarketingService.createRechargePackage({
+        rmb: "12.00",
+        bonus: 30,
+        status: "inactive",
+      });
+
+      assert.equal(captured[0].url, "/backend/v3/api/billing/recharges/packages");
+      assert.equal(captured[0].method, "POST");
+      assert.deepEqual(created, {
+        id: "pkg-12",
+        rmb: "12.00",
+        bonus: 30,
+        points: 150,
+        status: "inactive",
+      });
+    },
+  );
+
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "pkg-12",
+          rmb: "20.00",
+          bonus: 50,
+          points: 250,
+        },
+      },
+    },
+    async (captured) => {
+      const updated = await MarketingService.updateRechargePackage("pkg-12", {
+        rmb: "20.00",
+        bonus: 50,
+        status: "active",
+      });
+
+      assert.equal(captured[0].url, "/backend/v3/api/billing/recharges/packages/pkg-12");
+      assert.equal(captured[0].method, "PUT");
+      assert.equal(updated.points, 250);
+      assert.equal(updated.status, "active");
     },
   );
 });
@@ -166,7 +288,15 @@ test("admin marketing service rejects unsafe SDK path ids before calling generat
       );
       await assert.rejects(
         () => MarketingService.updatePromoCodeStatus("promo?debug=true", "voided"),
-        /promoCodeId must be a safe path segment/,
+        /codeId must be a safe path segment/,
+      );
+      await assert.rejects(
+        () => MarketingService.updateRechargePackage("package/9", { rmb: "10.00", bonus: 0 }),
+        /packageId must be a safe path segment/,
+      );
+      await assert.rejects(
+        () => MarketingService.deleteRechargePackage("package?debug=true"),
+        /packageId must be a safe path segment/,
       );
       assert.equal(captured.length, 0);
     },
@@ -544,6 +674,94 @@ test("admin marketing recharge records fail closed when backend returns invalid 
       },
     );
   }
+});
+
+test("admin marketing recharge packages fail closed when backend returns malformed package rows", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: ["malformed-package-row"],
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => MarketingService.listRechargePackages(),
+        /Recharge package record is required/,
+      );
+    },
+  );
+});
+
+test("admin marketing recharge packages fail closed when backend omits credited points", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "pkg-10",
+            rmb: "10.00",
+            bonus: 25,
+          },
+        ],
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => MarketingService.listRechargePackages(),
+        /Recharge package credited points are required/,
+      );
+    },
+  );
+});
+
+test("admin marketing recharge package mutations fail closed when backend omits item data", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        updated: true,
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => MarketingService.createRechargePackage({ rmb: "10.00", bonus: 0 }),
+        /Created recharge package response is missing data/,
+      );
+    },
+  );
+});
+
+test("admin marketing recharge package mutations validate request data before SDK calls", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        item: {
+          id: "pkg-10",
+          rmb: "10.00",
+          bonus: 0,
+          points: 100,
+        },
+      },
+    },
+    async (captured) => {
+      await assert.rejects(
+        () => MarketingService.createRechargePackage({ rmb: "0", bonus: 0 }),
+        /rmb must be greater than zero/,
+      );
+      await assert.rejects(
+        () => MarketingService.createRechargePackage({ rmb: "10.001", bonus: 0 }),
+        /rmb must be a positive money amount/,
+      );
+      await assert.rejects(
+        () => MarketingService.createRechargePackage({ rmb: "10.00", bonus: -1 }),
+        /bonus must be a non-negative integer/,
+      );
+      assert.equal(captured.length, 0);
+    },
+  );
 });
 
 test("admin marketing referral stats fail closed when backend omits invited totals", async () => {

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ynote-clip@1.8.1",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ynote_clip",
+  "skill": {
+    "id": 62620,
+    "skillKey": "clawhub-ynote-clip",
+    "name": "YNote Clip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ynote-clip",
+    "url": "https://clawhub.ai/skills/ynote-clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ynote-clip-4923fcebca83adaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页剪藏到有道云笔记。触发词：剪藏网页、保存网页、收藏网页、ynote clip、clip to ynote、网页摘录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lephix",
+      "userId": "s17bx0c27sghyvg48kbx2h94dn83yp1p",
+      "displayName": "lephix",
+      "image": "https://avatars.githubusercontent.com/u/308410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.8.1",
+      "createdAt": 1772717950591,
+      "changelog": "有道云笔记收藏网页",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d9e5b63cb4468aadf214d4b10bae8fb8bdf928d562fcf098f007bf125785507"
+}

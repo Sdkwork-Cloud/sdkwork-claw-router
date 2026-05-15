@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22301,
+  "uuid": "skill-clawhub-skill-ppt-generator",
+  "skillKey": "clawhub-skill-ppt-generator",
+  "name": "Skill Ppt Generator",
+  "summary": "Generate PowerPoint (.pptx) files from Markdown input. Use when user requests a PPT to be created or exported.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_ppt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mlnmg2020",
+      "features": [
+        "Generate PowerPoint (.pptx) files from Markdown input",
+        "Use when user requests a PPT to be created or exported."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-ppt-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68682014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-ppt-generator",
+      "url": "https://clawhub.ai/skills/skill-ppt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-ppt-generator",
+    "url": "https://clawhub.ai/skills/skill-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-ppt-generator-79cdf9e44a458017.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-ppt-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-ppt-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67f962ebbd8be72b2a662bb19e2ff3a93415d4016931f10ce5ed5ef3236f44b2",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:38:02.893Z"
+}

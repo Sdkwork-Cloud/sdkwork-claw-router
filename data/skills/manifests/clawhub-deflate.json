@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50417,
+  "uuid": "skill-clawhub-deflate",
+  "skillKey": "clawhub-deflate",
+  "name": "Deflate — Intelligent Context Compression",
+  "summary": "Intelligent context compression for OpenClaw agents. Applies Cornell-MapReduce methodology to preserve information quality while reducing token cost by 60-80...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deflate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manuel",
+      "features": [
+        "Intelligent context compression for OpenClaw agents",
+        "Applies Cornell-MapReduce methodology to preserve information quality while reducing token cost."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deflate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65326960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deflate",
+      "url": "https://clawhub.ai/skills/deflate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deflate",
+    "url": "https://clawhub.ai/skills/deflate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deflate-6b7a740ce063f31c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deflate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deflate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3177d0426b4ec682bc8ef9a637beb45f3630f80d03119e68919472dc9fe4c089",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T21:54:24.848Z"
+}

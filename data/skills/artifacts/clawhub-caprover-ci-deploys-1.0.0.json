@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caprover-ci-deploys@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caprover_ci_deploys",
+  "skill": {
+    "id": 22363,
+    "skillKey": "clawhub-caprover-ci-deploys",
+    "name": "Caprover CI Deployments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caprover-ci-deploys",
+    "url": "https://clawhub.ai/skills/caprover-ci-deploys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caprover-ci-deploys-bfa9e5e6a74ce1ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy apps to CapRover and set up GitHub Actions CI/CD workflows for new or existing projects. Use when the user says things like \"deploy X\", \"trigger a dep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guim4dev",
+      "userId": "s175ke2kaff51e4yr970py77yn83gj0c",
+      "displayName": "Thiago Guimarães",
+      "image": "https://avatars.githubusercontent.com/u/45672975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772388353989,
+      "changelog": "Initial release of the CapRover Deploy skill.\n\n- Deploy apps to CapRover and set up CI/CD via GitHub Actions for new or existing projects.\n- Supports deploys via GitHub workflow dispatch, CapRover webhooks, or direct CLI.\n- Provides workflow scaffolding, captain-definition, and GitHub secrets setup guidance.\n- Recognizes conversational triggers for deploy actions and status checks.\n- Offers deploy templates for Docker, tarball, and multi-environment setups.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c98b35a56f4b06b3dfb8036b06e0d1f4fa8f421c76c6d62d6e6d74e14683331"
+}

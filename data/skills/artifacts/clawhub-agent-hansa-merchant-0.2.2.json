@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-hansa-merchant@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hansa_merchant",
+  "skill": {
+    "id": 39352,
+    "skillKey": "clawhub-agent-hansa-merchant",
+    "name": "AgentHansa Merchant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hansa-merchant",
+    "url": "https://clawhub.ai/skills/agent-hansa-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hansa-merchant-89a12769d40ddb26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and post AI-driven tasks to 3,000+ agents, review results, reward winners, and track performance with flexible pricing and referral offers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenglin97",
+      "userId": "s1718bd3p9h1d0jsntjzhvs5sn843f0y",
+      "displayName": "Chenglin Wei",
+      "image": "https://avatars.githubusercontent.com/u/95840377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1776298943197,
+      "changelog": "Exclude test.js and package-lock.json from published package to remove false-positive static scan flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4034caed4d44d792a82c8f92ef3ba195353fbab85d7f005bfe14d946d8d543fd"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67906,
+  "uuid": "skill-clawhub-funasr-punctuation-restore",
+  "skillKey": "clawhub-funasr-punctuation-restore",
+  "name": "funasr-punctuation-restore",
+  "summary": "当用户想要**给文本恢复标点**、**ASR 转录结果加标点**、**无标点文本加标点**、**转录文本整理标点**、**批量给文件或目录加标点**时自动触发。 使用 FunASR ct-punc 模型，为一段文本、单个记事本文件（.txt）、或整个目录一键恢复中文/英文标点符号。 支持直接输入文本、单个文件路径...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funasr_punctuation_restore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顶尖王牌程序员",
+      "features": [
+        "当用户想要**给文本恢复标点**、**ASR 转录结果加标点**、**无标点文本加标点**、**转录文本整理标点**、**批量给文件或目录加标点**时自动触发。 使用 FunASR ct-p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/funasr-punctuation-restore@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11627332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "funasr-punctuation-restore",
+      "url": "https://clawhub.ai/skills/funasr-punctuation-restore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funasr-punctuation-restore",
+    "url": "https://clawhub.ai/skills/funasr-punctuation-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funasr-punctuation-restore-077a69a812ab8816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/funasr-punctuation-restore@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-funasr-punctuation-restore-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22c860559f204b5f05b67449c66851cf389a8087d2fe5e93d015702ac48922c5",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:50:27.776Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20712,
+  "uuid": "skill-clawhub-google-keep-skill",
+  "skillKey": "clawhub-google-keep-skill",
+  "name": "Google Keep Skill",
+  "summary": "Integration with Google Keep via nodriver (undetectable Chrome). Creates, reads, updates, and deletes notes.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_keep_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RicardoReichert",
+      "features": [
+        "Integration with Google Keep via nodriver (undetectable Chrome)",
+        "Creates, reads, updates, and deletes notes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-keep-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52411224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-keep-skill",
+      "url": "https://clawhub.ai/skills/google-keep-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-keep-skill",
+    "url": "https://clawhub.ai/skills/google-keep-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-keep-skill-d02134508230f875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-keep-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-keep-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c45ff5db54d089372dbb2454d518a8fc5ee8cc81468fd642f4e1b0d2032a023f",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T23:24:20.256Z"
+}

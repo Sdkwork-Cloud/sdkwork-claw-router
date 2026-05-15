@@ -1,5 +1,5 @@
 import {
-  createRequestToken,
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
@@ -67,17 +67,48 @@ export interface Model {
   replacementModel: string | null;
 }
 
-export type ModelCatalogSyncReport = Omit<
-  AdminModelCatalogSyncResponse,
-  'models' | 'snapshotId' | 'syncRunId' | 'vendors'
-> & {
+export type ModelCatalogSyncReport = {
+  acceptedCount: number;
+  capabilityCount: number;
+  catalogRoot: string | null;
+  catalogVersion: string;
+  dryRun: boolean;
+  familyCount: number;
+  meterCount: number;
+  mode: AdminModelCatalogSyncResponse['mode'];
+  modelCount: number;
+  priceCount: number;
+  rankingCount: number;
+  requestedCatalogVersion: string | null;
   snapshotId: string | null;
+  source: string;
+  sourceHash: string;
   syncRunId: string | null;
+  synced: boolean;
+  vendorCodes: string[];
+  vendorCount: number;
   vendors: Vendor[];
   models: Model[];
 };
 
-export type ModelRankingRefreshStatusView = ModelRankingRefreshStatus;
+export type ModelRankingRefreshStatusView = {
+  cacheMaxAgeSeconds: number;
+  generatedAt: string;
+  generatedCount: number;
+  latestJob: ModelRankingRefreshJobItem | null;
+  nextRefreshAt: string;
+  organizationId: number;
+  rankScope: string;
+  refreshIntervalSeconds: number;
+  snapshotDate: string;
+  snapshotPeriod: string;
+  sourceCount: number;
+  sourceTables: string[];
+  status: ModelRankingRefreshStatus['status'];
+  tenantId: number;
+  windowEnd: string;
+  windowStart: string;
+};
 
 export type ModelRankingRefreshJobHistoryView = ModelRankingRefreshJobHistoryPage;
 
@@ -126,14 +157,14 @@ export function selectPreferredModelVendorId(
 
 export class ModelService {
   static async fetchVendors(): Promise<Vendor[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchVendors();
+    const result = await getClawRouterBackendSdkClient().ai.modelVendors.list();
     ensurePlusApiSuccess(result, 'Failed to fetch vendors');
     return readRequiredApiItems(result, 'Failed to fetch vendors')
       .map(normalizeVendor);
   }
 
   static async fetchModels(): Promise<Model[]> {
-    const modelsResult = await getClawRouterBackendSdkClient().model.fetchModels();
+    const modelsResult = await getClawRouterBackendSdkClient().ai.models.list();
     ensurePlusApiSuccess(modelsResult, 'Failed to fetch models');
     const models = readRequiredApiItems(modelsResult, 'Failed to fetch models')
       .map(normalizeModel);
@@ -148,13 +179,7 @@ export class ModelService {
   }
 
   static async fetchModelRankings(): Promise<Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'>[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchModelRankings(
-      undefined,
-      undefined,
-      undefined,
-      undefined,
-      200,
-    );
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.list({ limit: 200 });
     ensurePlusApiSuccess(result, 'Failed to fetch model rankings');
     return readRequiredApiItems(readApiRecord(result), 'Failed to fetch model rankings', ['items'])
       .map(normalizeRankingItem)
@@ -162,13 +187,13 @@ export class ModelService {
   }
 
   static async fetchModelRankingRefreshStatus(): Promise<ModelRankingRefreshStatusView> {
-    const result = await getClawRouterBackendSdkClient().router.fetchModelRankingRefreshStatus();
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.status.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch model ranking refresh status');
     return normalizeModelRankingRefreshStatus(readApiRecord(result));
   }
 
   static async fetchModelRankingRefreshJobs(): Promise<ModelRankingRefreshJobHistoryView> {
-    const result = await getClawRouterBackendSdkClient().router.fetchModelRankingRefreshJobs(undefined, 20);
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.jobs.list({ limit: 20 });
     ensurePlusApiSuccess(result, 'Failed to fetch model ranking refresh jobs');
     return {
       items: readRequiredApiItems(readApiRecord(result), 'Failed to fetch model ranking refresh jobs', ['items'])
@@ -177,18 +202,18 @@ export class ModelService {
   }
 
   static async triggerModelRankingRefresh(): Promise<ModelRankingRefreshTriggerView> {
-    const result = await getClawRouterBackendSdkClient().router.triggerModelRankingRefresh(
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.refresh(
       toModelRankingRefreshTriggerRequest(),
-      requestToken('admin-model-ranking-refresh'),
+      createRequestParams('admin-model-ranking-refresh'),
     );
     ensurePlusApiSuccess(result, 'Failed to trigger model ranking refresh');
     return normalizeModelRankingRefreshTrigger(readApiRecord(result));
   }
 
   static async syncVendorsAndModels(): Promise<ModelCatalogSyncReport> {
-    const result = await getClawRouterBackendSdkClient().router.syncVendorsAndModels(
+    const result = await getClawRouterBackendSdkClient().ai.models.refresh(
       toSyncCatalogRequest(),
-      requestToken('admin-model-catalog-sync'),
+      createRequestParams('admin-model-catalog-sync'),
     );
     ensurePlusApiSuccess(result, 'Failed to sync vendors and models');
     const data = readApiRecord(result);
@@ -220,35 +245,35 @@ export class ModelService {
   }
 
   static async addVendor(vendor: VendorCreateInput): Promise<Vendor> {
-    const result = await getClawRouterBackendSdkClient().router.addVendor(
+    const result = await getClawRouterBackendSdkClient().ai.modelVendors.create(
       toCreateVendorRequest(vendor),
-      requestToken('admin-model-vendor-create'),
+      createRequestParams('admin-model-vendor-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add vendor');
     return normalizeVendor(readRequiredApiItem(result, 'Created vendor response is missing data'));
   }
 
   static async addModel(model: ModelCreateInput): Promise<Model> {
-    const result = await getClawRouterBackendSdkClient().model.add(
+    const result = await getClawRouterBackendSdkClient().ai.models.create(
       toCreateModelRequest(model),
-      requestToken('admin-ai-model-create'),
+      createRequestParams('admin-ai-model-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add model');
     return normalizeModel(readRequiredApiItem(result, 'Created model response is missing data'));
   }
 
   static async updateModel(id: string, model: ModelUpdateInput): Promise<Model> {
-    const result = await getClawRouterBackendSdkClient().model.updateModel(
+    const result = await getClawRouterBackendSdkClient().ai.models.update(
       requiredSafePathSegment(id, 'modelId'),
       toUpdateModelRequest(model),
-      requestToken('admin-ai-model-update'),
+      createRequestParams('admin-ai-model-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update model');
     return normalizeModel(readRequiredApiItem(result, 'Updated model response is missing data'));
   }
 
   static async deleteModel(id: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().model.deleteModel(requiredSafePathSegment(id, 'modelId'));
+    const result = await getClawRouterBackendSdkClient().ai.models.delete(requiredSafePathSegment(id, 'modelId'));
     ensurePlusApiSuccess(result, 'Failed to delete model');
     return true;
   }
@@ -440,10 +465,6 @@ function safeStyleToken(value: string): string {
     throw new Error('color must be a safe style token');
   }
   return normalized;
-}
-
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
 }
 
 function normalizeVendor(value: unknown): Vendor {

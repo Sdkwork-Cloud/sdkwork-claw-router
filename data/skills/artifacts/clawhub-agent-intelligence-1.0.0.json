@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_intelligence",
+  "skill": {
+    "id": 34999,
+    "skillKey": "clawhub-agent-intelligence",
+    "name": "Agent Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-intelligence",
+    "url": "https://clawhub.ai/skills/agent-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-intelligence-ebb8eea5bc2f82fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research-backed intelligence database covering AI coding tools' hidden features, model codenames, feature flags, and version changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mackding",
+      "userId": "s17280mcvtp4vrh7dgbtcshp6x83gb2m",
+      "displayName": "Blossom",
+      "image": "https://avatars.githubusercontent.com/u/19878893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028293135,
+      "changelog": "Agent Intelligence 1.0.0\n\n- Initial release of Agent Intelligence research database for AI coding tools.\n- Query internal model codenames, feature flags, unreleased features, version changes, and user tier differences.\n- Backed by reverse engineering, unique research documents, and automated release scanning.\n- Offers both CLI and programmatic interfaces for intelligence lookups.\n- Knowledge base organized into structured JSON datasets (telemetry, flags, codenames, features).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faa3105749bac8a88a07da47c6097cb10e8a10d36bcc98b945c1e183320e4957"
+}

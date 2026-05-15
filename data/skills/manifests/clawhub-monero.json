@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15179,
+  "uuid": "skill-clawhub-monero",
+  "skillKey": "clawhub-monero",
+  "name": "Monero",
+  "summary": "Assist with Monero XMR transactions, privacy features, wallet management, and security practices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Monero XMR transactions, privacy features, wallet management, and security practice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monero@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monero",
+      "url": "https://clawhub.ai/skills/monero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero",
+    "url": "https://clawhub.ai/skills/monero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-4469412a3887c4b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monero@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monero-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eef5176392ca36bfd2925c5180fe51478fb8368b441aaba48fc3de94fa41cb31",
+      "artifactSizeBytes": 1763
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:32:13.414Z"
+}

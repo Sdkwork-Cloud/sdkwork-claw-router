@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-portfolio-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_portfolio_tracker",
+  "skill": {
+    "id": 30043,
+    "skillKey": "clawhub-nansen-portfolio-tracker",
+    "name": "Nansen Portfolio Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-portfolio-tracker",
+    "url": "https://clawhub.ai/skills/nansen-portfolio-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-portfolio-tracker-0705e1a92d1bac72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How has a wallet's portfolio changed over time? Historical balances, current snapshot, and per-token PnL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773750715506,
+      "changelog": "Initial release of nansen-portfolio-tracker.\n\n- Track how a wallet's portfolio has changed over time.\n- View historical balances, current snapshots, and per-token profit and loss (PnL).\n- Requires Nansen API key and nansen-cli installed.\n- Supports querying historical data and trade performance for specific tokens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db72b50d0110477b889703642d758ece01cbe0253039665bd2c865ceac921daa"
+}

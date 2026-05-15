@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audience-segmentation-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audience_segmentation_analyst",
+  "skill": {
+    "id": 24494,
+    "skillKey": "clawhub-audience-segmentation-analyst",
+    "name": "Ads Audience Targeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audience-segmentation-analyst",
+    "url": "https://clawhub.ai/skills/audience-segmentation-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audience-segmentation-analyst-40e26f6be392e03f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build audience segmentation and targeting plans for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, and DSP/programmatic campaigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772499011158,
+      "changelog": "- Initial release of audience-segmentation-analyst skill.\n- Supports building segmentation and targeting plans for Meta, Google Ads, TikTok Ads, YouTube Ads, and DSP/programmatic campaigns.\n- Defines clear input/output contracts and step-based workflow for ad audience targeting.\n- Includes platform-specific guidance, risk handling, and escalation protocols.\n- Provides actionable examples and a comprehensive quality checklist.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dbe59823f5419a65194a457fbbdd4bc7326283dcdf13220e4da971c4885a12a"
+}

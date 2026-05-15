@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "xai-studio",
+    "displayName": "xAI Studio",
+    "summary": "xAI Studio — generate and edit images and videos via the xAI API. Image: text-to-image, batch generation, multi-image editing, concurrent style transfers, mu...",
+    "tags": {
+      "latest": "0.2.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1773727951582,
+    "updatedAt": 1778310737274
+  },
+  "latestVersion": {
+    "version": "0.2.2",
+    "createdAt": 1773749039259,
+    "changelog": "Async concurrency restored for parallel style transfers and video edits.\n\nFeatures:\n  - Restore true async concurrency in concurrent command using AsyncClient\n    with asyncio.Semaphore (capped at 4 parallel requests) (#6)\n  - Add _save_async_image() helper with proper await for async .image property\n  - Apply same Semaphore + async-with pattern to video-concurrent command\n\nDocs:\n  - Add multi-turn chaining note clarifying unlimited --prompt steps on a\n    single source image (#5)",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "h0llyw00dzz",
+    "userId": "publishers:h0llyw00dzz",
+    "displayName": "H0llyW00dzZ",
+    "image": "https://avatars.githubusercontent.com/u/17626300?v=4"
+  },
+  "moderation": null
+}

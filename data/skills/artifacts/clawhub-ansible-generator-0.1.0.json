@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ansible-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansible_generator",
+  "skill": {
+    "id": 28408,
+    "skillKey": "clawhub-ansible-generator",
+    "name": "Ansible Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansible-generator",
+    "url": "https://clawhub.ai/skills/ansible-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansible-generator-67650f173783cc25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, create, or scaffold Ansible playbooks, roles, tasks, handlers, inventory, vars."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq280948982",
+      "userId": "publishers:qq280948982",
+      "displayName": "qq280948982",
+      "image": "https://avatars.githubusercontent.com/u/685689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773408416384,
+      "changelog": "ansible-generator 0.1.0\n\n- Initial release of the Ansible Generator skill.\n- Generates, creates, or scaffolds Ansible playbooks, roles, tasks, handlers, inventory, and vars.\n- Provides deterministic, stage-based execution flow for request classification, input collection, reference/template extraction, content generation, and validation.\n- Includes clear validation exception handling and reports, supporting both online and offline environments.\n- Uses best-practice standards for Ansible file structure, module usage, and idempotency.\n- Supports production-ready outputs and quick snippet generation, with detailed trigger phrase guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cb6ffeca7b729552d62bbd0d5ecea163f569dd1616a97b6036c93d0938dd5fe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-performance@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_performance",
+  "skill": {
+    "id": 29719,
+    "skillKey": "clawhub-golang-performance",
+    "name": "Golang Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-performance",
+    "url": "https://clawhub.ai/skills/golang-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-performance-66f845c94e41e0d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Golang performance optimization patterns and methodology - if X bottleneck, then apply Y. Covers allocation reduction, CPU efficiency, memory layout, GC tuni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1775038115777,
+      "changelog": "golang-performance 1.1.2\n\n- Added AskUserQuestion to allowed tools for improved agent interactivity.\n- Updated metadata version.\n- No user-facing behavior changes to performance methodology or reference sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c5944ab2a4a9e460bcd6347a0371ebaa056730fedbe8337b9114adef621c20c"
+}

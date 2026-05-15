@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11938,
+  "uuid": "skill-clawhub-biz-reporter",
+  "skillKey": "clawhub-biz-reporter",
+  "name": "Biz Reporter",
+  "summary": "Automated business intelligence reports pulling data from Google Analytics GA4, Google Search Console, Stripe revenue, social media metrics (Twitter/X, Linke...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biz_reporter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arik Tulchinsky",
+      "features": [
+        "Automated business intelligence reports pulling data from Google Analytics GA4, Google Search C."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biz-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42210991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biz-reporter",
+      "url": "https://clawhub.ai/skills/biz-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biz-reporter",
+    "url": "https://clawhub.ai/skills/biz-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biz-reporter-f39ca37c14837d62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biz-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-biz-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f55cf68d30a1fb1b522fdb3e5f7d6731e195ea3799812de5191a8ae02bd7350",
+      "artifactSizeBytes": 3048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:38:18.361Z"
+}

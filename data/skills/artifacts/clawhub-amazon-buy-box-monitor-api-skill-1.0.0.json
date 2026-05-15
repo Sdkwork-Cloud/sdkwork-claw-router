@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-buy-box-monitor-api-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_buy_box_monitor_api_skill",
+  "skill": {
+    "id": 36218,
+    "skillKey": "clawhub-amazon-buy-box-monitor-api-skill",
+    "name": "amazon-buy-box-monitor-api-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-buy-box-monitor-api-skill",
+    "url": "https://clawhub.ai/skills/amazon-buy-box-monitor-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-buy-box-monitor-api-skill-13e8d466a08bea96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users extract basic product details other sellers prices and seller ratings from Amazon via ASIN automatically using the BrowserAct API. Age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "browseract-ai",
+      "userId": "s17eex5avkmwj7pwmzbzewhvah83n8t8",
+      "displayName": "browser-act",
+      "image": "https://avatars.githubusercontent.com/u/209727774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774614772327,
+      "changelog": "Amazon Buy Box Monitor API Skill v1.0.0\n\n- Initial release of the Amazon Buy Box Monitor skill powered by the BrowserAct API.\n- Enables automated extraction of Amazon product details, buy box status, seller info, and competitor prices via ASIN.\n- Features built-in guidance for API key setup and robust error/retry logic.\n- Supports monitoring tasks including buy box ownership, fulfillment method analysis, and seller ratings/feedback retrieval.\n- Provides clear data output structure and detailed running/logging workflow for seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02fe2d55c378f9301a0f4c8d9fa8875d11276f00961bf4cdfa60a567d59111cc"
+}

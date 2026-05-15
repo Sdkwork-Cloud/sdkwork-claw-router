@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40406,
+  "uuid": "skill-clawhub-goto-webinar-integration",
+  "skillKey": "clawhub-goto-webinar-integration",
+  "name": "Goto Webinar",
+  "summary": "GoTo Webinar integration. Manage Webinars, Organizers. Use when the user wants to interact with GoTo Webinar data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goto_webinar_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "GoTo Webinar integration",
+        "Manage Webinars, Organizers",
+        "Use when the user wants to interact with GoTo Webinar data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goto-webinar-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goto-webinar-integration",
+      "url": "https://clawhub.ai/skills/goto-webinar-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goto-webinar-integration",
+    "url": "https://clawhub.ai/skills/goto-webinar-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goto-webinar-integration-0f46bce4b62237aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goto-webinar-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-goto-webinar-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a4b2377f29a761d203c1c20d0a755e471f6229aa0fa50bd110ec78d1095fc70",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:42.341Z"
+}

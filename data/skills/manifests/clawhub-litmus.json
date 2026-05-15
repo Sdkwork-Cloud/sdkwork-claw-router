@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28010,
+  "uuid": "skill-clawhub-litmus",
+  "skillKey": "clawhub-litmus",
+  "name": "Litmus",
+  "summary": "Parallel autonomous ML research agents with a Director, git worktrees for per-agent experiment branches, a Skills library for validated technique reuse, a Sy...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.litmus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kuber Mehta",
+      "features": [
+        "Parallel autonomous ML research agents with a Director, git worktrees for per-agent experiment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/litmus@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97027230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "litmus",
+      "url": "https://clawhub.ai/skills/litmus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "litmus",
+    "url": "https://clawhub.ai/skills/litmus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/litmus-aa55f6ae4b596b41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/litmus@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-litmus-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a7f1ee59a269436c03b6940ec474aa5ff92856fd4111c4be004879a578b9003",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T17:55:07.607Z"
+}

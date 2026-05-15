@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postalform-agent-mailing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postalform_agent_mailing",
+  "skill": {
+    "id": 54110,
+    "skillKey": "clawhub-postalform-agent-mailing",
+    "name": "Send real Document in the Mail via PostalForm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postalform-agent-mailing",
+    "url": "https://clawhub.ai/skills/postalform-agent-mailing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postalform-agent-mailing-f0d2e4ce082f6ce2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send real postal mail through PostalForm using machine payments: prepare/validate print-and-mail payloads, submit `POST /api/machine/orders`, settle x402 pay..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggaabe",
+      "userId": "publishers:ggaabe",
+      "displayName": "Gabriel Garrett",
+      "image": "https://avatars.githubusercontent.com/u/5441185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771951139628,
+      "changelog": "Send real postal mail through PostalForm using machine payments: prepare/validate print-and-mail payloads, submit `POST /api/machine/orders`, settle x402 payment with any compatible wallet client (purl or custom), and poll fulfillment through completion. Use when an agent must autonomously mail a letter/document as real physical mail with strong first-pass correctness and idempotent retry behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3cba36c309a0d4167090bbc364d6a41f16a0ea25abca2757b5d32addce18e41"
+}

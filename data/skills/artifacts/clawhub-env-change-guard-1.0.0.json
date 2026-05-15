@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/env-change-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_change_guard",
+  "skill": {
+    "id": 72896,
+    "skillKey": "clawhub-env-change-guard",
+    "name": "帮助小白记录环境变量，如电脑遇到不可知问题，可以优先访问log排查问题"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-change-guard",
+    "url": "https://clawhub.ai/skills/env-change-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-change-guard-8e13a4a0aeb2bbc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在修改环境变量或系统变量时，记录改了什么，并用电脑小白能听懂的话解释这次改动会带来什么影响。也适用于用户表示某个程序、命令、环境或系统功能出了问题，但又说不清具体原因时，优先从相关 log、报错信息或可见线索入手；如果日志相关，就先有限排查 log 内容，再继续正常排查其他可能原因，并用电脑小白能听懂的话解释。常..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marerlee",
+      "userId": "s179dkqppnmdcgbfj8xh6t8ma183pjwz",
+      "displayName": "Marerlee",
+      "image": "https://avatars.githubusercontent.com/u/42792595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774615941588,
+      "changelog": "Initial release of env-change-guard.\n\n- Records all environment or system variable changes, including what was changed and why.\n- Explains impacts of changes in simple, non-technical language for beginners.\n- For troubleshooting vague issues, prioritizes checking logs or error messages, with easy-to-understand explanations.\n- Guides users step-by-step when addressing environment-related problems, especially with PATH, JAVA_HOME, Python, Node, ADB, Android SDK, and related tools.\n- Logs environment variable changes to `logs/env-change-log.md` with time, before/after values, and reasoning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:403d8de90d9fe2c7f0a2c2026e9dcd24564281d04ec202eff6bcf44b6a185d0d"
+}

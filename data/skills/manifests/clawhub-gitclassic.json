@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9982,
+  "uuid": "skill-clawhub-gitclassic",
+  "skillKey": "clawhub-gitclassic",
+  "name": "GitClassic",
+  "summary": "Fast, no-JavaScript GitHub browser optimized for AI agents. Browse public repos, read files, view READMEs with sub-500ms load times. PRO adds private repo access via GitHub OAuth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitclassic",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heythisischris",
+      "features": [
+        "Fast, no-JavaScript GitHub browser optimized for AI agents",
+        "Browse public repos, read files, view READMEs with sub-500ms load times",
+        "PRO adds private repo access via GitHub OAuth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitclassic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34955737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitclassic",
+      "url": "https://clawhub.ai/skills/gitclassic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitclassic",
+    "url": "https://clawhub.ai/skills/gitclassic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitclassic-69cf0461804229d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitclassic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitclassic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:520d33c9099b56f94c634ccbcf2f2a7f319e5b628381064b97a2429495afdcd2",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T04:17:10.826Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65532,
+  "uuid": "skill-clawhub-investor-education-workflow",
+  "skillKey": "clawhub-investor-education-workflow",
+  "name": "Investor Education Workflow",
+  "summary": "［何时使用］当用户需要投资者教育内容时；当用户说'写篇投教文章'、'解释这个投资概念'、'做个投教卡片'、'定投是什么'、'如何防骗'时触发。基于 LLM Wiki 机制的投教内容生产与分发工作流。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investor_education_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要投资者教育内容时；当用户说'写篇投教文章'、'解释这个投资概念'、'做个投教卡片'、'定投是什么'、'如何防骗'时触发。基于 LLM Wiki 机制的投教内容生产与分发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investor-education-workflow@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investor-education-workflow",
+      "url": "https://clawhub.ai/skills/investor-education-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investor-education-workflow",
+    "url": "https://clawhub.ai/skills/investor-education-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investor-education-workflow-d50999d99fa19256.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investor-education-workflow@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investor-education-workflow-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb308f688379a619af04f5acad5fd769bd2d53588843dbba6cbec6c8a2c076b6",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T09:19:00.450Z"
+}

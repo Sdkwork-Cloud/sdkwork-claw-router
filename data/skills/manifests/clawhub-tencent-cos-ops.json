@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64734,
+  "uuid": "skill-clawhub-tencent-cos-ops",
+  "skillKey": "clawhub-tencent-cos-ops",
+  "name": "tencent-cos-ops",
+  "summary": "腾讯云COS对象存储操作工具，用于上传、下载、列举和删除COS中的文件。触发场景： (1) 用户需要将本地文件上传到腾讯云COS对象存储 (2) 用户需要从COS下载文件到本地 (3) 用户需要按月管理COS中的文件（自动按YYYY/MM/前缀组织） (4) 用户需要列出或删除COS中的文件 (5) 用户提到\"腾...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_cos_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henrybit",
+      "features": [
+        "腾讯云COS对象存储操作工具，用于上传、下载、列举和删除COS中的文件。触发场景： (1) 用户需要将本地文件上传到腾讯云COS对象存储 (2) 用户需要从COS下载文件到本地 (3) 用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-cos-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2577201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-cos-ops",
+      "url": "https://clawhub.ai/skills/tencent-cos-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-cos-ops",
+    "url": "https://clawhub.ai/skills/tencent-cos-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-cos-ops-bef576439b454616.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-cos-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-cos-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:179187cbacaf62b34435643a3750a979170124cef170c7d706acaad7c72fff57",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:17:00.819Z"
+}

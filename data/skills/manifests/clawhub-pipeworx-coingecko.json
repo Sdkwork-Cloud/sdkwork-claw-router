@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45646,
+  "uuid": "skill-clawhub-pipeworx-coingecko",
+  "skillKey": "clawhub-pipeworx-coingecko",
+  "name": "Pipeworx coingecko",
+  "summary": "Access real-time cryptocurrency data including coin details, market rankings, trending tokens, and search by name or symbol using CoinGecko's free API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_coingecko",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access real-time cryptocurrency data including coin details, market rankings, trending tokens,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-coingecko@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-coingecko",
+      "url": "https://clawhub.ai/skills/pipeworx-coingecko"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-coingecko",
+    "url": "https://clawhub.ai/skills/pipeworx-coingecko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-coingecko-b23723660f29b5cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-coingecko@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-coingecko-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be199ff5b5b5ed49c5052ff9d8aabc7598fee3c8f02979993bbb6b8bf13b636c",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T18:58:22.496Z"
+}

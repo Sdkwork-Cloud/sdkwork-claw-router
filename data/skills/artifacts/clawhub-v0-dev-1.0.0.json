@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v0-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v0_dev",
+  "skill": {
+    "id": 58780,
+    "skillKey": "clawhub-v0-dev",
+    "name": "V0 Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v0-dev",
+    "url": "https://clawhub.ai/skills/v0-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v0-dev-1ab97b6f3d95c615.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "v0.dev AI 前端生成助手，精通 UI 组件生成、shadcn/ui、Tailwind CSS、Next.js"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087449329,
+      "changelog": "v0.dev AI 前端生成助手首次发布，助力高效生成 React UI 组件。\n\n- 提供自然语言生成 React 组件，基于 shadcn/ui、Tailwind CSS、Next.js 技术栈\n- 支持多种常见场景：页面布局、数据展示、表单、导航、反馈等组件类型\n- 内置 prompt 技巧与实用范例，帮助提升生成质量\n- 详细导出与集成流程说明，适配 Vercel 开发环境\n- 明确能力边界与最佳实践，助力前端高效开发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd30ff4ba97b18869b77e4752f6f23cdd59ca29c2c29add31c3a220d4a614fe2"
+}

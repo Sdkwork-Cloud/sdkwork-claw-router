@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27271,
+  "uuid": "skill-clawhub-x402-paywall-kit",
+  "skillKey": "clawhub-x402-paywall-kit",
+  "name": "x402 Paywall Kit",
+  "summary": "Detect and pay x402 crypto paywalls automatically. When your agent gets a 402 Payment Required response with x402 JSON, this skill handles payment via Coinba...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_paywall_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tara Quinn",
+      "features": [
+        "Detect and pay x402 crypto paywalls automatically",
+        "When your agent gets a 402 Payment Required response with x402 JSON, this skill handles payment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-paywall-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263475189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-paywall-kit",
+      "url": "https://clawhub.ai/skills/x402-paywall-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-paywall-kit",
+    "url": "https://clawhub.ai/skills/x402-paywall-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-paywall-kit-2a3d685de8d5a99f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-paywall-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-paywall-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86fe8cb681c1275b94001a3946fd5f5fede194c582e58071ad9be588629a3217",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:32:07.012Z"
+}

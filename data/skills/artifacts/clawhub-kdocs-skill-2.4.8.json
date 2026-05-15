@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kdocs-skill@2.4.8",
+  "version": "2.4.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kdocs_skill",
+  "skill": {
+    "id": 62997,
+    "skillKey": "clawhub-kdocs-skill",
+    "name": "kdocs skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kdocs-skill",
+    "url": "https://clawhub.ai/skills/kdocs-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kdocs-skill-0e6b09ae37c0b92a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "操作金山文档（WPS 云文档 / Kdocs / 365.kdocs.cn / www.kdocs.cn）云文档的官方 Skill。核心能力覆盖云端新建、读取、编辑、搜索、分享、整理在线文档（智能文档、Word、Excel、PDF、PPT、演示文稿、智能表格、多维表格）及个人知识库。当用户的任务涉及云文档操作时使..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kdocs-app",
+      "userId": "s17228f0v4bkv4dmzpwdzrv7p183zhtq",
+      "displayName": "kdocs-app",
+      "image": "https://avatars.githubusercontent.com/u/13723992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 776,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 7,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.4.8",
+      "createdAt": 1778297495175,
+      "changelog": "kdocs-skill 2.4.8\n\n1. 演示文稿：AI PPT优化主题与文档生成流程，提升 PPT 生成效率。\n2. 问题修复：修复若干反馈问题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e11aa95aeabd28a1b2f573086f40d963460a7454a9e66f9ea47a87bd28b5efb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-processing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_processing",
+  "skill": {
+    "id": 61253,
+    "skillKey": "clawhub-pdf-processing",
+    "name": "pdf-processing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-processing",
+    "url": "https://clawhub.ai/skills/pdf-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-processing-c7230c6f4ab2c30b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 PDF 中提取文本和表格，填写表单，并合并文档"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rainshow",
+      "userId": "publishers:rainshow",
+      "displayName": "银河诗人",
+      "image": "https://avatars.githubusercontent.com/u/18611278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4225,
+      "installsAllTime": 23,
+      "installsCurrent": 20,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493927311,
+      "changelog": "Initial release with core PDF processing features:\n\n- 支持从 PDF 提取文本内容\n- 支持提取 PDF 表格数据\n- 可填写 PDF 表单\n- 支持合并多个 PDF 文件\n- 提供安装依赖和脚本目录说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0b9db95797869abe6f7d68044c328ceba5cad719683690426f2bd35559fdb19"
+}

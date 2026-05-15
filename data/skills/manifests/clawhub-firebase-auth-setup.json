@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50054,
+  "uuid": "skill-clawhub-firebase-auth-setup",
+  "skillKey": "clawhub-firebase-auth-setup",
+  "name": "Firebase Auth Setup",
+  "summary": "Configures Firebase Authentication — providers, security rules, custom claims, and React auth hooks",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firebase_auth_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Configures Firebase Authentication — providers, security rules, custom claims, and React auth h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firebase-auth-setup@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firebase-auth-setup",
+      "url": "https://clawhub.ai/skills/firebase-auth-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firebase-auth-setup",
+    "url": "https://clawhub.ai/skills/firebase-auth-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firebase-auth-setup-01d80ff80d79d27a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firebase-auth-setup@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-firebase-auth-setup-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:979caa09f7d24eb80e42ad3557d9b9678f4600ee4b27bc310cdeb579e4baa5a2",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:14:34.749Z"
+}

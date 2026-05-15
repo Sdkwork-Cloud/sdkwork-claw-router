@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-models@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_models",
+  "skill": {
+    "id": 50249,
+    "skillKey": "clawhub-smart-models",
+    "name": "Smart Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-models",
+    "url": "https://clawhub.ai/skills/smart-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-models-91acaa97a4a33b30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent multi-model router — automatically selects the best AI model based on task type (vision, image generation, video generation, audio, reasoning, co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samstone908",
+      "userId": "publishers:samstone908",
+      "displayName": "samstone908",
+      "image": "https://avatars.githubusercontent.com/u/193453709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772001498291,
+      "changelog": "Initial release: intelligent multi-model router with 35+ models, 7 categories, @alias shortcuts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b700ee6ce57b04ae64125eabaca7184c7b12f4b98314be1b991324064b3a2d82"
+}

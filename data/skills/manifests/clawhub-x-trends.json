@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8980,
+  "uuid": "skill-clawhub-x-trends",
+  "skillKey": "clawhub-x-trends",
+  "name": "X Trends",
+  "summary": "Fetches current top trending topics on X (Twitter) for any country using public aggregators.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_trends",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anishtr4",
+      "features": [
+        "Fetches current top trending topics on X (Twitter) for any country using public aggregators."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-trends@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2930699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-trends",
+      "url": "https://clawhub.ai/skills/x-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-trends",
+    "url": "https://clawhub.ai/skills/x-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-trends-77eba0628c8e2db9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-trends@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-trends-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10e1a47b16218394ee19aed2403526497a4f39f37b6f2176bf64ef87d53dcc01",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T22:09:50.248Z"
+}

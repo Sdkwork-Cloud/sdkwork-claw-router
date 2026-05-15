@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-platform-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_platform_poster",
+  "skill": {
+    "id": 21243,
+    "skillKey": "clawhub-cross-platform-poster",
+    "name": "cross-platform-poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-platform-poster",
+    "url": "https://clawhub.ai/skills/cross-platform-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-platform-poster-ce66730863d298ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish and format posts simultaneously across MoltX, Twitter/X, Discord, and Telegram using a single command with platform-specific optimizations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772476445569,
+      "changelog": "- Initial release of Cross-Platform Poster: publish across MoltX, Twitter/X, Discord, and Telegram from a unified command.\n- Content auto-formatted/optimized for each platform’s limitations and quirks.\n- MoltX, Twitter/X (OAuth), Discord (bot/webhook), and Telegram (bot) supported.\n- Includes developer-ready code for content formatting and posting.\n- Integrate as a service within ClawSwarm for paid cross-posting on behalf of others.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a94a06251511ab0af5511dc5320b0a741eaaff479e13805c8e016bb02f60c07e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/source-scout@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_scout",
+  "skill": {
+    "id": 49412,
+    "skillKey": "clawhub-source-scout",
+    "name": "Source Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-scout",
+    "url": "https://clawhub.ai/skills/source-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-scout-e6cf05a5c3c1a359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides factual answers to questions using authoritative web sources, citing references and including relevant images for clarity and trustworthiness."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkobject",
+      "userId": "s17arx162s1qhp8j7nq1ka0vdn853beg",
+      "displayName": "Jérémie Kalfon",
+      "image": "https://avatars.githubusercontent.com/u/17239533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778170501503,
+      "changelog": "Initial release: web-grounded factual answers with citations and sourced images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8836613152a8f2050934f4d5bd3f57997947277386a809cd1717dc1beaed2f0a"
+}

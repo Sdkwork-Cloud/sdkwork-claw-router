@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57644,
+  "uuid": "skill-clawhub-smyx-video-search-analysis",
+  "skillKey": "clawhub-smyx-video-search-analysis",
+  "name": "Intelligent Video Search & Retrieval Analysis Skill | 视频搜索检索智能分析技能",
+  "summary": "Conducts intelligent video search based on target and semantic descriptions; supports conventional target retrieval, natural language description retrieval,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_video_search_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Conducts intelligent video search based on target and semantic descriptions",
+        "supports conventional target retrieval, natural language description retrieval,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-video-search-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-video-search-analysis",
+      "url": "https://clawhub.ai/skills/smyx-video-search-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-video-search-analysis",
+    "url": "https://clawhub.ai/skills/smyx-video-search-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-video-search-analysis-e19593896e218ec7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-video-search-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-video-search-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8acd59e7708c8b86b796019c6a79e0b0e32613c1a2b27d00075bbad579b2f12b",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T10:18:48.556Z"
+}

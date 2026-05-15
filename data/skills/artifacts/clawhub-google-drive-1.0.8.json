@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-drive@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive",
+  "skill": {
+    "id": 8428,
+    "skillKey": "clawhub-google-drive",
+    "name": "Google Drive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive",
+    "url": "https://clawhub.ai/skills/google-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-f4165d77e1606199.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Drive API integration with managed OAuth. List, search, create, and manage files and folders. Use this skill when users want to interact with Google D..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13553,
+      "installsAllTime": 69,
+      "installsCurrent": 65,
+      "stars": 29,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1778148294845,
+      "changelog": "- Added CLI (\"maton\") and Homebrew installation instructions.\n- Included CLI usage examples for authentication, connection management, and file operations.\n- Expanded \"Quick Start\" with CLI, API, and Python examples.\n- Provided side-by-side Python and CLI/API examples for common actions.\n- Made structure more concise and beginner-friendly; emphasized specifying connections when using multiple accounts.\n- No breaking changes to functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af5e7ffd42b24fa470d0eaa293757824f56289478748e1b97f789a1cb4bc2a8c"
+}

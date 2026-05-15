@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-distill@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_distill",
+  "skill": {
+    "id": 61721,
+    "skillKey": "clawhub-auto-distill",
+    "name": "Auto Distill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-distill",
+    "url": "https://clawhub.ai/skills/auto-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-distill-ad9deb100af1505c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "T1: 将对话内容提炼到 MEMORY.md。对小呆呆说「提炼记忆」即可触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olveww-dot",
+      "userId": "s174qw7qntjf9hdpsxsyek8mcd83s0kq",
+      "displayName": "ECsss",
+      "image": "https://avatars.githubusercontent.com/u/226646360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776685644582,
+      "changelog": "v2.0.2: 使用有效的SiliconFlow DeepSeek-V3 API Key",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c47dbc16505cf8d4af3478474c71d6c5ccf123325b0ac59a4a53f9de45a1002"
+}

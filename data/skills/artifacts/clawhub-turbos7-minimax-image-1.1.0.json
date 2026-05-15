@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turbos7-minimax-image@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbos7_minimax_image",
+  "skill": {
+    "id": 67321,
+    "skillKey": "clawhub-turbos7-minimax-image",
+    "name": "MiniMax Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbos7-minimax-image",
+    "url": "https://clawhub.ai/skills/turbos7-minimax-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbos7-minimax-image-938991d8ea43032b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 图片生成技能。集成文生图和图生图功能，支持从文本描述生成图片，也可基于参考图生成新图片。触发场景：(1) 用户请求生成图片，(2) 用户提供描述并要求生成图片，(3) 用户上传参考图并要求基于该图生成新图，(4) 用户想要生成指定风格的图片。支持的风格：漫画、元气、中世纪、水彩（仅 image-0..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turbos7",
+      "userId": "s17ebcpq0czs3d2cy4hgm21ww1850e99",
+      "displayName": "Vesper",
+      "image": "https://avatars.githubusercontent.com/u/69713627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776463162688,
+      "changelog": "优化：自动保存图片到本地、支持批量生成、返回本地路径",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3c2be481dfc69ad66cb8276054b48f2237c4b09f70798661ac89a35c1a4f3cb"
+}

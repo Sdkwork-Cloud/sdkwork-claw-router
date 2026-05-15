@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44118,
+  "uuid": "skill-clawhub-fuelwatch",
+  "skillKey": "clawhub-fuelwatch",
+  "name": "Fuelwatch",
+  "summary": "Build, deploy, and extend the FuelWatch crowdsourced fuel availability tracker for South Africa. Use when working on FuelWatch features, fixing bugs, deployi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuelwatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stefanferreira",
+      "features": [
+        "Build, deploy, and extend the FuelWatch crowdsourced fuel availability tracker for South Africa",
+        "Use when working on FuelWatch features, fixing bugs, deployi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fuelwatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6356549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fuelwatch",
+      "url": "https://clawhub.ai/skills/fuelwatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuelwatch",
+    "url": "https://clawhub.ai/skills/fuelwatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuelwatch-c1c71eff48b3e298.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fuelwatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fuelwatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a22cfb767f36dd486d12530447e91ca73765d22f17f03b9a88b74e3229dc5eec",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:13:00.560Z"
+}

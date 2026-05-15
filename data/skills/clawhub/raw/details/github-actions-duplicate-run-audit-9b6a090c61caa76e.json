@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "github-actions-duplicate-run-audit",
+    "displayName": "GitHub Actions Duplicate Run Audit",
+    "summary": "Detect duplicate GitHub Actions run bursts by workflow/branch/commit and quantify wasted rerun minutes.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772881660112,
+    "updatedAt": 1777617478876
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772881660112,
+    "changelog": "Initial release: Detect and audit duplicate GitHub Actions workflow runs.\n\n- Analyzes GitHub Actions run data to find duplicate execution bursts.\n- Quantifies wasted CI minutes due to redundant runs per workflow/branch/commit group.\n- Provides configurable thresholds for warnings and critical alerts.\n- Supports text and JSON output formats for reports and automation.\n- Includes filter options for workflow, branch, event, repository, and commit.\n- Exits with error code when critical duplication is detected (optional).",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "daniellummis",
+    "userId": "publishers:daniellummis",
+    "displayName": "Daniel Lummis",
+    "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+  },
+  "moderation": null
+}

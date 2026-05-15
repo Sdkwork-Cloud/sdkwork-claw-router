@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-gateway-cron@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_gateway_cron",
+  "skill": {
+    "id": 43791,
+    "skillKey": "clawhub-auto-updater-gateway-cron",
+    "name": "Auto Updater Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-gateway-cron",
+    "url": "https://clawhub.ai/skills/auto-updater-gateway-cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-gateway-cron-6ca72e4c26941887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate daily ClawHub skill updates at 04:00 with version comparison and update reports sent to Feishu or Telegram via OpenClaw Gateway Cron."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dillardarchie",
+      "userId": "s179rhxy40gw1tvdw14bfhxrj183h1m7",
+      "displayName": "dillardarchie",
+      "image": "https://avatars.githubusercontent.com/u/266664679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774365847808,
+      "changelog": "Auto-Updater (Gateway Cron) v1.0.0 – Initial Release\n\n- Implements daily scheduled auto-updates for ClawHub skills at 04:00 (Asia/Shanghai timezone)\n- Sends skill update summary reports with before/after version comparison to Feishu or Telegram\n- Excludes Clawdbot self-update; updates skills only\n- Provides simple cron job management and troubleshooting instructions\n- Includes sample output and quick setup checklist",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:021f2dca9a789103f2a9943885e1818f984531e788a194d62d2e99a7d04666ce"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-packager@1.5.2",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_packager",
+  "skill": {
+    "id": 29454,
+    "skillKey": "clawhub-clawhub-skill-packager",
+    "name": "ClawHub Skill Packager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-packager",
+    "url": "https://clawhub.ai/skills/clawhub-skill-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-packager-59f6f39f080d1863.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn rough, partial, or broken ClawHub/OpenClaw skill material into one publish-ready skill bundle plus one separate plain-text review file using an inferenc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neomagnetar",
+      "userId": "s17e1jqn9ah7hndm31h3ze01x983k1xx",
+      "displayName": "Christopher L Haynes",
+      "image": "https://avatars.githubusercontent.com/u/130129909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.2",
+      "createdAt": 1775745565110,
+      "changelog": "**No functional changes; removed obsolete file.**\n\n- Removed the unused `_meta.json` from the repository to reduce clutter.\n- No modifications to skill logic, functionality, or user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e39e26ae36e6066ed5047c53249376faf0295cbadb6da39982ed22a9f97b5c8"
+}

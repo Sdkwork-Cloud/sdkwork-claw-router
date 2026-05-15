@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18853,
+  "uuid": "skill-clawhub-tapo",
+  "skillKey": "clawhub-tapo",
+  "name": "Tapo",
+  "summary": "Control TP-Link Tapo smart home devices (lights, plugs, strips, cameras) via [Tapo MCP](https://github.com/mihai-dinculescu/tapo/tree/main/tapo-mcp).",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mihai-dinculescu",
+      "features": [
+        "Control TP-Link Tapo smart home devices (lights, plugs, strips, cameras) via [Tapo MCP](https:/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tapo@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9944681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tapo",
+      "url": "https://clawhub.ai/skills/tapo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapo",
+    "url": "https://clawhub.ai/skills/tapo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapo-b67394e17a0215cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tapo@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tapo-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c24bae4f9c9785a979bd7852c126c07573404950319ebef60f6613e8ea7c1ff",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T21:07:21.488Z"
+}

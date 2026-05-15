@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-scaffolder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_scaffolder",
+  "skill": {
+    "id": 40300,
+    "skillKey": "clawhub-mcp-scaffolder",
+    "name": "MCP Scaffolder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-scaffolder",
+    "url": "https://clawhub.ai/skills/mcp-scaffolder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-scaffolder-952d0c5544e3cd09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scaffolds a complete TypeScript MCP server with folder structure, typed tools, transport config, Claude MCP snippet, and README from a simple description."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "njengah",
+      "userId": "s172v77ken99h1e7qvn5szrb7h83wn9n",
+      "displayName": "Joe Njenga",
+      "image": "https://avatars.githubusercontent.com/u/11137483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133957060,
+      "changelog": "Initial release of mcp-scaffolder: scaffold a complete MCP server from a single description.\n\n- Generates full folder structure (src, tools, config, README, env doc) for an MCP server project\n- Creates typed, documented tool definitions with input schemas and JSDoc for Claude Code integration\n- Sets up transport config (stdio or HTTP) automatically based on use case, excluding deprecated SSE\n- Outputs ready-to-paste Claude MCP add config snippet for immediate use\n- README includes setup, env vars, and usage with Claude Code\n- Defaults to TypeScript for all generated code unless specified otherwise",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5f8bdbc5dc4c5d716b94a15211e1112aab83ca0c5ff9454d239005e09b8fcfc"
+}

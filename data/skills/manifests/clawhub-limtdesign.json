@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70701,
+  "uuid": "skill-clawhub-limtdesign",
+  "skillKey": "clawhub-limtdesign",
+  "name": "limtdesign",
+  "summary": "视觉创意生图提示词生成skill。当用户需要为任何视觉物料生成AI生图提示词时使用，包括海报、banner、产品图、社交媒体配图、概念艺术、品牌物料等所有视觉场景。无论用户的需求是模糊的（\"帮我做张海报\"）、半清晰的（\"科技风新品发布海报\"）还是已有方向的，都应触发此skill。当用户提到生图、出图、画图、提示词...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limtdesign",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hitlmt",
+      "features": [
+        "视觉创意生图提示词生成skill。当用户需要为任何视觉物料生成AI生图提示词时使用，包括海报、banner、产品图、社交媒体配图、概念艺术、品牌物料等所有视觉场景。无论用户的需求是模糊的（\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/limtdesign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24528188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "limtdesign",
+      "url": "https://clawhub.ai/skills/limtdesign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limtdesign",
+    "url": "https://clawhub.ai/skills/limtdesign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limtdesign-4c2cd8a6e3b3e7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/limtdesign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-limtdesign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dd9b1cdf58563d32410e60d24a5fb91453bcea53b7bfbc5d63e9a9f185a903c",
+      "artifactSizeBytes": 2736
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:07:10.185Z"
+}

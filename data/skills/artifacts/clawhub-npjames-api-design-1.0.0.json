@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/npjames-api-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npjames_api_design",
+  "skill": {
+    "id": 26805,
+    "skillKey": "clawhub-npjames-api-design",
+    "name": "Npjames Api Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npjames-api-design",
+    "url": "https://clawhub.ai/skills/npjames-api-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npjames-api-design-560352c1cdff6e9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "npjameszheng1125-netizen",
+      "userId": "publishers:npjameszheng1125-netizen",
+      "displayName": "npjameszheng1125-netizen",
+      "image": "https://avatars.githubusercontent.com/u/264589381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773655779835,
+      "changelog": "Initial release—comprehensive REST API design patterns and best practices:\n\n- Covers resource naming, URL structure, HTTP methods, and status codes.\n- Guides on pagination (offset and cursor), filtering, sorting, and search conventions.\n- Details error handling formats and response envelope patterns.\n- Includes examples for authentication, authorization, and rate limiting headers.\n- Provides ready-to-use code and query samples for production-grade API contracts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b368e6c4d6419a561f95d7e58e3d256b0f219ff49780b1da54b96a27717df88"
+}

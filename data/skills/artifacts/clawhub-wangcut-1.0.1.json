@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wangcut@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wangcut",
+  "skill": {
+    "id": 68349,
+    "skillKey": "clawhub-wangcut",
+    "name": "秦丝旺剪 - AI智能视频剪辑"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wangcut",
+    "url": "https://clawhub.ai/skills/wangcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wangcut-0c8784e6a92ff6b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "秦丝智能视频剪辑APP的API集成，用于创建和管理AI视频剪辑任务。 TRIGGER when: 用户请求创建视频、生成视频剪辑、查看视频任务列表、下载剪辑结果、等待任务完成、配置旺剪账号。 触发词: \"创建视频\"、\"视频剪辑\"、\"生成视频\"、\"查看任务\"、\"下载视频\"、\"等待视频\"、\"配置旺剪\"、\"旺剪账号\"、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjt",
+      "userId": "s1726d5t0h9pgpez7r3rhfzarx843v3h",
+      "displayName": "HuangJT",
+      "image": "https://avatars.githubusercontent.com/u/10482201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773317800474,
+      "changelog": "- Added initial configuration detection and user guidance for setting up Wangcut account credentials.\n- Introduced new triggers and keywords for account configuration support (\"配置旺剪账号\", \"旺剪账号\").\n- Expanded functionality to allow setting, checking, and prompting for account password directly.\n- Updated command examples in documentation, including APIs for configuration management.\n- Task list and detail examples now include video play and download URLs for easier access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2948c501df546c621378992f2d6b26e1df2e01fec1a9b62aeee6f174e3d17c8e"
+}

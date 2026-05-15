@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm-prd@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_prd",
+  "skill": {
+    "id": 64832,
+    "skillKey": "clawhub-pm-prd",
+    "name": "产品经理PRD工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-prd",
+    "url": "https://clawhub.ai/skills/pm-prd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-prd-f9de977c9a409999.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "产品经理专用的 PRD(产品需求文档)生成、优化与扩展工具。用于从自然语言描述创建结构化 PRD、对现有 PRD 进行澄清式审阅以补全模糊点、或向已有 PRD 追加新功能。当用户提到\"写 PRD\"\"生成产品需求文档\"\"需求文档\"\"优化/澄清 PRD\"\"review PRD\"\"给 PRD 加功能\"\"PRD 新增需求..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xu4wang",
+      "userId": "s171mhhsn8hyv45mf7s0p1rm7n84p5hw",
+      "displayName": "Austin",
+      "image": "https://avatars.githubusercontent.com/u/311397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775993692377,
+      "changelog": "initial release: generate / clarify / extend 三模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:858613392c7ab2a9d044e8daf8ffe47df9ada525c39f4c4b37126290f334b3fc"
+}

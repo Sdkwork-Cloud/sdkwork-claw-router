@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-regex-engine@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_regex_engine",
+  "skill": {
+    "id": 51009,
+    "skillKey": "clawhub-openclaw-regex-engine",
+    "name": "OpenClaw Regex Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-regex-engine",
+    "url": "https://clawhub.ai/skills/openclaw-regex-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-regex-engine-a1bccc44980c3345.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-grade regex processing suite — test patterns with capture groups, explain any regex in plain English, build regex from natural language descriptio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yedanyagamiai-cmd",
+      "userId": "publishers:yedanyagamiai-cmd",
+      "displayName": "YedanYagami",
+      "image": "https://avatars.githubusercontent.com/u/262255698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772849433740,
+      "changelog": "v2.0.0 — Named Protocols (PatternForge, RegexLens, BattleTest, SmartReplace), trigger-rich descriptions, Quick Reference, Wrong/Right examples, Security section",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c344e72a3a1416e2a025ba58effccf789dee536d866b321c9cc61a4f97d70e19"
+}

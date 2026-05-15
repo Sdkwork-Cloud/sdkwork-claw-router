@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uploadthing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uploadthing",
+  "skill": {
+    "id": 50836,
+    "skillKey": "clawhub-uploadthing",
+    "name": "Uploadthing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uploadthing",
+    "url": "https://clawhub.ai/skills/uploadthing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uploadthing-b001f8188c08f075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uploadthing file hosting — upload, list, and manage files via the Uploadthing API. Simple file uploads with automatic CDN delivery, file metadata, and usage..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772859179884,
+      "changelog": "- Initial release of the Uploadthing skill for Python 3.10+ (no external dependencies).\n- Upload, list, delete, rename files and generate CDN URLs via the Uploadthing API.\n- Track file metadata, storage and bandwidth usage, and manage files in bulk.\n- All operations available via a simple CLI with JSON or human-readable outputs.\n- Requires only the UPLOADTHING_SECRET environment variable for authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f7f31311a65e269570c80b8fef93eaffecff7c12eb61c63f34b91d599ad6c29"
+}

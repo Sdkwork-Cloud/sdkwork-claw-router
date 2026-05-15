@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73707,
+  "uuid": "skill-clawhub-messages-summary",
+  "skillKey": "clawhub-messages-summary",
+  "name": "群消息总结",
+  "summary": "飞书消息智能摘要：从飞书会话中提取关键信息，生成结构化摘要。支持群聊消息分析、重要信息提取、多维度分类统计。当用户需要快速了解消息内容、整理会话要点、生成会议记录或跟进事项时使用。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.messages_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LQWZZ",
+      "features": [
+        "飞书消息智能摘要：从飞书会话中提取关键信息，生成结构化摘要。支持群聊消息分析、重要信息提取、多维度分类统计。当用户需要快速了解消息内容、整理会话要点、生成会议记录或跟进事项时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/messages-summary@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4005958?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "messages-summary",
+      "url": "https://clawhub.ai/skills/messages-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "messages-summary",
+    "url": "https://clawhub.ai/skills/messages-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/messages-summary-0bfc68803a04c0a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/messages-summary@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-messages-summary-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:298700f35e591dab47115450d6f2cc2a0c1a8d5b810fe4c8777b00eb04254c59",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:48:11.402Z"
+}

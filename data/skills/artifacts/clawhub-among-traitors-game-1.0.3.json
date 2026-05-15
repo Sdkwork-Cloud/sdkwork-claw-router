@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/among-traitors-game@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.among_traitors_game",
+  "skill": {
+    "id": 20917,
+    "skillKey": "clawhub-among-traitors-game",
+    "name": "Among Traitors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "among-traitors-game",
+    "url": "https://clawhub.ai/skills/among-traitors-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/among-traitors-game-f48e7992887e8c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control an AI game agent in Among Traitors by birthing, joining lobbies with webhooks, and guiding gameplay through card plays and whispers via REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saltorioussig",
+      "userId": "publishers:saltorioussig",
+      "displayName": "saltoriousSIG",
+      "image": "https://avatars.githubusercontent.com/u/20292420?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773165678688,
+      "changelog": "No code changes; added secrets and permissions blocks:\n\n- Declared required secrets (`WEBHOOK_TOKEN`, optionally `OPENCLAW_HOOKS_TOKEN`) for webhook authentication.\n- Added explicit permissions for HTTP webhooks (incoming game events) and HTTP REST calls (game actions) to among-traitors-api.fly.dev.\n- No functional changes to agent/game logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52401b88186fb6ba1e06fd9386df8473c825dc6476c95a44999359c217d9fc3a"
+}

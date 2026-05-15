@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36959,
+  "uuid": "skill-clawhub-onespan",
+  "skillKey": "clawhub-onespan",
+  "name": "Onespan",
+  "summary": "OneSpan integration. Manage data, records, and automate workflows. Use when the user wants to interact with OneSpan data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onespan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "OneSpan integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with OneSpan data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onespan@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onespan",
+      "url": "https://clawhub.ai/skills/onespan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onespan",
+    "url": "https://clawhub.ai/skills/onespan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onespan-ab91dd928254f204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onespan@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onespan-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa43f2f9d4e1ecc4697bf275e9d2b3a4424877ceaa6e7d2fda1dcb1e0099941d",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:03.133Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41433,
+  "uuid": "skill-clawhub-citation-formatter-1",
+  "skillKey": "clawhub-citation-formatter-1",
+  "name": "Citation Formatter",
+  "summary": "Use when formatting references for journal submission, converting between citation styles (APA, MLA, Vancouver, Chicago), generating bibliographies for manus...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_formatter_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when formatting references for journal submission, converting between citation styles (APA,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-formatter-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-formatter-1",
+      "url": "https://clawhub.ai/skills/citation-formatter-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-formatter-1",
+    "url": "https://clawhub.ai/skills/citation-formatter-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-formatter-1-c0f0e967f6cbc222.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-formatter-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-formatter-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f998a6d6ec303ee9b9200b197bd1cc32ae5f2a461bcf549a6ed9db6516b230df",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:37:14.704Z"
+}

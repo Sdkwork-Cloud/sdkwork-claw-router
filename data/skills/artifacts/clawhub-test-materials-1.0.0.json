@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-materials@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_materials",
+  "skill": {
+    "id": 18997,
+    "skillKey": "clawhub-test-materials",
+    "name": "Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-materials",
+    "url": "https://clawhub.ai/skills/test-materials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-materials-3ca5395137e26d77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render JSON schemas to images and generate schemas from prompts using declare-render and AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cai-zhuo",
+      "userId": "publishers:cai-zhuo",
+      "displayName": "White",
+      "image": "https://avatars.githubusercontent.com/u/44321355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 646,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771492028528,
+      "changelog": "Test",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c04c4ad9d9d3dd5db6ea4e6d7492a4f210971d9eda27e19c8c9796013b2a414f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24191,
+  "uuid": "skill-clawhub-document-ingestion",
+  "skillKey": "clawhub-document-ingestion",
+  "name": "Document Ingestion",
+  "summary": "Process raw accounting source documents (PDFs, CSVs, bank statements, invoices, receipts) into standardized transaction records for QBO import. Use when batc...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_ingestion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Process raw accounting source documents (PDFs, CSVs, bank statements, invoices, receipts) into.",
+        "Use when batc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-ingestion@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-ingestion",
+      "url": "https://clawhub.ai/skills/document-ingestion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-ingestion",
+    "url": "https://clawhub.ai/skills/document-ingestion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-ingestion-ba0c5e9988b1c3e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-ingestion@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-ingestion-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be7a5b9435839f2ed38bc9bafc4e042e2a1905189c28e7c07fbc10439302c878",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:02:05.735Z"
+}

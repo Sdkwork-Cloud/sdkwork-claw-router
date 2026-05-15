@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/munger-lens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.munger_lens",
+  "skill": {
+    "id": 70905,
+    "skillKey": "clawhub-munger-lens",
+    "name": "Munger Lens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "munger-lens",
+    "url": "https://clawhub.ai/skills/munger-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/munger-lens-2c79ca3b13de7c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于查理·芒格多元思维模型，提供逆向思维、能力圈、安全边际等认知框架，助力理性决策和风险规避。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaonizhou-crypto",
+      "userId": "s17d6ev4g3ha5jwr0hshzzrdas84gzy7",
+      "displayName": "ClawMaster",
+      "image": "https://avatars.githubusercontent.com/u/259796961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775917401050,
+      "changelog": "Munger Lens v1.0.0 Changelog\n\n- Initial release with a comprehensive mental model and decision framework inspired by Charlie Munger.\n- Covers core concepts like inversion, latticework of mental models, circle of competence, margin of safety, opportunity cost, compounding, and misjudgment psychology.\n- Includes practical decision checklists for investment and life, along with anti-patterns and model limitations.\n- Features signature language style, prototypical quotes, and Munger’s core decision heuristics.\n- Provides recommended resources for further study and clear guidance on appropriate usage contexts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1de7d69e368e18cfea23fdea0e1b6a824654073dc01940c71b9ec70fa16d0a5a"
+}

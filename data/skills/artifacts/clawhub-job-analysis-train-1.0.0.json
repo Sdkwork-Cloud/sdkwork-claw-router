@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/job-analysis-train@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_train",
+  "skill": {
+    "id": 58471,
+    "skillKey": "clawhub-job-analysis-train",
+    "name": "job-analysis-train"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-train",
+    "url": "https://clawhub.ai/skills/job-analysis-train",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-train-cf5d9eb4026758d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在对话中辅助学习\"工作分析/Job Analysis\"第 8 章\"Staffing and Training\"。基于 c8.pdf 课本章节。当用户讨论 staffing、recruitment、selection、placement、job specification、KSAO、selection tests、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776503880072,
+      "changelog": "job-analysis-train 1.0.0 首次发布，作为 Job and Work Analysis 第 8 章 \"Staffing and Training\" 对话式学习助手。\n\n- 支持根据 c8.pdf，辅助学习 staff、selection、training 核心概念与证据链，聚焦第 8 章内容。\n- 针对招聘（staffing）、选拔（selection）、效度论证（validation）、培训周期（training cycle）等场景自动启用。\n- 使用渐进式披露原则，先给核心解释，按需读取详细参考资料，并指导概念、框架、案例及对比理解。\n- 回答中中英文双语，强调 job analysis 信息在招聘和培训中的不同作用。\n- 提供主要比较表、用证据链解释 selection、用循环系统展示 training、并根据实际学习需求调整输出细粒度。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d28ddebead6412d9422c5cf54ae5300e2bb2721009010bde74fd250412eeeceb"
+}

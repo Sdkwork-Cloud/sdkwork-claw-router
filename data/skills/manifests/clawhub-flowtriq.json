@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27038,
+  "uuid": "skill-clawhub-flowtriq",
+  "skillKey": "clawhub-flowtriq",
+  "name": "Flowtriq - anti-DDoS attack integration",
+  "summary": "Monitor and manage Flowtriq DDoS detection in real time using the Flowtriq API. Use this skill whenever the user asks about active attacks, node status, inci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowtriq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacob Masse",
+      "features": [
+        "Monitor and manage Flowtriq DDoS detection in real time using the Flowtriq API",
+        "Use this skill whenever the user asks about active attacks, node status, inci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowtriq@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60854020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowtriq",
+      "url": "https://clawhub.ai/skills/flowtriq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowtriq",
+    "url": "https://clawhub.ai/skills/flowtriq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowtriq-f842f9998ded0c9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowtriq@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowtriq-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:781341eabb145e161599b87a61e5da091c9b20a80a1d50bf8dd25b4c00b94fc4",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:50:09.701Z"
+}

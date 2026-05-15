@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35295,
+  "uuid": "skill-clawhub-processout",
+  "skillKey": "clawhub-processout",
+  "name": "Processout",
+  "summary": "ProcessOut integration. Manage data, records, and automate workflows. Use when the user wants to interact with ProcessOut data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.processout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ProcessOut integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ProcessOut data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/processout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "processout",
+      "url": "https://clawhub.ai/skills/processout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "processout",
+    "url": "https://clawhub.ai/skills/processout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/processout-d4bcffc5c64e51ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/processout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-processout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c64cf2c2752da931abcece61307f7b13f7f3155b1625031360e500cc78f68a",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:10.205Z"
+}

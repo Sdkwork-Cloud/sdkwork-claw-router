@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70157,
+  "uuid": "skill-clawhub-collage-application",
+  "skillKey": "clawhub-collage-application",
+  "name": "collage-application",
+  "summary": "提供高考志愿填报策略指导，根据考生省份、选科、分数、位次、意向生成科学志愿方案，并输出可视化志愿单；当用户需要进行高考志愿填报时使用",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.collage_application",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ym9zep",
+      "features": [
+        "提供高考志愿填报策略指导，根据考生省份、选科、分数、位次、意向生成科学志愿方案，并输出可视化志愿单；当用户需要进行高考志愿填报时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/collage-application@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177615475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "collage-application",
+      "url": "https://clawhub.ai/skills/collage-application"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "collage-application",
+    "url": "https://clawhub.ai/skills/collage-application",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/collage-application-24f825f619161667.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/collage-application@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-collage-application-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b9e67f56c607c3ab2ee4f6af46a1c7a66e9c389f63689cb5819595090825e12",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:48:45.847Z"
+}

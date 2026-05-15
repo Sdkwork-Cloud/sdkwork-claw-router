@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65140,
+  "uuid": "skill-clawhub-xiaofei-ziyong-douyin-transcribe",
+  "skillKey": "clawhub-xiaofei-ziyong-douyin-transcribe",
+  "name": "Douyin Transcribe",
+  "summary": "全自动抖音视频下载 + 语音转文字管道。当用户发送抖音链接并要求转写文字、提取字幕、语音转文本时使用。触发词包括\"抖音转写\"、\"抖音文字\"、\"抖音转文本\"、\"抖音字幕\"、\"douyin transcribe\"。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaofei_ziyong_douyin_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mengzi53",
+      "features": [
+        "全自动抖音视频下载 + 语音转文字管道。当用户发送抖音链接并要求转写文字、提取字幕、语音转文本时使用。触发词包括\"抖音转写\"、\"抖音文字\"、\"抖音转文本\"、\"抖音字幕\"、\"douyin tr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaofei-ziyong-douyin-transcribe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117899626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaofei-ziyong-douyin-transcribe",
+      "url": "https://clawhub.ai/skills/xiaofei-ziyong-douyin-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaofei-ziyong-douyin-transcribe",
+    "url": "https://clawhub.ai/skills/xiaofei-ziyong-douyin-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaofei-ziyong-douyin-transcribe-22401a4a82062431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaofei-ziyong-douyin-transcribe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaofei-ziyong-douyin-transcribe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daee68e1ae7d2f95bfe957e04551fa638f46186fa56b9b3b909db817d9ddf854",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:14:34.467Z"
+}

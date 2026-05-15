@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24053,
+  "uuid": "skill-clawhub-news-brief",
+  "skillKey": "clawhub-news-brief",
+  "name": "News Brief",
+  "summary": "Daily Chinese news brief from top global sources (Reuters, Bloomberg, TechCrunch, FT, BBC). Pick up to 3 categories, run setup.py once, get structured briefs...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack James",
+      "features": [
+        "Daily Chinese news brief from top global sources (Reuters, Bloomberg, TechCrunch, FT, BBC)",
+        "Pick up to 3 categories, run setup.py once, get structured briefs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-brief@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72848907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-brief",
+      "url": "https://clawhub.ai/skills/news-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-brief",
+    "url": "https://clawhub.ai/skills/news-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-brief-e631841f639a79a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-brief@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-brief-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:372dc32a7f99f7ac966e4c4b2d97407bbd0bdcb1456e9f4b5671823d801a1926",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:33:54.854Z"
+}

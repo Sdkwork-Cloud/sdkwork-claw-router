@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28182,
+  "uuid": "skill-clawhub-rating",
+  "skillKey": "clawhub-rating",
+  "name": "Rating",
+  "summary": "Rating - command-line tool for everyday use Use when you need rating.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rating",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "command-line tool for everyday use Use when you need rating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rating@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rating",
+      "url": "https://clawhub.ai/skills/rating"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rating",
+    "url": "https://clawhub.ai/skills/rating",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rating-112895d7af6c1253.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rating@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rating-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd1ceeeedd9c9d95556af0e9f4e0dd2d5257dc89908fc6bdfd8279b5b651ed85",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:18:46.583Z"
+}

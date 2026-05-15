@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73403,
+  "uuid": "skill-clawhub-openclaw-expense-tracker",
+  "skillKey": "clawhub-openclaw-expense-tracker",
+  "name": "智能记账本",
+  "summary": "基于自然语言输入，智能分类日常支出，支持多维度统计和本地数据存储的个人财务管理工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GlorySunshine",
+      "features": [
+        "基于自然语言输入，智能分类日常支出，支持多维度统计和本地数据存储的个人财务管理工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-expense-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28593913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-expense-tracker",
+      "url": "https://clawhub.ai/skills/openclaw-expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-expense-tracker",
+    "url": "https://clawhub.ai/skills/openclaw-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-expense-tracker-495fec025750e606.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-expense-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-expense-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:312eeeea16f1d98db6cbbea380f599bf3a4da7a995f6abc2730553c03d11c890",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:01:43.133Z"
+}

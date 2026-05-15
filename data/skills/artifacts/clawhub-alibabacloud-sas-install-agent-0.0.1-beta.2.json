@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-sas-install-agent@0.0.1-beta.2",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_sas_install_agent",
+  "skill": {
+    "id": 41087,
+    "skillKey": "clawhub-alibabacloud-sas-install-agent",
+    "name": "Alibabacloud Sas Install Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-sas-install-agent",
+    "url": "https://clawhub.ai/skills/alibabacloud-sas-install-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-sas-install-agent-48ef56723c14237f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Security Center (SAS) agent onboarding and management assistant. Use this skill when the user wants to onboard servers to Security Center, inst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1-beta.2",
+      "createdAt": 1776843877396,
+      "changelog": "- Minimum CLI version updated to aliyun CLI ≥ 3.3.3; now requires updating via a provided script and plugin update step.\n- Introduced mandatory enable/disable of AI-mode for all Agent Skill invocations using specific CLI commands before/after any workflow.\n- All aliyn CLI commands must now use the explicit user agent: AlibabaCloud-Agent-Skills/alibabacloud-sas-install-agent.\n- Expanded CLI setup and exit protocol; AI-mode must be explicitly disabled at every exit point, covering all workflow outcomes.\n- Documentation and references updated to reflect stricter environment checks and CLI operational flow requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e79235c643c8a9df420080626df387a6b2fd338a8111d4ce345235a5aa297e5"
+}

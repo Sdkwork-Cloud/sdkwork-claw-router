@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38046,
+  "uuid": "skill-clawhub-flexmail-integration",
+  "skillKey": "clawhub-flexmail-integration",
+  "name": "Flexmail",
+  "summary": "Flexmail integration. Manage Contacts, Campaigns, Templates. Use when the user wants to interact with Flexmail data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flexmail_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Flexmail integration",
+        "Manage Contacts, Campaigns, Templates",
+        "Use when the user wants to interact with Flexmail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flexmail-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flexmail-integration",
+      "url": "https://clawhub.ai/skills/flexmail-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flexmail-integration",
+    "url": "https://clawhub.ai/skills/flexmail-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flexmail-integration-6e2c7f1ac8a5642b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flexmail-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flexmail-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3ee8a0cc8ba09d2b343699068201efe039b1213fc2640bcfe14a4fd829da1a8",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:21.533Z"
+}

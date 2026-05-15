@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12858,
+  "uuid": "skill-clawhub-kickstart",
+  "skillKey": "clawhub-kickstart",
+  "name": "Kickstart",
+  "summary": "Installs core workspace files, memory systems, expert personas, sub-agent templates, heartbeat patterns, and automation scaffolding to set up or optimize Ope...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kickstart",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jordy Maui",
+      "features": [
+        "Installs core workspace files, memory systems, expert personas, sub-agent templates, heartbeat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kickstart@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203104255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kickstart",
+      "url": "https://clawhub.ai/skills/kickstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kickstart",
+    "url": "https://clawhub.ai/skills/kickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kickstart-5dae49cebfdd9e85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kickstart@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kickstart-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5bb43f4106370028b23a53355b00223f96ce948c3521dc1089d35ab55eba3f3",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T13:33:22.961Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42768,
+  "uuid": "skill-clawhub-nerua1-skill-vetter",
+  "skillKey": "clawhub-nerua1-skill-vetter",
+  "name": "Skill Vetter — Security Audit for AI Skills",
+  "summary": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerua1_skill_vetter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerua1",
+      "features": [
+        "Security-first skill vetting for AI agents",
+        "Use before installing any skill from ClawdHub, GitHub, or other sources",
+        "Checks for red flags, permission scope,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nerua1-skill-vetter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271220546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nerua1-skill-vetter",
+      "url": "https://clawhub.ai/skills/nerua1-skill-vetter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerua1-skill-vetter",
+    "url": "https://clawhub.ai/skills/nerua1-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerua1-skill-vetter-cdacac7cc7e4b562.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nerua1-skill-vetter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nerua1-skill-vetter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e40818837ac2bdbfa9dccb8c098f6faeceadac2d9b4f0ff8a47fa214166d471",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:17:16.977Z"
+}

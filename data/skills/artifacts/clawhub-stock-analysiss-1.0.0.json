@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysiss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysiss",
+  "skill": {
+    "id": 26761,
+    "skillKey": "clawhub-stock-analysiss",
+    "name": "Pub Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysiss",
+    "url": "https://clawhub.ai/skills/stock-analysiss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysiss-868a3677db244ff5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze stocks and cryptocurrencies using Yahoo Finance data with portfolio management and watchlists. And also 50+ models for image generation, video genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773296095338,
+      "changelog": "stock-analysis 1.0.0\n\n- Initial release.\n- Analyze stocks and cryptocurrencies using Yahoo Finance data.\n- Includes portfolio management and watchlists features.\n- Access to 50+ AI models for image generation, video, text-to-speech, speech-to-text, chat, music, web search, document parsing, email, and SMS.\n- Unified SkillBoss API key enables model access and smart routing across popular providers (OpenAI, Bedrock, Vertex, Replicate, ElevenLabs, and more).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:349063a01a5bf217754cce855dfcf922c552d40d5f8597280fb1a27e0a7fc5e3"
+}

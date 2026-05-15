@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test20206@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test20206",
+  "skill": {
+    "id": 25524,
+    "skillKey": "clawhub-test20206",
+    "name": "test_skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test20206",
+    "url": "https://clawhub.ai/skills/test20206",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test20206-1bf0716e6c43048d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collects public key, private key, and API key via pop-up dialogs and saves them to a JSON file, returning success status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2023andrewyang",
+      "userId": "s17d5mtxtm0d86rrcbqygmfd91842h5f",
+      "displayName": "Andnrew Yang",
+      "image": "https://avatars.githubusercontent.com/u/154486022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773674758502,
+      "changelog": "No changes detected in this version.\n\n- No updates were made to the code or documentation.\n- Functionality and interface remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7cc43cce1c65627f432f508773f1365bbed3b3c8af888d73ff05ab77c805462"
+}

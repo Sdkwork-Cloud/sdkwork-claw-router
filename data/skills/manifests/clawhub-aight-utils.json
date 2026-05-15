@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40098,
+  "uuid": "skill-clawhub-aight-utils",
+  "skillKey": "clawhub-aight-utils",
+  "name": "Aight Utils",
+  "summary": "Native Aight app integration for creating reminders, tasks, triggers, and items. Use when user mentions deadlines, reminders, tasks, or tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aight_utils",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vincenthhao",
+      "features": [
+        "Native Aight app integration for creating reminders, tasks, triggers, and items",
+        "Use when user mentions deadlines, reminders, tasks, or tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aight-utils@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211823993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aight-utils",
+      "url": "https://clawhub.ai/skills/aight-utils"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aight-utils",
+    "url": "https://clawhub.ai/skills/aight-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aight-utils-9af6ede3671d0aa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aight-utils@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aight-utils-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:245058e6c9de2b634af7a23bf23d087f4e352efefefc9b8fea968de71b41044e",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:23:48.510Z"
+}

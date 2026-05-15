@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epragma-redmine-issue@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epragma_redmine_issue",
+  "skill": {
+    "id": 20272,
+    "skillKey": "clawhub-epragma-redmine-issue",
+    "name": "Epragma Redmine Issue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epragma-redmine-issue",
+    "url": "https://clawhub.ai/skills/epragma-redmine-issue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epragma-redmine-issue-70af3c6d0088df11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read Redmine issues from any Redmine server via REST API with configurable URL and credentials. Use when you need to fetch a single issue, list/filter issues..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agelospanagiotakis",
+      "userId": "publishers:agelospanagiotakis",
+      "displayName": "Angelos Panagiotakis",
+      "image": "https://avatars.githubusercontent.com/u/440415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772073647994,
+      "changelog": "Initial release of epragma-redmine-issue.  \n- Allows reading and updating Redmine issues via REST API with configurable server URL and credentials.\n- Supports fetching a single issue, listing/filtering issues, creating and commenting on issues.\n- Includes commands for listing projects, statuses, and time tracking entries/activities.\n- Credentials (URL and API key) are managed using environment variables for flexible deployment.\n- All API responses are returned in JSON format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba6a17d4d1deceffdbb06a833da72ac9af53b98e86e8c213115b42e40bc17b79"
+}

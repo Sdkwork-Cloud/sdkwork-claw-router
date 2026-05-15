@@ -1,0 +1,59 @@
+import type { JsonValue } from './json-value';
+
+/** Ai model vendor record schema exposed by Claw Router. */
+export interface AiModelVendorRecord {
+  /** Capabilities field on ai model vendor record. */
+  capabilities?: Record<string, JsonValue>;
+  /** Color token field on ai model vendor record. */
+  color_token?: string;
+  /** Country region field on ai model vendor record. */
+  country_region?: string;
+  /** Created at field on ai model vendor record. */
+  created_at?: string;
+  /** Data scope field on ai model vendor record. */
+  data_scope?: string;
+  /** Deleted at field on ai model vendor record. */
+  deleted_at?: string;
+  /** Deleted by field on ai model vendor record. */
+  deleted_by?: string;
+  /** Description field on ai model vendor record. */
+  description?: string;
+  /** Display name field on ai model vendor record. */
+  display_name: string;
+  /** Docs url field on ai model vendor record. */
+  docs_url?: string;
+  /** Icon url field on ai model vendor record. */
+  icon_url?: string;
+  /** Id field on ai model vendor record. */
+  id?: string;
+  /** Legal name field on ai model vendor record. */
+  legal_name?: string;
+  /** Logo url field on ai model vendor record. */
+  logo_url?: string;
+  /** Metadata field on ai model vendor record. */
+  metadata?: Record<string, JsonValue>;
+  /** Model families field on ai model vendor record. */
+  model_families?: Record<string, JsonValue>;
+  /** Open source field on ai model vendor record. */
+  open_source?: boolean;
+  /** Organization id field on ai model vendor record. */
+  organization_id: string;
+  /** Sort order field on ai model vendor record. */
+  sort_order?: number;
+  /** Status field on ai model vendor record. */
+  status: string;
+  /** Tenant id field on ai model vendor record. */
+  tenant_id: string;
+  /** Updated at field on ai model vendor record. */
+  updated_at?: string;
+  /** Uuid field on ai model vendor record. */
+  uuid: string;
+  /** Vendor code field on ai model vendor record. */
+  vendor_code: string;
+  /** Vendor type field on ai model vendor record. */
+  vendor_type?: string;
+  /** Version field on ai model vendor record. */
+  version?: string;
+  /** Website url field on ai model vendor record. */
+  website_url?: string;
+}

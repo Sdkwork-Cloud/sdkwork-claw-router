@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33146,
+  "uuid": "skill-clawhub-greythr",
+  "skillKey": "clawhub-greythr",
+  "name": "Greythr",
+  "summary": "GreytHR integration. Manage data, records, and automate workflows. Use when the user wants to interact with GreytHR data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greythr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "GreytHR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with GreytHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greythr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greythr",
+      "url": "https://clawhub.ai/skills/greythr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greythr",
+    "url": "https://clawhub.ai/skills/greythr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greythr-249c31f34648311e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greythr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-greythr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84cf152019a77cf85f6a3403a6fa79979f128a94efb4366423eb1d12db55d2a9",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:53.656Z"
+}

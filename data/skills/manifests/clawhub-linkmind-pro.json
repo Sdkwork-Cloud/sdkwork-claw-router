@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58549,
+  "uuid": "skill-clawhub-linkmind-pro",
+  "skillKey": "clawhub-linkmind-pro",
+  "name": "Linkmind",
+  "summary": "LinkMind 知识连接引擎 Phase 2 - 本地化知识中枢 CLI 工具，支持 storage adapter 抽象层和 OpenAI-compatible embedding provider。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkmind_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "LinkMind 知识连接引擎 Phase 2",
+        "本地化知识中枢 CLI 工具，支持 storage adapter 抽象层和 OpenAI-compatible embedding provider。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkmind-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkmind-pro",
+      "url": "https://clawhub.ai/skills/linkmind-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkmind-pro",
+    "url": "https://clawhub.ai/skills/linkmind-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkmind-pro-3354e4b117a7662e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkmind-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkmind-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c65ad136dbd7bc1a0a507cff6c5b0ff927d732fa9e1efe0597d4739abda812d",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T08:38:48.763Z"
+}

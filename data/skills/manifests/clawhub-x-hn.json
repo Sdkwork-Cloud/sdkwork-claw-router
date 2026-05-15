@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33106,
+  "uuid": "skill-clawhub-x-hn",
+  "skillKey": "clawhub-x-hn",
+  "name": "Hacker new",
+  "summary": "Fetch and analyze Hacker News (HN) content - the premier tech community for developers, AI researchers, and software engineers. Use when users need: (1) HN t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_hn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiakai",
+      "features": [
+        "Fetch and analyze Hacker News (HN) content",
+        "the premier tech community for developers, AI researchers, and software engineers",
+        "Use when users need: (1) HN t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-hn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75728816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-hn",
+      "url": "https://clawhub.ai/skills/x-hn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-hn",
+    "url": "https://clawhub.ai/skills/x-hn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-hn-640a9767a291a76c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-hn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-hn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b943c4b6351de458e4cc2562aec543207f29cc6903ceeedef0d127ec2a8dc652",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:37:09.324Z"
+}

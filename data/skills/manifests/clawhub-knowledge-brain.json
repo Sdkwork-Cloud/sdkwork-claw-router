@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20427,
+  "uuid": "skill-clawhub-knowledge-brain",
+  "skillKey": "clawhub-knowledge-brain",
+  "name": "knowledge is what brings us together",
+  "summary": "Capture, summarize, and organize knowledge from URLs, YouTube videos, documents, and files. Proactively recall stored knowledge when relevant.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_brain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plc",
+      "features": [
+        "Capture, summarize, and organize knowledge from URLs, YouTube videos, documents, and files",
+        "Proactively recall stored knowledge when relevant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-brain",
+      "url": "https://clawhub.ai/skills/knowledge-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-brain",
+    "url": "https://clawhub.ai/skills/knowledge-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-brain-f232d43e47c419c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9c7bf1137efc2b739bc57c21b25dcb11baf5c76bdd254b1c6b8e2cbf27d7ce0",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T23:18:55.959Z"
+}

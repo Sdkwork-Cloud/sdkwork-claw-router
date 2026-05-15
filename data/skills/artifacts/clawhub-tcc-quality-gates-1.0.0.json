@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tcc-quality-gates@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcc_quality_gates",
+  "skill": {
+    "id": 18330,
+    "skillKey": "clawhub-tcc-quality-gates",
+    "name": "Generic Quality Gateways for Unattended Agent Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcc-quality-gates",
+    "url": "https://clawhub.ai/skills/tcc-quality-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcc-quality-gates-5a6aa5a5bcc0fc17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements six universal, language-agnostic quality gates for APIs, web apps, and CI/CD pipelines using repository-configured checks and detailed reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thecybercore",
+      "userId": "s17b0gp78jx7qwv5xh59rqb4rd83jzrf",
+      "displayName": "TCC",
+      "image": "https://avatars.githubusercontent.com/u/6884654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771948149645,
+      "changelog": "Initial release of tcc-quality-gates skill.\n\n- Defines 6 universal quality gateways for API and web applications (build health, automated testing, security, performance, maintainability, release readiness).\n- Language-agnostic; works with any repository and CI provider.\n- Uses a central JSON configuration: .defs/quality-gateway-definition.json.\n- Outputs both human-readable (Markdown) and machine-readable (JSON) reports, plus references to supporting evidence.\n- Enforces clear storage and reporting conventions for all outputs and temporary files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec53b083609837637557564fadea689e4cbb11198847a3821cb6d5d73182b6b1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72857,
+  "uuid": "skill-clawhub-one-calendar",
+  "skillKey": "clawhub-one-calendar",
+  "name": "单向历",
+  "summary": "每日单向历图片发送工具。自动获取当天日期，构造图片 URL，并通过飞书发送单向历图片。支持配置向导和定时任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chempeng",
+      "features": [
+        "每日单向历图片发送工具。自动获取当天日期，构造图片 URL，并通过飞书发送单向历图片。支持配置向导和定时任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24810120?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-calendar",
+      "url": "https://clawhub.ai/skills/one-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-calendar",
+    "url": "https://clawhub.ai/skills/one-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-calendar-73ad9b4ba5ccc19e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a921981e08f979d1f4ff3c1b1782219efb73dd10e45d43bc1299c197ef14912e",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:58:27.143Z"
+}

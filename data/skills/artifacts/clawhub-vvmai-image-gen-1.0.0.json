@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvmai-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvmai_image_gen",
+  "skill": {
+    "id": 23464,
+    "skillKey": "clawhub-vvmai-image-gen",
+    "name": "VVMAI Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvmai-image-gen",
+    "url": "https://clawhub.ai/skills/vvmai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvmai-image-gen-ab2857b19f80b846.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via VVMAI's OpenAI-compatible Images API. Supports nano-banana and gpt-image model series. Default model is nano-banana-pro. Images are NOT s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leevigoo",
+      "userId": "publishers:leevigoo",
+      "displayName": "vvmai",
+      "image": "https://avatars.githubusercontent.com/u/128909761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773585847729,
+      "changelog": "Initial release of VVMAI Image Generation skill\n- Support nano-banana series (fast URL output) and gpt-image series\n- Generate & edit images via OpenAI-compatible API\n- Flexible save options (--save, --oss, custom dir)\n- Aspect ratio, count, high-res model support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:612dcc05c8f0629bcccba401fc1ad2645696c695a65cbb8400f8105b29823c38"
+}

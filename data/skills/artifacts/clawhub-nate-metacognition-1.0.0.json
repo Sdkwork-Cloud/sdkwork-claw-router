@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nate-metacognition@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nate_metacognition",
+  "skill": {
+    "id": 33495,
+    "skillKey": "clawhub-nate-metacognition",
+    "name": "Metacognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nate-metacognition",
+    "url": "https://clawhub.ai/skills/nate-metacognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nate-metacognition-2aa314114d038d24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-reflection engine for AI agents. Extracts patterns from session transcripts into a weighted graph with Hebbian learning and time decay. Compiles a token..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeycacciatore3",
+      "userId": "s17639jhqpxc4e367kct4f924n83y3w5",
+      "displayName": "JoeyCacciatore3",
+      "image": "https://avatars.githubusercontent.com/u/219585745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774926768189,
+      "changelog": "Initial release of the Metacognition skill — a self-reflection engine for AI agents.\n\n- Extracts and reinforces patterns from session transcripts using Hebbian learning and time decay.\n- Maintains a categorized knowledge store, building a weighted graph of insights and connections.\n- Compiles a token-limited \"metacognition lens\" summarizing active self-knowledge.\n- Provides CLI commands for maintaining, updating, and summarizing insights.\n- Supports optional local embeddings for semantic similarity; designed for secure, local use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c1be9a4a49c2f766f85886d2806257de41c112cc4ccd288b082d65224dad8f3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21445,
+  "uuid": "skill-clawhub-web5-cli",
+  "skillKey": "clawhub-web5-cli",
+  "name": "web5 cli",
+  "summary": "Use when working with Web5 CLI tool for decentralized identity, CKB wallet, DID management, PDS data operations, account creation, posting, profile updates",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web5_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rink1969",
+      "features": [
+        "Use when working with Web5 CLI tool for decentralized identity, CKB wallet, DID management, PDS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web5-cli@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1633038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web5-cli",
+      "url": "https://clawhub.ai/skills/web5-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web5-cli",
+    "url": "https://clawhub.ai/skills/web5-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web5-cli-8cfc39576982a13a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web5-cli@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-web5-cli-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfdb08ea222a64931b4826f617ef9d6e2cb48d940deb9e99faa12798549b4813",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:05:10.200Z"
+}

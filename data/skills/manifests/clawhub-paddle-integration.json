@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32554,
+  "uuid": "skill-clawhub-paddle-integration",
+  "skillKey": "clawhub-paddle-integration",
+  "name": "Paddle",
+  "summary": "Paddle integration. Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more. Use when the user wants to interact with Paddle data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paddle_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Paddle integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more",
+        "Use when the user wants to interact with Paddle data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paddle-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paddle-integration",
+      "url": "https://clawhub.ai/skills/paddle-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paddle-integration",
+    "url": "https://clawhub.ai/skills/paddle-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paddle-integration-a078f188124eb331.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paddle-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paddle-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e200cd7d68e636546e268663247c46ad0522b9fbe095c37b553aea8c193ba94b",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:49:42.686Z"
+}

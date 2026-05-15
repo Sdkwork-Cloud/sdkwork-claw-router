@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19803,
+  "uuid": "skill-clawhub-creative-performance-analyzer",
+  "skillKey": "clawhub-creative-performance-analyzer",
+  "name": "Ads Creative Performance",
+  "summary": "Analyze creative performance post-launch across Meta (Facebook/Instagram), TikTok Ads, YouTube Ads, Google Ads, and Amazon Ads inventory.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_performance_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Analyze creative performance post-launch across Meta (Facebook/Instagram), TikTok Ads, YouTube."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creative-performance-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creative-performance-analyzer",
+      "url": "https://clawhub.ai/skills/creative-performance-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-performance-analyzer",
+    "url": "https://clawhub.ai/skills/creative-performance-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-performance-analyzer-8fa2a6e8ae73e710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creative-performance-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creative-performance-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc857c7a106b1c3677d990ec34b801b298df09ed5dfebe7feded89e9c599abfb",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:50:26.844Z"
+}

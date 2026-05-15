@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-write@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_write",
+  "skill": {
+    "id": 15466,
+    "skillKey": "clawhub-feishu-doc-write",
+    "name": "feishu-doc-write"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-write",
+    "url": "https://clawhub.ai/skills/feishu-doc-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-write-dbc98fea05f6d020.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feishu (Lark) Document API writing spec. Converts Markdown content to Feishu Block structures and writes to cloud docs. Handles concurrency ordering. Use when syncing articles, creating document blocks, or writing long-form content to Feis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnyyao2222-eng",
+      "userId": "publishers:sunnyyao2222-eng",
+      "displayName": "sunnyyao2222-eng",
+      "image": "https://avatars.githubusercontent.com/u/255113599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 972,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770938891429,
+      "changelog": "- Initial release of feishu-doc-writer, providing a comprehensive spec for converting Markdown to Feishu (Lark) cloud document blocks.\n- Supports Feishu's Block tree model, including headings, text, lists, code, quotes, todos, dividers, images, tables, and Feishu-specific Callout blocks.\n- Details the official Markdown-to-Blocks conversion endpoint for streamlined document creation.\n- Includes extensive Block type references with JSON examples for all major block types.\n- Explains concurrency and block ordering pitfalls with recommended batch writing solutions.\n- Documents custom Callout markup syntax for enhanced content formatting.\n- Provides text styling options and Markdown-to-Block mapping for feature-rich document output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:131e489c550ad5a0f6bb80346e6baeb82e9f441c70cd97bff3743771e6d4e4f2"
+}

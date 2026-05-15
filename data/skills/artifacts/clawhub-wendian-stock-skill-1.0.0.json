@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wendian-stock-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wendian_stock_skill",
+  "skill": {
+    "id": 49381,
+    "skillKey": "clawhub-wendian-stock-skill",
+    "name": "wendian stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wendian-stock-skill",
+    "url": "https://clawhub.ai/skills/wendian-stock-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wendian-stock-skill-7a48d22273d0a75a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time and historical market data, heatmaps, sector rotation analytics, and concept linking from Wendian Starmap's professional stock data platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wendian-ai",
+      "userId": "s172wxvq80ksbv11j3s6r8zw0183hm4j",
+      "displayName": "问象星图",
+      "image": "https://avatars.githubusercontent.com/u/270246255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777533040004,
+      "changelog": "- Initial release of Wendian Starmap Skill as wendian-markethot-skill, enabling access to institutional-grade stock market intelligence via Wendian Starmap.\n- Supports real-time market data (quotes, K-line/OHLC bars), global indices, and batch operations.\n- Provides proprietary heatmap and sector rotation analytics for both intraday and historical analysis.\n- Exposes endpoints for concept/theme lists, stock-concept linkage, trading calendar, and stock reference data.\n- Requires API key from Wendian Starmap (register at markethot.wendian.net) for authenticated access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ede07fd8e5a5d87eb844c2538b6b6c230bb8a543c53e319e6da87d65b43accf"
+}

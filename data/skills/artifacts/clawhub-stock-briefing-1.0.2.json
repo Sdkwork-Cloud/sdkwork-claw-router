@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-briefing@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_briefing",
+  "skill": {
+    "id": 68602,
+    "skillKey": "clawhub-stock-briefing",
+    "name": "盘前简报Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-briefing",
+    "url": "https://clawhub.ai/skills/stock-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-briefing-f411f6add2167b47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "纯离线的股市数据分析教学系统，无网络调用，仅使用模拟数据演示OpenClaw开发技术。 适合学习AI Agent开发、量化策略实现。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luckjackyer",
+      "userId": "publishers:luckjackyer",
+      "displayName": "luckjackyer",
+      "image": "https://avatars.githubusercontent.com/u/146961252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773505503367,
+      "changelog": "v1.0.2 纯离线教学版：彻底移除网络调用，100%模拟数据，通过ClawHub安全扫描",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:823ef86b203528e540e7b2248ce175e99bb908783ad721bea71c96d2bad38a6c"
+}

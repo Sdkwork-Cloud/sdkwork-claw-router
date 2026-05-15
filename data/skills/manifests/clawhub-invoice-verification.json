@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71278,
+  "uuid": "skill-clawhub-invoice-verification",
+  "skillKey": "clawhub-invoice-verification",
+  "name": "发票查验",
+  "summary": "在 OpenClaw 中核验发票文本、发票图片和发票文件夹，支持剩余额度查询、充值套餐查看和充值订单管理。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weidd130",
+      "features": [
+        "在 OpenClaw 中核验发票文本、发票图片和发票文件夹，支持剩余额度查询、充值套餐查看和充值订单管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-verification@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45308376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-verification",
+      "url": "https://clawhub.ai/skills/invoice-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-verification",
+    "url": "https://clawhub.ai/skills/invoice-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-verification-76481acbbb092dd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-verification@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-verification-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c50e74276d9794af57cd82b241ba4872da67fcd3e5a5d6395d034518ddbeda96",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:14:58.729Z"
+}

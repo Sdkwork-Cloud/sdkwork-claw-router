@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/testhash001@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testhash001",
+  "skill": {
+    "id": 25110,
+    "skillKey": "clawhub-testhash001",
+    "name": "test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testhash001",
+    "url": "https://clawhub.ai/skills/testhash001",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testhash001-5df30a5fd26c0a8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log meals, check nutrition, manage medications, and view daily health dashboard via Hash Health. Use when user mentions food, meals, eating, nutrition, medic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devak208",
+      "userId": "s179a6ee91bk9e8tvxsgd2083h83zjx1",
+      "displayName": "C.K.DEVAK",
+      "image": "https://avatars.githubusercontent.com/u/147225587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773408028410,
+      "changelog": "- Removed redundant authentication instructions and simplified API information for easier reference.\n- The base API URL and user ID/email variables are now listed more concisely.\n- No changes to endpoints or functional capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13071ef82ef96acede448ad0975aff4dcaed76499623c8f61474da0e2109db33"
+}

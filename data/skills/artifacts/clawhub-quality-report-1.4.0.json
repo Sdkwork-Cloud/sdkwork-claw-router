@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quality-report@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_report",
+  "skill": {
+    "id": 26610,
+    "skillKey": "clawhub-quality-report",
+    "name": "Quality Daily / Weekly / Monthly Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-report",
+    "url": "https://clawhub.ai/skills/quality-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-report-7e7439b7e6275f58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates quality daily, weekly, or monthly reports from key figures and events. Outputs both Excel and PPT (or content for both). If the user has no data, g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lams001",
+      "userId": "s17cmsp02jr81gd0k5sd44143583gq8v",
+      "displayName": "lams001",
+      "image": "https://avatars.githubusercontent.com/u/204463276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773493863430,
+      "changelog": "Version 1.4.0\n\n- Added four example/template files: sample-full-process-weekly, sample-san-di-weekly, sample-shoujian-songjian-weekly, and template-choices-zh.\n- Introduced multi-variant weekly/monthly report templates: Simple, Complete process, Multi-site summary, and First-inspection/submission/process (首检送检制程).\n- Added workflow requiring explicit template selection for weekly/monthly reports, with a template menu for users to choose from before proceeding.\n- Expanded trigger phrases to support new report types and variants (e.g. 简单周报, 复杂月报, simple weekly report).\n- Updated workflow and instructions for chart/chart-data output, especially for 首检送检制程, requiring visual elements (Mermaid/chart spec) in reports.\n- Refined mapping from user input to template structure, integrating new example/template files for advanced reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2362efc8d4d77447d8b336a83ffb14812f5bc1756b1d4fb5f6d800f7a54d36d9"
+}

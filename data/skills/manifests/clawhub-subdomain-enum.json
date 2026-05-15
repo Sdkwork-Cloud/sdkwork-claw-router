@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25614,
+  "uuid": "skill-clawhub-subdomain-enum",
+  "skillKey": "clawhub-subdomain-enum",
+  "name": "Subdomain Enum",
+  "summary": "Enumerate subdomains for any domain using DNS brute-force and certificate transparency logs (crt.sh). Use when a user needs to discover subdomains, perform r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subdomain_enum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Enumerate subdomains for any domain using DNS brute-force and certificate transparency logs (cr.",
+        "Use when a user needs to discover subdomains, perform r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subdomain-enum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subdomain-enum",
+      "url": "https://clawhub.ai/skills/subdomain-enum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subdomain-enum",
+    "url": "https://clawhub.ai/skills/subdomain-enum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subdomain-enum-39888f51829e9d66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subdomain-enum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subdomain-enum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0fcf8eb965b985b820d64d1b8e355c2ed48da7a74bfaf427e9e89ace1940e2a",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:08:27.602Z"
+}

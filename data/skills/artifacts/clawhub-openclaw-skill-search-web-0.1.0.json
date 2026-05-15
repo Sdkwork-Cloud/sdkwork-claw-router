@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-search-web@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_search_web",
+  "skill": {
+    "id": 60670,
+    "skillKey": "clawhub-openclaw-skill-search-web",
+    "name": "Search Web - CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-search-web",
+    "url": "https://clawhub.ai/skills/openclaw-skill-search-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-search-web-3b688345dc86f8c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Openclaw/Trae 联网搜索国内方案，使用火山引擎联网问答智能体 API 进行网络搜索问答。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexjunanjing-2",
+      "userId": "publishers:alexjunanjing-2",
+      "displayName": "AlexJu",
+      "image": "https://avatars.githubusercontent.com/u/258003906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3503,
+      "installsAllTime": 43,
+      "installsCurrent": 39,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771921837703,
+      "changelog": "volcengine-search-web skill initial release.\n\n- Provides a domestic web search solution for Openclaw/Trae using Volcengine API.\n- Supports web search, reference sources, multimedia cards, follow-up question suggestions, and advanced features like citations, mixed media, and glossary highlighting.\n- Requires environment variables for API key and bot ID.\n- Outputs answers with references, token usage, and error details if failed.\n- Optimized for stable access and Chinese-language queries without needing an international credit card.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b152b5fd2083bab52a2f0f7aab3be5961ed2ca134fd00d34d573d07fcc7b01ec"
+}

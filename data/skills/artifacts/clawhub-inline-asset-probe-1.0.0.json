@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inline-asset-probe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inline_asset_probe",
+  "skill": {
+    "id": 35267,
+    "skillKey": "clawhub-inline-asset-probe",
+    "name": "inline-asset-probe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inline-asset-probe",
+    "url": "https://clawhub.ai/skills/inline-asset-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inline-asset-probe-2b435f8f52758887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch a URL with curl/wget, extract inline base64 data URIs, and best-effort decode any content to inspect embedded assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yibeiqingtian-ai",
+      "userId": "publishers:yibeiqingtian-ai",
+      "displayName": "yibeiqingtian-ai",
+      "image": "https://avatars.githubusercontent.com/u/237400549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773840969182,
+      "changelog": "Initial release of inline-asset-probe.\n\n- Fetches a URL using curl or wget and scans for inline base64 data URIs in HTML or CSS.\n- Extracts and saves detected inline assets as files.\n- Optionally base64-decodes the entire server response for additional inspection.\n- Configurable output directory, maximum extracted assets, and response saving via command-line options.\n- Provides PowerShell scripts for usage and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c642faaadc43a24cba00dbb578684647cd4952ef5776f257e2907b955766bb7b"
+}

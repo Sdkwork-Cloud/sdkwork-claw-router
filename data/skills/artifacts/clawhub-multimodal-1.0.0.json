@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multimodal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multimodal",
+  "skill": {
+    "id": 60462,
+    "skillKey": "clawhub-multimodal",
+    "name": "GLM Multimodal Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multimodal",
+    "url": "https://clawhub.ai/skills/multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multimodal-9caff5d2d21a7379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用GLM-4.6V模型进行多模态内容理解（图片、视频、文档）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tridefender",
+      "userId": "s1785z67w6q9dwydts4xxxr0fs852myz",
+      "displayName": "TriDefender",
+      "image": "https://avatars.githubusercontent.com/u/173548745?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 708,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772902464647,
+      "changelog": "Multimodal Analyzer 1.0.0\n\n- Initial release with GLM-4.6V-powered multimodal content understanding.\n- Supports image OCR, scene and object analysis, video summarization & keyframe extraction, and document (PDF/table) parsing.\n- Includes a deep thinking mode for advanced reasoning.\n- Command-line interface for content analysis via script.\n- Currently processes one modality at a time; requires publicly accessible URLs for videos.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:935ca4ad930a1cbf4bcb068efe4f7d017c114270f00aa4ca34397ff0d43e5b20"
+}

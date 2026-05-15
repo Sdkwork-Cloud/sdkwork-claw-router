@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexus-sql-builder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_sql_builder",
+  "skill": {
+    "id": 23130,
+    "skillKey": "clawhub-nexus-sql-builder",
+    "name": "NEXUS Sql Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-sql-builder",
+    "url": "https://clawhub.ai/skills/nexus-sql-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-sql-builder-e6cf607591257642.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complex SQL queries from requirements"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberforexblockchain",
+      "userId": "s17a9p4658c98g5crz7yh772ex83nny8",
+      "displayName": "CyberForexBlockchain",
+      "image": "https://avatars.githubusercontent.com/u/37193064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775754907227,
+      "changelog": "Added x402 payment protocol (Coinbase/Masumi), multi-chain Cardano + Stellar documentation, 10 protocols",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab5bcd12fdd3cc7c275d6e5624f0613b9bde7b7bac36cdcb66e4bf3847c6772e"
+}

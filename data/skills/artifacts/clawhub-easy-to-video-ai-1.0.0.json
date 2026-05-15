@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-to-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_to_video_ai",
+  "skill": {
+    "id": 40822,
+    "skillKey": "clawhub-easy-to-video-ai",
+    "name": "Easy To Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-to-video-ai",
+    "url": "https://clawhub.ai/skills/easy-to-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-to-video-ai-189784ac97fba4bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "marketers, small business owners, social media creators convert text or images into ready-to-share videos using this skill. Accepts JPG, PNG, MP4, MOV up to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775875145657,
+      "changelog": "Initial release of Easy to Video AI — Convert Content Into Shareable Videos.\n\n- Converts user text or images into ready-to-share 1080p MP4 videos in 1–2 minutes using cloud GPUs.\n- Supports uploading JPG, PNG, MP4, and MOV files up to 200MB.\n- Automatic setup: Connects to backend, manages tokens, handles user sessions, and notifies when ready.\n- Simple workflows: Upload, describe your video, and export with no editing skills required.\n- Includes commands for video export, credit balance, upload management, and real-time session status.\n- Built-in error handling for unsupported files, large uploads, expired tokens, and subscription limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f22809a5a401f7ef1e29e3332f94a4fa347c835239a97d656830cf58a19ac7ad"
+}

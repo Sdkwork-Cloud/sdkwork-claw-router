@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20889,
+  "uuid": "skill-clawhub-structs-guild-stack",
+  "skillKey": "clawhub-structs-guild-stack",
+  "name": "Structs Guild Stack",
+  "summary": "Deploys the Guild Stack (Docker Compose) for local PostgreSQL access to game state. Use when you need faster queries for combat automation, real-time threat...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_guild_stack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh McDougall",
+      "features": [
+        "Deploys the Guild Stack (Docker Compose) for local PostgreSQL access to game state",
+        "Use when you need faster queries for combat automation, real-time threat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structs-guild-stack@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structs-guild-stack",
+      "url": "https://clawhub.ai/skills/structs-guild-stack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-guild-stack",
+    "url": "https://clawhub.ai/skills/structs-guild-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-guild-stack-e35c321a9df753b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structs-guild-stack@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structs-guild-stack-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:764b00e90194c0a60821915530add22e750c08fe3006b71cebd3c3ae8f2a85ba",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:34.414Z"
+}

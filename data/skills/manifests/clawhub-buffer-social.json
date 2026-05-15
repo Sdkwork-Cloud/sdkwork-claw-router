@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22664,
+  "uuid": "skill-clawhub-buffer-social",
+  "skillKey": "clawhub-buffer-social",
+  "name": "Buffer Social Media",
+  "summary": "Create, schedule, queue, and manage social media posts and drafts across Buffer-connected profiles using terminal commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buffer_social",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ahmad Abugosh",
+      "features": [
+        "Create, schedule, queue, and manage social media posts and drafts across Buffer-connected profi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buffer-social@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4855928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buffer-social",
+      "url": "https://clawhub.ai/skills/buffer-social"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buffer-social",
+    "url": "https://clawhub.ai/skills/buffer-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buffer-social-f82820e1367c86b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buffer-social@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buffer-social-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb976e6942306c80ad2b848887dca16c12c66f98da50095f67bb37a209b0edea",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:00:48.803Z"
+}

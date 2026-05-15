@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cetus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cetus",
+  "skill": {
+    "id": 15346,
+    "skillKey": "clawhub-cetus",
+    "name": "cetus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cetus",
+    "url": "https://clawhub.ai/skills/cetus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cetus-0881b1b9b84ac4cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides TypeScript SDKs for building DeFi apps on Sui with Cetus Protocol components like AMMs, vaults, farms, limit orders, xCETUS token, and aggregation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k66inthesky",
+      "userId": "s17c7sn4g6a7v5jmj396epdyr58464rf",
+      "displayName": "k66 (Lana Chen)",
+      "image": "https://avatars.githubusercontent.com/u/45890492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1040,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770880339405,
+      "changelog": "Initial release of Cetus Protocol SDK v2 with OpenClaw integration.\n\n- Provides a unified guide for all Cetus SDK v2 packages for building DeFi apps on Sui.\n- Includes installation and usage instructions for: Common, CLMM, DLMM, Vaults, Farms, xCETUS, Limit Order, Burn, DCA, Zap, and Aggregator SDKs.\n- Details example code for SDK initialization, key operations, and utility functions for each module.\n- Covers liquidity management, swaps, fee/reward operations, staking/farming, and governance flows.\n- Offers comprehensive feature overviews and quick reference for new users and developers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74d0af7a00d6f42f032887b604b16e3b4e89829ffeabe247570068827bce15fb"
+}

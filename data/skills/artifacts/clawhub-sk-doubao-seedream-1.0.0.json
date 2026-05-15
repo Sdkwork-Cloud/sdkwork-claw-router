@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sk-doubao-seedream@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sk_doubao_seedream",
+  "skill": {
+    "id": 64924,
+    "skillKey": "clawhub-sk-doubao-seedream",
+    "name": "sk-doubao-seedream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sk-doubao-seedream",
+    "url": "https://clawhub.ai/skills/sk-doubao-seedream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sk-doubao-seedream-9434004aa57edca3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持使用火山方舟 Seedream 系列模型，通过文字描述生成图片或对已有图片进行编辑，包含多版本模型选择。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trylovecatch",
+      "userId": "s178ezahpa1hj1vnchxdmn36bn83v4en",
+      "displayName": "TryLoveCatch",
+      "image": "https://avatars.githubusercontent.com/u/5811464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775121554410,
+      "changelog": "Initial release of Doubao Seedream Skill.\n\n- Supports text-to-image (文生图) and image-to-image (图生图) generation using Doubao-Seedream models.\n- Compatible with multiple model versions: Seedream 5.0, 4.5, 4.0, and 3.0.\n- Provides CLI commands for generating and editing images, with interactive and parameterized modes.\n- Simple API Key setup via command, config file, or environment variable.\n- Detailed instructions, example commands, and parameter explanations included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a58166392c2dd0190478b0544ff3636044d1c1585807bc0e36cda4e6620846a3"
+}

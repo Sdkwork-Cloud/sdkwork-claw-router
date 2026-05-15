@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26112,
+  "uuid": "skill-clawhub-gate-info-coin-analysis",
+  "skillKey": "clawhub-gate-info-coin-analysis",
+  "name": "gate-info-coinanalysis",
+  "summary": "Single-coin comprehensive analysis. Use this skill ONLY when the user asks to analyze one coin with no additional explicit dimension (e.g., no separate risk...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_coin_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Single-coin comprehensive analysis",
+        "Use this skill ONLY when the user asks to analyze one coin with no additional explicit dimensio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-coin-analysis@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-coin-analysis",
+      "url": "https://clawhub.ai/skills/gate-info-coin-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-coin-analysis",
+    "url": "https://clawhub.ai/skills/gate-info-coin-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-coin-analysis-8bca1b9c6ea5b8c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-coin-analysis@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-coin-analysis-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e759450cb01ba71ab9c78a5746ca3f8eeeebc38a9ad33978c308b87fd364b19",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:34:01.384Z"
+}

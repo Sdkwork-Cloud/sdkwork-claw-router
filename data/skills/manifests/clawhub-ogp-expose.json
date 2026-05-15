@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32255,
+  "uuid": "skill-clawhub-ogp-expose",
+  "skillKey": "clawhub-ogp-expose",
+  "name": "Ogp Expose",
+  "summary": "Expose OGP via a public HTTPS endpoint, usually a stable Cloudflare hostname or named tunnel. Use when the user wants to verify or fix gateway reachability,...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ogp_expose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "latentgenius",
+      "features": [
+        "Expose OGP via a public HTTPS endpoint, usually a stable Cloudflare hostname or named tunnel",
+        "Use when the user wants to verify or fix gateway reachability,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ogp-expose@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203848779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ogp-expose",
+      "url": "https://clawhub.ai/skills/ogp-expose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ogp-expose",
+    "url": "https://clawhub.ai/skills/ogp-expose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ogp-expose-d976829a9c4cca44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ogp-expose@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ogp-expose-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd9f5657c21e552c78d4de00da4b3dcad6db9de7cf0a7c3bfaaf8710470fc32a",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T16:10:28.476Z"
+}

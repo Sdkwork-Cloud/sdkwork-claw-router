@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/princeton@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.princeton",
+  "skill": {
+    "id": 70988,
+    "skillKey": "clawhub-princeton",
+    "name": "Princeton"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "princeton",
+    "url": "https://clawhub.ai/skills/princeton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/princeton-4004bde35d03eb3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供普林斯顿大学的历史、学院、招生、学费资助、知名校友及学术实力等详实信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776533924217,
+      "changelog": "- Updated skill summary and content focus to Princeton University, emphasizing its status as the fourth-oldest US university and educational excellence.\n- Expanded historical timeline, highlighting key milestones like Einstein’s arrival and notable developments.\n- Added detailed core features and unique advantages, such as undergraduate research opportunities and graduation thesis requirements.\n- Included up-to-date key statistics: student numbers, endowment, Nobel laureates, and acceptance rate.\n- Clarified Princeton’s unique academic focus (no law or medical school).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f880b8557ea4d8eeddc7999c55c3e50ca2baeeffa4fb85432037dbba6d28a70"
+}

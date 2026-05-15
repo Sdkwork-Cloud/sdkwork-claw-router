@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chronic-disease-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chronic_disease_review",
+  "skill": {
+    "id": 62101,
+    "skillKey": "clawhub-chronic-disease-review",
+    "name": "chronic-disease-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chronic-disease-review",
+    "url": "https://clawhub.ai/skills/chronic-disease-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chronic-disease-review-210037aba9f05494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "门诊慢病审核（糖尿病/高血压）。输入 OCR 结果数组 JSON，输出审核结论与原因（原始 JSON + 自然语言结论）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaiccee",
+      "userId": "s1730k4v567rph88v35wj1eftn83jpwr",
+      "displayName": "aaiccee",
+      "image": "https://avatars.githubusercontent.com/u/45053675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893367704,
+      "changelog": "med-chronic-disease-review 1.0.0 - Initial Release\n\n- Provides automated outpatient chronic disease (diabetes/hypertension) review based on OCR result arrays.\n- Outputs both original review JSON and a natural language summary (decision + reasoning).\n- Ensures strict data privacy: only essential, de-identified data processed transiently in memory.\n- CLI supports customizable input, disease type selection, model, and output file paths.\n- Designed as an auxiliary tool for chronic disease audits; not a substitute for clinical judgment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fae6a1c15a5706e235eb77a6668750b617c148bf82feff932e12a395f94a8e21"
+}

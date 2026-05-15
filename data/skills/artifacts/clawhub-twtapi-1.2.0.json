@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twtapi@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twtapi",
+  "skill": {
+    "id": 36412,
+    "skillKey": "clawhub-twtapi",
+    "name": "TwtAPI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twtapi",
+    "url": "https://clawhub.ai/skills/twtapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twtapi-99d72731467889b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access live Twitter/X data through TwtAPI's hosted public skill gateway. Search tweets, look up users, read timelines, inspect followers and following, fetch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonygjj",
+      "userId": "s17dwd9m6398hn1y0sd7wesesh83k5ax",
+      "displayName": "TonyGJJ",
+      "image": "https://avatars.githubusercontent.com/u/4088735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774510594157,
+      "changelog": "**Big change: Improved setup process and clarified configuration for TwtAPI skill.**\n\n- Default hosted gateway URL is now built in; most users only need to set `TWTAPI_SKILL_KEY`.\n- Environment variable requirements simplified (no longer mandates `TWTAPI_SKILL_BASE_URL`).\n- Installation and setup steps clarified for OpenClaw and compatible runners.\n- Documentation updated for new onboarding flow and best practices.\n- Metadata updated to reflect streamlined environment requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a707fcadbc802a620c57dda26d3a7cc960024f321f46607cd9e30a36f648e2df"
+}

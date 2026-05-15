@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36399,
+  "uuid": "skill-clawhub-sessions-manager",
+  "skillKey": "clawhub-sessions-manager",
+  "name": "sessions-manager",
+  "summary": "Manage OpenClaw agent sessions - list active/completed sessions, view session details, and delete sessions by ID. Use when you need to inspect session state,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sessions_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiakai Xu",
+      "features": [
+        "Manage OpenClaw agent sessions",
+        "list active/completed sessions, view session details, and delete sessions by ID",
+        "Use when you need to inspect session state,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sessions-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137808952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sessions-manager",
+      "url": "https://clawhub.ai/skills/sessions-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sessions-manager",
+    "url": "https://clawhub.ai/skills/sessions-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sessions-manager-6dd0faf8df50fd36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sessions-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sessions-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e22e038fb0c0e60893aa3872fe805e49e055c4d24da13915ff3af1b884a1e72e",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:24:59.898Z"
+}

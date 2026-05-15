@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miranda-sag@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miranda_sag",
+  "skill": {
+    "id": 18058,
+    "skillKey": "clawhub-miranda-sag",
+    "name": "Miranda SAG (ElevenLabs TTS say-UX)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miranda-sag",
+    "url": "https://clawhub.ai/skills/miranda-sag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miranda-sag-d32803d77f8b93dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ElevenLabs text-to-speech with mac-style say UX."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffpignataro",
+      "userId": "publishers:jeffpignataro",
+      "displayName": "jeffpignataro",
+      "image": "https://avatars.githubusercontent.com/u/1724466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 712,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771686976689,
+      "changelog": "Mac-style TTS with ElevenLabs. Audited.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17b1f8d6d70da63c97ec23ed682f7ccc317db0be413f17fe59b4017417abe6d9"
+}

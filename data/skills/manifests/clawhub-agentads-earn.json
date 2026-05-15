@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54051,
+  "uuid": "skill-clawhub-agentads-earn",
+  "skillKey": "clawhub-agentads-earn",
+  "name": "Agent Ads Earn",
+  "summary": "Earn USDC by detecting intent in your XMTP group chats and referring matched humans to Agent Ads subscribers on Basemate’s CPH marketplace.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentads_earn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mateo",
+      "features": [
+        "Earn USDC by detecting intent in your XMTP group chats and referring matched humans to Agent Ad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentads-earn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196567463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentads-earn",
+      "url": "https://clawhub.ai/skills/agentads-earn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentads-earn",
+    "url": "https://clawhub.ai/skills/agentads-earn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentads-earn-25cf150cc5879fbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentads-earn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentads-earn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cac261e711824123b67c592a1e4b498156e493bc27f3f2d10c08b5b5cad7ecd6",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:29:23.724Z"
+}

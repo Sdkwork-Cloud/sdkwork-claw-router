@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63596,
+  "uuid": "skill-clawhub-perplexity-research-zh",
+  "skillKey": "clawhub-perplexity-research-zh",
+  "name": "perplexity-research-zh",
+  "summary": "通过 AISA 调用 Perplexity Sonar 模型生成带引用的深度研究答案。触发条件：当用户需要综合研究、对比分析或长篇引用答案，而不是原始链接列表时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_research_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "通过 AISA 调用 Perplexity Sonar 模型生成带引用的深度研究答案。触发条件：当用户需要综合研究、对比分析或长篇引用答案，而不是原始链接列表时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perplexity-research-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perplexity-research-zh",
+      "url": "https://clawhub.ai/skills/perplexity-research-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-research-zh",
+    "url": "https://clawhub.ai/skills/perplexity-research-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-research-zh-2f6319b2b05a84db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perplexity-research-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-research-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cab637c6300edfd0efc4fb80a4e692e397b6644a18962d7a15a6fead88b96d80",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:45:17.616Z"
+}

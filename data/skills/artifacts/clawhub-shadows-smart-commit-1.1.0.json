@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shadows-smart-commit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadows_smart_commit",
+  "skill": {
+    "id": 51157,
+    "skillKey": "clawhub-shadows-smart-commit",
+    "name": "Shadows Smart Commit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadows-smart-commit",
+    "url": "https://clawhub.ai/skills/shadows-smart-commit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadows-smart-commit-2e044340a2aa1dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent git commit assistant — analyzes diffs, enforces conventional commits, detects secrets, generates meaningful messages. Use when committing code ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nakedoshadow",
+      "userId": "publishers:nakedoshadow",
+      "displayName": "NakedoShadow",
+      "image": "https://avatars.githubusercontent.com/u/196211757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772894206555,
+      "changelog": "HIGH TRUST upgrade: added PREREQUISITES, SECURITY CONSIDERATIONS, homepage, concrete instructions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f678c8302e7f959c4c58d27124b15232e7179995b3897b9b3b2ca28993e414fc"
+}

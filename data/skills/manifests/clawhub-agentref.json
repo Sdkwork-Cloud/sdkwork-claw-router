@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39828,
+  "uuid": "skill-clawhub-agentref",
+  "skillKey": "clawhub-agentref",
+  "name": "AgentRef",
+  "summary": "Use AgentRef's REST API from OpenClaw or any HTTP runtime for merchant onboarding, programs, affiliates, conversions, flags, and payouts; authenticate with A...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentref",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lukas van Uden",
+      "features": [
+        "Use AgentRef's REST API from OpenClaw or any HTTP runtime for merchant onboarding, programs, af.",
+        "authenticate with A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentref@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148472737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentref",
+      "url": "https://clawhub.ai/skills/agentref"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentref",
+    "url": "https://clawhub.ai/skills/agentref",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentref-14d9bb96cb19e588.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentref@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentref-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:129140092a6860c23addc587ebf67493d986d9a576ca36b4fe48799550e81507",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T20:28:15.915Z"
+}

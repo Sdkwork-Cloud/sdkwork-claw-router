@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-viral-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_viral_content",
+  "skill": {
+    "id": 64014,
+    "skillKey": "clawhub-xiaohongshu-viral-content",
+    "name": "Xiaohongshu Viral Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-viral-content",
+    "url": "https://clawhub.ai/skills/xiaohongshu-viral-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-viral-content-c5268dd60ec0672f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书爆款文案生成器。基于热门模板和数据驱动，生成高转化率的小红书内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imgolye",
+      "userId": "publishers:imgolye",
+      "displayName": "imgolye",
+      "image": "https://avatars.githubusercontent.com/u/7943209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 947,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772367303740,
+      "changelog": "首次发布：爆款标题生成、内容优化、标签推荐、发布时间建议",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4bd276d333ab902ff39b03149c89e271086083beb24a9841f9cecafbd07e5e63"
+}

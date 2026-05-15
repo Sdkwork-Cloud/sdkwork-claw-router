@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rewrite-question@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rewrite_question",
+  "skill": {
+    "id": 60451,
+    "skillKey": "clawhub-rewrite-question",
+    "name": "Rewrite Question"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rewrite-question",
+    "url": "https://clawhub.ai/skills/rewrite-question",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rewrite-question-2364b70ad9a97d45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "补全上下文并重写用户提问"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovenervermore",
+      "userId": "s179eehz3gk12qcjky3an7t6sx83pxjj",
+      "displayName": "LoveNerverMore",
+      "image": "https://avatars.githubusercontent.com/u/68802221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773710311507,
+      "changelog": "- Initial release of the \"rewrite_question\" skill.\n- Automatically rewrites user queries to make them self-contained by resolving pronouns, aligning time references, and completing entities using conversation history.\n- Supports command-line usage for processing and regenerating output.\n- Outputs detailed rewrite results in JSON format, ready for downstream processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db4d94fa143a12ea90bf65e7fd3a0659acc7d4f126aa0f903a22f2a306298804"
+}

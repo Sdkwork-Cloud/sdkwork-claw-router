@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-devotion@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_devotion",
+  "skill": {
+    "id": 11378,
+    "skillKey": "clawhub-daily-devotion",
+    "name": "Daily Devotion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-devotion",
+    "url": "https://clawhub.ai/skills/daily-devotion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-devotion-ed1b3702fc19f9c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates personalized daily devotions with verse of the day, pastoral message, structured prayer, and time-aware greetings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enjuguna",
+      "userId": "publishers:enjuguna",
+      "displayName": "Eric Kariuki",
+      "image": "https://avatars.githubusercontent.com/u/91112713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2066,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1769894364605,
+      "changelog": "No code or documentation changes detected in this version.\n\n- Version number updated to 1.1.1, but no other changes present.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:806020a2c1be4f2e5655e4fbf5a44e99707d63cf8fd951b1e652f95f5e2589ef"
+}

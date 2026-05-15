@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41785,
+  "uuid": "skill-clawhub-inventory-health-auditor",
+  "skillKey": "clawhub-inventory-health-auditor",
+  "name": "Inventory Health Auditor",
+  "summary": "Audit ecommerce inventory notes or SKU exports, flag stockout, aging, overstock, capital lock-up, and promo-readiness risks, then turn partial inventory data...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_health_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Audit ecommerce inventory notes or SKU exports, flag stockout, aging, overstock, capital lock-u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-health-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-health-auditor",
+      "url": "https://clawhub.ai/skills/inventory-health-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-health-auditor",
+    "url": "https://clawhub.ai/skills/inventory-health-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-health-auditor-ad5da8ca6439922d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-health-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-health-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42950c0e7f5fcdf4c00fe9ed1c43cf06dcf4a2f5371360aef94edb525f026007",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:45:28.306Z"
+}

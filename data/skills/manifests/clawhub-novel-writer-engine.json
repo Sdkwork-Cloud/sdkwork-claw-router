@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68996,
+  "uuid": "skill-clawhub-novel-writer-engine",
+  "skillKey": "clawhub-novel-writer-engine",
+  "name": "Novel Writer V3.2 - 小说写作引擎",
+  "summary": "专业小说写作引擎V3.2，支持短篇（3章）到超长篇（500万字）。内置AI味量化检测、四层质检、伏笔管理、角色状态追踪、断点续传。 自动根据字数裁剪流程：短篇模式（<10章）/ 中篇模式（10-50章）/ 长篇模式（50章+）。 触发场景：写小说、小说大纲、小说创作、网文写作、长篇小说、百万字小说、章节规划、 角...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_writer_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lwl2005",
+      "features": [
+        "专业小说写作引擎V3.2，支持短篇（3章）到超长篇（500万字）。内置AI味量化检测、四层质检、伏笔管理、角色状态追踪、断点续传。 自动根据字数裁剪流程：短篇模式（<10章）/ 中篇模式（1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-writer-engine@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143595741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-writer-engine",
+      "url": "https://clawhub.ai/skills/novel-writer-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-writer-engine",
+    "url": "https://clawhub.ai/skills/novel-writer-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-writer-engine-4e6d3e7c306f022a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-writer-engine@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-writer-engine-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:067985f7f93ac43c2e0c993a43aed9f5cc0b6d69dc63d476017b1225cb697aef",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T08:54:48.874Z"
+}

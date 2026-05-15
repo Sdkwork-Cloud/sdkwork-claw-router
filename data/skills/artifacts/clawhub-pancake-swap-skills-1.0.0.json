@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pancake-swap-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pancake_swap_skills",
+  "skill": {
+    "id": 50375,
+    "skillKey": "clawhub-pancake-swap-skills",
+    "name": "pancake skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pancake-swap-skills",
+    "url": "https://clawhub.ai/skills/pancake-swap-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pancake-swap-skills-b93bbb5a517de060.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BSC (Binance Smart Chain) trading on PancakeSwap — wallet creation, token swaps, pair discovery, and balance management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kj-script",
+      "userId": "publishers:kj-script",
+      "displayName": "Keti Yohannes",
+      "image": "https://avatars.githubusercontent.com/u/38397885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 705,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771420900945,
+      "changelog": "**Major update: PancakeSwap skill for BSC rewritten, expands feature coverage and setup clarity.**\n\n- Adds wallet creation and management, including security best practices and file path configuration.\n- Supports BEP-20 token discovery, liquidity checks, and balance queries.\n- Implements swap execution via PancakeSwap V2 with slippage protection.\n- Environment variables have clear defaults for mainnet and testnet, with setup examples.\n- Clarifies file access, credentials, and dependencies.\n- Documents optional integration with ClawChain for event tracking.\n- Emphasizes transparency and security throughout configuration and usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc9f6a6a2a0fe57115b4336275d3bfbfb6063e19219658b413ca9be49e3fabfa"
+}

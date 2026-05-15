@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-development@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_development",
+  "skill": {
+    "id": 65274,
+    "skillKey": "clawhub-prd-development",
+    "name": "prd-development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-development",
+    "url": "https://clawhub.ai/skills/prd-development",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-development-25dfff2934903f4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将产品需求转化为Coding Agent可执行的需求文档。当用户提到\"写PRD\"、\"产品需求文档\"、\"用户故事\"、\"功能说明\"，或提供会议记录/功能描述需要整理成开发文档时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyinghan02-cell",
+      "userId": "s178hbd9521h219w3bphthyxx983qbnx",
+      "displayName": "xuyinghan02-cell",
+      "image": "https://avatars.githubusercontent.com/u/267591497?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774942221760,
+      "changelog": "- 移除了“决策规则（按优先级执行）”内容，简化了执行原则的描述。\n- 其余开发工作流各阶段内容保持不变，仅优化排版与结构。\n- 无功能、规则或流程上的更改。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af40c2426c7d7fe6f4d5c5dd7c4fbd840f63f0a9cfd436bfa1b1c3538064899a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36092,
+  "uuid": "skill-clawhub-z",
+  "skillKey": "clawhub-z",
+  "name": "z",
+  "summary": "Anti-skill-crawler defense system. Detects and mitigates unauthorized crawling, scraping, and bulk extraction of skill definitions, prompt content, and instr...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.z",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "Anti-skill-crawler defense system",
+        "Detects and mitigates unauthorized crawling, scraping, and bulk extraction of skill definitions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/z@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "z",
+      "url": "https://clawhub.ai/skills/z"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "z",
+    "url": "https://clawhub.ai/skills/z",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/z-594e519ae499312b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/z@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-z-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60389ef54530c51fd6c1dfac02fedfa389f4f1b1b90bb690358a6cb24af86a33",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:00:47.383Z"
+}

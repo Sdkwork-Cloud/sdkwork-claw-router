@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-intro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_intro",
+  "skill": {
+    "id": 48276,
+    "skillKey": "clawhub-maker-intro",
+    "name": "Maker Intro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-intro",
+    "url": "https://clawhub.ai/skills/maker-intro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-intro-14f4fc0d893a9d28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a logo PNG and a tagline into 1080p branded intro video just by typing what you need. Whether it's creating short branded intro clips for YouTube or soc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777227025900,
+      "changelog": "- Initial release of Maker Intro — Create Branded Intro Videos.\n- Upload a logo and tagline to quickly generate 1080p branded intro videos in under a minute.\n- Automatic cloud setup: authentication and session management handled seamlessly.\n- Command-based workflow: supports export, upload, credits check, and session status queries.\n- Supports a variety of formats (mp4, mov, jpg, png, gif, mp3, etc.) and fast cloud rendering.\n- Clear guides on typical usage, workflows, and error handling included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e0398416e6b518bd5e578e489e3bd3b6fbb0a055a9baa1c6f1be6d3c2e5b3c7"
+}

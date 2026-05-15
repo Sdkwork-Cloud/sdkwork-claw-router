@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56688,
+  "uuid": "skill-clawhub-scratch-blocks",
+  "skillKey": "clawhub-scratch-blocks",
+  "name": "Scratch Blocks",
+  "summary": "Use this skill when the user uploads a `.sb3` or `.sprite3` file, or when the conversation is about Scratch and clearer block-style visualization would help.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scratch_blocks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Z-Bra0",
+      "features": [
+        "Use this skill when the user uploads a `.sb3` or `.sprite3` file, or when the conversation is a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scratch-blocks@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209417172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scratch-blocks",
+      "url": "https://clawhub.ai/skills/scratch-blocks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scratch-blocks",
+    "url": "https://clawhub.ai/skills/scratch-blocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scratch-blocks-0cfded28e293d8ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scratch-blocks@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-scratch-blocks-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d3e9610afdf0de323f43f8d146c103a0261789efef890bffe199e7626353749",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:00:05.567Z"
+}

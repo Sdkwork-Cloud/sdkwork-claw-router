@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-with-no@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_with_no",
+  "skill": {
+    "id": 48348,
+    "skillKey": "clawhub-editor-with-no",
+    "name": "Editor With No"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-with-no",
+    "url": "https://clawhub.ai/skills/editor-with-no",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-with-no-4d25087e6389cf61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited screen recording into 1080p polished edited clips just by typing what you need. Whether it's editing videos without any prior experi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777479207420,
+      "changelog": "Initial release: Instantly edit raw video clips into polished exports by describing your edits—no technical skills needed.\n\n- One-step upload and editing: just type what you want, no timeline or export settings required.\n- Automated setup connects to a remote processing API with free credits; no installation needed.\n- Handles file uploads, custom edits, exports, and session state tracking via simple natural language.\n- 1080p MP4 exports with support for batch, iterative, and quick-edit workflows.\n- Built-in error handling and clear status updates to guide you through the process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a600c8f1f815415d2b28bb05050742761b2427a3f3328e8295d0b2e46245343"
+}

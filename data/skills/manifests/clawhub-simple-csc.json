@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29292,
+  "uuid": "skill-clawhub-simple-csc",
+  "skillKey": "clawhub-simple-csc",
+  "name": "Simple CSC",
+  "summary": "Use the simple-csc repository to perform Chinese Spelling Correction (CSC) and Chinese Character Error Correction (C2EC) using large language models in a tra...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_csc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacob-Zhou",
+      "features": [
+        "Use the simple-csc repository to perform Chinese Spelling Correction (CSC) and Chinese Characte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-csc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13799122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-csc",
+      "url": "https://clawhub.ai/skills/simple-csc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-csc",
+    "url": "https://clawhub.ai/skills/simple-csc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-csc-47362110205997ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-csc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-csc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:646f7ae8f5520e4386a387d2d4996937311aa6b6ed92c9406ed9befd5541b65c",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:41:22.431Z"
+}

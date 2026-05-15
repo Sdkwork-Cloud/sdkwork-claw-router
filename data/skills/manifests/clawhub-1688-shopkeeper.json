@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63835,
+  "uuid": "skill-clawhub-1688-shopkeeper",
+  "skillKey": "clawhub-1688-shopkeeper",
+  "name": "1688 Shopkeeper",
+  "summary": "1688选品铺货专家。用于：(1) 在1688搜索商品/选品找货源 (2) 查询已绑定的下游店铺 (3) 将商品铺货到抖音/拼多多/小红书/淘宝等平台 (4) 配置1688 AK密钥。 触发词：帮我找商品、在1688搜、选品、铺货、上架、查店铺、配置AK、1688找货。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_shopkeeper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yclovebf-stack",
+      "features": [
+        "1688选品铺货专家。用于：(1) 在1688搜索商品/选品找货源 (2) 查询已绑定的下游店铺 (3) 将商品铺货到抖音/拼多多/小红书/淘宝等平台 (4) 配置1688 AK密钥。 触发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-shopkeeper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264936622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-shopkeeper",
+      "url": "https://clawhub.ai/skills/1688-shopkeeper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-shopkeeper",
+    "url": "https://clawhub.ai/skills/1688-shopkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-shopkeeper-f8b9e7f8e0723f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-shopkeeper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-shopkeeper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:039eeccd0df3a5d0cffe803f874c2a892fa1292e0562e57a1dcfb7388dec13c7",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T20:01:00.350Z"
+}

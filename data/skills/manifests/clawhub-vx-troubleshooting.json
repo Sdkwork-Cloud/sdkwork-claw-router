@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38220,
+  "uuid": "skill-clawhub-vx-troubleshooting",
+  "skillKey": "clawhub-vx-troubleshooting",
+  "name": "Vx Troubleshooting",
+  "summary": "Troubleshooting guide for vx issues. Use when encountering installation failures, version conflicts, PATH issues, or other vx problems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vx_troubleshooting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hal",
+      "features": [
+        "Troubleshooting guide for vx issues",
+        "Use when encountering installation failures, version conflicts, PATH issues, or other vx proble."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vx-troubleshooting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13111745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vx-troubleshooting",
+      "url": "https://clawhub.ai/skills/vx-troubleshooting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vx-troubleshooting",
+    "url": "https://clawhub.ai/skills/vx-troubleshooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vx-troubleshooting-06c88e089aa7f8c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vx-troubleshooting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vx-troubleshooting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e00fee2bc689dd9130ae65cb2ebb5453d25f326d165a62c71b05182051d84c8b",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:53:39.414Z"
+}

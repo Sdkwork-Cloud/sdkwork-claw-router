@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-sorftime-research-keywords-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_sorftime_research_keywords_skill",
+  "skill": {
+    "id": 60822,
+    "skillKey": "clawhub-amazon-sorftime-research-keywords-skill",
+    "name": "amazon-sorftime-research-keywords-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-sorftime-research-keywords-skill",
+    "url": "https://clawhub.ai/skills/amazon-sorftime-research-keywords-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-sorftime-research-keywords-skill-3f4d0655f8f8c540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "亚马逊关键词深度调研与智能分类分析。基于 Sorftime MCP 数据采集 2000+ 关键词，通过 LLM Agent 按 8 维度智能分类（否定词、品牌词、材质词、场景词、属性词、功能词、核心词、其他），生成 Markdown 报告、CSV 词库和 HTML 仪表板。触发方式：/keyword-resear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangdabiao",
+      "userId": "s1751q8y7zg7g4cphjx57122f183hzq4",
+      "displayName": "liangdabiao",
+      "image": "https://avatars.githubusercontent.com/u/1232260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774337671513,
+      "changelog": "- Initial release: Intelligent Amazon keyword research and classification tool.\n- Automatic collection of 2000+ keywords via Sorftime MCP API covering product, competitor, and category keywords plus long-tail expansion.\n- Smart categorization using LLM Agent into 8 keyword dimensions: Negative, Brand, Material, Scenario, Attribute, Function, Core, and Other.\n- Generates markdown reports, structured CSV keyword libraries, and interactive HTML dashboards.\n- Simple command to trigger: `/keyword-research {ASIN} {SITE}`; supports both command and natural language requests.\n- Optional custom product info improves classification accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9ec9e5b58bb49d0d46a1b8d31b52f238d251c9a5496693086877d1ed491df05"
+}

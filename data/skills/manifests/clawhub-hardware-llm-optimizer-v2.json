@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60185,
+  "uuid": "skill-clawhub-hardware-llm-optimizer-v2",
+  "skillKey": "clawhub-hardware-llm-optimizer-v2",
+  "name": "Hardware LLM Optimizer v2 (llmfit)",
+  "summary": "AI硬件LLM推荐工具 - 基于llmfit内核。自动检测CPU/GPU/RAM/VRAM → 智能推荐最适合的大模型 + 量化方案 + 速度估算。支持100+模型库，内置TUI界面和硬件模拟。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hardware_llm_optimizer_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "AI硬件LLM推荐工具",
+        "基于llmfit内核。自动检测CPU/GPU/RAM/VRAM → 智能推荐最适合的大模型 + 量化方案 + 速度估算。支持100+模型库，内置TUI界面和硬件模拟。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hardware-llm-optimizer-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hardware-llm-optimizer-v2",
+      "url": "https://clawhub.ai/skills/hardware-llm-optimizer-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hardware-llm-optimizer-v2",
+    "url": "https://clawhub.ai/skills/hardware-llm-optimizer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hardware-llm-optimizer-v2-488ba5daac05ce4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hardware-llm-optimizer-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hardware-llm-optimizer-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba93ad32cc1851a0f7af3ba0b3311385804ee894be362d0c5b84f7a65415c0e7",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:57:32.282Z"
+}

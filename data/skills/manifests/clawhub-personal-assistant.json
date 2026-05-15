@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8841,
+  "uuid": "skill-clawhub-personal-assistant",
+  "skillKey": "clawhub-personal-assistant",
+  "name": "Personal Assistant",
+  "summary": "Personal daily briefing and productivity assistant. Generates morning briefings with priorities, habits, and self-care reminders. Use when starting your day, planning tasks, or maintaining daily routines and personal development. A minimal.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GustavoZiaugra",
+      "features": [
+        "Personal daily briefing and productivity assistant",
+        "Generates morning briefings with priorities, habits, and self-care reminders",
+        "Use when starting your day, planning tasks, or maintaining daily routines and personal developm.",
+        "A minimalist personal productivity skill focused on you."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30840206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-assistant",
+      "url": "https://clawhub.ai/skills/personal-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-assistant",
+    "url": "https://clawhub.ai/skills/personal-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-assistant-b0e8405deea03a25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b59b0b9a0cff2a88fedd71bdccdb0312c220c364c483e7065519155c8d8f56e9",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T05:36:19.120Z"
+}

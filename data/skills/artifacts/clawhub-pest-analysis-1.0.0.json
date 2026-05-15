@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pest-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pest_analysis",
+  "skill": {
+    "id": 32769,
+    "skillKey": "clawhub-pest-analysis",
+    "name": "Pest Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pest-analysis",
+    "url": "https://clawhub.ai/skills/pest-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pest-analysis-58dab26d4cd085af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze macro-environmental factors affecting an industry or company. Use as a precursor to strategic analysis, market entry assessment, or scenario planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774179553967,
+      "changelog": "- Initial release of the \"pest-analysis\" skill for structured macro-environmental analysis.\n- Provides a clear framework to assess Political, Economic, Socio-cultural, and Technological factors.\n- Includes step-by-step output process: brainstorming, categorization, impact and probability assessment, and prioritization.\n- Delivers output in a consistent, table-based format with prioritization and key implications.\n- Offers guidance on extending analysis to include Legal and Environmental factors (PESTLE).\n- Features practical tips for effective and actionable analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fbfc1554c4af79c2a67c3d49dd335f34899371a060a2e71b0688372eaa8e15d"
+}

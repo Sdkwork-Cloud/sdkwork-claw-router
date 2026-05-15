@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fast-browser-use@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_browser_use",
+  "skill": {
+    "id": 8406,
+    "skillKey": "clawhub-fast-browser-use",
+    "name": "Fastest Browser Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-browser-use",
+    "url": "https://clawhub.ai/skills/fast-browser-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-browser-use-dfb5735cb1ee7579.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance browser automation for heavy scraping, multi-tab management, and precise DOM extraction. Use this when you need speed, reliability, or advanced state management (cookies/local storage) beyond standard web fetching."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rknoche6",
+      "userId": "publishers:rknoche6",
+      "displayName": "rknoche6",
+      "image": "https://avatars.githubusercontent.com/u/84880269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13721,
+      "installsAllTime": 93,
+      "installsCurrent": 82,
+      "stars": 42,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1769939146011,
+      "changelog": "- Added a new sitemap tool for discovering and analyzing website structure.\n- Introduced the `sitemap` command with options for basic sitemap discovery and advanced page structure analysis.\n- Updated documentation with usage examples and sample output for the new sitemap feature.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56d18a34f108de33fb9865de4430691eb5780de6618ba15c49962a4e0d6977fd"
+}

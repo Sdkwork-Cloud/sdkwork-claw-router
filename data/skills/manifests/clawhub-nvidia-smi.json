@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31707,
+  "uuid": "skill-clawhub-nvidia-smi",
+  "skillKey": "clawhub-nvidia-smi",
+  "name": "Nvidia smi tutorial",
+  "summary": "Provides detailed guidance on using the nvidia-smi command for real-time NVIDIA GPU monitoring, management, troubleshooting, and automation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_smi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow",
+      "features": [
+        "Provides detailed guidance on using the nvidia-smi command for real-time NVIDIA GPU monitoring,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia-smi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178591028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia-smi",
+      "url": "https://clawhub.ai/skills/nvidia-smi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-smi",
+    "url": "https://clawhub.ai/skills/nvidia-smi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-smi-e648941e2c030845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia-smi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-smi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07191d5736fb99887883e59ca5eed94a7c44d26a9066be294c5342db9ca44ffe",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:30:39.659Z"
+}

@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
+import { execFile } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { promisify } from 'node:util';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
 const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
+const execFileAsync = promisify(execFile);
 
 const tests = [];
 
@@ -71,6 +74,75 @@ test('root package exposes pnpm product entrypoints', () => {
     rootPackage.scripts['release:preflight'],
     'node scripts/release-preflight.mjs',
   );
+  assert.equal(
+    rootPackage.scripts['app-store:seed:update'],
+    'node scripts/update-app-store-seed.mjs',
+  );
+  assert.equal(
+    rootPackage.scripts['app-store:seed:check'],
+    'node scripts/update-app-store-seed.mjs --check',
+  );
+  assert.equal(
+    rootPackage.scripts['skills:seed:mirror-clawhub'],
+    'node scripts/mirror-clawhub-skills-seed.mjs --fetch',
+  );
+  assert.equal(
+    rootPackage.scripts['skills:seed:check'],
+    'node scripts/mirror-clawhub-skills-seed.mjs --check',
+  );
+});
+
+test('app store seed updater defaults to file seed updates and gates database sync behind explicit flag', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'update-app-store-seed.mjs')).href
+  );
+
+  const defaults = module.parseAppStoreSeedArgs([]);
+  const defaultPlan = module.buildAppStoreSeedCommandPlan(defaults, { workspaceRoot });
+
+  assert.equal(defaults.appsRoot, path.resolve(workspaceRoot, '..'));
+  assert.equal(defaults.check, false);
+  assert.equal(defaults.syncDb, false);
+  assert.equal(defaults.initializeMissing, true);
+  assert.deepEqual(defaultPlan.steps.map((step) => step.name), [
+    'initialize-missing-app-manifests',
+    'export-plus-app-seed',
+    'generate-app-category-seed',
+  ]);
+  assert.equal(defaultPlan.steps.some((step) => step.name === 'sync-database'), false);
+
+  const check = module.parseAppStoreSeedArgs(['--check']);
+  const checkPlan = module.buildAppStoreSeedCommandPlan(check, { workspaceRoot });
+  assert.equal(check.check, true);
+  assert.equal(checkPlan.steps.find((step) => step.name === 'export-plus-app-seed').mode, 'check');
+  assert.equal(checkPlan.steps.find((step) => step.name === 'generate-app-category-seed').mode, 'check');
+
+  const sync = module.parseAppStoreSeedArgs(['--sync-db']);
+  const syncPlan = module.buildAppStoreSeedCommandPlan(sync, { workspaceRoot });
+  assert.deepEqual(syncPlan.steps.at(-1), {
+    name: 'sync-database',
+    command: 'cargo',
+    args: ['run', '-p', 'sdkwork-claw-installer', '--', 'ensure'],
+    requiresDatabaseUrl: true,
+  });
+});
+
+test('app store seed updater emits pure JSON for machine-readable check output', async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    path.join(workspaceRoot, 'scripts', 'update-app-store-seed.mjs'),
+    '--check',
+    '--json',
+  ], {
+    cwd: workspaceRoot,
+    maxBuffer: 1024 * 1024 * 8,
+  });
+  const payload = JSON.parse(stdout);
+
+  assert.equal(payload.ok, true);
+  assert.equal(payload.mode, 'check');
+  assert.equal(payload.appCount > 0, true);
+  assert.equal(payload.categoryCount > 0, true);
+  assert.equal(payload.databaseSynced, false);
 });
 
 test('product scripts keep commercial default ports and reject obsolete aliases', () => {
@@ -128,10 +200,11 @@ test('portal runtime is served by Rust edge server without Node server entrypoin
   assert.ok(!scriptsSurface.includes('server.ts'));
   assert.ok(!scriptsSurface.includes('dist/server.mjs'));
   assert.ok(!scriptsSurface.includes('smoke-production-server.mjs'));
-  assert.equal(portalPackage.scripts.dev, 'vite --configLoader native');
-  assert.equal(portalPackage.scripts['browser:dev'], 'vite --configLoader native');
+  assert.equal(portalPackage.scripts['deps:check'], 'node scripts/check-portal-deps.mjs');
+  assert.equal(portalPackage.scripts.dev, 'pnpm deps:check && vite --configLoader native');
+  assert.equal(portalPackage.scripts['browser:dev'], 'pnpm deps:check && vite --configLoader native');
   assert.equal(portalPackage.scripts.preview, 'vite preview --configLoader native');
-  assert.equal(portalPackage.scripts.build, 'node scripts/build-portal.mjs');
+  assert.equal(portalPackage.scripts.build, 'pnpm deps:check && node scripts/build-portal.mjs');
   assert.equal(portalPackage.scripts.start, 'node ../../scripts/start-claw-router-production.mjs');
   assert.equal(rootPackage.scripts.start, 'node scripts/start-claw-router-production.mjs');
 });
@@ -211,7 +284,7 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(settings.serverBind, '0.0.0.0:3900');
   assert.equal(settings.portalBind, '127.0.0.1:3901');
   assert.equal(settings.portalDevBind, undefined);
-  assert.ok(settings.databaseUrl.endsWith('/target/dev/sdkwork-claw-router.sqlite'));
+  assert.equal(settings.databaseUrl, 'sqlite://target/dev/sdkwork-claw-router.sqlite');
   assert.deepEqual(plan.steps.map((step) => step.name), [
     'installer',
     'model-catalog-refresh',
@@ -230,6 +303,8 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   ]);
   assert.equal(plan.steps[0].blocking, true);
   assert.equal(plan.steps[0].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
+  assert.equal(plan.steps[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(plan.steps[0].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
   assert.equal(plan.steps[0].env.SDKWORK_CLAW_INSTALL_ENVIRONMENT, 'development');
   assert.equal(plan.steps[0].env.SDKWORK_CLAW_INSTALL_SEED_PROFILE, 'commercial');
   assert.equal(
@@ -250,6 +325,8 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.match(plan.steps[1].failureHint, /model catalog refresh failed/u);
   assert.match(plan.steps[1].failureHint, /pnpm models:check/u);
   assert.equal(plan.steps[1].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
+  assert.equal(plan.steps[1].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(plan.steps[1].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'ensure');
   assert.equal(
     plan.steps[1].env.SDKWORK_MODELS_CATALOG_ROOT,
     path.join(workspaceRoot, 'data', 'sdkwork-models'),
@@ -262,11 +339,20 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(plan.steps[2].env.SDKWORK_CLAW_GATEWAY_BIND, '0.0.0.0:19080');
   assert.equal(plan.steps[2].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'server');
   assert.equal(plan.steps[2].env.SDKWORK_CLAW_DATABASE_URL, settings.databaseUrl);
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED, 'false');
+  assert.equal(plan.steps[2].env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
   assert.equal(plan.steps[2].env.SDKWORK_CLAW_API_KEY_PEPPER.length >= 32, true);
   assert.equal(
     plan.steps[2].env.SDKWORK_MODELS_CATALOG_ROOT,
     path.join(workspaceRoot, 'data', 'sdkwork-models'),
   );
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(plan.steps[3].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
+  assert.equal(plan.steps[4].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+  assert.equal(plan.steps[4].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
+  assert.equal(plan.steps[4].env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
   assert.deepEqual(plan.steps[5].args, [
     '--dir',
     'apps/sdkwork-claw-router-portal',
@@ -292,6 +378,7 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   ]);
   assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_SERVER, '1');
   assert.equal(plan.steps[6].env.SDKWORK_CLAW_SERVER_BIND, '0.0.0.0:3900');
+  assert.equal(plan.steps[6].env.SDKWORK_CLAW_STARTUP_INSTALL_MODE, 'skip');
   assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL, 'http://127.0.0.1:19080');
   assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL, 'http://127.0.0.1:18081');
   assert.equal(plan.steps[6].env.SDKWORK_CLAW_EDGE_APP_API_BASE_URL, 'http://127.0.0.1:18082');
@@ -299,6 +386,45 @@ test('claw router workspace launch plan starts Rust services, portal, and edge R
   assert.equal(
     plan.steps[6].env.SDKWORK_MODELS_CATALOG_ROOT,
     path.join(workspaceRoot, 'data', 'sdkwork-models'),
+  );
+});
+
+test('claw router workspace reports occupied service ports before startup', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+  );
+
+  const settings = module.parseWorkspaceArgs([]);
+  const unavailable = await module.findUnavailableWorkspaceBinds(settings, async (target) =>
+    !['18082', '3900'].includes(target.port),
+  );
+
+  assert.deepEqual(
+    unavailable.map((target) => `${target.name} ${target.bind}`),
+    ['app-api 127.0.0.1:18082', 'server 0.0.0.0:3900'],
+  );
+  await assert.rejects(
+    () => module.assertWorkspaceBindsAvailable(settings, async (target) =>
+      !['18082', '3900'].includes(target.port),
+    ),
+    /workspace ports are already in use: app-api 127\.0\.0\.1:18082, server 0\.0\.0\.0:3900/u,
+  );
+});
+
+test('claw router workspace checks service ports before running installer steps', () => {
+  const workspaceStarter = readFileSync(
+    path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+    'utf8',
+  );
+
+  const preflightIndex = workspaceStarter.indexOf('await assertWorkspaceBindsAvailable(settings);');
+  const blockingStepsIndex = workspaceStarter.indexOf('for (const step of blockingSteps)');
+
+  assert.ok(preflightIndex >= 0, 'workspace starter must check service ports before startup');
+  assert.ok(blockingStepsIndex >= 0, 'workspace starter must run blocking installer steps');
+  assert.ok(
+    preflightIndex < blockingStepsIndex,
+    'workspace service port preflight must run before installer/model refresh steps',
   );
 });
 
@@ -359,6 +485,95 @@ test('claw router workspace uses one resolved model catalog root for refresh and
       delete process.env.SDKWORK_MODELS_CATALOG_ROOT;
     } else {
       process.env.SDKWORK_MODELS_CATALOG_ROOT = previousCatalogRoot;
+    }
+  }
+});
+
+test('claw router workspace pins startup install ownership to installer steps', async () => {
+  const previousStartupInstallMode = process.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE;
+  process.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE = 'ensure';
+  try {
+    const module = await import(
+      pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+    );
+
+    const settings = module.parseWorkspaceArgs([]);
+    const plan = module.buildWorkspaceCommandPlan(settings, { workspaceRoot });
+    const modesByStep = new Map(
+      plan.steps
+        .filter((step) => ['installer', 'model-catalog-refresh', 'gateway', 'admin-api', 'app-api', 'server'].includes(step.name))
+        .map((step) => [step.name, step.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE]),
+    );
+
+    assert.deepEqual(Object.fromEntries(modesByStep), {
+      installer: 'ensure',
+      'model-catalog-refresh': 'ensure',
+      gateway: 'skip',
+      'admin-api': 'skip',
+      'app-api': 'skip',
+      server: 'skip',
+    });
+  } finally {
+    if (previousStartupInstallMode === undefined) {
+      delete process.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE;
+    } else {
+      process.env.SDKWORK_CLAW_STARTUP_INSTALL_MODE = previousStartupInstallMode;
+    }
+  }
+});
+
+test('claw router workspace constrains default SQLite dev database without overriding explicit database tuning', async () => {
+  const previousMaxConnections = process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS;
+  const previousSettlementWorker = process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED;
+  const previousRankingStartup = process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP;
+  try {
+    delete process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS;
+    delete process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED;
+    delete process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP;
+    const module = await import(
+      pathToFileURL(path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs')).href
+    );
+
+    const sqliteSettings = module.parseWorkspaceArgs([]);
+    const sqlitePlan = module.buildWorkspaceCommandPlan(sqliteSettings, { workspaceRoot });
+    for (const step of sqlitePlan.steps.filter((step) =>
+      ['installer', 'model-catalog-refresh', 'gateway', 'admin-api', 'app-api', 'server'].includes(step.name),
+    )) {
+      assert.equal(step.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '1');
+      assert.equal(step.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED, 'false');
+      assert.equal(step.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'false');
+    }
+
+    process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS = '8';
+    process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED = 'true';
+    process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP = 'true';
+    const tunedSettings = module.parseWorkspaceArgs([
+      '--database-url',
+      'postgres://sdkwork:sdkwork@localhost:5432/sdkwork_claw_router',
+    ]);
+    const tunedPlan = module.buildWorkspaceCommandPlan(tunedSettings, { workspaceRoot });
+    for (const step of tunedPlan.steps.filter((step) =>
+      ['installer', 'model-catalog-refresh', 'gateway', 'admin-api', 'app-api', 'server'].includes(step.name),
+    )) {
+      assert.equal(step.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '8');
+      assert.equal(step.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED, 'true');
+      assert.equal(step.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP, 'true');
+    }
+  } finally {
+    if (previousMaxConnections === undefined) {
+      delete process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS;
+    } else {
+      process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS = previousMaxConnections;
+    }
+    if (previousSettlementWorker === undefined) {
+      delete process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED;
+    } else {
+      process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED = previousSettlementWorker;
+    }
+    if (previousRankingStartup === undefined) {
+      delete process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP;
+    } else {
+      process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP = previousRankingStartup;
     }
   }
 });
@@ -565,7 +780,7 @@ test('workspace access output defaults to edge server port 3900', async () => {
   assert.ok(lines.includes('[start-workspace]   Edge Server Ready: http://127.0.0.1:3900/readyz'));
 });
 
-test('claw router product launcher defaults to desktop mode and installs portal dependencies when requested', async () => {
+test('claw router product launcher desktop mode runs install-checked workspace and installs portal dependencies when requested', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs')).href
   );
@@ -584,10 +799,41 @@ test('claw router product launcher defaults to desktop mode and installs portal 
   assert.deepEqual(plan[0].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'install']);
   assert.equal(plan[0].command, 'pnpm.cmd');
   assert.equal(plan[0].shell, true);
-  assert.equal(plan[1].label, 'portal local desktop runtime');
-  assert.equal(plan[1].command, 'pnpm.cmd');
-  assert.deepEqual(plan[1].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'browser:dev']);
+  assert.equal(plan[1].label, 'desktop development workspace');
+  assert.equal(plan[1].command, process.execPath);
+  assert.deepEqual(plan[1].args, [
+    path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+  ]);
+  assert.equal(plan[1].shell, false);
   assert.equal(plan[1].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
+});
+
+test('claw router product launcher service mode runs install-checked workspace with service flags', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs')).href
+  );
+
+  const plan = module.createClawRouterProductLaunchPlan({
+    workspaceRoot,
+    mode: 'service',
+    install: false,
+    platform: 'linux',
+    env: {},
+    extraArgs: ['--server-bind', '127.0.0.1:3910'],
+  });
+
+  assert.equal(plan.length, 1);
+  assert.equal(plan[0].label, 'service development workspace');
+  assert.equal(plan[0].command, process.execPath);
+  assert.deepEqual(plan[0].args, [
+    path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+    '--server-bind',
+    '127.0.0.1:3910',
+  ]);
+  assert.equal(plan[0].env.SDKWORK_CLAW_DEPLOYMENT_MODE, 'desktop');
+  assert.equal(plan[0].env.SDKWORK_CLAW_SERVICE_MODE, '1');
+  assert.equal(plan[0].env.SDKWORK_CLAW_PORTAL_START_HIDDEN, '1');
+  assert.equal(plan[0].shell, false);
 });
 
 test('claw router product launcher forwards workspace arguments into server mode', async () => {
@@ -815,22 +1061,27 @@ test('production build creates portal assets and Rust edge release artifact', as
 
   assert.deepEqual(plan.map((step) => step.label), [
     'gateway OpenAPI schema generation',
-    'portal production assets',
     'app SDK runtime build',
     'backend SDK runtime build',
+    'open SDK runtime build',
+    'portal production assets',
     'SDK archive artifacts',
     'Rust edge release binary',
   ]);
   assert.equal(plan[0].command, 'python');
   assert.deepEqual(plan[0].args, ['-B', '-m', 'tools.clawrouter_gateway_openapi_generator']);
-  assert.deepEqual(plan[1].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'build']);
-  assert.deepEqual(plan[2].args, ['--dir', 'sdks/clawrouter-app-sdk', 'build']);
-  assert.deepEqual(plan[3].args, ['--dir', 'sdks/clawrouter-backend-sdk', 'build']);
-  assert.deepEqual(plan[4].args, ['scripts/archive-claw-router-sdks.mjs']);
-  assert.equal(plan[4].command, 'node');
-  assert.deepEqual(plan[5].args, ['build', '-p', 'sdkwork-claw-gateway', '--release']);
-  assert.equal(plan[5].command, 'cargo.exe');
-  assert.equal(plan[5].env.CARGO_TARGET_DIR, 'target-codex');
+  assert.deepEqual(plan[1].args, ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build']);
+  assert.deepEqual(plan[2].args, ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build']);
+  assert.deepEqual(plan[3].args, ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build']);
+  assert.equal(plan[1].attempts, 2);
+  assert.equal(plan[2].attempts, 2);
+  assert.equal(plan[3].attempts, 2);
+  assert.deepEqual(plan[4].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'build']);
+  assert.deepEqual(plan[5].args, ['scripts/archive-claw-router-sdks.mjs']);
+  assert.equal(plan[5].command, 'node');
+  assert.deepEqual(plan[6].args, ['build', '-p', 'sdkwork-claw-gateway', '--release']);
+  assert.equal(plan[6].command, 'cargo.exe');
+  assert.equal(plan[6].env.CARGO_TARGET_DIR, 'target-codex');
   assert.ok(
     module.renderProductionBuildPlan(plan, { CARGO_TARGET_DIR: 'target-codex' }, 'win32', workspaceRoot)
       .some((line) => line.includes('target-codex') && line.includes('sdkwork-claw-gateway.exe')),
@@ -839,6 +1090,12 @@ test('production build creates portal assets and Rust edge release artifact', as
     module.renderProductionBuildPlan(plan, { CARGO_TARGET_DIR: 'target-codex' }, 'win32', workspaceRoot)
       .some((line) => line.includes('dist') && line.includes('sdk-archives')),
   );
+  const buildProductionSource = readFileSync(
+    path.join(workspaceRoot, 'scripts', 'build-claw-router-production.mjs'),
+    'utf8',
+  );
+  assert.match(buildProductionSource, /attempt \${attempt}\/\${attempts}/);
+  assert.match(buildProductionSource, /retrying once to recover from transient toolchain process exits/);
 });
 
 test('production SDK archiver creates deterministic ZIP artifacts for generated SDKs', async () => {
@@ -858,6 +1115,7 @@ test('production SDK archiver creates deterministic ZIP artifacts for generated 
   assert.deepEqual(module.defaultSdkArchiveSpecs().map((spec) => spec.archiveName), [
     'sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip',
     'sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip',
+    'sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip',
   ]);
   assert.ok(module.defaultSdkArchiveSpecs().every((spec) => spec.language === 'typescript'));
   assert.ok(module.defaultSdkArchiveSpecs().every((spec) => spec.sourceDir.startsWith('sdks/')));
@@ -867,14 +1125,17 @@ test('production SDK archiver creates deterministic ZIP artifacts for generated 
     new Map([
       ['sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip', { size: 1200, sha256: 'a'.repeat(64) }],
       ['sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip', { size: 2200, sha256: 'b'.repeat(64) }],
+      ['sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip', { size: 3200, sha256: 'c'.repeat(64) }],
     ]),
   );
   assert.deepEqual(manifest.archives.map((archive) => archive.file), [
     'sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip',
     'sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip',
+    'sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip',
   ]);
   assert.equal(manifest.archives[0].packageName, '@sdkwork/clawrouter-app-sdk');
   assert.equal(manifest.archives[1].packageName, '@sdkwork/clawrouter-backend-sdk');
+  assert.equal(manifest.archives[2].packageName, '@sdkwork/clawrouter-open-sdk');
   assert.match(JSON.stringify(manifest), /generatedAt/);
 });
 
@@ -928,6 +1189,18 @@ test('API router product chain is covered from portal services through SDK and R
     ),
     'utf8',
   );
+  const playgroundServiceSource = readFileSync(
+    path.join(
+      workspaceRoot,
+      'apps',
+      'sdkwork-claw-router-portal',
+      'packages',
+      'sdkwork-claw-router-playground',
+      'src',
+      'playgroundService.ts',
+    ),
+    'utf8',
+  );
   const routingComponentsSource = [
     'ApiKeysTab.tsx',
     'ChannelsTab.tsx',
@@ -950,7 +1223,15 @@ test('API router product chain is covered from portal services through SDK and R
     ),
   ).join('\n');
   const appSdkRouterSource = readFileSync(
-    path.join(workspaceRoot, 'sdks', 'clawrouter-app-sdk', 'src', 'api', 'router.ts'),
+    path.join(
+      workspaceRoot,
+      'sdks',
+      'clawrouter-app-sdk',
+      'clawrouter-app-sdk-typescript',
+      'src',
+      'api',
+      'ai.ts',
+    ),
     'utf8',
   );
   const manifest = JSON.parse(
@@ -979,6 +1260,17 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(workspaceRoot, 'services', 'sdkwork-claw-product', 'src', 'api', 'app_models.rs'),
     'utf8',
   );
+  const appGenerationHistorySource = readFileSync(
+    path.join(
+      workspaceRoot,
+      'services',
+      'sdkwork-claw-product',
+      'src',
+      'api',
+      'app_generation_history.rs',
+    ),
+    'utf8',
+  );
   const appDatabaseTestSource = readFileSync(
     path.join(workspaceRoot, 'services', 'sdkwork-claw-app-api', 'tests', 'database_config_router.rs'),
     'utf8',
@@ -999,163 +1291,252 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(workspaceRoot, 'services', 'sdkwork-claw-gateway', 'tests', 'openai_chat_route.rs'),
     'utf8',
   );
-  const routingServiceSurface = `${routingServiceSource}\n${modelServiceSource}`;
+  const appAiServiceSurface = `${routingServiceSource}\n${modelServiceSource}\n${playgroundServiceSource}`;
 
   const requiredAppRouterOperations = [
     {
       operation: 'fetchModels',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/models',
-      sdkPath: '/router/models',
+      manifestPath: '/app/v3/api/ai/models',
+      sdkPath: '/ai/models',
       frontendService: 'ModelService',
       rustSource: appModelsSource,
-      rustRoutePath: '/app/v3/api/router/models',
-      edgeSmokePath: '/app/v3/api/router/models',
+      rustRoutePath: '/app/v3/api/ai/models',
+      edgeSmokePath: '/app/v3/api/ai/models',
+    },
+    {
+      operation: 'fetchGenerationHistory',
+      method: 'GET',
+      manifestPath: '/app/v3/api/ai/generations',
+      sdkPath: '/ai/generations',
+      frontendService: 'PlaygroundService',
+      rustSource: appGenerationHistorySource,
+      rustRoutePath: '/app/v3/api/ai/generations',
+      edgeSmokePath: '/app/v3/api/ai/generations',
     },
     {
       operation: 'fetchChannels',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/routing/channels',
-      sdkPath: '/router/routing/channels',
+      manifestPath: '/app/v3/api/ai/routing/channels',
+      sdkPath: '/ai/routing/channels',
       frontendService: 'RoutingService',
       rustSource: appRoutingReadSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels',
-      edgeSmokePath: '/app/v3/api/router/routing/channels',
+      rustRoutePath: '/app/v3/api/ai/routing/channels',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels',
     },
     {
       operation: 'createChannel',
       method: 'POST',
-      manifestPath: '/app/v3/api/router/routing/channels',
-      sdkPath: '/router/routing/channels',
+      manifestPath: '/app/v3/api/ai/routing/channels',
+      sdkPath: '/ai/routing/channels',
       frontendService: 'RoutingService',
       rustSource: appRoutingCommandSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels',
-      edgeSmokePath: '/app/v3/api/router/routing/channels',
+      rustRoutePath: '/app/v3/api/ai/routing/channels',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels',
     },
     {
       operation: 'updateChannel',
       method: 'PUT',
-      manifestPath: '/app/v3/api/router/routing/channels/{channelId}',
-      sdkPath: '/router/routing/channels/${channelId}',
+      manifestPath: '/app/v3/api/ai/routing/channels/{channelId}',
+      sdkPath: '/ai/routing/channels/${channelId}',
       frontendService: 'RoutingService',
       rustSource: appRoutingCommandSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels/{channel_id}',
-      edgeSmokePath: '/app/v3/api/router/routing/channels/{created_channel_id}',
+      rustRoutePath: '/app/v3/api/ai/routing/channels/{channel_id}',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels/{created_channel_id}',
     },
     {
       operation: 'deleteChannel',
       method: 'DELETE',
-      manifestPath: '/app/v3/api/router/routing/channels/{channelId}',
-      sdkPath: '/router/routing/channels/${channelId}',
+      manifestPath: '/app/v3/api/ai/routing/channels/{channelId}',
+      sdkPath: '/ai/routing/channels/${channelId}',
       frontendService: 'RoutingService',
       rustSource: appRoutingCommandSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels/{channel_id}',
-      edgeSmokePath: '/app/v3/api/router/routing/channels/{created_channel_id}',
+      rustRoutePath: '/app/v3/api/ai/routing/channels/{channel_id}',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels/{created_channel_id}',
     },
     {
       operation: 'setChannelStatus',
       method: 'PUT',
-      manifestPath: '/app/v3/api/router/routing/channels/{channelId}/status',
-      sdkPath: '/router/routing/channels/${channelId}/status',
+      manifestPath: '/app/v3/api/ai/routing/channels/{channelId}/status',
+      sdkPath: '/ai/routing/channels/${channelId}/status',
       frontendService: 'RoutingService',
       rustSource: appRoutingCommandSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels/{channel_id}/status',
-      edgeSmokePath: '/app/v3/api/router/routing/channels/{created_channel_id}/status',
+      rustRoutePath: '/app/v3/api/ai/routing/channels/{channel_id}/status',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels/{created_channel_id}/status',
     },
     {
       operation: 'testChannel',
       method: 'POST',
-      manifestPath: '/app/v3/api/router/routing/channels/{channelId}/test',
-      sdkPath: '/router/routing/channels/${channelId}/test',
+      manifestPath: '/app/v3/api/ai/routing/channels/{channelId}/verify',
+      sdkPath: '/ai/routing/channels/${channelId}/verify',
       frontendService: 'RoutingService',
       rustSource: appRoutingCommandSource,
-      rustRoutePath: '/app/v3/api/router/routing/channels/{channel_id}/test',
-      edgeSmokePath: '/app/v3/api/router/routing/channels/{created_channel_id}/test',
+      rustRoutePath: '/app/v3/api/ai/routing/channels/{channel_id}/verify',
+      edgeSmokePath: '/app/v3/api/ai/routing/channels/{created_channel_id}/verify',
     },
     {
       operation: 'fetchApiKeys',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/routing/api-keys',
-      sdkPath: '/router/routing/api-keys',
+      manifestPath: '/app/v3/api/ai/routing/api_keys',
+      sdkPath: '/ai/routing/api_keys',
       frontendService: 'RoutingService',
       rustSource: appRoutingReadSource,
-      rustRoutePath: '/app/v3/api/router/routing/api-keys',
-      edgeSmokePath: '/app/v3/api/router/routing/api-keys',
+      rustRoutePath: '/app/v3/api/ai/routing/api_keys',
+      edgeSmokePath: '/app/v3/api/ai/routing/api_keys',
     },
     {
       operation: 'fetchRequestTraces',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/routing/request-traces',
-      sdkPath: '/router/routing/request-traces',
+      manifestPath: '/app/v3/api/ai/routing/request_traces',
+      sdkPath: '/ai/routing/request_traces',
       frontendService: 'RoutingService',
       rustSource: appRoutingReadSource,
-      rustRoutePath: '/app/v3/api/router/routing/request-traces',
-      edgeSmokePath: '/app/v3/api/router/routing/request-traces',
+      rustRoutePath: '/app/v3/api/ai/routing/request_traces',
+      edgeSmokePath: '/app/v3/api/ai/routing/request_traces',
     },
     {
       operation: 'fetchStrategy',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/routing/strategy',
-      sdkPath: '/router/routing/strategy',
+      manifestPath: '/app/v3/api/ai/routing/strategy',
+      sdkPath: '/ai/routing/strategy',
       frontendService: 'RoutingService',
       rustSource: appRoutingStrategySource,
-      rustRoutePath: '/app/v3/api/router/routing/strategy',
-      edgeSmokePath: '/app/v3/api/router/routing/strategy',
+      rustRoutePath: '/app/v3/api/ai/routing/strategy',
+      edgeSmokePath: '/app/v3/api/ai/routing/strategy',
     },
     {
       operation: 'updateStrategy',
       method: 'PUT',
-      manifestPath: '/app/v3/api/router/routing/strategy',
-      sdkPath: '/router/routing/strategy',
+      manifestPath: '/app/v3/api/ai/routing/strategy',
+      sdkPath: '/ai/routing/strategy',
       frontendService: 'RoutingService',
       rustSource: appRoutingStrategySource,
-      rustRoutePath: '/app/v3/api/router/routing/strategy',
-      edgeSmokePath: '/app/v3/api/router/routing/strategy',
+      rustRoutePath: '/app/v3/api/ai/routing/strategy',
+      edgeSmokePath: '/app/v3/api/ai/routing/strategy',
     },
     {
       operation: 'fetchUsageData',
       method: 'GET',
-      manifestPath: '/app/v3/api/router/routing/usage',
-      sdkPath: '/router/routing/usage',
+      manifestPath: '/app/v3/api/ai/routing/usage',
+      sdkPath: '/ai/routing/usage',
       frontendService: 'RoutingService',
       rustSource: appRoutingReadSource,
-      rustRoutePath: '/app/v3/api/router/routing/usage',
-      edgeSmokePath: '/app/v3/api/router/routing/usage',
+      rustRoutePath: '/app/v3/api/ai/routing/usage',
+      edgeSmokePath: '/app/v3/api/ai/routing/usage',
     },
   ];
+
+  const sdkServiceCallByOperation = {
+    fetchModels: 'getClawRouterAppSdkClient().ai.models.list(',
+    fetchGenerationHistory: 'getClawRouterAppSdkClient().ai.generations.list(',
+    fetchChannels: 'getClawRouterAppSdkClient().ai.routing.channels.list()',
+    createChannel: 'getClawRouterAppSdkClient().ai.routing.channels.create(',
+    updateChannel: 'getClawRouterAppSdkClient().ai.routing.channels.update(',
+    deleteChannel: 'getClawRouterAppSdkClient().ai.routing.channels.delete(',
+    setChannelStatus: 'getClawRouterAppSdkClient().ai.routing.channels.status.update(',
+    testChannel: 'getClawRouterAppSdkClient().ai.routing.channels.verify(',
+    fetchApiKeys: 'getClawRouterAppSdkClient().ai.routing.apiKeys.list()',
+    fetchRequestTraces: 'getClawRouterAppSdkClient().ai.routing.requestTraces.list()',
+    fetchStrategy: 'getClawRouterAppSdkClient().ai.routing.strategy.list()',
+    updateStrategy: 'getClawRouterAppSdkClient().ai.routing.strategy.update(',
+    fetchUsageData: 'getClawRouterAppSdkClient().ai.routing.usage.list()',
+  };
+
+  const sdkMethodByOperation = {
+    fetchModels: 'async list(',
+    fetchGenerationHistory: 'async list(',
+    fetchChannels: 'async list(',
+    createChannel: 'async create(',
+    updateChannel: 'async update(',
+    deleteChannel: 'async delete(',
+    setChannelStatus: 'async update(',
+    testChannel: 'async verify(',
+    fetchApiKeys: 'async list(',
+    fetchRequestTraces: 'async list(',
+    fetchStrategy: 'async list(',
+    updateStrategy: 'async update(',
+    fetchUsageData: 'async list(',
+  };
+
+  const sdkOperationIdByOperation = {
+    fetchModels: 'models.list',
+    fetchGenerationHistory: 'generations.list',
+    fetchChannels: 'routing.channels.list',
+    createChannel: 'routing.channels.create',
+    updateChannel: 'routing.channels.update',
+    deleteChannel: 'routing.channels.delete',
+    setChannelStatus: 'routing.channels.status.update',
+    testChannel: 'routing.channels.verify',
+    fetchApiKeys: 'routing.apiKeys.list',
+    fetchRequestTraces: 'routing.requestTraces.list',
+    fetchStrategy: 'routing.strategy.list',
+    updateStrategy: 'routing.strategy.update',
+    fetchUsageData: 'routing.usage.list',
+  };
+
+  const assertGeneratedSdkPath = (operation) => {
+    if (!operation.sdkPath.includes('${')) {
+      assert.ok(
+        appSdkRouterSource.includes(`appApiPath(\`${operation.sdkPath}\`)`),
+        `${operation.operation} must use the generated app SDK path ${operation.sdkPath}`,
+      );
+      return;
+    }
+
+    const staticFragments = operation.sdkPath
+      .split(/\$\{[^}]+\}/u)
+      .filter(Boolean);
+    for (const fragment of staticFragments) {
+      assert.ok(
+        appSdkRouterSource.includes(fragment),
+        `${operation.operation} must include generated app SDK path fragment ${fragment}`,
+      );
+    }
+    for (const paramName of operation.sdkPath.matchAll(/\$\{([^}]+)\}/gu)) {
+      assert.ok(
+        appSdkRouterSource.includes(`serializePathParameter(${paramName[1]}`),
+        `${operation.operation} must serialize SDK path parameter ${paramName[1]}`,
+      );
+    }
+  };
 
   for (const operation of requiredAppRouterOperations) {
     const manifestOperation = manifest.operations.find((entry) =>
       entry.source === (
         operation.operation === 'fetchModels'
           ? 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts'
+          : operation.frontendService === 'PlaygroundService'
+            ? 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
           : 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-routing/src/routingService.ts'
       )
       && entry.operation === operation.operation
       && entry.api_path === operation.manifestPath
       && entry.api_method === operation.method
       && entry.sdk_client === 'SdkworkAppClient'
-      && entry.sdk_family === 'app',
+      && entry.sdk_family === 'clawrouter-app-sdk',
     );
     assert.ok(manifestOperation, `${operation.operation} must be declared in the app manifest`);
-    assert.equal(manifestOperation.route, operation.operation === 'fetchModels' ? '/models' : '/console/routing');
+    assert.equal(
+      manifestOperation.route,
+      operation.operation === 'fetchModels'
+        ? '/models'
+        : operation.frontendService === 'PlaygroundService'
+          ? '/playground'
+          : '/console/routing',
+    );
     assert.equal(manifestOperation.sdk_api_prefix, '/app/v3/api');
     assert.ok(
-      routingServiceSurface.includes(`getClawRouterAppSdkClient().router.${operation.operation}`)
-        || routingServiceSurface.includes(`router.${operation.operation}`),
+      appAiServiceSurface.includes(sdkServiceCallByOperation[operation.operation]),
       `${operation.operation} must call the generated app SDK from the portal service boundary`,
     );
     assert.ok(
-      appSdkRouterSource.includes(`async ${operation.operation}(`),
+      appSdkRouterSource.includes(sdkMethodByOperation[operation.operation]),
       `${operation.operation} must be exposed by the generated app SDK`,
     );
-    assert.ok(
-      appSdkRouterSource.includes(`appApiPath(\`${operation.sdkPath}\`)`),
-      `${operation.operation} must use the generated app SDK path ${operation.sdkPath}`,
-    );
+    assertGeneratedSdkPath(operation);
     assert.equal(
       openapi.paths[operation.manifestPath]?.[operation.method.toLowerCase()]?.operationId,
-      operation.operation,
+      sdkOperationIdByOperation[operation.operation],
       `${operation.operation} must be present in generated OpenAPI at ${operation.method} ${operation.manifestPath}`,
     );
     assert.ok(
@@ -1167,6 +1548,41 @@ test('API router product chain is covered from portal services through SDK and R
       `${operation.operation} must be exercised through the unified Rust edge server smoke test`,
     );
   }
+
+  const playgroundModelGroupsOperation = manifest.operations.find((entry) =>
+    entry.source === 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
+    && entry.operation === 'fetchModelGroups',
+  );
+  assert.ok(
+    playgroundModelGroupsOperation,
+    'fetchModelGroups must remain tracked as a local Playground view over the standard app model catalog',
+  );
+  assert.equal(playgroundModelGroupsOperation.api_path, '/app/v3/api/ai/models');
+  assert.equal(playgroundModelGroupsOperation.api_method, 'GET');
+  assert.equal(playgroundModelGroupsOperation.sdk_client, 'SdkworkAppClient');
+  assert.equal(playgroundModelGroupsOperation.sdk_family, 'clawrouter-app-sdk');
+  assert.equal(playgroundModelGroupsOperation.openapi_exposed, false);
+  assert.equal(playgroundModelGroupsOperation.operation_id, 'models.list');
+  assert.ok(
+    appAiServiceSurface.includes('getClawRouterAppSdkClient().ai.models.list()'),
+    'fetchModelGroups must reuse the generated app SDK model catalog method',
+  );
+  assert.ok(
+    !appAiServiceSurface.includes(`getClawRouterAppSdkClient().ai.${['playground', 'models'].join('.')}.list(`),
+    'fetchModelGroups must not call a Playground-specific SDK model catalog method',
+  );
+  assert.ok(
+    !appSdkRouterSource.includes(['playground', 'models', 'list'].join('.')),
+    'the generated app SDK must not expose a Playground-specific model catalog operation',
+  );
+  const removedPlaygroundModelsPath = [
+    '/app/v3/api/ai/playground',
+    '/models',
+  ].join('');
+  assert.equal(openapi.paths[removedPlaygroundModelsPath], undefined);
+  assert.equal(openapi.paths['/app/v3/api/ai/models']?.get?.operationId, 'models.list');
+  assert.ok(appModelsSource.includes('/app/v3/api/ai/models'));
+  assert.ok(!appModelsSource.includes(removedPlaygroundModelsPath));
 
   for (const componentCall of [
     'RoutingService.fetchChannels',
@@ -1190,8 +1606,8 @@ test('API router product chain is covered from portal services through SDK and R
   assert.ok(appApiSource.includes('app_model_catalog_router'));
   assert.ok(appDatabaseTestSource.includes('database_config_app_routing_routes_require_session_scope_and_redact_sensitive_data'));
   assert.ok(appDatabaseTestSource.includes('database_config_app_routing_channel_commands_persist_and_scope_without_secret_leakage'));
-  assert.ok(appDatabaseTestSource.includes('/app/v3/api/router/routing/strategy'));
-  assert.ok(appDatabaseTestSource.includes('/app/v3/api/router/routing/channels'));
+  assert.ok(appDatabaseTestSource.includes('/app/v3/api/ai/routing/strategy'));
+  assert.ok(appDatabaseTestSource.includes('/app/v3/api/ai/routing/channels'));
 
   assert.ok(gatewayRuntimeSource.includes('router_with_openai_runtime_routes'));
   assert.ok(gatewayRuntimeSource.includes('openai_chat_completions_router_with_relays_and_usage_recorder'));
@@ -1244,10 +1660,28 @@ test('portal SDK reference uses real generated SDK package metadata for download
     'utf8',
   );
   const appSdkPackage = JSON.parse(
-    readFileSync(path.join(workspaceRoot, 'sdks', 'clawrouter-app-sdk', 'package.json'), 'utf8'),
+    readFileSync(
+      path.join(
+        workspaceRoot,
+        'sdks',
+        'clawrouter-app-sdk',
+        'clawrouter-app-sdk-typescript',
+        'package.json',
+      ),
+      'utf8',
+    ),
   );
   const backendSdkPackage = JSON.parse(
-    readFileSync(path.join(workspaceRoot, 'sdks', 'clawrouter-backend-sdk', 'package.json'), 'utf8'),
+    readFileSync(
+      path.join(
+        workspaceRoot,
+        'sdks',
+        'clawrouter-backend-sdk',
+        'clawrouter-backend-sdk-typescript',
+        'package.json',
+      ),
+      'utf8',
+    ),
   );
   const referenceSurface = `${sdkReferenceSource}\n${sdkDataSource}`;
   const sdkMetadataSurface = `${referenceSurface}\n${sdkClientBoundarySource}`;
@@ -1325,7 +1759,7 @@ test('postgres integration runner exposes optional and required execution modes'
     '-p',
     'sdkwork-claw-product',
     '--test',
-    'postgres_playground_history_sql_contract',
+    'postgres_generation_history_sql_contract',
     '--test',
     'postgres_transaction_integration',
     '--',
@@ -1413,7 +1847,7 @@ test('postgres integration runner handles package-manager argument separators', 
     '-p',
     'sdkwork-claw-product',
     '--test',
-    'postgres_playground_history_sql_contract',
+    'postgres_generation_history_sql_contract',
     '--test',
     'postgres_transaction_integration',
     '--',
@@ -1424,7 +1858,7 @@ test('postgres integration runner handles package-manager argument separators', 
     '-p',
     'sdkwork-claw-product',
     '--test',
-    'postgres_playground_history_sql_contract',
+    'postgres_generation_history_sql_contract',
     '--test',
     'postgres_transaction_integration',
     '--',
@@ -1437,7 +1871,7 @@ test('postgres integration runner handles package-manager argument separators', 
       '-p',
       'sdkwork-claw-product',
       '--test',
-      'postgres_playground_history_sql_contract',
+      'postgres_generation_history_sql_contract',
       '--test',
       'postgres_transaction_integration',
       '--',
@@ -1467,15 +1901,22 @@ test('verification plan isolates cargo check and test targets from shared debug 
   );
 
   const plan = module.buildVerificationPlan(
-    { skipRustTests: false, skipPythonTests: true, skipSchemaGate: true },
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: false,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const rustCheck = plan.find((step) => step.label === 'rust compile warnings gate');
   const productionBuild = plan.find((step) => step.label === 'production artifact build');
+  const edgeDevSmoke = plan.find((step) => step.label === 'edge dev server smoke');
   const edgeSmoke = plan.find((step) => step.label === 'portal production edge smoke');
   const rustWorkspaceTests = plan.find((step) => step.label === 'rust workspace tests');
 
   assert.equal(rustCheck.env.CARGO_TARGET_DIR, 'target-verify');
+  assert.equal(edgeDevSmoke.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(edgeSmoke.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(rustWorkspaceTests.env.CARGO_TARGET_DIR, 'target-verify');
   assert.equal(productionBuild.env.CARGO_TARGET_DIR, undefined);
@@ -1488,6 +1929,7 @@ test('verification runner handles package-manager argument separators', async ()
 
   assert.deepEqual(module.parseArgs(['--', '--dry-run']), {
     fast: false,
+    withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
     skipRustTests: false,
     skipPythonTests: false,
@@ -1496,10 +1938,12 @@ test('verification runner handles package-manager argument separators', async ()
     dryRun: true,
     help: false,
   });
+  assert.deepEqual(module.parseArgs(['--', '--with-edge-dev-smoke']).withEdgeDevSmoke, true);
   assert.deepEqual(module.parseArgs(['--', '--skip-edge-dev-smoke']).skipEdgeDevSmoke, true);
   assert.deepEqual(module.parseArgs(['--', '--skip-contract-guardians']).skipContractGuardians, true);
   assert.deepEqual(module.parseArgs(['--fast']), {
     fast: true,
+    withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
     skipRustTests: false,
     skipPythonTests: false,
@@ -1521,12 +1965,18 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
 
   assert.deepEqual(labels, [
     'sdkwork-models catalog check',
+    'app store seed check',
+    'skills seed check',
     'tooling contract tests',
+    'portal auth runtime tests',
     'frontend source hygiene tests',
   ]);
   assert.deepEqual(commandLines, [
     'pnpm.cmd models:check',
+    'pnpm.cmd app-store:seed:check',
+    'pnpm.cmd skills:seed:check',
     'node scripts/run-claw-router-product.test.mjs',
+    'pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts',
     'python -B -m unittest tests.test_frontend_source_hygiene_standard',
   ]);
   assert.ok(!labels.includes('rust compile warnings gate'));
@@ -1541,12 +1991,50 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
   assert.ok(!labels.includes('schema quality gate'));
 });
 
-test('verification plan includes edge dev server smoke before artifact-only checks', async () => {
+test('verification plan skips edge dev server smoke by default', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
   const plan = module.buildVerificationPlan(
     { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {},
+  );
+  assert.ok(!plan.some((step) => step.label === 'edge dev server smoke'));
+});
+
+test('verification plan does not treat CI as implicit edge dev smoke opt-in', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    { CI: 'true' },
+  );
+  assert.ok(!plan.some((step) => step.label === 'edge dev server smoke'));
+});
+
+test('verification plan can include edge dev server smoke through explicit environment opt-in', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    { CLAWROUTER_VERIFY_EDGE_DEV_SMOKE: '1' },
+  );
+  assert.ok(plan.some((step) => step.label === 'edge dev server smoke'));
+});
+
+test('verification plan can include edge dev server smoke when explicitly requested', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: true,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
@@ -1584,6 +2072,10 @@ test('verification plan includes edge dev server smoke before artifact-only chec
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_API_BASE_URL=/v1'));
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api'));
   assert.ok(smokeSource.includes('PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api'));
+  assert.ok(
+    smokeSource.includes("process.env.CLAWROUTER_EDGE_DEV_SMOKE_TIMEOUT_MS ?? '900000'"),
+    'edge dev smoke default timeout must allow full seed install and five Rust services to start on Windows',
+  );
   assert.ok(smokeSource.includes('CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED'));
   assert.ok(smokeSource.includes('[edge-dev-smoke] skipped: ${diagnostic}'));
   assert.ok(smokeSource.includes('requires this smoke to launch real processes'));
@@ -1595,11 +2087,116 @@ test('verification plan includes edge dev server smoke before artifact-only chec
   assert.ok(rootReadme.includes('Direct Portal Gateway API Proxy'));
   assert.ok(rootReadme.includes('Direct Portal App API OpenAPI Proxy'));
   assert.ok(rootReadme.includes('CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"'));
-  assert.ok(rootReadme.includes('--skip-edge-dev-smoke'));
+  assert.ok(rootReadme.includes('--with-edge-dev-smoke'));
   assert.ok(portalReadme.includes('pnpm.cmd smoke:dev'));
   assert.ok(portalReadme.includes('Direct Portal Gateway API Proxy'));
   assert.ok(portalReadme.includes('Direct Portal App API OpenAPI Proxy'));
   assert.ok(portalReadme.includes('CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"'));
+});
+
+test('edge dev smoke validates the current gateway and surface OpenAPI contract shapes', () => {
+  const smokeSource = readFileSync(
+    path.join(workspaceRoot, 'scripts', 'smoke-edge-dev-server.mjs'),
+    'utf8',
+  );
+  const gatewayOpenApi = JSON.parse(
+    readFileSync(path.join(portalRoot, 'public', 'openapi.json'), 'utf8'),
+  );
+  const backendOpenApi = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'generated', 'openapi', 'clawrouter-backend-openapi.json'), 'utf8'),
+  );
+  const appOpenApi = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'generated', 'openapi', 'clawrouter-app-openapi.json'), 'utf8'),
+  );
+
+  assert.equal(gatewayOpenApi.openapi, '3.0.3');
+  assert.equal(gatewayOpenApi.info?.title, 'Claw Router Open API');
+  assert.equal(gatewayOpenApi['x-api-prefix'], '/v1');
+  for (const apiPath of [
+    '/v1/models',
+    '/v1/chat/completions',
+    '/v1/responses',
+    '/google/v1beta/models/{model}:generateContent',
+  ]) {
+    assert.ok(gatewayOpenApi.paths?.[apiPath], `gateway OpenAPI must expose ${apiPath}`);
+    assert.ok(
+      smokeSource.includes(`payload.paths?.['${apiPath}']`),
+      `edge dev smoke must validate ${apiPath}`,
+    );
+  }
+  assert.ok(smokeSource.includes("payload.openapi !== '3.0.3'"));
+  assert.ok(smokeSource.includes("payload.info?.title !== 'Claw Router Open API'"));
+  assert.ok(smokeSource.includes("payload['x-api-prefix'] !== '/v1'"));
+
+  const surfaceAssertionStart = smokeSource.indexOf('function assertSurfaceOpenApi');
+  const surfaceAssertionEnd = smokeSource.indexOf('function assertPortalHtml');
+  assert.ok(surfaceAssertionStart >= 0, 'edge dev smoke must define surface OpenAPI validation');
+  assert.ok(surfaceAssertionEnd > surfaceAssertionStart, 'surface OpenAPI validation must stay isolated');
+  const surfaceAssertionSource = smokeSource.slice(surfaceAssertionStart, surfaceAssertionEnd);
+  assert.ok(
+    !surfaceAssertionSource.includes('x-api-prefix'),
+    'app/backend SDK surface validation must not use URL prefix as SDK ownership signal',
+  );
+  assert.ok(
+    !surfaceAssertionSource.includes("payload.openapi !== '3.0.3'"),
+    'app/backend SDK surface validation must accept current OpenAPI 3.x contracts',
+  );
+  assert.ok(surfaceAssertionSource.includes('expectedTitle'));
+  assert.ok(surfaceAssertionSource.includes('requiredPaths'));
+
+  for (const contract of [
+    {
+      openApi: backendOpenApi,
+      expectedTitle: 'SDKWork Claw Router Backend API',
+      requiredPaths: [
+        '/backend/v3/api/ai/model_vendors',
+        '/backend/v3/api/billing/recharges/packages',
+        '/backend/v3/api/ecosystem/skills',
+      ],
+    },
+    {
+      openApi: appOpenApi,
+      expectedTitle: 'SDKWork Claw Router App API',
+      requiredPaths: [
+        '/app/v3/api/platform/apps/store',
+        '/app/v3/api/ecosystem/skills',
+        '/app/v3/api/billing/account/points/recharges/packages',
+      ],
+    },
+  ]) {
+    assert.match(String(contract.openApi.openapi ?? ''), /^3\./u);
+    assert.equal(contract.openApi.info?.title, contract.expectedTitle);
+    assert.ok(
+      smokeSource.includes(`expectedTitle: '${contract.expectedTitle}'`),
+      `edge dev smoke must validate ${contract.expectedTitle}`,
+    );
+    for (const apiPath of contract.requiredPaths) {
+      assert.ok(contract.openApi.paths?.[apiPath], `${contract.expectedTitle} must expose ${apiPath}`);
+      assert.ok(
+        smokeSource.includes(`'${apiPath}'`),
+        `edge dev smoke must validate ${apiPath}`,
+      );
+    }
+  }
+});
+
+test('edge dev smoke isolates SQLite and validates public app and skills browse data', () => {
+  const smokeSource = readFileSync(
+    path.join(workspaceRoot, 'scripts', 'smoke-edge-dev-server.mjs'),
+    'utf8',
+  );
+
+  assert.ok(smokeSource.includes('isolatedSmokeDatabaseUrl()'));
+  assert.ok(smokeSource.includes("'--database-url'"));
+  assert.match(smokeSource, /path\.join\(\s*'target',\s*'dev-smoke',/u);
+  assert.ok(smokeSource.includes('/app/v3/api/platform/apps/store/categories'));
+  assert.ok(smokeSource.includes('/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6'));
+  assert.ok(smokeSource.includes('/app/v3/api/ecosystem/skills/categories'));
+  assert.ok(smokeSource.includes('/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6'));
+  assert.ok(smokeSource.includes('assertPublicBrowseEnvelope'));
+  assert.ok(smokeSource.includes('SDKWork Claw Router'));
+  assert.ok(smokeSource.includes('Prompt Optimizer'));
+  assert.ok(smokeSource.includes('must not require authorization'));
 });
 
 test('verification plan can skip edge dev server smoke for constrained environments', async () => {
@@ -2002,17 +2599,23 @@ test('verification plan includes all commercial contract guardians before tests'
   );
 
   const plan = module.buildVerificationPlan(
-    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: true,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
 
-  assert.deepEqual(commandLines.slice(3, 17), [
+  assert.deepEqual(commandLines.slice(3, 18), [
     'node scripts/run-claw-router-product.test.mjs',
     'python -B -m tools.clawrouter_sdk_guardian',
     'python -B -m tools.clawrouter_skill_guardian',
     'python -B -m tools.architecture_standard_guardian',
     'python -B -m tools.rust_backend_architecture_guardian',
+    'python -B -m tools.clawrouter_gateway_openapi_generator --check',
     'python -B -m tools.clawrouter_openapi_precision_audit',
     'python -B -m tools.clawrouter_payload_sdk_audit',
     'python -B -m tools.frontend_static_source_manifest --check',
@@ -2030,7 +2633,12 @@ test('verification plan verifies production portal through Rust edge server with
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
   const plan = module.buildVerificationPlan(
-    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: true,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
@@ -2047,7 +2655,12 @@ test('verification plan runs frontend source hygiene before portal build', async
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
   const plan = module.buildVerificationPlan(
-    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: true,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
@@ -2068,7 +2681,12 @@ test('verification plan validates portal Vite config before dev smoke and build'
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
   const plan = module.buildVerificationPlan(
-    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {
+      withEdgeDevSmoke: true,
+      skipRustTests: true,
+      skipPythonTests: true,
+      skipSchemaGate: true,
+    },
     {},
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
@@ -2307,9 +2925,19 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
     'utf8',
   );
 
-  assert.equal(portalPackage.scripts.dev, 'vite --configLoader native');
-  assert.equal(portalPackage.scripts['browser:dev'], 'vite --configLoader native');
+  assert.equal(portalPackage.scripts.dev, 'pnpm deps:check && vite --configLoader native');
+  assert.equal(portalPackage.scripts['browser:dev'], 'pnpm deps:check && vite --configLoader native');
   assert.equal(portalPackage.scripts.preview, 'vite preview --configLoader native');
+  assert.equal(
+    portalPackage.scripts.typecheck,
+    'tsc -p tsconfig.typecheck.json --noEmit',
+    'portal typecheck must use the portal-only TypeScript project',
+  );
+  assert.equal(
+    portalPackage.scripts.lint,
+    'tsc -p tsconfig.typecheck.json --noEmit',
+    'portal lint must use the portal-only TypeScript project',
+  );
   assert.ok(!portalPackage.scripts.dev.includes('tsx'));
   assert.ok(portalPackage.scripts.dev.includes('--configLoader native'));
   assert.ok(!portalPackage.scripts['browser:dev'].includes('tsx'));
@@ -2326,6 +2954,65 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   assert.ok(viteConfig.includes('optimizeDeps'));
   assert.ok(viteConfig.includes("'sdkwork-claw-router-api-reference'"));
   assert.ok(viteConfig.includes("'sdkwork-claw-router-sdk-reference'"));
+});
+
+test('portal typecheck project does not compile external appbase or UI source', () => {
+  const portalPackage = JSON.parse(
+    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'package.json'), 'utf8'),
+  );
+  const typecheckConfig = JSON.parse(
+    readFileSync(path.join(portalRoot, 'tsconfig.typecheck.json'), 'utf8'),
+  );
+  const typecheckShims = readFileSync(
+    path.join(portalRoot, 'src', 'typecheck-shims.d.ts'),
+    'utf8',
+  );
+  const packageTypecheckConfig = JSON.parse(
+    readFileSync(path.join(portalRoot, 'packages', 'tsconfig.json'), 'utf8'),
+  );
+  const runtimeTsconfig = readFileSync(path.join(portalRoot, 'tsconfig.json'), 'utf8');
+
+  assert.equal(portalPackage.scripts.typecheck, 'tsc -p tsconfig.typecheck.json --noEmit');
+  assert.deepEqual(typecheckConfig.include, [
+    'src/**/*.ts',
+    'src/**/*.tsx',
+    'packages/*/src/**/*.ts',
+    'packages/*/src/**/*.tsx',
+  ]);
+  assert.equal(packageTypecheckConfig.extends, '../tsconfig.typecheck.json');
+  assert.deepEqual(packageTypecheckConfig.include, [
+    '../src/typecheck-shims.d.ts',
+    '*/src/**/*.ts',
+    '*/src/**/*.tsx',
+  ]);
+  assert.ok(typecheckConfig.exclude.includes('../../../sdkwork-appbase/**'));
+  assert.ok(typecheckConfig.exclude.includes('../../../sdkwork-ui/**'));
+  assert.ok(packageTypecheckConfig.exclude.includes('../../../../sdkwork-appbase/**'));
+  assert.ok(packageTypecheckConfig.exclude.includes('../../../../sdkwork-ui/**'));
+  assert.match(
+    runtimeTsconfig,
+    /sdkwork-appbase\/packages\/pc-react\/content\/sdkwork-generation-pc-react\/src\/index\.ts/u,
+    'runtime tsconfig keeps source aliases for Vite dev/build',
+  );
+  for (const [specifier, target] of Object.entries(typecheckConfig.compilerOptions.paths)) {
+    assert.ok(
+      target.every((entry) => !entry.includes('../../../sdkwork-appbase/') && !entry.includes('../../../sdkwork-ui/')),
+      `${specifier} must not resolve to external workspace source during portal typecheck`,
+    );
+  }
+  for (const moduleName of [
+    '@sdkwork/auth-pc-react',
+    '@sdkwork/generation-pc-react',
+    '@sdkwork/host-tauri-pc-react',
+    '@sdkwork/iam-runtime',
+    '@sdkwork/iam-service',
+  ]) {
+    assert.match(
+      typecheckShims,
+      new RegExp(`declare module ['"]${moduleName.replaceAll('/', '\\/')}['"]`, 'u'),
+      `${moduleName} must have a portal-local typecheck shim`,
+    );
+  }
 });
 
 test('portal workspace packages declare ESM module metadata', () => {
@@ -2448,7 +3135,7 @@ test('portal build script uses native Vite config loading', () => {
     'utf8',
   );
 
-  assert.equal(portalPackage.scripts.build, 'node scripts/build-portal.mjs');
+  assert.equal(portalPackage.scripts.build, 'pnpm deps:check && node scripts/build-portal.mjs');
   assert.match(buildScript, /process\.env\.NODE_ENV\s*=\s*['"]production['"]/);
   assert.doesNotMatch(buildScript, /import\s*\{\s*build\s*\}\s*from\s*['"]vite['"]/);
   assert.match(buildScript, /await import\(['"]vite['"]\)/);
@@ -2457,7 +3144,7 @@ test('portal build script uses native Vite config loading', () => {
   assert.doesNotMatch(buildScript, /build-server\.mjs/);
 });
 
-test('verification plan includes forced portal frontend typecheck', async () => {
+test('verification plan includes portal frontend typecheck', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
@@ -2467,12 +3154,26 @@ test('verification plan includes forced portal frontend typecheck', async () => 
   );
 
   const portalTypecheck = plan.find((step) => step.label === 'portal frontend typecheck');
+  const sdkBuilds = [
+    ['app SDK runtime build', ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build']],
+    ['backend SDK runtime build', ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build']],
+    ['open SDK runtime build', ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build']],
+  ];
   assert.ok(portalTypecheck);
+  const portalTypecheckIndex = plan.indexOf(portalTypecheck);
+  for (const [label, expectedArgs] of sdkBuilds) {
+    const sdkBuild = plan.find((step) => step.label === label);
+    assert.ok(sdkBuild, `${label} must run before portal frontend typecheck`);
+    assert.ok(
+      plan.indexOf(sdkBuild) < portalTypecheckIndex,
+      `${label} must refresh package dist before portal packages resolve SDK types`,
+    );
+    assert.deepEqual(sdkBuild.args, expectedArgs);
+  }
   assert.deepEqual(portalTypecheck.args, [
     '--dir',
     'apps/sdkwork-claw-router-portal',
     'typecheck',
-    '--force',
   ]);
   assert.equal(module.pnpmCommand('win32'), 'pnpm.cmd');
   assert.equal(module.pnpmCommand('linux'), 'pnpm');
@@ -2641,6 +3342,16 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /VITE_CLAWROUTER_APP_API_BASE_URL/);
   assert.match(browserSmokeSource, /const BROWSER_SMOKE_ROUTES = \[/);
   assert.match(browserSmokeSource, /for \(const route of BROWSER_SMOKE_ROUTES\)/);
+  const defaultModelsRouteSource = browserSmokeSource.slice(
+    browserSmokeSource.indexOf('pathName: "/models"'),
+    browserSmokeSource.indexOf('pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro"'),
+  );
+  const defaultModelDetailRouteSource = browserSmokeSource.slice(
+    browserSmokeSource.indexOf('pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro"'),
+    browserSmokeSource.indexOf('pathName: "/models?__browser-smoke-runtime=1"'),
+  );
+  assert.match(defaultModelsRouteSource, /appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE/);
+  assert.match(defaultModelDetailRouteSource, /appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /\/models\/openai%2Fglobal%2Fgpt-5\.5-pro/);
   assert.match(browserSmokeSource, /GPT-5\.5 Pro/);
   assert.match(browserSmokeSource, /Claude Opus 4\.7/);
@@ -2651,7 +3362,7 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /BROWSER_SMOKE_MODEL_RECORDS/);
   assert.match(browserSmokeSource, /APP_SDK_MODEL_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_MODEL_EMPTY_FIXTURE_MODE/);
-  assert.match(browserSmokeSource, /app\/v3\/api\/router\/models/);
+  assert.match(browserSmokeSource, /app\/v3\/api\/ai\/models/);
   assert.match(browserSmokeSource, /Runtime Good/);
   assert.match(browserSmokeSource, /Runtime Enterprise/);
   assert.match(browserSmokeSource, /Runtime Unpriced/);
@@ -2681,6 +3392,28 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.ok(browserSmokeSource.includes('/courses/c1?__browser-smoke-lesson-grid=1'));
   assert.ok(browserSmokeSource.includes('/courses/c1?__browser-smoke-related=1'));
   assert.ok(browserSmokeSource.includes('/courses/__browser-smoke-missing'));
+  const coursesSmokeStart = browserSmokeSource.indexOf('pathName: "/courses"');
+  const forumSmokeStart = browserSmokeSource.indexOf('pathName: "/forum"');
+  assert.ok(coursesSmokeStart >= 0);
+  assert.ok(forumSmokeStart > coursesSmokeStart);
+  const coursesSmokeSource = browserSmokeSource.slice(coursesSmokeStart, forumSmokeStart);
+  assert.equal(
+    coursesSmokeSource.match(/appSdkFixtureMode: APP_SDK_FIXTURE_MODE/g)?.length ?? 0,
+    10,
+    'production browser course smoke routes must use app SDK fixtures instead of live app API targets',
+  );
+  assert.match(browserSmokeSource, /BROWSER_SMOKE_COURSE_RECORDS/);
+  assert.match(browserSmokeSource, /function resolveCourseAppSdkFixture\(request\)/);
+  assert.match(browserSmokeSource, /method !== "GET"/);
+  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses"/);
+  assert.match(browserSmokeSource, /browserSmokeCourseListResponse\(parsedUrl\.searchParams\)/);
+  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses\/categories"/);
+  assert.match(browserSmokeSource, /BROWSER_SMOKE_COURSE_CATEGORIES/);
+  assert.match(browserSmokeSource, /pathName === "\/app\/v3\/api\/courses\/overview"/);
+  assert.match(browserSmokeSource, /browserSmokeCourseOverviewResponse\(\)/);
+  assert.match(browserSmokeSource, /pathName\.startsWith\("\/app\/v3\/api\/courses\/"\)/);
+  assert.match(browserSmokeSource, /browserSmokeCourseDetailResponse\(courseId\)/);
+  assert.match(browserSmokeSource, /const courseFixture = resolveCourseAppSdkFixture\(request\)/);
   assert.match(browserSmokeSource, /Master Claw Router/);
   assert.match(browserSmokeSource, /Featured Courses/);
   assert.match(browserSmokeSource, /Claw Router Fundamentals: Zero to Hero/);
@@ -2706,32 +3439,29 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /toLocaleDateString/);
   assert.match(browserSmokeSource, /Math\.random/);
   assert.match(browserSmokeSource, /\/forum/);
-  assert.match(browserSmokeSource, /\/forum\/1/);
-  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-category=1'));
-  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-search=1'));
-  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-empty=1'));
-  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-sort=1'));
-  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-card-click=1'));
-  assert.ok(browserSmokeSource.includes('/forum/1?__browser-smoke-detail=1'));
-  assert.ok(browserSmokeSource.includes('/forum/1?__browser-smoke-related=1'));
+  assert.ok(browserSmokeSource.includes('/forum?__browser-smoke-live-empty=1'));
   assert.ok(browserSmokeSource.includes('/forum/__browser-smoke-missing'));
+  const appSmokeStart = browserSmokeSource.indexOf('pathName: "/apps"');
+  assert.ok(appSmokeStart > forumSmokeStart);
+  const forumSmokeSource = browserSmokeSource.slice(forumSmokeStart, appSmokeStart);
+  assert.equal(
+    forumSmokeSource.match(/appSdkFixtureMode: APP_SDK_FIXTURE_MODE/g)?.length ?? 0,
+    0,
+  );
+  assert.doesNotMatch(browserSmokeSource, /function resolveForumAppSdkFixture/);
+  assert.doesNotMatch(browserSmokeSource, /\bBROWSER_SMOKE_FORUM_FEEDS\b/);
+  assert.doesNotMatch(browserSmokeSource, /\bBROWSER_SMOKE_FORUM_COMMENTS_BY_FEED_ID\b/);
+  assert.doesNotMatch(browserSmokeSource, /i\.pravatar/);
   assert.match(browserSmokeSource, /Developer Community/);
-  assert.match(browserSmokeSource, /Published snapshot/);
-  assert.match(browserSmokeSource, /Related discussions/);
-  assert.match(browserSmokeSource, /How to optimize routing performance in the latest release\?/);
-  assert.match(browserSmokeSource, /Best practices for organizing large API specs/);
-  assert.match(browserSmokeSource, /Introducing the new Middleware Hooks/);
-  assert.match(browserSmokeSource, /How should API keys be rotated across environments\?/);
+  assert.match(browserSmokeSource, /Live community feed/);
+  assert.doesNotMatch(browserSmokeSource, /Published snapshot/);
+  assert.doesNotMatch(browserSmokeSource, /How to optimize routing performance in the latest release\?/);
+  assert.doesNotMatch(browserSmokeSource, /Best practices for organizing large API specs/);
+  assert.doesNotMatch(browserSmokeSource, /Introducing the new Middleware Hooks/);
+  assert.doesNotMatch(browserSmokeSource, /How should API keys be rotated across environments\?/);
   assert.match(browserSmokeSource, /Discussion not found\./);
   assert.match(browserSmokeSource, /No discussions found/);
-  assert.match(browserSmokeSource, /What are your thoughts\?/);
-  assert.match(browserSmokeSource, /Published snapshot: 2026-05-03/);
-  assert.match(browserSmokeSource, /clickRouteForumCategoryButtonByText\("Performance"\)/);
-  assert.match(browserSmokeSource, /clickRouteForumSortButtonByText\("Top"\)/);
-  assert.match(browserSmokeSource, /clickRouteForumPostCardByTitle\("How to optimize routing performance in the latest release\?"\)/);
-  assert.match(browserSmokeSource, /clickRouteForumRelatedLinkByTitle\("Best practices for organizing large API specs"\)/);
-  assert.match(browserSmokeSource, /setRouteTextInputByPlaceholder\("Search discussions\.\.\.", "api keys"\)/);
-  assert.match(browserSmokeSource, /setRouteTextInputByPlaceholder\("Search discussions\.\.\.", "no-match-browser-smoke-discussion"\)/);
+  assert.match(browserSmokeSource, /Community links are not configured\./);
   assert.match(browserSmokeSource, /\/apps/);
   assert.match(browserSmokeSource, /\/apps\/app-1/);
   assert.match(browserSmokeSource, /APP_SDK_FAILURE_FIXTURE_MODE/);
@@ -2852,8 +3582,8 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /APP_SDK_CATEGORY_FAILURE_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_MISSING_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_RETRY_FIXTURE_MODE/);
-  assert.match(browserSmokeSource, /app\/v3\/api\/app\/store/);
-  assert.match(browserSmokeSource, /app\/v3\/api\/skills/);
+  assert.match(browserSmokeSource, /app\/v3\/api\/platform\/apps\/store/);
+  assert.match(browserSmokeSource, /app\/v3\/api\/ecosystem\/skills/);
   assert.match(browserSmokeSource, /Fetch\.enable/);
   assert.match(browserSmokeSource, /Fetch\.requestPaused/);
   assert.match(browserSmokeSource, /Fetch\.fulfillRequest/);
@@ -2944,7 +3674,7 @@ test('verification plan includes portal auth runtime tests before route runtime 
   assert.ok(authRuntimeIndex < rustTestsIndex, 'auth runtime tests must run before broad Rust tests');
   assert.ok(authRuntimeIndex < pythonTestsIndex, 'auth runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/auth-runtime.test.ts',
+    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`,
   ));
 });
 
@@ -3010,7 +3740,7 @@ test('verification plan includes portal api reference playground runtime tests b
   assert.ok(apiReferenceRuntimeIndex < rustTestsIndex, 'api reference playground runtime tests must run before broad Rust tests');
   assert.ok(apiReferenceRuntimeIndex < pythonTestsIndex, 'api reference playground runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/api-reference-playground-runtime.test.ts',
+    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx api-reference-playground-runtime.test.ts`,
   ));
 });
 
@@ -3130,9 +3860,12 @@ test('production browser smoke validates admin skill route through backend SDK f
 
   assert.ok(smokeSource.includes('BACKEND_SDK_SKILL_FIXTURE_MODE'));
   assert.ok(smokeSource.includes('/admin/skill?__browser-smoke-admin-skill=1'));
+  assert.ok(smokeSource.includes('requiresPortalSession: true'));
+  assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
   assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
-  assert.ok(smokeSource.includes('/backend/v3/api/skill/categories'));
-  assert.ok(smokeSource.includes('/backend/v3/api/skill/list'));
+  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/categories'));
+  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills/package'));
+  assert.ok(smokeSource.includes('/backend/v3/api/ecosystem/skills'));
   assert.ok(smokeSource.includes('Browser Smoke Admin Skill'));
 });
 
@@ -3144,9 +3877,24 @@ test('production browser smoke validates admin app route through backend SDK fix
 
   assert.ok(smokeSource.includes('BACKEND_SDK_APP_FIXTURE_MODE'));
   assert.ok(smokeSource.includes('/admin/app?__browser-smoke-admin-app=1'));
+  assert.ok(smokeSource.includes('requiresPortalSession: true'));
+  assert.ok(smokeSource.includes('sdkwork.clawRouter.appSession.v1'));
   assert.ok(smokeSource.includes('urlPattern: "*://*/backend/v3/api/*"'));
-  assert.ok(smokeSource.includes('/backend/v3/api/app/list'));
+  assert.ok(smokeSource.includes('/backend/v3/api/platform/apps'));
   assert.ok(smokeSource.includes('Browser Smoke Admin App'));
+  assert.ok(smokeSource.includes('app-browser-smoke'));
+  assert.ok(!smokeSource.includes('app_browser_smoke'));
+});
+
+test('production browser smoke keeps current-user playground CORS compatible with app session tokens', () => {
+  const smokeSource = readFileSync(
+    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    'utf8',
+  );
+
+  assert.ok(smokeSource.includes('apiPlaygroundCorsHeaders'));
+  assert.ok(smokeSource.includes('sdkwork-access-token'));
+  assert.ok(smokeSource.includes('authorization, content-type, sdkwork-access-token, x-browser-smoke'));
 });
 
 test('verification plan includes portal api key runtime tests before broad suites', async () => {

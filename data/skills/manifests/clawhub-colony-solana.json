@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54542,
+  "uuid": "skill-clawhub-colony-solana",
+  "skillKey": "clawhub-colony-solana",
+  "name": "Colony Solana",
+  "summary": "Play Colony game on Solana — buy lands, upgrade, claim $OLO earnings, swap tokens via Jupiter. Full autonomous gameplay with strategy optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colony_solana",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxim Manylov",
+      "features": [
+        "Play Colony game on Solana — buy lands, upgrade, claim $OLO earnings, swap tokens via Jupiter",
+        "Full autonomous gameplay with strategy optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/colony-solana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/738898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "colony-solana",
+      "url": "https://clawhub.ai/skills/colony-solana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colony-solana",
+    "url": "https://clawhub.ai/skills/colony-solana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colony-solana-cff876d94296a081.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/colony-solana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-colony-solana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9321e566686f12cb765fbcd94e096f0ca88f4db544a13593dade9be9fa56feeb",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:59:15.754Z"
+}

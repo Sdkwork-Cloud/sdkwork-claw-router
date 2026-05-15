@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/money-never-sleep@0.5.10",
+  "version": "0.5.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_never_sleep",
+  "skill": {
+    "id": 28938,
+    "skillKey": "clawhub-money-never-sleep",
+    "name": "Money Never Sleep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-never-sleep",
+    "url": "https://clawhub.ai/skills/money-never-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-never-sleep-1da2a18879b364b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MNS (Money Never Sleep, Market Neutral Strategist) CLI skill for autonomous agents. Provides investment portfolio tracking, market sentiment analysis using C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sopaco",
+      "userId": "s17a75kt8fank19t6971cm2bs583jz3w",
+      "displayName": "Sopaco",
+      "image": "https://avatars.githubusercontent.com/u/15891288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.5.10",
+      "createdAt": 1776937641761,
+      "changelog": "- Removed example data files: assets/examples/portfolio-example.json and report-example.json.\n- Updated strategy documentation in SKILL.md, including new buy/sell matrix ranges, thresholds, and advanced agent workflow guidance.\n- Added sections on industry/portfolio risk analysis for agent workflows.\n- No breaking changes to core functionality; documentation and sample data cleanup only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc923fbb7fa96d5c79eca8a567b698057b4f8432b779a5d51f95a6c09a6d995"
+}

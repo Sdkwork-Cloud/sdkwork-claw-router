@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59616,
+  "uuid": "skill-clawhub-sop-refiner",
+  "skillKey": "clawhub-sop-refiner",
+  "name": "Sop Refiner",
+  "summary": "优化已有 SOP，删冗余、补异常路径、补回滚、补质量门槛。；use for sop, process, improvement workflows；do not use for 改变制度权限边界, 跳过安全检查.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sop_refiner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "优化已有 SOP，删冗余、补异常路径、补回滚、补质量门槛。；use for sop, process, improvement workflows；do not use for 改变制度权限."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sop-refiner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sop-refiner",
+      "url": "https://clawhub.ai/skills/sop-refiner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sop-refiner",
+    "url": "https://clawhub.ai/skills/sop-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sop-refiner-762835a05a97656b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sop-refiner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sop-refiner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc086fde44fec20b814547cbff8f7aea9dfbfca35f128c6a5d01e59ecc82e9a6",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:00:56.965Z"
+}

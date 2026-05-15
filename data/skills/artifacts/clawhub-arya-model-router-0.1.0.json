@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arya-model-router@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arya_model_router",
+  "skill": {
+    "id": 13156,
+    "skillKey": "clawhub-arya-model-router",
+    "name": "Arya Model Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arya-model-router",
+    "url": "https://clawhub.ai/skills/arya-model-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arya-model-router-eeb2e2e2249d8220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Efficiently routes tasks between cheap, default, and pro models using optional sub-agents and briefing to minimize token use and cost."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "staratheris",
+      "userId": "publishers:staratheris",
+      "displayName": "StarAtheris",
+      "image": "https://avatars.githubusercontent.com/u/86037915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1529,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770256343702,
+      "changelog": "Initial release: token-saver model router with overrides, feedback loop, and local briefing helper.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:718ba647d9da661df81cb57b56febc9b7bdf954aca7e489ca3fc3f44bd55d7e2"
+}

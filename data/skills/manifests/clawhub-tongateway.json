@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41512,
+  "uuid": "skill-clawhub-tongateway",
+  "skillKey": "clawhub-tongateway",
+  "name": "Tongateway",
+  "summary": "Access TON blockchain tools to check wallet info, tokens, send transfers, resolve .ton names, trade on DEX, and manage autonomous agent wallets.",
+  "version": "0.9.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tongateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Volodya Plotvinov",
+      "features": [
+        "Access TON blockchain tools to check wallet info, tokens, send transfers, resolve .ton names, t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tongateway@0.9.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10567518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tongateway",
+      "url": "https://clawhub.ai/skills/tongateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tongateway",
+    "url": "https://clawhub.ai/skills/tongateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tongateway-54a3a4692b4402fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tongateway@0.9.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tongateway-0.9.3.json",
+      "version": "0.9.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:069cfd172b0360cd1ca2b17dcbbc0c8042d6af8be153204dd5c61ba2817a06e8",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:48:24.393Z"
+}

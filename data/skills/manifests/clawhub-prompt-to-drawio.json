@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51131,
+  "uuid": "skill-clawhub-prompt-to-drawio",
+  "skillKey": "clawhub-prompt-to-drawio",
+  "name": "Prompt to Drawio",
+  "summary": "Generate and edit draw.io artifacts from natural-language prompts without a frontend. Use when the user asks for prompt-to-diagram workflows that need `.draw...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_to_drawio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhaofeng",
+      "features": [
+        "Generate and edit draw.io artifacts from natural-language prompts without a frontend",
+        "Use when the user asks for prompt-to-diagram workflows that need `.draw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-to-drawio@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12368329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-to-drawio",
+      "url": "https://clawhub.ai/skills/prompt-to-drawio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-to-drawio",
+    "url": "https://clawhub.ai/skills/prompt-to-drawio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-to-drawio-1ca6c5ae60032f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-to-drawio@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-to-drawio-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cedd683d69729331347880f588478e7e2e7fd469ca11811e7471bcaead7ff805",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:13:22.286Z"
+}

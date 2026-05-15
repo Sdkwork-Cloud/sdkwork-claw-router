@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41645,
+  "uuid": "skill-clawhub-quiver-ai-skill",
+  "skillKey": "clawhub-quiver-ai-skill",
+  "name": "QuiverAI Skill",
+  "summary": "Generate SVGs from text prompts and convert raster images (PNG/JPG/WebP) to SVG using QuiverAI's AI models. Use when user asks to create icons, illustrations...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiver_ai_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lolieatapple",
+      "features": [
+        "Generate SVGs from text prompts and convert raster images (PNG/JPG/WebP) to SVG using QuiverAI'.",
+        "Use when user asks to create icons, illustrations..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quiver-ai-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54833180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quiver-ai-skill",
+      "url": "https://clawhub.ai/skills/quiver-ai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiver-ai-skill",
+    "url": "https://clawhub.ai/skills/quiver-ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiver-ai-skill-53448b52a0496a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quiver-ai-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quiver-ai-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bda98131d97473077fd6f84efd814a7ddb1f60f87ac76085b504e35426cfc75",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:24:32.568Z"
+}

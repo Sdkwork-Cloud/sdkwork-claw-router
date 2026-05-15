@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20932,
+  "uuid": "skill-clawhub-wavespeed-image-upscaler",
+  "skillKey": "clawhub-wavespeed-image-upscaler",
+  "name": "WaveSpeedAI Image Upscaler",
+  "summary": "Upscale images to 2K, 4K, or 8K resolution using WaveSpeed AI's Image Upscaler. Takes an image URL and produces a higher-resolution version. Supports JPEG, P...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavespeed_image_upscaler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "C",
+      "features": [
+        "Upscale images to 2K, 4K, or 8K resolution using WaveSpeed AI's Image Upscaler",
+        "Takes an image URL and produces a higher-resolution version",
+        "Supports JPEG, P..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wavespeed-image-upscaler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23494160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wavespeed-image-upscaler",
+      "url": "https://clawhub.ai/skills/wavespeed-image-upscaler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavespeed-image-upscaler",
+    "url": "https://clawhub.ai/skills/wavespeed-image-upscaler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavespeed-image-upscaler-eecdca0f1e8baa81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wavespeed-image-upscaler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wavespeed-image-upscaler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:add81c2bba66c47f7fe79fd9af053d73f9392fa2bff94e9b47a5fa0b5875ba45",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:31:35.073Z"
+}

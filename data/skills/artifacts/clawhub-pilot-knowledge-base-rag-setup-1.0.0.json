@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-knowledge-base-rag-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_knowledge_base_rag_setup",
+  "skill": {
+    "id": 39535,
+    "skillKey": "clawhub-pilot-knowledge-base-rag-setup",
+    "name": "Pilot Knowledge Base Rag Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-knowledge-base-rag-setup",
+    "url": "https://clawhub.ai/skills/pilot-knowledge-base-rag-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-knowledge-base-rag-setup-cf85a3b6c4e2a139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a knowledge base RAG pipeline with 4 agents. Use this skill when: 1. User wants to set up a document ingestion and retrieval pipeline 2. User is confi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776908213036,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5123cfa1c2569d3de18d31e179f8711552cea58c0e3695c8b6e36cf51d042a2f"
+}

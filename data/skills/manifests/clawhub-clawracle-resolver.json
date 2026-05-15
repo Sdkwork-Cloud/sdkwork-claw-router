@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16661,
+  "uuid": "skill-clawhub-clawracle-resolver",
+  "skillKey": "clawhub-clawracle-resolver",
+  "name": "Clawracle Oracle Resolver",
+  "summary": "Enable AI agents to earn CLAWCLE tokens by resolving oracle queries on Monad. Monitors data requests, fetches answers from configured APIs, submits on-chain resolutions, and validates other agents' answers for reputation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawracle_resolver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deeakpan",
+      "features": [
+        "Enable AI agents to earn CLAWCLE tokens by resolving oracle queries on Monad",
+        "Monitors data requests, fetches answers from configured APIs, submits on-chain resolutions, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawracle-resolver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189696786?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawracle-resolver",
+      "url": "https://clawhub.ai/skills/clawracle-resolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawracle-resolver",
+    "url": "https://clawhub.ai/skills/clawracle-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawracle-resolver-40a1056e92122793.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawracle-resolver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawracle-resolver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5de4eb083c38185d5a4921bdcd7d36aef1a48a6e2453832a341acc89d5b15e1a",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T11:58:11.154Z"
+}

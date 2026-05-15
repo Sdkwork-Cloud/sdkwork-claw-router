@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61348,
+  "uuid": "skill-clawhub-quicker-connector",
+  "skillKey": "clawhub-quicker-connector",
+  "name": "quicker-connector",
+  "summary": "与 Quicker 自动化工具集成，读取、搜索和执行 Quicker 动作列表。支持 CSV 和数据库双数据源，智能匹配用户需求并调用本地 QuickerStarter 执行。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quicker_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awamwang",
+      "features": [
+        "与 Quicker 自动化工具集成，读取、搜索和执行 Quicker 动作列表。支持 CSV 和数据库双数据源，智能匹配用户需求并调用本地 QuickerStarter 执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quicker-connector@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8465781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quicker-connector",
+      "url": "https://clawhub.ai/skills/quicker-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quicker-connector",
+    "url": "https://clawhub.ai/skills/quicker-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quicker-connector-8535904840647918.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quicker-connector@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quicker-connector-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed6d291a8a60d7df3559aa4bc2c68c2409ba6f7b63a6809f132266ff262f2bf8",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:13:22.268Z"
+}

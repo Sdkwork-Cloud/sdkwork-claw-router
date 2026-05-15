@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40261,
+  "uuid": "skill-clawhub-cron-job-token-auditor",
+  "skillKey": "clawhub-cron-job-token-auditor",
+  "name": "Cron Job Token Auditor",
+  "summary": "Audits OpenClaw Gateway cron jobs from jobs.json (or CLI), classifies scheduled workloads by token cost (agent turns vs deterministic work), and suggests whe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_job_token_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "x3r081",
+      "features": [
+        "Audits OpenClaw Gateway cron jobs from jobs.json (or CLI), classifies scheduled workloads by to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-job-token-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91406935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-job-token-auditor",
+      "url": "https://clawhub.ai/skills/cron-job-token-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-job-token-auditor",
+    "url": "https://clawhub.ai/skills/cron-job-token-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-job-token-auditor-ba8bc6256d632e41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-job-token-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-job-token-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56936771876ed2bee9b8ad0f049d9e36813cde5f89363117d95a3291184fd6b3",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:47:44.692Z"
+}

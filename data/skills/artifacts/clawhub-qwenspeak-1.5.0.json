@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwenspeak@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwenspeak",
+  "skill": {
+    "id": 15265,
+    "skillKey": "clawhub-qwenspeak",
+    "name": "qwenspeak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwenspeak",
+    "url": "https://clawhub.ai/skills/qwenspeak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwenspeak-ea6d4cc409ad5b6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech generation via Qwen3-TTS over SSH. Preset voices, voice cloning, voice design. Use when the user wants to generate speech audio, clone voices,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psyb0t",
+      "userId": "s17fq93tmpky791n7516jcn08n83sfn2",
+      "displayName": "Ciprian Mandache",
+      "image": "https://avatars.githubusercontent.com/u/12934156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1024,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1771326552526,
+      "changelog": "**This release introduces a setup guide and major documentation updates.**\n\n- Added dedicated installation and deployment instructions in references/setup.md.\n- Simplified and clarified the main documentation, removing redundant detail.\n- Job handling is now explicitly sequential (one at a time, queued).\n- Job status terminology updated: jobs start as \"queued\" instead of \"pending\".\n- Documentation improved for file operations, YAML options, and parameters.\n- Housekeeping details added: jobs now auto-cleaned (1 day for completed, 1 week for all).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4941581a1cc94160049c48c0c64ed22eedb2717bcb55e99f2398a38c7af62c5"
+}

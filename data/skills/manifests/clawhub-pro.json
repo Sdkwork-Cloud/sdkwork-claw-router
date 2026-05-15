@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10376,
+  "uuid": "skill-clawhub-pro",
+  "skillKey": "clawhub-pro",
+  "name": "jash",
+  "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Doshi Jash Amit",
+      "features": [
+        "Guide for creating effective skills",
+        "This skill should be used when users want to create a new skill (or update an existing skill) t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257781439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pro",
+      "url": "https://clawhub.ai/skills/pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pro",
+    "url": "https://clawhub.ai/skills/pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pro-07ed400759a0f606.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0030efdf5e2e8907c0dd3a9a57d02313ee1e07ade32e940cf925ae8842d7c093",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T13:16:27.743Z"
+}

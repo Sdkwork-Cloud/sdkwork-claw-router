@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siyuan-skill@1.7.8",
+  "version": "1.7.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siyuan_skill",
+  "skill": {
+    "id": 69766,
+    "skillKey": "clawhub-siyuan-skill",
+    "name": "Siyuan Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siyuan-skill",
+    "url": "https://clawhub.ai/skills/siyuan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siyuan-skill-f5d2e30e8701149f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "思源笔记API转CLI工具，支持笔记本管理、文档操作、内容搜索、块控制。当用户操作思源笔记、管理笔记本、创建/更新/删除文档、搜索内容、管理块时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dazexcl",
+      "userId": "s17fzrdw3p744xbwv2kj40mfc583haz8",
+      "displayName": "daze",
+      "image": "https://avatars.githubusercontent.com/u/8541447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 756,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.7.8",
+      "createdAt": 1774753873525,
+      "changelog": "siyuan-skill v1.7.8\n\n- 更新版本号至1.7.8并重构版本管理\n- 将版本号集中管理，从package.json移至index.js导出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20da53ed279dac3147afeac859345957bbc8116701041b2c9b33a03b2ab0c90a"
+}

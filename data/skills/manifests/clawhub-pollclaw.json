@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11118,
+  "uuid": "skill-clawhub-pollclaw",
+  "skillKey": "clawhub-pollclaw",
+  "name": "Pollclaw",
+  "summary": "Deprecated: Pollclaw is now MeetLark. Use the coordinate-meeting skill instead for meeting scheduling. See https://meetlark.ai",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pollclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkelk",
+      "features": [
+        "Deprecated: Pollclaw is now MeetLark",
+        "Use the coordinate-meeting skill instead for meeting scheduling",
+        "See https://meetlark.ai"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pollclaw@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13288681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pollclaw",
+      "url": "https://clawhub.ai/skills/pollclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pollclaw",
+    "url": "https://clawhub.ai/skills/pollclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pollclaw-17821d6dd6efce08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pollclaw@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-pollclaw-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d249c5c66dd9d4baea8837e0908aa2a935faa962768c78b392d808d2c4c13b98",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T06:26:18.453Z"
+}

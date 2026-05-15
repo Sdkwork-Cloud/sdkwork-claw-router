@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35332,
+  "uuid": "skill-clawhub-aana-purchase-booking-guardrail",
+  "skillKey": "clawhub-aana-purchase-booking-guardrail",
+  "name": "AANA Purchase Booking Guardrail Skill",
+  "summary": "Ensures any purchase, booking, or financial commitment is verified for item, price, terms, authorization, payment privacy, and reversibility before proceeding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_purchase_booking_guardrail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Ensures any purchase, booking, or financial commitment is verified for item, price, terms, auth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-purchase-booking-guardrail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-purchase-booking-guardrail",
+      "url": "https://clawhub.ai/skills/aana-purchase-booking-guardrail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-purchase-booking-guardrail",
+    "url": "https://clawhub.ai/skills/aana-purchase-booking-guardrail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-purchase-booking-guardrail-2560346471907832.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-purchase-booking-guardrail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-purchase-booking-guardrail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d8bd6269d7a738add8d6e88e11dc745bbd17f044afa277b044f65820524a92e",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T22:53:16.297Z"
+}

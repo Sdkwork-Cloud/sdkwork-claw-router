@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cleanup-reporter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_reporter",
+  "skill": {
+    "id": 28293,
+    "skillKey": "clawhub-cleanup-reporter",
+    "name": "Cleanup Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-reporter",
+    "url": "https://clawhub.ai/skills/cleanup-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-reporter-da70b1be7bf887d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan your machine for large directories, duplicate files, and stale resume files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "malavyaraval",
+      "userId": "publishers:malavyaraval",
+      "displayName": "Malavya Raval",
+      "image": "https://avatars.githubusercontent.com/u/118731394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773606238984,
+      "changelog": "Initial release of Cleanup Reporter.\n\n- Scans local machine for large directories, duplicate files, and stale resume documents.\n- Provides a report in markdown format saved to ~/reports/.\n- Uses ncdu for disk usage analysis and rdfind for detecting duplicate files.\n- Operates fully locally with no external data transmission.\n- Data written includes only the generated report and temporary files from rdfind.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1888e26e342202e95145273a0de28ae45ffb861a1041f389c128f5b565ef62c2"
+}

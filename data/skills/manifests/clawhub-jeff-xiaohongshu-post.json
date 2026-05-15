@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69674,
+  "uuid": "skill-clawhub-jeff-xiaohongshu-post",
+  "skillKey": "clawhub-jeff-xiaohongshu-post",
+  "name": "小红书图文创作",
+  "summary": "小红书图文创作 Skill。根据主题、受众、核心观点进行网络搜索创作， 生成吸睛标题（≤20字）+ 小红书风格文案（≤1000字，含emoji和hashtag） + 3:4竖版封面图（文字突出+简约矢量背景）。 触发词：发小红书、生成小红书图文、小红书创作、发布小红书。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeff_xiaohongshu_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeffli2002",
+      "features": [
+        "小红书图文创作 Skill。根据主题、受众、核心观点进行网络搜索创作， 生成吸睛标题（≤20字）+ 小红书风格文案（≤1000字，含emoji和hashtag） + 3:4竖版封面图（文字突."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jeff-xiaohongshu-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212463878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jeff-xiaohongshu-post",
+      "url": "https://clawhub.ai/skills/jeff-xiaohongshu-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeff-xiaohongshu-post",
+    "url": "https://clawhub.ai/skills/jeff-xiaohongshu-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeff-xiaohongshu-post-c18c585311531109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jeff-xiaohongshu-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jeff-xiaohongshu-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15904cd566cc0fe1c12fdd702f34f090dc18c073e889724c1fd76cc48ebfbfc8",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T13:18:39.400Z"
+}

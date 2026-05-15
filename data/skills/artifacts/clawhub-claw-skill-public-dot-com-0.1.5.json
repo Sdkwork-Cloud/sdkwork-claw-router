@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-skill-public-dot-com@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_skill_public_dot_com",
+  "skill": {
+    "id": 9832,
+    "skillKey": "clawhub-claw-skill-public-dot-com",
+    "name": "public-dot-com"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-skill-public-dot-com",
+    "url": "https://clawhub.ai/skills/claw-skill-public-dot-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-skill-public-dot-com-5b8fb70274646b7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with your Public.com brokerage account using the Public.com API. Able to view portfolio, get stock quotes, place trades, and get account updates. To create a Public.com account head to public.com/signup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarricsookdeo",
+      "userId": "publishers:tarricsookdeo",
+      "displayName": "public-dot-com",
+      "image": "https://avatars.githubusercontent.com/u/53580980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2634,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 7,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1770824951168,
+      "changelog": "- Added a requirements.txt file to specify Python package dependencies.\n- Improved documentation in SKILL.md: clarified prerequisites, environment variable resolution order, and provided stronger security recommendations.\n- Updated metadata in SKILL.md (author and source).\n- Enhanced configuration instructions to cover both secure file location and environment variable options.\n- No breaking changes to script commands or API usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0092525ab4993e9d879e2032fc3f075126c154d10fbaeb2d2c608154098e6a15"
+}

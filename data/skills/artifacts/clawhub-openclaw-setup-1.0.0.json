@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_setup",
+  "skill": {
+    "id": 11350,
+    "skillKey": "clawhub-openclaw-setup",
+    "name": "OpenClaw Setup on AWS (Free Tier) - Memory Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-setup",
+    "url": "https://clawhub.ai/skills/openclaw-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-setup-2743f72a371b9268.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a complete OpenClaw personal AI assistant from scratch using Claude Code. Walks through AWS provisioning, OpenClaw installation, Telegram bot creation, API configuration, Google Workspace integration, security hardening, and all pow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j540",
+      "userId": "publishers:j540",
+      "displayName": "j540",
+      "image": "https://avatars.githubusercontent.com/u/5269048?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2150,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769921616264,
+      "changelog": "Initial release: complete OpenClaw setup skill for Claude Code. Walks through AWS provisioning, OpenClaw install, Telegram bot, API config, Google Workspace, security hardening, and workspace personalization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:53bba8d0b2d761fe8bc63e6785a3fb1e0c68ef7c9a800a98d33b9d714ea13023"
+}

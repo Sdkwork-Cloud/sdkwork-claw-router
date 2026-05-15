@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-report-flow@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_flow",
+  "skill": {
+    "id": 42910,
+    "skillKey": "clawhub-weekly-report-flow",
+    "name": "Weekly Report Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-flow",
+    "url": "https://clawhub.ai/skills/weekly-report-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-flow-2112cbbc28a97eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and submit weekly reports from Aliyun DevOps workitems via EMOP API. Use when asked to run the weekly report flow, backfill missing weeks, or explai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaojiangfeng",
+      "userId": "s178trajwcyda8azy8dc2mvzg583gwgt",
+      "displayName": "yaojiangfeng",
+      "image": "https://avatars.githubusercontent.com/u/67375195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774330873931,
+      "changelog": "Add configurable assignee name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84567b236d7ef33f0900c6b2337a1b3853bb7e818c04afb55045579ab0192ca2"
+}

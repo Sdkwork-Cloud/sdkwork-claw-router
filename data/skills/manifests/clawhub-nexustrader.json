@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33929,
+  "uuid": "skill-clawhub-nexustrader",
+  "skillKey": "clawhub-nexustrader",
+  "name": "nexustrader",
+  "summary": "NexusTrader trading assistant. Query crypto balances, positions, prices, and place orders on Binance, Bybit, OKX, Bitget, HyperLiquid.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexustrader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Quantweb3-Scott",
+      "features": [
+        "NexusTrader trading assistant",
+        "Query crypto balances, positions, prices, and place orders on Binance, Bybit, OKX, Bitget, Hype."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexustrader@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194187931?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexustrader",
+      "url": "https://clawhub.ai/skills/nexustrader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexustrader",
+    "url": "https://clawhub.ai/skills/nexustrader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexustrader-16c4bb2a2a85621b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexustrader@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexustrader-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c570e7eeaaa1831ed38d4d994d2bb8c9df711e6f4962a2250a91d3babf76866a",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:04:24.994Z"
+}

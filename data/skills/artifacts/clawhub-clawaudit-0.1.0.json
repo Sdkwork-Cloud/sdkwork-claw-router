@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawaudit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawaudit",
+  "skill": {
+    "id": 11488,
+    "skillKey": "clawhub-clawaudit",
+    "name": "Clawaudit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawaudit",
+    "url": "https://clawhub.ai/skills/clawaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawaudit-36a3b83131c57d83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official repo for clawaudit, coming soon as an automated security checker for repositories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tezatezaz",
+      "userId": "s175jdv04s9d22s190s8qsxwz1855fec",
+      "displayName": "te_za",
+      "image": "https://avatars.githubusercontent.com/u/112280042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1989,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770238144150,
+      "changelog": "Initial release of the clawaudit skill.\n\n- Published official repository for clawaudit.\n- Introduced project description and logo.\n- Provided early information about upcoming automated security checking features.\n- Included website link for future updates and access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b7556e13f11dfae1fcc6b9661f0c55034a8db942f181d1aff390433ab26c6f6"
+}

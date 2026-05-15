@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-pdf-assistant@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_pdf_assistant",
+  "skill": {
+    "id": 71237,
+    "skillKey": "clawhub-cn-pdf-assistant",
+    "name": "PDF文档处理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-pdf-assistant",
+    "url": "https://clawhub.ai/skills/cn-pdf-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-pdf-assistant-507fa8276c23e4cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF文档处理工具。本地处理PDF文件，支持文本提取、智能摘要、表格导出、关键词问答、PDF拆分。纯本地处理，保护文档隐私。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697283758,
+      "changelog": "Version 1.2.5\n\n- No file changes detected in this release.\n- Functionality and documentation remain the same as version 1.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51357dcf9a2dd6491f7143135c005298992d2855b8b8870dcae1cd82012a7776"
+}

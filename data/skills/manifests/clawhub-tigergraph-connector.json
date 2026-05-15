@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46017,
+  "uuid": "skill-clawhub-tigergraph-connector",
+  "skillKey": "clawhub-tigergraph-connector",
+  "name": "my skill -names",
+  "summary": "Connect to TigerGraph distributed graph database to query, load, and manage large-scale knowledge graph data using GSQL and REST++ APIs",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tigergraph_connector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Muhammad Asif",
+      "features": [
+        "Connect to TigerGraph distributed graph database to query, load, and manage large-scale knowled."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tigergraph-connector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101712610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tigergraph-connector",
+      "url": "https://clawhub.ai/skills/tigergraph-connector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tigergraph-connector",
+    "url": "https://clawhub.ai/skills/tigergraph-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tigergraph-connector-842bf987a2392090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tigergraph-connector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tigergraph-connector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47f0af0e0cb91463097d30df0647171535e20926a359cf65b5ae9f44ecf73cb3",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:35:30.959Z"
+}

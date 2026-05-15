@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37623,
+  "uuid": "skill-clawhub-local-tts-workflow",
+  "skillKey": "clawhub-local-tts-workflow",
+  "name": "Local Tts Workflow",
+  "summary": "OpenClaw text-to-speech workflow for an OpenAI-compatible TTS server, including remote/self-hosted deployments such as vLLM Omni. Use when configuring, testi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_tts_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mozi Arasaka",
+      "features": [
+        "OpenClaw text-to-speech workflow for an OpenAI-compatible TTS server, including remote/self-hos.",
+        "Use when configuring, testi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-tts-workflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70095417?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-tts-workflow",
+      "url": "https://clawhub.ai/skills/local-tts-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-tts-workflow",
+    "url": "https://clawhub.ai/skills/local-tts-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-tts-workflow-d9978f3d87cf6295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-tts-workflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-tts-workflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a1a2bac81f0cf321f6b09775ac4bb250ad64d9726ea1c1e7d70412d76574d90",
+      "artifactSizeBytes": 2828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:42:09.462Z"
+}

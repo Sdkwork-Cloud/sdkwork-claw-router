@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/demo-cutter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_cutter",
+  "skill": {
+    "id": 36909,
+    "skillKey": "clawhub-demo-cutter",
+    "name": "Demo Cutter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-cutter",
+    "url": "https://clawhub.ai/skills/demo-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-cutter-d27c641d9516985b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute product demo recording into 1080p trimmed demo clips just by typing what you need. Whether it's cutting long product demos down to tight, sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776594663005,
+      "changelog": "Demo Cutter — Initial Release\n\n- Instantly trims raw product demo videos into 1080p highlight clips based on user instructions, with no manual video editing required.\n- Simple workflow: upload footage, describe the edit, download the finished clip in about 30–60 seconds.\n- Supports file and URL uploads, various export formats (mp4, mov, webm, gif, mp3, etc.), and batch processing.\n- Built-in credit system with free starter tokens for new users.\n- Seamless API-based cloud rendering and real-time status updates.\n- Error handling for unsupported files, token issues, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dd91faba6b54b64a411eb8050851e78e87e7210187b6d9ee9d53795dd695ab0"
+}

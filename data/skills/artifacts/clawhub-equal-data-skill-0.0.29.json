@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equal-data-skill@0.0.29",
+  "version": "0.0.29",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equal_data_skill",
+  "skill": {
+    "id": 62833,
+    "skillKey": "clawhub-equal-data-skill",
+    "name": "Equal Data - China A Share Stock Data Service Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equal-data-skill",
+    "url": "https://clawhub.ai/skills/equal-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equal-data-skill-9488a83da1a2a345.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "equal-data-skill 金融数据服务- 提供覆盖A股5000+家上市公司的行情、财报、基本面、重大事件追踪(高管增减持, 重大合同, 股东变动,大宗交易, 限售解禁,定向增发,分红送转, 业绩预告)等多维度数据、股东分析、基金持仓与变动统计、知名机构动向追踪(包含 国家队,外资,私募基金,公募基金,信托..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zzzzz-ccccc",
+      "userId": "s171452geqn9y4rffzs23fpeed84nnvt",
+      "displayName": "Zzzzz-Ccccc",
+      "image": "https://avatars.githubusercontent.com/u/59817163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 704,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "0.0.29",
+      "createdAt": 1778310730719,
+      "changelog": "- 修正了Skill描述中的部分表述错误（如“定想增发”修正为“定向增发”、“限售解决”修正为“限售解禁”等）。\n- 快速上手文档 now 正确列举 equal_data 最低依赖版本为 0.0.12。\n- 清理了文档中的多余反引号错误。\n- 其余内容保持一致，无新增接口或结构调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb1f84d1bd52f37750d2045b397f5f0a4908afe91c1b74f9788e980bbf975062"
+}

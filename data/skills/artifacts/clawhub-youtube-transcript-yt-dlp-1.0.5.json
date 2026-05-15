@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-transcript-yt-dlp@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_yt_dlp",
+  "skill": {
+    "id": 10747,
+    "skillKey": "clawhub-youtube-transcript-yt-dlp",
+    "name": "YouTube Transcript (yt-dlp captions)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-yt-dlp",
+    "url": "https://clawhub.ai/skills/youtube-transcript-yt-dlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-yt-dlp-ce7097614d301847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract YouTube video transcripts from existing captions (manual or auto-generated) using yt-dlp, with optional timestamps and local SQLite caching. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itzsubhadip",
+      "userId": "publishers:itzsubhadip",
+      "displayName": "Subhadip Sarkar",
+      "image": "https://avatars.githubusercontent.com/u/81502164?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2388,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771062849244,
+      "changelog": "Metadata: make cookies env var optional (not required). Clarify cookie handling; no auto-load from skill dir.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f5aa20249154cf70a1abadae47f36a50365bb68778274993996f74a305b8918"
+}

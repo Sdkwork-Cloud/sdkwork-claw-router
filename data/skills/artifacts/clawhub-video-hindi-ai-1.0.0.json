@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-hindi-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_hindi_ai",
+  "skill": {
+    "id": 48546,
+    "skillKey": "clawhub-video-hindi-ai",
+    "name": "Video Hindi Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-hindi-ai",
+    "url": "https://clawhub.ai/skills/video-hindi-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-hindi-ai-f7dcd4eed3ef46fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute YouTube video in Hindi into 1080p Hindi captioned videos just by typing what you need. Whether it's adding Hindi subtitles to videos using AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777308170099,
+      "changelog": "- Initial release of Video Hindi AI.\n- Generate 1080p Hindi captioned videos from short Hindi video clips, including automated subtitle creation.\n- Simple workflow: upload your clip, describe your edits, and download the processed video in 30–60 seconds.\n- Handles common requests such as adding subtitles, exporting videos, checking credits, and tracking editing state.\n- Supports multiple video, audio, and image formats with a max file size of 500MB.\n- Automatic cloud backend setup, session management, and error handling for seamless use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2d1c1a7b3b4e00dc74a082fc0d899764d0f4512e8f6835178db0acf0de67075"
+}

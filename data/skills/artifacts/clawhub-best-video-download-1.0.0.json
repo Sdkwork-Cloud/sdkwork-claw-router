@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-video-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video_download",
+  "skill": {
+    "id": 44351,
+    "skillKey": "clawhub-best-video-download",
+    "name": "Best Video Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video-download",
+    "url": "https://clawhub.ai/skills/best-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-download-10e0d29f9305a5f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a YouTube video URL at 1080p into 1080p downloaded MP4 files just by typing what you need. Whether it's downloading online videos for offline use or qui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775976826251,
+      "changelog": "Initial release of Best Video Download — Download and Save Videos Locally:\n\n- Download YouTube and other online videos as 1080p MP4 files via simple prompts.\n- Automatic first-time setup with anonymous cloud token and backend connection.\n- Supports a wide range of input types including online links, video/audio/image files, and quick batch processing.\n- Intuitive keyword/action mapping for prompts: download, export, check credits, show timeline, and more.\n- Cloud-based rendering delivers MP4 exports in 20–40 seconds for short clips; up to 500MB file size.\n- Clear error handling for token, format, quota, and session issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cafd9ec2ef97b19d1b06cf451a2737cb1833f92b29507ae9b6f52cdf3c0ec11"
+}

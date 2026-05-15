@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/theo-confluence-reader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theo_confluence_reader",
+  "skill": {
+    "id": 61151,
+    "skillKey": "clawhub-theo-confluence-reader",
+    "name": "crawl requirement from confluence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theo-confluence-reader",
+    "url": "https://clawhub.ai/skills/theo-confluence-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theo-confluence-reader-373ae98a75d04b48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取Confluence需求文档并整理成指定格式。采集原则是\"忠实记录\"，而非\"需求分析\"。输出包括：{序号}_{标题}.md（每个页面一个Markdown文件）、requirement-meta.md（元信息）、images/（所有图片，文件中包含图片引用）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcxxtyhd",
+      "userId": "publishers:mcxxtyhd",
+      "displayName": "mcxxtyhd",
+      "image": "https://avatars.githubusercontent.com/u/18400683?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773642676369,
+      "changelog": "second version - remove security info",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9f6950b40edcd2e68035139adbe9e0babcd8984eb28d3a64e5869e2c553723e"
+}

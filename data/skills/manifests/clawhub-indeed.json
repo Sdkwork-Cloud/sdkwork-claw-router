@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41315,
+  "uuid": "skill-clawhub-indeed",
+  "skillKey": "clawhub-indeed",
+  "name": "Indeed",
+  "summary": "Indeed is the world's #1 job search platform, aggregating over 600 million unique resumes and processing more than 250 million new job listings monthly. Owne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indeed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Indeed is the world's #1 job search platform, aggregating over 600 million unique resumes and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indeed@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indeed",
+      "url": "https://clawhub.ai/skills/indeed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indeed",
+    "url": "https://clawhub.ai/skills/indeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indeed-d888a3e4ea95d404.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indeed@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-indeed-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deeaed54916ec63ed226e615e5d82a985bbbc33fd996eb00931ca59520a4e23e",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T14:04:40.986Z"
+}

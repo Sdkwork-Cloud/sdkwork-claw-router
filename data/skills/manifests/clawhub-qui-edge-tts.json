@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46220,
+  "uuid": "skill-clawhub-qui-edge-tts",
+  "skillKey": "clawhub-qui-edge-tts",
+  "name": "qui-edge-tts",
+  "summary": "Text-to-speech conversion using SkillBoss API Hub TTS service for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_edge_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Text-to-speech conversion using SkillBoss API Hub TTS service for generating audio from text",
+        "Supports multiple voices, languages, speed adjustment, pitch co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-edge-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-edge-tts",
+      "url": "https://clawhub.ai/skills/qui-edge-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-edge-tts",
+    "url": "https://clawhub.ai/skills/qui-edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-edge-tts-1be2330c1da8a0a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-edge-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-edge-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc496bb6b5d308c3ef242c9ec007efa505a5673951e4234bbcc70e856ca89064",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:40:55.965Z"
+}

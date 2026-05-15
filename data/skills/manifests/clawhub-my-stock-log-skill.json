@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63321,
+  "uuid": "skill-clawhub-my-stock-log-skill",
+  "skillKey": "clawhub-my-stock-log-skill",
+  "name": "my_stock_log_skill",
+  "summary": "当且仅当用户明确提到“分析日志多维表”或“my_stock_log_skill”时触发。专门用于美股分析报告结论在钉钉多维表（dingtalk-ai-table）中的结构化归档（新增）与检索（查询）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_log_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "当且仅当用户明确提到“分析日志多维表”或“my_stock_log_skill”时触发。专门用于美股分析报告结论在钉钉多维表（dingtalk-ai-table）中的结构化归档（新增）与检索."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-stock-log-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-stock-log-skill",
+      "url": "https://clawhub.ai/skills/my-stock-log-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-log-skill",
+    "url": "https://clawhub.ai/skills/my-stock-log-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-log-skill-d1126c7d25d85f70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-stock-log-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-log-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac4b3bdee1b9a582e04e91563533849084567345176b6d308d1df64c6dcc46ec",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:13:03.867Z"
+}

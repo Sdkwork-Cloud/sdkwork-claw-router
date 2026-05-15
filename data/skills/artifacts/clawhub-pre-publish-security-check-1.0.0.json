@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pre-publish-security-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_publish_security_check",
+  "skill": {
+    "id": 58897,
+    "skillKey": "clawhub-pre-publish-security-check",
+    "name": "Pre-Publish Security Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-publish-security-check",
+    "url": "https://clawhub.ai/skills/pre-publish-security-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-publish-security-check-760a8f44fd453800.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill 发布前安全检查工具。在发布 skill 到 ClawHub 前，自动扫描敏感信息（API Key、Token、私钥、邮箱、手机号、精确坐标等）。Use before publishing any skill to prevent leaking private data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vlalamoon",
+      "userId": "s17cdse0x5pj8mk3ac01bypyhx83e1n9",
+      "displayName": "vlalamoon",
+      "image": "https://avatars.githubusercontent.com/u/56936308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774363093971,
+      "changelog": "首次发布：Skill 发布前敏感信息扫描工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d26f757df59d3540ee4bdd54bef66305749cbdd9ad0f7819c1f8678edd0000c7"
+}

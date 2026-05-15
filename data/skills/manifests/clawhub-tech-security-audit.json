@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14859,
+  "uuid": "skill-clawhub-tech-security-audit",
+  "skillKey": "clawhub-tech-security-audit",
+  "name": "Tech Security Audit",
+  "summary": "Performs local network scans using Nmap to detect vulnerabilities, identify service versions, and fingerprint operating systems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JacquesLauren",
+      "features": [
+        "Performs local network scans using Nmap to detect vulnerabilities, identify service versions, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120764445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-security-audit",
+      "url": "https://clawhub.ai/skills/tech-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-security-audit",
+    "url": "https://clawhub.ai/skills/tech-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-security-audit-cc320d79bad4e20d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9fa55834244de44ab48d380a508b1ec80f1028ac6318e6f9286c7433bcc47b7",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T04:04:08.828Z"
+}

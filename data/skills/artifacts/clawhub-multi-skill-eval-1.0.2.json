@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-skill-eval@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_skill_eval",
+  "skill": {
+    "id": 61959,
+    "skillKey": "clawhub-multi-skill-eval",
+    "name": "Multi-Skill-Eval | 集成化技能评估系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-skill-eval",
+    "url": "https://clawhub.ai/skills/multi-skill-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-skill-eval-41def506e77cb8fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "集成化多方法技能评估系统。整合静态分析(skill-assessment)、Rubric质量打分(skill-evaluator)和自主基准测试(skill-eval)。用于全面评估、对比、审计或改进OpenClaw技能。覆盖文档完整性、代码质量、25项Rubric打分、多模型基准测试。 触发词(中文): 评估技..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangzairong",
+      "userId": "s176bzwbby3efc6tckjvf8n8jn83shnx",
+      "displayName": "wangzairong",
+      "image": "https://avatars.githubusercontent.com/u/23448989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777209138898,
+      "changelog": "- Added CLAWHUB_PUBLISH.md file to the project.\n- No changes to core functionality or evaluation methods.\n- Documentation and usage instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f10958fca66813f5f7cd0ff93f4589c9aaa32f764a95983db2f8873ccbf705e9"
+}

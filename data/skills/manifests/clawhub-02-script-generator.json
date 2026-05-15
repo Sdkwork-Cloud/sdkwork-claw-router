@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28197,
+  "uuid": "skill-clawhub-02-script-generator",
+  "skillKey": "clawhub-02-script-generator",
+  "name": "02 Script Generator",
+  "summary": "Automatically converts novel IP info into concise, platform-compliant short drama scripts with controlled pacing, conflict, and 60-second episode format.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.02_script_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GHwyever",
+      "features": [
+        "Automatically converts novel IP info into concise, platform-compliant short drama scripts with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/02-script-generator@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177743476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "02-script-generator",
+      "url": "https://clawhub.ai/skills/02-script-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "02-script-generator",
+    "url": "https://clawhub.ai/skills/02-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/02-script-generator-f5fe4bf0476ab665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/02-script-generator@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-02-script-generator-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83b8609623957d8ba556573b6fa2f79f7ca60e7a0c6407a333121ad8a6e22471",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T09:18:51.342Z"
+}

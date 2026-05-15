@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-daily@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_daily",
+  "skill": {
+    "id": 14808,
+    "skillKey": "clawhub-ai-daily",
+    "name": "Ai Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-daily",
+    "url": "https://clawhub.ai/skills/ai-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-daily-3140e41b0f144cbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches AI news from smol.ai RSS. Use when user asks about AI news or daily tech updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hjw21century",
+      "userId": "publishers:hjw21century",
+      "displayName": "hjw21century",
+      "image": "https://avatars.githubusercontent.com/u/7070409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 836,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770997644956,
+      "changelog": "Initial release — Fetches and displays daily AI industry news from the smol.ai RSS feed.\n\n- Supports queries by relative dates (e.g., today, yesterday), absolute dates (YYYY-MM-DD), and available date ranges.\n- Provides clear error handling and suggestions when news is unavailable for the requested date.\n- Shows results in a simple markdown format, including source attribution.\n- Command-line tools for fetching news by date or range, with configurable RSS feed URL and no API keys needed.\n- Includes troubleshooting tips and references for output formatting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e66f4ca2fbedae0f416562793b4b476d472b5a4146ac2c7ce8cd8b0019d1e7a9"
+}

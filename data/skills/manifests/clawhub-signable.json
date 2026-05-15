@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25282,
+  "uuid": "skill-clawhub-signable",
+  "skillKey": "clawhub-signable",
+  "name": "Signable",
+  "summary": "Signable integration. Manage Documents, Templates, Users, Teams. Use when the user wants to interact with Signable data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Signable integration",
+        "Manage Documents, Templates, Users, Teams",
+        "Use when the user wants to interact with Signable data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signable@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signable",
+      "url": "https://clawhub.ai/skills/signable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signable",
+    "url": "https://clawhub.ai/skills/signable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signable-4954a4adb67b7ff2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signable@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-signable-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c7fc7fd9162317a465392b6ebbf8679d7028e562835e65166ca7775f95f0889",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:31.859Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67932,
+  "uuid": "skill-clawhub-tool-registry",
+  "skillKey": "clawhub-tool-registry",
+  "name": "Tool Registry",
+  "summary": "工具注册与发现系统。基于Token匹配的工具路由，支持权限控制和子代理工具白名单。 当用户说\"工具有哪些\"、\"搜索工具\"、\"查找技能\"、\"工具路由\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_registry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xhmqq616",
+      "features": [
+        "工具注册与发现系统。基于Token匹配的工具路由，支持权限控制和子代理工具白名单。 当用户说\"工具有哪些\"、\"搜索工具\"、\"查找技能\"、\"工具路由\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tool-registry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230696037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tool-registry",
+      "url": "https://clawhub.ai/skills/tool-registry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-registry",
+    "url": "https://clawhub.ai/skills/tool-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-registry-f5e28e03ce9be602.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tool-registry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tool-registry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:496ffc39816000fa0975964a60bb418574615463faf05008e9222d61ab3fb5a6",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:33:36.889Z"
+}

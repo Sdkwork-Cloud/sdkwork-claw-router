@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soma@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soma",
+  "skill": {
+    "id": 50794,
+    "skillKey": "clawhub-soma",
+    "name": "Soma"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soma",
+    "url": "https://clawhub.ai/skills/soma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soma-80d078c7dc84b074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guide for participating in the SOMA network — a decentralized system that trains a foundation model through competition. Provides data submission work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cfuaqz",
+      "userId": "s177h2k5enrr0swpj4b591z5sd83h6qd",
+      "displayName": "Cfuaqz",
+      "image": "https://avatars.githubusercontent.com/u/173966602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774357018183,
+      "changelog": "Declare required env vars and security notes, add merge_coins docs, deploy+trigger flow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d64ba2af9bbe35579b1f2cfb40f91dede2c54c791fafda53d5e8d78594d315e4"
+}

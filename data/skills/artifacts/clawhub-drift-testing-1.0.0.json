@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drift-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drift_testing",
+  "skill": {
+    "id": 45850,
+    "skillKey": "clawhub-drift-testing",
+    "name": "drift-testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drift-testing",
+    "url": "https://clawhub.ai/skills/drift-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drift-testing-451287cbbb097bc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verifies API implementations against OpenAPI specifications using the Drift CLI, catching spec drift and supporting Bi-Directional Contract Testing (BDCT). U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinrvaz",
+      "userId": "s17d26vzq6j3bkdvf2xsdqayad83gyp1",
+      "displayName": "Kevin Rohan Vaz",
+      "image": "https://avatars.githubusercontent.com/u/36708857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776194443584,
+      "changelog": "drift-testing 1.0.0\n\n- Initial release of the drift-testing skill.\n- Verifies API implementations against OpenAPI specs using the Drift CLI.\n- Supports Bi-Directional Contract Testing (BDCT), spec drift detection, and conformance verification.\n- Includes scripts for endpoint extraction, coverage checking, test running feedback loops, and mock server setup.\n- Comprehensive reference links and usage examples provided for setup, running tests, and achieving full test coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2291a331727d5797c0f1b9c211fc27a439d2dd27df340bf2063f4fd85bcb6e2a"
+}

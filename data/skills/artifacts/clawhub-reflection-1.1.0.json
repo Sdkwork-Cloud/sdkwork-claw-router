@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reflection@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reflection",
+  "skill": {
+    "id": 8821,
+    "skillKey": "clawhub-reflection",
+    "name": "Self Reflection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reflection",
+    "url": "https://clawhub.ai/skills/reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reflection-f30409c51a78ed69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learns when to stop and review. Self-critiques before showing you, fewer revision rounds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5904,
+      "installsAllTime": 34,
+      "installsCurrent": 32,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772063524684,
+      "changelog": "Major rewrite. Visual workflow, pattern detection system, proactive lesson injection, and multi-trigger architecture.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2349ac33e7f4919b671f30fa7dd489fe1fe344b86c9008694a0e2cb933f6712"
+}

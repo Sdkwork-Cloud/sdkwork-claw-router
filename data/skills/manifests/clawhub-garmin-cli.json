@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11527,
+  "uuid": "skill-clawhub-garmin-cli",
+  "skillKey": "clawhub-garmin-cli",
+  "name": "Garmin Cli",
+  "summary": "Access Garmin Connect health, fitness, and activity data via a non-interactive CLI.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Voydz",
+      "features": [
+        "Access Garmin Connect health, fitness, and activity data via a non-interactive CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-cli@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/373533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-cli",
+      "url": "https://clawhub.ai/skills/garmin-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-cli",
+    "url": "https://clawhub.ai/skills/garmin-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-cli-06f6cd0bcade71c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-cli@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-cli-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9ae1988e7feafb6ee224cdc302043fcd4c16e4137e0d53a1c290f6a4f4303f2",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T16:28:25.701Z"
+}

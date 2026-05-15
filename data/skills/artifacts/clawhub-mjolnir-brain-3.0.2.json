@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mjolnir-brain@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjolnir_brain",
+  "skill": {
+    "id": 61630,
+    "skillKey": "clawhub-mjolnir-brain",
+    "name": "雷神之脑 v3.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjolnir-brain",
+    "url": "https://clawhub.ai/skills/mjolnir-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjolnir-brain-ee71ec79a91eb8ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 自进化记忆系统。核心功能 100% 本地运行 (纯 Markdown+JSON)。网络备份/节点通信为可选 opt-in，需手动配置凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "king6381",
+      "userId": "s1756st9wf8papj1av4nw6whnd83gafk",
+      "displayName": "king6381",
+      "image": "https://avatars.githubusercontent.com/u/127765961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1774581827572,
+      "changelog": "v3.0.2 最终修复版 - Unicode 字符彻底清理 + 安全声明完善",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bac2b50fdb2a425eb1ce856cb5c80b35f54b0ce0d459b8043085fee014505e7"
+}

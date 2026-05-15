@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kb-archiver@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kb_archiver",
+  "skill": {
+    "id": 69702,
+    "skillKey": "clawhub-kb-archiver",
+    "name": "知识库归档系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kb-archiver",
+    "url": "https://clawhub.ai/skills/kb-archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kb-archiver-a348c97505975a4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能本地知识库归档系统 v1.1.0。支持 AI 智能分类、批量归档、全文搜索、统计报告。 自动将文件分类归档到本地知识库，提取全文索引支持秒级搜索。 小文件存本地、大文件可对接云存储。支持 Excel/Word/PPT/PDF/TXT 等格式。 当用户需要：归档文件、建立知识库、全文检索文档内容、管理大量工作文..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "141553",
+      "userId": "s17fp65kgxgtqfr0v2kkge2bf583tvm3",
+      "displayName": "141553",
+      "image": "https://avatars.githubusercontent.com/u/45425207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777197230036,
+      "changelog": "v1.1.0: AI智能分类、批量归档、搜索命令、统计命令、文档优化升级",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e91e5ac4d3992b27bbfa16f7d7fdb3d3523fc299551a7f8cddbbc228862cb18"
+}

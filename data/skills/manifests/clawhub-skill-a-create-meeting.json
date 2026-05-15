@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67741,
+  "uuid": "skill-clawhub-skill-a-create-meeting",
+  "skillKey": "clawhub-skill-a-create-meeting",
+  "name": "skill-a-create-meeting",
+  "summary": "【会议创建总入口，必须优先触发】当用户提出任何新建会议、开会、约会、安排会议、预约会议、组会、周会、例会、讨论会、紧急会议、跨项目会议、循环会议相关需求时，必须优先使用此技能，而不要直接调用 tencent-meeting-skill。OpenClaw 负责意图分析和参数补全；本技能作为会议创建总控入口，负责协调...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_a_create_meeting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myd2002",
+      "features": [
+        "【会议创建总入口，必须优先触发】当用户提出任何新建会议、开会、约会、安排会议、预约会议、组会、周会、例会、讨论会、紧急会议、跨项目会议、循环会议相关需求时，必须优先使用此技能，而不要直接调用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-a-create-meeting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165788146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-a-create-meeting",
+      "url": "https://clawhub.ai/skills/skill-a-create-meeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-a-create-meeting",
+    "url": "https://clawhub.ai/skills/skill-a-create-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-a-create-meeting-4eceee6c846d4da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-a-create-meeting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-a-create-meeting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7c1897572182187a95cee8c49bda8089c4c0d1238fe5291ac6c680bda2acd90",
+      "artifactSizeBytes": 2785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:33:45.294Z"
+}

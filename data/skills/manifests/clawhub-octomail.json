@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19945,
+  "uuid": "skill-clawhub-octomail",
+  "skillKey": "clawhub-octomail",
+  "name": "OctoMail",
+  "summary": "Agent email via JSON API. Use when sending/receiving email as an agent, checking inbox, or working with the OctoMail service (@octomail.ai addresses).",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octomail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason Zhu",
+      "features": [
+        "Agent email via JSON API",
+        "Use when sending/receiving email as an agent, checking inbox, or working with the OctoMail serv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/octomail@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13504067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "octomail",
+      "url": "https://clawhub.ai/skills/octomail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octomail",
+    "url": "https://clawhub.ai/skills/octomail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octomail-56c783499b647930.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/octomail@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-octomail-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ffa09e330fa6010c0c25e66fe0d1d5cf2753656b2064387727e52018d01056a",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T10:46:01.082Z"
+}

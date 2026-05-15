@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61284,
+  "uuid": "skill-clawhub-mini-token-remains",
+  "skillKey": "clawhub-mini-token-remains",
+  "name": "mini-token-remains",
+  "summary": "查询 MiniMax API Token 使用情况，支持小时级/周级用量监控，秒级完成。触发词：查 token、查看额度、剩余次数、token 余额。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_token_remains",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vincent",
+      "features": [
+        "查询 MiniMax API Token 使用情况，支持小时级/周级用量监控，秒级完成。触发词：查 token、查看额度、剩余次数、token 余额。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mini-token-remains@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36078463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mini-token-remains",
+      "url": "https://clawhub.ai/skills/mini-token-remains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-token-remains",
+    "url": "https://clawhub.ai/skills/mini-token-remains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-token-remains-be35e2fccfc27651.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mini-token-remains@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mini-token-remains-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f1e1e7fec1a81ede59ba0e3d8d651cedabec37bb305f60d749bee9ede5f74a4",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:00:04.425Z"
+}

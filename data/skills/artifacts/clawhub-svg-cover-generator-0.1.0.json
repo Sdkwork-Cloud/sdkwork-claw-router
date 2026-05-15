@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/svg-cover-generator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svg_cover_generator",
+  "skill": {
+    "id": 32706,
+    "skillKey": "clawhub-svg-cover-generator",
+    "name": "Svg Cover Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svg-cover-generator",
+    "url": "https://clawhub.ai/skills/svg-cover-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svg-cover-generator-e8d10dae7598a5a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create polished, editable SVG cover artwork for reports, articles, slide decks, social cards, ebook covers, posters, and landing-page hero images. Use when a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nimachu",
+      "userId": "s176sa0panxanbc9h2g1sxajrs83kjbr",
+      "displayName": "Nima Chu",
+      "image": "https://avatars.githubusercontent.com/u/210636628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774234174606,
+      "changelog": "Initial release of svg-cover-generator.\n\n- Generates polished, editable SVG cover artwork for various use cases (reports, articles, social cards, posters, etc.).\n- Guides users through format, dimension, content, and mood intake, with sensible defaults.\n- Follows clear design and composition rules to ensure usability and customization.\n- Ensures output SVGs are self-contained, text-editable, and visually strong.\n- Provides validation steps for structure, contrast, and completeness before delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d635a4b2959ecb0310410ac912584b1033f8d0aeec294ac6c4cb6ae723541c08"
+}

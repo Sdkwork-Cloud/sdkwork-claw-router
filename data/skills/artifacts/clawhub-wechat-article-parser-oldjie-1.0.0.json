@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-parser-oldjie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_parser_oldjie",
+  "skill": {
+    "id": 73429,
+    "skillKey": "clawhub-wechat-article-parser-oldjie",
+    "name": "微信公众号文章解析器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-parser-oldjie",
+    "url": "https://clawhub.ai/skills/wechat-article-parser-oldjie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-parser-oldjie-5ea6fbda07f25f44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析微信公众号文章，提取核心要点和干货。当用户发送公众号文章链接时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oldjie",
+      "userId": "s173rz58c9t5rk7644b4jjk69x85w1sb",
+      "displayName": "oldjie",
+      "image": "https://avatars.githubusercontent.com/u/162123700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777646094872,
+      "changelog": "Initial release of WeChat Article Parser.\n\n- Parses WeChat Official Account articles to extract key points and practical content.\n- Adapts summary style based on article type (e.g., news, product launch, analysis, narrative).\n- Prioritizes preservation of context, background, examples, data, and author’s subtle viewpoints.\n- Output includes precise details (names, figures, links, prices) and avoids speculation or excessive summarization.\n- Provides clear principles and template for structuring extracted insights.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b088879ba1fb8df943cb539506ded24f7a56ad07bf7fc83b04752d0525f0082c"
+}

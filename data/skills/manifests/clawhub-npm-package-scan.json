@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29582,
+  "uuid": "skill-clawhub-npm-package-scan",
+  "skillKey": "clawhub-npm-package-scan",
+  "name": "NPM Package Scanner",
+  "summary": "Scan npm packages used in a repository for risk, maintenance health, and upgrade concerns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.npm_package_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geoffrey-xiao",
+      "features": [
+        "Scan npm packages used in a repository for risk, maintenance health, and upgrade concerns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/npm-package-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65010344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "npm-package-scan",
+      "url": "https://clawhub.ai/skills/npm-package-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "npm-package-scan",
+    "url": "https://clawhub.ai/skills/npm-package-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/npm-package-scan-6192429eca04b993.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/npm-package-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-npm-package-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84248e6251c7e9bda475113ccbf2b090a621c58df208806a2ab1247b82628ea7",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:54:21.948Z"
+}

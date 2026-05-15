@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ibkr-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ibkr_openclaw",
+  "skill": {
+    "id": 30799,
+    "skillKey": "clawhub-ibkr-openclaw",
+    "name": "IBKR + OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ibkr-openclaw",
+    "url": "https://clawhub.ai/skills/ibkr-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ibkr-openclaw-e9c9773fc5f7bd78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to Interactive Brokers via IB Gateway Docker. Live portfolio data, real-time quotes, historical K-lines, technical analysis, and Telegram al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amuletxheart",
+      "userId": "s174py3nsjj923av72z2h6yx8983t72r",
+      "displayName": "Xinshen",
+      "image": "https://avatars.githubusercontent.com/u/5906627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774812007332,
+      "changelog": "- Initial release of ibkr-openclaw.\n- Enables OpenClaw to connect with Interactive Brokers via IB Gateway Docker.\n- Provides live portfolio data, real-time quotes, historical K-line data, and technical indicators, all in read-only mode.\n- Supports Telegram alerts and automated monitoring features.\n- Includes full setup guide for Docker-based IB Gateway and Python integration with `ib_async`.\n- Designed for secure, read-only portfolio monitoring and analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9275229d670869cae742fc82c7066ca9dbb1d054edc53fc61721df254a0146ef"
+}

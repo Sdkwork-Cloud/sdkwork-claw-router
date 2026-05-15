@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-nano-images@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_nano_images",
+  "skill": {
+    "id": 21790,
+    "skillKey": "clawhub-gemini-nano-images",
+    "name": "Gemini Nano Images"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-nano-images",
+    "url": "https://clawhub.ai/skills/gemini-nano-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-nano-images-8e420c1ae3979208.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ultra-realistic images and Instagram content using Gemini 2.0 Flash Experimental. Use when creating photorealistic images, social media content, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vitja1988",
+      "userId": "publishers:vitja1988",
+      "displayName": "NEO",
+      "image": "https://avatars.githubusercontent.com/u/229977324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772490378534,
+      "changelog": "Ultra-realistic image generation with Gemini 2.5 Flash Image + Instagram content creation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac9fd22b02b0575868ea8a2e02d3a24a4e0986d5a0e83b167dfe35526a59c32f"
+}

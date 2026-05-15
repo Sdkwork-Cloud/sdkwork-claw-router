@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "agentic-commerce-forthecult",
+    "displayName": "Agentic Commerce — Lifestyle, Wellness, & Gifts",
+    "summary": "Agentic Commerce skills enables agents to autonomously browse and search for quality lifestyle, wellness, and tech products and gifts, view details, create o...",
+    "tags": {
+      "latest": "1.0.5",
+      "commerce": "1.0.0",
+      "eCommerce": "1.0.0",
+      "shopping": "1.0.0",
+      "solana": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "createdAt": 1771457010464,
+    "updatedAt": 1778386718845
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1771482699619,
+    "changelog": "- Clarified that no API key or environment variables are needed; shopping and order status work without authentication.\n- Added stricter guidance: only send X-Moltbook-Identity for agent-specific endpoints (/agent/me, /agent/me/orders, /agent/me/preferences) and only if the agent runtime provides the token.\n- Emphasized that identity tokens must never be inferred, generated, or sent unless explicitly provided by the agent environment.\n- Improved compatibility and identity instructions to prevent accidental credential misuse.\n- Enhanced documentation for agent-only endpoint usage and routine flows.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bythecult",
+    "userId": "publishers:bythecult",
+    "displayName": "For the Cult",
+    "image": "https://avatars.githubusercontent.com/u/259509461?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386718845
+  }
+}

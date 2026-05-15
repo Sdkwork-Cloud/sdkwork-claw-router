@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cf-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cf_manager",
+  "skill": {
+    "id": 19291,
+    "skillKey": "clawhub-cf-manager",
+    "name": "Cloudflare Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cf-manager",
+    "url": "https://clawhub.ai/skills/cf-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cf-manager-fbeeb2ec31ec353c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Cloudflare via API — DNS zones and records, page rules, SSL/TLS settings, caching, firewall rules, Workers, and analytics. Free tier includes DNS, CDN, DDoS protection, and SSL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rexlunae",
+      "userId": "publishers:rexlunae",
+      "displayName": "rexlunae",
+      "image": "https://avatars.githubusercontent.com/u/6726134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770688970874,
+      "changelog": "Initial release: Manage Cloudflare infrastructure from the command line.\n\n- Control DNS zones and records, page rules, firewall rules, SSL/TLS settings, Workers, and analytics via Cloudflare API.\n- Offers detailed command examples for tasks including DNS management, cache purging, proxy settings, and page redirects.\n- Provides setup instructions for authentication using API tokens.\n- Includes reference guides for DNS record types, SSL modes, common workflows (domain migration, email setup), and DNS proxy options.\n- Links to official API documentation and highlights features included in Cloudflare's free plan.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54b06945ed660685f17520267fa7694bd07f0603fa68d7bae1b5e2d832e04173"
+}

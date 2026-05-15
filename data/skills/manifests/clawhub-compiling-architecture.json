@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40121,
+  "uuid": "skill-clawhub-compiling-architecture",
+  "skillKey": "clawhub-compiling-architecture",
+  "name": "Compiling Architecture",
+  "summary": "Use when: user wants to select architecture patterns, compile a spec, iterate on constraints/NFRs, audit why patterns were selected/rejected, or finalise an...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compiling_architecture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inetgas",
+      "features": [
+        "Use when: user wants to select architecture patterns, compile a spec, iterate on constraints/NF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compiling-architecture@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271354125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compiling-architecture",
+      "url": "https://clawhub.ai/skills/compiling-architecture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compiling-architecture",
+    "url": "https://clawhub.ai/skills/compiling-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compiling-architecture-6875c399bdf0ee54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compiling-architecture@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-compiling-architecture-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66b5003272a6529c7123a42fa531f9e148d32c7cd94d59c750280f9553440ed0",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:04:25.948Z"
+}

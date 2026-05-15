@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_parser",
+  "skill": {
+    "id": 67561,
+    "skillKey": "clawhub-competitor-parser",
+    "name": "Competitor Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-parser",
+    "url": "https://clawhub.ai/skills/competitor-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-parser-69046e7433ec45d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Автоматический сбор и анализ данных о конкурентах в робототехнике из Google и базы знаний с выводом рейтинга, цен и адресов."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larthe",
+      "userId": "s17dkm69hjehx5h951cjvv844x83vreb",
+      "displayName": "larthe",
+      "image": "https://avatars.githubusercontent.com/u/7958413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784639945,
+      "changelog": "Initial release of competitor-parser skill.\n\n- Added automated collection and analysis of competitors in robotics.\n- Supports data aggregation from Google Search, Яндекс.Карты, 2ГИС, VK, and internal sources.\n- Provides summary, pricing, and location analytics based on parsed data.\n- Outputs results in both JSON and CSV formats.\n- Includes command-line instructions and Telegram integration for report delivery.\n- Known limitations: Restricted access to Яндекс.Карты, 2ГИС, and VK without additional setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51d8575f3b348a7281b7141b811b51813d544a34d40d3d7ef9b17fa8125dee20"
+}

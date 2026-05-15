@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43508,
+  "uuid": "skill-clawhub-claw-def",
+  "skillKey": "clawhub-claw-def",
+  "name": "Claw Def",
+  "summary": "Provides AI-driven security protection for OpenClaw with threat detection, risk alerts, real-time interception, file and permission management, and security...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_def",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cubeclaw",
+      "features": [
+        "Provides AI-driven security protection for OpenClaw with threat detection, risk alerts, real-ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-def@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266736751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-def",
+      "url": "https://clawhub.ai/skills/claw-def"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-def",
+    "url": "https://clawhub.ai/skills/claw-def",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-def-1bb7b7865e5716ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-def@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-def-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a4cb56966c80f68fe33dae11c8b969dac260bba343046bf257247452795bac9",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:03:06.020Z"
+}

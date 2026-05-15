@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-checkout@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_checkout",
+  "skill": {
+    "id": 14111,
+    "skillKey": "clawhub-universal-checkout",
+    "name": "Zinc Universal Checkout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-checkout",
+    "url": "https://clawhub.ai/skills/universal-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-checkout-dc2641b8baef56ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Place, list, and retrieve orders via the Zinc API (zinc.com). Use when the user wants to buy a product from an online retailer, check order status, list recent orders, or anything involving the Zinc e-commerce ordering API. Requires ZINC_A."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a5huynh",
+      "userId": "publishers:a5huynh",
+      "displayName": "a5huynh",
+      "image": "https://avatars.githubusercontent.com/u/146222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1074,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770856738953,
+      "changelog": "- Documentation improved for order polling and status tracking logic.\n- Cron job example in SKILL.md simplified for clarity.\n- Added instruction to schedule another status check after polling if order is pending/in_progress.\n- Minor formatting and list consistency updates in documentation files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff8834680f9ca692315b09352eb99d58377e12af9457994714f4e1d175ffaa89"
+}

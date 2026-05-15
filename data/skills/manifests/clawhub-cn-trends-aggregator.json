@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58384,
+  "uuid": "skill-clawhub-cn-trends-aggregator",
+  "skillKey": "clawhub-cn-trends-aggregator",
+  "name": "CN Trends Aggregator",
+  "summary": "中文+全球热榜聚合器。一键获取百度热榜、今日头条、V2EX、Hacker News、GitHub 热门新项目。Use when: user asks about trending topics, hot searches, what's popular, today's hot news, tech trends...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_trends_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huoguang16",
+      "features": [
+        "中文+全球热榜聚合器。一键获取百度热榜、今日头条、V2EX、Hacker News、GitHub 热门新项目。Use when: user asks about trending topic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-trends-aggregator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164469481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-trends-aggregator",
+      "url": "https://clawhub.ai/skills/cn-trends-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-trends-aggregator",
+    "url": "https://clawhub.ai/skills/cn-trends-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-trends-aggregator-e9268ce6f04f9c71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-trends-aggregator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-trends-aggregator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa3ec26b1ecc1b4b0889f66c641b1513c7b711564d7ed3c9a199b5bc5b02a5bc",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:59:44.242Z"
+}

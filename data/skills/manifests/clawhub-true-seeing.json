@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65886,
+  "uuid": "skill-clawhub-true-seeing",
+  "skillKey": "clawhub-true-seeing",
+  "name": "True Seeing",
+  "summary": "审核 AI 生成文章中的可验证事实，通过 web search 逐条校验，输出差异报告并支持用户审批替换。当用户需要事实核查、验证文章准确性、检查数据日期金额是否正确、去除 AI 幻觉内容、或 fact-check 一篇文章时使用。触发于\"事实核查\"、\"验一下这些数据\"、\"检查事实\"、\"去幻觉\"、\"fact ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.true_seeing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francisk",
+      "features": [
+        "审核 AI 生成文章中的可验证事实，通过 web search 逐条校验，输出差异报告并支持用户审批替换。当用户需要事实核查、验证文章准确性、检查数据日期金额是否正确、去除 AI 幻觉内容、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/true-seeing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3042012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "true-seeing",
+      "url": "https://clawhub.ai/skills/true-seeing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "true-seeing",
+    "url": "https://clawhub.ai/skills/true-seeing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/true-seeing-0cd03a085d2acb92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/true-seeing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-true-seeing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adbdf2d4b9aab1bf2a521323cee49940c7fe03f34b7e238767b9b587a97b66b0",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:07:36.405Z"
+}

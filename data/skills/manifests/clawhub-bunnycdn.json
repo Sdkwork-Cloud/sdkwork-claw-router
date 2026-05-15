@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24110,
+  "uuid": "skill-clawhub-bunnycdn",
+  "skillKey": "clawhub-bunnycdn",
+  "name": "Bunnycdn",
+  "summary": "BunnyCDN integration. Manage CDNs. Use when the user wants to interact with BunnyCDN data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bunnycdn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BunnyCDN integration",
+        "Manage CDNs",
+        "Use when the user wants to interact with BunnyCDN data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bunnycdn@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bunnycdn",
+      "url": "https://clawhub.ai/skills/bunnycdn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bunnycdn",
+    "url": "https://clawhub.ai/skills/bunnycdn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bunnycdn-bcc4340bc688d554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bunnycdn@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bunnycdn-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bda4e9ec663db2c96443ff433534de827a090e7b86ed8790e9c91ebfba60f37",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:41.775Z"
+}

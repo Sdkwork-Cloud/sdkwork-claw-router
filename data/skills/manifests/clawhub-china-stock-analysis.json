@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8329,
+  "uuid": "skill-clawhub-china-stock-analysis",
+  "skillKey": "clawhub-china-stock-analysis",
+  "name": "China Stock Analysis",
+  "summary": "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulshe",
+      "features": [
+        "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations",
+        "Use when the user asks about stock analysis for Chinese companies,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40481277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-stock-analysis",
+      "url": "https://clawhub.ai/skills/china-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analysis",
+    "url": "https://clawhub.ai/skills/china-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analysis-ad8af3b9f4af0faf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:230921eb3ad1db427a67ab451196bd15c4470f1fbf353ebf6bfd754ac11d2153",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:09:23.824Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40797,
+  "uuid": "skill-clawhub-axodus-code-review",
+  "skillKey": "clawhub-axodus-code-review",
+  "name": "RedHat Code Review",
+  "summary": "Review code for correctness, security, performance, and maintainability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Review code for correctness, security, performance, and maintainability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-code-review",
+      "url": "https://clawhub.ai/skills/axodus-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-code-review",
+    "url": "https://clawhub.ai/skills/axodus-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-code-review-7abffa6c854da93f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1179f8b7d3a3e00a68be50898b5f7a2789e2b4c699e747d6f703ed778f26315a",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T11:24:28.904Z"
+}

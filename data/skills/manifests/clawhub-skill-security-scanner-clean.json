@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21234,
+  "uuid": "skill-clawhub-skill-security-scanner-clean",
+  "skillKey": "clawhub-skill-security-scanner-clean",
+  "name": "skill-security-scanner-clean",
+  "summary": "Security scanner for OpenClaw skills. Use when installing, updating, or auditing skills to detect malicious backdoors, suspicious code patterns, data exfiltr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scanner_clean",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RUI LIU",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Use when installing, updating, or auditing skills to detect malicious backdoors, suspicious cod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-scanner-clean@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23289194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-scanner-clean",
+      "url": "https://clawhub.ai/skills/skill-security-scanner-clean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scanner-clean",
+    "url": "https://clawhub.ai/skills/skill-security-scanner-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scanner-clean-112aeb73043bca80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-scanner-clean@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-scanner-clean-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03e9e91b46c17219a4fcb2f9145f567b16f13cf433fb60002773aaaee4ea0acb",
+      "artifactSizeBytes": 2728
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:57:32.159Z"
+}

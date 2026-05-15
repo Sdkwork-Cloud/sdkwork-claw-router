@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21764,
+  "uuid": "skill-clawhub-http-retry-circuit-breaker",
+  "skillKey": "clawhub-http-retry-circuit-breaker",
+  "name": "HTTP Retry Circuit Breaker",
+  "summary": "Implements HTTP request retries with exponential backoff and a configurable circuit breaker to reduce failures and prevent cascading errors.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_retry_circuit_breaker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qwe123sddfsdfs",
+      "features": [
+        "Implements HTTP request retries with exponential backoff and a configurable circuit breaker to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-retry-circuit-breaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262101924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-retry-circuit-breaker",
+      "url": "https://clawhub.ai/skills/http-retry-circuit-breaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-retry-circuit-breaker",
+    "url": "https://clawhub.ai/skills/http-retry-circuit-breaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-retry-circuit-breaker-713b4e14ab6f230e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-retry-circuit-breaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-retry-circuit-breaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8a623f36873d873c0f72396a2c206233c3fa5d5100df2e9cc2de4f12ebe7503",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:52:35.203Z"
+}

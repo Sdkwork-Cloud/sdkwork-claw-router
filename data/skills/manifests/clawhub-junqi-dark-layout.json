@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69438,
+  "uuid": "skill-clawhub-junqi-dark-layout",
+  "skillKey": "clawhub-junqi-dark-layout",
+  "name": "Junqi Dark Layout",
+  "summary": "使用大模型生成中国军棋双人 25 格暗棋阵型，再用 Python 做硬规则校验与图片渲染。用于用户想要军棋暗棋摆阵、想按风格生成更有策略感的布局、想输出图片卡片、或需要先生成再严格验合法性的场景。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junqi_dark_layout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imcaptor",
+      "features": [
+        "使用大模型生成中国军棋双人 25 格暗棋阵型，再用 Python 做硬规则校验与图片渲染。用于用户想要军棋暗棋摆阵、想按风格生成更有策略感的布局、想输出图片卡片、或需要先生成再严格验合法性的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/junqi-dark-layout@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "junqi-dark-layout",
+      "url": "https://clawhub.ai/skills/junqi-dark-layout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junqi-dark-layout",
+    "url": "https://clawhub.ai/skills/junqi-dark-layout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junqi-dark-layout-ee8767684dc63a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/junqi-dark-layout@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-junqi-dark-layout-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e10cf976829268798fd18c95d7dda52c30253f4fbc448ae9c756646a547c4c5",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T02:31:41.155Z"
+}

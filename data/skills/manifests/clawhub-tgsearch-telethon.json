@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20698,
+  "uuid": "skill-clawhub-tgsearch-telethon",
+  "skillKey": "clawhub-tgsearch-telethon",
+  "name": "Tgsearch Telethon",
+  "summary": "Search public Telegram channels and groups by keyword using an authorized Telethon session, returning up to 50 results as JSON.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tgsearch_telethon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kirill",
+      "features": [
+        "Search public Telegram channels and groups by keyword using an authorized Telethon session, ret."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tgsearch-telethon@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145931018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tgsearch-telethon",
+      "url": "https://clawhub.ai/skills/tgsearch-telethon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tgsearch-telethon",
+    "url": "https://clawhub.ai/skills/tgsearch-telethon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tgsearch-telethon-8c0580fb02ecdda2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tgsearch-telethon@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tgsearch-telethon-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4385b41a25e7167bd6c82467ec805626087446f31184c6aced866b08443cc0c3",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:16:11.847Z"
+}

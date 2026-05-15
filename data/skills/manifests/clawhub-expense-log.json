@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24266,
+  "uuid": "skill-clawhub-expense-log",
+  "skillKey": "clawhub-expense-log",
+  "name": "ExpenseLog Conversational Expense Tracking",
+  "summary": "Track expenses by talking to your agent. Spent 45 on groceries. Categories, monthly reports, budget tracking. No spreadsheet needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Track expenses by talking to your agent",
+        "Spent 45 on groceries",
+        "Categories, monthly reports, budget tracking",
+        "No spreadsheet needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-log",
+      "url": "https://clawhub.ai/skills/expense-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-log",
+    "url": "https://clawhub.ai/skills/expense-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-log-5d81c485f87ed8e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e25905359e033e5bc42c8aef92a87932ae9f6bc505267b191bedb66aea915a5",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:00:06.637Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67309,
+  "uuid": "skill-clawhub-weixin-cron-push",
+  "skillKey": "clawhub-weixin-cron-push",
+  "name": "微信定时推送",
+  "summary": "通过 OpenClaw Cron 定时任务向微信用户主动推送消息（天气、提醒、新闻摘要等）。当用户需要：设置定时提醒、每日推送、定时通知、微信主动发消息、cron 推送到微信时触发。支持一次性（at）和循环（cron/every）任务，通过 sessionKey 路由到指定微信用户，AI 对话模式下自动获取 se...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_cron_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gausshj",
+      "features": [
+        "通过 OpenClaw Cron 定时任务向微信用户主动推送消息（天气、提醒、新闻摘要等）。当用户需要：设置定时提醒、每日推送、定时通知、微信主动发消息、cron 推送到微信时触发。支持一次."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-cron-push@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76776628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-cron-push",
+      "url": "https://clawhub.ai/skills/weixin-cron-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-cron-push",
+    "url": "https://clawhub.ai/skills/weixin-cron-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-cron-push-4b1aae28ff99b309.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-cron-push@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-cron-push-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e69de3ebb3fbbd4db548dfcacc8025b02e74fdebf46ad1ce5b4ac8ac38a305b",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:08:24.610Z"
+}

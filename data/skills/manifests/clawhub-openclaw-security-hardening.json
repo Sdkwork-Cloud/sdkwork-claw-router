@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10159,
+  "uuid": "skill-clawhub-openclaw-security-hardening",
+  "skillKey": "clawhub-openclaw-security-hardening",
+  "name": "OpenClaw Security Hardening",
+  "summary": "Protect OpenClaw installations from prompt injection, data exfiltration, malicious skills, and workspace tampering",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_hardening",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kylejfrost",
+      "features": [
+        "Protect OpenClaw installations from prompt injection, data exfiltration, malicious skills, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-security-hardening@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2223276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-security-hardening",
+      "url": "https://clawhub.ai/skills/openclaw-security-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-hardening",
+    "url": "https://clawhub.ai/skills/openclaw-security-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-hardening-b14a89ce04b00e4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-security-hardening@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-hardening-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c58814c881f2567bde48e6777ff44655a656609dc77a7e2b37118b1ecb9b4eb3",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T17:38:28.993Z"
+}

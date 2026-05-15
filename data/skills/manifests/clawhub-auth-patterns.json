@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18587,
+  "uuid": "skill-clawhub-auth-patterns",
+  "skillKey": "clawhub-auth-patterns",
+  "name": "auth-patterns",
+  "summary": "Authentication and authorization patterns — JWT, OAuth 2.0, sessions, RBAC/ABAC, password security, MFA, and vulnerability prevention. Use when implementing login flows, protecting routes, managing tokens, or auditing auth security.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auth_patterns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Authentication and authorization patterns — JWT, OAuth 2.0, sessions, RBAC/ABAC, password secur.",
+        "Use when implementing login flows, protecting routes, managing tokens, or auditing auth securit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auth-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auth-patterns",
+      "url": "https://clawhub.ai/skills/auth-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auth-patterns",
+    "url": "https://clawhub.ai/skills/auth-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auth-patterns-c293db3a210f01f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auth-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auth-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84fca7be8dc42809525907bfe28c3d0587c8d6311be8c5d0bd6bf1c8804c81c8",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T12:07:04.134Z"
+}

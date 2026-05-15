@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-test-case-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_test_case_generator",
+  "skill": {
+    "id": 69401,
+    "skillKey": "clawhub-web-test-case-generator",
+    "name": "Web 测试用例生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-test-case-generator",
+    "url": "https://clawhub.ai/skills/web-test-case-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-test-case-generator-fea3d02510b15a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据提供的网站页面自动生成测试用例。支持 UI 测试、功能测试、流程测试、异常测试、权限测试和兼容性测试。输出格式支持 Markdown 表格和 CSV。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linzetai",
+      "userId": "s1727yjcrwf4v3hcbbcmx9y04h83m0a2",
+      "displayName": "linzetai",
+      "image": "https://avatars.githubusercontent.com/u/43720556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774539830868,
+      "changelog": "初始版本：支持根据网站页面自动生成测试用例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c36af5cbe32eb95c10566d9e4a21f2a0a114460118e9b17dae0cb2f6eb6c78f4"
+}

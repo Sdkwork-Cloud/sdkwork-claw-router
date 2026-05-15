@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70102,
+  "uuid": "skill-clawhub-bazi",
+  "skillKey": "clawhub-bazi",
+  "name": "凡心八字在线排盘，导出AI指令",
+  "summary": "计算八字以及大运流年信息，需要性别、ISO 8601 格式的时间两个参数",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahaofan",
+      "features": [
+        "计算八字以及大运流年信息，需要性别、ISO 8601 格式的时间两个参数"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30693897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazi",
+      "url": "https://clawhub.ai/skills/bazi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi",
+    "url": "https://clawhub.ai/skills/bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-a969e98b3fb984d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f0797a5f7a1926a96ac82e67ae0050d826d0be255da7ac130d2578d5bff5192",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:00:22.749Z"
+}

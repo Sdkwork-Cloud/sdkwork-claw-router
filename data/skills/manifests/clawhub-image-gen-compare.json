@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50496,
+  "uuid": "skill-clawhub-image-gen-compare",
+  "skillKey": "clawhub-image-gen-compare",
+  "name": "Image Gen Compare",
+  "summary": "Side-by-side comparison of paid vs local image generation models — DALL-E 3, FLUX.1-schnell, Gemini Imagen, and others. Generates images from the same prompt...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_gen_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Side-by-side comparison of paid vs local image generation models — DALL-E 3, FLUX.1-schnell, Ge.",
+        "Generates images from the same prompt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-gen-compare@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-gen-compare",
+      "url": "https://clawhub.ai/skills/image-gen-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-gen-compare",
+    "url": "https://clawhub.ai/skills/image-gen-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-gen-compare-dd569bb5e2aff7a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-gen-compare@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-gen-compare-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d306434369d35a4772e30f17a0bfe7ab29d41f17dd2854519c293d8c1866279",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:40:53.226Z"
+}

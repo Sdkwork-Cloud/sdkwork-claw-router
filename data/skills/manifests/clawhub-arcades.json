@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73493,
+  "uuid": "skill-clawhub-arcades",
+  "skillKey": "clawhub-arcades",
+  "name": "网红游戏厅",
+  "summary": "提供关于网红游戏厅的推荐清单、打卡路线与指南。用户搜索网红游戏厅或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arcades",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供关于网红游戏厅的推荐清单、打卡路线与指南。用户搜索网红游戏厅或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arcades@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arcades",
+      "url": "https://clawhub.ai/skills/arcades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arcades",
+    "url": "https://clawhub.ai/skills/arcades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arcades-7b7d75fa52ab107a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arcades@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arcades-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e887b7bfbba000f61f4f99b43461b3f8aea5d94dc80b733fb86dcc9e8d73aa75",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:25:48.141Z"
+}

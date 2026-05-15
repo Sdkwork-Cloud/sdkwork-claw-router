@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-update-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_update_check",
+  "skill": {
+    "id": 63766,
+    "skillKey": "clawhub-openclaw-update-check",
+    "name": "OpenClaw更新检查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-update-check",
+    "url": "https://clawhub.ai/skills/openclaw-update-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-update-check-7b557bb4a206792c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日检查 OpenClaw 最新版本和 Release Note，分析更新必要性并推送详细更新建议给用户，不主动执行更新。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noir-hedgehog",
+      "userId": "s175jqq3kcxjrgf7jg5s0y31c583vm0k",
+      "displayName": "Noir",
+      "image": "https://avatars.githubusercontent.com/u/261261891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772720732415,
+      "changelog": "- Daily checks for new OpenClaw versions with automatic retrieval and analysis of Release Notes from GitHub.\n- Evaluates updates for significance: new features, security fixes, breaking changes, or important bug fixes.\n- Sends update recommendations and summaries to users via Feishu, clearly explaining reasons and version differences.\n- Can be triggered manually by user command or automatically via a scheduled task.\n- Only provides update suggestions—does not perform updates automatically.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a6511dd9eb5600216a215452ee56aaf514d00514a3bd0da968e25077b895eb9"
+}

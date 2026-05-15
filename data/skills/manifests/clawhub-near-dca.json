@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14300,
+  "uuid": "skill-clawhub-near-dca",
+  "skillKey": "clawhub-near-dca",
+  "name": "Near Dca",
+  "summary": "Dollar-cost averaging for NEAR tokens with flexible scheduling, performance tracking, and cancellation support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_dca",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaiss",
+      "features": [
+        "Dollar-cost averaging for NEAR tokens with flexible scheduling, performance tracking, and cance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/near-dca@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "near-dca",
+      "url": "https://clawhub.ai/skills/near-dca"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-dca",
+    "url": "https://clawhub.ai/skills/near-dca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-dca-e84f9924836200bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/near-dca@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-near-dca-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bc82c78b1e891e76acf707c35c1bf4f0ae174e6e49278e278725cad2713cd2b",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T12:41:23.508Z"
+}

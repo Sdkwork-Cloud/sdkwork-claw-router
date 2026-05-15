@@ -85,8 +85,14 @@ fn app_recharge_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route("/app/v3/api/vip/pack-groups/packs", get(fetch_packages))
-        .route("/app/v3/api/account/points/recharge", post(submit_recharge))
+        .route(
+            "/app/v3/api/billing/account/points/recharges/packages",
+            get(fetch_packages),
+        )
+        .route(
+            "/app/v3/api/billing/account/points/recharges",
+            post(submit_recharge),
+        )
         .with_state(AppRechargeState {
             store,
             entity_uuid_generator,

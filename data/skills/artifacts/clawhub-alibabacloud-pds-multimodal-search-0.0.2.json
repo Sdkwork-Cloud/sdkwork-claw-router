@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-pds-multimodal-search@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pds_multimodal_search",
+  "skill": {
+    "id": 40366,
+    "skillKey": "clawhub-alibabacloud-pds-multimodal-search",
+    "name": "Alibabacloud Pds Multimodal Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pds-multimodal-search",
+    "url": "https://clawhub.ai/skills/alibabacloud-pds-multimodal-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pds-multimodal-search-b075e8d7d5908fc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements exact filename search, fuzzy filename search, semantic file search, and image-based image search Triggers: \"PDS drive file search\", \"PDS image sea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776309197216,
+      "changelog": "**Improves space selection logic and guidance for file operations.**\n\n- Introduced strict rules for selecting the correct drive for enterprise, team, or personal space; prevents silent fallback or scope broadening.\n- Updated agent guidelines: must explicitly determine and respect user's intended storage scope before all operations.\n- Expanded documentation in SKILL.md with a detailed space selection rules table and clarifying notes.\n- Added self-check steps before choosing drive_id, ensuring accurate targeting of requested space.\n- No changes to CLI command syntax; the update is limited to documentation, instruction, and process logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:760d1424b4df658e05b8c8a8389308b101924729df39d0d2a4dc146fe8dcf4a1"
+}

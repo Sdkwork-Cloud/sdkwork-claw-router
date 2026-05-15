@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xihe-jianmu-ipc@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xihe_jianmu_ipc",
+  "skill": {
+    "id": 56251,
+    "skillKey": "clawhub-xihe-jianmu-ipc",
+    "name": "xihe-jianmu-ipc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xihe-jianmu-ipc",
+    "url": "https://clawhub.ai/skills/xihe-jianmu-ipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xihe-jianmu-ipc-570c5df2cf687ed2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "建木 IPC — Real-time cross-AI communication hub. Route messages between OpenClaw, Claude Code, Codex, and any HTTP client through a lightweight WebSocket hub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "47liu",
+      "userId": "s178e3vftw375ejbc5dwhx94z583s4fp",
+      "displayName": "47Liu",
+      "image": "https://avatars.githubusercontent.com/u/53243573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774685684634,
+      "changelog": "Add security note explaining VirusTotal flag",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a6ed1773b3478f66df41766c4602ec6f5c9ee6d9148fdaf325fdc6d3a88cef8"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61291,
+  "uuid": "skill-clawhub-aviation-healthcheck",
+  "skillKey": "clawhub-aviation-healthcheck",
+  "name": "Aviation Healthcheck",
+  "summary": "航空维修健康检查 - FAA/EASA/CAAC适航指令、航空安全通告、MRO行业新闻、波音空客技术通告、OpenClaw状态、磁盘空间",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviation_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangwzh",
+      "features": [
+        "航空维修健康检查",
+        "FAA/EASA/CAAC适航指令、航空安全通告、MRO行业新闻、波音空客技术通告、OpenClaw状态、磁盘空间"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aviation-healthcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125803223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aviation-healthcheck",
+      "url": "https://clawhub.ai/skills/aviation-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviation-healthcheck",
+    "url": "https://clawhub.ai/skills/aviation-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviation-healthcheck-5f8f07dd9340d408.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aviation-healthcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aviation-healthcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef9fa88a1115efd76c3d714ba80e09f5bab5e066e9b8fff0efd41c31a3d78717",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:23:39.282Z"
+}

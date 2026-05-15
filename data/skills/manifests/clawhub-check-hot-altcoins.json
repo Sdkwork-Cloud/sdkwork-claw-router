@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67775,
+  "uuid": "skill-clawhub-check-hot-altcoins",
+  "skillKey": "clawhub-check-hot-altcoins",
+  "name": "查看每日热门山寨代币",
+  "summary": "生成加密货币早报PDF，包含行业动态、FDV排名、热点赛道和风险提示。数据来源于CoinGecko API。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_hot_altcoins",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nihaovand",
+      "features": [
+        "生成加密货币早报PDF，包含行业动态、FDV排名、热点赛道和风险提示。数据来源于CoinGecko API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-hot-altcoins@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110290620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-hot-altcoins",
+      "url": "https://clawhub.ai/skills/check-hot-altcoins"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-hot-altcoins",
+    "url": "https://clawhub.ai/skills/check-hot-altcoins",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-hot-altcoins-9ad6048e3937962d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-hot-altcoins@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-hot-altcoins-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db8aaa898f8dc3ffe6b782ef82b378bbf046a2586835f319549254c973bf353b",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T14:29:29.656Z"
+}

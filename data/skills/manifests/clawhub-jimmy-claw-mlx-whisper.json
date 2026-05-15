@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22894,
+  "uuid": "skill-clawhub-jimmy-claw-mlx-whisper",
+  "skillKey": "clawhub-jimmy-claw-mlx-whisper",
+  "name": "mlx-whisper",
+  "summary": "Set up mlx-whisper as the local audio transcription engine for OpenClaw on Apple Silicon Macs (M1/M2/M3/M4). Automatically transcribes voice notes sent via T...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimmy_claw_mlx_whisper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YinghaoJia",
+      "features": [
+        "Set up mlx-whisper as the local audio transcription engine for OpenClaw on Apple Silicon Macs (.",
+        "Automatically transcribes voice notes sent via T..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimmy-claw-mlx-whisper@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23326844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimmy-claw-mlx-whisper",
+      "url": "https://clawhub.ai/skills/jimmy-claw-mlx-whisper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimmy-claw-mlx-whisper",
+    "url": "https://clawhub.ai/skills/jimmy-claw-mlx-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimmy-claw-mlx-whisper-27eb473d122dc345.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimmy-claw-mlx-whisper@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimmy-claw-mlx-whisper-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e690025617aaf16b4eb0bbadcecea1efd0504e3cb128efb07db9a0ba8c52d99d",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:00:50.748Z"
+}

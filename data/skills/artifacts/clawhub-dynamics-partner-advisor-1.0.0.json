@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamics-partner-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamics_partner_advisor",
+  "skill": {
+    "id": 34736,
+    "skillKey": "clawhub-dynamics-partner-advisor",
+    "name": "Dynamics Partner Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamics-partner-advisor",
+    "url": "https://clawhub.ai/skills/dynamics-partner-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamics-partner-advisor-7c57dd71877be4a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, compare, and shortlist Microsoft Dynamics 365 implementation partners by product, industry, and region. Use when someone asks about finding a Dynamic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "colingreig",
+      "userId": "s17aagtcf47hdz5xc6xbgdmth583tpj7",
+      "displayName": "Colin Greig",
+      "image": "https://avatars.githubusercontent.com/u/4700349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774760197252,
+      "changelog": "- Initial release of Dynamics Partner Advisor skill.\n- Search, compare, and shortlist Microsoft Dynamics 365 implementation partners by product, industry, and region.\n- Connects directly to the live Top Dynamics Partners database via Model Context Protocol (MCP).\n- Offers tools for partner search, detailed partner profiles, and AI-powered shortlist recommendations.\n- No local dependencies; requires an MCP-compatible agent to use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:505f3dcb7c20e5599b01ef6dc9cebd6af708577e112913eb1600a0e0e7660691"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29499,
+  "uuid": "skill-clawhub-zf-novel-writer",
+  "skillKey": "clawhub-zf-novel-writer",
+  "name": "ZF-novel-writer",
+  "summary": "Three-agent collaborative novel writing system. Orchestrator plans chapters, Writer Agent generates content via coding agent (sessions_spawn), Quality Agent...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zf_novel_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fei zhao",
+      "features": [
+        "Three-agent collaborative novel writing system",
+        "Orchestrator plans chapters, Writer Agent generates content via coding agent (sessions_spawn),."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zf-novel-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223271482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zf-novel-writer",
+      "url": "https://clawhub.ai/skills/zf-novel-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zf-novel-writer",
+    "url": "https://clawhub.ai/skills/zf-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zf-novel-writer-515434977c312f6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zf-novel-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zf-novel-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88f7550f7233bb2f092a5ab6285baf7c10adb1c40400d694a46d27fe4030fb18",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:54:47.446Z"
+}

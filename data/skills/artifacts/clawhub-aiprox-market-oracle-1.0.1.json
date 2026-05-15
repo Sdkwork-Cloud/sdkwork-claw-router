@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiprox-market-oracle@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiprox_market_oracle",
+  "skill": {
+    "id": 25820,
+    "skillKey": "clawhub-aiprox-market-oracle",
+    "name": "Aiprox Market Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiprox-market-oracle",
+    "url": "https://clawhub.ai/skills/aiprox-market-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiprox-market-oracle-2cd474deb439ae76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get trading signals for single or batch Polymarket markets. Supports timeframe framing ranked by edge."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773253982713,
+      "changelog": "- Adds support for batch comparison of up to 5 Polymarket markets, with ranked output by edge.\n- Introduces optional timeframe framing (short, medium, long) for analysis.\n- Updates usage instructions and response examples to cover single and batch requests.\n- Clarifies response structure for both single and batch modes.\n- Expands use cases to include market comparison and timeframe analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f55daafbe0f1480702eb6d45c0a869da9c87fa601248c30b1b61b28a1643032"
+}

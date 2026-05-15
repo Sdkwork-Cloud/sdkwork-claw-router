@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_best_practices",
+  "skill": {
+    "id": 12782,
+    "skillKey": "clawhub-security-best-practices",
+    "name": "Security Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-best-practices",
+    "url": "https://clawhub.ai/skills/security-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-best-practices-db6d8737a08d02ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review code with secure-by-default standards, prioritize exploitable risks, and deliver minimal-diff fixes with evidence and regression checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1357,
+      "installsAllTime": 21,
+      "installsCurrent": 20,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772220926066,
+      "changelog": "Added a complete security review workflow with evidence standards, severity modeling, and minimal-risk remediation guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35e200587c2caa0ccbb6add47a70bfa9849c49532a6e00b18122f7f8a3754549"
+}

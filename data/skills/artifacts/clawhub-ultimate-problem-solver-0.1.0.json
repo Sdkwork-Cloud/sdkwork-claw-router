@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ultimate-problem-solver@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultimate_problem_solver",
+  "skill": {
+    "id": 68099,
+    "skillKey": "clawhub-ultimate-problem-solver",
+    "name": "Ultimate Problem Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultimate-problem-solver",
+    "url": "https://clawhub.ai/skills/ultimate-problem-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultimate-problem-solver-64f0b62e730304f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "问题解决器。直接给出可以今天就行动的解法。当用户说「怎么办」、「帮我解决」、「如何做」、「分析一下」、「我卡住了」、「fix this」、「optimize」、「debug」、「solve this」时触发。适用于：技术问题、决策、流程优化、学习路径。情绪困惑或反复的心理模式用「哲思伙伴」，多角度辩论用「圆桌研讨会」。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taxue2025",
+      "userId": "publishers:taxue2025",
+      "displayName": "taxue2025",
+      "image": "https://avatars.githubusercontent.com/u/263354195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773558096704,
+      "changelog": "Initial release of the \"ultimate-problem-solver\" skill:\n\n- Provides direct, actionable problem-solving steps for technical issues, decision-making, process optimization, and learning paths.\n- Uses a concise \"six element\" format for structured solutions, enabling users to act today.\n- Detects trigger phrases like “怎么办”, “solve this”, and “debug” to respond.\n- Includes self-check guidelines to ensure concise, executable advice.\n- Integrates clear transfer rules when issues involve emotions (“哲思伙伴”) or debate (“圆桌研讨会”).\n- Supports both quick and in-depth responses, with templates and scripts ready to copy and use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:345bca381cda46bb2c4af06a0a3fad3462a87e5b69056696dd077f6ae9f35776"
+}

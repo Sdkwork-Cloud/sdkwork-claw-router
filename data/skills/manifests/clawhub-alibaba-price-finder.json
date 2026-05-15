@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51506,
+  "uuid": "skill-clawhub-alibaba-price-finder",
+  "skillKey": "clawhub-alibaba-price-finder",
+  "name": "Alibaba Price Finder",
+  "summary": "Search and compare wholesale prices on Alibaba.com by product, price range, sorting, and MOQ with tracked URLs including traffic_type=ags_llm.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_price_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zeyu426",
+      "features": [
+        "Search and compare wholesale prices on Alibaba.com by product, price range, sorting, and MOQ wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibaba-price-finder@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61571196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibaba-price-finder",
+      "url": "https://clawhub.ai/skills/alibaba-price-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-price-finder",
+    "url": "https://clawhub.ai/skills/alibaba-price-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-price-finder-57dfc6f094396a0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibaba-price-finder@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibaba-price-finder-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:682f1ac0dd3904a6e110c127c5bbed02e33f272048352d5102426f8d008a1b36",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:19:20.799Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73691,
+  "uuid": "skill-clawhub-explain-simply",
+  "skillKey": "clawhub-explain-simply",
+  "name": "深入浅出讲明白",
+  "summary": "用七步法结构化讲清楚复杂概念、技术、产品，写出通俗易懂的干货文章。使用当需要解释新技术、科普知识、撰写方法总结，要求文章结构清晰、普通人能看懂。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explain_simply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pshen613",
+      "features": [
+        "用七步法结构化讲清楚复杂概念、技术、产品，写出通俗易懂的干货文章。使用当需要解释新技术、科普知识、撰写方法总结，要求文章结构清晰、普通人能看懂。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/explain-simply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127138963?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "explain-simply",
+      "url": "https://clawhub.ai/skills/explain-simply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explain-simply",
+    "url": "https://clawhub.ai/skills/explain-simply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explain-simply-aedaf01c4587ff4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/explain-simply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-explain-simply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d766cf951bace0608516911347490e2a837e43cbdce095a0afd977e2b654c82",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:21:02.586Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_link",
+  "skill": {
+    "id": 55836,
+    "skillKey": "clawhub-editor-link",
+    "name": "Editor Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-link",
+    "url": "https://clawhub.ai/skills/editor-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-link-269e27472b8eb9c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — share this video with my editor so they can open and continue editing it —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777489674891,
+      "changelog": "Initial public release of editor-link\n\n- Upload video files up to 500MB (MP4, MOV, AVI, WebM) for collaborative editing link creation.\n- Automatic setup: cloud session and token are managed for you; get notified when ready.\n- Instantly generate shareable editor links so collaborators can continue editing your project.\n- Integrated cloud render pipeline: exports 1080p MP4s in under 90 seconds.\n- Supports checking credits, uploading files, tracking status, and exporting final videos via direct user commands.\n- Detailed session management and error handling for a seamless handoff from creator to editor.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:906ebbc5df6d9391974c6167306d811fe71d37ac6c43aab9e287b225d8c9f6f2"
+}

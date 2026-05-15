@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-green-moderation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_green_moderation",
+  "skill": {
+    "id": 40488,
+    "skillKey": "clawhub-aliyun-green-moderation",
+    "name": "Aliyun Green Moderation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-green-moderation",
+    "url": "https://clawhub.ai/skills/aliyun-green-moderation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-green-moderation-41f4bbea3d6b8322.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK, including the user needs content moderation resource and policy operations, inclu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775100254506,
+      "changelog": "Initial release of aliyun-green-moderation skill.\n\n- Provides management of Alibaba Cloud Content Moderation (Green) via OpenAPI/SDK, including resource and policy operations.\n- Supports common actions: list, create, update, status check, and workflow troubleshooting.\n- Details credential priority (environment variables, then shared config file).\n- Offers quickstart scripts and validation guidance.\n- Establishes output policies for evidence and result storage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6732f9344dd76dd0bf583b25230af01fbd7f48661d8d4e343613b4e150441fc"
+}

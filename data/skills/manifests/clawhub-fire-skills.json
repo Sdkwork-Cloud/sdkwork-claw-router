@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37050,
+  "uuid": "skill-clawhub-fire-skills",
+  "skillKey": "clawhub-fire-skills",
+  "name": "Fire Skills",
+  "summary": "Practical fire building, management, and safety skills. Use when someone needs to build a campfire, use a fireplace safely, learn to grill, or needs fire eme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fire_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Practical fire building, management, and safety skills",
+        "Use when someone needs to build a campfire, use a fireplace safely, learn to grill, or needs fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fire-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fire-skills",
+      "url": "https://clawhub.ai/skills/fire-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fire-skills",
+    "url": "https://clawhub.ai/skills/fire-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fire-skills-182d28e143cd85a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fire-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fire-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0010e900311e5acbb6ca4b2378436ef6a9579ec6354631546690101f95b922c8",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:57:21.852Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_radar",
+  "skill": {
+    "id": 31530,
+    "skillKey": "clawhub-weather-radar",
+    "name": "Weather Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-radar",
+    "url": "https://clawhub.ai/skills/weather-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-radar-46679afff15ccadb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and generate an image of the current weather radar combined with a base map. Use when the user wants to see a rain/weather radar map, current precipita..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaosconst",
+      "userId": "s174eeqxk3hqx919z0153cjaq184bvqc",
+      "displayName": "Bob Yuan",
+      "image": "https://avatars.githubusercontent.com/u/299962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775466264398,
+      "changelog": "- Initial release of the weather-radar skill.\n- Generates composite animated GIFs of current and historical weather radar data overlaid on OpenStreetMap.\n- Supports custom city names or geographic coordinates; defaults to user location if unspecified.\n- Default zoom level is 7 for optimal view of weather systems.\n- Simple Python script provided for generating radar map images.\n- Requires `requests` and `Pillow` Python packages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:874fd429aa9724dd5cc0af72e359c75ccd97d86bb467035220a0684270c061f0"
+}

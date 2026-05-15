@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22249,
+  "uuid": "skill-clawhub-x-openclaw",
+  "skillKey": "clawhub-x-openclaw",
+  "name": "xclaw",
+  "summary": "Extract posts from X (Twitter) timeline or profile pages with engagement metrics, media URLs, and download local copies. Use when asked to scrape, list, or a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zyliu",
+      "features": [
+        "Extract posts from X (Twitter) timeline or profile pages with engagement metrics, media URLs, a.",
+        "Use when asked to scrape, list, or a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109995306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-openclaw",
+      "url": "https://clawhub.ai/skills/x-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-openclaw",
+    "url": "https://clawhub.ai/skills/x-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-openclaw-f381360d28cef278.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e78ebc116d32a3e48f6f2511ad3839f7cbe1335a04e1df3064e4eb8e4d574f",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:28:32.996Z"
+}

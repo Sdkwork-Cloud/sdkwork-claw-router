@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ada-agent-autonomy-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ada_agent_autonomy_kit",
+  "skill": {
+    "id": 49088,
+    "skillKey": "clawhub-ada-agent-autonomy-kit",
+    "name": "Ada Agent Autonomy Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ada-agent-autonomy-kit",
+    "url": "https://clawhub.ai/skills/ada-agent-autonomy-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ada-agent-autonomy-kit-c27c1d35bdce4a99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop waiting for prompts. Keep working."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanford",
+      "userId": "s1789sb4jmdxm4cdhqr1j4rjq583j23c",
+      "displayName": "Sean Ford",
+      "image": "https://avatars.githubusercontent.com/u/1264471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777621534176,
+      "changelog": "Initial release of Agent Autonomy Kit—proactive workflow for agents.\n\n- Enables agents to act continuously without waiting for prompts.\n- Introduces `tasks/QUEUE.md` with tracked task statuses (Ready, In Progress, Blocked, Done).\n- Provides `HEARTBEAT.md` for automated task queue processing.\n- Supports scheduling with cron jobs for overnight work and daily summaries.\n- Emphasizes always-ready task flow and proactive execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b60f89ff0535542c13131279d3f3cab914188fdcb3e281ab1abdd970d3f4856"
+}

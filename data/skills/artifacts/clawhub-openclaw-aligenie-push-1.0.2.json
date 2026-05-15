@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aligenie-push@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aligenie_push",
+  "skill": {
+    "id": 66822,
+    "skillKey": "clawhub-openclaw-aligenie-push",
+    "name": "Openclaw Aligenie Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aligenie-push",
+    "url": "https://clawhub.ai/skills/openclaw-aligenie-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aligenie-push-cb0d2066f3586931.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动向天猫精灵推送消息的技能。触发时机：(1) 用户要求\"推送到天猫精灵\"、\"播报到天猫精灵\"时 (2) 需要通过天猫精灵语音播报通知用户时 (3) 将任务完成状态或提醒推送到天猫精灵设备时。触发时机：(1) 用户要求\"推送到天猫精灵\"、\"播报到天猫精灵\"时 (2) 需要通过天猫精灵语音播报通知用户时 (3) 将..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775011832371,
+      "changelog": "- 修正配置文档示例，服务器地址描述更通用（腾讯云 → 云服务器）。\n- 前置条件与配置文本去除对具体云服务供应商的限定，更加通用。\n- SKILL.md 文件中 description 字段末尾内容有重复。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96ed70b1019bdb78431803d4f935f6d51469336969e33908b186bf9e9ca19371"
+}

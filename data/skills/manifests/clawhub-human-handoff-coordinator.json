@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27149,
+  "uuid": "skill-clawhub-human-handoff-coordinator",
+  "skillKey": "clawhub-human-handoff-coordinator",
+  "name": "Ads Human Handoff",
+  "summary": "Escalate automation conversations to human ad experts for Meta (Facebook/Instagram), Google Ads, TikTok Ads, and YouTube Ads operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_handoff_coordinator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Escalate automation conversations to human ad experts for Meta (Facebook/Instagram), Google Ads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-handoff-coordinator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-handoff-coordinator",
+      "url": "https://clawhub.ai/skills/human-handoff-coordinator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-handoff-coordinator",
+    "url": "https://clawhub.ai/skills/human-handoff-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-handoff-coordinator-039e5e5b79290e3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-handoff-coordinator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-handoff-coordinator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99d6b4eed56f9797797128682cac6147681006c339950cf9e80073d0a42a0c12",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:13:33.407Z"
+}

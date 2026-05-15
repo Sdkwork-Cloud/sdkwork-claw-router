@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32199,
+  "uuid": "skill-clawhub-polymarket-twitter-bin-decay-trader",
+  "skillKey": "clawhub-polymarket-twitter-bin-decay-trader",
+  "name": "Polymarket Twitter Bin Decay Trader",
+  "summary": "Trades post-count bin markets by tracking elapsed time to identify mathematically dead bins that still hold residual probability. Requires SIMMER_API_KEY and...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_twitter_bin_decay_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades post-count bin markets by tracking elapsed time to identify mathematically dead bins tha.",
+        "Requires SIMMER_API_KEY and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-twitter-bin-decay-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-twitter-bin-decay-trader",
+      "url": "https://clawhub.ai/skills/polymarket-twitter-bin-decay-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-twitter-bin-decay-trader",
+    "url": "https://clawhub.ai/skills/polymarket-twitter-bin-decay-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-twitter-bin-decay-trader-3f766c9b8b386bd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-twitter-bin-decay-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-twitter-bin-decay-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24abc36bcf156a0dee941ac02240193cdae7cd20bb785e29e0312d29355f2449",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:32:25.874Z"
+}

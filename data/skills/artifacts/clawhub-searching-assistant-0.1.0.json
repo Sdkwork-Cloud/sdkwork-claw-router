@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searching-assistant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searching_assistant",
+  "skill": {
+    "id": 23414,
+    "skillKey": "clawhub-searching-assistant",
+    "name": "Searching Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searching-assistant",
+    "url": "https://clawhub.ai/skills/searching-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searching-assistant-d54b10ff65a87f1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are the leader of searching group (搜索组组长). Break down the task into independent and complementary sub-tasks. Then describe each sub-task with natural lan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urrrich0",
+      "userId": "publishers:urrrich0",
+      "displayName": "urrrich0",
+      "image": "https://avatars.githubusercontent.com/u/193381709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2910,
+      "installsAllTime": 31,
+      "installsCurrent": 29,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771145530911,
+      "changelog": "Initial release of Searching Assistant skill.\n\n- Introduces a search assistant role to break down user tasks into independent, complementary sub-tasks and assigns each to the most suitable agent.\n- Always involves General_Search_Agent in task assignments.\n- Strongly encourages use of additional agents based on query type, while restricting Academic_Search for date-specific requirements.\n- Limits parallel sub-tasks to a maximum of 8 per search session.\n- Includes clear operational instructions and usage guidelines for effective task delegation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab08534ccdc346ebf32ac29fe356695aaa6e0b767e3d94a9e6cf7b24deca1739"
+}

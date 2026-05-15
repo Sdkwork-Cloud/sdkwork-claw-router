@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42166,
+  "uuid": "skill-clawhub-tweet-share-card",
+  "skillKey": "clawhub-tweet-share-card",
+  "name": "Tweet Share Card",
+  "summary": "Convert an X/Twitter post URL into a polished share card image by capturing the tweet content and compositing it on a styled background.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_share_card",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Efficiency97",
+      "features": [
+        "Convert an X/Twitter post URL into a polished share card image by capturing the tweet content a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tweet-share-card@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26136099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tweet-share-card",
+      "url": "https://clawhub.ai/skills/tweet-share-card"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-share-card",
+    "url": "https://clawhub.ai/skills/tweet-share-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-share-card-0f2fbf5af2ff8e21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tweet-share-card@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tweet-share-card-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76623d2dee285a2f58d949cd2e4aa24def008d01e37fe7a0c7e6b9ca570df447",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:45:30.764Z"
+}

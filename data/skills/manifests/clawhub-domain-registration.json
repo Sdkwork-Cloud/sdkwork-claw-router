@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27096,
+  "uuid": "skill-clawhub-domain-registration",
+  "skillKey": "clawhub-domain-registration",
+  "name": "Domain Registration",
+  "summary": "Register, transfer, renew, and secure domains across major provider APIs and dashboards with provider-specific workflows and rollback-safe execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_registration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Register, transfer, renew, and secure domains across major provider APIs and dashboards with pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domain-registration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domain-registration",
+      "url": "https://clawhub.ai/skills/domain-registration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-registration",
+    "url": "https://clawhub.ai/skills/domain-registration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-registration-75cb041d92d40b75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domain-registration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-domain-registration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d0131f1b72251659c7acfe16a93f09f06e751756baef27f69752fa6bc20a69",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:25:33.404Z"
+}

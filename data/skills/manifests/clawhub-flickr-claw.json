@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35802,
+  "uuid": "skill-clawhub-flickr-claw",
+  "skillKey": "clawhub-flickr-claw",
+  "name": "Flickr Claw",
+  "summary": "Access Flickr with user-supplied local API credentials and OAuth tokens, verify authorization, export recent-upload or album metadata, download recent or alb...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flickr_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanislav Stankovic",
+      "features": [
+        "Access Flickr with user-supplied local API credentials and OAuth tokens, verify authorization,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flickr-claw@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1871432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flickr-claw",
+      "url": "https://clawhub.ai/skills/flickr-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flickr-claw",
+    "url": "https://clawhub.ai/skills/flickr-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flickr-claw-a85d6682338f04f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flickr-claw@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flickr-claw-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b1b91eea83410856b7d05c5b77ced426ed07577cfe5f6058352d835e516d11",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:13:23.122Z"
+}

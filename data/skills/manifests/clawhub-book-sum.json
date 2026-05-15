@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33353,
+  "uuid": "skill-clawhub-book-sum",
+  "skillKey": "clawhub-book-sum",
+  "name": "Book Sum",
+  "summary": "Generate detailed, complete book summaries with key ideas, full narratives, actionable takeaways, and a comprehensive, readable overview.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_sum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heardlyapp",
+      "features": [
+        "Generate detailed, complete book summaries with key ideas, full narratives, actionable takeaway."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-sum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13566006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-sum",
+      "url": "https://clawhub.ai/skills/book-sum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-sum",
+    "url": "https://clawhub.ai/skills/book-sum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-sum-da97f2ca0d053d62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-sum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-sum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2131960f2b0c3219dd27e183707887d41b0484aa4d103bea15a9ba41af39e549",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:27:15.618Z"
+}

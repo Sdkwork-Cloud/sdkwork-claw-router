@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juhe-flight-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_flight_query",
+  "skill": {
+    "id": 71943,
+    "skillKey": "clawhub-juhe-flight-query",
+    "name": "航班查询 - 聚合数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-flight-query",
+    "url": "https://clawhub.ai/skills/juhe-flight-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-flight-query-a2fccabf94373b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "航班查询。通过出发地、目的地、出发日期查询航班信息，包括航班号、起飞时间、到达时间、机票价格等。使用场景：用户说\"查一下北京到上海的航班\"、\"明天广州到北京的飞机\"、\"查询某日航班\"、\"机票价格查询\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juhemcp",
+      "userId": "s177jncsg336bzyjhff66cjn8n83j6jg",
+      "displayName": "juhe-skills",
+      "image": "https://avatars.githubusercontent.com/u/203600343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774512714298,
+      "changelog": "juhe-flight-query 1.0.0\n\n- Initial release for real-time domestic flight search using the juhe.cn API.\n- Supports querying by departure city, destination city, and date, returning flight number, times, prices, transfers, airline, and other details.\n- Detailed setup instructions for obtaining and configuring a free API key.\n- Provides sample usage, common airport codes, and error handling guidelines.\n- Includes a Python script (`scripts/flight_query.py`) for API calls and result formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ca9eb280e476f898cb51ec4ca5b6acff2d8a1cbac824af4403c38d1310b335e"
+}

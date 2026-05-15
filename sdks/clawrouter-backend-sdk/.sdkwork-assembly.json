@@ -1,0 +1,287 @@
+{
+  "workspace": "clawrouter-backend-sdk",
+  "title": "SDKWork Claw Router backend API SDK",
+  "apiVersion": "0.1.0",
+  "authoritySpec": "openapi/clawrouter-backend-sdk.openapi.json",
+  "derivedSpec": "openapi/clawrouter-backend-sdk.sdkgen.json",
+  "derivedSpecs": {
+    "default": "openapi/clawrouter-backend-sdk.sdkgen.json"
+  },
+  "discoverySurface": {
+    "sdkTarget": "backend",
+    "apiPrefix": "/backend/v3/api",
+    "generatedProtocols": [
+      "http"
+    ],
+    "manualTransports": []
+  },
+  "languages": [
+    {
+      "language": "typescript",
+      "workspace": "clawrouter-backend-sdk-typescript",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "packagePath": "clawrouter-backend-sdk-typescript",
+      "manifestPath": "clawrouter-backend-sdk-typescript/package.json",
+      "name": "@sdkwork/clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK",
+      "entrypoints": {
+        "main": "./dist/index.cjs",
+        "module": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "consumerSurface": {
+        "primaryClient": "SdkworkBackendClient",
+        "apiPrefix": "/backend/v3/api"
+      },
+      "packages": [
+        {
+          "layer": "root",
+          "packagePath": "clawrouter-backend-sdk-typescript",
+          "manifestPath": "clawrouter-backend-sdk-typescript/package.json",
+          "name": "@sdkwork/clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK",
+          "entrypoints": {
+            "main": "./dist/index.cjs",
+            "module": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "language": "flutter",
+      "workspace": "clawrouter-backend-sdk-flutter",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-flutter/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-flutter/generated/server-openapi/pubspec.yaml",
+      "name": "clawrouter_backend_sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK flutter generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-flutter/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-flutter/generated/server-openapi/pubspec.yaml",
+          "name": "clawrouter_backend_sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK flutter generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-flutter/composed",
+          "status": "reserved",
+          "name": "clawrouter_backend_sdk",
+          "version": "",
+          "description": "Reserved composed flutter SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "rust",
+      "workspace": "clawrouter-backend-sdk-rust",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-rust/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-rust/generated/server-openapi/Cargo.toml",
+      "name": "clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK rust generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-rust/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-rust/generated/server-openapi/Cargo.toml",
+          "name": "clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK rust generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-rust/composed",
+          "status": "reserved",
+          "name": "clawrouter-backend-sdk",
+          "version": "",
+          "description": "Reserved composed rust SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "java",
+      "workspace": "clawrouter-backend-sdk-java",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-java/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-java/generated/server-openapi/pom.xml",
+      "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK java generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-java/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-java/generated/server-openapi/pom.xml",
+          "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK java generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-java/composed",
+          "status": "reserved",
+          "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+          "version": "",
+          "description": "Reserved composed java SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "csharp",
+      "workspace": "clawrouter-backend-sdk-csharp",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-csharp/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-csharp/generated/server-openapi/Sdkwork.ClawRouter.Backend.Sdk.csproj",
+      "name": "Sdkwork.ClawRouter.Backend.Sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK csharp generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-csharp/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-csharp/generated/server-openapi/Sdkwork.ClawRouter.Backend.Sdk.csproj",
+          "name": "Sdkwork.ClawRouter.Backend.Sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK csharp generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-csharp/composed",
+          "status": "reserved",
+          "name": "Sdkwork.ClawRouter.Backend.Sdk",
+          "version": "",
+          "description": "Reserved composed csharp SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "swift",
+      "workspace": "clawrouter-backend-sdk-swift",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-swift/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-swift/generated/server-openapi/Package.swift",
+      "name": "ClawRouterBackendSdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK swift generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-swift/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-swift/generated/server-openapi/Package.swift",
+          "name": "ClawRouterBackendSdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK swift generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-swift/composed",
+          "status": "reserved",
+          "name": "ClawRouterBackendSdk",
+          "version": "",
+          "description": "Reserved composed swift SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "kotlin",
+      "workspace": "clawrouter-backend-sdk-kotlin",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-kotlin/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-kotlin/generated/server-openapi/build.gradle.kts",
+      "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK kotlin generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-kotlin/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-kotlin/generated/server-openapi/build.gradle.kts",
+          "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK kotlin generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-kotlin/composed",
+          "status": "reserved",
+          "name": "com.sdkwork.clawrouter:clawrouter-backend-sdk",
+          "version": "",
+          "description": "Reserved composed kotlin SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "go",
+      "workspace": "clawrouter-backend-sdk-go",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-go/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-go/generated/server-openapi/go.mod",
+      "name": "github.com/sdkwork/clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK go generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-go/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-go/generated/server-openapi/go.mod",
+          "name": "github.com/sdkwork/clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK go generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-go/composed",
+          "status": "reserved",
+          "name": "github.com/sdkwork/clawrouter-backend-sdk",
+          "version": "",
+          "description": "Reserved composed go SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    },
+    {
+      "language": "python",
+      "workspace": "clawrouter-backend-sdk-python",
+      "generationState": "materialized",
+      "releaseState": "not_published",
+      "generatedPath": "clawrouter-backend-sdk-python/generated/server-openapi",
+      "manifestPath": "clawrouter-backend-sdk-python/generated/server-openapi/pyproject.toml",
+      "name": "sdkwork-clawrouter-backend-sdk",
+      "version": "0.1.0",
+      "description": "SDKWork Claw Router backend API SDK python generated transport SDK",
+      "packages": [
+        {
+          "layer": "generated",
+          "packagePath": "clawrouter-backend-sdk-python/generated/server-openapi",
+          "manifestPath": "clawrouter-backend-sdk-python/generated/server-openapi/pyproject.toml",
+          "name": "sdkwork-clawrouter-backend-sdk",
+          "version": "0.1.0",
+          "description": "SDKWork Claw Router backend API SDK python generated transport SDK"
+        },
+        {
+          "layer": "composed",
+          "packagePath": "clawrouter-backend-sdk-python/composed",
+          "status": "reserved",
+          "name": "sdkwork-clawrouter-backend-sdk",
+          "version": "",
+          "description": "Reserved composed python SDK boundary for clawrouter-backend-sdk"
+        }
+      ]
+    }
+  ]
+}

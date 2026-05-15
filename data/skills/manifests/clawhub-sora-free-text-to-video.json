@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43744,
+  "uuid": "skill-clawhub-sora-free-text-to-video",
+  "skillKey": "clawhub-sora-free-text-to-video",
+  "name": "Sora Free Text To Video",
+  "summary": "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_free_text_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get AI generated videos ready to post, without touching a single slider",
+        "Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sora-free-text-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sora-free-text-to-video",
+      "url": "https://clawhub.ai/skills/sora-free-text-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-free-text-to-video",
+    "url": "https://clawhub.ai/skills/sora-free-text-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-free-text-to-video-2bd66f0b37cf26c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sora-free-text-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sora-free-text-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbe6188c9f8634faaf50a278f51b10f130e7c3664091b603a10b402480b00683",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:49:41.388Z"
+}

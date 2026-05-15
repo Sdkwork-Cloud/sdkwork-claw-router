@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutrigenomics@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrigenomics",
+  "skill": {
+    "id": 18518,
+    "skillKey": "clawhub-nutrigenomics",
+    "name": "Nutrigenomics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrigenomics",
+    "url": "https://clawhub.ai/skills/nutrigenomics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrigenomics-802d7df80411fa18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a personalised nutrition report from your genetic data (23andMe, AncestryDNA, or VCF). Analyses 40+ genes affecting nutrient metabolism, absorption,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drdaviddelorenzo",
+      "userId": "s17b0p2rzrcmaq7s3vr89zdwnx849d82",
+      "displayName": "David de Lorenzo",
+      "image": "https://avatars.githubusercontent.com/u/2121511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 584,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1775407408204,
+      "changelog": "Added explicit execution instructions to the skill so the agent runs the analysis automatically instead of asking clarifying questions. Includes a one-command demo using the bundled synthetic patient file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:443c6581fe8ac1107500502a7f7644d1c8c5a3061b99b4eb13b6fe89643dd126"
+}

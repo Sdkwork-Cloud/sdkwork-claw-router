@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-compressor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_compressor",
+  "skill": {
+    "id": 47045,
+    "skillKey": "clawhub-text-compressor",
+    "name": "Text Compressor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-compressor",
+    "url": "https://clawhub.ai/skills/text-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-compressor-94ddf28fbd8c035a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress and decompress text files using smart abbreviation and whitespace normalization. Use when user asks to compress, shrink, reduce, or optimize text fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777454016925,
+      "changelog": "- Initial release of text-compressor.\n- Compress and decompress text files with three configurable levels: basic cleanup, smart contractions, and aggressive abbreviation.\n- Supports batch processing, file size reduction, and text cleanup.\n- Outputs bytes saved and percentage size reduction.\n- Decompression mode attempts to restore original content (approximate).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04ecd79a9b63ce7f4fc8ee55530e916beda5b8afff67c890dfbf7cf046ea6efa"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61381,
+  "uuid": "skill-clawhub-zh-novel-writer",
+  "skillKey": "clawhub-zh-novel-writer",
+  "name": "zh-novel-writer - 批量生成引擎",
+  "summary": "批量生成网络小说章节。通过环境变读取 API keys 并调用外部 LLM API (ModelScope, Fyra, Ph8) 生成中文小说内容。 使用场景：用户给出大纲并要求\"批量生成章节\"、\"写第X章到第Y章\"、\"后台静默写作\"。 前置要求：需设置环境变量 NOVEL_MODELSCOPE_KEY 或 N...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_novel_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shine8592",
+      "features": [
+        "批量生成网络小说章节。通过环境变读取 API keys 并调用外部 LLM API (ModelScope, Fyra, Ph8) 生成中文小说内容。 使用场景：用户给出大纲并要求\"批量生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zh-novel-writer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126399105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zh-novel-writer",
+      "url": "https://clawhub.ai/skills/zh-novel-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-novel-writer",
+    "url": "https://clawhub.ai/skills/zh-novel-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-novel-writer-a342b2ecbb264422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zh-novel-writer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-zh-novel-writer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e48b49863b436b26982448329daa9072e93f0de1593ae8b7abcf92d1bae5ef5",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:46:46.648Z"
+}

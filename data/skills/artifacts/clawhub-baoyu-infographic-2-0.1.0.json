@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-infographic-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_infographic_2",
+  "skill": {
+    "id": 51585,
+    "skillKey": "clawhub-baoyu-infographic-2",
+    "name": "Baoyu Infographic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-infographic-2",
+    "url": "https://clawhub.ai/skills/baoyu-infographic-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-infographic-2-5a128a3724361e52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates professional infographics with 21 layout types and 20 visual styles. Analyzes content, recommends layout×style combinations, and generates publicat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nengnengz",
+      "userId": "publishers:nengnengz",
+      "displayName": "nengnengZ",
+      "image": "https://avatars.githubusercontent.com/u/124799184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773975647480,
+      "changelog": "- Initial release of baoyu-infographic skill.\n- Generates professional infographics with 21 layout types and 20 visual styles.\n- Analyzes content, recommends optimal layout and style combinations, and produces publication-ready infographics.\n- Includes galleries and definitions for all supported layouts and styles.\n- Supports fully customizable options (layout, style, aspect ratio, language) and keyword shortcuts for common infographic scenarios.\n- Workflow handles user, project, or default preferences, content analysis, and structured output organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13f6c1575ee249effcc6b2ee7438f71f4b3e8576e70b084467e6c50b1b8842c9"
+}

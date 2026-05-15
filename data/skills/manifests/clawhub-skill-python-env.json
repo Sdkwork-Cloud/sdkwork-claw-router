@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60648,
+  "uuid": "skill-clawhub-skill-python-env",
+  "skillKey": "clawhub-skill-python-env",
+  "name": "skill-python-env",
+  "summary": "【OpenClaw 内部工具 skill】为其他 skill 提供 Python 虚拟环境管理。按 Python 版本号在 ~/.python_env/<version> 下创建共享环境，多个 skill 可复用同一版本环境。自动安装 uv（若未安装）。不直接面向用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_python_env",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chang",
+      "features": [
+        "【OpenClaw 内部工具 skill】为其他 skill 提供 Python 虚拟环境管理。按 Python 版本号在 ~/.python_env/<version> 下创建共享环境，多."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-python-env@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79965108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-python-env",
+      "url": "https://clawhub.ai/skills/skill-python-env"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-python-env",
+    "url": "https://clawhub.ai/skills/skill-python-env",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-python-env-898cd9da43afa7d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-python-env@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-python-env-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4f7193b4e49ca652e3da102e167b0ce9ce25cbe5f13468c8305430f2a2a92a1",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:58:35.329Z"
+}

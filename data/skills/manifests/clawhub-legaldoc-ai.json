@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9255,
+  "uuid": "skill-clawhub-legaldoc-ai",
+  "skillKey": "clawhub-legaldoc-ai",
+  "name": "LegalDoc AI",
+  "summary": "Automate extraction, analysis, summarization, legal research, and deadline tracking of contracts and legal documents for law firms and professionals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legaldoc_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manas-io-ai",
+      "features": [
+        "Automate extraction, analysis, summarization, legal research, and deadline tracking of contract."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legaldoc-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257467552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legaldoc-ai",
+      "url": "https://clawhub.ai/skills/legaldoc-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legaldoc-ai",
+    "url": "https://clawhub.ai/skills/legaldoc-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legaldoc-ai-e94a7efe2f74f3f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legaldoc-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legaldoc-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a99fb782ae35c4ec065f7303e1418321600924b41e226b0dc73d2cab822d902",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T02:54:18.737Z"
+}

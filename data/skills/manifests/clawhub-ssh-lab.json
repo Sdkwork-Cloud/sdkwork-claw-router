@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24174,
+  "uuid": "skill-clawhub-ssh-lab",
+  "skillKey": "clawhub-ssh-lab",
+  "name": "ssh-lab",
+  "summary": "Manage and monitor remote GPU servers via SSH with GPU, disk, process status, alerts, log tailing, file sync, and health diagnostics.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_lab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Enderfga",
+      "features": [
+        "Manage and monitor remote GPU servers via SSH with GPU, disk, process status, alerts, log taili."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-lab@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74981769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-lab",
+      "url": "https://clawhub.ai/skills/ssh-lab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-lab",
+    "url": "https://clawhub.ai/skills/ssh-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-lab-ef5624b196da6e28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-lab@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-lab-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:733a01e0cf51e073384788da9d837dc5fcc36614d9b9927d8d07c7c61cddbe31",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:07:46.499Z"
+}

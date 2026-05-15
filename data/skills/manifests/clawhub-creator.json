@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13644,
+  "uuid": "skill-clawhub-creator",
+  "skillKey": "clawhub-creator",
+  "name": "creator",
+  "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine_skills",
+      "features": [
+        "Guide for creating effective skills",
+        "This skill should be used when users want to create a new skill (or update an existing skill) t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231006044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creator",
+      "url": "https://clawhub.ai/skills/creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator",
+    "url": "https://clawhub.ai/skills/creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-bc6bfd848ebd7819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0e9395e82038131e5a7d3d2cfe2973205f7a1b21418801abf06a54f82545fb7",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:11:55.519Z"
+}

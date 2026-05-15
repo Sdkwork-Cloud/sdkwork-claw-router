@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26447,
+  "uuid": "skill-clawhub-browser-fu",
+  "skillKey": "clawhub-browser-fu",
+  "name": "Browser Fu",
+  "summary": "Fixes browser automation failures. Snapshot-first workflow + API discovery behind any website UI. Use when: 'browser not working', 'can't click', 'flaky UI',...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_fu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WhooshingLander",
+      "features": [
+        "Fixes browser automation failures",
+        "Snapshot-first workflow + API discovery behind any website UI",
+        "Use when: 'browser not working', 'can't click', 'flaky UI',..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-fu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187096906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-fu",
+      "url": "https://clawhub.ai/skills/browser-fu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-fu",
+    "url": "https://clawhub.ai/skills/browser-fu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-fu-32f951e2f1db71bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-fu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-fu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fafdf3024b2ed62d95e047bc9ec28ba6e47781ad3b1a39444d4d9eecec50e7e3",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:52:46.550Z"
+}

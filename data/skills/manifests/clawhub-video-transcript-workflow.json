@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59138,
+  "uuid": "skill-clawhub-video-transcript-workflow",
+  "skillKey": "clawhub-video-transcript-workflow",
+  "name": "Video Transcript Workflow",
+  "summary": "视频/音频转录 → 优化润色 → 多平台发布稿。使用 faster-whisper 转录音视频，自动修正错误、提取金句、生成知乎/微信/小红书等多平台文章。Use when user wants to transcribe video/audio, convert speech to text, or creat...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcript_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yi,Li （李祎）",
+      "features": [
+        "视频/音频转录 → 优化润色 → 多平台发布稿。使用 faster-whisper 转录音视频，自动修正错误、提取金句、生成知乎/微信/小红书等多平台文章。Use when user wan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transcript-workflow@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29275663?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transcript-workflow",
+      "url": "https://clawhub.ai/skills/video-transcript-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcript-workflow",
+    "url": "https://clawhub.ai/skills/video-transcript-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcript-workflow-a950ac031a41547f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transcript-workflow@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transcript-workflow-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c962aee4cd44ec91cb118c3f284e1eee759e2ef245b48d180250b8b0ab0b4a09",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T23:30:24.953Z"
+}

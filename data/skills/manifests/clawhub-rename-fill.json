@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28902,
+  "uuid": "skill-clawhub-rename-fill",
+  "skillKey": "clawhub-rename-fill",
+  "name": "rename-fill",
+  "summary": "Rename files in a specified directory with a given prefix. This skill prompts the user for a prefix and directory path, shows a preview of changes, and asks...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rename_fill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xyz",
+      "features": [
+        "Rename files in a specified directory with a given prefix",
+        "This skill prompts the user for a prefix and directory path, shows a preview of changes, and as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rename-fill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7261210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rename-fill",
+      "url": "https://clawhub.ai/skills/rename-fill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rename-fill",
+    "url": "https://clawhub.ai/skills/rename-fill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rename-fill-6966deeca71b37f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rename-fill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rename-fill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41955a17f54030670e02244620604e1c4a1efcd85c54ee1f0c4b4868f5b2d2bb",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:37:19.339Z"
+}

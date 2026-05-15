@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foundry@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foundry",
+  "skill": {
+    "id": 11049,
+    "skillKey": "clawhub-foundry",
+    "name": "Foundry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foundry",
+    "url": "https://clawhub.ai/skills/foundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foundry-dfb316701857783d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions, tools, hooks, and skills"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lekt9",
+      "userId": "publishers:lekt9",
+      "displayName": "lekt9",
+      "image": "https://avatars.githubusercontent.com/u/3887946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3027,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769980647252,
+      "changelog": "Initial public release of Foundry—a self-writing meta-extension for OpenClaw.\n\n- Adds `foundry` skill, enabling research, extension generation, self-modification, and automatic learning from successes and failures.\n- Provides built-in tools for researching documentation, writing extensions/skills/hooks, self-extending, and publishing abilities.\n- Supports auto-learning from documentation, experience, arXiv, and GitHub sources.\n- Includes configuration options for enabling/disabling learning sources and marketplace publishing.\n- Ensures security via code validation, sandboxing, and manual approval for generated code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40912349ec0c24cbac0b7072df824d0cfda5deebff3a0b112fb6eeae94f0ef96"
+}

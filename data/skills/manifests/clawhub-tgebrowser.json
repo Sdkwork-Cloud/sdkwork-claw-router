@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27416,
+  "uuid": "skill-clawhub-tgebrowser",
+  "skillKey": "clawhub-tgebrowser",
+  "name": "tgebrowser",
+  "summary": "Operates TgeBrowser via MCP tools. Use when the user asks to create or manage TgeBrowser environments, groups, proxies, browser automation, or check status....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tgebrowser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tuguang2025",
+      "features": [
+        "Operates TgeBrowser via MCP tools",
+        "Use when the user asks to create or manage TgeBrowser environments, groups, proxies, browser au."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tgebrowser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81463246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tgebrowser",
+      "url": "https://clawhub.ai/skills/tgebrowser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tgebrowser",
+    "url": "https://clawhub.ai/skills/tgebrowser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tgebrowser-2b0b4778b5133550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tgebrowser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tgebrowser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb82eedf8c988b51a04f655a9c40fd360d5dd0c2ccbd7c11aa49d33b91e3a28",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T05:58:07.970Z"
+}

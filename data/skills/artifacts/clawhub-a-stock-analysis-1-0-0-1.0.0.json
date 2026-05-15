@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-analysis-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_analysis_1_0_0",
+  "skill": {
+    "id": 64960,
+    "skillKey": "clawhub-a-stock-analysis-1-0-0",
+    "name": "A Stock Analysis 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-analysis-1-0-0",
+    "url": "https://clawhub.ai/skills/a-stock-analysis-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-analysis-1-0-0-69284eab8ef4d3d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供沪深北交所A股实时行情、分时成交量分析、主力资金动向判断和持仓盈亏管理功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanchanghua",
+      "userId": "publishers:zhanchanghua",
+      "displayName": "Valarie Emmerich",
+      "image": "https://avatars.githubusercontent.com/u/19482936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1168,
+      "installsAllTime": 32,
+      "installsCurrent": 29,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772181430371,
+      "changelog": "Initial release with real-time A-share stock analysis and portfolio management.\n\n- Fetch real-time prices, price change, and volume for Shanghai and Shenzhen stocks.\n- Analyze minute-level volume distribution (early/late trading session focus).\n- Detect main fund activities and volume anomalies (e.g., strong buying, selling signals).\n- Identify daily top 10 high-volume minutes, supporting insights into key trading events.\n- Manage and analyze portfolio holdings and P&L with command-line tools.\n- Supports standardized stock codes, batch queries, and JSON output format.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:581870d508acebef8b364a369335dd388711e16d0a87c9b9d892ad95e81452c1"
+}

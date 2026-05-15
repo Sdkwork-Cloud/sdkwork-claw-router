@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eo-ability-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eo_ability_code_review",
+  "skill": {
+    "id": 62481,
+    "skillKey": "clawhub-eo-ability-code-review",
+    "name": "Eo Ability Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eo-ability-code-review",
+    "url": "https://clawhub.ai/skills/eo-ability-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eo-ability-code-review-70bc86dd9437be04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "代码审查能力，调用CodeReviewer专家进行安全、性能、风格全面审查，输出问题列表和改进建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "467718584",
+      "userId": "s172a1qcbvpk1r9stxfkyfewns845475",
+      "displayName": "467718584",
+      "image": "https://avatars.githubusercontent.com/u/57902585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775577608438,
+      "changelog": "Initial release of eo-ability-code-review\n\n- Provides comprehensive code review capabilities focused on security, performance, and style.\n- Outputs a detailed issues list and actionable improvement suggestions.\n- Supports both strict and basic code review modes, adapting to presence or absence of EO plugins.\n- Integrates with other EO workflows for code quality, paper logic, and security auditing.\n- Delivers dimensional scoring and summary reports for comprehensive code quality assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9641a1988f92a84c949056a568eb391e7952fb1ddfacc506a7e329d974ac2065"
+}

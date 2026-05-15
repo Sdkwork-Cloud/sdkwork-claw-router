@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61947,
+  "uuid": "skill-clawhub-ai-news-aggregator",
+  "skillKey": "clawhub-ai-news-aggregator",
+  "name": "Ai News Aggregator",
+  "summary": "AI/技术新闻聚合引擎。100+ RSS源并发抓取、兴趣评分、跨天去重、统一预取。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_aggregator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "AI/技术新闻聚合引擎。100+ RSS源并发抓取、兴趣评分、跨天去重、统一预取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-aggregator@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-aggregator",
+      "url": "https://clawhub.ai/skills/ai-news-aggregator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-aggregator",
+    "url": "https://clawhub.ai/skills/ai-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-aggregator-769280b00e74fcf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-aggregator@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-aggregator-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3093282b82ac2876848e38849d114c25d963b27789b67f7a86be8fc8fbd72bcb",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:29:52.689Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guide",
+  "skill": {
+    "id": 24168,
+    "skillKey": "clawhub-openclaw-guide",
+    "name": "OpenClaw Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guide",
+    "url": "https://clawhub.ai/skills/openclaw-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guide-8c79974d8bb09052.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authoritative OpenClaw guidance and documentation lookup. Provides accurate information about OpenClaw capabilities, configuration, and usage based on offici..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772705747028,
+      "changelog": "OpenClaw Guide skill v1.0.0 initial release:\n\n- Provides authoritative, up-to-date answers about OpenClaw, prioritizing official documentation and source code.\n- Supports queries on features, setup, configuration, architecture, troubleshooting, and best practices.\n- Outlines a step-by-step workflow for analyzing user questions, retrieving relevant documentation or source code, and composing clear, accurate responses.\n- Includes templates and quality standards to ensure accuracy, completeness, and proper citation of official sources.\n- Covers handling for configuration, feature, troubleshooting, and architecture inquiries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3cde4e1d80403b29466b6fac9ddef7ca15f8489e486906b9667aecaf6dd54675"
+}

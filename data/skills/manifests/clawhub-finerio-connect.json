@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31100,
+  "uuid": "skill-clawhub-finerio-connect",
+  "skillKey": "clawhub-finerio-connect",
+  "name": "Finerio Connect",
+  "summary": "Finerio Connect integration. Manage data, records, and automate workflows. Use when the user wants to interact with Finerio Connect data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finerio_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Finerio Connect integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Finerio Connect data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finerio-connect@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finerio-connect",
+      "url": "https://clawhub.ai/skills/finerio-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finerio-connect",
+    "url": "https://clawhub.ai/skills/finerio-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finerio-connect-8f310833640344d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finerio-connect@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-finerio-connect-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:868b0c0e4c329db25668d026714de0151dab79719300c50b61c4f254f80d8ef5",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:47:20.651Z"
+}

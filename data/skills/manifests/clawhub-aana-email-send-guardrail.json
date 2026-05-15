@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34036,
+  "uuid": "skill-clawhub-aana-email-send-guardrail",
+  "skillKey": "clawhub-aana-email-send-guardrail",
+  "name": "AANA Email Send Guardrail Skill",
+  "summary": "Ensures email recipients, content, tone, attachments, claims, and approvals are verified and safe before sending or scheduling messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_email_send_guardrail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Ensures email recipients, content, tone, attachments, claims, and approvals are verified and sa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-email-send-guardrail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-email-send-guardrail",
+      "url": "https://clawhub.ai/skills/aana-email-send-guardrail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-email-send-guardrail",
+    "url": "https://clawhub.ai/skills/aana-email-send-guardrail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-email-send-guardrail-59eb353597e22281.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-email-send-guardrail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-email-send-guardrail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af0fc1aba91102845840e56ca90f7d23aacf8d205263e6d66630a45e7b984334",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T20:21:33.163Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-to-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_to_markdown",
+  "skill": {
+    "id": 34821,
+    "skillKey": "clawhub-docx-to-markdown",
+    "name": "Docx To Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-to-markdown",
+    "url": "https://clawhub.ai/skills/docx-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-to-markdown-f1db970ef0e5bd16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Document to Markdown converter - convert DOCX, PPTX, Excel files to Markdown. Use when extracting content from Word documents, PowerPoint presentations, or E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanis90",
+      "userId": "s17c6n53ezjj2w372fjv34m7zx83gva1",
+      "displayName": "tanis90",
+      "image": "https://avatars.githubusercontent.com/u/22654397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370699901,
+      "changelog": "docx-to-markdown 1.0.0 - Initial Release\n\n- Convert DOCX, PPTX, XLS, and XLSX files to Markdown using the MinerU Open API.\n- Supports both local files and URLs; no API key or signup required.\n- Preserves text, tables, and document structure.\n- Maximum supported: 10MB or 20 pages per document.\n- CLI tool available with multiple install options (npm, uv, go).\n- Enhanced privacy: documents are processed in real-time and not stored.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfa5e0f84aeae118e4d396365e9bce0062a933e377230892e76a40387adf1064"
+}

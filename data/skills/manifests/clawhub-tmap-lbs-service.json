@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67706,
+  "uuid": "skill-clawhub-tmap-lbs-service",
+  "skillKey": "clawhub-tmap-lbs-service",
+  "name": "tmap-lbs-service",
+  "summary": "腾讯地图位置服务，支持POI搜索、路径规划、旅游规划、周边搜索，轨迹数据可视化和地图数据可视化",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmap_lbs_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qfish",
+      "features": [
+        "腾讯地图位置服务，支持POI搜索、路径规划、旅游规划、周边搜索，轨迹数据可视化和地图数据可视化"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmap-lbs-service@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/679824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmap-lbs-service",
+      "url": "https://clawhub.ai/skills/tmap-lbs-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmap-lbs-service",
+    "url": "https://clawhub.ai/skills/tmap-lbs-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmap-lbs-service-76ab08a3e522a556.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmap-lbs-service@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmap-lbs-service-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec16ed7ca5395b20ffc85a72958e4881d2cc2dbb9eae5135b2e2b900acaef362",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:11:04.901Z"
+}

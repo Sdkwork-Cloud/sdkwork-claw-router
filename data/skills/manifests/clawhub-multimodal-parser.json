@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17639,
+  "uuid": "skill-clawhub-multimodal-parser",
+  "skillKey": "clawhub-multimodal-parser",
+  "name": "multimodal-parser",
+  "summary": "Unified multi-modal content parser for images, PDF, DOCX, audio, auto OCR/transcription, output structured text for LLM processing",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multimodal_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ayalili",
+      "features": [
+        "Unified multi-modal content parser for images, PDF, DOCX, audio, auto OCR/transcription, output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multimodal-parser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52843161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multimodal-parser",
+      "url": "https://clawhub.ai/skills/multimodal-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multimodal-parser",
+    "url": "https://clawhub.ai/skills/multimodal-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multimodal-parser-49921f84aa028437.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multimodal-parser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multimodal-parser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6df3e9d1bb15bea89210e2ebcac3060f0d462bddbb3cb2055afced51d4a080b",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:28:27.637Z"
+}

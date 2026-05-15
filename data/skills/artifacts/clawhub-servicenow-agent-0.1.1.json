@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/servicenow-agent@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.servicenow_agent",
+  "skill": {
+    "id": 10994,
+    "skillKey": "clawhub-servicenow-agent",
+    "name": "ServiceNow Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "servicenow-agent",
+    "url": "https://clawhub.ai/skills/servicenow-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/servicenow-agent-660ab672a759730c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only CLI access to ServiceNow Table, Attachment, Aggregate, and Service Catalog APIs; includes schema inspection and history retrieval (read-only)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesethrose",
+      "userId": "publishers:thesethrose",
+      "displayName": "Seth Rose",
+      "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1768513478441,
+      "changelog": "Add schema, history, attachment, stats, service-catalog, presets, docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:231082c2f57089265dc218a9b4bacf33729c89841dccae316b4a1f8d7dc7139c"
+}

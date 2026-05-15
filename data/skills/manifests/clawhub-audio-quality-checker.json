@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25887,
+  "uuid": "skill-clawhub-audio-quality-checker",
+  "skillKey": "clawhub-audio-quality-checker",
+  "name": "Audio Quality Checker",
+  "summary": "Analyze audio quality, detect noise types, and provide improvement recommendations. Use when users need to check audio quality, validate recordings, or ident...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_quality_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Analyze audio quality, detect noise types, and provide improvement recommendations",
+        "Use when users need to check audio quality, validate recordings, or ident..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-quality-checker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-quality-checker",
+      "url": "https://clawhub.ai/skills/audio-quality-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-quality-checker",
+    "url": "https://clawhub.ai/skills/audio-quality-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-quality-checker-7da063a8403f5276.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-quality-checker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-quality-checker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08cab8915aa15db7c2e8837d29b3d4a57645633b5dca83b55ce2081dd9e30b69",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:05:01.728Z"
+}

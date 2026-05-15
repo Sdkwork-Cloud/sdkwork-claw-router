@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comment-on-task@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_on_task",
+  "skill": {
+    "id": 22142,
+    "skillKey": "clawhub-comment-on-task",
+    "name": "Comment On Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-on-task",
+    "url": "https://clawhub.ai/skills/comment-on-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-on-task-f3798b9e49014aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add or read comments on an OpenAnt task. Use when the agent wants to communicate with the task creator or worker, ask questions about a task, provide progres..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772360155088,
+      "changelog": "- Initial release of comment-on-task.\n- Enables reading and adding comments on OpenAnt tasks via CLI.\n- Use for progress updates, feedback, questions, or following task discussion threads.\n- Provides clear CLI usage examples and standardizes output with --json.\n- Includes guidance on autonomy and error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0478ea12fa8e8b5e7a7e07c9d6325c7d2a4c9055878fd046b9544cd0d9c22eaf"
+}

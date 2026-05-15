@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ares-business-registry@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ares_business_registry",
+  "skill": {
+    "id": 23663,
+    "skillKey": "clawhub-ares-business-registry",
+    "name": "ARES Business Registry (CZ)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ares-business-registry",
+    "url": "https://clawhub.ai/skills/ares-business-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ares-business-registry-18fe985cedfeae06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Czech ARES business registry by ICO or name with human/JSON/raw outputs, retries, and legal-form decoding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pghostek",
+      "userId": "publishers:pghostek",
+      "displayName": "PGhostek",
+      "image": "https://avatars.githubusercontent.com/u/23233359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772394200134,
+      "changelog": "Adds NACE-based search, combined name+NACE filtering, stricter validation/docs updates, and improved usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d50cc89271d60239fb1154724618fd2f74c9488c3005d81ffe35adc6216e487"
+}

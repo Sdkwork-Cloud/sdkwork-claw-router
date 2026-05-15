@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44478,
+  "uuid": "skill-clawhub-acunetix-integration",
+  "skillKey": "clawhub-acunetix-integration",
+  "name": "Acunetix",
+  "summary": "Acunetix integration. Manage data, records, and automate workflows. Use when the user wants to interact with Acunetix data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acunetix_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Acunetix integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Acunetix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acunetix-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acunetix-integration",
+      "url": "https://clawhub.ai/skills/acunetix-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acunetix-integration",
+    "url": "https://clawhub.ai/skills/acunetix-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acunetix-integration-d3470ec4f952571c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acunetix-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-acunetix-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93e6cf2c0c054dc8898fa61a122d68afc219f20815fa44e320effdffb72f9103",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:12.651Z"
+}

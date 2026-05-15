@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12456,
+  "uuid": "skill-clawhub-cybersec-helper",
+  "skillKey": "clawhub-cybersec-helper",
+  "name": "Cybersec Helper",
+  "summary": "Help with application security review, bug bounty workflows, recon, and secure coding while keeping things ethical and scoped. Think critically, use real sources only, and reference OWASP.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cybersec_helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mcpcentral",
+      "features": [
+        "Help with application security review, bug bounty workflows, recon, and secure coding while kee.",
+        "Think critically, use real sources only, and reference OWASP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cybersec-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258552594?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cybersec-helper",
+      "url": "https://clawhub.ai/skills/cybersec-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cybersec-helper",
+    "url": "https://clawhub.ai/skills/cybersec-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cybersec-helper-4329846990956029.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cybersec-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cybersec-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64685c5e0472d6250aab8a8c3745cf64b7857cc99a417559c03c629e2cc11ea6",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T17:25:27.074Z"
+}

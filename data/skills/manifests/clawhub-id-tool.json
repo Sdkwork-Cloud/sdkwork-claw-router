@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47970,
+  "uuid": "skill-clawhub-id-tool",
+  "skillKey": "clawhub-id-tool",
+  "name": "Id Tool",
+  "summary": "Display user and group identity information. Shows real and effective user ID, group ID, and supplementary groups for the current process.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.id_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display user and group identity information",
+        "Shows real and effective user ID, group ID, and supplementary groups for the current process."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/id-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "id-tool",
+      "url": "https://clawhub.ai/skills/id-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "id-tool",
+    "url": "https://clawhub.ai/skills/id-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/id-tool-eaf0d57447981313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/id-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-id-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbb27430a1517e0deb1a59ad3cb8da4c2a614e1ceb53f94031be67487e7ef52b",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T22:05:05.481Z"
+}

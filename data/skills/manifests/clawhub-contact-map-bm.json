@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49439,
+  "uuid": "skill-clawhub-contact-map-bm",
+  "skillKey": "clawhub-contact-map-bm",
+  "name": "Contact Map Bm",
+  "summary": "Generate an interactive Germany map of Odoo contacts (click markers to open the record in Odoo).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contact_map_bm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bernhard Müller",
+      "features": [
+        "Generate an interactive Germany map of Odoo contacts (click markers to open the record in Odoo)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contact-map-bm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37840953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contact-map-bm",
+      "url": "https://clawhub.ai/skills/contact-map-bm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contact-map-bm",
+    "url": "https://clawhub.ai/skills/contact-map-bm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contact-map-bm-8c5903a3c1aa9982.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contact-map-bm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contact-map-bm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55ce4364748d2cedfaee4dadb59e846a0d9d7b1ecad3a1d88e0959367bcc9b9f",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T18:30:32.444Z"
+}

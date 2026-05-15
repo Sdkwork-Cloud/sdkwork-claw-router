@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33899,
+  "uuid": "skill-clawhub-construction-quote",
+  "skillKey": "clawhub-construction-quote",
+  "name": "Construction Quote & Job Costing",
+  "summary": "Generate itemised construction quotes, material lists, and job costings from plain English job descriptions. Covers extensions, kitchens, bathrooms, loft con...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_quote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Generate itemised construction quotes, material lists, and job costings from plain English job.",
+        "Covers extensions, kitchens, bathrooms, loft con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/construction-quote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "construction-quote",
+      "url": "https://clawhub.ai/skills/construction-quote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-quote",
+    "url": "https://clawhub.ai/skills/construction-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-quote-55a136dea85ee198.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/construction-quote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-construction-quote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0caed1554453122f2893c331b6b1f5f61fdb075615472bd5bb84588201a72ea2",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:46:17.415Z"
+}

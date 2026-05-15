@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-enhancer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_enhancer",
+  "skill": {
+    "id": 16161,
+    "skillKey": "clawhub-openclaw-memory-enhancer",
+    "name": "Openclaw Memory Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-enhancer",
+    "url": "https://clawhub.ai/skills/openclaw-memory-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-enhancer-3cc07481307a74d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Edge-optimized RAG memory system for OpenClaw with semantic search. Automatically loads memory files, provides intelligent recall, and enhances conversations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henryfcb",
+      "userId": "publishers:henryfcb",
+      "displayName": "henry",
+      "image": "https://avatars.githubusercontent.com/u/100549058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 862,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771772698311,
+      "changelog": "- Initial release of openclaw-memory-enhancer.\n- Adds semantic search and automatic memory file loading for OpenClaw.\n- Enables intelligent, contextual recall of past conversations and knowledge.\n- Two versions included: Edge (<10MB, Python stdlib, for Jetson/Raspberry Pi) and Standard (better accuracy, more resources).\n- 100% local storage for privacy; no network or cloud required.\n- Automatic management of memory files and support for several memory types (logs, instructions, Q&A, preferences, etc.).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01505b65f7c5bb1444a46ee8905a3bd35bc7b109d8fa4dc847d2993f4b60c7b9"
+}

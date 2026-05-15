@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61360,
+  "uuid": "skill-clawhub-zeelin-weibo-autopost",
+  "skillKey": "clawhub-zeelin-weibo-autopost",
+  "name": "ZeeLin 微博自动发布",
+  "summary": "通过浏览器操作网页版微博，用户登录后 Agent 撰写内容并自动发布。无需 API，需 Browser Relay 挂上微博标签页。Keywords: 微博, 发微博, 自动发布, Weibo, ZeeLin.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_weibo_autopost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kelcey2023",
+      "features": [
+        "通过浏览器操作网页版微博，用户登录后 Agent 撰写内容并自动发布。无需 API，需 Browser Relay 挂上微博标签页。Keywords: 微博, 发微博, 自动发布, Weib."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-weibo-autopost@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128341611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-weibo-autopost",
+      "url": "https://clawhub.ai/skills/zeelin-weibo-autopost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-weibo-autopost",
+    "url": "https://clawhub.ai/skills/zeelin-weibo-autopost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-weibo-autopost-0e58c4d129f029fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-weibo-autopost@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-weibo-autopost-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb232a8cf245be1a83c9cefdca2d6ce6b207b957774b11147b11c3202873474e",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:59:24.436Z"
+}

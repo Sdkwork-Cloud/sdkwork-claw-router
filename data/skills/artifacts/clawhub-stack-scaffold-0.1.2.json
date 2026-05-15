@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stack-scaffold@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stack_scaffold",
+  "skill": {
+    "id": 15638,
+    "skillKey": "clawhub-stack-scaffold",
+    "name": "Stack Scaffold"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stack-scaffold",
+    "url": "https://clawhub.ai/skills/stack-scaffold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stack-scaffold-c7aae4dcd73dc63b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scaffolds a full-stack project with Next.js App Router, Supabase, Firebase Auth, Vercel, and Cloudflare"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guifav",
+      "userId": "s17bdsbc0c31q1qryawma14pf5858sm5",
+      "displayName": "Guilherme Favaron",
+      "image": "https://avatars.githubusercontent.com/u/109181842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 896,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774228598659,
+      "changelog": "stack-scaffold 0.1.2\n\n- Added a CHANGELOG.md file to the project.\n- Updated SKILL.md with no functional or protocol changes.\n- Updated claw.json (details not shown).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a5b2060b866b5cefc6be528262172d5be6594b3512ef79b020b71d42ea4496a"
+}

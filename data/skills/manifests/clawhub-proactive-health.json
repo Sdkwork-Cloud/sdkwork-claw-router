@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13677,
+  "uuid": "skill-clawhub-proactive-health",
+  "skillKey": "clawhub-proactive-health",
+  "name": "Health Guardian",
+  "summary": "Proactive health monitoring for AI agents. Apple Health integration, pattern detection, anomaly alerts. Built for agents caring for humans with chronic conditions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CTsolutionsdev",
+      "features": [
+        "Proactive health monitoring for AI agents",
+        "Apple Health integration, pattern detection, anomaly alerts",
+        "Built for agents caring for humans with chronic conditions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proactive-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143364806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proactive-health",
+      "url": "https://clawhub.ai/skills/proactive-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-health",
+    "url": "https://clawhub.ai/skills/proactive-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-health-18cd6c6d80703446.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proactive-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proactive-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:274080ea662d536b1f1ab1fa97e4e5f97401e4414eb9c3cbb651ee615b40c2fb",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T14:32:48.414Z"
+}

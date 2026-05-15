@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28844,
+  "uuid": "skill-clawhub-freqtrade-backtester",
+  "skillKey": "clawhub-freqtrade-backtester",
+  "name": "Freqtrade Backtester",
+  "summary": "Run Freqtrade backtests for cryptocurrency trading strategies, interpret results, and iterate. Use when downloading historical data, running a backtest, read...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freqtrade_backtester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Run Freqtrade backtests for cryptocurrency trading strategies, interpret results, and iterate",
+        "Use when downloading historical data, running a backtest, read..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freqtrade-backtester@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freqtrade-backtester",
+      "url": "https://clawhub.ai/skills/freqtrade-backtester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freqtrade-backtester",
+    "url": "https://clawhub.ai/skills/freqtrade-backtester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freqtrade-backtester-72a69e72c485002c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freqtrade-backtester@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-freqtrade-backtester-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8d5c7de5246048b7a81eee8bb886001d548a05b24c176a7ce913ef8edbbb066",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:54:49.210Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60462,
+  "uuid": "skill-clawhub-multimodal",
+  "skillKey": "clawhub-multimodal",
+  "name": "GLM Multimodal Analyzer",
+  "summary": "使用GLM-4.6V模型进行多模态内容理解（图片、视频、文档）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multimodal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TriDefender",
+      "features": [
+        "使用GLM-4.6V模型进行多模态内容理解（图片、视频、文档）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multimodal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173548745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multimodal",
+      "url": "https://clawhub.ai/skills/multimodal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multimodal",
+    "url": "https://clawhub.ai/skills/multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multimodal-9caff5d2d21a7379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multimodal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multimodal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:935ca4ad930a1cbf4bcb068efe4f7d017c114270f00aa4ca34397ff0d43e5b20",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T16:54:24.647Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fang@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fang",
+  "skill": {
+    "id": 38365,
+    "skillKey": "clawhub-fang",
+    "name": "Fang: protect your env variables from being stealed."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fang",
+    "url": "https://clawhub.ai/skills/fang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fang-a57d374337978ca7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Protect environment variables from being stolen by malicious skill scripts. Runs a two-phase security audit: (1) static pattern scan via scan_env.py to detec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774445968634,
+      "changelog": "Initial release: two-phase security audit tool for detecting environment variable theft in skill scripts.\n\n- Static pattern scan across Python and shell files to flag env access, network calls, encoding, and exec usage with automatic risk scoring.\n- (Optional) LLM-powered deep analysis covering multiple script types (.py, .sh, .js, .ts, .ps1, .bash) for sophisticated exfiltration patterns and obfuscation.\n- Produces a structured report rating each file's risk (HIGH/MEDIUM/LOW/CLEAN) and recommends actions.\n- Command-line interface with options for API key/model selection and report export.\n- Designed for auditing, investigation, and periodic security sweeps of skill directories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6f2f01639b6e5985562e3656e6658d5450db91ba3cd4825349fec541a092a05"
+}

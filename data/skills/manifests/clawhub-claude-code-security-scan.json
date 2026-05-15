@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34915,
+  "uuid": "skill-clawhub-claude-code-security-scan",
+  "skillKey": "clawhub-claude-code-security-scan",
+  "name": "Claude Code Security Scan",
+  "summary": "Audit Claude Code configuration for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Scans settings, MCP servers, hooks, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_security_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Audit Claude Code configuration for security vulnerabilities, misconfigurations, and injection.",
+        "Scans settings, MCP servers, hooks, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-security-scan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-security-scan",
+      "url": "https://clawhub.ai/skills/claude-code-security-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-security-scan",
+    "url": "https://clawhub.ai/skills/claude-code-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-security-scan-eff81e4a8c9311e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-security-scan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-security-scan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5088146a64fa81dd8b95d7f86a0b33e8e903ae9abe3cb7c827bfa2c4bf27639e",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T13:16:56.912Z"
+}

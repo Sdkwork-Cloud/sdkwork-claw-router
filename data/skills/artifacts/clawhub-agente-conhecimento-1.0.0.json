@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agente-conhecimento@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agente_conhecimento",
+  "skill": {
+    "id": 16387,
+    "skillKey": "clawhub-agente-conhecimento",
+    "name": "Agente Conhecimento"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agente-conhecimento",
+    "url": "https://clawhub.ai/skills/agente-conhecimento",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agente-conhecimento-2f757f487b31e304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Logs and organizes learnings, errors, and feature requests for continuous improvement, integrating with OpenClaw workspace for knowledge management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pedrohenrique202525",
+      "userId": "publishers:pedrohenrique202525",
+      "displayName": "PEDROHENRIQUE202525",
+      "image": "https://avatars.githubusercontent.com/u/203266848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771371688126,
+      "changelog": "Initial release of the agente-conhecimento skill, focused on structured knowledge logging and self-improvement.\n\n- Introduces a system for logging learnings, errors, and feature requests to Markdown files for later review and project improvement.\n- Provides detailed guidelines for capturing, categorizing, and promoting useful insights and corrections.\n- Outlines integration with OpenClaw, including workspace setup, logging formats, and promotion protocols.\n- Includes step-by-step instructions for generic agent usage outside OpenClaw.\n- Defines structured templates for logging learnings, errors, and feature requests, with guidance on resolving and promoting entries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2bdd98039c0b51a0650ceb4c2b50a12f22cec3aa42f227fce3488672c268468"
+}

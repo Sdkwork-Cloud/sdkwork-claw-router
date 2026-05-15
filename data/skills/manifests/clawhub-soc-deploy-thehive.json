@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29638,
+  "uuid": "skill-clawhub-soc-deploy-thehive",
+  "skillKey": "clawhub-soc-deploy-thehive",
+  "name": "Soc Deploy Thehive",
+  "summary": "Deploy TheHive 5 + Cortex 3 incident response platform on any Docker-ready Linux host. Automates account creation, API key generation, Cortex CSRF handling,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soc_deploy_thehive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Deploy TheHive 5 + Cortex 3 incident response platform on any Docker-ready Linux host",
+        "Automates account creation, API key generation, Cortex CSRF handling,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soc-deploy-thehive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soc-deploy-thehive",
+      "url": "https://clawhub.ai/skills/soc-deploy-thehive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soc-deploy-thehive",
+    "url": "https://clawhub.ai/skills/soc-deploy-thehive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soc-deploy-thehive-268db4668a1a3d52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soc-deploy-thehive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soc-deploy-thehive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eeced827d3feeeabb3111317b3b24c790021995c545a0ea8405873143472c794",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:01:02.506Z"
+}

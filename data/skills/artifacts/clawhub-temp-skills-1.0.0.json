@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_skills",
+  "skill": {
+    "id": 42013,
+    "skillKey": "clawhub-temp-skills",
+    "name": "Temp Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-skills",
+    "url": "https://clawhub.ai/skills/temp-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-skills-4d8b563512b2e992.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates OKX API for spot and contract trading, asset management, risk control, and real-time market data with automated risk checks and logging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danihe001",
+      "userId": "s178m7yvxnmse4eckjhshjra4x83kg23",
+      "displayName": "steve xia",
+      "image": "https://avatars.githubusercontent.com/u/122467183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775265172642,
+      "changelog": "- 初始版本，集成 OKX API，用于现货与合约交易管理。\n- 支持主流币种买卖、永续与交割合约交易。\n- 实现资产查询、资金划转、风控监控（止损止盈、仓位控制）、实时行情及深度数据获取。\n- 安全限制包括20%最大回撤、日志记录、异常通知机制。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cccc4ea50c01052942c45bfd913ec6f5a3db8a754ad8371098bf5e2fda07389"
+}

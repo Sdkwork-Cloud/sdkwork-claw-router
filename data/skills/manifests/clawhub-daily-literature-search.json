@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25986,
+  "uuid": "skill-clawhub-daily-literature-search",
+  "skillKey": "clawhub-daily-literature-search",
+  "name": "Daily Literature Search",
+  "summary": "Automated daily literature search system for academic researchers. Performs scheduled searches across PubMed, OpenAlex, and Semantic Scholar with automatic d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_literature_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wzr101622",
+      "features": [
+        "Automated daily literature search system for academic researchers",
+        "Performs scheduled searches across PubMed, OpenAlex, and Semantic Scholar with automatic d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-literature-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198218475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-literature-search",
+      "url": "https://clawhub.ai/skills/daily-literature-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-literature-search",
+    "url": "https://clawhub.ai/skills/daily-literature-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-literature-search-0ab5d4e1bce45f14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-literature-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-literature-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee29eee7bbe854d8829d24f209424e09d11039184cb5db297bfca5ef47067c2",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:09:16.112Z"
+}

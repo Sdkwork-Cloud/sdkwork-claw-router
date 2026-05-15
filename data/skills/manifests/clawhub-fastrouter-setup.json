@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39620,
+  "uuid": "skill-clawhub-fastrouter-setup",
+  "skillKey": "clawhub-fastrouter-setup",
+  "name": "FastRouter Setup",
+  "summary": "Add the FastRouter AI provider to OpenClaw with all available text and vision models, fetched live from the FastRouter API. Use when: (1) a user wants to set...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastrouter_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vamsimnet",
+      "features": [
+        "Add the FastRouter AI provider to OpenClaw with all available text and vision models, fetched l.",
+        "Use when: (1) a user wants to set..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastrouter-setup@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224931396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastrouter-setup",
+      "url": "https://clawhub.ai/skills/fastrouter-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastrouter-setup",
+    "url": "https://clawhub.ai/skills/fastrouter-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastrouter-setup-ca41af1ad2fbe780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastrouter-setup@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastrouter-setup-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec624b58d1e262a59219bb6d8865cd16b48cf3e59cba365e6f43d1a9edd5cef7",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:21:32.139Z"
+}

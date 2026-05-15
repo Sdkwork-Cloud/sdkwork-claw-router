@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9799,
+  "uuid": "skill-clawhub-seiso",
+  "skillKey": "clawhub-seiso",
+  "name": "Seisoai",
+  "summary": "Unified media generation gateway for agents. Discover tools dynamically, choose API key or x402 auth, invoke image/video/audio/music/3D/training tools, and h...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seiso",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Legendarylibr",
+      "features": [
+        "Unified media generation gateway for agents",
+        "Discover tools dynamically, choose API key or x402 auth, invoke image/video/audio/music/3D/trai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seiso@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117605439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seiso",
+      "url": "https://clawhub.ai/skills/seiso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seiso",
+    "url": "https://clawhub.ai/skills/seiso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seiso-0a98e4a07f0997c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seiso@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seiso-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b8c9c2e64ff9278338132f98597243ba6dfea85bccd27e0e6dd0db55e32a597",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T08:57:11.014Z"
+}

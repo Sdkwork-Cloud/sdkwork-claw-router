@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fabletics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fabletics",
+  "skill": {
+    "id": 48640,
+    "skillKey": "clawhub-fabletics",
+    "name": "Fabletics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fabletics",
+    "url": "https://clawhub.ai/skills/fabletics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fabletics-89a588b045ecdb90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fabletics is a subscription-based activewear brand co-founded by Kate Hudson, combining VIP membership pricing with DTC and retail channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777975573536,
+      "changelog": "- 首发上线，提供Fabletics品牌的核心信息与历史时间线  \n- 详述VIP会员订阅商业模式及DTC策略  \n- 分析品牌护城河与关键经营数据  \n- 收录名人联合创立、扩展与并购等重要节点  \n- 补充趣味事实，便于快速了解品牌特色",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e88a79f4c00670d91e6d3dec2d57d5636b74302df891f916a5080ec98a144bcc"
+}

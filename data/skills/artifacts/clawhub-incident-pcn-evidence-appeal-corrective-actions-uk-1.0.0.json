@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-pcn-evidence-appeal-corrective-actions-uk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_pcn_evidence_appeal_corrective_actions_uk",
+  "skill": {
+    "id": 12057,
+    "skillKey": "clawhub-incident-pcn-evidence-appeal-corrective-actions-uk",
+    "name": "Incident & PCN Handling Pack (UK)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-pcn-evidence-appeal-corrective-actions-uk",
+    "url": "https://clawhub.ai/skills/incident-pcn-evidence-appeal-corrective-actions-uk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-pcn-evidence-appeal-corrective-actions-uk-998ba4d9bfa502b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds incident/PCN evidence packs with timelines, appeal drafts, corrective actions, and follow-up monitoring. USE WHEN handling PCNs or incidents needing documentation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kowl64",
+      "userId": "publishers:kowl64",
+      "displayName": "KOwl64",
+      "image": "https://avatars.githubusercontent.com/u/59417033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1832,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768660506180,
+      "changelog": "Initial release of the Incident & PCN Handling Pack for UK workflows.\n\n- Automates creation of evidence packs for incident/PCN management, including manager briefs, timelines, appeal drafts, corrective actions, and monitoring tools.\n- Defines required and optional inputs, with clear criteria for when the skill should be used.\n- Outputs five ready-to-use documentation files with clear formatting and instructions.\n- Implements a step-by-step workflow for pack assembly, including evidence standards and safety checks.\n- Includes guidance to clarify user requests and to avoid fabricating information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:558dc65e2b88eabc14fe259cfad16cb6a6c2368eced9f344080fa8a44358645e"
+}

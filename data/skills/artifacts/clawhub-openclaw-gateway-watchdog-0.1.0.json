@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-gateway-watchdog@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_watchdog",
+  "skill": {
+    "id": 27450,
+    "skillKey": "clawhub-openclaw-gateway-watchdog",
+    "name": "Gateway Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-watchdog",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-watchdog-92aac467ee021c72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically installs and configures Gateway Watchdog to monitor Gateway status, enable DingTalk alerts, set up auto-start, and run the monitoring service."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adminlove520",
+      "userId": "s179x72c6jesddn1707vxetp1d83j11q",
+      "displayName": "Anonymous",
+      "image": "https://avatars.githubusercontent.com/u/32920883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773812159874,
+      "changelog": "openclaw-gateway-watchdog 0.1.0\n\n- Initial release of the Gateway Watchdog skill\n- Enables automatic installation, configuration (with optional DingTalk notifications), autostart, and service running for Gateway monitoring\n- Provides clear trigger phrases and step-by-step installation instructions\n- Includes guides for configuration, command usage, and log checking\n- Supports notification scenarios for startup, disconnection, restart success/failure, and daily status updates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb0b8c21ed4ae64a70a113bc045861b49047f9dfb92b7983ae0bcddac2c8d851"
+}

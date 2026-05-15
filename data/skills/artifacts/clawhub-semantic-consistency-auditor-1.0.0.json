@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-consistency-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_consistency_auditor",
+  "skill": {
+    "id": 44557,
+    "skillKey": "clawhub-semantic-consistency-auditor",
+    "name": "Semantic Consistency Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-consistency-auditor",
+    "url": "https://clawhub.ai/skills/semantic-consistency-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-consistency-auditor-6fe7d3cad4637ff0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use semantic consistency auditor for academic writing workflows that need structured execution, explicit assumptions, and clear output boundaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775009493343,
+      "changelog": "Initial release of Semantic Consistency Auditor.\n\n- Adds BERTScore and COMET algorithms to assess semantic consistency between AI-generated and expert clinical texts.\n- Provides a structured, audit-focused workflow for academic and medical writing tasks.\n- Includes command line and Python API usage with example commands and configuration options.\n- Offers fallback and error handling paths for incomplete inputs or execution issues.\n- Supports configuration of models, language, and evaluation thresholds for flexible deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37901c5572ca960bb5270efeab7254c46fd613895ebe15b81b63b6572667d435"
+}

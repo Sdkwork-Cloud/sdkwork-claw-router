@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42257,
+  "uuid": "skill-clawhub-message-in-a-bottle",
+  "skillKey": "clawhub-message-in-a-bottle",
+  "name": "Message in a Bottle",
+  "summary": "Randomly retrieve an inspirational or thoughtful message in a bottle, including life insights, stories, wishes, or quotes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_in_a_bottle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enihsago",
+      "features": [
+        "Randomly retrieve an inspirational or thoughtful message in a bottle, including life insights,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-in-a-bottle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-in-a-bottle",
+      "url": "https://clawhub.ai/skills/message-in-a-bottle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-in-a-bottle",
+    "url": "https://clawhub.ai/skills/message-in-a-bottle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-in-a-bottle-40e932a14b370d66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-in-a-bottle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-in-a-bottle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79a30dafe90a5b398c96a1341c805175621f14ac640167d0d8bf6064c17e9ac6",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T15:15:39.474Z"
+}

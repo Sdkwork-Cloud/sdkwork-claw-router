@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21221,
+  "uuid": "skill-clawhub-flow-monitor",
+  "skillKey": "clawhub-flow-monitor",
+  "name": "flow-monitor",
+  "summary": "Universal flow tracer with cross-platform date support, latency calculation, and token estimation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zven",
+      "features": [
+        "Universal flow tracer with cross-platform date support, latency calculation, and token estimati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flow-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72185904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flow-monitor",
+      "url": "https://clawhub.ai/skills/flow-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-monitor",
+    "url": "https://clawhub.ai/skills/flow-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-monitor-c0b47545268ef92f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flow-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flow-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5db4303d1d8c489f364458781792549065505e596d62bdc775b81ca4a70014c1",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:31:08.976Z"
+}

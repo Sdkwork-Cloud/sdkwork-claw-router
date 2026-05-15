@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70054,
+  "uuid": "skill-clawhub-vovo-data-analyst",
+  "skillKey": "clawhub-vovo-data-analyst",
+  "name": "VOVO超能数据分析师",
+  "summary": "VOVO 全格式数据分析专家 - 远端超级代码解释器与数据洞察引擎。 支持上传任意格式（Excel/CSV/PDF/脏数据等）进行硬核清洗、多维分析、图表生成与商业总结。 打破传统格式限制，全程自动化执行代码沙盒并返回直观产物。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vovo_data_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vovo-coder",
+      "features": [
+        "VOVO 全格式数据分析专家",
+        "远端超级代码解释器与数据洞察引擎。 支持上传任意格式（Excel/CSV/PDF/脏数据等）进行硬核清洗、多维分析、图表生成与商业总结。 打破传统格式限制，全程自动化执行代码沙盒并返回直观产."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vovo-data-analyst@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231036388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vovo-data-analyst",
+      "url": "https://clawhub.ai/skills/vovo-data-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vovo-data-analyst",
+    "url": "https://clawhub.ai/skills/vovo-data-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vovo-data-analyst-b5f1fbcaae529a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vovo-data-analyst@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-vovo-data-analyst-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41836fb2a4cd29eacbc15b9a5d46a9c4097ef9a6bb79bb9d4d786374bd138c39",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:10:34.855Z"
+}

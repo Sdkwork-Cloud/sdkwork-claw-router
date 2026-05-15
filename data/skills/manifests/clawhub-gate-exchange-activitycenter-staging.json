@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42827,
+  "uuid": "skill-clawhub-gate-exchange-activitycenter-staging",
+  "skillKey": "clawhub-gate-exchange-activitycenter-staging",
+  "name": "gate-exchange-activitycenter",
+  "summary": "Gate platform activity and campaign hub skill. Use when the user asks about trading competitions, airdrops, or their enrolled activities. Triggers on 'recomm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_activitycenter_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Gate platform activity and campaign hub skill",
+        "Use when the user asks about trading competitions, airdrops, or their enrolled activities",
+        "Triggers on 'recomm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-activitycenter-staging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-activitycenter-staging",
+      "url": "https://clawhub.ai/skills/gate-exchange-activitycenter-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-activitycenter-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-activitycenter-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-activitycenter-staging-07c2b36d7401c6ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-activitycenter-staging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-activitycenter-staging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2c8ae69bcd50763b18fe2ad8d9b243b1b203c0c0b63e89e2b01aefa895039da",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T14:37:10.115Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51575,
+  "uuid": "skill-clawhub-resumex",
+  "skillKey": "clawhub-resumex",
+  "name": "Auto Job Applying Agent",
+  "summary": "Manage your Resumex resume and automatically apply to jobs — all through natural conversation. Fetches your live resume from Resumex, uses built-in web searc...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resumex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Atharva Badgujar",
+      "features": [
+        "Manage your Resumex resume and automatically apply to jobs — all through natural conversation",
+        "Fetches your live resume from Resumex, uses built-in web searc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resumex@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112540825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resumex",
+      "url": "https://clawhub.ai/skills/resumex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resumex",
+    "url": "https://clawhub.ai/skills/resumex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resumex-fb314af24c034300.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resumex@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resumex-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bd2232a6601e343f99d58c78eb7c88d7c6904fadc3a434dfc588abf5bb5eca5",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:19:50.773Z"
+}

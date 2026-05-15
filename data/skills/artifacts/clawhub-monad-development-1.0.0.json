@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monad-development@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monad_development",
+  "skill": {
+    "id": 11047,
+    "skillKey": "clawhub-monad-development",
+    "name": "Monad Development"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monad-development",
+    "url": "https://clawhub.ai/skills/monad-development",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monad-development-b1c888c772e52e07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds dapps on Monad blockchain. Use when deploying contracts, setting up frontends with viem/wagmi, or verifying contracts on Monad testnet or mainnet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "portdeveloper",
+      "userId": "publishers:portdeveloper",
+      "displayName": "portdeveloper",
+      "image": "https://avatars.githubusercontent.com/u/108868128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2091,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770278140351,
+      "changelog": "Monad development skill initial release.\n\n- Enables deployment and verification of smart contracts on Monad testnet and mainnet.\n- Provides detailed deployment, wallet persistence, and verification workflows using Foundry.\n- Includes instructions for testnet faucet funding and comprehensive contract verification across all Monad explorers.\n- Offers frontend setup guides for viem/wagmi integration.\n- Specifies environment requirements and best practices for contract development on Monad.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac4be365e125e146a54b714c117877365bd34318c8bfbca91ee457e0f6b74f29"
+}

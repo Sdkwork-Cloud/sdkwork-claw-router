@@ -44,20 +44,15 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export function deriveAppDetailView", runtime_source)
         self.assertIn("export function formatAppDateLabel", runtime_source)
 
-        self.assertIn("getClawRouterAppSdkClient().app.getApps", service_source)
-        self.assertIn("getClawRouterAppSdkClient().app.getAppById", service_source)
-        self.assertIn("getClawRouterAppSdkClient().app.getCategories", service_source)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.list", service_source)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", service_source)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.categories.list", service_source)
         self.assertIn("normalizeAppApiRecord", service_source)
         self.assertIn("filterAppsForCatalog", service_source)
         self.assertIn(
-            "@sdkwork/clawrouter-app-sdk",
+            "sdkwork-claw-router-commons",
             package_manifest.get("dependencies", {}),
-            "App Center public store service must declare the generated app SDK it imports.",
-        )
-        self.assertIn(
-            "@sdkwork/clawrouter-backend-sdk",
-            package_manifest.get("dependencies", {}),
-            "App Center admin service must declare the generated backend SDK it imports.",
+            "App Center must consume generated SDKs through the shared runtime boundary.",
         )
 
         for page_source in [list_source, detail_source, preview_source]:
@@ -77,7 +72,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        app_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "app.ts").read_text(
+        app_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "platform.ts").read_text(
             encoding="utf-8"
         )
         app_service = (
@@ -102,9 +97,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             self.assertIn(f'"{schema_name}"', openapi)
 
         for result_name in [
-            "GetAppsResult",
-            "GetAppByIdResult",
-            "AppGetCategoriesResult",
+            "AppsStoreListResult",
+            "AppsStoreRetrieveResult",
+            "AppsStoreCategoriesListResult",
         ]:
             self.assertIn(f'"{result_name}"', openapi)
 
@@ -112,26 +107,28 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn('"$ref": "#/components/schemas/AppDetailResponse"', openapi)
         self.assertIn('"$ref": "#/components/schemas/AppCategoriesResponse"', openapi)
 
-        self.assertIn("async getApps(pageNo?: number, pageSize?: number, keyword?: string, status?: 'ACTIVE' | 'INACTIVE', startTime?: string, endTime?: string): Promise<GetAppsResult>", app_api)
-        self.assertIn("get<GetAppsResult>", app_api)
-        self.assertIn("async getAppById(appId: string | number): Promise<GetAppByIdResult>", app_api)
-        self.assertIn("get<GetAppByIdResult>", app_api)
-        self.assertIn("async getCategories(): Promise<AppGetCategoriesResult>", app_api)
-        self.assertIn("get<AppGetCategoriesResult>", app_api)
+        self.assertIn("q?: string;", app_api)
+        self.assertIn("get<AppsStoreListResult>", app_api)
+        self.assertIn("async retrieve(appId: string): Promise<AppsStoreRetrieveResult>", app_api)
+        self.assertIn("get<AppsStoreRetrieveResult>", app_api)
+        self.assertIn("async list(): Promise<AppsStoreCategoriesListResult>", app_api)
+        self.assertIn("get<AppsStoreCategoriesListResult>", app_api)
         self.assertIn("buildQueryString", app_api)
-        self.assertIn("appendQueryString(appApiPath(`/app/store`), query)", app_api)
-        self.assertNotIn("status?: string", app_api)
+        self.assertIn("appendQueryString(appApiPath(`/platform/apps/store`), query)", app_api)
+        self.assertIn("{ name: 'q', value: params?.q", app_api)
+        self.assertNotIn("searchQuery?: string;", app_api)
+        self.assertNotIn("search_query", app_api)
         self.assertNotIn("getApps(params?: QueryParams): Promise<PlusApiResult>", app_api)
-        self.assertNotIn("getAppById(appId: string | number, params?: QueryParams): Promise<PlusApiResult>", app_api)
+        self.assertNotIn("getAppById(appId: string, params?: QueryParams): Promise<PlusApiResult>", app_api)
         self.assertNotIn("getCategories(params?: QueryParams): Promise<PlusApiResult>", app_api)
 
         result_checks = {
-            "get-apps-result.ts": "data?: AppCatalogResponse;",
-            "get-app-by-id-result.ts": "data?: AppDetailResponse;",
-            "app-get-categories-result.ts": "data?: AppCategoriesResponse;",
+            "apps-store-list-result.ts": "data?: AppCatalogResponse;",
+            "apps-store-retrieve-result.ts": "data?: AppDetailResponse;",
+            "apps-store-categories-list-result.ts": "data?: AppCategoriesResponse;",
         }
         for file_name, expected in result_checks.items():
-            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / file_name
+            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / file_name
             self.assertTrue(result_path.exists(), file_name)
             self.assertIn(expected, result_path.read_text(encoding="utf-8"))
 
@@ -143,7 +140,11 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const items: SdkAppCategoriesResponse['items']", app_service)
         self.assertIn("type AppCatalogStatus = 'ACTIVE' | 'INACTIVE';", app_service)
         self.assertIn("function optionalAppCatalogStatus", app_service)
-        self.assertIn("appCatalogQueryArguments(filters)", app_service)
+        self.assertIn("const query = toAppCatalogQueryParams(filters)", app_service)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.list(query)", app_service)
+        self.assertIn("page: optionalPositiveInteger(filters.page, 'page')", app_service)
+        self.assertIn("pageSize: optionalBoundedPositiveInteger(filters.pageSize, 'pageSize'", app_service)
+        self.assertIn("searchQuery,", app_service)
         self.assertNotIn("case 'ENABLED':", app_service)
         self.assertNotIn("case 'DISABLED':", app_service)
         self.assertNotIn("case '1':", app_service)
@@ -157,7 +158,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json").read_text(
             encoding="utf-8"
         )
-        backend_app_api_path = ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "app.ts"
+        backend_app_api_path = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "platform.ts"
         admin_service_path = (
             ROOT
             / "apps"
@@ -176,8 +177,8 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("route: /admin/app", contract)
-        self.assertIn("api_path: /backend/v3/api/app/list", contract)
-        self.assertIn("api_path: /backend/v3/api/app/{appId}", contract)
+        self.assertIn("api_path: /backend/v3/api/platform/apps", contract)
+        self.assertIn("api_path: /backend/v3/api/platform/apps/{appId}", contract)
         self.assertIn("name: AdminAppListResponse", contract)
         self.assertIn("name: AdminAppItemResponse", contract)
         self.assertIn("name: AdminAppMutationResponse", contract)
@@ -187,20 +188,21 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("name: AdminAppConfig", contract)
 
         for operation_id in [
-            "fetchApps",
-            "createApp",
-            "fetchApp",
-            "updateApp",
-            "deleteApp",
-            "enableApp",
-            "disableApp",
-            "publishApp",
-            "offlineApp",
+            "apps.list",
+            "apps.create",
+            "apps.retrieve",
+            "apps.update",
+            "apps.delete",
+            "apps.enable",
+            "apps.disable",
+            "apps.publish",
+            "apps.unpublish",
         ]:
             self.assertIn(f'"operationId": "{operation_id}"', openapi)
 
-        self.assertIn('"/backend/v3/api/app/list"', openapi)
-        self.assertIn('"/backend/v3/api/app/{appId}"', openapi)
+        self.assertIn('"/backend/v3/api/platform/apps"', openapi)
+        self.assertIn('"/backend/v3/api/platform/apps/{appId}/unpublish"', openapi)
+        self.assertIn('"/backend/v3/api/platform/apps/{appId}"', openapi)
         self.assertIn('"AdminAppListResponse"', openapi)
         self.assertIn('"AdminAppItemResponse"', openapi)
         self.assertIn('"AdminAppMutationResponse"', openapi)
@@ -215,29 +217,32 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("pub use admin_app::admin_app_router_with_store;", api_mod_source)
         self.assertIn("pub fn admin_app_router_with_store", api_admin_app_source)
-        self.assertTrue(backend_app_api_path.exists(), "backend SDK must generate an app API module.")
+        self.assertTrue(backend_app_api_path.exists(), "backend SDK must generate a platform API module.")
         backend_app_api = backend_app_api_path.read_text(encoding="utf-8")
-        self.assertIn("async fetchApps(body?: AdminAppListRequest, xRequestId?: string): Promise<FetchAppsResult>", backend_app_api)
-        self.assertIn("async createApp(body: AdminAppCreateRequest, xRequestId?: string): Promise<CreateAppResult>", backend_app_api)
-        self.assertIn("async fetchApp(appId: string | number, xRequestId?: string): Promise<FetchAppResult>", backend_app_api)
-        self.assertIn("async updateApp(appId: string | number, body: AdminAppUpdateRequest, xRequestId?: string): Promise<UpdateAppResult>", backend_app_api)
-        self.assertIn("async deleteApp(appId: string | number, xRequestId?: string): Promise<DeleteAppResult>", backend_app_api)
-        self.assertIn("async enableApp(appId: string | number, body?: OperationRequest, xRequestId?: string): Promise<EnableAppResult>", backend_app_api)
-        self.assertIn("async disableApp(appId: string | number, body?: OperationRequest, xRequestId?: string): Promise<DisableAppResult>", backend_app_api)
-        self.assertIn("async publishApp(appId: string | number, body?: OperationRequest, xRequestId?: string): Promise<PublishAppResult>", backend_app_api)
-        self.assertIn("async offlineApp(appId: string | number, body?: OperationRequest, xRequestId?: string): Promise<OfflineAppResult>", backend_app_api)
+        self.assertIn("async list(params?: PlatformAppsListParams): Promise<AppsListResult>", backend_app_api)
+        self.assertIn("{ name: 'q', value: params?.q", backend_app_api)
+        self.assertIn("{ name: 'market_status', value: params?.marketStatus", backend_app_api)
+        self.assertNotIn("AdminAppListRequest", backend_app_api)
+        self.assertIn("async create(body: AdminAppCreateRequest, params?: PlatformAppsCreateParams): Promise<AppsCreateResult>", backend_app_api)
+        self.assertIn("async retrieve(appId: string, params?: PlatformAppsRetrieveParams): Promise<AppsRetrieveResult>", backend_app_api)
+        self.assertIn("async update(appId: string, body: AdminAppUpdateRequest, params?: PlatformAppsUpdateParams): Promise<AppsUpdateResult>", backend_app_api)
+        self.assertIn("async delete(appId: string, params?: PlatformAppsDeleteParams): Promise<AppsDeleteResult>", backend_app_api)
+        self.assertIn("async enable(appId: string, params?: PlatformAppsEnableParams): Promise<AppsEnableResult>", backend_app_api)
+        self.assertIn("async disable(appId: string, params?: PlatformAppsDisableParams): Promise<AppsDisableResult>", backend_app_api)
+        self.assertIn("async publish(appId: string, params?: PlatformAppsPublishParams): Promise<AppsPublishResult>", backend_app_api)
+        self.assertIn("async unpublish(appId: string, params?: PlatformAppsUnpublishParams): Promise<AppsUnpublishResult>", backend_app_api)
 
         backend_create_request = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-app-create-request.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-app-create-request.ts"
         ).read_text(encoding="utf-8")
         backend_update_request = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-app-update-request.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-app-update-request.ts"
         ).read_text(encoding="utf-8")
         backend_config_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-app-config.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-app-config.ts"
         )
         backend_config_standard_type = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "admin-app-config-standard.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-app-config-standard.ts"
         )
         self.assertTrue(backend_config_type.exists(), "backend SDK must generate a typed AdminAppConfig.")
         self.assertTrue(
@@ -252,15 +257,15 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
 
         self.assertTrue(admin_service_path.exists(), "admin app service must provide the frontend SDK boundary.")
         admin_service = admin_service_path.read_text(encoding="utf-8")
-        self.assertIn("getClawRouterBackendSdkClient().app.fetchApps", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.createApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.fetchApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.updateApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.deleteApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.enableApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.disableApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.publishApp", admin_service)
-        self.assertIn("getClawRouterBackendSdkClient().app.offlineApp", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.list", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.create", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.retrieve", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.update", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.delete", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.enable", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.disable", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.publish", admin_service)
+        self.assertIn("getClawRouterBackendSdkClient().platform.apps.unpublish", admin_service)
         self.assertNotIn("fetch(", admin_service)
         self.assertNotIn("axios", admin_service)
         self.assertNotIn("/backend/v3/api", admin_service)
@@ -373,10 +378,10 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("AdminAppService.fetchApps(adminAppQuery)", app_admin_source)
         self.assertIn("const adminAppQuery = useMemo", app_admin_source)
-        self.assertIn("keyword: normalizedKeyword", app_admin_source)
+        self.assertIn("searchQuery: normalizedKeyword", app_admin_source)
         self.assertIn("status: status || undefined", app_admin_source)
         self.assertIn("marketStatus: marketStatus || undefined", app_admin_source)
-        self.assertIn("pageNo: 1", app_admin_source)
+        self.assertIn("page: 1", app_admin_source)
         self.assertIn("pageSize: 100", app_admin_source)
         self.assertIn("useEffect(() =>", app_admin_source)
         self.assertIn("void loadApps();", app_admin_source)
@@ -540,8 +545,8 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn(f"source: {old_source}", contracts)
         self.assertIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts"', field_audit)
         self.assertNotIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/data/apps.ts"', field_audit)
-        self.assertIn("/app/v3/api/app/store", operation_audit)
-        self.assertIn("/app/v3/api/app/store/{appId}", operation_audit)
+        self.assertIn("/app/v3/api/platform/apps/store", operation_audit)
+        self.assertIn("/app/v3/api/platform/apps/store/{appId}", operation_audit)
         self.assertIn("delivery_kind: sdk_backed_business_runtime", route_classification)
         self.assertIn("/apps/:id", route_classification)
 
@@ -586,7 +591,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("APP_SDK_FIXTURE_MODE", smoke_source)
         self.assertIn("APP_SDK_FAILURE_FIXTURE_MODE", smoke_source)
         self.assertIn("BROWSER_SMOKE_APP_RECORD", smoke_source)
-        self.assertIn("/app/v3/api/app/store", smoke_source)
+        self.assertIn("/app/v3/api/platform/apps/store", smoke_source)
         self.assertIn("Browser Smoke App", smoke_source)
         self.assertIn("Browser smoke apps unavailable", smoke_source)
         self.assertIn("Browser smoke app details unavailable", smoke_source)
@@ -595,8 +600,8 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("App details could not be loaded", smoke_source)
         self.assertNotIn("server responded with a status of 502 (Bad Gateway)", smoke_source)
 
-        self.assertIn("getClawRouterAppSdkClient().app.getApps", service_source)
-        self.assertIn("getClawRouterAppSdkClient().app.getAppById", service_source)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.list", service_source)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", service_source)
         self.assertIn("normalizeAppApiRecord", runtime_source)
         self.assertIn("deriveAppCatalogViewModel", runtime_source)
         self.assertIn("deriveAppDetailView", runtime_source)
@@ -660,7 +665,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterAppSdkClient().app.getAppById", app_service)
+        self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", app_service)
         self.assertIn("downloadUrl: readString(item, 'downloadUrl')", app_runtime)
         self.assertIn("plus_app: [name, description, icon_url, resource_list, platforms, install_config, release_notes, download_url]", contract)
         self.assertIn("studio_catalog_artifact: [target_type, target_id, version, artifact_size_bytes, artifact_url, published_at]", contract)

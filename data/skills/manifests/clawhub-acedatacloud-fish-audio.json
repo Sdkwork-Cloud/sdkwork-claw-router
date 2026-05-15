@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34624,
+  "uuid": "skill-clawhub-acedatacloud-fish-audio",
+  "skillKey": "clawhub-acedatacloud-fish-audio",
+  "name": "Fish Audio",
+  "summary": "Generate AI audio and synthesize voices with Fish Audio via AceDataCloud API. Use when creating text-to-speech audio, synthesizing voices, or generating audi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_fish_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Germey",
+      "features": [
+        "Generate AI audio and synthesize voices with Fish Audio via AceDataCloud API",
+        "Use when creating text-to-speech audio, synthesizing voices, or generating audi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acedatacloud-fish-audio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8678661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acedatacloud-fish-audio",
+      "url": "https://clawhub.ai/skills/acedatacloud-fish-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-fish-audio",
+    "url": "https://clawhub.ai/skills/acedatacloud-fish-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-fish-audio-0f35eca8bd9bd121.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acedatacloud-fish-audio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acedatacloud-fish-audio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b062730d76430aaeb124be23920b87fa6966b15c90bcf4a1b969d01468f2093b",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:37:18.786Z"
+}

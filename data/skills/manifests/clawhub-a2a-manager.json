@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20956,
+  "uuid": "skill-clawhub-a2a-manager",
+  "skillKey": "clawhub-a2a-manager",
+  "name": "A2a Manager",
+  "summary": "Manage agent creation, Discord channels/roles, agent-to-agent task coordination, sub-agent spawning, A2A_MAP updates, and Notion-based task workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cuong Pahm",
+      "features": [
+        "Manage agent creation, Discord channels/roles, agent-to-agent task coordination, sub-agent spaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167317755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-manager",
+      "url": "https://clawhub.ai/skills/a2a-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-manager",
+    "url": "https://clawhub.ai/skills/a2a-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-manager-f4efa25d91c35159.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71dccc1205be739ef84c65b22e70f8787927c7b137c9a8cff609f5886d4c79c7",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:39:48.151Z"
+}

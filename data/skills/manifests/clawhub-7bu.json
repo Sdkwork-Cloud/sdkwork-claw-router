@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59996,
+  "uuid": "skill-clawhub-7bu",
+  "skillKey": "clawhub-7bu",
+  "name": "7bu uploader",
+  "summary": "去不图床(7bu.top)图片上传工具。需要TOKEN才能使用，需前往https://7bu.top注册用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.7bu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "penndu",
+      "features": [
+        "去不图床(7bu.top)图片上传工具。需要TOKEN才能使用，需前往https://7bu.top注册用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/7bu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46226528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "7bu",
+      "url": "https://clawhub.ai/skills/7bu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "7bu",
+    "url": "https://clawhub.ai/skills/7bu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/7bu-463ab5d2aa2977ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/7bu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-7bu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f12e7d434ff3e387e8492a38a9850c6a59ed5ea4a87bc23d1c06c1b5bc47fe05",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T03:20:22.211Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49506,
+  "uuid": "skill-clawhub-cm-code-review-assistant",
+  "skillKey": "clawhub-cm-code-review-assistant",
+  "name": "Code Review Assistant",
+  "summary": "AI-powered code review assistant that analyzes pull requests for bugs, security issues, performance problems, and style violations with actionable feedback.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_code_review_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "AI-powered code review assistant that analyzes pull requests for bugs, security issues, perform."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cm-code-review-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cm-code-review-assistant",
+      "url": "https://clawhub.ai/skills/cm-code-review-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-code-review-assistant",
+    "url": "https://clawhub.ai/skills/cm-code-review-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-code-review-assistant-f8341eb9abee55ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cm-code-review-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cm-code-review-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed4edecfe85fc02e9ad481eb436abd3995a9df9b168aa668ab18b47c3aad7d1",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:49:35.521Z"
+}

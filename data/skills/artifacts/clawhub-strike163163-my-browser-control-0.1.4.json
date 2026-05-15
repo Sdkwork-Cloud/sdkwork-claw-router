@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strike163163-my-browser-control@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strike163163_my_browser_control",
+  "skill": {
+    "id": 60304,
+    "skillKey": "clawhub-strike163163-my-browser-control",
+    "name": "My Browser Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strike163163-my-browser-control",
+    "url": "https://clawhub.ai/skills/strike163163-my-browser-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strike163163-my-browser-control-029765ec1b81e9c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于Python实现的macOS浏览器自动化工具，可一键打开指定网址，支持Safari/Chrome浏览器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strike163163",
+      "userId": "s176sqgw3bfj53ayjsgrj07q8983hgwv",
+      "displayName": "strike163163",
+      "image": "https://avatars.githubusercontent.com/u/136699574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772812249894,
+      "changelog": "- Added new skill.json file for better skill metadata management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c6d6cb8b40b2ecff83fe9ee61dcf2e745ce9c06595b7b9a3070d8d609fc1bce"
+}

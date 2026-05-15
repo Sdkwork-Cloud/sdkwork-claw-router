@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fengshui-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengshui_skill",
+  "skill": {
+    "id": 73245,
+    "skillKey": "clawhub-fengshui-skill",
+    "name": "风水堪舆技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengshui-skill",
+    "url": "https://clawhub.ai/skills/fengshui-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengshui-skill-0cc641d759efb25a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "风水堪舆技能。支持八宅风水排盘、东四宅/西四宅判断、游年九星排布、方位吉凶分析，提供基础布局建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dglijin-oss",
+      "userId": "s175pfszyvgy3bfthfy24nke2s83wqz0",
+      "displayName": "dglijin-oss",
+      "image": "https://avatars.githubusercontent.com/u/251980243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775229048666,
+      "changelog": "八宅风水 + 游年九星 + 布局建议 + 煞气化解",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36c73bddf8c7125bd8a418f006cbfb2e13b77c320ee86fbcae48bde8d5cda52a"
+}

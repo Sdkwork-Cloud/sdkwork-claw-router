@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_cli",
+  "skill": {
+    "id": 8582,
+    "skillKey": "clawhub-github-cli",
+    "name": "Github Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-cli",
+    "url": "https://clawhub.ai/skills/github-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-cli-2cefa4d19e580edc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive GitHub CLI (gh) reference. Covers repos, issues, PRs, Actions, releases, gists, search, projects v2, API, secrets/variables, labels, codespaces..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tag-assistant",
+      "userId": "publishers:tag-assistant",
+      "displayName": "Tag",
+      "image": "https://avatars.githubusercontent.com/u/260167501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9461,
+      "installsAllTime": 96,
+      "installsCurrent": 88,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771174855479,
+      "changelog": "Initial release: comprehensive reference for the GitHub CLI (gh).\n\n- Covers commands for repos, issues, PRs, Actions, releases, gists, search, labels, projects v2, API, secrets, variables, codespaces, extensions, authentication, and advanced GraphQL patterns.\n- Includes example usage, JSON output, required scopes, and recommended options.\n- Provides installation steps for Homebrew and Apt.\n- Feature-based table of contents and detailed code blocks for each command.\n- Tips for automation, scripting, and environment variable support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bf02f4de8487b4c9a5b7f0c05f1e85724a203b7ee4ecbc997f73063ada2b274"
+}

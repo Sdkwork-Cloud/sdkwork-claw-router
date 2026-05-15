@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dub-links-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dub_links_api",
+  "skill": {
+    "id": 16861,
+    "skillKey": "clawhub-dub-links-api",
+    "name": "Dub.co Links API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dub-links-api",
+    "url": "https://clawhub.ai/skills/dub-links-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dub-links-api-1f36a78db8fa06ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates Dub Links API endpoints to create, update, delete, retrieve, list, count, and run bulk operations on short links. Use when the user asks for \"dub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ferminrp",
+      "userId": "publishers:ferminrp",
+      "displayName": "Fermin Rodriguez Penelas",
+      "image": "https://avatars.githubusercontent.com/u/21282919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 841,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771447527940,
+      "changelog": "- Full documentation translated from Spanish to English for broader accessibility.\n- All endpoint descriptions, onboarding steps, and example requests now provided in English.\n- Skill description and scope clarified using standard English terminology.\n- No functional/API changes—documentation update only; no code or logic changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5c06789c91616c510cceebf5c79104d8f6fce4629d41819b395eda717e810bd3"
+}

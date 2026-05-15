@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10360,
+  "uuid": "skill-clawhub-ghost-cms",
+  "skillKey": "clawhub-ghost-cms",
+  "name": "Ghost CMS",
+  "summary": "Comprehensive Ghost CMS integration for creating, publishing, scheduling, and managing blog content, newsletters, members, and analytics. Use when working with Ghost blogs for content creation (drafts, publishing, scheduling), member/subsc.",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost_cms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Giddy",
+      "features": [
+        "Comprehensive Ghost CMS integration for creating, publishing, scheduling, and managing blog con.",
+        "Use when working with Ghost blogs for content creation (drafts, publishing, scheduling), member.",
+        "Supports all Ghost Admin API operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghost-cms@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3966673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghost-cms",
+      "url": "https://clawhub.ai/skills/ghost-cms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost-cms",
+    "url": "https://clawhub.ai/skills/ghost-cms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-cms-828e26549779d7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghost-cms@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghost-cms-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dac963449c48acec03ab3b1bcafd20639c13f0e79def17ba0c75bf7ae3775471",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T18:15:01.737Z"
+}

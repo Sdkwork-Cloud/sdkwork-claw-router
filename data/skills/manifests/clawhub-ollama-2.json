@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60046,
+  "uuid": "skill-clawhub-ollama-2",
+  "skillKey": "clawhub-ollama-2",
+  "name": "Ollama",
+  "summary": "Ollama 本地大模型调用技能。支持通过 API 与 Ollama 实例交互进行文本生成。 Use when: (1) 需要调用本地或远程 Ollama 模型 (2) 需要执行 LLM 推理任务 (3) 需要通过 Python 脚本与特定 Ollama 实例 (如 qwen3.5:9b) 交互。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "乔焰阳",
+      "features": [
+        "Ollama 本地大模型调用技能。支持通过 API 与 Ollama 实例交互进行文本生成。 Use when: (1) 需要调用本地或远程 Ollama 模型 (2) 需要执行 LLM 推."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7576624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-2",
+      "url": "https://clawhub.ai/skills/ollama-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-2",
+    "url": "https://clawhub.ai/skills/ollama-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-2-acc08b58b8445a7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0453268a83f47643c2a6fb73310a265afae21518dc5fde6b9f4febb104a1176",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:36:55.787Z"
+}

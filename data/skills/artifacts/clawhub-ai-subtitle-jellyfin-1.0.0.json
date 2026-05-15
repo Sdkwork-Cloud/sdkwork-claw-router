@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-jellyfin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_jellyfin",
+  "skill": {
+    "id": 47872,
+    "skillKey": "clawhub-ai-subtitle-jellyfin",
+    "name": "Ai Subtitle Jellyfin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-jellyfin",
+    "url": "https://clawhub.ai/skills/ai-subtitle-jellyfin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-jellyfin-98625b85607b88f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video files into subtitled video files with this skill. Works with MP4, MKV, AVI, MOV files up to 500MB. Jellyfin media server users use it for addi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777223236240,
+      "changelog": "AI Subtitle Jellyfin — Initial release\n\n- Generate AI-powered subtitles for Jellyfin-compatible videos (MP4, MKV, AVI, MOV up to 500MB)\n- Automatic cloud processing and export in 1080p MP4 format with subtitles; SRT export supported\n- Simple onboarding with free token and session setup; 100 credits valid for 7 days\n- Clear user prompt mappings for upload, export, balance, and status actions\n- Detailed API integration, error handling, and instructions for frontend-to-backend interactions\n- Designed for quick edits, batch processing, and iterative workflows within Jellyfin environments",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49ea77f1e12eb69f18ef8481a30b267d050a0cb29634df91440f670580ff7ac9"
+}

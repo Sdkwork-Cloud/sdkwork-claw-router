@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68757,
+  "uuid": "skill-clawhub-knowledge-base-organizer",
+  "skillKey": "clawhub-knowledge-base-organizer",
+  "name": "Knowledge Base Organizer",
+  "summary": "整理本地知识库，包括文件合并、重命名、去重、索引更新等。使用当用户需要整理知识库、合并重复内容、统一文件命名格式、更新目录索引时。适用于 Markdown 文档、脚本文件、配置文件等知识库内容的整理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cheney",
+      "features": [
+        "整理本地知识库，包括文件合并、重命名、去重、索引更新等。使用当用户需要整理知识库、合并重复内容、统一文件命名格式、更新目录索引时。适用于 Markdown 文档、脚本文件、配置文件等知识库内."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-base-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246393767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-base-organizer",
+      "url": "https://clawhub.ai/skills/knowledge-base-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-organizer",
+    "url": "https://clawhub.ai/skills/knowledge-base-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-organizer-ddde8025e484fe46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-base-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-base-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43675e4a61ffc17f08d70f0348f72370cbdc6a5aedfa2466116fb6814c33995b",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:19:30.781Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-paper-searcher@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_searcher",
+  "skill": {
+    "id": 67684,
+    "skillKey": "clawhub-arxiv-paper-searcher",
+    "name": "arxiv-paper-searcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-searcher",
+    "url": "https://clawhub.ai/skills/arxiv-paper-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-searcher-133f9800645c1a5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索并分析 arXiv 学术论文。默认执行“搜索 + 摘要分析 + 热点统计 + 趋势判断”的完整流程，并立即返回结构化报告。用户确认后，可基于同一检索条件创建定时监控任务，定期推送最新论文分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "songxf1024",
+      "userId": "s170pn6fx2zfkbvmt45x2928e983g69p",
+      "displayName": "Song Xianfeng",
+      "image": "https://avatars.githubusercontent.com/u/111047002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775329164620,
+      "changelog": "use OpenClaw cron for scheduling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1c79cabd796e102465a9ff4b3dd8bcfcd0e2b1d6bc885200bca9db13c3aeda3"
+}

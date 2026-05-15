@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/secure-communicator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secure_communicator",
+  "skill": {
+    "id": 45126,
+    "skillKey": "clawhub-secure-communicator",
+    "name": "Secure Communicator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secure-communicator",
+    "url": "https://clawhub.ai/skills/secure-communicator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secure-communicator-d431df856d729182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure communication using the Pieter Theijssen triple-layer XOR encryption algorithm. Use when encrypting or decrypting messages, files, or any sensitive da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theijssenp",
+      "userId": "s17e1hnk9yzwr2j3r07navwwsx850d3v",
+      "displayName": "Pieter Theijssen",
+      "image": "https://avatars.githubusercontent.com/u/19203807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776513042023,
+      "changelog": "Updated GitHub repo URL to theijssenp/encode_decode",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a16b8c01a9258df9c873612e676aff724304041ada10e21a7d6445503796b2d2"
+}

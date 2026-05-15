@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-oauth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_oauth",
+  "skill": {
+    "id": 26339,
+    "skillKey": "clawhub-mcp-oauth",
+    "name": "MCP OAuth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-oauth",
+    "url": "https://clawhub.ai/skills/mcp-oauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-oauth-8d13335aec1a5571.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add OAuth 2.0 PKCE authentication to a remote MCP server. Use this skill whenever the user wants to add authentication to an MCP server, protect MCP tools wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucaperret",
+      "userId": "s170p3gn5cv7fnt54xggm88a4s83f8ny",
+      "displayName": "Luca",
+      "image": "https://avatars.githubusercontent.com/u/1887122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773963160341,
+      "changelog": "- Initial release of mcp-oauth, providing OAuth 2.0 PKCE authentication for remote MCP servers.\n- Implements OAuth discovery, dynamic client registration, authorization endpoint, token exchange, and refresh flows as per MCP authorization spec.\n- Includes code samples for Next.js server routes to enable:\n  - Standards-based OAuth discovery and protected resource metadata endpoints.\n  - Dynamic client registration (RFC 7591).\n  - Secure authorization and callback logic for integrating with upstream OAuth services.\n  - Protects MCP endpoints and tools with user-level token-based access.\n- Designed to trigger for any user request regarding adding authentication or OAuth to an MCP server.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:473bdfc15c4787bc2304d88a0b82185109371722d89f191b340e8af0f240165f"
+}

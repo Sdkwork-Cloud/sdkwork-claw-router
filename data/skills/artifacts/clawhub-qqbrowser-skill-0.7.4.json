@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qqbrowser-skill@0.7.4",
+  "version": "0.7.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbrowser_skill",
+  "skill": {
+    "id": 14182,
+    "skillKey": "clawhub-qqbrowser-skill",
+    "name": "QQBrowserSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbrowser-skill",
+    "url": "https://clawhub.ai/skills/qqbrowser-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbrowser-skill-abc6e1b9cfb71d07.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qqbrowserteam",
+      "userId": "s176q3k9be21zw234290c9m50x83h6xy",
+      "displayName": "QQBrowserTeam",
+      "image": "https://avatars.githubusercontent.com/u/399620?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 828,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "0.7.4",
+      "createdAt": 1774359657811,
+      "changelog": "macOS support added.\n\n- macOS is now listed as a supported platform.\n- Installation instructions for macOS have been included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea96dca7f4a55ff486fb6c06e1254b026bbc0bddb2f1141adf07767497bdea31"
+}

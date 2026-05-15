@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33913,
+  "uuid": "skill-clawhub-graphql-editor",
+  "skillKey": "clawhub-graphql-editor",
+  "name": "Graphql Editor",
+  "summary": "GraphQL Editor integration. Manage data, records, and automate workflows. Use when the user wants to interact with GraphQL Editor data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphql_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "GraphQL Editor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with GraphQL Editor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/graphql-editor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "graphql-editor",
+      "url": "https://clawhub.ai/skills/graphql-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphql-editor",
+    "url": "https://clawhub.ai/skills/graphql-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphql-editor-fd673f95817ec7b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/graphql-editor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-graphql-editor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:593844ce6b08bc990403f05003065130883fd0c674f4e80b7c55fe6176b6ae38",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:54:24.188Z"
+}

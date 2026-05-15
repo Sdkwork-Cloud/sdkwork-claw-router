@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42800,
+  "uuid": "skill-clawhub-cn-llm",
+  "skillKey": "clawhub-cn-llm",
+  "name": "Cn LLM",
+  "summary": "Use AIsa for model routing, provider setup, and Chinese LLM access. Use when: the user needs model configuration, provider guidance, or routing workflows. Su...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_llm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Use AIsa for model routing, provider setup, and Chinese LLM access",
+        "Use when: the user needs model configuration, provider guidance, or routing workflows"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-llm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-llm",
+      "url": "https://clawhub.ai/skills/cn-llm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-llm",
+    "url": "https://clawhub.ai/skills/cn-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-llm-0230982a791eeaa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-llm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-llm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b47d589c71e6de0acba4e457fa1d1e1244b52b4bc55d3c48c2c897b5d5f9cf48",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T18:45:45.268Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58366,
+  "uuid": "skill-clawhub-uapi-get-image-bing-daily",
+  "skillKey": "clawhub-uapi-get-image-bing-daily",
+  "name": "UAPI 必应壁纸 接口",
+  "summary": "使用 UAPI 的“必应壁纸”单接口 skill，处理 必应壁纸 等请求。 Use when the user wants get image bing daily, image bing-daily, bing-daily, image compression, image to base64, base64...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_image_bing_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "速冻饺子",
+      "features": [
+        "使用 UAPI 的“必应壁纸”单接口 skill，处理 必应壁纸 等请求。 Use when the user wants get image bing daily, image bing-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapi-get-image-bing-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149454909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapi-get-image-bing-daily",
+      "url": "https://clawhub.ai/skills/uapi-get-image-bing-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-image-bing-daily",
+    "url": "https://clawhub.ai/skills/uapi-get-image-bing-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-image-bing-daily-e15d0a7047b8e101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapi-get-image-bing-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapi-get-image-bing-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1c8472cb2ac0dab80d2624284a1988b2aa79be97c4033fce5d12c5f7c99c749",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:31:22.809Z"
+}

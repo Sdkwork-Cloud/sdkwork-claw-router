@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72846,
+  "uuid": "skill-clawhub-side-hustle-agent",
+  "skillKey": "clawhub-side-hustle-agent",
+  "name": "AI 副业顾问",
+  "summary": "自动扫描国内外接单平台，分析项目可行性，推荐最适合你的副业赚钱机会和报价方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.side_hustle_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "自动扫描国内外接单平台，分析项目可行性，推荐最适合你的副业赚钱机会和报价方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/side-hustle-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "side-hustle-agent",
+      "url": "https://clawhub.ai/skills/side-hustle-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "side-hustle-agent",
+    "url": "https://clawhub.ai/skills/side-hustle-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/side-hustle-agent-beda66fee75ffc23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/side-hustle-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-side-hustle-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43a86d728b22b0671eafac3eab028edeeeac2da31fe5db55427d3ccbbb5d354d",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:46:17.954Z"
+}

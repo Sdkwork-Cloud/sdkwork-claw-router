@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifly@0.8.2",
+  "version": "0.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifly",
+  "skill": {
+    "id": 34788,
+    "skillKey": "clawhub-unifly",
+    "name": "Unifly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifly",
+    "url": "https://clawhub.ai/skills/unifly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifly-dc7ef9f01da9e5a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"manage UniFi devices\", \"configure UniFi networks\", \"create a VLAN\", \"provision an SSID\", \"create firewall ru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyperb1iss",
+      "userId": "s1759vhzwwtpd4fvey62pdenes847sh8",
+      "displayName": "Stefanie Jane",
+      "image": "https://avatars.githubusercontent.com/u/102151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.8.2",
+      "createdAt": 1778036197223,
+      "changelog": "Release v0.9.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8e2ae981deeb92ca2a70a12fe97c0c4871a906a44e5d00fad9ea9b4edef42a9"
+}

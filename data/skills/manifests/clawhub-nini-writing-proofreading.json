@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58815,
+  "uuid": "skill-clawhub-nini-writing-proofreading",
+  "skillKey": "clawhub-nini-writing-proofreading",
+  "name": "Writing Proofreading",
+  "summary": "Use when user wants to review, polish, or proofread articles. Triggers include「帮我改文章」「检查一下」「润色」「帮我改改」「校对一下」「看看文章」.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nini_writing_proofreading",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Niracler",
+      "features": [
+        "Use when user wants to review, polish, or proofread articles",
+        "Triggers include「帮我改文章」「检查一下」「润色」「帮我改改」「校对一下」「看看文章」."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nini-writing-proofreading@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24842631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nini-writing-proofreading",
+      "url": "https://clawhub.ai/skills/nini-writing-proofreading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nini-writing-proofreading",
+    "url": "https://clawhub.ai/skills/nini-writing-proofreading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nini-writing-proofreading-87d3c22d693b7bba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nini-writing-proofreading@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nini-writing-proofreading-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e37654b42c8a5a0d1e560c729129b041ea42c4f647b6dbc05b6d1edc2175fbcc",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:18:16.029Z"
+}

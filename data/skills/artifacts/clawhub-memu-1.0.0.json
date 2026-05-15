@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memu",
+  "skill": {
+    "id": 50520,
+    "skillKey": "clawhub-memu",
+    "name": "memU: Persistent Memory for 24/7 Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memu",
+    "url": "https://clawhub.ai/skills/memu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memu-11fd5af53e2bd8fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory infrastructure for 24/7 agents. Replaces flat-file memory with a three-layer architecture (Resource → Memory Item → Memory Category) that r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "projectsnowwork",
+      "userId": "publishers:projectsnowwork",
+      "displayName": "ProjectSnowWork",
+      "image": "https://avatars.githubusercontent.com/u/216470608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 673,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907616408,
+      "changelog": "Initial release: memU v1.4.0 ClawHub Skill with integration docs, 4 runnable examples, FAQ, and production guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23e068854fd295a0e75b71584c515df12c212ec167aca7e7a85a161b8a2bf28f"
+}

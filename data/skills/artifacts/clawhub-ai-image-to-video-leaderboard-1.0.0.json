@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-leaderboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_leaderboard",
+  "skill": {
+    "id": 45260,
+    "skillKey": "clawhub-ai-image-to-video-leaderboard",
+    "name": "Ai Image To Video Leaderboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-leaderboard",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-leaderboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-leaderboard-9172256138cb7555.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. AI researchers, content creators, marketer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776622762304,
+      "changelog": "ai-image-to-video-leaderboard 1.0.0 — initial release\n\n- Convert still images (JPG, PNG, WEBP, HEIC up to 200MB) into animated 1080p MP4 video clips using cloud GPUs.\n- Allows side-by-side comparison and ranking of different AI image-to-video models.\n- Automatic connection setup with session and anonymous token management (100 free credits on sign up).\n- Supports multiple workflows: quick edits, batch processing, and iterative refinement.\n- Export, balance checks, and state/status accessible via simple commands; full API error handling included.\n- All processing and rendering handled server-side — no local installation needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98e393f2fa3eb08d21557aca9b4b0495cead8a28de97405be3153780af2a742c"
+}

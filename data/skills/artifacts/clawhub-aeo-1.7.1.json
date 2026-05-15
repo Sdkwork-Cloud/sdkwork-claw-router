@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aeo@1.7.1",
+  "version": "1.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aeo",
+  "skill": {
+    "id": 15305,
+    "skillKey": "clawhub-aeo",
+    "name": "Aeo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aeo",
+    "url": "https://clawhub.ai/skills/aeo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aeo-0ead5c5d188f5c48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run AEO audits, fix site issues, validate schema, generate llms.txt, and compare sites."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arberx",
+      "userId": "s17327ksxg2btxvszh6e1p12fx83k99a",
+      "displayName": "Arber X",
+      "image": "https://avatars.githubusercontent.com/u/14798762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.7.1",
+      "createdAt": 1778072641831,
+      "changelog": "docs: surface runSitemapAudit for library users and default Schema skill mode to sitemap (1.7.1) (#27)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4b34d0d6d122014faca189282b3c1f3fa209dac0aa0f10f010da94649d2c51a"
+}

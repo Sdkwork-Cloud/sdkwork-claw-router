@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-agent@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_agent",
+  "skill": {
+    "id": 31986,
+    "skillKey": "clawhub-figma-agent",
+    "name": "Figma Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-agent",
+    "url": "https://clawhub.ai/skills/figma-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-agent-692e6e9036d7db90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Figma MCP integration for OpenClaw. Use when the user wants to read Figma designs, inspect design tokens/variables, work with Code Connect, or create/edit Fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rasimme",
+      "userId": "s1733ceh2knhecccb4gr5brqmh83h2hw",
+      "displayName": "Simeon",
+      "image": "https://avatars.githubusercontent.com/u/114735614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1775729578102,
+      "changelog": "Version 0.3.0\n\n- Added an explicit \"Execution model\" section outlining Route & Brief, Execute, and Done Gate validation steps in the main skill documentation.\n- Emphasized that the Done Gate requires both structural and visual validation checks before reporting success.\n- Updated and clarified the workflow routing and usage recommendations.\n- Documentation improvements across referenced markdown files for playbooks and prompting patterns.\n- No functional or API-breaking changes—documentation and process clarification only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d11a6769499aa73897695576d73dce5c90eba4a6a74d38b69456590778e39d08"
+}

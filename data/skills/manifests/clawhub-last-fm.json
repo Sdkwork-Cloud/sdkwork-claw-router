@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12175,
+  "uuid": "skill-clawhub-last-fm",
+  "skillKey": "clawhub-last-fm",
+  "name": "last.fm",
+  "summary": "Provides detailed music data and user info from Last.fm, including artists, albums, tracks, charts, tags, and user listening stats via Last.fm API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last_fm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keyfrog-21K",
+      "features": [
+        "Provides detailed music data and user info from Last.fm, including artists, albums, tracks, cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/last-fm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77488170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "last-fm",
+      "url": "https://clawhub.ai/skills/last-fm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last-fm",
+    "url": "https://clawhub.ai/skills/last-fm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last-fm-d6412d96b52d7018.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/last-fm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-last-fm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95aec5e134a57af7dfc726f29d86c8ca193ec04ef2b642de23c24cb40a9caa83",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:29:34.330Z"
+}

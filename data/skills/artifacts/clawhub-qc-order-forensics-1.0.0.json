@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qc-order-forensics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qc_order_forensics",
+  "skill": {
+    "id": 52354,
+    "skillKey": "clawhub-qc-order-forensics",
+    "name": "Qc Order Forensics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qc-order-forensics",
+    "url": "https://clawhub.ai/skills/qc-order-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qc-order-forensics-5fe72974160359c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forensic diagnosis engine for backtest order data — trade quality, ROI attribution, monthly cashflow, drawdown root-cause analysis, and LLM-readable reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tltby12341",
+      "userId": "s17b0eq3j5h16t0deanr16r2hx83qchd",
+      "displayName": "tltby12341",
+      "image": "https://avatars.githubusercontent.com/u/30487767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773757255978,
+      "changelog": "Initial release of qc-order-forensics.\n\n- Provides a forensic diagnosis engine for QuantConnect backtest order data.\n- Generates LLM-readable reports covering trade quality, ROI attribution, monthly cashflow, and drawdown root-cause analysis.\n- Supports input via standard QC orders.csv and result.json files.\n- Identifies metrics like zero rate, windfall trades, monthly/annual cash flow, top winners/losers, and drawdown streaks.\n- Includes clear reporting rules, required input formats, and key metrics to monitor.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:241baf4d06f402b8ba2b7a69d1fa255e23f7c43e40df5780506c630eca1e68e8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66485,
+  "uuid": "skill-clawhub-daily-game-news",
+  "skillKey": "clawhub-daily-game-news",
+  "name": "Daily Game News",
+  "summary": "自动抓取并分类多平台每日游戏资讯，生成格式化报告发送飞书并存档为Word和文本文件。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_game_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CzwFelix",
+      "features": [
+        "自动抓取并分类多平台每日游戏资讯，生成格式化报告发送飞书并存档为Word和文本文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-game-news@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223525684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-game-news",
+      "url": "https://clawhub.ai/skills/daily-game-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-game-news",
+    "url": "https://clawhub.ai/skills/daily-game-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-game-news-d07d854955edb98f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-game-news@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-game-news-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1fc1113db1fcd6e8b66182d6eb4f791ad4b76bafbd227ec3dcd68bfa425883c",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:45:58.472Z"
+}

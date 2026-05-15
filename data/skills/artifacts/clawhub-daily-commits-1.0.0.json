@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-commits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_commits",
+  "skill": {
+    "id": 30141,
+    "skillKey": "clawhub-daily-commits",
+    "name": "Summarize a person's git commits for a specific date, grouped by feature points, in English. Use when reviewing daily work outp."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-commits",
+    "url": "https://clawhub.ai/skills/daily-commits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-commits-71a3d2450609ffed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize a person's git commits on a given date, grouped by feature area with concise descriptions for daily work review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrew020",
+      "userId": "publishers:andrew020",
+      "displayName": "andrew020",
+      "image": "https://avatars.githubusercontent.com/u/6678575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773194327038,
+      "changelog": "- Initial release of daily-commits skill.\n- Summarizes a person's git commits for a specific date, grouping changes by feature or functional area.\n- Uses commit message prefixes and file paths to intelligently organize work.\n- Provides a clear, human-readable summary in English.\n- Highlights total commit count and clearly states if no commits are found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e6d0d4fc478129532c9dc9e3bd43bd2a3c7748987499422f9d62f7950bcf89a"
+}

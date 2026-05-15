@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improvement-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_v2",
+  "skill": {
+    "id": 45785,
+    "skillKey": "clawhub-self-improvement-v2",
+    "name": "Self Improvement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-v2",
+    "url": "https://clawhub.ai/skills/self-improvement-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-v2-fd7f8b780d58ca6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "janeaaaa",
+      "userId": "s17f53k3pje6br8xnk4n4hvsx183q9js",
+      "displayName": "janeaaaa",
+      "image": "https://avatars.githubusercontent.com/u/96417955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777078551551,
+      "changelog": "Initial release of the self-improvement skill for OpenClaw and generic agents:\n\n- Provides structured workflow for logging errors, learnings, and feature requests in markdown files for continuous improvement.\n- Includes step-by-step setup guides for both OpenClaw and other agent environments.\n- Defines clear templates and logging formats for learnings, errors, and feature requests.\n- Outlines promotion process for broadly useful insights to project memory files (e.g., AGENTS.md, SOUL.md, TOOLS.md).\n- Supports inter-session communication of learnings within the OpenClaw workspace.\n- Offers optional startup hook for automatic reminders to review and log learnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f3b1512311256702752aa22034da16cfd910d5e5142a24ea3a720d6ac179ae3"
+}

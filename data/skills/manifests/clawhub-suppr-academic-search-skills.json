@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68654,
+  "uuid": "skill-clawhub-suppr-academic-search-skills",
+  "skillKey": "clawhub-suppr-academic-search-skills",
+  "name": "超能文献-AI文档翻译与学术检索",
+  "summary": "超能文献（Suppr）学术文献检索 API。当用户需要检索学术论文、查找 PubMed 文献、搜索研究资料时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suppr_academic_search_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jianguang Zheng",
+      "features": [
+        "超能文献（Suppr）学术文献检索 API。当用户需要检索学术论文、查找 PubMed 文献、搜索研究资料时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suppr-academic-search-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35589061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suppr-academic-search-skills",
+      "url": "https://clawhub.ai/skills/suppr-academic-search-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suppr-academic-search-skills",
+    "url": "https://clawhub.ai/skills/suppr-academic-search-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suppr-academic-search-skills-9f2986d9be4c80f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suppr-academic-search-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suppr-academic-search-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4018b99a575799020bd255c9637e0eabc20dc1f77c65ad28cd2075641a159226",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:55:09.927Z"
+}

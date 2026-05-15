@@ -6,8 +6,8 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::DatabaseConfig;
 use sdkwork_claw_test_support::{
-    api_key_security_config, app_session_bearer_token, app_session_config, payment_webhook_config,
-    trusted_request_subject, trusted_subject_config,
+    api_key_security_config, app_session_config, app_session_dual_token_headers,
+    payment_webhook_config, trusted_request_subject, trusted_subject_config,
 };
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use tower::ServiceExt;
@@ -28,24 +28,55 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
         .await
         .unwrap();
 
-    let unauthenticated_response = router
-        .clone()
-        .oneshot(
-            Request::builder()
-                .method("GET")
-                .uri("/app/v3/api/app/store")
-                .body(Body::empty())
-                .unwrap(),
-        )
-        .await
-        .unwrap();
-    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
+    let public_list_payload = request_json(
+        router.clone(),
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=10")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", public_list_payload["code"]);
+    assert!(public_list_payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|item| item["id"] == "sdkwork-claw-router"));
+
+    let public_categories_payload = request_json(
+        router.clone(),
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/platform/apps/store/categories")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", public_categories_payload["code"]);
+    assert!(public_categories_payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|category| category == "HTML"));
+
+    let public_detail_payload = request_json(
+        router.clone(),
+        Request::builder()
+            .method("GET")
+            .uri("/app/v3/api/platform/apps/store/sdkwork-claw-router")
+            .body(Body::empty())
+            .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", public_detail_payload["code"]);
+    assert_eq!("sdkwork-claw-router", public_detail_payload["data"]["id"]);
 
     let list_payload = request_json(
         router.clone(),
         app_session_request(
             "GET",
-            "/app/v3/api/app/store?keyword=sdkwork-claw-router&pageNo=1&pageSize=10",
+            "/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=10",
             Body::empty(),
             app_store_tenant_id(),
             user_organization_id(),
@@ -71,19 +102,17 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
         item["image"]
     );
     assert!(item["features"].as_array().unwrap().len() >= 3);
-    assert!(item["screenshots"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .any(|value| value
+    assert!(item["screenshots"].as_array().unwrap().iter().any(|value| {
+        value
             .as_str()
-            .is_some_and(|url| url.ends_with("/media/desktop_windows-screenshot.png"))));
+            .is_some_and(|url| url.ends_with("/media/desktop_windows-screenshot.png"))
+    }));
 
     let detail_payload = request_json(
         router.clone(),
         app_session_request(
             "GET",
-            "/app/v3/api/app/store/sdkwork-claw-router",
+            "/app/v3/api/platform/apps/store/sdkwork-claw-router",
             Body::empty(),
             app_store_tenant_id(),
             user_organization_id(),
@@ -106,7 +135,7 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
         router,
         app_session_request(
             "GET",
-            "/app/v3/api/app/store/categories",
+            "/app/v3/api/platform/apps/store/categories",
             Body::empty(),
             app_store_tenant_id(),
             user_organization_id(),
@@ -175,7 +204,7 @@ fn app_session_request(
 ) -> Request<Body> {
     let issued_at = current_unix_seconds();
     let expires_at = issued_at + 3600;
-    let authorization = app_session_bearer_token(
+    let (authorization, access_token) = app_session_dual_token_headers(
         trusted_request_subject(tenant_id, organization_id, user_id),
         issued_at,
         expires_at,
@@ -186,6 +215,7 @@ fn app_session_request(
         .uri(path)
         .header("content-type", "application/json")
         .header("authorization", authorization)
+        .header("Sdkwork-Access-Token", access_token)
         .body(body)
         .unwrap()
 }

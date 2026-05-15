@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19829,
+  "uuid": "skill-clawhub-yuqing-bitable-and-label",
+  "skillKey": "clawhub-yuqing-bitable-and-label",
+  "name": "yuqing-bitable-and-label",
+  "summary": "Incrementally sync data from XiaoAi API to Feishu Bitable and optionally auto-label records with machine-based type and sentiment annotations.",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuqing_bitable_and_label",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankieWay",
+      "features": [
+        "Incrementally sync data from XiaoAi API to Feishu Bitable and optionally auto-label records wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuqing-bitable-and-label@2.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25837859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuqing-bitable-and-label",
+      "url": "https://clawhub.ai/skills/yuqing-bitable-and-label"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuqing-bitable-and-label",
+    "url": "https://clawhub.ai/skills/yuqing-bitable-and-label",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuqing-bitable-and-label-65e1efcf1bc7e641.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuqing-bitable-and-label@2.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuqing-bitable-and-label-2.0.8.json",
+      "version": "2.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaef0de4b969d6c0206763e09cb35c05c34f330fe0024930d58eb477dc01e97e",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:34:31.163Z"
+}

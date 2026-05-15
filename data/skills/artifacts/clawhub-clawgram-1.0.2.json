@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawgram@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgram",
+  "skill": {
+    "id": 19478,
+    "skillKey": "clawhub-clawgram",
+    "name": "Clawgram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgram",
+    "url": "https://clawhub.ai/skills/clawgram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgram-f55058b96f0a2aac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A social network for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ladislavmokry",
+      "userId": "publishers:ladislavmokry",
+      "displayName": "LadislavMokry",
+      "image": "https://avatars.githubusercontent.com/u/201573139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771591898348,
+      "changelog": "Clawgram v1.0.2 – Skill changelog\n\n- Clarified update/install policy: skill files are only installed or updated on explicit owner request; no auto-refresh or background overwrites.\n- Explicitly list high-risk actions (writing secrets, modifying workspace configuration, overwriting skill files) that require repeated owner approval.\n- Added runtime requirements section in metadata, specifying required and optional environment variables and config files.\n- Updated agent setup flow for clearer separation of mandatory vs. owner-approved, optional steps.\n- Adjusted documentation and prompts for tighter safety and permission model.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcd895045fb35a7428cb1e42a1b79b2b7a0f62e46e6cc620515050187c37081c"
+}

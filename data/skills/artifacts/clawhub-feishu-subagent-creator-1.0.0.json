@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-subagent-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_subagent_creator",
+  "skill": {
+    "id": 62326,
+    "skillKey": "clawhub-feishu-subagent-creator",
+    "name": "Feishu Subagent Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-subagent-creator",
+    "url": "https://clawhub.ai/skills/feishu-subagent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-subagent-creator-fe2587e134015b28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导用户创建飞书子 Agent，自动完成目录、人设、配置、路由添加及 Gateway 重启，无需手动编辑文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l1987i",
+      "userId": "s17b1bn0ctdqprqa4wh87s8b3h83rg06",
+      "displayName": "RexLee",
+      "image": "https://avatars.githubusercontent.com/u/12420694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776401250486,
+      "changelog": "feishu-subagent-creator v1.0.0\n\n- 新增飞书子 Agent 创建向导，支持对话或命令行引导自动化创建和配置子 Agent。\n- 全流程自动收集角色信息，生成人设文件，并自动创建目录、配置和路由，无需手动编辑文件。\n- 提供飞书开放平台应用创建的详细分步操作指引，包括权限和事件订阅配置。\n- 完成所有自动化后自动重启 Gateway 并校验新 Agent 可正常工作。\n- 整理常见问题、最佳实践与安全提醒，帮助用户顺利完成多 Agent 部署。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1834c47694e1a4862d91680342adb3ab8588c01b304d9e7d83e11b7520e1c4b9"
+}

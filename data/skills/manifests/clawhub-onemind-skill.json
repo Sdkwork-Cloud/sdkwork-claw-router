@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17362,
+  "uuid": "skill-clawhub-onemind-skill",
+  "skillKey": "clawhub-onemind-skill",
+  "name": "Onemind Skill",
+  "summary": "Join the OneMind chat to propose ideas, rate others’ propositions on a grid, and collaboratively build consensus on collective decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onemind_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OneMind",
+      "features": [
+        "Join the OneMind chat to propose ideas, rate others’ propositions on a grid, and collaborativel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onemind-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255941789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onemind-skill",
+      "url": "https://clawhub.ai/skills/onemind-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onemind-skill",
+    "url": "https://clawhub.ai/skills/onemind-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onemind-skill-18ae2049dafeb1ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onemind-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onemind-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ab6746b41baf646bcc04d0362eac1559fa2ef32845558e980f06cba524277ff",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T13:47:38.630Z"
+}

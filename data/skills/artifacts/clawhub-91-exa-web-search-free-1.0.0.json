@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/91-exa-web-search-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.91_exa_web_search_free",
+  "skill": {
+    "id": 41396,
+    "skillKey": "clawhub-91-exa-web-search-free",
+    "name": "91 Exa Web Search Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "91-exa-web-search-free",
+    "url": "https://clawhub.ai/skills/91-exa-web-search-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/91-exa-web-search-free-0bdc4112f0ee230b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free AI search via Exa MCP. Web search for news/info, code search for docs/examples from GitHub/StackOverflow, company research for business intel. No API ke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776459614973,
+      "changelog": "- Initial release of exa-web-search-free.\n- Provides free neural web, code, and company search using Exa MCP—no API key required.\n- Includes core search tools: web_search_exa, get_code_context_exa, and company_research_exa.\n- Offers advanced optional tools for expanded research (people, crawling, deep search, etc.).\n- Simple setup via mcporter; detailed parameters and usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81173c95a3d1d1d52201f269975eb110d85bb5b47fd0da3024c05f0373d60709"
+}

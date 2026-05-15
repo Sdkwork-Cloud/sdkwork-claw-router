@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42221,
+  "uuid": "skill-clawhub-descript-text-to-video",
+  "skillKey": "clawhub-descript-text-to-video",
+  "name": "Descript Text To Video",
+  "summary": "convert text script into AI-generated videos with this skill. Works with TXT, DOCX, PDF, SRT files up to 50MB. content creators use it for converting written...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.descript_text_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "convert text script into AI-generated videos with this skill",
+        "Works with TXT, DOCX, PDF, SRT files up to 50MB",
+        "content creators use it for converting written..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/descript-text-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "descript-text-to-video",
+      "url": "https://clawhub.ai/skills/descript-text-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "descript-text-to-video",
+    "url": "https://clawhub.ai/skills/descript-text-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/descript-text-to-video-4b2069b41ed81d36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/descript-text-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-descript-text-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:331880b3aa3bd98bdadf28b9ea45118f1cd2af5c34019e3e80602ba5dc105d19",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:28:32.273Z"
+}

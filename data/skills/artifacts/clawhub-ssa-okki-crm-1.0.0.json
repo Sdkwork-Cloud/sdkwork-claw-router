@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssa-okki-crm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_okki_crm",
+  "skill": {
+    "id": 67399,
+    "skillKey": "clawhub-ssa-okki-crm",
+    "name": "OKKI CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-okki-crm",
+    "url": "https://clawhub.ai/skills/ssa-okki-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-okki-crm-401c7292db8128a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "连接 OKKI（小满）CRM 系统，支持查询客户、创建跟进记录、管理订单等操作。频道限定触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjboy007",
+      "userId": "s17c8f5qp6wpzyxcf0v2588kmd83qzw7",
+      "displayName": "Jaden's built a claw",
+      "image": "https://avatars.githubusercontent.com/u/64246343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774608278033,
+      "changelog": "Initial release: OKKI CRM integration for customer and trail management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecf0521cf1e40bdc9415ed700dbd98b09dadb45eeee81621b58933b725798f8c"
+}

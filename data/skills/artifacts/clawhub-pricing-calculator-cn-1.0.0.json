@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pricing-calculator-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pricing_calculator_cn",
+  "skill": {
+    "id": 67471,
+    "skillKey": "clawhub-pricing-calculator-cn",
+    "name": "Pricing Calculator Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pricing-calculator-cn",
+    "url": "https://clawhub.ai/skills/pricing-calculator-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pricing-calculator-cn-48f3a4ba4652cb49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据项目类型、难度和市场行情，自动评估工时和风险，提供合理的国内外接单报价方案并支持合同生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774324899156,
+      "changelog": "Initial release of 接单报价计算器 Skill.\n\n- 自动评估项目类型、难度与市场行情，生成最优报价方案\n- 支持国内/海外市场价查询及竞品对比\n- 提供报价策略建议（如分期、定金、报价区间）\n- 可生成标准合同及报价单\n- 适用自由职业者、开发者和外包咨询等场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:890b9ce0052666102f45e20465a3e3fa18aaaf6c78880f115978bf7d212fac5d"
+}

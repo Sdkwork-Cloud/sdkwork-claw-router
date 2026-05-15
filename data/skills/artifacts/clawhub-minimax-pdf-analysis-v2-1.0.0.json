@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-pdf-analysis-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_pdf_analysis_v2",
+  "skill": {
+    "id": 21111,
+    "skillKey": "clawhub-minimax-pdf-analysis-v2",
+    "name": "MiniMax PDF Analysis V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-pdf-analysis-v2",
+    "url": "https://clawhub.ai/skills/minimax-pdf-analysis-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-pdf-analysis-v2-6a7b77ee02895528.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze PDF files using MiniMax API. Supports text extraction, keyword search, and image-based VLM analysis (converts PDF pages to images first). Requires Mi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jlin53882",
+      "userId": "s1723zkxfh1pw9pn178tsx1pr183hmq4",
+      "displayName": "jlin53882",
+      "image": "https://avatars.githubusercontent.com/u/76562059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774358558125,
+      "changelog": "Initial release: PDF to images + MiniMax VLM analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e190b4f4aea65d8506d27c3be32e051bbb19eafb4ee6ddcc81a0e9b90322939"
+}

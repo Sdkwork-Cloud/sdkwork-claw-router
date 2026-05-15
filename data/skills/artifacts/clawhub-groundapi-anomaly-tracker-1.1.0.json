@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/groundapi-anomaly-tracker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_anomaly_tracker",
+  "skill": {
+    "id": 55073,
+    "skillKey": "clawhub-groundapi-anomaly-tracker",
+    "name": "Groundapi Anomaly Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-anomaly-tracker",
+    "url": "https://clawhub.ai/skills/groundapi-anomaly-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-anomaly-tracker-c59e658d46094ad8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track A-share market anomalies — limit-up streaks, unusual volume, large capital flows — and drill into individual stocks for detailed analysis. Powered by G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingkongzhiqian",
+      "userId": "s1748mzyk6x2a2xwtsgpz5z835845ege",
+      "displayName": "qingkongzhiqian",
+      "image": "https://avatars.githubusercontent.com/u/45964299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776248051169,
+      "changelog": "v1.1.0: Update MCP endpoint to new format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39ca17b3c2b285f96301461fcbc6405c6946bee4703677ba4506e34971695dc2"
+}

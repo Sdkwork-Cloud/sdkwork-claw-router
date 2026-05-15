@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31656,
+  "uuid": "skill-clawhub-sportfolio-market",
+  "skillKey": "clawhub-sportfolio-market",
+  "name": "Sportfolio.Market",
+  "summary": "Use when working with Sportfolio through its public authenticated MCP endpoint or the repo-local CLI. Covers user API token authentication, MCP connection se...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sportfolio_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelhmiv",
+      "features": [
+        "Use when working with Sportfolio through its public authenticated MCP endpoint or the repo-loca.",
+        "Covers user API token authentication, MCP connection se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sportfolio-market@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34044957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sportfolio-market",
+      "url": "https://clawhub.ai/skills/sportfolio-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sportfolio-market",
+    "url": "https://clawhub.ai/skills/sportfolio-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sportfolio-market-53279606f1ffc8fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sportfolio-market@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sportfolio-market-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:717a556f6d4e9cb6322cf7c0baa91553ca9a2832b6eb350fd6327720e0986b0f",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:17:01.097Z"
+}

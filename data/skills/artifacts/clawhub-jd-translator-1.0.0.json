@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jd-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_translator",
+  "skill": {
+    "id": 69346,
+    "skillKey": "clawhub-jd-translator",
+    "name": "Jd Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-translator",
+    "url": "https://clawhub.ai/skills/jd-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-translator-bd0e8646ac2c66df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要分析招聘 JD 准备面试时；当用户说\"帮我分析这个岗位\"时；当用户需要把 JD 能力要求翻译成企业待解决问题时；当用户想体系化准备面试时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774840919702,
+      "changelog": "初始版本：JD 转译神器，基于四层递进式拆解框架",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3759ff4f0da9bc43bacb7614d7a46825f9cf59150a7c9ababe3f21184a6123ab"
+}

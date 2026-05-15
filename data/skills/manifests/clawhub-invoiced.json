@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32993,
+  "uuid": "skill-clawhub-invoiced",
+  "skillKey": "clawhub-invoiced",
+  "name": "Invoiced",
+  "summary": "Invoiced integration. Manage Organizations. Use when the user wants to interact with Invoiced data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoiced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Invoiced integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Invoiced data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoiced@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoiced",
+      "url": "https://clawhub.ai/skills/invoiced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoiced",
+    "url": "https://clawhub.ai/skills/invoiced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoiced-b4f1492ac4c0b063.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoiced@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoiced-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:530e43300539250e6bccb8047b87200bd4864a75b13caa40668379515e4a6f9d",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:01:28.662Z"
+}

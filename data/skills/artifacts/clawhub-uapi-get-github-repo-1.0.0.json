@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapi-get-github-repo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_github_repo",
+  "skill": {
+    "id": 58449,
+    "skillKey": "clawhub-uapi-get-github-repo",
+    "name": "UAPI 查询 GitHub 仓库 接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-github-repo",
+    "url": "https://clawhub.ai/skills/uapi-get-github-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-github-repo-9fc97f80b64be7b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 UAPI 的“查询 GitHub 仓库”单接口 skill，处理 查询 GitHub 仓库、GitHub仓库查询 等请求。 Use when the user wants get github repo, github repo, repo, github repo summary, or when you..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuakami",
+      "userId": "publishers:shuakami",
+      "displayName": "速冻饺子",
+      "image": "https://avatars.githubusercontent.com/u/149454909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773088576482,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f07f7e27bb8e65c1bf3f45a3cf272cd13f674c88dc18bc0162affacbf2e5039f"
+}

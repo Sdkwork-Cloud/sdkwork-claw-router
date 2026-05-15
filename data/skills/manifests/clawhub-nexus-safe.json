@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19863,
+  "uuid": "skill-clawhub-nexus-safe",
+  "skillKey": "clawhub-nexus-safe",
+  "name": "Nexus Safe",
+  "summary": "Provides local system health monitoring and controlled service restarts for Docker and PM2 with full privacy and zero external calls.",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_safe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marouane",
+      "features": [
+        "Provides local system health monitoring and controlled service restarts for Docker and PM2 with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-safe@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25495967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-safe",
+      "url": "https://clawhub.ai/skills/nexus-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-safe",
+    "url": "https://clawhub.ai/skills/nexus-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-safe-9481d6a91b998f84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-safe@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-safe-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42aad8624155354673d475d97775340ecaaf43133bfb96022c0a5b455a556849",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T02:29:18.550Z"
+}

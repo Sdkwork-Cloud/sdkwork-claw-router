@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13275,
+  "uuid": "skill-clawhub-book-locksmith",
+  "skillKey": "clawhub-book-locksmith",
+  "name": "Book Locksmith",
+  "summary": "Book locksmith services through Lokuli MCP. Use when user needs to find and book locksmith. Triggers on requests like \"book a locksmith\", \"find locksmith near me\", or any locksmith service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_locksmith",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book locksmith services through Lokuli MCP",
+        "Use when user needs to find and book locksmith",
+        "Triggers on requests like \"book a locksmith\", \"find locksmith near me\", or any locksmith servic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-locksmith@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-locksmith",
+      "url": "https://clawhub.ai/skills/book-locksmith"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-locksmith",
+    "url": "https://clawhub.ai/skills/book-locksmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-locksmith-c2ff984d7138468e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-locksmith@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-locksmith-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6366c14d0f9dca314371f60093e2cddd110f8af43ded38901cea737e7bdf3bf",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:19.021Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48047,
+  "uuid": "skill-clawhub-ah-incident-responder",
+  "skillKey": "clawhub-ah-incident-responder",
+  "name": "incident-responder",
+  "summary": "You are an incident response expert specializing in production debugging, log analysis, root cause analysis, and rapid system recovery. Use when: incident re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_incident_responder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are an incident response expert specializing in production debugging, log analysis, root ca.",
+        "Use when: incident re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-incident-responder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-incident-responder",
+      "url": "https://clawhub.ai/skills/ah-incident-responder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-incident-responder",
+    "url": "https://clawhub.ai/skills/ah-incident-responder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-incident-responder-abb0c3c46a06e140.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-incident-responder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-incident-responder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06ce59d108e3aed736ddfae41dadd510d0180e5e16a614048c2ec72ca8e0e94d",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T13:45:23.958Z"
+}

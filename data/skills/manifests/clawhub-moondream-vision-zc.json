@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62924,
+  "uuid": "skill-clawhub-moondream-vision-zc",
+  "skillKey": "clawhub-moondream-vision-zc",
+  "name": "moondream-vision-zc",
+  "summary": "利用本地 Ollama 运行 Moondream 模型对图像进行理解，返回自然语言描述，可直接在聊天中发送图片或文件路径调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moondream_vision_zc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张翀",
+      "features": [
+        "利用本地 Ollama 运行 Moondream 模型对图像进行理解，返回自然语言描述，可直接在聊天中发送图片或文件路径调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moondream-vision-zc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270544860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moondream-vision-zc",
+      "url": "https://clawhub.ai/skills/moondream-vision-zc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moondream-vision-zc",
+    "url": "https://clawhub.ai/skills/moondream-vision-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moondream-vision-zc-bfe9e3a6177ad151.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moondream-vision-zc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moondream-vision-zc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a859d29c27070db9f9bf61714397110e6ce015b3d56d61a8b61cecebe6f15f0f",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:19:33.325Z"
+}

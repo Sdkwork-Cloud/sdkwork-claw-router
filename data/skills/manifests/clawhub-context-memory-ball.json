@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72944,
+  "uuid": "skill-clawhub-context-memory-ball",
+  "skillKey": "clawhub-context-memory-ball",
+  "name": "上下文记忆球",
+  "summary": "上下文记忆球 - 原创技能。首创\"记忆球\"概念，将会话上下文封装为可保存、加载、恢复的独立单元。适用于会话切换、多任务并行、上下文恢复等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_memory_ball",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "原创技能。首创\"记忆球\"概念，将会话上下文封装为可保存、加载、恢复的独立单元。适用于会话切换、多任务并行、上下文恢复等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-memory-ball@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-memory-ball",
+      "url": "https://clawhub.ai/skills/context-memory-ball"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-memory-ball",
+    "url": "https://clawhub.ai/skills/context-memory-ball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-memory-ball-67b09d5e09b22816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-memory-ball@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-memory-ball-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1cf560df9cf6ce0f41e2b53f1029acffd36b3c54717ec182b0e3c35ba0e6a70",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T05:45:59.503Z"
+}

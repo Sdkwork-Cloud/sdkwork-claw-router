@@ -17,11 +17,10 @@ import {
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   AdminChannelCreateRequest,
-  AdminChannelListRequest,
   AdminChannelUpdateRequest,
   AdminProviderSecretCreateRequest,
-  AdminProviderSecretListRequest,
   AdminProviderSecretUpdateRequest,
+  IntegrationProviderSecretsListParams,
   ProviderRetryPolicy,
 } from '@sdkwork/clawrouter-backend-sdk';
 
@@ -113,16 +112,16 @@ export type ProviderSecretUpdateInput = {
 
 export class ChannelService {
   static async fetchChannels(): Promise<ChannelItem[]> {
-    const result = await channelBackendClient().channel.fetchChannels(toChannelListRequest());
+    const result = await channelBackendClient().integration.channels.list();
     ensurePlusApiSuccess(result, 'Failed to fetch channels');
     return readRequiredApiItems(result, 'Failed to fetch channels')
       .map(normalizeChannel);
   }
 
   static async addChannel(channel: ChannelCreateInput): Promise<ChannelItem> {
-    const result = await channelBackendClient().channel.add(
+    const result = await channelBackendClient().integration.channels.create(
       toCreateChannelRequest(channel),
-      requestToken('admin-channel-create'),
+      requestParams('admin-channel-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add channel');
     return normalizeChannel(readRequiredApiItem(result, 'Created channel response is missing data'));
@@ -130,26 +129,25 @@ export class ChannelService {
 
   static async updateChannel(id: string, updates: ChannelUpdateInput): Promise<ChannelItem> {
     const channelId = requiredSafePathSegment(id, 'channelId');
-    const result = await channelBackendClient().channel.updateChannel(
+    const result = await channelBackendClient().integration.channels.update(
       toUpdateChannelRequest(channelId, updates),
-      requestToken('admin-channel-update'),
+      requestParams('admin-channel-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update channel');
     return normalizeChannel(readRequiredApiItem(result, 'Updated channel response is missing data'));
   }
 
   static async deleteChannel(id: string): Promise<boolean> {
-    const result = await channelBackendClient().channel.deleteChannel(requiredSafePathSegment(id, 'channelId'));
+    const result = await channelBackendClient().integration.channels.delete(requiredSafePathSegment(id, 'channelId'));
     ensurePlusApiSuccess(result, 'Failed to delete channel');
     return true;
   }
 
   static async testChannel(id: string): Promise<ChannelTestResult> {
     const channelId = requiredSafePathSegment(id, 'channelId');
-    const result = await channelBackendClient().channel.test(
+    const result = await channelBackendClient().integration.channels.verify(
       channelId,
-      {},
-      requestToken('admin-channel-test'),
+      requestParams('admin-channel-test'),
     );
     ensurePlusApiSuccess(result, 'Failed to test channel');
     const data = readApiRecord(result);
@@ -165,16 +163,16 @@ export class ChannelService {
 
 export class ProviderSecretService {
   static async fetchProviderSecrets(filter: Partial<Pick<ProviderSecretItem, 'providerCode' | 'status'>> = {}): Promise<ProviderSecretItem[]> {
-    const result = await channelBackendClient().providerSecret.fetchProviderSecrets(toProviderSecretListRequest(filter));
+    const result = await channelBackendClient().integration.providerSecrets.list(toProviderSecretListRequest(filter));
     ensurePlusApiSuccess(result, 'Failed to fetch provider credentials');
     return readRequiredApiItems(result, 'Failed to fetch provider credentials')
       .map(normalizeProviderSecret);
   }
 
   static async addProviderSecret(secret: ProviderSecretInput): Promise<ProviderSecretItem> {
-    const result = await channelBackendClient().providerSecret.add(
+    const result = await channelBackendClient().integration.providerSecrets.create(
       toCreateProviderSecretRequest(secret),
-      requestToken('admin-provider-secret-create'),
+      requestParams('admin-provider-secret-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Created provider credential response is missing data'));
@@ -185,25 +183,21 @@ export class ProviderSecretService {
     updates: ProviderSecretUpdateInput,
   ): Promise<ProviderSecretItem> {
     const providerSecretId = requiredSafePathSegment(id, 'providerSecretId');
-    const result = await channelBackendClient().providerSecret.updateProviderSecret(
+    const result = await channelBackendClient().integration.providerSecrets.update(
       toUpdateProviderSecretRequest(providerSecretId, updates),
-      requestToken('admin-provider-secret-update'),
+      requestParams('admin-provider-secret-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update provider credential');
     return normalizeProviderSecret(readRequiredApiItem(result, 'Updated provider credential response is missing data'));
   }
 
   static async deleteProviderSecret(id: string): Promise<boolean> {
-    const result = await channelBackendClient().providerSecret.deleteProviderSecret(
+    const result = await channelBackendClient().integration.providerSecrets.delete(
       requiredSafePathSegment(id, 'providerSecretId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete provider credential');
     return true;
   }
-}
-
-function toChannelListRequest(): AdminChannelListRequest {
-  return {};
 }
 
 function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreateRequest {
@@ -243,7 +237,7 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
 
 function toProviderSecretListRequest(
   filter: Partial<Pick<ProviderSecretItem, 'providerCode' | 'status'>>,
-): AdminProviderSecretListRequest {
+): IntegrationProviderSecretsListParams {
   return pruneUndefined({
     providerCode: optionalText(filter.providerCode),
     status: filter.status,
@@ -339,8 +333,8 @@ function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
 }
 
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
+function requestParams(scope: string): { xRequestId: string } {
+  return { xRequestId: createRequestToken(scope) };
 }
 
 function channelBackendClient() {

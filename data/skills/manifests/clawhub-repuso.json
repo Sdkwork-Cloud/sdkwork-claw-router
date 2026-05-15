@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32435,
+  "uuid": "skill-clawhub-repuso",
+  "skillKey": "clawhub-repuso",
+  "name": "Repuso",
+  "summary": "Repuso integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Repuso data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repuso",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Repuso integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Repuso data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repuso@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repuso",
+      "url": "https://clawhub.ai/skills/repuso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repuso",
+    "url": "https://clawhub.ai/skills/repuso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repuso-e642ed973c43045b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repuso@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-repuso-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9619832615e597af9bf48cbca2edc9ef8cc5f984b38aeaa8bf54be2a29f33703",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:43.422Z"
+}

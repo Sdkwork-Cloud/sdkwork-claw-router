@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlassian-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlassian_mcp",
+  "skill": {
+    "id": 8990,
+    "skillKey": "clawhub-atlassian-mcp",
+    "name": "Atlassian MCP (Jira, Confluence)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlassian-mcp",
+    "url": "https://clawhub.ai/skills/atlassian-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlassian-mcp-8494f2280bfee90e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the Model Context Protocol (MCP) Atlassian server in Docker, enabling integration with Jira, Confluence, and other Atlassian products. Use when you need to query Jira issues, search Confluence, or interact with Atlassian services progr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atakanermis",
+      "userId": "publishers:atakanermis",
+      "displayName": "AtakanErmis",
+      "image": "https://avatars.githubusercontent.com/u/16894959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4345,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 10,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769364567351,
+      "changelog": "Initial release of the MCP Atlassian skill.\n\n- Provides a Dockerized server to access Jira, Confluence, and other Atlassian services through the Model Context Protocol.\n- Allows querying Jira issues, searching Confluence pages, and interacting programmatically with Atlassian tools.\n- Supports integration as an MCP source in Clawdbot.\n- Requires Docker and valid Jira API credentials.\n- Includes a quick-start guide and a bundled script for easier setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d282e61382aab2ba914be53b4873aa9a30e8fe29be08552a373a9c25a2af85bb"
+}

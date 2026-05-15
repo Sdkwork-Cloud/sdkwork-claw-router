@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-ai-audio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_audio",
+  "skill": {
+    "id": 55576,
+    "skillKey": "clawhub-volcengine-ai-audio",
+    "name": "Volcengine Ai Audio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-audio",
+    "url": "https://clawhub.ai/skills/volcengine-ai-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-audio-ba5d4c55e43140ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — remove background noise and enhance voice clarity in my recording — and ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776230302034,
+      "changelog": "Initial release of Volcengine AI Audio skill.\n\n- Instantly enhance and clean audio in video/audio files via AI: remove background noise, improve voice clarity.\n- Supports MP4, MOV, WAV, AAC uploads up to 500MB—no editing experience required.\n- Fast cloud processing: upload, describe the result you want, and get clean audio in 30–60 seconds.\n- Seamless user onboarding with automatic token setup (100 free credits, 7-day expiry).\n- Includes workflows for upload, status, timeline preview, credits, and export.\n- Robust error handling and user guidance for supported formats, file size, and plan limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62e0d8f40c709184d2b89519764307471620bcc7ce5588e80efa4eac32435898"
+}

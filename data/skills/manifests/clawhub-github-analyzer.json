@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70590,
+  "uuid": "skill-clawhub-github-analyzer",
+  "skillKey": "clawhub-github-analyzer",
+  "name": "GitHub 项目分析助手",
+  "summary": "输入项目想法或 GitHub 链接，自动搜索相关开源项目，生成结构化分析报告（技术栈/优缺点/评分）， 并可下载评分最高的前3名代码包。支持意图搜索和直链分析两种模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "输入项目想法或 GitHub 链接，自动搜索相关开源项目，生成结构化分析报告（技术栈/优缺点/评分）， 并可下载评分最高的前3名代码包。支持意图搜索和直链分析两种模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-analyzer",
+      "url": "https://clawhub.ai/skills/github-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-analyzer",
+    "url": "https://clawhub.ai/skills/github-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-analyzer-b00eb110fb161ca3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0306d54e39b3603f41385aa3ac1a6b3237da6c18f155f93158c9133d93019c5b",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:14:00.102Z"
+}

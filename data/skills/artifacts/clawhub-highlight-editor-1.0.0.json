@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor",
+  "skill": {
+    "id": 55680,
+    "skillKey": "clawhub-highlight-editor",
+    "name": "Highlight Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor",
+    "url": "https://clawhub.ai/skills/highlight-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-772e16b3e56ed78b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — pull the best moments and compile them into a 60-second highlight reel — a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777164887927,
+      "changelog": "- Initial release of Highlight Editor — extract key moments from uploaded video files and export highlight reels automatically.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB for upload.\n- Automatic backend connection and authentication; 100 free credits for new users.\n- User-friendly commands for upload, export, credits check, and timeline status.\n- Cloud-based AI highlight extraction delivers 1080p MP4 exports within 1–2 minutes.\n- Clear error handling and workflow tips to optimize editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de0e29be0ec022e9c845251fef6088fbf9334257bf09767781061571047f2475"
+}

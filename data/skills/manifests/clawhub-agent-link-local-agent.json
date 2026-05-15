@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62130,
+  "uuid": "skill-clawhub-agent-link-local-agent",
+  "skillKey": "clawhub-agent-link-local-agent",
+  "name": "agent-link-local-agent",
+  "summary": "智能体互联技能 - 支持不同电脑上的 OpenClaw 实例和 Agent 通过中转服务器进行安全可靠的通讯。包含中转服务器组件和本地 Agent 组件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_link_local_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericshpych",
+      "features": [
+        "支持不同电脑上的 OpenClaw 实例和 Agent 通过中转服务器进行安全可靠的通讯。包含中转服务器组件和本地 Agent 组件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-link-local-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267561748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-link-local-agent",
+      "url": "https://clawhub.ai/skills/agent-link-local-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-link-local-agent",
+    "url": "https://clawhub.ai/skills/agent-link-local-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-link-local-agent-885e193167ae166e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-link-local-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-link-local-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d740b4500088bd4d64ea4d02d19b94b1a3fcfdfca513d4eca8b4502529616a3a",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:42:28.042Z"
+}

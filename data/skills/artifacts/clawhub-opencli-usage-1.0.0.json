@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_usage",
+  "skill": {
+    "id": 56221,
+    "skillKey": "clawhub-opencli-usage",
+    "name": "opencli-usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-usage",
+    "url": "https://clawhub.ai/skills/opencli-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-usage-412d30b45f9835fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use at the start of any OpenCLI session — this is the top-level map of what `opencli` can do, how to discover adapters, what flags and output formats are uni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liberalchang",
+      "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+      "displayName": "chang",
+      "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776846035637,
+      "changelog": "Initial release of opencli-usage: a top-level guide for discovering, using, and authoring OpenCLI adapters and commands.\n\n- Explains OpenCLI's three core pillars: adapter commands, browser driving, and external CLI passthrough.\n- Details prerequisites by adapter strategy and summarizes the browser bridge requirements.\n- Lists universal flags, output formats, and key environment variables.\n- Covers discovering commands and adapters dynamically with opencli list.\n- Describes how to author, validate, and repair adapters, and provides plugin management instructions.\n- Outlines external CLI passthrough and installation/register flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be1f1633df7d9b45326b9995952b080c85a817b954624c9c8f6ad1785869043c"
+}

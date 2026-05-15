@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aviation-regulations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviation_regulations",
+  "skill": {
+    "id": 42206,
+    "skillKey": "clawhub-aviation-regulations",
+    "name": "Aviation Regulations Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviation-regulations",
+    "url": "https://clawhub.ai/skills/aviation-regulations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviation-regulations-b6bad54a99854e1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query aviation regulations, manuals, and publications via deepskyai.com's open search API. Use when the user asks about aviation regulatory content (ICAO, FA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepskyai",
+      "userId": "s17b7mgcgrmbpwbrxze6gdrsj985fded",
+      "displayName": "deepskyai",
+      "image": "https://avatars.githubusercontent.com/u/73582604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777039497931,
+      "changelog": "Initial release providing authoritative aviation regulation search via the Deepsky API.\n\n- Enables searching ICAO, FAA (14 CFR), EASA, and CASA regulations and manuals using natural-language queries—no API key required.\n- Returns results with clear citations (jurisdiction, rule reference, excerpt) for regulatory compliance.\n- Offers access to NOTAM Q-code interpretation, flight operations rules (Part 91/121/135), IFR/VFR requirements, fuel planning, pilot rest, EDTO/ETOPS, and cross-jurisdictional lookups.\n- Supports discovery of Deepsky agent-friendly endpoints and agent skill packages.\n- Provides simple Python CLI (`scripts/deepsky_search.py`) for streamlined queries and citation formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff259c1c351b9a11fc83cc580318de5354b4847f24a16ca2f658c09ee099a830"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-delegate@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_delegate",
+  "skill": {
+    "id": 15366,
+    "skillKey": "clawhub-claude-code-delegate",
+    "name": "Claude Code Delegate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-delegate",
+    "url": "https://clawhub.ai/skills/claude-code-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-delegate-d30126ebcc0b246f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate programming tasks to Claude Code CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenhab03",
+      "userId": "publishers:chenhab03",
+      "displayName": "chenhab03",
+      "image": "https://avatars.githubusercontent.com/u/18511646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 817,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772625692860,
+      "changelog": "Security hardening: added required binaries/env declarations, prerequisites check, write-guard verification, and security best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:324e796c11c0eda4597cc66fe70cfd78780f182b5794a864aec12d7e57a4c5a3"
+}

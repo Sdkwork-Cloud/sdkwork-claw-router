@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35894,
+  "uuid": "skill-clawhub-boring-threads-publisher",
+  "skillKey": "clawhub-boring-threads-publisher",
+  "name": "Boring Threads Publisher",
+  "summary": "Publish posts and threads to Threads (by Meta) using Boring. Use when the user says 'post to Threads', 'create a thread', 'publish thread', 'write a Threads...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boring_threads_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Publish posts and threads to Threads (by Meta) using Boring",
+        "Use when the user says 'post to Threads', 'create a thread', 'publish thread', 'write a Threads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boring-threads-publisher@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boring-threads-publisher",
+      "url": "https://clawhub.ai/skills/boring-threads-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boring-threads-publisher",
+    "url": "https://clawhub.ai/skills/boring-threads-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boring-threads-publisher-e96c5607b53271ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boring-threads-publisher@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-boring-threads-publisher-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04585ae7798e4e48591509829898fd07da0ef9323cf6444e19460695f07865ad",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:59:51.914Z"
+}

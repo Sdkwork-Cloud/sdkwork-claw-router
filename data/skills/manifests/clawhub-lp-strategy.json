@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21726,
+  "uuid": "skill-clawhub-lp-strategy",
+  "skillKey": "clawhub-lp-strategy",
+  "name": "Uniswap Lp Strategy",
+  "summary": "Comprehensive LP strategy comparison for a token pair — evaluates all versions, fee tiers, range widths, and rebalance approaches side-by-side with APY, IL, gas costs, and risk ratings. Use when the user wants to compare LP options or see.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lp_strategy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Comprehensive LP strategy comparison for a token pair — evaluates all versions, fee tiers, rang.",
+        "Use when the user wants to compare LP options or see a detailed analysis of all strategies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lp-strategy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lp-strategy",
+      "url": "https://clawhub.ai/skills/lp-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lp-strategy",
+    "url": "https://clawhub.ai/skills/lp-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lp-strategy-fd4a35391515c251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lp-strategy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lp-strategy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a95c637d1db5b042da57d16104913478032315e22814f5856ee0a1eaf23a0c9a",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:47:36.277Z"
+}

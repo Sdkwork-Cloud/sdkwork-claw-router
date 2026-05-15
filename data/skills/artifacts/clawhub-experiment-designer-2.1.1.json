@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/experiment-designer@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experiment_designer",
+  "skill": {
+    "id": 17423,
+    "skillKey": "clawhub-experiment-designer",
+    "name": "Experiment Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experiment-designer",
+    "url": "https://clawhub.ai/skills/experiment-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experiment-designer-af4e063bbe651522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 741,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773239497001,
+      "changelog": "v2.1.1: optimization, reference splits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ea6b476ec822155ca0247e90d1aed0c0eac1d11c65a9979ad363c26d7370fea"
+}

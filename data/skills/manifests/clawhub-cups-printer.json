@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16325,
+  "uuid": "skill-clawhub-cups-printer",
+  "skillKey": "clawhub-cups-printer",
+  "name": "Printer",
+  "summary": "Print images and PDFs to any CUPS printer. PPD-aware: reads paper sizes, margins, resolution, and duplex at runtime. Use when the user wants to print files (...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cups_printer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Print images and PDFs to any CUPS printer",
+        "PPD-aware: reads paper sizes, margins, resolution, and duplex at runtime",
+        "Use when the user wants to print files (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cups-printer@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cups-printer",
+      "url": "https://clawhub.ai/skills/cups-printer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cups-printer",
+    "url": "https://clawhub.ai/skills/cups-printer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cups-printer-9d0a19fba40a88dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cups-printer@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cups-printer-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671b389b59bbe6bf0290b66ffe95cfa2a950a1b7ce31cc089ceb13787b257e24",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T07:36:47.937Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12762,
+  "uuid": "skill-clawhub-task-father",
+  "skillKey": "clawhub-task-father",
+  "name": "Task Father",
+  "summary": "Generator for file-based task state machines (registry + task folders + lifecycle state + queue files + cron specs/jobs) for long-running work.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_father",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhihao",
+      "features": [
+        "Generator for file-based task state machines (registry + task folders + lifecycle state + queue."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-father@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19731677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-father",
+      "url": "https://clawhub.ai/skills/task-father"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-father",
+    "url": "https://clawhub.ai/skills/task-father",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-father-de22d793de7feec6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-father@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-father-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2505addaa83f7fccd10b21a15afa8c4cbf96860a7ed182d25d6a4c34cca75e7a",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:03:29.957Z"
+}

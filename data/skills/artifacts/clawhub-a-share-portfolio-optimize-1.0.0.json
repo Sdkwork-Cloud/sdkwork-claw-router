@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-portfolio-optimize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_portfolio_optimize",
+  "skill": {
+    "id": 62605,
+    "skillKey": "clawhub-a-share-portfolio-optimize",
+    "name": "A Share Portfolio Optimize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-portfolio-optimize",
+    "url": "https://clawhub.ai/skills/a-share-portfolio-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-portfolio-optimize-634658ec3d1786b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股量化组合优化。当用户说\"组合优化\"、\"portfolio optimization\"、\"均值方差\"、\"风险平价\"、\"最优权重\"、\"Black-Litterman\"、\"最小方差\"、\"最大夏普\"、\"怎么分配权重\"、\"等风险贡献\"时触发。基于现代投资组合理论，对给定标的池进行量化权重优化，支持均值方差/最小方差/风..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yzswk",
+      "userId": "s17f5wmkcew8e0yrzrr8tjx7bh83h6td",
+      "displayName": "yzswk",
+      "image": "https://avatars.githubusercontent.com/u/14083807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774793116802,
+      "changelog": "A股量化组合优化技能首发上线，支持多种权重优化方法与研报/快速风格。\n\n- 支持均值方差、最小方差、风险平价、等权、Black-Litterman 等组合优化方法\n- 自动获取A股历史行情，计算收益率、协方差、相关系数等关键指标\n- 输出最优权重、风险贡献、有效前沿及组合与基准表现对比\n- 提供量化研报风格（formal）和快速优化风格（brief）两种结果展示\n- 内置投资组合风险管理与数据估计关键规则提醒",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eda25d26474854b6506b7fee2e6383217e0232bd81bd939aa0dc643e47beb8fe"
+}

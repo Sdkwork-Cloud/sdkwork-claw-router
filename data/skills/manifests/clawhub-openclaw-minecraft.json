@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9854,
+  "uuid": "skill-clawhub-openclaw-minecraft",
+  "skillKey": "clawhub-openclaw-minecraft",
+  "name": "OpenClaw Minecraft",
+  "summary": "Control Minecraft bots through a Mineflayer controller API using JSON actions and cron-driven autonomy.",
+  "version": "0.1.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_minecraft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ene5135",
+      "features": [
+        "Control Minecraft bots through a Mineflayer controller API using JSON actions and cron-driven a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-minecraft@0.1.26",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24788756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-minecraft",
+      "url": "https://clawhub.ai/skills/openclaw-minecraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-minecraft",
+    "url": "https://clawhub.ai/skills/openclaw-minecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-minecraft-2c0220f45fc7814d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-minecraft@0.1.26",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-minecraft-0.1.26.json",
+      "version": "0.1.26",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fa065be6112991afda0599067b5dfd383a04bdf1fe38c27349088b338e40c8f",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T16:55:11.657Z"
+}

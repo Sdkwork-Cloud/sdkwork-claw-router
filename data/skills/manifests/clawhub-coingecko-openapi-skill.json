@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27094,
+  "uuid": "skill-clawhub-coingecko-openapi-skill",
+  "skillKey": "clawhub-coingecko-openapi-skill",
+  "name": "CoinGecko OpenAPI Skill",
+  "summary": "Operate CoinGecko and GeckoTerminal market data APIs through UXC with a curated OpenAPI schema, API-key auth, and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coingecko_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate CoinGecko and GeckoTerminal market data APIs through UXC with a curated OpenAPI schema,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coingecko-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coingecko-openapi-skill",
+      "url": "https://clawhub.ai/skills/coingecko-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coingecko-openapi-skill",
+    "url": "https://clawhub.ai/skills/coingecko-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coingecko-openapi-skill-d13c8068f78c10e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coingecko-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coingecko-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b0078d8d7cbd22f3e677050b0ab216e3732dad25da55b287f3d2f7676e81d2a",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:57:19.787Z"
+}

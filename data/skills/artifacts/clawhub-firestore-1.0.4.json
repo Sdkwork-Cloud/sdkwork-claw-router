@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firestore@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firestore",
+  "skill": {
+    "id": 25125,
+    "skillKey": "clawhub-firestore",
+    "name": "Firestore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firestore",
+    "url": "https://clawhub.ai/skills/firestore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firestore-23066caccb55bb97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Google Cloud Firestore databases using the Firestore REST API via curl commands. Authenticate using gcloud CLI tokens to perform CRUD operations on do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felipe0liveira",
+      "userId": "publishers:felipe0liveira",
+      "displayName": "Felipe Oliveira",
+      "image": "https://avatars.githubusercontent.com/u/13547092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772822802683,
+      "changelog": "- Declared that the skill is built directly on the official Firebase Firestore REST API documentation, adding a reference link at the top.\n- No functional or behavioral changes; all workflow and security guidance remain unchanged.\n- No code or command modifications were made in this version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eadf2b6fcbd44608f8b4e3199602a8e932dae43c33a76755a6a6be2bf316912c"
+}

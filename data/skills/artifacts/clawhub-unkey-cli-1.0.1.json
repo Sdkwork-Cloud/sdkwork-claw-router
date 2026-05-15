@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unkey-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unkey_cli",
+  "skill": {
+    "id": 58962,
+    "skillKey": "clawhub-unkey-cli",
+    "name": "unkey-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unkey-cli",
+    "url": "https://clawhub.ai/skills/unkey-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unkey-cli-9c4c5a6de1d6b972.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Unkey CLI 在终端中管理 API namespaces、keys、identities、permissions、rate limits 和 analytics 查询。当用户提到 unkey 命令、API key 管理、限流、RBAC 权限、身份分组或 key 验证排查时触发。Use this ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyriswu",
+      "userId": "s17adkk1pw6rdbxdzht0y1pey583gqfs",
+      "displayName": "kyris wu",
+      "image": "https://avatars.githubusercontent.com/u/5120703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777819190594,
+      "changelog": "No changes detected in this version.\n\n- Version 1.0.1 does not introduce any file or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eae6a60aa5afae3346b00cc246c1c276b144a8032806c5d726c2f515b195f1cb"
+}

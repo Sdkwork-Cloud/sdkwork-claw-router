@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paythefly@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paythefly",
+  "skill": {
+    "id": 15602,
+    "skillKey": "clawhub-paythefly",
+    "name": "PayTheFlyPro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paythefly",
+    "url": "https://clawhub.ai/skills/paythefly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paythefly-927f71811cdfe7ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create crypto payment & withdrawal links for your app. Works with BSC, Ethereum, TRON. Users pay via PayTheFlyPro gateway - you get shareable URLs with built..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanlan",
+      "userId": "publishers:seanlan",
+      "displayName": "paythefly",
+      "image": "https://avatars.githubusercontent.com/u/3713073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 801,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1772119001816,
+      "changelog": "Complete package with all files",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ca5b1555bd71691130dd49c3a7ee6091ca3319776782adfa265ce905b0c90f4"
+}

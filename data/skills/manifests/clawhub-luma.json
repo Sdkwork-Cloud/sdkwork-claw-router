@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11565,
+  "uuid": "skill-clawhub-luma",
+  "skillKey": "clawhub-luma",
+  "name": "Luma Events",
+  "summary": "Fetch upcoming events from Luma (lu.ma) for any city. Use when the user asks about tech events, startup meetups, networking events, conferences, or things happening in cities like Bangalore, Mumbai, Delhi, San Francisco, New York, etc.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luma",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neil Agarwal",
+      "features": [
+        "Fetch upcoming events from Luma (lu.ma) for any city",
+        "Use when the user asks about tech events, startup meetups, networking events, conferences, or t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/luma@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7759208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "luma",
+      "url": "https://clawhub.ai/skills/luma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luma",
+    "url": "https://clawhub.ai/skills/luma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luma-53009c20073f1d96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/luma@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-luma-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af79433b870711feb817618bf882fd2adc38a8b3a197b28f218ea82bfc9d1b6c",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T07:34:45.280Z"
+}

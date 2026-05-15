@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62416,
+  "uuid": "skill-clawhub-acpx-connection-troubleshooting",
+  "skillKey": "clawhub-acpx-connection-troubleshooting",
+  "name": "Acpx Connection Troubleshooting",
+  "summary": "用于排查 acpx 桥接连接失败、超时或初始化卡住的问题。当用户提到 acpx 无法连接、ACP 桥接超时、gateway.token 缺失、Claude Code 认证失败、initialize 阶段卡住、或尝试将微信/飞书渠道切换到 ACP 后端时触发。涵盖配置验证、令牌文件修复、模型端点检查及网络连通性测试...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx_connection_troubleshooting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roger",
+      "features": [
+        "用于排查 acpx 桥接连接失败、超时或初始化卡住的问题。当用户提到 acpx 无法连接、ACP 桥接超时、gateway.token 缺失、Claude Code 认证失败、initial."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acpx-connection-troubleshooting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6299813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acpx-connection-troubleshooting",
+      "url": "https://clawhub.ai/skills/acpx-connection-troubleshooting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx-connection-troubleshooting",
+    "url": "https://clawhub.ai/skills/acpx-connection-troubleshooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-connection-troubleshooting-22e1b6ceb4290e8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acpx-connection-troubleshooting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acpx-connection-troubleshooting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6b26337eac513cfbe5ce84df6dfe2bdd0afcee3f5288b4f07f34c87b30c1285",
+      "artifactSizeBytes": 2794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:17:03.198Z"
+}

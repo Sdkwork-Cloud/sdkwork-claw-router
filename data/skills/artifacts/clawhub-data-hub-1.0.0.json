@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_hub",
+  "skill": {
+    "id": 60723,
+    "skillKey": "clawhub-data-hub",
+    "name": "Data Hub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-hub",
+    "url": "https://clawhub.ai/skills/data-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-hub-844517428561bcd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字货币量化交易系统的内存数据中枢，为多 Agent 提供统一的数据共享层。管理行情(market_state)、指标(indicators)、情报(intelligence)、风控(risk_audit)四个命名空间。Use when: Agent 需要读写共享数据、查询行情/指标/研报/风控状态。NOT fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnny-ggao",
+      "userId": "s17218ntvkews2p5xfz8qrwv7s850dmp",
+      "displayName": "Johnny",
+      "image": "https://avatars.githubusercontent.com/u/39037619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773743483173,
+      "changelog": "data-hub 1.0.0 — Initial release\n\n- Provides an in-memory data hub for multi-Agent quantitative trading systems, supporting real-time data sharing across market state, indicators, intelligence, and risk audit.\n- Enforces namespace-specific write permissions for Agents to maintain data integrity.\n- Utilizes Pydantic for input data validation, with LLM-friendly error feedback instead of exceptions.\n- Implements lazy data cleanup on summary access: stale/expired data is detected and marked in-place.\n- Maintains sliding window (max 50 entries) for indicators data to cap memory usage.\n- No persistent storage, historical queries, or direct trading actions; designed solely for real-time shared context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4979394503b704f14e7c867d2ef2047d50dc306a074c093cb39d320508084a2"
+}

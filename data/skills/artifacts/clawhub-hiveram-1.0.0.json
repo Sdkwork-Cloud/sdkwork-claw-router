@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hiveram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiveram",
+  "skill": {
+    "id": 53540,
+    "skillKey": "clawhub-hiveram",
+    "name": "Hiveram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiveram",
+    "url": "https://clawhub.ai/skills/hiveram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiveram-b53648fc04a57cd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent coordination layer via Workledger — shared work orders, claim/release leases, cross-machine memory sync, and handoff between OpenClaw instances. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppiankov",
+      "userId": "s17fzet2pk4zvezemyabzwzp6x83kp5d",
+      "displayName": "ppiankov",
+      "image": "https://avatars.githubusercontent.com/u/103106369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774538512756,
+      "changelog": "v1.0: Agent coordination via Workledger — shared WOs, claim/release leases, context sync, multi-agent patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5455400d7e0cb9721e17e142ae31bdb5201b1fcb103fb05c1a0291eebdd669d"
+}

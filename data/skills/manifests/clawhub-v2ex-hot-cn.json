@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58638,
+  "uuid": "skill-clawhub-v2ex-hot-cn",
+  "skillKey": "clawhub-v2ex-hot-cn",
+  "name": "V2ex Hot Cn",
+  "summary": "V2EX 热门话题监控 | V2EX Hot Topics Monitor. 获取 V2EX 热门帖子、技术讨论、数码生活 | Get V2EX trending posts, tech discussions, digital life. 触发词：V2EX、v2、程序员社区.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2ex_hot_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "V2EX 热门话题监控 | V2EX Hot Topics Monitor",
+        "获取 V2EX 热门帖子、技术讨论、数码生活 | Get V2EX trending posts, tech discussions, digital life",
+        "触发词：V2EX、v2、程序员社区."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v2ex-hot-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v2ex-hot-cn",
+      "url": "https://clawhub.ai/skills/v2ex-hot-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2ex-hot-cn",
+    "url": "https://clawhub.ai/skills/v2ex-hot-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2ex-hot-cn-750074acbd270ff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v2ex-hot-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v2ex-hot-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8008bd13c3e2feac497f8d6582bbd8581191f80c3bca5750232ba8a29f533e5d",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T12:13:48.847Z"
+}

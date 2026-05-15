@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65089,
+  "uuid": "skill-clawhub-xiaohongshu-card-creator",
+  "skillKey": "clawhub-xiaohongshu-card-creator",
+  "name": "Xiaohongshu Card Creator",
+  "summary": "将小红书文案转换为HTML图文卡片网页，支持智能内容识别和通用模板两种模式，生成标准3:4竖版卡片，支持一键下载所有卡片图为PNG",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_card_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "River Yan",
+      "features": [
+        "将小红书文案转换为HTML图文卡片网页，支持智能内容识别和通用模板两种模式，生成标准3:4竖版卡片，支持一键下载所有卡片图为PNG"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-card-creator@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3059527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-card-creator",
+      "url": "https://clawhub.ai/skills/xiaohongshu-card-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-card-creator",
+    "url": "https://clawhub.ai/skills/xiaohongshu-card-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-card-creator-ce6bf1cfa0f7f47b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-card-creator@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-card-creator-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ffa8c9e5a625b81f8e35f5cae47a4730ab915d2e6e4b96dbcde28c77bfaef9",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:24:58.910Z"
+}

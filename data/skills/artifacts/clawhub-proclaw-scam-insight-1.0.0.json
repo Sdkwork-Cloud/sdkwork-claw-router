@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proclaw-scam-insight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proclaw_scam_insight",
+  "skill": {
+    "id": 70182,
+    "skillKey": "clawhub-proclaw-scam-insight",
+    "name": "Proclaw Scam insight(骗局洞察者)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proclaw-scam-insight",
+    "url": "https://clawhub.ai/skills/proclaw-scam-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proclaw-scam-insight-f8efa3ec4a82ee62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于不确定性与风险转移理论，识别金融骗局模式、分析收割机制、提供反收割策略；当用户需要判断投资是否靠谱、分析骗局原理或学习如何避免被收割时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkbugs",
+      "userId": "s17dharqwg000hw9670hn43dk58476ed",
+      "displayName": "thinkbugs",
+      "image": "https://avatars.githubusercontent.com/u/199835914?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776943801563,
+      "changelog": "ProClaw-Scam-insight 1.0.0 – Initial Release\n\n- Provides a structured framework to identify, analyze, and defend against financial scams based on uncertainty and risk transfer theory.\n- Includes step-by-step procedures for scam recognition, risk structure analysis, and defensive decision-making.\n- Offers quant tools (scripts) for risk metrics, liquidity analysis, Kelly criterion, scam risk scoring, matrix evaluation, and visualization.\n- Supplies extensive reference material for deeper learning: scam models, psychological mechanisms, defensive strategies, and historical case studies.\n- Features practical examples and workflows to guide users in assessing investments or recognizing scam mechanisms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ddb226ca7a3cf14f14bf4a088ce5fa7af9aaee81c6f8610c3622ee053976a31"
+}

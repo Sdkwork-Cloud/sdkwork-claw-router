@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13995,
+  "uuid": "skill-clawhub-instagram-photo-text-overlay",
+  "skillKey": "clawhub-instagram-photo-text-overlay",
+  "name": "Instagram Photo Text Overlay",
+  "summary": "Overlay text on photos for Instagram posts. Generates portrait (4:5) images with gradient overlays, titles, and optional numbered lists. Use when creating In...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_photo_text_overlay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyduckler",
+      "features": [
+        "Overlay text on photos for Instagram posts",
+        "Generates portrait (4:5) images with gradient overlays, titles, and optional numbered lists",
+        "Use when creating In..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-photo-text-overlay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260153069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-photo-text-overlay",
+      "url": "https://clawhub.ai/skills/instagram-photo-text-overlay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-photo-text-overlay",
+    "url": "https://clawhub.ai/skills/instagram-photo-text-overlay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-photo-text-overlay-ff5c0d198c6f9f6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-photo-text-overlay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-photo-text-overlay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65e2e7a2549b7d67034cf208df0bf6aac666993d37f27338d81170b46e302db8",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:40:06.750Z"
+}

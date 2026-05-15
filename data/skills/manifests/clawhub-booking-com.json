@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62810,
+  "uuid": "skill-clawhub-booking-com",
+  "skillKey": "clawhub-booking-com",
+  "name": "booking-com",
+  "summary": "Booking.com 缤客 - 全球领先在线住宿预订平台，提供酒店、民宿、公寓等住宿服务",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booking_com",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Booking.com 缤客",
+        "全球领先在线住宿预订平台，提供酒店、民宿、公寓等住宿服务"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/booking-com@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "booking-com",
+      "url": "https://clawhub.ai/skills/booking-com"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booking-com",
+    "url": "https://clawhub.ai/skills/booking-com",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booking-com-22a4032a43e1f713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/booking-com@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-booking-com-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:026e8a0140508f001d0e6ec303af121fab6a07e2b364d01150390922b3d87f2d",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:00:25.411Z"
+}

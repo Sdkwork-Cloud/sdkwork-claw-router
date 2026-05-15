@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60131,
+  "uuid": "skill-clawhub-baidu-ai-map",
+  "skillKey": "clawhub-baidu-ai-map",
+  "name": "Baidu AI Map（百度地图官方AI SKills）",
+  "summary": "百度地图 Agent Plan ，无需成为百度地图开发者，立即接入百度地图为 Agent 场景原生设计的地图能力，例如 AI 地点检索、AI 路线规划、地理编码与逆地理编码、天气查询、地图展示等开箱即用的工具。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_ai_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-maps",
+      "features": [
+        "百度地图 Agent Plan ，无需成为百度地图开发者，立即接入百度地图为 Agent 场景原生设计的地图能力，例如 AI 地点检索、AI 路线规划、地理编码与逆地理编码、天气查询、地图展."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-ai-map@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268489846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-ai-map",
+      "url": "https://clawhub.ai/skills/baidu-ai-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-ai-map",
+    "url": "https://clawhub.ai/skills/baidu-ai-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-ai-map-160766042b721df0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-ai-map@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-ai-map-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9f01c14b7b6d3c840e889747dfae983f0b6baa6830188738373818c6417bf27",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:43:29.182Z"
+}

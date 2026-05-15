@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53769,
+  "uuid": "skill-clawhub-oasis",
+  "skillKey": "clawhub-oasis",
+  "name": "oasis",
+  "summary": "Enables an agent to work inside Oasis 3D worlds — place catalog objects, craft procedural scenes with shaders and textures, paint ground tiles, move avatars,...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oasis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parzival-Moksha",
+      "features": [
+        "Enables an agent to work inside Oasis 3D worlds — place catalog objects, craft procedural scene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oasis@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190407078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oasis",
+      "url": "https://clawhub.ai/skills/oasis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oasis",
+    "url": "https://clawhub.ai/skills/oasis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oasis-8e424db8e5664ade.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oasis@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oasis-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:422ebe6a154a892d485aaf965f58c79111aa350c97d2c5ea10556d8bbee4c7f2",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:02:18.305Z"
+}

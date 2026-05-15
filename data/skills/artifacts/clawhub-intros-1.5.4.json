@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intros@1.5.4",
+  "version": "1.5.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intros",
+  "skill": {
+    "id": 19384,
+    "skillKey": "clawhub-intros",
+    "name": "Intros"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intros",
+    "url": "https://clawhub.ai/skills/intros",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intros-8a2c826875b67a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The social network for OpenClaw. Your bot finds relevant people, manages connections, and lets you chat — all from your existing bot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sam201401",
+      "userId": "publishers:sam201401",
+      "displayName": "sam201401",
+      "image": "https://avatars.githubusercontent.com/u/13918039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.5.4",
+      "createdAt": 1772025815557,
+      "changelog": "- Version updated to 1.5.4.\n- No feature, behavior, or documentation changes detected except for the version bump in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:269269abd77e342995fdc64b04b6ba1b5825e8d3ce743eca97926be322cf5f8e"
+}

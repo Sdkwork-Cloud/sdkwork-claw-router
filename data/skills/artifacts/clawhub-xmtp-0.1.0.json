@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmtp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmtp",
+  "skill": {
+    "id": 50701,
+    "skillKey": "clawhub-xmtp",
+    "name": "XMTP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmtp",
+    "url": "https://clawhub.ai/skills/xmtp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmtp-0af514997322b2ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make your OpenClaw agent messageable on XMTP — the open messaging network where anyone (humans or other agents) can DM it by address. Your agent gets its own..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saulmc",
+      "userId": "publishers:saulmc",
+      "displayName": "Saul Carlin",
+      "image": "https://avatars.githubusercontent.com/u/510695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773290851550,
+      "changelog": "Version 0.1.0\n\n- Initial public release of the OpenClaw XMTP Agent skill.\n- Makes OpenClaw agents messageable via the XMTP network, enabling two-way agent-to-agent and agent-to-human conversations.\n- Lightweight bridge design: quick setup with no Gateway config or restart required.\n- Owner receives normal capabilities; public users are routed to conversation-only mode with an editable prompt for safety.\n- Tool profile support for production-grade access scoping between owners and public users.\n- Detailed installation, configuration, and operational guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d79b97f0e64da68c9ebae1e37defab99c35628432b4fa8190f39173320e02f7"
+}

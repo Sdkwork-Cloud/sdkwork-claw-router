@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-quickstart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_quickstart",
+  "skill": {
+    "id": 20562,
+    "skillKey": "clawhub-openclaw-quickstart",
+    "name": "OpenClaw Quickstart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-quickstart",
+    "url": "https://clawhub.ai/skills/openclaw-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-quickstart-9795ec602b38d26f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw onboarding guide for new users. Activate when a user asks how to get started with OpenClaw, says they are new, asks for a quickstart or tutorial, wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyuncoder",
+      "userId": "publishers:heyuncoder",
+      "displayName": "何昀",
+      "image": "https://avatars.githubusercontent.com/u/4433743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772364788875,
+      "changelog": "Initial release: 8-task onboarding guide with auto-detection, daily reminders, and one-click install",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68c6c1eae6066607918a326df9d82c10b4c64b5b84a3f8815bd60e3cb14cea80"
+}

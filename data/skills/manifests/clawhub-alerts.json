@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13341,
+  "uuid": "skill-clawhub-alerts",
+  "skillKey": "clawhub-alerts",
+  "name": "Alerts",
+  "summary": "Smart alerting patterns for AI agents - deduplication, routing, escalation, and fatigue prevention",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alerts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Smart alerting patterns for AI agents",
+        "deduplication, routing, escalation, and fatigue prevention"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alerts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alerts",
+      "url": "https://clawhub.ai/skills/alerts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alerts",
+    "url": "https://clawhub.ai/skills/alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alerts-deb3e366c077c228.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alerts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alerts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95d32af72061acdc0ddc252934348bc5a5a2272f96971083ea85d8d64d71fac5",
+      "artifactSizeBytes": 1765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T20:14:57.397Z"
+}

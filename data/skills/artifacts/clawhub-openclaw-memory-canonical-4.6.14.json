@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-canonical@4.6.14",
+  "version": "4.6.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_canonical",
+  "skill": {
+    "id": 24309,
+    "skillKey": "clawhub-openclaw-memory-canonical",
+    "name": "OpenClaw Memory Canonical"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-canonical",
+    "url": "https://clawhub.ai/skills/openclaw-memory-canonical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-canonical-2b0ac8544a98b30a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight file-based memory system for single-user AI agents. Uses markdown files only: HOT/WARM/COLD/BUFFER plus SCRATCH learnings, with tiered loading, W..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ciklopentan",
+      "userId": "s170bzkafdeer9wznxg0rasry58402yp",
+      "displayName": "ciklopentan",
+      "image": "https://avatars.githubusercontent.com/u/259757332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "4.6.14",
+      "createdAt": 1776177058357,
+      "changelog": "Fresh full 10-round Dual Thinking rerun from v4.6.13; no new runtime/code seam found, only honest release-surface refresh for the completed 10-round convergence line.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b82d2380c767cddc76f63b28e3bd6676c5a83ee9ff167a974d8f42b95382e186"
+}

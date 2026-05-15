@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoye-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoye_voice",
+  "skill": {
+    "id": 68265,
+    "skillKey": "clawhub-xiaoye-voice",
+    "name": "小野语音系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoye-voice",
+    "url": "https://clawhub.ai/skills/xiaoye-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoye-voice-74227df2e1ed4bf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于双引擎策略的智能语音系统，支持中文本地Tingting语音和多语言Edge-TTS云端，输出高质量OGG音频，保障隐私。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackytianjp",
+      "userId": "s17e60x26839j5zvyzr6e7njjn83sg20",
+      "displayName": "ryuichi Takano",
+      "image": "https://avatars.githubusercontent.com/u/6687810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771653302851,
+      "changelog": "xiaoye-voice v1.0.0\n\n- Initial release of the Xiaoye voice skill.\n- Dual-engine strategy: native macOS Tingting for Chinese (fully local), Edge-TTS cloud for other languages.\n- Automatic language detection and seamless engine switching.\n- Privacy-focused: Chinese voice runs completely on-device.\n- High-quality, multi-language support with output in OGG format, compatible with Telegram.\n- Zero-dependency for Chinese voice (no extra packages needed).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6536b4103f22d628688b160dcbf26ac2575d3384ccafd869e802556a4e68e94f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/story-short-scan@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_short_scan",
+  "skill": {
+    "id": 66214,
+    "skillKey": "clawhub-story-short-scan",
+    "name": "Story Short Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-short-scan",
+    "url": "https://clawhub.ai/skills/story-short-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-short-scan-a44a0072f6509df8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短篇网文扫榜。分析知乎盐言、七猫、黑岩、点众等平台热门短篇数据，捕捉风口题材。 触发方式：/story-short-scan、/短篇扫榜、「短篇什么火」「知乎故事排行」"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "worldwonderer",
+      "userId": "s1748rsha25rh871z39a8xdg9n85tqyh",
+      "displayName": "worldwonderer",
+      "image": "https://avatars.githubusercontent.com/u/49583093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778253012344,
+      "changelog": "v0.4.1: 测试报告修复 + 跨 skill 去 symlink 化 + CI 增强",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d8ade802078e7ace484242860f1490c2a3ec55cb37f98dbf92569361d704e89"
+}

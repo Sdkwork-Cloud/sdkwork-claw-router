@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parakeet-mlx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parakeet_mlx",
+  "skill": {
+    "id": 11367,
+    "skillKey": "clawhub-parakeet-mlx",
+    "name": "Transcribe Audio with Parakeet MLX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parakeet-mlx",
+    "url": "https://clawhub.ai/skills/parakeet-mlx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parakeet-mlx-ca311a57ed64cc51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local speech-to-text with Parakeet MLX (ASR) for Apple Silicon (no API key)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylehowells",
+      "userId": "publishers:kylehowells",
+      "displayName": "kylehowells",
+      "image": "https://avatars.githubusercontent.com/u/301036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2062,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768304799849,
+      "changelog": "Initial release of Parakeet MLX skill:\n\n- Enables local speech-to-text transcription on Apple Silicon using Parakeet MLX ASR.\n- No API key required; models are downloaded from Hugging Face on first use.\n- Supports multiple audio formats and batch transcription with shell wildcards.\n- Output available in txt, srt, vtt, json formats (or all at once).\n- Simple installation via `uv tool install parakeet-mlx`.\n- Requires `ffmpeg` for audio processing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a599ffc732740496561dbe1f9c306564bb0540e0a810c7a6fd822c93a149e50a"
+}

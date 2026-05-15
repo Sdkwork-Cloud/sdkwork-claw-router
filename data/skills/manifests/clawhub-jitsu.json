@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39009,
+  "uuid": "skill-clawhub-jitsu",
+  "skillKey": "clawhub-jitsu",
+  "name": "Jitsu",
+  "summary": "Jitsu integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jitsu data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jitsu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Jitsu integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jitsu data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jitsu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jitsu",
+      "url": "https://clawhub.ai/skills/jitsu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jitsu",
+    "url": "https://clawhub.ai/skills/jitsu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jitsu-333931d6f8315ebc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jitsu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jitsu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eced6bb72258ae52e3e8c728e8f6b5cb8538945338d1ddcfcf9e1b800b8c7180",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:00:17.525Z"
+}

@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "memory-plus",
+    "displayName": "memory-plus",
+    "summary": "虾宝智能记忆工作流。开箱即用，数据目录与代码分离，支持轻量降级。 特性： - 文件系统存储，无外部数据库依赖 - Ollama 向量嵌入（可选，降级为 BM25） - bge-reranker-v2-m3 重排（可选） - HyDE + Query Rewriting（可选） - 后台线程自动存储（每10分钟）...",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 439,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "createdAt": 1773933406436,
+    "updatedAt": 1778313003916
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1775236276784,
+    "changelog": "- Reorganized skill into modular scripts: added config.py, fts5.py, save_session.py, search.py, store.py, tools.py under scripts/.\n- Simplified core logic: all previous monolithic and legacy scripts removed.\n- Introduced a three-layer storage architecture (file, FTS5, KG; Milvus optional) for maximum reliability and minimal external dependencies.\n- Improved activation/trigger logic and expanded toolset for searching, storing, deduplication, and organizing memories.\n- Updated installation and usage documentation for easier setup and clearer workflows.\n\n重构代码库：将核心功能拆分为 scripts/ 目录下的模块化脚本（配置、FTS5、存储、搜索、工具、会话保存）。\n新增基于 FTS5 的全文检索，实现无需外部依赖的健壮检索能力。\n优化多层存储架构：文件存储、FTS5 索引、知识图谱、Milvus（可选）；自动降级机制确保核心功能在无外部依赖时仍可正常运行。\n用轻量、工具化的结构替代了原有的单体式文件与文档文件。\n提供六大工具接口：搜索、存储、去重、清理、合并、最近文件列表。\n通过 字符 N-Gram 杰卡德算法 增强了中文及混合语言搜索效果。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liushuangfa666",
+    "userId": "s17a2h358q8txkskajtz2whma983h849",
+    "displayName": "liushuangfa666",
+    "image": "https://avatars.githubusercontent.com/u/82012796?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778313003916
+  }
+}

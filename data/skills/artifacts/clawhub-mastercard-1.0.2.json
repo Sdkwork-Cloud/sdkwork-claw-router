@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mastercard@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mastercard",
+  "skill": {
+    "id": 51943,
+    "skillKey": "clawhub-mastercard",
+    "name": "MasterCard | Is your claw a shopaholic?"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mastercard",
+    "url": "https://clawhub.ai/skills/mastercard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mastercard-07863e7a6a2154ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "triplehippo",
+      "userId": "s171q9wjnctwwjjn7rjgjkwy2h83fayr",
+      "displayName": "TripleHippo",
+      "image": "https://avatars.githubusercontent.com/u/261665182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773189547887,
+      "changelog": "- Skill rebranded to \"creditclaw-creditcard\" with enhanced documentation and a new homepage URL.\n- Updated description reflecting support for agentic shopping with multiple guarded payment methods and owner approval.\n- Added clear overview of payment rails, including Encrypted Card (live), Stripe Wallet (private beta), and Crossmint Wallet (coming soon).\n- Expanded and detailed security section outlining API key handling, owner controls, and server-enforced guardrails.\n- Detailed list of available skill guide files and instructions for both online usage and local installation.\n- Clarified account approval modes, default safety settings, and multi-rail configuration for agent spending.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25e77cf14dcf51221def8092b1cf85ee6354341fddc63f730d4bcc3eab660423"
+}

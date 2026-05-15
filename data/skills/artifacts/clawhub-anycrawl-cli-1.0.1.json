@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anycrawl-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anycrawl_cli",
+  "skill": {
+    "id": 23605,
+    "skillKey": "clawhub-anycrawl-cli",
+    "name": "Anycrawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anycrawl-cli",
+    "url": "https://clawhub.ai/skills/anycrawl-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anycrawl-cli-465d7e7e4c846798.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping, search, crawling, and site mapping via the AnyCrawl CLI. Use when the user wants to search the web, scrape a page, find URLs on a site, or bulk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qthans",
+      "userId": "s175pz4j3a59nar05gvgrsmfd584vmpf",
+      "displayName": "QThans",
+      "image": "https://avatars.githubusercontent.com/u/18275400?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773649994460,
+      "changelog": "- Clarified and simplified workflow section, now titled \"Commands\".\n- Improved explanations for command scenarios and when to use each command.\n- Updated the command reference table for clarity.\n- Added tips to avoid redundant fetches and directions to check existing data.\n- Retained full prerequisite, output, and documentation sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84ed3fa8fe859aaddf9bdd18f767dadfa05c0071ca3b9b6b650ffce2da92a048"
+}

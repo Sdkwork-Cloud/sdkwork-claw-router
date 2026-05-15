@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-hot-topics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_hot_topics",
+  "skill": {
+    "id": 69863,
+    "skillKey": "clawhub-twitter-hot-topics",
+    "name": "Twitter热点监控与推文生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-hot-topics",
+    "url": "https://clawhub.ai/skills/twitter-hot-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-hot-topics-7fd29660ebdfe69b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每小时自动搜索推特上关于中国、加密货币、国际热点、美国热点、特朗普等话题的热度信息，提取排行前十的热点，并基于 X 平台真实算法权重（开源代码数据）为每个热点生成高曝光推文或线程。当用户提到\"推特热点\"、\"Twitter热点\"、\"推特搜索\"、\"热点推文\"、\"生成推文\"、\"社交媒体监控\"、\"Twitter监控\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanghui-88",
+      "userId": "publishers:yanghui-88",
+      "displayName": "yanghui-88",
+      "image": "https://avatars.githubusercontent.com/u/80397363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773891645302,
+      "changelog": "首次发布：5大板块TOP10热点监控 + 算法优化/博主风格双版本推文生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:827166cafa2359e24fd14c874d62e31e1eb091396ad344ae29c2d60c730d9b5f"
+}

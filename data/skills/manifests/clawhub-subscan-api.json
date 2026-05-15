@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32024,
+  "uuid": "skill-clawhub-subscan-api",
+  "skillKey": "clawhub-subscan-api",
+  "name": "Subscan API Skill",
+  "summary": "Subscan API query assistant. Trigger immediately when the user needs to query blockchain data (blocks, accounts, transactions, staking, governance, assets, e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscan_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "carlhong",
+      "features": [
+        "Subscan API query assistant",
+        "Trigger immediately when the user needs to query blockchain data (blocks, accounts, transaction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subscan-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11582958?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subscan-api",
+      "url": "https://clawhub.ai/skills/subscan-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscan-api",
+    "url": "https://clawhub.ai/skills/subscan-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscan-api-303a32eff291d42b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subscan-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subscan-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e53a95ed12f805fdaeb743d4b9295e184a26b22bab45ee44839809705f6dedd4",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:24:32.237Z"
+}

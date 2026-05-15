@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/falcon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.falcon",
+  "skill": {
+    "id": 14957,
+    "skillKey": "clawhub-falcon",
+    "name": "Falcon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "falcon",
+    "url": "https://clawhub.ai/skills/falcon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/falcon-a84571394b5e99fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and interact with Twitter/X via TwexAPI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bubblyjove",
+      "userId": "publishers:bubblyjove",
+      "displayName": "BubblyJove",
+      "image": "https://avatars.githubusercontent.com/u/183780726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1095,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770656215059,
+      "changelog": "Initial release of falcon, a skill to interact with Twitter/X via TwexAPI.\n\n- Search, read, and interact with Twitter/X accounts and tweets using simple commands.\n- Supports reading user profiles, tweets, replies, followers, and trending topics.\n- Enables posting tweets, replies, liking, retweeting, bookmarking, following, and unfollowing (with user confirmation).\n- Uses environment variables for API key and cookie authentication.\n- Requires curl and jq binaries; compatible with macOS and Linux.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:715f93ee1b2625e301894cff467db7046cdd85675db32608950e25e651ba4211"
+}

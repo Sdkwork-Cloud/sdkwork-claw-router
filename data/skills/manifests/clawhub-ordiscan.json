@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18033,
+  "uuid": "skill-clawhub-ordiscan",
+  "skillKey": "clawhub-ordiscan",
+  "name": "Ordiscan",
+  "summary": "Inscribe content on Bitcoin via the Ordiscan API. Pays per-request with USDC on Base using the x402 protocol.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ordiscan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "T4T5",
+      "features": [
+        "Inscribe content on Bitcoin via the Ordiscan API",
+        "Pays per-request with USDC on Base using the x402 protocol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ordiscan@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2598660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ordiscan",
+      "url": "https://clawhub.ai/skills/ordiscan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ordiscan",
+    "url": "https://clawhub.ai/skills/ordiscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ordiscan-cd9dc688b590caa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ordiscan@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ordiscan-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6bbb68a2931ac1919122232d8d11a312515a9534ea7e987a4e3b9693e3b217b",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T07:36:02.757Z"
+}

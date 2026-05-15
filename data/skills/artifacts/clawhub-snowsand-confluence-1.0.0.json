@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snowsand-confluence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snowsand_confluence",
+  "skill": {
+    "id": 27306,
+    "skillKey": "clawhub-snowsand-confluence",
+    "name": "Snowsand Confluence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snowsand-confluence",
+    "url": "https://clawhub.ai/skills/snowsand-confluence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snowsand-confluence-62ca412023a6b977.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Confluence Cloud via REST API. Use for space management, page operations (list, view, create, update, delete), content search (CQL queries), pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snowsand-enterprises",
+      "userId": "publishers:snowsand-enterprises",
+      "displayName": "snowsand-enterprises",
+      "image": "https://avatars.githubusercontent.com/u/74375198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773614004738,
+      "changelog": "Initial release of snowsand-confluence.\n\n- Integrates with Confluence Cloud REST API v2 for space, page, attachment, comment, and label management.\n- Supports listing, viewing, creating, updating, and deleting spaces and pages.\n- Provides CQL search, page tree navigation (parent/child), and other documentation workflows.\n- Attachment and comment operations included (list, upload, download, add, update, delete).\n- Authentication via Confluence Cloud API token and environment variables.\n- Includes detailed CLI usage examples and storage format references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcbba1dc4351f4ab99a9e88039834e19644233dda10ace40607fff37ffa47719"
+}

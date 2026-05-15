@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geneva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geneva",
+  "skill": {
+    "id": 71348,
+    "skillKey": "clawhub-geneva",
+    "name": "Geneva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geneva",
+    "url": "https://clawhub.ai/skills/geneva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geneva-a7996bbcd2b449e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日内瓦是瑞士第二大城市，全球国际组织中心，汇聚40+总部，集外交、人道主义、金融和科研于一体。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776661576311,
+      "changelog": "Geneva skill v1.0.0 — first release with comprehensive city profile:\n\n- Introduces Geneva as Switzerland’s second-largest city and a major center for international organizations.\n- Includes a historical timeline highlighting key events and institutions shaping Geneva.\n- Provides in-depth analysis of business structure: diplomacy, humanitarian work, finance, and research.\n- Outlines Geneva’s unique advantages (护城河) as a global governance hub.\n- Summarizes core data: population, GDP, number of international organizations, AUM.\n- Lists notable facts, such as inventing the World Wide Web and being home to renowned watchmakers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdbcf55719d453bc8261c6410316d43b4d96fe0498080f05eb20a2146ce601bb"
+}

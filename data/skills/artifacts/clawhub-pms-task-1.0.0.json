@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pms-task@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pms_task",
+  "skill": {
+    "id": 22902,
+    "skillKey": "clawhub-pms-task",
+    "name": "PMS Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pms-task",
+    "url": "https://clawhub.ai/skills/pms-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pms-task-5ff0e2333345cbc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create PMS tasks (bugs or features) on GitHub and sync to Google Sheets. Use when user says 'PMS Bug addition' for bugs or 'PMS Feature addition' for feature..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarasinghrajput",
+      "userId": "publishers:tarasinghrajput",
+      "displayName": "Tara Singh Kharwad",
+      "image": "https://avatars.githubusercontent.com/u/108981084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772515438422,
+      "changelog": "pms-task 1.0.0\n\n- Initial release providing automated PMS bug and feature addition workflow.\n- Detects trigger phrases in user messages to create GitHub issues (bugs or features) with appropriate templates and labels.\n- Syncs newly created issues to the PMS Task Tracker Google Sheet and the Team Daily Update sheet with detailed mapping and formatting.\n- Handles task ID auto-incrementation and field assignments based on organizational rules.\n- Includes comprehensive reference and instructions for usage, field mapping, and priority guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0202f72417b2b0b696e4b45a117a607a9181aedf2ef398b90cd39bf1cac22dcc"
+}

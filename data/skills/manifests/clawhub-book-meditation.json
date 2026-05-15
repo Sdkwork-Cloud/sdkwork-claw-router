@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13122,
+  "uuid": "skill-clawhub-book-meditation",
+  "skillKey": "clawhub-book-meditation",
+  "name": "Book Meditation",
+  "summary": "Book meditation services through Lokuli MCP. Use when user needs to find and book meditation. Triggers on requests like \"book a meditation\", \"find meditation near me\", or any meditation service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_meditation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book meditation services through Lokuli MCP",
+        "Use when user needs to find and book meditation",
+        "Triggers on requests like \"book a meditation\", \"find meditation near me\", or any meditation ser."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-meditation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-meditation",
+      "url": "https://clawhub.ai/skills/book-meditation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-meditation",
+    "url": "https://clawhub.ai/skills/book-meditation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-meditation-828bdb00c6f4a0ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-meditation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-meditation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59ae429a42d2e971cb61549b2f3084fff4ad5b08648b36f642d3f174845bf27e",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:00.686Z"
+}

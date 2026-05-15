@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60915,
+  "uuid": "skill-clawhub-tencent-map",
+  "skillKey": "clawhub-tencent-map",
+  "name": "Tencent Map",
+  "summary": "腾讯地图开发助手，精通 WebService API、地理编码、路线规划、地图SDK",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "腾讯地图开发助手，精通 WebService API、地理编码、路线规划、地图SDK"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-map@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-map",
+      "url": "https://clawhub.ai/skills/tencent-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-map",
+    "url": "https://clawhub.ai/skills/tencent-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-map-e3c05b68743a9842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-map@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-map-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:181be8c50c8cc7da4a2b324e065202eb0d250edde7f6a7752c793de362ce85e4",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:49.279Z"
+}

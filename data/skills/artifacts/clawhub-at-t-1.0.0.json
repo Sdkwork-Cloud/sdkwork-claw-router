@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/at-t@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.at_t",
+  "skill": {
+    "id": 44495,
+    "skillKey": "clawhub-at-t",
+    "name": "At T"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "at-t",
+    "url": "https://clawhub.ai/skills/at-t",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/at-t-970873dd7147641a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AT&T is a leading US telecom provider with 150 years of history, focusing on wireless, fiber broadband, and holding extensive spectrum and fiber assets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776978215341,
+      "changelog": "AT&T skill version 1.0.0 released.\n\n- 提供AT&T公司历史、商业模式、护城河和关键数据的全面梳理\n- 支持分析美国电信行业格局、5G部署、媒体融合战略及光纤宽带竞争\n- 包含精要历史时间线和趣味小知识\n- 适合研究电信、媒体及相关领域用户快速参考",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06f8fd8ca97ef0c1271e113d1373bb1201ffdc21486d0e23173047e1791357ae"
+}

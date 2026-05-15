@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34495,
+  "uuid": "skill-clawhub-near-jsonrpc-skill",
+  "skillKey": "clawhub-near-jsonrpc-skill",
+  "name": "Near Jsonrpc Skill",
+  "summary": "Operate NEAR JSON-RPC reads through UXC with a public provider default, provider-override guidance, and read-only guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_jsonrpc_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate NEAR JSON-RPC reads through UXC with a public provider default, provider-override guida."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/near-jsonrpc-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "near-jsonrpc-skill",
+      "url": "https://clawhub.ai/skills/near-jsonrpc-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-jsonrpc-skill",
+    "url": "https://clawhub.ai/skills/near-jsonrpc-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-jsonrpc-skill-2a7fae2257216f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/near-jsonrpc-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-near-jsonrpc-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b49c7aa63dc04771cea41a637af045df745556dc33ce423a7dab3f2f0b365d0d",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:36:55.199Z"
+}

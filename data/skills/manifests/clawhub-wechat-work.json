@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21746,
+  "uuid": "skill-clawhub-wechat-work",
+  "skillKey": "clawhub-wechat-work",
+  "name": "Wechat Work",
+  "summary": "Extract and summarize publicly accessible Wechat Work pages including announcements, app info, and group invitations without internal API access.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_work",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Extract and summarize publicly accessible Wechat Work pages including announcements, app info,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-work@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-work",
+      "url": "https://clawhub.ai/skills/wechat-work"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-work",
+    "url": "https://clawhub.ai/skills/wechat-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-work-5173f6b823e02e0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-work@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-work-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c296aff96e317deeda3852a404453384055e417d1a3a92dd3311c785988fef2e",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:26:52.650Z"
+}

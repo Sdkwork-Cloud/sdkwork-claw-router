@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43163,
+  "uuid": "skill-clawhub-text-to-video-create",
+  "skillKey": "clawhub-text-to-video-create",
+  "name": "Text To Video Create",
+  "summary": "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompt (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"turn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_create",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Get AI-generated videos ready to post, without touching a single slider",
+        "Upload your text prompt (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"turn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-create@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-create",
+      "url": "https://clawhub.ai/skills/text-to-video-create"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-create",
+    "url": "https://clawhub.ai/skills/text-to-video-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-create-8f3867fbce749cc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-create@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-create-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3027b525aa73022f81060debc6d19c66cc1a5e5f7a5618c0040c746435ec303",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T19:46:45.731Z"
+}

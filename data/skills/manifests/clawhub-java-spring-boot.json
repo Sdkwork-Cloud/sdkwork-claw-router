@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27576,
+  "uuid": "skill-clawhub-java-spring-boot",
+  "skillKey": "clawhub-java-spring-boot",
+  "name": "Java Spring Boot",
+  "summary": "Build production Spring Boot applications - REST APIs, Security, Data, Actuator",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_spring_boot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nacy",
+      "features": [
+        "Build production Spring Boot applications",
+        "REST APIs, Security, Data, Actuator"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/java-spring-boot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28687015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "java-spring-boot",
+      "url": "https://clawhub.ai/skills/java-spring-boot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-spring-boot",
+    "url": "https://clawhub.ai/skills/java-spring-boot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-spring-boot-7d124d4da1daf492.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/java-spring-boot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-java-spring-boot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7061db3d44807ed8551ed5397be578f1d70562e33b0ade1224cdf613b55025b",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:03:07.752Z"
+}

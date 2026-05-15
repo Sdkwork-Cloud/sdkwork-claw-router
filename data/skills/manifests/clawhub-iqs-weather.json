@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46541,
+  "uuid": "skill-clawhub-iqs-weather",
+  "skillKey": "clawhub-iqs-weather",
+  "name": "alibabacloud-iqs-weather-query",
+  "summary": "7-day weather forecast query powered by Alibaba Cloud IQS web search and page reading. Triggers: \"weather forecast\", \"7-day weather\", \"weekly weather\", \"weat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iqs_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lijian-github-20190615",
+      "features": [
+        "7-day weather forecast query powered by Alibaba Cloud IQS web search and page reading",
+        "Triggers: \"weather forecast\", \"7-day weather\", \"weekly weather\", \"weat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iqs-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51850143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iqs-weather",
+      "url": "https://clawhub.ai/skills/iqs-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iqs-weather",
+    "url": "https://clawhub.ai/skills/iqs-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iqs-weather-e7b5730133455152.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iqs-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iqs-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed4a395e106110c8723b1d1876ddbb6ef5a2cdbb4634c5e781d6c46d9bb416df",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:13:43.878Z"
+}

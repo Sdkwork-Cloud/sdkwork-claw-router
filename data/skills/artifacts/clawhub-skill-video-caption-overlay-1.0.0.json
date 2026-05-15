@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-video-caption-overlay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_video_caption_overlay",
+  "skill": {
+    "id": 50177,
+    "skillKey": "clawhub-skill-video-caption-overlay",
+    "name": "Skill Video Caption Overlay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-video-caption-overlay",
+    "url": "https://clawhub.ai/skills/skill-video-caption-overlay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-video-caption-overlay-e5b8c511db4377ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Render TikTok-style animated pill captions onto short-form videos using MoviePy + PIL. Takes a base MP4, a captions JSON, and optional background audio — out..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772318974165,
+      "changelog": "- Initial release of video caption overlay tool.\n- Render TikTok-style animated pill captions onto short-form videos using MoviePy and PIL.\n- Accepts a base MP4 video, captions JSON, and optional background audio.\n- Outputs a final video with fade-in/out pill overlays for each caption phase.\n- Implements a fix for the PIL textbbox y-offset bug to properly center text within pill overlays.\n- Supports custom fonts and detailed caption styling through JSON configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5cd53ed32c2d9f2b1b2efc3ce0ab037b0918827c937e2c7dfd994485454e866e"
+}

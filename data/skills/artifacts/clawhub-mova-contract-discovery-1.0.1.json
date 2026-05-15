@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-contract-discovery@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_contract_discovery",
+  "skill": {
+    "id": 43705,
+    "skillKey": "clawhub-mova-contract-discovery",
+    "name": "Mova Contract Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-contract-discovery",
+    "url": "https://clawhub.ai/skills/mova-contract-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-contract-discovery-ce2a5adb72014dac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, search, and run public MOVA contracts from the community marketplace. Trigger when the user asks to find a contract, discover available contracts, se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775141457951,
+      "changelog": "Added Ecosystem Skill type label.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d36f2f01b28b550ce283b3c6140df1813a773b6134ec575306696ea6a45dfa6a"
+}

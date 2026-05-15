@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20494,
+  "uuid": "skill-clawhub-archon-cashu",
+  "skillKey": "clawhub-archon-cashu",
+  "name": "Archon Cashu",
+  "summary": "Cashu ecash operations integrated with Archon DID for P2PK-locked tokens. Send and receive sats using DID-derived pubkeys, backup wallets to vault. Use for C...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archon_cashu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "macterra",
+      "features": [
+        "Cashu ecash operations integrated with Archon DID for P2PK-locked tokens",
+        "Send and receive sats using DID-derived pubkeys, backup wallets to vault",
+        "Use for C..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archon-cashu@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/434644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archon-cashu",
+      "url": "https://clawhub.ai/skills/archon-cashu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archon-cashu",
+    "url": "https://clawhub.ai/skills/archon-cashu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archon-cashu-a9174002f7c9acd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archon-cashu@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-archon-cashu-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d3525965005af3949ece25322ffdd4c4008a1c351eb17325f622426de9088cb",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:44:20.857Z"
+}

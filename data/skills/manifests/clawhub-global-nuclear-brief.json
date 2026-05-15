@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37723,
+  "uuid": "skill-clawhub-global-nuclear-brief",
+  "skillKey": "clawhub-global-nuclear-brief",
+  "name": "Global Nuclear Brief",
+  "summary": "Generate a grounded nuclear energy policy brief from live news using Apify + Contextual.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_nuclear_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ab-naidu",
+      "features": [
+        "Generate a grounded nuclear energy policy brief from live news using Apify + Contextual."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-nuclear-brief@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61552332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-nuclear-brief",
+      "url": "https://clawhub.ai/skills/global-nuclear-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-nuclear-brief",
+    "url": "https://clawhub.ai/skills/global-nuclear-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-nuclear-brief-5edc0c953d8f2998.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-nuclear-brief@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-nuclear-brief-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:573d85b5eb08c49af28df5232b29413a1ae765fb3c5e1d32a7173cf6f2608e15",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:11:02.428Z"
+}

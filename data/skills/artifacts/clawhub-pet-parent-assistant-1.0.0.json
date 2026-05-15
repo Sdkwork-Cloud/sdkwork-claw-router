@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pet-parent-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_parent_assistant",
+  "skill": {
+    "id": 54754,
+    "skillKey": "clawhub-pet-parent-assistant",
+    "name": "Pet Parent Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-parent-assistant",
+    "url": "https://clawhub.ai/skills/pet-parent-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-parent-assistant-82f707f43e1802cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI pet health companion — symptom checks, nutrition guidance, and training tips for dogs and cats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778218992059,
+      "changelog": "Pet Parent Assistant 1.0.0\n\n- Initial release offering education and guidance for dog and cat owners.\n- Provides symptom triage categories (urgent, soon, home care) to help users decide when to call the vet.\n- Offers nutrition advice, food evaluation, ingredient guidance, and life-stage needs for both cats and dogs.\n- Includes positive training and behavior tips for common dog and cat issues.\n- Gives preventive care information (vaccinations, parasite control, dental, life-stage needs).\n- Always emphasizes the importance of consulting a veterinarian for diagnosis or emergencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b35d768f74ef62f58e76c635c71b3981e0b0f5d116760ed5eac4f44bc7fb13a7"
+}

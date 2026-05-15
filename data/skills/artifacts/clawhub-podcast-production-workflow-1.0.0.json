@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-production-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_production_workflow",
+  "skill": {
+    "id": 49629,
+    "skillKey": "clawhub-podcast-production-workflow",
+    "name": "Podcast Production Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-production-workflow",
+    "url": "https://clawhub.ai/skills/podcast-production-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-production-workflow-d66cd96550f3fbea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end workflow for planning, producing, distributing, and repurposing podcast content. Use this skill whenever the user asks about planning podcast epis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renehdzgtz",
+      "userId": "s1750d42e333zzeg0xdk55y1js84rz6b",
+      "displayName": "René Hdz",
+      "image": "https://avatars.githubusercontent.com/u/128107262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777524972840,
+      "changelog": "Podcast Production Workflow Skill v1.0.0\n\n- Initial release providing an end-to-end workflow for podcast planning, production, distribution, and content repurposing.\n- Modular structure for: content strategy, pre-production (episode & guest prep), production assets (titles, show notes), distribution & publishing, repurposing for social content, and audience growth.\n- Especially relevant for solo creators and Web3/crypto podcasts, including X Spaces recordings.\n- Includes intake prompts, templates, and actionable steps for each stage.\n- Designed to trigger for a wide range of podcast-related queries and tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4da14ccc8ea6d385c2d54cdeedee561ccfcdd345da32936d6ea95bc7981f4a44"
+}

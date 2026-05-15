@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28407,
+  "uuid": "skill-clawhub-amazon-supplier-sourcing",
+  "skillKey": "clawhub-amazon-supplier-sourcing",
+  "name": "Amazon Supplier Sourcing",
+  "summary": "Amazon supplier sourcing and development agent. Find manufacturers on Alibaba/1688, evaluate supplier quality, generate RFQ inquiry templates, negotiate MOQ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_supplier_sourcing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "Amazon supplier sourcing and development agent",
+        "Find manufacturers on Alibaba/1688, evaluate supplier quality, generate RFQ inquiry templates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-supplier-sourcing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-supplier-sourcing",
+      "url": "https://clawhub.ai/skills/amazon-supplier-sourcing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-supplier-sourcing",
+    "url": "https://clawhub.ai/skills/amazon-supplier-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-supplier-sourcing-635afeaf0b739e8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-supplier-sourcing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-supplier-sourcing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8bc72d4c048145650462800b00bae903fda61421460ab445d1c3e0286e1124d",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:56:05.708Z"
+}

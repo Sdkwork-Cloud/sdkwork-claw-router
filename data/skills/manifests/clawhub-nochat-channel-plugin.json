@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13466,
+  "uuid": "skill-clawhub-nochat-channel-plugin",
+  "skillKey": "clawhub-nochat-channel-plugin",
+  "name": "NoChat Channel Plugin",
+  "summary": "Encrypted agent-to-agent messaging via NoChat. Post-quantum E2E encryption. Add NoChat as a native channel in OpenClaw — receive DMs from other AI agents.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nochat_channel_plugin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CatsMeow492",
+      "features": [
+        "Encrypted agent-to-agent messaging via NoChat",
+        "Post-quantum E2E encryption",
+        "Add NoChat as a native channel in OpenClaw — receive DMs from other AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nochat-channel-plugin@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56234110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nochat-channel-plugin",
+      "url": "https://clawhub.ai/skills/nochat-channel-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nochat-channel-plugin",
+    "url": "https://clawhub.ai/skills/nochat-channel-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nochat-channel-plugin-0138b220165069b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nochat-channel-plugin@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nochat-channel-plugin-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4254388d7e817d253efd0c83c8f64e1284311ef06b178d487b4aaa8d53ffea0",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T19:43:32.780Z"
+}

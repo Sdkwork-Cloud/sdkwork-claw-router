@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50414,
+  "uuid": "skill-clawhub-skulk-email",
+  "skillKey": "clawhub-skulk-email",
+  "name": "Skulk Email",
+  "summary": "Email via DreamHost — read inbox, send email, search messages. Send works from any VPS (including DigitalOcean) by routing through DreamHost's Roundcube webm...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skulk_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ada Vale",
+      "features": [
+        "Email via DreamHost — read inbox, send email, search messages",
+        "Send works from any VPS (including DigitalOcean) by routing through DreamHost's Roundcube webm.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skulk-email@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104856138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skulk-email",
+      "url": "https://clawhub.ai/skills/skulk-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skulk-email",
+    "url": "https://clawhub.ai/skills/skulk-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skulk-email-22a7470713c25000.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skulk-email@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skulk-email-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bdd3e8cc15a98844bd2f5b9cfaafbb677506a4f79efbbfeeac60fd52698b83b",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:33:44.815Z"
+}

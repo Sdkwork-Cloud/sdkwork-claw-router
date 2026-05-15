@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitclaw-public-core@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitclaw_public_core",
+  "skill": {
+    "id": 33743,
+    "skillKey": "clawhub-fitclaw-public-core",
+    "name": "FitClaw Public Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitclaw-public-core",
+    "url": "https://clawhub.ai/skills/fitclaw-public-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitclaw-public-core-0426018fa5e8a0a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Public-safe FitClaw coaching workflow covering onboarding, hydration, nutrition, and training structure. Use when demonstrating a reusable AI fitness coachin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beachanger",
+      "userId": "publishers:beachanger",
+      "displayName": "BeAChanger",
+      "image": "https://avatars.githubusercontent.com/u/133616562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773865453643,
+      "changelog": "Initial public-safe release of the FitClaw coaching workflow: onboarding, hydration, nutrition, and training.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b90cf16c16d4edb45d607bbc7dc38c3f7b130965514e65c5f210bed7a8d0c409"
+}

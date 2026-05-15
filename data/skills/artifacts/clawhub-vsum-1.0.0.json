@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vsum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vsum",
+  "skill": {
+    "id": 62334,
+    "skillKey": "clawhub-vsum",
+    "name": "vsum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vsum",
+    "url": "https://clawhub.ai/skills/vsum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vsum-559194934b8777b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频 summarizer，支持 YouTube 和 Bilibili 视频自动获取字幕并 AI 总结，输出为 md 格式。适用于：用户给出一个视频链接，希望总结内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrischaan",
+      "userId": "publishers:chrischaan",
+      "displayName": "Chrischaan",
+      "image": "https://avatars.githubusercontent.com/u/49733532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 836,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771511928564,
+      "changelog": "Initial release - YouTube & Bilibili video summarizer",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72efa368a7d11587a8c38c4437720b99ddd49309d8e950762cf3a7cb1dd7eb60"
+}

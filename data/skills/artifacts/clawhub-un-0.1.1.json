@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/un@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.un",
+  "skill": {
+    "id": 56746,
+    "skillKey": "clawhub-un",
+    "name": "Un"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "un",
+    "url": "https://clawhub.ai/skills/un",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/un-68bca10eea2ba33f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for United Nations 联合国. Get mission info, latest reports, member states, and organizational resources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776295671767,
+      "changelog": "- Updated SKILL.md with a new concise format and content fully in Chinese.\n- Replaced detailed United Nations organizational description with a generic brand info template for \"un\".\n- Added example reader intents and a \"read_when\" section for contextual triggers.\n- Provided quick facts, deeper exploration prompts, and guidance for finding official information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03b58eeb632b584dde39ebeeb35aabc10918e91917673af8ddfdfc9e202a50ce"
+}

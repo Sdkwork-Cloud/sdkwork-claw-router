@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20297,
+  "uuid": "skill-clawhub-inkjet",
+  "skillKey": "clawhub-inkjet",
+  "name": "InkJet - Bluetooth Thermal Printer",
+  "summary": "Print text, images, and QR codes to a wireless Bluetooth thermal printer from a MacOS device. Use `inkjet print` for output, `inkjet scan` to discover printers.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkjet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Chartier",
+      "features": [
+        "Print text, images, and QR codes to a wireless Bluetooth thermal printer from a MacOS device",
+        "Use `inkjet print` for output, `inkjet scan` to discover printers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inkjet@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58902111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inkjet",
+      "url": "https://clawhub.ai/skills/inkjet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkjet",
+    "url": "https://clawhub.ai/skills/inkjet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkjet-97c05d2786670dd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inkjet@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-inkjet-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08c529fcf395b83c5bb855d9474f67efd8e07955fbebf9cf4defbd68dbdd5675",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:33:10.271Z"
+}

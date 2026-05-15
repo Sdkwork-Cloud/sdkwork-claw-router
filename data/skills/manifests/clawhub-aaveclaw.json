@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10751,
+  "uuid": "skill-clawhub-aaveclaw",
+  "skillKey": "clawhub-aaveclaw",
+  "name": "aaveclaw",
+  "summary": "Aave V3 lending protocol on Base Sepolia testnet. Deposit WETH collateral, borrow USDC, repay loans, withdraw collateral, check health factor, and mint test tokens via faucet. Use when users want to interact with Aave lending, check their.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aaveclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajit Tripathi",
+      "features": [
+        "Aave V3 lending protocol on Base Sepolia testnet",
+        "Deposit WETH collateral, borrow USDC, repay loans, withdraw collateral, check health factor, an.",
+        "Use when users want to interact with Aave lending, check their lending position health, or get."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aaveclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44948450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aaveclaw",
+      "url": "https://clawhub.ai/skills/aaveclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aaveclaw",
+    "url": "https://clawhub.ai/skills/aaveclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aaveclaw-6761a06892c736f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aaveclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aaveclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6dda6c9bd12caebf5a23f2ba1d4503469aa6dad46627bfeab267a99de998c13",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:53:50.487Z"
+}

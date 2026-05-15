@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steampunk-art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steampunk_art_generator",
+  "skill": {
+    "id": 52375,
+    "skillKey": "clawhub-steampunk-art-generator",
+    "name": "Steampunk Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steampunk-art-generator",
+    "url": "https://clawhub.ai/skills/steampunk-art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steampunk-art-generator-ce6646dc7830a983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI steampunk art generator — create Victorian steampunk portraits, cyberpunk Victorian characters, brass-and-gears illustrations, cosplay reference art, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023506776,
+      "changelog": "Initial release of Steampunk Art Generator.\n\n- Generate steampunk-themed portraits, characters, and scenes via the Neta AI image generation API.\n- Supports prompts for Victorian, cyberpunk, brass-and-gears, cosplay, and industrial fantasy styles.\n- Customizable image size options and style inheritance through reference image UUIDs.\n- Requires a Neta API token for image generation.\n- Includes command-line usage and installation instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e64bf1fd762706931afd6375c1fddbf47689b38014813eeddb2fe7f56ed1fbc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41779,
+  "uuid": "skill-clawhub-horoscope-daily-china",
+  "skillKey": "clawhub-horoscope-daily-china",
+  "name": "Daily Horoscope Creator",
+  "summary": "Create 12 constellation fortune images with TianAPI - 5-page output with large fonts for social media publishing (Xiaohongshu/Douyin/Toutiao)",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horoscope_daily_china",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangj85",
+      "features": [
+        "Create 12 constellation fortune images with TianAPI",
+        "5-page output with large fonts for social media publishing (Xiaohongshu/Douyin/Toutiao)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/horoscope-daily-china@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228467788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "horoscope-daily-china",
+      "url": "https://clawhub.ai/skills/horoscope-daily-china"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horoscope-daily-china",
+    "url": "https://clawhub.ai/skills/horoscope-daily-china",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horoscope-daily-china-89fefd79aa83dec0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/horoscope-daily-china@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-horoscope-daily-china-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28ee7f05844806e87d2b3c8bb947bcd18322400ade4dd36d1390ced355c3d371",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T02:34:52.524Z"
+}

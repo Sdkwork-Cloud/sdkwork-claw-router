@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59196,
+  "uuid": "skill-clawhub-inspirai-bp",
+  "skillKey": "clawhub-inspirai-bp",
+  "name": "InspirAI Best Practices",
+  "summary": "最佳实践管理 - 记录验证通过的解决方案，跨项目复用，避免重复踩坑。Triggers: '最佳实践', 'best practice', '经验记录', '解决方案', '踩坑记录', 'bp capture', 'bp apply', 'bp search'.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspirai_bp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexxiong",
+      "features": [
+        "记录验证通过的解决方案，跨项目复用，避免重复踩坑。Triggers: '最佳实践', 'best practice', '经验记录', '解决方案', '踩坑记录', 'bp capture."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inspirai-bp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45865830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inspirai-bp",
+      "url": "https://clawhub.ai/skills/inspirai-bp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspirai-bp",
+    "url": "https://clawhub.ai/skills/inspirai-bp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspirai-bp-ea0799b0fc0b8176.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inspirai-bp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inspirai-bp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfde86710c1b3cdb8a5db9670fe9eb8ea2eaee9cf317bce76432e945ca89cc92",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:07:10.703Z"
+}

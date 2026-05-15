@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monetization-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monetization_ai",
+  "skill": {
+    "id": 29531,
+    "skillKey": "clawhub-monetization-ai",
+    "name": "Monetization Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monetization-ai",
+    "url": "https://clawhub.ai/skills/monetization-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monetization-ai-202190fca3f0a1e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs and runs safe monetization workflows (lead research, outreach drafts, content-to-offer loops, reporting) using OpenClaw + n8n + communication channel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774206388398,
+      "changelog": "monetization-ai 1.0.0 - Initial release\n\n- Launches safe monetization workflows using OpenClaw, n8n, and multiple communication/integration channels.\n- Supports end-to-end revenue pipelines: lead discovery, offer packaging, outreach, and conversion tracking.\n- Enforces strict safety policies requiring explicit confirmation before any money movement.\n- Provides recommended stack, command set, output formats, and n8n workflow handoff specifications.\n- Includes guardrails to prevent spam and ensure auditability and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a22f5013da919ce69094363844bb4802f47a0426b5567ada21d14372c8db1e70"
+}

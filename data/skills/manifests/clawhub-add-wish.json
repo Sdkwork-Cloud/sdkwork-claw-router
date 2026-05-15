@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34621,
+  "uuid": "skill-clawhub-add-wish",
+  "skillKey": "clawhub-add-wish",
+  "name": "/add-wish — Universal Add to Wishlist",
+  "summary": "Save any product to a universal wishlist. Converts any product URL into a one-click \"save for later\" link. Works with any retailer, any AI platform, zero setup.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_wish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leebellon",
+      "features": [
+        "Save any product to a universal wishlist",
+        "Converts any product URL into a one-click \"save for later\" link",
+        "Works with any retailer, any AI platform, zero setup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-wish@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221430639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-wish",
+      "url": "https://clawhub.ai/skills/add-wish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-wish",
+    "url": "https://clawhub.ai/skills/add-wish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-wish-8c20d22e187b1280.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-wish@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-wish-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ef9e47505e27067a64503fe5ed6682ce64ab2434942f4dc8f9b56e65409e107",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:54:07.484Z"
+}

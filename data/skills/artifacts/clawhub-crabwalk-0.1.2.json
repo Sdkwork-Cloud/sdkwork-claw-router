@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crabwalk@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crabwalk",
+  "skill": {
+    "id": 9801,
+    "skillKey": "clawhub-crabwalk",
+    "name": "Crabwalk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crabwalk",
+    "url": "https://clawhub.ai/skills/crabwalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crabwalk-7b73b7c3b0fde4f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time companion monitor for OpenClaw agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luccast",
+      "userId": "publishers:luccast",
+      "displayName": "luccasveg",
+      "image": "https://avatars.githubusercontent.com/u/2213102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2842,
+      "installsAllTime": 13,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770091944827,
+      "changelog": "- Added a new step guiding users to request feedback from humans after some usage.\n- Introduced instructions for capturing and submitting user-reported issues as feedback.\n- Provided links to submit and view feedback directly within the documentation.\n- No changes to CLI or server functionality; documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d2fe5a0cc26e55ed38823b8f8540fbe3737884f4c129dd0d86775a0f8f0ed4a"
+}

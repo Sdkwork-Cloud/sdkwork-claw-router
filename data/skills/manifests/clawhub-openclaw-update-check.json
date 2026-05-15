@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63766,
+  "uuid": "skill-clawhub-openclaw-update-check",
+  "skillKey": "clawhub-openclaw-update-check",
+  "name": "OpenClaw更新检查",
+  "summary": "每日检查 OpenClaw 最新版本和 Release Note，分析更新必要性并推送详细更新建议给用户，不主动执行更新。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_update_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noir",
+      "features": [
+        "每日检查 OpenClaw 最新版本和 Release Note，分析更新必要性并推送详细更新建议给用户，不主动执行更新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-update-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261261891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-update-check",
+      "url": "https://clawhub.ai/skills/openclaw-update-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-update-check",
+    "url": "https://clawhub.ai/skills/openclaw-update-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-update-check-7b557bb4a206792c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-update-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-update-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a6511dd9eb5600216a215452ee56aaf514d00514a3bd0da968e25077b895eb9",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:25:32.415Z"
+}

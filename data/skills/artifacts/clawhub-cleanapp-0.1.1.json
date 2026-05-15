@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cleanapp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanapp",
+  "skill": {
+    "id": 19552,
+    "skillKey": "clawhub-cleanapp",
+    "name": "CleanApp Report Submission"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanapp",
+    "url": "https://clawhub.ai/skills/cleanapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanapp-032e267ba38a6bef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit real-world issue reports (trash, hazards, infrastructure problems) to CleanApp's global routing pipeline. Your observations become actionable — routed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "borisolver",
+      "userId": "publishers:borisolver",
+      "displayName": "borisolver",
+      "image": "https://avatars.githubusercontent.com/u/165804662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771150843413,
+      "changelog": "CleanApp v0.1.1\n\n- Updated release of the CleanApp skill package for submitting any type of bug report, issue, improvement proposal, hazard (in digital as well as physical worlds).\n- Supports report submission to CleanApp using the Fetcher Key System and quarantine-first backend.\n- Includes bulk ingest via `ingest.py`, sample item JSON, and shell helper scripts.\n- Documentation and API reference files provided for setup, usage, and best practices.\n- Secure by design: uses revocable API tokens and compartmentalized data handling.\n- Promotion process and backend safety/introspection endpoints detailed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f52faa2204716ba4398ee2da3fdd52b35d299942dbf696d11a2455ad4867805"
+}

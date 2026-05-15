@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_generate",
+  "skill": {
+    "id": 41245,
+    "skillKey": "clawhub-ai-image-to-video-generate",
+    "name": "Ai Image To Video Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-generate",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-generate-d16390b71b8db671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 50MB. marketers, social media creators, designer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776798492270,
+      "changelog": "Initial release of AI Image to Video Generate skill.\n\n- Convert still images (JPG, PNG, WEBP, HEIC up to 50MB) into animated 1080p MP4 video clips using a cloud backend.\n- Automatic user setup with token acquisition and session management.\n- Supports uploads, timeline editing, credits checking, and video export via intuitive prompts.\n- Provides rapid cloud rendering (30-60 seconds per video) with real-time session updates.\n- Full error handling for uploads, exports, session, and credit issues.\n- Designed for marketers, creators, and designers converting static images to engaging video content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53705187ae07a2df9fe8d7abd7282d5df4832d37e3d3a1e0ec417ab1e568c091"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10135,
+  "uuid": "skill-clawhub-blossom-hire",
+  "skillKey": "clawhub-blossom-hire",
+  "name": "Get local help for shifts and tasks (Blossomai.org)",
+  "summary": "Post jobs and hire people, or search for local work and apply. Connects employers and job-seekers via the Blossom marketplace.",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blossom_hire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robbi Wu",
+      "features": [
+        "Post jobs and hire people, or search for local work and apply",
+        "Connects employers and job-seekers via the Blossom marketplace."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blossom-hire@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28498529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blossom-hire",
+      "url": "https://clawhub.ai/skills/blossom-hire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blossom-hire",
+    "url": "https://clawhub.ai/skills/blossom-hire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blossom-hire-3db01e4da060e1d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blossom-hire@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-blossom-hire-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a356fc4046701a88ee211ea7a9af3f1430376ec4d8da532a1d62fdbe6aae31a",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T05:32:57.945Z"
+}

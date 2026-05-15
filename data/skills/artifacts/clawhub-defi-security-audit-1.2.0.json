@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defi-security-audit@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_security_audit",
+  "skill": {
+    "id": 28800,
+    "skillKey": "clawhub-defi-security-audit",
+    "name": "DeFi Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-security-audit",
+    "url": "https://clawhub.ai/skills/defi-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-security-audit-f4f00c10a3d60cb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a DeFi protocol for vulnerabilities, mechanism safety, and risk factors. Use when the user wants to audit a DeFi project, check protocol security, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "truenorth-lj",
+      "userId": "s17c91gb0krt2j8ssz9xwv119s848mqq",
+      "displayName": "LJ Li",
+      "image": "https://avatars.githubusercontent.com/u/47474232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776670276095,
+      "changelog": "Version 1.2.0 of defi-security-audit introduces expanded protocol coverage, Solana-specific token checks, and a more rigorous triage system.\n\n- Added support for Solana (SPL) protocols, including RugCheck and Birdeye integrations for token risk assessment.\n- Significantly expanded documentation with numerous new audit report and protocol example files.\n- Introduced a Data Confidence Score to measure verification depth, alongside the risk triage score.\n- Strengthened and clarified scoring rules for risk flags, including new slashing rules and coverage for off-chain operational security.\n- Enhanced methodology documentation, detailing slug/name matching for DeFiLlama and fallback procedures if data sources are unavailable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9859b7ae151b53d8a1fa7557c3fad4af4f9b9b5a4021efc3247ba903d7ef72d"
+}

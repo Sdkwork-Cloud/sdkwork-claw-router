@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memclawz-connect@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memclawz_connect",
+  "skill": {
+    "id": 27921,
+    "skillKey": "clawhub-memclawz-connect",
+    "name": "MemClawz Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memclawz-connect",
+    "url": "https://clawhub.ai/skills/memclawz-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memclawz-connect-5cc7e67c3b051775.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect any AI agent to the MemClawz shared memory bus. Gives agents read-before-act and write-after-complete patterns via a simple HTTP API. Use when an age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoniassia",
+      "userId": "publishers:yoniassia",
+      "displayName": "Yoni",
+      "image": "https://avatars.githubusercontent.com/u/2175033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773720995924,
+      "changelog": "Rewrite — clean SKILL.md with full API reference, memory types, remote agent support, AGENTS.md integration snippet",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9ed0ef3f97985cdcefaac91f8290ca37fc84bb22a9b11b7ad0c7e9b9c44469d"
+}

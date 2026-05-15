@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bird-watching-mode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bird_watching_mode",
+  "skill": {
+    "id": 38349,
+    "skillKey": "clawhub-bird-watching-mode",
+    "name": "Bird Watching Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bird-watching-mode",
+    "url": "https://clawhub.ai/skills/bird-watching-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bird-watching-mode-455a1725a0d1752a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bird-watching log workflow: ask for place on enable, resolve eBird region via superpicky-cli region-query, persist to workspace/bird.json; record sightings (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoshino-s",
+      "userId": "s176tahf2fpvg7aass1txah18183jkmn",
+      "displayName": "yoshino-s",
+      "image": "https://avatars.githubusercontent.com/u/28624661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774433037269,
+      "changelog": "bird-watching-mode 1.0.0\n\n- Initial release: enables a complete workflow for logging bird sightings.\n- Prompts user for location on enable and resolves the eBird region via superpicky-cli.\n- Stores region and observation data in workspace/bird.json using absolute paths.\n- Allows recording sightings via text entry or BirdID-based photo identification.\n- Exports sighting summaries or detailed CSV reports on request.\n- Requires all script, workspace, and file arguments to be passed as absolute paths for reliable operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e00674482646cc463b37ad7f52f115bd01b8df5f0aca75fb1881c19e65e605f"
+}

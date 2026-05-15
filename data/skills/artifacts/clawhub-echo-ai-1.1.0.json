@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echo-ai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echo_ai",
+  "skill": {
+    "id": 25730,
+    "skillKey": "clawhub-echo-ai",
+    "name": "Echo AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echo-ai",
+    "url": "https://clawhub.ai/skills/echo-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echo-ai-84b2af8536dc9e7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Echo AI — the customer interaction platform. List assistants, retrieve knowledge bases, and chat with AI-powered Echos built by businesses and cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darthdens",
+      "userId": "publishers:darthdens",
+      "displayName": "darthdens",
+      "image": "https://avatars.githubusercontent.com/u/145726858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 767,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771553910428,
+      "changelog": "Declared ECHO_API_KEY credential and added homepage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:043a7c05c4a4422c10a80c1f3aea41594b5b3284d1b4b639ee0d1eec4fcc2a88"
+}

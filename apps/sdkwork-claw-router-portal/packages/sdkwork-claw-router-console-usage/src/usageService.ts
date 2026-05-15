@@ -11,7 +11,6 @@ import {
   readRequiredApiItems,
   readRequiredNonNegativeNumber,
   readRequiredString,
-  standardListQueryArguments,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { UsageLogsResponse as SdkUsageLogsResponse } from '@sdkwork/clawrouter-app-sdk';
@@ -53,7 +52,8 @@ type UsageLogPage = {
 
 export class UsageService {
   static async fetchLogs(params?: Record<string, unknown>): Promise<UsageLogPage> {
-    const result = await getClawRouterAppSdkClient().router.fetchLogs(...usageLogQueryArguments(params));
+    const query = toUsageLogQueryParams(params);
+    const result = await getClawRouterAppSdkClient().ai.usage.logs.list(query);
     ensurePlusApiSuccess(result, 'Failed to fetch usage logs');
 
     const data = readApiRecord(result);
@@ -67,27 +67,30 @@ export class UsageService {
   }
 }
 
-function toUsageLogQueryParams(params: Record<string, unknown> = {}): Record<string, string | number> {
-  const pageNo = optionalPositiveInteger(params.pageNo, 'pageNo');
+function toUsageLogQueryParams(params: Record<string, unknown> = {}): {
+  page?: number;
+  pageSize?: number;
+  q?: string;
+  status?: string;
+  startTime?: string;
+  endTime?: string;
+} {
+  const page = optionalPositiveInteger(params.page, 'page');
   const pageSize = optionalBoundedPositiveInteger(params.pageSize, 'pageSize', MAX_USAGE_LOG_PAGE_SIZE);
 
-  const keyword = optionalText(params.keyword, 'keyword', MAX_USAGE_LOG_QUERY_TEXT_LENGTH);
+  const searchQuery = optionalText(params.searchQuery, 'searchQuery', MAX_USAGE_LOG_QUERY_TEXT_LENGTH);
   const status = optionalUsageLogStatus(params.status);
   const startTime = optionalText(params.startTime, 'startTime', MAX_USAGE_LOG_TIMESTAMP_LENGTH);
   const endTime = optionalText(params.endTime, 'endTime', MAX_USAGE_LOG_TIMESTAMP_LENGTH);
 
   return pruneUndefinedQueryParams({
-    pageNo,
+    page,
     pageSize,
-    keyword,
+    q: searchQuery,
     status: status === 'all' ? undefined : status,
     startTime,
     endTime,
   });
-}
-
-function usageLogQueryArguments(params: Record<string, unknown> = {}) {
-  return standardListQueryArguments(toUsageLogQueryParams(params));
 }
 
 function optionalUsageLogStatus(value: unknown): UsageLogStatus | undefined {

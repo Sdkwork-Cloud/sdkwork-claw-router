@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13379,
+  "uuid": "skill-clawhub-ds160-autofill",
+  "skillKey": "clawhub-ds160-autofill",
+  "name": "ds160-autofill",
+  "summary": "Automates filling and resuming US DS-160 visa forms using CSV data, browser scripting, LLM for captchas, translations, missing data, and session persistence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ds160_autofill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clulessboy",
+      "features": [
+        "Automates filling and resuming US DS-160 visa forms using CSV data, browser scripting, LLM for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ds160-autofill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99518010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ds160-autofill",
+      "url": "https://clawhub.ai/skills/ds160-autofill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ds160-autofill",
+    "url": "https://clawhub.ai/skills/ds160-autofill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ds160-autofill-886a95525fcfc5f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ds160-autofill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ds160-autofill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d49ba3a151f08712a779ca6d898c86b17f1fc2b63bdc35f06c52baf6ceb32ea",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T20:24:29.150Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deprecated-skill@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deprecated_skill",
+  "skill": {
+    "id": 31683,
+    "skillKey": "clawhub-deprecated-skill",
+    "name": "Deprecated Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deprecated-skill",
+    "url": "https://clawhub.ai/skills/deprecated-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deprecated-skill-6cec60b60dfc7eed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[DEPRECATED] This skill has been renamed to translate-book. Install the new version: clawhub install translate-book"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deusyu",
+      "userId": "s179bbz2mxt1jgta0f5jsdqnjs85qrsd",
+      "displayName": "Rainman",
+      "image": "https://avatars.githubusercontent.com/u/42929363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773587109799,
+      "changelog": "- Skill deprecated and renamed to translate-book.\n- No further updates or bug fixes will be provided for this version.\n- Instructions provided to uninstall this package and install translate-book instead.\n- The new skill offers the same functionality with a simplified name and consistent repository alignment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c93182c872d63be5796637ab60db099298a02d1bd8673c2498d459bf9f74250f"
+}

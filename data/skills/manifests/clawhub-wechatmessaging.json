@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68065,
+  "uuid": "skill-clawhub-wechatmessaging",
+  "skillKey": "clawhub-wechatmessaging",
+  "name": "wechat_messaging",
+  "summary": "通过微信查询好友并确认后，向指定好友发送文本消息，支持多好友选择和发送确认流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatmessaging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aw11100",
+      "features": [
+        "通过微信查询好友并确认后，向指定好友发送文本消息，支持多好友选择和发送确认流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechatmessaging@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39297195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechatmessaging",
+      "url": "https://clawhub.ai/skills/wechatmessaging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatmessaging",
+    "url": "https://clawhub.ai/skills/wechatmessaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatmessaging-1347fd85899c9028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechatmessaging@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechatmessaging-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ca9878673ffb45b71b9cf373297fa34c2248160a2b89330c50ac6c9b44938c5",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:26:57.588Z"
+}

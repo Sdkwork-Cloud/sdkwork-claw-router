@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54127,
+  "uuid": "skill-clawhub-notilens-clawhub-plugin",
+  "skillKey": "clawhub-notilens-clawhub-plugin",
+  "name": "Notilens Clawhub Plugin",
+  "summary": "Send real-time alerts to NotiLens from any script, app, or AI agent — task lifecycle events, errors, completions, and metric tracking.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notilens_clawhub_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NotiLens",
+      "features": [
+        "Send real-time alerts to NotiLens from any script, app, or AI agent — task lifecycle events, er."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notilens-clawhub-plugin@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266655403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notilens-clawhub-plugin",
+      "url": "https://clawhub.ai/skills/notilens-clawhub-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notilens-clawhub-plugin",
+    "url": "https://clawhub.ai/skills/notilens-clawhub-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notilens-clawhub-plugin-b0e7bb0d1e378efa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notilens-clawhub-plugin@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notilens-clawhub-plugin-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91daa68fdab10c64a1f8aec5732fbfcba5135eb1b228c196167ab129f53376a7",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:39:28.484Z"
+}

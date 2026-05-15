@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-trace@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_trace",
+  "skill": {
+    "id": 54824,
+    "skillKey": "clawhub-claw-trace",
+    "name": "Claw Trace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-trace",
+    "url": "https://clawhub.ai/skills/claw-trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-trace-e05aa5eeae02ecb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and visualize the OpenClaw agent's work process. Record tool call inputs, outputs, duration, and status, and present them in an easy-to-read format. **..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdchi",
+      "userId": "s17fheex2s1vvmq5zvezbkds0x83gnpr",
+      "displayName": "JDChi",
+      "image": "https://avatars.githubusercontent.com/u/14227606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773326767094,
+      "changelog": "claw-trace 1.1.1 changelog\n\n- Updated configuration in config.json (details not shown).\n- No changes to features, workflow, or security documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34e2f9689050a97b7ab7f72318e1b8840f52c5b77f63c9a56e0b2265a2e08983"
+}

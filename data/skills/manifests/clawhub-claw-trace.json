@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54824,
+  "uuid": "skill-clawhub-claw-trace",
+  "skillKey": "clawhub-claw-trace",
+  "name": "Claw Trace",
+  "summary": "Track and visualize the OpenClaw agent's work process. Record tool call inputs, outputs, duration, and status, and present them in an easy-to-read format. **...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_trace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JDChi",
+      "features": [
+        "Track and visualize the OpenClaw agent's work process",
+        "Record tool call inputs, outputs, duration, and status, and present them in an easy-to-read for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-trace@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14227606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-trace",
+      "url": "https://clawhub.ai/skills/claw-trace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-trace",
+    "url": "https://clawhub.ai/skills/claw-trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-trace-e05aa5eeae02ecb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-trace@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-trace-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34e2f9689050a97b7ab7f72318e1b8840f52c5b77f63c9a56e0b2265a2e08983",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:46:07.094Z"
+}

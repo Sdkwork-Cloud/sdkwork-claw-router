@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32548,
+  "uuid": "skill-clawhub-nansen-sm-cross-chain-flows",
+  "skillKey": "clawhub-nansen-sm-cross-chain-flows",
+  "name": "Nansen Sm Cross Chain Flows",
+  "summary": "Is SM buying this token on one chain but selling on another? Detect capital rotation.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_sm_cross_chain_flows",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Is SM buying this token on one chain but selling on another? Detect capital rotation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-sm-cross-chain-flows@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-sm-cross-chain-flows",
+      "url": "https://clawhub.ai/skills/nansen-sm-cross-chain-flows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-sm-cross-chain-flows",
+    "url": "https://clawhub.ai/skills/nansen-sm-cross-chain-flows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-sm-cross-chain-flows-0c4ac2c753599af7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-sm-cross-chain-flows@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-sm-cross-chain-flows-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:255b294e5fb4c7fc7122426b55498ca8501f40dfca133f9ea19d396eb873930b",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:32:25.857Z"
+}

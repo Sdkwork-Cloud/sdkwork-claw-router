@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20017,
+  "uuid": "skill-clawhub-auto-memory-pro",
+  "skillKey": "clawhub-auto-memory-pro",
+  "name": "Auto Memory Pro",
+  "summary": "Curate Claude Code's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, ex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_memory_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Curate Claude Code's auto-memory into durable project knowledge",
+        "Analyze MEMORY.md for patterns, promote proven learnings to CLAUDE.md and .claude/rules/, ex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-memory-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-memory-pro",
+      "url": "https://clawhub.ai/skills/auto-memory-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-memory-pro",
+    "url": "https://clawhub.ai/skills/auto-memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-memory-pro-aff53a09f3dad0fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-memory-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-memory-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7b88f53333dd042f0ac253d89311db4103bf0081ac57fea0e02a0d738e52b60",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:25:53.713Z"
+}

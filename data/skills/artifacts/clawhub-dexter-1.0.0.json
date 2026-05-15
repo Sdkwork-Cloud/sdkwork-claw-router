@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dexter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexter",
+  "skill": {
+    "id": 10029,
+    "skillKey": "clawhub-dexter",
+    "name": "dexter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexter",
+    "url": "https://clawhub.ai/skills/dexter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexter-8c3bc97b36d17f13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous financial research agent for stock analysis, financial statements, metrics, prices, SEC filings, and crypto data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "igorhvr",
+      "userId": "publishers:igorhvr",
+      "displayName": "igorhvr",
+      "image": "https://avatars.githubusercontent.com/u/59321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2961,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768141574420,
+      "changelog": "- Initial release of Dexter: an autonomous agent for comprehensive financial research and analysis.\n- Supports querying stock prices, financial statements, key metrics, SEC filings, analyst estimates, insider trades, company news, crypto data, and more.\n- Integration with Financial Datasets API (primarily US stocks) and fallback to web search (Tavily) for broader coverage.\n- Includes non-interactive and interactive CLI modes, with detailed setup and API key configuration instructions.\n- Multi-phase agent architecture: understand, plan, execute, reflect, and synthesize answers using multiple financial data tools.\n- Customizable for different LLM providers (Anthropic or OpenAI) and easy configuration for model selection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:465f702f300e269594aacdcee3a937bc5517e97d29e8177c6eff8c45df251039"
+}

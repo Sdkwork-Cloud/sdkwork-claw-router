@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70361,
+  "uuid": "skill-clawhub-email-reply",
+  "skillKey": "clawhub-email-reply",
+  "name": "da-fu-da-gui",
+  "summary": "智能邮箱自动回复工具，实时监测新邮件，自动发送自定义模板回复，支持多邮箱集成，防止重复回复。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_reply",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "biaojian2008",
+      "features": [
+        "智能邮箱自动回复工具，实时监测新邮件，自动发送自定义模板回复，支持多邮箱集成，防止重复回复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217624687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-reply",
+      "url": "https://clawhub.ai/skills/email-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-reply",
+    "url": "https://clawhub.ai/skills/email-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-reply-e845fc00552250c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c0b87f991655ed31150971c794f47c6ee24f2da9eb378940fabaef39274659",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T02:50:07.271Z"
+}

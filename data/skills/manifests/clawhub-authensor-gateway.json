@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10552,
+  "uuid": "skill-clawhub-authensor-gateway",
+  "skillKey": "clawhub-authensor-gateway",
+  "name": "Authensor Gateway",
+  "summary": "Fail-safe policy gate for OpenClaw marketplace skills. Intercepts tool calls before execution and checks them against your Authensor policy. Low-risk actions run automatically. High-risk actions require your approval. Dangerous actions are.",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authensor_gateway",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AUTHENSOR",
+      "features": [
+        "Fail-safe policy gate for OpenClaw marketplace skills",
+        "Intercepts tool calls before execution and checks them against your Authensor policy",
+        "Low-risk actions run automatically",
+        "High-risk actions require your approval"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authensor-gateway@0.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250658088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authensor-gateway",
+      "url": "https://clawhub.ai/skills/authensor-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authensor-gateway",
+    "url": "https://clawhub.ai/skills/authensor-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authensor-gateway-7c219940fded953f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authensor-gateway@0.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-authensor-gateway-0.7.0.json",
+      "version": "0.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e3152da43e9439556190de6e56e8160686772336b8f1c28603cf742e819395b",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:36:46.927Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45653,
+  "uuid": "skill-clawhub-project-explorer",
+  "skillKey": "clawhub-project-explorer",
+  "name": "project-explorer-skill",
+  "summary": "Explores unfamiliar GitHub projects, installs and runs them, analyzes architecture, and generates comprehensive documentation guides",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanggroot7",
+      "features": [
+        "Explores unfamiliar GitHub projects, installs and runs them, analyzes architecture, and generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253443270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-explorer",
+      "url": "https://clawhub.ai/skills/project-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-explorer",
+    "url": "https://clawhub.ai/skills/project-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-explorer-8c5fa95cbfc857a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baf1f74c77cd390b66d23d028c90331d1275cf7b1f40281ec56c88d9e4adee28",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:30:11.570Z"
+}

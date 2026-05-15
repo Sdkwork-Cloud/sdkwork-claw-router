@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plashboard-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plashboard_admin",
+  "skill": {
+    "id": 24566,
+    "skillKey": "clawhub-plashboard-admin",
+    "name": "Plashboard Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plashboard-admin",
+    "url": "https://clawhub.ai/skills/plashboard-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plashboard-admin-f2d8a4cfb849aab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage plashboard templates and autonomously convert natural-language dashboard requests into plashboard tool actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhytabest",
+      "userId": "publishers:jhytabest",
+      "displayName": "jhytabest",
+      "image": "https://avatars.githubusercontent.com/u/138134396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772213194782,
+      "changelog": "Initial official release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2463c93757248dee8821fcbb3fc095c42cffd67908987c9995643e6afd177df3"
+}

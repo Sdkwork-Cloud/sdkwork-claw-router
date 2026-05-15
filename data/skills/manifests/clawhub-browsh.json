@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8680,
+  "uuid": "skill-clawhub-browsh",
+  "skillKey": "clawhub-browsh",
+  "name": "browsh",
+  "summary": "A modern text-based browser. Renders web pages in the terminal using headless Firefox.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browsh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gustavo Madeira Santana",
+      "features": [
+        "A modern text-based browser",
+        "Renders web pages in the terminal using headless Firefox."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browsh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5599352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browsh",
+      "url": "https://clawhub.ai/skills/browsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browsh",
+    "url": "https://clawhub.ai/skills/browsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browsh-802a2115bdbfb5bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browsh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browsh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36cfcc2c1b489f23115d59fa0b56fa072cc5093e24078e17a8da4b4b989018bd",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-20T19:14:51.160Z"
+}

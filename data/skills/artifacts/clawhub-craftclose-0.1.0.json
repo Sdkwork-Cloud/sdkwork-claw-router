@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/craftclose@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craftclose",
+  "skill": {
+    "id": 41440,
+    "skillKey": "clawhub-craftclose",
+    "name": "CraftClose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craftclose",
+    "url": "https://clawhub.ai/skills/craftclose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craftclose-4caf076f55d5f4ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered Minecraft server monitoring with crash detection, auto-restart, and smart alerts. Use when: monitoring Minecraft servers, diagnosing crashes, sett..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ginhooser-cyber",
+      "userId": "publishers:ginhooser-cyber",
+      "displayName": "Bejie Paulo Aclao",
+      "image": "https://avatars.githubusercontent.com/u/253995277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774057530238,
+      "changelog": "Initial release — AI-powered Minecraft server monitoring with crash detection, auto-restart, smart alerts, BYOK Gemini AI analysis, and Pterodactyl panel integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74f6f5f27825a2fa960c0ca51494dcf84c3c5142dfebc80e540f4047c36ccc6e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publish-clawhub@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_clawhub",
+  "skill": {
+    "id": 69224,
+    "skillKey": "clawhub-publish-clawhub",
+    "name": "Publish Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-clawhub",
+    "url": "https://clawhub.ai/skills/publish-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-clawhub-f3fab9a7b29cb0b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "领导问\"这是AI写的？\"——这个问题每个打工人都怕。 45条中文写作规则，改完原文格式一字不动，只换掉那股机器味。 粘贴进来就能改，不用配置不用学。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjihua007-rgb",
+      "userId": "s1734qhn3akb7fvmwmx5evkrfn85t1tx",
+      "displayName": "huangjihua007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/267920358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1778163177669,
+      "changelog": "新增品牌尾注；优化写作场景覆盖",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4813d87afd3599aa949199b243ed14b48fc18076dba4c3d06fd3653fd9365f9f"
+}

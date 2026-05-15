@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51244,
+  "uuid": "skill-clawhub-daily-vocab",
+  "skillKey": "clawhub-daily-vocab",
+  "name": "Daily Vocab",
+  "summary": "One advanced English word every day — IPA pronunciation, etymology, 3 example sentences, and quiz mode. GRE / SAT / IELTS / C2 vocabulary level.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_vocab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "One advanced English word every day — IPA pronunciation, etymology, 3 example sentences, and qu.",
+        "GRE / SAT / IELTS / C2 vocabulary level."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-vocab@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-vocab",
+      "url": "https://clawhub.ai/skills/daily-vocab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-vocab",
+    "url": "https://clawhub.ai/skills/daily-vocab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-vocab-a6c9e270f0ddb015.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-vocab@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-vocab-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f9aa0db16daa535d4b3de665b9512909a5a8ddda1d07020dc5e6a6f1dc2873",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:47:32.584Z"
+}

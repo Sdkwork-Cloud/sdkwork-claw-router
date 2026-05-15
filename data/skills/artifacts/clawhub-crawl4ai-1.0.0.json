@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawl4ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawl4ai",
+  "skill": {
+    "id": 10238,
+    "skillKey": "clawhub-crawl4ai",
+    "name": "Crawl4ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawl4ai",
+    "url": "https://clawhub.ai/skills/crawl4ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawl4ai-27dd1c50fb4aa23c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered web scraping framework for extracting structured data from websites. Use when Codex needs to crawl, scrape, or extract data from web pages using AI-powered parsing, handle dynamic content, or work with complex HTML structures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codylrn804",
+      "userId": "publishers:codylrn804",
+      "displayName": "codylrn804",
+      "image": "https://avatars.githubusercontent.com/u/181940732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2382,
+      "installsAllTime": 28,
+      "installsCurrent": 26,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770545699013,
+      "changelog": "Initial release of crawl4ai – an AI-powered web scraping framework for extracting structured data from websites.\n\n- Enables intelligent extraction and cleaning of data from complex or dynamic web pages.\n- Supports scraping with JavaScript rendering, main content extraction, and custom data fields (like products or articles).\n- Offers simple Python async interface with robust error handling and output as markdown, clean HTML, structured JSON, and screenshots.\n- Includes guidance for common scraping scenarios, custom JavaScript injection, session management, and batch/bulk scraping.\n- Provides best practices for responsible web scraping and includes sample scripts and documentation for quick onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce8a346fe486b4317c3748ab7b156d143bb6c793318823b5aaf883245547109d"
+}

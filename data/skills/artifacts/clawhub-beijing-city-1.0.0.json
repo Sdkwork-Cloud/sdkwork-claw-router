@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beijing-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beijing_city",
+  "skill": {
+    "id": 46605,
+    "skillKey": "clawhub-beijing-city",
+    "name": "Beijing City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beijing-city",
+    "url": "https://clawhub.ai/skills/beijing-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beijing-city-3e0237b559b8d04f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Beijing is China's capital with 2,186 million residents, a 4.4 trillion RMB GDP, 92 universities, and a leading hub for politics, culture, and tech."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777150947577,
+      "changelog": "- 首发版本：介绍北京作为中国首都的历史、经济、和文化中心地位。\n- 增加历史时间线，涵盖从西周到现代的关键节点。\n- 提供北京的核心产业、经济数据及护城河分析。\n- 列出服务业比例、世界500强总部等关键经济与教育数据。\n- 补充北京在世界遗产和“双奥之城”方面的独特事实。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e847bfed498f9cbe3a1f4ad32fb362c8e122b78f78f845e0083a0685a0318ca"
+}

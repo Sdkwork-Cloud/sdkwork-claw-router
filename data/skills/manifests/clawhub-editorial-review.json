@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29849,
+  "uuid": "skill-clawhub-editorial-review",
+  "skillKey": "clawhub-editorial-review",
+  "name": "Editorial Review",
+  "summary": "Comprehensive editorial review for Chinese content before publication. Use when the user asks to 'review my article', 'proofread this', 'check for errors', '...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editorial_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liqiongyu",
+      "features": [
+        "Comprehensive editorial review for Chinese content before publication",
+        "Use when the user asks to 'review my article', 'proofread this', 'check for errors', '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editorial-review@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6937513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editorial-review",
+      "url": "https://clawhub.ai/skills/editorial-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editorial-review",
+    "url": "https://clawhub.ai/skills/editorial-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editorial-review-6d2288e15709979e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editorial-review@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-editorial-review-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b094562a89ab925cb23f7538e4570cd27e93e76774c8f8888e427957241a5c30",
+      "artifactSizeBytes": 2713
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:57:41.003Z"
+}

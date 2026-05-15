@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25935,
+  "uuid": "skill-clawhub-budget-builder",
+  "skillKey": "clawhub-budget-builder",
+  "name": "Budget Builder",
+  "summary": "Dual-mode budget pipeline for FP&A-quality budget management. Mode A (--build) generates an annual budget from 12 months of QBO history with auto-detected se...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Dual-mode budget pipeline for FP&A-quality budget management",
+        "Mode A (--build) generates an annual budget from 12 months of QBO history with auto-detected se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-builder@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-builder",
+      "url": "https://clawhub.ai/skills/budget-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-builder",
+    "url": "https://clawhub.ai/skills/budget-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-builder-53e9f293edfe6d98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-builder@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-builder-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea872e9502ad61ccd02f59bbad3e90567e927541d29d0bfdfab4d0d6b58aa5f1",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:51:51.587Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-context-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_context_manager",
+  "skill": {
+    "id": 30598,
+    "skillKey": "clawhub-project-context-manager",
+    "name": "Project Context Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-context-manager",
+    "url": "https://clawhub.ai/skills/project-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-context-manager-06f9a985ad3dffb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Project-based agent context management system for maintaining long-term memory and project state across sessions. Use when starting or continuing any softwar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "changer-changer",
+      "userId": "s17a1mefv9pez7cqx2pp5bz16184j3tp",
+      "displayName": "崔之行",
+      "image": "https://avatars.githubusercontent.com/u/126934792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773798577963,
+      "changelog": "project-context-manager v1.0.0\n\n- Initial release introducing project-based agent context management.\n- Enforces maintenance of PROJECT_CONTEXT.md as the definitive project state.\n- Implements AI_memory session trace recording for tracking development reasoning.\n- Applies strict safety protocols for file system operations.\n- Defines clear engineering habits, output checklists, and safety prohibitions.\n- Enables systematic, transparent, and persistent context tracking for complex software projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ecdd3e6a8ee1035fae29baa690e1a422551e835aed5c8a5958daf5bea442bb0"
+}

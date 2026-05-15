@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11748,
+  "uuid": "skill-clawhub-ai-sdk-core",
+  "skillKey": "clawhub-ai-sdk-core",
+  "name": "Ai Sdk Core",
+  "summary": "Build backend AI with Vercel AI SDK v6 stable. Covers Output API (replaces generateObject/streamObject), speech synthesis, transcription, embeddings, MCP tools with security guidance. Includes v4→v5 migration and 15 error solutions with wo.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_sdk_core",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "Build backend AI with Vercel AI SDK v6 stable",
+        "Covers Output API (replaces generateObject/streamObject), speech synthesis, transcription, embe.",
+        "Includes v4→v5 migration and 15 error solutions with workarounds",
+        "Use when: implementing AI SDK v5/v6, migrating versions, troubleshooting AI_APICallError, Worke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-sdk-core@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-sdk-core",
+      "url": "https://clawhub.ai/skills/ai-sdk-core"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-sdk-core",
+    "url": "https://clawhub.ai/skills/ai-sdk-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-sdk-core-42549d86a61ce580.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-sdk-core@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-sdk-core-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ef7b6086acef155ff38c145133da9e2a5d941796837735b64e2f7569523f173",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:52:41.364Z"
+}

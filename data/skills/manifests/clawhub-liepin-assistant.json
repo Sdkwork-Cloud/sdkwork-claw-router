@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63569,
+  "uuid": "skill-clawhub-liepin-assistant",
+  "skillKey": "clawhub-liepin-assistant",
+  "name": "猎聘求职助手",
+  "summary": "猎聘求职助手，封装 Liepin MCP 服务。用于搜索职位、查看 JD、投递简历、管理简历。 **触发场景**： (1) 用户提到\"猎聘\"、\"liepin\"、\"liepin求职\"、\"猎聘求职\"、\"猎聘助手\"、\"liepin助手\"、\"找工作\"、\"搜职位\"、\"投简历\"、\"查看简历\" (2) 用户提供猎聘 token...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liepin_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wang",
+      "features": [
+        "猎聘求职助手，封装 Liepin MCP 服务。用于搜索职位、查看 JD、投递简历、管理简历。 **触发场景**： (1) 用户提到\"猎聘\"、\"liepin\"、\"liepin求职\"、\"猎聘求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liepin-assistant@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2987282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liepin-assistant",
+      "url": "https://clawhub.ai/skills/liepin-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liepin-assistant",
+    "url": "https://clawhub.ai/skills/liepin-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liepin-assistant-e0c292450fe8ee22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liepin-assistant@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-liepin-assistant-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0edc75e7233d913e7bfd454d7f7c970f9211aada0079712c4d608ef442be3df8",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:41:27.112Z"
+}

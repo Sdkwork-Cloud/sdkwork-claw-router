@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-diary@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diary",
+  "skill": {
+    "id": 21434,
+    "skillKey": "clawhub-openclaw-diary",
+    "name": "Openclaw Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diary",
+    "url": "https://clawhub.ai/skills/openclaw-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diary-843f1d7caf572f86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and manage OpenClaw auto learning diary. Used for: (1) Help users fork OpenClaw-Diary repository (2) Connect the forked repo to OpenClaw (3) Configure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trae1oung",
+      "userId": "publishers:trae1oung",
+      "displayName": "Yuqiao Tan",
+      "image": "https://avatars.githubusercontent.com/u/90178138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772508899273,
+      "changelog": "- Added GitHub stars growth tracking as an optional feature for daily learning diary reports.\n- Updated daily cron/heartbeat instructions to include GitHub stars growth.\n- Expanded example diary content template to show GitHub stars tracking section.\n- No changes to workflow steps or privacy protection guidelines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97aead86300cb8ba17ac59701fb2a034a27fd5e2a631f8430c085742761b04da"
+}

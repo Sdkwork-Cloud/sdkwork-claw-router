@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intelligent-backup-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligent_backup_automation",
+  "skill": {
+    "id": 59092,
+    "skillKey": "clawhub-ai-intelligent-backup-automation",
+    "name": "Ai Intelligent Backup Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligent-backup-automation",
+    "url": "https://clawhub.ai/skills/ai-intelligent-backup-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligent-backup-automation-d583dd0cccc4d5b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "备份自动化，自动备份 + 恢复测试。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773865142989,
+      "changelog": "ai-intelligent-backup-automation v1.0.9\n\n- 新增自动备份、增量备份和定时备份功能\n- 增加备份验证（完整性检查）与恢复测试（恢复演练）支持\n- 提供备份报告与统计\n- 明确区分基础、专业、企业三种定价方案\n- 详细列出适用场景与使用技术栈\n- 补充安装说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c099908e7a36b307b125a74039c73eb0f459faa2e3c8264ff6acfae86244ebdf"
+}

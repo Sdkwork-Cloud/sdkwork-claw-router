@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60115,
+  "uuid": "skill-clawhub-task-interrupt-pro",
+  "skillKey": "clawhub-task-interrupt-pro",
+  "name": "Task Interrupt Pro",
+  "summary": "Task Interrupt Skill Pro - 精确停止Agent执行中的子任务进程。 Triggers: \"停止猫经理\", \"停止猫工头\", \"停止猫财子\", \"停止猫播播\", \"停止我的任务\", \"中断猫经理\", \"解救猫经理\", \"agent任务卡住\", \"进程无响应\", \"子任务卡死\"。 注意：不支...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_interrupt_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tsangho",
+      "features": [
+        "Task Interrupt Skill Pro",
+        "精确停止Agent执行中的子任务进程。 Triggers: \"停止猫经理\", \"停止猫工头\", \"停止猫财子\", \"停止猫播播\", \"停止我的任务\", \"中断猫经理\", \"解救猫经理\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-interrupt-pro@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143068916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-interrupt-pro",
+      "url": "https://clawhub.ai/skills/task-interrupt-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-interrupt-pro",
+    "url": "https://clawhub.ai/skills/task-interrupt-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-interrupt-pro-518ab8a614c02b30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-interrupt-pro@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-interrupt-pro-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5be4a033f4b5dabfe8b13da3a40ebf16720334e82ac996a2646eb7723bc49123",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:12:55.198Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_expert",
+  "skill": {
+    "id": 60149,
+    "skillKey": "clawhub-proxy-expert",
+    "name": "proxy-expert魔法搭建专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-expert",
+    "url": "https://clawhub.ai/skills/proxy-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-expert-65ac9030f765c7cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "端到端魔法搭建专家（VLESS+Reality+sing-box 方案）。当用户提到\"搭梯子\"、\"翻墙\"、\"搭代理\"、\"VPN\"、\"科学上网\"、\"上不了谷歌/Claude/ChatGPT\"、\"被 GFW 封了\"、\"VPS 搭代理\"、\"sing-box\"、\"clash\"、\"Reality\" 时，立即使用此技能。此技..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1126misakp",
+      "userId": "s17amgvntr9ar77yk2sndx5gg985s680",
+      "displayName": "1126misakp",
+      "image": "https://avatars.githubusercontent.com/u/124807530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777470969993,
+      "changelog": "proxy-expert 1.0.0\n\n- Initial release of proxy-expert: an automated end-to-end solution for deploying a VLESS+Reality+sing-box proxy on a VPS.\n- Guides users through environment detection, connection quality testing, SSH authentication (password or key), and automated server installation.\n- Generates secure server-side keys, configures sing-box via templates, and creates client config files.\n- Emphasizes automation—minimizes manual steps, with clear instructions only if automation is not possible.\n- Includes references and troubleshooting files for advanced help.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac48c9ad7c099cd211baefd9683700cae697270d3b5d810241e373e3c150da7f"
+}

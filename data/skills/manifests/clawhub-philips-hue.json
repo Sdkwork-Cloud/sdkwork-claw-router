@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16758,
+  "uuid": "skill-clawhub-philips-hue",
+  "skillKey": "clawhub-philips-hue",
+  "name": "Philips Hue",
+  "summary": "Local control of Philips Hue lights via API v1.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.philips_hue",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aprilox",
+      "features": [
+        "Local control of Philips Hue lights via API v1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/philips-hue@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51274917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "philips-hue",
+      "url": "https://clawhub.ai/skills/philips-hue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "philips-hue",
+    "url": "https://clawhub.ai/skills/philips-hue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/philips-hue-84c6acc903922f0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/philips-hue@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-philips-hue-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de9a8ffe8758886ef24f3362b671045b0c5e222ed638c565d7b55a1f12b85491",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T20:51:28.581Z"
+}

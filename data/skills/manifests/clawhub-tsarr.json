@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26140,
+  "uuid": "skill-clawhub-tsarr",
+  "skillKey": "clawhub-tsarr",
+  "name": "Tsarr",
+  "summary": "Manage home media services through TsArr from OpenClaw. Use for Radarr, Sonarr, Lidarr, Readarr, Prowlarr, Bazarr, qBittorrent, and Seerr tasks such as check...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsarr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robbe Verhelst",
+      "features": [
+        "Manage home media services through TsArr from OpenClaw",
+        "Use for Radarr, Sonarr, Lidarr, Readarr, Prowlarr, Bazarr, qBittorrent, and Seerr tasks such as."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tsarr@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36887643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tsarr",
+      "url": "https://clawhub.ai/skills/tsarr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsarr",
+    "url": "https://clawhub.ai/skills/tsarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsarr-0c0005436341fb7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tsarr@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tsarr-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c24a501c7f8e9e05a6ba16892af001368e109f1f541077a4ad7c7ce4a0c3dce",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:53:44.181Z"
+}

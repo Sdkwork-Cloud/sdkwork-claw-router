@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-io@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_io",
+  "skill": {
+    "id": 33288,
+    "skillKey": "clawhub-file-io",
+    "name": "file share to filebin.net"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-io",
+    "url": "https://clawhub.ai/skills/file-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-io-dce123bbb35bcba3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload local files to filebin.net for quick sharing. Use when the user asks to upload a file, share a file via link, host a file, or says \"upload to filebin\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775445835430,
+      "changelog": "- Updated bin ID generation to use Python's uuid4 for improved uniqueness and reliability.\n- Clarified instructions for locating the file provided by the user.\n- Simplified curl upload example and switched to a more standard syntax.\n- No code or functional changes—documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f34fbd4cefab6f56aca2c5d0a33ab94e59c78726e021520a9a6e0ed417e38778"
+}

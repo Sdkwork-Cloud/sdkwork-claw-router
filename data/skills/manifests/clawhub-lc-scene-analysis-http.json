@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67864,
+  "uuid": "skill-clawhub-lc-scene-analysis-http",
+  "skillKey": "clawhub-lc-scene-analysis-http",
+  "name": "LC Scene Analysis HTTP",
+  "summary": "工地隐患分析模型技能，默认处理施工现场静态图片的隐患识别；仅在用户明确要求时调用数据采集或交叉验证接口。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lc_scene_analysis_http",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenqu108",
+      "features": [
+        "工地隐患分析模型技能，默认处理施工现场静态图片的隐患识别；仅在用户明确要求时调用数据采集或交叉验证接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lc-scene-analysis-http@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34977580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lc-scene-analysis-http",
+      "url": "https://clawhub.ai/skills/lc-scene-analysis-http"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lc-scene-analysis-http",
+    "url": "https://clawhub.ai/skills/lc-scene-analysis-http",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lc-scene-analysis-http-d9c48e69b63e5500.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lc-scene-analysis-http@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-lc-scene-analysis-http-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370931a8d00f49c862b2082ff223aeec4e69e9b030f74147598c72b1ab1f997f",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:12:08.001Z"
+}

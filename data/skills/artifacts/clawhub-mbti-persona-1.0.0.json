@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mbti-persona@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbti_persona",
+  "skill": {
+    "id": 26286,
+    "skillKey": "clawhub-mbti-persona",
+    "name": "Mbti Persona"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbti-persona",
+    "url": "https://clawhub.ai/skills/mbti-persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbti-persona-e8c13a532c94976b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure OpenClaw agent with MBTI personality types for personalized interaction styles. Use when: (1) User wants to set their agent's personality/MBTI type..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarviyin",
+      "userId": "s173fnv3r87mjsdgksqtn8k66183wcx9",
+      "displayName": "JIAWEI YIN",
+      "image": "https://avatars.githubusercontent.com/u/38063596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772806514568,
+      "changelog": "- Initial release of mbti-persona skill.\n- Enables configuration of OpenClaw agents with all 16 MBTI personality types for personalized interaction styles.\n- Adds command-line tools to set, get, and list MBTI types.\n- Each MBTI type includes tailored communication, decision-making, and workflow profiles.\n- Integrates MBTI settings into OpenClaw agents for adaptive and customized user experiences.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:966203c5508fa41a34694af99a2bf3c2789df5dea09a6b2101693e3ee54587c8"
+}

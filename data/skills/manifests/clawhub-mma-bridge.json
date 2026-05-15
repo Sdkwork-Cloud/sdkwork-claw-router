@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58319,
+  "uuid": "skill-clawhub-mma-bridge",
+  "skillKey": "clawhub-mma-bridge",
+  "name": "Meteor Master AI Bridge",
+  "summary": "通过 mma-bridge 命令行工具与 Meteor Master AI 交互",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mma_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mordom0404",
+      "features": [
+        "通过 mma-bridge 命令行工具与 Meteor Master AI 交互"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mma-bridge@1.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23435286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mma-bridge",
+      "url": "https://clawhub.ai/skills/mma-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mma-bridge",
+    "url": "https://clawhub.ai/skills/mma-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mma-bridge-4cb27487ed374b15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mma-bridge@1.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-mma-bridge-1.2.7.json",
+      "version": "1.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7da42a1880ef0e191a871c57a556267a5d8b024119e846ca71a23693c48742cb",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:08:30.349Z"
+}

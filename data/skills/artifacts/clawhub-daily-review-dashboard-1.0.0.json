@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-review-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_review_dashboard",
+  "skill": {
+    "id": 29712,
+    "skillKey": "clawhub-daily-review-dashboard",
+    "name": "Daily Review Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-review-dashboard",
+    "url": "https://clawhub.ai/skills/daily-review-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-review-dashboard-06cf5acb0a0aaa14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Steven's daily subjective review dashboard by reading, updating, and displaying daily reviews, issue tracking, sentiment tags, and next plans in revie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "j97feng-beep",
+      "userId": "publishers:j97feng-beep",
+      "displayName": "j97feng-beep",
+      "image": "https://avatars.githubusercontent.com/u/260810274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773851583011,
+      "changelog": "Daily Review Dashboard skill initial release:\n\n- Manages Steven's subjective daily review dashboard, triggered on review-related actions or requests.\n- Reads and writes structured daily review data under review_egg/, including raw text, index, summaries, and issue tracking.\n- Uses a dashboard HTML file that stores review data directly in JS for local browsing.\n- Clearly separates subjective review data from objective trade records.\n- Supports workflows for adding and displaying daily reviews, tagging issues, tracking sentiment, and updating aggregated stats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d3d6741d5a729b503bbe86107f62206fbbb928965ec46f1298860dc22d4595a"
+}

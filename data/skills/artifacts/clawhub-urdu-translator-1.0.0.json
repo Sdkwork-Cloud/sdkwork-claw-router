@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/urdu-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.urdu_translator",
+  "skill": {
+    "id": 32210,
+    "skillKey": "clawhub-urdu-translator",
+    "name": "Urdu Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "urdu-translator",
+    "url": "https://clawhub.ai/skills/urdu-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/urdu-translator-9e829ab10da0995b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates text into fluent Urdu or Roman Urdu, supporting cultural idioms and natural language flow in both scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gamefbs69-spec",
+      "userId": "s174t54yk45zs4md9x42z9gfbx83wf53",
+      "displayName": "gamefbs69-spec",
+      "image": "https://avatars.githubusercontent.com/u/265202901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773910976407,
+      "changelog": "Urdu Master Pro Translator v1.0.0\n\n- Initial release of advanced Urdu translation skill for OpenClaw.\n- Supports both native Urdu script and Roman Urdu (English letters).\n- Enables bi-directional, context-aware translation with nuanced handling of idioms.\n- Simple trigger phrases and flexible format parameter for ease of use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57aded65162b3f2c769053a181a5ff669f2d632da82c4bd521dc6dc2527845a1"
+}

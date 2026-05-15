@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61317,
+  "uuid": "skill-clawhub-virtuoso-skill",
+  "skillKey": "clawhub-virtuoso-skill",
+  "name": "Virtuoso Skill",
+  "summary": "Cadence Virtuoso Skill语言开发辅助工具，包含API查询、代码校验、智能补全功能。使用场景：(1) 编写/调试Virtuoso Skill代码；(2) 检查API调用是否合法；(3) 查询Skill函数的用法和参数；(4) 避免API幻觉和未定义函数调用。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtuoso_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keenone",
+      "features": [
+        "Cadence Virtuoso Skill语言开发辅助工具，包含API查询、代码校验、智能补全功能。使用场景：(1) 编写/调试Virtuoso Skill代码；(2) 检查API调用是否."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtuoso-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11455610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtuoso-skill",
+      "url": "https://clawhub.ai/skills/virtuoso-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtuoso-skill",
+    "url": "https://clawhub.ai/skills/virtuoso-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtuoso-skill-f4f458d9d6dc2bd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtuoso-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtuoso-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b00d529e75d514a528416e42d6c409c13f29d6820563f317ab8ac42a6a08ea9",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:47:25.108Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56416,
+  "uuid": "skill-clawhub-keybindings-customizer",
+  "skillKey": "clawhub-keybindings-customizer",
+  "name": "Keybindings Customizer",
+  "summary": "Use when the user wants to customize Claude Code keybindings, rebind shortcuts, add chords, or edit `~/.claude/keybindings.json` safely.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keybindings_customizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants to customize Claude Code keybindings, rebind shortcuts, add chords, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keybindings-customizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keybindings-customizer",
+      "url": "https://clawhub.ai/skills/keybindings-customizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keybindings-customizer",
+    "url": "https://clawhub.ai/skills/keybindings-customizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keybindings-customizer-513e15dbd9a9421d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keybindings-customizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keybindings-customizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ae98da681d41ee8f1f4c864f445bcc7bf4e5654dd573620071d4afeba7976e0",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:10:19.324Z"
+}

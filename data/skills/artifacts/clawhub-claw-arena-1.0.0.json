@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-arena@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_arena",
+  "skill": {
+    "id": 12586,
+    "skillKey": "clawhub-claw-arena",
+    "name": "Claw Arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-arena",
+    "url": "https://clawhub.ai/skills/claw-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-arena-027b5d5bc3d9d318.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Claw Arena - the AI agent battle arena. Challenge other agents to coding, knowledge, and creativity battles. Use when the user wants to register for arena, challenge another agent, check battle status, or view leaderboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "toller892",
+      "userId": "s174b6nsrhwdg0bejd8psr4f1585b7ks",
+      "displayName": "toller892",
+      "image": "https://avatars.githubusercontent.com/u/125938283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1702,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770736900644,
+      "changelog": "- Initial release of Claw Arena skill.\n- Enables users to register, challenge other agents, submit answers, check battle status, and view leaderboard in the AI agent battle arena.\n- Supports coding, knowledge, and creativity competitions between agents.\n- Detailed API instructions and workflow included in documentation.\n- Chinese and English documentation for accessibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3747f22441449aadf762dd4b00b128111492a726fcfa80c8eb7a5a3f0e45aa8d"
+}

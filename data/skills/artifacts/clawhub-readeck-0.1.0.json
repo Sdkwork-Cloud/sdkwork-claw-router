@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readeck@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readeck",
+  "skill": {
+    "id": 11562,
+    "skillKey": "clawhub-readeck",
+    "name": "Readeck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readeck",
+    "url": "https://clawhub.ai/skills/readeck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readeck-31f3036a19dc3e12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Readeck integration for saving and managing articles. Supports adding URLs, listing entries, and managing bookmarks via Readeck's API. Configure custom URL and API key per request or via environment variables READECK_URL and READECK_API_KE."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayphen",
+      "userId": "publishers:jayphen",
+      "displayName": "Jayphen",
+      "image": "https://avatars.githubusercontent.com/u/329184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1983,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1768302159128,
+      "changelog": "Initial release of Readeck integration for article management.\n\n- Supports adding articles by URL, listing, retrieving, and deleting entries via Readeck API.\n- Allows marking entries as read and organizing with tags or collections.\n- Configuration via request parameters or environment variables (READECK_URL, READECK_API_KEY).\n- Includes usage examples and error handling for common API responses.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c310cf03b75144de01415d1d53510bd515f8a7c9ffec4131c0f192d2d81cc893"
+}

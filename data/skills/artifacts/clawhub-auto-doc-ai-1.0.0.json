@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-doc-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_doc_ai",
+  "skill": {
+    "id": 58964,
+    "skillKey": "clawhub-auto-doc-ai",
+    "name": "Auto Doc AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-doc-ai",
+    "url": "https://clawhub.ai/skills/auto-doc-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-doc-ai-136859c6341fec55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 AST 和 LLM 自动生成 Python 代码文档（Google Style docstring）。 自动分析代码结构，生成符合 Google Style 的 docstring。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antonia-sz",
+      "userId": "s1730srvecg82e9ex26q7shpd184ghxy",
+      "displayName": "antonia huang",
+      "image": "https://avatars.githubusercontent.com/u/143588581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773192066442,
+      "changelog": "Initial release of Auto Doc AI — 智能代码文档生成器.\n\n- 自动分析 Python 代码结构，基于 AST 和 LLM 生成 Google Style docstring\n- 支持单文件、目录和递归批量处理\n- 可选择仅处理缺失文档或强制覆盖全部 docstring\n- 支持预览模式（dry-run）避免直接修改文件\n- 仅支持 Python 3.7 及以上版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:863da934894df6a9edb4dda2d4b9c90b5e795bb901ec33d9815c2146f9cd0d9f"
+}

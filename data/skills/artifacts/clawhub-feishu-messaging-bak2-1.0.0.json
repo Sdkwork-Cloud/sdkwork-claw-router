@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-messaging-bak2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_messaging_bak2",
+  "skill": {
+    "id": 67281,
+    "skillKey": "clawhub-feishu-messaging-bak2",
+    "name": "Feishu Messaging.Bak2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-messaging-bak2",
+    "url": "https://clawhub.ai/skills/feishu-messaging-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-messaging-bak2-7b43f98ae03f4842.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书消息发送与文档创建工作流。 触发场景：查找群成员、查找群ID、发送消息失败需要重新尝试。 适用于：发送飞书消息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774109243536,
+      "changelog": "- Initial release of feishu-messaging skill for 飞书消息发送与文档创建工作流\n- Supports sending text messages, images, and files via 飞书 API\n- Provides functions to search chat groups, retrieve group members, and handle message sending failures\n- Includes detailed code examples for all core messaging and file/document operations\n- Suitable for 飞书消息发送 workflows requiring group/user lookup and message retries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92981cf077f7e486eef8e3c6f786dd3525190c0ebdda061f08475481af02145d"
+}

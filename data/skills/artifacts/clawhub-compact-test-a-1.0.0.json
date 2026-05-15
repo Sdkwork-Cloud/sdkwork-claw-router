@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compact-test-a@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compact_test_a",
+  "skill": {
+    "id": 44845,
+    "skillKey": "clawhub-compact-test-a",
+    "name": "Compact Test A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compact-test-a",
+    "url": "https://clawhub.ai/skills/compact-test-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compact-test-a-b625ff72a48fee45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart context compaction for OpenClaw agents. 4-phase progressive strategy: Scan, Extract, Check, Compact. Before running /compact, this skill scans tool out..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wavmson",
+      "userId": "s1757c42efs3j405hc00csdrxs840yj8",
+      "displayName": "wavmson",
+      "image": "https://avatars.githubusercontent.com/u/127436552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775066295303,
+      "changelog": "Smart Compact v1.0.0 — Progressive context compaction with memory preservation\n\n- Implements a 4-phase \"Scan, Extract, Check, Compact\" workflow to prevent data loss before context compression.\n- Automatically reviews large tool outputs, extracts key information, and writes it into dedicated memory files.\n- Generates a detailed pre-compaction checklist highlighting what has been saved or still needs attention.\n- Only proceeds to compacting when user confirms; never overwrites existing memory.\n- Triggered by context nearing limit, user command, or pre-compact actions; fully transparent with users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb3f171c3b4fdcb5f09d909682f311db875fa80850df8f01c69e61263ecbf856"
+}

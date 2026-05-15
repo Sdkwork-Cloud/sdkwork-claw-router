@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72445,
+  "uuid": "skill-clawhub-flyai-visa-timeline",
+  "skillKey": "clawhub-flyai-visa-timeline",
+  "name": "签证时间线",
+  "summary": "签证进度规划与提醒助手。输入目的地和出行日期，倒推生成签证办理时间线、材料清单和每步截止日期。当用户提到\"签证怎么办\"、\"签证时间\"、\"签证材料\"、\"来得及办签证吗\"、\"签证规划\"、\"办签证\"时使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_visa_timeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello_hang",
+      "features": [
+        "签证进度规划与提醒助手。输入目的地和出行日期，倒推生成签证办理时间线、材料清单和每步截止日期。当用户提到\"签证怎么办\"、\"签证时间\"、\"签证材料\"、\"来得及办签证吗\"、\"签证规划\"、\"办签证."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-visa-timeline@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19886468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-visa-timeline",
+      "url": "https://clawhub.ai/skills/flyai-visa-timeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-visa-timeline",
+    "url": "https://clawhub.ai/skills/flyai-visa-timeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-visa-timeline-f0889655936fd3c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-visa-timeline@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-visa-timeline-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba928f6f41c3da1df75c1cb3b01e6f950e46288ccc0eed6e34b723058ab62a53",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:27:38.780Z"
+}

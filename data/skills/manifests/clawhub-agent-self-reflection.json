@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11793,
+  "uuid": "skill-clawhub-agent-self-reflection",
+  "skillKey": "clawhub-agent-self-reflection",
+  "name": "Self Reflection",
+  "summary": "Periodic self-reflection on recent sessions. Analyzes what went well, what went wrong, and writes concise, actionable insights to the appropriate workspace f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_reflection",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrennerSpear",
+      "features": [
+        "Periodic self-reflection on recent sessions",
+        "Analyzes what went well, what went wrong, and writes concise, actionable insights to the approp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-self-reflection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12127609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-self-reflection",
+      "url": "https://clawhub.ai/skills/agent-self-reflection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-reflection",
+    "url": "https://clawhub.ai/skills/agent-self-reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-reflection-63308d110a73df7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-self-reflection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-self-reflection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6db91e88551095ba499bacad581a9912ed7e2ada4972f73401eba371ad5e663",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T20:41:22.637Z"
+}

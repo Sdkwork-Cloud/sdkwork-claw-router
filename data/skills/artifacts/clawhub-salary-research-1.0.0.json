@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salary-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salary_research",
+  "skill": {
+    "id": 62786,
+    "skillKey": "clawhub-salary-research",
+    "name": "Salary Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salary-research",
+    "url": "https://clawhub.ai/skills/salary-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salary-research-fd91c0da3a3ae746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "薪酬调研助手 - 查询岗位薪酬数据并生成分析报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanwan2qq",
+      "userId": "s17f4y8w2zqt029zxpda828d7583h397",
+      "displayName": "wanwan2qq",
+      "image": "https://avatars.githubusercontent.com/u/10196216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774500554991,
+      "changelog": "Initial release of 薪酬调研助手 (salary-research):\n\n- 支持通过自然语言查询岗位薪酬数据并生成分析报告\n- 自动提取岗位、城市、经验、学历等参数，支持城市别名识别\n- 可显示薪资范围、平均薪资、行业和城市对比分析\n- 提供多种数据输出格式（Markdown/JSON/Text/CSV）\n- 支持企业内部薪酬数据上传、查询及报告生成功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:396e09e0b0dcab834c7f9c6b55a4550441134564d34e2e69cad83dbdd0265d68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-deep-research@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_deep_research",
+  "skill": {
+    "id": 68594,
+    "skillKey": "clawhub-feishu-deep-research",
+    "name": "Create a Deep Research Feishu Doc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-deep-research",
+    "url": "https://clawhub.ai/skills/feishu-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-deep-research-37fe88984ed3a826.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书深度研究报告生成器。自动执行深度研究并将结果导入为飞书文档。输入研究主题和云空间文件夹token，自动生成结构化研究报告并上传到飞书云空间。用于投资研究、行业分析、竞品调研、技术调研等需要多步骤信息收集和文档化的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henryjing96",
+      "userId": "publishers:henryjing96",
+      "displayName": "henryjing96",
+      "image": "https://avatars.githubusercontent.com/u/31128061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1713,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770550192418,
+      "changelog": "Feishu Deep Research 2.0.0 — 全新端到端自动化深度研究工具，通过飞书下达指令，交付飞书文档\n\n- 支持自动多轮深度研究，涵盖数据收集、完整性校验、结构化报告生成及导入飞书云空间全流程。\n- 强化合规要求：**所有飞书操作必须用 exec+curl 直连 API**，禁止使用任何封装工具。\n- 实现全流程检查点，上传、导入、轮询每步都需明示 token、ticket、job_status，确保可追溯。\n- 增强出错处理和权限校验；API异常、中断、来源数不足等情况一律停止并报告，不降级执行。\n- 新增结构化输入/输出参数、研究深度选项和标准化报告输出。\n- 使用示例、配置说明与可视化Markdown结构，便于直接上手和集成。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60792e493f765064871f50d4e9331e8f3ce9c657a3610a075b228de3a520dce2"
+}

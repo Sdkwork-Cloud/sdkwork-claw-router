@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58965,
+  "uuid": "skill-clawhub-session-cleanup-pro",
+  "skillKey": "clawhub-session-cleanup-pro",
+  "name": "Session Cleanup Pro",
+  "summary": "Clean orphan .jsonl files and stale sessions in OpenClaw session storage with safe confirmation flow. 适用于会话列表杂乱、历史会话堆积、需要释放存储空间场景；默认保护 72 小时内会话，删除前必须用户确认。",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cleanup_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "irideas",
+      "features": [
+        "Clean orphan .jsonl files and stale sessions in OpenClaw session storage with safe confirmation.",
+        "适用于会话列表杂乱、历史会话堆积、需要释放存储空间场景；默认保护 72 小时内会话，删除前必须用户确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-cleanup-pro@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192851?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-cleanup-pro",
+      "url": "https://clawhub.ai/skills/session-cleanup-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cleanup-pro",
+    "url": "https://clawhub.ai/skills/session-cleanup-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cleanup-pro-d87d8ce2b38bcf2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-cleanup-pro@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-cleanup-pro-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6eb1153196609d6cd4f6991cd198b9632dc2ee30a863be5b1a955edf7dccf6fc",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:48:42.026Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25517,
+  "uuid": "skill-clawhub-pkedge",
+  "skillKey": "clawhub-pkedge",
+  "name": "Polymarket Intelligence Skill",
+  "summary": "Monitor Polymarket prediction markets, spot mispricings between crowd probabilities and real-world evidence, track whale positioning from the top-50 leaderbo...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pkedge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "franks33",
+      "features": [
+        "Monitor Polymarket prediction markets, spot mispricings between crowd probabilities and real-wo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pkedge@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160375494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pkedge",
+      "url": "https://clawhub.ai/skills/pkedge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pkedge",
+    "url": "https://clawhub.ai/skills/pkedge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pkedge-5b89a79076e3d975.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pkedge@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pkedge-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ba65eb3a600bf38c1e7cf46faba851430acc6ba868823e7a180084a4c8a2072",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:48:55.002Z"
+}

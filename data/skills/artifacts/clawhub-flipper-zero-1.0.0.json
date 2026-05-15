@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flipper-zero@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flipper_zero",
+  "skill": {
+    "id": 36463,
+    "skillKey": "clawhub-flipper-zero",
+    "name": "Flipper Zero"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flipper-zero",
+    "url": "https://clawhub.ai/skills/flipper-zero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flipper-zero-8a6340cdabef3d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Flipper Zero hardware via USB serial or BLE for SubGHz, IR, NFC, GPIO, file system, screen capture, and input without Android or intermediary apps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elvisexmachina",
+      "userId": "s17ep2r1wcn06mxh9834vs0f2x83ekyc",
+      "displayName": "ElvisExMachina",
+      "image": "https://avatars.githubusercontent.com/u/45496062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774300133247,
+      "changelog": "Initial release: USB serial CLI, BLE Protobuf RPC, screen capture + input, SubGHz over BLE. Full Flipper Zero control without Android.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaddce3a17829cf8e02673e4d635bfa475925d7c880223b32ed8c10e5b7f3451"
+}

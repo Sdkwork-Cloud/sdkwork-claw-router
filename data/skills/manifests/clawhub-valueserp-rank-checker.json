@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57190,
+  "uuid": "skill-clawhub-valueserp-rank-checker",
+  "skillKey": "clawhub-valueserp-rank-checker",
+  "name": "ValueSERP Rank Checker",
+  "summary": "Verifica la posición de una palabra clave para un dominio específico en Google usando la API de ValueSERP. Úsalo cuando el usuario pregunte \"¿en qué posición...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valueserp_rank_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jorge Jaramillo",
+      "features": [
+        "Verifica la posición de una palabra clave para un dominio específico en Google usando la API de.",
+        "Úsalo cuando el usuario pregunte \"¿en qué posición..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/valueserp-rank-checker@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1000755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "valueserp-rank-checker",
+      "url": "https://clawhub.ai/skills/valueserp-rank-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valueserp-rank-checker",
+    "url": "https://clawhub.ai/skills/valueserp-rank-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valueserp-rank-checker-80596a855d914870.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/valueserp-rank-checker@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-valueserp-rank-checker-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a178e0cea54c92b9699b8e0bc2b5d4c63ff11167fc1f14fe91502abd6f2a4d1",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T21:19:12.981Z"
+}

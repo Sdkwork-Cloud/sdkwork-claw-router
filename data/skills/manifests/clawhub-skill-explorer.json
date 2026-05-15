@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17429,
+  "uuid": "skill-clawhub-skill-explorer",
+  "skillKey": "clawhub-skill-explorer",
+  "name": "Skill Explorer",
+  "summary": "Systematically discover, evaluate, compare, and assess OpenClaw skills to find the right, safe, and high-quality option for your specific task.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_explorer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "River Yan",
+      "features": [
+        "Systematically discover, evaluate, compare, and assess OpenClaw skills to find the right, safe,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3059527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-explorer",
+      "url": "https://clawhub.ai/skills/skill-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-explorer",
+    "url": "https://clawhub.ai/skills/skill-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-explorer-7e01f0c855ec0592.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdb7dfdc3e7cbf221226ce8882b6814f0a02580cee7566f48cd402a1ace394c9",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:33:13.861Z"
+}

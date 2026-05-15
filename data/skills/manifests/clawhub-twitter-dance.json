@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64845,
+  "uuid": "skill-clawhub-twitter-dance",
+  "skillKey": "clawhub-twitter-dance",
+  "name": "twitter-dance",
+  "summary": "基于 apidance.pro API，自动生成并发布推文，支持账户统计、通知管理、自动回复和互动分析，适合日常社媒运营自动化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_dance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evan",
+      "features": [
+        "基于 apidance.pro API，自动生成并发布推文，支持账户统计、通知管理、自动回复和互动分析，适合日常社媒运营自动化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-dance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96123524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-dance",
+      "url": "https://clawhub.ai/skills/twitter-dance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-dance",
+    "url": "https://clawhub.ai/skills/twitter-dance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-dance-33e7397b7c79281a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-dance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-dance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a84219bf6bb7e6073fa6d1bb5c01054b9918a94a3f0ad1378b159c20606b7de",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:04:01.882Z"
+}

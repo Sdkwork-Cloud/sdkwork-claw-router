@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent-tools@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_tools",
+  "skill": {
+    "id": 15330,
+    "skillKey": "clawhub-ai-agent-tools",
+    "name": "Ai Agent Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-tools",
+    "url": "https://clawhub.ai/skills/ai-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-tools-0dd6fc168f1f5b43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python library offering file handling, text extraction, data conversion, utilities, memory storage, and validation tools for AI agent workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cerbug45",
+      "userId": "s170r0ajc2x7b9pyqmvrajgtxx85hz4r",
+      "displayName": "cerbug45",
+      "image": "https://avatars.githubusercontent.com/u/43820349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 992,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771170626420,
+      "changelog": "ai-agent-tools 0.1.0 – Initial Release\n\n- Introduces a Python utility library designed for AI agents.\n- Provides six toolsets: FileTools (file operations), TextTools (text analysis), DataTools (data transformation), UtilityTools (general utilities), MemoryTools (session memory), and ValidationTools (data validation).\n- No external dependencies; relies solely on the Python standard library.\n- Includes comprehensive usage examples and best practice guidelines in the documentation.\n- Suitable for tasks involving file management, data extraction, validation, transformation, and workflow automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19432e7324b6b4f7509dff3a322678494eca5a0baecc55e720968e2041a503db"
+}

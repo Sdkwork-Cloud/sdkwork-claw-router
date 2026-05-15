@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-info@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_info",
+  "skill": {
+    "id": 21693,
+    "skillKey": "clawhub-startup-info",
+    "name": "Startup Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-info",
+    "url": "https://clawhub.ai/skills/startup-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-info-52c8a2731818f73f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate concise investor-style briefings on startups using live web searches to extract verified company info, funding, founders, traction, and competitors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brunobuddy",
+      "userId": "s17fn456aya8ah2hy2zav8sg6d83ecrm",
+      "displayName": "Bruno Pérez",
+      "image": "https://avatars.githubusercontent.com/u/6626184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772244466504,
+      "changelog": "Startup Info — v1.0.0\n\n- Initial release of universal startup briefing skill for any LLM with web search.\n- Provides detailed system prompt and research flow for consistent investor-style startup summaries.\n- Includes structured output template covering product, founders, funding, traction, competitors, and key risks.\n- Outlines search strategies and strict rules for data accuracy, missing info, and edge cases.\n- Designed for use with LLM tools supporting web search (e.g., ChatGPT Custom GPTs, Gemini, Claude, Cursor, LangChain agents).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:470f72ecf25aabaedf617505cf57c8cc588afada7d97f96e81a56cd7e9d1ce4c"
+}

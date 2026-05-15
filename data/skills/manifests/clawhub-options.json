@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24800,
+  "uuid": "skill-clawhub-options",
+  "skillKey": "clawhub-options",
+  "name": "Options",
+  "summary": "Log and review options trades with trend analysis and exportable position reports. Use when tracking trades, reviewing positions, exporting trade summaries.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Log and review options trades with trend analysis and exportable position reports",
+        "Use when tracking trades, reviewing positions, exporting trade summaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/options@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "options",
+      "url": "https://clawhub.ai/skills/options"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options",
+    "url": "https://clawhub.ai/skills/options",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-a793ab8fcc2afce5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/options@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-options-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e29ed40a03f85dc37ab8760e8af4376a2d629ae629011cb989a0e1b8ebbdc95",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:50:02.752Z"
+}

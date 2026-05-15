@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/assetclaw@1.5.8",
+  "version": "1.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assetclaw",
+  "skill": {
+    "id": 65983,
+    "skillKey": "clawhub-assetclaw",
+    "name": "AssetClaw 资产管理系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assetclaw",
+    "url": "https://clawhub.ai/skills/assetclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assetclaw-cc8f50c038acc573.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AssetClaw技能（官网：http://www.medfix.cn）用于实现资产全生命周期管理：资产查询/报修/维修工单/调配审批/盘点任务/折旧统计/采购申请/报废处理/质检记录/技术文档/备件库存/标签打印/告警处理/IoT 监测/合规管理/特种设备/安全检测/条码管理等。适用于需要快速查询、创建、审批各..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmu4hlee",
+      "userId": "s174xg4367hs692qm6jn36af1183hp0b",
+      "displayName": "cmu4hlee",
+      "image": "https://avatars.githubusercontent.com/u/7542991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 30
+    },
+    "latestVersion": {
+      "version": "1.5.8",
+      "createdAt": 1778298999844,
+      "changelog": "v1.5.8: 基于Swagger OpenAPI规范(908端点)全面补充——新增验收记录、不良事件、维修成本效率分析、仪表盘配置、合规管理补充、用户管理补充、折旧补充、盘点补充、文档管理补充、IoT补充、开机率管理、国际化等22个分组209个端点；文档从2960行扩至3637行；端点从206个增至415个",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd5e9f319acef1ee703f37ab5e0e03c86264a9bd09880044b1f968d6ddc36f42"
+}

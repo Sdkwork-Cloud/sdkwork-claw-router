@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57898,
+  "uuid": "skill-clawhub-smyx-custom-timelapse-analysis",
+  "skillKey": "clawhub-smyx-custom-timelapse-analysis",
+  "name": "时光相册自定义浓缩分析技能",
+  "summary": "Generates condensed album highlights based on specified keywords or targets. It extracts specific target segments from long videos and compiles them into an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_custom_timelapse_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Generates condensed album highlights based on specified keywords or targets",
+        "It extracts specific target segments from long videos and compiles them into an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-custom-timelapse-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-custom-timelapse-analysis",
+      "url": "https://clawhub.ai/skills/smyx-custom-timelapse-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-custom-timelapse-analysis",
+    "url": "https://clawhub.ai/skills/smyx-custom-timelapse-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-custom-timelapse-analysis-01c2fc82bbf95679.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-custom-timelapse-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-custom-timelapse-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0234f2291ac7db2dce5067e943275c8a594ae04f401a3f2204f130dd1c93d2ab",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T22:33:40.753Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14298,
+  "uuid": "skill-clawhub-dlazy-superres",
+  "skillKey": "clawhub-dlazy-superres",
+  "name": "Dlazy Superres",
+  "summary": "Enhances image resolution and clarity from a URL or local path, returning an improved image URL for low-res restoration and upscaling.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_superres",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Enhances image resolution and clarity from a URL or local path, returning an improved image URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-superres@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-superres",
+      "url": "https://clawhub.ai/skills/dlazy-superres"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-superres",
+    "url": "https://clawhub.ai/skills/dlazy-superres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-superres-1d17b792c84ddc93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-superres@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-superres-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9c457a5253fe6e77758648b1be2e009b10e978c341f869993b5e92554782c00",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:10:56.443Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25520,
+  "uuid": "skill-clawhub-rollinggo-hotel",
+  "skillKey": "clawhub-rollinggo-hotel",
+  "name": "rollinggo-hotel",
+  "summary": "Hotel search and pricing via the RollingGo CLI. Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distance, inspect ho...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollinggo_hotel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dreamtzlong",
+      "features": [
+        "Hotel search and pricing via the RollingGo CLI",
+        "Use when the user wants to search hotels by destination, filter by date/star/budget/tags/distan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rollinggo-hotel@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232517634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rollinggo-hotel",
+      "url": "https://clawhub.ai/skills/rollinggo-hotel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollinggo-hotel",
+    "url": "https://clawhub.ai/skills/rollinggo-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollinggo-hotel-85f45346456bf469.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rollinggo-hotel@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rollinggo-hotel-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab740291a5d6755b9edbd2251ee4c0c741a87c9bf3d00ecb85d3e155cd6e0a58",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T10:14:12.374Z"
+}

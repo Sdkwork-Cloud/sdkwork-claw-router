@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50951,
+  "uuid": "skill-clawhub-http-api",
+  "skillKey": "clawhub-http-api",
+  "name": "Http Api",
+  "summary": "Shape HTTP/JSON APIs—resources and verbs, error payloads, pagination, idempotency, and docs. Use when designing new endpoints, reviewing PRs, or aligning tea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Shape HTTP/JSON APIs—resources and verbs, error payloads, pagination, idempotency, and docs",
+        "Use when designing new endpoints, reviewing PRs, or aligning tea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-api",
+      "url": "https://clawhub.ai/skills/http-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-api",
+    "url": "https://clawhub.ai/skills/http-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-api-64b92ffe84f9c4a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e19ea5b79e27e4c1213a2b25279e48d85ac75b43f4c4153db2d3404cbc4109b",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:52:15.345Z"
+}

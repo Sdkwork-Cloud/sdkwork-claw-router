@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-failover@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_failover",
+  "skill": {
+    "id": 43629,
+    "skillKey": "clawhub-api-failover",
+    "name": "API Failover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-failover",
+    "url": "https://clawhub.ai/skills/api-failover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-failover-63fe6222d8926aa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect AI API/provider/model failures and route requests to healthy fallback providers or downgraded models. Use when creating or maintaining automatic failo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zqh2333",
+      "userId": "s17dq27qynd9j1cwkrxvc2qzfd83z6x1",
+      "displayName": "Qihong",
+      "image": "https://avatars.githubusercontent.com/u/49940695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775070241410,
+      "changelog": "Add model-aware downgrade routing, auto/hinted/body controls, cleaner failure UX, secondary activation flow, delivery docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:615382eb815ac04485d07b5433d460b64139946662d772207320a88218ae9b02"
+}

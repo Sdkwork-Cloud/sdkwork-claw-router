@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-report@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_report",
+  "skill": {
+    "id": 69668,
+    "skillKey": "clawhub-stock-analysis-report",
+    "name": "Stock Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-report",
+    "url": "https://clawhub.ai/skills/stock-analysis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-report-0145eb416095debe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供A股个股及市场多维度深度分析，涵盖基本面、资金面、技术面、筹码和舆情，给出评分及买卖操作建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "derrors",
+      "userId": "s17a2g9ec3f6zcpwkg0p441gc98599nv",
+      "displayName": "Derrors",
+      "image": "https://avatars.githubusercontent.com/u/33656531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776823731064,
+      "changelog": "- Pytdx 数据源被移除，精简为妙想金融、Efinance、AkShare 三级自动容灾。\n- 妙想金融资讯正文将直接传递给 LLM 作为分析输入，辅助生成分析摘要和投资结论。\n- SKILL.md 说明文档同步更新，优化并明确各数据源优先级及失效容灾逻辑。\n- 依赖和主要脚本同步调整，确保移除 Pytdx 后运行和数据采集逻辑正常。\n- 输出 json 字段和样例简化说明，将资讯摘要命名更通用，并统一 LLM 分析入口。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d3f8553f619e204809b352ade1147071b2ca8dae634b917972fe9363778192b"
+}

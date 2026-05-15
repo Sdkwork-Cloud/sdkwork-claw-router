@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20116,
+  "uuid": "skill-clawhub-shortapi-ai-video-generation",
+  "skillKey": "clawhub-shortapi-ai-video-generation",
+  "name": "Al Video Generation",
+  "summary": "Use this skill as an entry point to discover, select, and fetch specific integration parameters for all supported AI video generation models.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortapi_ai_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShortAPl",
+      "features": [
+        "Use this skill as an entry point to discover, select, and fetch specific integration parameters."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortapi-ai-video-generation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95574719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortapi-ai-video-generation",
+      "url": "https://clawhub.ai/skills/shortapi-ai-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortapi-ai-video-generation",
+    "url": "https://clawhub.ai/skills/shortapi-ai-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortapi-ai-video-generation-0e30db33077f80ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortapi-ai-video-generation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortapi-ai-video-generation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d670c8dcfdb5623219d82dea67f1268657937b38671d196900c5a5611b777ae3",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:56:13.512Z"
+}

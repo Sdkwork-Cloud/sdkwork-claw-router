@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nzta-traffic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nzta_traffic",
+  "skill": {
+    "id": 28474,
+    "skillKey": "clawhub-nzta-traffic",
+    "name": "NZTA Traffic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nzta-traffic",
+    "url": "https://clawhub.ai/skills/nzta-traffic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nzta-traffic-26fa4fda985e87d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time NZ state highway traffic conditions from the Waka Kotahi NZTA Traffic and Travel API. Use when checking road events, incidents, closures, roa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobwattienz",
+      "userId": "publishers:bobwattienz",
+      "displayName": "bobwattienz",
+      "image": "https://avatars.githubusercontent.com/u/262653694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772787608175,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1ae6043dd50bfeae96d4557a42fc876809801d0faad32489b7552bdd6d84182"
+}

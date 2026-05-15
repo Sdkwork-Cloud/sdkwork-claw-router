@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34888,
+  "uuid": "skill-clawhub-using-arch-compiler",
+  "skillKey": "clawhub-using-arch-compiler",
+  "name": "Using Architecture Compiler",
+  "summary": "Use when starting architecture work and you need to decide whether to compile/finalise architecture or implement an already-approved architecture.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.using_arch_compiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inetgas",
+      "features": [
+        "Use when starting architecture work and you need to decide whether to compile/finalise architec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/using-arch-compiler@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271354125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "using-arch-compiler",
+      "url": "https://clawhub.ai/skills/using-arch-compiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "using-arch-compiler",
+    "url": "https://clawhub.ai/skills/using-arch-compiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/using-arch-compiler-3873f512df33fb9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/using-arch-compiler@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-using-arch-compiler-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29b338e367cb0c632d9e0eb93ac64e5742447a0a738d45e11222b95d0374553e",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:03:19.581Z"
+}

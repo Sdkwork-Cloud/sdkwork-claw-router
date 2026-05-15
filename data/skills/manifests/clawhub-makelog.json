@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36142,
+  "uuid": "skill-clawhub-makelog",
+  "skillKey": "clawhub-makelog",
+  "name": "Makelog",
+  "summary": "Makelog integration. Manage data, records, and automate workflows. Use when the user wants to interact with Makelog data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makelog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Makelog integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Makelog data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/makelog@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "makelog",
+      "url": "https://clawhub.ai/skills/makelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makelog",
+    "url": "https://clawhub.ai/skills/makelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makelog-f825105433c819d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/makelog@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-makelog-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9f32ad1736b62b5e51d0b2a4a4845ef61bb309dbe02895b5a9178949d934a10",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:28.888Z"
+}

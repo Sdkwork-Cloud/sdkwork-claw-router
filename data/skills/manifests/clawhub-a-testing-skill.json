@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31290,
+  "uuid": "skill-clawhub-a-testing-skill",
+  "skillKey": "clawhub-a-testing-skill",
+  "name": "A testing skill",
+  "summary": "Explains code with visual diagrams and analogies. Use when explaining how code works, teaching about a codebase, or when the user asks \"how does this work?",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_testing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeremyctrl",
+      "features": [
+        "Explains code with visual diagrams and analogies",
+        "Use when explaining how code works, teaching about a codebase, or when the user asks \"how does."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-testing-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235932977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-testing-skill",
+      "url": "https://clawhub.ai/skills/a-testing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-testing-skill",
+    "url": "https://clawhub.ai/skills/a-testing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-testing-skill-d26235e6797d5828.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-testing-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-testing-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71dc6a947e473f74366ea1ad499771309a782530dd79f4cc0ab664c7551c62a2",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:04:21.052Z"
+}

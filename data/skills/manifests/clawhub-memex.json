@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54417,
+  "uuid": "skill-clawhub-memex",
+  "skillKey": "clawhub-memex",
+  "name": "Memex Publish",
+  "summary": "Unified memory plugin for OpenClaw — conversation memory + document search in a single SQLite database. 90% E2E accuracy on LongMemEval (ICLR 2025) with GPT-...",
+  "version": "0.5.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ofan",
+      "features": [
+        "Unified memory plugin for OpenClaw — conversation memory + document search in a single SQLite d.",
+        "90% E2E accuracy on LongMemEval (ICLR 2025) with GPT-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memex@0.5.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/319679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memex",
+      "url": "https://clawhub.ai/skills/memex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memex",
+    "url": "https://clawhub.ai/skills/memex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memex-22e09db18c613508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memex@0.5.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-memex-0.5.12.json",
+      "version": "0.5.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4b8d882260fee50a08929081868ad3558caef1e66cf942219b005d9d4c570d7",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:02:06.587Z"
+}

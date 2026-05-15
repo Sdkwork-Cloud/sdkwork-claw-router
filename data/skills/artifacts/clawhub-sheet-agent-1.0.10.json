@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sheet-agent@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sheet_agent",
+  "skill": {
+    "id": 29871,
+    "skillKey": "clawhub-sheet-agent",
+    "name": "Sheet Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sheet-agent",
+    "url": "https://clawhub.ai/skills/sheet-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sheet-agent-5877ceda24589bfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spreadsheet operations agent for CSV and Excel files: inspect data, detect anomalies, answer business questions, generate reports, and preview edits safely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1775045248517,
+      "changelog": "Fix ClawHub listing metadata by publishing a valid English SKILL.md description so the page summary updates from Chinese to English.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e393bad97922af61e4578cbd6a187356b9163cde0162cced9296a9db783d2383"
+}

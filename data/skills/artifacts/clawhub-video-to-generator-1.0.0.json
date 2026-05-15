@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_generator",
+  "skill": {
+    "id": 41522,
+    "skillKey": "clawhub-video-to-generator",
+    "name": "Video To Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-generator",
+    "url": "https://clawhub.ai/skills/video-to-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-generator-df9642640285423e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute product demo video into 1080p generated video clips just by typing what you need. Whether it's generating new videos from existing video foot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776569069478,
+      "changelog": "Initial release of Video to Generator — quickly turn video clips into generated videos via AI.\n\n- Upload video clips and generate new 1080p video content by describing what you want.\n- Simple authentication with automatic free token setup and 100 free credits for new users.\n- Supports quick exports, status checks, and cloud-based rendering (instant 1080p MP4 output).\n- Intuitive prompt routing for upload, export, credits, and timeline state.\n- Handles common errors (expired tokens, file size/type issues, out of credits) gracefully.\n- Includes session management for continuous editing and iterative video refinements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e7c30414112442623a89d880b1813660ff6e4b1a81c850bb41389a7e1978e18"
+}

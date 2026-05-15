@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68020,
+  "uuid": "skill-clawhub-minimax-ai",
+  "skillKey": "clawhub-minimax-ai",
+  "name": "Minimax",
+  "summary": "整理MiniMax大模型公开页面信息，提供模型能力、定价与文档目录的摘要与链接汇总。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "整理MiniMax大模型公开页面信息，提供模型能力、定价与文档目录的摘要与链接汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-ai",
+      "url": "https://clawhub.ai/skills/minimax-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-ai",
+    "url": "https://clawhub.ai/skills/minimax-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-ai-44ac51315309bab3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ace42138bfca5567c2cd04eaff65341fa4c0da2f496dfb7e6ae4340a8ce537fc",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:50:47.908Z"
+}

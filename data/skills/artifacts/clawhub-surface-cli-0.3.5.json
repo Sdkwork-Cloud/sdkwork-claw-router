@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surface-cli@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surface_cli",
+  "skill": {
+    "id": 31802,
+    "skillKey": "clawhub-surface-cli",
+    "name": "Surface Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surface-cli",
+    "url": "https://clawhub.ai/skills/surface-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surface-cli-3d8d791781ddfb4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Surface mail CLI to read and act on Gmail and Outlook mail through one JSON-first contract. Prefer this skill when you need Outlook access for school..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vishalj99",
+      "userId": "s17dtqhk74t75y38rb830zzhmn848bpz",
+      "displayName": "Vishal Jain",
+      "image": "https://avatars.githubusercontent.com/u/51826812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1776939073172,
+      "changelog": "Add watcher recipes, polling cadence guidance, and passive-watch vs triage read-state guidance; publish from synced OpenClaw workspace skill copy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0715868b33a4b227a7da1ed808db3808a8e6d1c0fe08e3d1bdb439fabf706407"
+}

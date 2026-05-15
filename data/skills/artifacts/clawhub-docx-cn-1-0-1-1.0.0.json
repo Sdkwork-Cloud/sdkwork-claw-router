@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-cn-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_cn_1_0_1",
+  "skill": {
+    "id": 58406,
+    "skillKey": "clawhub-docx-cn-1-0-1",
+    "name": "Docx Cn 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-cn-1-0-1",
+    "url": "https://clawhub.ai/skills/docx-cn-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-cn-1-0-1-9728e43dc8ee17ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Word 文档处理 | Word Document Processing. 创建、读取、编辑 Word 文档 | Create, read, edit Word documents. 支持 .docx 格式、格式化、表格、图片 | Supports .docx format, formatting, tables..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binbin",
+      "userId": "s1782dxvn6h7vsb92bk4fhrg9583k1tb",
+      "displayName": "Beta",
+      "image": "https://avatars.githubusercontent.com/u/276284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774061692253,
+      "changelog": "- Initial release of docx-cn with comprehensive documentation for Word (.docx) document processing.\n- Supports creating, reading, and editing .docx files, including formatting, tables, and images.\n- Provides step-by-step guides and code samples for document generation using docx-js (JavaScript).\n- Covers best practices for styling, lists, tables, images, page setup, and tracked changes.\n- Includes command-line utilities and common troubleshooting strategies for DOCX file compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70ee7b971435983fd97a0af01e2bb0b66465726fc0fed3562b1a88d92a9b5a38"
+}

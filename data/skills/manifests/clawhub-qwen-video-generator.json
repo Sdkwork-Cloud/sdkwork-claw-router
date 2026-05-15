@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62368,
+  "uuid": "skill-clawhub-qwen-video-generator",
+  "skillKey": "clawhub-qwen-video-generator",
+  "name": "Qwen Video Generator",
+  "summary": "阿里云百炼文生视频工具。使用 wan2.2-t2v-plus 模型将文本描述生成视频。**当以下情况时使用此 Skill**：(1) 用户需要根据文字描述生成视频 (2) 用户提到\"文生视频\"、\"生成视频\"、\"AI视频\"、\"text to video\" (3) 需要创建短视频内容 (4) 需要可视化场景描述。支持...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marvin",
+      "features": [
+        "阿里云百炼文生视频工具。使用 wan2.2-t2v-plus 模型将文本描述生成视频。**当以下情况时使用此 Skill**：(1) 用户需要根据文字描述生成视频 (2) 用户提到\"文生视频."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-video-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1510444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-video-generator",
+      "url": "https://clawhub.ai/skills/qwen-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-video-generator",
+    "url": "https://clawhub.ai/skills/qwen-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-video-generator-9c88a678fbceabac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-video-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-video-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98c7e75203ad1e4a4dd5a290746103158ec9a027643be601dbfab0fb2b04d65b",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:55:59.512Z"
+}

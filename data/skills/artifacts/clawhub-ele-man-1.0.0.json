@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ele-man@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ele_man",
+  "skill": {
+    "id": 66390,
+    "skillKey": "clawhub-ele-man",
+    "name": "Ele Man"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ele-man",
+    "url": "https://clawhub.ai/skills/ele-man",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ele-man-77a5f2c6b61f6568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "饿了么 Ele.me 是中国领先的外卖平台，成立于2008年，提供多样餐饮配送服务和市场分析信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776224294798,
+      "changelog": "- 初始版本发布，提供饿了么（Ele.me）平台的详细简介与核心业务介绍\n- 支持查询公司历史、愿景、产品服务、行业地位及最新动态\n- 提供针对基础信息、产品特点和市场表现的快速问答场景\n- 列出官方链接用于进一步了解",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5bdab6e9415b92b777f0a0dad303b0cc5ccb90f75264cfb800363faac2b56f0"
+}

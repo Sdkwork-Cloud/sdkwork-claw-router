@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-twitter-post-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_post_publisher",
+  "skill": {
+    "id": 48072,
+    "skillKey": "clawhub-x-twitter-post-publisher",
+    "name": "X Twitter Post Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-post-publisher",
+    "url": "https://clawhub.ai/skills/x-twitter-post-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-post-publisher-219fb8cae4ad76b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish posts to X/Twitter from plain text or markdown post banks using OpenCLI with an already logged-in browser session. Use when the user wants to auto-po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinhuadeng",
+      "userId": "s170kx8tdmb287fj3gzs4dhq3h83krvj",
+      "displayName": "Koi",
+      "image": "https://avatars.githubusercontent.com/u/135015309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777646519744,
+      "changelog": "Initial release: reliable X/Twitter posting via OpenCLI + native clipboard paste for Draft.js compose",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e17bf99736f79b49e738be465f6e6f8180efb06474586e8898ca48c5981383ee"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58487,
+  "uuid": "skill-clawhub-ai-agent-skills-manager",
+  "skillKey": "clawhub-ai-agent-skills-manager",
+  "name": "AI Agent Skills Manager - 智能体技能管理工具",
+  "summary": "AI Agent Skills Manager - 智能体技能管理工具。安装和管理 OpenClaw 技能包，提供交互式选择界面。Use when: (1) User wants to install AI agent skills, (2) User needs to manage OpenClaw skill...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_skills_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "中国山东肥城林水科技",
+      "features": [
+        "AI Agent Skills Manager",
+        "智能体技能管理工具。安装和管理 OpenClaw 技能包，提供交互式选择界面。Use when: (1) User wants to install AI agent skills, (2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-agent-skills-manager@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129362705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-agent-skills-manager",
+      "url": "https://clawhub.ai/skills/ai-agent-skills-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-skills-manager",
+    "url": "https://clawhub.ai/skills/ai-agent-skills-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-skills-manager-70034d800a192589.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-agent-skills-manager@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-skills-manager-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d089168b52a8db3aa25f57589c0edb7eb1122ce60ab15d1247c705fd8abd449",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T08:08:31.499Z"
+}

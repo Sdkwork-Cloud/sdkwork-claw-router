@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49568,
+  "uuid": "skill-clawhub-youtube-reporting",
+  "skillKey": "clawhub-youtube-reporting",
+  "name": "YouTube Reporting",
+  "summary": "YouTube Reporting API integration with managed OAuth. Schedule and download bulk YouTube Analytics reports as CSV files. Use this skill when users want to sc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_reporting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "YouTube Reporting API integration with managed OAuth",
+        "Schedule and download bulk YouTube Analytics reports as CSV files",
+        "Use this skill when users want to sc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-reporting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-reporting",
+      "url": "https://clawhub.ai/skills/youtube-reporting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-reporting",
+    "url": "https://clawhub.ai/skills/youtube-reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-reporting-e85897d68dbb3dd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-reporting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-reporting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7de75b03e253d82fd04e6aa725907cf0ff2ebb5f3fc99c3264615e293dd13ffe",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:13:38.251Z"
+}

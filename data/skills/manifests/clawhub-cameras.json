@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14673,
+  "uuid": "skill-clawhub-cameras",
+  "skillKey": "clawhub-cameras",
+  "name": "Cameras",
+  "summary": "Connect to security cameras, capture snapshots, and process video feeds with protocol support.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cameras",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Connect to security cameras, capture snapshots, and process video feeds with protocol support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cameras@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cameras",
+      "url": "https://clawhub.ai/skills/cameras"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cameras",
+    "url": "https://clawhub.ai/skills/cameras",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cameras-fa4d296d6b50f67b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cameras@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cameras-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b298a735fbc7639933aadcfe8cf20b5e638da70a60852c5aad7da747fa0a6b64",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T17:40:10.953Z"
+}

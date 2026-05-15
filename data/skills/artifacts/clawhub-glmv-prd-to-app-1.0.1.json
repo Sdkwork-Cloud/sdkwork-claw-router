@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glmv-prd-to-app@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_prd_to_app",
+  "skill": {
+    "id": 25787,
+    "skillKey": "clawhub-glmv-prd-to-app",
+    "name": "glmv-prd-to-app"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-prd-to-app",
+    "url": "https://clawhub.ai/skills/glmv-prd-to-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-prd-to-app-1603c9ec9946de1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a complete, production-ready full-stack web application from PRD documents, prototype images, and resource files. Handles the entire pipeline: system d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zai-org",
+      "userId": "s173sh1fb6z7xwvxgf5n3z6sdd83sddy",
+      "displayName": "zai-org",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774843122203,
+      "changelog": "- Renamed the skill from \"prd-to-app\" to \"glmv-prd-to-app\" throughout documentation.\n- Updated all major documentation sections to use the new skill name.\n- No changes to core logic or functionality; content and instructions remain the same.\n- No file changes detected aside from the skill name update in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d272fec1ba383785ad76049b003d272c3c40a0ddaf7a7eac39285702c5e73886"
+}

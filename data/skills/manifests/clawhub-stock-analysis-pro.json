@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63300,
+  "uuid": "skill-clawhub-stock-analysis-pro",
+  "skillKey": "clawhub-stock-analysis-pro",
+  "name": "Stock Analysis Pro",
+  "summary": "专业股票分析技能整合 akshare 数据 + 技术指标 + 板块轮动 + 持仓诊断。触发词：'分析股票'、'今日行情'、'持仓诊断'、'推荐股票'、'今日财经'。无需API密钥，直接调用 akshare 获取A股/基金/期货实时数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windy-001-crypto",
+      "features": [
+        "专业股票分析技能整合 akshare 数据 + 技术指标 + 板块轮动 + 持仓诊断。触发词：'分析股票'、'今日行情'、'持仓诊断'、'推荐股票'、'今日财经'。无需API密钥，直接调用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258460660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis-pro",
+      "url": "https://clawhub.ai/skills/stock-analysis-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-pro",
+    "url": "https://clawhub.ai/skills/stock-analysis-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-pro-1bab8f1bce34bfb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de80ee5b076a576e0050aeb57b158926e8fe234b4b5874457f59427a26f62aef",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:30:37.236Z"
+}

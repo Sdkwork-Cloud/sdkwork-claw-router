@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62258,
+  "uuid": "skill-clawhub-qqbot-persona",
+  "skillKey": "clawhub-qqbot-persona",
+  "name": "Qqbot Persona",
+  "summary": "QQ 机器人多角色人设管理技能。支持按私聊/群聊/OpenID 定制独立人设，与 OpenClaw 默认人设完全分离。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_persona",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wdwdwd000",
+      "features": [
+        "QQ 机器人多角色人设管理技能。支持按私聊/群聊/OpenID 定制独立人设，与 OpenClaw 默认人设完全分离。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot-persona@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203526799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot-persona",
+      "url": "https://clawhub.ai/skills/qqbot-persona"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-persona",
+    "url": "https://clawhub.ai/skills/qqbot-persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-persona-70efc5029de90714.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot-persona@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-persona-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13a0764b7bbeaf7ef97df58bb470bdb542221a50e83b674fa6c582df09a481af",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:46:33.495Z"
+}

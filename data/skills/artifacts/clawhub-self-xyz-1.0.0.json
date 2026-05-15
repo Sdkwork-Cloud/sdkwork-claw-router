@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-xyz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_xyz",
+  "skill": {
+    "id": 19247,
+    "skillKey": "clawhub-self-xyz",
+    "name": "Self zkID verification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-xyz",
+    "url": "https://clawhub.ai/skills/self-xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-xyz-efb9316ecb53dd00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Self (self.xyz) — a privacy-first identity protocol using zero-knowledge proofs to verify passports and ID cards. Use when the user mentions Self protocol, Self identity, self.xyz, passport verification, zero-knowledge identity v."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xturboblitz",
+      "userId": "publishers:0xturboblitz",
+      "displayName": "0xturboblitz",
+      "image": "https://avatars.githubusercontent.com/u/62038140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770937472070,
+      "changelog": "- Initial release of self-xyz skill for integrating the Self (self.xyz) privacy-first identity protocol.\n- Supports zero-knowledge proof-based verification of passports and ID cards with no personal data exposure.\n- Provides quick start guides for off-chain (backend/API) and on-chain (smart contract) integration, including frontend QR code and backend verification examples.\n- Documents key integration patterns (off-chain, on-chain, deep linking) and outlines essential gotchas to prevent common configuration errors.\n- Lists deployed contract addresses for Celo networks.\n- Includes references to detailed configuration and advanced usage guides.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:089c7fafc5a2f5671ae0448f6bb4350b991f455a3fe90d70fb691cc3bcb570c4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-amazon-get-category-products@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_amazon_get_category_products",
+  "skill": {
+    "id": 40988,
+    "skillKey": "clawhub-justoneapi-amazon-get-category-products",
+    "name": "Amazon Products By Category API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-amazon-get-category-products",
+    "url": "https://clawhub.ai/skills/justoneapi-amazon-get-category-products",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-amazon-get-category-products-268c5bd0489f8f6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/amazon/get-category-products/v1 for Amazon Products By Category through JustOneAPI with categoryId."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776957111915,
+      "changelog": "- Improved and clarified documentation for the Amazon Products By Category skill, making the required inputs, endpoint details, and output rules more concise and explicit.\n- Updated skill description and usage instructions to emphasize the single supported endpoint (`GET /api/amazon/get-category-products/v1`) and required `categoryId` parameter.\n- Enhanced tables and enum value listings for all parameters to ensure parameter expectations are easy to reference.\n- Aligned output guidelines to prioritize operation ID, used path, and core Amazon product fields (title, price, rating) in responses.\n- No changes to API logic or endpoint behavior—only documentation and guidance updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0aab4096f1c8194b5cdb4e980fa37b6176ebf4e6e9a37a70a48a8ecb9791bdc"
+}

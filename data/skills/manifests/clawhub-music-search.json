@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69511,
+  "uuid": "skill-clawhub-music-search",
+  "skillKey": "clawhub-music-search",
+  "name": "Music Search",
+  "summary": "搜索音乐资源（歌曲、专辑、无损音乐），从夸克网盘、百度网盘、阿里云盘、UC网盘获取资源链接。触发词：找音乐、找歌、无损音乐、FLAC下载、音乐网盘、歌曲下载、专辑资源、音乐资源、APE下载、DSD音乐、Hi-Res。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "搜索音乐资源（歌曲、专辑、无损音乐），从夸克网盘、百度网盘、阿里云盘、UC网盘获取资源链接。触发词：找音乐、找歌、无损音乐、FLAC下载、音乐网盘、歌曲下载、专辑资源、音乐资源、APE下载、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-search",
+      "url": "https://clawhub.ai/skills/music-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-search",
+    "url": "https://clawhub.ai/skills/music-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-search-57fd938fc13042d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46668e0a700c442f56a86d94e4b14203c992e81997c58483ca3033673fbf6409",
+      "artifactSizeBytes": 2715
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:27:54.285Z"
+}

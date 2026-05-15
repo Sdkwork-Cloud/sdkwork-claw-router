@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-keyword-researcher-kryzl19@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_keyword_researcher_kryzl19",
+  "skill": {
+    "id": 34970,
+    "skillKey": "clawhub-seo-keyword-researcher-kryzl19",
+    "name": "Seo Keyword Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-keyword-researcher-kryzl19",
+    "url": "https://clawhub.ai/skills/seo-keyword-researcher-kryzl19",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-keyword-researcher-kryzl19-db6c132d6a84a07f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research SEO keywords for any topic and generate a complete article brief with primary keyword, secondary keywords, competition analysis, article structure,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774455830404,
+      "changelog": "- Initial release of SEO Keyword Researcher skill.\n- Automates keyword research and generates a comprehensive article brief, including primary and secondary keywords, competition analysis, article structure, and SEO recommendations.\n- Designed for planning new content, researching SEO articles, creating content strategies, and identifying low-competition keywords.\n- Outlines a clear workflow: seed research, competitor analysis, keyword clustering, and article brief creation.\n- Includes built-in prompts for trending search angles and competitor gap analysis.\n- Provides references for further SEO checklist and keyword clustering methods.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0848089c17a7ca99d939caf155b3762f38d0c96b0561d7bfb11075110f774f12"
+}

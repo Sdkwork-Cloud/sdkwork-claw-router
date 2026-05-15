@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31199,
+  "uuid": "skill-clawhub-sitecreatorio",
+  "skillKey": "clawhub-sitecreatorio",
+  "name": "Sitecreatorio",
+  "summary": "Sitecreator.io integration. Manage Sites, Pages, Templates, Images, Domains, Users and more. Use when the user wants to interact with Sitecreator.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sitecreatorio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sitecreator.io integration",
+        "Manage Sites, Pages, Templates, Images, Domains, Users and more",
+        "Use when the user wants to interact with Sitecreator.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sitecreatorio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sitecreatorio",
+      "url": "https://clawhub.ai/skills/sitecreatorio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sitecreatorio",
+    "url": "https://clawhub.ai/skills/sitecreatorio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sitecreatorio-ad1044a973cc5825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sitecreatorio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sitecreatorio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e57f3ce2fa07ad1ff4e63af0b16f2af8cca0ccf00077918deb99e5fc7931e1dc",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:41.039Z"
+}

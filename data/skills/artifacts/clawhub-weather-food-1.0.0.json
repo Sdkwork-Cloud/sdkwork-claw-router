@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-food@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_food",
+  "skill": {
+    "id": 61666,
+    "skillKey": "clawhub-weather-food",
+    "name": "weather-food"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-food",
+    "url": "https://clawhub.ai/skills/weather-food",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-food-4484ca9b22750e7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据天气情况提供饮食建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itcastwsy",
+      "userId": "s17ech5w424ywgapc93pwxpf8d83mmvt",
+      "displayName": "itcastWsy",
+      "image": "https://avatars.githubusercontent.com/u/33108189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773283849823,
+      "changelog": "Initial release of weather-food skill.\n\n- Provides dietary recommendations based on current weather conditions.\n- Offers tailored food suggestions for sunny, cloudy, rainy, hot, and cold days.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a34f57cdd532fa0a7c242a21e0048626c4ab578b81f9198638e301b4c342053"
+}

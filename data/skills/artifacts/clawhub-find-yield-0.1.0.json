@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-yield@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_yield",
+  "skill": {
+    "id": 16665,
+    "skillKey": "clawhub-find-yield",
+    "name": "Uniswap Find Yield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-yield",
+    "url": "https://clawhub.ai/skills/find-yield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-yield-ea64e021e1b56f65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the highest-yield LP pools on Uniswap filtered by risk tolerance and minimum TVL. Use when the user asks about the best yields, highest APY pools, or where to earn fees."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 852,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745526675,
+      "changelog": "Initial release of find-yield skill.\n\n- Finds highest-yield Uniswap LP pools filtered by user-specified risk tolerance and minimum TVL.\n- Delegates LP yield scanning to the opportunity-scanner agent with relevant filters.\n- Presents results as a ranked yield table, including APY, TVL, and risk.\n- Supports risk adjustment, TVL threshold, optional capital input, and multi-chain queries.\n- Provides clear user-facing error handling for empty results or chain scan failures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:120fe8e75ec9ba8db78c9b8d15a4f0615dcad880dd3b40798465a17668684840"
+}

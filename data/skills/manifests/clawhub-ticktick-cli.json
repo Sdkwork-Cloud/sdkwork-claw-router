@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14451,
+  "uuid": "skill-clawhub-ticktick-cli",
+  "skillKey": "clawhub-ticktick-cli",
+  "name": "Ticktick Cli",
+  "summary": "Manage TickTick tasks and projects from the command line with OAuth2 auth, batch operations, and rate limit handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Norickkevorkov",
+      "features": [
+        "Manage TickTick tasks and projects from the command line with OAuth2 auth, batch operations, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ticktick-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12099988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ticktick-cli",
+      "url": "https://clawhub.ai/skills/ticktick-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-cli",
+    "url": "https://clawhub.ai/skills/ticktick-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-cli-1023246bb8938d8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ticktick-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3e6f6f824a68b1399138cb064c80db5b6c1e985657eb87fd2cacb851014b56",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T20:31:17.221Z"
+}

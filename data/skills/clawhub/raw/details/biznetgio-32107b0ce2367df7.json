@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "biznetgio",
+    "displayName": "Biznet GIO CLI",
+    "summary": "Manage Biznet Gio cloud infrastructure (servers, VMs, storage, IPs) via CLI and MCP server",
+    "tags": {
+      "latest": "1.0.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1774707893222,
+    "updatedAt": 1777887706711
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1777887503249,
+    "changelog": "- Adds secure login workflow: now uses `biznetgio login` to create a local credential file (`~/.biznetgio.json`), which is preferred over environment variables.\n- Introduces an explicit `whoami` check before any command, improving authentication flow and user guidance if not logged in.\n- Updates environment variable usage: API key now acts only as a fallback; `BIZNETGIO_PORTAL_URL` is added for portal host overrides.\n- Documents logout procedure to cleanly remove credentials.\n- Clarifies and prioritizes credential sources: CLI flag > credential file > environment variable.\n- Enhances user security by never asking for raw API keys, always guiding users through the CLI login flow.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "biznetgio",
+    "userId": "s17cbzjqdyrva5fdvpnm33ww0983s2a7",
+    "displayName": "Biznet Gio",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777887706711
+  }
+}

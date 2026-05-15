@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34563,
+  "uuid": "skill-clawhub-meeting-scheduler",
+  "skillKey": "clawhub-meeting-scheduler",
+  "name": "Meeting Scheduler",
+  "summary": "Schedule meetings between your owner and another person by coordinating with their PA, finding available slots in both calendars, and sending a calendar invi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Schedule meetings between your owner and another person by coordinating with their PA, finding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-scheduler@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-scheduler",
+      "url": "https://clawhub.ai/skills/meeting-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-scheduler",
+    "url": "https://clawhub.ai/skills/meeting-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-scheduler-ab6865af0c60b140.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-scheduler@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-scheduler-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1092c68c1e06e790a67ef47e782f81bdcda1f09899d265134c69c5996c1e46d6",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:34:58.818Z"
+}

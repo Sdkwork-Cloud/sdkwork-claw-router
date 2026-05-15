@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-script-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_script_bak",
+  "skill": {
+    "id": 70612,
+    "skillKey": "clawhub-ai-video-script-bak",
+    "name": "Ai Video Script.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-script-bak",
+    "url": "https://clawhub.ai/skills/ai-video-script-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-script-bak-e9145649403e8617.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI视频脚本生成器。根据用户输入的主题/关键词，生成完整的视频脚本，包含分镜描述、画面提示词、配音文案。适用于短视频创作者、AI视频制作者、内容营销人员。触发词：视频脚本、分镜、AI视频、短视频文案、视频策划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georgeh4qq",
+      "userId": "s1703s33n90bsyw2gtc3xyvxdx83mkqr",
+      "displayName": "georgeh4qq",
+      "image": "https://avatars.githubusercontent.com/u/267243122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774488675196,
+      "changelog": "- Initial release of AI视频脚本生成器 (ai-video-script).\n- Generates complete video scripts from a theme or keyword, including shot breakdowns, AI image/video prompts, and voiceover copy.\n- Supports both short-form (15–60 seconds) and long-form (1–5 minutes) video scripts.\n- Offers templates, prompt format guidelines for major AI tools (CogVideoX, Midjourney, SD), and sample scripts.\n- Includes advanced features like batch generation, style customization, and duration adaptation for popular video platforms.\n- Emphasizes copyright awareness, platform compliance, and practical usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3789ee2b9a2ae063dcaf3f1d3d3ff58eed5908a5f60b3320101a2df02df96640"
+}

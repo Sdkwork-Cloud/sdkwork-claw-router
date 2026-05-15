@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44734,
+  "uuid": "skill-clawhub-codemend",
+  "skillKey": "clawhub-codemend",
+  "name": "Codemend",
+  "summary": "Monitor, report, and get AI-generated fixes for JavaScript and TypeScript production errors with automated analysis and pull request integration.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codemend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hankmint",
+      "features": [
+        "Monitor, report, and get AI-generated fixes for JavaScript and TypeScript production errors wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codemend@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181605602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codemend",
+      "url": "https://clawhub.ai/skills/codemend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codemend",
+    "url": "https://clawhub.ai/skills/codemend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codemend-78a8e19801c50dfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codemend@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codemend-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce13c19c7d33d6b6fafda7cd20c1ecc8160e83862a21bffecafe64e3a09fe02e",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:36:48.393Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bocha-web-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bocha_web_search",
+  "skill": {
+    "id": 10089,
+    "skillKey": "clawhub-bocha-web-search",
+    "name": "Bocha Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bocha-web-search",
+    "url": "https://clawhub.ai/skills/bocha-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bocha-web-search-39a7be1cc8e08276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Default web search tool using Bocha Web Search API. Use for online lookup, verification, time-sensitive information, and citation-based answers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iuriak",
+      "userId": "publishers:iuriak",
+      "displayName": "Bocha-Labs",
+      "image": "https://avatars.githubusercontent.com/u/125780538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2218,
+      "installsAllTime": 30,
+      "installsCurrent": 28,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772015070839,
+      "changelog": "- Updated documentation to remove shell-specific setup and system-level file operations.\n- Simplified API usage instructions to focus on direct API calls, improving compatibility with secure and cross-platform environments.\n- Clarified citation formatting and response structure requirements.\n- Maintained strict citation rules for source-backed answers.\n- Improved guidance for error handling and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:360baca079c1c6b36fab23d5412bd2688d0bf6b3600372b88db2dbfa6821c8be"
+}

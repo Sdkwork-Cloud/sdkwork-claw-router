@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qiuqiu-helper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qiuqiu_helper",
+  "skill": {
+    "id": 11842,
+    "skillKey": "clawhub-qiuqiu-helper",
+    "name": "Qiuqiu Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qiuqiu-helper",
+    "url": "https://clawhub.ai/skills/qiuqiu-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qiuqiu-helper-4211a566230badf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates workspace tasks including summarizing recent changes, adding timestamped notes, and cleaning old log files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmogdeveloper",
+      "userId": "publishers:mmogdeveloper",
+      "displayName": "mmogdeveloper",
+      "image": "https://avatars.githubusercontent.com/u/70350582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1981,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769953757064,
+      "changelog": "Initial release of Qiuqiu Helper with automation tools for common workspace tasks:\n\n- Added workspace_summary tool to generate overviews of recent changes and workspace status.\n- Introduced quick_note tool for saving timestamped notes to files.\n- Included clean_logs tool for deleting old log files based on customizable retention settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9854517c8006a4200da494dc0b7224f20f52afa2fac75269eeefd3b813e571ff"
+}

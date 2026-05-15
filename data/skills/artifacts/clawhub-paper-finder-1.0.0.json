@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_finder",
+  "skill": {
+    "id": 73677,
+    "skillKey": "clawhub-paper-finder",
+    "name": "学术文献检索（期刊信息、影响因子、下载链接）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-finder",
+    "url": "https://clawhub.ai/skills/paper-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-finder-e6865992f098c140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据主题、篇名、关键词等检索学术文献，返回真实的期刊信息、影响因子和下载链接，找不到就是找不到，绝不编造"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangjinhongmy-pixel",
+      "userId": "s174gqmh9ja91x47rfxrw1xcqd85q7ds",
+      "displayName": "wangjinhongmy-pixel",
+      "image": "https://avatars.githubusercontent.com/u/247364929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777341949686,
+      "changelog": "- 首发版本，提供可靠的学术文献检索助手\n- 严格遵守“找不到就是找不到，绝不编造”原则，所有结果真实可查\n- 支持按主题、篇名、关键词、作者等多条件检索文献\n- 返回文献的详细信息、影响因子、被引数据及可验证的下载/访问链接\n- 覆盖多种主流数据库（如PubMed、arXiv、Google Scholar、知网等）\n- 详细说明支持的检索用法、数据库、输出格式和使用建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23173817c7c24c5608add78ab68e37678d0ca5c3aeed8a60454de4bfce0d9539"
+}

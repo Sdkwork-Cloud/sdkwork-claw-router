@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intelligent-scheduler@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_scheduler",
+  "skill": {
+    "id": 33151,
+    "skillKey": "clawhub-intelligent-scheduler",
+    "name": "Intelligent Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-scheduler",
+    "url": "https://clawhub.ai/skills/intelligent-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-scheduler-0c93ece18c3c8388.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule tasks, manage priorities, resolve conflicts, and handle time zones. Auto-optimizes your agent's workload and prevents double-booking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777507586744,
+      "changelog": "Version 1.1.0 — Major SKILL.md overhaul for better clarity and user onboarding\n\n- Simplified and rewritten documentation for easier understanding and navigation.\n- Streamlined quick start instructions with clear, numbered code examples.\n- Added detailed, scenario-focused usage examples for prioritization, conflict detection, and timezone conversion.\n- Introduced a command overview table and clarified all supported commands.\n- Consolidated and highlighted priority levels and configuration guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ceac2f793d393198e458cdb52aad975cbbb717b420da5d69c4a501d009b21991"
+}

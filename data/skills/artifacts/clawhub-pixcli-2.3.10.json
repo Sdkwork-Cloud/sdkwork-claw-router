@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixcli@2.3.10",
+  "version": "2.3.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixcli",
+  "skill": {
+    "id": 51594,
+    "skillKey": "clawhub-pixcli",
+    "name": "Pixcli Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixcli",
+    "url": "https://clawhub.ai/skills/pixcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixcli-ee9722865d85d4db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creative toolkit for AI agents — generate images, videos, voiceover, music, and sound effects, then assemble polished output via Remotion. Uses the pixcli CL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cohnen",
+      "userId": "s170vzyj2a2jpw4je5vt0t2c4h83n8g3",
+      "displayName": "cohnen",
+      "image": "https://avatars.githubusercontent.com/u/2776023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.3.10",
+      "createdAt": 1776800304338,
+      "changelog": "Added full OpenAI gpt2 image model and heygen video avatars)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61e30e1ccf3179525ed024c2de1d756d4117cf80397770266c48b4dd9bf384cf"
+}

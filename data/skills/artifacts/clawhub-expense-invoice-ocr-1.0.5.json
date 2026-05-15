@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expense-invoice-ocr@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_invoice_ocr",
+  "skill": {
+    "id": 71868,
+    "skillKey": "clawhub-expense-invoice-ocr",
+    "name": "Expense Invoice Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-invoice-ocr",
+    "url": "https://clawhub.ai/skills/expense-invoice-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-invoice-ocr-baf940091a1d5625.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持识别企业财务报销场景的常见票据，包括增值税发票、增值税卷票、出租车发票、火车票、航空电子客票行程单、机动车销售统一发票、定额发票、过路过桥费发票、医疗发票、税收完税证明、船票、非税票据、通用机打发票、汽车票识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776304823328,
+      "changelog": "- No functional changes; version bump only.\n- No file or documentation changes detected for this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:185ee6071075f265c846dfcbb85471198a42e6ff99c7f628dec7be0d1710cdeb"
+}

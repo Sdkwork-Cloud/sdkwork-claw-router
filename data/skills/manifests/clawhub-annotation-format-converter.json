@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25165,
+  "uuid": "skill-clawhub-annotation-format-converter",
+  "skillKey": "clawhub-annotation-format-converter",
+  "name": "Annotation Format Converter",
+  "summary": "Convert annotation files between COCO, YOLO, VOC, and LabelMe formats with auto-detection and support for batch processing of folders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annotation_format_converter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Convert annotation files between COCO, YOLO, VOC, and LabelMe formats with auto-detection and s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/annotation-format-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "annotation-format-converter",
+      "url": "https://clawhub.ai/skills/annotation-format-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annotation-format-converter",
+    "url": "https://clawhub.ai/skills/annotation-format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annotation-format-converter-94ac3e95b2baa083.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/annotation-format-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-annotation-format-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:106dc418a3d4c27720332cb77a477d98c1f63447c97e23fe3ab7c38b33d3574b",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:25:44.384Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/composition-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composition_patterns",
+  "skill": {
+    "id": 16102,
+    "skillKey": "clawhub-composition-patterns",
+    "name": "Frontend Composition Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composition-patterns",
+    "url": "https://clawhub.ai/skills/composition-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composition-patterns-8d4991563e4e7758.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build flexible React components using compound components, context providers, and explicit variants to avoid boolean prop proliferation and improve scalability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 888,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770727681521,
+      "changelog": "- Initial release of react-composition-patterns.\n- Documents key React composition techniques: compound components, context providers, explicit variants, and state management separation.\n- Emphasizes avoiding boolean prop proliferation in favor of variant components.\n- Includes practical examples and anti-patterns for building flexible, maintainable component libraries.\n- Installation instructions provided for OpenClaw ecosystem.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2688c62bc6fd2335730d28a2c8aa61fc8c75bdc61e0904ce926379686f8d12a3"
+}

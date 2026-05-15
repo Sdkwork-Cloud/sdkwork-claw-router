@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gonza-navifare-deals@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gonza_navifare_deals",
+  "skill": {
+    "id": 29416,
+    "skillKey": "clawhub-gonza-navifare-deals",
+    "name": "Gonza Navifare Deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gonza-navifare-deals",
+    "url": "https://clawhub.ai/skills/gonza-navifare-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gonza-navifare-deals-c1632fa738d5fa74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify and compare flight prices across multiple booking sites using Navifare. Trigger when users share flight prices from any booking site (Skyscanner, Kaya..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gonzachee",
+      "userId": "publishers:gonzachee",
+      "displayName": "gonzachee",
+      "image": "https://avatars.githubusercontent.com/u/128383251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1773593344937,
+      "changelog": "Navifare Flight Price Validator v1.2.2\n\n- Updated skill name and description to focus on flight price validation and comparison with Navifare.\n- Clarified detailed activation triggers and step-by-step workflow for price checking.\n- Added strict workflow requirements: always use the format_flight_pricecheck_request tool before searching.\n- Included explicit handling for missing flight details and one-way/roundtrip validation.\n- Detailed MCP prerequisites, field validations, and result parsing steps for clarity and reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:820acbdec8c5005c3c7b41ec5731de24d089a85b84bf05a6ce383e032279f659"
+}

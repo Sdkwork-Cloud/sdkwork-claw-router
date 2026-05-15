@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38277,
+  "uuid": "skill-clawhub-moomoo-trading",
+  "skillKey": "clawhub-moomoo-trading",
+  "name": "Moomoo Trading",
+  "summary": "Use OpenD-backed moomoo/Futu scripts for quotes, K-lines, price alerts, portfolio/account checks, and stock order execution. Triggers on moomoo, futu, OpenD,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moomoo_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobbythebot2008-beep",
+      "features": [
+        "Use OpenD-backed moomoo/Futu scripts for quotes, K-lines, price alerts, portfolio/account check.",
+        "Triggers on moomoo, futu, OpenD,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moomoo-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264802082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moomoo-trading",
+      "url": "https://clawhub.ai/skills/moomoo-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moomoo-trading",
+    "url": "https://clawhub.ai/skills/moomoo-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moomoo-trading-4030bb98ec886211.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moomoo-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moomoo-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2972cfc394281fc10154736aaf337d2829980cbcd36046db7a2397a081c94041",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:45:57.031Z"
+}

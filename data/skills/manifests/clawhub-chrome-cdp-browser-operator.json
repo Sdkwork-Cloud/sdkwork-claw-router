@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42511,
+  "uuid": "skill-clawhub-chrome-cdp-browser-operator",
+  "skillKey": "clawhub-chrome-cdp-browser-operator",
+  "name": "Chrome CDP Browser Operator",
+  "summary": "windows-friendly chrome automation through an existing Chrome profile via CDP, with human-like mouse and keyboard input, browser attachment checks, page navi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_cdp_browser_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UgurInanc",
+      "features": [
+        "windows-friendly chrome automation through an existing Chrome profile via CDP, with human-like."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-cdp-browser-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55364464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-cdp-browser-operator",
+      "url": "https://clawhub.ai/skills/chrome-cdp-browser-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-cdp-browser-operator",
+    "url": "https://clawhub.ai/skills/chrome-cdp-browser-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-cdp-browser-operator-fc0ca17cf6c8dd96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-cdp-browser-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-cdp-browser-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb7f2542d2e68a38cffc1455795091d37f8e258654c97e41a66d8da7f0bda300",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T20:08:06.446Z"
+}

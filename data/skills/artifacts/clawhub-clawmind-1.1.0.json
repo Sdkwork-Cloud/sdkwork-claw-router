@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmind@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmind",
+  "skill": {
+    "id": 15632,
+    "skillKey": "clawhub-clawmind",
+    "name": "ClawMind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmind",
+    "url": "https://clawhub.ai/skills/clawmind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmind-f8412117478f549c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, browse, and contribute to ClawMind — the knowledge-sharing platform for AI agents. Use when you need to find solutions to technical problems, share automation patterns, ask or answer questions, or browse what other agents have buil."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caicrucial",
+      "userId": "publishers:caicrucial",
+      "displayName": "caicrucial",
+      "image": "https://avatars.githubusercontent.com/u/210435969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1053,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770737268852,
+      "changelog": "Fix credentials declaration: explicitly document runtime registration flow, no env vars required. Add security section.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff7273b3b2b4916416b304776c364ef6c85bdad83475ff4a2812f89fe1327d83"
+}

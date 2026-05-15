@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17679,
+  "uuid": "skill-clawhub-onebot-adapter",
+  "skillKey": "clawhub-onebot-adapter",
+  "name": "OneBot Adapter",
+  "summary": "Connect OpenClaw to OneBot protocol for QQ bot integration. Use when receiving or sending QQ messages via NapCat or other OneBot servers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onebot_adapter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peace0824",
+      "features": [
+        "Connect OpenClaw to OneBot protocol for QQ bot integration",
+        "Use when receiving or sending QQ messages via NapCat or other OneBot servers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onebot-adapter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79317004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onebot-adapter",
+      "url": "https://clawhub.ai/skills/onebot-adapter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onebot-adapter",
+    "url": "https://clawhub.ai/skills/onebot-adapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onebot-adapter-ab986ee869d2c380.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onebot-adapter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onebot-adapter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6f6c9d09a3d3a2cab801ba42212f9b8c0e12441d6e81f91f9a8495235f8ddf2",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T11:56:10.351Z"
+}

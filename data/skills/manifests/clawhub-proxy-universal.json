@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63218,
+  "uuid": "skill-clawhub-proxy-universal",
+  "skillKey": "clawhub-proxy-universal",
+  "name": "通用代理管理",
+  "summary": "跨平台代理管理助手 (Universal Proxy Manager)。自动检测环境，首次使用自动安装，后续自动管理。支持 Windows/Linux/macOS，一键开启/关闭/切换节点/更新订阅/故障排查。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_universal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bulil",
+      "features": [
+        "跨平台代理管理助手 (Universal Proxy Manager)。自动检测环境，首次使用自动安装，后续自动管理。支持 Windows/Linux/macOS，一键开启/关闭/切换节点/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-universal@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225640250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-universal",
+      "url": "https://clawhub.ai/skills/proxy-universal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-universal",
+    "url": "https://clawhub.ai/skills/proxy-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-universal-c03f7818984fb48e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-universal@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-universal-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1709d50e0aad31b08348348295fed997a28bae27d2eb03b1fe12867b8a83a322",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:48:45.112Z"
+}

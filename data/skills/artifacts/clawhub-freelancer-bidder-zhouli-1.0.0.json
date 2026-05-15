@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelancer-bidder-zhouli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelancer_bidder_zhouli",
+  "skill": {
+    "id": 42677,
+    "skillKey": "clawhub-freelancer-bidder-zhouli",
+    "name": "Freelancer Bidder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelancer-bidder-zhouli",
+    "url": "https://clawhub.ai/skills/freelancer-bidder-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelancer-bidder-zhouli-f445995b08d308af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Freelancer.com for new projects matching your skills, draft personalized bid proposals, and track bidding history. Use when you want to find freelance j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774572066746,
+      "changelog": "Initial release of the freelancer-bidder skill:\n\n- Automatically scans Freelancer.com for projects matching your skills and preferences.\n- Drafts personalized, professional bid proposals tailored to each client.\n- Tracks your bidding history and win rates in a simple log.\n- Recommends optimal bid prices based on project budgets.\n- Offers tips for crafting effective, winning proposals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8d5b5e8ed52a4cbde05e0c05f6c1f071b8d8aec678bc62c413521f24f445f08"
+}

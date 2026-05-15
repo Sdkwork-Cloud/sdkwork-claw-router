@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11919,
+  "uuid": "skill-clawhub-signal-generator",
+  "skillKey": "clawhub-signal-generator",
+  "name": "Signal Generator",
+  "summary": "Generate trading signals using BB Breakout or RSI Reversal strategies and send automated alerts to Discord, Telegram, or custom channels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nititepfirm",
+      "features": [
+        "Generate trading signals using BB Breakout or RSI Reversal strategies and send automated alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29335243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-generator",
+      "url": "https://clawhub.ai/skills/signal-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-generator",
+    "url": "https://clawhub.ai/skills/signal-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-generator-175e7ef3851c5fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:292239cbc156ff540cb787f709e10ea656905e476d3ee3945a376f8a847ccc43",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T11:34:30.862Z"
+}

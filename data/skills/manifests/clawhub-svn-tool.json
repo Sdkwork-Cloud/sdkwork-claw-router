@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63534,
+  "uuid": "skill-clawhub-svn-tool",
+  "skillKey": "clawhub-svn-tool",
+  "name": "Svn Tool",
+  "summary": "Subversion (SVN) 代码版本控制工具。使用 svn CLI 进行检入、检出、更新、提交、查看日志等操作。当用户需要与 SVN 仓库交互时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svn_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjbook",
+      "features": [
+        "Subversion (SVN) 代码版本控制工具。使用 svn CLI 进行检入、检出、更新、提交、查看日志等操作。当用户需要与 SVN 仓库交互时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/svn-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76029832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "svn-tool",
+      "url": "https://clawhub.ai/skills/svn-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svn-tool",
+    "url": "https://clawhub.ai/skills/svn-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svn-tool-0ac9fb050cd7b1bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/svn-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-svn-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8b99070a03558ddbb109a08e021f6f24bf892444cc122a28347d18ad6e869be",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:18:03.090Z"
+}

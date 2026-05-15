@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_manager",
+  "skill": {
+    "id": 10448,
+    "skillKey": "clawhub-workspace-manager",
+    "name": "Workspace Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-manager",
+    "url": "https://clawhub.ai/skills/workspace-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-manager-4e7fffc233175a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workspace setup and organization assistant for ClawPad users. Triggers on: (1) First-time setup - \"just set up ClawPad\", \"new workspace\", \"help me organize\" (2) Project creation - \"new project\", \"create folder structure\" (3) Workspace main."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "falaky87",
+      "userId": "publishers:falaky87",
+      "displayName": "falaky87",
+      "image": "https://avatars.githubusercontent.com/u/70839376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2289,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770234131364,
+      "changelog": "Initial release of workspace-manager: a workspace setup and organization assistant for ClawPad users.\n\n- Guides users through first-time onboarding, tailored by domain (Engineering, Research, Business, Creative, Personal Knowledge, or custom).\n- Automatically creates recommended folder structures and spaces (with icons and colors) based on user-selected domain.\n- Generates a welcome document explaining workspace conventions, usage tips, and structure.\n- Provides domain-specific templates for documents like project plans, tracking docs, and runbooks upon request.\n- Supports ongoing workspace maintenance: helps reorganize, clean up, and structure new projects or documents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cc672ff3e64a4f230b5c3811f5b97819a38cc2d6b2ab460844575e9b1a74e41"
+}

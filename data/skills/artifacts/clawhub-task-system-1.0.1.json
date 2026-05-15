@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-system@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_system",
+  "skill": {
+    "id": 11389,
+    "skillKey": "clawhub-task-system",
+    "name": "Task System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-system",
+    "url": "https://clawhub.ai/skills/task-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-system-aab879f371b511e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks with automatic creation, SQLite tracking, heartbeat updates, notifications, stuck task detection, and recovery in a complete lifecycle system."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "npmisantosh",
+      "userId": "publishers:npmisantosh",
+      "displayName": "npmisantosh",
+      "image": "https://avatars.githubusercontent.com/u/47918757?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1951,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771090736671,
+      "changelog": "- Added install.sh script for easier installation.\n- Updated SKILL.md with installation instructions, author, license, and metadata fields.\n- Streamlined documentation by removing detailed workflow and protocol sections.\n- No behavior changes to main scripts or logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:231b83287fb721d528da33d79df8078e7b9cb16f4fd757e524ea0ca52a378932"
+}

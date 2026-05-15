@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-reports@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_reports",
+  "skill": {
+    "id": 31783,
+    "skillKey": "clawhub-ops-reports",
+    "name": "Ops Reports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-reports",
+    "url": "https://clawhub.ai/skills/ops-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-reports-d53a95242378371b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run daily standups and generate task summaries for operations teams."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "admiralkittysdad",
+      "userId": "publishers:admiralkittysdad",
+      "displayName": "AdmiralKittysDad",
+      "image": "https://avatars.githubusercontent.com/u/167309028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773861042016,
+      "changelog": "Initial release of ops-reports.\n\n- Run structured daily standups with prompts for completed work, today's plan, and blockers.\n- Generate task summaries from local tasks file, including status counts and overdue items.\n- Summarize this week's standup entries on request.\n- Provides direct answers and uses tables for clarity.\n- Free edition; Pro features include shift handoff, dashboards, and more (see skillnexus.dev).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0df69fb5334d4c15945238031e60314fb200ba41da2fcc4bab6951ac305273b4"
+}

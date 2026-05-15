@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-backup@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_backup",
+  "skill": {
+    "id": 9370,
+    "skillKey": "clawhub-cron-backup",
+    "name": "Cron Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-backup",
+    "url": "https://clawhub.ai/skills/cron-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-backup-9a8b3b0ed3bf3b6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up scheduled automated backups with version tracking and cleanup. Use when users need to (1) Schedule periodic backups of directories or files, (2) Monit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfanmy",
+      "userId": "s17a9n0kykchma2r1hmwr1dheh83hyv2",
+      "displayName": "zfanmy",
+      "image": "https://avatars.githubusercontent.com/u/33675069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3720,
+      "installsAllTime": 36,
+      "installsCurrent": 32,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1771428967657,
+      "changelog": "Version 0.3.2 of cron-backup\n\n- No code or documentation changes detected in this release.\n- Functionality and documentation remain the same as the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4ced7a28bf11ce9a29b91a5e587149aa4efdea346089f2a8b6bf664f9dc9f60"
+}

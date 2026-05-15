@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firecrawl-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawl_cli",
+  "skill": {
+    "id": 11873,
+    "skillKey": "clawhub-firecrawl-cli",
+    "name": "Firecrawl CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawl-cli",
+    "url": "https://clawhub.ai/skills/firecrawl-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawl-cli-ef53ced776048660.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping, crawling, searching, and browser automation via the Firecrawl CLI (firecrawl). Use when scraping URLs to markdown/HTML, crawling entire website..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yash-kavaiya",
+      "userId": "s177kx7zx48y93w9vt3ng45qa983xq4h",
+      "displayName": "Yash Kavaiya",
+      "image": "https://avatars.githubusercontent.com/u/103239923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1889,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773371090701,
+      "changelog": "Initial release - scrape, crawl, search, map, browser, and agent commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aac6ec4a545e5cc0e13b80194489d3f1ed48222d6e1e21308fae602e892e93f"
+}

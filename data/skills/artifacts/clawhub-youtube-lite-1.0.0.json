@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_lite",
+  "skill": {
+    "id": 52113,
+    "skillKey": "clawhub-youtube-lite",
+    "name": "Youtube Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-lite",
+    "url": "https://clawhub.ai/skills/youtube-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-lite-ba89fab11f995dfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete YouTube toolkit — transcripts, search, channels, playlists, and metadata all in one skill. Use when you need comprehensive YouTube access, want to s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liliangjie91",
+      "userId": "s173qeddfkg3zkkvemnap5r5f983j15s",
+      "displayName": "Leonard",
+      "image": "https://avatars.githubusercontent.com/u/22876690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774689263904,
+      "changelog": "- Initial release of youtube-lite skill: a complete YouTube toolkit with transcripts, video/channel/playlist search, channel browsing, and metadata in one package.\n- Integrates with TranscriptAPI.com; requires a TRANSCRIPT_API_KEY.\n- Multiple endpoints supported: transcript, search, channel info, playlist videos, and more, with clear credit costs.\n- Provides setup instructions, API usage examples, and validation/error handling guidelines.\n- Includes free and paid (credit-based) endpoints, allowing users to monitor costs and make informed choices.\n- Enables workflows like research (search → transcript) and channel monitoring with concise API calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:576a74bf27745631bdda7a8207404ee2079870a598fb42211e1d4542a344d53b"
+}

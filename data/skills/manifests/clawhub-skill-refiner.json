@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16028,
+  "uuid": "skill-clawhub-skill-refiner",
+  "skillKey": "clawhub-skill-refiner",
+  "name": "skill-refiner",
+  "summary": "Audit and fix all skills in the workspace for compliance with skill-creator requirements. Use when asked to \"refine skills\", \"audit skills\", \"check skill qua...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_refiner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "va7",
+      "features": [
+        "Audit and fix all skills in the workspace for compliance with skill-creator requirements",
+        "Use when asked to \"refine skills\", \"audit skills\", \"check skill qua..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-refiner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81729546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-refiner",
+      "url": "https://clawhub.ai/skills/skill-refiner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-refiner",
+    "url": "https://clawhub.ai/skills/skill-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-refiner-6e1d742b30bc0460.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-refiner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-refiner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:722b6ebc3ab6818577b78d3233dc4b955ccae1f0670e484ca1b1499bb463df16",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T03:41:09.156Z"
+}

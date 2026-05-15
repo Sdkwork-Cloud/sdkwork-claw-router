@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bankstatement@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bankstatement",
+  "skill": {
+    "id": 71767,
+    "skillKey": "clawhub-bankstatement",
+    "name": "银行流水解析，流水报告生成等"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bankstatement",
+    "url": "https://clawhub.ai/skills/bankstatement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bankstatement-330db80eb5d0ac5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "流水报告生成，基于用户输入的Excel/PDF流水文件路径和问题，自动上传文件并生成分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ufcfengbin",
+      "userId": "publishers:ufcfengbin",
+      "displayName": "ufcfengbin",
+      "image": "https://avatars.githubusercontent.com/u/19542876?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773822878560,
+      "changelog": "- No code or documentation changes detected in this version.\n- Functionality, requirements, setup, and instructions remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:050db3592b837aea743e706047001aab73848c2af2652cbb6528418ac938370c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27587,
+  "uuid": "skill-clawhub-pdffiller",
+  "skillKey": "clawhub-pdffiller",
+  "name": "Pdffiller",
+  "summary": "PdfFiller integration. Manage Accounts. Use when the user wants to interact with PdfFiller data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdffiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PdfFiller integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with PdfFiller data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdffiller@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdffiller",
+      "url": "https://clawhub.ai/skills/pdffiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdffiller",
+    "url": "https://clawhub.ai/skills/pdffiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdffiller-c5bac8b58f5e689f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdffiller@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdffiller-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e89b6b81e11cb4d7277695fc70cd7a2281923d51d203c21a5bf7913ec38c6cfe",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:38.823Z"
+}

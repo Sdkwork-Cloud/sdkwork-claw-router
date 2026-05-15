@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-usage-stats@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage_stats",
+  "skill": {
+    "id": 72285,
+    "skillKey": "clawhub-model-usage-stats",
+    "name": "模型消耗统计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage-stats",
+    "url": "https://clawhub.ai/skills/model-usage-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-stats-ac2d7e00fa7a0214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模型消耗统计技能，用于统计和展示不同会话、不同模型的 token 使用量、成本统计和消耗报告，通过飞书消息卡片进行可视化展示。当用户请求查看模型消耗、token 统计、成本分析或消耗报告时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luxiang79",
+      "userId": "s1788xvwxs3ewhf6z8871r3q9584q3w1",
+      "displayName": "luxiang79",
+      "image": "https://avatars.githubusercontent.com/u/101491949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776049362042,
+      "changelog": "- Initial release of the \"model-usage-stats\" skill.\n- Provides token usage, cost statistics, and consumption reports by session and model.\n- Visualizes data with Feishu (Lark) message cards (tables, summaries, charts).\n- Supports queries for current session usage, historical session stats, model breakdowns, and exportable reports.\n- Includes sample message templates, typical use cases, and reference pricing for supported models.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b8bd2116d8281d86176644297ed637bf05265ee471a07f55ccd6e6037dde3d0"
+}

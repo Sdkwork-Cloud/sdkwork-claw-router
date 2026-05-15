@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16308,
+  "uuid": "skill-clawhub-aoe",
+  "skillKey": "clawhub-aoe",
+  "name": "Agent of Empires",
+  "summary": "Manage AI coding agent sessions via Agent of Empires (aoe)",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "njbrake",
+      "features": [
+        "Manage AI coding agent sessions via Agent of Empires (aoe)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aoe@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33383515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aoe",
+      "url": "https://clawhub.ai/skills/aoe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoe",
+    "url": "https://clawhub.ai/skills/aoe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoe-63bfc077c8395d49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aoe@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aoe-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02ca25aa8925f3abdb247843734da2d28c0d5dff87553d4fab37106f8ca0fa98",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:37:34.120Z"
+}

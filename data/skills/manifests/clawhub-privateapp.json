@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17292,
+  "uuid": "skill-clawhub-privateapp",
+  "skillKey": "clawhub-privateapp",
+  "name": "Private Web App (PWA)",
+  "summary": "Personal PWA dashboard server with plugin apps. Use when: (1) installing or setting up PrivateApp, (2) starting/stopping/restarting the service, (3) building...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privateapp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "camopel",
+      "features": [
+        "Personal PWA dashboard server with plugin apps",
+        "Use when: (1) installing or setting up PrivateApp, (2) starting/stopping/restarting the service."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privateapp@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18227220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privateapp",
+      "url": "https://clawhub.ai/skills/privateapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privateapp",
+    "url": "https://clawhub.ai/skills/privateapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privateapp-e27496cec566bda9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privateapp@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-privateapp-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9909d0c75c60ec9c7cb12b2a8d73b5137d4f0f77c5d6d6ec3558dc6809b0e777",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T01:17:39.798Z"
+}

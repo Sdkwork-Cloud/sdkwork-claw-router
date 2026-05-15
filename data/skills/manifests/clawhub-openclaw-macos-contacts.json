@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31419,
+  "uuid": "skill-clawhub-openclaw-macos-contacts",
+  "skillKey": "clawhub-openclaw-macos-contacts",
+  "name": "macOS Contacts",
+  "summary": "Read, search, and safely create contacts in macOS Contacts (Address Book). Use when the user asks to inspect the native macOS contacts database, search conta...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_macos_contacts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leocdchina",
+      "features": [
+        "Read, search, and safely create contacts in macOS Contacts (Address Book)",
+        "Use when the user asks to inspect the native macOS contacts database, search conta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-macos-contacts@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102421943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-macos-contacts",
+      "url": "https://clawhub.ai/skills/openclaw-macos-contacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-macos-contacts",
+    "url": "https://clawhub.ai/skills/openclaw-macos-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-macos-contacts-0524e94679a9ad88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-macos-contacts@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-macos-contacts-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d93db8e013894c7e2f492b8bd094cfed3fb7c01cd0cb06981bf2126a3fe5682",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:31:50.571Z"
+}

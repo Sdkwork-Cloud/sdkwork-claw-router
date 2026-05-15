@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-transfer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_transfer",
+  "skill": {
+    "id": 11679,
+    "skillKey": "clawhub-solana-transfer",
+    "name": "Solana Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-transfer",
+    "url": "https://clawhub.ai/skills/solana-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-transfer-103d2fab1981d562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send SOL or SPL tokens on the Solana blockchain from OpenClaw agents for payments, rewards, or on-chain transaction settlements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vortitron",
+      "userId": "publishers:vortitron",
+      "displayName": "Vortitron",
+      "image": "https://avatars.githubusercontent.com/u/8288276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1920,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770157061659,
+      "changelog": "- Initial release of solana-transfer skill for OpenClaw agents.\n- Enables sending SOL and SPL token payments programmatically on the Solana blockchain.\n- Provides simple functions for agent-to-agent payments, rewards, and on-chain settlement.\n- Includes detailed setup steps, usage patterns, configuration options, troubleshooting, and security notes.\n- Supports both native SOL and SPL tokens (e.g., USDC), with sample integration code for agents.\n- Lays groundwork for future features like transaction history and ledger integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:765bd34e0b431cf49526af93f3315b1ba4dcb5db4f8b42fc577be3b3b2f2fa1e"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11267,
+  "uuid": "skill-clawhub-nas-master",
+  "skillKey": "clawhub-nas-master",
+  "name": "nas-master",
+  "summary": "A hardware-aware, hybrid (SMB + SSH) suite for ASUSTOR NAS metadata scraping. Functions as a versatile Coder, Project Manager, and System Architect while maintaining strict read-only safety and i3-10th Gen resource throttling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas_master",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afajohn",
+      "features": [
+        "A hardware-aware, hybrid (SMB + SSH) suite for ASUSTOR NAS metadata scraping",
+        "Functions as a versatile Coder, Project Manager, and System Architect while maintaining strict."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nas-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106503734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nas-master",
+      "url": "https://clawhub.ai/skills/nas-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas-master",
+    "url": "https://clawhub.ai/skills/nas-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-master-ec62330fb6f74c2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nas-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nas-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8afcf5fd5a8a387445ec7cc6744c3c014e29e24a3809e6cb1e608101281e08e3",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T02:39:48.532Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67072,
+  "uuid": "skill-clawhub-lobster-says",
+  "skillKey": "clawhub-lobster-says",
+  "name": "Lobster Says",
+  "summary": "🦞 虾说——你的专属共情虾。每天早晚给你一句关心的话，让你觉得被看到了。注册 cron 定时任务推送消息到 IM 通道；可选在用户选择的理解模式下读取本地会话日志生成摘要上传到 nixiashuo.com。",
+  "version": "2.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_says",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jared",
+      "features": [
+        "🦞 虾说——你的专属共情虾。每天早晚给你一句关心的话，让你觉得被看到了。注册 cron 定时任务推送消息到 IM 通道；可选在用户选择的理解模式下读取本地会话日志生成摘要上传到 nixia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-says@2.5.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3994267?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-says",
+      "url": "https://clawhub.ai/skills/lobster-says"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-says",
+    "url": "https://clawhub.ai/skills/lobster-says",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-says-a19b2ccdc5a86ed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-says@2.5.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-says-2.5.8.json",
+      "version": "2.5.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feb3a01a28d3e8c5cd8885fcc4b043d04d6d875b8974288648c77ab70886ba54",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T16:56:31.719Z"
+}

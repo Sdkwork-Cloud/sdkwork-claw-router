@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49739,
+  "uuid": "skill-clawhub-know-your-ai",
+  "skillKey": "clawhub-know-your-ai",
+  "name": "Know your AI",
+  "summary": "Command-line tool for red-team AI security testing, running evaluations, detecting vulnerabilities, and reviewing detailed results via API integration.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.know_your_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juheng wu",
+      "features": [
+        "Command-line tool for red-team AI security testing, running evaluations, detecting vulnerabilit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/know-your-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71479254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "know-your-ai",
+      "url": "https://clawhub.ai/skills/know-your-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "know-your-ai",
+    "url": "https://clawhub.ai/skills/know-your-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/know-your-ai-d7c1997f002980ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/know-your-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-know-your-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:931e27bcab346914a126e50f8de9eead2bd27e553e109b7416d28fb124d73c9f",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T19:18:39.486Z"
+}

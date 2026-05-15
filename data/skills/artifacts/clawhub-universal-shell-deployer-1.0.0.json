@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-shell-deployer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_shell_deployer",
+  "skill": {
+    "id": 46021,
+    "skillKey": "clawhub-universal-shell-deployer",
+    "name": "universal-shell-deployer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-shell-deployer",
+    "url": "https://clawhub.ai/skills/universal-shell-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-shell-deployer-26da1f8aab38dda0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, start, stop, and verify local or remote development infrastructure across Windows, Linux, and macOS by executing commands through a unifi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgvgfgvh",
+      "userId": "s174x9jg32fvtnq226ytye9w3d83h6tm",
+      "displayName": "hgvgfgvh",
+      "image": "https://avatars.githubusercontent.com/u/150424835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776912839214,
+      "changelog": "Universal Shell Deployer v1.0.0 – Initial Release\n\n- Provides a unified workflow to install, configure, manage, and verify developer infrastructure (databases, servers, tools) across Windows, Linux, and macOS.\n- Supports both local and remote hosts, using native shells or remote protocols (SSH, PowerShell Remoting).\n- Uses a `config.json` file to define nodes, recipes, preferences, and state; all operations are configuration-driven and stateful.\n- Includes robust safety checks, step-by-step execution, state persistence, and verification after each operation.\n- Offers built-in coverage for common services: Redis, PostgreSQL, MySQL, MinIO, ZLMediaKit, Docker, Nginx, Node.js, Python, and Java.\n- Designed to be idempotent, cautious with privileges, and interactive when input is unclear.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2e834ece5d29f5195e800f0be760bb66eafd201f0bca5f6b0c21c415b6b024d"
+}

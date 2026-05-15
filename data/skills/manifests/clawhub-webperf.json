@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28029,
+  "uuid": "skill-clawhub-webperf",
+  "skillKey": "clawhub-webperf",
+  "name": "Webperf",
+  "summary": "Web performance measurement and debugging toolkit. Use when the user asks about web performance, wants to audit a page, or says \"analyze performance\", \"debug...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webperf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nucliweb",
+      "features": [
+        "Web performance measurement and debugging toolkit",
+        "Use when the user asks about web performance, wants to audit a page, or says \"analyze performan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webperf@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1307927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webperf",
+      "url": "https://clawhub.ai/skills/webperf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webperf",
+    "url": "https://clawhub.ai/skills/webperf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webperf-f23c7d0932b68125.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webperf@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webperf-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b602db6a41945e4e03e4bb8de591f2fc365415c3e10e53d7fb3eb1ee294faae",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:54:03.274Z"
+}

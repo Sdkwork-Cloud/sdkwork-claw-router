@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codebuddy-coding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codebuddy_coding",
+  "skill": {
+    "id": 63963,
+    "skillKey": "clawhub-codebuddy-coding",
+    "name": "CodeBuddy Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codebuddy-coding",
+    "url": "https://clawhub.ai/skills/codebuddy-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codebuddy-coding-bb9132b9fd15387f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过调用 CodeBuddy CLI，支持代码生成、重构、调试和文件操作，并提供任务进度监控和结构化结果输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13770626440",
+      "userId": "s1724gks5vk6trsq7pddfxh5gs83zv3f",
+      "displayName": "13770626440",
+      "image": "https://avatars.githubusercontent.com/u/264957203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775612059945,
+      "changelog": "Initial release: Universal AI coding skill powered by CodeBuddy CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bd93e95418bdf4f428ec9bc915fe503c6e9eb461c1973c077d9af4153cea20d"
+}

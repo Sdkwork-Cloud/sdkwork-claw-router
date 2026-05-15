@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12186,
+  "uuid": "skill-clawhub-bamboohr-automation",
+  "skillKey": "clawhub-bamboohr-automation",
+  "name": "Bamboohr Automation",
+  "summary": "Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current schemas.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bamboohr_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, emp.",
+        "Always search tools first for current schemas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bamboohr-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bamboohr-automation",
+      "url": "https://clawhub.ai/skills/bamboohr-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bamboohr-automation",
+    "url": "https://clawhub.ai/skills/bamboohr-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bamboohr-automation-a4a64a4f0820619f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bamboohr-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bamboohr-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d621a7a8881af2b01ef02129337d6e94be8ee355990e6964653115ca7debdf2",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T08:40:59.855Z"
+}

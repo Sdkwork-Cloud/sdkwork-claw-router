@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knhm-match-center@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knhm_match_center",
+  "skill": {
+    "id": 18782,
+    "skillKey": "clawhub-knhm-match-center",
+    "name": "KNHB Match Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knhm-match-center",
+    "url": "https://clawhub.ai/skills/knhm-match-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knhm-match-center-4b91b0fe5ceae6bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Dutch field hockey match schedules and results from KNHB Match Center (hockeyweerelt.nl). Use when looking up hockey clubs, teams, upcoming matches, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tader",
+      "userId": "publishers:tader",
+      "displayName": "Thomas A. de Ruiter",
+      "image": "https://avatars.githubusercontent.com/u/35197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 662,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771258957113,
+      "changelog": "Initial release of knhb-match-center skill.\n\n- Query Dutch field hockey match schedules and results from the KNHB Match Center.\n- Search and list clubs, filter by name or city.\n- List all teams of a club, with type (outdoor/indoor) and next match date.\n- Retrieve upcoming and played matches for any team, including detailed match info and scores.\n- Includes usage notes for team categories, datetime handling, and season structure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9399c874d4d81292d534ba7aca880e507dcc2e31101fb85636a157849a565323"
+}

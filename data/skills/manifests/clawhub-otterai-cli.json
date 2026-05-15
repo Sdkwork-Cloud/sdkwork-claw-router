@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25480,
+  "uuid": "skill-clawhub-otterai-cli",
+  "skillKey": "clawhub-otterai-cli",
+  "name": "Otterai Cli",
+  "summary": "Use when the user mentions Otter, Otter.ai, or wants to find, search, download, export, or manage meeting notes, transcripts, recordings, or audio from calls...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otterai_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "erickhchan",
+      "features": [
+        "Use when the user mentions Otter, Otter.ai, or wants to find, search, download, export, or mana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/otterai-cli@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20845622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "otterai-cli",
+      "url": "https://clawhub.ai/skills/otterai-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otterai-cli",
+    "url": "https://clawhub.ai/skills/otterai-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otterai-cli-4a7ee59c5390f764.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/otterai-cli@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-otterai-cli-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b9fbf32883aefc5bd1f3af9541262931aa534fb8d9f5d88fe2e0aa215b59373",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:24:00.041Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wpclaw-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wpclaw_lite",
+  "skill": {
+    "id": 11482,
+    "skillKey": "clawhub-wpclaw-lite",
+    "name": "WPClaw Lite (WordPress/WooCommerce connector)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wpclaw-lite",
+    "url": "https://clawhub.ai/skills/wpclaw-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wpclaw-lite-0bf38a91c1765ab7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects to a WooCommerce store via the WPClaw Connector plugin to fetch orders and products."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "magnum-opus-v1",
+      "userId": "publishers:magnum-opus-v1",
+      "displayName": "magnum-opus-v1",
+      "image": "https://avatars.githubusercontent.com/u/258509694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2002,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769904543773,
+      "changelog": "wpclaw-lite 1.0.0\n\n- Initial release as \"WPClaw Connector\" skill.\n- Connects to WooCommerce stores via the WPClaw Connector plugin.\n- Supports fetching order details, searching for products, and checking store connection status.\n- Requires `WPCLAW_STORE_URL` and `WPCLAW_STORE_SECRET` environment variables for configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f6cefdb728dc7a1c4a3d129106ff83c25a2330dd40ab97b9163e67715708273"
+}

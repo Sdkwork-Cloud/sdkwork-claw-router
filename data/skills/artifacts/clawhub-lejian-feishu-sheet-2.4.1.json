@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lejian-feishu-sheet@2.4.1",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lejian_feishu_sheet",
+  "skill": {
+    "id": 68292,
+    "skillKey": "clawhub-lejian-feishu-sheet",
+    "name": "乐荐飞书表格"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lejian-feishu-sheet",
+    "url": "https://clawhub.ai/skills/lejian-feishu-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lejian-feishu-sheet-a79391df951d1538.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "乐荐飞书电子表格。乐荐飞书电子表格（Sheets）完整操作。当需要创建、读取或编辑飞书电子表格时激活此 skill。 支持：创建表格、读写单元格、追加数据、图片插入、样式设置、合并单元格、行列操作、查找替换。 基于官方 feishu-sheet 1.2.0 修复了 v2 API 读取问题。 需要飞书应用凭证：ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romicboy",
+      "userId": "s172sh6z2pmn5q6em9s06b2qzx85krbk",
+      "displayName": "沈荣明",
+      "image": "https://avatars.githubusercontent.com/u/2356195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "2.4.1",
+      "createdAt": 1777883328197,
+      "changelog": "安全修复：所有硬编码 JSON body 改用 Python json.dumps 安全转义，消除 shell 注入风险（float_image/rows/cols 等操作）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5a4a9f1689a7a8267f1014c384da2175b7e6d588b21f8f35eaacf306cfe10d9"
+}

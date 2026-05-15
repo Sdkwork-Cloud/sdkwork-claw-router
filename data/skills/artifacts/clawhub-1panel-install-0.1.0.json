@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1panel-install@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1panel_install",
+  "skill": {
+    "id": 67264,
+    "skillKey": "clawhub-1panel-install",
+    "name": "1panel-install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1panel-install",
+    "url": "https://clawhub.ai/skills/1panel-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1panel-install-c9b5860d70eeb9cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1Panel 服务器管理面板一键安装。当用户提到安装、部署、配置 1Panel 时激活。自动检测是否已安装，已安装则返回访问信息，未安装则自动完成安装流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-liang",
+      "userId": "publishers:jack-liang",
+      "displayName": "Jack-Liang",
+      "image": "https://avatars.githubusercontent.com/u/15953750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773376726670,
+      "changelog": "- Initial release of the 1panel-install skill for one-click installation of the 1Panel server management panel.\n- Automatically detects existing installations and returns panel access info if 1Panel is already installed.\n- Runs full installation process with dependency and root permission checks if 1Panel is not present.\n- Provides clear natural language feedback after installation, including access address, username, and password.\n- Includes detailed error handling and troubleshooting guidance for common installation issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e71b3acdd4658f280fedc698191bb5cd483c2b6fc97714b86b623cb41e1e85f"
+}

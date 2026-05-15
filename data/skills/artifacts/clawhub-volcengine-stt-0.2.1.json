@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-stt@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_stt",
+  "skill": {
+    "id": 16605,
+    "skillKey": "clawhub-volcengine-stt",
+    "name": "Volcengine STT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-stt",
+    "url": "https://clawhub.ai/skills/volcengine-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-stt-7362e07630b295fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio to text using Volcano Engine (Volcengine/ARK) speech-to-text APIs. Use when the user wants to replace Whisper/OpenAI STT with Volcengine, tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reed1898",
+      "userId": "s17053w3a6c09bkqzkan106kp1843wcx",
+      "displayName": "Reed",
+      "image": "https://avatars.githubusercontent.com/u/129141816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 617,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772462595002,
+      "changelog": "Fix config fallback to prioritize skills.entries.volcengine-stt.env.VOLC_*; keep standard API flow stable",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a03c591e252078fe123505e14669bb5f44ec966b32be3a2f0799b52ef332d88"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-search-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_search_optimizer",
+  "skill": {
+    "id": 10754,
+    "skillKey": "clawhub-skill-search-optimizer",
+    "name": "Skill Search Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-search-optimizer",
+    "url": "https://clawhub.ai/skills/skill-search-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-search-optimizer-d707495fc0f17fce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize agent skills for discoverability on ClawdHub/MoltHub. Use when improving search ranking, writing descriptions for semantic search, understanding how the registry indexes skills, testing search visibility, or analyzing why a skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2126,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770159366784,
+      "changelog": "Initial release — search visibility optimization for ClawdHub skills",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f968ea8d5570952d57188a3415d2ca8734b9381b30a899c1b7372bb52c24ae4"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14080,
+  "uuid": "skill-clawhub-listen",
+  "skillKey": "clawhub-listen",
+  "name": "Listen",
+  "summary": "Improve transcription accuracy over time. Learn corrections, configure STT.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Improve transcription accuracy over time",
+        "Learn corrections, configure STT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listen",
+      "url": "https://clawhub.ai/skills/listen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listen",
+    "url": "https://clawhub.ai/skills/listen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listen-6f8860eb5103a16b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-listen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69a6e2dca67ba797430b422ed8bb5f82ce61d24818c52bbd537f627c9c8e7331",
+      "artifactSizeBytes": 1742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:35:58.325Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20419,
+  "uuid": "skill-clawhub-trust-velocity-calculator",
+  "skillKey": "clawhub-trust-velocity-calculator",
+  "name": "Trust Velocity Calculator",
+  "summary": "Helps calculate the rate at which trust in a skill or agent is decaying by combining time elapsed since last verification with the rate of change in behavior...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_velocity_calculator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps calculate the rate at which trust in a skill or agent is decaying by combining time elaps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trust-velocity-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trust-velocity-calculator",
+      "url": "https://clawhub.ai/skills/trust-velocity-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-velocity-calculator",
+    "url": "https://clawhub.ai/skills/trust-velocity-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-velocity-calculator-c45007d8404d6b26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trust-velocity-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trust-velocity-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a00cd5851b7ab469095958775ebeffddad34fc08dd4c44e4a04fee0a54867d1a",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:26:33.638Z"
+}

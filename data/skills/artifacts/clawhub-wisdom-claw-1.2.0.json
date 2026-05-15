@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wisdom-claw@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wisdom_claw",
+  "skill": {
+    "id": 28194,
+    "skillKey": "clawhub-wisdom-claw",
+    "name": "Wisdom Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wisdom-claw",
+    "url": "https://clawhub.ai/skills/wisdom-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wisdom-claw-a2c4cc29d7c6e43c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buddhist wisdom and mindful dialogue companion. Built on Madhyamaka (Middle Way) philosophy, integrating meditation, dialog skills, and classic Buddhist teac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tttael",
+      "userId": "publishers:tttael",
+      "displayName": "TTtael",
+      "image": "https://avatars.githubusercontent.com/u/163815070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773573580919,
+      "changelog": "**Expanded focus on Madhyamaka (Middle Way) philosophy with new guidance, sutras, and dialogue scenarios.**\n\n- Added detailed Madhyamaka principles including \"Eight Negations\" and the \"Four-Step Madhyamaka Method.\"\n- Expanded classic sutra list to include foundational Madhyamaka texts and key quotations.\n- Included new practical \"Madhyamaka sword\" dialogue templates for common user dilemmas (e.g., hurt, anxiety, unfairness).\n- Strengthened advice on dialogue skills using Madhyamaka for both self-reflection and pointing out user attachments.\n- Updated usage triggers and clarified guidance for best practice in conversations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f5e5e5e47ab6478412ae756bbfd7142838a0b72b86aa3faaf210c7982192b67"
+}

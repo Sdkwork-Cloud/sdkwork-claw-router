@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30442,
+  "uuid": "skill-clawhub-enormail",
+  "skillKey": "clawhub-enormail",
+  "name": "Enormail",
+  "summary": "Enormail integration. Manage Mailboxs, Campaigns. Use when the user wants to interact with Enormail data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enormail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Enormail integration",
+        "Manage Mailboxs, Campaigns",
+        "Use when the user wants to interact with Enormail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enormail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enormail",
+      "url": "https://clawhub.ai/skills/enormail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enormail",
+    "url": "https://clawhub.ai/skills/enormail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enormail-7e2f14a2d9e105bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enormail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-enormail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4bb61f8bac83d1ba91959dbb1c6917002a1d25e08ae60ae292d890afe1f6c9a",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:44:09.027Z"
+}

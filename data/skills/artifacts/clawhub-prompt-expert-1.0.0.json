@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_expert",
+  "skill": {
+    "id": 39659,
+    "skillKey": "clawhub-prompt-expert",
+    "name": "Prompt Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-expert",
+    "url": "https://clawhub.ai/skills/prompt-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-expert-3849a00df1fef0c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert in prompt engineering, custom instructions, and prompt optimization for AI agents: clear structure, CoT/few-shot/XML/role patterns, system prompts, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775620237857,
+      "changelog": "- Initial release of \"prompt-expert\" skill, providing expert guidance on prompt engineering and optimization.\n- Offers best practices for clear, structured prompts, including advanced techniques like Chain-of-Thought, few-shot, XML, and role-based prompting.\n- Covers custom instruction and system prompt design, iterative refinement, evaluation frameworks, and anti-pattern identification.\n- Supports analysis and debugging for prompts involving multimodal inputs, embeddings, and agent tool-use.\n- Comes with reference guides and curated examples for practical use and learning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8b6624e0ca3ceb02d2bbe9186fcdf55e0a737f1a28f9577bcf8b777a354b535"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42524,
+  "uuid": "skill-clawhub-drone-video-editor",
+  "skillKey": "clawhub-drone-video-editor",
+  "name": "Drone Video Editor",
+  "summary": "Raw drone footage arrives as flat, ungraded clips with inconsistent horizon lines, abrupt cuts between altitude changes, and ambient wind noise on the audio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drone_video_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Raw drone footage arrives as flat, ungraded clips with inconsistent horizon lines, abrupt cuts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drone-video-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drone-video-editor",
+      "url": "https://clawhub.ai/skills/drone-video-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drone-video-editor",
+    "url": "https://clawhub.ai/skills/drone-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drone-video-editor-2cc490dd66610556.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drone-video-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drone-video-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e5d6b49b040e3c2a4a74112abf2bf6c31410d478da8152f53b1a92dfe582bdf",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:52:49.936Z"
+}

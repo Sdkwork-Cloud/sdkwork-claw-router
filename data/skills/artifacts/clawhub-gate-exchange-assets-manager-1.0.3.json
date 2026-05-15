@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-assets-manager@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_assets_manager",
+  "skill": {
+    "id": 36922,
+    "skillKey": "clawhub-gate-exchange-assets-manager",
+    "name": "Gate Exchange Account and Asset Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-assets-manager",
+    "url": "https://clawhub.ai/skills/gate-exchange-assets-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-assets-manager-292cd63443f2d168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate multi-account asset manager L2 skill. Use when the user asks to check total assets combined with margin/liquidation risk or earnings snapshots. Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775115133720,
+      "changelog": "## gate-exchange-assets-manager v1.0.3 Changelog\n\n- Skill description and trigger phrases updated for improved clarity and conciseness.\n- Skill version and date metadata corrected for consistency.\n- Reference to new authoritative MCP aggregation layer added (`references/mcp.md`).\n- Documentation streamlined to redirect implementation and failure modes to the new reference file.\n- Miscellaneous documentation, README, and changelog updates for accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8b76beef4fc1fc852e340cbd895398cd8a40a8f59e1657a89b52196f7b1dcdf"
+}

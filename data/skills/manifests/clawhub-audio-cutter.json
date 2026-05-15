@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55331,
+  "uuid": "skill-clawhub-audio-cutter",
+  "skillKey": "clawhub-audio-cutter",
+  "name": "Audio Cutter",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — cut the first 30 seconds and remove the silence at the end — and get trimm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_cutter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — cut the first 30 seconds and remove the silence at the end — and get t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-cutter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-cutter",
+      "url": "https://clawhub.ai/skills/audio-cutter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-cutter",
+    "url": "https://clawhub.ai/skills/audio-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-cutter-086ab1b988fcbd96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-cutter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-cutter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c69e6a29ca92124431a92be6ca5ff585004940231d3652c6dc01d58817828c5d",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:29:37.263Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15620,
+  "uuid": "skill-clawhub-static-network",
+  "skillKey": "clawhub-static-network",
+  "name": "Static (ø)",
+  "summary": "Interact with the Static (ø) social platform to register users, read feeds, create posts, vote, comment, send DMs, and receive notifications via API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.static_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronfrancis635",
+      "features": [
+        "Interact with the Static (ø) social platform to register users, read feeds, create posts, vote,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/static-network@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30204246?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "static-network",
+      "url": "https://clawhub.ai/skills/static-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "static-network",
+    "url": "https://clawhub.ai/skills/static-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/static-network-0e9bed576c0453bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/static-network@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-static-network-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5b8f5b8fd92074b60b7dbdbbdc534f9886584c828f3c5f5ecb5536cee9e0fea",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T14:43:30.454Z"
+}

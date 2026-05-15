@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46719,
+  "uuid": "skill-clawhub-fha-va-usda-mortgage-rate-watch",
+  "skillKey": "clawhub-fha-va-usda-mortgage-rate-watch",
+  "name": "FHA, VA & USDA Mortgage Rate Watch",
+  "summary": "Daily FHA, VA, and USDA government-backed mortgage rate monitoring, comparison, and newsletter-style summaries. Use when the user asks about current FHA mort...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fha_va_usda_mortgage_rate_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chi Li",
+      "features": [
+        "Daily FHA, VA, and USDA government-backed mortgage rate monitoring, comparison, and newsletter-.",
+        "Use when the user asks about current FHA mort..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fha-va-usda-mortgage-rate-watch@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10106088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fha-va-usda-mortgage-rate-watch",
+      "url": "https://clawhub.ai/skills/fha-va-usda-mortgage-rate-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fha-va-usda-mortgage-rate-watch",
+    "url": "https://clawhub.ai/skills/fha-va-usda-mortgage-rate-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fha-va-usda-mortgage-rate-watch-2b9fb2fe65709add.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fha-va-usda-mortgage-rate-watch@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fha-va-usda-mortgage-rate-watch-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7be5be83a041d24c702817e7ba1e4305009c3d017ba8a861cd50c8d94dfd2fe5",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T23:31:31.825Z"
+}

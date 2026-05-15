@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flat-lay-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flat_lay_openapi_skill",
+  "skill": {
+    "id": 56096,
+    "skillKey": "clawhub-flat-lay-openapi-skill",
+    "name": "AI Clothing Piece Generator – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flat-lay-openapi-skill",
+    "url": "https://clawhub.ai/skills/flat-lay-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flat-lay-openapi-skill-09470a5b5361bdda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI flat-lay clothing generator — create professional flat-lay product images from a photo"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776407688941,
+      "changelog": "- Initial release of the flat-lay-openapi-skill.\n- Generate professional flat-lay product images from garment or model photos.\n- Requires HTTPS and a WESHOP_API_KEY for authentication.\n- Provides endpoints for starting runs, polling status, and uploading images.\n- Customizable options for model, resolution, aspect ratio, and batch size.\n- Highlights strong API key security and usage practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fca8395501fa1e3f94fb37b38c1fbe38811755bb206977802303433b6725494"
+}

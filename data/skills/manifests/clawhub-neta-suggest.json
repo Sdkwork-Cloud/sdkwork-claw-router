@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55046,
+  "uuid": "skill-clawhub-neta-suggest",
+  "skillKey": "clawhub-neta-suggest",
+  "name": "Neta Suggest",
+  "summary": "Neta API research and recommendation skill — provide keyword/tag/category suggestions, validate taxonomy paths, and power multi‑mode content feeds, supportin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neta_suggest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hu Xiuhan",
+      "features": [
+        "Neta API research and recommendation skill — provide keyword/tag/category suggestions, validate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neta-suggest@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1184998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neta-suggest",
+      "url": "https://clawhub.ai/skills/neta-suggest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neta-suggest",
+    "url": "https://clawhub.ai/skills/neta-suggest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neta-suggest-ec354fbd959e885f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neta-suggest@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neta-suggest-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bc9038d3dd63f09a22dab348b9dba501f404c224d8253d22d764da8f1b8d57e",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:18:03.108Z"
+}

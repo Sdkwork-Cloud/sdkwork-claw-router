@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66905,
+  "uuid": "skill-clawhub-smart-insurance-advisor-cn",
+  "skillKey": "clawhub-smart-insurance-advisor-cn",
+  "name": "智能保险顾问 Smart Insurance Advisor",
+  "summary": "智能保险顾问技能。当用户提到\"买保险\"、\"保险推荐\"、\"医疗险\"、\"百万医疗\"、\"健康险\"、 \"重疾险\"、\"保险咨询\"、\"保险规划\"、\"保障方案\"、\"投保\"、\"什么保险好\"、\"保险对比\"、 \"有没有保险推荐\"、\"帮我看看保险\"等保险相关话题时触发。 通过 API 查询保险产品库，根据用户年龄、社保、家庭等信息智能...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_insurance_advisor_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lpb123",
+      "features": [
+        "智能保险顾问技能。当用户提到\"买保险\"、\"保险推荐\"、\"医疗险\"、\"百万医疗\"、\"健康险\"、 \"重疾险\"、\"保险咨询\"、\"保险规划\"、\"保障方案\"、\"投保\"、\"什么保险好\"、\"保险对比\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-insurance-advisor-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7358064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-insurance-advisor-cn",
+      "url": "https://clawhub.ai/skills/smart-insurance-advisor-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-insurance-advisor-cn",
+    "url": "https://clawhub.ai/skills/smart-insurance-advisor-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-insurance-advisor-cn-92ed7072b0e12046.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-insurance-advisor-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-insurance-advisor-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62faf4d1232beb20ac003e40257fe349b84929472666fc2308d2e63a57764806",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T02:52:10.483Z"
+}

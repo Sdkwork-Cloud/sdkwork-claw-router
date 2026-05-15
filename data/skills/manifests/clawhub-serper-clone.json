@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29828,
+  "uuid": "skill-clawhub-serper-clone",
+  "skillKey": "clawhub-serper-clone",
+  "name": "Serper Clone",
+  "summary": "Web search via a self-hosted Serper-compatible API (powered by SearXNG). Free, no rate limits, runs on your own infrastructure. Use for: web searches, news,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper_clone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Lamb",
+      "features": [
+        "Web search via a self-hosted Serper-compatible API (powered by SearXNG)",
+        "Free, no rate limits, runs on your own infrastructure",
+        "Use for: web searches, news,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serper-clone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/499600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serper-clone",
+      "url": "https://clawhub.ai/skills/serper-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper-clone",
+    "url": "https://clawhub.ai/skills/serper-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-clone-b693ead7dad059d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serper-clone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serper-clone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d75df7e3297018a2dcdc9a6e520c479a3b3a6ce94acd1e173ca7ec8b58e3e8a",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:06:23.454Z"
+}

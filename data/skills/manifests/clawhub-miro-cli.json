@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23371,
+  "uuid": "skill-clawhub-miro-cli",
+  "skillKey": "clawhub-miro-cli",
+  "name": "Miro CLI",
+  "summary": "Miro CLI tool for board/team/org management via command line. Use when querying boards, exporting data, viewing teams/organizations, or automating Miro workf...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miro_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bigbubbaagent-bot",
+      "features": [
+        "Miro CLI tool for board/team/org management via command line",
+        "Use when querying boards, exporting data, viewing teams/organizations, or automating Miro workf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miro-cli@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262385618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miro-cli",
+      "url": "https://clawhub.ai/skills/miro-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miro-cli",
+    "url": "https://clawhub.ai/skills/miro-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miro-cli-db6d769fb9bef8bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miro-cli@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-miro-cli-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adabd2eb1c4be51bc8f0dbaedbf1b039c7ff07af30a46ab2f73e997c1e4cd3fb",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:51:34.434Z"
+}

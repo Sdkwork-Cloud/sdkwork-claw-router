@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52824,
+  "uuid": "skill-clawhub-lightrag-knowledge-base",
+  "skillKey": "clawhub-lightrag-knowledge-base",
+  "name": "LightRAG Knowledge Base",
+  "summary": "Deploy LightRAG as a shared knowledge graph for OpenClaw agents. Gives all your agents a common brain — query cross-agent knowledge, auto-index daily logs, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightrag_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mosoonpi-ai",
+      "features": [
+        "Deploy LightRAG as a shared knowledge graph for OpenClaw agents",
+        "Gives all your agents a common brain — query cross-agent knowledge, auto-index daily logs, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lightrag-knowledge-base@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268581383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lightrag-knowledge-base",
+      "url": "https://clawhub.ai/skills/lightrag-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightrag-knowledge-base",
+    "url": "https://clawhub.ai/skills/lightrag-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightrag-knowledge-base-b8ed9f2a45f3b5a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lightrag-knowledge-base@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lightrag-knowledge-base-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07effa72ef032f1d30996abe0a68147e52898e31f556be8c8763a11da3f50282",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:06:39.003Z"
+}

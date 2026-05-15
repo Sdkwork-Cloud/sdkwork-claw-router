@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wake-lan@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wake_lan",
+  "skill": {
+    "id": 47804,
+    "skillKey": "clawhub-wake-lan",
+    "name": "Wake-on-LAN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wake-lan",
+    "url": "https://clawhub.ai/skills/wake-lan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wake-lan-86977e903c761fd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send Wake-on-LAN magic packets to wake sleeping devices on your LAN using saved aliases or direct MAC/IP via CLI or Python on Linux, macOS, and Android."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingofqin2026",
+      "userId": "s17ettags7atqtc9w4wkamex3983s6gj",
+      "displayName": "kingofqin2026",
+      "image": "https://avatars.githubusercontent.com/u/261905121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777421856823,
+      "changelog": "v1.2.0: Dual-method WOL (wakeonlan CLI + raw UDP). User-managed device aliases. Termux/Android compatible. No hardcoded data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:406f9e29f8b123f8fdbc80e4d8ca72b6919b9764191cf4c04b5d25be222ac534"
+}

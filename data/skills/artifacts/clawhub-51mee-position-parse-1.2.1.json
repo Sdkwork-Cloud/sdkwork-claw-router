@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/51mee-position-parse@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_position_parse",
+  "skill": {
+    "id": 64657,
+    "skillKey": "clawhub-51mee-position-parse",
+    "name": "51mee Position Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-position-parse",
+    "url": "https://clawhub.ai/skills/51mee-position-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-position-parse-c59ee826f62e8336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "职位解析。触发场景：用户提供职位描述要求解析；用户想分析JD的核心要求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "51mee-com",
+      "userId": "publishers:51mee-com",
+      "displayName": "51mee",
+      "image": "https://avatars.githubusercontent.com/u/226007355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773657691586,
+      "changelog": "- Initial release of 51mee-position-parse.\n- Provides structured position analysis from job description text using large language models.\n- Outputs JSON data following a fixed TypeScript interface for consistent data structure.\n- Returns key job info: title, type, experience, education, salary, company details, skills, responsibilities, soft skills, and keywords.\n- Ensures that only information present in the JD is returned—missing fields are set to null.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b79554690cd68e771c75cbebd71814a0e5af30de15e32cade0004c4299df4781"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-letter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_letter",
+  "skill": {
+    "id": 53600,
+    "skillKey": "clawhub-video-letter",
+    "name": "Video Letter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-letter",
+    "url": "https://clawhub.ai/skills/video-letter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-letter-c2fb56d4f675d973.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn my footage into a heartfelt video letter with text overlays and music..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776911521016,
+      "changelog": "Video Letter 1.0.0 — Initial Release\n\n- Instantly create heartfelt video letters from your clips with AI — no editing required.\n- Supports uploads of MP4, MOV, AVI, WebM files up to 500MB.\n- Automated cloud processing adds text overlays, music, and exports 1080p MP4 in 1–2 minutes.\n- Simple workflows: upload, describe your intent, and download your personalized video message.\n- Built-in session management and free credits on first use; requires no local installation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97609d3ea6857ccf8e049f6a0d948701f44c0270138d32acc2f31c195732517f"
+}

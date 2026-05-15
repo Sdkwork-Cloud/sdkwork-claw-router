@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cost-optimizer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cost_optimizer",
+  "skill": {
+    "id": 11848,
+    "skillKey": "clawhub-openclaw-cost-optimizer",
+    "name": "OpenClaw Cost Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cost-optimizer",
+    "url": "https://clawhub.ai/skills/openclaw-cost-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cost-optimizer-9311e0066ab1ccd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add cheap model aliases to your OpenRouter setup for tasks from simple to complex, cutting API costs 50-90% without changing your default model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffjhunter",
+      "userId": "s17fhgfbdhz4g6yqeha2egykyx83grhe",
+      "displayName": "Jeff J Hunter",
+      "image": "https://avatars.githubusercontent.com/u/252698242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1463,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 11,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771093899120,
+      "changelog": "Cut your OpenRouter API costs 50-90%. Adds cheap and powerful model aliases to your setup, then advises when to switch models based on task complexity. 8 presets, 29 models, zero config risk — only adds aliases, never changes your default. 3 clicks to set up. Built by Jeff J Hunter.\n\nChangelog\nv1.1.0 — Cost Tracker, Mix & Match, Monthly Calculator\n\n💸 Cost Tracker: agent logs model switches, \"how much have I saved?\" shows running total with monthly projection\n🔀 Mix & Match: build custom presets by picking one model per tier from the full 29-model registry\n📊 Monthly Cost Calculator: \"estimate my monthly costs\" compares default vs. optimized spending\nAuthor branding and links added\nSecurity fix from v1.0.1 included\n\nv1.0.1 — Security Fix\n\nRemoved insecure fallback that accepted API keys via chat\nAgent now always uses OpenClaw's native auth wizard (openclaw models auth add)\nAdded OPENROUTER_API_KEY to required env in metadata\n\nv1.0.0 — Initial Release\n\n8 presets: balanced, code-machine, claude-diehards, big-context, openai-focused, tool-master, ultra-budget, free-tier\n29 verified OpenRouter models with aliases, pricing, and strengths\nSmart Cost Advisor suggests model switches based on task complexity\nAdditive only — never changes default model, fallbacks, or existing config\nUses OpenClaw's native openclaw models aliases add — no custom scripts\nSetup: 3 Approve clicks, zero terminal usage\nAdvisor on/off toggle\nEasy undo: just remove aliases",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:345e80e65e51f77613d3273a6a1237498c50830ab6da7ed3fc89b51f6062613f"
+}

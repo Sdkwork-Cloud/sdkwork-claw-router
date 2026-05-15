@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-research-assistant@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_research_assistant",
+  "skill": {
+    "id": 18311,
+    "skillKey": "clawhub-github-research-assistant",
+    "name": "github-research-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-research-assistant",
+    "url": "https://clawhub.ai/skills/github-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-research-assistant-af36a6939c1d1bb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub Research Assistant. Use this skill when the user wants to analyze a GitHub repository. Analysis dimensions -- 1) Basic information; 2) Purpose, what i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luochang212",
+      "userId": "publishers:luochang212",
+      "displayName": "Chang Luo",
+      "image": "https://avatars.githubusercontent.com/u/33987852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 552,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772870026399,
+      "changelog": "- Minor update to skill description: clarified \"analysis dimensions\" by splitting the first point into \"Basic information\" and \"Purpose\", improving clarity.\n- No changes to logic, execution steps, or analysis content.\n- Documentation wording slightly updated for consistency; no functional impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6533c9feb078879f1e9f520dbd0cc986b91147085963b3ba82138e5e93391e3a"
+}

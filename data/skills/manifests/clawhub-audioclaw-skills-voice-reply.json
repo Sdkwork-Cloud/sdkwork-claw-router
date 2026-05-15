@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26253,
+  "uuid": "skill-clawhub-audioclaw-skills-voice-reply",
+  "skillKey": "clawhub-audioclaw-skills-voice-reply",
+  "name": "audioclaw-skills-voice-reply",
+  "summary": "Use when AudioClaw Skills, Feishu, or Lark needs to send AudioClaw voice replies with runtime-switchable voice_id, emotion preset, or speaking style, includi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audioclaw_skills_voice_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu Ruixiao",
+      "features": [
+        "Use when AudioClaw Skills, Feishu, or Lark needs to send AudioClaw voice replies with runtime-s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audioclaw-skills-voice-reply@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62665119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audioclaw-skills-voice-reply",
+      "url": "https://clawhub.ai/skills/audioclaw-skills-voice-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audioclaw-skills-voice-reply",
+    "url": "https://clawhub.ai/skills/audioclaw-skills-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audioclaw-skills-voice-reply-a6646285d3b10d2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audioclaw-skills-voice-reply@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-audioclaw-skills-voice-reply-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5095614781222581d05bd1df2eb6898ba80f853cf466becf354ba4e6210b1fdd",
+      "artifactSizeBytes": 2689
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:36:07.443Z"
+}

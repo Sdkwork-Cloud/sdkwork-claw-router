@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caveman@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caveman",
+  "skill": {
+    "id": 13721,
+    "skillKey": "clawhub-caveman",
+    "name": "Caveman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caveman",
+    "url": "https://clawhub.ai/skills/caveman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caveman-b2bafec946916229.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ultra-compressed communication mode. Slash token usage ~75% by speaking like smart caveman while keeping technical accuracy. Use when user says \"caveman mode..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skaravind",
+      "userId": "s175xf9aac2ag1xp03pcphmfyd83r8jd",
+      "displayName": "S K Aravind",
+      "image": "https://avatars.githubusercontent.com/u/15744705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2165,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775427775774,
+      "changelog": "Credit original repo in description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aed01a52c2007a58eed59536b217777f27fb34361924f9da689623168690f0ba"
+}

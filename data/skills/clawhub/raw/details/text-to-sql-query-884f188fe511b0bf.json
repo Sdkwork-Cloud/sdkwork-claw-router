@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "text-to-sql-query",
+    "displayName": "Aloudata CAN SKILLS - text-to-sql-query",
+    "summary": "直接通过 Text-to-SQL 方式查询零售数据库。根据用户自然语言描述，生成 SQL 查询语句并执行。 本 Skill 不依赖语义层或指标平台，而是直接基于数据库 schema 生成 SQL。 触发场景：用户需要查询零售数据、生成 SQL 查询、分析销售/客户/商品数据时使用。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1774604851988,
+    "updatedAt": 1777624219982
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774604851988,
+    "changelog": "text-to-sql-query 1.0.0\n\n- Initial release of the Text-to-SQL 数据查询 Skill for querying retail databases via natural language.\n- Supports automatic SQL generation and execution directly against 6 whitelist tables using provided schema.\n- Execution supported via curl or Python, with results returned in Markdown table format.\n- Enforces SELECT-only queries, table whitelist, and basic security constraints (e.g., no multi-statement or DML).\n- Schema documentation included for all fact and dimension tables.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jackyujun",
+    "userId": "s172qm3yezbbjev7q8rsxxbd1s83he2f",
+    "displayName": "jackyujun",
+    "image": "https://avatars.githubusercontent.com/u/4506268?v=4"
+  },
+  "moderation": null
+}

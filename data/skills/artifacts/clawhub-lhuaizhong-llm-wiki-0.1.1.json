@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lhuaizhong-llm-wiki@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lhuaizhong_llm_wiki",
+  "skill": {
+    "id": 38914,
+    "skillKey": "clawhub-lhuaizhong-llm-wiki",
+    "name": "LLM Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lhuaizhong-llm-wiki",
+    "url": "https://clawhub.ai/skills/lhuaizhong-llm-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lhuaizhong-llm-wiki-4a52e851e4d110ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain a local Markdown knowledge wiki that compounds over time instead of relying on one-shot RAG retrieval. Use when the user wants to turn not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhuaizhong",
+      "userId": "s1733ygcye5pderxw6xx86wx0584bhsc",
+      "displayName": "lhuaizhong",
+      "image": "https://avatars.githubusercontent.com/u/13061739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775484855149,
+      "changelog": "Add wiki scaffold initializer script, improve quick-start guidance, and refine publish-facing notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5f14b2a4e238f5825260582ba2b5ff5db69ba02fbdc4aa4cf95e6313138e65e"
+}

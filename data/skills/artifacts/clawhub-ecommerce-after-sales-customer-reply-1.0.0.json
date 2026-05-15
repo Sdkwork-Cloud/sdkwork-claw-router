@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-after-sales-customer-reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_after_sales_customer_reply",
+  "skill": {
+    "id": 73344,
+    "skillKey": "clawhub-ecommerce-after-sales-customer-reply",
+    "name": "电商售后客户咨询回复"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-after-sales-customer-reply",
+    "url": "https://clawhub.ai/skills/ecommerce-after-sales-customer-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-after-sales-customer-reply-d27e9675b2698404.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一处理电商售后客户咨询回复。用于消费者提出退换货、物流查询、商品使用问题三类常见售后场景时，快速生成品牌亲和、专业、高效、可直接发送的中文回复，适用于店铺客服、平台客服、在线IM与私聊售后场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778036151663,
+      "changelog": "首发：统一处理退换货、物流查询、商品使用问题三类常见售后咨询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1ea5861a12ead7e91f02e6bb6130330ab6ad0afe925b3a8ae1e1ec8823d63a7"
+}

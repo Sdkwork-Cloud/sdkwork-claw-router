@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junxuan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junxuan",
+  "skill": {
+    "id": 25466,
+    "skillKey": "clawhub-junxuan",
+    "name": "junxuan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junxuan",
+    "url": "https://clawhub.ai/skills/junxuan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junxuan-8ffec1a49f939856.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junxuan666",
+      "userId": "s1747wdeaqm384a5gx0h7pyyrd8439zf",
+      "displayName": "junxuan666",
+      "image": "https://avatars.githubusercontent.com/u/130372490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773112791130,
+      "changelog": "Agent Browser initial release – a Rust & Node.js-based CLI for AI-powered web automation.\n\n- Added CONTRIBUTING.md and _meta.json for contribution guidelines and metadata.\n- Removed obsolete skill_main.py.\n- Replaced SKILL.md: now documents agent-browser CLI usage for browser automation, structured data extraction, interaction commands, workflow, and installation.\n- Provides detailed guides for automating navigation, DOM interactions, snapshots, screenshots, recording, network interception, browser state, and more.\n- Lists concise, consistent command examples for all supported use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aff327951e3575432df89f8cc194535488294db31ddf1f5a25158d412349d005"
+}

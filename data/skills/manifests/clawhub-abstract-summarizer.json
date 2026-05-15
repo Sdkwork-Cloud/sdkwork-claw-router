@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31149,
+  "uuid": "skill-clawhub-abstract-summarizer",
+  "skillKey": "clawhub-abstract-summarizer",
+  "name": "Abstract Summarizer",
+  "summary": "Transform lengthy academic papers into concise, structured 250-word abstracts capturing background, methods, results, and conclusions. Optimized for research...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abstract_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Transform lengthy academic papers into concise, structured 250-word abstracts capturing backgro.",
+        "Optimized for research..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abstract-summarizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abstract-summarizer",
+      "url": "https://clawhub.ai/skills/abstract-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abstract-summarizer",
+    "url": "https://clawhub.ai/skills/abstract-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abstract-summarizer-0fe63b9440b636ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abstract-summarizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abstract-summarizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7422a3e1b313a3955eb45dd231246a69b4cd2ea6034cb7ef92927b3d42f5cf37",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:38:20.737Z"
+}

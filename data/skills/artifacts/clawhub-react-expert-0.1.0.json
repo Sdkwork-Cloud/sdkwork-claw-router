@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-expert@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_expert",
+  "skill": {
+    "id": 8677,
+    "skillKey": "clawhub-react-expert",
+    "name": "React Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-expert",
+    "url": "https://clawhub.ai/skills/react-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-expert-337634525d28029c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 features."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7911,
+      "installsAllTime": 57,
+      "installsCurrent": 55,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838720738,
+      "changelog": "Initial release of react-expert skill.\n\n- Provides expert guidance for building React 18+ applications, including React 19, Server Components, and modern hooks patterns.\n- Covers state management (Redux, Zustand, Context), performance optimization, Suspense boundaries, and accessibility best practices.\n- Delivers strict TypeScript-first implementations, testing templates, and key architectural constraints.\n- Integrates reference guides for React-specific topics such as form actions, TanStack Query, and migrating to modern React.\n- Defines clear MUST DO and MUST NOT DO lists for maintainable, production-grade React code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4cdd250c78237ea1c9c7c7f1b36ba19de78dec9ce62d2427465e26163212e1cc"
+}

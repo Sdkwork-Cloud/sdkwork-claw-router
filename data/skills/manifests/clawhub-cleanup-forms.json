@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41114,
+  "uuid": "skill-clawhub-cleanup-forms",
+  "skillKey": "clawhub-cleanup-forms",
+  "name": "Cleanup Forms",
+  "summary": "Audit and remove unused, test, or deprecated forms from HubSpot. Identifies forms with zero submissions, forms not embedded on any page, and test forms left...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Audit and remove unused, test, or deprecated forms from HubSpot",
+        "Identifies forms with zero submissions, forms not embedded on any page, and test forms left..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cleanup-forms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cleanup-forms",
+      "url": "https://clawhub.ai/skills/cleanup-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-forms",
+    "url": "https://clawhub.ai/skills/cleanup-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-forms-2add7861cdd93d14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cleanup-forms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cleanup-forms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8508c24b04bb20df8960f9ff1087090cefb90fd52772161580b1fcbc1c3c282e",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:27:27.328Z"
+}

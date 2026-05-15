@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-butler-local-authority-engine@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_butler_local_authority_engine",
+  "skill": {
+    "id": 51174,
+    "skillKey": "clawhub-brand-butler-local-authority-engine",
+    "name": "Brand Butler: Local Authority Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-butler-local-authority-engine",
+    "url": "https://clawhub.ai/skills/brand-butler-local-authority-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-butler-local-authority-engine-d7b3e444cde12aff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Brand Butler: Local Authority Engine — the white-glove SEO and AEO system for local service businesses. Use this skill immediately when the user asks about S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adrianboysel",
+      "userId": "s1740bjhsg4rwkg7s8jzcqt2qh844rcv",
+      "displayName": "Adrian Boysel",
+      "image": "https://avatars.githubusercontent.com/u/94202771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775239060697,
+      "changelog": "**Instructions and credential-handling policies have been updated for clarity and security.**\n\n- Clarifies that all directory submissions, GSC access, and credential handling are performed by the user — this skill provides instructions only, and never stores or transmits credentials.\n- Adds new rules: never ask for passwords in chat, instruct users to record logins and submissions in their own tracker, and do not handle credentials conversationally.\n- Stresses that all network actions (fetching sitemaps, GSC, directories) must be performed by the user, not the skill.\n- Updates skill metadata and agent rules for transparent instruction-only operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70ab9a9efed88dbcf05eac53e4fc4e04b4a5525582465dd482637648b2746edb"
+}

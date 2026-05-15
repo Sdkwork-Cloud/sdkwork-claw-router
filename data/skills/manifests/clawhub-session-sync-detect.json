@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67659,
+  "uuid": "skill-clawhub-session-sync-detect",
+  "skillKey": "clawhub-session-sync-detect",
+  "name": "Session Sync Detect",
+  "summary": "自动检测用户话语中跨会话内容，询问并经用户确认后检索共享记忆文件及活跃会话历史同步信息。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_sync_detect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoquan",
+      "features": [
+        "自动检测用户话语中跨会话内容，询问并经用户确认后检索共享记忆文件及活跃会话历史同步信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-sync-detect@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1118270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-sync-detect",
+      "url": "https://clawhub.ai/skills/session-sync-detect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-sync-detect",
+    "url": "https://clawhub.ai/skills/session-sync-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-sync-detect-340f42ff99d281dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-sync-detect@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-sync-detect-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d017f5d73c955df22657e89198bdd4da389994fc004b99c1bb8150cae0d0a2d",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:17:27.462Z"
+}

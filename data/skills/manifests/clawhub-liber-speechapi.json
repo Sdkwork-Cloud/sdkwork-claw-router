@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43124,
+  "uuid": "skill-clawhub-liber-speechapi",
+  "skillKey": "clawhub-liber-speechapi",
+  "name": "liber-speechapi",
+  "summary": "Handle Telegram voice messages with ASR, summarize replies, and provide TTS; also support direct text-to-speech and speech-to-text conversion with environmen...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liber_speechapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chang",
+      "features": [
+        "Handle Telegram voice messages with ASR, summarize replies, and provide TTS",
+        "also support direct text-to-speech and speech-to-text conversion with environmen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liber-speechapi@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79965108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liber-speechapi",
+      "url": "https://clawhub.ai/skills/liber-speechapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liber-speechapi",
+    "url": "https://clawhub.ai/skills/liber-speechapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liber-speechapi-af192c6a9049e6de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liber-speechapi@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liber-speechapi-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de70295512286a6abb810cd4a18875c87926f8e7c3251045c4ca486e6eed3226",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:27:23.744Z"
+}

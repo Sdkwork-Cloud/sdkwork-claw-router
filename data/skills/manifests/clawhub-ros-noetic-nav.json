@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61130,
+  "uuid": "skill-clawhub-ros-noetic-nav",
+  "skillKey": "clawhub-ros-noetic-nav",
+  "name": "ROS Noetic Navigation",
+  "summary": "通过rosbridge与ROS Noetic导航系统交互，支持地图读取、航点管理、单点导航和多点巡航，基于AMCL定位。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ros_noetic_nav",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Threelevelchord",
+      "features": [
+        "通过rosbridge与ROS Noetic导航系统交互，支持地图读取、航点管理、单点导航和多点巡航，基于AMCL定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ros-noetic-nav@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255277167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ros-noetic-nav",
+      "url": "https://clawhub.ai/skills/ros-noetic-nav"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ros-noetic-nav",
+    "url": "https://clawhub.ai/skills/ros-noetic-nav",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ros-noetic-nav-8d134de64d816aa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ros-noetic-nav@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ros-noetic-nav-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd9dfcc6e6eb0b111de5ba7aab44baae7dd86cf765e962a253e9d84bdb51a30d",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T11:01:16.401Z"
+}

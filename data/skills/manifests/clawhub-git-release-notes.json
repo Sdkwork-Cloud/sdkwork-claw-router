@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38163,
+  "uuid": "skill-clawhub-git-release-notes",
+  "skillKey": "clawhub-git-release-notes",
+  "name": "Git Release Notes",
+  "summary": "Generate polished release notes and changelogs from git history. Analyzes commits between tags/refs, categorizes changes (features, fixes, breaking changes,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_release_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate polished release notes and changelogs from git history",
+        "Analyzes commits between tags/refs, categorizes changes (features, fixes, breaking changes,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-release-notes@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-release-notes",
+      "url": "https://clawhub.ai/skills/git-release-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-release-notes",
+    "url": "https://clawhub.ai/skills/git-release-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-release-notes-a82614deb7adfa3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-release-notes@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-release-notes-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b74d406e004c955ba451c4cb0b6ea8316a057f16b3d680bd5412eee39c418065",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:39.923Z"
+}

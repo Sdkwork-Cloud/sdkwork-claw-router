@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-assistant@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_assistant",
+  "skill": {
+    "id": 65066,
+    "skillKey": "clawhub-email-assistant",
+    "name": "Email Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-assistant",
+    "url": "https://clawhub.ai/skills/email-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-assistant-d0af6bcd7c2ff66f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多邮箱管理助手，支持 Gmail、163、QQ、Outlook、Hotmail。功能：(1) 读取收件箱并展示邮件摘要 (2) 关键词分析标记重要邮件 (3) 自动提取邮件中的日程信息并生成日历事件。适用于需要统一管理多个邮箱、避免错过重要邮件和日程的用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeblackhole1024",
+      "userId": "s177mgnzkjxtm73sg9mgwxwc9n83nygc",
+      "displayName": "codeblackhole",
+      "image": "https://avatars.githubusercontent.com/u/39405686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1356,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772870006206,
+      "changelog": "Optimized description for better discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5c9b4eea0ff630c15a9733ce7ea30a9cd7587d0a73d819af6526157b9cca373"
+}

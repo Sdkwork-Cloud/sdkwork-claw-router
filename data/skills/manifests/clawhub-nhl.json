@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72100,
+  "uuid": "skill-clawhub-nhl",
+  "skillKey": "clawhub-nhl",
+  "name": "Nhl",
+  "summary": "提供NHL赛制规则、历史背景、知名球员及球队信息，查询赛程及比赛结果的综合冰球资讯服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nhl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供NHL赛制规则、历史背景、知名球员及球队信息，查询赛程及比赛结果的综合冰球资讯服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nhl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nhl",
+      "url": "https://clawhub.ai/skills/nhl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nhl",
+    "url": "https://clawhub.ai/skills/nhl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nhl-1514f6f176aac6b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nhl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nhl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b14f8129e720d9a85ed1a58048a8f2b83f5cc6b4f9a9da7a853f3da1290357e",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:13:10.318Z"
+}

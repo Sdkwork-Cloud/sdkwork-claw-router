@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-account-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_account_api",
+  "skill": {
+    "id": 37072,
+    "skillKey": "clawhub-lap-account-api",
+    "name": "Lap Account Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-account-api",
+    "url": "https://clawhub.ai/skills/lap-account-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-account-api-3c5bfa72c4b861ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Account API skill. Use when working with Account for checkAccountHolder, closeAccount, closeAccountHolder. Covers 20 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776677704146,
+      "changelog": "Major update: The skill now targets a different Account API with a new set of endpoints.\n\n- Switched API from eBay Account API to Adyen Account API v6.\n- Updated description and endpoint list to cover 20 Adyen account management actions.\n- Changed authentication to use ApiKey and Bearer token in headers.\n- Revised Base URL and API details.\n- Removed all previous eBay custom, fulfillment, and payment policy endpoints.\n- Added endpoint summaries and request pattern examples for the new API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83d334ab51625fa964471cc6e7f05d28eaf0b654f161ada6806e18b56e222400"
+}

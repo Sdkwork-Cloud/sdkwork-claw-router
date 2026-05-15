@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25526,
+  "uuid": "skill-clawhub-appstore-rating-pulse",
+  "skillKey": "clawhub-appstore-rating-pulse",
+  "name": "AppStore Rating Pulse",
+  "summary": "Monitor App Store ratings for any iOS app across multiple countries. Fetches live overall ratings using Apple's free iTunes Lookup API — no API key needed. S...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appstore_rating_pulse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kokoko",
+      "features": [
+        "Monitor App Store ratings for any iOS app across multiple countries",
+        "Fetches live overall ratings using Apple's free iTunes Lookup API — no API key needed"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appstore-rating-pulse@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10269740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appstore-rating-pulse",
+      "url": "https://clawhub.ai/skills/appstore-rating-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appstore-rating-pulse",
+    "url": "https://clawhub.ai/skills/appstore-rating-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appstore-rating-pulse-6d420f166aba811b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appstore-rating-pulse@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appstore-rating-pulse-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21e16823c21417d08406b0d52a47f208e24ebfe84ce9fa070aabb2fe1b8ba3b8",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T02:02:19.353Z"
+}

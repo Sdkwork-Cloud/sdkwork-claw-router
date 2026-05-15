@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/martok9803-reminder-engine@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.martok9803_reminder_engine",
+  "skill": {
+    "id": 14142,
+    "skillKey": "clawhub-martok9803-reminder-engine",
+    "name": "Reminder Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "martok9803-reminder-engine",
+    "url": "https://clawhub.ai/skills/martok9803-reminder-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/martok9803-reminder-engine-19b744c17809807d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, list, cancel, and snooze reminders using OpenClaw cron jobs (one-shot or recurring). Use when a user asks things like: 'remind me in 20 minutes', 're..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martok9803",
+      "userId": "publishers:martok9803",
+      "displayName": "MartinKirov",
+      "image": "https://avatars.githubusercontent.com/u/100728345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1247,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771257182096,
+      "changelog": "Initial public release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd1ff104c2768ad97ce77a2df041ec4e184285d64a03acdf502aa1ab906f8d9a"
+}

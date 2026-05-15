@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62465,
+  "uuid": "skill-clawhub-shrimp-wechat-mp-reader",
+  "skillKey": "clawhub-shrimp-wechat-mp-reader",
+  "name": "Direct WeChat Article Reader",
+  "summary": "直接读取微信公众号文章正文的可执行 skill。适用于用户提供 mp.weixin.qq.com 链接，并明确要你读正文、摘录内容、提取标题、做总结的场景。与很多只给方法或提示词的同类 skill 不同，这个 skill 自带 setup、run 和 Playwright 提取脚本，已经在真实文章上验证能读出标题...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shrimp_wechat_mp_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "文武贝",
+      "features": [
+        "直接读取微信公众号文章正文的可执行 skill。适用于用户提供 mp.weixin.qq.com 链接，并明确要你读正文、摘录内容、提取标题、做总结的场景。与很多只给方法或提示词的同类 sk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shrimp-wechat-mp-reader@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171480212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shrimp-wechat-mp-reader",
+      "url": "https://clawhub.ai/skills/shrimp-wechat-mp-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shrimp-wechat-mp-reader",
+    "url": "https://clawhub.ai/skills/shrimp-wechat-mp-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shrimp-wechat-mp-reader-64c24dc47b493094.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shrimp-wechat-mp-reader@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-shrimp-wechat-mp-reader-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd23fedd2f1fdd9ab43f0c755c9421dec5e48781ed4a25062def2c608f780109",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T03:46:25.322Z"
+}

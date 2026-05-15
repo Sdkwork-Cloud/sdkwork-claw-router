@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loomlens-live@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loomlens_live",
+  "skill": {
+    "id": 45756,
+    "skillKey": "clawhub-loomlens-live",
+    "name": "LoomLens Live"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loomlens-live",
+    "url": "https://clawhub.ai/skills/loomlens-live",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loomlens-live-8fbdb1594c77ad22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Opens LoomLens Live sidebar to estimate real-time costs, recommend best models in 6 clusters, and dispatch prompts with one click using Signal Loom API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avale-slai",
+      "userId": "s17582f1qg9k74rdd8q7vn5f65848mzy",
+      "displayName": "AVale-SLAI",
+      "image": "https://avatars.githubusercontent.com/u/270702039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775675212491,
+      "changelog": "- Initial release of LoomLens Live for OpenClaw.\n- Opens a sidebar panel to show real-time cost estimates and model recommendations for prompts.\n- Supports 6 model clusters, with dynamic recommendations and per-call billing.\n- Allows drag & drop text, keyboard shortcut (`Cmd/Ctrl+L`), and model override for the next prompt.\n- Offers freemium access (3 free runs/day) and integrates Signal Loom rev-share for developers.\n- Easy installation via workspace hook or skill installer (when supported).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83bd641ff94b315118a2c607a236d5a5fa5e035f78a889e354860c2655faa5f8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16569,
+  "uuid": "skill-clawhub-telegram-context",
+  "skillKey": "clawhub-telegram-context",
+  "name": "Telegram Context",
+  "summary": "Fetches recent Telegram messages at session start to maintain conversation context across sessions, with toggle and manual fetch commands.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fourthdensity",
+      "features": [
+        "Fetches recent Telegram messages at session start to maintain conversation context across sessi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-context@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71754266?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-context",
+      "url": "https://clawhub.ai/skills/telegram-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-context",
+    "url": "https://clawhub.ai/skills/telegram-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-context-ed61c20f693006a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-context@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-context-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c4f1471e48bdd1f35cb712a257099ea52da92fffd500dd2a73b1d7ce47c0c11",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:18:40.724Z"
+}

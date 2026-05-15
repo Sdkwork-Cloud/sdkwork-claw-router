@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botlearn-assessment@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_assessment",
+  "skill": {
+    "id": 38114,
+    "skillKey": "clawhub-botlearn-assessment",
+    "name": "botlearn-assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-assessment",
+    "url": "https://clawhub.ai/skills/botlearn-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-assessment-1f9bf5261e27cac9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "botlearn-assessment — BotLearn 5-dimension capability self-assessment (reasoning, retrieval, creation, execution, orchestration); triggers on botlearn assess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvinxhk",
+      "userId": "s170r0gdb982qwb1dm5b48fsb183mz8n",
+      "displayName": "邢怀康",
+      "image": "https://avatars.githubusercontent.com/u/32790342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772826632971,
+      "changelog": "Version 1.0.5 — Major content and flow update\n\n- Added detailed exam flows, execution instructions, and scoring rules via new `flows/`, `references/`, and `strategies/` files\n- Removed manifest, package, and test files to streamline skill structure\n- Updated language adaptation and invigilator protocol for clarity\n- Introduced per-question output: always display question before answer, enforce immediate submission\n- Enhanced report generation: now outputs both Markdown and HTML with radar charts\n- History and comparison flow improved; now referenced in dedicated subfiles",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6516a262bf3b2dbe8789e795e72c36640e92c844416c245ff692f17e155822c6"
+}

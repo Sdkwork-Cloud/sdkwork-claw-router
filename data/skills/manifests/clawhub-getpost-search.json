@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28969,
+  "uuid": "skill-clawhub-getpost-search",
+  "skillKey": "clawhub-getpost-search",
+  "name": "GetPost Search API",
+  "summary": "Web search API for AI agents. Get search results with titles and snippets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getpost_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "domm",
+      "features": [
+        "Web search API for AI agents",
+        "Get search results with titles and snippets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getpost-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4269710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getpost-search",
+      "url": "https://clawhub.ai/skills/getpost-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getpost-search",
+    "url": "https://clawhub.ai/skills/getpost-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getpost-search-e230e1bfa87055a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getpost-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getpost-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed2bec637e0679f6b995d84b618ce5feac823c51c7b5a32c235cd4916f242abb",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:05:00.000Z"
+}

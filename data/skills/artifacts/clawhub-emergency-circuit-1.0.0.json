@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergency-circuit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergency_circuit",
+  "skill": {
+    "id": 25456,
+    "skillKey": "clawhub-emergency-circuit",
+    "name": "emergency circuit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergency-circuit",
+    "url": "https://clawhub.ai/skills/emergency-circuit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergency-circuit-9eceb7840e37c134.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors AI agents in real-time to detect anomalies and enforce safety policies with automatic emergency shutdown to prevent damage and cost overruns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773398157868,
+      "changelog": "Emergency Circuit 1.0.0 — Initial Release\n\n- Introduces a real-time safety monitoring system for AI agents with emergency kill switch capabilities.\n- Implements a configurable circuit breaker pattern to detect and halt runaway or anomalous agents.\n- Includes policy enforcement, anomaly detection, resource usage tracking, and manual override controls.\n- Provides clear CLI commands for monitoring, emergency shutdown, and incident review.\n- Supports custom policy templates and offers both English and Chinese documentation.\n- Ready for production with integration examples and troubleshooting guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:976cc2d85ce668faeef7c32df5f277e4fb4ed42d23462a0324b3e0e20f42bf5c"
+}

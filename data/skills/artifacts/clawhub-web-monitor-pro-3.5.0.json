@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-monitor-pro@3.5.0",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_monitor_pro",
+  "skill": {
+    "id": 11125,
+    "skillKey": "clawhub-web-monitor-pro",
+    "name": "Web Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-monitor-pro",
+    "url": "https://clawhub.ai/skills/web-monitor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-monitor-pro-bc30a3de92e9d577.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor web pages for changes, price drops, stock availability, and custom conditions. Use when a user asks to watch/track/monitor a URL, get notified about..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakes420",
+      "userId": "publishers:jakes420",
+      "displayName": "jakes420",
+      "image": "https://avatars.githubusercontent.com/u/84342225?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1673,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 5,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "3.5.0",
+      "createdAt": 1771185838866,
+      "changelog": "Quickstart command with smart monitoring suggestions and engine status. Better first-run experience for agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f3407912ab066e4b467d68dc01a610d002cccaff64da25ed30b64c56547cdc5"
+}

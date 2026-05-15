@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-video-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_video_analyzer",
+  "skill": {
+    "id": 50420,
+    "skillKey": "clawhub-gemini-video-analyzer",
+    "name": "Gemini Video Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-video-analyzer",
+    "url": "https://clawhub.ai/skills/gemini-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-video-analyzer-f3be857851e95975.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Native video analysis using Google Gemini API. Upload and analyze video files — describe scenes, extract text/UI, answer questions about content, transcribe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772599945456,
+      "changelog": "Initial release of gemini-video-analyzer.\n\n- Native video analysis using Google Gemini API with support for full scene description, text/UI extraction, object/action identification, and question answering.\n- Supports multiple video formats (MP4, AVI, MOV, etc.) up to 2GB per file.\n- Processes videos at 1 FPS with motion, audio, and visual understanding—no manual frame extraction needed.\n- Includes command-line scripts for analysis, file management, and prompt-based queries.\n- Requires a Google AI API key; configurable via environment variable.\n- Suitable for summarizing, extracting information, comparing videos, and analyzing tutorials or walkthroughs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e03d88ada2a7b6322ca39a1ebf1c10f484350491abe706e83d879f7943bfc43c"
+}

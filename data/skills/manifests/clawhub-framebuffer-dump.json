@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27831,
+  "uuid": "skill-clawhub-framebuffer-dump",
+  "skillKey": "clawhub-framebuffer-dump",
+  "name": "Framebuffer Dump",
+  "summary": "Dump the current STM32 LCD framebuffer via J-Link and convert it to PNG for visual comparison with Figma. Use when user asks to export, snapshot, dump, or ca...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.framebuffer_dump",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ylongw",
+      "features": [
+        "Dump the current STM32 LCD framebuffer via J-Link and convert it to PNG for visual comparison w.",
+        "Use when user asks to export, snapshot, dump, or ca..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/framebuffer-dump@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67491174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "framebuffer-dump",
+      "url": "https://clawhub.ai/skills/framebuffer-dump"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "framebuffer-dump",
+    "url": "https://clawhub.ai/skills/framebuffer-dump",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/framebuffer-dump-5c470394b5f3a808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/framebuffer-dump@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-framebuffer-dump-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25e46ef85fa08216a2ef328a3990075bde37c7c17e4528a7f1261f86a57744d3",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:28:01.887Z"
+}

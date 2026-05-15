@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71201,
+  "uuid": "skill-clawhub-dy-skill-i18n",
+  "skillKey": "clawhub-dy-skill-i18n",
+  "name": "i18国际化文案翻译",
+  "summary": "处理前端国际化翻译工作。当用户提到需要做国际化、i18n、翻译、多语言支持时使用此 skill。主要功能：1) 识别代码中的硬编码静态文字；2) 判断是否应使用现有公共翻译或需要新增；3) 将翻译添加到对应的语言文件中；4) 将硬编码替换为国际化调用；5) 检查翻译完整性和正确性。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dy_skill_i18n",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "安耀奇",
+      "features": [
+        "处理前端国际化翻译工作。当用户提到需要做国际化、i18n、翻译、多语言支持时使用此 skill。主要功能：1) 识别代码中的硬编码静态文字；2) 判断是否应使用现有公共翻译或需要新增；3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dy-skill-i18n@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19759151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dy-skill-i18n",
+      "url": "https://clawhub.ai/skills/dy-skill-i18n"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dy-skill-i18n",
+    "url": "https://clawhub.ai/skills/dy-skill-i18n",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dy-skill-i18n-1ea0d29d759b089d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dy-skill-i18n@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dy-skill-i18n-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ad09057924a459bdda77d2c9597daad8f7a037cb8adde9a07694b158b6b3570",
+      "artifactSizeBytes": 2704
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:33:52.837Z"
+}

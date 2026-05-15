@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-fair@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_fair",
+  "skill": {
+    "id": 46235,
+    "skillKey": "clawhub-trade-fair",
+    "name": "trade-fair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-fair",
+    "url": "https://clawhub.ai/skills/trade-fair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-fair-98c5482865c16421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for trade fairs and exhibition travel. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liquanyu123",
+      "userId": "s173bh61f4yde29x5ddrjfa1qd844z4w",
+      "displayName": "liquanyu123",
+      "image": "https://avatars.githubusercontent.com/u/210639558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777016272889,
+      "changelog": "Trade Fair Flights 3.2.0 — Improved reliability and strict data validation\n\n- Enforces that all travel results are sourced directly from flyai CLI, never from training data.\n- Requires a valid booking link for every flight result.\n- Adds stricter parameter collection and clarifies supported CLI options.\n- Clearly specifies when to activate (trade fair/expo) and when not to (business, conference).\n- Refines output rules with emphasis on booking links, brand tag, and user language matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8e62242938a6f71b8b05563e7796fd13e1eaaf23419564747fb8dd7e1e815ce"
+}

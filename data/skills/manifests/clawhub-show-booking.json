@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16811,
+  "uuid": "skill-clawhub-show-booking",
+  "skillKey": "clawhub-show-booking",
+  "name": "Show Booking",
+  "summary": "Book real estate showing tours from emailed or pasted listing details, including extracting listing data, preparing outbound call jobs, coordinating a callin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.show_booking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielfoch",
+      "features": [
+        "Book real estate showing tours from emailed or pasted listing details, including extracting lis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/show-booking@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152220262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "show-booking",
+      "url": "https://clawhub.ai/skills/show-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "show-booking",
+    "url": "https://clawhub.ai/skills/show-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/show-booking-1e8bb98a602c8f47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/show-booking@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-show-booking-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ce81241c63351c24b332c9941b1967c7b56a4fa0e270a2cdc6e8fee263fb6f5",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:58:11.197Z"
+}

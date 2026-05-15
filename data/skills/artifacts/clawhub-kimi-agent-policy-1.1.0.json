@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimi-agent-policy@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_agent_policy",
+  "skill": {
+    "id": 21344,
+    "skillKey": "clawhub-kimi-agent-policy",
+    "name": "Kimi Agent Policy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-agent-policy",
+    "url": "https://clawhub.ai/skills/kimi-agent-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-agent-policy-9e1f9b950571dda7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kimi (Moonshot AI) agent tool-use policy ported to OpenClaw. Covers step limits, web search, image search, data sources, ipython, memory, content display, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772422168665,
+      "changelog": "Kimi tool-use policy ported to OpenClaw. All tools mapped to free no-API-key alternatives (ddg, agent-browser, multi-search-engine, baoyu-danger-gemini-web).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7114120365f0ce172def9811aee19767e9697e3bdc32bc706c208789813fb5c9"
+}

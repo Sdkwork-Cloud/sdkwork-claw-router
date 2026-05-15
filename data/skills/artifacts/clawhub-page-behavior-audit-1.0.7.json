@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/page-behavior-audit@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.page_behavior_audit",
+  "skill": {
+    "id": 13030,
+    "skillKey": "clawhub-page-behavior-audit",
+    "name": "page-behavior-audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "page-behavior-audit",
+    "url": "https://clawhub.ai/skills/page-behavior-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/page-behavior-audit-e5be0cb1222b6f31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep behavioral audit with hashed policy (CSP-compliant, no plaintext badwords)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youdaolee",
+      "userId": "publishers:youdaolee",
+      "displayName": "Youdaolee",
+      "image": "https://avatars.githubusercontent.com/u/17842178?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1590,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1770793178136,
+      "changelog": "- Updated documentation to a structured format with sections for features, prerequisites, usage, configuration, and security.\n- Added usage examples for both webhook and CLI.\n- Clearly listed environment variables and input/output schema.\n- Provided details on security policies and alert rules.\n- No functional code changes; update is documentation-only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4298d660af8d84c7e104e036b6c3e4d8a8c1c876d05460cb34ad432d15804e2e"
+}

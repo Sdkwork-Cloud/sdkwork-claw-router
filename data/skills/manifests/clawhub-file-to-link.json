@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58068,
+  "uuid": "skill-clawhub-file-to-link",
+  "skillKey": "clawhub-file-to-link",
+  "name": "本地文件上传云端",
+  "summary": "Uploads a local file to Qiniu Cloud Storage and returns a shareable URL.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_to_link",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "an",
+      "features": [
+        "Uploads a local file to Qiniu Cloud Storage and returns a shareable URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-to-link@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208153467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-to-link",
+      "url": "https://clawhub.ai/skills/file-to-link"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-to-link",
+    "url": "https://clawhub.ai/skills/file-to-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-to-link-f066db391eea81ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-to-link@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-to-link-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5046d9df43a9b6083dae3a8e674c4a3f452f8c46f7d75d8470afbf803b05964",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:18:20.432Z"
+}

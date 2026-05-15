@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34848,
+  "uuid": "skill-clawhub-move",
+  "skillKey": "clawhub-move",
+  "name": "Move",
+  "summary": "Move reference tool. Use when working with move in blockchain contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.move",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Move reference tool",
+        "Use when working with move in blockchain contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/move@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "move",
+      "url": "https://clawhub.ai/skills/move"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "move",
+    "url": "https://clawhub.ai/skills/move",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/move-683a62ce15fbabb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/move@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-move-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abd2c56ebdbe7153f91e191c75479dcb416b3d04369c8e5aeb750d95a0cb2b07",
+      "artifactSizeBytes": 1732
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:19:16.742Z"
+}

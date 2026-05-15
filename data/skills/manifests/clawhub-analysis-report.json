@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62225,
+  "uuid": "skill-clawhub-analysis-report",
+  "skillKey": "clawhub-analysis-report",
+  "name": "Aloudata CAN SKILLS - analysis-report",
+  "summary": "编排并生成完整的数据分析报告。当用户需要一份结构化的分析报告（而非单个指标查询或单点分析）时，必须使用此 Skill。本 Skill 是编排层——它不包含分析逻辑，而是知道\"一份好报告该有什么内容\"，按报告模板依次调度能力层 Skill（metric-query、anomaly-detection、metric-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analysis_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackyujun",
+      "features": [
+        "编排并生成完整的数据分析报告。当用户需要一份结构化的分析报告（而非单个指标查询或单点分析）时，必须使用此 Skill。本 Skill 是编排层——它不包含分析逻辑，而是知道\"一份好报告该有什."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analysis-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4506268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analysis-report",
+      "url": "https://clawhub.ai/skills/analysis-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analysis-report",
+    "url": "https://clawhub.ai/skills/analysis-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analysis-report-a1ae627cb41deda4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analysis-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analysis-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4df3a49b17043dee12edea4bc887fa37806ecbfc8833fad68da8b0acb73205f6",
+      "artifactSizeBytes": 3017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:17:43.174Z"
+}

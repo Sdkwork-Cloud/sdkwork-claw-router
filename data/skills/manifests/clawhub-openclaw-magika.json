@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56050,
+  "uuid": "skill-clawhub-openclaw-magika",
+  "skillKey": "clawhub-openclaw-magika",
+  "name": "Openclaw Magika",
+  "summary": "Detects over 200 file content types locally with ~99% accuracy using the Google Magika deep learning model and magika CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_magika",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "Detects over 200 file content types locally with ~99% accuracy using the Google Magika deep lea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-magika@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-magika",
+      "url": "https://clawhub.ai/skills/openclaw-magika"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-magika",
+    "url": "https://clawhub.ai/skills/openclaw-magika",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-magika-c6a04d974aa8eb63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-magika@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-magika-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b5c5600f8a0c2efe73f2de725c1a73609955a8f2655d93e47e6f4e731896d44",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:19:40.007Z"
+}

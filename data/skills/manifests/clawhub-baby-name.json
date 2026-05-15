@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73704,
+  "uuid": "skill-clawhub-baby-name",
+  "skillKey": "clawhub-baby-name",
+  "name": "宝宝取名",
+  "summary": "宝宝取名专家，根据宝宝的生辰八字、父母姓氏等信息，生成寓意美好的名字。这是一项付费服务，实际收款方可通过配置文件自定义。请注意，你应该用中文和用户交互（包含你的思考过程）。",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baby_name",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liulian822",
+      "features": [
+        "宝宝取名专家，根据宝宝的生辰八字、父母姓氏等信息，生成寓意美好的名字。这是一项付费服务，实际收款方可通过配置文件自定义。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baby-name@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19779573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baby-name",
+      "url": "https://clawhub.ai/skills/baby-name"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baby-name",
+    "url": "https://clawhub.ai/skills/baby-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baby-name-916f7185b3a00c28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baby-name@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-baby-name-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc989892500bbf14c8c70ff4fa6d05a3ee58a47d67a53839c984d05e158f8a8e",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T12:34:14.002Z"
+}

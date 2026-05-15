@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19535,
+  "uuid": "skill-clawhub-afrexai-cloud-cost-audit",
+  "skillKey": "clawhub-afrexai-cloud-cost-audit",
+  "name": "Cloud Cost Audit",
+  "summary": "Analyze multi-cloud spend data to identify waste, rightsizing, reserved instance savings, and generate a prioritized 90-day cost optimization roadmap.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_cloud_cost_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Analyze multi-cloud spend data to identify waste, rightsizing, reserved instance savings, and g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-cloud-cost-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-cloud-cost-audit",
+      "url": "https://clawhub.ai/skills/afrexai-cloud-cost-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-cloud-cost-audit",
+    "url": "https://clawhub.ai/skills/afrexai-cloud-cost-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-cloud-cost-audit-fc826eb6bad864ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-cloud-cost-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-cloud-cost-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4892bc0233121661410324d7a6d3203418c13f0ee2f0a79b28628e6593fd019b",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T17:12:33.439Z"
+}

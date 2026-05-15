@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-assets-staging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_assets_staging",
+  "skill": {
+    "id": 43833,
+    "skillKey": "clawhub-gate-exchange-assets-staging",
+    "name": "Gate Exchange Assets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-assets-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-assets-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-assets-staging-92041ab3ce5bbbb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate multi-account asset and balance query skill. Use when the user asks to check total assets, account balance, or specific coin holdings across all account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775622821987,
+      "changelog": "Initial release of the Gate Exchange Assets skill for multi-account asset and balance queries.\n\n- Provides read-only access to aggregate and per-account asset balances across spot, margin, futures, options, unified, TradFi, and finance accounts.\n- Supports total asset overview, coin-specific queries, and detailed sub-account breakdown via mapped MCP tools.\n- Requires Gate MCP API credentials (API Key/Secret) to function; never requests secrets in chat.\n- Strict permissions and usage rules to ensure data safety—read-only queries only, with no trading or transfers possible.\n- Case-based intent routing for flexible user queries (total, per-coin, per-account, ledger/activity).\n- Detailed account type mapping and fiat valuation handling for consistent outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1403cd4f731fc30236ef5f71978333ca0501f1f01f59ba5d259bfd459b260f48"
+}

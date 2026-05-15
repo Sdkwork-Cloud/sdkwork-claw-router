@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47195,
+  "uuid": "skill-clawhub-format-book-6x9",
+  "skillKey": "clawhub-format-book-6x9",
+  "name": "Format Book 6x9",
+  "summary": "Formats a manuscript into a 6\" x 9\" Printed Paperback and a Kindle Ebook, generating a cover page, TOC, headers, and an About the Author section.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.format_book_6x9",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vega6dev",
+      "features": [
+        "Formats a manuscript into a 6\" x 9\" Printed Paperback and a Kindle Ebook, generating a cover pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/format-book-6x9@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82135146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "format-book-6x9",
+      "url": "https://clawhub.ai/skills/format-book-6x9"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "format-book-6x9",
+    "url": "https://clawhub.ai/skills/format-book-6x9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/format-book-6x9-f2a22c0bb58a08f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/format-book-6x9@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-format-book-6x9-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed13ad1795715b0f887577eccd1da336200b0dd4294dfb25d1d7abc1c20cbd2",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T15:53:34.064Z"
+}

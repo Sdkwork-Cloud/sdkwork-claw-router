@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39281,
+  "uuid": "skill-clawhub-clank-website-monitor",
+  "skillKey": "clawhub-clank-website-monitor",
+  "name": "Clank Website Monitor",
+  "summary": "Monitor websites for changes, new content, and price alerts. Perfect for tracking competitors, job postings, or product prices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clank_website_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t3mr0i",
+      "features": [
+        "Monitor websites for changes, new content, and price alerts",
+        "Perfect for tracking competitors, job postings, or product prices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clank-website-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9092940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clank-website-monitor",
+      "url": "https://clawhub.ai/skills/clank-website-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clank-website-monitor",
+    "url": "https://clawhub.ai/skills/clank-website-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clank-website-monitor-9ac9769edc62a70d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clank-website-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clank-website-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1fed2bce03596b65ef25a5f7ae6d1955bf19f8d3f9feb907458c05bad80ff79",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:01:57.242Z"
+}

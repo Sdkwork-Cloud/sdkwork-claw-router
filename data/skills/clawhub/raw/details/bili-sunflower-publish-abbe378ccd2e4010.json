@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "bili-sunflower-publish",
+    "displayName": "Bili Sunflower Publish",
+    "summary": "Publish HTML or Markdown content to Bilibili — supports both 专栏 (article) and 小站 (tribee) targets. Handles login check, title input, content injection via ed...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1772771339252,
+    "updatedAt": 1778304737998
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773585922619,
+    "changelog": "**Major update: Adds Markdown support, removes system clipboard dependency, and injects content via the Bilibili editor API.**\n\n- Now supports publishing both HTML and Markdown (.md/.markdown) files.\n- Content is preprocessed via Python scripts for HTML and Markdown, with improved title extraction and file handling.\n- System clipboard and macOS dependency removed; uses direct JS injection into the Bilibili editor (`window.editor` API).\n- Robust JS string escaping ensures safe content insertion, even for large or complex articles.\n- Scripts for HTML/MD preprocessing added; obsolete clipboard script removed.\n- Documentation (README, SKILL.md) updated to reflect new workflow and requirements.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zangzhicong",
+    "userId": "s174cg3fbvg7gpktjt05q9b4c183vz64",
+    "displayName": "zangzhicong",
+    "image": "https://avatars.githubusercontent.com/u/78746291?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304737998
+  }
+}

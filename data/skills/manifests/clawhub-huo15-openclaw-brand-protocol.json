@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59121,
+  "uuid": "skill-clawhub-huo15-openclaw-brand-protocol",
+  "skillKey": "clawhub-huo15-openclaw-brand-protocol",
+  "name": "Huo15 Openclaw Brand Protocol",
+  "summary": "为现有品牌/产品抓取视觉规范并产出 brand-spec.md。5 步硬流程 Ask / Search / Download / Verify+Extract / Codify，输出可被 huo15-openclaw-frontend-design 直接引用的品牌规约。触发词：抓品牌规范、提取品牌、品牌资产、br...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_brand_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "为现有品牌/产品抓取视觉规范并产出 brand-spec.md。5 步硬流程 Ask / Search / Download / Verify+Extract / Codify，输出可被 h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-openclaw-brand-protocol@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-openclaw-brand-protocol",
+      "url": "https://clawhub.ai/skills/huo15-openclaw-brand-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-brand-protocol",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-brand-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-brand-protocol-d59b8ba4b918bd5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-openclaw-brand-protocol@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-openclaw-brand-protocol-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5efa36ca01bb4ff7c592b447b384064c085e36a1e61f50b0aee296036034529f",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:50.690Z"
+}

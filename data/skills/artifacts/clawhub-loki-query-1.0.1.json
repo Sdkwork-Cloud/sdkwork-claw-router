@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loki-query@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loki_query",
+  "skill": {
+    "id": 27577,
+    "skillKey": "clawhub-loki-query",
+    "name": "loki-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loki-query",
+    "url": "https://clawhub.ai/skills/loki-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loki-query-23b118ca3aecd6c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Loki logs by traceid, keywords, pod, namespace, labels, or time range to debug and analyze Kubernetes application issues via API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peintune",
+      "userId": "s17d4v1zmwqajqh15q1arvt48d83navv",
+      "displayName": "GoodAtMe",
+      "image": "https://avatars.githubusercontent.com/u/10082030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774875353988,
+      "changelog": "- Enhanced documentation with two access modes: direct URL and Kubernetes port-forward.\n- Added example queries for error logs, trace IDs, and pod logs with JSON output.\n- Updated parameter list to include defaults, `--json` flag, and clarified required/optional fields.\n- Expanded common query patterns and example usages for clarity.\n- Improved output description, specifying formatted log lines are returned.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccaf3fe4df4f1f6e8cf78dfbac7a8e38c3df1d050d4cc230131fc9a416c2e584"
+}

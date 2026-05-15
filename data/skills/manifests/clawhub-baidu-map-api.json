@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69811,
+  "uuid": "skill-clawhub-baidu-map-api",
+  "skillKey": "clawhub-baidu-map-api",
+  "name": "调用百度地图api功能",
+  "summary": "使用百度地图Web服务API进行地点搜索、天气查询、路线规划和地理编码。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_map_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coreyleung-art",
+      "features": [
+        "使用百度地图Web服务API进行地点搜索、天气查询、路线规划和地理编码。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-map-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258091586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-map-api",
+      "url": "https://clawhub.ai/skills/baidu-map-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-map-api",
+    "url": "https://clawhub.ai/skills/baidu-map-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-map-api-d70f0d76d4c8d03c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-map-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-map-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a36b345e8f77bf903f457215f36d61239fa01986e5a602bc13b035d673d5574",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T17:54:55.883Z"
+}

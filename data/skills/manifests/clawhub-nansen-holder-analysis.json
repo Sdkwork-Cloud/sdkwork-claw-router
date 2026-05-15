@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31576,
+  "uuid": "skill-clawhub-nansen-holder-analysis",
+  "skillKey": "clawhub-nansen-holder-analysis",
+  "name": "Nansen Holder Analysis",
+  "summary": "Is this token held by quality wallets or retail noise? SM holder ratio, flow breakdown by label, and recent buyer quality.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_holder_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Is this token held by quality wallets or retail noise? SM holder ratio, flow breakdown by label."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-holder-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-holder-analysis",
+      "url": "https://clawhub.ai/skills/nansen-holder-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-holder-analysis",
+    "url": "https://clawhub.ai/skills/nansen-holder-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-holder-analysis-2d00905a3fd5803f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-holder-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-holder-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e5d41f8e148447a1d759d2fae87c000b89025949b69d7c70efae25c6ed505f",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:19:22.275Z"
+}

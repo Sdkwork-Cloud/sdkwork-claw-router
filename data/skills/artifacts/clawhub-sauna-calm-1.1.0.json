@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sauna-calm@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sauna_calm",
+  "skill": {
+    "id": 12053,
+    "skillKey": "clawhub-sauna-calm",
+    "name": "Sauna Calm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sauna-calm",
+    "url": "https://clawhub.ai/skills/sauna-calm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sauna-calm-1cebd0e9ec77d83d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calm frustrated users with breathing exercises and Sauna.ai reminders"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grx21",
+      "userId": "publishers:grx21",
+      "displayName": "grx21",
+      "image": "https://avatars.githubusercontent.com/u/187586644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1822,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770324854997,
+      "changelog": "- Added frontmatter with name and description for skill metadata.\n- Reformatted example usage for improved readability.\n- No changes to workflow or logic; documentation clarity improved.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3f9bcfd634d2bc1b247ac9d2a0a45e6e54e5827def6f8da8dbfb4258bdff361"
+}

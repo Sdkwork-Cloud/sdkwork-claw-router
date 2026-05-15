@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_skills",
+  "skill": {
+    "id": 14698,
+    "skillKey": "clawhub-bank-skills",
+    "name": "Bank Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-skills",
+    "url": "https://clawhub.ai/skills/bank-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-skills-4bdb9e723530931f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Traditional banking via Wise API + on-chain token swaps on Base"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "singularityhacker",
+      "userId": "publishers:singularityhacker",
+      "displayName": "singularityhacker",
+      "image": "https://avatars.githubusercontent.com/u/1808235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771219134235,
+      "changelog": "Major update: Adds on-chain token operations on Base alongside Wise banking, with new wallet and token management features.\n\n- Added support for creating and managing Ethereum wallets on the Base network.\n- Introduced actions for buying, sending, and checking balances of ERC-20 tokens via Uniswap on Base.\n- Extended environment variable options for optional on-chain functionality.\n- Expanded documentation to cover new wallet/token actions and usage.\n- Existing Wise API banking functions (check balance, receive/send money) retained and clarified.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0640aa91345112ebb613a0d45aee4c74aba4ce94214fbae033fffd5657968582"
+}

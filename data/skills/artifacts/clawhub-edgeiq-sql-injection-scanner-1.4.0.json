@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeiq-sql-injection-scanner@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_sql_injection_scanner",
+  "skill": {
+    "id": 38770,
+    "skillKey": "clawhub-edgeiq-sql-injection-scanner",
+    "name": "Sql Injection Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-sql-injection-scanner",
+    "url": "https://clawhub.ai/skills/edgeiq-sql-injection-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-sql-injection-scanner-95b5db58bdbcc323.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans web app parameters for SQL injection vulnerabilities using boolean, time-based, and UNION SELECT techniques with optional JSON reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgeiq-labs",
+      "userId": "s17281v95sfy21qznab55m4qb984t38a",
+      "displayName": "EdgeIQLabs",
+      "image": "https://avatars.githubusercontent.com/u/16479432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777136899818,
+      "changelog": "v1.4.0: URGENT FIX — corrected Stripe Payment Link URLs (no suffixes, correct live URLs)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6776abe2fcbccdd6145d855e81fc45fba163cd35f6e3aa4ee19211bfbe546600"
+}

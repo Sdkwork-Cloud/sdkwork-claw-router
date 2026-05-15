@@ -52,7 +52,7 @@ export function AppCenter() {
     setLoadError(null);
     try {
       const fetchedApps = await appService.getApps({
-        search: searchQuery,
+        searchQuery,
         platformTypes: selectedPlatforms,
         categories: selectedCategory !== 'All' ? [selectedCategory] : undefined,
         sortBy: sortBy,

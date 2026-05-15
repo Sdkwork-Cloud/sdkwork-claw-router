@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/equity-analyst@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.equity_analyst",
+  "skill": {
+    "id": 59718,
+    "skillKey": "clawhub-equity-analyst",
+    "name": "Equity Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "equity-analyst",
+    "url": "https://clawhub.ai/skills/equity-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/equity-analyst-ac702f7473966dc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "전문 투자 분석가 AI로, 한국 주식 종목의 재무제표, 뉴스, 차트를 분석하여 Investment Attractiveness Score (0-100)와 BUY/HOLD/AVOID 추천을 제공합니다. 네이버 금융 데이터를 사용하며, 프롬프트에 명시된 엄격한 우선순위(Financial > News > Chart)와 가중치를 따릅니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saebyeok-im",
+      "userId": "publishers:saebyeok-im",
+      "displayName": "Saebyeok-Im",
+      "image": "https://avatars.githubusercontent.com/u/55320507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2509,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1770523267763,
+      "changelog": "- Introduced new reporting scripts: `daily_popular_report.py`, `morning_report.py`, and `quick_report.py` for automated analysis tasks.\n- Added data source files: `data.json` and `data_utf8.json` to support reporting and analysis functions.\n- No changes made to the evaluation framework or usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f67dfe85baf8188a8841ad92732c0a21548455813566c21bca554636254ac019"
+}

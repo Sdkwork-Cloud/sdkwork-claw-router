@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8848,
+  "uuid": "skill-clawhub-ai-pdf-builder",
+  "skillKey": "clawhub-ai-pdf-builder",
+  "name": "Ai Pdf Builder",
+  "summary": "AI-powered PDF generator for legal docs, pitch decks, and reports. SAFEs, NDAs, term sheets, whitepapers. npx ai-pdf-builder. Works with Claude, Cursor, GPT, Copilot.",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pdf_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Next Frontier AI",
+      "features": [
+        "AI-powered PDF generator for legal docs, pitch decks, and reports",
+        "SAFEs, NDAs, term sheets, whitepapers",
+        "npx ai-pdf-builder",
+        "Works with Claude, Cursor, GPT, Copilot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-pdf-builder@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257253317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-pdf-builder",
+      "url": "https://clawhub.ai/skills/ai-pdf-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pdf-builder",
+    "url": "https://clawhub.ai/skills/ai-pdf-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pdf-builder-39621ec93f7df098.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-pdf-builder@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-pdf-builder-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99e709d8dae93e6f447dc1734e15b4cbf969654055a001f48809a26f76beacf9",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T08:33:31.113Z"
+}

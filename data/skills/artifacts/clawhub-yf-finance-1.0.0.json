@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yf-finance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yf_finance",
+  "skill": {
+    "id": 42320,
+    "skillKey": "clawhub-yf-finance",
+    "name": "yf-finance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yf-finance",
+    "url": "https://clawhub.ai/skills/yf-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yf-finance-231a1c084e9dcb52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch real-time and historical financial data from Yahoo Finance using yf-cli. Use when the user asks about stock prices, company financials, earnings calend..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erhwenkuo",
+      "userId": "s174athv1j4ckqjjxp3p387kz583ryhx",
+      "displayName": "ErhWen Kuo",
+      "image": "https://avatars.githubusercontent.com/u/5875719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776865692771,
+      "changelog": "- Initial release of the yf-finance skill.\n- Provides command-line access to Yahoo Finance data via yf-cli.\n- Supports real-time quotes, historical prices, company info, financial statements, earnings calendars, analyst data, options chains, dividends, market screeners, and news.\n- Includes edge case handling for unknown tickers, delisted symbols, empty results, and rate limiting.\n- Detailed usage and command catalogue for a wide range of financial queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ab387edfe714841c8ebbc700f338826a8ee1ad73694f6372e18eacb494e1008"
+}

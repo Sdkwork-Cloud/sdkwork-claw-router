@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/createrepo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.createrepo",
+  "skill": {
+    "id": 34729,
+    "skillKey": "clawhub-createrepo",
+    "name": "createrepo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "createrepo",
+    "url": "https://clawhub.ai/skills/createrepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/createrepo-7e6f1beead312810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage local RPM YUM/DNF repositories with metadata generation, incremental updates, multi-architecture support, syncing, and GPG signing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774229552192,
+      "changelog": "Initial release - RPM repository management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dcb8b7dfb3bfcd6dce56c74be695b836b04ba0e1f748248a33094a412d0e7c3"
+}

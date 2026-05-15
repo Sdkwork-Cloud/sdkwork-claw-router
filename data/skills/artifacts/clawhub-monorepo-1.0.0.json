@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monorepo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monorepo",
+  "skill": {
+    "id": 19746,
+    "skillKey": "clawhub-monorepo",
+    "name": "Monorepo Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monorepo",
+    "url": "https://clawhub.ai/skills/monorepo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monorepo-8912ed2aea0e32a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and manage monorepos with Turborepo, Nx, and pnpm workspaces — covering workspace structure, dependency management, task orchestration, caching, CI/CD, and publishing. Use when setting up monorepos, optimizing builds, or managing sha."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 932,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770725835113,
+      "changelog": "Initial release — comprehensive guide for building and managing JavaScript/TypeScript monorepos.\n\n- Covers workspace structure, dependency management, task orchestration, caching, CI/CD, and publishing.\n- Provides setup steps and configuration examples for Turborepo, Nx, and pnpm workspaces.\n- Includes best practices for build optimization, remote caching, and shared tooling.\n- Offers copy-pasteable commands and config snippets for rapid adoption.\n- Explains tooling trade-offs and recommendations for common monorepo scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fab4a0096c9b7c6e6d6c8c7199d38129cd73af2bd3233e29fe27d11616145033"
+}

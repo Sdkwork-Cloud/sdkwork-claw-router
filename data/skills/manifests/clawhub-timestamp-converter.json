@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26176,
+  "uuid": "skill-clawhub-timestamp-converter",
+  "skillKey": "clawhub-timestamp-converter",
+  "name": "Timestamp Converter",
+  "summary": "Convert between Unix timestamps, ISO 8601 dates, and human-readable formats. Use when working with timestamps from APIs, logs, or databases that need convers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timestamp_converter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeonardoDpanda",
+      "features": [
+        "Convert between Unix timestamps, ISO 8601 dates, and human-readable formats",
+        "Use when working with timestamps from APIs, logs, or databases that need convers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timestamp-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51777214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timestamp-converter",
+      "url": "https://clawhub.ai/skills/timestamp-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timestamp-converter",
+    "url": "https://clawhub.ai/skills/timestamp-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timestamp-converter-4af8c90fb1fde30c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timestamp-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timestamp-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e147fb86c42021f605a6781775460afde7329ba4adabe6373d5896f5525e310",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T17:09:09.034Z"
+}

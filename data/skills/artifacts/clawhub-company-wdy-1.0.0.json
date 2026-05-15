@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-wdy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_wdy",
+  "skill": {
+    "id": 69734,
+    "skillKey": "clawhub-company-wdy",
+    "name": "Company search wdy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-wdy",
+    "url": "https://clawhub.ai/skills/company-wdy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-wdy-845ba31c1295456e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "问道云企业信息查询工具，支持通过问道云 API 查询企业基本信息、经营信息、财务信息、舆情信息、企业各类风险指标等功能，当用户需要查询企业相关信息时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rose-develop",
+      "userId": "s17cxcr28k7rb74kyx5eeecdjn84eyqr",
+      "displayName": "rose-develop",
+      "image": "https://avatars.githubusercontent.com/u/157121738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777456542632,
+      "changelog": "china-company-search-wendaoyun v1.0.0 – Initial Release\n\n- Added enterprise information search tool for China (WenDaoYun API).\n- Supports detailed queries on company basics, operations, finance, news sentiment, and various risk indicators.\n- Includes a comprehensive interface and query mapping table for easy function selection.\n- Provides clear configuration, API key setup instructions, and security advice.\n- Standardizes enterprise search flow: fuzzy search, user confirmation, and detailed lookup.\n- Includes detailed field responses and usage instructions for each available endpoint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:024c986e71ced65227c14f2cca0a70dd53cb9e34f528b60d77fa306b5ddf7d2b"
+}

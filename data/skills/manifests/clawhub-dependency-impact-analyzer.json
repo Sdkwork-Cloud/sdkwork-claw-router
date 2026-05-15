@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53103,
+  "uuid": "skill-clawhub-dependency-impact-analyzer",
+  "skillKey": "clawhub-dependency-impact-analyzer",
+  "name": "Dependency Impact Analyzer",
+  "summary": "Analyze the blast radius of upgrading, removing, or replacing a dependency — trace imports, find affected files, check test coverage of impacted code, detect...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dependency_impact_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze the blast radius of upgrading, removing, or replacing a dependency — trace imports, fin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dependency-impact-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dependency-impact-analyzer",
+      "url": "https://clawhub.ai/skills/dependency-impact-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dependency-impact-analyzer",
+    "url": "https://clawhub.ai/skills/dependency-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dependency-impact-analyzer-f2197b4e6e675ef4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dependency-impact-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dependency-impact-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f81461978dcd64bb53f34e7989cd1ec52aacac762b3ed738eb2c2804c7f93b80",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:09.176Z"
+}

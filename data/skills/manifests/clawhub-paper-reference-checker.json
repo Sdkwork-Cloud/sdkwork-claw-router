@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18194,
+  "uuid": "skill-clawhub-paper-reference-checker",
+  "skillKey": "clawhub-paper-reference-checker",
+  "name": "paper reference checker",
+  "summary": "This skill should be used when the user asks to \"check paper citations\", \"verify references\", \"detect fake citations\", \"validate bibliography\", \"check if pap...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reference_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben Chen",
+      "features": [
+        "This skill should be used when the user asks to \"check paper citations\", \"verify references\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-reference-checker@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25900964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-reference-checker",
+      "url": "https://clawhub.ai/skills/paper-reference-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reference-checker",
+    "url": "https://clawhub.ai/skills/paper-reference-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reference-checker-5672656715ff3ecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-reference-checker@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-reference-checker-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2742c77587bae56691db29dba8a4fb07a030658a1400286eec53781593bc083",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:43:06.757Z"
+}

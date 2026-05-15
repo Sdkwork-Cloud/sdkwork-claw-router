@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69242,
+  "uuid": "skill-clawhub-doorstep-auto-reply",
+  "skillKey": "clawhub-doorstep-auto-reply",
+  "name": "上门体育-多平台自动回复",
+  "summary": "多平台自动回复技能，支持抖音、小红书、微信公众号、飞书四大平台。功能包括：(1) 关键词匹配自动回复，(2) AI智能生成回复内容，(3) 评论/私信/用户咨询的自动应答策略。Use when: (1) 需要设置自媒体账号的自动回复规则，(2) 需要为抖音/小红书/公众号/飞书生成回复话术，(3) 需要批量管理用...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_auto_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ncsimok",
+      "features": [
+        "多平台自动回复技能，支持抖音、小红书、微信公众号、飞书四大平台。功能包括：(1) 关键词匹配自动回复，(2) AI智能生成回复内容，(3) 评论/私信/用户咨询的自动应答策略。Use whe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doorstep-auto-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128122169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doorstep-auto-reply",
+      "url": "https://clawhub.ai/skills/doorstep-auto-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-auto-reply",
+    "url": "https://clawhub.ai/skills/doorstep-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-auto-reply-686ad19ec87aaec9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doorstep-auto-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doorstep-auto-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e3cd2844fe28f277424914fce4dc8d57c6042129f147500b528706d1feafd7c",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T01:39:28.591Z"
+}

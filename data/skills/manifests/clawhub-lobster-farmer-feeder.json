@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57371,
+  "uuid": "skill-clawhub-lobster-farmer-feeder",
+  "skillKey": "clawhub-lobster-farmer-feeder",
+  "name": "Lobster Farmer Feeder",
+  "summary": "Feed lobsters in the Lobster Farmer game by calling the local CLI command `lobster-farmer feed` with `--model`, `--input-tokens`, `--output-tokens`, and opti...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_farmer_feeder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MuRong",
+      "features": [
+        "Feed lobsters in the Lobster Farmer game by calling the local CLI command `lobster-farmer feed`."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-farmer-feeder@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38655613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-farmer-feeder",
+      "url": "https://clawhub.ai/skills/lobster-farmer-feeder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-farmer-feeder",
+    "url": "https://clawhub.ai/skills/lobster-farmer-feeder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-farmer-feeder-e9934926c78783a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-farmer-feeder@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-farmer-feeder-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d63eb4d7652300eec66067f839dc7a0b7105c0424003404c3c4641d3a6723902",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:35:55.688Z"
+}

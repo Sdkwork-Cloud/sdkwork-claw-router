@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/careerforge-cli-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.careerforge_cli_skill",
+  "skill": {
+    "id": 14839,
+    "skillKey": "clawhub-careerforge-cli-skill",
+    "name": "Job-Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "careerforge-cli-skill",
+    "url": "https://clawhub.ai/skills/careerforge-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/careerforge-cli-skill-523a15a0c44ec5e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered CV generator for job applications. Sets up automated job search with CareerForge CLI, manages master resume creation, configures filtering criteri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alon-mini",
+      "userId": "publishers:alon-mini",
+      "displayName": "alon-mini",
+      "image": "https://avatars.githubusercontent.com/u/229145466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771783689657,
+      "changelog": "CareerForge CV Generator Skill v1.1.0\n\n- Introduces AI-powered CV generation using the CareerForge CLI, leveraging Google's Gemini 2.5 Pro.\n- Automates job search with configurable filters (location, keywords, experience, schedule, remote/in-person, exclusions).\n- Guides users through master resume creation and stores it in markdown format.\n- Sets up a daily workflow: auto search and notification of job postings via Telegram, with on-demand tailored CV generation for specific jobs.\n- Provides clear setup steps, prerequisites, typical file structure, and example commands for ease of use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efe73bba5bd81ff0c51948bc6cc9b6e4561b3a631884fe086958c1c576ce575f"
+}

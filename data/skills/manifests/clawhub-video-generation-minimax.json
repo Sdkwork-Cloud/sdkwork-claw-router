@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59045,
+  "uuid": "skill-clawhub-video-generation-minimax",
+  "skillKey": "clawhub-video-generation-minimax",
+  "name": "video-generation-minimax",
+  "summary": "视频生成技能，使用 MiniMax 视频生成 API 创建视频",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generation_minimax",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "深柒",
+      "features": [
+        "视频生成技能，使用 MiniMax 视频生成 API 创建视频"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generation-minimax@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60167852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generation-minimax",
+      "url": "https://clawhub.ai/skills/video-generation-minimax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generation-minimax",
+    "url": "https://clawhub.ai/skills/video-generation-minimax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generation-minimax-82d19635c1f47f88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generation-minimax@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generation-minimax-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c9e99e54ac355ff90640693566b90a84bbe9b412445df36052a121572b310d8",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:29:55.632Z"
+}

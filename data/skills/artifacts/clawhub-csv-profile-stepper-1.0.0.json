@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csv-profile-stepper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_profile_stepper",
+  "skill": {
+    "id": 61001,
+    "skillKey": "clawhub-csv-profile-stepper",
+    "name": "csv-profile-stepper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-profile-stepper",
+    "url": "https://clawhub.ai/skills/csv-profile-stepper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-profile-stepper-30fd1640626120aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取 CSV 并输出字段类型、空值率、唯一值计数。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askjda",
+      "userId": "s177f3gb2a9yv3fnggrm9g4z4983wgj5",
+      "displayName": "askjda",
+      "image": "https://avatars.githubusercontent.com/u/94748630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775581589541,
+      "changelog": "Initial release of csv-profile-stepper.\n\n- Reads CSV files and outputs field types, null value rates, and unique value counts.\n- All operations are performed via command line; no interactive interface required.\n- Outputs results to both standard output and output files (JSON/TXT).\n- Provides step-by-step usage instructions and sample verification command.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53fa4104d7c92b31c27f8aa9034a895e77b358e6cf21483b4a9b12a115f74f9c"
+}

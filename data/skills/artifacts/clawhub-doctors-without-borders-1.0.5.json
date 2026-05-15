@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctors-without-borders@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctors_without_borders",
+  "skill": {
+    "id": 63523,
+    "skillKey": "clawhub-doctors-without-borders",
+    "name": "Doctors Without Borders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctors-without-borders",
+    "url": "https://clawhub.ai/skills/doctors-without-borders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctors-without-borders-097ddaf076f70de5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "无国界医生（MSF）是1971年成立的国际医疗人道救援组织，提供全球70多个国家的紧急医疗援助服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238525579,
+      "changelog": "- 优化了 summary 和 read_when 内容，使表述更简洁、指向更明确\n- 调整信息架构，突出基础档案、业务范围、市场表现和动态更新等核心信息点\n- 精炼使用场景说明，更贴合实际应用需求\n- 新增内容提示和免责声明，强调以官方数据为准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5479970d854223ef01951e54a6206697128587a909c019d8d882a38fca3a7048"
+}

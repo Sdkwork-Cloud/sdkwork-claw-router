@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65329,
+  "uuid": "skill-clawhub-happyhorse-video-creator",
+  "skillKey": "clawhub-happyhorse-video-creator",
+  "name": "HappyHorse 视频创作助手",
+  "summary": "使用阿里云百炼 HappyHorse 模型生成视频，支持图生视频（首帧/尾帧控制）和文生视频。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.happyhorse_video_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cindypapa",
+      "features": [
+        "使用阿里云百炼 HappyHorse 模型生成视频，支持图生视频（首帧/尾帧控制）和文生视频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/happyhorse-video-creator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128971646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "happyhorse-video-creator",
+      "url": "https://clawhub.ai/skills/happyhorse-video-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "happyhorse-video-creator",
+    "url": "https://clawhub.ai/skills/happyhorse-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/happyhorse-video-creator-b9202ec3db48d4e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/happyhorse-video-creator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-happyhorse-video-creator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:178dc92956d16d5da29b7ad668c2808bbe041bb7aa1c568eabca7beb7faaa6d1",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:44:11.851Z"
+}

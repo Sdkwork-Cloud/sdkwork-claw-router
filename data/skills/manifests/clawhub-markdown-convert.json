@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8364,
+  "uuid": "skill-clawhub-markdown-convert",
+  "skillKey": "clawhub-markdown-convert",
+  "name": "Markdown.new Skill",
+  "summary": "Convert public web pages into clean Markdown with markdown.new for AI workflows. Use when tasks require URL-to-Markdown conversion for summarization, RAG ing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_convert",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joelchance",
+      "features": [
+        "Convert public web pages into clean Markdown with markdown.new for AI workflows",
+        "Use when tasks require URL-to-Markdown conversion for summarization, RAG ing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-convert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256029209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-convert",
+      "url": "https://clawhub.ai/skills/markdown-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-convert",
+    "url": "https://clawhub.ai/skills/markdown-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-convert-4d096edeb6adf779.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-convert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-convert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de7c8ddbcf46c9018b9bb173476ad155c5efc1275fd473d995a47d85ff22f35f",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T19:19:24.013Z"
+}

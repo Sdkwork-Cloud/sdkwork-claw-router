@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-soc2-evidence-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_soc2_evidence_collector",
+  "skill": {
+    "id": 28822,
+    "skillKey": "clawhub-afrexai-soc2-evidence-collector",
+    "name": "Soc2 Evidence Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-soc2-evidence-collector",
+    "url": "https://clawhub.ai/skills/afrexai-soc2-evidence-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-soc2-evidence-collector-8cd58b76f83aa5db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate SOC2 evidence collection checklists, automate evidence gathering scripts, and produce audit-ready evidence packages. Covers all 5 Trust Service Crit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afrexai-cto",
+      "userId": "s176d3cp92hzph7jd2dtka26md83h078",
+      "displayName": "afrexai-cto",
+      "image": "https://avatars.githubusercontent.com/u/261321054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773774028576,
+      "changelog": "Initial release of SOC2 Evidence Collector by AfrexAI.\n\n- Generate comprehensive SOC2 evidence collection checklists for all 5 Trust Service Criteria (Security, Availability, Processing Integrity, Confidentiality, Privacy).\n- Automate evidence gathering scripts and workflows tailored for SOC2 Type I and Type II audits.\n- Produce audit-ready evidence packages to streamline compliance processes.\n- Includes detailed guidance on required inputs, evidence categories, and recommended collection methods.\n- Useful for audit preparations, continuous compliance, and evidence automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4abd3346c70259c73810772529292895e6a6f65f070a82d5c332331916d327cd"
+}

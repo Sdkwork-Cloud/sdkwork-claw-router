@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69256,
+  "uuid": "skill-clawhub-football-bayes",
+  "skillKey": "clawhub-football-bayes",
+  "name": "football-bayes",
+  "summary": "利用贝叶斯统计和战术周期化，提供足球比赛胜平负概率、剧本预测及风险提示的深度赛前分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.football_bayes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wy1503huangping",
+      "features": [
+        "利用贝叶斯统计和战术周期化，提供足球比赛胜平负概率、剧本预测及风险提示的深度赛前分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/football-bayes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30572491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "football-bayes",
+      "url": "https://clawhub.ai/skills/football-bayes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "football-bayes",
+    "url": "https://clawhub.ai/skills/football-bayes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/football-bayes-4a8ceaaa59740e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/football-bayes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-football-bayes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1116ecb195be795828caa072b4064869a37e7ff9b532fb8193c928ecc83e72b8",
+      "artifactSizeBytes": 2646
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:40:11.639Z"
+}

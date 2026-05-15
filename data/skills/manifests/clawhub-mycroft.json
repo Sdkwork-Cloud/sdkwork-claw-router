@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16269,
+  "uuid": "skill-clawhub-mycroft",
+  "skillKey": "clawhub-mycroft",
+  "name": "mycroft",
+  "summary": "EPUB and ebook ingestion, local vector index, and Q&A CLI for books.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mycroft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fabian Schultz",
+      "features": [
+        "EPUB and ebook ingestion, local vector index, and Q&A CLI for books."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mycroft@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5220692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mycroft",
+      "url": "https://clawhub.ai/skills/mycroft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mycroft",
+    "url": "https://clawhub.ai/skills/mycroft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mycroft-7d9c6fc5dade1595.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mycroft@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mycroft-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32fc21c5c51adf4142e0cfefa842b06f60f6920ae073f208d3171ef38e750fc9",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T15:56:32.490Z"
+}

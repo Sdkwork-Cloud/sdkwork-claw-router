@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcdonalds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonalds",
+  "skill": {
+    "id": 71602,
+    "skillKey": "clawhub-mcdonalds",
+    "name": "麦当劳点餐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonalds",
+    "url": "https://clawhub.ai/skills/mcdonalds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonalds-d944bfb18e1258bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "麦当劳中国 MCP 服务集成，支持优惠券、点餐、外卖、积分商城等功能。当用户提到麦当劳、McDonald's、麦乐送、麦麦省、麦当劳优惠券、麦当劳积分、麦当劳点餐时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongdeyu",
+      "userId": "publishers:kongdeyu",
+      "displayName": "kongdeyu",
+      "image": "https://avatars.githubusercontent.com/u/8944884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773203444336,
+      "changelog": "首次发布：支持优惠券领取、外卖点餐、积分兑换等功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e571f63fae5625da175d99502e5c20c704d62455a55039b087fa9b34d0937ba"
+}

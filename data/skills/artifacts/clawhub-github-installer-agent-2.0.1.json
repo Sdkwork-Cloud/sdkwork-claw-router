@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-installer-agent@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_installer_agent",
+  "skill": {
+    "id": 62125,
+    "skillKey": "clawhub-github-installer-agent",
+    "name": "Github Installer Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-installer-agent",
+    "url": "https://clawhub.ai/skills/github-installer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-installer-agent-7c27ea0084cbde4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键从 GitHub 克隆项目，识别依赖文件并自动安装 Python 库，提供项目结构和运行方式初步分析建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tugocoffe",
+      "userId": "publishers:tugocoffe",
+      "displayName": "tugocoffe",
+      "image": "https://avatars.githubusercontent.com/u/197573304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774142143783,
+      "changelog": "统一技能名称：将文件夹和agent名称统一为github-installer-agent，修复名称不一致问题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2daf13ee6ead3198e06621aae528e57df3a78adbc9c3ea2dbf655474a8f18df"
+}

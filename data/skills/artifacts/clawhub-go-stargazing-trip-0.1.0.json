@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-stargazing-trip@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_stargazing_trip",
+  "skill": {
+    "id": 71939,
+    "skillKey": "clawhub-go-stargazing-trip",
+    "name": "Go Stargazing Trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-stargazing-trip",
+    "url": "https://clawhub.ai/skills/go-stargazing-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-stargazing-trip-bdbe8f346c28987c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多日晚拍星/观星连续性推荐技能。基于逐晚候选结果做跨晚路线连续性、转场距离、连住收益和可执行性判断；输出主路线、备选路线、远线方案以及路线风险说明。用于用户明确询问“假期怎么连着走最顺”“主路线/备选路线/远线怎么选”“多天连续拍星怎么安排”时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clhwbd",
+      "userId": "s17fdj4z7py17fphwjd64ztr8583n451",
+      "displayName": "clhwbd",
+      "image": "https://avatars.githubusercontent.com/u/13960127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774883545336,
+      "changelog": "Initial release of go-stargazing-trip. Provides multi-night route continuity planning, main/backup/far-line route output, and keeps route logic separate from base nightly stargazing recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a677bdf083f0d5e087ee6262d61bb71ce1fdca3441a5b62317ba6188e230e9fa"
+}

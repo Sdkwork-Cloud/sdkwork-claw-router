@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57138,
+  "uuid": "skill-clawhub-skillhub-preference-chen",
+  "skillKey": "clawhub-skillhub-preference-chen",
+  "name": "Skillhub Preference",
+  "summary": "Prefer `skillhub` for skill discovery/install/update, then fallback to `clawhub` when unavailable or no match. Use when users ask about skills, 插件, or capabi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_preference_chen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jason-aka-chen",
+      "features": [
+        "Prefer `skillhub` for skill discovery/install/update, then fallback to `clawhub` when unavailab.",
+        "Use when users ask about skills, 插件, or capabi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillhub-preference-chen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251550877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillhub-preference-chen",
+      "url": "https://clawhub.ai/skills/skillhub-preference-chen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-preference-chen",
+    "url": "https://clawhub.ai/skills/skillhub-preference-chen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-preference-chen-d8f9518c985b9cd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillhub-preference-chen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillhub-preference-chen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:996d55425e5d67f988326e99a81a66df7b2295b26d9c0bdab1e850413d9a5419",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:06:00.122Z"
+}

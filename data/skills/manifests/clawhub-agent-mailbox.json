@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22598,
+  "uuid": "skill-clawhub-agent-mailbox",
+  "skillKey": "clawhub-agent-mailbox",
+  "name": "Agent Mailbox",
+  "summary": "Send, receive, and manage asynchronous messages between agents, handlers, and users with local file storage and optional cloud sync.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_mailbox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NoizceEra",
+      "features": [
+        "Send, receive, and manage asynchronous messages between agents, handlers, and users with local."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-mailbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141389471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-mailbox",
+      "url": "https://clawhub.ai/skills/agent-mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-mailbox",
+    "url": "https://clawhub.ai/skills/agent-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-mailbox-104fa57de606a624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-mailbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-mailbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb7098ad54d8f8407e49e3d98e6df882439477ab8b0ac9902c067ea43de39372",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:37:46.871Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52265,
+  "uuid": "skill-clawhub-drawdown",
+  "skillKey": "clawhub-drawdown",
+  "name": "Drawdown",
+  "summary": "Drawdown analysis reference — maximum drawdown, peak-to-trough, recovery time, risk metrics. Use when evaluating portfolio risk, stress-testing strategies, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Drawdown analysis reference — maximum drawdown, peak-to-trough, recovery time, risk metrics",
+        "Use when evaluating portfolio risk, stress-testing strategies, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawdown",
+      "url": "https://clawhub.ai/skills/drawdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawdown",
+    "url": "https://clawhub.ai/skills/drawdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawdown-287942197469f9d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f95a25505fd73acf4efc8328a902206c4b9dc65a841246c30c354d5b39673e8c",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:18:55.361Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-court-listener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_court_listener",
+  "skill": {
+    "id": 45649,
+    "skillKey": "clawhub-pipeworx-court-listener",
+    "name": "Pipeworx court-listener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-court-listener",
+    "url": "https://clawhub.ai/skills/pipeworx-court-listener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-court-listener-903dc4056a236041.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search US court opinions and dockets by keyword, and retrieve specific court opinions by CourtListener ID with no authentication needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucegutman",
+      "userId": "s17cvgtez7j4kg9j5x0713jyyx84as33",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/138315805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776971266051,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83193e676eb77c1fd9ab04119f648b792df6aa17b6206d8eea1864e7e439e78f"
+}

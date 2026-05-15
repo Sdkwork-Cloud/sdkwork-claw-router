@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-deployment-status@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_deployment_status",
+  "skill": {
+    "id": 33725,
+    "skillKey": "clawhub-check-deployment-status",
+    "name": "Check Deployment Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-deployment-status",
+    "url": "https://clawhub.ai/skills/check-deployment-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-deployment-status-dbafbc72269cac35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check deployment status of PRs and commits using continuous-deployment MCP and UCS deployer MCP. Use when user asks \"is this deployed\", \"check deployment\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajitsingh25",
+      "userId": "s17f3x4tze40mv0zt71rgpkbtn8541ee",
+      "displayName": "Ajit Singh",
+      "image": "https://avatars.githubusercontent.com/u/34647819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774130232047,
+      "changelog": "check-deployment-status v1.0.0\n\n- Initial release.\n- Enables checking deployment status of GitHub PRs, commits, or recent commits per service using Uber's continuous-deployment MCP and UCS deployer MCP tools.\n- Supports inputs like PR URL, commit hash, or service name.\n- Provides clear workflow for mapping a PR to its deployed merge commit.\n- Returns detailed deployment status for staging and production, including when code is fully introduced to production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50da08985b924c08b569dc5ce2a777c6870e800bcbfc7a8e2f859a6cea5569c5"
+}

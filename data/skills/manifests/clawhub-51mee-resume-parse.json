@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65382,
+  "uuid": "skill-clawhub-51mee-resume-parse",
+  "skillKey": "clawhub-51mee-resume-parse",
+  "name": "51mee Resume Parse",
+  "summary": "简历解析。触发场景：用户上传简历文件要求解析、提取结构化信息。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_parse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "简历解析。触发场景：用户上传简历文件要求解析、提取结构化信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-resume-parse@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-resume-parse",
+      "url": "https://clawhub.ai/skills/51mee-resume-parse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-parse",
+    "url": "https://clawhub.ai/skills/51mee-resume-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-parse-aeb4daffd8ede2a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-resume-parse@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-resume-parse-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19912baf1f7f95842a2d345099c435f1da9af036646535a2973d88179b7bb05c",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:42:59.724Z"
+}

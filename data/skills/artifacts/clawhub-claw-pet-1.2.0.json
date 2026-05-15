@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-pet@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_pet",
+  "skill": {
+    "id": 26258,
+    "skillKey": "clawhub-claw-pet",
+    "name": "claw-pet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-pet",
+    "url": "https://clawhub.ai/skills/claw-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-pet-9cfdcb5ef68896b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Catch a pet or loot item by calling a configured remote pet backend API. Use when the user asks to catch a pet, fish for loot, try their luck, or trigger a r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aileaile",
+      "userId": "s1775b3zxpg9gxyjf56hf0ahp583t3n3",
+      "displayName": "LL",
+      "image": "https://avatars.githubusercontent.com/u/31582314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773245529621,
+      "changelog": "Initial public release of claw-pet skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22ad96c66c687148cba5226d4849f89b226d322922ee0452f72c110338254ef7"
+}

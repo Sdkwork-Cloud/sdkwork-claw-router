@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/substracker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.substracker",
+  "skill": {
+    "id": 25663,
+    "skillKey": "clawhub-substracker",
+    "name": "SubsTracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "substracker",
+    "url": "https://clawhub.ai/skills/substracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/substracker-d939574e58f6afc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage SubsTracker subscriptions and configuration via CLI scripts. Handles login, subscription CRUD, config updates, notifications, and dashboard queries. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ianchenx",
+      "userId": "publishers:ianchenx",
+      "displayName": "ianchenx",
+      "image": "https://avatars.githubusercontent.com/u/85614583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772900028674,
+      "changelog": "Complete parameter tables for all commands; partial update support (GET-merge-PUT)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5763f896a06dd1fc0a7f1e983d1f62ee0ac8c7c66e35c847e0ad61304773ee2e"
+}

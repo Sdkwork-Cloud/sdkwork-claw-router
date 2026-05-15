@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23655,
+  "uuid": "skill-clawhub-x-network",
+  "skillKey": "clawhub-x-network",
+  "name": "x-cmd network skill",
+  "summary": "This skill provides comprehensive network administration and diagnostic tools through x-cmd CLI, including network scanning with Nmap, ARP table management,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_network",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tzw-my",
+      "features": [
+        "This skill provides comprehensive network administration and diagnostic tools through x-cmd CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-network@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57086746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-network",
+      "url": "https://clawhub.ai/skills/x-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-network",
+    "url": "https://clawhub.ai/skills/x-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-network-364bf592c99d6f01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-network@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-network-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0aa0a0ed989b82e8d7bbc0c09f9c8c7e75c43453b63a7db1f2fdae6af6c316c",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:40:20.879Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-mail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mail",
+  "skill": {
+    "id": 21020,
+    "skillKey": "clawhub-claw-mail",
+    "name": "claw-mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mail",
+    "url": "https://clawhub.ai/skills/claw-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mail-3d5c12bb2f672102.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-account email management skill for IMAP/SMTP. Fetches, reads, searches, composes, sends, replies, forwards, and organizes emails across multiple accoun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "borgcube",
+      "userId": "publishers:borgcube",
+      "displayName": "Kamau Wanguhu",
+      "image": "https://avatars.githubusercontent.com/u/3096396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772190999869,
+      "changelog": "Initial release of claw-mail: a secure, multi-account email management tool for IMAP/SMTP.\n\n- Manage multiple email accounts with integrated IMAP/SMTP, OAuth2, and secure credential storage (1Password, macOS Keychain, or environment variables).\n- Supports fetching, reading, searching, sending (with Outbox & automatic retry), replying, forwarding, drafts, folder management, mail merge, archiving, and conversation threading.\n- Provides robust security: enforced TLS 1.2+, hardened ciphers, certificate verification, and S/MIME signing.\n- Rule-based processing pipeline with webhook actions and configurable archival by date.\n- Includes a suite of command-line scripts for all major email and mailbox operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1362b4a2f454eb7b2bc174fe2aa2c3b68c24dbeddd133cdc8901bcab7640f60e"
+}

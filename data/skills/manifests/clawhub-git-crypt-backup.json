@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9569,
+  "uuid": "skill-clawhub-git-crypt-backup",
+  "skillKey": "clawhub-git-crypt-backup",
+  "name": "Git-Crypt Backup",
+  "summary": "Backup Clawdbot workspace and config to GitHub with git-crypt encryption. Use for daily automated backups or manual backup/restore operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_crypt_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "louzhixian",
+      "features": [
+        "Backup Clawdbot workspace and config to GitHub with git-crypt encryption",
+        "Use for daily automated backups or manual backup/restore operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-crypt-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7994361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-crypt-backup",
+      "url": "https://clawhub.ai/skills/git-crypt-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-crypt-backup",
+    "url": "https://clawhub.ai/skills/git-crypt-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-crypt-backup-eec6abdc10bd8bfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-crypt-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-crypt-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36d131bc3b7bcc5a3d6507597b80b343a5e715d83cc52f250f2013e7f66e769b",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T02:34:11.548Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29314,
+  "uuid": "skill-clawhub-apple-calctl",
+  "skillKey": "clawhub-apple-calctl",
+  "name": "Calctl",
+  "summary": "Command-line tool for macOS Sonoma that manages Apple Calendar events using EventKit with create, list, edit, and delete capabilities.",
+  "version": "1.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calctl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christian Teo",
+      "features": [
+        "Command-line tool for macOS Sonoma that manages Apple Calendar events using EventKit with creat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-calctl@1.2.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45482456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-calctl",
+      "url": "https://clawhub.ai/skills/apple-calctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calctl",
+    "url": "https://clawhub.ai/skills/apple-calctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calctl-5f80f2ba7469cf21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-calctl@1.2.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-calctl-1.2.9.json",
+      "version": "1.2.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0d4064d2970add84a6051717aa34238c9a44ffc024e62db91133b3b2cc4c920",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:21:09.635Z"
+}

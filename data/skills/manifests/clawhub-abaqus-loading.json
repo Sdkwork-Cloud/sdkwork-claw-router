@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66629,
+  "uuid": "skill-clawhub-abaqus-loading",
+  "skillKey": "clawhub-abaqus-loading",
+  "name": "Abaqus Loading",
+  "summary": "Abaqus载荷施加完整流程技能。覆盖分析步骤定义、输出要求、边界条件、载荷类型、接触设置。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abaqus_loading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jimmy",
+      "features": [
+        "Abaqus载荷施加完整流程技能。覆盖分析步骤定义、输出要求、边界条件、载荷类型、接触设置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abaqus-loading@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229549400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abaqus-loading",
+      "url": "https://clawhub.ai/skills/abaqus-loading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abaqus-loading",
+    "url": "https://clawhub.ai/skills/abaqus-loading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abaqus-loading-c84e8bba39f96b05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abaqus-loading@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abaqus-loading-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c073701b9fe1eef4cbeb11d20a0fb8188befcdaf1d64d9037ea1991aef212e63",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T12:10:01.624Z"
+}

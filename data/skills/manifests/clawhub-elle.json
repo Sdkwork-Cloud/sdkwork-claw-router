@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71248,
+  "uuid": "skill-clawhub-elle",
+  "skillKey": "clawhub-elle",
+  "name": "Elle",
+  "summary": "提供ELLE时尚杂志品牌历史、商业模式、全球影响力及行业护城河的专业分析和数据支持。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供ELLE时尚杂志品牌历史、商业模式、全球影响力及行业护城河的专业分析和数据支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elle",
+      "url": "https://clawhub.ai/skills/elle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elle",
+    "url": "https://clawhub.ai/skills/elle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elle-18ae79fac1952555.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:443d5120636eaf31b72dd47cdc04701d805108ee22f2740d908aa2ba786bd0ac",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T22:05:31.347Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nokia-phones@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nokia_phones",
+  "skill": {
+    "id": 69736,
+    "skillKey": "clawhub-nokia-phones",
+    "name": "Nokia Phones"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nokia-phones",
+    "url": "https://clawhub.ai/skills/nokia-phones",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nokia-phones-2e6f9cde30d12f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "诺基亚手机品牌历史 — 从全球手机霸主到出售品牌再到HMD复兴，芬兰科技传奇。当用户询问手机产业历史、芬兰科技时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777737790690,
+      "changelog": "Nokia-phones skill v1.0.0 — Initial Release\n\n- Provides a comprehensive history and key milestones of Nokia, from its origins to HMD Global’s revival and 5G leadership.\n- Includes timelines, business models, industry roles, and competitive advantages.\n- Offers key data points and interesting facts about Nokia's brand and technology impact.\n- Designed for users interested in the history of mobile phones, Finnish tech, and business strategy transformations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dff09a0253e88c372ae4859cb3e30d428f42c405a3ca15ff65112c9cec0b01ef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wuritu-stock-technical-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuritu_stock_technical_analysis",
+  "skill": {
+    "id": 72909,
+    "skillKey": "clawhub-wuritu-stock-technical-analysis",
+    "name": "股票技术分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuritu-stock-technical-analysis",
+    "url": "https://clawhub.ai/skills/wuritu-stock-technical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuritu-stock-technical-analysis-0bf5f57a7c75086f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对A股/美股/港股进行全面技术分析，包括K线形态识别、技术指标计算、趋势判断、量价分析，生成可操作的技术分析报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuritu",
+      "userId": "s1744ab01t267234gfqqgrgqh183tehc",
+      "displayName": "wuritu",
+      "image": "https://avatars.githubusercontent.com/u/105037187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775491538206,
+      "changelog": "- Initial release of the stock technical analysis skill (v1.0.0)\n- Provides comprehensive technical analysis for A-shares, US, and HK stocks, including K-line pattern recognition, technical indicator calculation, trend judgment, and volume-price analysis\n- Supports a multi-step tool invocation process covering data fetching, indicator computation, pattern recognition, trend and volume analysis, and chart generation\n- Outputs structured Markdown reports featuring key levels, indicator signals, classic candlestick patterns, volume analysis, trend evaluation, and an overall technical score\n- Includes explicit ⚠️ risk warning: Technical analysis is for reference only and does not constitute investment advice",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0ad15d7a2e1190350c89ac62f8f6e07534ca6db6c25298fdec071858fd3103e"
+}

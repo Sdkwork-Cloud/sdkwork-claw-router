@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surfagent-perception@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surfagent_perception",
+  "skill": {
+    "id": 53248,
+    "skillKey": "clawhub-surfagent-perception",
+    "name": "Surfagent Perception"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surfagent-perception",
+    "url": "https://clawhub.ai/skills/surfagent-perception",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surfagent-perception-44890ec78bb0b603.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent vision for web pages — scene summaries, attention-ranked elements, annotated screenshots, and state diffing via SurfAgent's perception engine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentossoftware",
+      "userId": "s173ne9xwn8crfvhx6mt6022hn8412z7",
+      "displayName": "AgentOSsoftware",
+      "image": "https://avatars.githubusercontent.com/u/257728256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775180365708,
+      "changelog": "Initial release of SurfAgent Perception providing advanced web page understanding and visual annotation tools.\n\n- Introduces `surf_perceive` for scene summaries, attention-ranked elements, spatial clusters, and annotated screenshots.\n- Adds `surf_annotate` for quick, legend-backed visual references of interactive elements.\n- Implements `surf_scene_diff` for efficient state change detection after user actions.\n- Core loop enables perceive→act→diff→repeat workflow for robust agent-page interaction.\n- Features element attention ranking, visual clustering, delta reporting, and color-coded annotation support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:260aeba2521c8d1b82d7885f28165cce289baa91cf5677fcb853987289affe59"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36269,
+  "uuid": "skill-clawhub-mstore",
+  "skillKey": "clawhub-mstore",
+  "name": "McDonald's China (mstore)",
+  "summary": "McDonald's China coupon redemption, query, and points checking. Use when user wants to (1) Query or claim McDonald's coupons, (2) Check available coupons, (3...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mstore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chandler0714",
+      "features": [
+        "McDonald's China coupon redemption, query, and points checking",
+        "Use when user wants to (1) Query or claim McDonald's coupons, (2) Check available coupons, (3..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mstore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33366056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mstore",
+      "url": "https://clawhub.ai/skills/mstore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mstore",
+    "url": "https://clawhub.ai/skills/mstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mstore-9bc461804f430724.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mstore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mstore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c24eeb50d1afc51367da9b483650954f6934b1b66c7e7d243eb84b7b73cede23",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:02:03.266Z"
+}

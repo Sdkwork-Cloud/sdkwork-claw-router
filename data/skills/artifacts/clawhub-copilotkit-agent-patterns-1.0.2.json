@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copilotkit-agent-patterns@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilotkit_agent_patterns",
+  "skill": {
+    "id": 18891,
+    "skillKey": "clawhub-copilotkit-agent-patterns",
+    "name": "CopilotKit-agent-patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilotkit-agent-patterns",
+    "url": "https://clawhub.ai/skills/copilotkit-agent-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilotkit-agent-patterns-4218e05639e6bd31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Patterns for building AI agents that integrate with CopilotKit. Use when designing agent architecture, implementing AG-UI event streaming, managing shared st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "generaljerel",
+      "userId": "publishers:generaljerel",
+      "displayName": "Jerel",
+      "image": "https://avatars.githubusercontent.com/u/85066839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772171239558,
+      "changelog": "Version 2.0.0\n\n- Updated agent architecture patterns to use BuiltInAgent from @copilotkit/runtime/v2 and clarified model selection format.\n- Adjusted architecture guidance to reference MCP \"endpoints\" instead of servers.\n- Standardized generative UI emission practices: use text messages for non-tool status updates.\n- Incremented version metadata to reflect major changes in guidelines.\n- No code changes; documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:036d7070dfcf0901318864918347fe0d201b9e42220eeaf25aa5919ce5cd4464"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64985,
+  "uuid": "skill-clawhub-xhs-crawler-xie",
+  "skillKey": "clawhub-xhs-crawler-xie",
+  "name": "Openclaw封装Skill",
+  "summary": "基于Python模拟浏览器搜索小红书关键词，自动管理Cookie并将搜索结果以卡片形式推送到飞书群。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_crawler_xie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xie07418",
+      "features": [
+        "基于Python模拟浏览器搜索小红书关键词，自动管理Cookie并将搜索结果以卡片形式推送到飞书群。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-crawler-xie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230926537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-crawler-xie",
+      "url": "https://clawhub.ai/skills/xhs-crawler-xie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-crawler-xie",
+    "url": "https://clawhub.ai/skills/xhs-crawler-xie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-crawler-xie-52795beedc9f75a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-crawler-xie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-crawler-xie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac3e36703ea783eadb04a4fa6daf0435b094591b4f7d130d2b985ed3f066e7ca",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:55:39.779Z"
+}

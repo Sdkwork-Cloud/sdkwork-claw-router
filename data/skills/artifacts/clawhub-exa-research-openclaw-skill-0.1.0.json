@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exa-research-openclaw-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_research_openclaw_skill",
+  "skill": {
+    "id": 54920,
+    "skillKey": "clawhub-exa-research-openclaw-skill",
+    "name": "Exa Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-research-openclaw-skill",
+    "url": "https://clawhub.ai/skills/exa-research-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-research-openclaw-skill-9db35c7bd8e43f4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the local `exa` CLI to search the live web, ask grounded questions with citations, fetch page contents, find similar links, retrieve Exa code context, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wkenya",
+      "userId": "s17c7qtm52epf4j2ebmtrppern83h206",
+      "displayName": "WKenya",
+      "image": "https://avatars.githubusercontent.com/u/7605770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774109092479,
+      "changelog": "- Initial release of exa-research-openclaw-skill.\n- Provides CLI-based access to Exa for web search, answer synthesis with citations, content and highlights extraction, related link discovery, code context from the web, and research task management.\n- Supports credential detection from multiple sources, prioritizing OpenClaw-native API key configuration.\n- Offers detailed command usage patterns and practical guidance for leveraging Exa’s advanced research workflows.\n- Emphasizes efficient context management and payload capping to optimize performance and relevance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3b897dd916cbcb94008059b4e46fc4ce284504925aaeaff6cb31a68937846d9"
+}

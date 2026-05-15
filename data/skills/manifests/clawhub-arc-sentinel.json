@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12122,
+  "uuid": "skill-clawhub-arc-sentinel",
+  "skillKey": "clawhub-arc-sentinel",
+  "name": "Arc Sentinel",
+  "summary": "Security monitoring and infrastructure health checks for OpenClaw agents. Run breach monitoring (HaveIBeenPwned), SSL certificate expiry checks, GitHub security audits, credential rotation tracking, secret scanning, git hygiene, token watc.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arc-claw-bot",
+      "features": [
+        "Security monitoring and infrastructure health checks for OpenClaw agents",
+        "Run breach monitoring (HaveIBeenPwned), SSL certificate expiry checks, GitHub security audits,.",
+        "Use when performing security scans, checking credential rotation status, auditing repos for lea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arc-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258497391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arc-sentinel",
+      "url": "https://clawhub.ai/skills/arc-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-sentinel",
+    "url": "https://clawhub.ai/skills/arc-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-sentinel-11d8d3b687100628.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arc-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arc-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:244b454da4fe7528e9cedda016b42b8833cf8731c02c910d50d4b515cde28797",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T20:45:27.118Z"
+}

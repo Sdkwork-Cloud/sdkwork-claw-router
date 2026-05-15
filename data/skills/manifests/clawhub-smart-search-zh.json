@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68470,
+  "uuid": "skill-clawhub-smart-search-zh",
+  "skillKey": "clawhub-smart-search-zh",
+  "name": "smart-search-zh",
+  "summary": "把网页搜索与学术搜索组合成一个智能 AISA 搜索模式。触发条件：当用户需要兼顾公开网页覆盖与学术深度的平衡检索时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_search_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "把网页搜索与学术搜索组合成一个智能 AISA 搜索模式。触发条件：当用户需要兼顾公开网页覆盖与学术深度的平衡检索时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-search-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-search-zh",
+      "url": "https://clawhub.ai/skills/smart-search-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-search-zh",
+    "url": "https://clawhub.ai/skills/smart-search-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-search-zh-bd7bf11c1f3d10e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-search-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-search-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e878f010631ef769a72d4f0db4144492fb96f80f9c5afc37db8429aeb6bd76f",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:15:39.904Z"
+}

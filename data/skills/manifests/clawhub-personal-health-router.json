@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58486,
+  "uuid": "skill-clawhub-personal-health-router",
+  "skillKey": "clawhub-personal-health-router",
+  "name": "Health Copilot: Eating, Sleep, and Exercise Tracking",
+  "summary": "帮助记录每餐摄入、睡眠质量以及运动锻炼恢复情况，并提供全自动飞书持久化与报表引擎。 Track meals, sleep quality, and workouts with automated Feishu persistence and reporting. Use when the user asks to...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_health_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NikeyChan",
+      "features": [
+        "帮助记录每餐摄入、睡眠质量以及运动锻炼恢复情况，并提供全自动飞书持久化与报表引擎。 Track meals, sleep quality, and workouts with automat.",
+        "Use when the user asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-health-router@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18388715?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-health-router",
+      "url": "https://clawhub.ai/skills/personal-health-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-health-router",
+    "url": "https://clawhub.ai/skills/personal-health-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-health-router-2a4c182457a80d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-health-router@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-health-router-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f392b7d92fa47d71d13dd61e2edb7a505cd0ea81726cfe807d373f9e2325aba1",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:14.559Z"
+}

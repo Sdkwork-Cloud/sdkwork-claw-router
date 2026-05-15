@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53692,
+  "uuid": "skill-clawhub-avro-schema-manager",
+  "skillKey": "clawhub-avro-schema-manager",
+  "name": "Avro Schema Manager",
+  "summary": "Manage Apache Avro schemas — validate structure, check forward/backward compatibility, plan schema evolution, audit namespace conventions, and generate code...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avro_schema_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Manage Apache Avro schemas — validate structure, check forward/backward compatibility, plan sch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avro-schema-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avro-schema-manager",
+      "url": "https://clawhub.ai/skills/avro-schema-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avro-schema-manager",
+    "url": "https://clawhub.ai/skills/avro-schema-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avro-schema-manager-8c435db2ac259851.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avro-schema-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-avro-schema-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30205e7944f952f3f680970e1a76df9f4a921c5347ecc8c7d57b34d8f977f51d",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:54.004Z"
+}

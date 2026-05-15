@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillbossapp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillbossapp",
+  "skill": {
+    "id": 46010,
+    "skillKey": "clawhub-skillbossapp",
+    "name": "SkillBoss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillbossapp",
+    "url": "https://clawhub.ai/skills/skillbossapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillbossapp-cd4e849316dd643b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your OpenClaw agent access to 354+ tools (100+ LLMs, web scraping, search, image/video/audio generation, email) through one API key with signed JWT audi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richiecyq",
+      "userId": "s17ewhq86hq6w1jjhbnmw8kg4584qayn",
+      "displayName": "Richiecyq",
+      "image": "https://avatars.githubusercontent.com/u/111052833?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775965112108,
+      "changelog": "Initial release of SkillBoss plugin",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3431c2472f196e2a28e4359b9f3396586f74fa04c6ee45e10fa3e89a596af0f0"
+}

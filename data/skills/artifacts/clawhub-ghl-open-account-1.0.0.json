@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghl-open-account@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghl_open_account",
+  "skill": {
+    "id": 11480,
+    "skillKey": "clawhub-ghl-open-account",
+    "name": "GoHighLevel Open Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghl-open-account",
+    "url": "https://clawhub.ai/skills/ghl-open-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghl-open-account-f01f23ddf42a817f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides agents through opening GoHighLevel (GHL) developer accounts, creating marketplace apps, and connecting via OAuth. Use when the user or agent needs to sign up for GHL, create a GHL app, get API credentials, or connect clawdbot/moltbo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "the-timebeing",
+      "userId": "publishers:the-timebeing",
+      "displayName": "the-TimeBeing",
+      "image": "https://avatars.githubusercontent.com/u/125237907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1933,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770184612439,
+      "changelog": "- Initial public release of the ghl-open-account skill.\n- Provides step-by-step guidance on opening a GoHighLevel account, creating apps in the Developer Marketplace, and connecting via OAuth.\n- Includes detailed checklists and workflows for sign-up, app creation, and setting up API credentials.\n- Covers OAuth 2.0 authorization requirements and plan prerequisites.\n- Offers example scenarios and links to official documentation for further reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f6a774fafbe029693468398b586c1f8617576419c075733001f8c193aa9d037"
+}

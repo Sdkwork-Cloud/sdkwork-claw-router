@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60647,
+  "uuid": "skill-clawhub-digital-life-organizer",
+  "skillKey": "clawhub-digital-life-organizer",
+  "name": "Digital Life Organizer",
+  "summary": "Digital Life Organizer / 数字生活整理师. 帮助用户盘点数字资产、整理文件、管理订阅服务、审计密码安全。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_life_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Digital Life Organizer / 数字生活整理师",
+        "帮助用户盘点数字资产、整理文件、管理订阅服务、审计密码安全。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digital-life-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digital-life-organizer",
+      "url": "https://clawhub.ai/skills/digital-life-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-life-organizer",
+    "url": "https://clawhub.ai/skills/digital-life-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-life-organizer-d3abe4e975aa2e78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digital-life-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digital-life-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6311dd8615c46f7453c3460f2a09603baf0218ed70d22a21cd72ef61c7495eb5",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:39:06.339Z"
+}

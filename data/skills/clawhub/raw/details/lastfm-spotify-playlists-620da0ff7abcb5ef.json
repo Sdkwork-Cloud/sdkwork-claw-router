@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "lastfm-spotify-playlists",
+    "displayName": "LastFM to Spotify Playlists",
+    "summary": "Build music recommendations and create Spotify playlists using Last.fm similarity and listening history.",
+    "tags": {
+      "latest": "1.5.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774437416407,
+    "updatedAt": 1777623506972
+  },
+  "latestVersion": {
+    "version": "1.5.0",
+    "createdAt": 1774629832503,
+    "changelog": "Major refactor: converted from scripts/ to a flat, entrypoint-based structure for direct, reliable script usage.\n\n- Replaced all `scripts/` submodules with top-level Python scripts and helpers (`run_pipeline.py`, `auth.py`, `lastfm.py`, `spotify.py`, etc.).\n- All commands must now be run from the skill root; package installation and `python -m` invocation are no longer required or supported.\n- Credentials and tokens must be supplied via environment variables or standard file paths (see example credential files).\n- Updated SKILL.md with new execution and command structure, strict workflow rules, and revised behavior guidelines.\n- Removes references and workflow patterns tied to previous module hierarchy (no `scripts/` directory usage, no ACP).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "stanestane",
+    "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+    "displayName": "Stanislav Stankovic",
+    "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.install_untrusted_source"
+    ],
+    "summary": "Detected: suspicious.install_untrusted_source",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623506972
+  }
+}

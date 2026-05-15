@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67612,
+  "uuid": "skill-clawhub-prd-design",
+  "skillKey": "clawhub-prd-design",
+  "name": "prd-design",
+  "summary": "产品设计 Skill 统一入口路由。 所有产品设计相关请求先经过本文件判断，再路由到对应 Skill。 触发词：PRD、原型、产品设计、从零设计、0to1、产品化、SaaS改造、现有系统改造、迭代、加功能、改功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu",
+      "features": [
+        "产品设计 Skill 统一入口路由。 所有产品设计相关请求先经过本文件判断，再路由到对应 Skill。 触发词：PRD、原型、产品设计、从零设计、0to1、产品化、SaaS改造、现有系统改造."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-design@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107096850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-design",
+      "url": "https://clawhub.ai/skills/prd-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-design",
+    "url": "https://clawhub.ai/skills/prd-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-design-224d6719ac0198fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-design@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-design-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42107905f562746a13dc38c1c980c95c9f1db125365236165de8e4cc053e13c3",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T05:47:14.928Z"
+}

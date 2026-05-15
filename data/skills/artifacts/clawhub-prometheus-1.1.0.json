@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prometheus@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prometheus",
+  "skill": {
+    "id": 10404,
+    "skillKey": "clawhub-prometheus",
+    "name": "Prometheus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prometheus",
+    "url": "https://clawhub.ai/skills/prometheus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prometheus-1809f7cd0c75acf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Prometheus monitoring data to check server metrics, resource usage, and system health. Use when the user asks about server status, disk space, CPU/memo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akellacom",
+      "userId": "s17c8pkj903eqjqvznjjmwmhss83q31a",
+      "displayName": "Roman Frank",
+      "image": "https://avatars.githubusercontent.com/u/575482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2349,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772797776662,
+      "changelog": "Multi-instance support, config file support, .env fallback, interactive init command",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d397d223876c76767dddc95b7239a4025ed315df2f8e37a939b5c932cbf01cf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68722,
+  "uuid": "skill-clawhub-daily-hot-deals",
+  "skillKey": "clawhub-daily-hot-deals",
+  "name": "Daily Hot Deals",
+  "summary": "每日神价推送服务，自动聚合全网优惠，生成精简报告。适合忙碌的省钱达人、副业套利者。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_deals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "275254cl-hash",
+      "features": [
+        "每日神价推送服务，自动聚合全网优惠，生成精简报告。适合忙碌的省钱达人、副业套利者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-hot-deals@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246240596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-hot-deals",
+      "url": "https://clawhub.ai/skills/daily-hot-deals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-deals",
+    "url": "https://clawhub.ai/skills/daily-hot-deals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-deals-6420ab49c3f91675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-hot-deals@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-hot-deals-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b780e031113f5e5c3a841aaa386e10d901a82446f2eae3611f78f78d39e6e33a",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:38:55.089Z"
+}

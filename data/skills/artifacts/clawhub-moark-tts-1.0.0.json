@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moark-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moark_tts",
+  "skill": {
+    "id": 34953,
+    "skillKey": "clawhub-moark-tts",
+    "name": "Moark Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moark-tts",
+    "url": "https://clawhub.ai/skills/moark-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moark-tts-505156c8e3340aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-Speech (TTS) and voice-feature skill for Gitee AI that lets the user choose audiofly, chattts, cosyvoice2, cosyvoice3, cosyvoice-300m, fish-speech-1...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fchange",
+      "userId": "s1783ke019cyby0hj5976xphr983gq67",
+      "displayName": "fchange",
+      "image": "https://avatars.githubusercontent.com/u/17701167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774337942669,
+      "changelog": "Initial release of moark-tts: Multi-model TTS and voice feature extraction for Gitee AI.\n\n- Supports 15 user-selectable TTS models, including AudioFly, ChatTTS, CosyVoice variants, Qwen-TTS, and more.\n- Lets users specify only relevant model parameters for each selected TTS/voice feature workflow.\n- Includes CosyVoice-300M voice feature (voice cloning prep) extraction workflow.\n- Provides detailed CLI usage and parameter reference.\n- Guides users to choose models and reminds about missing API keys when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57535fe15eb3e64b02be4002db0e2786cd3d4f7a578ff4ba11e34194b5010183"
+}

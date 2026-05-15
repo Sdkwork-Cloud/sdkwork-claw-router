@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56362,
+  "uuid": "skill-clawhub-huo15-xiaohongshu",
+  "skillKey": "clawhub-huo15-xiaohongshu",
+  "name": "Huo15 Xiaohongshu",
+  "summary": "Use when the user wants to write, analyze, or improve Xiaohongshu (小红书) content — drafting notes, coaching writing skills, diagnosing AI-speak or Jarvis-trap...",
+  "version": "3.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_xiaohongshu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "Use when the user wants to write, analyze, or improve Xiaohongshu (小红书) content — drafting note."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-xiaohongshu@3.10.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-xiaohongshu",
+      "url": "https://clawhub.ai/skills/huo15-xiaohongshu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-xiaohongshu",
+    "url": "https://clawhub.ai/skills/huo15-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-xiaohongshu-03259d19958c400f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-xiaohongshu@3.10.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-xiaohongshu-3.10.0.json",
+      "version": "3.10.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:595003d9c509fcbd4b72d019a7c972fb84f236ab9131b72441b19770d061363d",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:32:34.907Z"
+}

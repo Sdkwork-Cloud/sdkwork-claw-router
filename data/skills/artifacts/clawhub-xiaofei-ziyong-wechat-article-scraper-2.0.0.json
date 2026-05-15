@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaofei-ziyong-wechat-article-scraper@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaofei_ziyong_wechat_article_scraper",
+  "skill": {
+    "id": 62630,
+    "skillKey": "clawhub-xiaofei-ziyong-wechat-article-scraper",
+    "name": "xiaofei自用-WeChat Article Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaofei-ziyong-wechat-article-scraper",
+    "url": "https://clawhub.ai/skills/xiaofei-ziyong-wechat-article-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaofei-ziyong-wechat-article-scraper-7af0106a159e08ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章抓取工具。从 mp.weixin.qq.com 抓取公开文章（文字+图片+视频），解析内容块顺序，下载图片，按原顺序写入飞书知识库。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengzi53",
+      "userId": "s176tg8fwrm8fmtmkn75w3a5gn83rest",
+      "displayName": "mengzi53",
+      "image": "https://avatars.githubusercontent.com/u/117899626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774775135789,
+      "changelog": "首次发布：微信公众号文章抓取+飞书导入，支持Chrome headless绕过反爬、完整内容块解析、图片末尾追加",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72644d30b05dc8994e16c96eae9e2aae333d641606ebd89640f21dda47c9660d"
+}

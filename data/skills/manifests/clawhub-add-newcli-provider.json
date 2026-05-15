@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59202,
+  "uuid": "skill-clawhub-add-newcli-provider",
+  "skillKey": "clawhub-add-newcli-provider",
+  "name": "Add NewCLI Provider (Claude/GPT/Gemini)",
+  "summary": "为 OpenClaw 配置 code.newcli.com 作为模型源，包含四个 provider：newcli（Claude 主线路）、newcli-aws（Claude AWS 特价线路，消耗 1/24）、newcli-codex（GPT 系列）、newcli-gemini（Gemini 系列）。适用于需要接入 Claude 或 GPT 模型的场景。包含 provider 注册、模型定义、别名配置、fallback 链接入和验证的完整流程。当管理员说想\"加 Claude.",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_newcli_provider",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jooey",
+      "features": [
+        "为 OpenClaw 配置 code.newcli.com 作为模型源，包含四个 provider：newcli（Claude 主线路）、newcli-aws（Claude AWS 特价线路."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-newcli-provider@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7296530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-newcli-provider",
+      "url": "https://clawhub.ai/skills/add-newcli-provider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-newcli-provider",
+    "url": "https://clawhub.ai/skills/add-newcli-provider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-newcli-provider-0d018ad36bc65fd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-newcli-provider@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-newcli-provider-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6aa9a770a03191cdaa353d04774170ef0320926c3f17fbcf694ccc8d1acd5c9a",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T04:20:40.784Z"
+}

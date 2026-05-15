@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jovay-interaction@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jovay_interaction",
+  "skill": {
+    "id": 46327,
+    "skillKey": "clawhub-jovay-interaction",
+    "name": "jovay-interaction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jovay-interaction",
+    "url": "https://clawhub.ai/skills/jovay-interaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jovay-interaction-3389a5886804b51e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for interacting with Jovay or Ethereum network using jovay-cli"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryogawan",
+      "userId": "s17djw5yeznzqzbz4x8w8yewhs84hbas",
+      "displayName": "RyogaWan",
+      "image": "https://avatars.githubusercontent.com/u/38395188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775736110459,
+      "changelog": "Initial release of jovay-interaction skill.\n\n- Provides commands for interacting with the Jovay Layer2 EVM blockchain using jovay-cli.\n- Supports wallet management (set, get address, check balance), token transfers, ERC-20 approvals, testnet airdrop, and network switching.\n- Includes detailed instructions for bridging ETH and tokens between Ethereum (L1) and Jovay (L2), including deposit, withdraw, and finalize steps.\n- Offers clear explanations of command options and links to official documentation for network and bridge address reference.\n- Lists all required prerequisites and setup steps for proper CLI operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02e8192016b5ba58e18af85f11f074535408f5fb2561c73bc6d889d0644d8a7e"
+}

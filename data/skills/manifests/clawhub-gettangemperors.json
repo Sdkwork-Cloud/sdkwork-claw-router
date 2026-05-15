@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25096,
+  "uuid": "skill-clawhub-gettangemperors",
+  "skillKey": "clawhub-gettangemperors",
+  "name": "gettangemperors",
+  "summary": "Query local backend API for Tang Dynasty emperor information. Use when user asks about Tang emperors, needs to fetch emperor data from local API, or referenc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gettangemperors",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hzll",
+      "features": [
+        "Query local backend API for Tang Dynasty emperor information",
+        "Use when user asks about Tang emperors, needs to fetch emperor data from local API, or referenc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gettangemperors@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38349058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gettangemperors",
+      "url": "https://clawhub.ai/skills/gettangemperors"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gettangemperors",
+    "url": "https://clawhub.ai/skills/gettangemperors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gettangemperors-c9e725dcdbbd7da7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gettangemperors@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gettangemperors-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12980a8070255e4bd399a56aff87dd0a4fc80e845370ec88ad004753339329fa",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:12:50.377Z"
+}

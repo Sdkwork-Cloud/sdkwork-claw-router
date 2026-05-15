@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67013,
+  "uuid": "skill-clawhub-lululemon",
+  "skillKey": "clawhub-lululemon",
+  "name": "Lululemon",
+  "summary": "提供lululemon品牌背景、产品详情、市场分布及行业分析，帮助用户全面了解该运动服饰品牌。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lululemon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供lululemon品牌背景、产品详情、市场分布及行业分析，帮助用户全面了解该运动服饰品牌。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lululemon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lululemon",
+      "url": "https://clawhub.ai/skills/lululemon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lululemon",
+    "url": "https://clawhub.ai/skills/lululemon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lululemon-5d88f45050c26f7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lululemon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lululemon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f55d49aab4836825e66c26c89a7ea029be580da4129f372c3992733ee1c00a71",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T06:48:54.475Z"
+}

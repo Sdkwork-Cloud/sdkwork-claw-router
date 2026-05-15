@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41673,
+  "uuid": "skill-clawhub-twitter-cards",
+  "skillKey": "clawhub-twitter-cards",
+  "name": "twitter-cards",
+  "summary": "When the user wants to add or optimize Twitter Card metadata for X (Twitter) link previews. Also use when the user mentions \"Twitter Card,\" \"twitter:card,\" \"...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_cards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to add or optimize Twitter Card metadata for X (Twitter) link previews",
+        "Also use when the user mentions \"Twitter Card,\" \"twitter:card,\" \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-cards@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-cards",
+      "url": "https://clawhub.ai/skills/twitter-cards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-cards",
+    "url": "https://clawhub.ai/skills/twitter-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-cards-7b9e7a5b9bfa19ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-cards@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-cards-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90eaac1032229d5707101ef9b830b23e84e584a442b065edb377f984b1249ce3",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:11:07.189Z"
+}

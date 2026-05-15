@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26490,
+  "uuid": "skill-clawhub-report-writing-skills",
+  "skillKey": "clawhub-report-writing-skills",
+  "name": "report-writing-skills",
+  "summary": "Automates collecting, downloading, and analyzing recent research reports with customizable focus and real-time progress feedback.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_writing_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meidetong",
+      "features": [
+        "Automates collecting, downloading, and analyzing recent research reports with customizable focu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/report-writing-skills@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40972324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "report-writing-skills",
+      "url": "https://clawhub.ai/skills/report-writing-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-writing-skills",
+    "url": "https://clawhub.ai/skills/report-writing-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-writing-skills-94ac33ddd6491d6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/report-writing-skills@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-report-writing-skills-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6ce6bb08e9fc54b7121f3ad602ded565a3b9306b427b439bbd3fc353af14e5a",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:54:26.389Z"
+}

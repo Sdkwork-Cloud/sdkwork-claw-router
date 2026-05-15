@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/credex-protocol@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credex_protocol",
+  "skill": {
+    "id": 14122,
+    "skillKey": "clawhub-credex-protocol",
+    "name": "Credex Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credex-protocol",
+    "url": "https://clawhub.ai/skills/credex-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credex-protocol-d4449127ed25a516.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access unsecured credit lines for AI agents on the Arc Network using the Credex Protocol. Use for borrowing USDC against reputation, repaying debt to grow credit limits, providing liquidity as an LP, or managing cross-chain USDC via Circle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capgoblin",
+      "userId": "publishers:capgoblin",
+      "displayName": "capGoblin",
+      "image": "https://avatars.githubusercontent.com/u/78524377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770561826015,
+      "changelog": "- Added package-lock.json for improved dependency management.\n- Updated the default CredexPool contract address and related documentation in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c9cf17c0f5e14e23764870b1cd1e33e9581a9e6a8b0e9f904c794076ce82576"
+}

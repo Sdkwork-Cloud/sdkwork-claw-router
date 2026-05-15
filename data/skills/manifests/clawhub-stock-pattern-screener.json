@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66594,
+  "uuid": "skill-clawhub-stock-pattern-screener",
+  "skillKey": "clawhub-stock-pattern-screener",
+  "name": "Stock Pattern Screener",
+  "summary": "使用7种技术形态检测器（杯柄、三周紧绑、高紧旗、VCP、NR7等）按确定性顺序扫描股票池，支持跨检测器评分校准与置信度聚合排序。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_pattern_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "使用7种技术形态检测器（杯柄、三周紧绑、高紧旗、VCP、NR7等）按确定性顺序扫描股票池，支持跨检测器评分校准与置信度聚合排序。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-pattern-screener@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-pattern-screener",
+      "url": "https://clawhub.ai/skills/stock-pattern-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-pattern-screener",
+    "url": "https://clawhub.ai/skills/stock-pattern-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-pattern-screener-720e0bb7aae45826.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-pattern-screener@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-pattern-screener-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df089416eba6c01ee61075e73ec35e94d3bbfe6db5db19e304c8276b8ba08650",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:30:08.080Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-launch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_launch",
+  "skill": {
+    "id": 14803,
+    "skillKey": "clawhub-product-launch",
+    "name": "Product Launch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-launch",
+    "url": "https://clawhub.ai/skills/product-launch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-launch-ca8e0c9728879b5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and execute a product launch for a solopreneur business. Use when launching a new product, feature, service, or major update. Covers pre-launch strategy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk-0001",
+      "userId": "s172spfmwsf80c1ymt8rffcz9h83gbzb",
+      "displayName": "Jatin Khatri",
+      "image": "https://avatars.githubusercontent.com/u/103896999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 877,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771613632917,
+      "changelog": "- Initial release of the product-launch skill for solopreneurs.\n- Provides a step-by-step playbook covering pre-launch strategy, content creation, building anticipation, launch day execution, post-launch momentum, and measuring success.\n- Includes tactical checklists, content planning, email sequences, and metrics tracking.\n- Designed to trigger on common product launch phrases and queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d9710f7bbc83f9321a00ea3f10ac354a8c4f4d58bb7d609cd7844f63707c5a7"
+}

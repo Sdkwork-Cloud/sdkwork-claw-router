@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20978,
+  "uuid": "skill-clawhub-cohere",
+  "skillKey": "clawhub-cohere",
+  "name": "Cohere",
+  "summary": "Cohere integration. Manage Documents, Models, Datasets, Jobs. Use when the user wants to interact with Cohere data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cohere",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cohere integration",
+        "Manage Documents, Models, Datasets, Jobs",
+        "Use when the user wants to interact with Cohere data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cohere@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cohere",
+      "url": "https://clawhub.ai/skills/cohere"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cohere",
+    "url": "https://clawhub.ai/skills/cohere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cohere-72e8088a05b38ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cohere@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cohere-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896185762b75134b878dec64ec3268bb05d4b5e3c3567d15be4e4d990b267f3f",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:20:05.553Z"
+}

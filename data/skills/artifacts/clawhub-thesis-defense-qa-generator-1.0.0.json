@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesis-defense-qa-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesis_defense_qa_generator",
+  "skill": {
+    "id": 47587,
+    "skillKey": "clawhub-thesis-defense-qa-generator",
+    "name": "thesis-defense-qa-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesis-defense-qa-generator",
+    "url": "https://clawhub.ai/skills/thesis-defense-qa-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesis-defense-qa-generator-5b86236e9c19b72d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate likely thesis, dissertation, undergraduate paper, or graduation-project defense questions and strong reference answers from a user's complete thesis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777399464026,
+      "changelog": "thesis-defense-qa-generator v1.0.0\n\n- First release: generates likely thesis, dissertation, or undergraduate defense questions and reference answers based on user-provided materials.\n- Automatically matches the language of the thesis (Chinese/English) for questions and answers.\n- Supports proposal, final defense, undergraduate, and master's/doctoral viva scenarios.\n- Requires \"references/defense-qa-guide.md\" for best practices and output format.\n- Offers tailored Q&A based on actual thesis content; does not fabricate findings or methods.\n- Includes handling of missing information, difficult questions strategies, and category grouping for answers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc2adab3c6dc5944cfee5d24f070094501c66aeb319f7ee3ae8bbd2f8e127852"
+}

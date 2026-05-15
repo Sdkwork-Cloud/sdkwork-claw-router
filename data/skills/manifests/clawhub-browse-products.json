@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44610,
+  "uuid": "skill-clawhub-browse-products",
+  "skillKey": "clawhub-browse-products",
+  "name": "browse-products",
+  "summary": "Semantic product search API using vector embeddings. Search products by natural language queries with price filtering, pagination, and relevance scoring. Use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browse_products",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gzipped",
+      "features": [
+        "Semantic product search API using vector embeddings",
+        "Search products by natural language queries with price filtering, pagination, and relevance sco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browse-products@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8207748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browse-products",
+      "url": "https://clawhub.ai/skills/browse-products"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browse-products",
+    "url": "https://clawhub.ai/skills/browse-products",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browse-products-b8bc157fa14be976.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browse-products@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browse-products-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8839f2d7d622c86478668b4792c0bb3784c4aaa040fe2817c6fdf5a2b0990149",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:21:36.192Z"
+}

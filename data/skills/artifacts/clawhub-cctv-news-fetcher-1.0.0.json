@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cctv-news-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cctv_news_fetcher",
+  "skill": {
+    "id": 8505,
+    "skillKey": "clawhub-cctv-news-fetcher",
+    "name": "CCTV News Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cctv-news-fetcher",
+    "url": "https://clawhub.ai/skills/cctv-news-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cctv-news-fetcher-adceb64068a44518.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and parse news highlights from CCTV News Broadcast (Xinwen Lianbo) for a given date."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuhangch",
+      "userId": "s174pje99rf8a082hwfmgqvnrh8431j1",
+      "displayName": "yuhangch",
+      "image": "https://avatars.githubusercontent.com/u/20501203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10954,
+      "installsAllTime": 91,
+      "installsCurrent": 85,
+      "stars": 12,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770012122426,
+      "changelog": "Initial release: Easily fetches and summarizes CCTV News Broadcast highlights for any given date.\n\n- Fetch summary titles and content from Xinwen Lianbo by date (e.g., \"yesterday\", \"today\", or specific date).\n- Processes user date requests, runs a news crawler script, and parses results for the user.\n- Groups news by \"Domestic\" and \"International\" if possible, or lists key highlights.\n- Requires bun and node-html-parser in the environment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:942d923e8103a08888f8b473e2212abdac35db0e2be47366bb5efb699a49413b"
+}

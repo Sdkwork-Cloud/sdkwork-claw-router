@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22729,
+  "uuid": "skill-clawhub-brex",
+  "skillKey": "clawhub-brex",
+  "name": "Brex",
+  "summary": "Brex integration. Manage Accounts, Vendors, Bills, Expenses, Budgets. Use when the user wants to interact with Brex data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Brex integration",
+        "Manage Accounts, Vendors, Bills, Expenses, Budgets",
+        "Use when the user wants to interact with Brex data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brex@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brex",
+      "url": "https://clawhub.ai/skills/brex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brex",
+    "url": "https://clawhub.ai/skills/brex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brex-9db728d18b9d39ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brex@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-brex-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3acd3912e197b32da8265338d0d749a2b7b41fcaee9106dcf4b02cf94f061932",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:25:37.432Z"
+}

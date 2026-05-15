@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlas-obscura-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_obscura_api",
+  "skill": {
+    "id": 37906,
+    "skillKey": "clawhub-atlas-obscura-api",
+    "name": "Atlas Obscura API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-obscura-api",
+    "url": "https://clawhub.ai/skills/atlas-obscura-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-obscura-api-d21b09f903333ed0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Atlas Obscura places for weird/obscure location inspiration. Use when you need nearby curiosities by coordinates, place lookup by ID, or global place c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dougbtv",
+      "userId": "s17a7v3r8ht088r68gx35xgry983pf9q",
+      "displayName": "Doug Smith",
+      "image": "https://avatars.githubusercontent.com/u/5472189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775770121751,
+      "changelog": "Initial release: Atlas Obscura inspiration skill with Node helper for nearby search and place lookup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d237ad5dffd1120bdd863e8e53137bcda28ff98aabfa7f545bf33d72a89139d"
+}

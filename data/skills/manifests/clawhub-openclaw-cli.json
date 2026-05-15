@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8675,
+  "uuid": "skill-clawhub-openclaw-cli",
+  "skillKey": "clawhub-openclaw-cli",
+  "name": "OpenClaw CLI",
+  "summary": "Operate and troubleshoot the OpenClaw CLI across setup, gateway/node lifecycle, channel login, messaging, agent turns, models, plugins, and system health. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ramen",
+      "features": [
+        "Operate and troubleshoot the OpenClaw CLI across setup, gateway/node lifecycle, channel login,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261311559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cli",
+      "url": "https://clawhub.ai/skills/openclaw-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cli",
+    "url": "https://clawhub.ai/skills/openclaw-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cli-c00dba6977af0040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83a2ee82c56e60085ec7566e866c5e8e29893e4ed88f716f6cec0d25ad9a254a",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:18:24.235Z"
+}

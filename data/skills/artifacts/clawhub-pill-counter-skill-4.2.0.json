@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pill-counter-skill@4.2.0",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pill_counter_skill",
+  "skill": {
+    "id": 62835,
+    "skillKey": "clawhub-pill-counter-skill",
+    "name": "Pill Counter Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pill-counter-skill",
+    "url": "https://clawhub.ai/skills/pill-counter-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pill-counter-skill-2277f733d81ec626.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "药片精确计数工具，支持双模式： - OpenCV 本地识别（免费、离线、快速） - MiMo V2 Omni AI 识别（更准确、需API密钥） 支持13种药片形状，输出统计表格和标注图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsonxuan",
+      "userId": "s17e68hd6w5cenj0yqmeghqp0h8697r4",
+      "displayName": "johnsonxuan",
+      "image": "https://avatars.githubusercontent.com/u/129847416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "4.2.0",
+      "createdAt": 1778171222273,
+      "changelog": "- Improved logic or bug fixes in scripts/pill_counter.py.\n- No changes to documentation or user instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e53e62e50b41e72e2ec39f5307d243ae85ec61a6bf696b052cfeca6f38ca1e42"
+}

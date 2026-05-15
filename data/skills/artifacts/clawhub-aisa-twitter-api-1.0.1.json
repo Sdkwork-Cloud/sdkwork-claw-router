@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_api",
+  "skill": {
+    "id": 9395,
+    "skillKey": "clawhub-aisa-twitter-api",
+    "name": "AIsa Twitter API (Search + Post)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-api",
+    "url": "https://clawhub.ai/skills/aisa-twitter-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-api-9e97e36884f2827c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Searches and reads X (Twitter): profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Publishes posts after the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisapay",
+      "userId": "s17fk6ed1hxsakf921v2wh4g8n842987",
+      "displayName": "AIsaPay",
+      "image": "https://avatars.githubusercontent.com/u/239797396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3453,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775196423666,
+      "changelog": "**Expanded X (Twitter) read API coverage and new OAuth-based posting workflow.**\n\n- Added OAuth-based post publishing: users can now publish tweets/replies safely after authenticating in their browser—no password sharing required.\n- Introduced `scripts/twitter_oauth_client.py` for OAuth-based posting support.\n- Expanded documentation coverage: added `README.md` and `references/post_twitter.md` for easier setup and posting guidance.\n- Updated references and client commands for new endpoints (profiles, mentions, tweet context, communities, Spaces, etc.).\n- Posting workflows now reference a separate guide rather than password-based login calls.\n- General docs structure improved for clarity and up-to-date endpoint support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7d055263298599d9269b222b98e36c71e03eca5fd5419a49272833e4fb6b43f"
+}

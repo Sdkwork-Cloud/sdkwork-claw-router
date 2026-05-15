@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54974,
+  "uuid": "skill-clawhub-smart-meal-master",
+  "skillKey": "clawhub-smart-meal-master",
+  "name": "Smart Meal Master",
+  "summary": "Turn fridge ingredients into delicious meals — personalized recipes with nutrition planning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_meal_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn fridge ingredients into delicious meals — personalized recipes with nutrition planning."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-meal-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-meal-master",
+      "url": "https://clawhub.ai/skills/smart-meal-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-meal-master",
+    "url": "https://clawhub.ai/skills/smart-meal-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-meal-master-05e99b98a93d36b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-meal-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-meal-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38231a4137310665ed1fc2fea3d8cf010c92a27048a8215e1e64d482472a05ca",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T05:43:34.785Z"
+}

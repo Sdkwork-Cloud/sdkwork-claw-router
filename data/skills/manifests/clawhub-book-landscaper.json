@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13369,
+  "uuid": "skill-clawhub-book-landscaper",
+  "skillKey": "clawhub-book-landscaper",
+  "name": "Book Landscaper",
+  "summary": "Book landscaper services through Lokuli MCP. Use when user needs to find and book landscaper. Triggers on requests like \"book a landscaper\", \"find landscaper near me\", or any landscaper service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_landscaper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book landscaper services through Lokuli MCP",
+        "Use when user needs to find and book landscaper",
+        "Triggers on requests like \"book a landscaper\", \"find landscaper near me\", or any landscaper ser."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-landscaper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-landscaper",
+      "url": "https://clawhub.ai/skills/book-landscaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-landscaper",
+    "url": "https://clawhub.ai/skills/book-landscaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-landscaper-7d0fcea2b6f1654d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-landscaper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-landscaper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:477deb7a4b079040265ec54858b71400c77e740b49ff8cf508a387fe707486c2",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:14.775Z"
+}

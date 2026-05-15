@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39907,
+  "uuid": "skill-clawhub-safegraph",
+  "skillKey": "clawhub-safegraph",
+  "name": "Safegraph",
+  "summary": "SafeGraph integration. Manage data, records, and automate workflows. Use when the user wants to interact with SafeGraph data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safegraph",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SafeGraph integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SafeGraph data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safegraph@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safegraph",
+      "url": "https://clawhub.ai/skills/safegraph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safegraph",
+    "url": "https://clawhub.ai/skills/safegraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safegraph-61c402dbb57aae60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safegraph@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-safegraph-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d1dbb6360736390a0b21cafc6e658a1405ab80ab49b87f01842dabc95c63a66",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:01:23.060Z"
+}

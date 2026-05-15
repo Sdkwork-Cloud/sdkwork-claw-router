@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64535,
+  "uuid": "skill-clawhub-pansxng-websearch",
+  "skillKey": "clawhub-pansxng-websearch",
+  "name": "Pansxng Websearch",
+  "summary": "自包含的本地元搜索引擎技能。基于 SearXNG，零配置，开箱即用。 触发词：搜索、搜一下、pansxng、联网搜索、私密搜索、searx、帮我搜、xxx是什么。 使用场景：(1) 联网搜索 (2) 多引擎聚合 (3) 隐私搜索 (4) 指定引擎搜索 无需任何前置条件——首次使用时自动安装全部依赖（Homebre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansxng_websearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "自包含的本地元搜索引擎技能。基于 SearXNG，零配置，开箱即用。 触发词：搜索、搜一下、pansxng、联网搜索、私密搜索、searx、帮我搜、xxx是什么。 使用场景：(1) 联网搜索."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pansxng-websearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pansxng-websearch",
+      "url": "https://clawhub.ai/skills/pansxng-websearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansxng-websearch",
+    "url": "https://clawhub.ai/skills/pansxng-websearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansxng-websearch-f299b473abf25de4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pansxng-websearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pansxng-websearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72ed00c28a86b647f4b44ce945a1334a7af78ec511ae9582dbd4acd1465ef230",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T10:35:22.403Z"
+}

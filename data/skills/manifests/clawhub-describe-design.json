@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12043,
+  "uuid": "skill-clawhub-describe-design",
+  "skillKey": "clawhub-describe-design",
+  "name": "Describe Design",
+  "summary": "Research a codebase and create architectural documentation describing how features or systems work. Use when the user asks to: (1) Document how a feature works, (2) Create an architecture overview, (3) Explain code structure for onboarding.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.describe_design",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziad-hsn",
+      "features": [
+        "Research a codebase and create architectural documentation describing how features or systems w.",
+        "Use when the user asks to: (1) Document how a feature works, (2) Create an architecture overvie.",
+        "Produces markdown documents with Mermaid diagrams and stable code references suitable for human."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/describe-design@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40499487?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "describe-design",
+      "url": "https://clawhub.ai/skills/describe-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "describe-design",
+    "url": "https://clawhub.ai/skills/describe-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/describe-design-d4407f4c6ad1cd59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/describe-design@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-describe-design-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4950b3a2abf60db83a9eadc4420df34994b865b55a01dd1fe53d629c188fa53e",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T12:33:21.220Z"
+}

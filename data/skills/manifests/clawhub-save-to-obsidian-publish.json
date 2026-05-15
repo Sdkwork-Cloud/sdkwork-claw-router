@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42735,
+  "uuid": "skill-clawhub-save-to-obsidian-publish",
+  "skillKey": "clawhub-save-to-obsidian-publish",
+  "name": "Save To Obsidian Publish",
+  "summary": "Save web articles from multiple sources to Obsidian with auto summaries, tags, local images, duplicate detection, and optional user notes.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_to_obsidian_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vlalamoon",
+      "features": [
+        "Save web articles from multiple sources to Obsidian with auto summaries, tags, local images, du."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-to-obsidian-publish@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56936308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-to-obsidian-publish",
+      "url": "https://clawhub.ai/skills/save-to-obsidian-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-to-obsidian-publish",
+    "url": "https://clawhub.ai/skills/save-to-obsidian-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-to-obsidian-publish-7e51ea1953e2e519.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-to-obsidian-publish@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-to-obsidian-publish-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9bbf129f19fb4cdd0990ac71e5c9bad08c550029f14e3d18e5967b987c18e9f",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:52:43.493Z"
+}

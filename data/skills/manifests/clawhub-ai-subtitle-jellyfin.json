@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47872,
+  "uuid": "skill-clawhub-ai-subtitle-jellyfin",
+  "skillKey": "clawhub-ai-subtitle-jellyfin",
+  "name": "Ai Subtitle Jellyfin",
+  "summary": "generate video files into subtitled video files with this skill. Works with MP4, MKV, AVI, MOV files up to 500MB. Jellyfin media server users use it for addi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_jellyfin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "generate video files into subtitled video files with this skill",
+        "Works with MP4, MKV, AVI, MOV files up to 500MB",
+        "Jellyfin media server users use it for addi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-subtitle-jellyfin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-subtitle-jellyfin",
+      "url": "https://clawhub.ai/skills/ai-subtitle-jellyfin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-jellyfin",
+    "url": "https://clawhub.ai/skills/ai-subtitle-jellyfin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-jellyfin-98625b85607b88f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-subtitle-jellyfin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-subtitle-jellyfin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49ea77f1e12eb69f18ef8481a30b267d050a0cb29634df91440f670580ff7ac9",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:07:16.240Z"
+}

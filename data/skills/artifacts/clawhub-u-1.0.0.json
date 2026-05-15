@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/u@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.u",
+  "skill": {
+    "id": 59091,
+    "skillKey": "clawhub-u",
+    "name": "Universal Utility Toolkit - 全能实用工具包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "u",
+    "url": "https://clawhub.ai/skills/u",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/u-0bfe935e70c321c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal Utility Toolkit - 全能实用工具包，包含单位转换、UUID生成、URL处理、Unicode探索、JSON/YAML格式化、哈希计算、密码生成、颜色选择等开发必备工具。Invoke when user needs utility tools, converters, genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775443426327,
+      "changelog": "Universal Utility Toolkit (u) - Initial Release\n\n- Provides a comprehensive suite of utility tools for developers, including unit conversion, UUID generation, URL tools, Unicode exploration, data formatting, hashing, password generation, and color selection.\n- Supports conversion of common units (length, weight, temperature, currency, data, time).\n- Includes tools for JSON/YAML formatting, Base64, and XML processing.\n- Features handy utilities for password and UUID creation, encoding/decoding, and color selection/conversion.\n- Offers real-time currency conversion (including USDT) and batch operations for certain utilities.\n- Designed for quick and easy access to essential development tools in one package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94137ca15f6ec00b3eba9a6b56c267283e7f12e36f201992a6c10c72958462a9"
+}

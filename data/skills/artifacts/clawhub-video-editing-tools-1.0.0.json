@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_tools",
+  "skill": {
+    "id": 45244,
+    "skillKey": "clawhub-video-editing-tools",
+    "name": "Video Editing Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-tools",
+    "url": "https://clawhub.ai/skills/video-editing-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-tools-806c8c3955c62594.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for trimming and polishin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776069142145,
+      "changelog": "Initial release of Video Editing Tools.\n\n- Edit and export video clips (MP4, MOV, AVI, WebM, up to 500MB) with cloud-based AI video editing.\n- Supports trimming, transitions, text overlays, audio tracks, and exporting in 1080p MP4.\n- Simple onboarding: automatic session setup and free 7-day token for new users.\n- Interactive workflows: upload, edit, preview timeline, and export with conversational prompts.\n- Includes error handling for authentication, file size, credits, and unsupported formats.\n- Quick processing (1-2 min) with visual timeline summary and persistent sessions for iterative edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed1bb3b9516672e37ed5fc109307eb01aa02f10be19be7691b961f1e842970af"
+}

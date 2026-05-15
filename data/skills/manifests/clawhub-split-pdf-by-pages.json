@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72301,
+  "uuid": "skill-clawhub-split-pdf-by-pages",
+  "skillKey": "clawhub-split-pdf-by-pages",
+  "name": "银行承兑汇票切割",
+  "summary": "将PDF中包含 显示日期 的页面切割成单独的文件，新文件以原文件名_页数命名。当用户需要从PDF中提取包含特定日期标识的页面时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.split_pdf_by_pages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanW2039",
+      "features": [
+        "将PDF中包含 显示日期 的页面切割成单独的文件，新文件以原文件名_页数命名。当用户需要从PDF中提取包含特定日期标识的页面时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/split-pdf-by-pages@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92492588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "split-pdf-by-pages",
+      "url": "https://clawhub.ai/skills/split-pdf-by-pages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "split-pdf-by-pages",
+    "url": "https://clawhub.ai/skills/split-pdf-by-pages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/split-pdf-by-pages-444666ab7f871f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/split-pdf-by-pages@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-split-pdf-by-pages-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c4a61b0755d278a60a86b0c606bee8f783757cdecaf0d71cb28fd70696c0ff8",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:46:19.136Z"
+}

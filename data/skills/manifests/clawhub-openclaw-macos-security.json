@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16253,
+  "uuid": "skill-clawhub-openclaw-macos-security",
+  "skillKey": "clawhub-openclaw-macos-security",
+  "name": "Clawhub Upload",
+  "summary": "macOS security monitoring for OpenClaw",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_macos_security",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maclaw",
+      "features": [
+        "macOS security monitoring for OpenClaw"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-macos-security@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48971387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-macos-security",
+      "url": "https://clawhub.ai/skills/openclaw-macos-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-macos-security",
+    "url": "https://clawhub.ai/skills/openclaw-macos-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-macos-security-542b4864e4d298c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-macos-security@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-macos-security-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2576c4756e15eb9484c16db04f04a8a95960f5a9a1900a420a1c3a73f00b4ae1",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:27:14.483Z"
+}

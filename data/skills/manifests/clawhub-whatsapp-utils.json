@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15160,
+  "uuid": "skill-clawhub-whatsapp-utils",
+  "skillKey": "clawhub-whatsapp-utils",
+  "name": "WhatsApp Utils",
+  "summary": "Phone number formatting, cache inspection, contact export, and message ID generation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_utils",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Santos",
+      "features": [
+        "Phone number formatting, cache inspection, contact export, and message ID generation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-utils@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74862230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-utils",
+      "url": "https://clawhub.ai/skills/whatsapp-utils"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-utils",
+    "url": "https://clawhub.ai/skills/whatsapp-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-utils-64a1006f30119c19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-utils@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-utils-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc075f2bdbbb128c9733a02ebd3d3a0dabd61ef12a25553e4378fd89e6daaf11",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T19:34:01.445Z"
+}

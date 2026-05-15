@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creative-performance-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_performance_analyzer",
+  "skill": {
+    "id": 19803,
+    "skillKey": "clawhub-creative-performance-analyzer",
+    "name": "Ads Creative Performance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-performance-analyzer",
+    "url": "https://clawhub.ai/skills/creative-performance-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-performance-analyzer-8fa2a6e8ae73e710.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze creative performance post-launch across Meta (Facebook/Instagram), TikTok Ads, YouTube Ads, Google Ads, and Amazon Ads inventory."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772509826844,
+      "changelog": "- Initial public release.\n- Provides post-launch creative performance analysis across Meta, TikTok Ads, YouTube Ads, Google Ads, and Amazon Ads.\n- Includes winner/loser detection, fatigue signals, and next-test matrix specific to each ad platform.\n- Delivers actionable, channel-aware creative plans with variant and QA guidance.\n- Built-in workflows, decision rules, and escalation steps for ad execution support and risk management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc857c7a106b1c3677d990ec34b801b298df09ed5dfebe7feded89e9c599abfb"
+}

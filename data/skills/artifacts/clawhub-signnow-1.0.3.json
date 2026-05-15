@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signnow@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signnow",
+  "skill": {
+    "id": 9544,
+    "skillKey": "clawhub-signnow",
+    "name": "SignNow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signnow",
+    "url": "https://clawhub.ai/skills/signnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signnow-93a1ead76710063b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SignNow API integration with managed OAuth. E-signature platform for sending, signing, and managing documents. Use this skill when users want to upload docum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777590842371,
+      "changelog": "- Updated all API endpoints to use the new base URL: `https://api.maton.ai/` instead of `https://gateway.maton.ai/` and `https://ctrl.maton.ai/`.\n- Updated instructions and code samples to match the new base URLs for both SignNow operations and connection management.\n- Added a new Security & Permissions section to clarify access scope and approval requirements.\n- Removed the sample LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6114d7c3faf6a8147dd7c4a06d14204aab746afeaf21c5996a28875325954c2"
+}

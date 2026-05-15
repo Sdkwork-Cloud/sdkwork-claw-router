@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42118,
+  "uuid": "skill-clawhub-level-up-skill-tree",
+  "skillKey": "clawhub-level-up-skill-tree",
+  "name": "Level Up Skill Tree",
+  "summary": "Organize learning goals into a skill tree with dependencies, current level, upgrade conditions, and the next best path. Use when the user wants a realistic g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.level_up_skill_tree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Organize learning goals into a skill tree with dependencies, current level, upgrade conditions,.",
+        "Use when the user wants a realistic g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/level-up-skill-tree@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "level-up-skill-tree",
+      "url": "https://clawhub.ai/skills/level-up-skill-tree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "level-up-skill-tree",
+    "url": "https://clawhub.ai/skills/level-up-skill-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/level-up-skill-tree-b886ee128ecded7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/level-up-skill-tree@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-level-up-skill-tree-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e64c160e34ef5d1dac6dcd3d273c714366e159d0a469e160e572d25266313c67",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:46:17.489Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/help-center@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.help_center",
+  "skill": {
+    "id": 26554,
+    "skillKey": "clawhub-help-center",
+    "name": "Help Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "help-center",
+    "url": "https://clawhub.ai/skills/help-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/help-center-4fe472112ba50b01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and run help centers with provider selection, migration playbooks, workflow mapping, content taxonomy, and support deflection metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772447709336,
+      "changelog": "Initial release with provider selection matrix, custom stack blueprint, migration playbook, and help center operations guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d9934aa83e548f2e7fd7b91448a40f0caa3442abe7fd23ebee95de020bf44cac"
+}

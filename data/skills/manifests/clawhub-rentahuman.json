@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15544,
+  "uuid": "skill-clawhub-rentahuman",
+  "skillKey": "clawhub-rentahuman",
+  "name": "Rentahuman",
+  "summary": "Hire humans for physical-world tasks via RentAHuman.ai. Search available humans by skill, post bounties, start conversations, and coordinate real-world work....",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rentahuman",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexander Liteplo",
+      "features": [
+        "Hire humans for physical-world tasks via RentAHuman.ai",
+        "Search available humans by skill, post bounties, start conversations, and coordinate real-world."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rentahuman@1.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65365446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rentahuman",
+      "url": "https://clawhub.ai/skills/rentahuman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rentahuman",
+    "url": "https://clawhub.ai/skills/rentahuman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rentahuman-075b51783ea9aefc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rentahuman@1.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rentahuman-1.7.0.json",
+      "version": "1.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118ae328d79467584f3062eb867942204dae872c151f66d08128ff0c1ba4b295",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T01:58:33.864Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11534,
+  "uuid": "skill-clawhub-gousto",
+  "skillKey": "clawhub-gousto",
+  "name": "Gousto Recipes",
+  "summary": "Search and browse 9,000+ Gousto recipes. Get full ingredients and step-by-step cooking instructions via official API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gousto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dhruv Kelawala",
+      "features": [
+        "Search and browse 9,000+ Gousto recipes",
+        "Get full ingredients and step-by-step cooking instructions via official API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gousto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50968441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gousto",
+      "url": "https://clawhub.ai/skills/gousto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gousto",
+    "url": "https://clawhub.ai/skills/gousto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gousto-ab4c281e83d14735.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gousto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gousto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:267aaf42087ec8dfb6c3f1f7bab0315de6a5bcb00759d6c61069c1f48462ea36",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T13:00:23.230Z"
+}

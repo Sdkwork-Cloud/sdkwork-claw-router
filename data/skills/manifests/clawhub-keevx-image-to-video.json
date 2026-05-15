@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14359,
+  "uuid": "skill-clawhub-keevx-image-to-video",
+  "skillKey": "clawhub-keevx-image-to-video",
+  "name": "keevx-image-to-video",
+  "summary": "Convert images to videos using Keevx API with support for multiple models, resolutions up to 4K, audio generation, and batch processing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keevx_image_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-xiling",
+      "features": [
+        "Convert images to videos using Keevx API with support for multiple models, resolutions up to 4K."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keevx-image-to-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218880360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keevx-image-to-video",
+      "url": "https://clawhub.ai/skills/keevx-image-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keevx-image-to-video",
+    "url": "https://clawhub.ai/skills/keevx-image-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keevx-image-to-video-8e1e4dd99439a5dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keevx-image-to-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keevx-image-to-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80072f88f035bfeb9c32e238887283812cfcbbf41d663572cdf064ebc9736fd3",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:31:23.765Z"
+}

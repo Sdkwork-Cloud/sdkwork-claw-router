@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graph-rag-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_rag_memory",
+  "skill": {
+    "id": 44634,
+    "skillKey": "clawhub-graph-rag-memory",
+    "name": "Graph-RAG Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-rag-memory",
+    "url": "https://clawhub.ai/skills/graph-rag-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-rag-memory-ecc2db19268291f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Graph-RAG memory system using Graphiti temporal knowledge graph + FalkorDB + local Ollama embeddings. Provides persistent, queryable long-term memory for Ope..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jebadiahgreenwood",
+      "userId": "s17bh8m9277z972vjc6bexqxqd845pmx",
+      "displayName": "jebadiahgreenwood",
+      "image": "https://avatars.githubusercontent.com/u/50560183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775282482801,
+      "changelog": "Initial release. MoE-style multi-embedding expert routing (bge-m3, snowflake-arctic-embed2, nomic-embed-text), FalkorDB temporal knowledge graph, hippocampal-blend brief auto-injection, C inotify daemon, hybrid BM25+vector search. Research citations: RouterRetriever (AAAI 2025), Graphiti, RRF.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:243146cd1ac5e912129e160ede14b35d3a4ece3fabcfdeff78e9f9b08fe8ccff"
+}

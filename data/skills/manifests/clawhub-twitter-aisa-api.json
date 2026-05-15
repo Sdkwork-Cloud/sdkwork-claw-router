@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40070,
+  "uuid": "skill-clawhub-twitter-aisa-api",
+  "skillKey": "clawhub-twitter-aisa-api",
+  "name": "twitter-aisa-api",
+  "summary": "Search and read Twitter/X profiles, tweets, trends, and Spaces via AISA relay, then publish posts with OAuth and approved media files using AISA_API_KEY.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_aisa_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Search and read Twitter/X profiles, tweets, trends, and Spaces via AISA relay, then publish pos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-aisa-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-aisa-api",
+      "url": "https://clawhub.ai/skills/twitter-aisa-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-aisa-api",
+    "url": "https://clawhub.ai/skills/twitter-aisa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-aisa-api-8163c7a748ab279e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-aisa-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-aisa-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a1dcce800b647711ead5d8d455ee52c136fcd3c1dbd4eca07e0a41bf75a5fe4",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:01:01.728Z"
+}

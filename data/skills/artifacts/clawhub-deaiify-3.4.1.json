@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deaiify@3.4.1",
+  "version": "3.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deaiify",
+  "skill": {
+    "id": 37172,
+    "skillKey": "clawhub-deaiify",
+    "name": "deaiify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deaiify",
+    "url": "https://clawhub.ai/skills/deaiify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deaiify-b5c2e3313e2e4894.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ban LLM em-dashes and en-dashes before delivery, rewrite via embedded LLM."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnpetros",
+      "userId": "s176znzjztf6tqcd77j882me75848hxc",
+      "displayName": "shawnpetros",
+      "image": "https://avatars.githubusercontent.com/u/9226624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.4.1",
+      "createdAt": 1776315803997,
+      "changelog": "Fix VT scanner flag: replace mkdtemp+rm-rf dropper pattern with flat tmp file + unlink",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed94d76fa5c3a90df46edcf8a33360999a83058198ddaaf8118cb8b0cf4a9e34"
+}

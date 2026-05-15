@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-writing-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_writing_assistant",
+  "skill": {
+    "id": 73067,
+    "skillKey": "clawhub-chinese-writing-assistant",
+    "name": "专业中文写稿助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-writing-assistant",
+    "url": "https://clawhub.ai/skills/chinese-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-writing-assistant-0dbd606dfbbb7c52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业中文写稿助手，支持洗稿改写、仿写、文案优化功能。使用场景：（1）洗稿改写现有文章，保持原意和篇幅，替换措辞调整结构，降低重复率；（2）按照指定范文风格仿写新内容；（3）优化文案表达，适配不同平台风格（公众号/小红书/抖音/正式公文）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzhilei951",
+      "userId": "s17528wr0s8te7wbngrh6y2jz183w2mt",
+      "displayName": "duzhilei951",
+      "image": "https://avatars.githubusercontent.com/u/22375450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 912,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773201290575,
+      "changelog": "初始版本，支持洗稿改写、风格仿写、多平台文案优化功能，内置同义替换库和平台风格指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48738de73d671b922c02a412ebfd67d944e8ebb4ff88c83cfc85eac4833dc4bf"
+}

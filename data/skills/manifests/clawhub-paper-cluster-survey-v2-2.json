@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28147,
+  "uuid": "skill-clawhub-paper-cluster-survey-v2-2",
+  "skillKey": "clawhub-paper-cluster-survey-v2-2",
+  "name": "paper-cluster-survey-v2-2",
+  "summary": "Extract structured paper records from one or more local PDFs, arXiv links, DOI links, or general paper URLs, then classify the papers and write an academic s...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_cluster_survey_v2_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huang888596",
+      "features": [
+        "Extract structured paper records from one or more local PDFs, arXiv links, DOI links, or genera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-cluster-survey-v2-2@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193851158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-cluster-survey-v2-2",
+      "url": "https://clawhub.ai/skills/paper-cluster-survey-v2-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-cluster-survey-v2-2",
+    "url": "https://clawhub.ai/skills/paper-cluster-survey-v2-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-cluster-survey-v2-2-e46346cc1a029687.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-cluster-survey-v2-2@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-cluster-survey-v2-2-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4fd4b0bd71e92c2c4eae498d9457715d4a842c50f95a4f24e33af01d2c0d43",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:36:08.700Z"
+}

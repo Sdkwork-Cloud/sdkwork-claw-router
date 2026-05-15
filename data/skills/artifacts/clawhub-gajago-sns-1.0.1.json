@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gajago-sns@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gajago_sns",
+  "skill": {
+    "id": 62324,
+    "skillKey": "clawhub-gajago-sns",
+    "name": "Gajago Sns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gajago-sns",
+    "url": "https://clawhub.ai/skills/gajago-sns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gajago-sns-9c8b5fa9f4d8d787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "경기도교육청 취창업지원센터 SNS 콘텐츠 자동 생성. /가자고 명령어로 텍스트/키워드/이미지를 입력하면 인스타그램, 페이스북, 밴드용 카피 + 이미지 + 20초 영상을 자동 생성. Trigger on /가자고 command."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sang-su0916",
+      "userId": "s1771x7y0yk1xzrpestxjamfs183m9yg",
+      "displayName": "sang-su0916",
+      "image": "https://avatars.githubusercontent.com/u/178482625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774621501645,
+      "changelog": "보안: API 키 하드코딩 제거, 환경변수 참조로 변경",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a59cfd3fd99a176ad181da29d2eb0e245a2f8ff6d443e01e2395000ead9dbfa"
+}

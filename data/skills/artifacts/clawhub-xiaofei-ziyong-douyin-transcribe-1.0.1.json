@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaofei-ziyong-douyin-transcribe@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaofei_ziyong_douyin_transcribe",
+  "skill": {
+    "id": 65140,
+    "skillKey": "clawhub-xiaofei-ziyong-douyin-transcribe",
+    "name": "Douyin Transcribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaofei-ziyong-douyin-transcribe",
+    "url": "https://clawhub.ai/skills/xiaofei-ziyong-douyin-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaofei-ziyong-douyin-transcribe-22401a4a82062431.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动抖音视频下载 + 语音转文字管道。当用户发送抖音链接并要求转写文字、提取字幕、语音转文本时使用。触发词包括\"抖音转写\"、\"抖音文字\"、\"抖音转文本\"、\"抖音字幕\"、\"douyin transcribe\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengzi53",
+      "userId": "s176tg8fwrm8fmtmkn75w3a5gn83rest",
+      "displayName": "mengzi53",
+      "image": "https://avatars.githubusercontent.com/u/117899626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774779274467,
+      "changelog": "修复 SKILL.md 缺少 YAML frontmatter 问题，添加 name 和 description 字段使 OpenClaw 可识别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:daee68e1ae7d2f95bfe957e04551fa638f46186fa56b9b3b909db817d9ddf854"
+}

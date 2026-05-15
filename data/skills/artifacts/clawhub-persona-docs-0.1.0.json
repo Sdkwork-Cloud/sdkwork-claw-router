@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-docs@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_docs",
+  "skill": {
+    "id": 15288,
+    "skillKey": "clawhub-persona-docs",
+    "name": "Persona Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-docs",
+    "url": "https://clawhub.ai/skills/persona-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-docs-71053b344a5aa3a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create persona documentation for a product or codebase. Use when asked to create persona docs, document target users, define user journeys, document onboarding flows, or when starting a new product and needing to define its audience. Perso."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1020,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770730830105,
+      "changelog": "Initial release: Provides structured guidance for creating persona documentation in product and codebase development.\n\n- Defines core components such as user profiles, needs, discovery paths, onboarding, user journeys, and feature touchpoints.\n- Outlines clear processes and criteria for documenting personas, with practical questions and examples.\n- Includes best practices for multi-persona products and maintaining up-to-date, actionable persona docs.\n- Offers clear \"NEVER do\" guidelines to avoid common pitfalls.\n- Installation instructions and usage scenarios provided for easy adoption.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96aa1690e5d53d276be71e3f73ef7228471151f5861807f2bfb6098b826eeb48"
+}

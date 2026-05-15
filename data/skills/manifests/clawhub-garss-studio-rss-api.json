@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47272,
+  "uuid": "skill-clawhub-garss-studio-rss-api",
+  "skillKey": "clawhub-garss-studio-rss-api",
+  "name": "GARSS Studio RSS API",
+  "summary": "Use when an AI agent needs to read, refresh, summarize, or inspect RSS news from this GARSS Studio project through its backend API. Covers login with access...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garss_studio_rss_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoolee",
+      "features": [
+        "Use when an AI agent needs to read, refresh, summarize, or inspect RSS news from this GARSS Stu.",
+        "Covers login with access..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garss-studio-rss-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15868458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garss-studio-rss-api",
+      "url": "https://clawhub.ai/skills/garss-studio-rss-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garss-studio-rss-api",
+    "url": "https://clawhub.ai/skills/garss-studio-rss-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garss-studio-rss-api-45493332c2ed717e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garss-studio-rss-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garss-studio-rss-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:829bc2edc822296a3ca2b42d533e196ad482a00915b533932b7c93bd9110e85c",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T13:31:50.962Z"
+}

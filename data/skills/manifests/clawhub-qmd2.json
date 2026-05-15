@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37970,
+  "uuid": "skill-clawhub-qmd2",
+  "skillKey": "clawhub-qmd2",
+  "name": "Qmd2",
+  "summary": "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam Biner",
+      "features": [
+        "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmd2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37849234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmd2",
+      "url": "https://clawhub.ai/skills/qmd2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd2",
+    "url": "https://clawhub.ai/skills/qmd2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd2-59180ccfd5c46edd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmd2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmd2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66403d93416dfef9ed7d61986df1269900026fe5c78101dea29794e40e1a0547",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:43:02.965Z"
+}

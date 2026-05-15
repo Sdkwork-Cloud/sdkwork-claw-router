@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64509,
+  "uuid": "skill-clawhub-amazon-research-reviews-skill",
+  "skillKey": "clawhub-amazon-research-reviews-skill",
+  "name": "amazon-research-reviews-skill",
+  "summary": "AI驱动的电商评论深度分析工具，支持22维度智能标签、用户画像识别、VOC洞察和可视化看板生成。 当用户需要以下功能时触发： - 分析电商产品评论（Amazon/eBay/AliExpress等平台） - 从评论中提取用户画像、痛点和VOC（客户之声） - 生成产品洞察报告和机会点分析 - 创建专业的可视化分析看...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_research_reviews_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangdabiao",
+      "features": [
+        "AI驱动的电商评论深度分析工具，支持22维度智能标签、用户画像识别、VOC洞察和可视化看板生成。 当用户需要以下功能时触发：",
+        "分析电商产品评论（Amazon/eBay/AliExpress等平台）",
+        "从评论中提取用户画像、痛点和VOC（客户之声）",
+        "生成产品洞察报告和机会点分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-research-reviews-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1232260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-research-reviews-skill",
+      "url": "https://clawhub.ai/skills/amazon-research-reviews-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-research-reviews-skill",
+    "url": "https://clawhub.ai/skills/amazon-research-reviews-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-research-reviews-skill-db9e110f152d1989.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-research-reviews-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-research-reviews-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c89a7c34861a347d63559db179811128c121f43012e9051e8b5eaf2b2ab8d127",
+      "artifactSizeBytes": 2960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:36:43.129Z"
+}

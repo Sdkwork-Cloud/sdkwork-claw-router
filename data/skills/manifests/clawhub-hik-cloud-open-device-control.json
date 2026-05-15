@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71763,
+  "uuid": "skill-clawhub-hik-cloud-open-device-control",
+  "skillKey": "clawhub-hik-cloud-open-device-control",
+  "name": "海康云眸设备控制",
+  "summary": "调用海康云眸开放平台设备控制类接口，包括设备布撤防、布撤防状态查询、云台控制、远程抓图、设备 OSD 设置与查询、设备校时与 NTP 服务器配置、设备存储卡初始化与进度查询。用户提到设备序列号、通道号、布防/撤防、抓图、云台转动、OSD 设置、校时、NTP 配置、存储卡初始化等场景时使用。本技能自动处理 acce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_cloud_open_device_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hik-cloud",
+      "features": [
+        "调用海康云眸开放平台设备控制类接口，包括设备布撤防、布撤防状态查询、云台控制、远程抓图、设备 OSD 设置与查询、设备校时与 NTP 服务器配置、设备存储卡初始化与进度查询。用户提到设备序列."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hik-cloud-open-device-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269703506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hik-cloud-open-device-control",
+      "url": "https://clawhub.ai/skills/hik-cloud-open-device-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-cloud-open-device-control",
+    "url": "https://clawhub.ai/skills/hik-cloud-open-device-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-cloud-open-device-control-de0ffd41ef25cf17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hik-cloud-open-device-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hik-cloud-open-device-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be01cea625ee06cf1b46630480527c08e8eb869a5a59e5234c68ea5392178112",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:59:08.991Z"
+}

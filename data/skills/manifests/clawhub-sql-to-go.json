@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31136,
+  "uuid": "skill-clawhub-sql-to-go",
+  "skillKey": "clawhub-sql-to-go",
+  "name": "sql-to-go",
+  "summary": "Convert MySQL CREATE TABLE statements to Go structs with form, json, and xorm tags. Use when converting SQL DDL to Go struct definitions, generating ORM mode...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_to_go",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weirubo",
+      "features": [
+        "Convert MySQL CREATE TABLE statements to Go structs with form, json, and xorm tags",
+        "Use when converting SQL DDL to Go struct definitions, generating ORM mode..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-to-go@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15801198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-to-go",
+      "url": "https://clawhub.ai/skills/sql-to-go"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-to-go",
+    "url": "https://clawhub.ai/skills/sql-to-go",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-to-go-2ea3652c4fac437a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-to-go@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-to-go-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15eb5dbbec062979a9d60fd2adc5f473e683b60cd5c67d43f82919ad7323b1a7",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:31:32.783Z"
+}

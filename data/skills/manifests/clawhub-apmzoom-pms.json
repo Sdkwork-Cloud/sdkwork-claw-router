@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60698,
+  "uuid": "skill-clawhub-apmzoom-pms",
+  "skillKey": "clawhub-apmzoom-pms",
+  "name": "APM 메시지 푸시 API",
+  "summary": "APM 플랫폼의 메시지 푸시 서비스 API 모음. 헬스 체크, 관리자/사용자 푸시 메시지 목록·상세·읽음 상태 업데이트, 커스텀 정보 업로드 등 8개 엔드포인트를 포함. authcode 헤더(HH + access_token)로 호출. 서비스명: ApmZoomPushMessageSe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apmzoom_pms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apmzoom",
+      "features": [
+        "APM 플랫폼의 메시지 푸시 서비스 API 모음",
+        "헬스 체크, 관리자/사용자 푸시 메시지 목록·상세·읽음 상태 업데이트, 커스텀 정보 업로드 등 8개 엔드포인트를 포함",
+        "authcode 헤더(HH + access_token)로 호출",
+        "서비스명: ApmZoomPushMessageSe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apmzoom-pms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270893274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apmzoom-pms",
+      "url": "https://clawhub.ai/skills/apmzoom-pms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apmzoom-pms",
+    "url": "https://clawhub.ai/skills/apmzoom-pms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apmzoom-pms-7719b2c6379ee037.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apmzoom-pms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apmzoom-pms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7d194062a4b881000d8a0771d353fdb7458a2e9c3f2b1d50550d9abfdf87f8",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:30:50.909Z"
+}

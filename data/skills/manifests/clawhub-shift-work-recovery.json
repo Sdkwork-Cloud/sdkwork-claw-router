@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42881,
+  "uuid": "skill-clawhub-shift-work-recovery",
+  "skillKey": "clawhub-shift-work-recovery",
+  "name": "Shift Work Recovery",
+  "summary": "Sleep and recovery protocols specifically for shift workers. Use when someone works nights, rotating shifts, doubles, or irregular schedules and is strugglin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shift_work_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Sleep and recovery protocols specifically for shift workers",
+        "Use when someone works nights, rotating shifts, doubles, or irregular schedules and is struggli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shift-work-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shift-work-recovery",
+      "url": "https://clawhub.ai/skills/shift-work-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shift-work-recovery",
+    "url": "https://clawhub.ai/skills/shift-work-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shift-work-recovery-2c5b405bbbc8c226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shift-work-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shift-work-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07cadbda27a31b6717efc0d630c66501d50143e6b7a8c6c71278140586c739f8",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:59.541Z"
+}

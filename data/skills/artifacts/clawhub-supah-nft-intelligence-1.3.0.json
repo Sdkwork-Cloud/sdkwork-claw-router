@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supah-nft-intelligence@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supah_nft_intelligence",
+  "skill": {
+    "id": 35530,
+    "skillKey": "clawhub-supah-nft-intelligence",
+    "name": "SUPAH NFT Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supah-nft-intelligence",
+    "url": "https://clawhub.ai/skills/supah-nft-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supah-nft-intelligence-ad5776804c38b74c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NFT collection tracking, whale monitoring, and portfolio valuation for Base blockchain. Track floor prices, whale moves, and discover undervalued collections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supah-based",
+      "userId": "publishers:supah-based",
+      "displayName": "supah-based",
+      "image": "https://avatars.githubusercontent.com/u/266382973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774159277212,
+      "changelog": "Removed all API key references, free tiers, subscription pricing. x402 only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adb58d7087557bdf2da9864af021f6684be5fc08964c2b59b02962d54958fe7e"
+}

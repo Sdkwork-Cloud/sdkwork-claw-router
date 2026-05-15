@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11874,
+  "uuid": "skill-clawhub-philips-hue-thinking",
+  "skillKey": "clawhub-philips-hue-thinking",
+  "name": "Philips Hue Thinking Indicator",
+  "summary": "Visual AI activity indicator using Philips Hue lights. Pulse red when thinking, green when done.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.philips_hue_thinking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JesseRod329",
+      "features": [
+        "Visual AI activity indicator using Philips Hue lights",
+        "Pulse red when thinking, green when done."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/philips-hue-thinking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222712297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "philips-hue-thinking",
+      "url": "https://clawhub.ai/skills/philips-hue-thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "philips-hue-thinking",
+    "url": "https://clawhub.ai/skills/philips-hue-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/philips-hue-thinking-9da2e529fd959307.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/philips-hue-thinking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-philips-hue-thinking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd1459efe11fafcc85e09d1f0f022ff22d9bb59ce91681989770b22216cffc8f",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:12:59.043Z"
+}

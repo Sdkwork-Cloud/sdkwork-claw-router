@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44808,
+  "uuid": "skill-clawhub-task-extractor",
+  "skillKey": "clawhub-task-extractor",
+  "name": "Task Extractor",
+  "summary": "Extract, track, and verify completion of multiple tasks from a single user message. Use when any message contains 3+ actionable items, a prompt dump with mix...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KairoKid",
+      "features": [
+        "Extract, track, and verify completion of multiple tasks from a single user message",
+        "Use when any message contains 3+ actionable items, a prompt dump with mix..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235199066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-extractor",
+      "url": "https://clawhub.ai/skills/task-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-extractor",
+    "url": "https://clawhub.ai/skills/task-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-extractor-85a02f7866faed83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96a19c1c6156c8a2ecedd0feb524f5f1fe4f1cd44b962597f9f59e39eb1abf93",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:24:53.374Z"
+}

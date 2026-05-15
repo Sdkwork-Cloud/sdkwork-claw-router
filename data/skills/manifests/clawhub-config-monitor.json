@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63377,
+  "uuid": "skill-clawhub-config-monitor",
+  "skillKey": "clawhub-config-monitor",
+  "name": "Config Monitor",
+  "summary": "实时监控 OpenClaw Gateway 运行状态、配置变更频率、备份健康及日志错误，生成配置健康报告并触发告警。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samlinfj",
+      "features": [
+        "实时监控 OpenClaw Gateway 运行状态、配置变更频率、备份健康及日志错误，生成配置健康报告并触发告警。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23525394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-monitor",
+      "url": "https://clawhub.ai/skills/config-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-monitor",
+    "url": "https://clawhub.ai/skills/config-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-monitor-27aea2f06b64c726.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c57bd5f884703ae2b2fc0fb22f18d65ac9d2d63a0f46f5d973de70eed9d092d",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:38:04.137Z"
+}

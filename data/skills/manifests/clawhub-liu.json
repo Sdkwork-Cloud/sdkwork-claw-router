@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55727,
+  "uuid": "skill-clawhub-liu",
+  "skillKey": "clawhub-liu",
+  "name": "来了",
+  "summary": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lice2021",
+      "features": [
+        "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com",
+        "Use when you need to fetch new skills on the fly, sync installed s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98088243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liu",
+      "url": "https://clawhub.ai/skills/liu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liu",
+    "url": "https://clawhub.ai/skills/liu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liu-eb9e5c2a708dd6c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67e81d68c325e5777f06cbdcbc2bd9944b76dfcddd9e53fb929adbffccacd612",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:29:09.412Z"
+}

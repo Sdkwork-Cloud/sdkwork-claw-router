@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33426,
+  "uuid": "skill-clawhub-bluecart-api",
+  "skillKey": "clawhub-bluecart-api",
+  "name": "Bluecart Api",
+  "summary": "BlueCart API integration. Manage data, records, and automate workflows. Use when the user wants to interact with BlueCart API data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluecart_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BlueCart API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BlueCart API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bluecart-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bluecart-api",
+      "url": "https://clawhub.ai/skills/bluecart-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluecart-api",
+    "url": "https://clawhub.ai/skills/bluecart-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluecart-api-f38ac8f081147da1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bluecart-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bluecart-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3668a3bfc7c8148c721fdd9ece5525dc6e128d794aa26d7f1aa061b3299da762",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:29.722Z"
+}

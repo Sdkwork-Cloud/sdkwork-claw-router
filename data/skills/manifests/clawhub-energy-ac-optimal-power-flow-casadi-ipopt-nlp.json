@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44627,
+  "uuid": "skill-clawhub-energy-ac-optimal-power-flow-casadi-ipopt-nlp",
+  "skillKey": "clawhub-energy-ac-optimal-power-flow-casadi-ipopt-nlp",
+  "name": "casadi-ipopt-nlp",
+  "summary": "Nonlinear optimization with CasADi and IPOPT solver. Use when building and solving NLP problems: defining symbolic variables, adding nonlinear constraints, s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.energy_ac_optimal_power_flow_casadi_ipopt_nlp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Nonlinear optimization with CasADi and IPOPT solver",
+        "Use when building and solving NLP problems: defining symbolic variables, adding nonlinear const."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/energy-ac-optimal-power-flow-casadi-ipopt-nlp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "energy-ac-optimal-power-flow-casadi-ipopt-nlp",
+      "url": "https://clawhub.ai/skills/energy-ac-optimal-power-flow-casadi-ipopt-nlp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "energy-ac-optimal-power-flow-casadi-ipopt-nlp",
+    "url": "https://clawhub.ai/skills/energy-ac-optimal-power-flow-casadi-ipopt-nlp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/energy-ac-optimal-power-flow-casadi-ipopt-nlp-e3de46347ed983d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/energy-ac-optimal-power-flow-casadi-ipopt-nlp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-energy-ac-optimal-power-flow-casadi-ipopt-nlp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55da9b74aa78b53d18fbada7d92af5a9c0d081e1c90e69bcc4a09cb72478bad5",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:02:59.035Z"
+}

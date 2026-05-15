@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49153,
+  "uuid": "skill-clawhub-login-video",
+  "skillKey": "clawhub-login-video",
+  "name": "Login Video",
+  "summary": "Turn a 30-second screen recording of an app login flow into 1080p polished login videos just by typing what you need. Whether it's creating onboarding or log...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.login_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Turn a 30-second screen recording of an app login flow into 1080p polished login videos just by.",
+        "Whether it's creating onboarding or log..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/login-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "login-video",
+      "url": "https://clawhub.ai/skills/login-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "login-video",
+    "url": "https://clawhub.ai/skills/login-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/login-video-eb28293b8d748d7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/login-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-login-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b4a2b5403061defe236d9256ec6dd04b4e6d65223673a6a930f27c17ba6384c",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:54:32.573Z"
+}

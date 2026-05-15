@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66717,
+  "uuid": "skill-clawhub-skill-scorer",
+  "skillKey": "clawhub-skill-scorer",
+  "name": "Skill Scorer",
+  "summary": "对任何 SKILL.md（或 skill 文件夹）进行质量评估和打分，基于行业最佳实践，生成 8 维度 100 分制的结构化质检报告，精准定位问题并提供可执行的优化建议。当用户要求评审、审计、评分、检测、质检任何 skill 时使用——哪怕只是说「这个 skill 写得怎么样？」也会触发。也支持：skill质检、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "对任何 SKILL.md（或 skill 文件夹）进行质量评估和打分，基于行业最佳实践，生成 8 维度 100 分制的结构化质检报告，精准定位问题并提供可执行的优化建议。当用户要求评审、审计."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-scorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-scorer",
+      "url": "https://clawhub.ai/skills/skill-scorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scorer",
+    "url": "https://clawhub.ai/skills/skill-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scorer-6c0f794eab9e93ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-scorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-scorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71e66a9de6c0f7e264101ed24d670ae6d858f3443ff53d76093d0a4425f9209f",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:12:31.443Z"
+}

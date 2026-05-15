@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liber-speechapi@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liber_speechapi",
+  "skill": {
+    "id": 43124,
+    "skillKey": "clawhub-liber-speechapi",
+    "name": "liber-speechapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liber-speechapi",
+    "url": "https://clawhub.ai/skills/liber-speechapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liber-speechapi-af192c6a9049e6de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle Telegram voice messages with ASR, summarize replies, and provide TTS; also support direct text-to-speech and speech-to-text conversion with environmen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liberalchang",
+      "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+      "displayName": "chang",
+      "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776252443744,
+      "changelog": "**Changelog for liber-speechapi v1.1.0**\n\n- Updated configuration priority for `.env`: environment variables > `~/.openclaw/.env` > local skill directory > current directory.\n- Now loads `speechapi_config.json` from `~/.openclaw/workspace/config/` as the primary config, with fallback to local `config.json`.\n- Removed `config_template.json` and added `speechapi_config.json` as the canonical config file.\n- Clarified documentation to resolve config precedence and external config locations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de70295512286a6abb810cd4a18875c87926f8e7c3251045c4ca486e6eed3226"
+}

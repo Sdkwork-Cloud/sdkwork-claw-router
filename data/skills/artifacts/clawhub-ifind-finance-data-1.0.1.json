@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifind-finance-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_finance_data",
+  "skill": {
+    "id": 57584,
+    "skillKey": "clawhub-ifind-finance-data",
+    "name": "ifind-finance-data/同花顺金融数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-finance-data",
+    "url": "https://clawhub.ai/skills/ifind-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-finance-data-fef2f4e4596464bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iFinD (同花顺) financial data query - query stocks, funds, macroeconomics, industry economics, news and announcements. Supports smart stock/fund screening, fina..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kooui",
+      "userId": "s179rjgyhzv1p1esffzv3whf0h83gw0g",
+      "displayName": "kooui",
+      "image": "https://avatars.githubusercontent.com/u/35019576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774586010308,
+      "changelog": "No user-facing changes in this version.\n\n- Version number updated to 1.0.1, but no file or documentation changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27de424a651cdaf9464728ec120d35540e04ff6a64d83a60d161397bb3d1ed2b"
+}

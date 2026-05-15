@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/united-states@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.united_states",
+  "skill": {
+    "id": 22199,
+    "skillKey": "clawhub-united-states",
+    "name": "United States"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "united-states",
+    "url": "https://clawhub.ai/skills/united-states",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/united-states-abafa4e09c014f3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan United States trips with region-specific routing, verified entry rules, transport logistics, and practical tourist safety."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772457034602,
+      "changelog": "Initial release with verified U.S. entry rules, region playbooks, and practical tourism logistics.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b6d648f6738e811154a11b1f5042ca1e0ac905ed6d989d911983039d6fcd524"
+}

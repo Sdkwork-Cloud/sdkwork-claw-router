@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30868,
+  "uuid": "skill-clawhub-lark-file-sender",
+  "skillKey": "clawhub-lark-file-sender",
+  "name": "lark-file-sender",
+  "summary": "Send files to Feishu/Lark users and groups via the message tool. Use when the user wants to send documents, images, PDFs, or any files through Feishu. Handle...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_file_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "timyljob2011-sudo",
+      "features": [
+        "Send files to Feishu/Lark users and groups via the message tool",
+        "Use when the user wants to send documents, images, PDFs, or any files through Feishu",
+        "Handle..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-file-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253444946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-file-sender",
+      "url": "https://clawhub.ai/skills/lark-file-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-file-sender",
+    "url": "https://clawhub.ai/skills/lark-file-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-file-sender-c4d8ad3bd43eb19c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-file-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-file-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f6ac77658260ec907924cfff7295e76f1dfc06703d65f112c3102fe1e70e55a",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:44:49.042Z"
+}

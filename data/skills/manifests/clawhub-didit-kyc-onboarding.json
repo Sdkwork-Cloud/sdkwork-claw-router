@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25506,
+  "uuid": "skill-clawhub-didit-kyc-onboarding",
+  "skillKey": "clawhub-didit-kyc-onboarding",
+  "name": "Didit Kyc Onboarding",
+  "summary": "End-to-end KYC (Know Your Customer) identity verification for onboarding real users. Use when someone needs to perform KYC, onboard users with identity verif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_kyc_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "End-to-end KYC (Know Your Customer) identity verification for onboarding real users",
+        "Use when someone needs to perform KYC, onboard users with identity verif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-kyc-onboarding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-kyc-onboarding",
+      "url": "https://clawhub.ai/skills/didit-kyc-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-kyc-onboarding",
+    "url": "https://clawhub.ai/skills/didit-kyc-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-kyc-onboarding-afff687b6196c725.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-kyc-onboarding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-kyc-onboarding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed0115fb64ec56604594d493e39d4409875c3c244be0e32076c941f54fae8aa",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:14:42.701Z"
+}

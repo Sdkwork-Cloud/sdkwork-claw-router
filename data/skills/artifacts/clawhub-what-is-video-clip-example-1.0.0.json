@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/what-is-video-clip-example@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.what_is_video_clip_example",
+  "skill": {
+    "id": 44578,
+    "skillKey": "clawhub-what-is-video-clip-example",
+    "name": "What Is Video Clip Example"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "what-is-video-clip-example",
+    "url": "https://clawhub.ai/skills/what-is-video-clip-example",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/what-is-video-clip-example-90168a51708902b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 30-second screen recording or phone video into 1080p sample video clips just by typing what you need. Whether it's understanding what a video clip is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776367589826,
+      "changelog": "Initial release of \"What Is a Video Clip Example — Create and Export Sample Clips\".\n\n- Instantly generate and export 30-second video clip examples in 1080p from any short video or screen recording.\n- Simple, text-based instructions — just upload a video and describe your desired result.\n- No timeline editing or export settings required; cloud GPU renders clips for fast turnaround (20–40 seconds).\n- Automatic session and token handling, including anonymous mode with 100 free credits for 7 days.\n- Supports multiple formats (mp4, mov, avi, webm, gif, jpg, etc.) and up to 500MB file size.\n- Upload, edit, preview, and export workflows integrated into one streamlined chat-based experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aff43b60a077263b52c66f970a3576eb4b2736dc040c98661dc4f33028239636"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22391,
+  "uuid": "skill-clawhub-octoflow",
+  "skillKey": "clawhub-octoflow",
+  "name": "Clawhub",
+  "summary": "Use when the user wants to run GPU-accelerated computations, analyze data, process images/audio/video, train ML models, or generate code from natural languag...",
+  "version": "1.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octoflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Octopus",
+      "features": [
+        "Use when the user wants to run GPU-accelerated computations, analyze data, process images/audio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/octoflow@1.5.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65360953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "octoflow",
+      "url": "https://clawhub.ai/skills/octoflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octoflow",
+    "url": "https://clawhub.ai/skills/octoflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octoflow-781601538a27de85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/octoflow@1.5.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-octoflow-1.5.8.json",
+      "version": "1.5.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1426f8d7aa1750ae78a933e8063c3c9cecf34cd2d26b80d8af8b766660e4e26",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:25:15.209Z"
+}

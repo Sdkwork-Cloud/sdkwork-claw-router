@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cs-pw@2.1.3",
+  "version": "2.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_pw",
+  "skill": {
+    "id": 24376,
+    "skillKey": "clawhub-cs-pw",
+    "name": "Tmp.SpQgKzelJa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-pw",
+    "url": "https://clawhub.ai/skills/cs-pw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-pw-23ab358d8fc24182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test mi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.3",
+      "createdAt": 1773166516938,
+      "changelog": "- Removed 95 files, including all reference documentation, agent guides, integration files, and sample configurations.\n- All documentation and internal guides (README, agent docs, reference docs, migration guides) were deleted.\n- BrowserStack and TestRail integration code and configuration files were removed.\n- Smart hooks for Playwright project detection and validation were deleted.\n- No changes made to `/pw:` commands or core Playwright Pro functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52e0704d70f9d60909b52886b9187de775b8e3caf8c420d663288b672f9f6ef7"
+}

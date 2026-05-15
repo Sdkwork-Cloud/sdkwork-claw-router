@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-japanese-to-english@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_japanese_to_english",
+  "skill": {
+    "id": 43312,
+    "skillKey": "clawhub-subtitle-generator-japanese-to-english",
+    "name": "Subtitle Generator Japanese To English"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-japanese-to-english",
+    "url": "https://clawhub.ai/skills/subtitle-generator-japanese-to-english",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-japanese-to-english-83896f4db9ac2ecd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get subtitled English videos ready to post, without touching a single slider. Upload your Japanese video files (MP4, MOV, AVI, WebM, up to 500MB), say someth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776064344930,
+      "changelog": "Initial release of Subtitle Generator Japanese to English — Translate Japanese Videos to English.\n\n- Upload Japanese video files (MP4, MOV, AVI, WebM up to 500MB), generate and burn in English subtitles, and download as 1080p MP4.\n- Automatic cloud backend setup includes token management, session creation, and credits check.\n- Supports common export, credits, status, and upload commands via simple prompts.\n- Error handling and feedback for unsupported files, large uploads, expired tokens, and rate limits.\n- Includes tips for best results and outlines common workflows for translation, editing, and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfa6a546d14b173826353a6cc0b7515c46dc850fea22fb0768a0e58ad94d3aea"
+}

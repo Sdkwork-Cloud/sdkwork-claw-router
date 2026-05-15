@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/media-content-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_content_generator",
+  "skill": {
+    "id": 53749,
+    "skillKey": "clawhub-media-content-generator",
+    "name": "Media Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-content-generator",
+    "url": "https://clawhub.ai/skills/media-content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-content-generator-7ff79d8300428d3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — combine these images and audio into a 30-second promotional video with tex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777512124537,
+      "changelog": "Media Content Generator 1.0.0 — Initial Release\n\n- Instantly generates videos from your uploaded images, video clips, and audio files via cloud GPU processing with no editing software required.\n- Supports MP4, MOV, PNG, JPG, and other formats up to 500MB per upload.\n- Anonymous access automatically available for new users; provides 100 free credits and seamless token/session management.\n- Handles file upload, asset combination, credits check, export, and project state through clear chat commands.\n- Designed for marketers and content creators who need fast, ready-to-publish videos with options like text overlays and audio tracks.\n- Responsive error handling with user guidance for unsupported files, authorization, credits, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:962c312b656c710149f2a96bfed81b5b0725aba84b95e3a82688c1d007ba7654"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xinywacodinghelper@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinywacodinghelper",
+  "skill": {
+    "id": 30120,
+    "skillKey": "clawhub-xinywacodinghelper",
+    "name": "xinywa Coding Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinywacodinghelper",
+    "url": "https://clawhub.ai/skills/xinywacodinghelper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinywacodinghelper-05fed8955ba3588c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely implement minimal, well-tested, and local-pattern-consistent code changes in existing codebases with clear understanding, logging, and resumable progr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinyue-wang",
+      "userId": "s17bfpfg6ffax8nt7w4cmzae2d840c4a",
+      "displayName": "alice_wang",
+      "image": "https://avatars.githubusercontent.com/u/37516611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775118559825,
+      "changelog": "Summary: This version adds detailed operational documentation and machine-optimized process requirements for safe, minimal code changes in large repositories.\n\n- Added RECOVERY.md, ROUTING.md, WATCHER.md, and templates/progress_template.md with supporting operational and process details.\n- SKILL.md overhauled to enforce mandatory repo access checks, progressive understanding, and machine-optimized index usage.\n- All execution is now resumable, logged per-step, and prohibits silent operation for traceability.\n- Confidence scoring and structured error/fail-fast handling are now required.\n- Output and log directories specified for consistent run tracking and post-run cleanup.\n- Skill now restricted to COMPLEX_CODE_TASK routing only; simple tasks are excluded.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:565bf93156165ff58bd83222b83d4b3321c3147b7783b00dd60a93c5a32acfed"
+}

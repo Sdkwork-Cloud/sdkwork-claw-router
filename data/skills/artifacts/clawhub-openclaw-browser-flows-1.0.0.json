@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-browser-flows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_flows",
+  "skill": {
+    "id": 49781,
+    "skillKey": "clawhub-openclaw-browser-flows",
+    "name": "OpenClaw Browser Flows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-flows",
+    "url": "https://clawhub.ai/skills/openclaw-browser-flows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-flows-b1116ee0f9badc08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides multi-step browser automation patterns with tab management, login checks, stale reference recovery, and session handling for OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronmda",
+      "userId": "s17e94e7fsc6q38t734pe57fa5869aha",
+      "displayName": "Aaron Daley",
+      "image": "https://avatars.githubusercontent.com/u/26989992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778247434936,
+      "changelog": "Initial free core release. Automates browser multi-step flows/tab hygiene. Premium support: aaronmda@clawhub.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6acf88a86c7c4911faaab1c15ce9c2093b376497f97fa8d9c2684f510bfc6bab"
+}

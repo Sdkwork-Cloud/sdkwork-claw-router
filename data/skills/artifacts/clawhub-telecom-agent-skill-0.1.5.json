@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telecom-agent-skill@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telecom_agent_skill",
+  "skill": {
+    "id": 10539,
+    "skillKey": "clawhub-telecom-agent-skill",
+    "name": "Telecom Agent Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telecom-agent-skill",
+    "url": "https://clawhub.ai/skills/telecom-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telecom-agent-skill-39844bcb89ce076e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your AI Agent into a Telecom Operator. Bulk calling, ChatOps, and Field Monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kflohr",
+      "userId": "publishers:kflohr",
+      "displayName": "kflohr",
+      "image": "https://avatars.githubusercontent.com/u/186299201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2514,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1770177657398,
+      "changelog": "Major update with expanded telecom management features and simplified documentation.\n\n- Overhauled documentation in SKILL.md to reflect new features.\n- Introduced bulk calling with campaign queues and rate-limiting for high-volume dialing.\n- Added ChatOps for campaign management via chat commands.\n- Integrated Telegram support for remote monitoring and action approvals.\n- Enhanced status monitoring with JSON progress reports.\n- Removed legacy files and all previous code (17 files deleted), focusing the skill on updated capabilities and easier onboarding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cfcf07f55ff9dedbed59577054391d43157bd8536c37c65d07addef8a3d5547d"
+}

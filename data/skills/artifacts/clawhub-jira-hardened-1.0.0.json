@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jira-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_hardened",
+  "skill": {
+    "id": 48058,
+    "skillKey": "clawhub-jira-hardened",
+    "name": "Jira Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-hardened",
+    "url": "https://clawhub.ai/skills/jira-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-hardened-881e9d3b3c5901f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776913208466,
+      "changelog": "- Initial release of jira-hardened skill for interacting with Jira via natural language.\n- Supports both jira CLI and Atlassian MCP backends with automatic detection and setup guidance.\n- Provides quick reference tables for core actions (view, create, update, transition, assign) for both interfaces.\n- Enforces robust safety guardrails: always fetch issue state before changes, require approval on modifications, and handle identity/assignment securely.\n- Includes triggers for common Jira operations (issue keys, tickets, sprints) and detailed instructions for safe workflow management.\n- Outlines clear security practices and fallback instructions if neither backend is available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1891a38be47bab664c59228ffcc9f5ddf0dfb873914fe0776811715511a274b1"
+}

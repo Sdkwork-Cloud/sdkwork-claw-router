@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61984,
+  "uuid": "skill-clawhub-getskill",
+  "skillKey": "clawhub-getskill",
+  "name": "getskill",
+  "summary": "用于 OpenClaw 的技能管理工具，支持从 getskill.work 仓库搜索、下载和更新技能文件。提供 CLI 和编程接口，通过 API 搜索技能、通过 Git 克隆仓库、将技能目录复制到 OpenClaw skills 目录，并提供 Git 安装引导。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "workskills",
+      "features": [
+        "用于 OpenClaw 的技能管理工具，支持从 getskill.work 仓库搜索、下载和更新技能文件。提供 CLI 和编程接口，通过 API 搜索技能、通过 Git 克隆仓库、将技能目录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getskill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20252468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getskill",
+      "url": "https://clawhub.ai/skills/getskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getskill",
+    "url": "https://clawhub.ai/skills/getskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getskill-1ccbceba535e16c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getskill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-getskill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e387fed0b2ac8d74881b7d66f4a7a8595a1abe895b9dd036ffd168f086a6555",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:09:36.138Z"
+}

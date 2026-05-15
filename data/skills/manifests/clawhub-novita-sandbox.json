@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23616,
+  "uuid": "skill-clawhub-novita-sandbox",
+  "skillKey": "clawhub-novita-sandbox",
+  "name": "Novita Sandbox",
+  "summary": "Run browser operations and untrusted code in a secure Novita cloud sandbox (Firecracker VM). Use when: (1) browsing any external URL or website, (2) executin...",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novita_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piston4711",
+      "features": [
+        "Run browser operations and untrusted code in a secure Novita cloud sandbox (Firecracker VM)",
+        "Use when: (1) browsing any external URL or website, (2) executin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novita-sandbox@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257291435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novita-sandbox",
+      "url": "https://clawhub.ai/skills/novita-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novita-sandbox",
+    "url": "https://clawhub.ai/skills/novita-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novita-sandbox-09a2191ac9def118.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novita-sandbox@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-novita-sandbox-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d04d28215d38f5611f9f8d967451f2c4b76b50b9701e754877a0c8c5ab40ce00",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:01:42.755Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60894,
+  "uuid": "skill-clawhub-rss-ai-reader",
+  "skillKey": "clawhub-rss-ai-reader",
+  "name": "Rss Ai Reader",
+  "summary": "📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 Claude/OpenAI 生成中文摘要，推送到飞书/Telegram/Email。 触发条件: 用户要求订阅RSS、监控博客、抓取新闻、生成摘要、设置定时抓取、 \"帮我订阅\"、\"监控这个网站\"、\"每天推送新闻\"、RSS/Atom feed 相关。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_ai_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BENZEMA",
+      "features": [
+        "📰 RSS AI 阅读器 — 自动抓取订阅、LLM生成摘要、多渠道推送！ 支持 Claude/OpenAI 生成中文摘要，推送到飞书/Telegram/Email。 触发条件: 用户要求订."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-ai-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43908081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-ai-reader",
+      "url": "https://clawhub.ai/skills/rss-ai-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-ai-reader",
+    "url": "https://clawhub.ai/skills/rss-ai-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-ai-reader-a0d29749eda3a6b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-ai-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-ai-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15302bfa9bf05b7df55fc47c3fea42c8657c8accb20daf87d60607ca52840b2e",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T09:10:11.548Z"
+}

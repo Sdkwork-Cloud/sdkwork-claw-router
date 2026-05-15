@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-translator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_translator",
+  "skill": {
+    "id": 52070,
+    "skillKey": "clawhub-academic-translator",
+    "name": "Academic Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-translator",
+    "url": "https://clawhub.ai/skills/academic-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-translator-8bb1d72c46cef865.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate and analyze academic CS papers (EN↔ZH), summarize content, answer questions with paper text plus web research, and compare related works."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levinaz69",
+      "userId": "s17f1cea99b0e6nb1sw5skxnas83mcv2",
+      "displayName": "levinaz69",
+      "image": "https://avatars.githubusercontent.com/u/5096241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712327133,
+      "changelog": "Academic Translator & Research Assistant v1.0.0\n\n- Initial release featuring accurate academic paper translation (English ↔ Chinese) and research Q&A for CS papers.\n- Supports ingestion from arXiv links/IDs or PDF files, with automatic extraction of metadata and full text.\n- Implements rigorous translation guidelines, preserving technical terms, paper structure, and academic style.\n- Answers user questions using both extracted paper content and supplementary web research, with clear citations.\n- Offers summary, concept explanation, and cross-paper comparison capabilities.\n- Maintains user context for seamless multi-turn interactions and efficient follow-up queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad25d1c61f3272a55b02adc6d10dd8b9409a26a7b22482b1c5754b852d43ca95"
+}

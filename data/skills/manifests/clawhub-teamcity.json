@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35086,
+  "uuid": "skill-clawhub-teamcity",
+  "skillKey": "clawhub-teamcity",
+  "name": "Teamcity",
+  "summary": "TeamCity integration. Manage data, records, and automate workflows. Use when the user wants to interact with TeamCity data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamcity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TeamCity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TeamCity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamcity@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamcity",
+      "url": "https://clawhub.ai/skills/teamcity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamcity",
+    "url": "https://clawhub.ai/skills/teamcity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamcity-969624b8772a0e87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamcity@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamcity-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1baf5b8e273dca35e4c57212bdef2025ce0b4049823835eed20b36f6c9acdcb9",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:37.112Z"
+}

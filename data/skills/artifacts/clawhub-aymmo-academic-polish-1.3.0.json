@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aymmo-academic-polish@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aymmo_academic_polish",
+  "skill": {
+    "id": 71073,
+    "skillKey": "clawhub-aymmo-academic-polish",
+    "name": "学术写作润色"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aymmo-academic-polish",
+    "url": "https://clawhub.ai/skills/aymmo-academic-polish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aymmo-academic-polish-5e45dd58427a3697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术写作润色与批判性框架搭建，支持中英文双语。用于： - 中文润色：去除AI痕迹、逻辑缺陷审查、戴锦华式批判/汪民安式理论阐述 - 英文润色：地道学术英语表达、 hedging策略、IMRAD结构优化、期刊风格适配 - 逻辑审查：逻辑踏空、结论过重、稻草人谬误识别 - 追问与反方观点回应框架 适配人文社科领域，融..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aymmo",
+      "userId": "s175ch0b1dv8gj9vsyvsvfyjv5844sx7",
+      "displayName": "Aymmo",
+      "image": "https://avatars.githubusercontent.com/u/266468098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1775247702500,
+      "changelog": "Initial publish: 学术写作润色技能，融合戴锦华批判写作与汪民安理论阐述方法论",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a632024b667adb3b1d42747716f211b5ded77f384878013fd1b122c84d20d366"
+}

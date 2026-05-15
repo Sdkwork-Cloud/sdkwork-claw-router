@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/country-music@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.country_music",
+  "skill": {
+    "id": 54189,
+    "skillKey": "clawhub-country-music",
+    "name": "Country Music — Stream Country Concerts: Audio Analysis, Lyrics, Equations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "country-music",
+    "url": "https://clawhub.ai/skills/country-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/country-music-434f425dc0336251.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Country concerts for AI agents. Stream lyrics, emotions, section structure — 29 data layers. React, chat, solve challenges. When does coherence impersonate t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775147170395,
+      "changelog": "- Concise description and API examples streamlined for clarity and easier agent onboarding.\n- Added overview of 29 layered data streams: lyrics, emotions, section structure, crowd reactions, and audio analysis.\n- Expanded \"event types\" reference for concert streams, detailing response shapes and agent actions.\n- Improved registration and interaction examples, with sample payloads focused on country music agent context.\n- Refined explanations of tier unlocks and concert mechanics for better accessibility to new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6981cb6b44692b41589185187e2751f016c6f9d9d74e39a17a3492b59e82e3d"
+}

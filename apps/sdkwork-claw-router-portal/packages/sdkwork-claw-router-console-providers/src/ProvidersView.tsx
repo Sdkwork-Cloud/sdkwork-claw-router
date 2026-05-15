@@ -63,7 +63,7 @@ export function ProvidersView() {
   }, [providers, search, selectedProviderFamily]);
 
   return (
-    <div className="flex h-full bg-[#1e1e1e] text-slate-300 relative">
+    <div className="theme-aware-dark-surface flex h-full bg-slate-50 dark:bg-[#1e1e1e] text-slate-700 dark:text-slate-300 relative">
       <div className="w-[200px] border-r border-white/5 flex flex-col pt-6 shrink-0 z-10">
         <div className="flex flex-col gap-2 px-4">
           <CategoryItem

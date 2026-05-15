@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19228,
+  "uuid": "skill-clawhub-system-monitor-tool",
+  "skillKey": "clawhub-system-monitor-tool",
+  "name": "system-monitor-tool",
+  "summary": "System resource monitoring (CPU, memory, disk, network). Use when user asks \"system status\", \"CPU usage\", \"memory usage\", \"disk space\", or wants to monitor s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_monitor_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yushimohuang",
+      "features": [
+        "System resource monitoring (CPU, memory, disk, network)",
+        "Use when user asks \"system status\", \"CPU usage\", \"memory usage\", \"disk space\", or wants to moni."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/system-monitor-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197757967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "system-monitor-tool",
+      "url": "https://clawhub.ai/skills/system-monitor-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-monitor-tool",
+    "url": "https://clawhub.ai/skills/system-monitor-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-monitor-tool-b3b316ab76f7b00b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/system-monitor-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-system-monitor-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48a7d388a304981ae8829c047bf61506f273e1c4b46144f6a8ddb9da38899190",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:03:54.359Z"
+}

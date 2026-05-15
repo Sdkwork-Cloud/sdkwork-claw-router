@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24163,
+  "uuid": "skill-clawhub-link-transcriber",
+  "skillKey": "clawhub-link-transcriber",
+  "name": "Skill",
+  "summary": "Turn a Douyin or Xiaohongshu link into a concise summary, an actionable todo list, and a recommended reminder time. The hosted service handles the platform a...",
+  "version": "0.1.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobobo2026",
+      "features": [
+        "Turn a Douyin or Xiaohongshu link into a concise summary, an actionable todo list, and a recomm.",
+        "The hosted service handles the platform a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/link-transcriber@0.1.26",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268898726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "link-transcriber",
+      "url": "https://clawhub.ai/skills/link-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-transcriber",
+    "url": "https://clawhub.ai/skills/link-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-transcriber-b27f089e326fced1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/link-transcriber@0.1.26",
+      "artifactUrl": "data/skills/artifacts/clawhub-link-transcriber-0.1.26.json",
+      "version": "0.1.26",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8b79927a9e00f288eb59b7df29bc339f52bd8c8ec7450b1797361f13336c523",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T01:56:35.825Z"
+}

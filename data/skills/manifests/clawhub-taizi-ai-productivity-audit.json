@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21987,
+  "uuid": "skill-clawhub-taizi-ai-productivity-audit",
+  "skillKey": "clawhub-taizi-ai-productivity-audit",
+  "name": "Ai Productivity Audit",
+  "summary": "Audit a user's current AI tool stack. Score each tool by ROI, identify redundancies, gaps, and upgrade opportunities. Produces a structured report with score...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_ai_productivity_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fresh3",
+      "features": [
+        "Audit a user's current AI tool stack",
+        "Score each tool by ROI, identify redundancies, gaps, and upgrade opportunities",
+        "Produces a structured report with score..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taizi-ai-productivity-audit@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23310067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taizi-ai-productivity-audit",
+      "url": "https://clawhub.ai/skills/taizi-ai-productivity-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-ai-productivity-audit",
+    "url": "https://clawhub.ai/skills/taizi-ai-productivity-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-ai-productivity-audit-192658eb136e64da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taizi-ai-productivity-audit@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taizi-ai-productivity-audit-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9e0c2cfc549060542d6c5d5cedc364b27f731f7c8f067bfd58525a9b0d6c494",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:04:47.675Z"
+}

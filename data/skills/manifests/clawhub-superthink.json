@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45540,
+  "uuid": "skill-clawhub-superthink",
+  "skillKey": "clawhub-superthink",
+  "name": "SuperThink",
+  "summary": "Deep-dive research and analysis engine. Triggered by /superthink. Runs an interrogate flow to narrow topic and scope, then executes a 4-stage fully automatic...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superthink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inxan3",
+      "features": [
+        "Deep-dive research and analysis engine",
+        "Triggered by /superthink",
+        "Runs an interrogate flow to narrow topic and scope, then executes a 4-stage fully automatic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superthink@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208640470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superthink",
+      "url": "https://clawhub.ai/skills/superthink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superthink",
+    "url": "https://clawhub.ai/skills/superthink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superthink-08e6ce341a586144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superthink@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-superthink-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:788910e893c2b322ee9118c67b4395ea62a341316e0144e651eb7a933d316379",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:37:14.456Z"
+}

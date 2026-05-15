@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bbc-skill-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bbc_skill_tool",
+  "skill": {
+    "id": 31300,
+    "skillKey": "clawhub-bbc-skill-tool",
+    "name": "bbc-skill-tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bbc-skill-tool",
+    "url": "https://clawhub.ai/skills/bbc-skill-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bbc-skill-tool-444de007593e4794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds, manages, and troubleshoots WhatsApp bots using the BuilderBot Cloud (BBC) MCP Tool v2.0. Covers bot creation for businesses needing appointment booki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leifermendez",
+      "userId": "s175aq0ksmk0pgezz1pbjkfzg5840wqh",
+      "displayName": "Leifer Mendez",
+      "image": "https://avatars.githubusercontent.com/u/15802366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775070404968,
+      "changelog": "bbc-skill-tool v1.0.0\n\n- Initial release: build, manage, and troubleshoot WhatsApp bots using the BuilderBot Cloud (BBC) MCP Tool v2.0.\n- Enforces safety-first patterns: verification after mutations, explicit confirmation before destructive actions, and guided recovery on errors.\n- Supports WhatsApp bot creation for businesses (appointments, escalation, conversational AI), including project and flow management, answer types, deployment, and validation.\n- Includes detailed rules for creating flows, managing answers, and handling system events and AI-powered assistants.\n- Recommends AI-powered conversational bot patterns for most real-world use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd6a264783ddf4ee515ca57d7110a8defc5acaa40b2bbd771193169e061d2373"
+}

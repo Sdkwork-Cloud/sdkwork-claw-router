@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59904,
+  "uuid": "skill-clawhub-sdd",
+  "skillKey": "clawhub-sdd",
+  "name": "SDD - Scenario-Driven Detection",
+  "summary": "Scenario-Driven Detection — AI 자율 추론 기반 논리 결함 탐지/수정 프레임워크. 기능 에러(crash, 500)가 아닌 '논리적으로 비정상인 동작'을 찾아 자동 수정한다. 사용 시점: (1) URL을 주고 웹사이트 논리 테스트 요청, (2) 소스코드 프로젝...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kimky1122",
+      "features": [
+        "Scenario-Driven Detection — AI 자율 추론 기반 논리 결함 탐지/수정 프레임워크",
+        "기능 에러(crash, 500)가 아닌 '논리적으로 비정상인 동작'을 찾아 자동 수정한다",
+        "사용 시점: (1) URL을 주고 웹사이트 논리 테스트 요청, (2) 소스코드 프로젝..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7430339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd",
+      "url": "https://clawhub.ai/skills/sdd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd",
+    "url": "https://clawhub.ai/skills/sdd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-0a4ec9d8dce6bbf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7877a49569d54489673630e510ef50c5f2db7d98ad1012ee7481a7d6869d2c70",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:58:06.092Z"
+}

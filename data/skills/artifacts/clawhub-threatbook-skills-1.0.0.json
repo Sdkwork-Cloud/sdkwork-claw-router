@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threatbook-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threatbook_skills",
+  "skill": {
+    "id": 70253,
+    "skillKey": "clawhub-threatbook-skills",
+    "name": "threatbook-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threatbook-skills",
+    "url": "https://clawhub.ai/skills/threatbook-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threatbook-skills-b67db18423b5be12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "集成微步在线威胁情报API，提供文件上传分析、文件信誉查询、多引擎检测、IP信誉查询和失陷检测能力；当用户需要分析可疑文件、查询文件威胁情报、检测IP安全状态或排查主机失陷风险时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moxin1044",
+      "userId": "s179edwyjyfjkwyce78c44wve983ejpk",
+      "displayName": "末心",
+      "image": "https://avatars.githubusercontent.com/u/59173630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774123994648,
+      "changelog": "Initial release of threatbook-skills, providing integration with 微步在线 (ThreatBook) threat intelligence API.\n\n- Supports file upload and analysis for suspicious files.\n- Allows reputation queries for files using hash values.\n- Provides multi-engine antivirus scan reports.\n- Enables IP reputation query and context.\n- Includes domain/IP compromise detection functionality.\n- Requires THREATBOOK_API_KEY for API access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23adac4aa5103a88cb7c8e8fe75f8270949a30bac6a4ae91e1799719addcf883"
+}

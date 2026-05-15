@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bom-discover-gcp@0.86.2",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_discover_gcp",
+  "skill": {
+    "id": 31374,
+    "skillKey": "clawhub-agent-bom-discover-gcp",
+    "name": "agent-bom discover gcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-discover-gcp",
+    "url": "https://clawhub.ai/skills/agent-bom-discover-gcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-discover-gcp-cadde5f51ec56ad2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover GCP-hosted AI agent and MCP-relevant assets from the operator's environment, emit canonical agent-bom inventory JSON, and scan it without giving age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msaad00",
+      "userId": "s173dmtq1jwv3yxcgnmcxnn45583ey2y",
+      "displayName": "Agent Bom",
+      "image": "https://avatars.githubusercontent.com/u/34316639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.86.2",
+      "createdAt": 1778168731486,
+      "changelog": "Release v0.86.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72095b9f472ed64d023091f08caefd384739da6b3e84e17acc3fef41ce8b0361"
+}

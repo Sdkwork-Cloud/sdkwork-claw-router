@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-data-jesse@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_data_jesse",
+  "skill": {
+    "id": 71414,
+    "skillKey": "clawhub-mx-data-jesse",
+    "name": "Mx Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-data-jesse",
+    "url": "https://clawhub.ai/skills/mx-data-jesse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-data-jesse-9957bee035e3ed79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富权威数据库的金融数据查询工具，支持行情、财务及关联关系数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessecq1995",
+      "userId": "s17fe78e4sg7hnt93xmyj48mc183hn4w",
+      "displayName": "Jessecq1995",
+      "image": "https://avatars.githubusercontent.com/u/185338792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774738156732,
+      "changelog": "- Updated skill name and display name to \"eastmoney_fin_data\" (妙想金融数据 / Eastmoney)\n- Expanded and clarified the skill description and usage instructions in Chinese\n- Added detailed documentation for API endpoints, environment variables, output file formats, and security considerations\n- Included comprehensive field explanations for all API response objects and key data paths\n- Added usage limitations and troubleshooting guidance for empty or failed data queries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7965aa49ffc0954f47b45b3708119efb75260a1ec435122905714d529e9c9ffe"
+}

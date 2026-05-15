@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chemistry-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chemistry_query",
+  "skill": {
+    "id": 15527,
+    "skillKey": "clawhub-chemistry-query",
+    "name": "Chemistry Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chemistry-query",
+    "url": "https://clawhub.ai/skills/chemistry-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chemistry-query-d2741896bc0a0c02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chemistry agent skill for PubChem API queries (compound info/properties, structures/SMILES/images, synthesis routes/references) + RDKit cheminformatics (SMIL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheminem",
+      "userId": "publishers:cheminem",
+      "displayName": "Cheminem",
+      "image": "https://avatars.githubusercontent.com/u/260304734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 990,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771289926539,
+      "changelog": "chemistry-query v1.0.0\n\n- Initial release of full-stack chemistry toolkit integrating PubChem API queries and RDKit cheminformatics.\n- Supports compound lookup, molecular properties, 2D visualization, retrosynthesis, multi-step synthesis planning, and reaction simulation.\n- Provides structured JSON outputs, PNG/SVG molecule images, and automatic chemical name resolution.\n- Includes 21 named reaction templates and chaining capabilities for seamless chemistry workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3fb98f91be6ca789e4a8c4daa2d7c3aa0dab952e4b42febb2fc641192b85dc93"
+}

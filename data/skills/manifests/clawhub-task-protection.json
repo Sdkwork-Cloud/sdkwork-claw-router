@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23316,
+  "uuid": "skill-clawhub-task-protection",
+  "skillKey": "clawhub-task-protection",
+  "name": "Task Protection",
+  "summary": "Comprehensive task lifecycle management with automatic tracking, failure analysis, and completion feedback. Use when executing recurring system tasks (backup...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_protection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alfredming-2026",
+      "features": [
+        "Comprehensive task lifecycle management with automatic tracking, failure analysis, and completi.",
+        "Use when executing recurring system tasks (backup..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-protection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261600602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-protection",
+      "url": "https://clawhub.ai/skills/task-protection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-protection",
+    "url": "https://clawhub.ai/skills/task-protection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-protection-7be77b66136f6cb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-protection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-protection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6f906f8a153abab8b7e3308a47a10a1a10fd100ee8aa8d05a2bfc5b5587114c",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:01:25.448Z"
+}

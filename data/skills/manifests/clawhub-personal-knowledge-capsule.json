@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48920,
+  "uuid": "skill-clawhub-personal-knowledge-capsule",
+  "skillKey": "clawhub-personal-knowledge-capsule",
+  "name": "Personal Knowledge Capsule",
+  "summary": "Compresses a reading insight into a reusable personal knowledge note with context, links, and retrieval cues.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_knowledge_capsule",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Compresses a reading insight into a reusable personal knowledge note with context, links, and r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-knowledge-capsule@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-knowledge-capsule",
+      "url": "https://clawhub.ai/skills/personal-knowledge-capsule"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-knowledge-capsule",
+    "url": "https://clawhub.ai/skills/personal-knowledge-capsule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-knowledge-capsule-fd70e05cd8f844c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-knowledge-capsule@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-knowledge-capsule-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b502b62c1999ca065273238c2c2c9959f04a9d2686c0801424d6f77a5f819254",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T15:21:34.081Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/worker-safety@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worker_safety",
+  "skill": {
+    "id": 46251,
+    "skillKey": "clawhub-worker-safety",
+    "name": "Worker Safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worker-safety",
+    "url": "https://clawhub.ai/skills/worker-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worker-safety-81d7bdf2c7d21797.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operations Safety Reference - Hard Limits apply unconditionally for OpenClaw agent operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yurken",
+      "userId": "s172arftjsmq2kppdjtz90ffwx85pgew",
+      "displayName": "forest",
+      "image": "https://avatars.githubusercontent.com/u/45279453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777346413591,
+      "changelog": "Version 1.0.0 of worker-safety skill\n\n- Introduces strict Hard Limits to enforce safety for OpenClaw agent operations, covering system integrity, network exposure, external execution, and file access.\n- Implements clear refusal and warning procedures when unsafe or forbidden requests are received, including never providing step-by-step instructions for restricted actions.\n- For group chat scenarios, adds additional rules to protect sensitive files, prevent behavioral overrides, and block exposure of system topology.\n- Offers guidance to always state the risk, present safe alternatives, and notify both users and coordinators when actions are refused.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3f9aeddc5a1f4b506e8ac3e41840e6d729fbfa09ab3fa7e85b43ab0bb0b5774"
+}

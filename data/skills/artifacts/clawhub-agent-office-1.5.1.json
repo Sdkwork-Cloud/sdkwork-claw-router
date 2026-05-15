@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-office@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_office",
+  "skill": {
+    "id": 58279,
+    "skillKey": "clawhub-agent-office",
+    "name": "Agent Office"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-office",
+    "url": "https://clawhub.ai/skills/agent-office",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-office-510d247ee3892af5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Office：创建本地 AI 员工、office worker、AI employee 与 multi-agent office team。每个员工以独立 HTTP Worker 运行，支持 openclaw / hermes / deerflow / cli / external / stub 六种..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jast-hub",
+      "userId": "s17bc7kdmw34mtmt993vk4t29n84rph6",
+      "displayName": "jast-hub",
+      "image": "https://avatars.githubusercontent.com/u/84546813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1776386457273,
+      "changelog": "Fix Codex CLI worker integration: use codex exec, add --skip-git-repo-check, update docs and tests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fe267349a8c2bd1933c6df3fb69a8bacb36c7ce47fe1342b262e2a022639d2f"
+}

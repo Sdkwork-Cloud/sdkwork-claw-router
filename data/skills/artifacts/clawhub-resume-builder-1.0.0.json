@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_builder",
+  "skill": {
+    "id": 9272,
+    "skillKey": "clawhub-resume-builder",
+    "name": "Resume Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-builder",
+    "url": "https://clawhub.ai/skills/resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-builder-0e52b71d7f92bad0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional resumes that conform to the Reactive Resume schema. Use when the user wants to create, build, or generate a resume through conversational AI, or asks about resume structure, sections, or content. This skill guides the."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amruthpillai",
+      "userId": "publishers:amruthpillai",
+      "displayName": "amruthpillai",
+      "image": "https://avatars.githubusercontent.com/u/1134738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3593,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769591441053,
+      "changelog": "Initial release of resume-builder for Reactive Resume.\n\n- Enables guided, conversational creation of resumes conforming to the Reactive Resume schema.\n- Ensures output is valid JSON, ready for import at https://rxresu.me.\n- Guides users with structured question prompts for each resume section (experience, education, skills, etc.).\n- Highlights resume writing best practices and common mistakes to avoid.\n- Supports user preferences for layout, template, and section order.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d5d7718366a87c115ab5d40bc90dcb7f240b32a579cce3a402af080b0dbf239"
+}

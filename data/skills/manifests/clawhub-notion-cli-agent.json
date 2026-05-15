@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10122,
+  "uuid": "skill-clawhub-notion-cli-agent",
+  "skillKey": "clawhub-notion-cli-agent",
+  "name": "Notion CLI – Command Line Interface based access to Notion for your agent",
+  "summary": "Access and manage your Notion workspace via a CLI to search, create, update, and delete pages, databases, blocks, users, and comments with multiple output fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_cli_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FroeMic",
+      "features": [
+        "Access and manage your Notion workspace via a CLI to search, create, update, and delete pages,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-cli-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15179255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-cli-agent",
+      "url": "https://clawhub.ai/skills/notion-cli-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-cli-agent",
+    "url": "https://clawhub.ai/skills/notion-cli-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-cli-agent-c20fadfc5c36b2b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-cli-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-cli-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7396e75a13b88ebd3d992cf0226faa0461fdb9e4ba49e839f24a19acfbf2fac",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T18:02:19.280Z"
+}

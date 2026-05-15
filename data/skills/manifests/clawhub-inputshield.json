@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44406,
+  "uuid": "skill-clawhub-inputshield",
+  "skillKey": "clawhub-inputshield",
+  "name": "inputshield",
+  "summary": "Input validation & sanitization scanner -- catches missing validation, unsafe deserialization, ReDoS, path traversal, command injection, and XSS patterns",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inputshield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Input validation & sanitization scanner -",
+        "catches missing validation, unsafe deserialization, ReDoS, path traversal, command injection, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inputshield@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inputshield",
+      "url": "https://clawhub.ai/skills/inputshield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inputshield",
+    "url": "https://clawhub.ai/skills/inputshield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inputshield-eebfadbb73fa4264.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inputshield@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-inputshield-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e110dbee703e8655394a21aad6bf568a290e274efc2e92996ef7f9baea51b7f",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T18:25:16.721Z"
+}

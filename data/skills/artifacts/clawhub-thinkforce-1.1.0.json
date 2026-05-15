@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thinkforce@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thinkforce",
+  "skill": {
+    "id": 34608,
+    "skillKey": "clawhub-thinkforce",
+    "name": "ThinkForce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thinkforce",
+    "url": "https://clawhub.ai/skills/thinkforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thinkforce-daec1184c52ce377.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dispatch tasks to your ThinkForce AI agents via REST API and poll for results easily without server setup or complex configuration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ade5791",
+      "userId": "s17d5e8tjwrs3g54aka0de7jn984h4qd",
+      "displayName": "ade5791",
+      "image": "https://avatars.githubusercontent.com/u/38266156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774019005908,
+      "changelog": "Add Missions API: create, list, decompose, run subtasks, auto-execute, publish PDF report. All mission routes now require X-TF-API-Key auth.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97b20d31d397a4dbf77d63c0a53babf6e4f1dfcf50f6a8b6163b118c5c4b9a45"
+}

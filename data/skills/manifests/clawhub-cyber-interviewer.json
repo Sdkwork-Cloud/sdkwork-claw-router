@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34730,
+  "uuid": "skill-clawhub-cyber-interviewer",
+  "skillKey": "clawhub-cyber-interviewer",
+  "name": "CyberInterviewer",
+  "summary": "Review a candidate's local PDF resume and GitHub repositories, inspect Python and C++ code paths for strengths and weaknesses, search recent interview experi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_interviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZZIPP",
+      "features": [
+        "Review a candidate's local PDF resume and GitHub repositories, inspect Python and C++ code path."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyber-interviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176109082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyber-interviewer",
+      "url": "https://clawhub.ai/skills/cyber-interviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-interviewer",
+    "url": "https://clawhub.ai/skills/cyber-interviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-interviewer-63dca37a4a4d21e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyber-interviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyber-interviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc3b58c87dfde794469b34a1a2540d7dd73fb4187b2b99f8caf287ef38f30057",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T09:23:38.445Z"
+}

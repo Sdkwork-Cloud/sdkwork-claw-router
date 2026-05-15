@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15069,
+  "uuid": "skill-clawhub-security-operator",
+  "skillKey": "clawhub-security-operator",
+  "name": "Security Operator",
+  "summary": "Runtime security guardrails for OpenClaw agents. Protects against prompt injection, excessive agency, cost runaway, credential leaks, and cascade effects. In...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_operator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Jeppesen @ TheOperatorVault.io",
+      "features": [
+        "Runtime security guardrails for OpenClaw agents",
+        "Protects against prompt injection, excessive agency, cost runaway, credential leaks, and cascad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-operator@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205432013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-operator",
+      "url": "https://clawhub.ai/skills/security-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-operator",
+    "url": "https://clawhub.ai/skills/security-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-operator-321d2dcc127ff1e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-operator@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-operator-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97ae5027b916b96d6cd09edd0b7696b8f3314ef9b671bdb4e6ac14db6d134f5f",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:30:16.466Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57915,
+  "uuid": "skill-clawhub-yandex-archive-scraper",
+  "skillKey": "clawhub-yandex-archive-scraper",
+  "name": "Yandex Archive Scraper",
+  "summary": "Search and extract data from Yandex.Archive (Яндекс.Архив) — metric books, newspapers, directories. Bypasses bot protection via Scrapling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_archive_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flo",
+      "features": [
+        "Search and extract data from Yandex.Archive (Яндекс.Архив) — metric books, newspapers, director.",
+        "Bypasses bot protection via Scrapling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-archive-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268352850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-archive-scraper",
+      "url": "https://clawhub.ai/skills/yandex-archive-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-archive-scraper",
+    "url": "https://clawhub.ai/skills/yandex-archive-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-archive-scraper-1c6f258328d15cc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-archive-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-archive-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d750a1d421fa7213b5b4164d9a842b7a6ff5541b5bed21cad2629275c3cf706",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:38:10.538Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64485,
+  "uuid": "skill-clawhub-fortune-telling-bazi",
+  "skillKey": "clawhub-fortune-telling-bazi",
+  "name": "Fortune Telling Bazi",
+  "summary": "八字算命 skill — 支持多人八字存储+联合分析，首次询问生日，后续对话自动附带八字信息。说\"停止算命\"退出。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_telling_bazi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youhan2021",
+      "features": [
+        "八字算命 skill — 支持多人八字存储+联合分析，首次询问生日，后续对话自动附带八字信息。说\"停止算命\"退出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortune-telling-bazi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134278858?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortune-telling-bazi",
+      "url": "https://clawhub.ai/skills/fortune-telling-bazi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-telling-bazi",
+    "url": "https://clawhub.ai/skills/fortune-telling-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-telling-bazi-e49f577c72eebe88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortune-telling-bazi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortune-telling-bazi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ffb830f5b650997920455990c7c81b9d7b29915611afb164bf587eaca8ce058",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:03:15.580Z"
+}

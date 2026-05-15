@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32641,
+  "uuid": "skill-clawhub-unified-mailbox-ai",
+  "skillKey": "clawhub-unified-mailbox-ai",
+  "name": "Unified Mailbox Ai",
+  "summary": "Unified mailbox AI for both Outlook and Gmail. Checks unread emails, summarizes new mail with AI, detects meeting invitations, checks calendar conflicts on b...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_mailbox_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L1TangDingZhen",
+      "features": [
+        "Unified mailbox AI for both Outlook and Gmail",
+        "Checks unread emails, summarizes new mail with AI, detects meeting invitations, checks calendar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unified-mailbox-ai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126553602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unified-mailbox-ai",
+      "url": "https://clawhub.ai/skills/unified-mailbox-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-mailbox-ai",
+    "url": "https://clawhub.ai/skills/unified-mailbox-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-mailbox-ai-efd9790ce705a442.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unified-mailbox-ai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unified-mailbox-ai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:849b003cd9ca1b6ac3919aed159bbbcb9ea1107b31255b795231cb99e8f20ea8",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:55:03.303Z"
+}

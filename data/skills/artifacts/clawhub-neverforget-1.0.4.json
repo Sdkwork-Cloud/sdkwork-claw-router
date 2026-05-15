@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neverforget@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neverforget",
+  "skill": {
+    "id": 14653,
+    "skillKey": "clawhub-neverforget",
+    "name": "Neverforget"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neverforget",
+    "url": "https://clawhub.ai/skills/neverforget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neverforget-e607025da120e7f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates Sovereign Local Vector Memory and Gemma-300M Embeddings. Manage local vector embeddings, model configuration, and memory health monitoring without..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greatape42069",
+      "userId": "publishers:greatape42069",
+      "displayName": "GreatApe42069",
+      "image": "https://avatars.githubusercontent.com/u/153969184?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 938,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771384068930,
+      "changelog": "- Hardened exclusion rules for memory indexing by skipping secret directories such as .ssh, .aws, and .env\n- Improved compliance with ClawHub security audit requirements\n- Documentation and install script updated to reflect new exclusion logic\n- No changes to functional code; update focused on enhanced security configuration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e48e36742716d5411a09de8b6183602e1fc7b31c0a5bf567bb7981126c473f8"
+}

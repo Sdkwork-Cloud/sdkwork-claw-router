@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60255,
+  "uuid": "skill-clawhub-xwlb",
+  "skillKey": "clawhub-xwlb",
+  "name": "新闻联播",
+  "summary": "用于拉取并展示「新闻联播」热点（接口为 https://hotspot.api4claw.com/hotspots/platform/新闻联播?timestamp=$TIME_STEMP，返回 JSON 数组）。按 source_name 分组展示标题，无 Top Hot。默认会提示用户是否创建定时任务（不自动执...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xwlb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xltang",
+      "features": [
+        "用于拉取并展示「新闻联播」热点（接口为 https://hotspot.api4claw.com/hotspots/platform/新闻联播?timestamp=$TIME_STEMP，返."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xwlb@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1772358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xwlb",
+      "url": "https://clawhub.ai/skills/xwlb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xwlb",
+    "url": "https://clawhub.ai/skills/xwlb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xwlb-2b80675b6ee81efe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xwlb@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xwlb-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0391bb084742cdb21971789e13c6947defa3af8e8bc8af9cfe2e55be4ff0cdc",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:15:18.473Z"
+}

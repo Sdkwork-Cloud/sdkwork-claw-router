@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65722,
+  "uuid": "skill-clawhub-long-running-agent",
+  "skillKey": "clawhub-long-running-agent",
+  "name": "long-running-agent",
+  "summary": "长时间运行智能体编排框架。让AI智能体能够跨会话持续工作并完成复杂任务。 使用场景： - 用户说 \"创建一个新项目\"、\"开始一个项目\"、\"新建任务\"、\"启动项目\" - 用户说 \"继续项目\"、\"继续工作\"、\"接着做\"、\"继续开发\" - 用户说 \"更新进度\"、\"记录进度\"、\"保存进度\" - 用户说 \"项目状态\"、\"查...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_running_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sleepingzzzz",
+      "features": [
+        "长时间运行智能体编排框架。让AI智能体能够跨会话持续工作并完成复杂任务。 使用场景：",
+        "用户说 \"创建一个新项目\"、\"开始一个项目\"、\"新建任务\"、\"启动项目\"",
+        "用户说 \"继续项目\"、\"继续工作\"、\"接着做\"、\"继续开发\"",
+        "用户说 \"更新进度\"、\"记录进度\"、\"保存进度\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-running-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123023842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-running-agent",
+      "url": "https://clawhub.ai/skills/long-running-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-running-agent",
+    "url": "https://clawhub.ai/skills/long-running-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-running-agent-a7d1175b7499f284.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-running-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-running-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31a782d2d0a6c9baefda6ab8388a3ae3f081701af909cdb193131d1beaa77d06",
+      "artifactSizeBytes": 2743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:58:17.553Z"
+}

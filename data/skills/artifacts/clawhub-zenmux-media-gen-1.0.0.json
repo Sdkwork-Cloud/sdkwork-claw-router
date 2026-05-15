@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zenmux-media-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenmux_media_gen",
+  "skill": {
+    "id": 34444,
+    "skillKey": "clawhub-zenmux-media-gen",
+    "name": "ZenMux Media Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenmux-media-gen",
+    "url": "https://clawhub.ai/skills/zenmux-media-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenmux-media-gen-73d25a3cfb34341a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images & videos with ZenMux. Support multiple image models (Gemini, Qwen, Hunyuan, etc.) and video models (Veo, Seedance) via one API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theopenbase",
+      "userId": "publishers:theopenbase",
+      "displayName": "theopenbase",
+      "image": "https://avatars.githubusercontent.com/u/215621800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773762059308,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b171732d8eb500d3bbd36784132732e4c1dfb4f890b53942ac2dfc6f85ff8546"
+}

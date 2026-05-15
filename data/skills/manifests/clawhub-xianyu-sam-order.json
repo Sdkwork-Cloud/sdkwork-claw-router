@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60610,
+  "uuid": "skill-clawhub-xianyu-sam-order",
+  "skillKey": "clawhub-xianyu-sam-order",
+  "name": "Xianyu Sam Order",
+  "summary": "闲鱼山姆代下单 - 配置你自己的账号",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_sam_order",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SxLiuYu",
+      "features": [
+        "配置你自己的账号"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xianyu-sam-order@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95198625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xianyu-sam-order",
+      "url": "https://clawhub.ai/skills/xianyu-sam-order"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-sam-order",
+    "url": "https://clawhub.ai/skills/xianyu-sam-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-sam-order-e0a2e8d608adf277.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xianyu-sam-order@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xianyu-sam-order-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a14d14b6f7ef668bae0b54949e8c9db3928215ddbfd9fe2679f28e7d99b359cb",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:26:56.524Z"
+}

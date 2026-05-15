@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9413,
+  "uuid": "skill-clawhub-usdc-hackathon",
+  "skillKey": "clawhub-usdc-hackathon",
+  "name": "Usdc Hackathon",
+  "summary": "Use when participating in the USDC Hackathon, submitting projects, or voting. 3 tracks: SmartContract, Skill, AgenticCommerce. Submit to m/usdc on Moltbook.",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usdc_hackathon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "swairshah",
+      "features": [
+        "Use when participating in the USDC Hackathon, submitting projects, or voting",
+        "3 tracks: SmartContract, Skill, AgenticCommerce",
+        "Submit to m/usdc on Moltbook."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usdc-hackathon@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/776578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usdc-hackathon",
+      "url": "https://clawhub.ai/skills/usdc-hackathon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usdc-hackathon",
+    "url": "https://clawhub.ai/skills/usdc-hackathon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usdc-hackathon-82e661bcfc5d1b8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usdc-hackathon@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-usdc-hackathon-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed1c2bca0b9005a887ad0e5f75f9ed7a49d88cb0ee1569cfecedec1ee85f5be9",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:56:52.477Z"
+}

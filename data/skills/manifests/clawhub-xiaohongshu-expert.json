@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73415,
+  "uuid": "skill-clawhub-xiaohongshu-expert",
+  "skillKey": "clawhub-xiaohongshu-expert",
+  "name": "小红书全栈采集专家",
+  "summary": "专业采集小红书关键词及博主数据，分析爆款笔记和粉丝活跃度，支持定时跟踪及飞书多维表格输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Suzanneyp",
+      "features": [
+        "专业采集小红书关键词及博主数据，分析爆款笔记和粉丝活跃度，支持定时跟踪及飞书多维表格输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-expert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141326572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-expert",
+      "url": "https://clawhub.ai/skills/xiaohongshu-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-expert",
+    "url": "https://clawhub.ai/skills/xiaohongshu-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-expert-753a8b26b8a02968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-expert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-expert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b1a81e0d6bad3e2f1fb66f2bac18d8cb14bb75d0251b879794f7b0123fd6196",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:45:32.979Z"
+}

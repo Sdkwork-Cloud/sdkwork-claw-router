@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-native-dialog@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_native_dialog",
+  "skill": {
+    "id": 33264,
+    "skillKey": "clawhub-windows-native-dialog",
+    "name": "Windows Native Dialog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-native-dialog",
+    "url": "https://clawhub.ai/skills/windows-native-dialog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-native-dialog-a3bf2feb8a6a3dfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles native Windows file picker dialogs from WSL2 using exec and PowerShell"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "owlock",
+      "userId": "publishers:owlock",
+      "displayName": "Owlock",
+      "image": "https://avatars.githubusercontent.com/u/135854806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774225805502,
+      "changelog": "Added skills comparison table for Windows desktop automation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60e3283b722164e9ff655fa2cb18830a2d3b42ac08252dcbb6d246810c034456"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor",
+  "skill": {
+    "id": 67243,
+    "skillKey": "clawhub-competitor",
+    "name": "Competitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor",
+    "url": "https://clawhub.ai/skills/competitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-c378ee41c2783d08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供竞品分析的可落地指南与SOP。在开展竞品分析相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774231611274,
+      "changelog": "Initial release with structured SOPs and templates for competitor analysis.\n\n- Provides a clear, actionable guide and SOP for competitor analysis.\n- Defines steps from goal setting and resource allocation to pilot testing and optimization.\n- Includes standardized metrics and reporting cadence.\n- Addresses local regulatory compliance and data privacy.\n- Supplies reusable templates, scripts, checklists, and meeting note formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd6f85aceb7a6ae522aeeaf6984fdea70eb45991de062a544b08d3cbcc84702c"
+}

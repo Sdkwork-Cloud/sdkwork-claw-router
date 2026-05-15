@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-web-fetcher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_web_fetcher",
+  "skill": {
+    "id": 32251,
+    "skillKey": "clawhub-nansen-web-fetcher",
+    "name": "Nansen Web Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-web-fetcher",
+    "url": "https://clawhub.ai/skills/nansen-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-web-fetcher-578c40a6f272d465.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and analyze content from one or more URLs using AI (Gemini 2.5 Flash). Use when you have specific URLs and need to extract or summarize their content...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773937039950,
+      "changelog": "Initial release of nansen-web-fetcher.\n\n- Fetches and analyzes content from one or more URLs using Gemini 2.5 Flash.\n- Supports both positional URL arguments and `--url` flags (up to 20 URLs).\n- Requires a `--question` prompt about the content to generate an AI-powered answer.\n- Outputs include `analysis`, `retrieved_urls`, and `failed_urls`.\n- Integrates well with results from `nansen web search`.\n- Added human-readable JSON output with `--pretty` flag.\n- Includes usage guidance and notes in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61ddc2290960fc6ba6f7c6e9dd4c500dcfe2d88c00508d19751459e4733d905d"
+}

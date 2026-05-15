@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forecast-simulation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecast_simulation",
+  "skill": {
+    "id": 64874,
+    "skillKey": "clawhub-forecast-simulation",
+    "name": "Aloudata CAN SKILLS - forecast-simulation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecast-simulation",
+    "url": "https://clawhub.ai/skills/forecast-simulation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecast-simulation-432eff221c81be57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于已有数据进行趋势预测、目标缺口分析、What-if 模拟和耗尽/饱和预测。当用户希望了解指标的未来走势、评估目标是否可达、模拟假设场景的影响时，必须使用此 Skill。 触发场景包括但不限于：用户提到\"预测\"\"预估\"\"月底能到多少\"\"能不能完成目标\"\"还差多少\"\"如果XX会怎样\"\"提升10%会怎样\"\"库存还能..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyujun",
+      "userId": "s172qm3yezbbjev7q8rsxxbd1s83he2f",
+      "displayName": "jackyujun",
+      "image": "https://avatars.githubusercontent.com/u/4506268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774966710893,
+      "changelog": "Initial release — introduces skill for simple, math-based forecasting, gap analysis, what-if simulation, and depletion/saturation prediction based on existing data.\n\n- Supports four scenarios: trend extrapolation, target gap analysis, what-if simulation, and depletion/saturation prediction.\n- Automatically triggers when user intentions relate to \"future\" or \"what-if,\" even if not explicitly stated.\n- Delegates all data queries to the metric-query skill; this skill only handles forecasting logic on returned data.\n- Includes standard Python code for local linear regression, moving average, and related calculations.\n- Emphasizes necessary caveats: all forecasts depend on recent trends and are not machine learning predictions. Results include uncertainty and assumption notes.\n- Provides clear guidelines distinguishing from metric-query, anomaly-detection, and metric-attribution skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6b56d2219bcf01d3c1e9b1c5ece9534e4875f91ad9e43076fd3e2f10fcf1731"
+}

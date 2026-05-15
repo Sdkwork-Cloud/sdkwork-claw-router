@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-of-the-day@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_of_the_day",
+  "skill": {
+    "id": 57539,
+    "skillKey": "clawhub-book-of-the-day",
+    "name": "Book Of The Day"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-of-the-day",
+    "url": "https://clawhub.ai/skills/book-of-the-day",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-of-the-day-87f178f06ba108d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book of the Day — a daily book oracle. One uplifting book, one light poetic reading. Trigger: \"book of the day\", \"today's book\", \"今日之书\", \"书签运势\". Each invocat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romanluoman00007",
+      "userId": "s171sme55sbq6y1rta5smhp1dn844vca",
+      "displayName": "Romanluoman00007",
+      "image": "https://avatars.githubusercontent.com/u/205717325?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772769775315,
+      "changelog": "- Added new metadata file: _meta.json.\n- No changes to user-facing features or skill behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a37d3c90e32588e396a586fdceb98b4217a85e7b741ed0bd313161549dfc243"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecom-daily-report@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecom_daily_report",
+  "skill": {
+    "id": 73618,
+    "skillKey": "clawhub-ecom-daily-report",
+    "name": "直播电商日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecom-daily-report",
+    "url": "https://clawhub.ai/skills/ecom-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecom-daily-report-5f9b7c90656bc757.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日整合直播电商行业最新资讯，覆盖千川政策、平台动态、爆款素材、竞品动向和行业大盘，支持品类定制与日报保存。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madagen365-beep",
+      "userId": "s1750y85r10gn25s06hrg1pbtx83x4g0",
+      "displayName": "madagen365-beep",
+      "image": "https://avatars.githubusercontent.com/u/251724676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1775265680126,
+      "changelog": "ecom-daily-report v1.2.2\n\nv1.2.2（2026-04-01，长图自动化）\n自动化任务上线：\n\n✅ 创建自动化任务 ecom-daily-three-images\n✅ 定时：每天 9:30 执行\n✅ 流程：生成日报 HTML + 自动截长图\n✅ 单图策略（2026-04-01 确认）：只生成一张完整长图，不拆分",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58b975a17cc5c3dc1067970d4829cffe574a3f58563e609be53b47c61e4bab91"
+}

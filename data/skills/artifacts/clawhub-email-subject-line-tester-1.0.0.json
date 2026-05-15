@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-subject-line-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_subject_line_tester",
+  "skill": {
+    "id": 30029,
+    "skillKey": "clawhub-email-subject-line-tester",
+    "name": "Email Subject Line Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-subject-line-tester",
+    "url": "https://clawhub.ai/skills/email-subject-line-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-subject-line-tester-6bbe875c28325913.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email subject line optimization agent. Generates 10 subject line variants for any email, scores each by open rate predictors (urgency, personalization, curio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774042974470,
+      "changelog": "- Initial release of the skill.\n- Generates and scores 10 email subject line variants using 7 open-rate predictor signals.\n- Recommends the top 3 subject lines for A/B testing, with rationale and full A/B test setup guidance.\n- Analyzes for spam triggers, character count, and mobile truncation for each variant.\n- Provides industry benchmark data and preheader suggestions for optimal email performance.\n- Includes commands for variant generation, scoring, competitor analysis, and session history management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc0c173a32c22736fa5aa640869cb0ff72167a37f4b460d57c41e36f4b05876d"
+}

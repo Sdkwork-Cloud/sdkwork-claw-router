@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-watermark-remover-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_watermark_remover_openapi_skill",
+  "skill": {
+    "id": 56490,
+    "skillKey": "clawhub-gemini-watermark-remover-openapi-skill",
+    "name": "Gemini Watermark Remover – Remove Video Watermarks Online Free – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-watermark-remover-openapi-skill",
+    "url": "https://clawhub.ai/skills/gemini-watermark-remover-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-watermark-remover-openapi-skill-206ac45c2c41be35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gemini watermark remover — remove watermarks, logos, or text from a video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776426966267,
+      "changelog": "- Initial release of gemini-watermark-remover for WeShop OpenAPI.\n- Remove watermarks, logos, or text from videos via HTTPS requests to openapi.weshop.ai.\n- Requires a WESHOP_API_KEY environment variable for authentication.\n- Provides API endpoints for starting runs, polling status, and uploading images.\n- Supports automatic watermark detection mode by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:377fbc14c5f9c06a1a61b51d211acd5214a99eb03da38727c0ddc15a754cdf31"
+}

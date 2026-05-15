@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68483,
+  "uuid": "skill-clawhub-weibo-hot-daily",
+  "skillKey": "clawhub-weibo-hot-daily",
+  "name": "Weibo Hot Daily",
+  "summary": "🔥 每日自动抓取微博热搜榜，支持AI摘要和多渠道推送。自媒体运营必备！免费使用，定制开发请联系作者。",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_hot_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "蓝天",
+      "features": [
+        "🔥 每日自动抓取微博热搜榜，支持AI摘要和多渠道推送。自媒体运营必备！免费使用，定制开发请联系作者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-hot-daily@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49087597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-hot-daily",
+      "url": "https://clawhub.ai/skills/weibo-hot-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-hot-daily",
+    "url": "https://clawhub.ai/skills/weibo-hot-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-hot-daily-7eff315fbd26fe42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-hot-daily@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-hot-daily-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7654a268c9cef18503663d3c7bfa5d5fce0373d5ccbdac930438f307732b7c41",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:48:56.508Z"
+}

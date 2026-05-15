@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aleph-cloud-self-deployment@1.0.2004",
+  "version": "1.0.2004",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aleph_cloud_self_deployment",
+  "skill": {
+    "id": 23283,
+    "skillKey": "clawhub-aleph-cloud-self-deployment",
+    "name": "aleph-cloud-self-deployment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aleph-cloud-self-deployment",
+    "url": "https://clawhub.ai/skills/aleph-cloud-self-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aleph-cloud-self-deployment-c5c864b8d0164cf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously provision and configure a VM on Aleph Cloud, install OpenClaw agent framework, and deploy AI agent without human intervention."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "san-npm",
+      "userId": "s175kbdsmv0pprwq28drz7prq983g5bj",
+      "displayName": "San Clemente",
+      "image": "https://avatars.githubusercontent.com/u/40546417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2004",
+      "createdAt": 1773067790723,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf8d145c8c80a99e29ac941d2e34b959892de311ca4eb0f6d3322a96e5ef7ffd"
+}

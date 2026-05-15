@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65658,
+  "uuid": "skill-clawhub-linkfox-amazon-product-detail",
+  "skillKey": "clawhub-linkfox-amazon-product-detail",
+  "name": "Amazon Product Detail",
+  "summary": "通过ASIN获取亚马逊商品详细信息，包括标题、图片、五点描述、规格参数、A+页面、价格、评分评论、变体等。当用户提到亚马逊商品详情、ASIN查询、商品页面数据、Listing分析、五点描述提取、商品图片获取、变体查看、竞品Listing研究、价格查询、评论拆解、商品规格查询、Amazon product deta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_amazon_product_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "通过ASIN获取亚马逊商品详细信息，包括标题、图片、五点描述、规格参数、A+页面、价格、评分评论、变体等。当用户提到亚马逊商品详情、ASIN查询、商品页面数据、Listing分析、五点描述提."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-amazon-product-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-amazon-product-detail",
+      "url": "https://clawhub.ai/skills/linkfox-amazon-product-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-amazon-product-detail",
+    "url": "https://clawhub.ai/skills/linkfox-amazon-product-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-amazon-product-detail-44d551622791c3d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-amazon-product-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-amazon-product-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e78fed21e2ec79b83e1a1e78ff97d00e17ebe9b7ec15b27dcf3ffae783f587",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:35:44.541Z"
+}

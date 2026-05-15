@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42052,
+  "uuid": "skill-clawhub-anxiety-emergency",
+  "skillKey": "clawhub-anxiety-emergency",
+  "name": "Anxiety Emergency",
+  "summary": "Immediate anxiety management techniques and crisis resources. Use when someone is having a panic attack, severe anxiety, can't calm down, feels overwhelmed,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anxiety_emergency",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Immediate anxiety management techniques and crisis resources",
+        "Use when someone is having a panic attack, severe anxiety, can't calm down, feels overwhelmed,.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anxiety-emergency@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anxiety-emergency",
+      "url": "https://clawhub.ai/skills/anxiety-emergency"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anxiety-emergency",
+    "url": "https://clawhub.ai/skills/anxiety-emergency",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anxiety-emergency-0b7329c97702911a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anxiety-emergency@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anxiety-emergency-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a152b835db3d0d14f5173d0d4719014a7234f2727bebf3c9ed4c47e912964e19",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:52:03.545Z"
+}

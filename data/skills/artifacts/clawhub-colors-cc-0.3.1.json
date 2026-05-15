@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/colors-cc@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colors_cc",
+  "skill": {
+    "id": 28924,
+    "skillKey": "clawhub-colors-cc",
+    "name": "Colors CC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colors-cc",
+    "url": "https://clawhub.ai/skills/colors-cc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colors-cc-b73531d9d5adace7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A native UI asset and color toolset for OpenClaw and other AI Agents. Generate SVG placeholders, animated gradients, theme-based palettes, and perform color..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "douxc",
+      "userId": "s177p5qamkmbb2p0n552w5cqys842w0d",
+      "displayName": "douxc",
+      "image": "https://avatars.githubusercontent.com/u/7553076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1773627002592,
+      "changelog": "colors-cc v0.3.1\n\n- Added detailed SKILL.md with usage rules and clear API capability breakdown.\n- Improved SVG placeholder support: advanced effects, animation, and watermark attribution toggle.\n- Expanded API endpoints: random colors, theme palettes, fluid placeholders, color conversion, and named CSS color lookup.\n- Clarified URL encoding, dimension limits, palette constraints, and direct image embedding best practices.\n- Added common use cases, error handling tips, and links to relevant web tools.\n- Enhanced documentation for agents, with anti-hallucination guidelines and common pitfalls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d63599ffac8fcaa37e542fcdd1db5e6b42b9ed0924ac89c243673cb507a87cdc"
+}

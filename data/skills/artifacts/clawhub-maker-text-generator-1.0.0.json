@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-text-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_text_generator",
+  "skill": {
+    "id": 55306,
+    "skillKey": "clawhub-maker-text-generator",
+    "name": "Maker Text Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-text-generator",
+    "url": "https://clawhub.ai/skills/maker-text-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-text-generator-df0960628649d139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate on-screen text labels and title cards for my video — and get text..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776744018072,
+      "changelog": "Maker Text Generator — Initial Release\n\n- Quickly generate text overlays and title cards for uploaded video clips—no manual editing needed.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB; typically delivers results in 20–40 seconds.\n- Automatic session and credit management (including free anon starter tokens) so you can start editing instantly.\n- Clear status indicators and user-friendly feedback throughout upload, generation, and export steps.\n- Simple commands for video export, credits check, timeline state, and batch workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cdc9c5c1c481afb6964459ea44afb0d9db38e373994d2fbc48839e2a83efda6"
+}

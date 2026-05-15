@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19883,
+  "uuid": "skill-clawhub-openclaw-code-search",
+  "skillKey": "clawhub-openclaw-code-search",
+  "name": "OpenClaw Code Search",
+  "summary": "Provides fast, read-only codebase search and exploration using grep for content, glob for filenames, and tree for directory structure with filtering and limits.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_code_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yanxingang",
+      "features": [
+        "Provides fast, read-only codebase search and exploration using grep for content, glob for filen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-code-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17355243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-code-search",
+      "url": "https://clawhub.ai/skills/openclaw-code-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-code-search",
+    "url": "https://clawhub.ai/skills/openclaw-code-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-code-search-7230a7ca2d1da8fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-code-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-code-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:468943692c8a3d4615f33c364867a8b8bf0f266b9ea95c737cf10353c4524baf",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:21:50.332Z"
+}

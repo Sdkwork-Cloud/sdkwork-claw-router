@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnsa@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnsa",
+  "skill": {
+    "id": 57697,
+    "skillKey": "clawhub-cnsa",
+    "name": "cnsa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnsa",
+    "url": "https://clawhub.ai/skills/cnsa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnsa-7a15cc5300d05cca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for CNSA 中国国家航天局. Get mission info, latest reports, member states, and organizational resources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775286288789,
+      "changelog": "Initial release of CNSA information assistant.\n\n- Provides mission overview, latest reports, news, and organizational structure for CNSA (中国国家航天局).\n- Supports queries about CNSA’s activities, leadership, member information, and resources.\n- Retrieves data from official CNSA resources and news sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a2e5a9bc4d155d88a5037dae2df0d56a593a7d0736251b185302242191901c8"
+}

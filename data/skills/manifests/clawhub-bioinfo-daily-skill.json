@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67052,
+  "uuid": "skill-clawhub-bioinfo-daily-skill",
+  "skillKey": "clawhub-bioinfo-daily-skill",
+  "name": "Bioinfo Daily",
+  "summary": "每日生物信息学与肿瘤学研究进展日报生成器。使用 PubMed API 自动搜索前一天的 CNS 及 Nature Index 期刊文献，筛选生物信息学、肿瘤免疫、单细胞测序、空间转录组等领域的高影响力研究，生成包含中文亮点介绍的日报。使用场景：(1) 设置定时任务每天自动获取研究进展并发送到飞书 (2) 手动查询...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bioinfo_daily_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShixiangWang",
+      "features": [
+        "每日生物信息学与肿瘤学研究进展日报生成器。使用 PubMed API 自动搜索前一天的 CNS 及 Nature Index 期刊文献，筛选生物信息学、肿瘤免疫、单细胞测序、空间转录组等领域."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bioinfo-daily-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25057508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bioinfo-daily-skill",
+      "url": "https://clawhub.ai/skills/bioinfo-daily-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bioinfo-daily-skill",
+    "url": "https://clawhub.ai/skills/bioinfo-daily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bioinfo-daily-skill-3eeadbc85ef72cbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bioinfo-daily-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bioinfo-daily-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18850e0a75cb4512a282e1ffd70b5cd38ecdc17df862507f8697b4c2e5820bce",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T05:24:09.172Z"
+}

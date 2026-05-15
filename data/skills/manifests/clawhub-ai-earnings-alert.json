@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67322,
+  "uuid": "skill-clawhub-ai-earnings-alert",
+  "skillKey": "clawhub-ai-earnings-alert",
+  "name": "Earnings Tracker",
+  "summary": "追踪科技/AI公司财报，自动获取财报日历、预警提醒、生成摘要报告。使用场景：(1) 用户想了解某公司财报时间 (2) 用户需要财报摘要分析 (3) 用户想追踪多家公司的财报动态",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_earnings_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Newaiguy",
+      "features": [
+        "追踪科技/AI公司财报，自动获取财报日历、预警提醒、生成摘要报告。使用场景：(1) 用户想了解某公司财报时间 (2) 用户需要财报摘要分析 (3) 用户想追踪多家公司的财报动态"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-earnings-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97015274?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-earnings-alert",
+      "url": "https://clawhub.ai/skills/ai-earnings-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-earnings-alert",
+    "url": "https://clawhub.ai/skills/ai-earnings-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-earnings-alert-485638ce140ecac1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-earnings-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-earnings-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7725a4afc98ef4e2fd2fa56d8d4f08f8b575fcdbb2d9049a1feb2b5987d8d926",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:31:05.875Z"
+}

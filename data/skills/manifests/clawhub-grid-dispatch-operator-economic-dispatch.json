@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38780,
+  "uuid": "skill-clawhub-grid-dispatch-operator-economic-dispatch",
+  "skillKey": "clawhub-grid-dispatch-operator-economic-dispatch",
+  "name": "economic-dispatch",
+  "summary": "Generator economic dispatch and cost optimization for power systems. Use when minimizing generation costs, computing optimal generator setpoints, calculating...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grid_dispatch_operator_economic_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Generator economic dispatch and cost optimization for power systems",
+        "Use when minimizing generation costs, computing optimal generator setpoints, calculating..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grid-dispatch-operator-economic-dispatch@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grid-dispatch-operator-economic-dispatch",
+      "url": "https://clawhub.ai/skills/grid-dispatch-operator-economic-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grid-dispatch-operator-economic-dispatch",
+    "url": "https://clawhub.ai/skills/grid-dispatch-operator-economic-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grid-dispatch-operator-economic-dispatch-030ca2a06dbdd559.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grid-dispatch-operator-economic-dispatch@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grid-dispatch-operator-economic-dispatch-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:706ad1864f33b6b38fc61cd5587a50e820907dc7de4b6b8645f11f58c361ea56",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:26:59.196Z"
+}

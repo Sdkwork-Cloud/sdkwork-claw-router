@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9013,
+  "uuid": "skill-clawhub-clawdbot-security-suite",
+  "skillKey": "clawhub-clawdbot-security-suite",
+  "name": "Clawdbot Security Suite",
+  "summary": "Advanced security validation for Clawdbot - pattern detection, command sanitization, and threat monitoring",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_security_suite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gtrusler",
+      "features": [
+        "Advanced security validation for Clawdbot",
+        "pattern detection, command sanitization, and threat monitoring"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-security-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63480023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-security-suite",
+      "url": "https://clawhub.ai/skills/clawdbot-security-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-security-suite",
+    "url": "https://clawhub.ai/skills/clawdbot-security-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-security-suite-0d75bba396e01ace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-security-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-security-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f46a10d145d2399d2b3dc8abfea3d52b7cef876b9761f73c16b5c6863526f60",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T23:48:56.469Z"
+}

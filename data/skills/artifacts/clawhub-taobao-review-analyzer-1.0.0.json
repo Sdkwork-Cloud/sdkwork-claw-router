@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-review-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_review_analyzer",
+  "skill": {
+    "id": 66518,
+    "skillKey": "clawhub-taobao-review-analyzer",
+    "name": "Taobao Review Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-review-analyzer",
+    "url": "https://clawhub.ai/skills/taobao-review-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-review-analyzer-677edda4e82436ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "淘宝/天猫商品评价分析，提取用户真实反馈，发现质量问题和卖点。适合电商卖家、选品分析、市场调研。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "275254cl-hash",
+      "userId": "s17bgvrh57w97t0z4ajg11mdrx83gcqc",
+      "displayName": "275254cl-hash",
+      "image": "https://avatars.githubusercontent.com/u/246240596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1044,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774410691252,
+      "changelog": "Initial release of taobao-review-analyzer skill.\n\n- Analyze Taobao/Tmall product reviews to extract authentic user feedback.\n- Identify quality issues and product highlights for e-commerce sellers and market research.\n- Features include review sentiment analysis, keyword extraction, problem detection, and competitive comparison.\n- Supports free and paid usage tiers with extended features for subscribers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5c9eea0a8e6a875b640896a1e5493a2fb4d3979cacbcfe57ba30606baaab873"
+}

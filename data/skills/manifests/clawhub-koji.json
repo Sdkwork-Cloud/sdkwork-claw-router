@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35924,
+  "uuid": "skill-clawhub-koji",
+  "skillKey": "clawhub-koji",
+  "name": "Koji",
+  "summary": "Manage Koji build system tasks, packages, tags, repos, users, SRPM/RPMs with full API support for build and task operations.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.koji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "Manage Koji build system tasks, packages, tags, repos, users, SRPM/RPMs with full API support f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/koji@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "koji",
+      "url": "https://clawhub.ai/skills/koji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "koji",
+    "url": "https://clawhub.ai/skills/koji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/koji-323a4206f8d711e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/koji@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-koji-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5acb2248a6044e03ab7b198103f46fdb4587034292b56e57d9cc960fab6be2ff",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:12:24.309Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37295,
+  "uuid": "skill-clawhub-cmus",
+  "skillKey": "clawhub-cmus",
+  "name": "cmus Music Player",
+  "summary": "AI skill to launch cmus in a Xubuntu terminal and enforce playback rules (single track vs shuffle folder). Robust against high latency and headless daemon en...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nhathuynguyen19",
+      "features": [
+        "AI skill to launch cmus in a Xubuntu terminal and enforce playback rules (single track vs shuff.",
+        "Robust against high latency and headless daemon en..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124348443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmus",
+      "url": "https://clawhub.ai/skills/cmus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmus",
+    "url": "https://clawhub.ai/skills/cmus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmus-1377a06a1042e82c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64fc4436671fcb408599bdf1aa30ac4ced13a4f03e1486ed1ff63df2d0be471e",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:09:46.696Z"
+}

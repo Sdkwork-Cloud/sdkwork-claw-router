@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36582,
+  "uuid": "skill-clawhub-jobgpt",
+  "skillKey": "clawhub-jobgpt",
+  "name": "JobGPT",
+  "summary": "Job search automation, auto apply, resume generation, application tracking, salary intelligence, and recruiter outreach using the JobGPT MCP server. Use this...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobgpt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captainjackrana",
+      "features": [
+        "Job search automation, auto apply, resume generation, application tracking, salary intelligence.",
+        "Use this..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobgpt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5394402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobgpt",
+      "url": "https://clawhub.ai/skills/jobgpt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobgpt",
+    "url": "https://clawhub.ai/skills/jobgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobgpt-f06335799051ada1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobgpt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobgpt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f46b8566b396facdc36f3e84b1691dce99330fcea91c4d328d613f292242079e",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:03:01.250Z"
+}

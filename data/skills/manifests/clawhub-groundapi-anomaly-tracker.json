@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55073,
+  "uuid": "skill-clawhub-groundapi-anomaly-tracker",
+  "skillKey": "clawhub-groundapi-anomaly-tracker",
+  "name": "Groundapi Anomaly Tracker",
+  "summary": "Track A-share market anomalies — limit-up streaks, unusual volume, large capital flows — and drill into individual stocks for detailed analysis. Powered by G...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_anomaly_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qingkongzhiqian",
+      "features": [
+        "Track A-share market anomalies — limit-up streaks, unusual volume, large capital flows — and dr.",
+        "Powered by G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groundapi-anomaly-tracker@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45964299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groundapi-anomaly-tracker",
+      "url": "https://clawhub.ai/skills/groundapi-anomaly-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-anomaly-tracker",
+    "url": "https://clawhub.ai/skills/groundapi-anomaly-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-anomaly-tracker-c59e658d46094ad8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groundapi-anomaly-tracker@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groundapi-anomaly-tracker-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39ca17b3c2b285f96301461fcbc6405c6946bee4703677ba4506e34971695dc2",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:14:11.169Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/squad-control@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.squad_control",
+  "skill": {
+    "id": 55670,
+    "skillKey": "clawhub-squad-control",
+    "name": "Squad Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "squad-control",
+    "url": "https://clawhub.ai/skills/squad-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/squad-control-8c1ff8da56877694.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate with Squad Control kanban for AI agent task orchestration. ⚠️ Security note: This skill handles GitHub tokens and API keys by design — it clones pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wgan",
+      "userId": "publishers:wgan",
+      "displayName": "Wilson Gan",
+      "image": "https://avatars.githubusercontent.com/u/5180798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 716,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773635430943,
+      "changelog": "Add agentState continuity, blocked-task dedup, incremental thread fetch rules; new reference files: advanced-flows, api-reference, workspace-config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00150a1ec1d57b811e463ee6aadab0be9866a6a87954c70073d67ef7e0d79c3f"
+}

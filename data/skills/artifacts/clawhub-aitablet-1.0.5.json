@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aitablet@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aitablet",
+  "skill": {
+    "id": 66339,
+    "skillKey": "clawhub-aitablet",
+    "name": "aispeech_ainote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aitablet",
+    "url": "https://clawhub.ai/skills/aitablet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aitablet-8e40a6ab14210728.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI办公本 Skill：用于在 OpenClaw 中访问 思必驰AI办公本的会议（笔记、记录）、待办、标签与知识库检索能力。 当用户表达以下意图时优先使用本技能： - 查笔记/看笔记详情/查会议/找记录 - 查待办/新建待办/更新待办/删除待办 - 同步标签/查标签 - 搜索知识库（笔记、待办）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fairylong",
+      "userId": "s17fvcax8kbxb0jaaqtze4fhsn83gxax",
+      "displayName": "FairyLong",
+      "image": "https://avatars.githubusercontent.com/u/29269337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 700,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776306784019,
+      "changelog": "- 配置说明文件夹由 ~/.openclaw/openclaw.json 改为 ~/.aispeech/aitablet.json，环境变量结构也同步调整。\n- 新增说明：Skill 运行时需要将配置中的环境变量读取到当前环境，仅使用已有授权调用业务接口。\n- 其余接口、参数、错误处理及功能无变化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a1aede3139928eabf8ffa86b9948305c99b521fe6c8dab88250dc9dff57f12d"
+}

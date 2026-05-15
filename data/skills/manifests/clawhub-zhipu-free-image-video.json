@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73431,
+  "uuid": "skill-clawhub-zhipu-free-image-video",
+  "skillKey": "clawhub-zhipu-free-image-video",
+  "name": "智谱免费图片与视频生成",
+  "summary": "智谱免费图片与视频生成技能。适用于用户想用智谱生成图片、批量出图、生成短视频、查询视频任务结果、等待视频完成，或优先使用免费/低成本模型快速产出创意内容时。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhipu_free_image_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "156554395@qq.com",
+      "features": [
+        "智谱免费图片与视频生成技能。适用于用户想用智谱生成图片、批量出图、生成短视频、查询视频任务结果、等待视频完成，或优先使用免费/低成本模型快速产出创意内容时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhipu-free-image-video@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4717447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhipu-free-image-video",
+      "url": "https://clawhub.ai/skills/zhipu-free-image-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhipu-free-image-video",
+    "url": "https://clawhub.ai/skills/zhipu-free-image-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhipu-free-image-video-54eaf4870c45c96c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhipu-free-image-video@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhipu-free-image-video-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:135be738b970a50ec3ba9b856a3386ffc48b8268d0fe564635dea6be9cc6a714",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:19:34.919Z"
+}

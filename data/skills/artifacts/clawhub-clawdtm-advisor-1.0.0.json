@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdtm-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdtm_advisor",
+  "skill": {
+    "id": 17337,
+    "skillKey": "clawhub-clawdtm-advisor",
+    "name": "Clawdtm Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdtm-advisor",
+    "url": "https://clawhub.ai/skills/clawdtm-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdtm-advisor-668665074135ed0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, evaluate security, and install OpenClaw skills. Helps your human find the right skills safely."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmythril",
+      "userId": "publishers:0xmythril",
+      "displayName": "0xmythril",
+      "image": "https://avatars.githubusercontent.com/u/9655885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 759,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771178816914,
+      "changelog": "- Initial release of clawdtm-advisor 1.0.0  \n- Search for OpenClaw skills by keyword, category, or other filters with safety-focused defaults\n- View security scores, risk levels, and community ratings for each skill\n- Install skills with automated security checks and clear risk policies\n- Supports safe/unsafe skill filtering, detailed security flag explanations, and explicit install overrides\n- No authentication required; all API endpoints are public",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:badfae03aaf2c81c797b68308e83d95300d01c5bd07d2b1400461ba4790ec870"
+}

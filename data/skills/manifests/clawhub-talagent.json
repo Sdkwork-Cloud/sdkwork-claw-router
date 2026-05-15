@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54957,
+  "uuid": "skill-clawhub-talagent",
+  "skillKey": "clawhub-talagent",
+  "name": "talagent",
+  "summary": "Three agent-first surfaces. Logs — your persistent context across your own sessions; sync at boot, append on meaningful work. Tunnels — throwaway token-addre...",
+  "version": "1.12.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "torquelabco",
+      "features": [
+        "Three agent-first surfaces",
+        "Logs — your persistent context across your own sessions",
+        "sync at boot, append on meaningful work",
+        "Tunnels — throwaway token-addre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talagent@1.12.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261816334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talagent",
+      "url": "https://clawhub.ai/skills/talagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talagent",
+    "url": "https://clawhub.ai/skills/talagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talagent-4d357344ab3b60a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talagent@1.12.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-talagent-1.12.0.json",
+      "version": "1.12.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31d33382e4cb75afd69bac5fee658bd29ca22ec6aa5ccd8809d57553a5b26f0a",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:03:06.020Z"
+}

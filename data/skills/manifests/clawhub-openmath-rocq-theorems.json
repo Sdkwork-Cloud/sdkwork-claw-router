@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39412,
+  "uuid": "skill-clawhub-openmath-rocq-theorems",
+  "skillKey": "clawhub-openmath-rocq-theorems",
+  "name": "openmath-rocq-theorem",
+  "summary": "Configures Rocq environments, runs preflight checks, and guides the proving workflow for OpenMath Rocq theorems. Use when the user wants to set up Rocq tooli...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmath_rocq_theorems",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shentu",
+      "features": [
+        "Configures Rocq environments, runs preflight checks, and guides the proving workflow for OpenMa.",
+        "Use when the user wants to set up Rocq tooli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmath-rocq-theorems@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259856114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmath-rocq-theorems",
+      "url": "https://clawhub.ai/skills/openmath-rocq-theorems"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmath-rocq-theorems",
+    "url": "https://clawhub.ai/skills/openmath-rocq-theorems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmath-rocq-theorems-469754500e8ffb78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmath-rocq-theorems@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmath-rocq-theorems-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:998a0963540af01b33d1158d881028d54ec4cc1b3a006660f823f3441be2b9e5",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:31:29.470Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22066,
+  "uuid": "skill-clawhub-launchdarkly",
+  "skillKey": "clawhub-launchdarkly",
+  "name": "Launchdarkly",
+  "summary": "Launch Darkly integration. Manage Segments, Projects, Users. Use when the user wants to interact with Launch Darkly data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launchdarkly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Launch Darkly integration",
+        "Manage Segments, Projects, Users",
+        "Use when the user wants to interact with Launch Darkly data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/launchdarkly@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "launchdarkly",
+      "url": "https://clawhub.ai/skills/launchdarkly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launchdarkly",
+    "url": "https://clawhub.ai/skills/launchdarkly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launchdarkly-031ac995a40ff061.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/launchdarkly@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-launchdarkly-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cc78ee32bae155f69549d090d80c6da108f6456d05ef271a6031e82ccba64ed",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:40:54.390Z"
+}

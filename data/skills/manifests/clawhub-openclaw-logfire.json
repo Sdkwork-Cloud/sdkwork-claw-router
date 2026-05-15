@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50491,
+  "uuid": "skill-clawhub-openclaw-logfire",
+  "skillKey": "clawhub-openclaw-logfire",
+  "name": "OpenClaw Logfire",
+  "summary": "Pydantic Logfire observability — OTEL GenAI traces, tool call spans, token metrics, distributed tracing",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_logfire",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Amabile",
+      "features": [
+        "Pydantic Logfire observability — OTEL GenAI traces, tool call spans, token metrics, distributed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-logfire@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1388279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-logfire",
+      "url": "https://clawhub.ai/skills/openclaw-logfire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-logfire",
+    "url": "https://clawhub.ai/skills/openclaw-logfire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-logfire-8284021c11a7a701.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-logfire@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-logfire-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5122cde5b8999cc690643fb3fd1d53c913e2ea05f05cfbd9e60fe0ce3cd71992",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T07:06:39.331Z"
+}

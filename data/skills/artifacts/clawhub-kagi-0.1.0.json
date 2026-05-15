@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kagi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kagi",
+  "skill": {
+    "id": 12881,
+    "skillKey": "clawhub-kagi",
+    "name": "Kagi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kagi",
+    "url": "https://clawhub.ai/skills/kagi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kagi-d80b4f1b596b87ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform web searches and generate summarized answers with citations using the Kagi API and FastGPT for higher-quality results or rate-limit fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelasper",
+      "userId": "publishers:michaelasper",
+      "displayName": "michaelasper",
+      "image": "https://avatars.githubusercontent.com/u/23001302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1581,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770502312290,
+      "changelog": "Kagi skill v0.1.0\n\n- Initial release: Integrates Kagi Search API and FastGPT for enhanced web research.\n- Provides Python scripts for both ranked search results and LLM-powered web answers with citations.\n- Supports programmatic web search and summarization via command-line interface.\n- Includes setup instructions for API token usage and example commands.\n- Suggested as an alternative when Brave Search is rate-limited or higher-quality results are needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bdaedfcee450491582454c83ef6b24ccd21f134151702d182b64abf8c134ec7"
+}

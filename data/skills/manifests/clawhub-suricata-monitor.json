@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53245,
+  "uuid": "skill-clawhub-suricata-monitor",
+  "skillKey": "clawhub-suricata-monitor",
+  "name": "Suricata IDS Monitor",
+  "summary": "Read and triage Suricata IDS/IPS alerts from eve.json into a structured threat report — severity-ranked findings, attacker IPs, top triggered signatures, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suricata_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "infectit007",
+      "features": [
+        "Read and triage Suricata IDS/IPS alerts from eve.json into a structured threat report — severit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suricata-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164786261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suricata-monitor",
+      "url": "https://clawhub.ai/skills/suricata-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suricata-monitor",
+    "url": "https://clawhub.ai/skills/suricata-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suricata-monitor-687f69871091dc70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suricata-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suricata-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4499751cf0ba192c5ce12f500e5c9387bcb11da0bb4ce787ed10177411628fd3",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:55:38.562Z"
+}

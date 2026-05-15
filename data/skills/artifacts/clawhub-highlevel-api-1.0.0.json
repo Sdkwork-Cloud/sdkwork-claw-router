@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlevel-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlevel_api",
+  "skill": {
+    "id": 47891,
+    "skillKey": "clawhub-highlevel-api",
+    "name": "GoHighLevel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlevel-api",
+    "url": "https://clawhub.ai/skills/highlevel-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlevel-api-d41e5570edfdcd2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GoHighLevel (Private Integration Token) API integration with managed auth. CRM, sales pipelines, calendars, conversations, payments, and marketing automation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777596549512,
+      "changelog": "Initial release of GoHighLevel (Private Integration Token) API integration.\n\n- Enables managed authentication for both Agency and Sub-Account Private Integration Tokens (PIT) to interact with GoHighLevel CRM, pipelines, calendars, conversations, payments, and workflows.\n- Allows separate connection and token management for agency-wide or location-specific operations.\n- Provides detailed API references for managing locations (sub-accounts), snapshots, contacts, and more.\n- All operations require a valid Maton API key and network access.\n- Write operations require explicit user approval for added safety.\n- Supports specifying active connections via a header to route requests with the intended token.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aeca824801eb229b0db79a4c13d4c1868324c031095dc6c56a125a1ecc656cf"
+}

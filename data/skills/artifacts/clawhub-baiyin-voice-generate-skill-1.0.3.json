@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baiyin-voice-generate-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_voice_generate_skill",
+  "skill": {
+    "id": 66889,
+    "skillKey": "clawhub-baiyin-voice-generate-skill",
+    "name": "baiyin-voice-generate-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-voice-generate-skill",
+    "url": "https://clawhub.ai/skills/baiyin-voice-generate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-voice-generate-skill-0232a341ce216e05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用百音开放平台创建 AI 语音任务，支持文本转语音、音色克隆，并在同一 skill 内继续查询任务状态和结果链接。用于用户要生成语音、克隆音色、查询语音任务进度或下载结果时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuping520",
+      "userId": "s179mk3pmxbx96yfcenhqxzm6984v4ak",
+      "displayName": "baiyin",
+      "image": "https://avatars.githubusercontent.com/u/63402476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776679097638,
+      "changelog": "Version 1.0.3\n\n- 修改 API 密钥环境变量，由 `BAIYIN_OPEN_KEY` 变更为 `BAIYIN_API_KEY`\n- 移除对 `BAIYIN_OPEN_URL` 的运行时配置说明，明确仅使用固定的 `BASE_URL`\n- 其余业务规则、接口与功能保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1ec7b24d00005eca8c540296f43c0d3b36e95de727bff8e160fcdd7aaeee271"
+}

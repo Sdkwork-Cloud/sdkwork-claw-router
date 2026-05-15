@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/landmark-hotel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.landmark_hotel",
+  "skill": {
+    "id": 45750,
+    "skillKey": "clawhub-landmark-hotel",
+    "name": "Landmark Hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "landmark-hotel",
+    "url": "https://clawhub.ai/skills/landmark-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/landmark-hotel-c732b08c63d3c274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels closest to a specific attraction, landmark, or scenic spot. First verifies the POI, then searches hotels sorted by walking distance. Also support..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775736783607,
+      "changelog": "landmark-hotel 3.2.0\n\n- Expanded description to clarify supported travel services: now includes flight booking, train tickets, itinerary planning, visa information, travel insurance, and car rental (powered by Fliggy).\n- Detailed critical execution rules for using only CLI-sourced data; strictly prohibits answers from training data.\n- Added comprehensive activation guides, scenario-based playbooks, and fallback handling references.\n- Enhanced parameter collection process and CLI integration instructions.\n- Clarified output formatting requirements, including mandatory booking links and brand compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:655580bce7fa143b1ed7f49d107af4152f80cec6cb08f1da8be3b5bf3830e0a3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49438,
+  "uuid": "skill-clawhub-clawhub-demo-skill",
+  "skillKey": "clawhub-clawhub-demo-skill",
+  "name": "ClawHub Demo Skill",
+  "summary": "Use this tiny demo skill to verify that a ClawHub skill can be published, installed, and invoked; it returns a short confirmation message and optionally echo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_demo_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lin-ke",
+      "features": [
+        "Use this tiny demo skill to verify that a ClawHub skill can be published, installed, and invoked",
+        "it returns a short confirmation message and optionally echo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-demo-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185170636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-demo-skill",
+      "url": "https://clawhub.ai/skills/clawhub-demo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-demo-skill",
+    "url": "https://clawhub.ai/skills/clawhub-demo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-demo-skill-fd54d8726ec276bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-demo-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-demo-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25a87779f4d59364eb9530bd882b9df9d0dfa3d202952777415977b32589a321",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:53:01.869Z"
+}

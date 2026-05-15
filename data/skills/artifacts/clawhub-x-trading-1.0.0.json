@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_trading",
+  "skill": {
+    "id": 54403,
+    "skillKey": "clawhub-x-trading",
+    "name": "x-trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-trading",
+    "url": "https://clawhub.ai/skills/x-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-trading-3ee160f20f8ba8d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade security tokens on the X platform — check balances, place orders, view market data, and review trade history."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seineruo",
+      "userId": "s1723w2x0nsqqd6enh210qb9dx83kdyz",
+      "displayName": "sss3000",
+      "image": "https://avatars.githubusercontent.com/u/11779945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774433704801,
+      "changelog": "Initial release of the X Security Token Trading skill.\n\n- Added four API module files: account, market data, order execution, and trade history.\n- Removed the old script-based interface (`scripts/molt.py`).\n- Updated documentation to focus on trading, balances, orders, and market data on the X platform.\n- Introduced environment-based API key authentication.\n- Provided detailed error handling and module usage guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33f919113ac95029f2f430be93b25567073b2336063cdee92c60abad3896f60e"
+}

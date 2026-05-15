@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-enhanced-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_enhanced_memory",
+  "skill": {
+    "id": 19566,
+    "skillKey": "clawhub-openclaw-enhanced-memory",
+    "name": "Enhanced Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-enhanced-memory",
+    "url": "https://clawhub.ai/skills/openclaw-enhanced-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-enhanced-memory-d0c092e9016667f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An enhanced memory system for OpenClaw agents that replaces the default single-file MEMORY.md with a complete memory architecture: hierarchical directory org..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fatcatmaofei",
+      "userId": "publishers:fatcatmaofei",
+      "displayName": "fatcatMaoFei",
+      "image": "https://avatars.githubusercontent.com/u/215018955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 584,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772016910721,
+      "changelog": "Initial release - Hierarchical tagged memory system with lifecycle management",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7adc2aa347e02939d8aab2030d87158c0669226e12a75a1fca5395e2455e2e08"
+}

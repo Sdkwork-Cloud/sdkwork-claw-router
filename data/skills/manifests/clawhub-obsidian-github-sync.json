@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30214,
+  "uuid": "skill-clawhub-obsidian-github-sync",
+  "skillKey": "clawhub-obsidian-github-sync",
+  "name": "Obsidian GitHub Sync",
+  "summary": "Automated GitHub synchronization for Obsidian vault with conflict detection and notification. Use when the user wants to: - Sync their Obsidian vault to a Gi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_github_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo-zzl",
+      "features": [
+        "Automated GitHub synchronization for Obsidian vault with conflict detection and notification",
+        "Use when the user wants to:",
+        "Sync their Obsidian vault to a Gi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-github-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262100144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-github-sync",
+      "url": "https://clawhub.ai/skills/obsidian-github-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-github-sync",
+    "url": "https://clawhub.ai/skills/obsidian-github-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-github-sync-7c2b0c522802bffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-github-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-github-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f879cecd5eaeb7669db0ea6fbd382d05c621e95892d5d4aa2761269d1aab1cc8",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:00:06.875Z"
+}

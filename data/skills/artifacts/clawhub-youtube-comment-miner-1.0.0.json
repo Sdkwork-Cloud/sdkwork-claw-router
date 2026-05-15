@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-comment-miner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comment_miner",
+  "skill": {
+    "id": 63844,
+    "skillKey": "clawhub-youtube-comment-miner",
+    "name": "youtube-comment-miner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comment-miner",
+    "url": "https://clawhub.ai/skills/youtube-comment-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comment-miner-58cb76f1f630a849.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从指定话题的YouTube视频评论中挖掘用户痛点、功能建议与需求，助力竞品分析和市场调研。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synthere",
+      "userId": "s170tzn8x616xjz9zkhxn7xg5n851az9",
+      "displayName": "marc",
+      "image": "https://avatars.githubusercontent.com/u/167509925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773235300494,
+      "changelog": "first version",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e3be276be75fc2c47d7b33c4bcb9e56d294126882e36d6e6090122059af179b"
+}

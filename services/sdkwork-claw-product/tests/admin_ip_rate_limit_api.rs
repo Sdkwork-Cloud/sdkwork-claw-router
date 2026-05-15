@@ -25,7 +25,7 @@ async fn admin_ip_rate_limit_route_creates_and_lists_ip_rules() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate-limits/ip")
+                .uri("/backend/v3/api/router/rate_limits/ip")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -55,7 +55,7 @@ async fn admin_ip_rate_limit_route_creates_and_lists_ip_rules() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate-limits/ip")
+                .uri("/backend/v3/api/router/rate_limits/ip")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -87,7 +87,7 @@ async fn admin_ip_rate_limit_route_rejects_invalid_ip_without_calling_store() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate-limits/ip")
+                .uri("/backend/v3/api/router/rate_limits/ip")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -121,7 +121,7 @@ async fn admin_ip_rate_limit_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate-limits/ip")
+                .uri("/backend/v3/api/router/rate_limits/ip")
                 .body(Body::empty())
                 .unwrap(),
         )

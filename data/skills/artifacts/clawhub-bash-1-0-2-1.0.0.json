@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bash-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bash_1_0_2",
+  "skill": {
+    "id": 22315,
+    "skillKey": "clawhub-bash-1-0-2",
+    "name": "Bash 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bash-1-0-2",
+    "url": "https://clawhub.ai/skills/bash-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bash-1-0-2-a18521d31436a03a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write reliable Bash scripts with proper quoting, error handling, and parameter expansion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "washmore",
+      "userId": "publishers:washmore",
+      "displayName": "washmore",
+      "image": "https://avatars.githubusercontent.com/u/13030698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772623837731,
+      "changelog": "Bash Skill 1.0.2 — Improved and Expanded Bash Scripting Guide\n\n- Enhanced reference covering quoting, arrays, parameter expansion, error handling, and common pitfalls.\n- Added concise explanations and usage tips for brackets, subshells, and arithmetic.\n- Updated sections on word splitting, globbing, and exit handling for reliability.\n- Included quick reference table mapping core topics to supporting files.\n- Improved examples and phrasing for clarity and ease of use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d91eec2385ae62d4b4136cb71a611daea79e7bb2050d7bd6acf67675582de200"
+}

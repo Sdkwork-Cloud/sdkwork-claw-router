@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-ace-provisioning-managementpartner-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_ace_provisioning_managementpartner_api",
+  "skill": {
+    "id": 29726,
+    "skillKey": "clawhub-lap-ace-provisioning-managementpartner-api",
+    "name": "Lap Ace Provisioning Managementpartner Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-ace-provisioning-managementpartner-api",
+    "url": "https://clawhub.ai/skills/lap-ace-provisioning-managementpartner-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-ace-provisioning-managementpartner-api-d957033ddc3b1dbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ACE Provisioning ManagementPartner API skill. Use when working with ACE Provisioning ManagementPartner for providers. Covers 6 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774255229453,
+      "changelog": "ACE Provisioning ManagementPartner API skill initial release.\n\n- Provides access to 6 endpoints for managing partners via the Azure ManagementPartner API (version 2018-02-01).\n- Includes detailed instructions for authentication (OAuth2) and API setup.\n- Covers create, update, delete, and query operations for partners.\n- Lists common questions and maps them to endpoints for easy usage.\n- Specifies required environment variable: ACE_PROVISIONING_MANAGEMENTPARTNER_API_KEY.\n- Reference to API spec for full endpoint and schema details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:263301107487f6d2a5dbc32ec4e7b126cf83903423e3b07bf6af6c0aeebb667d"
+}

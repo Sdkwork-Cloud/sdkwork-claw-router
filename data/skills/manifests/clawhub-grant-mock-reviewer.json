@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40698,
+  "uuid": "skill-clawhub-grant-mock-reviewer",
+  "skillKey": "clawhub-grant-mock-reviewer",
+  "name": "Grant Mock Reviewer",
+  "summary": "Simulates NIH study section peer review for grant proposals. Triggers when user wants mock review, critique, or evaluation of a grant proposal before submiss...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grant_mock_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Simulates NIH study section peer review for grant proposals",
+        "Triggers when user wants mock review, critique, or evaluation of a grant proposal before submis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grant-mock-reviewer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grant-mock-reviewer",
+      "url": "https://clawhub.ai/skills/grant-mock-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grant-mock-reviewer",
+    "url": "https://clawhub.ai/skills/grant-mock-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grant-mock-reviewer-0e748da4f374b649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grant-mock-reviewer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grant-mock-reviewer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:823313561b0bee43ef90a8e0ca49f4aa26a3f3f13db0e5720cee39db94b1da07",
+      "artifactSizeBytes": 2637
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:57:22.325Z"
+}

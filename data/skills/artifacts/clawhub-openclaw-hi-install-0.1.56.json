@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-hi-install@0.1.56",
+  "version": "0.1.56",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hi_install",
+  "skill": {
+    "id": 17312,
+    "skillKey": "clawhub-openclaw-hi-install",
+    "name": "Install Hirey Hi on OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hi-install",
+    "url": "https://clawhub.ai/skills/openclaw-hi-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hi-install-556b1efc73988e7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install or repair Hirey Hi on a local OpenClaw host through the official ClawHub package path, then complete the local MCP, receiver, registration, and healt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yzlee",
+      "userId": "s173ync9g4tzcxng1n4jk7vr0n842cap",
+      "displayName": "yzlee",
+      "image": "https://avatars.githubusercontent.com/u/7793722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 792,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 45
+    },
+    "latestVersion": {
+      "version": "0.1.56",
+      "createdAt": 1778259573207,
+      "changelog": "bundle plugin 0.1.56: bump openclaw.plugin.json (publish 脚本读这个文件)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1308f7f867967e8f012557c1a30fad140c7fdb18f07e9fecadf065fdf20062fe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tced-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tced_skill",
+  "skill": {
+    "id": 70761,
+    "skillKey": "clawhub-tced-skill",
+    "name": "☁️ TCED Cloud Drive | 腾讯云企业网盘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tced-skill",
+    "url": "https://clawhub.ai/skills/tced-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tced-skill-3abb3c221b6071fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云企业网盘 TCED 集成技能。当用户需要管理企业网盘文件（上传、下载、删除、浏览、搜索），管理空间（列出、切换），或进行账号认证（登录、登出、切换）时使用。触发关键词：企业网盘、网盘、TCED、SMH、文件上传、文件下载、云端文件、个人空间、团队空间。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cuijiawei123",
+      "userId": "s17ay9hgnzn7rrv01vfqzferc183hq01",
+      "displayName": "cuijiawei123",
+      "image": "https://avatars.githubusercontent.com/u/44763220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774338527465,
+      "changelog": "v1.0.0: 双语名称与描述优化搜索可见度; 更新 tced-mcp 至 1.0.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:752ed0f9d7290945fc830e24bfd79b297a3e59f9a7ff2fbed66c9b308ff0d877"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/joke@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joke",
+  "skill": {
+    "id": 72901,
+    "skillKey": "clawhub-joke",
+    "name": "Joke"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joke",
+    "url": "https://clawhub.ai/skills/joke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joke-a2fa4cfad054c30d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "讲笑话、说段子、来点幽默。当用户要求讲笑话、来个段子、说点好笑的、逗我开心、或任何需要幽默内容的场景时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrjeye",
+      "userId": "s17e847n1ahc31h9dfm45fcy61841jxv",
+      "displayName": "Merle",
+      "image": "https://avatars.githubusercontent.com/u/5094638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775031952504,
+      "changelog": "Initial release of the \"joke-teller\" skill:\n\n- Introduces a humor/casual conversation skill that tells jokes based on user requests or context.\n- Supports multiple joke types: programmer jokes, cold jokes, puns, life anecdotes, and workplace humor.\n- Selects jokes contextually; adapts to user mood and conversation.\n- Ensures jokes are concise, appropriate, and non-offensive.\n- Formats jokes for clarity and emphasis using quote styling (`>`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57dc3f870c850408b57dabc8a10750c800861c3cf7806fadedd1cb580a3ab1fa"
+}

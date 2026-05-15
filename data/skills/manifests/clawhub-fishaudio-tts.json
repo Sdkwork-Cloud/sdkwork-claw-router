@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25265,
+  "uuid": "skill-clawhub-fishaudio-tts",
+  "skillKey": "clawhub-fishaudio-tts",
+  "name": "fishaudio-tts",
+  "summary": "Text-to-Speech using FishAudio (fish.audio), generates natural human-like voice with great emotional expression.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fishaudio_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zorro",
+      "features": [
+        "Text-to-Speech using FishAudio (fish.audio), generates natural human-like voice with great emot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fishaudio-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31155186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fishaudio-tts",
+      "url": "https://clawhub.ai/skills/fishaudio-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fishaudio-tts",
+    "url": "https://clawhub.ai/skills/fishaudio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fishaudio-tts-329bfe88ac12d609.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fishaudio-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fishaudio-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ac0befe0c9f974da9e9bda20bc13c89c52c8768827ea98b407a7cebd187eadd",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:04:13.092Z"
+}

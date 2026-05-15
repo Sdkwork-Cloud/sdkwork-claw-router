@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw",
+  "skill": {
+    "id": 9960,
+    "skillKey": "clawhub-openclaw",
+    "name": "Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw",
+    "url": "https://clawhub.ai/skills/openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-96a4bc2602655473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure key management for AI agents. Use when handling private keys, API secrets, wallet credentials, or when building systems that need agent-controlled funds. Covers secure storage, session keys, leak prevention, and prompt injection def."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zscole",
+      "userId": "publishers:zscole",
+      "displayName": "zscole",
+      "image": "https://avatars.githubusercontent.com/u/20308948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2414,
+      "installsAllTime": 56,
+      "installsCurrent": 48,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770568594079,
+      "changelog": "Initial release of Bagman: secure key management patterns for AI agents.\n\n- Introduces a framework for handling private keys, API secrets, and wallet credentials with robust leak prevention and prompt injection defenses.\n- Enforces session-based access using 1Password CLI, never storing raw keys in env files, config, or agent memory.\n- Provides validated workflows, code snippets, and architecture diagrams for agent wallet access and key lifecycle management.\n- Includes output sanitization routines and pre-commit git hooks to prevent accidental secret leaks.\n- Outlines input validation strategies and isolation patterns to defend against prompt injection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ff6d042a6d8ce35c32f8895ee4d77a86990733d796efe0f26c89a3feec7b075"
+}

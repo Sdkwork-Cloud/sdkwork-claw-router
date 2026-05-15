@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-video-downloader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_video_downloader",
+  "skill": {
+    "id": 65803,
+    "skillKey": "clawhub-twitter-video-downloader",
+    "name": "推特视频下载器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-video-downloader",
+    "url": "https://clawhub.ai/skills/twitter-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-video-downloader-51c9f63e8f72217a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "推特视频下载器 - 下载 Twitter/X 视频、GIF 和音频（MP4/MP3），支持 1080p、2K、4K、8K 高清下载。适用于需要保存推特视频、提取音频的用户。⚠️ 中国大陆用户需要使用代理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harbour015",
+      "userId": "publishers:harbour015",
+      "displayName": "harbour015",
+      "image": "https://avatars.githubusercontent.com/u/48000268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773807015821,
+      "changelog": "更新为中文文档，专为中国大陆用户优化，详细说明代理使用方法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6770ac09d342ec29918494d25853616df2301b4c71b3947e15f757c2a2ff6ac"
+}

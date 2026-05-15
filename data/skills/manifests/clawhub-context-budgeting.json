@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9232,
+  "uuid": "skill-clawhub-context-budgeting",
+  "skillKey": "clawhub-context-budgeting",
+  "name": "Context Budgeting",
+  "summary": "Manage and optimize OpenClaw context window usage via partitioning, pre-compression checkpointing, and information lifecycle management. Use when the session context is near its limit (>80%), when the agent experiences \"memory loss\" after.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_budgeting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SarielWang93",
+      "features": [
+        "Manage and optimize OpenClaw context window usage via partitioning, pre-compression checkpointi.",
+        "Use when the session context is near its limit (>80%), when the agent experiences \"memory loss\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-budgeting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47969932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-budgeting",
+      "url": "https://clawhub.ai/skills/context-budgeting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-budgeting",
+    "url": "https://clawhub.ai/skills/context-budgeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-budgeting-380d645790856709.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-budgeting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-budgeting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2e3bbd4fbfd585b0a7b02e4661227925b95a681c206764e113b8c5d26a1a940",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:17:24.994Z"
+}

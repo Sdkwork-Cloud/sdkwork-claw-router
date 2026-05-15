@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46752,
+  "uuid": "skill-clawhub-outbound-campaign-auto",
+  "skillKey": "clawhub-outbound-campaign-auto",
+  "name": "Outbound Campaign Auto",
+  "summary": "Automates full outbound campaigns by scraping qualified leads, segmenting them, creating personalized email and LinkedIn sequences, ad hooks, video assets, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outbound_campaign_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicemaths123",
+      "features": [
+        "Automates full outbound campaigns by scraping qualified leads, segmenting them, creating person."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outbound-campaign-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244252350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outbound-campaign-auto",
+      "url": "https://clawhub.ai/skills/outbound-campaign-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outbound-campaign-auto",
+    "url": "https://clawhub.ai/skills/outbound-campaign-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outbound-campaign-auto-2dca0eda864a6a8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outbound-campaign-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outbound-campaign-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3d0d69f8e7677fba6b75b0e76880f8ffbf551d5f7fb0d38c96cd0e4d222eac5",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T21:35:23.174Z"
+}

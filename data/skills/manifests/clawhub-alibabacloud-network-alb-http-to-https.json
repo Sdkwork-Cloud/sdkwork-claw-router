@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37283,
+  "uuid": "skill-clawhub-alibabacloud-network-alb-http-to-https",
+  "skillKey": "clawhub-alibabacloud-network-alb-http-to-https",
+  "name": "Alibabacloud Network Alb Http To Https",
+  "summary": "Configure HTTP-to-HTTPS redirects on Alibaba Cloud ALB, including inspecting the current listener and rule setup, creating missing HTTP or HTTPS listeners, a...",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_network_alb_http_to_https",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Configure HTTP-to-HTTPS redirects on Alibaba Cloud ALB, including inspecting the current listen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-network-alb-http-to-https@0.0.1-beta.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-network-alb-http-to-https",
+      "url": "https://clawhub.ai/skills/alibabacloud-network-alb-http-to-https"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-network-alb-http-to-https",
+    "url": "https://clawhub.ai/skills/alibabacloud-network-alb-http-to-https",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-network-alb-http-to-https-ac1b7cd0290f5503.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-network-alb-http-to-https@0.0.1-beta.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-network-alb-http-to-https-0.0.1-beta.2.json",
+      "version": "0.0.1-beta.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9255afe9dd7b35dbd047257f9078e2031e7fbeddcc6a68a35b61d843fa478013",
+      "artifactSizeBytes": 2734
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:44:50.097Z"
+}

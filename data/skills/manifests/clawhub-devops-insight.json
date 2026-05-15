@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19376,
+  "uuid": "skill-clawhub-devops-insight",
+  "skillKey": "clawhub-devops-insight",
+  "name": "DevOps Insight",
+  "summary": "This skill should be used when the user asks to \"analyze incidents\", \"troubleshoot production issues\", \"investigate alerts\", \"create tickets\", \"root cause an...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devops_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CafeChen",
+      "features": [
+        "This skill should be used when the user asks to \"analyze incidents\", \"troubleshoot production i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devops-insight@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1528302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devops-insight",
+      "url": "https://clawhub.ai/skills/devops-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devops-insight",
+    "url": "https://clawhub.ai/skills/devops-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devops-insight-15fc8ce1a6c38c11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devops-insight@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-devops-insight-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b261d609a82408f67db37cef871a1df342b6f902932850d5f9947d9c42b9846d",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:13:25.559Z"
+}

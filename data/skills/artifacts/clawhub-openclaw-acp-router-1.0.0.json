@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-acp-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_acp_router",
+  "skill": {
+    "id": 22126,
+    "skillKey": "clawhub-openclaw-acp-router",
+    "name": "acp-router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-acp-router",
+    "url": "https://clawhub.ai/skills/openclaw-acp-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-acp-router-d5cb3f48d56d7b62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route plain-language requests for Pi, Claude Code, Codex, OpenCode, Gemini CLI, or ACP harness work into either OpenClaw ACP runtime sessions or direct acpx-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zch-danny",
+      "userId": "publishers:zch-danny",
+      "displayName": "zch-danny",
+      "image": "https://avatars.githubusercontent.com/u/51771555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773156121532,
+      "changelog": "openclaw-acp-router 1.0.0\n\n- Initial release of the ACP router skill for OpenClaw.\n- Handles user requests to route tasks into Pi, Claude Code, Codex, OpenCode, Gemini, or ACP harness sessions.\n- Supports both OpenClaw ACP runtime sessions (using `sessions_spawn`) and direct `acpx`-driven (\"telephone game\") flows, with comprehensive intent detection.\n- Includes robust fallback and repair/recovery logic if ACP backends are unavailable, with strict local install/version handling for `acpx`.\n- Provides detailed policies for agent ID mapping and session handling, avoiding unauthorized fallbacks or manual CLI delegation.\n- Adds clear rules and command templates for thread, session, and one-shot management, ensuring seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e721fdce3937ab4e64bfaaf8395722264d3c38c8b4cf0a53be1f3bf407d5a7f7"
+}

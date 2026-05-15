@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22168,
+  "uuid": "skill-clawhub-beancount",
+  "skillKey": "clawhub-beancount",
+  "name": "Beancount",
+  "summary": "Personal bookkeeping assistant for local income and expense tracking, monthly reports with comparisons, budget alerts, and savings goal management.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beancount",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Personal bookkeeping assistant for local income and expense tracking, monthly reports with comp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beancount@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beancount",
+      "url": "https://clawhub.ai/skills/beancount"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beancount",
+    "url": "https://clawhub.ai/skills/beancount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beancount-c7c6965d937b64be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beancount@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beancount-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d97abcab6f823fc0c1aff5a1e812d764a03aca276a80b827c2ee8bc7aca47b2d",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:07:18.356Z"
+}

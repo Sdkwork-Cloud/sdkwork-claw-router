@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12405,
+  "uuid": "skill-clawhub-gws-calendar",
+  "skillKey": "clawhub-gws-calendar",
+  "name": "Gws Calendar",
+  "summary": "Google Calendar: Manage calendars and events.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Calendar: Manage calendars and events."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-calendar@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-calendar",
+      "url": "https://clawhub.ai/skills/gws-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-calendar",
+    "url": "https://clawhub.ai/skills/gws-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-calendar-2a36f1f7d290b666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-calendar@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-calendar-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ba1d5cc6f526ed1e3cb649f0953e4b10e93be2f1c5f664ed54f053234e3d5b8",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:06.168Z"
+}

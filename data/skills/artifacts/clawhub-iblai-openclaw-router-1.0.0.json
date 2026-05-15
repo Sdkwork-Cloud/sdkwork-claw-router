@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iblai-openclaw-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iblai_openclaw_router",
+  "skill": {
+    "id": 18228,
+    "skillKey": "clawhub-iblai-openclaw-router",
+    "name": "Iblai Openclaw Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iblai-openclaw-router",
+    "url": "https://clawhub.ai/skills/iblai-openclaw-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iblai-openclaw-router-f2b7eaecfca6efbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cost-optimizing model router for OpenClaw. Automatically routes each request to the cheapest capable Claude model (Haiku/Sonnet/Opus) using weighted scoring...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neuralshift1",
+      "userId": "publishers:neuralshift1",
+      "displayName": "Neuralshift1",
+      "image": "https://avatars.githubusercontent.com/u/213297079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 707,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771574949109,
+      "changelog": "- Initial release of iblai-router: a zero-dependency, cost-optimizing proxy for OpenClaw.\n- Automatically routes requests to the cheapest capable Claude model (Haiku, Sonnet, Opus) using a weighted scoring system.\n- Supports Anthropic models directly; OpenAI and Google models supported via OpenRouter integration.\n- Easy installation, health verification, and customizable configuration without service restarts.\n- Scoring algorithm leverages keyword lists to select appropriate model tier for each request.\n- Includes simple uninstall script and guidance for safely switching workloads.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:629ab4af477875ceef75e87a100f0290bdbdd3e4f1eac2f60ca94556e146b54a"
+}

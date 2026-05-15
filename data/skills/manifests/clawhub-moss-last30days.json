@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26895,
+  "uuid": "skill-clawhub-moss-last30days",
+  "skillKey": "clawhub-moss-last30days",
+  "name": "Moss Last30Days",
+  "summary": "Research any topic from the last 30 days on Reddit + X + Web, synthesize findings, and write copy-paste-ready prompts. Use when the user wants recent social/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_last30days",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangwzh",
+      "features": [
+        "Research any topic from the last 30 days on Reddit + X + Web, synthesize findings, and write co.",
+        "Use when the user wants recent social/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moss-last30days@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125803223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moss-last30days",
+      "url": "https://clawhub.ai/skills/moss-last30days"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-last30days",
+    "url": "https://clawhub.ai/skills/moss-last30days",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-last30days-8e874f8b5e685119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moss-last30days@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moss-last30days-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ded72f2e8ea7d908f33f6df8456c5a1c23737dc76ee4af333bfe982fefdd98d3",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:26:08.123Z"
+}

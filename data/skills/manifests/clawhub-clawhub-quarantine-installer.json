@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56098,
+  "uuid": "skill-clawhub-clawhub-quarantine-installer",
+  "skillKey": "clawhub-clawhub-quarantine-installer",
+  "name": "ClawHub Quarantine Installer",
+  "summary": "Instala e audita skills do ClawHub em um ambiente de quarentena isolado para análise de segurança, permitindo revisar riscos antes de promover para produção....",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_quarantine_installer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alessandropcostabr",
+      "features": [
+        "Instala e audita skills do ClawHub em um ambiente de quarentena isolado para análise de seguran."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-quarantine-installer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191734104?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-quarantine-installer",
+      "url": "https://clawhub.ai/skills/clawhub-quarantine-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-quarantine-installer",
+    "url": "https://clawhub.ai/skills/clawhub-quarantine-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-quarantine-installer-608abb10b447a389.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-quarantine-installer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-quarantine-installer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c522758d82d746a0cfbe22fd8a603bed5e458d96f4e8f62c5179c874123cac25",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T10:24:51.053Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67290,
+  "uuid": "skill-clawhub-spaces-group-assistant",
+  "skillKey": "clawhub-spaces-group-assistant",
+  "name": "Spaces Group Assistant",
+  "summary": "Предоставляет расширенный доступ к внутренним данным, аналитике и логам в доверенной группе Telegram с ограничением доступа к календарю.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spaces_group_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HellAdventurer",
+      "features": [
+        "Предоставляет расширенный доступ к внутренним данным, аналитике и логам в доверенной группе Tel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spaces-group-assistant@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61600223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spaces-group-assistant",
+      "url": "https://clawhub.ai/skills/spaces-group-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spaces-group-assistant",
+    "url": "https://clawhub.ai/skills/spaces-group-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spaces-group-assistant-196b2a7027b64314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spaces-group-assistant@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-spaces-group-assistant-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df4b235ffec6a6a577d46d67adf2ecb214e8be756331014107e451714d6592c4",
+      "artifactSizeBytes": 2664
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T19:06:21.779Z"
+}

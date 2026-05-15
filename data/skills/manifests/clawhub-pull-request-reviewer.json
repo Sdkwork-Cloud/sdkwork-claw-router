@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33450,
+  "uuid": "skill-clawhub-pull-request-reviewer",
+  "skillKey": "clawhub-pull-request-reviewer",
+  "name": "PR Reviewer",
+  "summary": "Reviews pull requests by detecting logic bugs, security risks, test gaps, API changes, and style issues, providing a structured report prioritizing block mer...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pull_request_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lnguyen1996",
+      "features": [
+        "Reviews pull requests by detecting logic bugs, security risks, test gaps, API changes, and styl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pull-request-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97846628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pull-request-reviewer",
+      "url": "https://clawhub.ai/skills/pull-request-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pull-request-reviewer",
+    "url": "https://clawhub.ai/skills/pull-request-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pull-request-reviewer-45d9a0308c551956.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pull-request-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pull-request-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93b42b85d0b371795f39e254c83f567f69d51b880d8acf167427ffadc98a3e64",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:06:14.524Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26000,
+  "uuid": "skill-clawhub-printer-control",
+  "skillKey": "clawhub-printer-control",
+  "name": "printer-control",
+  "summary": "Control local and network printers on Windows to list printers, print files or text, check status, and set default printer with name matching support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printer_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpl666ya",
+      "features": [
+        "Control local and network printers on Windows to list printers, print files or text, check stat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/printer-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239817413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "printer-control",
+      "url": "https://clawhub.ai/skills/printer-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printer-control",
+    "url": "https://clawhub.ai/skills/printer-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printer-control-914aa98f8d604716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/printer-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-printer-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e7ace3e65ab77d002fab660c200dacde0907057862bf5260f5ca77c0b76cc1f",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:40:23.212Z"
+}

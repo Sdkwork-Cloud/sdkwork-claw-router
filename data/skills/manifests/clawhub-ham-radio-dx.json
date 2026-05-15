@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11633,
+  "uuid": "skill-clawhub-ham-radio-dx",
+  "skillKey": "clawhub-ham-radio-dx",
+  "name": "Ham Radio DX Monitor",
+  "summary": "Monitor DX clusters for rare station spots, track active DX expeditions, and get daily band activity digests for amateur radio operators.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ham_radio_dx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captmarbles",
+      "features": [
+        "Monitor DX clusters for rare station spots, track active DX expeditions, and get daily band act."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ham-radio-dx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5841195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ham-radio-dx",
+      "url": "https://clawhub.ai/skills/ham-radio-dx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ham-radio-dx",
+    "url": "https://clawhub.ai/skills/ham-radio-dx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ham-radio-dx-36dcfbe8d347b20e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ham-radio-dx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ham-radio-dx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfd36187a2e7cbdaff7e15db6108a60148ed85fb14f12055cb10e447c50589fb",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T19:12:06.087Z"
+}

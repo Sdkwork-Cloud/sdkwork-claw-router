@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quack-coordinator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quack_coordinator",
+  "skill": {
+    "id": 22299,
+    "skillKey": "clawhub-quack-coordinator",
+    "name": "Quack Coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quack-coordinator",
+    "url": "https://clawhub.ai/skills/quack-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quack-coordinator-bbe8a564e2c94cbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent task coordination via RFP, bid, and hire pattern. Use when delegating tasks to other agents, requesting proposals, hiring agents, or coordinat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpaulgrayson",
+      "userId": "publishers:jpaulgrayson",
+      "displayName": "JPaulGrayson",
+      "image": "https://avatars.githubusercontent.com/u/212611253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772151321011,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c61db74e665842396a06532940d8ad6cfc2d7e8986e9659af75d8c2f645dc24"
+}

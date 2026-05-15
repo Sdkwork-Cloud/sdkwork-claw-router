@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59247,
+  "uuid": "skill-clawhub-skill-inventory",
+  "skillKey": "clawhub-skill-inventory",
+  "name": "skill-inventory",
+  "summary": "技能目录管理器 - 扫描已安装的技能，生成/更新技能目录文件。 Use when: user asks \"查看技能列表\", \"我有哪些技能\", \"更新技能目录\", \"skills inventory\", \"list installed skills\".",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_inventory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhilong",
+      "features": [
+        "扫描已安装的技能，生成/更新技能目录文件。 Use when: user asks \"查看技能列表\", \"我有哪些技能\", \"更新技能目录\", \"skills inventory\", \"li."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-inventory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13590177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-inventory",
+      "url": "https://clawhub.ai/skills/skill-inventory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-inventory",
+    "url": "https://clawhub.ai/skills/skill-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-inventory-660f69e84a13527a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-inventory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-inventory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04bc45e6efc6b73a86f7f9eedcf119d34b7114be365cf8562fa8cf8ad2935bb5",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:39:44.205Z"
+}

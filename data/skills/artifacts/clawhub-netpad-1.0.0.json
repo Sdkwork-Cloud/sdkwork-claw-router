@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netpad@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netpad",
+  "skill": {
+    "id": 13017,
+    "skillKey": "clawhub-netpad",
+    "name": "NetPad - Build forms, workflows and manage MongoDB data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netpad",
+    "url": "https://clawhub.ai/skills/netpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netpad-7fba0f647fee57be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage NetPad forms, submissions, users, and RBAC. Use when: (1) Creating forms with custom fields, (2) Submitting data to forms, (3) Querying form submissions, (4) Managing users/groups/roles (RBAC), (5) Installing NetPad apps from market."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrlynn",
+      "userId": "publishers:mrlynn",
+      "displayName": "Michael Lynn",
+      "image": "https://avatars.githubusercontent.com/u/192552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1848,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769886568656,
+      "changelog": "Initial release of NetPad skill.\n\n- Manage NetPad forms, form submissions, users, groups, and RBAC via REST API and CLI.\n- Provides detailed curl/API usage examples for all standard operations (create, query, update, delete for forms and submissions).\n- Includes quick reference tables, field schema documentation, and code samples for automation.\n- Describes required authentication and rate limiting details.\n- Helper script available for common tasks via shell.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e5b507d9edf6b9c6423d54ceb326186e50e195fed0dd8f19ac2b80e02b26848"
+}

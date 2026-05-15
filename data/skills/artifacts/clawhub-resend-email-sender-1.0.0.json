@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resend-email-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_email_sender",
+  "skill": {
+    "id": 19696,
+    "skillKey": "clawhub-resend-email-sender",
+    "name": "Resend Email Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-email-sender",
+    "url": "https://clawhub.ai/skills/resend-email-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-email-sender-481bd9822dd2c165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send emails using Resend API. Use when the user needs to send emails without configuring SMTP servers. Supports text and HTML emails, multiple recipients, CC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aprilvkuo",
+      "userId": "publishers:aprilvkuo",
+      "displayName": "aprilvkuo",
+      "image": "https://avatars.githubusercontent.com/u/9441675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772524920323,
+      "changelog": "Initial release: Send emails via Resend API, support text/HTML, multiple recipients, CC/BCC",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3a259863dd5823118d60197ba448e9ac2202162f94ba968cd29980fb059c5c1"
+}

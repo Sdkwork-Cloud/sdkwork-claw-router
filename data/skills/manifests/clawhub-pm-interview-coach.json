@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67854,
+  "uuid": "skill-clawhub-pm-interview-coach",
+  "skillKey": "clawhub-pm-interview-coach",
+  "name": "Pm Interview Coach",
+  "summary": "PM 面试辅导教练。当用户说\"面试辅导\"、\"模拟面试\"、\"帮我练习面试\"、\"面试练习\"、\"产品经理面试\"时触发。接收用户简历 + 目标公司/岗位，输出深度简历追问、业务情景题、真实面经和答题指导。",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_interview_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krisdontknowcoding",
+      "features": [
+        "PM 面试辅导教练。当用户说\"面试辅导\"、\"模拟面试\"、\"帮我练习面试\"、\"面试练习\"、\"产品经理面试\"时触发。接收用户简历 + 目标公司/岗位，输出深度简历追问、业务情景题、真实面经和答题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm-interview-coach@1.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265529190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm-interview-coach",
+      "url": "https://clawhub.ai/skills/pm-interview-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-interview-coach",
+    "url": "https://clawhub.ai/skills/pm-interview-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-interview-coach-b96a32fd4b0956d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm-interview-coach@1.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm-interview-coach-1.4.4.json",
+      "version": "1.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:203bb583e7abcea2a6db7ad7f163eb21c5dc6f663617d860866bdc0e60ce9096",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:59:31.118Z"
+}

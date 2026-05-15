@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wordpress-pro@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_pro",
+  "skill": {
+    "id": 8872,
+    "skillKey": "clawhub-wordpress-pro",
+    "name": "Wordpress Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-pro",
+    "url": "https://clawhub.ai/skills/wordpress-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-pro-10298f73c1843b58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when developing WordPress themes, plugins, customizing Gutenberg blocks, implementing WooCommerce features, or optimizing WordPress performance and security."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4883,
+      "installsAllTime": 25,
+      "installsCurrent": 24,
+      "stars": 12,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769838823877,
+      "changelog": "Initial release of WordPress Pro skill.\n\n- Expert guidance for custom WordPress theme and plugin development.\n- Includes specialized support for Gutenberg blocks, WooCommerce, REST API, ACF, and performance/security optimization.\n- Outlines strict best practices: coding standards, security (nonce, sanitization, escaping), and internationalization.\n- Provides a clear core workflow and reference guide for efficient implementation.\n- Defines required and prohibited actions to ensure robust, secure, and scalable WordPress solutions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a71a09c88a1273d73530be57005f8b22baba817b3797e09151aa726401c7f76"
+}

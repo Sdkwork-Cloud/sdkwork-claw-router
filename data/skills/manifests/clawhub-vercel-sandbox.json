@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42168,
+  "uuid": "skill-clawhub-vercel-sandbox",
+  "skillKey": "clawhub-vercel-sandbox",
+  "name": "Vercel Sandbox",
+  "summary": "Run agent-browser + Chrome inside Vercel Sandbox microVMs for browser automation from any Vercel-deployed app. Use when the user needs browser automation in...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "Run agent-browser + Chrome inside Vercel Sandbox microVMs for browser automation from any Verce.",
+        "Use when the user needs browser automation in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vercel-sandbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vercel-sandbox",
+      "url": "https://clawhub.ai/skills/vercel-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-sandbox",
+    "url": "https://clawhub.ai/skills/vercel-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-sandbox-b308bf13e969cadd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vercel-sandbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vercel-sandbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0700773147457b9cdc219e19c904d0443da21023e9cb00e7e8df5bbbed2325ac",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:20:24.557Z"
+}

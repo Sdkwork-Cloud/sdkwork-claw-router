@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mova-contract-generation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_contract_generation",
+  "skill": {
+    "id": 32187,
+    "skillKey": "clawhub-mova-contract-generation",
+    "name": "Mova Contract Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-contract-generation",
+    "url": "https://clawhub.ai/skills/mova-contract-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-contract-generation-2b3236bd0e3fc149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a legal document draft (NDA, service agreement, supply contract, SLA) from a structured template via MOVA HITL, with section-by-section human review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mova-compact",
+      "userId": "s174xckyab9x52fg7dps9cca2983g5a4",
+      "displayName": "Sergii Miasoiedov",
+      "image": "https://avatars.githubusercontent.com/u/258828376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775141428319,
+      "changelog": "Added Contract Skill type label.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a56e1931bcc3de4d6f335448018f44afdb47ac3ddafad5d4d12d787ecdeef55"
+}

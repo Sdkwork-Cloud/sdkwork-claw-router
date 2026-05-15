@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-style-rewriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_style_rewriter",
+  "skill": {
+    "id": 72994,
+    "skillKey": "clawhub-content-style-rewriter",
+    "name": "写作风格转换"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-style-rewriter",
+    "url": "https://clawhub.ai/skills/content-style-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-style-rewriter-c3cea2b5cc5986c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内容改写与风格模仿。当用户要求将文本改写成不同语气/风格时使用。触发词包括：鲁迅风、木心风、钱钟书、风格转写、改写成XX风格、模仿XX写作、整理文件、归类总结。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuyiz51",
+      "userId": "s178bv1md4wsy7kxtd1dje941583gwxx",
+      "displayName": "WuyiZ51",
+      "image": "https://avatars.githubusercontent.com/u/222220889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774946461706,
+      "changelog": "- Major update: Expanded scope to style imitation and Chinese writer mimicry, replacing platform-specific rewriting.\n- Added reference to a writer style library and step-by-step rewriting workflow.\n- Included quick-reference style table with features and applicable scenarios (e.g., 鲁迅风、钱钟书风等).\n- Detailed output template and special-case handling (e.g., unspecified style, style conflict).\n- Provided rich rewriting examples for each style.\n- Introduced a self-checklist to ensure quality and authenticity of rewritten content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1eed91c8c1a38ff2a8a03e7cf660a6aaf060f9073a0d8a6860f888273a6bca4f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-insider-top10@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_insider_top10",
+  "skill": {
+    "id": 16893,
+    "skillKey": "clawhub-podcast-insider-top10",
+    "name": "Podcast Insider Top-10"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-insider-top10",
+    "url": "https://clawhub.ai/skills/podcast-insider-top10",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-insider-top10-cdbc9c2dd9c4db86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional analytical digest of top 10 podcast industry news, trends, and business insights from premier global sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "te1man",
+      "userId": "publishers:te1man",
+      "displayName": "Te1man",
+      "image": "https://avatars.githubusercontent.com/u/49500410?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771171831734,
+      "changelog": "Podcast Insider Top-10 Skill v1.0.0\n\n- Initial release of the Podcast Insider Top-10 skill.\n- Aggregates and analyzes top podcast industry news from 11 premier global RSS sources.\n- Delivers a curated, ranked top-10 briefing with headlines, strategic analysis, and direct source links.\n- Categorizes news by Market Move, Platform Update, Content Strategy, or Tech Innovation.\n- Includes trend spotting, cross-referencing, and deep research features for key developments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:03f3a2df8cc75f3fe04adac63f436eec121f36976d3abab00e34bb718a35e786"
+}

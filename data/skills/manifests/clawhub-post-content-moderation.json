@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24921,
+  "uuid": "skill-clawhub-post-content-moderation",
+  "skillKey": "clawhub-post-content-moderation",
+  "name": "Post Content Moderation",
+  "summary": "Review, rewrite, and moderate user-generated posts across title, body text, images, and videos to block ads and contact information while allowing configurab...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_content_moderation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xavier Mary",
+      "features": [
+        "Review, rewrite, and moderate user-generated posts across title, body text, images, and videos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-content-moderation@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225500647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-content-moderation",
+      "url": "https://clawhub.ai/skills/post-content-moderation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-content-moderation",
+    "url": "https://clawhub.ai/skills/post-content-moderation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-content-moderation-c09d12907dd51f02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-content-moderation@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-content-moderation-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:526a2e593c260a97122ef126b5534075c80c4af3cd685788078a4a6fcba4020b",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:19:24.580Z"
+}

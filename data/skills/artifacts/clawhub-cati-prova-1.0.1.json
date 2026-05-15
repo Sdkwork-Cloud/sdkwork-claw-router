@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cati-prova@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cati_prova",
+  "skill": {
+    "id": 55635,
+    "skillKey": "clawhub-cati-prova",
+    "name": "Cati Prova"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cati-prova",
+    "url": "https://clawhub.ai/skills/cati-prova",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cati-prova-e2f39827d96fa8a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepara material de estudo completo para a Catarina quando ela tem uma prova. Dado um tema e matéria, faz pesquisa automática, monta um NotebookLM completo e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fpjr1975",
+      "userId": "s17fj69wcf1bv73mt7tb9rpa7x84akwq",
+      "displayName": "fpjr1975",
+      "image": "https://avatars.githubusercontent.com/u/199525349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775486673191,
+      "changelog": "Entrega direto pelo @VegaCompanionBot pra Catarina (chat_id fixo). CATARINA_ID persistido no vega_bot.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0326a04113ad726ce0561dc86e97f659b13cddc7d5efe664c7368895a0243c6f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12083,
+  "uuid": "skill-clawhub-x-bookmarks",
+  "skillKey": "clawhub-x-bookmarks",
+  "name": "X Bookmarks",
+  "summary": "Fetch, summarize, and manage X/Twitter bookmarks via bird CLI or X API v2. Use when: (1) user says \"check my bookmarks\", \"what did I bookmark\", \"bookmark dig...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_bookmarks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharbel",
+      "features": [
+        "Fetch, summarize, and manage X/Twitter bookmarks via bird CLI or X API v2",
+        "Use when: (1) user says \"check my bookmarks\", \"what did I bookmark\", \"bookmark dig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-bookmarks@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79539257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-bookmarks",
+      "url": "https://clawhub.ai/skills/x-bookmarks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-bookmarks",
+    "url": "https://clawhub.ai/skills/x-bookmarks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-bookmarks-1ee8012cd594d17a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-bookmarks@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-bookmarks-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c43f6c3b4cdca0cca0adbe1c914d7091fcfe0459cbafd27bf3d805f51da6f88f",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T08:42:02.167Z"
+}

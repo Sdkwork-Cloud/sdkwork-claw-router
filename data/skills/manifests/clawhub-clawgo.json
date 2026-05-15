@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57788,
+  "uuid": "skill-clawhub-clawgo",
+  "skillKey": "clawhub-clawgo",
+  "name": "Claw Go",
+  "summary": "Play Claw Go (虾游记), a text-first crayfish travel companion game. Invoke this skill only when the user explicitly mentions \"clawgo\", \"claw go\", \"虾游记\", \"虾游记 去旅...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "airbai",
+      "features": [
+        "Play Claw Go (虾游记), a text-first crayfish travel companion game",
+        "Invoke this skill only when the user explicitly mentions \"clawgo\", \"claw go\", \"虾游记\", \"虾游记 去旅..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgo@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/328208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgo",
+      "url": "https://clawhub.ai/skills/clawgo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgo",
+    "url": "https://clawhub.ai/skills/clawgo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgo-027d8d880b45d1d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgo@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgo-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e04cf5b0915dbb8db18d3a69cd8fef894849af2d1d205a33b2c76002718301a0",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:32:24.585Z"
+}

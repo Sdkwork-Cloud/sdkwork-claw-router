@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/advisor-finder@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advisor_finder",
+  "skill": {
+    "id": 49605,
+    "skillKey": "clawhub-advisor-finder",
+    "name": "Advisor Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advisor-finder",
+    "url": "https://clawhub.ai/skills/advisor-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advisor-finder-405379b75693faad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and analyze potential academic advisors, supervisors, or faculty for a target university, school, department, or research direction. Use when the user a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntsl-ye",
+      "userId": "s17danhj76wq2493mkgq3tz36x859aae",
+      "displayName": "ntsl-ye",
+      "image": "https://avatars.githubusercontent.com/u/271961752?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778229309408,
+      "changelog": "Initial public release with bilingual docs, messy-site recovery flow, China top university hints, and CS dataset guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbb45c966623134f7fb89edcbe85859293eb8ff7686cad9c7fa32b1e7c7aab24"
+}

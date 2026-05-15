@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64925,
+  "uuid": "skill-clawhub-secondary-style-perturbation",
+  "skillKey": "clawhub-secondary-style-perturbation",
+  "name": "secondary-style-perturbation",
+  "summary": "对已初步处理的文本进行二次轻微扰动。用于第一轮重写后需要进一步降低风格一致性特征时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secondary_style_perturbation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhengqiZhuang",
+      "features": [
+        "对已初步处理的文本进行二次轻微扰动。用于第一轮重写后需要进一步降低风格一致性特征时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secondary-style-perturbation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122677241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secondary-style-perturbation",
+      "url": "https://clawhub.ai/skills/secondary-style-perturbation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secondary-style-perturbation",
+    "url": "https://clawhub.ai/skills/secondary-style-perturbation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secondary-style-perturbation-c52f7d0c3466b6ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secondary-style-perturbation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-secondary-style-perturbation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e45e90bbe9ebe86c365d6c1f2e34a61b8e00c56d2fc49c93f3ce4a8dd95d31e8",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:45:19.849Z"
+}

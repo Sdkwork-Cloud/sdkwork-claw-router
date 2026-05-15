@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67985,
+  "uuid": "skill-clawhub-daily-decision-making",
+  "skillKey": "clawhub-daily-decision-making",
+  "name": "daily-decision-making",
+  "summary": "一个结构化的个人决策数据库系统，帮助用户系统性地处理生活与职业中的复杂抉择。 当用户面临以下情况时使用此技能： (1) 遇到\"我该怎么办\"\"帮我做个决定\"\"我在 X 和 Y 之间纠结\"等表述； (2) 涉及职业（跳槽/转行）、生活方式（搬家）、重大消费（买房/买车）或人际关系的决策； (3) 需要系统性地权衡利弊...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_decision_making",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenChen",
+      "features": [
+        "一个结构化的个人决策数据库系统，帮助用户系统性地处理生活与职业中的复杂抉择。 当用户面临以下情况时使用此技能： (1) 遇到\"我该怎么办\"\"帮我做个决定\"\"我在 X 和 Y 之间纠结\"等表述."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-decision-making@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35963500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-decision-making",
+      "url": "https://clawhub.ai/skills/daily-decision-making"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-decision-making",
+    "url": "https://clawhub.ai/skills/daily-decision-making",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-decision-making-143e6a2901284296.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-decision-making@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-decision-making-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74f33f75f3ede7700d9d1fd53cfbdcf432450d28b39dd486e8da1c3b950b16db",
+      "artifactSizeBytes": 2843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:29:23.440Z"
+}

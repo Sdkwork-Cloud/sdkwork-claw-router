@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-extractor-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_extractor_skill",
+  "skill": {
+    "id": 56992,
+    "skillKey": "clawhub-wechat-article-extractor-skill",
+    "name": "微信公众号文章解析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-extractor-skill",
+    "url": "https://clawhub.ai/skills/wechat-article-extractor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-extractor-skill-70c5309c1291aa18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract metadata and content from WeChat Official Account articles. Use when user needs to parse WeChat article URLs (mp.weixin.qq.com), extract article info..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freestylefly",
+      "userId": "publishers:freestylefly",
+      "displayName": "苍何",
+      "image": "https://avatars.githubusercontent.com/u/43960064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1892,
+      "installsAllTime": 13,
+      "installsCurrent": 10,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771492989904,
+      "changelog": "- Removed the convert.js file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e6ff6987f7b3506704765f553010cb639c4c850b277553aec99a8b6e0530893"
+}

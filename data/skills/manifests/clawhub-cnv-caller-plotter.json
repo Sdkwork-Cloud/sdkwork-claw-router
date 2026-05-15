@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28459,
+  "uuid": "skill-clawhub-cnv-caller-plotter",
+  "skillKey": "clawhub-cnv-caller-plotter",
+  "name": "Cnv Caller Plotter",
+  "summary": "Detect copy number variations from whole genome sequencing data and generate publication-quality genome-wide CNV plots. Supports CNV calling, segmentation, a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnv_caller_plotter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Detect copy number variations from whole genome sequencing data and generate publication-qualit.",
+        "Supports CNV calling, segmentation, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnv-caller-plotter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnv-caller-plotter",
+      "url": "https://clawhub.ai/skills/cnv-caller-plotter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnv-caller-plotter",
+    "url": "https://clawhub.ai/skills/cnv-caller-plotter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnv-caller-plotter-4301937763188fca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnv-caller-plotter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnv-caller-plotter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c55b73067131ccca3747f08c188039a9cc376484b53bca5e6dd81f11fde50585",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:53:53.569Z"
+}

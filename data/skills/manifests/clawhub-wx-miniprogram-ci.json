@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64830,
+  "uuid": "skill-clawhub-wx-miniprogram-ci",
+  "skillKey": "clawhub-wx-miniprogram-ci",
+  "name": "微信小程序 CI 工具",
+  "summary": "微信小程序 CI 工具技能。支持构建、预览、云函数、云存储等全部 miniprogram-ci 能力。使用 Node.js 开发，跨平台，可配置。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_miniprogram_ci",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Super 9°",
+      "features": [
+        "微信小程序 CI 工具技能。支持构建、预览、云函数、云存储等全部 miniprogram-ci 能力。使用 Node.js 开发，跨平台，可配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wx-miniprogram-ci@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38002762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wx-miniprogram-ci",
+      "url": "https://clawhub.ai/skills/wx-miniprogram-ci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-miniprogram-ci",
+    "url": "https://clawhub.ai/skills/wx-miniprogram-ci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-miniprogram-ci-a821577514ebbca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wx-miniprogram-ci@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wx-miniprogram-ci-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6cab2d3af9fb8d97335c859143fe7c70b15d85c29ea7f5dd159cafe8306fe6c",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:47:00.653Z"
+}

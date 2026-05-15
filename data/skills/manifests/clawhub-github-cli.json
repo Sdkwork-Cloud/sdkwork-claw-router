@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8582,
+  "uuid": "skill-clawhub-github-cli",
+  "skillKey": "clawhub-github-cli",
+  "name": "Github Cli",
+  "summary": "Comprehensive GitHub CLI (gh) reference. Covers repos, issues, PRs, Actions, releases, gists, search, projects v2, API, secrets/variables, labels, codespaces...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tag",
+      "features": [
+        "Comprehensive GitHub CLI (gh) reference",
+        "Covers repos, issues, PRs, Actions, releases, gists, search, projects v2, API, secrets/variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260167501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-cli",
+      "url": "https://clawhub.ai/skills/github-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-cli",
+    "url": "https://clawhub.ai/skills/github-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-cli-2cefa4d19e580edc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bf02f4de8487b4c9a5b7f0c05f1e85724a203b7ee4ecbc997f73063ada2b274",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:00:55.479Z"
+}

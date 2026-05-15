@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "magicx-wechat-publisher",
+    "displayName": "WeChat Publisher 微信公众号发布",
+    "summary": "将已完成的文章发布到微信公众号草稿箱。只负责排版转换、图片上传、草稿提交，不负责文章内容生成。当用户要求\"发公众号\"\"上传草稿箱\"\"发布文章到公众号\"时触发此技能。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 803,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1772980051100,
+    "updatedAt": 1778305638112
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773064571032,
+    "changelog": "wechat-publisher 1.0.1\n\n- Clarified the scope: skill strictly handles Markdown/text to WeChat HTML conversion, image uploading, and draft submission; does not generate content.\n- Added detailed, step-by-step publishing workflow, including access_token retrieval, image upload, HTML conversion, draft upload, and user notification.\n- Defined comprehensive formatting and inline style rules for compliant WeChat public account articles.\n- Provided clear prohibited actions (e.g., no <style> tags, no base64 images) and a robust article structure template.\n- Updated tool and configuration usage details for seamless publishing via node scripts.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "youyouyoumagic",
+    "userId": "publishers:youyouyoumagic",
+    "displayName": "magicx",
+    "image": "https://avatars.githubusercontent.com/u/260561139?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305638112
+  }
+}

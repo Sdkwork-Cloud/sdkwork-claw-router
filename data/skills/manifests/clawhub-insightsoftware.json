@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31249,
+  "uuid": "skill-clawhub-insightsoftware",
+  "skillKey": "clawhub-insightsoftware",
+  "name": "Insightsoftware",
+  "summary": "Insightsoftware integration. Manage data, records, and automate workflows. Use when the user wants to interact with Insightsoftware data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insightsoftware",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Insightsoftware integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Insightsoftware data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insightsoftware@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insightsoftware",
+      "url": "https://clawhub.ai/skills/insightsoftware"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insightsoftware",
+    "url": "https://clawhub.ai/skills/insightsoftware",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insightsoftware-39f5d5ecdb5f33cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insightsoftware@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-insightsoftware-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:652e2ea2a0d37ad6dfbdcdc45ad030e265d427e2dafc0e59f1943baf2112e78a",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:32.719Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turboquant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turboquant",
+  "skill": {
+    "id": 35866,
+    "skillKey": "clawhub-turboquant",
+    "name": "TurboQuant Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turboquant",
+    "url": "https://clawhub.ai/skills/turboquant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turboquant-d0eaac23732d43de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress conversation context into a TurboQuant vector store inside OpenClaw memory, then retrieve the most relevant entries on demand to stay within token b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twacqwq",
+      "userId": "s177tshha0njz8epv0v0dytkfh83vdm1",
+      "displayName": "Twacqwq",
+      "image": "https://avatars.githubusercontent.com/u/69360546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774801197769,
+      "changelog": "Initial release:\n- MSE quantization for vector reconstruction\n- Product quantization for inner-product estimation\n- Context store with ingest/assemble/compact lifecycle\n- CLI tools: benchmark, compress, retrieve",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bd70131dc2d999affcce325ed6fddaa7be22d2f81cdcfdf6ade43daf43f7c59"
+}

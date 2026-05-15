@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duckduckgo-search-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duckduckgo_search_backup",
+  "skill": {
+    "id": 25987,
+    "skillKey": "clawhub-duckduckgo-search-backup",
+    "name": "Duckduckgo Search Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duckduckgo-search-backup",
+    "url": "https://clawhub.ai/skills/duckduckgo-search-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duckduckgo-search-backup-2b257c412f620846.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs web searches using DuckDuckGo to retrieve real-time information from the internet. Use when the user needs to search for current events, documentati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "macdesire",
+      "userId": "publishers:macdesire",
+      "displayName": "macdesire",
+      "image": "https://avatars.githubusercontent.com/u/209971671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773436727687,
+      "changelog": "Initial release of the DuckDuckGo web search skill.\n\n- Provides real-time web, news, image, video, and map searches using DuckDuckGo.\n- Does not require an API key and protects user privacy.\n- Supports region, safesearch, and timelimit customization.\n- Includes example scripts in both English and Chinese for quick integration.\n- Offers instant answers, search suggestions, and batch search capabilities.\n- Installation instructions provided for both pip and uv.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd22f6995432effa1418c2bd04c0313a6c6d32aa3f13ce4c2e87329143a52a50"
+}

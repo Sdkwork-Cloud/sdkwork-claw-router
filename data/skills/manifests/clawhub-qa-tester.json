@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23621,
+  "uuid": "skill-clawhub-qa-tester",
+  "skillKey": "clawhub-qa-tester",
+  "name": "qa tester",
+  "summary": "Strict QA and test engineering skill for fullstack repositories. Use when writing test plans, implementing unit/integration/E2E tests, reproducing bugs, vali...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bayu Dwi Satriyo",
+      "features": [
+        "Strict QA and test engineering skill for fullstack repositories",
+        "Use when writing test plans, implementing unit/integration/E2E tests, reproducing bugs, vali..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65289643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-tester",
+      "url": "https://clawhub.ai/skills/qa-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-tester",
+    "url": "https://clawhub.ai/skills/qa-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-tester-8e1023ec52d6c516.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cda3608775d969e45ca9a59741c3b431298fff7b595784424d1ebd0484e1336",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:07:08.961Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41904,
+  "uuid": "skill-clawhub-betaleadscore",
+  "skillKey": "clawhub-betaleadscore",
+  "name": "Beta Lead Scoring",
+  "summary": "AI-powered B2B lead scoring model. Predicts conversion probability for potential customers using machine learning (LightGBM + SHAP). CSV upload or API integr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betaleadscore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "AI-powered B2B lead scoring model",
+        "Predicts conversion probability for potential customers using machine learning (LightGBM + SHAP)",
+        "CSV upload or API integr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/betaleadscore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "betaleadscore",
+      "url": "https://clawhub.ai/skills/betaleadscore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betaleadscore",
+    "url": "https://clawhub.ai/skills/betaleadscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betaleadscore-8864e6826bf962be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/betaleadscore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-betaleadscore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68d8cdef737d9b5dfd3d637fd807552ad1f8215d0d8de6b5f063c6e7a9be2800",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:57:54.579Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vercel-to-cloudflare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_to_cloudflare",
+  "skill": {
+    "id": 19800,
+    "skillKey": "clawhub-vercel-to-cloudflare",
+    "name": "Vercel to Cloudflare Worker Migration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-to-cloudflare",
+    "url": "https://clawhub.ai/skills/vercel-to-cloudflare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-to-cloudflare-97f36f3592082929.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate Next.js projects from Vercel to Cloudflare Workers with Supabase/Hyperdrive support. Use when user wants to move a Next.js app off Vercel to reduce c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiafar",
+      "userId": "s171dacsa9hkrd446pra6ma8sd83q3hc",
+      "displayName": "jiafar",
+      "image": "https://avatars.githubusercontent.com/u/94378558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771552566526,
+      "changelog": "Initial release: Next.js + Supabase + Hyperdrive migration guide with analysis script",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:965eb60d89b1530de46705c98f90524c5b1cfa140d9d1ac3da9875fb6ee62b14"
+}

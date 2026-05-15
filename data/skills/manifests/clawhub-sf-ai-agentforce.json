@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40892,
+  "uuid": "skill-clawhub-sf-ai-agentforce",
+  "skillKey": "clawhub-sf-ai-agentforce",
+  "name": "Salesforce AI Agentforce",
+  "summary": "Agentforce Builder metadata path for Builder-managed topics/actions, Prompt Builder templates, GenAiFunction/GenAiPlugin, Models API, and custom Lightning ty...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_ai_agentforce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anush DSouza",
+      "features": [
+        "Agentforce Builder metadata path for Builder-managed topics/actions, Prompt Builder templates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-ai-agentforce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159198300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-ai-agentforce",
+      "url": "https://clawhub.ai/skills/sf-ai-agentforce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-ai-agentforce",
+    "url": "https://clawhub.ai/skills/sf-ai-agentforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-ai-agentforce-adf0ba546d8b4f3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-ai-agentforce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-ai-agentforce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37f0254df10cd021df965e7e3acba4c9b7009ffa8a8347e4d31632fb87d1d27a",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T00:27:48.711Z"
+}

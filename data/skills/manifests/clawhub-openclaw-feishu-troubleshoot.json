@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70288,
+  "uuid": "skill-clawhub-openclaw-feishu-troubleshoot",
+  "skillKey": "clawhub-openclaw-feishu-troubleshoot",
+  "name": "OpenClaw飞书问题排查",
+  "summary": "飞书插件问题排查工具。包含常见问题 FAQ 和深度诊断命令（/feishu_doctor）。 常见问题可随时查阅。诊断命令用于排查复杂问题（多次授权仍失败、自动授权无法解决等）， 会检查账户配置、API 连通性、应用权限、用户授权状态，并生成详细的诊断报告和解决方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_troubleshoot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenfa188",
+      "features": [
+        "飞书插件问题排查工具。包含常见问题 FAQ 和深度诊断命令（/feishu_doctor）。 常见问题可随时查阅。诊断命令用于排查复杂问题（多次授权仍失败、自动授权无法解决等）， 会检查账户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-feishu-troubleshoot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57471043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-feishu-troubleshoot",
+      "url": "https://clawhub.ai/skills/openclaw-feishu-troubleshoot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-troubleshoot",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-troubleshoot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-troubleshoot-84b3de3f83a28913.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-feishu-troubleshoot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-feishu-troubleshoot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f45dbcc503f8dd4b28ec571b8aaf96a851bea497436a5ba1f98b79bfe75c4836",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:10:14.262Z"
+}

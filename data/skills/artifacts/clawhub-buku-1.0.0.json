@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buku@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buku",
+  "skill": {
+    "id": 26255,
+    "skillKey": "clawhub-buku",
+    "name": "Buku"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buku",
+    "url": "https://clawhub.ai/skills/buku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buku-05ed9135baf4a09a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage bookmarks using buku CLI. Use when: adding/saving URLs, searching bookmarks, listing/browsing saved links, tagging bookmarks, importing/exporting book..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "god4saken",
+      "userId": "publishers:god4saken",
+      "displayName": "god4saken",
+      "image": "https://avatars.githubusercontent.com/u/185546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772529890666,
+      "changelog": "- Initial release with support for managing bookmarks using the buku CLI.\n- Add, search, list, update, and delete bookmarks with recommended non-interactive flags.\n- Import and export bookmarks in multiple formats (HTML, Markdown, JSON, org, db).\n- Manage tags, including listing, replacing, and deleting tags globally.\n- Emphasizes always using `--nostdin`, `--np`, and `--tacit` flags for seamless CLI operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3120264819aea8e7db0b390fb7b209bf0e4163a0d6830a4dbd64d0fff353f8eb"
+}

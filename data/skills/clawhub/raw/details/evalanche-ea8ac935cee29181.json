@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "evalanche",
+    "displayName": "Skill",
+    "summary": "Multi-EVM agent wallet SDK with onchain identity (ERC-8004), payment rails (x402), cross-chain liquidity (Li.Fi bridging + DEX aggregation + DeFi Composer),...",
+    "tags": {
+      "latest": "1.9.7"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 31
+    },
+    "createdAt": 1772129263514,
+    "updatedAt": 1778388467508
+  },
+  "latestVersion": {
+    "version": "1.9.7",
+    "createdAt": 1778238758853,
+    "changelog": "## Highlights\n\n- Hardened MCP HTTP mode so it now requires an explicit bearer token, binds to loopback by default, enforces request timeouts, and rejects oversized request bodies before parsing.\n- Routed high-risk execution helpers through active spending-policy checks, including approve-and-call, UUPS proxy upgrades, Li.Fi bridge/swap execution, and Gas.zip funding.\n- Tightened x402 paid-service hosting so settled endpoints require a settlement verifier by default, while preserving explicit `signed-intent` mode for trusted peer flows and tests.\n- Fixed Polymarket collateral normalization for live pUSD spender allowances, and made `pm_approve` / `pm_deposit` sync both wallet USDC.e -> CLOB approval and Polygon pUSD spender approvals.\n\n## Validation\n\n- `npm test`\n- `npm run typecheck`\n- `npm run build`\n\n## Notes\n\n- HTTP MCP users must now set `EVALANCHE_MCP_HTTP_TOKEN` or pass `startHTTP({ authToken })`.\n- Polymarket venue balance reads now prefer live pUSD spender approvals over the stale single-allowance assumption, with wallet-side USDC.e -> CLOB approval retained as fallback.\n- This release folds the previously prepared 1.9.4/1.9.5 hardening work together with the pending Polymarket allowance fix into one clean public release line: `v1.9.7`.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "ijaack",
+    "userId": "s17e3gjpsxfdsgxv67gc3hm3tx83g435",
+    "displayName": "Giacomo Barbieri",
+    "image": "https://avatars.githubusercontent.com/u/6631681?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388467508
+  }
+}

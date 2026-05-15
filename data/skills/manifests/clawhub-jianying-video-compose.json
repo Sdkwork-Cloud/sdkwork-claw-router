@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69626,
+  "uuid": "skill-clawhub-jianying-video-compose",
+  "skillKey": "clawhub-jianying-video-compose",
+  "name": "Jianying Video Compose",
+  "summary": "剪映API视频合成自动化。通过剪映代理API完成视频全流程制作，包括草稿创建、素材添加（图片/视频/音频）、文本字幕编辑、特效处理、云渲染导出。适用于需要批量生成视频、自动合成短视频、动态字幕视频等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jianying_video_compose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2719040953",
+      "features": [
+        "剪映API视频合成自动化。通过剪映代理API完成视频全流程制作，包括草稿创建、素材添加（图片/视频/音频）、文本字幕编辑、特效处理、云渲染导出。适用于需要批量生成视频、自动合成短视频、动态字."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jianying-video-compose@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136092094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jianying-video-compose",
+      "url": "https://clawhub.ai/skills/jianying-video-compose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jianying-video-compose",
+    "url": "https://clawhub.ai/skills/jianying-video-compose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jianying-video-compose-d88afba7fe668397.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jianying-video-compose@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jianying-video-compose-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4e655080ded463e981f27fcc18d905cd85f5d0b7c3cbea165d404701ebda842",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:40:56.666Z"
+}

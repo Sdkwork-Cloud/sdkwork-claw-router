@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39084,
+  "uuid": "skill-clawhub-appian-listpkg",
+  "skillKey": "clawhub-appian-listpkg",
+  "name": "Appian Listpkg",
+  "summary": "List all packages for an Appian application by UUID. Use when the user wants to see what packages exist in an application, or to find a package UUID before i...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_listpkg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "List all packages for an Appian application by UUID",
+        "Use when the user wants to see what packages exist in an application, or to find a package UUID."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-listpkg@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-listpkg",
+      "url": "https://clawhub.ai/skills/appian-listpkg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-listpkg",
+    "url": "https://clawhub.ai/skills/appian-listpkg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-listpkg-86a8a59bab410e26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-listpkg@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-listpkg-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb36c9436ee27c24875b87ae35a73ac78f589dc58d0090c59b0069746952653f",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:21:43.896Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13598,
+  "uuid": "skill-clawhub-movie",
+  "skillKey": "clawhub-movie",
+  "name": "Movie",
+  "summary": "Create films with AI video generation by managing scripts, prompts, consistency, and production workflows from concept to final cut.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Create films with AI video generation by managing scripts, prompts, consistency, and production."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/movie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "movie",
+      "url": "https://clawhub.ai/skills/movie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie",
+    "url": "https://clawhub.ai/skills/movie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-8a6ba32c9bed6ce7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/movie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-movie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2f0635834838d0d134830dc8ee8ca909ddfa507bb47f2aa3cf365d47f0dd74",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:32:06.561Z"
+}

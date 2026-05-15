@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48717,
+  "uuid": "skill-clawhub-gb-citation",
+  "skillKey": "clawhub-gb-citation",
+  "name": "gb-citation",
+  "summary": "Generate Chinese academic citations in strict GB/T 7714-2015 format from journal/book cover images or web links. Triggers when: (1) user sends an image of a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gb_citation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michelle-Lao",
+      "features": [
+        "Generate Chinese academic citations in strict GB/T 7714-2015 format from journal/book cover ima.",
+        "Triggers when: (1) user sends an image of a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gb-citation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257417998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gb-citation",
+      "url": "https://clawhub.ai/skills/gb-citation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gb-citation",
+    "url": "https://clawhub.ai/skills/gb-citation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gb-citation-678892d21097ac60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gb-citation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gb-citation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81dc866d36168f91e1b70ec1b42f3a646ed73f340bf225e714a58595161c7f65",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T03:54:29.699Z"
+}

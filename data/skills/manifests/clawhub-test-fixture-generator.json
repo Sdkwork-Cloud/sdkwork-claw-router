@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43594,
+  "uuid": "skill-clawhub-test-fixture-generator",
+  "skillKey": "clawhub-test-fixture-generator",
+  "name": "test-fixture-generator",
+  "summary": "Automatically generate pytest fixtures for databases, API mocks, and file handling with setup and teardown support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_fixture_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "Automatically generate pytest fixtures for databases, API mocks, and file handling with setup a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-fixture-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-fixture-generator",
+      "url": "https://clawhub.ai/skills/test-fixture-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-fixture-generator",
+    "url": "https://clawhub.ai/skills/test-fixture-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-fixture-generator-13892c12d99e742c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-fixture-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-fixture-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae4ffc49869141bb528cf25619d1037ef47faa48bab35ee173381fdb97a537ff",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:15:58.661Z"
+}

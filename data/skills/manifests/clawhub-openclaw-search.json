@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39530,
+  "uuid": "skill-clawhub-openclaw-search",
+  "skillKey": "clawhub-openclaw-search",
+  "name": "Openclaw Search",
+  "summary": "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Run web, multi-source, or last-30-days research through AIsa",
+        "Use when: the user needs search, synthesis, competitor scans, or trend discovery",
+        "Supports rese..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-search",
+      "url": "https://clawhub.ai/skills/openclaw-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-search",
+    "url": "https://clawhub.ai/skills/openclaw-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-search-5ca6d9a52ef5a4fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daea8f44db52025bd3b4cf5f282f3eff14f7fed6b1c62164b14ee82b764fef35",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:08:35.845Z"
+}

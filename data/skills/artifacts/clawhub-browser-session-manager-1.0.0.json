@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-session-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_session_manager",
+  "skill": {
+    "id": 14634,
+    "skillKey": "clawhub-browser-session-manager",
+    "name": "Browser Session Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-session-manager",
+    "url": "https://clawhub.ai/skills/browser-session-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-session-manager-fa3c556910907af5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage browser sessions for jimeng.jianying.com using Playwright by importing cookies/localStorage to automate video generation workflows with image upload a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingzl",
+      "userId": "s17etm6wrjeb7k53x666jfet2583pgn7",
+      "displayName": "石头",
+      "image": "https://avatars.githubusercontent.com/u/492952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1022,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771326776701,
+      "changelog": "Initial release – automate browser Session management for Jimeng AI video generation:\n\n- Complete end-to-end guide for automating Jimeng AI video creation using Playwright.\n- Covers browser session management with imported cookies and localStorage.\n- Details image compression (to WebP) for file size compliance.\n- Provides working Node.js script for full browser automation: authentication, form filling, image upload, and workflow steps.\n- Documents troubleshooting for common cookie/session issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:987d2264e62bc0ef94c7e1ba88f2406a18e87b113eec804db2370509934acf18"
+}

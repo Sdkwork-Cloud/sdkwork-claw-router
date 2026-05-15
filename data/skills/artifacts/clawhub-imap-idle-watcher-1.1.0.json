@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imap-idle-watcher@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_idle_watcher",
+  "skill": {
+    "id": 51172,
+    "skillKey": "clawhub-imap-idle-watcher",
+    "name": "IMAP IDLE Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-idle-watcher",
+    "url": "https://clawhub.ai/skills/imap-idle-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-idle-watcher-3c174c74ad85ae6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time email monitoring using IMAP IDLE — no OAuth, no token expiration. Sets up a persistent connection to any IMAP server (Gmail, Outlook, Yahoo, etc.)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axellageraldinc",
+      "userId": "publishers:axellageraldinc",
+      "displayName": "Axellageraldinc Adryamarthanino",
+      "image": "https://avatars.githubusercontent.com/u/19605159?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773824075452,
+      "changelog": "Add agent guidance for writing handlers, FROM/SUBJECT filtering docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d39d64eeb7991aa63de8d55d26547cb38c4bab1f8a7bef34590c28b61f765d3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_music",
+  "skill": {
+    "id": 22584,
+    "skillKey": "clawhub-minimax-music",
+    "name": "MiniMax Music Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-music",
+    "url": "https://clawhub.ai/skills/minimax-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-music-645caf2a7954a125.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music using MiniMax Music 2.5 API. Use when the user wants to: (1) generate instrumental/pure music, (2) generate songs with lyrics, (3) generate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rexdong1",
+      "userId": "s174xry739syxbyg0e0apckxfx83nvj2",
+      "displayName": "REXDONG1",
+      "image": "https://avatars.githubusercontent.com/u/163683126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775580558889,
+      "changelog": "Initial release: AI music generation with MiniMax Music 2.5 API. Supports instrumental music, songs with lyrics, and lyrics-only generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a41fb8577fc589bd1befa8ea5a159e39c4bfc08d475d2f461b16c03fdca10401"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21512,
+  "uuid": "skill-clawhub-audible-goodreads-deal-scout",
+  "skillKey": "clawhub-audible-goodreads-deal-scout",
+  "name": "Audible Goodreads Deal Scout",
+  "summary": "Evaluate an Audible daily promotion against Goodreads public score, optional Goodreads CSV shelves, optional freeform reading notes, optional delivery rules,...",
+  "version": "0.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audible_goodreads_deal_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lukas N.P. Egger",
+      "features": [
+        "Evaluate an Audible daily promotion against Goodreads public score, optional Goodreads CSV shel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audible-goodreads-deal-scout@0.1.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/833605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audible-goodreads-deal-scout",
+      "url": "https://clawhub.ai/skills/audible-goodreads-deal-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audible-goodreads-deal-scout",
+    "url": "https://clawhub.ai/skills/audible-goodreads-deal-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audible-goodreads-deal-scout-7862bcbddc983f75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audible-goodreads-deal-scout@0.1.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-audible-goodreads-deal-scout-0.1.13.json",
+      "version": "0.1.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd5ed07c8e77e2b45aa4242e44684f184d8fc85d344132c03add281ad980f23",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T20:33:10.598Z"
+}

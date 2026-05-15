@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20886,
+  "uuid": "skill-clawhub-recipe-create-task-list",
+  "skillKey": "clawhub-recipe-create-task-list",
+  "name": "Recipe Create Task List",
+  "summary": "Set up a new Google Tasks list with initial tasks.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_create_task_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Set up a new Google Tasks list with initial tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-create-task-list@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-create-task-list",
+      "url": "https://clawhub.ai/skills/recipe-create-task-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-create-task-list",
+    "url": "https://clawhub.ai/skills/recipe-create-task-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-create-task-list-7ae95a68496a70a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-create-task-list@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-create-task-list-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3055c499a1969df55c3d5ce4e85708333fd107a0e4d3c655b209c3b25f1aa274",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:18.308Z"
+}

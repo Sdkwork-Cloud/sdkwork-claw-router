@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-coding@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_coding",
+  "skill": {
+    "id": 33205,
+    "skillKey": "clawhub-deep-coding",
+    "name": "Deep Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-coding",
+    "url": "https://clawhub.ai/skills/deep-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-coding-9d24adfca3bcf512.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep coding multi-agent development system. Use when the user wants to build software projects using the Orchestrator to Builder to Reviewer workflow, mentio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "extraterrest",
+      "userId": "s17c17a2e992dacvjcg11mx3fh83t99j",
+      "displayName": "extraterrest",
+      "image": "https://avatars.githubusercontent.com/u/2050923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1775634166281,
+      "changelog": "Security fixes, relative paths, flexible Builder config, first-time setup guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba383a940e6f051f01dd9c3d8fab69eba873d577e5f6f9d9b5a65634c3dd7855"
+}

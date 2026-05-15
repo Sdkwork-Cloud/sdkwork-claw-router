@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8778,
+  "uuid": "skill-clawhub-apollo",
+  "skillKey": "clawhub-apollo",
+  "name": "Apollo",
+  "summary": "Interact with Apollo.io REST API (people/org enrichment, search, lists).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JhumanJ",
+      "features": [
+        "Interact with Apollo.io REST API (people/org enrichment, search, lists)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apollo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11312432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apollo",
+      "url": "https://clawhub.ai/skills/apollo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo",
+    "url": "https://clawhub.ai/skills/apollo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-8d3aa1a6f227d714.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apollo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apollo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26671ca95afaabc66bf333b8554b4dc42c1d2a3df1571f6931323768fcd985f9",
+      "artifactSizeBytes": 1724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-19T12:02:28.326Z"
+}

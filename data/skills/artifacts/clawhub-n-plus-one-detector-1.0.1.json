@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n-plus-one-detector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n_plus_one_detector",
+  "skill": {
+    "id": 43137,
+    "skillKey": "clawhub-n-plus-one-detector",
+    "name": "N Plus One Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n-plus-one-detector",
+    "url": "https://clawhub.ai/skills/n-plus-one-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n-plus-one-detector-d9ca6ddc9e2130b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect N+1 query problems in application code and ORM usage. Analyze database query patterns, find loops that generate excessive queries, and recommend fixes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593736415,
+      "changelog": "- No user-facing changes; version bump only.\n- No file modifications detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02859b8783a88c31b3d4f18ede9af3f2a24cbe3e5d4211c558a1a7dfa6582bef"
+}

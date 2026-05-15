@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gui-claw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_claw",
+  "skill": {
+    "id": 56044,
+    "skillKey": "clawhub-gui-claw",
+    "name": "GUI Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-claw",
+    "url": "https://clawhub.ai/skills/gui-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-claw-76116d355e904f77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GUI automation via visual detection. Clicking, typing, reading content, navigating menus, filling forms — all through screenshot → detect → act workflow. Sup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alfredjamesli",
+      "userId": "s179r11zwwd4taa9ypsxtg5t5583hsaf",
+      "displayName": "AlfredJamesLi",
+      "image": "https://avatars.githubusercontent.com/u/105028682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774872544635,
+      "changelog": "gui-claw 1.0.1\n\n- Major expansion of documentation and benchmarks, including detailed design principles, workflow descriptions, and visual method guidance.\n- Added OS-specific action definitions for Linux and macOS.\n- Introduced platform detection and setup scripts.\n- Expanded memory/app metadata coverage for multiple desktop apps.\n- Initial support for both macOS and Linux automated GUI actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a47ba93c8f1e8e02f0a6d39720411af233e0277b3edaa612d090fff4a2d76eac"
+}

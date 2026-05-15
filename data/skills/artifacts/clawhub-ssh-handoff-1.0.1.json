@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssh-handoff@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_handoff",
+  "skill": {
+    "id": 40054,
+    "skillKey": "clawhub-ssh-handoff",
+    "name": "SSH Handoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-handoff",
+    "url": "https://clawhub.ai/skills/ssh-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-handoff-fb81191903f56b06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and reuse a secure shared terminal handoff when a human must authenticate first and the agent must resume work in the same shell session afterward. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathan97480",
+      "userId": "s174q5afth5mzem9nx5degm81d844bdj",
+      "displayName": "Jonathan97480",
+      "image": "https://avatars.githubusercontent.com/u/59934702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775210383876,
+      "changelog": "Initial public release of ssh-handoff\nAdded human-auth-first terminal handoff workflow using tmux\nAdded plain tmux handoff mode\nAdded local browser terminal mode using ttyd\nAdded LAN-restricted browser terminal mode with one-shot token proxy\nAdded TTL-based automatic cleanup for temporary processes and runtime files\nAdded session cookie flow and one-shot token URL handling\nAdded optional trusted client IP restriction for LAN access\nAdded expected Host and websocket Origin checks in the proxy\nAdded FORBID_REUSE_IF_AUTHENTICATED safeguard\nAdded explicit approval flow before replacing an existing live session\nAdded conflict handling for existing sessions and occupied ports\nAdded stronger security documentation and external-channel guardrails\nAdded publication cleanup for generic examples and repository documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efb7d90e6ac58fb61b6ee0219291376550b7757aa6e4bbc6117c87523bae9dff"
+}

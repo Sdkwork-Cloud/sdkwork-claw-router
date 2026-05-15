@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lyx-openclaw-deploy@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyx_openclaw_deploy",
+  "skill": {
+    "id": 65908,
+    "skillKey": "clawhub-lyx-openclaw-deploy",
+    "name": "Openclaw Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyx-openclaw-deploy",
+    "url": "https://clawhub.ai/skills/lyx-openclaw-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyx-openclaw-deploy-6ecaedbca8db9c17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键打包和部署 OpenClaw 环境到任意服务器。自动移除敏感信息、支持本地/远程/批量部署、冲突处理、SHA256 完整性校验、详细日志与故障排查指南。适用于 OpenClaw 环境迁移、批量部署、团队标准化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyx058019",
+      "userId": "s17a33jrdt2b6ek1q67kw9hpsn83y6wn",
+      "displayName": "MicRabbit",
+      "image": "https://avatars.githubusercontent.com/u/15603130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774185596217,
+      "changelog": "fix: 修复PROJECT_DIR路径计算错误、ansible字段解析逻辑、macOS bash 3.2兼容性问题；新增--test离线验证模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e462ef7538d8766fdb56de9e9ba1bf0b3198ed8ea37d4030f72ca89d915a299"
+}

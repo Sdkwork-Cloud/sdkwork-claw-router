@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37017,
+  "uuid": "skill-clawhub-amplication",
+  "skillKey": "clawhub-amplication",
+  "name": "Amplication",
+  "summary": "Amplication integration. Manage data, records, and automate workflows. Use when the user wants to interact with Amplication data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amplication",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Amplication integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Amplication data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amplication@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amplication",
+      "url": "https://clawhub.ai/skills/amplication"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amplication",
+    "url": "https://clawhub.ai/skills/amplication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amplication-709424a55dd3bbd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amplication@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-amplication-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3555ab63396973bdb639b6fe86145da4c725da8931da9683f86f9bd04f318ee9",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:19:24.823Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-global-peer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_global_peer",
+  "skill": {
+    "id": 32802,
+    "skillKey": "clawhub-a-share-global-peer",
+    "name": "A-Share Global Peer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-global-peer",
+    "url": "https://clawhub.ai/skills/a-share-global-peer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-global-peer-201b4bcdf18457da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find global peer companies for A-share listed companies. Input an A-share company name or code, automatically match overseas listed companies (US, Europe, Ja..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laigen",
+      "userId": "s174c3qf7rzby58ss8ght6wmyd83hx75",
+      "displayName": "赖根",
+      "image": "https://avatars.githubusercontent.com/u/42961557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776133505259,
+      "changelog": "Version 1.0.2: No changes, republish to sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6948e81f3436c0244fdae51b8927080273127a7e73721b71561c3fb12438c325"
+}

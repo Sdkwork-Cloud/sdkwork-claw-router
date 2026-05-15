@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-scraper-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_scraper_skill",
+  "skill": {
+    "id": 8308,
+    "skillKey": "clawhub-playwright-scraper-skill",
+    "name": "Playwright Scraper Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-scraper-skill",
+    "url": "https://clawhub.ai/skills/playwright-scraper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-scraper-skill-91dd28fc1d084a6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Playwright-based web scraping OpenClaw Skill with anti-bot protection. Successfully tested on complex sites like Discuss.com.hk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waisimon",
+      "userId": "publishers:waisimon",
+      "displayName": "waisimon",
+      "image": "https://avatars.githubusercontent.com/u/26592019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 26592,
+      "installsAllTime": 289,
+      "installsCurrent": 279,
+      "stars": 55,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770470666815,
+      "changelog": "Initial ClawHub release: Pure Playwright with anti-bot protection, bilingual docs (EN/ZH), successfully tested on Discuss.com.hk",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc5e44f657da512fc6b65f4bbc191917652c30356db128870b0d451ca685f5d2"
+}

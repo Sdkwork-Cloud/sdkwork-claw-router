@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fliggy-trip-planner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fliggy_trip_planner",
+  "skill": {
+    "id": 68537,
+    "skillKey": "clawhub-fliggy-trip-planner",
+    "name": "fliggy-trip-planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fliggy-trip-planner",
+    "url": "https://clawhub.ai/skills/fliggy-trip-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fliggy-trip-planner-550977194f90fb6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能行程规划师，整合航班、酒店、景点数据，一键生成完整旅行方案。当用户需要规划旅行行程、制定旅游计划、安排度假方案或询问\"去哪里玩\"\"怎么安排行程\"时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunhanli7",
+      "userId": "s176f16nfzqvkqd6wxrb60c375841nsr",
+      "displayName": "厉云涵",
+      "image": "https://avatars.githubusercontent.com/u/5434045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775030899508,
+      "changelog": "- 新增执行前检查步骤，明确在规划前必须检测并安装 flyai 依赖，并提供具体命令。\n- 移除了单独的 fliggy-trip-planner-intro.md 引导文档。\n- 新增并完善了 README.md，用于集中说明和使用指引。\n- 其他行程规划逻辑与输出格式未发生变化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a96d92cad89059da731adaed66e9be1767058b8189727a226be265e667431e72"
+}

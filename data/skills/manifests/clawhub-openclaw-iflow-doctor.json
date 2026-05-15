@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18302,
+  "uuid": "skill-clawhub-openclaw-iflow-doctor",
+  "skillKey": "clawhub-openclaw-iflow-doctor",
+  "name": "Openclaw Iflow Doctor",
+  "summary": "AI-powered auto-repair system for OpenClaw with iflow integration. Automatically diagnose and fix crashes, config errors, model issues. Falls back to iflow-h...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_iflow_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kosei-echo",
+      "features": [
+        "AI-powered auto-repair system for OpenClaw with iflow integration",
+        "Automatically diagnose and fix crashes, config errors, model issues",
+        "Falls back to iflow-h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-iflow-doctor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253023790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-iflow-doctor",
+      "url": "https://clawhub.ai/skills/openclaw-iflow-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-iflow-doctor",
+    "url": "https://clawhub.ai/skills/openclaw-iflow-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-iflow-doctor-1417dfe7fedd69eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-iflow-doctor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-iflow-doctor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:365825194be3735ca15117f5ad25b9babbd9db16e9b0e258787566ce887ab6be",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T03:51:27.710Z"
+}

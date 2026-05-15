@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codeberg@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeberg",
+  "skill": {
+    "id": 57637,
+    "skillKey": "clawhub-codeberg",
+    "name": "Codeberg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeberg",
+    "url": "https://clawhub.ai/skills/codeberg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeberg-da1485ed3363abfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Codeberg using the `tea` CLI. Use `tea issue`, `tea pr`, `tea actions`, and `tea api` for issues, PRs, Actions, and advanced queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "razzeee",
+      "userId": "publishers:razzeee",
+      "displayName": "razzeee",
+      "image": "https://avatars.githubusercontent.com/u/5943908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770599520386,
+      "changelog": "Initial release of the Codeberg skill.\n\n- Enables interaction with Codeberg repositories using the `tea` CLI.\n- Supports managing issues, pull requests, and CI/CD actions via simple commands.\n- Provides advanced data access using the `tea api` command.\n- Includes setup instructions for authentication and login management.\n- Compatible installation options offered via Homebrew and Go.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34e79e3a138c4a911a4cdcaafe2eaeebf5cac74bd53a73f65629ae2bd304dc69"
+}

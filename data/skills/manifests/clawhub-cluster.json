@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25826,
+  "uuid": "skill-clawhub-cluster",
+  "skillKey": "clawhub-cluster",
+  "name": "Cluster",
+  "summary": "Perform data clustering analysis using k-means and hierarchical algorithms. Use when you need to group, classify, or segment datasets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cluster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Perform data clustering analysis using k-means and hierarchical algorithms",
+        "Use when you need to group, classify, or segment datasets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cluster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cluster",
+      "url": "https://clawhub.ai/skills/cluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cluster",
+    "url": "https://clawhub.ai/skills/cluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cluster-164cf1ca8391532e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cluster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cluster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d2388cff6992cf78bda81d7945d2a2591be17afdd5c1e5e3517c94f0da33198",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:34:11.750Z"
+}

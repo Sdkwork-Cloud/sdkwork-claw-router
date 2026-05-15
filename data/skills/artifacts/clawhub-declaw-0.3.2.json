@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/declaw@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.declaw",
+  "skill": {
+    "id": 19804,
+    "skillKey": "clawhub-declaw",
+    "name": "Declaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "declaw",
+    "url": "https://clawhub.ai/skills/declaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/declaw-8de5cb61b9546c52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Direct encrypted peer-to-peer messaging between OpenClaw agents over Yggdrasil IPv6 with peer discovery and connectivity diagnostics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jing-yilin",
+      "userId": "s171d8zqepvg935z97r9dvshf983gcmy",
+      "displayName": "Yilin",
+      "image": "https://avatars.githubusercontent.com/u/69336584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 590,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1773044671494,
+      "changelog": "- Bump version to 0.3.2.\n- SKILL.md: Update version metadata to \"0.3.2\".\n- No functional or behavior changes; documentation/metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b7470d0d7763f760a50bbb0617ed3373ab79a2c864f4f948675acb9978840a6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llamacpp-bench@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llamacpp_bench",
+  "skill": {
+    "id": 38063,
+    "skillKey": "clawhub-llamacpp-bench",
+    "name": "llama.cpp Benchmark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llamacpp-bench",
+    "url": "https://clawhub.ai/skills/llamacpp-bench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llamacpp-bench-44cfe24ae7f92216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run llama.cpp benchmarks on GGUF models to measure prompt processing (pp) and token generation (tg) performance. Use when the user wants to benchmark LLM mod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexhegit",
+      "userId": "s171kf01snarhftw5mqx3k0zas849cy4",
+      "displayName": "alexhegit",
+      "image": "https://avatars.githubusercontent.com/u/31022192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775348612173,
+      "changelog": "Initial release: benchmark GGUF models with llama-bench, auto-detect llama-bench, batch benchmarking, and build/update llama.cpp from source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd75e639c77d1d0a9132fc1990d98b0a390d3358e45132209269c664359e94d4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-travel-activities@3.2.1",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_travel_activities",
+  "skill": {
+    "id": 19670,
+    "skillKey": "clawhub-aerobase-travel-activities",
+    "name": "Aerobase Travel Activities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-travel-activities",
+    "url": "https://clawhub.ai/skills/aerobase-travel-activities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-travel-activities-5a6797fcb747f3b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover near-airport and destination activities with ratings, reviews, and booking context"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.2.1",
+      "createdAt": 1774917278827,
+      "changelog": "Fix pricing to $9.95/mo, remove broken X-Api-Key fallback, add auth protocol to all Pro skills, fix broken endpoint references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:671cd330250b21cb25f355b2f1196f004cf3aeffb311d8eeb5a2c68da88a8133"
+}

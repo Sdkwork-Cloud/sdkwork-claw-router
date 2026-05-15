@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semantic-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_search",
+  "skill": {
+    "id": 60938,
+    "skillKey": "clawhub-semantic-search",
+    "name": "semantic-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-search",
+    "url": "https://clawhub.ai/skills/semantic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-search-a5dd8d753b254c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业级语义检索技能，支持表格/字段/文件搜索和 Text-to-SQL 数据生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sevenal",
+      "userId": "publishers:sevenal",
+      "displayName": "Sevenal",
+      "image": "https://avatars.githubusercontent.com/u/49686788?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772615136268,
+      "changelog": "Initial release of the semantic-search skill.\n\n- Supports enterprise-level semantic search for tables, fields, files, and Text-to-SQL data generation.\n- Integrates with LanceDB (FlightSQL) for vector/BM25 hybrid search.\n- Provides rerank functionality, LLM-based intent recognition, and SQL generation.\n- Includes workflow orchestration via LangGraph.\n- Offers Python and OpenClaw invocation examples, performance indicators, and troubleshooting guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:294e70d4c04a3875c2449a4b063efacb2bd69719ac38e042b2c22e5e14a2bd74"
+}

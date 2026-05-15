@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62407,
+  "uuid": "skill-clawhub-my-stock-tradeagents-rebuild-skill",
+  "skillKey": "clawhub-my-stock-tradeagents-rebuild-skill",
+  "name": "my_stock_tradeagents_rebuild_skill",
+  "summary": "当且仅当用户明确提出“重新构建tradeagents”或类似高度相关指令时触发。主要功能为在 ~/TradingAgents 目录下重新创建并激活 Python 虚拟环境，安装包及依赖，最后总结修改并推送到远程仓库。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_tradeagents_rebuild_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "当且仅当用户明确提出“重新构建tradeagents”或类似高度相关指令时触发。主要功能为在 ~/TradingAgents 目录下重新创建并激活 Python 虚拟环境，安装包及依赖，最后."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-stock-tradeagents-rebuild-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-stock-tradeagents-rebuild-skill",
+      "url": "https://clawhub.ai/skills/my-stock-tradeagents-rebuild-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-tradeagents-rebuild-skill",
+    "url": "https://clawhub.ai/skills/my-stock-tradeagents-rebuild-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-tradeagents-rebuild-skill-790cdf03120a1cc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-stock-tradeagents-rebuild-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-tradeagents-rebuild-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6eced3e70ce3e189f5a8318e76cb124abbfa480cbb06a2408eab58d2c1af305",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:14:22.603Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtip-weather-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtip_weather_bak",
+  "skill": {
+    "id": 71022,
+    "skillKey": "clawhub-clawtip-weather-bak",
+    "name": "Clawtip Weather.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtip-weather-bak",
+    "url": "https://clawhub.ai/skills/clawtip-weather-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtip-weather-bak-1413b573ac5f4885.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一位精通天气领域的专家，能够根据用户所在位置提供准确的每日天气报告。这是一项付费服务，执行前需完成支付验证。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liulian822",
+      "userId": "s17a3w4bemy5rs8nhqvs0cbvt584zt98",
+      "displayName": "liulian822",
+      "image": "https://avatars.githubusercontent.com/u/19779573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776341552300,
+      "changelog": "clawtip-weather v1.0.0 – 初始发布\n\n- 新增专业天气报告专家服务，严格分为订单创建、支付验证、报告执行三大阶段。\n- 实现全流程支付验证，只允许通过 `clawtip` 技能进行支付处理。\n- 明确失败处理流程：如订单创建失败，立刻终止并通俗反馈错误详情。\n- 优化用户交互规范：全程以中文沟通，需展示服务逻辑及费用明细。\n- 自动处理订单和支付结果，支持用户提供现有订单号和支付凭据直接进入报告生成环节。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:059459f80a09898d62e96194c8d7f1077feede5b0e896135436359012691d063"
+}

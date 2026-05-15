@@ -24,7 +24,7 @@ use sdkwork_claw_product::ports::{
 };
 use tower::ServiceExt;
 
-const API_KEYS_PATH: &str = "/app/v3/api/router/api-keys";
+const API_KEYS_PATH: &str = "/app/v3/api/iam/api_keys";
 const TRUSTED_SUBJECT_SECRET: &str = "trusted-subject-secret-0123456789";
 const APP_SESSION_SECRET: &str = "app-session-secret-0123456789abcd";
 
@@ -139,8 +139,16 @@ fn session_authorization_header(
         operator_id: user_id,
         operator_type: 1,
     };
-    let token = sign_app_session_token(&app_session_config(), subject, issued_at, expires_at);
-    builder.header("authorization", format!("Bearer {token}"))
+    let auth_token = sign_app_session_token(&app_session_config(), subject, issued_at, expires_at);
+    let access_token = sign_app_session_token(
+        &app_session_config(),
+        subject,
+        issued_at + 1,
+        expires_at + 1,
+    );
+    builder
+        .header("authorization", format!("Bearer {auth_token}"))
+        .header("Sdkwork-Access-Token", access_token)
 }
 
 fn signed_subject_headers(
@@ -310,7 +318,7 @@ async fn injected_product_catalog_serves_app_api_keys_without_secret_material() 
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/api-keys")
+                .uri(API_KEYS_PATH)
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -354,7 +362,7 @@ async fn injected_product_catalog_serves_app_model_catalog_without_secret_materi
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/app/v3/api/router/models")
+                .uri("/app/v3/api/ai/models")
                 .body(Body::empty())
                 .unwrap(),
         )

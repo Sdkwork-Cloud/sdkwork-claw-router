@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39863,
+  "uuid": "skill-clawhub-economic-calendar-fetcher-zc",
+  "skillKey": "clawhub-economic-calendar-fetcher-zc",
+  "name": "Economic Calendar Fetcher Zc",
+  "summary": "Fetch scheduled upcoming economic events and data releases from FMP API for specified date ranges with impact assessment in chronological markdown format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_calendar_fetcher_zc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lean-zhouchao",
+      "features": [
+        "Fetch scheduled upcoming economic events and data releases from FMP API for specified date rang."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/economic-calendar-fetcher-zc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23061177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "economic-calendar-fetcher-zc",
+      "url": "https://clawhub.ai/skills/economic-calendar-fetcher-zc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-calendar-fetcher-zc",
+    "url": "https://clawhub.ai/skills/economic-calendar-fetcher-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-calendar-fetcher-zc-7ed6c9864b4d0ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/economic-calendar-fetcher-zc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-economic-calendar-fetcher-zc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3adc0d48e842a6f45ad9fd21cd5d8fdcfe07e4ac61665f0c71673d9128f529da",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T01:03:59.852Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zaker-hot-news@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zaker_hot_news",
+  "skill": {
+    "id": 59437,
+    "skillKey": "clawhub-zaker-hot-news",
+    "name": "ZAKER hot news 头条新闻"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zaker-hot-news",
+    "url": "https://clawhub.ai/skills/zaker-hot-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zaker-hot-news-a144430ff8d3f11d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取ZAKER聚合权威媒体的最新头条新闻与热点资讯。Use when the user asks about 新闻, 头条, 最新新闻, 今日新闻, 热点新闻, 突发新闻, 国内外大事, 最近发生了什么, 有什么新鲜事, trending news, latest news, headlines, breakin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaker-coder",
+      "userId": "s177c2gj6d5ztj0tca7ntw617s843myt",
+      "displayName": "ZAKER",
+      "image": "https://avatars.githubusercontent.com/u/129352537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776311434471,
+      "changelog": "No changes detected in this version.  \n- Version bumped to 1.0.6, but no file or documentation changes were made.  \n- All features and behavior remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96d707020c4f3e1b01927523da43841042697167ad369bd603795e0708d17f19"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-face-merge-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_face_merge_cli_skill",
+  "skill": {
+    "id": 55979,
+    "skillKey": "clawhub-ai-face-merge-cli-skill",
+    "name": "AI Face Merge: Free Online AI Face Morph & Face Merge Tool – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-face-merge-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-face-merge-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-face-merge-cli-skill-365d34eb835cc514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI face merge — blend two faces together into a single realistic portrait"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775972394076,
+      "changelog": "- Initial release of ai-face-merge-cli-skill.\n- Blend two face images into a single realistic portrait using the weshop CLI.\n- Requires weshop-cli and a WESHOP_API_KEY environment variable.\n- Includes a secure workflow for handling API keys—never expose your key on the command line.\n- Supports custom prompts and batching; Image 2 serves as the baseline for merging.\n- Detailed output includes result status and direct URLs to merged images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6282eb42e18c7274184c26affaa90aed5aec9c4982fdc188a33372a1a98c96e3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23233,
+  "uuid": "skill-clawhub-legend-file-organizer",
+  "skillKey": "clawhub-legend-file-organizer",
+  "name": "File Organizer",
+  "summary": "File organization and batch operations for workspace management. Use when organizing files for: (1) Moving files to correct directories, (2) Batch renaming (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legend_file_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dougchambers",
+      "features": [
+        "File organization and batch operations for workspace management",
+        "Use when organizing files for: (1) Moving files to correct directories, (2) Batch renaming (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legend-file-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48635513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legend-file-organizer",
+      "url": "https://clawhub.ai/skills/legend-file-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legend-file-organizer",
+    "url": "https://clawhub.ai/skills/legend-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legend-file-organizer-4c8ce212974667c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legend-file-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legend-file-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdaa2d28debda434086e0743ad95d609566ce62b13613899cbf8e1615176a170",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:16:26.539Z"
+}

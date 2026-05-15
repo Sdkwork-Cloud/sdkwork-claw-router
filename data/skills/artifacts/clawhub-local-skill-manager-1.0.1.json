@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-skill-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_skill_manager",
+  "skill": {
+    "id": 62178,
+    "skillKey": "clawhub-local-skill-manager",
+    "name": "local-skill-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-skill-manager",
+    "url": "https://clawhub.ai/skills/local-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-skill-manager-cbc1bbf9286fae3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地 Skill 目录的集中管理工具（\"Skill 管家\"）。当用户想要： (1) 列出或查询已安装的 Skill（系统级或用户级）； (2) 检查各 Skill 的版本信息； (3) 使用标准模板快速创建新的本地 Skill； (4) 删除或移除不再需要的 Skill。 请使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchen913",
+      "userId": "s17670xd33xa3nynmgr1k8y8j183gy1c",
+      "displayName": "ChenChen",
+      "image": "https://avatars.githubusercontent.com/u/35963500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 749,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774001013644,
+      "changelog": "local-skill-manager v1.0.1 focuses on enhanced Skill 安全移除 support:\n\n- 删除 Skill 操作新增多层安全保护，包括路径名校验、受保护 Skill 拦截、路径遍历防护和软链接警告。\n- 删除脚本支持 `--dry-run` 预览和 `--force` 强制删除参数。\n- 推荐先用 `--dry-run` 参数确认将要删除的内容。\n- 其余说明及功能未变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2855af4d7befc43833325b321cb3ea85aee56e4ae10c45836131d685fcf0dd12"
+}

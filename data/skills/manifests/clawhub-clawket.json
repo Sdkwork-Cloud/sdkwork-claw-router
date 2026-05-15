@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20894,
+  "uuid": "skill-clawhub-clawket",
+  "skillKey": "clawhub-clawket",
+  "name": "Clawket",
+  "summary": "Generate QR codes for Clawket mobile app to pair with the local OpenClaw Gateway. Use when user mentions: Clawket pairing, login Clawket, QR code, mobile app...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawket",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cavano",
+      "features": [
+        "Generate QR codes for Clawket mobile app to pair with the local OpenClaw Gateway",
+        "Use when user mentions: Clawket pairing, login Clawket, QR code, mobile app..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawket@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51314472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawket",
+      "url": "https://clawhub.ai/skills/clawket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawket",
+    "url": "https://clawhub.ai/skills/clawket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawket-ae9b8c53e2b14405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawket@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawket-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:836258c74d5cac7953542edfa624c57caaa6470230470777d99cccda33367bd1",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:11:59.385Z"
+}

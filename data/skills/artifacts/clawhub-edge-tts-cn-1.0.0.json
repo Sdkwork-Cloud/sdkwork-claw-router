@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-tts-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_cn",
+  "skill": {
+    "id": 29716,
+    "skillKey": "clawhub-edge-tts-cn",
+    "name": "Edge TTS CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-cn",
+    "url": "https://clawhub.ai/skills/edge-tts-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-cn-788113a52c103219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech conversion using node-edge-tts npm package for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch contro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774057834713,
+      "changelog": "Initial release with CN suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9965c003b985c19c4a5cac491a59168800f81b2d7e902b3f2537661a8c4d7294"
+}

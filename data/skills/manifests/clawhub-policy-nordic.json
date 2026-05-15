@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71697,
+  "uuid": "skill-clawhub-policy-nordic",
+  "skillKey": "clawhub-policy-nordic",
+  "name": "🇪🇺 北欧市场政策查询Skill",
+  "summary": "基于惠迈智能体架构，智能查询并分析北欧及澳新加地区市场政策、法规与投资环境，支持多语言与多数据源配置。无需API Key，安装即用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_nordic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "基于惠迈智能体架构，智能查询并分析北欧及澳新加地区市场政策、法规与投资环境，支持多语言与多数据源配置。无需API Key，安装即用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/policy-nordic@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "policy-nordic",
+      "url": "https://clawhub.ai/skills/policy-nordic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-nordic",
+    "url": "https://clawhub.ai/skills/policy-nordic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-nordic-a06298d9ffffed97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/policy-nordic@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-policy-nordic-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7d27bc2d3cbe167a1d8fca6b8e3f0c67e8e8fc27ca6f3e68890a9adc9e68e70",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:34:56.330Z"
+}

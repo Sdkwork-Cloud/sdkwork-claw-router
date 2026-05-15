@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41750,
+  "uuid": "skill-clawhub-dir-text-search",
+  "skillKey": "clawhub-dir-text-search",
+  "name": "Dir Text Search",
+  "summary": "This skill should be used when the user wants to search for text or regex patterns inside a directory, including inside ZIP / RAR / TAR / 7z archives recursi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dir_text_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TryLoveCatch",
+      "features": [
+        "This skill should be used when the user wants to search for text or regex patterns inside a dir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dir-text-search@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5811464?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dir-text-search",
+      "url": "https://clawhub.ai/skills/dir-text-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dir-text-search",
+    "url": "https://clawhub.ai/skills/dir-text-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dir-text-search-ae4840c143b6ca9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dir-text-search@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dir-text-search-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da652937fff71e5d3b6cecffa884dae2e953126ef8bf099066c2cb0fb0d22333",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:20:12.345Z"
+}

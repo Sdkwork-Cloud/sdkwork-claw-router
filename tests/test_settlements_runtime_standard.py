@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -123,10 +123,10 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn(f"readNumber(item, '{field}')", service)
         self.assertIn("readDecimalString", service)
         self.assertIn(
-            "getClawRouterAppSdkClient().router.fetchDashboardData(toSettlementDashboardQueryParams(params))",
+            "getClawRouterAppSdkClient().billing.settlements.dashboard.list(",
             service,
         )
-        self.assertNotIn("getClawRouterAppSdkClient().router.fetchDashboardData(params)", service)
+        self.assertNotIn("getClawRouterAppSdkClient().router.fetchDashboardData", service)
         self.assertNotIn("fetch('/app/v3/api", service)
         self.assertNotIn("axios", service)
 
@@ -221,8 +221,8 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_router = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+        sdk_billing = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
@@ -236,15 +236,15 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: SettlementDashboardResponse", contract)
         self.assertIn('"SettlementDashboardResponse"', openapi)
-        self.assertIn('"FetchDashboardDataResult"', openapi)
+        self.assertIn('"SettlementsDashboardListResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/SettlementDashboardResponse"', openapi)
-        self.assertIn("async fetchDashboardData(params?: QueryParams): Promise<FetchDashboardDataResult>", sdk_router)
-        self.assertIn("get<FetchDashboardDataResult>", sdk_router)
+        self.assertIn("async list(params?: BillingSettlementsDashboardListParams): Promise<SettlementsDashboardListResult>", sdk_billing)
+        self.assertIn("get<SettlementsDashboardListResult>", sdk_billing)
 
-        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "settlement-dashboard-response.ts"
-        chart_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "settlement-chart-point.ts"
-        bill_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "settlement-bill.ts"
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-dashboard-data-result.ts"
+        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "settlement-dashboard-response.ts"
+        chart_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "settlement-chart-point.ts"
+        bill_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "settlement-bill.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "settlements-dashboard-list-result.ts"
         self.assertTrue(response_path.exists())
         self.assertTrue(chart_path.exists())
         self.assertTrue(bill_path.exists())

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/imam@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imam",
+  "skill": {
+    "id": 24717,
+    "skillKey": "clawhub-imam",
+    "name": "Imam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imam",
+    "url": "https://clawhub.ai/skills/imam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imam-dbf5584beb6deac6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual Imam that leads the five daily Islamic prayers via voice, delivers Friday Jumu'ah khutbahs, and interacts with mussalis in multiple languages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "almaas21",
+      "userId": "publishers:almaas21",
+      "displayName": "almaas21",
+      "image": "https://avatars.githubusercontent.com/u/44881468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772279056178,
+      "changelog": "Version 0.1.1 introduces essential reference files and a prayer times script.\n\n- Added comprehensive reference files for Adhan, Adhkar (post-salah), Khutbah template, supported languages, and detailed Salah steps.\n- Included a prayer_times.py script for time-based prayer determination.\n- No changes to the main skill logic or user-facing behavior—content only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a740eb70b1b563904186bb409c376d199b810448d0a57f51dea08028543cbd0"
+}

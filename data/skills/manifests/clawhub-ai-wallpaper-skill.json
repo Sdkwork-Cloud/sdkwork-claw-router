@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66579,
+  "uuid": "skill-clawhub-ai-wallpaper-skill",
+  "skillKey": "clawhub-ai-wallpaper-skill",
+  "name": "ai-wallpaper-skill",
+  "summary": "一个能够根据用户提示词生成 AI 图片并自动将其设置为桌面壁纸的能力模块。当用户提到“换壁纸”、“生成桌面”、“设置背景”等需求时触发。当前实现支持 Windows 和 macOS。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_wallpaper_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张春乔",
+      "features": [
+        "一个能够根据用户提示词生成 AI 图片并自动将其设置为桌面壁纸的能力模块。当用户提到“换壁纸”、“生成桌面”、“设置背景”等需求时触发。当前实现支持 Windows 和 macOS。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-wallpaper-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83450930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-wallpaper-skill",
+      "url": "https://clawhub.ai/skills/ai-wallpaper-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-wallpaper-skill",
+    "url": "https://clawhub.ai/skills/ai-wallpaper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-wallpaper-skill-1a0418c34b6cc8b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-wallpaper-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-wallpaper-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:019bd5a1bb4f1514c18bca41c1c4298a2fafbb98f9f7ab006ce8db09f2d91b18",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:13:34.929Z"
+}

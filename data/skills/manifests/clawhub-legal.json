@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9493,
+  "uuid": "skill-clawhub-legal",
+  "skillKey": "clawhub-legal",
+  "name": "Legal",
+  "summary": "Think through any legal situation like a lawyer. Issue spotting, jurisdiction, risk assessment, actionable conclusions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Think through any legal situation like a lawyer",
+        "Issue spotting, jurisdiction, risk assessment, actionable conclusions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal",
+      "url": "https://clawhub.ai/skills/legal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal",
+    "url": "https://clawhub.ai/skills/legal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-a708df92c9e46229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5053cfdd5a2375e37199978037c3a44b8196bca9e309c2c26a25db0d0d9aa463",
+      "artifactSizeBytes": 1780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:49:25.324Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reelsmith@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reelsmith",
+  "skill": {
+    "id": 41989,
+    "skillKey": "clawhub-reelsmith",
+    "name": "Reelsmith"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reelsmith",
+    "url": "https://clawhub.ai/skills/reelsmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reelsmith-50de326be041805e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create short-form vertical video packages, preview reels, narrated reels, and AI-video workflows from ideas, articles, updates, or source material. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "normandmickey",
+      "userId": "s17504w3q54r4t2d5kj6as01f183g3z3",
+      "displayName": "normandmickey",
+      "image": "https://avatars.githubusercontent.com/u/2455566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775212264579,
+      "changelog": "Adds narrated reel workflows, visual preview mode, LTX AI video backend, and updated packaging for current Facebook/X short-form publishing workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ecf863014edc1e0c70ad84a8ec96295bbfe4e393190013f71b593250227ac54"
+}

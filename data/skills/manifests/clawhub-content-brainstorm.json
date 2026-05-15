@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55869,
+  "uuid": "skill-clawhub-content-brainstorm",
+  "skillKey": "clawhub-content-brainstorm",
+  "name": "Content Brainstorm 自媒体选题策划",
+  "summary": "Social media content ideation engine. Generates a 7-day topic plan with titles, angles, SEO keywords, and trend scores for any niche and platform.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_brainstorm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexandrali1989-cell",
+      "features": [
+        "Social media content ideation engine",
+        "Generates a 7-day topic plan with titles, angles, SEO keywords, and trend scores for any niche."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-brainstorm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239550352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-brainstorm",
+      "url": "https://clawhub.ai/skills/content-brainstorm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-brainstorm",
+    "url": "https://clawhub.ai/skills/content-brainstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-brainstorm-0d6641912c1bef14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-brainstorm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-brainstorm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d68533a955c066a07a6cef220c2f581c29daf0edd9fd9d0b54e272391f3c4c5",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:13:51.005Z"
+}

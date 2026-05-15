@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9808,
+  "uuid": "skill-clawhub-agent-swarm",
+  "skillKey": "clawhub-agent-swarm",
+  "name": "Agent Swarm",
+  "summary": "IMPORTANT: OpenRouter is required. Routes tasks to the right model and always delegates work through sessions_spawn.",
+  "version": "1.7.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_swarm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "IMPORTANT: OpenRouter is required",
+        "Routes tasks to the right model and always delegates work through sessions_spawn."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-swarm@1.7.19",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-swarm",
+      "url": "https://clawhub.ai/skills/agent-swarm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-swarm",
+    "url": "https://clawhub.ai/skills/agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-swarm-8503efa580bd94bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-swarm@1.7.19",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-swarm-1.7.19.json",
+      "version": "1.7.19",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61ad5b00ddd54f624c1ccc84f52249217629cbb718dad4b3748365d8f04613e6",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T18:50:21.159Z"
+}

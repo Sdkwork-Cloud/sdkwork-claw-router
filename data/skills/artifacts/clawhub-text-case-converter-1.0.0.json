@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-case-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_case_converter",
+  "skill": {
+    "id": 36618,
+    "skillKey": "clawhub-text-case-converter",
+    "name": "Text Case Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-case-converter",
+    "url": "https://clawhub.ai/skills/text-case-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-case-converter-37e3c02c05d6c311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert text in a file to upper, lower, or title case. Use when the user wants to change the capitalization of text in a file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinwangmok",
+      "userId": "s1724v3p011w6ed31wyzjmnvbd83pd0b",
+      "displayName": "목진왕",
+      "image": "https://avatars.githubusercontent.com/u/80076897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774711622621,
+      "changelog": "Initial release of text-case-converter\n\n- Easily convert file text to upper, lower, or title case via command line.\n- Supports simple usage: specify file path and desired case (default is upper).\n- Outputs conversion result with clear STATUS messages for success or errors.\n- Requires Bash with tr and awk available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:758b1506798ae301c4ca1853d07c11fcc936e06f81cc9c4e450b501e16d2af40"
+}

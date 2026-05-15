@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preny-analytics@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preny_analytics",
+  "skill": {
+    "id": 58372,
+    "skillKey": "clawhub-preny-analytics",
+    "name": "Preny Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preny-analytics",
+    "url": "https://clawhub.ai/skills/preny-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preny-analytics-a49ce9520750f3f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kết nối trực tiếp với Preny AI Chatbot để tự động tổng hợp và phân tích dữ liệu bán hàng theo thời gian thực."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nguyentdam",
+      "userId": "s175b18qxn747cq0n2fv69er7d845pvr",
+      "displayName": "NGUYENTDAM",
+      "image": "https://avatars.githubusercontent.com/u/57799342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1775188903921,
+      "changelog": "Simplify setup - only token needed, API URL hardcoded (not sensitive)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d777cdbc19991da833a7947bf2aa02e2337e97fe6a99ff495a2e60e9cd20ab9e"
+}

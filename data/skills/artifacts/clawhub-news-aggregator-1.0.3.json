@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-aggregator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_aggregator",
+  "skill": {
+    "id": 62071,
+    "skillKey": "clawhub-news-aggregator",
+    "name": "News Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-aggregator",
+    "url": "https://clawhub.ai/skills/news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-aggregator-32f1798fbcdd0f9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "httencn",
+      "userId": "publishers:httencn",
+      "displayName": "htten",
+      "image": "https://avatars.githubusercontent.com/u/143494236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13852,
+      "installsAllTime": 150,
+      "installsCurrent": 144,
+      "stars": 12,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771925644779,
+      "changelog": "- Output format updated: news titles now include links directly in the markdown.\n- Instruction about manually adding news links when outputting to users has been removed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:94b1cdfdf324b74992de542cca00af2cd9cc73226b6eda5ba47381e1c0d6bb4a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_2",
+  "skill": {
+    "id": 18099,
+    "skillKey": "clawhub-skill-2",
+    "name": "Skill 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-2",
+    "url": "https://clawhub.ai/skills/skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-2-2773f24dc0981598.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown text to beautifully styled, self-contained HTML with embedded CSS. Perfect for newsletters, documentation, reports, and email templates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771777931691,
+      "changelog": "Initial release of \"markdown-to-html\" tool.\n\n- Convert Markdown files to self-contained, styled HTML with embedded CSS.\n- Supports full Markdown syntax: headings, formatting, links, images, code, lists, tables, and more.\n- Includes two built-in themes: light (GitHub-inspired) and dark mode.\n- Produces responsive designs suitable for desktop and mobile.\n- Works with files or piped input (stdin); no external Python dependencies.\n- Flexible command-line options for theme, title, and output file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcd85750b8a25e7cc0cbeafdbbd1ef8e939d89861f0391eb2cd364710129e7b7"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64397,
+  "uuid": "skill-clawhub-caulsal-diagram",
+  "skillKey": "clawhub-caulsal-diagram",
+  "name": "caulsal-diagram",
+  "summary": "因果图（Causal Diagram / DAG）绘制工具。支持生成图片和 Mermaid 代码两种输出格式。 **触发场景**： - 用户要求绘制因果图、DAG、有向无环图 - 用户提到变量之间的因果关系需要可视化 - 用户说\"画一个因果图\"、\"生成DAG\"、\"变量关系图\" - 分析混杂、对撞结构、后门路径等因...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caulsal_diagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "一个有毅力的吃货",
+      "features": [
+        "因果图（Causal Diagram / DAG）绘制工具。支持生成图片和 Mermaid 代码两种输出格式。 **触发场景**：",
+        "用户要求绘制因果图、DAG、有向无环图",
+        "用户提到变量之间的因果关系需要可视化",
+        "用户说\"画一个因果图\"、\"生成DAG\"、\"变量关系图\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caulsal-diagram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30676974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caulsal-diagram",
+      "url": "https://clawhub.ai/skills/caulsal-diagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caulsal-diagram",
+    "url": "https://clawhub.ai/skills/caulsal-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caulsal-diagram-eddfaf602cea6ffa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caulsal-diagram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caulsal-diagram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83d5bb8c7895e76194cf36baa55a05b3911aa3494a6dd4d4ff292f4600a5efc5",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T10:09:10.141Z"
+}

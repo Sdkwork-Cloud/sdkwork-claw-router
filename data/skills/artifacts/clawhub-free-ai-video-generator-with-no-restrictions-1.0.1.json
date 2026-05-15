@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ai-video-generator-with-no-restrictions@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ai_video_generator_with_no_restrictions",
+  "skill": {
+    "id": 40837,
+    "skillKey": "clawhub-free-ai-video-generator-with-no-restrictions",
+    "name": "Free Ai Video Generator With No Restrictions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ai-video-generator-with-no-restrictions",
+    "url": "https://clawhub.ai/skills/free-ai-video-generator-with-no-restrictions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ai-video-generator-with-no-restrictions-b9e11085e57b73cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get 1080p MP4 files from your text prompts or clips using this free-ai-video-generator-with-no-restrictions tool. It runs AI video generation on cloud GPUs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775677974759,
+      "changelog": "- Major documentation rewrite for clarity and brevity.\n- Simplified setup and workflow instructions.\n- Clearer API endpoints, request headers, and error handling explained.\n- Added concise usage examples and quick start guide.\n- Explicitly stated supported file types and export quality.\n- Removed marketing content in favor of task-oriented descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7358fb7c7e6f18fcbd98467e00883f0c05ab985dbde6d10b59afd2b2c8a688"
+}

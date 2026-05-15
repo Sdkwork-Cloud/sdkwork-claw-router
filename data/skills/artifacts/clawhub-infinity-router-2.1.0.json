@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infinity-router@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infinity_router",
+  "skill": {
+    "id": 46447,
+    "skillKey": "clawhub-infinity-router",
+    "name": "Infinity Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infinity-router",
+    "url": "https://clawhub.ai/skills/infinity-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infinity-router-de81a7a40b4021d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routes AI requests across free OpenRouter models for OpenClaw and Claude Code. Auto-discovers, scores, and configures the best free model with a smart fallba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "genoshide",
+      "userId": "s17da0gxwr5myhy3ddy5k69eks84n4y5",
+      "displayName": "genoshide",
+      "image": "https://avatars.githubusercontent.com/u/224774597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775930676393,
+      "changelog": "Initial release v2.1.0\n\n- Auto-discovers and scores free OpenRouter models (tool-aware scoring)\n- Smart fallback chain with openrouter/free as first fallback\n- Multi-key API rotation to multiply daily free-tier quota\n- infinity-router watch — real-time log watcher with auto-rotate and gateway restart\n- --validate flag to probe models before writing config\n- Filters non-chat models (audio, image, video) and Gemma tool-call fakes\n- Supports OpenClaw and Claude Code as config targets",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:111d080f3735d316adf32f2166afe8d12a34f884709495c99fb97313b44cf63b"
+}

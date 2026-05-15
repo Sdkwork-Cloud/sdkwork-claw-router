@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39747,
+  "uuid": "skill-clawhub-google-drive-upload-file",
+  "skillKey": "clawhub-google-drive-upload-file",
+  "name": "Google Drive Upload File",
+  "summary": "Atomic node skill to upload a file to Google Drive using the gog CLI.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_drive_upload_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to upload a file to Google Drive using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-drive-upload-file@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-drive-upload-file",
+      "url": "https://clawhub.ai/skills/google-drive-upload-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-drive-upload-file",
+    "url": "https://clawhub.ai/skills/google-drive-upload-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-drive-upload-file-e063cbb6dd56728a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-drive-upload-file@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-upload-file-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2b4ad13e376daa7113a2a7152b28054cd1cd5fdac0b643a2ef6a69497a067c2",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:50.727Z"
+}

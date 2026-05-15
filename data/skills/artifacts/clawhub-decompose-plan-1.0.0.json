@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decompose-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decompose_plan",
+  "skill": {
+    "id": 40128,
+    "skillKey": "clawhub-decompose-plan",
+    "name": "Decompose Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decompose-plan",
+    "url": "https://clawhub.ai/skills/decompose-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decompose-plan-232d074e315f54af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forces M2.7 to produce an explicit structured plan before writing code. This makes Tree-of-Thought reasoning explicit instead of implicit, which is how Sonne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephenlthorn",
+      "userId": "s1781macwsy8b25gaqa558qrx5858x3k",
+      "displayName": "Stephen Thorn",
+      "image": "https://avatars.githubusercontent.com/u/49094234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776779160365,
+      "changelog": "Initial release — structured decomposition and planning skill for code tasks.\n\n- Requires a step-by-step JSON plan (sub-problems, APIs, risks, files affected, implementation order, LOC estimate) before code generation.\n- Enforces schema: model must commit to specifics (file paths, API versions, risks, dependencies).\n- Auto-triggers for complex, multi-file, or high-LOC coding tasks; skips trivial requests.\n- Plan is used to guide focused code generation and downstream reflection, API RAG, and feedback.\n- Built-in checks for task size and plan validity, with automated escalation on repeated failure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e15c95f8582e6d78f473628d39a55c5bf4114d00265653cd9c7cba291ffa15d7"
+}

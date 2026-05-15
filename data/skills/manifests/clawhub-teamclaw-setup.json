@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33792,
+  "uuid": "skill-clawhub-teamclaw-setup",
+  "skillKey": "clawhub-teamclaw-setup",
+  "name": "TeamClaw Setup",
+  "summary": "Install, configure, validate, or troubleshoot the TeamClaw OpenClaw plugin for virtual software-team workflows. Use when users want TeamClaw setup help, cont...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamclaw_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "topcheer",
+      "features": [
+        "Install, configure, validate, or troubleshoot the TeamClaw OpenClaw plugin for virtual software.",
+        "Use when users want TeamClaw setup help, cont..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamclaw-setup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1550007?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamclaw-setup",
+      "url": "https://clawhub.ai/skills/teamclaw-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamclaw-setup",
+    "url": "https://clawhub.ai/skills/teamclaw-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamclaw-setup-f38412c8f00dfa4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamclaw-setup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamclaw-setup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75a13ab1421f0e76a71d0902b9893f8f0fcaf11684ff38d31a6eb7b77fdb743f",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:01:27.923Z"
+}

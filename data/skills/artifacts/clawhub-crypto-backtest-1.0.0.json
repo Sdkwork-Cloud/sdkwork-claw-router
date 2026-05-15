@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-backtest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_backtest",
+  "skill": {
+    "id": 13696,
+    "skillKey": "clawhub-crypto-backtest",
+    "name": "Crypto Backtest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-backtest",
+    "url": "https://clawhub.ai/skills/crypto-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-backtest-68a242e51886afd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto futures backtesting engine with built-in EMA, RSI, MACD, and Bollinger Band strategies. Fetches OHLCV data from any ccxt-supported exchange (Bybit, Bi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnyztj",
+      "userId": "s17btfjyrwnnb18e8gyhagfarx83mpxf",
+      "displayName": "SunnyZhou",
+      "image": "https://avatars.githubusercontent.com/u/5576491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1221,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771412270186,
+      "changelog": "- Initial release of crypto-backtest: a fast, scriptable backtesting engine for crypto futures.\n- Supports fetching OHLCV data from any ccxt-supported exchange (Bybit, Binance, OKX, and more).\n- Includes built-in EMA crossover, RSI, MACD, and Bollinger Band strategies.\n- Enables multi-strategy parameter sweeps with automatic metric reporting (win rate, PnL, drawdown, etc.).\n- Exports machine-readable backtest results to JSON for integration with trading pipelines.\n- Simple plug-in interface for custom strategies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:058297518b2217d440bbcce7a71e83a9e82989370d664e87f07981d707fc8a1d"
+}

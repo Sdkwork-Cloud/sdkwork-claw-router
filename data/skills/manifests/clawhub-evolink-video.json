@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21479,
+  "uuid": "skill-clawhub-evolink-video",
+  "skillKey": "clawhub-evolink-video",
+  "name": "Evolink Video — AI Video Generation (Sora, Kling, Veo 3, Seedance)",
+  "summary": "AI video generation — Sora, Kling, Veo 3, Seedance, Hailuo, WAN, Grok. Text-to-video, image-to-video, video editing. 37 models, one API key.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolink_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "AI video generation — Sora, Kling, Veo 3, Seedance, Hailuo, WAN, Grok",
+        "Text-to-video, image-to-video, video editing",
+        "37 models, one API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolink-video@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolink-video",
+      "url": "https://clawhub.ai/skills/evolink-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolink-video",
+    "url": "https://clawhub.ai/skills/evolink-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolink-video-4b475b0ef99e4352.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolink-video@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolink-video-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e9791ceeb2663157559f8f523bd1ece5f20df37434d1861e778009d8f7d0bfa",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T18:21:49.387Z"
+}

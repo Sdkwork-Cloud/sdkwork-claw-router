@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57974,
+  "uuid": "skill-clawhub-acp-coder",
+  "skillKey": "clawhub-acp-coder",
+  "name": "ACP Code Agent",
+  "summary": "Delegate coding tasks to external agents (Claude Code, Codex) via ACP. Triggers on phrases like \"改代码\", \"修bug\", \"重构\", \"review\", \"实现功能\", \"写测试\", \"优化\", \"fix\", \"r...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_coder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xingjie zhou",
+      "features": [
+        "Delegate coding tasks to external agents (Claude Code, Codex) via ACP",
+        "Triggers on phrases like \"改代码\", \"修bug\", \"重构\", \"review\", \"实现功能\", \"写测试\", \"优化\", \"fix\", \"r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acp-coder@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71303511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acp-coder",
+      "url": "https://clawhub.ai/skills/acp-coder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-coder",
+    "url": "https://clawhub.ai/skills/acp-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-coder-605ada25c54e63dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acp-coder@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-acp-coder-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e6c2c75df6a6438141cbd2153a5c5c4a3655542b2628b507d2787ce5efd7650",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:39:43.095Z"
+}

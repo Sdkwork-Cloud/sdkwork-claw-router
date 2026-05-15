@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33261,
+  "uuid": "skill-clawhub-web-clipper",
+  "skillKey": "clawhub-web-clipper",
+  "name": "Web Clipper",
+  "summary": "Save any web page as a clean Markdown note with metadata, organized in Obsidian format, using Jina Reader API without browser extensions.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_clipper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chatgptnexus",
+      "features": [
+        "Save any web page as a clean Markdown note with metadata, organized in Obsidian format, using J."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-clipper@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156575346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-clipper",
+      "url": "https://clawhub.ai/skills/web-clipper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-clipper",
+    "url": "https://clawhub.ai/skills/web-clipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-clipper-97325d183f775354.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-clipper@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-clipper-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d187bbafda88a83a6e6b1aef6106d1cec1aba2a3f3f0c9e1a63ebcffbcab79d6",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:22:51.749Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19476,
+  "uuid": "skill-clawhub-aerobase-flight-awards",
+  "skillKey": "clawhub-aerobase-flight-awards",
+  "name": "Aerobase Flight Awards",
+  "summary": "Search 24+ airline loyalty programs for award space with miles cost, seat availability, and canonical jetlag scores",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_flight_awards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aerobase",
+      "features": [
+        "Search 24+ airline loyalty programs for award space with miles cost, seat availability, and can."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerobase-flight-awards@3.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95127236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerobase-flight-awards",
+      "url": "https://clawhub.ai/skills/aerobase-flight-awards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-flight-awards",
+    "url": "https://clawhub.ai/skills/aerobase-flight-awards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-flight-awards-f2d0a1013a2de2fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerobase-flight-awards@3.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerobase-flight-awards-3.3.1.json",
+      "version": "3.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a332699ce72e0274e2719ba2dcd8826a5153c82d5c9537f80369344d15968efa",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T03:46:01.758Z"
+}

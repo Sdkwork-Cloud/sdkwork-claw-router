@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mm-output@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_output",
+  "skill": {
+    "id": 24240,
+    "skillKey": "clawhub-mm-output",
+    "name": "mm-output"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-output",
+    "url": "https://clawhub.ai/skills/mm-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-output-4dcc6177797ca9be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse PDF/Markdown files into structured HTML posters with multi-modal output (PDF, PNG, DOCX, PPTX), or generate poster/slides images via Gemini image gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuriyanzexuan",
+      "userId": "s172r46c3b0h5yrkpqgrdxeb4183h7ek",
+      "displayName": "yuriYanZeXuan",
+      "image": "https://avatars.githubusercontent.com/u/25718979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774430191459,
+      "changelog": "Version 1.0.1: Major update — local Python skill, multi-LLM, slides & poster image generation.\n\n- Renamed and refactored skill to \"postergen-parser\" for local Python usage (not Docker-only).\n- Added support for multiple LLM APIs: OpenAI, Gemini, and Qwen (MAAS).\n- New features: generate poster images and slides images using Gemini's image generation API.\n- Added PPTX export and improved multi-modal conversion options (PDF/PNG/DOCX/PPTX).\n- New comprehensive setup scripts and dependency management (UV, install.sh, playwright).\n- Expanded documentation: detailed configuration, usage examples, and troubleshooting instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3356234c0e2b8775fbdf4b281828acf8b2fe6f01c5315ab1aa58b74292c00b83"
+}

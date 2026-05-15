@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hum-writer@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hum_writer",
+  "skill": {
+    "id": 40000,
+    "skillKey": "clawhub-hum-writer",
+    "name": "hum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hum-writer",
+    "url": "https://clawhub.ai/skills/hum-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hum-writer-f691b1f76dc7d572.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI content writer that researches, outlines, drafts, publishes, and manages engagement for LinkedIn and X using your voice and style guidelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jyek",
+      "userId": "s17dpwj3etv4kar8xxvyzazch584dpe0",
+      "displayName": "jyek",
+      "image": "https://avatars.githubusercontent.com/u/3284409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1775992877314,
+      "changelog": "hum-writer 0.2.1 introduces first-class virtual environment and setup automation.\n\n- Added a setup.sh script for creating the Python virtual environment and installing dependencies.\n- Updated documentation (SKILL.md) to require running setup.sh after initialization, clarifying that all scripts must use the venv.\n- requirements.txt and script shebangs adjusted to ensure compatibility with the new setup process.\n- Various script and library updates for improved reliability and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d299c55e4798d3514c630c61b5508842f45d832287839d782db4cae3d5d51a0d"
+}

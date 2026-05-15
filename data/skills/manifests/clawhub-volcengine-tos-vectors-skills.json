@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10796,
+  "uuid": "skill-clawhub-volcengine-tos-vectors-skills",
+  "skillKey": "clawhub-volcengine-tos-vectors-skills",
+  "name": "volcengine-tos-vectors-skills",
+  "summary": "Manage vector storage and similarity search using TOS Vectors service. Use when working with embeddings, semantic search, RAG systems, recommendation engines, or when the user mentions vector databases, similarity search, or TOS Vectors op.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_tos_vectors_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jneless",
+      "features": [
+        "Manage vector storage and similarity search using TOS Vectors service",
+        "Use when working with embeddings, semantic search, RAG systems, recommendation engines, or when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-tos-vectors-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21362547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-tos-vectors-skills",
+      "url": "https://clawhub.ai/skills/volcengine-tos-vectors-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-tos-vectors-skills",
+    "url": "https://clawhub.ai/skills/volcengine-tos-vectors-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-tos-vectors-skills-5ce3dd8338a17194.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-tos-vectors-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-tos-vectors-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82e98cf45dc7e5a9d9d1d913e154ab3ad00c35c62a124c0d2b58394e52449ecd",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T07:55:37.720Z"
+}

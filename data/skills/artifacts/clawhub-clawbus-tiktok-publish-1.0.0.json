@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbus-tiktok-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbus_tiktok_publish",
+  "skill": {
+    "id": 49798,
+    "skillKey": "clawhub-clawbus-tiktok-publish",
+    "name": "clawbus-tiktok-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbus-tiktok-publish",
+    "url": "https://clawhub.ai/skills/clawbus-tiktok-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbus-tiktok-publish-e7b5ce0aa1baed08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish videos to TikTok using the MyBrandMetrics API. Supports both local video files and remote URLs. Use when you want to upload a video with a title and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "9ying66",
+      "userId": "s1714nww0520qjy3akv321qsjs86bfp7",
+      "displayName": "9Ying66",
+      "image": "https://avatars.githubusercontent.com/u/191543806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778224646840,
+      "changelog": "Initial release from clawbus.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddc5ef087bad802736ad9f69c1d66edb1b6508901df09b848378d5aabd9d1f66"
+}

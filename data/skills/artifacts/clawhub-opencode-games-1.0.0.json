@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-games@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_games",
+  "skill": {
+    "id": 42858,
+    "skillKey": "clawhub-opencode-games",
+    "name": "OpenCode Game Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-games",
+    "url": "https://clawhub.ai/skills/opencode-games",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-games-044736d154a77a91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn OpenCode as an ACP (Agent Client Protocol) subagent for complex coding tasks. Use when building games, web apps, multi-file projects, or when the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jadegaul",
+      "userId": "s176gf6bnf4q4xtqyq8qyhayxn84d979",
+      "displayName": "jadegaul",
+      "image": "https://avatars.githubusercontent.com/u/129908486?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775582901480,
+      "changelog": "Production-ready OpenCode ACP integration for building HTML5 games. Includes 12 tested game templates (Tetris, Pac-Man, Space Invaders, etc.), parallel build support, and comprehensive documentation based on real-world testing with OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afa8a64615bbf0eb4564044e8f4e3ac98b68922da437d357285492e045d47644"
+}

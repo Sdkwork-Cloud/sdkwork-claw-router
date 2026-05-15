@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kling-video@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_video",
+  "skill": {
+    "id": 50477,
+    "skillKey": "clawhub-kling-video",
+    "name": "Kling 3.0 — AI Video Generation by Kuaishou"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-video",
+    "url": "https://clawhub.ai/skills/kling-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-video-79ce9cda2ace5b50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, animate, and edit AI videos using Kuaishou's Kling 3.0 and Kling Video O3 — featuring cinematic motion quality, physics simulation, reference-based..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 917,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773808168568,
+      "changelog": "- Added a new Python script: `scripts/generate_video.py` for video generation and management.\n- Users can now list available models, generate videos (text-to-video or image-to-video), and upload local files using command-line commands.\n- No external dependencies required; extra model parameters can be passed as key=value.\n- Updated documentation to include script usage instructions and command examples.\n- No other changes to API or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7826295a4be1f5fe05a5121ab2b82b57ec719834c07d2705ca2f7fb8178d660c"
+}

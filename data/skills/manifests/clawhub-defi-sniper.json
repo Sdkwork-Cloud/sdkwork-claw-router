@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16576,
+  "uuid": "skill-clawhub-defi-sniper",
+  "skillKey": "clawhub-defi-sniper",
+  "name": "Defi Sniper",
+  "summary": "Orchestrates early token launch detection, on-chain risk analysis, social signal verification, and guarded swap execution on Solana and Base chains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_sniper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hagen Hoferichter",
+      "features": [
+        "Orchestrates early token launch detection, on-chain risk analysis, social signal verification,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defi-sniper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defi-sniper",
+      "url": "https://clawhub.ai/skills/defi-sniper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-sniper",
+    "url": "https://clawhub.ai/skills/defi-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-sniper-167bf5eae44f9188.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defi-sniper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defi-sniper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b336b5762aeaa4b41787d4aeeaa45236798bd666c72175ef3197fe5f998c3584",
+      "artifactSizeBytes": 2738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:00:22.807Z"
+}

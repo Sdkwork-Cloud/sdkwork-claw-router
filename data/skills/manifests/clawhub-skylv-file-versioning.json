@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43159,
+  "uuid": "skill-clawhub-skylv-file-versioning",
+  "skillKey": "clawhub-skylv-file-versioning",
+  "name": "Skylv File Versioning",
+  "summary": "Tracks file changes with git-like versioning for any project",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_file_versioning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Tracks file changes with git-like versioning for any project"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-file-versioning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-file-versioning",
+      "url": "https://clawhub.ai/skills/skylv-file-versioning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-file-versioning",
+    "url": "https://clawhub.ai/skills/skylv-file-versioning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-file-versioning-aa20d7af0a051db2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-file-versioning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-file-versioning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24a4b2ed9357f9dfc4f2727a89bb353414fc1fa4fe04bdf290d0cb5383aaac26",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:37:15.582Z"
+}

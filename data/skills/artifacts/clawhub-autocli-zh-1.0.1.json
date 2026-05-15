@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autocli-zh@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autocli_zh",
+  "skill": {
+    "id": 68936,
+    "skillKey": "clawhub-autocli-zh",
+    "name": "AutoCLI zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autocli-zh",
+    "url": "https://clawhub.ai/skills/autocli-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autocli-zh-d57f146a102053e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 autocli CLI 访问其已支持的网站、桌面应用与外部 CLI。用于浏览、搜索、查看时间线、书签、通知、主页、热榜、文章、历史记录，或在获得用户确认时执行目标平台已支持的写操作。对 autocli 已支持的目标，优先使用 autocli，而不是浏览器自动化或手工切换执行面；仅网站支持自定义适配器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poiskgit",
+      "userId": "s17e15ddggtqkyaqgvjpgapwxd83m22v",
+      "displayName": "poisk",
+      "image": "https://avatars.githubusercontent.com/u/129569601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775442407389,
+      "changelog": "Update display name to AutoCLI zh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8716515a7bd240242cdac71f7b21a52c8e28c3c75bb0746e9a17a7339c3201ff"
+}

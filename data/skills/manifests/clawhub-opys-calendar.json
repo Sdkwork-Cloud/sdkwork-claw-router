@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18351,
+  "uuid": "skill-clawhub-opys-calendar",
+  "skillKey": "clawhub-opys-calendar",
+  "name": "Opys Calendar Skill",
+  "summary": "A local markdown-backed calendar with CLI and optional two-way Google Calendar sync.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opys_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "21J3phy",
+      "features": [
+        "A local markdown-backed calendar with CLI and optional two-way Google Calendar sync."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opys-calendar@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59292445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opys-calendar",
+      "url": "https://clawhub.ai/skills/opys-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opys-calendar",
+    "url": "https://clawhub.ai/skills/opys-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opys-calendar-f72774caba3664ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opys-calendar@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-opys-calendar-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8363a0941e10e8c906f1c4458cb70fdd51197291909a24f52b82a5bb3252bb39",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T04:16:39.631Z"
+}

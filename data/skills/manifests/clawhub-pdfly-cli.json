@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44788,
+  "uuid": "skill-clawhub-pdfly-cli",
+  "skillKey": "clawhub-pdfly-cli",
+  "name": "pdfly-cli",
+  "summary": "A pure-python CLI application for manipulating PDF files. Use when needing to compress, merge, split, rotate, sign, extract images/text, or convert files to/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdfly_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zexun Lin",
+      "features": [
+        "A pure-python CLI application for manipulating PDF files",
+        "Use when needing to compress, merge, split, rotate, sign, extract images/text, or convert files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdfly-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95264762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdfly-cli",
+      "url": "https://clawhub.ai/skills/pdfly-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdfly-cli",
+    "url": "https://clawhub.ai/skills/pdfly-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdfly-cli-2f912349d13fec2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdfly-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdfly-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e900276a4522c1cb55700ca3805cd962bfd856462c2d402b1eb5baa5546d7b4",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:07:43.768Z"
+}

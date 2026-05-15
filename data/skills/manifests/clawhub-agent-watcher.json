@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15290,
+  "uuid": "skill-clawhub-agent-watcher",
+  "skillKey": "clawhub-agent-watcher",
+  "name": "Agent Watcher Skill",
+  "summary": "Monitors Moltbook feed for new agents and posts, tracks keywords, and saves interesting agents to your Open Notebook for easy reference.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivan Cetta",
+      "features": [
+        "Monitors Moltbook feed for new agents and posts, tracks keywords, and saves interesting agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-watcher@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2672456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-watcher",
+      "url": "https://clawhub.ai/skills/agent-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-watcher",
+    "url": "https://clawhub.ai/skills/agent-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-watcher-249ed415c54248c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-watcher@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-watcher-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:367b4cef830087d995e3f9f860ab12031730579140e46604c29885a0ed018408",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:23:15.828Z"
+}

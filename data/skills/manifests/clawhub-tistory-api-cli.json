@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62664,
+  "uuid": "skill-clawhub-tistory-api-cli",
+  "skillKey": "clawhub-tistory-api-cli",
+  "name": "Tistory API CLI",
+  "summary": "터미널에서 Tistory 블로그 글 읽기, 수정, 삭제, 카테고리 조회, 이미지 업로드를 지원하며 한국어 에러 메시지를 제공하는 비공식 CLI툴입니다.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tistory_api_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "터미널에서 Tistory 블로그 글 읽기, 수정, 삭제, 카테고리 조회, 이미지 업로드를 지원하며 한국어 에러 메시지를 제공하는 비공식 CLI툴입니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tistory-api-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tistory-api-cli",
+      "url": "https://clawhub.ai/skills/tistory-api-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tistory-api-cli",
+    "url": "https://clawhub.ai/skills/tistory-api-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tistory-api-cli-0430e6d9370b7044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tistory-api-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tistory-api-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7773448f56c6c3d1c3afb989fc35541419f5c75aed5481aa63e73753a6037599",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T00:18:09.900Z"
+}

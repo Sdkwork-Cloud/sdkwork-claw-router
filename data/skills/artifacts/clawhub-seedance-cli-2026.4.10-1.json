@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-cli@2026.4.10-1",
+  "version": "2026.4.10-1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_cli",
+  "skill": {
+    "id": 58190,
+    "skillKey": "clawhub-seedance-cli",
+    "name": "Seedance Dreamina 即梦 CLI 视频生成下载工作流"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-cli",
+    "url": "https://clawhub.ai/skills/seedance-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-cli-d973ff59407b4c82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an agent needs Dreamina（即梦） image or video generation through the dreamina CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l1angjy",
+      "userId": "s17bmfnfq7nzzx2d9ex2x5189183jrb4",
+      "displayName": "L1angjy",
+      "image": "https://avatars.githubusercontent.com/u/173944444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2026.4.10-1",
+      "createdAt": 1775946730910,
+      "changelog": "- Added requirement for Dreamina CLI: tool now limited to高级会员 (Premium Members) only, with installation instructions provided.\n- Included official installation command and onboarding steps (login required).\n- No functional CLI workflow changes—core usage and agent guidance remain the same as previous versions.\n- Documentation for supported features, good usage practices, and model selection rules remains unchanged.\n- Removed README.md from the project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab6fa4e10e010b4ebcb5b898017bacff5136839955e70ae4c5e245043bb0038d"
+}

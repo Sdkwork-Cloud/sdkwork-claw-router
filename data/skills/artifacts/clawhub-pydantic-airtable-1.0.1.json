@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pydantic-airtable@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pydantic_airtable",
+  "skill": {
+    "id": 25240,
+    "skillKey": "clawhub-pydantic-airtable",
+    "name": "Airtable w/Python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pydantic-airtable",
+    "url": "https://clawhub.ai/skills/pydantic-airtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pydantic-airtable-28037a962bc38f3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Airtable tables and records via the pydantic-airtable Python library. Use when creating, listing, updating, deleting, or inspecting Airtable records o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grishick",
+      "userId": "publishers:grishick",
+      "displayName": "grishick",
+      "image": "https://avatars.githubusercontent.com/u/1310940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773347775724,
+      "changelog": "- Added explicit installation instructions and environment variable requirements to metadata.\n- Introduced a new \"Safety notes\" section with warnings about credentials, tokens, file inputs, and module imports.\n- Clarified that `pydantic-airtable` installation may be isolated via virtualenv/container.\n- No functional or workflow changes to core usage or bundled scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e8405c6df6da7f1a30f357771a0eef89110599dbbbf0ed7ae09ebee6327e56a"
+}

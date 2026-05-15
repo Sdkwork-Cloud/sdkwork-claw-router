@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43760,
+  "uuid": "skill-clawhub-video-best",
+  "skillKey": "clawhub-video-best",
+  "name": "Video Best",
+  "summary": "Get optimized MP4 videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_best",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Get optimized MP4 videos ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-best@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-best",
+      "url": "https://clawhub.ai/skills/video-best"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-best",
+    "url": "https://clawhub.ai/skills/video-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-best-2927326e51baba4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-best@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-best-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eea2d14c9ca627442099e9fe505941c2d856b75df378f9bcf5d3229c902510e8",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:52:03.035Z"
+}

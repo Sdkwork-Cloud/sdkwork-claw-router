@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_code_review",
+  "skill": {
+    "id": 22839,
+    "skillKey": "clawhub-open-code-review",
+    "name": "Open Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-code-review",
+    "url": "https://clawhub.ai/skills/open-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-code-review-b116f42fcb1a1a3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan AI-generated code for hallucinated packages, stale APIs, security anti-patterns, and over-engineering. Use when: (1) reviewing PRs with AI-generated cod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raye-deng",
+      "userId": "publishers:raye-deng",
+      "displayName": "raye-deng",
+      "image": "https://avatars.githubusercontent.com/u/7322118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674696574,
+      "changelog": "Initial release: AI code quality scanner for CI/CD. Detects hallucinated imports, phantom packages, stale APIs, security anti-patterns, and over-engineering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75626d26f1a95a354c2b67a7912b33596ffdb33939f0b3a7cc605ab8e5517ff8"
+}

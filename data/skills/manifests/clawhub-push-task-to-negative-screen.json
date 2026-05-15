@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66113,
+  "uuid": "skill-clawhub-push-task-to-negative-screen",
+  "skillKey": "clawhub-push-task-to-negative-screen",
+  "name": "push-task-to-negative-screen",
+  "summary": "通用任务结果推送器，当任务完成后将结果推送到负一屏。使用统一的标准数据格式，支持各种类型的任务结果推送。",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.push_task_to_negative_screen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Minus One Screen",
+      "features": [
+        "通用任务结果推送器，当任务完成后将结果推送到负一屏。使用统一的标准数据格式，支持各种类型的任务结果推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/push-task-to-negative-screen@1.0.21",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90141367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "push-task-to-negative-screen",
+      "url": "https://clawhub.ai/skills/push-task-to-negative-screen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "push-task-to-negative-screen",
+    "url": "https://clawhub.ai/skills/push-task-to-negative-screen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/push-task-to-negative-screen-092a5a20bbda3a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/push-task-to-negative-screen@1.0.21",
+      "artifactUrl": "data/skills/artifacts/clawhub-push-task-to-negative-screen-1.0.21.json",
+      "version": "1.0.21",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f70131787c060bc6ec99a5832cf13c6ace80f795d7fe746ab6a16b4f758ece9e",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:46:20.820Z"
+}

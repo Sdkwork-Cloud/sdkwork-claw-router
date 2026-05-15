@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60327,
+  "uuid": "skill-clawhub-deerflow-install-master",
+  "skillKey": "clawhub-deerflow-install-master",
+  "name": "deerflow-install-master",
+  "summary": "DeerFlow 2.0 一键安装与配置技能。基于真实部署经验（2026-03-29），涵盖从下载仓库到成功运行的全流程，包括踩坑规避方案。 Use when: (1) 需要在 OpenClaw 环境安装 DeerFlow 2.0, (2) 需要快速排查安装问题, (3) 需要了解 DeerFlow 的最佳实践。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deerflow_install_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangbb-coder",
+      "features": [
+        "DeerFlow 2.0 一键安装与配置技能。基于真实部署经验（2026-03-29），涵盖从下载仓库到成功运行的全流程，包括踩坑规避方案。 Use when: (1) 需要在 OpenCl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deerflow-install-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201201882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deerflow-install-master",
+      "url": "https://clawhub.ai/skills/deerflow-install-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deerflow-install-master",
+    "url": "https://clawhub.ai/skills/deerflow-install-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deerflow-install-master-9fa4999f75164534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deerflow-install-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deerflow-install-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c750086d8fce40a1f45af56fd6f20105852f877152693b2d97083cf60bd669f8",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T13:37:44.112Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-portfolio-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_portfolio_monitor",
+  "skill": {
+    "id": 72483,
+    "skillKey": "clawhub-a-stock-portfolio-monitor",
+    "name": "A股持仓监控助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-portfolio-monitor",
+    "url": "https://clawhub.ai/skills/a-stock-portfolio-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-portfolio-monitor-0db9c79dd1894d80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股持仓监控助手 - 每日自动持仓报告、止损止盈提醒、实时盈亏跟踪。适合个人投资者管理多只股票持仓。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshinesdff",
+      "userId": "s176zw0d389svphhjwjkym0z0h84apjr",
+      "displayName": "sunshinesdff",
+      "image": "https://avatars.githubusercontent.com/u/177493562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1715,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773650050497,
+      "changelog": "每日自动持仓报告，止损止盈提醒，智能选股",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbecfea4b6c70113d607d5337a399650971ade6b0ab54a3e9bb461943d4591e6"
+}

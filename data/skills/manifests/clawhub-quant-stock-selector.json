@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63618,
+  "uuid": "skill-clawhub-quant-stock-selector",
+  "skillKey": "clawhub-quant-stock-selector",
+  "name": "量化选股系统 - 基于 AKShare + 多因子模型的 A 股选股工具",
+  "summary": "量化选股系统 - 基于 AKShare + 多因子模型的 A 股选股工具 【核心功能】 - 六大维度综合评分（技术面 30%+ 基本面 25%+ 资金面 15%+ 筹码峰 10%+90% 集中度 10%+ 成交量震荡 10%） - 消息面分析（财联社 + 新浪财经，自动去重） - 每日自动选股（Top 3 推荐）...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_stock_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeckygo",
+      "features": [
+        "基于 AKShare + 多因子模型的 A 股选股工具 【核心功能】",
+        "六大维度综合评分（技术面 30%+ 基本面 25%+ 资金面 15%+ 筹码峰 10%+90% 集中度 10%+ 成交量震荡 10%）",
+        "消息面分析（财联社 + 新浪财经，自动去重）",
+        "每日自动选股（Top 3 推荐）..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-stock-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69103088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-stock-selector",
+      "url": "https://clawhub.ai/skills/quant-stock-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-stock-selector",
+    "url": "https://clawhub.ai/skills/quant-stock-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-stock-selector-be69c3c848c79360.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-stock-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-stock-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:185cb37d12580385129975fe90e5783fdec6ca43ba01aad8993b129ed75bae9d",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:25:33.148Z"
+}

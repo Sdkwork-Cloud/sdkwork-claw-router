@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28429,
+  "uuid": "skill-clawhub-opc-contract-manager",
+  "skillKey": "clawhub-opc-contract-manager",
+  "name": "OPC Contract Manager",
+  "summary": "Contract Review + Contract Ops Copilot for solo entrepreneurs. Analyzes contracts, flags risks, generates redline suggestions and negotiation emails, tracks...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opc_contract_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leon Fan",
+      "features": [
+        "Contract Review + Contract Ops Copilot for solo entrepreneurs",
+        "Analyzes contracts, flags risks, generates redline suggestions and negotiation emails, tracks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opc-contract-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130567704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opc-contract-manager",
+      "url": "https://clawhub.ai/skills/opc-contract-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opc-contract-manager",
+    "url": "https://clawhub.ai/skills/opc-contract-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opc-contract-manager-c2579fe056153661.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opc-contract-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opc-contract-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:451d4621fc704e92697f800a8f142e4a01965e827011afe779cf1833e72d40ea",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:04:12.838Z"
+}

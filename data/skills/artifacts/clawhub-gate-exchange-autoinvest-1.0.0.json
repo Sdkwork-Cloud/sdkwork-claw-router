@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-autoinvest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_autoinvest",
+  "skill": {
+    "id": 41943,
+    "skillKey": "clawhub-gate-exchange-autoinvest",
+    "name": "Gate Exchange Auto-Invest Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-autoinvest",
+    "url": "https://clawhub.ai/skills/gate-exchange-autoinvest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-autoinvest-fab36bfbf3ed275f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The fast auto-invest function of Gate Exchange Earn. Use this skill whenever you need to create, update, stop, or top up invest plans and to query supported..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775115145138,
+      "changelog": "gate-exchange-autoinvest v1.0.0\n\n- Initial release of Gate Exchange's fast auto-invest (DCA) skill, supporting creation, update, stop, and top-up invest plans.\n- Enables queries for supported coins, minimum/maximum investment amounts, execution records, plan details, and orders.\n- Enforces investment rules: only USDT/BTC as funding currency, strict time zone handling (UTC for execution hours), target coin allocation limits, and validation of amount and allocation ranges.\n- Privacy and risk disclaimers are presented for transparency in data handling and investment risks.\n- Integrates with a defined set of MCP tools for all auto-invest management and queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3220b0f1757c34901b061696101fa61aa0bfc06b1e5840ad49207bc58ad08395"
+}

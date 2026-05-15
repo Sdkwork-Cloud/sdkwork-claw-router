@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_email",
+  "skill": {
+    "id": 13913,
+    "skillKey": "clawhub-bot-email",
+    "name": "BotEmail.ai - Free bot email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-email",
+    "url": "https://clawhub.ai/skills/bot-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-email-1075b15d15db4aaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get an email address without your human. Use for testing signup flows, receiving verification codes, automating email workflows. Free."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claw-silhouette",
+      "userId": "publishers:claw-silhouette",
+      "displayName": "claw-silhouette",
+      "image": "https://avatars.githubusercontent.com/u/258522560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1275,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "v1.0.7",
+      "createdAt": 1771938006952,
+      "changelog": "Updated title and description.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccfb01aeab8823ed8afb2cca72be8c3a074f701fe4c1ab42ff763e0049e09a28"
+}

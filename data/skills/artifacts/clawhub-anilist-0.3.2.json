@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anilist@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anilist",
+  "skill": {
+    "id": 24675,
+    "skillKey": "clawhub-anilist",
+    "name": "AniList CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anilist",
+    "url": "https://clawhub.ai/skills/anilist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anilist-95f2e7e374181c5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for searching, retrieving anime and manga information, interacting with user profile and lists on Anilist, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtsku",
+      "userId": "s172pw9wdwdq6nd31nfxawhpax83nbda",
+      "displayName": "matsku",
+      "image": "https://avatars.githubusercontent.com/u/123153312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1772729435660,
+      "changelog": "- Added OpenClaw metadata for installation and binary requirements.\n- Updated installation and command verification steps for improved clarity.\n- Reorganized command examples under functional categories.\n- Simplified and clarified agent execution and output guidelines.\n- Updated authentication setup instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47e22fbf55a082f14475c274e55580c89ffbc849f291f5830b3d6a6ba83ca1f6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpage",
+  "skill": {
+    "id": 21676,
+    "skillKey": "clawhub-clawpage",
+    "name": "Clawpage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpage",
+    "url": "https://clawhub.ai/skills/clawpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpage-25d99aaffc7fab65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share AI agent conversations as public web pages. Use when the user wants to share a conversation externally, export conversation history for documentation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imyelo",
+      "userId": "s17347x0yahsjzj8cwsxs284rd83gjc7",
+      "displayName": "yelo",
+      "image": "https://avatars.githubusercontent.com/u/2399123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773863686056,
+      "changelog": "clawpage 1.0.1\n\n- Update branch creation workflow to ensure syncing with main before creating a dedicated branch (step 6): now includes pulling latest changes from main.\n- Documentation improved for clarity in the confirm & save process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70c10cc72bf3fea371af3a2af7008b7b2fa8008a761d1a1981ca0910c41db864"
+}

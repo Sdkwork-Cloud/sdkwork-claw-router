@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pcmiler@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcmiler",
+  "skill": {
+    "id": 16760,
+    "skillKey": "clawhub-pcmiler",
+    "name": "PC*Miler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcmiler",
+    "url": "https://clawhub.ai/skills/pcmiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcmiler-89e09bdaa1fb56f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PCMier REST API provides methods to retrieves a series of geographic coordinates that make up a route."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nchoudhury-trimble",
+      "userId": "publishers:nchoudhury-trimble",
+      "displayName": "nchoudhury-trimble",
+      "image": "https://avatars.githubusercontent.com/u/131018203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1643,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770337892076,
+      "changelog": "- Added a new example for geocoding an address to latitude/longitude using the PCMiler API.\n- Included sample curl command and expected JSON response for the geocoding endpoint.\n- Improved documentation for clarity and completeness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3c64694175b99a434abab32c141b2acf3e7ac5be35a6c0bd7b3c81a3d357a2e"
+}

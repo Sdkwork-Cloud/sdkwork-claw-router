@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crm-segment-winback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_segment_winback",
+  "skill": {
+    "id": 42952,
+    "skillKey": "clawhub-crm-segment-winback",
+    "name": "Crm Segment Winback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-segment-winback",
+    "url": "https://clawhub.ai/skills/crm-segment-winback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-segment-winback-f02a27516290e07f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define CRM segments (new, active, lapsed, VIP, at-risk, churned), build winback triggers, and generate personalized re-engagement campaign ideas across email..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776093006487,
+      "changelog": "Initial release: Defines CRM segments and generates winback strategies and multi-channel campaign ideas for CRM operators without requiring live data integrations.\n\n- Provides a structured framework for segmenting customers (new, active, lapsed, VIP, at-risk, churned).\n- Suggests winback triggers, timings, and personalized re-engagement ideas across email, SMS, WeChat, and app push.\n- Outputs a markdown CRM brief, including a segment health scorecard, channel matrix, and campaign sequence suggestions.\n- Designed for use by DTC and ecommerce CRM managers needing actionable segment and campaign recommendations with only basic data inputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54db8e798420ace6d2c134ed30e8bf74ed46994f196c3df8aaaaf2e2f3e4412a"
+}

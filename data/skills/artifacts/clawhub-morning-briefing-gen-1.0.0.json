@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-briefing-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_briefing_gen",
+  "skill": {
+    "id": 70022,
+    "skillKey": "clawhub-morning-briefing-gen",
+    "name": "Morning Briefing Generator 晨会简报生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-briefing-gen",
+    "url": "https://clawhub.ai/skills/morning-briefing-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-briefing-gen-a833513643c7b038.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日早会简报生成器 — 自动聚合国内外新闻、财经资讯、行业动态，生成结构化早会简报并推送给指定用户。适用于企业高管、创业者、投资者等需要快速掌握每日要闻的场景。支持定时任务自动执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776012330835,
+      "changelog": "Initial release with news aggregation, action suggestions, and scheduled task support. Security audited and VirusTotal compliant.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86926fc96b6760cbbca170218c84585b267391dd8e22df45ccf2e732998a030b"
+}

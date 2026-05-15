@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jackal-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jackal_skill",
+  "skill": {
+    "id": 24427,
+    "skillKey": "clawhub-jackal-skill",
+    "name": "Jackal Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jackal-skill",
+    "url": "https://clawhub.ai/skills/jackal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jackal-skill-c8f47e7b08fdf87f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sovereign, recoverable memory for AI agents backed by Jackal decentralized storage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "regan-milne",
+      "userId": "publishers:regan-milne",
+      "displayName": "Regan-Milne",
+      "image": "https://avatars.githubusercontent.com/u/68076856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772257998231,
+      "changelog": "Fix client path and remove obsolete provision step",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ebd7891ac297614f7c7ddf96fa531e98b3fbb0b3ae262fdb1ada134e92c2ffc"
+}

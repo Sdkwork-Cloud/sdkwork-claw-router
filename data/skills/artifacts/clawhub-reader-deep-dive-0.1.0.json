@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reader-deep-dive@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reader_deep_dive",
+  "skill": {
+    "id": 11498,
+    "skillKey": "clawhub-reader-deep-dive",
+    "name": "Reader Deep Dive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reader-deep-dive",
+    "url": "https://clawhub.ai/skills/reader-deep-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reader-deep-dive-812741144ffc2135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily briefing that connects your recent reading to your long-term archive."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sameerbajaj",
+      "userId": "publishers:sameerbajaj",
+      "displayName": "sameerbajaj",
+      "image": "https://avatars.githubusercontent.com/u/3718043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1816,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769998300922,
+      "changelog": "- Initial release of the reader-deep-dive skill.\n- Provides daily briefings that connect your recent Readwise Reader saves to deep archive items from different points in your reading history.\n- Uses your system's default language model to identify themes and create context-rich summaries.\n- Delivers the briefing via WhatsApp for easy review.\n- Simple setup with environment variable for Readwise access; supports manual or scheduled runs.\n- Includes prompt customization for personalized briefing style.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e38deb477c6a48f6964e2749be19a1791fdda4d97e9ebc040a2724b91195601"
+}

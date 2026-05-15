@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_backup",
+  "skill": {
+    "id": 22546,
+    "skillKey": "clawhub-feishu-backup",
+    "name": "Feishu Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-backup",
+    "url": "https://clawhub.ai/skills/feishu-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-backup-c144167dc5aedb53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Back up files uploaded to a Feishu group chat to the local doc/backup directory. Supports smart matching: multiple files, filename prefix/keyword filter, fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caigang78",
+      "userId": "publishers:caigang78",
+      "displayName": "caigang78",
+      "image": "https://avatars.githubusercontent.com/u/7031130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772950386552,
+      "changelog": "- Initial release of the Feishu Backup skill.\n- Allows users to back up files from Feishu group chats to a local backup directory.\n- Supports smart matching with multiple filters: file amount, filename prefix/keyword, file type (pdf/image/video), and recent time ranges.\n- Activated by user requests such as \"back up the PDF I just sent to Feishu\".\n- Downloads files only via `feishu_backup.sh`, with strict verification of successful output.\n- Provides clear feedback in case of backup errors or failed downloads.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ae37d674307c089cf76faf83f88c4c5f83ae34590a073c964355cf693317b07"
+}

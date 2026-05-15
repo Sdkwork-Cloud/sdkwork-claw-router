@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61102,
+  "uuid": "skill-clawhub-multi-edge-tts-cn",
+  "skillKey": "clawhub-multi-edge-tts-cn",
+  "name": "Multi Edge Tts Cn",
+  "summary": "Edge-TTS 在线语音合成 skill。基于微软 Edge TTS 引擎，生成速度快（1-2秒），支持多种音色和输出格式。同时支持飞书（OGG/Opus）和企业微信（AMR）。默认音色 xiaoxiao_lively。需联网。",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_edge_tts_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itian",
+      "features": [
+        "Edge-TTS 在线语音合成 skill。基于微软 Edge TTS 引擎，生成速度快（1-2秒），支持多种音色和输出格式。同时支持飞书（OGG/Opus）和企业微信（AMR）。默认音色."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-edge-tts-cn@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67038207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-edge-tts-cn",
+      "url": "https://clawhub.ai/skills/multi-edge-tts-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-edge-tts-cn",
+    "url": "https://clawhub.ai/skills/multi-edge-tts-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-edge-tts-cn-9e7715a06317b86e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-edge-tts-cn@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-edge-tts-cn-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ce12b3531a4f0f8f17de303e75404ff0730d3d76abee4aa9718fa60cd043211",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:08:45.003Z"
+}

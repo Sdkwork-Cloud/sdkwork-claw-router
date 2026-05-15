@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57589,
+  "uuid": "skill-clawhub-threat-intel",
+  "skillKey": "clawhub-threat-intel",
+  "name": "Threat Intelligence — التهديدات",
+  "summary": "The only Arabic-first OSINT and threat intelligence skill. Monitor Arabic-language threat actor channels on Telegram, generate bilingual threat reports, sear...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threat_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kw.Hades- Creative Labs",
+      "features": [
+        "The only Arabic-first OSINT and threat intelligence skill",
+        "Monitor Arabic-language threat actor channels on Telegram, generate bilingual threat reports, s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/threat-intel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40309465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "threat-intel",
+      "url": "https://clawhub.ai/skills/threat-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threat-intel",
+    "url": "https://clawhub.ai/skills/threat-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threat-intel-2abd46001197242f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/threat-intel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-threat-intel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54f8baff692824df792dad382d61c1ca22aa4ebef69caabc3daf9b88242eaf29",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:33:40.533Z"
+}

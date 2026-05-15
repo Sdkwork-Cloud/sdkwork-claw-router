@@ -13,6 +13,7 @@ pub struct ResolveModelPriceQuery {
     pub model: String,
     pub billing_meter: BillingMeter,
     pub provider_code: Option<String>,
+    pub channel_id: Option<i64>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -51,7 +52,7 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         let upstream = self.find_upstream_cost(&query);
 
         if let Some(provider_code) = query.provider_code.as_deref() {
-            self.ensure_provider_route(&query.model, provider_code)?;
+            self.ensure_provider_route(&query.model, provider_code, query.channel_id)?;
         }
 
         let explicit_customer = self.catalog.find_model_price(
@@ -145,23 +146,60 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
     }
 
     fn find_upstream_cost(&self, query: &ResolveModelPriceQuery) -> Option<ModelPrice> {
+        let provider_code = query.provider_code.as_deref();
+        if let Some(channel_id) = query.channel_id {
+            return self
+                .catalog
+                .list_model_prices(
+                    &query.model,
+                    PriceSide::UpstreamCost,
+                    query.billing_meter.clone(),
+                )
+                .into_iter()
+                .find(|price| {
+                    price.provider_code.as_deref() == provider_code
+                        && price.channel_id == Some(channel_id)
+                        && price.pricing_plan_code.is_none()
+                });
+        }
+
         self.catalog.find_model_price(
             &query.model,
             PriceSide::UpstreamCost,
             query.billing_meter.clone(),
-            query.provider_code.as_deref(),
+            provider_code,
             None,
         )
     }
 
-    fn ensure_provider_route(&self, model: &str, provider_code: &str) -> DomainResult<()> {
-        self.catalog
-            .find_provider_route(model, provider_code)
-            .map(|_| ())
-            .ok_or_else(|| {
-                DomainError::new(format!(
-                    "provider route not found for model {model} and provider {provider_code}"
-                ))
+    fn ensure_provider_route(
+        &self,
+        model: &str,
+        provider_code: &str,
+        channel_id: Option<i64>,
+    ) -> DomainResult<()> {
+        let route = self
+            .catalog
+            .list_provider_routes(model)
+            .into_iter()
+            .find(|route| {
+                route.provider_code == provider_code
+                    && channel_id
+                        .map(|channel_id| route.channel_id == channel_id)
+                        .unwrap_or(true)
             })
+            .ok_or_else(|| {
+                if let Some(channel_id) = channel_id {
+                    DomainError::new(format!(
+                        "provider route not found for model {model}, provider {provider_code}, and channel {channel_id}"
+                    ))
+                } else {
+                    DomainError::new(format!(
+                        "provider route not found for model {model} and provider {provider_code}"
+                    ))
+                }
+            })?;
+        let _ = route;
+        Ok(())
     }
 }

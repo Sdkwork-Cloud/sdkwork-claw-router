@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-devblog-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_devblog_factory",
+  "skill": {
+    "id": 60636,
+    "skillKey": "clawhub-ai-devblog-factory",
+    "name": "AI DevBlog Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-devblog-factory",
+    "url": "https://clawhub.ai/skills/ai-devblog-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-devblog-factory-858786ec48904b12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 开发博客工厂 - 自动抓取 GitHub Trending 与技术资讯，生成结构化开发周报并发布至飞书"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776282184106,
+      "changelog": "ai-devblog-factory v1.0.0 初始版本发布\n\n- 自动抓取 GitHub Trending 和多平台技术资讯，生成结构化开发周报\n- 利用 AI 分析行业趋势和开源热点，一键生成技术博客文章\n- 博文可自动发布至飞书 Wiki / 云文档，方便团队知识沉淀\n- 支持自定义抓取范围、输出格式和定时任务设置\n- 一键对比历史趋势，便于持续追踪技术动向",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d824ff5e2af930f95d6b28760c21b07b900ef5a572ee4fa48229f1b7b968c06"
+}

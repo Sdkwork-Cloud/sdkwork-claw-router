@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_studio",
+  "skill": {
+    "id": 24384,
+    "skillKey": "clawhub-geo-studio",
+    "name": "GEO Content Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-studio",
+    "url": "https://clawhub.ai/skills/geo-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-studio-0a35b34dce858946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master GEO content orchestrator that understands user goals and intelligently routes tasks across specialized GEO skills. Automatically selects the right wor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772280933146,
+      "changelog": "Initial release: Master GEO content orchestrator — intelligently routes tasks across geo-prompt-researcher, geo-competitor-scanner, geo-site-audit, geo-citation-writer, geo-content-optimizer, geo-structured-writer, geo-human-editor, geo-schema-gen, geo-llms-txt, geo-multimodal-tagger, geo-sentiment-optimizer, geo-som-strategist, geo-report-builder. Powered by GEOly AI (geoly.ai).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b0d0d6e83d377ee98ad6dd1fcfcef6ecdc50c346d6f34c4503602dd3d2050ed"
+}

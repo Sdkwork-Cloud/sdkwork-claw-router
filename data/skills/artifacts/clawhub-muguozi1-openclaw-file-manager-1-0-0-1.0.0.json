@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muguozi1-openclaw-file-manager-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muguozi1_openclaw_file_manager_1_0_0",
+  "skill": {
+    "id": 66749,
+    "skillKey": "clawhub-muguozi1-openclaw-file-manager-1-0-0",
+    "name": "Muguozi1 Openclaw File Manager 1 0 0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muguozi1-openclaw-file-manager-1-0-0",
+    "url": "https://clawhub.ai/skills/muguozi1-openclaw-file-manager-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muguozi1-openclaw-file-manager-1-0-0-6d6f68a12c23f09b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw自动化文件管理助手，用于批量文件操作、智能分类、重复文件清理、文件重命名、目录同步等任务。当用户需要整理文件、批量重命名、清理重复文件、同步目录或自动化文件工作流时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muguozi1",
+      "userId": "s17197vrn391tcfkwt2y7v215n83gb4q",
+      "displayName": "muguozi1",
+      "image": "https://avatars.githubusercontent.com/u/63887927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773627935528,
+      "changelog": "Initial release of OpenClaw自动化文件管理助手—file-manager skill.\n\n- 支持智能文件分类、批量重命名、重复文件清理、目录同步、文件监控等核心功能\n- 包含详细的命令行使用方法和实际场景示例\n- 提供操作安全机制，如 dry-run 预览、日志记录和隔离区保护\n- 依赖简明（Python 3.8+、tqdm、colorama），上手快速\n- 遵循极简主义设计理念，文档与代码示例齐全",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:366588a3978de841436163af80adf4f173d5c1c578b4608d3597ede75d8a4c45"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warranty-return-resolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warranty_return_resolver",
+  "skill": {
+    "id": 50051,
+    "skillKey": "clawhub-warranty-return-resolver",
+    "name": "Warranty Return Resolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warranty-return-resolver",
+    "url": "https://clawhub.ai/skills/warranty-return-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warranty-return-resolver-114d5a184347b5b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize evidence, understand refund/repair/replacement options, and write calm escalation messages for consumer warranty and return situations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 47,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778304429905,
+      "changelog": "Warranty & Return Resolver v1.0.0 — Initial Release\n\n- Guides users through organizing evidence and understanding options for warranty, return, refund, or repair claims.\n- Offers calm, professional drafts for escalation messages, emails, and call scripts.\n- Helps track claim progress and escalation steps with a follow-up tracker.\n- Provides templates for common consumer product scenarios (electronics, online purchases, appliances, digital products).\n- Maintains compliance and safety by avoiding legal advice, fabricated evidence, and aggressive tactics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de1a2c5b47ab86b629b0453aa0c73fd01dd63cd0c09f06f8a1099a72af341322"
+}

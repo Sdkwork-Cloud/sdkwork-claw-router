@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raigo-af@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raigo_af",
+  "skill": {
+    "id": 52067,
+    "skillKey": "clawhub-raigo-af",
+    "name": "raigo agent firewall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raigo-af",
+    "url": "https://clawhub.ai/skills/raigo-af",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raigo-af-9e43097a83a9eca2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RAIGO Agent Firewall — comprehensive AI security policy enforcement for OpenClaw agents. Covers all known prompt security attack vectors: prompt injection, j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "musharsec",
+      "userId": "s1772nr8nxscpx426vqbp5k4xs83q6gw",
+      "displayName": "musharsec",
+      "image": "https://avatars.githubusercontent.com/u/45098359?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774941348691,
+      "changelog": "- Expanded security coverage: now includes protections for indirect prompt injection, multi-agent attacks, supply chain threats, agent identity spoofing, memory poisoning, and more.\n- Refined rule tiers: DENY (hard block), WARN (require human confirmation), and AUDIT (proceed but log/flag), with clearer escalation.\n- Major improvements to prompt injection/jailbreak detection—including sophisticated obfuscation, encoded payloads, and persona/authority spoofing.\n- Policies for blocking credential leaks, system prompt extraction, and blocking destructive or dangerous command execution clarified and strengthened.\n- Cloud upgrade path now mentioned for custom organisation policies and audit logging.\n- Out-of-the-box usage remains—no additional setup steps required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b37cb2088eb5469f144ddc7d03fa38f564474a898aeaeff8f55fbb7b2b414113"
+}

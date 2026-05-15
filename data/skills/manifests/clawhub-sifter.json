@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33573,
+  "uuid": "skill-clawhub-sifter",
+  "skillKey": "clawhub-sifter",
+  "name": "Sifter",
+  "summary": "Sifter integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Sifter data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sifter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sifter integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Sifter data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sifter@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sifter",
+      "url": "https://clawhub.ai/skills/sifter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sifter",
+    "url": "https://clawhub.ai/skills/sifter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sifter-dbf56e75408ef5cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sifter@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sifter-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2798566e39806697ebc6db48fca342ae41c6f8f35ef771d39948afa1cf831ccc",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:00:13.765Z"
+}

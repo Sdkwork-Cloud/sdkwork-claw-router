@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64408,
+  "uuid": "skill-clawhub-visual-benchmarker",
+  "skillKey": "clawhub-visual-benchmarker",
+  "name": "Visual Benchmarker",
+  "summary": "(元技能) 视觉对标视频搜索器，通过指导AI调用其他工具，为项目确认视觉风格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_benchmarker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "an",
+      "features": [
+        "(元技能) 视觉对标视频搜索器，通过指导AI调用其他工具，为项目确认视觉风格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-benchmarker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208153467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-benchmarker",
+      "url": "https://clawhub.ai/skills/visual-benchmarker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-benchmarker",
+    "url": "https://clawhub.ai/skills/visual-benchmarker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-benchmarker-f838fdf6d7d74a30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-benchmarker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-benchmarker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e383fcf8eaeed55137e1280c93e316986532cae9d90bb6749d5504ec57bc42b4",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:14:24.043Z"
+}

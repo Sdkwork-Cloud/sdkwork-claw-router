@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wiki-query@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wiki_query",
+  "skill": {
+    "id": 40214,
+    "skillKey": "clawhub-wiki-query",
+    "name": "Wiki Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wiki-query",
+    "url": "https://clawhub.ai/skills/wiki-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wiki-query-655510133893e4ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer questions from a persistent markdown knowledge wiki and file durable results back into the wiki when useful. Use when a user asks a question against a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teki-ai",
+      "userId": "s17dahsbn10bdyy745aewwbt7x84qsf5",
+      "displayName": "teki-ai",
+      "image": "https://avatars.githubusercontent.com/u/266598663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776020345014,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6c058cdf3efe420058d0cac4a9ff46957a0ce1323c3569657c1feb5b5115b9a"
+}

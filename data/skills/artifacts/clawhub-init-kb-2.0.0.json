@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/init-kb@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.init_kb",
+  "skill": {
+    "id": 27397,
+    "skillKey": "clawhub-init-kb",
+    "name": "Init Kb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "init-kb",
+    "url": "https://clawhub.ai/skills/init-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/init-kb-6fb2f1abc4966139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Initialize or update a knowledge base for a project, business, or client. Triggers on \"init kb\", \"build kb\", \"create kb for X\", \"set up kb\", \"new kb\" (init),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevjade",
+      "userId": "publishers:kevjade",
+      "displayName": "Kevin Jeppesen @ TheOperatorVault.io",
+      "image": "https://avatars.githubusercontent.com/u/205432013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773638197,
+      "changelog": "CRITICAL FIX: KB files now load on-demand only, never at boot. Prevents context bloat in multi-project workspaces. Updated Phase 7 integration guidance to enforce on-demand loading pattern. All end users must update to prevent massive context waste.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc4d5e68804eaabea51edc96db7fa29fd941f3790aee11a56019199f12349b27"
+}

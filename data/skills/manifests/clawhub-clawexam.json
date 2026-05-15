@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25532,
+  "uuid": "skill-clawhub-clawexam",
+  "skillKey": "clawhub-clawexam",
+  "name": "clawexam",
+  "summary": "Benchmark an OpenClaw agent across seven dimensions including reasoning, code, workflows, security, orchestration, and resilience.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawexam",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zephyr886",
+      "features": [
+        "Benchmark an OpenClaw agent across seven dimensions including reasoning, code, workflows, secur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawexam@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200030185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawexam",
+      "url": "https://clawhub.ai/skills/clawexam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawexam",
+    "url": "https://clawhub.ai/skills/clawexam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawexam-8f9f74314ebe7bc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawexam@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawexam-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d576becdb6613ddbe29a5bd5ca7881784967b844313a30c82e719ea6d6a25b57",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:20:34.535Z"
+}

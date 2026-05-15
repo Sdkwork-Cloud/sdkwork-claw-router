@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18142,
+  "uuid": "skill-clawhub-ghostclaw",
+  "skillKey": "clawhub-ghostclaw",
+  "name": "Ghostclaw",
+  "summary": "Architectural code review and refactoring assistant that perceives code vibes and system-level flow issues. Use for analyzing code quality and architecture,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ev3lynx727",
+      "features": [
+        "Architectural code review and refactoring assistant that perceives code vibes and system-level.",
+        "Use for analyzing code quality and architecture,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghostclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199730071?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghostclaw",
+      "url": "https://clawhub.ai/skills/ghostclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostclaw",
+    "url": "https://clawhub.ai/skills/ghostclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostclaw-94bd1fbcc66f1ae1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghostclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghostclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e66dd733f4b1d36c8c09347191aa6a25a65af8a4600e7410570938886adc85",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:36:15.588Z"
+}

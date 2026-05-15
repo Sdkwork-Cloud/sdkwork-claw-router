@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57173,
+  "uuid": "skill-clawhub-x-uname",
+  "skillKey": "clawhub-x-uname",
+  "name": "x-uname",
+  "summary": "Enhanced `uname` command with colorized, structured output. Shows hostname, OS, kernel, architecture. **Dependency**: This is an x-cmd module. Install x-cmd...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_uname",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edwin.JH.Lee",
+      "features": [
+        "Enhanced `uname` command with colorized, structured output",
+        "Shows hostname, OS, kernel, architecture",
+        "**Dependency**: This is an x-cmd module",
+        "Install x-cmd..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-uname@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-uname",
+      "url": "https://clawhub.ai/skills/x-uname"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-uname",
+    "url": "https://clawhub.ai/skills/x-uname",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-uname-f317063849037c04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-uname@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-uname-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bedfb7a49c2e91b813b8eef1aa9335d21948e0406e71abe7369c92469aafd7da",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:55:01.092Z"
+}

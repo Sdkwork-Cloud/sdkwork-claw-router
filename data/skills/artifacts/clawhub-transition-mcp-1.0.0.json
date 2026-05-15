@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/transition-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transition_mcp",
+  "skill": {
+    "id": 28239,
+    "skillKey": "clawhub-transition-mcp",
+    "name": "Transition MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transition-mcp",
+    "url": "https://clawhub.ai/skills/transition-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transition-mcp-748f68f8e38d880f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered multisport coaching — get personalized workouts, training plans, and performance analytics for running, cycling, swimming, and triathlon."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nftechie",
+      "userId": "publishers:nftechie",
+      "displayName": "nftechie",
+      "image": "https://avatars.githubusercontent.com/u/2530972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 944,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770672835373,
+      "changelog": "Initial release of transition-mcp: AI-powered multisport coaching API.\n\n- Provides structured, personalized workouts and training plans for running, cycling, swimming, and triathlon.\n- Offers a free Workout of the Day (WOD) endpoint—no authentication required.\n- Authenticated features include workout scheduling, plan adaption, performance analytics (CTL, ATL, TSB), and AI coach chat.\n- Enables integration with Garmin, chat history retrieval, and athlete profile access.\n- Includes clear rate limits for free and paid tiers.\n- Usage tips are provided for agents, including how to check fatigue and when to adapt plans.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea1d7e4c22dd02027f4b3d27a9439c171dd9327565f4533e345452fe1a984b35"
+}

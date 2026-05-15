@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relationship-os@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relationship_os",
+  "skill": {
+    "id": 50683,
+    "skillKey": "clawhub-relationship-os",
+    "name": "Relationship OS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relationship-os",
+    "url": "https://clawhub.ai/skills/relationship-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relationship-os-7b3c23a09ff69bf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Relationship OS — Enables AI agents to build human-like relationships with users through event memory, open threads, exclusive memories, agent stances, and r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenhab03",
+      "userId": "publishers:chenhab03",
+      "displayName": "chenhab03",
+      "image": "https://avatars.githubusercontent.com/u/18511646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772625112300,
+      "changelog": "Initial release of Relationship OS—enabling AI agents to create richer, more human-like relationships with users.\n\n- Implements event-based memory, capturing only relationship-changing moments, not all conversations.\n- Adds open thread management for ongoing commitments, emotional follow-ups, and shared plans.\n- Introduces exclusive memories (inside jokes, nicknames, shared goals) for each user relationship.\n- Supports agent stance formation: the agent builds consistent, personal attitudes on recurring topics.\n- Automates relationship stage progression, advancing interaction style based on depth and history.\n- Optional selfie module to proactively share character images, if supported.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:701ca1a5ddb3d17e827ccfc0cc0d689410677abd1205b0ffccaac89a0318e8d2"
+}

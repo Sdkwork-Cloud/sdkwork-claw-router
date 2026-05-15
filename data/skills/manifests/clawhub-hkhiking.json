@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72070,
+  "uuid": "skill-clawhub-hkhiking",
+  "skillKey": "clawhub-hkhiking",
+  "name": "hk-hiking",
+  "summary": "提供香港行山路線、深圳過關接駁、天氣評估、設施查詢與安全建議。用戶查詢香港遠足規劃、裝備、露營補給或天氣風險時調用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkhiking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaydon·tse",
+      "features": [
+        "提供香港行山路線、深圳過關接駁、天氣評估、設施查詢與安全建議。用戶查詢香港遠足規劃、裝備、露營補給或天氣風險時調用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkhiking@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19178602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkhiking",
+      "url": "https://clawhub.ai/skills/hkhiking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkhiking",
+    "url": "https://clawhub.ai/skills/hkhiking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkhiking-3d7a93687e6e522c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkhiking@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkhiking-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b242446d98629348d7877f98f2a5f69030b5902220e1f06e98dd61118f67c344",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:08:56.662Z"
+}

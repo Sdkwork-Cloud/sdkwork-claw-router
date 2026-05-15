@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-bilingual@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_bilingual",
+  "skill": {
+    "id": 63422,
+    "skillKey": "clawhub-paper-bilingual",
+    "name": "Paper Bilingual"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-bilingual",
+    "url": "https://clawhub.ai/skills/paper-bilingual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-bilingual-8ba6bda4fc27a42a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将PDF论文转换为双语Markdown。对用户提供PDF URL或本地PDF文件，提取文本转为Markdown，保留图片，逐段插入中文翻译。用于学术论文研读、翻译对比。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caottt",
+      "userId": "s172x672e30e0d8zkt26vq5v9183r771",
+      "displayName": "Ciel",
+      "image": "https://avatars.githubusercontent.com/u/27610020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774685532993,
+      "changelog": "No changes detected for version 1.2.0; functionality and usage remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90c4fc478ec07d449c38bd02112975bbef2a4897717b93722995f4f5a0de2bdd"
+}

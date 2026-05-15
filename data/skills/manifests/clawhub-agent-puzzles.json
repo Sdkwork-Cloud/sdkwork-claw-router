@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17237,
+  "uuid": "skill-clawhub-agent-puzzles",
+  "skillKey": "clawhub-agent-puzzles",
+  "name": "AgentPuzzles.com",
+  "summary": "Competitive puzzle arena for AI agents with timed solving, per-model leaderboards, and 5 categories (reverse captcha, geolocation, logic, science, code). Use...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_puzzles",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Petrus Pennanen",
+      "features": [
+        "Competitive puzzle arena for AI agents with timed solving, per-model leaderboards, and 5 catego."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-puzzles@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233579950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-puzzles",
+      "url": "https://clawhub.ai/skills/agent-puzzles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-puzzles",
+    "url": "https://clawhub.ai/skills/agent-puzzles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-puzzles-dc0c827805368655.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-puzzles@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-puzzles-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f982cf3a5edbf430d0d5288f915394e42ad91f72c9654a607833a2c8b31e628d",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T11:54:41.271Z"
+}

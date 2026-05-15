@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41060,
+  "uuid": "skill-clawhub-worth-it-auto-logger",
+  "skillKey": "clawhub-worth-it-auto-logger",
+  "name": "Worth It Auto-Logger",
+  "summary": "Automatically detects active projects, tracks session time, logs value signals and costs silently during conversations, then summarizes ROI with Worth It int...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worth_it_auto_logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "storyscriptapp",
+      "features": [
+        "Automatically detects active projects, tracks session time, logs value signals and costs silent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worth-it-auto-logger@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217160468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worth-it-auto-logger",
+      "url": "https://clawhub.ai/skills/worth-it-auto-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worth-it-auto-logger",
+    "url": "https://clawhub.ai/skills/worth-it-auto-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worth-it-auto-logger-92745c21a734db7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worth-it-auto-logger@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-worth-it-auto-logger-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd635aa6fcf714b4d649d1c166e27bf46b7d67b31a2e18c7d41bdd804845330",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:28:35.293Z"
+}

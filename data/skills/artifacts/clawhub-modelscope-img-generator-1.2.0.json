@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modelscope-img-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modelscope_img_generator",
+  "skill": {
+    "id": 30395,
+    "skillKey": "clawhub-modelscope-img-generator",
+    "name": "modelscope_img_generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modelscope-img-generator",
+    "url": "https://clawhub.ai/skills/modelscope-img-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modelscope-img-generator-efde93ea555b659f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with ModelScope API. Use for image generation requests. Supports text-to-image + image-to-image; configurable models; use --input-image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windandliberty",
+      "userId": "s17874063tbvjw67083vzb3bms845txn",
+      "displayName": "ruifeng",
+      "image": "https://avatars.githubusercontent.com/u/58359425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775551652782,
+      "changelog": "**Security hardening: Endpoint is now fixed to the official ModelScope API**\n\n- The API endpoint is now locked to `https://api-inference.modelscope.cn/` and cannot be customized.\n- All ability to set a custom base URL has been removed, eliminating risks of sending your API key or images to untrusted servers.\n- Documentation updated to clarify endpoint restrictions and reinforce user security.\n- All other usage, prerequisites, and prompt/filename conventions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf507f4f8c779ed431e762a4498e5b2f989f3ff93d1909f123a960c5bea9a761"
+}

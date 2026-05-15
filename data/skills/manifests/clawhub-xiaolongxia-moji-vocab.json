@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70707,
+  "uuid": "skill-clawhub-xiaolongxia-moji-vocab",
+  "skillKey": "clawhub-xiaolongxia-moji-vocab",
+  "name": "Moji Vocab",
+  "summary": "Moji辞書生词本管理与每日测试技能。支持读取日语收藏夹、按时间排序（早期单词优先）、混合模式出题（释义+读音）、删除已掌握单词。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaolongxia_moji_vocab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dadaniya99",
+      "features": [
+        "Moji辞書生词本管理与每日测试技能。支持读取日语收藏夹、按时间排序（早期单词优先）、混合模式出题（释义+读音）、删除已掌握单词。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaolongxia-moji-vocab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254098635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaolongxia-moji-vocab",
+      "url": "https://clawhub.ai/skills/xiaolongxia-moji-vocab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaolongxia-moji-vocab",
+    "url": "https://clawhub.ai/skills/xiaolongxia-moji-vocab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaolongxia-moji-vocab-41dc8543e25129fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaolongxia-moji-vocab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaolongxia-moji-vocab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:750daf90e750880076edb03872158332d34d9e375f9f740dc78429fcf435c591",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:49:09.379Z"
+}

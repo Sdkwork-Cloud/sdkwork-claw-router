@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64704,
+  "uuid": "skill-clawhub-new-balance",
+  "skillKey": "clawhub-new-balance",
+  "name": "New Balance",
+  "summary": "提供New Balance跑鞋、服装、配件查询及门店信息，支持价格、新品及多宽度跑鞋建议。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_balance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供New Balance跑鞋、服装、配件查询及门店信息，支持价格、新品及多宽度跑鞋建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-balance@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-balance",
+      "url": "https://clawhub.ai/skills/new-balance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-balance",
+    "url": "https://clawhub.ai/skills/new-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-balance-07edcf167646d9b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-balance@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-balance-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1d754e06dcbc7819f637a85907b8d245d74c43cb3a2a26d34dc8e0e8ee54d2e",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:37:48.998Z"
+}

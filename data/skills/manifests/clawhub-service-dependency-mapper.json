@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47788,
+  "uuid": "skill-clawhub-service-dependency-mapper",
+  "skillKey": "clawhub-service-dependency-mapper",
+  "name": "Service Dependency Mapper",
+  "summary": "Auto-discover and map service dependencies from code, configs, and runtime data. Generate dependency graphs, identify critical paths, find single points of f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_dependency_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Auto-discover and map service dependencies from code, configs, and runtime data",
+        "Generate dependency graphs, identify critical paths, find single points of f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/service-dependency-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "service-dependency-mapper",
+      "url": "https://clawhub.ai/skills/service-dependency-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-dependency-mapper",
+    "url": "https://clawhub.ai/skills/service-dependency-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-dependency-mapper-d483c4ad0a080cd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/service-dependency-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-service-dependency-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ce9e8ae4e2139ca5cf2394809cff8b2c28a8df9e0d3fd472833b0b93ba7532a",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T12:48:06.764Z"
+}

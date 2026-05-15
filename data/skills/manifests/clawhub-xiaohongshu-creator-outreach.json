@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71916,
+  "uuid": "skill-clawhub-xiaohongshu-creator-outreach",
+  "skillKey": "clawhub-xiaohongshu-creator-outreach",
+  "name": "outreach",
+  "summary": "自动在小红书创作者最新作品下发布引导评论，促进关注或查看私信，支持网页版，操作风险低且可批量执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_creator_outreach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiubanszd",
+      "features": [
+        "自动在小红书创作者最新作品下发布引导评论，促进关注或查看私信，支持网页版，操作风险低且可批量执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-creator-outreach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174673996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-creator-outreach",
+      "url": "https://clawhub.ai/skills/xiaohongshu-creator-outreach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-creator-outreach",
+    "url": "https://clawhub.ai/skills/xiaohongshu-creator-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-creator-outreach-63aebd1b29d408d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-creator-outreach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-creator-outreach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c555026a3034f5a05eb500c3357432c59c49651b384060479e85b5864caced6e",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:56:18.128Z"
+}

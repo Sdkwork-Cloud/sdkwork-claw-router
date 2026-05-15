@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-lead-scorer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_lead_scorer",
+  "skill": {
+    "id": 17900,
+    "skillKey": "clawhub-afrexai-lead-scorer",
+    "name": "Lead Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-lead-scorer",
+    "url": "https://clawhub.ai/skills/afrexai-lead-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-lead-scorer-047ee187a8a23e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score and qualify leads using customizable criteria. Prioritize your pipeline by fit, intent, and engagement to focus on deals most likely to close."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770951518563,
+      "changelog": "Cross-links",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e8177027ab2ffecf58525ba395fe63256bbc1774c5f02d93bca2eaea1d010d3"
+}

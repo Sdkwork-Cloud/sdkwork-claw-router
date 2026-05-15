@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22378,
+  "uuid": "skill-clawhub-airdrop-alert",
+  "skillKey": "clawhub-airdrop-alert",
+  "name": "Airdrop Alert",
+  "summary": "Monitor and track potential crypto airdrops. Get alerts for new airdrop opportunities. Never miss an airdrop again!",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airdrop_alert",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eddie",
+      "features": [
+        "Monitor and track potential crypto airdrops",
+        "Get alerts for new airdrop opportunities",
+        "Never miss an airdrop again!"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airdrop-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26967962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airdrop-alert",
+      "url": "https://clawhub.ai/skills/airdrop-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airdrop-alert",
+    "url": "https://clawhub.ai/skills/airdrop-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airdrop-alert-1a5e38a8ee335688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airdrop-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-airdrop-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:966d22c93817deee5e9e5d271dfef3db066d26a0bc7c72e04b6f146805f366ec",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:54:47.889Z"
+}

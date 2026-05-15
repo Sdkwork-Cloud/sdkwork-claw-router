@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47130,
+  "uuid": "skill-clawhub-openclaw-quick-deploy",
+  "skillKey": "clawhub-openclaw-quick-deploy",
+  "name": "Openclaw Quick Deploy",
+  "summary": "Deploy OpenClaw quickly to VPS, Docker, or local with auto environment detection, dependency installation, config generation, and service startup in 5-7 minu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_quick_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Deploy OpenClaw quickly to VPS, Docker, or local with auto environment detection, dependency in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-quick-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-quick-deploy",
+      "url": "https://clawhub.ai/skills/openclaw-quick-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-quick-deploy",
+    "url": "https://clawhub.ai/skills/openclaw-quick-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-quick-deploy-f96ef805a0310e04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-quick-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-quick-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5587934bd7c52fd35d257778d7c427bb652a9b6b2f1838af48a3a235d4ba839",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T22:00:59.880Z"
+}

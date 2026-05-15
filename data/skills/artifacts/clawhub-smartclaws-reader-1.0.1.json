@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smartclaws-reader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartclaws_reader",
+  "skill": {
+    "id": 37250,
+    "skillKey": "clawhub-smartclaws-reader",
+    "name": "Smartclaws Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartclaws-reader",
+    "url": "https://clawhub.ai/skills/smartclaws-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartclaws-reader-563265f0aa288470.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and analyze IoT sensor data from SKALE blockchain via SmartClaws. Use when: querying sensor readings, asking about temperature or other measurements, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmytrotkk",
+      "userId": "s173a6819f6k5zdas35jy644r184a28m",
+      "displayName": "Dmytro",
+      "image": "https://avatars.githubusercontent.com/u/15244591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775558725324,
+      "changelog": "- Updated installation instructions to use `curl -fL` for improved download robustness.\n- Revised example blockchain network details in setup output (changed network name, RPC URL, and Chain ID).\n- Added a new section, \"Data Truthfulness,\" advising users to clarify when data is simulated/mock.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c3c8297456657c1caeb96ea4e1697412797aac5bc636c19165785ba99a72067"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50656,
+  "uuid": "skill-clawhub-rankforge",
+  "skillKey": "clawhub-rankforge",
+  "name": "RankForge",
+  "summary": "SEO analysis and optimization via RankForge API — site audits, keyword research, competitor analysis, ranking reports. Use when user needs SEO analysis, keyw...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rankforge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jbennett111",
+      "features": [
+        "SEO analysis and optimization via RankForge API — site audits, keyword research, competitor ana.",
+        "Use when user needs SEO analysis, keyw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rankforge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86585533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rankforge",
+      "url": "https://clawhub.ai/skills/rankforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rankforge",
+    "url": "https://clawhub.ai/skills/rankforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rankforge-24bb2513d675a27f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rankforge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rankforge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e56f189520a88a070bfaa2bf59cfe6f0dfd9cf804839d5a6a7b709671376843",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:37:33.056Z"
+}

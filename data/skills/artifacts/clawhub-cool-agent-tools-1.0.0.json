@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cool-agent-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cool_agent_tools",
+  "skill": {
+    "id": 65224,
+    "skillKey": "clawhub-cool-agent-tools",
+    "name": "Cool Agent Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cool-agent-tools",
+    "url": "https://clawhub.ai/skills/cool-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cool-agent-tools-0d3e9ba7be477015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 通用工具集 - 提供系统监控、日志分析、进程管理、文件处理、网络诊断等实用命令封装，帮助 agent 高效完成日常运维和数据处理任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuangyinbot-boop",
+      "userId": "s178xm0g14mr7akdfzvgmqvv6x83rvf6",
+      "displayName": "chuangyinbot-boop",
+      "image": "https://avatars.githubusercontent.com/u/271754071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776704766752,
+      "changelog": "Initial release: system monitoring, network diagnostics, file processing, Docker management, log analysis, process management, Git operations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b41ad254c7051187d04197ac1f61fa2145e1bcacb03464893ce5390f784e2014"
+}

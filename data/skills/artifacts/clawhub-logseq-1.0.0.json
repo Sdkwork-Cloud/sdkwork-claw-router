@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logseq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logseq",
+  "skill": {
+    "id": 9509,
+    "skillKey": "clawhub-logseq",
+    "name": "Logseq"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logseq",
+    "url": "https://clawhub.ai/skills/logseq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logseq-9c00698ac74e7a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide commands for interacting with a local Logseq instance through its Plugin API. Use for creating pages, inserting blocks, querying the graph database, managing tasks, retrieving content, or automating workflows in Logseq. Only works."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juanirm",
+      "userId": "publishers:juanirm",
+      "displayName": "juanirm",
+      "image": "https://avatars.githubusercontent.com/u/48082108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3474,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769962442222,
+      "changelog": "Initial release – provides powerful local Logseq automation via Plugin API:\n\n- Enables creating pages, inserting/updating blocks, managing tasks, and querying the graph database.\n- Supports Git integration, asset management, and in-app navigation/notifications.\n- Accesses all core Logseq Plugin API namespaces: App, Editor, DB, UI, Git, and Assets.\n- Requires a locally running Logseq instance with API access via a bridge plugin or compatible setup.\n- Includes usage tips, best practices, and quick code examples for streamlined workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61e890705ac59023558238ec4dc982dc9c711f133cab969265ce6fd783b05700"
+}

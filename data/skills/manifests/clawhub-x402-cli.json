@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19550,
+  "uuid": "skill-clawhub-x402-cli",
+  "skillKey": "clawhub-x402-cli",
+  "name": "x402-cli",
+  "summary": "Pay for x402 payment-gated HTTP endpoints using USDC stablecoins",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Razvan Macovei",
+      "features": [
+        "Pay for x402 payment-gated HTTP endpoints using USDC stablecoins"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x402-cli@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25197586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x402-cli",
+      "url": "https://clawhub.ai/skills/x402-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-cli",
+    "url": "https://clawhub.ai/skills/x402-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-cli-5e6fc4cf48fe27f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x402-cli@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-x402-cli-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:999e4a537d7f875e86c8da3c34210fb993284078d012981a1af41bfb6fdc9886",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:48:08.885Z"
+}

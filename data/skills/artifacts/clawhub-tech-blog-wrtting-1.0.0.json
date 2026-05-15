@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-blog-wrtting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_blog_wrtting",
+  "skill": {
+    "id": 67931,
+    "skillKey": "clawhub-tech-blog-wrtting",
+    "name": "tech-blog-wrtting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-blog-wrtting",
+    "url": "https://clawhub.ai/skills/tech-blog-wrtting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-blog-wrtting-c22c251daf87314b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "撰写具有特定格式的技术博客文章。当用户要求撰写关于技术主题的博客文章或教程时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "csd12380",
+      "userId": "s17eeawys3apz1hw5hcytznmyd84fgkv",
+      "displayName": "csd12380",
+      "image": "https://avatars.githubusercontent.com/u/85327584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776580093943,
+      "changelog": "- Initial release of tech-blog-writing skill.\n- Enables users to generate technical blog articles or tutorials with a clear, prescribed structure.\n- Writing guidelines include impactful titles, engaging openings, concise paragraphs, and runnable code examples.\n- Outputs are formatted in Markdown and saved with a filename based on the blog topic.\n- Important points are emphasized in bold.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d0ef76a396408d934ccbb88d8d53e032e6b61461d6772e73359f096e53c2f91"
+}

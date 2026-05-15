@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strapi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strapi",
+  "skill": {
+    "id": 15949,
+    "skillKey": "clawhub-strapi",
+    "name": "Strapi CMS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strapi",
+    "url": "https://clawhub.ai/skills/strapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strapi-6dbc8128febc7884.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Strapi CMS content through the official @strapi/client SDK. CRUD on collection types, single types, and media files. Upload files to media library. In..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilya-ryzhov",
+      "userId": "publishers:ilya-ryzhov",
+      "displayName": "Ilya R.",
+      "image": "https://avatars.githubusercontent.com/u/63318789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771457315578,
+      "changelog": "- Initial release: Manage Strapi CMS content via the official @strapi/client SDK.\n- Supports CRUD operations for collection types, single types, and media files.\n- Enables schema introspection, form layout configuration, and draft/publish workflow.\n- Manage users, roles, permissions, authentication, locales, and localized content.\n- Upload files to the media library and handle translations/localization.\n- Requires STRAPI_API_TOKEN and STRAPI_BASE_URL environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d4f19628a879a2ed6d9abf6a0a9f8136aa875ac80b57fdca7490c4e4f86de20"
+}

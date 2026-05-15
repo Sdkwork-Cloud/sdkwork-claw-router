@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18361,
+  "uuid": "skill-clawhub-netlify-deploy",
+  "skillKey": "clawhub-netlify-deploy",
+  "name": "Netlify Deploy",
+  "summary": "Deploy and manage Netlify sites with npx netlify, including auth, linking, preview deploys, production releases, and config checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netlify_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Deploy and manage Netlify sites with npx netlify, including auth, linking, preview deploys, pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netlify-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netlify-deploy",
+      "url": "https://clawhub.ai/skills/netlify-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netlify-deploy",
+    "url": "https://clawhub.ai/skills/netlify-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netlify-deploy-22f0c50374055635.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netlify-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-netlify-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2024769d7090634be4d17d5de83ba328a6d8a94a481e888fccbb0e95e9ec609e",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T19:35:25.583Z"
+}

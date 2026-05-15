@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-topic-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_topic_tracker",
+  "skill": {
+    "id": 73705,
+    "skillKey": "clawhub-hot-topic-tracker",
+    "name": "热点追踪专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-topic-tracker",
+    "url": "https://clawhub.ai/skills/hot-topic-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-topic-tracker-071ead5012c8a311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "热点追踪专家：基于用户输入的主题，搜索最新信源、挖掘近期爆点话题，并生成高质量长文内容。适合追踪热点事件、行业动态、人物资讯等持续性话题。关键词：热点、追踪、爆点、话题、长文、新媒体、信源"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangdlam88-hub",
+      "userId": "s17acybkmpt9xb4cg58a3nh7vd83habf",
+      "displayName": "zhangdlam88-hub",
+      "image": "https://avatars.githubusercontent.com/u/270519377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775606590825,
+      "changelog": "hot-topic-tracker v1.0.0\n\n- Initial release of the \"热点追踪专家\" skill for tracking trending topics and generating long-form articles.\n- Provides structured workflows for both快速投教内容生产 and深度长文写作, covering end-to-end processes from模糊输入理解, multi-dimensional source search, to fact-checking.\n- Includes detailed, step-by-step operational guidelines, output templates, and strict filtering/sorting rules to ensure business value and content accuracy.\n- Supports classification and selection of hot topics across key finance/investment fields such as macro, funds, consumption, gold, pension, insurance, deposits, and industry.\n- Emphasizes high information density, audience relevance, and factual correctness throughout the workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfac0e43eca71211be1631b00a022a2e3f60d10482dac60f35a8d570e37b9cc1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-assemble@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_assemble",
+  "skill": {
+    "id": 10200,
+    "skillKey": "clawhub-prompt-assemble",
+    "name": "Prompt Safe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-assemble",
+    "url": "https://clawhub.ai/skills/prompt-assemble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-assemble-d1268c0ce379839d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Token-safe prompt assembly with memory orchestration. Use for any agent that needs to construct LLM prompts with memory retrieval. Guarantees no API failure due to token overflow. Implements two-phase context construction, memory safety va."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexunitario-sketch",
+      "userId": "publishers:alexunitario-sketch",
+      "displayName": "alexunitario-sketch",
+      "image": "https://avatars.githubusercontent.com/u/256296354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2390,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 4,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770219270438,
+      "changelog": "Renamed to 'Prompt Safe'. Added compelling description emphasizing token overflow prevention and API stability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9abc5e22f9de9266ed7a7dfeec22f797c06bb2ce3e5de64ce4a8e0c7fea39deb"
+}

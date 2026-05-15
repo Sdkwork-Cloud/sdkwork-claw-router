@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13425,
+  "uuid": "skill-clawhub-uniswap",
+  "skillKey": "clawhub-uniswap",
+  "name": "Uniswap",
+  "summary": "Assist with Uniswap swaps, liquidity provision, and avoiding common DeFi losses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniswap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Uniswap swaps, liquidity provision, and avoiding common DeFi losses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uniswap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uniswap",
+      "url": "https://clawhub.ai/skills/uniswap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniswap",
+    "url": "https://clawhub.ai/skills/uniswap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniswap-0cb888d14a26697c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uniswap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uniswap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df55614ff6bda0099121e196671df0115fd9b6934d5ace007e2f97a44a3317e8",
+      "artifactSizeBytes": 1754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:53:54.318Z"
+}

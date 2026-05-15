@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-autofix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_autofix",
+  "skill": {
+    "id": 53015,
+    "skillKey": "clawhub-opencli-autofix",
+    "name": "opencli-autofix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-autofix",
+    "url": "https://clawhub.ai/skills/opencli-autofix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-autofix-1255dc7e540b63f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically fix broken OpenCLI adapters when commands fail. Load this skill when an opencli command fails — it guides you through diagnosing the failure vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liberalchang",
+      "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+      "displayName": "chang",
+      "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776845957225,
+      "changelog": "Changelog for opencli-autofix v1.0.0\n\n- Initial release of automatic OpenCLI adapter repair skill.\n- Guides user through diagnosis with OPENCLI_DIAGNOSTIC, patching, and validated retries.\n- Enforces hard safety boundaries (prevents unsafe file edits, stops for login or connectivity errors).\n- Limits to patching only the reported adapter source file, with a maximum of three repair attempts per failure.\n- Provides step-by-step troubleshooting, including DOM/API diagnostics, network inspection, and patch guidance.\n- Supports any AI agent with Bash, Read, Edit, and Write tool permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2295f55ecbdebf053d5b74edff9db78df8dc1f3d115371571de1842a00785a8"
+}

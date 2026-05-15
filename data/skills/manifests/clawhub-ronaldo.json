@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54370,
+  "uuid": "skill-clawhub-ronaldo",
+  "skillKey": "clawhub-ronaldo",
+  "name": "ronaldo",
+  "summary": "Information assistant for Cristiano Ronaldo C罗. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ronaldo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Cristiano Ronaldo C罗",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ronaldo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ronaldo",
+      "url": "https://clawhub.ai/skills/ronaldo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ronaldo",
+    "url": "https://clawhub.ai/skills/ronaldo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ronaldo-e24dd2210803b473.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ronaldo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ronaldo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eba69f706de876ad2ea63aa71377ef6b4309821359332d84a29feefde094705",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T00:24:00.979Z"
+}

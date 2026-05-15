@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11153,
+  "uuid": "skill-clawhub-image-process",
+  "skillKey": "clawhub-image-process",
+  "name": "Image Process",
+  "summary": "Image processing tool for compression, background removal/replacement, and upscaling. Invoke when user wants to compress image, remove background, change bac...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_process",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Real",
+      "features": [
+        "Image processing tool for compression, background removal/replacement, and upscaling",
+        "Invoke when user wants to compress image, remove background, change bac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-process@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18443683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-process",
+      "url": "https://clawhub.ai/skills/image-process"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-process",
+    "url": "https://clawhub.ai/skills/image-process",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-process-880ca163cdcf68f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-process@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-process-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8368c7cbfbea680411a3e7cd27cb248f9d99220e2e1b7cad62d2d80918211b50",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:03:25.961Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chromecast-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromecast_control",
+  "skill": {
+    "id": 10663,
+    "skillKey": "clawhub-chromecast-control",
+    "name": "Control Chromecast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromecast-control",
+    "url": "https://clawhub.ai/skills/chromecast-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromecast-control-ceae2d430a670948.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Chromecast devices on your local network - discover, cast media, control playback, manage queues, and save/restore states"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morozred",
+      "userId": "publishers:morozred",
+      "displayName": "morozRed",
+      "image": "https://avatars.githubusercontent.com/u/6660939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2198,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768339500753,
+      "changelog": "Initial release of Chromecast Control skill.\n\n- Discover and manage Chromecast devices on your local network.\n- Cast media from URLs, local files, or websites to your devices.\n- Control playback: play, pause, seek, stop, volume, and mute functions.\n- Manage YouTube queues and playlists; add, remove, or clear items.\n- Save and restore device playback state, including position and volume.\n- Provides commands for device status and detailed info.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c9820f91dad17955a1488d4e7a7ad6484dc1fc9e65374b7eec90ee36b5a2eb0"
+}

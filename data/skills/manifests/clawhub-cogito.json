@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54782,
+  "uuid": "skill-clawhub-cogito",
+  "skillKey": "clawhub-cogito",
+  "name": "Cogito",
+  "summary": "This skill should be used when the user activates deep thinking mode by saying '深思', 'cogito', or 'ponder'. It guides users into profound self-reflection thr...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogito",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanli",
+      "features": [
+        "This skill should be used when the user activates deep thinking mode by saying '深思', 'cogito',.",
+        "It guides users into profound self-reflection thr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogito@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133091538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogito",
+      "url": "https://clawhub.ai/skills/cogito"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogito",
+    "url": "https://clawhub.ai/skills/cogito",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogito-d2915f0e9118f5ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogito@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogito-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e23d9f5102864aefe48aa42ff11b212be19c3bd4c26e7d0e575a966179ce3bd6",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:20:34.103Z"
+}

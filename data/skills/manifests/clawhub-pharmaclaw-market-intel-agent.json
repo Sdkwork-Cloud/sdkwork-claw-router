@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24879,
+  "uuid": "skill-clawhub-pharmaclaw-market-intel-agent",
+  "skillKey": "clawhub-pharmaclaw-market-intel-agent",
+  "name": "Pharmaclaw Market Intel Agent",
+  "summary": "Fetches and analyzes FAERS (FDA Adverse Event Reporting System) data from openFDA API. Supports drug names and SMILES (resolves via PubChem). Generates: even...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaclaw_market_intel_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cheminem",
+      "features": [
+        "Fetches and analyzes FAERS (FDA Adverse Event Reporting System) data from openFDA API",
+        "Supports drug names and SMILES (resolves via PubChem)",
+        "Generates: even..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pharmaclaw-market-intel-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260304734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pharmaclaw-market-intel-agent",
+      "url": "https://clawhub.ai/skills/pharmaclaw-market-intel-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaclaw-market-intel-agent",
+    "url": "https://clawhub.ai/skills/pharmaclaw-market-intel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaclaw-market-intel-agent-9f5bdbe5606d097c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pharmaclaw-market-intel-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pharmaclaw-market-intel-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a43b5a7172dcd8f0d1d91edeaffc02a2f15e548ec499da5ad6e2d4ce36f92226",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:15:48.094Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sylex-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sylex_memory",
+  "skill": {
+    "id": 48214,
+    "skillKey": "clawhub-sylex-memory",
+    "name": "Sylex Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sylex-memory",
+    "url": "https://clawhub.ai/skills/sylex-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sylex-memory-2886604717c380d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides persistent, encrypted agent memory across sessions to store, recall, search, and share knowledge securely with other agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mastadoonprime",
+      "userId": "s17323g3a7g9h2jynf30fm96t1863y9b",
+      "displayName": "MastadoonPrime",
+      "image": "https://avatars.githubusercontent.com/u/162752398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777916563332,
+      "changelog": "Sylex Memory 1.0.0 — Initial release\n\n- Adds persistent, encrypted memory for OpenClaw agents that survives across sessions.\n- Enables storage and recall of personal thoughts, decisions, skills, and preferences.\n- Provides tools for searching and managing both private and shared (Commons) knowledge.\n- Supports agent-to-agent messaging and topic-based discussion channels.\n- Designed with privacy in mind: private data is end-to-end encrypted and not readable by the service operator.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40a9c1ecfee2961bdd4c7fe1bceadf7e33db04f4d2ed4a223d9b732a2fd9a50f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reflect-critique-revise@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reflect_critique_revise",
+  "skill": {
+    "id": 39787,
+    "skillKey": "clawhub-reflect-critique-revise",
+    "name": "Reflect Critique Revise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reflect-critique-revise",
+    "url": "https://clawhub.ai/skills/reflect-critique-revise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reflect-critique-revise-3770afe19a587808.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs a multi-pass senior engineer critique and revision of code, improving quality by catching bugs, API misuse, and style issues across domains like iOS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stephenlthorn",
+      "userId": "s1781macwsy8b25gaqa558qrx5858x3k",
+      "displayName": "Stephen Thorn",
+      "image": "https://avatars.githubusercontent.com/u/49094234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776779147062,
+      "changelog": "Initial release of the reflect-critique-revise skill.\n\n- Implements a three-pass reflection loop: code is critiqued by a simulated senior engineer, revised, and confidence-rated.\n- Targets code quality improvement by catching bugs, API misuse, and pattern drift.\n- Domain-specific checklists for iOS, web, Python, trading, and venture analysis to guide thorough reviews.\n- Triggered after significant code generation, iOS/Swift output, explicit review requests, or user prompts.\n- Provides a confidence rating (“high”, “medium”, “low”) and critique history after revision.\n- Designed for integration with coding orchestration workflows or standalone review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0826dd71b346536e38c9f06aa6ec78c7961eecdc708f4b86994c511cc464ed0a"
+}

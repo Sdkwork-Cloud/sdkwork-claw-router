@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50550,
+  "uuid": "skill-clawhub-agentcard",
+  "skillKey": "clawhub-agentcard",
+  "name": "ASG Card",
+  "summary": "Virtual MasterCards for AI agents — crypto payments, USDC wallet, create and manage virtual payment cards autonomously via x402 protocol on Stellar blockchain.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ASG Compute",
+      "features": [
+        "Virtual MasterCards for AI agents — crypto payments, USDC wallet, create and manage virtual pay."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcard@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248587261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcard",
+      "url": "https://clawhub.ai/skills/agentcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcard",
+    "url": "https://clawhub.ai/skills/agentcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcard-56bbf5e09d9b1fb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcard@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcard-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ca6ae5274f0b688be1c420b982b337727cee052288c49e18014b3af17402626",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T21:55:35.027Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61256,
+  "uuid": "skill-clawhub-cca-domain5",
+  "skillKey": "clawhub-cca-domain5",
+  "name": "Cca Domain5",
+  "summary": "CCA 领域5：上下文管理与可靠性（15%权重）。当用户说\"学domain5\"、\"上下文管理\"、\"可靠性\"、\"cca-domain5\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cca_domain5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sawzhang",
+      "features": [
+        "CCA 领域5：上下文管理与可靠性（15%权重）。当用户说\"学domain5\"、\"上下文管理\"、\"可靠性\"、\"cca-domain5\"时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cca-domain5@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/859624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cca-domain5",
+      "url": "https://clawhub.ai/skills/cca-domain5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cca-domain5",
+    "url": "https://clawhub.ai/skills/cca-domain5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cca-domain5-f324767352357ed7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cca-domain5@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cca-domain5-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c70e3865f63c1d3c49d6fdd5dfa68e2f78a54108254fbd7d18f50906b7b7269",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:27:36.813Z"
+}

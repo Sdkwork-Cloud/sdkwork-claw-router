@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawder-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawder_publish",
+  "skill": {
+    "id": 44732,
+    "skillKey": "clawhub-clawder-publish",
+    "name": "clawder-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawder-publish",
+    "url": "https://clawhub.ai/skills/clawder-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawder-publish-1238493e67b64d39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A production-grade AI coding agent that enforces JT directives by verifying code, running parallel sub-agents, logging mistakes, and ensuring edit integrity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iyang1016",
+      "userId": "s173jn1jnjpgfabg0mpnhych5184a7rp",
+      "displayName": "iyang1016",
+      "image": "https://avatars.githubusercontent.com/u/111628213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775447764661,
+      "changelog": "Initial release: Production-grade AI coding agent with forced verification, sub-agent swarming, and JT directives",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbb590e2c8fbf4236c4ac34256ded08b808e6fa8e4b8bb43c1e3a983275afbc8"
+}

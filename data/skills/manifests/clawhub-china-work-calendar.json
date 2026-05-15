@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59845,
+  "uuid": "skill-clawhub-china-work-calendar",
+  "skillKey": "clawhub-china-work-calendar",
+  "name": "China Work Calendar",
+  "summary": "中国法定节假日与工作日计算器。查某年某月工作天数、某日期是否上班、距离节假日倒计时、调休换休提示。支持2024-2027年全部法定节假日及已知调休日。When the user asks about Chinese holidays, workdays, overtime, holiday countdown,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_work_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darbling",
+      "features": [
+        "中国法定节假日与工作日计算器。查某年某月工作天数、某日期是否上班、距离节假日倒计时、调休换休提示。支持2024-2027年全部法定节假日及已知调休日。When the user asks a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-work-calendar@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105998927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-work-calendar",
+      "url": "https://clawhub.ai/skills/china-work-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-work-calendar",
+    "url": "https://clawhub.ai/skills/china-work-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-work-calendar-1682c2bfd2ac33f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-work-calendar@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-work-calendar-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e977039863a46df4f7f378e895d8902ce8f4a6715f2986f99a8b495cb48e1ce6",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:19:43.635Z"
+}

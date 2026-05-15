@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22962,
+  "uuid": "skill-clawhub-gemini-file",
+  "skillKey": "clawhub-gemini-file",
+  "name": "gemini-file",
+  "summary": "Gemini CLI for one-shot Q&A, summaries, and generation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_file",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenbaiyujason",
+      "features": [
+        "Gemini CLI for one-shot Q&A, summaries, and generation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-file@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55756122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-file",
+      "url": "https://clawhub.ai/skills/gemini-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-file",
+    "url": "https://clawhub.ai/skills/gemini-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-file-93e6176ef666901e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-file@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-file-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4383186a7d3cc8838c1bb95077c9e962fb978997e8bf2a93f25ee2bdc1b7e4bb",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:42:58.490Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18125,
+  "uuid": "skill-clawhub-tpt-generate-cover",
+  "skillKey": "clawhub-tpt-generate-cover",
+  "name": "Tpt Generate Cover",
+  "summary": "Generate a TPT cover using the AI Studio DinoCover tool and save it locally with the book title as filename.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tpt_generate_cover",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kakazhang50",
+      "features": [
+        "Generate a TPT cover using the AI Studio DinoCover tool and save it locally with the book title."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tpt-generate-cover@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224825542?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tpt-generate-cover",
+      "url": "https://clawhub.ai/skills/tpt-generate-cover"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tpt-generate-cover",
+    "url": "https://clawhub.ai/skills/tpt-generate-cover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tpt-generate-cover-2302459804e87a3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tpt-generate-cover@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tpt-generate-cover-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22c790c12f74461bf6637243c81e55c698863a5a3b02046422bf16519420860b",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T06:49:10.541Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-wzr-999@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_wzr_999",
+  "skill": {
+    "id": 22032,
+    "skillKey": "clawhub-find-skills-wzr-999",
+    "name": "find-skills-wzr-999"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-wzr-999",
+    "url": "https://clawhub.ai/skills/find-skills-wzr-999",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-wzr-999-68585758bc5466d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dawnwangzi",
+      "userId": "publishers:dawnwangzi",
+      "displayName": "Dawnwangzi",
+      "image": "https://avatars.githubusercontent.com/u/20938424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772521313339,
+      "changelog": "- Initial release of the find-skills-wzr-999 skill.\n- Enables users to discover and install agent skills based on their queries or interests.\n- Provides guidance on when and how to use the skill to search, present, and install agent skills.\n- Includes recommended search strategies, example commands, and tips for finding relevant skills.\n- Offers suggestions when no matching skills are found and guidance for creating new skills.\n- Links to the open agent skills ecosystem at https://skills.sh/.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d31b2958e28ee19c1fc056d25f7ecfb08b93cb74c91bd3fb6fcc9a88538c99c"
+}

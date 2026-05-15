@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_parser",
+  "skill": {
+    "id": 73387,
+    "skillKey": "clawhub-literature-parser",
+    "name": "文献自动解析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-parser",
+    "url": "https://clawhub.ai/skills/literature-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-parser-2baae4eef7dcb37a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动提取文献内容的摘要、关键词和核心结论，帮助快速理解学术资料的重点信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyt0302",
+      "userId": "s173kattm2cbtmarvdcrqhn8rh842x4m",
+      "displayName": "lyt0302",
+      "image": "https://avatars.githubusercontent.com/u/260444451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773885712730,
+      "changelog": "- Initial release of the literature-parser skill.\n- Automatically parses user-submitted literature, providing summary, keywords, and key conclusions.\n- Strictly outputs results in a fixed format with dedicated sections for summary, keywords, and core conclusions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71ff05f128a4c614b3522e885ff0e420559b6b8e9006249fa939c5803cb9f98c"
+}

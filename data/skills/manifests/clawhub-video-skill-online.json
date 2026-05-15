@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46381,
+  "uuid": "skill-clawhub-video-skill-online",
+  "skillKey": "clawhub-video-skill-online",
+  "name": "Video Skill Online",
+  "summary": "Get polished edited clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_skill_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get polished edited clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-skill-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-skill-online",
+      "url": "https://clawhub.ai/skills/video-skill-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-skill-online",
+    "url": "https://clawhub.ai/skills/video-skill-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-skill-online-45a897d2ea16d815.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-skill-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-skill-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ebbe2d55889a343bd8a7461a45f8205e7aadac6bf85a431ca64f12352045d38",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:50:08.622Z"
+}

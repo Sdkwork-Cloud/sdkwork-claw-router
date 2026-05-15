@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-review@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_review",
+  "skill": {
+    "id": 57720,
+    "skillKey": "clawhub-codex-review",
+    "name": "Codex Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-review",
+    "url": "https://clawhub.ai/skills/codex-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-review-f0d40db142e5ce99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three-tier code quality defense: L1 quick scan, L2 deep audit (via bug-audit), L3 cross-validation with adversarial testing. 三级代码质量防线。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abczsl520",
+      "userId": "publishers:abczsl520",
+      "displayName": "abczsl520",
+      "image": "https://avatars.githubusercontent.com/u/65114094?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772822990728,
+      "changelog": "Added Security & Privacy section, env var credential handling, explicit data handling transparency to address safety scan concerns",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d703be3c48f31e949806f38224bbc3d92f173b978d020aab1c01b94c6aebc50f"
+}

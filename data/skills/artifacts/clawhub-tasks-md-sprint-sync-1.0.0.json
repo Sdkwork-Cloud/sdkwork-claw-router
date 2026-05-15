@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tasks-md-sprint-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tasks_md_sprint_sync",
+  "skill": {
+    "id": 28228,
+    "skillKey": "clawhub-tasks-md-sprint-sync",
+    "name": "Tasks.md Sprint Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tasks-md-sprint-sync",
+    "url": "https://clawhub.ai/skills/tasks-md-sprint-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tasks-md-sprint-sync-8edc0b20374e6293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync TASKS.md current phase and in-progress checklist from the active PLAN.md phase to keep sprint execution aligned."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772737647340,
+      "changelog": "Initial release: syncs active sprint tasks between PLAN.md and TASKS.md.\n\n- Reads the current active phase from PLAN.md and extracts work items.\n- Compares PLAN.md phase tasks with the corresponding TASKS.md \"In progress\" list.\n- Reports any drift (differences) between the files.\n- Supports \"report\" mode for dry-run analysis and \"apply\" mode to update TASKS.md.\n- Allows configuration of project names and file paths via environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea9cb5d8bd0872975eb970deeb83310af5d0129610b5cf9e74bd6d82f1c702fd"
+}

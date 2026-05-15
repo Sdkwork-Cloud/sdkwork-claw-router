@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wsl-screenshot@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wsl_screenshot",
+  "skill": {
+    "id": 37269,
+    "skillKey": "clawhub-wsl-screenshot",
+    "name": "wsl-screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wsl-screenshot",
+    "url": "https://clawhub.ai/skills/wsl-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wsl-screenshot-ddabb26b918c7704.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture screenshots from WSL by calling Windows PowerShell. Use when user wants to take a screenshot from WSL environment, or needs screenshot functionality..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxuanyuan",
+      "userId": "s17eyyrbc0gbc0kx798wxcbqe583sfg3",
+      "displayName": "WxuanYuan",
+      "image": "https://avatars.githubusercontent.com/u/83860738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774858224057,
+      "changelog": "Initial release of wsl-screenshot.\n\n- Enables capturing screenshots from WSL2 by invoking Windows PowerShell.\n- Saves screenshots directly to the Windows Pictures directory.\n- Provides easy methods to send captured screenshots via message tools.\n- Requires WSL2 and PowerShell installed on Windows 10/11.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b2a1b0309c13b8e74f485b9bb213dbaf8d04ce2ea97c4914a1b48dd30c884f5"
+}

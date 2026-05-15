@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20615,
+  "uuid": "skill-clawhub-playlistable",
+  "skillKey": "clawhub-playlistable",
+  "name": "Playlistable",
+  "summary": "Create AI-powered Spotify playlists and discover music via Playlistable MCP. Use when the user wants to generate playlists from a mood/prompt, search songs o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playlistable",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brackyt",
+      "features": [
+        "Create AI-powered Spotify playlists and discover music via Playlistable MCP",
+        "Use when the user wants to generate playlists from a mood/prompt, search songs o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/playlistable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60280126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "playlistable",
+      "url": "https://clawhub.ai/skills/playlistable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playlistable",
+    "url": "https://clawhub.ai/skills/playlistable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playlistable-6ea9bfc868e963f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/playlistable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-playlistable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a44584bf9aa0f131272c41a85a8e3833e44be9dd8c7d4567c6121219713bc834",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T19:42:49.599Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16148,
+  "uuid": "skill-clawhub-afrexai-email-to-calendar",
+  "skillKey": "clawhub-afrexai-email-to-calendar",
+  "name": "Email to Calendar Extraction Engine",
+  "summary": "Extract calendar events, deadlines, action items, and follow-ups from emails. Works with any calendar provider (Google, Outlook, Apple, Notion, etc.). No external dependencies — pure agent intelligence. Use when the user forwards an email,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_email_to_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Extract calendar events, deadlines, action items, and follow-ups from emails",
+        "Works with any calendar provider (Google, Outlook, Apple, Notion, etc.)",
+        "No external dependencies — pure agent intelligence",
+        "Use when the user forwards an email, asks to check inbox for events, or wants to extract struct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-email-to-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-email-to-calendar",
+      "url": "https://clawhub.ai/skills/afrexai-email-to-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-email-to-calendar",
+    "url": "https://clawhub.ai/skills/afrexai-email-to-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-email-to-calendar-6e84ee604b9d8b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-email-to-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-email-to-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd23b88c54eaf41628e57a1efb5f8141a2e078455ac147cdefd9a90b9c0ada0",
+      "artifactSizeBytes": 2733
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T04:26:31.407Z"
+}

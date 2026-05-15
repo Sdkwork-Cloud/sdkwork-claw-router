@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54484,
+  "uuid": "skill-clawhub-honcho-setup",
+  "skillKey": "clawhub-honcho-setup",
+  "name": "Long-Term Memory (Honcho)",
+  "summary": "Install the @honcho-ai/openclaw-honcho plugin and run initial setup. Runs `openclaw plugins install`, `openclaw honcho setup` (which prompts for your API key...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honcho_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ajspig",
+      "features": [
+        "Install the @honcho-ai/openclaw-honcho plugin and run initial setup",
+        "Runs `openclaw plugins install`, `openclaw honcho setup` (which prompts for your API key..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/honcho-setup@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46900795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "honcho-setup",
+      "url": "https://clawhub.ai/skills/honcho-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honcho-setup",
+    "url": "https://clawhub.ai/skills/honcho-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honcho-setup-1ced9ecd8bc40cdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/honcho-setup@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-honcho-setup-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:576f88bbc79f6a4663a4157755c91244fdb7792713e9f409c5e182f60df9574e",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:23:34.305Z"
+}

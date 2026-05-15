@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50548,
+  "uuid": "skill-clawhub-interop-forge",
+  "skillKey": "clawhub-interop-forge",
+  "name": "Interop Forge",
+  "summary": "Integration architect for multi-app monorepos — shared contracts, API-first design with OpenAPI, cross-app auth, auto-generated SDKs, and full MCP server sca...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interop_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Integration architect for multi-app monorepos — shared contracts, API-first design with OpenAPI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interop-forge@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interop-forge",
+      "url": "https://clawhub.ai/skills/interop-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interop-forge",
+    "url": "https://clawhub.ai/skills/interop-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interop-forge-4b26377728816aca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interop-forge@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-interop-forge-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a342b17f697963df8f46931673c65f6ebefce6929ebaad1b48b30670d38ef4e",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:15:09.649Z"
+}

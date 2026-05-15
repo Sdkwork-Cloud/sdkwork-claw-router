@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41813,
+  "uuid": "skill-clawhub-opengemini-saas-builder",
+  "skillKey": "clawhub-opengemini-saas-builder",
+  "name": "OpenGemini SaaS Builder",
+  "summary": "Build SaaS projects end-to-end with OpenClaw as orchestrator and Gemini CLI as a local planning and generation copilot. Use when the user asks to brainstorm,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opengemini_saas_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hiromps",
+      "features": [
+        "Build SaaS projects end-to-end with OpenClaw as orchestrator and Gemini CLI as a local planning.",
+        "Use when the user asks to brainstorm,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opengemini-saas-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48875637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opengemini-saas-builder",
+      "url": "https://clawhub.ai/skills/opengemini-saas-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opengemini-saas-builder",
+    "url": "https://clawhub.ai/skills/opengemini-saas-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opengemini-saas-builder-cd888c48dcee9209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opengemini-saas-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opengemini-saas-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc9d4ef82d29751d0b357f6e63826353f2ae115a331f53c083c30ee2abb08789",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:24:48.724Z"
+}

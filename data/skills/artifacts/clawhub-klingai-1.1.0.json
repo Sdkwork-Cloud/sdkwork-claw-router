@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klingai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klingai",
+  "skill": {
+    "id": 10746,
+    "skillKey": "clawhub-klingai",
+    "name": "Kling AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klingai",
+    "url": "https://clawhub.ai/skills/klingai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klingai-00a23ea065a51385.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official Kling AI Skill. Call Kling AI for video generation, image generation, subject management, and account quota inquiry. Use subcommand video / image /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klingai-dev",
+      "userId": "s171hj9jje7gzmg9v3nvpjweph83hj68",
+      "displayName": "Kling AI",
+      "image": "https://avatars.githubusercontent.com/u/8593891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775744696609,
+      "changelog": "klingai 1.1.0\n- Changed account credential binding to use only url and removed unsafe browser ops.\n- Minor meta changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:959018de1a388a68b5d48cac63593530e4dbc29a3c837450cecbc41ac8745710"
+}

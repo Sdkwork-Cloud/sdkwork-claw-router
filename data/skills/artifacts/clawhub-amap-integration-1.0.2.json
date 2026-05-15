@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-integration@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_integration",
+  "skill": {
+    "id": 28158,
+    "skillKey": "clawhub-amap-integration",
+    "name": "Map Integration Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-integration",
+    "url": "https://clawhub.ai/skills/amap-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-integration-3a218527069141fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Map and location services for search, routing, and visualization. Provides geocoding, POI search, route planning, and heatmap generation capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayalnova",
+      "userId": "s172txsknm3wk0zymaxx9aymsn83qwxb",
+      "displayName": "Ayal",
+      "image": "https://avatars.githubusercontent.com/u/33284249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773592491093,
+      "changelog": "- Added explicit metadata for API credentials and config file locations to SKILL.md.\n- Credential requirements are now clearly documented with descriptions and optionality.\n- Configuration file paths are specified in a new metadata block for easier setup.\n- No changes to feature functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e90353bde264047744e29926d10c633349bb1f8529949ff4875f5701841eacf"
+}

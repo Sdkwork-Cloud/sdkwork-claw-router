@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72874,
+  "uuid": "skill-clawhub-feishu-security",
+  "skillKey": "clawhub-feishu-security",
+  "name": "飞书群聊安全隔离",
+  "summary": "飞书群聊安全隔离 Skill，提供主人身份三重保障、技能安装确认、权限分级、防注入攻击、敏感路径保护等完整安全机制，保护机器人在群聊环境中的安全。",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carolyn0719",
+      "features": [
+        "飞书群聊安全隔离 Skill，提供主人身份三重保障、技能安装确认、权限分级、防注入攻击、敏感路径保护等完整安全机制，保护机器人在群聊环境中的安全。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-security@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7722467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-security",
+      "url": "https://clawhub.ai/skills/feishu-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-security",
+    "url": "https://clawhub.ai/skills/feishu-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-security-0f26f662e378fd39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-security@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-security-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45251afeca7a18d99fa7c3f9c3e9471efc1e722c3b792490507119db44db73fb",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:02:47.418Z"
+}

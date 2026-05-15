@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/life-logging-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_logging_analyzer",
+  "skill": {
+    "id": 40295,
+    "skillKey": "clawhub-life-logging-analyzer",
+    "name": "Life Logging Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-logging-analyzer",
+    "url": "https://clawhub.ai/skills/life-logging-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-logging-analyzer-d82218de12e03107.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze fragmented life data from calendars, health apps, and notes to identify patterns, trends, and build a personal timeline narrative."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingofzhao",
+      "userId": "s170jhyhajh4wd5e20y7r5mw2n83yyy9",
+      "displayName": "KingOfZhao",
+      "image": "https://avatars.githubusercontent.com/u/46547091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077739760,
+      "changelog": "Life Logging Analyzer 1.0.0\n\n- Initial release with a five-dimensional model to structure and analyze scattered life data.\n- Supports integration from calendars, notes, photos, health apps, and productivity metrics.\n- Extracts daily, weekly, and annual patterns for personal insight and reporting.\n- Generates personalized narrative summaries and actionable suggestions.\n- Emphasizes privacy by processing all data locally.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4369cc9b49b852cab72c21ac51b6061d2f849e0f783df36908bbe7308c33be1b"
+}

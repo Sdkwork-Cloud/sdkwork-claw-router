@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-todo@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_todo",
+  "skill": {
+    "id": 73272,
+    "skillKey": "clawhub-feishu-doc-todo",
+    "name": "📅 飞书文档待办自动识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-todo",
+    "url": "https://clawhub.ai/skills/feishu-doc-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-todo-87a9ae187ff0f738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动识别飞书文档中的待办表格，解析模糊时间并创建对应的飞书日历日程，支持负责人和提醒设置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icesumer-lgtm",
+      "userId": "s177qrnn1tw4tydz6g6neevw0d83tmha",
+      "displayName": "icesumer-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/262824601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774775143579,
+      "changelog": "v1.0.4: 所有 TODO 内容全部替换为 xxx（产能调研/系统上线/成果展示等全部脱敏）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e6fa7c71e6e803c7f135e0750228e7bda4c14e17014e3b49c3d12aa7307df51"
+}

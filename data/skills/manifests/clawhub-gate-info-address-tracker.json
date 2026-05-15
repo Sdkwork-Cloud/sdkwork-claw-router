@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26161,
+  "uuid": "skill-clawhub-gate-info-address-tracker",
+  "skillKey": "clawhub-gate-info-address-tracker",
+  "name": "gate-info-addresstracker",
+  "summary": "Address tracker and analysis. Use this skill whenever the user provides an on-chain address or asks to track or query an address. Trigger phrases include: tr...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_address_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Address tracker and analysis",
+        "Use this skill whenever the user provides an on-chain address or asks to track or query an addr.",
+        "Trigger phrases include: tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-address-tracker@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-address-tracker",
+      "url": "https://clawhub.ai/skills/gate-info-address-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-address-tracker",
+    "url": "https://clawhub.ai/skills/gate-info-address-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-address-tracker-fb449bc9573d2209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-address-tracker@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-address-tracker-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bba123b7f80d8d9af410a36d1aeb4de0524bab441b3ea54664d828e15dbd04f3",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:33:53.434Z"
+}

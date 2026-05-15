@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jianying-editor-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jianying_editor_skill",
+  "skill": {
+    "id": 60601,
+    "skillKey": "clawhub-jianying-editor-skill",
+    "name": "Jianying Editor Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jianying-editor-skill",
+    "url": "https://clawhub.ai/skills/jianying-editor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jianying-editor-skill-1dfdd64d57f5e4a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "剪映 (JianYing) AI自动化剪辑的高级封装 API (JyWrapper)。提供开箱即用的 Python 接口，支持录屏、素材导入、字幕生成、Web 动效合成及项目导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang21cn-tiger",
+      "userId": "s175fm266yvtxdkx906ngb7hk184mkg9",
+      "displayName": "williamwang21cn-tiger",
+      "image": "https://avatars.githubusercontent.com/u/269350628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775924158821,
+      "changelog": "Initial release of the jianying-editor-skill — a powerful Python API for JianYing Pro AI video editing automation.\n\n- Offers an easy-to-use interface for screen recording, media import, subtitle generation, web animation synthesis, and project export.\n- Includes mandatory development principles to keep business scripts outside the skill directory for better maintainability.\n- Provides detailed rule files for core operations, media handling, subtitles, effects, keyframes, recording, Web VFX, TTS, and audio management.\n- Features ready-to-use CLI tools and example scripts for typical workflows: vlog creation, batch export, commentary generation, and more.\n- Offers agent routing guides and usage templates to streamline video editing automation tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8d00d205352d9a879e3de324fc6be7d7785db50a15652ca307ba5f06bfe82ca"
+}

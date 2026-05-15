@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-network@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_network",
+  "skill": {
+    "id": 23655,
+    "skillKey": "clawhub-x-network",
+    "name": "x-cmd network skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-network",
+    "url": "https://clawhub.ai/skills/x-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-network-364bf592c99d6f01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill provides comprehensive network administration and diagnostic tools through x-cmd CLI, including network scanning with Nmap, ARP table management,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tzw-my",
+      "userId": "s170snm35c6zvzndw3fwpxdqa983htsb",
+      "displayName": "tzw-my",
+      "image": "https://avatars.githubusercontent.com/u/57086746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773312020879,
+      "changelog": "- Added metadata fields: display_name, author, version, license, category, and repository to SKILL.md for improved documentation and discoverability.\n- No changes to the core functionality or user commands.\n- Documentation remains focused on comprehensive network administration and diagnostic use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0aa0a0ed989b82e8d7bbc0c09f9c8c7e75c43453b63a7db1f2fdae6af6c316c"
+}

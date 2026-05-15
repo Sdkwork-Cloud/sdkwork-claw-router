@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33626,
+  "uuid": "skill-clawhub-onetrust",
+  "skillKey": "clawhub-onetrust",
+  "name": "Onetrust",
+  "summary": "OneTrust integration. Manage data, records, and automate workflows. Use when the user wants to interact with OneTrust data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onetrust",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "OneTrust integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with OneTrust data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onetrust@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onetrust",
+      "url": "https://clawhub.ai/skills/onetrust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onetrust",
+    "url": "https://clawhub.ai/skills/onetrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onetrust-84de5335ca1b435d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onetrust@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onetrust-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32ebd9282efd09ac56a248f8d6882508eb9ff83fbff32a49a1d2999e81d6fdb4",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:09.976Z"
+}

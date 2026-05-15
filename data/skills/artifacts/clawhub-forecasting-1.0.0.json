@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forecasting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecasting",
+  "skill": {
+    "id": 29799,
+    "skillKey": "clawhub-forecasting",
+    "name": "Forecasting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecasting",
+    "url": "https://clawhub.ai/skills/forecasting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecasting-abb2a39d68dd5ed4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply quantitative and qualitative forecasting techniques. Use for demand planning, revenue projections, and trend analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774055108306,
+      "changelog": "Initial release of the \"forecasting\" skill.\n\n- Provides a framework for quantitative and qualitative forecasting methods.\n- Includes guidance on method selection, output structure, and risk assessment.\n- Supports use cases such as demand planning, revenue projections, and trend analysis.\n- Offers tips for validation, documentation, and data updates.\n- Outlines common forecasting techniques with their best use cases and accuracy levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b2340e9ffc799f8eb0a397eeb2a213da1f43a3d7da1194f2ac3a47ab83055fb"
+}

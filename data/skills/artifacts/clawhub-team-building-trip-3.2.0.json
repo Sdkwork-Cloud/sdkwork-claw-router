@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-building-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_building_trip",
+  "skill": {
+    "id": 46879,
+    "skillKey": "clawhub-team-building-trip",
+    "name": "team-building-trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-building-trip",
+    "url": "https://clawhub.ai/skills/team-building-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-building-trip-128003050934df5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for team building trips and company retreats. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liquanyu123",
+      "userId": "s173bh61f4yde29x5ddrjfa1qd844z4w",
+      "displayName": "liquanyu123",
+      "image": "https://avatars.githubusercontent.com/u/210639558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777016262073,
+      "changelog": "- Major update: Comprehensive execution and output rules for team-building and company retreat flight bookings.\n- Added strict requirement: All travel data must originate from the flyai CLI, never from training data.\n- Enhanced multi-modal support: Now handles flight, hotel, train, attractions, itinerary, visa, insurance, and car rental.\n- Introduced scenario-based playbooks (recommended, cheapest, fastest, direct) for more tailored search results.\n- Specific output formatting rules established, including booking links, team building destination tips, comparison tables, and brand tagging.\n- Improved input validation and parameter collection; missing data cues further user prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e455a0606e34a6336780c83f50445eb6cf86fe032de59e4b822b25c1a48ba8b7"
+}

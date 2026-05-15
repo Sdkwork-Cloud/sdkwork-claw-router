@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "security-operator",
+    "displayName": "Security Operator",
+    "summary": "Runtime security guardrails for OpenClaw agents. Protects against prompt injection, excessive agency, cost runaway, credential leaks, and cascade effects. In...",
+    "tags": {
+      "latest": "2.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1036,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1771608180305,
+    "updatedAt": 1778387066189
+  },
+  "latestVersion": {
+    "version": "2.2.0",
+    "createdAt": 1771691416466,
+    "changelog": "v2.2: Defense-in-depth skill vetting. ClawHub scans can have false negatives, so now includes Layer 2 self-inspection with grep patterns for dangerous code. Added decision matrix. Update checks now include diff inspection for new dangerous patterns. Added paranoid mode for production.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kevjade",
+    "userId": "publishers:kevjade",
+    "displayName": "Kevin Jeppesen @ TheOperatorVault.io",
+    "image": "https://avatars.githubusercontent.com/u/205432013?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387066189
+  }
+}

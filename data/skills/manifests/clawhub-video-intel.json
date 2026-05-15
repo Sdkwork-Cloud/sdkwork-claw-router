@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21672,
+  "uuid": "skill-clawhub-video-intel",
+  "skillKey": "clawhub-video-intel",
+  "name": "Video Intelligence",
+  "summary": "Download videos and get transcripts, summaries, or metadata from YouTube, TikTok, Instagram, and X (Twitter). Use when the user shares a video URL and wants...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Luiz Gustavo Nogara",
+      "features": [
+        "Download videos and get transcripts, summaries, or metadata from YouTube, TikTok, Instagram, an.",
+        "Use when the user shares a video URL and wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-intel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-intel",
+      "url": "https://clawhub.ai/skills/video-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-intel",
+    "url": "https://clawhub.ai/skills/video-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-intel-88fe1e90e214e657.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-intel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-intel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed0360cd16a36336f4bcd7d18e756cfad3a8b265e5b750da4de20add6f474697",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T15:51:37.612Z"
+}

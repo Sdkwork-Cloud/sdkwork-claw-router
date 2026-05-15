@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "ai-supply-chain-security",
+    "displayName": "ai-supply-chain-security",
+    "summary": "Cross-platform AI security scanner detecting hooks risks, MCP server attacks, prompt injection, supply chain threats in npm, PyPI, Rust, and GitHub Actions c...",
+    "tags": {
+      "latest": "2.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775192529893,
+    "updatedAt": 1777527118632
+  },
+  "latestVersion": {
+    "version": "2.1.0",
+    "createdAt": 1775527422999,
+    "changelog": "**ai-supply-chain-security v2.1.0**\n\n- Added comprehensive lock file poisoning detection (package-lock.json, poetry.lock, Cargo.lock) for non-official sources and missing integrity.\n- Introduced registry substitution attack checks for .npmrc, pip.conf, and pip.ini including hardcoded tokens and index/registry overrides.\n- Enhanced supply chain security scanning with updated malicious package database and typosquatting coverage.\n- Added sample detection examples (`examples/malicious-package.json`, `examples/safe-package.json`).\n- Unified documentation and changelog under new files; removed legacy meta file.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "javamagong",
+    "userId": "s17aw69dk3x4vnc00ng3ryk6d5845eq3",
+    "displayName": "javamagong",
+    "image": "https://avatars.githubusercontent.com/u/1988270?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.dynamic_code_execution"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.dynamic_code_execution",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527118632
+  }
+}

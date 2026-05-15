@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-dev@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_dev",
+  "skill": {
+    "id": 10409,
+    "skillKey": "clawhub-frontend-dev",
+    "name": "NextJS Frontend Development + Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-dev",
+    "url": "https://clawhub.ai/skills/frontend-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-dev-309ffd253515ad79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate production-ready Next.js projects with TypeScript, Tailwind CSS, shadcn/ui, and API integration. Use when the user asks to build, create, develop, or scaffold a Next.js application, web app, full-stack project, or frontend with ba."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wing8169",
+      "userId": "publishers:wing8169",
+      "displayName": "wing8169",
+      "image": "https://avatars.githubusercontent.com/u/33794617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2416,
+      "installsAllTime": 31,
+      "installsCurrent": 31,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770803826510,
+      "changelog": "Initializes Git structure and streamlines project setup and developer workflow.\n\n- Added full project .git directory and hooks for version control and collaboration.\n- Updated documentation to include a Quick Start and common project patterns.\n- Clarified live preview and dev server management using PM2 on port 3002.\n- Provided clearer nginx proxy setup instructions for external previews.\n- Reorganized optional features with more actionable setup and clearer user prompts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1bc38e76a0ec88c2b372ad8b53b50f285cb45396c8319891da301f0611bfc59d"
+}

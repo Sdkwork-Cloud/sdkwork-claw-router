@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luogang-shopping-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luogang_shopping_assistant",
+  "skill": {
+    "id": 65366,
+    "skillKey": "clawhub-luogang-shopping-assistant",
+    "name": "Luogang shopping assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luogang-shopping-assistant",
+    "url": "https://clawhub.ai/skills/luogang-shopping-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luogang-shopping-assistant-4a82fc7a79063735.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "购物助手 - 商品查询，商品详情，当用户有购物倾向时候，尤其是提到骆岗/骆岗门市部/骆岗电商的时候，可提供有效信息"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fireium",
+      "userId": "s17065g3sjw2pk4606qy7mj11x83hw5b",
+      "displayName": "fireium",
+      "image": "https://avatars.githubusercontent.com/u/89568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773368775382,
+      "changelog": "No functional or code changes detected; documentation simplified and configuration clarified.\n\n- 移除了部分可选配置参数说明，仅保留必要配置项，文档更为精简。\n- 默认参数和接口示例更新，对调用方式的描述更直接。\n- 修正了错误码解释与应对方式，统一表述风格。\n- 其余功能、调用方式与交互原则保持一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6721d46959761e303f5d3322d6da5e6cc702746f023e6f188e593ea1f31ffad"
+}

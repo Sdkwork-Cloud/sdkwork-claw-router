@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47368,
+  "uuid": "skill-clawhub-qui-app-store-changelog",
+  "skillKey": "clawhub-qui-app-store-changelog",
+  "name": "App Store Changelog",
+  "summary": "Create user-facing App Store release notes by collecting and summarizing all user-impacting changes since the last git tag (or a specified ref). Use when ask...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_app_store_changelog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Create user-facing App Store release notes by collecting and summarizing all user-impacting cha.",
+        "Use when ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-app-store-changelog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-app-store-changelog",
+      "url": "https://clawhub.ai/skills/qui-app-store-changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-app-store-changelog",
+    "url": "https://clawhub.ai/skills/qui-app-store-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-app-store-changelog-0383f867d5ff6fcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-app-store-changelog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-app-store-changelog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e4fd39cd98aa806cc3a062294fec56e287273b4895cc81e0cced76d779afad9",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:46:50.520Z"
+}

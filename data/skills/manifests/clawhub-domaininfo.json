@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29796,
+  "uuid": "skill-clawhub-domaininfo",
+  "skillKey": "clawhub-domaininfo",
+  "name": "Domain WHOIS Lookup",
+  "summary": "Look up domain WHOIS information, check email security (DMARC/SPF/DKIM), inspect TLS certificates, and capture website screenshots. Provides a comprehensive,...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domaininfo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derek Chan",
+      "features": [
+        "Look up domain WHOIS information, check email security (DMARC/SPF/DKIM), inspect TLS certificat.",
+        "Provides a comprehensive,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/domaininfo@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9056044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "domaininfo",
+      "url": "https://clawhub.ai/skills/domaininfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domaininfo",
+    "url": "https://clawhub.ai/skills/domaininfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domaininfo-7b7777915838b9c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/domaininfo@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-domaininfo-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30db5d549abce0bab963205fa8000331e80a954cb59c98e64e06d3830672c2d4",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:57:18.834Z"
+}

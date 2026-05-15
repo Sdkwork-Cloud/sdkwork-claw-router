@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56963,
+  "uuid": "skill-clawhub-rapper",
+  "skillKey": "clawhub-rapper",
+  "name": "Rapper",
+  "summary": "Create and debug SenseAudio rap, hip-hop, or vocal song generation workflows using the `/v1/song/lyrics/create`, `/v1/song/lyrics/pending/:task_id`, `/v1/son...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Create and debug SenseAudio rap, hip-hop, or vocal song generation workflows using the `/v1/son."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapper",
+      "url": "https://clawhub.ai/skills/rapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapper",
+    "url": "https://clawhub.ai/skills/rapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapper-3003f08dc05324f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c4d1e1c48253685fa66de9ff9a48eb76b714aaac8f42fa23ac1d5430fb50c5a",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:50:37.895Z"
+}

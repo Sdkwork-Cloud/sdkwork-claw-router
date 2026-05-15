@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35958,
+  "uuid": "skill-clawhub-railz",
+  "skillKey": "clawhub-railz",
+  "name": "Railz",
+  "summary": "Railz integration. Manage data, records, and automate workflows. Use when the user wants to interact with Railz data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.railz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Railz integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Railz data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/railz@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "railz",
+      "url": "https://clawhub.ai/skills/railz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "railz",
+    "url": "https://clawhub.ai/skills/railz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/railz-f9bf7dce90e6c758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/railz@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-railz-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80a7da1c239b8fdb27354864332754f9e678a248aee4fca8fd5817428fae0fc3",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:54:44.828Z"
+}

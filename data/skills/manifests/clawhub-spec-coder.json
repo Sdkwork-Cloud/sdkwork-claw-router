@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27603,
+  "uuid": "skill-clawhub-spec-coder",
+  "skillKey": "clawhub-spec-coder",
+  "name": "Spec Coder",
+  "summary": "Structured spec-first development workflow with multi-role expert review gates: clarify requirements, author spec documents (requirements/design/tasks), gene...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_coder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pan Xiaohua",
+      "features": [
+        "Structured spec-first development workflow with multi-role expert review gates: clarify require."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-coder@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2708612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-coder",
+      "url": "https://clawhub.ai/skills/spec-coder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-coder",
+    "url": "https://clawhub.ai/skills/spec-coder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-coder-3216391aa643d504.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-coder@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-coder-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b61b0abda466cc9590195f11d3355f22a6c6b058649e73daec7365cc96c8efc4",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:49:36.329Z"
+}

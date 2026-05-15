@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67292,
+  "uuid": "skill-clawhub-trouble-shooting",
+  "skillKey": "clawhub-trouble-shooting",
+  "name": "trouble-shooting",
+  "summary": "问题排查与上下文隔离。用户说报错了/遇到问题时，创建隔离环境（worktree/subagent）专门排查，当前主线上下文保持不变。解决后回到主线继续。触发词：报错了、有问题、排查。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trouble_shooting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gracie ♡",
+      "features": [
+        "问题排查与上下文隔离。用户说报错了/遇到问题时，创建隔离环境（worktree/subagent）专门排查，当前主线上下文保持不变。解决后回到主线继续。触发词：报错了、有问题、排查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trouble-shooting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69355143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trouble-shooting",
+      "url": "https://clawhub.ai/skills/trouble-shooting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trouble-shooting",
+    "url": "https://clawhub.ai/skills/trouble-shooting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trouble-shooting-6f6c8edfa7b855bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trouble-shooting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trouble-shooting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03a2b9517cbe70119f350977c8324e9408f9e9646e64bd0d1c9fade3e2c1163a",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T07:47:13.878Z"
+}

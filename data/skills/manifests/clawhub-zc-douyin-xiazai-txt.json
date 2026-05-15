@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63049,
+  "uuid": "skill-clawhub-zc-douyin-xiazai-txt",
+  "skillKey": "clawhub-zc-douyin-xiazai-txt",
+  "name": "zc-douyin-xiazai-txt",
+  "summary": "抖音无水印视频下载与文案提取工具，使用本地 ffmpeg 与 Whisper 完成下载、音频提取和文字转写，可选语义分段。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zc_douyin_xiazai_txt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张翀",
+      "features": [
+        "抖音无水印视频下载与文案提取工具，使用本地 ffmpeg 与 Whisper 完成下载、音频提取和文字转写，可选语义分段。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zc-douyin-xiazai-txt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270544860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zc-douyin-xiazai-txt",
+      "url": "https://clawhub.ai/skills/zc-douyin-xiazai-txt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zc-douyin-xiazai-txt",
+    "url": "https://clawhub.ai/skills/zc-douyin-xiazai-txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zc-douyin-xiazai-txt-f8188ee85bb4d422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zc-douyin-xiazai-txt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zc-douyin-xiazai-txt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dafa4f6bc87addaa7f57b6ce4f7e4f1bd4a7c9065ab55255ead5561b4fc8a56",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T12:06:06.554Z"
+}

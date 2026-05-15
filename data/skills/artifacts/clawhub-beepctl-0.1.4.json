@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beepctl@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beepctl",
+  "skill": {
+    "id": 10611,
+    "skillKey": "clawhub-beepctl",
+    "name": "beepctl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beepctl",
+    "url": "https://clawhub.ai/skills/beepctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beepctl-6d74134f863df507.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when sending messages, searching chats, or managing conversations across messaging platforms (Telegram, WhatsApp, Slack, iMessage, etc.) via Beeper Desktop API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blqke",
+      "userId": "publishers:blqke",
+      "displayName": "blqke",
+      "image": "https://avatars.githubusercontent.com/u/1248148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2456,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1769349691948,
+      "changelog": "- Documentation was streamlined by moving setup and installation instructions to the GitHub repository and referencing it directly.\n- No changes were made to functionality or commands; only SKILL.md documentation was affected.\n- The skill is now quicker to scan, with a simpler Quick Start and a shorter intro.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d473f4e9cc5ceef2e5124074f439226008616d5dd7a7c68edf844b407bd902aa"
+}

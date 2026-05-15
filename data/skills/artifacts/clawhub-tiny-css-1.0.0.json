@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiny-css@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiny_css",
+  "skill": {
+    "id": 26177,
+    "skillKey": "clawhub-tiny-css",
+    "name": "Tiny CSS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiny-css",
+    "url": "https://clawhub.ai/skills/tiny-css",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiny-css-c0b0dfc8bcb57f35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write minimal, efficient CSS for small or minimalist projects by trusting the browser instead of fighting it. Only use this skill for personal sites, prototy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikemai2awesome",
+      "userId": "publishers:mikemai2awesome",
+      "displayName": "mikemai2awesome",
+      "image": "https://avatars.githubusercontent.com/u/3027663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773951857093,
+      "changelog": "- Initial release introducing the tiny-css skill for minimalist CSS design.\n- Emphasizes browser defaults: no resets, font-size overrides, or default colors.\n- Guides use of logical properties, system fonts, and CSS modern features.\n- Includes recommendations for accessibility, internationalization, and user preferences.\n- Provides a minimal base stylesheet incorporating all core principles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a05ef2fbc0bf315788c2bbba6d6827d07a06176a2a09d6c2e60755034046151b"
+}

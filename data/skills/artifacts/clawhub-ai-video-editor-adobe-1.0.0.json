@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-adobe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_adobe",
+  "skill": {
+    "id": 46400,
+    "skillKey": "clawhub-ai-video-editor-adobe",
+    "name": "Ai Video Editor Adobe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-adobe",
+    "url": "https://clawhub.ai/skills/ai-video-editor-adobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-adobe-1916a8b2d9ae344c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776101618890,
+      "changelog": "Initial release: AI-powered video editing and export with cloud processing\n\n- Upload raw video (MP4, MOV, AVI, WebM up to 500MB) and generate polished edits with cloud-based AI.\n- Automatic session and token management with up to 100 free credits.\n- Fast export of 1080p MP4 files; typical processing takes 1–2 minutes.\n- Interactive workflows: trim footage, add transitions, export, check credits/balance, preview timelines, and more.\n- Handles common video editing tasks via chat commands; supports quick edits and iterative refinement.\n- Detailed error handling and session management included for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce74d11515fd52e736f3b6f56247ebe5044ea08f3527b341b6237a66a577f6dd"
+}

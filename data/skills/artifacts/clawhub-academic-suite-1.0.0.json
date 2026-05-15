@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_suite",
+  "skill": {
+    "id": 51046,
+    "skillKey": "clawhub-academic-suite",
+    "name": "Academic Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-suite",
+    "url": "https://clawhub.ai/skills/academic-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-suite-8605360159810708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three-in-one academic writing toolkit with three distinct agent roles — Supervisor (promotor), Reviewer (recenzent), and Writer Assistant. Use when someone n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kbakdev",
+      "userId": "s170y2asn5e7ee18ams139s02583rqvb",
+      "displayName": "Kacper Bąk",
+      "image": "https://avatars.githubusercontent.com/u/56700396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774857146553,
+      "changelog": "Initial release: 3-in-1 academic toolkit (Supervisor, Reviewer, Writer Assistant) for dissertations and scientific papers",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1885d85f25b71383d36f3d16f89322f79d18c976066aedad7a822e63ecfd709f"
+}

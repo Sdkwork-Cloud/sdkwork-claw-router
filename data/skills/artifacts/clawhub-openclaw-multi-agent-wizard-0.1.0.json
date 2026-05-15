@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-multi-agent-wizard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_multi_agent_wizard",
+  "skill": {
+    "id": 57469,
+    "skillKey": "clawhub-openclaw-multi-agent-wizard",
+    "name": "openclaw多智能体创建向导"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-multi-agent-wizard",
+    "url": "https://clawhub.ai/skills/openclaw-multi-agent-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-multi-agent-wizard-d24e8a9c0e6776e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide beginners through OpenClaw multi-agent setup with a step-by-step wizard. Use when the user wants to create OpenClaw multi-agent setups, says things lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "majiabin2020",
+      "userId": "s1781hdc7ay3q1sefvvp5evq8s83qhwd",
+      "displayName": "majiabin2020",
+      "image": "https://avatars.githubusercontent.com/u/76176438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775356555162,
+      "changelog": "openclaw-multi-agent-wizard v1.0.0\n\n- Initial release: guides beginners step-by-step through OpenClaw multi-agent setup.\n- Supports both 多 bot 多 agent (one bot per agent) and 单 bot 多 agent (single bot, group-based routing) modes.\n- Prefers official OpenClaw CLI commands for all operations; minimal user input required.\n- Includes clear preflight checks, step-by-step Feishu integration, and verification before completion.\n- Focuses on beginner-friendly language, safe defaults, and minimal manual config edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6f9ffab9026a68e7fa87f3b02460f7766c92724f9ad587320e0fb8c93fb52cf"
+}

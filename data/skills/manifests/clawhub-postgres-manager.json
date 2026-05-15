@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49964,
+  "uuid": "skill-clawhub-postgres-manager",
+  "skillKey": "clawhub-postgres-manager",
+  "name": "Postgres Manager",
+  "summary": "Manage a shared PostgreSQL Docker container for local dev environments. Handles container lifecycle, database creation/removal, and cross-instance dumps via...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postgres_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jair Pereira",
+      "features": [
+        "Manage a shared PostgreSQL Docker container for local dev environments",
+        "Handles container lifecycle, database creation/removal, and cross-instance dumps via..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postgres-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postgres-manager",
+      "url": "https://clawhub.ai/skills/postgres-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postgres-manager",
+    "url": "https://clawhub.ai/skills/postgres-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postgres-manager-962f30c1b843bc25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postgres-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postgres-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24202ccf1b8e9b7bb568a916471b6078a7e86d6d0b866174ce245e4f9cc6a9be",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T11:18:30.632Z"
+}

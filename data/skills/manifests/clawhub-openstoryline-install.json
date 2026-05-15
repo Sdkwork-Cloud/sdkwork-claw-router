@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16238,
+  "uuid": "skill-clawhub-openstoryline-install",
+  "skillKey": "clawhub-openstoryline-install",
+  "name": "OpenStoryline Install",
+  "summary": "Install, configure, and start FireRed-OpenStoryline from source on a local machine. Use when a user asks to set up OpenStoryline, troubleshoot installation,...",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstoryline_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anlittledy",
+      "features": [
+        "Install, configure, and start FireRed-OpenStoryline from source on a local machine",
+        "Use when a user asks to set up OpenStoryline, troubleshoot installation,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openstoryline-install@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78261172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openstoryline-install",
+      "url": "https://clawhub.ai/skills/openstoryline-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstoryline-install",
+    "url": "https://clawhub.ai/skills/openstoryline-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstoryline-install-34ad3cd49d78cbeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openstoryline-install@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openstoryline-install-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2312f65506dec7ab5689faac9461b9ac0c6d160e1f4fa71b54bfe74885bd704e",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:27:35.678Z"
+}

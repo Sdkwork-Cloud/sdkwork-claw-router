@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-freelance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_freelance",
+  "skill": {
+    "id": 55519,
+    "skillKey": "clawhub-video-editor-freelance",
+    "name": "Video Editor Freelance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-freelance",
+    "url": "https://clawhub.ai/skills/video-editor-freelance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-freelance-1980f8d197343d5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut the pauses, add lower-third titles, and export a clean final cut — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776100009469,
+      "changelog": "Initial release of Video Editor Freelance skill.\n\n- Instantly edit and export client videos in 1-2 minutes with AI—no editing software required.\n- Upload raw video files (MP4, MOV, AVI, WebM up to 500MB); describe edits like \"cut pauses, add lower-thirds, export final cut\".\n- Cloud GPU backend handles rendering, timeline edits, and exports to common formats (MP4, MOV, AVI, etc.).\n- Credits and session management with built-in anonymous access; clear handling of common errors and quotas.\n- Designed for freelance editors to speed up client turnaround and simplify complex workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dc12d78dfe47eac94e5e98d96b4d2296aaede390957df5be4c40971677c7a2c"
+}

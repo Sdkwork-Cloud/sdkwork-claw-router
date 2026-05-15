@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-interview-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_interview_builder",
+  "skill": {
+    "id": 63671,
+    "skillKey": "clawhub-skill-interview-builder",
+    "name": "Skill Interview Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-interview-builder",
+    "url": "https://clawhub.ai/skills/skill-interview-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-interview-builder-8e4e7fd8cbc0ab69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过分步访谈引导用户理清需求，最终产出完整的Skill文件包（含SKILL.md、参考文档、示例文件等）， 并打包为可直接使用的压缩包。 当用户说\"我想通过访谈新建Skill\"、\"用访谈方式做一个Skill\"、\"访谈建Skill\"、 \"通过访谈帮我生成Skill\"、\"访谈式创建Skill\"、\"我想访谈做一个XX的..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "irenerachel",
+      "userId": "s17fhbwgb3b53ttsvx22wwba3s83zt97",
+      "displayName": "阿真Irene",
+      "image": "https://avatars.githubusercontent.com/u/139830312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774920218555,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f6a11c6e5f4dafa5f1922fe9d6da7230d2e01c58ecc53f17df2b7d4fe3703bb"
+}

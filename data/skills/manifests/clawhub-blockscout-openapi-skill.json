@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32726,
+  "uuid": "skill-clawhub-blockscout-openapi-skill",
+  "skillKey": "clawhub-blockscout-openapi-skill",
+  "name": "Blockscout OpenAPI Skill",
+  "summary": "Operate Blockscout explorer reads through UXC with a curated OpenAPI schema, instance-specific host selection, and read-first guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockscout_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Blockscout explorer reads through UXC with a curated OpenAPI schema, instance-specific."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockscout-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockscout-openapi-skill",
+      "url": "https://clawhub.ai/skills/blockscout-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockscout-openapi-skill",
+    "url": "https://clawhub.ai/skills/blockscout-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockscout-openapi-skill-543f20a56dab9b08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockscout-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockscout-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50efbd720700379502bd37f0cec90f64c125652efd2203463d6bec9d5aaa473b",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:33:27.499Z"
+}

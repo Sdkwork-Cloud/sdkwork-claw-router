@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agnic-authenticate-wallet@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnic_authenticate_wallet",
+  "skill": {
+    "id": 26054,
+    "skillKey": "clawhub-agnic-authenticate-wallet",
+    "name": "Agnic Authenticate Wallet (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnic-authenticate-wallet",
+    "url": "https://clawhub.ai/skills/agnic-authenticate-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnic-authenticate-wallet-35f72333395196de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authenticate Agnic wallet via browser OAuth or headless API token. Use when the user wants to sign in, log in, authenticate, connect wallet, set up CLI, or r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agnicpay-prog",
+      "userId": "s1777853tw7s2n47974ggs0xad84d8pq",
+      "displayName": "Agnic.AI",
+      "image": "https://avatars.githubusercontent.com/u/240652244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776954012556,
+      "changelog": "v2.0.2 — Synced with upstream agnic-wallet-skills authenticate-wallet skill:\n- Added headless authentication (AGNIC_TOKEN env var + --token flag)\n- Rebranded references from \"AgnicPay\" to \"Agnic\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3403aeb8789ae2223e529036c56ba8230af98a9c0e603574a5eab42085e563ea"
+}

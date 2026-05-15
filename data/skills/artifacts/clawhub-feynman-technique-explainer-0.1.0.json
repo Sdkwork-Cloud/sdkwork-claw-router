@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feynman-technique-explainer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feynman_technique_explainer",
+  "skill": {
+    "id": 31171,
+    "skillKey": "clawhub-feynman-technique-explainer",
+    "name": "Feynman Technique Explainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feynman-technique-explainer",
+    "url": "https://clawhub.ai/skills/feynman-technique-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feynman-technique-explainer-ce1e857d31149049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain any concept using the Feynman Technique, plain language, a real-world analogy, a concrete example, and a comprehension quiz. No jargon from the conce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arbazex",
+      "userId": "s1796zx7mth14phfvq45028d7983s0s3",
+      "displayName": "Arbaz Asif",
+      "image": "https://avatars.githubusercontent.com/u/124435828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774110480011,
+      "changelog": "Initial release of Feynman Technique Explainer skill\n\n- Provides step-by-step explanations of any concept using the Feynman Technique.\n- Strictly enforces a no-jargon rule; all explanations use plain language for accessibility.\n- Uses a four-part structure: plain-language explanation, real-world analogy, concrete example, and a user quiz to test understanding.\n- Includes guardrails to avoid over-complexity, jargon, and topic drift.\n- Offers specific instructions on handling ambiguous or multi-concept requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a582a204c24430b18a368f167499ab2727021ced1965938609c9fd34af1fca43"
+}

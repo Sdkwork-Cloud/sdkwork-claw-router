@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72460,
+  "uuid": "skill-clawhub-video-script-gen",
+  "skillKey": "clawhub-video-script-gen",
+  "name": "短视频脚本生成器",
+  "summary": "短视频口播脚本生成器。输入产品/话题，自动生成5分钟以内抖音/视频号口播脚本，包含开场钩子、叙事结构、话术技巧、BGM推荐和互动引导。适用场景：AI科普/印刷知识/产品介绍/行业干货。触发词：生成脚本/口播脚本/短视频文案/抖音脚本",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tlcyqj2023",
+      "features": [
+        "短视频口播脚本生成器。输入产品/话题，自动生成5分钟以内抖音/视频号口播脚本，包含开场钩子、叙事结构、话术技巧、BGM推荐和互动引导。适用场景：AI科普/印刷知识/产品介绍/行业干货。触发词."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-script-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71183635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-script-gen",
+      "url": "https://clawhub.ai/skills/video-script-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-gen",
+    "url": "https://clawhub.ai/skills/video-script-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-gen-ad6c971d15505744.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-script-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-script-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a89248333fd563139b7b39f4f3001fff60ebc4355bfa11165de0ea0d3260ce4",
+      "artifactSizeBytes": 2735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:21:34.996Z"
+}

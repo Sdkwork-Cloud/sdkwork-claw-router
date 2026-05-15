@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8608,
+  "uuid": "skill-clawhub-api-dev",
+  "skillKey": "clawhub-api-dev",
+  "name": "API Development",
+  "summary": "Scaffold, test, document, and debug REST and GraphQL APIs. Use when the user needs to create API endpoints, write integration tests, generate OpenAPI specs, test with curl, mock APIs, or troubleshoot HTTP issues.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Scaffold, test, document, and debug REST and GraphQL APIs",
+        "Use when the user needs to create API endpoints, write integration tests, generate OpenAPI spec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-dev",
+      "url": "https://clawhub.ai/skills/api-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-dev",
+    "url": "https://clawhub.ai/skills/api-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-dev-b74cc9496eed9308.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bab9a73b814ffc55903806e630909ed295c0cc872958dbc2424816731e66cf3",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T20:47:56.718Z"
+}

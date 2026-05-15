@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-error-debugger@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_error_debugger",
+  "skill": {
+    "id": 65512,
+    "skillKey": "clawhub-skylv-error-debugger",
+    "name": "Skylv Error Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-error-debugger",
+    "url": "https://clawhub.ai/skills/skylv-error-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-error-debugger-ca257f4c87560ac2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "错误调试助手。分析错误信息、定位问题原因、提供解决方案。使用场景：(1) 分析报错信息，(2) 定位代码问题，(3) 提供修复方案，(4) 预防类似错误。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776648411509,
+      "changelog": "- Updated skill description to English for broader accessibility.\n- Added trigger keywords to clarify use cases (error debugging, bug fix, stack trace, exception handling).\n- No changes made to main functionality or examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e16377bb95794fe558a45354d2b196476ad6aafc28e109a0b7de89cabe7de07a"
+}

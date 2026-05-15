@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-redbook-content@2.5.2",
+  "version": "2.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_redbook_content",
+  "skill": {
+    "id": 64384,
+    "skillKey": "clawhub-auto-redbook-content",
+    "name": "Auto Redbook Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-redbook-content",
+    "url": "https://clawhub.ai/skills/auto-redbook-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-redbook-content-1722281316b862e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书热点抓取与去AI味改写工具。抓取首页热点→生成去AI味改写提示词→本地存储。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaojie66",
+      "userId": "s17ehdnye7wd71cvdv60myvdws840w6c",
+      "displayName": "Shaojie66",
+      "image": "https://avatars.githubusercontent.com/u/73728610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 928,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "2.5.2",
+      "createdAt": 1773590323034,
+      "changelog": "澄清安全说明：区分脚本本身和agent环境",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8f9446b51e7aa664badd54d160e7846a7317929e4ebc9ae4ea43aa51ea66553"
+}

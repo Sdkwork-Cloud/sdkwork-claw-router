@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twenty@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twenty",
+  "skill": {
+    "id": 29347,
+    "skillKey": "clawhub-twenty",
+    "name": "Twenty CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twenty",
+    "url": "https://clawhub.ai/skills/twenty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twenty-7c2c4df740f720b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twenty CRM API integration with managed authentication. Manage companies, people, opportunities, notes, and tasks. Use this skill when users want to interact..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777583822218,
+      "changelog": "- Updated API base URL from gateway.maton.ai to api.maton.ai throughout the documentation.\n- Clarified that only documented endpoints are supported and requests are now proxied via the new API domain.\n- Expanded security and permissions section with explicit requirements for user approval before performing write operations, and added best practices for safe record changes.\n- Updated connection management examples and URLs to use the new api.maton.ai domain.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c9330578a592670d83a7a83a91bb79cbbe7620223185f2a040e388a6a614cdc"
+}

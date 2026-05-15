@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60943,
+  "uuid": "skill-clawhub-supermap-wasi-geo",
+  "skillKey": "clawhub-supermap-wasi-geo",
+  "name": "supermap-wasi-geo",
+  "summary": "使用SuperMap WebAssembly 进行几何分析，支持缓冲区、凸包、相交、合并、擦除、裁剪等 20+ 种几何操作",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supermap_wasi_geo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NestOne",
+      "features": [
+        "使用SuperMap WebAssembly 进行几何分析，支持缓冲区、凸包、相交、合并、擦除、裁剪等 20+ 种几何操作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supermap-wasi-geo@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3397384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supermap-wasi-geo",
+      "url": "https://clawhub.ai/skills/supermap-wasi-geo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supermap-wasi-geo",
+    "url": "https://clawhub.ai/skills/supermap-wasi-geo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supermap-wasi-geo-55bf663d3a26de35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supermap-wasi-geo@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supermap-wasi-geo-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b414f71bb25e604e040b4a1909386af52ede286b62f78d23918de3d85ba605f",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:31:54.696Z"
+}

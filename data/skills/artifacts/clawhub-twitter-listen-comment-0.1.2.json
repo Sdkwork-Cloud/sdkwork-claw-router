@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-listen-comment@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_listen_comment",
+  "skill": {
+    "id": 22908,
+    "skillKey": "clawhub-twitter-listen-comment",
+    "name": "Twitter Listen Comment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-listen-comment",
+    "url": "https://clawhub.ai/skills/twitter-listen-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-listen-comment-420971782fbe7db0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up the skill as a reusable local automation package."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yugulugulu",
+      "userId": "publishers:yugulugulu",
+      "displayName": "yugulugulu",
+      "image": "https://avatars.githubusercontent.com/u/141218505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773133011566,
+      "changelog": "Retry publish after repo cleanup and packaging validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10a1e81e6b92137de5a28a5fa7ec7a84bf58a219dfc0ed5e8026fbac297b4049"
+}

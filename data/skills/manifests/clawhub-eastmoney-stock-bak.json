@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66587,
+  "uuid": "skill-clawhub-eastmoney-stock-bak",
+  "skillKey": "clawhub-eastmoney-stock-bak",
+  "name": "Eastmoney Stock.Bak",
+  "summary": "查询东方财富股票数据，包括个股行情、涨跌幅、成交量等。用于回答股票相关问题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_stock_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "make453",
+      "features": [
+        "查询东方财富股票数据，包括个股行情、涨跌幅、成交量等。用于回答股票相关问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-stock-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200362598?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-stock-bak",
+      "url": "https://clawhub.ai/skills/eastmoney-stock-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-stock-bak",
+    "url": "https://clawhub.ai/skills/eastmoney-stock-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-stock-bak-baafa54e59b2aa6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-stock-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-stock-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e8592253f0048f08f3cc311c0d32a13c1bf1b7efe53d7b09356bcd5d40c5b24",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:54:44.682Z"
+}

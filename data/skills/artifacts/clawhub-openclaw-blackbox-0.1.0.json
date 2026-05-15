@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-blackbox@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_blackbox",
+  "skill": {
+    "id": 53619,
+    "skillKey": "clawhub-openclaw-blackbox",
+    "name": "OpenClaw Blackbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-blackbox",
+    "url": "https://clawhub.ai/skills/openclaw-blackbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-blackbox-6c38dbfd690fa479.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Blackbox CLI — inspect failed, stalled, expensive, or weird OpenClaw agent runs from local disk evidence; list sessions and failures; find the sessi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shan8851",
+      "userId": "s174pggpvzf6ncw463rmj1madd83g10q",
+      "displayName": "shan8851",
+      "image": "https://avatars.githubusercontent.com/u/39712238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777886330886,
+      "changelog": "Initial OpenClaw Blackbox companion skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5b33765ef6d6feb81543f820752337c0556d3ef2dde7380829f47c567cafb33"
+}

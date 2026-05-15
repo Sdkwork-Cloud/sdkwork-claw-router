@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46972,
+  "uuid": "skill-clawhub-transcribe-video-to-text-free",
+  "skillKey": "clawhub-transcribe-video-to-text-free",
+  "name": "Transcribe Video To Text Free",
+  "summary": "Get plain text transcript ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcribe_video_to_text_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get plain text transcript ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transcribe-video-to-text-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transcribe-video-to-text-free",
+      "url": "https://clawhub.ai/skills/transcribe-video-to-text-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcribe-video-to-text-free",
+    "url": "https://clawhub.ai/skills/transcribe-video-to-text-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcribe-video-to-text-free-3f130b7891a9bdbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transcribe-video-to-text-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transcribe-video-to-text-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b98af12288924c986860b0b17ef240df35d39206c1707d0648d95d5b7d719623",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T04:35:21.625Z"
+}

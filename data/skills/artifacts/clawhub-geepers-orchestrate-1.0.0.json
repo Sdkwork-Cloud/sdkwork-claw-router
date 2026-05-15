@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geepers-orchestrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geepers_orchestrate",
+  "skill": {
+    "id": 18608,
+    "skillKey": "clawhub-geepers-orchestrate",
+    "name": "Geepers Orchestrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geepers-orchestrate",
+    "url": "https://clawhub.ai/skills/geepers-orchestrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geepers-orchestrate-222f0ef7aaf04ba0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run multi-agent Dream Cascade (hierarchical 3-tier synthesis) or Dream Swarm (parallel multi-domain search) workflows via the dr.eamer.dev orchestration API...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukeslp",
+      "userId": "publishers:lukeslp",
+      "displayName": "Lucas Steuber",
+      "image": "https://avatars.githubusercontent.com/u/78874798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771400104760,
+      "changelog": "- Initial release of geepers-orchestrate skill for orchestrating multi-agent workflows using the dr.eamer.dev API.\n- Supports hierarchical (Dream Cascade) and parallel (Dream Swarm) workflow execution.\n- Enables research and synthesis tasks using multiple specialized agents across various sources.\n- Provides clear guidance on authentication, endpoints, response format, and use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3285bf5baf9bec3634c07f0f96d64e3c5b9ff32e341c38e085b312c621fd6997"
+}

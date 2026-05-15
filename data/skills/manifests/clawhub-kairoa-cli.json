@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61342,
+  "uuid": "skill-clawhub-kairoa-cli",
+  "skillKey": "clawhub-kairoa-cli",
+  "name": "Kairoa CLI",
+  "summary": "开发者工具箱 CLI，50+ 命令。当用户需要编码解码、哈希/HMAC 计算、UUID/ULID 生成、数据格式转换、JSON/SQL 处理、HTTP/WebSocket/DNS/IP 网络工具、端口扫描/TLS/证书检查、密码生成/强度检测/保险库、Mock 数据、OTP、QR 码、正则测试、图片/PDF 处理...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kairoa_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "路多辛",
+      "features": [
+        "开发者工具箱 CLI，50+ 命令。当用户需要编码解码、哈希/HMAC 计算、UUID/ULID 生成、数据格式转换、JSON/SQL 处理、HTTP/WebSocket/DNS/IP 网络."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kairoa-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3434402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kairoa-cli",
+      "url": "https://clawhub.ai/skills/kairoa-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kairoa-cli",
+    "url": "https://clawhub.ai/skills/kairoa-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kairoa-cli-7accd86957413ec6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kairoa-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kairoa-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d6f9a21f938ba260be7323dbae3810076135c31d3351d26e992d22f7b6b2619",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T15:26:22.334Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29888,
+  "uuid": "skill-clawhub-adp-skill",
+  "skillKey": "clawhub-adp-skill",
+  "name": "Adp Skill",
+  "summary": "Enterprise-grade agentic document processing API. Accurately extracts key fields and line items from invoices, receipts, orders and more across 10+ file form...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adp_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anna4lucky-stack",
+      "features": [
+        "Enterprise-grade agentic document processing API",
+        "Accurately extracts key fields and line items from invoices, receipts, orders and more across 1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245985953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adp-skill",
+      "url": "https://clawhub.ai/skills/adp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adp-skill",
+    "url": "https://clawhub.ai/skills/adp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adp-skill-2b60a35950279b12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8a16751f227c540f0661737b4a275fd36e3b94669cd72dd1f613d1d609e400c",
+      "artifactSizeBytes": 2668
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:01:33.293Z"
+}

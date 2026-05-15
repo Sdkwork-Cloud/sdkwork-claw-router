@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14964,
+  "uuid": "skill-clawhub-minimax-mcp-call",
+  "skillKey": "clawhub-minimax-mcp-call",
+  "name": "MiniMax MCP Call",
+  "summary": "MiniMax MCP tools - Web search and image understanding via MiniMax Coding Plan. Use when user needs web search, current information, or image analysis. Requi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_mcp_call",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russellfei",
+      "features": [
+        "MiniMax MCP tools",
+        "Web search and image understanding via MiniMax Coding Plan",
+        "Use when user needs web search, current information, or image analysis",
+        "Requi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-mcp-call@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3415940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-mcp-call",
+      "url": "https://clawhub.ai/skills/minimax-mcp-call"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-mcp-call",
+    "url": "https://clawhub.ai/skills/minimax-mcp-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-mcp-call-8add97387cfddbfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-mcp-call@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-mcp-call-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72954de3f345f987bf8ed81cbf9e340d1f4ccaa72fceef222327ae308e5698fb",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T04:21:54.291Z"
+}

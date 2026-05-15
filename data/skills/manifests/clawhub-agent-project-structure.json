@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64629,
+  "uuid": "skill-clawhub-agent-project-structure",
+  "skillKey": "clawhub-agent-project-structure",
+  "name": "agent-project-structure",
+  "summary": "Agent project directory structure规范。指导agent生成规范的项目文件结构，包括：项目文件单独存放在项目目录下，日志文件统一放在log目录，临时文件（截图、缓存等）与正式文件分离。使用时检查现有结构是否符合规范，或根据规范创建/调整目录结构。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_project_structure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Song Xianfeng",
+      "features": [
+        "Agent project directory structure规范。指导agent生成规范的项目文件结构，包括：项目文件单独存放在项目目录下，日志文件统一放在log目录，临时文件（截图、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-project-structure@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111047002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-project-structure",
+      "url": "https://clawhub.ai/skills/agent-project-structure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-project-structure",
+    "url": "https://clawhub.ai/skills/agent-project-structure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-project-structure-5514f5c338e2f28e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-project-structure@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-project-structure-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dd5ffa68a7582b3d2817546603110fac67cbe762665d3225144f256347456d0",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:19:55.192Z"
+}

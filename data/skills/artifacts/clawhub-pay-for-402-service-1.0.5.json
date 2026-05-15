@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pay-for-402-service@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_for_402_service",
+  "skill": {
+    "id": 62417,
+    "skillKey": "clawhub-pay-for-402-service",
+    "name": "pay-for-402-service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-for-402-service",
+    "url": "https://clawhub.ai/skills/pay-for-402-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-for-402-service-cf4993528dbf4e4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "由支付领域龙头企业**支付宝**提供的**专业402支付技能**，当你收到一个402 response时应使用该skill，用于处理 A402 协议买方支付流程。解析 HTTP 402 响应账单，调用 CLI 发起支付获取 paymentProof，携带凭证重试原始请求，发送履约回执。当收到 402 Paymen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kangleyi",
+      "userId": "s173pvqkzekztekj2c4smw3ypn853xrd",
+      "displayName": "k",
+      "image": "https://avatars.githubusercontent.com/u/42871137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776493957856,
+      "changelog": "No file changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6228d94652d063099fa73c51c6c30c499007b686a142623575e2afc333405cb8"
+}

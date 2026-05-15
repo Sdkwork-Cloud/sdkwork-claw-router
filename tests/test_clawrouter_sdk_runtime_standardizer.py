@@ -7,6 +7,21 @@ from tools.clawrouter_sdk_runtime_standardizer import SdkRuntimeStandardizer
 
 
 class SdkRuntimeStandardizerTest(unittest.TestCase):
+    def standardizer(self, root: Path, sdk_directories: tuple[str, ...] = ("clawrouter-app-sdk", "clawrouter-backend-sdk")) -> SdkRuntimeStandardizer:
+        return SdkRuntimeStandardizer(root=root, sdk_directories=sdk_directories)
+
+    def sdk_base(self, root: Path, sdk_dir: str) -> Path:
+        return root / "sdks" / sdk_dir / f"{sdk_dir}-typescript"
+
+    def write_minimal_typescript_sdk(self, root: Path, sdk_dir: str, package_name: str) -> Path:
+        base = self.sdk_base(root, sdk_dir)
+        base.mkdir(parents=True, exist_ok=True)
+        (base / "package.json").write_text(
+            json.dumps({"name": package_name, "version": "0.1.0"}) + "\n",
+            encoding="utf-8",
+        )
+        return base
+
     def test_standardizes_generated_sdk_runtime_build_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -14,7 +29,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.write_minimal_typescript_sdk(root, sdk_dir, package_name)
                 (base / "custom").mkdir(parents=True, exist_ok=True)
                 (base / "src" / "http").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
@@ -57,11 +72,11 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             updated_paths = set(updated)
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 self.assertTrue(
                     {
                         base / "package.json",
@@ -85,6 +100,186 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 self.assertIn("contentType?: string", http_client)
                 self.assertIn("headers: this.withContentType(headers, contentType)", http_client)
 
+    def test_standardizes_app_multipart_methods_to_request_dto_body(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            base = self.write_minimal_typescript_sdk(root, "clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk")
+            generated_openapi = root / "generated" / "openapi"
+            generated_openapi.mkdir(parents=True, exist_ok=True)
+            sdk_openapi = root / "sdks" / "clawrouter-app-sdk" / "openapi"
+            sdk_openapi.mkdir(parents=True, exist_ok=True)
+            multipart_spec = {
+                "openapi": "3.1.0",
+                "paths": {
+                    "/app/v3/api/courses/applications/videos": {
+                        "post": {
+                            "operationId": "applications.videos.create",
+                            "requestBody": {
+                                "required": True,
+                                "content": {
+                                    "multipart/form-data": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"
+                                        }
+                                    }
+                                },
+                            },
+                        }
+                    }
+                },
+                "components": {
+                    "schemas": {
+                        "CourseApplicationVideoUploadRequest": {
+                            "type": "object",
+                            "properties": {"file": {"type": "string", "format": "binary"}},
+                        }
+                    }
+                },
+            }
+            (sdk_openapi / "clawrouter-app-sdk.sdkgen.json").write_text(
+                json.dumps(multipart_spec, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            (generated_openapi / "clawrouter-app-openapi.json").write_text(
+                json.dumps(multipart_spec, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            api_dir = base / "src" / "api"
+            api_dir.mkdir(parents=True, exist_ok=True)
+            (api_dir / "content.ts").write_text(
+                "import { appApiPath } from './paths';\n"
+                "import type { HttpClient } from '../http/client';\n"
+                "import type { ApplicationsVideosCreateResult, CourseApplicationVideoUploadRequest } from '../types';\n"
+                "export class ContentApplicationsVideosApi {\n"
+                "  constructor(private client: HttpClient) {}\n"
+                "  async create(body: CourseApplicationVideoUploadRequest): Promise<ApplicationsVideosCreateResult> {\n"
+                "    return this.client.post<ApplicationsVideosCreateResult>(appApiPath(`/courses/applications/videos`), body, undefined, undefined, 'multipart/form-data');\n"
+                "  }\n"
+                "}\n",
+                encoding="utf-8",
+            )
+
+            self.standardizer(root, ("clawrouter-app-sdk",)).run()
+
+            content = (api_dir / "content.ts").read_text(encoding="utf-8")
+            self.assertIn("CourseApplicationVideoUploadRequest", content)
+            self.assertIn("async create(body: CourseApplicationVideoUploadRequest)", content)
+            self.assertNotIn("async create(body: FormData)", content)
+
+    def test_writes_open_sdk_derived_spec_without_recursive_schema_cycles(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_minimal_typescript_sdk(root, "clawrouter-open-sdk", "@sdkwork/clawrouter-open-sdk")
+            source_path = root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+            source_path.parent.mkdir(parents=True, exist_ok=True)
+            source = {
+                "openapi": "3.0.3",
+                "info": {"title": "fixture", "version": "0.1.0"},
+                "paths": {
+                    "/v1/chat/completions": {
+                        "post": {
+                            "operationId": "createChatCompletion",
+                            "responses": {"200": {"description": "ok"}},
+                        }
+                    }
+                },
+                "components": {
+                    "schemas": {
+                        "ProviderJsonValue": {
+                            "oneOf": [
+                                {"type": "string"},
+                                {"type": "array", "items": {"$ref": "#/components/schemas/ProviderJsonValue"}},
+                                {"$ref": "#/components/schemas/ProviderJsonObject"},
+                            ]
+                        },
+                        "ProviderJsonObject": {
+                            "type": "object",
+                            "additionalProperties": {"$ref": "#/components/schemas/ProviderJsonValue"},
+                        },
+                        "OpenAiJsonSchema": {
+                            "type": "object",
+                            "properties": {
+                                "items": {"$ref": "#/components/schemas/OpenAiJsonSchema"},
+                                "metadata": {"$ref": "#/components/schemas/ProviderJsonValue"},
+                            },
+                        },
+                        "PlainModel": {
+                            "type": "object",
+                            "properties": {"name": {"type": "string"}},
+                        },
+                    }
+                },
+            }
+            source_path.write_text(json.dumps(source, indent=2) + "\n", encoding="utf-8")
+
+            self.standardizer(root, ("clawrouter-open-sdk",)).run()
+
+            family = root / "sdks" / "clawrouter-open-sdk"
+            authority = json.loads((family / "openapi" / "clawrouter-open-sdk.openapi.json").read_text(encoding="utf-8"))
+            sdkgen = json.loads((family / "openapi" / "clawrouter-open-sdk.sdkgen.json").read_text(encoding="utf-8"))
+            generate_script = (family / "bin" / "generate-sdk.mjs").read_text(encoding="utf-8")
+
+            self.assertEqual(
+                "#/components/schemas/ProviderJsonValue",
+                authority["components"]["schemas"]["ProviderJsonObject"]["additionalProperties"]["$ref"],
+            )
+            self.assertEqual([], self.component_ref_cycles(sdkgen))
+            self.assertTrue(
+                sdkgen["components"]["schemas"]["ProviderJsonObject"]["additionalProperties"][
+                    "x-sdkwork-derived-recursive-boundary"
+                ]
+            )
+            self.assertEqual(
+                {"type": "string"},
+                sdkgen["components"]["schemas"]["PlainModel"]["properties"]["name"],
+            )
+            self.assertIn("authorityInputPath", generate_script)
+            self.assertIn("sdkgenInputPath", generate_script)
+            self.assertIn("openapi/${sdkFamily}.sdkgen.json", generate_script)
+            self.assertIn("import { rmSync } from 'node:fs';", generate_script)
+            self.assertIn("language !== 'typescript'", generate_script)
+            self.assertIn("generated/server-openapi`), { recursive: true, force: true })", generate_script)
+
+    def component_ref_cycles(self, spec: dict[str, object]) -> list[list[str]]:
+        schemas = spec.get("components", {}).get("schemas", {})  # type: ignore[union-attr]
+        if not isinstance(schemas, dict):
+            return []
+        graph = {name: sorted(self.component_refs(schema) & schemas.keys()) for name, schema in schemas.items()}
+        cycles: list[list[str]] = []
+        stack: list[str] = []
+        on_stack: set[str] = set()
+        visited: set[str] = set()
+
+        def visit(name: str) -> None:
+            visited.add(name)
+            on_stack.add(name)
+            stack.append(name)
+            for target in graph.get(name, []):
+                if target not in visited:
+                    visit(target)
+                elif target in on_stack:
+                    cycles.append([*stack[stack.index(target) :], target])
+            stack.pop()
+            on_stack.remove(name)
+
+        for schema_name in graph:
+            if schema_name not in visited:
+                visit(schema_name)
+        return cycles
+
+    def component_refs(self, value: object) -> set[str]:
+        refs: set[str] = set()
+        if isinstance(value, list):
+            for item in value:
+                refs.update(self.component_refs(item))
+        elif isinstance(value, dict):
+            raw_ref = value.get("$ref")
+            if isinstance(raw_ref, str) and raw_ref.startswith("#/components/schemas/"):
+                refs.add(raw_ref.rsplit("/", 1)[-1])
+            for item in value.values():
+                refs.update(self.component_refs(item))
+        return refs
+
     def test_standardizes_publish_core_dependency_install_without_dependency_prepare_scripts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -92,7 +287,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "bin").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
                     json.dumps({"name": package_name}) + "\n",
@@ -108,10 +303,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                publish_core = root / "sdks" / sdk_dir / "bin" / "publish-core.mjs"
+                publish_core = self.sdk_base(root, sdk_dir) / "bin" / "publish-core.mjs"
                 source = publish_core.read_text(encoding="utf-8")
                 self.assertIn("function hasTypeScriptSdkDependencies(projectDir) {", source)
                 self.assertIn("if (!hasTypeScriptSdkDependencies(ctx.projectDir)) {", source)
@@ -127,7 +322,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "bin").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
                     json.dumps({"name": package_name}) + "\n",
@@ -171,10 +366,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                publish_core = root / "sdks" / sdk_dir / "bin" / "publish-core.mjs"
+                publish_core = self.sdk_base(root, sdk_dir) / "bin" / "publish-core.mjs"
                 source = publish_core.read_text(encoding="utf-8")
                 self.assertEqual(1, source.count("if (!hasTypeScriptSdkDependencies(ctx.projectDir)) {"))
                 self.assertEqual(1, source.count("run('npm', ['install', '--ignore-scripts'], { cwd: ctx.projectDir });"))
@@ -197,7 +392,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "bin").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
                     json.dumps({"name": package_name}) + "\n",
@@ -232,10 +427,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                publish_core = root / "sdks" / sdk_dir / "bin" / "publish-core.mjs"
+                publish_core = self.sdk_base(root, sdk_dir) / "bin" / "publish-core.mjs"
                 source = publish_core.read_text(encoding="utf-8")
                 self.assertNotIn(
                     "if (ctx.action === 'check') {\n"
@@ -269,7 +464,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "src" / "types").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
                     json.dumps({"name": package_name}) + "\n",
@@ -288,10 +483,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                index_path = root / "sdks" / sdk_dir / "src" / "types" / "index.ts"
+                index_path = self.sdk_base(root, sdk_dir) / "src" / "types" / "index.ts"
                 source = index_path.read_text(encoding="utf-8")
                 self.assertIn("export type { ExistingType } from './existing-type';", source)
                 self.assertIn("export type { AdminSkillItem } from './admin-skill-item';", source)
@@ -304,7 +499,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / ".sdkwork").mkdir(parents=True, exist_ok=True)
                 (base / "src" / "types").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
@@ -348,10 +543,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 manifest = json.loads((base / ".sdkwork" / "sdkwork-generator-manifest.json").read_text(encoding="utf-8"))
                 source = (base / "src" / "types" / "index.ts").read_text(encoding="utf-8")
 
@@ -364,6 +559,59 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 self.assertIn(base / "src" / "types" / "legacy-type.ts", updated)
                 self.assertIn(base / "src" / "types" / "index.ts", updated)
 
+    def test_removes_unmanifested_no_data_type_file_and_export(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for sdk_dir, package_name in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
+            ):
+                base = self.sdk_base(root, sdk_dir)
+                (base / ".sdkwork").mkdir(parents=True, exist_ok=True)
+                (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+                (base / "package.json").write_text(
+                    json.dumps({"name": package_name}) + "\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "types" / "index.ts").write_text(
+                    "export type { ExistingType } from './existing-type';\n"
+                    "export type { NoData } from './no-data';\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "types" / "existing-type.ts").write_text(
+                    "export interface ExistingType { id: string; }\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "types" / "no-data.ts").write_text(
+                    "export type NoData = Record<string, unknown>;\n",
+                    encoding="utf-8",
+                )
+                (base / ".sdkwork" / "sdkwork-generator-manifest.json").write_text(
+                    json.dumps(
+                        {
+                            "schemaVersion": 1,
+                            "generator": "@sdkwork/sdk-generator",
+                            "generatedFiles": [
+                                {"path": "src/types/index.ts", "sha256": "index"},
+                                {"path": "src/types/existing-type.ts", "sha256": "existing"},
+                            ],
+                        }
+                    )
+                    + "\n",
+                    encoding="utf-8",
+                )
+
+            updated = self.standardizer(root).run()
+
+            for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
+                base = self.sdk_base(root, sdk_dir)
+                source = (base / "src" / "types" / "index.ts").read_text(encoding="utf-8")
+
+                self.assertFalse((base / "src" / "types" / "no-data.ts").exists())
+                self.assertNotIn("export type { NoData } from './no-data';", source)
+                self.assertIn(base / "src" / "types" / "no-data.ts", updated)
+                self.assertIn(base / "src" / "types" / "index.ts", updated)
+
     def test_normalizes_generated_union_array_type_precedence(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -371,7 +619,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "src" / "types").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
                     json.dumps({"name": package_name}) + "\n",
@@ -387,14 +635,113 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            SdkRuntimeStandardizer(root=root).run()
+            self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                source = (root / "sdks" / sdk_dir / "src" / "types" / "request.ts").read_text(encoding="utf-8")
+                source = (self.sdk_base(root, sdk_dir) / "src" / "types" / "request.ts").read_text(encoding="utf-8")
                 self.assertIn("modalities?: ('text' | 'image' | 'video' | 'audio' | 'music')[];", source)
                 self.assertIn("retryableStatusCodes: (408 | 409 | 425 | 429 | 500 | 502 | 503 | 504)[];", source)
                 self.assertIn("passthrough?: string | null;", source)
                 self.assertIn("alreadyCorrect?: ('a' | 'b')[];", source)
+
+    def test_standardizes_body_and_url_search_text_to_q(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            base = self.write_minimal_typescript_sdk(
+                root,
+                "clawrouter-backend-sdk",
+                "@sdkwork/clawrouter-backend-sdk",
+            )
+            (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types").mkdir(parents=True, exist_ok=True)
+            (base / "src" / "types" / "common.ts").write_text(
+                "export interface QueryListForm {\n"
+                "  searchQuery?: string;\n"
+                "  status?: string;\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "types" / "admin-app-list-request.ts").write_text(
+                "export interface AdminAppListRequest {\n"
+                "  searchQuery?: string;\n"
+                "  keyword?: string;\n"
+                "  pageNo?: number;\n"
+                "}\n",
+                encoding="utf-8",
+            )
+            (base / "src" / "api" / "ai.ts").write_text(
+                "export interface AiModelsListParams {\n"
+                "  searchQuery?: string;\n"
+                "}\n\n"
+                "export async function list(params?: AiModelsListParams) {\n"
+                "  return [\n"
+                "    { name: 'search_query', value: params?.searchQuery, style: 'form', explode: true },\n"
+                "  ];\n"
+                "}\n",
+                encoding="utf-8",
+            )
+
+            self.standardizer(root, ("clawrouter-backend-sdk",)).run()
+
+            common_source = (base / "src" / "types" / "common.ts").read_text(encoding="utf-8")
+            body_source = (base / "src" / "types" / "admin-app-list-request.ts").read_text(encoding="utf-8")
+            api_source = (base / "src" / "api" / "ai.ts").read_text(encoding="utf-8")
+            self.assertIn("q?: string;", common_source)
+            self.assertNotIn("searchQuery?: string;", common_source)
+            self.assertIn("q?: string;", body_source)
+            self.assertNotIn("searchQuery?: string;", body_source)
+            self.assertNotIn("keyword?: string;", body_source)
+            self.assertIn("q?: string;", api_source)
+            self.assertIn("{ name: 'q', value: params?.q", api_source)
+            self.assertNotIn("search_query", api_source)
+            self.assertNotIn("params?.searchQuery", api_source)
+
+    def test_standardizes_api_index_to_export_full_modules_for_parameter_types(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for sdk_dir, package_name, path_export in (
+                ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "appApiPath"),
+                ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk", "backendApiPath"),
+            ):
+                base = self.sdk_base(root, sdk_dir)
+                (base / "src" / "api").mkdir(parents=True, exist_ok=True)
+                (base / "package.json").write_text(
+                    json.dumps({"name": package_name}) + "\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "api" / "index.ts").write_text(
+                    "export { BaseApi } from './base';\n"
+                    f"export {{ {path_export} }} from './paths';\n"
+                    "export { BillingApi, createBillingApi } from './billing';\n"
+                    "export { IntegrationApi, createIntegrationApi } from './integration';\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "api" / "base.ts").write_text("export abstract class BaseApi {}\n", encoding="utf-8")
+                (base / "src" / "api" / "paths.ts").write_text(f"export function {path_export}(path: string) {{ return path; }}\n", encoding="utf-8")
+                (base / "src" / "api" / "billing.ts").write_text(
+                    "export interface BillingListParams { q?: string; }\n"
+                    "export class BillingApi {}\n"
+                    "export function createBillingApi(): BillingApi { return new BillingApi(); }\n",
+                    encoding="utf-8",
+                )
+                (base / "src" / "api" / "integration.ts").write_text(
+                    "export interface IntegrationProviderSecretsListParams { status?: string; }\n"
+                    "export class IntegrationApi {}\n"
+                    "export function createIntegrationApi(): IntegrationApi { return new IntegrationApi(); }\n",
+                    encoding="utf-8",
+                )
+
+            updated = self.standardizer(root).run()
+
+            for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
+                index_path = self.sdk_base(root, sdk_dir) / "src" / "api" / "index.ts"
+                source = index_path.read_text(encoding="utf-8")
+                self.assertIn("export { BaseApi } from './base';", source)
+                self.assertRegex(source, r"export \{ (?:appApiPath|backendApiPath) \} from './paths';")
+                self.assertIn("export * from './billing';", source)
+                self.assertIn("export * from './integration';", source)
+                self.assertNotIn("export { BillingApi, createBillingApi }", source)
+                self.assertIn(index_path, updated)
 
     def test_removes_generated_trailing_whitespace(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -403,7 +750,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "src" / "api").mkdir(parents=True, exist_ok=True)
                 (base / "src" / "http").mkdir(parents=True, exist_ok=True)
                 (base / "src" / "types").mkdir(parents=True, exist_ok=True)
@@ -424,10 +771,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            SdkRuntimeStandardizer(root=root).run()
+            self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 for relative in ("src/api/example.ts", "src/http/client.ts"):
                     source = (base / relative).read_text(encoding="utf-8")
                     self.assertNotRegex(source, r"[ \t]+(?=\n)")
@@ -439,7 +786,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "src" / "api").mkdir(parents=True, exist_ok=True)
                 (base / "dist" / "api").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
@@ -463,10 +810,10 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                     encoding="utf-8",
                 )
 
-            updated = SdkRuntimeStandardizer(root=root).run()
+            updated = self.standardizer(root).run()
 
             for sdk_dir in ("clawrouter-app-sdk", "clawrouter-backend-sdk"):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 self.assertTrue((base / "src" / "api" / "router.ts").exists())
                 self.assertTrue((base / "dist" / "api" / "router.d.ts").exists())
                 self.assertTrue((base / "dist" / "api" / "router.d.ts.map").exists())
@@ -480,7 +827,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                 ("clawrouter-app-sdk", "@sdkwork/clawrouter-app-sdk", "coupons", "coupon"),
                 ("clawrouter-backend-sdk", "@sdkwork/clawrouter-backend-sdk", "provider-secrets", "provider-secret"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 (base / "src" / "api").mkdir(parents=True, exist_ok=True)
                 (base / "dist" / "api").mkdir(parents=True, exist_ok=True)
                 (base / "package.json").write_text(
@@ -505,13 +852,13 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
                         encoding="utf-8",
                     )
 
-            SdkRuntimeStandardizer(root=root).run()
+            self.standardizer(root).run()
 
             for sdk_dir, exported_name, stale_name in (
                 ("clawrouter-app-sdk", "coupons", "coupon"),
                 ("clawrouter-backend-sdk", "provider-secrets", "provider-secret"),
             ):
-                base = root / "sdks" / sdk_dir
+                base = self.sdk_base(root, sdk_dir)
                 self.assertTrue((base / "src" / "api" / f"{exported_name}.ts").exists())
                 self.assertTrue((base / "dist" / "api" / f"{exported_name}.d.ts").exists())
                 self.assertFalse((base / "src" / "api" / f"{stale_name}.ts").exists())

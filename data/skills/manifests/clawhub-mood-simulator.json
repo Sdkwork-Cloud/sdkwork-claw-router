@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70354,
+  "uuid": "skill-clawhub-mood-simulator",
+  "skillKey": "clawhub-mood-simulator",
+  "name": "Mood Simulator",
+  "summary": "情绪状态模拟器v4：评估用户当前情绪状态、能量水平、专注度，支持实时情绪追踪。触发条件：情绪转折、能量变化、专注度调整。",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_simulator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Louis Z.",
+      "features": [
+        "情绪状态模拟器v4：评估用户当前情绪状态、能量水平、专注度，支持实时情绪追踪。触发条件：情绪转折、能量变化、专注度调整。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mood-simulator@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58058619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mood-simulator",
+      "url": "https://clawhub.ai/skills/mood-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-simulator",
+    "url": "https://clawhub.ai/skills/mood-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-simulator-d9099a7047c0e76e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mood-simulator@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mood-simulator-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:943d0ae040caf883088bf7cdad4aa7037e2d5d525b743642777a765a6ecaffc8",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:53:11.664Z"
+}

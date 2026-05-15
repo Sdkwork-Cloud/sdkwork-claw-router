@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60828,
+  "uuid": "skill-clawhub-cli-hub-wiki",
+  "skillKey": "clawhub-cli-hub-wiki",
+  "name": "CLI-Hub Tools",
+  "summary": "CLI-Hub工具箱 - 100+ CLI工具一键安装。浏览器自动化、视频编辑、知识管理、AI模型、云服务等。源自HKUDS CLI-Anything项目。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_hub_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "CLI-Hub工具箱",
+        "100+ CLI工具一键安装。浏览器自动化、视频编辑、知识管理、AI模型、云服务等。源自HKUDS CLI-Anything项目。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cli-hub-wiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cli-hub-wiki",
+      "url": "https://clawhub.ai/skills/cli-hub-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-hub-wiki",
+    "url": "https://clawhub.ai/skills/cli-hub-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-hub-wiki-622aeb589ad8edaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cli-hub-wiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cli-hub-wiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc0ca1b8b83fd4c7379276e4348f7ad31d700f861f74ff4067705ecbf5be8b5f",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:04:15.211Z"
+}

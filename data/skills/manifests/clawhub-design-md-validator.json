@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43820,
+  "uuid": "skill-clawhub-design-md-validator",
+  "skillKey": "clawhub-design-md-validator",
+  "name": "DESIGN.md Design System Validator",
+  "summary": "Validate, diff, and export DESIGN.md files to ensure consistent design tokens, WCAG compliance, and design system integrity across projects.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_md_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FlexRox",
+      "features": [
+        "Validate, diff, and export DESIGN.md files to ensure consistent design tokens, WCAG compliance,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-md-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108794336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-md-validator",
+      "url": "https://clawhub.ai/skills/design-md-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-md-validator",
+    "url": "https://clawhub.ai/skills/design-md-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-md-validator-404f91fa73c8a7a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-md-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-md-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70f1df9bf7928fa90bdfa6d4f72f3765feadae725cde499a81652a27e660cbf9",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T18:25:34.957Z"
+}

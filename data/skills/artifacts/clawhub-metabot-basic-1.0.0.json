@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metabot-basic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metabot_basic",
+  "skill": {
+    "id": 59842,
+    "skillKey": "clawhub-metabot-basic",
+    "name": "metabot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metabot-basic",
+    "url": "https://clawhub.ai/skills/metabot-basic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metabot-basic-7111120eee5fdd46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MetaBot是基于 MetaID 协议的 AI Agent/Bot/机器人/智能体。本技能可用于 创建 MetaBot、设置 MetaBot 头像、发送 Buzz，发送链上信息。当用户在需要创建 Metabot，修改 MetaBot 头像，发送 buzz 信息时触发。需 Node.js >= 18、TypeSc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newfish",
+      "userId": "s17bcx3d0qn11mswd4jkqfbm6n844z2j",
+      "displayName": "Sunny Fung",
+      "image": "https://avatars.githubusercontent.com/u/158964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771272030041,
+      "changelog": "metabot-basic 1.0.0 初始发布：\n\n- 提供创建 MetaBot（新生成助记词和账户信息，写入 account.json）功能。\n- 支持为 MetaBot 设置头像（要求图片小于1MB）。\n- 支持以任意 MetaBot 身份发送 Buzz 协议消息到 MVC 网络。\n- 提供简单的命令行脚本：创建、批量创建、设置头像、发送 Buzz。\n- 详细列举典型用法、环境依赖与执行方式。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:245cb44e74c48a33d64143db8100b373ffd4491c115424fa10556fa9e6d85a0f"
+}

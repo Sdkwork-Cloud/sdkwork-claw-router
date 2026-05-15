@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtune@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtune",
+  "skill": {
+    "id": 71864,
+    "skillKey": "clawhub-clawtune",
+    "name": "ClawTune 抓音 是一款可以给你带来 AI 音乐的技能，包括听歌和创作。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtune",
+    "url": "https://clawhub.ai/skills/clawtune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtune-636f239aa7d2146d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为人类用户提供 AI 原创音乐歌单，并在合适时机把灵感推进成一首歌。用户提到想听背景音乐、需要歌单、表达情绪、送礼、纪念、想把故事写成歌、想下单、想查完成后结果时，都应优先使用本 skill。始终遵守对象锚点与恢复规则，不要临时自由发挥。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spirits001",
+      "userId": "s1784mkb1yms6m2dffdynqcy9d83nkdg",
+      "displayName": "代码厨子",
+      "image": "https://avatars.githubusercontent.com/u/27845481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773906769695,
+      "changelog": "ClawTune v1.0.0 – Initial Release\n\n- Provides AI-generated original music playlists tailored to user mood and requests.\n- Smoothly guides users from emotional expression or playlist needs toward potential music creation when appropriate.\n- Strictly separates “listening” and “creating” flows; never mixes up playlist and result objects.\n- Implements clear recovery rules to prevent lost context after webpage actions or asynchronous processing.\n- Uses natural, encouraging conversation style—never exposes technical details or backend language.\n- Follows stable procedures for creation, order, and result retrieval; avoids intrusive questioning or premature sales pushes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af167a312afce5e1033103841b3312f7b04103fd3979728e42b0710649d627b3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf2ofd@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2ofd",
+  "skill": {
+    "id": 28981,
+    "skillKey": "clawhub-pdf2ofd",
+    "name": "pdf2ofd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2ofd",
+    "url": "https://clawhub.ai/skills/pdf2ofd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2ofd-8f13213fc78e51e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts PDF documents (invoices, reports) to High-Fidelity OFD format with pixel-perfect precision."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xzw",
+      "userId": "s176dt27b71s5gx31nyfygp9fn85exg2",
+      "displayName": "xzw",
+      "image": "https://avatars.githubusercontent.com/u/3746652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773572332140,
+      "changelog": "Version 1.1.0 (High-Fidelity Update)\n\n- Greatly improved text matching with precise character-level placement and accurate baseline extraction.\n- Enhanced preservation of original vector graphics, including exact stroke and fill colors, complex paths, and line styles.\n- Full support for image and vector transparency, including alpha channels and SMask overlays.\n- Intelligent, cross-platform mapping of Windows and macOS font names to OFD standard fonts.\n- Now generates OFD output entirely in memory, avoiding temporary files for better performance and security.\n- Added advanced color snapping for financial documents to ensure compliance with \"Invoice Red\" standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:545ea8e063a684cd057756447e52b3931e1ab19947cbcfa9429542235cc9a002"
+}

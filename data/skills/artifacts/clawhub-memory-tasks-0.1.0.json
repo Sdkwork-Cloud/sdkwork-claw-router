@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-tasks@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_tasks",
+  "skill": {
+    "id": 29529,
+    "skillKey": "clawhub-memory-tasks",
+    "name": "Memory Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-tasks",
+    "url": "https://clawhub.ai/skills/memory-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-tasks-391a72ef9bfcfd89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task management via Basic Memory schemas: create, track, and resume structured tasks that survive context compaction. Uses BM's schema system for uniform not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phernandez",
+      "userId": "publishers:phernandez",
+      "displayName": "Paul Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/60959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773286961158,
+      "changelog": "- Initial release of memory-tasks skill for managing and resuming structured tasks using Basic Memory schemas.\n- Supports creation, tracking, and updating of tasks that persist across context compaction via schema-driven notes.\n- Task schema includes fields for description, status, steps, context, assignment, blockers, parent tasks, and more.\n- Integrates with knowledge graph and supports full querying and validation with BM’s schema system.\n- Provides guidelines for creating, updating, and completing tasks to maintain work continuity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57be8a5687965186b6891de380a9db4ed234d671601523c446bfce46eb63fced"
+}

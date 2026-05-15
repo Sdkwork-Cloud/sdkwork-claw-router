@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mdgs-tavily-search-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdgs_tavily_search_skill",
+  "skill": {
+    "id": 67447,
+    "skillKey": "clawhub-mdgs-tavily-search-skill",
+    "name": "mdgs-tavily-search-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdgs-tavily-search-skill",
+    "url": "https://clawhub.ai/skills/mdgs-tavily-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdgs-tavily-search-skill-b6eea9122aeda94e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Tavily API 进行网络搜索、网页内容提取、抓取、映射和研究。当用户需要搜索信息、获取网页内容、从网站抓取数据、绘制网站地图或进行深度研究时使用此技能。AI 应根据任务自动选择最合适的模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "343195246",
+      "userId": "s17ew7yafs52d3pdjgyx5kq28s848rxq",
+      "displayName": "343195246",
+      "image": "https://avatars.githubusercontent.com/u/30712934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773304337952,
+      "changelog": "# 更新日志\n\n## 开发者: 码道公社\n\n## [1.0.0] - 2026-03-12\n\n### Added\n- 初始版本发布\n- 支持 5 种 Tavily API 模式：\n  - 搜索 (search)\n  - 提取 (extract)\n  - 抓取 (crawl)\n  - 映射 (map)\n  - 研究 (research)\n- 提供命令行脚本\n- API Key 错误提示\n- AI 自动选择模式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f6ac9e3e3dcc1573d307bdbe4611d0917c8f0291ebb8c8d6f99ad576ac73151"
+}

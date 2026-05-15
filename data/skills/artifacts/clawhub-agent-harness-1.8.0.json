@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-harness@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_harness",
+  "skill": {
+    "id": 33716,
+    "skillKey": "clawhub-agent-harness",
+    "name": "Agent Harness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-harness",
+    "url": "https://clawhub.ai/skills/agent-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-harness-3498fa765ddf23d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Work Framework. Unified entry thinking framework + workflow Skill. Trigger Words (Thinking Modes): research, plan, design, think, pattern, process, ste..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neltharion11",
+      "userId": "s173jq7d2seevn0wxsydr7pxnx83ysqv",
+      "displayName": "neltharion11",
+      "image": "https://avatars.githubusercontent.com/u/79088941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1775576738437,
+      "changelog": "Remove Generator and Reviewer from Decision Tree.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fed7ea978694a129346a298aa13f6a190f4ddcc12a7294b7bf3bf2c5f177ca5b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17554,
+  "uuid": "skill-clawhub-query-dbpedia",
+  "skillKey": "clawhub-query-dbpedia",
+  "name": "Query DBpedia using Natural Language",
+  "summary": "Transform natural language questions into SPARQL queries for DBpedia and generate beautiful HTML results pages. Query the DBpedia knowledge graph using plain...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_dbpedia",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kingsley Idehen",
+      "features": [
+        "Transform natural language questions into SPARQL queries for DBpedia and generate beautiful HTM.",
+        "Query the DBpedia knowledge graph using plain..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-dbpedia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1541745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-dbpedia",
+      "url": "https://clawhub.ai/skills/query-dbpedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-dbpedia",
+    "url": "https://clawhub.ai/skills/query-dbpedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-dbpedia-a6687e310b24b760.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-dbpedia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-dbpedia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bc186d5154d8862328fb6047a3a7cdf611990460206a83c682536ce48d4ae75",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T15:18:18.949Z"
+}

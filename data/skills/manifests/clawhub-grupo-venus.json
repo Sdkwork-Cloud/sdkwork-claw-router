@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21147,
+  "uuid": "skill-clawhub-grupo-venus",
+  "skillKey": "clawhub-grupo-venus",
+  "name": "Grupo Venus",
+  "summary": "Astrological charts, transit forecasts, and compatibility reports via grupovenus.com. Manage multiple people and compare charts conversationally.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grupo_venus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apresmoi",
+      "features": [
+        "Astrological charts, transit forecasts, and compatibility reports via grupovenus.com",
+        "Manage multiple people and compare charts conversationally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grupo-venus@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11778792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grupo-venus",
+      "url": "https://clawhub.ai/skills/grupo-venus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grupo-venus",
+    "url": "https://clawhub.ai/skills/grupo-venus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grupo-venus-72048142f0da7632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grupo-venus@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grupo-venus-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45fda17b9f6aa6388f430ecd8c273e659b62c78d627001fa6120f2dbd32005ba",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:16:34.541Z"
+}

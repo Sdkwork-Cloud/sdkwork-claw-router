@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24129,
+  "uuid": "skill-clawhub-openai-whispers",
+  "skillKey": "clawhub-openai-whispers",
+  "name": "Pub Whisper",
+  "summary": "Local speech-to-text with the Whisper CLI (no API key). And also 50+ models for image generation, video generation, text-to-speech, speech-to-text, music, ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_whispers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Local speech-to-text with the Whisper CLI (no API key)",
+        "And also 50+ models for image generation, video generation, text-to-speech, speech-to-text, mus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openai-whispers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openai-whispers",
+      "url": "https://clawhub.ai/skills/openai-whispers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-whispers",
+    "url": "https://clawhub.ai/skills/openai-whispers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-whispers-7994742e66797a21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openai-whispers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openai-whispers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40dd6e6dc8c7d045025dbf94d5a9a9853786ab0df090140f0611fec9b90d78b0",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:10:25.116Z"
+}

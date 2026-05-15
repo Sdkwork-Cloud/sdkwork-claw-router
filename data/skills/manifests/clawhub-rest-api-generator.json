@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46758,
+  "uuid": "skill-clawhub-rest-api-generator",
+  "skillKey": "clawhub-rest-api-generator",
+  "name": "Rest Api Generator",
+  "summary": "Generates OpenAPI 3.0 specs from code. Creates API documentation for REST endpoints. Triggers: openapi spec, generate api doc, swagger.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rest_api_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates OpenAPI 3.0 specs from code",
+        "Creates API documentation for REST endpoints",
+        "Triggers: openapi spec, generate api doc, swagger."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rest-api-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rest-api-generator",
+      "url": "https://clawhub.ai/skills/rest-api-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rest-api-generator",
+    "url": "https://clawhub.ai/skills/rest-api-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rest-api-generator-7a98410a25387f50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rest-api-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rest-api-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cac049cafa8f013f3b7c2083be650cd82a754a659d17fabc2fde119563490d6c",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T23:47:41.996Z"
+}

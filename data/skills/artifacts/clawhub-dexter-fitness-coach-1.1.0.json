@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dexter-fitness-coach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexter_fitness_coach",
+  "skill": {
+    "id": 56725,
+    "skillKey": "clawhub-dexter-fitness-coach",
+    "name": "AI健身教练"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexter-fitness-coach",
+    "url": "https://clawhub.ai/skills/dexter-fitness-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexter-fitness-coach-d2cbc7e775f12e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personalized fitness planning and workout accountability coach for beginners and intermediates. Use when users want a training plan, workout logging, progres..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexterqiu-collab",
+      "userId": "s17cve2gesvrk92z6bqhns632h83hrnk",
+      "displayName": "dexterqiu-collab",
+      "image": "https://avatars.githubusercontent.com/u/243959807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774346497887,
+      "changelog": "Convert package to canonical SKILL.md skill format and document Python files as reference implementation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95f0eeed4a4e57d027075ac04c8664ad2a73304cee5e9c8a84d535412c418761"
+}

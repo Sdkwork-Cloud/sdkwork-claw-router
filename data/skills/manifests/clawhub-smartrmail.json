@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34514,
+  "uuid": "skill-clawhub-smartrmail",
+  "skillKey": "clawhub-smartrmail",
+  "name": "Smartrmail",
+  "summary": "SmartrMail integration. Manage data, records, and automate workflows. Use when the user wants to interact with SmartrMail data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartrmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SmartrMail integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SmartrMail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartrmail@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartrmail",
+      "url": "https://clawhub.ai/skills/smartrmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartrmail",
+    "url": "https://clawhub.ai/skills/smartrmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartrmail-8996aee72f056920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartrmail@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartrmail-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd3bc155375702067134e1ac26d805dcef9a0ea450476b710eca7fd60bd47ac",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:01:08.236Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dochub@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dochub",
+  "skill": {
+    "id": 58304,
+    "skillKey": "clawhub-dochub",
+    "name": "DocHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dochub",
+    "url": "https://clawhub.ai/skills/dochub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dochub-1c9d0a6c8792e735.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "All-in-one document management: batch convert to Markdown, auto-categorize, full-text search, and intelligent output. 全能文档管理技能，整合文档生命周期管理与智能检索。 Trigger: init..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longjf25",
+      "userId": "s171gz7gmrefdayrd3gs39znf583tmf4",
+      "displayName": "juanfenglong",
+      "image": "https://avatars.githubusercontent.com/u/38432924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775714019473,
+      "changelog": "优化进度显示，修复路径计算问题，提升性能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d50c70de461c310e8102f8a91793a5c4aee905d831c1d19592c10934c5086b01"
+}

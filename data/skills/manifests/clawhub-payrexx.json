@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37639,
+  "uuid": "skill-clawhub-payrexx",
+  "skillKey": "clawhub-payrexx",
+  "name": "Payrexx",
+  "summary": "Payrexx integration. Manage data, records, and automate workflows. Use when the user wants to interact with Payrexx data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payrexx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Payrexx integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Payrexx data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payrexx@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payrexx",
+      "url": "https://clawhub.ai/skills/payrexx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payrexx",
+    "url": "https://clawhub.ai/skills/payrexx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payrexx-47d2cba04a71c385.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payrexx@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-payrexx-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed221861f5fc140ca6bd68274bb155da6c5a5c348dd9acbced4883d4499ead4f",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:21.787Z"
+}

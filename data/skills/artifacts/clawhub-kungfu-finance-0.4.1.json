@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kungfu-finance@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kungfu_finance",
+  "skill": {
+    "id": 57964,
+    "skillKey": "clawhub-kungfu-finance",
+    "name": "功夫财经"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kungfu-finance",
+    "url": "https://clawhub.ai/skills/kungfu-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kungfu-finance-88a8ef3749dd8352.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mainland China A-share stock and sector analysis tool (中国A股个股与板块分析). Current repo build focuses on stable deterministic products for stock snapshots, basic f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jickchen34",
+      "userId": "s170qnv74282sz9z94hghex2vs83scmr",
+      "displayName": "jickchen34",
+      "image": "https://avatars.githubusercontent.com/u/66556312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1775121782762,
+      "changelog": "Add subscription (自选) flow: list/add/delete subscribed instruments, anomaly reports, and aggregate summary",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c22c6c2e7ac879c988ce2e80d486b4c66492fd5d954d81893445852e36f927d"
+}

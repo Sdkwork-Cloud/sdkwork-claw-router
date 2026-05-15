@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shorts-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shorts_builder",
+  "skill": {
+    "id": 24806,
+    "skillKey": "clawhub-shorts-builder",
+    "name": "Shorts Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shorts-builder",
+    "url": "https://clawhub.ai/skills/shorts-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shorts-builder-5126a0ad510fed7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Story generation pipeline skill. Supports multi-episode continuous generation, graph management, AI quality check + human confirmation dual control mechanism..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexidyg",
+      "userId": "s17drvcjx45ykk2tprdzc4h79n83kjp2",
+      "displayName": "hexidyg",
+      "image": "https://avatars.githubusercontent.com/u/254915923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772783463243,
+      "changelog": "No file or documentation changes detected for shorts-builder version 1.0.1. No updates included in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bdbd972bcb0ed1c6c20fec3ac854c5eb792614fa8e11508622c680c47577834b"
+}

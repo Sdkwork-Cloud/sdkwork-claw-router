@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63627,
+  "uuid": "skill-clawhub-mayo-clinic",
+  "skillKey": "clawhub-mayo-clinic",
+  "name": "Mayo Clinic",
+  "summary": "提供mayo-clinic品牌背景、发展历程、核心产品和全球市场地位的详细信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayo_clinic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供mayo-clinic品牌背景、发展历程、核心产品和全球市场地位的详细信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mayo-clinic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mayo-clinic",
+      "url": "https://clawhub.ai/skills/mayo-clinic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayo-clinic",
+    "url": "https://clawhub.ai/skills/mayo-clinic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayo-clinic-317d10cdb9ded115.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mayo-clinic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mayo-clinic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a83e5bb158de458206df17694479f59e1c9ef3d3e2ef08b816718f4a37dbbb3",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:01:48.335Z"
+}

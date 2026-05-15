@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privaclaw@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privaclaw",
+  "skill": {
+    "id": 52873,
+    "skillKey": "clawhub-privaclaw",
+    "name": "PrivaClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privaclaw",
+    "url": "https://clawhub.ai/skills/privaclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privaclaw-8422c1ca0cf1f71d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure outbound-only relay for remote OpenClaw control — no exposed ports, no SSH, no Telegram."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-czar",
+      "userId": "publishers:jason-czar",
+      "displayName": "Jason Czarnecki",
+      "image": "https://avatars.githubusercontent.com/u/118073592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771976831403,
+      "changelog": "- Renamed skill from remote-relay to privaclaw and updated all references accordingly.\n- Updated homepage URL to https://github.com/openclaw/privaclaw.\n- Changed default relay endpoint in the Trust Statement from wss://privaclaw.fly.dev to wss://relay.privaclaw.com.\n- Adjusted setup instructions and dashboard links to use the new skill name.\n- No changes to files or core functionality; documentation and branding updated only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e58482a8420943d1a015f2a847b21d883ea8b22e60542328d80d0ca1195077b8"
+}

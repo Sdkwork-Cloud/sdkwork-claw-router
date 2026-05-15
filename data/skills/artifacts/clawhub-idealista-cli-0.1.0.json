@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idealista-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idealista_cli",
+  "skill": {
+    "id": 12699,
+    "skillKey": "clawhub-idealista-cli",
+    "name": "Idealista Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idealista-cli",
+    "url": "https://clawhub.ai/skills/idealista-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idealista-cli-7c43e6f25f6c45e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the idealista CLI to search Idealista listings by location (city, town, area, street) and fetch listing details. Apply when a user asks for Idealista marketplace data or needs CLI commands/flags for idealista-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pjtf93",
+      "userId": "publishers:pjtf93",
+      "displayName": "pjtf93",
+      "image": "https://avatars.githubusercontent.com/u/18081873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1596,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769347621597,
+      "changelog": "Initial release of idealista-cli skill.\n\n- Enables search of Idealista listings by location (city, area, street), including detailed listing queries.\n- Offers commands for location suggestions, searching listings, and fetching listing details.\n- Supports filtering by operation, property type, price, size, bedrooms, and sorting options.\n- Provides optional JSON output for scripting.\n- Allows configuration via environment variables.\n- Returns results in table or JSON format as requested.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:221b6006279833d9ab9306d5efeddf28117edd29995a2ae9baff5d3cf5b04d33"
+}

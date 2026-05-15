@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-health-guardian@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_health_guardian",
+  "skill": {
+    "id": 23073,
+    "skillKey": "clawhub-openclaw-health-guardian",
+    "name": "Openclaw Health Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-health-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-health-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-health-guardian-24dd3190aab608ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors OpenClaw Gateway on macOS, auto-restarts on failure with 180s cooldown and max 5 restarts/hour to prevent restart loops."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhilshi",
+      "userId": "s171v5pt1yynaq1f6b4yy2v2t583w182",
+      "displayName": "zhilshi",
+      "image": "https://avatars.githubusercontent.com/u/9841541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774847233610,
+      "changelog": "Fix tilde expansion (use $HOME instead of ~/Library), escape special chars in osascript to prevent injection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:246b98ec40392a811be9fa179a0c916126f390dbe415546b545cdeefffa61dfd"
+}

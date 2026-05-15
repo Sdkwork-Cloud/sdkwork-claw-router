@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biz-relationship-pulse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biz_relationship_pulse",
+  "skill": {
+    "id": 40652,
+    "skillKey": "clawhub-biz-relationship-pulse",
+    "name": "Biz Relationship Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biz-relationship-pulse",
+    "url": "https://clawhub.ai/skills/biz-relationship-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biz-relationship-pulse-803475a4be8a9fdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans your emails and LinkedIn to identify stalled commercial relationships and suggests prioritized contacts with tailored re-engagement lines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rednix",
+      "userId": "s170cvfh9s59w5610ah2tznmxd83fyk2",
+      "displayName": "Nico Lumma",
+      "image": "https://avatars.githubusercontent.com/u/3120412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774784620455,
+      "changelog": "Initial release of biz-relationship-pulse — a skill to revive stalled business relationships.\n\n- Scans Gmail and LinkedIn for commercial relationships that have gone quiet but not closed.\n- Surfaces 3–5 promising re-ignition candidates per week, each with a scored summary and a suggested opening line.\n- Targets only existing contacts from the user's communication history (not for new lead generation or cold outreach).\n- Scoring model prioritizes momentum, recency, relationship value, current context, and plausibility of rekindling.\n- Highly configurable: supports multiple sources, contact types, and delivery options, with weekly automated reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7998bb13880281168051d2014f7158d7883233fbe5a6938981cf192714cf88c3"
+}

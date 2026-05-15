@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acetoolz-uuid@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acetoolz_uuid",
+  "skill": {
+    "id": 42330,
+    "skillKey": "clawhub-acetoolz-uuid",
+    "name": "AceToolz UUID Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acetoolz-uuid",
+    "url": "https://clawhub.ai/skills/acetoolz-uuid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acetoolz-uuid-349c88d2934de5a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UUIDs (v1, v4, v7) in bulk using AceToolz."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acetoolz",
+      "userId": "s173hxdx82gzvw16jm4jeemgdx84511j",
+      "displayName": "AceToolz",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775316771106,
+      "changelog": "- Updated instructions to call the AceToolz API using `exec`, with OS-specific examples for PowerShell (Windows) and curl (macOS/Linux).\n- Clarified to adjust API body parameters dynamically based on user input before execution.\n- Added error handling guidance for when the API is unreachable, suggesting users visit the AceToolz website directly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33fb02e3882da0654484a9605fb7dae1acb26298240d321ad15feb29fab299e1"
+}

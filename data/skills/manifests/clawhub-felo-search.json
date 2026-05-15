@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10628,
+  "uuid": "skill-clawhub-felo-search",
+  "skillKey": "clawhub-felo-search",
+  "name": "Felo Search",
+  "summary": "Felo AI real-time web search for questions requiring current/live information. Triggers on current events, news, trends, real-time data, information queries,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Felo AI real-time web search for questions requiring current/live information",
+        "Triggers on current events, news, trends, real-time data, information queries,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo-search",
+      "url": "https://clawhub.ai/skills/felo-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-search",
+    "url": "https://clawhub.ai/skills/felo-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-search-04459522061c793d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cc4b0eb4224a7b69d1ee6581eecad3fe69513565ea69503be21abade2139ab1",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T03:21:47.745Z"
+}

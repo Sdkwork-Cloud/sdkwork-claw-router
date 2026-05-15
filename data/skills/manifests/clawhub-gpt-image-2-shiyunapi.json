@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66264,
+  "uuid": "skill-clawhub-gpt-image-2-shiyunapi",
+  "skillKey": "clawhub-gpt-image-2-shiyunapi",
+  "name": "GPT-image-2 图片生成与编辑 诗云API",
+  "summary": "【功能】通过 GPT-image-2 模型完成文生图和基于图片的编辑/修图，通过诗云API(ShiyunApi)提供GPT-image-2 模型服务。 【场景】用户要生成图片、画图、做海报/头像/封面/插画/产品图，或要修改图片、局部重绘、换背景、合成多张图、调整风格、基于参考图生成新图时触发。 【输入】文本提示...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image_2_shiyunapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShiyunApi",
+      "features": [
+        "【功能】通过 GPT-image-2 模型完成文生图和基于图片的编辑/修图，通过诗云API(ShiyunApi)提供GPT-image-2 模型服务。 【场景】用户要生成图片、画图、做海报/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpt-image-2-shiyunapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13941609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpt-image-2-shiyunapi",
+      "url": "https://clawhub.ai/skills/gpt-image-2-shiyunapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image-2-shiyunapi",
+    "url": "https://clawhub.ai/skills/gpt-image-2-shiyunapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image-2-shiyunapi-9b024abff67032be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpt-image-2-shiyunapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpt-image-2-shiyunapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54cae89cc32243a304cf84add9a21ef9b872bdb4ddd2783a6724d9d9fd169010",
+      "artifactSizeBytes": 2713
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:12:33.183Z"
+}

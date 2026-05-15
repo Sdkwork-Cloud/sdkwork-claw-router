@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/search-intelligence-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_intelligence_skill",
+  "skill": {
+    "id": 19586,
+    "skillKey": "clawhub-search-intelligence-skill",
+    "name": "Search Intelligence Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-intelligence-skill",
+    "url": "https://clawhub.ai/skills/search-intelligence-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-intelligence-skill-b8df12f20e6fa2ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced AI-powered search skill using SearXNG as the universal search backend. Multi-engine dork generation, 90+ search engines, intelligent search strategi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elmaslouhymouaad",
+      "userId": "s178345et6k6ww0w9bpbffk6ws83hhd3",
+      "displayName": "Mouaad",
+      "image": "https://avatars.githubusercontent.com/u/105790058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 573,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772238890669,
+      "changelog": "- Renamed all code package imports and references from `search_dorks_skill` to `search_intelligence_skill` for consistency and clarity.\n- Updated code examples and documentation in `SKILL.md`, `README.md`, and example files to use the new package name.\n- No functional or API changes to the skill itself; breaking change only for import paths.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac607a644da37a2bc60a0429e7108dd8548410da689765199e060c7720f665bb"
+}

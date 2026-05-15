@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11884,
+  "uuid": "skill-clawhub-mailbox",
+  "skillKey": "clawhub-mailbox",
+  "name": "email skill",
+  "summary": "Manage and read emails via the mailbox CLI with JSON outputs, supporting listing, showing, deleting, and monitoring emails securely and efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "郭立lee",
+      "features": [
+        "Manage and read emails via the mailbox CLI with JSON outputs, supporting listing, showing, dele."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9278645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailbox",
+      "url": "https://clawhub.ai/skills/mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbox",
+    "url": "https://clawhub.ai/skills/mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbox-92bea4d52a1d53f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1905594de7938b9f55d31afa71d1a37e1abc4032bf3e7ecc7f71459b9266bbb9",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T07:25:54.005Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-code-review@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_code_review",
+  "skill": {
+    "id": 61297,
+    "skillKey": "clawhub-ops-code-review",
+    "name": "Ops Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-code-review",
+    "url": "https://clawhub.ai/skills/ops-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-code-review-053390c1526ac20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Code Review 安全扫描工具，自动化代码审计，支持 Django/Python、React+TypeScript、PHP 多语言。 自动识别代码仓库提交变更，调用安全扫描器进行规范检查和风险检测，报告推送飞书群。 支持 post-commit hook 增量扫描和定时全量扫描。 关键词：Code Revi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freepengyang",
+      "userId": "s17awhsb821pah3b7qbwfbwrm584yvyq",
+      "displayName": "freepengyang",
+      "image": "https://avatars.githubusercontent.com/u/18629902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1777512420211,
+      "changelog": "- Improved documentation in SKILL.md for dependency installation, emphasizing best practices for Composer installation (using a temporary file instead of piping).\n- Updated the environment variable `CODE_REVIEW_CONFIG` documentation to recommend using a protected directory for the configuration file.\n- Clarified tool install commands and cleaned up table formatting in the usage guide.\n- No changes to the core code logic; updates are focused on safer installation and clearer documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d3d918f30de3d420c4e9c679f09bcf60a31c8ebb901f8671cbd0cc5b083b041"
+}

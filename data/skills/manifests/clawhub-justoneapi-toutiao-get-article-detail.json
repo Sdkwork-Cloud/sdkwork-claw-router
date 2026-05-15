@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49487,
+  "uuid": "skill-clawhub-justoneapi-toutiao-get-article-detail",
+  "skillKey": "clawhub-justoneapi-toutiao-get-article-detail",
+  "name": "Toutiao Article Details API",
+  "summary": "Call GET /api/toutiao/get-article-detail/v1 for Toutiao Article Details through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_toutiao_get_article_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/toutiao/get-article-detail/v1 for Toutiao Article Details through JustOneAPI with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-toutiao-get-article-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-toutiao-get-article-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-toutiao-get-article-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-toutiao-get-article-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-toutiao-get-article-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-toutiao-get-article-detail-3daea3cc75e58858.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-toutiao-get-article-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-toutiao-get-article-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e03c11b04fbba2054f5b6a10c9a019eaee9bb2b04cda5132b391fde25b6ecb4d",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T04:34:14.323Z"
+}

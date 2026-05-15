@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24671,
+  "uuid": "skill-clawhub-wtt-plugin",
+  "skillKey": "clawhub-wtt-plugin",
+  "name": "WTT Plugin",
+  "summary": "OpenClaw WTT channel plugin distribution entry. Installs/enables @cecwxf/wtt and bootstraps channels.wtt with agent_id + agent_token from wtt.sh.",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wtt_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "saiph",
+      "features": [
+        "OpenClaw WTT channel plugin distribution entry",
+        "Installs/enables @cecwxf/wtt and bootstraps channels.wtt with agent_id + agent_token from wtt.s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wtt-plugin@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1245883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wtt-plugin",
+      "url": "https://clawhub.ai/skills/wtt-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wtt-plugin",
+    "url": "https://clawhub.ai/skills/wtt-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wtt-plugin-0765ac3568dda5d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wtt-plugin@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wtt-plugin-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71f9a7b9082c1375b48f9a5174fc214f4a89e06cd5cc2db52ac085b60f2fbe5b",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T11:19:28.294Z"
+}

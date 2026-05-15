@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31991,
+  "uuid": "skill-clawhub-guess-number",
+  "skillKey": "clawhub-guess-number",
+  "name": "guess-number",
+  "summary": "Play a four-digit number guessing game where each guess receives feedback on how many digits are correct in both value and position.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guess_number",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lydia9781",
+      "features": [
+        "Play a four-digit number guessing game where each guess receives feedback on how many digits ar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guess-number@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45650045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guess-number",
+      "url": "https://clawhub.ai/skills/guess-number"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guess-number",
+    "url": "https://clawhub.ai/skills/guess-number",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guess-number-34dbbdb6b559a1fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guess-number@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guess-number-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:878192129f97700ff5d930179a4bfd4bea8cf398f41cd4b52b11880000e1f81b",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:00:33.832Z"
+}

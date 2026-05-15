@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-background-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_background_check",
+  "skill": {
+    "id": 65453,
+    "skillKey": "clawhub-customer-background-check",
+    "name": "Customer Background Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-background-check",
+    "url": "https://clawhub.ai/skills/customer-background-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-background-check-8e0dbcaae9ea2e6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对客户公司做三查式合规背调，重点覆盖 OFAC 制裁名单检索、BIS/ECFR 黑名单地址关键词核查，以及生成给商务部同事 Dora 或 Shellen 的协查请求。用于用户要求“做客户背调”“查客户是否在制裁名单”“查注册地址是否在黑名单”“做三查”“生成给 Dora/Shellen 的出口数据协查消息”等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kittymi",
+      "userId": "s1765ae6kqgyxtkbx5yppqx0h184k6eg",
+      "displayName": "KittyMi",
+      "image": "https://avatars.githubusercontent.com/u/11263276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775789492461,
+      "changelog": "Initial release with semi-automated OFAC and ECFR workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d59303dc2bd47902f83d778e3a0f7cca4bac7de52e59a35d98b1b4d73537f50c"
+}

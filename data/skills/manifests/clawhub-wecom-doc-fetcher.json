@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17383,
+  "uuid": "skill-clawhub-wecom-doc-fetcher",
+  "skillKey": "clawhub-wecom-doc-fetcher",
+  "name": "WeChat Work Doc Fetcher",
+  "summary": "Fetch and convert WeChat Work developer docs pages into clean Markdown files for use in Obsidian, handling SPA content and required authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_doc_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mouzhi",
+      "features": [
+        "Fetch and convert WeChat Work developer docs pages into clean Markdown files for use in Obsidia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-doc-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5210310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-doc-fetcher",
+      "url": "https://clawhub.ai/skills/wecom-doc-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-doc-fetcher",
+    "url": "https://clawhub.ai/skills/wecom-doc-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-doc-fetcher-867fd8e682327a6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-doc-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-doc-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87b13efb56fc1f5a6b0fff9bf7010d98b2f8f1f2de4e5be8e79c1c54e9452eba",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:50:04.828Z"
+}

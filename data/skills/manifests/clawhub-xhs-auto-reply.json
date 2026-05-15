@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68189,
+  "uuid": "skill-clawhub-xhs-auto-reply",
+  "skillKey": "clawhub-xhs-auto-reply",
+  "name": "Xhs Auto Reply",
+  "summary": "小红书评论智能回复 — AI 全流程搞定：自动获取评论 → 智能生成回复 → 人工审核确认 → 一键发送。支持单篇笔记和 Notion 批量管理，多模型自由切换。触发词：小红书回复、回复评论、评论回复。",
+  "version": "4.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_auto_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianduoduo8021",
+      "features": [
+        "小红书评论智能回复 — AI 全流程搞定：自动获取评论 → 智能生成回复 → 人工审核确认 → 一键发送。支持单篇笔记和 Notion 批量管理，多模型自由切换。触发词：小红书回复、回复评论."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-auto-reply@4.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42595612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-auto-reply",
+      "url": "https://clawhub.ai/skills/xhs-auto-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-auto-reply",
+    "url": "https://clawhub.ai/skills/xhs-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-auto-reply-e76ff4b424d269dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-auto-reply@4.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-auto-reply-4.0.4.json",
+      "version": "4.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:449fb924069944b5d97e6a423fdbad5f5b25d0df531238c57ceac02f8c1e9d1e",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:48:31.073Z"
+}

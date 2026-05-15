@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investorclaw@4.1.36",
+  "version": "4.1.36",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investorclaw",
+  "skill": {
+    "id": 54844,
+    "skillKey": "clawhub-investorclaw",
+    "name": "InvestorClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investorclaw",
+    "url": "https://clawhub.ai/skills/investorclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investorclaw-695c1b2b52bf114a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic-first portfolio analyzer — holdings, performance, Sharpe + Sortino, FRED yield curves, bond duration, sector breakdowns, scenario rebalancing —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "perlowja",
+      "userId": "s17ftndh5bds1agrm1vrfj3rm584x3ed",
+      "displayName": "Jason Perlow",
+      "image": "https://avatars.githubusercontent.com/u/162375972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "4.1.36",
+      "createdAt": 1778086136254,
+      "changelog": "v4.1.36: zeroclaw skill-audit clearance. Removes curl|sh patterns from CHANGELOG.md, agent-skills/claude-code/INSTALL.md, docs/PHILOSOPHY.md and remote-markdown-link references in SKILL.md so the bundle passes zeroclaw's skills audit on the v0.7.4-debian image. Closes task #75. Image multi-arch (amd64+arm64) at sha256:45a9c5bd.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f9ebe968700143c699e83cf63a9816e940bf11c2d2f90b80bac1be2734bdc55"
+}

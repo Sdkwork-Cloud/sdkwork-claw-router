@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20119,
+  "uuid": "skill-clawhub-web-research",
+  "skillKey": "clawhub-web-research",
+  "name": "Web Search Assistant",
+  "summary": "Web search via EvoLink API. Returns clean, formatted results with titles, URLs, and descriptions. Powered by evolink.ai",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "Web search via EvoLink API",
+        "Returns clean, formatted results with titles, URLs, and descriptions",
+        "Powered by evolink.ai"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-research",
+      "url": "https://clawhub.ai/skills/web-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-research",
+    "url": "https://clawhub.ai/skills/web-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-research-f87336212acb4267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc00a8aff5fbacdc41e1ed201c9956e4fd1b4df38d977ca696cb33fbcfebd74b",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:03:13.514Z"
+}

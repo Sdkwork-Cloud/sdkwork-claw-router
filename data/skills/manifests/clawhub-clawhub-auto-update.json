@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62974,
+  "uuid": "skill-clawhub-clawhub-auto-update",
+  "skillKey": "clawhub-clawhub-auto-update",
+  "name": "ClawHub Auto Update",
+  "summary": "自动检查并更新ClawHub已安装技能。有更新时通知用户，支持手动和定时运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_auto_update",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JimmieTing",
+      "features": [
+        "自动检查并更新ClawHub已安装技能。有更新时通知用户，支持手动和定时运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-auto-update@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40496693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-auto-update",
+      "url": "https://clawhub.ai/skills/clawhub-auto-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-auto-update",
+    "url": "https://clawhub.ai/skills/clawhub-auto-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-auto-update-250a2738a4d7c212.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-auto-update@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-auto-update-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f36a39aa00a8206c745eb358e0c5367ad659a3ec8475c9b0bf77d215929fd1e",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:08:33.712Z"
+}

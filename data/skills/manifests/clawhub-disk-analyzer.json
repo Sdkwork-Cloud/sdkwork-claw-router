@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56068,
+  "uuid": "skill-clawhub-disk-analyzer",
+  "skillKey": "clawhub-disk-analyzer",
+  "name": "Disk Analyzer",
+  "summary": "Duf — duf — Disk Usage/Free analyzer. Automated tool for duf tasks. Use when you need Duf capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disk_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Duf — duf — Disk Usage/Free analyzer",
+        "Automated tool for duf tasks",
+        "Use when you need Duf capabilities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disk-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disk-analyzer",
+      "url": "https://clawhub.ai/skills/disk-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disk-analyzer",
+    "url": "https://clawhub.ai/skills/disk-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disk-analyzer-60bd9e4e6ad1abb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disk-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-disk-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d3141565385929d7456e116d632b4204811c12d6df9e9293ed25a2c0489852",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T16:00:57.614Z"
+}

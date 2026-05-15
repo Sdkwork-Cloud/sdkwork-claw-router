@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48183,
+  "uuid": "skill-clawhub-justoneapi-weixin-get-article-feedback",
+  "skillKey": "clawhub-justoneapi-weixin-get-article-feedback",
+  "name": "WeChat Official Accounts Article Engagement Metrics API",
+  "summary": "Call GET /api/weixin/get-article-feedback/v1 for WeChat Official Accounts Article Engagement Metrics through JustOneAPI with articleUrl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_weixin_get_article_feedback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/weixin/get-article-feedback/v1 for WeChat Official Accounts Article Engagement Me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-weixin-get-article-feedback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-weixin-get-article-feedback",
+      "url": "https://clawhub.ai/skills/justoneapi-weixin-get-article-feedback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-weixin-get-article-feedback",
+    "url": "https://clawhub.ai/skills/justoneapi-weixin-get-article-feedback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-weixin-get-article-feedback-e1e92fe28fb642dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-weixin-get-article-feedback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-weixin-get-article-feedback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c1423a6f914ce5088dc41ebebf0ff8e7874868ce1990f01fb521dc5f1579855",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T08:03:32.936Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zstack-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zstack_mcp",
+  "skill": {
+    "id": 36425,
+    "skillKey": "clawhub-zstack-mcp",
+    "name": "Zstack Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zstack-mcp",
+    "url": "https://clawhub.ai/skills/zstack-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zstack-mcp-740bb9cec5b60c91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZStack Cloud MCP Server integration for OpenClaw. Enables AI to query and execute ZStack APIs (2000+ endpoints) with authentication management and read-only..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xybstone",
+      "userId": "publishers:xybstone",
+      "displayName": "徐阳波",
+      "image": "https://avatars.githubusercontent.com/u/7261032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774148166589,
+      "changelog": "Initial release of zstack-mcp skill for OpenClaw:\n\n- Integrates ZStack Cloud MCP Server, enabling AI to query and execute over 2000 ZStack APIs with authentication management.\n- Provides secure, read-only access by default; write API calls require explicit opt-in.\n- Includes user-friendly setup scripts, comprehensive configuration and troubleshooting guides.\n- Supports flexible authentication (username/password or session), environment-based configuration, and response size limits for safety.\n- Offers example command usage for searching, describing, executing APIs, and querying monitoring metrics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af6d4243719ee420391b67054b79555edc57d546bbe814693f0a58c305c14ec3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50856,
+  "uuid": "skill-clawhub-skill-evalscope",
+  "skillKey": "clawhub-skill-evalscope",
+  "name": "EvalScope",
+  "summary": "Translates natural language requests into evalscope CLI commands. Core capabilities: (1) Model accuracy evaluation (eval) — runs 156+ benchmarks (Math, Codin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evalscope",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yunlin Mao",
+      "features": [
+        "Translates natural language requests into evalscope CLI commands",
+        "Core capabilities: (1) Model accuracy evaluation (eval) — runs 156+ benchmarks (Math, Codin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-evalscope@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42505434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-evalscope",
+      "url": "https://clawhub.ai/skills/skill-evalscope"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evalscope",
+    "url": "https://clawhub.ai/skills/skill-evalscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evalscope-7afb575856ed2f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-evalscope@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-evalscope-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b5e61dbf266cb16e9b3f8ba8f7a7135d8c57bb21223f419b78921623826a173",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:16:04.232Z"
+}

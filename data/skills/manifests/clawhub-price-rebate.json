@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73098,
+  "uuid": "skill-clawhub-price-rebate",
+  "skillKey": "clawhub-price-rebate",
+  "name": "比价返利雷达",
+  "summary": "跨平台商品比价与返利综合工具，计算各平台真实到手价（售价-券-返利），推荐最优购买渠道。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_rebate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "跨平台商品比价与返利综合工具，计算各平台真实到手价（售价-券-返利），推荐最优购买渠道。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-rebate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-rebate",
+      "url": "https://clawhub.ai/skills/price-rebate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-rebate",
+    "url": "https://clawhub.ai/skills/price-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-rebate-cf9f990ebd5781d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-rebate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-rebate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f753a663d778f816b25230b7f615953e3b06b61f1bbbc0a8bb8c36e857e4e8ef",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:35:19.644Z"
+}

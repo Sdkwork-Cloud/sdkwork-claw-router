@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-comm-hub-mini@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_comm_hub_mini",
+  "skill": {
+    "id": 61555,
+    "skillKey": "clawhub-agent-comm-hub-mini",
+    "name": "Agent Comm Hub Mini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-comm-hub-mini",
+    "url": "https://clawhub.ai/skills/agent-comm-hub-mini",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-comm-hub-mini-701d796edd543a45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多智能体协同通信基础设施——基于 MCP+SSE 的实时消息、任务调度、记忆共享与进化引擎。支持 WorkBuddy、Hermes、QClaw 及任意 MCP 兼容 Agent 接入。53 个 MCP 工具、4 级权限、零外部依赖 Python SDK。触发词：agent通信、智能体通信、hub通信、多智能体、跨..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuboacean",
+      "userId": "s1779brgcyhkdmz9tgjpwarx3h84vb82",
+      "displayName": "liuboacean",
+      "image": "https://avatars.githubusercontent.com/u/27935764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1777854103210,
+      "changelog": "v2.4.0: 模块化重构，100单元测试，CI/CD，类型安全",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcc3a144ece838f57fac1ba784a45d3a364272b05624631529b41696e79b3db4"
+}

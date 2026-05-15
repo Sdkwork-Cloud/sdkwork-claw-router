@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51510,
+  "uuid": "skill-clawhub-navimem",
+  "skillKey": "clawhub-navimem",
+  "name": "NaviMem",
+  "summary": "Shared web task memory for AI agents. Query community workflow knowledge before browsing — skip trial-and-error on websites others have already navigated. Re...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.navimem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yourens",
+      "features": [
+        "Shared web task memory for AI agents",
+        "Query community workflow knowledge before browsing — skip trial-and-error on websites others ha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/navimem@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5778943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "navimem",
+      "url": "https://clawhub.ai/skills/navimem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "navimem",
+    "url": "https://clawhub.ai/skills/navimem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/navimem-1b681af727e40ae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/navimem@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-navimem-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b1ac59e13dee9b29b12d06ddcad96085c537cb0db44511f055bd84f318d2a88",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:29:12.958Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30875,
+  "uuid": "skill-clawhub-newscatcher",
+  "skillKey": "clawhub-newscatcher",
+  "name": "Newscatcher",
+  "summary": "NewsCatcher integration. Manage Topics. Use when the user wants to interact with NewsCatcher data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newscatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NewsCatcher integration",
+        "Manage Topics",
+        "Use when the user wants to interact with NewsCatcher data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newscatcher@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newscatcher",
+      "url": "https://clawhub.ai/skills/newscatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newscatcher",
+    "url": "https://clawhub.ai/skills/newscatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newscatcher-e7d5819e99fb6389.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newscatcher@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-newscatcher-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b0379582122a3cda5ca032959391140c8524ff16e3588c72aa8fcb1e8ee97c8",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:17:31.978Z"
+}

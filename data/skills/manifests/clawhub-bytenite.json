@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39965,
+  "uuid": "skill-clawhub-bytenite",
+  "skillKey": "clawhub-bytenite",
+  "name": "Bytenite",
+  "summary": "ByteNite integration. Manage data, records, and automate workflows. Use when the user wants to interact with ByteNite data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytenite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ByteNite integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ByteNite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytenite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytenite",
+      "url": "https://clawhub.ai/skills/bytenite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytenite",
+    "url": "https://clawhub.ai/skills/bytenite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytenite-b59bdf5b28392d19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytenite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytenite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80fbc3a2b8f52106215aa8a6cd983acb9233d6a49a4611eaa44ac752922756e9",
+      "artifactSizeBytes": 1836
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:05:33.233Z"
+}

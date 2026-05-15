@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_validator",
+  "skill": {
+    "id": 39304,
+    "skillKey": "clawhub-idea-validator",
+    "name": "Idea Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-validator",
+    "url": "https://clawhub.ai/skills/idea-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-validator-12d6315587ac904c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Startup idea validation skill. Helps indie developers validate product ideas, analyze competitive landscapes, and assess market saturation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776391637191,
+      "changelog": "Initial release of the idea-validator skill.\n\n- Assesses startup ideas using a multi-dimensional framework (market, competition, technology, business model).\n- Analyzes competitor landscape and market saturation for product categories.\n- Constructs target user personas and validates user needs.\n- Generates MVP feature plans and product iteration roadmaps.\n- Provides output in a unified, Markdown-format report with key findings, metrics, in-depth analysis, and actionable recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62b09fc4e7d1414edcb3d4bf6d537bd4e420b962042ac1b63a89dd5df8f22405"
+}

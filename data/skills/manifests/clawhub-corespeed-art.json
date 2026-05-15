@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27535,
+  "uuid": "skill-clawhub-corespeed-art",
+  "skillKey": "clawhub-corespeed-art",
+  "name": "Core Speed Art",
+  "summary": "Generate video, images, audio, and music using 40+ AI models via fal.ai. Use for video generation (Kling v3, Sora 2, Veo 3.1, LTX 2.3, Pixverse v5), image ge...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corespeed_art",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiwei,Yuan",
+      "features": [
+        "Generate video, images, audio, and music using 40+ AI models via fal.ai",
+        "Use for video generation (Kling v3, Sora 2, Veo 3.1, LTX 2.3, Pixverse v5), image ge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corespeed-art@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23147684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corespeed-art",
+      "url": "https://clawhub.ai/skills/corespeed-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corespeed-art",
+    "url": "https://clawhub.ai/skills/corespeed-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corespeed-art-9c1776352e4f8ec6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corespeed-art@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-corespeed-art-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fea4479995e0f8288e7b692ba7c108776640e0bce9c41138c2977814b74e7eb",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:51:05.529Z"
+}

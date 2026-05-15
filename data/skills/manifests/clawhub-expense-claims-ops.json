@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25835,
+  "uuid": "skill-clawhub-expense-claims-ops",
+  "skillKey": "clawhub-expense-claims-ops",
+  "name": "Expense Claims Ops",
+  "summary": "Process personal/work expenses and reimbursement claims in a structured, low-friction workflow. Use when collecting receipts, categorizing spend, preparing c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_claims_ops",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austineyapp",
+      "features": [
+        "Process personal/work expenses and reimbursement claims in a structured, low-friction workflow",
+        "Use when collecting receipts, categorizing spend, preparing c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-claims-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43059393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-claims-ops",
+      "url": "https://clawhub.ai/skills/expense-claims-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-claims-ops",
+    "url": "https://clawhub.ai/skills/expense-claims-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-claims-ops-e927ea50edb36b25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-claims-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-claims-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148773d713475c5e5a7be8541d8b3c6eac41f63122c31a3a4516083afa394441",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:55:32.065Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34422,
+  "uuid": "skill-clawhub-reclaim",
+  "skillKey": "clawhub-reclaim",
+  "name": "Reclaim",
+  "summary": "Reclaim integration. Manage data, records, and automate workflows. Use when the user wants to interact with Reclaim data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reclaim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Reclaim integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Reclaim data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reclaim@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reclaim",
+      "url": "https://clawhub.ai/skills/reclaim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reclaim",
+    "url": "https://clawhub.ai/skills/reclaim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reclaim-7d311408adaf2092.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reclaim@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reclaim-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:179fde0b48fedc8a4b3b08176bc75100e1ba6448cdf413d549608adcdbcd2da0",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:25.306Z"
+}

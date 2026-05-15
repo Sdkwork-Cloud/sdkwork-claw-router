@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17249,
+  "uuid": "skill-clawhub-is-token-safe",
+  "skillKey": "clawhub-is-token-safe",
+  "name": "Is Token Safe?",
+  "summary": "Evaluates a crypto token's contract for scam risks and flags its safety level with reasons for trading and decision-making purposes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.is_token_safe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dokbawi80",
+      "features": [
+        "Evaluates a crypto token's contract for scam risks and flags its safety level with reasons for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/is-token-safe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211120495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "is-token-safe",
+      "url": "https://clawhub.ai/skills/is-token-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "is-token-safe",
+    "url": "https://clawhub.ai/skills/is-token-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/is-token-safe-22e0e8cdfc9b395a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/is-token-safe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-is-token-safe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ccd779ac3b6f85095615a363761243e4b6f4aac42bd03140955dc0b07e8db93",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T12:34:01.875Z"
+}

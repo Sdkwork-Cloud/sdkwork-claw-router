@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41893,
+  "uuid": "skill-clawhub-apex-27-integration",
+  "skillKey": "clawhub-apex-27-integration",
+  "name": "Apex 27",
+  "summary": "Apex 27 integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Apex 27 data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apex_27_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Apex 27 integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Apex 27 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apex-27-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apex-27-integration",
+      "url": "https://clawhub.ai/skills/apex-27-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apex-27-integration",
+    "url": "https://clawhub.ai/skills/apex-27-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apex-27-integration-ee7e9c8b23d7cdcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apex-27-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apex-27-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97cba72e6f69bbec36f1b799669822153bd1a0a7f2f84bda27e3d4e41bc6498f",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:42.412Z"
+}

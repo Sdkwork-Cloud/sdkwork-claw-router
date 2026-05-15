@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66300,
+  "uuid": "skill-clawhub-feishu-doc-batch-export",
+  "skillKey": "clawhub-feishu-doc-batch-export",
+  "name": "Feishu Doc Batch Export",
+  "summary": "批量导出飞书文档（docx）到本地Markdown格式，支持保留文档格式、图片、链接，支持指定文件夹/文档链接批量导出。触发场景：当用户需要导出飞书文档、批量下载飞书文档、飞书文档转Markdown时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_batch_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TechnologyLiu",
+      "features": [
+        "批量导出飞书文档（docx）到本地Markdown格式，支持保留文档格式、图片、链接，支持指定文件夹/文档链接批量导出。触发场景：当用户需要导出飞书文档、批量下载飞书文档、飞书文档转Mark."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-batch-export@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43312856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-batch-export",
+      "url": "https://clawhub.ai/skills/feishu-doc-batch-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-batch-export",
+    "url": "https://clawhub.ai/skills/feishu-doc-batch-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-batch-export-a4b4e9e87083abce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-batch-export@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-batch-export-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b493c0bea7ed223e0d35f2425451298e254af6a635439af2dd723a1cca2384a2",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:26:37.062Z"
+}

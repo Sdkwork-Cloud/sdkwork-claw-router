@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40217,
+  "uuid": "skill-clawhub-agent-local-memory",
+  "skillKey": "clawhub-agent-local-memory",
+  "name": "local-memory-skill",
+  "summary": "Persistent local memory system for AI agents across conversations — file-based, zero external dependencies. Trigger when: (1) user asks to \"remember\" somethi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_local_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siyu-hu",
+      "features": [
+        "Persistent local memory system for AI agents across conversations — file-based, zero external d.",
+        "Trigger when: (1) user asks to \"remember\" somethi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-local-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37922933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-local-memory",
+      "url": "https://clawhub.ai/skills/agent-local-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-local-memory",
+    "url": "https://clawhub.ai/skills/agent-local-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-local-memory-f93ddf4e3d7dddf7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-local-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-local-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b12bbb33fb0948259958852602113735342703908700bf6fb027617d6a9e394",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:19:59.620Z"
+}

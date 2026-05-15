@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58561,
+  "uuid": "skill-clawhub-rdk-x5-camera",
+  "skillKey": "clawhub-rdk-x5-camera",
+  "name": "Rdk X5 Camera",
+  "summary": "配置并启动 RDK X5 上的 MIPI CSI 摄像头、USB 摄像头或双目深度摄像头（RealSense/ZED/Orbbec），通过 Web 浏览器预览实时画面。Use when the user wants to start a camera, preview video, capture images,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_camera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiaolongli",
+      "features": [
+        "配置并启动 RDK X5 上的 MIPI CSI 摄像头、USB 摄像头或双目深度摄像头（RealSense/ZED/Orbbec），通过 Web 浏览器预览实时画面。Use when th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rdk-x5-camera@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262944264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rdk-x5-camera",
+      "url": "https://clawhub.ai/skills/rdk-x5-camera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-camera",
+    "url": "https://clawhub.ai/skills/rdk-x5-camera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-camera-3dc2fd0c7239f99d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rdk-x5-camera@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-camera-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f0b17d1ab3d40da3b767b57008dbf1ed32865e9583253bf727f41f5483ef2d1",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:13:01.176Z"
+}

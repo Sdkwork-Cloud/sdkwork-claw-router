@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solana-compression@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_compression",
+  "skill": {
+    "id": 39247,
+    "skillKey": "clawhub-solana-compression",
+    "name": "solana-compression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-compression",
+    "url": "https://clawhub.ai/skills/solana-compression",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-compression-3c653c4fcd071500.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build with ZK Compression on Solana using Light Protocol. Use when creating compressed tokens, compressed PDAs, or integrating ZK compression into Solana pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1777570442440,
+      "changelog": "Updated solana-compression from 0.6.0 to 0.6.1.\nChanges:\n- modified `SKILL.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:046e958ae5d6872dfcfaf45b628fa85fb263b22a27efc798e41251abcb15e5d4"
+}

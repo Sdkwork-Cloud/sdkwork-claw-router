@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59152,
+  "uuid": "skill-clawhub-travel-car",
+  "skillKey": "clawhub-travel-car",
+  "name": "出行用车",
+  "summary": "差旅补助助手，支持补助标准查询、出差补助计算、补助申请、审批进度查询、发放状态跟踪等功能。Invoke when user needs to calculate travel allowance, submit allowance claims, or check allowance policy and sta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_car",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "差旅补助助手，支持补助标准查询、出差补助计算、补助申请、审批进度查询、发放状态跟踪等功能。Invoke when user needs to calculate travel allowan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-car@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-car",
+      "url": "https://clawhub.ai/skills/travel-car"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-car",
+    "url": "https://clawhub.ai/skills/travel-car",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-car-d3b222f530f0f94b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-car@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-car-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b903f6169fa1bf935b1b04f8d8e10a59c87c8d5bf929b91ec5f5bdd90793c443",
+      "artifactSizeBytes": 2727
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:21:43.771Z"
+}

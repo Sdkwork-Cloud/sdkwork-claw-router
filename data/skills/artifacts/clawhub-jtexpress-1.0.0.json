@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jtexpress@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jtexpress",
+  "skill": {
+    "id": 56698,
+    "skillKey": "clawhub-jtexpress",
+    "name": "Jtexpress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jtexpress",
+    "url": "https://clawhub.ai/skills/jtexpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jtexpress-6ec5d3a19711228b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use J&T Express (极兔速递) for shipment tracking, shipping guidance, service-type comparison, outlet lookup, and delivery-time or fee estimation. Use when the us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774496018714,
+      "changelog": "Initial release of J&T Express skill.\n\n- Provides shipment tracking, service-type comparison, outlet lookup, and delivery-time or fee estimation for J&T Express.\n- Supports privacy controls and local data persistence when used with the CLI.\n- Guides users through shipment tracking, fee/time estimation, and other common tasks.\n- Includes clear information about data storage and privacy options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:099ca6a69d58a0ea56f5b5a3b435d227698b56443db3893853f466e051b5e15e"
+}

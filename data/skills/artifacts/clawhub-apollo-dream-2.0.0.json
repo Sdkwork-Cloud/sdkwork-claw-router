@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-dream@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_dream",
+  "skill": {
+    "id": 66913,
+    "skillKey": "clawhub-apollo-dream",
+    "name": "Apollo Dream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-dream",
+    "url": "https://clawhub.ai/skills/apollo-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-dream-633b360424b885a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "像睡觉做梦一样整理记忆，把重要的留下，不重要的忘掉。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775561374972,
+      "changelog": "v2.0.0: Token精度算法 + 信息密度检测 + 三层压缩 + 7天快照 + 决策追踪",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dd37b3126f1a677f924ade70ee60e5140ff516f9b7b61fb92dfbf81cccdb652"
+}

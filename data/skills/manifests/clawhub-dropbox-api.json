@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9214,
+  "uuid": "skill-clawhub-dropbox-api",
+  "skillKey": "clawhub-dropbox-api",
+  "name": "Dropbox",
+  "summary": "Dropbox API integration with managed OAuth. Files, folders, search, metadata, and cloud storage. Use this skill when users want to manage files and folders i...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Dropbox API integration with managed OAuth",
+        "Files, folders, search, metadata, and cloud storage",
+        "Use this skill when users want to manage files and folders i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dropbox-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dropbox-api",
+      "url": "https://clawhub.ai/skills/dropbox-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-api",
+    "url": "https://clawhub.ai/skills/dropbox-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-api-2e52525916821bc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dropbox-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dropbox-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5a7040c7209ae1f2cf49032d8acaae40beabe245ca85d639c7f96eb06ced435",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T00:25:59.276Z"
+}

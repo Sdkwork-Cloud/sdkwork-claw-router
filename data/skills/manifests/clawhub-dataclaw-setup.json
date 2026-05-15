@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29756,
+  "uuid": "skill-clawhub-dataclaw-setup",
+  "skillKey": "clawhub-dataclaw-setup",
+  "name": "dataclaw-setup",
+  "summary": "Setup guide for installing and configuring DataClaw itself for use with OpenClaw. Use when the user wants to learn what DataClaw is or finish initial setup....",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataclaw_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ddanieli",
+      "features": [
+        "Setup guide for installing and configuring DataClaw itself for use with OpenClaw",
+        "Use when the user wants to learn what DataClaw is or finish initial setup...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dataclaw-setup@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64800938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dataclaw-setup",
+      "url": "https://clawhub.ai/skills/dataclaw-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataclaw-setup",
+    "url": "https://clawhub.ai/skills/dataclaw-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataclaw-setup-323abbaaf5474427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dataclaw-setup@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dataclaw-setup-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4a753bbd0d8af60bc1cb165ddf76e71e33ce958afed79daa24b6ba5ac311f91",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T20:36:39.900Z"
+}

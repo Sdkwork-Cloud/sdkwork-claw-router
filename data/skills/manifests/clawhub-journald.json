@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35921,
+  "uuid": "skill-clawhub-journald",
+  "skillKey": "clawhub-journald",
+  "name": "Journald",
+  "summary": "Journald reference tool. Use when working with journald in sysops contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journald",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Journald reference tool",
+        "Use when working with journald in sysops contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journald@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journald",
+      "url": "https://clawhub.ai/skills/journald"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journald",
+    "url": "https://clawhub.ai/skills/journald",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journald-619091acfa1076fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journald@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-journald-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c20f104920c8f7323beacdd85ed588bcecdb91b17c75c7029caa9bf24568184c",
+      "artifactSizeBytes": 1764
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:18:13.476Z"
+}

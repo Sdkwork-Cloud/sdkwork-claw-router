@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42067,
+  "uuid": "skill-clawhub-cloud-architecture-discovery",
+  "skillKey": "clawhub-cloud-architecture-discovery",
+  "name": "Cloud Architecture Discovery",
+  "summary": "Discover and map your cloud architecture automatically. View architecture directories, topology, and resource relationships via Tencent Cloud Smart Advisor API.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_architecture_discovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stinggit",
+      "features": [
+        "Discover and map your cloud architecture automatically",
+        "View architecture directories, topology, and resource relationships via Tencent Cloud Smart Adv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-architecture-discovery@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11748515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-architecture-discovery",
+      "url": "https://clawhub.ai/skills/cloud-architecture-discovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-architecture-discovery",
+    "url": "https://clawhub.ai/skills/cloud-architecture-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-architecture-discovery-5dee895418a171fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-architecture-discovery@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-architecture-discovery-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0278373054e27d7621d7ea83ebfa4923c3bc31f6685f7a56e806ebc4f711f26f",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:24:17.124Z"
+}

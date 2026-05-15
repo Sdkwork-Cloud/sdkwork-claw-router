@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mar-dreaming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_dreaming",
+  "skill": {
+    "id": 53525,
+    "skillKey": "clawhub-mar-dreaming",
+    "name": "mar-dreaming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-dreaming",
+    "url": "https://clawhub.ai/skills/mar-dreaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-dreaming-3b316866c5bb9750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creative exploration during quiet hours. Turns idle heartbeat time into freeform thinking — hypotheticals, future scenarios, reflections, unexpected connecti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777002034037,
+      "changelog": "- Initial release of the \"dreaming\" skill for creative exploration during quiet hours.\n- Captures freeform thoughts and scenarios to files for later human review, instead of idling during HEARTBEATs.\n- Configurable quiet hour windows, topics, and \"dreaming\" frequency via simple environment variables and JSON files.\n- Supports custom topics and maximum dream counts per night.\n- Written explorations are timestamped and stored as markdown entries, designed to be genuine and meaningful.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bfafd20b9698d44e2906746ab443e8cfb10b091b4f31fb55444faa105915a6b"
+}

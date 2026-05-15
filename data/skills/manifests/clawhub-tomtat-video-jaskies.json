@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58354,
+  "uuid": "skill-clawhub-tomtat-video-jaskies",
+  "skillKey": "clawhub-tomtat-video-jaskies",
+  "name": "Tóm tắt Video YouTube (Jaskies)",
+  "summary": "Tóm tắt nội dung video YouTube từ đường link cung cấp. Hỗ trợ trích xuất transcript tự động và phân tích ý chính chuyên sâu. Yêu cầu máy chủ có cài đặt yt-dl...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tomtat_video_jaskies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Trần Anh Vũ",
+      "features": [
+        "Tóm tắt nội dung video YouTube từ đường link cung cấp",
+        "Hỗ trợ trích xuất transcript tự động và phân tích ý chính chuyên sâu",
+        "Yêu cầu máy chủ có cài đặt yt-dl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tomtat-video-jaskies@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19165770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tomtat-video-jaskies",
+      "url": "https://clawhub.ai/skills/tomtat-video-jaskies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tomtat-video-jaskies",
+    "url": "https://clawhub.ai/skills/tomtat-video-jaskies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tomtat-video-jaskies-aaeaf07e6ae9ece5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tomtat-video-jaskies@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tomtat-video-jaskies-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6958983dab4ff70d41a5a2d745b65525ec294f0c4d116ea8152650116b4f2af",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:28:19.229Z"
+}

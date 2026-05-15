@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8529,
+  "uuid": "skill-clawhub-outlook",
+  "skillKey": "clawhub-outlook",
+  "name": "Outlook",
+  "summary": "Read, search, and manage Outlook emails and calendar via Microsoft Graph API. Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar events, or scheduling.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jotamed",
+      "features": [
+        "Read, search, and manage Outlook emails and calendar via Microsoft Graph API",
+        "Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar events, or schedu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outlook@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76839132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outlook",
+      "url": "https://clawhub.ai/skills/outlook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook",
+    "url": "https://clawhub.ai/skills/outlook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-4f53c6c301f98610.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outlook@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outlook-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5874688711aba409527835d8aabe3a42e81fb1a99a6fe4fc8dbbdc0b9e70bd9",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T19:01:22.148Z"
+}

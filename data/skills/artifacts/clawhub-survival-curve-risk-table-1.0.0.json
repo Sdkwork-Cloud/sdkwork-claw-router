@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/survival-curve-risk-table@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.survival_curve_risk_table",
+  "skill": {
+    "id": 55527,
+    "skillKey": "clawhub-survival-curve-risk-table",
+    "name": "Survival Curve Risk Table"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "survival-curve-risk-table",
+    "url": "https://clawhub.ai/skills/survival-curve-risk-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/survival-curve-risk-table-42391ca7838fa892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze data with `survival-curve-risk-table` using a reproducible workflow, explicit validation, and structured outputs for review-ready interpretation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024397367,
+      "changelog": "- Initial release of survival-curve-risk-table.\n- Automatically generates \"Number at risk\" tables fully aligned below Kaplan-Meier survival curves, supporting right-censored data and multiple journal standards (NEJM, Lancet, JCO).\n- Offers reproducible, structured output formats including PNG, PDF, SVG, and PowerPoint-compatible files.\n- Includes robust workflow: explicit input validation, bounded execution, clear error handling, and fallback paths for missing or incomplete data.\n- Provides both CLI and Python API interfaces, with example usage for batch processing and integration in research pipelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5b70f41ec816672fd6c79500adae5fac0223253bbd3260c7ae2d316ec3e6ed7"
+}

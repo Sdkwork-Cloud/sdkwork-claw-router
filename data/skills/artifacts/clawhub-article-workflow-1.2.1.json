@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-workflow@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_workflow",
+  "skill": {
+    "id": 66694,
+    "skillKey": "clawhub-article-workflow",
+    "name": "Article Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-workflow",
+    "url": "https://clawhub.ai/skills/article-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-workflow-de54233d6fbe6725.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动抓取并分析文章URL，生成摘要、标签和质量评分，支持去重、归档至飞书及定时监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongnan",
+      "userId": "s17az15gvscsszs5pxnmrm0v6s83h1yp",
+      "displayName": "dongnan",
+      "image": "https://avatars.githubusercontent.com/u/3666588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773965596330,
+      "changelog": "No user-facing changes detected in this release (no file changes).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cde6093e579f24521dcd61d00142d83bc7303338aeca05a45e92a752578f1e5"
+}

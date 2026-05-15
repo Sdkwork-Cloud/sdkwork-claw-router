@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-history-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_history_tracker",
+  "skill": {
+    "id": 41760,
+    "skillKey": "clawhub-file-history-tracker",
+    "name": "File History Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-history-tracker",
+    "url": "https://clawhub.ai/skills/file-history-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-history-tracker-8ec868a7507bcd6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks file changes with git-like versioning for any project"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776931879665,
+      "changelog": "- Initial release of skylv-file-versioning—standalone, git-style version control for any file.\n- Track file changes: snapshots, diff, full history, tags, and restore, with no git required.\n- Supports text and binary files; SHA-256 content hashing and line-by-line diffs.\n- Tag and restore milestones, auto-snapshot in watch mode, and direct file-to-file comparison.\n- Pure Node.js; stores all version data locally in a hidden project folder.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:399984d4c06e11f6e75c208de34e04f8898fb3c0e5b9ccb069b6e1d6081e91d5"
+}

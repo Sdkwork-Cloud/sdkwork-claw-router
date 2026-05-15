@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63772,
+  "uuid": "skill-clawhub-financial-charts",
+  "skillKey": "clawhub-financial-charts",
+  "name": "财务图表制作展示 Financial Charts",
+  "summary": "根据财务数据生成精美的ECharts HTML图表页面，支持折线图、饼图、柱状图、K线图等",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_charts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "novaair026-dev",
+      "features": [
+        "根据财务数据生成精美的ECharts HTML图表页面，支持折线图、饼图、柱状图、K线图等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-charts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252292443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-charts",
+      "url": "https://clawhub.ai/skills/financial-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-charts",
+    "url": "https://clawhub.ai/skills/financial-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-charts-3c5a19edc605c383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-charts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-charts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d3288fab49daf926b3c7b2e8ed95249ffa437879ad9628bacc7130c9a116643",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:15:16.853Z"
+}

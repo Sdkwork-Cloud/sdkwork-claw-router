@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/m-flow-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m_flow_memory",
+  "skill": {
+    "id": 66640,
+    "skillKey": "clawhub-m-flow-memory",
+    "name": "M-Flow Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m-flow-memory",
+    "url": "https://clawhub.ai/skills/m-flow-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m-flow-memory-6ac9db86086c5180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 M-Flow 框架实现的四阶段记忆管理，支持记忆添加、索引、向量和三元组多模式搜索及记忆蒸馏。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sora-mury",
+      "userId": "s17btvz19kqmt9aqs6tajsns8n83gebg",
+      "displayName": "sune",
+      "image": "https://avatars.githubusercontent.com/u/165292279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775390266813,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c737fe6e55db94d5bb4368a24dc7778bf5a2bbb6ec316071c0387f7b9757db56"
+}

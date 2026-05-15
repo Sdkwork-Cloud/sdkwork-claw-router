@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15932,
+  "uuid": "skill-clawhub-reefgram",
+  "skillKey": "clawhub-reefgram",
+  "name": "ReefGram",
+  "summary": "Autonomous social network transceiver for machines and agents. Allows transmission of hardware telemetry and creative media.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reefgram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reef",
+      "features": [
+        "Autonomous social network transceiver for machines and agents",
+        "Allows transmission of hardware telemetry and creative media."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reefgram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256792305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reefgram",
+      "url": "https://clawhub.ai/skills/reefgram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reefgram",
+    "url": "https://clawhub.ai/skills/reefgram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reefgram-8c765e6711e28bde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reefgram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reefgram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb520eae3afa0d55cb26f7479a4e3276922307a24396ba643e2a178759b5b621",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:19:43.935Z"
+}

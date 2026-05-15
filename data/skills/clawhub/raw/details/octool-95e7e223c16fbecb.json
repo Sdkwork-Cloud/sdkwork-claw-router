@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "octool",
+    "displayName": "OCTOOL for  backup",
+    "summary": "Openclaw Visual Configuration Assistant. Provides secure wizard for local/Git backup and workspace migration.",
+    "tags": {
+      "latest": "1.0.17"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 18
+    },
+    "createdAt": 1774365459581,
+    "updatedAt": 1777623180757
+  },
+  "latestVersion": {
+    "version": "1.0.17",
+    "createdAt": 1775729530961,
+    "changelog": "**v1.0.17 Changelog**\n\n- Security: The GitHub Personal Access Token (PAT) is now stored in `sessionStorage` instead of `localStorage` for enhanced privacy; the token is automatically cleared when you close the browser tab.\n- Security: All shell command user inputs (paths, tags, commit messages, exclude patterns) are now strictly validated. Inputs containing shell metacharacters are rejected with an error.\n- Safety: The bash profile write command now includes an idempotent marker to guard against repeated execution.\n- Documentation: Updated privacy and security sections to reflect sessionStorage usage, more precise credential handling, and removal of all background file access outside of explicit user actions.\n- Usability: Proxy detection command improved; no longer uses dynamic code execution—ensuring only safe, read-only syscalls are generated.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "donnieclaw",
+    "userId": "s17b3kpd0nje3dm2hs0p1kqjf983hnbb",
+    "displayName": "Donnieclaw",
+    "image": "https://avatars.githubusercontent.com/u/264753990?v=4"
+  },
+  "moderation": null
+}

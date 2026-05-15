@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50012,
+  "uuid": "skill-clawhub-clawculator",
+  "skillKey": "clawhub-clawculator",
+  "name": "Clawculator",
+  "summary": "Analyze OpenClaw costs and detect billing issues. Source code is fully bundled — nothing is fetched at runtime. Requires only the node binary.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawculator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "echoudhry",
+      "features": [
+        "Analyze OpenClaw costs and detect billing issues",
+        "Source code is fully bundled — nothing is fetched at runtime",
+        "Requires only the node binary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawculator@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9954891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawculator",
+      "url": "https://clawhub.ai/skills/clawculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawculator",
+    "url": "https://clawhub.ai/skills/clawculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawculator-e3f5623a1da43b28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawculator@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawculator-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2720ee70dd4cbc901913ff906a02cb83819dae6d0b9900a7f0e9e44a681cd36a",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:42:20.097Z"
+}

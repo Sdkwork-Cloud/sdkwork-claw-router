@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_editor",
+  "skill": {
+    "id": 44445,
+    "skillKey": "clawhub-review-editor",
+    "name": "Review Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-editor",
+    "url": "https://clawhub.ai/skills/review-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-editor-8bfe9267571e2cbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished review clips ready to post, without touching a single slider. Upload your recorded video footage (MP4, MOV, AVI, WebM, up to 500MB), say somethi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776487731409,
+      "changelog": "- Initial release of Review Editor — instantly trim, annotate, and enhance review videos without manual editing skills.\n- Upload MP4, MOV, AVI, or WebM files (up to 500MB), specify your edits in plain language, and export polished 1080p MP4s.\n- Automatic session setup and authentication; just start editing without complex setup.\n- Common smart actions: cut filler moments, add text overlays, smooth transitions, and more — optimized for content reviewers and YouTubers.\n- No need for video editing expertise; all processing and rendering happen securely in the cloud.\n- Transparent error handling and status updates keep your workflow moving smoothly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a31b892ca62af0e831e2bf247fab2d26a57d8c6c5cfa27303f6076956e7e84a6"
+}

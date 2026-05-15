@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52437,
+  "uuid": "skill-clawhub-amg-check-pg-flex",
+  "skillKey": "clawhub-amg-check-pg-flex",
+  "name": "AMG PostgreSQL Flexible Server Health Check",
+  "summary": "Run only when the user explicitly asks for a fleet-wide PostgreSQL Flexible Server health check — scans CPU, memory, storage, IOPS, disk bandwidth, and conne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amg_check_pg_flex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1w2w3y",
+      "features": [
+        "Run only when the user explicitly asks for a fleet-wide PostgreSQL Flexible Server health check."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amg-check-pg-flex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3365932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amg-check-pg-flex",
+      "url": "https://clawhub.ai/skills/amg-check-pg-flex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amg-check-pg-flex",
+    "url": "https://clawhub.ai/skills/amg-check-pg-flex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amg-check-pg-flex-01d4f89260994e2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amg-check-pg-flex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amg-check-pg-flex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93afaf0577c74ae39fa197fc7114810d5af38731c5ead13f49d5dc465dfde4a2",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:05:49.562Z"
+}

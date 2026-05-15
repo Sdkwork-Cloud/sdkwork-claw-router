@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66660,
+  "uuid": "skill-clawhub-feishu-notes-bot",
+  "skillKey": "clawhub-feishu-notes-bot",
+  "name": "Feishu Notes Bot",
+  "summary": "通过飞书机器人创建、查询和管理笔记，支持飞书消息交互和云文档同步。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_notes_bot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilinkzwq",
+      "features": [
+        "通过飞书机器人创建、查询和管理笔记，支持飞书消息交互和云文档同步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-notes-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33308518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-notes-bot",
+      "url": "https://clawhub.ai/skills/feishu-notes-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-notes-bot",
+    "url": "https://clawhub.ai/skills/feishu-notes-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-notes-bot-d57494b553c37fd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-notes-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-notes-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af71748e88375ea3b21db4bf90ed0c0ac547ba03c5b5cbcaa54e480329364cfe",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:06:27.839Z"
+}

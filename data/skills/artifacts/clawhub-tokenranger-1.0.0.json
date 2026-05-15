@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokenranger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokenranger",
+  "skill": {
+    "id": 51168,
+    "skillKey": "clawhub-tokenranger",
+    "name": "TokenRanger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokenranger",
+    "url": "https://clawhub.ai/skills/tokenranger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokenranger-248464d4c5b3741b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, and operate the TokenRanger OpenClaw plugin. Use when you want to reduce cloud LLM token costs by 50-80% via local Ollama context compres..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synchronic1",
+      "userId": "publishers:synchronic1",
+      "displayName": "synchronic1",
+      "image": "https://avatars.githubusercontent.com/u/135072919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772299905587,
+      "changelog": "Initial release. Skill for installing, configuring, and operating the TokenRanger context compression plugin. Plugin at https://github.com/peterjohannmedina/openclaw-plugin-tokenranger",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:995f1a3e3fc4bee989769720a66a2b66eb6b356fb53560d5f0bf48107c842558"
+}

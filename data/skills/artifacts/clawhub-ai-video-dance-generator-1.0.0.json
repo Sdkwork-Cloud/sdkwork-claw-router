@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-dance-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_dance_generator",
+  "skill": {
+    "id": 47747,
+    "skillKey": "clawhub-ai-video-dance-generator",
+    "name": "Ai Video Dance Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-dance-generator",
+    "url": "https://clawhub.ai/skills/ai-video-dance-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-dance-generator-22129b492c589f83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate images or video into animated dance videos with this skill. Works with JPG, PNG, MP4, MOV files up to 200MB. TikTok creators use it for animating ph..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777222696466,
+      "changelog": "AI Video Dance Generator initial release.\n\n- Animate images or videos into dance videos using cloud AI (supports JPG, PNG, MP4, MOV up to 200MB).\n- Automatic anonymous sign-in with free credits, or use your own API token.\n- Full 1080p MP4 export, typically delivered in 1-2 minutes.\n- File uploads, audio tracks, aspect ratio, and text overlays are supported.\n- Credits checking, job status tracking, and comprehensive error handling included.\n- Clear workflows for single edits, batch use, and iterative revisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1382dac869375435f0d9044f6e9fa520f2a11a029e286dbabed3c6d02ad5d6df"
+}

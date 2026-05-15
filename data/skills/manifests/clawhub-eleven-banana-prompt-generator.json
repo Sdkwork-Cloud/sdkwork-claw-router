@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63750,
+  "uuid": "skill-clawhub-eleven-banana-prompt-generator",
+  "skillKey": "clawhub-eleven-banana-prompt-generator",
+  "name": "Banana Prompt Generator",
+  "summary": "Google Banana（Imagen系列）AI文生图提示词生成技能。用于生成高质量角色图、场景图、分镜素材图、概念图的英文Prompt，同时提供中文说明、负面提示词和参数建议。触发词：Banana提示词、Banana作图、Google图片提示词、分镜素材图提示词。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eleven_banana_prompt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EVspace",
+      "features": [
+        "Google Banana（Imagen系列）AI文生图提示词生成技能。用于生成高质量角色图、场景图、分镜素材图、概念图的英文Prompt，同时提供中文说明、负面提示词和参数建议。触发词：B."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eleven-banana-prompt-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7399278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eleven-banana-prompt-generator",
+      "url": "https://clawhub.ai/skills/eleven-banana-prompt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eleven-banana-prompt-generator",
+    "url": "https://clawhub.ai/skills/eleven-banana-prompt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eleven-banana-prompt-generator-3babe6cf72738d39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eleven-banana-prompt-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eleven-banana-prompt-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:997858247777cbd77a20766cab730d95ce59d35bf535c1f91ba1b4c2bbcb4102",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:24:06.866Z"
+}

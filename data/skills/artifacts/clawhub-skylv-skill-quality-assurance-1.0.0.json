@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-skill-quality-assurance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_skill_quality_assurance",
+  "skill": {
+    "id": 41505,
+    "skillKey": "clawhub-skylv-skill-quality-assurance",
+    "name": "Skylv Skill Quality Assurance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-skill-quality-assurance",
+    "url": "https://clawhub.ai/skills/skylv-skill-quality-assurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-skill-quality-assurance-0f3854ca16047b1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes and scores OpenClaw skill quality across 5 dimensions. Detects missing frontmatter, weak descriptions, poor examples, and actionable improvement rec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776487088786,
+      "changelog": "Initial release of Skill Quality Assurance:\n\n- Analyzes and scores OpenClaw skill documentation on clarity, completeness, actionability, discoverability, and examples.\n- Detects and reports missing or weak frontmatter, descriptions, keywords, and usage sections.\n- Provides a clear scoring and grading system with actionable improvement recommendations.\n- Includes an auto-fix script to address common documentation issues automatically.\n- Offers sample output for batch skill analysis and clear requirements for ClawHub publication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b74f55319d17b7a13de57b35bd935cae257d3e1cd02fe824aa5c8d8742d700e"
+}

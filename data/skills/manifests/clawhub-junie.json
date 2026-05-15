@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47975,
+  "uuid": "skill-clawhub-junie",
+  "skillKey": "clawhub-junie",
+  "name": "junie",
+  "summary": "Install, update, authenticate, configure, and direct JetBrains Junie CLI in Junie-native ways on macOS or Linux shells. Use when a host agent should steer Ju...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anthony Martin",
+      "features": [
+        "Install, update, authenticate, configure, and direct JetBrains Junie CLI in Junie-native ways o.",
+        "Use when a host agent should steer Ju..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/junie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/494368?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "junie",
+      "url": "https://clawhub.ai/skills/junie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junie",
+    "url": "https://clawhub.ai/skills/junie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junie-edd2858a3c4aaa59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/junie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-junie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae3c5a01daeb6f75f458ec219c8bd1fdadfc47e3c90725668474a7040dce9167",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T20:12:28.347Z"
+}

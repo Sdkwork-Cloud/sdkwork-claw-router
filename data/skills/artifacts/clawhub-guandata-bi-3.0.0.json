@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guandata-bi@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guandata_bi",
+  "skill": {
+    "id": 71469,
+    "skillKey": "clawhub-guandata-bi",
+    "name": "观远BI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guandata-bi",
+    "url": "https://clawhub.ai/skills/guandata-bi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guandata-bi-154ac11488c8f147.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用观远BI来进行数据获取与数据分析。触发词：查数据、做图表、看报表、营业额、门店、会员、订单，分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengyuhe123",
+      "userId": "s171p3k3jwpvewym4t2jcs37eh85m7jx",
+      "displayName": "zhengyuhe123",
+      "image": "https://avatars.githubusercontent.com/u/30775855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1777317125897,
+      "changelog": "修复：相对路径、运行时依赖说明、凭据安全提示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fff228611e789b3471cdfeea4338dadb7ba63e6976e4e693961a6766fc97118e"
+}

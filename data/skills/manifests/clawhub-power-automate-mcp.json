@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56448,
+  "uuid": "skill-clawhub-power-automate-mcp",
+  "skillKey": "clawhub-power-automate-mcp",
+  "name": "Power Automate Mcp",
+  "summary": "Foundation skill for Power Automate via FlowStudio MCP — auth setup, the reusable MCP helper (Python + Node.js), tool discovery via `list_skills` / `tool_sea...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.power_automate_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninihen1",
+      "features": [
+        "Foundation skill for Power Automate via FlowStudio MCP — auth setup, the reusable MCP helper (P."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/power-automate-mcp@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123369259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "power-automate-mcp",
+      "url": "https://clawhub.ai/skills/power-automate-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "power-automate-mcp",
+    "url": "https://clawhub.ai/skills/power-automate-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/power-automate-mcp-d721f08d2209ff23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/power-automate-mcp@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-power-automate-mcp-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19d55147898c8f5f87f4b7a35e3671bbe1e54682cedb240c9db14afdaa2d2b36",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:50:19.365Z"
+}

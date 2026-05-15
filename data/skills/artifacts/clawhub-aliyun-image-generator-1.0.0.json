@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-image-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_image_generator",
+  "skill": {
+    "id": 68019,
+    "skillKey": "clawhub-aliyun-image-generator",
+    "name": "tl-aliyun-image-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-image-generator",
+    "url": "https://clawhub.ai/skills/aliyun-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-image-generator-a9cd724113523f4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "【专属触发指令：千问画个图】调用阿里云通义万相生成高质量图片。仅当用户的指令以“千问画个图”开头时，才允许路由到此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roykingw",
+      "userId": "s174zt99wadaj9czkxw78za5k983km1n",
+      "displayName": "wangliangyi",
+      "image": "https://avatars.githubusercontent.com/u/30541605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958100349,
+      "changelog": "Initial release of aliyun-image-generator skill.\n\n- Generates high-quality images via Aliyun Tongyi Wanxiang, triggered only when input starts with \"千问画个图\".\n- Strict trigger condition: Skill activates only for prompts beginning with \"千问画个图\".\n- Expands user prompts into detailed image descriptions (50–100 words).\n- Handles API Key requirements: Requests and stores user's Aliyun API Key if not configured.\n- After generation, returns the local file path of the generated image to the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:315841d27a1f78f4be278899622f4a7b70c17c9f92bc21e0698d2be07ca51dec"
+}

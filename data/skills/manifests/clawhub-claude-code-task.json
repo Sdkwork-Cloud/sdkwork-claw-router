@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16006,
+  "uuid": "skill-clawhub-claude-code-task",
+  "skillKey": "clawhub-claude-code-task",
+  "name": "Claude Code Task",
+  "summary": "Launch Claude Code async in background with automatic delivery to Telegram/WhatsApp. Use for coding, refactoring, codebase research, file generation, and com...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seva Ustinov",
+      "features": [
+        "Launch Claude Code async in background with automatic delivery to Telegram/WhatsApp",
+        "Use for coding, refactoring, codebase research, file generation, and com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-task@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10168615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-task",
+      "url": "https://clawhub.ai/skills/claude-code-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-task",
+    "url": "https://clawhub.ai/skills/claude-code-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-task-0fe598b6c746cd1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-task@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-task-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2988724a855e05efe4411d986950f23a89567ddb2c3d3f16e65170059cc13a01",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:45:44.705Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71785,
+  "uuid": "skill-clawhub-flyai-instant-departure",
+  "skillKey": "clawhub-flyai-instant-departure",
+  "name": "极限出发",
+  "summary": "极限出发助手——X小时内能到哪？不是\"想去哪搜机票\"，而是\"就现在出发，最快能到哪\"。输入出发城市和最快出发时间，AI反向搜索当前所有可行航班，告诉你\"此刻动身能到达的所有目的地\"，每个附带航班+今晚酒店+核心景点+一键预订。当用户提到\"现在出发\"、\"说走就走\"、\"今天能去哪\"、\"马上出发\"、\"极限出发\"、\"临时...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_instant_departure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello_hang",
+      "features": [
+        "极限出发助手——X小时内能到哪？不是\"想去哪搜机票\"，而是\"就现在出发，最快能到哪\"。输入出发城市和最快出发时间，AI反向搜索当前所有可行航班，告诉你\"此刻动身能到达的所有目的地\"，每个附带."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-instant-departure@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19886468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-instant-departure",
+      "url": "https://clawhub.ai/skills/flyai-instant-departure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-instant-departure",
+    "url": "https://clawhub.ai/skills/flyai-instant-departure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-instant-departure-97c4b6da3e8fcbef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-instant-departure@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-instant-departure-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c23c17d1d4cabfe4aa4078f6bd810a8d3aa123eb5a63c381d3e7a267b90428f3",
+      "artifactSizeBytes": 2784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:21:06.417Z"
+}

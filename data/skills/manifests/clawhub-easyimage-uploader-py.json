@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46425,
+  "uuid": "skill-clawhub-easyimage-uploader-py",
+  "skillKey": "clawhub-easyimage-uploader-py",
+  "name": "Easyimage uploader",
+  "summary": "Upload local image files to an EasyImages 2.0 service and return the hosted image URL. Use when the user asks to upload an image, host a picture, put a local...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easyimage_uploader_py",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FM7077",
+      "features": [
+        "Upload local image files to an EasyImages 2.0 service and return the hosted image URL",
+        "Use when the user asks to upload an image, host a picture, put a local..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easyimage-uploader-py@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41443707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easyimage-uploader-py",
+      "url": "https://clawhub.ai/skills/easyimage-uploader-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easyimage-uploader-py",
+    "url": "https://clawhub.ai/skills/easyimage-uploader-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easyimage-uploader-py-e2865a797cf73348.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easyimage-uploader-py@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easyimage-uploader-py-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7830ce53fe545f5a38da82f88266795204906b6688425bfca566b8e5e6ee8219",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:50:59.684Z"
+}

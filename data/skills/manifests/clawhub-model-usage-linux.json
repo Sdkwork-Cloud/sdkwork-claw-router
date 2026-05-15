@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13889,
+  "uuid": "skill-clawhub-model-usage-linux",
+  "skillKey": "clawhub-model-usage-linux",
+  "name": "Model Usage Linux",
+  "summary": "Track OpenClaw AI token usage and cost per model on Linux by parsing session JSONL files. Use when asked about: token usage, API cost, how much has been spen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_usage_linux",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HablaBechir",
+      "features": [
+        "Track OpenClaw AI token usage and cost per model on Linux by parsing session JSONL files",
+        "Use when asked about: token usage, API cost, how much has been spen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-usage-linux@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170954033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-usage-linux",
+      "url": "https://clawhub.ai/skills/model-usage-linux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-usage-linux",
+    "url": "https://clawhub.ai/skills/model-usage-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-usage-linux-c81bdd1d2f30acbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-usage-linux@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-usage-linux-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa65d80777adcfe182a5c355e9b3cf940c05bf88099010862c92a3cebb8d9142",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T22:16:59.170Z"
+}

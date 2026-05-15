@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-enhancer@1.0.0-alpha",
+  "version": "1.0.0-alpha",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_enhancer",
+  "skill": {
+    "id": 27932,
+    "skillKey": "clawhub-skill-enhancer",
+    "name": "Skill Auditor & Enhancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-enhancer",
+    "url": "https://clawhub.ai/skills/skill-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-enhancer-5564c0d5ef056a78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Periodically audit all workspace skills, learnings, memory, and configuration files to recommend refactoring, new skill ideas, and workflow improvements. Tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omaression",
+      "userId": "publishers:omaression",
+      "displayName": "omaression",
+      "image": "https://avatars.githubusercontent.com/u/69020772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0-alpha",
+      "createdAt": 1773707906530,
+      "changelog": "Initial release of skill-auditor: automated weekly workspace skill audit and recommendation system.\n\n- Periodically audits all skills, memory, and config files with a structured multi-phase pipeline.\n- Delivers categorized, actionable Telegram recommendations: safe refactors, items needing review, and informational notes.\n- Uses file hash comparison to minimize redundant analysis and token usage.\n- Supports both cron-scheduled and manual triggers.\n- No automatic file edits; all recommendations require explicit user approval before changes.\n- Includes helper scripts and tests for audit state building, evaluation merging, and Telegram formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c37aa54daba5512b540719200f8c6adacabf46310258a06869173a257497453f"
+}

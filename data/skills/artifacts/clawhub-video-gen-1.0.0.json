@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_gen",
+  "skill": {
+    "id": 64860,
+    "skillKey": "clawhub-video-gen",
+    "name": "AI Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-gen",
+    "url": "https://clawhub.ai/skills/video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-gen-2a847768f5bf8a9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI视频生成与编辑，使用火山引擎 Doubao Seedance 模型。支持文生视频、图生视频、有声视频。当用户要求生成视频、制作视频、文生视频、图生视频时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiujiahong",
+      "userId": "s171jwscftc3ndzy89xfc8vb2s83hcda",
+      "displayName": "Nick Qiu",
+      "image": "https://avatars.githubusercontent.com/u/3654923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2008,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772955326014,
+      "changelog": "Initial release: Doubao Seedance video generation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:308cce489f0f49073bcb149848c8178a6e847ff3a381484fa1512ab5de4e8cb8"
+}

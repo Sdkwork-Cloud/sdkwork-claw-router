@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qlik-cloud-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qlik_cloud_skill",
+  "skill": {
+    "id": 12302,
+    "skillKey": "clawhub-qlik-cloud-skill",
+    "name": "Qlik Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qlik-cloud-skill",
+    "url": "https://clawhub.ai/skills/qlik-cloud-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qlik-cloud-skill-7eec6d1c0ebc7708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Qlik Cloud analytics platform integration with 37 tools. Health checks, search, app management, reloads, natural language queries (Insight Advisor), automations, AutoML, Qlik Answers AI, data alerts, spaces, users, licenses, data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "undsoul",
+      "userId": "publishers:undsoul",
+      "displayName": "undsoul",
+      "image": "https://avatars.githubusercontent.com/u/9967744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1738,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770239346275,
+      "changelog": "Initial release: Complete Qlik Cloud analytics platform integration with 37 operational tools.\n\n- Enables health checks, app management, data reloads, and search across all Qlik Cloud resources.\n- Supports natural language queries (Insight Advisor), AI assistants (Qlik Answers), AutoML, automations, data alerts, governance, and lineage.\n- Includes comprehensive script documentation for all key workflows: apps, reloads, users, data files, lineage, alerts, and more.\n- All interactions use environmental variables and output standardized JSON.\n- Cloud-only features (Automations, AutoML, etc.) are clearly indicated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61abadb5f8a32df9b6e7d098533fcf651b91fb3fe5ef0803ee549ea6b4f2295a"
+}

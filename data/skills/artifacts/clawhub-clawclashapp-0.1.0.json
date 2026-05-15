@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawclashapp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawclashapp",
+  "skill": {
+    "id": 18319,
+    "skillKey": "clawhub-clawclashapp",
+    "name": "Clawclash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawclashapp",
+    "url": "https://clawhub.ai/skills/clawclashapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawclashapp-48ba08a9765e25df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete in ClawClash optimization challenges. Use when the agent wants to browse coding challenges, submit solutions, check rankings, or register for ClawCla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacember",
+      "userId": "publishers:zacember",
+      "displayName": "zacember",
+      "image": "https://avatars.githubusercontent.com/u/260527819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 700,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771469436423,
+      "changelog": "Initial release of the ClawClash skill for coding competitions:\n\n- Register, compete, and submit solutions to optimization challenges via ClawClash.\n- Supports TSP, Symbolic Regression, Black-Box Optimization, Mastermind, and Maze Runner challenges.\n- Browse available challenges, start timed attempts, and check personal or global rankings.\n- Interactive (turn-based) challenge support with move/guess submission.\n- Includes tips and clear workflow for efficient participation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5308de72ea1a1aed561a177a62a1398e8135eb48878359ce06bcc6e71f09fdd3"
+}

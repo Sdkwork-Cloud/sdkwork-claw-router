@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos-oneclick-install@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_oneclick_install",
+  "skill": {
+    "id": 32061,
+    "skillKey": "clawhub-memos-oneclick-install",
+    "name": "MemOS Plugin One-Click Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-oneclick-install",
+    "url": "https://clawhub.ai/skills/memos-oneclick-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-oneclick-install-f05b7614bba92bec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent local memory for OpenClaw agents. Use when users say: - \"install memos\" - \"install MemOS\" - \"setup memory\" - \"add memory plugin\" - \"openclaw memor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mathematics-yang",
+      "userId": "s17b1kd0rwzazfpk1jfq7gcqsx840k9s",
+      "displayName": "Mathematics-Yang",
+      "image": "https://avatars.githubusercontent.com/u/80611740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775100883243,
+      "changelog": "Add one-click MemOS install skill for OpenClaw agents\n\n- Ship `SKILL.md` that enables OpenClaw to autonomously install, configure,\n  upgrade, and troubleshoot the MemOS local memory plugin — users only need\n  to say \"install memos\" and answer one embedding-model question.\n- Auto-detect OS (macOS / Linux / Windows) and adapt all commands via\n  `process.platform`, with cross-platform `node -e` as the primary approach\n  and platform-specific script fallbacks (`install.sh` / `install.ps1`).\n- Smart state detection: fresh install, outdated upgrade, up-to-date\n  verification, and broken-config auto-repair — all decided by the agent\n  without asking the user.\n- Include bilingual README (English + Chinese) summarizing the installation\n  experience and MemOS capabilities: persistent memory, hybrid retrieval,\n  task summarization, skill evolution, team sharing, and Memory Viewer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9ce1f2e3931fa878794368b492de5a85344ee9575f962963ca99037c190c78b"
+}

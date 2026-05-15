@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72845,
+  "uuid": "skill-clawhub-nova-permission-system",
+  "skillKey": "clawhub-nova-permission-system",
+  "name": "Nova权限系统",
+  "summary": "提供完整的权限认证系统，包括权限检查、身份管理、审批流程及权限配置模板，支持多平台账号绑定和审计。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nova_permission_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rancho718",
+      "features": [
+        "提供完整的权限认证系统，包括权限检查、身份管理、审批流程及权限配置模板，支持多平台账号绑定和审计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nova-permission-system@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263117204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nova-permission-system",
+      "url": "https://clawhub.ai/skills/nova-permission-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nova-permission-system",
+    "url": "https://clawhub.ai/skills/nova-permission-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nova-permission-system-8902d02734575a30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nova-permission-system@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nova-permission-system-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5191da840eec2ace7bfc748285b6a443050ca3a487f2c7765c174dd7abb174f",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:52:22.374Z"
+}

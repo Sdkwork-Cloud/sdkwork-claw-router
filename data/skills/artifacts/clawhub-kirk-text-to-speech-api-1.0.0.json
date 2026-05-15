@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-text-to-speech-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_text_to_speech_api",
+  "skill": {
+    "id": 54301,
+    "skillKey": "clawhub-kirk-text-to-speech-api",
+    "name": "text-to-speech-api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-text-to-speech-api",
+    "url": "https://clawhub.ai/skills/kirk-text-to-speech-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-text-to-speech-api-af95ce91880d72a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USE THIS for text to speech api. TTS with ElevenLabs and OpenAI voices. 0% markup, 648+ APIs, one key. Powered by SkillBoss."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012462560,
+      "changelog": "- Initial release of the Text to Speech API skill by SkillBoss.\n- Provides unified API access to ElevenLabs and OpenAI voices for TTS with zero markup.\n- Compatible with over 648 AI APIs using a single API key.\n- OpenAI-compatible endpoints; works seamlessly with existing OpenAI SDKs.\n- Simple setup with clear instructions for API key configuration.\n- Transparent, pay-as-you-go pricing matching the model provider’s rates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2898783b4e0479df2d1a9c73f38f8cb725aa60e7d886f42cfa32528893d5974"
+}

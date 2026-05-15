@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22910,
+  "uuid": "skill-clawhub-yuc",
+  "skillKey": "clawhub-yuc",
+  "name": "Yuc's Anime List",
+  "summary": "Scrape quarterly anime lineups from https://yuc.wiki/ and output structured results for a specified or latest quarter.",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XLor",
+      "features": [
+        "Scrape quarterly anime lineups from https://yuc.wiki/ and output structured results for a speci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuc@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30072175?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuc",
+      "url": "https://clawhub.ai/skills/yuc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuc",
+    "url": "https://clawhub.ai/skills/yuc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuc-d5ab25e8bb2f24e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuc@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuc-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac71d12a6e215c949fb0d8adc056fd95c24175b49e2f247ddcccbae42ca0ecfd",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:03:15.010Z"
+}

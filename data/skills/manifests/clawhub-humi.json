@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33489,
+  "uuid": "skill-clawhub-humi",
+  "skillKey": "clawhub-humi",
+  "name": "Humi",
+  "summary": "Humi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Humi data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Humi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Humi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humi",
+      "url": "https://clawhub.ai/skills/humi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humi",
+    "url": "https://clawhub.ai/skills/humi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humi-4405a5335f0f5566.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-humi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:003779c56618b540de0ad49b9e608e0bfe9fcd2570b9cf0dea5cfb725d70e497",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:57:32.499Z"
+}

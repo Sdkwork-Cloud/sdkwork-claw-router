@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58056,
+  "uuid": "skill-clawhub-review-writer",
+  "skillKey": "clawhub-review-writer",
+  "name": "review-writer",
+  "summary": "Data-driven writing and polishing for professional workplace documents. Use when the user asks to write or refine: (1) 述职/复盘/年终总结, (2) 简历/项目经历/STAR 改写, (3) 周...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "strive",
+      "features": [
+        "Data-driven writing and polishing for professional workplace documents",
+        "Use when the user asks to write or refine: (1) 述职/复盘/年终总结, (2) 简历/项目经历/STAR 改写, (3) 周..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39054087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-writer",
+      "url": "https://clawhub.ai/skills/review-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-writer",
+    "url": "https://clawhub.ai/skills/review-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-writer-9ca8c6ca73f80c01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1104d3aa232bb2dcc093d47645890e186f637195a2b678ad2940dc82dea63d3e",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:28:55.338Z"
+}

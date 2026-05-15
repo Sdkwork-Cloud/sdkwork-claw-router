@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13988,
+  "uuid": "skill-clawhub-validation-rules-builder",
+  "skillKey": "clawhub-validation-rules-builder",
+  "name": "Validation Rules Builder",
+  "summary": "Build validation rules for construction data. Create RegEx and logic-based validation for BIM elements, cost codes, and schedule data.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validation_rules_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Build validation rules for construction data",
+        "Create RegEx and logic-based validation for BIM elements, cost codes, and schedule data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validation-rules-builder@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validation-rules-builder",
+      "url": "https://clawhub.ai/skills/validation-rules-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validation-rules-builder",
+    "url": "https://clawhub.ai/skills/validation-rules-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validation-rules-builder-7eb7c94f74f993cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validation-rules-builder@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-validation-rules-builder-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d5ddfbe896f253670322cf9fedab5b6a793ef1c8c82b5bf61824b0288dbb2f4",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:15:11.392Z"
+}

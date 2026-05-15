@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_assistant",
+  "skill": {
+    "id": 39669,
+    "skillKey": "clawhub-skill-creator-assistant",
+    "name": "Skill Creator Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-assistant",
+    "url": "https://clawhub.ai/skills/skill-creator-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-assistant-0b3614200cf26ef2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides non-technical users through targeted questions to create complete OpenClaw skills without coding, including SKILL.md and optional GitHub upload."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zihaowyt5525-max",
+      "userId": "s1727t4xcxhkn1hbt09gm83cz983wx0n",
+      "displayName": "zihaowyt5525-max",
+      "image": "https://avatars.githubusercontent.com/u/237939160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774882146970,
+      "changelog": "Initial release of Skill Creator Assistant — a guided conversation tool for creating OpenClaw skills without coding.\n\n- Guides users step-by-step to define skill name, capabilities, use cases, templates, and output format\n- Auto-generates a complete, ready-to-use SKILL.md based on user answers\n- Offers 5 built-in templates (Research, Creation, Collection, Utility, Custom) for rapid skill setup\n- Provides a quality checklist to ensure clarity, uniqueness, and readiness for publishing\n- Supports optional GitHub upload with generated README and repo link\n- Designed specifically for non-technical users; no coding required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48ace729cccd9ccd1b9a0e1ab1497737aaf0ef350323a0a514fea118b61612c0"
+}

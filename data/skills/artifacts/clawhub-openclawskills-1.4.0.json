@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclawskills@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawskills",
+  "skill": {
+    "id": 12779,
+    "skillKey": "clawhub-openclawskills",
+    "name": "Cinematic Script Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawskills",
+    "url": "https://clawhub.ai/skills/openclawskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawskills-5b0fec8854d6d405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional cinematic scripts for AI video generation with character consistency and cinematography knowledge. Use when the user wants to write a cinematic script, create story contexts with characters, generate image prompts for A."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "praveenspeaks",
+      "userId": "publishers:praveenspeaks",
+      "displayName": "praveenspeaks",
+      "image": "https://avatars.githubusercontent.com/u/62951236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1436,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770734192227,
+      "changelog": "Cinematic Script Writer 1.4.0 introduces advanced tools for creating and managing professional cinematic scripts optimized for AI video generation.\n\n- Added story context management with characters, era, and settings\n- Integrated story idea generation and full cinematic script writing with cinematography elements\n- Introduced character consistency tools: visual sheets, voice profiles, and anachronism detection\n- Provided comprehensive cinematography reference (angles, movements, lighting, shot types)\n- Enabled project saving to Google Drive or local storage, with secure OAuth2 integration\n- Supported exporting scripts in Markdown, JSON, or plain text formats\n- Added YouTube metadata generation for script promotion",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7910697a1825dcc54bab7131635be3a8773860ba54af6aa0df6ab905d7b79b58"
+}

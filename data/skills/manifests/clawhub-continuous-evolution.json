@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17006,
+  "uuid": "skill-clawhub-continuous-evolution",
+  "skillKey": "clawhub-continuous-evolution",
+  "name": "Continuous Evolution",
+  "summary": "Automatically records experience, analyzes skill gaps, updates capability scores, and generates priority tasks to ensure continuous improvement after each task.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuous_evolution",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenmejiang-commits",
+      "features": [
+        "Automatically records experience, analyzes skill gaps, updates capability scores, and generates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/continuous-evolution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231708860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "continuous-evolution",
+      "url": "https://clawhub.ai/skills/continuous-evolution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuous-evolution",
+    "url": "https://clawhub.ai/skills/continuous-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuous-evolution-21352c7ed45b4386.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/continuous-evolution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-continuous-evolution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9f5a1b2f49aaf7533a7b51fa3639af9bf5f84d89f788d81759c06de6790a425",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:31:32.460Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59222,
+  "uuid": "skill-clawhub-compliance-evidence-assembler",
+  "skillKey": "clawhub-compliance-evidence-assembler",
+  "name": "Compliance Evidence Assembler",
+  "summary": "把审计所需证据整理成目录、清单和缺失项，便于后续评审。；use for compliance, evidence, audit workflows；do not use for 伪造证据, 替代正式审计结论.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_evidence_assembler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把审计所需证据整理成目录、清单和缺失项，便于后续评审。；use for compliance, evidence, audit workflows；do not use for 伪造证据,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-evidence-assembler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-evidence-assembler",
+      "url": "https://clawhub.ai/skills/compliance-evidence-assembler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-evidence-assembler",
+    "url": "https://clawhub.ai/skills/compliance-evidence-assembler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-evidence-assembler-d3cc5cd27664133e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-evidence-assembler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-evidence-assembler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa5e12eb125603a934b9989027d6649e1a2b55e176b1ce907001362a9194d3ec",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:59:17.187Z"
+}

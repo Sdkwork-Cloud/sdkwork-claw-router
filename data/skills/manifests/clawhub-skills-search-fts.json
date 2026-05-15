@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20103,
+  "uuid": "skill-clawhub-skills-search-fts",
+  "skillKey": "clawhub-skills-search-fts",
+  "name": "Global Skills Search",
+  "summary": "Instantly find the best AI agent skills, tools, and capabilities from across the entire web.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_search_fts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hagen Hoferichter",
+      "features": [
+        "Instantly find the best AI agent skills, tools, and capabilities from across the entire web."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skills-search-fts@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skills-search-fts",
+      "url": "https://clawhub.ai/skills/skills-search-fts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-search-fts",
+    "url": "https://clawhub.ai/skills/skills-search-fts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-search-fts-e5f0cac08827a018.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skills-search-fts@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-skills-search-fts-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c49502c1335304eb06f753e83db2d4340f4d6ee0fd945088126889e9f7748e3c",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:37:14.371Z"
+}

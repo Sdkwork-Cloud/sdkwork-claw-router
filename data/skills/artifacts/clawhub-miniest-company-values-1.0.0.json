@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miniest-company-values@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miniest_company_values",
+  "skill": {
+    "id": 70772,
+    "skillKey": "clawhub-miniest-company-values",
+    "name": "Company Values"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miniest-company-values",
+    "url": "https://clawhub.ai/skills/miniest-company-values",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miniest-company-values-74d520f71950182a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助定义极简主义业务的公司价值观和文化。 当有人在建立公司文化、准备招聘，或想要明确公司代表什么时使用。 核心：先定义文化，再招人。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethan-china",
+      "userId": "s17fky7r08f4zyfpzqbwrkpesh83yx5z",
+      "displayName": "ethan-china",
+      "image": "https://avatars.githubusercontent.com/u/272385452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776143158997,
+      "changelog": "- Initial release of the \"company-values\" skill to help define minimalist business values and culture.\n- Offers structured guidance based on Sahil Lavingia’s minimalist entrepreneurship principles.\n- Provides example values from Gumroad as inspiration.\n- Includes prompts for self-reflection to create unique company values.\n- Covers best practices for operationalizing values and building remote-first cultures.\n- Helps users draft 3–5 company values with descriptions, stories, hiring, and work implications, plus anti-patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9048c2c912c62faa8003c833b6dd42c1c4a49fda0d32fc633896491248993fc4"
+}

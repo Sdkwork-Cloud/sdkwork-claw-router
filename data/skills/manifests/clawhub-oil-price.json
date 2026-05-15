@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58607,
+  "uuid": "skill-clawhub-oil-price",
+  "skillKey": "clawhub-oil-price",
+  "name": "油价查询",
+  "summary": "获取全国各省市油价信息。无需 API Key。Use when: user asks about gas prices, fuel costs in China.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oil_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenzihao",
+      "features": [
+        "获取全国各省市油价信息。无需 API Key。Use when: user asks about gas prices, fuel costs in China."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oil-price@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57579348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oil-price",
+      "url": "https://clawhub.ai/skills/oil-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oil-price",
+    "url": "https://clawhub.ai/skills/oil-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oil-price-8b12125d71b002a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oil-price@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oil-price-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75c4a8eefb0a45d7128c8ead4a040c42d10aa1a76da9b069831fab64c39e93a5",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:35:50.162Z"
+}

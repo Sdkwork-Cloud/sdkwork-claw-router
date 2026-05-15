@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18524,
+  "uuid": "skill-clawhub-weather-skill",
+  "skillKey": "clawhub-weather-skill",
+  "name": "Weather Skill",
+  "summary": "Get the current temperature in Celsius for any city, using free weather data from wttr.in with a 0.001 USDT pay-per-call fee.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Get the current temperature in Celsius for any city, using free weather data from wttr.in with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-skill",
+      "url": "https://clawhub.ai/skills/weather-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-skill",
+    "url": "https://clawhub.ai/skills/weather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-skill-c9eb97b4183c5384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d3af9eba5a182020fd1f8ebbbe2ae3dcf9f61ffd768a7bb54d782546c9cb2ac",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:42:08.096Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiznt-seedance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiznt_seedance",
+  "skill": {
+    "id": 59440,
+    "skillKey": "clawhub-aiznt-seedance",
+    "name": "Seedance Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiznt-seedance",
+    "url": "https://clawhub.ai/skills/aiznt-seedance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiznt-seedance-2e1282415e1a3107.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "即梦 Seedance 文生视频：豆包 Seedance 系列模型，content 数组格式。Use when: 用户指定 doubao-seedance 模型与多段文本/媒体内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774099472483,
+      "changelog": "Expand SKILL.md documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a97a51c60e3d2acb72fd122f91ed2d656472942c36c1f456cb673d21b9bf0724"
+}

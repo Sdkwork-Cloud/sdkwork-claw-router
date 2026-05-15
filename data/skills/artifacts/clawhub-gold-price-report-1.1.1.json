@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-price-report@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_report",
+  "skill": {
+    "id": 58590,
+    "skillKey": "clawhub-gold-price-report",
+    "name": "Gold Price Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-report",
+    "url": "https://clawhub.ai/skills/gold-price-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-report-722f22fbea9927c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gold/silver price lookup and market brief. Use when the user asks things like 查金价, 黄金多少钱, 今日金价, 白银价格, 品牌金价, 老凤祥/周大福/周生生金价, 沪金/沪银/comex黄金/comex白银, or wants a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plabzzxx",
+      "userId": "s17eac8rv5mwyh69q2qhv5ckb984fzxd",
+      "displayName": "plabzzxx",
+      "image": "https://avatars.githubusercontent.com/u/172346891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775643929778,
+      "changelog": "- Added skill metadata file (_meta.json) to improve compatibility and discovery.\n- No changes to scripts or user-facing functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93c8194fa5c93d2b38b4f7bb518d0d20cee9b2b03850aa2f8e8348efb323dfe4"
+}

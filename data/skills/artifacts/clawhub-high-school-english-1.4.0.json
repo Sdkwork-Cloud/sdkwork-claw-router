@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-school-english@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_school_english",
+  "skill": {
+    "id": 29149,
+    "skillKey": "clawhub-high-school-english",
+    "name": "High School English"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-school-english",
+    "url": "https://clawhub.ai/skills/high-school-english",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-school-english-88aa95f20c682abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Target users: Chinese high school students (Grade 10-12). Goal: High School English exam preparation. Features: 1) Vocabulary learning with spaced repetition..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanxlab",
+      "userId": "s17fanxpssvnt5h3evs93pwdjs83gwm4",
+      "displayName": "FanX",
+      "image": "https://avatars.githubusercontent.com/u/231185438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777271097345,
+      "changelog": "区分复习工作流和日常练习流程；Scenario A/B 明确使用场景；新题答对不写入 knowledge；每日练习流程与复习流程分离",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8934d1f0a8e7969bcc2b5425499f15c7187a0e21c53a34230143cff32be77412"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25519,
+  "uuid": "skill-clawhub-redline-contract",
+  "skillKey": "clawhub-redline-contract",
+  "name": "Redline Contract",
+  "summary": "Review and redline DOCX contracts paragraph by paragraph with tracked changes, clause-level risk analysis, and draft comment responses. Use when a user wants...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redline_contract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChipmunkRPA",
+      "features": [
+        "Review and redline DOCX contracts paragraph by paragraph with tracked changes, clause-level ris.",
+        "Use when a user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redline-contract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154071180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redline-contract",
+      "url": "https://clawhub.ai/skills/redline-contract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redline-contract",
+    "url": "https://clawhub.ai/skills/redline-contract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redline-contract-ed1a790a651a9d81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redline-contract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redline-contract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a59b1eefa0ae5b9c94dedfe3ce5025227b383ad5af8f35407e19f4c0d23aab0f",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:05:21.475Z"
+}

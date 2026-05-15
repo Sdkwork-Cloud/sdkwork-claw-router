@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molecular-docking@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molecular_docking",
+  "skill": {
+    "id": 41620,
+    "skillKey": "clawhub-molecular-docking",
+    "name": "Molecular Docking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molecular-docking",
+    "url": "https://clawhub.ai/skills/molecular-docking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molecular-docking-e51ddace6b6df7e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Molecular docking workflows across Gnina, AutoDock Vina, PackDock, SurfDock, and DiffDock through SciMiner, with Gnina as the default engine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sciminer",
+      "userId": "s170qp1q4twz35wa85ppa8894h83w461",
+      "displayName": "SciMiner",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778172458745,
+      "changelog": "- Removed Get Box utility and all references to native binding-site extraction via ligand or known holo structures.\n- Updated binding-site acquisition to use only fpocket for predicting pockets from apo protein structures.\n- Adjusted workflow guidance and documentation to match the removal of Get Box and focus exclusively on fpocket for binding-site detection.\n- No changes to code or implementation files; update is documentation-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0661f37f163711732eb6939f005d17b5f20e0ea4a43fc3f79cf2619550db4e9b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59814,
+  "uuid": "skill-clawhub-all-to-markdown",
+  "skillKey": "clawhub-all-to-markdown",
+  "name": "All to Markdown",
+  "summary": "将任意文件（PDF、Word、Excel、PPT、图片、音频、网页等）转换为 Markdown",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.all_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PING SI",
+      "features": [
+        "将任意文件（PDF、Word、Excel、PPT、图片、音频、网页等）转换为 Markdown"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/all-to-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19371897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "all-to-markdown",
+      "url": "https://clawhub.ai/skills/all-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "all-to-markdown",
+    "url": "https://clawhub.ai/skills/all-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/all-to-markdown-92977b1500fcdd7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/all-to-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-all-to-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:498229bd466b79c0a6652d74934293c4fa5ea6343bd8b953b481027a76671e52",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T03:55:53.517Z"
+}

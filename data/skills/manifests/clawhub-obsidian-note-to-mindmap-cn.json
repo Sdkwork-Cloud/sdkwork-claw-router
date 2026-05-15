@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60732,
+  "uuid": "skill-clawhub-obsidian-note-to-mindmap-cn",
+  "skillKey": "clawhub-obsidian-note-to-mindmap-cn",
+  "name": "Obsidian Note 转导图",
+  "summary": "将用户明确提供的 Obsidian 笔记或 Markdown 大纲默认转换为 KMind 导图 PNG，并在明确要求时输出可编辑的 KMind 导图；如果缺少已审核的 KMind core skill，先征求确认后再从 ClawHub 安装。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_note_to_mindmap_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suka233",
+      "features": [
+        "将用户明确提供的 Obsidian 笔记或 Markdown 大纲默认转换为 KMind 导图 PNG，并在明确要求时输出可编辑的 KMind 导图；如果缺少已审核的 KMind core."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-note-to-mindmap-cn@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43712875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-note-to-mindmap-cn",
+      "url": "https://clawhub.ai/skills/obsidian-note-to-mindmap-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-note-to-mindmap-cn",
+    "url": "https://clawhub.ai/skills/obsidian-note-to-mindmap-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-note-to-mindmap-cn-b9c10273dbcc7e48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-note-to-mindmap-cn@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-note-to-mindmap-cn-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf745e8c0082ec3ac795260fb7e2588c099fcf0a7557374e41a99c6dfc90abff",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:33:25.739Z"
+}

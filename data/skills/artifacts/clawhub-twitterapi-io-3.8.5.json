@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitterapi-io@3.8.5",
+  "version": "3.8.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitterapi_io",
+  "skill": {
+    "id": 16953,
+    "skillKey": "clawhub-twitterapi-io",
+    "name": "twitterapi-io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitterapi-io",
+    "url": "https://clawhub.ai/skills/twitterapi-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitterapi-io-8739bc8fd77b0ab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Twitter/X via TwitterAPI.io — search tweets, get user info, post tweets, like, retweet, follow, send DMs, and more. Covers all 67 active endpoi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorukardahan",
+      "userId": "s17ec9h02rq9dyxk1p8ndsz7ps84kpzp",
+      "displayName": "dorukardahan",
+      "image": "https://avatars.githubusercontent.com/u/35905596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1297,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.8.5",
+      "createdAt": 1777435584978,
+      "changelog": "Remove duplicated monitored-users read reference",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f20ac35a4c25419830caab3436af004dc6bb980052f01a0f344c31ee0aa2f711"
+}

@@ -18,7 +18,7 @@ use crate::api::openai_runtime::{
     OpenAiRouteError,
 };
 use crate::application::{ApiKeySecretHasher, AuthenticatedApiKeyContext};
-use crate::domain::{BillingMeter, ModelProviderRoute};
+use crate::domain::{BillingMeter, ModelProviderRoute, RoutingCapability};
 use crate::ports::{PricingCatalog, ResponsesRelay, ResponsesRelayRequest};
 
 struct OpenAiResponsesState<C> {
@@ -181,6 +181,7 @@ where
         state.catalog.as_ref(),
         context,
         model,
+        RoutingCapability::Chat,
         BillingMeter::LlmInputToken,
     )
 }

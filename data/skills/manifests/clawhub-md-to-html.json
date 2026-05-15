@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64786,
+  "uuid": "skill-clawhub-md-to-html",
+  "skillKey": "clawhub-md-to-html",
+  "name": "md-to-html",
+  "summary": "将Markdown格式的笔记转换为带左侧固定目录大纲的可阅读HTML文件。适用于：(1) 将学习笔记、技术文档转换为可浏览的HTML；(2) 为Markdown文件生成带目录导航的阅读界面；(3) 整理长文档生成静态网站。触发条件：用户说转换HTML、markdown转html、生成HTML笔记、把笔记转成网页等",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SeanXu98",
+      "features": [
+        "将Markdown格式的笔记转换为带左侧固定目录大纲的可阅读HTML文件。适用于：(1) 将学习笔记、技术文档转换为可浏览的HTML；(2) 为Markdown文件生成带目录导航的阅读界面；."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-to-html@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86908437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-to-html",
+      "url": "https://clawhub.ai/skills/md-to-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-html",
+    "url": "https://clawhub.ai/skills/md-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-html-fcb02248977157f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-to-html@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-to-html-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:828eefa7f836f14473766b24413da961faeb01c5d7bbb6c066f7001418cf2c8a",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:15:39.490Z"
+}

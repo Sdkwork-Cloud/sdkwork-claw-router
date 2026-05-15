@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17375,
+  "uuid": "skill-clawhub-shortapi-ai-music-generation",
+  "skillKey": "clawhub-shortapi-ai-music-generation",
+  "name": "Al Music Generation",
+  "summary": "Use this skill as an entry point to discover, select, and fetch specific integration parameters for all supported AI music generation models.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortapi_ai_music_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShortAPl",
+      "features": [
+        "Use this skill as an entry point to discover, select, and fetch specific integration parameters."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortapi-ai-music-generation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95574719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortapi-ai-music-generation",
+      "url": "https://clawhub.ai/skills/shortapi-ai-music-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortapi-ai-music-generation",
+    "url": "https://clawhub.ai/skills/shortapi-ai-music-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortapi-ai-music-generation-0c781f60d5506ed7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortapi-ai-music-generation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortapi-ai-music-generation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f837db2302331598ff2f761e0abe45d162aecc65b3eeed3bf5680ff96db28478",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:51:40.112Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ffmpeg-video-watermark-remover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_video_watermark_remover",
+  "skill": {
+    "id": 43659,
+    "skillKey": "clawhub-ffmpeg-video-watermark-remover",
+    "name": "FFmpeg Video Watermark Remover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-video-watermark-remover",
+    "url": "https://clawhub.ai/skills/ffmpeg-video-watermark-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-video-watermark-remover-616c49dec22eadad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove watermarks from videos using ffmpeg delogo filter. Use this skill whenever the user wants to remove a watermark from a video, asks to remove a logo/te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ozzylennon",
+      "userId": "s178wj6wxk66xh60b64m06fbkx84xn87",
+      "displayName": "OzzyLennon",
+      "image": "https://avatars.githubusercontent.com/u/202568541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776262333700,
+      "changelog": "Initial release: ffmpeg delogo based dynamic/static watermark removal for videos",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e85da1c46552fcaa18f9f360362fb9ac81ceb89a1663680f34b9e4b0a869394"
+}

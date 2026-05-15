@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatgpt-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_search",
+  "skill": {
+    "id": 63133,
+    "skillKey": "clawhub-chatgpt-search",
+    "name": "Chatgpt Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-search",
+    "url": "https://clawhub.ai/skills/chatgpt-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-search-4cd43e632753ab6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用浏览器自动化在 ChatGPT 上搜索问题，获取 AI 回答。无需登录即可使用基础功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang040840219",
+      "userId": "s17e3hnh8js9ydxc9r3gn6wpsh841mq9",
+      "displayName": "yang040840219",
+      "image": "https://avatars.githubusercontent.com/u/6149239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774015927109,
+      "changelog": "chatgpt-search 1.0.0\n\n- 初始发布，支持通过浏览器自动化在 ChatGPT 上提问并获取 AI 回答\n- 基础问答功能，无需登录即可使用\n- 支持文本和 JSON 两种输出格式\n- 命令行参数含上下文、超时时间、保持标签页等选项\n- 自动关闭标签页，保持浏览器整洁",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:164282fd41196e5b25f6143c5b173e377ac96680442ccac99f6ecc39f1ea5304"
+}

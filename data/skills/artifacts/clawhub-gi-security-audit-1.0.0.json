@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gi-security-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gi_security_audit",
+  "skill": {
+    "id": 23579,
+    "skillKey": "clawhub-gi-security-audit",
+    "name": "GI Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gi-security-audit",
+    "url": "https://clawhub.ai/skills/gi-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gi-security-audit-f4a2c46e840fd311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit code for security issues - sensitive data exposure, dependency vulnerabilities, SQL injection, hardcoded secrets. Use when the user asks for security c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laimiaohua",
+      "userId": "publishers:laimiaohua",
+      "displayName": "laimiaohua",
+      "image": "https://avatars.githubusercontent.com/u/36961979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773712715089,
+      "changelog": "Initial release. Gravitech Innovations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6323dd0272753922e7ef384e34e3581243c2402b38f5b49123bd6816e383bb58"
+}

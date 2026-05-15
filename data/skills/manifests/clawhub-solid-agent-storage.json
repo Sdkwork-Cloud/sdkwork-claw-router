@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14866,
+  "uuid": "skill-clawhub-solid-agent-storage",
+  "skillKey": "clawhub-solid-agent-storage",
+  "name": "Solid Agent Storage",
+  "summary": "Give your AI agent persistent identity (WebID) and personal data storage (Pod) using the Solid Protocol",
+  "version": "0.3.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solid_agent_storage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Worrall",
+      "features": [
+        "Give your AI agent persistent identity (WebID) and personal data storage (Pod) using the Solid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solid-agent-storage@0.3.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157617121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solid-agent-storage",
+      "url": "https://clawhub.ai/skills/solid-agent-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solid-agent-storage",
+    "url": "https://clawhub.ai/skills/solid-agent-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solid-agent-storage-4d5296cf76b28419.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solid-agent-storage@0.3.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-solid-agent-storage-0.3.9.json",
+      "version": "0.3.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43cb8ee9d24847dd65e397365bcf68376805b86dba5188a83443baf6be75842b",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T10:05:50.058Z"
+}

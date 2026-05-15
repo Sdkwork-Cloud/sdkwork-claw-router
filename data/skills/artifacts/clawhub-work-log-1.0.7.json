@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/work-log@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_log",
+  "skill": {
+    "id": 29603,
+    "skillKey": "clawhub-work-log",
+    "name": "work-log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-log",
+    "url": "https://clawhub.ai/skills/work-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-log-6a2dea1ac8ffca6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated work log management with daily/weekly report generation. Use when users need to record, track, or manage work tasks, generate daily/weekly reports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwl52",
+      "userId": "s17byhhs9w4m3hm5y0tkpgakp983wv73",
+      "displayName": "william-w",
+      "image": "https://avatars.githubusercontent.com/u/56250829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776649045673,
+      "changelog": "No changes detected in this version.\n\n- Version and content remain unchanged from the previous release.\n- No new features, fixes, or updates were applied.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcec53fda87b60d4404da2954967fb7c006239176ea0d676808f743d3dd2a611"
+}

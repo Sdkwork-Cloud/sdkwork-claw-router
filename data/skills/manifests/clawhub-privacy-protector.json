@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25192,
+  "uuid": "skill-clawhub-privacy-protector",
+  "skillKey": "clawhub-privacy-protector",
+  "name": "Privacy Protector",
+  "summary": "Runs PII anonymization, local de-anonymization, and deterministic local detector checks for text and supported files. Use for redact/restore flows, file-firs...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_protector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "modeioai",
+      "features": [
+        "Runs PII anonymization, local de-anonymization, and deterministic local detector checks for tex.",
+        "Use for redact/restore flows, file-firs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privacy-protector@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244495891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privacy-protector",
+      "url": "https://clawhub.ai/skills/privacy-protector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-protector",
+    "url": "https://clawhub.ai/skills/privacy-protector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-protector-a4a924917cb36310.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privacy-protector@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-privacy-protector-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1936dccb8f2dc2e9ec32bea9a9799e097872b78660a0fdc3aa458db2fce1e115",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:10:32.017Z"
+}

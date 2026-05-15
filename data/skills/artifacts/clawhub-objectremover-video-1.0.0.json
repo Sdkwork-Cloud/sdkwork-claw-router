@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/objectremover-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.objectremover_video",
+  "skill": {
+    "id": 55571,
+    "skillKey": "clawhub-objectremover-video",
+    "name": "Objectremover Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "objectremover-video",
+    "url": "https://clawhub.ai/skills/objectremover-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/objectremover-video-7063ab2037566637.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — remove the car parked in the background from the entire video — and get cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776469269946,
+      "changelog": "- Initial release of objectremover-video skill for automatic object removal from video clips.\n- Supports uploads up to 500MB in MP4, MOV, AVI, and WebM formats.\n- Cloud-based processing—describe editing requests and get results in 1-2 minutes.\n- Automatic setup: handles token, session, and backend connection for you.\n- Covers export, credits, upload, and session management with clear error handling.\n- Ideal for creators wanting distraction-free videos without manual editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d835ef7ac930e5d94803fd6d125d86d92d734601c03354f1b2aef3ecbe9e975b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-flow-graph@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_flow_graph",
+  "skill": {
+    "id": 30564,
+    "skillKey": "clawhub-code-flow-graph",
+    "name": "Code Flow Graph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-flow-graph",
+    "url": "https://clawhub.ai/skills/code-flow-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-flow-graph-47e3d5d64e687075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill generates interactive HTML node-graph diagrams to visualize codebase structure, class relationships, and function call chains. It should be used w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biubiubiu533",
+      "userId": "s1717fy5m12h249sg68tv1bf6983gpqq",
+      "displayName": "biubiubiu533",
+      "image": "https://avatars.githubusercontent.com/u/72805928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774324728529,
+      "changelog": "Initial release — generates interactive HTML node-graph diagrams for visualizing codebase architecture, class relationships, and function call chains.\n\n- Instantly analyzes code to create overview diagrams; supports deeper drill-downs on demand.\n- Visualizes module dependencies, class hierarchies, function orchestration, and UI widget layouts (including Qt/React).\n- Outputs a standalone HTML+JS viewer with searchable, draggable nodes, grouping, localStorage-based layout memory, undo/redo, and dark theme.\n- Entry points, high-fan-out/in functions, and key workflows are automatically highlighted; noise from utility/accessor functions is filtered.\n- All labels and navigation use Chinese by default unless user requests another language.\n- Output diagrams are placed in <project>/docs/code_graph/ for easy project documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ecdbf0fc988a63cc3fc3cb9b9554368b288bf178229d73f9fe52240999ff3a5"
+}

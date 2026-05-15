@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-fleet-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_fleet_router",
+  "skill": {
+    "id": 54443,
+    "skillKey": "clawhub-ollama-fleet-router",
+    "name": "Ollama — Herd Your LLMs Into One Smart Endpoint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-fleet-router",
+    "url": "https://clawhub.ai/skills/ollama-fleet-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-fleet-router-7ef1987168767d25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ollama fleet router — herd your Ollama LLMs into one smart endpoint. Route Llama, Qwen, DeepSeek, Phi, Mistral, and Gemma across multiple devices with 7-sign..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774909848938,
+      "changelog": "Ollama Fleet Router 1.0.0 — Initial Release\n\n- One smart endpoint for routing LLM requests across multiple Ollama devices, with drop-in OpenAI SDK compatibility.\n- Advanced fleet scoring: routes requests based on VRAM, model availability, queue depth, latency, and more (7-signal scoring).\n- Robust auto-retry, VRAM-aware fallback, and context protection for reliable and efficient operation.\n- Supports image generation, speech-to-text, and embeddings, all via the same endpoint.\n- Real-time dashboard for monitoring fleet health, usage, models, and workloads.\n- Includes project-based request tagging and strict guardrails for safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc3336a511f6fea92191d99f4726638916699f0c70bc181611fb84ef727fd0cd"
+}

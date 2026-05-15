@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14259,
+  "uuid": "skill-clawhub-daily-memory-save",
+  "skillKey": "clawhub-daily-memory-save",
+  "name": "Daily Memory Save",
+  "summary": "Periodically reviews conversation history and writes memory files to maintain agent continuity across sessions. Dual-layer system with daily raw notes and cu...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_memory_save",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mei Park",
+      "features": [
+        "Periodically reviews conversation history and writes memory files to maintain agent continuity.",
+        "Dual-layer system with daily raw notes and cu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-memory-save@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223051250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-memory-save",
+      "url": "https://clawhub.ai/skills/daily-memory-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-memory-save",
+    "url": "https://clawhub.ai/skills/daily-memory-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-memory-save-f27f85e37d0e1624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-memory-save@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-memory-save-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34c39f6d40fef9a61b4d4defa501db47fa036ebdcd09ba70ca824ae77372e3bb",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:59:24.394Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-analysis-partner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_analysis_partner",
+  "skill": {
+    "id": 59944,
+    "skillKey": "clawhub-data-analysis-partner",
+    "name": "data-analysis-partner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-analysis-partner",
+    "url": "https://clawhub.ai/skills/data-analysis-partner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-analysis-partner-9e3c8b1cc656073d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能数据分析 Skill，输入 CSV/Excel 文件和分析需求，输出带交互式 ECharts 图表的 HTML 自包含分析报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1992huanghai",
+      "userId": "s173409vvz1f0s45z8mbr7xmd183h7y2",
+      "displayName": "1992huanghai",
+      "image": "https://avatars.githubusercontent.com/u/10932081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774345610619,
+      "changelog": "## [1.0.2] - 2026-03-24\n\n### 🐛 Bug Fix\n\n- **ERR_AMBIGUOUS_MODULE_SYNTAX**: Converted `index.js` from ES Module (`import`/`export default`) to CommonJS (`require`/`module.exports`) to fix compatibility with OpenClaw skill runner\n- Removed `execSync` (auto-venv creation) to reduce `child_process` usage surface; Python env now resolves via `.venv` → system `python3` only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08b64bb549d623a3227915cd8b24b8d8cde1ef8e428904d860389d1564ee6b95"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43373,
+  "uuid": "skill-clawhub-decision-forest",
+  "skillKey": "clawhub-decision-forest",
+  "name": "Decision Forest",
+  "summary": "Map a decision into options, non-negotiables, criteria, best/base/worst cases, reversibility, and a review checkpoint. Use when the user is comparing multipl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_forest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Map a decision into options, non-negotiables, criteria, best/base/worst cases, reversibility, a.",
+        "Use when the user is comparing multipl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-forest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-forest",
+      "url": "https://clawhub.ai/skills/decision-forest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-forest",
+    "url": "https://clawhub.ai/skills/decision-forest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-forest-f7ad9d6dda179a29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-forest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-forest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd35bdcb2975303645c6b93ce07ccf868af3a6574f458d5448c868cc823e4f6e",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T00:00:30.139Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30893,
+  "uuid": "skill-clawhub-twitterapi-io-cli",
+  "skillKey": "clawhub-twitterapi-io-cli",
+  "name": "twitterapi-io-cli",
+  "summary": "Fetch and paginate Twitter/X data using twitterapi.io. Use when you need to fetch one tweet, fetch a user profile, get recent tweets for a user, fetch replie...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitterapi_io_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robin | Liquidium",
+      "features": [
+        "Fetch and paginate Twitter/X data using twitterapi.io",
+        "Use when you need to fetch one tweet, fetch a user profile, get recent tweets for a user, fetch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitterapi-io-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75593191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitterapi-io-cli",
+      "url": "https://clawhub.ai/skills/twitterapi-io-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitterapi-io-cli",
+    "url": "https://clawhub.ai/skills/twitterapi-io-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitterapi-io-cli-55d7b74c0381f14a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitterapi-io-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitterapi-io-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:915200a9d8c979af534832356bf149c4e60c3fcfeb463fbf1c004d20d50718f9",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:51:59.515Z"
+}

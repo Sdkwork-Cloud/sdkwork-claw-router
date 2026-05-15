@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unified-web-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_web_search",
+  "skill": {
+    "id": 71052,
+    "skillKey": "clawhub-unified-web-search",
+    "name": "联网搜索统一接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-web-search",
+    "url": "https://clawhub.ai/skills/unified-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-web-search-57ccac948671b519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "联网搜索统一接口 - 一个接口自动选择最优服务商（百炼/Tavily/火山引擎），支持降级、合并、告警"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naive-white-expert",
+      "userId": "s171rmk3c38x5jw87tp21vwd7d83h1ka",
+      "displayName": "naive-white-expert",
+      "image": "https://avatars.githubusercontent.com/u/130733538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 50,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778324589244,
+      "changelog": "- Initial release of unified-web-search, providing a unified interface for online search across multiple providers (Bailian, Tavily, Volcengine).\n- Automatically selects the optimal provider, supports fallback, result merging, and alerts.\n- Allows tuning of search intensity (quick/normal/deep), time freshness, and site filters.\n- Simple API with structured result including answer and source list.\n- Requires at least one API key configuration before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb691870e529b0b99c61eb6e2447cafcf8ad2ccb30a88d9a6b7594fc5285b3f7"
+}

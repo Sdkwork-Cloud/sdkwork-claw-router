@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64148,
+  "uuid": "skill-clawhub-kimi-quota",
+  "skillKey": "clawhub-kimi-quota",
+  "name": "Kimi Quota",
+  "summary": "查询 Kimi API 用量、订阅额度和账户信息。当用户询问\"Kimi 额度\"、\"API 用量\"、\"剩余次数\"、\"订阅状态\"或需要查看 Kimi Code 使用情况时使用。支持加密保存登录态，首次配置后自动查询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_quota",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linn",
+      "features": [
+        "查询 Kimi API 用量、订阅额度和账户信息。当用户询问\"Kimi 额度\"、\"API 用量\"、\"剩余次数\"、\"订阅状态\"或需要查看 Kimi Code 使用情况时使用。支持加密保存登录态."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kimi-quota@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40310493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kimi-quota",
+      "url": "https://clawhub.ai/skills/kimi-quota"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-quota",
+    "url": "https://clawhub.ai/skills/kimi-quota",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-quota-07cf309cc009853e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kimi-quota@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kimi-quota-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5b8d948e176d27e70324b6bd08e5f94b1c7efa734c02b831d5a450edbedee19",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:07:16.020Z"
+}

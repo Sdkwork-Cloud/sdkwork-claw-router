@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turboquant-plus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turboquant_plus",
+  "skill": {
+    "id": 39682,
+    "skillKey": "clawhub-turboquant-plus",
+    "name": "TurboQuant+ KV Cache Compression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turboquant-plus",
+    "url": "https://clawhub.ai/skills/turboquant-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turboquant-plus-b634b938cd7e6f3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TurboQuant+ compresses llama.cpp KV caches on Apple Silicon up to 6.4x with minimal quality loss, enabling larger models and longer contexts efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wukai8289",
+      "userId": "s17agmwwtdttcyy5gp7phhqg55847jdg",
+      "displayName": "wukai8289",
+      "image": "https://avatars.githubusercontent.com/u/126007574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775295800873,
+      "changelog": "v1.0: TurboQuant+ KV缓存压缩指南，支持Apple Silicon本地LLM推理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfe4b0e00fba1149dead00071133328d02c081daaaf4bcc0081764a6784c9845"
+}

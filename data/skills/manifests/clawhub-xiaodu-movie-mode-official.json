@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60983,
+  "uuid": "skill-clawhub-xiaodu-movie-mode-official",
+  "skillKey": "clawhub-xiaodu-movie-mode-official",
+  "name": "xiaodu-movie-mode-official",
+  "summary": "基于已安装的 xiaodu-control-official 编排观影场景。当用户说“开始观影模式”“我要看电影”“把房间调成适合看电影的状态”“准备看电影了”时使用。这个 skill 会复用 xiaodu-control-official 的现有脚本，对小度智能屏和小度 IoT 设备执行 scene-first...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaodu_movie_mode_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dueros-mcp",
+      "features": [
+        "基于已安装的 xiaodu-control-official 编排观影场景。当用户说“开始观影模式”“我要看电影”“把房间调成适合看电影的状态”“准备看电影了”时使用。这个 skill 会复."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaodu-movie-mode-official@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218767264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaodu-movie-mode-official",
+      "url": "https://clawhub.ai/skills/xiaodu-movie-mode-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaodu-movie-mode-official",
+    "url": "https://clawhub.ai/skills/xiaodu-movie-mode-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaodu-movie-mode-official-5048689d40835c09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaodu-movie-mode-official@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaodu-movie-mode-official-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:255269148e8304e1e22990b6c0d1edb659e8aa0d304b8ff2f3884342dc07a612",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:56:18.814Z"
+}

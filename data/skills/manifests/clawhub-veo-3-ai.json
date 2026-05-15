@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47446,
+  "uuid": "skill-clawhub-veo-3-ai",
+  "skillKey": "clawhub-veo-3-ai",
+  "name": "Veo 3 Ai",
+  "summary": "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"gen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veo_3_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get AI generated videos ready to post, without touching a single slider",
+        "Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"gen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veo-3-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veo-3-ai",
+      "url": "https://clawhub.ai/skills/veo-3-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veo-3-ai",
+    "url": "https://clawhub.ai/skills/veo-3-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veo-3-ai-6a5bd690a5b38f4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veo-3-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-veo-3-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3788c5a2b63011b9f787c062502323ef6a288b0751b87013bc98400f89928abf",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:43:50.474Z"
+}

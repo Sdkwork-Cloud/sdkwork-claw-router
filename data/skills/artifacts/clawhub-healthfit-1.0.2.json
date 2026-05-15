@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthfit@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthfit",
+  "skill": {
+    "id": 28051,
+    "skillKey": "clawhub-healthfit",
+    "name": "HealthFit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthfit",
+    "url": "https://clawhub.ai/skills/healthfit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthfit-3abf014a79faaf06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal comprehensive health management system integrating Western medicine and TCM. Triggers when users discuss workout training plans, nutrition advice, h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchen913",
+      "userId": "s17670xd33xa3nynmgr1k8y8j183gy1c",
+      "displayName": "ChenChen",
+      "image": "https://avatars.githubusercontent.com/u/35963500?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773769201869,
+      "changelog": "HealthFit v1.0.2\n\n- Initial code and data structure established with 20 new files added.\n- Added foundational files: configuration, onboarding data, health/nutrition/training logs, and terminology glossaries (Western & TCM).\n- Included sample data files for user profiles, achievements, and logs.\n- Provided core references and guides for onboarding, training, TCM health, and menu options.\n- Introduced utility scripts for database setup and onboarding draft management.\n- Organized assets and documentation to support further feature development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5670b4c56917991ee2cc4d292ce3693ae4977a6ada1e72f50dd92500e6e1e9c"
+}

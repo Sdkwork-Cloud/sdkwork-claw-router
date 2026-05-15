@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69724,
+  "uuid": "skill-clawhub-jax-skill-security-scanner",
+  "skillKey": "clawhub-jax-skill-security-scanner",
+  "name": "饺子安全扫描",
+  "summary": "🔐 OpenClaw技能安全扫描器 - 专业级安全审计工具，检测敏感操作、木马后门，保护您的AI助手生态安全",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jax_skill_security_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonshieh",
+      "features": [
+        "🔐 OpenClaw技能安全扫描器",
+        "专业级安全审计工具，检测敏感操作、木马后门，保护您的AI助手生态安全"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jax-skill-security-scanner@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1629384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jax-skill-security-scanner",
+      "url": "https://clawhub.ai/skills/jax-skill-security-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jax-skill-security-scanner",
+    "url": "https://clawhub.ai/skills/jax-skill-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jax-skill-security-scanner-3b8a7e9c81f767ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jax-skill-security-scanner@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-jax-skill-security-scanner-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89d5b61366380f9e2adb69b6a7d5e6d6bb91bb8310f0f893cd64d1e78c651b3b",
+      "artifactSizeBytes": 2521
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:01:06.812Z"
+}

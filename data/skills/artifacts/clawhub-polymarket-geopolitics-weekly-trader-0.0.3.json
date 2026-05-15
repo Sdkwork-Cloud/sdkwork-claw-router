@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-geopolitics-weekly-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_geopolitics_weekly_trader",
+  "skill": {
+    "id": 31424,
+    "skillKey": "clawhub-polymarket-geopolitics-weekly-trader",
+    "name": "Polymarket Geopolitics Weekly Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-geopolitics-weekly-trader",
+    "url": "https://clawhub.ai/skills/polymarket-geopolitics-weekly-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-geopolitics-weekly-trader-b5670c6e1b59a062.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades weekly cyclical patterns in geopolitical prediction markets. Military operations spike Mon-Thu, diplomacy clusters around working days, and weekend st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386352399,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7408d6789f05c4bba5ab3930d4ed9dfdc8afac6856f486c61357539d1ac7c28"
+}

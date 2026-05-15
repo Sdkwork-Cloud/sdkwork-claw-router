@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zerocut-cli-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerocut_cli_tools",
+  "skill": {
+    "id": 26914,
+    "skillKey": "clawhub-zerocut-cli-tools",
+    "name": "ZeroCut AI Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerocut-cli-tools",
+    "url": "https://clawhub.ai/skills/zerocut-cli-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerocut-cli-tools-60ad36f318edb6be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use ZeroCut CLI media and document tools. Invoke when user needs generate media, run ffmpeg/pandoc, sync resources, or save outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smartdiana",
+      "userId": "s179w285zd6cam078a4fx5n2c18405a2",
+      "displayName": "smartdiana",
+      "image": "https://avatars.githubusercontent.com/u/3676989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773668506562,
+      "changelog": "Initial release of zerocut-cli-tools.\n\n- Provides unified CLI commands for image, video, music, and text-to-speech generation.\n- Supports running ffmpeg/ffprobe and pandoc commands in a sandboxed environment.\n- Enables syncing of local/remote resources and automatic output file management.\n- Includes output auto-download and directory creation features for generated media and documents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f7b7d255af79f4f29ce7aba27e8aff990c9943edc3ac73e79b93d1fb53f170e"
+}

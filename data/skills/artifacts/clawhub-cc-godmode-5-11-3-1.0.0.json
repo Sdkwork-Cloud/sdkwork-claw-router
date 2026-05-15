@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-godmode-5-11-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_godmode_5_11_3",
+  "skill": {
+    "id": 34372,
+    "skillKey": "clawhub-cc-godmode-5-11-3",
+    "name": "Cc Godmode 5.11.3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-godmode-5-11-3",
+    "url": "https://clawhub.ai/skills/cc-godmode-5-11-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-godmode-5-11-3-32119208a09a8ca1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-orchestrating multi-agent development workflows. You say WHAT, the AI decides HOW."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongbai233",
+      "userId": "s174kk80zryffgszdm9xf20r7h83g6m4",
+      "displayName": "KongBai233",
+      "image": "https://avatars.githubusercontent.com/u/67354781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774445100886,
+      "changelog": "Initial release of cc-godmode: a documentation-driven, multi-agent development orchestration system.\n\n- Introduces structured multi-agent workflows for features, bug fixes, API changes, research, and releases.\n- Documents roles, toolsets, and handoff paths for 8 specialized agents (e.g., researcher, builder, validator).\n- Defines standard commands, workflow diagrams, and \"10 Golden Rules\" to guide usage and quality.\n- Establishes dual quality gates (code & UX), reporting standards, and pre-push requirements.\n- Includes detailed agent specifications, report file structures, and critical path enforcement for API changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:922605a38b3a0f8a445aeb3044f1ac47e89b4809dd9531567190c92fde46b8f1"
+}

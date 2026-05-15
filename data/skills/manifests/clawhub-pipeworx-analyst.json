@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45645,
+  "uuid": "skill-clawhub-pipeworx-analyst",
+  "skillKey": "clawhub-pipeworx-analyst",
+  "name": "Pipeworx Analyst",
+  "summary": "Access 252 data sources via one gateway to query trade, finance, pharma, housing, and government contracts using natural language questions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access 252 data sources via one gateway to query trade, finance, pharma, housing, and governmen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-analyst",
+      "url": "https://clawhub.ai/skills/pipeworx-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-analyst",
+    "url": "https://clawhub.ai/skills/pipeworx-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-analyst-ef422e70ebc31e50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e0e0e44602eca6a0dbba891ef18ff1c41da1dafc7533f8a8fbdc26761ea1c07",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T18:07:23.562Z"
+}

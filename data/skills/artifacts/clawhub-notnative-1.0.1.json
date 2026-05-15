@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notnative@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notnative",
+  "skill": {
+    "id": 10993,
+    "skillKey": "clawhub-notnative",
+    "name": "Notnative"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notnative",
+    "url": "https://clawhub.ai/skills/notnative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notnative-fb370b5f21166ecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Notnative MCP server for complete AI assistant integration with notes, calendar, tasks, Python, canvas, and permanent memory. This skill provides persist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k4ditano",
+      "userId": "publishers:k4ditano",
+      "displayName": "k4ditano",
+      "image": "https://avatars.githubusercontent.com/u/111686045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2334,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771176892128,
+      "changelog": "**Permanent memory and persistent user context are now enabled via NotNative/Memory tools.**\n\n- Added install.sh script for easier installation and configuration.\n- Removed package-lock.json.\n- Introduced mandatory, persistent memory instructions—memory tools (store/recall) must now be used for all user facts and preferences.\n- Updated documentation to emphasize use of permanent memory and context recall.\n- Clarified environment variables and configuration for local/remote server connections.\n- Expanded metadata with requirements and homepage link.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91a21ba67cbc64b4aefe917e7f424b6dd426be3f28b2352b0a26211eb4bc49b0"
+}

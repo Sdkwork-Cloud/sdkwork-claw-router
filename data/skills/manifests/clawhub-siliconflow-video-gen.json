@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16937,
+  "uuid": "skill-clawhub-siliconflow-video-gen",
+  "skillKey": "clawhub-siliconflow-video-gen",
+  "name": "SiliconFlow Video Gen",
+  "summary": "Generate videos using SiliconFlow API with Wan2.2 model. Supports both Text-to-Video and Image-to-Video.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siliconflow_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "Generate videos using SiliconFlow API with Wan2.2 model",
+        "Supports both Text-to-Video and Image-to-Video."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siliconflow-video-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siliconflow-video-gen",
+      "url": "https://clawhub.ai/skills/siliconflow-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siliconflow-video-gen",
+    "url": "https://clawhub.ai/skills/siliconflow-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siliconflow-video-gen-5ad7fe1c0accf791.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siliconflow-video-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-siliconflow-video-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70456754049620fcbe674468db86e447db1f52f302083a0999d5b2907f14a37f",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T11:49:16.894Z"
+}

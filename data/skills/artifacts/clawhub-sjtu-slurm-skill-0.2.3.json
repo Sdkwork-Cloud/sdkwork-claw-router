@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sjtu-slurm-skill@0.2.3",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjtu_slurm_skill",
+  "skill": {
+    "id": 56104,
+    "skillKey": "clawhub-sjtu-slurm-skill",
+    "name": "SJTU SLURM Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjtu-slurm-skill",
+    "url": "https://clawhub.ai/skills/sjtu-slurm-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjtu-slurm-skill-d4e8f2f32a95ef5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log in to the SJTU HPC platform (also known as \"交我算\") as the user to perform job queries, submissions, cancellations, and data management. Use this skill whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taleintervenor",
+      "userId": "s17a7tzmmkbwha68wry3vfwq8h851s1r",
+      "displayName": "hermes",
+      "image": "https://avatars.githubusercontent.com/u/8164697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.2.3",
+      "createdAt": 1777361538183,
+      "changelog": "sjtu-slurm-skill 0.2.3\n\n- Updated documentation in README.md for improved clarity and instructions.\n- No changes to code or functionality; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e12a81ca8246e9541e48de93c60db6b0160baad624ee968bade00c78fd7aed0"
+}

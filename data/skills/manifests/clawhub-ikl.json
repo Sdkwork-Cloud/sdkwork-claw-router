@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52422,
+  "uuid": "skill-clawhub-ikl",
+  "skillKey": "clawhub-ikl",
+  "name": "Interpersonal Knowledge Layer",
+  "summary": "Interpersonal Knowledge Layer — a per-contact permission system for agent-to-agent information sharing. Use when: (1) another agent or user requests personal...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ikl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smartinelle",
+      "features": [
+        "Interpersonal Knowledge Layer — a per-contact permission system for agent-to-agent information.",
+        "Use when: (1) another agent or user requests personal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ikl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93981396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ikl",
+      "url": "https://clawhub.ai/skills/ikl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ikl",
+    "url": "https://clawhub.ai/skills/ikl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ikl-7f49f4ea8a8084af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ikl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ikl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:699d14f76a0d5a1ea9dbae73d17a76871ad2e6a9566671077474253285d594ce",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:03:37.400Z"
+}

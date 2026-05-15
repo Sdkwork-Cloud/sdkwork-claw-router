@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18875,
+  "uuid": "skill-clawhub-gateway-auto-fix",
+  "skillKey": "clawhub-gateway-auto-fix",
+  "name": "Gateway Auto-Fix",
+  "summary": "Automatically monitor OpenClaw gateway status and fix when RPC probe fails. Uses OpenClaw cron system - just install and it works!",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_auto_fix",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nwcalvin",
+      "features": [
+        "Automatically monitor OpenClaw gateway status and fix when RPC probe fails",
+        "Uses OpenClaw cron system",
+        "just install and it works!"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gateway-auto-fix@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3368077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gateway-auto-fix",
+      "url": "https://clawhub.ai/skills/gateway-auto-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-auto-fix",
+    "url": "https://clawhub.ai/skills/gateway-auto-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-auto-fix-babe8f1570714bd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gateway-auto-fix@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gateway-auto-fix-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:745fe71374ac77e559198221c34cfbd7788ab85f93bba546554abc1b3202038d",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T04:48:49.903Z"
+}

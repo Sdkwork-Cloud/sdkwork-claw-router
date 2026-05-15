@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us-stock-financials@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us_stock_financials",
+  "skill": {
+    "id": 29642,
+    "skillKey": "clawhub-us-stock-financials",
+    "name": "US Stock Financials"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us-stock-financials",
+    "url": "https://clawhub.ai/skills/us-stock-financials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-stock-financials-8b83d4c4372ec75c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch comprehensive financial data from SEC EDGAR XBRL for US-listed companies (especially Chinese ADRs). Includes balance sheet, income statement, cash flow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mli-cj",
+      "userId": "publishers:mli-cj",
+      "displayName": "mli-cj",
+      "image": "https://avatars.githubusercontent.com/u/255225491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774183587653,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d2a459a3be69b255753cf04e8bb6b55fb63bb752b8cc31c72839ce1a6f46e67"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64250,
+  "uuid": "skill-clawhub-douyin-analyse-batch",
+  "skillKey": "clawhub-douyin-analyse-batch",
+  "name": "douyin-analyse-batch",
+  "summary": "抖音每日自动热榜日报生成与邮件推送。当用户说\"抖音日报\"、\"发送邮件报告\"、\"自动分析抖音\"、\"定时推送抖音\"或需要\"生成抖音视频分析报告\"时使用此技能。自动获取热榜 TOP15 → OpenClaw LLM 分析 → Word 文档输出 → 邮件定时发送至指定收件人。本技能包含完整依赖（douyin-video...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_analyse_batch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "link-1069",
+      "features": [
+        "抖音每日自动热榜日报生成与邮件推送。当用户说\"抖音日报\"、\"发送邮件报告\"、\"自动分析抖音\"、\"定时推送抖音\"或需要\"生成抖音视频分析报告\"时使用此技能。自动获取热榜 TOP15 → Ope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-analyse-batch@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215400067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-analyse-batch",
+      "url": "https://clawhub.ai/skills/douyin-analyse-batch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-analyse-batch",
+    "url": "https://clawhub.ai/skills/douyin-analyse-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-analyse-batch-587062f8c9873195.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-analyse-batch@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-analyse-batch-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb6e507d74ade57712bc3beaf997f139236ea8a0c96d330475745711e72f2b19",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:14:49.940Z"
+}

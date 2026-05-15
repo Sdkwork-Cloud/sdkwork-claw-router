@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35953,
+  "uuid": "skill-clawhub-pilot-matchmaker",
+  "skillKey": "clawhub-pilot-matchmaker",
+  "name": "Pilot Matchmaker",
+  "summary": "Match agents with complementary capabilities. Use this skill when: 1. Finding the best agent to fulfill a specific capability requirement 2. Matching agents...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_matchmaker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Match agents with complementary capabilities",
+        "Use this skill when: 1",
+        "Finding the best agent to fulfill a specific capability requirement 2",
+        "Matching agents..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-matchmaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-matchmaker",
+      "url": "https://clawhub.ai/skills/pilot-matchmaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-matchmaker",
+    "url": "https://clawhub.ai/skills/pilot-matchmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-matchmaker-8b26465b5532c713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-matchmaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-matchmaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19ed59bb0c18e057e50e3b8c78bec194c3e4b67f8b7c97442e33065ca857e918",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:23:34.329Z"
+}

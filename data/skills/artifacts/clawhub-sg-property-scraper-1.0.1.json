@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sg-property-scraper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sg_property_scraper",
+  "skill": {
+    "id": 16784,
+    "skillKey": "clawhub-sg-property-scraper",
+    "name": "sg-property-scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sg-property-scraper",
+    "url": "https://clawhub.ai/skills/sg-property-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sg-property-scraper-bde37672d29facfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Singapore property rental and sale listings with flexible filters. Use when asked to search Singapore properties, find rental or sale listings, check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "5kbpers",
+      "userId": "publishers:5kbpers",
+      "displayName": "5kbpers",
+      "image": "https://avatars.githubusercontent.com/u/20279863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 850,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771407501304,
+      "changelog": "- Added metadata block specifying required binaries and primary environment variable for Google Maps API integration.\n- Updated the API name for commute time calculation from \"Distance Matrix API\" to \"Google Routes API\".",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b97e5e2ad8d9424c8d9c91b97d3111dd71a61d6322b745d5241600cd0ea71be"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57384,
+  "uuid": "skill-clawhub-sumo-smart-note",
+  "skillKey": "clawhub-sumo-smart-note",
+  "name": "Sumo Smart Note",
+  "summary": "Smart note-taking skill for 蘇茉家族. When master says \"記下來\" (record this), automatically save development notes to both workspace AND SumoNoteBook raw/shared.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sumo_smart_note",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sumo0221",
+      "features": [
+        "Smart note-taking skill for 蘇茉家族",
+        "When master says \"記下來\" (record this), automatically save development notes to both workspace AN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sumo-smart-note@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266116930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sumo-smart-note",
+      "url": "https://clawhub.ai/skills/sumo-smart-note"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sumo-smart-note",
+    "url": "https://clawhub.ai/skills/sumo-smart-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sumo-smart-note-efd60b0aa002252a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sumo-smart-note@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sumo-smart-note-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18d51637c3e023a7077447d9318e9fe84b366e5c63ef4bbb7406c9ece8724185",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:57:54.880Z"
+}

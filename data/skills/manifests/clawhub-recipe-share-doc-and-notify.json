@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19426,
+  "uuid": "skill-clawhub-recipe-share-doc-and-notify",
+  "skillKey": "clawhub-recipe-share-doc-and-notify",
+  "name": "Recipe Share Doc And Notify",
+  "summary": "Share a Google Docs document with edit access and email collaborators the link.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_share_doc_and_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Share a Google Docs document with edit access and email collaborators the link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-share-doc-and-notify@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-share-doc-and-notify",
+      "url": "https://clawhub.ai/skills/recipe-share-doc-and-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-share-doc-and-notify",
+    "url": "https://clawhub.ai/skills/recipe-share-doc-and-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-share-doc-and-notify-b1b533ab9dc7d099.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-share-doc-and-notify@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-share-doc-and-notify-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b83c4f5372b981afafcbd097ec9c5a820b8bc8b7b65b45676d90df380bd33922",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:37:05.424Z"
+}

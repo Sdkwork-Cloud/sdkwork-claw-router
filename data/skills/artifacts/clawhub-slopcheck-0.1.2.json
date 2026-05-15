@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slopcheck@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slopcheck",
+  "skill": {
+    "id": 22195,
+    "skillKey": "clawhub-slopcheck",
+    "name": "slopcheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slopcheck",
+    "url": "https://clawhub.ai/skills/slopcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slopcheck-710aefe969536f88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate npm package references in markdown, YAML, and config files against the live npm registry before installing or using them. Catches hallucinated and s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattschaller",
+      "userId": "publishers:mattschaller",
+      "displayName": "Matthew Schaller",
+      "image": "https://avatars.githubusercontent.com/u/3298260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773190870817,
+      "changelog": "- Bumped version to 0.1.2.\n- Added license information (MIT) to metadata in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e31c5df617e2ae1597029f5ccde50e351059a5126a25b278360b8fb694bbe5a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48888,
+  "uuid": "skill-clawhub-browser-agent-trust-hub",
+  "skillKey": "clawhub-browser-agent-trust-hub",
+  "name": "Browser Agent Trust Hub",
+  "summary": "Build and audit trust policies for browser/computer-use agents before they take real-world actions. Use for runtime policy, tool monitoring, domain allowlist...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_agent_trust_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Build and audit trust policies for browser/computer-use agents before they take real-world acti.",
+        "Use for runtime policy, tool monitoring, domain allowlist..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-agent-trust-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-agent-trust-hub",
+      "url": "https://clawhub.ai/skills/browser-agent-trust-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-agent-trust-hub",
+    "url": "https://clawhub.ai/skills/browser-agent-trust-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-agent-trust-hub-cd26ea19d681e03b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-agent-trust-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-agent-trust-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a1887d85cea109016fea5df52bde2c10af55868b4630c4c57083f4a8f505a7e",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:05:04.449Z"
+}

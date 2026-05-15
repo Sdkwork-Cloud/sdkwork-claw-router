@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memcore@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memcore",
+  "skill": {
+    "id": 34755,
+    "skillKey": "clawhub-memcore",
+    "name": "MemCore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memcore",
+    "url": "https://clawhub.ai/skills/memcore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memcore-628222891cb91a61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent long-term memory system with five-layer architecture (Context/Task/User/Knowledge/Experience). Use when building agents that need persistent memory, ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1776077777981,
+      "changelog": "Enhanced version with 4 new memory layers (Episodic, Semantic Compression, Triggers, Forgetting Curve) + 4 enhancement modules (Persistent Storage, Vector Knowledge, Conflict Resolution, Confidence Tracking)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84f7473543e1b422e0c9c86e746ab525729bff45d51e03accdd30a74a0fff6af"
+}

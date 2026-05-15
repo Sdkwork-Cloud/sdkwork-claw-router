@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qverisai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qverisai",
+  "skill": {
+    "id": 18037,
+    "skillKey": "clawhub-qverisai",
+    "name": "QVerisAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qverisai",
+    "url": "https://clawhub.ai/skills/qverisai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qverisai-786009b6c7f8697d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and execute dynamic tools via QVeris API. Use when needing to find and call external APIs/tools dynamically — covers weather, search, stocks, finance, economics, geolocation, AIGC, news, social media, health data, and thousands more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris7iu",
+      "userId": "publishers:chris7iu",
+      "displayName": "Chris Liu",
+      "image": "https://avatars.githubusercontent.com/u/11517021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1062,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770977888436,
+      "changelog": "- Added explicit credential and security information, including API key usage, endpoint details, and storage recommendations.\n- Introduced \"requirements\" and \"credentials\" metadata sections to clarify environment variables, access scope, and endpoint.\n- Documentation now clearly states that only the QVERIS_API_KEY is accessed and never logged or stored.\n- No changes to feature set or script usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b30b6928a6cf0fd0b9bc063aa33e3a855da6b929c6dac0cdf71f1bce6fa1ab73"
+}

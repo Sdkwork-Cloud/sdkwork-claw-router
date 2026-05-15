@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40530,
+  "uuid": "skill-clawhub-edgeiq-email-header-analyzer",
+  "skillKey": "clawhub-edgeiq-email-header-analyzer",
+  "name": "Email Header Analyzer",
+  "summary": "Parses email headers to detect spoofing, phishing, SPF/DKIM/DMARC failures, routing anomalies, and provides forensic analysis of email authenticity.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_email_header_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EdgeIQLabs",
+      "features": [
+        "Parses email headers to detect spoofing, phishing, SPF/DKIM/DMARC failures, routing anomalies,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edgeiq-email-header-analyzer@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16479432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edgeiq-email-header-analyzer",
+      "url": "https://clawhub.ai/skills/edgeiq-email-header-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-email-header-analyzer",
+    "url": "https://clawhub.ai/skills/edgeiq-email-header-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-email-header-analyzer-834258642372e335.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edgeiq-email-header-analyzer@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edgeiq-email-header-analyzer-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72ae195716d13bf145ef7cf93ad87103a3c64b286ab8453a43f394610fffd4da",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T17:08:32.503Z"
+}

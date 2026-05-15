@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9203,
+  "uuid": "skill-clawhub-comfyui",
+  "skillKey": "clawhub-comfyui",
+  "name": "ComfyUI",
+  "summary": "Run local ComfyUI workflows via the HTTP API. Use when the user asks to run ComfyUI, execute a workflow by file path/name, or supply raw API-format JSON; supports the default workflow bundled in assets.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kelvincai522",
+      "features": [
+        "Run local ComfyUI workflows via the HTTP API",
+        "Use when the user asks to run ComfyUI, execute a workflow by file path/name, or supply raw API-.",
+        "supports the default workflow bundled in assets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42686240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui",
+      "url": "https://clawhub.ai/skills/comfyui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui",
+    "url": "https://clawhub.ai/skills/comfyui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-422332977c41eb77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ff9ed9eea5aafed41e2d5080fdfc55316fa325e35260a6ade00d529eab8c5b7",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T08:00:26.321Z"
+}

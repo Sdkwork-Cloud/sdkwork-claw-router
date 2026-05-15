@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codeconductor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codeconductor",
+  "skill": {
+    "id": 9658,
+    "skillKey": "clawhub-codeconductor",
+    "name": "CodeConductor.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codeconductor",
+    "url": "https://clawhub.ai/skills/codeconductor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codeconductor-2ea06b0d12d15a32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered platform for rapid full-stack app development, autonomous agents, workflow automation, and scalable product creation with low-code and AI integrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larsonreever",
+      "userId": "publishers:larsonreever",
+      "displayName": "larsonreever",
+      "image": "https://avatars.githubusercontent.com/u/24870505?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3582,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769511109379,
+      "changelog": "Get ready to deploy applications and manage projects with complete CLI reference with codeconductor.ai. Commands for deployments, projects, domains, environment variables, and live documentation access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccec385a1dce26949a73723e8ef804c0947fab277beb1a80a069416126d04e73"
+}

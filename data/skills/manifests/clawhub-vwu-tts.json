@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58700,
+  "uuid": "skill-clawhub-vwu-tts",
+  "skillKey": "clawhub-vwu-tts",
+  "name": "vwu.ai TTS Models",
+  "summary": "调用 vwu.ai 语音合成模型speech-2.8-hd和speech-2.8-turbo，需配置API key并支持OpenAI兼容接口。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3273283",
+      "features": [
+        "调用 vwu.ai 语音合成模型speech-2.8-hd和speech-2.8-turbo，需配置API key并支持OpenAI兼容接口。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vwu-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92772341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vwu-tts",
+      "url": "https://clawhub.ai/skills/vwu-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-tts",
+    "url": "https://clawhub.ai/skills/vwu-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-tts-75b0a75cac7a7bac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vwu-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vwu-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acf62fa05ff35807d170e8c4e1cf7db042ccc5df3d1caf20f3ecd6bd368178c7",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:40:36.120Z"
+}

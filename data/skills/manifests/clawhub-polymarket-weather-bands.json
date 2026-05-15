@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38297,
+  "uuid": "skill-clawhub-polymarket-weather-bands",
+  "skillKey": "clawhub-polymarket-weather-bands",
+  "name": "Polymarket Weather Bands",
+  "summary": "Autonomous Polymarket weather-market trading flow for AION Market agents. After the user provides AION API key and wallet private key, the agent should autom...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_weather_bands",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ssj124",
+      "features": [
+        "Autonomous Polymarket weather-market trading flow for AION Market agents",
+        "After the user provides AION API key and wallet private key, the agent should autom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-weather-bands@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83407521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-weather-bands",
+      "url": "https://clawhub.ai/skills/polymarket-weather-bands"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-weather-bands",
+    "url": "https://clawhub.ai/skills/polymarket-weather-bands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-weather-bands-ed3cbd8e0d6e4ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-weather-bands@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-weather-bands-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72e28b29242d4642c87abdbc441c8d5c892c3f76069f81185046221bc564e591",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:55:23.079Z"
+}

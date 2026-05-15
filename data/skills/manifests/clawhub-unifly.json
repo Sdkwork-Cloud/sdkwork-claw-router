@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34788,
+  "uuid": "skill-clawhub-unifly",
+  "skillKey": "clawhub-unifly",
+  "name": "Unifly",
+  "summary": "This skill should be used when the user asks to \"manage UniFi devices\", \"configure UniFi networks\", \"create a VLAN\", \"provision an SSID\", \"create firewall ru...",
+  "version": "0.8.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stefanie Jane",
+      "features": [
+        "This skill should be used when the user asks to \"manage UniFi devices\", \"configure UniFi networ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifly@0.8.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifly",
+      "url": "https://clawhub.ai/skills/unifly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifly",
+    "url": "https://clawhub.ai/skills/unifly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifly-dc7ef9f01da9e5a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifly@0.8.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifly-0.8.2.json",
+      "version": "0.8.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8e2ae981deeb92ca2a70a12fe97c0c4871a906a44e5d00fad9ea9b4edef42a9",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:56:37.223Z"
+}

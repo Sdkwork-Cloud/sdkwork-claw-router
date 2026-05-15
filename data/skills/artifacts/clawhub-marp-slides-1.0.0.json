@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marp-slides@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marp_slides",
+  "skill": {
+    "id": 47029,
+    "skillKey": "clawhub-marp-slides",
+    "name": "Marp Slide Show/Deck Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marp-slides",
+    "url": "https://clawhub.ai/skills/marp-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marp-slides-14c8d985c22d1e69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn docs, notes, data, logs, screenshots, and code summaries into polished Marp slide decks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuller-stack-dev",
+      "userId": "s172f8hen7dnmk561z76d2h48x85dey0",
+      "displayName": "fuller-stack-dev",
+      "image": "https://avatars.githubusercontent.com/u/263060202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777404013248,
+      "changelog": "Publish under clearer marp-slides slug with updated display name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb621a12279cbf612140ae988203efbbb36f229bb74d580ec6ffa26369cd5a8f"
+}

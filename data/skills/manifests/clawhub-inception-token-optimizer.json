@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35817,
+  "uuid": "skill-clawhub-inception-token-optimizer",
+  "skillKey": "clawhub-inception-token-optimizer",
+  "name": "Inception Token Optimizer",
+  "summary": "Optimize Inception Labs token usage to minimize costs. Use when choosing Inception models (Mercury, etc.), crafting prompts for Inception, analyzing token co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inception_token_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nelmaz",
+      "features": [
+        "Optimize Inception Labs token usage to minimize costs",
+        "Use when choosing Inception models (Mercury, etc.), crafting prompts for Inception, analyzing t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inception-token-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12268467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inception-token-optimizer",
+      "url": "https://clawhub.ai/skills/inception-token-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inception-token-optimizer",
+    "url": "https://clawhub.ai/skills/inception-token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inception-token-optimizer-e508270b83267915.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inception-token-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inception-token-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85ac19fe8f5b88b78687f5805a2cd784e90221bf199b9a2150c609171dbf9f26",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:45:30.371Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56781,
+  "uuid": "skill-clawhub-zto",
+  "skillKey": "clawhub-zto",
+  "name": "Zto",
+  "summary": "Use ZTO Express (中通快递) for shipment tracking, shipping guidance, service-type comparison, outlet lookup, and delivery-time or fee estimation. Use when the us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Use ZTO Express (中通快递) for shipment tracking, shipping guidance, service-type comparison, outle.",
+        "Use when the us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zto",
+      "url": "https://clawhub.ai/skills/zto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zto",
+    "url": "https://clawhub.ai/skills/zto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zto-35dc0e701ed089bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ded17b6f3e8c1bea6567f9c1f7f480484845af156da5860d0397ad3931b3e01",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:34:22.627Z"
+}

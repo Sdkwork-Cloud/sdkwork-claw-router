@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9549,
+  "uuid": "skill-clawhub-claw-me-maybe",
+  "skillKey": "clawhub-claw-me-maybe",
+  "name": "Claw Me Maybe - Beeper Desktop API & Multi-Platform Messaging",
+  "summary": "Beeper integration for Clawdbot. Send messages and search chats across WhatsApp, Telegram, Signal, Discord, Slack, Instagram, iMessage, LinkedIn, Facebook Messenger, Google Messages via Beeper Desktop API. Reactions, reminders, attachments.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_me_maybe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickhamze",
+      "features": [
+        "Beeper integration for Clawdbot",
+        "Send messages and search chats across WhatsApp, Telegram, Signal, Discord, Slack, Instagram, iM.",
+        "Reactions, reminders, attachments, mark as read",
+        "Unified multi-platform messaging automation—just ask."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-me-maybe@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-me-maybe",
+      "url": "https://clawhub.ai/skills/claw-me-maybe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-me-maybe",
+    "url": "https://clawhub.ai/skills/claw-me-maybe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-me-maybe-d16d92c170af0a03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-me-maybe@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-me-maybe-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e48c54e5b5e7daa65e308f0b2dcf9ff105e6b83630e879db80cdbcb4e151ad4",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T04:34:23.378Z"
+}

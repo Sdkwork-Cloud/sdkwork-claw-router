@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-trimmer-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_trimmer_online",
+  "skill": {
+    "id": 55658,
+    "skillKey": "clawhub-audio-trimmer-online",
+    "name": "Audio Trimmer Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-trimmer-online",
+    "url": "https://clawhub.ai/skills/audio-trimmer-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-trimmer-online-30fc38a652052fa0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the first 15 seconds and cut everything after the 2-minute mark — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777230035248,
+      "changelog": "- Initial release of Audio Trimmer Online: quickly trim and export audio clips via an easy-to-use cloud service.\n- Supports MP3, WAV, AAC, M4A uploads up to 200MB; processes edits based on user instructions.\n- Automated setup with credential handling and secure session creation; 100 free credits included.\n- Fast turnaround: trimmed audio delivered in 20–40 seconds; exports available in multiple formats.\n- Ideal for podcasters, creators, and students seeking fast, no-install audio editing.\n- Comprehensive error handling, cloud render pipeline, session-based editing, and export workflow documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf1acce786147c5e68c7ebde1a31b625e8909db6d301f82e60c2bdf3bade5ea8"
+}

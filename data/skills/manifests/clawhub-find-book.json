@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32102,
+  "uuid": "skill-clawhub-find-book",
+  "skillKey": "clawhub-find-book",
+  "name": "Find Book",
+  "summary": "Instantly find nonfiction books with Goodreads ratings, summaries, key concepts, and AI suggestions for enhancing your agent's knowledge files.",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_book",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heardlyapp",
+      "features": [
+        "Instantly find nonfiction books with Goodreads ratings, summaries, key concepts, and AI suggest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-book@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13566006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-book",
+      "url": "https://clawhub.ai/skills/find-book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-book",
+    "url": "https://clawhub.ai/skills/find-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-book-c92c182900f43d02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-book@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-book-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7c6e68cf4b84148ebec2b1bcb47e3bd44e87a19f9aa36d2da59f3eb521d324b",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:17:27.693Z"
+}

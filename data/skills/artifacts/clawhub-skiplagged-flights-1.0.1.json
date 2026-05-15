@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skiplagged-flights@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skiplagged_flights",
+  "skill": {
+    "id": 9921,
+    "skillKey": "clawhub-skiplagged-flights",
+    "name": "Skiplagged Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skiplagged-flights",
+    "url": "https://clawhub.ai/skills/skiplagged-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skiplagged-flights-0b7e4d22744b9b73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks to \"find flights\", \"compare itineraries\", \"search hidden-city routes\", \"check cheapest dates\", \"explore destinations\", \"search hotels\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzs",
+      "userId": "publishers:wzs",
+      "displayName": "wzs",
+      "image": "https://avatars.githubusercontent.com/u/599145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2821,
+      "installsAllTime": 10,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771256888248,
+      "changelog": "- Updated skill instructions and recommendations for Skiplagged MCP's latest public server and usage patterns.\n- Improved CLI command examples for direct HTTPS calls, flexible dates, round-trips, and exclusions.\n- Enhanced guidance on output formatting, booking links, and when to caveat hidden-city itineraries.\n- Expanded documentation on requirements, provenance, and troubleshooting tips.\n- No code or functional changes; documentation and metadata update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f3db779617bd8475a655730f285fa9455a6fb1ad023d607873f2916b7f22004"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xero-cli@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xero_cli",
+  "skill": {
+    "id": 22789,
+    "skillKey": "clawhub-xero-cli",
+    "name": "Xero Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xero-cli",
+    "url": "https://clawhub.ai/skills/xero-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xero-cli-d5a75ff63b17b467.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Xero accounting software - manage invoices, contacts, accounts, payments, and bank transactions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teddyengel",
+      "userId": "publishers:teddyengel",
+      "displayName": "TeddyEngel",
+      "image": "https://avatars.githubusercontent.com/u/5671969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773248072833,
+      "changelog": "- Fixed issue with using old xero scopes\n- Clarified the setup instructions for obtaining Xero credentials by noting which OAuth2 scopes should be added on Xero's app configuration page (or that scopes will be requested during OAuth).\n- No other changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f5313f8aa3bfaf10950a22851e32da60710c927ec1c87ed5ceb1920bdb955fe"
+}

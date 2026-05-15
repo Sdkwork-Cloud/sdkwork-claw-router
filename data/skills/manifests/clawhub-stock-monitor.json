@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63098,
+  "uuid": "skill-clawhub-stock-monitor",
+  "skillKey": "clawhub-stock-monitor",
+  "name": "Stock Monitor",
+  "summary": "股票价格实时监控。支持多只股票监控，使用 Yahoo Finance API 获取实时股价，自定义涨跌阈值提醒。当股价波动超过设定阈值时自动发送提醒，支持首次预警和续警机制。用于：(1) 监控持仓股票价格波动 (2) 设置价格提醒 (3) 定期检查股价变化",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "大斌",
+      "features": [
+        "股票价格实时监控。支持多只股票监控，使用 Yahoo Finance API 获取实时股价，自定义涨跌阈值提醒。当股价波动超过设定阈值时自动发送提醒，支持首次预警和续警机制。用于：(1) 监."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3232275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor",
+      "url": "https://clawhub.ai/skills/stock-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor",
+    "url": "https://clawhub.ai/skills/stock-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-1a72e69a51a37323.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69c22875a02e76b0e55b6e6baeb25bf278c9056c30f22e68b214d3d563e404b4",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T12:50:51.237Z"
+}

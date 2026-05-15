@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-environment-analysis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_environment_analysis",
+  "skill": {
+    "id": 8605,
+    "skillKey": "clawhub-market-environment-analysis",
+    "name": "Market Environment Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-environment-analysis",
+    "url": "https://clawhub.ai/skills/market-environment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-environment-analysis-b85a506c627e5889.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive market environment analysis and reporting tool. Analyzes global markets including US, European, Asian markets, forex, commodities, and economic indicators. Provides risk-on/risk-off assessment, sector analysis, and technical."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11583,
+      "installsAllTime": 87,
+      "installsCurrent": 81,
+      "stars": 15,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769870272220,
+      "changelog": "Initial release of Market Environment Analysis skill.\n\n- Provides comprehensive market environment analysis and reporting, covering global equities, forex, commodities, and economic indicators.\n- Assesses trend direction, risk sentiment, volatility, sector rotation, and technical signals.\n- Generates structured, professional market reports with both summary and detailed formats.\n- Includes utilities for formatting, interpreting volatility, and managing timezones.\n- Offers customizations for different trading styles (day, swing, long-term, forex, options).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cd852d7c0d84aaef3c8c9ce132a1922ec0a8508520ef01c68b922c553f348f96"
+}

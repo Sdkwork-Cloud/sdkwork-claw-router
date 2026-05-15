@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60541,
+  "uuid": "skill-clawhub-coursera",
+  "skillKey": "clawhub-coursera",
+  "name": "Coursera",
+  "summary": "Coursera 在线教育平台介绍和选课指南",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coursera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Coursera 在线教育平台介绍和选课指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coursera@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coursera",
+      "url": "https://clawhub.ai/skills/coursera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coursera",
+    "url": "https://clawhub.ai/skills/coursera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coursera-b48c9328a66ad7a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coursera@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-coursera-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc71e41ab53bd4adb782d8ff0e274f4a6597d83b8e87c6c0c34759063362d8e4",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:48:23.738Z"
+}

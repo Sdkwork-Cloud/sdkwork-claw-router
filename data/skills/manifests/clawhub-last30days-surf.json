@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45867,
+  "uuid": "skill-clawhub-last30days-surf",
+  "skillKey": "clawhub-last30days-surf",
+  "name": "last30days-surf",
+  "summary": "Research what people actually said about any topic over the last 30 days across Reddit, X/Twitter, YouTube, GitHub, Hacker News, Polymarket, Bluesky, TikTok,...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_surf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Research what people actually said about any topic over the last 30 days across Reddit, X/Twitt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/last30days-surf@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "last30days-surf",
+      "url": "https://clawhub.ai/skills/last30days-surf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-surf",
+    "url": "https://clawhub.ai/skills/last30days-surf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-surf-d63bcca74a923ce2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/last30days-surf@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-last30days-surf-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81b85b972994b2e6d3066f1cfcdec4a60e1f80ffd0b789c3f9e7204a215337cd",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:34.857Z"
+}

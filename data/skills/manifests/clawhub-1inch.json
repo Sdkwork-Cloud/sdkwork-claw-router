@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36311,
+  "uuid": "skill-clawhub-1inch",
+  "skillKey": "clawhub-1inch",
+  "name": "1inch",
+  "summary": "Provides 1inch API v5.2 client to get optimal DEX trade quotes and execute token swaps across multiple chains with gas and slippage control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1inch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eric1099281",
+      "features": [
+        "Provides 1inch API v5.2 client to get optimal DEX trade quotes and execute token swaps across m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1inch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265237573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1inch",
+      "url": "https://clawhub.ai/skills/1inch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1inch",
+    "url": "https://clawhub.ai/skills/1inch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1inch-e679fb124222495c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1inch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1inch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19546e835083620bca04af28556b8d250d919c92f2c7477aa6cfc0dfedabdb88",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:48:33.583Z"
+}

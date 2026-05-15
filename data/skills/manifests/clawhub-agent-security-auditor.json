@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18355,
+  "uuid": "skill-clawhub-agent-security-auditor",
+  "skillKey": "clawhub-agent-security-auditor",
+  "name": "Agent Security Auditor",
+  "summary": "Audits ERC-8004 agents by analyzing metadata, endpoints, payment configs, and reputation to identify security risks and generate detailed reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_security_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aviclaw",
+      "features": [
+        "Audits ERC-8004 agents by analyzing metadata, endpoints, payment configs, and reputation to ide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-security-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260149483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-security-auditor",
+      "url": "https://clawhub.ai/skills/agent-security-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-security-auditor",
+    "url": "https://clawhub.ai/skills/agent-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-security-auditor-acfb4c6d4104b78f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-security-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab5d42f0a17037e1d6fcccf40c92ec278310ccd2bcb042ab6910821901c84bb7",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T18:37:15.887Z"
+}

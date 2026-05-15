@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rbc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rbc",
+  "skill": {
+    "id": 70768,
+    "skillKey": "clawhub-rbc",
+    "name": "Rbc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rbc",
+    "url": "https://clawhub.ai/skills/rbc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rbc-9c758eed31287539.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加拿大最大银行，业务涵盖个人与商业银行、财富管理、保险及资本市场，市值超2000亿加元，客户逾1700万。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777979176179,
+      "changelog": "Royal Bank of Canada (RBC) skill v1.0.0 released:\n\n- 提供RBC简介、历史时间线、商业模式与护城河分析\n- 汇总关键经营数据及RBC在加拿大与北美市场地位\n- 列举行业地位、技术投入和美国扩张等特色亮点\n- 适用于研究加拿大银行业与RBC国际化战略",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a7e4e397982868f9defafa247e0f34b74c70f1c350b8671b531f90d2fc6ac7a"
+}

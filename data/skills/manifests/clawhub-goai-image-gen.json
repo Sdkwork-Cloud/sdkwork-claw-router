@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38260,
+  "uuid": "skill-clawhub-goai-image-gen",
+  "skillKey": "clawhub-goai-image-gen",
+  "name": "GoAI Image Gen",
+  "summary": "Generate AI images via GoAI API. Use when the user asks to create, generate, draw, edit, render, or make images, pictures, illustrations, posters, avatars, p...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goai_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoAI",
+      "features": [
+        "Generate AI images via GoAI API",
+        "Use when the user asks to create, generate, draw, edit, render, or make images, pictures, illus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goai-image-gen@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/goai-image-gen/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goai-image-gen",
+      "url": "https://clawhub.ai/skills/goai-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goai-image-gen",
+    "url": "https://clawhub.ai/skills/goai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goai-image-gen-61e60447664583df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goai-image-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-goai-image-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0117d2f268d7f614efdae1cd99adc03922100fc38d53dabd8c7b2841376bc43",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:19:04.752Z"
+}

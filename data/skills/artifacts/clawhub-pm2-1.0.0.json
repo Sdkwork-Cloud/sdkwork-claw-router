@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2",
+  "skill": {
+    "id": 9716,
+    "skillKey": "clawhub-pm2",
+    "name": "PM2 Process Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2",
+    "url": "https://clawhub.ai/skills/pm2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-5b8a6a192f8410ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Node.js applications with PM2 process manager. Use for deploying, monitoring, and auto-restarting Node apps in production. Covers starting apps, viewing logs, setting up auto-start on boot, and managing multiple processes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asteinberger",
+      "userId": "publishers:asteinberger",
+      "displayName": "Andy Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/133219358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3137,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769378517632,
+      "changelog": "Initial release - Node.js process management",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6eb2c9afb6899831167472b2d8bcb5c4bc7fd7f4d049329d5a19ee327f872433"
+}

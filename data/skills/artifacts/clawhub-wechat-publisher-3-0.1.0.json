@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-publisher-3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publisher_3",
+  "skill": {
+    "id": 70936,
+    "skillKey": "clawhub-wechat-publisher-3",
+    "name": "微信公众号发布器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publisher-3",
+    "url": "https://clawhub.ai/skills/wechat-publisher-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publisher-3-10d36f50d6842ad3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要发布微信公众号文章、查看热点、配置公众号参数、生成文章内容、或运营微信公众号相关任务时，自动激活此技能。触发词包括：发公众号、微信推文、草稿箱、AppID、AppSecret、公众号运营、热点文章、wx-publish。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyy1976",
+      "userId": "s171y5amvnf58zzw2qfsjncwpx83gsbx",
+      "displayName": "andyy1976",
+      "image": "https://avatars.githubusercontent.com/u/31977726?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774072440965,
+      "changelog": "微信公众号发布器 1.0.0 首次发布，为 WorkBuddy 增加自动化微信公众号内容生产与发布能力。\n\n- 支持自动抓取微博/知乎/百度热点，按关键词智能筛选和评分\n- 一键生成高质量公众号文章，并智能排版为微信标准 HTML\n- 直接推送文章到公众号草稿箱，支持每日定时自动发布\n- 提供热点排行、文章生成、草稿发布等多条命令\n- 完善配置与错误处理机制，简易设置 AppID、AppSecret 与关键词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e45fd699b31dcd78cdc9204d3199837711835709b923b2db38c8cbf53f33bd79"
+}

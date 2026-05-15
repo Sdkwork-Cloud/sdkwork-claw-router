@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neovim-daily-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neovim_daily_digest",
+  "skill": {
+    "id": 57152,
+    "skillKey": "clawhub-neovim-daily-digest",
+    "name": "Neovim Daily Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neovim-daily-digest",
+    "url": "https://clawhub.ai/skills/neovim-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neovim-daily-digest-e6076832404497f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a filtered Markdown digest of important r/neovim posts by combining Reddit RSS feeds (`top/day`, `new`, and `hot`) and prioritizing Neovim tips, plugin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smile618",
+      "userId": "s17dmvh5qt5g2jmfw9fmggxm9n83kz5e",
+      "displayName": "smile618",
+      "image": "https://avatars.githubusercontent.com/u/119727144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774713254292,
+      "changelog": "Initial release: fetch r/neovim RSS feeds, filter low-signal posts, and generate a high-signal Markdown digest for tips, plugin updates, and new plugin launches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca45d3b7e6482688da2cba37eafba7f45850d355e68ff9e9fe637acd50f3ba31"
+}

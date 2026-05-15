@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/didooai-meta-ads-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didooai_meta_ads_publisher",
+  "skill": {
+    "id": 53546,
+    "skillKey": "clawhub-didooai-meta-ads-publisher",
+    "name": "Meta Ads Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didooai-meta-ads-publisher",
+    "url": "https://clawhub.ai/skills/didooai-meta-ads-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didooai-meta-ads-publisher-e1fc4ea6d4e213d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Didoo AI] Executes Meta Ads campaign management tasks — creates new campaigns, makes changes, pauses/activates, changes budgets, duplicates campaigns. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elias-didoo",
+      "userId": "s170zy2wssmkqheacrkh2syyv183vgqw",
+      "displayName": "elias-didoo",
+      "image": "https://avatars.githubusercontent.com/u/234909039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776191052461,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f040fe9e8c983aa3f105a689ef1c0479d2d4c518918053f0b5def6a75c59ddc"
+}

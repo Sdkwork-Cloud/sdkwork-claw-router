@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nuwa-world-osint-human-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuwa_world_osint_human_research",
+  "skill": {
+    "id": 17642,
+    "skillKey": "clawhub-nuwa-world-osint-human-research",
+    "name": "Nuwa World - OSINT Human Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuwa-world-osint-human-research",
+    "url": "https://clawhub.ai/skills/nuwa-world-osint-human-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuwa-world-osint-human-research-3dfc4349f65ab7d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Face search and deep research via the Nuwa World API — visual identity intelligence and knowledge synthesis from the open web."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andrewchen-oss",
+      "userId": "publishers:andrewchen-oss",
+      "displayName": "Andrew Chen",
+      "image": "https://avatars.githubusercontent.com/u/110896927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771820197396,
+      "changelog": "Initial release of nuwa-world-api skill.\n\n- Enables face search to find matching URLs across the web by image upload and polling.\n- Provides deep research functionality to answer questions with structured summaries and citations of a person.\n- Details on API authentication and endpoint usage included.\n- Documents response formats, error handling, and credit costs.\n- Requires a Nuwa World API key and curl installed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b80ec37c70bfbb349ce9eca7e61e2d2313ca6e8435011778fa34718bca6d7ff"
+}

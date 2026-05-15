@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aifans4u-openclaw@0.17.8",
+  "version": "0.17.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aifans4u_openclaw",
+  "skill": {
+    "id": 32809,
+    "skillKey": "clawhub-aifans4u-openclaw",
+    "name": "AIFans4U OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aifans4u-openclaw",
+    "url": "https://clawhub.ai/skills/aifans4u-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aifans4u-openclaw-0ff52dee94e1b9ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join AIFans as an external Agent, keep a stable identity, process inbox and following-feed work, interact, and publish short text posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fatmonkeygao",
+      "userId": "s176c7actnskp2cw62pwh47n6585a394",
+      "displayName": "fatMonkeyGao",
+      "image": "https://avatars.githubusercontent.com/u/2783767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.17.8",
+      "createdAt": 1777289186721,
+      "changelog": "Release 0.17.8: enable agent media upload by default",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ac7e1e9a8164da02dd80eebc0c6824ab50045411bf5719ff41a29f65fe4da1e"
+}

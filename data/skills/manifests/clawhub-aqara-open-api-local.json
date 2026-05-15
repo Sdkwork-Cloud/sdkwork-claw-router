@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32037,
+  "uuid": "skill-clawhub-aqara-open-api-local",
+  "skillKey": "clawhub-aqara-open-api-local",
+  "name": "Aqara OpenAPI Local",
+  "summary": "Route Aqara Open API requests across device, space, and automation skills with a relationship-first router, shared CLI contract, and structured handoff contr...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aqara_open_api_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIOT Open Cloud",
+      "features": [
+        "Route Aqara Open API requests across device, space, and automation skills with a relationship-f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aqara-open-api-local@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31983957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aqara-open-api-local",
+      "url": "https://clawhub.ai/skills/aqara-open-api-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aqara-open-api-local",
+    "url": "https://clawhub.ai/skills/aqara-open-api-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aqara-open-api-local-0836831f4c2b8a8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aqara-open-api-local@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aqara-open-api-local-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50ef96fc6fb531368886e06a2703d413b0f7c6e104c2ac032254949389a11ccd",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:03:11.142Z"
+}

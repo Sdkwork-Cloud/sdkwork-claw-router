@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44560,
+  "uuid": "skill-clawhub-skillweave-sdk-publish-smoke-test",
+  "skillKey": "clawhub-skillweave-sdk-publish-smoke-test",
+  "name": "Skillweave SDK publish smoke test",
+  "summary": "Verifies ClawHub publish flows from the TypeScript client with a non-trivial SKILL.md body.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillweave_sdk_publish_smoke_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nashir Jamali",
+      "features": [
+        "Verifies ClawHub publish flows from the TypeScript client with a non-trivial SKILL.md body."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillweave-sdk-publish-smoke-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29351220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillweave-sdk-publish-smoke-test",
+      "url": "https://clawhub.ai/skills/skillweave-sdk-publish-smoke-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillweave-sdk-publish-smoke-test",
+    "url": "https://clawhub.ai/skills/skillweave-sdk-publish-smoke-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillweave-sdk-publish-smoke-test-a39609627ad11fbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillweave-sdk-publish-smoke-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillweave-sdk-publish-smoke-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f2e0c33fde73ed0f591c8c413c6b38eb84bd68e5963f4bd14f86cd15e706a87",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T13:00:39.457Z"
+}

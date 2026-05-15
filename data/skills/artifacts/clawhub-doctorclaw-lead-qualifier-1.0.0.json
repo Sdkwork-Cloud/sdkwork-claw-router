@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctorclaw-lead-qualifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_lead_qualifier",
+  "skill": {
+    "id": 54308,
+    "skillKey": "clawhub-doctorclaw-lead-qualifier",
+    "name": "DoctorClaw Lead Qualifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-lead-qualifier",
+    "url": "https://clawhub.ai/skills/doctorclaw-lead-qualifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-lead-qualifier-0d2060a0375b4c87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lead qualifier — score inbound leads based on custom criteria, prioritize hot prospects, draft outreach. On-demand or cron."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceobotson-bot",
+      "userId": "s179qe3ytytdn9499vw61m1c4h83hhr8",
+      "displayName": "ceobotson-bot",
+      "image": "https://avatars.githubusercontent.com/u/263067918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777727007464,
+      "changelog": "doctorclaw-lead-qualifier 1.0.0\n\n- Initial release of the skill for automated lead qualification and scoring.\n- Scores inbound leads based on customizable criteria: company size, industry, budget signals, role, geography, and engagement.\n- Ranks and categorizes leads (Hot, Qualified, Warm, Cold) with clear reasoning and disqualification notes.\n- Drafts personalized outreach messages for qualified and hot leads.\n- Provides a detailed, actionable lead qualification report.\n- Supports easy configuration and optional CRM/email integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccf5150defe2b3db9d5ca8e366d43b2625f3bd969719f5a896798fb4ed5f5de0"
+}

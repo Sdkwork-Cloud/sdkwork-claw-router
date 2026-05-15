@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nk-images-search@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nk_images_search",
+  "skill": {
+    "id": 9999,
+    "skillKey": "clawhub-nk-images-search",
+    "name": "NK Images Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nk-images-search",
+    "url": "https://clawhub.ai/skills/nk-images-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nk-images-search-7927c406ade3d510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 1+ million free high-quality AI stock photos. Generate up to 240 free AI images daily. No API key, no tokens, no cost. 235+ niches and growing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tompltw",
+      "userId": "publishers:tompltw",
+      "displayName": "tompltw",
+      "image": "https://avatars.githubusercontent.com/u/258432537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2085,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 10,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1770701680792,
+      "changelog": "- Clarified that all image URLs (view, download, thumbnail) must be taken exactly from the API response; do not construct URLs manually.\n- Updated documentation to reflect that the API now includes ready-to-use `viewUrl` and `downloadUrl` fields for each image.\n- Revised descriptions and instructions for presenting generated images, emphasizing the use of direct API-provided links.\n- Adjusted daily AI image generation limits messaging to state up to 240 free AI images per day.\n- Updated the skill description for clarity on API access, quotas, and usage requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45e7f013202f1499066ea7f2f304c5783f8ffa5a10ef4f08c907486f813f129e"
+}

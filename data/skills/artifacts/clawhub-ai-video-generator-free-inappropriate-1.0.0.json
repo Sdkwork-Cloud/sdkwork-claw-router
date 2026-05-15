@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-inappropriate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_inappropriate",
+  "skill": {
+    "id": 42925,
+    "skillKey": "clawhub-ai-video-generator-free-inappropriate",
+    "name": "Ai Video Generator Free Inappropriate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-inappropriate",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-inappropriate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-inappropriate-47a3d3a1b8789c5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into generated video clips with this skill. Works with MP4, MOV, WebM, AVI files up to 500MB. content creators use it for generating vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792902344,
+      "changelog": "AI Video Generator Free Inappropriate v1.0.0 — Initial Release\n\n- Generate 1080p video clips from text prompts with minimal content restrictions.\n- Supports MP4, MOV, WebM, AVI files up to 500MB for export and upload.\n- Provides free anonymous access with 100 credits (7-day expiry) via the NEMO_TOKEN system.\n- Full pipeline: prompt input, video generation, cloud rendering, export, and download.\n- Handles credits, session state, and error codes; includes multi-track editing (video, audio, text).\n- Fast cloud GPU processing; most exports complete within 1–2 minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c0f003d4af0f764352279b3dd0529f010046066b1a57266c9b81068fd9cda43"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10209,
+  "uuid": "skill-clawhub-sona-security-audit",
+  "skillKey": "clawhub-sona-security-audit",
+  "name": "Security Audit (Sona)",
+  "summary": "Fail-closed security auditing for OpenClaw/ClawHub skills & repos: trufflehog secrets scanning, semgrep SAST, prompt-injection/persistence signals, and supply-chain hygiene checks before enabling or installing.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sona_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "virtaava",
+      "features": [
+        "Fail-closed security auditing for OpenClaw/ClawHub skills & repos: trufflehog secrets scanning,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sona-security-audit@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120133085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sona-security-audit",
+      "url": "https://clawhub.ai/skills/sona-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sona-security-audit",
+    "url": "https://clawhub.ai/skills/sona-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sona-security-audit-3ffe2ae956326e03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sona-security-audit@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-sona-security-audit-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e7b1dbdbf64f9f57ca4a136df6273210490950923ccb94e9f77b73fd54cd80e",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T00:23:40.223Z"
+}

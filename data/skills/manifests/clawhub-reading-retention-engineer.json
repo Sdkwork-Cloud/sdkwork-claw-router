@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64733,
+  "uuid": "skill-clawhub-reading-retention-engineer",
+  "skillKey": "clawhub-reading-retention-engineer",
+  "name": "Reading Retention Engineer",
+  "summary": "帮助设计个性化阅读笔记系统，提升阅读留存，将书籍内容转化为可长期记忆和实用知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_retention_engineer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KingOfZhao",
+      "features": [
+        "帮助设计个性化阅读笔记系统，提升阅读留存，将书籍内容转化为可长期记忆和实用知识。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reading-retention-engineer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46547091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reading-retention-engineer",
+      "url": "https://clawhub.ai/skills/reading-retention-engineer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-retention-engineer",
+    "url": "https://clawhub.ai/skills/reading-retention-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-retention-engineer-161bc08bb7707e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reading-retention-engineer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reading-retention-engineer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6221f0fe32cfb80407706716af34047cc6e4d75f8a8e47ee96706fae77add950",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T21:09:16.107Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68108,
+  "uuid": "skill-clawhub-qywx-send-skill",
+  "skillKey": "clawhub-qywx-send-skill",
+  "name": "向企业微信发送消息",
+  "summary": "严格按照企业微信文档规范，支持文本、markdown、markdown_v2、图片、图文等多种消息类型的发送技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qywx_send_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wxf8126275",
+      "features": [
+        "严格按照企业微信文档规范，支持文本、markdown、markdown_v2、图片、图文等多种消息类型的发送技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qywx-send-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2673544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qywx-send-skill",
+      "url": "https://clawhub.ai/skills/qywx-send-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qywx-send-skill",
+    "url": "https://clawhub.ai/skills/qywx-send-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qywx-send-skill-3a3bbf1f514778de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qywx-send-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qywx-send-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34496a75ce229dd17fa9b97910d4f5538b60a6631cd29de305428c7b062b6048",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:41:16.429Z"
+}

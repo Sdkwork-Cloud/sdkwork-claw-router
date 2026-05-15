@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35019,
+  "uuid": "skill-clawhub-claw-setup-configuration",
+  "skillKey": "clawhub-claw-setup-configuration",
+  "name": "Claw Setup Configuration",
+  "summary": "NotebookLM-powered setup and configuration assistant for OpenClaw. 185 sources, cited answers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_setup_configuration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos De La Torre",
+      "features": [
+        "NotebookLM-powered setup and configuration assistant for OpenClaw",
+        "185 sources, cited answers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-setup-configuration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130411099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-setup-configuration",
+      "url": "https://clawhub.ai/skills/claw-setup-configuration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-setup-configuration",
+    "url": "https://clawhub.ai/skills/claw-setup-configuration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-setup-configuration-dd800834e5beb753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-setup-configuration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-setup-configuration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee04f17a7261e2bbd3f73caafda605d50284c4a34e5190d60ad05fc21144cd9f",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:05:48.239Z"
+}

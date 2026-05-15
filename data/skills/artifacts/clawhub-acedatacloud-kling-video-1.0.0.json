@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-kling-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_kling_video",
+  "skill": {
+    "id": 40218,
+    "skillKey": "clawhub-acedatacloud-kling-video",
+    "name": "Kling Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-kling-video",
+    "url": "https://clawhub.ai/skills/acedatacloud-kling-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-kling-video-9022fbcf6fa78bee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos with Kuaishou Kling via AceDataCloud API. Use when creating videos from text or images, extending existing videos, or applying motion cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774154345133,
+      "changelog": "- Initial release: Easily generate AI videos using Kuaishou Kling via AceDataCloud API.\n- Supports text-to-video, image-to-video, video extension, and motion control workflows.\n- Multiple video models and quality modes available for different speed, cost, and quality needs.\n- Authentication via ACEDATACLOUD_API_TOKEN environment variable required.\n- Clear documentation for endpoints, parameters, and usage examples provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9f83412f4f2f31a6bc38a251cfcc5b0b0ca9bdb6bcce55640079b40d97bcbe"
+}

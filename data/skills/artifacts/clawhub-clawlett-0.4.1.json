@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawlett@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlett",
+  "skill": {
+    "id": 16225,
+    "skillKey": "clawhub-clawlett",
+    "name": "Clawlett"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlett",
+    "url": "https://clawhub.ai/skills/clawlett",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlett-3c0a295e7af66c2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure autonomous token swaps on Base Mainnet via a Gnosis Safe using MEV-protected CoW Protocol, with token approval, ETH wrapping, scam detection, and uniq..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xardi",
+      "userId": "publishers:0xardi",
+      "displayName": "Ardian",
+      "image": "https://avatars.githubusercontent.com/u/30511811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 681,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1772605961700,
+      "changelog": "clawlett v0.4.1\n\n- No code or documentation changes detected in this release.\n- Functionality and features remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f0d083cb98974813aee7dfef10e8da5084d6a28b74201824449d892df573041"
+}

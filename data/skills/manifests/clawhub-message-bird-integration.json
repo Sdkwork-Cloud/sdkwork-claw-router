@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39314,
+  "uuid": "skill-clawhub-message-bird-integration",
+  "skillKey": "clawhub-message-bird-integration",
+  "name": "Message Bird",
+  "summary": "Message Bird integration. Manage Persons, Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Message Bird data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_bird_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Message Bird integration",
+        "Manage Persons, Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Message Bird data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-bird-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-bird-integration",
+      "url": "https://clawhub.ai/skills/message-bird-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-bird-integration",
+    "url": "https://clawhub.ai/skills/message-bird-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-bird-integration-7cfb6afe0a7d1a16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-bird-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-bird-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d00406e1e71195316d2fc619707a46e7edb318060174065b519e45cafed3c31",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:13:20.212Z"
+}

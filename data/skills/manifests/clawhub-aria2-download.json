@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60356,
+  "uuid": "skill-clawhub-aria2-download",
+  "skillKey": "clawhub-aria2-download",
+  "name": "Aria2 Download",
+  "summary": "通过 Aria2 RPC 添加下载任务，支持实时进度监控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_download",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ingress",
+      "features": [
+        "通过 Aria2 RPC 添加下载任务，支持实时进度监控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aria2-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42857023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aria2-download",
+      "url": "https://clawhub.ai/skills/aria2-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-download",
+    "url": "https://clawhub.ai/skills/aria2-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-download-6584c516d9d583f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aria2-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aria2-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1bf0af8e78b38988b361774edae952620fc85e3f5d00de825cac6770ec50254",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:04:07.377Z"
+}

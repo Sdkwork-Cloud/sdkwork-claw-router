@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65502,
+  "uuid": "skill-clawhub-skill-tracker-aiyst",
+  "skillKey": "clawhub-skill-tracker-aiyst",
+  "name": "Skill Tracker",
+  "summary": "通用技能使用统计追踪器，支持 Python 和 Node.js 技能，自动记录调用次数、成功率，生成使用排行榜。数据本地存储，保护隐私。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_tracker_aiyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiyst1982",
+      "features": [
+        "通用技能使用统计追踪器，支持 Python 和 Node.js 技能，自动记录调用次数、成功率，生成使用排行榜。数据本地存储，保护隐私。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-tracker-aiyst@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128301763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-tracker-aiyst",
+      "url": "https://clawhub.ai/skills/skill-tracker-aiyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-tracker-aiyst",
+    "url": "https://clawhub.ai/skills/skill-tracker-aiyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-tracker-aiyst-8fa22a4c9d1bb919.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-tracker-aiyst@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-tracker-aiyst-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:414f2dd0b8fc10fb2ee6dcf2f8b2220707f9eb32af7cc8485460e1e3078672d3",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:36:18.593Z"
+}

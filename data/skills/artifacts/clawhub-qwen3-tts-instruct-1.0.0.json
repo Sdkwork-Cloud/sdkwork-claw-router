@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen3-tts-instruct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen3_tts_instruct",
+  "skill": {
+    "id": 13711,
+    "skillKey": "clawhub-qwen3-tts-instruct",
+    "name": "Qwen3 TTS Instruct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen3-tts-instruct",
+    "url": "https://clawhub.ai/skills/qwen3-tts-instruct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen3-tts-instruct-607d778fd4819c6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Bailian Qwen TTS with voice/mood presets"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanmoon321",
+      "userId": "publishers:yanmoon321",
+      "displayName": "yanmoon321",
+      "image": "https://avatars.githubusercontent.com/u/60753669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1256,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770666114511,
+      "changelog": "Initial release v1.0.0\n- Supports Qwen3-Instruct & Flash (Bailian).\n- 30+ Mood Presets and International Endpoint support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c71a02e070b1c06b23f04b8162bbcb27beda11e5112bc138c12974523d71938e"
+}

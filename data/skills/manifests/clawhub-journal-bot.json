@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27103,
+  "uuid": "skill-clawhub-journal-bot",
+  "skillKey": "clawhub-journal-bot",
+  "name": "JournalBot Daily Journaling with AI Prompts",
+  "summary": "Daily journaling through your agent. Smart prompts, mood tracking, weekly reflections, pattern detection. Private, local, no cloud.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.journal_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Daily journaling through your agent",
+        "Smart prompts, mood tracking, weekly reflections, pattern detection",
+        "Private, local, no cloud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/journal-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "journal-bot",
+      "url": "https://clawhub.ai/skills/journal-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "journal-bot",
+    "url": "https://clawhub.ai/skills/journal-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/journal-bot-6fc4f3d2da2b9707.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/journal-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-journal-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c13a0249bc36e88a7233637ed6558611066bc9a670d1d9e40fa564537c031d52",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:30:07.530Z"
+}

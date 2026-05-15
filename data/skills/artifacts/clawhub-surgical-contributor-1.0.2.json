@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surgical-contributor@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surgical_contributor",
+  "skill": {
+    "id": 21670,
+    "skillKey": "clawhub-surgical-contributor",
+    "name": "Surgical Contributor (Minimal Diff PR Skill)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surgical-contributor",
+    "url": "https://clawhub.ai/skills/surgical-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surgical-contributor-9e937d9707e03dce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deliver small, high-signal contributions by finding and fixing one real pain point with the narrowest safe change, adding regression protection, and writing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dj-shortcut",
+      "userId": "s1720h3heb6w5m0m5wxcnjkw3x83kwet",
+      "displayName": "Andy Arijs",
+      "image": "https://avatars.githubusercontent.com/u/78924184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776113491195,
+      "changelog": "- Refined and simplified contribution doctrine, emphasizing minimal, goal-driven, and transparent surgical changes.\n- Clarified core principles: think before coding, prioritize simplicity, and explicitly state assumptions when uncertain.\n- Tightened definitions of operating modes and the \"surgical\" approach, discouraging unrelated code or abstraction changes.\n- Streamlined workflow steps and self-review checklist for increased clarity and lower review burden.\n- Expanded stack-specific guidance for prioritizing high-impact, low-surface-area fixes, especially in UI/stateful codebases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9598ff08da7218dc0afef2cd7c5c3c3b6bba443e8b7ebcb4389212ac74bfe4a"
+}

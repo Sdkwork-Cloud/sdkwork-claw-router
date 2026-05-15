@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39045,
+  "uuid": "skill-clawhub-shoofly-plugin-scan",
+  "skillKey": "clawhub-shoofly-plugin-scan",
+  "name": "Shoofly Plugin Scan",
+  "summary": "Pre-install plugin security scanner for OpenClaw plugins",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shoofly_plugin_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow-leeroy-jenkins05",
+      "features": [
+        "Pre-install plugin security scanner for OpenClaw plugins"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shoofly-plugin-scan@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266177925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shoofly-plugin-scan",
+      "url": "https://clawhub.ai/skills/shoofly-plugin-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shoofly-plugin-scan",
+    "url": "https://clawhub.ai/skills/shoofly-plugin-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shoofly-plugin-scan-8c42c631f7f52c03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shoofly-plugin-scan@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shoofly-plugin-scan-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0ea38cfa3bceb0b53efe630298189715c52b27c623e52d215a6fa70b06a5e32",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:40:54.160Z"
+}

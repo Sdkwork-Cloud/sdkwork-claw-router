@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20466,
+  "uuid": "skill-clawhub-social-media-metrics",
+  "skillKey": "clawhub-social-media-metrics",
+  "name": "Social Media Metrics",
+  "summary": "Fetch follower counts and social media metrics from 11+ platforms using profile URLs or nicknames, including Bilibili, YouTube, TikTok, Instagram, and more.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_metrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bright Guo",
+      "features": [
+        "Fetch follower counts and social media metrics from 11+ platforms using profile URLs or nicknam."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-media-metrics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2232229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-media-metrics",
+      "url": "https://clawhub.ai/skills/social-media-metrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-metrics",
+    "url": "https://clawhub.ai/skills/social-media-metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-metrics-ad6a2593bdffe73f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-media-metrics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-media-metrics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ac3c8f4af7f557272cad8460311d7e14a557dc75032abe2e20688460d45e50b",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:54:45.429Z"
+}

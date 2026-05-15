@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-ubuntu-hardening-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_ubuntu_hardening_v2",
+  "skill": {
+    "id": 43171,
+    "skillKey": "clawhub-toolweb-ubuntu-hardening-v2",
+    "name": "Ubuntu Hardening V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-ubuntu-hardening-v2",
+    "url": "https://clawhub.ai/skills/toolweb-ubuntu-hardening-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-ubuntu-hardening-v2-915241235508558f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Ubuntu 22.04 LTS security configuration generator for STIG-compliant hardening."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774890115727,
+      "changelog": "Ubuntu Linux Security Hardening Tool v1.0.0\n\n- Initial release of professional Ubuntu 22.04 LTS security configuration generator.\n- Provides automated, STIG-compliant hardening configuration file generation.\n- Supports kernel hardening, SSH security, firewall policies, and more.\n- Offers endpoints for health check, configuration generation, option listing, and category metadata.\n- Tiered pricing plans available for varying usage needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1ca9c8f9ffbb0c46a753e0d878d753a23635d60e1a6c36c774f0f2341d5dd82"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26583,
+  "uuid": "skill-clawhub-city-weathers",
+  "skillKey": "clawhub-city-weathers",
+  "name": "mycityweather",
+  "summary": "Provides structured weather data including temperature, humidity, wind, precipitation, and clothing advice for specified cities and dates.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_weathers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shilingong",
+      "features": [
+        "Provides structured weather data including temperature, humidity, wind, precipitation, and clot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/city-weathers@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29935757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "city-weathers",
+      "url": "https://clawhub.ai/skills/city-weathers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-weathers",
+    "url": "https://clawhub.ai/skills/city-weathers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-weathers-d9e9b20406606266.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/city-weathers@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-city-weathers-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75b5064a7ff2b45c15fd963d4a6b2d74204fa859f66fea3ce526dd3e6a922c7f",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:00:36.471Z"
+}

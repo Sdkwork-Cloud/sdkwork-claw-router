@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25271,
+  "uuid": "skill-clawhub-irene-ai-news",
+  "skillKey": "clawhub-irene-ai-news",
+  "name": "Daily Ai News",
+  "summary": "Daily AI news aggregator. Fetches latest AI-related content from HackerNews, GitHub Trending, ArXiv papers, and web search (Brave/Tavily). Use for: (1) Getti...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.irene_ai_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chyher",
+      "features": [
+        "Daily AI news aggregator",
+        "Fetches latest AI-related content from HackerNews, GitHub Trending, ArXiv papers, and web searc.",
+        "Use for: (1) Getti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/irene-ai-news@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48779725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "irene-ai-news",
+      "url": "https://clawhub.ai/skills/irene-ai-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "irene-ai-news",
+    "url": "https://clawhub.ai/skills/irene-ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/irene-ai-news-94a9ba643e3a2289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/irene-ai-news@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-irene-ai-news-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e26273aeca8ae263fde86187d9b185b0432d6b49e92363416abc2aa3496d4144",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:05:08.341Z"
+}

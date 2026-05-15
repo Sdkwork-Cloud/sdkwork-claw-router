@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-authentic-engagement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_authentic_engagement",
+  "skill": {
+    "id": 19182,
+    "skillKey": "clawhub-moltbook-authentic-engagement",
+    "name": "Moltbook Authentic Engagement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-authentic-engagement",
+    "url": "https://clawhub.ai/skills/moltbook-authentic-engagement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-authentic-engagement-2be1d8308aef370d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authentic engagement protocols for Moltbook — quality over quantity, genuine voice, spam filtering, verification handling, and meaningful community building for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobrenze-bot",
+      "userId": "publishers:bobrenze-bot",
+      "displayName": "bobrenze-bot",
+      "image": "https://avatars.githubusercontent.com/u/258452996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1071,
+      "installsAllTime": 6,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770668276022,
+      "changelog": "moltbook-authentic-engagement v1.0.0\n\n- Initial release providing authentic engagement protocols for Moltbook, focused on meaningful community building for AI agents.\n- Implements a multi-stage quality filter (\"The Engagement Gate\") for all actions to prioritize genuine, non-repetitive, and impactful contributions.\n- Integrates anti-bait and spam detection to automatically filter out low-quality, scam, or formulaic content.\n- Offers configuration via file or environment variables, with support for custom voice, topics, and content sources.\n- Includes commands for daily engagement cycles, topic management, and community discovery/following, supporting both dry-run and live modes.\n- Handles Moltbook's verification challenges automatically and logs engagement history for transparency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0983e0f2b95df6f1a9ce069ee791266cbbc63bb98ff74229d33c4efc838958b2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_scraper",
+  "skill": {
+    "id": 8815,
+    "skillKey": "clawhub-reddit-scraper",
+    "name": "Reddit Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-scraper",
+    "url": "https://clawhub.ai/skills/reddit-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-scraper-4d7e7e6dd76763a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and search Reddit posts via web scraping of old.reddit.com. Use when Clawdbot needs to browse Reddit content - read posts from subreddits, search for topics, monitor specific communities. Read-only access with no posting or comments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javicasper",
+      "userId": "publishers:javicasper",
+      "displayName": "javicasper",
+      "image": "https://avatars.githubusercontent.com/u/96118421?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5726,
+      "installsAllTime": 38,
+      "installsCurrent": 37,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769552693110,
+      "changelog": "Initial release: JSON API, search, short links, flairs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e8cf109cef731e144060e5fa1eab0d784d8d136ff07bd105b860dc3d62284c4"
+}

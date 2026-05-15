@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/package-manager-updates@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_manager_updates",
+  "skill": {
+    "id": 34001,
+    "skillKey": "clawhub-package-manager-updates",
+    "name": "Package Manager Updates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-manager-updates",
+    "url": "https://clawhub.ai/skills/package-manager-updates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-manager-updates-40e4beeff401a42c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check, summarize, and update packages across all installed package managers (npm, pip, brew, cargo, go, etc.). Use when user wants to (1) check for outdated..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guillaumemaka",
+      "userId": "s174f9wqrnnwgec1r4n3d76cws83gh2h",
+      "displayName": "Guillaume Maka",
+      "image": "https://avatars.githubusercontent.com/u/1392570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774369928884,
+      "changelog": "- Initial release of package-manager-updates.\n- Automates checking, summarizing, and updating packages across major package managers (npm, pip, brew, cargo, go).\n- Supports concise tables showing outdated counts and details per package.\n- Provides update commands, but only executes updates with explicit user confirmation.\n- Excludes OpenClaw and system-critical packages from updates by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e25d2d6d5b6e1fb53b7edfc3720ba4a3bceca38dc3cc6a4481319c2ecbe6b6b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_trader",
+  "skill": {
+    "id": 18215,
+    "skillKey": "clawhub-paper-trader",
+    "name": "Paper Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-trader",
+    "url": "https://clawhub.ai/skills/paper-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-trader-c5b81a2ad4ac48af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured paper-trading loop with SQLite-backed event logging, position tracking, and PnL review. Use when opening/closing simulated trades, journalin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brs999",
+      "userId": "s178txbzyphw8mm8dpnnh6eyx183m9m4",
+      "displayName": "Ben",
+      "image": "https://avatars.githubusercontent.com/u/6516437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772650962073,
+      "changelog": "- Tightened requirements: `mint` is now REQUIRED for `snapshot` and `open` commands.\n- Updated instructions for DEX tokens: use wrapped token addresses (e.g., WETH, WBTC).\n- Specified that `--source dexscreener` should be used for snapshots.\n- Clarified workflow step to always provide `--mint` and `--source dexscreener` when logging snapshots.\n- Improved documentation for asset identity, especially for DEX trading.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16a6c9590d85cfcb2756c2ab66d27d4a79a7c61420de96dc2bb2e2fdbb1e5cf0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-shield@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_shield",
+  "skill": {
+    "id": 17396,
+    "skillKey": "clawhub-aegis-shield",
+    "name": "Aegis Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-shield",
+    "url": "https://clawhub.ai/skills/aegis-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-shield-672c9b022798c789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prompt-injection and data-exfiltration screening for untrusted text. Use before summarizing web/email/social content, before replying, and especially before writing anything to memory. Provides a safe memory append workflow (scan → lint →."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deegerwalker",
+      "userId": "publishers:deegerwalker",
+      "displayName": "Deegerwalker",
+      "image": "https://avatars.githubusercontent.com/u/5677785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1433,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770889496321,
+      "changelog": "Initial release: local prompt-injection screening + safe memory append (scan → lint → accept/quarantine).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4cbea8d20213b108aaa6fb3eb4cf025647eb278e605e9603fa605f9f8d4e0327"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-hot-zh-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_hot_zh_aisa",
+  "skill": {
+    "id": 69207,
+    "skillKey": "clawhub-stock-hot-zh-aisa",
+    "name": "stock-hot-zh-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-hot-zh-aisa",
+    "url": "https://clawhub.ai/skills/stock-hot-zh-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-hot-zh-aisa-f6a018013718d647.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 AISA 扫描热门股票和加密资产的实时异动。触发条件：当用户想知道现在什么最热、什么在大幅波动、市场动量如何、涨幅榜或消息驱动异动时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776517170149,
+      "changelog": "Initial release of \"stock-hot-zh-aisa\":\n\n- Scan for real-time top movers and trending stocks & crypto assets via AISA.\n- Supports use cases like viewing current market hot assets, large fluctuations, and top gainers/losers.\n- Provides quick momentum and news-driven market summaries.\n- Requires AISA_API_KEY for operation.\n- Includes usage instructions and example commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d170bda3ddf18285a6fe5f307bf0430efcfdda271f6e878b508d616a9c5ce95"
+}

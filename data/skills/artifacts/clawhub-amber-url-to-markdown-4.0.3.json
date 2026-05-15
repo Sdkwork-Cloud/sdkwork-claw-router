@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amber-url-to-markdown@4.0.3",
+  "version": "4.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_url_to_markdown",
+  "skill": {
+    "id": 63552,
+    "skillKey": "clawhub-amber-url-to-markdown",
+    "name": "Amber Url To Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-url-to-markdown",
+    "url": "https://clawhub.ai/skills/amber-url-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-url-to-markdown-5249ea207a307386.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能 URL 转 Markdown 工具（V4.0 可扩展架构）。**支持自动触发 Hook**，当用户发送 URL 链接时自动抓取内容并转换为 Markdown 格式。采用可扩展的分类处理架构，支持豆包、微信公众号、知乎、掘金等网站。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lsa03",
+      "userId": "s17cx76kk5gxt1ztfactgb6trx83gerc",
+      "displayName": "Amber03",
+      "image": "https://avatars.githubusercontent.com/u/35926843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "4.0.3",
+      "createdAt": 1774876155485,
+      "changelog": "代码审查确认无问题，正式发布到 ClawHub。确认 Hook 自动触发功能正常工作，所有依赖和配置正确。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:857e177b67b4f4bc0142c8f7cd46ca2c6dc30b680506f54e9112c625771365a4"
+}

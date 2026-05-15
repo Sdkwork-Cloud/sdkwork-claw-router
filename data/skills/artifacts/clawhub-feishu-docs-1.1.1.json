@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-docs@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_docs",
+  "skill": {
+    "id": 64676,
+    "skillKey": "clawhub-feishu-docs",
+    "name": "飞书文档API技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-docs",
+    "url": "https://clawhub.ai/skills/feishu-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-docs-25d0553c27245a33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书文档(Docx)API技能。用于创建、读取、更新和删除飞书文档。支持Markdown/HTML内容转换、文档权限管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenlikewatermelon",
+      "userId": "publishers:stevenlikewatermelon",
+      "displayName": "StevenLikeWatermelon",
+      "image": "https://avatars.githubusercontent.com/u/34053346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3502,
+      "installsAllTime": 24,
+      "installsCurrent": 21,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770628591683,
+      "changelog": "发布版本1.1.1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:922ea69c7401248f017420417446d940f128af602643172e64fe2ec8e52b9490"
+}

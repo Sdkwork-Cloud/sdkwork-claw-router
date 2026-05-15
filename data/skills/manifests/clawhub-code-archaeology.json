@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28335,
+  "uuid": "skill-clawhub-code-archaeology",
+  "skillKey": "clawhub-code-archaeology",
+  "name": "Code Archaeology",
+  "summary": "Analyze legacy codebases to extract business rules, technical specifications, and migration requirements. Use when analyzing PHP, Java, Python, or other lega...",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_archaeology",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "roboe",
+      "features": [
+        "Analyze legacy codebases to extract business rules, technical specifications, and migration req.",
+        "Use when analyzing PHP, Java, Python, or other lega..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-archaeology@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16663408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-archaeology",
+      "url": "https://clawhub.ai/skills/code-archaeology"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-archaeology",
+    "url": "https://clawhub.ai/skills/code-archaeology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-archaeology-14ebff744dee76a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-archaeology@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-archaeology-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d435b0a1091cebc8c985226b222703bccf68bf24be4bd45faa7fd90a9371191d",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:45:15.427Z"
+}

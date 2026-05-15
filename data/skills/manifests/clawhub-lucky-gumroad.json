@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52585,
+  "uuid": "skill-clawhub-lucky-gumroad",
+  "skillKey": "clawhub-lucky-gumroad",
+  "name": "Lucky Gumroad Automation",
+  "summary": "Gumroad store automation — product creation, uploads, profile editing, data pulls. Use when any task involves Gumroad (creating products, managing listings,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_gumroad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rmbell09-lang",
+      "features": [
+        "Gumroad store automation — product creation, uploads, profile editing, data pulls",
+        "Use when any task involves Gumroad (creating products, managing listings,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lucky-gumroad@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238621327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lucky-gumroad",
+      "url": "https://clawhub.ai/skills/lucky-gumroad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-gumroad",
+    "url": "https://clawhub.ai/skills/lucky-gumroad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-gumroad-39f1661c3ae4cdba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lucky-gumroad@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lucky-gumroad-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4b86dba014615e184eefb12a7312566fe8c6044c0ffbdf2da96b0001d6fbc7f",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:18:23.111Z"
+}

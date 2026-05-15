@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/external-ki-integration-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.external_ki_integration_backup",
+  "skill": {
+    "id": 17739,
+    "skillKey": "clawhub-external-ki-integration-backup",
+    "name": "External Ki Integration Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "external-ki-integration-backup",
+    "url": "https://clawhub.ai/skills/external-ki-integration-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/external-ki-integration-backup-00e03b0eb1a389be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for accessing external AI services (ChatGPT, Claude, Hugging Face, etc.) via browser automation (Chrome Relay) and APIs to assist with tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "konscious0beast",
+      "userId": "publishers:konscious0beast",
+      "displayName": "konscious0beast",
+      "image": "https://avatars.githubusercontent.com/u/197619412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771783056326,
+      "changelog": "External KI Integration v1.0.0 – Initial Release\n\n- Introduces a skill enabling access to external AI services (ChatGPT, Claude, Hugging Face, etc.) via both browser automation (through Chrome Relay) and APIs.\n- Supports reasoning, generation, coding, and summarization tasks by leveraging external models when authorized by the user.\n- Details setup, usage patterns, API integration (Hugging Face, OpenAI, Anthropic), and examples for both browser automation and API calls.\n- Clarifies safety, permissions, and cost considerations, emphasizing user control and best practices.\n- Offers troubleshooting tips and references for better integration with other skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c98051917194c0632fe14bec5222c943ac5a932427934f680880153c5ef1b119"
+}

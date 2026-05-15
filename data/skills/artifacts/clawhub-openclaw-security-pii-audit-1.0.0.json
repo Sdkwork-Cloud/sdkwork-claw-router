@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-pii-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_pii_audit",
+  "skill": {
+    "id": 33850,
+    "skillKey": "clawhub-openclaw-security-pii-audit",
+    "name": "OpenClaw Security PII Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-pii-audit",
+    "url": "https://clawhub.ai/skills/openclaw-security-pii-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-pii-audit-83f7a14a0065e703.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-region async PII detection for OpenClaw sessions. Scans user input, prompts, context, and knowledge base content for sensitive personal data across CN,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtoby8326",
+      "userId": "s17afetrxxn0tyjq1n9z0t1s6183hc4h",
+      "displayName": "mtoby8326",
+      "image": "https://avatars.githubusercontent.com/u/266086462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774363665532,
+      "changelog": "Initial release: Multi-region async PII detection engine. 8 PII categories, 10 regions, smart sampling, zero dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d02d28e5dfcbdb41642314bb5c0d2ae2ff764769a18443944c856b9edc9d5af7"
+}

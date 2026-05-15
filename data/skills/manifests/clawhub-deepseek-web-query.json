@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64518,
+  "uuid": "skill-clawhub-deepseek-web-query",
+  "skillKey": "clawhub-deepseek-web-query",
+  "name": "DeepSeek Web Query",
+  "summary": "使用 DeepSeek 网页版进行互联网查询，分担大模型请求和搜索负担。当用户需要查询最新信息、一般性知识、代码问题、文本分析等，或明确说\"用 DeepSeek 查一下\"、\"联网搜索\"、\"查下最新\"等时触发此技能。特别地，如果提问以\"ds:\"或\"ds：\"开头，优先使用此技能。通过 Chrome DevTools...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepseek_web_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andeymei",
+      "features": [
+        "使用 DeepSeek 网页版进行互联网查询，分担大模型请求和搜索负担。当用户需要查询最新信息、一般性知识、代码问题、文本分析等，或明确说\"用 DeepSeek 查一下\"、\"联网搜索\"、\"查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepseek-web-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/846017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepseek-web-query",
+      "url": "https://clawhub.ai/skills/deepseek-web-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepseek-web-query",
+    "url": "https://clawhub.ai/skills/deepseek-web-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepseek-web-query-ae7a7bd325316b33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepseek-web-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepseek-web-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6862a900c176706f58f29662850579c5cdc684db46453a5ed05bc95ef8959d39",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:42:39.307Z"
+}

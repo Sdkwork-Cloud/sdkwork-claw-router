@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-cards@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cards",
+  "skill": {
+    "id": 19057,
+    "skillKey": "clawhub-feishu-cards",
+    "name": "Feishu Cards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cards",
+    "url": "https://clawhub.ai/skills/feishu-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cards-2c3b670f823866bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send customizable interactive Feishu cards with titles, content, buttons, and color templates via Feishu Open API for users or group chats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seetherianbow",
+      "userId": "publishers:seetherianbow",
+      "displayName": "SeeTheRainBow",
+      "image": "https://avatars.githubusercontent.com/u/49804136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772505003081,
+      "changelog": "Initial release of feishu-cards.\n\n- Send interactive, richly formatted cards to Feishu users or chats using the Feishu Open API.\n- Supports buttons, forms, dropdown menus, customizable colors, and notes in message cards.\n- Provides both CLI and Python module interfaces.\n- Flexible configuration via flags and environment variables.\n- Example usage and installation instructions included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1adb6bc17cb8e519884d72aab064f94090a27f9cae8f6bcba5861da74f5a9b17"
+}

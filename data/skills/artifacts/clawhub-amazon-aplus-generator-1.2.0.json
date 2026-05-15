@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-aplus-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_aplus_generator",
+  "skill": {
+    "id": 65316,
+    "skillKey": "clawhub-amazon-aplus-generator",
+    "name": "Amazon Aplus Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-aplus-generator",
+    "url": "https://clawhub.ai/skills/amazon-aplus-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-aplus-generator-ef4f156b17a93a3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速生成符合亚马逊规范的专业A+内容方案，支持多类目多语言及模块智能匹配与合规自检。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777653591333,
+      "changelog": "Added quality bar / delivery standards section",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5172a385f3deef39060d383d85dba8c278cca66b21d35eb4b2e394d92227a5d0"
+}

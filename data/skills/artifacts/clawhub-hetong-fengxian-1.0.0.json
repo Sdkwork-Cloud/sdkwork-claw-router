@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hetong-fengxian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hetong_fengxian",
+  "skill": {
+    "id": 64430,
+    "skillKey": "clawhub-hetong-fengxian",
+    "name": "Contract Risk Review Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hetong-fengxian",
+    "url": "https://clawhub.ai/skills/hetong-fengxian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hetong-fengxian-21b408413448f3f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能审查施工合同条款，识别高风险支付、工期、索赔和结算风险，提供风险评级及谈判策略建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13977660642",
+      "userId": "s17689kbhqvsceybajjf0kcsps84chev",
+      "displayName": "13977660642",
+      "image": "https://avatars.githubusercontent.com/u/141215083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775568339917,
+      "changelog": "合同风险审查助手 v2.0 重大更新：\n\n- 增加P0/P1/P2分级风险条款库，突出高风险条款并明确修改建议。\n- 全新量化评分系统，支持合同全维度打分与综合评级。\n- 丰富谈判话术模板，覆盖主要合同条款场景。\n- 补充详细案例分析，直观展示风险发现与优化成果。\n- 明确输出格式、适用客户和定价体系，方便用户选择和应用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89b040cba6421beb36e958a5bbc6b0dd65e4295c0111c65d8e3cf1dae1dbaa1a"
+}

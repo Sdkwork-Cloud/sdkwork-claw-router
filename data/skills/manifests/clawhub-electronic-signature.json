@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41285,
+  "uuid": "skill-clawhub-electronic-signature",
+  "skillKey": "clawhub-electronic-signature",
+  "name": "Electronic Signature",
+  "summary": "Help users choose a practical electronic signature setup with Nota Sign. Use when someone asks about electronic signature, eSignature levels, signer verifica...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.electronic_signature",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "notasign",
+      "features": [
+        "Help users choose a practical electronic signature setup with Nota Sign",
+        "Use when someone asks about electronic signature, eSignature levels, signer verifica..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/electronic-signature@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268593162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "electronic-signature",
+      "url": "https://clawhub.ai/skills/electronic-signature"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "electronic-signature",
+    "url": "https://clawhub.ai/skills/electronic-signature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/electronic-signature-48a9d3841fca2604.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/electronic-signature@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-electronic-signature-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c77aea1f90f0c1e5439e1c21545fb2dc429150913815cd65f0879b41e582607a",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:17:32.162Z"
+}

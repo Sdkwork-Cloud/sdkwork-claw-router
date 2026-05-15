@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37673,
+  "uuid": "skill-clawhub-vpick-ai-image-generator",
+  "skillKey": "clawhub-vpick-ai-image-generator",
+  "name": "Vpick Ai Image Generator",
+  "summary": "Multi-model AI image generation on a visual canvas. Supports Midjourney (relaxed/fast/turbo, v7.0, 4-image grid), Grok Imagine (6 images per call, auto I2I),...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vpick_ai_image_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Multi-model AI image generation on a visual canvas",
+        "Supports Midjourney (relaxed/fast/turbo, v7.0, 4-image grid), Grok Imagine (6 images per call,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vpick-ai-image-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vpick-ai-image-generator",
+      "url": "https://clawhub.ai/skills/vpick-ai-image-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vpick-ai-image-generator",
+    "url": "https://clawhub.ai/skills/vpick-ai-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vpick-ai-image-generator-9a2034b0324996df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vpick-ai-image-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vpick-ai-image-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7338e32bab1f928342ddf3497cb7058eda9c63f90ff464f7bd3ddd1bccd4c27f",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:18:25.067Z"
+}

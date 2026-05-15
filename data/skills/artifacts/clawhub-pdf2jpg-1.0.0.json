@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf2jpg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2jpg",
+  "skill": {
+    "id": 34959,
+    "skillKey": "clawhub-pdf2jpg",
+    "name": "pdf2jpg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2jpg",
+    "url": "https://clawhub.ai/skills/pdf2jpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2jpg-df3af917225e3a22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF files to JPEG images with pdftoppm, support optional page ranges, and bundle generated JPGs into a zip archive for sharing. Use when a user wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luohongq",
+      "userId": "publishers:luohongq",
+      "displayName": "luohongq",
+      "image": "https://avatars.githubusercontent.com/u/104287078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774144399756,
+      "changelog": "Initial release: convert PDF pages to JPG with pdftoppm, support page ranges, and zip generated images for sharing. Includes dependency checks and installation notes for poppler-utils.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86861cf0043529961bf052b86b16e9cfce0cd06938e0db8794d4474ba75a4afc"
+}

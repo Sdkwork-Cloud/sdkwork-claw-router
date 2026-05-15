@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-global-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_global_search",
+  "skill": {
+    "id": 39945,
+    "skillKey": "clawhub-alibabacloud-global-search",
+    "name": "AlibabaCloud Global Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-global-search",
+    "url": "https://clawhub.ai/skills/alibabacloud-global-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-global-search-1d735e57276b6a46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Alibaba Cloud product information, documentation, parameters, features, and pricing from official sources without login. Use when the user asks about A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangbingpeng",
+      "userId": "s173ngq2jm0da73nhbpj7et9vx84803e",
+      "displayName": "WBP",
+      "image": "https://avatars.githubusercontent.com/u/273774793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776753913333,
+      "changelog": "Initial release of Alibaba Cloud Global Search skill.\n\n- Instantly query Alibaba Cloud product details, documentation, parameters, features, and official pricing without login.\n- Covers a broad range of common Alibaba Cloud products and aliases (ECS, RDS, OSS, SLB, etc.) for easy identification.\n- Helps compare product specs, find documentation, and supports both English and Chinese queries.\n- Includes detailed product catalog and keyword mapping for accurate results across Alibaba Cloud's offerings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:157e541858343a20be8642bd29b43e810547678119d193130b138dbf7134a858"
+}

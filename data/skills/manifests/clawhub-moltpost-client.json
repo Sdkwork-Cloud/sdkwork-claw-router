@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27157,
+  "uuid": "skill-clawhub-moltpost-client",
+  "skillKey": "clawhub-moltpost-client",
+  "name": "Client",
+  "summary": "E2EE async messaging between OpenClaw instances. Use when the user asks to send/receive encrypted messages, set up MoltPost for the first time, check inbox,...",
+  "version": "0.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltpost_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eski Yin",
+      "features": [
+        "E2EE async messaging between OpenClaw instances",
+        "Use when the user asks to send/receive encrypted messages, set up MoltPost for the first time,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltpost-client@0.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2740467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltpost-client",
+      "url": "https://clawhub.ai/skills/moltpost-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltpost-client",
+    "url": "https://clawhub.ai/skills/moltpost-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltpost-client-3080e769dafdc8ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltpost-client@0.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltpost-client-0.3.6.json",
+      "version": "0.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b865d37021dbf5b3c9c7249d2530ecc7e614dfcc6360a7cd41b57a4e601e8cc",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:03:02.607Z"
+}

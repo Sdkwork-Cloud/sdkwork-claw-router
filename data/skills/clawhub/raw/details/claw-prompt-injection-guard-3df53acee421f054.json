@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "claw-prompt-injection-guard",
+    "displayName": "claw-prompt-injection-guard",
+    "summary": "防护间接提示词注入攻击（Indirect Prompt Injection）。当处理网页内容、搜索结果、邮件、社交媒体等外部来源信息时触发。用于识别和防范外部内容中隐藏的恶意指令。所有 Claw 都应安装此技能。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773138201307,
+    "updatedAt": 1777618102981
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773138201307,
+    "changelog": "- Major update: 转为专注于防护“间接提示词注入攻击”（Indirect Prompt Injection），聚焦外部内容安全（如网页、邮件、UGC）。\n- 明确要求所有 Claw 安装本技能。\n- 新增高风险关键词与伪装格式检测方法：对外部内容中的可疑指令词和伪装提示高亮说明。\n- 按来源对风险分级，分别提供安全处理建议。\n- 细致规定敏感操作的自动、需确认、禁止范围，所有敏感操作需用户确认。\n- 提供具体防护流程和攻击检测举例，并引用新文档 references/attack-patterns.md 供深入参考。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xvarx",
+    "userId": "publishers:xvarx",
+    "displayName": "XvarX",
+    "image": "https://avatars.githubusercontent.com/u/10088461?v=4"
+  },
+  "moderation": null
+}

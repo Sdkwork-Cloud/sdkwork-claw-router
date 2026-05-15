@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69093,
+  "uuid": "skill-clawhub-tokensop",
+  "skillKey": "clawhub-tokensop",
+  "name": "TOKEN SOP",
+  "summary": "自动保存并本地调用已执行任务，避免重复消耗Token，实现离线秒级响应，提升效率与节省费用。",
+  "version": "5.6.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokensop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ainclaw",
+      "features": [
+        "自动保存并本地调用已执行任务，避免重复消耗Token，实现离线秒级响应，提升效率与节省费用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tokensop@5.6.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252712074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tokensop",
+      "url": "https://clawhub.ai/skills/tokensop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokensop",
+    "url": "https://clawhub.ai/skills/tokensop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokensop-48f10afa286893c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tokensop@5.6.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tokensop-5.6.5.json",
+      "version": "5.6.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3909a7375b35277223d8d58fbe5ca6f07450ab121e1b04db1b58d18ece66ba2d",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:16:04.214Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37297,
+  "uuid": "skill-clawhub-csctest1",
+  "skillKey": "clawhub-csctest1",
+  "name": "test1",
+  "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csctest1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenscgit",
+      "features": [
+        "Guide for creating effective skills",
+        "This skill should be used when users want to create a new skill (or update an existing skill) t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csctest1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38546391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csctest1",
+      "url": "https://clawhub.ai/skills/csctest1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csctest1",
+    "url": "https://clawhub.ai/skills/csctest1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csctest1-addc95c720ca0999.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csctest1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csctest1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2686cac8a6eca2c460f58cb5e05b583982da163df5c68e42abb4322de004b887",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:22:01.955Z"
+}

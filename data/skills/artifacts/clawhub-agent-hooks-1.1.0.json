@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-hooks@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hooks",
+  "skill": {
+    "id": 59519,
+    "skillKey": "clawhub-agent-hooks",
+    "name": "Agent Hooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hooks",
+    "url": "https://clawhub.ai/skills/agent-hooks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hooks-9e6f5a3a98ef7991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Code Stop/PreToolUse/PostToolUse hook 脚本集。当 agent 提前停止、工具反复失败、或以投机语言完成任务时自动干预。每个脚本是独立的 bash hook，配到 settings.json 即可生效。不用于设计决策（用 harness-design-patter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775481495873,
+      "changelog": "Fix hook event count (26→27), test count (37→42), harden stdin reading, add jq dependency note",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:135bb08befefe8aa271dbe50a953b4b17454d977d12f3a668f12e574a502d11f"
+}

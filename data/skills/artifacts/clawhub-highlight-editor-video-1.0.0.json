@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/highlight-editor-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlight_editor_video",
+  "skill": {
+    "id": 42979,
+    "skillKey": "clawhub-highlight-editor-video",
+    "name": "Highlight Editor Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlight-editor-video",
+    "url": "https://clawhub.ai/skills/highlight-editor-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlight-editor-video-801ca11b0c327e4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-hour sports game recording into 1080p highlight reel clips just by typing what you need. Whether it's generating short highlight reels from long vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776099988129,
+      "changelog": "- Initial release of highlight-editor-video skill.\n- Instantly generate video highlights by describing what you want — no timeline editing needed.\n- Automatic session setup, free guest credits included; just upload footage and start.\n- Supports extracting, editing, and exporting highlight reels from long-form video with cloud GPU acceleration.\n- All major video, image, and audio formats supported for export.\n- Clear handling and feedback for uploads, credits, exports, and error codes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8483627fafde38608c51c6c5d0b4e49604e7cab48479c0c4d6edf85c9ee3247a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9490,
+  "uuid": "skill-clawhub-market-pulse",
+  "skillKey": "clawhub-market-pulse",
+  "name": "market pulse",
+  "summary": "Use when user asks about crypto prices, DeFi yields, market sentiment, fear and greed index, stock prices, upcoming crypto events, or requests a market overview",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_pulse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuri",
+      "features": [
+        "Use when user asks about crypto prices, DeFi yields, market sentiment, fear and greed index, st."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-pulse@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216768289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-pulse",
+      "url": "https://clawhub.ai/skills/market-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-pulse",
+    "url": "https://clawhub.ai/skills/market-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-pulse-af71c5abd47b92c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-pulse@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-pulse-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab5c8c7f4200935dd27f699a00fb2955e6af1dd35359a4053d61013700c35e53",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T10:41:33.485Z"
+}

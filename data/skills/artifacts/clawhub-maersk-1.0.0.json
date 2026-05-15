@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maersk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maersk",
+  "skill": {
+    "id": 40418,
+    "skillKey": "clawhub-maersk",
+    "name": "Maersk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maersk",
+    "url": "https://clawhub.ai/skills/maersk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maersk-4ac6b1d4ae2027e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maersk operates a 700+ vessel fleet and integrated logistics network, moving 12M containers annually with a focus on ocean freight, terminals, and green ship..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776855973575,
+      "changelog": "- Initial release: foundational overview of Maersk’s business, history, and strategic transformation.\n- Provides key insights into shipping scale, logistics integration, and decarbonization initiatives.\n- Includes historical milestones, core business model analysis, and moat description.\n- Summarizes critical metrics, financial highlights, and unique facts about Maersk’s operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7132c899a5847a8312bc4217a4ea92be045893122e4be5ee7c524b8a412791a4"
+}

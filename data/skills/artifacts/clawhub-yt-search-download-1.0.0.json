@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yt-search-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_search_download",
+  "skill": {
+    "id": 65349,
+    "skillKey": "clawhub-yt-search-download",
+    "name": "YouTube/B站 视频搜索下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-search-download",
+    "url": "https://clawhub.ai/skills/yt-search-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-search-download-1333a5e8c1fe4fa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多站点视频搜索、下载、字幕提取工具。支持 YouTube、B站（Bilibili）等主流平台。 结合 YouTube Data API v3 进行高级搜索，yt-dlp 下载视频/音频/字幕。 核心能力：全站关键词搜索、频道浏览、按时间/播放量/相关度排序、下载视频、提取音频（MP3）、下载字幕（中英文）、查看视..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joppyao-bit",
+      "userId": "publishers:joppyao-bit",
+      "displayName": "joppyao-bit",
+      "image": "https://avatars.githubusercontent.com/u/246783575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774009325366,
+      "changelog": "yt-search-download 1.0.0 – 多站点视频搜索、下载与字幕工具\n\n- 支持YouTube、B站等主流平台的视频/音频/字幕搜索与下载。\n- 提供高级搜索：关键词、频道、时长、播放量、时间范围等多种筛选方式。\n- 一键下载视频、提取音频（MP3）、下载字幕（自动输出中英SRT+TXT）。\n- 浏览频道、查看视频详情，所有输出按严格格式与中英文译文规范。\n- 结合YouTube Data API v3与yt-dlp，支持命令行快速操作与多种下载需求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e3e6c7c8654173e8f90ca0b39aafbdeb8fdc158339be96de00d7954e9bfcfa"
+}

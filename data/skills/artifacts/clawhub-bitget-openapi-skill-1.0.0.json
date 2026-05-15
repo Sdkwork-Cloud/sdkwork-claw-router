@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitget-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitget_openapi_skill",
+  "skill": {
+    "id": 28706,
+    "skillKey": "clawhub-bitget-openapi-skill",
+    "name": "Bitget OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitget-openapi-skill",
+    "url": "https://clawhub.ai/skills/bitget-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitget-openapi-skill-0decef7ca98e5c0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Bitget public exchange market APIs through UXC with a curated OpenAPI schema, market-first discovery, and explicit private-auth boundary notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773622301462,
+      "changelog": "bitget-openapi-skill v1.0.0 initial release:\n\n- Provides public market data access for Bitget via UXC and OpenAPI.\n- Supports spot symbols, ticker, candlestick, and order book snapshot reads.\n- Explicitly excludes private endpoints and trading actions.\n- Includes setup, recommended command usage, and operational guardrails.\n- Public market data; no authentication required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c20690c742bca0cf91a9db05e82a745245290173a6bb410321ef99f16ff3ff74"
+}

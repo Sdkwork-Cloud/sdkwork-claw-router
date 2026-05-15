@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63212,
+  "uuid": "skill-clawhub-sci-journal-search",
+  "skillKey": "clawhub-sci-journal-search",
+  "name": "sci-journal-search",
+  "summary": "查询并提供SCI期刊的新锐（中科院）分区、JCR小类分区和Top期刊标识，支持按期刊名或ISSN检索。",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sci_journal_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Song Xianfeng",
+      "features": [
+        "查询并提供SCI期刊的新锐（中科院）分区、JCR小类分区和Top期刊标识，支持按期刊名或ISSN检索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sci-journal-search@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111047002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sci-journal-search",
+      "url": "https://clawhub.ai/skills/sci-journal-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sci-journal-search",
+    "url": "https://clawhub.ai/skills/sci-journal-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sci-journal-search-3b34b18481d9b945.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sci-journal-search@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sci-journal-search-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c01825add6846279c8cf195f6d8bd9dc6ae9f31e462aa8268eaaf833ca8dd1c8",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T20:29:11.311Z"
+}

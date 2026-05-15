@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10644,
+  "uuid": "skill-clawhub-camoufox-stealth",
+  "skillKey": "clawhub-camoufox-stealth",
+  "name": "Camoufox Stealth Browser",
+  "summary": "C++ level anti-bot browser automation using Camoufox (patched Firefox) in isolated containers. Bypasses Cloudflare Turnstile, Datadome, Airbnb, Yelp. Superior to Chrome-based solutions (undetected-chromedriver, puppeteer-stealth) which onl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camoufox_stealth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "C++ level anti-bot browser automation using Camoufox (patched Firefox) in isolated containers",
+        "Bypasses Cloudflare Turnstile, Datadome, Airbnb, Yelp",
+        "Superior to Chrome-based solutions (undetected-chromedriver, puppeteer-stealth) which only patc.",
+        "Use when standard Playwright/Selenium gets blocked."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camoufox-stealth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camoufox-stealth",
+      "url": "https://clawhub.ai/skills/camoufox-stealth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camoufox-stealth",
+    "url": "https://clawhub.ai/skills/camoufox-stealth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camoufox-stealth-9bfb6bc30f4de30e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camoufox-stealth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camoufox-stealth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b8f4b1bc8b135cd6c4202b8b3a64c61d45f94b085b35e1be02987940b28cf9b",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T07:54:18.396Z"
+}

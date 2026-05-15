@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56656,
+  "uuid": "skill-clawhub-crane-hook-annotation",
+  "skillKey": "clawhub-crane-hook-annotation",
+  "name": "Crane Hook Annotation",
+  "summary": "Detect and tightly annotate tower-crane hook outlines in similar construction-site monitoring images. Use when Codex needs to batch-process `.png`, `.jpg`, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crane_hook_annotation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Genlk",
+      "features": [
+        "Detect and tightly annotate tower-crane hook outlines in similar construction-site monitoring i.",
+        "Use when Codex needs to batch-process `.png`, `.jpg`, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crane-hook-annotation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24912927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crane-hook-annotation",
+      "url": "https://clawhub.ai/skills/crane-hook-annotation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crane-hook-annotation",
+    "url": "https://clawhub.ai/skills/crane-hook-annotation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crane-hook-annotation-6af9e02c5a34c9ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crane-hook-annotation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crane-hook-annotation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:364e967f6343aad11c62d6b7adc7940868c34ff393100d8ff6c249e4e3f0220c",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:32:38.077Z"
+}

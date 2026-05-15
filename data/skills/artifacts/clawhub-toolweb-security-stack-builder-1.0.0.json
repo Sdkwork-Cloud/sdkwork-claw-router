@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-security-stack-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_security_stack_builder",
+  "skill": {
+    "id": 40342,
+    "skillKey": "clawhub-toolweb-security-stack-builder",
+    "name": "Security Stack Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-security-stack-builder",
+    "url": "https://clawhub.ai/skills/toolweb-security-stack-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-security-stack-builder-a243c88b0c4b600b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive cybersecurity technology stack recommendation platform that generates personalized security tool recommendations based on organizational assess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774886416935,
+      "changelog": "Security Stack Builder 1.0.0 – Initial Release\n\n- Launches a comprehensive API platform for personalized cybersecurity stack recommendations.\n- Enables tool suggestions based on organizational assessment data: size, industry, maturity, budget, priorities, compliance, and deployment.\n- Provides endpoints for stack recommendation generation and available security categories.\n- Includes example inputs/outputs, compliance mapping, phased implementation plan, and estimated annual costs in responses.\n- Public documentation of pricing options and API usage details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab441176db4aa2ccd6b5ba93bb61702b0c5fd6a7963b87eeca58c021a386a91b"
+}

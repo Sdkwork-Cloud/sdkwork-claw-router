@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40946,
+  "uuid": "skill-clawhub-capability-growth",
+  "skillKey": "clawhub-capability-growth",
+  "name": "Capability Growth",
+  "summary": "Tracks and grows agent capabilities over time",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capability_growth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Tracks and grows agent capabilities over time"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capability-growth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capability-growth",
+      "url": "https://clawhub.ai/skills/capability-growth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capability-growth",
+    "url": "https://clawhub.ai/skills/capability-growth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capability-growth-40b7d860b31be3c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capability-growth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capability-growth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f4bfcdc274edad8523b4b4e738a3ae145b66ef82f7adb90b2f56b01b4694f7e",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T05:07:05.917Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38598,
+  "uuid": "skill-clawhub-x-search-highlights",
+  "skillKey": "clawhub-x-search-highlights",
+  "name": "X Search Highlights",
+  "summary": "Search and extract high-value posts from X (Twitter) with engagement-based ranking. Use when user asks to search X, find best posts, get highlights from Twit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_highlights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ghostwritten",
+      "features": [
+        "Search and extract high-value posts from X (Twitter) with engagement-based ranking",
+        "Use when user asks to search X, find best posts, get highlights from Twit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-search-highlights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19782612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-search-highlights",
+      "url": "https://clawhub.ai/skills/x-search-highlights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-highlights",
+    "url": "https://clawhub.ai/skills/x-search-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-highlights-6d28ce9867f5b423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-search-highlights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-search-highlights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04726b2d9bd407bf3bf09054763103c7f1201eb6717fff10dc4452ea881f2fdc",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T12:52:07.568Z"
+}

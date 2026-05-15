@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15199,
+  "uuid": "skill-clawhub-pytorch",
+  "skillKey": "clawhub-pytorch",
+  "name": "PyTorch",
+  "summary": "Avoid common PyTorch mistakes — train/eval mode, gradient leaks, device mismatches, and checkpoint gotchas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pytorch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common PyTorch mistakes — train/eval mode, gradient leaks, device mismatches, and checkpo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pytorch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pytorch",
+      "url": "https://clawhub.ai/skills/pytorch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pytorch",
+    "url": "https://clawhub.ai/skills/pytorch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pytorch-e8795e623be803af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pytorch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pytorch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:715a098c3989f7bdca7c1be76095f5931d6fe2afb472234afbb213e4c674a224",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:19:39.323Z"
+}

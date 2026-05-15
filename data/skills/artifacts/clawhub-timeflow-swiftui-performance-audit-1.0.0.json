@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timeflow-swiftui-performance-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_swiftui_performance_audit",
+  "skill": {
+    "id": 36514,
+    "skillKey": "clawhub-timeflow-swiftui-performance-audit",
+    "name": "Swiftui Performance Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-swiftui-performance-audit",
+    "url": "https://clawhub.ai/skills/timeflow-swiftui-performance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-swiftui-performance-audit-967a3a929e17ba7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and improve SwiftUI runtime performance from code review and architecture. Use for requests to diagnose slow rendering, janky scrolling, high CPU/memor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774440663238,
+      "changelog": "- Initial release of SwiftUI Performance Audit skill.\n- Provides a workflow for diagnosing and improving SwiftUI runtime issues, including code review steps and profiling guidance.\n- Includes common patterns, code smells, and remedies for slow rendering, janky scrolling, and resource-heavy updates in SwiftUI apps.\n- Offers templates and best practices for code structure and Instruments profiling.\n- Supplies references to official Apple and WWDC documentation for further learning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f6706bf4278c41ef49bacf7bfc409da9b17851a25b807836206e7d24f8e4ff2"
+}

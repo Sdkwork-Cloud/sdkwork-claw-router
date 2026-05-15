@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60522,
+  "uuid": "skill-clawhub-long-running-harness",
+  "skillKey": "clawhub-long-running-harness",
+  "name": "long-running-harness",
+  "summary": "长时程 Agent 项目工作流框架（基于 Anthropic \"Effective Harnesses for Long-Running Agents\"）。 用于创建、管理和调度跨多个上下文窗口的长期项目任务。 Use when: 启动新项目、初始化项目工作流、管理项目任务列表、调度子Agent增量开发、 恢复项...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_running_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aowind",
+      "features": [
+        "长时程 Agent 项目工作流框架（基于 Anthropic \"Effective Harnesses for Long-Running Agents\"）。 用于创建、管理和调度跨多个上下文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-running-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26450413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-running-harness",
+      "url": "https://clawhub.ai/skills/long-running-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-running-harness",
+    "url": "https://clawhub.ai/skills/long-running-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-running-harness-aaaeee0b0b4fa8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-running-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-running-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2028f29a377af766ee07324544c5f19091e4e0294c56cbb74fe06e1c95d5eccb",
+      "artifactSizeBytes": 3954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:15:48.915Z"
+}

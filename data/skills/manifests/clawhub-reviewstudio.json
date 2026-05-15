@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34868,
+  "uuid": "skill-clawhub-reviewstudio",
+  "skillKey": "clawhub-reviewstudio",
+  "name": "Reviewstudio",
+  "summary": "Review Studio integration. Manage data, records, and automate workflows. Use when the user wants to interact with Review Studio data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewstudio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Review Studio integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Review Studio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reviewstudio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reviewstudio",
+      "url": "https://clawhub.ai/skills/reviewstudio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewstudio",
+    "url": "https://clawhub.ai/skills/reviewstudio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewstudio-ce3239cbdaece061.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reviewstudio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reviewstudio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eefa8db585021e8790e8f60e69682cc225f4c585254d6da7978d2ac35611ee9",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:34:40.531Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71987,
+  "uuid": "skill-clawhub-custom-api-summary",
+  "skillKey": "clawhub-custom-api-summary",
+  "name": "调用自定义摘要 API，对用户提供的文本进行处理并返回结果",
+  "summary": "调用自定义摘要 API，对用户提供的文本进行处理并返回结果",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_api_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heqq-github",
+      "features": [
+        "调用自定义摘要 API，对用户提供的文本进行处理并返回结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/custom-api-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31650754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "custom-api-summary",
+      "url": "https://clawhub.ai/skills/custom-api-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-api-summary",
+    "url": "https://clawhub.ai/skills/custom-api-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-api-summary-c43d68dfbdf4109f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/custom-api-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-custom-api-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dcbef2ad96e28e70de52d02e50d164a18159093f3e56438b307356a96bb6e4b",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:26:53.826Z"
+}

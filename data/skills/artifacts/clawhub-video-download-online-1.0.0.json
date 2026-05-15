@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-download-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download_online",
+  "skill": {
+    "id": 55198,
+    "skillKey": "clawhub-video-download-online",
+    "name": "Video Download Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download-online",
+    "url": "https://clawhub.ai/skills/video-download-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-online-bacb39ef86b9450e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — download this video in MP4 format at the highest available resolution — an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776600682660,
+      "changelog": "video-download-online 1.0.0 — Initial Release\n\n- Download and save online videos (MP4, MOV, WebM, AVI up to 500MB) via cloud, no installation needed.\n- Simple prompt-based workflow: describe the download you want, get an MP4 in 20–40 seconds.\n- Supports YouTube and other online video URLs; processes at highest available resolution by default.\n- Session-based workflow with credits system and clear user feedback (“Connecting…”, progress messages).\n- Automatic backend token handling for anonymous and registered users.\n- Error handling for credits, file limits, and unsupported formats with helpful user prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6559e845244883e753f18284e105bd2453a5312014d56853c9b9ca35924b9403"
+}

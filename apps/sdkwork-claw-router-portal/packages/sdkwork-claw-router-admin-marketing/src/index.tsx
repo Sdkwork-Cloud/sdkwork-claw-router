@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useRef, useEffect, useMemo } from 'react';
 import { Search, Plus, TrendingUp, Hash, Ticket, History, Wallet, ListOrdered, Share2, MoreVertical, Settings, X, Edit, Trash2, Download, Layers } from 'lucide-react';
 import { BusinessStatePanel, BusinessStateTableRow, ConfirmDialog, CopyButton } from 'sdkwork-claw-router-commons';
-import { MarketingService, Coupon, Batch, PromoCode, RedemptionRecord, RechargeRecord, ReferralStat } from './marketingService';
-import { createCouponBatchGenerateInputFromForm, createCouponInputFromForm } from './marketingForm';
+import { MarketingService, Coupon, Batch, PromoCode, RedemptionRecord, RechargePackage, RechargeRecord, ReferralStat } from './marketingService';
+import { createCouponBatchGenerateInputFromForm, createCouponInputFromForm, createRechargePackageInputFromForm } from './marketingForm';
 
 function CopyableText({ text }: { text: string }) {
   return (
@@ -723,74 +723,242 @@ function RedemptionsView({ search, setSearch }: { search: string, setSearch: (s:
 
 // 4. 充值管理 (设置充值比例等)
 function RechargeManageView() {
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [packages, setPackages] = useState<RechargePackage[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingPackage, setEditingPackage] = useState<RechargePackage | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<RechargePackage | null>(null);
+  const [saving, setSaving] = useState(false);
+  const [deletingPackageId, setDeletingPackageId] = useState<string | null>(null);
+  const [mutationError, setMutationError] = useState<string | null>(null);
+
+  const loadRechargePackages = useCallback(async (isActive: () => boolean = () => true) => {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const data = await MarketingService.listRechargePackages();
+      if (isActive()) {
+        setPackages(data);
+      }
+    } catch (error) {
+      if (isActive()) {
+        setLoadError(getLoadErrorMessage(error, 'Failed to load recharge packages.'));
+      }
+    } finally {
+      if (isActive()) {
+        setLoading(false);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    void loadRechargePackages(() => active);
+    return () => {
+      active = false;
+    };
+  }, [loadRechargePackages]);
+
+  const openCreateModal = () => {
+    setEditingPackage(null);
+    setMutationError(null);
+    setIsModalOpen(true);
+  };
+
+  const openEditModal = (item: RechargePackage) => {
+    setEditingPackage(item);
+    setMutationError(null);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    if (saving) {
+      return;
+    }
+    setIsModalOpen(false);
+    setEditingPackage(null);
+    setMutationError(null);
+  };
+
+  const closeDeleteConfirmation = () => {
+    if (deletingPackageId) {
+      return;
+    }
+    setDeleteTarget(null);
+  };
+
+  const handleSubmitPackage = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSaving(true);
+    setMutationError(null);
+    try {
+      const payload = createRechargePackageInputFromForm(new FormData(event.currentTarget));
+      if (editingPackage) {
+        const updated = await MarketingService.updateRechargePackage(editingPackage.id, payload);
+        setPackages((current) => current.map((item) => item.id === updated.id ? updated : item));
+      } else {
+        const created = await MarketingService.createRechargePackage(payload);
+        setPackages((current) => [created, ...current]);
+      }
+      setIsModalOpen(false);
+      setEditingPackage(null);
+    } catch (error) {
+      setMutationError(getLoadErrorMessage(error, 'Failed to save recharge package.'));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const executeDeletePackage = async () => {
+    if (!deleteTarget) {
+      return;
+    }
+    const id = deleteTarget.id;
+    setDeletingPackageId(id);
+    try {
+      const success = await MarketingService.deleteRechargePackage(id);
+      if (success) {
+        setPackages((current) => current.filter((item) => item.id !== id));
+      }
+      setDeleteTarget(null);
+    } finally {
+      setDeletingPackageId(null);
+    }
+  };
+
   return (
-    <div className="flex-1 overflow-auto p-6 space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="flex-1 overflow-hidden flex flex-col">
+      <div className="p-5 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-[#121212]/50">
         <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Settings className="w-5 h-5 text-slate-400" />
-          充值设置与比例定义
+          充值套餐管理
         </h3>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">保存配置</button>
+        <button onClick={openCreateModal} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+          <Plus className="w-4 h-4" /> 创建套餐
+        </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-5">
-          <h4 className="font-semibold text-slate-900 dark:text-white mb-4">法币/额度兑换率 (Exchange Rate)</h4>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">支付 1 CNY 可获得额度 ($)</label>
-              <div className="flex items-center gap-3">
-                 <input type="number" defaultValue="0.15" step="0.01" className="bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white flex-1" />
-                 <span className="text-slate-500 text-sm"> USD 额度</span>
-              </div>
-              <p className="text-xs text-slate-500 mt-2">即用户充值 10元 人民币，系统钱包增加 1.5 美元额度。</p>
-            </div>
-            <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">平台最低充值金额限制</label>
-              <div className="flex items-center gap-3">
-                 <input type="number" defaultValue="10" className="bg-white dark:bg-black border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white flex-1" />
-                 <span className="text-slate-500 text-sm"> CNY</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-5">
-          <h4 className="font-semibold text-slate-900 dark:text-white mb-4">支付渠道集成状态</h4>
-          <div className="space-y-3">
-             <div className="flex items-center justify-between p-3 bg-white dark:bg-[#1a1a1a] rounded-lg border border-slate-200 dark:border-white/10">
-               <div className="flex items-center gap-3">
-                 <div className="w-8 h-8 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold font-serif">W</div>
-                 <div>
-                   <div className="text-sm font-semibold text-slate-900 dark:text-white">微信支付 (WeChat Pay)</div>
-                   <div className="text-xs text-slate-500">免签 Native 支付接入</div>
-                 </div>
-               </div>
-               <span className="px-2 py-1 rounded text-xs bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400">已开启</span>
-             </div>
-             <div className="flex items-center justify-between p-3 bg-white dark:bg-[#1a1a1a] rounded-lg border border-slate-200 dark:border-white/10">
-               <div className="flex items-center gap-3">
-                 <div className="w-8 h-8 rounded bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold font-serif">A</div>
-                 <div>
-                   <div className="text-sm font-semibold text-slate-900 dark:text-white">支付宝 (Alipay)</div>
-                   <div className="text-xs text-slate-500">当面付接入</div>
-                 </div>
-               </div>
-               <span className="px-2 py-1 rounded text-xs bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400">已开启</span>
-             </div>
-             <div className="flex items-center justify-between p-3 bg-white dark:bg-[#1a1a1a] rounded-lg border border-slate-200 dark:border-white/10 opacity-60">
-               <div className="flex items-center gap-3">
-                 <div className="w-8 h-8 rounded bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold font-serif">S</div>
-                 <div>
-                   <div className="text-sm font-semibold text-slate-900 dark:text-white">Stripe</div>
-                   <div className="text-xs text-slate-500">国际信用卡支付</div>
-                 </div>
-               </div>
-               <span className="px-2 py-1 rounded text-xs bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400">未配置密钥</span>
-             </div>
-          </div>
-        </div>
+      <div className="flex-1 overflow-auto p-5">
+        <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg overflow-hidden">
+          <thead className="bg-slate-50 dark:bg-[#121212] border-b border-slate-200 dark:border-white/10">
+            <tr>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">套餐 ID</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">售价</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">赠送积分</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">到账积分</th>
+              <th className="px-4 py-3 font-semibold text-slate-900 dark:text-white">状态</th>
+              <th className="px-4 py-3 text-right font-semibold text-slate-900 dark:text-white">操作</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-transparent">
+            {loading ? (
+              <BusinessStateTableRow colSpan={6} kind="loading" title="Loading recharge packages..." />
+            ) : loadError ? (
+              <BusinessStateTableRow
+                colSpan={6}
+                kind="error"
+                title="Recharge packages could not be loaded"
+                description={loadError}
+                onRetry={() => void loadRechargePackages()}
+              />
+            ) : packages.length === 0 ? (
+              <BusinessStateTableRow
+                colSpan={6}
+                kind="empty"
+                title="No recharge packages found"
+                description="Create a recharge package before users buy account points."
+                action={{ label: 'Create package', onClick: openCreateModal }}
+              />
+            ) : packages.map((item) => (
+              <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                <td className="px-4 py-3"><CopyableText text={item.id} /></td>
+                <td className="px-4 py-3 font-mono text-slate-900 dark:text-slate-200">CNY {item.rmb}</td>
+                <td className="px-4 py-3 font-mono">{item.bonus}</td>
+                <td className="px-4 py-3 font-mono font-semibold text-emerald-600 dark:text-emerald-400">{item.points}</td>
+                <td className="px-4 py-3">
+                  <span className={`px-2 py-1 rounded text-xs ${item.status === 'active' ? 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400' : 'bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-400'}`}>
+                    {item.status === 'active' ? '启用' : '停用'}
+                  </span>
+                </td>
+                <td className="px-4 py-3 text-right">
+                  <div className="inline-flex items-center gap-2">
+                    <button onClick={() => openEditModal(item)} className="px-2 py-1 text-xs border border-blue-200 hover:border-blue-300 dark:border-blue-900 dark:hover:border-blue-700 text-blue-600 dark:text-blue-400 rounded transition-colors flex items-center gap-1 bg-blue-50 dark:bg-blue-500/10">
+                      <Edit className="w-3.5 h-3.5" /> 编辑
+                    </button>
+                    <button onClick={() => setDeleteTarget(item)} className="px-2 py-1 text-xs border border-red-200 hover:border-red-300 dark:border-red-900 dark:hover:border-red-700 text-red-600 dark:text-red-400 rounded transition-colors flex items-center gap-1 bg-red-50 dark:bg-red-500/10">
+                      <Trash2 className="w-3.5 h-3.5" /> 删除
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+          <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
+            <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <Wallet className="w-5 h-5 text-blue-500" /> {editingPackage ? '编辑充值套餐' : '创建充值套餐'}
+              </h3>
+              <button onClick={closeModal} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmitPackage} className="flex flex-col">
+              <div className="p-5 space-y-4">
+                {mutationError && (
+                  <div className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                    {mutationError}
+                  </div>
+                )}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">售价 (CNY)</label>
+                    <input required name="rmb" type="number" min="0.01" step="0.01" defaultValue={editingPackage?.rmb ?? ''} placeholder="10.00" className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white font-mono" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">赠送积分</label>
+                    <input required name="bonus" type="number" min="0" step="1" defaultValue={editingPackage?.bonus ?? 0} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white font-mono" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">状态</label>
+                  <select name="status" defaultValue={editingPackage?.status ?? 'active'} className="w-full bg-slate-50 dark:bg-[#121212] border border-slate-300 dark:border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-slate-900 dark:text-white">
+                    <option value="active">启用</option>
+                    <option value="inactive">停用</option>
+                  </select>
+                </div>
+              </div>
+              <div className="p-5 border-t border-slate-200 dark:border-white/10 flex justify-end gap-3 bg-slate-50 dark:bg-[#121212]">
+                <button type="button" onClick={closeModal} disabled={saving} className="px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors disabled:opacity-60">
+                  取消
+                </button>
+                <button type="submit" disabled={saving} className="px-4 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-colors disabled:opacity-60">
+                  {saving ? '保存中...' : '保存套餐'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {deleteTarget && (
+        <ConfirmDialog
+          title="删除充值套餐？"
+          description={`套餐 "${deleteTarget.id}" 将从可购买列表中移除。`}
+          confirmLabel="删除套餐"
+          tone="danger"
+          icon={<Trash2 className="h-4 w-4" />}
+          isBusy={deletingPackageId === deleteTarget.id}
+          onConfirm={() => void executeDeletePackage()}
+          onCancel={closeDeleteConfirmation}
+        />
+      )}
     </div>
   );
 }

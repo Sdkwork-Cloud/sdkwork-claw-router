@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48632,
+  "uuid": "skill-clawhub-automated-code-reviewer",
+  "skillKey": "clawhub-automated-code-reviewer",
+  "name": "Automated Code Reviewer",
+  "summary": "Automated code review for AI agents. Analyze pull requests, detect bugs, enforce coding standards, and suggest improvements. Triggers: code review, PR review...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automated_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Automated code review for AI agents",
+        "Analyze pull requests, detect bugs, enforce coding standards, and suggest improvements",
+        "Triggers: code review, PR review..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automated-code-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automated-code-reviewer",
+      "url": "https://clawhub.ai/skills/automated-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automated-code-reviewer",
+    "url": "https://clawhub.ai/skills/automated-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automated-code-reviewer-01928966a72c754a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automated-code-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automated-code-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d07cc777d93bb4354ba0faf3adbf60f1c12ed455c9e75c82a842a1b0c6272c52",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:49:07.452Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amcjt-lottery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amcjt_lottery",
+  "skill": {
+    "id": 70857,
+    "skillKey": "clawhub-amcjt-lottery",
+    "name": "专业彩票助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amcjt-lottery",
+    "url": "https://clawhub.ai/skills/amcjt-lottery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amcjt-lottery-c6ce88bdaf41f262.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业彩票助手 - 支持双色球开奖查询、彩票OCR识别、中奖核对、开奖提醒。触发词：彩票、双色球、开奖、中奖、lottery。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbhim",
+      "userId": "publishers:jbhim",
+      "displayName": "jbhim",
+      "image": "https://avatars.githubusercontent.com/u/31913489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772612717345,
+      "changelog": "amcjt-lottery 1.0.0\n\n- 首发版本，提供专业双色球彩票助手功能。\n- 支持开奖结果查询、彩票照片OCR识别、中奖核对，以及开奖倒计时和日历提醒。\n- 通过 mcporter 技能调用 amcjt-mcp-server 的 MCP 工具实现各项操作。\n- 用户可通过关键词、上传图片或自然语句触发助手功能。\n- 跨平台支持：macOS、Linux、Windows。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3f4a5e0eb7e3c6f396449c9f5cf9372cab07b5a64790af5f6e720d8eaa2d015f"
+}

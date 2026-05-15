@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63988,
+  "uuid": "skill-clawhub-git-workflow-cn",
+  "skillKey": "clawhub-git-workflow-cn",
+  "name": "Git Workflow Cn",
+  "summary": "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_workflow_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "Git 工作流助手",
+        "分支管理、冲突解决、提交规范。适合：开发者、团队协作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-workflow-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-workflow-cn",
+      "url": "https://clawhub.ai/skills/git-workflow-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-workflow-cn",
+    "url": "https://clawhub.ai/skills/git-workflow-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-workflow-cn-b40b1aef2016dd58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-workflow-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-workflow-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d6938e636a5976c9504a3db8cc2a28f892c485907d264f7f563b79b057a963c",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:49:34.371Z"
+}

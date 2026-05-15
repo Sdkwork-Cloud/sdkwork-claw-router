@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32329,
+  "uuid": "skill-clawhub-xigua",
+  "skillKey": "clawhub-xigua",
+  "name": "Xigua Video",
+  "summary": "Summarizes publicly available videos and short drama pages from Xigua Video with metadata like titles, authors, engagement stats, and update status.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xigua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Summarizes publicly available videos and short drama pages from Xigua Video with metadata like."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xigua@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xigua",
+      "url": "https://clawhub.ai/skills/xigua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xigua",
+    "url": "https://clawhub.ai/skills/xigua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xigua-cea37d79d0ef1094.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xigua@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xigua-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b454ea1ead084e5f367142dbfd5f25206e500517dd1c997db95c87f54ed96b",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:07:38.504Z"
+}

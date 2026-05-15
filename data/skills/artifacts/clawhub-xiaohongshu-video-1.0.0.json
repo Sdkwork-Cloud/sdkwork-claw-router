@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_video",
+  "skill": {
+    "id": 53340,
+    "skillKey": "clawhub-xiaohongshu-video",
+    "name": "Xiaohongshu Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-video",
+    "url": "https://clawhub.ai/skills/xiaohongshu-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-video-5baaf4967d5101b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — create a vertical Xiaohongshu video with text overlays and background musi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776489374010,
+      "changelog": "- Initial release: AI-powered Xiaohongshu video creator for fast, vertical video production.\n- Upload video clips or images (up to 500MB); describe your desired result to generate polished Xiaohongshu (Little Red Book) videos.\n- Automatic session setup and authentication; 100 free credits with anonymous login.\n- Supports MP4, MOV, JPG, PNG, and other common formats; output is 1080p vertical video with text overlays and background music.\n- Real-time status updates, credit checking, and export/download workflow included.\n- Designed for Xiaohongshu creators looking to skip manual editing and get platform-ready videos in under a minute.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4995f44f54b427aa5557c5ffc38d4b57b3676e51549f947ff208a1e6985f5b2"
+}

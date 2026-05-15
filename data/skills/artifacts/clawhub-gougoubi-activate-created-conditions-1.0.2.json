@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-activate-created-conditions@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_activate_created_conditions",
+  "skill": {
+    "id": 25640,
+    "skillKey": "clawhub-gougoubi-activate-created-conditions",
+    "name": "Gougoubi Activate Created Conditions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-activate-created-conditions",
+    "url": "https://clawhub.ai/skills/gougoubi-activate-created-conditions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-activate-created-conditions-0e0cbea11ffb7608.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate all CREATED conditions under a Gougoubi proposal with deterministic committee checks, optional auto-stake joining, and structured voting results. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774239829042,
+      "changelog": "- Documentation updated: INSTALL.md changed for improved installation instructions.\n- No functional or API changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bdac02adaf8bc9532c4b3a8bb9514010ebb54c203075c2323c85f76063a6be0"
+}

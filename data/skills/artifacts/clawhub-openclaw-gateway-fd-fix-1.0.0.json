@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-gateway-fd-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_fd_fix",
+  "skill": {
+    "id": 17895,
+    "skillKey": "clawhub-openclaw-gateway-fd-fix",
+    "name": "Openclaw Gateway Fd Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-fd-fix",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-fd-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-fd-fix-e112a15a1d6d02f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix OpenClaw Gateway \"spawn EBADF\" / \"RPC probe failed\" / \"EMFILE too many open files\" errors caused by file descriptor exhaustion from too many files in wor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomaszhang2661",
+      "userId": "s171psp68wa4vdeqrjnp15g9rd83gjkq",
+      "displayName": "Jian Zhang",
+      "image": "https://avatars.githubusercontent.com/u/7312990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771547942441,
+      "changelog": "- Initial release: provides one-click detection and repair for OpenClaw Gateway file descriptor exhaustion issues.\n- Automatically handles removal of large/dependency directories from workspace (.venv, node_modules).\n- Sets LaunchAgent file descriptor limits to prevent \"EMFILE\" and \"spawn EBADF\" errors.\n- Includes full instructions for manual troubleshooting and verification.\n- Addresses the most common OpenClaw Gateway crash related to too many open files in workspace.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d4261767d01ddc3e134e04978fbc64a7694576913a6286255b7b5e2ea5b2aeb"
+}

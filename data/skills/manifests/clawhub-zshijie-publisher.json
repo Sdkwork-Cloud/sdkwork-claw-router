@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57538,
+  "uuid": "skill-clawhub-zshijie-publisher",
+  "skillKey": "clawhub-zshijie-publisher",
+  "name": "Zshijie Publisher",
+  "summary": "Operate the Z视介 publishing API from OpenClaw. Use when Codex needs to prompt the user to log in to Z视介 by QR code, then publish or edit 图文 and 短视频 content th...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zshijie_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jkbwfi",
+      "features": [
+        "Operate the Z视介 publishing API from OpenClaw",
+        "Use when Codex needs to prompt the user to log in to Z视介 by QR code, then publish or edit 图文 an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zshijie-publisher@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20609964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zshijie-publisher",
+      "url": "https://clawhub.ai/skills/zshijie-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zshijie-publisher",
+    "url": "https://clawhub.ai/skills/zshijie-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zshijie-publisher-6698c8979e61692e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zshijie-publisher@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-zshijie-publisher-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70e8ca16264b0fcb0f9516acb5b499ff5638446100524c5310c5128a11789b37",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:34:06.948Z"
+}

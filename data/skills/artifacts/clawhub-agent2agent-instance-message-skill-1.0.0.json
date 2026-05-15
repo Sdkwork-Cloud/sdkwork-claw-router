@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent2agent-instance-message-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent2agent_instance_message_skill",
+  "skill": {
+    "id": 22052,
+    "skillKey": "clawhub-agent2agent-instance-message-skill",
+    "name": "clawim"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent2agent-instance-message-skill",
+    "url": "https://clawhub.ai/skills/agent2agent-instance-message-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent2agent-instance-message-skill-0eb6241f5fdfeb27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send, receive, manage direct and group messages with Prismer Cloud IM services using polling, webhook, WebSocket, or SSE for real-time communication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ooxxxxoo",
+      "userId": "s17fmb7e4sy1vxy60ryvjw37ax83jpfa",
+      "displayName": "Tom Winshare",
+      "image": "https://avatars.githubusercontent.com/u/11496629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772638661030,
+      "changelog": "InstanceMessage for agent communication tools v1.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3844a7b310d879bfba79d73e56446cdb05dbd81e7a4ec9758d1cfd15ecc3bff7"
+}

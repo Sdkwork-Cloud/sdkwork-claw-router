@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/label-compliance-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.label_compliance_audit",
+  "skill": {
+    "id": 71168,
+    "skillKey": "clawhub-label-compliance-audit",
+    "name": "label audit食品标签审核"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "label-compliance-audit",
+    "url": "https://clawhub.ai/skills/label-compliance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/label-compliance-audit-0e6fb8241a214bcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能审核食品包装标签的合规性，支持图片/PDF设计稿；当用户需要审核标签强制性标识、营养标签规范性、声称用语合规性或格式要求时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloudyxuq",
+      "userId": "s1705xx83pwxdyafv3n4m2r8s183m72a",
+      "displayName": "Tinker",
+      "image": "https://avatars.githubusercontent.com/u/3884483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775715079862,
+      "changelog": "Version 1.0.1 of label-compliance-audit\n\n- No file changes detected in this release.\n- Documentation and core workflow remain unchanged.\n- Maintains all previous features for intelligent food label compliance auditing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d400a7a600a457e8ee071dcf2c3b9826ff6e061bb9125f1fbff0bef706e2356"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-city-game@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_city_game",
+  "skill": {
+    "id": 63499,
+    "skillKey": "clawhub-travel-city-game",
+    "name": "travel-city-game(旅行游戏副本生成器)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-city-game",
+    "url": "https://clawhub.ai/skills/travel-city-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-city-game-179d3024f3fa30b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户输入的城市名，自动调用 flyai 搜索该城市的景点、体验、美食产品， 然后生成一个游戏化的3节点叙事行程 H5 页面。每个节点包含 AI 生成的故事文案 和飞猪真实预订链接。使用方式: /travel-city-game 城市名。 当用户提到 \"travel-city-game\"、\"生成行程\"、\"旅行叙..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongweisong1999",
+      "userId": "s17fc8h4ges10gps564npmtf4x8426ej",
+      "displayName": "HongWeiSong1999",
+      "image": "https://avatars.githubusercontent.com/u/35456545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1775616668589,
+      "changelog": "Version 1.0.9\n\n- 强化供应链安全规范，不再自动安装 flyai CLI，要求用户提前安装 flyai Skill。\n- 明确 flyai CLI 检查方式和错误提示，避免自动 npm 安装带来的潜在风险。\n- 增加 flyai API 限流处理，指导用户获取和配置专属 API Key。\n- 新增所有 shell 命令参数的注入安全要求，优先推荐 Python 子进程方式或单引号包裹参数。\n- 更新 compatibility 字段，精确声明 flyai 依赖与安装指引，增加对 node、flyai 可执行文件的要求。\n- 其余核心流程（搜索、节点组装、模板约束）保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41bca6c26aacfabeaa8b90ecd4933e7d9bcf1c628b396d9077c596ab63c6d23e"
+}

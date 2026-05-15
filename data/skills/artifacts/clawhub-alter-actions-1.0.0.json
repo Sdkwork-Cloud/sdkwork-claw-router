@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alter-actions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alter_actions",
+  "skill": {
+    "id": 10915,
+    "skillKey": "clawhub-alter-actions",
+    "name": "Alter Actions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alter-actions",
+    "url": "https://clawhub.ai/skills/alter-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alter-actions-94d8ae12665896a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trigger Alter macOS app actions via x-callback-urls. Catalog of 84+ actions including ask-anything, translate, summarize, grammar correction, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olivieralter",
+      "userId": "publishers:olivieralter",
+      "displayName": "OlivierAlter",
+      "image": "https://avatars.githubusercontent.com/u/196311677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2377,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769383134550,
+      "changelog": "Built-in Alter Actions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d4cdd3de0693d43196379c9c728bc97f6a5427984d340855b1301babef36d734"
+}

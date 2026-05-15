@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27458,
+  "uuid": "skill-clawhub-query-local-public-ip-address",
+  "skillKey": "clawhub-query-local-public-ip-address",
+  "name": "Query local public IP address",
+  "summary": "Retrieve the device's current public IP address by running a Python script.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_local_public_ip_address",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhangEnsure",
+      "features": [
+        "Retrieve the device's current public IP address by running a Python script."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-local-public-ip-address@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61238415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-local-public-ip-address",
+      "url": "https://clawhub.ai/skills/query-local-public-ip-address"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-local-public-ip-address",
+    "url": "https://clawhub.ai/skills/query-local-public-ip-address",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-local-public-ip-address-9ff4602ff413a6a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-local-public-ip-address@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-local-public-ip-address-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2f46b17e33d88a2878e1956219c0353556bee4d4c5f4eb3fea430740a05e0fc",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:13:31.901Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sec-daily-digest@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_daily_digest",
+  "skill": {
+    "id": 17767,
+    "skillKey": "clawhub-sec-daily-digest",
+    "name": "Sec Daily Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-daily-digest",
+    "url": "https://clawhub.ai/skills/sec-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-daily-digest-c612f7b8b2399534.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches latest articles from CyberSecurityRSS OPML feeds, applies AI/rule-based scoring, merges CVE and major vulnerability events, and generates a bilingual..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zer0yu",
+      "userId": "publishers:zer0yu",
+      "displayName": "z3r0yu",
+      "image": "https://avatars.githubusercontent.com/u/16551733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1772872126472,
+      "changelog": "**Sec Daily Digest v0.2.1: Big update—adds Twitter/X KOL support, archive deduplication, source health monitoring, full-text enrichment, email delivery, and robust configuration.**\n\n- Integrates Twitter/X KOL feeds with dynamic backend selection (supports twitterapi.io and official API).\n- Adds article archive for 7d deduplication and scoring; keeps historical logs with auto-expiry.\n- Implements source health monitoring and “Health Warnings” section in reports.\n- Supports email delivery via `gogcli` with new `--email` CLI flag.\n- Introduces full-text enrichment option (`--enrich`) and skipping logic for paywalled or social sites.\n- Configuration expanded: new `sources.yaml` for Twitter KOLs; improved CLI and env var control.\n- Pipeline and CLI enhanced with stricter fallback logic, new options, improved logging, and detailed output/statistics.\n- Adds comprehensive test coverage and new utility modules for Twitter, archiving, email, and health tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a2927dd8fb925704e2de080c888d9c5df12aa4f52fbfd1c6232d05e3f56f5b7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49541,
+  "uuid": "skill-clawhub-codex-image-server",
+  "skillKey": "clawhub-codex-image-server",
+  "name": "Codex Image Server",
+  "summary": "Use when a user wants to turn local Codex image_generation capability into a local HTTP image server for apps such as Photoshop plugins, design tools, or int...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_image_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CatREFuse",
+      "features": [
+        "Use when a user wants to turn local Codex image_generation capability into a local HTTP image s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-image-server@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8400960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-image-server",
+      "url": "https://clawhub.ai/skills/codex-image-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-image-server",
+    "url": "https://clawhub.ai/skills/codex-image-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-image-server-c47d2dde418aba52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-image-server@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-image-server-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73334be6b32d42b8d8bced8b189d5ff9cc7b9ce3d35561f4f90ebf7d3dc41d94",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T17:46:20.929Z"
+}

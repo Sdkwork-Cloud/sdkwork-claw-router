@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipintama-charts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipintama_charts",
+  "skill": {
+    "id": 43874,
+    "skillKey": "clawhub-pipintama-charts",
+    "name": "pipintama-charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipintama-charts",
+    "url": "https://clawhub.ai/skills/pipintama-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipintama-charts-92ee4a3b6e33cbca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, fetch, share, or update hosted Pipintama Charts through the MCP server. Use when a user needs a line, bar, pie, or radar chart from text or structure..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidk2yoyo",
+      "userId": "s17ca7wy10n5kcfrpxc33a4fhn846rsc",
+      "displayName": "davidk2yoyo",
+      "image": "https://avatars.githubusercontent.com/u/200820776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775354297933,
+      "changelog": "Initial release of pipintama-charts skill:\n\n- Create, fetch, share, update, and export hosted Pipintama Charts via the MCP server.\n- Supports line, bar, pie, and radar chart generation from user text or data.\n- Requires user-provided Pipintama API key for all actions.\n- Provides clear chart type selection guidance and response format standards.\n- Built-in guardrails for appropriate chart usage and secure URL handling.\n- Primary outputs: hosted chart viewer URL (and optional PNG export link).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:974a754ee32a748dccbd290dafcd5cda586630b4815841c7abe085dc5742b441"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20614,
+  "uuid": "skill-clawhub-phoenix-loop",
+  "skillKey": "clawhub-phoenix-loop",
+  "name": "Phoenix Loop",
+  "summary": "Auto-diagnose agent failures, extract reusable recovery patterns, and create local skills to fix recurring blockers while keeping all data private and local.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_loop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "Auto-diagnose agent failures, extract reusable recovery patterns, and create local skills to fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phoenix-loop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phoenix-loop",
+      "url": "https://clawhub.ai/skills/phoenix-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-loop",
+    "url": "https://clawhub.ai/skills/phoenix-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-loop-2a7402c2f84fdfca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phoenix-loop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phoenix-loop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ef00c7ed08a316945c9a666bb81a9952a38db0d161b32739ce8e5bc6bb4d236",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:16:40.060Z"
+}

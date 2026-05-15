@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39387,
+  "uuid": "skill-clawhub-laravel-package-search",
+  "skillKey": "clawhub-laravel-package-search",
+  "name": "Laravel Package Search",
+  "summary": "Real-time Laravel package search via Packagist API with local cache. Supports 22 scenes, quality scoring, and cross-references to laravel-docs-reader for off...",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laravel_package_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gao.QiLin",
+      "features": [
+        "Real-time Laravel package search via Packagist API with local cache",
+        "Supports 22 scenes, quality scoring, and cross-references to laravel-docs-reader for off..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laravel-package-search@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1791740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laravel-package-search",
+      "url": "https://clawhub.ai/skills/laravel-package-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laravel-package-search",
+    "url": "https://clawhub.ai/skills/laravel-package-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laravel-package-search-1f430538c3a73dbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laravel-package-search@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-laravel-package-search-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9d71cbf2ba0bf7f1b5a5c0b49dc60c8e4344e66628d62c989b3305bf3351ac0",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:27:36.747Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16509,
+  "uuid": "skill-clawhub-client-flow",
+  "skillKey": "clawhub-client-flow",
+  "name": "client-flow",
+  "summary": "Automated client onboarding and project lifecycle management. From a single message, creates Google Drive/Dropbox project folder structure, generates project...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.client_flow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arik Tulchinsky",
+      "features": [
+        "Automated client onboarding and project lifecycle management",
+        "From a single message, creates Google Drive/Dropbox project folder structure, generates project."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/client-flow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42210991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "client-flow",
+      "url": "https://clawhub.ai/skills/client-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "client-flow",
+    "url": "https://clawhub.ai/skills/client-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/client-flow-e42c0e015fb2ae8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/client-flow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-client-flow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ade7af4e86397cd7fc3a48e7cabb89fab6bb13244273d944220c15a9f1ec391",
+      "artifactSizeBytes": 3074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:39:01.170Z"
+}

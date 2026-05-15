@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59746,
+  "uuid": "skill-clawhub-faa-wsl",
+  "skillKey": "clawhub-faa-wsl",
+  "name": "FastapiAdmin WSL 自动部署",
+  "summary": "将 FastapiAdmin 在 Windows WSL2 Ubuntu 环境下自动部署。包括环境检查、依赖安装（pip/pnpm/MySQL/Redis/Nginx）、前后端代码克隆与构建、Nginx SPA 路由修复（alias+try_files 循环问题）、WSL2 网络访问（宿主机浏览器访问）、SSL...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faa_wsl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bamboo-art",
+      "features": [
+        "将 FastapiAdmin 在 Windows WSL2 Ubuntu 环境下自动部署。包括环境检查、依赖安装（pip/pnpm/MySQL/Redis/Nginx）、前后端代码克隆与构建."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faa-wsl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78297989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faa-wsl",
+      "url": "https://clawhub.ai/skills/faa-wsl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faa-wsl",
+    "url": "https://clawhub.ai/skills/faa-wsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faa-wsl-fcb56634e8653f5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faa-wsl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faa-wsl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db2611a33d1ebcd5b2c37c697b4b93ce25453b9d6ddb815e6ebe2ce3826814a2",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:04:33.000Z"
+}

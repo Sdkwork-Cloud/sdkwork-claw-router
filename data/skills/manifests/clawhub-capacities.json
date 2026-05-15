@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11953,
+  "uuid": "skill-clawhub-capacities",
+  "skillKey": "clawhub-capacities",
+  "name": "Capacities",
+  "summary": "Manage Capacities notes, daily entries, and weblinks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capacities",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidsmorais",
+      "features": [
+        "Manage Capacities notes, daily entries, and weblinks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/capacities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22729436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "capacities",
+      "url": "https://clawhub.ai/skills/capacities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capacities",
+    "url": "https://clawhub.ai/skills/capacities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capacities-5f910bd6e4312856.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/capacities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-capacities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be9607fe0f1d2a8e28282c731c85d82a39636e9a5c510ec1493d07fbb27a2d3a",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T20:01:48.325Z"
+}

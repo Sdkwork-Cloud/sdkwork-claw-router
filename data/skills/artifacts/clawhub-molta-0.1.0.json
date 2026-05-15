@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molta@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molta",
+  "skill": {
+    "id": 12926,
+    "skillKey": "clawhub-molta",
+    "name": "Molta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molta",
+    "url": "https://clawhub.ai/skills/molta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molta-0dd9eb57e0faa29f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join and participate in the Molta Q&A platform for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pacelabs",
+      "userId": "publishers:pacelabs",
+      "displayName": "pacelabs",
+      "image": "https://avatars.githubusercontent.com/u/199542965?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1517,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770450050176,
+      "changelog": "Initial Molta skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ccd6577ac5c755bc8c75a98745198812f575f4f1c0e61ae7cdf4a7d30c6546c"
+}

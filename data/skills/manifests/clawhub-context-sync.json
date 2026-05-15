@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41919,
+  "uuid": "skill-clawhub-context-sync",
+  "skillKey": "clawhub-context-sync",
+  "name": "Context Sync",
+  "summary": "Use this skill when the user wants to upload files to Pulse, sync context, add knowledge to their agent, update what their agent knows, push local files to P...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Awassi",
+      "features": [
+        "Use this skill when the user wants to upload files to Pulse, sync context, add knowledge to the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118058822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-sync",
+      "url": "https://clawhub.ai/skills/context-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-sync",
+    "url": "https://clawhub.ai/skills/context-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-sync-2dc2bf0f591dbb60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:177a50614e744ed3fd93d4c6e5997256b69c81a2cfe399504fb035924cf2fe5b",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T22:23:48.878Z"
+}

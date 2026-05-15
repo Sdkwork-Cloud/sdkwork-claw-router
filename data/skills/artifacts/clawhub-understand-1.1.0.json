@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/understand@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.understand",
+  "skill": {
+    "id": 25618,
+    "skillKey": "clawhub-understand",
+    "name": "Understand-Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "understand",
+    "url": "https://clawhub.ai/skills/understand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/understand-f9dc689e6d50ad6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a codebase to produce an interactive knowledge graph for understanding architecture, components, and relationships"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lum1104",
+      "userId": "publishers:lum1104",
+      "displayName": "Yuxiang Lin",
+      "image": "https://avatars.githubusercontent.com/u/87774050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773972139141,
+      "changelog": "understand 1.1.0\n\n- Adds support for incremental codebase analysis using git commit hash tracking.\n- Introduces full vs. incremental analysis modes with logic for efficient graph rebuilding on code changes.\n- Gathers project context (README, manifest, directory tree, entry point) for more accurate analysis.\n- Batches file analysis for improved performance and supports concurrent subagent dispatching.\n- Enhances architecture inference with layer hints from directory and framework heuristics.\n- Outputs an interactive knowledge graph for exploring project structure and relationships.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1377f8955a853b78265769a9ecd2d33c4a37de0e68346c8fc22a2b272e32dbb0"
+}

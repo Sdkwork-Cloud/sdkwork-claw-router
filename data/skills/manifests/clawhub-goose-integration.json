@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37611,
+  "uuid": "skill-clawhub-goose-integration",
+  "skillKey": "clawhub-goose-integration",
+  "name": "Goose",
+  "summary": "Goose integration. Manage data, records, and automate workflows. Use when the user wants to interact with Goose data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goose_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Goose integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Goose data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goose-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goose-integration",
+      "url": "https://clawhub.ai/skills/goose-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goose-integration",
+    "url": "https://clawhub.ai/skills/goose-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goose-integration-14aaeb1bac42615c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goose-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-goose-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c13ee8f80563e56793cf3630b1f7b1bb12a5b7d163d45532954c35f8243f1be7",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:33.697Z"
+}

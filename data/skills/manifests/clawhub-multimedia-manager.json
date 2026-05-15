@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24087,
+  "uuid": "skill-clawhub-multimedia-manager",
+  "skillKey": "clawhub-multimedia-manager",
+  "name": "Multimedia Manager",
+  "summary": "Self-hosted agent to organize, search, and browse images and videos with auto-deduplication, full-text search, albums, favorites, and a responsive web gallery.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multimedia_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nuoguoai",
+      "features": [
+        "Self-hosted agent to organize, search, and browse images and videos with auto-deduplication, fu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multimedia-manager@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46828235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multimedia-manager",
+      "url": "https://clawhub.ai/skills/multimedia-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multimedia-manager",
+    "url": "https://clawhub.ai/skills/multimedia-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multimedia-manager-07a09733912f2227.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multimedia-manager@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-multimedia-manager-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:745994536feb6f4ad1a4fa8f16b85c0f1bfd49bc9d645008f1bcfd0a467eac26",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:38:23.948Z"
+}

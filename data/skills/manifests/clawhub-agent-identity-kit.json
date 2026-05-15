@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9890,
+  "uuid": "skill-clawhub-agent-identity-kit",
+  "skillKey": "clawhub-agent-identity-kit",
+  "name": "Agent Identity Kit",
+  "summary": "Create, validate, and manage agent identity cards (agent.json) following the Agent Card v1 schema with interactive setup and validation tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_identity_kit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryancampbell",
+      "features": [
+        "Create, validate, and manage agent identity cards (agent.json) following the Agent Card v1 sche."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-identity-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-identity-kit",
+      "url": "https://clawhub.ai/skills/agent-identity-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-identity-kit",
+    "url": "https://clawhub.ai/skills/agent-identity-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-identity-kit-7dd57af46b54f316.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-identity-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-identity-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0179498a13d7b20ec411842a986976b8c205ea025de69867aceb022220e7359c",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T20:44:22.960Z"
+}

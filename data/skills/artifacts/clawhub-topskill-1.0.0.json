@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/topskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topskill",
+  "skill": {
+    "id": 73293,
+    "skillKey": "clawhub-topskill",
+    "name": "國際政治評論員"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topskill",
+    "url": "https://clawhub.ai/skills/topskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topskill-a0ff32afeb4c848b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "政治評論員技能。協助用戶收集熱門政治新聞、分析評論、生成多格式內容。當用戶詢問政治新聞、政治評論、政治分析、時事點評、或需要撰寫政治相關文章/口播稿/社群貼文時觸發。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qpooqp777",
+      "userId": "s17962wny5qmny7y248ncnkhp983jryt",
+      "displayName": "qpooqp777",
+      "image": "https://avatars.githubusercontent.com/u/10084829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774580255925,
+      "changelog": "Political Commentator 1.0.0 – Initial Release\n\n- New skill to assist users in collecting, analyzing, and commenting on trending political news.\n- Step-by-step workflow: news collection → user interest selection → in-depth analysis → multi-format content output.\n- Supports output as articles, scripts, social posts, visual cards, and newsletters, with selectable commentary styles.\n- Enables tracking specific topics and building a political knowledge base.\n- Includes templates and sample prompts for seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4118943bd8e32d735267abbcf3712bc17b92278e01f12c5e375123fe9b1284b4"
+}

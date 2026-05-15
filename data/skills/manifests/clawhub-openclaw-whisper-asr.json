@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62962,
+  "uuid": "skill-clawhub-openclaw-whisper-asr",
+  "skillKey": "clawhub-openclaw-whisper-asr",
+  "name": "openclaw-whisper-asr",
+  "summary": "本地 Whisper 语音识别配置。自动将飞书/Telegram 等渠道的语音消息转成文字。 适用于需要离线、低延迟语音转文字的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_whisper_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "本地 Whisper 语音识别配置。自动将飞书/Telegram 等渠道的语音消息转成文字。 适用于需要离线、低延迟语音转文字的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-whisper-asr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-whisper-asr",
+      "url": "https://clawhub.ai/skills/openclaw-whisper-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-whisper-asr",
+    "url": "https://clawhub.ai/skills/openclaw-whisper-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-whisper-asr-e4fec48799f8c15c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-whisper-asr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-whisper-asr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f44238e9f34e2924d9aaa204c7ffc105e6e33f3fad6f073e123ed90f7d70bbd",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:43:38.421Z"
+}

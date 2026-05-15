@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16552,
+  "uuid": "skill-clawhub-laravel-cloud",
+  "skillKey": "clawhub-laravel-cloud",
+  "name": "Laravel Cloud",
+  "summary": "Manage Laravel Cloud infrastructure via API — apps, environments, deployments, databases, caches, domains, scaling, commands, storage, and WebSockets.",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laravel_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Florian Beer",
+      "features": [
+        "Manage Laravel Cloud infrastructure via API — apps, environments, deployments, databases, cache."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laravel-cloud@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/800047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laravel-cloud",
+      "url": "https://clawhub.ai/skills/laravel-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laravel-cloud",
+    "url": "https://clawhub.ai/skills/laravel-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laravel-cloud-8f80c5839b8aacd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laravel-cloud@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-laravel-cloud-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5b542a9a79a978b4d0723f0cb89a69a610eae243f1d3bce44c25d7a734f0ba0",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:25:38.357Z"
+}

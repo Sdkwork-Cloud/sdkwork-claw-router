@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/problem-solving-methodology@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.problem_solving_methodology",
+  "skill": {
+    "id": 62866,
+    "skillKey": "clawhub-problem-solving-methodology",
+    "name": "Problem Solving"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "problem-solving-methodology",
+    "url": "https://clawhub.ai/skills/problem-solving-methodology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/problem-solving-methodology-cde08b82d7e14dbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "结构化问题诊断与解决方法论。 Use when: (1) 问题原因不明需要调查/\"分析一下这个问题\"/\"排查一下\", (2) 之前的修复尝试失败了, (3) 问题涉及多个组件交互/\"为什么会这样\"/\"调查一下原因\", (4) 修改有风险或副作用/\"诊断一下\", (5) 用户明确要求先分析再修复。 NOT for:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovensky1992-wk",
+      "userId": "s17dsprt4znvnqphy9hhy68va983nsqs",
+      "displayName": "lovensky1992-wk",
+      "image": "https://avatars.githubusercontent.com/u/264908128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778048994164,
+      "changelog": "Weekly sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28431d8b2400c3f0b5e5facefd49baa3c7c3642bd96c797b5f625c00e1249534"
+}

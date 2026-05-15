@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14644,
+  "uuid": "skill-clawhub-microsoft-todo",
+  "skillKey": "clawhub-microsoft-todo",
+  "name": "Microsoft To Do",
+  "summary": "Manage Microsoft To Do tasks via the `todo` CLI. Use when user wants to add, list, complete, remove tasks, manage subtasks (steps), notes, or organize task lists.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_todo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "underwear",
+      "features": [
+        "Manage Microsoft To Do tasks via the `todo` CLI",
+        "Use when user wants to add, list, complete, remove tasks, manage subtasks (steps), notes, or or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-todo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4825406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-todo",
+      "url": "https://clawhub.ai/skills/microsoft-todo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-todo",
+    "url": "https://clawhub.ai/skills/microsoft-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-todo-2764119be48cadfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-todo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-todo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80dc6c07edc9dc1abba523cebe44251cb7eb38537fdaf92f1c85dc3ee6e601ed",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T18:27:53.894Z"
+}

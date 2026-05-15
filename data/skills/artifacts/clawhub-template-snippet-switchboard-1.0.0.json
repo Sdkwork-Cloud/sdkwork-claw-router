@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/template-snippet-switchboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.template_snippet_switchboard",
+  "skill": {
+    "id": 59691,
+    "skillKey": "clawhub-template-snippet-switchboard",
+    "name": "Template Snippet Switchboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "template-snippet-switchboard",
+    "url": "https://clawhub.ai/skills/template-snippet-switchboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/template-snippet-switchboard-3a4c1f504088ebb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理常用模板和片段，按场景、角色、语气、长度切换并维护版本。；use for templates, snippets, writing workflows；do not use for 塞入未经审校的敏感话术, 替代版本管理系统."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231966578,
+      "changelog": "Initial release of template-snippet-switchboard:\n\n- Manage templates and snippets with switching by scenario, role, tone, and length.\n- Provides structured outputs: template directory, applicable scenarios, role/tone variations, maintenance and retirement standards.\n- Emphasizes safety: only reviewed content, not for direct publishing or unsupervised changes.\n- Supports both script-based and direct file-based workflows.\n- Includes clear routing guidance for suitable and unsuitable use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfb3592fbffebc0f399df78de8de270b9d03e53efa26ef25a4c64a05cabe78db"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talk2ui@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talk2ui",
+  "skill": {
+    "id": 66776,
+    "skillKey": "clawhub-talk2ui",
+    "name": "Talk2UI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talk2ui",
+    "url": "https://clawhub.ai/skills/talk2ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talk2ui-fb0f434e53840c53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SwiftUI 口语化编程技能。当用户用中文描述 UI 需求（如\"做一个毛玻璃卡片\"、\"按钮要跟手\"、\"这个元素是主角\"）时激活此技能，将口语转化为符合物理隐喻规范的 SwiftUI 代码。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774509047978,
+      "changelog": "Initial release of talk2UI, a SwiftUI skill for translating natural spoken Chinese UI requests into SwiftUI code using physical metaphors and Apple design guidelines.\n\n- Supports \"oral-to-code\" conversion: transforms spoken, casual UI requests into compliant SwiftUI code and templates.\n- Integrates memory features—remembers user preferences and custom spoken expressions for future sessions.\n- Provides context-aware intent parsing, fuzzy matching, and proactive learning of new user phrases (with confirmation and cheat sheet updates).\n- Offers code pattern library for common UI elements (cards, lists, toolbars, FABs, etc.) with best practices.\n- Includes script tools for intent parsing, animation/spring parameter generation, code templating, and live Xcode Canvas preview.\n- Adds new support for Xcode 26: #Playground macro integration, Liquid Glass (iOS 26) effects, and SwiftUI performance checks.\n- Built-in safety checks to ensure accessibility and best practices (e.g., touch target sizes, no misuse of GeometryReader).\n- Auto-extracts user preferences at end of sessions to streamline future UI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd17c6c8b487aad18dbd3e5830a92ce78a629f212286b41d966d9ec0810f18a3"
+}

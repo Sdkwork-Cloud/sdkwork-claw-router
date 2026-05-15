@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60751,
+  "uuid": "skill-clawhub-slugtest",
+  "skillKey": "clawhub-slugtest",
+  "name": "only for test",
+  "summary": "提取 .docx/.xlsx/.pdf/图片 文档内容，转换为 Markdown 格式（支持 OCR 识别）。 这是**只读提取工具**，专注于将现有文档转换为 Markdown。 TRIGGER when: 用户要求提取文档内容、读取 Word/Excel/PDF 内容、提取图片文字、 OCR 识别、文档转 M...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slugtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sinoslug",
+      "features": [
+        "提取 .docx/.xlsx/.pdf/图片 文档内容，转换为 Markdown 格式（支持 OCR 识别）。 这是**只读提取工具**，专注于将现有文档转换为 Markdown。 TRIG."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slugtest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125179548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slugtest",
+      "url": "https://clawhub.ai/skills/slugtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slugtest",
+    "url": "https://clawhub.ai/skills/slugtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slugtest-304c7ea49f425cb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slugtest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slugtest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a415a5717c8cf84f73145484747d038d9082d28191781ceac17293a36d2a4da4",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T01:57:37.625Z"
+}

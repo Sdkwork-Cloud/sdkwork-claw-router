@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hr-policy-generator-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hr_policy_generator_cn",
+  "skill": {
+    "id": 73128,
+    "skillKey": "clawhub-hr-policy-generator-cn",
+    "name": "人力资源政策生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hr-policy-generator-cn",
+    "url": "https://clawhub.ai/skills/hr-policy-generator-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hr-policy-generator-cn-edfa2e1ccb555bbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "综合性 HR 政策设计工具，覆盖考勤、休假、加班、远程办公及合规要求。根据公司规模、办公模式、适用法律等输入，生成完整的政策文档、法律合规清单、例外处理机制及员工沟通方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1970168137",
+      "userId": "s1750jcdy0m9f65nkyj3n8y7ws83f35s",
+      "displayName": "走过",
+      "image": "https://avatars.githubusercontent.com/u/48984941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774236436617,
+      "changelog": "hr-policy-generator-cn 1.0.0 初始发布\n\n- 推出综合性人力资源政策生成工具，支持中文版界面。\n- 支持输入公司规模、办公模式、适用法律、现有政策、员工反馈与行业标准。\n- 一键生成考勤与休假政策、工作时间安排、假别分类、加班政策、例外处理流程、合规性检查清单及员工沟通方案。\n- 适配现场办公、远程办公、混合办公等多种工作模式与地区合规要求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43e99738c6f42b1a1253d2d6989b5453942327de5986df0c17972d7121b46339"
+}

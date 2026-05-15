@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29909,
+  "uuid": "skill-clawhub-pdfmonkey",
+  "skillKey": "clawhub-pdfmonkey",
+  "name": "Pdfmonkey",
+  "summary": "PDFMonkey integration. Manage Documents, Audits. Use when the user wants to interact with PDFMonkey data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdfmonkey",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "PDFMonkey integration",
+        "Manage Documents, Audits",
+        "Use when the user wants to interact with PDFMonkey data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdfmonkey@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdfmonkey",
+      "url": "https://clawhub.ai/skills/pdfmonkey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdfmonkey",
+    "url": "https://clawhub.ai/skills/pdfmonkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdfmonkey-5335ed741d709dcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdfmonkey@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdfmonkey-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dba040fa373a49f55b58ebdd119307508b6ec2e274c86a750bf9126b4668d8b6",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:42.165Z"
+}

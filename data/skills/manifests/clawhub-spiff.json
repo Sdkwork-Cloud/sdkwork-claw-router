@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39914,
+  "uuid": "skill-clawhub-spiff",
+  "skillKey": "clawhub-spiff",
+  "name": "Spiff",
+  "summary": "Spiff integration. Manage data, records, and automate workflows. Use when the user wants to interact with Spiff data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spiff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Spiff integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Spiff data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spiff@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spiff",
+      "url": "https://clawhub.ai/skills/spiff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spiff",
+    "url": "https://clawhub.ai/skills/spiff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spiff-1bff3a687ce6c676.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spiff@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-spiff-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e2ba6689f58c4d40a9d2ff333cbbec025498bfa6a0f3d57dbd15277493f0a5e",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:29.032Z"
+}

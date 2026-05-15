@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-calendar-update-event@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_calendar_update_event",
+  "skill": {
+    "id": 40281,
+    "skillKey": "clawhub-google-calendar-update-event",
+    "name": "Google Calendar Update Event"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-calendar-update-event",
+    "url": "https://clawhub.ai/skills/google-calendar-update-event",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-calendar-update-event-693b353d2377ba70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to update a Google Calendar event using the gog CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777263327941,
+      "changelog": "**Summary: Switched from plugin-based to CLI-based event updates.**\n\n- Now uses the native gog CLI instead of the google-workspace-plugin for updating events.\n- Updated skill requirements to depend on the 'gog' binary.\n- Modified cognitive directives and schema example to reflect CLI command usage.\n- Clarified expected output for consistency with the new workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:521c5fa9a22ab682d30ce1d7d8ab25bcb215ec29319f3de980e3996b51470ca3"
+}

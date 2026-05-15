@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58674,
+  "uuid": "skill-clawhub-job-analysis-work",
+  "skillKey": "clawhub-job-analysis-work",
+  "name": "job-analysis-work",
+  "summary": "在对话中辅助学习\"工作分析/Job Analysis\"第 2 章\"Work-Oriented Methods\"。基于 Brannick/Levine/Morgeson 等人教材。当用户讨论、提问、或应用四大 work-oriented 方法（time-and-motion study、FJA、task inven...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_work",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Do",
+      "features": [
+        "在对话中辅助学习\"工作分析/Job Analysis\"第 2 章\"Work-Oriented Methods\"。基于 Brannick/Levine/Morgeson 等人教材。当用户讨论、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-analysis-work@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44743340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-analysis-work",
+      "url": "https://clawhub.ai/skills/job-analysis-work"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-work",
+    "url": "https://clawhub.ai/skills/job-analysis-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-work-cafabc05703ce3df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-analysis-work@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-analysis-work-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71fe10ac6bdb9b40a5f73979bfd1024a480c1bcfdc28a5c7cc61d27c1381cd9f",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:18:43.430Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49242,
+  "uuid": "skill-clawhub-signal-hardened",
+  "skillKey": "clawhub-signal-hardened",
+  "name": "Signal Hardened",
+  "summary": "Bridge THIS Claude Code session to Telegram, Discord, Feishu/Lark, or QQ so the user can chat with Claude from their phone. Use for: setting up, starting, st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Bridge THIS Claude Code session to Telegram, Discord, Feishu/Lark, or QQ so the user can chat w.",
+        "Use for: setting up, starting, st..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-hardened",
+      "url": "https://clawhub.ai/skills/signal-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-hardened",
+    "url": "https://clawhub.ai/skills/signal-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-hardened-1aa2973b8f4bb8ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce34edb31875acd406d4377b6be71bceeb50516fedc94428d29456ef8e6653e0",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:00:31.178Z"
+}

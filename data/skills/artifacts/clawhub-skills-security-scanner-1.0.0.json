@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-security-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_security_scanner",
+  "skill": {
+    "id": 65561,
+    "skillKey": "clawhub-skills-security-scanner",
+    "name": "skills-security-scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-security-scanner",
+    "url": "https://clawhub.ai/skills/skills-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-security-scanner-5365e50f80739b62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审计和扫描技能的安全性。在启用新技能前使用此工具验证其安全性，确保符合安全策略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qihuang0",
+      "userId": "s17cyf2e772gm2b2wcx6hjspj583h0e9",
+      "displayName": "qihuang",
+      "image": "https://avatars.githubusercontent.com/u/40284225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773815671061,
+      "changelog": "Initial release of skills-security-scanner:\n\n- Provides a tool for auditing and scanning the security of other skills before enabling them.\n- Scans skills by analyzing the SKILL.md file and related code via a local analysis service.\n- Includes a script (`scripts/scan.py`) for scanning, requiring absolute paths.\n- Outputs results as a JSON array for further processing and user-friendly reporting.\n- Specifies a standardized scan report format in Chinese, highlighting high and medium security risks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25e8a3376288168686b3cfb44ce63394a4b2b3fe95bb2acd9c16c7c1b18050e4"
+}

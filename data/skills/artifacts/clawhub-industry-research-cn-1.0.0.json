@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-research-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_cn",
+  "skill": {
+    "id": 70501,
+    "skillKey": "clawhub-industry-research-cn",
+    "name": "Industry Research CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-cn",
+    "url": "https://clawhub.ai/skills/industry-research-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-cn-25ccb69bed5be9c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业深度研究工具。当用户要求\"研究XX行业\"、\"分析XX商品\"、\"行业研究报告\"时触发。自动化搜集指定商品/行业的价格走势、成因分析、上下游产业链、重大新闻、A股上市公司列表及财务分析（营收/毛利润占比）、价格波动对各公司的影响（受益/受损）、投资机会与风险提示，并附重点公司换手率分析及技术面分析（K线形态+均线..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitertigerwilson",
+      "userId": "s17chegfjfxxet01khaecf1nks84nx2v",
+      "displayName": "whitertigerwilson",
+      "image": "https://avatars.githubusercontent.com/u/275272098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777271021142,
+      "changelog": "- 初始版本发布，支持行业深度研究自动化。\n- 覆盖10个结构化研究维度：价格走势、成因分析、产业链梳理、重大新闻、A股上市公司筛选、盈利弹性估算、投资风险与机会、换手率分析、技术面（K线+均线）分析等。\n- 明确工作流程，支持多源股价交叉验证，提升数据准确性。\n- 标准化输出格式，便于理解和比对，附专业免责声明。\n- 预留未来扩展方向，包括实时价格API、财报抓取、期现分析及多商品对比。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:949ccfadee7fb14dd4c0523da60eeafb6527de092d013e01baadf6284ce293ff"
+}

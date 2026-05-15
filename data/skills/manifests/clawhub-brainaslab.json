@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49963,
+  "uuid": "skill-clawhub-brainaslab",
+  "skillKey": "clawhub-brainaslab",
+  "name": "BrainASLab",
+  "summary": "Automatically analyzes FreeSurfer stats files to compute cortical asymmetry indices, generating CSV results and publication-ready plots.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainaslab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "佳佳佳",
+      "features": [
+        "Automatically analyzes FreeSurfer stats files to compute cortical asymmetry indices, generating."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brainaslab@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266621316?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brainaslab",
+      "url": "https://clawhub.ai/skills/brainaslab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainaslab",
+    "url": "https://clawhub.ai/skills/brainaslab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainaslab-b0fa9c0ecc345621.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brainaslab@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brainaslab-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2100c1b34c8191e8e297e8745860c2f1c57ef794d9aa9b3a76c893a5137149b0",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:21:36.140Z"
+}

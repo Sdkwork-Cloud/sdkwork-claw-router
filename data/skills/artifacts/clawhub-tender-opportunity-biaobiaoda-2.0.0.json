@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tender-opportunity-biaobiaoda@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tender_opportunity_biaobiaoda",
+  "skill": {
+    "id": 73285,
+    "skillKey": "clawhub-tender-opportunity-biaobiaoda",
+    "name": "招投标商机监控雷达-标标达"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tender-opportunity-biaobiaoda",
+    "url": "https://clawhub.ai/skills/tender-opportunity-biaobiaoda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tender-opportunity-biaobiaoda-dc8f1ca3549763a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "招投标商机监控雷达-标标达，当用户询问最新商机、临期项目预测或竞争对手分析时必须调用，重点运用高级检索和竞对分析接口，输出高时效性的项目线索和竞对动向。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liu-jiapeng",
+      "userId": "s178hbet5kwyvdjvs8p9pvgw1x83w07t",
+      "displayName": "liu-jiapeng",
+      "image": "https://avatars.githubusercontent.com/u/37843351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1778328563376,
+      "changelog": "**Version 2.0.0 Changelog — Major upgrade with expanded business scenarios and new API docs**\n\n- Enhanced skill description: Now covers not just bid monitoring, but also in-depth risk analysis (e.g., \"内定\" detection, control bid screening, avoiding low-value bids), competitor analysis, supplier network tracing, and intelligent feasibility judgment.\n- Expanded toolset: Added new tool `search_company` for full-entity company search. Total tools increased from 15 to 16.\n- Split detailed API docs into 3 new reference files: `api-search.md`, `api-company.md`, and `api-market.md` for clearer parameter reference and maintenance.\n- Stronger trigger guidance: Will auto-trigger on a wider range of procurement Q&A, including all queries about bidding risk, anti-runner-up, price quoting, or supplier sourcing — even if users don't mention the skill name.\n- New scenario-driven quickstart section and more concise core concepts for match_modes and keyword logic.\n- Added FAQ on error codes and best practices for supplementing structured data with web search for comprehensive analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4768ac10f152086095395555aab2c40a24a61c67d838861be490a08be3af8785"
+}

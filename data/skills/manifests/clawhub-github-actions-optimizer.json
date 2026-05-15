@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53574,
+  "uuid": "skill-clawhub-github-actions-optimizer",
+  "skillKey": "clawhub-github-actions-optimizer",
+  "name": "Github Actions Optimizer",
+  "summary": "Optimize GitHub Actions workflows for speed, cost, security, and reliability — analyze run times, cache strategies, job parallelism, and runner selection.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Optimize GitHub Actions workflows for speed, cost, security, and reliability — analyze run time."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-optimizer",
+      "url": "https://clawhub.ai/skills/github-actions-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-optimizer",
+    "url": "https://clawhub.ai/skills/github-actions-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-optimizer-442cb86cca2cf5a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db79cc9aec7bdc0eb8989210779cc837195babb15531582469a573bd661bb7f6",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:37.981Z"
+}

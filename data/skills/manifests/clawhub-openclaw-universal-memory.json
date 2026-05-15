@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17075,
+  "uuid": "skill-clawhub-openclaw-universal-memory",
+  "skillKey": "clawhub-openclaw-universal-memory",
+  "name": "OpenClaw Universal Memory",
+  "summary": "Generic Postgres and pgvector memory layer for connector-agnostic data ingestion, incremental sync, and searchable chunk storage with cursor history.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_universal_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Athanasoulis",
+      "features": [
+        "Generic Postgres and pgvector memory layer for connector-agnostic data ingestion, incremental s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-universal-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11580888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-universal-memory",
+      "url": "https://clawhub.ai/skills/openclaw-universal-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-universal-memory",
+    "url": "https://clawhub.ai/skills/openclaw-universal-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-universal-memory-362c2f06f7abeb4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-universal-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-universal-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edb2aeff41c8fd8e01c8aa2f857795e7e699edafe869cfa27db4f634892826b6",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T09:54:16.049Z"
+}

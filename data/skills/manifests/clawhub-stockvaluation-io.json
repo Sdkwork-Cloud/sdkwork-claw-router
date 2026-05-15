@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20136,
+  "uuid": "skill-clawhub-stockvaluation-io",
+  "skillKey": "clawhub-stockvaluation-io",
+  "name": "Stock Valuation using Aswath Damodaran methodologies",
+  "summary": "Set up, run, compare, and debug StockValuation.io, a local-first DCF valuation platform, including Docker startup, ticker valuations, LLM provider changes, p...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockvaluation_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pradeep Singh",
+      "features": [
+        "Set up, run, compare, and debug StockValuation.io, a local-first DCF valuation platform, includ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stockvaluation-io@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1730359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stockvaluation-io",
+      "url": "https://clawhub.ai/skills/stockvaluation-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockvaluation-io",
+    "url": "https://clawhub.ai/skills/stockvaluation-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockvaluation-io-b663352a96cf4095.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stockvaluation-io@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-stockvaluation-io-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89795073216d8437bbc6d9bb22ebd4cf450c30f9c686cb2ef53161def4f84b5e",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:56:18.837Z"
+}

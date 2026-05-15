@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23052,
+  "uuid": "skill-clawhub-vvvv-testing",
+  "skillKey": "clawhub-vvvv-testing",
+  "name": "Vvvv Testing",
+  "summary": "Set up and run automated tests for vvvv gamma packages and C# nodes -- VL.TestFramework with NUnit for library/package authors (CI-ready), test .vl patches w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_testing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tebjan Halm",
+      "features": [
+        "Set up and run automated tests for vvvv gamma packages and C# nodes -",
+        "VL.TestFramework with NUnit for library/package authors (CI-ready), test .vl patches w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vvvv-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1094716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vvvv-testing",
+      "url": "https://clawhub.ai/skills/vvvv-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-testing",
+    "url": "https://clawhub.ai/skills/vvvv-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-testing-9e0bc2ad60026870.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vvvv-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vvvv-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f146c9bef5d51496a5bbd41da3ed8301bbcfecc78155c0b20afdbb7e700f582a",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:33:03.023Z"
+}

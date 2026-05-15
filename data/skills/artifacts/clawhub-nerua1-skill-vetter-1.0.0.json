@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nerua1-skill-vetter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerua1_skill_vetter",
+  "skill": {
+    "id": 42768,
+    "skillKey": "clawhub-nerua1-skill-vetter",
+    "name": "Skill Vetter — Security Audit for AI Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerua1-skill-vetter",
+    "url": "https://clawhub.ai/skills/nerua1-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerua1-skill-vetter-cdacac7cc7e4b562.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777850236977,
+      "changelog": "- Initial release of skill-vetter (v1.0.0): a security-first vetting protocol for AI agent skills.\n- Provides a structured checklist and report format to assess skill sources, code, permission scope, and risk.\n- Includes clear red flags, trust hierarchy, and actionable risk classifications.\n- Offers quick vet commands for GitHub skills and strong install guidance.\n- Emphasizes never installing unvetted skills and prioritizes security at every step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e40818837ac2bdbfa9dccb8c098f6faeceadac2d9b4f0ff8a47fa214166d471"
+}

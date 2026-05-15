@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70922,
+  "uuid": "skill-clawhub-douban",
+  "skillKey": "clawhub-douban",
+  "name": "Douban",
+  "summary": "豆瓣书影音助手，精通影评书评撰写、评分分析、片单书单推荐",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douban",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "豆瓣书影音助手，精通影评书评撰写、评分分析、片单书单推荐"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douban@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douban",
+      "url": "https://clawhub.ai/skills/douban"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douban",
+    "url": "https://clawhub.ai/skills/douban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douban-5a189274a076e187.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douban@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douban-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17f9021e554b0e0abacf71b7ae774cfee29eb1942517fae3f51142ff7e770942",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:07.929Z"
+}

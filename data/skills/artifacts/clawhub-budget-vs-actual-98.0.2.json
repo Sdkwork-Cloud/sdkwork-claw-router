@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-vs-actual@98.0.2",
+  "version": "98.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_vs_actual",
+  "skill": {
+    "id": 22917,
+    "skillKey": "clawhub-budget-vs-actual",
+    "name": "Budget Vs Actual"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-vs-actual",
+    "url": "https://clawhub.ai/skills/budget-vs-actual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-vs-actual-c0a57d84e2bab5bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monthly and quarterly budget vs. actual variance analysis for businesses. Compare planned vs. realized revenue, expenses, and margins. Identify favorable/unf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "98.0.2",
+      "createdAt": 1773882915807,
+      "changelog": "Patch update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b72f82049d369be0a0b5881aa339884cf07a20d6689a1ecab061d125673aabf"
+}

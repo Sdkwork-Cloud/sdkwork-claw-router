@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/school-run@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.school_run",
+  "skill": {
+    "id": 27710,
+    "skillKey": "clawhub-school-run",
+    "name": "School Run"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "school-run",
+    "url": "https://clawhub.ai/skills/school-run",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/school-run-f37d00888d01384b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages the School Run Schedule Google Sheet. Use when reading or updating the school run drop-off schedule for Damian and Zachary (date, responsible person,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cbasah",
+      "userId": "publishers:cbasah",
+      "displayName": "cbasah",
+      "image": "https://avatars.githubusercontent.com/u/10655296?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773724412666,
+      "changelog": "Initial release of school-run skill.\n\n- Provides CLI access to manage the School Run Schedule Google Sheet.\n- Supports reading and updating drop-off schedules for Damian and Zachary.\n- Documents sheet column structure and command templates for typical operations.\n- Includes usage guidelines and troubleshooting tips for API access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:910716944678d47cd85d428f86c31f69ad8b1d85759805b7a029dda10a76528a"
+}

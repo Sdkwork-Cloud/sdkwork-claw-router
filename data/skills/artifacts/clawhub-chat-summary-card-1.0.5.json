@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-summary-card@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_summary_card",
+  "skill": {
+    "id": 32658,
+    "skillKey": "clawhub-chat-summary-card",
+    "name": "An AI-powered tool that turns conversations into polished, structured summary cards by extracting key ideas, action items, and."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-summary-card",
+    "url": "https://clawhub.ai/skills/chat-summary-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-summary-card-69a2b6d5029de206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Say \"Help me install this skill from https://clawhub.ai/shuminliu026/chat-summary-card\" to your local agent, then turn conversations into polished visual sum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuminliu026",
+      "userId": "s17b6vpgmxhad5hsrcphr8vgwh83s524",
+      "displayName": "liuliu026",
+      "image": "https://avatars.githubusercontent.com/u/271687535?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776261503819,
+      "changelog": "No significant code changes; minor documentation tweaks.\n\n- Updates description with an explicit install link (https://clawhub.ai/shuminliu026/chat-summary-card).\n- Skill name and function remain unchanged.\n- No modifications to skill behavior or workflow.\n- No file changes detected other than SKILL.md documentation update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:986bd5636c2cae5123a3208ce4381eea7917752457fb1026a9debdd06650221c"
+}

@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "openclaw-web-gateway",
+    "displayName": "Web Gateway",
+    "summary": "Minimal Flask-based multi-user chat interface enabling OpenClaw HTTP integration with persistent UI state and optional Google Maps support.",
+    "tags": {
+      "latest": "1.0.6",
+      "web gateway ui flask openclaw chat": "1.0.6",
+      "openclaw flask web-ui chat gateway": "1.0.4",
+      "openclaw flask web-ui chat gateway ai-agent": "1.0.5",
+      "openclaw web-ui chat gateway flask": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "createdAt": 1773275761449,
+    "updatedAt": 1778307116100
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1773303207809,
+    "changelog": "Initial public release.\n\nLightweight Flask web interface for OpenClaw providing a simple browser chat UI.\n\nFeatures:\n- Multi-user chat interface\n- Proxy to OpenClaw HTTP endpoint\n- Configurable upstream agent and model\n- Environment-based configuration\n- Local state and memory storage\n\nConfiguration via environment variables:\n\nOPENCLAW_BASE=http://127.0.0.1:18789\nOPENCLAW_AUTH=\nOPENCLAW_AGENT=main\nOPENCLAW_CHANNEL=web-gateway\nOPENCLAW_MODEL=default\nDEFAULT_USER=family\nPORT=5002",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jeanne0r",
+    "userId": "s173kp8asz7y8esxn69e0hymb183thx5",
+    "displayName": "jeanne0r",
+    "image": "https://avatars.githubusercontent.com/u/59070805?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307116100
+  }
+}

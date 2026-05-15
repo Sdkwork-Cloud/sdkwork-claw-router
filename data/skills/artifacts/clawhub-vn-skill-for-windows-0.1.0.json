@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vn-skill-for-windows@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vn_skill_for_windows",
+  "skill": {
+    "id": 31892,
+    "skillKey": "clawhub-vn-skill-for-windows",
+    "name": "VN SKill for Windows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vn-skill-for-windows",
+    "url": "https://clawhub.ai/skills/vn-skill-for-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vn-skill-for-windows-43d02051f909ad60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local video, image and audio processing expert for Windows, powered by VN Video Editor. Use this skill whenever the user wants to process video or audio on t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cawcut",
+      "userId": "s17ad6me6bfe341hxcmw0m9ymh858ge2",
+      "displayName": "cawcut",
+      "image": "https://avatars.githubusercontent.com/u/273249714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776822616409,
+      "changelog": "Initial release — auto-captions, burn SRT, compress, denoise, extract, merge, video cutout; local processing on Windows via VN Tools CLI (auto-installed)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd1b227dc9a7111fa85c23ca6cdef23ab42001d4ba83630024d6d95b7f0aa3c1"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20657,
+  "uuid": "skill-clawhub-obsidian-semantic-search",
+  "skillKey": "clawhub-obsidian-semantic-search",
+  "name": "Obsidian Semantic Search",
+  "summary": "Semantic search across your Obsidian vaults using local embeddings (Ollama + pgvector). 10 MCP tools: hybrid/semantic/keyword search, file CRUD, batch reads,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_semantic_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxime Roy (new.blacc)",
+      "features": [
+        "Semantic search across your Obsidian vaults using local embeddings (Ollama + pgvector)",
+        "10 MCP tools: hybrid/semantic/keyword search, file CRUD, batch reads,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-semantic-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3260645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-semantic-search",
+      "url": "https://clawhub.ai/skills/obsidian-semantic-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-semantic-search",
+    "url": "https://clawhub.ai/skills/obsidian-semantic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-semantic-search-99a1e225e1abae37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-semantic-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-semantic-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42e92427adb0821766ab8d2d9ca5f6c1fd9edec0fc0ba18f383abbd0f7d59aeb",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:46:56.936Z"
+}

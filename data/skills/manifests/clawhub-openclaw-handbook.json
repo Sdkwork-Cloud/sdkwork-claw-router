@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51959,
+  "uuid": "skill-clawhub-openclaw-handbook",
+  "skillKey": "clawhub-openclaw-handbook",
+  "name": "OpenClaw Documentation Expert — Live Fetch",
+  "summary": "Fetches live from docs.openclaw.ai on every question. 395 pages indexed, working scripts (not echo placeholders), CI-style selftest for decision-tree rot, wo...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_handbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "igornumeriano",
+      "features": [
+        "Fetches live from docs.openclaw.ai on every question",
+        "395 pages indexed, working scripts (not echo placeholders), CI-style selftest for decision-tree."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-handbook@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60715469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-handbook",
+      "url": "https://clawhub.ai/skills/openclaw-handbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-handbook",
+    "url": "https://clawhub.ai/skills/openclaw-handbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-handbook-07d3b59f8ff565a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-handbook@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-handbook-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1185ef932abd57b2de34dd29bfb90be9570f267a64ef7ff17fca78806ed339f",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:01:11.147Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digital-clawatar@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_clawatar",
+  "skill": {
+    "id": 15039,
+    "skillKey": "clawhub-digital-clawatar",
+    "name": "Digital Clawatar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-clawatar",
+    "url": "https://clawhub.ai/skills/digital-clawatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-clawatar-86cadabbcd5f1b5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, configure, and manage UNITH digital human avatars via the UNITH API. Cheaper alternative to HeyGen and other solutions. Use when users want to create..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "polucas",
+      "userId": "publishers:polucas",
+      "displayName": "Jed",
+      "image": "https://avatars.githubusercontent.com/u/28898890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 690,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771354121060,
+      "changelog": "- Skill renamed from \"unith-digital-humans\" to \"digital-clawatar\".\n- Updated icon in metadata from 🧑‍💻 to 🧑💻.\n- No file or core logic changes; only metadata and documentation updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16208364de5cb538e99f4e983d30320b84e612a60667cd10176f6ba11db536ff"
+}

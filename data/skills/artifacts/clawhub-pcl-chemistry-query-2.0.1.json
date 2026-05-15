@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pcl-chemistry-query@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcl_chemistry_query",
+  "skill": {
+    "id": 43140,
+    "skillKey": "clawhub-pcl-chemistry-query",
+    "name": "PharmaClaw Chemistry Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcl-chemistry-query",
+    "url": "https://clawhub.ai/skills/pcl-chemistry-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcl-chemistry-query-400aa1ddc4049855.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chemistry agent skill for PubChem API queries (compound info/properties, structures/SMILES/images, synthesis routes/references) + RDKit cheminformatics (SMIL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheminempharmaclaw",
+      "userId": "s176bew8nc9sgkm4bayf3n56a583gg6z",
+      "displayName": "CheminemPharmaclaw",
+      "image": "https://avatars.githubusercontent.com/u/264231962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775097747200,
+      "changelog": "Republished under CheminemPharmaclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:252b5eec671eec0b030a8bbcf1bbee09867161e8cb1a756295cbb5b28aa4f6cf"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53038,
+  "uuid": "skill-clawhub-codon",
+  "skillKey": "clawhub-codon",
+  "name": "Codon",
+  "summary": "Organize agent memory as a navigable filesystem. Every piece of information gets a numbered address (10.03-client-name.md) — no search required. Zero depende...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pauldub",
+      "features": [
+        "Organize agent memory as a navigable filesystem",
+        "Every piece of information gets a numbered address (10.03-client-name.md) — no search required",
+        "Zero depende..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1413158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codon",
+      "url": "https://clawhub.ai/skills/codon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codon",
+    "url": "https://clawhub.ai/skills/codon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codon-3880d841c2fcdcf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82a720d1dbed4daa84082a473d1acc6ff2b79f55a2cfd9d682935a7900e78694",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T20:24:22.510Z"
+}

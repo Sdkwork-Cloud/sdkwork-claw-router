@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33710,
+  "uuid": "skill-clawhub-vanta",
+  "skillKey": "clawhub-vanta",
+  "name": "Vanta",
+  "summary": "Vanta integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vanta data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vanta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Vanta integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vanta data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vanta@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vanta",
+      "url": "https://clawhub.ai/skills/vanta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vanta",
+    "url": "https://clawhub.ai/skills/vanta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vanta-58c2655d4845c186.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vanta@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vanta-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc5631afb87cd9be6a993f84096b67213350bba87059c05b681b8f385c55a7e",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:22.253Z"
+}

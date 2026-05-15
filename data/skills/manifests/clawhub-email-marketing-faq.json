@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65151,
+  "uuid": "skill-clawhub-email-marketing-faq",
+  "skillKey": "clawhub-email-marketing-faq",
+  "name": "email-marketing",
+  "summary": "执行邮件营销任务，包括 AI 智能生成 HTML、个性化群发、自动化回信监控、FAQ 知识库智能匹配、多语种自动对齐。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_marketing_faq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlrlyy",
+      "features": [
+        "执行邮件营销任务，包括 AI 智能生成 HTML、个性化群发、自动化回信监控、FAQ 知识库智能匹配、多语种自动对齐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-marketing-faq@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78633588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-marketing-faq",
+      "url": "https://clawhub.ai/skills/email-marketing-faq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-marketing-faq",
+    "url": "https://clawhub.ai/skills/email-marketing-faq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-marketing-faq-4055c0c9cc4812f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-marketing-faq@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-marketing-faq-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:401da8ff465a9d61ead417f86b9b684484bf9aabd4b7287e068322840e7eb0c6",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:31:56.154Z"
+}

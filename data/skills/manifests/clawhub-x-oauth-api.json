@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12676,
+  "uuid": "skill-clawhub-x-oauth-api",
+  "skillKey": "clawhub-x-oauth-api",
+  "name": "X OAuth API",
+  "summary": "Post to X (Twitter) using the official OAuth 1.0a API. Use when asked to \"post to X\", \"tweet this\", \"post on Twitter\", create threads, delete tweets, or chec...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_oauth_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neal Meyer",
+      "features": [
+        "Post to X (Twitter) using the official OAuth 1.0a API",
+        "Use when asked to \"post to X\", \"tweet this\", \"post on Twitter\", create threads, delete tweets,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-oauth-api@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3868701?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-oauth-api",
+      "url": "https://clawhub.ai/skills/x-oauth-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-oauth-api",
+    "url": "https://clawhub.ai/skills/x-oauth-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-oauth-api-da1108c673c9328e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-oauth-api@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-oauth-api-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:878808bdd89634b561e9f1e3b2e8773616b92058a349b74532ceb172f642afc0",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T22:39:51.050Z"
+}

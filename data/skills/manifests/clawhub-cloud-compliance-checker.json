@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32532,
+  "uuid": "skill-clawhub-cloud-compliance-checker",
+  "skillKey": "clawhub-cloud-compliance-checker",
+  "name": "Cloud Compliance Checker",
+  "summary": "Validates cloud infrastructure configurations against industry compliance standards and regulatory frameworks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_compliance_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Validates cloud infrastructure configurations against industry compliance standards and regulat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-compliance-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-compliance-checker",
+      "url": "https://clawhub.ai/skills/cloud-compliance-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-compliance-checker",
+    "url": "https://clawhub.ai/skills/cloud-compliance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-compliance-checker-7fa8c6998badad3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-compliance-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-compliance-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e148d62349fdfb15b77e2c3a70aca0a43296363dfae3141aba30a6c7cebc8b8c",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:07:35.260Z"
+}

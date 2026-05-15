@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9421,
+  "uuid": "skill-clawhub-confluence",
+  "skillKey": "clawhub-confluence",
+  "name": "Confluence",
+  "summary": "Search and manage Confluence pages and spaces using confluence-cli. Read documentation, create pages, and navigate spaces.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confluence",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francisbrero",
+      "features": [
+        "Search and manage Confluence pages and spaces using confluence-cli",
+        "Read documentation, create pages, and navigate spaces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/confluence@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2491181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "confluence",
+      "url": "https://clawhub.ai/skills/confluence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confluence",
+    "url": "https://clawhub.ai/skills/confluence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confluence-9c1c934e33089936.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/confluence@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-confluence-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f99a13d104595a07e5a87599cc9716746fccbe345ca39dfce2ff9843287d2c7",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T00:48:39.322Z"
+}

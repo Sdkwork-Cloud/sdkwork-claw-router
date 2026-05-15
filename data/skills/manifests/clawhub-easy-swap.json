@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38339,
+  "uuid": "skill-clawhub-easy-swap",
+  "skillKey": "clawhub-easy-swap",
+  "name": "DEX Swap & Broadcast",
+  "summary": "Execute token swaps on-chain via OKX DEX Aggregator API (v6). Use this skill when a user wants to: 1. Build a complete swap flow: get swap calldata -> sign t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_swap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ez Orion",
+      "features": [
+        "Execute token swaps on-chain via OKX DEX Aggregator API (v6)",
+        "Use this skill when a user wants to: 1",
+        "Build a complete swap flow: get swap calldata -> sign t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easy-swap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30826833?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easy-swap",
+      "url": "https://clawhub.ai/skills/easy-swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-swap",
+    "url": "https://clawhub.ai/skills/easy-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-swap-c2fc87ee575aea9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easy-swap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-easy-swap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c23e8a16a943d5222b7292a084cb9572da0b14bbf273d2222dfb2aea751d1a7",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T06:53:33.572Z"
+}

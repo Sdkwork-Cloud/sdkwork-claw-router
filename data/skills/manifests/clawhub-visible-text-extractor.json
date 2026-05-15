@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36088,
+  "uuid": "skill-clawhub-visible-text-extractor",
+  "skillKey": "clawhub-visible-text-extractor",
+  "name": "Visible Text Extractor",
+  "summary": "Extract and reconstruct as much visible text as possible from webpage URLs, article pages, screenshots, long images, image directories, and GIFs. Use when th...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visible_text_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wunianze666-netizen",
+      "features": [
+        "Extract and reconstruct as much visible text as possible from webpage URLs, article pages, scre.",
+        "Use when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visible-text-extractor@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226919216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visible-text-extractor",
+      "url": "https://clawhub.ai/skills/visible-text-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visible-text-extractor",
+    "url": "https://clawhub.ai/skills/visible-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visible-text-extractor-a4ced173abb14935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visible-text-extractor@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visible-text-extractor-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9e3ae04c105088c349e2db24ca9a73aff7b86fc8bebde90d731031585506f59",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:25:28.317Z"
+}

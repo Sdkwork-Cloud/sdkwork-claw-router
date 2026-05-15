@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32172,
+  "uuid": "skill-clawhub-fda-guideline-search",
+  "skillKey": "clawhub-fda-guideline-search",
+  "name": "Fda Guideline Search",
+  "summary": "Search FDA industry guidelines by therapeutic area or topic. Trigger when user requests FDA guidance documents, regulatory guidelines, or asks about FDA requ...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fda_guideline_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Search FDA industry guidelines by therapeutic area or topic",
+        "Trigger when user requests FDA guidance documents, regulatory guidelines, or asks about FDA req."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fda-guideline-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fda-guideline-search",
+      "url": "https://clawhub.ai/skills/fda-guideline-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fda-guideline-search",
+    "url": "https://clawhub.ai/skills/fda-guideline-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fda-guideline-search-c8ce2f733349b267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fda-guideline-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fda-guideline-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8cb2823156e1ac899a06986e5d170e4f798b69b4233debc8310436c8c73b790",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:33:38.999Z"
+}

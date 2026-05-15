@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62829,
+  "uuid": "skill-clawhub-minimax-opus-tune",
+  "skillKey": "clawhub-minimax-opus-tune",
+  "name": "MiniMax Opus 调教法",
+  "summary": "将 MiniMax 调教成\"免费 Claude\"的方法论。通过配置 SOUL.md 文件，实现智能分块输出、思考链隐藏、Claude 风格回复等高级特性。适用于希望提升 MiniMax 输出质量、减少截断、增加 Claude 风格体验的用户。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_opus_tune",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "howtimeschange",
+      "features": [
+        "将 MiniMax 调教成\"免费 Claude\"的方法论。通过配置 SOUL.md 文件，实现智能分块输出、思考链隐藏、Claude 风格回复等高级特性。适用于希望提升 MiniMax 输出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-opus-tune@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4083536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-opus-tune",
+      "url": "https://clawhub.ai/skills/minimax-opus-tune"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-opus-tune",
+    "url": "https://clawhub.ai/skills/minimax-opus-tune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-opus-tune-856d8b46987f1c54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-opus-tune@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-opus-tune-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef5f37d0d31499134a7d6d54c2942b5bab0ab104e975e60f24360d653b514cd0",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:32:25.740Z"
+}

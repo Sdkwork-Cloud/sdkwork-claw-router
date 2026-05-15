@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59986,
+  "uuid": "skill-clawhub-image-reader-xytest",
+  "skillKey": "clawhub-image-reader-xytest",
+  "name": "image-reader-xytest",
+  "summary": "识别本地图片内容（支持中文），通过 OCR.space 免费 API 实现。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_reader_xytest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xytest",
+      "features": [
+        "识别本地图片内容（支持中文），通过 OCR.space 免费 API 实现。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-reader-xytest@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/image-reader-xytest/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-reader-xytest",
+      "url": "https://clawhub.ai/skills/image-reader-xytest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-reader-xytest",
+    "url": "https://clawhub.ai/skills/image-reader-xytest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-reader-xytest-8f3e316367805039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-reader-xytest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-reader-xytest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3c6b6181f6cc74bf53fa543bb062072225c5305b2a32e24a1f90071af3d3e63",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T15:39:45.847Z"
+}

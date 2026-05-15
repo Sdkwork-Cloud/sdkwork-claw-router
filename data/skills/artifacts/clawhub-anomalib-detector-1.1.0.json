@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anomalib-detector@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anomalib_detector",
+  "skill": {
+    "id": 45451,
+    "skillKey": "clawhub-anomalib-detector",
+    "name": "Anomalib Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anomalib-detector",
+    "url": "https://clawhub.ai/skills/anomalib-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anomalib-detector-f9a2e54188e54026.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Industrial vision anomaly detection supporting 20+ models via anomalib, returning defect detection and anomaly heatmaps from uploaded product images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangzhou2017",
+      "userId": "s177g4pdn34y13qnhsf91k55d5852e6x",
+      "displayName": "zhangzhou2017",
+      "image": "https://avatars.githubusercontent.com/u/30061468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776491665301,
+      "changelog": "industrial-anomaly-detector 1.1.0\n\n- Initial release of the industrial-anomaly-detector skill based on anomalib 2.3.3\n- Supports industrial visual anomaly detection for uploaded product images\n- Returns both detection results and anomaly heatmaps\n- Integrates 20+ anomaly detection models; default support for Patchcore, Padim, EfficientAd\n- Provides modular API for single image and batch processing, model training, and export\n- Includes environment setup guide and example references for quick start",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b8c96e8f59dc3da949a4b26832c062d708481cad51802c8fae99c76ab564f72"
+}

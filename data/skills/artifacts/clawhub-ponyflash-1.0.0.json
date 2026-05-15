@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ponyflash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ponyflash",
+  "skill": {
+    "id": 29430,
+    "skillKey": "clawhub-ponyflash",
+    "name": "PonyFlash - Media Generation Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ponyflash",
+    "url": "https://clawhub.ai/skills/ponyflash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ponyflash-289dd8ecf102544e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images, videos, speech audio, and music using the PonyFlash Python SDK. Also handle local media editing with FFmpeg, including clip, concat, transco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leothebravest",
+      "userId": "s178tdg8nt46sdagwrb6twnz7n83hsw1",
+      "displayName": "Ponyflash",
+      "image": "https://avatars.githubusercontent.com/u/267056113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774367483824,
+      "changelog": "Initial release of PonyFlash skill for AI-powered media generation and local editing.\n\n- Supports cloud-based image, video, speech, and music generation using the PonyFlash Python SDK (API key required).\n- Enables local media editing with FFmpeg: clip, concatenate, transcode, audio extraction, frame capture, and subtitle capabilities.\n- Automatically guides setup for PonyFlash API and local FFmpeg dependencies based on task.\n- Provides workflow templates (\"Creative Playbooks\") for multi-step productions.\n- Separates cloud media generation and local editing into clear capability paths, with step-by-step instructions for each.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fc6b7791d44ccc334d05b6523806b6094034d5d6b507d1a801cdf102a1ec650"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63511,
+  "uuid": "skill-clawhub-baiyin-cover-train-skill",
+  "skillKey": "clawhub-baiyin-cover-train-skill",
+  "name": "baiyin-cover-train-skill",
+  "summary": "当用户希望通过百音开放平台训练 AI 歌手模型、查询训练任务状态，或根据已有 taskId 返回最终训练结果时使用。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_cover_train_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baiyin",
+      "features": [
+        "当用户希望通过百音开放平台训练 AI 歌手模型、查询训练任务状态，或根据已有 taskId 返回最终训练结果时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baiyin-cover-train-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63402476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baiyin-cover-train-skill",
+      "url": "https://clawhub.ai/skills/baiyin-cover-train-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-cover-train-skill",
+    "url": "https://clawhub.ai/skills/baiyin-cover-train-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-cover-train-skill-591d93928c3bab18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baiyin-cover-train-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-baiyin-cover-train-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e930aa6a45d408d46ba8ffbb2427e150d4bd701e709e421105f777c5f13560b",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:02:28.010Z"
+}

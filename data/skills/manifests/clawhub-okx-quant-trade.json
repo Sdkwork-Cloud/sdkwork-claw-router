@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32314,
+  "uuid": "skill-clawhub-okx-quant-trade",
+  "skillKey": "clawhub-okx-quant-trade",
+  "name": "Quant Trade",
+  "summary": "Comprehensive quantitative trading skill for OKX. Use when user asks to 'analyze market', 'calculate RSI', 'check EMA', 'compute bollinger bands', 'buy BTC',...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_quant_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Long778899",
+      "features": [
+        "Comprehensive quantitative trading skill for OKX",
+        "Use when user asks to 'analyze market', 'calculate RSI', 'check EMA', 'compute bollinger bands'."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-quant-trade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52493608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-quant-trade",
+      "url": "https://clawhub.ai/skills/okx-quant-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-quant-trade",
+    "url": "https://clawhub.ai/skills/okx-quant-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-quant-trade-19a0244d481d9a3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-quant-trade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-quant-trade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5442247506b1252a0527e845a3e247e2c5ac4b4f391da3fc6e8b115c1d649aaf",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:33:06.434Z"
+}

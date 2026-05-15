@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70356,
+  "uuid": "skill-clawhub-jmin-meeting-notes",
+  "skillKey": "clawhub-jmin-meeting-notes",
+  "name": "JMin Meeting Notes",
+  "summary": "会议记录智能整理工具。输入会议要点或文字记录，自动生成结构化会议纪要、待办事项、决策记录。适用于职场人士、会议组织者、项目管理者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jmin_meeting_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JMin1113",
+      "features": [
+        "会议记录智能整理工具。输入会议要点或文字记录，自动生成结构化会议纪要、待办事项、决策记录。适用于职场人士、会议组织者、项目管理者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jmin-meeting-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258832386?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jmin-meeting-notes",
+      "url": "https://clawhub.ai/skills/jmin-meeting-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jmin-meeting-notes",
+    "url": "https://clawhub.ai/skills/jmin-meeting-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jmin-meeting-notes-920c6347ba1e6100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jmin-meeting-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jmin-meeting-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b97c15a5738d70360cd9e5f8fbab5a817ac85890ab9b6745c859119db6c103",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:14:21.639Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/full-webpage-screenshot@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.full_webpage_screenshot",
+  "skill": {
+    "id": 28169,
+    "skillKey": "clawhub-full-webpage-screenshot",
+    "name": "Full Webpage Screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "full-webpage-screenshot",
+    "url": "https://clawhub.ai/skills/full-webpage-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/full-webpage-screenshot-97510003d0d64408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture full-page screenshots of websites with lazy-load support. Use when: user wants to screenshot a webpage, take a website screenshot, capture a full pag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifelooploop",
+      "userId": "publishers:lifelooploop",
+      "displayName": "lifelooploop",
+      "image": "https://avatars.githubusercontent.com/u/265486664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774151977617,
+      "changelog": "修复所有路径引用为 full-webpage-screenshot",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:102128a08127d442260423fc4ff6b0844a397f3e25dbf9acb79f2fb5b46bab1b"
+}

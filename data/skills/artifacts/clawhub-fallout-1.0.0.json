@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fallout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fallout",
+  "skill": {
+    "id": 49319,
+    "skillKey": "clawhub-fallout",
+    "name": "Fallout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fallout",
+    "url": "https://clawhub.ai/skills/fallout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fallout-cb5858524fa74946.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fallout is a post-apocalyptic RPG series known for its unique 1950s retro-futuristic style, player choice impact, and successful cross-media adaptations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777565042950,
+      "changelog": "- 初始版本发布，提供Fallout系列的历史、商业模式与品牌分析。\n- 包含详细时间线，涵盖从1997首作到2024 Amazon剧集成功。\n- 解析IP的独特美学、社区护城河和跨媒体扩展力。\n- 收录核心市场数据（销量、观众、周边、手游等）。\n- 提供系列标志性彩蛋与文化趣闻。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5da76ff3c14e3a566e16394d808ff62ae4c7fb3b876ce11fb25f279e63917fb1"
+}

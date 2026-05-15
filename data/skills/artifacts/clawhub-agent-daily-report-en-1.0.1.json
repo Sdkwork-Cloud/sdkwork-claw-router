@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-daily-report-en@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_daily_report_en",
+  "skill": {
+    "id": 18138,
+    "skillKey": "clawhub-agent-daily-report-en",
+    "name": "Agent Daily Report (EN)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-daily-report-en",
+    "url": "https://clawhub.ai/skills/agent-daily-report-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-daily-report-en-bb25ec72253c60df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables the agent to review its own execution logs and deliver a professional, quantified daily work report. Defaults to 21:00 America/Los_Angeles and suppor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeslym",
+      "userId": "s172pqnjdjq69nrmka45cp3b0n83k0re",
+      "displayName": "freeslym",
+      "image": "https://avatars.githubusercontent.com/u/98009841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772033600426,
+      "changelog": "Change default schedule to 21:00 America/Los_Angeles and add user-configurable schedule.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:257d67c4f1edc798ad402b9bd5aad34fe89bfb994a693cee36aabcd44f4421f7"
+}

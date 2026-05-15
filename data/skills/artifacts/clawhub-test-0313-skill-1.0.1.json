@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-0313-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_0313_skill",
+  "skill": {
+    "id": 43442,
+    "skillKey": "clawhub-test-0313-skill",
+    "name": "test-0313-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-0313-skill",
+    "url": "https://clawhub.ai/skills/test-0313-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-0313-skill-e72c981239a03a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776070058552,
+      "changelog": "- Updated SKILL.md with detailed instructions, configuration options, and usage examples for the summarize CLI.\n- Clarified model and API key requirements, including supported providers.\n- Documented additional flags for length, output format, extraction, and fallback services.\n- Added sample configuration file and information about optional integrations for better robustness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16ed0eb53dc13826dfafaebff94fd4b4dda92addc0df28b23a07de5af4cd2fac"
+}

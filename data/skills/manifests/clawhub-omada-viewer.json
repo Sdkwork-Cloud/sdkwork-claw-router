@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42716,
+  "uuid": "skill-clawhub-omada-viewer",
+  "skillKey": "clawhub-omada-viewer",
+  "name": "Omada Viewer",
+  "summary": "Read-only diagnostics for TP-Link Omada SDN controllers via the Open API. Use when inspecting Omada devices, clients, VLANs, LAN networks, WAN status, router...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omada_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imJuff",
+      "features": [
+        "Read-only diagnostics for TP-Link Omada SDN controllers via the Open API",
+        "Use when inspecting Omada devices, clients, VLANs, LAN networks, WAN status, router..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omada-viewer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101950314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omada-viewer",
+      "url": "https://clawhub.ai/skills/omada-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omada-viewer",
+    "url": "https://clawhub.ai/skills/omada-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omada-viewer-0b56d01337cf0bfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omada-viewer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-omada-viewer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:375b510de34fd682ec26162df84919281a360b540caf0aa1d03886d5d4596088",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:36:18.935Z"
+}

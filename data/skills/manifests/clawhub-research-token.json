@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16231,
+  "uuid": "skill-clawhub-research-token",
+  "skillKey": "clawhub-research-token",
+  "name": "Uniswap Research Token",
+  "summary": "Research a token's Uniswap liquidity, volume profile, pool distribution, and risk factors. Use when the user asks about a token's tradability, liquidity depth, or wants due diligence.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_token",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Research a token's Uniswap liquidity, volume profile, pool distribution, and risk factors",
+        "Use when the user asks about a token's tradability, liquidity depth, or wants due diligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-token@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-token",
+      "url": "https://clawhub.ai/skills/research-token"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-token",
+    "url": "https://clawhub.ai/skills/research-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-token-3f09f03b16950a75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-token@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-token-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73a0b41042e31bd06c887fef9e7978fe81906cf84e1d8ab3b0ab5a8dfe078280",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:50:14.049Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38527,
+  "uuid": "skill-clawhub-tee-wallet",
+  "skillKey": "clawhub-tee-wallet",
+  "name": "wallet",
+  "summary": "Mokshya agent-wallet: public REST API + TEE signing (Shamir/AES-GCM). Use when debugging wallets.mokshya.io, GKE deploy, create/sign HTTP flows, rate limits,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tee_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ajay Gautam",
+      "features": [
+        "Mokshya agent-wallet: public REST API + TEE signing (Shamir/AES-GCM)",
+        "Use when debugging wallets.mokshya.io, GKE deploy, create/sign HTTP flows, rate limits,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tee-wallet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16292031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tee-wallet",
+      "url": "https://clawhub.ai/skills/tee-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tee-wallet",
+    "url": "https://clawhub.ai/skills/tee-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tee-wallet-a6ec9c04418cb8d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tee-wallet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tee-wallet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0d87d630418ea5c5bb7f4278d1d4b580f27ce15e20ebc5b3542d4123331b784",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:53:08.743Z"
+}

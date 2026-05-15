@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59429,
+  "uuid": "skill-clawhub-asb",
+  "skillKey": "clawhub-asb",
+  "name": "Asb",
+  "summary": "Agent Service Bus - 智能服务编排和协作平台，通过 MCP Server 集成所有 ASB 能力",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiyueqiu",
+      "features": [
+        "Agent Service Bus",
+        "智能服务编排和协作平台，通过 MCP Server 集成所有 ASB 能力"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asb@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95924501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asb",
+      "url": "https://clawhub.ai/skills/asb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asb",
+    "url": "https://clawhub.ai/skills/asb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asb-0ca95a6716edcdc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asb@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asb-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a56409f14387403a0f07f61ab3f9fabd183a6aeabff0ff3752bd15480e720e0e",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:23:08.523Z"
+}

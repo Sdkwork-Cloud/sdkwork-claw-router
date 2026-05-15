@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73153,
+  "uuid": "skill-clawhub-poxiao",
+  "skillKey": "clawhub-poxiao",
+  "name": "破晓",
+  "summary": "🌅 全时段股市资讯生成器。根据当前时间自动判断生成早报/午评/收盘报告，支持交易日检测、模块化新闻抓取、微信友好格式输出。专为投资人设计，助力快速决策。",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poxiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "🌅 全时段股市资讯生成器。根据当前时间自动判断生成早报/午评/收盘报告，支持交易日检测、模块化新闻抓取、微信友好格式输出。专为投资人设计，助力快速决策。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poxiao@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poxiao",
+      "url": "https://clawhub.ai/skills/poxiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poxiao",
+    "url": "https://clawhub.ai/skills/poxiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poxiao-6fb30bb5e2a1f27c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poxiao@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poxiao-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be5c75ae571a05ce4a008580d3eb0d13bfcfff2b95008d54add86e0903b247f6",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:50:14.009Z"
+}

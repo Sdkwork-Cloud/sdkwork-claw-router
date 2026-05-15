@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-digest-v1@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_digest_v1",
+  "skill": {
+    "id": 57779,
+    "skillKey": "clawhub-news-digest-v1",
+    "name": "每日新闻搜索与智能摘要"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-digest-v1",
+    "url": "https://clawhub.ai/skills/news-digest-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-digest-v1-6fa1dc51df7b19f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scrape, process, and generate daily news digests from Chinese news sources. Covers industry dynamics, policy updates, economy, tech, energy, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zigu-creator",
+      "userId": "s174gcx5nz7epm7zrz1qwamqt184w949",
+      "displayName": "zigu-creator",
+      "image": "https://avatars.githubusercontent.com/u/276167559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778236439172,
+      "changelog": "## v1.0.2 (2026-05-08)\n- LLM summary limit increased to 300 characters (was 200), with more comprehensive content\n- New requirement: full names of referenced policies, plans, and documents must be preserved\n- Prompt optimization: emphasize retaining key data and core facts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4506f308fe2d1483d83eb2ef01a1e4450f9761830d94a43b77e2b615dc4b61ae"
+}

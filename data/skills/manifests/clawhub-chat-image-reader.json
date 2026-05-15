@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32226,
+  "uuid": "skill-clawhub-chat-image-reader",
+  "skillKey": "clawhub-chat-image-reader",
+  "name": "imageReader",
+  "summary": "Reads and analyzes images from messages across 10+ chat platforms using platform-specific APIs and unified image processing.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_image_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zqy15306762317",
+      "features": [
+        "Reads and analyzes images from messages across 10+ chat platforms using platform-specific APIs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-image-reader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59555357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-image-reader",
+      "url": "https://clawhub.ai/skills/chat-image-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-image-reader",
+    "url": "https://clawhub.ai/skills/chat-image-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-image-reader-0c9ee8cf2947a4fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-image-reader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-image-reader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5a9d6b108b30f3b60e807d659f5e7053428e9bc4fd96c933291d0f405227870",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:26:06.165Z"
+}

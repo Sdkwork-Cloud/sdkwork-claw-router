@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mccormick@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mccormick",
+  "skill": {
+    "id": 59569,
+    "skillKey": "clawhub-mccormick",
+    "name": "Mccormick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mccormick",
+    "url": "https://clawhub.ai/skills/mccormick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mccormick-5ddad0e920011084.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球最大香料和调味品公司，拥有 McCormick、French's、Frank's RedHot 和 Old Bay 等知名品牌，覆盖170+国家。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777457068846,
+      "changelog": "- 首次发布 McCormick skill，涵盖公司历史、商业模式、品牌组合与核心数据\n- 汇总重大历史节点及并购事件\n- 分析品牌优势、供应链与行业影响力\n- 提供适用场景建议和有趣事实\n- 支持食品行业、供应链、消费品领域参考",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caf2b63203c00afecb216743ee263b944e0fe8ab202345eddfa9fee496caaa11"
+}

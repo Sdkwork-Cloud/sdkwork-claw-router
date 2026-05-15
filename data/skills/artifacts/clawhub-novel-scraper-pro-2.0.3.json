@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novel-scraper-pro@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_scraper_pro",
+  "skill": {
+    "id": 67443,
+    "skillKey": "clawhub-novel-scraper-pro",
+    "name": "Novel Scraper Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-scraper-pro",
+    "url": "https://clawhub.ai/skills/novel-scraper-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-scraper-pro-e378d8f55b11e009.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能小说抓取工具 V6，支持自动翻页、分页补全、章节号自动解析、内存监控、中断续抓。 使用 curl+BeautifulSoup 抓取笔趣阁等小说网站，输出格式化 TXT 文件。 默认每 10 章合并为一个文档，避免文件零散分布。 自动检测分页并补全，智能跳过非小说内容（作者感言、抽奖预告等）。 内存监控和中断续..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzhihui886",
+      "userId": "s171q47tfc9tb8mpczgympghws83jcja",
+      "displayName": "yuzhihui886",
+      "image": "https://avatars.githubusercontent.com/u/213567314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1775308100947,
+      "changelog": "修复缓存命中导致分页不完整：缓存<50 段时重新抓取",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0e14f0e5012d42661f1f803934282c7a849bdd9dab620d52e3f5f7081162081"
+}

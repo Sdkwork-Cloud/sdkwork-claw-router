@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-runway-video-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_runway_video_gen",
+  "skill": {
+    "id": 20197,
+    "skillKey": "clawhub-skill-runway-video-gen",
+    "name": "Skill Runway Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-runway-video-gen",
+    "url": "https://clawhub.ai/skills/skill-runway-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-runway-video-gen-345ddafb461736b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate short product videos from images using Runway Gen4 Turbo. Use for TikTok ads, UGC-style product demos, Reels, and YouTube Shorts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772326970288,
+      "changelog": "Initial release: Generate short product videos from images using Runway Gen4 Turbo.\n\n- Converts a product image and motion prompt into a 5s or 10s vertical MP4 video.\n- Designed for TikTok ads, UGC demos, Reels, and YouTube Shorts.\n- Reads API key from environment variable or config file.\n- Documents common quirks, cost per video, and demonstrates MoviePy workaround for frozen frames.\n- Integrates with downstream TikTok video pipeline for further processing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d2ebaa8667200647c575a3b76a11f6bbeb2d188f6c9dfe6d4745088498dc59b"
+}

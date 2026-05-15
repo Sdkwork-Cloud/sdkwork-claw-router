@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/billy-cron-guardrails-pack@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billy_cron_guardrails_pack",
+  "skill": {
+    "id": 52195,
+    "skillKey": "clawhub-billy-cron-guardrails-pack",
+    "name": "Billy — Cron Guardrails Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billy-cron-guardrails-pack",
+    "url": "https://clawhub.ai/skills/billy-cron-guardrails-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billy-cron-guardrails-pack-531af75a44fde989.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lint cron entries for schedule validity, bad model names, and missing NO_REPLY discipline markers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "highlander89",
+      "userId": "publishers:highlander89",
+      "displayName": "Highlander89",
+      "image": "https://avatars.githubusercontent.com/u/107950656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772169452586,
+      "changelog": "Republish: remove pycache artifact + minor doc fixes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:799f12e27b7dea624d6ae661f21e2bc5bea9d9749007e9479091c5cecabb9a88"
+}

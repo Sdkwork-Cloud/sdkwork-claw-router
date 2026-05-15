@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63308,
+  "uuid": "skill-clawhub-commit-message-generator",
+  "skillKey": "clawhub-commit-message-generator",
+  "name": "Git 提交信息生成器",
+  "summary": "Git 提交信息生成器。根据代码变更内容自动生成符合 Conventional Commits 规范的提交信息，包含类型、范围、简短描述、详细说明和关联的 Issue/需求号。触发词：生成提交信息、提交信息、commit message、git commit、生成 commit 信息",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_message_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gnllk",
+      "features": [
+        "Git 提交信息生成器。根据代码变更内容自动生成符合 Conventional Commits 规范的提交信息，包含类型、范围、简短描述、详细说明和关联的 Issue/需求号。触发词：生成提."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commit-message-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10340196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commit-message-generator",
+      "url": "https://clawhub.ai/skills/commit-message-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-message-generator",
+    "url": "https://clawhub.ai/skills/commit-message-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-message-generator-4088a7055e50c266.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commit-message-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-commit-message-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3300a52f7469dde3164e75abaafbad23d9c1b9f496f8d744d12338860bffffc7",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:04:37.500Z"
+}

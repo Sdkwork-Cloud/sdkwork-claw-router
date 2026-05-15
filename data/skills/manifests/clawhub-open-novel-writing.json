@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71551,
+  "uuid": "skill-clawhub-open-novel-writing",
+  "skillKey": "clawhub-open-novel-writing",
+  "name": "open-novel-writing",
+  "summary": "中文长篇小说创作助手。支持从想法到成书的完整创作流程：世界观设定、故事大纲、章节规划、正文生成、质量评审。 使用场景：创作中文小说、辅助构思情节、生成章节正文、评审改进文稿。 特点：模块化设计，可单独使用任意模块；分级红线机制，区分必须避免和建议优化；对话式引导，非CLI驱动。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_novel_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SoftMeng",
+      "features": [
+        "中文长篇小说创作助手。支持从想法到成书的完整创作流程：世界观设定、故事大纲、章节规划、正文生成、质量评审。 使用场景：创作中文小说、辅助构思情节、生成章节正文、评审改进文稿。 特点：模块化设."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-novel-writing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9483352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-novel-writing",
+      "url": "https://clawhub.ai/skills/open-novel-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-novel-writing",
+    "url": "https://clawhub.ai/skills/open-novel-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-novel-writing-4d0f1dc60f2f4718.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-novel-writing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-novel-writing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b7e8f4e4f2232634e46bf567554208e30779e353b2078ff649d8a7ec499ebbd",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:28:35.381Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18605,
+  "uuid": "skill-clawhub-agent-discord",
+  "skillKey": "clawhub-agent-discord",
+  "name": "Agent Discord",
+  "summary": "Interact with Discord servers - send messages, read channels, manage reactions",
+  "version": "1.10.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_discord",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeon Suyeol",
+      "features": [
+        "Interact with Discord servers",
+        "send messages, read channels, manage reactions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-discord@1.10.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/931655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-discord",
+      "url": "https://clawhub.ai/skills/agent-discord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-discord",
+    "url": "https://clawhub.ai/skills/agent-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-discord-3e0bda1cf7d2567e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-discord@1.10.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-discord-1.10.5.json",
+      "version": "1.10.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9940e912981547770bdc99b63eba054371aa8590fa5613fbb7c071f94dfde82",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:40:04.649Z"
+}

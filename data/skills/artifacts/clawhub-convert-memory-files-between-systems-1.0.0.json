@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convert-memory-files-between-systems@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convert_memory_files_between_systems",
+  "skill": {
+    "id": 60449,
+    "skillKey": "clawhub-convert-memory-files-between-systems",
+    "name": "Convert Memory Files Between Systems"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convert-memory-files-between-systems",
+    "url": "https://clawhub.ai/skills/convert-memory-files-between-systems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convert-memory-files-between-systems-2872387a197184e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "如何将 memory-lancedb-pro 的记忆文件转换为原版 markdown 格式，并导入到 memos-local-openclaw-plugin 系统中。TRIGGER 当用户提到记忆文件转换、markdown 文件导入、配置文件修改、数据库导入、记忆插件更换、或任何涉及将记忆数据从一个系统迁移到另一..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2070super",
+      "userId": "s17bjv4vt85jne20ekh32xkh6983kzkx",
+      "displayName": "2070super",
+      "image": "https://avatars.githubusercontent.com/u/74180810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777831302570,
+      "changelog": "- Initial release: assists users in migrating memory data from memory-lancedb-pro to memos-local-openclaw-plugin.\n- Provides step-by-step guidance for converting memory-lancedb-pro files to markdown and importing them into the new system.\n- Includes Python scripts for precise configuration file modification and memory file import.\n- Documents pitfalls of manual edits and offers automated solutions.\n- Lists environment requirements, database schema expectations, and companion import/remove automation scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b11f1c20a897ce46efc121a8505f83d68d1c222d07480f4e5b8be565d48f3362"
+}

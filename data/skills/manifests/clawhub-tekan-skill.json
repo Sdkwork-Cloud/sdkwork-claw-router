@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72743,
+  "uuid": "skill-clawhub-tekan-skill",
+  "skillKey": "clawhub-tekan-skill",
+  "name": "特看视频 AI 创作工具",
+  "summary": "生成、编辑、协作。一个工具包接入所有主流 AI 模型。只需描述你的创意，即可生成视频、图片和数字人——零手动操作。当用户提到以下任何内容时使用此技能：特看视频、生成视频或图片、数字人、口型同步、文字转语音、TTS、声音克隆、去除背景、商品模特图、电商图、商品详情图、商品主图、虚拟穿搭、图片转视频、文字转视频、AI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tekan_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tekancn",
+      "features": [
+        "生成、编辑、协作。一个工具包接入所有主流 AI 模型。只需描述你的创意，即可生成视频、图片和数字人——零手动操作。当用户提到以下任何内容时使用此技能：特看视频、生成视频或图片、数字人、口型同."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tekan-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269402628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tekan-skill",
+      "url": "https://clawhub.ai/skills/tekan-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tekan-skill",
+    "url": "https://clawhub.ai/skills/tekan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tekan-skill-a86e06c5372619ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tekan-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tekan-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3f1c407b1219315f5adde130a09bb334e1e89cec198ea6135f0c5a83ce1093b",
+      "artifactSizeBytes": 3330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T07:47:24.449Z"
+}

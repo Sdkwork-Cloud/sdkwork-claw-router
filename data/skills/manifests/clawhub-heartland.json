@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36678,
+  "uuid": "skill-clawhub-heartland",
+  "skillKey": "clawhub-heartland",
+  "name": "Heartland",
+  "summary": "Heartland integration. Manage data, records, and automate workflows. Use when the user wants to interact with Heartland data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartland",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Heartland integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Heartland data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heartland@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heartland",
+      "url": "https://clawhub.ai/skills/heartland"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartland",
+    "url": "https://clawhub.ai/skills/heartland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartland-ea48bd692cc5bb61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heartland@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-heartland-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e35393dd3d1ae2cd5a2e828238f0e29fd2b0db1300fad658ea63f588774a9c01",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:32:49.690Z"
+}

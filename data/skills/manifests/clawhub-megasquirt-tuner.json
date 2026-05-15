@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16779,
+  "uuid": "skill-clawhub-megasquirt-tuner",
+  "skillKey": "clawhub-megasquirt-tuner",
+  "name": "MegaSquirt Tuner",
+  "summary": "Megasquirt ECU tuning and calibration via TunerStudio, covering VE table, ignition timing, AFR targets, sensor calibration, accel enrichment, boost, launch c...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.megasquirt_tuner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boblobclaw",
+      "features": [
+        "Megasquirt ECU tuning and calibration via TunerStudio, covering VE table, ignition timing, AFR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/megasquirt-tuner@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260133129?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "megasquirt-tuner",
+      "url": "https://clawhub.ai/skills/megasquirt-tuner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "megasquirt-tuner",
+    "url": "https://clawhub.ai/skills/megasquirt-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/megasquirt-tuner-5d30698bb83271a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/megasquirt-tuner@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-megasquirt-tuner-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:848468872f59715fcbfe707789eb1c2b78f343d2f518bc64aa81e73b37cf3557",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T03:21:06.273Z"
+}

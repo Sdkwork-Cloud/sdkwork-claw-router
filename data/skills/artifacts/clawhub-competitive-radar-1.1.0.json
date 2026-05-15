@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitive-radar@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitive_radar",
+  "skill": {
+    "id": 27330,
+    "skillKey": "clawhub-competitive-radar",
+    "name": "Competitor Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitive-radar",
+    "url": "https://clawhub.ai/skills/competitive-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitive-radar-48e332bde72ed75e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks competitors weekly across 6 signals: pricing page diffs, homepage positioning changes, blog/RSS posts, job postings (hiring as strategy signal), GitHu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manjotpahwa",
+      "userId": "publishers:manjotpahwa",
+      "displayName": "manjotpahwa",
+      "image": "https://avatars.githubusercontent.com/u/5620682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773539407069,
+      "changelog": "Version 1.1.0 introduces license-based tier controls and paid upgrade flow.\n\n- Added license checking via scripts/license.py to enforce free (1 competitor) vs. paid tier (unlimited).\n- Setup now blocks adding >1 competitor on the free tier and provides a clear upgrade link and instructions.\n- New /competitive-radar activate <license_key> command to activate a paid license and unlock all features.\n- Daily alert cron job is only active for paid licenses.\n- Updated SKILL.md documentation to reflect tier enforcement and activation steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30de779b2efb5b92fff74b2c1a0ab8affa554bbf5311d4cac3d9fc9a8e88d6e6"
+}

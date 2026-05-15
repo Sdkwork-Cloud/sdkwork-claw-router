@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-table-compare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_table_compare",
+  "skill": {
+    "id": 58830,
+    "skillKey": "clawhub-db-table-compare",
+    "name": "Db Table Compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-table-compare",
+    "url": "https://clawhub.ai/skills/db-table-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-table-compare-1313b413624ea631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对比两个数据库（MySQL vs ODPS）的表字段差异，生成 HiveSQL ALTER TABLE 和 DataX JSON 格式"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexmayanjun-collab",
+      "userId": "s172f8k90f29ps4shmj6e9s99x83hshd",
+      "displayName": "alexmayanjun-collab",
+      "image": "https://avatars.githubusercontent.com/u/247089206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777507294936,
+      "changelog": "- Initial release of db-table-compare skill.\n- Compares table schemas between MySQL and ODPS databases.\n- Automatically generates HiveSQL ALTER TABLE statements for schema synchronization.\n- Provides DataX JSON extraction format using get_json_object for field mapping.\n- Supports multiple environments (TH/PH DataWorks and MySQL).\n- Includes smart source/environment detection and case-insensitive field matching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b58af175507a33322503efd79b30fb7afc989e74efd6780bad3c0c5d26defe8"
+}

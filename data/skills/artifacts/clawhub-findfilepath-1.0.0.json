@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/findfilepath@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.findfilepath",
+  "skill": {
+    "id": 20165,
+    "skillKey": "clawhub-findfilepath",
+    "name": "findFilePath"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "findfilepath",
+    "url": "https://clawhub.ai/skills/findfilepath",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/findfilepath-843d3e593d50656b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps locate local files by searching common directories for a specified file name or partial name on Windows, macOS, and Linux."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fidods",
+      "userId": "publishers:fidods",
+      "displayName": "Fidods",
+      "image": "https://avatars.githubusercontent.com/u/103176554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772613574820,
+      "changelog": "1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:523ce4b814bc41cbbd88ae5fa59439a086031f014bc323530821acc5c24f6f09"
+}

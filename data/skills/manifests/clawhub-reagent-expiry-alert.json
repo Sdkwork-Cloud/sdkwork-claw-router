@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44915,
+  "uuid": "skill-clawhub-reagent-expiry-alert",
+  "skillKey": "clawhub-reagent-expiry-alert",
+  "name": "Reagent Expiry Alert",
+  "summary": "Scan reagent barcodes or IDs, log expiration dates, and generate multi-level alerts before reagent expiry to support laboratory inventory management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reagent_expiry_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Scan reagent barcodes or IDs, log expiration dates, and generate multi-level alerts before reag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reagent-expiry-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reagent-expiry-alert",
+      "url": "https://clawhub.ai/skills/reagent-expiry-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reagent-expiry-alert",
+    "url": "https://clawhub.ai/skills/reagent-expiry-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reagent-expiry-alert-8c9a835e5632fefd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reagent-expiry-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reagent-expiry-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ad737c4e79bb25f73e95dbee8a966c9be3db4f9752c9fbdff0e4d7361cba89e",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:59:22.215Z"
+}

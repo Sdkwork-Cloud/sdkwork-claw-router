@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiparse-ocr@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiparse_ocr",
+  "skill": {
+    "id": 56517,
+    "skillKey": "clawhub-aiparse-ocr",
+    "name": "aiparse-ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiparse-ocr",
+    "url": "https://clawhub.ai/skills/aiparse-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiparse-ocr-fb191cf7692f5af6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse PDF files using LLM. **No registration required - free trial available!** Extract information from PDF files and return results in JSON or Markdown for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "do0388309",
+      "userId": "s17cc2nhp84fntqjy15dkg5r2h83yn87",
+      "displayName": "do0388309",
+      "image": "https://avatars.githubusercontent.com/u/266077584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775862725866,
+      "changelog": "- Removed secret.txt file from the repository.\n- Updated documentation: No registration required and free trial mode highlighted.\n- Authentication parameters (username, secret) removed from documentation and usage instructions.\n- Clarified free page limit for unregistered users (30 pages).\n- Streamlined usage examples for simpler, credential-free command structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40e9f6ae81ced1f1b28f925da09ac1a81e3940c7c1a7f1ae7f864bc25b73d50a"
+}

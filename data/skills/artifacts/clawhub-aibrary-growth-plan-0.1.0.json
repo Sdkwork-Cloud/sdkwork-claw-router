@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aibrary-growth-plan@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibrary_growth_plan",
+  "skill": {
+    "id": 28823,
+    "skillKey": "clawhub-aibrary-growth-plan",
+    "name": "Aibrary Growth Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibrary-growth-plan",
+    "url": "https://clawhub.ai/skills/aibrary-growth-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibrary-growth-plan-14becad7106d4cd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Aibrary] Create a structured personal growth plan with book recommendations, milestones, and actionable weekly tasks. Use when the user wants to create a le..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asoiso",
+      "userId": "s173h1jpw4kgmsawn20r1fhjtd83nwy1",
+      "displayName": "asoiso",
+      "image": "https://avatars.githubusercontent.com/u/479822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772717695594,
+      "changelog": "- Initial release of aibrary-growth-plan: create structured, time-bound personal growth plans focused on skills or knowledge development.\n- Generates multi-phase roadmaps with weekly actionable tasks, recommended books, milestones, and checkpoints.\n- Includes reflection prompts, practice activities, and accountability mechanisms such as self-assessment and plan reviews.\n- Supports plan customization by goal, duration, user level, weekly time, and personal constraints.\n- Responds in the user's input language for accessibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1f193156c8972902dde8d1e502b047054ed040e6beabf2ac4ffb800cbe49ebb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14283,
+  "uuid": "skill-clawhub-open-data-integrator",
+  "skillKey": "clawhub-open-data-integrator",
+  "name": "Open Data Integrator",
+  "summary": "Integrate open construction datasets. Combine open data sources for enhanced analysis",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_data_integrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Integrate open construction datasets",
+        "Combine open data sources for enhanced analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-data-integrator@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-data-integrator",
+      "url": "https://clawhub.ai/skills/open-data-integrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-data-integrator",
+    "url": "https://clawhub.ai/skills/open-data-integrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-data-integrator-3f48f3d44ed05d10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-data-integrator@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-data-integrator-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afb8b0c1987d159ffb207054a802f1ef41306aa23683a3db2bccbec1d7c360ea",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:03:22.060Z"
+}

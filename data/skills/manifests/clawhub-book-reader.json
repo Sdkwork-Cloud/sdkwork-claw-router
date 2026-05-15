@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11382,
+  "uuid": "skill-clawhub-book-reader",
+  "skillKey": "clawhub-book-reader",
+  "name": "Book Reader - Learn & Grow Every Day",
+  "summary": "Read EPUB, PDF, or TXT books from multiple sources with progress tracking, smart chunking, and summary extraction for efficient learning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "josharsh",
+      "features": [
+        "Read EPUB, PDF, or TXT books from multiple sources with progress tracking, smart chunking, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26869672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-reader",
+      "url": "https://clawhub.ai/skills/book-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-reader",
+    "url": "https://clawhub.ai/skills/book-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-reader-9706c3562d81f8a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e821e89d025984beec7f469580e8b032290316b090db9c885603df2fdad17cd",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T12:28:55.173Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65430,
+  "uuid": "skill-clawhub-linkfox-amazon-store-auth",
+  "skillKey": "clawhub-linkfox-amazon-store-auth",
+  "name": "Amazon Store Auth",
+  "summary": "亚马逊店铺授权与管理技能，提供完整的授权流程、令牌刷新、已授权店铺查询以及访问令牌获取能力。获取授权链接时店铺名 sellerName 为必填，用于区分已授权店铺。当用户提到亚马逊店铺授权、绑定亚马逊店铺、刷新令牌、查询店铺令牌、管理授权店铺、Amazon seller authorization, bind A...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_amazon_store_auth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "亚马逊店铺授权与管理技能，提供完整的授权流程、令牌刷新、已授权店铺查询以及访问令牌获取能力。获取授权链接时店铺名 sellerName 为必填，用于区分已授权店铺。当用户提到亚马逊店铺授权、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-amazon-store-auth@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-amazon-store-auth",
+      "url": "https://clawhub.ai/skills/linkfox-amazon-store-auth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-amazon-store-auth",
+    "url": "https://clawhub.ai/skills/linkfox-amazon-store-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-amazon-store-auth-c3b49b829d2219ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-amazon-store-auth@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-amazon-store-auth-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcfbe8483f786398f4910fa026a2d2fae9c9bdd121955b00fb8c963afef8eee3",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:55:11.140Z"
+}

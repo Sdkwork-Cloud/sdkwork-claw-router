@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-model-switching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_model_switching",
+  "skill": {
+    "id": 8745,
+    "skillKey": "clawhub-smart-model-switching",
+    "name": "Smart Model Switching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-model-switching",
+    "url": "https://clawhub.ai/skills/smart-model-switching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-model-switching-e46bbe1d32e5d13c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-route tasks to the cheapest Claude model that works correctly. Three-tier progression: Haiku → Sonnet → Opus. Classify before responding. HAIKU (default): factual Q&A, greetings, reminders, status checks, lookups, simple file ops, hea."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "millibus",
+      "userId": "s172p90hwzvkgfdf76x1h2zrwd848zea",
+      "displayName": "millibus",
+      "image": "https://avatars.githubusercontent.com/u/129882821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5829,
+      "installsAllTime": 49,
+      "installsCurrent": 47,
+      "stars": 21,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770213230022,
+      "changelog": "Initial release - Three-tier Claude routing for cost optimization",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17fcb5e70a8031b56def16ca2da78ffcdab40e1c8ee25371cd44e9525c839b10"
+}

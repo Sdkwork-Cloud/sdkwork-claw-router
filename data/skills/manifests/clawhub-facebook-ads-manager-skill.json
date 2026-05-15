@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20005,
+  "uuid": "skill-clawhub-facebook-ads-manager-skill",
+  "skillKey": "clawhub-facebook-ads-manager-skill",
+  "name": "Meta Ads Super Manager Skill",
+  "summary": "Orquestra planejamento, operacao e otimizacao de campanhas Meta Ads usando MCP tools com seguranca de escrita, cobertura completa de endpoints e carregamento...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_ads_manager_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "William Neves",
+      "features": [
+        "Orquestra planejamento, operacao e otimizacao de campanhas Meta Ads usando MCP tools com segura."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-ads-manager-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9664155?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-ads-manager-skill",
+      "url": "https://clawhub.ai/skills/facebook-ads-manager-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-ads-manager-skill",
+    "url": "https://clawhub.ai/skills/facebook-ads-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-ads-manager-skill-26ab034d3de70759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-ads-manager-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-ads-manager-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27e3c62757904dad11747dc1e80bd8ebc33f5e2aef73be6006062833de8d678e",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:07:10.027Z"
+}

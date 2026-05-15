@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65129,
+  "uuid": "skill-clawhub-macro-monitor",
+  "skillKey": "clawhub-macro-monitor",
+  "name": "Macro Monitor",
+  "summary": "每日宏观数据监控和推送。自动浏览免费数据源（Trading Economics、FRED、国家统计局、央行官网、财联社等），整理整合过去24小时发布的宏观数据和政策信息，并推送给用户。通过 cron 每天晚上10点自动触发。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hmzo",
+      "features": [
+        "每日宏观数据监控和推送。自动浏览免费数据源（Trading Economics、FRED、国家统计局、央行官网、财联社等），整理整合过去24小时发布的宏观数据和政策信息，并推送给用户。通过."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macro-monitor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26140960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macro-monitor",
+      "url": "https://clawhub.ai/skills/macro-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-monitor",
+    "url": "https://clawhub.ai/skills/macro-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-monitor-4f067881b86574c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macro-monitor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-macro-monitor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf90145c4280aa3e8ef4c642ea2d24e77a0aad3b65a2060bf778c32819b070e3",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T10:23:21.675Z"
+}

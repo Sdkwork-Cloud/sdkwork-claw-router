@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21803,
+  "uuid": "skill-clawhub-authy",
+  "skillKey": "clawhub-authy",
+  "name": "Authy",
+  "summary": "Inject secrets into subprocesses via environment variables. You never see secret values — authy run injects them directly. Use for any command that needs API...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eric8810",
+      "features": [
+        "Inject secrets into subprocesses via environment variables",
+        "You never see secret values — authy run injects them directly",
+        "Use for any command that needs API..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/authy@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/756579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "authy",
+      "url": "https://clawhub.ai/skills/authy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authy",
+    "url": "https://clawhub.ai/skills/authy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authy-673193700326c917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/authy@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-authy-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d4ccea7bd4711b0343df7c268ec2073270f20b353049f06438e4f6f1fdd86e4",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T01:07:26.071Z"
+}

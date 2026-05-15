@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70656,
+  "uuid": "skill-clawhub-virtual-item-constructor",
+  "skillKey": "clawhub-virtual-item-constructor",
+  "name": "virtual-item-constructor",
+  "summary": "智能构造合规测试商品，支持按类目、业务身份、商品属性、商品标等条件查找或克隆商品，并自动改价和清理标签。 当用户需要构造测试商品、查找测试商品、克隆商品到测试账号、修改测试商品价格，或用户提出\"帮我找一个测试商品\"\"构造一个XX类目的商品\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_item_constructor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cpu-hammer",
+      "features": [
+        "智能构造合规测试商品，支持按类目、业务身份、商品属性、商品标等条件查找或克隆商品，并自动改价和清理标签。 当用户需要构造测试商品、查找测试商品、克隆商品到测试账号、修改测试商品价格，或用户提."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-item-constructor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50734115?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-item-constructor",
+      "url": "https://clawhub.ai/skills/virtual-item-constructor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-item-constructor",
+    "url": "https://clawhub.ai/skills/virtual-item-constructor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-item-constructor-e6798bc745375cee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-item-constructor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-item-constructor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc22961b24bd61a4c3a0ec3474ac77af2bdbf2452b748a9e5cae800ab61b1d4",
+      "artifactSizeBytes": 2710
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:01:18.394Z"
+}

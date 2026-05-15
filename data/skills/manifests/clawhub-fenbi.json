@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71483,
+  "uuid": "skill-clawhub-fenbi",
+  "skillKey": "clawhub-fenbi",
+  "name": "Fenbi",
+  "summary": "粉笔教育助手，精通公考备考、行测申论、教师资格、学习规划",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fenbi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "粉笔教育助手，精通公考备考、行测申论、教师资格、学习规划"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fenbi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fenbi",
+      "url": "https://clawhub.ai/skills/fenbi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fenbi",
+    "url": "https://clawhub.ai/skills/fenbi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fenbi-8a5a9202ef9eb1d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fenbi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fenbi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8d7af9154edd2f44712607f2f1a1005883a8ea618b94b358a2ebc914a9556b",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:40.009Z"
+}

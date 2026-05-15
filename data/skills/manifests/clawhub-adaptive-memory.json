@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52892,
+  "uuid": "skill-clawhub-adaptive-memory",
+  "skillKey": "clawhub-adaptive-memory",
+  "name": "Adaptive Memory",
+  "summary": "Hierarchical memory management for AI agents across sessions. Maintains three layers — daily notes (raw logs), active context (working memory), and long-term...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yoshikazu Terashi",
+      "features": [
+        "Hierarchical memory management for AI agents across sessions",
+        "Maintains three layers — daily notes (raw logs), active context (working memory), and long-term."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1403979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-memory",
+      "url": "https://clawhub.ai/skills/adaptive-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-memory",
+    "url": "https://clawhub.ai/skills/adaptive-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-memory-ed1fd40857db21a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2a49a74009702c759846fb51ffee7728a0da9b3a03e0d2c4f66952ed2de87a4",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:41:01.896Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillstore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillstore",
+  "skill": {
+    "id": 16168,
+    "skillKey": "clawhub-skillstore",
+    "name": "Skillstore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillstore",
+    "url": "https://clawhub.ai/skills/skillstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillstore-6645767cf34fced6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, install, and create OpenClaw skills using intelligent matching across built-in, local, and GitHub skill repositories."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris6970barbarian-hue",
+      "userId": "publishers:chris6970barbarian-hue",
+      "displayName": "Glitch",
+      "image": "https://avatars.githubusercontent.com/u/258746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 880,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771335257485,
+      "changelog": "SkillStore is a new skill manager for OpenClaw, providing intelligent search, install, and skill creation features.\n\n- Search for skills (built-in, local, and on GitHub) with fuzzy matching and relevance scores.\n- Install skills directly from GitHub.\n- Create new skills using templates via `skillstore create <name>`.\n- Visual match scoring makes it easy to assess relevance at a glance.\n- List installed skills and browse the built-in database of 20 popular skills.\n- No setup required—works out of the box.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:459ddc1fab9c73e4e0cf14827d9d27f64645575c022828eb10ad12516513691b"
+}

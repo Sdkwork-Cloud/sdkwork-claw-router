@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23422,
+  "uuid": "skill-clawhub-cognitive-behavior-evaluator",
+  "skillKey": "clawhub-cognitive-behavior-evaluator",
+  "name": "cognitive-behavior-evaluator",
+  "summary": "Evaluate AI agents by injecting diagnostic tests to detect cognitive biases, scoring responses on authority resistance, fact grounding, and neutrality, and g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognitive_behavior_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roger Fretelli",
+      "features": [
+        "Evaluate AI agents by injecting diagnostic tests to detect cognitive biases, scoring responses."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cognitive-behavior-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40650086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cognitive-behavior-evaluator",
+      "url": "https://clawhub.ai/skills/cognitive-behavior-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognitive-behavior-evaluator",
+    "url": "https://clawhub.ai/skills/cognitive-behavior-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognitive-behavior-evaluator-e3756a8c570710cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cognitive-behavior-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-behavior-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cfb8e815d38225eddc77948e3a3cff4e1a5ab90a29b4432c351677aae15034c",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:12:19.502Z"
+}

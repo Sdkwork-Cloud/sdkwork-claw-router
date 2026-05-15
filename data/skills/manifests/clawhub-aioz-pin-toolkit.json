@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38735,
+  "uuid": "skill-clawhub-aioz-pin-toolkit",
+  "skillKey": "clawhub-aioz-pin-toolkit",
+  "name": "AIOZ Pin Toolkit",
+  "summary": "Respond to user requests for AIOZ Pin API. Use provided scripts to manage API keys, pin files to IPFS, track usage, and more.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aioz_pin_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "namle-aioz",
+      "features": [
+        "Respond to user requests for AIOZ Pin API",
+        "Use provided scripts to manage API keys, pin files to IPFS, track usage, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aioz-pin-toolkit@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265162279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aioz-pin-toolkit",
+      "url": "https://clawhub.ai/skills/aioz-pin-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aioz-pin-toolkit",
+    "url": "https://clawhub.ai/skills/aioz-pin-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aioz-pin-toolkit-7595bb85024de966.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aioz-pin-toolkit@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-aioz-pin-toolkit-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c55706a973aeeb25e41ca3c999e62e285739a889de91bdcdad4b9651a268945",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:03:41.206Z"
+}

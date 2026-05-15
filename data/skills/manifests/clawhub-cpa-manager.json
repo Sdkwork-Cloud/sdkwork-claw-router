@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60876,
+  "uuid": "skill-clawhub-cpa-manager",
+  "skillKey": "clawhub-cpa-manager",
+  "name": "CPA Manager",
+  "summary": "CLIProxyAPI (CPA) 运维工具。基于官方 cpa-warden，用于库存扫描、401/限额清理、上传、补池与本地状态跟踪。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpa_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "violin321",
+      "features": [
+        "CLIProxyAPI (CPA) 运维工具。基于官方 cpa-warden，用于库存扫描、401/限额清理、上传、补池与本地状态跟踪。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpa-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40025669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpa-manager",
+      "url": "https://clawhub.ai/skills/cpa-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpa-manager",
+    "url": "https://clawhub.ai/skills/cpa-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpa-manager-c357875e83dd3e4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpa-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpa-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21f4451dcf36fed8e7545c8b31538843697182fc4875862242da464dac1a8d6f",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:26:47.342Z"
+}

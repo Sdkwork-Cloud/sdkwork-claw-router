@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forecast-analysis-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forecast_analysis_claw",
+  "skill": {
+    "id": 64799,
+    "skillKey": "clawhub-forecast-analysis-claw",
+    "name": "forecast-analysis-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forecast-analysis-claw",
+    "url": "https://clawhub.ai/skills/forecast-analysis-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forecast-analysis-claw-edd2d1ed4a994329.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据历史销售数据预测未来销量并生成补货建议。核心能力：(1) 销量预测 - 基于移动平均、指数平滑、Holt-Winters、Prophet 等模型自动预测未来销量；(2) 补货计算 - 结合库存参数自动计算补货触发点和建议补货量；(3) 活动预测 - 叠加促销效应系数预测大促期间销量峰值；(4) 断货预警 -..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775645138877,
+      "changelog": "Initial release: 销量预测、补货计算、大促备货分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cc4f8f64efbd74503ea97fee55b0ef42b5e1fb5859f35722be57cee79759c79"
+}

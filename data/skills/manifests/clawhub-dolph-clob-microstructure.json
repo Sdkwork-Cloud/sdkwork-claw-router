@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44971,
+  "uuid": "skill-clawhub-dolph-clob-microstructure",
+  "skillKey": "clawhub-dolph-clob-microstructure",
+  "name": "Polymarket Clob Microstructure",
+  "summary": "Analyzes Polymarket order book microstructure for inefficiencies and generates signals to trade fake breakouts and manage position sizing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolph_clob_microstructure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "richducat",
+      "features": [
+        "Analyzes Polymarket order book microstructure for inefficiencies and generates signals to trade."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dolph-clob-microstructure@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15804981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dolph-clob-microstructure",
+      "url": "https://clawhub.ai/skills/dolph-clob-microstructure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolph-clob-microstructure",
+    "url": "https://clawhub.ai/skills/dolph-clob-microstructure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolph-clob-microstructure-3af1a18763b36b6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dolph-clob-microstructure@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dolph-clob-microstructure-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c3ab83ce33ed2279d27a64acb347212235168ec302475a4b9d2492164ae409",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T23:33:00.108Z"
+}

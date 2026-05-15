@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16422,
+  "uuid": "skill-clawhub-cross-chain-swap",
+  "skillKey": "clawhub-cross-chain-swap",
+  "name": "Uniswap Cross Chain Swap",
+  "summary": "Execute a cross-chain token swap via Uniswap's bridge infrastructure. Handles quoting, safety validation, bridge monitoring, and destination confirmation. Use when the user wants to swap tokens across different chains.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_chain_swap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Execute a cross-chain token swap via Uniswap's bridge infrastructure",
+        "Handles quoting, safety validation, bridge monitoring, and destination confirmation",
+        "Use when the user wants to swap tokens across different chains."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-chain-swap@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-chain-swap",
+      "url": "https://clawhub.ai/skills/cross-chain-swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-chain-swap",
+    "url": "https://clawhub.ai/skills/cross-chain-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-chain-swap-f57bc09ffc15212c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-chain-swap@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-chain-swap-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:063cab80d64da13a90979554edf3114148c7d96d78f3cff28506ec422f243d2c",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:42:55.396Z"
+}

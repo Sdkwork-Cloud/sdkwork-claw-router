@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20465,
+  "uuid": "skill-clawhub-skill-veo3-video-gen",
+  "skillKey": "clawhub-skill-veo3-video-gen",
+  "name": "Skill Veo3 Video Gen",
+  "summary": "Generate and stitch short videos via Google Veo 3.x using the Gemini API (google-genai). Use when you need to create video clips from prompts (ads, UGC-style...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_veo3_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "Generate and stitch short videos via Google Veo 3.x using the Gemini API (google-genai)",
+        "Use when you need to create video clips from prompts (ads, UGC-style..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-veo3-video-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-veo3-video-gen",
+      "url": "https://clawhub.ai/skills/skill-veo3-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-veo3-video-gen",
+    "url": "https://clawhub.ai/skills/skill-veo3-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-veo3-video-gen-cd0047c8caf489a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-veo3-video-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-veo3-video-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2f1a8cfab79ac5a49bd144f23f14264f7070710abb1848f0ba631fa6b14c823",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:06:38.663Z"
+}

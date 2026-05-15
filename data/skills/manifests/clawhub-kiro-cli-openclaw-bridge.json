@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59175,
+  "uuid": "skill-clawhub-kiro-cli-openclaw-bridge",
+  "skillKey": "clawhub-kiro-cli-openclaw-bridge",
+  "name": "Kiro Cli Openclaw Bridge",
+  "summary": "通过本地 ACP-to-OpenAI Bridge 将 OpenClaw（或任何 OpenAI 兼容客户端）连接到 kiro-cli 的 ACP 后端，支持流式响应和工具调用。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiro_cli_openclaw_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L",
+      "features": [
+        "通过本地 ACP-to-OpenAI Bridge 将 OpenClaw（或任何 OpenAI 兼容客户端）连接到 kiro-cli 的 ACP 后端，支持流式响应和工具调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiro-cli-openclaw-bridge@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20841502?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiro-cli-openclaw-bridge",
+      "url": "https://clawhub.ai/skills/kiro-cli-openclaw-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiro-cli-openclaw-bridge",
+    "url": "https://clawhub.ai/skills/kiro-cli-openclaw-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiro-cli-openclaw-bridge-513031fc49a4daea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiro-cli-openclaw-bridge@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiro-cli-openclaw-bridge-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c893e7d79c01bce225e1b143c97f188190d92afbf18edce4ad5a53127819ce54",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:57:42.227Z"
+}

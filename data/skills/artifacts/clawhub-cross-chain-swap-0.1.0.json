@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-chain-swap@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_chain_swap",
+  "skill": {
+    "id": 16422,
+    "skillKey": "clawhub-cross-chain-swap",
+    "name": "Uniswap Cross Chain Swap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-chain-swap",
+    "url": "https://clawhub.ai/skills/cross-chain-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-chain-swap-f57bc09ffc15212c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute a cross-chain token swap via Uniswap's bridge infrastructure. Handles quoting, safety validation, bridge monitoring, and destination confirmation. Use when the user wants to swap tokens across different chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 857,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745375396,
+      "changelog": "Initial release of cross-chain-swap skill for Uniswap bridge-based token swaps.\n\n- Enables cross-chain token swaps with full workflow delegation to a cross-chain executor agent.\n- Handles quoting, safety/risk validation, bridge monitoring, and final destination confirmation.\n- Provides clear parameter definitions, workflow outline, and user-facing output/reporting.\n- Built-in handling for errors, unsupported chains/tokens, and safety or risk vetoes.\n- Integrates with Uniswap’s supported chains and token info APIs for validation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:063cab80d64da13a90979554edf3114148c7d96d78f3cff28506ec422f243d2c"
+}

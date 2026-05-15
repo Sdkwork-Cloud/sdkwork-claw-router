@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hybrid-retrieval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hybrid_retrieval",
+  "skill": {
+    "id": 30589,
+    "skillKey": "clawhub-hybrid-retrieval",
+    "name": "Hybrid Retrieval (BM25 + Vector + Graph)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hybrid-retrieval",
+    "url": "https://clawhub.ai/skills/hybrid-retrieval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hybrid-retrieval-338580d5471fe8b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and build a hybrid retrieval system combining BM25 keyword search, vector embeddings, and knowledge graph traversal for AI agent memory. Use when buil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vnesin-sarai",
+      "userId": "s175dgkz362764j8778bjcs10n83zgef",
+      "displayName": "SARAI Defence",
+      "image": "https://avatars.githubusercontent.com/u/271494098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776016572807,
+      "changelog": "Initial release — design and build hybrid RAG systems combining BM25, vector embeddings, and knowledge graph traversal",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baec6bd1132a864eadfe2951e311533e823ee929f47f76c06892839a1eb45864"
+}

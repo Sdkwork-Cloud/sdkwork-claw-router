@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuvera@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuvera",
+  "skill": {
+    "id": 22611,
+    "skillKey": "clawhub-kuvera",
+    "name": "Kuvera Portfolio & Market Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuvera",
+    "url": "https://clawhub.ai/skills/kuvera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuvera-527412baf4a89be5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kuvera portfolio & market data CLI. Query mutual fund data, gold prices, USD/INR rates, fund category returns, and user portfolio info from Kuvera. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankitsul",
+      "userId": "publishers:ankitsul",
+      "displayName": "Ankit Sultania",
+      "image": "https://avatars.githubusercontent.com/u/3957998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772386027541,
+      "changelog": "Initial release: portfolio holdings with P&L, transactions, SIPs, gold prices, USD/INR, mutual fund categories & details",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb166ef691f58c0937ce620c26e1f816d39f1e6b3339e17d8c213f51038098b0"
+}

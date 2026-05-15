@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15700,
+  "uuid": "skill-clawhub-wiseocr",
+  "skillKey": "clawhub-wiseocr",
+  "name": "WiseOCR",
+  "summary": "PDF & Image OCR — Convert a single PDF or image to Markdown via WiseDiag cloud API, with high-accuracy text extraction, table recognition, and multi-column l...",
+  "version": "1.0.28",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wiseocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wisediag",
+      "features": [
+        "PDF & Image OCR — Convert a single PDF or image to Markdown via WiseDiag cloud API, with high-a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wiseocr@1.0.28",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102396016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wiseocr",
+      "url": "https://clawhub.ai/skills/wiseocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wiseocr",
+    "url": "https://clawhub.ai/skills/wiseocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wiseocr-7d20b3550028739e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wiseocr@1.0.28",
+      "artifactUrl": "data/skills/artifacts/clawhub-wiseocr-1.0.28.json",
+      "version": "1.0.28",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d9a6532a4d6809730d13598cb31867d29d2a3d60444e3d6e5896d02455b08c4",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:05:41.259Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42969,
+  "uuid": "skill-clawhub-goai-pdf-to-ppt",
+  "skillKey": "clawhub-goai-pdf-to-ppt",
+  "name": "GoAI PDF to PPT",
+  "summary": "Convert PDF documents to PowerPoint presentations via GoAI API. Use when the user asks to convert PDF to PPT, turn a PDF into slides, make a presentation fro...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goai_pdf_to_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoAI",
+      "features": [
+        "Convert PDF documents to PowerPoint presentations via GoAI API",
+        "Use when the user asks to convert PDF to PPT, turn a PDF into slides, make a presentation fro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goai-pdf-to-ppt@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/goai-pdf-to-ppt/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goai-pdf-to-ppt",
+      "url": "https://clawhub.ai/skills/goai-pdf-to-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goai-pdf-to-ppt",
+    "url": "https://clawhub.ai/skills/goai-pdf-to-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goai-pdf-to-ppt-8a7e0a5130ab36f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goai-pdf-to-ppt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-goai-pdf-to-ppt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61af6480a080f09bbd0c3498adedef0b9f6bb03e75d0b866ba95c62d3cdc2045",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:21:50.995Z"
+}

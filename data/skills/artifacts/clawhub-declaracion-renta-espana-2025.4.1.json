@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/declaracion-renta-espana@2025.4.1",
+  "version": "2025.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.declaracion_renta_espana",
+  "skill": {
+    "id": 56910,
+    "skillKey": "clawhub-declaracion-renta-espana",
+    "name": "Declaración de la Renta - España (IRPF 2025, Campaña 2026)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "declaracion-renta-espana",
+    "url": "https://clawhub.ai/skills/declaracion-renta-espana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/declaracion-renta-espana-1589ca7064867435.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Asistente para la Declaración de la Renta (IRPF) en España, ejercicio 2025. Dos modos de trabajo: (1) Revisión: analiza borradores de la AEAT o de haciendas..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joseconti",
+      "userId": "s175q3hy0c13cr180aspzsky8x84pth2",
+      "displayName": "José Conti",
+      "image": "https://avatars.githubusercontent.com/u/3383562?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2025.4.1",
+      "createdAt": 1776090251054,
+      "changelog": "Declaracion Renta España 2025.4.1\n\n- Añadido soporte para dos modos de uso: revisión de borradores y preparación completa desde cero.\n- Nueva Fase 0 para seleccionar automáticamente el modo adecuado según las necesidades del usuario.\n- Integra referencias nuevas y flujos para ingesta avanzada de documentación en bruto (nóminas, facturas, certificados, etc.).\n- Añadida compatibilidad y flujo específico para autónomos, con manejo de documentación y cálculos diferenciales.\n- Nuevos archivos de referencia: `autonomos.md` y `modo-preparacion.md` para guiar el proceso y recopilar datos de forma estructurada.\n- Actualizada la descripción y flujos para abarcar tanto la revisión como la preparación de declaraciones, incluyendo usuarios sin borrador inicial.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc14787d7c1f6f3df843ad668fde550c783910edc0e7064841a6e112c1bbe70a"
+}

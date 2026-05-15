@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bou-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bou_wallet",
+  "skill": {
+    "id": 51392,
+    "skillKey": "clawhub-bou-wallet",
+    "name": "Bou Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bou-wallet",
+    "url": "https://clawhub.ai/skills/bou-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bou-wallet-b5742a9ae2624e68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when an external agent already has an agent API key and needs to call this backend directly with curl for three capability groups: (1) `POST /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xcipher0",
+      "userId": "s179by4g85d8a94rv61w9j42yh83zz4j",
+      "displayName": "C9",
+      "image": "https://avatars.githubusercontent.com/u/210006044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944854220,
+      "changelog": "bou-wallet v1.0.0 changelog\n\n- Initial release.\n- Enables direct backend access for 3 main capability groups via curl: agent pay-and-call, agent profile/wallet inspection, and Hyperliquid trading endpoints.\n- Requires an agent API key (ak_...) and backend base URL as inputs.\n- Provides usage instructions for agent onboarding, bearer token setup, and endpoint-specific curl commands.\n- Includes example test cases and detailed API call patterns for each capability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de06c74a359a61880b6e8afa66be3230308f35f0bc6463f276befc3e2552324d"
+}

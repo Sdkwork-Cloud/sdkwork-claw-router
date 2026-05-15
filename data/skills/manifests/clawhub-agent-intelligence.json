@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34999,
+  "uuid": "skill-clawhub-agent-intelligence",
+  "skillKey": "clawhub-agent-intelligence",
+  "name": "Agent Intelligence",
+  "summary": "Research-backed intelligence database covering AI coding tools' hidden features, model codenames, feature flags, and version changes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blossom",
+      "features": [
+        "Research-backed intelligence database covering AI coding tools' hidden features, model codename."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-intelligence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19878893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-intelligence",
+      "url": "https://clawhub.ai/skills/agent-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-intelligence",
+    "url": "https://clawhub.ai/skills/agent-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-intelligence-ebb8eea5bc2f82fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-intelligence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-intelligence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faa3105749bac8a88a07da47c6097cb10e8a10d36bcc98b945c1e183320e4957",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:24:53.135Z"
+}

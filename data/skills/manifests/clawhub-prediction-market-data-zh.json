@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67093,
+  "uuid": "skill-clawhub-prediction-market-data-zh",
+  "skillKey": "clawhub-prediction-market-data-zh",
+  "name": "预测市场数据",
+  "summary": "通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、市场情绪、Polymarket 价格、Kalshi 价格、体育博彩赔率、钱包盈亏、跨平台市场对比。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_data_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "通过 AIsa API 查询跨平台预测市场数据。支持 Polymarket 和 Kalshi 的市场行情、价格、订单簿、K线、持仓和交易记录。适用场景：查询预测市场赔率、选举博彩、事件概率、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-market-data-zh@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-market-data-zh",
+      "url": "https://clawhub.ai/skills/prediction-market-data-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-data-zh",
+    "url": "https://clawhub.ai/skills/prediction-market-data-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-data-zh-58d1798b85768b3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-market-data-zh@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-data-zh-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3012b95651e1e73730de4408833eb8b76d819606b1793f2263695b004e2d0a7a",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T00:19:19.753Z"
+}

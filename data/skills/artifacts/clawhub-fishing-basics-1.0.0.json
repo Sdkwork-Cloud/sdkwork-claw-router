@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fishing-basics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fishing_basics",
+  "skill": {
+    "id": 38656,
+    "skillKey": "clawhub-fishing-basics",
+    "name": "Fishing Basics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fishing-basics",
+    "url": "https://clawhub.ai/skills/fishing-basics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fishing-basics-85e62bae15720e1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Beginner fishing skills covering licensing, gear, techniques, and catch-to-cook basics. Use when someone wants to start fishing for food or recreation, needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774508249936,
+      "changelog": "- Initial release providing step-by-step beginner guidance for fishing as a food source or recreational practice.\n- Covers licensing, affordable gear recommendations, basic rigs and knots, and how to locate accessible fishing spots.\n- Includes region-specific adaptation instructions for licensing, species, bait, and currency.\n- Built-in best-practice guides for gear setup, fishing techniques, and safe catch handling.\n- Targeted for anyone seeking practical, budget-friendly outdoor skill-building.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b89fd0ef26adbb84f3b170b4d3bc21a35f1c9f40329e13d27a88eef63477011"
+}

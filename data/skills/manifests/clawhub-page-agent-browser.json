@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59663,
+  "uuid": "skill-clawhub-page-agent-browser",
+  "skillKey": "clawhub-page-agent-browser",
+  "name": "page-agent 浏览器控制（CDP）",
+  "summary": "通过 page-agent CLI（CDP）驱动浏览器；CLI 当前仅从 GitHub Release 的 .tgz 安装（npm 官方包尚未发布）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.page_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuesen",
+      "features": [
+        "通过 page-agent CLI（CDP）驱动浏览器；CLI 当前仅从 GitHub Release 的 .tgz 安装（npm 官方包尚未发布）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/page-agent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152508772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "page-agent-browser",
+      "url": "https://clawhub.ai/skills/page-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "page-agent-browser",
+    "url": "https://clawhub.ai/skills/page-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/page-agent-browser-1233547949af0198.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/page-agent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-page-agent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d04595c4ee772b6cb0b7ac4f426647181efd8b0eb7d110613cd37ace804334c7",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T09:16:58.795Z"
+}

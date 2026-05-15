@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69652,
+  "uuid": "skill-clawhub-wechat-publish-skill",
+  "skillKey": "clawhub-wechat-publish-skill",
+  "name": "微信创作",
+  "summary": "自动将 Markdown 文章转为适配微信公众号格式的 HTML，并批量发布至公众号草稿箱，支持封面图生成与专题管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publish_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanbinsite",
+      "features": [
+        "自动将 Markdown 文章转为适配微信公众号格式的 HTML，并批量发布至公众号草稿箱，支持封面图生成与专题管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-publish-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32380665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-publish-skill",
+      "url": "https://clawhub.ai/skills/wechat-publish-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publish-skill",
+    "url": "https://clawhub.ai/skills/wechat-publish-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publish-skill-710aa3be66a3c03c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-publish-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-publish-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c40170f07a80bc881ffc6db76f7986f38d67814ccebc80e53ce9241c7c6741b7",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:04:19.916Z"
+}

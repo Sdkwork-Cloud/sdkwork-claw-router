@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70967,
+  "uuid": "skill-clawhub-feishu-quickstart-cn",
+  "skillKey": "clawhub-feishu-quickstart-cn",
+  "name": "飞书快速集成配置",
+  "summary": "飞书快速集成配置 - 5分钟连接 OpenClaw 与飞书，解锁文档管理、知识库、自动化工作流。适合：企业用户、团队协作、飞书生态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_quickstart_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "飞书快速集成配置",
+        "5分钟连接 OpenClaw 与飞书，解锁文档管理、知识库、自动化工作流。适合：企业用户、团队协作、飞书生态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-quickstart-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-quickstart-cn",
+      "url": "https://clawhub.ai/skills/feishu-quickstart-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-quickstart-cn",
+    "url": "https://clawhub.ai/skills/feishu-quickstart-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-quickstart-cn-b3154bb9ecc0e664.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-quickstart-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-quickstart-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4813a378c9221e9643ee7da1b2989f4d75c10d6c72d189f5bd755e78285f64e",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T22:09:34.027Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-tts-english@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_english",
+  "skill": {
+    "id": 19420,
+    "skillKey": "clawhub-edge-tts-english",
+    "name": "Edge TTS English"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-english",
+    "url": "https://clawhub.ai/skills/edge-tts-english",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-english-6ccdc94100e93f9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality English (and multilingual) audio using Microsoft Edge TTS. Use when the user asks to \"speak this\", \"pronounce\", \"read aloud\", \"say this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davydenkovm",
+      "userId": "s172p1n2txqraepx0sjf8pr335840c55",
+      "displayName": "Mikhail",
+      "image": "https://avatars.githubusercontent.com/u/3938593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772521366033,
+      "changelog": "Improved description for better discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b650b6f7b860069113f3c1deae09ffed79e1dbab415e6d3bdb58f9ab7a8885b8"
+}

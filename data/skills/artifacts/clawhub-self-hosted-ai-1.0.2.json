@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-hosted-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_hosted_ai",
+  "skill": {
+    "id": 50850,
+    "skillKey": "clawhub-self-hosted-ai",
+    "name": "Self Hosted Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-hosted-ai",
+    "url": "https://clawhub.ai/skills/self-hosted-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-hosted-ai-c7602580c9f62c1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-hosted AI — run your own LLM inference, image generation, speech-to-text, and embeddings. No cloud APIs, no SaaS subscriptions, no data leaving your net..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775254724456,
+      "changelog": "Cross-platform support: macOS, Linux, and Windows. Updated OS metadata, descriptions, and hardware recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c1e525060f3d1cf6c5ecf68d30272fce3369bf9a2b9b3e48ab08faa052f2899"
+}

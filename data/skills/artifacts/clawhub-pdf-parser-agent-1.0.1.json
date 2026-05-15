@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-parser-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_parser_agent",
+  "skill": {
+    "id": 32692,
+    "skillKey": "clawhub-pdf-parser-agent",
+    "name": "Pdf Parser Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-parser-agent",
+    "url": "https://clawhub.ai/skills/pdf-parser-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-parser-agent-c28d48cd36d02cdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parses local PDF files into structured Markdown and JSON using opendataloader-pdf for deterministic, local document content extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trshdesigns",
+      "userId": "s175dmkkftabytc437ewcdyzpx83ezw1",
+      "displayName": "Ezequiel Techera",
+      "image": "https://avatars.githubusercontent.com/u/75855194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774020215546,
+      "changelog": "- Added a \"Core Technology Attribution\" section, crediting **bundolee** and **claude** as original authors of `opendataloader-pdf`.\n- No changes to functionality or usage; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ba1a39980df38434b5279ba9b5a7b5fdaf84a29b82a3e6ed371493655a7eab7"
+}

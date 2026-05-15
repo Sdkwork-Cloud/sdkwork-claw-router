@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60815,
+  "uuid": "skill-clawhub-rdk-x5-system",
+  "skillKey": "clawhub-rdk-x5-system",
+  "name": "Rdk X5 System",
+  "summary": "修改和管理 RDK X5 系统配置：查看系统版本/硬件信息/系统日志、rdk-backup 一键备份与恢复、apt OTA 升级、miniboot 固件更新、CPU/BPU 频率调节与温度阈值设置、config.txt 配置修改、实时内核切换、systemd 开机自启动、存储扩容。Use when the use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiaolongli",
+      "features": [
+        "修改和管理 RDK X5 系统配置：查看系统版本/硬件信息/系统日志、rdk-backup 一键备份与恢复、apt OTA 升级、miniboot 固件更新、CPU/BPU 频率调节与温度阈."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rdk-x5-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262944264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rdk-x5-system",
+      "url": "https://clawhub.ai/skills/rdk-x5-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-system",
+    "url": "https://clawhub.ai/skills/rdk-x5-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-system-fcefcf1bcec78d9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rdk-x5-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a83eeece7e17b8c3464b27a1d56b9595e6e808537fe660d5404437deae14dc42",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:39:39.455Z"
+}

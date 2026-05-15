@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51518,
+  "uuid": "skill-clawhub-tene-cli",
+  "skillKey": "clawhub-tene-cli",
+  "name": "Tene CLI — Local-First Secrets",
+  "summary": "Local-first encrypted secret management with the tene CLI. Activate when the user mentions secrets, API keys, credentials, tokens, .env files, environment va...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tene_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agent-kay",
+      "features": [
+        "Local-first encrypted secret management with the tene CLI",
+        "Activate when the user mentions secrets, API keys, credentials, tokens, .env files, environment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tene-cli@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248060914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tene-cli",
+      "url": "https://clawhub.ai/skills/tene-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tene-cli",
+    "url": "https://clawhub.ai/skills/tene-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tene-cli-2d40aa7b53ae7978.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tene-cli@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tene-cli-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de1adc753560602153301e392fc82ac8ea6b0e980f8007c028e14395a2d3a2c8",
+      "artifactSizeBytes": 2881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:22:19.587Z"
+}

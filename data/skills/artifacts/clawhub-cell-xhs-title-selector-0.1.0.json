@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cell-xhs-title-selector@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cell_xhs_title_selector",
+  "skill": {
+    "id": 57406,
+    "skillKey": "clawhub-cell-xhs-title-selector",
+    "name": "小红书标题策略"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cell-xhs-title-selector",
+    "url": "https://clawhub.ai/skills/cell-xhs-title-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cell-xhs-title-selector-7754720aae32cce6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Xiaohongshu title strategy skill for Chinese creators. Use when Codex needs to pick the right title formula for a topic, draft, or existing Xiaohongshu title..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cellinlab",
+      "userId": "s174y213bsdrc75e878jghxphh841v00",
+      "displayName": "cellinlab",
+      "image": "https://avatars.githubusercontent.com/u/46317258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775827068337,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1edca367c9abeb294b2f3d1ed08cf43942aae6aba5d0b3f0c36c3eb6c094d3f6"
+}

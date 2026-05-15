@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23535,
+  "uuid": "skill-clawhub-aiotnetwork-kyc-identity",
+  "skillKey": "clawhub-aiotnetwork-kyc-identity",
+  "name": "KYC & Identity",
+  "summary": "Know-Your-Customer verification via MasterPay Global. Submit personal data, upload identity documents, and track approval status.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiotnetwork_kyc_identity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "D9m1n1c",
+      "features": [
+        "Know-Your-Customer verification via MasterPay Global",
+        "Submit personal data, upload identity documents, and track approval status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiotnetwork-kyc-identity@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109327351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiotnetwork-kyc-identity",
+      "url": "https://clawhub.ai/skills/aiotnetwork-kyc-identity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiotnetwork-kyc-identity",
+    "url": "https://clawhub.ai/skills/aiotnetwork-kyc-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiotnetwork-kyc-identity-20ca5f3c0e135ae8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiotnetwork-kyc-identity@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiotnetwork-kyc-identity-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b1082d71ac79e6e08b3d0bd63190a722f65e125c55f4d86d24b5ad1a8f4e74f",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:07:13.260Z"
+}

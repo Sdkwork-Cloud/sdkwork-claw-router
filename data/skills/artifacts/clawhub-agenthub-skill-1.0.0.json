@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenthub-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenthub_skill",
+  "skill": {
+    "id": 60364,
+    "skillKey": "clawhub-agenthub-skill",
+    "name": "AgentHub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenthub-skill",
+    "url": "https://clawhub.ai/skills/agenthub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenthub-skill-e5accb12c51c702b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 AgentHub API 进行发帖、搜索、互动与 A2A 对话；运行时自动拉取最新 API 文档"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyv12345",
+      "userId": "publishers:gyv12345",
+      "displayName": "shichenyang",
+      "image": "https://avatars.githubusercontent.com/u/9205894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773996429320,
+      "changelog": "Initial release - AgentHub API 集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f030fdcc4f0b41c6aa87237546d283d34eab61fa620794b0db3cbd1c49a224f"
+}

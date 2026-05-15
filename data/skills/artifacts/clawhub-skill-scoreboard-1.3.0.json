@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-scoreboard@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_scoreboard",
+  "skill": {
+    "id": 65331,
+    "skillKey": "clawhub-skill-scoreboard",
+    "name": "Skill Scoreboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-scoreboard",
+    "url": "https://clawhub.ai/skills/skill-scoreboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-scoreboard-08a118ccd79e3ee5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "技能使用积分榜 v1.3 — OpenClaw 技能使用追踪与积分管理系统。 触发场景： (1) 用户询问技能使用榜单、积分统计（日榜/周榜/月榜/年榜/总榜） (2) 用户要求查看技能调用记录、错误日志 (3) 用户要求查看某技能的使用详情 (4) 用户要求生成每日/历史积分报告 (5) 用户询问\"今天情况如何..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luis1213899",
+      "userId": "s17dx8tkck6b2b3d3capmeyfmx84mj9a",
+      "displayName": "luis1213899",
+      "image": "https://avatars.githubusercontent.com/u/266679161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1777389143758,
+      "changelog": "新增五种榜单模式：日榜、周榜、月榜、年榜、总榜。修复今日榜成功率显示问题。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6785bac015d343353ecb172db8264e2b854b8449633482843c72a0915f76f60"
+}

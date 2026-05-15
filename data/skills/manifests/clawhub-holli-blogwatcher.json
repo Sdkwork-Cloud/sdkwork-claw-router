@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49373,
+  "uuid": "skill-clawhub-holli-blogwatcher",
+  "skillKey": "clawhub-holli-blogwatcher",
+  "name": "BlogWatcher (Holli)",
+  "summary": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holli_blogwatcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hollis9087",
+      "features": [
+        "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holli-blogwatcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264116703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holli-blogwatcher",
+      "url": "https://clawhub.ai/skills/holli-blogwatcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holli-blogwatcher",
+    "url": "https://clawhub.ai/skills/holli-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holli-blogwatcher-23bdd08903a4cb84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holli-blogwatcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-holli-blogwatcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b80aa2bacf848f75bfc6727539a9755ca76672ad2545d67a855ff4a89907626",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:28:24.431Z"
+}

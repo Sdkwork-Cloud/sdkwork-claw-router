@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12741,
+  "uuid": "skill-clawhub-zotero-scholar",
+  "skillKey": "clawhub-zotero-scholar",
+  "name": "zotero-scholar",
+  "summary": "Save academic papers with metadata, PDF links, and AI summaries to your Zotero library using credentials set in ZOTERO_CREDENTIALS (userid:apiKey).",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_scholar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GottenZZP",
+      "features": [
+        "Save academic papers with metadata, PDF links, and AI summaries to your Zotero library using cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-scholar@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69204281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-scholar",
+      "url": "https://clawhub.ai/skills/zotero-scholar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-scholar",
+    "url": "https://clawhub.ai/skills/zotero-scholar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-scholar-051d5cebcc35f0f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-scholar@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-scholar-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1949196f0e8d3f9412b96a7124a2b941b305764a55c13eebb92920ad417822d",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T02:23:08.024Z"
+}

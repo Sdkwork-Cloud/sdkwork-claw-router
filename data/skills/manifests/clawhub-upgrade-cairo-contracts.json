@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29390,
+  "uuid": "skill-clawhub-upgrade-cairo-contracts",
+  "skillKey": "clawhub-upgrade-cairo-contracts",
+  "name": "Upgrade Cairo Contracts",
+  "summary": "Upgrade Cairo smart contracts using OpenZeppelin's UpgradeableComponent on Starknet. Use when users need to: (1) make Cairo contracts upgradeable via replace...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upgrade_cairo_contracts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Upgrade Cairo smart contracts using OpenZeppelin's UpgradeableComponent on Starknet",
+        "Use when users need to: (1) make Cairo contracts upgradeable via replace..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upgrade-cairo-contracts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upgrade-cairo-contracts",
+      "url": "https://clawhub.ai/skills/upgrade-cairo-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upgrade-cairo-contracts",
+    "url": "https://clawhub.ai/skills/upgrade-cairo-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upgrade-cairo-contracts-ea14e45d290f2f2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upgrade-cairo-contracts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-upgrade-cairo-contracts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4d058922c9450cec45eae6bc66f0cb5de1020c82df2ca546f93074bdcf7c5f2",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:16:16.757Z"
+}

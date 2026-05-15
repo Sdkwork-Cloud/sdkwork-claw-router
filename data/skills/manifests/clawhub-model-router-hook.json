@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63366,
+  "uuid": "skill-clawhub-model-router-hook",
+  "skillKey": "clawhub-model-router-hook",
+  "name": "Model Router Hook",
+  "summary": "智能模型路由系统，根据任务复杂度自动切换 AI 模型（fast/thinking）。 当需要： - 自动选择最优 AI 模型（简单任务用 k2p5，复杂任务用 thinking） - 根据用户意图智能路由（代码/分析/查询等） - 控制 API 成本（预算管理） - 学习用户偏好并自适应调整 使用场景： - 开发...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_router_hook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevinZhj",
+      "features": [
+        "智能模型路由系统，根据任务复杂度自动切换 AI 模型（fast/thinking）。 当需要：",
+        "自动选择最优 AI 模型（简单任务用 k2p5，复杂任务用 thinking）",
+        "根据用户意图智能路由（代码/分析/查询等）",
+        "控制 API 成本（预算管理）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-router-hook@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193040475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-router-hook",
+      "url": "https://clawhub.ai/skills/model-router-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-router-hook",
+    "url": "https://clawhub.ai/skills/model-router-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-router-hook-e4545bed926da769.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-router-hook@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-router-hook-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6e15097822dec2f2e7bd90c13da54e8d64645ac90dfa8ba717fa972c2378ba1",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T18:00:51.763Z"
+}

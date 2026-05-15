@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72357,
+  "uuid": "skill-clawhub-arch-planning",
+  "skillKey": "clawhub-arch-planning",
+  "name": "System Architect",
+  "summary": "系统架构、规划、设计理解技能。用于：当用户讨论系统架构、技术选型、方案设计、需求分析、技术规划时使用。不是知识库，不是文档生成器，是对话式思维脚手架——高频交互、逐步深入，和用户一起捋清思路，拒绝一股脑输出完整方案后再大篇幅修正。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_planning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangkai258",
+      "features": [
+        "系统架构、规划、设计理解技能。用于：当用户讨论系统架构、技术选型、方案设计、需求分析、技术规划时使用。不是知识库，不是文档生成器，是对话式思维脚手架——高频交互、逐步深入，和用户一起捋清思路."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arch-planning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78720784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arch-planning",
+      "url": "https://clawhub.ai/skills/arch-planning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-planning",
+    "url": "https://clawhub.ai/skills/arch-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-planning-26f8ffc9f0db7731.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arch-planning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arch-planning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8ddafdf92d1a59007146a3b3ca993fa4bc4f692f463fbf7c05eda8f9fc9bbfc",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:34:10.017Z"
+}

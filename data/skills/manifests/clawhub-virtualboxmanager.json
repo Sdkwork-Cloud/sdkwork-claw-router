@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16279,
+  "uuid": "skill-clawhub-virtualboxmanager",
+  "skillKey": "clawhub-virtualboxmanager",
+  "name": "Virtual Box Manager",
+  "summary": "Control and manage VirtualBox virtual machines directly from openclaw. Start, stop, snapshot, clone, configure and monitor VMs using VBoxManage CLI. Supports...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtualboxmanager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xFratex",
+      "features": [
+        "Control and manage VirtualBox virtual machines directly from openclaw",
+        "Start, stop, snapshot, clone, configure and monitor VMs using VBoxManage CLI",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtualboxmanager@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187872179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtualboxmanager",
+      "url": "https://clawhub.ai/skills/virtualboxmanager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtualboxmanager",
+    "url": "https://clawhub.ai/skills/virtualboxmanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtualboxmanager-83c52342523237b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtualboxmanager@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtualboxmanager-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91ee99ad0f4ac22962d9b5a84bc5a5098642d898f404fc70f3ae5135e612b02b",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T21:37:09.563Z"
+}

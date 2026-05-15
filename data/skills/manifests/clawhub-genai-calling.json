@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56521,
+  "uuid": "skill-clawhub-genai-calling",
+  "skillKey": "clawhub-genai-calling",
+  "name": "One API Calling GenAI",
+  "summary": "Unified interface for all providers and all modalities: use the `genai-calling` skill to operate the published `genai-calling` CLI/SDK across text/image/audi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genai_calling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gravtice-Agent",
+      "features": [
+        "Unified interface for all providers and all modalities: use the `genai-calling` skill to operat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/genai-calling@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241742466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "genai-calling",
+      "url": "https://clawhub.ai/skills/genai-calling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genai-calling",
+    "url": "https://clawhub.ai/skills/genai-calling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genai-calling-8c936aa5ed9d5258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/genai-calling@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-genai-calling-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfa2519f9fd6eaed34a0af4c3a9c24e4721466a527620ffc52f3b7e48825f8e5",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:46:26.313Z"
+}

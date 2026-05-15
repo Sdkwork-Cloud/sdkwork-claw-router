@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17047,
+  "uuid": "skill-clawhub-scan-opportunities",
+  "skillKey": "clawhub-scan-opportunities",
+  "name": "Uniswap Scan Opportunities",
+  "summary": "Scan for LP opportunities, arbitrage, and high-yield pools across all Uniswap deployments. Use when the user asks about the best opportunities, high-yield pools, or arbitrage.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scan_opportunities",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Scan for LP opportunities, arbitrage, and high-yield pools across all Uniswap deployments",
+        "Use when the user asks about the best opportunities, high-yield pools, or arbitrage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scan-opportunities@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scan-opportunities",
+      "url": "https://clawhub.ai/skills/scan-opportunities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scan-opportunities",
+    "url": "https://clawhub.ai/skills/scan-opportunities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scan-opportunities-3f4d9db678b0d328.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scan-opportunities@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scan-opportunities-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:820b03f591fe185949ff213081c04bae63e714f8798255ed283976d07a4e487e",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:50:34.567Z"
+}

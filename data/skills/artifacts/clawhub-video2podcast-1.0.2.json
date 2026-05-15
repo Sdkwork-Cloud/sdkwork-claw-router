@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video2podcast@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video2podcast",
+  "skill": {
+    "id": 40076,
+    "skillKey": "clawhub-video2podcast",
+    "name": "video2podcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video2podcast",
+    "url": "https://clawhub.ai/skills/video2podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video2podcast-69d32263893af3dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert bookmarked videos from YouTube, X (Twitter), and other sites into a podcast RSS feed hosted on Cloudflare R2. Use when the user says things like \"add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryandeathridge",
+      "userId": "s178ffvhy04be1qkts516s6sqx83gb6p",
+      "displayName": "Ryan",
+      "image": "https://avatars.githubusercontent.com/u/29902460?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774380036033,
+      "changelog": "Declare VIDPOD_COOKIE_BROWSER env var; make browser cookie use opt-in and documented; clarify cookies are read locally only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:101dd706289220acfe946a36d289ed819f8b882e8c3b61a2aa2c64393f790153"
+}

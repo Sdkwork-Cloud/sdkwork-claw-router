@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-media@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_media",
+  "skill": {
+    "id": 28139,
+    "skillKey": "clawhub-minimax-media",
+    "name": "MiniMax Media"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-media",
+    "url": "https://clawhub.ai/skills/minimax-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-media-4a243b647b81def0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax media skill for voice, image, video, and music generation. Use when the user asks for MiniMax, TTS, text-to-speech, voice, image generation, image-to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lqqk7",
+      "userId": "s177yfnn8c1mzgqn8wfhhhpj2183h0n6",
+      "displayName": "lqqk7",
+      "image": "https://avatars.githubusercontent.com/u/33395810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774188327965,
+      "changelog": "Remove default preflight probe so image/video/music requests do not spend extra calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72ce4cff809edee7bf911b5c19462fae64bf41dd4d5e10117e287b4954f55a17"
+}

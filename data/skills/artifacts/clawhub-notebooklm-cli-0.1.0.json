@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notebooklm-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_cli",
+  "skill": {
+    "id": 9392,
+    "skillKey": "clawhub-notebooklm-cli",
+    "name": "notebooklm-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-cli",
+    "url": "https://clawhub.ai/skills/notebooklm-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-cli-4a4a4fa52cb8b1cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line interface to manage Google NotebookLM notebooks, sources, and generate audio, quizzes, reports, presentations, and visual study materials progra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oconnell-carl",
+      "userId": "publishers:oconnell-carl",
+      "displayName": "oconnell-carl",
+      "image": "https://avatars.githubusercontent.com/u/59672669?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3640,
+      "installsAllTime": 19,
+      "installsCurrent": 16,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769555533198,
+      "changelog": "- Initial release of notebooklm-cli, a comprehensive CLI for Google NotebookLM.\n- Manage notebooks, sources, and authentication profiles via command-line.\n- Generate content in various formats: audio podcasts, reports, quizzes, flashcards, mind maps, slides, infographics, videos, and data tables.\n- Includes artifact management, source syncing, AI-generated summaries, chat interface, and automated research/import features.\n- Supports multi-account profiles, aliases, flexible output formats, and detailed configuration options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d33270fcd232e377c3125676a20e28f6ab863bce880ca9edbfcee6f2dbd938e"
+}

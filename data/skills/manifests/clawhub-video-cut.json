@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45242,
+  "uuid": "skill-clawhub-video-cut",
+  "skillKey": "clawhub-video-cut",
+  "name": "Video Cut",
+  "summary": "Turn a 10-minute unedited interview recording into 1080p trimmed video clips just by typing what you need. Whether it's trimming and splitting long videos in...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_cut",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Turn a 10-minute unedited interview recording into 1080p trimmed video clips just by typing wha.",
+        "Whether it's trimming and splitting long videos in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-cut@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-cut",
+      "url": "https://clawhub.ai/skills/video-cut"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-cut",
+    "url": "https://clawhub.ai/skills/video-cut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-cut-14708cff1094225c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-cut@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-cut-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a182cd2e1047d0ae93c5ca108402b25aa434853ef47b87d14c6e06af4e0e6754",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:33:42.786Z"
+}

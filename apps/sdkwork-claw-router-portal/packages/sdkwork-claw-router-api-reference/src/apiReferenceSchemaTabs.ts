@@ -166,6 +166,46 @@ export async function buildApiReferenceSystemsFromTabs(
   return systems.filter((system) => system.categories.length > 0);
 }
 
+export function getApiSystemDisplayName(system: Pick<ApiSystemData, 'id' | 'name'>): string {
+  if (system.id === 'gateway') {
+    return 'Default Open API';
+  }
+  return system.name;
+}
+
+export function getDefaultApiReferenceEndpoint(system: ApiSystemData): ApiReferenceEndpoint | null {
+  const endpoints = system.categories.flatMap((category) => category.endpoints);
+  if (endpoints.length === 0) {
+    return null;
+  }
+
+  if (system.id === 'gateway') {
+    const chatCompletionEndpoint = endpoints.find((endpoint) => (
+      endpoint.path === '/v1/chat/completions' && endpoint.method.toUpperCase() === 'POST'
+    ));
+    if (chatCompletionEndpoint) {
+      return chatCompletionEndpoint;
+    }
+  }
+
+  return endpoints[0];
+}
+
+export function formatApiOperationDisplayName(value: string): string {
+  const normalized = value.trim().replace(/\s+/g, ' ');
+  if (!normalized) {
+    return normalized;
+  }
+  return normalized
+    .split(' ')
+    .map((word) => (
+      shouldPreserveApiDisplayWord(word)
+        ? word
+        : word.charAt(0).toUpperCase() + word.slice(1)
+    ))
+    .join(' ');
+}
+
 function normalizeApiSchemaTabsDocument(value: unknown): ApiSchemaTabsDocument {
   if (!isRecord(value) || !Array.isArray(value.tabs)) {
     throw new Error('Invalid API schema tabs document');
@@ -228,7 +268,7 @@ function openApiDocumentToCategories(spec: OpenApiDocument): ApiCategory[] {
         ?? generateOpenApiSchemaExample(schema, { spec });
       categoriesMap[tag].endpoints.push({
         id: operation.operationId || `${method}-${path.replace(/\//g, '-')}`,
-        name: operation.summary || path,
+        name: formatApiOperationDisplayName(operation.summary || path),
         method: method.toUpperCase(),
         path,
         description: operation.description || '',
@@ -249,6 +289,16 @@ function openApiDocumentToCategories(spec: OpenApiDocument): ApiCategory[] {
   });
 
   return sortApiCategories(Object.values(categoriesMap));
+}
+
+function shouldPreserveApiDisplayWord(word: string): boolean {
+  return /^[A-Z0-9_\-/{}:]+$/.test(word)
+    || word.includes('.')
+    || word.includes('_')
+    || word.includes('-')
+    || word.includes('/')
+    || word.includes('{')
+    || word.includes('}');
 }
 
 function sortApiCategories(categories: ApiCategory[]): ApiCategory[] {

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70789,
+  "uuid": "skill-clawhub-unep",
+  "skillKey": "clawhub-unep",
+  "name": "Unep",
+  "summary": "提供关于unep的背景信息，包括创立故事、产品特色、全球布局及最新战略动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于unep的背景信息，包括创立故事、产品特色、全球布局及最新战略动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unep",
+      "url": "https://clawhub.ai/skills/unep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unep",
+    "url": "https://clawhub.ai/skills/unep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unep-c27292cbeb6a9781.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:264b3e38f46c46c9c058702edc64ac41441c4a2db97d915883a14e804d7eab57",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T00:04:15.102Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64751,
+  "uuid": "skill-clawhub-surf-query",
+  "skillKey": "clawhub-surf-query",
+  "name": "Surf Query",
+  "summary": "查詢台灣全島衝浪浪點資訊，含即時潮汐、風況、颱風動態、日出日落，可附帶查詢附近停車場。支援 Telegram、LINE、iMessage。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surf_query",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harperbot",
+      "features": [
+        "查詢台灣全島衝浪浪點資訊，含即時潮汐、風況、颱風動態、日出日落，可附帶查詢附近停車場。支援 Telegram、LINE、iMessage。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surf-query@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258818722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surf-query",
+      "url": "https://clawhub.ai/skills/surf-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surf-query",
+    "url": "https://clawhub.ai/skills/surf-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surf-query-1d63417eed3c8163.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surf-query@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-surf-query-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62d4be8fcb997aa25c892077357f60e6bea9b2a0a12dd21472a87d7095f00086",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T07:45:11.048Z"
+}

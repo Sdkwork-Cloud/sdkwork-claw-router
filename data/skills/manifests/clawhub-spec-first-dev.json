@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20512,
+  "uuid": "skill-clawhub-spec-first-dev",
+  "skillKey": "clawhub-spec-first-dev",
+  "name": "Spec-First Development",
+  "summary": "Spec-driven development workflow. Before writing any code, generates a comprehensive SPEC.md covering data models, user flows, API contracts, file structure,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_first_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevdogg102396-afk",
+      "features": [
+        "Spec-driven development workflow",
+        "Before writing any code, generates a comprehensive SPEC.md covering data models, user flows, AP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spec-first-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257070288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spec-first-dev",
+      "url": "https://clawhub.ai/skills/spec-first-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-first-dev",
+    "url": "https://clawhub.ai/skills/spec-first-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-first-dev-d83d7b76481d0d01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spec-first-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spec-first-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b1c08223f04106ab2ef7aff41dd25cd1c53977fb0bd5d8ad357ab5b4050e1d0",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:08:41.072Z"
+}

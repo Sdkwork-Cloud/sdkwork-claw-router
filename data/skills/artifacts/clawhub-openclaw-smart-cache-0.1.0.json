@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-smart-cache@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_smart_cache",
+  "skill": {
+    "id": 62867,
+    "skillKey": "clawhub-openclaw-smart-cache",
+    "name": "Openclaw Smart Cache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-smart-cache",
+    "url": "https://clawhub.ai/skills/openclaw-smart-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-smart-cache-94f5c8d2ab986cdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 OpenClaw 提供高速内存+磁盘双层智能缓存，自动学习常用请求模式并推荐最佳工具方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "king-nan",
+      "userId": "publishers:king-nan",
+      "displayName": "king-nan",
+      "image": "https://avatars.githubusercontent.com/u/141407435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774023156507,
+      "changelog": "Initial release of openclaw-smart-cache v0.1.0:\n\n- Provides a dual-layer smart cache (in-memory LRU + disk SQLite) for OpenClaw.\n- Includes a request learner that automatically identifies and records frequent queries, recommending best tools/solutions.\n- Offers Python API and function decorators for easy cache integration.\n- Command-line tools for managing the cache and reviewing learned recommendations.\n- No external dependencies; uses only the Python standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c856f98c2b73eb6477a00541037421aef1ef2ea1e182e84c0ed93a740af94510"
+}

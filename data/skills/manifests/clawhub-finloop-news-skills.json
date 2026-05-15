@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70344,
+  "uuid": "skill-clawhub-finloop-news-skills",
+  "skillKey": "clawhub-finloop-news-skills",
+  "name": "F-AI 资讯搜索",
+  "summary": "基于Finloop权威数据源，提供金融资讯检索、实时行情和AI热闻查询，支持分类资讯、市场时段资讯和股票实时行情。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finloop_news_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CZZLEGEND",
+      "features": [
+        "基于Finloop权威数据源，提供金融资讯检索、实时行情和AI热闻查询，支持分类资讯、市场时段资讯和股票实时行情。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finloop-news-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17879690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finloop-news-skills",
+      "url": "https://clawhub.ai/skills/finloop-news-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finloop-news-skills",
+    "url": "https://clawhub.ai/skills/finloop-news-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finloop-news-skills-41e65a3b78dd2990.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finloop-news-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finloop-news-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad5407017d4f9dd7b8a85849a9029280ebd4d0cce9a83dedbe15c024571960af",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:05:46.249Z"
+}

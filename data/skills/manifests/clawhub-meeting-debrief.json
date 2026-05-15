@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37212,
+  "uuid": "skill-clawhub-meeting-debrief",
+  "skillKey": "clawhub-meeting-debrief",
+  "name": "Meeting Debrief",
+  "summary": "Process meeting transcripts to extract action items, recommendations, key topics, relationships, and generate Excalidraw visualizations. Use when the user sh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_debrief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adebayo Dawodu",
+      "features": [
+        "Process meeting transcripts to extract action items, recommendations, key topics, relationships.",
+        "Use when the user sh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-debrief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4356024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-debrief",
+      "url": "https://clawhub.ai/skills/meeting-debrief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-debrief",
+    "url": "https://clawhub.ai/skills/meeting-debrief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-debrief-92f6e400f2baadd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-debrief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-debrief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63ff0d436d124438371e692c4faf6934ddc5736bf7c3df4bcc1da19672b5ba91",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:25:27.328Z"
+}

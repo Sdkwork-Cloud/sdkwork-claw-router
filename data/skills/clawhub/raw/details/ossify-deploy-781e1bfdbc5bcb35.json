@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "ossify-deploy",
+    "displayName": "Skill",
+    "summary": "一键部署静态网站到阿里云 OSS。当用户说「部署」「发布」「上线」「deploy」「重新配置」「更新凭证」「更换 AccessKey」时触发。",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776512383746,
+    "updatedAt": 1777527716135
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1776512383746,
+    "changelog": "- 完善了阿里云 OSS 静态站点自动化部署 Skill 引导流程，详细分为自动引导和手动引导两种模式，支持凭证一键配置验证。\n- 明确所有凭证读取、文件操作、浏览器自动化全部通过 Bash 工具链完成，不含可执行代码。\n- 新增自动化流程：在检测到 Chrome DevTools 可用时，可自动填表、截图、辅助创建 RAM 用户并收集 AccessKey。\n- 明确凭证格式、保存路径与权限管理，并提供跨平台 Bash 示例供用户手动引导时操作。\n- 优化部署流程，每一项参数（Bucket、域名、备案、HTTPS）均需用户逐步确认，不会跳步。\n- 部署成功后自动更新凭证文件的 lastDeploy 字段，便于下次快捷部署。\n- 增加隐私与安全说明，明确所有敏感信息仅本地保存。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liangjfblue",
+    "userId": "s17bbf1ac7gje34erkbxqtp4r983yab4",
+    "displayName": "liangjf",
+    "image": "https://avatars.githubusercontent.com/u/31173183?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527716135
+  }
+}

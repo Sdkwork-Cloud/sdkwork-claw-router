@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19663,
+  "uuid": "skill-clawhub-octodns-skill",
+  "skillKey": "clawhub-octodns-skill",
+  "name": "Octodns",
+  "summary": "Manage DNS zones across multiple providers using octoDNS (\"DNS as code\"). Use when you need to (1) manage DNS records in YAML format, (2) sync DNS zones betw...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octodns_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark E. Jeftovic",
+      "features": [
+        "Manage DNS zones across multiple providers using octoDNS (\"DNS as code\")",
+        "Use when you need to (1) manage DNS records in YAML format, (2) sync DNS zones betw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/octodns-skill@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "octodns-skill",
+      "url": "https://clawhub.ai/skills/octodns-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octodns-skill",
+    "url": "https://clawhub.ai/skills/octodns-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octodns-skill-074aa8d7a6c5f776.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/octodns-skill@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-octodns-skill-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abdbfe6bf4d8bc20b4142be6bf9a28d33f31d96a25fdb259c6f6f496e8b7f74d",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:41:08.782Z"
+}

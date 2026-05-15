@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promptcache@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promptcache",
+  "skill": {
+    "id": 35844,
+    "skillKey": "clawhub-promptcache",
+    "name": "Promptcache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promptcache",
+    "url": "https://clawhub.ai/skills/promptcache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promptcache-1d0201a301d8777c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Estimate the cost savings from caching frequently-used prompts across AI models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avale-slai",
+      "userId": "s17582f1qg9k74rdd8q7vn5f65848mzy",
+      "displayName": "AVale-SLAI",
+      "image": "https://avatars.githubusercontent.com/u/270702039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775605871364,
+      "changelog": "Version 1.0.3\n\n- Added install.sh script to assist with installation.\n- No changes to skill usage or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e77f8408421024beb82c380ae5f1fb2f8c86dfa3f644b643586b24f2dd3cd12"
+}

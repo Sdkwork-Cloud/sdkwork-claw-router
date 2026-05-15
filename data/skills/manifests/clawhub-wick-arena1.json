@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21536,
+  "uuid": "skill-clawhub-wick-arena1",
+  "skillKey": "clawhub-wick-arena1",
+  "name": "Wick Arena Trading / Multi-Platform (Hyperliquid/Polymarket/Kalshi)",
+  "summary": "Trade perpetual futures and binary prediction markets across Hyperliquid, Polymarket, and Kalshi with a $100K simulated account, real prop-firm rules, and pu...",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wick_arena1",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wickcapital",
+      "features": [
+        "Trade perpetual futures and binary prediction markets across Hyperliquid, Polymarket, and Kalsh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wick-arena1@0.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259357926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wick-arena1",
+      "url": "https://clawhub.ai/skills/wick-arena1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wick-arena1",
+    "url": "https://clawhub.ai/skills/wick-arena1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wick-arena1-2f21fdef8e76036d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wick-arena1@0.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wick-arena1-0.7.0.json",
+      "version": "0.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c175367451b8a34d58a3bb7929e2dde9b6529602647b8e4333785c3847b1556",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T08:27:55.588Z"
+}

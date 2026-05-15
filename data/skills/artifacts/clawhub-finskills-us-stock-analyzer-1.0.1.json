@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finskills-us-stock-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_us_stock_analyzer",
+  "skill": {
+    "id": 42819,
+    "skillKey": "clawhub-finskills-us-stock-analyzer",
+    "name": "us-stock-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-us-stock-analyzer",
+    "url": "https://clawhub.ai/skills/finskills-us-stock-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-us-stock-analyzer-a43d796df1f71259.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform institutional-grade analysis of any US-listed stock using real-time and fundamental data from the Finskills API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "finskills",
+      "userId": "s179tgs48y0pmgcemse7r2m5w18476rn",
+      "displayName": "finskills",
+      "image": "https://avatars.githubusercontent.com/u/32382589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776523369871,
+      "changelog": "- Added formal skill manifest (YAML frontmatter) specifying name, version, author, homepage, and credentials.\n- Improved formatting of setup instructions for greater clarity; moved API registration link to a more prominent position.\n- No changes to analysis methodology or output format.\n- No functional or code changes detected; changes are documentation and metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8834029cc44b141d1434668a29abbc148173fd5ae2ffd5a5fab19e5419482e22"
+}

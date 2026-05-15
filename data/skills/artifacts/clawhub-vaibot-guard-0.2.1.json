@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vaibot-guard@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vaibot_guard",
+  "skill": {
+    "id": 18704,
+    "skillKey": "clawhub-vaibot-guard",
+    "name": "VAIBot Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vaibot-guard",
+    "url": "https://clawhub.ai/skills/vaibot-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vaibot-guard-b35d00e306f74c8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local VAIBot Guard skill for OpenClaw. Use to run the guard service, enforce tool decisions via the OpenClaw circuit-breaker plugin, manage approvals, and va..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "briantanthony",
+      "userId": "s17by6zvrggsw8p0xcjz8ms03d83jtsq",
+      "displayName": "Briant Anthony",
+      "image": "https://avatars.githubusercontent.com/u/5712135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 537,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774145819376,
+      "changelog": "**Summary: Initial release with updated OpenClaw guard skill structure and systemd integration.**\n\n- Renamed the skill to \"openclaw-guard-skill\" with updated descriptions and clearer OpenClaw integration focus.\n- Overhauled documentation for improved clarity: split references, concise setup instructions, and enhanced systemd user service guidance.\n- Added systemd environment and service unit templates under references/systemd/.\n- Improved test coverage by adding a standalone guard-service.test.mjs.\n- Removed legacy deployment scripts and redundant documentation files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b204a8dce47565e227220f5d1bad68066b688e2905f42266506925e422e5ccc3"
+}

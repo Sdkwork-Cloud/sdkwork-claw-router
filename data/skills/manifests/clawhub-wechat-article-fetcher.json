@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63197,
+  "uuid": "skill-clawhub-wechat-article-fetcher",
+  "skillKey": "clawhub-wechat-article-fetcher",
+  "name": "WeChat Article Fetcher",
+  "summary": "抓取微信公众号文章内容。当用户发送微信公众号文章链接（mp.weixin.qq.com）时自动触发，将文章内容提取为可读文本。无需API密钥。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChengWeiJiang",
+      "features": [
+        "抓取微信公众号文章内容。当用户发送微信公众号文章链接（mp.weixin.qq.com）时自动触发，将文章内容提取为可读文本。无需API密钥。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258382946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-fetcher",
+      "url": "https://clawhub.ai/skills/wechat-article-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-fetcher",
+    "url": "https://clawhub.ai/skills/wechat-article-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-fetcher-9f65aa9adb657f43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f50102ea3a436bbebd1fdbcce2589c5a292554791e9d6c981cc5bfa362f9ad86",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:43:49.802Z"
+}

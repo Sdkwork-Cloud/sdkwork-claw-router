@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/disease-distance-simulator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disease_distance_simulator",
+  "skill": {
+    "id": 72259,
+    "skillKey": "clawhub-disease-distance-simulator",
+    "name": "重大疾病距离模拟器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disease-distance-simulator",
+    "url": "https://clawhub.ai/skills/disease-distance-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disease-distance-simulator-8fdc9a50a6c05c7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI驱动的个性化\"疾病距离\"可视化工具。用户说一句\"帮我看看我离重大疾病有多远\"，Agent通过自然对话逐步解析用户画像（性别、年龄、地域、生活习惯、职业、家族史等），结合最新精算表+癌症统计+流行病学数据，生成\"你的重大疾病还有多远\"的动态时间轴报告。 输出形式：2段式教育报告 —— ①距离可视化（预警期时间轴..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwbwin",
+      "userId": "s17aa1xnh98pb9632h2p71z609851tab",
+      "displayName": "wwbwin",
+      "image": "https://avatars.githubusercontent.com/u/137308189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776506254420,
+      "changelog": "移除所有产品推荐内容，纯健康教育导向",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6fc5e769bb49fc12193012a01aa80cff7d442cca3e12c29960a8d98c7359be9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-heat-rank@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_heat_rank",
+  "skill": {
+    "id": 70765,
+    "skillKey": "clawhub-stock-heat-rank",
+    "name": "Stock Heat Rank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-heat-rank",
+    "url": "https://clawhub.ai/skills/stock-heat-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-heat-rank-963e94c11566e11c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Go语言版] 获取A股市场实时热度排名TOP50。聚合问财、雪球、东方财富三大平台人气榜单，计算复合热度分数。当用户需要查询A股热门股票、实时人气排名、市场关注度排行、涨停板热度分析时使用此技能。支持多平台热度对比，发现市场热点股票。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n1e",
+      "userId": "s17bpdbd8gy7jpd9kg96t6v19d83hp4h",
+      "displayName": "n1e",
+      "image": "https://avatars.githubusercontent.com/u/26928453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774104316189,
+      "changelog": "- Indicate that this is a Go language version in both the Chinese and English descriptions.\n- Add \"Go版本/Go Version\" label to the title and throughout the documentation, clarifying the implementation language.\n- No changes to algorithm or functionality; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab7e55dc719f86b695877da6d2d0e464b718bbe9598d8ee9366fc1443040ac95"
+}

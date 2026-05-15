@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-graph-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_graph_hardened",
+  "skill": {
+    "id": 55480,
+    "skillKey": "clawhub-knowledge-graph-hardened",
+    "name": "Knowledge Graph Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-graph-hardened",
+    "url": "https://clawhub.ai/skills/knowledge-graph-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-graph-hardened-926a47339ed44415.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomic facts (items.json), regenerating entity summaries (summary.m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776913236471,
+      "changelog": "Initial release of knowledge-graph-hardened skill.\n\n- Adds atomic fact management for knowledge graph under life/areas/** using Python script.\n- Allows adding and superseding facts with consistent IDs; old facts are never deleted.\n- Supports regenerating entity summaries from active facts.\n- Enforces strong privacy and operational guardrails to protect personal data and ensure user confirmation during changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6438b579f25ec734ff72560f2f567a8247c0dfdb35747f28b1af1e7eeb72014"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-overview@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_overview",
+  "skill": {
+    "id": 66246,
+    "skillKey": "clawhub-apollo-overview",
+    "name": "Apollo Overview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-overview",
+    "url": "https://clawhub.ai/skills/apollo-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-overview-cd684f4dab3ef465.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "给你一张完整的方法论地图，告诉你从想法到成品每步该做什么。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775490258714,
+      "changelog": "描述优化：一句话非技术描述",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6c5ce14ea4d0f3cb4f7f9e0ddf0f7e73307ee9c4d6771e2073c4fd3f8386f15"
+}

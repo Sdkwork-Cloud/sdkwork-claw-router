@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43262,
+  "uuid": "skill-clawhub-invoice-processing",
+  "skillKey": "clawhub-invoice-processing",
+  "name": "FapiaoClaw",
+  "summary": "Process and organize invoice PDFs by fixing extensions, removing duplicates and invalid files, checking for keywords, and calculating total amounts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_processing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JOE",
+      "features": [
+        "Process and organize invoice PDFs by fixing extensions, removing duplicates and invalid files,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-processing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-processing",
+      "url": "https://clawhub.ai/skills/invoice-processing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-processing",
+    "url": "https://clawhub.ai/skills/invoice-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-processing-eb8d1e49871c0b0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-processing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-processing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a268a9067cf87310e1aa854049dbd780906f849afbb501d9903b334c3daf97e",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:39:27.759Z"
+}

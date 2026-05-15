@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19781,
+  "uuid": "skill-clawhub-aipptskill",
+  "skillKey": "clawhub-aipptskill",
+  "name": "aippt-skill",
+  "summary": "A skill to automatically generate and download PPT presentations using AIPPT APIs based on a provided topic.",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aipptskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aippt",
+      "features": [
+        "A skill to automatically generate and download PPT presentations using AIPPT APIs based on a pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aipptskill@3.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46413028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aipptskill",
+      "url": "https://clawhub.ai/skills/aipptskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aipptskill",
+    "url": "https://clawhub.ai/skills/aipptskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aipptskill-282a60edc23aa918.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aipptskill@3.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-aipptskill-3.0.7.json",
+      "version": "3.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea03e79982bea2aac379e9ba17cd9eb3e54428e012fce22a672e258ba75579b",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:32:10.399Z"
+}

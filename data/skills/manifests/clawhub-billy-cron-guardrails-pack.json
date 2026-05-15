@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52195,
+  "uuid": "skill-clawhub-billy-cron-guardrails-pack",
+  "skillKey": "clawhub-billy-cron-guardrails-pack",
+  "name": "Billy — Cron Guardrails Pack",
+  "summary": "Lint cron entries for schedule validity, bad model names, and missing NO_REPLY discipline markers.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billy_cron_guardrails_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Highlander89",
+      "features": [
+        "Lint cron entries for schedule validity, bad model names, and missing NO_REPLY discipline marke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/billy-cron-guardrails-pack@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107950656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "billy-cron-guardrails-pack",
+      "url": "https://clawhub.ai/skills/billy-cron-guardrails-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billy-cron-guardrails-pack",
+    "url": "https://clawhub.ai/skills/billy-cron-guardrails-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billy-cron-guardrails-pack-531af75a44fde989.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/billy-cron-guardrails-pack@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-billy-cron-guardrails-pack-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:799f12e27b7dea624d6ae661f21e2bc5bea9d9749007e9479091c5cecabb9a88",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:17:32.586Z"
+}

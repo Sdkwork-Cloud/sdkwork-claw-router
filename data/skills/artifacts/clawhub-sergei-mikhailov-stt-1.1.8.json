@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sergei-mikhailov-stt@1.1.8",
+  "version": "1.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sergei_mikhailov_stt",
+  "skill": {
+    "id": 17382,
+    "skillKey": "clawhub-sergei-mikhailov-stt",
+    "name": "Speech to Text (Yandex SpeechKit)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sergei-mikhailov-stt",
+    "url": "https://clawhub.ai/skills/sergei-mikhailov-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sergei-mikhailov-stt-4542e7c44ceaccac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Speech recognition from voice messages using Yandex SpeechKit (with an extensible architecture for other providers). Use when you need to convert a voice mes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bzsega",
+      "userId": "publishers:bzsega",
+      "displayName": "Sergey Mikhaylov",
+      "image": "https://avatars.githubusercontent.com/u/825538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 786,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.1.8",
+      "createdAt": 1772907627534,
+      "changelog": "Update outdated README instructions (setup.sh, clawhub update); add Security section to SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8e456791c2b8297d8e806f0b18cdbc6724a4d413d94d145978cb75a92e15dfc"
+}

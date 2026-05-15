@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-by-searxng@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_by_searxng",
+  "skill": {
+    "id": 26240,
+    "skillKey": "clawhub-web-search-by-searxng",
+    "name": "Web Search By Searxng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-by-searxng",
+    "url": "https://clawhub.ai/skills/web-search-by-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-by-searxng-fa86ff25af046ff4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search using a custom SearXNG instance via HTTP API. Enables privacy-friendly web search by aggregating results from multiple search engines. Supports query,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyijun",
+      "userId": "s1751n6b6hjdp9q1y0sc3sffes83yey0",
+      "displayName": "Chen Yijun",
+      "image": "https://avatars.githubusercontent.com/u/42707013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773257098034,
+      "changelog": "- Minor updates to scripts/searxng_search.py.\n- No user-facing changes in documentation or interface.\n- Internal code changes only; overall functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dd55f0add2c5e8d6532fa26e75aee45d44c4ecb72dc95ce75fd71a5a052e600"
+}

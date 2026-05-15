@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-router-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_router_manager",
+  "skill": {
+    "id": 62998,
+    "skillKey": "clawhub-model-router-manager",
+    "name": "Model Router Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-router-manager",
+    "url": "https://clawhub.ai/skills/model-router-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-router-manager-da6c9bd7379378c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能多模型路由管理器 - 自动选择最优模型，降低成本，提高可靠性"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zsdadad",
+      "userId": "publishers:zsdadad",
+      "displayName": "Zsdadad",
+      "image": "https://avatars.githubusercontent.com/u/198384494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1070,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771763290251,
+      "changelog": "Model Router Manager v1.0.0\n\n- 首次发布，提供智能多模型路由与管理功能\n- 支持 Kimi、百炼、OpenRouter 等主流模型平台\n- 实现模型链配置、自动故障转移与实时成本监控\n- 可按成本、速度或质量智能选择最佳模型\n- 提供命令行与 API 接口，支持多种集成用例",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a98f6f52e58cda0e1ca94c47b744574403148ce85ce48ab91da8fd78a893ced0"
+}

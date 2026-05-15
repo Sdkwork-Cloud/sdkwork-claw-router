@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13836,
+  "uuid": "skill-clawhub-deepseek",
+  "skillKey": "clawhub-deepseek",
+  "name": "DeepSeep Intergration",
+  "summary": "Integrates DeepSeek API with agents for code generation, problem solving, and analysis using configurable API endpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepseek",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "barisoezcan1905",
+      "features": [
+        "Integrates DeepSeek API with agents for code generation, problem solving, and analysis using co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepseek@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251388670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepseek",
+      "url": "https://clawhub.ai/skills/deepseek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepseek",
+    "url": "https://clawhub.ai/skills/deepseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepseek-6f7ac1823da81d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepseek@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepseek-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:483db566b4fb669740e7c985b3dcfba898232890b19dd53d0d180b106b11e25f",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:27:36.439Z"
+}

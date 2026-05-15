@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aibuy@1.7.6",
+  "version": "1.7.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibuy",
+  "skill": {
+    "id": 71428,
+    "skillKey": "clawhub-aibuy",
+    "name": "Aibuy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibuy",
+    "url": "https://clawhub.ai/skills/aibuy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibuy-5873ca297da2d219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIBuy 水贝珠宝行情助手，面向深圳水贝批发市场的一手货源查询。 覆盖三类能力： 1. 水贝珠宝产品查询：当用户询问珠宝商品、想查看或比较货源、提到任何珠宝品类 （黄金、K金、翡翠、钻石、手镯、戒指、项链、耳饰、彩宝等）、询问价格或 想浏览批发行情时触发。即使用户表达随意也应触发，例如\"有没有18K的\"、 \"看..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plabzzxx",
+      "userId": "s17eac8rv5mwyh69q2qhv5ckb984fzxd",
+      "displayName": "plabzzxx",
+      "image": "https://avatars.githubusercontent.com/u/172346891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.7.6",
+      "createdAt": 1775791387165,
+      "changelog": "Version 1.7.6\n\n- 新增 _meta.json 文件，完善元数据结构。\n- 核心技能说明、使用说明和呈现格式保持不变。\n- 本次更新为补充元数据，无功能与业务逻辑调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d56f9e3c1fa1c4668d6f7f0d9a9376db9c1ed7342ee7fd60140eeb70e15180c"
+}

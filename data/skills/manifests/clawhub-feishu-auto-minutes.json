@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71873,
+  "uuid": "skill-clawhub-feishu-auto-minutes",
+  "skillKey": "clawhub-feishu-auto-minutes",
+  "name": "飞书会议纪要AI",
+  "summary": "飞书会议纪要 AI — 自动从飞书文档、群聊讨论、多维表格中提取会议信息并生成结构化纪要。当用户需要生成会议纪要、从群聊提取讨论要点、汇总会议决议和行动项、批量输出会议记录时使用。触发词：会议纪要、会议记录、会议总结、站会纪要、复盘记录、meeting minutes。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_auto_minutes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Young-Joey",
+      "features": [
+        "飞书会议纪要 AI — 自动从飞书文档、群聊讨论、多维表格中提取会议信息并生成结构化纪要。当用户需要生成会议纪要、从群聊提取讨论要点、汇总会议决议和行动项、批量输出会议记录时使用。触发词：会."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-auto-minutes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25998415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-auto-minutes",
+      "url": "https://clawhub.ai/skills/feishu-auto-minutes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-auto-minutes",
+    "url": "https://clawhub.ai/skills/feishu-auto-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-auto-minutes-61ef442d431c057f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-auto-minutes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-auto-minutes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c41c09aee73e53a39d323c9551513c6906c10fe33d2b6025573d710e3c2cef5",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T10:38:00.573Z"
+}

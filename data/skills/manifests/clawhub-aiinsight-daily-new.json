@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62848,
+  "uuid": "skill-clawhub-aiinsight-daily-new",
+  "skillKey": "clawhub-aiinsight-daily-new",
+  "name": "aiinsight-daily-new",
+  "summary": "获取 AI 洞察日报最新内容，支持获取指定条数并推送到多个 webhook 渠道，自动适配格式显示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiinsight_daily_new",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DamomHd",
+      "features": [
+        "获取 AI 洞察日报最新内容，支持获取指定条数并推送到多个 webhook 渠道，自动适配格式显示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiinsight-daily-new@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109486?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiinsight-daily-new",
+      "url": "https://clawhub.ai/skills/aiinsight-daily-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiinsight-daily-new",
+    "url": "https://clawhub.ai/skills/aiinsight-daily-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiinsight-daily-new-d0d224c31438725e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiinsight-daily-new@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiinsight-daily-new-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8f0ecb2cb441342fd4c8c8af05bce3e591e835d80a4dadf4da4d05384c6e914",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:19:38.761Z"
+}

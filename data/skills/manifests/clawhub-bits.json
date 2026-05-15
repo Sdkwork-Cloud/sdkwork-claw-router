@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11161,
+  "uuid": "skill-clawhub-bits",
+  "skillKey": "clawhub-bits",
+  "name": "Bits Browser Automation",
+  "summary": "Control browser automation agents via the Bits MCP server. Use when running web scraping, form filling, data extraction, or any browser-based automation task. Bits agents can navigate websites, click elements, fill forms, handle OAuth flow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bits",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robbie Thompson",
+      "features": [
+        "Control browser automation agents via the Bits MCP server",
+        "Use when running web scraping, form filling, data extraction, or any browser-based automation t.",
+        "Bits agents can navigate websites, click elements, fill forms, handle OAuth flows, and extract."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bits@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216262277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bits",
+      "url": "https://clawhub.ai/skills/bits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bits",
+    "url": "https://clawhub.ai/skills/bits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bits-e5e59d10f196504b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bits@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bits-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbcd38d9b5923adfb45020b9556f1ec9470f503e6b0eecb61ea9294bee737524",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:27:38.580Z"
+}

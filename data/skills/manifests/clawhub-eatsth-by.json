@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70632,
+  "uuid": "skill-clawhub-eatsth-by",
+  "skillKey": "clawhub-eatsth-by",
+  "name": "eatsth-by",
+  "summary": "个人健康饮食助手 — 支持健康记录（含禁忌、症状等）与食品库存的登记 / 查询；基于健康状况生成个性化饮食推荐，优先适配已有食品，标注库存食材并提醒临期商品。仅主session可使用健康记录功能.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eatsth_by",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BiyaoShang",
+      "features": [
+        "个人健康饮食助手 — 支持健康记录（含禁忌、症状等）与食品库存的登记 / 查询；基于健康状况生成个性化饮食推荐，优先适配已有食品，标注库存食材并提醒临期商品。仅主session可使用健康记录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eatsth-by@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40814900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eatsth-by",
+      "url": "https://clawhub.ai/skills/eatsth-by"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eatsth-by",
+    "url": "https://clawhub.ai/skills/eatsth-by",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eatsth-by-e5ae6271bb379abd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eatsth-by@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-eatsth-by-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f25611b3c6bb56c0b1dc2ca9191bb7a6ab977133139fa88a6992d721c04e4945",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T01:01:35.556Z"
+}

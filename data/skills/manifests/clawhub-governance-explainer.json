@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36676,
+  "uuid": "skill-clawhub-governance-explainer",
+  "skillKey": "clawhub-governance-explainer",
+  "name": "Governance Explainer",
+  "summary": "Explain DAO governance rules and implications clearly; translate constraints into allowed/forbidden actions with consequences.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.governance_explainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Explain DAO governance rules and implications clearly",
+        "translate constraints into allowed/forbidden actions with consequences."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/governance-explainer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "governance-explainer",
+      "url": "https://clawhub.ai/skills/governance-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "governance-explainer",
+    "url": "https://clawhub.ai/skills/governance-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/governance-explainer-0dbe69fe7b160ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/governance-explainer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-governance-explainer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee5c59733a7d5f1a245265bc020252a0346e62e99bbb4dd1fb4050e63ec63be",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T17:33:54.330Z"
+}

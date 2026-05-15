@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35115,
+  "uuid": "skill-clawhub-asin-data-api",
+  "skillKey": "clawhub-asin-data-api",
+  "name": "Asin Data Api",
+  "summary": "ASIN Data API integration. Manage data, records, and automate workflows. Use when the user wants to interact with ASIN Data API data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asin_data_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ASIN Data API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ASIN Data API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asin-data-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asin-data-api",
+      "url": "https://clawhub.ai/skills/asin-data-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asin-data-api",
+    "url": "https://clawhub.ai/skills/asin-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asin-data-api-042275ae4c22df9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asin-data-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-asin-data-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c55c83d9d3c1be195f0f146266239fc7a7536c9866664cd2f8c5497d259b7e5",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:12:13.141Z"
+}

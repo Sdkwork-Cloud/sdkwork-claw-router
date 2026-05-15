@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-content-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_content_watcher",
+  "skill": {
+    "id": 39062,
+    "skillKey": "clawhub-video-content-watcher",
+    "name": "video-content-watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-content-watcher",
+    "url": "https://clawhub.ai/skills/video-content-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-content-watcher-decb366355138200.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract core content and generate structured analysis reports from YouTube, Bilibili, or local video files. Triggers when user asks to summarize, analyze, ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franklinyung",
+      "userId": "s17anagjh1v1n0f5vw8t4exvah83gqmq",
+      "displayName": "Franklinyung",
+      "image": "https://avatars.githubusercontent.com/u/46746384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774325264758,
+      "changelog": "Initial release of video-content-watcher.\n\n- Extracts, transcribes, and analyzes video content from YouTube, Bilibili, and local files.\n- Generates structured Markdown analysis reports via MiniMax LLM.\n- Supports Chinese and English video analysis.\n- Includes CLI and Python API for processing videos or raw text.\n- Flexible configuration with environment variables for model and transcription settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4e4ee98de3de84ca7f82b7c0b57cfd87739d9d42dfaee8fd88fd1c54b77ed6a"
+}

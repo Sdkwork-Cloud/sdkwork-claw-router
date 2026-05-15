@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68739,
+  "uuid": "skill-clawhub-xunlei",
+  "skillKey": "clawhub-xunlei",
+  "name": "Xunlei",
+  "summary": "迅雷下载助手，精通下载加速、资源管理、远程下载、NAS集成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xunlei",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "迅雷下载助手，精通下载加速、资源管理、远程下载、NAS集成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xunlei@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xunlei",
+      "url": "https://clawhub.ai/skills/xunlei"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xunlei",
+    "url": "https://clawhub.ai/skills/xunlei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xunlei-41f3ec42e08d865f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xunlei@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xunlei-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a13ff7ccd098c6847b5e64fa7e92819927e105fdfc07b06375ec3166c6676ed",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:20:18.272Z"
+}

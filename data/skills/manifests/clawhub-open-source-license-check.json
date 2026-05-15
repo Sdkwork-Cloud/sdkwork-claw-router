@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44424,
+  "uuid": "skill-clawhub-open-source-license-check",
+  "skillKey": "clawhub-open-source-license-check",
+  "name": "Open Source License Check",
+  "summary": "Check if referenced bioinformatics software/code licenses allow commercial use (GPL vs MIT, etc.).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_source_license_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Check if referenced bioinformatics software/code licenses allow commercial use (GPL vs MIT, etc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-source-license-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-source-license-check",
+      "url": "https://clawhub.ai/skills/open-source-license-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-source-license-check",
+    "url": "https://clawhub.ai/skills/open-source-license-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-source-license-check-82139297e886415a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-source-license-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-source-license-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a886618f271d1bb9555e6bd59bcbdecb896dbec6e27c123e71377039d9b862d",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:48:53.801Z"
+}

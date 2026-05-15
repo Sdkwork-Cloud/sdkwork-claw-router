@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_summarizer",
+  "skill": {
+    "id": 10458,
+    "skillKey": "clawhub-review-summarizer",
+    "name": "Review Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-summarizer",
+    "url": "https://clawhub.ai/skills/review-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-summarizer-2e3adc0872b2a9fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape, analyze, and summarize product reviews from multiple platforms (Amazon, Google, Yelp, TripAdvisor). Extract key insights, sentiment analysis, pros/cons, and recommendations. Use when researching products for arbitrage, creating aff."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2313,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770215231266,
+      "changelog": "Initial release: Scrape and analyze product reviews from Amazon, Google, Yelp, TripAdvisor with sentiment analysis and automated insights",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7a54728f0ee4c2b18b8adfeba34f61fcfcf9d9f4a79ffd78fc383c801907892"
+}

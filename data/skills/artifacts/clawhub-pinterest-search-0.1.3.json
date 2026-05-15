@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pinterest-search@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pinterest_search",
+  "skill": {
+    "id": 40589,
+    "skillKey": "clawhub-pinterest-search",
+    "name": "Pinterest Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pinterest-search",
+    "url": "https://clawhub.ai/skills/pinterest-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pinterest-search-b97a5012c1394ada.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Pinterest for images and pins using keyword queries. Use this skill whenever the user wants to find Pinterest content, images, pins, or visual inspira..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikehankk",
+      "userId": "s17740h3taw84fgmg8d1t4m07n83g6y3",
+      "displayName": "Wei Han",
+      "image": "https://avatars.githubusercontent.com/u/123093985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1775482965076,
+      "changelog": "fixed security warning issues.\n\n- Functionality and usage remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:088c1124216faab61e3c23bd66f9959ddc7f0bf31a118be51415298ac6c9a3f6"
+}

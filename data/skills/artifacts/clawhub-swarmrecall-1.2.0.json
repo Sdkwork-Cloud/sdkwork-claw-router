@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarmrecall@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmrecall",
+  "skill": {
+    "id": 31735,
+    "skillKey": "clawhub-swarmrecall",
+    "name": "SwarmRecall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmrecall",
+    "url": "https://clawhub.ai/skills/swarmrecall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmrecall-bc612964ac3a4935.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use SwarmRecall when an AI agent needs persistent memory, a knowledge graph, learnings, a skill registry, shared pools, or background dream consolidation acr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waydelyle",
+      "userId": "s172jgfp1hrj42g10wkscjf0t583ttz6",
+      "displayName": "Wayde",
+      "image": "https://avatars.githubusercontent.com/u/16001190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776199881032,
+      "changelog": "Added `@swarmrecall/mcp` package — an MCP (Model Context Protocol) server exposing every SDK module (memory, knowledge, learnings, skills, pools, dream) as 52 tools + 4 resources over stdio.; Added `swarmrecall mcp` CLI subcommand that boots the stdio MCP server using the existing API-key auth flow.; Exposed a remote MCP endpoint at `https://swarmrecall-api.onrender.com/mcp` over the Streamable HTTP transport. Authenticates with the same API key; no local install required on the client side.; Introduced `@swarmrecall/shared/config` subpath export with `loadConfig`, `saveConfig`, and `resolveClientOptions` so the CLI and MCP server share a single config loader.; Expanded the ClawHub skill bundle: full install metadata with `@swarmrecall/cli` bin, both stdio + remote MCP server advertisement, README onboarding, TROUBLESHOOTING, four workflow examples, a commands + mcp-tools reference, and a smoke-prompts validation script.; Added release infrastructure: `scripts/release-preflight.mjs`, `scripts/check-release-sync.mjs`, `scripts/check-clawhub-skill.mjs`, `scripts/publish-clawhub-skill.mjs`, `.github/workflows/ci.yml`, and this CHANGELOG.; Synchronized every SwarmRecall package to version 0.3.0. Skill version bumped to 1.2.0 on its own ClawHub track (monotonic from prior 1.1.0).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54dd19fb8d34de3012f6009c61fcfd945090720a251356e0374ec4754624974a"
+}

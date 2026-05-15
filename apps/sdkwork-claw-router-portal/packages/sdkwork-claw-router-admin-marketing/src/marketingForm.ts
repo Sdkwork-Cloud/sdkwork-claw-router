@@ -1,3 +1,4 @@
+import type { CommerceRechargePackageMutationRequest } from '@sdkwork/clawrouter-backend-sdk';
 import type { CouponBatchGenerateInput, CouponCreateInput } from './marketingService';
 
 const DEFAULT_COUPON_TYPE: CouponCreateInput['type'] = 'amount';
@@ -25,6 +26,14 @@ export function createCouponBatchGenerateInputFromForm(
   };
 }
 
+export function createRechargePackageInputFromForm(formData: FormData): CommerceRechargePackageMutationRequest {
+  return {
+    rmb: readMoneyAmount(readFormText(formData, 'rmb'), 'rmb'),
+    bonus: readNonNegativeInteger(readFormText(formData, 'bonus'), 'bonus'),
+    status: readRechargePackageStatus(formData.get('status')),
+  };
+}
+
 function readFormText(formData: FormData, key: string): string {
   const value = formData.get(key);
   return typeof value === 'string' ? value.trim() : '';
@@ -44,6 +53,37 @@ function readPositiveInteger(formData: FormData, key: string): number {
     return DEFAULT_BATCH_COUNT;
   }
   return Math.round(value);
+}
+
+function readMoneyAmount(value: string, fieldName: string): string {
+  const normalized = value.replace(/,/g, '');
+  if (!/^\d+(?:\.\d{1,2})?$/.test(normalized)) {
+    throw new Error(`${fieldName} must be a positive money amount`);
+  }
+  if (!/[1-9]/.test(normalized.replace('.', ''))) {
+    throw new Error(`${fieldName} must be greater than zero`);
+  }
+  const [whole, fraction = ''] = normalized.split('.');
+  return `${whole}.${fraction.padEnd(2, '0').slice(0, 2)}`;
+}
+
+function readNonNegativeInteger(value: string, fieldName: string): number {
+  if (!/^\d+$/.test(value)) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  const numberValue = Number(value);
+  if (!Number.isSafeInteger(numberValue)) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  return numberValue;
+}
+
+function readRechargePackageStatus(value: FormDataEntryValue | null): CommerceRechargePackageMutationRequest['status'] {
+  const normalized = typeof value === 'string' ? value.trim().toLowerCase() : '';
+  if (normalized === 'active' || normalized === 'inactive') {
+    return normalized;
+  }
+  throw new Error('status must be active or inactive');
 }
 
 function firstNonEmpty(...values: string[]): string {

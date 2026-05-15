@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19331,
+  "uuid": "skill-clawhub-agent-token-sentinel",
+  "skillKey": "clawhub-agent-token-sentinel",
+  "name": "Agent Token Sentinel",
+  "summary": "Real-time cost & quota guardian for AI Agents. It monitors API usage and automatically kills recursive loops or excessive reasoning to protect your wallet. O...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_token_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "System Architect Zero",
+      "features": [
+        "Real-time cost & quota guardian for AI Agents",
+        "It monitors API usage and automatically kills recursive loops or excessive reasoning to protect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-token-sentinel@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261739543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-token-sentinel",
+      "url": "https://clawhub.ai/skills/agent-token-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-token-sentinel",
+    "url": "https://clawhub.ai/skills/agent-token-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-token-sentinel-fe892a6e556b3c54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-token-sentinel@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-token-sentinel-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56f1882bc041adc1c63226e32923ed69b5a244b7f364e21ded2e87cd3685fda9",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:22:20.254Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63525,
+  "uuid": "skill-clawhub-moodsir-auto-readme-changelog",
+  "skillKey": "clawhub-moodsir-auto-readme-changelog",
+  "name": "AI项目文档生成Skill",
+  "summary": "智能化工具自动生成开源项目README.md和CHANGELOG.md，支持多平台分发，无需手动编写。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodsir_auto_readme_changelog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moodsir",
+      "features": [
+        "智能化工具自动生成开源项目README.md和CHANGELOG.md，支持多平台分发，无需手动编写。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moodsir-auto-readme-changelog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271111592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moodsir-auto-readme-changelog",
+      "url": "https://clawhub.ai/skills/moodsir-auto-readme-changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodsir-auto-readme-changelog",
+    "url": "https://clawhub.ai/skills/moodsir-auto-readme-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodsir-auto-readme-changelog-63fb9c8d68a118eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moodsir-auto-readme-changelog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moodsir-auto-readme-changelog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:432f75247a628c594f971606e295b8495a845250304efac87565c79329f8a0b1",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:32:56.399Z"
+}

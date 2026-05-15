@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56624,
+  "uuid": "skill-clawhub-power-automate-monitoring",
+  "skillKey": "clawhub-power-automate-monitoring",
+  "name": "Power Automate Monitoring",
+  "summary": "**Pro+ subscription required.** Tenant-wide Power Automate flow health monitoring, failure rate analytics, and asset inventory using the FlowStudio MCP cache...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.power_automate_monitoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninihen1",
+      "features": [
+        "**Pro+ subscription required.** Tenant-wide Power Automate flow health monitoring, failure rate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/power-automate-monitoring@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123369259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "power-automate-monitoring",
+      "url": "https://clawhub.ai/skills/power-automate-monitoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "power-automate-monitoring",
+    "url": "https://clawhub.ai/skills/power-automate-monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/power-automate-monitoring-f48f252ba3746a9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/power-automate-monitoring@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-power-automate-monitoring-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e2494166f9e4fa0cf0631792edb53cdc2a1df03610e1450b97582544d1b991d",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:50:41.374Z"
+}

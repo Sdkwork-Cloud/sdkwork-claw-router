@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-a@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_a",
+  "skill": {
+    "id": 30269,
+    "skillKey": "clawhub-stock-a",
+    "name": "Stock-A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-a",
+    "url": "https://clawhub.ai/skills/stock-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-a-d629f4414ea49ab8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time and historical A-share stock data from multiple free sources including mootdx, Sina, Tencent, Eastmoney, and Tushare."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "same1317",
+      "userId": "s174g951b1kmmbaydqmadnkpmn83mbd5",
+      "displayName": "same1317",
+      "image": "https://avatars.githubusercontent.com/u/102150766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774503206973,
+      "changelog": "A股股票行情数据获取工具，支持 mootdx、新浪、腾讯、东方财富、Tushare 等多数据源",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:449e18b0c4f36f025eb190ee7f68cc86b410fe057a53db6e834deb9e08abef9c"
+}

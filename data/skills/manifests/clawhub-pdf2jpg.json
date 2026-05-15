@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34959,
+  "uuid": "skill-clawhub-pdf2jpg",
+  "skillKey": "clawhub-pdf2jpg",
+  "name": "pdf2jpg",
+  "summary": "Convert PDF files to JPEG images with pdftoppm, support optional page ranges, and bundle generated JPGs into a zip archive for sharing. Use when a user wants...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2jpg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luohongq",
+      "features": [
+        "Convert PDF files to JPEG images with pdftoppm, support optional page ranges, and bundle genera.",
+        "Use when a user wants..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf2jpg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104287078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf2jpg",
+      "url": "https://clawhub.ai/skills/pdf2jpg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2jpg",
+    "url": "https://clawhub.ai/skills/pdf2jpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2jpg-df3af917225e3a22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf2jpg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf2jpg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86861cf0043529961bf052b86b16e9cfce0cd06938e0db8794d4474ba75a4afc",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T01:53:19.756Z"
+}

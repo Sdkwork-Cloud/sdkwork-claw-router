@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58477,
+  "uuid": "skill-clawhub-vpn-proxy-manager",
+  "skillKey": "clawhub-vpn-proxy-manager",
+  "name": "Vpn Proxy Manager",
+  "summary": "V2Ray代理管理 - 自动开关代理、根据网络状况自动配置系统代理 / V2Ray Proxy Management - Auto start/stop proxy based on network conditions",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vpn_proxy_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BOMBFUOCK",
+      "features": [
+        "V2Ray代理管理",
+        "自动开关代理、根据网络状况自动配置系统代理 / V2Ray Proxy Management",
+        "Auto start/stop proxy based on network conditions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vpn-proxy-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94738020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vpn-proxy-manager",
+      "url": "https://clawhub.ai/skills/vpn-proxy-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vpn-proxy-manager",
+    "url": "https://clawhub.ai/skills/vpn-proxy-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vpn-proxy-manager-6a0b36d2ab99d1a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vpn-proxy-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vpn-proxy-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b0a104cf545a3c4ce41be431deebbe9a2737063a6f5c0c8aeed108957c99947",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:42:35.291Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73684,
+  "uuid": "skill-clawhub-qxb-gs-basic-info",
+  "skillKey": "clawhub-qxb-gs-basic-info",
+  "name": "企业工商信息查询",
+  "summary": "可快速验证企业真实性、经营状态，适用于商务合作前的背景核查、供应链准入审核、招投标资质验证，合同主体审查等场景，确保企业信息准确可靠。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qxb_gs_basic_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "llx-26",
+      "features": [
+        "可快速验证企业真实性、经营状态，适用于商务合作前的背景核查、供应链准入审核、招投标资质验证，合同主体审查等场景，确保企业信息准确可靠。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qxb-gs-basic-info@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73281691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qxb-gs-basic-info",
+      "url": "https://clawhub.ai/skills/qxb-gs-basic-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qxb-gs-basic-info",
+    "url": "https://clawhub.ai/skills/qxb-gs-basic-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qxb-gs-basic-info-2344f13bc6f5ab2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qxb-gs-basic-info@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qxb-gs-basic-info-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f0bd11271f828d5025ef44c9466f57740d3e547055d124be49d74e179510a0e",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:43:19.605Z"
+}

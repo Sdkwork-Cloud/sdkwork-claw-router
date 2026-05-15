@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46859,
+  "uuid": "skill-clawhub-oto-sessions",
+  "skillKey": "clawhub-oto-sessions",
+  "name": "Oto Sessions",
+  "summary": "Manage authenticated browser sessions for any website with Oto, enabling saving, listing, deleting, and automating multiple accounts without re-authenticating.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oto_sessions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Murat Bahar",
+      "features": [
+        "Manage authenticated browser sessions for any website with Oto, enabling saving, listing, delet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oto-sessions@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oto-sessions",
+      "url": "https://clawhub.ai/skills/oto-sessions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oto-sessions",
+    "url": "https://clawhub.ai/skills/oto-sessions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oto-sessions-99cff6d165dfee28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oto-sessions@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oto-sessions-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5022f018a0ea18f5e5d4bf25d37f5b3d300b28d7493adb3dedc136ecb6ef79eb",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:05:23.439Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50857,
+  "uuid": "skill-clawhub-filed",
+  "skillKey": "clawhub-filed",
+  "name": "Filed — US Business Entity Search",
+  "summary": "Search and retrieve US business entity data (LLCs, corporations, partnerships) from official Secretary of State records via the Filed.dev API. Use when looki...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mgrantley",
+      "features": [
+        "Search and retrieve US business entity data (LLCs, corporations, partnerships) from official Se.",
+        "Use when looki..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filed@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5124499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filed",
+      "url": "https://clawhub.ai/skills/filed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filed",
+    "url": "https://clawhub.ai/skills/filed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filed-d0481a767ebfdcc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filed@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-filed-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b10c6f343de0c0d7103817831a8a5bf4d3c0b45b02c0cb27b566ade2c7cc2078",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:23:13.934Z"
+}

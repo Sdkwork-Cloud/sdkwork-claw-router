@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gua-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gua_helper",
+  "skill": {
+    "id": 72473,
+    "skillKey": "clawhub-gua-helper",
+    "name": "帮你算算-不承担任何后果"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gua-helper",
+    "url": "https://clawhub.ai/skills/gua-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gua-helper-deee955e16678392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "梅花易数起卦，根据上卦、下卦数字查六十四卦，给出卦名、动爻及详解链接。用法：/gua <上卦数> <下卦数>"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaobo1992",
+      "userId": "s17884q0cdd3ptzz830qgv895h83h4bh",
+      "displayName": "Xiaobo",
+      "image": "https://avatars.githubusercontent.com/u/5440945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774246229551,
+      "changelog": "- Improved argument handling by wrapping $ARGUMENTS in quotes when calling the script, ensuring correct parsing of input with spaces or special characters.\n- No other changes to features or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f43db188e4065d8e7d5ff313dc04953dba999f7bfda03365b227969d088e95a"
+}

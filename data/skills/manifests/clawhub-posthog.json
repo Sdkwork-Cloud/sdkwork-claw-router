@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15158,
+  "uuid": "skill-clawhub-posthog",
+  "skillKey": "clawhub-posthog",
+  "name": "PostHog",
+  "summary": "Interact with PostHog analytics via its REST API. Capture events, evaluate feature flags, query data with HogQL, manage persons, insights, dashboards, experi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.posthog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simonfunk",
+      "features": [
+        "Interact with PostHog analytics via its REST API",
+        "Capture events, evaluate feature flags, query data with HogQL, manage persons, insights, dashbo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/posthog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8578044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "posthog",
+      "url": "https://clawhub.ai/skills/posthog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "posthog",
+    "url": "https://clawhub.ai/skills/posthog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/posthog-67e5a3025bc013d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/posthog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-posthog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32647ec95b8f4fc18e0f0db602fd2803afed362fd5a180b91457b2fee478169a",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T20:24:08.266Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-for-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_for_video_generation",
+  "skill": {
+    "id": 46133,
+    "skillKey": "clawhub-ai-for-video-generation",
+    "name": "Ai For Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-for-video-generation",
+    "url": "https://clawhub.ai/skills/ai-for-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-for-video-generation-184e95bb04e4fc4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a text prompt describing a product launch scene into 1080p AI-generated videos just by typing what you need. Whether it's generating videos from text pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776069111231,
+      "changelog": "AI for Video Generation — Version 1.0.0\n\n- Initial release of AI-driven video generation from text prompts or images.\n- Seamless cloud-based video rendering pipeline with support for 1080p MP4 exports.\n- Built-in authentication and session management with free token auto-registration.\n- Supports easy uploads, credits balance checks, and rapid export without local installation.\n- Detailed error handling and workflow mapping for common video creation tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac1fe9b2bf84a721c91fddd628402a890445f0fbe3d3377b83ceb886b0dcd601"
+}

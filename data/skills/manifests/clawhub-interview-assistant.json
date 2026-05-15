@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59639,
+  "uuid": "skill-clawhub-interview-assistant",
+  "skillKey": "clawhub-interview-assistant",
+  "name": "Interview Assistant",
+  "summary": "结构化面试助手 - 基于 JD 和简历生成 STAR 面试题库",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "基于 JD 和简历生成 STAR 面试题库"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interview-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interview-assistant",
+      "url": "https://clawhub.ai/skills/interview-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-assistant",
+    "url": "https://clawhub.ai/skills/interview-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-assistant-93df7117fe150431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interview-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interview-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69f0bb0be761f696a4e850a3ac8d165767e2c22ec1d85d2b5c7625356c59cdbb",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:49:08.895Z"
+}

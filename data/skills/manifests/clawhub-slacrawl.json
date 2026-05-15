@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48130,
+  "uuid": "skill-clawhub-slacrawl",
+  "skillKey": "clawhub-slacrawl",
+  "name": "Slacrawl",
+  "summary": "Pull Slack workspace metadata and message history into local SQLite for offline search and agent queries.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slacrawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chase Webb",
+      "features": [
+        "Pull Slack workspace metadata and message history into local SQLite for offline search and agen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slacrawl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26909069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slacrawl",
+      "url": "https://clawhub.ai/skills/slacrawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slacrawl",
+    "url": "https://clawhub.ai/skills/slacrawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slacrawl-df11a5aec8b6a60d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slacrawl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slacrawl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f87b122c544b6fabf9013b42f1374eca1a7ecc4b5fd04a737dcc93cf1fd981fe",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T17:54:20.581Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71101,
+  "uuid": "skill-clawhub-tencen-ride-skill",
+  "skillKey": "clawhub-tencen-ride-skill",
+  "name": "腾讯出行服务打车skills",
+  "summary": "腾讯出行服务叫车助手。处理“帮我叫车”“我下班了，帮我叫车”“我要从亚洲金融大厦去腾讯总部”这类请求。关键词：\"打车\"、\"叫车\"、\"去[地点]\"、\"回家\"、\"上班\"、\"下班\"、\"司机\"、\"订单\"、\"查询订单\"。注意：即使用户未明确说\"打车\"，只要涉及从A地到B地、通勤、或交通方式选择，都应触发。不触发场景：开发打...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencen_ride_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "腾讯开源",
+      "features": [
+        "腾讯出行服务叫车助手。处理“帮我叫车”“我下班了，帮我叫车”“我要从亚洲金融大厦去腾讯总部”这类请求。关键词：\"打车\"、\"叫车\"、\"去[地点]\"、\"回家\"、\"上班\"、\"下班\"、\"司机\"、\"订."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencen-ride-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19383298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencen-ride-skill",
+      "url": "https://clawhub.ai/skills/tencen-ride-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencen-ride-skill",
+    "url": "https://clawhub.ai/skills/tencen-ride-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencen-ride-skill-cd40604a559f1e08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencen-ride-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencen-ride-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d698ae2ee33995bf4bbb186b5c07730f97a72183c68908016df7d5093fceb5a3",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:57:20.168Z"
+}

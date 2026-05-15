@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58097,
+  "uuid": "skill-clawhub-polymarket-data-api",
+  "skillKey": "clawhub-polymarket-data-api",
+  "name": "Polymarket Data Api",
+  "summary": "查询Polymarket预测市场数据 / Query Polymarket prediction markets",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_data_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BOMBFUOCK",
+      "features": [
+        "查询Polymarket预测市场数据 / Query Polymarket prediction markets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-data-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94738020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-data-api",
+      "url": "https://clawhub.ai/skills/polymarket-data-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-data-api",
+    "url": "https://clawhub.ai/skills/polymarket-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-data-api-b008bfb8510e22fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-data-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-data-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5be225cffd91bcd4b89c07e26d03d31a0caa8dd2679cdf663a1a6e1571f53c47",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:42:47.455Z"
+}

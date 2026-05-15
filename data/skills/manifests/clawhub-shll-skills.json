@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19997,
+  "uuid": "skill-clawhub-shll-skills",
+  "skillKey": "clawhub-shll-skills",
+  "name": "Upload Clawhub",
+  "summary": "Execute DeFi transactions on BSC via SHLL AgentNFA. The AI handles all commands and users only need to chat.",
+  "version": "6.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shll_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kledx",
+      "features": [
+        "Execute DeFi transactions on BSC via SHLL AgentNFA",
+        "The AI handles all commands and users only need to chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shll-skills@6.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259126602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shll-skills",
+      "url": "https://clawhub.ai/skills/shll-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shll-skills",
+    "url": "https://clawhub.ai/skills/shll-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shll-skills-64a79c53882b3ae0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shll-skills@6.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-shll-skills-6.0.5.json",
+      "version": "6.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:242c76b86d86158e0cef066bf3427ffb081d82df22b8a727280e07e6001a8474",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:31:26.182Z"
+}

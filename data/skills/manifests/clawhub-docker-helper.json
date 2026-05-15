@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58380,
+  "uuid": "skill-clawhub-docker-helper",
+  "skillKey": "clawhub-docker-helper",
+  "name": "Docker Helper",
+  "summary": "Dockerfile生成、docker-compose编排、命令速查、调试排错、镜像优化、仓库配置. Use when you need docker helper capabilities. Triggers on: docker helper.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Dockerfile生成、docker-compose编排、命令速查、调试排错、镜像优化、仓库配置",
+        "Use when you need docker helper capabilities",
+        "Triggers on: docker helper."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-helper@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-helper",
+      "url": "https://clawhub.ai/skills/docker-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-helper",
+    "url": "https://clawhub.ai/skills/docker-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-helper-3b02c7845418ee50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-helper@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-helper-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:759cfdf793f7dd27c8b616626db2dd82f0164dd1a894e0867565e3de1cd1e10c",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:54:49.086Z"
+}

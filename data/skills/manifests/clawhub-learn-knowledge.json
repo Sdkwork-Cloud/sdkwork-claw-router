@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71277,
+  "uuid": "skill-clawhub-learn-knowledge",
+  "skillKey": "clawhub-learn-knowledge",
+  "name": "knowledge-internalizer-pro",
+  "summary": "系统化知识内化与能力自评引擎。当需要深入学习新领域、建立专家级知识库、并明确知道自己的掌握程度时使用。核心功能包括系统性知识内化引擎和基于知识图谱的能力评级器。触发词：深入学习并评估掌握水平、建立专家级知识库、系统研究并告诉我能做什么。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nonlinearHuman",
+      "features": [
+        "系统化知识内化与能力自评引擎。当需要深入学习新领域、建立专家级知识库、并明确知道自己的掌握程度时使用。核心功能包括系统性知识内化引擎和基于知识图谱的能力评级器。触发词：深入学习并评估掌握水平."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-knowledge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97647446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-knowledge",
+      "url": "https://clawhub.ai/skills/learn-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-knowledge",
+    "url": "https://clawhub.ai/skills/learn-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-knowledge-a0b36c37104e236c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-knowledge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-knowledge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94e386cbbcf88f8aea9a90984bf2602d61c2012f3bb057b203bafc397b426de8",
+      "artifactSizeBytes": 3403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:54:18.042Z"
+}

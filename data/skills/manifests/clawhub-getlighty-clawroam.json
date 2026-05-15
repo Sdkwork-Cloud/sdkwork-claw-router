@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49354,
+  "uuid": "skill-clawhub-getlighty-clawroam",
+  "skillKey": "clawhub-getlighty-clawroam",
+  "name": "ClawRoam",
+  "summary": "Portable identity vault for OpenClaw. Syncs knowledge, packages, and memory across machines like iCloud — automatic, invisible, encrypted. Bring your own sto...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getlighty_clawroam",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "getlighty",
+      "features": [
+        "Portable identity vault for OpenClaw",
+        "Syncs knowledge, packages, and memory across machines like iCloud — automatic, invisible, encry.",
+        "Bring your own sto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getlighty-clawroam@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26691300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getlighty-clawroam",
+      "url": "https://clawhub.ai/skills/getlighty-clawroam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getlighty-clawroam",
+    "url": "https://clawhub.ai/skills/getlighty-clawroam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getlighty-clawroam-35d480260db8f869.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getlighty-clawroam@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-getlighty-clawroam-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dea693ee48cc9c3ed7669cffd29ba029509319c4fbda6587c4141d58c971b16",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T07:27:23.498Z"
+}

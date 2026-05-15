@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "feishu-voice-sender-v2",
+    "displayName": "Feishu Voice Sender",
+    "summary": "飞书语音消息发送技能 - 根据 channel 自动选择发送方式",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1773995039052,
+    "updatedAt": 1778313625718
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773995039052,
+    "changelog": "feishu-voice-sender-v2 v1.0.0\n\n- Initial release.\n- Automatically detects channel type (Feishu, Telegram, Discord) and selects the appropriate voice message sending method.\n- Feishu channels: generates voice using Xiaomi MiMo TTS and sends native Feishu voice messages.\n- Other channels: sends text or voice messages in supported formats.\n- Supports various voice styles, dialects, and audio effects via MiMo TTS.\n- Requires configuration of MIMO_API_KEY and ffmpeg for audio processing.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "enderxiao",
+    "userId": "s1732a3c8p9x170vhm1hhpvem183pnnn",
+    "displayName": "EnderXiao",
+    "image": "https://avatars.githubusercontent.com/u/38461979?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778313625718
+  }
+}

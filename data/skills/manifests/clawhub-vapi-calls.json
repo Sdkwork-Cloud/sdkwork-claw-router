@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10083,
+  "uuid": "skill-clawhub-vapi-calls",
+  "skillKey": "clawhub-vapi-calls",
+  "name": "VAPI Calls",
+  "summary": "Advanced AI voice assistant for phone calls. Capable of persuasion, sales, restaurant bookings, reminders, and notifications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vapi_calls",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmorillas",
+      "features": [
+        "Advanced AI voice assistant for phone calls",
+        "Capable of persuasion, sales, restaurant bookings, reminders, and notifications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vapi-calls@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256742825?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vapi-calls",
+      "url": "https://clawhub.ai/skills/vapi-calls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vapi-calls",
+    "url": "https://clawhub.ai/skills/vapi-calls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vapi-calls-1ee6a7cc5377540a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vapi-calls@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vapi-calls-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aca34fe64a7414ff8c8f81a147fa8fd30a8f879ccb28ba2e4106f2ffaaa7e0fb",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T08:35:43.511Z"
+}

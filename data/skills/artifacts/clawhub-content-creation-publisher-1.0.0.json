@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-creation-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creation_publisher",
+  "skill": {
+    "id": 60213,
+    "skillKey": "clawhub-content-creation-publisher",
+    "name": "内容创作与发布全流程"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creation-publisher",
+    "url": "https://clawhub.ai/skills/content-creation-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creation-publisher-df51836f8f8ef983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "content-creation-publisher - 从云端仓库同步的技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anbeime",
+      "userId": "s17dmprx8pgszk44a9h2b9xsh983n2g2",
+      "displayName": "anbeime",
+      "image": "https://avatars.githubusercontent.com/u/52991404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772334076714,
+      "changelog": "Initial release of content-creation-publisher.\n\n- Introduced skill for content publishing, synced from a cloud repository.\n- Provided repository source link and integration status checklist.\n- Included instructions to access full files and documentation from the cloud repository.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4906dd102cd90cbaa29c9524d9cc9aa9762b4ffdd3872e222b23a9551d2b92bc"
+}

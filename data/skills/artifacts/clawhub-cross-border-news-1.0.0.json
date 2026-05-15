@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-border-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_border_news",
+  "skill": {
+    "id": 65719,
+    "skillKey": "clawhub-cross-border-news",
+    "name": "跨境电商资讯日报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-border-news",
+    "url": "https://clawhub.ai/skills/cross-border-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-border-news-c52f17eeb5f74a8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨境电商资讯查询 Skill。当用户想知道\"跨境电商日报\"、\"跨境电商资讯\"、\"Shopee/TikTok Shop/Temu/亚马逊/Lazada 最近动态\"、\"东南亚电商\"、\"跨境平台政策\"、\"选品趋势\"、\"跨境物流\"、\"跨境支付\"、\"出海动态\"等任何跨境电商相关资讯时使用。即使用户只说\"跨境电商\"、\"出海资..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778208834642,
+      "changelog": "首个版本：覆盖 Shopee/TikTok Shop/Temu/亚马逊/Lazada 等主流跨境平台，支持政策更新、选品趋势、物流支付、行业动态等资讯聚合",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5658c222a08ed0b9926443eedf6c11b15b720af9cee61ecf10dac9700c6c3f7"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17205,
+  "uuid": "skill-clawhub-erc8128",
+  "skillKey": "clawhub-erc8128",
+  "name": "ERC-8128",
+  "summary": "Sign and verify HTTP requests with Ethereum wallets using ERC-8128. Use when building authenticated APIs that need wallet-based auth, making signed requests...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc8128",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacopo",
+      "features": [
+        "Sign and verify HTTP requests with Ethereum wallets using ERC-8128",
+        "Use when building authenticated APIs that need wallet-based auth, making signed requests..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erc8128@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39241410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erc8128",
+      "url": "https://clawhub.ai/skills/erc8128"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc8128",
+    "url": "https://clawhub.ai/skills/erc8128",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc8128-654a88b0d2529831.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erc8128@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-erc8128-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81040f6688e94430e1cae33b633be1878b35f655bfac823c6d5b3e7cc40010cb",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T01:06:24.087Z"
+}

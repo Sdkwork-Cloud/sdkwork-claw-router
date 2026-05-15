@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17329,
+  "uuid": "skill-clawhub-pihole-ctl",
+  "skillKey": "clawhub-pihole-ctl",
+  "name": "Pihole Ctl",
+  "summary": "Manage and monitor local Pi-hole instance. Query FTL database for statistics (blocked ads, top clients) and control service via CLI. Use when user asks \"how many ads blocked\", \"pihole status\", or \"update gravity\".",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pihole_ctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azzar budiyanto",
+      "features": [
+        "Manage and monitor local Pi-hole instance",
+        "Query FTL database for statistics (blocked ads, top clients) and control service via CLI",
+        "Use when user asks \"how many ads blocked\", \"pihole status\", or \"update gravity\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pihole-ctl@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48999412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pihole-ctl",
+      "url": "https://clawhub.ai/skills/pihole-ctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pihole-ctl",
+    "url": "https://clawhub.ai/skills/pihole-ctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pihole-ctl-144aad8d15d7968e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pihole-ctl@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pihole-ctl-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e343ab6c2fe53ade38f0da964126a1d300806f2b04d8c32b15e0f758109ffa6a",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:48:24.244Z"
+}

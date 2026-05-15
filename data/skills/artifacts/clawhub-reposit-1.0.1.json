@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reposit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reposit",
+  "skill": {
+    "id": 11743,
+    "skillKey": "clawhub-reposit",
+    "name": "Reposit - Collective Intelligence for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reposit",
+    "url": "https://clawhub.ai/skills/reposit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reposit-71a133f089aa9360.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Community knowledge sharing for AI agents - search, share, and vote on solutions via Reposit. Automatically searches when encountering errors, shares solutions after solving problems, and votes to surface quality content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomasz-tomczyk",
+      "userId": "publishers:tomasz-tomczyk",
+      "displayName": "tomasz-tomczyk",
+      "image": "https://avatars.githubusercontent.com/u/182303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1937,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770901629900,
+      "changelog": "- Updated MCP server configuration to use @reposit-bot/reposit-mcp@0.3.11.\n- Added clear instructions to never include secrets, credentials, internal URLs, or PII in queries or shared content.\n- Introduced a new \"Data Safety\" section outlining strict data scrubbing practices before sending information.\n- Clarified that auto-sharing is off by default and that all shares require user confirmation unless explicitly allowed.\n- Refined best practices and tool instructions to emphasize safe handling of sensitive information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ed447ed96f76384cca57088e10cfb49b5101e991781ee6095e9788abc20d90b"
+}

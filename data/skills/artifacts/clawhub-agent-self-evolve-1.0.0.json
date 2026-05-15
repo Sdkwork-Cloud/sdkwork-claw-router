@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-self-evolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_evolve",
+  "skill": {
+    "id": 30970,
+    "skillKey": "clawhub-agent-self-evolve",
+    "name": "Agent Self-Evolve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-evolve",
+    "url": "https://clawhub.ai/skills/agent-self-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-evolve-dae1ee2bb2f3ea13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-evolution system for OpenClaw agents. Enables continuous learning through mistake tracking, experience distillation, skill improvement queues, and autom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanghengyi1986-afk",
+      "userId": "s173knyfg55hja2f40zjr9egvs84wkbp",
+      "displayName": "zhanghengyi1986-afk",
+      "image": "https://avatars.githubusercontent.com/u/266693384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776753618649,
+      "changelog": "Initial release: three-loop self-evolution system (real-time capture, daily consolidation, weekly deep review) for OpenClaw agents. Includes setup script, cron prompt templates, and metrics tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3558d155f4dedf7bc0723f1269cef856465d47d7d7ae2a0f8054589f9b997605"
+}

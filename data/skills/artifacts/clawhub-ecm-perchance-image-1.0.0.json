@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecm-perchance-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecm_perchance_image",
+  "skill": {
+    "id": 33210,
+    "skillKey": "clawhub-ecm-perchance-image",
+    "name": "Ecm Perchance Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecm-perchance-image",
+    "url": "https://clawhub.ai/skills/ecm-perchance-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecm-perchance-image-9cfe667c2bb06670.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates images from text prompts using Perchance.org API with options for orientation and multiple image support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evstratios",
+      "userId": "s1791t951b6xbt2k96q9er80dd8535pp",
+      "displayName": "Evstratios Moraites",
+      "image": "https://avatars.githubusercontent.com/u/1300464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774004286361,
+      "changelog": "Initial release: Integrates Perchance image generation with OpenClaw.\n\n- Send text prompts to Perchance.org and display generated images.\n- Supports prompt customization with orientation options (landscape, portrait, square).\n- Includes enhanced error handling and user-friendly error messages.\n- Enables multiple image generation and progress indicators.\n- Provides terminal support for OpenClaw users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:129b9689dbf14ca1e56ea0ba4d76fecd246dbae59a73056ab2889d3ca93f5f4f"
+}

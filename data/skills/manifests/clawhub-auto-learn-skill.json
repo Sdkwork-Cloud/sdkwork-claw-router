@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65389,
+  "uuid": "skill-clawhub-auto-learn-skill",
+  "skillKey": "clawhub-auto-learn-skill",
+  "name": "自动学习技能",
+  "summary": "自动学习技能 - 从对话中自动提取知识并创建技能。基于Memento-Skills的Read-Write循环机制。适用于AI Agent自进化、知识积累、技能自动创建等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_learn_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "从对话中自动提取知识并创建技能。基于Memento-Skills的Read-Write循环机制。适用于AI Agent自进化、知识积累、技能自动创建等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-learn-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-learn-skill",
+      "url": "https://clawhub.ai/skills/auto-learn-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-learn-skill",
+    "url": "https://clawhub.ai/skills/auto-learn-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-learn-skill-87e790bacbf58056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-learn-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-learn-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6998765ebf5a3077c800a8701dceb52817daaf44011cb447971cf71540ad63d5",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T03:41:29.451Z"
+}

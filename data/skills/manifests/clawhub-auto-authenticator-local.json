@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29403,
+  "uuid": "skill-clawhub-auto-authenticator-local",
+  "skillKey": "clawhub-auto-authenticator-local",
+  "name": "Auto Authenticator Local",
+  "summary": "Use when the user wants a local-first TOTP helper for accounts they personally own or are explicitly authorized to access. This skill stores TOTP seeds in sy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_authenticator_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LucasZH7",
+      "features": [
+        "Use when the user wants a local-first TOTP helper for accounts they personally own or are expli.",
+        "This skill stores TOTP seeds in sy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-authenticator-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78842967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-authenticator-local",
+      "url": "https://clawhub.ai/skills/auto-authenticator-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-authenticator-local",
+    "url": "https://clawhub.ai/skills/auto-authenticator-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-authenticator-local-f9a78c042e5153ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-authenticator-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-authenticator-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aec60148c7dd9a618830edc10dccaa5807111cab51f82b36b54632c6871193f",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:41:15.668Z"
+}

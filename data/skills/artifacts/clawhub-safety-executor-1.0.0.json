@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safety-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safety_executor",
+  "skill": {
+    "id": 71262,
+    "skillKey": "clawhub-safety-executor",
+    "name": "Safety Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safety-executor",
+    "url": "https://clawhub.ai/skills/safety-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safety-executor-90c78c0a0eb09439.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当需要执行系统命令时候，请遵循核心原则（硬性阻止），限制原则（需要用户确认）。提供系统命令执行的安全指南，保护系统完整性和防止潜在有害操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keizikeizi215-beep",
+      "userId": "publishers:keizikeizi215-beep",
+      "displayName": "keizikeizi215-beep",
+      "image": "https://avatars.githubusercontent.com/u/223239384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773397251475,
+      "changelog": "- Initial release of safety-executor skill.\n- Provides guidelines and principles for the safe execution of system commands.\n- Introduces core and restrictive principles to protect system integrity and prevent harmful operations.\n- Requires user confirmation for controlled or restricted actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52ae87b2158463efd5d94f0bb4b13b645d3d2d9388f65327ec43539387ba05cb"
+}

@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "insecure-defaults",
+    "displayName": "Insecure Defaults Detection",
+    "summary": "Detects fail-open insecure defaults (hardcoded secrets, weak auth, permissive security) that allow apps to run insecurely in production. Use when auditing security, reviewing config management, or analyzing environment variable handling.",
+    "tags": {
+      "audit": "1.0.0",
+      "latest": "1.0.0",
+      "security": "1.0.0",
+      "trailofbits": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2466,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1769636778868,
+    "updatedAt": 1778382549554
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1769636778868,
+    "changelog": "Initial release of insecure-defaults.\n\n- Detects fail-open insecure defaults including hardcoded secrets, weak authentication, and permissive security configurations in production-reachable code.\n- Helps with audits, code reviews, and configuration management by focusing on environment variable handling and insecure defaults.\n- Clearly distinguishes between fail-open (critical) and fail-secure (safe) patterns.\n- Provides search guidance and verification workflow, including example patterns and report template.\n- Includes a thorough checklist of common insecure defaults and guidance on when findings are relevant.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "atlas-secint",
+    "userId": "publishers:atlas-secint",
+    "displayName": "atlas-secint",
+    "image": "https://avatars.githubusercontent.com/u/239678626?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72270,
+  "uuid": "skill-clawhub-video-to-doc",
+  "skillKey": "clawhub-video-to-doc",
+  "name": "视频转操作指南",
+  "summary": "将操作视频自动转换为图文并茂的Word操作指南文档，支持智能截图、语音转录、LLM内容提炼和流程图生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SIYOU315",
+      "features": [
+        "将操作视频自动转换为图文并茂的Word操作指南文档，支持智能截图、语音转录、LLM内容提炼和流程图生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-to-doc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203485351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-to-doc",
+      "url": "https://clawhub.ai/skills/video-to-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-doc",
+    "url": "https://clawhub.ai/skills/video-to-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-doc-d3b5da972400ccd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-to-doc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-to-doc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a670df14140a6d24c3d44e7cfbb12b504e1e1f5b73cc3a326902a181b836441",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:31:35.320Z"
+}

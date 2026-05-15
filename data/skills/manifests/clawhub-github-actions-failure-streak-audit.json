@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28758,
+  "uuid": "skill-clawhub-github-actions-failure-streak-audit",
+  "skillKey": "clawhub-github-actions-failure-streak-audit",
+  "name": "GitHub Actions Failure Streak Audit",
+  "summary": "Detect consecutive GitHub Actions failure streaks by repo/workflow/branch to prioritize unstable pipelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_failure_streak_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Detect consecutive GitHub Actions failure streaks by repo/workflow/branch to prioritize unstabl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-failure-streak-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-failure-streak-audit",
+      "url": "https://clawhub.ai/skills/github-actions-failure-streak-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-failure-streak-audit",
+    "url": "https://clawhub.ai/skills/github-actions-failure-streak-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-failure-streak-audit-73f893d65a5be999.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-failure-streak-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-failure-streak-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f37df3c9c3a6e10d3f9d0a1ff813c06c2220e756eb074383c9c6d0876a45472",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:07:36.385Z"
+}

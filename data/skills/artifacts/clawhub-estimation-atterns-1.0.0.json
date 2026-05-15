@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/estimation-atterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.estimation_atterns",
+  "skill": {
+    "id": 21306,
+    "skillKey": "clawhub-estimation-atterns",
+    "name": "Estimation Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "estimation-atterns",
+    "url": "https://clawhub.ai/skills/estimation-atterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/estimation-atterns-68e721515f36b282.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Practical estimation techniques for software tasks — methods comparison, decomposition, complexity multipliers, buffer calculation, bias awareness, and communication strategies. Use when estimating features, sprint planning, or presenting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 865,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728618980,
+      "changelog": "- Initial release of estimation-patterns meta-skill, providing practical techniques for software estimation.\n- Includes method comparisons (T-shirt sizing, story points, time-based, three-point, reference comparison) with pros/cons.\n- Covers systematic task decomposition, complexity multipliers, buffer calculation, and focus ratio guidelines.\n- Offers historical calibration techniques and tables for tracking estimate accuracy.\n- Lists common estimation biases with mitigation strategies.\n- Recommends estimation heuristics by task type for fast baseline estimates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66d15ec9e34f1f55fa64b309303fa300c6cbbee9314a997fbfa4ea86597d9af0"
+}

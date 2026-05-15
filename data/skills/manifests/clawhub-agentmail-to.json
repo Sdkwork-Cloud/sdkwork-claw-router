@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65873,
+  "uuid": "skill-clawhub-agentmail-to",
+  "skillKey": "clawhub-agentmail-to",
+  "name": "Agentmail To",
+  "summary": "Управление агентскими email через agentmail.to: создание, чтение, отправка и очистка временных почтовых ящиков через API и веб-консоль.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail_to",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pjotrglushkov-byte",
+      "features": [
+        "Управление агентскими email через agentmail.to: создание, чтение, отправка и очистка временных."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmail-to@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226679597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmail-to",
+      "url": "https://clawhub.ai/skills/agentmail-to"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail-to",
+    "url": "https://clawhub.ai/skills/agentmail-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-to-8d81084b8a7fac39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmail-to@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmail-to-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db06d855357776bc659a2a081bd5932c99b917287466f1594a7551663cad6d18",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:42:12.598Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-news-communityscan-staging@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_communityscan_staging",
+  "skill": {
+    "id": 43669,
+    "skillKey": "clawhub-gate-news-communityscan-staging",
+    "name": "gate-news-communityscan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-communityscan-staging",
+    "url": "https://clawhub.ai/skills/gate-news-communityscan-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-communityscan-staging-4af3854c6937181e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Community sentiment via Gate-News MCP, X/Twitter-first. Use for social discussion, KOL takes, or opinion on a coin or topic. Triggers: what does the communit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775525105698,
+      "changelog": "- Updated shared runtime rule references to point to new locations in the `references/` directory.\n- Removed skill-local installation/maintenance instructions from documentation.\n- Deleted unused or redundant documentation files: `CHANGELOG.md`, `README.md`, and `references/scenarios.md`.\n- Added new rule reference files: `references/gate-runtime-rules.md` and `references/info-news-runtime-rules.md`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a4a4bbcac6c760190bea9a68f3c4ccf0984d51e0f92e2995a9866524a78ea2d"
+}

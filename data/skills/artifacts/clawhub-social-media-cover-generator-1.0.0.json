@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-cover-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_cover_generator",
+  "skill": {
+    "id": 46764,
+    "skillKey": "clawhub-social-media-cover-generator",
+    "name": "Social Media Cover Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-cover-generator",
+    "url": "https://clawhub.ai/skills/social-media-cover-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-cover-generator-c80158c5b2e2e728.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social media cover image generator. Generates HTML pages based on title content and automatically converts them to PNG images, suitable for creating cover im..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777602429455,
+      "changelog": "- Initial release of social-media-cover-generator.\n- Generates platform-optimized social media cover images by converting user-supplied titles into HTML and PNGs.\n- Supports presets for Xiaohongshu, WeChat, Weibo, Douyin, Bilibili, Zhihu, Twitter/X, Instagram, and LinkedIn.\n- Includes design templates, font recommendations, and color schemes for visually appealing results.\n- Automates HTML to PNG conversion using a built-in script and Puppeteer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54d0f792ca0e38dd43954079c9959add314e3872c2151465329f8fe825e8b26c"
+}

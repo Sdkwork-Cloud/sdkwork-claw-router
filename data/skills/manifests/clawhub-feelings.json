@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13692,
+  "uuid": "skill-clawhub-feelings",
+  "skillKey": "clawhub-feelings",
+  "name": "Feelings",
+  "summary": "Build a personal emotional tracking system for understanding patterns, triggers, and what helps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feelings",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal emotional tracking system for understanding patterns, triggers, and what helps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feelings@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feelings",
+      "url": "https://clawhub.ai/skills/feelings"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feelings",
+    "url": "https://clawhub.ai/skills/feelings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feelings-13d6db0292e90d12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feelings@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feelings-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e4400533a66bffb250b53ebef020b0972015f0d67ee3fb19ee57c2b8133a582",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:06:29.430Z"
+}

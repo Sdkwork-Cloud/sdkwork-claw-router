@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kite-agent-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kite_agent_wallet",
+  "skill": {
+    "id": 23548,
+    "skillKey": "clawhub-kite-agent-wallet",
+    "name": "Kite Agent Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kite-agent-wallet",
+    "url": "https://clawhub.ai/skills/kite-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kite-agent-wallet-efb4f1063beaddd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a modular smart wallet protocol for AI agents enabling session keys, spending limits, and secure delegated transaction management on Kite AI network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nihaovand",
+      "userId": "publishers:nihaovand",
+      "displayName": "nihaovand",
+      "image": "https://avatars.githubusercontent.com/u/110290620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772030066072,
+      "changelog": "Kite AI Agent Wallet Protocol initial release:\n\n- Enables AI agents to create and manage smart wallets on the Kite AI Testnet.\n- Provides modular, extensible wallet architecture with support for session keys and programmable spending limits.\n- Features layered permissions (owner, agent, session key) and robust security controls, including session key revocation and module isolation.\n- Includes deployed smart contract addresses for the Kite AI Testnet.\n- Offers developer usage examples and main/testnet configuration details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:773220b8189ab3a896daf7179d2547c6c5edaf4ba2a7510f0e7773100534b005"
+}

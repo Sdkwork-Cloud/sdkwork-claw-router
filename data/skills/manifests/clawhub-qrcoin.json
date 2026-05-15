@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17055,
+  "uuid": "skill-clawhub-qrcoin",
+  "skillKey": "clawhub-qrcoin",
+  "name": "Qrcoin",
+  "summary": "Interact with QR Coin auctions on Base. Use when the user wants to participate in qrcoin.fun QR code auctions — check auction status, view current bids, create new bids, or contribute to existing bids. QR Coin lets you bid to display URLs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcoin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ktaesthetix",
+      "features": [
+        "Interact with QR Coin auctions on Base",
+        "Use when the user wants to participate in qrcoin.fun QR code auctions — check auction status, v.",
+        "QR Coin lets you bid to display URLs on QR codes",
+        "the highest bidder's URL gets encoded."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcoin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233234813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcoin",
+      "url": "https://clawhub.ai/skills/qrcoin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcoin",
+    "url": "https://clawhub.ai/skills/qrcoin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcoin-b81a28bb4b6d67fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcoin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcoin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:683f652edb9f9cba250e0e15bfc5ab2f0ca026b86fc538bb75f13c633444caa8",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T19:43:15.960Z"
+}

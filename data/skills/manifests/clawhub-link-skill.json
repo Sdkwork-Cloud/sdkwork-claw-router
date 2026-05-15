@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8521,
+  "uuid": "skill-clawhub-link-skill",
+  "skillKey": "clawhub-link-skill",
+  "name": "LinkSKILL",
+  "summary": "Extracts and returns valid URLs from text inputs for easy link management and sharing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.link_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hgvgfgvh",
+      "features": [
+        "Extracts and returns valid URLs from text inputs for easy link management and sharing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/link-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150424835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "link-skill",
+      "url": "https://clawhub.ai/skills/link-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "link-skill",
+    "url": "https://clawhub.ai/skills/link-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/link-skill-fb3890b920a8c0b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/link-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-link-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9827d79ad7a0f31fc155e51ac28501e940260af0698e51d09e8bd1f0d6ffc00d",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:47:30.004Z"
+}

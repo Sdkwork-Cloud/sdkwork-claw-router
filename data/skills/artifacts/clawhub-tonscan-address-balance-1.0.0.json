@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tonscan-address-balance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonscan_address_balance",
+  "skill": {
+    "id": 51278,
+    "skillKey": "clawhub-tonscan-address-balance",
+    "name": "TONSCAN wallet balance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonscan-address-balance",
+    "url": "https://clawhub.ai/skills/tonscan-address-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonscan-address-balance-f1bcd63ba2d38e57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up TON blockchain wallet balances, address information, and token holdings using the free TonScan API — no API key required. Use this skill whenever the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariusfeldmann",
+      "userId": "publishers:mariusfeldmann",
+      "displayName": "marius",
+      "image": "https://avatars.githubusercontent.com/u/1552570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772799756896,
+      "changelog": "Initial release of the TonScan Wallet Balance skill.\n\n- Instantly look up TON blockchain wallet balances and address information via the free TonScan API—no API key required.\n- Supports both user-friendly (EQ..., UQ...) and raw (0:...) address formats.\n- Handles conversion between nanotons and TON for accurate, user-friendly display of balances.\n- Provides code examples in Bash, Python, and JavaScript for easy integration.\n- Documents expected API responses, error handling, and recommended formatting for end-users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e4200d063b82a8a3e13ddbc9863ae9d039df4b3b37e3911df6fb35241e53fcc"
+}

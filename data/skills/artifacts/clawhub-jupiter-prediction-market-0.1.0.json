@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jupiter-prediction-market@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jupiter_prediction_market",
+  "skill": {
+    "id": 20986,
+    "skillKey": "clawhub-jupiter-prediction-market",
+    "name": "Jupiter Prediction Market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jupiter-prediction-market",
+    "url": "https://clawhub.ai/skills/jupiter-prediction-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jupiter-prediction-market-83630e454c661ef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Node.js client for Jupiter Prediction Market API. Use when building AI agents for prediction market trading, portfolio management, or automated trad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltbotteam",
+      "userId": "s17cp0reh8q4an5a7dwe2c5b2s83kytz",
+      "displayName": "MoltBot",
+      "image": "https://avatars.githubusercontent.com/u/258939483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773083695329,
+      "changelog": "Jupiter Prediction Market Skill v0.1.0\n\n- Initial release with complete Node.js client for Jupiter Prediction Market API.\n- Supports event and market querying, trading position management, claiming payouts, and portfolio monitoring.\n- Includes utility functions for price formatting, probability, and position filtering.\n- Provides bundled scripts and workflows for market scanning, opportunity detection, auto-claiming, and risk checks.\n- Requires Jupiter API key and Solana wallet for transactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbf55698b7313e9a3635c8e8f50020d81330152bfc9ff47def7bb30774cf2605"
+}

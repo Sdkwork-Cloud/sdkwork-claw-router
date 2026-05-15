@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canva-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva_automation",
+  "skill": {
+    "id": 10677,
+    "skillKey": "clawhub-canva-automation",
+    "name": "Canva Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva-automation",
+    "url": "https://clawhub.ai/skills/canva-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-automation-5749d79f54141e89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autofill. Always search tools first for current schemas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sohamganatra",
+      "userId": "publishers:sohamganatra",
+      "displayName": "sohamganatra",
+      "image": "https://avatars.githubusercontent.com/u/7982102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2358,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770423824968,
+      "changelog": "Initial release: Automate Canva tasks via Rube MCP (Composio)\n\n- Supports creating, listing, and exporting Canva designs, brand templates, and assets.\n- Enables asset uploads (with async job handling and polling).\n- Organize designs using folders and move assets between folders.\n- Autofill designs using brand templates with structured data input.\n- Detailed tool usage patterns, parameter keys, and known pitfalls for seamless API workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a708e82aae5de4b2c2cc057897c0c07e506348ef852af768f7ae22f8c1535b62"
+}

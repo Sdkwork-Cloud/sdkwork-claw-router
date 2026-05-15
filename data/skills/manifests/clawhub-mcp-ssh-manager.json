@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11584,
+  "uuid": "skill-clawhub-mcp-ssh-manager",
+  "skillKey": "clawhub-mcp-ssh-manager",
+  "name": "MCP SSH Manager",
+  "summary": "This skill should be used when the user asks to \"run ssh command\", \"execute on server\", \"ssh session\", \"upload file\", \"download file\", \"ssh tunnel\", \"check server status\", \"monitor server\", \"deploy files\", \"backup server\", or needs remote.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_ssh_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iMaxTomas",
+      "features": [
+        "This skill should be used when the user asks to \"run ssh command\", \"execute on server\", \"ssh se.",
+        "This skill emphasizes session reuse, workdir organization, and content persistence for sustaina."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-ssh-manager@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47150902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-ssh-manager",
+      "url": "https://clawhub.ai/skills/mcp-ssh-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-ssh-manager",
+    "url": "https://clawhub.ai/skills/mcp-ssh-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-ssh-manager-eb133691cc9c9f9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-ssh-manager@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-ssh-manager-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66251448a1da40f405b2525e386a011776916638860cb609286b268e6421ca1b",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T11:29:36.741Z"
+}

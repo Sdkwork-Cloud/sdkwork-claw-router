@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13173,
+  "uuid": "skill-clawhub-book-carpet-cleaning",
+  "skillKey": "clawhub-book-carpet-cleaning",
+  "name": "Book Carpet Cleaning",
+  "summary": "Book carpet-cleaning services through Lokuli MCP. Use when user needs to find and book carpet-cleaning. Triggers on requests like \"book a carpet-cleaning\", \"find carpet-cleaning near me\", or any carpet-cleaning service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_carpet_cleaning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book carpet-cleaning services through Lokuli MCP",
+        "Use when user needs to find and book carpet-cleaning",
+        "Triggers on requests like \"book a carpet-cleaning\", \"find carpet-cleaning near me\", or any carp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-carpet-cleaning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-carpet-cleaning",
+      "url": "https://clawhub.ai/skills/book-carpet-cleaning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-carpet-cleaning",
+    "url": "https://clawhub.ai/skills/book-carpet-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-carpet-cleaning-dc84e369ecaefd6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-carpet-cleaning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-carpet-cleaning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9ee8a0fd81127110016370ca16977aeff56fc76be1c2e09c98024710e3d87c5",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:16.201Z"
+}

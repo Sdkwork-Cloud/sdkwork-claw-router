@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "audio-announcement",
+    "displayName": "Audio Announcement",
+    "summary": "实时语音播报 AI 操作状态，支持多语言和消息队列，提升透明度与安全感，适配多平台。",
+    "tags": {
+      "latest": "2.0.8"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 17
+    },
+    "createdAt": 1774321952210,
+    "updatedAt": 1777622992408
+  },
+  "latestVersion": {
+    "version": "2.0.8",
+    "createdAt": 1775401497734,
+    "changelog": "**Upgrade summary:** This is a significant update with new scripts, improved packaging, enhanced CLI tools, config system, and stricter integration checks.\n\n- Added 12 new files, removed 4 obsolete scripts, and updated 5 others including README and package info.\n- Introduced a Python package structure with `audio_announcement/` modules and new CLI support.\n- Added central configuration via `requirements.txt`, `setup.py`, and a config file (see docs for paths).\n- Replaced and unified announce scripts (`announce.sh`, `.py`) for better path resolution and platform reliability.\n- Updated documentation and integration workflow to guide self-checks, best practices, and fail-safes.\n- Enhanced safety boundaries—certain destructive operations now require explicit confirmation.\n- All announcements are now played locally in the background with improved volume defaults; no longer sent as files to chats.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "wililam",
+    "userId": "s17bs8ksqhf8p90dsmtvbpsn2583g8s3",
+    "displayName": "AI-GUO",
+    "image": "https://avatars.githubusercontent.com/u/8183952?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622992408
+  }
+}

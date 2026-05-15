@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40069,
+  "uuid": "skill-clawhub-trend-demand-forecaster",
+  "skillKey": "clawhub-trend-demand-forecaster",
+  "name": "Trend Demand Forecaster",
+  "summary": "Turn sales notes, trend signals, seasonal context, promo plans, and inventory constraints into a practical demand forecast brief with base, upside, and downs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_demand_forecaster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn sales notes, trend signals, seasonal context, promo plans, and inventory constraints into."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trend-demand-forecaster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trend-demand-forecaster",
+      "url": "https://clawhub.ai/skills/trend-demand-forecaster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-demand-forecaster",
+    "url": "https://clawhub.ai/skills/trend-demand-forecaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-demand-forecaster-8ac0e18de8666632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trend-demand-forecaster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trend-demand-forecaster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e1c992684bb10768271180c635d073e033f230ba03bd9670dc8535a72d59abc",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T00:27:03.070Z"
+}

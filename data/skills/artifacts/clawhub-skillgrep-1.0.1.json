@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillgrep@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillgrep",
+  "skill": {
+    "id": 42002,
+    "skillKey": "clawhub-skillgrep",
+    "name": "Skill Grep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillgrep",
+    "url": "https://clawhub.ai/skills/skillgrep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillgrep-845ac353758df9ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a user is trying to discover an installable or reusable skill or workflow, especially when they ask for a skill for a task, want to compare nearby s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littledinoc",
+      "userId": "s1792jew4fvjg87nsn3snmb0dn84201z",
+      "displayName": "Yichen Tang",
+      "image": "https://avatars.githubusercontent.com/u/95914750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776239584670,
+      "changelog": "- Search API endpoint changed from /search_multi to /search_multi_field.  \n- Added required origin_query field (captures user's original input, may be non-English).  \n- Updated contract details and usage instructions for new /search_multi_field API.  \n- Guidance for language handling: origin_query kept as user input; payload fields still use English translation if needed.  \n- Example requests and code updated to match new request structure.  \n- No core logic or functional flow changes beyond the new field and endpoint update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7a367ca4f627aeb1edb37dd82d59f6788958a032eeaa604ce17f7da1989b6bf"
+}

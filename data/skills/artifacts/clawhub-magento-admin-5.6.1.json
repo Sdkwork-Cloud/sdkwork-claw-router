@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/magento-admin@5.6.1",
+  "version": "5.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magento_admin",
+  "skill": {
+    "id": 31256,
+    "skillKey": "clawhub-magento-admin",
+    "name": "Magento 2 Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magento-admin",
+    "url": "https://clawhub.ai/skills/magento-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magento-admin-bd37482ba292099e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Magento 2 store administration via SSH key auth, REST API, GraphQL, and direct DB access. For server owners on their own infrastructure. SSH key aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nj070574-gif",
+      "userId": "s1747h3dssx5wbb4xxpn85vtsd83gnax",
+      "displayName": "Only 1 Naren",
+      "image": "https://avatars.githubusercontent.com/u/233563303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "5.6.1",
+      "createdAt": 1777060313555,
+      "changelog": "v5.6.1: Rewrote README to explain scanner high-risk rating. Leads with scanner check table showing all technical checks pass. Explains why high-risk is expected for a full admin tool. Security model, least-privilege, and who-should-install sections added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ba41b2f61efb6db9a1334bf04c7c15a613ddf5c8edd54dec61d446fd24627a4"
+}

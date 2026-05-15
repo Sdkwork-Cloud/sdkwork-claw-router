@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23150,
+  "uuid": "skill-clawhub-osori",
+  "skillKey": "clawhub-osori",
+  "name": "Osori",
+  "summary": "Osori v1.6.1 — Local project registry & context loader with Telegram slash commands. Registry versioning + auto-migration + root filters + root management +...",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osori",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oozoofrog",
+      "features": [
+        "Osori v1.6.1 — Local project registry & context loader with Telegram slash commands",
+        "Registry versioning + auto-migration + root filters + root management +..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osori@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3011832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osori",
+      "url": "https://clawhub.ai/skills/osori"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osori",
+    "url": "https://clawhub.ai/skills/osori",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osori-328f65ad0f81bcd0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osori@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-osori-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f9c39e5390eb9d28ca130ffcc59c61bb5bac5148467cdc25b940c848a32e823",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:31:37.889Z"
+}

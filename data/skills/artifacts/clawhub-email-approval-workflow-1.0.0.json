@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-approval-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_approval_workflow",
+  "skill": {
+    "id": 45183,
+    "skillKey": "clawhub-email-approval-workflow",
+    "name": "Email Approval Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-approval-workflow",
+    "url": "https://clawhub.ai/skills/email-approval-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-approval-workflow-46fccb19577f9f6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft external emails for human approval before sending. Use when communicating with external parties (support, competitions, businesses). Always draft first..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776150773435,
+      "changelog": "- Initial release of the email-approval-workflow skill, introducing a structured process for drafting, reviewing, and sending external emails.\n- Requires all external communications to be drafted and explicitly approved by Stef before sending.\n- Provides step-by-step workflow: draft creation, approval request, explicit approval, sending, and logging.\n- Includes templates, approval triggers, error handling steps, and integration guidance for different agents.\n- All actions are logged for auditability and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37f0a00e1f056227f543375f08cd04a1fb6704791bf5a3ab09d4591d2e8a1a3b"
+}

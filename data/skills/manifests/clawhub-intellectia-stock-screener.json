@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10738,
+  "uuid": "skill-clawhub-intellectia-stock-screener",
+  "skillKey": "clawhub-intellectia-stock-screener",
+  "name": "Stock Screener",
+  "summary": "Get stock screener list data from Intellectia API (no auth) and summarize results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intellectia_stock_screener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "intellectiaAI",
+      "features": [
+        "Get stock screener list data from Intellectia API (no auth) and summarize results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intellectia-stock-screener@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258763693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intellectia-stock-screener",
+      "url": "https://clawhub.ai/skills/intellectia-stock-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intellectia-stock-screener",
+    "url": "https://clawhub.ai/skills/intellectia-stock-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intellectia-stock-screener-ce4498f2fb88326c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intellectia-stock-screener@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intellectia-stock-screener-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5a71d6430fb531a60cb8c9b283908f699044b624bd8041af95c2843ff6afe1e",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T08:11:47.492Z"
+}

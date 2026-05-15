@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48913,
+  "uuid": "skill-clawhub-mnemo-cortex",
+  "skillKey": "clawhub-mnemo-cortex",
+  "name": "Mnemo Cortex",
+  "summary": "Installs and wires Mnemo Cortex (local-first persistent memory) into OpenClaw and other MCP-capable agents. Use for cross-session recall, decision history, o...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mnemo_cortex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guy Hutchins",
+      "features": [
+        "Installs and wires Mnemo Cortex (local-first persistent memory) into OpenClaw and other MCP-cap.",
+        "Use for cross-session recall, decision history, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mnemo-cortex@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187584006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mnemo-cortex",
+      "url": "https://clawhub.ai/skills/mnemo-cortex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mnemo-cortex",
+    "url": "https://clawhub.ai/skills/mnemo-cortex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mnemo-cortex-21df205f9aaeb318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mnemo-cortex@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mnemo-cortex-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1afcc4fbdec034dda052d3b396b1a2e904c4887fba0bf4eddd7e5a801fd14a9",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T23:59:13.980Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amateur-radio-dx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amateur_radio_dx",
+  "skill": {
+    "id": 18487,
+    "skillKey": "clawhub-amateur-radio-dx",
+    "name": "Amateur Radio DX Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amateur-radio-dx",
+    "url": "https://clawhub.ai/skills/amateur-radio-dx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amateur-radio-dx-0692720ded7a9b12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor DX clusters for rare station spots, track active DX expeditions, and get daily band activity digests for amateur radio operators."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capt-marbles",
+      "userId": "publishers:capt-marbles",
+      "displayName": "captmarbles",
+      "image": "https://avatars.githubusercontent.com/u/5841195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 687,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771279131413,
+      "changelog": "Initial release: Real-time DX cluster monitoring and personalized alerts for ham radio operators.\n\n- Monitor global DX clusters for live and rare station spots.\n- Track active DX expeditions and get daily band activity digests.\n- Automated email/SMS alerts and digest summaries with cron support.\n- Use AI-enhanced mode for propagation prediction and DXCC filtering.\n- Personalized scoring and high-priority alerts based on your station/QTH.\n- Includes common band plans, rare prefix lists, and prompt examples for Clawdbot.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1190becf2b757d1a7eceb46b2bb5dc612c3e38584b28b15257ddbdcd1c70f296"
+}

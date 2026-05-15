@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22967,
+  "uuid": "skill-clawhub-hume-network",
+  "skillKey": "clawhub-hume-network",
+  "name": "Hume Network",
+  "summary": "Collective intelligence network node. Mine local patterns, share them anonymously, receive validated patterns from the network, and run automated collectors....",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hume_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zeroptis",
+      "features": [
+        "Collective intelligence network node",
+        "Mine local patterns, share them anonymously, receive validated patterns from the network, and r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hume-network@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33350088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hume-network",
+      "url": "https://clawhub.ai/skills/hume-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hume-network",
+    "url": "https://clawhub.ai/skills/hume-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hume-network-1842e2630c44831a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hume-network@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hume-network-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36cb78138ee1e7914af39a7407a4ff9f601ce4a38b9a992cea64b437e1fb7749",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:25:11.149Z"
+}

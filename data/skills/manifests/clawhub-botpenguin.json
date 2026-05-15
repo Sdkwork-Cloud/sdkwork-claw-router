@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23924,
+  "uuid": "skill-clawhub-botpenguin",
+  "skillKey": "clawhub-botpenguin",
+  "name": "Botpenguin",
+  "summary": "BotPenguin integration. Manage Chatbots. Use when the user wants to interact with BotPenguin data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botpenguin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "BotPenguin integration",
+        "Manage Chatbots",
+        "Use when the user wants to interact with BotPenguin data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botpenguin@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botpenguin",
+      "url": "https://clawhub.ai/skills/botpenguin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botpenguin",
+    "url": "https://clawhub.ai/skills/botpenguin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botpenguin-d94447ad466287cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botpenguin@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-botpenguin-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3947acf202f93c03e000c4d7842a9dd9702400454079bbe3a6aab88cc16af5d0",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:14:55.422Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dockerfile-builder@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dockerfile_builder",
+  "skill": {
+    "id": 19989,
+    "skillKey": "clawhub-dockerfile-builder",
+    "name": "Dockerfile Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dockerfile-builder",
+    "url": "https://clawhub.ai/skills/dockerfile-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dockerfile-builder-51993e7658050a5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and lint Dockerfiles for common languages and frameworks. Use when creating container configs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773922161726,
+      "changelog": "v3.0.0: Complete rewrite with real functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d2e722a0d3b4231dbb14d84e2fa73a3fb666563d6aa8af74b0cb3ab68a28d9d"
+}

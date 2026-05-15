@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23484,
+  "uuid": "skill-clawhub-marketing-ops",
+  "skillKey": "clawhub-marketing-ops",
+  "name": "marketing-ops",
+  "summary": "Central router for the marketing skill ecosystem. Use when unsure which marketing skill to use, when orchestrating a multi-skill campaign, or when coordinati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Central router for the marketing skill ecosystem",
+        "Use when unsure which marketing skill to use, when orchestrating a multi-skill campaign, or whe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketing-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketing-ops",
+      "url": "https://clawhub.ai/skills/marketing-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-ops",
+    "url": "https://clawhub.ai/skills/marketing-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-ops-1804ac891082ac93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketing-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketing-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ab6bc202de5d94bc696670c5c9fa3aae95300567d5fd62394b2ba1b54e162db",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:23:48.861Z"
+}

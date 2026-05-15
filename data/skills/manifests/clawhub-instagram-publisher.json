@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37616,
+  "uuid": "skill-clawhub-instagram-publisher",
+  "skillKey": "clawhub-instagram-publisher",
+  "name": "Instagram Publisher",
+  "summary": "Publish posts to Instagram. Use when the user says 'post to Instagram', 'publish on IG', 'schedule Instagram post', 'create Instagram carousel', 'post a Reel...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "snoopyrain",
+      "features": [
+        "Publish posts to Instagram",
+        "Use when the user says 'post to Instagram', 'publish on IG', 'schedule Instagram post', 'create."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9717776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-publisher",
+      "url": "https://clawhub.ai/skills/instagram-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-publisher",
+    "url": "https://clawhub.ai/skills/instagram-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-publisher-97649351008f3b7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87bb060e087afabfe00f583ae04a7931bb147f07804c076a8e7405276cabfd6a",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:39:01.719Z"
+}

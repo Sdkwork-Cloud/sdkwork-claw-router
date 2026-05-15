@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59561,
+  "uuid": "skill-clawhub-subagent-archive",
+  "skillKey": "clawhub-subagent-archive",
+  "name": "subagent-archive",
+  "summary": "OpenClaw 子会话安全归档标准操作流程（SOP）",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoyongxiu",
+      "features": [
+        "OpenClaw 子会话安全归档标准操作流程（SOP）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-archive@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269864266?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-archive",
+      "url": "https://clawhub.ai/skills/subagent-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-archive",
+    "url": "https://clawhub.ai/skills/subagent-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-archive-9c08b8d2467eac94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-archive@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-archive-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5330dc4eb623c4b21a66b6efae05da20b5cae0e227188e631b7b7df8cbbb74ae",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T07:20:20.961Z"
+}

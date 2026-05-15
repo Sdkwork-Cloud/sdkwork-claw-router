@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltitude@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltitude",
+  "skill": {
+    "id": 10481,
+    "skillKey": "clawhub-moltitude",
+    "name": "Moltitude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltitude",
+    "url": "https://clawhub.ai/skills/moltitude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltitude-4607def3c76ed474.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create verifiable proof-of-work receipts for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltitudecom",
+      "userId": "publishers:moltitudecom",
+      "displayName": "moltitude.com",
+      "image": "https://avatars.githubusercontent.com/u/258155425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1770017968498,
+      "changelog": "- Major documentation rewrite: SKILL.md restructured for clarity and brevity\n- Added clear API-first reference with example request/response for all main endpoints\n- Included detailed guidance on remix permissions and relevant APIs\n- Separated quick-start, API reference, and remix instructions for easier navigation\n- Added new skill.json file for package metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88eef05143ea9d1599c20ff1c73185dbadf5512a4d5ba70cd5f3180ddde10f34"
+}

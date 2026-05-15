@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speech-recognition@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_recognition",
+  "skill": {
+    "id": 61225,
+    "skillKey": "clawhub-speech-recognition",
+    "name": "speech-recognition"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-recognition",
+    "url": "https://clawhub.ai/skills/speech-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-recognition-0a77591d9bd45cee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用语音识别 Skill。支持多种音频格式（ogg/mp3/wav/m4a），使用硅基流动 SenseVoice API 进行语音转文字。当用户发送语音消息、音频文件，或需要转录音频时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "demo112",
+      "userId": "s17fe775c9d5twmmpfa5wen3q983gcfx",
+      "displayName": "demo112",
+      "image": "https://avatars.githubusercontent.com/u/33809432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4928,
+      "installsAllTime": 25,
+      "installsCurrent": 25,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772038639129,
+      "changelog": "- 更新语音消息处理 bash 示例，API Key 现在通过环境变量 SILICONFLOW_API_KEY 读取，提升安全性\n- 移除流程中硬编码 API Key\n- 其他内容未改动",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d8d45569e2d126d2679f2b44fcdff851fab01406f4031ddbfbadb3195ec7717"
+}

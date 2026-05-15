@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37792,
+  "uuid": "skill-clawhub-agent-fuel",
+  "skillKey": "clawhub-agent-fuel",
+  "name": "Agent Fuel",
+  "summary": "Autonomous agent wallet management with MoonPay auto top-up, x402 payments, and OpenWallet Standard. Agents never run out of gas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_fuel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zedit42",
+      "features": [
+        "Autonomous agent wallet management with MoonPay auto top-up, x402 payments, and OpenWallet Stan.",
+        "Agents never run out of gas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-fuel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87221822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-fuel",
+      "url": "https://clawhub.ai/skills/agent-fuel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-fuel",
+    "url": "https://clawhub.ai/skills/agent-fuel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-fuel-5889c6f380610918.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-fuel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-fuel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44ccc5f2fa4caa60f0c37437ed985534c592b11e1690591c7b035e2c3e5533d5",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:52:07.500Z"
+}

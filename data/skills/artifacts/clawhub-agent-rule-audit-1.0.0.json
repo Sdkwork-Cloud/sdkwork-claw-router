@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-rule-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_rule_audit",
+  "skill": {
+    "id": 34626,
+    "skillKey": "clawhub-agent-rule-audit",
+    "name": "Agent Rule Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-rule-audit",
+    "url": "https://clawhub.ai/skills/agent-rule-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-rule-audit-d38ce3b2fb31b64f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit an OpenClaw agent's behavior-layer rules and prompt sources to find drift, redundancy, conflict, loss of focus, and weak behavior guidance. Use when re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gkso",
+      "userId": "s17e9yzepznksqamnnncq3cwjs83p7me",
+      "displayName": "Alan Wang",
+      "image": "https://avatars.githubusercontent.com/u/509318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774656451817,
+      "changelog": "Initial release: audit OpenClaw agent behavior-layer rules, detect drift/conflict/focus loss, and provide executable restructuring recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1df8ee8c80e2fe6c9ca0ee73f2e9b8cdc4dbca283545814d7c7ebf102be693ca"
+}

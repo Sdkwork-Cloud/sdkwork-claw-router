@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14002,
+  "uuid": "skill-clawhub-wrynai-skill",
+  "skillKey": "clawhub-wrynai-skill",
+  "name": "WrynAI Skill",
+  "summary": "Perform advanced web crawling and content extraction with multi-page crawling, search result parsing, pattern filtering, and screenshot capture using the Wry...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wrynai_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wrynai",
+      "features": [
+        "Perform advanced web crawling and content extraction with multi-page crawling, search result pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wrynai-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229466002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wrynai-skill",
+      "url": "https://clawhub.ai/skills/wrynai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wrynai-skill",
+    "url": "https://clawhub.ai/skills/wrynai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wrynai-skill-71e15882c177ee72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wrynai-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wrynai-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd7c6a86c113d4bb37e89b7a367ab8883e7e45e8595c5dca55d0a220a8268fb2",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T13:18:19.955Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-ai-tiktok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_ai_tiktok",
+  "skill": {
+    "id": 32145,
+    "skillKey": "clawhub-video-maker-ai-tiktok",
+    "name": "Video Maker Ai Tiktok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-ai-tiktok",
+    "url": "https://clawhub.ai/skills/video-maker-ai-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-ai-tiktok-f3cc5ba1c2febd2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get TikTok-ready clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"cut t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775941850141,
+      "changelog": "Initial release of Video Maker AI TikTok.\n\n- Create TikTok-ready videos from uploaded clips (MP4, MOV, AVI, WebM, up to 500MB) using AI—just describe your edit and export 1080p MP4s.\n- Automated backend handles upload, session management, AI editing, and cloud rendering pipeline (30–90 seconds typical render time).\n- Supports captions, background music, aspect ratio adjustments, text overlays, and more via natural language prompts.\n- Includes session-based workflow with credits/balance tracking, export download management, and error handling.\n- Simple one-step onboarding: uses NEMO_TOKEN if available, or fetches a temporary anonymous token for 7 days.\n- File type, error messaging, and credits usage transparently managed; supports multiple video/image/audio formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dfb15664fabb2a7bd52316ced30442f38b08e6a9c15adbb37a85c3f176db8ed"
+}

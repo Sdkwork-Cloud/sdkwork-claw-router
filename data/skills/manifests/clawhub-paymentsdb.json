@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13002,
+  "uuid": "skill-clawhub-paymentsdb",
+  "skillKey": "clawhub-paymentsdb",
+  "name": "Stripe",
+  "summary": "Query Stripe customer and billing data from a synced PostgreSQL database. Use when the user asks about Stripe customers, subscriptions, invoices, charges, or any Stripe-related data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paymentsdb",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ramonverse",
+      "features": [
+        "Query Stripe customer and billing data from a synced PostgreSQL database",
+        "Use when the user asks about Stripe customers, subscriptions, invoices, charges, or any Stripe-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paymentsdb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121360087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paymentsdb",
+      "url": "https://clawhub.ai/skills/paymentsdb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paymentsdb",
+    "url": "https://clawhub.ai/skills/paymentsdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paymentsdb-3568804f17dffb2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paymentsdb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paymentsdb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:942fc846117c3443adb20cd4b99e1ef1f5366048845b90fa4e4d6f5cd9dda740",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:58:44.247Z"
+}

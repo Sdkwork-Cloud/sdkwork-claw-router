@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_research",
+  "skill": {
+    "id": 29972,
+    "skillKey": "clawhub-tavily-research",
+    "name": "Tavily Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-research",
+    "url": "https://clawhub.ai/skills/tavily-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-research-8b966afecf88cfcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive research grounded in web data with explicit citations. Use when you need multi-source synthesis—comparisons, current events, market analysis, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evanydl",
+      "userId": "s176p0spbtshsbd2jxej58029985qrzh",
+      "displayName": "Evan Rimer",
+      "image": "https://avatars.githubusercontent.com/u/208671696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 779,
+      "installsAllTime": 8,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773164859582,
+      "changelog": "tavily-research v1.0.0 – Initial public release.\n\n- Comprehensive research with web-cited synthesis and multiple models (mini, pro, auto).\n- Supports OAuth authentication (browser-based) or API key via settings.\n- Flexible CLI usage: input topic as JSON; optional output to file.\n- Model choice for either quick overviews or deep analysis.\n- Detailed setup and usage instructions provided in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8ee2418aa9786f22ba3c0572a15e89772eef71b21d11df4f5515c64767e57cd"
+}

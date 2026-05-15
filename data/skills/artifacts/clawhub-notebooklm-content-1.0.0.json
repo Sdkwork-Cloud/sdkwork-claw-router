@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notebooklm-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_content",
+  "skill": {
+    "id": 32005,
+    "skillKey": "clawhub-notebooklm-content",
+    "name": "Notebooklm Content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-content",
+    "url": "https://clawhub.ai/skills/notebooklm-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-content-875bbf5b3d675c7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate slides, audio overviews, and documents from sources using Google NotebookLM via browser automation. Use when the user wants to (1) create presentati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aoaibiz",
+      "userId": "publishers:aoaibiz",
+      "displayName": "aoaibiz",
+      "image": "https://avatars.githubusercontent.com/u/262210312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773828684347,
+      "changelog": "Version 1.0.0 — Initial release\n\n- Automates creation of slides, audio overviews, and documents from NotebookLM sources via Chrome browser relay.\n- Supports generating learning materials from text, URLs, and files using Google NotebookLM.\n- Guides users through required setup: OpenClaw Browser Relay extension and NotebookLM login.\n- Provides step-by-step workflow and command examples for content generation.\n- Outlines troubleshooting steps and important usage notes for reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f64dd78824d081f3268ef0f3d275ce9cf885552080da09405950b888306bdba5"
+}

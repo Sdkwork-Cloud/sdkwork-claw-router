@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-debug-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_debug_assistant",
+  "skill": {
+    "id": 33888,
+    "skillKey": "clawhub-ai-debug-assistant",
+    "name": "Debug Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-debug-assistant",
+    "url": "https://clawhub.ai/skills/ai-debug-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-debug-assistant-07a0f52c99d8e003.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered debugging assistant. Analyze error logs, explain error messages, parse stack traces, and get fix suggestions with cheatsheets for 8 languages. Pow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775727597076,
+      "changelog": "Initial release: AI-powered debugging for 8 languages with error analysis, stack trace parsing, and fix suggestions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6ecf9eb5745330c9db3a615962cb21d2b1179c559e9223bca9a8ff0537a2059"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69763,
+  "uuid": "skill-clawhub-invoice-ocr",
+  "skillKey": "clawhub-invoice-ocr",
+  "name": "发票内容识别",
+  "summary": "增值税发票识别技能：自动识别 PDF（单页/多页）或各种常见图片格式（PNG/JPG等）的发票，调用百度云增值税发票 OCR API 提取关键信息，输出结构化 Excel 报告。适用于以下场景： 用户上传发票文件并要求识别、提取、转换信息时；需要批量处理发票并生成 Excel 汇总表时； 需要对发票进行检测、内容...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pengyulong",
+      "features": [
+        "增值税发票识别技能：自动识别 PDF（单页/多页）或各种常见图片格式（PNG/JPG等）的发票，调用百度云增值税发票 OCR API 提取关键信息，输出结构化 Excel 报告。适用于以下场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoice-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9189026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoice-ocr",
+      "url": "https://clawhub.ai/skills/invoice-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-ocr",
+    "url": "https://clawhub.ai/skills/invoice-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-ocr-4f352e1967b09bdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoice-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoice-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd0ec1173558a7a8f405b1560662e6c44ceba138cfa862a74f959d97785407d2",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:42:49.175Z"
+}

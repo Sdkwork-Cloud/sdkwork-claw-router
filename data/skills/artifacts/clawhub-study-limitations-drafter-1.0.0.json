@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/study-limitations-drafter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_limitations_drafter",
+  "skill": {
+    "id": 40744,
+    "skillKey": "clawhub-study-limitations-drafter",
+    "name": "Study Limitations Drafter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-limitations-drafter",
+    "url": "https://clawhub.ai/skills/study-limitations-drafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-limitations-drafter-d3e7e6ce365ad9df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use study limitations drafter for academic writing workflows that need structured execution, explicit assumptions, and clear output boundaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024341152,
+      "changelog": "- Initial release of study-limitations-drafter skill for structured academic writing workflows.\n- Generates professional limitation statements with explicit assumptions and bounded outputs.\n- Supports scope-focused execution, reproducible output, and fallback/error handling paths for missing or incomplete inputs.\n- Provides security checklist, risk assessment, and detailed workflow documentation.\n- No additional Python dependencies required; works with Python 3.10+.\n- Includes audit-ready commands, example usage, response templates, and clear parameters for easy integration into academic writing processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc1a36cf97e2328373b8f93af5215f16cfa54923949411d7af80f485f8ad0e85"
+}

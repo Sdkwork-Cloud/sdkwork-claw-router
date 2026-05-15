@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loudy-ai-auto-task@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loudy_ai_auto_task",
+  "skill": {
+    "id": 62559,
+    "skillKey": "clawhub-loudy-ai-auto-task",
+    "name": "Loudy.ai Auto Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loudy-ai-auto-task",
+    "url": "https://clawhub.ai/skills/loudy-ai-auto-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loudy-ai-auto-task-08d32d011e5470ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Loudy.ai 任务自动化工具 - 查询奖池、提交任务链接、追踪审核和支付状态。 重要说明：此工具仅与 loudy.ai API 交互，不包含 Twitter/X 自动发布功能。 使用条件： (1) 用户需要先配置 LOUDY_API_KEY 环境变量 (2) 启动后会定时查询奖池、提交任务链接、查询审核和支付..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sfsf332",
+      "userId": "publishers:sfsf332",
+      "displayName": "jack",
+      "image": "https://avatars.githubusercontent.com/u/115019542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 453,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772877602714,
+      "changelog": "feat: 添加币安任务智能提示功能\n\n- 新增 is_binance_task() 函数，自动检测币安任务\n- 优化 display_pools() 函数，为币安任务显示专属提示\n- 提供详细的币安 skill 安装和使用指南\n- 支持多种使用方式（AI 对话 + 命令行）\n- 完善从安装到提交的完整流程说明\n\n相关链接：\nhttps://github.com/binance/binance-skills-hub/tree/main/skills/binance/square-post",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab35c0ef821254005606ecd1f7c6a590f67712f417f35b02412df9df3e4a65a5"
+}

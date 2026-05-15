@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42910,
+  "uuid": "skill-clawhub-weekly-report-flow",
+  "skillKey": "clawhub-weekly-report-flow",
+  "name": "Weekly Report Flow",
+  "summary": "Generate and submit weekly reports from Aliyun DevOps workitems via EMOP API. Use when asked to run the weekly report flow, backfill missing weeks, or explai...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaojiangfeng",
+      "features": [
+        "Generate and submit weekly reports from Aliyun DevOps workitems via EMOP API",
+        "Use when asked to run the weekly report flow, backfill missing weeks, or explai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-report-flow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67375195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-report-flow",
+      "url": "https://clawhub.ai/skills/weekly-report-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-flow",
+    "url": "https://clawhub.ai/skills/weekly-report-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-flow-2112cbbc28a97eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-report-flow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-report-flow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84567b236d7ef33f0900c6b2337a1b3853bb7e818c04afb55045579ab0192ca2",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:41:13.931Z"
+}

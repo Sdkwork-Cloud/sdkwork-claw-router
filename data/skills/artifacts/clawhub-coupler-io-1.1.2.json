@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coupler-io@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupler_io",
+  "skill": {
+    "id": 16986,
+    "skillKey": "clawhub-coupler-io",
+    "name": "Coupler.io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupler-io",
+    "url": "https://clawhub.ai/skills/coupler-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupler-io-ee2a9c695a545397.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Coupler.io data flows configured with OpenClaw destination to list flows, get schemas, and query data via OAuth-secured read-only API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nika-is-nika",
+      "userId": "publishers:nika-is-nika",
+      "displayName": "Nika",
+      "image": "https://avatars.githubusercontent.com/u/205906945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 830,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1771947959849,
+      "changelog": "- Updated authentication setup instructions: replaced `mcporter auth https://mcp.coupler.io/mcp` with `mcporter auth --http-url https://mcp.coupler.io/mcp`\n- Adjusted re-authentication command to use `--http-url` flag\n- No functional or behavioral changes to the skill itself\n- Documentation improvements for clarity and accuracy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae814808aca7a2a5fbf5e776f7f9504a42c002e594a2615a582c51b6c07d4907"
+}

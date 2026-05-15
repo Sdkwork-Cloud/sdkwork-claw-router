@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brikko-pii-mask@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brikko_pii_mask",
+  "skill": {
+    "id": 66957,
+    "skillKey": "clawhub-brikko-pii-mask",
+    "name": "Brikko PII Mask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brikko-pii-mask",
+    "url": "https://clawhub.ai/skills/brikko-pii-mask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brikko-pii-mask-28387105ca40923c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Маскирует персональные данные (ФИО, ИНН, СНИЛС, ОГРН, ОГРНИП, паспорт, телефон, email, банковский счёт) в тексте перед отправкой в LLM, и восстанавливает пле..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bbchort",
+      "userId": "s17dvj5jq7w53fv8te24nxf0gn866h7b",
+      "displayName": "bbchrt",
+      "image": "https://avatars.githubusercontent.com/u/174191378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778090331467,
+      "changelog": "Initial release: Russian PII detection (FIO, INN, SNILS, OGRN, OGRNIP, passport, phone, email, bank account) with checksum validation. Compatible with Claude Code, OpenClaw, Codex.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee9e36656b9646aed30f4bb535432118aafa2f5f8779c604124d4614cdce2707"
+}

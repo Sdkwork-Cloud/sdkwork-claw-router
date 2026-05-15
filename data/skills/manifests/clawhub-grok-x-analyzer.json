@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35263,
+  "uuid": "skill-clawhub-grok-x-analyzer",
+  "skillKey": "clawhub-grok-x-analyzer",
+  "name": "Grok X Analyzer",
+  "summary": "Dynamic, Grok 4.3-inspired analyzer for X (Twitter) posts, threads, trends, user activity, and related data. Use when users mention X/Twitter URLs/posts, ask...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_x_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "Dynamic, Grok 4.3-inspired analyzer for X (Twitter) posts, threads, trends, user activity, and.",
+        "Use when users mention X/Twitter URLs/posts, ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-x-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-x-analyzer",
+      "url": "https://clawhub.ai/skills/grok-x-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-x-analyzer",
+    "url": "https://clawhub.ai/skills/grok-x-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-x-analyzer-ad11de9b0ebb4ee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-x-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-x-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19c824add723d52fe484bfd4230715c93dfb6609a8f1c05bdd5540e5394e47df",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T18:50:09.271Z"
+}

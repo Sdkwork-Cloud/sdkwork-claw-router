@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_tools",
+  "skill": {
+    "id": 63957,
+    "skillKey": "clawhub-docx-tools",
+    "name": "Docx Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-tools",
+    "url": "https://clawhub.ai/skills/docx-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-tools-896e659ee82b9019.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Word文档处理工具集 - 支持DOCX/Markdown互转、文档读取写入、多章节整合。纯本地操作，无需网络，安全可靠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776403142552,
+      "changelog": "- 首次发布 docx-tools 工具集，支持 Word (DOCX) 与 Markdown 互转、内容读取与写入、多章节整合等功能。\n- 提供详细使用示例，包括代码、参数说明和典型场景指导。\n- 明确纯本地无网络、依赖少、安全可靠等产品特点。\n- 支持多平台（Windows/Linux/macOS），无需 Microsoft Word。\n- 新增常见问题解答、与 word-vba 对比等辅助文档内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05b8a3d8524b608f6f231bc68a582ecc6686e4d4ad1360e69c2b4124fc3641e3"
+}

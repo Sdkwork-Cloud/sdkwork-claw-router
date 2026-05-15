@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doubao-seedream-seedance-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_seedream_seedance_skill",
+  "skill": {
+    "id": 61958,
+    "skillKey": "clawhub-doubao-seedream-seedance-skill",
+    "name": "Doubao Seedream & Seedance API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-seedream-seedance-skill",
+    "url": "https://clawhub.ai/skills/doubao-seedream-seedance-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-seedream-seedance-skill-cef221fa4f89819b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供火山引擎API接口，实现文本及图片生成图像和视频、视觉理解、任务管理和配置设置功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-lychee",
+      "userId": "s172977s5tz0y4f4n1z1h4mvgh83gdnx",
+      "displayName": "AI-Lychee",
+      "image": "https://avatars.githubusercontent.com/u/252312198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 828,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 8,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772654958580,
+      "changelog": "Version 1.0.3\n\n- Added initial test suite with `tests/test_model_list.py` and `tests/test_smoke_e2e.py`\n- Introduced toolkit modules: `model_list.py`, `smart_helper.py`, `smoke_e2e.py`, and `task_query.py`\n- Established core structure for testing and toolkit functionality\n- No changes to existing files; all additions are new files",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ab40e33c29e2de6aab0e97101a51dd2fb7cc1b5d26566de4604ad094724f7c2"
+}

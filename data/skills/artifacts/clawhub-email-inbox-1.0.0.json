@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-inbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_inbox",
+  "skill": {
+    "id": 39106,
+    "skillKey": "clawhub-email-inbox",
+    "name": "email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-inbox",
+    "url": "https://clawhub.ai/skills/email-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-inbox-d6a6d3d59e8283ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "summarize, triage, and draft actions for incoming email. use when the user wants chatgpt to check an inbox, identify important unread messages, group emails..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangweifen2025-dotcom",
+      "userId": "s17d3y3p206crd7x5ezdhc1d8h83zqy4",
+      "displayName": "fangweifen2025-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/227732619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774967802645,
+      "changelog": "- Initial release of the email-inbox-triage skill.\n- Summarizes, classifies, and prioritizes incoming emails by urgency, topic, and action needed.\n- Extracts action items, deadlines, and provides concise inbox and priority summaries.\n- Groups related messages, filters for important senders or topics, and prepares reply drafts upon user request.\n- Designed for use with Gmail or any connected mail tool, with guidance for manual input if no connector is available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4a7423b2d9a37ea5c2f65e055e67bf36231d14d89078b8f8c96e7ba313ee0a0"
+}

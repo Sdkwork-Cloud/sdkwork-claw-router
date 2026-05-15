@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67253,
+  "uuid": "skill-clawhub-practical-news-monitor",
+  "skillKey": "clawhub-practical-news-monitor",
+  "name": "Practical News Monitor",
+  "summary": "支持地缘政治、石油、黄金等关键词的多数据源新闻监控，自动保存数据并生成摘要报告，易于扩展和定制。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.practical_news_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zrisingz-crypto",
+      "features": [
+        "支持地缘政治、石油、黄金等关键词的多数据源新闻监控，自动保存数据并生成摘要报告，易于扩展和定制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/practical-news-monitor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256700950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "practical-news-monitor",
+      "url": "https://clawhub.ai/skills/practical-news-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "practical-news-monitor",
+    "url": "https://clawhub.ai/skills/practical-news-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/practical-news-monitor-f0c3c7184a8f58ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/practical-news-monitor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-practical-news-monitor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82103014dcad67f64ec3304b232eb6f7491199c32ae6052983def1270b731c37",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:05:39.356Z"
+}

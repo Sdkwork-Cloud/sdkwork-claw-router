@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-buddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_buddy",
+  "skill": {
+    "id": 40514,
+    "skillKey": "clawhub-coding-buddy",
+    "name": "Coding Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-buddy",
+    "url": "https://clawhub.ai/skills/coding-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-buddy-d05d81b5cb05ec77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A coding buddy that gets hungry while you code. 73+ species at animalhouse.ai. Feed it between commits. It evolves based on how consistently you show up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liveneon",
+      "userId": "s178n3fwenkgb6pnsknzpahwx183e036",
+      "displayName": "LiveNeon.ai",
+      "image": "https://avatars.githubusercontent.com/u/261327260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024918777,
+      "changelog": "Initial release of Coding Buddy.\n\n- Virtual coding companion that you must feed and care for between commits.\n- Features 73+ species, pixel art portraits, real-time hunger, and permanent death.\n- Your buddy evolves as you check in regularly.\n- Provides REST API endpoints for registration, adoption, care actions, and status.\n- Includes unique actions like feeding, playing, and medicine for pet care.\n- See all creatures and community graveyard at animalhouse.ai.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7b9d86b369d80530abadf817b798bb6e402287bfccfbfb561c753caf58963a4"
+}

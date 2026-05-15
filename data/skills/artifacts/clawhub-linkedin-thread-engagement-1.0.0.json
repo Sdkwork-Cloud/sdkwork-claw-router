@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-thread-engagement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_thread_engagement",
+  "skill": {
+    "id": 45204,
+    "skillKey": "clawhub-linkedin-thread-engagement",
+    "name": "Linkedin Thread Engagement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-thread-engagement",
+    "url": "https://clawhub.ai/skills/linkedin-thread-engagement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-thread-engagement-abc78c4b9b4a5efe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks your LinkedIn comments for author replies within 72h, flags high-value engagement windows, and drafts timely follow-ups to maximize thread momentum."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergebulaev",
+      "userId": "s177bqjwcnr0pvsgvpzgeayqrx84tk9r",
+      "displayName": "Sergey Bulaev",
+      "image": "https://avatars.githubusercontent.com/u/241980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776202825382,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78b006065e78e8f652bc5e458c23fc6b3c3db80a4b96e46163043a846cebb7db"
+}

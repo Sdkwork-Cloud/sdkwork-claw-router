@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blocked-page-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blocked_page_fallback",
+  "skill": {
+    "id": 35891,
+    "skillKey": "clawhub-blocked-page-fallback",
+    "name": "Blocked Page Fallback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blocked-page-fallback",
+    "url": "https://clawhub.ai/skills/blocked-page-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blocked-page-fallback-72d219141abfb25c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recover when a web page is thin, blocked, JS-heavy, region-limited, or fetch-incompatible by switching to lawful fallback paths instead of stopping early."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774818689429,
+      "changelog": "Initial release of blocked-page-fallback skill.\n\n- Enables recovery from thin, blocked, or region-limited web pages by using alternate, lawful fallback methods.\n- Introduces a structured fallback ladder: broaden discovery, switch transport, pivot source types, and leverage structural clues.\n- Clearly outlines prohibited behaviors (e.g., no login bypass, no anti-bot evasion).\n- Provides a detailed output pattern for consistent results in difficult web scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c74f61473f8e195350f5b62e81f235ab036c3088f060fa6f2af0eb795eb26f39"
+}

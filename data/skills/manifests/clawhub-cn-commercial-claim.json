@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69751,
+  "uuid": "skill-clawhub-cn-commercial-claim",
+  "skillKey": "clawhub-cn-commercial-claim",
+  "name": "chinacrive commercial claims ai",
+  "summary": "基于中国保险行业协会《商业车险示范产品理赔实务要点（2020试行版）》，为车主提供车险理赔全流程指导。从出险报案到赔款到账，涵盖接报案、调度、查勘、定损、核价核损、人伤处理、理算、核赔等各环节操作要点、所需材料及赔款计算公式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_commercial_claim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wwbwin",
+      "features": [
+        "基于中国保险行业协会《商业车险示范产品理赔实务要点（2020试行版）》，为车主提供车险理赔全流程指导。从出险报案到赔款到账，涵盖接报案、调度、查勘、定损、核价核损、人伤处理、理算、核赔等各环."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-commercial-claim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137308189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-commercial-claim",
+      "url": "https://clawhub.ai/skills/cn-commercial-claim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-commercial-claim",
+    "url": "https://clawhub.ai/skills/cn-commercial-claim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-commercial-claim-8122342b480fd135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-commercial-claim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-commercial-claim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6997bde56c52e5675ccf79afc096b5446c39c1eed4c55c951295346b97d3340a",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:29:59.663Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outreach-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outreach_scout",
+  "skill": {
+    "id": 27351,
+    "skillKey": "clawhub-outreach-scout",
+    "name": "Outreach Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outreach-scout",
+    "url": "https://clawhub.ai/skills/outreach-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outreach-scout-21c056e37e8048e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and engage warm leads on Reddit, X/Twitter, and forums. Monitors platforms for people asking questions your product solves, drafts helpful replies that..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisoftgg",
+      "userId": "s1731g5q971jp1dt6x025g6v5x845a6d",
+      "displayName": "aisoftgg",
+      "image": "https://avatars.githubusercontent.com/u/262477218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773237694462,
+      "changelog": "Initial release — Find and engage warm leads on Reddit, X/Twitter, and forums. Configurable for any product/niche. Includes platform-specific guidelines, reply templates, tracking log, and heartbeat integration for automated scouting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99d04bd1400130f6b6ce88d2eea539fe2d19b62a51289171434e6a8a43d19b9f"
+}

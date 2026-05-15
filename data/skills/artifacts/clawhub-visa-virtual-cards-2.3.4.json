@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visa-virtual-cards@2.3.4",
+  "version": "2.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visa_virtual_cards",
+  "skill": {
+    "id": 54803,
+    "skillKey": "clawhub-visa-virtual-cards",
+    "name": "VISA Virtual Cards | Manage compatible cards, wallets & payments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visa-virtual-cards",
+    "url": "https://clawhub.ai/skills/visa-virtual-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visa-virtual-cards-d581a8eb94e28d44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VISA Virtual Cards | Manage compatible cards, wallets & payments. Financial management for Agents and OpenClaw bots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.3.4",
+      "createdAt": 1773339056857,
+      "changelog": "visa-virtual-cards 2.3.4\n\n- Updated documentation with detailed security practices and end-to-end usage guidance.\n- Clarified multi-rail payment support, including Stripe Wallet (x402) and upcoming Crossmint Wallet support.\n- Included quick start instructions and links to all component skill files for streamlined onboarding.\n- Reinforced security recommendations and owner permission guardrails.\n- No functional API changes noted; update is documentation-focused.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eeb900365f18390aa7fa55b023253f4e9a68892364406a16bd07e4f255a0dc33"
+}

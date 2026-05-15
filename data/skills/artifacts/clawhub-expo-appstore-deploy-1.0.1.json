@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expo-appstore-deploy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expo_appstore_deploy",
+  "skill": {
+    "id": 21003,
+    "skillKey": "clawhub-expo-appstore-deploy",
+    "name": "Expo App Store Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expo-appstore-deploy",
+    "url": "https://clawhub.ai/skills/expo-appstore-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expo-appstore-deploy-be640fa7666fa4f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy Expo/React Native apps to Apple App Store and Google Play Store using EAS Build + Submit. Use when building iOS/Android production builds, submitting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jini92",
+      "userId": "publishers:jini92",
+      "displayName": "jini92",
+      "image": "https://avatars.githubusercontent.com/u/43900848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772329807844,
+      "changelog": "EAS Build + Submit pipeline for Expo/React Native iOS and Android",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb2e38faf06cfa417d8a22fb002f39bba69c238bb23d1bc927f31374ac8741f3"
+}

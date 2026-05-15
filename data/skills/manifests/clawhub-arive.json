@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21938,
+  "uuid": "skill-clawhub-arive",
+  "skillKey": "clawhub-arive",
+  "name": "Arive",
+  "summary": "Arive integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with Arive data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Arive integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with Arive data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arive@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arive",
+      "url": "https://clawhub.ai/skills/arive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arive",
+    "url": "https://clawhub.ai/skills/arive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arive-49006313645735dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arive@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-arive-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd368e3c7fc984b11e7283bd564781cf122b1332bf36f9fbb5f70bd9c69efa19",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:56.299Z"
+}

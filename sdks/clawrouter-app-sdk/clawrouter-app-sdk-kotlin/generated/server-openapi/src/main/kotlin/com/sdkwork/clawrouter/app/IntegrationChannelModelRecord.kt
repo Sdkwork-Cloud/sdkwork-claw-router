@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.app
+
+data class IntegrationChannelModelRecord(
+    val capability: String? = null,
+    val catalogKey: String? = null,
+    val channelId: String? = null,
+    val createdAt: String? = null,
+    val dataScope: String? = null,
+    val defaultParameters: Map<String, String>? = null,
+    val deletedAt: String? = null,
+    val deletedBy: String? = null,
+    val effectiveFrom: String? = null,
+    val effectiveTo: String? = null,
+    val id: String? = null,
+    val maxInputTokens: String? = null,
+    val maxOutputTokens: String? = null,
+    val metadata: Map<String, String>? = null,
+    val model: String? = null,
+    val modelAliases: Map<String, String>? = null,
+    val modelId: String? = null,
+    val organizationId: String? = null,
+    val providerModel: String? = null,
+    val status: String? = null,
+    val supportsStreaming: Boolean? = null,
+    val supportsTools: Boolean? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val uuid: String? = null,
+    val vendorCode: String? = null,
+    val version: String? = null
+)

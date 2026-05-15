@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62000,
+  "uuid": "skill-clawhub-lovtrip-travel-planner",
+  "skillKey": "clawhub-lovtrip-travel-planner",
+  "name": "LovTrip AI Travel Planner",
+  "summary": "AI 行程规划 / AI Travel Itinerary Planner — 智能生成多日旅行行程，支持景点搜索、预算计算、酒店航班。当用户需要旅行规划、生成行程、搜索景点酒店航班时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovtrip_travel_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KLeo",
+      "features": [
+        "AI 行程规划 / AI Travel Itinerary Planner — 智能生成多日旅行行程，支持景点搜索、预算计算、酒店航班。当用户需要旅行规划、生成行程、搜索景点酒店航班时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lovtrip-travel-planner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2713983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lovtrip-travel-planner",
+      "url": "https://clawhub.ai/skills/lovtrip-travel-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovtrip-travel-planner",
+    "url": "https://clawhub.ai/skills/lovtrip-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovtrip-travel-planner-0bba22ffbf63551d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lovtrip-travel-planner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lovtrip-travel-planner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eea0c38c5e1758fba0beb1680aaea6432a7a297ed8e821440f47261126409d24",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:29:38.528Z"
+}

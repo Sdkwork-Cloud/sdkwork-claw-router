@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64638,
+  "uuid": "skill-clawhub-tailscale-vpn",
+  "skillKey": "clawhub-tailscale-vpn",
+  "name": "Tailscale VPN",
+  "summary": "Tailscale安全组网工具 - 基于WireGuard的虚拟组网，安全内网穿透，不暴露公网IP，点对点加密连接。适用于远程访问、居家办公、服务器管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tailscale_vpn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "Tailscale安全组网工具",
+        "基于WireGuard的虚拟组网，安全内网穿透，不暴露公网IP，点对点加密连接。适用于远程访问、居家办公、服务器管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tailscale-vpn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tailscale-vpn",
+      "url": "https://clawhub.ai/skills/tailscale-vpn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tailscale-vpn",
+    "url": "https://clawhub.ai/skills/tailscale-vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tailscale-vpn-ccf6151687b925a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tailscale-vpn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tailscale-vpn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba47ea93ba8509083b37f2bd2e2ad3bb127ba5cfc9baac129e9b54f017033472",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:54:53.438Z"
+}

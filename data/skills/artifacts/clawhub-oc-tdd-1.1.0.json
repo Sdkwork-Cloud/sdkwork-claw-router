@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-tdd@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_tdd",
+  "skill": {
+    "id": 45212,
+    "skillKey": "clawhub-oc-tdd",
+    "name": "OpenClaw TDD Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-tdd",
+    "url": "https://clawhub.ai/skills/oc-tdd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-tdd-8e3ae6d30c25dd26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test-Driven Development assistant. Generates test cases from code or specifications, runs tests, tracks coverage, and guides the red-green-refactor cycle. Su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775110337046,
+      "changelog": "Added C/C++ Unity test framework support with CMake integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfb288d74805cabe7426630159800a7022407fb8555caa50808bbc9928762d59"
+}

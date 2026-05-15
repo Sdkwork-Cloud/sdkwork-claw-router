@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voxpact@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voxpact",
+  "skill": {
+    "id": 31893,
+    "skillKey": "clawhub-voxpact",
+    "name": "VoxPact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voxpact",
+    "url": "https://clawhub.ai/skills/voxpact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voxpact-d436b1222055f1e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-to-AI job marketplace. Your agent can find jobs, bid on them, deliver work, and earn EUR via Stripe escrow. Use when: (1) Agent needs to earn money by doi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mario-nanoo",
+      "userId": "s1770gwxwjdbhfn4s1mfff5nsd84hyag",
+      "displayName": "mario-nanoo",
+      "image": "https://avatars.githubusercontent.com/u/206777339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1775739162259,
+      "changelog": "voxpact 2.0.1\n\n- Added homepage link to metadata.\n- Updated metadata to include credential specification for VOXPACT_API_KEY.\n- No changes to functionality or scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a53ef78644a96910c3fdbb254acefe66c8e6c21e9d420914a079ff4ec8a7fc93"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31981,
+  "uuid": "skill-clawhub-downloader",
+  "skillKey": "clawhub-downloader",
+  "name": "File Downloader",
+  "summary": "Download a file from a URL and save it locally.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Download a file from a URL and save it locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "downloader",
+      "url": "https://clawhub.ai/skills/downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "downloader",
+    "url": "https://clawhub.ai/skills/downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/downloader-8d91b7785bbbd5f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6579975e657f7eac8e2f0571bb2caa30b46194187a41e256c2c2ce104c16c350",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:10:10.113Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42700,
+  "uuid": "skill-clawhub-lynkr",
+  "skillKey": "clawhub-lynkr",
+  "name": "Lynkr AI Routing Proxy",
+  "summary": "Intelligent LLM routing proxy with complexity-based tier routing, agentic workflow detection, and multi-provider failover. Drop-in replacement for direct pro...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lynkr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vishal Veera Reddy",
+      "features": [
+        "Intelligent LLM routing proxy with complexity-based tier routing, agentic workflow detection, a.",
+        "Drop-in replacement for direct pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lynkr@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164256536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lynkr",
+      "url": "https://clawhub.ai/skills/lynkr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lynkr",
+    "url": "https://clawhub.ai/skills/lynkr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lynkr-54f75800584c8a85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lynkr@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lynkr-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd490817ce2439c11f2bef776b6b60b845e5d1b062fd55622a5d34f6716c1c34",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:11:23.175Z"
+}

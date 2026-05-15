@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12854,
+  "uuid": "skill-clawhub-teamwork",
+  "skillKey": "clawhub-teamwork",
+  "name": "TeamWork",
+  "summary": "Dynamically creates and manages AI agent teams for complex tasks. Invoke when user requests multi-agent collaboration, complex project execution, or when tasks require specialized roles and coordinated workflow.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamwork",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenXinBest",
+      "features": [
+        "Dynamically creates and manages AI agent teams for complex tasks",
+        "Invoke when user requests multi-agent collaboration, complex project execution, or when tasks r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamwork@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62179299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamwork",
+      "url": "https://clawhub.ai/skills/teamwork"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamwork",
+    "url": "https://clawhub.ai/skills/teamwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamwork-9d9a67a66df1a022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamwork@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamwork-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bc697d44c7919ff1fdbb024e24890aca683df602ae904f12bbbd14c0c47cd07",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T07:23:48.176Z"
+}

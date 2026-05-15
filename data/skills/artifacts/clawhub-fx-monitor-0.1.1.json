@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fx-monitor@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fx_monitor",
+  "skill": {
+    "id": 29902,
+    "skillKey": "clawhub-fx-monitor",
+    "name": "FX Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fx-monitor",
+    "url": "https://clawhub.ai/skills/fx-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fx-monitor-ae877ff1d1fff6ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Bank of China FX rates and manage reusable GBP/HKD/JPY alert workflows. Use when the task involves checking current BOC exchange rates, comparing the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiehuapeng",
+      "userId": "s178de29egfmb6v9q0z0bwh1y583g07b",
+      "displayName": "xiehuapeng",
+      "image": "https://avatars.githubusercontent.com/u/44292751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773718387211,
+      "changelog": "Replace local host-specific workflow with portable built-in BOC fetcher and local history storage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6e578797ee350d991abee62f53d80fc69005d80b6dec0ff9646b109791b6888"
+}

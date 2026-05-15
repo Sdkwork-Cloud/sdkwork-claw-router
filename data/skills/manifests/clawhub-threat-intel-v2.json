@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32944,
+  "uuid": "skill-clawhub-threat-intel-v2",
+  "skillKey": "clawhub-threat-intel-v2",
+  "name": "Threat Intel V2",
+  "summary": "Aggregates and analyzes open-source intelligence (OSINT) data from multiple sources to identify threats, validate indicators, and enrich security investigati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threat_intel_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Aggregates and analyzes open-source intelligence (OSINT) data from multiple sources to identify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/threat-intel-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "threat-intel-v2",
+      "url": "https://clawhub.ai/skills/threat-intel-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threat-intel-v2",
+    "url": "https://clawhub.ai/skills/threat-intel-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threat-intel-v2-d3f56129bc9d63d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/threat-intel-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-threat-intel-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c4561b0778d76d029a2d0c4904c7eb32301c8de2915c38a5f01df3c0b8f6ad",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T22:17:08.597Z"
+}

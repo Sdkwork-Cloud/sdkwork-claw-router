@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-pro-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_pro_2",
+  "skill": {
+    "id": 8818,
+    "skillKey": "clawhub-nano-banana-pro-2",
+    "name": "Nano Banana Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-pro-2",
+    "url": "https://clawhub.ai/skills/nano-banana-pro-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-pro-2-25257d86453d6bd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dycathecorde",
+      "userId": "publishers:dycathecorde",
+      "displayName": "DyCathecorde",
+      "image": "https://avatars.githubusercontent.com/u/234076764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5022,
+      "installsAllTime": 16,
+      "installsCurrent": 13,
+      "stars": 17,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769651980662,
+      "changelog": "Initial release of Nano Banana Pro (Gemini 3 Pro Image) skill.\n\n- Generate or edit images using Gemini 3 Pro via a bundled Python script.\n- Supports image generation, editing a single image, and composing up to 14 images.\n- Choose output resolution: 1K (default), 2K, or 4K.\n- Requires a GEMINI_API_KEY environment variable.\n- Outputs saved image path and a special MEDIA: line for chat integration.\n- Installation instructions provided for dependencies (uses uv).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:24451d8108c033c623409f8a6d5721489b6931ea0cacfc73e301d09fde07982d"
+}

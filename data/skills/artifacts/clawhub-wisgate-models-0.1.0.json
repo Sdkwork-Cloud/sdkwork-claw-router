@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wisgate-models@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wisgate_models",
+  "skill": {
+    "id": 47062,
+    "skillKey": "clawhub-wisgate-models",
+    "name": "Manage OpenClaw's use of models available at wisgate.ai API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wisgate-models",
+    "url": "https://clawhub.ai/skills/wisgate-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wisgate-models-c8051c684f7dd8ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Wisgate for model pricing, capabilities, and configuration details. Use when adding a model to OpenClaw, comparing Wisgate pricing, or checking if a mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flofrie",
+      "userId": "s178tm9a2j7qcdyrgs5qj51n4984v61z",
+      "displayName": "flofrie",
+      "image": "https://avatars.githubusercontent.com/u/47421818?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776196562006,
+      "changelog": "First public version.\n\nContext: https://wisgate.ai/ provide low-cost API access to a large number of models (from OpenAI, Anthropic, Google, xAI and others); this skill is for your Lobster to set itself up with access to them if you have an API key (which you'll need to get from Wisgate by signing up and paying). The API supports OpenAI, Anthropic, and Google styles. \n\n- contains a brief description on creating for itself a MODELS.json file with all relevant data on available models from any API provider, but doesn't go into much detail. \n\n**TODO: script or skill to pre-populate MODELS.json with info from https://wisgate.ai/models**\n\n- assumes you have Firecrawl set up for efficient searching (especially to access the Wisgate models page, which is heavily Javascript based and therefore may be a challenge for other scripted ways of accessing), and there's a Firecrawl skill & scripts to do so; \n\n**TODO: make this a less explicit dependency, suggest scraping pages in other ways**\n\n- assumes certain provider names in openclaw.json ; \n\n**TODO: make this more flexible, or add management of providers to the skill**\n\n- assumes an auth profile to exist in openclaw.json that defines \"wisgate\", with \"mode\":\"api_key\"\n\n- assumes providers in openclaw.json named \n  - \"custom-api-wisgate-ai\" (with \"baseUrl\":\"https://api.wisgate.ai/\", and \"api\": \"anthropic-messages\")\n  - \"custom-api-wisgate-google\" (with \"baseUrl\": \"https://api.wisgate.ai/v1beta\", and \"api\": \"google-generative-ai\")\n - \"custom-api-wisgate-ai-openai\" (with \"baseUrl\": \"https://api.wisgate.ai/v1\", and \"api\": \"openai-completions\")",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c915109c118a87d1da3b6f95d3b88ad4c10ee44595e26732b931483995cdb613"
+}

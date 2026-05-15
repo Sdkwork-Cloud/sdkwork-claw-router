@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69623,
+  "uuid": "skill-clawhub-115-publish",
+  "skillKey": "clawhub-115-publish",
+  "name": "115 Publish",
+  "summary": "智能管理115网盘，支持扫码登录、文件浏览、搜索、转存分享、离线下载、智能整理及空间查询等操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.115_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kris su",
+      "features": [
+        "智能管理115网盘，支持扫码登录、文件浏览、搜索、转存分享、离线下载、智能整理及空间查询等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/115-publish@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12508475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "115-publish",
+      "url": "https://clawhub.ai/skills/115-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "115-publish",
+    "url": "https://clawhub.ai/skills/115-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/115-publish-66bc69c1bbe384bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/115-publish@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-115-publish-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb11e2863e03de0a16799b019bbccd71fb8dfd49b69b2fa2a95b6a9327916322",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:47:38.361Z"
+}

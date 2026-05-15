@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dream-text-to-video@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_text_to_video",
+  "skill": {
+    "id": 18756,
+    "skillKey": "clawhub-dream-text-to-video",
+    "name": "Dream Text to Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-text-to-video",
+    "url": "https://clawhub.ai/skills/dream-text-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-text-to-video-c848ad2e09660cf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos from text using Text to Video (Wan2.1) API. Automatically generates 4-second videos from text descriptions. Powered by Dreamface - AI tools f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hy-1990",
+      "userId": "s17dg55r3mmkt8qecrt6ak4xjd83gm1b",
+      "displayName": "hy",
+      "image": "https://avatars.githubusercontent.com/u/65535435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773062902510,
+      "changelog": "- Added a link to Dreamface’s AI tools homepage in the Quick Start section for easier access to more AI resources.\n- No functional or API changes. Documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f05dcad7314435d3108c50797795e56d42452b6c70091ff4596f650450b4f10a"
+}

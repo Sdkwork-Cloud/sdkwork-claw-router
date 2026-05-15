@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-text-and-pics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_text_and_pics",
+  "skill": {
+    "id": 40388,
+    "skillKey": "clawhub-claw-text-and-pics",
+    "name": "claw-text-and-pics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-text-and-pics",
+    "url": "https://clawhub.ai/skills/claw-text-and-pics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-text-and-pics-29d9137a9fdcbab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text and embedded images from scanned documents, PDFs, and photos via Mistral OCR API. Use when reading receipts, invoices, contracts, handwritten no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "photon78",
+      "userId": "s17afpy9d96xvjhk94ka1cs2ms85c8ne",
+      "displayName": "photon78",
+      "image": "https://avatars.githubusercontent.com/u/59928921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777023726975,
+      "changelog": "- Removed \"config_file\" and \"version\" fields from skill metadata.\n- No functional changes; documentation and usage remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07d5e46ac3e156f382588059f3f07baeeb3e0a3a286dfc680fe6b7de023d9f91"
+}

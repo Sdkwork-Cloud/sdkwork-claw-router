@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67770,
+  "uuid": "skill-clawhub-elliott-wave",
+  "skillKey": "clawhub-elliott-wave",
+  "name": "Elliott Wave",
+  "summary": "波浪理论（Elliott Wave）技术分析 — 艾略特股价波动规律。当用户说「波浪理论」「数浪」「推动浪」「调整浪」「延长浪」「斐波那契」时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elliott_wave",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpian1",
+      "features": [
+        "波浪理论（Elliott Wave）技术分析 — 艾略特股价波动规律。当用户说「波浪理论」「数浪」「推动浪」「调整浪」「延长浪」「斐波那契」时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elliott-wave@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87922625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elliott-wave",
+      "url": "https://clawhub.ai/skills/elliott-wave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elliott-wave",
+    "url": "https://clawhub.ai/skills/elliott-wave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elliott-wave-7a52c5fa40263ace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elliott-wave@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elliott-wave-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c7fa18dfe5deecc4895a4949ebd8da8d54dad712f007901600262a93c45c090",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:08:36.319Z"
+}

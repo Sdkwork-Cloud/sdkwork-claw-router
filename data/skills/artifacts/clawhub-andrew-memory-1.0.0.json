@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/andrew-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.andrew_memory",
+  "skill": {
+    "id": 42641,
+    "skillKey": "clawhub-andrew-memory",
+    "name": "Andrew Memory Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "andrew-memory",
+    "url": "https://clawhub.ai/skills/andrew-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/andrew-memory-aa903e1cd87d8702.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Product-grade semantic memory layer for AI agents using LanceDB. Provides long-term memory with semantic search, Core Identity management, and conversation d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panyuugit",
+      "userId": "s171z2fwmcp78qc91p102dysvh83qtn5",
+      "displayName": "PanyuuGit",
+      "image": "https://avatars.githubusercontent.com/u/166091447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588693169,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49ebe20c79832e8ec0690ddaef73e1235a5993030b032b27f962ded4aabda648"
+}

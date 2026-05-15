@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-github-assistant@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_github_assistant",
+  "skill": {
+    "id": 8397,
+    "skillKey": "clawhub-openclaw-github-assistant",
+    "name": "OpenClaw GitHub Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-github-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-github-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-github-assistant-5b223dd161b74897.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage GitHub repositories - list repos, check CI status, create issues, search repos, and view recent activity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "conorkenn",
+      "userId": "publishers:conorkenn",
+      "displayName": "conorkenn",
+      "image": "https://avatars.githubusercontent.com/u/86976860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 16895,
+      "installsAllTime": 169,
+      "installsCurrent": 158,
+      "stars": 10,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1770912461686,
+      "changelog": "**Expanded TypeScript and API Support in v2.0.1**\n\n- Added type definitions and API modules: `api.d.ts`, `api.js`, `index.d.ts`, `types.d.ts`, and `types.js`\n- Updated main skill logic and package metadata in `index.js` and `package.json`\n- Improved maintainability and type safety for developers integrating with the skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d01ce8f2a7937d0a7d79b054059727d5f1bedf9137bf7c53a31c76ef4271e746"
+}

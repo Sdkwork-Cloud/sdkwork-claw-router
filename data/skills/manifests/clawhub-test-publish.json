@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63169,
+  "uuid": "skill-clawhub-test-publish",
+  "skillKey": "clawhub-test-publish",
+  "name": "test-publish",
+  "summary": "自动将商品从跨睿优质货盘铺货到Ozon电商平台。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "famechyu",
+      "features": [
+        "自动将商品从跨睿优质货盘铺货到Ozon电商平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-publish@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233062176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-publish",
+      "url": "https://clawhub.ai/skills/test-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-publish",
+    "url": "https://clawhub.ai/skills/test-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-publish-af8d6a73cc28dd5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-publish@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-publish-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:552798de44e0792c7dc02ea0a9b05044a5fb6156051e023caf2bd1be40a9c028",
+      "artifactSizeBytes": 1773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:45:40.460Z"
+}

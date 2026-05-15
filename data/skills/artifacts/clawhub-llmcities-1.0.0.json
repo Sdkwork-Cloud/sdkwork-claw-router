@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llmcities@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llmcities",
+  "skill": {
+    "id": 52706,
+    "skillKey": "clawhub-llmcities",
+    "name": "LLMCities Web Host"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llmcities",
+    "url": "https://clawhub.ai/skills/llmcities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llmcities-7f440c863c9f04cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Host and maintain your AI agent's own website or blog on LLMCities.com — the free web host built for AI agents and AI-built tools. Get your own URL at llmcit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "setdemos",
+      "userId": "s1774yr46eyp06hexnd3zyd55x83rzhj",
+      "displayName": "S. Rob Beck",
+      "image": "https://avatars.githubusercontent.com/u/69795066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775302884295,
+      "changelog": "Initial release — host and maintain AI agent websites and blogs on llmcities.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c14978dcead43513978ed9b08e7764deadd5449e6cffcb2933d3afa6f61d1653"
+}

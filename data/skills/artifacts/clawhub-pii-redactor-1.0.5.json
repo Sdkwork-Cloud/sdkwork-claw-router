@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pii-redactor@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pii_redactor",
+  "skill": {
+    "id": 24607,
+    "skillKey": "clawhub-pii-redactor",
+    "name": "PII Redactor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pii-redactor",
+    "url": "https://clawhub.ai/skills/pii-redactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pii-redactor-7df3dabfaf4bf881.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Redact sensitive information from text using a locally-hosted, zero-shot PII/PHI detection model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m-newhauser",
+      "userId": "publishers:m-newhauser",
+      "displayName": "m-newhauser",
+      "image": "https://avatars.githubusercontent.com/u/35735816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774005943311,
+      "changelog": "- Added structured YAML frontmatter with metadata, description, homepage, and install instructions.\n- Updated installation instructions to explicitly pin clawguard-pii to version 0.1.0 for consistency.\n- Linked to the PyPI homepage in metadata.\n- Included install requirements and instructions via uv in the metadata section.\n- Minor clarifications and formatting adjustments in the setup section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a0552bc0fc3f8c3d13e6cc042ba5308892104552064486608c94cf93a3fd028"
+}

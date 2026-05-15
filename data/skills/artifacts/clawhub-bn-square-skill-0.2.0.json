@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bn-square-skill@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bn_square_skill",
+  "skill": {
+    "id": 17545,
+    "skillKey": "clawhub-bn-square-skill",
+    "name": "Binance Square Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bn-square-skill",
+    "url": "https://clawhub.ai/skills/bn-square-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bn-square-skill-a1e5e8e03a1ec331.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance Square publishing skill for AI agents. Validate session, publish posts, and check status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phlegonlabs",
+      "userId": "publishers:phlegonlabs",
+      "displayName": "Jacky",
+      "image": "https://avatars.githubusercontent.com/u/251960145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1772435476238,
+      "changelog": "OpenClaw-compatible refactor: 2 env vars, single Node bundle, HTTP direct mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82b00799ee5eda10a60c79d5c88f42f89b51563c4e761e89707a7411a907155c"
+}

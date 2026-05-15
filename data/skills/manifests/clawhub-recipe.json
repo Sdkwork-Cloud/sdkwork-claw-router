@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13199,
+  "uuid": "skill-clawhub-recipe",
+  "skillKey": "clawhub-recipe",
+  "name": "Recipes",
+  "summary": "Build a personal recipe collection with ingredients, scaling, and meal planning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal recipe collection with ingredients, scaling, and meal planning."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe",
+      "url": "https://clawhub.ai/skills/recipe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe",
+    "url": "https://clawhub.ai/skills/recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-e1d8e552330911f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23c8d3a84366c492d725bbb7964bec57436e0c21ca91daf77bf5425d916a92d2",
+      "artifactSizeBytes": 1748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T23:46:00.705Z"
+}

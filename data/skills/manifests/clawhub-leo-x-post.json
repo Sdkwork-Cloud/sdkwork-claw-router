@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65552,
+  "uuid": "skill-clawhub-leo-x-post",
+  "skillKey": "clawhub-leo-x-post",
+  "name": "Leo X Post",
+  "summary": "专为Leo定制的X（Twitter）发帖技能。用于发推文、带附件、回复或定时发布。触发当用户说'用leo-x-post发推'或类似，处理X API交互。需要用户提供API密钥。别用于历史数据或复杂分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leo_x_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lebevolae",
+      "features": [
+        "专为Leo定制的X（Twitter）发帖技能。用于发推文、带附件、回复或定时发布。触发当用户说'用leo-x-post发推'或类似，处理X API交互。需要用户提供API密钥。别用于历史数据."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leo-x-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67351270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leo-x-post",
+      "url": "https://clawhub.ai/skills/leo-x-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leo-x-post",
+    "url": "https://clawhub.ai/skills/leo-x-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leo-x-post-3b8b124deab6ea72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leo-x-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leo-x-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11bb65941156cdfc1305f555baefd0c7c18d98a3afcaa6d53c163b296ab50d5f",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T20:51:22.903Z"
+}

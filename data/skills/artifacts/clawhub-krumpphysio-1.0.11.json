@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/krumpphysio@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.krumpphysio",
+  "skill": {
+    "id": 19736,
+    "skillKey": "clawhub-krumpphysio",
+    "name": "KrumpPhysio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "krumpphysio",
+    "url": "https://clawhub.ai/skills/krumpphysio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/krumpphysio-315dec53336973f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teaches OpenClaw agents to act as a Krump-inspired physiotherapy coach. Use when building or assisting physio/fitness agents, therapeutic movement scoring (j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arunnadarasa",
+      "userId": "s175spnx5m2qksm07wmc9jw9qh83hq8x",
+      "displayName": "Arun Nadarasa",
+      "image": "https://avatars.githubusercontent.com/u/186420617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1773179487238,
+      "changelog": "KrumpPhysio 1.0.11 adds new privacy and AI features for Telegram video bot users.\n\n- Telegram bot now immediately replies to users and supports `/start` with onboarding prompts.\n- Adds optional zero-knowledge attestation (Sindri) and privacy headers for minimal-PII workflows.\n- Supports `/privacy` and optional auto-deletion of user videos after analysis.\n- Integrates Kimi + Replicate: generate exercise images/videos and send back AI captions/descriptions.\n- Other documentation updates for privacy, bot commands, and user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:516ad8ce4e179bc89b506a3398610189b8f2114b23128512be0190e93ab149d8"
+}

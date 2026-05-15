@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ugc-creator-machine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ugc_creator_machine",
+  "skill": {
+    "id": 45142,
+    "skillKey": "clawhub-ugc-creator-machine",
+    "name": "UGC Creator Machine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ugc-creator-machine",
+    "url": "https://clawhub.ai/skills/ugc-creator-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ugc-creator-machine-a42117c7a9e3e7fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find brands actively buying UGC, generate winning ad scripts, personalized pitches, rate cards, and produce 5 demo videos plus a 30-day client acquisition plan."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775607902588,
+      "changelog": "Initial release of AI UGC Creator Machine.\n\n- Identifies brands actively buying UGC by scraping TikTok, Instagram, and brand databases.\n- Scores each brand for deal potential, fit, and ad spend signals.\n- Reverse-engineers successful UGC ad scripts from top creatives.\n- Generates personalized pitches and rate cards for each target brand.\n- Automatically creates 5 ready-to-send UGC demo videos with InVideo AI.\n- Builds a complete UGC business pipeline including a 30-day client acquisition calendar.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b8c8bda9e02d3ea457af93d645be7d3ba3e4ef6065f5948ffd421d233ed37d0"
+}

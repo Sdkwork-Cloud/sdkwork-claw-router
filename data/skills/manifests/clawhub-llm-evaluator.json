@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22294,
+  "uuid": "skill-clawhub-llm-evaluator",
+  "skillKey": "clawhub-llm-evaluator",
+  "name": "Llm Evaluator",
+  "summary": "LLM-as-a-Judge evaluation system using Langfuse. Score AI outputs on relevance, accuracy, hallucination, and helpfulness. Backfill scoring on historical trac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "LLM-as-a-Judge evaluation system using Langfuse",
+        "Score AI outputs on relevance, accuracy, hallucination, and helpfulness",
+        "Backfill scoring on historical trac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-evaluator",
+      "url": "https://clawhub.ai/skills/llm-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-evaluator",
+    "url": "https://clawhub.ai/skills/llm-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-evaluator-d71872b06dc1fd4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:182d198d0753381e1c454d253627b145171e60f2f80dcaa78f1d1c32bcdd5791",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:52:32.872Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liberfi-portfolio@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liberfi_portfolio",
+  "skill": {
+    "id": 38173,
+    "skillKey": "clawhub-liberfi-portfolio",
+    "name": "Liberfi Portfolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liberfi-portfolio",
+    "url": "https://clawhub.ai/skills/liberfi-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liberfi-portfolio-a1e701c9b13b3eb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze wallet portfolios on supported blockchains: view token holdings with current values, track transaction activity and history, check PnL (profit and lo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombmod",
+      "userId": "s1734k5ar8v7bcr162fx2j8xgn842ywy",
+      "displayName": "bombmod",
+      "image": "https://avatars.githubusercontent.com/u/212038798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776700485810,
+      "changelog": "Force Polymarket/Kalshi queries to route to liberfi-predict, not liberfi-token/market/portfolio.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d9d68a3bdcb3979e35e57920180c43cd4bb92a2d308bc7d3e3aa66fd9f49cdb"
+}

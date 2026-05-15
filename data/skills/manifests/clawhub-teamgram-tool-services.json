@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30229,
+  "uuid": "skill-clawhub-teamgram-tool-services",
+  "skillKey": "clawhub-teamgram-tool-services",
+  "name": "Teamgram Tool Services",
+  "summary": "Documents the tool services in Teamgram Server including idgen (Snowflake ID), status (online TTL), dfs (Minio file storage), and media (metadata/thumbnails).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamgram_tool_services",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhihang9978",
+      "features": [
+        "Documents the tool services in Teamgram Server including idgen (Snowflake ID), status (online T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamgram-tool-services@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217701803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamgram-tool-services",
+      "url": "https://clawhub.ai/skills/teamgram-tool-services"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamgram-tool-services",
+    "url": "https://clawhub.ai/skills/teamgram-tool-services",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamgram-tool-services-b6f3a4c66fa00fdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamgram-tool-services@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamgram-tool-services-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b0150e5f2e7606f89ef740723c1c5b457640c64491869c17b6a8e914f041995",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:50:31.683Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kubernetes-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_automation",
+  "skill": {
+    "id": 40708,
+    "skillKey": "clawhub-kubernetes-automation",
+    "name": "Kubernetes Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-automation",
+    "url": "https://clawhub.ai/skills/kubernetes-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-automation-7b0ecfe872d857d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Kubernetes cluster management by deploying, scaling, monitoring, troubleshooting resources, and managing configurations efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777068096515,
+      "changelog": "Initial release of kubernetes-automation skill:\n\n- Automates Kubernetes cluster management tasks for AI agents.\n- Supports deployment, scaling, health monitoring, and troubleshooting of K8s resources.\n- Manages configmaps, secrets, namespaces, and service mesh configurations.\n- Includes backup and restore functionality for cluster state.\n- Provides easy-to-use commands for common K8s operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be441e58ba3e37d50435a37c1f14c3507caa1a1599491dae81c2f84e356a4ee1"
+}

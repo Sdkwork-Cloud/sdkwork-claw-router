@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38434,
+  "uuid": "skill-clawhub-youtube-distiller",
+  "skillKey": "clawhub-youtube-distiller",
+  "name": "YouTube Distiller",
+  "summary": "Automatically download subtitles from YouTube/Bilibili and generate structured knowledge articles in various summary styles using AI.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_distiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sumo0221",
+      "features": [
+        "Automatically download subtitles from YouTube/Bilibili and generate structured knowledge articl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-distiller@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266116930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-distiller",
+      "url": "https://clawhub.ai/skills/youtube-distiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-distiller",
+    "url": "https://clawhub.ai/skills/youtube-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-distiller-9b1c0ae384751441.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-distiller@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-distiller-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5845837fb420ff689763a73d3f47b7ede5d1232b36beb76bdb5b373383e1b796",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:27:46.341Z"
+}

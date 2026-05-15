@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paperless-ngx-tools@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperless_ngx_tools",
+  "skill": {
+    "id": 10446,
+    "skillKey": "clawhub-paperless-ngx-tools",
+    "name": "paperless-ngx-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperless-ngx-tools",
+    "url": "https://clawhub.ai/skills/paperless-ngx-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperless-ngx-tools-59a009673bc79921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage documents in Paperless-ngx - search, upload, tag, and retrieve."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madmantim",
+      "userId": "publishers:madmantim",
+      "displayName": "madmantim",
+      "image": "https://avatars.githubusercontent.com/u/90958600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2358,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769402099552,
+      "changelog": "Fix display name to match slug",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7519a301e0ef25f14e1f7c80f99a7366a332772d72badfdbb3564835b1b99293"
+}

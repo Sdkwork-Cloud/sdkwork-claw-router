@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20638,
+  "uuid": "skill-clawhub-bkmrk",
+  "skillKey": "clawhub-bkmrk",
+  "name": "Openclaw",
+  "summary": "Bookmark intelligence for developers. Browse, search, triage, and manage your AI-analyzed library. Submit URLs, assign projects, trigger deep analysis, and e...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bkmrk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vinyl bones",
+      "features": [
+        "Bookmark intelligence for developers",
+        "Browse, search, triage, and manage your AI-analyzed library",
+        "Submit URLs, assign projects, trigger deep analysis, and e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bkmrk@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205837256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bkmrk",
+      "url": "https://clawhub.ai/skills/bkmrk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bkmrk",
+    "url": "https://clawhub.ai/skills/bkmrk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bkmrk-5f9cf0028dfc2918.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bkmrk@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bkmrk-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c38a757dfc2b5d1144836b0cb4a2b0e201155fc4b132f3fd9843073f92d390d8",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:44:23.584Z"
+}

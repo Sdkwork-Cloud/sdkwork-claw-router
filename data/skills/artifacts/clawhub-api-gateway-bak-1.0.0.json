@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_bak",
+  "skill": {
+    "id": 24008,
+    "skillKey": "clawhub-api-gateway-bak",
+    "name": "Api Gateway.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-bak",
+    "url": "https://clawhub.ai/skills/api-gateway-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-bak-eaeaa251a4654ede.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 100+ APIs (Google Workspace, Microsoft 365, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to interact..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonymd323",
+      "userId": "s171m8trxpwazhyp51xve3ppx583ymjm",
+      "displayName": "tonymd323",
+      "image": "https://avatars.githubusercontent.com/u/205888524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772806538607,
+      "changelog": "Initial release of api-gateway skill.\n\n- Enables access to 100+ third-party APIs (Google Workspace, Slack, Airtable, etc.) via a unified gateway with managed OAuth.\n- Secure: MATON_API_KEY authenticates with Maton, but users must authorize each service separately.\n- Includes connection management endpoints to list, create, retrieve, and delete API connections.\n- Supports specifying a particular connection for a service using the Maton-Connection header.\n- Documentation covers usage examples, environment setup, and a detailed list of supported services.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80343fa3c543806628047272a614735e016f531f5c1fa98e441f97c6bed2e996"
+}

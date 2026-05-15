@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60606,
+  "uuid": "skill-clawhub-rpg-text",
+  "skillKey": "clawhub-rpg-text",
+  "name": "RPG Text",
+  "summary": "文字角色扮演游戏 (Text RPG) - 基于 sbordeyne/rpg-text 项目的面向对象设计，融合原始D&D规则。AI作为DM引导回合制冒险。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpg_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuZhong",
+      "features": [
+        "文字角色扮演游戏 (Text RPG)",
+        "基于 sbordeyne/rpg-text 项目的面向对象设计，融合原始D&D规则。AI作为DM引导回合制冒险。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rpg-text@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13481828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rpg-text",
+      "url": "https://clawhub.ai/skills/rpg-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpg-text",
+    "url": "https://clawhub.ai/skills/rpg-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpg-text-b643571ab68673d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rpg-text@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rpg-text-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6764d9547eea1e89c7bd17470a930286f80b2653620fd83159c7249526296744",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:18:38.909Z"
+}

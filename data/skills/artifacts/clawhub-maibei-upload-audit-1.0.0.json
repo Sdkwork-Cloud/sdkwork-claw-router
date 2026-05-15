@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maibei-upload-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maibei_upload_audit",
+  "skill": {
+    "id": 46334,
+    "skillKey": "clawhub-maibei-upload-audit",
+    "name": "MaybeAI Upload Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maibei-upload-audit",
+    "url": "https://clawhub.ai/skills/maibei-upload-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maibei-upload-audit-4eafc5c323d92dae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload and audit product media on MaybeAI: upload files, run analysis and audits, generate HTML report, and share results via trycloudflare tunnel."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ojbkxiongdei",
+      "userId": "s17fq4rfdxf3nmdmgtj5y0n8bs83wqqc",
+      "displayName": "ojbkxiongdei",
+      "image": "https://avatars.githubusercontent.com/u/55149555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775813196871,
+      "changelog": "maibei-upload-audit 1.0.0\n\n- Initial release with full end-to-end upload, analyze, audit, report, and sharing pipeline for Maibei/MaybeAI media audits.\n- Supports uploading local/inbound images or videos, copying and analyzing audit spreadsheets, running audits, and generating responsive HTML reports.\n- One-click public sharing of reports via trycloudflare tunnel.\n- Complete CLI toolchain with step-by-step progress reporting.\n- Detailed SKILL.md with workflow artifacts, usage instructions, troubleshooting, and response formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:166b5f4bc7af43aed17702099dc39bc727674e11aa3c0ebfa9e86126086d190f"
+}

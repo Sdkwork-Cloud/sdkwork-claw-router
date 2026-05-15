@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60309,
+  "uuid": "skill-clawhub-social-intel",
+  "skillKey": "clawhub-social-intel",
+  "name": "Social Intel Hub",
+  "summary": "社媒情报中心 - 多平台爬虫 + 数据分析 + AI洞察 + 词云 + 趋势追踪",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kk.Tang",
+      "features": [
+        "多平台爬虫 + 数据分析 + AI洞察 + 词云 + 趋势追踪"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129717525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-intel",
+      "url": "https://clawhub.ai/skills/social-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-intel",
+    "url": "https://clawhub.ai/skills/social-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-intel-959040a9174e398b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:692361dc33f79c9fe6b7653840156001644e85a520d0fe2cc8fb28938414df8c",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:37:48.791Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-writing-litiao@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_writing_litiao",
+  "skill": {
+    "id": 23539,
+    "skillKey": "clawhub-business-writing-litiao",
+    "name": "Business Writing Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-writing-litiao",
+    "url": "https://clawhub.ai/skills/business-writing-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-writing-litiao-c298a407f8dcc343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are a professional business analyst, skilled in writing various industry research reports, business insights, consulting analyses, company research repor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773763783417,
+      "changelog": "- Added integration with Tavily search for authoritative research and sourcing.\n- Expanded documentation with step-by-step commands and best practices for collecting up-to-date references using Tavily.\n- Updated the skill description to highlight Tavily-powered research.\n- Included relevant metadata for API key requirements.\n- Emphasized strategies to ensure claims are cross-referenced and sources are current.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cb731a6d1173e0315a6c8366f658acf07afb3e653dd9bea1b145e9025f31ef5"
+}

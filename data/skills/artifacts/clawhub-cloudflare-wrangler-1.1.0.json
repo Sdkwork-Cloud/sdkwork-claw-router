@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-wrangler@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_wrangler",
+  "skill": {
+    "id": 20382,
+    "skillKey": "clawhub-cloudflare-wrangler",
+    "name": "Cloudflare Wrangler & Pages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-wrangler",
+    "url": "https://clawhub.ai/skills/cloudflare-wrangler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-wrangler-dd6b68a92a5f402f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Cloudflare Workers, KV, D1, R2, and secrets using the Wrangler CLI. Use when deploying workers, managing databases, storing objects, or configuring Cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itamarcoh3n",
+      "userId": "publishers:itamarcoh3n",
+      "displayName": "Itamar C",
+      "image": "https://avatars.githubusercontent.com/u/26421901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772889930522,
+      "changelog": "Added Pages section: deployment via wrangler + direct API upload, custom domains, DNS gotchas (stale NS records, CLOUDFLARE_ACCOUNT_ID env var requirement)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce0f502aafb117a6281a5e0bb2bf9732d5b2185963a3b86552e7626d85d229f6"
+}

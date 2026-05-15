@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22711,
+  "uuid": "skill-clawhub-paypal-integration",
+  "skillKey": "clawhub-paypal-integration",
+  "name": "Paypal",
+  "summary": "PayPal integration. Manage Accounts. Use when the user wants to interact with PayPal data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paypal_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PayPal integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with PayPal data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paypal-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paypal-integration",
+      "url": "https://clawhub.ai/skills/paypal-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paypal-integration",
+    "url": "https://clawhub.ai/skills/paypal-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paypal-integration-246366228f760721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paypal-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paypal-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d84e0b1001f9d7459f025efa2e8ff78ed5a968ad01fe404e7a2eb2c98875fa6",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:41:23.365Z"
+}

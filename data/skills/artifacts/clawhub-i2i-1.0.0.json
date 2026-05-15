@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/i2i@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i2i",
+  "skill": {
+    "id": 35586,
+    "skillKey": "clawhub-i2i",
+    "name": "I2I"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i2i",
+    "url": "https://clawhub.ai/skills/i2i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i2i-15c8a345674fbb33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Placeholder skill for image-to-image workflows on skills.video. Use when the user is asking about i2i generation and the concrete API contract has not been i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skills-video",
+      "userId": "s1794jxnsph7h4dfc4rt0wtmbn83hba0",
+      "displayName": "skills-video",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774335200705,
+      "changelog": "- Initial placeholder skill for image-to-image (i2i) workflows on skills.video.\n- Clearly informs users that i2i functionality is not yet implemented.\n- Avoids guessing API details or image input fields.\n- Guides users to provide specific model or endpoint information if needed.\n- Lists implementation steps and references related skills for text-to-image and text-to-video workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d9b1f7bb5bd2547566da9a2f86b36649a4876225919bb3b05e5361884739896"
+}

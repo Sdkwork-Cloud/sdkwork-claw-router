@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53085,
+  "uuid": "skill-clawhub-slash-tokens",
+  "skillKey": "clawhub-slash-tokens",
+  "name": "Slash Tokens",
+  "summary": "CLI proxy that reduces LLM token consumption by 60-90%. Prefix any dev command with 'rtk' to get filtered, compact output. Use for all Bash commands to save...",
+  "version": "0.34.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slash_tokens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2233admin",
+      "features": [
+        "CLI proxy that reduces LLM token consumption by 60-90%",
+        "Prefix any dev command with 'rtk' to get filtered, compact output",
+        "Use for all Bash commands to save..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slash-tokens@0.34.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57929895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slash-tokens",
+      "url": "https://clawhub.ai/skills/slash-tokens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slash-tokens",
+    "url": "https://clawhub.ai/skills/slash-tokens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slash-tokens-a7f4a88db77270e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slash-tokens@0.34.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-slash-tokens-0.34.3.json",
+      "version": "0.34.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:219d9c8711a6c9cdd80ea270440da771f2d02827da646c082eaec13fcdae84f8",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:37:33.325Z"
+}

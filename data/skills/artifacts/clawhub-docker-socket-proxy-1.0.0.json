@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-socket-proxy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_socket_proxy",
+  "skill": {
+    "id": 20407,
+    "skillKey": "clawhub-docker-socket-proxy",
+    "name": "Docker Socket Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-socket-proxy",
+    "url": "https://clawhub.ai/skills/docker-socket-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-socket-proxy-18735a16c6cdaa20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a remote Docker host securely via docker-socket-proxy, supporting container lifecycle, images, networks, volumes, swarm, plugins, and system info APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bp602",
+      "userId": "publishers:bp602",
+      "displayName": "BP602",
+      "image": "https://avatars.githubusercontent.com/u/3460479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773172786126,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c3df23afe98cc9ff6b687bb87c5fa4f8b98aaf1f1b3ffaab92d145bebdc1f05"
+}

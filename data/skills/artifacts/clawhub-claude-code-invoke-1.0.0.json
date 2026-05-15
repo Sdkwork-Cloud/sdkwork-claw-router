@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-invoke@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_invoke",
+  "skill": {
+    "id": 59212,
+    "skillKey": "clawhub-claude-code-invoke",
+    "name": "Claude Code Invoke"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-invoke",
+    "url": "https://clawhub.ai/skills/claude-code-invoke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-invoke-1211d867853cedab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 claude -p 命令调用 Claude Code 执行单次 Prompt 任务。当用户要求\"用 Claude Code 执行 XXX\"、\"调用 claude -p\"、\"用 Claude Code 调查/分析 XXX\" 时使用。前提：目标目录必须是 Git 仓库。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gold3bear",
+      "userId": "s17930bxaprtfmapx7v2y3p8ns85hcsh",
+      "displayName": "Bear Xiong",
+      "image": "https://avatars.githubusercontent.com/u/5952306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777514380714,
+      "changelog": "Initial release of claude-code-invoke skill.\n\n- Allows invoking Claude Code via the `claude -p` command for single prompt tasks.\n- Designed for scenarios where users specify operations using Claude Code within a Git repository.\n- Supports Windows PowerShell command examples and troubleshooting.\n- Highlights core limitations, usage examples, and parameter details.\n- Ensures `claude` binary is required and only runs inside Git repositories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82938071e3b70dc842690d1674c7a4e47302bd0fedf38f5e87d370277dbd9323"
+}

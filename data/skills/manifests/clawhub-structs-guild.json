@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20777,
+  "uuid": "skill-clawhub-structs-guild",
+  "skillKey": "clawhub-structs-guild",
+  "name": "Structs Guild",
+  "summary": "Manages guild operations in Structs. Covers creation, membership, settings, and Central Bank token operations. Use when creating a guild, joining or leaving...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_guild",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh McDougall",
+      "features": [
+        "Manages guild operations in Structs",
+        "Covers creation, membership, settings, and Central Bank token operations",
+        "Use when creating a guild, joining or leaving..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structs-guild@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structs-guild",
+      "url": "https://clawhub.ai/skills/structs-guild"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-guild",
+    "url": "https://clawhub.ai/skills/structs-guild",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-guild-4698762eaaff7d0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structs-guild@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structs-guild-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68b680b8a2a5772777784669df0600272bd2a0b01f101f66763e8caf0b710603",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:01.099Z"
+}

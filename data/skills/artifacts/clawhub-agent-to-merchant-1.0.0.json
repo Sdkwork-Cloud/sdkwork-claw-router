@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-to-merchant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_to_merchant",
+  "skill": {
+    "id": 50774,
+    "skillKey": "clawhub-agent-to-merchant",
+    "name": "Agent ToMerchant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-to-merchant",
+    "url": "https://clawhub.ai/skills/agent-to-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-to-merchant-f9b58acb4390ac52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SynapseAI Merchant — AI agent payment receiving layer. Register as merchant, create wallets, generate payment links & QR codes, receive on-chain payments, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandagg110",
+      "userId": "publishers:pandagg110",
+      "displayName": "pandagg110",
+      "image": "https://avatars.githubusercontent.com/u/161546697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773604983273,
+      "changelog": "Initial release of SynapseAI Merchant: on-chain payment receiving for AI agents.\n\n- Register agents as merchants to enable receiving payments.\n- Create dedicated merchant wallets and generate payment links/QR codes.\n- Accept on-chain payments (TRON, BASE, ETHEREUM, SOLANA; USDT, USDC).\n- Configure webhooks for payment status notifications.\n- Enable/pause merchant receiving with agent toggle endpoint.\n- Query wallet balances, payment history, and payment links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b24f5b8b4288654bbba3f8ba1fb63a5c8456ee7530e5885d8654898aff68910a"
+}

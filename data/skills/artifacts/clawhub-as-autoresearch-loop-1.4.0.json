@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/as-autoresearch-loop@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.as_autoresearch_loop",
+  "skill": {
+    "id": 52298,
+    "skillKey": "clawhub-as-autoresearch-loop",
+    "name": "AS Autoresearch Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "as-autoresearch-loop",
+    "url": "https://clawhub.ai/skills/as-autoresearch-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/as-autoresearch-loop-c02b01bdc3b6e796.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply Karpathy's autoresearch methodology to iteratively improve anything measurable — Claude skills, n8n workflows, system prompts, business processes, or a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "autosolutionsai-didac",
+      "userId": "s17bcfandyj4x34cq7g7db179h83h3a8",
+      "displayName": "Didac",
+      "image": "https://avatars.githubusercontent.com/u/202002756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775082685319,
+      "changelog": "Hardened all remaining autonomy language: added periodic user check-ins, removed 'autonomously' and 'indefinitely', softened CI/CD section",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b4750cb2f5789f35856ee0b8cee94e66b6c555b1d3cdd885a4c5bc6d18c2e15"
+}

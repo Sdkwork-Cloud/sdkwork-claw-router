@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/note-test1-limingzhi111111@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.note_test1_limingzhi111111",
+  "skill": {
+    "id": 67753,
+    "skillKey": "clawhub-note-test1-limingzhi111111",
+    "name": "note-test1-limingzhi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "note-test1-limingzhi111111",
+    "url": "https://clawhub.ai/skills/note-test1-limingzhi111111",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/note-test1-limingzhi111111-868897ad266b5ad0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "IMA 个人笔记服务 API skill，用于管理用户的 IMA 笔记。支持搜索笔记、浏览笔记本、获取笔记内容、新建笔记和追加内容。 当用户提到笔记、备忘录、记事、知识库，或者想要查找、阅读、创建、编辑笔记内容时，使用此 skill。 即使用户没有明确说\"笔记\"，只要意图涉及个人文档的存取（如\"帮我记一下\"、\"我..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaolibuzai-ovo",
+      "userId": "s1759rkqr0pep9v2etnn6phazh83h7x4",
+      "displayName": "ima.copilot",
+      "image": "https://avatars.githubusercontent.com/u/96616876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652204799,
+      "changelog": "1111",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c16abbeb14ae6f96ea1da68a3483deff5454afeefa9902b92b9246242cc8545"
+}

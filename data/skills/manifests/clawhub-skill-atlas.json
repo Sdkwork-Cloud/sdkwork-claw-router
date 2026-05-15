@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60855,
+  "uuid": "skill-clawhub-skill-atlas",
+  "skillKey": "clawhub-skill-atlas",
+  "name": "skill-atlas",
+  "summary": "虾小宝AI Agent技能商店 - 中国AI Agent Skills地图。用于搜索、安装和管理AI Agent技能插件。当用户需要查找国内的AI Agent技能、插件市场、或者访问 ai.skillatlas.cn 时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_atlas",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "same1317",
+      "features": [
+        "虾小宝AI Agent技能商店",
+        "中国AI Agent Skills地图。用于搜索、安装和管理AI Agent技能插件。当用户需要查找国内的AI Agent技能、插件市场、或者访问 ai.skillatlas.cn 时使用此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-atlas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102150766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-atlas",
+      "url": "https://clawhub.ai/skills/skill-atlas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-atlas",
+    "url": "https://clawhub.ai/skills/skill-atlas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-atlas-d7b00568fe6781b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-atlas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-atlas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55742784722c3efa785b4ffa8c62d75f44a5a58ab23d7058b95d1724055b1127",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:39:55.816Z"
+}

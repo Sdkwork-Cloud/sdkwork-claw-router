@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28127,
+  "uuid": "skill-clawhub-datagma",
+  "skillKey": "clawhub-datagma",
+  "name": "Datagma",
+  "summary": "Datagma integration. Manage Organizations. Use when the user wants to interact with Datagma data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datagma",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Datagma integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Datagma data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datagma@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datagma",
+      "url": "https://clawhub.ai/skills/datagma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datagma",
+    "url": "https://clawhub.ai/skills/datagma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datagma-6c0b3e415cf03151.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datagma@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-datagma-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b3abde2f976fe76852b2fe801d681ac04363202c70c864d8eb58ff7a2a42fa1",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:32.918Z"
+}

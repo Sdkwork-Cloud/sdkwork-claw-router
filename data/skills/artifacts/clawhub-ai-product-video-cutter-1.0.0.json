@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-product-video-cutter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_product_video_cutter",
+  "skill": {
+    "id": 37795,
+    "skillKey": "clawhub-ai-product-video-cutter",
+    "name": "Ai Product Video Cutter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-product-video-cutter",
+    "url": "https://clawhub.ai/skills/ai-product-video-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-product-video-cutter-741161e2ce83df54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get trimmed product clips ready to post, without touching a single slider. Upload your raw product footage (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776599106748,
+      "changelog": "ai-product-video-cutter v1.0.0\n\n- Initial release: Instantly cut e-commerce product videos into highlight clips using AI—no manual editing needed.\n- Upload raw product footage (MP4, MOV, AVI, WebM, up to 500MB).\n- Simple workflow: upload, request highlight clips (e.g., \"cut the best 30-second highlight clips\"), and download 1080p MP4 output in about a minute.\n- No installation required; processing runs on cloud GPUs.\n- Designed for fast-moving e-commerce marketers needing quick, hands-off video trimming.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bb62c2e3bdeb5218e38b78da6cb35d50fdb93a909304ca28ea4c165e648fb81"
+}

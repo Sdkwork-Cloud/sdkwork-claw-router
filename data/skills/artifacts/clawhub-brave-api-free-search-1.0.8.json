@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-api-free-search@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_api_free_search",
+  "skill": {
+    "id": 17027,
+    "skillKey": "clawhub-brave-api-free-search",
+    "name": "brave-api-free-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-api-free-search",
+    "url": "https://clawhub.ai/skills/brave-api-free-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-api-free-search-274b564531aa5d69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free Brave API alternative for OpenClaw. Completely FREE web search. Secure localhost-only deployment. Supports hidden --dev flag."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipepi",
+      "userId": "s170yrhjyy4hv7h3sa7m3zfs3x83pm8h",
+      "displayName": "pipe",
+      "image": "https://avatars.githubusercontent.com/u/16253126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 805,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1773654513839,
+      "changelog": "Remove required env (SEARXNG_BASE_URL optional). Declare Python dependency: requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8295538bc9a9ed907051b280695ed765cdd871bc5f505df4bf98b39895581f41"
+}

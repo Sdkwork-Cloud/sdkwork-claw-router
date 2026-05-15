@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17522,
+  "uuid": "skill-clawhub-ssh-batch-manager",
+  "skillKey": "clawhub-ssh-batch-manager",
+  "name": "Ssh Batch Manager",
+  "summary": "Batch SSH key management. Distribute/remove SSH keys to/from multiple servers with intelligent connectivity pre-check and source tracking.",
+  "version": "2.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_batch_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TK",
+      "features": [
+        "Batch SSH key management",
+        "Distribute/remove SSH keys to/from multiple servers with intelligent connectivity pre-check and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-batch-manager@2.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20353180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-batch-manager",
+      "url": "https://clawhub.ai/skills/ssh-batch-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-batch-manager",
+    "url": "https://clawhub.ai/skills/ssh-batch-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-batch-manager-ac98689638a1884e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-batch-manager@2.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-batch-manager-2.1.9.json",
+      "version": "2.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c0bdb86df07998c9c1a9da63624068b9006ea1044b17488842eb8a9982f2592",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T01:35:01.355Z"
+}

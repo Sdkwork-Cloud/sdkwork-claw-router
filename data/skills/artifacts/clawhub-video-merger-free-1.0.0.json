@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-merger-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_merger_free",
+  "skill": {
+    "id": 55531,
+    "skillKey": "clawhub-video-merger-free",
+    "name": "Video Merger Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-merger-free",
+    "url": "https://clawhub.ai/skills/video-merger-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-merger-free-e4ba7bd8be15e0f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — merge these clips into one continuous video with smooth transitions — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775964345734,
+      "changelog": "- Initial release of Video Merger Free (v1.0.0).\n- Merge multiple video clips (MP4, MOV, AVI, WebM, up to 500MB) into a single MP4 with automatic cloud processing and smooth transitions.\n- Anonymous cloud session setup with 100 free credits (7-day expiry); handles environment token configuration automatically.\n- Easy workflow: upload, describe your edit, and receive a merged video in under a minute.\n- Exposes commands for exporting, uploading, checking credits/status, and more.\n- Designed for content creators needing seamless, installation-free video merges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cf7db099ff7543d9d4bcf8ece52c3dbe3f3237113dd612707227917f769a797"
+}

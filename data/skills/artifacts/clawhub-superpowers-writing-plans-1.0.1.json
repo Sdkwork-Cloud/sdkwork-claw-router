@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superpowers-writing-plans@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers_writing_plans",
+  "skill": {
+    "id": 15873,
+    "skillKey": "clawhub-superpowers-writing-plans",
+    "name": "Writing Plans"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers-writing-plans",
+    "url": "https://clawhub.ai/skills/superpowers-writing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-writing-plans-fceeb9751ee96947.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you have a spec or requirements for a multi-step task, before touching code - guides writing comprehensive implementation plans with bite-sized task..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774515926564,
+      "changelog": "OpenClaw-adapted skill for Superpowers development methodology.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b713981486e3871c45167a92906a2488946fad11a65cd84d85ff5cf150567563"
+}

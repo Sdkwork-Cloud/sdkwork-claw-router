@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rr-renamer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rr_renamer",
+  "skill": {
+    "id": 37445,
+    "skillKey": "clawhub-rr-renamer",
+    "name": "Rr Renamer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rr-renamer",
+    "url": "https://clawhub.ai/skills/rr-renamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rr-renamer-5588a308eac20994.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use RenameRegex (RR.exe) as a generic Windows CLI bulk renamer from OpenClaw. Use when you need regex search/replace renames with preview (/p pretend), recur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextaltair",
+      "userId": "s1769m2r7tj3d8eqerva8kpwkx83nn9e",
+      "displayName": "Altair",
+      "image": "https://avatars.githubusercontent.com/u/1401591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774055284458,
+      "changelog": "Initial release of rr-renamer: a safe Windows CLI wrapper for RenameRegex bulk renaming.\n\n- Provides a generic runner for RenameRegex (RR.exe) via PowerShell 7.\n- Enforces a preview-first workflow to ensure safety.\n- Requires explicit user approval before applying changes.\n- Logs every invocation for auditability.\n- Supports regex search/replace, recursive renames, files/dirs selection.\n- No built-in normalization rules—fully user-driven.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5dc42c873959df45b949b8f3eaeffed28b9210bf15aaf8aaa8a644db13fad221"
+}

@@ -96,6 +96,7 @@
     "commerce_usage_statement_item",
     "content_announcement",
     "content_course",
+    "content_course_application",
     "content_course_lesson",
     "content_course_relation",
     "content_course_section",
@@ -103,11 +104,20 @@
     "content_openapi_snapshot",
     "content_reaction",
     "content_sdk_release",
+    "iam_audit_event",
+    "iam_credential",
     "iam_gateway_access_policy",
     "iam_gateway_api_key",
     "iam_gateway_api_key_group",
     "iam_gateway_api_key_group_metric_snapshot",
     "iam_gateway_risk_rule",
+    "iam_organization",
+    "iam_organization_member",
+    "iam_security_event",
+    "iam_session",
+    "iam_tenant",
+    "iam_user",
+    "iam_user_identity",
     "iam_user_login_event",
     "iam_user_preference",
     "iam_user_security_setting",
@@ -316,6 +326,7 @@
         "ops_audit_log",
         "ops_coupon_issue_batch",
         "ops_referral_stat_snapshot",
+        "plus_account_exchange_config",
         "plus_card",
         "plus_card_template",
         "plus_coupon",
@@ -328,6 +339,8 @@
         "plus_order_item",
         "plus_partner",
         "plus_payment",
+        "plus_product",
+        "plus_sku",
         "plus_user",
         "plus_user_card",
         "plus_user_coupon",
@@ -452,6 +465,9 @@
       "route_scope": "admin",
       "tables": [
         "iam_gateway_api_key",
+        "iam_organization",
+        "iam_organization_member",
+        "iam_tenant",
         "iam_user_login_event",
         "ops_audit_log",
         "plus_account",
@@ -531,6 +547,11 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "iam_audit_event",
+        "iam_credential",
+        "iam_security_event",
+        "iam_user",
+        "iam_user_identity",
         "plus_user"
       ]
     },
@@ -543,6 +564,15 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "iam_audit_event",
+        "iam_credential",
+        "iam_organization",
+        "iam_organization_member",
+        "iam_security_event",
+        "iam_session",
+        "iam_tenant",
+        "iam_user",
+        "iam_user_identity",
         "iam_user_login_event",
         "iam_user_preference",
         "iam_user_security_setting",
@@ -559,6 +589,11 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "iam_audit_event",
+        "iam_security_event",
+        "iam_session",
+        "iam_user",
+        "iam_user_identity",
         "iam_user_login_event",
         "iam_user_preference",
         "iam_user_security_setting",
@@ -574,6 +609,15 @@
       "required_api_surface": "app",
       "route_scope": "public",
       "tables": [
+        "iam_audit_event",
+        "iam_credential",
+        "iam_organization",
+        "iam_organization_member",
+        "iam_security_event",
+        "iam_session",
+        "iam_tenant",
+        "iam_user",
+        "iam_user_identity",
         "plus_user"
       ]
     },
@@ -651,10 +695,14 @@
       "route_scope": "console",
       "tables": [
         "ai_pricing_plan_binding",
+        "ops_audit_log",
         "plus_account",
+        "plus_account_exchange_config",
         "plus_account_history",
         "plus_card",
+        "plus_card_template",
         "plus_coupon",
+        "plus_coupon_template",
         "plus_currency",
         "plus_exchange_rate",
         "plus_order",
@@ -664,12 +712,17 @@
         "plus_sku",
         "plus_user_card",
         "plus_user_coupon",
+        "plus_vip_benefit",
+        "plus_vip_benefit_usage",
+        "plus_vip_level",
+        "plus_vip_level_benefit",
         "plus_vip_pack",
         "plus_vip_pack_group",
         "plus_vip_point_change",
         "plus_vip_recharge",
         "plus_vip_recharge_method",
-        "plus_vip_recharge_pack"
+        "plus_vip_recharge_pack",
+        "plus_vip_user"
       ]
     },
     "/console/checkout": {
@@ -861,6 +914,12 @@
       "required_api_surface": "app",
       "route_scope": "console",
       "tables": [
+        "iam_organization",
+        "iam_organization_member",
+        "iam_session",
+        "iam_tenant",
+        "iam_user",
+        "iam_user_identity",
         "iam_user_login_event",
         "iam_user_preference",
         "iam_user_security_setting",
@@ -878,8 +937,11 @@
       "route_scope": "public",
       "tables": [
         "content_course",
+        "content_course_application",
         "content_course_relation",
-        "content_reaction"
+        "content_reaction",
+        "plus_category",
+        "plus_comments"
       ]
     },
     "/courses/:id": {
@@ -896,6 +958,7 @@
         "content_course_relation",
         "content_course_section",
         "content_reaction",
+        "plus_category",
         "plus_comments",
         "plus_content_vote"
       ]
@@ -935,6 +998,7 @@
       "route_scope": "public",
       "tables": [
         "content_reaction",
+        "plus_comments",
         "plus_content_vote",
         "plus_favorite",
         "plus_feeds"
@@ -1037,6 +1101,7 @@
         "ai_model_capability",
         "ai_model_family",
         "ai_model_pricing",
+        "ai_model_vendor",
         "ai_pricing_plan",
         "ai_usage_fact",
         "integration_provider"
@@ -1134,17 +1199,17 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 108,
-      "backend": 134,
+      "app": 122,
+      "backend": 142,
       "openai_v1": 9,
       "system": 2,
       "worker": 53
     },
     "external_legacy_table_count": 60,
     "frontend_route_count": 52,
-    "generated_table_count": 83,
+    "generated_table_count": 93,
     "legacy_table_count": 69,
-    "table_count": 145
+    "table_count": 155
   },
   "tables": [
     {
@@ -5801,6 +5866,7 @@
         "/models/:id",
         "/models/:provider/:model",
         "/rankings",
+        "/playground",
         "/admin/model",
         "/admin/channel"
       ],
@@ -12562,6 +12628,300 @@
       "column_types": {},
       "columns": [
         {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "title",
+          "source": "explicit",
+          "type": "string(200)"
+        },
+        {
+          "name": "category",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "description",
+          "source": "explicit",
+          "type": "text"
+        },
+        {
+          "name": "source_provider",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "external_bvid",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "video_url",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "contact_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "contact_email",
+          "source": "explicit",
+          "type": "string(254)"
+        },
+        {
+          "name": "submitted_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "reviewed_by",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "reviewed_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "review_comment",
+          "source": "explicit",
+          "type": "string(1000)"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "content",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/courses"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_content_course_application_status",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "created_at",
+            "id"
+          ],
+          "name": "idx_content_course_application_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "user_content_application",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "content_course_application",
+      "unique_constraints": [],
+      "write_owner": "course-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
           "group": "tenant_entity",
           "name": "id",
           "source": "common",
@@ -14855,6 +15215,208 @@
       "column_types": {},
       "columns": [
         {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "actor_user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "action",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "resource_type",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "request_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "app_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "environment",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "sharding_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "detail_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password",
+        "/auth/oauth/callback/:provider"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "created_at",
+            "action"
+          ],
+          "name": "idx_iam_audit_event_tenant_created_at",
+          "unique": false
+        },
+        {
+          "columns": [
+            "request_id"
+          ],
+          "name": "idx_iam_audit_event_request_id",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "audit_log",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_audit_event",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "credential_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "credential_hash",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "credential_type",
+            "status"
+          ],
+          "name": "idx_iam_credential_tenant_user_type",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_credential",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
           "group": "tenant_entity",
           "name": "id",
           "source": "common",
@@ -16433,6 +16995,724 @@
       "table": "iam_gateway_risk_rule",
       "unique_constraints": [],
       "write_owner": "risk-service"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "parent_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "path",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/console/user",
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "parent_id",
+            "status"
+          ],
+          "name": "idx_iam_organization_tenant_parent",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "path",
+            "status"
+          ],
+          "name": "idx_iam_organization_tenant_path",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_organization",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "code"
+          ],
+          "name": "uk_iam_organization_tenant_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "role_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "joined_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/console/user",
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "status"
+          ],
+          "name": "idx_iam_organization_member_tenant_user",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status"
+          ],
+          "name": "idx_iam_organization_member_tenant_org",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_organization_member",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id"
+          ],
+          "name": "uk_iam_organization_member_tenant_org_user",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "session_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "event_type",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "severity",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "detail_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password",
+        "/auth/oauth/callback/:provider"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "created_at",
+            "severity"
+          ],
+          "name": "idx_iam_security_event_tenant_created_at",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "event_log",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_security_event",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "app_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "environment",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "deployment_mode",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "auth_level",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "auth_token_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "access_token_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "refresh_token_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "sharding_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "sharding_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "data_scope_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "permission_scope_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "expires_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "revoked_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/oauth/callback/:provider",
+        "/console/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "app_id",
+            "revoked_at",
+            "expires_at"
+          ],
+          "name": "idx_iam_session_tenant_user",
+          "unique": false
+        },
+        {
+          "columns": [
+            "auth_token_hash"
+          ],
+          "name": "idx_iam_session_auth_token_hash",
+          "unique": false
+        },
+        {
+          "columns": [
+            "access_token_hash"
+          ],
+          "name": "idx_iam_session_access_token_hash",
+          "unique": false
+        },
+        {
+          "columns": [
+            "refresh_token_hash"
+          ],
+          "name": "idx_iam_session_refresh_token_hash",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_session",
+      "unique_constraints": [],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/console/user",
+        "/admin/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "status",
+            "created_at"
+          ],
+          "name": "idx_iam_tenant_status_created_at",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_root",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_tenant",
+      "unique_constraints": [
+        {
+          "columns": [
+            "code"
+          ],
+          "name": "uk_iam_tenant_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "username",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "display_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "email",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "phone",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "avatar_url",
+          "source": "explicit",
+          "type": "string(2048)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password",
+        "/auth/oauth/callback/:provider",
+        "/console/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "status",
+            "created_at"
+          ],
+          "name": "idx_iam_user_tenant_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_user",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "username"
+          ],
+          "name": "uk_iam_user_tenant_username",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "provider",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "subject",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "email",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/auth/login",
+        "/auth/register",
+        "/auth/forgot-password",
+        "/auth/oauth/callback/:provider",
+        "/console/user"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "user_id",
+            "provider"
+          ],
+          "name": "idx_iam_user_identity_tenant_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_user_identity",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "provider",
+            "subject"
+          ],
+          "name": "uk_iam_user_identity_tenant_provider_subject",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
     },
     {
       "api_surfaces": [
@@ -19769,6 +21049,7 @@
       "frontend_routes": [
         "/console/account",
         "/console/api-keys",
+        "/console/billing",
         "/console/routing",
         "/admin/user",
         "/admin/channel",
@@ -23030,6 +24311,7 @@
     },
     {
       "api_surfaces": [
+        "app",
         "backend"
       ],
       "column_types": {},
@@ -23039,7 +24321,9 @@
       "domain": "legacy",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/finance"
+        "/console/billing",
+        "/admin/finance",
+        "/admin/marketing"
       ],
       "generated_by_this_project": false,
       "indexes": [],
@@ -23962,6 +25246,7 @@
     },
     {
       "api_surfaces": [
+        "app",
         "backend"
       ],
       "column_types": {},
@@ -23971,6 +25256,7 @@
       "domain": "legacy",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/billing",
         "/admin/marketing"
       ],
       "generated_by_this_project": false,
@@ -24110,6 +25396,8 @@
         "/apps/:id",
         "/skills-hub",
         "/skills-hub/:id",
+        "/courses",
+        "/courses/:id",
         "/admin/category",
         "/admin/app",
         "/admin/skill"
@@ -24376,7 +25664,9 @@
       "domain": "legacy",
       "foreign_keys": [],
       "frontend_routes": [
+        "/forum",
         "/forum/:id",
+        "/courses",
         "/courses/:id"
       ],
       "generated_by_this_project": true,
@@ -24691,6 +25981,7 @@
     },
     {
       "api_surfaces": [
+        "app",
         "backend"
       ],
       "column_types": {},
@@ -24700,6 +25991,7 @@
       "domain": "legacy",
       "foreign_keys": [],
       "frontend_routes": [
+        "/console/billing",
         "/admin/marketing"
       ],
       "generated_by_this_project": false,
@@ -26711,7 +28003,8 @@
       "frontend_routes": [
         "/console/recharge",
         "/console/billing",
-        "/admin/finance"
+        "/admin/finance",
+        "/admin/marketing"
       ],
       "generated_by_this_project": false,
       "indexes": [
@@ -26945,6 +28238,7 @@
     },
     {
       "api_surfaces": [
+        "app",
         "backend"
       ],
       "column_types": {},
@@ -27336,7 +28630,8 @@
       "frontend_routes": [
         "/console/recharge",
         "/console/billing",
-        "/admin/finance"
+        "/admin/finance",
+        "/admin/marketing"
       ],
       "generated_by_this_project": false,
       "indexes": [
@@ -27897,6 +29192,7 @@
       "foreign_keys": [],
       "frontend_routes": [
         "/console/account",
+        "/console/billing",
         "/admin/user"
       ],
       "generated_by_this_project": false,
@@ -27987,6 +29283,7 @@
       ],
       "frontend_routes": [
         "/console/account",
+        "/console/billing",
         "/admin/user"
       ],
       "generated_by_this_project": false,
@@ -28071,6 +29368,7 @@
       "foreign_keys": [],
       "frontend_routes": [
         "/console/account",
+        "/console/billing",
         "/admin/user"
       ],
       "generated_by_this_project": false,
@@ -28165,6 +29463,7 @@
       ],
       "frontend_routes": [
         "/console/account",
+        "/console/billing",
         "/admin/user"
       ],
       "generated_by_this_project": false,
@@ -28894,6 +30193,7 @@
       ],
       "frontend_routes": [
         "/console/account",
+        "/console/billing",
         "/admin/user"
       ],
       "generated_by_this_project": false,

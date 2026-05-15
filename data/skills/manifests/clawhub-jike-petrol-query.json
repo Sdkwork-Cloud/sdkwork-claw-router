@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71650,
+  "uuid": "skill-clawhub-jike-petrol-query",
+  "skillKey": "clawhub-jike-petrol-query",
+  "name": "国内油价实时查询 - 即刻数据",
+  "summary": "国内油价实时查询。按省份查询 92号汽油、95号汽油、98号汽油和0号柴油价格，也支持不传省份返回全部地区油价。适用场景：用户说“四川今天油价多少”“查一下广东95号汽油价格”“全国油价列表”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_petrol_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "国内油价实时查询。按省份查询 92号汽油、95号汽油、98号汽油和0号柴油价格，也支持不传省份返回全部地区油价。适用场景：用户说“四川今天油价多少”“查一下广东95号汽油价格”“全国油价列表."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-petrol-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-petrol-query",
+      "url": "https://clawhub.ai/skills/jike-petrol-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-petrol-query",
+    "url": "https://clawhub.ai/skills/jike-petrol-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-petrol-query-ff49b9ba7a16780b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-petrol-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-petrol-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc4fea0a45f203a0acc97131ae0879181d2cf74684270c15426848cf3d53b398",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:03:42.829Z"
+}

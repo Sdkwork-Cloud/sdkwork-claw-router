@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72920,
+  "uuid": "skill-clawhub-video-motion-detector",
+  "skillKey": "clawhub-video-motion-detector",
+  "name": "Na He",
+  "summary": "视频动作检测与分析。用于检测视频中的特定动作序列，如武术动作、舞蹈动作、人体姿态变化等。当用户要求检测视频中的动作、分析动作是否完成、验证特定动作序列时触发此技能。支持输入视频URL或本地视频文件，检测完成后通过飞书通知结果。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_motion_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hena1985",
+      "features": [
+        "视频动作检测与分析。用于检测视频中的特定动作序列，如武术动作、舞蹈动作、人体姿态变化等。当用户要求检测视频中的动作、分析动作是否完成、验证特定动作序列时触发此技能。支持输入视频URL或本地视."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-motion-detector@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38931636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-motion-detector",
+      "url": "https://clawhub.ai/skills/video-motion-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-motion-detector",
+    "url": "https://clawhub.ai/skills/video-motion-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-motion-detector-3d8f81efc0573563.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-motion-detector@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-motion-detector-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47f5d8ba78b155e850f3d688513d7a499abe7df88f10c3e52b50a3addd70b37f",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:43:31.378Z"
+}

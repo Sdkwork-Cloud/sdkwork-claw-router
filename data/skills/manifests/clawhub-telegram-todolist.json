@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15172,
+  "uuid": "skill-clawhub-telegram-todolist",
+  "skillKey": "clawhub-telegram-todolist",
+  "name": "Telegram Todo List",
+  "summary": "Manage your TODO.md todo list via Telegram with commands to query, organize (add/edit/delete/move), and execute (complete) tasks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_todolist",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BugIt",
+      "features": [
+        "Manage your TODO.md todo list via Telegram with commands to query, organize (add/edit/delete/mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-todolist@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4929944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-todolist",
+      "url": "https://clawhub.ai/skills/telegram-todolist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-todolist",
+    "url": "https://clawhub.ai/skills/telegram-todolist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-todolist-e5e2a8ad7920cf1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-todolist@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-todolist-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:403f86284b99193ebc7db1e6790be66197f0e80611fb740791e04b2f6203c98b",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T09:17:24.215Z"
+}

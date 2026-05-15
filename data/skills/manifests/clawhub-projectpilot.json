@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39035,
+  "uuid": "skill-clawhub-projectpilot",
+  "skillKey": "clawhub-projectpilot",
+  "name": "Projectpilot",
+  "summary": "Lightweight project management for agents. Create projects, track tasks, set priorities and deadlines.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.projectpilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Lightweight project management for agents",
+        "Create projects, track tasks, set priorities and deadlines."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/projectpilot@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "projectpilot",
+      "url": "https://clawhub.ai/skills/projectpilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "projectpilot",
+    "url": "https://clawhub.ai/skills/projectpilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/projectpilot-e523350936413aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/projectpilot@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-projectpilot-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3240b38c813807d42fcdece8ceb22c70b4542d38a911a643bcc4881c45c9b075",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:25:44.515Z"
+}

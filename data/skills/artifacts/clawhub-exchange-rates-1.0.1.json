@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exchange-rates@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exchange_rates",
+  "skill": {
+    "id": 9403,
+    "skillKey": "clawhub-exchange-rates",
+    "name": "Exchange Rates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exchange-rates",
+    "url": "https://clawhub.ai/skills/exchange-rates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exchange-rates-f0fceb14f00dc7ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch live exchange rates between any currency pairs from XE.com. Use when: user asks about currency conversion, exchange rates, forex rates, or converting a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrinvincible29",
+      "userId": "publishers:mrinvincible29",
+      "displayName": "mrInvincible29",
+      "image": "https://avatars.githubusercontent.com/u/201322320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3996,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771563426062,
+      "changelog": "- Expanded description to clarify intended use cases and when not to use the skill (e.g. for stock/crypto/financial market queries).\n- Added examples of what kinds of user queries the skill supports.\n- Explicitly noted expected JSON output and how to present results.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4d9653a448e4ffcddab9f369a74b271c724d766965ee32d6021dbcd96f6a72d"
+}

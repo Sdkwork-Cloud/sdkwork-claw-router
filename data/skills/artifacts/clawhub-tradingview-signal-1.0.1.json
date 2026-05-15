@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradingview-signal@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradingview_signal",
+  "skill": {
+    "id": 22330,
+    "skillKey": "clawhub-tradingview-signal",
+    "name": "TradingView Signal Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradingview-signal",
+    "url": "https://clawhub.ai/skills/tradingview-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradingview-signal-386c3e1fedad3481.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse TradingView signals from text or URLs to extract trade details and calculate risk/reward ratios for structured trade analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanuei",
+      "userId": "s1776jddh2nb5b6k9mv5rd782183jxmb",
+      "displayName": "sanuei",
+      "image": "https://avatars.githubusercontent.com/u/150786555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772720717192,
+      "changelog": "- Updated internal logic in index.js\n- No changes to user-facing documentation or features\n- Maintains full compatibility with previous version",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db893096b5c3f77269714e2b5cc3f5ca558ae8cc267aae9d6cd051fdb059227d"
+}

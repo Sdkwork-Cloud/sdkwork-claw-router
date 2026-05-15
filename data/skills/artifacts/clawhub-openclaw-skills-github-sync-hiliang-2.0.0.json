@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skills-github-sync-hiliang@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skills_github_sync_hiliang",
+  "skill": {
+    "id": 59071,
+    "skillKey": "clawhub-openclaw-skills-github-sync-hiliang",
+    "name": "Openclaw Skills Github Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skills-github-sync-hiliang",
+    "url": "https://clawhub.ai/skills/openclaw-skills-github-sync-hiliang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skills-github-sync-hiliang-65d51c787117a687.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 OpenClaw skills 同步到 GitHub（非实时，需手动确认）。 支持 Windows/Linux/Mac。 使用场景：skill 创建或修改完成后同步到 GitHub"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hi-jiajun",
+      "userId": "s178ed15vbsxqb6prp4wzr6ftx83wmcx",
+      "displayName": "KiLiminal",
+      "image": "https://avatars.githubusercontent.com/u/107156889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772980057878,
+      "changelog": "Summary: Adds full Windows support and improves documentation.\n\n- 新增 Windows 支持，脚本和使用方法现包含 Windows 说明\n- 更新 README 和 SKILL.md：简化平台说明，加入 Windows/Linux/Mac 全平台操作指引\n- 文档调整，增强“快速开始”与“安装方式”指引，统一演示流程\n- 移除“Windows 版本开发中”相关内容",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d85aa3d377b062c26401ad0ef2b0fa8f26bd5e6b37f4e9c5e8c4b6c0c0d5799"
+}

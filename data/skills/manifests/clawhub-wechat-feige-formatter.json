@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63655,
+  "uuid": "skill-clawhub-wechat-feige-formatter",
+  "skillKey": "clawhub-wechat-feige-formatter",
+  "name": "Wechat Feige Formatter",
+  "summary": "公众号排版工具。用户提供任意格式的文章内容（草稿、纯文字、已有 Markdown 均可）， AI 自动识别结构、添加排版标记，生成专业公众号 HTML。 Use when: 用户说\"帮我排版\"、\"转成公众号格式\"、\"生成 HTML\"；用户上传文章内容或文件 NOT for: 纯文本渲染；用户只想预览已有 HTML",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_feige_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TraceVan",
+      "features": [
+        "公众号排版工具。用户提供任意格式的文章内容（草稿、纯文字、已有 Markdown 均可）， AI 自动识别结构、添加排版标记，生成专业公众号 HTML。 Use when: 用户说\"帮我排版."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-feige-formatter@2.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205495157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-feige-formatter",
+      "url": "https://clawhub.ai/skills/wechat-feige-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-feige-formatter",
+    "url": "https://clawhub.ai/skills/wechat-feige-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-feige-formatter-17d1e91f5dc6a0ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-feige-formatter@2.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-feige-formatter-2.3.5.json",
+      "version": "2.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:042847f91253610d09aa580df6db0620ca1102a407f9f13d23af64bd3b3b1dbd",
+      "artifactSizeBytes": 2803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:27:18.058Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shanghai-luohu@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shanghai_luohu",
+  "skill": {
+    "id": 68578,
+    "skillKey": "clawhub-shanghai-luohu",
+    "name": "上海落户公示查询 (Shanghai Luohu)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shanghai-luohu",
+    "url": "https://clawhub.ai/skills/shanghai-luohu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shanghai-luohu-af3ac508d6b38810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询上海落户公示信息，包括人才引进公示和居转户公示。触发词包括\"上海落户公示\"、\"查询落户公示\"、\"人才引进公示\"、\"居转户公示\"、\"上海落户\"、\"户口公示\"、\"落户公示\"、\"商米落户\"、\"得物落户\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luduoxin",
+      "userId": "s17cnpmrsw54h2vbr823362y3183hxgt",
+      "displayName": "路多辛",
+      "image": "https://avatars.githubusercontent.com/u/3434402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773643123437,
+      "changelog": "No changes detected in this release.  \nVersion number updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c08121ae1a6d493fe32b67ccefe55d671ab54a1621295c921ad7842747e2905f"
+}

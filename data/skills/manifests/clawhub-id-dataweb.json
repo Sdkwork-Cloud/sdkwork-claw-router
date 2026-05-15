@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33918,
+  "uuid": "skill-clawhub-id-dataweb",
+  "skillKey": "clawhub-id-dataweb",
+  "name": "Id Dataweb",
+  "summary": "ID DataWeb integration. Manage data, records, and automate workflows. Use when the user wants to interact with ID DataWeb data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.id_dataweb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ID DataWeb integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ID DataWeb data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/id-dataweb@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "id-dataweb",
+      "url": "https://clawhub.ai/skills/id-dataweb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "id-dataweb",
+    "url": "https://clawhub.ai/skills/id-dataweb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/id-dataweb-5076b9ebe25bb7bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/id-dataweb@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-id-dataweb-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:667fa6634e15cf1a9b71f1409ff23978143eaaa8f54ded3000b7759de6d2d92e",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:58:15.966Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70577,
+  "uuid": "skill-clawhub-findskill",
+  "skillKey": "clawhub-findskill",
+  "name": "Find Skill",
+  "summary": "智能搜索和发现技能包，支持中英双语、多来源，按关键词、标签及作者快速定位所需技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.findskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bittao",
+      "features": [
+        "智能搜索和发现技能包，支持中英双语、多来源，按关键词、标签及作者快速定位所需技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/findskill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17961407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "findskill",
+      "url": "https://clawhub.ai/skills/findskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "findskill",
+    "url": "https://clawhub.ai/skills/findskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/findskill-31582b89e9b49ddf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/findskill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-findskill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:766befc92066422b19883bb7fc6d01668a3c1c640977dba35e2898dd7bf80b6d",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:33:22.928Z"
+}

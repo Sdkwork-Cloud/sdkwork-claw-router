@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobb-vulnerabilities-fixer@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobb_vulnerabilities_fixer",
+  "skill": {
+    "id": 51743,
+    "skillKey": "clawhub-mobb-vulnerabilities-fixer",
+    "name": "Mobb Vulnerabilities Fixer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobb-vulnerabilities-fixer",
+    "url": "https://clawhub.ai/skills/mobb-vulnerabilities-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobb-vulnerabilities-fixer-6f7c3dc7ab7ff11a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan, fix, and remediate security vulnerabilities in a local code repository using Mobb MCP/CLI. Use when the user asks to scan for vulnerabilities, run a security check, auto-fix issues, remediate findings, or apply Mobb fixes (e.g., \\\"sc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathansantilli",
+      "userId": "publishers:jonathansantilli",
+      "displayName": "Jonathan Santilli",
+      "image": "https://avatars.githubusercontent.com/u/1774227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1569,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770490781344,
+      "changelog": "Remove npx execution; require MCP already running; tighten auth guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3091c88f80f12d35ef1916b74a7fd793d2655f5ca2cc7b8a442d7c35fc1bddb"
+}

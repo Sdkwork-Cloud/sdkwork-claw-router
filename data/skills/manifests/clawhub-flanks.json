@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37303,
+  "uuid": "skill-clawhub-flanks",
+  "skillKey": "clawhub-flanks",
+  "name": "Flanks",
+  "summary": "Flanks integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flanks data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flanks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Flanks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flanks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flanks@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flanks",
+      "url": "https://clawhub.ai/skills/flanks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flanks",
+    "url": "https://clawhub.ai/skills/flanks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flanks-7ccc4d452744cf8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flanks@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flanks-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf345074c59b7663dc8d43270727a6a0f76825c1bcab75cc03423ba906451a79",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:28:06.116Z"
+}

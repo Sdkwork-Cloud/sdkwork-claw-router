@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bioskills@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bioskills",
+  "skill": {
+    "id": 12698,
+    "skillKey": "clawhub-bioskills",
+    "name": "BioSkills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bioskills",
+    "url": "https://clawhub.ai/skills/bioskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bioskills-d3d42e0504b554f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs 412 bioinformatics skills covering sequence analysis, RNA-seq, single-cell, variant calling, metagenomics, structural biology, and 54 more categorie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djemec",
+      "userId": "s17799t3f7bexf6d8jfpbqgg5d85wjeh",
+      "displayName": "Domen Jemec",
+      "image": "https://avatars.githubusercontent.com/u/20817075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1285,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1771028991879,
+      "changelog": "- Added git as a required dependency for installation (now requires \"git\" alongside \"python3\" or \"Rscript\").\n- Pinned to v3.0 of BioSkills",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c55038420bad85b6d0246866def23c250ae48570794e53139cbe859fff70e6ca"
+}

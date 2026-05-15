@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dida365@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dida365",
+  "skill": {
+    "id": 56964,
+    "skillKey": "clawhub-dida365",
+    "name": "Dida365"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dida365",
+    "url": "https://clawhub.ai/skills/dida365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dida365-0267858fe8e2817f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to interact with TickTick/Dida365 (滴答清单) — managing tasks, projects, and to-dos, checking productivity stats, completing tasks, searc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangcheng",
+      "userId": "s175nmpyj4ae3869gxdszx68b983pcen",
+      "displayName": "Cheng",
+      "image": "https://avatars.githubusercontent.com/u/2804393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773716561336,
+      "changelog": "- Initial release of the dida365 skill for TickTick/Dida365 (滴答清单) integration.\n- Supports querying, creating, updating, completing, and filtering tasks and lists.\n- Provides workflows for viewing today’s tasks, searching by keyword, managing productivity stats, and computing completion rate.\n- Includes detailed guidance on API field usage, priority levels, and task statuses.\n- Chinese-language tool descriptions and user tips included for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31a8c1f5fc0bbdd76f0ae30e179485647febf2dca7dc67d86b2f2bd6c8465f45"
+}

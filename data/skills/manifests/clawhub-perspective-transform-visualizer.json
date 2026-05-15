@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65985,
+  "uuid": "skill-clawhub-perspective-transform-visualizer",
+  "skillKey": "clawhub-perspective-transform-visualizer",
+  "name": "Perspective Transform Visualizer",
+  "summary": "透视变换可视化工具。根据用户指定的变换参数（平移/旋转/缩放/剪切/透视），修改网页初始配置并打开浏览器展示效果。适合教学演示和手动调试。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perspective_transform_visualizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yu-zhengzheng",
+      "features": [
+        "透视变换可视化工具。根据用户指定的变换参数（平移/旋转/缩放/剪切/透视），修改网页初始配置并打开浏览器展示效果。适合教学演示和手动调试。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perspective-transform-visualizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97808334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perspective-transform-visualizer",
+      "url": "https://clawhub.ai/skills/perspective-transform-visualizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perspective-transform-visualizer",
+    "url": "https://clawhub.ai/skills/perspective-transform-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perspective-transform-visualizer-97123a30fcf6776d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perspective-transform-visualizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perspective-transform-visualizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:734f1e2939494f2a735a3f89736ac32f22b4755984e34c516a98f25b4aacdc1b",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:22:10.777Z"
+}

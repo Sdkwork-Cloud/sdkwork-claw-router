@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72010,
+  "uuid": "skill-clawhub-humanize-write",
+  "skillKey": "clawhub-humanize-write",
+  "name": "说人话",
+  "summary": "去AI味写作技能：将AI生成的文案改写成真人风格，适用于小红书、抖音、微信公众号、微博。 触发词：去AI味、润色文案、生成正文、human写作。 适用场景：AI生成初稿后，执行去AI味处理，使文案读起来自然、有人味、不像机器写的。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_write",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DayuCyrus",
+      "features": [
+        "去AI味写作技能：将AI生成的文案改写成真人风格，适用于小红书、抖音、微信公众号、微博。 触发词：去AI味、润色文案、生成正文、human写作。 适用场景：AI生成初稿后，执行去AI味处理，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanize-write@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273726579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanize-write",
+      "url": "https://clawhub.ai/skills/humanize-write"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-write",
+    "url": "https://clawhub.ai/skills/humanize-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-write-b65247afeceed660.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanize-write@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanize-write-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b28c23ee7f1a5f5cdb96a8224f41731791da9d0094ec5f2c412ef20a2e78693d",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T01:36:25.595Z"
+}

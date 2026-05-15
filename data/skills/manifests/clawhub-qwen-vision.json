@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14484,
+  "uuid": "skill-clawhub-qwen-vision",
+  "skillKey": "clawhub-qwen-vision",
+  "name": "Qwen Vision",
+  "summary": "Analyze images and videos using Qwen Vision API (Alibaba Cloud DashScope). Supports image understanding, OCR, visual reasoning.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "perchouli",
+      "features": [
+        "Analyze images and videos using Qwen Vision API (Alibaba Cloud DashScope)",
+        "Supports image understanding, OCR, visual reasoning."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-vision@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/665640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-vision",
+      "url": "https://clawhub.ai/skills/qwen-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-vision",
+    "url": "https://clawhub.ai/skills/qwen-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-vision-2c34da14e62a3021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-vision@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-vision-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5917dfed7e222d78644f3973171bf4a5d33b84cd96398d78d2169ea185e0c1bc",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:46:24.629Z"
+}

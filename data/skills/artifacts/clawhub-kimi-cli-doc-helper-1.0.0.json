@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kimi-cli-doc-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_cli_doc_helper",
+  "skill": {
+    "id": 34945,
+    "skillKey": "clawhub-kimi-cli-doc-helper",
+    "name": "kimi-cli-doc-helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-cli-doc-helper",
+    "url": "https://clawhub.ai/skills/kimi-cli-doc-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-cli-doc-helper-5585f378ee91e170.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Answer Kimi Code CLI (kimi-cli) questions by querying and analyzing the official documentation at moonshotai.github.io/kimi-cli. TRIGGER CONDITIONS - Use thi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wx528",
+      "userId": "s17bdygntrz6nejgrntgv6q64h83np2v",
+      "displayName": "DaXuan",
+      "image": "https://avatars.githubusercontent.com/u/33819629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774582818536,
+      "changelog": "Initial release for Kimi CLI documentation helper.\n\n- Answers questions about Kimi Code CLI by fetching and analyzing official documentation from moonshotai.github.io/kimi-cli.\n- Clearly outlines trigger conditions for when this skill should be used.\n- Provides a workflow for retrieving, analyzing, and responding using up-to-date documentation.\n- Includes key reference URLs and quick setup/usage instructions for users.\n- Ensures all technical details are sourced from official documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfb1374a32d53d16927d89c8ad740bfba18086aa8930b0b6c8b4283964bf914b"
+}

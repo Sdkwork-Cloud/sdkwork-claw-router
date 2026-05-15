@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zwj-github-mcp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zwj_github_mcp",
+  "skill": {
+    "id": 46787,
+    "skillKey": "clawhub-zwj-github-mcp",
+    "name": "github-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zwj-github-mcp",
+    "url": "https://clawhub.ai/skills/zwj-github-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zwj-github-mcp-435e9a297b19c496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the GitHub MCP server (github-mcp-server) to browse repositories, manage issues and PRs, analyze code, search files, monitor CI/CD workflows, and automat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zwj-opener",
+      "userId": "s17bekxmqyfk64jte3tgedpj3d83hs1s",
+      "displayName": "zwj-opener",
+      "image": "https://avatars.githubusercontent.com/u/269986619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777328056370,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8af3ce5268cd44cbbf5c7f3ad89e159ad344d1ad09e4b27429103e8d52c8e486"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-nurture@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_nurture",
+  "skill": {
+    "id": 59865,
+    "skillKey": "clawhub-agent-nurture",
+    "name": "Agent Nurture Framework (OpenClaw Edition)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-nurture",
+    "url": "https://clawhub.ai/skills/agent-nurture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-nurture-08b0805f9202d501.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent自我培养框架 — 基于\"知识结晶循环\"持续成长。 Use when: (1) 需要系统化学习新领域，(2) 从经验中提取可复用技能，(3) 管理技能碎片化，(4) 衡量自身能力成长，(5) 帮助培养新出生的agent。 基于师兄的Agent Nurture Framework (2026-04-04)，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775442660427,
+      "changelog": "v1.2: 改为通用版，移除小I-specific内容，适配所有OpenClaw agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a08b651bd578b9b392849e30689d7705cabb1257ea21a09af027423c4dc437e"
+}

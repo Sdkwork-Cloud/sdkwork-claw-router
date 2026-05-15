@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qrdex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrdex",
+  "skill": {
+    "id": 11636,
+    "skillKey": "clawhub-qrdex",
+    "name": "QRdex"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrdex",
+    "url": "https://clawhub.ai/skills/qrdex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrdex-4f7c4f0847008079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and track QR codes using the QRdex.io REST API. Use when working with QR code generation, URL shortening with QR codes, WiFi QR codes, email/SMS/WhatsApp QR codes, scan tracking, or any QRdex.io operations. Supports all QR."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebastienb",
+      "userId": "publishers:sebastienb",
+      "displayName": "sebastienb",
+      "image": "https://avatars.githubusercontent.com/u/2538981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1777,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770142728380,
+      "changelog": "Initial release: Full QRdex.io API support (url, email, wifi, sms, whatsapp, telephone). Includes Python CLI client and API reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a84058ad4add17ccb4ff90fb22bca5a10d753eb08685aa53ad4310d3143d4b53"
+}

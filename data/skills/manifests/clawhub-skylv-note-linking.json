@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39556,
+  "uuid": "skill-clawhub-skylv-note-linking",
+  "skillKey": "clawhub-skylv-note-linking",
+  "name": "Skylv Note Linking",
+  "summary": "Automatically creates bidirectional links between related notes",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_note_linking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Automatically creates bidirectional links between related notes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-note-linking@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-note-linking",
+      "url": "https://clawhub.ai/skills/skylv-note-linking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-note-linking",
+    "url": "https://clawhub.ai/skills/skylv-note-linking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-note-linking-eb7c0371f8cfd640.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-note-linking@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-note-linking-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3e3f0b0098ab1463b322c1cd99f7069aee89f4b154d19c7f605948c963dda58",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:37:35.773Z"
+}

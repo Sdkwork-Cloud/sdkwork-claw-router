@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-reverse-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_reverse_skill",
+  "skill": {
+    "id": 48975,
+    "skillKey": "clawhub-prompt-reverse-skill",
+    "name": "AI Prompt Reverse Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-reverse-skill",
+    "url": "https://clawhub.ai/skills/prompt-reverse-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-reverse-skill-ae6dfafba70ec6fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert image to structured prompts for multiple AI models"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keweizhan",
+      "userId": "s17fn8gh500c6ppq33e0adymqx864n2a",
+      "displayName": "keweizhan",
+      "image": "https://avatars.githubusercontent.com/u/56283830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777958965695,
+      "changelog": "- Initial release of Prompt Reverse AI pipeline\n- Implements image → structured JSON → classification → prompt generation workflow\n- Supports multi-model prompt adaptation (SD / MidJourney / DALL·E)\n- Includes category-aware prompt templates and style abstraction\n- Designed as a modular pipeline for extensibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f46ee5a28c8b01f07a0313e6d24321e15e07a48003b7696e45d9abe5aa67ff3"
+}

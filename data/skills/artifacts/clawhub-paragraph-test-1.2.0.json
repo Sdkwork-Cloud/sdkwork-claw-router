@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paragraph-test@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paragraph_test",
+  "skill": {
+    "id": 47432,
+    "skillKey": "clawhub-paragraph-test",
+    "name": "Paragraph Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paragraph-test",
+    "url": "https://clawhub.ai/skills/paragraph-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paragraph-test-58b62751f4483d68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage Web3-native blogging on Paragraph.com with onchain posts, tokenized content, subscriber management, and automated publishing via API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claireaicodes",
+      "userId": "publishers:claireaicodes",
+      "displayName": "ClaireAICodes",
+      "image": "https://avatars.githubusercontent.com/u/260567970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773112144013,
+      "changelog": "Testing with different slug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc96aebe885dd2741d507050be6d1548cb51d4ae96e0eae227ac1009fae974f8"
+}

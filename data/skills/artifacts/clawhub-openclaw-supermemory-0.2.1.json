@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-supermemory@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_supermemory",
+  "skill": {
+    "id": 23011,
+    "skillKey": "clawhub-openclaw-supermemory",
+    "name": "Supermemory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-supermemory",
+    "url": "https://clawhub.ai/skills/openclaw-supermemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-supermemory-e95f7fe5f1e00b21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Long-term agent memory with atomic fact extraction, relational versioning, semantic search, and entity profiles. Extracts facts from conversations, tracks ho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jared-goering",
+      "userId": "s17cmw3hp8gkjs0kg3tdrv85ns83jf94",
+      "displayName": "jared-goering",
+      "image": "https://avatars.githubusercontent.com/u/59028423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774399378688,
+      "changelog": "Initial ClawHub release. Long-term agent memory with atomic fact extraction, relational versioning, semantic search, entity profiles. 67% accuracy on LongMemEval_s benchmark. Includes OpenClaw plugin for zero-config integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f96ec69aa87d8fead0e014b2f366cf4b1e6eb88adfe34299caa853663a3aba2"
+}

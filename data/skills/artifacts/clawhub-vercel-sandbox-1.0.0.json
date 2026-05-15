@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vercel-sandbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_sandbox",
+  "skill": {
+    "id": 42168,
+    "skillKey": "clawhub-vercel-sandbox",
+    "name": "Vercel Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-sandbox",
+    "url": "https://clawhub.ai/skills/vercel-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-sandbox-b308bf13e969cadd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run agent-browser + Chrome inside Vercel Sandbox microVMs for browser automation from any Vercel-deployed app. Use when the user needs browser automation in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daxiangnaoyang",
+      "userId": "s170b044ecgtt1cej83h1mfz6h83maqg",
+      "displayName": "daxiangnaoyang",
+      "image": "https://avatars.githubusercontent.com/u/223295173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775013624557,
+      "changelog": "Initial release of vercel-sandbox for browser automation in Vercel microVMs.\n\n- Enables running agent-browser and Chrome within ephemeral Vercel Sandbox VMs for browser automation in any Vercel-deployed app.\n- Supports fast startup using sandbox snapshots, including pre-installed dependencies and browsers.\n- Provides persistent browser sessions over multiple commands within the same sandbox instance.\n- Includes detailed code examples for screenshots, accessibility snapshots, and multi-step automation.\n- Outlines setup, authentication, and integration with Vercel Cron Jobs for scheduled tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0700773147457b9cdc219e19c904d0443da21023e9cb00e7e8df5bbbed2325ac"
+}

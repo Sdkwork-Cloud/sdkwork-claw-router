@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54777,
+  "uuid": "skill-clawhub-openclaw-expert-brain",
+  "skillKey": "clawhub-openclaw-expert-brain",
+  "name": "OpenClaw Expert Brain",
+  "summary": "Manual interactivo de OpenClaw con 185 fuentes curadas en NotebookLM. Pregunta sobre instalación, configuración, skills, troubleshooting, multi-agent, cron,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_expert_brain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos De La Torre",
+      "features": [
+        "Manual interactivo de OpenClaw con 185 fuentes curadas en NotebookLM",
+        "Pregunta sobre instalación, configuración, skills, troubleshooting, multi-agent, cron,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-expert-brain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130411099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-expert-brain",
+      "url": "https://clawhub.ai/skills/openclaw-expert-brain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-expert-brain",
+    "url": "https://clawhub.ai/skills/openclaw-expert-brain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-expert-brain-d67c76daee900729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-expert-brain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-expert-brain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19b2a40acc8be7a81fb8264b81b00436564134a2e9951c64bc845a7224c7d226",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:43:52.599Z"
+}

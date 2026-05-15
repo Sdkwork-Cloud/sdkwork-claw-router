@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xint@2026.2.26",
+  "version": "2026.2.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xint",
+  "skill": {
+    "id": 15915,
+    "skillKey": "clawhub-xint",
+    "name": "Xint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xint",
+    "url": "https://clawhub.ai/skills/xint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xint-7d5d423c4b71ea73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X Intelligence CLI — search, analyze, and engage on X/Twitter from the terminal. Use when: (1) user says \"x research\", \"search x for\", \"search twitter for\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xnyk",
+      "userId": "publishers:0xnyk",
+      "displayName": "0xNyk",
+      "image": "https://avatars.githubusercontent.com/u/93952610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1191,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "2026.2.26",
+      "createdAt": 1773658269331,
+      "changelog": "xint 2026.2.26\n\n- Major internal expansion: 10 new modules added for analytics, timeline, growth, users, completions, and more.\n- Improved documentation: Updated usage info and expanded supported user intents, including Obsidian bookmark sync.\n- Various enhancements to reporting, sentiment analysis, formatting, and user engagement features.\n- Old security scan report removed; package metadata updated.\n- Numerous stability, collection handling, and API integration improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:404ed9f04ee3b76b9a542e7cab4b193df5af9e42011a841d4d2faa40c4170f56"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14508,
+  "uuid": "skill-clawhub-telnyx-network",
+  "skillKey": "clawhub-telnyx-network",
+  "name": "Telnyx Network",
+  "summary": "Private mesh networking and public IP exposure via Telnyx WireGuard infrastructure. Connect nodes securely or expose services to the internet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Private mesh networking and public IP exposure via Telnyx WireGuard infrastructure",
+        "Connect nodes securely or expose services to the internet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-network@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-network",
+      "url": "https://clawhub.ai/skills/telnyx-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-network",
+    "url": "https://clawhub.ai/skills/telnyx-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-network-3e1c4a45a03bd561.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-network@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-network-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4ee27bdd3e85ee8409f6337763104089b9f79a777af350c46793e8fc4540aa1",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:08:40.770Z"
+}

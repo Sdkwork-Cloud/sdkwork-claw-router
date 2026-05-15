@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whispersketch@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whispersketch",
+  "skill": {
+    "id": 71185,
+    "skillKey": "clawhub-whispersketch",
+    "name": "Musecard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whispersketch",
+    "url": "https://clawhub.ai/skills/whispersketch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whispersketch-2e8f64a549e9b835.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自媒体情绪金句插画卡片创作助手，把一句话、一种情绪转化为适合微信、小红书传播的 9:16 竖版图文插画。支持萌点元素库、香度等级递增、OI疼痛文学等主题适配。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776354003891,
+      "changelog": "新增萌点元素库(Moepoints Library)、香度等级(Cuteness Level Lv.1-5)、用户反馈递增流程、OI疼痛文学主题适配",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eee2425f2d531bbcebe062a772065ceda556d3a70dbc9b55f1bd5cb488c908ce"
+}

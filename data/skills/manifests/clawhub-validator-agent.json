@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16084,
+  "uuid": "skill-clawhub-validator-agent",
+  "skillKey": "clawhub-validator-agent",
+  "name": "Validator Agent",
+  "summary": "Validates project pre-deployment by running comprehensive security, testing, quality, documentation, CI/CD, privacy, maintainability, usability, marketabilit...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validator_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "up2itnow",
+      "features": [
+        "Validates project pre-deployment by running comprehensive security, testing, quality, documenta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validator-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80590273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validator-agent",
+      "url": "https://clawhub.ai/skills/validator-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validator-agent",
+    "url": "https://clawhub.ai/skills/validator-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validator-agent-2997bd5706ab107d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validator-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-validator-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa8bfade73d10d999bcf63fa759e9fe3bbc70b39d1a8ad743acf22b3b1f61ff7",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T07:32:21.689Z"
+}

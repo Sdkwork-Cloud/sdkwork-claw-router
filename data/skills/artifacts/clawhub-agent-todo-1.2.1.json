@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-todo@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_todo",
+  "skill": {
+    "id": 27178,
+    "skillKey": "clawhub-agent-todo",
+    "name": "Agent Todo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-todo",
+    "url": "https://clawhub.ai/skills/agent-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-todo-a492bc28337cc1ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn follow-up promises into an execution queue for agents. Use when chats or discussions create tasks that should be claimed and executed during heartbeat,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoujiejun",
+      "userId": "s175qfvfc9b31keaykww34vsh983ftcc",
+      "displayName": "zoujiejun",
+      "image": "https://avatars.githubusercontent.com/u/37881808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774302979574,
+      "changelog": "Fix heartbeat workspace binding for shared/external installs; add smoke coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bab8dc5434245ba8b5376f635e6e93e2eab4990c9a5d8144c207a7569c19861"
+}

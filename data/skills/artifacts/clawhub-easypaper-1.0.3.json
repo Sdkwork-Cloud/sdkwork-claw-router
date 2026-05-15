@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easypaper@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easypaper",
+  "skill": {
+    "id": 32295,
+    "skillKey": "clawhub-easypaper",
+    "name": "easypaper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easypaper",
+    "url": "https://clawhub.ai/skills/easypaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easypaper-303b1b58c59917a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate academic papers from metadata using EasyPaper Python SDK. Use when user wants to create structured LaTeX papers programmatically. References the Eas..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pinkgranite",
+      "userId": "s177fqs3cvjzmw93zjewb857r983jp4t",
+      "displayName": "Yuwei Yan",
+      "image": "https://avatars.githubusercontent.com/u/53990884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774243822183,
+      "changelog": "EasyPaper Skill 1.0.3\n\n- Clarified Typesetter behavior: SDK prefers in-process compilation for PDFs and falls back to HTTP endpoint if needed.\n- Added section on \"Final PDF Selection,\" detailing the priority order for finding and reporting the final output PDF.\n- No code or functional changes—documentation improvement only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0e0c57a62681358310455b584f848df50a77c41708641ad83836862d1dbec3b"
+}

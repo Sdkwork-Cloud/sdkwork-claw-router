@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58872,
+  "uuid": "skill-clawhub-skill-safe-install",
+  "skillKey": "clawhub-skill-safe-install",
+  "name": "Skill Safe Install",
+  "summary": "Skills 安全安装工具 - 整合 Vetter 代码审查 + ClawHub 评分 + ThreatBook 沙箱扫描三层验证",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safe_install",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "想开电动车",
+      "features": [
+        "Skills 安全安装工具",
+        "整合 Vetter 代码审查 + ClawHub 评分 + ThreatBook 沙箱扫描三层验证"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-safe-install@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16815575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-safe-install",
+      "url": "https://clawhub.ai/skills/skill-safe-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safe-install",
+    "url": "https://clawhub.ai/skills/skill-safe-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safe-install-a342415ddeeb829a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-safe-install@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-safe-install-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ec3e66cf33b2c631343c1de4859d18fe203e3b3f0e7e9e53aea0aafb210e877",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T19:00:23.122Z"
+}

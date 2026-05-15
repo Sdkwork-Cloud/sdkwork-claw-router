@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18616,
+  "uuid": "skill-clawhub-tiktok-slideshow",
+  "skillKey": "clawhub-tiktok-slideshow",
+  "name": "Tiktok Slideshow Maker",
+  "summary": "Creates TikTok image carousels (slideshows with text overlays on photos) via the ViralBaby API. Use when the user wants to: create TikTok slideshows or carou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_slideshow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aryanbhasin",
+      "features": [
+        "Creates TikTok image carousels (slideshows with text overlays on photos) via the ViralBaby API",
+        "Use when the user wants to: create TikTok slideshows or carou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-slideshow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21118039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-slideshow",
+      "url": "https://clawhub.ai/skills/tiktok-slideshow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-slideshow",
+    "url": "https://clawhub.ai/skills/tiktok-slideshow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-slideshow-62d8c683787f1549.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-slideshow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-slideshow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9127ad8b529a69517e62052ca5b522def6e53f12be3050abe00e300cb00eb96e",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:48:39.320Z"
+}

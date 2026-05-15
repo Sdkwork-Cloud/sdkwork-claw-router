@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40877,
+  "uuid": "skill-clawhub-pilot-customer-support-triage-setup",
+  "skillKey": "clawhub-pilot-customer-support-triage-setup",
+  "name": "Pilot Customer Support Triage Setup",
+  "summary": "Deploy a customer support triage system with 3 agents. Use this skill when: 1. User wants to set up automated support ticket routing and triage 2. User is co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_customer_support_triage_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a customer support triage system with 3 agents",
+        "Use this skill when: 1",
+        "User wants to set up automated support ticket routing and triage 2",
+        "User is co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-customer-support-triage-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-customer-support-triage-setup",
+      "url": "https://clawhub.ai/skills/pilot-customer-support-triage-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-customer-support-triage-setup",
+    "url": "https://clawhub.ai/skills/pilot-customer-support-triage-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-customer-support-triage-setup-a682417cc3f9d86b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-customer-support-triage-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-customer-support-triage-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3630b7cba879515aa4dd385e1f8107f0177b100306082b9b13b17e025b88df18",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T22:31:16.174Z"
+}

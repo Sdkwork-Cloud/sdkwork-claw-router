@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45295,
+  "uuid": "skill-clawhub-literature-review-cn",
+  "skillKey": "clawhub-literature-review-cn",
+  "name": "Literature Review",
+  "summary": "Assistance with writing literature reviews by searching for academic sources via Semantic Scholar, OpenAlex, Crossref and PubMed APIs. Use when the user need...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_review_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "Assistance with writing literature reviews by searching for academic sources via Semantic Schol.",
+        "Use when the user need..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/literature-review-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "literature-review-cn",
+      "url": "https://clawhub.ai/skills/literature-review-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-review-cn",
+    "url": "https://clawhub.ai/skills/literature-review-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-review-cn-d30aabd8f03ef980.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/literature-review-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-literature-review-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f3c2aa66e310140d9374307af30d54677bc27e27796296d6cc028a60d927a7",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:50:28.257Z"
+}

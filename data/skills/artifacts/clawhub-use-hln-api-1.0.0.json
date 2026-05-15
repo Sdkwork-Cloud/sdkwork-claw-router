@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-hln-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_hln_api",
+  "skill": {
+    "id": 55056,
+    "skillKey": "clawhub-use-hln-api",
+    "name": "Use HL Names API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-hln-api",
+    "url": "https://clawhub.ai/skills/use-hln-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-hln-api-0079a72bce569e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consult & operate against the Hyperliquid Names API. Use when your agent needs to resolve `.hl` names, reverse-resolve addresses, fetch HLN profiles or recor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hlndev",
+      "userId": "s174g721kr6whmj857ajccg1x58466w1",
+      "displayName": "HL Names",
+      "image": "https://avatars.githubusercontent.com/u/184987177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775280940009,
+      "changelog": "Initial release of the use-hln-api skill:\n\n- Enables interaction with the Hyperliquid Names API for `.hl` name resolution, reverse lookups, profile fetches, owner/list queries, mint-pass handling, and API diagnostics.\n- Provides clear guidelines for selecting the correct endpoint and identifier format for each query type.\n- Supports both production and testnet environments, with sensible defaults for base URL and API key.\n- Includes guardrails for proper API use, error handling, and environment/security checks.\n- Offers concise, structured workflows and example patterns for common HLN requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f34ba102bc37d641bd25b70c34def2ac13171a59ef9c4828b7ee5dd22f46c85a"
+}

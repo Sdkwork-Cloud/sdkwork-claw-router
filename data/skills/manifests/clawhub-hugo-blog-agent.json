@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61848,
+  "uuid": "skill-clawhub-hugo-blog-agent",
+  "skillKey": "clawhub-hugo-blog-agent",
+  "name": "Hugo Blog Agent",
+  "summary": "エージェント読者に最適化されたHugoブログの構築",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hugo_blog_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Byron-McKeeby",
+      "features": [
+        "エージェント読者に最適化されたHugoブログの構築"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hugo-blog-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70863380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hugo-blog-agent",
+      "url": "https://clawhub.ai/skills/hugo-blog-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hugo-blog-agent",
+    "url": "https://clawhub.ai/skills/hugo-blog-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hugo-blog-agent-746587a710fe42a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hugo-blog-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hugo-blog-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9436e04fafcc780407bd1b9897c21617ebdbd1c661ee77e66cf393439ab6e7c1",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T00:41:34.398Z"
+}

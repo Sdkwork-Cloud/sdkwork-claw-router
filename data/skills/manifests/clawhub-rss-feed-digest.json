@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11757,
+  "uuid": "skill-clawhub-rss-feed-digest",
+  "skillKey": "clawhub-rss-feed-digest",
+  "name": "RSS Feed Digest",
+  "summary": "Fetch, filter, and summarize RSS/Atom feeds into a clean daily or weekly digest. Supports multiple feeds, keyword filtering, deduplication, and outputs Markd...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_feed_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shihao Jiang (Zac)",
+      "features": [
+        "Fetch, filter, and summarize RSS/Atom feeds into a clean daily or weekly digest",
+        "Supports multiple feeds, keyword filtering, deduplication, and outputs Markd..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-feed-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15880609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-feed-digest",
+      "url": "https://clawhub.ai/skills/rss-feed-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-feed-digest",
+    "url": "https://clawhub.ai/skills/rss-feed-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-feed-digest-f9bbfcbb32ac3b7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-feed-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-feed-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5acc55a303cfb9afa27e744ae930abb4715b5bf07dea48e6df747ef5f44e0ac5",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:16:33.837Z"
+}

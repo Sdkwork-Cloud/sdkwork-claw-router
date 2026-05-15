@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-video-generation-is-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_video_generation_is_free",
+  "skill": {
+    "id": 42580,
+    "skillKey": "clawhub-qwen-video-generation-is-free",
+    "name": "Qwen Video Generation Is Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-video-generation-is-free",
+    "url": "https://clawhub.ai/skills/qwen-video-generation-is-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-video-generation-is-free-5d4a6dec9f9679d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776786985103,
+      "changelog": "Qwen Video Generation Is Free — Version 1.0.0\n\n- Launches a free AI-powered tool to generate 1080p videos from text prompts, with no paid subscription required.\n- Users authenticate with a temporary anonymous token, automatically handled on first setup.\n- Supports uploading text (or files) and generating videos in formats like MP4, MOV, WebM, and GIF, up to 500MB.\n- Includes streamlined workflows for generation, editing, previewing, and exporting AI videos via a cloud rendering backend.\n- Built-in error handling, session management, and reminders for supported formats, file size limits, and free credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e95f67ee487868a4ad23a5588248660483e231a4e9b5bef1ab7ecb989bb5248"
+}

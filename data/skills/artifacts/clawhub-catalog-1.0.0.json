@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catalog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catalog",
+  "skill": {
+    "id": 57124,
+    "skillKey": "clawhub-catalog",
+    "name": "Catalog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catalog",
+    "url": "https://clawhub.ai/skills/catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catalog-652f55016243bf1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Catálogo simples do estúdio (hello world)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rodbalbino",
+      "userId": "publishers:rodbalbino",
+      "displayName": "rodbalbino",
+      "image": "https://avatars.githubusercontent.com/u/19217907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 980,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770689816131,
+      "changelog": "- Primeira versão do skill \"catalog\": catálogo simples do estúdio (hello world).\n- Responde a perguntas sobre serviços e preços executando um comando local.\n- Recupera e apresenta informações de serviços a partir de um JSON retornado pelo comando.\n- Garante respostas claras e objetivas, sem inventar valores.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df1af271d7f858baea1132f672d1c192d29eee596289e10dea03f5848cbf87c0"
+}

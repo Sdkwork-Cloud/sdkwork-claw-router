@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22984,
+  "uuid": "skill-clawhub-vip",
+  "skillKey": "clawhub-vip",
+  "name": "VIP",
+  "summary": "Help users decide whether Vipshop is the best place for branded discount buying, then assist with browser automation for flash sales, inventory checks, cart...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help users decide whether Vipshop is the best place for branded discount buying, then assist wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vip@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vip",
+      "url": "https://clawhub.ai/skills/vip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vip",
+    "url": "https://clawhub.ai/skills/vip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vip-f9505a739a8fb8e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vip@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-vip-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:352243c8e3b5cd73b5181ca70947ef0a65c22e8c2e55b5478a9822f5df0bb274",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:00:59.492Z"
+}

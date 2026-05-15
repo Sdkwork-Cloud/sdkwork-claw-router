@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69230,
+  "uuid": "skill-clawhub-autoglm-deepresearch",
+  "skillKey": "clawhub-autoglm-deepresearch",
+  "name": "Autoglm Deepresearch",
+  "summary": "对用户提出的课题进行深度研究和调研，输出结构化的深度报告。当用户需要深入了解某个话题、做行业调研、专题研究、竞品分析等场景时使用此 skill。 与普通搜索不同，deepresearch 会先做少量定向搜索，再对少量关键页面进行深度阅读，过程中优先展示中间发现，最后再做总结，避免因调用次数过多导致响应过慢。 To...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoglm_deepresearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrhenghu",
+      "features": [
+        "对用户提出的课题进行深度研究和调研，输出结构化的深度报告。当用户需要深入了解某个话题、做行业调研、专题研究、竞品分析等场景时使用此 skill。 与普通搜索不同，deepresearch 会."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoglm-deepresearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193038063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoglm-deepresearch",
+      "url": "https://clawhub.ai/skills/autoglm-deepresearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoglm-deepresearch",
+    "url": "https://clawhub.ai/skills/autoglm-deepresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoglm-deepresearch-70dff2b70fee24b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoglm-deepresearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoglm-deepresearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:585a33e0405f09c282b2610f06f7cfe19662a9169f88904d768b5e7ae67f69aa",
+      "artifactSizeBytes": 2777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:06:13.237Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alex-agent-memory-systems@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alex_agent_memory_systems",
+  "skill": {
+    "id": 34187,
+    "skillKey": "clawhub-alex-agent-memory-systems",
+    "name": "Agent Memory Systems (Alex)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alex-agent-memory-systems",
+    "url": "https://clawhub.ai/skills/alex-agent-memory-systems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alex-agent-memory-systems-75bb72e7aefb222a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memory is the cornerstone of intelligent agents. Without it, every interaction starts from zero. This skill covers the architecture of agent memory: short-te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shendingyi",
+      "userId": "s178d9nbbpefvhetxhnpnawa9183mjqg",
+      "displayName": "shendingyi",
+      "image": "https://avatars.githubusercontent.com/u/266918069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775862844480,
+      "changelog": "Initial release of agent-memory-systems skill.\n\n- Introduces foundational concepts of agent memory, covering short-term, long-term, and various memory types.\n- Details core patterns: memory type selection, vector store selection, and chunking strategies.\n- Lists anti-patterns—what not to do when designing agent memory.\n- Documents common pitfalls (\"sharp edges\") and mitigation strategies for real-world deployments.\n- Highlights compatibility with related skills such as autonomous agents and multi-agent orchestration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6d5dc0b5d93140ba392c3154fc0f338421d6e94b42bd2faeb2ebc757f111a97"
+}

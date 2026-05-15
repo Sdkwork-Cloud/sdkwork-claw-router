@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hitachi-ltd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hitachi_ltd",
+  "skill": {
+    "id": 49187,
+    "skillKey": "clawhub-hitachi-ltd",
+    "name": "Hitachi Ltd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hitachi-ltd",
+    "url": "https://clawhub.ai/skills/hitachi-ltd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hitachi-ltd-9a42e04ecf54e221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Japanese industrial conglomerate Hitachi Ltd specializes in power equipment, digital solutions, rail systems, and digital transformation services worldwide."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777572367032,
+      "changelog": "- 初始版本发布，提供 Hitachi（日立）全面介绍\n- 覆盖历史发展、主要业务转型、数字化战略（Lumada）、国际化表现\n- 包含商业模式、行业护城河与关键数据\n- 适合关注日本制造业、IT服务、铁路与社会创新领域用户\n- 增加有趣历史事实，如品牌起源和电梯业务",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fef7bec58c06b15195859d5a9ac557ad3d4b8d058a9c487df772ea179d15827"
+}

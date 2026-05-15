@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cost-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_guardian",
+  "skill": {
+    "id": 20452,
+    "skillKey": "clawhub-cost-guardian",
+    "name": "Cost Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-guardian",
+    "url": "https://clawhub.ai/skills/cost-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-guardian-b2a016788e4a56f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track, analyze, and optimize AI and infrastructure costs with budgeting, spend forecasts, token usage scans, and optimization suggestions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariusfit",
+      "userId": "publishers:mariusfit",
+      "displayName": "mariusfit",
+      "image": "https://avatars.githubusercontent.com/u/53900085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771954295987,
+      "changelog": "Initial release: AI & infrastructure cost tracking with budget alerts, token scanning, subscriptions, forecasting, and optimization recommendations. 9 commands, JSON output, zero dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:58eea92436ce57809a9966595573af3944580e29e50dc0ce48f95a7b8d9aca1f"
+}

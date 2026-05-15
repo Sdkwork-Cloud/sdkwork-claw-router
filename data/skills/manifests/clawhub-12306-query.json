@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56690,
+  "uuid": "skill-clawhub-12306-query",
+  "skillKey": "clawhub-12306-query",
+  "name": "12306 Query",
+  "summary": "Query China Railway 12306 for train schedules, remaining tickets, and station info. Use when user asks about train/高铁/火车 tickets, schedules, or availability...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12306_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangsaizz",
+      "features": [
+        "Query China Railway 12306 for train schedules, remaining tickets, and station info",
+        "Use when user asks about train/高铁/火车 tickets, schedules, or availability..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12306-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9312086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12306-query",
+      "url": "https://clawhub.ai/skills/12306-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12306-query",
+    "url": "https://clawhub.ai/skills/12306-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12306-query-524b57ec64a8d774.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12306-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-12306-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d96ffa2cda55311649b75fd024989c96bf1b94ba4d8eedce21dd40041217bc56",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:58:06.364Z"
+}

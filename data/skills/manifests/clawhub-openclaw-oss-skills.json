@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35724,
+  "uuid": "skill-clawhub-openclaw-oss-skills",
+  "skillKey": "clawhub-openclaw-oss-skills",
+  "name": "openclaw-oss-skills",
+  "summary": "Upload generated artifacts from an OpenClaw workspace to an Alibaba Cloud OSS bucket using credentials from environment variables, then return a temporary si...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_oss_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhenghuanluck",
+      "features": [
+        "Upload generated artifacts from an OpenClaw workspace to an Alibaba Cloud OSS bucket using cred."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-oss-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254590218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-oss-skills",
+      "url": "https://clawhub.ai/skills/openclaw-oss-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-oss-skills",
+    "url": "https://clawhub.ai/skills/openclaw-oss-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-oss-skills-c6cfd502601e255d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-oss-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-oss-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c97b5406aa16354817cd5a343109e5d965dfe9eb2d3b341816d98f58c9b99bf",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T03:27:40.599Z"
+}

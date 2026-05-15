@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34535,
+  "uuid": "skill-clawhub-ccfddl-conference-watch",
+  "skillKey": "clawhub-ccfddl-conference-watch",
+  "name": "ccfddl-conference-watch",
+  "summary": "Fetch and filter academic conference deadlines from CCFDDL (https://ccfddl.com). Use this skill whenever the user mentions CCF conferences, paper submission...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccfddl_conference_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengwm",
+      "features": [
+        "Fetch and filter academic conference deadlines from CCFDDL (https://ccfddl.com)",
+        "Use this skill whenever the user mentions CCF conferences, paper submission..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccfddl-conference-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52602131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccfddl-conference-watch",
+      "url": "https://clawhub.ai/skills/ccfddl-conference-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccfddl-conference-watch",
+    "url": "https://clawhub.ai/skills/ccfddl-conference-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccfddl-conference-watch-a146dcba28bdb2db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccfddl-conference-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccfddl-conference-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb713e4fe97143b52108df02cf30e0c5f7a6736dac84bc3abcecacb8344037ce",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:51:22.816Z"
+}

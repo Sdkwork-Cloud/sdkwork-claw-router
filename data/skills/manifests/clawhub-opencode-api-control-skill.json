@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15776,
+  "uuid": "skill-clawhub-opencode-api-control-skill",
+  "skillKey": "clawhub-opencode-api-control-skill",
+  "name": "OpenCode CLI API Controller",
+  "summary": "A powerful skill to control Open Code CLI via a local web server API. Allows executing commands, managing sessions, and automating code generation remotely i...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_api_control_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Malek Rsh",
+      "features": [
+        "A powerful skill to control Open Code CLI via a local web server API",
+        "Allows executing commands, managing sessions, and automating code generation remotely i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode-api-control-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171437418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode-api-control-skill",
+      "url": "https://clawhub.ai/skills/opencode-api-control-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-api-control-skill",
+    "url": "https://clawhub.ai/skills/opencode-api-control-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-api-control-skill-7541bb2db8b2c3b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode-api-control-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-api-control-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51817f538af5ca5c2633a007427c0c11db9cbf7f9aead307ed89f75fe1ec129e",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T05:50:56.655Z"
+}

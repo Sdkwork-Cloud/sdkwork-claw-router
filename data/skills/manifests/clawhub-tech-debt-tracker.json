@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17200,
+  "uuid": "skill-clawhub-tech-debt-tracker",
+  "skillKey": "clawhub-tech-debt-tracker",
+  "name": "Tech Debt Tracker",
+  "summary": "Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans. Use when users mention tech debt, code quality,...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_debt_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Scan codebases for technical debt, score severity, track trends, and generate prioritized remed.",
+        "Use when users mention tech debt, code quality,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-debt-tracker@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-debt-tracker",
+      "url": "https://clawhub.ai/skills/tech-debt-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-debt-tracker",
+    "url": "https://clawhub.ai/skills/tech-debt-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-debt-tracker-dd318efcceb02e08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-debt-tracker@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-debt-tracker-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac24399e6fb94edefeb53bb499635bec528fa42405618b8a1343b18cd10e2404",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:00:45.518Z"
+}

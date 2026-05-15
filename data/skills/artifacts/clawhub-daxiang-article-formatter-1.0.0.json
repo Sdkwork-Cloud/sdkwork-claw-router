@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daxiang-article-formatter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_article_formatter",
+  "skill": {
+    "id": 67426,
+    "skillKey": "clawhub-daxiang-article-formatter",
+    "name": "Daxiang Article Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-article-formatter",
+    "url": "https://clawhub.ai/skills/daxiang-article-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-article-formatter-e78e0e30a0a032e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为自媒体文章提供结构优化、视觉增强、信息呈现及移动端适配，生成易读、美观且适合公众号、小红书等平台的排版文本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daxiangnaoyang",
+      "userId": "s170b044ecgtt1cej83h1mfz6h83maqg",
+      "displayName": "daxiangnaoyang",
+      "image": "https://avatars.githubusercontent.com/u/223295173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775019193618,
+      "changelog": "Article Formatter - Version 1.0.0\n\n- Initial release with comprehensive documentation in SKILL.md\n- Defines core capabilities: article structure optimization, visual enhancement with emoji/icons, info presentation (tables, lists, quotes), and CTA best practices\n- Includes detailed formatting rules for different article types (tutorial, opinion, review, etc.)\n- Mobile-friendly layout guidelines and color system provided\n- Quality checklist and workflow documented for effective use and consistent output",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45400f4a073fb88490da2fb079526eef9dce9fcfb6eb6174f60f81cb7a882eb1"
+}

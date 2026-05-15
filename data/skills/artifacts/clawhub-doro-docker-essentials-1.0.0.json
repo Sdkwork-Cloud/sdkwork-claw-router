@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doro-docker-essentials@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doro_docker_essentials",
+  "skill": {
+    "id": 19056,
+    "skillKey": "clawhub-doro-docker-essentials",
+    "name": "Doro Docker Essentials"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doro-docker-essentials",
+    "url": "https://clawhub.ai/skills/doro-docker-essentials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doro-docker-essentials-8232d5547cacd10d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Essential Docker commands and workflows for container management, image operations, and debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a2mus",
+      "userId": "s172mjwztzdm6s5qzz91sac38d83e7dk",
+      "displayName": "Mus Titou",
+      "image": "https://avatars.githubusercontent.com/u/27785308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 631,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772001729569,
+      "changelog": "Initial release of doro-docker-essentials.\n\n- Provides a comprehensive reference of essential Docker commands for container management, image operations, and debugging.\n- Includes usage examples for container lifecycle, logs, exec, inspection, images, networking, volumes, and system management.\n- Offers Docker Compose workflow tips and commands.\n- Lists useful flags, tips for best practices, and links to official Docker documentation.\n- Designed for quick lookup and practical day-to-day use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebee8b890364ca1b16e2e5a60c3c3a4faf6197b35af1699c8ab1418553b02fc0"
+}

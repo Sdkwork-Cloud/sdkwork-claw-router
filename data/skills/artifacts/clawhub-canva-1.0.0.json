@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva",
+  "skill": {
+    "id": 8960,
+    "skillKey": "clawhub-canva",
+    "name": "Canva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva",
+    "url": "https://clawhub.ai/skills/canva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-3db1f560db626918.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, export, and manage Canva designs via the Connect API. Generate social posts, carousels, and graphics programmatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abgohel",
+      "userId": "publishers:abgohel",
+      "displayName": "abgohel",
+      "image": "https://avatars.githubusercontent.com/u/33816320?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4639,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769684214453,
+      "changelog": "Initial public release of Canva Skill.\n\n- Create, export, and manage Canva designs via the Connect API.\n- Supports generating social media posts, carousels, and graphics programmatically.\n- Includes operations for listing, creating, exporting designs, uploading assets, and managing templates.\n- Detailed usage instructions, authentication steps, and error handling guidance provided.\n- Requires Canva API credentials (Client ID and Secret) for setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c8ffd0f4e6717a43e7fb0397fac90bee6b0f11f19660f8d875bc86d7de9d030"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43447,
+  "uuid": "skill-clawhub-uk-stock-market-lse",
+  "skillKey": "clawhub-uk-stock-market-lse",
+  "name": "UK Stock Market London Stock Exchange",
+  "summary": "Get UK (London Stock Exchange, LSE) market data via FinanceAgent on OneKey Gateway.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk_stock_market_lse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-Hub-Admin",
+      "features": [
+        "Get UK (London Stock Exchange, LSE) market data via FinanceAgent on OneKey Gateway."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uk-stock-market-lse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184629057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uk-stock-market-lse",
+      "url": "https://clawhub.ai/skills/uk-stock-market-lse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk-stock-market-lse",
+    "url": "https://clawhub.ai/skills/uk-stock-market-lse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk-stock-market-lse-4f0d232ff6029525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uk-stock-market-lse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uk-stock-market-lse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0ff672c522d7be7f2173811a1d1860ef6324618c0c4140dc0a3b144a0557a9e",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:05:48.445Z"
+}

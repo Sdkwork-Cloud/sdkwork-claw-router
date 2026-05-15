@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23749,
+  "uuid": "skill-clawhub-agents-refresh",
+  "skillKey": "clawhub-agents-refresh",
+  "name": "agents-refresh",
+  "summary": "Automatically reload AGENTS.md regularly to maintain fresh context, prevent session drift, and keep memory and tasks updated.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_refresh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kentaroid-bot",
+      "features": [
+        "Automatically reload AGENTS.md regularly to maintain fresh context, prevent session drift, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agents-refresh@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261070559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agents-refresh",
+      "url": "https://clawhub.ai/skills/agents-refresh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-refresh",
+    "url": "https://clawhub.ai/skills/agents-refresh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-refresh-0cd142ababcc4869.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agents-refresh@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agents-refresh-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c38c645bdbc737b5ba4e43a6a779db802e901be77716a46434bfc629abdfd710",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:16:10.082Z"
+}

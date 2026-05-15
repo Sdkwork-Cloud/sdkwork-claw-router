@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "token-usage-optimizer",
+    "displayName": "Token Usage Optimizer",
+    "summary": "Maximize your Claude Code subscription value with smart usage monitoring and burn rate optimization. Track 5-hour session and 7-day weekly quotas, get one-ti...",
+    "tags": {
+      "latest": "1.0.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 989,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1771585022822,
+    "updatedAt": 1778387015347
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1771777831839,
+    "changelog": "Version 1.0.5\n\n- Fixed token extraction bug in auto-refresh-cron.sh (removed unnecessary quotes handling).\n- Changed token health check from every 1 hour to every 30 minutes for increased reliability.\n- Improved OAuth token sync process to be more robust, referencing ~/.claude/.credentials.json.\n- Updated documentation to reflect changes and add a changelog section.",
+    "license": null
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "rusel95",
+    "userId": "publishers:rusel95",
+    "displayName": "Ruslan Popesku",
+    "image": "https://avatars.githubusercontent.com/u/25131662?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387015347
+  }
+}

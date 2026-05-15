@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73411,
+  "uuid": "skill-clawhub-jin10-news",
+  "skillKey": "clawhub-jin10-news",
+  "name": "金十快讯",
+  "summary": "提供金十金融快讯及详情，支持本地秒开快讯浏览和对港股、恒生科技及相关个股的深度影响分析。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jin10_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akinding",
+      "features": [
+        "提供金十金融快讯及详情，支持本地秒开快讯浏览和对港股、恒生科技及相关个股的深度影响分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jin10-news@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43066405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jin10-news",
+      "url": "https://clawhub.ai/skills/jin10-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jin10-news",
+    "url": "https://clawhub.ai/skills/jin10-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jin10-news-c61e069bb71e53c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jin10-news@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-jin10-news-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5114fdb7cf64b5da84108c8b2aa22ad83c6fb45393bf211ddb92dd5f886d6a30",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:33:09.787Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaos-engineer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaos_engineer",
+  "skill": {
+    "id": 21143,
+    "skillKey": "clawhub-chaos-engineer",
+    "name": "Chaos Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaos-engineer",
+    "url": "https://clawhub.ai/skills/chaos-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaos-engineer-8a55596ebfcf64d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhwa8685",
+      "userId": "publishers:lhwa8685",
+      "displayName": "lhwa8685",
+      "image": "https://avatars.githubusercontent.com/u/195074450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772892933158,
+      "changelog": "- Initial release of the chaos-engineer skill focused on controlled failure injection and resilience testing.\n- Designed for use in chaos experiments, implementing failure injection frameworks, conducting game day exercises, and blast radius control.\n- Provides a core workflow covering system analysis, experiment design, execution, learning, and automation.\n- Includes must-do and must-not-do constraints for safe chaos engineering practice.\n- Offers reference guides and output templates for experiment design, implementation, monitoring, rollback, and post-mortem learning.\n- Related to SRE and DevOps skills, with emphasis on antifragile systems and organizational resilience.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f776cef6c6fe037b80844b601c0cdd9b3ab678b2e953e4f513cdedaad917e467"
+}

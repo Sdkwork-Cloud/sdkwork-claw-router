@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/confluence-publish@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confluence_publish",
+  "skill": {
+    "id": 28663,
+    "skillKey": "clawhub-confluence-publish",
+    "name": "confluence-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confluence-publish",
+    "url": "https://clawhub.ai/skills/confluence-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confluence-publish-dc8dfaae40137bea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish, create, and update Confluence pages from HTML content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aeincx",
+      "userId": "s170dvtk2rgwt6snvkw6t61mq583ezrd",
+      "displayName": "aeincx",
+      "image": "https://avatars.githubusercontent.com/u/10841314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774125751344,
+      "changelog": "- Added skill manifest fields to SKILL.md, including required environment variables, credentials, and permissions.\n- Declared explicit filesystem (workspace read) and network (atlassian.net) access in the SKILL.md header.\n- No changes to skill functionality or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f486a06eaabf558b1e9c0d32e5dfff0c562e6561bc63a7c08cbb542533481543"
+}

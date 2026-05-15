@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lucasfilm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucasfilm",
+  "skill": {
+    "id": 54084,
+    "skillKey": "clawhub-lucasfilm",
+    "name": "Lucasfilm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucasfilm",
+    "url": "https://clawhub.ai/skills/lucasfilm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucasfilm-32bfe3d678856afc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Founded by George Lucas in 1971, Lucasfilm is a film company behind Star Wars and Indiana Jones, acquired by Disney in 2012 for $4.05 billion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776322121181,
+      "changelog": "Lucasfilm skill version 1.0.0 – 首次发布：\n\n- 提供卢卡斯影业公司历史、里程碑与代表作品简要知识卡片\n- 介绍《星球大战》《夺宝奇兵》等核心 IP 及其重要剧集、电影\n- 整理公司在电影技术（特效、音效、剪辑、虚拟制片）领域的贡献\n- 概述迪士尼收购、公司架构及重要子公司信息\n- 针对星战系列版权背景、乔治·卢卡斯与影视技术史等场景设计使用建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94a435d9e408e073f3ef2fc6eec7858da938f9b25521323f024bce9d4cc9b619"
+}

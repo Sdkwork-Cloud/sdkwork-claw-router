@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17760,
+  "uuid": "skill-clawhub-apple-health",
+  "skillKey": "clawhub-apple-health",
+  "name": "Apple Health",
+  "summary": "Connect agents to Apple Health exports with MCP setup, schema validation, and privacy-safe analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Connect agents to Apple Health exports with MCP setup, schema validation, and privacy-safe anal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-health",
+      "url": "https://clawhub.ai/skills/apple-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health",
+    "url": "https://clawhub.ai/skills/apple-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-580f13f01363eead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6990fb81382b0a6ec9f8b0097a45bb8171d468c056c3d9690ff9d16abb8f3f22",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:21:29.954Z"
+}

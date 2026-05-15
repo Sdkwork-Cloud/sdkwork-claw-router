@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71253,
+  "uuid": "skill-clawhub-music-download",
+  "skillKey": "clawhub-music-download",
+  "name": "音乐下载工具",
+  "summary": "支持从网易云音乐等平台下载高清MP3歌曲，提供单曲、歌单、搜索及批量下载功能，音质最高320kbps。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziyang9317",
+      "features": [
+        "支持从网易云音乐等平台下载高清MP3歌曲，提供单曲、歌单、搜索及批量下载功能，音质最高320kbps。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208336010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-download",
+      "url": "https://clawhub.ai/skills/music-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-download",
+    "url": "https://clawhub.ai/skills/music-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-download-23352ff7964d11b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcdf6b859fe087ddb696b598e4ed8ee92e7d195dd241185015180840dc524661",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:01:30.666Z"
+}

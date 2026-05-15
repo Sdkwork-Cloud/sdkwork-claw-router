@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25351,
+  "uuid": "skill-clawhub-multishot-ugc",
+  "skillKey": "clawhub-multishot-ugc",
+  "name": "Multishot UGC",
+  "summary": "Generate 10 perspective/angle variations from a single image for multi-shot UGC videos. ✅ USE WHEN: - Have a hero image and need camera angle variations - Creating multi-scene UGC videos (need different shots) - Want close-ups, wide shots,.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multishot_ugc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Generate 10 perspective/angle variations from a single image for multi-shot UGC videos",
+        "✅ USE WHEN:",
+        "Have a hero image and need camera angle variations",
+        "Creating multi-scene UGC videos (need different shots)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multishot-ugc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multishot-ugc",
+      "url": "https://clawhub.ai/skills/multishot-ugc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multishot-ugc",
+    "url": "https://clawhub.ai/skills/multishot-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multishot-ugc-c77c65cbe9bf0aef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multishot-ugc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multishot-ugc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f354eab23e674ac3db8e6d4d51e47ecaf0437dbc6554fd4f6d4e6462baf0ef80",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T01:19:01.265Z"
+}

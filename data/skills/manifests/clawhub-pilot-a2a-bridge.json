@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38294,
+  "uuid": "skill-clawhub-pilot-a2a-bridge",
+  "skillKey": "clawhub-pilot-a2a-bridge",
+  "name": "Pilot A2a Bridge",
+  "summary": "Bridge A2A (Agent-to-Agent) protocol messages over Pilot tunnels. Use this skill when: 1. You need to connect A2A agents across different networks 2. You wan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_a2a_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Bridge A2A (Agent-to-Agent) protocol messages over Pilot tunnels",
+        "Use this skill when: 1",
+        "You need to connect A2A agents across different networks 2",
+        "You wan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-a2a-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-a2a-bridge",
+      "url": "https://clawhub.ai/skills/pilot-a2a-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-a2a-bridge",
+    "url": "https://clawhub.ai/skills/pilot-a2a-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-a2a-bridge-0b506242ad4a19f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-a2a-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-a2a-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09704142f0b8bf94c410e295ccb9d95611410a893d6b3ce3b9269427fd70ac39",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:40:27.732Z"
+}

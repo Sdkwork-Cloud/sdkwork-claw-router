@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/looper@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.looper",
+  "skill": {
+    "id": 26653,
+    "skillKey": "clawhub-looper",
+    "name": "Looper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "looper",
+    "url": "https://clawhub.ai/skills/looper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/looper-63a2676c5ecda7d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate content creation, code improvement, and social media posting via Looper (looper.bot). Use when setting up automated blog posts, continuous code impr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "builder-nc",
+      "userId": "publishers:builder-nc",
+      "displayName": "Builder-NC",
+      "image": "https://avatars.githubusercontent.com/u/259221050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773940201408,
+      "changelog": "Fix review flags: declare LOOPER_ADMIN_KEY in metadata, remove admin-only endpoints from script, tenant-scoped operations only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:868bd0c0d02f337bed978955d21bc699916cf5f3829248cdf109e9c27ee85a9f"
+}

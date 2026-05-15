@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37740,
+  "uuid": "skill-clawhub-miraflow",
+  "skillKey": "clawhub-miraflow",
+  "name": "Miraflow",
+  "summary": "Create and manage AI-generated videos and images using Miraflow, including avatar videos, cinematic clips, image generation, editing, and media uploads.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miraflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minforge",
+      "features": [
+        "Create and manage AI-generated videos and images using Miraflow, including avatar videos, cinem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miraflow@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265053391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miraflow",
+      "url": "https://clawhub.ai/skills/miraflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miraflow",
+    "url": "https://clawhub.ai/skills/miraflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miraflow-a1b609b0fc5c2e23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miraflow@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-miraflow-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bfcefe89d8b37d3ebfe8197e42a36955f34b1b2ffb2eb94540ec0bb85110caa",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:32:04.584Z"
+}

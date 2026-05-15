@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70482,
+  "uuid": "skill-clawhub-adaptive-skill-stack",
+  "skillKey": "clawhub-adaptive-skill-stack",
+  "name": "Adaptive Skill Stack",
+  "summary": "自适应技能叠加技能——一个能够根据用户需求实时演化的元技能。每次使用时自动分析需求，叠加已有能力或构建全新能力实例，完成任务后将新获能力写入参考文件实现持续进化。此技能自身SKILL.md永不修改，但可自由改写自身的参考文件、脚本和资源文件。文件保护分四级：SKILL.md绝对不可触碰，结构脚本和格式契约仅用户授...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_skill_stack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "自适应技能叠加技能——一个能够根据用户需求实时演化的元技能。每次使用时自动分析需求，叠加已有能力或构建全新能力实例，完成任务后将新获能力写入参考文件实现持续进化。此技能自身SKILL.md永."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adaptive-skill-stack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adaptive-skill-stack",
+      "url": "https://clawhub.ai/skills/adaptive-skill-stack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-skill-stack",
+    "url": "https://clawhub.ai/skills/adaptive-skill-stack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-skill-stack-7d60d619d596bddb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adaptive-skill-stack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-skill-stack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d1af3cbd630d52c583d29df41cd56e23b9153cfbd1135dd4be40ca3243cbaff",
+      "artifactSizeBytes": 3186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T21:55:13.767Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-promo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_promo",
+  "skill": {
+    "id": 39689,
+    "skillKey": "clawhub-video-promo",
+    "name": "Video Promo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-promo",
+    "url": "https://clawhub.ai/skills/video-promo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-promo-460957c48d9ca5ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips into polished promo videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. marketers use it for turning long videos int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776709173129,
+      "changelog": "Initial release — create and export promo videos from your clips via a cloud-based AI workflow.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and describe your desired promo edit.\n- Automatic setup: connects to the cloud API and gets a free token if not already configured.\n- Supports generating, editing, previewing, and exporting 1080p MP4 promo clips with music, text, and more.\n- Common commands: upload, export, check credits, show status, and process edits via chat.\n- All processing and rendering occurs server-side — nothing to install locally.\n- Error handling, detailed workflows, and format support included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b57d3aa8cf9ed67d2eb05fac3e1ccbc8e488b82e5438f24f418edd02acd4aefa"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13242,
+  "uuid": "skill-clawhub-book-towing",
+  "skillKey": "clawhub-book-towing",
+  "name": "Book Towing",
+  "summary": "Book towing services through Lokuli MCP. Use when user needs to find and book towing. Triggers on requests like \"book a towing\", \"find towing near me\", or any towing service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_towing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book towing services through Lokuli MCP",
+        "Use when user needs to find and book towing",
+        "Triggers on requests like \"book a towing\", \"find towing near me\", or any towing service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-towing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-towing",
+      "url": "https://clawhub.ai/skills/book-towing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-towing",
+    "url": "https://clawhub.ai/skills/book-towing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-towing-6cad42224e8656bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-towing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-towing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:482324196f720c3006c43de43e39e1189c618a5049585dcc0ffc2b469de6031b",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:26.588Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25190,
+  "uuid": "skill-clawhub-md-2-word",
+  "skillKey": "clawhub-md-2-word",
+  "name": "Markdown to Word Converter",
+  "summary": "Convert Markdown files to formatted Word documents (.docx). Use when the user asks to convert, export, or save a Markdown file as Word/DOCX format. Triggers...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_2_word",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frankxpj",
+      "features": [
+        "Convert Markdown files to formatted Word documents (.docx)",
+        "Use when the user asks to convert, export, or save a Markdown file as Word/DOCX format",
+        "Triggers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-2-word@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100115985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-2-word",
+      "url": "https://clawhub.ai/skills/md-2-word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-2-word",
+    "url": "https://clawhub.ai/skills/md-2-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-2-word-358c4ac97e405161.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-2-word@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-2-word-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af8d7c2011acceeb50437d4607689b96d9724829a52fdfb7c42432be365311bd",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:52:55.667Z"
+}

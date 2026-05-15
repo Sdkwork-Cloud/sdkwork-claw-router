@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73418,
+  "uuid": "skill-clawhub-xiaohongshu-publish-wangzh",
+  "skillKey": "clawhub-xiaohongshu-publish-wangzh",
+  "name": "小红书长文发布",
+  "summary": "自动化发布已准备好的小红书长文笔记，支持输入标题、正文和标签，完成排版优化及发布流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_publish_wangzh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangZh",
+      "features": [
+        "自动化发布已准备好的小红书长文笔记，支持输入标题、正文和标签，完成排版优化及发布流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-publish-wangzh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22117299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-publish-wangzh",
+      "url": "https://clawhub.ai/skills/xiaohongshu-publish-wangzh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-publish-wangzh",
+    "url": "https://clawhub.ai/skills/xiaohongshu-publish-wangzh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-publish-wangzh-d0fc10e9e162c2a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-publish-wangzh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-publish-wangzh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6980cad9c8b46190c34c30a7b6eceb6dedc957b069dfa387cefcb8eb30c72467",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:58:33.993Z"
+}

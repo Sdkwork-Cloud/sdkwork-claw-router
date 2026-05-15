@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14952,
+  "uuid": "skill-clawhub-publora-instagram",
+  "skillKey": "clawhub-publora-instagram",
+  "name": "Publora Instagram",
+  "summary": "Post or schedule content to Instagram using the Publora API. Use this skill when the user wants to publish images, reels, stories, or carousels to Instagram...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_instagram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Post or schedule content to Instagram using the Publora API",
+        "Use this skill when the user wants to publish images, reels, stories, or carousels to Instagram."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora-instagram@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora-instagram",
+      "url": "https://clawhub.ai/skills/publora-instagram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-instagram",
+    "url": "https://clawhub.ai/skills/publora-instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-instagram-37f65e0d88e854f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora-instagram@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-instagram-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e59485e49adaa4df482220a82d758c2a8841947a68c4b04340c6db37b86b954",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:00:23.745Z"
+}

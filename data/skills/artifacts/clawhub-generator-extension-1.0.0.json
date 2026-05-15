@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-extension@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_extension",
+  "skill": {
+    "id": 49010,
+    "skillKey": "clawhub-generator-extension",
+    "name": "Generator Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-extension",
+    "url": "https://clawhub.ai/skills/generator-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-extension-4402e169345ff3b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 30-second product clip to extend to 60 seconds into 1080p extended video clips just by typing what you need. Whether it's extending short videos to me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777868884466,
+      "changelog": "generator-extension version 1.0.0\n\n- Initial release: Easily extend short videos up to 60 seconds and export as 1080p clips with a simple prompt-based workflow.\n- Automatic backend connection and user-friendly authentication flow with free trial credits.\n- Supports uploads, aspect ratio changes, text overlays, and background music via intent recognition.\n- Provides clear feedback during processing, file upload, credits, and export steps.\n- Handles errors (e.g., token, credits, unsupported file type) gracefully with user guidance.\n- Exports videos in multiple formats, including mp4, mov, avi, webm, gif, and audio options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a7429a225b39d7bded333ec038b15ee7f0deafbb927fe9707892d0d1cc5677f"
+}

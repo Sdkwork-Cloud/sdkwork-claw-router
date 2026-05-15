@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-lending-evk@0.1.13",
+  "version": "0.1.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_lending_evk",
+  "skill": {
+    "id": 24449,
+    "skillKey": "clawhub-agentic-lending-evk",
+    "name": "Agentic Lending EVK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-lending-evk",
+    "url": "https://clawhub.ai/skills/agentic-lending-evk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-lending-evk-f448cfca7ae3ecb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and execute the current EVK-first agentic lending workflow for Api3-backed markets. Use when a user wants an agent to resolve the oracle route for selec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daav3",
+      "userId": "s176sa2svdwgks5ycz1yngewb184yand",
+      "displayName": "dave",
+      "image": "https://avatars.githubusercontent.com/u/49767509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.1.13",
+      "createdAt": 1778225978313,
+      "changelog": "Move deployment bytecode out of inline literals and avoid false-positive secret-literal moderation hits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:036d67bfa2d1fa92e65edb1e4a1763b5474a39f1451ae29fdf54ebc51a0476fb"
+}

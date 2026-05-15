@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-social-credit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_social_credit",
+  "skill": {
+    "id": 58235,
+    "skillKey": "clawhub-china-social-credit",
+    "name": "China Social Credit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-social-credit",
+    "url": "https://clawhub.ai/skills/china-social-credit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-social-credit-e4f3922f9e39bcbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国统一社会信用代码解析与验证。Use when the user provides a Chinese Unified Social Credit Code (统一社会信用代码) and wants to validate its checksum, identify the registration auth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774015108364,
+      "changelog": "- Initial release of the China Social Credit Code (统一社会信用代码) parsing and validation tool.\n- Fully offline: verifies checksum, identifies registration authority, organization type, and registered location based on GB 32100-2015 standard.\n- Detects and reports common errors: invalid length, illegal characters, incorrect registration codes, invalid region codes, or checksum mismatches.\n- Provides clear, formatted output for both valid and invalid codes with actionable feedback.\n- Does not require any network or API key and does not perform real-time business verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abe12d4fb9fcd00d31a5ee0a84126386493d3f4fd31c473a944832f833ec36e9"
+}

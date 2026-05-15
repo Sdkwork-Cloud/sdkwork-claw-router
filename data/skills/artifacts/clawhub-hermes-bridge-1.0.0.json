@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_bridge",
+  "skill": {
+    "id": 25789,
+    "skillKey": "clawhub-hermes-bridge",
+    "name": "Hermes Agent Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-bridge",
+    "url": "https://clawhub.ai/skills/hermes-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-bridge-444ef21200021b8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate tasks or questions to a local Hermes Agent via its CLI for fast, persona-specific responses and terminal tool access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ibigbigip",
+      "userId": "s1707jqc2zd4pjz2k1svtspnp983gx9v",
+      "displayName": "ibigbigip",
+      "image": "https://avatars.githubusercontent.com/u/236617553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775963673761,
+      "changelog": "Initial release of Hermes Agent Bridge.\n\n- Enables OpenClaw to delegate tasks or ask questions to a local Hermes Agent via CLI.\n- Integrates with Hermes's fast response, personas, and terminal tool handling.\n- Provides clear instructions for invoking Hermes with the `exec` tool.\n- Requires `hermes` CLI to be available in the system PATH.\n- Includes usage examples for seamless user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3fb609b57ace48e6bac740dda622e377be325018373ead5adfd90dbb1aeb312"
+}

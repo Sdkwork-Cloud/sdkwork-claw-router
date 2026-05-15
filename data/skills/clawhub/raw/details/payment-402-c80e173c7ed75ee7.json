@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "payment-402",
+    "displayName": "payment-402",
+    "summary": "Access protected APIs and digital resources via the x402 \"Payment Required\" protocol on Base L2. This skill automates cryptographic handshakes and USDC micro...",
+    "tags": {
+      "-deprecated": "1.0.1",
+      "latest": "1.0.1",
+      "deprecated": "1.0.0",
+      "web3 payment base-l2 x402 zero-trust autonomous-agent": "1.0.0"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774369508293,
+    "updatedAt": 1777623291225
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774373492888,
+    "changelog": "payment-402 v1.0.1\n\n- Added formalized security section: autonomous agents must seek approval for payments exceeding 2 USDC and verify new merchants before first payment.\n- Clarified sandbox-first policy: always test on testnet/sandbox endpoints before using mainnet funds.\n- Added required_env_vars, required_binaries, primary_credential, and install fields to SKILL.md for improved compatibility and deployment clarity.\n- Updated security guidelines to highlight autonomous blockchain transaction capability and thresholds for human consent.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "paynodelabs",
+    "userId": "s17fsdffqkxyhbcvf6abdcxm1983gpc5",
+    "displayName": "PayNodeLabs",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623291225
+  }
+}

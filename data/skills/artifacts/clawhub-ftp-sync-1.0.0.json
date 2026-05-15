@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ftp-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftp_sync",
+  "skill": {
+    "id": 67316,
+    "skillKey": "clawhub-ftp-sync",
+    "name": "Ftp Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftp-sync",
+    "url": "https://clawhub.ai/skills/ftp-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftp-sync-e0c1e84a317c5061.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FTP/SFTP 同步工具。本地与远程服务器文件同步，支持增量备份。适合网站维护和服务器管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxliuyu",
+      "userId": "publishers:sxliuyu",
+      "displayName": "SxLiuYu",
+      "image": "https://avatars.githubusercontent.com/u/95198625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773654648679,
+      "changelog": "Initial release of ftp-sync:\n\n- 支持本地与远程服务器（FTP/SFTP）文件同步\n- 实现增量同步和备份功能\n- 提供同步报告与差异对比\n- 支持密钥认证方式登录\n- 适用于网站维护和服务器管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0806ecf81b83b48ea657ef4c42d839f6479ca92afb49061c6a6e161d4a83228f"
+}

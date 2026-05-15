@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15352,
+  "uuid": "skill-clawhub-amap-maps",
+  "skillKey": "clawhub-amap-maps",
+  "name": "amap-maps",
+  "summary": "Amap LBS services. Call Amap services via Streamable HTTP MCP, supporting geocoding, route planning, POI search, weather query, distance measurement, and more.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_maps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elric2011",
+      "features": [
+        "Amap LBS services",
+        "Call Amap services via Streamable HTTP MCP, supporting geocoding, route planning, POI search, w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-maps@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/679902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-maps",
+      "url": "https://clawhub.ai/skills/amap-maps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-maps",
+    "url": "https://clawhub.ai/skills/amap-maps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-maps-99f7a830f8366dfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-maps@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-maps-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf1b86b1e672c461a7fea0086522335bdd59a32a44ece70ae04bfff6905b3455",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:46:43.434Z"
+}

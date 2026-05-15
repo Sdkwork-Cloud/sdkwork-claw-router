@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16591,
+  "uuid": "skill-clawhub-openclaw-robotics",
+  "skillKey": "clawhub-openclaw-robotics",
+  "name": "Robotics",
+  "summary": "Control mobile robots (quadruped, bipedal, wheeled, aerial) via IM platforms. Supports Unitree robots and Insight9 AI stereo camera.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_robotics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qinrui-dm",
+      "features": [
+        "Control mobile robots (quadruped, bipedal, wheeled, aerial) via IM platforms",
+        "Supports Unitree robots and Insight9 AI stereo camera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-robotics@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56949571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-robotics",
+      "url": "https://clawhub.ai/skills/openclaw-robotics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-robotics",
+    "url": "https://clawhub.ai/skills/openclaw-robotics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-robotics-d43325f62d547a95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-robotics@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-robotics-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6ae3b21f6de9a6c7fa47d5b3e3f7c5aea5c2617f3f456281e3a469a37e8c971",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T01:41:25.275Z"
+}

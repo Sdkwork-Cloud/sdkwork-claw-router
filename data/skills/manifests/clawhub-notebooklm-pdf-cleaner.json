@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28348,
+  "uuid": "skill-clawhub-notebooklm-pdf-cleaner",
+  "skillKey": "clawhub-notebooklm-pdf-cleaner",
+  "name": "NotebookLM PDF Cleaner",
+  "summary": "Create a presentation-ready copy of a NotebookLM-exported slide-deck PDF by masking the small visible NotebookLM footer badge at the bottom-right of each pag...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_pdf_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fudanjx",
+      "features": [
+        "Create a presentation-ready copy of a NotebookLM-exported slide-deck PDF by masking the small v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-pdf-cleaner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20398433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-pdf-cleaner",
+      "url": "https://clawhub.ai/skills/notebooklm-pdf-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-pdf-cleaner",
+    "url": "https://clawhub.ai/skills/notebooklm-pdf-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-pdf-cleaner-c5ffccf0a38c64d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-pdf-cleaner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-pdf-cleaner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd821721c2b6c7570ce3dc11c144c640d566ae6a58e088b0ea9f87ad8a1ecd7",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:10:44.331Z"
+}

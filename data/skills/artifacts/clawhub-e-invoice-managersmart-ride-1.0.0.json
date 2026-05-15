@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/e-invoice-managersmart-ride@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e_invoice_managersmart_ride",
+  "skill": {
+    "id": 59806,
+    "skillKey": "clawhub-e-invoice-managersmart-ride",
+    "name": "智能打车"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e-invoice-managersmart-ride",
+    "url": "https://clawhub.ai/skills/e-invoice-managersmart-ride",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e-invoice-managersmart-ride-01732a72a3de365e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774959806329,
+      "changelog": "fb-car-service-skill 1.0.0 — Initial release:\n\n- Provides a corporate car service assistant supporting instant rides, scheduled rides, airport pickup/dropoff, and charter services.\n- Features vehicle selection, price estimation, real-time order management, and driver info display.\n- Integrates with real car service platform APIs.\n- Includes detailed booking workflows for different scenarios and clear order status explanations.\n- Supports invoicing, ride sharing, and enterprise-level car management functions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e56c957f52a7239a7316c495790fd243d97311ed35d92edb1fe5d81723dfe988"
+}

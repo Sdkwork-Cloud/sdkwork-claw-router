@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linux-patcher@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_patcher",
+  "skill": {
+    "id": 12257,
+    "skillKey": "clawhub-linux-patcher",
+    "name": "Linux Patcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-patcher",
+    "url": "https://clawhub.ai/skills/linux-patcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-patcher-5767990dfc650ba2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Linux server patching and Docker container updates. Use when the user asks to update, patch, or upgrade Linux servers, apply security updates, update Docker containers, check for system updates, or manage server maintenance acros."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgm2025",
+      "userId": "publishers:jgm2025",
+      "displayName": "JGM2025",
+      "image": "https://avatars.githubusercontent.com/u/213201384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1855,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1770320583384,
+      "changelog": "linux-patcher 3.0.2\n\n- Updated documentation files: README.md, SETUP.md, and SKILL.md.\n- SKILL.md: Added explicit requirement for PatchMon to be installed (not necessarily on the same host) in the prerequisites. Clarified download location and minimum requirements on the control machine.\n- No functional or code changes; this is a documentation and requirement update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cdebbbca2c4abb2d929939690615abb3340d341d89c8f79372015385c859904c"
+}

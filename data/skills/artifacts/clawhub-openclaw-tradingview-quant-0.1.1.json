@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-tradingview-quant@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tradingview_quant",
+  "skill": {
+    "id": 14844,
+    "skillKey": "clawhub-openclaw-tradingview-quant",
+    "name": "Openclaw Tradingview Quant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tradingview-quant",
+    "url": "https://clawhub.ai/skills/openclaw-tradingview-quant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tradingview-quant-9fc6cbffa6773d80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional quantitative investment analysis frameworks and methodologies based on TradingView data structures. Use when users ask about stock analysis, tec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljsd666",
+      "userId": "publishers:ljsd666",
+      "displayName": "ljsd666",
+      "image": "https://avatars.githubusercontent.com/u/212463413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 947,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773143279822,
+      "changelog": "- Major redesign: Focus shifted from AI-centric workflow integration to user-facing quantitative investment analysis frameworks and methodologies.\n- SKILL.md rewritten to guide users on interpreting TradingView market data formats instead of controlling agent API behavior.\n- Clear separation between data analysis frameworks and data access—users are now advised to source TradingView data themselves; the skill provides guidance and methodology only.\n- Security and prompt injection sections clarified; terminology updated for relevance to manual analysis.\n- Documentation structure and descriptions updated for greater clarity and broader accessibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d05f2c578467064b727c02245fcb1cccb66609e5ab1a9fd02d928857672c26d"
+}

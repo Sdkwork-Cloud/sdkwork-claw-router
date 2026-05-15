@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34197,
+  "uuid": "skill-clawhub-automaton",
+  "skillKey": "clawhub-automaton",
+  "name": "Topics",
+  "summary": "Generates daily high-impact Honduran food trend topics and 50-second Spanish scripts with SEO metadata for short-form videos.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automaton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lostlilbot",
+      "features": [
+        "Generates daily high-impact Honduran food trend topics and 50-second Spanish scripts with SEO m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automaton@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248334913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automaton",
+      "url": "https://clawhub.ai/skills/automaton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automaton",
+    "url": "https://clawhub.ai/skills/automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automaton-9991ed5e7fcdc1aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automaton@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automaton-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc1c6ad8862f17da56e24aaaff2b197d5d36fc174d592ccc78eb5658ad28a66b",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:56:46.165Z"
+}

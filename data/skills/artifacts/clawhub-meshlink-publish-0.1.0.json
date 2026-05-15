@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meshlink-publish@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshlink_publish",
+  "skill": {
+    "id": 66432,
+    "skillKey": "clawhub-meshlink-publish",
+    "name": "MeshLink 服务发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshlink-publish",
+    "url": "https://clawhub.ai/skills/meshlink-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshlink-publish-74366c30550fca70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 meshlink CLI 一键将本地服务安全发布到集团内网，支持端口检测和服务名管理，需用户确认后执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jadejadelu",
+      "userId": "publishers:jadejadelu",
+      "displayName": "jadejadelu",
+      "image": "https://avatars.githubusercontent.com/u/97713895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773128904603,
+      "changelog": "Initial release of MeshLink 服务发布 Skill.\n\n- Enables publishing local services to a group intranet via ZTM (Zero Trust Mesh) using meshlink CLI.\n- Guides users through a strict, step-by-step workflow: port confirmation, agent and port checks, service name suggestion, publish preview, explicit user confirmation, and publication.\n- Provides clear error handling (agent errors, port checks, name conflicts).\n- Outputs detailed previews and publish results for user confirmation at each stage.\n- Prohibits publishing without explicit confirmation and enforces all checks using meshlink CLI only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e2e2fc4927aaa3f323a83f8691c58fb6d77f1548c1ec9b9a076ecf17c7b64f"
+}

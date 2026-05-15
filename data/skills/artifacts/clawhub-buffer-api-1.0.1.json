@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buffer-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buffer_api",
+  "skill": {
+    "id": 22517,
+    "skillKey": "clawhub-buffer-api",
+    "name": "Buffer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buffer-api",
+    "url": "https://clawhub.ai/skills/buffer-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buffer-api-b54976d92b6b876b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buffer API integration with managed authentication. Schedule and manage social media posts across multiple platforms. Use this skill when users want to sched..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777587157571,
+      "changelog": "- Updated all API and connection management endpoints from gateway.maton.ai and ctrl.maton.ai to api.maton.ai.\n- Clarified instructions for specifying connections using the `Maton-Connection` header.\n- Added section on security and permissions, including user approval for write operations.\n- Removed LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87664ad58da4589e40d6cc28093be14925727ff2a3dedec2606b64c051cc1b96"
+}

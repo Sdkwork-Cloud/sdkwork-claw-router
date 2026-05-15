@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/everything-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.everything_cli",
+  "skill": {
+    "id": 27536,
+    "skillKey": "clawhub-everything-cli",
+    "name": "agent-everything.exe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "everything-cli",
+    "url": "https://clawhub.ai/skills/everything-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/everything-cli-a5a98cb98de22214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast indexed local file and path search on Windows using voidtools Everything. Use this whenever a task needs local file lookup, path lookup, recent-file dis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamq96",
+      "userId": "publishers:williamq96",
+      "displayName": "Zhongyi \"William\" Qiu",
+      "image": "https://avatars.githubusercontent.com/u/130611759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773740381498,
+      "changelog": "- Initial release of everything-cli skill for fast local file and path search using voidtools Everything.\n- Automatically boots and configures `ev` CLI for indexed search; falls back to recursive scans only if index is unsuitable.\n- Provides easy commands for search (`ev search`), recent files (`ev recent`), file counts (`ev count`), and direct access to advanced flags (`ev raw`).\n- Ensures search results are returned in structured JSON format by default.\n- Blocks potentially dangerous empty global queries unless explicitly allowed.\n- Establishes `ev` as default for subsequent indexed file searches in the environment after bootstrapping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6007de1ac3ebefc4478db20dae8737bae2f4b5c6d769f4d1391ad3212375ed1f"
+}

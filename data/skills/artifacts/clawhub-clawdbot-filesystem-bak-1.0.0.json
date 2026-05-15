@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-filesystem-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_filesystem_bak",
+  "skill": {
+    "id": 20575,
+    "skillKey": "clawhub-clawdbot-filesystem-bak",
+    "name": "Clawdbot Filesystem.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-filesystem-bak",
+    "url": "https://clawhub.ai/skills/clawdbot-filesystem-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-filesystem-bak-8e43102f22a2f859.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced filesystem operations - listing, searching, batch processing, and directory analysis for Clawdbot"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "choichuncj",
+      "userId": "publishers:choichuncj",
+      "displayName": "choichuncj",
+      "image": "https://avatars.githubusercontent.com/u/32285366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772615563446,
+      "changelog": "Initial release of the filesystem skill for Clawdbot.\n\n- Provides advanced file and directory operations: listing, searching, batch processing, and analysis.\n- Features smart file listing with filtering, formatting, and sorting options.\n- Includes powerful search (filename and full-text), with support for glob and regex patterns.\n- Enables batch file copy operations with safety checks and dry run mode.\n- Offers directory analysis with tree visualization, statistics, and space analysis.\n- Built-in safety features: path validation, permission checks, error recovery, and dry run previews.\n- Seamless integration with Clawdbot ecosystem and related tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9173beee99fa061eeb521436250a8a3f068197ca6e396c1c260c427014a9c83f"
+}

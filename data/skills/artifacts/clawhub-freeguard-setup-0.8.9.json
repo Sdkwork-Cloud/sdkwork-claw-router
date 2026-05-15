@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freeguard-setup@0.8.9",
+  "version": "0.8.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeguard_setup",
+  "skill": {
+    "id": 23228,
+    "skillKey": "clawhub-freeguard-setup",
+    "name": "FreeGuard VPN Setup Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeguard-setup",
+    "url": "https://clawhub.ai/skills/freeguard-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeguard-setup-b53c0545050ccd71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users through installing, signing in to, connecting, and troubleshooting FreeGuard VPN with the official FreeGuard CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jojocrystal",
+      "userId": "s170nnzn2rc4bzjw8qgkm04z0h83gh25",
+      "displayName": "jojocrystal",
+      "image": "https://avatars.githubusercontent.com/u/209657736?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.8.9",
+      "createdAt": 1777615261426,
+      "changelog": "ClawHub moderation cleanup: publish minimal instruction-only package, use native metadata.openclaw requirements, remove remote-script and sudo command examples, keep Homebrew/checksum-verified install paths only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca9e6639cd9141a4ae02c6edc168e389d7d43a5bbb72aba77d9a130527893e8a"
+}

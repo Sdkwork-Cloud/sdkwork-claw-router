@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14076,
+  "uuid": "skill-clawhub-iserv",
+  "skillKey": "clawhub-iserv",
+  "name": "Iserv",
+  "summary": "HTTP client for IServ school platforms. Log in to an IServ instance (e.g. https://grabbe-dt.de) and fetch common student data like unread mail counts, calendar events, files/folders, tasks/exercises, announcements/news, and other IServ mod.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iserv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finnbusse",
+      "features": [
+        "HTTP client for IServ school platforms",
+        "Log in to an IServ instance (e.g",
+        "https://grabbe-dt.de) and fetch common student data like unread mail counts, calendar events, f.",
+        "Includes best-effort file ops + exercise submission."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iserv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110921874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iserv",
+      "url": "https://clawhub.ai/skills/iserv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iserv",
+    "url": "https://clawhub.ai/skills/iserv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iserv-61e2374ecca1b528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iserv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iserv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da6d594977a231c2905159c8b86435d6c44c07a13760371ba0925053353862e8",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:54:53.186Z"
+}

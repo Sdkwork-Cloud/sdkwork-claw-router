@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stocktorch@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stocktorch",
+  "skill": {
+    "id": 68473,
+    "skillKey": "clawhub-stocktorch",
+    "name": "Stocktorch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stocktorch",
+    "url": "https://clawhub.ai/skills/stocktorch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stocktorch-5a140ed48c4be17e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股智能分析系统。支持个股综合分析（技术/财务/资金流/新闻融合）和大盘实时分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fslong520",
+      "userId": "s179dxbepyx3dhgg6vsaj80yt583nxj7",
+      "displayName": "fslong",
+      "image": "https://avatars.githubusercontent.com/u/25819806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774928205559,
+      "changelog": "No changes detected in this release.\n\n- No file changes or content updates were found between 1.0.2 and the previous version.\n- Functionality and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:742336167d653225ac04e29e552a2b944593d98ce988a99920488907ca259a81"
+}

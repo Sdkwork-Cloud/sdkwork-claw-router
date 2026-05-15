@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pine-assistant@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pine_assistant",
+  "skill": {
+    "id": 38600,
+    "skillKey": "clawhub-pine-assistant",
+    "name": "Pine Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pine-assistant",
+    "url": "https://clawhub.ai/skills/pine-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pine-assistant-4285c2621dd3cec7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handle customer service, bills, reservations, and more via Pine AI — negotiate, cancel, dispute, book, and resolve from the terminal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bojieli",
+      "userId": "publishers:bojieli",
+      "displayName": "bojieli",
+      "image": "https://avatars.githubusercontent.com/u/1421793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 660,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771674444753,
+      "changelog": "Declare install spec, credential storage path, and persistence metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef0da6c15ed8e57548f3965b9f91762f4d9df25a202d0de15ef8d712c146900a"
+}

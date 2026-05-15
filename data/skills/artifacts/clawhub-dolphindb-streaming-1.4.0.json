@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolphindb-streaming@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_streaming",
+  "skill": {
+    "id": 68413,
+    "skillKey": "clawhub-dolphindb-streaming",
+    "name": "DolphinDB 流式计算技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-streaming",
+    "url": "https://clawhub.ai/skills/dolphindb-streaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-streaming-1c2f7932a6756d38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于DolphinDB的金融场景流式计算能力，支持实时行情、因子计算、风控及订单簿等实时数据流处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775116706146,
+      "changelog": "v1.4.0：添加强制环境检测流程，支持全局包装器调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce7adc14018d00dbd8f0482516888b1a8bd79045cfbb670cad037c820a4b6aa6"
+}

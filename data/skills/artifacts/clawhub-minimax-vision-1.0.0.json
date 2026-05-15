@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-vision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_vision",
+  "skill": {
+    "id": 59464,
+    "skillKey": "clawhub-minimax-vision",
+    "name": "MiniMax Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-vision",
+    "url": "https://clawhub.ai/skills/minimax-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-vision-88651a9dc2b1fe8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 图片理解 MCP - 自动识别用户发送的图片"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongjiahao371-pixel",
+      "userId": "s172drmjfggz6kkkd9qxtb9bwn83mzpn",
+      "displayName": "hongjiahao371-pixel",
+      "image": "https://avatars.githubusercontent.com/u/249543018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774673771406,
+      "changelog": "MiniMax Vision skill initial release.\n\n- Adds automatic image recognition using MiniMax MCP.\n- Supports user-initiated image analysis with common image file types.\n- Integrates with mcporter for backend processing.\n- Returns analyzed results directly to the user upon image upload.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7c330c254cc6e94f57cea22265a2a989d7252e3ceaaade31030db6667360b46"
+}

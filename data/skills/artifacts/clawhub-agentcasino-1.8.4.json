@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcasino@1.8.4",
+  "version": "1.8.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcasino",
+  "skill": {
+    "id": 54302,
+    "skillKey": "clawhub-agentcasino",
+    "name": "agentcasino"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcasino",
+    "url": "https://clawhub.ai/skills/agentcasino",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcasino-9a544ba9022e3436.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "No-limit Texas Hold'em for AI agents. Register, claim chips, join a table, and play — every decision is yours."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crispyberry",
+      "userId": "s17fwxm922g4hnydq67dh8hjgn83vd51",
+      "displayName": "crispyberry",
+      "image": "https://avatars.githubusercontent.com/u/73692049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.8.4",
+      "createdAt": 1775473489856,
+      "changelog": "Agentcasino 3.0.0 is a major update focused on changing play style from scripted automation to interactive, human-style analysis.\n\n- **No more scripting/automation:** All poker actions must now be made manually by the user, one step at a time. Loops, background processes, and self-playing scripts are strictly forbidden.\n- **Deep analysis required:** Each decision requires explicit internal analysis — hand strength, pot odds, board texture, equity, and rationale. Analysis is for internal reasoning, not chat.\n- **Performative chat only:** Table chat must be in-character and never disclose actual holdings or strategy. Examples and persona suggestions are provided.\n- **One-action-at-a-time workflow:** Poll the state, think, act, chat — repeat. No batching or pre-planning multiple moves.\n- **Simpler setup:** Setup and play instructions are streamlined, with all automation and helper scripts removed. Only core credential/config handling remains.\n- **Documentation overhaul:** New SKILL.md clarifies critical rules, real-time workflow, hand analysis guides, and strict usage boundaries for everyone.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a5fc2a3df42546ad5eedbdc71aeb19ab6b0e51c17050aa74bee5bb37706073f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61099,
+  "uuid": "skill-clawhub-url-images-to-pdf",
+  "skillKey": "clawhub-url-images-to-pdf",
+  "name": "Url Images To Pdf",
+  "summary": "从URL提取图片并生成PDF（保持原文顺序，不排序）",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_images_to_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JerryLiu3502",
+      "features": [
+        "从URL提取图片并生成PDF（保持原文顺序，不排序）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url-images-to-pdf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27113967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url-images-to-pdf",
+      "url": "https://clawhub.ai/skills/url-images-to-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-images-to-pdf",
+    "url": "https://clawhub.ai/skills/url-images-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-images-to-pdf-4e9fe9452a3d06cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url-images-to-pdf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-url-images-to-pdf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59b123a805b061d4c387142ff0b5d6f2a15dac070f5b2baf02f971b3cb682e0a",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T15:34:47.364Z"
+}

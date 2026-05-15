@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31824,
+  "uuid": "skill-clawhub-alibabacloud-elasticsearch-instance-manage",
+  "skillKey": "clawhub-alibabacloud-elasticsearch-instance-manage",
+  "name": "Alibabacloud Elasticsearch Instance Manage",
+  "summary": "Alibaba Cloud Elasticsearch Instance Management Skill. Use for creating, querying, listing, restarting, and upgrading/downgrading Elasticsearch instances on...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_elasticsearch_instance_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Elasticsearch Instance Management Skill",
+        "Use for creating, querying, listing, restarting, and upgrading/downgrading Elasticsearch instan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-elasticsearch-instance-manage@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-elasticsearch-instance-manage",
+      "url": "https://clawhub.ai/skills/alibabacloud-elasticsearch-instance-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-elasticsearch-instance-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-elasticsearch-instance-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-elasticsearch-instance-manage-412812a82a50e1bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-elasticsearch-instance-manage@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-elasticsearch-instance-manage-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eed392cf6764aa05357263470817da06eca3f37bddc776dc0864e2b7c936b187",
+      "artifactSizeBytes": 2582
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T14:07:34.180Z"
+}

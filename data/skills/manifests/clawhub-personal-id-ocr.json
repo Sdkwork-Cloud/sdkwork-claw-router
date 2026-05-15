@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70260,
+  "uuid": "skill-clawhub-personal-id-ocr",
+  "skillKey": "clawhub-personal-id-ocr",
+  "name": "Personal Id Ocr",
+  "summary": "支持身份证正反两面全自动检测与识别，提取姓名、性别、民族、出生日期、住址、公民身份号码及签发机关等关键字段。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_id_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SCNet-sugon",
+      "features": [
+        "支持身份证正反两面全自动检测与识别，提取姓名、性别、民族、出生日期、住址、公民身份号码及签发机关等关键字段。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-id-ocr@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267813088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-id-ocr",
+      "url": "https://clawhub.ai/skills/personal-id-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-id-ocr",
+    "url": "https://clawhub.ai/skills/personal-id-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-id-ocr-7b4276ec07eed78b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-id-ocr@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-id-ocr-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95a4bf43e7086738b6ee12c38b21cba0e832a1d59da5d84093bd040c47e0f3fd",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:28:31.430Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34272,
+  "uuid": "skill-clawhub-zotero-browse",
+  "skillKey": "clawhub-zotero-browse",
+  "name": "zotero-browse",
+  "summary": "Browse, search, and read papers from a local Zotero library. Use when the user wants to: (1) Search their Zotero library by title, author, or keyword, (2) Re...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_browse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liang Guo",
+      "features": [
+        "Browse, search, and read papers from a local Zotero library",
+        "Use when the user wants to: (1) Search their Zotero library by title, author, or keyword, (2) R."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-browse@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168323888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-browse",
+      "url": "https://clawhub.ai/skills/zotero-browse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-browse",
+    "url": "https://clawhub.ai/skills/zotero-browse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-browse-bbfe137118246544.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-browse@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-browse-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6352d1dca8bc239d648204cdb42cfc93d8ae91bf75d6cffcefc901182e7216bc",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T01:40:28.536Z"
+}

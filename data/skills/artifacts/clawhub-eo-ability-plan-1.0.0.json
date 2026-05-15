@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eo-ability-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eo_ability_plan",
+  "skill": {
+    "id": 62384,
+    "skillKey": "clawhub-eo-ability-plan",
+    "name": "EO Ability: Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eo-ability-plan",
+    "url": "https://clawhub.ai/skills/eo-ability-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eo-ability-plan-d6cc8898f0c9cebf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "项目规划能力，调用Planner专家生成WBS任务分解、里程碑计划、团队组成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "467718584",
+      "userId": "s172a1qcbvpk1r9stxfkyfewns845475",
+      "displayName": "467718584",
+      "image": "https://avatars.githubusercontent.com/u/57902585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775563103803,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8eecf467a6986933862a52d37424fd1a10bd76a69906411029f55c92f43cd9ea"
+}

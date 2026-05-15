@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8311,
+  "uuid": "skill-clawhub-web-search-exa",
+  "skillKey": "clawhub-web-search-exa",
+  "name": "Web Search by Exa",
+  "summary": "Neural web search, content extraction, company and people research, code search, and deep research via the Exa MCP server. Use when you need to: (1) search t...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_exa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ishan Goswami",
+      "features": [
+        "Neural web search, content extraction, company and people research, code search, and deep resea.",
+        "Use when you need to: (1) search t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-search-exa@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26306586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-search-exa",
+      "url": "https://clawhub.ai/skills/web-search-exa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-exa",
+    "url": "https://clawhub.ai/skills/web-search-exa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-exa-dc6fcbb37b4216d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-search-exa@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-search-exa-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13f1c54d8c3cf2eb2d6faf03ae4bc496ce32fb10ea9dacc42a2a12b84d4b51f5",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:04:58.117Z"
+}

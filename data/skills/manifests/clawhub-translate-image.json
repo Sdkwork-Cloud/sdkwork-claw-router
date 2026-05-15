@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16440,
+  "uuid": "skill-clawhub-translate-image",
+  "skillKey": "clawhub-translate-image",
+  "name": "Translate Image",
+  "summary": "Translate text in images, extract text via OCR, and remove text using TranslateImage AI. Use when user says 'translate image', 'OCR image', 'extract text fro...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translate_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cottom",
+      "features": [
+        "Translate text in images, extract text via OCR, and remove text using TranslateImage AI",
+        "Use when user says 'translate image', 'OCR image', 'extract text fro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/translate-image@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11937539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "translate-image",
+      "url": "https://clawhub.ai/skills/translate-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translate-image",
+    "url": "https://clawhub.ai/skills/translate-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translate-image-5fdbaf207b56e36c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/translate-image@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-translate-image-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72db907444711e7f183ddbe778baabcd9917b0e45a86ac2d502a8fa69350d83a",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:54:09.947Z"
+}

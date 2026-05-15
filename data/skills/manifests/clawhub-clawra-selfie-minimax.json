@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16887,
+  "uuid": "skill-clawhub-clawra-selfie-minimax",
+  "skillKey": "clawhub-clawra-selfie-minimax",
+  "name": "Clawra Selfie (MiniMax)",
+  "summary": "Generate AI images using MiniMax or fal.ai (Grok Imagine) and send to messaging channels via OpenClaw",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawra_selfie_minimax",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "Generate AI images using MiniMax or fal.ai (Grok Imagine) and send to messaging channels via Op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawra-selfie-minimax@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawra-selfie-minimax",
+      "url": "https://clawhub.ai/skills/clawra-selfie-minimax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawra-selfie-minimax",
+    "url": "https://clawhub.ai/skills/clawra-selfie-minimax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawra-selfie-minimax-1f91296443c33b1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawra-selfie-minimax@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawra-selfie-minimax-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc028846f75e2b8039564f6a7f21565d4f5d26264fa8c5139759898e7003f658",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:58:29.479Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34260,
+  "uuid": "skill-clawhub-tooldeck",
+  "skillKey": "clawhub-tooldeck",
+  "name": "ToolDeck",
+  "summary": "Auto-scrapes URLs to extract tool/service info, auto-categorizes, and saves to a personal database. Use when user explicitly shares a URL to save or asks to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tooldeck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jahfali-dev",
+      "features": [
+        "Auto-scrapes URLs to extract tool/service info, auto-categorizes, and saves to a personal datab.",
+        "Use when user explicitly shares a URL to save or asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tooldeck@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36684012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tooldeck",
+      "url": "https://clawhub.ai/skills/tooldeck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tooldeck",
+    "url": "https://clawhub.ai/skills/tooldeck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tooldeck-66fd89a327695bd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tooldeck@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tooldeck-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dcf934e8e1e6fe025f8d817c0970a96fbe65032f8a11cd7cd9655b4b6e95d71",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:36:51.064Z"
+}

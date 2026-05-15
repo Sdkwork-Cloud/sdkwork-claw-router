@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57353,
+  "uuid": "skill-clawhub-crypto-kline-data",
+  "skillKey": "clawhub-crypto-kline-data",
+  "name": "Crypto Kline BTC加密货币K线数据-HuoBi",
+  "summary": "Fetch real-time market data and historical Huobi Kline data for major cryptocurrencies with customizable intervals and record counts.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_kline_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u91win",
+      "features": [
+        "Fetch real-time market data and historical Huobi Kline data for major cryptocurrencies with cus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-kline-data@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19883291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-kline-data",
+      "url": "https://clawhub.ai/skills/crypto-kline-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-kline-data",
+    "url": "https://clawhub.ai/skills/crypto-kline-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-kline-data-6528dc3f4ddea383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-kline-data@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-kline-data-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c1ceaa80b31ecb302662794f7822943100f0b1aeb7331237c7aa2da56dbd9db",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:49:25.316Z"
+}

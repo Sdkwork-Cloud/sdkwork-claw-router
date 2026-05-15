@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minor-injury-first-response@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minor_injury_first_response",
+  "skill": {
+    "id": 41799,
+    "skillKey": "clawhub-minor-injury-first-response",
+    "name": "Minor Injury First Response"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minor-injury-first-response",
+    "url": "https://clawhub.ai/skills/minor-injury-first-response",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minor-injury-first-response-fc053545b4820d16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "First aid protocols for sprains, strains, minor wounds, and common injuries. Use when someone is hurt and wants to know if they need emergency care or can tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774521017437,
+      "changelog": "Initial release of Minor Injury First Response — provides step-by-step, evidence-based first aid for common injuries.\n\n- Covers protocols for sprains, strains, minor wounds, and bruises.\n- Includes clear emergency red flags and instructions for when to seek immediate care.\n- Offers universal first aid guidance and adapts healthcare recommendations based on user location.\n- Lists reputable sources and verification for protocols used.\n- Focuses on what to do in the first 30 minutes after injury and when to stop home care.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5a10184760cde8e9a90ce16e31260718b9a31e877164df920864736b2ac39d8"
+}

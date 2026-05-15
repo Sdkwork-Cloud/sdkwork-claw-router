@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37310,
+  "uuid": "skill-clawhub-git-repo",
+  "skillKey": "clawhub-git-repo",
+  "name": "Git Repo",
+  "summary": "Git repository and SourceGit integration management. clone - ghq get with automatic SourceGit registration [clone.md], fix-worktree - bare repo worktree conf...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_repo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "es6kr",
+      "features": [
+        "Git repository and SourceGit integration management",
+        "ghq get with automatic SourceGit registration [clone.md], fix-worktree",
+        "bare repo worktree conf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-repo@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/819969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-repo",
+      "url": "https://clawhub.ai/skills/git-repo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-repo",
+    "url": "https://clawhub.ai/skills/git-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-repo-bd7285ddfdc6658a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-repo@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-repo-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1023231dd340de1049d6f5bb5056cab2ddaec8e6e8dfbd037374107011b25c6d",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:42:32.266Z"
+}

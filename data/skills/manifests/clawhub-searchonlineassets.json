@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16835,
+  "uuid": "skill-clawhub-searchonlineassets",
+  "skillKey": "clawhub-searchonlineassets",
+  "name": "SearchOnlineAssets",
+  "summary": "Online asset search tool: queries public stock libraries (Pixabay) for high-quality photos, illustrations, vectors and videos, returning result metadata and...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searchonlineassets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Online asset search tool: queries public stock libraries (Pixabay) for high-quality photos, ill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/searchonlineassets@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "searchonlineassets",
+      "url": "https://clawhub.ai/skills/searchonlineassets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searchonlineassets",
+    "url": "https://clawhub.ai/skills/searchonlineassets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searchonlineassets-c8c59c1f1d6e0486.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/searchonlineassets@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-searchonlineassets-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55446f3d6b18fb8cc3b72286df3fb46065f3a22e51fcd2eaf8ccd6c780a1d053",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T10:23:05.797Z"
+}

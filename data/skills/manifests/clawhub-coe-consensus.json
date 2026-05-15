@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55170,
+  "uuid": "skill-clawhub-coe-consensus",
+  "skillKey": "clawhub-coe-consensus",
+  "name": "COE Consensus",
+  "summary": "COE Consensus Engine — Cross-Model Consensus Skill for Shared World State Formation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coe_consensus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEP (Judgment Event Protocol)",
+      "features": [
+        "COE Consensus Engine — Cross-Model Consensus Skill for Shared World State Formation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coe-consensus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10815391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coe-consensus",
+      "url": "https://clawhub.ai/skills/coe-consensus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coe-consensus",
+    "url": "https://clawhub.ai/skills/coe-consensus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coe-consensus-d75d05d1973434e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coe-consensus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coe-consensus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:227a2f43a55da34adec4bb7fba72560ead2a88b64165df89d9c1476b2089ef47",
+      "artifactSizeBytes": 3610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:35:06.864Z"
+}

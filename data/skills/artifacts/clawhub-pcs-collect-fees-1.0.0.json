@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pcs-collect-fees@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_collect_fees",
+  "skill": {
+    "id": 44666,
+    "skillKey": "clawhub-pcs-collect-fees",
+    "name": "Collect Fees"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-collect-fees",
+    "url": "https://clawhub.ai/skills/pcs-collect-fees",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-collect-fees-0fa4141423268458.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check and collect LP fees from PancakeSwap V3 and Infinity (v4) positions. Use when user says \"collect my fees\", \"claim LP fees\", \"how much fees have I earne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pcs-bot",
+      "userId": "s17e15zvvrcnp9txheamy3j9y183h72e",
+      "displayName": "pcs-bot",
+      "image": "https://avatars.githubusercontent.com/u/227519168?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774320263603,
+      "changelog": "Release from 947a5849cee9681498b9f530cf4a2cf6e46933a9",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f6624a1c94a4aa976da60143c63de6e88998a13530f69548729c5a38e066fde"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20610,
+  "uuid": "skill-clawhub-macos-audio",
+  "skillKey": "clawhub-macos-audio",
+  "name": "macos-audio",
+  "summary": "Manage macOS audio output and Bluetooth devices via the macos-audio CLI. Use when scanning paired devices, connecting or disconnecting Bluetooth, switching a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wout Vossen",
+      "features": [
+        "Manage macOS audio output and Bluetooth devices via the macos-audio CLI",
+        "Use when scanning paired devices, connecting or disconnecting Bluetooth, switching a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-audio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47829242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-audio",
+      "url": "https://clawhub.ai/skills/macos-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-audio",
+    "url": "https://clawhub.ai/skills/macos-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-audio-37346d189dff74f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-audio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-audio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31d5605c0ba8eaeb01a966095efbd13ff7ffdb01cafc1235c7ee5086f3bb531c",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T19:24:37.802Z"
+}

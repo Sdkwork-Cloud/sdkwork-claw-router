@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15413,
+  "uuid": "skill-clawhub-github-integration",
+  "skillKey": "clawhub-github-integration",
+  "name": "Github",
+  "summary": "Github integration. Manage project management and ticketing data, records, and workflows. Use when the user wants to interact with Github data.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Github integration",
+        "Manage project management and ticketing data, records, and workflows",
+        "Use when the user wants to interact with Github data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-integration@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-integration",
+      "url": "https://clawhub.ai/skills/github-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-integration",
+    "url": "https://clawhub.ai/skills/github-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-integration-1e65c2d5f10a0403.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-integration@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-integration-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bccefcb845d50c4b2b62db54a2a205640e8a20657178b922eb9782dbb73a4bc9",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:30:10.573Z"
+}

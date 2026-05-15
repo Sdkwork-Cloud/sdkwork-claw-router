@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27201,
+  "uuid": "skill-clawhub-lightpanda-scraper",
+  "skillKey": "clawhub-lightpanda-scraper",
+  "name": "Lightpanda Scraper",
+  "summary": "Fast headless browser web scraping using Lightpanda (0.5s page loads, 90x faster than Chromium). Perfect for OSINT recon, link extraction, and content scrapi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightpanda_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HostileSpider",
+      "features": [
+        "Fast headless browser web scraping using Lightpanda (0.5s page loads, 90x faster than Chromium)",
+        "Perfect for OSINT recon, link extraction, and content scrapi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lightpanda-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47485616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lightpanda-scraper",
+      "url": "https://clawhub.ai/skills/lightpanda-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightpanda-scraper",
+    "url": "https://clawhub.ai/skills/lightpanda-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightpanda-scraper-28328b0153335fca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lightpanda-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lightpanda-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deac94e8aa404e511f8cdb762299de03b70c4fe6535eea4b71df9919c07369bd",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:09:00.791Z"
+}

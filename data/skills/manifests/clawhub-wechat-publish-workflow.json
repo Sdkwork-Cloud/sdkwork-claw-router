@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72184,
+  "uuid": "skill-clawhub-wechat-publish-workflow",
+  "skillKey": "clawhub-wechat-publish-workflow",
+  "name": "微信公众号自动排版发布---一键发布",
+  "summary": "微信公众号发布流水线：视觉排版→主编审核→API发布→数据复盘。在已有Markdown定稿基础上执行微信格式化和发布。触发词：发布到微信、微信排版、微信发布。需先完成内容创作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publish_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little-ke",
+      "features": [
+        "微信公众号发布流水线：视觉排版→主编审核→API发布→数据复盘。在已有Markdown定稿基础上执行微信格式化和发布。触发词：发布到微信、微信排版、微信发布。需先完成内容创作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-publish-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61963028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-publish-workflow",
+      "url": "https://clawhub.ai/skills/wechat-publish-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publish-workflow",
+    "url": "https://clawhub.ai/skills/wechat-publish-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publish-workflow-0593ad6931de6160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-publish-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-publish-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e06cd2b972ac4e68d6a22a7c2968817e9136b2edc03e7183703db62bde84a49b",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:55:40.943Z"
+}

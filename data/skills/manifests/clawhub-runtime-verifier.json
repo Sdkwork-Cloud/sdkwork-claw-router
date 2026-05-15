@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45660,
+  "uuid": "skill-clawhub-runtime-verifier",
+  "skillKey": "clawhub-runtime-verifier",
+  "name": "Runtime Verifier",
+  "summary": "Use when a code change must be verified by actually running the app, endpoint, or CLI flow instead of relying only on unit tests.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when a code change must be verified by actually running the app, endpoint, or CLI flow inst."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runtime-verifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runtime-verifier",
+      "url": "https://clawhub.ai/skills/runtime-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-verifier",
+    "url": "https://clawhub.ai/skills/runtime-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-verifier-579385e526cb0764.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runtime-verifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runtime-verifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dc802c8af1f30504c8758e949eaea004bdf44b1808aa6d0f04a6e9261d834ef",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T17:16:58.723Z"
+}

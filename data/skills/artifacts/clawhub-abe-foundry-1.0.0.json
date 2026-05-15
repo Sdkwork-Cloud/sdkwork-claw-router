@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-foundry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_foundry",
+  "skill": {
+    "id": 54490,
+    "skillKey": "clawhub-abe-foundry",
+    "name": "abe-foundry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-foundry",
+    "url": "https://clawhub.ai/skills/abe-foundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-foundry-231687a66a7221c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions, tools, hooks, and skills"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777003829531,
+      "changelog": "Initial release of abe-foundry: AI-powered meta-extension for OpenClaw.\n\n- Enables Foundry, a self-writing meta-extension that researches documentation, learns from failures, and generates new OpenClaw capabilities.\n- Provides tools for researching docs, writing extensions, hooks, skills, and self-modification.\n- Integrates with SkillBoss API Hub for LLM, search, and scraping.\n- Supports automated learning from usage, failures, and documentation.\n- Includes documentation for installation, configuration, and security measures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d874206ee75f5c8f8b40057b1b4f40aad9b4c607352acb640521c462636b79f3"
+}

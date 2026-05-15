@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57647,
+  "uuid": "skill-clawhub-smyx-incontinence-alert-analysis",
+  "skillKey": "clawhub-smyx-incontinence-alert-analysis",
+  "name": "智能失禁状态提醒技能",
+  "summary": "Automatically identifies wet clothing and abnormal excretion via visual AI. Instantly notifies caregivers to improve care for incontinent elderly, bedridden...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_incontinence_alert_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Automatically identifies wet clothing and abnormal excretion via visual AI",
+        "Instantly notifies caregivers to improve care for incontinent elderly, bedridden..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-incontinence-alert-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-incontinence-alert-analysis",
+      "url": "https://clawhub.ai/skills/smyx-incontinence-alert-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-incontinence-alert-analysis",
+    "url": "https://clawhub.ai/skills/smyx-incontinence-alert-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-incontinence-alert-analysis-ffe714cc90f18eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-incontinence-alert-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-incontinence-alert-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d7bb6be03d7437f14e11ef8fab8c606cda5f6efdb166d64a36a799dee97f3b1",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:35:41.431Z"
+}

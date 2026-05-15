@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57590,
+  "uuid": "skill-clawhub-china-legal-query",
+  "skillKey": "clawhub-china-legal-query",
+  "name": "China Legal Query",
+  "summary": "中国法律法规查询工具。Use when user needs to search Chinese laws, regulations, judicial interpretations. Supports criminal law, civil law, labor law, contract law, inte...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_legal_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国法律法规查询工具。Use when user needs to search Chinese laws, regulations, judicial interpretations",
+        "Supports criminal law, civil law, labor law, contract law, inte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-legal-query@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-legal-query",
+      "url": "https://clawhub.ai/skills/china-legal-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-legal-query",
+    "url": "https://clawhub.ai/skills/china-legal-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-legal-query-ff00380762dbcbb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-legal-query@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-legal-query-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d1a51830e807eec8bfc6405c23d23c7d013c94922c27f500159bd64560fff97",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:32:01.262Z"
+}

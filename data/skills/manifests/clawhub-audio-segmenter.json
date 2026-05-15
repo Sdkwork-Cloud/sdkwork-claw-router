@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70994,
+  "uuid": "skill-clawhub-audio-segmenter",
+  "skillKey": "clawhub-audio-segmenter",
+  "name": "audio-segmenter",
+  "summary": "当用户想要**把长音频切成小段**、**音频切片**、**音频分割**、**把音频分成固定时长片段**、**制作语音数据集**、**准备Karaoke素材**、**翻唱音频切片**时自动触发。 支持单个音频文件或整个文件夹（支持递归），自动用 ffmpeg 把音频按指定秒数切成小片段，完美保留原始文件夹结构，并智...",
+  "version": "1.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_segmenter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顶尖王牌程序员",
+      "features": [
+        "当用户想要**把长音频切成小段**、**音频切片**、**音频分割**、**把音频分成固定时长片段**、**制作语音数据集**、**准备Karaoke素材**、**翻唱音频切片**时自动触发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-segmenter@1.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11627332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-segmenter",
+      "url": "https://clawhub.ai/skills/audio-segmenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-segmenter",
+    "url": "https://clawhub.ai/skills/audio-segmenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-segmenter-9286f5b53bccb85c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-segmenter@1.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-segmenter-1.1.7.json",
+      "version": "1.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43da410cfa5afc6a0cbf2d3178dfa21b8b6aba2b50c15471944e62537d1166f2",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:59:44.769Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57635,
+  "uuid": "skill-clawhub-runninghub-skill",
+  "skillKey": "clawhub-runninghub-skill",
+  "name": "rh-skill",
+  "summary": "RunningHub AI 智能调用。Use when user wants to generate images, videos, or audio content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runninghub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIRix315",
+      "features": [
+        "RunningHub AI 智能调用。Use when user wants to generate images, videos, or audio content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runninghub-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9856431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runninghub-skill",
+      "url": "https://clawhub.ai/skills/runninghub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runninghub-skill",
+    "url": "https://clawhub.ai/skills/runninghub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runninghub-skill-e59eba511efd336b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runninghub-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runninghub-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43f85b7134b3fed29ae46c537c5cf6199a99885f4518daf83a8af430910bcce5",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:02:06.635Z"
+}

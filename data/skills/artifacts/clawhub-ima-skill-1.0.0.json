@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_skill",
+  "skill": {
+    "id": 69289,
+    "skillKey": "clawhub-ima-skill",
+    "name": "Ima Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-skill",
+    "url": "https://clawhub.ai/skills/ima-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-skill-2a7dd6c2eabf0459.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一的 IMA OpenAPI 技能，支持笔记管理和知识库操作。 当用户提到知识库、资料库、笔记、备忘录、记事，或者想要上传文件、添加网页到知识库、 搜索知识库内容、搜索/浏览/创建/编辑笔记时，使用此 skill。 即使用户没有明确说\"知识库\"或\"笔记\"，只要意图涉及文件上传到知识库、网页收藏、 知识搜索、个人..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoe1209",
+      "userId": "s177zevp2fncxwgbms9826d29583h4v3",
+      "displayName": "z zoe",
+      "image": "https://avatars.githubusercontent.com/u/128692476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 55,
+      "installsCurrent": 54,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774337535391,
+      "changelog": "ima-skill v1.0.0\n\n- Initial release providing a unified IMA OpenAPI skill for notes and knowledge-base operations.\n- Supports user intents including notes creation/management and knowledge-base file/link upload, search, and management.\n- Enforces strong credential security: user-provided Client ID and API Key are only sent to ima.qq.com.\n- Includes detailed setup and encoding guidelines, with mandatory UTF-8 handling for notes operations.\n- Outlines accurate intent routing rules between notes and knowledge-base modules, including decision tables and edge-case clarifications.\n- Provides critical guidance on environment-specific issues, especially for Windows PowerShell encoding compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2db3aded3ee2cd536760ec6574af2b5051b080a095cdf30bf894192e74559d74"
+}

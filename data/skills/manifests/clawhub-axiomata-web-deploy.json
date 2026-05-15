@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53184,
+  "uuid": "skill-clawhub-axiomata-web-deploy",
+  "skillKey": "clawhub-axiomata-web-deploy",
+  "name": "Axiomata Web Deploy",
+  "summary": "Deploy a public web presence (HTML + Docker + DNS + Domain) in ~15 minutes. Triggers on: 'deploy website', 'build and deploy', 'create web presence', 'launch...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axiomata_web_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "Deploy a public web presence (HTML + Docker + DNS + Domain) in ~15 minutes",
+        "Triggers on: 'deploy website', 'build and deploy', 'create web presence', 'launch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axiomata-web-deploy@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axiomata-web-deploy",
+      "url": "https://clawhub.ai/skills/axiomata-web-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axiomata-web-deploy",
+    "url": "https://clawhub.ai/skills/axiomata-web-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axiomata-web-deploy-251977578cea4912.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axiomata-web-deploy@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axiomata-web-deploy-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4870c101b18bfb8ba566760c4107fb200dbd394e5c2b2d90ca8bcf86781a71ec",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:37:05.334Z"
+}

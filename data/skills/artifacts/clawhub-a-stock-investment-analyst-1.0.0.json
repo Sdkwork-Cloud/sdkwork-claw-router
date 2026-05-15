@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-investment-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_investment_analyst",
+  "skill": {
+    "id": 70728,
+    "skillKey": "clawhub-a-stock-investment-analyst",
+    "name": "A Stock Investment Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-investment-analyst",
+    "url": "https://clawhub.ai/skills/a-stock-investment-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-investment-analyst-2a3f0fcf72fd0485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股投资分析专家技能。当用户要求分析A股、投资诊断、股票诊断、个股分析、行业分析、板块研究、组合优化、风险预警、新闻解读、资金流向分析、技术面分析、基本面分析时使用。支持股票代码/名称查询、行业板块分析、持仓诊断、风险监控等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hendyyou",
+      "userId": "s17fdtnpbb31j8jenxqafvshcx84edsp",
+      "displayName": "hendyyou",
+      "image": "https://avatars.githubusercontent.com/u/1138506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775640596614,
+      "changelog": "- Initial release of the A股投资分析专家技能 (A-Share Stock Investment Analyst Skill).\n- Supports stock and industry analysis, portfolio optimization, news impact evaluation, and risk monitoring for A股市场 (A-share market).\n- Provides structured input and output formats for single stock, industry/sector, portfolio, news interpretation, and risk alert scenarios.\n- Includes detailed modules for fundamental, technical, and capital flow analysis, along with scoring and actionable suggestions.\n- Emphasizes data accuracy, balanced analysis, risk disclosure, and timely updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67028dc58f5c3ed16e94eb10e3182a18964c948beb43d20a101091e64be0976a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69721,
+  "uuid": "skill-clawhub-ai-model-steward",
+  "skillKey": "clawhub-ai-model-steward",
+  "name": "AI 模型智能管家",
+  "summary": "自动监控 AI 模型动态，搜集免费 tokens，生成周度部署建议，支持一键审批上线及安全回滚管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_model_steward",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HHBB2221",
+      "features": [
+        "自动监控 AI 模型动态，搜集免费 tokens，生成周度部署建议，支持一键审批上线及安全回滚管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-model-steward@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204304406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-model-steward",
+      "url": "https://clawhub.ai/skills/ai-model-steward"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-model-steward",
+    "url": "https://clawhub.ai/skills/ai-model-steward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-model-steward-832cdc27deb422ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-model-steward@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-model-steward-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d7a3ef45183add5f506b3c3f7ac00f0a10cf272f053aea88bd9b9a8eb5c6bd9",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:19:44.917Z"
+}

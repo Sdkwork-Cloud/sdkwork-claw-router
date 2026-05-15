@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19783,
+  "uuid": "skill-clawhub-backtestbot",
+  "skillKey": "clawhub-backtestbot",
+  "name": "BacktestBot",
+  "summary": "Backtest trading strategies against historical market data with performance analytics and risk metrics",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backtestbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Collier King",
+      "features": [
+        "Backtest trading strategies against historical market data with performance analytics and risk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backtestbot@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10591022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backtestbot",
+      "url": "https://clawhub.ai/skills/backtestbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backtestbot",
+    "url": "https://clawhub.ai/skills/backtestbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backtestbot-93b2213abe77110d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backtestbot@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-backtestbot-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60d896aca265f94ac73621b3bd5918c41bec33c2f71d1312dfd8cc8bef106805",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:18:15.617Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66700,
+  "uuid": "skill-clawhub-flyelep-ai-image-matting",
+  "skillKey": "clawhub-flyelep-ai-image-matting",
+  "name": "AI-Image-Matting",
+  "summary": "通过 Flyelep AI 工具接口自动去除图片背景，支持单张或批量处理。 当用户要求抠图、去背景、提取商品主体、生成透明底素材时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_ai_image_matting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyelep",
+      "features": [
+        "通过 Flyelep AI 工具接口自动去除图片背景，支持单张或批量处理。 当用户要求抠图、去背景、提取商品主体、生成透明底素材时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyelep-ai-image-matting@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272408277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyelep-ai-image-matting",
+      "url": "https://clawhub.ai/skills/flyelep-ai-image-matting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-ai-image-matting",
+    "url": "https://clawhub.ai/skills/flyelep-ai-image-matting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-ai-image-matting-2c0f9d08058ad1f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyelep-ai-image-matting@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyelep-ai-image-matting-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c8825c763d3498161c839cf21c8b037445f25c55aec32a067fd1a9d552dd3fb",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:54:18.078Z"
+}

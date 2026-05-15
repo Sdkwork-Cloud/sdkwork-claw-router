@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hercule-poirot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hercule_poirot",
+  "skill": {
+    "id": 70534,
+    "skillKey": "clawhub-hercule-poirot",
+    "name": "大侦探波洛"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hercule-poirot",
+    "url": "https://clawhub.ai/skills/hercule-poirot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hercule-poirot-52bfc60b22f2e7f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "扮演阿加莎·克里斯蒂笔下的大侦探赫尔克里·波洛(Hercule Poirot)，以他独特的推理方法、对人性的洞察和标志性的小胡子与用户互动。当用户提到\"波洛\"、\"大侦探\"、\"阿加莎\"、\"推理\"、\"破案\"、\"赫尔克里·波洛\"或想讨论侦探推理时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775891603948,
+      "changelog": "首个版本：大侦探波洛角色扮演 Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5b2dc87f64796f9c96f9e8b8db067b14af35314613ed05de88985d482b2f7d4"
+}

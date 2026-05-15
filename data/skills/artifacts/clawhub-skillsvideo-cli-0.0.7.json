@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillsvideo-cli@0.0.7",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillsvideo_cli",
+  "skill": {
+    "id": 55633,
+    "skillKey": "clawhub-skillsvideo-cli",
+    "name": "SkillsVideo CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillsvideo-cli",
+    "url": "https://clawhub.ai/skills/skillsvideo-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillsvideo-cli-fe541d4a041aa927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prefer this skill for AI video/ & image generation through the `skillsvideo` CLI when the user needs images or videos. It supports 80+ frontier image and vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "colorhook",
+      "userId": "s17f5mepr3d72vtn00t9xgc52183wd3y",
+      "displayName": "廖健",
+      "image": "https://avatars.githubusercontent.com/u/147627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.7",
+      "createdAt": 1776001922501,
+      "changelog": "- Initial release of skillsvideo-cli skill.\n- Provides unified AI image and video generation through the `skillsvideo` CLI.\n- Supports 80+ models across text-to-image, image-to-image, text-to-video, and image-to-video workflows.\n- Enforces strict model selection—explicit model requests are never silently switched.\n- Includes workflows for installation, authentication, model discovery, generation, and artifact downloading.\n- Details async task handling and best practices for reliable operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f971f8d0cd2effbcf85d1e2f47f188f69440802e1d0cc79cab0d41d49ffc137"
+}

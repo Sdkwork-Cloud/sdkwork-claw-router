@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ab-agents-meter-reader@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_agents_meter_reader",
+  "skill": {
+    "id": 54069,
+    "skillKey": "clawhub-ab-agents-meter-reader",
+    "name": "AB Agents Meter Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-agents-meter-reader",
+    "url": "https://clawhub.ai/skills/ab-agents-meter-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-agents-meter-reader-d4bb280a1d7fc9fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "📊 Read meter readings from photos. Electricity (day/night tariffs) and water meters. Saves history and generates messages for landlord."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexburrstudio",
+      "userId": "s1717bw4kcc5xr8sv6g1grrmcn85jzdt",
+      "displayName": "alexburrstudio",
+      "image": "https://avatars.githubusercontent.com/u/67595206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777226427215,
+      "changelog": "- Added a new Requirements section to SKILL.md, specifying AB Agents Vision (MiniMax) as a required dependency for image analysis\n- Included installation instructions for AB-Agents-Vision-MiniMax using clawhub\n- No functional or code changes; documentation update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bfd409718000478e4364ecd112c248d525b7a554f058fd708e9bb6d019d281f"
+}

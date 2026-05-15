@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19521,
+  "uuid": "skill-clawhub-context-preserver",
+  "skillKey": "clawhub-context-preserver",
+  "name": "Context Preserver",
+  "summary": "Preserve working context with automatic snapshots, on-demand recovery, version management, and context export tools. Use when you want to save progress befor...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_preserver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Preserve working context with automatic snapshots, on-demand recovery, version management, and.",
+        "Use when you want to save progress befor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-preserver@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-preserver",
+      "url": "https://clawhub.ai/skills/context-preserver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-preserver",
+    "url": "https://clawhub.ai/skills/context-preserver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-preserver-7ef726432919decb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-preserver@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-preserver-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eabf91fb60e5c471502b9b6006df9443348e29624b3df0274df3633b267ddf02",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:47:32.480Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calendar-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_optimizer",
+  "skill": {
+    "id": 37028,
+    "skillKey": "clawhub-calendar-optimizer",
+    "name": "Calendar Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-optimizer",
+    "url": "https://clawhub.ai/skills/calendar-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-optimizer-cabc40373bf2b040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes and rewrites calendar events into clear, actionable tasks. Removes meeting fluff and converts vague descriptions into specific deliverables with dea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1477009639zw-blip",
+      "userId": "s17ezgebx1rdjg5v6ddseykg2183rt6j",
+      "displayName": "1477009639zw-blip",
+      "image": "https://avatars.githubusercontent.com/u/266505725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774820583035,
+      "changelog": "Initial release of calendar-optimizer.\n\n- Converts vague or cluttered calendar events into clear, actionable markdown tasks.\n- Extracts specific deliverables, prep steps, and deadlines from generic meeting descriptions.\n- Provides improved clarity on attendees, prep requirements, and decision-makers for each event.\n- CLI usage: process CSV input and generate organized markdown output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4e9f8b5cfba8434ad4bea84c5452d6dafab95e22384e79533631e187f6ef082"
+}

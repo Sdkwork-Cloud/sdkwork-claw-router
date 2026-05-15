@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-descript@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_descript",
+  "skill": {
+    "id": 43348,
+    "skillKey": "clawhub-ai-video-editor-descript",
+    "name": "Ai Video Editor Descript"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-descript",
+    "url": "https://clawhub.ai/skills/ai-video-editor-descript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-descript-1e7fa8c5c3dae5c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get transcript-edited videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776102402835,
+      "changelog": "- Initial release of AI Video Editor Descript (version 1.0.0).\n- Upload raw video footage (MP4, MOV, AVI, WebM, up to 500MB) and edit by describing changes in plain language.\n- Automatic transcript-based editing: remove filler words, add captions, trim silences, and more.\n- Simple, session-based workflow with free token generation and cloud processing.\n- Supports export to 1080p MP4 and other major formats; optimized for podcasters and fast-paced content creators.\n- Includes error handling, session management, and workflow tips for efficient AI-powered editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b964dcb9b6d4e1cc95d7b12b614f95bed15c300c2604ae7eac339efa31f66c8d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11384,
+  "uuid": "skill-clawhub-hytale",
+  "skillKey": "clawhub-hytale",
+  "name": "Hytale Server",
+  "summary": "Manage and control a local Hytale dedicated server with commands to start, stop, update, and check the server status using the official downloader.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hytale",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NewcastleGeek",
+      "features": [
+        "Manage and control a local Hytale dedicated server with commands to start, stop, update, and ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hytale@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4136624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hytale",
+      "url": "https://clawhub.ai/skills/hytale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hytale",
+    "url": "https://clawhub.ai/skills/hytale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hytale-dfe955d428a5d49d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hytale@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hytale-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:268cc61838d5dc0e07333250b96578918197ce7fe0e13b625d4fe547e7d27581",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T20:22:20.260Z"
+}

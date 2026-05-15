@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27785,
+  "uuid": "skill-clawhub-check-workday-cn",
+  "skillKey": "clawhub-check-workday-cn",
+  "name": "Check Workday CN",
+  "summary": "Determine whether today (or a given date) is a working day in mainland China by querying holiday-cn yearly JSON from jsDelivr and applying holiday/makeup-wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_workday_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sube",
+      "features": [
+        "Determine whether today (or a given date) is a working day in mainland China by querying holida."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-workday-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53138073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-workday-cn",
+      "url": "https://clawhub.ai/skills/check-workday-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-workday-cn",
+    "url": "https://clawhub.ai/skills/check-workday-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-workday-cn-e90b49e973ed05b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-workday-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-workday-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cbb9541c6774dfeb2742641b32e2ae3e3f1993b2a62962460ccbec5aa339cf4",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:07:01.906Z"
+}

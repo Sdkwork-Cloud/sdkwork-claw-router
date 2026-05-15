@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38044,
+  "uuid": "skill-clawhub-find-skills-vercel",
+  "skillKey": "clawhub-find-skills-vercel",
+  "name": "Find Skills",
+  "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_vercel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zachary2024",
+      "features": [
+        "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-skills-vercel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150130997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-skills-vercel",
+      "url": "https://clawhub.ai/skills/find-skills-vercel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-vercel",
+    "url": "https://clawhub.ai/skills/find-skills-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-vercel-fb3bcfbee0569f8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-skills-vercel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-skills-vercel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2057b63eb5e65a534e1924e1cecc78aa7bd8f2345f1f7b26c8ffd8bb56081b8",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:35:34.868Z"
+}

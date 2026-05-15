@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wcs-helper-network-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcs_helper_network_skill",
+  "skill": {
+    "id": 39935,
+    "skillKey": "clawhub-wcs-helper-network-skill",
+    "name": "Wcs Helper Network Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcs-helper-network-skill",
+    "url": "https://clawhub.ai/skills/wcs-helper-network-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcs-helper-network-skill-cd7cab875418c509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SSH tunnel for China servers to access internationally blocked sites (GitHub, ClawHub, HuggingFace, arXiv, Google, YouTube). Password-auth based, one-command..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanqi0914",
+      "userId": "s17aa3cmer82t07dh79m490mh183hrkr",
+      "displayName": "无上宗师",
+      "image": "https://avatars.githubusercontent.com/u/49145037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774427790978,
+      "changelog": "wcs-helper-network-skill v1.0.1\n\n- Overhauled SKILL.md: now simpler, more concise, and better focused on real-world usage scenarios.\n- Updated description to emphasize password-auth setup, one-command configuration, and supported major sites (GitHub, ClawHub, HuggingFace, arXiv).\n- Clarified prerequisites, setup steps, recommended software, troubleshooting, and security notes.\n- Updated command list and usage flows for better guidance.\n- Minor metadata change: removed command-tool and command-arg-mode from openclaw metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d391c7bfa1edcbdf9e49bf3816cf2b9cdbc535a40e88c508153e79464093954"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43008,
+  "uuid": "skill-clawhub-patent-claim-mapper",
+  "skillKey": "clawhub-patent-claim-mapper",
+  "name": "Patent Claim Mapper",
+  "summary": "Use when mapping patent claims to products, analyzing patent infringement, or preparing freedom-to-operate analyses. Compares patent claims against product f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_claim_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when mapping patent claims to products, analyzing patent infringement, or preparing freedom.",
+        "Compares patent claims against product f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-claim-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-claim-mapper",
+      "url": "https://clawhub.ai/skills/patent-claim-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-claim-mapper",
+    "url": "https://clawhub.ai/skills/patent-claim-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-claim-mapper-20ad77ffe836a2cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-claim-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-claim-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8cb52687f0cb67c202882c471ab66981bbc825e8863e28d0801a5ff00123ac7",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:52:31.969Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63595,
+  "uuid": "skill-clawhub-image-upscaler",
+  "skillKey": "clawhub-image-upscaler",
+  "name": "Image Upscaler",
+  "summary": "专业 AI 图像增强工具：模糊变清晰、缩略图变清晰、2×/4× 无损放大。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_upscaler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "steinvenic",
+      "features": [
+        "专业 AI 图像增强工具：模糊变清晰、缩略图变清晰、2×/4× 无损放大。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-upscaler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18524326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-upscaler",
+      "url": "https://clawhub.ai/skills/image-upscaler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-upscaler",
+    "url": "https://clawhub.ai/skills/image-upscaler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-upscaler-a1431904eb9c8cfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-upscaler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-upscaler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c611bc79c74d223c1f5ccb0f8f2e6b5c6d57ceaea3698faa35a2b64871cbb34d",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:02:49.881Z"
+}

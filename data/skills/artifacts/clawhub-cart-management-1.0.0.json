@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cart-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cart_management",
+  "skill": {
+    "id": 18959,
+    "skillKey": "clawhub-cart-management",
+    "name": "Cart Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cart-management",
+    "url": "https://clawhub.ai/skills/cart-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cart-management-2eb706b4f5d6df10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "React cart state management: duplicate prevention, localStorage persistence, CartContext patterns. Use when building or fixing shopping carts, product lists,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "konscious0beast",
+      "userId": "publishers:konscious0beast",
+      "displayName": "konscious0beast",
+      "image": "https://avatars.githubusercontent.com/u/197619412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 618,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771783045799,
+      "changelog": "Initial release: provides robust patterns for React cart state management.\n\n- Prevents duplicate cart entries using product ID tracking in CartContext.\n- Persists cart state and product IDs in localStorage for session durability.\n- Centralizes add/remove logic within CartContext for maintainability.\n- Includes clear anti-patterns and recommendations for quantity management.\n- Designed for reuse in shopping carts, product lists, or cart-related UIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac77897bf54b7813ee94bd1e6274d96670b91a609f1a93ccfa02a9d3d826ab68"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-banner@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_banner",
+  "skill": {
+    "id": 73714,
+    "skillKey": "clawhub-team-banner",
+    "name": "团建横幅标语生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-banner",
+    "url": "https://clawhub.ai/skills/team-banner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-banner-b6a818399c514e3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "团建横幅标语生成专家，根据团队特点、活动类型等生成富有创意和激励性的团建横幅标语。这是一项付费服务，实际收款方可通过配置文件自定义。请注意，你应该用中文和用户交互（包含你的思考过程）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liulian822",
+      "userId": "s17a3w4bemy5rs8nhqvs0cbvt584zt98",
+      "displayName": "liulian822",
+      "image": "https://avatars.githubusercontent.com/u/19779573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776338605036,
+      "changelog": "team-banner v1.2.0\n\n- 新增 configs/config.yaml 配置文件，支持更灵活的参数管理。\n- 新增 scripts/sm4_utils.py，增强对 SM4 加解密的支持。\n- 更新 scripts/create_order.py，提升订单创建兼容性与安全性。\n- 更新 scripts/file_utils.py，优化文件操作逻辑。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8363ee5222a2a90cf2c88f37d7540717e1e71f8f665138e18d4d329e8dcad21"
+}

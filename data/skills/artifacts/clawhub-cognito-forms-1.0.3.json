@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cognito-forms@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cognito_forms",
+  "skill": {
+    "id": 9548,
+    "skillKey": "clawhub-cognito-forms",
+    "name": "Cognito Forms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cognito-forms",
+    "url": "https://clawhub.ai/skills/cognito-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cognito-forms-415de528665bd3c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cognito Forms API integration with managed OAuth. Access forms, entries, and documents. Use this skill when users want to create, read, update, or delete for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777590785010,
+      "changelog": "- BREAKING: Updated all API base URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai.\n- Improved security documentation: Now requires explicit user confirmation for all write operations (create, update, delete).\n- Enhanced instructions for managing multiple Cognito Forms connections.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d95a25db59fe60800caa1ed4a73433fe7447d7126fc9d375dcc437ab0f9a47a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exunit-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exunit_code_review",
+  "skill": {
+    "id": 31551,
+    "skillKey": "clawhub-exunit-code-review",
+    "name": "Exunit Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exunit-code-review",
+    "url": "https://clawhub.ai/skills/exunit-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exunit-code-review-7b445b6d6f140f37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews ExUnit test code for proper patterns, boundary mocking with Mox, and test adapter usage. Use when reviewing _test.exs files or test helper configurat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831104817,
+      "changelog": "- Added \"Gates (sequence)\" section outlining a precise multi-step review process before submitting findings.\n- Clarified that each finding must be tied to concrete file evidence, avoid false-positives per \"Valid Patterns\" and \"Context-Sensitive Rules,\" and pass cross-protocol verification.\n- Adjusted the instructions for submitting findings to require passing all review gates before reporting issues.\n- The rest of the documentation, including checklist and philosophy, remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ff98262d816db7662ccc5958497648838221cb7c003643fa97054ff8f7ac754"
+}

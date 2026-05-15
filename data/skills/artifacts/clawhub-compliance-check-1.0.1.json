@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compliance-check@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_check",
+  "skill": {
+    "id": 68094,
+    "skillKey": "clawhub-compliance-check",
+    "name": "违规词·发帖前合规检查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-check",
+    "url": "https://clawhub.ai/skills/compliance-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-check-175ac839f676dd9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "违规词·与多個免費齊全持續更新的詞庫對比，通過再上架；開箱即用，不用自己加詞。Use when user asks 合规检查, 敏感词, 违规词, 发帖前检查, 内容审核."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kong-zi-chg",
+      "userId": "publishers:kong-zi-chg",
+      "displayName": "kong-zi-chg",
+      "image": "https://avatars.githubusercontent.com/u/243327621?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 490,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772818109854,
+      "changelog": "- Removed 8 documentation and deployment guide files for a leaner package.\n- No changes to core functionality or usage.\n- Main documentation and usage instructions retained in SKILL.md and 上传说明.txt.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1fcf4d84ac47a6335961057f49d14f732d7bd657ad9d080da0854469ad1bb2b"
+}

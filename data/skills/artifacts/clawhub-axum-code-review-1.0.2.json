@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axum-code-review@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axum_code_review",
+  "skill": {
+    "id": 31224,
+    "skillKey": "clawhub-axum-code-review",
+    "name": "Axum Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axum-code-review",
+    "url": "https://clawhub.ai/skills/axum-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axum-code-review-4a2cb131a0dfd564.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews axum web framework code for routing patterns, extractor usage, middleware, state management, and error handling. Use when reviewing Rust code that us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831339115,
+      "changelog": "- Adds explicit \"Gates (before reporting findings)\" section to clarify preconditions before reporting any issue, including evidence requirements and protocol checks.\n- Requires reviewers to verify axum version, edition, and cite each finding with current `[FILE:LINE]` evidence before submitting.\n- Clarifies that findings must be based on on-disk code and reference matching steps from `beagle-rust:review-verification-protocol`.\n- Tightens and documents the review/reporting workflow for improved accuracy and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e8edd3f7ca7cd28e27c74bc4a0c8d51d3ac003412fcf8dbe6517258bfd397de"
+}

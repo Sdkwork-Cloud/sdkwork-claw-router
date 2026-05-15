@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-market@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market",
+  "skill": {
+    "id": 10622,
+    "skillKey": "clawhub-a2a-market",
+    "name": "A2A Market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market",
+    "url": "https://clawhub.ai/skills/a2a-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-1de6ecc6fcbe33ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent skill marketplace integration for A2A Market. Enables agents to buy skills, sell skills, and earn money autonomously. Use when: (1) User asks to find/search/buy a skill or capability, (2) User wants to sell/list/monetize their age."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamjamzxhy",
+      "userId": "publishers:jamjamzxhy",
+      "displayName": "JamJamzxhy",
+      "image": "https://avatars.githubusercontent.com/u/114634253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2526,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770087582811,
+      "changelog": "v1.1.0: Credits system",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ab03477ea02b687ae1c9c0ec089ecaecf31faaa54099bf83e0f6d477a68d14f"
+}

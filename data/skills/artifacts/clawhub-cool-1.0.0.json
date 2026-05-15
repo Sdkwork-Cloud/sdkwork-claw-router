@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cool",
+  "skill": {
+    "id": 53239,
+    "skillKey": "clawhub-cool",
+    "name": "cool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cool",
+    "url": "https://clawhub.ai/skills/cool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cool-c34045c1a1db8d1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill that helps generate cool, creative, and stylish content — including catchy taglines, aesthetic code comments, fun ASCII art, and vibe-driven naming s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775454043387,
+      "changelog": "Initial release of Cool Skill.\n\n- Generates creative names, taglines, ASCII art banners, and witty code comments.\n- Adds \"vibe check\" feature to creatively describe text or code.\n- Adopts a fun, playful, and stylish tone for all content.\n- Designed for creative, stylish, and memorable outputs on demand.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca0b860aa8b6cc804b381d33872b70bab5c124deed05c66c6dc8c2d6f252d664"
+}

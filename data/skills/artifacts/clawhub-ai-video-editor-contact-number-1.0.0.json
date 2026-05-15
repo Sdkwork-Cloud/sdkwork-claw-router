@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-contact-number@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_contact_number",
+  "skill": {
+    "id": 46798,
+    "skillKey": "clawhub-ai-video-editor-contact-number",
+    "name": "Ai Video Editor Contact Number"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-contact-number",
+    "url": "https://clawhub.ai/skills/ai-video-editor-contact-number",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-contact-number-4dc3ad9cb68ce271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "contact support request into support team response with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. existing NemoVideo users use it for rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777055166724,
+      "changelog": "ai-video-editor-contact-number 1.0.0\n\n- Initial release: route NemoVideo AI video editor support requests directly to customer service with automatic session setup.\n- Supports file uploads up to 500MB (MP4, MOV, AVI, WebM) and processes requests in under a minute on cloud GPUs.\n- Provides guided workflows for support-related video exports, credit checks, project preview, and timeline edits.\n- Comprehensive error handling and step-by-step user feedback throughout setup and video processing.\n- Integrates with NemoVideo's backend APIs for session management, credit retrieval, file operations, and rendering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:667cc2e28bd4459fd68e051c7f2b5ad21636f6fda796676280eac02d38eb76a4"
+}

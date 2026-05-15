@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neuro-note-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neuro_note_assistant",
+  "skill": {
+    "id": 73391,
+    "skillKey": "clawhub-neuro-note-assistant",
+    "name": "神經科病歷助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neuro-note-assistant",
+    "url": "https://clawhub.ai/skills/neuro-note-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neuro-note-assistant-e31b4df20422ba70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自動將神經科門診病歷文本結構化，提取主訴、病史、檢查、診斷及治療建議。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isaacloi1995-dot",
+      "userId": "publishers:isaacloi1995-dot",
+      "displayName": "isaacloi1995-dot",
+      "image": "https://avatars.githubusercontent.com/u/257231061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772760183413,
+      "changelog": "initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f47ec2b906aa5684f1b4762eb84a6755fe81879c1928f9d3d4c9e19021284aa"
+}

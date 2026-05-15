@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24371,
+  "uuid": "skill-clawhub-build-with-public-writer",
+  "skillKey": "clawhub-build-with-public-writer",
+  "name": "Build With Public Writer",
+  "summary": "Use \"bwp\" command to create technical content for codewithriver. Supports articles, courses, theory, persona with version management and link sharing",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_with_public_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "River Yan",
+      "features": [
+        "Use \"bwp\" command to create technical content for codewithriver",
+        "Supports articles, courses, theory, persona with version management and link sharing"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-with-public-writer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3059527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-with-public-writer",
+      "url": "https://clawhub.ai/skills/build-with-public-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-with-public-writer",
+    "url": "https://clawhub.ai/skills/build-with-public-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-with-public-writer-b78bb3499a9f8ce5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-with-public-writer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-with-public-writer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49f05158f60ea23a18e7074fa4fbd9d7fd4550416c02e9b2cf6a3328df2552ea",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:22:14.370Z"
+}

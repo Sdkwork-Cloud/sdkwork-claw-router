@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27053,
+  "uuid": "skill-clawhub-memory-hygiene-automaton",
+  "skillKey": "clawhub-memory-hygiene-automaton",
+  "name": "Memory Hygiene",
+  "summary": "Audit, clean, and optimize Clawdbot's vector memory (LanceDB). Use when memory is bloated with junk, token usage is high from irrelevant auto-recalls, or set...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_hygiene_automaton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenghaifeng08-creator",
+      "features": [
+        "Audit, clean, and optimize Clawdbot's vector memory (LanceDB)",
+        "Use when memory is bloated with junk, token usage is high from irrelevant auto-recalls, or set.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-hygiene-automaton@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266006783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-hygiene-automaton",
+      "url": "https://clawhub.ai/skills/memory-hygiene-automaton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-hygiene-automaton",
+    "url": "https://clawhub.ai/skills/memory-hygiene-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-hygiene-automaton-32a9f9df91218bd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-hygiene-automaton@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-hygiene-automaton-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc5bb1448e594d345fdc94628cb71f9800479d95d8fa1acee1314c488040a1f2",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:29:43.125Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67413,
+  "uuid": "skill-clawhub-netease-music-assistant",
+  "skillKey": "clawhub-netease-music-assistant",
+  "name": "netease-music-assistant",
+  "summary": "网易云音乐智能助手，以模型判断为核心，通过 ncm-cli 执行操作。 核心能力：分析用户红心歌单偏好画像、制定多关键词搜索策略、智能推荐歌单/专辑/单曲（含两层推荐说明）、播放控制（播放/暂停/下一首/音量/队列）、管理定时推送调度、通过 OpenClaw 向飞书等 IM 渠道推送推荐结果、创建并写入歌单。 触...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netease_music_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JunfengL",
+      "features": [
+        "网易云音乐智能助手，以模型判断为核心，通过 ncm-cli 执行操作。 核心能力：分析用户红心歌单偏好画像、制定多关键词搜索策略、智能推荐歌单/专辑/单曲（含两层推荐说明）、播放控制（播放/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netease-music-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23209144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netease-music-assistant",
+      "url": "https://clawhub.ai/skills/netease-music-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netease-music-assistant",
+    "url": "https://clawhub.ai/skills/netease-music-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netease-music-assistant-575743c8c4a0c5bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netease-music-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-netease-music-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f30fad5e6e60173e92e25bfe90b2cdaff60716c14803347132d460a7eaf59f47",
+      "artifactSizeBytes": 2863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:18:35.937Z"
+}

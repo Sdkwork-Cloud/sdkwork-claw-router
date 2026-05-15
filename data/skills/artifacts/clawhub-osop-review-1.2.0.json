@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osop-review@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osop_review",
+  "skill": {
+    "id": 41815,
+    "skillKey": "clawhub-osop-review",
+    "name": "Osop Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osop-review",
+    "url": "https://clawhub.ai/skills/osop-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osop-review-49a5842ca64621c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review .osop/.osoplog for security risks, permission gaps, and destructive commands"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "archie0125",
+      "userId": "s179s8ypm6jvmks7shkyy813rd840pdv",
+      "displayName": "Archie0125",
+      "image": "https://avatars.githubusercontent.com/u/58622712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775042847063,
+      "changelog": "Initial ClawHub release — OSOP security & risk analyzer",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32ba90a670b94d00472e0016b986545155a06380831e7e36f543691f3782ee5e"
+}

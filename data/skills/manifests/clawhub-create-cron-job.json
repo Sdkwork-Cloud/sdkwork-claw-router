@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24334,
+  "uuid": "skill-clawhub-create-cron-job",
+  "skillKey": "clawhub-create-cron-job",
+  "name": "Create Cron Job",
+  "summary": "Create and configure OpenClaw cron jobs with correct scheduling, execution modes, and delivery patterns. Use when asked to schedule a task, set up a recurrin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_cron_job",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karl Varga",
+      "features": [
+        "Create and configure OpenClaw cron jobs with correct scheduling, execution modes, and delivery.",
+        "Use when asked to schedule a task, set up a recurrin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-cron-job@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-cron-job",
+      "url": "https://clawhub.ai/skills/create-cron-job"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-cron-job",
+    "url": "https://clawhub.ai/skills/create-cron-job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-cron-job-4ec59c369066e49a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-cron-job@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-cron-job-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0c53d0827f8edffc22ef21263caa86e3847c23cb6b35a7a01d49009d54cdb26",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:39:49.656Z"
+}

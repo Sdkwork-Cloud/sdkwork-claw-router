@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73277,
+  "uuid": "skill-clawhub-weather-query-ll",
+  "skillKey": "clawhub-weather-query-ll",
+  "name": "天气查询小技能",
+  "summary": "当需要查询某个城市的天气时，可以调用使用这个技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_query_ll",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gyifei",
+      "features": [
+        "当需要查询某个城市的天气时，可以调用使用这个技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-query-ll@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215229398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-query-ll",
+      "url": "https://clawhub.ai/skills/weather-query-ll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-query-ll",
+    "url": "https://clawhub.ai/skills/weather-query-ll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-query-ll-db7f8e8f37e046ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-query-ll@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-query-ll-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5333132e8dbf376a16f9c8e6cef8ec8a9ca0b9ff7d20c42360b4c4d985a8b8a",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:39:33.340Z"
+}

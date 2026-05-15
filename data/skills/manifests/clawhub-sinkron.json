@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50376,
+  "uuid": "skill-clawhub-sinkron",
+  "skillKey": "clawhub-sinkron",
+  "name": "Sinkron",
+  "summary": "Provide AI agents with permanent email identities using Sinkron CLI and Python SDK. Requires SINKRON_TOKEN (self-issued by the Sinkron backend via `sinkron r...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sinkron",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Web3 Hungry",
+      "features": [
+        "Provide AI agents with permanent email identities using Sinkron CLI and Python SDK",
+        "Requires SINKRON_TOKEN (self-issued by the Sinkron backend via `sinkron r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sinkron@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24318495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sinkron",
+      "url": "https://clawhub.ai/skills/sinkron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sinkron",
+    "url": "https://clawhub.ai/skills/sinkron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sinkron-ce7e6c198d96a14b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sinkron@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-sinkron-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:602765c8d367da6bd18908b5bd788c627fb213c2a27a713ef9bcd61604763e40",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:47:19.354Z"
+}

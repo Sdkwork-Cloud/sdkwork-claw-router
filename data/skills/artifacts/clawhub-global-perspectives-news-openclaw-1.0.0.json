@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-perspectives-news-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_perspectives_news_openclaw",
+  "skill": {
+    "id": 38258,
+    "skillKey": "clawhub-global-perspectives-news-openclaw",
+    "name": "Global Perspectives News Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-perspectives-news-openclaw",
+    "url": "https://clawhub.ai/skills/global-perspectives-news-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-perspectives-news-openclaw-240111d2b3c28389.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a personalized global news briefing by asking about your interests, then searching the web and delivering a structured, readable digest. Use this to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christinazhang139",
+      "userId": "s17bzhe4ggfdd7b8q85kas5tts83tngz",
+      "displayName": "christinazhang139",
+      "image": "https://avatars.githubusercontent.com/u/219872529?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774791840095,
+      "changelog": "Global Perspectives News (v1.0.0) — initial release:\n\n- Delivers a personalized global news briefing tailored to user interests via interactive prompts.\n- Supports topic, source country/media type, subtopic, and language/depth customization.\n- Offers bilingual (English/Chinese) onboarding and preference recall from previous sessions.\n- Integrates official and social media from diverse world regions; also enables global/unfiltered mode.\n- Requires Tavily MCP for live news search, with fallback to training knowledge if unavailable.\n- Structured, readable digest with recent, high-quality stories grouped by topic/subtopic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a7734363251412767e3456dd369ea5faffe6f58caefbe3f51ffa28b5164854f"
+}

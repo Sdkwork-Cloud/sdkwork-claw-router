@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-accounting@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_accounting",
+  "skill": {
+    "id": 15987,
+    "skillKey": "clawhub-openclaw-accounting",
+    "name": "Accounting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-accounting",
+    "url": "https://clawhub.ai/skills/openclaw-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-accounting-3acd5ffb8cfdb16d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local AI assistant for recording income/expenses, querying transactions, generating reports, and analyzing stats with secure, offline data storage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuhemiao",
+      "userId": "publishers:chuhemiao",
+      "displayName": "chuhemiao",
+      "image": "https://avatars.githubusercontent.com/u/11025090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 913,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772528164871,
+      "changelog": "Initial release of openclaw-accounting: a local AI-driven accounting assistant.\n\n- Record income and expenses with natural language input.\n- Query transactions by date, category, keyword, and combine multiple filters.\n- Generate detailed statistical reports and summaries, including category breakdown and daily averages.\n- Supports exporting reports and open local JSON data storage with auto-backup.\n- Provides common expense and income categories for simple classification.\n- Includes quick commands for help and statistical overviews.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fcca7687bdcb1c42d0846d716d8ab6a2624710fd2100acff4d5b3bc9a4b077af"
+}

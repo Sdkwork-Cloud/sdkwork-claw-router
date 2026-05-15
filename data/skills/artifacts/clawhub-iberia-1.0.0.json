@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iberia@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iberia",
+  "skill": {
+    "id": 70092,
+    "skillKey": "clawhub-iberia",
+    "name": "Iberia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iberia",
+    "url": "https://clawhub.ai/skills/iberia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iberia-dff1bb75e6fe2484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供ibera的创立背景、主营产品、全球市场布局及最新动态，助力市场调研和商业合作分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776250928092,
+      "changelog": "- 新增 iberia 技能，提供品牌/组织的背景信息速览  \n- 覆盖创立故事、主营特色、全球布局及重大新闻  \n- 支持市场调研、产品比较、商业合作等多种查询场景  \n- 强调引用官方和权威媒体获取准确信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1619a5c262a40dc6a19faa03246dab1d24a7f1442b0e2d7bebbe22743e15ab02"
+}

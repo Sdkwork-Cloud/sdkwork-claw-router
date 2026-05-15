@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "qiniu-upload",
+    "displayName": "Qiniu Upload",
+    "summary": "Upload local files to Qiniu Cloud and return a publicly accessible URL (or signed private URL). Use when the user wants to upload a local file path to Qiniu,...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1774312758526,
+    "updatedAt": 1777622851007
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1774312758526,
+    "changelog": "Initial release of qiniu-upload skill.\n\n- Enables uploading local files to Qiniu Cloud with public or signed URL return.\n- Requires Qiniu access credentials and bucket/domain as environment variables.\n- Provides command-line script for file upload with flexible options (privacy, key naming, expiration).\n- Ensures file path verification and immediate failure if config is missing.\n- Standard JSON output includes file key, URL, size, privacy, and source path.\n- Designed for chaining uploads into downstream workflows like speech transcription.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "chenggongdu",
+    "userId": "s1767sqj4rn7nty5ka6xnbanp183g1p7",
+    "displayName": "chenggongdu",
+    "image": "https://avatars.githubusercontent.com/u/38181431?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622851007
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17062,
+  "uuid": "skill-clawhub-clinical-data-extractor",
+  "skillKey": "clawhub-clinical-data-extractor",
+  "name": "Clinical Data Extractor",
+  "summary": "Extract structured clinical trial data from URLs or PDFs including drug name, manufacturer, indication, phase, trial info, efficacy and safety tables, and sa...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinical_data_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abin",
+      "features": [
+        "Extract structured clinical trial data from URLs or PDFs including drug name, manufacturer, ind."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clinical-data-extractor@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23470117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clinical-data-extractor",
+      "url": "https://clawhub.ai/skills/clinical-data-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinical-data-extractor",
+    "url": "https://clawhub.ai/skills/clinical-data-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinical-data-extractor-5649317fa50ee2dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clinical-data-extractor@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clinical-data-extractor-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:178884d7e16e244883cfc70d1b8c5e910e53a6f86dc96901ad62aef77e86b10a",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T14:48:15.802Z"
+}

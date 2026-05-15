@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-stock-analysis-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_stock_analysis_bak",
+  "skill": {
+    "id": 19988,
+    "skillKey": "clawhub-china-stock-analysis-bak",
+    "name": "China Stock Analysis.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-stock-analysis-bak",
+    "url": "https://clawhub.ai/skills/china-stock-analysis-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-stock-analysis-bak-beb0c4ef4500785f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Chinese stock prices (A-shares, HK stocks) and provide investment recommendations. Use when the user asks about stock analysis for Chinese companies,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774094064231,
+      "changelog": "Initial release of china-stock-analysis:\n\n- Provides analysis and investment recommendations for Chinese stocks (A-shares, HK stocks) and US stocks.\n- Supports stock code formats for Shanghai, Shenzhen, Hong Kong, and US markets.\n- Follows a structured analysis template including core data, technical analysis, and clear buy/hold/sell suggestions.\n- Incorporates real-time price searching and recent news/context in analysis.\n- Always includes a risk disclaimer with each recommendation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60e621284331d97eb26e4296ce26fab3ddcf8cfee7b0a7ffb980900d97333765"
+}

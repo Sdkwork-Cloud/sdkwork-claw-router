@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/constellation-energy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.constellation_energy",
+  "skill": {
+    "id": 53790,
+    "skillKey": "clawhub-constellation-energy",
+    "name": "Constellation Energy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "constellation-energy",
+    "url": "https://clawhub.ai/skills/constellation-energy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/constellation-energy-0a94a8df1d809efd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Constellation Energy operates 21 US nuclear plants, delivering 20% of the nation's nuclear power with zero-carbon electricity and long-term corporate contracts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777785029549,
+      "changelog": "Initial release with company overview and key facts:\n\n- Introduces Constellation Energy as the largest US nuclear power operator, spun off from Exelon in 2022.\n- Provides summary with 2024 revenue data ($22B+), business structure, and role in zero-carbon electricity.\n- Includes a timeline of major historical milestones and analysis of core business segments.\n- Highlights competitive advantages in nuclear assets, zero-carbon power, and long-term AI-driven demand.\n- Lists key data and notable facts, including partnerships and nuclear industry context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f100dbdf6b350e5666e880c188a9a5b6bc96a6da4f0f748dafd4a25a193d7725"
+}

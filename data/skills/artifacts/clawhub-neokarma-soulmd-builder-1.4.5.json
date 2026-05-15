@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neokarma-soulmd-builder@1.4.5",
+  "version": "1.4.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neokarma_soulmd_builder",
+  "skill": {
+    "id": 50702,
+    "skillKey": "clawhub-neokarma-soulmd-builder",
+    "name": "Neokarma Soul.md Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neokarma-soulmd-builder",
+    "url": "https://clawhub.ai/skills/neokarma-soulmd-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neokarma-soulmd-builder-fee5684b4947a1d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent personality for AI agents — define, evolve, and share your soul"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veiovi",
+      "userId": "publishers:veiovi",
+      "displayName": "jay",
+      "image": "https://avatars.githubusercontent.com/u/8825202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.5",
+      "createdAt": 1771499113619,
+      "changelog": "Version 1.4.5\n\n- Updated skill summary to highlight \"900+ trait descriptions\" and collaborative editing features.\n- Added mention of new editor and analysis tools for agent identity.\n- Enhanced overview section for clarity and conciseness.\n- No functional/code changes detected; documentation improved for user understanding.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2149093c1d5d56fb17274dab298931ac073428ed5b91923ee98536d7ee235971"
+}

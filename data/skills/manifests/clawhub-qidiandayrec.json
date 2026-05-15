@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72006,
+  "uuid": "skill-clawhub-qidiandayrec",
+  "skillKey": "clawhub-qidiandayrec",
+  "name": "每日潜力网文新书推荐-SBTI版！",
+  "summary": "起点中文网好书推荐，支持两种模式： 1）三江榜新书推荐——每天从起点三江榜单中精选3本优质新书； 2）经典网文推荐——从起点万订/十万均订经典作品中随机推荐，附IP衍生品（电视剧/动漫/手办）和海外出圈信息。 内置去重机制，支持按 SBTI 性格筛选。 触发场景：推荐好书、三江榜、起点推荐、小说推荐、今天看什么书...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qidiandayrec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顾炎",
+      "features": [
+        "起点中文网好书推荐，支持两种模式： 1）三江榜新书推荐——每天从起点三江榜单中精选3本优质新书； 2）经典网文推荐——从起点万订/十万均订经典作品中随机推荐，附IP衍生品（电视剧/动漫/手办."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qidiandayrec@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11514434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qidiandayrec",
+      "url": "https://clawhub.ai/skills/qidiandayrec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qidiandayrec",
+    "url": "https://clawhub.ai/skills/qidiandayrec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qidiandayrec-6b276dc2cc94ed6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qidiandayrec@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-qidiandayrec-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0b9fc507ae5a485fab2726eeeb8e6630acb95a852148bfd18c19d830cdd2aaf",
+      "artifactSizeBytes": 2809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:18:10.288Z"
+}

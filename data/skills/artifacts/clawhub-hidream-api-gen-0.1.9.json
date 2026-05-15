@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hidream-api-gen@0.1.9",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hidream_api_gen",
+  "skill": {
+    "id": 57317,
+    "skillKey": "clawhub-hidream-api-gen",
+    "name": "Hidream Aigc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hidream-api-gen",
+    "url": "https://clawhub.ai/skills/hidream-api-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hidream-api-gen-fe6fffafd5e029bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw AIGC models (video + image) client. **REQUIRES CREDENTIALS**: You must set `HIDREAM_AUTHORIZATION` environment variable or use `scripts/configure.py..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhy2015",
+      "userId": "s176q7vm0cykajnw10akpbfpq183hjjf",
+      "displayName": "harry zhu",
+      "image": "https://avatars.githubusercontent.com/u/51319424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.1.9",
+      "createdAt": 1773907769426,
+      "changelog": "- Added support for automatic API key detection from `~/.openclaw/.env`, environment variable, or config file.\n- Now always downloads and saves generated media (images/videos) to the local `assets/` directory within the skill folder, improving output handling and avoiding permission issues.\n- Improved prompt requirements: the skill will now ask the user to specify a prompt, rather than generating random content if missing.\n- Expanded troubleshooting guidance: updated error handling steps for invalid tokens, missing prompts, and low resolution errors.\n- Updated documentation to clarify updated credential management, output, and Markdown usage for displaying results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:478f5f3b16a948c20fff472fad8dca18603c29acf030aa1a7a261fc9fdd24dd9"
+}

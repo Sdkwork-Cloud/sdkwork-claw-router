@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nsfc-writing-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsfc_writing_guide",
+  "skill": {
+    "id": 39026,
+    "skillKey": "clawhub-nsfc-writing-guide",
+    "name": "Nsfc Writing Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsfc-writing-guide",
+    "url": "https://clawhub.ai/skills/nsfc-writing-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsfc-writing-guide-9493cf5e081e3e49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides guidance and collaboration support for writing National Natural Science Foundation of China (NSFC) grant proposals following standardized phases and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776430687195,
+      "changelog": "- NSFC 撰写指南已整合到 nsfc 统一入口技能，当前技能仅用于兼容旧用法。\n- 推荐使用 nsfc write 和 nsfc outline 指令，原有用法依然可用且自动转发。\n- 新增详细迁移指南和协作/质量保证原则说明。\n- 展示 6 阶段写作流程，明确撰写步骤和重点内容。\n- 文件内容全部更新为整合、迁移和操作指引信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9874f6a55f354aaf5ca8474c78437c1d7b04a2aa6add5d42b7515b1592e660e1"
+}

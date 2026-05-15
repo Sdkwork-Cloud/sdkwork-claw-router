@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-scan@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_scan",
+  "skill": {
+    "id": 51159,
+    "skillKey": "clawhub-doc-scan",
+    "name": "Doc Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-scan",
+    "url": "https://clawhub.ai/skills/doc-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-scan-d80e23ac0c72fbc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — this skill has been merged into doc-process (v4.0.0+). Use doc-process instead for document scanning, perspective correction, and dewarping. doc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "piyush-zinc",
+      "userId": "publishers:piyush-zinc",
+      "displayName": "piyush-zinc",
+      "image": "https://avatars.githubusercontent.com/u/172476424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772769499298,
+      "changelog": "DEPRECATED: functionality merged into doc-process v4.0.0. Use doc-process for all document scanning, perspective correction, and dewarping. The doc-process scanner has improved multi-strategy edge detection, sub-pixel corner refinement, and better scan-quality output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09c02b5d4476bbaaf20c3be3cbe936195e1d1f84dde1999d8b6ee196eda96d60"
+}

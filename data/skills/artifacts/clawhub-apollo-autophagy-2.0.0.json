@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-autophagy@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_autophagy",
+  "skill": {
+    "id": 61820,
+    "skillKey": "clawhub-apollo-autophagy",
+    "name": "Apollo Autophagy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-autophagy",
+    "url": "https://clawhub.ai/skills/apollo-autophagy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-autophagy-52a9e00c6f1cbffc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "彻底删除不需要的东西，释放空间。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775568099437,
+      "changelog": "v2.0.0: autophagy-check.sh脚本实现，自噬清理检测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66ad6c81c953926a23cd41af7d481f5be463a3bd9fc372446784527c6c54b8f8"
+}

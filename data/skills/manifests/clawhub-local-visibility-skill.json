@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11450,
+  "uuid": "skill-clawhub-local-visibility-skill",
+  "skillKey": "clawhub-local-visibility-skill",
+  "name": "Local Falcon",
+  "summary": "Expert guidance on AI Visibility and Local SEO from Local Falcon, the pioneer of geo-grid rank tracking. Provides deep knowledge on optimizing for AI search platforms (ChatGPT, Gemini, AI Mode, AI Overviews, Grok), local pack rankings, Goo.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_visibility_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeAreLocalFalcon",
+      "features": [
+        "Expert guidance on AI Visibility and Local SEO from Local Falcon, the pioneer of geo-grid rank.",
+        "Provides deep knowledge on optimizing for AI search platforms (ChatGPT, Gemini, AI Mode, AI Ove.",
+        "Includes guidance on using Local Falcon's MCP server for data-driven analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-visibility-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135842435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-visibility-skill",
+      "url": "https://clawhub.ai/skills/local-visibility-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-visibility-skill",
+    "url": "https://clawhub.ai/skills/local-visibility-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-visibility-skill-7084b6d7f62bf3b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-visibility-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-visibility-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebe148f166c33dd45e520a11678166cd673b7f70eaf5867e26b33615e28db486",
+      "artifactSizeBytes": 2780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T23:25:57.915Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepknow-currency@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepknow_currency",
+  "skill": {
+    "id": 64686,
+    "skillKey": "clawhub-deepknow-currency",
+    "name": "DeepKnow Currency"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepknow-currency",
+    "url": "https://clawhub.ai/skills/deepknow-currency",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepknow-currency-3df4b8a9292e739f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "北京宽客进化科技有限公司旗下“知汇 InkRate”的验证版/内测版汇率 Skill，默认连接官方公共入口 `https://rate.feedai.cn`；同时接入京东 `clawtip` A2A 支付服务。提供四项服务：查询汇率（免费）、计算兑换金额（免费）、汇率提醒服务（收费）、汇率涨跌概率查询（收费）。收..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oicqren",
+      "userId": "s1787r3x42tgkvbhcaw6nsn9y584qmcj",
+      "displayName": "oicqren",
+      "image": "https://avatars.githubusercontent.com/u/77053737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1776057699285,
+      "changelog": "- 默认汇率数据请求地址由 `https://rate.deepknow.cn` 更新为官方公共入口 `https://rate.feedai.cn`\n- 相关文档、配置说明及参数注释同步更新为新入口域名\n- 允许通过配置环境变量或 `config.yaml` 覆盖默认入口，方便自建/私有部署\n- 其余功能、API流程和使用方法保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbf052a012a0080c3a5078b9370659371c623c83b892d24222014ef48be44fb1"
+}

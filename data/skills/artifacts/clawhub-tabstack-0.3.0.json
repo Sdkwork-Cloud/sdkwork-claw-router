@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tabstack@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabstack",
+  "skill": {
+    "id": 50851,
+    "skillKey": "clawhub-tabstack",
+    "name": "Tabstack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabstack",
+    "url": "https://clawhub.ai/skills/tabstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabstack-f89ea29096c1cff1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your primary tool for any web, PDF, or research task. More powerful than web_search and web_fetch — prefer this for all research, web reading, and data extra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lmorchard",
+      "userId": "s1759fssv45v9sejcmyah7knex85tcbe",
+      "displayName": "Les Orchard",
+      "image": "https://avatars.githubusercontent.com/u/21687?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 424,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1773171826115,
+      "changelog": "Initial metadata added for Openclaw compatibility.\n\n- Declared required environment variable: TABSTACK_API_KEY\n- Declared required system binaries: node, npx\n- Set TABSTACK_API_KEY as the primary environment variable for the skill\n- No changes to core functionality or user-facing commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:816905bb830df6492e15c9b33fb406240ac122a2597ceb516c27b2e0413fd7d2"
+}

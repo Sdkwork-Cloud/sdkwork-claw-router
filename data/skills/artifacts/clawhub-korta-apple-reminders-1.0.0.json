@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korta-apple-reminders@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korta_apple_reminders",
+  "skill": {
+    "id": 55754,
+    "skillKey": "clawhub-korta-apple-reminders",
+    "name": "Korta Apple Reminders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korta-apple-reminders",
+    "url": "https://clawhub.ai/skills/korta-apple-reminders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korta-apple-reminders-abf65e9f08ab995e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landercortazarromero",
+      "userId": "s17a4ktrsekycwkm4n8y50t27s84f3sz",
+      "displayName": "landercortazarromero",
+      "image": "https://avatars.githubusercontent.com/u/268324391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775629224690,
+      "changelog": "- Initial release of the korta-apple-reminders skill.\n- Manage Apple Reminders from the terminal using the remindctl CLI on macOS.\n- Supports viewing, adding, editing, completing, and deleting reminders, with list and date-based filters.\n- Output available in JSON, plain text, or counts-only formats.\n- Requires macOS with remindctl installed and Reminders permissions granted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63bc578a63632507507e00e0b557d19d2d0ab74b299b22f979b2ab6cb4c76b78"
+}

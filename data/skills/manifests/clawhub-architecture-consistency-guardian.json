@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33422,
+  "uuid": "skill-clawhub-architecture-consistency-guardian",
+  "skillKey": "clawhub-architecture-consistency-guardian",
+  "name": "Architecture Consistency Guardian",
+  "summary": "Enforce system-wide consistency before code changes. Activate for any task involving: refactoring across files, unifying variable/field/parameter names, cons...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.architecture_consistency_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upsightx",
+      "features": [
+        "Enforce system-wide consistency before code changes",
+        "Activate for any task involving: refactoring across files, unifying variable/field/parameter na."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/architecture-consistency-guardian@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127651198?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "architecture-consistency-guardian",
+      "url": "https://clawhub.ai/skills/architecture-consistency-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "architecture-consistency-guardian",
+    "url": "https://clawhub.ai/skills/architecture-consistency-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/architecture-consistency-guardian-29ed6f87133042c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/architecture-consistency-guardian@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-architecture-consistency-guardian-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d40cf1313027e93e0b4f673fc5834d20052796cf6fc66b62c783bdb7be43d58",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:41:28.785Z"
+}

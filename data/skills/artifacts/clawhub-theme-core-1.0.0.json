@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/theme-core@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theme_core",
+  "skill": {
+    "id": 45674,
+    "skillKey": "clawhub-theme-core",
+    "name": "Theme Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theme-core",
+    "url": "https://clawhub.ai/skills/theme-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theme-core-7d2bd52c65ddc48a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Theme design for novels. Define the core question of the story and validate sustainability for 300k-8M words. Use when starting a new novel project or enteri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaozy",
+      "userId": "s174fqjbrhptvxxnaryh9jyq8585gghd",
+      "displayName": "zhaozy",
+      "image": "https://avatars.githubusercontent.com/u/644225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777077561512,
+      "changelog": "- Initial release of theme-core skill.\n- Provides a framework for defining a novel's core theme question.\n- Includes a JSON template for specifying theme, scale, antithesis, and the author's stance.\n- Offers guidance on validating theme sustainability for projects from 300k up to 8M words.\n- Links to full guide and prototype references for further support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f47d284c2a52853d38e0119db78c2bf1066d695431e72311cda2aabba4c0f47"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_dev",
+  "skill": {
+    "id": 59288,
+    "skillKey": "clawhub-claude-code-dev",
+    "name": "Claude Code Dev Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-dev",
+    "url": "https://clawhub.ai/skills/claude-code-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-dev-a1cf2a14cf2fdd1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw + Claude Code 编程工作流。当用户想用 Claude Code 写代码、调试、重构、做 PR review 时激活。支持两种模式：ACP 集成（推荐，通过飞书/Telegram/Discord 直接对话 Claude Code）和 PTY 后台模式（通过 exec 控制 Claude..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xwz119",
+      "userId": "s1777apmpd4rfghxr058s0m8kn84467p",
+      "displayName": "xwz119",
+      "image": "https://avatars.githubusercontent.com/u/14540221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775221051027,
+      "changelog": "Initial release: OpenClaw + Claude Code integration guide with ACP mode, PTY mode, cost optimization strategies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:747942326d94ebece14b259c7a80a7ba8ee3218696e33a6a90fe95956b936c7b"
+}

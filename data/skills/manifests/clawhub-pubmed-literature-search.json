@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72275,
+  "uuid": "skill-clawhub-pubmed-literature-search",
+  "skillKey": "clawhub-pubmed-literature-search",
+  "name": "PubMed临床医学文献检索系统",
+  "summary": "临床医学顶刊文献检索与分析。当用户要求检索医学文献、查找临床研究论文、搜索特定疾病或治疗方法相关文献、或者需要基于PubMed数据库进行系统文献综述时使用。支持JCR分区筛选、影响因子排序和综合相关性排序。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pubmed_literature_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flash9107",
+      "features": [
+        "临床医学顶刊文献检索与分析。当用户要求检索医学文献、查找临床研究论文、搜索特定疾病或治疗方法相关文献、或者需要基于PubMed数据库进行系统文献综述时使用。支持JCR分区筛选、影响因子排序和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pubmed-literature-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266428762?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pubmed-literature-search",
+      "url": "https://clawhub.ai/skills/pubmed-literature-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pubmed-literature-search",
+    "url": "https://clawhub.ai/skills/pubmed-literature-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pubmed-literature-search-863fd572dd78d379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pubmed-literature-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-literature-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3446409d02478987e7c5432985f6f4e21de0c922774c360891d6b16276324655",
+      "artifactSizeBytes": 2765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:28:34.892Z"
+}

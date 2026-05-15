@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26807,
+  "uuid": "skill-clawhub-pilvio",
+  "skillKey": "clawhub-pilvio",
+  "name": "Pilvio",
+  "summary": "Pilvio integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Pilvio data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilvio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pilvio integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Pilvio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilvio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilvio",
+      "url": "https://clawhub.ai/skills/pilvio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilvio",
+    "url": "https://clawhub.ai/skills/pilvio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilvio-17ccfe58e6e75a84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilvio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilvio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e338c3cec16fd8a75785179c2878b2a9b78eade18378e11fe4cce68fd54ba3db",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:18.040Z"
+}

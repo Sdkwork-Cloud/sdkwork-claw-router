@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58664,
+  "uuid": "skill-clawhub-job-analysis-hybrid",
+  "skillKey": "clawhub-job-analysis-hybrid",
+  "name": "job-analysis-hybrid",
+  "summary": "在对话中辅助学习\"工作分析/Job Analysis\"第 4 章\"Hybrid Methods\"。基于 Brannick/Levine/Morgeson 等人教材。当用户讨论、提问、或应用 hybrid job analysis methods（C-JAM、MJDQ、WDQ、O*NET）、task + KSAO...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_hybrid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Do",
+      "features": [
+        "在对话中辅助学习\"工作分析/Job Analysis\"第 4 章\"Hybrid Methods\"。基于 Brannick/Levine/Morgeson 等人教材。当用户讨论、提问、或应用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-analysis-hybrid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44743340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-analysis-hybrid",
+      "url": "https://clawhub.ai/skills/job-analysis-hybrid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-hybrid",
+    "url": "https://clawhub.ai/skills/job-analysis-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-hybrid-0b86dd7d741117fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-analysis-hybrid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-analysis-hybrid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14d93afd7bce1a1387303a75ee78bd41e25f4c8b1988b43646b1111be28ed210",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:31:51.902Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15162,
+  "uuid": "skill-clawhub-claw-mouse",
+  "skillKey": "clawhub-claw-mouse",
+  "name": "Claw Mouse",
+  "summary": "Control a Linux X11 desktop by taking screenshots and moving/clicking/typing via xdotool + scrot.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mouse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rylen Anil",
+      "features": [
+        "Control a Linux X11 desktop by taking screenshots and moving/clicking/typing via xdotool + scro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-mouse@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47320423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-mouse",
+      "url": "https://clawhub.ai/skills/claw-mouse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mouse",
+    "url": "https://clawhub.ai/skills/claw-mouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mouse-e559cb95b4b7fec3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-mouse@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-mouse-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28bb93f3cdd55200db35ce27ae617a85096b3296f1cf5ee9db8e9ffed2b9e35a",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T07:47:54.521Z"
+}

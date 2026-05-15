@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spatix@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spatix",
+  "skill": {
+    "id": 13112,
+    "skillKey": "clawhub-spatix",
+    "name": "Spatix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spatix",
+    "url": "https://clawhub.ai/skills/spatix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spatix-d0de4aba090cadf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create beautiful maps in seconds. Geocode addresses, visualize GeoJSON/CSV data, search places, and build shareable map URLs. No GIS skills needed. Agents ea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alde1022",
+      "userId": "publishers:alde1022",
+      "displayName": "alde1022",
+      "image": "https://avatars.githubusercontent.com/u/58485531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1554,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771090862067,
+      "changelog": "Security scan fixes: added auth docs, removed airdrop mention, fixed API accuracy, clarified agent_id/agent_name as display identifiers, fixed MCP config",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae02ab83f45aecf99dcb393bd4f484a572120e7d767ef543a4ad810c802792d6"
+}

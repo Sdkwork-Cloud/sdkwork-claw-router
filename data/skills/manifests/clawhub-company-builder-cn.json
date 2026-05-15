@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72862,
+  "uuid": "skill-clawhub-company-builder-cn",
+  "skillKey": "clawhub-company-builder-cn",
+  "name": "快速创建AI智能体虚拟公司",
+  "summary": "快速搭建智能体虚拟公司。当用户表达创建公司、组建团队、搭建组织架构、当老板、当企业家、招人、分工、合作、等意图时，自动激活此Skill。 触发场景：用户想要创建公司、开公司、新公司、AI公司、人工智能公司、智能体公司、虚拟公司；组建团队、建团队、新建团队、我的团队； 搭建组织、搭建架构、公司架构；或提及多智能体协...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_builder_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hkagi",
+      "features": [
+        "快速搭建智能体虚拟公司。当用户表达创建公司、组建团队、搭建组织架构、当老板、当企业家、招人、分工、合作、等意图时，自动激活此Skill。 触发场景：用户想要创建公司、开公司、新公司、AI公司."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-builder-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269682788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-builder-cn",
+      "url": "https://clawhub.ai/skills/company-builder-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-builder-cn",
+    "url": "https://clawhub.ai/skills/company-builder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-builder-cn-b02fae66d02f10e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-builder-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-builder-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70122efbbf84012d524baa5b9de2d51553c582c4bd200ef81cff6bb122ab7ae4",
+      "artifactSizeBytes": 2909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:24:42.037Z"
+}

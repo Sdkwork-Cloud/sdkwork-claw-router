@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43432,
+  "uuid": "skill-clawhub-query-payful-account",
+  "skillKey": "clawhub-query-payful-account",
+  "name": "Query Payful Account",
+  "summary": "Query Payful account information including balance, transactions, and account details. Use when the user needs to check their Payful account status, view bal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_payful_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hugo Gu",
+      "features": [
+        "Query Payful account information including balance, transactions, and account details",
+        "Use when the user needs to check their Payful account status, view bal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-payful-account@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2989766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-payful-account",
+      "url": "https://clawhub.ai/skills/query-payful-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-payful-account",
+    "url": "https://clawhub.ai/skills/query-payful-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-payful-account-46bc69205bfb8147.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-payful-account@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-payful-account-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0ec8eb4996b250ce981bb17529bb0488c25bf86a6d9902fec7028cfdd8ad63",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:31:39.703Z"
+}

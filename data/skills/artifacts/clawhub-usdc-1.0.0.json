@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usdc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usdc",
+  "skill": {
+    "id": 13813,
+    "skillKey": "clawhub-usdc",
+    "name": "Usdc Hackathon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usdc",
+    "url": "https://clawhub.ai/skills/usdc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usdc-a34645ceb35b11e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when participating in the USDC Hackathon, submitting projects, or voting. 3 tracks: SmartContract, Skill, AgenticCommerce. Submit to m/usdc on Moltbook."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swairshah",
+      "userId": "publishers:swairshah",
+      "displayName": "swairshah",
+      "image": "https://avatars.githubusercontent.com/u/776578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1330,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770311020019,
+      "changelog": "usdc 1.0.0\n\n- Initial release for the USDC Hackathon skill.\n- Provides detailed instructions for participating, submitting projects, and voting in the hackathon.\n- Outlines robust security practices for handling credentials, wallets, and third-party submissions.\n- Describes 3 competition tracks: SmartContract, Skill, and AgenticCommerce.\n- Lists judging criteria, submission requirements, and key hackathon dates.\n- Includes guidelines for submission formatting, code hosting (GitHub/GitPad), and vote verification steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64b9db7fa7239ed7943b3db3efb1a0b2005fc4f3ea1229dcb4111772cf0d5ade"
+}

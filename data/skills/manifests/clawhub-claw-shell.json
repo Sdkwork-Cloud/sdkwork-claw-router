@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8439,
+  "uuid": "skill-clawhub-claw-shell",
+  "skillKey": "clawhub-claw-shell",
+  "name": "claw-shell",
+  "summary": "Runs shell commands inside a dedicated tmux session named claw, captures, and returns the output, with safety checks for destructive commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_shell",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imaginelogo",
+      "features": [
+        "Runs shell commands inside a dedicated tmux session named claw, captures, and returns the outpu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-shell@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187906828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-shell",
+      "url": "https://clawhub.ai/skills/claw-shell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-shell",
+    "url": "https://clawhub.ai/skills/claw-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-shell-cb920561fb0d0e58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-shell@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-shell-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fb0ecf122d2f30a3c81b9b23184dbc872e8516d6deca2695d96a6d048cc0508",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T12:29:14.608Z"
+}

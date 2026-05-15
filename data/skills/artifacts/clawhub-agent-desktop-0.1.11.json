@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-desktop@0.1.11",
+  "version": "0.1.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_desktop",
+  "skill": {
+    "id": 17838,
+    "skillKey": "clawhub-agent-desktop",
+    "name": "Agent Desktop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-desktop",
+    "url": "https://clawhub.ai/skills/agent-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-desktop-3b065b6548ccbe60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Desktop automation via native OS accessibility trees using the agent-desktop CLI. Use when an AI agent needs to observe, interact with, or automate desktop a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lahfir",
+      "userId": "s1793830nng35p6y70jxm4ybt984y8ka",
+      "displayName": "lahfir",
+      "image": "https://avatars.githubusercontent.com/u/70215676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 720,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.11",
+      "createdAt": 1777885148772,
+      "changelog": "Release v0.1.14",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2624ad5a9c11df9049543fb6ecfc0a0b72a12fc749f5bde3942f20839bd92f49"
+}

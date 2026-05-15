@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pte-heatmap-analyze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pte_heatmap_analyze",
+  "skill": {
+    "id": 38193,
+    "skillKey": "clawhub-pte-heatmap-analyze",
+    "name": "Ptengine Heatmap Analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pte-heatmap-analyze",
+    "url": "https://clawhub.ai/skills/pte-heatmap-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pte-heatmap-analyze-1bd16989857c6880.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ptengine Heatmap end-to-end analysis skill. Fetches real heatmap data via ptengine-cli and runs AI-powered CRO behavior analysis using a 4-stage psychology m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaichen",
+      "userId": "s17fbbmq0ehwn1k29ttnxea5fh8508yn",
+      "displayName": "zhaichen",
+      "image": "https://avatars.githubusercontent.com/u/5540196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776656444547,
+      "changelog": "Initial self-contained release of Ptengine Heatmap Analysis skill\n\n- Fetches and analyzes real Ptengine heatmap data using ptengine-cli; no external scraping.\n- Supports five analysis types: single page, segment comparison, A/B test validation, ad performance, and audience analysis.\n- Encodes CRO methodology: each block is classified by a 4-stage psychology model, with mapping rules provided for page types and block categories.\n- All data transformations, metric parsing rules, and evidence policies are included; only ptengine-cli data is considered authoritative.\n- Step-by-step workflow guides parameter setup, ptengine-cli checks and config, data fetching, and structured result presentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f6830f89a2198a4d260d24b0d6f0547f0edb0f2b26e4d5f8badb7444a396ba1"
+}

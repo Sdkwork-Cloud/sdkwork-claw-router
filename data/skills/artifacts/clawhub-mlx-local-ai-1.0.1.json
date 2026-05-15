@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mlx-local-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlx_local_ai",
+  "skill": {
+    "id": 60836,
+    "skillKey": "clawhub-mlx-local-ai",
+    "name": "MLX Local AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlx-local-ai",
+    "url": "https://clawhub.ai/skills/mlx-local-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlx-local-ai-07ccebf69bd16fa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键部署支持Apple Silicon的本地LLM与中文向量Embedding服务，含统一API网关及便捷启动管理脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saybanet",
+      "userId": "s177bwvprnj8ajhnxsd2mcjk1s85vmxq",
+      "displayName": "saybanet",
+      "image": "https://avatars.githubusercontent.com/u/259792258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773087078404,
+      "changelog": "Initial release of mlx-local-ai: one-click local AI services for Apple Silicon.\n\n- Provides local LLM (Qwen3.5-4B-OptiQ-4bit via MLX-LM) and embedding (bge-base-zh-v1.5) services\n- Unified OpenClaw API gateway with OpenAI-compatible endpoints\n- Simple installation, start/stop scripts, and status checking\n- Clear API usage examples and troubleshooting steps\n- macOS 14+, Apple Silicon, Python 3.10+ required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a36adfbb42aa272e71aa027eb7f0cd6734f9ff85472dd6b4dc379eeea6378c86"
+}

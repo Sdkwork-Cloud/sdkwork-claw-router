@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61455,
+  "uuid": "skill-clawhub-web-ai-image-generation",
+  "skillKey": "clawhub-web-ai-image-generation",
+  "name": "web-ai-image-generation",
+  "summary": "自动通过浏览器复用 Gemini 或 ChatGPT 登录态，提交提示词生成图片并下载保存到本地指定目录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_ai_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "henryczq",
+      "features": [
+        "自动通过浏览器复用 Gemini 或 ChatGPT 登录态，提交提示词生成图片并下载保存到本地指定目录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-ai-image-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5507181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-ai-image-generation",
+      "url": "https://clawhub.ai/skills/web-ai-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-ai-image-generation",
+    "url": "https://clawhub.ai/skills/web-ai-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-ai-image-generation-f044af166091a8d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-ai-image-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-ai-image-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f29671e170389590a8ee572a70d6b39269944744b1b99ce75767d3313fe6f76",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T17:41:09.684Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-ops-v2@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_ops_v2",
+  "skill": {
+    "id": 61955,
+    "skillKey": "clawhub-github-ops-v2",
+    "name": "Github Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-ops-v2",
+    "url": "https://clawhub.ai/skills/github-ops-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-ops-v2-b2ee49154049b3de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub 操作技能 - 创建仓库、推送代码、管理 Release。全自动，无需用户干预。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774864616524,
+      "changelog": "Version 2.0.0 introduces a fully automated GitHub operations skill—no user intervention required.\n\n- Added support for automatic repository creation, code push, and GitHub Release management via API.\n- Secure handling of GITHUB_TOKEN via safe storage; no need for user-supplied tokens.\n- Included sample workflows, test cases, and performance benchmarks.\n- Enhanced documentation with real-world usage examples and detailed environment setup.\n- Automated deployment integration (e.g., with Vercel) for seamless product launch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:916b917e8d697a0a5df55c7a08df3ebffa0167354f8e4789ccd9e1da6d6ffef4"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50599,
+  "uuid": "skill-clawhub-card-full",
+  "skillKey": "clawhub-card-full",
+  "name": "Card Full",
+  "summary": "Return a compact full report for one major-US credit card — fees, welcome offer, earning rates, redemption, credits, travel benefits, protections, mechanics,...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_full",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiahongc",
+      "features": [
+        "Return a compact full report for one major-US credit card — fees, welcome offer, earning rates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/card-full@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61323260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "card-full",
+      "url": "https://clawhub.ai/skills/card-full"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-full",
+    "url": "https://clawhub.ai/skills/card-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-full-f6ede365f5ae5a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/card-full@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-card-full-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:381450e4ce5a4aa4387387562ddb2365bf6b60a69aed78eafea4b77156b8c486",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:24:07.976Z"
+}

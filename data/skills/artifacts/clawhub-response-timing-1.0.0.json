@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/response-timing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.response_timing",
+  "skill": {
+    "id": 67950,
+    "skillKey": "clawhub-response-timing",
+    "name": "Response Timing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "response-timing",
+    "url": "https://clawhub.ai/skills/response-timing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/response-timing-c28fc6f322e7be30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "回应时机技能。用于判断何时应该回应，何时应该保持沉默。当需要确定用户是否在跟当前 agent 对话、是否应该回应时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ebly",
+      "userId": "publishers:ebly",
+      "displayName": "ebly",
+      "image": "https://avatars.githubusercontent.com/u/5242545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772997894255,
+      "changelog": "回应时机技能 - 判断何时应该回应，何时应该保持沉默",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07a7feded255ef872390627b6237db0af59d29fbc1b1905904f6a601635fedb9"
+}

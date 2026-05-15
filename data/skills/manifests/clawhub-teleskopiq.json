@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20864,
+  "uuid": "skill-clawhub-teleskopiq",
+  "skillKey": "clawhub-teleskopiq",
+  "name": "Teleskopiq",
+  "summary": "Creates and manages AI-generated YouTube scripts, metadata, thumbnails, and schedules via a GraphQL API with specialized Markdown tags for production.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teleskopiq",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nethunter",
+      "features": [
+        "Creates and manages AI-generated YouTube scripts, metadata, thumbnails, and schedules via a Gra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teleskopiq@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/618947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teleskopiq",
+      "url": "https://clawhub.ai/skills/teleskopiq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teleskopiq",
+    "url": "https://clawhub.ai/skills/teleskopiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teleskopiq-469866cc8a72276c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teleskopiq@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-teleskopiq-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:390a9a4eddfade513d32efe5e1899a72bc6f1f35ee899c135a83f7474c6992ee",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T20:47:29.389Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71415,
+  "uuid": "skill-clawhub-realtime-finance",
+  "skillKey": "clawhub-realtime-finance",
+  "name": "实时财经数据",
+  "summary": "实时财经数据查询技能 - 支持A股、港股、美股、黄金、原油、VIX、美债等",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_finance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoqiang243",
+      "features": [
+        "实时财经数据查询技能",
+        "支持A股、港股、美股、黄金、原油、VIX、美债等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realtime-finance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48846803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realtime-finance",
+      "url": "https://clawhub.ai/skills/realtime-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-finance",
+    "url": "https://clawhub.ai/skills/realtime-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-finance-3701576b87ba7cbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realtime-finance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realtime-finance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70df729c25481a9d4f6881adc1eea933673ff7524113e42b64432aa0d4ff8f5b",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:41:00.436Z"
+}

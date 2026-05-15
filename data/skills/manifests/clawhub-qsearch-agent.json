@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68734,
+  "uuid": "skill-clawhub-qsearch-agent",
+  "skillKey": "clawhub-qsearch-agent",
+  "name": "QSearch Agent",
+  "summary": "通用搜索助手。当用户输入 /sp、/search、/找、/搜 等指令时触发，用于搜索电影、小说、股票、新闻、图片等任何内容。过滤广告和非法内容，只返回安全、可靠的搜索结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qsearch_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kany2000",
+      "features": [
+        "通用搜索助手。当用户输入 /sp、/search、/找、/搜 等指令时触发，用于搜索电影、小说、股票、新闻、图片等任何内容。过滤广告和非法内容，只返回安全、可靠的搜索结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qsearch-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45386748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qsearch-agent",
+      "url": "https://clawhub.ai/skills/qsearch-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qsearch-agent",
+    "url": "https://clawhub.ai/skills/qsearch-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qsearch-agent-15ecc346ceba0a19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qsearch-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qsearch-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f2883fd5bf569955f027bc91736c881868d0424f56abc50efd14f93d6f35c31",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:39:37.265Z"
+}

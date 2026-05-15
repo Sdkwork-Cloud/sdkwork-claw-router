@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hik-connect-team-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_connect_team_skill",
+  "skill": {
+    "id": 29096,
+    "skillKey": "clawhub-hik-connect-team-skill",
+    "name": "hik-connect-team-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-connect-team-skill",
+    "url": "https://clawhub.ai/skills/hik-connect-team-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-connect-team-skill-a8e52fbc2a024860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hik-Connect for Teams (HCT) Developer Skills. Integrates a series of skills for managing and controlling HCT devices, including resource management, access c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hikconnectteam",
+      "userId": "s17cvdxzhah10xervagfzwsren8577p8",
+      "displayName": "HikConnectTeamOpen",
+      "image": "https://avatars.githubusercontent.com/u/167326695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777280233030,
+      "changelog": "Initial release of Hik-Connect Team Skills – an integration toolkit for Hik-Connect for Teams (HCT) device management.\n\n- Provides modular Python scripts for resource management, access control, device capture, video streaming, and alarm push.\n- Global configuration via environment variables or OpenClaw config files: requires AppKey and SecretKey.\n- Automatic token management and standardized error handling included.\n- Structured to support batch operations, real-time monitoring, and business system integration.\n- Detailed setup instructions and security best practices provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f31f2c80dccb5d298c40ffe1dad98363ab10719a10685d003b66baecaf5006b"
+}

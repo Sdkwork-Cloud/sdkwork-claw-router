@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lecture-notes-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lecture_notes_master",
+  "skill": {
+    "id": 24084,
+    "skillKey": "clawhub-lecture-notes-master",
+    "name": "lecture-notes-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lecture-notes-master",
+    "url": "https://clawhub.ai/skills/lecture-notes-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lecture-notes-master-188d3ed8cb3062fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Obsidian lecture notes with recursive atomic decomposition. Generates main note (hub), atomic notes (3+ layers deep, rich structure each), and unlimited glos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "schaeferanjon",
+      "userId": "publishers:schaeferanjon",
+      "displayName": "SchaeferAnjon",
+      "image": "https://avatars.githubusercontent.com/u/168791945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369915092,
+      "changelog": "Initial release of Lecture Notes Master — structured Obsidian note generator with recursive atomic decomposition.\n\n- Generates main hub note, deeply layered atomic notes (≥3 levels), and unlimited glossary entries from lectures, articles, videos, transcripts, or PDFs.\n- Organizes all notes into numbered topic subdirectories and a dedicated glossary folder, following strict atomic/note structure rules.\n- Ensures every atomic note follows a rich template: definition, motivation, diagrams, comparison tables, pitfalls, takeaways, review questions, and related links.\n- Supports bilingual term entries and outputs in Obsidian markdown with built-in Mermaid diagrams and wikilinks.\n- Designed for easy import into user-defined Obsidian vaults; customizable for study, exam prep, and knowledge management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1df8d1b53a06aa11168e95dd6f11ecf387b0772d9f7f80f169c23a5578a43544"
+}

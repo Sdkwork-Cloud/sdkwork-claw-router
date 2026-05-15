@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22355,
+  "uuid": "skill-clawhub-vinted",
+  "skillKey": "clawhub-vinted",
+  "name": "Vinted",
+  "summary": "Buy and resell on Vinted with listing systems, price discipline, shipping workflows, and trust-first handling for offers, bundles, and disputes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vinted",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Buy and resell on Vinted with listing systems, price discipline, shipping workflows, and trust-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vinted@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vinted",
+      "url": "https://clawhub.ai/skills/vinted"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vinted",
+    "url": "https://clawhub.ai/skills/vinted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vinted-8d3ad4106a8eaee0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vinted@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vinted-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4f65a62e40c10ec13d7b575dbb41b77a772535724503084a582e75b421adb06",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:10:56.835Z"
+}

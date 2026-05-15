@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-spellcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_spellcheck",
+  "skill": {
+    "id": 20425,
+    "skillKey": "clawhub-doc-spellcheck",
+    "name": "Document Spell Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-spellcheck",
+    "url": "https://clawhub.ai/skills/doc-spellcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-spellcheck-1901eed6fa17b426.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and automatically fix spelling errors in Markdown, plain text, and documentation files with support for custom dictionaries and batch processing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772495249325,
+      "changelog": "Initial release of doc-spellcheck.\n\n- Automatically detects and fixes spelling errors in Markdown, text, and documentation files.\n- Supports batch processing, custom dictionaries, and integrates with Git.\n- Offers interactive and dry-run modes for safe correction preview.\n- Easily integrates into CI/CD pipelines and respects project structure and .gitignore.\n- Configurable error types, severity levels, and output formats for flexible workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e57214c735a5e74d4708a052ac59e1f867ad4bf2cdfc0e01fe64609cfcd56c1"
+}

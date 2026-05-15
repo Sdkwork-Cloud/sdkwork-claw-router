@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-crawling@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_crawling",
+  "skill": {
+    "id": 30994,
+    "skillKey": "clawhub-modesty-crawling",
+    "name": "crawling"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-crawling",
+    "url": "https://clawhub.ai/skills/modesty-crawling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-crawling-d4ec8664daa761d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for TikTok crawling, content retrieval, and analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776755256410,
+      "changelog": "Initial release: adds comprehensive TikTok crawling and content analysis using yt-dlp.\n\n- Provides setup instructions for yt-dlp and ffmpeg on multiple platforms.\n- Documents key download patterns: single videos, profiles, hashtags, and sound-based crawls.\n- Includes advanced filtering by date, views, duration, and title.\n- Offers guidance for metadata export, previews, and analysis with jq and pandas.\n- Details ongoing scraping strategies, archiving, authentication, and scheduled scraping workflows.\n- Contains troubleshooting tips and a reference for common yt-dlp options and output templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45b1748c0a1f10cb242d18cc660f0880671e174f6ff49e1e3cfe7d6e1a82da88"
+}

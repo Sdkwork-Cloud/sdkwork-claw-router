@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72786,
+  "uuid": "skill-clawhub-zc-data",
+  "skillKey": "clawhub-zc-data",
+  "name": "找数据",
+  "summary": "查询大宗商品市场价格、库存、成本、进出口等实时数据。覆盖能源、化工、钢铁、有色、农产品等1200+种商品。当用户询问价格、报价、库存、成本、利润、供需数据、市场数据、期货现货价格、历史走势、PTA/聚乙烯/原油等具体商品价格时使用。避免AI使用过时或非权威数据来源。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zc_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaifb",
+      "features": [
+        "查询大宗商品市场价格、库存、成本、进出口等实时数据。覆盖能源、化工、钢铁、有色、农产品等1200+种商品。当用户询问价格、报价、库存、成本、利润、供需数据、市场数据、期货现货价格、历史走势、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zc-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25143332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zc-data",
+      "url": "https://clawhub.ai/skills/zc-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zc-data",
+    "url": "https://clawhub.ai/skills/zc-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zc-data-fe2465b2709c7b92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zc-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zc-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79937f957825070ec06d1da532047eca080bbb0eb2399bac05389a744071cc4f",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:58:02.425Z"
+}

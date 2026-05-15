@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-auth-compliance-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_auth_compliance_pack",
+  "skill": {
+    "id": 24792,
+    "skillKey": "clawhub-firm-auth-compliance-pack",
+    "name": "Firm Auth Compliance Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-auth-compliance-pack",
+    "url": "https://clawhub.ai/skills/firm-auth-compliance-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-auth-compliance-pack-1f3a60a65f8736fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authentication and compliance audit pack. OAuth 2.1/OIDC Discovery, token scope enforcement, tool deprecation lifecycle, circuit breaker, GDPR residency, DID..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772410648551,
+      "changelog": "Initial release — 8 tools: OAuth/OIDC, token scope, deprecation, GDPR, DID, routing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d3468eb9a2182c9163c23ff016b10462becaf0c1f3b905bfb7722099e025fe6"
+}

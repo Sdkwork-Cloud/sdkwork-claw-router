@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adhd-founder-planner@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adhd_founder_planner",
+  "skill": {
+    "id": 9710,
+    "skillKey": "clawhub-adhd-founder-planner",
+    "name": "ADHD Founder Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adhd-founder-planner",
+    "url": "https://clawhub.ai/skills/adhd-founder-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adhd-founder-planner-d26d584be111aaa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to 'plan my day', 'help me plan today', 'morning planning', 'what should I work on today', 'daily planner', 'evening reflection', 'reflect on my day', 'migrate tasks', 'carry tasks forward', 'ra."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jankutschera",
+      "userId": "s172f8gd7qgt5nxbkbacbw2tw984pa69",
+      "displayName": "jankutschera",
+      "image": "https://avatars.githubusercontent.com/u/944278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2305,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 11,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770486473875,
+      "changelog": "Add ClawHub slug metadata, fix cross-reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc08d3862a9d23c981121c2a4d66f6c6d8802c078352d95585d9190389b8a03a"
+}

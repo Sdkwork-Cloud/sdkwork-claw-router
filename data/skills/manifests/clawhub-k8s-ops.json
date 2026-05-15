@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54149,
+  "uuid": "skill-clawhub-k8s-ops",
+  "skillKey": "clawhub-k8s-ops",
+  "name": "k8s-ops",
+  "summary": "Kubernetes operations plugin — 32 tools for cluster management, monitoring, troubleshooting, and security auditing",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "Kubernetes operations plugin — 32 tools for cluster management, monitoring, troubleshooting, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-ops@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-ops",
+      "url": "https://clawhub.ai/skills/k8s-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-ops",
+    "url": "https://clawhub.ai/skills/k8s-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-ops-4de41045f7e35d60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-ops@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-ops-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bce91864555a2dc86f865fb4ed397f21acbcfad1fa3963cfe64beb6f78407c0",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:19:19.018Z"
+}

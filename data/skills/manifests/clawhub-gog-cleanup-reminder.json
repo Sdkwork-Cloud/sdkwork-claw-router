@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42390,
+  "uuid": "skill-clawhub-gog-cleanup-reminder",
+  "skillKey": "clawhub-gog-cleanup-reminder",
+  "name": "GOG Cleanup Reminder",
+  "summary": "Scan installed GOG games, find titles inactive for 30+ days, email the list to the configured personal address, and add Apple Reminders in the Gaming list fo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_cleanup_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Scan installed GOG games, find titles inactive for 30+ days, email the list to the configured p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gog-cleanup-reminder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gog-cleanup-reminder",
+      "url": "https://clawhub.ai/skills/gog-cleanup-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-cleanup-reminder",
+    "url": "https://clawhub.ai/skills/gog-cleanup-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-cleanup-reminder-a7a8c1e4f0fe4d56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gog-cleanup-reminder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gog-cleanup-reminder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e32280ae7f8ef32d0481b20be1dee0357696f5db3288b6574f1c344d622022c",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:55:19.731Z"
+}

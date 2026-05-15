@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/corpus-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corpus_search",
+  "skill": {
+    "id": 66269,
+    "skillKey": "clawhub-corpus-search",
+    "name": "Corpus Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corpus-search",
+    "url": "https://clawhub.ai/skills/corpus-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corpus-search-8efece99ee66a34f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语料检索工具，与 corpus-builder 配合使用。支持语义搜索、元数据过滤（场景/情绪/节奏/质量）。Use when: 需要搜索语料库中的小说片段、按场景类型过滤、查找特定情绪/节奏的描写、检索高质量写作素材。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzhihui886",
+      "userId": "s171q47tfc9tb8mpczgympghws83jcja",
+      "displayName": "yuzhihui886",
+      "image": "https://avatars.githubusercontent.com/u/213567314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775021167304,
+      "changelog": "代码质量优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51f1cd081f574bb7ade93c2455139dac3d4100ddfdfdb11f2345728fd8852a09"
+}

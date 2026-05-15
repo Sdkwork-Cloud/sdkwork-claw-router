@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "loveclaw",
+    "displayName": "LoveClaw",
+    "summary": "LoveClaw 八字缘分匹配：云端档案、照片、每日匹配与晚间报告。 用户唤醒：发送「启动爱情龙虾」进入报名。 安全设计：匹配运算与报告生成在 FC 服务端完成；skill 端仅做用户交互与通知路由，每个用户只能访问自己的数据。",
+    "tags": {
+      "latest": "21.21.21"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 166
+    },
+    "createdAt": 1774361289297,
+    "updatedAt": 1777623252149
+  },
+  "latestVersion": {
+    "version": "21.21.21",
+    "createdAt": 1775046286540,
+    "changelog": "LoveClaw 21.21.21 is a streamlined update focusing on clarity, safety, and reduced complexity:\n\n- 精简并聚焦文档，移除运维面、全量风险披露与详细内部实现说明，仅强调用户可见交互与安全边界。\n- 明确 skill 端仅做用户交互与推送路由，所有八字/匹配/报告逻辑均在云端服务完成，skill 端无法访问其他用户数据。\n- 删除对高敏感管理密钥（如 ADMIN/ACCESS_KEY）和 deploy/ 相关内容的依赖及说明，仅保留 `LOVECLAW_API_TOKEN`。\n- 环境变量严格允许名单注入，仅保留关键项。\n- 保留核心安装指引、命令触发词、流程摘要和极简安全说明。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "jackysly88",
+    "userId": "s17205zasx4anj0pwknnpfqx8x83g2ng",
+    "displayName": "jackysly88",
+    "image": "https://avatars.githubusercontent.com/u/258196980?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623252149
+  }
+}

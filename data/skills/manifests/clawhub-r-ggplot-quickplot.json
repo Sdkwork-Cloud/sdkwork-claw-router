@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62354,
+  "uuid": "skill-clawhub-r-ggplot-quickplot",
+  "skillKey": "clawhub-r-ggplot-quickplot",
+  "name": "R ggplot Quickplot",
+  "summary": "上传 CSV 数据文件，自动生成 9 种常用 ggplot2 图表（散点图、柱状图、箱线图、折线图、直方图、分面图等）。零代码可视化，支持 Docker/Singularity 免安装运行。",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r_ggplot_quickplot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenthompson2088",
+      "features": [
+        "上传 CSV 数据文件，自动生成 9 种常用 ggplot2 图表（散点图、柱状图、箱线图、折线图、直方图、分面图等）。零代码可视化，支持 Docker/Singularity 免安装运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/r-ggplot-quickplot@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189254864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "r-ggplot-quickplot",
+      "url": "https://clawhub.ai/skills/r-ggplot-quickplot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r-ggplot-quickplot",
+    "url": "https://clawhub.ai/skills/r-ggplot-quickplot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r-ggplot-quickplot-96540dd1fe8e620c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/r-ggplot-quickplot@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-r-ggplot-quickplot-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1931b6acf038f2e2e83666c9c7390e13ccf36eca2de8efc18ea5fe04ebf1f2d",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:24:01.802Z"
+}

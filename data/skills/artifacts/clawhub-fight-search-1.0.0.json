@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fight-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fight_search",
+  "skill": {
+    "id": 72934,
+    "skillKey": "clawhub-fight-search",
+    "name": "机票查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fight-search",
+    "url": "https://clawhub.ai/skills/fight-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fight-search-e263eabd1436d692.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774871074590,
+      "changelog": "flightAI 1.0.0 – 首次发布上线，提供完整的国内航班全流程服务。\n\n- 支持国内航班搜索、舱位查询、机票预订、订单查询、改期与退票等全流程功能\n- 严格实现鉴权流程，所有操作需先完成手机号验证获取 apiKey\n- 可通过指令查询航班列表、舱位详情、退改签政策、行李额等\n- 支持机票下单与乘客信息收集，并可进行订单查询、取消、改期及退票操作\n- 操作流程清晰，参数缺失可自动补齐询问，所有输出表格均有标准格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:593de710dacda696f51352538080d7e5c375c37c65115fef7fde56fde5d29ef5"
+}

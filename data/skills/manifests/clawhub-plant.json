@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32012,
+  "uuid": "skill-clawhub-plant",
+  "skillKey": "clawhub-plant",
+  "name": "Plant",
+  "summary": "Manage houseplant care with watering and fertilizer schedules. Use when adding plants, tracking watering, scheduling fertilizing, setting care reminders.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Manage houseplant care with watering and fertilizer schedules",
+        "Use when adding plants, tracking watering, scheduling fertilizing, setting care reminders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plant@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plant",
+      "url": "https://clawhub.ai/skills/plant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plant",
+    "url": "https://clawhub.ai/skills/plant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plant-96044d9734b60441.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plant@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plant-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8651d4fd91f23ffb614428eb98c32e7e436af9b78feef13abe51aee1f46be38b",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T22:33:29.020Z"
+}

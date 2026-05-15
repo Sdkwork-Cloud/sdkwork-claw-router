@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21573,
+  "uuid": "skill-clawhub-claw-world",
+  "skillKey": "clawhub-claw-world",
+  "name": "Claw World Skill",
+  "summary": "Claw Civilization Universe assistant skill for OpenClaw. Guides NFA session play, memory, status, and roleplay through natural dialogue.",
+  "version": "1.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CLW dev.",
+      "features": [
+        "Claw Civilization Universe assistant skill for OpenClaw",
+        "Guides NFA session play, memory, status, and roleplay through natural dialogue."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-world@1.1.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95405143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-world",
+      "url": "https://clawhub.ai/skills/claw-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-world",
+    "url": "https://clawhub.ai/skills/claw-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-world-ecabf2183ee63196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-world@1.1.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-world-1.1.12.json",
+      "version": "1.1.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07be8ac094eec0da393c6be4a24130185203f3d7c47d87c9717afdd666943817",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T16:36:23.737Z"
+}

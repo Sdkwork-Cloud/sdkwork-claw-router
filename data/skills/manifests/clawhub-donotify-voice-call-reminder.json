@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16021,
+  "uuid": "skill-clawhub-donotify-voice-call-reminder",
+  "skillKey": "clawhub-donotify-voice-call-reminder",
+  "name": "Donotify Voice Call Reminder",
+  "summary": "Send immediate voice call reminders or schedule future calls via DoNotify.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.donotify_voice_call_reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MicahelE",
+      "features": [
+        "Send immediate voice call reminders or schedule future calls via DoNotify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/donotify-voice-call-reminder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39861067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "donotify-voice-call-reminder",
+      "url": "https://clawhub.ai/skills/donotify-voice-call-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "donotify-voice-call-reminder",
+    "url": "https://clawhub.ai/skills/donotify-voice-call-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/donotify-voice-call-reminder-772a4f2b0bb6da13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/donotify-voice-call-reminder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-donotify-voice-call-reminder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96a82c7a923fe790b7e435f10545cfe338f3b877ede153f3f233fad36c0a02e9",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:24:35.437Z"
+}

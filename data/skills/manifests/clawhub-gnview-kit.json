@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71820,
+  "uuid": "skill-clawhub-gnview-kit",
+  "skillKey": "clawhub-gnview-kit",
+  "name": "Gnview Kit",
+  "summary": "抖音数据分析工具集，包含视频数据分析、用户画像分析、趋势统计等完整分析能力。适用于抖音数据深度挖掘和报告生成场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gnview_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gnview",
+      "features": [
+        "抖音数据分析工具集，包含视频数据分析、用户画像分析、趋势统计等完整分析能力。适用于抖音数据深度挖掘和报告生成场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gnview-kit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271757886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gnview-kit",
+      "url": "https://clawhub.ai/skills/gnview-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gnview-kit",
+    "url": "https://clawhub.ai/skills/gnview-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gnview-kit-da063da52989855d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gnview-kit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gnview-kit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf934b58be98799a03be721b1eb350c93ca0e6cf0f20c8406326414381c95256",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T14:01:18.714Z"
+}

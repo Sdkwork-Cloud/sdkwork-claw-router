@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-codex-operator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_codex_operator",
+  "skill": {
+    "id": 12919,
+    "skillKey": "clawhub-openai-codex-operator",
+    "name": "OpenAI Codex Operator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-codex-operator",
+    "url": "https://clawhub.ai/skills/openai-codex-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-codex-operator-23009abed7b5952a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run OpenAI Codex CLI from OpenClaw for coding tasks in a target project directory. Use when the user asks OpenClaw to use Codex for implementation, debugging..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cecwxf",
+      "userId": "s17bnch4s0gmge7dne72k5p74183grr7",
+      "displayName": "saiph",
+      "image": "https://avatars.githubusercontent.com/u/1245883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1400,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771303840016,
+      "changelog": "Republish for discoverability check.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a17efb976122db7b91faa17dd923d7869ddaa87fb2cfe8a2265f22a599ce43f8"
+}

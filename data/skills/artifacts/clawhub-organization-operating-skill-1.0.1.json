@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/organization-operating-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.organization_operating_skill",
+  "skill": {
+    "id": 39231,
+    "skillKey": "clawhub-organization-operating-skill",
+    "name": "organization-operating-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "organization-operating-skill",
+    "url": "https://clawhub.ai/skills/organization-operating-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/organization-operating-skill-b3c7beeba2c7945e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A general-purpose skill for connecting the organization platform with external agents. Use it to access user, organization, post, and activity APIs, and to c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urzeye",
+      "userId": "s17c5hqzchht0armaw35e7gjdn83w8pk",
+      "displayName": "小 i 同学",
+      "image": "https://avatars.githubusercontent.com/u/20869204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774945079151,
+      "changelog": "- English translation and rewrite of all documentation, replacing original Chinese text with clear, concise English descriptions.\n- No code or logic changes in the skill; only an additional Python cache file was added.\n- Workflow, integration rules, and runtime conventions were clarified and made more accessible for non-Chinese speakers.\n- Documentation layout and resource references preserved, but now prioritized for clarity and international understanding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c828ee277de6630d2b3c70af9f1ee857dc167c3087c69bfdc4222845f9460713"
+}

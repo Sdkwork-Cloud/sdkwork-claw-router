@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice2text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice2text",
+  "skill": {
+    "id": 22594,
+    "skillKey": "clawhub-voice2text",
+    "name": "Voice2text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice2text",
+    "url": "https://clawhub.ai/skills/voice2text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice2text-458910276f957db9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Offline speech-to-text conversion using Vosk local model; input audio file path, output transcript text."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gs431047",
+      "userId": "publishers:gs431047",
+      "displayName": "gs431047",
+      "image": "https://avatars.githubusercontent.com/u/198208893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772391757921,
+      "changelog": "Initial release of offline voice-to-text skill with Vosk.\n\n- Converts audio files (.wav) to text using the Vosk local model.\n- Usage via `main.py` with `run(params)` interface.\n- Simple input/output: provide audio path, receive text transcript.\n- Includes installation and usage examples.\n- Depends on `vosk` and `pytest`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0cf4cec24f005b2560df9b7288cf1e258b0e669c40f4be83402cf21367430494"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26185,
+  "uuid": "skill-clawhub-agent-team-organization",
+  "skillKey": "clawhub-agent-team-organization",
+  "name": "Agent Team Organization",
+  "summary": "Create and maintain a Teams management page for OpenClaw Control UI, including named agent teams, parent/child nesting, indented tree rendering, collapsible...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_team_organization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Create and maintain a Teams management page for OpenClaw Control UI, including named agent team."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-team-organization@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-team-organization",
+      "url": "https://clawhub.ai/skills/agent-team-organization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-team-organization",
+    "url": "https://clawhub.ai/skills/agent-team-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-team-organization-99a507290baaa1f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-team-organization@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-organization-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ced4e864c17e5812d0ee07883c1be283827ff55786b50204a667ef6e80103c5",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:58:58.860Z"
+}

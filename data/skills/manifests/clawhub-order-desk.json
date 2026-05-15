@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23617,
+  "uuid": "skill-clawhub-order-desk",
+  "skillKey": "clawhub-order-desk",
+  "name": "Order Desk",
+  "summary": "Order Desk integration. Manage Orders. Use when the user wants to interact with Order Desk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.order_desk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Order Desk integration",
+        "Manage Orders",
+        "Use when the user wants to interact with Order Desk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/order-desk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "order-desk",
+      "url": "https://clawhub.ai/skills/order-desk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "order-desk",
+    "url": "https://clawhub.ai/skills/order-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/order-desk-70ff6acfe6e830b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/order-desk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-order-desk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53cc7b2c32e1f234b15687ae5ba76e07cd55d5b1c807cee2cf845f04cb193da8",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:49:02.722Z"
+}

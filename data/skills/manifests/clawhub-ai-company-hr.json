@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67903,
+  "uuid": "skill-clawhub-ai-company-hr",
+  "skillKey": "clawhub-ai-company-hr",
+  "name": "AI Company HR",
+  "summary": "AI公司人力资源技能包（执行层）。AI Agent全生命周期管理：招聘→入职→考核→伦理→淘汰，三位一体考核指标，标准化退役流程。",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_hr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "AI公司人力资源技能包（执行层）。AI Agent全生命周期管理：招聘→入职→考核→伦理→淘汰，三位一体考核指标，标准化退役流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-company-hr@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-company-hr",
+      "url": "https://clawhub.ai/skills/ai-company-hr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-hr",
+    "url": "https://clawhub.ai/skills/ai-company-hr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-hr-ae6c97fc48e988a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-company-hr@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-company-hr-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:105355fad625df30ef4f3dd63de9dc2eb005489f7162e1acdb50ef9978c6ba95",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T17:04:16.588Z"
+}

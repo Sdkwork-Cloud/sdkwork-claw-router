@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32246,
+  "uuid": "skill-clawhub-grovo",
+  "skillKey": "clawhub-grovo",
+  "name": "Grovo",
+  "summary": "Grovo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Grovo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grovo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Grovo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Grovo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grovo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grovo",
+      "url": "https://clawhub.ai/skills/grovo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grovo",
+    "url": "https://clawhub.ai/skills/grovo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grovo-57672eca9a432ba7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grovo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-grovo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ce53d02fa45a059367db6e00fd81a1b3454a984bae20d6162a1c605c63c30c1",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:32:01.021Z"
+}

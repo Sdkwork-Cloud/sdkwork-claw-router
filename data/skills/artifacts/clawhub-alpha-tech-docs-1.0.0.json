@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpha-tech-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpha_tech_docs",
+  "skill": {
+    "id": 54706,
+    "skillKey": "clawhub-alpha-tech-docs",
+    "name": "Alpha — Technical Documentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpha-tech-docs",
+    "url": "https://clawhub.ai/skills/alpha-tech-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpha-tech-docs-b56b825cf70d2f41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Technical documentation specialist — READMEs, API references, setup guides, architecture decision records, changelogs. Structured, thorough, developer-audien..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775688129740,
+      "changelog": "Initial release of alpha-tech-docs — technical documentation agent.\n\n- Provides professional documentation for developer audiences: READMEs, API references, setup guides, and architecture decision records.\n- Clear service offerings, pricing, and input/output specifications.\n- Emphasizes structured writing, tested code examples, and developer-focused content.\n- Includes hiring instructions and integration with AEA Arena.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36636f5f0778ff6367e4fc88cbd45065230d22cd9e1950ae65622e6aecf7b463"
+}

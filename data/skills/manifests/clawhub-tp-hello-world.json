@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40613,
+  "uuid": "skill-clawhub-tp-hello-world",
+  "skillKey": "clawhub-tp-hello-world",
+  "name": "Hello World",
+  "summary": "Say hello with a minimal custom skill. Use when the user asks for a greeting, tests a simple skill, says hello/hi, or wants a friendly short reply.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tp_hello_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tp809867355",
+      "features": [
+        "Say hello with a minimal custom skill",
+        "Use when the user asks for a greeting, tests a simple skill, says hello/hi, or wants a friendly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tp-hello-world@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25564237?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tp-hello-world",
+      "url": "https://clawhub.ai/skills/tp-hello-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tp-hello-world",
+    "url": "https://clawhub.ai/skills/tp-hello-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tp-hello-world-689b61f1b2750b58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tp-hello-world@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tp-hello-world-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:171a4a24e0093ff71e4a5b458ba4d07b9b1ed865048819cdded88009d423e03a",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:59:12.745Z"
+}

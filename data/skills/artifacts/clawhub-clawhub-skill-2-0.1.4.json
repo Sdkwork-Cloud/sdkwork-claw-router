@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-2@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_2",
+  "skill": {
+    "id": 12187,
+    "skillKey": "clawhub-clawhub-skill-2",
+    "name": "Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-2",
+    "url": "https://clawhub.ai/skills/clawhub-skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-2-6324dd6e192f26b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure, run, and troubleshoot the OpenRouter hardware-aware classifier router (wizard setup, local model, routing, and dashboard)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pathemata-mathemata",
+      "userId": "publishers:pathemata-mathemata",
+      "displayName": "pathemata-mathemata",
+      "image": "https://avatars.githubusercontent.com/u/177381183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1829,
+      "installsAllTime": 5,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1770677422458,
+      "changelog": "Version 0.1.4\n\n- Renamed the router and headers from \"openrouter\" to \"Xrouter\".\n- Updated documentation and references throughout SKILL.md to reflect the new \"Xrouter\" naming.\n- Adjusted compatibility instructions to include the new provider type \"xrouter\".\n- No functional changes; updates are documentation and naming consistency only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7d1b74fb3376f3f28d03d1f4cee726c005edc053e43e90e731cbf35a01cc8c5"
+}

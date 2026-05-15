@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60425,
+  "uuid": "skill-clawhub-p3c-code-quality",
+  "skillKey": "clawhub-p3c-code-quality",
+  "name": "p3c-code-quality",
+  "summary": "执行代码质量检查测试，基于阿里巴巴 P3C 规范对代码进行全面检查，包括命名规范、异常处理、并发安全、数据库规范、OOP 规范、安全规约和单元测试规范。Invoke when user needs to verify code quality against P3C standards.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.p3c_code_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ohalo",
+      "features": [
+        "执行代码质量检查测试，基于阿里巴巴 P3C 规范对代码进行全面检查，包括命名规范、异常处理、并发安全、数据库规范、OOP 规范、安全规约和单元测试规范。Invoke when user ne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/p3c-code-quality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2868547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "p3c-code-quality",
+      "url": "https://clawhub.ai/skills/p3c-code-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "p3c-code-quality",
+    "url": "https://clawhub.ai/skills/p3c-code-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/p3c-code-quality-8dc48cd0345ffa0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/p3c-code-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-p3c-code-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfeb97fcf6db47b098e5e6061587d64fcb00156173978da3319331d3aca34589",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:08:19.184Z"
+}

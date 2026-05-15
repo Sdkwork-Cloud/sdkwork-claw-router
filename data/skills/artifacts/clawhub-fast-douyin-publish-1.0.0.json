@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fast-douyin-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_douyin_publish",
+  "skill": {
+    "id": 65746,
+    "skillKey": "clawhub-fast-douyin-publish",
+    "name": "Fast Douyin Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-douyin-publish",
+    "url": "https://clawhub.ai/skills/fast-douyin-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-douyin-publish-551f6bb28c96c432.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频自动发布助手。一键上传视频到抖音，支持自动文案生成和标签优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadlining",
+      "userId": "s175ctyxd79z9wwke7hx4srfah83krrm",
+      "displayName": "DeadLining",
+      "image": "https://avatars.githubusercontent.com/u/45746693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 674,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773238474481,
+      "changelog": "fast-douyin-publish 1.0.0 – Initial release\n\n- One-click video uploading to Douyin with convenient QR code login.\n- Automatically generates titles and tags if not provided, respecting Douyin’s 30-character title limit.\n- Saves publishing history and account info locally.\n- Provides troubleshooting guidance for login and publishing issues.\n- Includes main publishing script and sample configuration structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff01f8ba87c7db3535ba95e8a2a94eac9287c347a301abd5870c5c15a190b93c"
+}

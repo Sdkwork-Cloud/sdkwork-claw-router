@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57941,
+  "uuid": "skill-clawhub-x-cb",
+  "skillKey": "clawhub-x-cb",
+  "name": "Codeberg cli",
+  "summary": "Interact with Codeberg using the `x cb` CLI. Use `x cb repo`, `x cb issue`, `x cb pr`, `x cb org`, `x cb team`, and `x cb user` for managing repositories, is...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_cb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "curry798",
+      "features": [
+        "Interact with Codeberg using the `x cb` CLI",
+        "Use `x cb repo`, `x cb issue`, `x cb pr`, `x cb org`, `x cb team`, and `x cb user` for managing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-cb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112856271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-cb",
+      "url": "https://clawhub.ai/skills/x-cb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-cb",
+    "url": "https://clawhub.ai/skills/x-cb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-cb-0e494e2217019c9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-cb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-cb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a47ca0fab3a1cc41f9586b48e64fcfb6e51dea5ff02c2f56e06e75d07b3283b",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:52:23.469Z"
+}

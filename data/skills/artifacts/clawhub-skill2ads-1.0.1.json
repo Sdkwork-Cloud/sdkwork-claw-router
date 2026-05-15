@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill2ads@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill2ads",
+  "skill": {
+    "id": 39244,
+    "skillKey": "clawhub-skill2ads",
+    "name": "website to ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill2ads",
+    "url": "https://clawhub.ai/skills/skill2ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill2ads-ad5e035e250682f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape any business website and generate 5 Meta-ready ad variants matching the brand's voice. Use when the user wants to create ads, generate ad copy, or tur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chapagainashutosh8",
+      "userId": "s176264ava9c9f57p4qn2h3afd83k3yc",
+      "displayName": "chapagainashutosh8",
+      "image": "https://avatars.githubusercontent.com/u/265134321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774476937127,
+      "changelog": "- Added .env.example for easier environment setup.\n- Included package-lock.json to ensure consistent dependency installs.\n- Added skill.json to define skill metadata.\n- Updated documentation: clarified environment variable setup and reminded users not to commit real API keys or Civic tokens.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6b3180fd3dda03004e4dcf0cb916f95c69880fd6bf720081809e9e479393b11"
+}

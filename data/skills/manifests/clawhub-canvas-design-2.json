@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8795,
+  "uuid": "skill-clawhub-canvas-design-2",
+  "skillKey": "clawhub-canvas-design-2",
+  "name": "Canvas Design",
+  "summary": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying exi.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_design_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sohamganatra",
+      "features": [
+        "Create beautiful visual art in .png and .pdf documents using design philosophy",
+        "You should use this skill when the user asks to create a poster, piece of art, design, or other.",
+        "Create original visual designs, never copying existing artists' work to avoid copyright violati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-design-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7982102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-design-2",
+      "url": "https://clawhub.ai/skills/canvas-design-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-design-2",
+    "url": "https://clawhub.ai/skills/canvas-design-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-design-2-86ad5ac5d7649c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-design-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-design-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34349d4e15971dc848f13527cc160d04eec10785e16ea6b5c4ed108f6a411904",
+      "artifactSizeBytes": 2741
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T00:27:40.796Z"
+}

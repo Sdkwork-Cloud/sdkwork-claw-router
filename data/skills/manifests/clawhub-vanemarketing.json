@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72955,
+  "uuid": "skill-clawhub-vanemarketing",
+  "skillKey": "clawhub-vanemarketing",
+  "name": "品牌热点营销助手",
+  "summary": "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成小红书图文内容",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vanemarketing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qb-claw",
+      "features": [
+        "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成小红书图文内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vanemarketing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31847271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vanemarketing",
+      "url": "https://clawhub.ai/skills/vanemarketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vanemarketing",
+    "url": "https://clawhub.ai/skills/vanemarketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vanemarketing-3890469f52a52596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vanemarketing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vanemarketing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:210b947c5c34592d9c55dfa87ae48d686789df76b6bf9a759cece93295836e5c",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:31:28.515Z"
+}

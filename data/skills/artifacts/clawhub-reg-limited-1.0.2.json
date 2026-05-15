@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reg-limited@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reg_limited",
+  "skill": {
+    "id": 19541,
+    "skillKey": "clawhub-reg-limited",
+    "name": "Reg Limited"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reg-limited",
+    "url": "https://clawhub.ai/skills/reg-limited",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reg-limited-a9761b4e473afe51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vehicle restriction query and reminder tool for Chinese cities. Query daily restrictions and set scheduled reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chandler0714",
+      "userId": "s179jj473byf4237njj7hqe1jn83jybr",
+      "displayName": "chandler0714",
+      "image": "https://avatars.githubusercontent.com/u/33366056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 606,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776827902145,
+      "changelog": "修复语法错误、更新2026年新規、修复在线获取功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7347fc939e34ae855865113f4d51d2cb7abf69968bd746b5a60cdd4863ae945"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62332,
+  "uuid": "skill-clawhub-dreamclaw",
+  "skillKey": "clawhub-dreamclaw",
+  "name": "auto_dream",
+  "summary": "基于 Claude Code Auto Dream 架构，辅助手动追加日志并定期整合分析生成分类记忆文件和索引管理系统。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreamclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyunxh",
+      "features": [
+        "基于 Claude Code Auto Dream 架构，辅助手动追加日志并定期整合分析生成分类记忆文件和索引管理系统。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dreamclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267635269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dreamclaw",
+      "url": "https://clawhub.ai/skills/dreamclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreamclaw",
+    "url": "https://clawhub.ai/skills/dreamclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreamclaw-b55688e279c5959d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dreamclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dreamclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cee904dc40f27211c936590410f7b683d4f4e80bcc99537b504897f95b07cf54",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:40:53.208Z"
+}

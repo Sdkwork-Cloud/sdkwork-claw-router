@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57146,
+  "uuid": "skill-clawhub-cicd-workflow",
+  "skillKey": "clawhub-cicd-workflow",
+  "name": "CICD工作流程技能",
+  "summary": "Provides CI/CD pipeline templates and interactive setup for Java + Vue projects with GitLab CI or Jenkins, supporting linting, testing, building, Dockerizing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cicd_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小明",
+      "features": [
+        "Provides CI/CD pipeline templates and interactive setup for Java + Vue projects with GitLab CI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cicd-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264091070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cicd-workflow",
+      "url": "https://clawhub.ai/skills/cicd-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cicd-workflow",
+    "url": "https://clawhub.ai/skills/cicd-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cicd-workflow-275f599625ceea9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cicd-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cicd-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9a34ccc408cc56343c73825e77d968ebb3dbdf8bf3b881f4803df3538b62162",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:54:23.270Z"
+}

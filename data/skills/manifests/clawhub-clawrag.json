@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12522,
+  "uuid": "skill-clawhub-clawrag",
+  "skillKey": "clawhub-clawrag",
+  "name": "ClawRAG - Self-hosted RAG & Memory",
+  "summary": "Self-hosted RAG engine with hybrid semantic and keyword search, document ingestion, local privacy, and seamless OpenClaw integration via Docker.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawrag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2dogsandanerd",
+      "features": [
+        "Self-hosted RAG engine with hybrid semantic and keyword search, document ingestion, local priva."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawrag@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235518900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawrag",
+      "url": "https://clawhub.ai/skills/clawrag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawrag",
+    "url": "https://clawhub.ai/skills/clawrag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawrag-e3bb550fe333dc9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawrag@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawrag-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71b96a3b2edb3a5ce28cb729e64e78f5def4b8b1408966c7f098941e39c31889",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T18:58:35.784Z"
+}

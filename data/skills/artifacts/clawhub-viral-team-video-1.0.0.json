@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/viral-team-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_team_video",
+  "skill": {
+    "id": 45249,
+    "skillKey": "clawhub-viral-team-video",
+    "name": "Viral Team Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-team-video",
+    "url": "https://clawhub.ai/skills/viral-team-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-team-video-f8a8ed19f37e4a82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get shareable team clips ready to post, without touching a single slider. Upload your raw team footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776911008792,
+      "changelog": "Viral Team Video 1.0.0 — Initial Release\n\n- Instantly turn raw team footage into shareable video clips ready for social media.\n- Upload MP4, MOV, AVI, or WebM files up to 500MB; simple instructions trigger AI-powered editing and upbeat music addition.\n- Automatic backend connection and session management with 100 free credits for new users.\n- Quick export to 1080p MP4, download links in 1–2 minutes for short clips.\n- Handles authentication, error recovery, and session continuity transparently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ced7cfeefe3d776035498060076c0ef53d354ac8c2fccb13766e9c28623b2f6"
+}

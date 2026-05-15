@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-saver-75plus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver_75plus",
+  "skill": {
+    "id": 23496,
+    "skillKey": "clawhub-token-saver-75plus",
+    "name": "Token Saver 75+"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver-75plus",
+    "url": "https://clawhub.ai/skills/token-saver-75plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-75plus-5a2aad679d1d4b72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically classifies requests to optimize cost by routing to the cheapest capable model and applies maximum output compression for 75%+ token savings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariovallereyes",
+      "userId": "publishers:mariovallereyes",
+      "displayName": "mariovallereyes",
+      "image": "https://avatars.githubusercontent.com/u/120954554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1027,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771117171588,
+      "changelog": "Initial release: T1-T4 tier classifier, model routing, output compression, tool gating protocol.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce0fd6901a996c9418298b7e6fe651cf24f84ea23335386075f8b4674449c668"
+}

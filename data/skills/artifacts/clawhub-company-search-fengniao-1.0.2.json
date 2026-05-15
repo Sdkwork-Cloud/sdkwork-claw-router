@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-search-fengniao@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_search_fengniao",
+  "skill": {
+    "id": 68137,
+    "skillKey": "clawhub-company-search-fengniao",
+    "name": "China company search fengniao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-search-fengniao",
+    "url": "https://clawhub.ai/skills/company-search-fengniao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-search-fengniao-e9e3d39b48dc009b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业查询、工商查询、公司查询、企业信息查询与企业风险查询 Skill。风鸟 Fengniao（Riskbird）支持查公司基本信息、法人、股东、主要人员、对外投资、工商变更、企业信用，以及被执行、失信、限高、经营异常、严重违法、行政处罚等风险数据，适用于企业尽调、合作方背景调查、供应商准入、客户风险识别、签约前核..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinshu001",
+      "userId": "s1793dx62mxa5ncd4ehp71tvzx84dxzj",
+      "displayName": "xinshu001",
+      "image": "https://avatars.githubusercontent.com/u/270278415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775727350484,
+      "changelog": "- 调整公用 API Key 每日额度：由 200 次提升至 1000 次。\n- 修改发布包配置说明，`FIXED_CHANNEL` 更名为 `CHANNEL`。\n- 其余功能及使用方式保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:172e1b55e1275d17c7e8e4e81dcd5663a0454c281f772a084584449bc20317d3"
+}

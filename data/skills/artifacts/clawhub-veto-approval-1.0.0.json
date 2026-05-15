@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veto-approval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veto_approval",
+  "skill": {
+    "id": 40617,
+    "skillKey": "clawhub-veto-approval",
+    "name": "Veto Approval (Human-in-the-Loop)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veto-approval",
+    "url": "https://clawhub.ai/skills/veto-approval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veto-approval-690c0848e0b107ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pause your agent for human approval before high-risk actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrchop",
+      "userId": "s17143pczs5ckrny7dfbycs0zh83hrga",
+      "displayName": "MrChop",
+      "image": "https://avatars.githubusercontent.com/u/15650552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774380982919,
+      "changelog": "Veto Approval Skill v1.0.0\n\n- Initial release of the Veto Approval skill.\n- Enables human-in-the-loop approval for high-risk agent actions via one-click email.\n- Requires user to provide an API key from vetoapi.com.\n- Pauses agent execution until the recipient approves or rejects the action.\n- Simple integration with the ask_human_permission function and flexible context/approval workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79eb48d7c9f735954195d9fbfd1d0f04bd576d4d22ec970af31b6107799129b4"
+}

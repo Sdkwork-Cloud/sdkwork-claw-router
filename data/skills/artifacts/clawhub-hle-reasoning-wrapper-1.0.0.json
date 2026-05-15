@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hle-reasoning-wrapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hle_reasoning_wrapper",
+  "skill": {
+    "id": 18054,
+    "skillKey": "clawhub-hle-reasoning-wrapper",
+    "name": "Hle Reasoning Wrapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hle-reasoning-wrapper",
+    "url": "https://clawhub.ai/skills/hle-reasoning-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hle-reasoning-wrapper-371a21d93f1b5399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wraps HLE benchmark questions in a structured Chain-of-Thought (CoT) reasoning process. Use when answering HLE questions to ensure strict step-by-step logic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771187787999,
+      "changelog": "Initial release supporting structured reasoning for HLE benchmark questions.\n\n- Provides prompt formatting to enforce Chain-of-Thought (Thought/Answer) structure.\n- Validates model outputs for compliance with the required reasoning steps.\n- Simple API: `formatPrompt` to structure prompts and `validateOutput` to check responses.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d4c18edd85b512cad26ca86f56fc4d7cea5fe37308dec2260abf3a9fd945e77"
+}

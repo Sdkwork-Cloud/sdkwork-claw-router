@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70495,
+  "uuid": "skill-clawhub-wan26-text-to-image",
+  "skillKey": "clawhub-wan26-text-to-image",
+  "name": "万相 2.6 生成微信公众号封面图",
+  "summary": "使用阿里云万相 2.6 模型生成微信公众号封面图和技术架构设计图",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wan26_text_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "love254443233",
+      "features": [
+        "使用阿里云万相 2.6 模型生成微信公众号封面图和技术架构设计图"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wan26-text-to-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6228500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wan26-text-to-image",
+      "url": "https://clawhub.ai/skills/wan26-text-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wan26-text-to-image",
+    "url": "https://clawhub.ai/skills/wan26-text-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wan26-text-to-image-7240a3f4cb73a988.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wan26-text-to-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wan26-text-to-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a50773c52254999962d69871c53977b9efb66bf668ddfccafc3e425993369f2",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T14:56:05.143Z"
+}

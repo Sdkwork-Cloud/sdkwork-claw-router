@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergence-deepseek-tui@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_deepseek_tui",
+  "skill": {
+    "id": 54990,
+    "skillKey": "clawhub-emergence-deepseek-tui",
+    "name": "Use DeepSeek TUI CLI as an autonomous code assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-deepseek-tui",
+    "url": "https://clawhub.ai/skills/emergence-deepseek-tui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-deepseek-tui-9cd4e5977ae5fcff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use DeepSeek TUI CLI as an autonomous code assistant - two modes: `deepseek exec` (headless, text-in/text-out, no filesystem access) for delegation from anot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emergencescience",
+      "userId": "s17a35617mabw6kewbzv4z4e7x83w38h",
+      "displayName": "emergencescience",
+      "image": "https://avatars.githubusercontent.com/u/264674637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778150617331,
+      "changelog": "Initial release – enables Hermes/OpenClaw agents to use DeepSeek TUI CLI as an autonomous code assistant in two distinct modes:\n\n- Supports `deepseek exec` (headless, text-in/text-out, no filesystem access) for delegated code generation.\n- Supports `deepseek run` (interactive, full tool-calling with filesystem access) for direct autonomous coding and file manipulation.\n- Provides detailed usage guidance, best practices, and troubleshooting tips for both modes.\n- Includes practical workflow examples and installation instructions.\n- Tags and related skills metadata for integration into multi-agent coding workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:366b406580fa787a9e842cf96e8d3e03aaf9c79d63da02f6a77085f5c157339f"
+}

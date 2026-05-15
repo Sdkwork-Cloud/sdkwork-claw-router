@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73466,
+  "uuid": "skill-clawhub-family-rebate",
+  "skillKey": "clawhub-family-rebate",
+  "name": "全家返利管家",
+  "summary": "家庭返利统一管理工具，聚合全家人的购物返利账户，统一追踪、统一提现，帮全家省钱。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_rebate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "家庭返利统一管理工具，聚合全家人的购物返利账户，统一追踪、统一提现，帮全家省钱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-rebate@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-rebate",
+      "url": "https://clawhub.ai/skills/family-rebate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-rebate",
+    "url": "https://clawhub.ai/skills/family-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-rebate-cba264f199d5d31a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-rebate@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-rebate-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fa7cd5131ef6b724511285a67e640c7382d86367d18ef1a6c974843b41bfa95",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:46:09.071Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19710,
+  "uuid": "skill-clawhub-openclaw-super-healthcheck",
+  "skillKey": "clawhub-openclaw-super-healthcheck",
+  "name": "Advanced OpenClaw System Health Check & Repair",
+  "summary": "Perform comprehensive security audits, system updates, network and service status checks, and configure scheduled health monitoring for OpenClaw deployments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_super_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pettercc2024-create",
+      "features": [
+        "Perform comprehensive security audits, system updates, network and service status checks, and c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-super-healthcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233812286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-super-healthcheck",
+      "url": "https://clawhub.ai/skills/openclaw-super-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-super-healthcheck",
+    "url": "https://clawhub.ai/skills/openclaw-super-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-super-healthcheck-ac8b0ef561c9a694.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-super-healthcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-super-healthcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e30ea3751e924b099b4e26d94cd0bf72f02c6e735282e7617c38cdf3d9e8de4",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T19:27:16.466Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37589,
+  "uuid": "skill-clawhub-consensus-commons",
+  "skillKey": "clawhub-consensus-commons",
+  "name": "Consensus Commons",
+  "summary": "Multi-agent adversarial decision council with consensus hardening. Routes intents to specialist panels (finance, strategy, general), runs adversarial review...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_commons",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shyam Desigan",
+      "features": [
+        "Multi-agent adversarial decision council with consensus hardening",
+        "Routes intents to specialist panels (finance, strategy, general), runs adversarial review..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-commons@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260159079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-commons",
+      "url": "https://clawhub.ai/skills/consensus-commons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-commons",
+    "url": "https://clawhub.ai/skills/consensus-commons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-commons-f981745dcedb589a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-commons@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-commons-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a1b43ebeb42307501456a2e33003efacc275464a7bacc384890148aa1316c98",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:49:36.322Z"
+}

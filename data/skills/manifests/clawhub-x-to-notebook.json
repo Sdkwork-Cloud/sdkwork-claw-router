@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23719,
+  "uuid": "skill-clawhub-x-to-notebook",
+  "skillKey": "clawhub-x-to-notebook",
+  "name": "X To Notebook",
+  "summary": "Push X/Twitter bookmarks into Google NotebookLM notebooks, auto-routed by bookmark folder. Use when the user wants to send bookmarks to NotebookLM, says \"pus...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_to_notebook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "features": [
+        "Push X/Twitter bookmarks into Google NotebookLM notebooks, auto-routed by bookmark folder",
+        "Use when the user wants to send bookmarks to NotebookLM, says \"pus..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-to-notebook@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146075220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-to-notebook",
+      "url": "https://clawhub.ai/skills/x-to-notebook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-to-notebook",
+    "url": "https://clawhub.ai/skills/x-to-notebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-to-notebook-0423a41afd426adb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-to-notebook@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-to-notebook-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:620686ce7cea4923c7e6a03e107ff71b3a4d94ab16e0bf0ee1d117a1992da297",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:41:18.726Z"
+}

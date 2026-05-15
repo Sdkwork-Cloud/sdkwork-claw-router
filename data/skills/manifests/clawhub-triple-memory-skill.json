@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9975,
+  "uuid": "skill-clawhub-triple-memory-skill",
+  "skillKey": "clawhub-triple-memory-skill",
+  "name": "Triple Memory",
+  "summary": "Complete memory system combining LanceDB auto-recall, Git-Notes structured memory, and file-based workspace search. Use when setting up comprehensive agent memory, when you need persistent context across sessions, or when managing decision.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triple_memory_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ktpriyatham",
+      "features": [
+        "Complete memory system combining LanceDB auto-recall, Git-Notes structured memory, and file-bas.",
+        "Use when setting up comprehensive agent memory, when you need persistent context across session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/triple-memory-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4175700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "triple-memory-skill",
+      "url": "https://clawhub.ai/skills/triple-memory-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triple-memory-skill",
+    "url": "https://clawhub.ai/skills/triple-memory-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triple-memory-skill-3f3421198e265b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/triple-memory-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-triple-memory-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b17b7c0b40287da96d20f175af5494a165c256d42794e1c21dffbe34ed68479",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T04:40:34.255Z"
+}

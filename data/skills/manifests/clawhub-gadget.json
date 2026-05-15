@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70699,
+  "uuid": "skill-clawhub-gadget",
+  "skillKey": "clawhub-gadget",
+  "name": "Gadget",
+  "summary": "提供智能家居、硬核数码新品测评、购买建议及极客玩法。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gadget",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供智能家居、硬核数码新品测评、购买建议及极客玩法。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gadget@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gadget",
+      "url": "https://clawhub.ai/skills/gadget"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gadget",
+    "url": "https://clawhub.ai/skills/gadget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gadget-4e5aa69abae35133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gadget@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gadget-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a55d188753e0005b79d8a00bdede7820ac44facd12099ca658f5cfd07e5e0765",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:01:01.543Z"
+}

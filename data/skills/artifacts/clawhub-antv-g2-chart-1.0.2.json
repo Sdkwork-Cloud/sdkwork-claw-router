@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/antv-g2-chart@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antv_g2_chart",
+  "skill": {
+    "id": 45452,
+    "skillKey": "clawhub-antv-g2-chart",
+    "name": "AntV Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antv-g2-chart",
+    "url": "https://clawhub.ai/skills/antv-g2-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antv-g2-chart-ff37ef682fdbbc17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate G2 v5 chart code. Use when user asks for G2 charts, bar charts, line charts, pie charts, scatter plots, area charts, or any data visualization with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lxfu1",
+      "userId": "s170dgemqb0q18r57jt3shx5rh842c9p",
+      "displayName": "Joel Alan",
+      "image": "https://avatars.githubusercontent.com/u/31396322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777455085622,
+      "changelog": "- Updated skill description and documentation for G2 v5, emphasizing accurate chart code generation and strict adherence to G2 v5 best practices.\n- Added comprehensive core constraints and forbidden patterns to ensure correct code (e.g., enforced Spec Mode, mark type restrictions, single use of chart.options()).\n- Clarified distinctions from G2 v4, highlighting Spec Mode usage and correct multi-mark composition with 'view' and 'children'.\n- Included common mistakes and hallucinated mark types for error prevention.\n- Improved explanations for coordinate systems, palette configuration, and style rules.\n- No code or API changes in this version—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:567c0a7a4ccca3b1970a7f6b8cd9c3e8d84ae94aa5a082be04d653206957212b"
+}

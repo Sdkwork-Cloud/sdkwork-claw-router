@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23420,
+  "uuid": "skill-clawhub-captcha-recognition",
+  "skillKey": "clawhub-captcha-recognition",
+  "name": "captcha-recognition",
+  "summary": "Recognizes CAPTCHA images using ddddocr library. Invoke when user needs to recognize/decode CAPTCHA images or mentions captcha verification.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_recognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "Recognizes CAPTCHA images using ddddocr library",
+        "Invoke when user needs to recognize/decode CAPTCHA images or mentions captcha verification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/captcha-recognition@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "captcha-recognition",
+      "url": "https://clawhub.ai/skills/captcha-recognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-recognition",
+    "url": "https://clawhub.ai/skills/captcha-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-recognition-ca0db8a05c2cd014.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/captcha-recognition@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-captcha-recognition-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf4c3e08f202eb2f1426837f3c1ac7b4b0c78200d169dd6180582b7fd64966a1",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T17:28:05.876Z"
+}

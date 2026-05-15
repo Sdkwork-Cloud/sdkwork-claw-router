@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11292,
+  "uuid": "skill-clawhub-airweave",
+  "skillKey": "clawhub-airweave",
+  "name": "Airweave",
+  "summary": "Context retrieval layer for AI agents across users' applications. Search and retrieve context from Airweave collections. Airweave indexes and syncs data from user applications to enable optimal context retrieval by AI agents. Supports sema.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airweave",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lennert",
+      "features": [
+        "Context retrieval layer for AI agents across users' applications",
+        "Search and retrieve context from Airweave collections",
+        "Airweave indexes and syncs data from user applications to enable optimal context retrieval by A.",
+        "Supports semantic, keyword, and agentic search"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airweave@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25402511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airweave",
+      "url": "https://clawhub.ai/skills/airweave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airweave",
+    "url": "https://clawhub.ai/skills/airweave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airweave-6b6320f8a08c4150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airweave@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-airweave-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9da2b566707377b2425583b98e2c7087f03309648fc9257a37f9193fcdb1cb9",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T01:53:59.373Z"
+}

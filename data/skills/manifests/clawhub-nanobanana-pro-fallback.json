@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11465,
+  "uuid": "skill-clawhub-nanobanana-pro-fallback",
+  "skillKey": "clawhub-nanobanana-pro-fallback",
+  "name": "Nanobanana Pro",
+  "summary": "Nano Banana Pro with auto model fallback — generate/edit images via Gemini Image API. Run via: uv run {baseDir}/scripts/generate_image.py --prompt 'desc' --filename 'out.png' [--resolution 1K|2K|4K] [-i input.png]. Supports text-to-image +.",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana_pro_fallback",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yazelin",
+      "features": [
+        "Nano Banana Pro with auto model fallback — generate/edit images via Gemini Image API",
+        "Run via: uv run {baseDir}/scripts/generate_image.py --prompt 'desc' --filename 'out.png' [--res.",
+        "Supports text-to-image + image-to-image (up to 14)",
+        "1K/2K/4K"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nanobanana-pro-fallback@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6235553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nanobanana-pro-fallback",
+      "url": "https://clawhub.ai/skills/nanobanana-pro-fallback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana-pro-fallback",
+    "url": "https://clawhub.ai/skills/nanobanana-pro-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana-pro-fallback-e38e389e8f0ad585.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nanobanana-pro-fallback@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nanobanana-pro-fallback-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4ebdde00855d68319c268e44a2fbac328aacf9b4edcdb71fbe8ca3215efc0e9",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T16:53:31.661Z"
+}

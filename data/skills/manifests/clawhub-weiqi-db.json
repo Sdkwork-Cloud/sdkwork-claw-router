@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68210,
+  "uuid": "skill-clawhub-weiqi-db",
+  "skillKey": "clawhub-weiqi-db",
+  "name": "围棋棋谱数据库",
+  "summary": "weiqi-db 围棋棋谱数据库 - 本地棋谱管理工具，支持SGF导入、元数据编辑、标签管理、全文搜索。数据存储于单个JSON文件，AI友好的JSON接口设计。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_db",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tokener",
+      "features": [
+        "weiqi-db 围棋棋谱数据库",
+        "本地棋谱管理工具，支持SGF导入、元数据编辑、标签管理、全文搜索。数据存储于单个JSON文件，AI友好的JSON接口设计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weiqi-db@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39153812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weiqi-db",
+      "url": "https://clawhub.ai/skills/weiqi-db"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-db",
+    "url": "https://clawhub.ai/skills/weiqi-db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-db-050a314ed1ce3941.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weiqi-db@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-weiqi-db-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9450a765de520f2913bfd70610be59f464e99c9e17ac20b5ec4da6687348ecc",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:10:47.787Z"
+}

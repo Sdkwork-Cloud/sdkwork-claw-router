@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21766,
+  "uuid": "skill-clawhub-linkedin-integration",
+  "skillKey": "clawhub-linkedin-integration",
+  "name": "Linkedin",
+  "summary": "LinkedIn integration. Manage Users, Organizations. Use when the user wants to interact with LinkedIn data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "LinkedIn integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with LinkedIn data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-integration",
+      "url": "https://clawhub.ai/skills/linkedin-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-integration",
+    "url": "https://clawhub.ai/skills/linkedin-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-integration-3c479400f460767e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f2801f0ef658f798ff053190c4266f67e6bf2e8c74551a4e68848086c2586f4",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:07:43.865Z"
+}

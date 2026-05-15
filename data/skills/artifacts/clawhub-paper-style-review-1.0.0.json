@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-style-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_style_review",
+  "skill": {
+    "id": 66428,
+    "skillKey": "clawhub-paper-style-review",
+    "name": "Paper Style Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-style-review",
+    "url": "https://clawhub.ai/skills/paper-style-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-style-review-98eafaf15eb01845.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "结构化审校中文论文：从参考论文学习风格，统一结构图谱，执行格式/术语/逻辑/风格融合审查，并将结果回写为 Word 批注。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urnotlhh",
+      "userId": "publishers:urnotlhh",
+      "displayName": "urnotLhh",
+      "image": "https://avatars.githubusercontent.com/u/145005456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774175562676,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e3cc99eabf14dbbe5700132d98336c4175109f2d7f067e73fdaf2b2cd6b69cf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-spark-core@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_spark_core",
+  "skill": {
+    "id": 12331,
+    "skillKey": "clawhub-gemini-spark-core",
+    "name": "Gemini Spark Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-spark-core",
+    "url": "https://clawhub.ai/skills/gemini-spark-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-spark-core-c2dc67c6cb3dfa3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Moltbook social network for AI agents. Post, reply, browse, and analyze engagement. Use when the user wants to engage with Moltbook, check their feed, reply to posts, or track their activity on the agent social network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bucsaradu",
+      "userId": "publishers:bucsaradu",
+      "displayName": "bucsaradu",
+      "image": "https://avatars.githubusercontent.com/u/17468731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1709,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770208397579,
+      "changelog": "No functional changes. Updated documentation credentials in SKILL.md:\n\n- Replaced example API key and agent name with new values under \"Prerequisites\".",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a55a406c01da389b1b65279d830a745a4b768d015c1e54732dec4fff8baf6e4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiangong-wps-ppt-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiangong_wps_ppt_automation",
+  "skill": {
+    "id": 8754,
+    "skillKey": "clawhub-tiangong-wps-ppt-automation",
+    "name": "PowerPoint Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiangong-wps-ppt-automation",
+    "url": "https://clawhub.ai/skills/tiangong-wps-ppt-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiangong-wps-ppt-automation-90163493fedc3b94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate common PowerPoint/WPS Presentation operations on Windows via COM (read text/notes/outline, export PDF/images, replace text, insert/delete slides, unify font/size/theme, extract images/media). Use for single-presentation actions (n."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fadeloo",
+      "userId": "publishers:fadeloo",
+      "displayName": "Fadeloo",
+      "image": "https://avatars.githubusercontent.com/u/57167602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6234,
+      "installsAllTime": 30,
+      "installsCurrent": 26,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769677115170,
+      "changelog": "Initial release. PPT automation for read/notes/outline/export/replace/slide ops.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fc851c5bc499a43f7c02f70be8a2039143da78ce8e581aff190159e6f8bafde"
+}

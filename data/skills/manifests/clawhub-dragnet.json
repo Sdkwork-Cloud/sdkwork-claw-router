@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53865,
+  "uuid": "skill-clawhub-dragnet",
+  "skillKey": "clawhub-dragnet",
+  "name": "Dragnet",
+  "summary": "Generate a verified Dragnet marketplace profile. Scans your OpenClaw workspace — SOUL.md, AGENTS.md, USER.md, MEMORY.md, conversation exports, installed skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dragnet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UnrelatedWorks",
+      "features": [
+        "Generate a verified Dragnet marketplace profile",
+        "Scans your OpenClaw workspace — SOUL.md, AGENTS.md, USER.md, MEMORY.md, conversation exports, i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dragnet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91271174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dragnet",
+      "url": "https://clawhub.ai/skills/dragnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dragnet",
+    "url": "https://clawhub.ai/skills/dragnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dragnet-e85c151d07a352ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dragnet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dragnet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef71ec052cbc6191d7169e2629406dba5cfb8eb62dcd952670a5ab2952875e95",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:28:29.107Z"
+}

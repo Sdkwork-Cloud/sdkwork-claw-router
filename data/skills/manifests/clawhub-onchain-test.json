@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12238,
+  "uuid": "skill-clawhub-onchain-test",
+  "skillKey": "clawhub-onchain-test",
+  "name": "Onchain Test",
+  "summary": "CLI for crypto portfolio tracking, market data, and CEX history. Use when the user asks about crypto prices, wallet balances, portfolio values, Coinbase/Binance holdings, or Polymarket predictions.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arein",
+      "features": [
+        "CLI for crypto portfolio tracking, market data, and CEX history",
+        "Use when the user asks about crypto prices, wallet balances, portfolio values, Coinbase/Binance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onchain-test@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/966091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onchain-test",
+      "url": "https://clawhub.ai/skills/onchain-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-test",
+    "url": "https://clawhub.ai/skills/onchain-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-test-41bb21d48b8a1d8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onchain-test@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onchain-test-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ca9b0588e10412d48258f2e82d2988f7a1ef8cfe7e64c4f7e409fff486bd8bc",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T08:04:24.113Z"
+}

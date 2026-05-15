@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-production@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_production",
+  "skill": {
+    "id": 20444,
+    "skillKey": "clawhub-video-production",
+    "name": "Video Production"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-production",
+    "url": "https://clawhub.ai/skills/video-production",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-production-d41de80ee254d565.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete A/B video pipeline — storyboard, Veo 3 batch generation, browser preview with feedback loop, and ffmpeg assembly into final videos. Use when creatin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omerflo",
+      "userId": "publishers:omerflo",
+      "displayName": "omerflo",
+      "image": "https://avatars.githubusercontent.com/u/48205149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 899,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771971849067,
+      "changelog": "Initial release: Veo 3 AI video pipeline — batch generation, browser preview, A/B testing, and ffmpeg assembly into final cuts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1ff2527f1fddb53d214680e53c0227957493c4f765ea46fd1edaf1d9ac8b412"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaiwu8@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaiwu8",
+  "skill": {
+    "id": 63485,
+    "skillKey": "clawhub-kaiwu8",
+    "name": "开悟吧"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaiwu8",
+    "url": "https://clawhub.ai/skills/kaiwu8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaiwu8-99e121865b4968ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "开悟吧平台型 Skill - 管理并激活已购功能。用户说\"开悟吧\"时执行 activate.py 脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markma84",
+      "userId": "s1781mqr2e06xdvhk7gbfzd2vs83kfra",
+      "displayName": "MarkMa84",
+      "image": "https://avatars.githubusercontent.com/u/19796416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1777476726821,
+      "changelog": "删除 SKILL.md 第5步（误导）；DB how 字段从「标记后插入」改为「末尾追加」，解决 marker 死循环问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:068b31c052128f1716f156a86fae6542a8f08dcb6d03e85af11c10cdb890ea2b"
+}

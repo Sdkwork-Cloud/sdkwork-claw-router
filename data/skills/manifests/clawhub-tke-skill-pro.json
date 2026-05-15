@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63605,
+  "uuid": "skill-clawhub-tke-skill-pro",
+  "skillKey": "clawhub-tke-skill-pro",
+  "name": "tke skill",
+  "summary": "腾讯云 TKE 容器服务运维专家，支持集群巡检、状态查询、节点池管理、kubeconfig 获取等",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tke_skill_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tangcong",
+      "features": [
+        "腾讯云 TKE 容器服务运维专家，支持集群巡检、状态查询、节点池管理、kubeconfig 获取等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tke-skill-pro@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2403673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tke-skill-pro",
+      "url": "https://clawhub.ai/skills/tke-skill-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tke-skill-pro",
+    "url": "https://clawhub.ai/skills/tke-skill-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tke-skill-pro-58ee6ebbe6c49a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tke-skill-pro@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tke-skill-pro-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:618ae10b838ecc9643b3daf189448b25524df934206f4d81d57e79ec1562ff80",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:34:41.372Z"
+}

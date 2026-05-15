@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20788,
+  "uuid": "skill-clawhub-bento-grid",
+  "skillKey": "clawhub-bento-grid",
+  "name": "Bento Grid Generator",
+  "summary": "Generate beautiful bento grid layouts for social media posts. Create Instagram/Twitter cards with statistics, calendars, music visualization, and custom layo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bento_grid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "limoxt",
+      "features": [
+        "Generate beautiful bento grid layouts for social media posts",
+        "Create Instagram/Twitter cards with statistics, calendars, music visualization, and custom layo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bento-grid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102217440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bento-grid",
+      "url": "https://clawhub.ai/skills/bento-grid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bento-grid",
+    "url": "https://clawhub.ai/skills/bento-grid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bento-grid-b47fcfc87332f3cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bento-grid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bento-grid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c1cb025720db41349feb2fdd9aea05fc8973465b93c132d7e17d4658abcc0db",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:10:12.620Z"
+}

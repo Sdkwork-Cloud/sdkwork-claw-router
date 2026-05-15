@@ -1,12 +1,21 @@
 pub mod edge_server;
+mod gateway_api_key_auth;
+mod openai_passthrough_payload;
+mod openai_passthrough_routes;
+mod openai_route_taxonomy;
 mod passthrough;
+mod provider_account_auth;
+mod provider_passthrough_transport;
+mod route_scoped_openai_passthrough;
 pub mod runtime;
 
 pub use edge_server::{edge_server_router, EdgeServerConfig};
-pub use passthrough::{
+pub use openai_passthrough_routes::{
     openai_compatible_passthrough_paths, openai_method_passthrough_paths,
-    provider_native_passthrough_providers, router_with_provider_passthrough_config,
     stored_chat_completion_passthrough_paths,
+};
+pub use passthrough::{
+    provider_native_passthrough_providers, router_with_provider_passthrough_config,
 };
 pub use runtime::{
     router_from_env, router_with_database_and_api_key_config,

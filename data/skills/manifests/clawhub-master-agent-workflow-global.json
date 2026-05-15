@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65228,
+  "uuid": "skill-clawhub-master-agent-workflow-global",
+  "skillKey": "clawhub-master-agent-workflow-global",
+  "name": "Master Agent Workflow Global",
+  "summary": "支持跨平台的一键安装全局主控代理工作流，具备多级代理调度、错误处理、配置迁移和模板管理能力。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_agent_workflow_global",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shujianming",
+      "features": [
+        "支持跨平台的一键安装全局主控代理工作流，具备多级代理调度、错误处理、配置迁移和模板管理能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/master-agent-workflow-global@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32048731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "master-agent-workflow-global",
+      "url": "https://clawhub.ai/skills/master-agent-workflow-global"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-agent-workflow-global",
+    "url": "https://clawhub.ai/skills/master-agent-workflow-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-agent-workflow-global-2f0adecd5fb38b5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/master-agent-workflow-global@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-master-agent-workflow-global-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35567acaddaa9472a917f919f8de0b4564934f9112f8d5ef03a60b2759f9cf10",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:05:06.470Z"
+}

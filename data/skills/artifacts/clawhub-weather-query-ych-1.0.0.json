@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-query-ych@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_query_ych",
+  "skill": {
+    "id": 67640,
+    "skillKey": "clawhub-weather-query-ych",
+    "name": "weather-query-ych"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-query-ych",
+    "url": "https://clawhub.ai/skills/weather-query-ych",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-query-ych-cc05192a77d27f5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询指定城市和日期的天气预报，提供天气状况及温度范围，支持中文城市名和日期解析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuancaihua",
+      "userId": "publishers:yuancaihua",
+      "displayName": "yuancaihua",
+      "image": "https://avatars.githubusercontent.com/u/33807378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 523,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772613558709,
+      "changelog": "Initial release with simplified implementation and usage:\n\n- Replaced shell script execution with a Python agent for weather queries.\n- Updated documentation to focus on concise usage, sample inputs, and clear output formats.\n- Simplified output: formatted text response with city, date, weather status, and temperature range.\n- Added clear error handling for unrecognized cities and API failures.\n- Removed legacy shell scripts and related usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5917ffdbc14c640eef4f6a30039ab122670bd57d8a5b67967a2bc88716aea20"
+}

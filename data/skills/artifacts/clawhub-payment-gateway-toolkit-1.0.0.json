@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payment-gateway-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_gateway_toolkit",
+  "skill": {
+    "id": 58685,
+    "skillKey": "clawhub-payment-gateway-toolkit",
+    "name": "Payment Gateway Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-gateway-toolkit",
+    "url": "https://clawhub.ai/skills/payment-gateway-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-gateway-toolkit-f4848e35cd422ac1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支付网关工具包 - 集成Stripe、支付宝等多渠道支付处理，支持订单创建、退款、查询等功能 | Payment Gateway Toolkit - Multi-channel payment processing with Stripe, Alipay integration"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776410892799,
+      "changelog": "Initial release: Stripe and Alipay payment integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31bf2f82aca7b27e4432f05d2db923f7ff997451aa7953b3aa59484c9bf8b138"
+}

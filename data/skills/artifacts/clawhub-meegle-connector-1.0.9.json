@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meegle-connector@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meegle_connector",
+  "skill": {
+    "id": 22092,
+    "skillKey": "clawhub-meegle-connector",
+    "name": "Meegle Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meegle-connector",
+    "url": "https://clawhub.ai/skills/meegle-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meegle-connector-468056e75558666f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Meegle via MCP service, support OAuth authentication, and enable querying and managing work items, views, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wadxm",
+      "userId": "publishers:wadxm",
+      "displayName": "wadxm",
+      "image": "https://avatars.githubusercontent.com/u/9190997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773763968979,
+      "changelog": "- Updated npm package dependency from mcporter to @lark-project/meego-mcporter.\n- Changed all instructions, commands, and links to use the new @lark-project/meego-mcporter package.\n- Revised OAuth and credential management documentation for clarity and security, emphasizing user confirmation at each step.\n- Enhanced security instructions: agents must never access, store, or log credential content except as specifically instructed.\n- Added a new _meta.json metadata file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:239dc8c97aed407ae817ef5eb05916c68011dff21ba4a1204cc922a41c0bb1e8"
+}

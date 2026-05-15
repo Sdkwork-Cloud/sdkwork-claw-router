@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27705,
+  "uuid": "skill-clawhub-paper-parse-figures",
+  "skillKey": "clawhub-paper-parse-figures",
+  "name": "Paper Parse",
+  "summary": "Parse academic PDF papers into markdown with figure extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_parse_figures",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chen-Li-17",
+      "features": [
+        "Parse academic PDF papers into markdown with figure extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-parse-figures@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37493896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-parse-figures",
+      "url": "https://clawhub.ai/skills/paper-parse-figures"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-parse-figures",
+    "url": "https://clawhub.ai/skills/paper-parse-figures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-parse-figures-999dc1476a786ed9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-parse-figures@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-parse-figures-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e1f65084a618a45de4f6180b8128c41e99e07a337d7e6aadc80e0ddcdae8686",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:34:54.329Z"
+}

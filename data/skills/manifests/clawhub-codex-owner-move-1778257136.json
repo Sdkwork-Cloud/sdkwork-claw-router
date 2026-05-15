@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49765,
+  "uuid": "skill-clawhub-codex-owner-move-1778257136",
+  "skillKey": "clawhub-codex-owner-move-1778257136",
+  "name": "Codex Owner Move E2E",
+  "summary": "Validates owner migration for a ClawHub skill, including publishing, migrating with flag, inspecting, and cleanup, preserving version and audit history.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_owner_move_1778257136",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenClaw",
+      "features": [
+        "Validates owner migration for a ClawHub skill, including publishing, migrating with flag, inspe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-owner-move-1778257136@0.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/codex-owner-move-1778257136/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-owner-move-1778257136",
+      "url": "https://clawhub.ai/skills/codex-owner-move-1778257136"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-owner-move-1778257136",
+    "url": "https://clawhub.ai/skills/codex-owner-move-1778257136",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-owner-move-1778257136-a9efc2ca4f03e873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-owner-move-1778257136@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-owner-move-1778257136-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d45fb6fc0caed6f678a31de9b510a743b060996fd1481409573b8aa1ee4a7bc",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T16:19:02.781Z"
+}

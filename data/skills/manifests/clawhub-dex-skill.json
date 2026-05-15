@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50372,
+  "uuid": "skill-clawhub-dex-skill",
+  "skillKey": "clawhub-dex-skill",
+  "name": "Dex",
+  "summary": "Manage your Dex personal CRM — search, create, and update contacts, log interaction notes, set follow-up reminders, organize contacts with tags and groups, a...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dex_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Omar Cruz",
+      "features": [
+        "Manage your Dex personal CRM — search, create, and update contacts, log interaction notes, set."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dex-skill@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3529184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dex-skill",
+      "url": "https://clawhub.ai/skills/dex-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dex-skill",
+    "url": "https://clawhub.ai/skills/dex-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dex-skill-e19fb788a34ce28f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dex-skill@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dex-skill-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9155ee92b2e83e74b323d916ebb88f443fe0024951e6f9782226e9394d1f8682",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:17:51.033Z"
+}

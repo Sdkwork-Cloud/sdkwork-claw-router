@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17063,
+  "uuid": "skill-clawhub-kit-email-operator",
+  "skillKey": "clawhub-kit-email-operator",
+  "name": "Kit Email Marketing Operator",
+  "summary": "AI-powered tool to create, personalize, schedule, send, and track professional email campaigns using Kit (ConvertKit) API integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kit_email_operator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Jeppesen @ TheOperatorVault.io",
+      "features": [
+        "AI-powered tool to create, personalize, schedule, send, and track professional email campaigns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kit-email-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205432013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kit-email-operator",
+      "url": "https://clawhub.ai/skills/kit-email-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kit-email-operator",
+    "url": "https://clawhub.ai/skills/kit-email-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kit-email-operator-e0cba292fc657520.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kit-email-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kit-email-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8115aa258ff9b2807029b3aa2c99f6794d6cb8aa02d16ea30764c9c45ca0723",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:35:53.832Z"
+}

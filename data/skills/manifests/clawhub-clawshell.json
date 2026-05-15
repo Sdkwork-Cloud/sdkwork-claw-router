@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9494,
+  "uuid": "skill-clawhub-clawshell",
+  "skillKey": "clawhub-clawshell",
+  "name": "Clawshell",
+  "summary": "Human-in-the-loop security layer. Intercepts high-risk commands and requires push notification approval.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawshell",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jed",
+      "features": [
+        "Human-in-the-loop security layer",
+        "Intercepts high-risk commands and requires push notification approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawshell@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28898890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawshell",
+      "url": "https://clawhub.ai/skills/clawshell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawshell",
+    "url": "https://clawhub.ai/skills/clawshell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawshell-29d2be5075d86d1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawshell@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawshell-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92736a7c097c64e44a7816240881365c25dba0a918dd8d7fc413b9bf42566ca1",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T07:36:01.958Z"
+}

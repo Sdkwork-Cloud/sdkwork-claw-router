@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11535,
+  "uuid": "skill-clawhub-mux-video",
+  "skillKey": "clawhub-mux-video",
+  "name": "Mux Video Bot",
+  "summary": "Mux Video infrastructure skill for designing, ingesting, transcoding/packaging, playback ID policy, live streaming, clipping, and observability with Mux Data. Use when architecting or operating Mux-based video pipelines, live workflows, pl.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mux_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DKTR N9NE",
+      "features": [
+        "Mux Video infrastructure skill for designing, ingesting, transcoding/packaging, playback ID pol.",
+        "Use when architecting or operating Mux-based video pipelines, live workflows, playback security."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mux-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135451135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mux-video",
+      "url": "https://clawhub.ai/skills/mux-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mux-video",
+    "url": "https://clawhub.ai/skills/mux-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mux-video-c14e5577c6adba34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mux-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mux-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3016b42dc2b3c423efe1ccfb007e111a34e87a736db2345b9c02be08e689dd05",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T13:58:02.046Z"
+}

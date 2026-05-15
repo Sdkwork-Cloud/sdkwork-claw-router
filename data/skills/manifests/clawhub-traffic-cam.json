@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24362,
+  "uuid": "skill-clawhub-traffic-cam",
+  "skillKey": "clawhub-traffic-cam",
+  "name": "traffic-cam",
+  "summary": "Provide real-time traffic camera footage and livestreams for specified roads or highways to check current traffic conditions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_cam",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Provide real-time traffic camera footage and livestreams for specified roads or highways to che."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-cam@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-cam",
+      "url": "https://clawhub.ai/skills/traffic-cam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-cam",
+    "url": "https://clawhub.ai/skills/traffic-cam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-cam-b333e96264012b39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-cam@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-cam-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0b51f2f9a268460ca8e10b80a5f81f1e309fc9b001dd69a2daa3c5bf8ed7c15",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:10:32.676Z"
+}

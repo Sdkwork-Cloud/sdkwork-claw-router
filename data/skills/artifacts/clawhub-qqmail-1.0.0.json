@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qqmail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqmail",
+  "skill": {
+    "id": 12970,
+    "skillKey": "clawhub-qqmail",
+    "name": "QQ Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqmail",
+    "url": "https://clawhub.ai/skills/qqmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqmail-1c3f2298b84a81ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage QQ Mail via IMAP/SMTP to read, send (with attachments), search emails by subject/sender/date, and list folders using Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pdpaer",
+      "userId": "publishers:pdpaer",
+      "displayName": "leogao",
+      "image": "https://avatars.githubusercontent.com/u/232205444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1438,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771078664695,
+      "changelog": "Initial release: read, send, search QQ Mail via IMAP/SMTP",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbc3a233ffbc35be3b3f3ae8ad877f2e029de7a74003e630b0efe4fe19d95b45"
+}

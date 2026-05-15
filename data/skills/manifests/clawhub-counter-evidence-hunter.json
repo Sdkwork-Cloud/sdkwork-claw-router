@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71231,
+  "uuid": "skill-clawhub-counter-evidence-hunter",
+  "skillKey": "clawhub-counter-evidence-hunter",
+  "name": "Counter Evidence Hunter",
+  "summary": "LLM通用反证搜索技能。围绕当前主线判断，主动寻找反例、冲突证据、翻转条件和替代路径支撑，减少单线叙事偏差。在已有主线判断后、高风险结论输出前、风险分析前使用。触发条件：需要降低幻觉和单线偏差、需要补充替代叙事证据、高风险决策前的纠偏。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.counter_evidence_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z1one0415",
+      "features": [
+        "LLM通用反证搜索技能。围绕当前主线判断，主动寻找反例、冲突证据、翻转条件和替代路径支撑，减少单线叙事偏差。在已有主线判断后、高风险结论输出前、风险分析前使用。触发条件：需要降低幻觉和单线偏."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/counter-evidence-hunter@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261777435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "counter-evidence-hunter",
+      "url": "https://clawhub.ai/skills/counter-evidence-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "counter-evidence-hunter",
+    "url": "https://clawhub.ai/skills/counter-evidence-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/counter-evidence-hunter-f2edf83c52c2f845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/counter-evidence-hunter@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-counter-evidence-hunter-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebfd2890844533085199b74e9bb46b7ddb7e25d3272e7ea80d85a2f1c0b79516",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:10:07.553Z"
+}

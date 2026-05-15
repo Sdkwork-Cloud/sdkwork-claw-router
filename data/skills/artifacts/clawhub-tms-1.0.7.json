@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tms@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tms",
+  "skill": {
+    "id": 31962,
+    "skillKey": "clawhub-tms",
+    "name": "TMS (Telegram Media Server)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tms",
+    "url": "https://clawhub.ai/skills/tms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tms-4e9b733de89b23db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage downloads via Telegram Media Server (TMS) REST API — add by URL (video/magnet/torrent URL) or torrent_base64 (.torrent bytes), list, delete, search to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nikitadmitryuk",
+      "userId": "s17ffbz4aw2cdt3eknwspg9gps83wzag",
+      "displayName": "Nikita Dmitryuk",
+      "image": "https://avatars.githubusercontent.com/u/50713261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 781,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774913705141,
+      "changelog": "Add download via torrent_base64; inline OpenAPI updated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ca4c11957b230f327e583a900f6c75852ff05898c8f415bcb50e9abe63803ce"
+}

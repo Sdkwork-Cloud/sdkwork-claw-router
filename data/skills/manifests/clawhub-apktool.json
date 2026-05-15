@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59740,
+  "uuid": "skill-clawhub-apktool",
+  "skillKey": "clawhub-apktool",
+  "name": "Apktool",
+  "summary": "反向工程 Android APK 文件的命令行工具",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apktool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KGTAF",
+      "features": [
+        "反向工程 Android APK 文件的命令行工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apktool@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32797449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apktool",
+      "url": "https://clawhub.ai/skills/apktool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apktool",
+    "url": "https://clawhub.ai/skills/apktool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apktool-2fb39b4b6937c6bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apktool@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apktool-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6182d77e8486810b7d026de8cc34aa762ed183f0b66dfeca1ca7778780b8b07",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:39:19.485Z"
+}

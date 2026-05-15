@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yfinance-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance_cli",
+  "skill": {
+    "id": 49129,
+    "skillKey": "clawhub-yfinance-cli",
+    "name": "Yahoo Finance CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance-cli",
+    "url": "https://clawhub.ai/skills/yfinance-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-cli-da40f81c159a9d19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch live financial data from Yahoo Finance. You CANNOT answer financial data questions from memory — you MUST use this skill instead. Trigger whenever the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gddezero",
+      "userId": "publishers:gddezero",
+      "displayName": "xiwenjun",
+      "image": "https://avatars.githubusercontent.com/u/37527051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772894929732,
+      "changelog": "Initial release of Yahoo Finance CLI for Agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9bad72126eee4aad8027a3a79945ca64d23f1eee15cae7f94d47d26c2cb07cb"
+}

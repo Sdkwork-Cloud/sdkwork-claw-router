@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45564,
+  "uuid": "skill-clawhub-abel-agent-team-orchestration",
+  "skillKey": "clawhub-abel-agent-team-orchestration",
+  "name": "Agent Team Orchestration",
+  "summary": "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows. Use when: (1) Setting up a team of 2+ agents with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abel_agent_team_orchestration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and revie.",
+        "Use when: (1) Setting up a team of 2+ agents with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abel-agent-team-orchestration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abel-agent-team-orchestration",
+      "url": "https://clawhub.ai/skills/abel-agent-team-orchestration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abel-agent-team-orchestration",
+    "url": "https://clawhub.ai/skills/abel-agent-team-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abel-agent-team-orchestration-38ddefb9475fc1c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abel-agent-team-orchestration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abel-agent-team-orchestration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5deaee0968598720f73505fd0f21fe64e3f79a1e30510dcae357e4e440a81044",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:43:33.196Z"
+}

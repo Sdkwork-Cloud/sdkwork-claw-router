@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28638,
+  "uuid": "skill-clawhub-sales-simplify",
+  "skillKey": "clawhub-sales-simplify",
+  "name": "Sales Simplify",
+  "summary": "Sales Simplify integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Sales Simplify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_simplify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sales Simplify integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Sales Simplify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sales-simplify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sales-simplify",
+      "url": "https://clawhub.ai/skills/sales-simplify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-simplify",
+    "url": "https://clawhub.ai/skills/sales-simplify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-simplify-41e4cea9e6011f88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sales-simplify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sales-simplify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2712a533df6b124330397cc04a0aa31e9775bc21e2b1774ce790a8d21248a5",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:14:31.947Z"
+}

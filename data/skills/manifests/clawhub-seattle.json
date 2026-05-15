@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21378,
+  "uuid": "skill-clawhub-seattle",
+  "skillKey": "clawhub-seattle",
+  "name": "Seattle",
+  "summary": "Navigate Seattle as visitor, resident, or tech worker with neighborhoods, transport, costs, weather, and local insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seattle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Seattle as visitor, resident, or tech worker with neighborhoods, transport, costs, wea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seattle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seattle",
+      "url": "https://clawhub.ai/skills/seattle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seattle",
+    "url": "https://clawhub.ai/skills/seattle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seattle-3151a8f227c0e11f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seattle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seattle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cd3760f1a6a5f839059b9eb4993eb7367a2e04c1489f0c6938c7d3c32d112f3",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T22:23:44.162Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66161,
+  "uuid": "skill-clawhub-china-holiday",
+  "skillKey": "clawhub-china-holiday",
+  "name": "China Holiday",
+  "summary": "中国大陆日历服务 - 识别法定节假日、周末、调休，各地寒暑假、春秋假",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_holiday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joeyang",
+      "features": [
+        "中国大陆日历服务",
+        "识别法定节假日、周末、调休，各地寒暑假、春秋假"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-holiday@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1055133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-holiday",
+      "url": "https://clawhub.ai/skills/china-holiday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-holiday",
+    "url": "https://clawhub.ai/skills/china-holiday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-holiday-a5055439f3f0217f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-holiday@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-holiday-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf3df885ecc598d412f63959eabd854b3d8d00aaed3c8ad4c153738cbbb7c9a9",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:20:42.682Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60390,
+  "uuid": "skill-clawhub-juji",
+  "skillKey": "clawhub-juji",
+  "name": "聚己社区",
+  "summary": "聚己社区官方唯一 Skill：注册 Agent 并保持 WebSocket 长连接，通过 action+params 调用社区能力。业务能力与传参以 GET {BASE}/message/capabilities 为准（无需为后台新功能重装本 Skill）。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "钱路芳",
+      "features": [
+        "聚己社区官方唯一 Skill：注册 Agent 并保持 WebSocket 长连接，通过 action+params 调用社区能力。业务能力与传参以 GET {BASE}/message/c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juji@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juji",
+      "url": "https://clawhub.ai/skills/juji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juji",
+    "url": "https://clawhub.ai/skills/juji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juji-ec410b0951d4b265.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juji@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-juji-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:166f2347292d2c1b6305e5e2ec6045d2b1b309a3cabaec112982579abe4e9757",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:55:00.902Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-influencer-video-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_influencer_video_skill",
+  "skill": {
+    "id": 65840,
+    "skillKey": "clawhub-huo15-influencer-video-skill",
+    "name": "Huo15 Influencer Video Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-influencer-video-skill",
+    "url": "https://clawhub.ai/skills/huo15-influencer-video-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-influencer-video-skill-3848379c0c569ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过火山方舟Ark API调用Seedance 2.0生成第一人称带货短视频，v2 新增剧本驱动的配音（edge-tts/火山TTS）、背景音乐自动混音、字幕烧录，内置 8 套人设模板（传统女、时尚主播、老中医、厨房主妇、美妆博主、健身教练、户外探店、数码博主）。触发词：生成视频、带货视频、产品视频、拍视频、剧本..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777289675819,
+      "changelog": "v2 大版本: 剧本驱动 + edge-tts/火山 TTS 配音 + ffmpeg 自动混 BGM + 字幕烧录 + 8 套人设模板(传统女/时尚主播/老中医/厨房主妇/美妆博主/健身教练/户外探店/数码博主, 按品类自动选) + dry-run 省钱测剧本 + preflight 自检 + CLI 子命令",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b56138ceb66f43442843aa5f482f3c67b69ccd75a3ab51f1709ac7191aed2332"
+}

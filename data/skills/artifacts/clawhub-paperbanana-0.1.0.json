@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paperbanana@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperbanana",
+  "skill": {
+    "id": 18074,
+    "skillKey": "clawhub-paperbanana",
+    "name": "PaperBanana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperbanana",
+    "url": "https://clawhub.ai/skills/paperbanana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperbanana-27bf2f5e5a0b8345.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate publication-quality academic diagrams from paper methodology text"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dwzhu-pku",
+      "userId": "s1782mxggg93103qgc3h691ec983pcxy",
+      "displayName": "dwzhu-pku",
+      "image": "https://avatars.githubusercontent.com/u/52273452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773229216202,
+      "changelog": "Initial release: multi-agent academic diagram generation from paper methodology text",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02d88c2167de5542aa23abcccd0912568bf57308be9b6ad714df9b1c4ec60bdf"
+}

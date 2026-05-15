@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44030,
+  "uuid": "skill-clawhub-spotify-agent",
+  "skillKey": "clawhub-spotify-agent",
+  "name": "Spotify Skill",
+  "summary": "Control Spotify playback, search music, manage playlists, generate discovery playlists, and analyze listening habits via the Spotify Web API. Use when asked...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cdmichaelb",
+      "features": [
+        "Control Spotify playback, search music, manage playlists, generate discovery playlists, and ana.",
+        "Use when asked..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-agent@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1451709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-agent",
+      "url": "https://clawhub.ai/skills/spotify-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-agent",
+    "url": "https://clawhub.ai/skills/spotify-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-agent-821443dfa735d82b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-agent@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-agent-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3864e6902be7f1b7c2ee7f1e2dcc8e0d194d4603e2e607f58063008406e6f24e",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T20:53:54.072Z"
+}

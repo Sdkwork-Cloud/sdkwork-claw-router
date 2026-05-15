@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53828,
+  "uuid": "skill-clawhub-bandwidth-optimizer",
+  "skillKey": "clawhub-bandwidth-optimizer",
+  "name": "Bandwidth Optimizer",
+  "summary": "Identify and reduce Azure bandwidth and egress costs — often the most invisible Azure cost driver",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bandwidth_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Identify and reduce Azure bandwidth and egress costs — often the most invisible Azure cost driv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bandwidth-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bandwidth-optimizer",
+      "url": "https://clawhub.ai/skills/bandwidth-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bandwidth-optimizer",
+    "url": "https://clawhub.ai/skills/bandwidth-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bandwidth-optimizer-f35cd3e50e8cdf95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bandwidth-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bandwidth-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:858af65d9cf02875c7980d4a5aed3ff0dccc53ef8a2f358c3faa097ea0b8e1e5",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:44:05.924Z"
+}

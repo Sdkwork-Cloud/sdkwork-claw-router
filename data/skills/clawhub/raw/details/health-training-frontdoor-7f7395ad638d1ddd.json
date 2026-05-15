@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "health-training-frontdoor",
+    "displayName": "Health Training Frontdoor",
+    "summary": "Narrow first-class front door for live Fitbit/training retrieval via stable JSON actions.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774775090547,
+    "updatedAt": 1777624761208
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774775090547,
+    "changelog": "health-training-frontdoor v1.0.0\n\n- Introduced a typed front door for live Fitbit/health/training data retrieval using stable JSON actions.\n- Provides a simplified, read-only API over the canonical Fitbit connector, reducing the need for raw CLI command assembly.\n- Supports stable actions: `auth_status`, `latest_recovery`, `quality_flags`, `training_status`, `training_window`, and `unified_latest` with clear default behaviors and optional fields.\n- Ensures all programming advice is grounded in \"Practical Programming for Strength Training\" and references user-specific context before making recommendations.\n- Guarantees compact JSON outputs and direct mapping to backend tools, without bypassing authentication or allowing data writes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "joaodriessen",
+    "userId": "s177f0p11chr0wge1x85vvkm5x83vp1n",
+    "displayName": "Joao Driessen",
+    "image": "https://avatars.githubusercontent.com/u/3994246?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.env_credential_access, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624761208
+  }
+}

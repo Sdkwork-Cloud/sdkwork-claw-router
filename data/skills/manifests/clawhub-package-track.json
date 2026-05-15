@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56072,
+  "uuid": "skill-clawhub-package-track",
+  "skillKey": "clawhub-package-track",
+  "name": "Package Track",
+  "summary": "Query package/express tracking worldwide via unified API. Integrates with 快递鸟 (Kdniao) and is extensible to other providers. Use when the user asks to track...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_track",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Query package/express tracking worldwide via unified API",
+        "Integrates with 快递鸟 (Kdniao) and is extensible to other providers",
+        "Use when the user asks to track..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/package-track@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "package-track",
+      "url": "https://clawhub.ai/skills/package-track"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-track",
+    "url": "https://clawhub.ai/skills/package-track",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-track-80e7d63a3fcc5d38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/package-track@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-package-track-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe2ee188dd80372078db34fda9aab79996615ac4b21dab3712d1d95519db6edf",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:19:08.495Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15770,
+  "uuid": "skill-clawhub-simplemem",
+  "skillKey": "clawhub-simplemem",
+  "name": "Simplemem",
+  "summary": "Efficient Lifelong Memory for LLM Agents - semantic compression, cross-session memory, and intent-aware retrieval",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplemem",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivan Cetta",
+      "features": [
+        "Efficient Lifelong Memory for LLM Agents",
+        "semantic compression, cross-session memory, and intent-aware retrieval"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplemem@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2672456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplemem",
+      "url": "https://clawhub.ai/skills/simplemem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplemem",
+    "url": "https://clawhub.ai/skills/simplemem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplemem-88f575baa2732c48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplemem@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplemem-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:693890029de9fbf09638301e321e754ec27425d5f049dd91687d34ba5d5f5488",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T00:05:10.763Z"
+}

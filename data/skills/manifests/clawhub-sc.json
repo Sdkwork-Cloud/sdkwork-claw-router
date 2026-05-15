@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21155,
+  "uuid": "skill-clawhub-sc",
+  "skillKey": "clawhub-sc",
+  "name": "Supernal Coding CLI",
+  "summary": "Supernal Coding CLI for development workflows - task management, requirements tracking, testing, git automation, ralph loops, compliance, and documentation....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ianderrington",
+      "features": [
+        "Supernal Coding CLI for development workflows",
+        "task management, requirements tracking, testing, git automation, ralph loops, compliance, and d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76016868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sc",
+      "url": "https://clawhub.ai/skills/sc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sc",
+    "url": "https://clawhub.ai/skills/sc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sc-e0b9a8799f32453a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e7473280b1d2d15e14190d412be20e51e6a62461ed1aaf15b846add9754a714",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T01:54:10.749Z"
+}

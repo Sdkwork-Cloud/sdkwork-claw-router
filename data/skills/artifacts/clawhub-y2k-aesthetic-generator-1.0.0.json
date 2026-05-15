@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/y2k-aesthetic-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.y2k_aesthetic_generator",
+  "skill": {
+    "id": 52297,
+    "skillKey": "clawhub-y2k-aesthetic-generator",
+    "name": "Y2k Aesthetic Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "y2k-aesthetic-generator",
+    "url": "https://clawhub.ai/skills/y2k-aesthetic-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/y2k-aesthetic-generator-e71a3729fa78ec25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Y2K aesthetic generator for nostalgic early-2000s and 2010s throwback photos — recreate the viral '2026 is the new 2016' trend with flash-photography selfies..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omactiengartelle",
+      "userId": "s1700se1ym0cqwmmannczhx57183gf78",
+      "displayName": "omactiengartelle",
+      "image": "https://avatars.githubusercontent.com/u/258436340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776723977352,
+      "changelog": "Initial release of y2k-aesthetic-generator\n\n- Generate nostalgic Y2K and 2010s-style images with a detailed aesthetic focus: flash photography, retro makeup, low-res iPhone vibes, and more.\n- Integrates with the Neta AI image generation API (requires free trial token).\n- Supports custom prompts, output sizes (portrait, landscape, square, tall), and reference image style inheritance.\n- Ideal for creating throwback content for social media, party invites, profile pics, and moodboards.\n- Easy installation and command-line usage instructions provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:447239ee1f390cbeb5a74d4dab2b2ecbe56ab8c6daae40bdb0ee1503448d10ee"
+}

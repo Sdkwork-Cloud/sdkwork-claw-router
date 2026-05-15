@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46664,
+  "uuid": "skill-clawhub-release-package",
+  "skillKey": "clawhub-release-package",
+  "name": "Release Package",
+  "summary": "Feishu Bitable Storage Manager - Integrated tool for item storage, retrieval, and location updates",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_package",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruoruochen",
+      "features": [
+        "Feishu Bitable Storage Manager",
+        "Integrated tool for item storage, retrieval, and location updates"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-package@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62226539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-package",
+      "url": "https://clawhub.ai/skills/release-package"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-package",
+    "url": "https://clawhub.ai/skills/release-package",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-package-b6346ffb4a33cfc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-package@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-package-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ca62676379ca1cdc1b8aec553da211ff6b42c19ff0ed02c91e8db472206ff46",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:45:17.085Z"
+}

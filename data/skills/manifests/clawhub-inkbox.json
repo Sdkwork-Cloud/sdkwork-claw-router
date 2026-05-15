@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21682,
+  "uuid": "skill-clawhub-inkbox",
+  "skillKey": "clawhub-inkbox",
+  "name": "Inkbox",
+  "summary": "Send and receive emails and phone calls via Inkbox agent identities. Use when the user wants to check inbox messages, list unread email, view a thread, searc...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inkbox",
+      "features": [
+        "Send and receive emails and phone calls via Inkbox agent identities",
+        "Use when the user wants to check inbox messages, list unread email, view a thread, searc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inkbox@0.2.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/inkbox/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inkbox",
+      "url": "https://clawhub.ai/skills/inkbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkbox",
+    "url": "https://clawhub.ai/skills/inkbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkbox-f29d1b8cdc03e28c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inkbox@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-inkbox-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e70e8e0592f393c3c98769c16de3fdda990ee6ba28206a6d6311f572cdab0e",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T21:44:28.063Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-occ@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_occ",
+  "skill": {
+    "id": 51300,
+    "skillKey": "clawhub-openclaw-occ",
+    "name": "OCC for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-occ",
+    "url": "https://clawhub.ai/skills/openclaw-occ",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-occ-fe09f61ce4ce0221.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OCC (Origin Controlled Computing) — cryptographic proof of every OpenClaw agent action. Install, configure, and audit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeargento",
+      "userId": "publishers:mikeargento",
+      "displayName": "Mike",
+      "image": "https://avatars.githubusercontent.com/u/260831370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772307633809,
+      "changelog": "openclaw-occ 1.1.1 changelog\n\n- Updated links to source code and package locations for improved accuracy and transparency.\n- Added \"npm\" link to metadata for easy plugin access.\n- Documented the notary proof payload format and included a link to the relevant source file (`lib/notary.js`).\n- No functional changes to the skill's logic or user flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76b3ceff6a21093ba3e79b5f2b37557236b9a79da5a488652ceb0bd067fdd118"
+}

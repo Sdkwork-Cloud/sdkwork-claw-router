@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dannon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dannon",
+  "skill": {
+    "id": 50068,
+    "skillKey": "clawhub-dannon",
+    "name": "Dannon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dannon",
+    "url": "https://clawhub.ai/skills/dannon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dannon-3416c8ce61591e9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into the history, market development, and branding evolution of Dannon, the pioneering yogurt brand in the US now renamed Danone."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778339105961,
+      "changelog": "Initial release summarizing Dannon's (Danone US) history and impact:\n\n- Covers Dannon’s origins, growth, and rebranding timeline in the US market.\n- Outlines commercial strategy, main product lines, and key milestones.\n- Presents brand strengths and recent competitive challenges.\n- Includes relevant market data and interesting brand facts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30274a06aa0ed3b3ec4822f73f062abdb72c1d07de0ca530584b9a09576370f8"
+}

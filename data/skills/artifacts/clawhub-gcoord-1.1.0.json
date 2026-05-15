@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gcoord@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcoord",
+  "skill": {
+    "id": 57554,
+    "skillKey": "clawhub-gcoord",
+    "name": "gcoord - 中国地图坐标系转换"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcoord",
+    "url": "https://clawhub.ai/skills/gcoord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcoord-72f333ee740ac88a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when converting coordinates between WGS84, GCJ02, BD09, BD09MC, or WebMercator coordinate systems for Chinese map services (Baidu, Amap, Google China, etc.)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhyt1985",
+      "userId": "s17egxw3tpfaas67h3m7qjf33n83gxst",
+      "displayName": "zhyt1985",
+      "image": "https://avatars.githubusercontent.com/u/496465?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774238304157,
+      "changelog": "支持 WGS84/GCJ02/BD09/BD09MC/WebMercator 坐标系互转，交互式选择坐标系",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b647473faac6e37d628480a0f14419f9bcd86fe0c7ce3b4c2965c2271b94009"
+}

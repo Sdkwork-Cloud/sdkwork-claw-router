@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34877,
+  "uuid": "skill-clawhub-smartthings-direct",
+  "skillKey": "clawhub-smartthings-direct",
+  "name": "SmartThings Direct",
+  "summary": "Direct SmartThings hub control via the official SmartThings CLI. List devices, read device status, and execute capability commands without going through Home...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartthings_direct",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hankyeol Kyung",
+      "features": [
+        "Direct SmartThings hub control via the official SmartThings CLI",
+        "List devices, read device status, and execute capability commands without going through Home..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartthings-direct@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18392918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartthings-direct",
+      "url": "https://clawhub.ai/skills/smartthings-direct"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartthings-direct",
+    "url": "https://clawhub.ai/skills/smartthings-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartthings-direct-b504fbfed173bf73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartthings-direct@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartthings-direct-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53b3d2b29e9812154ac1ffd98ac0c898a14c11cb5caea50ca66fd55a61df3f5d",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T14:25:01.956Z"
+}

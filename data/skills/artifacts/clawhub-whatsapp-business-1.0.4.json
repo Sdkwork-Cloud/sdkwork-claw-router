@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-business@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_business",
+  "skill": {
+    "id": 8331,
+    "skillKey": "clawhub-whatsapp-business",
+    "name": "WhatsApp Business"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-business",
+    "url": "https://clawhub.ai/skills/whatsapp-business",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-business-fb37f51e296b1ecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WhatsApp Business API integration with managed OAuth. Send messages, manage templates, and handle conversations. Use this skill when users want to interact w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 21356,
+      "installsAllTime": 72,
+      "installsCurrent": 67,
+      "stars": 59,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777592940448,
+      "changelog": "- Changed all endpoint URLs from *.maton.ai/gateway and *.maton.ai/ctrl to *.maton.ai/api.\n- Updated examples and documentation to use the new https://api.maton.ai base URL for WhatsApp Business API and connection management.\n- Added a Security & Permissions section clarifying access scope and user approval requirements for write operations.\n- Removed LICENSE.txt file from the project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2db7a86415311a1866da5f6bc21bdab8fc105a26d43bdab7c6a55f245fbf970"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-tools-guide@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_tools_guide",
+  "skill": {
+    "id": 14570,
+    "skillKey": "clawhub-web-tools-guide",
+    "name": "web-tools-guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-tools-guide",
+    "url": "https://clawhub.ai/skills/web-tools-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-tools-guide-9b6e3daa8230cd53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MANDATORY before calling web_search, web_fetch, browser, or opencli. Contains required error-handling procedures (web_search failure → must guide user to con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fmls",
+      "userId": "s178hjnqgjn4ng01wyttsvdzx583hfaw",
+      "displayName": "FMLS",
+      "image": "https://avatars.githubusercontent.com/u/12793501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1593,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776138900895,
+      "changelog": "- Added OpenCLI integration as a fallback tool (covering 70+ sites) between web_fetch and browser, with setup script and user guidance.\n- Updated decision process: tools are now parallel branches—not a strict escalation—to choose the most efficient path based on scenario.\n- Enhanced error handling: failures in web_search or web_fetch now require explicit configuration guidance and OpenCLI fallback before using the browser.\n- Expanded documentation: included references to opencli usage guide and setup instructions for smoother onboarding.\n- Modified skill to be MANDATORY before using web_search, web_fetch, browser, or opencli, emphasizing correct fallback and error procedures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b14ac0b249c5179160ef70095cbbb2ad40f61fce4ae00188d555b1316324880"
+}

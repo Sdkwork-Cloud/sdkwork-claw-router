@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-web-clipper@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_web_clipper",
+  "skill": {
+    "id": 70758,
+    "skillKey": "clawhub-cn-web-clipper",
+    "name": "网页剪藏工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-web-clipper",
+    "url": "https://clawhub.ai/skills/cn-web-clipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-web-clipper-d3264f07859c848b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页剪藏工具。发送网页链接，提取正文内容保存为本地Markdown文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697188231,
+      "changelog": "Version 1.2.5\n\n- No file changes detected.\n- No updates or modifications in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee3b71eec2b9377c87ae4df3c7a8eb99e533969121a457675de86f2f6530ab52"
+}

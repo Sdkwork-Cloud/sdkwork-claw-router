@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62525,
+  "uuid": "skill-clawhub-xiaoming-dream-tracker",
+  "skillKey": "clawhub-xiaoming-dream-tracker",
+  "name": "Dream Tracker",
+  "summary": "梦境追踪 - 梦境记录、梦境解析、统计分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_dream_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "梦境记录、梦境解析、统计分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-dream-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-dream-tracker",
+      "url": "https://clawhub.ai/skills/xiaoming-dream-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-dream-tracker",
+    "url": "https://clawhub.ai/skills/xiaoming-dream-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-dream-tracker-8affe2183d07ec83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-dream-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-dream-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0eb6f0d123851c7faff867adc87e5b8bedffe81b695dd79e4fbb1c3175434801",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T19:30:57.257Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/food-safety-sentiment-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_safety_sentiment_monitor",
+  "skill": {
+    "id": 23034,
+    "skillKey": "clawhub-food-safety-sentiment-monitor",
+    "name": "Food Safety Sentiment Monitor (Kevin)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-safety-sentiment-monitor",
+    "url": "https://clawhub.ai/skills/food-safety-sentiment-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-safety-sentiment-monitor-6ca69cf4817f42e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors food safety sentiment on Chinese social platforms, detects negative events, grades risks, and generates PR plans and reports automatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stylemonster",
+      "userId": "s174fzv9hn7kq09jkd2syt0m9983mqgm",
+      "displayName": "stylemonster",
+      "image": "https://avatars.githubusercontent.com/u/183914781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774021667677,
+      "changelog": "食品安全网络舆情监控技能，支持多平台抓取、风险评级、公关话术生成与复盘报告",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:189083f382f9625e736523d220dcb267aa367a4c5855241c5a772c82a01b3054"
+}

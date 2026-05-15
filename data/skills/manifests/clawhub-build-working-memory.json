@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35126,
+  "uuid": "skill-clawhub-build-working-memory",
+  "skillKey": "clawhub-build-working-memory",
+  "name": "Working Memory Skill",
+  "summary": "Set up, migrate, or manage a file-based working memory system for an AI agent project. Use for agent memory, working memory, session continuity, persistent c...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_working_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiyuan",
+      "features": [
+        "Set up, migrate, or manage a file-based working memory system for an AI agent project",
+        "Use for agent memory, working memory, session continuity, persistent c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-working-memory@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1469910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-working-memory",
+      "url": "https://clawhub.ai/skills/build-working-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-working-memory",
+    "url": "https://clawhub.ai/skills/build-working-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-working-memory-35e8a5b34da35a4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-working-memory@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-working-memory-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b19969c3c03e040fb96bf862cd0b058980475c54c8f2c31fa8065bbb18185db0",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:49:53.373Z"
+}

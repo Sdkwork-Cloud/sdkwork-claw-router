@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baize-task-bot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baize_task_bot",
+  "skill": {
+    "id": 69127,
+    "skillKey": "clawhub-baize-task-bot",
+    "name": "baize-task-bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baize-task-bot",
+    "url": "https://clawhub.ai/skills/baize-task-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baize-task-bot-2a77ab7a282dcf42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI外呼运营小助手——管理外呼任务、线路、话术及账号的综合技能包。查询操作从本地文件读取，写操作调用白泽外呼平台API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richard-collab",
+      "userId": "s17dqfz5nygm596fa4gmnxq2tx83x4vx",
+      "displayName": "Richard-collab",
+      "image": "https://avatars.githubusercontent.com/u/52125169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773291771933,
+      "changelog": "- 新增查询技能 parse_query_to_instructions，可将自然语言外呼指令解析为结构化指令列表。\n- 文档补充说明了 parse_query_to_instructions 的用途、参数、数据来源和输出格式。\n- 更新查询类技能与规范，支持通过自然语言快速生成并执行外呼操作指令。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39ef8afbc0bb719613a84ec2eab59a9415c31b7851f1786ca56569d6f3c4f63c"
+}

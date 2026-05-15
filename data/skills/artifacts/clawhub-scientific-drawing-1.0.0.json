@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scientific-drawing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scientific_drawing",
+  "skill": {
+    "id": 60806,
+    "skillKey": "clawhub-scientific-drawing",
+    "name": "Scientific Drawing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scientific-drawing",
+    "url": "https://clawhub.ai/skills/scientific-drawing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scientific-drawing-58828968695ff8b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科研绘图工具 - 支持技术路线图、流程图、原理图、架构图等科研图形绘制。基于 Python matplotlib/pillow，支持 SVG/PNG 高清输出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776342610725,
+      "changelog": "- 首次发布科研绘图技能，专为基金申请和论文写作场景设计。\n- 支持多种科研图类型：技术路线图、流程图、原理图、架构图、甘特图等。\n- 基于 Python matplotlib/pillow，输出高清 PNG/SVG 图像，默认 300 DPI。\n- 提供丰富请求示例与详细参数说明，支持中文文本和自定义配色方案。\n- 涵盖科研绘图最佳实践和常见注意事项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe920d006e72fcf162266a0cd37bf00fa845f625eeb48642ccad5500e5828ac8"
+}

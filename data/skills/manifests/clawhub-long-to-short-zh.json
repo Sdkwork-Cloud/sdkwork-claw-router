@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62526,
+  "uuid": "skill-clawhub-long-to-short-zh",
+  "skillKey": "clawhub-long-to-short-zh",
+  "name": "长视频转短视频",
+  "summary": "面向长视频切片场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 long-to-short 场景定位。",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_to_short_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "面向长视频切片场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留 long-to-short 场景定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/long-to-short-zh@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "long-to-short-zh",
+      "url": "https://clawhub.ai/skills/long-to-short-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-to-short-zh",
+    "url": "https://clawhub.ai/skills/long-to-short-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-to-short-zh-031369d75f5b4a2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/long-to-short-zh@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-long-to-short-zh-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d25412172b01139e5eeabc3a950f90aa75d73950a84d7ba9d1e7ce80e81cf488",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:14:37.442Z"
+}

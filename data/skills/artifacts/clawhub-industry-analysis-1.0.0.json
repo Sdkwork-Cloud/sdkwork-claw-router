@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_analysis",
+  "skill": {
+    "id": 67288,
+    "skillKey": "clawhub-industry-analysis",
+    "name": "my skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-analysis",
+    "url": "https://clawhub.ai/skills/industry-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-analysis-4b9093e19f345c4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业深度分析报告生成器。 当用户提到行业分析、行业报告、市场分析、竞争格局分析、行业调研、industry analysis、 market research、分析XX行业、XX行业怎么样、XX行业值得进入吗时触发。 也适用于用户想了解某行业的市场规模、竞争态势、发展趋势、商业模式、投资机会， 或任何涉及\"用结构..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangmanqi2104201431-ship-it",
+      "userId": "s170f80eexbw5bamtqbsr0y4jn8558qy",
+      "displayName": "yangmanqi2104201431-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/239160289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777272458179,
+      "changelog": "Initial release of industry-analysis skill.\n\n- Generates structured industry analysis reports based on user input or triggers related to market/industry analysis.\n- Fetches, validates, and annotates real data from web sources for each key module (market size, competition, policy, trends, etc.).\n- Ensures transparency: data is always sourced; predictions and inferences are clearly labeled.\n- Converts Markdown reports to aesthetically designed HTML (and PDF if possible), including interactive references and visualizations.\n- Incorporates robust fallback and downgrade strategies for data gaps or search failure.\n- Prioritizes balanced, actionable, and well-sourced reporting with clear disclaimers when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd40affea6e6cdd1a21b060864b1f3b96a7127c628275863cb00e12ab752a3c9"
+}

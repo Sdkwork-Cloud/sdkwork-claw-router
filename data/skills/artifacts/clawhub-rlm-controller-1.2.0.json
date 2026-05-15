@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rlm-controller@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rlm_controller",
+  "skill": {
+    "id": 13645,
+    "skillKey": "clawhub-rlm-controller",
+    "name": "RLM Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rlm-controller",
+    "url": "https://clawhub.ai/skills/rlm-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rlm-controller-4056ef815f4cee3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RLM-style long-context controller that treats inputs as external context, slices/peeks/searches, and spawns recursive subcalls with strict safety limits. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skywyze",
+      "userId": "publishers:skywyze",
+      "displayName": "Skywyze",
+      "image": "https://avatars.githubusercontent.com/u/7504109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771091937322,
+      "changelog": "- Added new helper scripts: rlm_path.py (path validation) and rlm_redact.py (secret redaction).\n- Introduced a cleanup script: scripts/cleanup.sh and new testing files in the tests/ directory.\n- Expanded core controller scripts to include rlm_plan.py, rlm_batch_runner.py, and rlm_runner.py.\n- Removed duplicate LICENSE.md file, retaining LICENCE.md.\n- Updated documentation to reflect new scripts and capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e55a79414920da1da5451aaf6c40c094208de4bcae37078eef1e1e046d82cd1"
+}

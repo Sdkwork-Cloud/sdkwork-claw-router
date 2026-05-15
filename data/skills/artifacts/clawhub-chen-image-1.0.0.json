@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chen-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_image",
+  "skill": {
+    "id": 32285,
+    "skillKey": "clawhub-chen-image",
+    "name": "Chen Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-image",
+    "url": "https://clawhub.ai/skills/chen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-image-b2d3b9dc176406d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, inspect, process, and optimize image files and visual assets with reliable format choice, resizing, compression, color-profile, metadata, and platfor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774197622244,
+      "changelog": "Expanded image skill for broader contexts and better workflow guidance:\n\n- Added branding, screenshot, and accessibility workflows alongside richer, platform-specific image handling.\n- Strengthened guidance on format choice, resizing, compression, metadata, color profiles, and delivery checks.\n- Introduced specialized files for web, social, ecommerce, photography/print, branding, screenshots, accessibility, and command-line workflows.\n- Detailed step-by-step workflow for asset preparation, transformation, and export validation.\n- Clarified best practices and common mistakes for different asset types and destinations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d055ecbd59470f6eb060d7425b0004a3747e3e41c1c0dcbd4acec0018e83a7db"
+}

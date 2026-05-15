@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65337,
+  "uuid": "skill-clawhub-prime-video",
+  "skillKey": "clawhub-prime-video",
+  "name": "Prime Video",
+  "summary": "整理Prime Video公开网站的会员权益、内容频道、创作支持及播放帮助等信息入口和规则说明。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prime_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "整理Prime Video公开网站的会员权益、内容频道、创作支持及播放帮助等信息入口和规则说明。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prime-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prime-video",
+      "url": "https://clawhub.ai/skills/prime-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prime-video",
+    "url": "https://clawhub.ai/skills/prime-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prime-video-baae949aad05e187.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prime-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prime-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:305036a15f9cb15ffc9d09c2c59ac5e570faf86ea4c3b934283524f6590eda63",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T18:54:58.718Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70033,
+  "uuid": "skill-clawhub-house-buying-advisor",
+  "skillKey": "clawhub-house-buying-advisor",
+  "name": "House Buying Advisor",
+  "summary": "二手房购买全流程 AI 辅助。覆盖政策检索、房源搜集与横向对比、看房 checklist、 砍价弹药生成、谈判场景模拟、中介认知纠偏、贷款方案计算。 用于：帮用户买二手房、分析房源、准备砍价策略、看房前准备、 谈判话术预案、房产政策查询、贷款计算、买房咨询。 触发词：买房、二手房、砍价、看房、房源分析、中介、贷款...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.house_buying_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoyaner0201",
+      "features": [
+        "二手房购买全流程 AI 辅助。覆盖政策检索、房源搜集与横向对比、看房 checklist、 砍价弹药生成、谈判场景模拟、中介认知纠偏、贷款方案计算。 用于：帮用户买二手房、分析房源、准备砍价."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/house-buying-advisor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258399167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "house-buying-advisor",
+      "url": "https://clawhub.ai/skills/house-buying-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "house-buying-advisor",
+    "url": "https://clawhub.ai/skills/house-buying-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/house-buying-advisor-cf3f37428eb1ff1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/house-buying-advisor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-house-buying-advisor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6b61d023ffb443a3177cfb916047a9a0a44ea2c9f842cea7e7c7076a003156f",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:57:17.737Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manim-animation-en@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manim_animation_en",
+  "skill": {
+    "id": 27544,
+    "skillKey": "clawhub-manim-animation-en",
+    "name": "Manim Animation En"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manim-animation-en",
+    "url": "https://clawhub.ai/skills/manim-animation-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manim-animation-en-c1ab46a3e872c0ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create mathematical animations with synchronized voiceover narration and subtitles using Manim Community and manim-voiceover. Use when users want to create a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hzsunzixiang",
+      "userId": "s17069wbwf7gnepk3p3g4wa06183g8zb",
+      "displayName": "hzsunzixiang",
+      "image": "https://avatars.githubusercontent.com/u/5396165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774355878808,
+      "changelog": "Add required_tools (manim, ffmpeg with libx264+libass, python3), required_packages, and network_access metadata to SKILL.md frontmatter. Addresses OpenClaw finding about missing binary declarations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a10310fb094dab89c9d0e79f89585238e4e06d8a59535163b8ae05ec721739c"
+}

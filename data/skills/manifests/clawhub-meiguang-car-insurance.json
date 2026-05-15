@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22035,
+  "uuid": "skill-clawhub-meiguang-car-insurance",
+  "skillKey": "clawhub-meiguang-car-insurance",
+  "name": "Meiguang Car Insurance",
+  "summary": "Automatically extracts 14 key fields from Meiguang car insurance PDFs for 8 insurers and outputs data in Excel format.",
+  "version": "5.7.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meiguang_car_insurance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "一颗和成天下",
+      "features": [
+        "Automatically extracts 14 key fields from Meiguang car insurance PDFs for 8 insurers and output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meiguang-car-insurance@5.7.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118047273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meiguang-car-insurance",
+      "url": "https://clawhub.ai/skills/meiguang-car-insurance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meiguang-car-insurance",
+    "url": "https://clawhub.ai/skills/meiguang-car-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meiguang-car-insurance-afa394dabe390033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meiguang-car-insurance@5.7.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-meiguang-car-insurance-5.7.2.json",
+      "version": "5.7.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3432921b9363bf2b4754700164949d41bae01b66bb151aebb86f45cbac05050f",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:27:04.145Z"
+}

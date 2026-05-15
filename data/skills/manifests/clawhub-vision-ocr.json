@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66342,
+  "uuid": "skill-clawhub-vision-ocr",
+  "skillKey": "clawhub-vision-ocr",
+  "name": "vision ocr",
+  "summary": "用于识别图片和 PDF 文档，调用你已配置的 OCR 与多模态服务输出 Markdown 结果，并可按需发送到飞书。适合截图、扫描件、表格、票据和技术文档。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vision_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangxusong637",
+      "features": [
+        "用于识别图片和 PDF 文档，调用你已配置的 OCR 与多模态服务输出 Markdown 结果，并可按需发送到飞书。适合截图、扫描件、表格、票据和技术文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vision-ocr@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252850179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vision-ocr",
+      "url": "https://clawhub.ai/skills/vision-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vision-ocr",
+    "url": "https://clawhub.ai/skills/vision-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vision-ocr-a22da1e35f927b38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vision-ocr@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vision-ocr-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04498d9f1b52d51b1732f2b32a460a74e395414c96bdc304368e16cf0432655f",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:52:24.015Z"
+}

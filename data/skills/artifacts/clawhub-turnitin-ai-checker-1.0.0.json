@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/turnitin-ai-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turnitin_ai_checker",
+  "skill": {
+    "id": 41051,
+    "skillKey": "clawhub-turnitin-ai-checker",
+    "name": "Turnitin AI Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turnitin-ai-checker",
+    "url": "https://clawhub.ai/skills/turnitin-ai-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turnitin-ai-checker-11b69ca44763acc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turnitin AI Detection Checker - Check if text would be flagged by Turnitin's AI detection before submitting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776130940602,
+      "changelog": "- Initial release of Turnitin AI Detection Checker skill.\n- Analyze text to estimate likelihood of being flagged by Turnitin's AI detection system.\n- Generate AI detection reports with risk assessment and detailed pattern analysis.\n- Offer text humanization features to help lower AI detection scores while preserving academic tone and citations.\n- Support for various detection methods: perplexity, burstiness, AI pattern recognition, and readability metrics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9766d84c7d9e11d3cddaacada3568efb13292d6c78af1e888c089552e3805e5d"
+}

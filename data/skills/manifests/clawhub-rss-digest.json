@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9151,
+  "uuid": "skill-clawhub-rss-digest",
+  "skillKey": "clawhub-rss-digest",
+  "name": "Rss Digest",
+  "summary": "Agentic RSS digest using the feed CLI. Fetch, triage, and summarize RSS feeds to surface high-signal posts. Use when: (1) reading RSS feeds or catching up on...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "George Zhang",
+      "features": [
+        "Agentic RSS digest using the feed CLI",
+        "Fetch, triage, and summarize RSS feeds to surface high-signal posts",
+        "Use when: (1) reading RSS feeds or catching up on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-digest@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8635094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-digest",
+      "url": "https://clawhub.ai/skills/rss-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-digest",
+    "url": "https://clawhub.ai/skills/rss-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-digest-245b5c00be7b015b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-digest@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-digest-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a4c4e71ce7b058a97acde894a59b25ce2afbbfab76211262705403649022bf8",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T00:21:28.844Z"
+}

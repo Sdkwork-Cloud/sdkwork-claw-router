@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/felo-livedoc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_livedoc",
+  "skill": {
+    "id": 20604,
+    "skillKey": "clawhub-felo-livedoc",
+    "name": "Felo LiveDoc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-livedoc",
+    "url": "https://clawhub.ai/skills/felo-livedoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-livedoc-f35912d5da955e3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Felo LiveDocs (knowledge bases) and their resources. Use when users want to create, manage, or query knowledge bases, upload documents, add URLs, or p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangzhiming1999",
+      "userId": "s17fabtxz382txawq79jmahrh983z3hj",
+      "displayName": "wangzhiming",
+      "image": "https://avatars.githubusercontent.com/u/48944224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773401367594,
+      "changelog": "Initial release of the felo-livedoc skill.\n\n- Enables creation, management, and deletion of Felo LiveDocs (knowledge bases).\n- Supports uploading documents, adding URLs, and creating text documents within a LiveDoc.\n- Allows semantic search and retrieval across knowledge base resources.\n- Provides commands for resource management, including listing, viewing, and deleting resources.\n- Requires FELO_API_KEY for authentication and provides environment variable setup instructions.\n- Includes explicit error handling and user guidance for setup and usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfeba149c7b5fed707025edc4d8e58c58f6aa535f5136deae278142c84c9f711"
+}

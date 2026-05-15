@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evm-wallet-clawcast@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evm_wallet_clawcast",
+  "skill": {
+    "id": 11102,
+    "skillKey": "clawhub-evm-wallet-clawcast",
+    "name": "ClawCast Crypto Wallet: Keys, Balances & Transactions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evm-wallet-clawcast",
+    "url": "https://clawhub.ai/skills/evm-wallet-clawcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evm-wallet-clawcast-4374d3da51da79bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill is focused on crypto/EVM wallet operations and transaction workflows using cast. It covers wallet creation, importing or generating keys, checking balances, sending coins or tokens, monitoring tokens, creating and verifying tran."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tezatezaz",
+      "userId": "s175jdv04s9d22s190s8qsxwz1855fec",
+      "displayName": "te_za",
+      "image": "https://avatars.githubusercontent.com/u/112280042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1882,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769917232436,
+      "changelog": "- No file changes were detected in this release.\n- Documentation and guidance remain unchanged; no functional or behavioral updates included.\n- Version bump only; this update has no impact on users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e96d1c0dd329437bcbb7745a08e9608d0bc98db55663252d5ee20dfb65df9511"
+}

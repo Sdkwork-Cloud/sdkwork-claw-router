@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gm3-alertworthy-feed@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gm3_alertworthy_feed",
+  "skill": {
+    "id": 13675,
+    "skillKey": "clawhub-gm3-alertworthy-feed",
+    "name": "GM3 Alertworthy Feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gm3-alertworthy-feed",
+    "url": "https://clawhub.ai/skills/gm3-alertworthy-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gm3-alertworthy-feed-134e779cf19f20f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only access to the GM3 Alertworthy feed, providing real-time token market data for analysis agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigbadman-lab",
+      "userId": "publishers:bigbadman-lab",
+      "displayName": "alexattinger",
+      "image": "https://avatars.githubusercontent.com/u/249558675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770559741776,
+      "changelog": "- Added front-matter metadata (name and description) to SKILL.md for improved documentation format.\n- No changes to functionality or API usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:987280a0257675f370bdbf84cca1e082b6b32607c3f8ac648d48227225c0d3f5"
+}

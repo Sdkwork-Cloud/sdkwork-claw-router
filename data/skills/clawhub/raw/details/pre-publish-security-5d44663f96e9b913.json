@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "pre-publish-security",
+    "displayName": "Pre Publish Security",
+    "summary": "Multi-layered security audit system for GitHub/ClawHub releases. Prevents credential leaks, detects vulnerabilities, validates documentation. Frequency-aware...",
+    "tags": {
+      "latest": "2.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773608214237,
+    "updatedAt": 1778309616564
+  },
+  "latestVersion": {
+    "version": "2.0.0",
+    "createdAt": 1773608214237,
+    "changelog": "Major update: Multi-layered security audit and automation enhancements.\n\n- Introduces smart, frequency-aware scanning: quick (on every push), history (monthly), dependencies (weekly), and full audits (on-demand).\n- Automatic git pre-push hook blocks pushes with detected secrets or critical issues.\n- Adds severity-based reporting, actionable markdown reports, and exit codes for integration and automation.\n- Tracks last-run state for each scan type, reducing redundant checks and improving audit reliability.\n- Supports npm and Python dependency scanning (optional).\n- Comprehensive documentation and easier integration via scripts and cron.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "solmas",
+    "userId": "publishers:solmas",
+    "displayName": "Seth Blakely",
+    "image": "https://avatars.githubusercontent.com/u/7381076?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778309616564
+  }
+}

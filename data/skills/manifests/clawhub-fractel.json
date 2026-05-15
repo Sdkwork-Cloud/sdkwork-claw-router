@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33289,
+  "uuid": "skill-clawhub-fractel",
+  "skillKey": "clawhub-fractel",
+  "name": "Fractel",
+  "summary": "FracTEL integration. Manage data, records, and automate workflows. Use when the user wants to interact with FracTEL data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fractel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FracTEL integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FracTEL data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fractel@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fractel",
+      "url": "https://clawhub.ai/skills/fractel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fractel",
+    "url": "https://clawhub.ai/skills/fractel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fractel-86b1fc22570342fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fractel@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fractel-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:861703163bfd1c13ae57d6cd3a695c02992f44b74190d4fcf53a0bcb84d584d4",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:58.782Z"
+}

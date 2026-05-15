@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23443,
+  "uuid": "skill-clawhub-terabox-storage",
+  "skillKey": "clawhub-terabox-storage",
+  "name": "Terabox Storage",
+  "summary": "Manage TeraBox cloud storage operations including login, upload, download, share, and transfer. Use the terabox CLI tool for file management tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terabox_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArthurPatten",
+      "features": [
+        "Manage TeraBox cloud storage operations including login, upload, download, share, and transfer",
+        "Use the terabox CLI tool for file management tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terabox-storage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9796628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terabox-storage",
+      "url": "https://clawhub.ai/skills/terabox-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terabox-storage",
+    "url": "https://clawhub.ai/skills/terabox-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terabox-storage-d5d4bfb5c82da753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terabox-storage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terabox-storage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad231e2da66a27ba4a15a3b3f878f3548fcee6c78362e1223480dce408873e7e",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:17:00.628Z"
+}

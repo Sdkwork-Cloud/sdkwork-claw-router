@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quote-invoice-workbench@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quote_invoice_workbench",
+  "skill": {
+    "id": 27547,
+    "skillKey": "clawhub-quote-invoice-workbench",
+    "name": "quote-invoice-workbench"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quote-invoice-workbench",
+    "url": "https://clawhub.ai/skills/quote-invoice-workbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quote-invoice-workbench-69af35e173aba3bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn messy service pricing notes into professional quotes, SOW line items, and invoice drafts with assumptions clearly surfaced."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773387818059,
+      "changelog": "quote-invoice-workbench 1.1.0\n\n- Improved skill description and added clear purpose.\n- Expanded trigger phrases to include both English and Chinese.\n- Listed required inputs and clarified workflow steps for generating quotes and invoices.\n- Defined explicit output contract (quote table, invoice draft, assumptions list, scope exclusions).\n- Included operating rules and boundaries for responsible usage.\n- Documented file structure and compatibility notes for easier setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0933ab714a863a8112364424998450d182e35040f12a0f69cf307a0685a8c67"
+}

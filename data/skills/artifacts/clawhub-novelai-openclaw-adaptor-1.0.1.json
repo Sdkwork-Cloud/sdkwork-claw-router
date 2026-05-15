@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novelai-openclaw-adaptor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novelai_openclaw_adaptor",
+  "skill": {
+    "id": 29532,
+    "skillKey": "clawhub-novelai-openclaw-adaptor",
+    "name": "NovelAI OpenClaw Adaptor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novelai-openclaw-adaptor",
+    "url": "https://clawhub.ai/skills/novelai-openclaw-adaptor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novelai-openclaw-adaptor-df7393aa24db25ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain how to connect NovelAI to OpenClaw through a local OpenAI-compatible shim. Use when the user wants configuration guidance for a local NovelAI adaptor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "askkumptenchen",
+      "userId": "s1745ga27bawpvv5e5089t4x0983jkge",
+      "displayName": "Zhihao Kang",
+      "image": "https://avatars.githubusercontent.com/u/77649830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774535820568,
+      "changelog": "- Refocused documentation to emphasize safety and verification-first setup for the local NovelAI adaptor.\n- Clarified configuration guidance for OpenClaw integration, including explicit instructions for setting `base_url` and model selection.\n- Added strict safety rules: never ask users to paste secrets in chat and always recommend verifying package sources before installation.\n- Improved explanation of the supported text and image models, with clear recommendations and model selection prompts.\n- Updated local command usage examples, prioritizing interactive credential entry and omitting inline secrets in command lines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d164cdf87a8db239def0178316753cf80778401bbe823407d1fb9ac624e9e22"
+}

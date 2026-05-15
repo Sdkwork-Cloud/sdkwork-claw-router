@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28729,
+  "uuid": "skill-clawhub-sms-alert",
+  "skillKey": "clawhub-sms-alert",
+  "name": "Sms Alert",
+  "summary": "SMS Alert integration. Manage Alerts, Contacts, Templates. Use when the user wants to interact with SMS Alert data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SMS Alert integration",
+        "Manage Alerts, Contacts, Templates",
+        "Use when the user wants to interact with SMS Alert data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sms-alert@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sms-alert",
+      "url": "https://clawhub.ai/skills/sms-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-alert",
+    "url": "https://clawhub.ai/skills/sms-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-alert-8a53380360605d50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sms-alert@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sms-alert-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:634853b573b04bbd17563dd0a610fe7ae7ca0dd3923e63fa51b96fb0f2153b59",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:43:59.974Z"
+}

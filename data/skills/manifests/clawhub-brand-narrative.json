@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35124,
+  "uuid": "skill-clawhub-brand-narrative",
+  "skillKey": "clawhub-brand-narrative",
+  "name": "Brand Narrative",
+  "summary": "Extract brand tone and generate multi-version brand narratives and naming proposals",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_narrative",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "走过",
+      "features": [
+        "Extract brand tone and generate multi-version brand narratives and naming proposals"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brand-narrative@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48984941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brand-narrative",
+      "url": "https://clawhub.ai/skills/brand-narrative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-narrative",
+    "url": "https://clawhub.ai/skills/brand-narrative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-narrative-d0ff8ac1b2b9f188.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brand-narrative@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brand-narrative-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7c448ca831de0899280f23f6b8f3b325835f12d8d8dde28f0f3125797a1dbed",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:34:58.847Z"
+}

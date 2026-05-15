@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38942,
+  "uuid": "skill-clawhub-prompt-reviewer",
+  "skillKey": "clawhub-prompt-reviewer",
+  "name": "Prompt Reviewer",
+  "summary": "Review a prompt to identify ambiguities, missing constraints, and hallucination risks, and provide an optimized version.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Review a prompt to identify ambiguities, missing constraints, and hallucination risks, and prov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-reviewer",
+      "url": "https://clawhub.ai/skills/prompt-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-reviewer",
+    "url": "https://clawhub.ai/skills/prompt-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-reviewer-9b49230535ef7ffc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ebc717a7fcbf638638c009104aca8f3de8c578b17116349a25fb104157cf6ad",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:59:08.268Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-audio-capture@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_audio_capture",
+  "skill": {
+    "id": 54194,
+    "skillKey": "clawhub-browser-audio-capture",
+    "name": "Browser Audio Capture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-audio-capture",
+    "url": "https://clawhub.ai/skills/browser-audio-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-audio-capture-ea2b2a1873cdf3d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture audio from any browser tab — meetings, YouTube, podcasts, courses, webinars — and stream to any AI agent. Zero API keys, works with any framework."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarvis563",
+      "userId": "publishers:jarvis563",
+      "displayName": "jarvis563",
+      "image": "https://avatars.githubusercontent.com/u/258515214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 590,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772149383101,
+      "changelog": "- Expanded audio capture support from just meetings to any browser tab, including YouTube, podcasts, webinars, and courses.\n- Updated description and documentation to highlight broader use cases beyond meetings.\n- Revised \"Why Use This\" and \"Use cases\" sections for clarity and to reflect new capabilities.\n- No code changes; documentation (SKILL.md) updated only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85a773a1eb3901b61a8a29e8d7e7f8bb63af77c13bb2dca350b93c6faa606dc7"
+}

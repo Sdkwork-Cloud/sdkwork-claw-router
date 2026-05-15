@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22772,
+  "uuid": "skill-clawhub-mcp-to-skill",
+  "skillKey": "clawhub-mcp-to-skill",
+  "name": "mcp-to-skill",
+  "summary": "Converts any MCP server into a standalone skill package with zero runtime dependencies (no MCP process required). Trigger when user says: \"convert this MCP t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_to_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JalanChao",
+      "features": [
+        "Converts any MCP server into a standalone skill package with zero runtime dependencies (no MCP.",
+        "Trigger when user says: \"convert this MCP t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-to-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92440201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-to-skill",
+      "url": "https://clawhub.ai/skills/mcp-to-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-to-skill",
+    "url": "https://clawhub.ai/skills/mcp-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-to-skill-46f2b1be55e2f854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-to-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-to-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f4b249925c2cf0b52cbcbc0278d2ca1d7c39d1c727602771ec560a793da86fe",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:09:13.056Z"
+}

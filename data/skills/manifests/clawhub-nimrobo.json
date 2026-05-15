@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11668,
+  "uuid": "skill-clawhub-nimrobo",
+  "skillKey": "clawhub-nimrobo",
+  "name": "Nimrobo",
+  "summary": "Use the Nimrobo CLI for voice screening and matching network operations.",
+  "version": "0.17.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nimrobo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "virang-nimrobo",
+      "features": [
+        "Use the Nimrobo CLI for voice screening and matching network operations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nimrobo@0.17.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211922009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nimrobo",
+      "url": "https://clawhub.ai/skills/nimrobo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nimrobo",
+    "url": "https://clawhub.ai/skills/nimrobo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nimrobo-9a385d1192626028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nimrobo@0.17.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nimrobo-0.17.0.json",
+      "version": "0.17.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e7f016d5e67b714416ca80c515abca4d215e1ab26bb209aa813ba3fc8fcdf0b",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T05:32:19.057Z"
+}

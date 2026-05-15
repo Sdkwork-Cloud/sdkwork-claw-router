@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63954,
+  "uuid": "skill-clawhub-remote-skill-installer",
+  "skillKey": "clawhub-remote-skill-installer",
+  "name": "Remote Skill Installer",
+  "summary": "远程安装、管理和更新技能到指定Agent，支持批量导入、网络异常重试及安全校验防护。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_skill_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mumu",
+      "features": [
+        "远程安装、管理和更新技能到指定Agent，支持批量导入、网络异常重试及安全校验防护。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-skill-installer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57563630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-skill-installer",
+      "url": "https://clawhub.ai/skills/remote-skill-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-skill-installer",
+    "url": "https://clawhub.ai/skills/remote-skill-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-skill-installer-a26932a5463223ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-skill-installer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-skill-installer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33cb947bd9c08ac73353a1e35c0820dac60e184a7e0895b592f57831ebe46a84",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:37:26.182Z"
+}

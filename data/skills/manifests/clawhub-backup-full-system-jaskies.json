@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58370,
+  "uuid": "skill-clawhub-backup-full-system-jaskies",
+  "skillKey": "clawhub-backup-full-system-jaskies",
+  "name": "Backup Full System",
+  "summary": "Thực hiện sao lưu toàn bộ hệ thống OpenClaw (bao gồm database, cấu hình và bộ nhớ) rồi tải lên đám mây. Yêu cầu cài đặt rclone hoặc công cụ upload tương ứng.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backup_full_system_jaskies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Trần Anh Vũ",
+      "features": [
+        "Thực hiện sao lưu toàn bộ hệ thống OpenClaw (bao gồm database, cấu hình và bộ nhớ) rồi tải lên.",
+        "Yêu cầu cài đặt rclone hoặc công cụ upload tương ứng."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backup-full-system-jaskies@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19165770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backup-full-system-jaskies",
+      "url": "https://clawhub.ai/skills/backup-full-system-jaskies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backup-full-system-jaskies",
+    "url": "https://clawhub.ai/skills/backup-full-system-jaskies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backup-full-system-jaskies-63d4a63e4104325a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backup-full-system-jaskies@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-backup-full-system-jaskies-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:347375d684d03839ee2426afef889715bb0bb81679b2fb48416d94524d7bd3ee",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:34:17.484Z"
+}

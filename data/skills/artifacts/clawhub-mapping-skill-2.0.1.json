@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mapping-skill@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapping_skill",
+  "skill": {
+    "id": 64143,
+    "skillKey": "clawhub-mapping-skill",
+    "name": "爬论文与人才触达工作流"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapping-skill",
+    "url": "https://clawhub.ai/skills/mapping-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapping-skill-4635ebb83870a180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI/ML 人才搜索、论文作者发现、实验室成员爬取、GitHub 研究者挖掘与个性化招聘邮件生成 skill。只要用户提到查找 AI/ML PhD、研究员、工程师，抓取实验室成员、OpenReview/CVF 会议作者、GitHub 网络研究者，提取主页/Scholar/GitHub/邮箱/研究方向，识别华人、分..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "16miku",
+      "userId": "s17afqafc9cxg79k2at04c4ydd83gnaq",
+      "displayName": "16Miku",
+      "image": "https://avatars.githubusercontent.com/u/196724264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776032966234,
+      "changelog": "更新 Display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56adfad929a90687672428abf1b45dc43e01cf95a49ca5d81aadd73a0d290a27"
+}

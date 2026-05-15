@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28465,
+  "uuid": "skill-clawhub-docker-ops",
+  "skillKey": "clawhub-docker-ops",
+  "name": "Managing Docker containers via docker-socket-proxy",
+  "summary": "Manage Docker containers securely via docker-socket-proxy: check status, logs, resource usage, and safely restart only whitelisted containers with cooldown.",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elston",
+      "features": [
+        "Manage Docker containers securely via docker-socket-proxy: check status, logs, resource usage,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-ops@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/357294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-ops",
+      "url": "https://clawhub.ai/skills/docker-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-ops",
+    "url": "https://clawhub.ai/skills/docker-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-ops-796ea7d088ade275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-ops@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-ops-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b859f2e00eec5441d72cf6eb5f665a16e3b9933d98d539df5ab4ec20308f6a9",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:55:18.063Z"
+}

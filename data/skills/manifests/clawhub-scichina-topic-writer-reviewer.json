@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68441,
+  "uuid": "skill-clawhub-scichina-topic-writer-reviewer",
+  "skillKey": "clawhub-scichina-topic-writer-reviewer",
+  "name": "科普智创审校助手",
+  "summary": "科普智创审校助手。当用户提到「科普中国热点创作」「科普工作」「热点采集与科普写作」或类似意图时激活。执行以下流程：(1) 监控 kepuchina.cn 整理热门文章与关键字；(2) 根据关键字为用户拟写科普文章；(3) 执行科学性审查与引用来源核查，防止大模型幻觉。英文名：SciChina Topic Writ...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scichina_topic_writer_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binhuatochina",
+      "features": [
+        "科普智创审校助手。当用户提到「科普中国热点创作」「科普工作」「热点采集与科普写作」或类似意图时激活。执行以下流程：(1) 监控 kepuchina.cn 整理热门文章与关键字；(2) 根据关."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scichina-topic-writer-reviewer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164600322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scichina-topic-writer-reviewer",
+      "url": "https://clawhub.ai/skills/scichina-topic-writer-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scichina-topic-writer-reviewer",
+    "url": "https://clawhub.ai/skills/scichina-topic-writer-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scichina-topic-writer-reviewer-aa2dbc8ad003e5cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scichina-topic-writer-reviewer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scichina-topic-writer-reviewer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19fc9d94db9f2b32ea3e4a8d88df4b740f1b25c55809910f7f8ae08dcd82fb62",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T05:30:42.673Z"
+}

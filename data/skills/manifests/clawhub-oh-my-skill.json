@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32123,
+  "uuid": "skill-clawhub-oh-my-skill",
+  "skillKey": "clawhub-oh-my-skill",
+  "name": "oh my skill, make skill easy!",
+  "summary": "Automatically generate and save a reusable skill after AI agent successfully completes a complex task involving 5 or more tool calls. Use this skill whenever...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oh_my_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Automatically generate and save a reusable skill after AI agent successfully completes a comple.",
+        "Use this skill whenever..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oh-my-skill@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oh-my-skill",
+      "url": "https://clawhub.ai/skills/oh-my-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oh-my-skill",
+    "url": "https://clawhub.ai/skills/oh-my-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oh-my-skill-69ca2706ca9d7b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oh-my-skill@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oh-my-skill-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b215c61b75a03fce5169549fd861ee2b87662b45f963cb920a3776b6e902b33",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T08:44:49.885Z"
+}

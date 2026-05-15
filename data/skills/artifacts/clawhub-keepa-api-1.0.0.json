@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keepa-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keepa_api",
+  "skill": {
+    "id": 63034,
+    "skillKey": "clawhub-keepa-api",
+    "name": "Keepa Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keepa-api",
+    "url": "https://clawhub.ai/skills/keepa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keepa-api-b5b8bc51d9864293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keepa API 客户端 - 亚马逊产品价格历史追踪工具。提供 ASIN 查询、价格历史等数据查询功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boyd4y",
+      "userId": "s1757rnrfs9d1em0chtwvhk16x83mtxg",
+      "displayName": "Yang Jun",
+      "image": "https://avatars.githubusercontent.com/u/815438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772452008294,
+      "changelog": "Initial release of keepa-api: an Amazon price history tracking tool using the Keepa API.\n\n- Provides ASIN-based product queries, price history, sales rank, search, and best seller listings.\n- Supports multiple Amazon marketplaces and customizable query parameters (domain, days, category, output format, etc).\n- Requires curl and jq as dependencies.\n- Guides users through API key/setup and configuration on first use.\n- Clear workflow steps for API config, query confirmation, execution, and result display.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e876b89262fcd77ba32e40b4e5e787f061d5cb67f3525413de5bb55c3e847de6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-defender@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_defender",
+  "skill": {
+    "id": 12249,
+    "skillKey": "clawhub-openclaw-defender",
+    "name": "Openclaw Defender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-defender",
+    "url": "https://clawhub.ai/skills/openclaw-defender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-defender-4bee2627d6f0c24f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time file integrity monitoring, pre-installation skill audits, runtime threat blocking, kill switch activation, and incident response to protec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nightfullstar",
+      "userId": "publishers:nightfullstar",
+      "displayName": "nightfullstar",
+      "image": "https://avatars.githubusercontent.com/u/48878763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1608,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770540168191,
+      "changelog": "Initial release with comprehensive security framework for OpenClaw agents.\n\n- Adds real-time file integrity monitoring and automatic tampering alerts.\n- Implements pre-installation skill auditing: pattern scanning, author reputation checks, and blocklist enforcement.\n- Introduces runtime protection: network, file, command, RAG operation controls, and output sanitization.\n- Adds a kill switch for emergency shutdown upon threat detection, with incident logging.\n- Enforces security policies with zero-trust rules and human approval workflow.\n- Includes logging, automated analytics, incident response tools, and collusion detection for advanced threat hunting.\n- Provides quick-start guides and operational best practices for secure skill management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a721455b81d8b6b094ceb5d725b9d622cbe57f98dcf811e586bcb4a694a22bc"
+}

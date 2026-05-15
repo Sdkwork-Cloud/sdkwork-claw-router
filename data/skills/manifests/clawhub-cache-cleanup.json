@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61552,
+  "uuid": "skill-clawhub-cache-cleanup",
+  "skillKey": "clawhub-cache-cleanup",
+  "name": "Cache Cleanup",
+  "summary": "清理过期缓存文件、auto-flush 文件、旧日志，释放磁盘空间。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cache_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaiohuangningde",
+      "features": [
+        "清理过期缓存文件、auto-flush 文件、旧日志，释放磁盘空间。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cache-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143916959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cache-cleanup",
+      "url": "https://clawhub.ai/skills/cache-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cache-cleanup",
+    "url": "https://clawhub.ai/skills/cache-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cache-cleanup-9dcf28d51e33421c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cache-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cache-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:190465011d152fe37c4ea12880a70edaf48aa9b0d0580d414608805119f4c69b",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:23:19.180Z"
+}

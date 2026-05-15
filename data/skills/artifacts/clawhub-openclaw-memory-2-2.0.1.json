@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-2@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_2",
+  "skill": {
+    "id": 19808,
+    "skillKey": "clawhub-openclaw-memory-2",
+    "name": "Openclaw Memories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-2",
+    "url": "https://clawhub.ai/skills/openclaw-memory-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-2-294a179c3068eb3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent memory with ALMA meta-learning, LLM fact extraction, and full-text search. Observer calls remote LLM APIs (OpenAI/Anthropic/Gemini). ALMA and Indexer w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arosstale",
+      "userId": "publishers:arosstale",
+      "displayName": "Artale",
+      "image": "https://avatars.githubusercontent.com/u/117890364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1772024821130,
+      "changelog": "- Major refactor introducing the OpenClaw Memory System v2.\n- Three-component architecture: ALMA (meta-learning, offline), Observer (fact extraction via LLM API), Indexer (offline full-text search).\n- Observer now supports multiple LLM APIs (OpenAI, Anthropic, Gemini) with configurable API key.\n- ALMA and Indexer operate fully offline, with ALMA evolving memory system designs.\n- Dashboard removed for a simpler, code-focused experience.\n- Indexer uses an in-memory search mock instead of SQLite FTS5.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:550ef229658fce0c98da5955fc10fe360de5b55fd0ca44e0023633a5e4a80892"
+}

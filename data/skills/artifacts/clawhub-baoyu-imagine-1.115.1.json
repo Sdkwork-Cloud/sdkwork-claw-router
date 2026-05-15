@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-imagine@1.115.1",
+  "version": "1.115.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_imagine",
+  "skill": {
+    "id": 12921,
+    "skillKey": "clawhub-baoyu-imagine",
+    "name": "Baoyu Imagine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-imagine",
+    "url": "https://clawhub.ai/skills/baoyu-imagine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-imagine-5a55af708fb63c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation with OpenAI GPT Image 2, Azure OpenAI, Google, OpenRouter, DashScope, Z.AI GLM-Image, MiniMax, Jimeng, Seedream and Replicate APIs. Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimliu",
+      "userId": "s17dfbhg0khk4fvtnx0stqg0yx83j25z",
+      "displayName": "Jim Liu 宝玉",
+      "image": "https://avatars.githubusercontent.com/u/648674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1269,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.115.1",
+      "createdAt": 1778382739033,
+      "changelog": "## 1.115.1 - 2026-05-10\n\n### Fixes\n- `baoyu-imagine`: change the default MiniMax image API endpoint to `https://api.minimaxi.com` to match the current official image generation documentation, while keeping `https://api.minimax.io` available through `MINIMAX_BASE_URL` overrides.\n- `baoyu-image-gen`: sync the deprecated image-generation entrypoint with the same MiniMax default endpoint and regression coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fb190f37e565ad48e248dfefb561c336784df91b6415afe5fb44346e91d52f3"
+}

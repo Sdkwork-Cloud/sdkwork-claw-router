@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58405,
+  "uuid": "skill-clawhub-academic-citation-manager",
+  "skillKey": "clawhub-academic-citation-manager",
+  "name": "Academic Citation Manager",
+  "summary": "Add real references and standardize citations for research papers and theses (为科研论文和毕业论文添加真实参考文献并规范引用标注)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_citation_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YouStudyeveryday",
+      "features": [
+        "Add real references and standardize citations for research papers and theses (为科研论文和毕业论文添加真实参考文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-citation-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134957344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-citation-manager",
+      "url": "https://clawhub.ai/skills/academic-citation-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-citation-manager",
+    "url": "https://clawhub.ai/skills/academic-citation-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-citation-manager-2e467c20de08bb3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-citation-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-citation-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8d500551e7a5fc055cbbeaa818b028ed3de084b173a36105a7573354c7c7277",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:04:36.021Z"
+}

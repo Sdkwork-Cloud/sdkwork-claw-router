@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32645,
+  "uuid": "skill-clawhub-woopra",
+  "skillKey": "clawhub-woopra",
+  "name": "Woopra",
+  "summary": "Woopra integration. Manage data, records, and automate workflows. Use when the user wants to interact with Woopra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.woopra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Woopra integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Woopra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/woopra@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "woopra",
+      "url": "https://clawhub.ai/skills/woopra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "woopra",
+    "url": "https://clawhub.ai/skills/woopra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/woopra-77768e245ed0fe1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/woopra@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-woopra-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1245ab25b6b55c4e00864c952fac53721fa97d242dc5d69d09d267bec99abf2e",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:48.946Z"
+}

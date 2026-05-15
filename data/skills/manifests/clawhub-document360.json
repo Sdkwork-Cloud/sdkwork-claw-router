@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23335,
+  "uuid": "skill-clawhub-document360",
+  "skillKey": "clawhub-document360",
+  "name": "Document360",
+  "summary": "Document360 integration. Manage Projects, Users, Roles. Use when the user wants to interact with Document360 data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document360",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Document360 integration",
+        "Manage Projects, Users, Roles",
+        "Use when the user wants to interact with Document360 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document360@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document360",
+      "url": "https://clawhub.ai/skills/document360"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document360",
+    "url": "https://clawhub.ai/skills/document360",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document360-b311442b6e4e0242.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document360@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-document360-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d94c746589e2aec841503a2067f3f7c922c1663fe1ba4f00b45c8a6a8cd5ac20",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:40:18.359Z"
+}

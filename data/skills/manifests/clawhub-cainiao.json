@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56724,
+  "uuid": "skill-clawhub-cainiao",
+  "skillKey": "clawhub-cainiao",
+  "name": "Cainiao",
+  "summary": "Use Cainiao Network (菜鸟物流) for shipment tracking, shipping guidance, service-type comparison, outlet lookup, and delivery-time or fee estimation. Use when th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cainiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Use Cainiao Network (菜鸟物流) for shipment tracking, shipping guidance, service-type comparison, o.",
+        "Use when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cainiao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cainiao",
+      "url": "https://clawhub.ai/skills/cainiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cainiao",
+    "url": "https://clawhub.ai/skills/cainiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cainiao-dedc13b987a8ff7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cainiao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cainiao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16ec43de05b1fe326bf4e7da0c0ac7cb14f69c4f4384e5abd9bdeb67934a200c",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:33:02.382Z"
+}

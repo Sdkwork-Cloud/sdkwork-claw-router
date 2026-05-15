@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67666,
+  "uuid": "skill-clawhub-xinchuan-docx-editor",
+  "skillKey": "clawhub-xinchuan-docx-editor",
+  "name": "信创文档编辑 Skill",
+  "summary": "专用于编辑信创合规改造相关的 Word 文档（.docx），支持将旧技术栈（K8s/容器化部署、达梦数据库等）批量替换为指定的信创目标技术栈（直接部署方式、PolarDB-X 2.0 MySQL 等）。当用户需要修改信创实施方案、迁移方案、技术规划类 Word 文档，调整部署方式或数据库选型时，应加载此 Skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinchuan_docx_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hczaihe",
+      "features": [
+        "专用于编辑信创合规改造相关的 Word 文档（.docx），支持将旧技术栈（K8s/容器化部署、达梦数据库等）批量替换为指定的信创目标技术栈（直接部署方式、PolarDB-X 2.0 MyS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xinchuan-docx-editor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67179484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xinchuan-docx-editor",
+      "url": "https://clawhub.ai/skills/xinchuan-docx-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinchuan-docx-editor",
+    "url": "https://clawhub.ai/skills/xinchuan-docx-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinchuan-docx-editor-5b255a816d480240.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xinchuan-docx-editor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xinchuan-docx-editor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48f3190347935527333898fea25ffbb76283443b30610c8a496df1e2b1181d16",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:11:55.041Z"
+}

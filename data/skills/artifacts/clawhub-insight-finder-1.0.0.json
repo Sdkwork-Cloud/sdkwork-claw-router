@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insight-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_finder",
+  "skill": {
+    "id": 62493,
+    "skillKey": "clawhub-insight-finder",
+    "name": "Insight Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-finder",
+    "url": "https://clawhub.ai/skills/insight-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-finder-a1fa9136649a462a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据探索与洞察引擎 | 自动分析CSV/JSON/Excel | 统计检验+模式识别+异常检测+可视化建议 | 输出结构化报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "softboypatrick",
+      "userId": "s174yept2z9bf030vexnfz2mmd85k0px",
+      "displayName": "Softboypatrick",
+      "image": "https://avatars.githubusercontent.com/u/118743484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777209101217,
+      "changelog": "Data Probe 1.0.0 — Initial Release\n\n- Automatically analyzes CSV/JSON/Excel data with four-stage pipeline: data quality, descriptive statistics, pattern discovery, and actionable insights output.\n- Provides structured reports with statistical testing, pattern recognition, anomaly detection, effect sizes, and confidence ratings.\n- Offers executive summaries, key findings with business impact assessments, and actionable suggestions.\n- Integrates self-auditing and cross-validation mechanisms to minimize bias and overfitting.\n- Delivers confidence-scored insights and clearly stated limitations for robust decision support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9e75d32cf8020eb28f06938e691a01508b77bcf475e2ce01d14ba0bea72f283"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69263,
+  "uuid": "skill-clawhub-social-publish",
+  "skillKey": "clawhub-social-publish",
+  "name": "social video -publish寒武纪视频发布",
+  "summary": "一键多平台发布工具。支持小红书、抖音、快手、B站、视频号五大平台同步发布图文和视频。 用户只需提供一次内容，自动适配各平台格式并发布。 使用场景： - \"一键发布到小红书、抖音、快手、B站、视频号\" - \"帮我同步发多个平台\" - \"多发几个平台\" - \"发布视频到抖音\" - 内容营销、推广、招募等多平台曝光需求",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "寒武纪智能Cambrian Intelligence",
+      "features": [
+        "一键多平台发布工具。支持小红书、抖音、快手、B站、视频号五大平台同步发布图文和视频。 用户只需提供一次内容，自动适配各平台格式并发布。 使用场景：",
+        "\"一键发布到小红书、抖音、快手、B站、视频号\"",
+        "\"帮我同步发多个平台\"",
+        "\"多发几个平台\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-publish@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17725003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-publish",
+      "url": "https://clawhub.ai/skills/social-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-publish",
+    "url": "https://clawhub.ai/skills/social-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-publish-d739d94688fffc74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-publish@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-publish-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31959094201d7f0d5eb923d72665a20c753dc47b04413a0f9496a041c857c3e4",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:18:21.781Z"
+}

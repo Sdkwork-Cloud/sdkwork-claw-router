@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61358,
+  "uuid": "skill-clawhub-daily-log",
+  "skillKey": "clawhub-daily-log",
+  "name": "Daily Log",
+  "summary": "每日工作日志生成技能。触发时机：每次会话结束前或完成重要任务后。输出位置：memory/daily/YYYY-MM-DD.md。使用方法：加载 skill 后读取 references/spec.md 获取详细规范。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "每日工作日志生成技能。触发时机：每次会话结束前或完成重要任务后。输出位置：memory/daily/YYYY-MM-DD.md。使用方法：加载 skill 后读取 references/sp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-log@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-log",
+      "url": "https://clawhub.ai/skills/daily-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-log",
+    "url": "https://clawhub.ai/skills/daily-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-log-8d0152544768c5d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-log@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-log-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be8bcd122e8686738ba26b2de00a37b7c3fcd60af2c5abaccac0d9959a98401c",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:51:36.301Z"
+}

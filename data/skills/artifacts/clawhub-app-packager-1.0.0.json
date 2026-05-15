@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-packager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_packager",
+  "skill": {
+    "id": 66393,
+    "skillKey": "clawhub-app-packager",
+    "name": "App Packager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-packager",
+    "url": "https://clawhub.ai/skills/app-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-packager-a42ea6c56df727ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动切换 Git 分支并执行 APP 打包脚本。支持指定分支、平台、构建类型、版本号、上传选项、API_KEY和更新说明。 打包完成后会自动通知用户结果。 Use when: 用户需要打包 APP、切换分支打包、构建应用、生成安装包。 NOT for: 代码合并、代码提交、单元测试、代码检查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heigher",
+      "userId": "publishers:heigher",
+      "displayName": "Heigher",
+      "image": "https://avatars.githubusercontent.com/u/17734307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773915131669,
+      "changelog": "Initial release of app-packager skill:\n\n- Automatically switches Git branches and executes app packaging scripts based on user requests.\n- Supports parameters for branch, platform (android/ios/all), build type (debug/adhoc/release), version, upload options, API_KEY, and update descriptions.\n- Provides CLI and natural language triggers for invocation; parses user intent and maps to script parameters.\n- Performs pre-flight checks for project path, script permissions, and Git availability.\n- Notifies user about packaging progress and returns detailed results, including generated files and download links.\n- Designed specifically for app packaging scenarios—does not support merging, committing, unit testing, or code checking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:216110d5e34b1817bd1630d2508069df062128f87c92b8fa63ccec364a91c9ff"
+}

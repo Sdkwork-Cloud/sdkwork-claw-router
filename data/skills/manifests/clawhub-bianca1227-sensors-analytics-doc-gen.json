@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68735,
+  "uuid": "skill-clawhub-bianca1227-sensors-analytics-doc-gen",
+  "skillKey": "clawhub-bianca1227-sensors-analytics-doc-gen",
+  "name": "Sensors Analytics Doc Gen",
+  "summary": "将神策（Sensors Analytics）分析手册转换为XX平台飞书使用说明文档。支持事件分析、留存分析、漏斗分析、分布分析、LTV分析、概览，元事件、用户分群、元数据管理等功能模块。自动按照标准文档框架生成，生成前让用户确认框架规范。触发词：生成使用说明、创建手册、文档生成，神策手册。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bianca1227_sensors_analytics_doc_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bianca1227",
+      "features": [
+        "将神策（Sensors Analytics）分析手册转换为XX平台飞书使用说明文档。支持事件分析、留存分析、漏斗分析、分布分析、LTV分析、概览，元事件、用户分群、元数据管理等功能模块。自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bianca1227-sensors-analytics-doc-gen@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51720853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bianca1227-sensors-analytics-doc-gen",
+      "url": "https://clawhub.ai/skills/bianca1227-sensors-analytics-doc-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bianca1227-sensors-analytics-doc-gen",
+    "url": "https://clawhub.ai/skills/bianca1227-sensors-analytics-doc-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bianca1227-sensors-analytics-doc-gen-5e20eac692131a83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bianca1227-sensors-analytics-doc-gen@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bianca1227-sensors-analytics-doc-gen-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e2cb3cca5b6024962f141adb718e101c5b15d9a00abe2ccfa70f134b16bc44e",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:38:13.161Z"
+}

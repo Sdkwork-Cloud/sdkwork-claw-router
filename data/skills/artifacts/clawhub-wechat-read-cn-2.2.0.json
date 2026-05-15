@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-read-cn@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_read_cn",
+  "skill": {
+    "id": 32213,
+    "skillKey": "clawhub-wechat-read-cn",
+    "name": "WeChat Read CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-read-cn",
+    "url": "https://clawhub.ai/skills/wechat-read-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-read-cn-263d606b545d5632.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read chat history from a WeChat contact or group via macOS desktop client screenshot + agent OCR. Use when the user asks to read, view, check, or retrieve We..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuntong007",
+      "userId": "s17fb5027wer41kpvcecgxch9x83h5vv",
+      "displayName": "Lnation",
+      "image": "https://avatars.githubusercontent.com/u/20749401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1776216628264,
+      "changelog": "v2.2: scroll_to_bottom 改用 End 键（key code 119）直达底部；上下翻页改用 PgUp（key code 116）/ PgDown（key code 121），替代原方向键重复方案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af609833a6fbbe514c3ea4b73bd5456642b936dbcd19bdcb4436af8d1f31c666"
+}

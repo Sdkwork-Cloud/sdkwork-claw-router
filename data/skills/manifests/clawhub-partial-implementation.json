@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54034,
+  "uuid": "skill-clawhub-partial-implementation",
+  "skillKey": "clawhub-partial-implementation",
+  "name": "Partial Implementation",
+  "summary": "Code returned as \"done\" is actually a stub — a placeholder body, a TODO comment, or a function that claims completion without real logic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partial_implementation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mvogt99",
+      "features": [
+        "Code returned as \"done\" is actually a stub — a placeholder body, a TODO comment, or a function."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/partial-implementation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/911083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "partial-implementation",
+      "url": "https://clawhub.ai/skills/partial-implementation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partial-implementation",
+    "url": "https://clawhub.ai/skills/partial-implementation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partial-implementation-50923b756ab9f7e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/partial-implementation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-partial-implementation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fd3e307882b5726ed935b7962a86b4cd08710b06a8aadeb898b6b250ddb437e",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:16:25.809Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56184,
+  "uuid": "skill-clawhub-amphp",
+  "skillKey": "clawhub-amphp",
+  "name": "amphp",
+  "summary": "Writing non-blocking, async PHP code using the AMPHP framework — revolt/event-loop, amphp/amp ^3, and the full amphp/* ecosystem (http-server, http-client, w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amphp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Krupkin",
+      "features": [
+        "Writing non-blocking, async PHP code using the AMPHP framework — revolt/event-loop, amphp/amp ^."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amphp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amphp",
+      "url": "https://clawhub.ai/skills/amphp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amphp",
+    "url": "https://clawhub.ai/skills/amphp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amphp-7db19b059d15baa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amphp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amphp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e17c2bff3811a5517eb4777653ad4fd24a18d097e780e85ec2a7b2b1f7f7f7b1",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:31:14.421Z"
+}

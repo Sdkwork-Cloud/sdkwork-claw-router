@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17930,
+  "uuid": "skill-clawhub-minduploadedcrab-skillguard",
+  "skillKey": "clawhub-minduploadedcrab-skillguard",
+  "name": "Minduploadedcrab Skillguard",
+  "summary": "Security scanner for OpenClaw skills. Scans skills for malware, credential theft, data exfiltration, prompt injection, and permission overreach before instal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minduploadedcrab_skillguard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minduploadedcrab",
+      "features": [
+        "Security scanner for OpenClaw skills",
+        "Scans skills for malware, credential theft, data exfiltration, prompt injection, and permission."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minduploadedcrab-skillguard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260771074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minduploadedcrab-skillguard",
+      "url": "https://clawhub.ai/skills/minduploadedcrab-skillguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minduploadedcrab-skillguard",
+    "url": "https://clawhub.ai/skills/minduploadedcrab-skillguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minduploadedcrab-skillguard-cf5829b5781453df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minduploadedcrab-skillguard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minduploadedcrab-skillguard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01864862c18d52eb0640cea7b42e909bcba31c0371326feaf70aea52b132d5df",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:40:50.737Z"
+}

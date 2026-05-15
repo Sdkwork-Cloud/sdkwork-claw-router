@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/executing-plans-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.executing_plans_2",
+  "skill": {
+    "id": 32902,
+    "skillKey": "clawhub-executing-plans-2",
+    "name": "Executing Plans"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "executing-plans-2",
+    "url": "https://clawhub.ai/skills/executing-plans-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/executing-plans-2-28ff239a42d187fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovemymobilewebsite-dotcom",
+      "userId": "s175wqxq3d8609kwmf4p6d5qd984zeny",
+      "displayName": "lovemymobilewebsite-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/264335319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774177168740,
+      "changelog": "- Initial release of the executing-plans skill for organized plan execution.\n- Provides a step-by-step process for loading, reviewing, and executing a written implementation plan with critical checkpoints.\n- Emphasizes critical review before starting, strict task-by-task execution, and mandatory verification.\n- Includes clear STOP/ASK guidance for blockers, unclear instructions, or repeated verification failures.\n- Requires integration with related skills (using-git-worktrees, writing-plans, finishing-a-development-branch).\n- Highlights improved results with subagent support and recommends an alternative skill if subagents are available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db592daae605e4d137a3e46d47f21e172bc4c40ed561cd62e57952e43bcbd78a"
+}

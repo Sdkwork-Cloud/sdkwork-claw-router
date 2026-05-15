@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13195,
+  "uuid": "skill-clawhub-norway-roads",
+  "skillKey": "clawhub-norway-roads",
+  "name": "Norway Roads",
+  "summary": "Query real-time road conditions, closures, and traffic issues in Norway. Use when the user asks about road status, closed roads, traffic conditions, weather on roads, or planning a route in Norway. Handles queries like \"Are there road clos.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norway_roads",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GeoffreyCasaubon",
+      "features": [
+        "Query real-time road conditions, closures, and traffic issues in Norway",
+        "Use when the user asks about road status, closed roads, traffic conditions, weather on roads, o.",
+        "Handles queries like \"Are there road closures between Oslo and Bergen?\", \"What's the road condi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/norway-roads@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/790606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "norway-roads",
+      "url": "https://clawhub.ai/skills/norway-roads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norway-roads",
+    "url": "https://clawhub.ai/skills/norway-roads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norway-roads-0faa469068aa6068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/norway-roads@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-norway-roads-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc2f43f510872e338360a9b38f7df9b86e3ae067bf9a29eee9eb8f8c50920ee8",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T13:29:56.191Z"
+}

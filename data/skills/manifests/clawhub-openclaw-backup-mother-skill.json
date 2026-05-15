@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43418,
+  "uuid": "skill-clawhub-openclaw-backup-mother-skill",
+  "skillKey": "clawhub-openclaw-backup-mother-skill",
+  "name": "OpenClaw Complete Backup & Restore Cycle",
+  "summary": "Performs a complete OpenClaw backup, fresh installation, and restore cycle with verification and troubleshooting for reliable disaster recovery.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_mother_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stefanferreira",
+      "features": [
+        "Performs a complete OpenClaw backup, fresh installation, and restore cycle with verification an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-backup-mother-skill@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6356549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-backup-mother-skill",
+      "url": "https://clawhub.ai/skills/openclaw-backup-mother-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-mother-skill",
+    "url": "https://clawhub.ai/skills/openclaw-backup-mother-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-mother-skill-621c3f11a5452e50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-backup-mother-skill@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-backup-mother-skill-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16fa278ddfcd1dbf0ea24195f1679e66e4a9452d14a58305d382bf3a005b1fff",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T23:43:45.912Z"
+}

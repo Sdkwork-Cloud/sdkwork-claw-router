@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-mlx-tts@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mlx_tts",
+  "skill": {
+    "id": 65416,
+    "skillKey": "clawhub-openclaw-mlx-tts",
+    "name": "Mlx Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mlx-tts",
+    "url": "https://clawhub.ai/skills/openclaw-mlx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mlx-tts-0ce764e823e9d790.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 mlx-audio 的本地文本转语音，支持多语言和多模型，输出音频文件限于指定路径，无需 API 密钥。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gandli-2025",
+      "userId": "publishers:gandli-2025",
+      "displayName": "gandli-2025",
+      "image": "https://avatars.githubusercontent.com/u/222068792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773756191015,
+      "changelog": "Initial release: TTS skill using mlx-audio for OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc26302b01a9a0f463d96264849860b3b5cade8ab5bb5c31071e5a3e74db5273"
+}

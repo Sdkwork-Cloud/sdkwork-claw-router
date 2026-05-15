@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47821,
+  "uuid": "skill-clawhub-cdp-wallet",
+  "skillKey": "clawhub-cdp-wallet",
+  "name": "CDP Wallet",
+  "summary": "Send USDC on Base, read balances, and pay x402-protected resources using a Coinbase CDP server wallet (v2). Use when the operator needs the agent to make USD...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cdp_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ales375",
+      "features": [
+        "Send USDC on Base, read balances, and pay x402-protected resources using a Coinbase CDP server.",
+        "Use when the operator needs the agent to make USD..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cdp-wallet@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223296058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cdp-wallet",
+      "url": "https://clawhub.ai/skills/cdp-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cdp-wallet",
+    "url": "https://clawhub.ai/skills/cdp-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cdp-wallet-2844ec48d99d0fc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cdp-wallet@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cdp-wallet-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5f17fb0df8d5b32bb7dd18ac6c439230cfe08744e95f1fd4d9a61180b141b28",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T16:37:13.717Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reverse-image-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reverse_image_search",
+  "skill": {
+    "id": 17832,
+    "skillKey": "clawhub-reverse-image-search",
+    "name": "Reverse Image Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reverse-image-search",
+    "url": "https://clawhub.ai/skills/reverse-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reverse-image-search-121097d32799f219.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reverse image search (find image source, visually similar images). Use when user provides an image and wants to find its origin, similar images, or verify au..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gushu333",
+      "userId": "publishers:gushu333",
+      "displayName": "gushu333",
+      "image": "https://avatars.githubusercontent.com/u/23053928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 642,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772978030743,
+      "changelog": "Initial release: reverse image search via Yandex, Google, Bing. Supports URLs and local files. No API key needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8563af1c1e4f8f668ee32bcfb537fd37d88f317448440ac93b822f0e738e3dca"
+}

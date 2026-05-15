@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-cex-auth@1.3.3",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_cex_auth",
+  "skill": {
+    "id": 42570,
+    "skillKey": "clawhub-okx-cex-auth",
+    "name": "okx-cex-auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-cex-auth",
+    "url": "https://clawhub.ai/skills/okx-cex-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-cex-auth-2447ee8ce7fd2a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to 'login/log in/sign in', 'authenticate', 'authorize', 'connect OKX account', 'set up credentials', 'first time setup', '..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numpy0001",
+      "userId": "s178zmefrdp1qc0dd9ya8n367183pmvz",
+      "displayName": "numpy0001",
+      "image": "https://avatars.githubusercontent.com/u/140434355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.3.3",
+      "createdAt": 1778248200678,
+      "changelog": "okx-cex-auth 1.3.3 is a version bump with no code or documentation changes.\n\n- Updated CLI dependency to @okx_ai/okx-trade-cli@1.3.3\n- No other changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49f0c356de5e43c50842d68ced5ef3c91499601fa9b00989a9adba6a1ea3bd5c"
+}

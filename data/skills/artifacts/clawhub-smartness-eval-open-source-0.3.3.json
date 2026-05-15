@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smartness-eval-open-source@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartness_eval_open_source",
+  "skill": {
+    "id": 60885,
+    "skillKey": "clawhub-smartness-eval-open-source",
+    "name": "Smartness Eval Open Source"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartness-eval-open-source",
+    "url": "https://clawhub.ai/skills/smartness-eval-open-source",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartness-eval-open-source-8a3db9e2aafdeeb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 智能度综合评伌技能。围绕 14 个维度（含规划能力、幻觉控制）输出综合评分、证据、风险与趋势。对齐 CLEAR/T-Eval/Anthropic 行业标准。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yh22e",
+      "userId": "publishers:yh22e",
+      "displayName": "圆规",
+      "image": "https://avatars.githubusercontent.com/u/13883859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1774165800590,
+      "changelog": "- Added detailed SKILL.md including full usage guide, evaluation modes, output fields, data sources, and security declarations.\n- Documented all read/write file operations and command execution safeguards.\n- Outlined supported evaluation modes (quick, standard, deep) and their purposes.\n- Clarified new output fields (dimension_spread, trend_vs_last, pass_at_k, llm_judge).\n- Specified all data input sources and output file locations.\n- Added a Security Declaration section detailing only-read/only-write directories, limited command execution, and API key requirements for LLM Judge mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b2845a5befa832acfc63489f67f072350893254b7292f4ca7f3181f68fb157f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/work-progress-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.work_progress_summary",
+  "skill": {
+    "id": 44707,
+    "skillKey": "clawhub-work-progress-summary",
+    "name": "Work Progress Summary Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "work-progress-summary",
+    "url": "https://clawhub.ai/skills/work-progress-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/work-progress-summary-96cf562fb396e5e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record daily work items in a local SQLite database, replace a day's report when the user wants to correct it, edit or delete one logged task by entry id, tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanmwx",
+      "userId": "s172p33xvek7whzrfrhyrh33cn83tbn0",
+      "displayName": "Xinhai Zou",
+      "image": "https://avatars.githubusercontent.com/u/69373538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774956781653,
+      "changelog": "- Initial release of work_report_summary skill.\n- Enables users to record, update, replace, and delete daily work logs in a local SQLite database.\n- Supports inspection of entry version history and day-level report history.\n- Provides daily and weekly work progress summaries.\n- Includes multilingual response support with output shaping for Chinese queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:064164556849bc16f363b1db64e47fee8368bc567b07390ae3465802d9014d7e"
+}

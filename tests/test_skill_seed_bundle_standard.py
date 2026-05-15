@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -25,6 +26,7 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
         category_ids = unique_ids(categories, "category id")
         package_ids = unique_ids(packages, "package id")
         skill_ids = unique_ids(skills, "skill id")
+        skill_by_id = {item["id"]: item for item in skills}
         unique_values((item["skillKey"] for item in skills), "skillKey")
         unique_values((item["uuid"] for item in skills), "skill uuid")
         unique_values((item["uuid"] for item in artifacts), "artifact uuid")
@@ -41,7 +43,18 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
             with self.subTest(artifact=artifact.get("uuid")):
                 self.assertEqual(SKILL_TARGET_TYPE, artifact["targetType"])
                 self.assertIn(artifact["targetId"], skill_ids)
-                self.assertRegex(artifact["artifactRef"], r"^builtin://sdkwork\.skills\.[a-z0-9_]+@\d+\.\d+\.\d+$")
+                target_skill = skill_by_id[artifact["targetId"]]
+                if target_skill.get("sourceType") == "COMMUNITY" and target_skill.get("provider") == "ClawHub":
+                    self.assertRegex(
+                        artifact["artifactRef"],
+                        r"^clawhub://skills/[a-z0-9](?:[a-z0-9-]*[a-z0-9])?@\d+\.\d+\.\d+(?:[-+][A-Za-z0-9._-]+)?$",
+                    )
+                    self.assertEqual("metadata", artifact["runtime"])
+                else:
+                    self.assertRegex(
+                        artifact["artifactRef"],
+                        r"^builtin://sdkwork\.skills\.[a-z0-9_]+@\d+\.\d+\.\d+$",
+                    )
                 self.assertGreater(artifact["artifactSizeBytes"], 0)
                 self.assertRegex(artifact["checksumHash"], r"^sha256:[0-9a-f]{64}$")
                 self.assertIsInstance(artifact["frameworks"], list)
@@ -76,8 +89,18 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
             with self.subTest(skill=skill.get("skillKey")):
                 self.assertIn(skill["categoryId"], category_ids)
                 self.assertIn(skill["packageId"], package_ids)
-                self.assertTrue(skill["builtin"])
-                self.assertTrue(skill["isBuiltin"])
+                if skill.get("sourceType") == "OFFICIAL":
+                    self.assertEqual("SDKWork", skill.get("provider"))
+                    self.assertTrue(skill["builtin"])
+                    self.assertTrue(skill["isBuiltin"])
+                    self.assertEqual("builtin", skill.get("runtime"))
+                elif skill.get("sourceType") == "COMMUNITY" and skill.get("provider") == "ClawHub":
+                    self.assertEqual("metadata", skill.get("runtime"))
+                    self.assertFalse(skill["builtin"])
+                    self.assertFalse(skill["isBuiltin"])
+                    self.assertEqual("clawhub", skill.get("source", {}).get("vendor"))
+                else:
+                    self.fail(f"unsupported bundled skill sourceType: {skill.get('sourceType')}")
                 self.assertTrue(skill["enabled"])
                 self.assertEqual("PUBLISHED", skill["marketStatus"])
                 self.assertEqual("PUBLIC", skill["visibility"])
@@ -123,6 +146,141 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                     sorted(expected_artifacts, key=lambda item: item["artifactRef"]),
                     sorted(actual_artifacts, key=lambda item: item["artifactRef"]),
                 )
+
+    def test_skill_seed_has_sdkwork_official_priority_and_clawhub_local_mirror_seed(self) -> None:
+        categories = read_json(SKILLS_ROOT / "categories.json")
+        packages = read_json(SKILLS_ROOT / "packages.json")
+        skills = read_json(SKILLS_ROOT / "skills.json")
+
+        self.assertGreater(len(categories), 0)
+        self.assertGreater(len(skills), 0)
+        self.assertEqual("sdkwork-official", categories[0]["code"])
+        self.assertEqual("SDKWork Official", categories[0]["name"])
+        self.assertTrue(categories[0]["visible"])
+        self.assertEqual(1, categories[0]["status"])
+        self.assertEqual(19, categories[0]["type"])
+
+        visible_category_ids = {
+            item["id"]
+            for item in categories
+            if item.get("visible") is True and item.get("status") == 1 and item.get("type") in {19, 20}
+        }
+        official_skill_keys = {
+            item["skillKey"]
+            for item in skills
+            if item.get("sourceType") == "OFFICIAL"
+            and item.get("provider") == "SDKWork"
+            and item.get("featured") is True
+            and item.get("categoryId") == categories[0]["id"]
+            and item.get("categoryId") in visible_category_ids
+            and item.get("marketStatus") == "PUBLISHED"
+            and item.get("visibility") == "PUBLIC"
+            and item.get("reviewStatus") == "APPROVED"
+            and item.get("enabled") is True
+        }
+        self.assertGreaterEqual(
+            len(official_skill_keys),
+            3,
+            "SDKWork Official must be a first-class non-empty featured category",
+        )
+
+        clawhub_category = next((item for item in categories if item.get("code") == "clawhub-community"), None)
+        self.assertIsNotNone(clawhub_category, "ClawHub community category must be bundled from a local full mirror")
+        self.assertTrue(clawhub_category["visible"])
+        self.assertLess(categories[0]["sortWeight"], clawhub_category["sortWeight"])
+
+        clawhub_package = next((item for item in packages if item.get("packageKey") == "clawhub-community-mirror"), None)
+        self.assertIsNotNone(clawhub_package)
+        self.assertEqual(clawhub_category["id"], clawhub_package["categoryId"])
+        self.assertTrue(clawhub_package["enabled"])
+
+        clawhub_skills = [
+            item
+            for item in skills
+            if item.get("sourceType") == "COMMUNITY"
+            and item.get("provider") == "ClawHub"
+            and item.get("categoryId") == clawhub_category["id"]
+            and item.get("packageId") == clawhub_package["id"]
+        ]
+        self.assertGreaterEqual(len(clawhub_skills), 3)
+        for skill in clawhub_skills:
+            with self.subTest(skill=skill["skillKey"]):
+                self.assertTrue(skill["skillKey"].startswith("clawhub-"))
+                self.assertEqual("PUBLISHED", skill["marketStatus"])
+                self.assertEqual("PUBLIC", skill["visibility"])
+                self.assertEqual("APPROVED", skill["reviewStatus"])
+                self.assertTrue(skill["enabled"])
+                self.assertFalse(skill["builtin"])
+                self.assertFalse(skill["isBuiltin"])
+                self.assertEqual("metadata", skill["runtime"])
+                source = skill.get("source") or {}
+                self.assertEqual("clawhub", source.get("vendor"))
+                self.assertIsInstance(source.get("fetchedAt"), str)
+                self.assertTrue(str(source.get("url", "")).startswith("https://clawhub.ai/skills/"))
+
+        raw_index_path = SKILLS_ROOT / "clawhub" / "raw" / "index.json"
+        normalized_manifest_path = SKILLS_ROOT / "clawhub" / "manifest.json"
+        self.assertTrue(raw_index_path.exists(), "ClawHub raw mirror index must be bundled locally")
+        self.assertTrue(normalized_manifest_path.exists(), "ClawHub normalized mirror manifest must be bundled locally")
+        raw_index = read_json(raw_index_path)
+        normalized_manifest = read_json(normalized_manifest_path)
+        self.assertEqual("https://clawhub.ai/api/v1/skills", raw_index["source"]["listApi"])
+        self.assertEqual("full-cursor-mirror", raw_index["mirrorMode"])
+        self.assertGreaterEqual(raw_index["totalItems"], len(clawhub_skills))
+        self.assertGreaterEqual(normalized_manifest["mirroredSkillCount"], len(clawhub_skills))
+        expected_detail_slugs = raw_mirror_detail_slugs(raw_index)
+        actual_seed_slugs = {skill["source"]["slug"] for skill in clawhub_skills}
+        manifest_seed_slugs = {item["slug"] for item in normalized_manifest["seededSkills"]}
+        self.assertEqual(
+            len(expected_detail_slugs),
+            len(actual_seed_slugs),
+            "ClawHub skills seed must project every mirrored detail payload, not only a curated subset",
+        )
+        self.assertEqual(
+            expected_detail_slugs,
+            actual_seed_slugs,
+            "ClawHub skills seed must import all locally mirrored detail slugs into startup seed data",
+        )
+        self.assertEqual(len(expected_detail_slugs), normalized_manifest["seededSkillCount"])
+        self.assertEqual(
+            actual_seed_slugs,
+            manifest_seed_slugs,
+        )
+
+    def test_clawhub_mirror_script_is_documented_and_uses_public_list_api(self) -> None:
+        script_path = ROOT / "scripts" / "mirror-clawhub-skills-seed.mjs"
+        self.assertTrue(script_path.exists(), "ClawHub skill seed mirror script must exist")
+        script = script_path.read_text(encoding="utf-8")
+        self.assertIn("https://clawhub.ai/api/v1/skills", script)
+        self.assertIn("nextCursor", script)
+        self.assertIn("cursor", script)
+        self.assertIn("data/skills/clawhub/raw/index.json", script)
+        self.assertIn("data/skills/clawhub/raw/details", script)
+        self.assertIn("full-cursor-mirror", script)
+        self.assertIn("--fetch", script)
+        self.assertIn("--max-items", script)
+        self.assertIn("--page-size", script)
+        self.assertIn("--from-mirror", script)
+        self.assertIn("SDKWork Official", script)
+        self.assertIn("--check", script)
+        self.assertIn("clawhub://skills/", script)
+        self.assertIn("builtin: false", script)
+        self.assertIn("isBuiltin: false", script)
+        self.assertIn("mirrorFileName", script)
+        self.assertIn("checkpoint.json", script)
+        self.assertIn("raw/errors", script)
+        self.assertNotIn("/api/v1/search", script)
+        self.assertNotIn("clawhub-mcp", script)
+
+        package_json = read_json(ROOT / "package.json")
+        self.assertEqual(
+            "node scripts/mirror-clawhub-skills-seed.mjs --fetch",
+            package_json["scripts"]["skills:seed:mirror-clawhub"],
+        )
+        self.assertEqual(
+            "node scripts/mirror-clawhub-skills-seed.mjs --check",
+            package_json["scripts"]["skills:seed:check"],
+        )
 
     def test_rust_installer_detects_skill_artifact_seed_metadata_drift(self) -> None:
         source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "skills_seed.rs").read_text(
@@ -175,6 +333,39 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def raw_mirror_detail_slugs(raw_index: dict) -> set[str]:
+    detail_slugs: set[str] = set()
+    for item in raw_index.get("items", []):
+        slug = normalize_slug(item.get("slug"))
+        if not slug:
+            continue
+        detail_path = SKILLS_ROOT / "clawhub" / "raw" / "details" / mirror_file_name(slug)
+        legacy_detail_path = SKILLS_ROOT / "clawhub" / "raw" / "details" / f"{slug}.json"
+        if detail_path.exists():
+            detail = read_json(detail_path)
+        elif legacy_detail_path.exists():
+            detail = read_json(legacy_detail_path)
+        else:
+            continue
+        detail_slug = normalize_slug(detail.get("skill", {}).get("slug"))
+        if detail_slug:
+            detail_slugs.add(detail_slug)
+    return detail_slugs
+
+
+def mirror_file_name(slug: str) -> str:
+    normalized = normalize_slug(slug)
+    prefix = normalized[:80].rstrip("-") or "skill"
+    digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:16]
+    return f"{prefix}-{digest}.json"
+
+
+def normalize_slug(value) -> str:
+    normalized = re.sub(r"[^a-z0-9-]+", "-", str(value or "").strip().lower())
+    normalized = re.sub(r"^-+|-+$", "", normalized)
+    return re.sub(r"-+", "-", normalized)
 
 
 def local_seed_path(value: str) -> Path:

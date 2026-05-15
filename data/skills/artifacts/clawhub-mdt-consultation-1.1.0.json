@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mdt-consultation@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdt_consultation",
+  "skill": {
+    "id": 65867,
+    "skillKey": "clawhub-mdt-consultation",
+    "name": "MDT Consultation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdt-consultation",
+    "url": "https://clawhub.ai/skills/mdt-consultation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdt-consultation-e63ffe5114b997e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent MDT 多学科会诊——多个智能体并行协作完成复杂任务。类似医院MDT会诊，针对大事/难事/重要文件，同时派发多个专科agent并行分析，最后综合研判出高质量输出。使用场景：(1) 重要合同签署前审查 (2) 重要公文/领导讲话稿打磨 (3) 品牌宣传多平台内容策划 (4) 重大决策分析 (5) 技术方..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luaqnyin",
+      "userId": "s178qe0kda29njgnhv2hnwpbc983kt75",
+      "displayName": "luaqnyin",
+      "image": "https://avatars.githubusercontent.com/u/162386609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774854114097,
+      "changelog": "Added consultation-guide.md: workflow details, agent combinations, result template, failure handling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76335a8f075f25ac0a7b7be0832b39bb14298833d98206356a9fa8a926c0904e"
+}

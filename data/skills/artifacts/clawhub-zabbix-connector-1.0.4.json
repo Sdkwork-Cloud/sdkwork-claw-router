@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zabbix-connector@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zabbix_connector",
+  "skill": {
+    "id": 48625,
+    "skillKey": "clawhub-zabbix-connector",
+    "name": "Zabbix Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zabbix-connector",
+    "url": "https://clawhub.ai/skills/zabbix-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zabbix-connector-86d3ae17e4eb84b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for Zabbix API monitoring and interaction. Use it to check active alerts, list problems, manage hosts, and query monitoring data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rickkbarbosa",
+      "userId": "s171q3s6m4gq09dzjg1yep0g1n84x3a1",
+      "displayName": "Rickk Barbosa",
+      "image": "https://avatars.githubusercontent.com/u/6639130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777870464890,
+      "changelog": "- No changes detected in this version.\n- The skill's files and documentation remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49f2d45859748c427f6b6b58ad85fea5b77d52a3eca8904212e507f542370afa"
+}

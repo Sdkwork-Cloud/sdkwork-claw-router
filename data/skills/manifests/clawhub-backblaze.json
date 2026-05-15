@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34283,
+  "uuid": "skill-clawhub-backblaze",
+  "skillKey": "clawhub-backblaze",
+  "name": "Backblaze",
+  "summary": "Backblaze integration. Manage data, records, and automate workflows. Use when the user wants to interact with Backblaze data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backblaze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Backblaze integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Backblaze data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backblaze@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backblaze",
+      "url": "https://clawhub.ai/skills/backblaze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backblaze",
+    "url": "https://clawhub.ai/skills/backblaze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backblaze-7a03c4bbd666dfa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backblaze@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-backblaze-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1afd8e32468f87838b13b7e15827ebb1ff64526cc1356979f84d271bc1430385",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:22:18.600Z"
+}

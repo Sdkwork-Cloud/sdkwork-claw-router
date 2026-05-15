@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-aox-info@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_aox_info",
+  "skill": {
+    "id": 64065,
+    "skillKey": "clawhub-check-aox-info",
+    "name": "check-aox-info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-aox-info",
+    "url": "https://clawhub.ai/skills/check-aox-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-aox-info-6d00f2b4f77762c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查看 AO 网络 跨链，支持哪些 Token， 支持哪些链？ 目前关闭或开启了哪条链的充值或提现功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charles-lpd",
+      "userId": "s175y0nen74kf3whxxesv1t1ch83x49z",
+      "displayName": "charles-lpd",
+      "image": "https://avatars.githubusercontent.com/u/90810762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774072612453,
+      "changelog": "No functional or documentation changes detected in this release.\n\n- Version bumped to 1.0.2 without any file updates.\n- No new features, bug fixes, or adjustments introduced in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa94b415b29b7ea01200e7db8683a9822002dcc0dc9b83c5d880f3a019948b35"
+}

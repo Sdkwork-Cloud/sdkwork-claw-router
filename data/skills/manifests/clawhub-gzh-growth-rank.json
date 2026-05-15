@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71139,
+  "uuid": "skill-clawhub-gzh-growth-rank",
+  "skillKey": "clawhub-gzh-growth-rank",
+  "name": "gzh-growth-rank（公众号阅读增长榜）",
+  "summary": "每日增长榜速览：直接对接官方阅读增长率榜单，按日期查看公众号阅读增长率TOP榜。每个作者只展示最高阅读那篇，标题做成可点击链接，一秒直达原文。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gzh_growth_rank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "if530770",
+      "features": [
+        "每日增长榜速览：直接对接官方阅读增长率榜单，按日期查看公众号阅读增长率TOP榜。每个作者只展示最高阅读那篇，标题做成可点击链接，一秒直达原文。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gzh-growth-rank@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46310539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gzh-growth-rank",
+      "url": "https://clawhub.ai/skills/gzh-growth-rank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gzh-growth-rank",
+    "url": "https://clawhub.ai/skills/gzh-growth-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gzh-growth-rank-05f6c78ac3e0e23a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gzh-growth-rank@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gzh-growth-rank-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fde70cf9fb75a593c82f7f7105943b062b022d688bd1bc45d5298a337a21d736",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:01:58.417Z"
+}

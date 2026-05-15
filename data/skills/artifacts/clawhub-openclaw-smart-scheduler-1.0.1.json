@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-smart-scheduler@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_smart_scheduler",
+  "skill": {
+    "id": 70743,
+    "skillKey": "clawhub-openclaw-smart-scheduler",
+    "name": "Smart Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-smart-scheduler",
+    "url": "https://clawhub.ai/skills/openclaw-smart-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-smart-scheduler-219ac481acadd5ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能任务调度器 - 简单任务秒级响应，复杂任务深度思辨。自动识别任务复杂度，路由到最优处理器。集成苏格拉底探明、任务分解、资源定位、多模型辩论验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timo2026",
+      "userId": "s174wprm496tppjgz41wv2b6tn83faym",
+      "displayName": "Timo2026",
+      "image": "https://avatars.githubusercontent.com/u/258531684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775095987391,
+      "changelog": "- Added a new \"安全说明\" (Security Notice) section in SKILL.md, detailing security features such as use of environment variables for credentials, sandboxed code execution, and restricted network access.\n- No changes to core logic or functionality.  \n- This update enhances transparency regarding security practices for all users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3cf9d866ebb0f9093752e91acd76a843cd481f423f9904807df7e203b4e5012"
+}

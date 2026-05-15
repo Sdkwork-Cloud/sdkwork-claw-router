@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35833,
+  "uuid": "skill-clawhub-node-connection-doctor",
+  "skillKey": "clawhub-node-connection-doctor",
+  "name": "node-connection-doctor",
+  "summary": "Diagnose and fix OpenClaw node connection issues with automated checks, error-specific solutions, CLI guidance, and optional one-click repairs.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_connection_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuoXinJiang",
+      "features": [
+        "Diagnose and fix OpenClaw node connection issues with automated checks, error-specific solution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/node-connection-doctor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125207178?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "node-connection-doctor",
+      "url": "https://clawhub.ai/skills/node-connection-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-connection-doctor",
+    "url": "https://clawhub.ai/skills/node-connection-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-connection-doctor-3e2d667febfbba95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/node-connection-doctor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-node-connection-doctor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61267104f0ead5938055e30b434c0004d0b70cc63340f2c5a6c7233263961f26",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:12:25.337Z"
+}

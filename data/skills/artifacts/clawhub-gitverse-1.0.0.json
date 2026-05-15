@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitverse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitverse",
+  "skill": {
+    "id": 23989,
+    "skillKey": "clawhub-gitverse",
+    "name": "GitVerse API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitverse",
+    "url": "https://clawhub.ai/skills/gitverse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitverse-28e5edb5729c8762.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitVerse API integration for working with repositories, issues, and pull requests. Use when Codex needs to interact with GitVerse (gitverse.ru) for operation..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webchi",
+      "userId": "publishers:webchi",
+      "displayName": "Vasiliy",
+      "image": "https://avatars.githubusercontent.com/u/27108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773054513975,
+      "changelog": "Initial release of the GitVerse skill.\n\n- Integrates with the GitVerse API for repository, issue, and pull request management.\n- Supports listing/viewing repositories, issues, and pull requests; creating pull requests; viewing repository info.\n- CLI usage included for all primary GitVerse operations.\n- Requires GITVERSE_TOKEN for authentication.\n- Outputs all data in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d08ea533d1d394baa26badc968050bfd558ae43d26e65414776631a5269b2d66"
+}

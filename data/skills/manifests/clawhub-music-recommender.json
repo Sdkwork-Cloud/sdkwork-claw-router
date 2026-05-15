@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56930,
+  "uuid": "skill-clawhub-music-recommender",
+  "skillKey": "clawhub-music-recommender",
+  "name": "Music Recommender",
+  "summary": "Analyze NetEase Cloud Music (网易云音乐) playlist and recommend songs matching their taste. Use when user asks for music recommendations, wants a daily playlist,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geekfoxcharlie",
+      "features": [
+        "Analyze NetEase Cloud Music (网易云音乐) playlist and recommend songs matching their taste",
+        "Use when user asks for music recommendations, wants a daily playlist,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-recommender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254373953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-recommender",
+      "url": "https://clawhub.ai/skills/music-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-recommender",
+    "url": "https://clawhub.ai/skills/music-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-recommender-470f2c7e88a37cbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-recommender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-recommender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6339a53e44d311965587691df957e99f10afc5aca5f8fecd8e74609685941bd9",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:58:00.016Z"
+}

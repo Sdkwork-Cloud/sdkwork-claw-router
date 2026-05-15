@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33428,
+  "uuid": "skill-clawhub-crypto-funding-harvester",
+  "skillKey": "clawhub-crypto-funding-harvester",
+  "name": "Crypto Funding Harvester",
+  "summary": "Scans perpetual futures funding rates across Hyperliquid, Binance, and Bybit to identify delta-neutral carry trade opportunities. A delta-neutral carry trade...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_funding_harvester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mibayy",
+      "features": [
+        "Scans perpetual futures funding rates across Hyperliquid, Binance, and Bybit to identify delta-.",
+        "A delta-neutral carry trade..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-funding-harvester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97958526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-funding-harvester",
+      "url": "https://clawhub.ai/skills/crypto-funding-harvester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-funding-harvester",
+    "url": "https://clawhub.ai/skills/crypto-funding-harvester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-funding-harvester-201bf985e52d5fe9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-funding-harvester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-funding-harvester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4af901d626926ce0f1e6b275471ae34069c2419a4d5aa8f5f7adc5ad598cb73",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:40:48.061Z"
+}

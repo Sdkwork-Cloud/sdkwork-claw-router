@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57152,
+  "uuid": "skill-clawhub-neovim-daily-digest",
+  "skillKey": "clawhub-neovim-daily-digest",
+  "name": "Neovim Daily Digest",
+  "summary": "Build a filtered Markdown digest of important r/neovim posts by combining Reddit RSS feeds (`top/day`, `new`, and `hot`) and prioritizing Neovim tips, plugin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neovim_daily_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smile618",
+      "features": [
+        "Build a filtered Markdown digest of important r/neovim posts by combining Reddit RSS feeds (`to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neovim-daily-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119727144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neovim-daily-digest",
+      "url": "https://clawhub.ai/skills/neovim-daily-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neovim-daily-digest",
+    "url": "https://clawhub.ai/skills/neovim-daily-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neovim-daily-digest-e6076832404497f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neovim-daily-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neovim-daily-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca45d3b7e6482688da2cba37eafba7f45850d355e68ff9e9fe637acd50f3ba31",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T15:54:14.292Z"
+}

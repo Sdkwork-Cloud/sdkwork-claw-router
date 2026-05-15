@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72413,
+  "uuid": "skill-clawhub-ifeng",
+  "skillKey": "clawhub-ifeng",
+  "name": "Ifeng",
+  "summary": "检索凤凰网公开新闻和频道页，提供关键词新闻摘要、频道热点统计及深度报道段落要点提取。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifeng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "检索凤凰网公开新闻和频道页，提供关键词新闻摘要、频道热点统计及深度报道段落要点提取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifeng@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifeng",
+      "url": "https://clawhub.ai/skills/ifeng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifeng",
+    "url": "https://clawhub.ai/skills/ifeng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifeng-d1a1da179a6382c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifeng@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifeng-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1a8268d9e302c75407f7fec6b98e04f2644134b98d33d97cf11c74ac273c789",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:36:40.031Z"
+}

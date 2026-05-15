@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19041,
+  "uuid": "skill-clawhub-mt5-trading-assistant",
+  "skillKey": "clawhub-mt5-trading-assistant",
+  "name": "mt5-trading-assistant",
+  "summary": "Automates MetaTrader 5 trading: connect, monitor accounts, execute buy/sell orders with SL/TP, retrieve market data, and manage positions via scripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mt5_trading_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canvascn00",
+      "features": [
+        "Automates MetaTrader 5 trading: connect, monitor accounts, execute buy/sell orders with SL/TP,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mt5-trading-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260036933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mt5-trading-assistant",
+      "url": "https://clawhub.ai/skills/mt5-trading-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mt5-trading-assistant",
+    "url": "https://clawhub.ai/skills/mt5-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mt5-trading-assistant-20234ad8ca3b6d46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mt5-trading-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mt5-trading-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fec64b379484b8bcec674a11de44e07c20ac52c8d0effa431ed62a9919b08e32",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:26:21.519Z"
+}

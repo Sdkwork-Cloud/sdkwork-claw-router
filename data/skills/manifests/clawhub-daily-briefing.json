@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9184,
+  "uuid": "skill-clawhub-daily-briefing",
+  "skillKey": "clawhub-daily-briefing",
+  "name": "Daily Briefing",
+  "summary": "Generates a warm, compact daily briefing with weather, calendar, reminders, birthdays, and important emails for cron or chat delivery.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antgly",
+      "features": [
+        "Generates a warm, compact daily briefing with weather, calendar, reminders, birthdays, and impo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-briefing@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40376804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-briefing",
+      "url": "https://clawhub.ai/skills/daily-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-briefing",
+    "url": "https://clawhub.ai/skills/daily-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-briefing-a67a464e56ffd7d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-briefing@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-briefing-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f8a7c51478b868ac7e6d6af7a8074f47e080108830f3a519ab10b2d9e5e0ac7",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T05:46:15.942Z"
+}

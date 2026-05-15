@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20207,
+  "uuid": "skill-clawhub-claw-recall",
+  "skillKey": "clawhub-claw-recall",
+  "name": "Claw Recall",
+  "summary": "Searchable conversation memory that survives context compaction. Indexes session transcripts into SQLite with full-text and semantic search so your agent can...",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_recall",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rod",
+      "features": [
+        "Searchable conversation memory that survives context compaction",
+        "Indexes session transcripts into SQLite with full-text and semantic search so your agent can..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-recall@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86267410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-recall",
+      "url": "https://clawhub.ai/skills/claw-recall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-recall",
+    "url": "https://clawhub.ai/skills/claw-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-recall-66aeaebc2a5b3238.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-recall@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-recall-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baa155b85f05816e512033b2e9b18aba619f4ea3211f64873a069e95e0d7c995",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T21:55:50.420Z"
+}

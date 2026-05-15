@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelance-proposal-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelance_proposal_engine",
+  "skill": {
+    "id": 12899,
+    "skillKey": "clawhub-freelance-proposal-engine",
+    "name": "Freelance Proposal Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelance-proposal-engine",
+    "url": "https://clawhub.ai/skills/freelance-proposal-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelance-proposal-engine-fac1fe2f6289b7ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate tailored freelance proposals for Upwork, Fiverr, Freelancer, and PeoplePerHour job listings. Use when writing proposals, bidding on gigs, or responding to client job posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanwyngaard",
+      "userId": "s17cbgx0qmxw2p9k4mvca4z40n83mae0",
+      "displayName": "Sean Wyngaard",
+      "image": "https://avatars.githubusercontent.com/u/187758643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1484,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770985743045,
+      "changelog": "Initial release of freelance-proposal-engine—generate tailored freelance proposals for major platforms.\n\n- Analyzes job listings to identify client needs, requirements, red flags, and budget signals.\n- Adapts proposal strategy based on client type, experience, and project specifics.\n- Outputs proposals using a proven structure with hooks, problem restatement, solution steps, experience, and CTA.\n- Recommends pricing with justification and alternatives based on market data.\n- Provides platform-specific tips, expert questions to ask, and a follow-up template.\n- Enforces strict quality, clarity, and personalization rules to maximize win rates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:552cb70e3b15dc6fdc47f9696cd99eb36a1585f3bb3126113f5be9ebdd1580c3"
+}

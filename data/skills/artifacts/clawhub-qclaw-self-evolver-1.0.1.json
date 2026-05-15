@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qclaw-self-evolver@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qclaw_self_evolver",
+  "skill": {
+    "id": 63973,
+    "skillKey": "clawhub-qclaw-self-evolver",
+    "name": "QClaw Self-Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qclaw-self-evolver",
+    "url": "https://clawhub.ai/skills/qclaw-self-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qclaw-self-evolver-81afb6c8cbcf88c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent 自我进化引擎。基于 OpenSpace + HermesAgent 理念，实现技能质量监控、学习记录自动处理、工作流模式提炼、自动创建新技能。触发场景： (1) 用户说「升级/完善/优化」相关 → 触发技能自进化 (2) 用户想了解「还记得什么/搜一下记忆」→ 触发语义记忆搜索 (3) 用户想「..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qshan1",
+      "userId": "s175j8hsqhta8jmcxzs6nby1hh84rntk",
+      "displayName": "理想菇",
+      "image": "https://avatars.githubusercontent.com/u/145826407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776074794021,
+      "changelog": "Version 1.0.1 summary: Major refactor of the skill’s structure and evolution engine for a cleaner, more modular self-evolution workflow.\n\n- Replaced scripts/evolve.py with modular scripts: auto_learn.py, install_self_evolver.py, sea_evolve.py, skill_metrics.py.\n- Removed references/patterns.md, scripts/evolve.py, and scripts/skill_quality.py; consolidated pattern and skill quality features.\n- Skill now features clearly separated evolve (SEA engine), auto learn (automatic correction record), and skill evolution (auto skill extraction) modules.\n- Installation workflow, core functionalities, and directory structure are streamlined and clarified.\n- Supports automatic correction detection, scheduled evolution, and auto-generation of new skills from recurring patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12a04a3a6969bdc711c2300546f665befc883c64ccf247e6351baf370b0c377c"
+}

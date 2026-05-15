@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/press-release-writing@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.press_release_writing",
+  "skill": {
+    "id": 16025,
+    "skillKey": "clawhub-press-release-writing",
+    "name": "Press Release Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "press-release-writing",
+    "url": "https://clawhub.ai/skills/press-release-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/press-release-writing-0540bee148c1fdc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Press release writing in AP style with inverted pyramid structure. Covers formatting, datelines, quotes, boilerplates, and fact-checking. Use for: product la..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 917,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403296109,
+      "changelog": "- Added detailed AP style guidelines for press release writing, including formatting, inverted pyramid structure, quotes, and boilerplates.\n- Provided step-by-step instructions for research and fact-checking using inference.sh CLI.\n- Outlined formatting and content requirements for headlines, datelines, lead paragraphs, and media contacts.\n- Included reference tables for AP style, length guidelines, press release types, and common mistakes.\n- Enhanced documentation to assist with writing professional press releases for announcements, product launches, funding, partnerships, executive hires, and company news.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49cca92cb6871e656462b008a26d6398086d1721b58bbcf7369baa438b559d71"
+}

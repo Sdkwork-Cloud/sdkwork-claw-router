@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/df-merger@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.df_merger",
+  "skill": {
+    "id": 14574,
+    "skillKey": "clawhub-df-merger",
+    "name": "Df Merger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "df-merger",
+    "url": "https://clawhub.ai/skills/df-merger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/df-merger-54fe0f8d72837430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Merge pandas DataFrames from multiple construction sources. Handle different schemas, keys, and data quality issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1164,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771172326949,
+      "changelog": "- Adds intelligent merging of pandas DataFrames from multiple construction sources, handling schema differences and key mismatches.\n- Introduces harmonization of column names, including support for common construction data variants.\n- Implements merge strategies (inner, left, right, outer, cross) with quality scoring for merged data.\n- Adds support for fuzzy key matching and merging, useful for inconsistent or messy data.\n- Provides utility for merging multiple DataFrames sequentially.\n- Includes specialized merging for BIM and schedule data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4d71ead07000c1a4bb5811b877100c72c24dd9965ebecf73c7b1005c5fe2861"
+}

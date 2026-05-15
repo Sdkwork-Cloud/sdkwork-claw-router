@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9513,
+  "uuid": "skill-clawhub-strava",
+  "skillKey": "clawhub-strava",
+  "name": "Strava",
+  "summary": "Load and analyze Strava activities, stats, and workouts using the Strava API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strava",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bohdan Podvirnyi",
+      "features": [
+        "Load and analyze Strava activities, stats, and workouts using the Strava API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strava@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31819391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strava",
+      "url": "https://clawhub.ai/skills/strava"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strava",
+    "url": "https://clawhub.ai/skills/strava",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strava-aa5af52e3429b489.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strava@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-strava-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21ea215f9b82bae78763cd5b835a54118924274646121973ad664b8af850ec76",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T14:52:00.734Z"
+}

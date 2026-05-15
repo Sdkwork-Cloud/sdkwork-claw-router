@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61229,
+  "uuid": "skill-clawhub-shuttle-ai-chatbot",
+  "skillKey": "clawhub-shuttle-ai-chatbot",
+  "name": "Shuttle AI Chatbot",
+  "summary": "直接調用本地 AI /chat_direct API，支援單次與批次查詢，產品比較，輸出 JSON 或純文字，無需瀏覽器自動化。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuttle_ai_chatbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "https://github.com/account/ssh",
+      "features": [
+        "直接調用本地 AI /chat_direct API，支援單次與批次查詢，產品比較，輸出 JSON 或純文字，無需瀏覽器自動化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuttle-ai-chatbot@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/888016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuttle-ai-chatbot",
+      "url": "https://clawhub.ai/skills/shuttle-ai-chatbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuttle-ai-chatbot",
+    "url": "https://clawhub.ai/skills/shuttle-ai-chatbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuttle-ai-chatbot-b65953ff995b2c64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuttle-ai-chatbot@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuttle-ai-chatbot-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53a3d7e9034aac64ccea4e596aa139cba5b7708f79d8e657354b5264e59e0df6",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:46:32.731Z"
+}

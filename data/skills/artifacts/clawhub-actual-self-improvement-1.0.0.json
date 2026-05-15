@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/actual-self-improvement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actual_self_improvement",
+  "skill": {
+    "id": 9400,
+    "skillKey": "clawhub-actual-self-improvement",
+    "name": "Self Improvement (done properly)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actual-self-improvement",
+    "url": "https://clawhub.ai/skills/actual-self-improvement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actual-self-improvement-7c913bc232d7cc0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture durable lessons from debugging, user corrections, missing capabilities, and repeated workflow friction so future sessions avoid the same mistakes. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3688,
+      "installsAllTime": 22,
+      "installsCurrent": 17,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773412899639,
+      "changelog": "Self-Improvement Skill v4.0.0 is a major workflow and usability overhaul.\n\n- Replaces \"capture everything\" with a focus on reusable, transferable lessons (corrections, workarounds, project conventions, recurring workflow pain).\n- Splits skill and project/workspace roots: all logs now live in the workspace, not under the skill installation.\n- Introduces helper scripts for initializing, searching, logging, and promoting learnings and errors (`scripts/learnings.py`, `scripts/extract_skill.py`).\n- Broadens compatibility: now agent-agnostic in core workflow, not OpenClaw-specific; hooks and helper scripts shown for multiple contexts.\n- Logging and promotion process is clarified with explicit decision tables, search-before-log requirements, and durable entry formats.\n- All logging file templates, references, and evaluation configs reorganized under `assets/`, `references/`, `evals/`, and `scripts/`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79e1f15ecd3649a210b817e3e121629f9c1af6a29f12266c35f3d9aa3190760a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/releasenotes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.releasenotes",
+  "skill": {
+    "id": 37859,
+    "skillKey": "clawhub-releasenotes",
+    "name": "Releasenotes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "releasenotes",
+    "url": "https://clawhub.ai/skills/releasenotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/releasenotes-0c610b736ab082dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate release notes from git commit history using Conventional Commits convention. Categorizes commits into Features, Bug Fixes, Performance, Refactoring,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774649010032,
+      "changelog": "- Initial release.\n- Generates categorized release notes from git commit history using the Conventional Commits convention.\n- Supports filtering by date ranges or version labels.\n- Outputs notes to file or console, including commit hash and author.\n- Zero dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee28260b9534998d19c3269a3f3dd68850b5b4a19821d010757a835467955986"
+}

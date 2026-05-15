@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25041,
+  "uuid": "skill-clawhub-contact-enrichment",
+  "skillKey": "clawhub-contact-enrichment",
+  "name": "Contact Enrichment",
+  "summary": "Extract contact information from a website using a 3-tier approach. Direct HTML scraping, WHOIS lookup, then Hunter.io API domain search for verified busines...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contact_enrichment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Extract contact information from a website using a 3-tier approach",
+        "Direct HTML scraping, WHOIS lookup, then Hunter.io API domain search for verified busines..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contact-enrichment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contact-enrichment",
+      "url": "https://clawhub.ai/skills/contact-enrichment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contact-enrichment",
+    "url": "https://clawhub.ai/skills/contact-enrichment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contact-enrichment-9dbc8ed7cbda5643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contact-enrichment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contact-enrichment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8367105241fe4e40b6b15b6fc70a393143129caa46d3d3ab00cce7d4a37ceca9",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:27:57.755Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-visualizer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_visualizer",
+  "skill": {
+    "id": 64093,
+    "skillKey": "clawhub-doc-visualizer",
+    "name": "文档可视化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-visualizer",
+    "url": "https://clawhub.ai/skills/doc-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-visualizer-90cacd8dfa7aac5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键将飞书文档/Word/PDF/Excel/Txt转换成深色指挥中心风格HTML看板，支持5主题，可导出PDF和长图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lzm2023",
+      "userId": "s17dws38xdm1xdqphwce92wew583htk7",
+      "displayName": "LZM2023",
+      "image": "https://avatars.githubusercontent.com/u/133074322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777443969425,
+      "changelog": "Version 1.0.1\n\n- No changes detected in the codebase or documentation.\n- Version bump only; functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bc294c126d39ef03ab412ddad658121e5fa1d9402f7ac6d6128924d2028d4dd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aevo-trading-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aevo_trading_skill",
+  "skill": {
+    "id": 24776,
+    "skillKey": "clawhub-aevo-trading-skill",
+    "name": "Aevo Trading Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aevo-trading-skill",
+    "url": "https://clawhub.ai/skills/aevo-trading-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aevo-trading-skill-1a7dc38805dc3ac0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI trading assistant for AEVO, a decentralized derivatives exchange. Connects any MCP-compatible client to AEVO's 45 tools for market data, portfolio managem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yichulau",
+      "userId": "publishers:yichulau",
+      "displayName": "yichulau",
+      "image": "https://avatars.githubusercontent.com/u/39252336?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773148197449,
+      "changelog": "AEVO Trading Skill v1.0.0 – Initial Release\n\n- Provides an AI trading assistant for AEVO's decentralized derivatives exchange, supporting perpetual futures, spot pairs, and options on crypto assets.\n- Enables connection of any MCP-compatible client to AEVO’s 45 tools, offering market data, portfolio management, order execution, risk analysis, and options strategies.\n- Features strict safety and authentication workflows, requiring user confirmation for trades and rigorous risk checks before execution.\n- Supports both read-only and full trading access based on user-provided API credentials, with a clear multi-tiered authentication process.\n- Includes comprehensive guidance and workflows for portfolio review, market analysis, opening/closing positions, bracket orders, and options strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db6444dafa79d9a30f65301c0c2fe2212969be2dbe625936572e710b52fb13f9"
+}

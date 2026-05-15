@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33485,
+  "uuid": "skill-clawhub-gist",
+  "skillKey": "clawhub-gist",
+  "name": "Gist",
+  "summary": "Gist integration. Manage Organizations. Use when the user wants to interact with Gist data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Gist integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Gist data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gist@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gist",
+      "url": "https://clawhub.ai/skills/gist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gist",
+    "url": "https://clawhub.ai/skills/gist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gist-b1c76e6a52867105.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gist@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gist-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1267d2539de4a740470d6651ec82c319b1ed2c16736d43100b7f0c674ade7ef",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:51:57.318Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/klaviyo-1-0-4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klaviyo_1_0_4",
+  "skill": {
+    "id": 25993,
+    "skillKey": "clawhub-klaviyo-1-0-4",
+    "name": "Klaviyo 1.0.4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klaviyo-1-0-4",
+    "url": "https://clawhub.ai/skills/klaviyo-1-0-4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klaviyo-1-0-4-08ae633e5b96b21e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Klaviyo API integration with managed OAuth. Access profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, and webhooks. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xspeter",
+      "userId": "s17280gszj4erp54v5va99y0y98457tk",
+      "displayName": "0xspeter",
+      "image": "https://avatars.githubusercontent.com/u/129072432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773564788719,
+      "changelog": "Initial release: Klaviyo API integration with managed OAuth\n\n- Provides managed OAuth2 authentication for secure Klaviyo API access.\n- Supports management of profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, and webhooks.\n- Detailed usage instructions with Python examples for all core API endpoints.\n- Maton API key required for authentication; connection management via Maton control panel.\n- Enables selection among multiple Klaviyo connections via request header.\n- Designed for email marketing, customer data management, and workflow integrations with Klaviyo.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:973ef5bb011d61e3b1724024b8a4c8cd2e81aa4bc2ed7592aeb16c5a0f767015"
+}

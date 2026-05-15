@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-progress-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_progress_tracker",
+  "skill": {
+    "id": 67987,
+    "skillKey": "clawhub-daily-progress-tracker",
+    "name": "daily-progress-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-progress-tracker",
+    "url": "https://clawhub.ai/skills/daily-progress-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-progress-tracker-82ea8217a1388e5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助用户进行每日工作汇总，生成结构化的日报。当用户提到「日报」「工作总结」「今日汇报」「总结今天」时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yying01",
+      "userId": "publishers:yying01",
+      "displayName": "yying01",
+      "image": "https://avatars.githubusercontent.com/u/5052485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773835153345,
+      "changelog": "1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63e97cb6d937e39a0af01e8ebec9ee9bd66562db78d8a66743b6db1e55c8299c"
+}

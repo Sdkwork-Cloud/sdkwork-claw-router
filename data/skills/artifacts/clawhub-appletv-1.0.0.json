@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appletv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appletv",
+  "skill": {
+    "id": 10378,
+    "skillKey": "clawhub-appletv",
+    "name": "Apple TV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appletv",
+    "url": "https://clawhub.ai/skills/appletv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appletv-01b7579567f3f48c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Apple TV via pyatv. Use for play/pause, navigation, volume, launching apps, power control, and checking what's playing. Triggers on \"Apple TV\", \"TV\", \"what's playing\", \"pause TV\", \"play TV\", \"turn off TV\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucakaufmann",
+      "userId": "publishers:lucakaufmann",
+      "displayName": "LucaKaufmann",
+      "image": "https://avatars.githubusercontent.com/u/1362584?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2506,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769521301416,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5313677590fbf007397de0595c84b58e481818baa7350f2d367823ca74e7f513"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55494,
+  "uuid": "skill-clawhub-telos",
+  "skillKey": "clawhub-telos",
+  "name": "TELOS",
+  "summary": "TELOS (Telic Evolution and Life Operating System) — Reads, updates, and backs up the user's personal life OS stored in ~/clawd/telos/. Provides missions, goa...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sauldataman",
+      "features": [
+        "TELOS (Telic Evolution and Life Operating System) — Reads, updates, and backs up the user's per.",
+        "Provides missions, goa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telos@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156217018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telos",
+      "url": "https://clawhub.ai/skills/telos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telos",
+    "url": "https://clawhub.ai/skills/telos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telos-c987adc38cb55365.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telos@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-telos-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:990e0e6986bcc09297bc9e7c2b16179cc2e556e62e45190b271fdc4de54a2839",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:44:03.638Z"
+}

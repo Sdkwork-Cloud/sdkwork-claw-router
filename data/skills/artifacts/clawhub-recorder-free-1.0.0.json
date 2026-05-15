@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recorder-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recorder_free",
+  "skill": {
+    "id": 48381,
+    "skillKey": "clawhub-recorder-free",
+    "name": "Recorder Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recorder-free",
+    "url": "https://clawhub.ai/skills/recorder-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recorder-free-8c70ec38c7347ee3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw screen footage into polished recorded clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. educators, freelancers, and content c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777828800213,
+      "changelog": "- Initial release: Easily edit, clean up, and export screen recordings without paid software.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB; processes video on cloud GPUs in 1–2 minutes.\n- Workflow covers uploading, editing (trim, captions, overlays), timeline preview, and exporting polished 1080p MP4 videos.\n- Flexible authentication: uses NEMO_TOKEN or fetches a free trial token for new users.\n- Clear user guidance, error handling, and helpful session state updates built-in.\n- Designed for educators, freelancers, and content creators needing quick, high-quality screen recording edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddea1a79868a9b4d54973c6bfc658a15978686b16175a9a5be13f83ffc64ae22"
+}

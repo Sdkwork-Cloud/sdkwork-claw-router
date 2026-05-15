@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45307,
+  "uuid": "skill-clawhub-palo-alto-firewall-audit",
+  "skillKey": "clawhub-palo-alto-firewall-audit",
+  "name": "Palo Alto Firewall Audit",
+  "summary": "PAN-OS zone-based security policy audit with App-ID/Content-ID analysis, Security Profile Group validation, zone protection assessment, and decryption policy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.palo_alto_firewall_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vahagn Madatyan",
+      "features": [
+        "PAN-OS zone-based security policy audit with App-ID/Content-ID analysis, Security Profile Group."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/palo-alto-firewall-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74753362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "palo-alto-firewall-audit",
+      "url": "https://clawhub.ai/skills/palo-alto-firewall-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "palo-alto-firewall-audit",
+    "url": "https://clawhub.ai/skills/palo-alto-firewall-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/palo-alto-firewall-audit-e63aca7406eb514c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/palo-alto-firewall-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-palo-alto-firewall-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0f9c80c439341942312eca51a018320e043faac8553ff5937a0065542523ff4",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:38:22.570Z"
+}

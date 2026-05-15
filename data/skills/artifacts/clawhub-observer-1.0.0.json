@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/observer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.observer",
+  "skill": {
+    "id": 22777,
+    "skillKey": "clawhub-observer",
+    "name": "nutcracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "observer",
+    "url": "https://clawhub.ai/skills/observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/observer-e41f1d834710df8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Embedded UX research skill that passively observes interactions, administers post-task and end-of-day surveys, captures verbatim quotes, detects friction and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomorse",
+      "userId": "publishers:giulianomorse",
+      "displayName": "giulianomorse",
+      "image": "https://avatars.githubusercontent.com/u/210213190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772503490945,
+      "changelog": "Clawsight v1.0.0 initial release:\n\n- Launches as an embedded UX research skill to observe OpenClaw interactions in real time.\n- Implements passive ethnographic observation: logs user intents, requests, outcomes, and notable verbatim quotes.\n- Administers 5-question post-task surveys and 8-question end-of-day wrap-up surveys.\n- Detects and tags friction signals (e.g., corrections, repeated attempts, confusion) and delight signals.\n- Generates daily insight reports grounded in raw user language and experience data.\n- Ensures all data stays local, with user-controlled privacy and opt-out at any time.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f130baa683cc8257f941e11c01bef3948dce3ad4d2f78ac68c27dc7688ca62fd"
+}

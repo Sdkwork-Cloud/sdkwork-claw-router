@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18507,
+  "uuid": "skill-clawhub-openclaw-intune-skill",
+  "skillKey": "clawhub-openclaw-intune-skill",
+  "name": "Openclaw Intune Skill",
+  "summary": "A comprehensive skill enabling OpenClaw agents to fully manage Microsoft Intune via the Graph API. Covers devices, apps, policies, compliance, users, groups,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_intune_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mattia Cirillo",
+      "features": [
+        "A comprehensive skill enabling OpenClaw agents to fully manage Microsoft Intune via the Graph A.",
+        "Covers devices, apps, policies, compliance, users, groups,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-intune-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250971170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-intune-skill",
+      "url": "https://clawhub.ai/skills/openclaw-intune-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-intune-skill",
+    "url": "https://clawhub.ai/skills/openclaw-intune-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-intune-skill-9ef210020081993a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-intune-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-intune-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc9bd2b10e9173ae888fab3caab32724e9120a7cc10f2eca03311af9b07b96db",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T14:48:48.992Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ziwei-dou-shu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziwei_dou_shu",
+  "skill": {
+    "id": 72405,
+    "skillKey": "clawhub-ziwei-dou-shu",
+    "name": "紫微斗数 (北派飞星)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziwei-dou-shu",
+    "url": "https://clawhub.ai/skills/ziwei-dou-shu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziwei-dou-shu-ad1d7f73f321674b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "北派紫微斗数排盘与解盘技能。支持真太阳时校正、12 宫排盘、四化飞星、运势分析。使用 iztro 开源库计算，北派飞星派理论解读。触发词：紫微斗数、排盘、紫微、命盘、算运势、十二宫、四化、飞星、来因宫"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigerleon529",
+      "userId": "s17bbvhq54n50ds6z4fnet62c983gwsm",
+      "displayName": "tigerleon529",
+      "image": "https://avatars.githubusercontent.com/u/57378349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774368406732,
+      "changelog": "首次发布：北派紫微斗数排盘与解盘技能，支持真太阳时校正、12宫排盘、四化飞星、运势分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f30d66a481723d753f947e8cd22bb68dfb7055dee45138c4724f731dc68ebaa3"
+}

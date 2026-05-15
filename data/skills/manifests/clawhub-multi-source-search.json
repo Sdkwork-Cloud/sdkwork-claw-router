@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39645,
+  "uuid": "skill-clawhub-multi-source-search",
+  "skillKey": "clawhub-multi-source-search",
+  "name": "Multi Source Search",
+  "summary": "Confidence-scored multi-source retrieval across web, scholar, Tavily, and Perplexity-backed research. Use when: the user needs cross-source verification, con...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_source_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Confidence-scored multi-source retrieval across web, scholar, Tavily, and Perplexity-backed res.",
+        "Use when: the user needs cross-source verification, con..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-source-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-source-search",
+      "url": "https://clawhub.ai/skills/multi-source-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-source-search",
+    "url": "https://clawhub.ai/skills/multi-source-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-source-search-1631fce8b7870bb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-source-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-source-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05e231339359a8e354f0dbd563fff081452eb10286bbd0f1aaf19d5b10d0ac85",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:11:21.796Z"
+}

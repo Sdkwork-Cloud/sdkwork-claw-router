@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ts-sdk-client@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ts_sdk_client",
+  "skill": {
+    "id": 34261,
+    "skillKey": "clawhub-ts-sdk-client",
+    "name": "Ts Sdk Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ts-sdk-client",
+    "url": "https://clawhub.ai/skills/ts-sdk-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ts-sdk-client-99058166fe726722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to create and configure the Aptos client (Aptos, AptosConfig) in @aptos-labs/ts-sdk. Covers Network, fullnode/indexer/faucet URLs, singleton pattern, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iskysun96",
+      "userId": "publishers:iskysun96",
+      "displayName": "iskysun96",
+      "image": "https://avatars.githubusercontent.com/u/52557585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773876966589,
+      "changelog": "- Initial release of the ts-sdk-client skill.\n- Provides guidance on creating and configuring the Aptos client and AptosConfig in @aptos-labs/ts-sdk.\n- Covers recommended singleton usage, network configuration (TESTNET, MAINNET, CUSTOM), and environment variable handling.\n- Documents endpoint overrides, client config options (including Bun compatibility), and common mistakes.\n- Includes code examples and links to relevant references and related skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3df92da23593fc23951fabe21ca6862d0df614719a06b45f4da0add348d0f744"
+}

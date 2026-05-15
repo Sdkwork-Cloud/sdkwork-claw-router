@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lensmor-recommendations@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lensmor_recommendations",
+  "skill": {
+    "id": 57114,
+    "skillKey": "clawhub-lensmor-recommendations",
+    "name": "Lensmor Recommendations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lensmor-recommendations",
+    "url": "https://clawhub.ai/skills/lensmor-recommendations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lensmor-recommendations-9748a3032ab70549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI-ranked exhibitors matching your ICP — shortlist the top accounts worth outreach at any show. \"Who should we target at this show?\" / \"推荐参展商\" / \"Ausstel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775030123513,
+      "changelog": "- Expanded language support in skill description to include multilingual examples for exhibitor recommendations.\n- Updated the description and triggers to better reflect global use cases and support more international queries.\n- No core logic or workflow changes; documentation and description improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ec14c01d30c4f8aa9607b0a39f70fe3e56472e802e69b0c11bbe66ef1b890ca"
+}

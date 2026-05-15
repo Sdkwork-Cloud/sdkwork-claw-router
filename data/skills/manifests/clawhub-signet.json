@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14183,
+  "uuid": "skill-clawhub-signet",
+  "skillKey": "clawhub-signet",
+  "name": "Signet",
+  "summary": "Interact with Signet onchain advertising on Hunt Town. Use when the user wants to check spotlight ad prices, list current ads/signatures, or post a URL to the Signet spotlight. Supports x402 payment protocol for programmatic ad placement b.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sebayaki",
+      "features": [
+        "Interact with Signet onchain advertising on Hunt Town",
+        "Use when the user wants to check spotlight ad prices, list current ads/signatures, or post a UR.",
+        "Supports x402 payment protocol for programmatic ad placement by AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1332279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signet",
+      "url": "https://clawhub.ai/skills/signet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signet",
+    "url": "https://clawhub.ai/skills/signet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signet-c7ee82e5fcc46223.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6334fa8b6187815fc29029b3068eb13c4f53ae7023e28cd9f5ae4c5da2e48008",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T08:12:40.886Z"
+}

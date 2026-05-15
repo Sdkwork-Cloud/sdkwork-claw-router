@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32771,
+  "uuid": "skill-clawhub-pretix",
+  "skillKey": "clawhub-pretix",
+  "name": "Pretix",
+  "summary": "Pretix integration. Manage Events. Use when the user wants to interact with Pretix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pretix integration",
+        "Manage Events",
+        "Use when the user wants to interact with Pretix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pretix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pretix",
+      "url": "https://clawhub.ai/skills/pretix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretix",
+    "url": "https://clawhub.ai/skills/pretix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretix-71de54d15440755d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pretix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-pretix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4218f1f23a11f011a71ae8b28301048de6b69eadc56121fd53cc23c13604bac8",
+      "artifactSizeBytes": 1781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:28.301Z"
+}

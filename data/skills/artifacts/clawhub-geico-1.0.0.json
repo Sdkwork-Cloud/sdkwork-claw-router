@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geico@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geico",
+  "skill": {
+    "id": 49270,
+    "skillKey": "clawhub-geico",
+    "name": "Geico"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geico",
+    "url": "https://clawhub.ai/skills/geico",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geico-a638e70ffa28c67e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides insights into GEICO's direct auto insurance model, cost advantages, investment history, market position, and impact of InsurTech on traditional insu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777565054038,
+      "changelog": "Initial release:  \n- GEICO skill provides a concise overview of GEICO's growth from a government employee insurer to the second-largest auto insurance direct seller in the U.S.  \n- Includes a historical timeline, business model explanation, moat analysis, and key data points.  \n- Highlights GEICO’s cost advantages, digital strategy, and brand recognition.  \n- Shares interesting facts about the creation and impact of the Gecko mascot.  \n- Useful for those studying direct insurance models, insurance market competition, or Buffett’s investment approach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5629ec8a9b12221fdf4a883c8d0e9312b1efebed04361477ed1789c372a6409d"
+}

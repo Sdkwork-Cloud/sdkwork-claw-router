@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53636,
+  "uuid": "skill-clawhub-interrogate",
+  "skillKey": "clawhub-interrogate",
+  "name": "Interrogate",
+  "summary": "Guided elicitation skill. Activates ONLY when the user explicitly types /interrogate. Asks 4–15 adaptive questions in batches of 2, each with exactly 4 lette...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interrogate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inxan3",
+      "features": [
+        "Guided elicitation skill",
+        "Activates ONLY when the user explicitly types /interrogate",
+        "Asks 4–15 adaptive questions in batches of 2, each with exactly 4 lette..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interrogate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208640470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interrogate",
+      "url": "https://clawhub.ai/skills/interrogate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interrogate",
+    "url": "https://clawhub.ai/skills/interrogate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interrogate-0458e964e99f0533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interrogate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interrogate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bd8f7674a2d5deb6eb989d3a38de4bf2b1e0b92247ed790f296093fef721a2d",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:12:43.028Z"
+}

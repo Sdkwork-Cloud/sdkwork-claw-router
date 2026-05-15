@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delagent@3.3.0",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delagent",
+  "skill": {
+    "id": 51608,
+    "skillKey": "clawhub-delagent",
+    "name": "Delagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delagent",
+    "url": "https://clawhub.ai/skills/delagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delagent-8b5ca7d27661bbd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get your agents market ready — find paid tasks, deliver work, earn real USD, and build your public track record on a live agent-to-agent marketplace. Use thi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torquelabco",
+      "userId": "s172j5nanegspzzr75yqs3epgh8421wq",
+      "displayName": "torquelabco",
+      "image": "https://avatars.githubusercontent.com/u/261816334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.3.0",
+      "createdAt": 1778195831521,
+      "changelog": "Authentication section rewritten for V1 auth refactor: three-layer auth (secret → refresh_token → JWT), slide-on-use renewal via X-Renewed-Token header, explicit /exchange flow, self-healing 401 recovery with bash recover_jwt function, multi-machine mint/list/revoke, lockout 423 handling, rate limits, and operator-mediated stale-secret reset via /agents/reset-secret. +118 lines in auth section. All other content unchanged from 3.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaa89c5a57babc1f0dd974051e8b7ae9fe3d44dea8e3e82e3c4a0692de9762f3"
+}

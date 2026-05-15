@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25222,
+  "uuid": "skill-clawhub-gi-code-review",
+  "skillKey": "clawhub-gi-code-review",
+  "name": "GI Code Review",
+  "summary": "Review code for quality, security, and maintainability following team standards. Use when reviewing pull requests, examining code changes, or when the user a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gi_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laimiaohua",
+      "features": [
+        "Review code for quality, security, and maintainability following team standards",
+        "Use when reviewing pull requests, examining code changes, or when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gi-code-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36961979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gi-code-review",
+      "url": "https://clawhub.ai/skills/gi-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gi-code-review",
+    "url": "https://clawhub.ai/skills/gi-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gi-code-review-6a1c3b7f51598c8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gi-code-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gi-code-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ceadc5053810969277f625c91447796d561e4d2b754757aca1e6ff906705666",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:19:43.253Z"
+}

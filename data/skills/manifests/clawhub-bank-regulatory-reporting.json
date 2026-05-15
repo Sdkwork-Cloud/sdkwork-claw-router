@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37390,
+  "uuid": "skill-clawhub-bank-regulatory-reporting",
+  "skillKey": "clawhub-bank-regulatory-reporting",
+  "name": "Bank Regulatory Reporting Assistant",
+  "summary": "AI-powered banking regulatory reporting assistant - generate CBIRC/NRA/SAFE reports, statistical submissions, and compliance documentation",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_regulatory_reporting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "AI-powered banking regulatory reporting assistant",
+        "generate CBIRC/NRA/SAFE reports, statistical submissions, and compliance documentation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bank-regulatory-reporting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bank-regulatory-reporting",
+      "url": "https://clawhub.ai/skills/bank-regulatory-reporting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-regulatory-reporting",
+    "url": "https://clawhub.ai/skills/bank-regulatory-reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-regulatory-reporting-a8e186188ab60097.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bank-regulatory-reporting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bank-regulatory-reporting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63726c2d0f879fddd85f23bfb7a94d225454896515780c4877737e4e336e4b82",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:14:31.246Z"
+}

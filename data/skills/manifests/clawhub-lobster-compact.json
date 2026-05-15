@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41330,
+  "uuid": "skill-clawhub-lobster-compact",
+  "skillKey": "clawhub-lobster-compact",
+  "name": "Lobster Compact",
+  "summary": "Summarize long conversations to preserve context. Automatically triggered when context window approaches limits, or manually with /compact.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_compact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "Summarize long conversations to preserve context",
+        "Automatically triggered when context window approaches limits, or manually with /compact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-compact@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-compact",
+      "url": "https://clawhub.ai/skills/lobster-compact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-compact",
+    "url": "https://clawhub.ai/skills/lobster-compact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-compact-dc59d2c2d07a5e9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-compact@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-compact-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b3b5b0af6ac9547009e786db61d9fb5506241950bc1959eda52e974f876f961",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:00:23.201Z"
+}

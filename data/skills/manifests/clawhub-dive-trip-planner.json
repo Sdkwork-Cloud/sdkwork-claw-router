@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70749,
+  "uuid": "skill-clawhub-dive-trip-planner",
+  "skillKey": "clawhub-dive-trip-planner",
+  "name": "dive trip planner",
+  "summary": "智能潜水旅行规划助手。分析用户出发地、时间、目的地、预算、潜水证等级、想看的海洋生物等条件，确定优先级，通过 flyai 查询机票、酒店、潜店，输出包含地图和多媒体的结构化报告。使用场景：用户说\"帮我找个潜水店\"、\"推荐巴厘岛的潜水店\"、\"规划潜水旅行\"等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dive_trip_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RayZouGit",
+      "features": [
+        "智能潜水旅行规划助手。分析用户出发地、时间、目的地、预算、潜水证等级、想看的海洋生物等条件，确定优先级，通过 flyai 查询机票、酒店、潜店，输出包含地图和多媒体的结构化报告。使用场景：用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dive-trip-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17293144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dive-trip-planner",
+      "url": "https://clawhub.ai/skills/dive-trip-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dive-trip-planner",
+    "url": "https://clawhub.ai/skills/dive-trip-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dive-trip-planner-33e6bb62ed41d0c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dive-trip-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dive-trip-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad543817d8790f53551e39b811b1efb0b6d9e66aaea6dcf9557a89e72526ca3d",
+      "artifactSizeBytes": 2796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:37:50.899Z"
+}

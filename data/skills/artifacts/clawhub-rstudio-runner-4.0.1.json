@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rstudio-runner@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rstudio_runner",
+  "skill": {
+    "id": 27848,
+    "skillKey": "clawhub-rstudio-runner",
+    "name": "Rstudio Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rstudio-runner",
+    "url": "https://clawhub.ai/skills/rstudio-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rstudio-runner-d6d1994554e93e72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered bioinformatics analysis platform with intelligent auto-organization and comprehensive Chinese report generation. Auto-detects sequencing data, gen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lingzhangmeng",
+      "userId": "s170zc3z3jz879pf670t7d36y183jkme",
+      "displayName": "Prof. Dr. rer. nat.",
+      "image": "https://avatars.githubusercontent.com/u/171378352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1774725787552,
+      "changelog": "- Added an \"安装方法 / Installation\" section in SKILL.md, including instructions for installation via ClawHub, OpenClaw CLI, and manual steps.\n- Listed system requirements and required R packages in the documentation.\n- No code or interface changes; update is documentation-only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08aa5b6e4a2517eca254f4b5898904daf2f37b49783b0494334a10e83632da79"
+}

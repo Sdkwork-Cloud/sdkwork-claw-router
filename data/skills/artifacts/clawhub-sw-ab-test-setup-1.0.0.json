@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sw-ab-test-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_ab_test_setup",
+  "skill": {
+    "id": 33949,
+    "skillKey": "clawhub-sw-ab-test-setup",
+    "name": "AB Test Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-ab-test-setup",
+    "url": "https://clawhub.ai/skills/sw-ab-test-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-ab-test-setup-6474260cf8966b26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan A/B tests with a clear hypothesis, defined metrics, variant design, sample size, duration, and statistical significance guidelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amdf01-debug",
+      "userId": "publishers:amdf01-debug",
+      "displayName": "amdf01-debug",
+      "image": "https://avatars.githubusercontent.com/u/252609374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774155728088,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4df2fdc1bbc8259908e0fbf3e9d33032b0d821632ee57e824b4f5db80923db4"
+}

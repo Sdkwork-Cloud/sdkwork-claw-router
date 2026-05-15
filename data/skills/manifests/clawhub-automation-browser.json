@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19037,
+  "uuid": "skill-clawhub-automation-browser",
+  "skillKey": "clawhub-automation-browser",
+  "name": "automation browser",
+  "summary": "Control Browser's kernel for web automation. Supports web navigation, element interaction, page scrolling, file/video downloading, and content extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automation_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "handongpu16",
+      "features": [
+        "Control Browser's kernel for web automation",
+        "Supports web navigation, element interaction, page scrolling, file/video downloading, and conte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automation-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4207162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automation-browser",
+      "url": "https://clawhub.ai/skills/automation-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automation-browser",
+    "url": "https://clawhub.ai/skills/automation-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automation-browser-86f43769ebb37109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automation-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automation-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2da2158a4a9e456aaf7133aa7c89d9e258e26fbff41cc5ee64f1df20ec28588b",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:41:13.272Z"
+}

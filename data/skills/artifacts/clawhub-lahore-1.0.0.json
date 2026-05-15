@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lahore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lahore",
+  "skill": {
+    "id": 72267,
+    "skillKey": "clawhub-lahore",
+    "name": "Lahore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lahore",
+    "url": "https://clawhub.ai/skills/lahore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lahore-feb81ca45117d135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "巴基斯坦拉合尔城市指南 — 莫卧儿帝国文化遗产、南亚美食之都、科技创业崛起。当用户询问巴基斯坦旅行、莫卧儿建筑时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777730601001,
+      "changelog": "Initial release: concise guide to Lahore, Pakistan, focusing on history, culture, and industry.\n\n- Covers Lahore’s historical timeline and key Mughal heritage sites.\n- Outlines major industries: IT, textiles, education, tourism, and entertainment.\n- Highlights unique local features: cuisine, population, and modern tech/startup scene.\n- Includes data points (population, GDP, universities, IT exports).\n- Fun facts: Wagah Border ceremony and Badshahi Mosque’s global significance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9be5bf954100a7a1abeb91ddb13c468aa0a742abc3a8776b92509829d4afccbb"
+}

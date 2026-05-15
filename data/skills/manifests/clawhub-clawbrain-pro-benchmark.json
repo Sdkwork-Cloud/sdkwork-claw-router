@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59522,
+  "uuid": "skill-clawhub-clawbrain-pro-benchmark",
+  "skillKey": "clawhub-clawbrain-pro-benchmark",
+  "name": "ClawBrain Benchmark",
+  "summary": "测试你的 OpenClaw 在 205 个真实场景下的表现，对比 ClawBrain v1.0 编排引擎的提升效果",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro_benchmark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "测试你的 OpenClaw 在 205 个真实场景下的表现，对比 ClawBrain v1.0 编排引擎的提升效果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrain-pro-benchmark@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrain-pro-benchmark",
+      "url": "https://clawhub.ai/skills/clawbrain-pro-benchmark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro-benchmark",
+    "url": "https://clawhub.ai/skills/clawbrain-pro-benchmark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-benchmark-35560182d84e17b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrain-pro-benchmark@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrain-pro-benchmark-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af4cf099b67a7c50ed1b365f622d44e88dc90aca3c0ae75d81aa1ac4349cdc4f",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:34:13.129Z"
+}

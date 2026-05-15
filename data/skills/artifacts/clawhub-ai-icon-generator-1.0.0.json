@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-icon-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_icon_generator",
+  "skill": {
+    "id": 29607,
+    "skillKey": "clawhub-ai-icon-generator",
+    "name": "AI Icon Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-icon-generator",
+    "url": "https://clawhub.ai/skills/ai-icon-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-icon-generator-9d7f66799336f3cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate custom icons using artificial intelligence from text prompts or descriptions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774038128447,
+      "changelog": "AI Icon Generator v1.0.0 initial release:\n\n- Launches REST API to generate custom icons from natural language prompts.\n- Supports multiple styles, sizes, formats, and color schemes.\n- Allows batch generation of up to 5 icon variations per request.\n- Provides immediate download links and metadata for generated icons.\n- Includes free and paid pricing tiers for varied usage needs.\n- Comprehensive usage guide and API documentation available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dafe029fd38297cad15fef728238fef04da7eb90cf73da5c393dd891cfccc90"
+}

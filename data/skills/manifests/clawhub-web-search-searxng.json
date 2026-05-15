@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39813,
+  "uuid": "skill-clawhub-web-search-searxng",
+  "skillKey": "clawhub-web-search-searxng",
+  "name": "Web Search via SearXNG",
+  "summary": "Search the web using SearXNG meta-search engine. Use when the user wants to search the web, find current information, look up facts, news, or any query that...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_searxng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon",
+      "features": [
+        "Search the web using SearXNG meta-search engine",
+        "Use when the user wants to search the web, find current information, look up facts, news, or an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-search-searxng@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268817640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-search-searxng",
+      "url": "https://clawhub.ai/skills/web-search-searxng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-searxng",
+    "url": "https://clawhub.ai/skills/web-search-searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-searxng-a6fb1c64d033fd0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-search-searxng@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-search-searxng-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a8e02a526fb027bfac75fbccedea5dd71521ad81063a65e93136df5d6d7e318",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:19:45.637Z"
+}

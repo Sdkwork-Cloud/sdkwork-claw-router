@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61365,
+  "uuid": "skill-clawhub-eh-context-memory",
+  "skillKey": "clawhub-eh-context-memory",
+  "name": "Context Memory",
+  "summary": "上下文窗口管理与跨 session 知识传递。当需要跨阶段传递决策、压缩前抢救知识时使用。不适用于工具重试（用 tool-governance）或多 agent 协调（用 multi-agent）。参见 execution-loop（阶段边界）。",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eh_context_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "上下文窗口管理与跨 session 知识传递。当需要跨阶段传递决策、压缩前抢救知识时使用。不适用于工具重试（用 tool-governance）或多 agent 协调（用 multi-age."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eh-context-memory@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eh-context-memory",
+      "url": "https://clawhub.ai/skills/eh-context-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eh-context-memory",
+    "url": "https://clawhub.ai/skills/eh-context-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eh-context-memory-7d2ad6d465a28f7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eh-context-memory@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eh-context-memory-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3412458028aa8ea877330504c8ac8d7f2271cbc829b80a88fffe1bee1665c176",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:23.968Z"
+}

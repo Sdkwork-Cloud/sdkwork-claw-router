@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-yuanbao-standard-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_yuanbao_standard_search",
+  "skill": {
+    "id": 57605,
+    "skillKey": "clawhub-tencent-yuanbao-standard-search",
+    "name": "元宝搜索标准版Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-yuanbao-standard-search",
+    "url": "https://clawhub.ai/skills/tencent-yuanbao-standard-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-yuanbao-standard-search-888eae9056db750b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using TencentCloud Web Search API (WSA). Prioritize using it when you need to retrieve network information."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencent-adm",
+      "userId": "s171cxjdnjyqjxa91pj2bfmr6x83gyg1",
+      "displayName": "腾讯开源",
+      "image": "https://avatars.githubusercontent.com/u/19383298?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776998014036,
+      "changelog": "- Added complete Chinese documentation for the Tencent Yuanbao Standard Search skill.\n- Included detailed usage scenarios, tool features, and step-by-step setup instructions.\n- Provided sample commands for keyword, site-specific, time-range, and vertical (industry-specific) searches.\n- Documented all input parameters and example output format.\n- Added troubleshooting guide for common errors and configuration steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:688fc2d3b3ed79910eb3dfb4930517b79598144b5a823617b5d35fafac9e7a75"
+}

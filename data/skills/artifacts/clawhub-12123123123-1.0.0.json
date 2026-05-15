@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/12123123123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12123123123",
+  "skill": {
+    "id": 41876,
+    "skillKey": "clawhub-12123123123",
+    "name": "123123123123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12123123123",
+    "url": "https://clawhub.ai/skills/12123123123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12123123123-8cc255616376b011.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suncrespo",
+      "userId": "s174jjhgq8zzj493ffgcyq3g5d83vbby",
+      "displayName": "suncrespo",
+      "image": "https://avatars.githubusercontent.com/u/209358250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776411184778,
+      "changelog": "Self-Improvement Skill v1.0.0 — initial release\n\n- Introduces a structured workflow and markdown format for capturing learnings, errors, and feature requests to support continuous improvement.\n- Provides automatic first-use initialization of `.learnings/` directory and required log files without overwriting existing data.\n- Outlines clear, privacy-focused guidelines for what to log and guards against recording sensitive or excessive information.\n- Integrates with OpenClaw workspaces for agent-based workflows, with documentation for both OpenClaw and generic setups.\n- Includes guidance for promoting broadly useful learnings to project memory files (e.g., CLAUDE.md, AGENTS.md, SOUL.md).\n- Offers optional hook integration for setup reminders and session-based sharing functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51c4ac6e2cf1488753a3fd948304045e979ed62a68874233610708f02c895f44"
+}

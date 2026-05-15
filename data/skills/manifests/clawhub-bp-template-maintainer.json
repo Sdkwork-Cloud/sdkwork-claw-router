@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71209,
+  "uuid": "skill-clawhub-bp-template-maintainer",
+  "skillKey": "clawhub-bp-template-maintainer",
+  "name": "BP母版维护",
+  "summary": "用于创建、维护、版本化和质检本工作区的 BP 报告母版。适用于月报、季报、半年报、年报模板的结构维护、字段提示优化、BP 锚点一致性维护、BP 映射调整、版本升级判断，以及判断 BPMAP 文件和 BP 系统资料在母版维护中的使用边界。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bp_template_maintainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houtonghoutong",
+      "features": [
+        "用于创建、维护、版本化和质检本工作区的 BP 报告母版。适用于月报、季报、半年报、年报模板的结构维护、字段提示优化、BP 锚点一致性维护、BP 映射调整、版本升级判断，以及判断 BPMAP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bp-template-maintainer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210855804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bp-template-maintainer",
+      "url": "https://clawhub.ai/skills/bp-template-maintainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bp-template-maintainer",
+    "url": "https://clawhub.ai/skills/bp-template-maintainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bp-template-maintainer-71e02fa2a49bbdbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bp-template-maintainer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bp-template-maintainer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfd955603ce571145398e22e2d270fc3f877982067216f0a70e917a65fa2efaf",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:45:02.788Z"
+}

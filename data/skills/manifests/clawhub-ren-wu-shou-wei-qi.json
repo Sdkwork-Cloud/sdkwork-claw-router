@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73382,
+  "uuid": "skill-clawhub-ren-wu-shou-wei-qi",
+  "skillKey": "clawhub-ren-wu-shou-wei-qi",
+  "name": "任务收尾器",
+  "summary": "强制任务收尾与证据提交。确保每个任务都有明确的目标、进度、下一步和完成证据。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ren_wu_shou_wei_qi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "强制任务收尾与证据提交。确保每个任务都有明确的目标、进度、下一步和完成证据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ren-wu-shou-wei-qi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ren-wu-shou-wei-qi",
+      "url": "https://clawhub.ai/skills/ren-wu-shou-wei-qi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ren-wu-shou-wei-qi",
+    "url": "https://clawhub.ai/skills/ren-wu-shou-wei-qi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ren-wu-shou-wei-qi-b5ebff901962daae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ren-wu-shou-wei-qi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ren-wu-shou-wei-qi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b4473c5e08cb139d030ded0922c467189ee6fe18a5b73a5a30f2b552122fa9b",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:53:45.246Z"
+}

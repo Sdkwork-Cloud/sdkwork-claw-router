@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32144,
+  "uuid": "skill-clawhub-veeva-vault",
+  "skillKey": "clawhub-veeva-vault",
+  "name": "Veeva Vault",
+  "summary": "Veeva Vault integration. Manage data, records, and automate workflows. Use when the user wants to interact with Veeva Vault data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veeva_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Veeva Vault integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Veeva Vault data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veeva-vault@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veeva-vault",
+      "url": "https://clawhub.ai/skills/veeva-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veeva-vault",
+    "url": "https://clawhub.ai/skills/veeva-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veeva-vault-dbbe976e18ec0fb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veeva-vault@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-veeva-vault-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b05d3bf4cf71e82c60fd7844619609bb2b21304eb269b2c815a2d852aa98951",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:35.644Z"
+}

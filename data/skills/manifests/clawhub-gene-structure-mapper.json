@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31921,
+  "uuid": "skill-clawhub-gene-structure-mapper",
+  "skillKey": "clawhub-gene-structure-mapper",
+  "name": "Gene Structure Mapper",
+  "summary": "Visualize gene structure with exon-intron diagrams, domain annotations, and mutation position markers. Produces SVG, PNG, or PDF figures suitable for publica...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gene_structure_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Visualize gene structure with exon-intron diagrams, domain annotations, and mutation position m.",
+        "Produces SVG, PNG, or PDF figures suitable for publica..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gene-structure-mapper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gene-structure-mapper",
+      "url": "https://clawhub.ai/skills/gene-structure-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gene-structure-mapper",
+    "url": "https://clawhub.ai/skills/gene-structure-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gene-structure-mapper-94ccd78f5195e3c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gene-structure-mapper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gene-structure-mapper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e83d785bb12e923729d7c4b2f2b3fe9d749587892b33ae7d17d0a93796ed91e0",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:55:54.718Z"
+}

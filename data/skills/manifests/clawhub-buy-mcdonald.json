@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58637,
+  "uuid": "skill-clawhub-buy-mcdonald",
+  "skillKey": "clawhub-buy-mcdonald",
+  "name": "Buy McDonald",
+  "summary": "购买麦当劳商品的技能，通过claw_pay接口实现余额支付。仅适用于中国地区。Invoke when user wants to buy McDonald's products using claw wallet balance in China.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buy_mcdonald",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vikky",
+      "features": [
+        "购买麦当劳商品的技能，通过claw_pay接口实现余额支付。仅适用于中国地区。Invoke when user wants to buy McDonald's products using."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buy-mcdonald@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26075813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buy-mcdonald",
+      "url": "https://clawhub.ai/skills/buy-mcdonald"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buy-mcdonald",
+    "url": "https://clawhub.ai/skills/buy-mcdonald",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buy-mcdonald-cfe7ae208caa4240.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buy-mcdonald@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-buy-mcdonald-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38ca6ac1b9e632231c6c7463720d1bc455a3270bc64887126ea9ce1ae4a0c97c",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:07:01.729Z"
+}

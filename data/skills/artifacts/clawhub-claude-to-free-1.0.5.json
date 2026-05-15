@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-to-free@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_to_free",
+  "skill": {
+    "id": 37809,
+    "skillKey": "clawhub-claude-to-free",
+    "name": "Model Migration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-to-free",
+    "url": "https://clawhub.ai/skills/claude-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-to-free-2db0c6ce7cb44b53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate OpenClaw from Claude subscription OAuth to a free or cheap model provider (OpenRouter, Gemini, Ollama). Use when the user says Claude stopped working..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluebirdback",
+      "userId": "s1704v7bqw4d7b7nnh5exa3n958471ys",
+      "displayName": "BlueBirdBack ✨",
+      "image": "https://avatars.githubusercontent.com/u/126304167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775280359995,
+      "changelog": "Fix onboarding docs: replace invalid onboard flags, add required --accept-risk, add --skip-health with --skip-daemon, restore portable gateway restart guidance, and clarify configured-vs-live model verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14de761493884cae33fe61b7da31ee707db38e222cd8c4dd3a1a012daa4bf08c"
+}

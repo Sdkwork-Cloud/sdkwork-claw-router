@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29426,
+  "uuid": "skill-clawhub-nex-reports",
+  "skillKey": "clawhub-nex-reports",
+  "name": "Nex Reports",
+  "summary": "Automated report generation and scheduling meta-skill that aggregates data from multiple Nex tools into unified, actionable business briefings for day-to-day...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nex AI",
+      "features": [
+        "Automated report generation and scheduling meta-skill that aggregates data from multiple Nex to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nex-reports@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149910894?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nex-reports",
+      "url": "https://clawhub.ai/skills/nex-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-reports",
+    "url": "https://clawhub.ai/skills/nex-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-reports-708101724910b200.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nex-reports@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nex-reports-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b54fdff33bbe8bea51a758eac8f30eda0f923fff1883b02af6bb55e87ac332dd",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T03:19:40.128Z"
+}

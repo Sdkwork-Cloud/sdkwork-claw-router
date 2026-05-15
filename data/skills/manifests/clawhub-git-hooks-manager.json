@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43110,
+  "uuid": "skill-clawhub-git-hooks-manager",
+  "skillKey": "clawhub-git-hooks-manager",
+  "name": "Git Hooks Manager",
+  "summary": "Manage Git hooks with easy installation, configuration, and sharing, supporting lint, test, commit message, and branch name validations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_hooks_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Manage Git hooks with easy installation, configuration, and sharing, supporting lint, test, com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-hooks-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-hooks-manager",
+      "url": "https://clawhub.ai/skills/git-hooks-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-hooks-manager",
+    "url": "https://clawhub.ai/skills/git-hooks-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-hooks-manager-d2660591bf21939f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-hooks-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-hooks-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ac782b76cde847b0d973915e2d33c1ca0206489cac3e9683266a63f92bf1fbf",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:22:32.150Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73028,
+  "uuid": "skill-clawhub-xianyu-auto-lister",
+  "skillKey": "clawhub-xianyu-auto-lister",
+  "name": "闲鱼自动上架助手",
+  "summary": "闲鱼自动上架助手 - 一键生成优化标题、描述、定价建议，自动发布商品到闲鱼。适合二手卖家、无货源电商。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_auto_lister",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "-A1ert",
+      "features": [
+        "闲鱼自动上架助手",
+        "一键生成优化标题、描述、定价建议，自动发布商品到闲鱼。适合二手卖家、无货源电商。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xianyu-auto-lister@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38743387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xianyu-auto-lister",
+      "url": "https://clawhub.ai/skills/xianyu-auto-lister"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-auto-lister",
+    "url": "https://clawhub.ai/skills/xianyu-auto-lister",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-auto-lister-1094d8d86133f041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xianyu-auto-lister@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xianyu-auto-lister-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:043c4098d6f154e8504fb002da6c4e6b6435495e7183bc7ada222f7a93ab5b6b",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:29:36.032Z"
+}

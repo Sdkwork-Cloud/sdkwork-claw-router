@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59257,
+  "uuid": "skill-clawhub-workrally",
+  "skillKey": "clawhub-workrally",
+  "name": "WorkRally",
+  "summary": "WorkRally CLI (workrally) — 面向 AI Agent 的 AIGC 漫剧视频创作全流程工具集。 支持 AI 生图、AI 生视频、项目管理、资产库、媒资管理、无限画布、文件上传下载等。 Use when user asks to generate images, generate vide...",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workrally",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "腾讯开源",
+      "features": [
+        "WorkRally CLI (workrally) — 面向 AI Agent 的 AIGC 漫剧视频创作全流程工具集。 支持 AI 生图、AI 生视频、项目管理、资产库、媒资管理、无限画布."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workrally@2.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19383298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workrally",
+      "url": "https://clawhub.ai/skills/workrally"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workrally",
+    "url": "https://clawhub.ai/skills/workrally",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workrally-a480512598e85ac3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workrally@2.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-workrally-2.3.1.json",
+      "version": "2.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04cb436e4319bca31fb3e5ddf22801cb24a04e624f3254562ce5d803df94a623",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T14:06:26.748Z"
+}

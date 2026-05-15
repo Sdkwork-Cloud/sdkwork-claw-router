@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auditcore-network-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auditcore_network_audit",
+  "skill": {
+    "id": 56091,
+    "skillKey": "clawhub-auditcore-network-audit",
+    "name": "AuditCore — Network Security Audit Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auditcore-network-audit",
+    "url": "https://clawhub.ai/skills/auditcore-network-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auditcore-network-audit-9c261059246d02a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AuditCore — Suite completa de auditoría de seguridad para infraestructura de red. Cubre 6 vendors (F5, Cisco, Fortinet, Palo Alto, Juniper, Arista), 5 framew..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "santanallen",
+      "userId": "s1719cf6gb0w5mgeq6tdpan2z985mqhq",
+      "displayName": "santanallen",
+      "image": "https://avatars.githubusercontent.com/u/126915123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777312957309,
+      "changelog": "Initial release: unified diagnostic and troubleshooting tool for multi-vendor network infrastructure.\n\n- Supports health and operational diagnostics across F5, Cisco, Fortinet, Palo Alto, Juniper, and Arista in a single workflow.\n- Defines three diagnostic domains: HEALTH_STATUS, LOGS_CONTROL_PLANE, LOGS_DATA_PLANE, with clear output format and alert thresholds.\n- Organizes command sets and benchmarks per vendor for streamlined troubleshooting.\n- Output includes summarized health, key events, and operational findings by severity.\n- Integration-ready with vendor-specific knowledge bases; evidence and findings stored per host and assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bc961a0131f3bb52f299a74a75655f04e64dbcf14a85e7f42d8868392a5a4af"
+}

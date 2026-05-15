@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/employee-skills-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.employee_skills_importer",
+  "skill": {
+    "id": 16995,
+    "skillKey": "clawhub-employee-skills-importer",
+    "name": "employee-skills-importer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "employee-skills-importer",
+    "url": "https://clawhub.ai/skills/employee-skills-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/employee-skills-importer-a8d0f4c81333c1f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse employee skills CSV files, identify skill categories and individual skills, look up employee IDs from an employees table, and generate idempotent SQL I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inna-demidova",
+      "userId": "publishers:inna-demidova",
+      "displayName": "inna-demidova",
+      "image": "https://avatars.githubusercontent.com/u/245897643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 818,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771537700666,
+      "changelog": "Employee skills importer skill initial release\n\n- Added functionality to parse employee skills CSV files and identify skill categories and individual skills.\n- Generates idempotent SQL INSERT statements for skill_categories and skills tables, avoiding duplicates.\n- Includes fuzzy matching and correction of employee names for matching against the employees table.\n- Produces deduplicated employee_skills SQL insert scripts, using TRIM() and ON CONFLICT for data integrity.\n- Outputs a report of automatic name corrections and skipped employees/skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d077e4620a857b7f9163a20cf8a160e0976a58421baf37112e6688c1b6732c06"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58511,
+  "uuid": "skill-clawhub-linkfox-multimodal-recognize-image",
+  "skillKey": "clawhub-linkfox-multimodal-recognize-image",
+  "name": "Multimodal Recognize Image",
+  "summary": "基于多模态AI的图片识别与分析。当用户想分析、描述、从图片URL中提取信息、image recognition, image analysis, image description, image content understanding, OCR text recognition, visual Q&A时触发此...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_multimodal_recognize_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "基于多模态AI的图片识别与分析。当用户想分析、描述、从图片URL中提取信息、image recognition, image analysis, image description, ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-multimodal-recognize-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-multimodal-recognize-image",
+      "url": "https://clawhub.ai/skills/linkfox-multimodal-recognize-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-multimodal-recognize-image",
+    "url": "https://clawhub.ai/skills/linkfox-multimodal-recognize-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-multimodal-recognize-image-846dcb2b49f3a7a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-multimodal-recognize-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-multimodal-recognize-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57b21c568ebd564fc844ea2ab715225ebeb2d74355d3e3b62a5a778fab0de021",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:42:32.337Z"
+}

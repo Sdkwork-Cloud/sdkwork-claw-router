@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36611,
+  "uuid": "skill-clawhub-sourceharbor-watchlist-briefing",
+  "skillKey": "clawhub-sourceharbor-watchlist-briefing",
+  "name": "SourceHarbor Watchlist Briefing",
+  "summary": "Use SourceHarbor watchlists, briefings, Ask, MCP, and HTTP API to answer one question with current story context and evidence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sourceharbor_watchlist_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Use SourceHarbor watchlists, briefings, Ask, MCP, and HTTP API to answer one question with curr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sourceharbor-watchlist-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sourceharbor-watchlist-briefing",
+      "url": "https://clawhub.ai/skills/sourceharbor-watchlist-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sourceharbor-watchlist-briefing",
+    "url": "https://clawhub.ai/skills/sourceharbor-watchlist-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sourceharbor-watchlist-briefing-4d555b69b6cf4ada.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sourceharbor-watchlist-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sourceharbor-watchlist-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97583e3f91dcc83de31b355900b6097de87f0997a1e269297fa2b3d2a46dcb09",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:12:30.854Z"
+}

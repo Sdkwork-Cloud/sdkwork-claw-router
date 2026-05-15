@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-dependency-updater@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_dependency_updater",
+  "skill": {
+    "id": 38950,
+    "skillKey": "clawhub-skylv-dependency-updater",
+    "name": "Skylv Dependency Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-dependency-updater",
+    "url": "https://clawhub.ai/skills/skylv-dependency-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-dependency-updater-52709d67a7d605c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-checks and updates outdated dependencies. Shows changelogs and breaking changes before updating. Triggers: update dependencies, upgrade packages, check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776664496166,
+      "changelog": "Initial release – automates dependency checking and updating with risk assessment and changelog previews.\n\n- Scans for outdated dependencies across npm, pip, cargo, and go projects.\n- Provides detailed update reports, including changelogs and breaking changes.\n- Assesses risk level for each update and updates in safe stages (patch → minor → major).\n- Runs tests and commits updates individually for safer upgrades.\n- Responds to triggers like \"update dependencies\" and \"check outdated\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dd81ca62044e91b2904fc167673362cdda86af31cb4b317357cfeb8acf31862"
+}

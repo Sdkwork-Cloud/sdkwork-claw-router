@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56142,
+  "uuid": "skill-clawhub-opendart-disclosure",
+  "skillKey": "clawhub-opendart-disclosure",
+  "name": "OpenDART Disclosure",
+  "summary": "Read Korea OpenDART disclosures using the OpenDART API. Use when the user asks for DART 공시 조회, recent filings by company, filtering by filing type/date, or q...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opendart_disclosure",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kim-Dongchul",
+      "features": [
+        "Read Korea OpenDART disclosures using the OpenDART API",
+        "Use when the user asks for DART 공시 조회, recent filings by company, filtering by filing type/date."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opendart-disclosure@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189600871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opendart-disclosure",
+      "url": "https://clawhub.ai/skills/opendart-disclosure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opendart-disclosure",
+    "url": "https://clawhub.ai/skills/opendart-disclosure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opendart-disclosure-776367798bbe55b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opendart-disclosure@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opendart-disclosure-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb78e6e9d62aac3bd70b528c04e31defdbf8905a19e3bcaa7b5947dfac1eed1a",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T12:44:39.330Z"
+}

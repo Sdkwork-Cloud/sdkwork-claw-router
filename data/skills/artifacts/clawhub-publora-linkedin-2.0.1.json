@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/publora-linkedin@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_linkedin",
+  "skill": {
+    "id": 15587,
+    "skillKey": "clawhub-publora-linkedin",
+    "name": "Publora Linkedin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-linkedin",
+    "url": "https://clawhub.ai/skills/publora-linkedin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-linkedin-7ab3173f4863eb8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post or schedule content to LinkedIn using the Publora API. Use this skill when the user wants to publish or schedule LinkedIn posts, retrieve analytics (imp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergebulaev",
+      "userId": "s177bqjwcnr0pvsgvpzgeayqrx84tk9r",
+      "displayName": "Sergey Bulaev",
+      "image": "https://avatars.githubusercontent.com/u/241980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774011626323,
+      "changelog": "Fix: queryTypes is array not string (ALL invalid). Add queryType singular (returns count). Reactions/Comments return HTTP 201. Delete reaction returns null. commentId accepts plain numeric IDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:547aec49f262e2fd83f0ff48630a62d62cfed08ac49ffc835555fd2ad195ac87"
+}

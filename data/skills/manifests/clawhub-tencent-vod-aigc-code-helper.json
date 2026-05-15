@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64872,
+  "uuid": "skill-clawhub-tencent-vod-aigc-code-helper",
+  "skillKey": "clawhub-tencent-vod-aigc-code-helper",
+  "name": "Tencent VOD AIGC code helper",
+  "summary": "腾讯云点播（VOD）AIGC 接口对接助手。当用户需要对接腾讯云点播 AIGC 生图、生视频、自定义主体、自定义音色等接口时使用，包括：调用各类 AIGC API、查询任务状态、处理回调事件、使用腾讯云 SDK 示例代码等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_vod_aigc_code_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-mpaas-skills",
+      "features": [
+        "腾讯云点播（VOD）AIGC 接口对接助手。当用户需要对接腾讯云点播 AIGC 生图、生视频、自定义主体、自定义音色等接口时使用，包括：调用各类 AIGC API、查询任务状态、处理回调事件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-vod-aigc-code-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270562592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-vod-aigc-code-helper",
+      "url": "https://clawhub.ai/skills/tencent-vod-aigc-code-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-vod-aigc-code-helper",
+    "url": "https://clawhub.ai/skills/tencent-vod-aigc-code-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-vod-aigc-code-helper-3ffe41ff123a3457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-vod-aigc-code-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-vod-aigc-code-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2defdf0f6d6c0242f2abec44a3bb600fdc3f39475ff3b0b4055dd04182a3431",
+      "artifactSizeBytes": 2815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T17:00:51.617Z"
+}

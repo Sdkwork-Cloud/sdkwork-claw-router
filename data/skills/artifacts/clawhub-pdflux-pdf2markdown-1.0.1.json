@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdflux-pdf2markdown@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdflux_pdf2markdown",
+  "skill": {
+    "id": 41487,
+    "skillKey": "clawhub-pdflux-pdf2markdown",
+    "name": "PDFlux-PDF2Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdflux-pdf2markdown",
+    "url": "https://clawhub.ai/skills/pdflux-pdf2markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdflux-pdf2markdown-484b54a6dd2961e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert unstructured documents into LLM-ready structured data. Supports PDF, Word, PPT, and images; extracts paragraphs, formulas, tables, charts, and other..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cumtyc",
+      "userId": "s174dq5pn322tz5thfq67j3gkx83hy08",
+      "displayName": "cumtyc",
+      "image": "https://avatars.githubusercontent.com/u/16425089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774861862469,
+      "changelog": "- Changelog summary: Added metadata and translated documentation to English for broader accessibility.\n- Added a metadata section specifying author, version, emoji, required environment variables, and dependencies.\n- Translated all documentation and usage instructions from Chinese to English.\n- Updated description and behavioral guidelines to reflect the new language and metadata requirements.\n- No changes to code or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05573d8365a67853b884a3f3b81e82ef479e8ccf726164477040419654e15856"
+}

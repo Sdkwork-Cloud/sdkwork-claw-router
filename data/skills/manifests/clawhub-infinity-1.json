@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33150,
+  "uuid": "skill-clawhub-infinity-1",
+  "skillKey": "clawhub-infinity-1",
+  "name": "Infinity 1",
+  "summary": "Infinity integration. Manage data, records, and automate workflows. Use when the user wants to interact with Infinity data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infinity_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Infinity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Infinity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infinity-1@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infinity-1",
+      "url": "https://clawhub.ai/skills/infinity-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infinity-1",
+    "url": "https://clawhub.ai/skills/infinity-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infinity-1-70ebb422dd481a47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infinity-1@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-infinity-1-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1129fdb4169cb6064a891ef01293e97463cf073a48c08a2455ce0dbb7cb997b4",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:35:05.147Z"
+}

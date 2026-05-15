@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-single-tweet-article-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_single_tweet_article_skill",
+  "skill": {
+    "id": 22250,
+    "skillKey": "clawhub-x-single-tweet-article-skill",
+    "name": "X Single Tweet + Article"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-single-tweet-article-skill",
+    "url": "https://clawhub.ai/skills/x-single-tweet-article-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-single-tweet-article-skill-6386b8348862ecee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch a single X tweet or X Article with charge-first billing (0.001 USDT/call)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangkefeng-ai",
+      "userId": "publishers:huangkefeng-ai",
+      "displayName": "huangkefeng-ai",
+      "image": "https://avatars.githubusercontent.com/u/113394381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772729743005,
+      "changelog": "Restore charge-first billing in runtime path after local no-billing test mode; insufficient balance now reliably returns PAYMENT_URL before fetch.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:94664f4e77ce9772e60ccf393520343d91c115e0106fd0c9541fcf773dbe8b9e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65542,
+  "uuid": "skill-clawhub-calculator-chat",
+  "skillKey": "clawhub-calculator-chat",
+  "name": "Calculator Chat",
+  "summary": "用计算器数字回应用户。当用户发送 /calc-chat 或表达情感时，在系统计算器上显示对应数字（如 520=我爱你，88=再见）。支持中文谐音翻译。",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calculator_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifan Shen",
+      "features": [
+        "用计算器数字回应用户。当用户发送 /calc-chat 或表达情感时，在系统计算器上显示对应数字（如 520=我爱你，88=再见）。支持中文谐音翻译。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calculator-chat@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27129440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calculator-chat",
+      "url": "https://clawhub.ai/skills/calculator-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calculator-chat",
+    "url": "https://clawhub.ai/skills/calculator-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calculator-chat-d324e0505af5ff7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calculator-chat@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-calculator-chat-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7a0d31cb23986bf45a7bc550d1dd8e7b15cee4c08785203cd9cc2e5f8232f3f",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T17:32:49.535Z"
+}

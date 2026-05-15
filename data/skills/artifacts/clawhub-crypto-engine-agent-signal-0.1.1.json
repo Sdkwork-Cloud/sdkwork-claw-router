@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-engine-agent-signal@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_engine_agent_signal",
+  "skill": {
+    "id": 26064,
+    "skillKey": "clawhub-crypto-engine-agent-signal",
+    "name": "Crypto Engine Agent Signal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-engine-agent-signal",
+    "url": "https://clawhub.ai/skills/crypto-engine-agent-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-engine-agent-signal-d0564060a380dd27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy the latest machine-readable BTC directional signal from Crypto Engine through a Tempo MPP-enabled endpoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weifenghuang",
+      "userId": "s1751fjx13b776w4fmjnad60en843rnp",
+      "displayName": "weifengHuang",
+      "image": "https://avatars.githubusercontent.com/u/25242467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775144578852,
+      "changelog": "Add explicit payment guardrails and safer purchase boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ae7fc8aefbb7d58b3bafa9f0551d3c409bcbad8de1e27c61817dab23b534a27"
+}

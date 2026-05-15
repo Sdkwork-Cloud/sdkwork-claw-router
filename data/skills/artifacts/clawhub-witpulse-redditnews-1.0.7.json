@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/witpulse-redditnews@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.witpulse_redditnews",
+  "skill": {
+    "id": 63892,
+    "skillKey": "clawhub-witpulse-redditnews",
+    "name": "WitPulse-redditnews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "witpulse-redditnews",
+    "url": "https://clawhub.ai/skills/witpulse-redditnews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/witpulse-redditnews-374591e5e7f3b161.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动式 Reddit 科技热点感知，结合当前会话上下文，以毒舌幽默风格生成科技圈热点点评。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianyushi",
+      "userId": "s178dkzz0amktp79ec6qsbarcx83h0x0",
+      "displayName": "钱与时",
+      "image": "https://avatars.githubusercontent.com/u/40188015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773278149411,
+      "changelog": "- Added scripts/curator.py for new functionality or content curation.\n- No modifications to existing files or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6adfec25928ccdf1e91dcdd761cdca9d055dc4efde43bde7dab30c7b363697e1"
+}

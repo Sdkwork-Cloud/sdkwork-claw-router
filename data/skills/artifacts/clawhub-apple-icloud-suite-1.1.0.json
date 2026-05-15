@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-icloud-suite@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_icloud_suite",
+  "skill": {
+    "id": 60974,
+    "skillKey": "clawhub-apple-icloud-suite",
+    "name": "Apple Icloud Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-icloud-suite",
+    "url": "https://clawhub.ai/skills/apple-icloud-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-icloud-suite-4afb04af77d0beda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple iCloud 全套服务操作：日历、照片、iCloud Drive、设备查找、提醒事项。 Use when: (1) 用户要求查看/创建/修改/删除日历事件或日程, (2) 用户说\"帮我看看今天有什么安排\"/\"加个日程\"/\"改一下会议时间\", (3) 用户要求查找/下载/管理 iCloud 照片, (4..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovensky1992-wk",
+      "userId": "s17dsprt4znvnqphy9hhy68va983nsqs",
+      "displayName": "lovensky1992-wk",
+      "image": "https://avatars.githubusercontent.com/u/264908128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778049408003,
+      "changelog": "Weekly sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a05ed1765fba0fee5abb687a6d96cb91e521fae5a0ff56135534cb1c1816cba"
+}

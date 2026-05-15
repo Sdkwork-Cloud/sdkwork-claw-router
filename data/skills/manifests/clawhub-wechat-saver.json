@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64339,
+  "uuid": "skill-clawhub-wechat-saver",
+  "skillKey": "clawhub-wechat-saver",
+  "name": "Wechat Saver",
+  "summary": "微信公众号文章抓取工具。将微信文章转换为 Obsidian 兼容的 Markdown 格式，支持图片下载、智能格式识别（代码块/列表/引用）。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kuiil",
+      "features": [
+        "微信公众号文章抓取工具。将微信文章转换为 Obsidian 兼容的 Markdown 格式，支持图片下载、智能格式识别（代码块/列表/引用）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-saver@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65759645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-saver",
+      "url": "https://clawhub.ai/skills/wechat-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-saver",
+    "url": "https://clawhub.ai/skills/wechat-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-saver-45df3820c96ef3b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-saver@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-saver-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28641048035746b4b79665f418f50b8fc196880f0fd55264bd148256ebee9560",
+      "artifactSizeBytes": 1877
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:58:59.577Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60222,
+  "uuid": "skill-clawhub-daily-memory-summary",
+  "skillKey": "clawhub-daily-memory-summary",
+  "name": "Daily Memory Summary",
+  "summary": "每日定时任务：从 computer_io 文件夹读取剪贴板和通知数据，写入每日 memory。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_memory_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gift-is-coding",
+      "features": [
+        "每日定时任务：从 computer_io 文件夹读取剪贴板和通知数据，写入每日 memory。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-memory-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33282030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-memory-summary",
+      "url": "https://clawhub.ai/skills/daily-memory-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-memory-summary",
+    "url": "https://clawhub.ai/skills/daily-memory-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-memory-summary-1345c42bbf778ede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-memory-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-memory-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74841f42ac4f06bd97203cfa57441d50d6050ee4df101b8f4bdde6dd8d57822c",
+      "artifactSizeBytes": 2182
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:01:34.042Z"
+}

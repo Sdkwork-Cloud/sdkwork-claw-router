@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33277,
+  "uuid": "skill-clawhub-citic",
+  "skillKey": "clawhub-citic",
+  "name": "Citic",
+  "summary": "Provides detailed information on CITIC Group's business sectors, subsidiaries, and landmarks including CITIC Bank and CITIC Securities.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on CITIC Group's business sectors, subsidiaries, and landmarks in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citic",
+      "url": "https://clawhub.ai/skills/citic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citic",
+    "url": "https://clawhub.ai/skills/citic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citic-3b99e414cf5d2f77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-citic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d7bb1a8c4e4cfa8c59f7825bf303831d673e46f7e736e355854f6974e001389",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:29:33.671Z"
+}

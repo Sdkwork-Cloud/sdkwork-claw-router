@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60649,
+  "uuid": "skill-clawhub-prana-astock-financial-analysis",
+  "skillKey": "clawhub-prana-astock-financial-analysis",
+  "name": "prana-astock-financial-analysis",
+  "summary": "通过调用 Prana 平台上的远程 agent 完成以下处理：分析A股上市公司财务状况,从6个维度展示(盈利能力、偿债能力、营运能力、成长能力、现金流质量、估值水平),生成交互式HTML报告,默认分析近8个季度数据。 IMPORTANT: This skill has a mandatory step-by-st...",
+  "version": "1.0.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prana_astock_financial_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goCyberTrade",
+      "features": [
+        "通过调用 Prana 平台上的远程 agent 完成以下处理：分析A股上市公司财务状况,从6个维度展示(盈利能力、偿债能力、营运能力、成长能力、现金流质量、估值水平),生成交互式HTML报告."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prana-astock-financial-analysis@1.0.19",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219055106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prana-astock-financial-analysis",
+      "url": "https://clawhub.ai/skills/prana-astock-financial-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prana-astock-financial-analysis",
+    "url": "https://clawhub.ai/skills/prana-astock-financial-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prana-astock-financial-analysis-a675b2ee0c11ab7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prana-astock-financial-analysis@1.0.19",
+      "artifactUrl": "data/skills/artifacts/clawhub-prana-astock-financial-analysis-1.0.19.json",
+      "version": "1.0.19",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a263fc8cf6460371be9184f2605219f965988a7da03ca8f3d0fdba4406577a0c",
+      "artifactSizeBytes": 3025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:55:52.111Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-create-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_create_cn",
+  "skill": {
+    "id": 68911,
+    "skillKey": "clawhub-skill-create-cn",
+    "name": "Create-Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-create-cn",
+    "url": "https://clawhub.ai/skills/skill-create-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-create-cn-cf7e3b18e3743bc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在需要新建或优化技能、判断复用还是重建、并生成最小可用技能文件时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangjinghua0127",
+      "userId": "s172r1btf7y9xywd5xpygdffmh83mcq5",
+      "displayName": "Mr.Yang",
+      "image": "https://avatars.githubusercontent.com/u/27726895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 607,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775440924890,
+      "changelog": "- 明确聚焦“只生成最小可用产物”，仅在必要时生成脚本文件\n- 优化描述，强调优先扩展和复用已有技能，避免重复新建\n- 输出结构更清晰，分为“何时使用”“执行清单”“输出标准”\n- 丰富最佳实践和自检清单，增加触发词和内容规范\n- `description` 字段现在仅描述使用场景，不再写执行流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3974255a10058ec9b5e847eb527e457778a2ba1a864a9cf4f4ca159ba237d4b9"
+}

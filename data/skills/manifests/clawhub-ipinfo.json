@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10603,
+  "uuid": "skill-clawhub-ipinfo",
+  "skillKey": "clawhub-ipinfo",
+  "name": "IPinfo",
+  "summary": "Perform IP geolocation lookups using ipinfo.io API. Convert IP addresses to geographic data including city, region, country, postal code, timezone, and coordinates. Use when geolocating IPs, enriching IP data, or analyzing geographic distr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipinfo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiago Martins",
+      "features": [
+        "Perform IP geolocation lookups using ipinfo.io API",
+        "Convert IP addresses to geographic data including city, region, country, postal code, timezone,.",
+        "Use when geolocating IPs, enriching IP data, or analyzing geographic distribution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ipinfo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1524392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ipinfo",
+      "url": "https://clawhub.ai/skills/ipinfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipinfo",
+    "url": "https://clawhub.ai/skills/ipinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipinfo-e3e58313316b237a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ipinfo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ipinfo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e84b6ce1cdf79c916a05e925783e13ab8c70fbcafb0f4da98b5991ace71fd7e",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T13:39:47.711Z"
+}

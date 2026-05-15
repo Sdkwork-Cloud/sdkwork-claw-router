@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22042,
+  "uuid": "skill-clawhub-rust-rebuilder",
+  "skillKey": "clawhub-rust-rebuilder",
+  "name": "rust-rebuilder",
+  "summary": "Plan and execute incremental project rewrites to Rust with architecture mapping, parity verification, idiomatic Rust guidance, dependency preflight checks, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_rebuilder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dandandujie",
+      "features": [
+        "Plan and execute incremental project rewrites to Rust with architecture mapping, parity verific."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rust-rebuilder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142396650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rust-rebuilder",
+      "url": "https://clawhub.ai/skills/rust-rebuilder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-rebuilder",
+    "url": "https://clawhub.ai/skills/rust-rebuilder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-rebuilder-2e3f43bfb4259714.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rust-rebuilder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rust-rebuilder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:723ab19d29b62e936192a89e1d958998a2c0bf3d776f91361779916ead1843dc",
+      "artifactSizeBytes": 2672
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:29:01.468Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teacher-lesson-plans@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teacher_lesson_plans",
+  "skill": {
+    "id": 40609,
+    "skillKey": "clawhub-teacher-lesson-plans",
+    "name": "Teacher Lesson Plans (UK Curriculum)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teacher-lesson-plans",
+    "url": "https://clawhub.ai/skills/teacher-lesson-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teacher-lesson-plans-25a7d8863a0b1a01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UK National Curriculum-aligned lesson plans, differentiated worksheets, assessment questions with mark schemes, and student report comments. Covers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamespatrickthom2003-star",
+      "userId": "s175sm574s69gbqvacsbvd8n3n84fq3m",
+      "displayName": "ExternalOS",
+      "image": "https://avatars.githubusercontent.com/u/270515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775648807282,
+      "changelog": "Initial release of teacher-lesson-plans skill.\n\n- Generates UK National Curriculum-aligned lesson plans with detailed structure, including objectives, differentiation, SEND adaptations, and assessment opportunities.\n- Provides differentiated worksheets (Foundation, Core, Extension) for all key stages and subjects.\n- Produces assessment questions spanning Bloom’s Taxonomy with full mark schemes.\n- Offers student report comments tailored to lesson content.\n- Supports both quick mode (instant plans) and detailed mode (guided question flow).\n- Designed for KS1–KS5, all subjects, and major UK exam boards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aa85f541d141575e2aa565627cbfe0221964794a2030386aa75cfceca129d25"
+}

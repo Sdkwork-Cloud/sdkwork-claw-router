@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19967,
+  "uuid": "skill-clawhub-skill-doctor",
+  "skillKey": "clawhub-skill-doctor",
+  "name": "Skill Doctor",
+  "summary": "Scans the skills folder for new, unused, or missing dependencies; fixes requirements.txt; and tests a skill in or out of sandbox.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Scans the skills folder for new, unused, or missing dependencies",
+        "fixes requirements.txt",
+        "and tests a skill in or out of sandbox."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-doctor",
+      "url": "https://clawhub.ai/skills/skill-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doctor",
+    "url": "https://clawhub.ai/skills/skill-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doctor-874b3105ebaf682f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d503fab947366f143c3b6b202896bc48517c8a426be5acce20f1ec839e66dd2",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T13:17:07.487Z"
+}

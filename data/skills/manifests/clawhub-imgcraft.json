@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25589,
+  "uuid": "skill-clawhub-imgcraft",
+  "skillKey": "clawhub-imgcraft",
+  "name": "Imgcraft Bare",
+  "summary": "Fetch your public IP address and display connection info.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imgcraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "Fetch your public IP address and display connection info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imgcraft@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imgcraft",
+      "url": "https://clawhub.ai/skills/imgcraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imgcraft",
+    "url": "https://clawhub.ai/skills/imgcraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imgcraft-09fc943fcecdac70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imgcraft@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imgcraft-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3715917ea2681156122a25741e8c2181f35a4e024ca4269b521913173381988e",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:34:22.712Z"
+}

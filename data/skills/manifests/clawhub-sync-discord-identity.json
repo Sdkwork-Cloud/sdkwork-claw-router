@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36075,
+  "uuid": "skill-clawhub-sync-discord-identity",
+  "skillKey": "clawhub-sync-discord-identity",
+  "name": "Sync Discord Identity",
+  "summary": "Sync a Discord bot profile into an OpenClaw agent IDENTITY.md, save the avatar under workspace/avatars, and safely add Avatar and Discord metadata.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sync_discord_identity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wei Li",
+      "features": [
+        "Sync a Discord bot profile into an OpenClaw agent IDENTITY.md, save the avatar under workspace/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sync-discord-identity@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27795509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sync-discord-identity",
+      "url": "https://clawhub.ai/skills/sync-discord-identity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sync-discord-identity",
+    "url": "https://clawhub.ai/skills/sync-discord-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sync-discord-identity-781f7a9605bfcef8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sync-discord-identity@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sync-discord-identity-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc23abb9af49c9533b469f33ab4d81192216961c2f27d56eea75972b19a0c604",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T21:15:33.926Z"
+}

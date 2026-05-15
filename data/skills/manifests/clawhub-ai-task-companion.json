@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67705,
+  "uuid": "skill-clawhub-ai-task-companion",
+  "skillKey": "clawhub-ai-task-companion",
+  "name": "AI Task Companion",
+  "summary": "AI Task Companion - 用户的AI任务伴侣。用户只需描述需求，自动识别任务类型， 推荐最佳AI工具组合，并协助完成执行。解决用户\"不知道用什么、怎么用\"的痛点， 让AI工具使用像对话一样简单。覆盖工作、学习、创作、生活4大类场景。 关键词：AI工具推荐、任务识别、工具组合、使用指导",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_task_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James",
+      "features": [
+        "AI Task Companion",
+        "用户的AI任务伴侣。用户只需描述需求，自动识别任务类型， 推荐最佳AI工具组合，并协助完成执行。解决用户\"不知道用什么、怎么用\"的痛点， 让AI工具使用像对话一样简单。覆盖工作、学习、创作、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-task-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47817136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-task-companion",
+      "url": "https://clawhub.ai/skills/ai-task-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-task-companion",
+    "url": "https://clawhub.ai/skills/ai-task-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-task-companion-850da09c36b82589.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-task-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-task-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b8d1b6b3d1f7a514a10a84b31b83ddfb33b77f7f7fd01e7927e5e30593a43d6",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:07:51.266Z"
+}

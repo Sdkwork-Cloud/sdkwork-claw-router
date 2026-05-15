@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50933,
+  "uuid": "skill-clawhub-user-interview",
+  "skillKey": "clawhub-user-interview",
+  "name": "User Interview",
+  "summary": "Run real user interviews via Usercall. Use when you need qualitative feedback from real users — onboarding drop-off, feature confusion, pricing clarity, prot...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.user_interview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junetic",
+      "features": [
+        "Run real user interviews via Usercall",
+        "Use when you need qualitative feedback from real users — onboarding drop-off, feature confusion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/user-interview@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1794006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "user-interview",
+      "url": "https://clawhub.ai/skills/user-interview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "user-interview",
+    "url": "https://clawhub.ai/skills/user-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/user-interview-3dbe913ee8f0f6f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/user-interview@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-user-interview-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b00258358a48b4aa878f0561822ea7a83e295536c24ee441bb81f45e556c1cc2",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:25:20.451Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cai-gun-gun@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cai_gun_gun",
+  "skill": {
+    "id": 70281,
+    "skillKey": "clawhub-cai-gun-gun",
+    "name": "Cai Gun Gun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cai-gun-gun",
+    "url": "https://clawhub.ai/skills/cai-gun-gun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cai-gun-gun-a51dade98818cd7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "财滚滚(Cai Gun Gun) 💰🐶 个人记账小助手，支持快速记账、智能分类、账户余额管理、第三方账单导入导出与财务分析。触发词：记账、我要记账、记一笔、查账单、本周消费、本月支出、导出账单、财务分析、财滚滚。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmmg55",
+      "userId": "s179rmmws7swbk91089bm6s6fh85eg83",
+      "displayName": "Jiaqi",
+      "image": "https://avatars.githubusercontent.com/u/48824215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1778234673448,
+      "changelog": "双存储架构、安全机制、多sheet导入导出、修复导入性能问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:209517bf96ebdd63b1e4f2bea8e9cc081fc962a163e9256d89b7423509c3fbff"
+}

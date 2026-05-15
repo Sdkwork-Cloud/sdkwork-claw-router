@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53218,
+  "uuid": "skill-clawhub-snyk-hardened",
+  "skillKey": "clawhub-snyk-hardened",
+  "name": "Snyk Hardened",
+  "summary": "Comprehensive security analysis and vulnerability assessment — threat modeling, secure code review, and pre-deployment security validation across application...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snyk_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Comprehensive security analysis and vulnerability assessment — threat modeling, secure code rev."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snyk-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snyk-hardened",
+      "url": "https://clawhub.ai/skills/snyk-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snyk-hardened",
+    "url": "https://clawhub.ai/skills/snyk-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snyk-hardened-e1b20c3a5773e0dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snyk-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snyk-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:483f1edafe2faad7b93b950db467132ace2e465e6a8cb99a66893fd6b8faeb54",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:01:05.183Z"
+}

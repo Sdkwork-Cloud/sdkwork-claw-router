@@ -1,0 +1,267 @@
+package com.sdkwork.clawrouter.backend.model;
+
+import java.util.Map;
+
+public class IntegrationProviderRecord {
+    private String authType;
+    private String baseUrlTemplate;
+    private Map<String, String> capabilities;
+    private String colorToken;
+    private String createdAt;
+    private String dataScope;
+    private String defaultVendorCode;
+    private String deletedAt;
+    private String deletedBy;
+    private String description;
+    private String displayName;
+    private String docsUrl;
+    private String iconUrl;
+    private String id;
+    private String integrationType;
+    private Map<String, String> metadata;
+    private String metadataSchemaVersion;
+    private String organizationId;
+    private String protocol;
+    private String providerCode;
+    private Integer sortOrder;
+    private String status;
+    private String tenantId;
+    private String updatedAt;
+    private String upstreamProviderCode;
+    private String upstreamVendorCode;
+    private String uuid;
+    private String version;
+    private String websiteUrl;
+
+    public String getAuthType() {
+        return this.authType;
+    }
+    
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
+
+    public String getBaseUrlTemplate() {
+        return this.baseUrlTemplate;
+    }
+    
+    public void setBaseUrlTemplate(String baseUrlTemplate) {
+        this.baseUrlTemplate = baseUrlTemplate;
+    }
+
+    public Map<String, String> getCapabilities() {
+        return this.capabilities;
+    }
+    
+    public void setCapabilities(Map<String, String> capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    public String getColorToken() {
+        return this.colorToken;
+    }
+    
+    public void setColorToken(String colorToken) {
+        this.colorToken = colorToken;
+    }
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+    
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getDataScope() {
+        return this.dataScope;
+    }
+    
+    public void setDataScope(String dataScope) {
+        this.dataScope = dataScope;
+    }
+
+    public String getDefaultVendorCode() {
+        return this.defaultVendorCode;
+    }
+    
+    public void setDefaultVendorCode(String defaultVendorCode) {
+        this.defaultVendorCode = defaultVendorCode;
+    }
+
+    public String getDeletedAt() {
+        return this.deletedAt;
+    }
+    
+    public void setDeletedAt(String deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
+    public String getDeletedBy() {
+        return this.deletedBy;
+    }
+    
+    public void setDeletedBy(String deletedBy) {
+        this.deletedBy = deletedBy;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+    
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getDocsUrl() {
+        return this.docsUrl;
+    }
+    
+    public void setDocsUrl(String docsUrl) {
+        this.docsUrl = docsUrl;
+    }
+
+    public String getIconUrl() {
+        return this.iconUrl;
+    }
+    
+    public void setIconUrl(String iconUrl) {
+        this.iconUrl = iconUrl;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getIntegrationType() {
+        return this.integrationType;
+    }
+    
+    public void setIntegrationType(String integrationType) {
+        this.integrationType = integrationType;
+    }
+
+    public Map<String, String> getMetadata() {
+        return this.metadata;
+    }
+    
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
+    public String getMetadataSchemaVersion() {
+        return this.metadataSchemaVersion;
+    }
+    
+    public void setMetadataSchemaVersion(String metadataSchemaVersion) {
+        this.metadataSchemaVersion = metadataSchemaVersion;
+    }
+
+    public String getOrganizationId() {
+        return this.organizationId;
+    }
+    
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public String getProtocol() {
+        return this.protocol;
+    }
+    
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+    
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
+    }
+
+    public Integer getSortOrder() {
+        return this.sortOrder;
+    }
+    
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getTenantId() {
+        return this.tenantId;
+    }
+    
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getUpdatedAt() {
+        return this.updatedAt;
+    }
+    
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getUpstreamProviderCode() {
+        return this.upstreamProviderCode;
+    }
+    
+    public void setUpstreamProviderCode(String upstreamProviderCode) {
+        this.upstreamProviderCode = upstreamProviderCode;
+    }
+
+    public String getUpstreamVendorCode() {
+        return this.upstreamVendorCode;
+    }
+    
+    public void setUpstreamVendorCode(String upstreamVendorCode) {
+        this.upstreamVendorCode = upstreamVendorCode;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+    
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getVersion() {
+        return this.version;
+    }
+    
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getWebsiteUrl() {
+        return this.websiteUrl;
+    }
+    
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
+    }
+}

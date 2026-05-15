@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24003,
+  "uuid": "skill-clawhub-upbit",
+  "skillKey": "clawhub-upbit",
+  "name": "Upbit",
+  "summary": "Real-time cryptocurrency price lookup from Upbit (Korean KRW exchange). Use when user asks for Korean crypto prices, Upbit prices, domestic cryptocurrency ra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upbit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lkjsays",
+      "features": [
+        "Real-time cryptocurrency price lookup from Upbit (Korean KRW exchange)",
+        "Use when user asks for Korean crypto prices, Upbit prices, domestic cryptocurrency ra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upbit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75766373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upbit",
+      "url": "https://clawhub.ai/skills/upbit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upbit",
+    "url": "https://clawhub.ai/skills/upbit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upbit-dae0f8ff7c5cf2ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upbit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upbit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cad47ccc9ffc884ebd4eb22a34facfe8a068993be7be768add839135cc8c0b61",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T18:26:24.848Z"
+}

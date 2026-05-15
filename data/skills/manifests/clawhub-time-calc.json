@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71167,
+  "uuid": "skill-clawhub-time-calc",
+  "skillKey": "clawhub-time-calc",
+  "name": "time-calc",
+  "summary": "通过 7 个原子操作完成日期时间的计算与解析：获取当前时间、日期元信息查询、相对星期查找、 日期时间加减、日期时间差值、时区转换、Unix 时间戳互转。 两类触发场景：(1) 用户直接提问时间问题，如当前日期、星期几、日期加减、日期差值、 时区换算、时间戳转换、闰年判断、第几周等。 (2) 用户请求中包含可解析为...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_calc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiaoYk",
+      "features": [
+        "通过 7 个原子操作完成日期时间的计算与解析：获取当前时间、日期元信息查询、相对星期查找、 日期时间加减、日期时间差值、时区转换、Unix 时间戳互转。 两类触发场景：(1) 用户直接提问时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-calc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20698845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-calc",
+      "url": "https://clawhub.ai/skills/time-calc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-calc",
+    "url": "https://clawhub.ai/skills/time-calc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-calc-9f10840e908f62d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-calc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-calc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2d8ca15f0c4f1da80b34c6da6efc82195170241b8d6967146f6eab0272f68a6",
+      "artifactSizeBytes": 2933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:20:06.775Z"
+}

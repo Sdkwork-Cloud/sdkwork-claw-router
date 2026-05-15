@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faers-multi-drug-soc-planner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faers_multi_drug_soc_planner",
+  "skill": {
+    "id": 28712,
+    "skillKey": "clawhub-faers-multi-drug-soc-planner",
+    "name": "Faers Multi Drug Soc Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faers-multi-drug-soc-planner",
+    "url": "https://clawhub.ai/skills/faers-multi-drug-soc-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faers-multi-drug-soc-planner-708ffbd1ef48cfcd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates four-tiered FAERS multi-drug single-SOC comparative safety study designs with workflows, validation, and publication plans from user-specified drug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanruoyu",
+      "userId": "s172s7npdfrd0d2tnzjfje1hhn83gpfa",
+      "displayName": "shanruoyu",
+      "image": "https://avatars.githubusercontent.com/u/56035842?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773394334686,
+      "changelog": "Initial release — generates comprehensive FAERS-based comparative safety study designs for user-specified drug sets, comparators, and adverse event domains.\n\n- Supports single-SOC, multi-drug comparison design across four workload configurations: Lite, Standard, Advanced, and Publication+\n- Outputs include recommended primary plan, step-by-step module-level workflow, figure/table plan, validation/robustness strategy, minimal executable version, and publication upgrade path\n- Recognizes and adapts to several research styles: drug class vs comparator, within-class, pharmacologic subgroups, and more\n- Structured outputs suited for direct integration with pharmacovigilance data analysis and academic writing tools\n- Includes detailed guidance on data source selection, drug normalization, comparator logic, outcome/PT definition, analysis methods, and reporting standards",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3930296c6b1b3d8c66e838c6d3c096936c96eec6b95c33615cc937c1d7bd2aa2"
+}

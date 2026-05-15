@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cheerme@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheerme",
+  "skill": {
+    "id": 32041,
+    "skillKey": "clawhub-cheerme",
+    "name": "Cheerme"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheerme",
+    "url": "https://clawhub.ai/skills/cheerme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheerme-055d7e3e0fbaf9aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cheerme - Sincere companionship, warm support, heartfelt encouragement. Provides direction when you're lost, warmth when you're down, and celebration when yo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oxoyo",
+      "userId": "s17bsnc24bys9zebpk7mgrs3198413zy",
+      "displayName": "之梦",
+      "image": "https://avatars.githubusercontent.com/u/5074207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775124217710,
+      "changelog": "Cheerme 1.2.0 brings multi-role and multi-dialect support for more heartfelt, accessible encouragement.\n\n- Introduced four companion roles: Warm (Nuan Nuan), Teacher (Teacher Chen), Buddy (Yang Zai), and Motivator (Gang Ge), each with unique persona and speaking style.\n- Added support for regional dialects: Northeast, Sichuan, Cantonese, and Beijing, each with specific vocabulary and example dialogues.\n- Refined automatic and manual trigger conditions to better recognize user needs for support, guidance, or motivation.\n- Enhanced mechanisms for natural care, mindful memory, and genuine user support during conversations.\n- Updated documentation for clarity on role, dialect features, and example dialogues for easier use and customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:179c05a9759000e1612d678f45df1c998f6b68c68f28080cfa0fdde3c94250cc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anomaly-explainer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anomaly_explainer",
+  "skill": {
+    "id": 19843,
+    "skillKey": "clawhub-anomaly-explainer",
+    "name": "Anomaly Explainer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anomaly-explainer",
+    "url": "https://clawhub.ai/skills/anomaly-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anomaly-explainer-23012deff48498ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose AWS cost anomalies and explain root cause in plain English when spend spikes unexpectedly"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772341730068,
+      "changelog": "Initial release of AWS Anomaly Explainer – Instantly diagnose cost spikes on AWS.\n\n- Parses AWS cost anomaly alerts or billing diffs to identify service, account, region, and time window involved\n- Correlates spend spikes with common root causes for services like EC2, Lambda, S3, NAT Gateway, RDS, and data transfer\n- Recommends immediate actions to contain costs and longer-term prevention measures\n- Outputs a summary with confidence level, root cause, evidence, and estimated impact, plus incident ticket and Slack one-liner\n- Supports integrating CloudTrail data for enhanced correlation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebbb4763b57984522cbbc58781d8b50809d15db22c58cc249b50a8f1b8664c15"
+}

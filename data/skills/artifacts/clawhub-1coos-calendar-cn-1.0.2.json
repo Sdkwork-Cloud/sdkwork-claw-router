@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1coos-calendar-cn@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1coos_calendar_cn",
+  "skill": {
+    "id": 59112,
+    "skillKey": "clawhub-1coos-calendar-cn",
+    "name": "1coos-calendar-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1coos-calendar-cn",
+    "url": "https://clawhub.ai/skills/1coos-calendar-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1coos-calendar-cn-193ff180fd45260a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询中国传统日历/黄历信息。TRIGGER when user asks about Chinese calendar, lunar date, 农历, 黄历, 万年历, 节气, 五行， 宜忌, 干支，佛历，道历等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1coos",
+      "userId": "s1729f78g961b6np6hxd6sz95d83h5cn",
+      "displayName": "1coos",
+      "image": "https://avatars.githubusercontent.com/u/125862072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775544129099,
+      "changelog": "- Change script entry point from main.ts to main.js in documentation and execution instructions.  \n- Bump version to 1.0.2.  \n- No user-facing feature or logic changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba17bab60a48668ab5bc05bf55e7874ea360ad2392dd9447fb2945d6e2612b97"
+}

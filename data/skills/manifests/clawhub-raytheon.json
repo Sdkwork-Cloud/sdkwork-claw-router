@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67628,
+  "uuid": "skill-clawhub-raytheon",
+  "skillKey": "clawhub-raytheon",
+  "name": "Raytheon",
+  "summary": "提供关于Raytheon品牌历史、业务、市场和竞争格局的详细介绍，便于快速了解其核心信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raytheon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于Raytheon品牌历史、业务、市场和竞争格局的详细介绍，便于快速了解其核心信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raytheon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raytheon",
+      "url": "https://clawhub.ai/skills/raytheon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raytheon",
+    "url": "https://clawhub.ai/skills/raytheon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raytheon-b426df21b43a09fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raytheon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raytheon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ced74fd1fc90b110ab07dcaf9e05dae6701aa58f2ef49b7b017f44c559f52051",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:09:41.810Z"
+}

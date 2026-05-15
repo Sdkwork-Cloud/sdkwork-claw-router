@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68824,
+  "uuid": "skill-clawhub-chinese-culture",
+  "skillKey": "clawhub-chinese-culture",
+  "name": "Chinese Culture",
+  "summary": "提供中国传统文化知识，涵盖诗词、名著、书画、戏曲、节日、建筑、饮食及传统美德等内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_culture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenqin1688",
+      "features": [
+        "提供中国传统文化知识，涵盖诗词、名著、书画、戏曲、节日、建筑、饮食及传统美德等内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-culture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46556755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-culture",
+      "url": "https://clawhub.ai/skills/chinese-culture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-culture",
+    "url": "https://clawhub.ai/skills/chinese-culture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-culture-6c55e10a49637325.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-culture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-culture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:783e0f3384d34c50eca3c6b5b5e66cdabe09e280d101de7df5faf5154c5514e0",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:04:17.444Z"
+}

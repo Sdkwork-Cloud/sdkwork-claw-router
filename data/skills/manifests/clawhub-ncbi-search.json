@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25794,
+  "uuid": "skill-clawhub-ncbi-search",
+  "skillKey": "clawhub-ncbi-search",
+  "name": "ncbi-search",
+  "summary": "Search NCBI databases using E-Utilities API (official, free). Supports multiple databases: PubMed (literature), Gene, Protein, Nucleotide, dbSNP, ClinVar, Ta...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ncbi_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pengside",
+      "features": [
+        "Search NCBI databases using E-Utilities API (official, free)",
+        "Supports multiple databases: PubMed (literature), Gene, Protein, Nucleotide, dbSNP, ClinVar, Ta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ncbi-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221703153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ncbi-search",
+      "url": "https://clawhub.ai/skills/ncbi-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ncbi-search",
+    "url": "https://clawhub.ai/skills/ncbi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ncbi-search-daa4cbaa0376c920.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ncbi-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ncbi-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad57783616a3e774731c04e2fccc1c4d80520b3c000bdbaa5ce9901a225f6718",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:26:14.380Z"
+}

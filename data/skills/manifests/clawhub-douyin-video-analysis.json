@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60471,
+  "uuid": "skill-clawhub-douyin-video-analysis",
+  "skillKey": "clawhub-douyin-video-analysis",
+  "name": "Douyin Video Analysis",
+  "summary": "抖音视频分析流水线：输入抖音链接后，自动/半自动抓取页面信息与音频、转写口播、总结内容、提取有用信息与对应证据、进行批判性思维分析，并把转写与分析结果写入 Obsidian。 / Analyze a Douyin video from a shared URL by extracting page metadat...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zzmbobby",
+      "features": [
+        "抖音视频分析流水线：输入抖音链接后，自动/半自动抓取页面信息与音频、转写口播、总结内容、提取有用信息与对应证据、进行批判性思维分析，并把转写与分析结果写入 Obsidian。 / Analy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-analysis@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30634352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-analysis",
+      "url": "https://clawhub.ai/skills/douyin-video-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-analysis",
+    "url": "https://clawhub.ai/skills/douyin-video-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-analysis-39835c249b0c0e0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-analysis@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-analysis-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a3747b9145d39497006f78b13bf0238c816501691b281ba3ff24ab6f42b99a3",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:47:06.730Z"
+}

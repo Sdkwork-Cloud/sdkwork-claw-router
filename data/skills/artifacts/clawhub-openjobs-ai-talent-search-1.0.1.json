@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openjobs-ai-talent-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openjobs_ai_talent_search",
+  "skill": {
+    "id": 16600,
+    "skillKey": "clawhub-openjobs-ai-talent-search",
+    "name": "Openjobs Ai Talent Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openjobs-ai-talent-search",
+    "url": "https://clawhub.ai/skills/openjobs-ai-talent-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openjobs-ai-talent-search-48856297923271a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and discover academic scholars using OpenJobs AI. Find researchers by name, affiliation, research areas, citations, h-index, publications, and more wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openjobsai",
+      "userId": "s176xfb1nt1f51cphprzg7gv5h83j0xs",
+      "displayName": "OpenJobs AI",
+      "image": "https://avatars.githubusercontent.com/u/176164832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773316403021,
+      "changelog": "openjobs-ai-talent-search 1.0.1\n\n- Added full SKILL.md documentation with usage instructions, API request templates, and examples.\n- Included detailed setup, version check, and environment variable requirements for API key management.\n- Described all supported search filters, response formatting guidelines, and error handling.\n- Clarified data source attribution, output presentation, and operational best practices for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac5b48534f26b63794fca52edb044176b5788c774c3ec6760329acc24483d30f"
+}

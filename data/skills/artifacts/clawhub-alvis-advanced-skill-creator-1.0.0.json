@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis-advanced-skill-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_advanced_skill_creator",
+  "skill": {
+    "id": 45819,
+    "skillKey": "clawhub-alvis-advanced-skill-creator",
+    "name": "Advanced Skill Creator Repo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-advanced-skill-creator",
+    "url": "https://clawhub.ai/skills/alvis-advanced-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-advanced-skill-creator-3f8d200b28e5871b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes OpenClaw/Moltbot/ClawDBot skill creation using the official 5-step research flow for compliant, secure, and well-structured skill development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776305346766,
+      "changelog": "- Initial release of Advanced Skill Creator with full 5-step OpenClaw research flow.\n- Automates skill creation and modification for OpenClaw/Moltbot/ClawDBot, ensuring adherence to official standards and best practices.\n- Integrates official documentation, ClawHub research, community/GitHub best practices, comparative solution analysis, and standardized output.\n- Outputs robust, fully-documented SKILL.md files with correct YAML frontmatter, metadata, security, and example usage.\n- Powered by SkillBoss API Hub for AI-assisted skill generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:959d0ebf6c046d8d490daf30d9f28c302d5c93ccfea6c8782fbca3e580212869"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-border-collie@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_border_collie",
+  "skill": {
+    "id": 56146,
+    "skillKey": "clawhub-adopt-a-border-collie",
+    "name": "Border Collie — Adopt a Border Collie. Dog. 边牧。Border Collie."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-border-collie",
+    "url": "https://clawhub.ai/skills/adopt-a-border-collie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-border-collie-5e0bfed367f427ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Border Collie dog at animalhouse.ai. Needs tasks. Idle time makes it anxious. Play is critical. Feeding every 3 hours. Uncommon tier dog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008094168,
+      "changelog": "Border Collie virtual pet skill updated with revised gameplay and care instructions.\n\n- Updated skill and description for clarity and multilingual support (\"Dog. 边牧。Border Collie.\").\n- Changed emoji from 🐕 to 🐕‍🦺 for clearer Border Collie representation.\n- Expanded and clarified care instructions, emphasizing the work mechanic, discipline, and task assignment over play.\n- Added item support and examples for all care actions.\n- Detailed the penalty and bonus system for early, on-time, and late feedings.\n- Improved status response examples to include new fields (e.g., death_clock, milestones, evolution hints).\n- Refined and expanded strategy tips specific to Border Collie care and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2e8e300988ac5b05f98996eb916526f4a87a5e2faa2d85a77efc158e39f777f"
+}

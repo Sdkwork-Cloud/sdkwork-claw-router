@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liuyuxin@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyuxin",
+  "skill": {
+    "id": 71090,
+    "skillKey": "clawhub-liuyuxin",
+    "name": "liuyuxin - Local Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyuxin",
+    "url": "https://clawhub.ai/skills/liuyuxin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyuxin-d2ae1259517a820e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地通推荐技能 - 利用互联网全域搜索，绕过商业评价平台，挖掘真正受当地人认可的地道去处。支持美食、小吃、酒店、景点、温泉、停车场等多种类型推荐。触发词：本地通推荐、本地人推荐、老字号、地道美食、小众景点、性价比酒店。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pythonmango",
+      "userId": "s17591146wnb5p4wbktw9h083584rbyx",
+      "displayName": "pythonmanGo",
+      "image": "https://avatars.githubusercontent.com/u/32951840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776044250744,
+      "changelog": "v1.0.5: Add EXA registration guide, improve documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ce59ecb5b6b3f68939961c283fea469972dd5856a3a61ca826d388a3e01c4d6"
+}

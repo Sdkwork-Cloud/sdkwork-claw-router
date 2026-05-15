@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/four@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.four",
+  "skill": {
+    "id": 72107,
+    "skillKey": "clawhub-four",
+    "name": "four"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "four",
+    "url": "https://clawhub.ai/skills/four",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/four-04efaf080f5a3e74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数字 4 的文化介绍技能（中英文版本）。当用户询问数字 4、四的文化含义、四方、四季等相关信息时激活此技能。包含陈朗的个人资料。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774083558367,
+      "changelog": "- Initial release of the \"four\" skill introducing the cultural meanings of the number 4 in Chinese and East Asian contexts.\n- Provides both Chinese and English overviews, covering negative and positive associations with the number 4.\n- Includes cultural comparisons with Japan, Korea, and Vietnam.\n- Adds a profile section for Chen Lang, outlining background and interests.\n- Usage instructions for responding to user queries about number 4 symbolism and Chen Lang.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a142b46dda50fb80a5e21ac2c8f9cf7ec5d44aac6d31dc48f129843bde88a9eb"
+}

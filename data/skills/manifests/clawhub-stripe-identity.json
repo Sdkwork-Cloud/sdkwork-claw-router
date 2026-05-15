@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32139,
+  "uuid": "skill-clawhub-stripe-identity",
+  "skillKey": "clawhub-stripe-identity",
+  "name": "Stripe Identity",
+  "summary": "Stripe Identity integration. Manage data, records, and automate workflows. Use when the user wants to interact with Stripe Identity data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_identity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stripe Identity integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Stripe Identity data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-identity@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-identity",
+      "url": "https://clawhub.ai/skills/stripe-identity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-identity",
+    "url": "https://clawhub.ai/skills/stripe-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-identity-a1238548c965a214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-identity@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-identity-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40e1f2465afec03b18a0610f73acc4f5f56ef14b174c4e51f0fe5c00650416b4",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:47:45.446Z"
+}

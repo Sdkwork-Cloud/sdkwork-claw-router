@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ipeaky@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipeaky",
+  "skill": {
+    "id": 15920,
+    "skillKey": "clawhub-ipeaky",
+    "name": "ipeaky"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipeaky",
+    "url": "https://clawhub.ai/skills/ipeaky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipeaky-67e7f62749a1bf74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure API key management for OpenClaw. Store, list, test, and delete API keys without exposing them in chat history. Keys are stored directly in openclaw.js..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christiancattaneo",
+      "userId": "publishers:christiancattaneo",
+      "displayName": "christiancattaneo",
+      "image": "https://avatars.githubusercontent.com/u/194160638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 941,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1772392387408,
+      "changelog": "Add paid tier Stripe integration scaffold; stripe-setup.sh, stripe-checkout.sh, paid tier docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6bec9e6b9aff25f022d9919b13c67861e36116188cd109ffff68e4d75bf4168b"
+}

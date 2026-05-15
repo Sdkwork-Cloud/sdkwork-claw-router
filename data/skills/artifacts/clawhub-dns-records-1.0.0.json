@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dns-records@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dns_records",
+  "skill": {
+    "id": 52544,
+    "skillKey": "clawhub-dns-records",
+    "name": "Dns Records"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dns-records",
+    "url": "https://clawhub.ai/skills/dns-records",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dns-records-d7e365744164d36c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up DNS records for any domain — A, AAAA, MX, NS, TXT, CNAME, SOA. Use when asked to check DNS records, find a domain's IP address, look up mail servers,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774643965497,
+      "changelog": "Initial release of dns-records skill:\n\n- Lookup for A, AAAA, MX, NS, TXT, CNAME, and SOA records.\n- Supports queries for multiple domains in one command.\n- Uses system dig command with Python socket fallback (A/AAAA).\n- JSON output option for scripting and automation.\n- Zero external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e351e4da1d75ee726230998c357d81ee4651890a818050341b7580dfe620ae0b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21064,
+  "uuid": "skill-clawhub-creative-agents",
+  "skillKey": "clawhub-creative-agents",
+  "name": "Creative Agents",
+  "summary": "Integration scripts for the creative agent swarm managed by overstory (Claude Code). Use when configuring or running researcher, social media, blog, or scrib...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Integration scripts for the creative agent swarm managed by overstory (Claude Code)",
+        "Use when configuring or running researcher, social media, blog, or scrib..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creative-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creative-agents",
+      "url": "https://clawhub.ai/skills/creative-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-agents",
+    "url": "https://clawhub.ai/skills/creative-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-agents-daf02af9741996b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creative-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creative-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:459a30ad4f9edc059ca64a6d5e52f4a4fee4adf5e8e8cd37e460df99e1a86c32",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:05:47.937Z"
+}

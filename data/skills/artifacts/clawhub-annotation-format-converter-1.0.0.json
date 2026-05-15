@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/annotation-format-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annotation_format_converter",
+  "skill": {
+    "id": 25165,
+    "skillKey": "clawhub-annotation-format-converter",
+    "name": "Annotation Format Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annotation-format-converter",
+    "url": "https://clawhub.ai/skills/annotation-format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annotation-format-converter-94ac3e95b2baa083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert annotation files between COCO, YOLO, VOC, and LabelMe formats with auto-detection and support for batch processing of folders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772706344384,
+      "changelog": "Initial release of Annotation Format Converter.\n\n- Supports conversion between COCO, YOLO, VOC, and LabelMe annotation formats.\n- Enables auto-detection of annotation format.\n- Provides batch conversion for folders.\n- Includes CLI usage examples for all major conversions.\n- Lists supported formats and requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:106dc418a3d4c27720332cb77a477d98c1f63447c97e23fe3ab7c38b33d3574b"
+}

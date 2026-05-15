@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reah-agent-card@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reah_agent_card",
+  "skill": {
+    "id": 29068,
+    "skillKey": "clawhub-reah-agent-card",
+    "name": "Reah Skill: Agent Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reah-agent-card",
+    "url": "https://clawhub.ai/skills/reah-agent-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reah-agent-card-dc8b796578fd6532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve masked card info from Reah using an access key. Handles session generation, secure fetch, and decryption for agents automatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelzou",
+      "userId": "s17dk33y4bz3vwq1gm535ne4b584ewt9",
+      "displayName": "axelzou",
+      "image": "https://avatars.githubusercontent.com/u/244422723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776047755514,
+      "changelog": "Added support for secure environment variable access for Reah agent keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eaee268e941a66858042427bc71e6dd5e2a64450779828e1e94732a0b7978fa2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46039,
+  "uuid": "skill-clawhub-xia-china-stock",
+  "skillKey": "clawhub-xia-china-stock",
+  "name": "Xia China Stock Analysis",
+  "summary": "Comprehensive A-share & HK stock analysis toolkit for OpenClaw agents. Technical indicators (MA/MACD/RSI/KDJ/BOLL), multi-source data (Eastmoney API, Akshare...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xia_china_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oldairman",
+      "features": [
+        "Comprehensive A-share & HK stock analysis toolkit for OpenClaw agents",
+        "Technical indicators (MA/MACD/RSI/KDJ/BOLL), multi-source data (Eastmoney API, Akshare..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xia-china-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182534032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xia-china-stock",
+      "url": "https://clawhub.ai/skills/xia-china-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xia-china-stock",
+    "url": "https://clawhub.ai/skills/xia-china-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xia-china-stock-65cabfc88644755d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xia-china-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xia-china-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d584b205500439078a43540ed14b199e25e5c962cc9bc410106264b699ad8899",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:56:05.548Z"
+}

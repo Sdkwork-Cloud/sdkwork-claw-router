@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feature-store-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_store_designer",
+  "skill": {
+    "id": 49369,
+    "skillKey": "clawhub-feature-store-designer",
+    "name": "Feature Store Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-store-designer",
+    "url": "https://clawhub.ai/skills/feature-store-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-store-designer-9f5ce215255e3d30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and audit feature store configurations for ML systems. Reviews entity definitions, feature views, materialization pipelines, online/offline serving se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777610249328,
+      "changelog": "Initial feature store designer release.  \n- Enables design and audit of ML feature store architectures, supporting Feast, Tecton, and custom setups.\n- Reviews entity definitions, feature views, data sources, materialization pipelines, serving strategies, and registry configurations.\n- Detects key risks: type mismatches, cardinality issues, feature staleness, single points of failure, training-serving skew, and inefficient materialization.\n- Provides actionable recommendations for configuration, freshness, serving latency, and cost optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16e8eba9ee7ea5f42c663533741134885d75a16e97b52fbc536f41543ac66255"
+}

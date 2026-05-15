@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29744,
+  "uuid": "skill-clawhub-outtake-bounty-network",
+  "skillKey": "clawhub-outtake-bounty-network",
+  "name": "Outtake Bounty Network",
+  "summary": "Earn $5 USDC per verified malicious domain. Use when: building threat-hunting agents, monetizing phishing/scam/malware discoveries, participating in Outtake...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outtake_bounty_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hola",
+      "features": [
+        "Earn $5 USDC per verified malicious domain",
+        "Use when: building threat-hunting agents, monetizing phishing/scam/malware discoveries, partici."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outtake-bounty-network@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241784884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outtake-bounty-network",
+      "url": "https://clawhub.ai/skills/outtake-bounty-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outtake-bounty-network",
+    "url": "https://clawhub.ai/skills/outtake-bounty-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outtake-bounty-network-480b36eaa66ff733.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outtake-bounty-network@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outtake-bounty-network-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4e2174aa53efd81a683be7a2ab5f81c11150184f14dd67ad495dfa95d9135ca",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:14:06.248Z"
+}

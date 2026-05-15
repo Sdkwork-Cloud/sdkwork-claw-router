@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73302,
+  "uuid": "skill-clawhub-eastmoney-stock-analysis",
+  "skillKey": "clawhub-eastmoney-stock-analysis",
+  "name": "全球股市技术分析报告",
+  "summary": "A股个股技术分析报告生成工具。当用户请求生成股票技术分析报告、查询A股个股行情、分析个股走势时触发。支持输入股票代码和股票名称，自动抓取东方财富实时数据并生成结构化技术分析报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuqi98",
+      "features": [
+        "A股个股技术分析报告生成工具。当用户请求生成股票技术分析报告、查询A股个股行情、分析个股走势时触发。支持输入股票代码和股票名称，自动抓取东方财富实时数据并生成结构化技术分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74645439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-stock-analysis",
+      "url": "https://clawhub.ai/skills/eastmoney-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-stock-analysis",
+    "url": "https://clawhub.ai/skills/eastmoney-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-stock-analysis-03c37cd4ac135326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56d6d30473870d88b489a0e1820c0348c8726a6fc409e15d363adfc454943b7e",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:50:53.816Z"
+}

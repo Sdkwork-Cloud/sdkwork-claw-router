@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trongrid-block-info@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_block_info",
+  "skill": {
+    "id": 26966,
+    "skillKey": "clawhub-trongrid-block-info",
+    "name": "trongrid-block-info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-block-info",
+    "url": "https://clawhub.ai/skills/trongrid-block-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-block-info-f8deb4b23239850f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and analyze TRON blocks including producer info, transaction breakdown, rewards, burns, and network load. Use when a user asks about a specific block,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greason",
+      "userId": "s176mhh3c31n267h3brgrreh1x83jhx8",
+      "displayName": "greason",
+      "image": "https://avatars.githubusercontent.com/u/12513158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774425378586,
+      "changelog": "No code or documentation changes detected for version 1.0.3.\n\n- No updates or modifications since the previous release.\n- All instructions, features, and examples remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31e3efff9234f08c053dc55d6e71afe81eee4901ad382f6619be62a8273305e5"
+}

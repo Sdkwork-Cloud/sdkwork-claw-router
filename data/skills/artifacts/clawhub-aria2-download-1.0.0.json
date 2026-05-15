@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aria2-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2_download",
+  "skill": {
+    "id": 60356,
+    "skillKey": "clawhub-aria2-download",
+    "name": "Aria2 Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2-download",
+    "url": "https://clawhub.ai/skills/aria2-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-download-6584c516d9d583f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Aria2 RPC 添加下载任务，支持实时进度监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ingress007",
+      "userId": "s171ktyn02gx7sk4vgy0nx525184685x",
+      "displayName": "Ingress",
+      "image": "https://avatars.githubusercontent.com/u/42857023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694247377,
+      "changelog": "Initial release of aria2-download 1.0.0\n\n- 支持通过 Aria2 RPC 添加下载任务\n- 实时监控下载进度\n- 下载完成后输出详细信息\n- 兼容 HTTP/FTP/M3U8 等协议\n- 支持多线程高速下载\n- 配置灵活，支持环境变量设置",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d1bf0af8e78b38988b361774edae952620fc85e3f5d00de825cac6770ec50254"
+}

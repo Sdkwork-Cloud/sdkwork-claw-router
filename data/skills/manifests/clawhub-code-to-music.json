@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67192,
+  "uuid": "skill-clawhub-code-to-music",
+  "skillKey": "clawhub-code-to-music",
+  "name": "Code to Music",
+  "summary": "把代码文件转换成音乐 — 分析代码结构特征（行数、函数、缩进、关键字等），映射成音乐参数（BPM、调性、乐器、节奏），调用 MiniMax music-2.6 API 生成独一无二的\"代码交响曲\"。适合给老大玩、记录代码、或者纯粹中二一下。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_to_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "besty0121",
+      "features": [
+        "把代码文件转换成音乐 — 分析代码结构特征（行数、函数、缩进、关键字等），映射成音乐参数（BPM、调性、乐器、节奏），调用 MiniMax music-2.6 API 生成独一无二的\"代码交."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-to-music@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133213023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-to-music",
+      "url": "https://clawhub.ai/skills/code-to-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-to-music",
+    "url": "https://clawhub.ai/skills/code-to-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-to-music-75e2a970ad4e5f5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-to-music@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-to-music-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75562bc6dcc12b5beea2c1a9a5cd2f599224efa44a1bad6aee64cd172cd41de2",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:49:42.717Z"
+}

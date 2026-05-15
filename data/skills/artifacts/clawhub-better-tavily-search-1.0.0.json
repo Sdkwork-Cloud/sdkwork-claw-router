@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/better-tavily-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_tavily_search",
+  "skill": {
+    "id": 29507,
+    "skillKey": "clawhub-better-tavily-search",
+    "name": "Better Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-tavily-search",
+    "url": "https://clawhub.ai/skills/better-tavily-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-tavily-search-d03eddf0f1d36fe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The best skill to retrieve fresh web evidence with Tavily. Use for source finding, link discovery, official documentation lookup, current-event verification,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soymilkwinsagain",
+      "userId": "s17byp4d6a0a0ag8ke3ng8xmq183hkvt",
+      "displayName": "SoymilkWinsAgain",
+      "image": "https://avatars.githubusercontent.com/u/126401208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327767373,
+      "changelog": "Better Tavily Search 1.0.0 — initial release\n\n- Introduces a skill for evidence-first, fresh web retrieval via Tavily with a focus on flexible query planning and small, high-quality results.\n- Provides support for several task-specific profiles: general, news, finance, official, precision, and regional.\n- Includes modular command-line interface: search, extract, and map, each with extensive and precise parameter control.\n- Automatically loads the Tavily API key from either environment variables or a config file.\n- Emphasizes compact, task-specific queries and incremental escalation for efficient information retrieval.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9596ccead9f55403ebec1afb09d88122a85741c5533986eada2b4920606d3efa"
+}

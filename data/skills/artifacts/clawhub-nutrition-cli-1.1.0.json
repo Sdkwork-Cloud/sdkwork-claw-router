@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutrition-cli@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_cli",
+  "skill": {
+    "id": 31264,
+    "skillKey": "clawhub-nutrition-cli",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-cli",
+    "url": "https://clawhub.ai/skills/nutrition-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-cli-ed1b863dbb555ede.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for anything related to food, nutrition, calories, macros, protein, fat, carbohydrates, fiber, vitamins, meal tracking, diet goals, weight man..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javi23ruiz",
+      "userId": "s174j6vw2mgmt6qje6xn4qa2pn849tra",
+      "displayName": "Javier Ruiz",
+      "image": "https://avatars.githubusercontent.com/u/57181237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775544620083,
+      "changelog": "Add meal logging engine, agent memory system, flexible cron reminders, and 4-tier question routing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:675c39de8e09f64388cfdb39b73c4081452d2f14d39efdf37c3ddf32f5affa79"
+}

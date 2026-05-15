@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_automation",
+  "skill": {
+    "id": 16565,
+    "skillKey": "clawhub-windows-automation",
+    "name": "Windows Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-automation",
+    "url": "https://clawhub.ai/skills/windows-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-automation-19f16587efa703f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Windows desktop by simulating mouse/keyboard input, managing clipboard, capturing screenshots, running commands, and launching apps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hjx378",
+      "userId": "s17bpbvs5fc6fwpre2vbjvt92983hqj2",
+      "displayName": "HJx378",
+      "image": "https://avatars.githubusercontent.com/u/40662090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772757824187,
+      "changelog": "Windows Automation Skill 1.0.0 – Initial Release\n\n- Automate mouse and keyboard actions with tools for clicking, typing, hotkeys, and movement.\n- Provides screen operations: take screenshots, get cursor position, and screen size.\n- Can launch Windows applications by name or path.\n- Clipboard tools to read and write text.\n- Run system commands via PowerShell or cmd.\n- Includes example usage scenarios and safety notes for desktop automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70e2253b19d9ba66d802807d6a80a17b11ea5573c16576c8950c68875807b64f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-meeting-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_prep",
+  "skill": {
+    "id": 16067,
+    "skillKey": "clawhub-ai-meeting-prep",
+    "name": "Meeting Prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-prep",
+    "url": "https://clawhub.ai/skills/ai-meeting-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-prep-0f8bb3b380757cdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepares briefing docs so you walk into every meeting ready"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 911,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770950395506,
+      "changelog": "- Initial release of Meeting Prep skill.\n- Generates concise, scannable one-page briefing documents before meetings.\n- Includes attendee research, company intel, recent news, and suggested talking points.\n- Outputs key agenda items, smart questions, potential objections, and recommended next steps.\n- Flags missing information if research comes up short.\n- Prioritizes fast turnarounds for meetings happening soon.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb292903c4355a60c486f4728ce7f7a49cb5abcf469a99b869846d889fcd068a"
+}

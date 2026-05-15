@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catl@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catl",
+  "skill": {
+    "id": 57866,
+    "skillKey": "clawhub-catl",
+    "name": "catl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catl",
+    "url": "https://clawhub.ai/skills/catl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catl-8baf1838b7b24434.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for 宁德时代 CATL. Search products, news, financials, and official resources for 宁德时代 CATL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775089857542,
+      "changelog": "catl 0.1.0 — Initial Release\n\n- Provides an information assistant for 宁德时代 CATL (Contemporary Amperex Technology Co. Limited).\n- Enables search for CATL products, news, financial reports, and official resources.\n- Supports stock price and competitor comparison queries.\n- Prioritizes results from official sources and authoritative providers.\n- Includes usage examples and clear instructions for structured responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c73476476b2fadd8d9635f58a1727c648f53a6ce883c3a417d628c6ecbca3ecd"
+}

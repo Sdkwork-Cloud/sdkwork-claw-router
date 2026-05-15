@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33955,
+  "uuid": "skill-clawhub-workspace-files-organization",
+  "skillKey": "clawhub-workspace-files-organization",
+  "name": "Workspace Files Organization",
+  "summary": "Use before creating or moving any durable workspace files, folders, scripts, project state, monitor state, cron-backed artifacts, outputs, or project-specifi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_files_organization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiago 'Tix' Carvalho",
+      "features": [
+        "Use before creating or moving any durable workspace files, folders, scripts, project state, mon."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-files-organization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/402726?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-files-organization",
+      "url": "https://clawhub.ai/skills/workspace-files-organization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-files-organization",
+    "url": "https://clawhub.ai/skills/workspace-files-organization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-files-organization-8c3fb53c96c314d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-files-organization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-files-organization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0a9ea5bc4889c65ec7701b75f8e41a6ebc92ba8409b25ab3745b97d6d1a371b",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T12:41:12.876Z"
+}

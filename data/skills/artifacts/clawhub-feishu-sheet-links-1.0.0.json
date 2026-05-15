@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-sheet-links@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheet_links",
+  "skill": {
+    "id": 49547,
+    "skillKey": "clawhub-feishu-sheet-links",
+    "name": "Feishu Sheet Links"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheet-links",
+    "url": "https://clawhub.ai/skills/feishu-sheet-links",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheet-links-e680eec703024944.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract all hyperlinks from a public Feishu spreadsheet across all sheet tabs, and optionally batch-download the linked articles as Markdown files. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyan9110",
+      "userId": "s17ceztyvbt01k6ws9k26n4kvd85xwz4",
+      "displayName": "wangyan",
+      "image": "https://avatars.githubusercontent.com/u/3444324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777622094817,
+      "changelog": "Initial release: extract hyperlinks from all Feishu spreadsheet tabs, batch download as Markdown",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc89e52e6bbf0752996131bd0aeb2097d7d6a640977621080a9b57a16b52fac0"
+}

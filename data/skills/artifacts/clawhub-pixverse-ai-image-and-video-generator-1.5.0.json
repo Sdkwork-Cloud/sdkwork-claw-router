@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixverse-ai-image-and-video-generator@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixverse_ai_image_and_video_generator",
+  "skill": {
+    "id": 50013,
+    "skillKey": "clawhub-pixverse-ai-image-and-video-generator",
+    "name": "PixVerse AI Image and Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixverse-ai-image-and-video-generator",
+    "url": "https://clawhub.ai/skills/pixverse-ai-image-and-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixverse-ai-image-and-video-generator-ba70a460f8ac72a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PixVerse CLI — generate AI videos and images from the command line. Supports PixVerse V6, Veo, Sora, Grok video models; Nano Banana (Gemini), Seedream, Qwen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pixverse-official",
+      "userId": "s17azdy5ntc1pfwq55wpta0q4x83py1a",
+      "displayName": "PixVerse-Official",
+      "image": "https://avatars.githubusercontent.com/u/204729415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1775208652274,
+      "changelog": "PixVerse CLI 1.5.0: Adds Mondo poster workflows, prompt enhancement, and workspace support.\n\n- New workflow for generating Mondo-style posters and covers (`mondo-poster-design`) and two end-to-end pipelines (`mondo-poster-pipeline`, `mondo-poster-to-video-pipeline`).\n- Added prompt enhancement capability for better video prompts (`prompt-enhance`).\n- Workspace management capability (`workspace`) to list, switch, and view workspace status.\n- Updated to use PixVerse V6 as the default video model, extending max duration to 15s.\n- Documentation updates reflecting new capabilities and revised model quick reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9517bf01577195d099f3f8a66fa5297c632827971771ef43c6377e4c415bdeff"
+}

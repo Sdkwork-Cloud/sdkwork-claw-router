@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bailian-image-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_image_gen",
+  "skill": {
+    "id": 18739,
+    "skillKey": "clawhub-bailian-image-gen",
+    "name": "Alibaba Cloud Bailian Qwen Image 2.0 image generation. Supports text-to-image and image-to-image (reference image + text). For."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-image-gen",
+    "url": "https://clawhub.ai/skills/bailian-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-image-gen-de4014abc7cd648f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud Bailian Qwen Image 2.0 image generation. Supports text-to-image and image-to-image (reference image + text). For product promotion image genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "navygo",
+      "userId": "s17ezg7p4j2bpgpp3zkmza9mx583kppx",
+      "displayName": "navygo",
+      "image": "https://avatars.githubusercontent.com/u/4158207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773743947286,
+      "changelog": "- Added new sample files: .env, yunxian_huangjiu.png, yunxian_huangjiu_v2.png\n- Removed README.md\n- Minor text change: API key documentation now references bailian.console.aliyun.com\n- Reference links in \"References\" section updated to plain text for Alibaba Cloud Bailian Console, OpenClaw Documentation, and ComfyUI GitHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dcad37851cab5700db47e08c8b597f50976df689db8095ab5053e9cc80ae0a1"
+}

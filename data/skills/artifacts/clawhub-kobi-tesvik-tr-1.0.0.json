@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kobi-tesvik-tr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kobi_tesvik_tr",
+  "skill": {
+    "id": 57914,
+    "skillKey": "clawhub-kobi-tesvik-tr",
+    "name": "Kobi Tesvik Tr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kobi-tesvik-tr",
+    "url": "https://clawhub.ai/skills/kobi-tesvik-tr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kobi-tesvik-tr-dbe962b078183e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Türkiye KOBİ teşvik ve hibe rehberi. KOSGEB destekleri, TÜBİTAK hibeleri, kalkınma ajansı destekleri, İŞKUR teşvikleri, vergi muafiyetleri. Sektöre göre teşv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayhanagirgol",
+      "userId": "s176f0epq2fdm7xyrq9n02szax83nx6j",
+      "displayName": "ayhanagirgol",
+      "image": "https://avatars.githubusercontent.com/u/86876320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774727514932,
+      "changelog": "Initial release of kobi-tesvik-tr:\n\n- Provides a comprehensive guide to incentives, grants, and support programs for SMEs in Turkey.\n- Covers KOSGEB, TÜBİTAK, İŞKUR, development agency supports, and tax exemptions.\n- Matches available incentives based on company sector, size, and profile.\n- Includes command-line tool for automatic incentive matching.\n- Contains extensive reference documents for each major support program.\n- Developed by Finhouse (finhouse.ai) for Turkish SME support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59c056f3f445c458b755787e4e896ba734ae1784bcae879816d95e173ee22ba6"
+}

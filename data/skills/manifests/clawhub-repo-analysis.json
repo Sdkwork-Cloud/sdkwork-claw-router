@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33634,
+  "uuid": "skill-clawhub-repo-analysis",
+  "skillKey": "clawhub-repo-analysis",
+  "name": "Repo Analysis",
+  "summary": "Read, explain, and evaluate a software repository or GitHub project in an engineering-oriented way. Use when the user asks to read a repo, understand a codeb...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JY",
+      "features": [
+        "Read, explain, and evaluate a software repository or GitHub project in an engineering-oriented.",
+        "Use when the user asks to read a repo, understand a codeb..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repo-analysis@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52766923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repo-analysis",
+      "url": "https://clawhub.ai/skills/repo-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-analysis",
+    "url": "https://clawhub.ai/skills/repo-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-analysis-34cc2187b81b976f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repo-analysis@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-repo-analysis-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7159ea94e78937a16fcfcacc53b769c97a29ff430616e9477252d5f41eeeb0ae",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:15:30.552Z"
+}

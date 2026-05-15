@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36210,
+  "uuid": "skill-clawhub-yep-search",
+  "skillKey": "clawhub-yep-search",
+  "name": "Web search via Yep Search API. Own index, fast results with domain filtering and date ranges.",
+  "summary": "Web search via Yep Search API. Own index, fast results with domain filtering and date ranges.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yep_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexandre Bourquelot",
+      "features": [
+        "Web search via Yep Search API",
+        "Own index, fast results with domain filtering and date ranges."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yep-search@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26814183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yep-search",
+      "url": "https://clawhub.ai/skills/yep-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yep-search",
+    "url": "https://clawhub.ai/skills/yep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yep-search-191cb27ae9d2006f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yep-search@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yep-search-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7be8617f49740fcb846cc56958d064f6845c64f3fbbb97010acc03f30647055d",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:19:51.754Z"
+}

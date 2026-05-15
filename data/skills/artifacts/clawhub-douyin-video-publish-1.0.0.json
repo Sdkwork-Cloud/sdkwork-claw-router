@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-video-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_publish",
+  "skill": {
+    "id": 72654,
+    "skillKey": "clawhub-douyin-video-publish",
+    "name": "抖音视频发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-publish",
+    "url": "https://clawhub.ai/skills/douyin-video-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-publish-ef86eed99d0122e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频发布。使用浏览器自动化在抖音创作者平台发布视频。当用户说\"发布视频到抖音\"、\"发抖音\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnyxu820",
+      "userId": "s1768x2158685x4322rt3jaxh585w7at",
+      "displayName": "Johnnyxu820",
+      "image": "https://avatars.githubusercontent.com/u/154959104?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2013,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772505766375,
+      "changelog": "Initial release of douyin-video-publish skill.\n\n- Enables automated publishing of videos to Douyin (抖音) via the creator platform.\n- Guides users through uploading video, adding title, setting cover, adding hashtags and location, and final publishing steps.\n- Provides troubleshooting advice for common issues.\n- Includes a quick checklist to ensure a smooth publishing process.\n- Requires Chrome browser with OpenClaw extension and a logged-in Douyin account.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f90b7f968b0ed21aa8ab3b2d87e4f0f9d18898d196570d91db6fad302b21a3d8"
+}

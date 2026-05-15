@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45525,
+  "uuid": "skill-clawhub-pipeworx-universities",
+  "skillKey": "clawhub-pipeworx-universities",
+  "name": "Pipeworx universities",
+  "summary": "Search worldwide universities by name or country and retrieve their names, locations, domains, and website URLs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_universities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search worldwide universities by name or country and retrieve their names, locations, domains,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-universities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-universities",
+      "url": "https://clawhub.ai/skills/pipeworx-universities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-universities",
+    "url": "https://clawhub.ai/skills/pipeworx-universities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-universities-88b3e7fa4161d673.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-universities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-universities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7d3d22cfe3e387698bcb01fad38d64e3e894d8b0e95d539c688cc459a061543",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:11:52.713Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fw-tradings@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fw_tradings",
+  "skill": {
+    "id": 63980,
+    "skillKey": "clawhub-fw-tradings",
+    "name": "FW-trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fw-tradings",
+    "url": "https://clawhub.ai/skills/fw-tradings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fw-tradings-bf67c2eb28643876.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "复星集团旗下复星财富（Fosun Wealth）官方 OpenAPI 技能集合，包含 SDK 环境初始化与证券交易四大核心模块。涵盖 SDK 安装配置、凭证管理、行情查询、账户 / 资金 / 持仓查询、资金流水查询、下单 / 撤单 / 改单及订单管理等功能，支持港股 (L2)、美股 (L1)、A 股港股通 (L1..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fosunwealth",
+      "userId": "s17d9jjcms1p4gnm03jd0n7qfn83mhrs",
+      "displayName": "fosunwealth",
+      "image": "https://avatars.githubusercontent.com/u/263628409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1775143572792,
+      "changelog": "fw-tradings 1.0.6\n\n- 更新 skill 描述，更加突出“复星集团/复星财富官方 OpenAPI”定位。\n- 补充说明：需通过星财富 APP 完成证券账户开户后方可体验。\n- 技能名称、描述等元数据（SKILL.md）微调，代码与功能无变化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10a6dbe910230333b84af6ed5bea2cad3c5ce1e42a9f63e79caa585eba2af01c"
+}

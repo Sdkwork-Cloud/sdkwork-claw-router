@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-wechat@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_wechat",
+  "skill": {
+    "id": 65015,
+    "skillKey": "clawhub-maxhub-wechat",
+    "name": "Maxhub Wechat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-wechat",
+    "url": "https://clawhub.ai/skills/maxhub-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-wechat-e1af6777b534d62e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信/WeChat平台微信视频号与公众号数据采集分析。当用户提到微信、wechat、视频号、公众号、文章等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778341903782,
+      "changelog": "v1.1.1 - 修复YAML元数据格式，统一repository地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bc7816c437b764ccfb4a156c0e604a9a39291a60b491ba33516115cba4d84bb"
+}

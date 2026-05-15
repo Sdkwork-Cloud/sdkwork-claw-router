@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67218,
+  "uuid": "skill-clawhub-product-dev-ops-package",
+  "skillKey": "clawhub-product-dev-ops-package",
+  "name": "Product Dev Ops Package",
+  "summary": "产品研发运营协作体系，包含产品经理、架构师、开发助手、运营经理四个角色，支持从需求到上线的全流程协作",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_dev_ops_package",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scubiry-glitch",
+      "features": [
+        "产品研发运营协作体系，包含产品经理、架构师、开发助手、运营经理四个角色，支持从需求到上线的全流程协作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-dev-ops-package@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250724248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-dev-ops-package",
+      "url": "https://clawhub.ai/skills/product-dev-ops-package"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-dev-ops-package",
+    "url": "https://clawhub.ai/skills/product-dev-ops-package",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-dev-ops-package-75b0ebeb909fbcdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-dev-ops-package@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-dev-ops-package-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44084905545ffeb596e0da23ec80099470f631984a4c60f3e6be86efccb4547f",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:50:35.591Z"
+}

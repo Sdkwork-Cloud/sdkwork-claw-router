@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68973,
+  "uuid": "skill-clawhub-51mee-resume-match",
+  "skillKey": "clawhub-51mee-resume-match",
+  "name": "51mee Resume Match",
+  "summary": "人岗匹配。触发场景：用户要求匹配简历和职位；用户问这个候选人适合这个职位吗；用户要筛选最匹配的候选人。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_resume_match",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "51mee",
+      "features": [
+        "人岗匹配。触发场景：用户要求匹配简历和职位；用户问这个候选人适合这个职位吗；用户要筛选最匹配的候选人。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/51mee-resume-match@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226007355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "51mee-resume-match",
+      "url": "https://clawhub.ai/skills/51mee-resume-match"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-resume-match",
+    "url": "https://clawhub.ai/skills/51mee-resume-match",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-resume-match-281bb0e1cd0a5162.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/51mee-resume-match@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-51mee-resume-match-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3d261ee29a06ea46e9b5fe7173a4654e5239d32a0ea47031e47f613556796c3",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:42:33.023Z"
+}

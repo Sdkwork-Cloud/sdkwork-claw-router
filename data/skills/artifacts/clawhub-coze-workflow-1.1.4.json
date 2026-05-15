@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coze-workflow@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coze_workflow",
+  "skill": {
+    "id": 58320,
+    "skillKey": "clawhub-coze-workflow",
+    "name": "Coze 工作流执行 / Coze Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coze-workflow",
+    "url": "https://clawhub.ai/skills/coze-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coze-workflow-c9d3a29ec971c157.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coze Workflow Executor | Coze 工作流执行技能 Execute Coze workflows with workflow_id and parameters. 接收参数调用工作流，返回执行结果。 Pure invocation layer with no business logic...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noah-1106",
+      "userId": "s1786dbb8r9dh5a5r5xxmjqs2s83gej1",
+      "displayName": "noah",
+      "image": "https://avatars.githubusercontent.com/u/242364666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 719,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1773581151585,
+      "changelog": "Add bilingual documentation support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90424b736b259b0fef6efe0cb0c95df187c1074e6a8107716bec6f2bc9a45775"
+}

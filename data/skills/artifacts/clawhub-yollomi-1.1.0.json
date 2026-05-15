@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yollomi@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yollomi",
+  "skill": {
+    "id": 9909,
+    "skillKey": "clawhub-yollomi",
+    "name": "Yollomi AI Image & Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yollomi",
+    "url": "https://clawhub.ai/skills/yollomi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yollomi-6ced7f322d49ed9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generator skill (image, image generation). Multi-model image generator for Yollomi to generate AI images via one unified API endpoint. Requires YOLL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anichikage",
+      "userId": "s175vbcc29w5sdrze4tetggzpx83h6ps",
+      "displayName": "AniChikage",
+      "image": "https://avatars.githubusercontent.com/u/15864698?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 2623,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 6,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773918201224,
+      "changelog": "Enable video generation; add yollomi.listModels tool; support YOLLOMI_BASE_URL; extend video timeout to 5min",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f11ee3d4fc592fd92a1cde0a23643e82c1699e381121ff089b5068d166dd1159"
+}

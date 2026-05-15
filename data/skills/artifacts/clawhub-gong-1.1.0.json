@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gong@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gong",
+  "skill": {
+    "id": 11080,
+    "skillKey": "clawhub-gong",
+    "name": "Gong"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gong",
+    "url": "https://clawhub.ai/skills/gong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gong-cb37790a8586667f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gong API for searching calls, transcripts, and conversation intelligence. Use when working with Gong call recordings, sales conversations, transcripts, meeting data, or conversation analytics. Supports listing calls, fetching transcripts,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdrhyne",
+      "userId": "s175stkgx5wmnsr24w9hqje36d84r4br",
+      "displayName": "Jonathan Rhyne",
+      "image": "https://avatars.githubusercontent.com/u/7828464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2174,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770963521964,
+      "changelog": "Fix: add metadata.openclaw with credentials config requirement",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:671e8d5b663b3df43781cefefc768398c23983534da92cbe89cb256b20612eb9"
+}

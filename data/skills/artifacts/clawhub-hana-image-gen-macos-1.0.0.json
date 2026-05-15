@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hana-image-gen-macos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hana_image_gen_macos",
+  "skill": {
+    "id": 47417,
+    "skillKey": "clawhub-hana-image-gen-macos",
+    "name": "Hana Image Gen MacOS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hana-image-gen-macos",
+    "url": "https://clawhub.ai/skills/hana-image-gen-macos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hana-image-gen-macos-93875d870f6d0478.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MacOS Gemini image gen via OpenRouter for OpenClaw agents. Auto-wait, gen, send image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eardori",
+      "userId": "s17bwpw1tvtaf0fdy3nfr0amc185kgwq",
+      "displayName": "eardori",
+      "image": "https://avatars.githubusercontent.com/u/2079096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777194188694,
+      "changelog": "hana-image-gen-macos v1.0.0\n\n- Initial release of Hana Image Gen Pro for MacOS.\n- Enables Gemini image generation via OpenRouter for OpenClaw agents.\n- Automated workflow: notifies on start, generates image, and sends result without reply.\n- Requires OPENROUTER_API_KEY and TELEGRAM_BOT_TOKEN environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dc80286c73c37c3767a7e763d31ebe3ca3332432ab5a14ded057b7ea65a610f"
+}

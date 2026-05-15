@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whats-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whats_1_0_0",
+  "skill": {
+    "id": 21359,
+    "skillKey": "clawhub-whats-1-0-0",
+    "name": "Whats 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whats-1-0-0",
+    "url": "https://clawhub.ai/skills/whats-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whats-1-0-0-f6c2d764c2d19084.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sieyer",
+      "userId": "s17ecg755jc4ww7frdpfdkdtbn83g8r9",
+      "displayName": "Sieyer",
+      "image": "https://avatars.githubusercontent.com/u/68283443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772467071958,
+      "changelog": "Initial release of wacli skill.\n\n- Send WhatsApp messages or sync/search WhatsApp history via the wacli CLI.\n- Not for regular user chats; only for messaging third parties or managing history on request.\n- Clear safety requirements: require and confirm recipient + message before sending.\n- Supports authentication, sync, chat/message search, history backfill, and sending text/files.\n- Includes install instructions for Homebrew and Go.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9c073224386d57afdbca35ce1083a5ffe5e3e1b9902323ab26500e85d66cfec"
+}

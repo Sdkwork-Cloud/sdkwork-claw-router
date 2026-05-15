@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68791,
+  "uuid": "skill-clawhub-ai-girl-selection",
+  "skillKey": "clawhub-ai-girl-selection",
+  "name": "选妃 - 定时推送美女 - 整理美女图片",
+  "summary": "每日 AI Girl 选妃 - 从指定目录（目录里要有图片）随机选择 3 张 AI 女孩图片，让用户选择一个最喜欢的，自动保存为新头像并记录偏好。使用场景：(1) 每日早晨执行选妃任务，(2) 需要更新 AI 助手形象时，(3) 需要随机选择图片用于展示或测试",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_girl_selection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankChi2022",
+      "features": [
+        "每日 AI Girl 选妃",
+        "从指定目录（目录里要有图片）随机选择 3 张 AI 女孩图片，让用户选择一个最喜欢的，自动保存为新头像并记录偏好。使用场景：(1) 每日早晨执行选妃任务，(2) 需要更新 AI 助手形象时，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-girl-selection@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125411773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-girl-selection",
+      "url": "https://clawhub.ai/skills/ai-girl-selection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-girl-selection",
+    "url": "https://clawhub.ai/skills/ai-girl-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-girl-selection-bdd195ec319dd9ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-girl-selection@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-girl-selection-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe50f137a1908c7065e8aa352efbdcbca228852b806497f5f766ce85b0d27eaf",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:34:53.081Z"
+}

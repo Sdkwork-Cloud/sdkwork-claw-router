@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17668,
+  "uuid": "skill-clawhub-paygents",
+  "skillKey": "clawhub-paygents",
+  "name": "PayGents",
+  "summary": "Accept crypto payments in AI agent conversations. Generate MetaMask/Trust Wallet deeplinks, verify transactions on-chain, check balances, issue receipts. No...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paygents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Amitay",
+      "features": [
+        "Accept crypto payments in AI agent conversations",
+        "Generate MetaMask/Trust Wallet deeplinks, verify transactions on-chain, check balances, issue r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paygents@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35673699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paygents",
+      "url": "https://clawhub.ai/skills/paygents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paygents",
+    "url": "https://clawhub.ai/skills/paygents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paygents-1ec269e3c1e06533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paygents@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paygents-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5d88786ec5c67593c0370ac35e7d808c74c0684b1cd7a0dd07ba2b9dbe59986",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T10:18:52.353Z"
+}

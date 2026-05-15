@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14588,
+  "uuid": "skill-clawhub-lh-edge-tts",
+  "skillKey": "clawhub-lh-edge-tts",
+  "name": "LH Edge TTS",
+  "summary": "Text-to-speech conversion using Python edge-tts for generating audio from text. Supports multiple voices, languages, speed adjustment, pitch control, and sub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lh_edge_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhedev",
+      "features": [
+        "Text-to-speech conversion using Python edge-tts for generating audio from text",
+        "Supports multiple voices, languages, speed adjustment, pitch control, and sub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lh-edge-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19663285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lh-edge-tts",
+      "url": "https://clawhub.ai/skills/lh-edge-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lh-edge-tts",
+    "url": "https://clawhub.ai/skills/lh-edge-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lh-edge-tts-050c95a9bebdbaaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lh-edge-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lh-edge-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:263462cb1153f6de173c665bfd38348539ea8fb692b2c25dac7ded86e991a981",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:20:00.283Z"
+}

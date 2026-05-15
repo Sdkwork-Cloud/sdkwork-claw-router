@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-guardian@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guardian",
+  "skill": {
+    "id": 16018,
+    "skillKey": "clawhub-openclaw-guardian",
+    "name": "OpenClaw Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guardian-4c3e5bb347cf0679.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A security layer plugin for OpenClaw that intercepts dangerous tool calls (exec, write, edit) through two-tier regex blacklist rules and LLM-based intent ver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fatcatmaofei",
+      "userId": "publishers:fatcatmaofei",
+      "displayName": "fatcatMaoFei",
+      "image": "https://avatars.githubusercontent.com/u/215018955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 828,
+      "installsAllTime": 11,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772020455731,
+      "changelog": "Fix: match actual implementation (blacklist + LLM voting, no scoring). Updated core code to PR #25480.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ba795702487aca3cda5cb338ede05675092e8ebb2d9fc46ff797229a6952fe0"
+}

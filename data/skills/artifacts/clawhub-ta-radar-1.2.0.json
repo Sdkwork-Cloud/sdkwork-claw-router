@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ta-radar@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ta_radar",
+  "skill": {
+    "id": 46368,
+    "skillKey": "clawhub-ta-radar",
+    "name": "TA Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ta-radar",
+    "url": "https://clawhub.ai/skills/ta-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ta-radar-c87735ca98a70ce9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Dimensional Technical Analysis Radar for cryptocurrencies. Supports spot trading pairs (Binance/Gate.io) and on-chain contract addresses (via DexScreen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanpeng-dotcom",
+      "userId": "s17be4djsk51cp2zg7bk77n18n84n734",
+      "displayName": "deanpeng-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/271209600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775957565340,
+      "changelog": "**Summary:**  \nVersion 1.2.0 introduces major reliability and usability improvements.\n\n- Gate.io added as an automatic fallback K-line price source if Binance is unavailable, ensuring uninterrupted access for all users.\n- Beginner-friendly, plain-language explanations now included alongside each technical indicator in generated reports.\n- Enhanced GFW/firewall compatibility for mainland China users via automatic API fallback and proxy use.\n- No changes to usage or external dependencies—continues to be a zero-dependency Python skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b48715afbc92972f4cff8948b1d9942915068bae2280e8a9859d9ef3731f056"
+}

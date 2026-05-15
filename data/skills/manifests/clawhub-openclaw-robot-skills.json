@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67677,
+  "uuid": "skill-clawhub-openclaw-robot-skills",
+  "skillKey": "clawhub-openclaw-robot-skills",
+  "name": "工业机器人控制技能 - 协作机器人统一 API",
+  "summary": "通过统一API支持OMRON TM和JAKA协作机器人，实现连接、状态监控、关节及路径运动、安全控制和IO操作。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_robot_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robot_Qu",
+      "features": [
+        "通过统一API支持OMRON TM和JAKA协作机器人，实现连接、状态监控、关节及路径运动、安全控制和IO操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-robot-skills@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117743580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-robot-skills",
+      "url": "https://clawhub.ai/skills/openclaw-robot-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-robot-skills",
+    "url": "https://clawhub.ai/skills/openclaw-robot-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-robot-skills-0057942310270377.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-robot-skills@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-robot-skills-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c746b8652bd731255c1d2f401452830619037150025301ef8453fb058f70849",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:02:46.225Z"
+}

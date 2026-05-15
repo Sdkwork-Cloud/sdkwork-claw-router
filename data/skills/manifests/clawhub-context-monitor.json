@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65640,
+  "uuid": "skill-clawhub-context-monitor",
+  "skillKey": "clawhub-context-monitor",
+  "name": "Context Monitor",
+  "summary": "实时监控OpenClaw上下文窗口占用，超过阈值自动压缩旧对话并保留最近50轮及关键记忆，保持系统响应速度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuhui435",
+      "features": [
+        "实时监控OpenClaw上下文窗口占用，超过阈值自动压缩旧对话并保留最近50轮及关键记忆，保持系统响应速度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63905485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-monitor",
+      "url": "https://clawhub.ai/skills/context-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-monitor",
+    "url": "https://clawhub.ai/skills/context-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-monitor-8ad346d4955570cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6ed433234810734b8ad72a6dfa4e3d50e6aeb31c70454232d6cca6e17a5b45e",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T23:08:20.641Z"
+}

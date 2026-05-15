@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36931,
+  "uuid": "skill-clawhub-intellihr",
+  "skillKey": "clawhub-intellihr",
+  "name": "Intellihr",
+  "summary": "IntelliHR integration. Manage data, records, and automate workflows. Use when the user wants to interact with IntelliHR data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intellihr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "IntelliHR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with IntelliHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intellihr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intellihr",
+      "url": "https://clawhub.ai/skills/intellihr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intellihr",
+    "url": "https://clawhub.ai/skills/intellihr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intellihr-4b18476442008efc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intellihr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-intellihr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d967e3d4947bb5a3a84a3fb2d47309c553c8363f28510bc02bbe6a434c5d721",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:01:11.344Z"
+}

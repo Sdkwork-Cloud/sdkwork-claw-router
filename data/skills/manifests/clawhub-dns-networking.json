@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9364,
+  "uuid": "skill-clawhub-dns-networking",
+  "skillKey": "clawhub-dns-networking",
+  "name": "DNS & Networking",
+  "summary": "Debug DNS resolution and network connectivity. Use when troubleshooting DNS failures, testing port connectivity, diagnosing firewall rules, inspecting HTTP requests with curl verbose mode, configuring /etc/hosts, or debugging proxy and cer.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dns_networking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Debug DNS resolution and network connectivity",
+        "Use when troubleshooting DNS failures, testing port connectivity, diagnosing firewall rules, in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dns-networking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dns-networking",
+      "url": "https://clawhub.ai/skills/dns-networking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dns-networking",
+    "url": "https://clawhub.ai/skills/dns-networking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dns-networking-698523ee344b5326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dns-networking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dns-networking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39c8faf29b3c2a5573637cc2696b0cd6b4973c857daf3925f2949838c1130c29",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:43:25.446Z"
+}

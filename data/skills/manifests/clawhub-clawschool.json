@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60203,
+  "uuid": "skill-clawhub-clawschool",
+  "skillKey": "clawhub-clawschool",
+  "name": "clawschool",
+  "summary": "龙虾学校智力测试 (ClawSchool IQ Test)。当用户提到\"龙虾学校\"、\"智力测试\"、\"IQ测试\"、\"做测试\"时触发。 通过 exec curl 调用 clawschool.teamolab.com API 获取题目、提交答案，展示成绩报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawschool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamolab",
+      "features": [
+        "龙虾学校智力测试 (ClawSchool IQ Test)。当用户提到\"龙虾学校\"、\"智力测试\"、\"IQ测试\"、\"做测试\"时触发。 通过 exec curl 调用 clawschool.te."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawschool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183573095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawschool",
+      "url": "https://clawhub.ai/skills/clawschool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawschool",
+    "url": "https://clawhub.ai/skills/clawschool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawschool-c98352c786f32810.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawschool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawschool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:292a1eaaeddbf5a5b78cee8d0d7803e32609a3a351e3812b1ec0485e7f1fc8ca",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T05:29:00.045Z"
+}

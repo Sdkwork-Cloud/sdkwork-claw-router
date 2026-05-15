@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shinewilzhang-video-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shinewilzhang_video_generate",
+  "skill": {
+    "id": 59866,
+    "skillKey": "clawhub-shinewilzhang-video-generate",
+    "name": "Shinewilzhang Video Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shinewilzhang-video-generate",
+    "url": "https://clawhub.ai/skills/shinewilzhang-video-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shinewilzhang-video-generate-232e4e3a819d76e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 video_generate.py 脚本生成视频，需要提供文件名和 prompt，可选提供首帧图片（URL或本地路径）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shinewilzhang",
+      "userId": "s172anppmf1c60vrfeynjvf5fd83zxw0",
+      "displayName": "shinewilzhang",
+      "image": "https://avatars.githubusercontent.com/u/242368578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774930477780,
+      "changelog": "shinewilzhang-video-generate 1.0.0\n\n- Initial release.\n- Generate videos from prompt text using the video_generate.py script.\n- Optionally set the first video frame via image URL or local image file.\n- API credentials are read from environment variables or generated as needed.\n- Console outputs video download link; file saved to specified location.\n- Includes clear usage instructions and examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bf77996f8db4ebed503025d114ffc75e6f10f919fd93d8bc24142b64ccb7edc"
+}

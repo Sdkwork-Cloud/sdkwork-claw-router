@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56585,
+  "uuid": "skill-clawhub-bdpan-resource-saver",
+  "skillKey": "clawhub-bdpan-resource-saver",
+  "name": "Baidu Netdisk Resource Saver",
+  "summary": "Search for resources using Bing/Baidu, find Baidu Netdisk (百度网盘) share links, and save/transfer them to your netdisk. Use when the user wants to (1) Search f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bdpan_resource_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nameefef",
+      "features": [
+        "Search for resources using Bing/Baidu, find Baidu Netdisk (百度网盘) share links, and save/transfer.",
+        "Use when the user wants to (1) Search f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bdpan-resource-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132239472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bdpan-resource-saver",
+      "url": "https://clawhub.ai/skills/bdpan-resource-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bdpan-resource-saver",
+    "url": "https://clawhub.ai/skills/bdpan-resource-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bdpan-resource-saver-2a240febaa22b38b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bdpan-resource-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bdpan-resource-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec95b8baf58ec90e4d06fc7f7fc6ac9420466905fabd337183e6c41dc049c6f2",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:46:29.432Z"
+}

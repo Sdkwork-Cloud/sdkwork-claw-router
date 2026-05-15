@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46278,
+  "uuid": "skill-clawhub-ansys",
+  "skillKey": "clawhub-ansys",
+  "name": "Ansys",
+  "summary": "ANSYS offers leading engineering simulation software for structural, fluid, and electromagnetic analysis, supporting digital twin and simulation-driven design.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ansys",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "ANSYS offers leading engineering simulation software for structural, fluid, and electromagnetic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ansys@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ansys",
+      "url": "https://clawhub.ai/skills/ansys"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ansys",
+    "url": "https://clawhub.ai/skills/ansys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ansys-fee6fd0cc1707a18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ansys@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ansys-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dca011df5e4824d102bb51dcd787ac4e81296b4654fb0bc5b04e1d710844833",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T09:04:42.176Z"
+}

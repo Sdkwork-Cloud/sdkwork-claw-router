@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-review-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_review_loop",
+  "skill": {
+    "id": 18078,
+    "skillKey": "clawhub-pr-review-loop",
+    "name": "PR Review Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-review-loop",
+    "url": "https://clawhub.ai/skills/pr-review-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-review-loop-e42540a050d2b492.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous PR review loop with Greptile. Use when an agent creates a PR and needs to autonomously handle code review feedback — reading Greptile reviews, fixing issues, pushing fixes, re-triggering review, and auto-merging when score is 4/."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cemoso",
+      "userId": "publishers:cemoso",
+      "displayName": "Cem S",
+      "image": "https://avatars.githubusercontent.com/u/31999641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 956,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770991327839,
+      "changelog": "Autonomous Greptile PR review loop: auto-fix, auto-merge at 4/5+, round tracking, escalation for architectural decisions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1ae812a35f36207337fad96995337be503d0621b2d504a9c1fa85f2465194f7"
+}

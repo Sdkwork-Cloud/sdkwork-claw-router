@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/esri-smells-consumer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esri_smells_consumer",
+  "skill": {
+    "id": 12362,
+    "skillKey": "clawhub-esri-smells-consumer",
+    "name": "Esri Workflow Smell Detector (Consumer)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esri-smells-consumer",
+    "url": "https://clawhub.ai/skills/esri-smells-consumer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esri-smells-consumer-da299debe0b0f121.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Paid client skill for Esri Workflow Smell Detector via x402 (Base/USDC). Use when you want to run a deterministic automation preflight scan on an ArcGIS Pro project snapshot by calling https://api.x402layer.cc/e/esri-smells (HTTP 402 payme."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danmaps",
+      "userId": "publishers:danmaps",
+      "displayName": "danmaps",
+      "image": "https://avatars.githubusercontent.com/u/10421813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1719,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770163015481,
+      "changelog": "Initial consumer skill for calling the paid x402 endpoint (Base) for Esri workflow smell detection. References arcgispro-cli project_snapshot output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27a038a7b6e87d576bcde497a151eed2f4aaf638623b21fdd1b50d9b9615b344"
+}

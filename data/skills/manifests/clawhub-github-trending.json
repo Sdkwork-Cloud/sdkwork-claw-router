@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9568,
+  "uuid": "skill-clawhub-github-trending",
+  "skillKey": "clawhub-github-trending",
+  "name": "Github Trending",
+  "summary": "Fetch GitHub trending repositories by daily, weekly, or monthly periods with output in Markdown or JSON format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnson",
+      "features": [
+        "Fetch GitHub trending repositories by daily, weekly, or monthly periods with output in Markdown."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-trending@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-trending",
+      "url": "https://clawhub.ai/skills/github-trending"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending",
+    "url": "https://clawhub.ai/skills/github-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-85b562ec0175e105.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-trending@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:491db1c130bca2367836fc6808e7131a304e952be5f43d41a83d25b578d1f035",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:03:05.985Z"
+}

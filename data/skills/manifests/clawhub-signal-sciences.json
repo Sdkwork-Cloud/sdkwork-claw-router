@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33176,
+  "uuid": "skill-clawhub-signal-sciences",
+  "skillKey": "clawhub-signal-sciences",
+  "name": "Signal Sciences",
+  "summary": "Signal Sciences integration. Manage data, records, and automate workflows. Use when the user wants to interact with Signal Sciences data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_sciences",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Signal Sciences integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Signal Sciences data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signal-sciences@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signal-sciences",
+      "url": "https://clawhub.ai/skills/signal-sciences"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-sciences",
+    "url": "https://clawhub.ai/skills/signal-sciences",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-sciences-6b932972d0497552.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signal-sciences@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-signal-sciences-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4febe1f354260937e70fa42020a0376b3a207aa341b8b953805f159232fd0cd4",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:35.438Z"
+}

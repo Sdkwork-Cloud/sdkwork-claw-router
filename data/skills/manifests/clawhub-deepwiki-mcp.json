@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23000,
+  "uuid": "skill-clawhub-deepwiki-mcp",
+  "skillKey": "clawhub-deepwiki-mcp",
+  "name": "DeepWiki MCP",
+  "summary": "Query DeepWiki MCP to get AI-grounded answers about any public GitHub repository. Use when answering questions about a repo's source code, architecture, conf...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepwiki_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Query DeepWiki MCP to get AI-grounded answers about any public GitHub repository",
+        "Use when answering questions about a repo's source code, architecture, conf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepwiki-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepwiki-mcp",
+      "url": "https://clawhub.ai/skills/deepwiki-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepwiki-mcp",
+    "url": "https://clawhub.ai/skills/deepwiki-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepwiki-mcp-85144400117e5878.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepwiki-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepwiki-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0ca505efbbdfdfbbaa18d6ab9502f5a1c709af0de16c89032df8efb8f6363ae",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T16:33:16.494Z"
+}

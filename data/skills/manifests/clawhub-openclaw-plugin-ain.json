@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22216,
+  "uuid": "skill-clawhub-openclaw-plugin-ain",
+  "skillKey": "clawhub-openclaw-plugin-ain",
+  "name": "AIN - AI Node Plugin",
+  "summary": "Integrates AIN providers into OpenClaw with intelligent model routing and tools for prompt execution and task classification.",
+  "version": "0.11.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_plugin_ain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Matos",
+      "features": [
+        "Integrates AIN providers into OpenClaw with intelligent model routing and tools for prompt exec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-plugin-ain@0.11.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/775850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-plugin-ain",
+      "url": "https://clawhub.ai/skills/openclaw-plugin-ain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-plugin-ain",
+    "url": "https://clawhub.ai/skills/openclaw-plugin-ain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-plugin-ain-1fa135bf3962eaaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-plugin-ain@0.11.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-plugin-ain-0.11.6.json",
+      "version": "0.11.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ad0e1218dbf5d34b72882779e7d7cc6252e282e36f3daf7cadedff3ecb04189",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T21:37:24.077Z"
+}

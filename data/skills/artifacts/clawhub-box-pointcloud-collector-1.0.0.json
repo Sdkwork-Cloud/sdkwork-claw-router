@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/box-pointcloud-collector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.box_pointcloud_collector",
+  "skill": {
+    "id": 62816,
+    "skillKey": "clawhub-box-pointcloud-collector",
+    "name": "D455相机数据采集工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "box-pointcloud-collector",
+    "url": "https://clawhub.ai/skills/box-pointcloud-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/box-pointcloud-collector-2b3aa8d199618dab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intel RealSense D455 箱体点云数据采集工具。用于采集箱体的 RGB 彩色图和深度图数据集，支持手动/自动采集模式。触发场景：(1) 采集箱体/物体点云数据 (2) 创建深度学习训练数据集 (3) Bin Picking 项目数据准备 (4) 相机标定数据采集。支持 Intel RealSens..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qujingyang28",
+      "userId": "s17dbgh8kq1pqqr9wcyrmy0svh83pag3",
+      "displayName": "Robot_Qu",
+      "image": "https://avatars.githubusercontent.com/u/117743580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775013436890,
+      "changelog": "- Initial release of box-pointcloud-collector.\n- Collects RGB and depth dataset of boxes using Intel RealSense D455 camera.\n- Supports manual and automatic data collection modes.\n- Provides a structured data output and sample code for data reading and processing.\n- Designed for bin picking, deep learning dataset creation, and camera calibration scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a49b474d3b13e61d7e65dc2025793e94444ab2ac02fad2080725705671e81bf"
+}

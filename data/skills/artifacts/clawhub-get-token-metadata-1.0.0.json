@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-token-metadata@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_token_metadata",
+  "skill": {
+    "id": 35035,
+    "skillKey": "clawhub-get-token-metadata",
+    "name": "Get Token Metadata"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-token-metadata",
+    "url": "https://clawhub.ai/skills/get-token-metadata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-token-metadata-8081c1f4b7f32c82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve rich metadata for a specific Art Blocks token using artblocks-mcp. Use when a user wants to look up a minted token's details, traits, features, medi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryley-o",
+      "userId": "publishers:ryley-o",
+      "displayName": "ryley-o",
+      "image": "https://avatars.githubusercontent.com/u/30364988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936845770,
+      "changelog": "Initial release of get-token-metadata skill.\n\n- Retrieve comprehensive metadata for a specific Art Blocks token using a single call.\n- Returns token details, media URLs (including live view), owner, listing info, traits/features, and project context.\n- Requires full token ID (`<contract_address>-<token_number>`), supports Ethereum, Arbitrum, and Base.\n- Designed for detailed lookup of a single token; prefer over GraphQL for full metadata on known tokens.\n- Response organized into `token`, `media`, and `project` sections for easy data access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8111ddce61c9f0f6328335560d404756574dfeddb994aefa9ff17a964e3061ad"
+}

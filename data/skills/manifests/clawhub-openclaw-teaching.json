@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62944,
+  "uuid": "skill-clawhub-openclaw-teaching",
+  "skillKey": "clawhub-openclaw-teaching",
+  "name": "OpenClaw Teaching",
+  "summary": "OpenClaw 知识教学技能 - 用于持续更新和管理 OpenClaw 平台知识，支持将知识内容导出为 PPT 或 Word 文档。适用场景：OpenClaw 平台使用教程、技能开发指南、最佳实践分享、知识库维护与更新。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_teaching",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RoadheroGB",
+      "features": [
+        "OpenClaw 知识教学技能",
+        "用于持续更新和管理 OpenClaw 平台知识，支持将知识内容导出为 PPT 或 Word 文档。适用场景：OpenClaw 平台使用教程、技能开发指南、最佳实践分享、知识库维护与更新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-teaching@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132873551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-teaching",
+      "url": "https://clawhub.ai/skills/openclaw-teaching"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-teaching",
+    "url": "https://clawhub.ai/skills/openclaw-teaching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-teaching-e9201c25e9065b72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-teaching@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-teaching-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:023ab5945fb18b249ae69645e58899c7d84b4b8c22943e32507e0f51bd7f8ccd",
+      "artifactSizeBytes": 2826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:37:55.189Z"
+}

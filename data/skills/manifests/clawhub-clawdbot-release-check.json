@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9334,
+  "uuid": "skill-clawhub-clawdbot-release-check",
+  "skillKey": "clawhub-clawdbot-release-check",
+  "name": "Clawdbot Release Check",
+  "summary": "Check for new clawdbot releases and notify once per new version.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_release_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark Pors 🦖",
+      "features": [
+        "Check for new clawdbot releases and notify once per new version."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-release-check@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1078320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-release-check",
+      "url": "https://clawhub.ai/skills/clawdbot-release-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-release-check",
+    "url": "https://clawhub.ai/skills/clawdbot-release-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-release-check-0bcbb92d5929cd84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-release-check@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-release-check-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:944173701971fb3d9ae466934954c468517bdc8190d223c444ae37bad9b88ce6",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T01:07:00.657Z"
+}

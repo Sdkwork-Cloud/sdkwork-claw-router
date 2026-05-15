@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sbti-personality-test@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_personality_test",
+  "skill": {
+    "id": 69825,
+    "skillKey": "clawhub-sbti-personality-test",
+    "name": "MBTI 已过时。这是一个非专业、纯玩梗的测试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-personality-test",
+    "url": "https://clawhub.ai/skills/sbti-personality-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-personality-test-75a1041092473c80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SBTI 恶搞人格测试数据包 - 极简暗黑风格的 MBTI 恶搞测试数据，包含20道搞笑题目、5种人格结果、15个维度定义。纯数据文件，适合自定义前端实现。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijinhongucl-pixel",
+      "userId": "s17949gfzvrqfhghg6pp8x6t3d83v8g3",
+      "displayName": "Socialite UCL LJH",
+      "image": "https://avatars.githubusercontent.com/u/270577937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775751225489,
+      "changelog": "- 提供 SBTI 恶搞人格测试为纯数据包（JSON 格式），适合自定义前端实现\n- 包含 20 道搞笑题目、5 种人格结果、15 个维度定义\n- 移除前端生成和运行相关内容及依赖说明，仅保留数据文件描述与用法建议\n- 数据结构和使用说明更加精简，适合快速集成和扩展\n- 更新描述和版本号，突出“数据包”特性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a01b9bf2436a4519f39888e087b4964697f8dbb955d66164ab505976533f453a"
+}

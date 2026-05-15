@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55096,
+  "uuid": "skill-clawhub-soul-search",
+  "skillKey": "clawhub-soul-search",
+  "name": "Soul Search",
+  "summary": "Browse categories, preview, apply, and restore OpenClaw SOUL.md personas from a curated remote catalog. Use for /soul categories, /soul list <category>, /sou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ALB.Leach",
+      "features": [
+        "Browse categories, preview, apply, and restore OpenClaw SOUL.md personas from a curated remote.",
+        "Use for /soul categories, /soul list <category>, /sou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/375981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-search",
+      "url": "https://clawhub.ai/skills/soul-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-search",
+    "url": "https://clawhub.ai/skills/soul-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-search-8857d32b06ca7f05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:481d739925ee44a2ec0925674c2dd7492dc0156e6c4d75a111e57c2af16d80ac",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T20:15:25.392Z"
+}

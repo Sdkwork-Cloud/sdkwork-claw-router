@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-tax-law@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_tax_law",
+  "skill": {
+    "id": 72062,
+    "skillKey": "clawhub-china-tax-law",
+    "name": "China Tax Law"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-tax-law",
+    "url": "https://clawhub.ai/skills/china-tax-law",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-tax-law-aec4dcadc5e0c321.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国财税法律专业知识助手。当用户涉及中国税法咨询、税务筹划分析、税务合规审查、税收政策解读、税务争议处理等任务时，应使用本 Skill。适用场景包括但不限于：增值税、企业所得税、个人所得税、印花税、土地增值税等税种分析，税务筹划方案设计，税务稽查应对，以及涉税法律法规查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codefarmerman",
+      "userId": "s17ad6xgz1n1x9g5m21p2kz7d183fpz7",
+      "displayName": "Richie Dirkson",
+      "image": "https://avatars.githubusercontent.com/u/121166069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1517,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773536453218,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9be201827af87228f4644135217e0091b8a8dee521f7deed8a61537fd5e4204"
+}

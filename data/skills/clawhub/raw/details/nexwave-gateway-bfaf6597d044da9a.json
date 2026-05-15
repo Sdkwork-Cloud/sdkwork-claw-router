@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "nexwave-gateway",
+    "displayName": "Nexwave Gateway",
+    "summary": "Unified crosschain USDC balance via Circle Gateway + Circle Programmable Wallets. Deposit USDC on any supported chain, check your unified balance, and instantly mint USDC on any destination chain in <500ms — no bridging, no raw private keys.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1770492800356,
+    "updatedAt": 1778384216782
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1770557834986,
+    "changelog": "**Circle Programmable Wallets integration and safer agent usage**\n\n- Added integration with Circle Programmable Wallets (no raw private keys required).\n- Added dependency on the `circle-wallet` skill (`eltontay/circle-wallet`).\n- Updated environment variables: now requires `CIRCLE_API_KEY`, `CIRCLE_ENTITY_SECRET`, and `CIRCLE_WALLET_SET_ID`.\n- Introduced a new `circle-wallet-client.js` file for wallet interactions.\n- Documentation updated to reflect Circle MPC wallet use, removing the need for direct private keys and improving security for agent operations.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "botmechanic",
+    "userId": "publishers:botmechanic",
+    "displayName": "botmechanic",
+    "image": "https://avatars.githubusercontent.com/u/162460549?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384216782
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gen-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_image",
+  "skill": {
+    "id": 59039,
+    "skillKey": "clawhub-gen-image",
+    "name": "AI图片生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-image",
+    "url": "https://clawhub.ai/skills/gen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-image-099562028c6db23d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI生成图片，支持Kolors/FLUX/Qwen-Image等模型（需SiliconFlow API）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duyiliu",
+      "userId": "s17be87mc56dnvjk08rsr0rqhn83ka7j",
+      "displayName": "asdas",
+      "image": "https://avatars.githubusercontent.com/u/4182886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772781653992,
+      "changelog": "初始版本：支持Kolors/FLUX/Qwen-Image模型生成图片",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd0aa3b270afbd861ce527a86cd5ad7c97bab77a48b481e80478fa7c771e197d"
+}

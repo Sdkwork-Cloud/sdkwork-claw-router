@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechatmessaging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatmessaging",
+  "skill": {
+    "id": 68065,
+    "skillKey": "clawhub-wechatmessaging",
+    "name": "wechat_messaging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatmessaging",
+    "url": "https://clawhub.ai/skills/wechatmessaging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatmessaging-1347fd85899c9028.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过微信查询好友并确认后，向指定好友发送文本消息，支持多好友选择和发送确认流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aw11100",
+      "userId": "publishers:aw11100",
+      "displayName": "aw11100",
+      "image": "https://avatars.githubusercontent.com/u/39297195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773052017588,
+      "changelog": "Initial release of wechat_messaging skill.\n\n- Allows sending messages to WeChat friends via API.\n- Workflow: search for friend → confirm recipient → send message.\n- Supports querying friends by name and sending text to selected contact.\n- Enforces confirmation step before sending messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ca9878673ffb45b71b9cf373297fa34c2248160a2b89330c50ac6c9b44938c5"
+}

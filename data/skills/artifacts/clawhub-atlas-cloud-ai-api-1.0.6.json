@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlas-cloud-ai-api@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_cloud_ai_api",
+  "skill": {
+    "id": 52872,
+    "skillKey": "clawhub-atlas-cloud-ai-api",
+    "name": "Atlas Cloud — AI Image, Video & LLM Generation API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-cloud-ai-api",
+    "url": "https://clawhub.ai/skills/atlas-cloud-ai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-cloud-ai-api-595b97d8b34e81e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation, video generation, and LLM chat API — call Nano Banana 2, Seedream, Kling, Seedance, Qwen, DeepSeek and more through one unified API key..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773809276345,
+      "changelog": "atlas-cloud-ai-api v1.0.6\n\n- Added Python scripts for image and video generation: `scripts/generate_image.py` and `scripts/generate_video.py`.\n- Introduced CLI commands to list available models and generate images or videos without external dependencies.\n- Updated documentation to reflect new script usage and simplified environment variable requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb71bf7a99b48971af7130a086af3952fc0ea2a5713d71606604c2a912364508"
+}

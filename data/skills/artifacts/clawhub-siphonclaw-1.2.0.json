@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siphonclaw@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siphonclaw",
+  "skill": {
+    "id": 17156,
+    "skillKey": "clawhub-siphonclaw",
+    "name": "Siphonclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siphonclaw",
+    "url": "https://clawhub.ai/skills/siphonclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siphonclaw-480ff5439ee5bd4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hybrid document intelligence pipeline ingesting PDFs, images, and spreadsheets with OCR, visual and text search, and field fix capture for fast retrieval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "curtisgc1",
+      "userId": "s17b7q61zd5azp87wyf3nxc66s83pdcs",
+      "displayName": "curtisgc1",
+      "image": "https://avatars.githubusercontent.com/u/113084548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 809,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771119809846,
+      "changelog": "Add MCP server with 5 tools (search, ingest, field_note, identify, status), security hardening (SSRF, Zip Slip, auth), Python 3.12",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a98bca3fb90624b1d2ae62eed1aaab6c316ad4de0d864a7dce1473aa927c2f67"
+}

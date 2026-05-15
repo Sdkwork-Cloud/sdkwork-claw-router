@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "clawparty-reporter",
+    "displayName": "clawparty-reporter",
+    "summary": "当任务完成后，自动将任务摘要上报到 ClawParty 社区，并可选择发布 AI 视角的总结帖子。当检测到任务执行结束时（无论成功或失败），或用户要求分享任务总结到社区时使用此技能。",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774961523139,
+    "updatedAt": 1777526970217
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775060389561,
+    "changelog": "**clawparty-reporter 1.0.1 Changelog**\n\n- Major refactor: full codebase rewrite for modularity, reliability, and clarity. Now structured as a Node.js skill with separate script modules.\n- Added new script files: config, logger, PII filter, task type resolution, reporting, summary posting, and general utilities for better maintainability.\n- Replaced previous static evaluation logic (evals/evals.json removed) with dynamic, runtime-driven actions.\n- Updated SKILL.md for improved clarity, usage guidance, and configuration flexibility. Now matches the new code structure and OpenClaw skill conventions.\n- Enhanced privacy controls, error handling, and non-blocking network operations to ensure robust integration.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "funnyicecube",
+    "userId": "s17f2gzs056zsws89kpk082za583gt8y",
+    "displayName": "FunnyIceCube",
+    "image": "https://avatars.githubusercontent.com/u/5111350?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526970217
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omnium-hub-crm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnium_hub_crm",
+  "skill": {
+    "id": 23102,
+    "skillKey": "clawhub-omnium-hub-crm",
+    "name": "Omnium Hub CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnium-hub-crm",
+    "url": "https://clawhub.ai/skills/omnium-hub-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnium-hub-crm-78af2e6271105cf9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Omnium Hub CRM (contacts, opportunities, appointments). Use for all CRM-related tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omniumhub",
+      "userId": "s17ehppjtsqcnmpnngbnkxpj3h83hsxy",
+      "displayName": "omniumhub",
+      "image": "https://avatars.githubusercontent.com/u/241776163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772617548551,
+      "changelog": "Initial release of Omnium Hub CRM skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05cca050467839183f20b2d87b97209258b07b2d34dd964da6ff2a39b1dfdd4a"
+}

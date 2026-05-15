@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-to-feishu-wiki@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_feishu_wiki",
+  "skill": {
+    "id": 30319,
+    "skillKey": "clawhub-wechat-to-feishu-wiki",
+    "name": "WeChat to Feishu Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-feishu-wiki",
+    "url": "https://clawhub.ai/skills/wechat-to-feishu-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-feishu-wiki-7eb38bcd72b93d3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch WeChat public-article content and save it into a user-provided Feishu Wiki location. Use when user shares mp.weixin.qq.com links and asks to archive/sy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gift-is-coding",
+      "userId": "s1736c9jd7nwwa2fw9wpcfqzvs855grm",
+      "displayName": "gift-is-coding",
+      "image": "https://avatars.githubusercontent.com/u/33282030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773729824564,
+      "changelog": "Initial generic release: user-provided wiki link, permission guidance, Chrome profile checks, batch import workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cb9b63ec8fd3783c9d31f181c5a6a18439602c0ccd3d31b276400017b7e64fe"
+}

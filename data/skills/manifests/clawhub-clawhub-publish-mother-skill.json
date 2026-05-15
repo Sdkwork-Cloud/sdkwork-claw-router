@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38750,
+  "uuid": "skill-clawhub-clawhub-publish-mother-skill",
+  "skillKey": "clawhub-clawhub-publish-mother-skill",
+  "name": "ClawHub Publish Mother Skill",
+  "summary": "Workflow for publishing and updating OpenClaw skills on ClawHub using verified token authentication and validation checks.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_mother_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stefanferreira",
+      "features": [
+        "Workflow for publishing and updating OpenClaw skills on ClawHub using verified token authentica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-publish-mother-skill@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6356549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-publish-mother-skill",
+      "url": "https://clawhub.ai/skills/clawhub-publish-mother-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-mother-skill",
+    "url": "https://clawhub.ai/skills/clawhub-publish-mother-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-mother-skill-7d11721a71aa045c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-publish-mother-skill@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publish-mother-skill-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cf2f17793b5fb94e7d67cc2c090213021d4c6708d04313749065fa15c2b5852",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T23:42:10.596Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64205,
+  "uuid": "skill-clawhub-kuaidi100-logistics",
+  "skillKey": "clawhub-kuaidi100-logistics",
+  "name": "kuaidi100-logistics",
+  "summary": "快递100 API 技能，用于查询快递物流相关信息。当用户提到快递单号、物流轨迹、查快递、运费估算、预计到达时间、识别快递公司等需求时，必须使用此技能。支持：查询物流轨迹（query_trace）、识别快递公司（auto_number）、估算运费（estimate_price）、预估寄件送达时间（estimate...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaidi100_logistics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peterlcm",
+      "features": [
+        "快递100 API 技能，用于查询快递物流相关信息。当用户提到快递单号、物流轨迹、查快递、运费估算、预计到达时间、识别快递公司等需求时，必须使用此技能。支持：查询物流轨迹（query_tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaidi100-logistics@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52274975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaidi100-logistics",
+      "url": "https://clawhub.ai/skills/kuaidi100-logistics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaidi100-logistics",
+    "url": "https://clawhub.ai/skills/kuaidi100-logistics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaidi100-logistics-ee2b59b800104413.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaidi100-logistics@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaidi100-logistics-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c138aaf2cce928365ea250f877144f5a8e6d4dbcaf4332b41837f034f9e1fbf7",
+      "artifactSizeBytes": 2633
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:49:01.514Z"
+}

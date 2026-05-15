@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-ai-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_ai_video_generator",
+  "skill": {
+    "id": 52134,
+    "skillKey": "clawhub-gemini-ai-video-generator",
+    "name": "Gemini Ai Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-ai-video-generator",
+    "url": "https://clawhub.ai/skills/gemini-ai-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-ai-video-generator-e05d3bcfe87476d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop a video and describe what you want — the gemini-ai-video-generator skill uses Google's Gemini AI to analyze your footage and generate new scenes, summar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774837529063,
+      "changelog": "Gemini AI Video Generator 1.0.0 — Initial Release\n\n- Generate highlight reels, scene descriptions, summaries, captions, and more from your video files using Google's Gemini AI.\n- Supports mp4, mov, avi, webm, and mkv formats.\n- Automated first-time connection and authentication process for a seamless setup.\n- Handles uploads, credit checks, export, and real-time edit requests through the NemoVideo backend.\n- Includes robust error handling with clear user feedback and session management.\n- Designed for creators, marketers, and educators to transform videos without manual editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5f85cce1048a3ad6e600aa828f6dc418ede3a55425aca765de95a51978f80f7"
+}

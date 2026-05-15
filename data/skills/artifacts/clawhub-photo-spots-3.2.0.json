@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-spots@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_spots",
+  "skill": {
+    "id": 53768,
+    "skillKey": "clawhub-photo-spots",
+    "name": "Photo Spots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-spots",
+    "url": "https://clawhub.ai/skills/photo-spots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-spots-883c243dd5772eba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the most photogenic and instagrammable spots — iconic viewpoints, colorful streets, architectural marvels, and hidden gems for your social media. Also s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775875861805,
+      "changelog": "photo-spots v3.2.0\n\n- Updated SKILL.md with strict CLI-only execution rules: data MUST come from flyai CLI output.\n- Added multi-language support and output requirements based on user's input language (Chinese or English).\n- Enforced that each attraction result must include a `[Book]({detailUrl})` link to ensure all info is sourced from flyai.\n- Expanded supported travel services (flights, hotels, tickets, insurance, car rental, etc.), all via Fliggy.\n- Detailed scenario playbooks and output formatting rules for improved accuracy and consistency.\n- Clarified activation/trigger conditions and restricted responses to matching travel photography queries only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a450b43f57f3eb59850ecc36f055131b4208b33ce5510bf616229123a3e0557d"
+}

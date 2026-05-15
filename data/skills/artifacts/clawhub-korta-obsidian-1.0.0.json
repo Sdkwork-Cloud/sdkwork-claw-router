@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korta-obsidian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korta_obsidian",
+  "skill": {
+    "id": 41605,
+    "skillKey": "clawhub-korta-obsidian",
+    "name": "Korta Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korta-obsidian",
+    "url": "https://clawhub.ai/skills/korta-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korta-obsidian-40dda6c1c9680bdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landercortazarromero",
+      "userId": "s17a4ktrsekycwkm4n8y50t27s84f3sz",
+      "displayName": "landercortazarromero",
+      "image": "https://avatars.githubusercontent.com/u/268324391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775629239272,
+      "changelog": "- Initial release of the korta-obsidian skill.\n- Provides commands and guidance for working with Obsidian vaults using obsidian-cli.\n- Includes instructions for vault discovery, search, note creation, move/rename (with link updates), and delete operations.\n- Offers tips for safely automating Obsidian workflows and suggests best practices for vault path handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e4b1583963855605091c85af1c7b230d37f186e4b1a6a694ff40fbfab7debbc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-to-list@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_to_list",
+  "skill": {
+    "id": 10648,
+    "skillKey": "clawhub-recipe-to-list",
+    "name": "Recipe to List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-to-list",
+    "url": "https://clawhub.ai/skills/recipe-to-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-to-list-122463b53b1f3ae5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn recipes into a Todoist Shopping list. Extract ingredients from recipe photos (Gemini Flash vision) or recipe web pages (search + fetch), then compare against the existing Shopping project with conservative synonym/overlap rules, skip."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "borahm",
+      "userId": "s178h6tnctyzdm2zjbrcq3fdpd83fnyk",
+      "displayName": "Borahm",
+      "image": "https://avatars.githubusercontent.com/u/3512357?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2506,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1769275932697,
+      "changelog": "Remove Todoist sections/groups entirely; keep Shopping list flat. Update docs accordingly.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1bbbc0e17a16feb242e38bd44a202e4126d493718ce8e941670ce1b883f8354"
+}

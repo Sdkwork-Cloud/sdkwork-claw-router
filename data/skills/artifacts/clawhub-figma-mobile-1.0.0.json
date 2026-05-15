@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-mobile@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_mobile",
+  "skill": {
+    "id": 60039,
+    "skillKey": "clawhub-figma-mobile",
+    "name": "Figma Mobile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-mobile",
+    "url": "https://clawhub.ai/skills/figma-mobile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-mobile-84ebad14b8b08f8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Figma 设计稿转为移动端 UI 代码（Android Jetpack Compose / XML，iOS SwiftUI / UIKit）。 在用户粘贴 Figma 链接并希望生成布局代码时使用。 通过 Figma REST API 提取设计树与 token，必要时追问澄清，再输出可落地的工程代码。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775614760973,
+      "changelog": "Figma 设计转代码自动化初版发布\n\n- 支持将 Figma 设计稿转为 Android（Jetpack Compose/XML）和 iOS（SwiftUI/UIKit）UI 代码\n- 集成 Figma REST API，自动提取设计树和 tokens\n- 交互式澄清流程：自动摘要结构、必要时向用户追问，保证输出匹配需求\n- 支持自定义组件、列表结构识别、渐变/阴影处理提示\n- 内置工程资源复用与映射反馈机制，便于迭代与规则沉淀\n- 简明异常处理及 token 配置指导，兼容 Node.js 环境，无第三方依赖",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cf3a7a20b86ce34ee88f8058869bc3859e006cd8725f5728f5b7b7f6a4d5ae2"
+}

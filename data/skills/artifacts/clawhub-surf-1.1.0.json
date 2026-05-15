@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surf@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surf",
+  "skill": {
+    "id": 51561,
+    "skillKey": "clawhub-surf",
+    "name": "Surf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surf",
+    "url": "https://clawhub.ai/skills/surf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surf-0199311728be8299.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI agent's crypto brain. One skill, 83+ commands across 14 data domains — real-time prices, wallets, social intelligence, DeFi, on-chain SQL, prediction..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hughzhou-gif",
+      "userId": "s17b01f7ryw4xdxv2hzn3e2zeh84hy2g",
+      "displayName": "hughzhou-gif",
+      "image": "https://avatars.githubusercontent.com/u/241039053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777072494409,
+      "changelog": "Sync with asksurf-ai/surf-skills main: W007 credential hardening, Snyk security fixes, AGENTS.md routing injection, capability boundaries section, CLI v1.0.0-alpha.31 compatibility, news-feed vs search-news routing clarification, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d82bc1ba3489716d09851ead999947832905e90606d1c47f051fa24eb8030cd4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-intel-assistant@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_intel_assistant",
+  "skill": {
+    "id": 71707,
+    "skillKey": "clawhub-industry-intel-assistant",
+    "name": "行业情报助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-intel-assistant",
+    "url": "https://clawhub.ai/skills/industry-intel-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-intel-assistant-fa7b5b83673f727b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业情报收集与分析助手。自动监控特定行业动态、抓取热点资讯、生成结构化情报简报，并支持多渠道推送。当用户需要：监控某行业最新动态、追踪竞品消息、抓取AI/科技/电商等行业情报、生成每日/每周情报简报、搭建企业级资讯分发体系时使用此技能。核心功能：(1) Tavily搜索获取行业资讯 (2) 结构化简报生成 (3)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyongliang-eccom",
+      "userId": "s17fp5xmt9fkkpfap18esxa1h183mfev",
+      "displayName": "xuyongliang",
+      "image": "https://avatars.githubusercontent.com/u/105618971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774536180063,
+      "changelog": "更新版本号",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3526d0bd729dd65b3a85cec6fb88fa2ee519a38c94e2be305cc9421d48f3a9ba"
+}

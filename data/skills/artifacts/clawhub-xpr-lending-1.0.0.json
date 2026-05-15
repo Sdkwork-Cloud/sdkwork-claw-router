@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xpr-lending@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_lending",
+  "skill": {
+    "id": 18116,
+    "skillKey": "clawhub-xpr-lending",
+    "name": "XPR Lending (LOAN Protocol)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-lending",
+    "url": "https://clawhub.ai/skills/xpr-lending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-lending-89ed9a5420ac590c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with LOAN Protocol on XPR Network to supply assets, borrow against collateral, redeem, repay loans, and claim LOAN token rewards on mainnet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulgnz",
+      "userId": "publishers:paulgnz",
+      "displayName": "paulgnz",
+      "image": "https://avatars.githubusercontent.com/u/12118160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771045861347,
+      "changelog": "15 tools: supply, borrow, repay, redeem, rewards, market APY/TVL for LOAN Protocol on XPR Network",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1af645e0fc06a8e14042dd8a9f9d8cebd64f7b7d175eafa10b715f8665df0628"
+}

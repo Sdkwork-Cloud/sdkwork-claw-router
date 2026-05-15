@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69839,
+  "uuid": "skill-clawhub-git-reporter",
+  "skillKey": "clawhub-git-reporter",
+  "name": "Git Reporter",
+  "summary": "智能站会与工作汇报生成器。分析当前仓库的 git 提交记录、分支变更和未完成工作， 自动生成结构化的每日站会、周报或 Sprint 回顾。支持团队模式和自定义输出格式。 仅使用本地 git 命令，不访问远程 API。当用户提到写站会、每日汇报、晨会、周报、工作总结时自动触发。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maximum2974",
+      "features": [
+        "智能站会与工作汇报生成器。分析当前仓库的 git 提交记录、分支变更和未完成工作， 自动生成结构化的每日站会、周报或 Sprint 回顾。支持团队模式和自定义输出格式。 仅使用本地 git."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-reporter@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125869982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-reporter",
+      "url": "https://clawhub.ai/skills/git-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-reporter",
+    "url": "https://clawhub.ai/skills/git-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-reporter-87b5dee9cc417941.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-reporter@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-reporter-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06e665a85c42bbadd3b4965a4c9ebe16517612ee22f7a903d6b6b64c5648501b",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:34:49.506Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/support-router@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_router",
+  "skill": {
+    "id": 59419,
+    "skillKey": "clawhub-support-router",
+    "name": "独立开发者客服邮件系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-router",
+    "url": "https://clawhub.ai/skills/support-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-router-618b7a0441f6ed33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "客服邮件智能分流。CLI 关键词预筛自动回复常见问题，复杂邮件转发 AI 处理邮箱或主邮箱，节省约 62% token 成本。Use when: (1) setting up automated support email triage for a SaaS product, (2) auto-replying..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devincodel",
+      "userId": "s17d9e9b695krh0pnhw15xx5g183kf4k",
+      "displayName": "DevincodeL",
+      "image": "https://avatars.githubusercontent.com/u/20519059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776009610236,
+      "changelog": "support-router 1.0.12\n\n- openclaw 定时任务调度 `payload` 增加 `delivery: \"none\"` 参数，避免因缺少目标邮箱导致 announce 模式报错、调度重试与延迟。\n- 文档中注册定时任务部分补充说明 `delivery: \"none\"` 必须设置，否则可能触发调度失败和退避机制。\n- 其他内容无变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4823b217da2945b4d8e6f652dc96d2dc4630d98927c1f24c0541adae7d1c68b1"
+}

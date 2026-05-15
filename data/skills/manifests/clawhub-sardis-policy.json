@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25488,
+  "uuid": "skill-clawhub-sardis-policy",
+  "skillKey": "clawhub-sardis-policy",
+  "name": "Sardis Policy",
+  "summary": "Natural language spending policy creation and management for Sardis agent wallets",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis_policy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EfeDurmaz16",
+      "features": [
+        "Natural language spending policy creation and management for Sardis agent wallets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sardis-policy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75971010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sardis-policy",
+      "url": "https://clawhub.ai/skills/sardis-policy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis-policy",
+    "url": "https://clawhub.ai/skills/sardis-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-policy-59c47c21fae531c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sardis-policy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sardis-policy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:496cbd9e8fb46b08a7a3360a7be6f9e268d8ac63f017b2a6169a8fb936ae9667",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:24:38.660Z"
+}

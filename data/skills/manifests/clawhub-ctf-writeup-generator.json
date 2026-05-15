@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13084,
+  "uuid": "skill-clawhub-ctf-writeup-generator",
+  "skillKey": "clawhub-ctf-writeup-generator",
+  "name": "CTF Writeup Generator",
+  "summary": "Automatically generate professional CTF writeups from solving sessions with flag detection, challenge categorization, and proper markdown formatting",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_writeup_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AM",
+      "features": [
+        "Automatically generate professional CTF writeups from solving sessions with flag detection, cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctf-writeup-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42378320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctf-writeup-generator",
+      "url": "https://clawhub.ai/skills/ctf-writeup-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-writeup-generator",
+    "url": "https://clawhub.ai/skills/ctf-writeup-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-writeup-generator-44de1d1d5df0cec5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctf-writeup-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctf-writeup-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e5f4186d2a6f25c68dbba2489565c5c21cf9b22cee91d5aa0dcd00987cb61e9",
+      "artifactSizeBytes": 2616
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T07:03:57.277Z"
+}

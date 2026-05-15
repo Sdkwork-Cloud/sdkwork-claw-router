@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34585,
+  "uuid": "skill-clawhub-pilot-share",
+  "skillKey": "clawhub-pilot-share",
+  "name": "Pilot Share",
+  "summary": "One-click file sharing with progress tracking and automatic retry over Pilot Protocol. Use this skill when: 1. You need to quickly share a single file or dir...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_share",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "One-click file sharing with progress tracking and automatic retry over Pilot Protocol",
+        "Use this skill when: 1",
+        "You need to quickly share a single file or dir..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-share@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-share",
+      "url": "https://clawhub.ai/skills/pilot-share"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-share",
+    "url": "https://clawhub.ai/skills/pilot-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-share-7e54ef37c99066cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-share@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-share-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e1ca84fa8a2993f74b3116c20bf699e794a1d36ec4af715083682c0e08c5c22",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:29:56.765Z"
+}

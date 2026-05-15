@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59022,
+  "uuid": "skill-clawhub-structured-vector-memory",
+  "skillKey": "clawhub-structured-vector-memory",
+  "name": "Structured Vector Memory (SVM)",
+  "summary": "Structured Vector Memory (SVM) / 三层高效记忆存储法。整合 LanceDB Pro 向量引擎 + 三层结构化管理，涵盖：每日记忆整理（Micro Sync + Daily Wrapup）、记忆蒸馏压缩（Weekly Compound）、去重检测、scope 隔离、archive 机...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structured_vector_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kylin19860916",
+      "features": [
+        "Structured Vector Memory (SVM) / 三层高效记忆存储法。整合 LanceDB Pro 向量引擎 + 三层结构化管理，涵盖：每日记忆整理（Micro Sync +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/structured-vector-memory@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229595532?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "structured-vector-memory",
+      "url": "https://clawhub.ai/skills/structured-vector-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structured-vector-memory",
+    "url": "https://clawhub.ai/skills/structured-vector-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structured-vector-memory-504c01507dfebf84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/structured-vector-memory@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-structured-vector-memory-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc64cba1e12a6785cc5d6a1611cd9c26c6313a42c3f5d418edbad367e5236033",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:20:56.134Z"
+}

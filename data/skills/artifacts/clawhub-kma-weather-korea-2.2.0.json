@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kma-weather-korea@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kma_weather_korea",
+  "skill": {
+    "id": 57337,
+    "skillKey": "clawhub-kma-weather-korea",
+    "name": "기상청 날씨 (KMA Weather Korea)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kma-weather-korea",
+    "url": "https://clawhub.ai/skills/kma-weather-korea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kma-weather-korea-f401a0cc28f3a22b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "KMA short-term forecast API - ultra-short-term observation/forecast, short-term forecast"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sw326",
+      "userId": "publishers:sw326",
+      "displayName": "김성우",
+      "image": "https://avatars.githubusercontent.com/u/172457805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1771803774478,
+      "changelog": "기상청 초단기/단기예보 API — KMA open API 기반",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13b1329ec43eba9ae579841ed2b38d42cf24e79c39a06a8793d117600867409f"
+}

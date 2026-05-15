@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48064,
+  "uuid": "skill-clawhub-mercaapi",
+  "skillKey": "clawhub-mercaapi",
+  "name": "Mercadona Products API",
+  "summary": "Access detailed product and nutritional information from Mercadona, including fuzzy search, category listings, and AI receipt scanning for item matches.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercaapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m0wer",
+      "features": [
+        "Access detailed product and nutritional information from Mercadona, including fuzzy search, cat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mercaapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25278081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mercaapi",
+      "url": "https://clawhub.ai/skills/mercaapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercaapi",
+    "url": "https://clawhub.ai/skills/mercaapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercaapi-50c01d060e5a12b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mercaapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mercaapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10aeaafc4b81f1ebe7a075ea86af7aa58c9ac5f3226a0a9937e34b1521d82e1f",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T13:56:52.906Z"
+}

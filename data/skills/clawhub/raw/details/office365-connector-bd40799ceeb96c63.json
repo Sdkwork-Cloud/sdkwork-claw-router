@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "office365-connector",
+    "displayName": "Office 365 Connector",
+    "summary": "Office 365 / Outlook connector for email (read/send), calendar (read/write), and contacts (read/write) using resilient OAuth authentication. NOW WITH MULTI-ACCOUNT SUPPORT! Manage multiple Microsoft 365 identities from a single skill. Solves the difficulty connecting to Office 365 email, calendar, and contacts. Uses Microsoft Graph API with comprehensive Azure App Registration setup guide. Perfect for accessing your Microsoft 365/Outlook data from OpenClaw.",
+    "tags": {
+      "latest": "2.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2631,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 3,
+      "versions": 2
+    },
+    "createdAt": 1770513326341,
+    "updatedAt": 1778384256989
+  },
+  "latestVersion": {
+    "version": "2.0.0",
+    "createdAt": 1770703158657,
+    "changelog": "v2.0.0: Multi-Account Enhancement by Matthew Gordon (matt@workandthrive.ai)\n\nMAJOR NEW FEATURES:\n• Multi-account support - Manage multiple Microsoft 365 identities (work, personal, consulting)\n• Per-account token isolation - Separate, secure token storage for each account\n• Account switching - Easy --account=name flag across all operations\n• Default account selection - Set preferred account for convenience\n• Account management CLI - Simple add/remove/list/default commands\n• Legacy import tool - Seamless migration from v1.0.0 single-account setups\n\nENHANCEMENTS:\n• Enhanced auth.js with multi-account authentication support\n• Updated email.js, calendar.js, send-email.js, cancel-event.js for multi-account\n• New accounts.js CLI for account management\n• Comprehensive MULTI-ACCOUNT.md usage guide\n• CHANGELOG.md and CREDITS.md for full attribution\n\nBACKWARD COMPATIBILITY:\n• ✅ Full backward compatibility maintained\n• ✅ Environment variable fallback preserved\n• ✅ No breaking changes for existing single-account users\n• ✅ All original functionality intact\n\nSECURITY:\n• Per-account token files with mode 0600\n• Account config stored with mode 0600\n• Directory permissions set to 0700\n\nCREDIT:\nMassive thank you to Matthew Gordon for this excellent contribution! This enhancement makes the skill significantly more useful for consultants, freelancers, and anyone managing multiple work identities.\n\nOriginal skill: office365-connector v1.0.0\nEnhanced by: Matthew Gordon (matt@workandthrive.ai)",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tirandagan",
+    "userId": "s1790acmcnk4qdxxf093dqbcd583vv25",
+    "displayName": "Tiran Dagan",
+    "image": "https://avatars.githubusercontent.com/u/1196339?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384256989
+  }
+}

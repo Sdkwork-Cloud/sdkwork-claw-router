@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/itch-asset-pack-launcher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.itch_asset_pack_launcher",
+  "skill": {
+    "id": 48582,
+    "skillKey": "clawhub-itch-asset-pack-launcher",
+    "name": "Itch Asset Pack Launcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "itch-asset-pack-launcher",
+    "url": "https://clawhub.ai/skills/itch-asset-pack-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/itch-asset-pack-launcher-aa1e3ae755d58316.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create high-converting itch.io asset pack pages for game assets, including titles, descriptions, tags, pricing notes, screenshots plan, cover prompts, page c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdullah944",
+      "userId": "s17fc78nds5h3vsph5tnfpzd3h85g3jm",
+      "displayName": "Kw.Hades- Creative Labs",
+      "image": "https://avatars.githubusercontent.com/u/40309465?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777345345332,
+      "changelog": "Initial release: adds an itch.io asset pack page builder with titles, descriptions, tags, cover prompts, pricing notes, launch checklist, and donation link.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09b5598552ea42851eb129e371b8aea0d82384b0d1d2d57e6bc944d0a19de94d"
+}

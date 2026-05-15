@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_news",
+  "skill": {
+    "id": 45727,
+    "skillKey": "clawhub-feishu-news",
+    "name": "Feishu News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-news",
+    "url": "https://clawhub.ai/skills/feishu-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-news-a91823fd3d35a315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to fetch and reference news information from Feishu when interacting with users."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yeat",
+      "userId": "s17f6h6rzsmcrr3vrrd0hhf7gd84nryn",
+      "displayName": "Yeats",
+      "image": "https://avatars.githubusercontent.com/u/11582816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776505481485,
+      "changelog": "Initial release of the Feishu News Skill.\n\n- Enables fetching and referencing news from Feishu in user interactions.\n- Provides functions to retrieve, format, and reference news articles and sources.\n- Integrates with Feishu’s API for access to current news content.\n- Ensures proper source attribution when presenting news information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56c65e9ac7ce94097245d14bfc41110c8e44966c52adf6a6d4ddb4659489fad2"
+}

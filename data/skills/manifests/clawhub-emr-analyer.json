@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60246,
+  "uuid": "skill-clawhub-emr-analyer",
+  "skillKey": "clawhub-emr-analyer",
+  "name": "EMR Analyzer",
+  "summary": "Linux 系统上开源大数据应用分析诊断工具。支持服务状态检查、参数配置获取和调优、任务报错分析并提供优化建议。支持 YARN、Hive、HDFS、Spark、Impala、Trino、Tez、StarRocks、HBase、Kafka、ZooKeeper、Ranger、OpenLDAP、Hue、Flink。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emr_analyer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qinyafei",
+      "features": [
+        "Linux 系统上开源大数据应用分析诊断工具。支持服务状态检查、参数配置获取和调优、任务报错分析并提供优化建议。支持 YARN、Hive、HDFS、Spark、Impala、Trino、Te."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emr-analyer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69954892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emr-analyer",
+      "url": "https://clawhub.ai/skills/emr-analyer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emr-analyer",
+    "url": "https://clawhub.ai/skills/emr-analyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emr-analyer-0e498c2a89b3357d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emr-analyer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emr-analyer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3be698b2d3bacb0438ecf6f057a275c0a5b5012cb4d2045c81b96d375fe7be12",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:10:20.119Z"
+}

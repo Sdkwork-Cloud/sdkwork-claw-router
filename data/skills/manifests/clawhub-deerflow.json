@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24264,
+  "uuid": "skill-clawhub-deerflow",
+  "skillKey": "clawhub-deerflow",
+  "name": "Deerflow",
+  "summary": "Deep research and async task execution via DeerFlow LangGraph engine. Submit multi-step research tasks through a lightweight API-only Docker deployment (no f...",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deerflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bevanding",
+      "features": [
+        "Deep research and async task execution via DeerFlow LangGraph engine",
+        "Submit multi-step research tasks through a lightweight API-only Docker deployment (no f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deerflow@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85435357?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deerflow",
+      "url": "https://clawhub.ai/skills/deerflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deerflow",
+    "url": "https://clawhub.ai/skills/deerflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deerflow-ea44dcc4367369f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deerflow@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-deerflow-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:788f247328489dbeb916458b1093f01b2dae1ec407ab4c57984db18cd54f3336",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T06:24:02.712Z"
+}

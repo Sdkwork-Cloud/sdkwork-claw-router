@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62004,
+  "uuid": "skill-clawhub-clawbrain-pro",
+  "skillKey": "clawhub-clawbrain-pro",
+  "name": "ClawBrain Pro",
+  "summary": "ClawBrain v1.6 — 更准、更稳、越用越懂你的大模型。记忆系统 + 数据保真 + 自动容错 + 输出验证。21 场景评测第一。",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "ClawBrain v1.6 — 更准、更稳、越用越懂你的大模型。记忆系统 + 数据保真 + 自动容错 + 输出验证。21 场景评测第一。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrain-pro@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrain-pro",
+      "url": "https://clawhub.ai/skills/clawbrain-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro",
+    "url": "https://clawhub.ai/skills/clawbrain-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-95cb9e26b4b5d7c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrain-pro@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrain-pro-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e50b196c9fe35066130eee26df277c4cb8b82dc58dce962734abbb57d06b953e",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T04:47:25.805Z"
+}

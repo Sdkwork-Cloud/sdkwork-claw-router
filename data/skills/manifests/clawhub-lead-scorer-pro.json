@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50682,
+  "uuid": "skill-clawhub-lead-scorer-pro",
+  "skillKey": "clawhub-lead-scorer-pro",
+  "name": "Lead Scorer",
+  "summary": "Score a website lead 0–100 based on audit signals from the website-auditor skill, assign a priority tier (Hot/Warm/Lukewarm/Cold), and write the result to a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_scorer_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Score a website lead 0–100 based on audit signals from the website-auditor skill, assign a prio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-scorer-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-scorer-pro",
+      "url": "https://clawhub.ai/skills/lead-scorer-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-scorer-pro",
+    "url": "https://clawhub.ai/skills/lead-scorer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-scorer-pro-620685b1d8128768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-scorer-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-scorer-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6c4b3e0b42488b24efe73f5bcf243d05719db63069c068767919da9ad2e2ede",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T03:28:05.692Z"
+}

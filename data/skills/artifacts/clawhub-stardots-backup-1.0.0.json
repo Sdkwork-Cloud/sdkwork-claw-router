@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stardots-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stardots_backup",
+  "skill": {
+    "id": 24403,
+    "skillKey": "clawhub-stardots-backup",
+    "name": "Backup image to StarDots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stardots-backup",
+    "url": "https://clawhub.ai/skills/stardots-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stardots-backup-94d4d00038bcb61c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically back up images to stardots.io cloud storage with secure MD5 authentication and configurable credentials."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keepchen",
+      "userId": "s176ndggmvysnpmxh229ebrv6183n8c0",
+      "displayName": "keepchen",
+      "image": "https://avatars.githubusercontent.com/u/11535899?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773125323851,
+      "changelog": "Initial release of stardots-backup.\n\n- Automatically backs up images to the stardots.io cloud platform\n- Supports MD5 signature authentication for secure uploads\n- Flexible credential management via environment variables, config files, or skill config\n- Written in TypeScript for type safety\n- Handles simple image upload commands with user-friendly triggers\n- Rate limits (300/min), file size (up to 30MB), and filename length (170 chars) enforced",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8dc9a3f4dec6f1b36ba81aeadd98a830eb65b9f18967f5cef2cea3513dd53f8"
+}

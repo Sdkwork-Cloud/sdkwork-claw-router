@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43090,
+  "uuid": "skill-clawhub-dfs-reset",
+  "skillKey": "clawhub-dfs-reset",
+  "name": "DFS Reset",
+  "summary": "Detect DFS radar events and reset Ubiquiti airOS devices to restore configured frequencies, managed by UISP NMS. Use when checking whether WISP APs were forc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dfs_reset",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drodecker",
+      "features": [
+        "Detect DFS radar events and reset Ubiquiti airOS devices to restore configured frequencies, man.",
+        "Use when checking whether WISP APs were forc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dfs-reset@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5384731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dfs-reset",
+      "url": "https://clawhub.ai/skills/dfs-reset"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dfs-reset",
+    "url": "https://clawhub.ai/skills/dfs-reset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dfs-reset-807a42bfb2ba2023.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dfs-reset@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dfs-reset-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:220d5a729148b2df0630faed5ff6f46599d077f3c64ebd4c536e625120e532cc",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:57:30.697Z"
+}

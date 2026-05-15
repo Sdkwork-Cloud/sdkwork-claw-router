@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19796,
+  "uuid": "skill-clawhub-sports-events-query",
+  "skillKey": "clawhub-sports-events-query",
+  "name": "Sports Events Query",
+  "summary": "Retrieve sports events, results, team info, and league details across multiple sports using TheSportsDB free API without requiring an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_events_query",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Retrieve sports events, results, team info, and league details across multiple sports using The."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sports-events-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sports-events-query",
+      "url": "https://clawhub.ai/skills/sports-events-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-events-query",
+    "url": "https://clawhub.ai/skills/sports-events-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-events-query-3ba14b4d0b746684.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sports-events-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sports-events-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7b6bd2ba88287e978444966d50eb4b35d61ac15a349a7d5989468b3faf9d91d",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:16:03.359Z"
+}

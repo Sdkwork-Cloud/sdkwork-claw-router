@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-transcript-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_analyzer",
+  "skill": {
+    "id": 11589,
+    "skillKey": "clawhub-youtube-transcript-analyzer",
+    "name": "YouTube Transcript Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-analyzer",
+    "url": "https://clawhub.ai/skills/youtube-transcript-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-analyzer-283c5e13258dcf9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and analyze YouTube video transcripts without watching the video. Use when users request video summaries, ask to \"analyze this YouTube video\", want t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xanderrey",
+      "userId": "publishers:xanderrey",
+      "displayName": "Xander Rey",
+      "image": "https://avatars.githubusercontent.com/u/84536926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1864,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771206844131,
+      "changelog": "Initial release: Extract, clean, and analyze YouTube video transcripts for quick understanding without watching the video.\n\n- Provides a shell script to fetch and clean transcripts from any YouTube URL.\n- Automatically identifies video content type and tailors summary structure (educational, review, news, entertainment).\n- Outputs organized summaries with key points, quotes, and action items.\n- Handles auto-generated vs. manual transcripts with error correction tips.\n- Includes fallback to fetch video info if transcripts are unavailable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6b9f7af21049029fca073a8ae3ddd7d24dbd3c84b4da01840fb412d05d09ac4d"
+}

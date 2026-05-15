@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mjolnir-shadow@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjolnir_shadow",
+  "skill": {
+    "id": 57564,
+    "skillKey": "clawhub-mjolnir-shadow",
+    "name": "雷神之影 Mjolnir Shadow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjolnir-shadow",
+    "url": "https://clawhub.ai/skills/mjolnir-shadow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjolnir-shadow-80226d2f5f3fdbf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mjolnir Shadow (雷神之影) — Automated rotating backup system for OpenClaw workspaces. Creates GPG-encrypted, rotating backups of workspace files, configs, and da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "king6381",
+      "userId": "s1756st9wf8papj1av4nw6whnd83gafk",
+      "displayName": "king6381",
+      "image": "https://avatars.githubusercontent.com/u/127765961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774314180918,
+      "changelog": "v2.0: 三平台全覆盖 (Win11/macOS/Ubuntu), restore-kit 裸机一键恢复",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8fbd837447accf981fb747ec81b2e11d5afe005f578902395eaba6c6dbb9d04"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27949,
+  "uuid": "skill-clawhub-d",
+  "skillKey": "clawhub-d",
+  "name": "d",
+  "summary": "Guide to deploy multiple OpenClaw agents in isolated Docker containers communicating via a secure shared filesystem without exposing network ports or using e...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.d",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow",
+      "features": [
+        "Guide to deploy multiple OpenClaw agents in isolated Docker containers communicating via a secu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/d@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178591028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "d",
+      "url": "https://clawhub.ai/skills/d"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "d",
+    "url": "https://clawhub.ai/skills/d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/d-18ac3e7343f01689.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/d@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-d-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28e105e8a699eaaf4232bebe073f058383190602e8e337c963c0e8734b850b49",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:53:51.522Z"
+}

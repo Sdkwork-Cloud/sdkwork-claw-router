@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asyncio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asyncio",
+  "skill": {
+    "id": 36318,
+    "skillKey": "clawhub-asyncio",
+    "name": "Asyncio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asyncio",
+    "url": "https://clawhub.ai/skills/asyncio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asyncio-8eb9b54d53977674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "asyncio patterns, concurrency pitfalls, and backpressure. Use when writing async Python services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774606244379,
+      "changelog": "- Initial release providing structured guidance for async Python development using asyncio.\n- Introduces a four-stage workflow: clarify context, design/plan, implement/validate, and operate/iterate.\n- Includes clear trigger conditions and a checklist to ensure best practices and risk coverage.\n- Offers procedural, actionable steps with a focus on context, verification, and operational follow-through.\n- Adapts to user preferences for either structured or freeform support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:152e3a6545a2a9b7b866cfb149177137c464a885a1f0f68496a080283931e8c4"
+}

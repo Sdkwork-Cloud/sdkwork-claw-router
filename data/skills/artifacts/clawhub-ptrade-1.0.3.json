@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ptrade@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ptrade",
+  "skill": {
+    "id": 68403,
+    "skillKey": "clawhub-ptrade",
+    "name": "Ptrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ptrade",
+    "url": "https://clawhub.ai/skills/ptrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ptrade-20fb39633010e47b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ptrade 恒生量化交易平台 - 策略运行在券商服务器上，低延迟执行，支持A股、期货、融资融券等中国证券市场。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774260304541,
+      "changelog": "- Added a new demo project directory with a sample README.md and demo.py script.\n- No changes to main functionality; only new example/demo files introduced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1209415eb01c3759583ac7766f36ef318cfd0e2819fe41351005bae3ea04e9a1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41740,
+  "uuid": "skill-clawhub-cftunnel",
+  "skillKey": "clawhub-cftunnel",
+  "name": "cftunnel",
+  "summary": "Expose local services to the internet via Cloudflare Tunnels. CLI (npx cftunnel) and Node.js library for creating tunnels, configuring ingress routes, managi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cftunnel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos Martin",
+      "features": [
+        "Expose local services to the internet via Cloudflare Tunnels",
+        "CLI (npx cftunnel) and Node.js library for creating tunnels, configuring ingress routes, managi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cftunnel@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2256796?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cftunnel",
+      "url": "https://clawhub.ai/skills/cftunnel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cftunnel",
+    "url": "https://clawhub.ai/skills/cftunnel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cftunnel-cdda411f3cbc503c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cftunnel@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cftunnel-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5004c9cdee9d8e38c2ec5c1829c3db141bd4ca9b9433c42142042b47e0ff65f8",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:06:07.855Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23668,
+  "uuid": "skill-clawhub-coperniq",
+  "skillKey": "clawhub-coperniq",
+  "name": "Coperniq",
+  "summary": "Coperniq integration. Manage Organizations, Pipelines, Users, Filters. Use when the user wants to interact with Coperniq data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coperniq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Coperniq integration",
+        "Manage Organizations, Pipelines, Users, Filters",
+        "Use when the user wants to interact with Coperniq data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coperniq@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coperniq",
+      "url": "https://clawhub.ai/skills/coperniq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coperniq",
+    "url": "https://clawhub.ai/skills/coperniq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coperniq-af9308daa21844fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coperniq@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-coperniq-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d08804a60c51d52a9c950fcab37fcdd8ce43aa2fe5907965114395ae135d363",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:20:57.135Z"
+}

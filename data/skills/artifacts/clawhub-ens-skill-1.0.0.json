@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ens-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ens_skill",
+  "skill": {
+    "id": 15367,
+    "skillKey": "clawhub-ens-skill",
+    "name": "ENS (Ethereum Name Service)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ens-skill",
+    "url": "https://clawhub.ai/skills/ens-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ens-skill-80bd91f2a31438e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Resolve ENS names (.eth) to Ethereum addresses and vice versa. Use when a user provides an .eth name (e.g. \"send to vitalik.eth\"), when displaying addresses (show ENS names), looking up ENS profiles, or helping users register, renew, or ma."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fabriziogianni7",
+      "userId": "publishers:fabriziogianni7",
+      "displayName": "fabriziogianni7",
+      "image": "https://avatars.githubusercontent.com/u/46995085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1038,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770542683959,
+      "changelog": "ENS Skill 1.0.0 — Initial Release\n\n- Resolve ENS names (.eth) to Ethereum addresses and vice versa using multiple approaches (ENS Subgraph, web3.bio API, Node.js fallback).\n- Look up ENS profile data, including avatar and social records, via API.\n- Assist users with registering, renewing, and managing .eth names on Ethereum mainnet, including price info and step-by-step registration process.\n- Provide usage guidelines for when and how to detect, resolve, and display ENS names and addresses.\n- Include major ENS contract addresses for mainnet operations.\n- Enforce display best practices (always resolve, show both ENS and address, confirm before transacting).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d8c53eeca0903381469b9acfbac78e6fb3db4b8e13dfb2d3dca40065b3cf8e5"
+}

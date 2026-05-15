@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smith-matrix@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smith_matrix",
+  "skill": {
+    "id": 23561,
+    "skillKey": "clawhub-smith-matrix",
+    "name": "Smith Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smith-matrix",
+    "url": "https://clawhub.ai/skills/smith-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smith-matrix-b4e89470eff5368a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"create a multi-agent system\", \"spawn agents for parallel tasks\", \"decompose task recursively\", \"set up agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyijun",
+      "userId": "s1751n6b6hjdp9q1y0sc3sffes83yey0",
+      "displayName": "Chen Yijun",
+      "image": "https://avatars.githubusercontent.com/u/42707013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1773258306239,
+      "changelog": "No file changes detected between versions 0.1.3 and 0.2.0.\n\n- No visible changes or updates in this release.\n- All documentation and skill metadata remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94dbbc89e2d09a8b24e2b5a8d623d6aa00a57ec5629d42092f73fd75f7601173"
+}

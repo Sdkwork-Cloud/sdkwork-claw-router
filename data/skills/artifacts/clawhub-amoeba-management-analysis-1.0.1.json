@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amoeba-management-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amoeba_management_analysis",
+  "skill": {
+    "id": 71647,
+    "skillKey": "clawhub-amoeba-management-analysis",
+    "name": "Amoeba Management Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amoeba-management-analysis",
+    "url": "https://clawhub.ai/skills/amoeba-management-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amoeba-management-analysis-5b6a6dc3f7d83a03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿米巴经营分析技能。基于稻盛和夫阿米巴经营理念，提供单位时间核算、经营会计报表分析、阿米巴组织划分评估、业绩改善诊断等能力。 当用户需要做阿米巴经营分析、单位时间核算、经营会计、阿米巴组织划分、利润中心分析、内部交易定价、业绩评价时触发。 触发词：阿米巴、阿米巴经营、单位时间核算、经营会计、利润中心、内部交易、阿..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "156554395",
+      "userId": "s17fyv1jzjya98z92atzbbw6as83rvgq",
+      "displayName": "156554395@qq.com",
+      "image": "https://avatars.githubusercontent.com/u/4717447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776857175158,
+      "changelog": "- Added comprehensive documentation detailing the Amoeba management analysis process based on Kazuo Inamori's principles.\n- Defined core concepts: organizational division, hourly value accounting, and management philosophy.\n- Outlined a step-by-step workflow from data collection to structured report output.\n- Provided formulas, data requirements, and analysis frameworks (L1–L5) for effective performance diagnosis.\n- Included a standard analysis report template and key managerial takeaways.\n- Listed supporting tools for data management and report generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08e96098750e1421d1618f32710d62e303ee5e2f26382a8be874351b6f7f1134"
+}

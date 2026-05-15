@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37925,
+  "uuid": "skill-clawhub-dota2-stats-skill",
+  "skillKey": "clawhub-dota2-stats-skill",
+  "name": "Dota2-Stats-Skill",
+  "summary": "Use this for Dota 2 / DOTA2 / OpenDota questions about players, Steam64/account_id, match_id, heroes, hero matchups, pro matches, teams, leagues, live games,...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dota2_stats_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ssunk",
+      "features": [
+        "Use this for Dota 2 / DOTA2 / OpenDota questions about players, Steam64/account_id, match_id, h."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dota2-stats-skill@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22838310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dota2-stats-skill",
+      "url": "https://clawhub.ai/skills/dota2-stats-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dota2-stats-skill",
+    "url": "https://clawhub.ai/skills/dota2-stats-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dota2-stats-skill-e8b8e1ccd0dd0f0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dota2-stats-skill@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-dota2-stats-skill-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f8ffb93505c95340dc2a39722f5cb594ebed4834196d4b91894e57014283c72",
+      "artifactSizeBytes": 2924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T12:07:24.399Z"
+}

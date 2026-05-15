@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39531,
+  "uuid": "skill-clawhub-openclaw-vertex-setup",
+  "skillKey": "clawhub-openclaw-vertex-setup",
+  "name": "OpenClaw Vertex Setup",
+  "summary": "Configure OpenClaw to use Google Vertex AI Gemini models so normal OpenClaw startup, Gateway service startup, and TUI usage all work without manual shell set...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_vertex_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bhrum",
+      "features": [
+        "Configure OpenClaw to use Google Vertex AI Gemini models so normal OpenClaw startup, Gateway se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-vertex-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222737880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-vertex-setup",
+      "url": "https://clawhub.ai/skills/openclaw-vertex-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-vertex-setup",
+    "url": "https://clawhub.ai/skills/openclaw-vertex-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-vertex-setup-71fd1f87e375c891.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-vertex-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-vertex-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:352d36d65132dfe37b22064b8ab9501d116c2c79eca2e43e094aff8afe53aeee",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T12:20:32.211Z"
+}

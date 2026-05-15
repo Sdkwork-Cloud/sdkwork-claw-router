@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-alipayplus-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_alipayplus_integration",
+  "skill": {
+    "id": 44025,
+    "skillKey": "clawhub-skill-alipayplus-integration",
+    "name": "skill-alipayplus-integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-alipayplus-integration",
+    "url": "https://clawhub.ai/skills/skill-alipayplus-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-alipayplus-integration-2f83e0e941d08863.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alipay+ Payment Integration Assistant. Helps Acquirers and Mobile Service Providers quickly integrate Alipay+ payments, including customer-presented mode pay..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wypride",
+      "userId": "s175d3t1pfchyhzr33ehe6hthd84fa7a",
+      "displayName": "Lizzie",
+      "image": "https://avatars.githubusercontent.com/u/18211772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775654624887,
+      "changelog": "Initial release of Alipay+ Payment Integration Assistant.\n\n- Provides guided assistance for integrating Alipay+ payments, including both customer-presented and merchant-presented modes.\n- Features tools for configuration generation, signature verification testing, asynchronous notification debugging (ACQP only), and reconciliation file processing.\n- Includes clear boundaries on supported help and referencing of official documentation for detailed API fields and business logic.\n- Offers scenario clarification scripts and usage examples for both Acquirer (ACQP) and Mobile Payment Provider (MPP) roles.\n- Emphasizes not to guess undocumented details and always refer to official documentation when uncertain.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e4af2de7d04dc39aab4dc1d119923d2712882877f08c8e848e371550f882a27"
+}

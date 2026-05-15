@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bifrost-slpx-info@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bifrost_slpx_info",
+  "skill": {
+    "id": 29657,
+    "skillKey": "clawhub-bifrost-slpx-info",
+    "name": "Bifrost Slpx Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bifrost-slpx-info",
+    "url": "https://clawhub.ai/skills/bifrost-slpx-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bifrost-slpx-info-037186891ac53cff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Bifrost SLPx liquid staking protocol data on Ethereum, Base, Optimism, and Arbitrum. Get vETH/ETH exchange rates, APY, TVL, user balances, redemption q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ark930",
+      "userId": "s17c9aenb0jbt4akcjqqrvtpt185bfn0",
+      "displayName": "Edwin",
+      "image": "https://avatars.githubusercontent.com/u/3787876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773390098499,
+      "changelog": "- Initial release of bifrost-slpx-info skill.\n- Query Bifrost SLPx liquid staking protocol data (vETH) on Ethereum, Base, Optimism, and Arbitrum.\n- Provides exchange rates, APY/yield, TVL, protocol stats, user balances, and withdrawal queue status.\n- Supports both on-chain ERC-4626 vault calls and Bifrost REST API queries.\n- Easy configuration for custom chain, RPC, or contract address; sensible defaults provided.\n- Includes examples and quick reference for common queries (rates, balances, protocol metrics).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ffff60f6d80ea9a70240134a2ad27e7eeeb284feafbb9e966b208d2252389c2"
+}

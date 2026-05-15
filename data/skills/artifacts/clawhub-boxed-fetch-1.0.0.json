@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boxed-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_fetch",
+  "skill": {
+    "id": 45170,
+    "skillKey": "clawhub-boxed-fetch",
+    "name": "Boxed Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-fetch",
+    "url": "https://clawhub.ai/skills/boxed-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-fetch-611fdd7c5cfb31a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight web scraping tool based on WebAssembly sandbox mechanism. Fetches URL content and extracts readable text. Use when you need to fetch webpage cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyoung",
+      "userId": "s1791jtrp7z0s6h87f8f0twdk183pq6y",
+      "displayName": "guyoung",
+      "image": "https://avatars.githubusercontent.com/u/1448308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775799731691,
+      "changelog": "- Initial release of boxed-fetch: a lightweight web scraping tool using WebAssembly sandboxing.\n- Fetches webpage content from a given URL and extracts readable text from HTML.\n- Requires the openclaw-wasm-sandbox plugin and a one-time WASM file download.\n- Supports only HTTPS URLs and requires explicit outbound host specification.\n- Includes easy quick-start instructions and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ca054cda9accfcbfc3bdb24752cea3134152325d990d3dc28c39b3cd3915ac4"
+}

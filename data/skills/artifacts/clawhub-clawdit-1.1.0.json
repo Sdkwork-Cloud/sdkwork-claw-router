@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdit",
+  "skill": {
+    "id": 35248,
+    "skillKey": "clawhub-clawdit",
+    "name": "Clawdit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdit",
+    "url": "https://clawhub.ai/skills/clawdit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdit-435153db6252a60e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Belief systems auditor for OpenClaw agents. Systematically evaluates an agent's loaded context files (SOUL.md, AGENTS.md, USER.md, skills) against the user's..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcroebuck",
+      "userId": "s176f3yxejwtz72g3qqf1rx18583fy5s",
+      "displayName": "M. Christopher Roebuck",
+      "image": "https://avatars.githubusercontent.com/u/61991332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774578890431,
+      "changelog": "Add returning user fast path to Phase 1 intake. If USER.md has stored goals, present them for quick confirmation instead of full 6-question intake every session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:619f3a036af8988a61ca417c6b11ecf9c381509f5ddbcf514876ac6014b2f434"
+}

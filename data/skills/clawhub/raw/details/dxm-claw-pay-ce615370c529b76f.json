@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "dxm-claw-pay",
+    "displayName": "度小满支付技能",
+    "summary": "度小满支付钱包 Skill，处理 SP 服务余额不足/未购买场景：根据调用方传入的结构化商品数据生成支付链接和二维码。也处理 Skill 安装：当用户说\"使用度小满安装skill\"、\"度小满下载skill\"、\"install skill\"、\"我要使用度小满安装某个skill\"时触发 installSkill 流程。",
+    "tags": {
+      "latest": "1.0.10"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "createdAt": 1775124853159,
+    "updatedAt": 1778071609091
+  },
+  "latestVersion": {
+    "version": "1.0.10",
+    "createdAt": 1778071278440,
+    "changelog": "dxm-claw-pay 1.0.10\n\n- 商品价格price现在以“分”为单位，需要在展示时除以100，转换为“元”。\n- 相应地，所有用户展示、调用示例及引导话术均要求价格以元显示。\n- 其余Skill功能、调用流程未变。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "duxiaoman",
+    "userId": "s17avhtwkfpvkt14j2hk9w6ffn83ws3f",
+    "displayName": "度小满",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778071609091
+  }
+}

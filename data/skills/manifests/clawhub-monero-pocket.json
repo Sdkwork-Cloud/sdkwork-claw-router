@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51124,
+  "uuid": "skill-clawhub-monero-pocket",
+  "skillKey": "clawhub-monero-pocket",
+  "name": "Ripley Pocket For Monero",
+  "summary": "API client skill for Ripley Pocket — the M2M micro-payment gateway for AI agents. Use this skill whenever you need to: send or receive payments between AI ag...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_pocket",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XBToshi",
+      "features": [
+        "API client skill for Ripley Pocket — the M2M micro-payment gateway for AI agents",
+        "Use this skill whenever you need to: send or receive payments between AI ag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monero-pocket@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256925101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monero-pocket",
+      "url": "https://clawhub.ai/skills/monero-pocket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-pocket",
+    "url": "https://clawhub.ai/skills/monero-pocket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-pocket-336b777160c32b8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monero-pocket@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-monero-pocket-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b705542b92784d0e1fb61d2a32842ea790a8bd33098739ed52c4cc84f8c97041",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T17:42:07.512Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-competitor-spy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_competitor_spy",
+  "skill": {
+    "id": 51099,
+    "skillKey": "clawhub-amazon-competitor-spy",
+    "name": "Amazon Competitor Spy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-competitor-spy",
+    "url": "https://clawhub.ai/skills/amazon-competitor-spy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-competitor-spy-4019398a11fe7797.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon competitor intelligence agent. Tracks competitor ASINs over time — price changes, BSR movements, review count velocity, listing changes, new images/va..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773989288770,
+      "changelog": "Initial release of amazon-competitor-spy, an Amazon competitor intelligence agent.\n\n- Track competitor ASINs for price changes, BSR movements, review velocity, and listing changes.\n- Provides trend tables, side-by-side comparison matrices, and competitive alerts.\n- Outputs comprehensive reports and opportunity flags based on tracked data.\n- Does not require API keys or scraping tools; works from user-provided data and notes.\n- Stores snapshots, watchlists, reports, and alerts in a workspace for ongoing analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94691bad55b70ced575fe487ce5cc48647fb15fc7399e22ff9469bc28689b23a"
+}

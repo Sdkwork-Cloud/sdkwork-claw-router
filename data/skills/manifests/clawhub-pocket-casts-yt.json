@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14153,
+  "uuid": "skill-clawhub-pocket-casts-yt",
+  "skillKey": "clawhub-pocket-casts-yt",
+  "name": "Youtube → Pocket Casts",
+  "summary": "Download YouTube videos and upload them to Pocket Casts Files for offline viewing. For personal use with content you own or have rights to.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_casts_yt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ManuelHettich",
+      "features": [
+        "Download YouTube videos and upload them to Pocket Casts Files for offline viewing",
+        "For personal use with content you own or have rights to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocket-casts-yt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17690367?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocket-casts-yt",
+      "url": "https://clawhub.ai/skills/pocket-casts-yt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-casts-yt",
+    "url": "https://clawhub.ai/skills/pocket-casts-yt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-casts-yt-3c1497255abb0e06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocket-casts-yt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocket-casts-yt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f886fb1aa94543c1bef0e56ecb80676a5fffc2d813e3d04aefb119c69a22656d",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T20:57:24.824Z"
+}

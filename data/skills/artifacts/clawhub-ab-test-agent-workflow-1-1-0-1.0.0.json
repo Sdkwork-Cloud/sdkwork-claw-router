@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ab-test-agent-workflow-1-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_agent_workflow_1_1_0",
+  "skill": {
+    "id": 60793,
+    "skillKey": "clawhub-ab-test-agent-workflow-1-1-0",
+    "name": "Ab Test Agent Workflow 1.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-agent-workflow-1-1-0",
+    "url": "https://clawhub.ai/skills/ab-test-agent-workflow-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-agent-workflow-1-1-0-21d219fd826b5d7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多智能体双盲 A/B 测试工作流。对多个 AI 模型/Agent 进行多轮次、双盲对照测试。 核心角色：协调者（Coordinator）、受测者 A/B（Contestant）、评测者（Judge）。 触发场景：\"A/B 测试\"、\"双盲测试\"、\"比较 AI 模型\"、\"模型评测\"、\"测试工作流\"、 \"compare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776596194621,
+      "changelog": "ab-test-agent-workflow v1.1.0 introduces a structured, multi-agent double-blind A/B testing workflow for model comparison.\n\n- Adds support for multi-round, double-blind evaluation of two models/agents via coordinator, contestants, and judge roles.\n- Presents complete workflow architecture, including role definitions and communication flow.\n- Provides detailed prompt templates for each role and various task types (general, code generation), ensuring standardized outputs.\n- Includes guidance for both fully automated (skill-based) and script-driven execution modes.\n- Supplies example report formats, rubric quick-reference, and troubleshooting guidance on anonymization, timeouts, and parser fallback.\n- Lists new scripts for runner, prompt construction/parsing, and output anonymization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b066d2ff9cc02b8407a7118e4e455f8874a00ccc0f644f87a88e7e348a238af"
+}

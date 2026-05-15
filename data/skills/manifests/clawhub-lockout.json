@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31048,
+  "uuid": "skill-clawhub-lockout",
+  "skillKey": "clawhub-lockout",
+  "name": "Lockout",
+  "summary": "Lockout tagout safety procedure manager. Use when json lockout tasks, csv lockout tasks, checking lockout status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lockout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Lockout tagout safety procedure manager",
+        "Use when json lockout tasks, csv lockout tasks, checking lockout status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lockout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lockout",
+      "url": "https://clawhub.ai/skills/lockout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lockout",
+    "url": "https://clawhub.ai/skills/lockout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lockout-662411b21a6e3e30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lockout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lockout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:559f5d1ab15b3e7b8922d58d86249e2a5dd1bb8af764961048fc70c429e17d97",
+      "artifactSizeBytes": 1795
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:17:25.654Z"
+}

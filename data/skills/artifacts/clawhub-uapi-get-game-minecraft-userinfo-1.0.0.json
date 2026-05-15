@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapi-get-game-minecraft-userinfo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_game_minecraft_userinfo",
+  "skill": {
+    "id": 58473,
+    "skillKey": "clawhub-uapi-get-game-minecraft-userinfo",
+    "name": "UAPI 查询 MC 玩家 接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-game-minecraft-userinfo",
+    "url": "https://clawhub.ai/skills/uapi-get-game-minecraft-userinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-game-minecraft-userinfo-d20a82165dd0a9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 UAPI 的“查询 MC 玩家”单接口 skill，处理 查询 MC 玩家、Minecraft玩家查询 等请求。 Use when the user wants get game minecraft userinfo, game minecraft userinfo, userinfo, minecraft..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuakami",
+      "userId": "publishers:shuakami",
+      "displayName": "速冻饺子",
+      "image": "https://avatars.githubusercontent.com/u/149454909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773088570553,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8d5c6f832b62671b2e57b0d7be3caa9ef9f5f3d8328bad3b39bfa98d9736dde"
+}

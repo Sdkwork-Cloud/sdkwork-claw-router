@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36926,
+  "uuid": "skill-clawhub-google-recaptcha",
+  "skillKey": "clawhub-google-recaptcha",
+  "name": "Google Recaptcha",
+  "summary": "Google reCAPTCHA integration. Manage data, records, and automate workflows. Use when the user wants to interact with Google reCAPTCHA data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_recaptcha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Google reCAPTCHA integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Google reCAPTCHA data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-recaptcha@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-recaptcha",
+      "url": "https://clawhub.ai/skills/google-recaptcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-recaptcha",
+    "url": "https://clawhub.ai/skills/google-recaptcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-recaptcha-858d35e1be804811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-recaptcha@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-recaptcha-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ddf4f8dc6a995f7f1bfeed7fa23b7b9cf8a48d3e25c8a7cab31ba19f8acdc28",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:23.287Z"
+}

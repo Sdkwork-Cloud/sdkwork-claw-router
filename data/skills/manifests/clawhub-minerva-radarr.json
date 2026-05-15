@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37839,
+  "uuid": "skill-clawhub-minerva-radarr",
+  "skillKey": "clawhub-minerva-radarr",
+  "name": "Radarr",
+  "summary": "Interact with Radarr (movie manager) via its REST API. Use when searching for movies, checking missing/wanted titles, triggering downloads, or monitoring que...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minerva_radarr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minerva-care",
+      "features": [
+        "Interact with Radarr (movie manager) via its REST API",
+        "Use when searching for movies, checking missing/wanted titles, triggering downloads, or monitor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minerva-radarr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263688754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minerva-radarr",
+      "url": "https://clawhub.ai/skills/minerva-radarr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minerva-radarr",
+    "url": "https://clawhub.ai/skills/minerva-radarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minerva-radarr-b69094a80820616e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minerva-radarr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minerva-radarr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d10cca6d36580f4874c2728320a8070774159a7dfbe4a572fc394ada5ea3abda",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:42:43.995Z"
+}

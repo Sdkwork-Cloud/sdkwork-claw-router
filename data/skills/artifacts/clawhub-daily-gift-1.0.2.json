@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-gift@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_gift",
+  "skill": {
+    "id": 29185,
+    "skillKey": "clawhub-daily-gift",
+    "name": "Daily Gift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-gift",
+    "url": "https://clawhub.ai/skills/daily-gift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-gift-3f5772003d99594e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate personalized, relationship-aware daily gifts in H5, image, video, text, or interactive text-play formats to mark meaningful moments and milestones."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiawei248",
+      "userId": "s179yspcqde0dfqdqkdzf65hhh84fa8g",
+      "displayName": "jiawei248",
+      "image": "https://avatars.githubusercontent.com/u/166719149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777296135581,
+      "changelog": "## Daily Gift 1.0.2\n\n- removed references for browsing context",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65d9c6039150a8b89472fd46d25565860227255855437c70d83b6cc4ba1caf10"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58955,
+  "uuid": "skill-clawhub-notion-template",
+  "skillKey": "clawhub-notion-template",
+  "name": "Notion Template",
+  "summary": "Notion模板生成器。工作空间规划、数据库设计、仪表盘布局、知识库Wiki、项目管理、个人模板。Notion template generator with workspace, database, dashboard, wiki, project.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_template",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Notion模板生成器。工作空间规划、数据库设计、仪表盘布局、知识库Wiki、项目管理、个人模板。Notion template generator with workspace, data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-template@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-template",
+      "url": "https://clawhub.ai/skills/notion-template"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-template",
+    "url": "https://clawhub.ai/skills/notion-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-template-f9889f0b43cb90f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-template@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-template-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4334cad84738db406fca31880ee671643631ef7aa5ace7e5e022e3634d1f0928",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:49:38.065Z"
+}

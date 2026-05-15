@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/block-on-exchange@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.block_on_exchange",
+  "skill": {
+    "id": 52686,
+    "skillKey": "clawhub-block-on-exchange",
+    "name": "ics to exchange-blocker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "block-on-exchange",
+    "url": "https://clawhub.ai/skills/block-on-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/block-on-exchange-6fa7f934f69b1bdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync any ICS/iCal calendar to Microsoft Exchange as blocked time slots — supports recurring events, change detection, and privacy-preserving sync"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blucaru",
+      "userId": "s17fcc5r61g9qv640yxgy5jwdh84a4z9",
+      "displayName": "Blucaru",
+      "image": "https://avatars.githubusercontent.com/u/48087428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774213506822,
+      "changelog": "Initial release of calin: sync any ICS/iCal calendar to Microsoft Exchange as privacy-preserving blocked time slots.\n\n- Syncs events—including recurring—from any HTTPS ICS feed to Microsoft Exchange as blocked slots, supporting Google Calendar, iCloud, Outlook.com, and more.\n- Only time slots (start/end/all-day) are synced; event titles, descriptions, and attendees remain private.\n- Detects and applies changes efficiently: only adds, updates, or removes events that changed in source.\n- Requires Python 3.12+, minimal configuration, and a one-time Microsoft login (no client secret needed).\n- Supports automated sync (macOS launchd), manual commands (sync, status, clear), and local event tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a0c59b0d1309b41e2ae62a13a253646f8dda634d093eb92f38d668d15ff396a"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34971,
+  "uuid": "skill-clawhub-serpapi-integration",
+  "skillKey": "clawhub-serpapi-integration",
+  "name": "Serpapi",
+  "summary": "SerpApi integration. Manage data, records, and automate workflows. Use when the user wants to interact with SerpApi data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpapi_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SerpApi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SerpApi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serpapi-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serpapi-integration",
+      "url": "https://clawhub.ai/skills/serpapi-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpapi-integration",
+    "url": "https://clawhub.ai/skills/serpapi-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpapi-integration-e9fe9f3cbf215028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serpapi-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-serpapi-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:645269b5c5c56e863dc869ce95809d11f8bf8ceb7f44ea2a71b0cb04d0c8dbcc",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:04.079Z"
+}

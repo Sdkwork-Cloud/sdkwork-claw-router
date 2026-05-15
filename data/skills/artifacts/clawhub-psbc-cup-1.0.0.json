@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psbc-cup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psbc_cup",
+  "skill": {
+    "id": 73062,
+    "skillKey": "clawhub-psbc-cup",
+    "name": "邮储银行易企收"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psbc-cup",
+    "url": "https://clawhub.ai/skills/psbc-cup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psbc-cup-649ddd42d96e7950.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "易企收自动化访问"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dayhee",
+      "userId": "publishers:dayhee",
+      "displayName": "dayhee",
+      "image": "https://avatars.githubusercontent.com/u/31920317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774240875295,
+      "changelog": "Initial release introducing 易企收自动化访问:\n\n- 提供易企收及演示版的自动化浏览和功能引导能力\n- 支持基于用户意图（如“了解”“演示”或“上传”“管理”）自动选择打开演示版或正式版\n- 实现常用菜单项与页面 URL 映射，快速访问核心功能\n- 浏览器自动打开，要求非 Headless，用户可感知实时操作\n- 明确导航限制与安全规则，不留存用户数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9b15d87c38f607ba4e8c0e8845bb073023011b6a83c3a92ebac15124dcf6d75"
+}

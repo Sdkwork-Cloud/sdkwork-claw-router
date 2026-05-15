@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-link@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_link",
+  "skill": {
+    "id": 47680,
+    "skillKey": "clawhub-ai-video-editor-link",
+    "name": "Ai Video Editor Link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-link",
+    "url": "https://clawhub.ai/skills/ai-video-editor-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-link-7ac11561a514e605.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into shareable edited videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for editing vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777224638052,
+      "changelog": "AI Video Editor Link — Version 1.0.0\n\n- Initial release of the AI-based video editing skill.\n- Edit raw video footage (MP4, MOV, AVI, WebM, up to 500MB) and generate instant, shareable 1080p MP4 links.\n- Quick cloud GPU processing (1–2 minutes) — no software required.\n- Automatic session setup, free token support, and secure authentication with attribution headers.\n- Supports uploading, editing, exporting, and tracking credits and job status with easy chat commands.\n- Accepts multiple common video, image, and audio formats for editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:850b81ea9c9cb0e1d484be91d358ee82ffd1a66d61da6d5fc0c0a37cd034c5d6"
+}

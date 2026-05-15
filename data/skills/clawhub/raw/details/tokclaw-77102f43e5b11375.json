@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "tokclaw",
+    "displayName": "TokClaw Wallet",
+    "summary": "TokClaw Wallet agent for blockchain wallet operations including registration, login, balance check, token transfers, and PIN management on TokClaw chain (7447).",
+    "tags": {
+      "latest": "5.9.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1776100441740,
+    "updatedAt": 1777527503766
+  },
+  "latestVersion": {
+    "version": "5.9.0",
+    "createdAt": 1776166812202,
+    "changelog": "**Major change: Now uses shell script interface instead of direct curl API calls.**\n\n- Replaced all direct API (curl) instructions with commands to install and use `tokclaw-wallet.sh` shell script.\n- The agent now ALWAYS installs and calls the wallet shell script itself; it must never ask the user to run, install, or confirm anything.\n- All wallet operations (registration, login, balance check, transfers) must be executed through the script, not by calling REST API endpoints.\n- Stronger, clearer rules: Do not expose PIN, never say \"please run this,\" always execute first and inform the user after.\n- File writing and PIN management are now handled by the script automatically.\n- Streamlined user prompts: the agent only asks for necessary inputs (email, OTP, PIN, recipient, amount).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "dome",
+    "userId": "s179x07xnpj9edbwtprnhtet6h84rez4",
+    "displayName": "DOM CHAROENYOS",
+    "image": "https://avatars.githubusercontent.com/u/322569?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527503766
+  }
+}

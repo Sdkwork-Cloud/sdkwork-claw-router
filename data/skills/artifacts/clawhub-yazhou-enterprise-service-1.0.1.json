@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yazhou-enterprise-service@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yazhou_enterprise_service",
+  "skill": {
+    "id": 73736,
+    "skillKey": "clawhub-yazhou-enterprise-service",
+    "name": "崖州区企业服务"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yazhou-enterprise-service",
+    "url": "https://clawhub.ai/skills/yazhou-enterprise-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yazhou-enterprise-service-96fc07e69d154165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "崖州区企业服务技能，用于查询企业基本情况、推荐针对性优惠政策、监管企业安全生产、结合崖州区产业发展情况提供企业发展建议等。支持同时为多家企业生成服务报告。触发词：崖州企业、企业服务、优惠政策、安全生产、企业查询、政策推荐、企业监管、发展建议、产业分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wing-art",
+      "userId": "s179t0n7qy7rwex3mw410r5yj185eah7",
+      "displayName": "Wing-art",
+      "image": "https://avatars.githubusercontent.com/u/217529282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 59,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778295269686,
+      "changelog": "No functional or content changes detected in this release.\n\n- Documentation references updated for clarity and generality; specific file paths have been removed from reference descriptions.\n- No code or workflow changes were made; overall skill functionality remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c8260dde75b61de62d8307562c6b2ce9ac4fa1a1892afb3e522100b2de2e7b6"
+}

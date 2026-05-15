@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-services@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_services",
+  "skill": {
+    "id": 20088,
+    "skillKey": "clawhub-setup-services",
+    "name": "Setup Reliable Services"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-services",
+    "url": "https://clawhub.ai/skills/setup-services",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-services-4cfec45e8d09bb7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up OpenSpend CLI and optional Coinbase payments-mcp for payment-enabled workflows. Use when openspend is missing, command not found, whoami fails, or use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albertpurnama",
+      "userId": "publishers:albertpurnama",
+      "displayName": "Albert Putra Purnama",
+      "image": "https://avatars.githubusercontent.com/u/14824254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772697213084,
+      "changelog": "No changes detected in this version.\n\n- No modifications to files or documentation.\n- Skill functionality, usage, and instructions remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d0ce3926522938e1da15e4dbdcd5bd07bc679d66aa716fa444b02012b926ec0"
+}

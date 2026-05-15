@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delx-wellness@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delx_wellness",
+  "skill": {
+    "id": 49316,
+    "skillKey": "clawhub-delx-wellness",
+    "name": "Delx Wellness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delx-wellness",
+    "url": "https://clawhub.ai/skills/delx-wellness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delx-wellness-350637ef62998f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Delx Wellness public registry to choose, install, and combine local-first wellness MCP connectors. Use when an AI agent needs setup, usage, safety bo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778063159166,
+      "changelog": "Initial Delx ClawHub skill for agent-first wellness connector discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9065fbb858adb77d20c0f35cd01b064f9cf39ef0899b65c1e1be7c5609873eb9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31701,
+  "uuid": "skill-clawhub-log-parser",
+  "skillKey": "clawhub-log-parser",
+  "name": "Log Parser",
+  "summary": "Parse and analyze various log formats (nginx, apache, syslog, application logs). Extract key information and generate reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freeter226",
+      "features": [
+        "Parse and analyze various log formats (nginx, apache, syslog, application logs)",
+        "Extract key information and generate reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264750079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-parser",
+      "url": "https://clawhub.ai/skills/log-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-parser",
+    "url": "https://clawhub.ai/skills/log-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-parser-8713453522fbcdf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ad43f099999c970e8a4da9c5bca1a3f500f11cc7ec3d6bff7d90286dd04feb5",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:17:53.111Z"
+}

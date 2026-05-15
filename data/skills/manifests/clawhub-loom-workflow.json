@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11212,
+  "uuid": "skill-clawhub-loom-workflow",
+  "skillKey": "clawhub-loom-workflow",
+  "name": "Loom Workflow",
+  "summary": "AI-native workflow analyzer for Loom recordings. Breaks down recorded business processes into structured, automatable workflows. Use when: - Analyzing Loom videos to understand workflows - Extracting steps, tools, and decision points from.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loom_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G9Pedro",
+      "features": [
+        "AI-native workflow analyzer for Loom recordings",
+        "Breaks down recorded business processes into structured, automatable workflows",
+        "Use when:",
+        "Analyzing Loom videos to understand workflows"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loom-workflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78662829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loom-workflow",
+      "url": "https://clawhub.ai/skills/loom-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loom-workflow",
+    "url": "https://clawhub.ai/skills/loom-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loom-workflow-e8e667a1503f99d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loom-workflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-loom-workflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad37e9456f112dba1b1e27819aed47b51a54b6b9ab1720c678db55f06d5e507c",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T03:41:06.707Z"
+}

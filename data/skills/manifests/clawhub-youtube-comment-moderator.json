@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22693,
+  "uuid": "skill-clawhub-youtube-comment-moderator",
+  "skillKey": "clawhub-youtube-comment-moderator",
+  "name": "YouTube Comment Moderator",
+  "summary": "AI-powered YouTube comment moderation. Fetches comments, classifies them (spam, question, praise, hate, neutral, constructive), drafts replies, and deletes s...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comment_moderator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dhruv Kar",
+      "features": [
+        "AI-powered YouTube comment moderation",
+        "Fetches comments, classifies them (spam, question, praise, hate, neutral, constructive), drafts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-comment-moderator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/680783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-comment-moderator",
+      "url": "https://clawhub.ai/skills/youtube-comment-moderator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comment-moderator",
+    "url": "https://clawhub.ai/skills/youtube-comment-moderator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comment-moderator-6683448b320a2929.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-comment-moderator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-comment-moderator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd44aa4f6181072badc3bc42cdd905b5ac338a7b5e4902e236a11a1517119a65",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T22:40:45.022Z"
+}

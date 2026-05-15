@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bingo@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bingo",
+  "skill": {
+    "id": 27679,
+    "skillKey": "clawhub-bingo",
+    "name": "Bingo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bingo",
+    "url": "https://clawhub.ai/skills/bingo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bingo-a45e2df6b898e7c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and play bingo cards with number calling and verification. Use when running bingo games."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773922114576,
+      "changelog": "v3.0.0: Complete rewrite with real functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a324c2a76e5e0eda4616360420c41be3a06f2d37ef1003986ac034be664b309b"
+}

@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "wechat-summarize",
+    "displayName": "微信公众号内容总结",
+    "summary": "抓取微信公众号文章并转换为Markdown，提取正文内容后总结核心观点或直接输出完整文章。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775896252744,
+    "updatedAt": 1777527418138
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775896252744,
+    "changelog": "- Initial release of the WeChat Official Account article reader skill.\n- Added wechat2md.py script for fetching and converting WeChat articles to Markdown format.\n- Removed previous plugin installation logic (scripts/start.mjs).\n- Standard workflow: fetch article by link, convert to markdown, summarize or output raw content, and auto-delete the output file unless requested.\n- Dependencies: html2text, beautifulsoup4, requests (auto-installed to /tmp/pylibs if missing).\n- Improved error handling and image support; clear user instructions for each step.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kongym1234",
+    "userId": "s171ka8j7h7b6rx3mf57gjswn984hpva",
+    "displayName": "kongym1234",
+    "image": "https://avatars.githubusercontent.com/u/37609239?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527418138
+  }
+}

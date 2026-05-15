@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retrospective@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retrospective",
+  "skill": {
+    "id": 35066,
+    "skillKey": "clawhub-retrospective",
+    "name": "Retrospective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retrospective",
+    "url": "https://clawhub.ai/skills/retrospective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retrospective-543a10bcd514d63a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured weekly agent retrospective. Analyses wins, failures, skill gaps, cron health, and config issues from the last 7 days. Produces honest, speci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidfurlong",
+      "userId": "publishers:davidfurlong",
+      "displayName": "David Furlong",
+      "image": "https://avatars.githubusercontent.com/u/614768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774094144540,
+      "changelog": "Initial release: Structured weekly agent retrospective for honest self-review.\n\n- Analyzes concrete wins, failures, skill gaps, cron health, and configuration issues from the past 7 days.\n- Produces specific, evidence-based output—avoiding generic platitudes.\n- Outputs in a detailed markdown template, including tables for struggles and skill gaps.\n- Auto-schedules a Friday cron job to run retrospectives weekly.\n- Triggerable via several keywords, such as \"retrospective\" or \"reflect\".\n- Includes explicit instructions for prioritizing actionable recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d7f4ee318b4ea8d8d3782458eafecc39fa8f0bf9cf7d74cc12e9809f7f339a7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-work@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_work",
+  "skill": {
+    "id": 67540,
+    "skillKey": "clawhub-team-work",
+    "name": "Team Work"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-work",
+    "url": "https://clawhub.ai/skills/team-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-work-c6b1f2af5522417b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "团队协作技能，用于多个 openclaw 智能体连接到同一个 team 中进行协作。主要功能包括：团队初始化注册、消息发送与接收、团队状态同步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "the-invulnus",
+      "userId": "s177trcrfz0ff7t5ddnw8dnajx83jg7h",
+      "displayName": "the-invulnus",
+      "image": "https://avatars.githubusercontent.com/u/22741607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774409662265,
+      "changelog": "team-work 0.1.1\n\n- 更新 Git 协作流程说明：明确了 Git 仓库授权、访问流程和失败后的处理方式。\n- 调整团队成员推送文件到 Git 的流程描述，更明确推送时机（任务分配或结果汇报前）。\n- 新增依据环境变量 GIT_AUTH_TYPE 判断 Git 认证方式的说明。\n- 优化了团队 lead 索要 Git 仓库地址和分支的简化步骤描述。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92d13bfd082d80551eb456ae63cbf7e3961f6f606e6e8c0adbea4ca1d5280c80"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56033,
+  "uuid": "skill-clawhub-data-format-converter",
+  "skillKey": "clawhub-data-format-converter",
+  "name": "Data Format Converter",
+  "summary": "Convert data efficiently between CSV, JSON, XML, YAML, and TOML formats including batch processing for CSV↔JSON, JSON↔YAML, XML↔JSON, and TOML↔JSON conversions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_format_converter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "Convert data efficiently between CSV, JSON, XML, YAML, and TOML formats including batch process."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-format-converter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-format-converter",
+      "url": "https://clawhub.ai/skills/data-format-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-format-converter",
+    "url": "https://clawhub.ai/skills/data-format-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-format-converter-d5ce68f77ef31a0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-format-converter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-format-converter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71cb192b16206a54f69b2ec8ede61d772e9cdb5ce8698e3f21cd2a40d9c98d75",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T04:09:05.116Z"
+}

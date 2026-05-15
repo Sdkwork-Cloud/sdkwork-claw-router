@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53227,
+  "uuid": "skill-clawhub-rag-chunking-optimizer",
+  "skillKey": "clawhub-rag-chunking-optimizer",
+  "name": "Rag Chunking Optimizer",
+  "summary": "Optimize RAG pipeline chunking strategy — analyze documents, recommend chunk sizes, splitting methods, overlap settings, and metadata enrichment for maximum...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_chunking_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Optimize RAG pipeline chunking strategy — analyze documents, recommend chunk sizes, splitting m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rag-chunking-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rag-chunking-optimizer",
+      "url": "https://clawhub.ai/skills/rag-chunking-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-chunking-optimizer",
+    "url": "https://clawhub.ai/skills/rag-chunking-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-chunking-optimizer-0114e3d1fc5c6818.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rag-chunking-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rag-chunking-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:544231b9121caea61478aadb66486c6ff5da584a7d3bfa0615d3e12dbcc1e3b6",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:38.138Z"
+}

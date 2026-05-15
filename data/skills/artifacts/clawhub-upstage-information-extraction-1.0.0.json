@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upstage-information-extraction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstage_information_extraction",
+  "skill": {
+    "id": 48663,
+    "skillKey": "clawhub-upstage-information-extraction",
+    "name": "Upstage Information Extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstage-information-extraction",
+    "url": "https://clawhub.ai/skills/upstage-information-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstage-information-extraction-c3b8aa057d5e59ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract specific named fields from documents using Upstage Information Extraction API with custom JSON schemas (sync/async) or prebuilt models for receipts,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upstage-deployment",
+      "userId": "s176wgta5t9fny3cxc4x84867x863zhs",
+      "displayName": "Upstage Deployment",
+      "image": "https://avatars.githubusercontent.com/u/124652596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 86,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778085486051,
+      "changelog": "Initial release of Upstage Information Extraction skill.\n\n- Extracts structured named fields from documents via Upstage Information Extraction API using custom JSON schemas or prebuilt models.\n- Supports both synchronous and asynchronous processing for large documents.\n- Includes detailed usage instructions, sample Python code, and schema requirements.\n- Prebuilt models available for receipts, invoices, waybills, bills of lading, and export certificates.\n- Output is saved as a JSON file; absolute path is always reported.\n- Provides tips for model selection, confidence scoring, and multi-document splitting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a68921dbb4c494cc91ad7481d7c5fe6d3243d74cfb497cbcaf4bf8ba9b6d57b"
+}

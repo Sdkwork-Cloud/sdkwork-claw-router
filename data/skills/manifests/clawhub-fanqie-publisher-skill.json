@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71760,
+  "uuid": "skill-clawhub-fanqie-publisher-skill",
+  "skillKey": "clawhub-fanqie-publisher-skill",
+  "name": "番茄小说自动发布",
+  "summary": "番茄小说章节自动发布工具。使用场景：(1) 发布单个章节到番茄小说平台；(2) 批量发布多个章节；(3) 存入草稿箱；(4) 登录番茄小说作家后台；(5) 查看作品列表和状态。触发词：番茄发布、番茄小说上传、发布章节、存入草稿箱、番茄登录。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanqie_publisher_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "followaf",
+      "features": [
+        "番茄小说章节自动发布工具。使用场景：(1) 发布单个章节到番茄小说平台；(2) 批量发布多个章节；(3) 存入草稿箱；(4) 登录番茄小说作家后台；(5) 查看作品列表和状态。触发词：番茄发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fanqie-publisher-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100986905?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fanqie-publisher-skill",
+      "url": "https://clawhub.ai/skills/fanqie-publisher-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanqie-publisher-skill",
+    "url": "https://clawhub.ai/skills/fanqie-publisher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanqie-publisher-skill-1661895f0085bd2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fanqie-publisher-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fanqie-publisher-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d3c355639e7b1a5a19a0218f4c40fcd7c9a8eba68f45c0e46b15baad3fb0ef",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:48:06.017Z"
+}

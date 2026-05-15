@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71123,
+  "uuid": "skill-clawhub-financial-data-collection",
+  "skillKey": "clawhub-financial-data-collection",
+  "name": "财政数据采集分析",
+  "summary": "中国财政部财政收支数据采集与分析。当用户提到以下场景时使用本 skill：(1) 抓取财政数据 - 触发词：抓取财政数据、采集财政数据、最新财政数据、财政数据采集；(2) 分析财政数据 - 触发词：分析财政数据、分析财政赤字、研究财政收入、对比财政收支。负责运行财政部官网的财政数据采集 pipeline，并对采集...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_data_collection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cy7533",
+      "features": [
+        "中国财政部财政收支数据采集与分析。当用户提到以下场景时使用本 skill：(1) 抓取财政数据",
+        "触发词：抓取财政数据、采集财政数据、最新财政数据、财政数据采集；(2) 分析财政数据",
+        "触发词：分析财政数据、分析财政赤字、研究财政收入、对比财政收支。负责运行财政部官网的财政数据采集 pipeline，并对采集..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-data-collection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49522916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-data-collection",
+      "url": "https://clawhub.ai/skills/financial-data-collection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-data-collection",
+    "url": "https://clawhub.ai/skills/financial-data-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-data-collection-b1d775ce11f71355.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-data-collection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-data-collection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c93dd369eb263d1d89cd5e22d2e6860dd93bdac44638fa0e5ac90ea5b0fc3d07",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:13:53.809Z"
+}

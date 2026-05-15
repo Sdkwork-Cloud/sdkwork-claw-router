@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22710,
+  "uuid": "skill-clawhub-oauth-providers",
+  "skillKey": "clawhub-oauth-providers",
+  "name": "OAuth Providers",
+  "summary": "Adds an \"OAuth\" settings tab to the OpenClaw Control UI for connecting AI model providers. Supports Anthropic Claude Pro/Max subscription tokens (setup-token...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oauth_providers",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Adds an \"OAuth\" settings tab to the OpenClaw Control UI for connecting AI model providers",
+        "Supports Anthropic Claude Pro/Max subscription tokens (setup-token..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oauth-providers@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oauth-providers",
+      "url": "https://clawhub.ai/skills/oauth-providers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oauth-providers",
+    "url": "https://clawhub.ai/skills/oauth-providers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oauth-providers-670244f51cf50017.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oauth-providers@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oauth-providers-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1c1c3e4ccf820fe6cf2839d5788e5a29340a2f38b395e85dedbbe5e891d0d81",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:35:15.417Z"
+}

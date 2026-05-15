@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59661,
+  "uuid": "skill-clawhub-nft-monitor",
+  "skillKey": "clawhub-nft-monitor",
+  "name": "NFT Monitor",
+  "summary": "NFT 监控 - 实时追踪稀有 NFT 和价格异动",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nft_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dht9898-cell",
+      "features": [
+        "实时追踪稀有 NFT 和价格异动"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nft-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232001010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nft-monitor",
+      "url": "https://clawhub.ai/skills/nft-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nft-monitor",
+    "url": "https://clawhub.ai/skills/nft-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nft-monitor-72c2e2edb5c6c61d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nft-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nft-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2648f4ae6099607a66619480b3f727c211f1b27a9d5544f7e33e0c7f505cd5f9",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:37:06.332Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeelin-auto-ppt@4.2.0",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_auto_ppt",
+  "skill": {
+    "id": 62090,
+    "skillKey": "clawhub-zeelin-auto-ppt",
+    "name": "ZeeLin Auto-PPT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-auto-ppt",
+    "url": "https://clawhub.ai/skills/zeelin-auto-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-auto-ppt-5dcaa5da1d465161.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成精美 PPT 演示文稿 — 通过 Google NotebookLM 生成图文并茂、设计感十足的 AI 幻灯片，导出 PDF 到桌面。用户需自行登录 NotebookLM 网页版。标题微软雅黑 40 号加粗，排版震撼，逻辑图清晰，内容有深度有创新，引用权威数据。配合 desearch skill 使用效果..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kelcey2023",
+      "userId": "s17d0yeqck74np9sh3ks2p1xx583hjnj",
+      "displayName": "kelcey2023",
+      "image": "https://avatars.githubusercontent.com/u/128341611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1358,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "4.2.0",
+      "createdAt": 1772758818465,
+      "changelog": "v4.2.0: 介绍中补充用户需自行登录 NotebookLM 网页版，避免遗漏登录环节",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:27ba407e3461c7d6a04613790f764a3e06f99d14bd0a49bd9b3efa04afaef0c8"
+}

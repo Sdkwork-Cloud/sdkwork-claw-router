@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12886,
+  "uuid": "skill-clawhub-fetch",
+  "skillKey": "clawhub-fetch",
+  "name": "Fetch",
+  "summary": "Public web retrieval and clean extraction engine. Use whenever the user wants to fetch, download, inspect, clean, or save content from a public URL. Supports...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Public web retrieval and clean extraction engine",
+        "Use whenever the user wants to fetch, download, inspect, clean, or save content from a public U.",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fetch",
+      "url": "https://clawhub.ai/skills/fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fetch",
+    "url": "https://clawhub.ai/skills/fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fetch-e7d3799ecc09f5cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbd0e2cae06341a78c1f2b716ca6f580943315816391bd203db926b3c48971d9",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:52:57.644Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71486,
+  "uuid": "skill-clawhub-music-tagger",
+  "skillKey": "clawhub-music-tagger",
+  "name": "Music Tagger",
+  "summary": "音乐文件批量标签工具，支持读取/编辑音乐元数据（歌名、艺术家、专辑、流派等），批量编辑标签，按标签整理音乐文件，预览模式和撤销功能！",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_tagger",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "音乐文件批量标签工具，支持读取/编辑音乐元数据（歌名、艺术家、专辑、流派等），批量编辑标签，按标签整理音乐文件，预览模式和撤销功能！"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-tagger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-tagger",
+      "url": "https://clawhub.ai/skills/music-tagger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-tagger",
+    "url": "https://clawhub.ai/skills/music-tagger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-tagger-5ffd1b8b5726f041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-tagger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-tagger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b0d95de1468864b226d49fee46e44b65f147202d4b8b184e28e49f6abced21",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:32:53.217Z"
+}

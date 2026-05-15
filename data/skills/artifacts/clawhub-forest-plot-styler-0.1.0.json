@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forest-plot-styler@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forest_plot_styler",
+  "skill": {
+    "id": 31400,
+    "skillKey": "clawhub-forest-plot-styler",
+    "name": "Forest Plot Styler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forest-plot-styler",
+    "url": "https://clawhub.ai/skills/forest-plot-styler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forest-plot-styler-0b4dbbac6ccbf501.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Beautify meta-analysis forest plots with customizable odds ratio points and confidence intervals"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773992828999,
+      "changelog": "Initial release—forest-plot-styler provides flexible, customizable forest plot generation for meta-analysis.\n\n- Draws high-quality forest plots from CSV/Excel data\n- Customizes odds ratio point sizes, shapes, and colors\n- Configures confidence interval line styles and pooled effect display\n- Supports subgroup analysis and multiple output formats (PNG, PDF, SVG)\n- Includes preset visual styles for different presentation needs\n- CLI script with comprehensive parameter controls for plot aesthetics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f77f24dd06d24b62c6247f826116b2d0455460ee5bcfc6a3481d37929125c42"
+}

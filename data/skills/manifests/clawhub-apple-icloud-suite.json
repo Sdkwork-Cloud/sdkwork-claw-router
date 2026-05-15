@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60974,
+  "uuid": "skill-clawhub-apple-icloud-suite",
+  "skillKey": "clawhub-apple-icloud-suite",
+  "name": "Apple Icloud Suite",
+  "summary": "Apple iCloud 全套服务操作：日历、照片、iCloud Drive、设备查找、提醒事项。 Use when: (1) 用户要求查看/创建/修改/删除日历事件或日程, (2) 用户说\"帮我看看今天有什么安排\"/\"加个日程\"/\"改一下会议时间\", (3) 用户要求查找/下载/管理 iCloud 照片, (4...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_icloud_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lovensky1992-wk",
+      "features": [
+        "Apple iCloud 全套服务操作：日历、照片、iCloud Drive、设备查找、提醒事项。 Use when: (1) 用户要求查看/创建/修改/删除日历事件或日程, (2) 用户说."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-icloud-suite@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264908128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-icloud-suite",
+      "url": "https://clawhub.ai/skills/apple-icloud-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-icloud-suite",
+    "url": "https://clawhub.ai/skills/apple-icloud-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-icloud-suite-4afb04af77d0beda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-icloud-suite@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-icloud-suite-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a05ed1765fba0fee5abb687a6d96cb91e521fae5a0ff56135534cb1c1816cba",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:36:48.003Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/didit-id-document-verification@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_id_document_verification",
+  "skill": {
+    "id": 22086,
+    "skillKey": "clawhub-didit-id-document-verification",
+    "name": "Didit Id Document Verification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-id-document-verification",
+    "url": "https://clawhub.ai/skills/didit-id-document-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-id-document-verification-665d9785be46a94d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verifies identity documents via the Didit standalone API. Use when verifying a passport, ID card, driver's license, or residence permit, performing OCR extra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rosasalberto",
+      "userId": "publishers:rosasalberto",
+      "displayName": "Didit",
+      "image": "https://avatars.githubusercontent.com/u/47662054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772514873011,
+      "changelog": "Verify ID documents with OCR, MRZ, and authenticity checks. Replaces didit-id-verification",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b429072ffc9ec7b2a04e539e06db40fc96a24308e5dbc6a4c8a6f84fae04147"
+}

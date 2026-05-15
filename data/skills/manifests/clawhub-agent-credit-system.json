@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13248,
+  "uuid": "skill-clawhub-agent-credit-system",
+  "skillKey": "clawhub-agent-credit-system",
+  "name": "KarmaBank",
+  "summary": "AI agents borrow USDC based on their Moltbook karma score. Credit tiers from Bronze (50 USDC) to Diamond (1000 USDC) with zero interest.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_credit_system",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abdhilabs",
+      "features": [
+        "AI agents borrow USDC based on their Moltbook karma score",
+        "Credit tiers from Bronze (50 USDC) to Diamond (1000 USDC) with zero interest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-credit-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28172248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-credit-system",
+      "url": "https://clawhub.ai/skills/agent-credit-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-credit-system",
+    "url": "https://clawhub.ai/skills/agent-credit-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-credit-system-cd74a297405c7b4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-credit-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-credit-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d81342fefc1b40fa2061f6020625b5085ced69e0c1d3222c327bf1e09df2f9",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T06:32:58.600Z"
+}

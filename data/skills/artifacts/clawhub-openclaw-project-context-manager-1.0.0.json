@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-project-context-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_project_context_manager",
+  "skill": {
+    "id": 63554,
+    "skillKey": "clawhub-openclaw-project-context-manager",
+    "name": "Project Context Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-project-context-manager",
+    "url": "https://clawhub.ai/skills/openclaw-project-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-project-context-manager-e8cf12c692e5ed1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用统一规则管理长期项目的发现、进入、退出、恢复与阶段性固化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuboyang025-sketch",
+      "userId": "s17aq6f61893azf4b5t9xk4r6n83gzkv",
+      "displayName": "liuboyang025-sketch",
+      "image": "https://avatars.githubusercontent.com/u/260373994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773825459935,
+      "changelog": "Initial release: establishes a universal, file-based long-term project context management system for multi-project workflows.\n\n- Defines workspace-level rule files (e.g., PROJECT_SYSTEM.md) and per-project standard structures, supporting explicit project enter, recover, and checkpoint actions.\n- Formalizes processes for project discovery, confirmation, entry, exit, and state recovery; prevents accidental mixing of project context and chat.\n- Introduces standard project folder templates, including recovery entry, documentation index, checkpoints, and decision logs.\n- Provides initialization script for creating compliant project structures.\n- Sets out clear boundaries: project context is managed by files, distinct from UI session switching, and without hardcoded project assumptions.\n- Establishes strict anti-interruption and prompt rules, ensuring user intent always controls project management workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c148cd5a7dafa43f31ee74d4e792d4adbf2190e4d773c75d0db8c5bc014c8ab"
+}

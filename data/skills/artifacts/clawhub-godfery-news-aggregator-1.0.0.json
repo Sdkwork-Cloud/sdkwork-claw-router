@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/godfery-news-aggregator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godfery_news_aggregator",
+  "skill": {
+    "id": 66751,
+    "skillKey": "clawhub-godfery-news-aggregator",
+    "name": "news-aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godfery-news-aggregator",
+    "url": "https://clawhub.ai/skills/godfery-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godfery-news-aggregator-588ad6d6dc21aa52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776760723916,
+      "changelog": "News Aggregator 1.0.3 introduces structured multi-source aggregation with a focus on reliability.\n\n- Aggregates domestic and international news in technology, military, and society sectors.\n- Defines trusted news sources for each category.\n- Implements a workflow for searching, filtering, organizing, and summarizing news.\n- Uses the SkillBoss API Hub for unified news retrieval (replacing third-party search services).\n- Applies credibility guidelines to prioritize reliable information.\n- Provides a clear output format for easy reading.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e109013ec95504a9f66b8e3aab7df82e08e0927d83a603ad1a2958bf37cb1803"
+}

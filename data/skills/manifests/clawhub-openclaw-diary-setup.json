@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64758,
+  "uuid": "skill-clawhub-openclaw-diary-setup",
+  "skillKey": "clawhub-openclaw-diary-setup",
+  "name": "Openclaw Diary Setup",
+  "summary": "OpenClaw Diary 日记系统安装向导。引导用户完成日记系统的初始化设置，包括人设选择、用户身份建立、存储配置和授权管理。 **立即触发当**：用户说「setup my journal」「初始化日记」「配置日记系统」「journal setup」「开始设置日记」。 **主动触发当**：用户首次尝试使用 d...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diary_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smorzandos",
+      "features": [
+        "OpenClaw Diary 日记系统安装向导。引导用户完成日记系统的初始化设置，包括人设选择、用户身份建立、存储配置和授权管理。 **立即触发当**：用户说「setup my journa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-diary-setup@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124900390?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-diary-setup",
+      "url": "https://clawhub.ai/skills/openclaw-diary-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diary-setup",
+    "url": "https://clawhub.ai/skills/openclaw-diary-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diary-setup-c10577e75b933e94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-diary-setup@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-diary-setup-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fa41a93c56b3a1ccc666b111900d4c0c4fc3a3d05a759ee1b926319eb40495f",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:45:32.528Z"
+}

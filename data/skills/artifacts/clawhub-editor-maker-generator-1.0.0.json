@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-maker-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_maker_generator",
+  "skill": {
+    "id": 47089,
+    "skillKey": "clawhub-editor-maker-generator",
+    "name": "Editor Maker Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-maker-generator",
+    "url": "https://clawhub.ai/skills/editor-maker-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-maker-generator-2553d7f2dadeb05e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited video files ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777163379121,
+      "changelog": "Initial release of Editor Maker Generator — AI-powered cloud video editor.\n\n- Instantly edit and export videos by uploading footage and describing your needs in plain language.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB; exports in 1080p MP4 by default.\n- Automated setup connects to a cloud backend, checking for necessary tokens and configuring sessions.\n- Handles upload, editing, status, and export workflows with real-time feedback.\n- Guides users through error handling (e.g., token issues, file limits) and displays clear progress updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f261ac7de7c22eacb1ed4d2c846966ed94d1868c39ec4acf95ccc45bcbddded"
+}

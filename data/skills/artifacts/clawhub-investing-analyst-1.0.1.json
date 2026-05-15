@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investing-analyst@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investing_analyst",
+  "skill": {
+    "id": 17908,
+    "skillKey": "clawhub-investing-analyst",
+    "name": "Investing Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investing-analyst",
+    "url": "https://clawhub.ai/skills/investing-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investing-analyst-ecd26b9745d13c8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Thesis-driven equity and options trading analyst. Use when: (1) evaluating a trade idea before entering a position, (2) analyzing options pricing via IV vs H..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "browndroid",
+      "userId": "publishers:browndroid",
+      "displayName": "browndroid",
+      "image": "https://avatars.githubusercontent.com/u/10083546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772210888975,
+      "changelog": "Generalized personal trade history, specific stock names, and examples. Now universally applicable. BS sheet kept with make-a-copy instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d919f768272aaead2785262753c7abaf374a477f8d06bd86af955be71315f709"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64200,
+  "uuid": "skill-clawhub-blueprint-generator",
+  "skillKey": "clawhub-blueprint-generator",
+  "name": "Blueprint Generator",
+  "summary": "UE蓝图+材质双模式生成器。当主人说\"蓝图生成器\"、\"材质生成器\"、\"合并生成器\"时触发。已合并为统一App，支持Tab切换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blueprint_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianheihei002",
+      "features": [
+        "UE蓝图+材质双模式生成器。当主人说\"蓝图生成器\"、\"材质生成器\"、\"合并生成器\"时触发。已合并为统一App，支持Tab切换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blueprint-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193375545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blueprint-generator",
+      "url": "https://clawhub.ai/skills/blueprint-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blueprint-generator",
+    "url": "https://clawhub.ai/skills/blueprint-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blueprint-generator-79039a7fa9b6383f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blueprint-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blueprint-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10e815a1c1d3f8667d7931df65f8beda83effc04b6f0166ba6bc07acc9df81b2",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:38:43.895Z"
+}

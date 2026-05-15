@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/betterprompt@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betterprompt",
+  "skill": {
+    "id": 26379,
+    "skillKey": "clawhub-betterprompt",
+    "name": "BetterPrompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betterprompt",
+    "url": "https://clawhub.ai/skills/betterprompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betterprompt-1b3d78184de15a5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, install, and run reusable AI prompt skills from the BetterPrompt registry via the CLI (betterprompt / bp). Use when a user needs to find a prompt s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeqle",
+      "userId": "s173yt7zepze77yd3e8d3ap1nd83jp8v",
+      "displayName": "Mike Le",
+      "image": "https://avatars.githubusercontent.com/u/17660236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774581802417,
+      "changelog": "- Added support for image input via local file path with `--image-input-path <path>` (auto-compressed) during output generation.\n- No other changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e312652cd789eed37306ea1fc7b7effd002a88c4faf6fd6abd973b26df71e64f"
+}

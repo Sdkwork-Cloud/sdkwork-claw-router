@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-engineering-for-projects-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_engineering_for_projects_skill",
+  "skill": {
+    "id": 58282,
+    "skillKey": "clawhub-context-engineering-for-projects-skill",
+    "name": "Context Engineering For Projects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-engineering-for-projects-skill",
+    "url": "https://clawhub.ai/skills/context-engineering-for-projects-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-engineering-for-projects-skill-7c520f2acb5b9547.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build or initialize team-style project context directories for context engineering. Use when the user says “构建/初始化项目上下文”, “针对该项目构建上下文”, **or** in English phr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lywhlao2025",
+      "userId": "s173yn541dzcexc4n5cshcwhws83krz1",
+      "displayName": "lywhlao2025",
+      "image": "https://avatars.githubusercontent.com/u/215267987?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773063182296,
+      "changelog": "- Expanded trigger phrases in the skill description to include common English commands, enabling the skill with prompts like “build/initialize project context”, “scaffold project context”, “set up team context”, and others.\n- No changes to workflow, output templates, or content structure.\n- No impact on usage for existing Chinese trigger phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:048f923dcd7adb438e24e2fecbe57440f4310549d14d88d7d5e0d7ced9b2760b"
+}

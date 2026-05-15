@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liberfi-auth@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liberfi_auth",
+  "skill": {
+    "id": 37834,
+    "skillKey": "clawhub-liberfi-auth",
+    "name": "Liberfi Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liberfi-auth",
+    "url": "https://clawhub.ai/skills/liberfi-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liberfi-auth-4a8e529958c088b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authenticate with LiberFi: register a new account, log in, manage session state, and verify wallet assignments. Two login modes are supported: 1. Key-based (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombmod",
+      "userId": "s1734k5ar8v7bcr162fx2j8xgn842ywy",
+      "displayName": "bombmod",
+      "image": "https://avatars.githubusercontent.com/u/212038798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776696797540,
+      "changelog": "Make CLI install instructions explicit and unambiguous; tell agents the npm package is @liberfi.io/cli, fall back to --registry https://registry.npmjs.org/ on mirror lag, and never report 'package not found'.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d12fe4524ede343dd72df4c3d8dbed4359c3868458ca599845987958e789fdc5"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17731,
+  "uuid": "skill-clawhub-lemlist-official",
+  "skillKey": "clawhub-lemlist-official",
+  "name": "lemlist official",
+  "summary": "Official Lemlist API integration for sales automation and multichannel outreach. Use this skill when users want to: - Manage campaigns (create, list, pause,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lemlist_official",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mickael Faivre-Maçon",
+      "features": [
+        "Official Lemlist API integration for sales automation and multichannel outreach",
+        "Use this skill when users want to:",
+        "Manage campaigns (create, list, pause,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lemlist-official@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lemlist-official",
+      "url": "https://clawhub.ai/skills/lemlist-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lemlist-official",
+    "url": "https://clawhub.ai/skills/lemlist-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lemlist-official-71e5b98dbd8d1327.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lemlist-official@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lemlist-official-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e5e08b51c1a421c71280b174bcae9a018312c75c901485436af1a56d8567b90",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T13:50:45.672Z"
+}

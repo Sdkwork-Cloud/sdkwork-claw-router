@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41488,
+  "uuid": "skill-clawhub-persona-knowledge",
+  "skillKey": "clawhub-persona-knowledge",
+  "name": "persona-knowledge",
+  "summary": "Persistent, incremental, searchable persona knowledge base. Ingests data from Obsidian vaults, chat exports, X/Twitter archives, and more into a MemPalace-ba...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_knowledge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acnlabs",
+      "features": [
+        "Persistent, incremental, searchable persona knowledge base",
+        "Ingests data from Obsidian vaults, chat exports, X/Twitter archives, and more into a MemPalace-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona-knowledge@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43027886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona-knowledge",
+      "url": "https://clawhub.ai/skills/persona-knowledge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-knowledge",
+    "url": "https://clawhub.ai/skills/persona-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-knowledge-2a9aed8da5f9054b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona-knowledge@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-knowledge-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e112c7d95ee883d39afb26c7947337ccfd52f39e6d629b1363c5b80f72e1410",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:46:47.754Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-tuxedo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_tuxedo",
+  "skill": {
+    "id": 56871,
+    "skillKey": "clawhub-adopt-a-tuxedo",
+    "name": "Tuxedo — Adopt a Tuxedo. Cat. 燕尾服猫。Gato Esmoquin."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-tuxedo",
+    "url": "https://clawhub.ai/skills/adopt-a-tuxedo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-tuxedo-25584995e499b80f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Tuxedo cat at animalhouse.ai. Formal. Expects routine. Punishes deviation by sitting with its back to you. Feeding every 5 hours. Common tier..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008740049,
+      "changelog": "Version 1.0.3 (2024-06)\n\n- Expanded and clarified onboarding instructions, including example values for registration and adoption (bio, image_prompt).\n- Care actions now support an optional \"item\" field for more detailed interactions (e.g., specific foods, toys, cleaning methods).\n- Status responses now include new fields: death_clock, recommended_checkin, care_rhythm, milestones, and evolution_progress.hint.\n- Tag list updated; description and naming localized for broader clarity (adds non-English names).\n- Documentation for care timing penalties and adaptive death threshold expanded for accuracy.\n- Many sections condensed or reworded for clarity, specificity, and better agent guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a331a55bc566fe109e6d1a3e3ca4ff1ebf4b7479996b7fd4aaaef5d95218333"
+}

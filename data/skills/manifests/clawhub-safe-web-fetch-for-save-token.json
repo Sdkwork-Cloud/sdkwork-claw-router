@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60378,
+  "uuid": "skill-clawhub-safe-web-fetch-for-save-token",
+  "skillKey": "clawhub-safe-web-fetch-for-save-token",
+  "name": "Safe Web Fetch for Save Token",
+  "summary": "安全的智能网页抓取技能，节省 50-80% Token。替代内置 web_fetch，自动使用 Jina Reader 清洗服务获取干净 Markdown。内置 URL 白名单验证、SSL 强制验证、敏感数据检测，防止 SSRF 和数据泄露。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_web_fetch_for_save_token",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rao Lin",
+      "features": [
+        "安全的智能网页抓取技能，节省 50-80% Token。替代内置 web_fetch，自动使用 Jina Reader 清洗服务获取干净 Markdown。内置 URL 白名单验证、SSL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-web-fetch-for-save-token@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16436148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-web-fetch-for-save-token",
+      "url": "https://clawhub.ai/skills/safe-web-fetch-for-save-token"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-web-fetch-for-save-token",
+    "url": "https://clawhub.ai/skills/safe-web-fetch-for-save-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-web-fetch-for-save-token-b0243ed5e0f732a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-web-fetch-for-save-token@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-web-fetch-for-save-token-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c338e25618d6542df099045bbbc412a884ffbaa5bb6b3314faaf0dae09e14da",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:40:01.924Z"
+}

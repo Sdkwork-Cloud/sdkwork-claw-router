@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-engineering@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_engineering",
+  "skill": {
+    "id": 26585,
+    "skillKey": "clawhub-design-engineering",
+    "name": "Design Engineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-engineering",
+    "url": "https://clawhub.ai/skills/design-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-engineering-ecbe22a6c30df183.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate iterative design and frontend engineering work through research, planning, sub-agent execution, and validation loops. Use when a visual/UI task r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774843025857,
+      "changelog": "- Added explicit versioning to SKILL.md (now version 1.2.0).\n- Expanded scope & safety guidelines to clarify file system boundaries, restrict sub-agent file access, and ensure all operations remain within the project root.\n- Tightened Playwright usage description: screenshots are taken only on local servers, never external URLs.\n- Stated that no data or credentials are ever sent to external endpoints.\n- No changes to core iteration workflow; all new content is focused on clarifying safety, privacy, and project boundary controls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd4ccb7e2c7e9d17407ed72f86db79b093725707470121dcfd1ed67bc04121b1"
+}

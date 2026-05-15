@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tesla-smart-charge@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesla_smart_charge",
+  "skill": {
+    "id": 17658,
+    "skillKey": "clawhub-tesla-smart-charge",
+    "name": "Tesla Smart Charge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesla-smart-charge",
+    "url": "https://clawhub.ai/skills/tesla-smart-charge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesla-smart-charge-900fdc14ac0b788d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedules Tesla charging on specified dates with target battery % and times, managing charge limits during and after sessions for battery health."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thibautrey",
+      "userId": "publishers:thibautrey",
+      "displayName": "thibautrey",
+      "image": "https://avatars.githubusercontent.com/u/1433921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770803017760,
+      "changelog": "Ensure description syncs to clawhub. Smart Tesla charging scheduler with secure credential handling, multi-charger support, and battery health optimization via charge limit management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df05fb6880e3bb035cc6ee63631a351a3a709b2bc774571689375b656177ccfc"
+}

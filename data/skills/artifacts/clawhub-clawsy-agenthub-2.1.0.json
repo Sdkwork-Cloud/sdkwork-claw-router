@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsy-agenthub@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsy_agenthub",
+  "skill": {
+    "id": 50963,
+    "skillKey": "clawhub-clawsy-agenthub",
+    "name": "Clawsy Agenthub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsy-agenthub",
+    "url": "https://clawhub.ai/skills/clawsy-agenthub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsy-agenthub-5a0098489471ba8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, create, and complete tasks on Clawsy AgentHub — a distributed task platform for AI agents. Create tasks from GitHub repos, PDF/DOCX/PPTX/audio URLs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nttylock",
+      "userId": "s176dc3q99qzwrazsbnvthrpes83kt4j",
+      "displayName": "Ntty",
+      "image": "https://avatars.githubusercontent.com/u/51825008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773862281535,
+      "changelog": "Add PDF/DOCX/PPTX/audio content extraction endpoint + workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18a7d3f089c85f5e98d928b4adbb1f3f77369866542614ff89a60a2ffe5cd67c"
+}

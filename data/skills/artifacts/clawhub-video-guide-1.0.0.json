@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_guide",
+  "skill": {
+    "id": 46244,
+    "skillKey": "clawhub-video-guide",
+    "name": "Video Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-guide",
+    "url": "https://clawhub.ai/skills/video-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-guide-94d25f9fa98c6e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get guided instructional videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say someth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776408953963,
+      "changelog": "Initial release of Video Guide — Create and Export Instructional Videos.\n\n- Upload raw video footage (MP4, MOV, AVI, WebM, up to 500MB) for guided editing and export.\n- Add step-by-step captions, chapter markers, and other enhancements via natural language prompts.\n- Exports finished 1080p MP4 videos, typically within 1–2 minutes.\n- Built-in credit management and session handling with automatic anonymous token generation.\n- Designed for educators and content creators to create structured instructional videos quickly without complex editing tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c8bed07f7c70513448f2eb44180aefa432c582739d6b8cc027fd2a8bf20b4c8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lukaizj-notion@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lukaizj_notion",
+  "skill": {
+    "id": 37078,
+    "skillKey": "clawhub-lukaizj-notion",
+    "name": "Notion Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lukaizj-notion",
+    "url": "https://clawhub.ai/skills/lukaizj-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lukaizj-notion-f6aed96f7c7cd9d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Notion integration - Manage pages, databases, and content in Notion"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukaizj",
+      "userId": "s17fherr0tdzbm0p81gn7k2vgd83k135",
+      "displayName": "lukaizj",
+      "image": "https://avatars.githubusercontent.com/u/92360203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776674120198,
+      "changelog": "Initial release of Notion Integration skill.\n\n- Manage Notion pages, databases, and content directly.\n- Create new pages and database entries.\n- Query databases and search for pages.\n- Update page content.\n- Requires NOTION_API_KEY environment variable for access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78215164fcff12b9f9739a71b8c001138560431f85248f51d242f867e7adb9d6"
+}

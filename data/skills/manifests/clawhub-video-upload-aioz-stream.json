@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13912,
+  "uuid": "skill-clawhub-video-upload-aioz-stream",
+  "skillKey": "clawhub-video-upload-aioz-stream",
+  "name": "Upload video to AIOZ Stream",
+  "summary": "Quick upload video to AIOZ Stream API. Create video objects with default or custom encoding configurations, upload the file, complete the upload, then return the video link to the user.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_upload_aioz_stream",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vinhbui3004",
+      "features": [
+        "Quick upload video to AIOZ Stream API",
+        "Create video objects with default or custom encoding configurations, upload the file, complete."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-upload-aioz-stream@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173021430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-upload-aioz-stream",
+      "url": "https://clawhub.ai/skills/video-upload-aioz-stream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-upload-aioz-stream",
+    "url": "https://clawhub.ai/skills/video-upload-aioz-stream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-upload-aioz-stream-245ae343f66145b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-upload-aioz-stream@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-upload-aioz-stream-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a3e15c37d6b442ba52bd115765ab90dd75c1f99bb3846b331ef0d4bf0bc10cf",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T08:45:22.904Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fun-asr-file@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fun_asr_file",
+  "skill": {
+    "id": 65975,
+    "skillKey": "clawhub-fun-asr-file",
+    "name": "Fun-ASR-File"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fun-asr-file",
+    "url": "https://clawhub.ai/skills/fun-asr-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fun-asr-file-e8e0bfb7ebf8c311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "阿里云百炼 FunASR 本地音频文件识别（非流式），使用阿里云 DashScope API 进行语音转文字。针对本地音频文件优化，支持自动格式转换，适合批量文件转写场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenggongdu",
+      "userId": "s1767sqj4rn7nty5ka6xnbanp183g1p7",
+      "displayName": "chenggongdu",
+      "image": "https://avatars.githubusercontent.com/u/38181431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775723261900,
+      "changelog": "改为非流式调用，优化本地音频文件处理，支持自动格式转换",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ef893a327bd38245923e37f199fb12f218e28fb07ba4465f935ddd1d787f1fd"
+}

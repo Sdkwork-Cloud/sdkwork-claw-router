@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48602,
+  "uuid": "skill-clawhub-mcp-skill-hardened",
+  "skillKey": "clawhub-mcp-skill-hardened",
+  "name": "Mcp Skill Hardened",
+  "summary": "Wraps the Exa MCP server (mcp.exa.ai) for web search, deep research, and related tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_skill_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Wraps the Exa MCP server (mcp.exa.ai) for web search, deep research, and related tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-skill-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-skill-hardened",
+      "url": "https://clawhub.ai/skills/mcp-skill-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-skill-hardened",
+    "url": "https://clawhub.ai/skills/mcp-skill-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-skill-hardened-0864eacb963d138b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-skill-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-skill-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1977f667f4c2933e0bd723941365596ab16faa0576681f63b47433851f63dd43",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:01:03.032Z"
+}

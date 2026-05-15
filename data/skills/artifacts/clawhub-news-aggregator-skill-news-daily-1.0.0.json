@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-aggregator-skill-news-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_aggregator_skill_news_daily",
+  "skill": {
+    "id": 66688,
+    "skillKey": "clawhub-news-aggregator-skill-news-daily",
+    "name": "每日综合新闻（基于news-aggregator-skill并发送至飞书文档）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-aggregator-skill-news-daily",
+    "url": "https://clawhub.ai/skills/news-aggregator-skill-news-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-aggregator-skill-news-daily-1ce92b037d8c41ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日综合新闻简报 - 自动抓取并生成包含科技、财经、热点的综合报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arsoooo",
+      "userId": "s17a2m8qv65ahp55zw1tr8w0gh84w6kz",
+      "displayName": "arsoooo",
+      "image": "https://avatars.githubusercontent.com/u/41410134?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776266015723,
+      "changelog": "news-aggregator-skill-news-daily 1.0.0\n\n- 首次发布：自动抓取和生成每日综合新闻简报\n- 集成四大新闻板块：综合热门、科技简报、财经动态、热点追踪\n- 支持多新闻源（Hacker News、微博、V2EX、GitHub Trending、Product Hunt 等）\n- 通过关键词触发，按板块整理新闻并输出为 markdown 格式\n- 自动保存每日报告至本地目录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4c1869ed964c1e0423126f5a1d0fe062da364b7b8134026ac75f65ec866d4d0"
+}

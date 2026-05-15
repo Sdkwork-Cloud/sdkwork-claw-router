@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-search-rank-tracker@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_search_rank_tracker",
+  "skill": {
+    "id": 24535,
+    "skillKey": "clawhub-ai-search-rank-tracker",
+    "name": "Ai Search Rank Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-search-rank-tracker",
+    "url": "https://clawhub.ai/skills/ai-search-rank-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-search-rank-tracker-38f1b7fea6bd69b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track whether ChatGPT, Claude, Gemini, and Perplexity recommend a startup or brand across a prompt set. Use when you need AI search visibility tracking, GEO..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-rayluan",
+      "userId": "s17c0n0ce78mre7mrytgzehcwn83hkp1",
+      "displayName": "X-RayLuan",
+      "image": "https://avatars.githubusercontent.com/u/150766707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777021182558,
+      "changelog": "Version 0.1.1 of ai-search-rank-tracker introduces a built-in prompt database for larger and more granular AI search visibility scans.\n\n- Added prompt database under prompt-db/ with categories: SaaS, AI tools, Developer tools, OpenClaw ecosystem, and Local AI tools.\n- Each prompt includes category and commercial metadata for grouping and analysis by intent, journey stage, and buyer value.\n- Updated documentation to reflect the new prompt database and its usage.\n- No changes to core tracking or reporting logic; main enhancement is prompt management and metadata.\n- Improved organization for running larger GEO / AI SEO scans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f22a78507c47570b1ef8676e740bae62a53062cf6df39dd59417e927fc0446ef"
+}

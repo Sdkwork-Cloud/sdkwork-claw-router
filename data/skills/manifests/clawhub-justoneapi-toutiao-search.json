@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49551,
+  "uuid": "skill-clawhub-justoneapi-toutiao-search",
+  "skillKey": "clawhub-justoneapi-toutiao-search",
+  "name": "Toutiao Search API",
+  "summary": "Call 2 search versions for Toutiao App Keyword Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_toutiao_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call 2 search versions for Toutiao App Keyword Search through JustOneAPI with keyword."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-toutiao-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-toutiao-search",
+      "url": "https://clawhub.ai/skills/justoneapi-toutiao-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-toutiao-search",
+    "url": "https://clawhub.ai/skills/justoneapi-toutiao-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-toutiao-search-0dae05e136ef934a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-toutiao-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-toutiao-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52e12ee945992e494f8a383b130ae8169a4e7fd5f9d8e63750d668b49ffad7c6",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T04:34:30.155Z"
+}

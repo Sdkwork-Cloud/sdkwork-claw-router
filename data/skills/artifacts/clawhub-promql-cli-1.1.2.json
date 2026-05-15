@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promql-cli@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promql_cli",
+  "skill": {
+    "id": 52111,
+    "skillKey": "clawhub-promql-cli",
+    "name": "Promql Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promql-cli",
+    "url": "https://clawhub.ai/skills/promql-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promql-cli-bf633eb4c1aace97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for querying Prometheus and PromQL-compatible engines (Thanos, Cortex, VictoriaMetrics, Grafana Mimir, Grafana Tempo...) — instant queries, range queries..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774359260592,
+      "changelog": "No changes detected in this release.\n\n- Version update only; no file or documentation changes.\n- All existing features and behaviors remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1ce26904f89c672ed881e00e5e030d57d8ddb0a75f4173eb81d2cba95d7aaaa"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-capability-bug-closure@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_capability_bug_closure",
+  "skill": {
+    "id": 67905,
+    "skillKey": "clawhub-multi-capability-bug-closure",
+    "name": "multi-capability-bug-closure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-capability-bug-closure",
+    "url": "https://clawhub.ai/skills/multi-capability-bug-closure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-capability-bug-closure-f924f9e69d3792a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一调用源码、数据库、服务器日志、软件平台查询等多能力体系进行 BUG 定位与闭环论证。用于用户要求“必须基于真实数据给出结论与证据链”，而非仅代码静态分析的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgvgfgvh",
+      "userId": "s174x9jg32fvtnq226ytye9w3d83h6tm",
+      "displayName": "hgvgfgvh",
+      "image": "https://avatars.githubusercontent.com/u/150424835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774250007714,
+      "changelog": "Initial release of multi-capability-bug-closure skill:\n\n- Provides a standardized, multi-source approach for evidence-based bug localization and closure.\n- Enforces mandatory use of real data from code, database, server logs, and software platform queries before drawing conclusions.\n- Includes strict capability checks before execution; alerts users if any data source is unavailable and provides actionable recommendations.\n- Follows a required workflow: issue structuring, server log and database forensics, code mechanism analysis, software platform validation, evidence chain merging, and actionable closure/reporting.\n- Supplies a clear and replicable output template covering evidence, root cause, confidence rating, remediation steps, and verification criteria.\n- Prohibits definitive conclusions without full data; lists missing evidence if capabilities are incomplete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44e6b21838518f8e4cb0b217c85b319fe663712bc1a78b9ac4adc5e981e28809"
+}

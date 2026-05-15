@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66896,
+  "uuid": "skill-clawhub-idea-storm",
+  "skillKey": "clawhub-idea-storm",
+  "name": "Idea Storm",
+  "summary": "工程问题的自动化迭代实验室。给定一个 idea 或工程问题，自动调研方案、设计实现、验证效果、迭代优化，结果存入 Notion。触发词：\"idea-lab\"、\"实验一下\"、\"帮我验证\"、\"迭代优化\"、\"idea 验证\"。当用户提出一个工程问题并希望自动化地调研→设计→验证→迭代时使用此 skill。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_storm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c4chuan",
+      "features": [
+        "工程问题的自动化迭代实验室。给定一个 idea 或工程问题，自动调研方案、设计实现、验证效果、迭代优化，结果存入 Notion。触发词：\"idea-lab\"、\"实验一下\"、\"帮我验证\"、\"迭."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-storm@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91056616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-storm",
+      "url": "https://clawhub.ai/skills/idea-storm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-storm",
+    "url": "https://clawhub.ai/skills/idea-storm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-storm-d75835caa07f094b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-storm@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-storm-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f48a637cf8cc1ce6724c7a24df7fe00afadcc3874c0a5600d8a748a9c66d8eb2",
+      "artifactSizeBytes": 2669
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T10:37:56.084Z"
+}

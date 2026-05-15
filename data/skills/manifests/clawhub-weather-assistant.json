@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70256,
+  "uuid": "skill-clawhub-weather-assistant",
+  "skillKey": "clawhub-weather-assistant",
+  "name": "Weather Assistant",
+  "summary": "天气助手。查询任意城市天气、编辑城市配置、定时推送天气到微信（附名人名言）。当用户提到天气、查天气、天气推送、每日天气、城市配置、weather 时触发。使用前需配置城市列表和微信推送参数。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JerryAction",
+      "features": [
+        "天气助手。查询任意城市天气、编辑城市配置、定时推送天气到微信（附名人名言）。当用户提到天气、查天气、天气推送、每日天气、城市配置、weather 时触发。使用前需配置城市列表和微信推送参数。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-assistant@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44667395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-assistant",
+      "url": "https://clawhub.ai/skills/weather-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-assistant",
+    "url": "https://clawhub.ai/skills/weather-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-assistant-ac7545561fec8bfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-assistant@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-assistant-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a385bd6f267cc6705f7940b2a10c46edca596bb8820970ee82236ddb767f40b0",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T10:35:57.959Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53479,
+  "uuid": "skill-clawhub-salesforce-ops",
+  "skillKey": "clawhub-salesforce-ops",
+  "name": "Salesforce",
+  "summary": "Search Salesforce records, inspect objects, query CRM data, and work with accounts, contacts, leads, opportunities, and cases — powered by ClawLink.",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Search Salesforce records, inspect objects, query CRM data, and work with accounts, contacts, l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-ops@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-ops",
+      "url": "https://clawhub.ai/skills/salesforce-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-ops",
+    "url": "https://clawhub.ai/skills/salesforce-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-ops-717c5eabd3cfeca5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-ops@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-ops-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbc5fca9d23823e7397e6394b6a720e50dc09982fb43b70f06dbb68f57eab094",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:30:54.971Z"
+}

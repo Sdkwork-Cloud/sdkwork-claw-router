@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-workspace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_workspace",
+  "skill": {
+    "id": 54472,
+    "skillKey": "clawhub-notion-workspace",
+    "name": "Notion Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-workspace",
+    "url": "https://clawhub.ai/skills/notion-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-workspace-cfdebda1972d19ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full Notion API skill — query databases, manage pages, append blocks, and search your entire workspace."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr3kstyle",
+      "userId": "publishers:fr3kstyle",
+      "displayName": "fr3kstyle",
+      "image": "https://avatars.githubusercontent.com/u/218435724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774091582781,
+      "changelog": "Databases, pages, blocks, search via Notion API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bceb436078699fe74e1172ed875bede95a0f740944545eedde5d7df05e46eab9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zt4ai-self-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zt4ai_self_audit",
+  "skill": {
+    "id": 36212,
+    "skillKey": "clawhub-zt4ai-self-audit",
+    "name": "ZT4AI Self-Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zt4ai-self-audit",
+    "url": "https://clawhub.ai/skills/zt4ai-self-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zt4ai-self-audit-f7c6f9cb8e96e6a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero Trust security audit for AI agent workspaces, skills, and configurations. Based on Microsoft's Zero Trust for AI (ZT4AI) framework and the \"Caging the A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanarchytan",
+      "userId": "s171qen98ev2sf1yjgghwndrnh83hhrb",
+      "displayName": "tanarchytan",
+      "image": "https://avatars.githubusercontent.com/u/2339027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774127389228,
+      "changelog": "Initial release: Zero Trust audit for AI agent skills, based on Microsoft ZT4AI and arXiv:2603.17419",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd8eef4ce6ce36014f453eb9c90ba15f543456678a02ed92a9dee315eb22bafb"
+}

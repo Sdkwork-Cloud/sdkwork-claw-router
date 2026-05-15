@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10808,
+  "uuid": "skill-clawhub-suno-browser-songmaking",
+  "skillKey": "clawhub-suno-browser-songmaking",
+  "name": "Suno Browser Songmaking",
+  "summary": "Browser-based song creation with Suno (suno.ai), including gathering a song brief, generating lyrics, setting Persona/Custom mode, and producing new tracks. Use when the user asks to make a new song with Suno or to automate Suno in a brows.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_browser_songmaking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "machinesbefree",
+      "features": [
+        "Browser-based song creation with Suno (suno.ai), including gathering a song brief, generating l.",
+        "Use when the user asks to make a new song with Suno or to automate Suno in a browser session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suno-browser-songmaking@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220911967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suno-browser-songmaking",
+      "url": "https://clawhub.ai/skills/suno-browser-songmaking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-browser-songmaking",
+    "url": "https://clawhub.ai/skills/suno-browser-songmaking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-browser-songmaking-066e563323dd3c10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suno-browser-songmaking@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suno-browser-songmaking-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:949ca85c51c22296e6c2eea2016e98ffd1d4cae8bd85efa70ed0cd21e07ce597",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:05:11.687Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8363,
+  "uuid": "skill-clawhub-x-search",
+  "skillKey": "clawhub-x-search",
+  "name": "X Search",
+  "summary": "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaaneek",
+      "features": [
+        "Search X (Twitter) posts using the xAI API",
+        "Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25470423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-search",
+      "url": "https://clawhub.ai/skills/x-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search",
+    "url": "https://clawhub.ai/skills/x-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-3ea7d6605b5131d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92bd3dd63b4455ecf71a3eca1638bdecaf5011c5dd28ed5ae5a4ed48b118f4cd",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:39:49.565Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-subagent-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_subagent_dev",
+  "skill": {
+    "id": 39640,
+    "skillKey": "clawhub-lobster-subagent-dev",
+    "name": "Lobster Subagent Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-subagent-dev",
+    "url": "https://clawhub.ai/skills/lobster-subagent-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-subagent-dev-e06d5eb3980c566a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Subagent-driven development. Dispatch fresh subagent per task with 2-stage review (spec + quality). Cost-aware model routing. From Superpowers by Jesse Vincent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775291586385,
+      "changelog": "lobster-subagent-dev v1.0.0 – Initial Release\n\n- Introduces a subagent-driven development process with a fresh subagent dispatched per task.\n- Implements a 2-stage review workflow: separate specification and quality code reviews for each task.\n- Features cost-aware model routing, selecting models based on task complexity.\n- Ensures agent independence by not inheriting session context between subagents.\n- Describes status handling for agent workflow and outlines key “never” practices to prevent errors.\n- Inspired by the Superpowers project by Jesse Vincent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86f12cc08db3df63d1fa317e8ca6d5ee6fd92eba7bd4bc6ec7bb2bb05aac4774"
+}

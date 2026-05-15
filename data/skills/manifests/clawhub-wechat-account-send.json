@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57480,
+  "uuid": "skill-clawhub-wechat-account-send",
+  "skillKey": "clawhub-wechat-account-send",
+  "name": "微信消息文件发送skill",
+  "summary": "This skill provides integrated WeChat account management, message delivery, and file transmission capabilities. It supports querying current user account inf...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_account_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "爱卿扣杀",
+      "features": [
+        "This skill provides integrated WeChat account management, message delivery, and file transmissi.",
+        "It supports querying current user account inf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-account-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87295223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-account-send",
+      "url": "https://clawhub.ai/skills/wechat-account-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-account-send",
+    "url": "https://clawhub.ai/skills/wechat-account-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-account-send-2e599efd7a93de7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-account-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-account-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:087cd174fe179609bef4d775f5973c7cadbada8919cc26009458f25f11ac321b",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T23:32:59.810Z"
+}

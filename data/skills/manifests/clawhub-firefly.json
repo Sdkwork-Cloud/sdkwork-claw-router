@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17594,
+  "uuid": "skill-clawhub-firefly",
+  "skillKey": "clawhub-firefly",
+  "name": "Firefly AI",
+  "summary": "Fetch meeting transcripts, summaries, and action items from Firefly AI (fireflies.ai). Use when the user asks about meetings, transcripts, meeting notes, act...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firefly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codes71",
+      "features": [
+        "Fetch meeting transcripts, summaries, and action items from Firefly AI (fireflies.ai)",
+        "Use when the user asks about meetings, transcripts, meeting notes, act..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firefly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89853411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firefly",
+      "url": "https://clawhub.ai/skills/firefly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firefly",
+    "url": "https://clawhub.ai/skills/firefly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firefly-afac327e73694e68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firefly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firefly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0e172c344b32c05ff26ba8fd4c4f88ceb2c13fcd2ef4f3344dd367d7be1f1f5",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:36:04.375Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53712,
+  "uuid": "skill-clawhub-coware",
+  "skillKey": "clawhub-coware",
+  "name": "coware-skills",
+  "summary": "Coware Living Specs — shared API spec sync for multi-agent coding teams. TRIGGER when: project has .coware/ directory, user mentions shared specs, API alignm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coware",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shitianfang",
+      "features": [
+        "Coware Living Specs — shared API spec sync for multi-agent coding teams",
+        "TRIGGER when: project has .coware/ directory, user mentions shared specs, API alignm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coware@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61344989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coware",
+      "url": "https://clawhub.ai/skills/coware"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coware",
+    "url": "https://clawhub.ai/skills/coware",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coware-7e58eaa2db8a8885.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coware@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coware-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afc2986cce4babf4faa84ed66f56e552849b47be9eebbb69de3df96311ca7de3",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:48:29.129Z"
+}

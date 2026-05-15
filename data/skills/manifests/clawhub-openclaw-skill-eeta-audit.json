@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42572,
+  "uuid": "skill-clawhub-openclaw-skill-eeta-audit",
+  "skillKey": "clawhub-openclaw-skill-eeta-audit",
+  "name": "openclaw-skill-eeta-audit",
+  "summary": "OpenClaw Skill quality audit based on CORE-EEAT framework adapted for AI agent skills. Evaluates skill's utility (task completion efficiency) and security (s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_eeta_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaoo-2818",
+      "features": [
+        "OpenClaw Skill quality audit based on CORE-EEAT framework adapted for AI agent skills",
+        "Evaluates skill's utility (task completion efficiency) and security (s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-eeta-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252923327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-eeta-audit",
+      "url": "https://clawhub.ai/skills/openclaw-skill-eeta-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-eeta-audit",
+    "url": "https://clawhub.ai/skills/openclaw-skill-eeta-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-eeta-audit-5b95bf3da2c793fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-eeta-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-eeta-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea8fc07ae23175398854977b90d520082a3e1643fcf47e224768f088c1f294d3",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:46:36.751Z"
+}

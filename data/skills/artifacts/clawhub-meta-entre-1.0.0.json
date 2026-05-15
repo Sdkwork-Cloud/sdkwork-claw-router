@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-entre@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_entre",
+  "skill": {
+    "id": 54246,
+    "skillKey": "clawhub-meta-entre",
+    "name": "Meta Entre"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-entre",
+    "url": "https://clawhub.ai/skills/meta-entre",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-entre-55d6e1fd9d329b82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a meta-architecture for substantial entrepreneurial ventures – including business model, tech stack, funding roadmap, and agent orchestration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamdaphna18-design",
+      "userId": "s17fw2hew7cxzy35ntbd5y8ha186ct1g",
+      "displayName": "adamdaphna18-design",
+      "image": "https://avatars.githubusercontent.com/u/224025798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778291285404,
+      "changelog": "Initial release of meta-entre skill.\n\n- Generates structured meta-architectures for ambitious entrepreneurial ventures.\n- Covers business model, technology stack, funding roadmap, and agent orchestration.\n- Output includes vision & strategy, operational model, technical architecture, funding milestones, and execution roadmap.\n- Designed to work from prompts like “create meta architecture” or “setup entrepreneurial scaffold.”",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc4139b53c4493e054148650b462a18842fea561444817d8de2687a84d587159"
+}

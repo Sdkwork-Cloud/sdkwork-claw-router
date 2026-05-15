@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/norman-monthly-reconciliation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_monthly_reconciliation",
+  "skill": {
+    "id": 16943,
+    "skillKey": "clawhub-norman-monthly-reconciliation",
+    "name": "Norman: Accounting Monthly Reconciliation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-monthly-reconciliation",
+    "url": "https://clawhub.ai/skills/norman-monthly-reconciliation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-monthly-reconciliation-3fcf9aaf800a0b55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform a complete monthly financial reconciliation - review all transactions, match invoices, check outstanding payments, and prepare for tax filing. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanlee000",
+      "userId": "s17cbmkhac7cryh3kwmg7jc0ch83qty9",
+      "displayName": "Stan Kharlap",
+      "image": "https://avatars.githubusercontent.com/u/117379032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 814,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771534220013,
+      "changelog": "- Initial release of the monthly-reconciliation skill.\n- Guides users step-by-step through reviewing, categorizing, and verifying all transactions for a specified month.\n- Matches and reconciles invoices, flags overdue payments, and enables sending reminders.\n- Checks for missing receipts and assists with uploading and linking attachments.\n- Prepares tax overviews, checks VAT reporting needs, and supports draft submission with user confirmation.\n- Provides a comprehensive monthly summary with key financial metrics and outstanding actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f92649f081d8d7145ae439bf79597cafb537dcf7ba11c33c56b0e4b10fc3531e"
+}

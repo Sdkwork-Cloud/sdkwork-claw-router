@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12490,
+  "uuid": "skill-clawhub-clawskillshield",
+  "skillKey": "clawhub-clawskillshield",
+  "name": "ClawSkillShield",
+  "summary": "Locally scans OpenClaw/ClawHub skills for security risks like hardcoded secrets, dangerous calls, and risky imports, then scores and quarantines threats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawskillshield",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ab Yousef",
+      "features": [
+        "Locally scans OpenClaw/ClawHub skills for security risks like hardcoded secrets, dangerous call."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawskillshield@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213072006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawskillshield",
+      "url": "https://clawhub.ai/skills/clawskillshield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawskillshield",
+    "url": "https://clawhub.ai/skills/clawskillshield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawskillshield-7ef4e2b0896d420a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawskillshield@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawskillshield-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cfc2c52e8b45890060bfa18825b794b332c9fd5c461ee9c717500d70874b2d9",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T01:30:58.643Z"
+}

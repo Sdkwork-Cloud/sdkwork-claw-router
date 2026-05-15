@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccfddl-conference-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccfddl_conference_watch",
+  "skill": {
+    "id": 34535,
+    "skillKey": "clawhub-ccfddl-conference-watch",
+    "name": "ccfddl-conference-watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccfddl-conference-watch",
+    "url": "https://clawhub.ai/skills/ccfddl-conference-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccfddl-conference-watch-a146dcba28bdb2db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and filter academic conference deadlines from CCFDDL (https://ccfddl.com). Use this skill whenever the user mentions CCF conferences, paper submission..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengwm64",
+      "userId": "s17en3qz3wz95mk32167vddkax83kmj7",
+      "displayName": "fengwm",
+      "image": "https://avatars.githubusercontent.com/u/52602131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774104682816,
+      "changelog": "- Initial release of ccfddl-conference-watch.\n- Enables fetching and filtering of CCFDDL conference deadline data from https://ccfddl.com.\n- Supports queries by conference name, category (CG, AI, MX), and CCF rank (A, B).\n- Strictly filters for upcoming deadlines and deduplicates/merges multiple DDLs for the same conference.\n- Presents results in a clear, sortable table with concise metadata and summary.\n- Never fabricates conference data; guides users to CCFDDL if data is unavailable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb713e4fe97143b52108df02cf30e0c5f7a6736dac84bc3abcecacb8344037ce"
+}

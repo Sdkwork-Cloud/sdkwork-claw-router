@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64813,
+  "uuid": "skill-clawhub-co-occurrence-engine",
+  "skillKey": "clawhub-co-occurrence-engine",
+  "name": "Co Occurrence Engine",
+  "summary": "独立的 Hebbian 共现图引擎，记录记忆共现，计算关联权重，支持关联查询和数据库维护，服务星型记忆架构。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.co_occurrence_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whoisme007",
+      "features": [
+        "独立的 Hebbian 共现图引擎，记录记忆共现，计算关联权重，支持关联查询和数据库维护，服务星型记忆架构。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/co-occurrence-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6497382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "co-occurrence-engine",
+      "url": "https://clawhub.ai/skills/co-occurrence-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "co-occurrence-engine",
+    "url": "https://clawhub.ai/skills/co-occurrence-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/co-occurrence-engine-fbb2c6082ec86ec0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/co-occurrence-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-co-occurrence-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8710fed99979fd12999654566e4a6f14fd9ee9e43c609fb1128e82c45b0902db",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:31:04.611Z"
+}

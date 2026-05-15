@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-sourcing-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_sourcing_agent",
+  "skill": {
+    "id": 21820,
+    "skillKey": "clawhub-video-sourcing-agent",
+    "name": "Video Sourcing Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-sourcing-agent",
+    "url": "https://clawhub.ai/skills/video-sourcing-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-sourcing-agent-f32ca8b2ba5ac38c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the Video Sourcing Agent with deterministic, concise chat UX for /video_sourcing using a pinned self-bootstrap runtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "memories-ai-official",
+      "userId": "s17at2353t9phxw9pn66nspqad84vrax",
+      "displayName": "memories-ai-official",
+      "image": "https://avatars.githubusercontent.com/u/258160197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772254144779,
+      "changelog": "Initial release: deterministic video sourcing agent with self-bootstrap runtime",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cb961cc66df2158684a53d33405a84f3f31f7f345fa71d331e5ccc1d2761674"
+}

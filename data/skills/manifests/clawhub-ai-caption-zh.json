@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64105,
+  "uuid": "skill-clawhub-ai-caption-zh",
+  "skillKey": "clawhub-ai-caption-zh",
+  "name": "AI 字幕",
+  "summary": "面向字幕与上字场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留字幕场景定位。",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_caption_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "面向字幕与上字场景的 Sparki skill 变体，沿用最新版官方 Sparki 安装、API key、上传和命令说明，同时保留字幕场景定位。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-caption-zh@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-caption-zh",
+      "url": "https://clawhub.ai/skills/ai-caption-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-caption-zh",
+    "url": "https://clawhub.ai/skills/ai-caption-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-caption-zh-ce320afa1e591431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-caption-zh@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-caption-zh-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aab2230d1f555be35751331e5d058629b0df841cce343c758da8e9db39629276",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:14:42.434Z"
+}

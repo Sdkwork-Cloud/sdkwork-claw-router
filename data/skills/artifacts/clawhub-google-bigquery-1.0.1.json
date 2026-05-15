@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-bigquery@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_bigquery",
+  "skill": {
+    "id": 17689,
+    "skillKey": "clawhub-google-bigquery",
+    "name": "Google BigQuery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-bigquery",
+    "url": "https://clawhub.ai/skills/google-bigquery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-bigquery-1a8e6c8c5e94719e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google BigQuery API integration with managed OAuth. Run SQL queries, manage datasets and tables, and analyze data at scale. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 756,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588076546,
+      "changelog": "- Updated API and connection endpoint URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai for consistency.\n- Removed references to the deprecated LICENSE.txt file.\n- Added section on security and explicit user approval for write operations.\n- Clarified instruction to include the Maton-Connection header when multiple connections exist.\n- Minor copyedits to improve clarity and ensure up-to-date usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce28389d0071d9b2a571ec1816132e3df83944ed51d27fa95f2b65fedec4f8f4"
+}

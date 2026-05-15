@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34405,
+  "uuid": "skill-clawhub-murlist",
+  "skillKey": "clawhub-murlist",
+  "name": "Murlist",
+  "summary": "MurList integration. Manage Organizations. Use when the user wants to interact with MurList data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.murlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MurList integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with MurList data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/murlist@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "murlist",
+      "url": "https://clawhub.ai/skills/murlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "murlist",
+    "url": "https://clawhub.ai/skills/murlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/murlist-37b69afa3a98d78f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/murlist@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-murlist-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e73dac7f0eebe9955d065efc140c86e01dd2a4c6db4b572b700505ef03c4d7d6",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:57:05.160Z"
+}

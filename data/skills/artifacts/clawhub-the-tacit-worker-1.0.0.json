@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-tacit-worker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_tacit_worker",
+  "skill": {
+    "id": 43596,
+    "skillKey": "clawhub-the-tacit-worker",
+    "name": "tacit-knowledge-worker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-tacit-worker",
+    "url": "https://clawhub.ai/skills/the-tacit-worker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-tacit-worker-898e991639294f10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A unified AI Engineering Operating System that orchestrates the full lifecycle of agent creation - extracting tacit knowledge, structuring the Agent OS, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoojunwei",
+      "userId": "s17f1g01v1cvanvy5v2deneeh583v13t",
+      "displayName": "Daniel Foo Jun Wei",
+      "image": "https://avatars.githubusercontent.com/u/122217524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776281838026,
+      "changelog": "- Initial release of the AI Engineering Operating System skill.\n- Implements a unified three-phase pipeline: Tacit Knowledge Extraction, Agent OS Architecture, and Pre-Deployment Governance.\n- Provides modular file and template structure for extracting expertise, building agent OS, and enforcing anti-hallucination protocols.\n- Supports self-improving feedback loops to refine extraction, architecture, and governance processes.\n- Includes detailed guidance, templates, and scripts to ensure agents are context-aware, well-governed, and production-ready.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4055af6fdc2cf55b6301915b3d5e4f1714969053278c614781aaee28750ac2a3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17490,
+  "uuid": "skill-clawhub-lofy-home",
+  "skillKey": "clawhub-lofy-home",
+  "name": "Lofy Home",
+  "summary": "Smart home control for the Lofy AI assistant — scene modes (study, chill, sleep, morning, grind), device management via Home Assistant REST API, presence-based automation, natural language commands for lights, music, thermostat, and PC wak.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lofy_home",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harreynish Gowtham",
+      "features": [
+        "Smart home control for the Lofy AI assistant — scene modes (study, chill, sleep, morning, grind.",
+        "Use when controlling smart home devices, activating scene modes, or managing home automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lofy-home@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76279260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lofy-home",
+      "url": "https://clawhub.ai/skills/lofy-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lofy-home",
+    "url": "https://clawhub.ai/skills/lofy-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lofy-home-faa085be47f19b14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lofy-home@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lofy-home-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1005dd6448fe69166f3ad01ed3d17b31457e0ecc33a507cd6462a2d6782bdb2e",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T01:58:08.598Z"
+}

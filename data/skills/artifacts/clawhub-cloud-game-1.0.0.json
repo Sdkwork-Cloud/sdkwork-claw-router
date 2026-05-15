@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-game@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_game",
+  "skill": {
+    "id": 72809,
+    "skillKey": "clawhub-cloud-game",
+    "name": "cloud-game"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-game",
+    "url": "https://clawhub.ai/skills/cloud-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-game-fefaf5520d5f70fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天翼云游戏平台的搜索、推荐与启动技能。当用户明确表达游戏相关意图时使用，包括：想玩游戏、打开游戏、搜索游戏、推荐游戏、找某类游戏、询问某个游戏或游戏类型。即使用户没有提到天翼云游戏平台，只要意图明确与游戏有关，也应触发此技能。不要在纯泛意图下触发，例如用户只说\"无聊了\"\"有什么好玩的\"且未提到游戏。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pokemummaster",
+      "userId": "s172jbc0mph3x1w5zq8gy73nd585r04q",
+      "displayName": "slazy",
+      "image": "https://avatars.githubusercontent.com/u/51648919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777438584691,
+      "changelog": "**This update introduces a new skill focused on search, recommendation, and launching of games on the Tianyi Cloud Game platform.**\n\n- Skill renamed and re-scoped: Now dedicated to 天翼云游戏 (Tianyi Cloud Game) with specific triggers for game-related intentions.\n- Added clear interaction rules: Defines precise, friendly user prompts and prohibits exposing implementation details or internal process language.\n- Introduced robust caching strategy: All API queries require pre-checks against a file-based local cache to minimize repeated requests.\n- Detailed user intent judgment: Covers scenarios for exact match, recommendations, mixed queries, and follow-up selections with step-by-step handling.\n- New PowerShell scripts and caching specs: Detailed, robust instructions provided for normalizing input, caching API responses, and offline cache usage.\n- All previous content regarding general cloud storage services has been removed in favor of dedicated game discovery and launching flows on play.cn.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b05ebed8ea15691693ec0d4b93176594ba760199325c468a2b05d64c35470e3f"
+}

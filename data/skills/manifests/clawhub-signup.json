@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33453,
+  "uuid": "skill-clawhub-signup",
+  "skillKey": "clawhub-signup",
+  "name": "Signup",
+  "summary": "Organize and track signups with simple terminal commands and export. Use when logging registrations, checking status, analyzing trends, generating reports.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Organize and track signups with simple terminal commands and export",
+        "Use when logging registrations, checking status, analyzing trends, generating reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/signup@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "signup",
+      "url": "https://clawhub.ai/skills/signup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signup",
+    "url": "https://clawhub.ai/skills/signup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signup-7c8718bdc78be44b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/signup@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-signup-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a278d668fafc5e720cdce9bae1ce2e6b04bee6c8e2fff3d11f8a13d7acdc74d0",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:18:40.081Z"
+}

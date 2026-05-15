@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58958,
+  "uuid": "skill-clawhub-engram-mcp-server",
+  "skillKey": "clawhub-engram-mcp-server",
+  "name": "Engram MCP Server",
+  "summary": "Engram MCP Server — 给 AI 注入可切换的专家记忆（谁 + 知道什么 + 怎么思考）。支持 Claude Code / Cursor / Codex 等 MCP 客户端。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engram_mcp_server",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "大壮/Jammy",
+      "features": [
+        "Engram MCP Server — 给 AI 注入可切换的专家记忆（谁 + 知道什么 + 怎么思考）。支持 Claude Code / Cursor / Codex 等 MCP 客户端。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engram-mcp-server@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148614011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engram-mcp-server",
+      "url": "https://clawhub.ai/skills/engram-mcp-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engram-mcp-server",
+    "url": "https://clawhub.ai/skills/engram-mcp-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engram-mcp-server-29169f3c66deb032.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engram-mcp-server@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-engram-mcp-server-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2514a31d40646ce72190fd683aee649813a91af8c228fc6a49fa952d46afbfdd",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T14:28:03.303Z"
+}

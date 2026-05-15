@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18403,
+  "uuid": "skill-clawhub-recipe-create-classroom-course",
+  "skillKey": "clawhub-recipe-create-classroom-course",
+  "name": "Recipe Create Classroom Course",
+  "summary": "Create a Google Classroom course and invite students.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_create_classroom_course",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Create a Google Classroom course and invite students."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-create-classroom-course@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-create-classroom-course",
+      "url": "https://clawhub.ai/skills/recipe-create-classroom-course"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-create-classroom-course",
+    "url": "https://clawhub.ai/skills/recipe-create-classroom-course",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-create-classroom-course-caa6792f453cde6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-create-classroom-course@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-create-classroom-course-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffc87c16edef4859b1dae9187d6741bf15d6630e8257916b29097054e6bec627",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:55.489Z"
+}

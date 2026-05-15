@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35825,
+  "uuid": "skill-clawhub-merge-1",
+  "skillKey": "clawhub-merge-1",
+  "name": "Merge 1",
+  "summary": "Merge integration. Manage data, records, and automate workflows. Use when the user wants to interact with Merge data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merge_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Merge integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Merge data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/merge-1@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "merge-1",
+      "url": "https://clawhub.ai/skills/merge-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merge-1",
+    "url": "https://clawhub.ai/skills/merge-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merge-1-fdbe65571d833d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/merge-1@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-merge-1-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fe1c40f7bb3303131496cebca9c2bcc069579e773228fe5055f529e6a3296d8",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:13:13.258Z"
+}

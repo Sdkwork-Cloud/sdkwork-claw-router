@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25451,
+  "uuid": "skill-clawhub-competitive-intel-agent",
+  "skillKey": "clawhub-competitive-intel-agent",
+  "name": "Competitive Intel Agent",
+  "summary": "Competitor monitoring, pricing analysis, market positioning, and SWOT generation. Use when you need to track competitor moves, benchmark pricing, analyze mar...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitive_intel_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Competitor monitoring, pricing analysis, market positioning, and SWOT generation",
+        "Use when you need to track competitor moves, benchmark pricing, analyze mar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitive-intel-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitive-intel-agent",
+      "url": "https://clawhub.ai/skills/competitive-intel-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitive-intel-agent",
+    "url": "https://clawhub.ai/skills/competitive-intel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitive-intel-agent-dcc65e4d334e9783.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitive-intel-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitive-intel-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f832cbf640179d0dfc58ea6a52da328681a3864685b0b18d1449e86796bba92c",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:16:38.053Z"
+}

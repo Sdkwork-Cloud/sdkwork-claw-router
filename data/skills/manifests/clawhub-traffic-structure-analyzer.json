@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24669,
+  "uuid": "skill-clawhub-traffic-structure-analyzer",
+  "skillKey": "clawhub-traffic-structure-analyzer",
+  "name": "Ads Traffic Analysis",
+  "summary": "Analyze traffic composition and quality trends from Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and DSP/programmatic channels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.traffic_structure_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Analyze traffic composition and quality trends from Meta (Facebook/Instagram), Google Ads, TikT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/traffic-structure-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "traffic-structure-analyzer",
+      "url": "https://clawhub.ai/skills/traffic-structure-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "traffic-structure-analyzer",
+    "url": "https://clawhub.ai/skills/traffic-structure-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/traffic-structure-analyzer-dda932a0b80d515a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/traffic-structure-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-traffic-structure-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:973a83224bc9ef6a1fcc3166d3afb587ccf997b634c6218ce2275b8027827484",
+      "artifactSizeBytes": 2682
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:57:36.662Z"
+}

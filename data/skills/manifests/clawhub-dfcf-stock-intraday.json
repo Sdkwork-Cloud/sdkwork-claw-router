@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67894,
+  "uuid": "skill-clawhub-dfcf-stock-intraday",
+  "skillKey": "clawhub-dfcf-stock-intraday",
+  "name": "东方财富日内行情 dfcf-stock-intraday",
+  "summary": "使用东方财富 API 获取 A 股（沪市/深市）及指数的日内分时数据。当用户询问某只 A 股或指数的日内走势、分时数据、当日行情、实时价格、分时图数据时，必须使用此 skill。触发关键词包括：分时数据、日内数据、今日行情、分时走势、intraday、当日走势、东方财富获取数据。支持沪市（market=1）和深市...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dfcf_stock_intraday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bensema",
+      "features": [
+        "使用东方财富 API 获取 A 股（沪市/深市）及指数的日内分时数据。当用户询问某只 A 股或指数的日内走势、分时数据、当日行情、实时价格、分时图数据时，必须使用此 skill。触发关键词包."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dfcf-stock-intraday@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5534112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dfcf-stock-intraday",
+      "url": "https://clawhub.ai/skills/dfcf-stock-intraday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dfcf-stock-intraday",
+    "url": "https://clawhub.ai/skills/dfcf-stock-intraday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dfcf-stock-intraday-08e55be06a066f72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dfcf-stock-intraday@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dfcf-stock-intraday-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e80e3378b4ac4629b5f31ae5d3d157ad9290b97834953cb62b8621bea79e046f",
+      "artifactSizeBytes": 2654
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T23:25:01.032Z"
+}

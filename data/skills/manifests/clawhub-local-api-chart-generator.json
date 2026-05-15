@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66447,
+  "uuid": "skill-clawhub-local-api-chart-generator",
+  "skillKey": "clawhub-local-api-chart-generator",
+  "name": "local-api-chart-generator",
+  "summary": "专为调用本地数据接口并生成图表展示定制的 Skill。接收自然语言指令（如“我要最近一年燃油类型为天然气的扭矩占比”），自动提取参数，请求本地接口，生成 HTML 柱状图并返回完整的 HTML 源码。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_api_chart_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z904832819",
+      "features": [
+        "专为调用本地数据接口并生成图表展示定制的 Skill。接收自然语言指令（如“我要最近一年燃油类型为天然气的扭矩占比”），自动提取参数，请求本地接口，生成 HTML 柱状图并返回完整的 HTM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-api-chart-generator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53605664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-api-chart-generator",
+      "url": "https://clawhub.ai/skills/local-api-chart-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-api-chart-generator",
+    "url": "https://clawhub.ai/skills/local-api-chart-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-api-chart-generator-94484a965a49087a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-api-chart-generator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-api-chart-generator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4574945d4f3f772275877f72694ae772f845127faceac5d5431c1563bc2a932e",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:58:10.630Z"
+}

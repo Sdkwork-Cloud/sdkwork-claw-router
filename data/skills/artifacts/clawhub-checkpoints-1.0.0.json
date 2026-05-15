@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checkpoints@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkpoints",
+  "skill": {
+    "id": 27380,
+    "skillKey": "clawhub-checkpoints",
+    "name": "Checkpoints"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkpoints",
+    "url": "https://clawhub.ai/skills/checkpoints",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkpoints-6c7f546429ec5c55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Records full context of AI-generated code and binds it to git commits. When the agent writes and commits code, capture prompts, conversation history, reasoni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369137758,
+      "changelog": "Initial release of the \"checkpoints\" skill.\n\n- Captures and stores full context (prompts, conversation, reasoning, decisions, metadata) related to AI-generated code changes.\n- Binds context data to specific git commits for traceability and auditing.\n- Supports multiple binding methods: standalone files, commit messages/tags, or external tools.\n- Provides structured guidelines for checkpoint content and workflow integration.\n- Emphasizes consistency, privacy, and traceability in checkpoint handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6bd3f07a1d675f58974623968630e833dda13553c808df849e9b25b52e1fee5"
+}

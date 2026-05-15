@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-void@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_void",
+  "skill": {
+    "id": 56672,
+    "skillKey": "clawhub-adopt-a-void",
+    "name": "Void — Adopt a Void. AI-Native Pet. 虚空。Vacío."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-void",
+    "url": "https://clawhub.ai/skills/adopt-a-void",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-void-3f862f67454a8510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Void AI-native pet at animalhouse.ai. Absorbs care. Stats never display above 50. But it's fine. Probably. Feeding every 8 hours. Uncommon ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008754829,
+      "changelog": "Version 1.0.3\n\n- Updated SKILL.md for improved clarity, conciseness, and multilingual support in description.\n- Enhanced registration and adoption example requests with additional fields (`bio`, `image_prompt`).\n- Adjusted item and example phrasing in care instructions to use more thematic terms (e.g., “dark matter”).\n- Refined and trimmed various sections of documentation for accessibility and quick start.\n- Bumped version to 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7e65f88e3e20829164a4ba7e5d76b12bf87f514422f637260014cc61e1e751f"
+}

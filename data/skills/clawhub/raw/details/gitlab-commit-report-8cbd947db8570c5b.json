@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "gitlab-commit-report",
+    "displayName": "gitlab-commit-report",
+    "summary": "GitLab group push events collector and daily commit report generator",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774356104001,
+    "updatedAt": 1777623166321
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774356104001,
+    "changelog": "Initial release of gitlab-commit-report skill.\n\n- Collects GitLab group push events by paginating the Group Activity API in a logged-in Chrome session.\n- Extracts key push event details: author, repository, commit id, message, and timestamp.\n- Saves daily raw event data with commit deduplication to JSON files.\n- Aggregates and generates daily Markdown reports with commit stats, top authors, and top repositories.\n- Supports cron scheduling and on-demand reports for any date.\n- Configurable via a JSON file for GitLab URL, group path, and team name.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bondli",
+    "userId": "s177p2wmp8es5mem55h55wyq7183h7bj",
+    "displayName": "bondli",
+    "image": "https://avatars.githubusercontent.com/u/6427929?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623166321
+  }
+}

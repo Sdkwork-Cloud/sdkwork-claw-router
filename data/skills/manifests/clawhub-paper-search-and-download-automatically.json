@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57939,
+  "uuid": "skill-clawhub-paper-search-and-download-automatically",
+  "skillKey": "clawhub-paper-search-and-download-automatically",
+  "name": "论文关键词搜索和自动下载到指定目录 Keyword search for papers and automatic download！",
+  "summary": "Search and download related arXiv papers by topic plus date range, or from a seed paper title/id. Use when user asks to crawl related papers, collect arXiv a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_search_and_download_automatically",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pingping Zhang",
+      "features": [
+        "Search and download related arXiv papers by topic plus date range, or from a seed paper title/id",
+        "Use when user asks to crawl related papers, collect arXiv a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-search-and-download-automatically@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13868829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-search-and-download-automatically",
+      "url": "https://clawhub.ai/skills/paper-search-and-download-automatically"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-search-and-download-automatically",
+    "url": "https://clawhub.ai/skills/paper-search-and-download-automatically",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-search-and-download-automatically-a5abfeb4c793cea9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-search-and-download-automatically@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-search-and-download-automatically-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:647a99689bab2f77a64c4b130d452c5b7069c31645617d35405750ebdae031bb",
+      "artifactSizeBytes": 3563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:22:44.315Z"
+}

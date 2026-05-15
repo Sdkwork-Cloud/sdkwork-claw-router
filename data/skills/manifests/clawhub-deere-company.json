@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64077,
+  "uuid": "skill-clawhub-deere-company",
+  "skillKey": "clawhub-deere-company",
+  "name": "Deere Company",
+  "summary": "提供 John Deere 农业机械、精准农业技术及自动驾驶拖拉机的行业历史、技术与市场分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deere_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供 John Deere 农业机械、精准农业技术及自动驾驶拖拉机的行业历史、技术与市场分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deere-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deere-company",
+      "url": "https://clawhub.ai/skills/deere-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deere-company",
+    "url": "https://clawhub.ai/skills/deere-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deere-company-8ea90fad194aeb35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deere-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deere-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3277b3f325e354ca2925421b1b53ca6bc9815100e22acf4e83b09e6689f4992f",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:03:49.811Z"
+}

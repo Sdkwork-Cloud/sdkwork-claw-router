@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serp-analysis@9.9.5",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serp_analysis",
+  "skill": {
+    "id": 56858,
+    "skillKey": "clawhub-serp-analysis",
+    "name": "Serp Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serp-analysis",
+    "url": "https://clawhub.ai/skills/serp-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serp-analysis-c63dc0a5c6f4b4fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze SERPs: ranking factors, features, intent patterns, AI overviews, featured snippets. SERP分析/搜索结果"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaron-he-zhu",
+      "userId": "s17e1tg8pjra8dn1dvtq21sahx83hrxj",
+      "displayName": "Aaron Zhu",
+      "image": "https://avatars.githubusercontent.com/u/139607425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2523,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "9.9.5",
+      "createdAt": 1777349126179,
+      "changelog": "Published from v9.9.5 @ 7ecc77b",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:346a017acdb96d2160cdaea2720c353948d4619b89a908ef6436c6b92223b132"
+}

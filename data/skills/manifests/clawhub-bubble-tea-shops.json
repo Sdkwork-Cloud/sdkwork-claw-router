@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40661,
+  "uuid": "skill-clawhub-bubble-tea-shops",
+  "skillKey": "clawhub-bubble-tea-shops",
+  "name": "Nearby Bubble Tea Shops",
+  "summary": "Find nearby bubble tea shops. Invoke when user asks for boba near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bubble_tea_shops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Find nearby bubble tea shops",
+        "Invoke when user asks for boba near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bubble-tea-shops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bubble-tea-shops",
+      "url": "https://clawhub.ai/skills/bubble-tea-shops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bubble-tea-shops",
+    "url": "https://clawhub.ai/skills/bubble-tea-shops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bubble-tea-shops-be06e39a52a211c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bubble-tea-shops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bubble-tea-shops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f99b87362bbbf147e57f1907802729eb6cf4810aa2cc5dc32f241fd59f4245be",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:48:57.808Z"
+}

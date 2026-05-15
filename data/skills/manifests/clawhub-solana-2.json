@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51765,
+  "uuid": "skill-clawhub-solana-2",
+  "skillKey": "clawhub-solana-2",
+  "name": "Solana",
+  "summary": "Query Solana blockchain data with USD pricing — wallet balances, token portfolios with values, transaction details, NFTs, whale detection, and live network s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agung Prabowo",
+      "features": [
+        "Query Solana blockchain data with USD pricing — wallet balances, token portfolios with values,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100983377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-2",
+      "url": "https://clawhub.ai/skills/solana-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-2",
+    "url": "https://clawhub.ai/skills/solana-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-2-c4aa0a1823309126.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3d0ef2f3130e12a44e28908e9ad15e09229aec1c0afa0c132a295daa2b977e0",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:03:58.463Z"
+}

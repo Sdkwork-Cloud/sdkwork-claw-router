@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31582,
+  "uuid": "skill-clawhub-pdf-to-html",
+  "skillKey": "clawhub-pdf-to-html",
+  "name": "PDF to HTML",
+  "summary": "Convert PDF documents to HTML using MinerU. Transforms PDF files into web-ready HTML with structure and formatting preserved. Features: PDF to HTML conversio...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "Convert PDF documents to HTML using MinerU",
+        "Transforms PDF files into web-ready HTML with structure and formatting preserved",
+        "Features: PDF to HTML conversio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-to-html@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-to-html",
+      "url": "https://clawhub.ai/skills/pdf-to-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-html",
+    "url": "https://clawhub.ai/skills/pdf-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-html-cd314c83e88dea4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-to-html@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-html-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43f4c7e6e6457a5bc264ff34d1dfe1c8f973a06b13e996f4adc245afdf4a6d33",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:47.208Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaodemapskill-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaodemapskill_bak",
+  "skill": {
+    "id": 32742,
+    "skillKey": "clawhub-gaodemapskill-bak",
+    "name": ".Gaodemapskill.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaodemapskill-bak",
+    "url": "https://clawhub.ai/skills/gaodemapskill-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaodemapskill-bak-1f8366fec27c63ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to interact with Gaode Map (AMap) for location search and route planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beelkic",
+      "userId": "publishers:beelkic",
+      "displayName": "深山大柠檬",
+      "image": "https://avatars.githubusercontent.com/u/34309188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773777673070,
+      "changelog": "Initial release of Gaode Map Skill.\n\n- Enables location search and route planning via the Gaode (AMap) API.\n- Supports POI (Point of Interest) search with keywords and optional city filtering.\n- Provides route planning between origins and destinations with modes like driving, walking, bicycling, and transit.\n- Requires an AMap API key set through the AMAP_API_KEY environment variable.\n- Offers command-line usage with clear parameters and example commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:711e58b801db97bb790f3045cb64cfa4b5b0766c6898f1a498b383ee5f5a4d17"
+}

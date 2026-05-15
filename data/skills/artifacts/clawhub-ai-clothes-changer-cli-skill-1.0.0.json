@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-clothes-changer-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_clothes_changer_cli_skill",
+  "skill": {
+    "id": 56095,
+    "skillKey": "clawhub-ai-clothes-changer-cli-skill",
+    "name": "Free AI Clothes Changer – Change Clothes in Photos with Virtual Try-On AI Technology – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-clothes-changer-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-clothes-changer-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-clothes-changer-cli-skill-9c6c7250aa79a168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI clothes changer — dress a person (image 1) in the garment shown in another photo (image 2)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775909003225,
+      "changelog": "- Initial release of ai-clothes-changer CLI skill.\n- Dress a person in one image with the garment from a second image using AI.\n- Requires weshop-cli and WESHOP_API_KEY environment variable.\n- Command: weshop ai-clothes-changer --image <person> --image <garment>\n- Outputs processed images with updated clothing.\n- Enhanced documentation with security and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:452697fb6c5c54bc06beacc3317b0619507efff1b3012648f0d09c1d27ef146c"
+}

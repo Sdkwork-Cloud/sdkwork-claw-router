@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67918,
+  "uuid": "skill-clawhub-xunfei-voice-reply",
+  "skillKey": "clawhub-xunfei-voice-reply",
+  "name": "XunFei Voice Reply",
+  "summary": "语音回复技能 - 使用讯飞 TTS 生成语音并发送到飞书。当需要用语音回复用户消息时使用。触发词：用语音、语音回复、切换语音模式、语音模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xunfei_voice_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wglnngt",
+      "features": [
+        "使用讯飞 TTS 生成语音并发送到飞书。当需要用语音回复用户消息时使用。触发词：用语音、语音回复、切换语音模式、语音模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xunfei-voice-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17468975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xunfei-voice-reply",
+      "url": "https://clawhub.ai/skills/xunfei-voice-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xunfei-voice-reply",
+    "url": "https://clawhub.ai/skills/xunfei-voice-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xunfei-voice-reply-3c9d6083413b937f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xunfei-voice-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xunfei-voice-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:104f2324422182f0011f05f20520a48af356380b54c6bc6db01b8a30cf554c26",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:28:53.825Z"
+}

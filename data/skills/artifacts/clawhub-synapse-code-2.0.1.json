@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/synapse-code@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synapse_code",
+  "skill": {
+    "id": 68053,
+    "skillKey": "clawhub-synapse-code",
+    "name": "Synapse Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synapse-code",
+    "url": "https://clawhub.ai/skills/synapse-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synapse-code-1d9c483cf02af78e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synapse Code — 智能代码开发工作流引擎。 一体化完成项目初始化、代码交付、知识沉淀和影响分析。 内建代码图谱引擎，越用越懂你的项目。 当用户提到开发、实现功能、运行 pipeline、记录知识、检查影响范围时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankechenlab-node",
+      "userId": "s17b8543dq7w9kmxgky4dqy1bn83g5r4",
+      "displayName": "ankechenlab-node",
+      "image": "https://avatars.githubusercontent.com/u/260451964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776230697629,
+      "changelog": "v2.0.1: 版本对齐，SKILL.md 更新日期",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ec91f2657f9c76a6cef8bcb3410db706671a0a39372f72778be4a10ba28b3cc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35867,
+  "uuid": "skill-clawhub-veriphone",
+  "skillKey": "clawhub-veriphone",
+  "name": "Veriphone",
+  "summary": "Veriphone integration. Manage data, records, and automate workflows. Use when the user wants to interact with Veriphone data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veriphone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Veriphone integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Veriphone data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veriphone@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veriphone",
+      "url": "https://clawhub.ai/skills/veriphone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veriphone",
+    "url": "https://clawhub.ai/skills/veriphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veriphone-c3c05e905861a60a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veriphone@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-veriphone-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47057f2b9bbe284e316819e26960cb9cf1737999e9f22fc2944aca6ab63f07f3",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:58:55.679Z"
+}

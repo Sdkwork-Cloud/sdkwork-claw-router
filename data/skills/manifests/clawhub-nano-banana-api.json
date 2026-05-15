@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31857,
+  "uuid": "skill-clawhub-nano-banana-api",
+  "skillKey": "clawhub-nano-banana-api",
+  "name": "Nano Banana API",
+  "summary": "Generate images through the Nano Banana REST API and help agents integrate or operate the service safely. Use when a task involves text-to-image, image-to-im...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nano Banana API",
+      "features": [
+        "Generate images through the Nano Banana REST API and help agents integrate or operate the servi.",
+        "Use when a task involves text-to-image, image-to-im..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-banana-api@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93693863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-banana-api",
+      "url": "https://clawhub.ai/skills/nano-banana-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-api",
+    "url": "https://clawhub.ai/skills/nano-banana-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-api-0fe1e4f202b7c221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-banana-api@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-banana-api-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85e79b4e2c505fa401385ea141579b09483bf7f924c7c54573ce5747a8d5975b",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:31:13.492Z"
+}

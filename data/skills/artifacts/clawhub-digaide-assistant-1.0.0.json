@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/digaide-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digaide_assistant",
+  "skill": {
+    "id": 42079,
+    "skillKey": "clawhub-digaide-assistant",
+    "name": "Digaide Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digaide-assistant",
+    "url": "https://clawhub.ai/skills/digaide-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digaide-assistant-e6f1bb25398f07fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent identity and memory context layer for AI agents across platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bernardtai",
+      "userId": "s173c8x4kem6y1pdhg0n06ydxh85bvjk",
+      "displayName": "Bernardtai",
+      "image": "https://avatars.githubusercontent.com/u/5805764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776831285454,
+      "changelog": "- Initial release of digaide-memory-layer version 1.0.0.\n- Provides a persistent identity and long-term memory context layer for AI agents.\n- Supports consistent user identity across sessions and platforms.\n- Enables memory-enriched responses and behavior alignment with selected personas.\n- Improves long-running task experience with progress-aware workflows.\n- Requires DIGAIDE_API_KEY and curl for setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f8717b54a057d204d9a37c5c29f5b0013a846d7d817a139e710b8ade5f43170"
+}

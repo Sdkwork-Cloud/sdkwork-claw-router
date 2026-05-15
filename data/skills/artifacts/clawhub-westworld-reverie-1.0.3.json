@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/westworld-reverie@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.westworld_reverie",
+  "skill": {
+    "id": 43055,
+    "skillKey": "clawhub-westworld-reverie",
+    "name": "Westworld Reverie - Self-evolving character"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "westworld-reverie",
+    "url": "https://clawhub.ai/skills/westworld-reverie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/westworld-reverie-b6644bc44e449eb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workspace memory and persona management subroutine. Manages three user-owned workspace files (MEMORY.md, SOUL.md, IDENTITY.md) to maintain session continuity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnjlewis",
+      "userId": "s174d2j6ddxfh51szw31cqjvzs846ez5",
+      "displayName": "ShawnJLewis",
+      "image": "https://avatars.githubusercontent.com/u/58849361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775370207589,
+      "changelog": "westworld-reverie v1.0.3\n\n- Clarified that all auto-triggers are disabled by default; they do not run unless explicitly enabled by the user.\n- Updated documentation to specify that the /reverie consolidate memory command is user-invoked and requires no extra confirmation.\n- Strengthened language: SOUL/IDENTITY writes always require user confirmation, with no exceptions.\n- Added clarifications regarding file access and network restrictions: enforcement is by instruction design and host sandbox.\n- Made documentation more explicit about the configuration process and boundaries of skill behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:943667ebdb4259c55126eb1c5c7a9ea14369e496608eee76e204180018074f90"
+}

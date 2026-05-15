@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-places@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_places",
+  "skill": {
+    "id": 8485,
+    "skillKey": "clawhub-local-places",
+    "name": "Local Places"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-places",
+    "url": "https://clawhub.ai/skills/local-places",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-places-6165b454d53a2ffa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for places (restaurants, cafes, etc.) via Google Places API proxy on localhost."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7705,
+      "installsAllTime": 342,
+      "installsCurrent": 332,
+      "stars": 25,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767545354524,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f866e8672041dadd5a9763416104bc21d6501e3a17c313fe0141adf95a9b223b"
+}

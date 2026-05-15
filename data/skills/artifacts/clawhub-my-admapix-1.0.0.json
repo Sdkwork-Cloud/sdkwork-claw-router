@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-admapix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_admapix",
+  "skill": {
+    "id": 41340,
+    "skillKey": "clawhub-my-admapix",
+    "name": "My Admapix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-admapix",
+    "url": "https://clawhub.ai/skills/my-admapix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-admapix-d13f377e889226f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ad intelligence & app analytics assistant. Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insights via api.admapix..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rockyzhuo",
+      "userId": "s179tpk6xqrc1kma130hx492h583g4v2",
+      "displayName": "rockyzhuo",
+      "image": "https://avatars.githubusercontent.com/u/12961098?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774439258044,
+      "changelog": "AdMapix Skill v1.0.0 – Initial Release\n\n- Launches the admapix assistant for ad creative search, app analytics, market insights, and rankings via api.admapix.com.\n- Supports both Chinese and English with automatic language detection, including localized formats and keywords.\n- Enforces setup and key validation steps before use with clear, language-specific instructions.\n- Classifies queries as Simple or Deep for efficient routing; deeper analytics use a secure, multi-step framework.\n- All output—including labels, disclaimers, and errors—is consistently localized to match the user’s language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66778f18e5d2fbafe52d2f136082518d9dffc0e642c64349f3eda95ffe3c212b"
+}

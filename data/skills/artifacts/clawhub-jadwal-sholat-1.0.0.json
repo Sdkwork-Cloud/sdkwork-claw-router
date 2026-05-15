@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jadwal-sholat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jadwal_sholat",
+  "skill": {
+    "id": 13343,
+    "skillKey": "clawhub-jadwal-sholat",
+    "name": "Jadwal Sholat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jadwal-sholat",
+    "url": "https://clawhub.ai/skills/jadwal-sholat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jadwal-sholat-cddb9ab1079731f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ambil jadwal sholat (imsak, subuh, dzuhur, ashar, maghrib, isya) untuk kota/kabupaten di Indonesia dari API Muslim api.myquran.com (sumber Kemenag Bimas Islam). Gunakan saat user minta jadwal sholat hari ini / tanggal tertentu / 1 bulan un."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banghasan",
+      "userId": "publishers:banghasan",
+      "displayName": "banghasan",
+      "image": "https://avatars.githubusercontent.com/u/5436959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770260954969,
+      "changelog": "Initial release of jadwal-sholat.\n\n- Fetches daily, specific-date, or monthly prayer times for any city/regency in Indonesia using api.myquran.com (sumber Kemenag Bimas Islam).\n- Includes helper script for searching locations and retrieving schedules.\n- Supports keyword search for cities, with logic for exact or best matches.\n- Provides curl examples for direct API access.\n- Documents how to obtain city/regency IDs for targeted queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d28a2228d4c5a0d244a60ab7a46901fc3799b8a377c44ac95f8cddd4644b948"
+}

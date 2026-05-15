@@ -144,7 +144,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/router/rate-limits/ip" && method === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/ip" && method === "GET") {
         return {
           items: [
             {
@@ -159,7 +159,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           ],
         };
       }
-      if (url === "/backend/v3/api/router/rate-limits/ip" && method === "POST") {
+      if (url === "/backend/v3/api/system/rate_limits/ip" && method === "POST") {
         return {
           item: {
             id: "ip-2",
@@ -172,7 +172,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           },
         };
       }
-      if (url === "/backend/v3/api/router/rate-limits/api-keys" && method === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/api_keys" && method === "GET") {
         return {
           items: [
             {
@@ -187,7 +187,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           ],
         };
       }
-      if (url === "/backend/v3/api/router/rate-limits/api-keys" && method === "POST") {
+      if (url === "/backend/v3/api/system/rate_limits/api_keys" && method === "POST") {
         return {
           item: {
             id: "token-2",
@@ -200,7 +200,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           },
         };
       }
-      if (url === "/backend/v3/api/router/rate-limits/models" && method === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/models" && method === "GET") {
         return {
           items: [
             {
@@ -214,7 +214,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           ],
         };
       }
-      if (url === "/backend/v3/api/router/rate-limits/models" && method === "POST") {
+      if (url === "/backend/v3/api/system/rate_limits/models" && method === "POST") {
         return {
           item: {
             id: "model-limit-2",
@@ -226,7 +226,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           },
         };
       }
-      if (url === "/backend/v3/api/router/firewall/rules" && method === "GET") {
+      if (url === "/backend/v3/api/system/firewalls/rules" && method === "GET") {
         return {
           items: [
             {
@@ -239,7 +239,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           ],
         };
       }
-      if (url === "/backend/v3/api/router/firewall/rules" && method === "POST") {
+      if (url === "/backend/v3/api/system/firewalls/rules" && method === "POST") {
         return {
           item: {
             id: "firewall-2",
@@ -250,7 +250,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           },
         };
       }
-      if (url === "/backend/v3/api/router/firewall/rules/firewall-2" && method === "DELETE") {
+      if (url === "/backend/v3/api/system/firewalls/rules/firewall-2" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -300,15 +300,15 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /backend/v3/api/router/rate-limits/ip",
-          "POST /backend/v3/api/router/rate-limits/ip",
-          "GET /backend/v3/api/router/rate-limits/api-keys",
-          "POST /backend/v3/api/router/rate-limits/api-keys",
-          "GET /backend/v3/api/router/rate-limits/models",
-          "POST /backend/v3/api/router/rate-limits/models",
-          "GET /backend/v3/api/router/firewall/rules",
-          "POST /backend/v3/api/router/firewall/rules",
-          "DELETE /backend/v3/api/router/firewall/rules/firewall-2",
+          "GET /backend/v3/api/system/rate_limits/ip",
+          "POST /backend/v3/api/system/rate_limits/ip",
+          "GET /backend/v3/api/system/rate_limits/api_keys",
+          "POST /backend/v3/api/system/rate_limits/api_keys",
+          "GET /backend/v3/api/system/rate_limits/models",
+          "POST /backend/v3/api/system/rate_limits/models",
+          "GET /backend/v3/api/system/firewalls/rules",
+          "POST /backend/v3/api/system/firewalls/rules",
+          "DELETE /backend/v3/api/system/firewalls/rules/firewall-2",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
@@ -386,7 +386,7 @@ test("admin ratelimit service rejects unsafe firewall path ids before calling ge
 test("admin IP limit list fails closed when backend omits stable rule ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/ip" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -414,7 +414,7 @@ test("admin IP limit list fails closed when backend omits stable rule ids", asyn
 test("admin IP limit list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/ip" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -444,7 +444,7 @@ test("admin IP limit list fails closed when backend returns malformed rows", asy
 test("admin IP limit list fails closed when backend omits positive thresholds", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/rate-limits/ip" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/ip" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -472,7 +472,7 @@ test("admin IP limit list fails closed when backend omits positive thresholds", 
 test("admin token limit list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/rate-limits/api-keys" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/api_keys" && (init?.method ?? "GET") === "GET") {
         return {
           items: ["malformed-token-limit-row"],
         };
@@ -491,7 +491,7 @@ test("admin token limit list fails closed when backend returns malformed rows", 
 test("admin model limit list fails closed when backend omits stable rule ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/rate-limits/models" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/rate_limits/models" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -518,7 +518,7 @@ test("admin model limit list fails closed when backend omits stable rule ids", a
 test("admin firewall list fails closed when backend omits stable rule ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/firewalls/rules" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -544,7 +544,7 @@ test("admin firewall list fails closed when backend omits stable rule ids", asyn
 test("admin firewall list fails closed when backend returns malformed rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/firewalls/rules" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -572,7 +572,7 @@ test("admin firewall list fails closed when backend returns malformed rows", asy
 test("admin firewall list fails closed when backend omits firewall values", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/firewall/rules" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/system/firewalls/rules" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {

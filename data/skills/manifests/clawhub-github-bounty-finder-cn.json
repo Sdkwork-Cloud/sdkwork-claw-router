@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31923,
+  "uuid": "skill-clawhub-github-bounty-finder-cn",
+  "skillKey": "clawhub-github-bounty-finder-cn",
+  "name": "Github Bounty Finder",
+  "summary": "Scan GitHub and Algora bounties to find high-value, low-competition opportunities with automated scoring and actionable recommendations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_bounty_finder_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lvjunjie-byte",
+      "features": [
+        "Scan GitHub and Algora bounties to find high-value, low-competition opportunities with automate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-bounty-finder-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59714416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-bounty-finder-cn",
+      "url": "https://clawhub.ai/skills/github-bounty-finder-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-bounty-finder-cn",
+    "url": "https://clawhub.ai/skills/github-bounty-finder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-bounty-finder-cn-695b0b29d40a4678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-bounty-finder-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-bounty-finder-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38e4662d9b4bca8ab1be24d7935c582be8e79cf6a9ec0db818474ca5ec3e7146",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:03:31.680Z"
+}

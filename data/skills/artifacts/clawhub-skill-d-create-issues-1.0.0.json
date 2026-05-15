@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-d-create-issues@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_d_create_issues",
+  "skill": {
+    "id": 48464,
+    "skillKey": "clawhub-skill-d-create-issues",
+    "name": "skill-d-create-issues"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-d-create-issues",
+    "url": "https://clawhub.ai/skills/skill-d-create-issues",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-d-create-issues-63af311f162a6446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate issue draft existence and status, batch create Gitea issues with dependencies on confirmation, update meeting status, and manage related email notif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myd2002",
+      "userId": "s175zrvz5m28epr76c6rt4dtex8474t6",
+      "displayName": "myd2002",
+      "image": "https://avatars.githubusercontent.com/u/165788146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777449690658,
+      "changelog": "Initial release of the event-driven issue creation workflow controller.\n\n- Enables trigger via Gitea webhook (on renaming draft_issue.md to confirmed_issue.md) or through OpenClaw chat commands.\n- Automates strict workflow: precondition check, issue creation, dependency linking, status update, and email notification.\n- Differentiates between single-project and cross-project meetings, handling each with appropriate branching logic.\n- Provides robust error handling with user feedback and ensures idempotency at all stages.\n- Includes detailed configuration and setup instructions for seamless deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cd2b93814617b5cf261fe9e1c8d82fb0467610b46f3c3a52894778135529bde"
+}

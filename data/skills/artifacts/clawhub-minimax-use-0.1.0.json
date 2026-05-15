@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-use@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_use",
+  "skill": {
+    "id": 34566,
+    "skillKey": "clawhub-minimax-use",
+    "name": "Minimax Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-use",
+    "url": "https://clawhub.ai/skills/minimax-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-use-2631e957cf4ac64d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax AI tools for web search, image analysis, LLM chat, and language translation. Use when you need to search the web, analyze images, generate text with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnlangzi",
+      "userId": "s17ea0xb0d0t4fndf7x5myp5es83h119",
+      "displayName": "cnlangzi",
+      "image": "https://avatars.githubusercontent.com/u/347651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773926077674,
+      "changelog": "Initial release of minimax-use: MiniMax AI tools for web search, image analysis, LLM chat, and translation.\n\n- Offers CLI and Python functions for web search, image analysis, LLM chat (including streaming), text translation, and model listing.\n- Requires Python 3.8+, requests library, and a MINIMAX_API_KEY.\n- Provides consistent JSON response format for all operations (success/error).\n- Includes example usages and parameter documentation for all major features.\n- Supports Linux, macOS, and Windows platforms; API endpoint can be customized.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38f584575dd19f902472eac2b9059f375789199407f2a09b148b68fca6d52c1d"
+}

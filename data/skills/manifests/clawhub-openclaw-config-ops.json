@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43710,
+  "uuid": "skill-clawhub-openclaw-config-ops",
+  "skillKey": "clawhub-openclaw-config-ops",
+  "name": "OpenClaw Config Ops",
+  "summary": "Safe OpenClaw gateway configuration operations. Use when reading, analyzing, or modifying openclaw.json. Enforces schema validation + official documentation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AstralWave",
+      "features": [
+        "Safe OpenClaw gateway configuration operations",
+        "Use when reading, analyzing, or modifying openclaw.json",
+        "Enforces schema validation + official documentation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-config-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58116035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-config-ops",
+      "url": "https://clawhub.ai/skills/openclaw-config-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-ops",
+    "url": "https://clawhub.ai/skills/openclaw-config-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-ops-a54e7513ed28b77b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-config-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d78094073196d0c503885b57433aca975bfdb9e3fa0529a1636f5a51ae78be2b",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T04:11:36.662Z"
+}

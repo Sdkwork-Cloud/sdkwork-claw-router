@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56019,
+  "uuid": "skill-clawhub-flowforge",
+  "skillKey": "clawhub-flowforge",
+  "name": "FlowForge — Autonomous AI Coding Pipeline (Spec → Plan → Code → QA)",
+  "summary": "Autonomously breaks coding tasks into spec, plan, code, and QA phases, executing all heavy work via Claude Code with multi-account rate limit rotation.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowforge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "windseeker1111",
+      "features": [
+        "Autonomously breaks coding tasks into spec, plan, code, and QA phases, executing all heavy work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowforge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127914008?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowforge",
+      "url": "https://clawhub.ai/skills/flowforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowforge",
+    "url": "https://clawhub.ai/skills/flowforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowforge-bae2f40bd0925aa5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowforge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowforge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e90ca55de50f9611571822d47b1d54b22bbbcaf95edb0309059f711ad769102a",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:59:51.710Z"
+}

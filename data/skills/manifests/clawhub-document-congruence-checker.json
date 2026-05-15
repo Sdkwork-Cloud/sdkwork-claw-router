@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47262,
+  "uuid": "skill-clawhub-document-congruence-checker",
+  "skillKey": "clawhub-document-congruence-checker",
+  "name": "Document Congruence Checker",
+  "summary": "Compare multiple documents for congruency and consistency. Use when: User needs to verify that multiple documents (contracts, reports, forms, specs) contain...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_congruence_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dorjenorbulim",
+      "features": [
+        "Compare multiple documents for congruency and consistency",
+        "Use when: User needs to verify that multiple documents (contracts, reports, forms, specs) conta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-congruence-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269761677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-congruence-checker",
+      "url": "https://clawhub.ai/skills/document-congruence-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-congruence-checker",
+    "url": "https://clawhub.ai/skills/document-congruence-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-congruence-checker-c8d563d1cca55f18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-congruence-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-congruence-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c91c9f4aaa6a63201f392b9e5b62f148aff781ffd40183ce919a3cfe229afb68",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:14:26.451Z"
+}

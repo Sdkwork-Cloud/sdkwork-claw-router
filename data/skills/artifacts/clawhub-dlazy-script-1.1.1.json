@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-script@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_script",
+  "skill": {
+    "id": 23671,
+    "skillKey": "clawhub-dlazy-script",
+    "name": "Dlazy Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-script",
+    "url": "https://clawhub.ai/skills/dlazy-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-script-f9d5f00826ce1297.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Storyboard script generator. Given a brief and optional reference images, returns a structured script (subjects + storyboards) plus a flat canvas shape list..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076577931,
+      "changelog": "- Documentation updated\n- Version bumped to 1.1.1\n- No user-facing features or bug fixes added",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71c52ab4e423195c3fea30b3a27d5852859b9ad2fb0aefc598f9429e28e2d5d4"
+}

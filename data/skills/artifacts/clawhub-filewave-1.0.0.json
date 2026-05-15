@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filewave@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filewave",
+  "skill": {
+    "id": 16996,
+    "skillKey": "clawhub-filewave",
+    "name": "Filewave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filewave",
+    "url": "https://clawhub.ai/skills/filewave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filewave-4d9befce01f00da9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage FileWave UEM device inventory, perform filtered searches, view device hierarchy, and run fleet analytics via the REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jlevitsk",
+      "userId": "s1747y1z5abp7vmzhm6t1cz8x983k2fv",
+      "displayName": "Josh Levitsky, CISSP",
+      "image": "https://avatars.githubusercontent.com/u/695509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 808,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771283187542,
+      "changelog": "FileWave UEM API Skill 1.0.0\n\n- Initial release providing command-line access to FileWave device inventory and management via REST API.\n- Supports multi-server profiles, inventory queries, fleet analytics, device searching, device hierarchy, and session-based comparisons.\n- Includes interactive setup, secure credential storage, CI/CD environment support, and JSON export for scripting.\n- Documentation covers setup, CLI reference, bulk updates, API capabilities, and security architecture.\n- Compatible with both Community and Commercial FileWave editions, supporting macOS, Windows, ChromeOS, Android, iOS, iPadOS, and tvOS.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ae2da3d6cefbf870593a714d3187085f0c202b08e5a9f6165844b67cacdd2f3"
+}

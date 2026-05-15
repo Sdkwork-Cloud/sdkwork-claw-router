@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15270,
+  "uuid": "skill-clawhub-ddgs",
+  "skillKey": "clawhub-ddgs",
+  "name": "ddgs (DuckDuckGo Search)",
+  "summary": "Perform privacy-focused web searches via DDGS metasearch for webpages, news, images, videos, or books with no tracking and no API key required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddgs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "idkwhodatis",
+      "features": [
+        "Perform privacy-focused web searches via DDGS metasearch for webpages, news, images, videos, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ddgs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33296184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ddgs",
+      "url": "https://clawhub.ai/skills/ddgs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddgs",
+    "url": "https://clawhub.ai/skills/ddgs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddgs-6b332ba2241812b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ddgs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ddgs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74d951e57ad82abb64b43d492f15ee16b968ef8e5abc546a19a6ce8d53428b20",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T00:54:45.958Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bili-mindmap@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bili_mindmap",
+  "skill": {
+    "id": 20122,
+    "skillKey": "clawhub-bili-mindmap",
+    "name": "bili-mindmap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bili-mindmap",
+    "url": "https://clawhub.ai/skills/bili-mindmap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bili-mindmap-ee3c64ad634c02a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a Bilibili video URL or BV number into a human-like XMind mind map. Use when the user wants to collect subtitles, comments, AI summary, and transcript f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pzc163",
+      "userId": "s17ahj62dx6vrx81jzdz78s08583ja5j",
+      "displayName": "Magic Yang",
+      "image": "https://avatars.githubusercontent.com/u/105222039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774530323015,
+      "changelog": "Release 0.2.1: host workflow, Moonshine ASR, context cleanup, host outline prompt generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88c73f4f3e20b5a9519a853a6362788b126ff21112e15420fb43ae8d7cb3ac7d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9482,
+  "uuid": "skill-clawhub-mail",
+  "skillKey": "clawhub-mail",
+  "name": "Mail",
+  "summary": "Execute email operations with platform-specific optimizations and secure credential handling.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Execute email operations with platform-specific optimizations and secure credential handling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mail@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mail",
+      "url": "https://clawhub.ai/skills/mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail",
+    "url": "https://clawhub.ai/skills/mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-00d8d3f11739d2f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mail@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mail-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e47df546dde87241b1ee55715b4faef09458c7d1d27572b898170465a8e93d",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T13:23:45.592Z"
+}

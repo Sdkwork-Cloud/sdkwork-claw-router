@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11614,
+  "uuid": "skill-clawhub-ii-irc",
+  "skillKey": "clawhub-ii-irc",
+  "name": "ii-IRC",
+  "summary": "Persistent IRC presence using ii (minimalist file-based IRC client) with event-driven mention detection. Use when setting up an AI agent on IRC, monitoring IRC channels, sending IRC messages, or integrating OpenClaw with IRC via ii. Covers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ii_irc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harley Richardson",
+      "features": [
+        "Persistent IRC presence using ii (minimalist file-based IRC client) with event-driven mention d.",
+        "Use when setting up an AI agent on IRC, monitoring IRC channels, sending IRC messages, or integ.",
+        "Covers ii setup, mention watcher, systemd services, and message sending/reading."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ii-irc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62647285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ii-irc",
+      "url": "https://clawhub.ai/skills/ii-irc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ii-irc",
+    "url": "https://clawhub.ai/skills/ii-irc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ii-irc-c06c54700770914a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ii-irc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ii-irc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0270163a0136aea8a5ac6e48e6df0988b4123e71a1da69e50026ead7e554f3c",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T13:06:46.400Z"
+}

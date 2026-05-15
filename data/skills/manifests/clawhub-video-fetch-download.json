@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18584,
+  "uuid": "skill-clawhub-video-fetch-download",
+  "skillKey": "clawhub-video-fetch-download",
+  "name": "Video Fetch Download",
+  "summary": "Download videos from 1000+ sites, torrents, and magnet links directly to 115 or Quark cloud storage via server-side or local downloads.",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_fetch_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "graysonzeng",
+      "features": [
+        "Download videos from 1000+ sites, torrents, and magnet links directly to 115 or Quark cloud sto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-fetch-download@1.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21187269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-fetch-download",
+      "url": "https://clawhub.ai/skills/video-fetch-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-fetch-download",
+    "url": "https://clawhub.ai/skills/video-fetch-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-fetch-download-a87fc9966a24b568.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-fetch-download@1.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-fetch-download-1.1.9.json",
+      "version": "1.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da69ca80750d4ea30f5be238a81ffd6de21d98eae944d81c224508f22fe2404",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:49:14.350Z"
+}

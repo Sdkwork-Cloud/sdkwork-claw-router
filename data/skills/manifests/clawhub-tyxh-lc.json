@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68466,
+  "uuid": "skill-clawhub-tyxh-lc",
+  "skillKey": "clawhub-tyxh-lc",
+  "name": "tyxh-lc",
+  "summary": "查询患者信息，支持通过患者编号/ID获取患者详情（无需认证）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tyxh_lc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "念",
+      "features": [
+        "查询患者信息，支持通过患者编号/ID获取患者详情（无需认证）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tyxh-lc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66855214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tyxh-lc",
+      "url": "https://clawhub.ai/skills/tyxh-lc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tyxh-lc",
+    "url": "https://clawhub.ai/skills/tyxh-lc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tyxh-lc-eee11d80ea9568d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tyxh-lc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tyxh-lc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1821b496bac04440887590c384c9581733597b69f0fe5188958047ec9c4c990c",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:18:59.543Z"
+}

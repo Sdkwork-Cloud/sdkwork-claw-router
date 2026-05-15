@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42647,
+  "uuid": "skill-clawhub-branch-protection-auditor",
+  "skillKey": "clawhub-branch-protection-auditor",
+  "name": "Branch Protection Auditor",
+  "summary": "Audit GitHub/GitLab branch protection rules across repositories. Check required reviews, status checks, force push restrictions, admin bypass, and CODEOWNERS...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.branch_protection_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit GitHub/GitLab branch protection rules across repositories",
+        "Check required reviews, status checks, force push restrictions, admin bypass, and CODEOWNERS..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/branch-protection-auditor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "branch-protection-auditor",
+      "url": "https://clawhub.ai/skills/branch-protection-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "branch-protection-auditor",
+    "url": "https://clawhub.ai/skills/branch-protection-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/branch-protection-auditor-c989979d36ac24cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/branch-protection-auditor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-branch-protection-auditor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db15eb41356a11c50c234f5f98a1a7510ab17d0a569cb8d9c3a5d7a330ad9904",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:58.799Z"
+}

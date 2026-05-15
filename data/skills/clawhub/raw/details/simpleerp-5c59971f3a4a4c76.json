@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "simpleerp",
+    "displayName": "simpleerp",
+    "summary": "Provides procedures for calling the SimpleERP HTTP API. Runtime: shell with curl/curl.exe or PowerShell (Invoke-WebRequest/Invoke-RestMethod). Credentials: s...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1775540478946,
+    "updatedAt": 1777527268279
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775541450314,
+    "changelog": "- Credentials handling updated: now tries user-provided API key first, then SIMPLEERP_API_KEY environment variable; if neither are available, requests the key once before running authenticated commands.\n- Improved clarity in API key requirements: only GET /api/health can run without authentication; all other endpoints enforce x-api-key.\n- Expanded description on supported runtime environments: distinguishes between shell, curl, and PowerShell invocation.\n- Minor clarifications on admin route permissions and credential handling (no searching unrelated files or inventing keys).\n- General documentation refinements for accuracy and user guidance; no functional changes to endpoints or domain coverage.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "icystssi-lang",
+    "userId": "s17dhsy7kxqq78v1qybpqkynns84djgj",
+    "displayName": "icystssi-lang",
+    "image": "https://avatars.githubusercontent.com/u/267538212?v=4"
+  },
+  "moderation": null
+}

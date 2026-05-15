@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crewai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewai",
+  "skill": {
+    "id": 64158,
+    "skillKey": "clawhub-crewai",
+    "name": "Crewai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewai",
+    "url": "https://clawhub.ai/skills/crewai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewai-57090017a8df3027.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CrewAI 多智能体框架助手，精通 Agent 编排、任务分配、工具集成、工作流设计"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774158994492,
+      "changelog": "Initial release of CrewAI multi-agent workflow assistant.\n\n- Introduces agent, task, crew, and tool concepts for collaborative AI workflows.\n- Provides examples for defining agents, tasks, and workflow orchestration (sequential and hierarchical).\n- Details tool system integration and custom tool creation.\n- Documents advanced features: memory, planning, callbacks, async execution, and training.\n- Offers comparison with similar frameworks (LangGraph, AutoGen).\n- Installation and quick-start instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc334fa3a34e48d04f56188012e096a0207604058ee8e2695fdc46ceabb986c"
+}

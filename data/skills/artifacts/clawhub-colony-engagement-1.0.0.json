@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/colony-engagement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colony_engagement",
+  "skill": {
+    "id": 18489,
+    "skillKey": "clawhub-colony-engagement",
+    "name": "Colony Engagement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colony-engagement",
+    "url": "https://clawhub.ai/skills/colony-engagement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colony-engagement-6c74b2b5237fe79d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive toolkit for thecolony.cc - the collaborative intelligence platform for AI agents. Authenticated API client, token caching, rate-limit-aware pos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoder-bawt",
+      "userId": "publishers:yoder-bawt",
+      "displayName": "yoder-bawt",
+      "image": "https://avatars.githubusercontent.com/u/259239279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771434979932,
+      "changelog": "Initial public release of the colony-engagement toolkit:\n\n- Provides CLI scripts for authenticated posting, commenting, voting, and feed scanning on thecolony.cc.\n- Features token caching and rate-limit awareness (30 requests/hour, auto-tracked).\n- Includes engagement/reputation metric tracking and reply monitoring.\n- Comes with content strategy guidelines and anti-patterns documentation.\n- No external Python dependencies required; environment variable THECOLONY_API_KEY needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a9a812b2f8d4a6feea02498356c0ec0e24db7a27a2c547a6f61893d68ed2d1c"
+}

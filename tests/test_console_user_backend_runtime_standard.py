@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -23,7 +23,8 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("mod app_user_profile;", product_api_mod)
         self.assertIn("app_user_profile_router", product_api_mod)
         self.assertIn("app_user_profile_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/user/profile", app_user)
+        self.assertIn("/app/v3/api/iam/users/current", app_user)
+        self.assertNotIn("/app/v3/api/user/profile", app_user)
         self.assertIn("TrustedRequestSubject", app_user)
         self.assertIn("require_subject", app_user)
         self.assertIn("AppUserProfileReadStore", app_user)
@@ -66,11 +67,13 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(export_name, port)
 
         for field_name in [
-            "name",
+            "id",
+            "username",
+            "display_name",
             "email",
             "phone",
             "language",
-            "avatar",
+            "avatar_url",
             "is_verified",
             "status",
             "registered_at",
@@ -82,7 +85,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertIn(field_name, port)
 
-        self.assertIn("pub name: String,", port)
+        self.assertIn("pub display_name: String,", port)
         self.assertIn("#[serde(rename_all = \"camelCase\")]", port)
         for sensitive_field in [
             "password_hash",
@@ -114,14 +117,15 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             store_path = ROOT / relative
             self.assertTrue(store_path.exists())
             store = store_path.read_text(encoding="utf-8")
+            compact_store = " ".join(store.split())
 
             self.assertIn(store_name, store)
             for table in [
-                "plus_user",
-                "plus_oauth_account",
-                "iam_user_preference",
-                "iam_user_security_setting",
+                "iam_user",
+                "iam_organization_member",
+                "iam_session",
                 "iam_user_login_event",
+                "iam_user_identity",
             ]:
                 self.assertIn(table, store)
 
@@ -129,33 +133,39 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
                 self.assertIn(scope_column, store)
 
             for safe_column in [
-                "nickname",
                 "username",
+                "display_name",
                 "email",
                 "phone",
                 "language",
+                "avatar_url",
+                "user_status",
+                "registered_at",
+                "last_login",
+                "last_login_ip",
+                "password_last_changed",
                 "mfa_enabled",
-                "password_last_changed_at",
-                "security_level",
-                "client_ip_masked",
-                "occurred_at",
-                "oauth_provider",
+                "identity_binding_count",
             ]:
                 self.assertIn(safe_column, store)
 
             self.assertIn("load_user_profile", store)
             self.assertIn("CAST(u.created_at AS TEXT) AS registered_at", store)
-            self.assertIn("avatar_initial", store)
-            self.assertIn("third_party_bound_label", store)
-            self.assertIn("u.status AS user_status", store)
-            self.assertIn('status: user_status_label(required_integer_cell(row, "user_status")?)?', store)
+            self.assertIn("COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'SDKWork User') AS display_name", store)
+            self.assertIn("COALESCE(u.avatar_url, '') AS avatar_url", store)
+            self.assertIn("COALESCE(u.status, '') AS user_status", store)
+            self.assertIn(
+                'third_party_bound: integer_cell(row, "identity_binding_count") .max(0) .to_string()',
+                compact_store,
+            )
             self.assertIn("missing app user profile status from database row", store)
-            self.assertIn("invalid app user profile status from database row", store)
             self.assertIn("LIMIT", store)
             self.assertIn("SELECT", store)
             self.assertNotIn("SELECT *", store)
             self.assertNotIn("COALESCE(u.status, 1) AS user_status", store)
             self.assertNotIn('status: user_status_label(integer_cell(row, "user_status"))', store)
+            self.assertNotIn("plus_user", store)
+            self.assertNotIn("plus_oauth_account", store)
             for sensitive_column in [
                 "u.password",
                 "password_hash",
@@ -178,21 +188,20 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/user/profile"
-        self.assertIn("name: UserProfileResponse", contract)
+        operation_marker = "api_path: /app/v3/api/iam/users/current"
+        self.assertIn("operation_id: users.current.retrieve", contract)
+        self.assertIn("name: IamUserResponse", contract)
         operation_index = contract.index(operation_marker)
-        schema_index = contract.index("name: UserProfileResponse", operation_index)
-        self.assertLess(schema_index - operation_index, 1200)
+        schema_index = contract.index("name: IamUserResponse")
 
         for marker in [
-            "required: [name, email, phone, language, avatar, isVerified, status, registeredAt, lastLogin, lastLoginIp, passwordLastChanged, twoFactorEnabled, thirdPartyBound]",
-            "name: { type: string }",
-            "email: { type: string }",
+            "required: [id, username, displayName, email, avatarUrl, phone, language, isVerified, status, registeredAt, lastLogin, lastLoginIp, passwordLastChanged, twoFactorEnabled, thirdPartyBound]",
+            "displayName: { type: string, minLength: 1, maxLength: 128 }",
+            "email: { type: string, maxLength: 256 }",
             "phone:",
-            "avatar:",
+            "avatarUrl:",
             "lastLoginIp:",
             "thirdPartyBound:",
-            "description: Precomputed user avatar initials for display.",
             "description: Masked client IP address from the latest login event.",
             "description: Safe OAuth provider binding summary without provider subject IDs or tokens.",
         ]:
@@ -210,16 +219,17 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_user = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "user.ts"
+        sdk_iam = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts"
         ).read_text(encoding="utf-8")
-        user_profile_response_path = (
+        iam_user_response_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
-            / "user-profile-response.ts"
+            / "iam-user-response.ts"
         )
         frontend = (
             ROOT
@@ -234,28 +244,31 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertEqual(package["type"], "module")
         self.assertEqual(package["scripts"]["typecheck"], "tsc --noEmit")
         self.assertTrue((package_root / "tsconfig.json").exists())
-        self.assertIn('"UserProfileResponse"', openapi)
-        self.assertIn('"$ref": "#/components/schemas/UserProfileResponse"', openapi)
-        self.assertTrue(user_profile_response_path.exists())
+        self.assertIn('"IamUserResponse"', openapi)
+        self.assertIn('"$ref": "#/components/schemas/IamUserResponse"', openapi)
+        self.assertTrue(iam_user_response_path.exists())
 
-        user_profile_response = user_profile_response_path.read_text(encoding="utf-8")
-        self.assertIn("export interface UserProfileResponse", user_profile_response)
-        self.assertIn("name: string;", user_profile_response)
-        self.assertIn("isVerified: boolean;", user_profile_response)
-        self.assertIn("thirdPartyBound: string;", user_profile_response)
+        iam_user_response = iam_user_response_path.read_text(encoding="utf-8")
+        self.assertIn("export interface IamUserResponse", iam_user_response)
+        self.assertIn("displayName: string;", iam_user_response)
+        self.assertIn("avatarUrl: string;", iam_user_response)
+        self.assertIn("isVerified: boolean;", iam_user_response)
+        self.assertIn("thirdPartyBound: string;", iam_user_response)
         self.assertIn(
-            "async fetchUserProfile(params?: QueryParams): Promise<FetchUserProfileResult>",
-            sdk_user,
+            "async retrieve(): Promise<UsersCurrentRetrieveResult>",
+            sdk_iam,
         )
 
-        self.assertIn("UserProfileResponse as SdkUserProfileResponse", frontend)
+        self.assertIn("IamUserResponse as SdkUserProfileResponse", frontend)
         self.assertIn("export interface UserProfile", frontend)
-        self.assertIn("name: SdkUserProfileResponse['name'];", frontend)
+        self.assertIn("name: SdkUserProfileResponse['displayName'];", frontend)
         self.assertIn("isVerified: SdkUserProfileResponse['isVerified'];", frontend)
         self.assertIn("thirdPartyBound: SdkUserProfileResponse['thirdPartyBound'];", frontend)
         self.assertIn("Promise<UserProfile>", frontend)
         self.assertIn("normalizeUserProfile", frontend)
         self.assertIn("readRequiredString(data, 'email', 'User profile response missing data')", frontend)
+        self.assertIn("getClawRouterAppSdkClient().iam.users.current.retrieve()", frontend)
+        self.assertNotIn("getClawRouterAppSdkClient().user.fetchUserProfile()", frontend)
         self.assertNotIn("as unknown as UserProfile", frontend)
         self.assertNotIn("initialAvatar", frontend)
 
@@ -286,9 +299,10 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("readOnlyUserActions", user_view)
         self.assertIn("Read-only", user_view)
-        self.assertIn("UserService.fetchUserProfile()", user_view)
-        self.assertIn("getClawRouterAppSdkClient().user.fetchUserProfile()", user_service)
-        self.assertIn("operation: fetchUserProfile", contract)
+        self.assertIn("UserService.fetchCurrentUser()", user_view)
+        self.assertIn("getClawRouterAppSdkClient().iam.users.current.retrieve()", user_service)
+        self.assertIn("operation: fetchCurrentUser", contract)
+        self.assertIn("operation_id: users.current.retrieve", contract)
         self.assertNotIn("updateUserProfile", contract)
         self.assertNotIn("uploadAvatar", contract)
         self.assertNotIn("changePassword", contract)
@@ -303,10 +317,10 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             "Change password",
             "Manage",
             "Manage connections",
-            "编辑",
-            "修改密码",
-            "管理",
-            "管理连接",
+            "缂栬緫",
+            "淇敼瀵嗙爜",
+            "绠＄悊",
+            "绠＄悊杩炴帴",
         ]:
             self.assertNotIn(unsupported_action, user_view)
 

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dida365-openapi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dida365_openapi",
+  "skill": {
+    "id": 64994,
+    "skillKey": "clawhub-dida365-openapi",
+    "name": "Dida365 Openapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dida365-openapi",
+    "url": "https://clawhub.ai/skills/dida365-openapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dida365-openapi-3355a5f73832f6a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于滴答清单（Dida365）官方 OpenAPI 和 OAuth2 的任务管理 Skill，直连 dida365.com，不经过任何第三方服务，你的数据只在本地和滴答清单服务器之间传输。零第三方依赖，纯 Python 标准库实现。完整覆盖项目与任务的增删改查、完成、移动、筛选，支持标签、提醒、重复规则等丰富功能..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "workingcoder",
+      "userId": "s17bx6hcj2krckx06aykpdgdkx83kpsx",
+      "displayName": "workingcoder",
+      "image": "https://avatars.githubusercontent.com/u/26352836?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 269,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774144523794,
+      "changelog": "Initial release of dida365-openapi skill:\n\n- Offers direct, secure task and project management for Dida365 using the official OpenAPI—no third-party services or dependencies, just Python standard libraries.\n- Supports complete CRUD (create, read, update, delete) for projects and tasks, including completion, moves, advanced filtering, labels, reminders, and repeat rules.\n- Provides robust input validation and safeguards to ensure reliable and safe API calls.\n- Authenticates through OAuth2, with a bundled CLI to streamline setup, login, and all API operations.\n- Comprehensive documentation and usage guidance available at https://github.com/workingcoder/dida365-openapi.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74a5544d48824547264581a05c1a9669c3278bf189f36dcee151f4e404b4e726"
+}

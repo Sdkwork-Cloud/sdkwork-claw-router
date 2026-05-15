@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62109,
+  "uuid": "skill-clawhub-data-bird",
+  "skillKey": "clawhub-data-bird",
+  "name": "data-bird",
+  "summary": "轻量级数据分析 Agent。支持工作区表格与通过 http(s) 下载的 CSV/Excel，按自然语言生成 ECharts 与文字结论。（公开发布版说明）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_bird",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "niu001007",
+      "features": [
+        "轻量级数据分析 Agent。支持工作区表格与通过 http(s) 下载的 CSV/Excel，按自然语言生成 ECharts 与文字结论。（公开发布版说明）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-bird@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38043215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-bird",
+      "url": "https://clawhub.ai/skills/data-bird"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-bird",
+    "url": "https://clawhub.ai/skills/data-bird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-bird-a3e82cf72533b656.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-bird@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-bird-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53bc1008234a98ab9b948a1072d23da6702dae7b9bbd7d50a48b551f1cb48378",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:49:26.107Z"
+}

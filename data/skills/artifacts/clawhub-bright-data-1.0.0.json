@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bright-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bright_data",
+  "skill": {
+    "id": 9908,
+    "skillKey": "clawhub-bright-data",
+    "name": "Bright Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bright-data",
+    "url": "https://clawhub.ai/skills/bright-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bright-data-4c975c8c40bfaa19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping and search via Bright Data API. Requires BRIGHTDATA_API_KEY and BRIGHTDATA_UNLOCKER_ZONE. Use for scraping any webpage as markdown (bypassing bot detection/CAPTCHA) or searching Google with structured results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meirkad",
+      "userId": "publishers:meirkad",
+      "displayName": "MeirKaD",
+      "image": "https://avatars.githubusercontent.com/u/92692385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2985,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768144031786,
+      "changelog": "- Initial release of Bright Data skill for web scraping and Google search.\n- Enables scraping of any webpage as markdown, bypassing bot detection and CAPTCHA.\n- Supports Google search with structured JSON results.\n- Requires configuration with BRIGHTDATA_API_KEY and BRIGHTDATA_UNLOCKER_ZONE.\n- Provides shell scripts for both search and scrape functionalities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9426abfad0abc50a3f0ced3f4b54d6d2451890a77bc3bbbe923cde7947af63ad"
+}

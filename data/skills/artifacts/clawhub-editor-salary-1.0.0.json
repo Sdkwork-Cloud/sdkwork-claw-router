@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-salary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_salary",
+  "skill": {
+    "id": 43827,
+    "skillKey": "clawhub-editor-salary",
+    "name": "Editor Salary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-salary",
+    "url": "https://clawhub.ai/skills/editor-salary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-salary-8c18e5afd76c2b51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute interview recording into 1080p polished edited clips just by typing what you need. Whether it's replacing manual editing work with AI-automat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776525110162,
+      "changelog": "Initial release of Editor Salary — fast AI-powered video editing via cloud.\n\n- Upload raw footage and describe desired edits; AI handles timeline, cuts, enhancements, and exports.\n- No manual editing or timeline dragging; typical 2-minute clips are processed, enhanced, and exported in under 2 minutes.\n- Automatic cloud setup with anonymous token support (100 free credits/7 days).\n- Supports multiple workflows: quick edit, batch, and iterative refinement with stateful sessions.\n- Handles exports (MP4 and more), credits balance, project status, and file uploads with simple prompts.\n- Error handling and tips included for smooth, guided user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0533c4fd2e5db8a37aabb5a7f3f1d4cf15b5de9c8dbd0dae1cc715654e1892e7"
+}

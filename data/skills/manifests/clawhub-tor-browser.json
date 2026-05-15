@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17302,
+  "uuid": "skill-clawhub-tor-browser",
+  "skillKey": "clawhub-tor-browser",
+  "name": "Tor Browser Automation",
+  "summary": "Headless browser automation with Tor SOCKS5 proxy support for accessing .onion sites and anonymous browsing. Use when navigating dark web resources, scraping...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tor_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Admin4Giter",
+      "features": [
+        "Headless browser automation with Tor SOCKS5 proxy support for accessing .onion sites and anonym.",
+        "Use when navigating dark web resources, scraping..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tor-browser@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209126556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tor-browser",
+      "url": "https://clawhub.ai/skills/tor-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tor-browser",
+    "url": "https://clawhub.ai/skills/tor-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tor-browser-c9361dbd1c68d37e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tor-browser@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tor-browser-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1afb817e82c352bafcadebf0fc9c412ef344ab2387f0f45c33fc5cf1d19ef168",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T15:57:24.424Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51461,
+  "uuid": "skill-clawhub-moneysharks",
+  "skillKey": "clawhub-moneysharks",
+  "name": "MoneySharks",
+  "summary": "Fully autonomous 24/7 Aster DEX perpetual futures trading agent. Manages the complete lifecycle — onboarding, live execution, bracket orders, trailing stop m...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneysharks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharksdotmoney",
+      "features": [
+        "Fully autonomous 24/7 Aster DEX perpetual futures trading agent",
+        "Manages the complete lifecycle — onboarding, live execution, bracket orders, trailing stop m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moneysharks@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241885711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moneysharks",
+      "url": "https://clawhub.ai/skills/moneysharks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneysharks",
+    "url": "https://clawhub.ai/skills/moneysharks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneysharks-caecf0c40864a6eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moneysharks@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-moneysharks-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee3b97229073f42ab26c2385e12e062418e763085e13c7b62e1ab74249f97581",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:07:49.492Z"
+}

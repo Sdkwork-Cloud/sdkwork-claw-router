@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghost@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost",
+  "skill": {
+    "id": 11477,
+    "skillKey": "clawhub-ghost",
+    "name": "ghost cms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost",
+    "url": "https://clawhub.ai/skills/ghost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-ead6ef03d61ee60c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Ghost CMS blog posts via Admin API. Supports creating, updating, deleting, and listing posts. Use when the user needs to programmatically manage Ghost..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manifoldor",
+      "userId": "s17cmjn5h8g0recnywq5vhtkxx83gsnk",
+      "displayName": "manifold",
+      "image": "https://avatars.githubusercontent.com/u/62403180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1814,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773117034598,
+      "changelog": "Initial release with full Ghost CMS blog management via Admin API, including image uploads:\n\n- Create, update, delete, and list blog posts through Ghost Admin API\n- NEW: Upload images and set feature images (cover images) for posts\n- Full CLI and Python API support for all actions\n- Tag management on posts\n- Unique configuration via explicit JSON config path for secure, project-based isolation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16b3def452320bf8d740fa29c300d48e75b1592d2b65a5c1383d5650a5a33c03"
+}

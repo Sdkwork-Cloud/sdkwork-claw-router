@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69830,
+  "uuid": "skill-clawhub-xiaohongshu-operate",
+  "skillKey": "clawhub-xiaohongshu-operate",
+  "name": "Xiaohongshu Operate",
+  "summary": "小红书运营执行技能。用于按给定素材执行发帖草稿创建（普通图文/长文/视频）、评论区检查与回复流程、关键词搜索并抓取已有内容。适用于用户明确要求“直接按素材操作平台”而不是重新生成内容的场景，默认发帖到草稿箱、评论先汇总后确认、抓取输出为 Top 20 的标准字段 Markdown。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_operate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chen-Li-17",
+      "features": [
+        "小红书运营执行技能。用于按给定素材执行发帖草稿创建（普通图文/长文/视频）、评论区检查与回复流程、关键词搜索并抓取已有内容。适用于用户明确要求“直接按素材操作平台”而不是重新生成内容的场景，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-operate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37493896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-operate",
+      "url": "https://clawhub.ai/skills/xiaohongshu-operate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-operate",
+    "url": "https://clawhub.ai/skills/xiaohongshu-operate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-operate-6af9d435279de896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-operate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-operate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbc55b8337795a70a730f4fd8c6b4812461dbee05a3b70890829113bfbc1a691",
+      "artifactSizeBytes": 2680
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:35:19.067Z"
+}

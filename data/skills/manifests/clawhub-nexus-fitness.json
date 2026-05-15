@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53714,
+  "uuid": "skill-clawhub-nexus-fitness",
+  "skillKey": "clawhub-nexus-fitness",
+  "name": "Nexus — Workout & Nutrition Tracker",
+  "summary": "Log and track workouts, meals, weight, and fitness friends with OAuth-secured cloud storage and conversational queries in Nexus.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_fitness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kushal",
+      "features": [
+        "Log and track workouts, meals, weight, and fitness friends with OAuth-secured cloud storage and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-fitness@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114013186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-fitness",
+      "url": "https://clawhub.ai/skills/nexus-fitness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-fitness",
+    "url": "https://clawhub.ai/skills/nexus-fitness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-fitness-2aeb175f9b8b6308.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-fitness@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-fitness-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8223b62be37f78e87a0aac8818659cc8a6d0038a254dce054d9fa1a7c55a1407",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:17:10.700Z"
+}

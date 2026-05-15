@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17650,
+  "uuid": "skill-clawhub-garden",
+  "skillKey": "clawhub-garden",
+  "name": "Garden",
+  "summary": "Track your entire garden with structured memory for plants, zones, tasks, harvests, and climate-aware planning that compounds over seasons.",
+  "version": "1.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garden",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track your entire garden with structured memory for plants, zones, tasks, harvests, and climate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garden@1.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garden",
+      "url": "https://clawhub.ai/skills/garden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garden",
+    "url": "https://clawhub.ai/skills/garden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garden-23eeb69c681dfdb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garden@1.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-garden-1.1.6.json",
+      "version": "1.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a90aff2e06bfa15dfe6445043746383e8b6f5ec307bcdf001905a5e72aa69f7",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:11:55.582Z"
+}

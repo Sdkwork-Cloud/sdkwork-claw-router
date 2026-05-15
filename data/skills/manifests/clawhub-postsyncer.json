@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29770,
+  "uuid": "skill-clawhub-postsyncer",
+  "skillKey": "clawhub-postsyncer",
+  "name": "Social Media Assistant (via postsyncer.com)",
+  "summary": "Manages social media through PostSyncer using REST and/or MCP. Use when scheduling, posting, or managing content across Instagram, TikTok, YouTube, X (Twitte...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postsyncer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abdul",
+      "features": [
+        "Manages social media through PostSyncer using REST and/or MCP",
+        "Use when scheduling, posting, or managing content across Instagram, TikTok, YouTube, X (Twitte.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postsyncer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195536684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postsyncer",
+      "url": "https://clawhub.ai/skills/postsyncer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postsyncer",
+    "url": "https://clawhub.ai/skills/postsyncer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postsyncer-30d22bd75c151728.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postsyncer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-postsyncer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:791b12e1f06a82b8710776bb0e9b777e83a074172f4416719d682af27e2edc2d",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:56:07.130Z"
+}

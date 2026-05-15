@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41010,
+  "uuid": "skill-clawhub-oc-docgen",
+  "skillKey": "clawhub-oc-docgen",
+  "name": "OpenClaw Doc Generator",
+  "summary": "Generates documentation from code. Creates API docs, README updates, architecture diagrams, and keeps documentation in sync with code changes.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_docgen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michealxie001",
+      "features": [
+        "Generates documentation from code",
+        "Creates API docs, README updates, architecture diagrams, and keeps documentation in sync with c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-docgen@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231448030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-docgen",
+      "url": "https://clawhub.ai/skills/oc-docgen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-docgen",
+    "url": "https://clawhub.ai/skills/oc-docgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-docgen-a3dcc42a82d83388.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-docgen@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-docgen-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4c1fc41069f2c7d52d31fd36cb6287f8989c091b07600ffb1d12347c1b87b47",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:30:37.859Z"
+}

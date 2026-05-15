@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26811,
+  "uuid": "skill-clawhub-sentinel",
+  "skillKey": "clawhub-sentinel",
+  "name": "Sentinel - AI Agent State Guardian",
+  "summary": "Automated backup, integrity monitoring, and self-healing for AI agent workspaces. Detects unexpected changes, creates automatic backups, self-heals from corr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Automated backup, integrity monitoring, and self-healing for AI agent workspaces",
+        "Detects unexpected changes, creates automatic backups, self-heals from corr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentinel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentinel",
+      "url": "https://clawhub.ai/skills/sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentinel",
+    "url": "https://clawhub.ai/skills/sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentinel-2b7847b7b705781d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentinel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentinel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f12033babd487a42ee116dc0a502f3a75fd59b67b974ba9abc0e72245931c45",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:53:45.934Z"
+}

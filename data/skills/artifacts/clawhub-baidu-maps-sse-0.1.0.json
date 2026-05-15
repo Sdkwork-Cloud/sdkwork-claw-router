@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-maps-sse@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_maps_sse",
+  "skill": {
+    "id": 33720,
+    "skillKey": "clawhub-baidu-maps-sse",
+    "name": "Baidu Maps Sse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-maps-sse",
+    "url": "https://clawhub.ai/skills/baidu-maps-sse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-maps-sse-138535d1f18b5190.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generated skill for baidu-maps-sse tools via OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774175126944,
+      "changelog": "Initial release of baidu-maps-sse skill.\n\n- Provides access to Baidu Maps and related geolocation tools via OneKey Gateway.\n- Supports geocoding, reverse geocoding, place search, place details, distance matrix, elevation, and directions.\n- Offers both CLI (npx onekey agent) and Python script usage.\n- Requires OneKey Gateway API key; supports fallback demo key for testing.\n- npm and pip dependencies required for respective usage methods.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6433ee14039818acb4522b32ed01b562279192c611315ea428b549915c3b7631"
+}

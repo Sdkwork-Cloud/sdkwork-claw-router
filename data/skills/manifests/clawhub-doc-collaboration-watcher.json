@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62180,
+  "uuid": "skill-clawhub-doc-collaboration-watcher",
+  "skillKey": "clawhub-doc-collaboration-watcher",
+  "name": "Doc Collaboration Watcher",
+  "summary": "实时监控指定协作文档变更，自动通过飞书、微信、iMessage和WebChat通知相关代理并跟踪确认与响应状态。",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_collaboration_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lewis&Eva",
+      "features": [
+        "实时监控指定协作文档变更，自动通过飞书、微信、iMessage和WebChat通知相关代理并跟踪确认与响应状态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-collaboration-watcher@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254896013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-collaboration-watcher",
+      "url": "https://clawhub.ai/skills/doc-collaboration-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-collaboration-watcher",
+    "url": "https://clawhub.ai/skills/doc-collaboration-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-collaboration-watcher-c52ee2ef026e677a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-collaboration-watcher@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-collaboration-watcher-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29eecdc0c1e36dab46cc819d4560b4c710767e34e31ae8b5100fd927216ae588",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T14:16:15.418Z"
+}

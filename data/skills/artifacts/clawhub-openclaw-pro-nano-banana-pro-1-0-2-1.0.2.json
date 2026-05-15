@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-pro-nano-banana-pro-1-0-2@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_pro_nano_banana_pro_1_0_2",
+  "skill": {
+    "id": 39149,
+    "skillKey": "clawhub-openclaw-pro-nano-banana-pro-1-0-2",
+    "name": "OpenClaw Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-pro-nano-banana-pro-1-0-2",
+    "url": "https://clawhub.ai/skills/openclaw-pro-nano-banana-pro-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-pro-nano-banana-pro-1-0-2-afeebb4c77b90fb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeayoo",
+      "userId": "s1790f14xjqhkt9p57p3rnn8sd83mzda",
+      "displayName": "jeayoo",
+      "image": "https://avatars.githubusercontent.com/u/121602928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774527175047,
+      "changelog": "- Added detailed usage instructions for Nano Banana Pro, including image generation, editing, and multi-image composition.\n- Documented required dependencies, runner, and API key setup (GEMINI_API_KEY).\n- Outlined supported resolutions and aspect ratios, with flags for custom settings.\n- Provided guidance for filename conventions and output handling.\n- Included installation steps for required tools (uv via brew).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0cdefc84727523e2be1a28a51c2a9d6222ab55fea4b2cb48d93d4a185bdad29"
+}

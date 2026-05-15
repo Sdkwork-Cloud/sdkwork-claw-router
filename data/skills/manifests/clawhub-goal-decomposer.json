@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70712,
+  "uuid": "skill-clawhub-goal-decomposer",
+  "skillKey": "clawhub-goal-decomposer",
+  "name": "Goal Decomposer",
+  "summary": "将高层自然语言目标拆解为可执行的多层级任务列表。 触发场景：用户给出模糊目标需要具体执行步骤、复杂任务需要拆解、需要生成任务树。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_decomposer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnnie23919",
+      "features": [
+        "将高层自然语言目标拆解为可执行的多层级任务列表。 触发场景：用户给出模糊目标需要具体执行步骤、复杂任务需要拆解、需要生成任务树。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-decomposer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45524781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-decomposer",
+      "url": "https://clawhub.ai/skills/goal-decomposer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-decomposer",
+    "url": "https://clawhub.ai/skills/goal-decomposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-decomposer-d893adbedf9ffcaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-decomposer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-decomposer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a464852bdf02e90c01c40867d083513446a6cb5a41209544c9be7d7d4058cd3b",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T09:27:00.993Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39245,
+  "uuid": "skill-clawhub-sleep-channel",
+  "skillKey": "clawhub-sleep-channel",
+  "name": "Sleep Channel",
+  "summary": "Handle messages in a Discord sleep-tracking channel by grounding all sleep logging and summaries on the real sleep tracker and source Discord metadata. Use w...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_channel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cdmichaelb",
+      "features": [
+        "Handle messages in a Discord sleep-tracking channel by grounding all sleep logging and summarie.",
+        "Use w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sleep-channel@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1451709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sleep-channel",
+      "url": "https://clawhub.ai/skills/sleep-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-channel",
+    "url": "https://clawhub.ai/skills/sleep-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-channel-11a3919faf72c0a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sleep-channel@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sleep-channel-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb5a2affa37d982785ab7ff30949200e558a1ed12cb28a207b4f3ecd76714236",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T23:25:08.200Z"
+}

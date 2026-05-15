@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59994,
+  "uuid": "skill-clawhub-weixin-fetcher",
+  "skillKey": "clawhub-weixin-fetcher",
+  "name": "WeChat Article Fetcher",
+  "summary": "获取微信公众号文章内容。当用户提供 mp.weixin.qq.com 链接时提取正文。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaozs.com",
+      "features": [
+        "获取微信公众号文章内容。当用户提供 mp.weixin.qq.com 链接时提取正文。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-fetcher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274764532?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-fetcher",
+      "url": "https://clawhub.ai/skills/weixin-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-fetcher",
+    "url": "https://clawhub.ai/skills/weixin-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-fetcher-e4081e97f0204ab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-fetcher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-fetcher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d592fd2ce1f569aabaf880e72395eaa20a0d7cc58b735ffc0446b79df8d62ea",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:51:31.540Z"
+}

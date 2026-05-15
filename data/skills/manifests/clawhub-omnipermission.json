@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25234,
+  "uuid": "skill-clawhub-omnipermission",
+  "skillKey": "clawhub-omnipermission",
+  "name": "OmniPermission (Human-in-the-Loop)",
+  "summary": "Human-in-the-loop: A free, extensible framework for intercepting tool calls via the OmniPersona mobile app.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnipermission",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobiasyouki",
+      "features": [
+        "Human-in-the-loop: A free, extensible framework for intercepting tool calls via the OmniPersona."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnipermission@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79138107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnipermission",
+      "url": "https://clawhub.ai/skills/omnipermission"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnipermission",
+    "url": "https://clawhub.ai/skills/omnipermission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnipermission-8cab763fd09f6e3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnipermission@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnipermission-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d22605220ad844b27604d33ae6d4825a4b96d92ef2103039c50e5dfe433bc868",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:35:25.583Z"
+}

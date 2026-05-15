@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27823,
+  "uuid": "skill-clawhub-brackets-bot",
+  "skillKey": "clawhub-brackets-bot",
+  "name": "Bracketsbot Skill",
+  "summary": "Generate, validate, and submit BracketsBot NCAA tournament brackets.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brackets_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sbauch",
+      "features": [
+        "Generate, validate, and submit BracketsBot NCAA tournament brackets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brackets-bot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/923033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brackets-bot",
+      "url": "https://clawhub.ai/skills/brackets-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brackets-bot",
+    "url": "https://clawhub.ai/skills/brackets-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brackets-bot-b4194af47c838fdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brackets-bot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brackets-bot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c16726ef66902fcc445293c9bd7171b27f7088fe13afd3e150d728807e308bd",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T15:59:39.624Z"
+}

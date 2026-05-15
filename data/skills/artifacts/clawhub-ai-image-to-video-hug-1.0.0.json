@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-hug@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_hug",
+  "skill": {
+    "id": 46691,
+    "skillKey": "clawhub-ai-image-to-video-hug",
+    "name": "Ai Image To Video Hug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-hug",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-hug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-hug-924b792a7bac4e2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a photo of two people embracing into 1080p animated hug video just by typing what you need. Whether it's turning hug photos into animated video moments..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776358746997,
+      "changelog": "AI Image to Video Hug — initial release:\n\n- Instantly animates hug photos into 1080p videos via cloud AI processing.\n- Simple flow: upload a photo, describe the animation you want, and get a video in 30–60 seconds.\n- Automatic backend token, session, and state management—no manual setup needed.\n- Supports multiple file formats including mp4, mov, jpg, png, and more.\n- Clear user prompts and action mapping for uploading, credits, status, and exporting.\n- Built-in error handling for expired tokens, unsupported files, credits, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4682a03fb82ba608ac92e97fc0629c7ba9846908d8df831a26246ea9cdc84e97"
+}

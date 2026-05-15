@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8539,
+  "uuid": "skill-clawhub-desktop-control-win",
+  "skillKey": "clawhub-desktop-control-win",
+  "name": "Desktop Control (Windows)",
+  "summary": "Control desktop applications on Windows — launch, close, focus, resize, move windows, simulate keyboard/mouse input, manage processes, control VSCode, read clipboard, and capture screen info. Use when the user wants to interact with any ru.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_control_win",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lexylent",
+      "features": [
+        "Control desktop applications on Windows — launch, close, focus, resize, move windows, simulate.",
+        "Use when the user wants to interact with any running program, switch windows, type text, press."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-control-win@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118717896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-control-win",
+      "url": "https://clawhub.ai/skills/desktop-control-win"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-control-win",
+    "url": "https://clawhub.ai/skills/desktop-control-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-control-win-465c1366d799c5b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-control-win@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-control-win-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e08de42c628792590d084066a5423fd9957966c77a3ae02a20a51e7d0aaa551",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:26:28.053Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midjourney@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midjourney",
+  "skill": {
+    "id": 13027,
+    "skillKey": "clawhub-midjourney",
+    "name": "Midjourney"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midjourney",
+    "url": "https://clawhub.ai/skills/midjourney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midjourney-d931372ba7f836a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation via Midjourney Discord bot: create images from prompts, upscale, create variations, blend images, describe images. Use when: (1) generati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cbuntingde",
+      "userId": "s171bt8rp31p6eyrcva834nr6x83hpfs",
+      "displayName": "gsxrchris",
+      "image": "https://avatars.githubusercontent.com/u/229546692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1432,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772491786329,
+      "changelog": "Initial release - imagine, upscale, variations, blend, describe, parameters reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0662b738751d71924d12e37d539e0f8831d896ada5bedde294baeee8e15be43d"
+}

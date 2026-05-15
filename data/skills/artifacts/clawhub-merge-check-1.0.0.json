@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/merge-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merge_check",
+  "skill": {
+    "id": 32517,
+    "skillKey": "clawhub-merge-check",
+    "name": "Merge Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merge-check",
+    "url": "https://clawhub.ai/skills/merge-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merge-check-9066e1ea9a65db09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a GitHub pull request for mergeability — predict whether it will get merged based on technical, architectural, process, social, and compliance factor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tag-assistant",
+      "userId": "publishers:tag-assistant",
+      "displayName": "Tag",
+      "image": "https://avatars.githubusercontent.com/u/260167501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 831,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771341193017,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5611419c435257580ce68d289cf39df12a1b2c9ce798b051f026c926f62fdd2d"
+}

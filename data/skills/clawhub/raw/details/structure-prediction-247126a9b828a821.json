@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "structure-prediction",
+    "displayName": "Biomolecular Structure Prediction",
+    "summary": "Biomolecular structure prediction tools for Chai-1, Boltz-2, and Alphafold3 via SciMiner APIs.",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 7
+    },
+    "createdAt": 1774886372143,
+    "updatedAt": 1777816309385
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1777816078230,
+    "changelog": "**Credential storage is now persistent, improving workflow consistency and security.**\n\n- Changed SciMiner API credential handling from transient environment variable to a persistent user-level config file at `~/.config/sciminer/credentials.json`.\n- Added explicit instructions for agents to remember only the credential file path—not the API key value.\n- Updated prerequisites and agent guidance to require the API key file, and to instruct users how to create it if missing.\n- Adjusted invocation pattern, sample code, and result reporting to use the new persistent credential location.\n- Clarified in notes and result instructions that agents must reference the online `share_url` when presenting results to users.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiongzhp",
+    "userId": "s17avxx8hsvxv7jgvt81y48ck983t0y6",
+    "displayName": "SciMiner",
+    "image": "https://avatars.githubusercontent.com/u/3404885?v=4"
+  },
+  "moderation": null
+}

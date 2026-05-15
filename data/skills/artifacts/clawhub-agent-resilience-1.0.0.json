@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-resilience@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_resilience",
+  "skill": {
+    "id": 25163,
+    "skillKey": "clawhub-agent-resilience",
+    "name": "agent resilience"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-resilience",
+    "url": "https://clawhub.ai/skills/agent-resilience",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-resilience-eadb5875bf3c4bb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent resilience patterns for surviving context loss, capturing critical details, and self-improvement. Use when: starting complex/long sessions, asked to 'r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinian5216",
+      "userId": "publishers:xinian5216",
+      "displayName": "xinian5216",
+      "image": "https://avatars.githubusercontent.com/u/59920440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773399762471,
+      "changelog": "Initial release providing resilient patterns for agent memory and self-improvement:\n\n- Introduces Write-Ahead Logging (WAL) for capturing corrections, key decisions, and details before responding.\n- Specifies structure and use of `SESSION-STATE.md` as active task memory.\n- Details the working buffer protocol for handling potential context loss in long sessions.\n- Defines compaction and recovery steps to restore state from logs and buffers.\n- Includes guardrails for self-improvement and a checklist for session reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e7835f780f15559044cbdd2c61e54ad906f39141a99a2a2cbdd6a973a15683a"
+}

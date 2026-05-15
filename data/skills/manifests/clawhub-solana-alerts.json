@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69938,
+  "uuid": "skill-clawhub-solana-alerts",
+  "skillKey": "clawhub-solana-alerts",
+  "name": "Solana Alerts",
+  "summary": "创建和管理价格警报 — 当代币价格高于或低于目标值时通知用户。当用户想设置价格提醒、查看或删除警报时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_alerts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liji3597",
+      "features": [
+        "创建和管理价格警报 — 当代币价格高于或低于目标值时通知用户。当用户想设置价格提醒、查看或删除警报时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-alerts@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77437682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-alerts",
+      "url": "https://clawhub.ai/skills/solana-alerts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-alerts",
+    "url": "https://clawhub.ai/skills/solana-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-alerts-cfa27d53b4803ef2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-alerts@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-alerts-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:391e675ed637226ffd890cd509e386a50ca15e144ce3502eb01d4bcb2e98e4c9",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:44:58.752Z"
+}

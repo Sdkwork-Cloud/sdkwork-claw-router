@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/octool@1.0.17",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octool",
+  "skill": {
+    "id": 25861,
+    "skillKey": "clawhub-octool",
+    "name": "OCTOOL for backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octool",
+    "url": "https://clawhub.ai/skills/octool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octool-95e7e223c16fbecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Openclaw Visual Configuration Assistant. Provides secure wizard for local/Git backup and workspace migration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donnieclaw",
+      "userId": "s17b3kpd0nje3dm2hs0p1kqjf983hnbb",
+      "displayName": "Donnieclaw",
+      "image": "https://avatars.githubusercontent.com/u/264753990?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.0.17",
+      "createdAt": 1775729530961,
+      "changelog": "**v1.0.17 Changelog**\n\n- Security: The GitHub Personal Access Token (PAT) is now stored in `sessionStorage` instead of `localStorage` for enhanced privacy; the token is automatically cleared when you close the browser tab.\n- Security: All shell command user inputs (paths, tags, commit messages, exclude patterns) are now strictly validated. Inputs containing shell metacharacters are rejected with an error.\n- Safety: The bash profile write command now includes an idempotent marker to guard against repeated execution.\n- Documentation: Updated privacy and security sections to reflect sessionStorage usage, more precise credential handling, and removal of all background file access outside of explicit user actions.\n- Usability: Proxy detection command improved; no longer uses dynamic code execution—ensuring only safe, read-only syscalls are generated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89ebc39d21bc135bec4746b86ef59fb02eff824e7393140de14589ae20fa6349"
+}

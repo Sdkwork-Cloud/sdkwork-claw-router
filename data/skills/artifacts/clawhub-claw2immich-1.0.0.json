@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw2immich@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2immich",
+  "skill": {
+    "id": 17816,
+    "skillKey": "clawhub-claw2immich",
+    "name": "claw2immich"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2immich",
+    "url": "https://clawhub.ai/skills/claw2immich",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2immich-52299efdd00caa25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Immich photo library via MCP (claw2immich) - search photos by people, dates, locations, albums. Download assets via shared links. Handles multi-per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeru",
+      "userId": "publishers:joeru",
+      "displayName": "Johannes Rumpf",
+      "image": "https://avatars.githubusercontent.com/u/5239765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771534609220,
+      "changelog": "Initial publish: Full Immich MCP skill with smart search, multi-person AND search, shared link downloads, web_url support, thumbnail display, access profiles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c44f980a549b78f0716bf3ca9046f8534f5b8a3ab4d57600648b787bc7d39ae7"
+}

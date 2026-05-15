@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/selection-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.selection_agent",
+  "skill": {
+    "id": 59941,
+    "skillKey": "clawhub-selection-agent",
+    "name": "Selection Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "selection-agent",
+    "url": "https://clawhub.ai/skills/selection-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/selection-agent-a9a87a03792fa0f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全渠道选品 Agent — 关键词调研、SEO分析、竞品分析、TrendPlus数据。触发词：选品、关键词调研、SEO分析、竞品分析、keyword research、competitor analysis。执行前必须读取 AGENT_CONFIG.md。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lygjoey",
+      "userId": "s175wf0vsc41q23086cnaf6tj583t17x",
+      "displayName": "lygjoey",
+      "image": "https://avatars.githubusercontent.com/u/234766358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774796314183,
+      "changelog": "Initial release of selection-agent skill.\n\n- Provides automated product research across channels: keyword research, SEO analysis, competitor analysis, and TrendPlus data.\n- Activates on trigger words (中文/English), e.g., 选品, 关键词调研, keyword research, competitor analysis, etc.\n- Structured output format with required fields like keyword, difficulty, volume, dedup source, and priority.\n- Reads all configuration from AGENT_CONFIG.md before execution; includes fixed environment variables and competitor list.\n- Integrates with Semrush, Facebook Ads, Notion, and other data sources.\n- Lists common errors and troubleshooting steps for smooth usage.\n- Project repository link and setup instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f5dc9a92253e76ba803b18823bbe504bfb324564ba1da1b1b523dd394796023"
+}

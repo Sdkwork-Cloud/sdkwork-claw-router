@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52363,
+  "uuid": "skill-clawhub-picrd-image-hosting",
+  "skillKey": "clawhub-picrd-image-hosting",
+  "name": "Picrd Image Hosting",
+  "summary": "Free image hosting via picrd.com — upload screenshots, diagrams, and image files to get permanent, embeddable URLs. No account required. Supports PNG, JPEG,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picrd_image_hosting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "S. Rob Beck",
+      "features": [
+        "Free image hosting via picrd.com — upload screenshots, diagrams, and image files to get permane.",
+        "No account required",
+        "Supports PNG, JPEG,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/picrd-image-hosting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69795066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "picrd-image-hosting",
+      "url": "https://clawhub.ai/skills/picrd-image-hosting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picrd-image-hosting",
+    "url": "https://clawhub.ai/skills/picrd-image-hosting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picrd-image-hosting-b19aece8dc22741f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/picrd-image-hosting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-picrd-image-hosting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cde321e3c8b7ecd0fd98da846eadea6513632d73a601b99b49b4a9522b746ab1",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:54:32.764Z"
+}

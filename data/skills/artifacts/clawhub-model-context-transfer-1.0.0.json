@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-context-transfer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_context_transfer",
+  "skill": {
+    "id": 66875,
+    "skillKey": "clawhub-model-context-transfer",
+    "name": "Model Context Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-context-transfer",
+    "url": "https://clawhub.ai/skills/model-context-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-context-transfer-9e79dc5b200cd38f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "模型切换时的上下文传递技能。当需要切换AI模型或Agent时，确保新模型能完整接收之前的对话记忆、任务状态和关键信息，实现无缝衔接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lujun2508",
+      "userId": "s17fvfkn1ffzjp1mats1dk351583h595",
+      "displayName": "lujun2508",
+      "image": "https://avatars.githubusercontent.com/u/267008723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775041305568,
+      "changelog": "model-context-transfer 1.0.0\n\n- Initial release of the model context transfer skill.\n- Enables seamless context handover between AI models or Agents, preserving dialogue history, task status, and key information.\n- Provides a structured `CONTEXT_TRANSFER` format for transmitting project background, current status, key constraints, decisions, and next steps.\n- Supports both proactive handover (on user/model request) and passive triggers (e.g. memory loss, completion of milestones).\n- Includes templates and methodology for model/Agent switching, task continuation, and long-term memory maintenance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5ee7f9c30a3da6d06101aaa85d82f6e7ac584043011d19a3cd0cfbccb085a4b"
+}

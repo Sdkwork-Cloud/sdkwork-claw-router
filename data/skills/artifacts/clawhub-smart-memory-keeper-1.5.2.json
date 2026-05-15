@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-memory-keeper@1.5.2",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_memory_keeper",
+  "skill": {
+    "id": 63836,
+    "skillKey": "clawhub-smart-memory-keeper",
+    "name": "Smart Memory Keeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-memory-keeper",
+    "url": "https://clawhub.ai/skills/smart-memory-keeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-memory-keeper-60d17202ca90f708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解决 AI /new 后失忆问题的记忆管理 skill。三层加载机制（热/温/冷），session 启动时只取当前需要的记忆，省 token。 包含：任务状态恢复、每日日记、项目索引、Dream 定期整理。纯文件系统，无需外部服务。 用户说\"先这样\"、\"暂停\"、\"记住这个\"、里程碑完成时触发。 Memory ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porkapple",
+      "userId": "s179r3cz58y1b4zmwednjvw2th83h14g",
+      "displayName": "Ryan",
+      "image": "https://avatars.githubusercontent.com/u/153045742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.5.2",
+      "createdAt": 1775716978887,
+      "changelog": "Add requires.bins (openclaw) and permissions metadata to fix ClaWHub security scan",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94feb89c973e2ca4ba1f5593837e9c1e5c63f079f91926affd1d329b31e6545e"
+}

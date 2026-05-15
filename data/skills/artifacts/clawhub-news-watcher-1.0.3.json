@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-watcher@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_watcher",
+  "skill": {
+    "id": 21812,
+    "skillKey": "clawhub-news-watcher",
+    "name": "OpenClaw News Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-watcher",
+    "url": "https://clawhub.ai/skills/news-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-watcher-a8fd1aa9315fc5a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors CoinDesk or PANews for new crypto articles, summarizes them, and sends updates to Telegram without API keys or login."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vvxer",
+      "userId": "s17d7wd55j0awerxrrzs8vefzh83s3ha",
+      "displayName": "vvxer",
+      "image": "https://avatars.githubusercontent.com/u/125258732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773649330185,
+      "changelog": "**News Watcher 1.0.3 adds full-article scraping, AI summaries, and detailed environment setup instructions.**\n\n- 新增自动抓取最新加密新闻文章全文并用 AI 生成中文摘要\n- 推送摘要到 Telegram，需配置 OPENCLAW_MJS 和 TELEGRAM_USER_ID 环境变量\n- 文档详细说明了环境依赖和各平台下的变量设置方法\n- 补充开源仓库、运行截图和代码透明性说明\n- 说明了检测逻辑和消息推送流程，便于集成到 OpenClaw Cron/Agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a2caaf76aae0d17ebdedc90caea674e5b8800a924fc8a01ed1a4a3da9b31702"
+}

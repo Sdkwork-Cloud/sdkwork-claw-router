@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27093,
+  "uuid": "skill-clawhub-cogdx-pre-trade-audit",
+  "skillKey": "clawhub-cogdx-pre-trade-audit",
+  "name": "Cogdx Pre Trade Audit",
+  "summary": "Verify trading reasoning with cognitive diagnostics before executing trades. Detects logical fallacies, calibration issues, and cognitive biases in your trad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogdx_pre_trade_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr Amanda Kavner",
+      "features": [
+        "Verify trading reasoning with cognitive diagnostics before executing trades",
+        "Detects logical fallacies, calibration issues, and cognitive biases in your trad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogdx-pre-trade-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78941808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogdx-pre-trade-audit",
+      "url": "https://clawhub.ai/skills/cogdx-pre-trade-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogdx-pre-trade-audit",
+    "url": "https://clawhub.ai/skills/cogdx-pre-trade-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogdx-pre-trade-audit-f552e5943cdaa378.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogdx-pre-trade-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogdx-pre-trade-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03573b830b4eec29140dfad27fc11c0ad10967cebcdf059ddf44ca689fdd6eba",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:35:35.955Z"
+}

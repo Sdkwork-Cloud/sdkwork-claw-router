@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_tts",
+  "skill": {
+    "id": 8892,
+    "skillKey": "clawhub-mac-tts",
+    "name": "Mac TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-tts",
+    "url": "https://clawhub.ai/skills/mac-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-tts-8665bdcdfa83c7a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text-to-speech using macOS built-in `say` command. Use for voice notifications, audio alerts, reading text aloud, or announcing messages through Mac speakers. Supports multiple languages including Chinese (Mandarin), English, Japanese, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalijason",
+      "userId": "publishers:kalijason",
+      "displayName": "kalijason",
+      "image": "https://avatars.githubusercontent.com/u/1803368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6284,
+      "installsAllTime": 48,
+      "installsCurrent": 45,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769585143301,
+      "changelog": "Initial release: macOS say command for text-to-speech",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9df9ce3289cab6c7307cd674391e16e00bbe45222f6b434a39b29d7059907a78"
+}

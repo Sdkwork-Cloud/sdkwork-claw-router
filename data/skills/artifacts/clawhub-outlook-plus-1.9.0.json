@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-plus@1.9.0",
+  "version": "1.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_plus",
+  "skill": {
+    "id": 15278,
+    "skillKey": "clawhub-outlook-plus",
+    "name": "Outlook Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-plus",
+    "url": "https://clawhub.ai/skills/outlook-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-plus-81ee9ac8531a2eaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, search, and manage Outlook emails and calendar via Microsoft Graph API. Use when the user asks about emails, inbox, Outlook, Microsoft mail, calendar e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cristiandan",
+      "userId": "publishers:cristiandan",
+      "displayName": "Cristian Dan",
+      "image": "https://avatars.githubusercontent.com/u/7952216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1042,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.9.0",
+      "createdAt": 1771769630814,
+      "changelog": "Fixed --from filter to use $search. Removed changelog from SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84c65eaf467b9f53335c6d2034453c76dbd5c4db66934447e2f0809b0bc4e997"
+}

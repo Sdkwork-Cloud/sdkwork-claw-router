@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/value-disciplines@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.value_disciplines",
+  "skill": {
+    "id": 36993,
+    "skillKey": "clawhub-value-disciplines",
+    "name": "Value Disciplines"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "value-disciplines",
+    "url": "https://clawhub.ai/skills/value-disciplines",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/value-disciplines-841fa1d015670415.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Position company using Treacy & Wiersema's Value Disciplines model. Use for strategic positioning and competitive differentiation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774137934530,
+      "changelog": "Value Disciplines skill 1.0.0 – Initial release:\n\n- Introduces the Treacy & Wiersema Value Disciplines framework for strategic company positioning and differentiation.\n- Provides definitions and examples for the three value disciplines: Product Leadership, Operational Excellence, and Customer Intimacy.\n- Includes a structured output template for company self-assessment, scoring, and competitive comparison.\n- Designed for mapping primary discipline, evaluating gaps, and guiding investment priorities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23a18c7db36337d3a54b890b94556362921fd8d6261c4adb71f287e1a68dea2a"
+}

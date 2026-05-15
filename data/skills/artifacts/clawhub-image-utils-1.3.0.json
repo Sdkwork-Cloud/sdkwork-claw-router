@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-utils@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_utils",
+  "skill": {
+    "id": 11260,
+    "skillKey": "clawhub-image-utils",
+    "name": "Image Utils"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-utils",
+    "url": "https://clawhub.ai/skills/image-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-utils-58398e7b659ba7a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classic image manipulation with Python Pillow - resize, crop, composite, format conversion, watermarks, brightness/contrast adjustments, and web optimization..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galbria",
+      "userId": "s176yy33gynx3j8dr2cp0nabad83gvey",
+      "displayName": "Gal Davidi",
+      "image": "https://avatars.githubusercontent.com/u/158810732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1910,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774785072496,
+      "changelog": "**Clarifies usage boundaries between classic image ops and Bria AI-driven editing.**\n\n- Added a prominent new \"When NOT to Use This Skill\" section to differentiate between deterministic image utilities and AI-powered (generative) editing—listing tasks that require bria-ai instead.\n- Provided clearer guidance and rule-of-thumb to help users pick the right skill for their workflow.\n- Included concise installation instructions to add bria-ai when needed.\n- No code or file changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3e1be6683f5c9e984c53161ed43362b3a2b296d809dc624184299eace006dac"
+}

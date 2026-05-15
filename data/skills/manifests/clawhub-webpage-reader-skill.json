@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62450,
+  "uuid": "skill-clawhub-webpage-reader-skill",
+  "skillKey": "clawhub-webpage-reader-skill",
+  "name": "webpage-reader-skill",
+  "summary": "使用Google Chrome无头浏览器下载和读取网页内容，生成摘要并安全处理临时文件以保护隐私。",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webpage_reader_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "24K-handsomer",
+      "features": [
+        "使用Google Chrome无头浏览器下载和读取网页内容，生成摘要并安全处理临时文件以保护隐私。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webpage-reader-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25074759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webpage-reader-skill",
+      "url": "https://clawhub.ai/skills/webpage-reader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webpage-reader-skill",
+    "url": "https://clawhub.ai/skills/webpage-reader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webpage-reader-skill-b95fcfa0f204f3f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webpage-reader-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-webpage-reader-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62c546bd939773e866b2943d199b85e34069bfc027fa1fb460ae610b647a922c",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:13:05.043Z"
+}

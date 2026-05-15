@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rtk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtk",
+  "skill": {
+    "id": 50503,
+    "skillKey": "clawhub-rtk",
+    "name": "cli output compression for token savings with rtk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtk",
+    "url": "https://clawhub.ai/skills/rtk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtk-3dc0deea30053c57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RTK (Rust Token Kit) - CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Use rtk to wrap commands like git, ls, cat, grep, test..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "radicalgeek",
+      "userId": "s17ca2256d14n081by1kqxe93x83kv6e",
+      "displayName": "Mark Jones",
+      "image": "https://avatars.githubusercontent.com/u/1967630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773968562005,
+      "changelog": "RTK 1.0.0 – initial release!\n\n- Launches RTK, a Rust-based CLI wrapper for dev commands, reducing LLM token consumption by 60–90%\n- Supports popular commands including git, ls, read, grep, test and lint runners, docker, kubectl, and more\n- Implements smart output filtering: grouping, truncation, deduplication, and aggressive compression modes\n- Saves raw output on failures for troubleshooting; includes stats and history tracking commands\n- Fully self-contained binary, zero dependencies, minimal runtime overhead\n- Reference docs and usage examples included in SKILL.md",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2caca14be2d4ad680a8a9c74e915cee5bb4bf6bed3032b350687a5e312716727"
+}

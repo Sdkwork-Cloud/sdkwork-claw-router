@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zen-koan-daily@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zen_koan_daily",
+  "skill": {
+    "id": 56687,
+    "skillKey": "clawhub-zen-koan-daily",
+    "name": "Zen Koan Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zen-koan-daily",
+    "url": "https://clawhub.ai/skills/zen-koan-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zen-koan-daily-97f925d3a441b452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily Zen Buddhist koan (禅宗公案) lecture with Chinese ink wash illustration and TTS audio. Generates detailed lecture (origin, background, interpretation, mode..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yumyumtum",
+      "userId": "s178np2kqdzgtxzx95rcqd038d8475zk",
+      "displayName": "TommyYanPS",
+      "image": "https://avatars.githubusercontent.com/u/98303437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775417287818,
+      "changelog": "Initial release: Dynamic LLM-powered Zen koan generation with ink wash art and TTS audio",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63f8e820c71aa7d51398509193138a8d58d32f6dd96c95030fb49fd825578185"
+}

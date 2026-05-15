@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12184,
+  "uuid": "skill-clawhub-clawver-reviews",
+  "skillKey": "clawhub-clawver-reviews",
+  "name": "Clawver Reviews",
+  "summary": "Handle Clawver customer reviews. Monitor ratings, craft responses, track sentiment trends. Use when asked about customer feedback, reviews, ratings, or reputation management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawver_reviews",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nwang783",
+      "features": [
+        "Handle Clawver customer reviews",
+        "Monitor ratings, craft responses, track sentiment trends",
+        "Use when asked about customer feedback, reviews, ratings, or reputation management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawver-reviews@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149958172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawver-reviews",
+      "url": "https://clawhub.ai/skills/clawver-reviews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawver-reviews",
+    "url": "https://clawhub.ai/skills/clawver-reviews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawver-reviews-b41ed9df558cf3bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawver-reviews@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawver-reviews-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:259c0674f44382b262879fa6f1ba6aded69e3b8cb24601e261850594a8fb0a05",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:46:06.990Z"
+}

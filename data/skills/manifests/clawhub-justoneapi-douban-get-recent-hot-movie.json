@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43265,
+  "uuid": "skill-clawhub-justoneapi-douban-get-recent-hot-movie",
+  "skillKey": "clawhub-justoneapi-douban-get-recent-hot-movie",
+  "name": "Douban Movie Recent Hot Movie API",
+  "summary": "Call GET /api/douban/get-recent-hot-movie/v1 for Douban Movie Recent Hot Movie through JustOneAPI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douban_get_recent_hot_movie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/douban/get-recent-hot-movie/v1 for Douban Movie Recent Hot Movie through JustOneA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douban-get-recent-hot-movie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douban-get-recent-hot-movie",
+      "url": "https://clawhub.ai/skills/justoneapi-douban-get-recent-hot-movie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douban-get-recent-hot-movie",
+    "url": "https://clawhub.ai/skills/justoneapi-douban-get-recent-hot-movie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douban-get-recent-hot-movie-3096885493e73f7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douban-get-recent-hot-movie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douban-get-recent-hot-movie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95824a1b017bdb689fce66a4c693333fdb02db02c7c7d8427f77e76803b4067b",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T17:51:48.935Z"
+}

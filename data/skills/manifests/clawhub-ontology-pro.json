@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70297,
+  "uuid": "skill-clawhub-ontology-pro",
+  "skillKey": "clawhub-ontology-pro",
+  "name": "ontology-pro",
+  "summary": "基于文本构建并持续更新知识图谱，支持多步推理和因果分析，输出可执行的最优策略与行动建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ontology_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingyuan",
+      "features": [
+        "基于文本构建并持续更新知识图谱，支持多步推理和因果分析，输出可执行的最优策略与行动建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ontology-pro@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267627552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ontology-pro",
+      "url": "https://clawhub.ai/skills/ontology-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ontology-pro",
+    "url": "https://clawhub.ai/skills/ontology-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ontology-pro-8d57ae7cb5fdfc74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ontology-pro@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ontology-pro-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2adf52d206e2a4151ef9becc96de3170da120233e2929795200a9ac9e05ba0ef",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T09:12:47.973Z"
+}

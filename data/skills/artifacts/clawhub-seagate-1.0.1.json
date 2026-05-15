@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seagate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seagate",
+  "skill": {
+    "id": 71124,
+    "skillKey": "clawhub-seagate",
+    "name": "Seagate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seagate",
+    "url": "https://clawhub.ai/skills/seagate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seagate-40a8db52d8f58ab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供希捷硬盘及存储产品信息、选购建议、技术规格及保修数据支持服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295588805,
+      "changelog": "- 精简并重新编写了内容结构和导航，突出品牌、产品、市场与行业内容。\n- 更新“summary”与“read_when”字段，聚焦 seagate 基本信息和详细需求。\n- 移除详细产品分类与技术支持细节，采用百科式介绍风格。\n- 明确典型使用场景，引导用户获取 seagate 背景和产品概览。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b9d424ea0f86cfdfa0061e89220391039c379cad75f4f5ffd9bbc1b2519bfbb"
+}

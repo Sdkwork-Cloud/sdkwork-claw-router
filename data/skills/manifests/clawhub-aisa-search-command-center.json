@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45817,
+  "uuid": "skill-clawhub-aisa-search-command-center",
+  "skillKey": "clawhub-aisa-search-command-center",
+  "name": "AIsa Search Command Center",
+  "summary": "Run web, multi-source, or last-30-days research through AIsa. Use when: the user needs search, synthesis, competitor scans, or trend discovery. Supports rese...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_search_command_center",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Run web, multi-source, or last-30-days research through AIsa",
+        "Use when: the user needs search, synthesis, competitor scans, or trend discovery",
+        "Supports rese..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-search-command-center@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-search-command-center",
+      "url": "https://clawhub.ai/skills/aisa-search-command-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-search-command-center",
+    "url": "https://clawhub.ai/skills/aisa-search-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-search-command-center-eafc5ce37b388429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-search-command-center@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-search-command-center-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25fe787bd2301ae6e1de8273b8fdb2fb3e859d4632f5be1a48a774b6655b1f4d",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:51:47.398Z"
+}

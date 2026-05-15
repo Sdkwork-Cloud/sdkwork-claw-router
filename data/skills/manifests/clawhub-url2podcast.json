@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65196,
+  "uuid": "skill-clawhub-url2podcast",
+  "skillKey": "clawhub-url2podcast",
+  "name": "url2podcast",
+  "summary": "Use when 需要把网页内容转成双人中文播客，并按脚本逐句参数合成音频后输出成品",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url2podcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Yang",
+      "features": [
+        "Use when 需要把网页内容转成双人中文播客，并按脚本逐句参数合成音频后输出成品"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url2podcast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27726895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url2podcast",
+      "url": "https://clawhub.ai/skills/url2podcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url2podcast",
+    "url": "https://clawhub.ai/skills/url2podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url2podcast-e746a4df3954cfe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url2podcast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-url2podcast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1654f70c1b6d678b181571d9776c9b27f8acf0bb7bed9090286c1f0ab0400be5",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:59:23.015Z"
+}

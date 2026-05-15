@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepin-desktop@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepin_desktop",
+  "skill": {
+    "id": 26547,
+    "skillKey": "clawhub-deepin-desktop",
+    "name": "Deepin Desktop Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepin-desktop",
+    "url": "https://clawhub.ai/skills/deepin-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepin-desktop-d677082a26a9d74a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and manage Deepin desktop settings including power, display, Bluetooth, airplane mode, user accounts, and time via D-Bus system services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaneniu",
+      "userId": "s17d855avehvr5genhcbf8fx4n84e6x8",
+      "displayName": "ZaneNiu",
+      "image": "https://avatars.githubusercontent.com/u/5901440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773912612419,
+      "changelog": "v1.1: Complete D-Bus coverage - power, display, bluetooth, network, accounts, datetime, grub2, gesture, sound, app store, defender, linglong. Full method and property reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:330bd62dd695ec142da2f18021859a43ac382007578b3b9ba37bbc77cecad86b"
+}

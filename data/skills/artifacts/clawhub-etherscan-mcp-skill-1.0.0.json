@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etherscan-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etherscan_mcp_skill",
+  "skill": {
+    "id": 26389,
+    "skillKey": "clawhub-etherscan-mcp-skill",
+    "name": "Etherscan Mcp Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etherscan-mcp-skill",
+    "url": "https://clawhub.ai/skills/etherscan-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etherscan-mcp-skill-de8ed4342f08e475.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Etherscan MCP through UXC for address balance checks, token holder analysis, transaction inspection, and contract lookup tasks. Use when tasks need Ether..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772899637095,
+      "changelog": "Initial release of etherscan-mcp-skill.\n\n- Integrates Etherscan MCP operations into UXC for onchain investigation.\n- Supports address balance checks, token holder analysis, transaction inspection, and contract lookup.\n- Includes help-first schema inspection, bearer-key authentication, and tier-aware handling.\n- Provides workflow recommendations, guardrails, and troubleshooting steps.\n- Lists all supported Etherscan MCP operations and usage patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e702b7cb0bf8569c8a7664e4f2ecebfe69bbc88fef0887e20d6b6ecb9a43dd7"
+}

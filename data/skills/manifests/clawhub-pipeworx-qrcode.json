@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46958,
+  "uuid": "skill-clawhub-pipeworx-qrcode",
+  "skillKey": "clawhub-pipeworx-qrcode",
+  "name": "Pipeworx qrcode",
+  "summary": "Generate QR code images from text or URLs and decode QR codes from public image URLs without configuration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_qrcode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Generate QR code images from text or URLs and decode QR codes from public image URLs without co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-qrcode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-qrcode",
+      "url": "https://clawhub.ai/skills/pipeworx-qrcode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-qrcode",
+    "url": "https://clawhub.ai/skills/pipeworx-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-qrcode-138cdd0ac0431689.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-qrcode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-qrcode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5993488e4d69ab1194af59824a8954d140fa585e825c0675b99f1edc384a1e0",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:36:45.361Z"
+}

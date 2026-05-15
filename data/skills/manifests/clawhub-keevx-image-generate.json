@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15568,
+  "uuid": "skill-clawhub-keevx-image-generate",
+  "skillKey": "clawhub-keevx-image-generate",
+  "name": "keevx-image-generate",
+  "summary": "Use the Keevx API to generate images from prompts and reference images. Supports standard and professional modes, multiple quality levels (1K/2K/4K), various...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keevx_image_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-xiling",
+      "features": [
+        "Use the Keevx API to generate images from prompts and reference images",
+        "Supports standard and professional modes, multiple quality levels (1K/2K/4K), various..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keevx-image-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218880360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keevx-image-generate",
+      "url": "https://clawhub.ai/skills/keevx-image-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keevx-image-generate",
+    "url": "https://clawhub.ai/skills/keevx-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keevx-image-generate-3f61600a08445a83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keevx-image-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keevx-image-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bb6b931ca7f256d89422b51f500b8caa9cbb617d92e26ab617fc4c68eaab199",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:22:38.016Z"
+}

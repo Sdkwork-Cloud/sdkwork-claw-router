@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42891,
+  "uuid": "skill-clawhub-tg-cs-agent",
+  "skillKey": "clawhub-tg-cs-agent",
+  "name": "Telegram CS Agent",
+  "summary": "Deploy and manage a Telegram customer service bot powered by Claude + RAG. Use when setting up a new CS bot, adding knowledge base docs, managing the bot lif...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_cs_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "阿沁",
+      "features": [
+        "Deploy and manage a Telegram customer service bot powered by Claude + RAG",
+        "Use when setting up a new CS bot, adding knowledge base docs, managing the bot lif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg-cs-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48539892?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg-cs-agent",
+      "url": "https://clawhub.ai/skills/tg-cs-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-cs-agent",
+    "url": "https://clawhub.ai/skills/tg-cs-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-cs-agent-3db36b91fe884476.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg-cs-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-cs-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39d210c87012cd9ae4e0f90536a01a645cf3f0b4589cf7fe14f05df2b8108336",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:43:44.302Z"
+}

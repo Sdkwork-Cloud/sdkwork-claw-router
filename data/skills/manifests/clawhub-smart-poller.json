@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29028,
+  "uuid": "skill-clawhub-smart-poller",
+  "skillKey": "clawhub-smart-poller",
+  "name": "Smart Poller",
+  "summary": "Periodically polls a Feishu task board to auto-detect and execute tasks assigned to the current AI agent with optional silent mode and feedback.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_poller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "socneo",
+      "features": [
+        "Periodically polls a Feishu task board to auto-detect and execute tasks assigned to the current."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-poller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128616637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-poller",
+      "url": "https://clawhub.ai/skills/smart-poller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-poller",
+    "url": "https://clawhub.ai/skills/smart-poller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-poller-a5dd00633e2c5033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-poller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-poller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e74bb5eb05d05c2d3eeb92e91baa8717b2b00c4218f8a1ad18d418946abc6ed",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:32:47.115Z"
+}

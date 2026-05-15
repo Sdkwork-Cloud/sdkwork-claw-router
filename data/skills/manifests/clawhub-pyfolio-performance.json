@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62763,
+  "uuid": "skill-clawhub-pyfolio-performance",
+  "skillKey": "clawhub-pyfolio-performance",
+  "name": "Pyfolio Performance",
+  "summary": "基于 pyfolio-reloaded 的投资组合绩效分析：一键生成 tear sheet（夏普、回撤、 年化、换手、个股往返交易、行业归因）。适用于回测后的标准化报告。",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyfolio_performance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于 pyfolio-reloaded 的投资组合绩效分析：一键生成 tear sheet（夏普、回撤、 年化、换手、个股往返交易、行业归因）。适用于回测后的标准化报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pyfolio-performance@0.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pyfolio-performance",
+      "url": "https://clawhub.ai/skills/pyfolio-performance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyfolio-performance",
+    "url": "https://clawhub.ai/skills/pyfolio-performance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyfolio-performance-f5547489c1f0a6a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pyfolio-performance@0.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pyfolio-performance-0.3.2.json",
+      "version": "0.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9a02e11450c55e6ec10b98227b6f53d646f0ae99bb116d4d0499f67182dcb2e",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:07:17.734Z"
+}

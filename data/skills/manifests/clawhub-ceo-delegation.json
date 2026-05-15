@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70578,
+  "uuid": "skill-clawhub-ceo-delegation",
+  "skillKey": "clawhub-ceo-delegation",
+  "name": "Ceo Delegation",
+  "summary": "CEO式任务委派工作流程。当收到任何任务时使用此流程：不亲自执行，而是派发子代理执行、监控进度、汇报、验收。适用于需要高效并行处理多任务的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ceo_delegation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EisonMe",
+      "features": [
+        "CEO式任务委派工作流程。当收到任何任务时使用此流程：不亲自执行，而是派发子代理执行、监控进度、汇报、验收。适用于需要高效并行处理多任务的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ceo-delegation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13535199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ceo-delegation",
+      "url": "https://clawhub.ai/skills/ceo-delegation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ceo-delegation",
+    "url": "https://clawhub.ai/skills/ceo-delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ceo-delegation-0a402da629c3ed98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ceo-delegation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ceo-delegation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13338ef225fd194654caac048fc2eba93ee88237192b541bdf71e2e17e1fa0e0",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T11:26:25.463Z"
+}

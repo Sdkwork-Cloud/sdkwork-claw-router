@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-story-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_story_orchestrator",
+  "skill": {
+    "id": 55912,
+    "skillKey": "clawhub-seedance-story-orchestrator",
+    "name": "Seedance Video Generation Extension"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-story-orchestrator",
+    "url": "https://clawhub.ai/skills/seedance-story-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-story-orchestrator-3945f2aac4e94f00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate script-to-final-video production with a strict stage-gated workflow (outline → episode_plan → storyboard → storyboard_images → render), using See..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kkenny0",
+      "userId": "s17e5sm9mfd2xfq0bhb9w9bd9n840vsx",
+      "displayName": "KennyWu",
+      "image": "https://avatars.githubusercontent.com/u/18048025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 816,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772009247653,
+      "changelog": "Initial release of seedance-story-orchestrator.\n\n- Implements a strict stage-gated workflow: outline → episode_plan → storyboard → storyboard_images → render.\n- Supports checkpoint-based confirmation and resuming, requiring explicit confirmation before advancing stages.\n- Integrates Seedream for image generation and Seedance for multi-shot video rendering.\n- Offers optional FFmpeg concatenation for final merged mp4 output.\n- Provides CLI scripts for running, confirming, and monitoring the production process.\n- Supports various input modes including raw text, JSON, and staged artifacts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e28e087831fba28dff1ea99d6cac4412ea79a63750cbd875279be0057b211985"
+}

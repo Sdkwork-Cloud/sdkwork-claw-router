@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-commander@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_commander",
+  "skill": {
+    "id": 8435,
+    "skillKey": "clawhub-playwright-commander",
+    "name": "Playwright Commander"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-commander",
+    "url": "https://clawhub.ai/skills/playwright-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-commander-f0158e46ef7c76a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to interact with web browsers using Playwright for advanced UI automation, analysis, and debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 16628,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772371069255,
+      "changelog": "Initial release of Playwright Commander—an advanced tool for UI automation and browser control.\n\n- Programmatically launch and close browser instances using Playwright.\n- Navigate to URLs, capture screenshots, and retrieve HTML or text content.\n- Execute custom JavaScript and interact with web elements (click, type, fill forms).\n- Retrieve element attributes or text for analysis and debugging.\n- Designed for use via CLI exec commands; requires Playwright Python package and installed browsers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b86c03fc210f44e968da5889caa059595244d5be7edefadc56fc2b4359b452f1"
+}

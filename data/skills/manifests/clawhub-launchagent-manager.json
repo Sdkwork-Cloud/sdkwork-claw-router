@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24083,
+  "uuid": "skill-clawhub-launchagent-manager",
+  "skillKey": "clawhub-launchagent-manager",
+  "name": "Launchagent Manager",
+  "summary": "List, classify, prune LaunchAgents; analyze openclaw.json so the proper gateway LaunchAgent remains connected and tokens match. Keeps only OpenClaw-related a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launchagent_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "List, classify, prune LaunchAgents",
+        "analyze openclaw.json so the proper gateway LaunchAgent remains connected and tokens match",
+        "Keeps only OpenClaw-related a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/launchagent-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "launchagent-manager",
+      "url": "https://clawhub.ai/skills/launchagent-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launchagent-manager",
+    "url": "https://clawhub.ai/skills/launchagent-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launchagent-manager-d93cf2018a501bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/launchagent-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-launchagent-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03eb423be449a5a4e77bf0345108f812a15df7f154f7f88e6934e96d576a1769",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:09:14.597Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25957,
+  "uuid": "skill-clawhub-mailercloud",
+  "skillKey": "clawhub-mailercloud",
+  "name": "Mailercloud",
+  "summary": "Mailercloud integration. Manage Organizations, Users. Use when the user wants to interact with Mailercloud data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailercloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mailercloud integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Mailercloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailercloud@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailercloud",
+      "url": "https://clawhub.ai/skills/mailercloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailercloud",
+    "url": "https://clawhub.ai/skills/mailercloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailercloud-1bc88524936a69a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailercloud@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailercloud-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de1df978b310360e380d3f273c6e93b3ac6e12f460079ff9c9fd9ebec587b297",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:10:22.922Z"
+}

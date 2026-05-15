@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54858,
+  "uuid": "skill-clawhub-sigaa",
+  "skillKey": "clawhub-sigaa",
+  "name": "SIGAA",
+  "summary": "Interact with SIGAA (Sistema Integrado de Gestão de Atividades Acadêmicas), the academic management system used by 50+ Brazilian federal universities (UNB, U...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sigaa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Marques",
+      "features": [
+        "Interact with SIGAA (Sistema Integrado de Gestão de Atividades Acadêmicas), the academic manage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sigaa@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20705440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sigaa",
+      "url": "https://clawhub.ai/skills/sigaa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sigaa",
+    "url": "https://clawhub.ai/skills/sigaa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sigaa-08f5e95cf257b97f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sigaa@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sigaa-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19660c547e2a29c53268b2a5bb87778dc1f267bf107b66e386c491c7b5ffa86b",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:22:09.996Z"
+}

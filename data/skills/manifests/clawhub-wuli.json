@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17868,
+  "uuid": "skill-clawhub-wuli",
+  "skillKey": "clawhub-wuli",
+  "name": "Wuli Skill",
+  "summary": "Generate AI images and videos with 17+ active models via Wuli.art open platform API. Use when creating images from text prompts, editing images with one or m...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zihao chu",
+      "features": [
+        "Generate AI images and videos with 17+ active models via Wuli.art open platform API",
+        "Use when creating images from text prompts, editing images with one or m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wuli@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198162296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wuli",
+      "url": "https://clawhub.ai/skills/wuli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuli",
+    "url": "https://clawhub.ai/skills/wuli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuli-0740dec0d849f338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wuli@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-wuli-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2258e2cbcd9ce723063c292020278578e8f3c09678c08f0194ab23068e7a24",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T12:43:20.078Z"
+}

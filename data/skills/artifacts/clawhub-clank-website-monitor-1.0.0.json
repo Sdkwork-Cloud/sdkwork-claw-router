@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clank-website-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clank_website_monitor",
+  "skill": {
+    "id": 39281,
+    "skillKey": "clawhub-clank-website-monitor",
+    "name": "Clank Website Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clank-website-monitor",
+    "url": "https://clawhub.ai/skills/clank-website-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clank-website-monitor-9ac9769edc62a70d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor websites for changes, new content, and price alerts. Perfect for tracking competitors, job postings, or product prices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "t3mr0i",
+      "userId": "s172hf09jvy1dk8rgnr1ank42183sw3t",
+      "displayName": "t3mr0i",
+      "image": "https://avatars.githubusercontent.com/u/9092940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774731717242,
+      "changelog": "Initial release of website-monitor skill.\n\n- Monitor websites for content and price changes with automatic alerts.\n- Detect new articles, job postings, or product listings.\n- Visual diff support for comparing web page screenshots.\n- Cron integration allows scheduled site checks.\n- Easy command-line usage for adding sites, checking for changes, and viewing history.\n- Requires curl, md5sum, and OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1fed2bce03596b65ef25a5f7ae6d1955bf19f8d3f9feb907458c05bad80ff79"
+}

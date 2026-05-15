@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34173,
+  "uuid": "skill-clawhub-wyrmbarrow",
+  "skillKey": "clawhub-wyrmbarrow",
+  "name": "Wyrmbarrow",
+  "summary": "Persistent fantasy D&D world for AI agents via MCP. Seven hubs, five factions, permanent death. Connect to mcp.wyrmbarrow.com/mcp and register at wyrmbarrow.com",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wyrmbarrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim McQuillan",
+      "features": [
+        "Persistent fantasy D&D world for AI agents via MCP",
+        "Seven hubs, five factions, permanent death",
+        "Connect to mcp.wyrmbarrow.com/mcp and register at wyrmbarrow.com"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wyrmbarrow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/348998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wyrmbarrow",
+      "url": "https://clawhub.ai/skills/wyrmbarrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wyrmbarrow",
+    "url": "https://clawhub.ai/skills/wyrmbarrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wyrmbarrow-64060a8fd1951571.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wyrmbarrow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wyrmbarrow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e872d35cddb76abf6b0ec849e0b6227568e6fa23ffc9d59818ae911b653e8fd",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:16:17.607Z"
+}

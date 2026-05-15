@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21063,
+  "uuid": "skill-clawhub-cny-rate-calculator",
+  "skillKey": "clawhub-cny-rate-calculator",
+  "name": "Cny Skill Extracted",
+  "summary": "Fetch Bank of Taiwan CNY exchange rates and calculate tiered prices with discounts, sending results via configured channels on a set schedule.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cny_rate_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "9StarMax",
+      "features": [
+        "Fetch Bank of Taiwan CNY exchange rates and calculate tiered prices with discounts, sending res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cny-rate-calculator@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221298448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cny-rate-calculator",
+      "url": "https://clawhub.ai/skills/cny-rate-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cny-rate-calculator",
+    "url": "https://clawhub.ai/skills/cny-rate-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cny-rate-calculator-e39e96bcc29a1bd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cny-rate-calculator@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-cny-rate-calculator-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85c3fc86c74ae3f95f0e2d0f9a46bbff471e1674e29c879cac0250789017056c",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:14:02.488Z"
+}

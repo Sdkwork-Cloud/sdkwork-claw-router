@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/last30days-surf@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_surf",
+  "skill": {
+    "id": 45867,
+    "skillKey": "clawhub-last30days-surf",
+    "name": "last30days-surf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-surf",
+    "url": "https://clawhub.ai/skills/last30days-surf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-surf-d63bcca74a923ce2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research what people actually said about any topic over the last 30 days across Reddit, X/Twitter, YouTube, GitHub, Hacker News, Polymarket, Bluesky, TikTok,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777570414857,
+      "changelog": "Updated last30days-surf from 0.1.0 to 0.2.0.\nChanges:\n- modified `SKILL.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81b85b972994b2e6d3066f1cfcdec4a60e1f80ffd0b789c3f9e7204a215337cd"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35125,
+  "uuid": "skill-clawhub-brawl-stars",
+  "skillKey": "clawhub-brawl-stars",
+  "name": "Brawl Stars",
+  "summary": "Provides organized, up-to-date information on Brawl Stars official events, updates, tournaments, rules, and community announcements from public sources.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brawl_stars",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "Provides organized, up-to-date information on Brawl Stars official events, updates, tournaments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brawl-stars@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brawl-stars",
+      "url": "https://clawhub.ai/skills/brawl-stars"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brawl-stars",
+    "url": "https://clawhub.ai/skills/brawl-stars",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brawl-stars-b9468b6f5caa2cba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brawl-stars@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brawl-stars-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81c0ec0cc2ad1f78fb56e5a8ad6bf809a64c37c1c9c1076c7ba2405885ff74be",
+      "artifactSizeBytes": 2630
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:50:25.197Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66570,
+  "uuid": "skill-clawhub-personal-context-manager",
+  "skillKey": "clawhub-personal-context-manager",
+  "name": "personal-context-manager",
+  "summary": "［何时使用］当用户需要管理个人 Context（上下文）时；当用户说\"记录触动事\"\"整理认知\"\"建立知识连接\"时；当检测到\"晨间日记\"\"认知地图\"\"知识整合\"等关键词时。新增发芽功能（4 种类型）和日记功能（旁观者反馈）。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要管理个人 Context（上下文）时；当用户说\"记录触动事\"\"整理认知\"\"建立知识连接\"时；当检测到\"晨间日记\"\"认知地图\"\"知识整合\"等关键词时。新增发芽功能（4 种."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-context-manager@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-context-manager",
+      "url": "https://clawhub.ai/skills/personal-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-context-manager",
+    "url": "https://clawhub.ai/skills/personal-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-context-manager-6745ad72712f421b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-context-manager@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-context-manager-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0844c19fcbfdc68b03f4d26d4b0f96188eb15e9bfbcec35d020fea452537881",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T11:48:09.158Z"
+}

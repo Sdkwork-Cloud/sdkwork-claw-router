@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41427,
+  "uuid": "skill-clawhub-btw-command",
+  "skillKey": "clawhub-btw-command",
+  "name": "btw command",
+  "summary": "Ask non-blocking clarifying questions during agent workflows. Use when agents need user input without halting execution. Handles deployment decisions, code r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btw_command",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claw0x",
+      "features": [
+        "Ask non-blocking clarifying questions during agent workflows",
+        "Use when agents need user input without halting execution",
+        "Handles deployment decisions, code r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btw-command@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169416751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btw-command",
+      "url": "https://clawhub.ai/skills/btw-command"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btw-command",
+    "url": "https://clawhub.ai/skills/btw-command",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btw-command-4153de9314d2760f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btw-command@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btw-command-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b55ed165d92a45abce1986ac2348c19275a7f2f53dc4f93e8a9cf3f9b22e272",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:55:11.969Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45767,
+  "uuid": "skill-clawhub-openclaw-quickstart-setup",
+  "skillKey": "clawhub-openclaw-quickstart-setup",
+  "name": "OpenClaw Quickstart Setup",
+  "summary": "Complete OpenClaw setup automation skill. Installs gateway, hardens security (localhost binding, auth), routes to cost-effective models (DeepSeek/Kimi for si...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_quickstart_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sepulchralvoid666",
+      "features": [
+        "Complete OpenClaw setup automation skill",
+        "Installs gateway, hardens security (localhost binding, auth), routes to cost-effective models (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-quickstart-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96479199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-quickstart-setup",
+      "url": "https://clawhub.ai/skills/openclaw-quickstart-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-quickstart-setup",
+    "url": "https://clawhub.ai/skills/openclaw-quickstart-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-quickstart-setup-50e29b45226a6cb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-quickstart-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-quickstart-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d104a2dab2114f458356b5b958ee1abd313ebe6558b54c100ccbc4a84791f4f8",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:05:04.165Z"
+}

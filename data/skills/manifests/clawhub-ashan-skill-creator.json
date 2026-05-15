@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61054,
+  "uuid": "skill-clawhub-ashan-skill-creator",
+  "skillKey": "clawhub-ashan-skill-creator",
+  "name": "Skill Creator",
+  "summary": "创建、编辑、改进或审核 OpenClaw AgentSkill。触发场景：用户要求\"创建一个 skill\"、\"写一个技能\"、\"帮我新建技能\"、\"改进这个 skill\"、\"审核 skill\"、\"整理 skill\"、\"完善技能说明\"。同时用于：skill 目录结构调整、文件迁移（移动到 references/ 或 s...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ashan_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ashanzzz",
+      "features": [
+        "创建、编辑、改进或审核 OpenClaw AgentSkill。触发场景：用户要求\"创建一个 skill\"、\"写一个技能\"、\"帮我新建技能\"、\"改进这个 skill\"、\"审核 skill\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ashan-skill-creator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19986978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ashan-skill-creator",
+      "url": "https://clawhub.ai/skills/ashan-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ashan-skill-creator",
+    "url": "https://clawhub.ai/skills/ashan-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ashan-skill-creator-1a6ac8950d4e1dd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ashan-skill-creator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ashan-skill-creator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d87645af2cef26b28424bb9f2846559629056588dc3ff423ebe9e39d204e05a",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T15:14:01.693Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63446,
+  "uuid": "skill-clawhub-scrapling-safe",
+  "skillKey": "clawhub-scrapling-safe",
+  "name": "Scrapling Safe",
+  "summary": "Scrapling 安全技能 - 网页数据抓取工具 支持 HTTP 请求、隐身抓取、浏览器自动化 智能元素定位，抗反爬虫检测 无需 API 配置，路径输出受限",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapling_safe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "中国山东肥城林水科技",
+      "features": [
+        "Scrapling 安全技能",
+        "网页数据抓取工具 支持 HTTP 请求、隐身抓取、浏览器自动化 智能元素定位，抗反爬虫检测 无需 API 配置，路径输出受限"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrapling-safe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129362705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrapling-safe",
+      "url": "https://clawhub.ai/skills/scrapling-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapling-safe",
+    "url": "https://clawhub.ai/skills/scrapling-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapling-safe-0fcd62eba22d3fc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrapling-safe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrapling-safe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50858bafcd041fde3d0ea84b9ee1945bd06a08e8e32740d16d0c1b8ba274ee36",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:42:42.028Z"
+}

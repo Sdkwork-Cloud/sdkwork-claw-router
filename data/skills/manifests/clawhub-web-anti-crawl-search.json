@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70132,
+  "uuid": "skill-clawhub-web-anti-crawl-search",
+  "skillKey": "clawhub-web-anti-crawl-search",
+  "name": "web-search",
+  "summary": "使用无头浏览器通过多个搜索引擎搜索内容。用于当用户需要搜索最新新闻、时事、股票信息或其他需要实时网络数据的内容时。支持百度、Bing、360、Sogou、微信、今日头条、谷歌等国内外搜索引擎。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_anti_crawl_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei.wu",
+      "features": [
+        "使用无头浏览器通过多个搜索引擎搜索内容。用于当用户需要搜索最新新闻、时事、股票信息或其他需要实时网络数据的内容时。支持百度、Bing、360、Sogou、微信、今日头条、谷歌等国内外搜索引擎。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-anti-crawl-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3362483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-anti-crawl-search",
+      "url": "https://clawhub.ai/skills/web-anti-crawl-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-anti-crawl-search",
+    "url": "https://clawhub.ai/skills/web-anti-crawl-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-anti-crawl-search-6033df576b9a0861.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-anti-crawl-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-anti-crawl-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e70f00827826b78d33af0ee467a0bdfafbaf68a0401aa43677a709e9eb6bb66c",
+      "artifactSizeBytes": 2693
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T16:10:39.732Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39111,
+  "uuid": "skill-clawhub-gemini-image-cli",
+  "skillKey": "clawhub-gemini-image-cli",
+  "name": "Gemini Image CLI",
+  "summary": "Generate and edit images with a bundled Gemini native image-generation CLI. Use when the user asks Codex to create images with Gemini, use Gemini image gener...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_image_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pluiez",
+      "features": [
+        "Generate and edit images with a bundled Gemini native image-generation CLI",
+        "Use when the user asks Codex to create images with Gemini, use Gemini image gener..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-image-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4468773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-image-cli",
+      "url": "https://clawhub.ai/skills/gemini-image-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-image-cli",
+    "url": "https://clawhub.ai/skills/gemini-image-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-image-cli-d55d62e782957a7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-image-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-image-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b9a00e92d276700bd636e65de902a25c7a4b2fb609d7415d75d7dcbca93b80e",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T18:52:55.078Z"
+}

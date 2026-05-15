@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15934,
+  "uuid": "skill-clawhub-trade-router",
+  "skillKey": "clawhub-trade-router",
+  "name": "Solana Trading Api",
+  "summary": "Solana swap execution, MEV-protected transaction submission, wallet scanning, and market-cap-based limit/trailing orders via the TradeRouter API. Use when th...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Wayne",
+      "features": [
+        "Solana swap execution, MEV-protected transaction submission, wallet scanning, and market-cap-ba.",
+        "Use when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-router@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196209605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-router",
+      "url": "https://clawhub.ai/skills/trade-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-router",
+    "url": "https://clawhub.ai/skills/trade-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-router-20ea6328e61232e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-router@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-router-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d0897ffa653906d0dd5198ab8965266a20f2a0063acf1d61ac637af986d4da",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T06:12:59.526Z"
+}

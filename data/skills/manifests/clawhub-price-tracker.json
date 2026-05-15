@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9246,
+  "uuid": "skill-clawhub-price-tracker",
+  "skillKey": "clawhub-price-tracker",
+  "name": "Price Tracker",
+  "summary": "Monitor product prices across Amazon, eBay, Walmart, and Best Buy to identify arbitrage opportunities and profit margins. Use when finding products to flip, monitoring competitor pricing, tracking price history, identifying arbitrage oppor.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael-laffin",
+      "features": [
+        "Monitor product prices across Amazon, eBay, Walmart, and Best Buy to identify arbitrage opportu.",
+        "Use when finding products to flip, monitoring competitor pricing, tracking price history, ident."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/price-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133843289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "price-tracker",
+      "url": "https://clawhub.ai/skills/price-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-tracker",
+    "url": "https://clawhub.ai/skills/price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-tracker-1422baaf459843fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/price-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-price-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e037ac5928b1f5fd2f7a6e8d6af2957ca965eb09eaefa0a0478a0e1847f5e8c",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T14:13:21.381Z"
+}

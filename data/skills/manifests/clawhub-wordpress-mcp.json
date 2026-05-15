@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10353,
+  "uuid": "skill-clawhub-wordpress-mcp",
+  "skillKey": "clawhub-wordpress-mcp",
+  "name": "WordPress MCP",
+  "summary": "Manage WordPress sites via MCP (Model Context Protocol) through AI Engine. Use for creating/editing posts, SEO analysis, analytics, media management, taxonomy operations, social media scheduling, multilingual content (Polylang), and any Wo.",
+  "version": "3.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jordymeow",
+      "features": [
+        "Manage WordPress sites via MCP (Model Context Protocol) through AI Engine",
+        "Use for creating/editing posts, SEO analysis, analytics, media management, taxonomy operations,.",
+        "Requires AI Engine plugin (free) with MCP Server enabled",
+        "Also use when asked about WordPress site management, content workflows, or WP-related tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordpress-mcp@3.3.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/618388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordpress-mcp",
+      "url": "https://clawhub.ai/skills/wordpress-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-mcp",
+    "url": "https://clawhub.ai/skills/wordpress-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-mcp-1b54a1e88409d326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordpress-mcp@3.3.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-mcp-3.3.4.json",
+      "version": "3.3.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96447633a5d4009f1373cff138f21999a8efc65a24e2658a5d85d33c7b4671da",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T01:05:47.654Z"
+}

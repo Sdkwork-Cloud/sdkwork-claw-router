@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/citation-check-citation-management@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_check_citation_management",
+  "skill": {
+    "id": 42944,
+    "skillKey": "clawhub-citation-check-citation-management",
+    "name": "citation-management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-check-citation-management",
+    "url": "https://clawhub.ai/skills/citation-check-citation-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-check-citation-management-1c4ec68f176806f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wu-uk",
+      "userId": "s170bfqwae6mtf922jhz299q7s83jb0h",
+      "displayName": "wu-uk",
+      "image": "https://avatars.githubusercontent.com/u/199610473?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776093897050,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67c8428200dffd4ed4e7a4e256b2a4c1d8eb17e375b38e0eed2be309b8477a67"
+}

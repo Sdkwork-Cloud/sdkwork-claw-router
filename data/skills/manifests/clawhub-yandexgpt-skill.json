@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28236,
+  "uuid": "skill-clawhub-yandexgpt-skill",
+  "skillKey": "clawhub-yandexgpt-skill",
+  "name": "YandexGPT Proxy",
+  "summary": "OpenAI-compatible translation proxy for Yandex Cloud Foundation Models (YandexGPT)",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandexgpt_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "OpenAI-compatible translation proxy for Yandex Cloud Foundation Models (YandexGPT)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandexgpt-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24612081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandexgpt-skill",
+      "url": "https://clawhub.ai/skills/yandexgpt-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandexgpt-skill",
+    "url": "https://clawhub.ai/skills/yandexgpt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandexgpt-skill-b3b7aff82b3b4560.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandexgpt-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandexgpt-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a88937eb25c41a346fc99a01d4acf46fcbcddd50efcd77e7426bdc4df1048df",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:37:20.017Z"
+}

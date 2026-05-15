@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-image-to-video-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_image_to_video_api",
+  "skill": {
+    "id": 32914,
+    "skillKey": "clawhub-mediaio-image-to-video-api",
+    "name": "Mediaio Image to Video API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-image-to-video-api",
+    "url": "https://clawhub.ai/skills/mediaio-image-to-video-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-image-to-video-api-cf89d159d93092eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Animate static images into dynamic AI-generated videos with realistic motion using Media.io OpenAPI and an API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773988960366,
+      "changelog": "mediaio-image-to-video-api 1.0.0 initial release:\n\n- Animate static images into dynamic AI-generated videos via Media.io OpenAPI.\n- Supports checking user credits, retrieving task results, and generating videos using the Vidu Q3 image-to-video model.\n- Requires configuration of a Media.io API key.\n- Optimized for use cases such as \"image to video,\" \"animate image,\" and \"photo to video.\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb2326ecf8b4f5fb407be7fe597b2649f48532db1deba0f9f00dede3229a6776"
+}

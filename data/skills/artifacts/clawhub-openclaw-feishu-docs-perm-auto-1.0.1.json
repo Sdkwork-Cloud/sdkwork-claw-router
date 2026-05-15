@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-docs-perm-auto@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_docs_perm_auto",
+  "skill": {
+    "id": 71180,
+    "skillKey": "clawhub-openclaw-feishu-docs-perm-auto",
+    "name": "飞书文档权限自动添加"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-docs-perm-auto",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-docs-perm-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-docs-perm-auto-e3d03275396714ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动为飞书文档添加用户权限。每次创建飞书文档（多维表格/文档/电子表格/文件夹/云空间文件/知识库节点等）后自动添加用户权限，或用户反馈文档无权限时补充添加权限。适用于 OpenClaw Agent。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sadjjk",
+      "userId": "s17f1nnvvxdf4g0rqw0f8mkmgx83h8pj",
+      "displayName": "JinYu",
+      "image": "https://avatars.githubusercontent.com/u/27802765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772701874825,
+      "changelog": "openclaw-feishu-docs-perm-auto v1.0.1\n\n- No code or documentation changes detected in this version.\n- No functional or behavioral updates compared to previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e0497bc50108fbae3852969b80a0175294cd9d703d4f0f2f87c36d0ae9c8f5d"
+}

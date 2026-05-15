@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "boss-greeting-message",
+    "displayName": "boss-greeting message",
+    "summary": "BOSS直聘打招呼语生成器。调用 boss-cli 获取目标职位详情，分析岗位核心要求， 再对照用户简历找出最匹配的经历，生成一段不超过200字的个性化打招呼语。 当用户说\"帮我写打招呼语\"、\"投这个岗位怎么打招呼\"、\"生成boss打招呼\"等时触发。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776323197235,
+    "updatedAt": 1777527602109
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776323197235,
+    "changelog": "- 简化为基于 boss-cli 的职位与简历分析流程，移除原有图片、截图与档案管理功能。\n- 通过命令行自动获取职位信息（支持职位链接或搜索），结合用户粘贴的简历内容分析匹配点。\n- 规定打招呼语字数严格不超过200字，更强调具体经历与数字成果描述。\n- 输出两个风格版本（经验导向、简洁直接），建议按岗位接收方选择。\n- 风格更口语化，去除模板化与过度礼貌用语。\n- 精简使用要求，提供 boss-cli 安装与登录说明。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bifang988",
+    "userId": "s176k1da64p43tq9n85mt7vzxs840f9y",
+    "displayName": "bifang988",
+    "image": "https://avatars.githubusercontent.com/u/269688853?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527602109
+  }
+}

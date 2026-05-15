@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11948,
+  "uuid": "skill-clawhub-arxiv-cli-tools",
+  "skillKey": "clawhub-arxiv-cli-tools",
+  "name": "Arxiv Cli Tools",
+  "summary": "Command-line tool to search, filter, and download arXiv papers by ID, author, category, or keyword without requiring API keys.",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_cli_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KGTAF",
+      "features": [
+        "Command-line tool to search, filter, and download arXiv papers by ID, author, category, or keyw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-cli-tools@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32797449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-cli-tools",
+      "url": "https://clawhub.ai/skills/arxiv-cli-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-cli-tools",
+    "url": "https://clawhub.ai/skills/arxiv-cli-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-cli-tools-b23a6527df0c0d13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-cli-tools@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-cli-tools-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:099916ea23177942bed32236342e508c775eb44e03df3fb8fbddd7bcb783d904",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T15:53:44.459Z"
+}

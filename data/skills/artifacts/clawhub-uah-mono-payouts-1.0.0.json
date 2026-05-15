@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uah-mono-payouts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uah_mono_payouts",
+  "skill": {
+    "id": 49419,
+    "skillKey": "clawhub-uah-mono-payouts",
+    "name": "UAH Mono Payouts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uah-mono-payouts",
+    "url": "https://clawhub.ai/skills/uah-mono-payouts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uah-mono-payouts-23fcfcbd68725b13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a user wants an agent to convert USDT BEP20 into UAH payout instructions through a verified exchanger flow with approval, expiry, and payment monito..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftadviser",
+      "userId": "s17843hzyx58twtxnacc3edd3h83k4fk",
+      "displayName": "Roman",
+      "image": "https://avatars.githubusercontent.com/u/5148967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777962136023,
+      "changelog": "Initial public release of the UAH Monobank payout skill for USDT BEP20 flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a29d59c307b1a47433c000e33bc7a895f0cc774bb7a08f118ec6f62ea380ef0"
+}

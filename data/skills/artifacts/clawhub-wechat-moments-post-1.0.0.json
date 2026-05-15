@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-moments-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_moments_post",
+  "skill": {
+    "id": 21384,
+    "skillKey": "clawhub-wechat-moments-post",
+    "name": "WeChat Moments Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-moments-post",
+    "url": "https://clawhub.ai/skills/wechat-moments-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-moments-post-495243c5a36c895b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate posting to WeChat Moments on Windows desktop (open Moments window, trigger publish entry, select image, paste caption, click publish). Use when aske..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zch-danny",
+      "userId": "publishers:zch-danny",
+      "displayName": "zch-danny",
+      "image": "https://avatars.githubusercontent.com/u/51771555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773148607218,
+      "changelog": "WeChat Moments Post 1.0.0 – Initial release.\n\n- Automates stable posting to WeChat Moments on Windows desktop, including image upload and caption input.\n- Covers steps: open Moments window, select image, paste caption, publish, and verify result.\n- Provides configurable options for WeChat executable path, image, caption, and verification.\n- Includes modular scripts for each workflow step.\n- Detailed guidance and workflow references provided for reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45192a152e205685f43de1ce51b7a9c4395380f9881a188701432c40725a098d"
+}

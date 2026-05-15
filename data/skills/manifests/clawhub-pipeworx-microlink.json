@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55844,
+  "uuid": "skill-clawhub-pipeworx-microlink",
+  "skillKey": "clawhub-pipeworx-microlink",
+  "name": "Pipeworx microlink",
+  "summary": "Microlink MCP — wraps Microlink API (free tier, no auth required)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_microlink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Microlink MCP — wraps Microlink API (free tier, no auth required)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-microlink@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-microlink",
+      "url": "https://clawhub.ai/skills/pipeworx-microlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-microlink",
+    "url": "https://clawhub.ai/skills/pipeworx-microlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-microlink-2f4ea52203e32bed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-microlink@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-microlink-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b480e4b3417ccea051efb097b50a72d822e038f4edaf89f5a1820c21dc323c8b",
+      "artifactSizeBytes": 1825
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:28:49.283Z"
+}

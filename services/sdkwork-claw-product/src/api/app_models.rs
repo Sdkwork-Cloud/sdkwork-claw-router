@@ -29,7 +29,7 @@ impl<C> Clone for AppModelCatalogState<C> {
 }
 
 #[derive(Debug, Default, Deserialize)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields)]
 struct AppModelCatalogQuery {
     billing_meter: Option<String>,
     vendor_code: Option<String>,
@@ -38,7 +38,7 @@ struct AppModelCatalogQuery {
     capabilities: Option<String>,
     categories: Option<String>,
     groups: Option<String>,
-    search_query: Option<String>,
+    q: Option<String>,
     limit: Option<usize>,
 }
 
@@ -126,10 +126,10 @@ where
 {
     Router::new()
         .route(
-            "/app/v3/api/router/model-vendors",
+            "/app/v3/api/ai/model_vendors",
             get(fetch_model_vendors::<C>),
         )
-        .route("/app/v3/api/router/models", get(fetch_models::<C>))
+        .route("/app/v3/api/ai/models", get(fetch_models::<C>))
         .with_state(AppModelCatalogState { catalog })
 }
 
@@ -166,7 +166,7 @@ where
         capabilities: comma_separated_query_values(query.capabilities.as_deref()),
         categories: comma_separated_query_values(query.categories.as_deref()),
         groups: comma_separated_query_values(query.groups.as_deref()),
-        search_query: query.search_query,
+        search_query: query.q,
         limit: query.limit,
     }) {
         Ok(page) => Json(PlusApiResult::success(to_response(page))).into_response(),

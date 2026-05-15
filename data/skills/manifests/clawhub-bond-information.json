@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71060,
+  "uuid": "skill-clawhub-bond-information",
+  "skillKey": "clawhub-bond-information",
+  "name": "BondInformation",
+  "summary": "债券资讯与信用风险监测技能。基于 FEEDAX API 查询债券市场相关新闻资讯，支持按债券类型（城投债/公司债/企业债/金融债等）、情感倾向、时间范围筛选，提供债券违约风险监测、信用评级追踪、发行人舆情分析等专业功能。 使用场景：用户监测债券违约风险、追踪城投债舆情、分析公司债信用状况、查询特定债券新闻、评估债...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bond_information",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longGGGGGG",
+      "features": [
+        "债券资讯与信用风险监测技能。基于 FEEDAX API 查询债券市场相关新闻资讯，支持按债券类型（城投债/公司债/企业债/金融债等）、情感倾向、时间范围筛选，提供债券违约风险监测、信用评级追."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bond-information@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40319383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bond-information",
+      "url": "https://clawhub.ai/skills/bond-information"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bond-information",
+    "url": "https://clawhub.ai/skills/bond-information",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bond-information-5f11661fa4df40e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bond-information@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bond-information-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:717a515989b61fcec3b1a2115cb6e39ba1db9b0eb25c59241d4abf90f9042c1c",
+      "artifactSizeBytes": 2675
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T05:41:54.155Z"
+}

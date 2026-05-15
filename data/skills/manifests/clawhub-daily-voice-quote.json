@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64257,
+  "uuid": "skill-clawhub-daily-voice-quote",
+  "skillKey": "clawhub-daily-voice-quote",
+  "name": "Daily Voice Quote 每日名言語音",
+  "summary": "每日名言語音任務。產生「語音 + 封面圖靜態影片 +（選配）HeyGen 數位人影片」並發送給主人。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_voice_quote",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ju Chun Ko",
+      "features": [
+        "每日名言語音任務。產生「語音 + 封面圖靜態影片 +（選配）HeyGen 數位人影片」並發送給主人。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-voice-quote@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1607280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-voice-quote",
+      "url": "https://clawhub.ai/skills/daily-voice-quote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-voice-quote",
+    "url": "https://clawhub.ai/skills/daily-voice-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-voice-quote-c08fcf3f188dce22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-voice-quote@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-voice-quote-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:618ab930dba9cd7ec1cef211fd458324867592e3550e9fe19eb95879f79322af",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:10:18.434Z"
+}

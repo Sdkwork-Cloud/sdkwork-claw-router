@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32593,
+  "uuid": "skill-clawhub-exa-web-search-v2",
+  "skillKey": "clawhub-exa-web-search-v2",
+  "name": "Exa Web Search V2",
+  "summary": "Free AI search via Exa MCP. Web search for news/info, code search for docs/examples from GitHub/StackOverflow, company research for business intel. No API ke...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_web_search_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "15914355527",
+      "features": [
+        "Free AI search via Exa MCP",
+        "Web search for news/info, code search for docs/examples from GitHub/StackOverflow, company rese.",
+        "No API ke..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exa-web-search-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51820137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exa-web-search-v2",
+      "url": "https://clawhub.ai/skills/exa-web-search-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-web-search-v2",
+    "url": "https://clawhub.ai/skills/exa-web-search-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-web-search-v2-b95f8ce93a15d635.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exa-web-search-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exa-web-search-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94081b1cdb7466b4aeb707af0646282e7d86a44c9c7d5260cf3c36e4f50ba9f9",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:06:51.975Z"
+}

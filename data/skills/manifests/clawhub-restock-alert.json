@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38197,
+  "uuid": "skill-clawhub-restock-alert",
+  "skillKey": "clawhub-restock-alert",
+  "name": "Restock Alert",
+  "summary": "Provides data-driven restock alerts by calculating reorder points, safety stock, and stockout risk to optimize inventory and prevent sales loss.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restock_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "Provides data-driven restock alerts by calculating reorder points, safety stock, and stockout r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restock-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restock-alert",
+      "url": "https://clawhub.ai/skills/restock-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restock-alert",
+    "url": "https://clawhub.ai/skills/restock-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restock-alert-5dd2d0d918a8664f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restock-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restock-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:806c05c56ff09ee0485fe0f373dce150784a9d273fc77ac2b353af73a1d58a8f",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:05:22.455Z"
+}

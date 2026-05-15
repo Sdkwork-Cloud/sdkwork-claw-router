@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_writing",
+  "skill": {
+    "id": 72214,
+    "skillKey": "clawhub-news-writing",
+    "name": "news-writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-writing",
+    "url": "https://clawhub.ai/skills/news-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-writing-0a9adda9e8446b36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻素材收集、整理、写作、排版与校对的完整工作流。用于用户需要生成新闻稿、快讯、深度稿、企业新闻、活动报道，或需要对现有新闻内容进行事实核实、结构优化、标题导语改写、版式统一与发布前审校时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richardcao06",
+      "userId": "publishers:richardcao06",
+      "displayName": "RichardCao06",
+      "image": "https://avatars.githubusercontent.com/u/50325142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1422,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771919069123,
+      "changelog": "wirte news",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c2d30c440bab1d7a749e86b62e1b652cdf1e1667d880e279751e22fc75d4793"
+}

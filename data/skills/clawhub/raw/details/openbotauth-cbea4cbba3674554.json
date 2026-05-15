@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "openbotauth",
+    "displayName": "OpenBotAuth",
+    "summary": "Get a cryptographic identity for your AI agent. Generate Ed25519 keys, sign your work, prove who you are — across any platform.",
+    "tags": {
+      "latest": "0.1.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1358,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1770546483061,
+    "updatedAt": 1778384301169
+  },
+  "latestVersion": {
+    "version": "0.1.1",
+    "createdAt": 1771102010236,
+    "changelog": "- Updated JWKS endpoint — changed from /agent-jwks/{id}.json to /jwks/{username}.json\n  - Added Token Handling Contract — documents bearer token lifecycle (registration-only, delete after)\n  - Added Compatibility Modes section — Core Mode (CLI) vs Browser Mode with security guidance\n  - Added Token Safety Rules table — do/don't guidance for token handling\n  - Added Runtime Compatibility table — support matrix for Claude Code, agent-browser, OpenClaw, CUA, skills.sh\n  - Registration script hardened:\n    - Added redirect: 'error' to prevent token leakage on redirects\n    - Writes config.json with agent_id, username, jwksUrl\n    - Deletes token after successful registration\n    - Fetches /auth/session to resolve username for JWKS URL\n  - Proxy security hardened:\n    - Changed execSync to execFileSync (prevents command injection)\n    - Added strict hostname validation regex\n    - Added hash-based cert filenames (prevents path traversal)\n    - Added port validation (1-65535)\n  - Added Official Packages section — links to @openbotauth/verifier-client, registry-signer, bot-cli, proxy\n  - Added strict verifier note — points to @openbotauth/bot-cli and openbotauth-demos/packages/signing-ts\n  - Enterprise SSO section — rewritten as roadmap spec (no runnable code, marked \"not yet implemented\")\n  - Proxy limitations — added IP hostname mitigation guidanc",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "hammadtq",
+    "userId": "s177yn5m8wjerdfz1m1zp49qs183kk1b",
+    "displayName": "hammadtq",
+    "image": "https://avatars.githubusercontent.com/u/11869286?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384301169
+  }
+}

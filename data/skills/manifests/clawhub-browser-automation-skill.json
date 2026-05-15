@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42941,
+  "uuid": "skill-clawhub-browser-automation-skill",
+  "skillKey": "clawhub-browser-automation-skill",
+  "name": "Browser Automation",
+  "summary": "Use Browser Relay when the user wants to control a real signed-in Chrome or Chromium browser through the published browser-relay-cli package and unpacked Bro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason",
+      "features": [
+        "Use Browser Relay when the user wants to control a real signed-in Chrome or Chromium browser th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-automation-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47563854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-automation-skill",
+      "url": "https://clawhub.ai/skills/browser-automation-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation-skill",
+    "url": "https://clawhub.ai/skills/browser-automation-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-skill-5fef02e80ae10dc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-automation-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-automation-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0861ae3951c1c6ae6960fe7839b52b9886cf5004ba08bfc46061c5ce23e6a8d",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:14:12.315Z"
+}

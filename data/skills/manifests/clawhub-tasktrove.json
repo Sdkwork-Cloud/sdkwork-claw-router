@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13455,
+  "uuid": "skill-clawhub-tasktrove",
+  "skillKey": "clawhub-tasktrove",
+  "name": "Tasktrove",
+  "summary": "Manage todos via Tasktrove API. Use for listing, creating, completing, or updating tasks. Triggers on task/todo requests like \"what's on my todo list\", \"add a task\", \"mark X done\", \"what's due today\".",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tasktrove",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "willwebberley",
+      "features": [
+        "Manage todos via Tasktrove API",
+        "Use for listing, creating, completing, or updating tasks",
+        "Triggers on task/todo requests like \"what's on my todo list\", \"add a task\", \"mark X done\", \"wha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tasktrove@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/881396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tasktrove",
+      "url": "https://clawhub.ai/skills/tasktrove"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tasktrove",
+    "url": "https://clawhub.ai/skills/tasktrove",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tasktrove-d6ca845a657d2a63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tasktrove@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tasktrove-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84a281d330acda83b1c6e55bb551404314e78b76491ca2d4f4fd54b048d8a50b",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:01:44.070Z"
+}

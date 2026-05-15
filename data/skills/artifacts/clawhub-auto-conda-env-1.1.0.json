@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-conda-env@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_conda_env",
+  "skill": {
+    "id": 58540,
+    "skillKey": "clawhub-auto-conda-env",
+    "name": "Auto Conda Env"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-conda-env",
+    "url": "https://clawhub.ai/skills/auto-conda-env",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-conda-env-986ff454921e214d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动为Python项目创建或复用匹配的Conda环境，扫描项目依赖文件自动配置运行环境。Auto-create or reuse a Conda env for any Python project — scans deps, matches envs, handles CUDA/GPU needs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kazuya-ecnu",
+      "userId": "s17byvp2m2yxjjr1t9k9w8me4x847hya",
+      "displayName": "Kazuya",
+      "image": "https://avatars.githubusercontent.com/u/94837947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775415003652,
+      "changelog": "新增：conda路径自动搜索（处理PATH缺失）、ghost环境检测、PEP 668保护处理、GPU/CUDA支持、安装验证步骤。中英双语。Added: auto conda path search, ghost env detection, PEP 668 handling, GPU/CUDA support, env verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbd6a9254d3665ce2446dcbe7bdfe11258476ed231e66747666d054066b3a949"
+}

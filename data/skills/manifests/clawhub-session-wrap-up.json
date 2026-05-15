@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10231,
+  "uuid": "skill-clawhub-session-wrap-up",
+  "skillKey": "clawhub-session-wrap-up",
+  "name": "Session Wrap-Up",
+  "summary": "Wrap up a conversation session before starting a new one. Use when the user says \"wrap up\", \"wrap up this conversation\", \"session wrap up\", or uses /session_wrap_up command. Flushes context to memory files, updates PARA notes, commits chan.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_wrap_up",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "branexp",
+      "features": [
+        "Wrap up a conversation session before starting a new one",
+        "Use when the user says \"wrap up\", \"wrap up this conversation\", \"session wrap up\", or uses /sess.",
+        "Flushes context to memory files, updates PARA notes, commits changes, and provides a summary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-wrap-up@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148727817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-wrap-up",
+      "url": "https://clawhub.ai/skills/session-wrap-up"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-wrap-up",
+    "url": "https://clawhub.ai/skills/session-wrap-up",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-wrap-up-fab2d0437c16d8be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-wrap-up@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-wrap-up-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb1698ee1f27ac9505494e63a60e5fffb9a64b2ef9c4f36710b1ae8960dd5f02",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T20:04:13.837Z"
+}

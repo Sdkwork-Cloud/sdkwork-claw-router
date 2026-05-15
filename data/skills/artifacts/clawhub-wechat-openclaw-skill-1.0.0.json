@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-openclaw-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_openclaw_skill",
+  "skill": {
+    "id": 64060,
+    "skillKey": "clawhub-wechat-openclaw-skill",
+    "name": "Wechat Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-openclaw-skill",
+    "url": "https://clawhub.ai/skills/wechat-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-openclaw-skill-5f9c480196ff271a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供微信中一键安装并绑定OpenClaw助手，实现多会话管理和文本、图片、文件等消息的微信端AI聊天功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ynxiyan",
+      "userId": "s178xevq4v8s11d3ejjjcfz2nd83t78m",
+      "displayName": "兮颜",
+      "image": "https://avatars.githubusercontent.com/u/120149490?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776833662869,
+      "changelog": "wechat-openclaw-skill 1.0.0\n\n- 初始版本发布，基于B站视频教程总结实现\n- 支持一键安装和系统环境自动检测\n- 提供扫码绑定功能，实现微信账号快速绑定\n- 可在微信内直接与OpenClaw助手对话，支持多种消息类型\n- 内置管理工具，支持连接状态监控、插件管理和故障排查\n- 包含详细的安装使用说明和常见问题解答",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3c58c322972773c2d0c31ddf44bd40601dc2899c12ff7c9d36414a556eafdf7"
+}

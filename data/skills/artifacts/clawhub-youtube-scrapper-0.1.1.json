@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-scrapper@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_scrapper",
+  "skill": {
+    "id": 14034,
+    "skillKey": "clawhub-youtube-scrapper",
+    "name": "Youtube Scrapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-scrapper",
+    "url": "https://clawhub.ai/skills/youtube-scrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-scrapper-f05b1be719d2c04d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill for discovering and scraping YouTube channels based on categories and locations without requiring API keys or login."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arulmozhiv",
+      "userId": "s17d6p47jmzs92ja3p6wh80wx983h93g",
+      "displayName": "ArulmozhiV",
+      "image": "https://avatars.githubusercontent.com/u/58811343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1092,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772106039809,
+      "changelog": "- Major documentation update: SKILL.md completely rewritten and expanded.\n- Clearer overview of capabilities, features, configuration, and anti-detection strategies.\n- Structured usage examples and JSON output samples for easy agent integration.\n- Enhanced description of residential proxy support with recommendations.\n- README.md removed (consolidated into SKILL.md).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a6bab08cf7d5b2c6b0b09a29fd81985448b84cb835b87fbdd15645b2a18a37c"
+}

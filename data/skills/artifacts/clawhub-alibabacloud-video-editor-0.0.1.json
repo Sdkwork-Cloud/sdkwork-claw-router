@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-video-editor@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_video_editor",
+  "skill": {
+    "id": 43487,
+    "skillKey": "clawhub-alibabacloud-video-editor",
+    "name": "Alibabacloud Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-video-editor",
+    "url": "https://clawhub.ai/skills/alibabacloud-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-video-editor-e12594271c987894.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Video editing tool that requires no ffmpeg installation. All video processing is executed in the cloud - no local ffmpeg installation needed. If both input a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775095116912,
+      "changelog": "- Initial release of alibabacloud-video-editor.\n- Cloud-based video editing with no need for local ffmpeg installation.\n- Supports generating Alibaba Cloud ICE Timeline configurations for various editing scenarios (slideshow, audio mixing, multi-clip, subtitles, effects, and more).\n- Automates task submission, polling, and retrieval of the final video URL from Alibaba Cloud.\n- OSS integration included for handling local and remote media files via Alibaba Cloud's credential chain.\n- Comprehensive documentation provided for workflow, best practices, and configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c73b7b1f27d399c158ef9a402b3fd24cf995fa0e386ab16a469602c116ed88b6"
+}

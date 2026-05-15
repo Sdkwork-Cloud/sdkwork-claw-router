@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43831,
+  "uuid": "skill-clawhub-fortress-agent-suite",
+  "skillKey": "clawhub-fortress-agent-suite",
+  "name": "Fortress Agent Suite",
+  "summary": "Fortress Agent Suite provides self-healing, health monitoring, automated maintenance, and LLM model management for OpenClaw agents in production.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortress_agent_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kienphan91",
+      "features": [
+        "Fortress Agent Suite provides self-healing, health monitoring, automated maintenance, and LLM m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortress-agent-suite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97894384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortress-agent-suite",
+      "url": "https://clawhub.ai/skills/fortress-agent-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortress-agent-suite",
+    "url": "https://clawhub.ai/skills/fortress-agent-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortress-agent-suite-6091fa7efba59d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortress-agent-suite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortress-agent-suite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:620977d1047fcba37fca3be13cf0d735bddebfa9e329eba4032f31894c329561",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T04:23:19.620Z"
+}

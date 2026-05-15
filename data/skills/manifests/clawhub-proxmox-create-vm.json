@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29771,
+  "uuid": "skill-clawhub-proxmox-create-vm",
+  "skillKey": "clawhub-proxmox-create-vm",
+  "name": "Proxmox Create Vm",
+  "summary": "Create Ubuntu 24.04 LXC containers or full VMs on Proxmox VE. Docker-ready with Compose v2. Handles nesting for Docker-in-LXC, auto-picks next available CTID...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_create_vm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Create Ubuntu 24.04 LXC containers or full VMs on Proxmox VE",
+        "Docker-ready with Compose v2",
+        "Handles nesting for Docker-in-LXC, auto-picks next available CTID..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxmox-create-vm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxmox-create-vm",
+      "url": "https://clawhub.ai/skills/proxmox-create-vm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-create-vm",
+    "url": "https://clawhub.ai/skills/proxmox-create-vm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-create-vm-25613d032f9a7476.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxmox-create-vm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-create-vm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22367fea03bb5c914feaea99918920f9de665ce02fd5a3a41629ba53285f7477",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:00:51.128Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61952,
+  "uuid": "skill-clawhub-md-to-nanobanana-ppt",
+  "skillKey": "clawhub-md-to-nanobanana-ppt",
+  "name": "md-to-nanobanana-ppt",
+  "summary": "将Markdown分析报告转换为完整PPT：先提供5种以上配色方案供用户选择，再拆分为不超过20张幻灯片，生成对应的 nano-banana 图片提示词，调用 nano-banana2-apiyi 出图，最后合成 `.pptx` 并按文件大小分流交付。当用户需要把 Markdown 报告转成 PPT、从现有报告生...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_nanobanana_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heaven",
+      "features": [
+        "将Markdown分析报告转换为完整PPT：先提供5种以上配色方案供用户选择，再拆分为不超过20张幻灯片，生成对应的 nano-banana 图片提示词，调用 nano-banana2-ap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-to-nanobanana-ppt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23333359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-to-nanobanana-ppt",
+      "url": "https://clawhub.ai/skills/md-to-nanobanana-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-nanobanana-ppt",
+    "url": "https://clawhub.ai/skills/md-to-nanobanana-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-nanobanana-ppt-2ec6b85f8334d4e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-to-nanobanana-ppt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-to-nanobanana-ppt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:838ab7e3897c975d7e5d46f2e0ac106a2ea1c49581378e3163b0fdfa00f8c4b4",
+      "artifactSizeBytes": 2683
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:27:05.304Z"
+}

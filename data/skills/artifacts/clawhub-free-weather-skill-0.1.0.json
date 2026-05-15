@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-weather-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_weather_skill",
+  "skill": {
+    "id": 13994,
+    "skillKey": "clawhub-free-weather-skill",
+    "name": "Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-weather-skill",
+    "url": "https://clawhub.ai/skills/free-weather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-weather-skill-55553683488a663d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts (no API key required)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1141,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773640071399,
+      "changelog": "- Initial release of the weather skill.\n- Provides current weather and forecasts using wttr.in (no API key required).\n- Supports quick summaries, detailed forecasts, various output formats, and tips for locations/units.\n- Includes Open-Meteo integration for JSON output as a fallback.\n- Requires only curl; no external dependencies.\n- Clear usage examples and documentation links provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e55e4328c56f3acc0423c634e0a98fcb1f068483239d37a53436541539f95432"
+}

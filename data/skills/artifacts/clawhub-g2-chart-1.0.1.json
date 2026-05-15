@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/g2-chart@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.g2_chart",
+  "skill": {
+    "id": 23338,
+    "skillKey": "clawhub-g2-chart",
+    "name": "AntV Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "g2-chart",
+    "url": "https://clawhub.ai/skills/g2-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/g2-chart-266b86b47d0c6347.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate G2 v5 chart code. Use when user asks for G2 charts, bar charts, line charts, pie charts, scatter plots, area charts, or any data visualization with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lxfu1",
+      "userId": "s170dgemqb0q18r57jt3shx5rh842c9p",
+      "displayName": "Joel Alan",
+      "image": "https://avatars.githubusercontent.com/u/31396322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777454622341,
+      "changelog": "- Removed 4 documentation/recipe/reference files, simplifying the package contents.\n- SKILL name changed from `g2-chart` to `antv-g2-chart`.\n- SKILL.md rewritten for greater conciseness and clarity; retains all critical G2 v5 best practices and mandatory constraints.\n- New common mistakes section added, explicitly highlighting frequent issues (e.g., forbidden multiple `chart.options()` calls, padding rules).\n- No functional or runtime code changes; documentation and configuration focus only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09d290cc1ce340113f55f7c4b523297873573e8a82e5288fce9c928c5f094d22"
+}

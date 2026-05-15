@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25091,
+  "uuid": "skill-clawhub-drill-sergeant-skill",
+  "skillKey": "clawhub-drill-sergeant-skill",
+  "name": "Drill Sergeant Skill",
+  "summary": "Enforce communication discipline in team channels by detecting message violations, issuing corrective actions, and summarizing for leadership.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drill_sergeant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ptaramona",
+      "features": [
+        "Enforce communication discipline in team channels by detecting message violations, issuing corr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drill-sergeant-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65972483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drill-sergeant-skill",
+      "url": "https://clawhub.ai/skills/drill-sergeant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drill-sergeant-skill",
+    "url": "https://clawhub.ai/skills/drill-sergeant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drill-sergeant-skill-53c2318740bc8b17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drill-sergeant-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drill-sergeant-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a63c60b766cae55707569a1b887cf3ec3f10a63cab6139275ad9aa3b8ba7ff6",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:44:47.810Z"
+}

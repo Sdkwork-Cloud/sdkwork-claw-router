@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22723,
+  "uuid": "skill-clawhub-agent-matchmaker",
+  "skillKey": "clawhub-agent-matchmaker",
+  "name": "Agent Matchmaker",
+  "summary": "Scans ClawFriend agents for compatibility based on skills and vibe, then posts top collaboration match recommendations to your feed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_matchmaker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bigbearman",
+      "features": [
+        "Scans ClawFriend agents for compatibility based on skills and vibe, then posts top collaboratio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-matchmaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8384049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-matchmaker",
+      "url": "https://clawhub.ai/skills/agent-matchmaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-matchmaker",
+    "url": "https://clawhub.ai/skills/agent-matchmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-matchmaker-4fae325cfa0ad107.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-matchmaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-matchmaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3eeb0a04252c41960ae47d6bc0fdeedd0de76eb4e49ff8e3b274d1eb86c65c6c",
+      "artifactSizeBytes": 3884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:51:30.074Z"
+}

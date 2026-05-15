@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibetrader@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibetrader",
+  "skill": {
+    "id": 11106,
+    "skillKey": "clawhub-vibetrader",
+    "name": "VibeTrader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibetrader",
+    "url": "https://clawhub.ai/skills/vibetrader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibetrader-4fa8d6279f439b37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage AI-powered trading bots via natural language. Paper & live trading, portfolio monitoring, backtesting, stock quotes, and options chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etbars",
+      "userId": "publishers:etbars",
+      "displayName": "Ethan Barsketis",
+      "image": "https://avatars.githubusercontent.com/u/68934843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770223636198,
+      "changelog": "- Added a new section detailing available REST API endpoints, including authentication requirements and example curl commands.\n- Clarified base API URL and health check endpoint.\n- Separated REST API usage from MCP protocol tools for improved documentation clarity.\n- No code or file changes in this release; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2568723871f42d64519dd6aec786322681b7d7cb7f2cdbc4d6c858a921a40d6"
+}

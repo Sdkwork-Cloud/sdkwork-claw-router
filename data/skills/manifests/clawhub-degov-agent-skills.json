@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28250,
+  "uuid": "skill-clawhub-degov-agent-skills",
+  "skillKey": "clawhub-degov-agent-skills",
+  "name": "DAO Governance",
+  "summary": "Load this skill when users ask about Web3 DAO governance. Use the Degov Agent API as the primary source for DAO governance facts and recent activity, then us...",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.degov_agent_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boundless-forest",
+      "features": [
+        "Load this skill when users ask about Web3 DAO governance",
+        "Use the Degov Agent API as the primary source for DAO governance facts and recent activity, the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/degov-agent-skills@0.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11801722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "degov-agent-skills",
+      "url": "https://clawhub.ai/skills/degov-agent-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "degov-agent-skills",
+    "url": "https://clawhub.ai/skills/degov-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/degov-agent-skills-3c85ce74cb639f09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/degov-agent-skills@0.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-degov-agent-skills-0.6.1.json",
+      "version": "0.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c46595c9d44cef6b2537dcab64a31bc671e75b979002b513586d18c5b34f43ec",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:55:33.162Z"
+}

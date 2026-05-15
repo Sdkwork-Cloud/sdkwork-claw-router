@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ict@4.0.8",
+  "version": "4.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ict",
+  "skill": {
+    "id": 34483,
+    "skillKey": "clawhub-ict",
+    "name": "ict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ict",
+    "url": "https://clawhub.ai/skills/ict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ict-175a680792c1fbf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit tool for Claw Skills - NOT malicious. This tool contains detection rules (eval, exec, subprocess, etc.) for scanning skills, these are securit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vimvem",
+      "userId": "s172kjfgkya06081qqwxap8xzn83fdd0",
+      "displayName": "vv",
+      "image": "https://avatars.githubusercontent.com/u/248705026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "4.0.8",
+      "createdAt": 1774317400748,
+      "changelog": "- Bumped version to 4.0.8.\n- Added new rules.json file for storing or managing detection rules.\n- Updated version and documentation references across README.md and SKILL.md.\n- Revised README/usage/documentation to reflect version 4.0.8 with minor clarifications.\n- Made updates to code files (ict.py, rule_loader.py, rules.py) related to detection rules and/or rule loading logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4800e6bbdbf6fd0cfbe4cef5453f5edfd52e2596f24ef21d196a835cece1c2b8"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35450,
+  "uuid": "skill-clawhub-bp-monthly-report",
+  "skillKey": "clawhub-bp-monthly-report",
+  "name": "BP Monthly Report Writer",
+  "summary": "Draft monthly BP reports by normalizing templates, mapping BP anchors, collecting evidence, and writing sections in order with data-backed progress evaluation.",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bp_monthly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houtonghoutong",
+      "features": [
+        "Draft monthly BP reports by normalizing templates, mapping BP anchors, collecting evidence, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bp-monthly-report@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210855804?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bp-monthly-report",
+      "url": "https://clawhub.ai/skills/bp-monthly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bp-monthly-report",
+    "url": "https://clawhub.ai/skills/bp-monthly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bp-monthly-report-a9a458515fd10a28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bp-monthly-report@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bp-monthly-report-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c288ab36af890e41d161394f12d5424516d5a46ced002a65c2a52d1b1a6c837",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T11:13:52.470Z"
+}

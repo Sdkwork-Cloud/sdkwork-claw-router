@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fact-check-verify@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fact_check_verify",
+  "skill": {
+    "id": 37407,
+    "skillKey": "clawhub-fact-check-verify",
+    "name": "Fact Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fact-check-verify",
+    "url": "https://clawhub.ai/skills/fact-check-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fact-check-verify-34d874276d76bf7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"fact check\", \"verify this\", \"is this true\", \"check the facts\", \"validate claims\", \"are these field names cor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "futurizerush",
+      "userId": "s174ks6c53yjm9ez7sh6ckryf984dsd6",
+      "displayName": "Futurize Rush",
+      "image": "https://avatars.githubusercontent.com/u/122273125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775900136169,
+      "changelog": "Add URL guessing pattern, URL verification rules, phishing safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fe9f598dabaf30159d03fc522cdd8a8e4480e6af5e768db2cc43927980f3d17"
+}

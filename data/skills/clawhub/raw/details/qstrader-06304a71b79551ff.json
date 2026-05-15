@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "qstrader",
+    "displayName": "QStrader - AI Trading Assistant",
+    "summary": "AI Trading Assistant for quantumstocks.ru. Automated hedge fund with market analysis, risk management, and trade execution via n8n MCP. Use when analyzing ma...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774615723861,
+    "updatedAt": 1777624293866
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774615723861,
+    "changelog": "# QStrader — AI Trading Assistant\n\n> **quantumstocks.ru** | Версия 1.0.0 | Лицензия: MIT\n\n## Что это\n\nAI-ассистент для автоматизированного хедж-фонда. Анализирует рынки, проверяет риски, управляет позициями через n8n MCP.\n\n## Возможности\n\n- 📊 **Технический анализ** — RSI, MACD, Bollinger Bands, EMA (20/50/100)\n- 🤖 **LSTM прогноз** — 10 шагов вперёд + VaR 95% + стоп-лоссы по 3 методам\n- 🛡️ **Risk Manager** — автоматическая проверка SL/TP, margin, дневных лимитов\n- 📰 **Новости** — CNBC, Bloomberg, Berezin, макро-календарь, FED\n- 📊 **Фундаментал** — балансы компаний, финансовые скоры, FRED макроданные\n- 💰 **Торговля** — ордера, SL/TP, закрытие сделок через брокера\n- 📝 **Trade Journal** — лог сделок в Qdrant (векторная БД)\n- 🔍 **Семантическая память** — поиск по истории решений и паттернов\n\n## Требования\n\n- **OpenClaw** — https://github.com/openclaw/openclaw\n- **mcporter** — CLI для MCP (входит в OpenClaw)\n- **n8n** — с MCP workflow (торговый терминал)\n- **Python 3.10+**\n- **Qdrant** — векторная БД (опционально, для памяти)\n- **LightRAG** — графовая БД (опционально, для знаний)",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "antonby77",
+    "userId": "s17ffz58agx42zz9aq12np01fh83p28d",
+    "displayName": "antonBy77",
+    "image": "https://avatars.githubusercontent.com/u/144056196?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624293866
+  }
+}

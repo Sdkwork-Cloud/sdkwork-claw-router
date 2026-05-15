@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48124,
+  "uuid": "skill-clawhub-revenue-recovery",
+  "skillKey": "clawhub-revenue-recovery",
+  "name": "Revenue Recovery",
+  "summary": "Core revenue recovery orchestration for Xzenia. Use when onboarding a client, running end-to-end revenue leakage analysis, coordinating data ingestion, contr...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenue_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "prettybusysolutions-eng",
+      "features": [
+        "Core revenue recovery orchestration for Xzenia",
+        "Use when onboarding a client, running end-to-end revenue leakage analysis, coordinating data in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revenue-recovery@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262936889?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revenue-recovery",
+      "url": "https://clawhub.ai/skills/revenue-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenue-recovery",
+    "url": "https://clawhub.ai/skills/revenue-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenue-recovery-f57f1d74871a57e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revenue-recovery@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-revenue-recovery-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b33800154353e79b4719d4340d9e222d3ff2ff563eb54c35557be750eacaea",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T21:42:31.336Z"
+}

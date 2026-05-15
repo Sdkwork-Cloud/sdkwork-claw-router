@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-opensearch-app-manage@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_opensearch_app_manage",
+  "skill": {
+    "id": 42048,
+    "skillKey": "clawhub-alibabacloud-opensearch-app-manage",
+    "name": "Alibabacloud Opensearch App Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-opensearch-app-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-opensearch-app-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-opensearch-app-manage-058782747a305285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud OpenSearch instance management skill. Create and query OpenSearch instances. Note: OpenSearch instance and OpenSearch app group are synonymous..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777007912111,
+      "changelog": "alibabacloud-opensearch-app-manage version 0.0.2\n\n- Raised minimum Aliyun CLI version requirement to 3.3.3.\n- Added additional CLI installation and update instructions; now requires running `aliyun plugin update`.\n- Enforced use of custom User-Agent for every CLI command.\n- Introduced mandatory AI-Mode enable/disable sequence when executing CLI commands.\n- Enhanced installation and usage documentation for clearer security, setup, and execution steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d83e281d73671a6c9f01d6861540eca9a0006d6e4531ec9b037703995b8dacf1"
+}

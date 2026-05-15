@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-tracker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_tracker",
+  "skill": {
+    "id": 32354,
+    "skillKey": "clawhub-github-tracker",
+    "name": "Github_tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-tracker",
+    "url": "https://clawhub.ai/skills/github-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-tracker-a747cbfb0cd81f0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors GitHub organization commits daily, providing team activity updates and current standings on demand via /team-status command."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenkus47",
+      "userId": "s17d18hq9nprqmbxzw9rzgzdsn83nyq6",
+      "displayName": "tenkus47",
+      "image": "https://avatars.githubusercontent.com/u/42644738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775134613302,
+      "changelog": "- Added compiled Python bytecode file: scripts/__pycache__/monitor.cpython-312.pyc\n- No changes to documentation or feature set.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93bf82c85119fc92d2394d58f64179f0489d4d6794306e04dbb4cdadb22ed8c8"
+}

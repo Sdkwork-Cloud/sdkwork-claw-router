@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13980,
+  "uuid": "skill-clawhub-dlazy-kling-image-o1",
+  "skillKey": "clawhub-dlazy-kling-image-o1",
+  "name": "Dlazy Kling Image O1",
+  "summary": "Generate exquisite images with Kling o1 model. Supports text-to-image and image-to-image.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_kling_image_o1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Generate exquisite images with Kling o1 model",
+        "Supports text-to-image and image-to-image."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-kling-image-o1@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-kling-image-o1",
+      "url": "https://clawhub.ai/skills/dlazy-kling-image-o1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-kling-image-o1",
+    "url": "https://clawhub.ai/skills/dlazy-kling-image-o1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-kling-image-o1-b8498bf930e34db8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-kling-image-o1@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-kling-image-o1-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37dd8316471b9cb35fd51258d83f80b2cd6db9dfd9c64e5d24acf3cbbb10dabc",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:07:12.981Z"
+}

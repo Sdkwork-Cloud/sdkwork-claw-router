@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60714,
+  "uuid": "skill-clawhub-talib-technical-analysis",
+  "skillKey": "clawhub-talib-technical-analysis",
+  "name": "Talib Technical Analysis",
+  "summary": "通过 Python 调用 150+ TA-Lib 技术分析指标（均线、MACD、RSI、布林带等），支持多市场金融数据的技术面量化计算。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talib_technical_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "通过 Python 调用 150+ TA-Lib 技术分析指标（均线、MACD、RSI、布林带等），支持多市场金融数据的技术面量化计算。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talib-technical-analysis@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talib-technical-analysis",
+      "url": "https://clawhub.ai/skills/talib-technical-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talib-technical-analysis",
+    "url": "https://clawhub.ai/skills/talib-technical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talib-technical-analysis-b0a25c9b053400ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talib-technical-analysis@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-talib-technical-analysis-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:568165a50c1670688592cdcf14d0a5e2e09a8fef20b6ded20d14ec892a5afe3c",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:30:15.254Z"
+}

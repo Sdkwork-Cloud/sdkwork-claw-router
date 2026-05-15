@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qdrant-advanced@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qdrant_advanced",
+  "skill": {
+    "id": 16724,
+    "skillKey": "clawhub-qdrant-advanced",
+    "name": "Qdrant Advanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qdrant-advanced",
+    "url": "https://clawhub.ai/skills/qdrant-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qdrant-advanced-9fb0d1bcf05bddc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced Qdrant vector database operations for AI agents. Semantic search, contextual document ingestion with chunking, collection management, snapshots, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoder-bawt",
+      "userId": "publishers:yoder-bawt",
+      "displayName": "yoder-bawt",
+      "image": "https://avatars.githubusercontent.com/u/259239279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 856,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771434913641,
+      "changelog": "Initial release of qdrant-advanced: a comprehensive toolkit for advanced Qdrant operations.\n\n- Semantic search across multiple collections with flexible filters and thresholds.\n- Intelligent document ingestion using customizable chunking strategies.\n- Scripts for end-to-end collection management: create, list, info, optimize, and delete.\n- Integrated snapshot tools for backup and restore.\n- Migration utilities supporting collection copy, model upgrades, and filtered migrations.\n- Production-ready Bash & Python scripts designed for real-world AI agent workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:950169817a140533760a1bf1d32c62dd672d84f6d4aef199571a4166eb445993"
+}

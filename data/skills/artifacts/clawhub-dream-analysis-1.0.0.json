@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dream-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dream_analysis",
+  "skill": {
+    "id": 39105,
+    "skillKey": "clawhub-dream-analysis",
+    "name": "Dream interpretation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dream-analysis",
+    "url": "https://clawhub.ai/skills/dream-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dream-analysis-7d17f989623c9189.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides psychoanalytic interpretation of user-described dreams, identifying hidden wishes, unconscious content, and decoding symbolic dream-work per Freud's..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "walktree",
+      "userId": "s17bw2arvkr742d2n03jvssz858685cr",
+      "displayName": "Yanlin Qiu",
+      "image": "https://avatars.githubusercontent.com/u/1175188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778115613307,
+      "changelog": "Freud-based dream analysis scholar launched, have fun~\n\n- Provides systematic dream interpretation grounded exclusively in Freud’s four core texts, focusing on psychoanalytic theory.\n- Explains dream meaning through mechanisms such as wish fulfillment, unconscious processing, condensation, displacement, and symbolism.\n- Only interprets dreams with user description; relies on free association for personalized analysis and marks guesswork as symbolic reference.\n- Refuses neuroscientific, prophetic, or moralizing interpretations; maintains strict Freudian boundaries.\n- Includes detailed operating procedure, evaluative criteria, and covers both strengths and internal limitations of the Freudian framework.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a72fdeec135a3614a4c1b0dd0e0ab2450fc9566d79a26aa950e4bb0b3a504a01"
+}

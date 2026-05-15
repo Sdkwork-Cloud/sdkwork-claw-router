@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59433,
+  "uuid": "skill-clawhub-openclaw-collaboration",
+  "skillKey": "clawhub-openclaw-collaboration",
+  "name": "OpenClaw Collaboration",
+  "summary": "Hermes 与本地 OpenClaw 协同工作方案 — 共享记忆、API互调、任务分工",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_collaboration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fish1981bimmer",
+      "features": [
+        "Hermes 与本地 OpenClaw 协同工作方案 — 共享记忆、API互调、任务分工"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-collaboration@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271533977?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-collaboration",
+      "url": "https://clawhub.ai/skills/openclaw-collaboration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-collaboration",
+    "url": "https://clawhub.ai/skills/openclaw-collaboration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-collaboration-8dd6ffb5d672211d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-collaboration@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-collaboration-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f5798ebdbee47a8c693b51b581bd8091f1eeeba4874e6c198a502d5d8a88851",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:31:13.478Z"
+}

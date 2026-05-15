@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brw-plan-my-day@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_plan_my_day",
+  "skill": {
+    "id": 18090,
+    "skillKey": "clawhub-brw-plan-my-day",
+    "name": "Plan My Day"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-plan-my-day",
+    "url": "https://clawhub.ai/skills/brw-plan-my-day",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-plan-my-day-22223efb81b67e82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an energy-optimized, time-blocked daily plan based on circadian rhythm research and GTD principles"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianrwagner",
+      "userId": "publishers:brianrwagner",
+      "displayName": "Brian Wagner",
+      "image": "https://avatars.githubusercontent.com/u/3800703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 719,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771452252458,
+      "changelog": "Major new release with energy-optimized planning and built-in accountability.\n\n- Introduces a consistent, research-backed daily planning framework (circadian and GTD principles)\n- Automatically time-blocks tasks based on energy levels and personal constraints\n- Supports custom energy profiles and real calendar integration\n- Enforces buffer times, breaks, and “no overwork” boundaries\n- Tracks completion and offers an evening reflection process for continuous improvement\n- Output is a clear, hour-by-hour Markdown plan ready to use",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78ab04169c876f5c0d7bf99457a19e17aafd5d1e84cde7580fb4617999e0b7fd"
+}

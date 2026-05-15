@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-video-ai@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_video_ai",
+  "skill": {
+    "id": 19215,
+    "skillKey": "clawhub-ima-video-ai",
+    "name": "IMA AI Video Generator — Short & Promo Video, Text to Video, Image to Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-video-ai",
+    "url": "https://clawhub.ai/skills/ima-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-video-ai-f04853fbbacbc584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI video generator with premier models: Wan 2.6, Kling O1/2.6, Google Veo 3.1, Sora 2 Pro, Pixverse V5.5, Hailuo 2.0/2.3, SeeDance 1.5 Pro, Vidu Q2. Video ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenfancy-gan",
+      "userId": "s17etzvvhp65ybcxjyj408z1nx83hx8t",
+      "displayName": "allenfancy-gan",
+      "image": "https://avatars.githubusercontent.com/u/224295706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 914,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1776149197809,
+      "changelog": "- Removed the sample end-to-end smoke playbook (references/operations/e2e-smoke-playbook.md).\n- Updated documentation to remove knowledge base integration and guidance details from SKILL.md.\n- No runtime or API changes; impact is limited to documentation and reference cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:462ff0da03b607612fe2a0464f5b008638a23414713793cf4f15b68d450c5a45"
+}

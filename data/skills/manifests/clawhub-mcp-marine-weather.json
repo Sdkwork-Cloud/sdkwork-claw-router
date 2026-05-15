@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53275,
+  "uuid": "skill-clawhub-mcp-marine-weather",
+  "skillKey": "clawhub-mcp-marine-weather",
+  "name": "mcp-marine-weather",
+  "summary": "Marine weather forecasts via NOAA api.weather.gov — current conditions, multi-day forecasts, and marine weather warnings. No API key needed. Use when agents...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_marine_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HaveBlue997",
+      "features": [
+        "Marine weather forecasts via NOAA api.weather.gov — current conditions, multi-day forecasts, an.",
+        "No API key needed",
+        "Use when agents..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-marine-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23174278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-marine-weather",
+      "url": "https://clawhub.ai/skills/mcp-marine-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-marine-weather",
+    "url": "https://clawhub.ai/skills/mcp-marine-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-marine-weather-e90bf69384eb4190.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-marine-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-marine-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95fb07f395318091644cb23a83f1435a626c985e678e41f90deff218f978221b",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:08:21.280Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35312,
+  "uuid": "skill-clawhub-unihiker-k10-arduino",
+  "skillKey": "clawhub-unihiker-k10-arduino",
+  "name": "Unihiker K10 Arduino",
+  "summary": "Use when programming Unihiker K10 board with Arduino/C++, uploading code, flashing firmware, or accessing K10 Arduino APIs (screen, sensors, RGB, audio, AI,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unihiker_k10_arduino",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rockets_cn",
+      "features": [
+        "Use when programming Unihiker K10 board with Arduino/C++, uploading code, flashing firmware, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unihiker-k10-arduino@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2182466?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unihiker-k10-arduino",
+      "url": "https://clawhub.ai/skills/unihiker-k10-arduino"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unihiker-k10-arduino",
+    "url": "https://clawhub.ai/skills/unihiker-k10-arduino",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unihiker-k10-arduino-0a27b1467e52c0aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unihiker-k10-arduino@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unihiker-k10-arduino-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4664cba7643c11adf105a05ea4d963961e01d8cfc768a636a62fe579a6844df",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:41:05.565Z"
+}

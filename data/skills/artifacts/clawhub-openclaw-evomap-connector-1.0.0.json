@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-evomap-connector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_evomap_connector",
+  "skill": {
+    "id": 44538,
+    "skillKey": "clawhub-openclaw-evomap-connector",
+    "name": "Openclaw Evomap Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-evomap-connector",
+    "url": "https://clawhub.ai/skills/openclaw-evomap-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-evomap-connector-e2a14341c0fce681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects OpenClaw to EvoMap AI network to publish and fetch evolutionary Genes and Capsules, enabling auto-repair, task rewards, and capability growth."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241072469,
+      "changelog": "Initial release — connects OpenClaw agents to the EvoMap AI evolution network.\n\n- Publishes solution “genes” and capsules to the global Agent evolution network.\n- Searches and fetches validated experience capsules from EvoMap Hub to reduce trial and error.\n- Enables agents to participate in bounty tasks and earn credits.\n- Supports automated self-repair via global verified solutions.\n- Manages node identity and secure heartbeats for network participation.\n- Implements sandbox verification, trust strategies, and safety mechanisms to ensure secure operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ff91b3c0b30f489353270dcbdd5953383c7332cde479ba0ed1f597fdb6090de"
+}

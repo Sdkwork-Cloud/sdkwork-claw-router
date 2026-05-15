@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28595,
+  "uuid": "skill-clawhub-tolstoy-mcp",
+  "skillKey": "clawhub-tolstoy-mcp",
+  "name": "Tolstoy MCP",
+  "summary": "Connect OpenClaw to Tolstoy's video commerce platform via MCP. Create widgets, manage media, generate AI videos, search products, and publish to Shopify/Inst...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tolstoy_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "russell-sketch",
+      "features": [
+        "Connect OpenClaw to Tolstoy's video commerce platform via MCP",
+        "Create widgets, manage media, generate AI videos, search products, and publish to Shopify/Inst.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tolstoy-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257358488?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tolstoy-mcp",
+      "url": "https://clawhub.ai/skills/tolstoy-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tolstoy-mcp",
+    "url": "https://clawhub.ai/skills/tolstoy-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tolstoy-mcp-d49e2cf8c35cf252.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tolstoy-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tolstoy-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d7e4a06b5365650e2f9f6353e2eecdd32e90b293fa59f3aef725aaaf7a78bc8",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:16:22.229Z"
+}

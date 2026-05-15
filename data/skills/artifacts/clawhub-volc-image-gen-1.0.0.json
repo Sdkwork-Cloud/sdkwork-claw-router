@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volc-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volc_image_gen",
+  "skill": {
+    "id": 43326,
+    "skillKey": "clawhub-volc-image-gen",
+    "name": "Volc Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volc-image-gen",
+    "url": "https://clawhub.ai/skills/volc-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volc-image-gen-7070e1a28661a1ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Volc Engine AI to generate, edit, batch produce, and create variations of images with customizable styles and sizes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rfdiosuao",
+      "userId": "s176m0k7cncqqrh1hnapx8zbz183f0gt",
+      "displayName": "rfdiosuao",
+      "image": "https://avatars.githubusercontent.com/u/190207982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775020105578,
+      "changelog": "volc-image-gen v1.0.0\n\n- 初始版本发布，支持火山引擎方舟平台的 AI 图像生成\n- 实现文生图、图生图、批量生成和变体生成功能\n- 提供7种预定义风格选择\n- 支持命令行并发控制与智能重试（指数退避）\n- 内建1小时自动缓存机制\n- 完整API参数说明和单元测试支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c0e8ec0ba56c0e722a1a2352f1158aefd5faf5fb12cf7335f24cdaac433e0e2"
+}

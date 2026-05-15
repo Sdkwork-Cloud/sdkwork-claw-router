@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysticx-tarot-drawer@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysticx_tarot_drawer",
+  "skill": {
+    "id": 50633,
+    "skillKey": "clawhub-mysticx-tarot-drawer",
+    "name": "MysticX Tarot Drawer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysticx-tarot-drawer",
+    "url": "https://clawhub.ai/skills/mysticx-tarot-drawer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysticx-tarot-drawer-7b87d72ea701e22f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draw tarot cards from MysticX.ai — one card, daily card, or any of 13 spreads. Browse the full 78-card deck. No API key needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shrekuu",
+      "userId": "publishers:shrekuu",
+      "displayName": "shrekuu",
+      "image": "https://avatars.githubusercontent.com/u/3136026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772349070810,
+      "changelog": "Add example requests for tarot card and spread endpoints",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:910954304e38188aee15c1819a78f278c6e261bde71d03fe36e752d2ab50816d"
+}

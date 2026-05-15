@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-mastery-1-0-3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_mastery_1_0_3",
+  "skill": {
+    "id": 34920,
+    "skillKey": "clawhub-cron-mastery-1-0-3",
+    "name": "Cron Mastery 1.0.3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-mastery-1-0-3",
+    "url": "https://clawhub.ai/skills/cron-mastery-1-0-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-mastery-1-0-3-4bd76a92c0fd5efe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wt865143010",
+      "userId": "s1710asscgs5msn43yftz5qb2x83y60m",
+      "displayName": "wt865143010",
+      "image": "https://avatars.githubusercontent.com/u/64113380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776493244689,
+      "changelog": "cron-mastery 1.0.0 – Mastering reliable timing and reminders in OpenClaw.\n\n- Introduces guidance on using Cron for precise scheduling versus Heartbeat for casual polling.\n- Explains patterns for setting up reliable reminders and system maintenance with auto-cleanup of jobs.\n- Clarifies correct usage of payloads for push notifications (AgentTurn) versus silent logs (systemEvent).\n- Provides updated best practices for timezone handling and migration from legacy scheduling formats.\n- Details troubleshooting steps and reinforced rules for session targeting and self-wake behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e76ec752f6ca5b4a1a5d9e01f534111153ce1d5e99bef683d5948ec4c72b53a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exfer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exfer",
+  "skill": {
+    "id": 34927,
+    "skillKey": "clawhub-exfer",
+    "name": "Exfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exfer",
+    "url": "https://clawhub.ai/skills/exfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exfer-480ef5daf34ceb8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exfer is a permissionless proof-of-work blockchain for autonomous machine-to-machine commerce. It combines Argon2id memory-hard mining, an extended UTXO mode..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahuman-exfer",
+      "userId": "s172rgeknkv5pwf8zj80kn71zs83s04t",
+      "displayName": "ahuman-exfer",
+      "image": "https://avatars.githubusercontent.com/u/271653823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778210314463,
+      "changelog": "Exfer 1.1.0 expands the RPC reference and drops a discontinued service section.                                                                                          \n   \n  - Added `get_script_utxos` to the RPC methods table — returns the spendable UTXO list locked to an exact output script (max 1,000). Available in node binary v1.9.0+.    \n  - Removed section 9 \"Task Server (Earn EXFER)\". The centralized HTLC-bounty service it described is no longer operating; agents should not call its endpoints.\n  - No breaking changes to wallet, mining, send-payment, HTLC, covenant, or core RPC flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ed9b1ef9b59458cf5e01c343cc7eb857e264645848db9e60c50f599b0fbf801"
+}

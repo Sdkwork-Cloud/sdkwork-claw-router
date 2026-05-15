@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-auto-poster@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_auto_poster",
+  "skill": {
+    "id": 36293,
+    "skillKey": "clawhub-social-auto-poster",
+    "name": "Social Auto Poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-auto-poster",
+    "url": "https://clawhub.ai/skills/social-auto-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-auto-poster-064db986bca4e746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate posting content with images to LinkedIn, X/Twitter, Facebook, WordPress, and Substack via browser automation. Use when: (1) posting a new article or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quoc-modoro",
+      "userId": "s177asetdwpw053jq3nsfb8pp183ssca",
+      "displayName": "Quốc MODORO",
+      "image": "https://avatars.githubusercontent.com/u/3088362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774701327590,
+      "changelog": "**Expanded, clearer documentation and improved usability**\n\n- Added detailed setup instructions for browser authentication and WordPress API usage.\n- Documented ARM image overlay script usage and requirements.\n- Provided step-by-step posting workflows for LinkedIn, X/Twitter, Facebook, WordPress, and Substack.\n- Explained post verification and session management best practices.\n- Clarified supported/unsupported features (no feed reading, DMs, analytics, or scheduling).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eba173b41c1f0978d84044f7cb284ac95fbd78d57f685740fb830ce0f3fb5cd3"
+}

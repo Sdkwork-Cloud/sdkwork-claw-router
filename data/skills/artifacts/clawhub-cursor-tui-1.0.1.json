@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cursor-tui@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_tui",
+  "skill": {
+    "id": 50679,
+    "skillKey": "clawhub-cursor-tui",
+    "name": "Cursor Tui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-tui",
+    "url": "https://clawhub.ai/skills/cursor-tui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-tui-3863f55b9bd80286.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn and relay Cursor Agent's CLI (`agent` binary) as an interactive passthrough. Use when the user wants to run Cursor Agent in a directory, ask it questio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waldyrious",
+      "userId": "s179810hpmznge2272d4vtc65583fgyj",
+      "displayName": "waldyrious",
+      "image": "https://avatars.githubusercontent.com/u/478237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 911,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772412082535,
+      "changelog": "- Improved output relaying instructions: now require verbatim, unaltered relaying of Cursor output with no added interpretation, wrapping, or commentary.\n- Specified how to add context: any assistant notes must be prefixed with the assistant's name in brackets.\n- Clarified handling of Cursor \"permission prompts\": relay them exactly as shown and await explicit user approval—never make choices on the user's behalf.\n- Updated prompt line guidance: show relative paths using `~` for home directories when displaying the session prompt (e.g. `~/repos/myproject`).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9bf6fed768478d41b3f0532d3a4c1d22889682ca6724eacd81c5ac6f165a8eb"
+}

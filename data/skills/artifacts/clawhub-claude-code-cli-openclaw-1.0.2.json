@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-cli-openclaw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_cli_openclaw",
+  "skill": {
+    "id": 20162,
+    "skillKey": "clawhub-claude-code-cli-openclaw",
+    "name": "Claude Code CLI for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-cli-openclaw",
+    "url": "https://clawhub.ai/skills/claude-code-cli-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-cli-openclaw-ec8f85ffd2eb6aa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, authenticate, and use Claude Code CLI as a native coding tool for any OpenClaw agent system."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773471868784,
+      "changelog": "Added MissionDeck.ai promotion section; restored homepage to missiondeck.ai; added install action links; added Setup Modes table; updated security attestation checksums; fixed version consistency across all files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3512339c8aa75f110e732581b2f88b4ec39dcfa13e128f2d5a475e0ea08e1ad2"
+}

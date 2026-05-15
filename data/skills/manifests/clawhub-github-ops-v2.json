@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61955,
+  "uuid": "skill-clawhub-github-ops-v2",
+  "skillKey": "clawhub-github-ops-v2",
+  "name": "Github Ops",
+  "summary": "GitHub 操作技能 - 创建仓库、推送代码、管理 Release。全自动，无需用户干预。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_ops_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "GitHub 操作技能",
+        "创建仓库、推送代码、管理 Release。全自动，无需用户干预。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-ops-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-ops-v2",
+      "url": "https://clawhub.ai/skills/github-ops-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-ops-v2",
+    "url": "https://clawhub.ai/skills/github-ops-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-ops-v2-b2ee49154049b3de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-ops-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-ops-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:916b917e8d697a0a5df55c7a08df3ebffa0167354f8e4789ccd9e1da6d6ffef4",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:56:56.524Z"
+}

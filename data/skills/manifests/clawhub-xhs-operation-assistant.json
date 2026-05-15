@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72894,
+  "uuid": "skill-clawhub-xhs-operation-assistant",
+  "skillKey": "clawhub-xhs-operation-assistant",
+  "name": "小红书运营助手",
+  "summary": "自媒体博主必备,获取小红书官方帐号最新笔记,热点话题;对小红书帐号和笔记进行打分评价",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_operation_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIphaZhu",
+      "features": [
+        "自媒体博主必备,获取小红书官方帐号最新笔记,热点话题;对小红书帐号和笔记进行打分评价"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-operation-assistant@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187585553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-operation-assistant",
+      "url": "https://clawhub.ai/skills/xhs-operation-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-operation-assistant",
+    "url": "https://clawhub.ai/skills/xhs-operation-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-operation-assistant-28465d3a12b48b3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-operation-assistant@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-operation-assistant-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a49fc5d5a1b0bd6a35e190b71f4180febc7475a055f2744c43d8975d3669f704",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:56:39.125Z"
+}

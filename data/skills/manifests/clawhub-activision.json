@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35977,
+  "uuid": "skill-clawhub-activision",
+  "skillKey": "clawhub-activision",
+  "name": "Activision",
+  "summary": "Provides detailed information on Activision products, including specs, pricing, purchase advice, support, and official channels.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on Activision products, including specs, pricing, purchase advice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activision@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activision",
+      "url": "https://clawhub.ai/skills/activision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activision",
+    "url": "https://clawhub.ai/skills/activision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activision-ba995ef4f06ea5a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activision@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-activision-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fbcc471a94e229ff7aafd98e9bb82e55ccaaf785b5f3c52745772102d3a9492",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:27.167Z"
+}

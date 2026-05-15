@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onlyvpn-client@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onlyvpn_client",
+  "skill": {
+    "id": 55194,
+    "skillKey": "clawhub-onlyvpn-client",
+    "name": "Only VPN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onlyvpn-client",
+    "url": "https://clawhub.ai/skills/onlyvpn-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onlyvpn-client-9410b89497bc4673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operates the OnlyVPN desktop client via vpn-cli.exe on Windows (default C:\\Program Files\\onlynet) or vpn-cli on macOS, after the GUI/main process is running..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlynet-dev",
+      "userId": "s17asbn8py1kz0v0vjv67a535h84cxkc",
+      "displayName": "onlynet",
+      "image": "https://avatars.githubusercontent.com/u/207865405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776048607564,
+      "changelog": "Modify the prerequisites for command-line execution and the description content for SKILL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02dfe211a1c218ff30699a9b174841b678a8517c0efe7a0d7d61a1fbbb8bee7b"
+}

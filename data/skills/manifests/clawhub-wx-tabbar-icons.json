@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62738,
+  "uuid": "skill-clawhub-wx-tabbar-icons",
+  "skillKey": "clawhub-wx-tabbar-icons",
+  "name": "微信小程序 TabBar 图标生成",
+  "summary": "微信小程序底部 TabBar 图标生成技能。用 Python PIL 生成简约几何风格的 tab 图标 （未选中灰色 + 选中绿色），并自动写入 app.json 的 tabBar 配置。 当用户说\"生成 tabBar 图标\"、\"底部菜单栏图标\"、\"tab 图标\"时使用本技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wx_tabbar_icons",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flowstart",
+      "features": [
+        "微信小程序底部 TabBar 图标生成技能。用 Python PIL 生成简约几何风格的 tab 图标 （未选中灰色 + 选中绿色），并自动写入 app.json 的 tabBar 配置。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wx-tabbar-icons@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171299313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wx-tabbar-icons",
+      "url": "https://clawhub.ai/skills/wx-tabbar-icons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wx-tabbar-icons",
+    "url": "https://clawhub.ai/skills/wx-tabbar-icons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wx-tabbar-icons-e0e609ab3c37d75c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wx-tabbar-icons@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wx-tabbar-icons-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82c5bb1811b3db38307487c36586878086b1dc2dd30bf450b8a2deda27aed80f",
+      "artifactSizeBytes": 2766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:24:56.794Z"
+}

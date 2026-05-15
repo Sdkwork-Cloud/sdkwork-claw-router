@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8688,
+  "uuid": "skill-clawhub-turix-cua",
+  "skillKey": "clawhub-turix-cua",
+  "name": "TuriX Computer Use",
+  "summary": "Computer Use Agent (CUA) for macOS automation using TuriX. Use when you need to perform visual tasks on the desktop, such as opening apps, clicking buttons, or navigating UIs that don't have a CLI or API.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turix_cua",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tongyu-Yan",
+      "features": [
+        "Computer Use Agent (CUA) for macOS automation using TuriX",
+        "Use when you need to perform visual tasks on the desktop, such as opening apps, clicking button."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turix-cua@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96633688?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turix-cua",
+      "url": "https://clawhub.ai/skills/turix-cua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turix-cua",
+    "url": "https://clawhub.ai/skills/turix-cua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turix-cua-158422f13493e576.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turix-cua@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-turix-cua-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68684dfa7cafe701f8b89d5ead44b410834153a883cd50be9714d061ee018efc",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:24:08.817Z"
+}

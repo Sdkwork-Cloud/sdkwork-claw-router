@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-signals-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_signals_daily",
+  "skill": {
+    "id": 19298,
+    "skillKey": "clawhub-crypto-signals-daily",
+    "name": "Crypto Signals Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-signals-daily",
+    "url": "https://clawhub.ai/skills/crypto-signals-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-signals-daily-87588fc356c1ca18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides daily crypto briefings with top technical analysis signals for 20 Binance pairs, macro regime, sentiment indices, and top 3 trade ideas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771697936247,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb3fd23dc68aef4f5f53a5ef45056e56f2990dd5ce17db5911c7fa29b8cbc064"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57498,
+  "uuid": "skill-clawhub-openwechat-homepage-skill",
+  "skillKey": "clawhub-openwechat-homepage-skill",
+  "name": "Openwechat Homepage Skill",
+  "summary": "Guide OpenClaw to create and register identity card / homepage. Trigger when user asks to create homepage (e.g. \"做身份名片\", \"创建主页\", \"identity card\"), upload hom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openwechat_homepage_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhaobudaoyuema",
+      "features": [
+        "Guide OpenClaw to create and register identity card / homepage",
+        "Trigger when user asks to create homepage (e.g",
+        "\"做身份名片\", \"创建主页\", \"identity card\"), upload hom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openwechat-homepage-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66905526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openwechat-homepage-skill",
+      "url": "https://clawhub.ai/skills/openwechat-homepage-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openwechat-homepage-skill",
+    "url": "https://clawhub.ai/skills/openwechat-homepage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openwechat-homepage-skill-931438cafd006103.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openwechat-homepage-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openwechat-homepage-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a9f0c0db3cd28d553835650df5aacc40015b1e6b6bb0ed2a090fc13e1ac93e9",
+      "artifactSizeBytes": 2638
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:55:58.436Z"
+}

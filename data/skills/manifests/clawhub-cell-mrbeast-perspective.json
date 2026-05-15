@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65556,
+  "uuid": "skill-clawhub-cell-mrbeast-perspective",
+  "skillKey": "clawhub-cell-mrbeast-perspective",
+  "name": "MrBeast 视角",
+  "summary": "使用MrBeast的内容判断模型优化视频题材、标题、封面、hook和留存，关注CTR×AVD和预算限制下的创意执行。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cell_mrbeast_perspective",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cellinlab",
+      "features": [
+        "使用MrBeast的内容判断模型优化视频题材、标题、封面、hook和留存，关注CTR×AVD和预算限制下的创意执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cell-mrbeast-perspective@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46317258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cell-mrbeast-perspective",
+      "url": "https://clawhub.ai/skills/cell-mrbeast-perspective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cell-mrbeast-perspective",
+    "url": "https://clawhub.ai/skills/cell-mrbeast-perspective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cell-mrbeast-perspective-7a7323d77c9e9ab5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cell-mrbeast-perspective@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cell-mrbeast-perspective-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18204a0448d4a39ee01a2e8a6b587eac6228f9176e218cbbc03b23343711c452",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T16:41:03.945Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52622,
+  "uuid": "skill-clawhub-notion-clipper-skill",
+  "skillKey": "clawhub-notion-clipper-skill",
+  "name": "notion-clipper-skill",
+  "summary": "Clip web pages to Notion. Fetches any URL via Chrome CDP, converts HTML to Markdown, then to Notion blocks, and saves to user-specified Notion database or page. Use when user wants to save/clip a webpage to Notion, or mentions \"clip to not.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_clipper_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EwingYangs",
+      "features": [
+        "Clip web pages to Notion",
+        "Fetches any URL via Chrome CDP, converts HTML to Markdown, then to Notion blocks, and saves to.",
+        "Use when user wants to save/clip a webpage to Notion, or mentions \"clip to notion\", \"save page."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-clipper-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24787600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-clipper-skill",
+      "url": "https://clawhub.ai/skills/notion-clipper-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-clipper-skill",
+    "url": "https://clawhub.ai/skills/notion-clipper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-clipper-skill-450b977ae58d7fba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-clipper-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-clipper-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3941f348793bf8d65216e58c9751d40642a71f4616dba18468fd18c41fe8ddd",
+      "artifactSizeBytes": 2632
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T06:05:26.699Z"
+}

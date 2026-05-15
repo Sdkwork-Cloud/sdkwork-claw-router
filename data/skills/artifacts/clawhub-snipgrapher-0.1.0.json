@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snipgrapher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snipgrapher",
+  "skill": {
+    "id": 17956,
+    "skillKey": "clawhub-snipgrapher",
+    "name": "Snipgrapher - generate images from code snippets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snipgrapher",
+    "url": "https://clawhub.ai/skills/snipgrapher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snipgrapher-73684d36c8b6cf3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and use snipgrapher to generate polished code snippet images"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcollina",
+      "userId": "publishers:mcollina",
+      "displayName": "Matteo Collina",
+      "image": "https://avatars.githubusercontent.com/u/52195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771679754241,
+      "changelog": "Initial release of snipgrapher skill.\n\n- Generate polished code snippet images in SVG, PNG, or WebP formats from source code.\n- Configure reusable rendering defaults and named profiles for consistent output.\n- Supports batch rendering of snippet assets for documentation, social media, or changelogs.\n- Provides setup, configuration, and rendering workflow guides.\n- Designed for automation and reproducibility using CLI flags, config files, or environment variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:374d18ab1597e490f5860142228c21c79084780ef3d7ef464107468b905cf349"
+}

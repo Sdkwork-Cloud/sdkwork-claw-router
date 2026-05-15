@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16444,
+  "uuid": "skill-clawhub-sora",
+  "skillKey": "clawhub-sora",
+  "name": "Sora Video Generation",
+  "summary": "Generate videos from text prompts or reference images using OpenAI Sora. ✅ USE WHEN: - Need AI-generated video from text description - Want image-to-video (animate a still image) - Creating cinematic/artistic video content - Need motion/an.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Generate videos from text prompts or reference images using OpenAI Sora",
+        "✅ USE WHEN:",
+        "Need AI-generated video from text description",
+        "Want image-to-video (animate a still image)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sora@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sora",
+      "url": "https://clawhub.ai/skills/sora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora",
+    "url": "https://clawhub.ai/skills/sora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-a4c745facd3a9215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sora@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sora-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:258bab97863674f2bb4cf6fa4e5877e6d3855879940e7b654050a2751fb796a4",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T01:19:30.960Z"
+}

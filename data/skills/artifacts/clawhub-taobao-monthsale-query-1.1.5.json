@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-monthsale-query@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_monthsale_query",
+  "skill": {
+    "id": 72848,
+    "skillKey": "clawhub-taobao-monthsale-query",
+    "name": "阿里商品月销查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-monthsale-query",
+    "url": "https://clawhub.ai/skills/taobao-monthsale-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-monthsale-query-123c45bb30b0ae8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询阿里平台（淘宝/天猫）商品月销量，支持商品ID或链接输入，返回月销量数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjcia",
+      "userId": "s173vkmtzsr1xwwnsp3hpg0ccd83gxf3",
+      "displayName": "YanJun",
+      "image": "https://avatars.githubusercontent.com/u/3753405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1775030475334,
+      "changelog": "- Updated the skill description to clarify that month sales data refers to the past 30 days.\n- Minor text adjustments in instructions and response requirements for more precise user guidance.\n- No changes to API endpoints or technical implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bbed99e6e85fa7c949b3a0c15c97000cbc5967df2c973af78cfd684a3d2d902"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepagents-architecture@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepagents_architecture",
+  "skill": {
+    "id": 32538,
+    "skillKey": "clawhub-deepagents-architecture",
+    "name": "Deepagents Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepagents-architecture",
+    "url": "https://clawhub.ai/skills/deepagents-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepagents-architecture-30ff926eaf3bb75e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides architectural decisions for Deep Agents applications. Use when deciding between Deep Agents vs alternatives, choosing backend strategies, designing su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776830945141,
+      "changelog": "- Updated the architecture decision checklist to a new section called \"Gates: architecture decisions before implementation\", specifying a stepwise, documented review process for each major architectural decision.\n- Each gate now requires a written artifact (rationale, configuration, or explicit lists) before that step is considered complete, increasing clarity and auditability.\n- All prior architecture guidance, backend comparisons, subagent patterns, and middleware explanations remain intact for reference.\n- No functional feature changes to code or implementation guidance—documentation-only update to improve design process rigor.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf8c1ade586f4a8eb37d00540c944927bfc62b3d53df4fe03f6c7ce2ced49872"
+}

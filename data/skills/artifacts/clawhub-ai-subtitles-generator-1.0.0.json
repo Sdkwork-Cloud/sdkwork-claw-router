@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitles-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitles_generator",
+  "skill": {
+    "id": 42923,
+    "skillKey": "clawhub-ai-subtitles-generator",
+    "name": "Ai Subtitles Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitles-generator",
+    "url": "https://clawhub.ai/skills/ai-subtitles-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitles-generator-2eb09863fbbda89e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators use it for addin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776174462172,
+      "changelog": "Initial release of AI Subtitles Generator.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB for automatic AI-generated captions.\n- Supports adding multilingual subtitles and burning them directly into videos (output as 1080p MP4).\n- Fast processing via remote GPU nodes; typical turnaround is 30–60 seconds.\n- Includes credit management, session handling, and status updates during processing.\n- Handles common errors (unsupported files, expired tokens, no credits) with user-friendly messaging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe04fdc7504deb3f29cdd91010e381575763aa1d51728764c296cdd8b7c50707"
+}

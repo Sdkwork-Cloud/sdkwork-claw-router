@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jrv-http-client@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jrv_http_client",
+  "skill": {
+    "id": 30251,
+    "skillKey": "clawhub-jrv-http-client",
+    "name": "Jrv Http Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jrv-http-client",
+    "url": "https://clawhub.ai/skills/jrv-http-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jrv-http-client-a6c0527f16faa20e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make HTTP requests from the command line with support for auth (Bearer, Basic, API key), custom headers, JSON/form body, response formatting, timing, and his..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773839349168,
+      "changelog": "Initial release of jrv-http-client — a command-line HTTP client aimed at being a curl replacement with cleaner, agent-friendly output.\n\n- Supports all HTTP methods, authentication (Bearer, Basic, API key), custom headers, JSON/form body.\n- Provides pretty-printed responses, status/timing display, and request history logging.\n- Flexible output options: save to file, output as JSON, status-only mode.\n- Features for scripting and automation: exit codes, timeout, TLS skip, verbose mode.\n- Designed for ease of use in API testing, auth testing, monitoring, and CI scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e9ca45121034d14a6537ef04a67ed026b23a05acd361cb599773277de6392c1"
+}

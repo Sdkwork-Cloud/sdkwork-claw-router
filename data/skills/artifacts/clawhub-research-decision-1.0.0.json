@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-decision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_decision",
+  "skill": {
+    "id": 70868,
+    "skillKey": "clawhub-research-decision",
+    "name": "research Decision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-decision",
+    "url": "https://clawhub.ai/skills/research-decision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-decision-dddff19742948f8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对复杂问题进行联网调研，并基于高质量信源输出判断、建议、排查方向或下一步动作。适用于技术选型、方案对比、版本升级、兼容性判断、架构取舍、社区口碑调研、已知问题排查、疑难 bug 冲突分析，以及其他需要上网查证、多方比较、最后给出建议或方向的问题。优先进行中英文双语检索，重视官方文档、官方博客、GitHub iss..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnna2725",
+      "userId": "publishers:krishnna2725",
+      "displayName": "Deqiang Qiao",
+      "image": "https://avatars.githubusercontent.com/u/152476967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773245249915,
+      "changelog": "- Initial release of the \"research-decision\" skill.\n- Provides expert web research and evidence-based judgment for complex technical decisions, troubleshooting, and comparisons.\n- Prioritizes bi-lingual (Chinese & English) searches, with rigorous source management and cross-verification.\n- Emphasizes official documentation, GitHub issues/discussions, and clear citation of all key conclusions.\n- Outputs actionable recommendations, highlighting risks, known issues, and appropriate next steps.\n- Includes guiding principles and workflow for structured, reliable, and user-focused research reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7b942fd65e576b7c02b173389678066295a5b5d341a91cbe3a9132b72c02997"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-automatic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_automatic",
+  "skill": {
+    "id": 49847,
+    "skillKey": "clawhub-text-to-automatic",
+    "name": "Text To Automatic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-automatic",
+    "url": "https://clawhub.ai/skills/text-to-automatic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-automatic-04358b1203da7d93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get auto-generated videos ready to post, without touching a single slider. Upload your text scripts (TXT, DOCX, PDF, SRT, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 64,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778123266668,
+      "changelog": "- Initial release of Text to Automatic — turn scripts into ready-to-post videos automatically.\n- Upload text scripts (TXT, DOCX, PDF, SRT, up to 500MB) and get 1080p MP4 videos with visuals and voiceover.\n- No manual editing required: describe your desired result and the backend handles everything.\n- Automatic session management with easy connection using a free starter token if needed.\n- Simple user commands for uploading, exporting, checking status, and credit balance.\n- Fast cloud-based rendering with support for multiple file formats and streamlined error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8b9e3b95c195693264ee07fad316d424b4612b2306759e890e1bda586c0a373"
+}

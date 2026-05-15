@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adeptloop-improve@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adeptloop_improve",
+  "skill": {
+    "id": 37682,
+    "skillKey": "clawhub-adeptloop-improve",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adeptloop-improve",
+    "url": "https://clawhub.ai/skills/adeptloop-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adeptloop-improve-9714f58a137c39ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily improvement briefings with one-click fixes for your AI agent. Observes traces, diagnoses failures, and applies fixes conversationally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pedrocarballo",
+      "userId": "s17cn6rby4bgem69b0kxzt6pt583e8mh",
+      "displayName": "pedrocarballo",
+      "image": "https://avatars.githubusercontent.com/u/1321574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774812175833,
+      "changelog": "**Version 0.1.2 – Adds fix rollback/revert workflow**\n\n- Briefings now show rollback instructions for recommended fixes that didn't help.\n- If a previous fix was reverted (outcome: \"revert\"), offers to undo its git commit and delete its branch.\n- Details rollback steps: checks for local fix branch, reverts the commit, deletes the branch, and confirms the reversion.\n- Updated version metadata and instructions for obtaining full recommendation info (diff, rollback) via API.\n- Minor clarifications to presentation and API response handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e66cda0d416a18b325a7f1cb1569ba1da3ae17466c5694875311952fec1ef201"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blockscout-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockscout_openapi_skill",
+  "skill": {
+    "id": 32726,
+    "skillKey": "clawhub-blockscout-openapi-skill",
+    "name": "Blockscout OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockscout-openapi-skill",
+    "url": "https://clawhub.ai/skills/blockscout-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockscout-openapi-skill-543f20a56dab9b08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Blockscout explorer reads through UXC with a curated OpenAPI schema, instance-specific host selection, and read-first guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773707607499,
+      "changelog": "Initial release of the blockscout-openapi-skill:\n\n- Provides read-access to Blockscout explorer via curated OpenAPI schema and uxc integration.\n- Supports essential explorer operations: address details, token balances, transaction history, token and block lookups.\n- Requires no authentication for public explorers; supports uxc auth for protected instances.\n- Includes host relinking for multi-instance support.\n- Enforces read-only usage and JSON output for reliable automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50efbd720700379502bd37f0cec90f64c125652efd2203463d6bec9d5aaa473b"
+}

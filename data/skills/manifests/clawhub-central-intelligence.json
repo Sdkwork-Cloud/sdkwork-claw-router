@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34723,
+  "uuid": "skill-clawhub-central-intelligence",
+  "skillKey": "clawhub-central-intelligence",
+  "name": "Central Intelligence",
+  "summary": "Persistent memory across sessions. Remember facts, recall them later with semantic search, and share knowledge between agents. Use when you need to store inf...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.central_intelligence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "Persistent memory across sessions",
+        "Remember facts, recall them later with semantic search, and share knowledge between agents",
+        "Use when you need to store inf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/central-intelligence@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141149827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "central-intelligence",
+      "url": "https://clawhub.ai/skills/central-intelligence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "central-intelligence",
+    "url": "https://clawhub.ai/skills/central-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/central-intelligence-10b16a22b18e96e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/central-intelligence@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-central-intelligence-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0f36bcd2e0bce186f95f0a9eb6eb6a725a166246b6041f3f06e61b64c056b1f",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T20:32:06.046Z"
+}

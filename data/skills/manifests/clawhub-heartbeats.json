@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25849,
+  "uuid": "skill-clawhub-heartbeats",
+  "skillKey": "clawhub-heartbeats",
+  "name": "Heartbeats",
+  "summary": "Guidelines for proactive behavior, periodic checks, and memory maintenance using heartbeats and cron.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartbeats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FlayZz",
+      "features": [
+        "Guidelines for proactive behavior, periodic checks, and memory maintenance using heartbeats and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heartbeats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45981623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heartbeats",
+      "url": "https://clawhub.ai/skills/heartbeats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartbeats",
+    "url": "https://clawhub.ai/skills/heartbeats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartbeats-e8d3d6e5863b43e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heartbeats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-heartbeats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d92784f9f10a603c75b4d447d1596db387f2700c9a5e73789ef8873372a6863",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:56:59.955Z"
+}

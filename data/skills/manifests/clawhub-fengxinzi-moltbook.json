@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63467,
+  "uuid": "skill-clawhub-fengxinzi-moltbook",
+  "skillKey": "clawhub-fengxinzi-moltbook",
+  "name": "疯信子Moltbook日报",
+  "summary": "Moltbook日报技能 - 收集AI Agent社交网络热门内容，生成深度分析报告 自动抓取Moltbook热门内容，过滤去重后添加AI深度分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fengxinzi_moltbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "疯信子",
+      "features": [
+        "Moltbook日报技能",
+        "收集AI Agent社交网络热门内容，生成深度分析报告 自动抓取Moltbook热门内容，过滤去重后添加AI深度分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fengxinzi-moltbook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16277543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fengxinzi-moltbook",
+      "url": "https://clawhub.ai/skills/fengxinzi-moltbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fengxinzi-moltbook",
+    "url": "https://clawhub.ai/skills/fengxinzi-moltbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fengxinzi-moltbook-b03d112bd7aa4e7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fengxinzi-moltbook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fengxinzi-moltbook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e2d5a1acaa2d1e1837e93b778c1db6df38578a4945d20bbc2a59491db42b6d1",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:33:37.251Z"
+}

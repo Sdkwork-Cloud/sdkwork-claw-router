@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-design-extractor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_design_extractor",
+  "skill": {
+    "id": 10297,
+    "skillKey": "clawhub-frontend-design-extractor",
+    "name": "Frontend Design Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-design-extractor",
+    "url": "https://clawhub.ai/skills/frontend-design-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-design-extractor-f80cd935e1ea40f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract reusable UI/UX design systems from frontend codebases: design tokens, global styles, components, interaction patterns, and page templates. Use when analyzing any frontend repo (React/Vue/Angular/Next/Vite/etc.) to document or migra."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xsir0",
+      "userId": "publishers:xsir0",
+      "displayName": "Xsir0",
+      "image": "https://avatars.githubusercontent.com/u/48853107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2564,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769571306107,
+      "changelog": "- Removed supplementary documentation and script files, including non-English README and reference checklists.\n- Updated SKILL.md for a more focused and concise documentation.\n- Core usage instructions, workflows, and refactor templates remain; references to removed helper scripts still appear for legacy context.\n- No changes to core functionality; this is primarily a documentation and file cleanup release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d047bd478d2a7273fe2a32ddc6b2b5c5571da2b3f80c0673fe17c6c7498f571"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvvv-fileformat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_fileformat",
+  "skill": {
+    "id": 50493,
+    "skillKey": "clawhub-vvvv-fileformat",
+    "name": "Vvvv Fileformat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-fileformat",
+    "url": "https://clawhub.ai/skills/vvvv-fileformat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-fileformat-083228fc72f02336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Describes the .vl XML file format used by vvvv gamma — document structure, element hierarchy, ID system (base62 GUIDs), NodeReference/Choice patterns, Pins,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tebjan",
+      "userId": "publishers:tebjan",
+      "displayName": "Tebjan Halm",
+      "image": "https://avatars.githubusercontent.com/u/1094716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772724572002,
+      "changelog": "Initial public release of the vvvv-fileformat skill.\n\n- Provides a technical description of the .vl XML file format used by vvvv gamma\n- Documents element hierarchy, ID system (base62 GUIDs), NodeReference/Choice patterns, Pins, Pads (IOBoxes), Links, and ProcessDefinition/Fragment lifecycle\n- Explains regions (If/ForEach/Cache), type definitions, TypeAnnotations, and property serialization\n- Includes examples and key conventions for generating, parsing, or modifying .vl files programmatically\n- Useful for understanding the XML structure of vvvv patches or developing compatible tools",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a246d16d983a0b296111df71801a13f38683dd689b1e8f3c8eece255f944ce99"
+}

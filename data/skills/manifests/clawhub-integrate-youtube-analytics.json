@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38268,
+  "uuid": "skill-clawhub-integrate-youtube-analytics",
+  "skillKey": "clawhub-integrate-youtube-analytics",
+  "name": "Youtube Analytics",
+  "summary": "YouTube Analytics integration. Manage Channels, Comments, AnalyticsReports. Use when the user wants to interact with YouTube Analytics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_youtube_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "YouTube Analytics integration",
+        "Manage Channels, Comments, AnalyticsReports",
+        "Use when the user wants to interact with YouTube Analytics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-youtube-analytics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-youtube-analytics",
+      "url": "https://clawhub.ai/skills/integrate-youtube-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-youtube-analytics",
+    "url": "https://clawhub.ai/skills/integrate-youtube-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-youtube-analytics-cce910dc71787b7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-youtube-analytics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-youtube-analytics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0454ae7893666978ce4a1b4d66dd4ddb10d325612a9d94b95fcf23f9817b4dbb",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:56.957Z"
+}

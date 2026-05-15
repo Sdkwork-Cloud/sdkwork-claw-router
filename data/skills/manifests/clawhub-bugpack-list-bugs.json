@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33200,
+  "uuid": "skill-clawhub-bugpack-list-bugs",
+  "skillKey": "clawhub-bugpack-list-bugs",
+  "name": "BugPack List Bugs",
+  "summary": "List all tracked bugs from BugPack with status and project filtering. Use when: user asks about bugs, pending issues, bug lists, or wants to see what needs f...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugpack_list_bugs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duhuazhu",
+      "features": [
+        "List all tracked bugs from BugPack with status and project filtering",
+        "Use when: user asks about bugs, pending issues, bug lists, or wants to see what needs f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bugpack-list-bugs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45280664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bugpack-list-bugs",
+      "url": "https://clawhub.ai/skills/bugpack-list-bugs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugpack-list-bugs",
+    "url": "https://clawhub.ai/skills/bugpack-list-bugs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugpack-list-bugs-6ec2fc879f262d62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bugpack-list-bugs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bugpack-list-bugs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c0de94aea91eb1d9d94683e69d04711c3c1baecbbf067e83a97825d341fdcc1",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:27:12.726Z"
+}

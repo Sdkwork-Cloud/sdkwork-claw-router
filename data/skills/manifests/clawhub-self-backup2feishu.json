@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66805,
+  "uuid": "skill-clawhub-self-backup2feishu",
+  "skillKey": "clawhub-self-backup2feishu",
+  "name": "self-backup-to-feishu",
+  "summary": "AI助手状态自动备份到飞书文档。当用户需要：(1) 备份AI状态到云端，(2) 从飞书恢复AI记忆，(3) 设置自动备份机制，(4) 跨设备同步AI助手状态时使用此技能。触发词：「备份状态」「恢复状态」「从飞书恢复」「同步记忆」。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_backup2feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce-ZhaoBo",
+      "features": [
+        "AI助手状态自动备份到飞书文档。当用户需要：(1) 备份AI状态到云端，(2) 从飞书恢复AI记忆，(3) 设置自动备份机制，(4) 跨设备同步AI助手状态时使用此技能。触发词：「备份状态」."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-backup2feishu@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57890927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-backup2feishu",
+      "url": "https://clawhub.ai/skills/self-backup2feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-backup2feishu",
+    "url": "https://clawhub.ai/skills/self-backup2feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-backup2feishu-dca5a970590ab9a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-backup2feishu@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-backup2feishu-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07d1a41c0ab8d0f07866265856e6a56fbca7ae94b256122a51e37a8cd81c227e",
+      "artifactSizeBytes": 3636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:52:10.872Z"
+}

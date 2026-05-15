@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drug-safety-review@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drug_safety_review",
+  "skill": {
+    "id": 17928,
+    "skillKey": "clawhub-drug-safety-review",
+    "name": "Drug Safety Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drug-safety-review",
+    "url": "https://clawhub.ai/skills/drug-safety-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drug-safety-review-334c3ba2657539b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive medication safety review system providing real-time analysis of drug-drug interactions, contraindications, allergy risks, and dosing optimizati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxcg",
+      "userId": "publishers:andyxcg",
+      "displayName": "joe",
+      "image": "https://avatars.githubusercontent.com/u/26564438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774144451455,
+      "changelog": "**Expanded pricing options and major limited-time free trial upgrade.**\n\n- Added detailed subscription and credit package pricing information, including new trial and bonus offers.\n- Increased free trial quota from 10 to 200 uses for new users (limited promotion).\n- Announced multiple promotional bonus schemes: 20% extra credits on first purchase, up to 30% annual discount, referral rewards.\n- Included user testimonials and service statistics for transparency.\n- Added new file `scripts/subscription.py` (details not shown).\n- Updated documentation structure to focus on value proposition and subscription benefits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e25c524cdc0565b61e8b3bb9242ce2ed43b9ed91f0fd24dc5aa062c5928e04c3"
+}

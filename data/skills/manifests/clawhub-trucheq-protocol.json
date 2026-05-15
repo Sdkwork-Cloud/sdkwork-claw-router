@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40750,
+  "uuid": "skill-clawhub-trucheq-protocol",
+  "skillKey": "clawhub-trucheq-protocol",
+  "name": "TruCheq Protocol",
+  "summary": "Interact with TruCheq P2P commerce protocol - browse verified marketplace listings, chat with sellers via XMTP, pay via x402 on Base",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trucheq_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad",
+      "features": [
+        "Interact with TruCheq P2P commerce protocol",
+        "browse verified marketplace listings, chat with sellers via XMTP, pay via x402 on Base"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trucheq-protocol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6300279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trucheq-protocol",
+      "url": "https://clawhub.ai/skills/trucheq-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trucheq-protocol",
+    "url": "https://clawhub.ai/skills/trucheq-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trucheq-protocol-4dd02ff2cbc7bb8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trucheq-protocol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trucheq-protocol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03d6d7b8589159a36736f7ff6b0167ba1edef77031a74f78ce80476b2f7ab6ef",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:38:40.377Z"
+}

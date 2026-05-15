@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_manager",
+  "skill": {
+    "id": 11271,
+    "skillKey": "clawhub-task-manager",
+    "name": "Task Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-manager",
+    "url": "https://clawhub.ai/skills/task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-manager-13808a11056f9053.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SQLite-based task management with priority, tags, and stats. Database stored in skill directory for natural isolation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rare",
+      "userId": "s177n6ehfcsryk41xwndbgxasx83qef7",
+      "displayName": "raressen",
+      "image": "https://avatars.githubusercontent.com/u/528596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1825,
+      "installsAllTime": 40,
+      "installsCurrent": 38,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772602871986,
+      "changelog": "Fix: database path now uses skill directory for proper workspace isolation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:807f8efe890a5e5f898985682f18df2e5155d5ada3e066c337abfc66964309d3"
+}

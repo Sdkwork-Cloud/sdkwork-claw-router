@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-stock-log-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_log_skill",
+  "skill": {
+    "id": 63321,
+    "skillKey": "clawhub-my-stock-log-skill",
+    "name": "my_stock_log_skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-log-skill",
+    "url": "https://clawhub.ai/skills/my-stock-log-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-log-skill-d1126c7d25d85f70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当且仅当用户明确提到“分析日志多维表”或“my_stock_log_skill”时触发。专门用于美股分析报告结论在钉钉多维表（dingtalk-ai-table）中的结构化归档（新增）与检索（查询）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canonxu",
+      "userId": "s17agk69fz13xjgchzhr6sw58h83hn9f",
+      "displayName": "canonxu",
+      "image": "https://avatars.githubusercontent.com/u/7338324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774840383867,
+      "changelog": "批量同步最新版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac4b3bdee1b9a582e04e91563533849084567345176b6d308d1df64c6dcc46ec"
+}

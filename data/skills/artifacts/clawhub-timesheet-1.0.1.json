@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timesheet@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timesheet",
+  "skill": {
+    "id": 10686,
+    "skillKey": "clawhub-timesheet",
+    "name": "Timesheet - Time Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timesheet",
+    "url": "https://clawhub.ai/skills/timesheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timesheet-96dd98d8b3acd3ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track time, manage projects and tasks using timesheet.io CLI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "florianrauscha",
+      "userId": "s17214aepfc2jvpy3fah32xjdx840mpj",
+      "displayName": "Florian",
+      "image": "https://avatars.githubusercontent.com/u/555789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769306844554,
+      "changelog": "timesheet v1.0.1\n\n- No changes detected since the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f3e4dcffcf3b8629ea793de86f2c6bfd641c481ac03c20db8727b2ef2e832e7"
+}

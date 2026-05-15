@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18560,
+  "uuid": "skill-clawhub-bayclub-gateway-booking",
+  "skillKey": "clawhub-bayclub-gateway-booking",
+  "name": "Check and book Tennis and Pickleball Courts at Bay Club Gateway",
+  "summary": "Book and manage tennis/pickleball courts at Bay Club.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bayclub_gateway_booking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lizzie Siegle",
+      "features": [
+        "Book and manage tennis/pickleball courts at Bay Club."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bayclub-gateway-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8932430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bayclub-gateway-booking",
+      "url": "https://clawhub.ai/skills/bayclub-gateway-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bayclub-gateway-booking",
+    "url": "https://clawhub.ai/skills/bayclub-gateway-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bayclub-gateway-booking-a03bbefaa286897d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bayclub-gateway-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bayclub-gateway-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62a3508acd05c300a28674e5954cf0bcec1fe52417fdde4abc4b57b7b420aa97",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T03:26:17.202Z"
+}

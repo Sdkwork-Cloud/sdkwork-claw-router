@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11183,
+  "uuid": "skill-clawhub-zalo",
+  "skillKey": "clawhub-zalo",
+  "name": "Zalo",
+  "summary": "OpenClaw skill for Zalo Bot API workflows (bot token) plus optional guidance on unofficial personal automation tools.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zalo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "OpenClaw skill for Zalo Bot API workflows (bot token) plus optional guidance on unofficial pers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zalo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zalo",
+      "url": "https://clawhub.ai/skills/zalo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zalo",
+    "url": "https://clawhub.ai/skills/zalo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zalo-3e96141c21704e96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zalo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zalo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a78fb1b0e6fdd95001954a1b7011c1c829e3315806791195700be96893ea8188",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T06:59:06.511Z"
+}

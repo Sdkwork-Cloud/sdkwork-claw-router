@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53852,
+  "uuid": "skill-clawhub-clawon",
+  "skillKey": "clawhub-clawon",
+  "name": "Clawon",
+  "summary": "Back up and restore your OpenClaw workspace — memory, skills, config. Local or cloud.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yonatan Chelouche",
+      "features": [
+        "Back up and restore your OpenClaw workspace — memory, skills, config",
+        "Local or cloud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawon@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71208698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawon",
+      "url": "https://clawhub.ai/skills/clawon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawon",
+    "url": "https://clawhub.ai/skills/clawon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawon-95c3ffbd6af3dff1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawon@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawon-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d773e74ad34f7948b0cd3200bbe69a5686c8ec21ca33d545acf558fabacb51bb",
+      "artifactSizeBytes": 1768
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:08:18.409Z"
+}

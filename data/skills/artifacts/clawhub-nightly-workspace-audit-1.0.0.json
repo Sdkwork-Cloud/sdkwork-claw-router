@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nightly-workspace-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nightly_workspace_audit",
+  "skill": {
+    "id": 53228,
+    "skillKey": "clawhub-nightly-workspace-audit",
+    "name": "Nightly Workspace Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nightly-workspace-audit",
+    "url": "https://clawhub.ai/skills/nightly-workspace-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nightly-workspace-audit-ee502e930058c297.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nightly workspace audit — auto-discover file dependencies by scanning all workspace files for cross-references, manage HOT/WARM/COLD memory tiers, detect orp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emrys-hong",
+      "userId": "s17f2rdg0ed75tp6mp7vcta6y5845wsb",
+      "displayName": "Hong Pengfei",
+      "image": "https://avatars.githubusercontent.com/u/35634481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775187713090,
+      "changelog": "Initial release: auto-discover file dependencies, HOT/WARM/COLD memory tiering, nightly cleanup and health report",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:236bcd79c71da413a857d414d8cc5b357155e03639952f55c99941295bffc535"
+}

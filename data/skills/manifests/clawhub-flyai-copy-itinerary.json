@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73226,
+  "uuid": "skill-clawhub-flyai-copy-itinerary",
+  "skillKey": "clawhub-flyai-copy-itinerary",
+  "name": "一键抄作业",
+  "summary": "一键抄作业攻略转化助手，把小红书/抖音/携程攻略链接丢进来，AI自动提取行程，调用飞猪填充真实航班、酒店、景点数据，生成可预订的个性化攻略。触发词：抄作业、攻略转行程、复制攻略、链接变行程、把这篇变成我的攻略、帮我抄这个、种草变攻略。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_copy_itinerary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello_hang",
+      "features": [
+        "一键抄作业攻略转化助手，把小红书/抖音/携程攻略链接丢进来，AI自动提取行程，调用飞猪填充真实航班、酒店、景点数据，生成可预订的个性化攻略。触发词：抄作业、攻略转行程、复制攻略、链接变行程、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-copy-itinerary@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19886468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-copy-itinerary",
+      "url": "https://clawhub.ai/skills/flyai-copy-itinerary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-copy-itinerary",
+    "url": "https://clawhub.ai/skills/flyai-copy-itinerary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-copy-itinerary-2bfdd9847210e945.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-copy-itinerary@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-copy-itinerary-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2c270844fd93750d5d3e359fabbcb4be1aa6627dc6bfc65c9b86544941df857",
+      "artifactSizeBytes": 2550
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:30:07.882Z"
+}

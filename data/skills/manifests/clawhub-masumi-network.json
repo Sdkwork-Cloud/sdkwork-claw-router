@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15405,
+  "uuid": "skill-clawhub-masumi-network",
+  "skillKey": "clawhub-masumi-network",
+  "name": "Masumi Network Warranty Vault",
+  "summary": "Masumi Network skill for warranty vault verification. Handles OCR receipt scanning, Cardano blockchain proof-of-purchase logging, immutable decision logging, agent collaboration discovery, and smart wallet payments. Use for warranty claims.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masumi_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fisch192",
+      "features": [
+        "Masumi Network skill for warranty vault verification",
+        "Handles OCR receipt scanning, Cardano blockchain proof-of-purchase logging, immutable decision.",
+        "Use for warranty claims, product verification, agent-to-agent service payments, or immutable au."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/masumi-network@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35653727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "masumi-network",
+      "url": "https://clawhub.ai/skills/masumi-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masumi-network",
+    "url": "https://clawhub.ai/skills/masumi-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masumi-network-5884ddddef146340.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/masumi-network@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-masumi-network-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38982e88d430ec9123f8b0f2ed36dd342eb2fb9ece58e5a598dc5243458dab08",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T05:33:20.175Z"
+}

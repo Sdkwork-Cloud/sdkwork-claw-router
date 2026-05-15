@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38766,
+  "uuid": "skill-clawhub-doc-first",
+  "skillKey": "clawhub-doc-first",
+  "name": "Doc-First Research",
+  "summary": "Automatically consult official documentation first to accurately resolve configuration, usage, permission, or error issues with tools and APIs.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_first",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ekin-chn",
+      "features": [
+        "Automatically consult official documentation first to accurately resolve configuration, usage,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-first@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167228461?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-first",
+      "url": "https://clawhub.ai/skills/doc-first"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-first",
+    "url": "https://clawhub.ai/skills/doc-first",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-first-46d824317ae388fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-first@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-first-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2cc18c0d3a12f5629227240ad374f22393b9de21e8ae28970a3b47e3f76ba35",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T19:19:42.188Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24999,
+  "uuid": "skill-clawhub-filter",
+  "skillKey": "clawhub-filter",
+  "name": "Filter",
+  "summary": "Create and manage reusable filter rules for email, news, search results, and structured task streams. Designed to reduce noise and preserve signal in OpenCla...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ProjectSnowWork",
+      "features": [
+        "Create and manage reusable filter rules for email, news, search results, and structured task st.",
+        "Designed to reduce noise and preserve signal in OpenCla..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filter",
+      "url": "https://clawhub.ai/skills/filter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filter",
+    "url": "https://clawhub.ai/skills/filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filter-dfc3376b8266c66e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:914177ee89b0a8ce5cdbc88472b7a07539af7e90e1d00088a18986c21d67324b",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:18:58.650Z"
+}

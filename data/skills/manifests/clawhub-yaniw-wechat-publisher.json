@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71069,
+  "uuid": "skill-clawhub-yaniw-wechat-publisher",
+  "skillKey": "clawhub-yaniw-wechat-publisher",
+  "name": "wechat-publisher",
+  "summary": "用于管理多个微信公众号的内容创作和发布。当用户提到\"公众号发布\"、\"写公众号文章\"、\"给某个公众号发文\"、\"切换公众号\"、\"查看公众号发布情况\"、\"微信发文\"或需要为公众号生成内容、封面图、发布文章时,自动触发此技能。支持多账号管理、内容生成、封面设计、自动发布等完整流程。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yaniw_wechat_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zgedu-new",
+      "features": [
+        "用于管理多个微信公众号的内容创作和发布。当用户提到\"公众号发布\"、\"写公众号文章\"、\"给某个公众号发文\"、\"切换公众号\"、\"查看公众号发布情况\"、\"微信发文\"或需要为公众号生成内容、封面图、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yaniw-wechat-publisher@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71477028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yaniw-wechat-publisher",
+      "url": "https://clawhub.ai/skills/yaniw-wechat-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yaniw-wechat-publisher",
+    "url": "https://clawhub.ai/skills/yaniw-wechat-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yaniw-wechat-publisher-5839c30f321cb4ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yaniw-wechat-publisher@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yaniw-wechat-publisher-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:692aea0941133055a8c4387a24e5706801b0100959e1e35917ae33fca105c8fc",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:31:20.923Z"
+}

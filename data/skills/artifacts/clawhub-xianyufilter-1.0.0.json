@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xianyufilter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyufilter",
+  "skill": {
+    "id": 73049,
+    "skillKey": "clawhub-xianyufilter",
+    "name": "闲鱼商品精选助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyufilter",
+    "url": "https://clawhub.ai/skills/xianyufilter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyufilter-a597f7afc8a892e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动严格筛选闲鱼个人闲置商品，排除商家和价格区间，确保匹配关键词及规格，输出价格升序前10商品列表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xxxzhuo",
+      "userId": "publishers:xxxzhuo",
+      "displayName": "xxxzhuo",
+      "image": "https://avatars.githubusercontent.com/u/191365078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 869,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772776393586,
+      "changelog": "xianfilter 1.0.0\n\n- 初始发布，支持在闲鱼搜索时自动应用严格筛选条件，确保搜索结果真实有效\n- 支持关键词激活（如“闲鱼搜索”、“二手搜索”等），无需手动设置筛选\n- 默认只展示个人闲置、单一价格、规格匹配和台式机商品，自动排除商家/价格区间/不符规格/广告等\n- 输出TOP10符合条件的商品列表，附价格、地区、链接等，支持多项数据统计\n- 支持自定义筛选参数（如价格、地区、成色等）\n- 自动记录搜索历史，便于后续查询",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83d5a38edf6a35cf9190d8d07d0072c99a938502b6506bd7f82ac2ec59a84955"
+}

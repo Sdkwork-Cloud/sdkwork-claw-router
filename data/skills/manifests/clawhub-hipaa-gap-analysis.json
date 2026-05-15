@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27041,
+  "uuid": "skill-clawhub-hipaa-gap-analysis",
+  "skillKey": "clawhub-hipaa-gap-analysis",
+  "name": "Hipaa Gap Analysis",
+  "summary": "Assess compliance documents against HIPAA Security Rule and Privacy Rule requirements. Produces structured findings with coverage status, confidence scores,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hipaa_gap_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dangsllc",
+      "features": [
+        "Assess compliance documents against HIPAA Security Rule and Privacy Rule requirements",
+        "Produces structured findings with coverage status, confidence scores,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hipaa-gap-analysis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226757080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hipaa-gap-analysis",
+      "url": "https://clawhub.ai/skills/hipaa-gap-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hipaa-gap-analysis",
+    "url": "https://clawhub.ai/skills/hipaa-gap-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hipaa-gap-analysis-5f7b22bf53def060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hipaa-gap-analysis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hipaa-gap-analysis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f179559668befd9ff2b879231870bd94719a4e70540cd11a888e78044fc23152",
+      "artifactSizeBytes": 2525
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:29:56.507Z"
+}

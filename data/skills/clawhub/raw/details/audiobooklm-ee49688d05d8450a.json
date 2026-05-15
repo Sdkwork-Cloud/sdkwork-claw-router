@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "audiobooklm",
+    "displayName": "audiobooklm",
+    "summary": "提供有声书创作与音频能力（ABS 读写、音效/音频检索、二创、音色推荐、章节角色分析等），通过 HTTP Streamable MCP 调用。",
+    "tags": {
+      "latest": "0.0.7"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 6
+    },
+    "createdAt": 1773225167659,
+    "updatedAt": 1778306873434
+  },
+  "latestVersion": {
+    "version": "0.0.7",
+    "createdAt": 1773631348126,
+    "changelog": "audiobooklm 0.0.7\n\n- 新增工具：`create_album`、`upload_audio_to_album`、`list_tts_voices`、`synthesize_tts`、`asr_audio_to_text`\n- 修正 search_audio 能力定义：优先 mock 匹配，未命中再自动 LLM+TTS 生成\n- 新增指定文本+指定音色ID直合成范例用法：list_tts_voices -> synthesize_tts\n- 完善文档关于工具路由、dynamic tools/list 探测、dialogue_split 与 chapter_character_analysis 入参和能力说明",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "audiobooklm",
+    "userId": "s17245cyqggk03p6tyw65ey6gd868x9z",
+    "displayName": "audiobooklm",
+    "image": "https://avatars.githubusercontent.com/u/179807546?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306873434
+  }
+}

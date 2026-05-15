@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patent-landscape@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_landscape",
+  "skill": {
+    "id": 36386,
+    "skillKey": "clawhub-patent-landscape",
+    "name": "Patent Landscape"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-landscape",
+    "url": "https://clawhub.ai/skills/patent-landscape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-landscape-80f9dc6ae08104ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when analyzing biotech patent landscapes, identifying white spaces in pharmaceutical IP, tracking competitor patents, or assessing freedom to operate for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774849991653,
+      "changelog": "- Initial release of Biotech Patent Landscape Analyzer.\n- Enables comprehensive analysis of biotech and pharmaceutical patents, including white space identification, competitor tracking, and freedom-to-operate (FTO) assessments.\n- Supports structured, reproducible workflows for evidence-based patent landscape review.\n- Includes example commands and usage for both CLI and Python interfaces.\n- Reference materials and workflow documentation provided for audit-ready results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a6208a510dbc2264328fe8320a17da78f6ad5413cd5de2a082dafadd877d368"
+}

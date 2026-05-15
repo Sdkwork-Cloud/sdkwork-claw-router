@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-border-intel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_border_intel",
+  "skill": {
+    "id": 60709,
+    "skillKey": "clawhub-cross-border-intel",
+    "name": "cross-border-intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-border-intel",
+    "url": "https://clawhub.ai/skills/cross-border-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-border-intel-d1e17b4d6be93ee2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向跨境卖家的选品与竞品情报助手，自动监控 Amazon ASIN 动态并追踪 TikTok 爆品趋势"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xifengzhu",
+      "userId": "s17abenkzstewwrgwm37m2hn4s840sb2",
+      "displayName": "leif Yi",
+      "image": "https://avatars.githubusercontent.com/u/4188624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775005171789,
+      "changelog": "cross-border-intel 1.0.0 — Initial Release\n\n- Launches a localized intelligence tool for cross-border sellers, focused on Amazon and TikTok tracking.\n- Enables monitoring of Amazon ASIN price, BSR, and review changes, plus TikTok product trends.\n- Provides commands to add, remove, list, and report on tracked ASINs or keywords.\n- Supports immediate and scheduled scans; issues alerts for significant changes.\n- Delivers daily and weekly automated scanning and reporting routines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a361709cf7f6c7141bfac942caabcd8aaf82e0e55952dab94ccbff34ec90a8f8"
+}

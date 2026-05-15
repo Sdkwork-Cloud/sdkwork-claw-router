@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flight-booking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_booking",
+  "skill": {
+    "id": 72932,
+    "skillKey": "clawhub-flight-booking",
+    "name": "机票预订"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-booking",
+    "url": "https://clawhub.ai/skills/flight-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-booking-92955c24a412f4d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774870889392,
+      "changelog": "flightAI 1.0.0 – 初始版本\n\n- 支持国内航班搜索、舱位价格查询、机票预订、订单查询、改期与退票等全流程服务\n- 明确鉴权流程，基于手机号和验证码实现 API 权限管理\n- 全流程上下文参数提取和自动补全，减少重复询问\n- 多个脚本支持完整订单生命周期管理（预订、改期、退票）\n- 详细参数说明和命令行示例，涵盖所有常用用例\n- 明确隐私保护措施，不在日志/回复中暴露用户个人信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2863dc45d3c50f19de5a95b8fce351f609bf18b095a45ce45a86e7f874f9cb96"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40614,
+  "uuid": "skill-clawhub-tutoring-video",
+  "skillKey": "clawhub-tutoring-video",
+  "name": "Tutoring Video",
+  "summary": "Create concise 60-90 second video scripts for tutors to showcase their teaching approach, subject expertise, and student success stories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutoring_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Create concise 60-90 second video scripts for tutors to showcase their teaching approach, subje."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tutoring-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tutoring-video",
+      "url": "https://clawhub.ai/skills/tutoring-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutoring-video",
+    "url": "https://clawhub.ai/skills/tutoring-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutoring-video-eeface174126008e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tutoring-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tutoring-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:198d825535c6a9489ee5767dfc5bfce8eae7230df085de71254fbd292ef969da",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:58:47.039Z"
+}

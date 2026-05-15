@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72910,
+  "uuid": "skill-clawhub-guoshun-inspection-logger",
+  "skillKey": "clawhub-guoshun-inspection-logger",
+  "name": "国顺施工日志助手",
+  "summary": "基于江苏省施工监理标准，自动将施工口述或文字描述生成规范的Word巡检日志文档，包括监理、施工、安全等类型。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_inspection_logger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "基于江苏省施工监理标准，自动将施工口述或文字描述生成规范的Word巡检日志文档，包括监理、施工、安全等类型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guoshun-inspection-logger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guoshun-inspection-logger",
+      "url": "https://clawhub.ai/skills/guoshun-inspection-logger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-inspection-logger",
+    "url": "https://clawhub.ai/skills/guoshun-inspection-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-inspection-logger-7050b9acba837b43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guoshun-inspection-logger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guoshun-inspection-logger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:780066043950aed9726d449523a92c9ca6624b79160719f27c8595a208370d67",
+      "artifactSizeBytes": 2617
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:07:03.467Z"
+}

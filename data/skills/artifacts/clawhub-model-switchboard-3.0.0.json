@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-switchboard@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_switchboard",
+  "skill": {
+    "id": 22239,
+    "skillKey": "clawhub-model-switchboard",
+    "name": "Model Switchboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-switchboard",
+    "url": "https://clawhub.ai/skills/model-switchboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-switchboard-1b37ec184d168d88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely configure OpenClaw AI models by validating roles, autoloading backups, blocking unsafe changes, and managing via CLI or Canvas UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frank-bot07",
+      "userId": "publishers:frank-bot07",
+      "displayName": "frank-bot07",
+      "image": "https://avatars.githubusercontent.com/u/259001718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772067280160,
+      "changelog": "- Major upgrade: introduces robust safeguards for managing AI models in OpenClaw.\n- All model assignments must use provided commands; direct JSON edits are strictly forbidden.\n- Automatic validation, backup (30 rolling), and instant rollback for every config change.\n- Prevents unsafe assignments (e.g., image models as LLMs) and enforces strict validation rules.\n- Adds visual management dashboard (Canvas UI) and full CLI reference.\n- Advanced redundancy, import/export, health diagnostics, and troubleshooting support included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09acd4b44ee0807f24e90a490a7ab3b94971c7765dd22ba87be2ba92e991d79d"
+}

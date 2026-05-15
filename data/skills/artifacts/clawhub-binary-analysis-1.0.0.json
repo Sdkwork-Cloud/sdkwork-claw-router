@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binary-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binary_analysis",
+  "skill": {
+    "id": 27022,
+    "skillKey": "clawhub-binary-analysis",
+    "name": "Dr.Binary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binary-analysis",
+    "url": "https://clawhub.ai/skills/binary-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binary-analysis-8dc73af81e3d4025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to analyze a binary file, check if a file is malicious, decompile an executable, or understand what a binary does. Triggers on: \"anal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepbitstech",
+      "userId": "s17738sxng308rf2z5ey1fc9gx83xwfr",
+      "displayName": "Deepbits Technology",
+      "image": "https://avatars.githubusercontent.com/u/32583479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773848486422,
+      "changelog": "Initial  submission",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:601ae1bb67ec7dbc8a57c3ff53d1b777e7cae61972498e42a8b471955857e967"
+}

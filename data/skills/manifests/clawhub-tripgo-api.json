@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26498,
+  "uuid": "skill-clawhub-tripgo-api",
+  "skillKey": "clawhub-tripgo-api",
+  "name": "TripGo API",
+  "summary": "Comprehensive interface for the TripGo API, covering routing, public transport, trips, and location services. Use for multimodal journey planning, public tra...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tripgo_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guanyu Zhang",
+      "features": [
+        "Comprehensive interface for the TripGo API, covering routing, public transport, trips, and loca.",
+        "Use for multimodal journey planning, public tra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tripgo-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63548771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tripgo-api",
+      "url": "https://clawhub.ai/skills/tripgo-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tripgo-api",
+    "url": "https://clawhub.ai/skills/tripgo-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tripgo-api-4569babe8174fb1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tripgo-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tripgo-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db4baf3013affc58b58499685a4c59b8ce93c6527566b27ad28704e86af96f85",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:19:22.608Z"
+}

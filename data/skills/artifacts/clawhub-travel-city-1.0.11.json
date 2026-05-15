@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-city@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_city",
+  "skill": {
+    "id": 31887,
+    "skillKey": "clawhub-travel-city",
+    "name": "travel city"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-city",
+    "url": "https://clawhub.ai/skills/travel-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-city-eefa5df62129b570.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Given a city name (+ optional season/month + optional origin city), return a comprehensive travel briefing. Use when asked to research a city for travel, pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahongc",
+      "userId": "s17bwps1v7fqm560253grqacxn83kpf2",
+      "displayName": "jiahongc",
+      "image": "https://avatars.githubusercontent.com/u/61323260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776256854786,
+      "changelog": "Redeploy latest travel city skill from desktop source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11fb0c078b5ce35daa4bb342fa18da49b016b26b26a3ea0605f27f948d8aecf1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67957,
+  "uuid": "skill-clawhub-data-generator",
+  "skillKey": "clawhub-data-generator",
+  "name": "Data Generator",
+  "summary": "训练数据生成技能。根据传入的工具名和用户指令列表，生成多轮对话格式的 JSONL 训练数据。触发场景：(1) 传入工具名和用户指令列表，生成完整训练数据；(2) 批量生成指定工具的标注数据；(3) 给定指令列表，输出 JSONL 对话样本。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuaiBuer",
+      "features": [
+        "训练数据生成技能。根据传入的工具名和用户指令列表，生成多轮对话格式的 JSONL 训练数据。触发场景：(1) 传入工具名和用户指令列表，生成完整训练数据；(2) 批量生成指定工具的标注数据；."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-generator@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71966998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-generator",
+      "url": "https://clawhub.ai/skills/data-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-generator",
+    "url": "https://clawhub.ai/skills/data-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-generator-2d8ca09b0efb8f04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-generator@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-generator-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53fec432c70de927465273e64e7ea63397bfea8d3b5724b18f8c0b3dc7930fa1",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:40:08.938Z"
+}

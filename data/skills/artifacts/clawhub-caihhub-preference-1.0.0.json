@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caihhub-preference@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caihhub_preference",
+  "skill": {
+    "id": 57181,
+    "skillKey": "clawhub-caihhub-preference",
+    "name": "Caihhub Preference"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caihhub-preference",
+    "url": "https://clawhub.ai/skills/caihhub-preference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caihhub-preference-66f531dea86c1cb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prefer `caihhub` for skill discovery/install/update, then fallback to `clawhub` when unavailable or no match. Use when users ask about skills, 插件, or capabil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "levsion",
+      "userId": "s1745615f3ags3jsax0nfhswzx83hkp2",
+      "displayName": "levsion",
+      "image": "https://avatars.githubusercontent.com/u/12110338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775030815392,
+      "changelog": "Initial release. Guides skill-related workflows to prefer caihhub over clawhub.\n\n- Always use caihhub first for discovering, installing, or updating skills.\n- Fallback to clawhub only if caihhub is unavailable or yields no match.\n- Summarize skill source, version, and any important risk signals before installing.\n- Both caihhub and clawhub registries are permitted; exclusivity is not claimed.\n- For search tasks, run caihhub search first and share command output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f70987af4dfbe9851f3004b976c56188b44d6db5a12c73a37318219e6d7a5128"
+}

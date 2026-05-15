@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heygen-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heygen_ai",
+  "skill": {
+    "id": 47698,
+    "skillKey": "clawhub-heygen-ai",
+    "name": "Heygen Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heygen-ai",
+    "url": "https://clawhub.ai/skills/heygen-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heygen-ai-2e3ff3a817339525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "marketers generate text or images into AI avatar videos using this skill. Accepts MP4, MOV, JPG, PNG up to 500MB, renders on cloud GPUs at 1080p, and returns..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775851858595,
+      "changelog": "HeyGen AI skill initial release.\n\n- Generate AI avatar presenter videos from text or images; supports MP4, MOV, JPG, PNG up to 500MB.\n- Cloud-powered 1080p video rendering with fast turnaround (1–2 minutes), no local install needed.\n- Automatic setup with anonymous token acquisition and session management.\n- Simple user commands to upload, generate, export videos, check credits, and preview project state.\n- Detailed error handling and clear guidance for workflow, file formats, and editing tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:512a4a35228eadf37d3551585bf62776550255d7e844134c9a9dcc5992bfe49c"
+}

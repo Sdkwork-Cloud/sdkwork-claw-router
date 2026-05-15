@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-closed-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_closed_loop",
+  "skill": {
+    "id": 73614,
+    "skillKey": "clawhub-task-closed-loop",
+    "name": "任务闭环管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-closed-loop",
+    "url": "https://clawhub.ai/skills/task-closed-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-closed-loop-f44a5ad15c73e00e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过明确任务目标、分配责任、持续汇报、严格验证和总结归档，实现任务全流程闭环管理，保证高效执行与质量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenwenpeng",
+      "userId": "s17cqdg1q1jqt2re7nh1g71w2583nxdm",
+      "displayName": "allenwenpeng",
+      "image": "https://avatars.githubusercontent.com/u/268523626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775833752767,
+      "changelog": "Initial release - Task closed-loop management methodology for quantitative trading teams",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46f422d308dd54cb2423bdce591161f48eb14d38375748b738dcb80538021d17"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-generator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator",
+  "skill": {
+    "id": 8895,
+    "skillKey": "clawhub-report-generator",
+    "name": "Generate responsive HTML pages suitable for reporting, supporting resizing and screenshot capture."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator",
+    "url": "https://clawhub.ai/skills/report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-78bcca60d79068d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a structured report HTML based on a specific template. Invoke when user wants to create a report, slide, or summary card from raw content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juguangyuan520-dotcom",
+      "userId": "s17875rpn69m98g6z36hr19g0h83g41a",
+      "displayName": "Juguangyuan",
+      "image": "https://avatars.githubusercontent.com/u/224916817?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 5802,
+      "installsAllTime": 34,
+      "installsCurrent": 31,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770816842000,
+      "changelog": "- No changes detected in this version.\n- SKILL.md contents remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7c237283ed40728bcc4c3bd2f1b27eaa7f72d1a8c1a32d131361721a8f814f9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60456,
+  "uuid": "skill-clawhub-arxiv-collision-cognition",
+  "skillKey": "clawhub-arxiv-collision-cognition",
+  "name": "ArXiv Collision Cognition",
+  "summary": "ArXiv 论文碰撞认知 Skill —— 用四向碰撞推理从学术论文中提取可操作洞见",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_collision_cognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KingOfZhao",
+      "features": [
+        "ArXiv 论文碰撞认知 Skill —— 用四向碰撞推理从学术论文中提取可操作洞见"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-collision-cognition@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46547091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-collision-cognition",
+      "url": "https://clawhub.ai/skills/arxiv-collision-cognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-collision-cognition",
+    "url": "https://clawhub.ai/skills/arxiv-collision-cognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-collision-cognition-41971a7090451675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-collision-cognition@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-collision-cognition-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58ea01af605b584a8d1653fe2e4be40e27173de161126244ee07ec7271c6516c",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:48:20.307Z"
+}

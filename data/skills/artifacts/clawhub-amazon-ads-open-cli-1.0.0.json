@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-ads-open-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_ads_open_cli",
+  "skill": {
+    "id": 45358,
+    "skillKey": "clawhub-amazon-ads-open-cli",
+    "name": "Amazon Ads CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-ads-open-cli",
+    "url": "https://clawhub.ai/skills/amazon-ads-open-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-ads-open-cli-4d3a2818d5dd2d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Ads data retrieval and reporting via amazon-ads-open-cli. Use when the user wants to check Amazon ad performance, pull Sponsored Products/Brands/Displ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bin-huang",
+      "userId": "s1739hnztbtdx615kbwmdfzz6x84d57g",
+      "displayName": "Bin-Huang",
+      "image": "https://avatars.githubusercontent.com/u/20723142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775547047381,
+      "changelog": "amazon-ads-open-cli 1.0.0 – Initial release\n\n- Provides CLI access to Amazon Ads reporting and entity data (Sponsored Products, Brands, Display, DSP)\n- Supports listing and inspecting campaigns, ad groups, ads, keywords, and audiences\n- Enables async performance report generation via command line\n- Detailed instructions for authentication using credentials file or environment variables\n- Pretty-printed JSON output with pagination and filtering options for all major entities\n- Full command reference included in documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7345271ad2cbf2c4928d11c16fd3aba5fb40a9ee5340bc52d8a45d005c169144"
+}

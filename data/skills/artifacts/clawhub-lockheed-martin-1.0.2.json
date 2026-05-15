@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lockheed-martin@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lockheed_martin",
+  "skill": {
+    "id": 53495,
+    "skillKey": "clawhub-lockheed-martin",
+    "name": "Lockheed Martin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lockheed-martin",
+    "url": "https://clawhub.ai/skills/lockheed-martin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lockheed-martin-cfc20570608821a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides comprehensive information on Lockheed Martin’s history, products, global presence, and recent developments for research and consultation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776533834860,
+      "changelog": "- Updated SKILL.md with a more detailed overview of Lockheed Martin, including its history, key events, main products, business data, and unique facts.\n- Enhanced content to highlight notable achievements such as the F-35 program and Skunk Works.\n- Improved structure and readability for easier information access.\n- Removed the outdated lockheed-martin/SKILL.md file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8384436ed8226630e6fb2d89d8fac88b1687723a607e8fde807d7df3bfaeac4d"
+}

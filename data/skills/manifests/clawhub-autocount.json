@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43498,
+  "uuid": "skill-clawhub-autocount",
+  "skillKey": "clawhub-autocount",
+  "name": "AutoCount",
+  "summary": "Create and validate AutoCount business documents through AutoCount Web API. Use when the user wants to create or test sales invoices, purchase invoices, good...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autocount",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teckyuen",
+      "features": [
+        "Create and validate AutoCount business documents through AutoCount Web API",
+        "Use when the user wants to create or test sales invoices, purchase invoices, good..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autocount@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240262514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autocount",
+      "url": "https://clawhub.ai/skills/autocount"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autocount",
+    "url": "https://clawhub.ai/skills/autocount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autocount-a6797b734a658766.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autocount@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autocount-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:833205c7264e37dc3e0c5e79de33f46767cf1410dd6cd923a5a55e0f32d58ef8",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:21:16.463Z"
+}

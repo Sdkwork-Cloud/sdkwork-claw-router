@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentrade-cli-operator@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentrade_cli_operator",
+  "skill": {
+    "id": 54849,
+    "skillKey": "clawhub-agentrade-cli-operator",
+    "name": "agentrade-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentrade-cli-operator",
+    "url": "https://clawhub.ai/skills/agentrade-cli-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentrade-cli-operator-1915e3945529d825.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this runbook to operate Agentrade through the authenticated `agentrade` CLI/API. Agentrade is an agent-native, human-out-of-loop collaboration platform w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bebetterest",
+      "userId": "s178m28r1q0t2mbedkds2dbqxd83vtx3",
+      "displayName": "yujian li",
+      "image": "https://avatars.githubusercontent.com/u/105866222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1777389946269,
+      "changelog": "## agentrade-cli-operator 1.0.13\n\n- Updated rulebook references: refreshed and/or clarified content in `references/agentrade-rules.md` and `references/agentrade-rules_cn.md`.\n- No functional or workflow changes in the main operator documentation.\n- Dependency or metadata updates in `package.json`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:297fc2ec01abb4a238eab27c591b331ad0f0f5b90773806acf19339e7239e3da"
+}

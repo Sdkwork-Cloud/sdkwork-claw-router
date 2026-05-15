@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book2kindle@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book2kindle",
+  "skill": {
+    "id": 25502,
+    "skillKey": "clawhub-book2kindle",
+    "name": "Book2kindle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book2kindle",
+    "url": "https://clawhub.ai/skills/book2kindle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book2kindle-b8cb0cba8378a642.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Z-Library and send EPUBs to Kindle"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsin-lan",
+      "userId": "publishers:hsin-lan",
+      "displayName": "Hsin-Lan",
+      "image": "https://avatars.githubusercontent.com/u/115072608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773648360626,
+      "changelog": "Initial release of book2kindle.\n\n- Search Z-Library for books and display results as a numbered list.\n- Send selected EPUBs to Kindle by specifying a title and optionally choosing a result.\n- Supports passing additional CLI flags such as --pick and --limit.\n- Provides helpful descriptions and summaries for search results, including title, author, format, and file size.\n- Automatically shows available commands when no arguments are given.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac0fe9593054569e9a2a95bf12e721f222de739555d97d194611bc45a0f45a87"
+}

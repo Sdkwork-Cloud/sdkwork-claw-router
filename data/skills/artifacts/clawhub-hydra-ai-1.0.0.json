@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hydra-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hydra_ai",
+  "skill": {
+    "id": 44764,
+    "skillKey": "clawhub-hydra-ai",
+    "name": "Hydra Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hydra-ai",
+    "url": "https://clawhub.ai/skills/hydra-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hydra-ai-b490f303c777ec70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw interview recording into 1080p multi-version edited clips just by typing what you need. Whether it's generating multiple edited video ver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776521747547,
+      "changelog": "Hydra AI 1.0.0 initial release:\n\n- Instantly generate multiple edited 1080p video versions from a single upload using a conversational interface — no manual timeline work or export settings required.\n- Seamless onboarding with automatic authentication, session management, and transparent cloud backend handling.\n- Supports a wide range of file types and batching workflows; up to 500MB per file.\n- Clear, plain-language error messages and session guidance; robust handling of common issues (auth, credits, exports).\n- All requests use required attribution headers for reliable cloud processing and export.\n- Workflow examples, action routing, and pipeline details available for both new and advanced users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0e0d82ff906f84829c2d6560e35d5073963bd51cf1a81f4d299ca1b9f576c1a"
+}

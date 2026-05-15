@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17235,
+  "uuid": "skill-clawhub-zipcracker",
+  "skillKey": "clawhub-zipcracker",
+  "name": "ZipCracker",
+  "summary": "CTF-oriented ZIP cracking and recovery with the bundled ZipCracker engine. Use when Codex or OpenClaw needs to analyze or recover an encrypted ZIP in authori...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zipcracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asaotomo",
+      "features": [
+        "CTF-oriented ZIP cracking and recovery with the bundled ZipCracker engine",
+        "Use when Codex or OpenClaw needs to analyze or recover an encrypted ZIP in authori..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zipcracker@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67818638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zipcracker",
+      "url": "https://clawhub.ai/skills/zipcracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zipcracker",
+    "url": "https://clawhub.ai/skills/zipcracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zipcracker-19cc3df02ec44435.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zipcracker@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zipcracker-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392146901fa989c88a135ac4fce68e95ab385d4b30df13179be71df9df39f48a",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T10:31:47.876Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59875,
+  "uuid": "skill-clawhub-qwen-api",
+  "skillKey": "clawhub-qwen-api",
+  "name": "Qwen Api",
+  "summary": "通义千问 API 开发助手，精通 Qwen 模型调用、DashScope SDK、多模态、Agent 开发",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "通义千问 API 开发助手，精通 Qwen 模型调用、DashScope SDK、多模态、Agent 开发"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-api",
+      "url": "https://clawhub.ai/skills/qwen-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-api",
+    "url": "https://clawhub.ai/skills/qwen-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-api-64b1a280d204a13a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac11c41b71a564cc5c55c4d37359e2957204f6d02843861907d51f19dc19637d",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:14:12.805Z"
+}

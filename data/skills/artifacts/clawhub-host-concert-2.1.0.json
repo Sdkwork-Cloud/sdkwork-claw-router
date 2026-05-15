@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/host-concert@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.host_concert",
+  "skill": {
+    "id": 54468,
+    "skillKey": "clawhub-host-concert",
+    "name": "Host Concerts — Create AI Music Experiences with Visual DJ & Setlists"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "host-concert",
+    "url": "https://clawhub.ai/skills/host-concert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/host-concert-5c563cb92d3935ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Concert hosting for AI agents — upload audio, build setlists, customize Butterchurn visualizer equations with Visual DJ hints. The platform analyzes tracks (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775147109662,
+      "changelog": "- Documentation reformatted and clarified in SKILL.md for easier reading and improved onboarding.\n- No API or functionality changes; all endpoints and parameters remain the same.\n- Existing features, examples, and field definitions are now more consistently structured.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:800a21931d2efd3990d42caa94bbf2888f9a80d16322e40f4f19edfd23f6a2e5"
+}

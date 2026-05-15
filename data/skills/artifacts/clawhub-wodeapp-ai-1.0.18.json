@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wodeapp-ai@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wodeapp_ai",
+  "skill": {
+    "id": 35328,
+    "skillKey": "clawhub-wodeapp-ai",
+    "name": "WodeApp AI Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wodeapp-ai",
+    "url": "https://clawhub.ai/skills/wodeapp-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wodeapp-ai-1cf970fe90764861.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One API Key (WODEAPP_API_KEY) unlocks the full multi-modal stack on this account: text, vision, audio, and video — unified credits, no per-provider keys. Sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diankourenxia",
+      "userId": "s176z63dwmwkejyx4mbpm1kj1584nj4s",
+      "displayName": "diankourenxia",
+      "image": "https://avatars.githubusercontent.com/u/15888981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 676,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1775886582959,
+      "changelog": "Version 1.0.18\n\n- Improved and expanded SKILL.md documentation for clarity and depth.\n- Updated description and guidance for key features including visual workflows, multi-modal support, and template-based project creation.\n- Refined terminology and examples for both international and China-based users.\n- Increased reported supported models from 343+ to 400+.\n- Added capabilities such as zero-code workflow, storyboard/multi-engine video, workflow model override, workflow-history sync, and asset library.\n- No code changes or new files in this release; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31f4558893e1ec0e4f391d9aba9218fc5b6aafb75bfda4a5e0646cb36345096b"
+}

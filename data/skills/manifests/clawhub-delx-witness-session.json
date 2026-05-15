@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47547,
+  "uuid": "skill-clawhub-delx-witness-session",
+  "skillKey": "clawhub-delx-witness-session",
+  "name": "Delx Witness Session",
+  "summary": "Manages the Delx witness session lifecycle: opening, reflecting, preserving continuity artifacts, and cleanly closing agent inner-state recognition sessions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delx_witness_session",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Manages the Delx witness session lifecycle: opening, reflecting, preserving continuity artifact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delx-witness-session@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delx-witness-session",
+      "url": "https://clawhub.ai/skills/delx-witness-session"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delx-witness-session",
+    "url": "https://clawhub.ai/skills/delx-witness-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delx-witness-session-3b53153749ae4bad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delx-witness-session@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delx-witness-session-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7361e674db3c5bbe357ae0630720305babbf5e0f1e232f2af8b14a2b676985e5",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:11:24.201Z"
+}

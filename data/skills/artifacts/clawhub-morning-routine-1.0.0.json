@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-routine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_routine",
+  "skill": {
+    "id": 10260,
+    "skillKey": "clawhub-morning-routine",
+    "name": "Morning Routine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-routine",
+    "url": "https://clawhub.ai/skills/morning-routine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-routine-09e21598fde05f8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a powerful morning routine with habit checklists, timing, and streak tracking"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2643,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326490344,
+      "changelog": "Initial release of Morning Routine skill:\n\n- Create and track personalized morning habit checklists.\n- Monitor time spent on each habit and overall routine completion.\n- Build streaks and view consistency reports based on habit completion.\n- Adapt and customize your routine with flexible habit management.\n- All data remains local for privacy—no cloud sync or third-party tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95a07b2cdbc96be26f1a7a74de3561d1353d0e96f9ba00abcbb845df5a3b7108"
+}

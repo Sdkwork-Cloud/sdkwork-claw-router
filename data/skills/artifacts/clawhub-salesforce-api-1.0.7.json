@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/salesforce-api@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_api",
+  "skill": {
+    "id": 8407,
+    "skillKey": "clawhub-salesforce-api",
+    "name": "Salesforce"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-api",
+    "url": "https://clawhub.ai/skills/salesforce-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-api-491935cf12414c3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Salesforce CRM API integration with managed OAuth. Install only if you need Salesforce CRM administration. Connect with the narrowest Salesforce permissions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 17890,
+      "installsAllTime": 9,
+      "installsCurrent": 7,
+      "stars": 8,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1778148491432,
+      "changelog": "- Adds CLI and Homebrew installation instructions for Maton CLI, expanding usage options.\n- Updates API examples and references from Salesforce API version v59.0 to v63.0.\n- Documents direct CLI commands for common actions (SOQL queries, connections) alongside Python and HTTP examples.\n- Clarifies connection management and explicit connection selection, now with CLI examples.\n- Improves authentication instructions by including CLI login/interactive login commands.\n- No functional/API changes to the underlying integration; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00efc74332128802a09201b61e6f3fa4f09eb03956f830c5af6145ead9c62615"
+}

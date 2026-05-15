@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-summary-skill@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_summary_skill",
+  "skill": {
+    "id": 56872,
+    "skillKey": "clawhub-youtube-summary-skill",
+    "name": "Youtube Summary Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-summary-skill",
+    "url": "https://clawhub.ai/skills/youtube-summary-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-summary-skill-1709ae82fc99261a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch a YouTube video transcript and provide a structured summary. Usage: /youtube-summary <youtube-url> [--lang <language>]"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivanopassari",
+      "userId": "s17174tpzwxkg0000qqa8qm3fs83g0mm",
+      "displayName": "ipassari",
+      "image": "https://avatars.githubusercontent.com/u/118530929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774362375848,
+      "changelog": "youtube-summary-skill v1.0.7\n\n- Documentation updated in SKILL.md (no logic or functional changes).\n- Version bumped from 1.0.6 to 1.0.7.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79056f02a0fccb6d77236ec27019e056d0f6955db16838d07932f97294a8a50b"
+}

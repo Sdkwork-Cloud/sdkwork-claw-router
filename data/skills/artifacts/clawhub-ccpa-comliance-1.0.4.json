@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccpa-comliance@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccpa_comliance",
+  "skill": {
+    "id": 66418,
+    "skillKey": "clawhub-ccpa-comliance",
+    "name": "CCPA-Compliance（CCPA合规工具）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccpa-comliance",
+    "url": "https://clawhub.ai/skills/ccpa-comliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccpa-comliance-daaf614cb551b961.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美国加州消费者隐私法（CCPA/CPRA）合规专用工具。当用户需要处理加州消费者数据、 CCPA/CPRA合规检查、消费者权利保障、选择退出机制实现等相关任务时使用此skill。 🎉 版本1.0.4重要更新：纯本地运行，无需安装任何外部依赖"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwumit",
+      "userId": "s171gysg9m3c2gxwwc6pvt62z983jxn1",
+      "displayName": "Wei Wu",
+      "image": "https://avatars.githubusercontent.com/u/5894591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774762687199,
+      "changelog": "**v1.0.4 Summary:**  \n重大更新，移除所有外部依赖，实现纯本地零依赖安装。\n\n- 移除对 pandas、jinja2 等外部包的依赖，全部功能基于 Python 标准库实现\n- 强化纯本地运行与无网络需求声明\n- 简化安装与使用流程，无需任何 pip 安装，开箱即用\n- 同步更新文档，确保说明与实际一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc2a9da6997c2237615a40735ac04543e75aac7c3b2e754fce6dc78d68c2ff8d"
+}

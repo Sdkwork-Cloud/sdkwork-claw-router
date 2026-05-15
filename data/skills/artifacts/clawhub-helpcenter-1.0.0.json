@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helpcenter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helpcenter",
+  "skill": {
+    "id": 22212,
+    "skillKey": "clawhub-helpcenter",
+    "name": "Help.Center Article Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helpcenter",
+    "url": "https://clawhub.ai/skills/helpcenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helpcenter-a87d201119094a59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, update, read, or manage help center articles via the Help.Center API. Use when the user says \"write a help article\", \"update t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shyjal",
+      "userId": "publishers:shyjal",
+      "displayName": "shyjal",
+      "image": "https://avatars.githubusercontent.com/u/1215425?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772435962346,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:307b201ea75ac5986936dc8239ae461f89eda6636f9f96ef4f92b85d17979f19"
+}

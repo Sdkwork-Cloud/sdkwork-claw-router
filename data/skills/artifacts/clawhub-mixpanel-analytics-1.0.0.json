@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mixpanel-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mixpanel_analytics",
+  "skill": {
+    "id": 52980,
+    "skillKey": "clawhub-mixpanel-analytics",
+    "name": "Mixpanel Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mixpanel-analytics",
+    "url": "https://clawhub.ai/skills/mixpanel-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mixpanel-analytics-54a9702d79f87152.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Mixpanel product analytics — events, funnels, retention, user profiles, and cohorts via the Mixpanel Data Export API. Use when you need to: (1) Query e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fr3kstyle",
+      "userId": "publishers:fr3kstyle",
+      "displayName": "fr3kstyle",
+      "image": "https://avatars.githubusercontent.com/u/218435724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774090952758,
+      "changelog": "Initial release: query events, funnels, retention, user profiles via Mixpanel Data Export API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd9c5a247fe69e85977bb5a93a700376e7f0adcbd1bc83538b587144db311cd6"
+}

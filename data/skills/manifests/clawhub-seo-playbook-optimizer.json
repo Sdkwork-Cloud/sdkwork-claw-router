@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37973,
+  "uuid": "skill-clawhub-seo-playbook-optimizer",
+  "skillKey": "clawhub-seo-playbook-optimizer",
+  "name": "Seo Playbook Optimizer",
+  "summary": "SEO + GEO content optimizer based on proven internal SOP playbook. Input a URL or keyword + page content, outputs a full SEO audit: keyword matrix, Title Tag...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_playbook_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mguozhen",
+      "features": [
+        "SEO + GEO content optimizer based on proven internal SOP playbook",
+        "Input a URL or keyword + page content, outputs a full SEO audit: keyword matrix, Title Tag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seo-playbook-optimizer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1411875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seo-playbook-optimizer",
+      "url": "https://clawhub.ai/skills/seo-playbook-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-playbook-optimizer",
+    "url": "https://clawhub.ai/skills/seo-playbook-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-playbook-optimizer-27819efc8a29dde4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seo-playbook-optimizer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seo-playbook-optimizer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:812c9fbd84114487f944faa7ee5ae266a4bf30e8c5d5f40e4a9b414c3e9c14e4",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T20:50:17.605Z"
+}

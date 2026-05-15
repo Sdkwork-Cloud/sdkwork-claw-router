@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71767,
+  "uuid": "skill-clawhub-bankstatement",
+  "skillKey": "clawhub-bankstatement",
+  "name": "银行流水解析，流水报告生成等",
+  "summary": "流水报告生成，基于用户输入的Excel/PDF流水文件路径和问题，自动上传文件并生成分析报告。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bankstatement",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ufcfengbin",
+      "features": [
+        "流水报告生成，基于用户输入的Excel/PDF流水文件路径和问题，自动上传文件并生成分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bankstatement@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19542876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bankstatement",
+      "url": "https://clawhub.ai/skills/bankstatement"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bankstatement",
+    "url": "https://clawhub.ai/skills/bankstatement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bankstatement-330db80eb5d0ac5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bankstatement@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-bankstatement-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:050db3592b837aea743e706047001aab73848c2af2652cbb6528418ac938370c",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:34:38.560Z"
+}

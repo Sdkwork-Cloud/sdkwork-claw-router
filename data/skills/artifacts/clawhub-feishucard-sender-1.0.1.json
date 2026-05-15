@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishucard-sender@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishucard_sender",
+  "skill": {
+    "id": 60688,
+    "skillKey": "clawhub-feishucard-sender",
+    "name": "feishu-card-sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishucard-sender",
+    "url": "https://clawhub.ai/skills/feishucard-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishucard-sender-06fa29d7179a28b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发送飞书卡片消息（支持纯文本和图片）。使用 message 工具的 card 参数，需要配置飞书应用凭证（App ID + App Secret）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blackswan-mohu",
+      "userId": "s17acvxhhnjcvszb7r2qw2vh6n83jssr",
+      "displayName": "blackswan-mohu",
+      "image": "https://avatars.githubusercontent.com/u/73108372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774451987007,
+      "changelog": "feishucard-sender 1.0.1\n\n- No changes to the code or documentation were detected in this release.\n- All existing instructions and usage examples remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5766b07cc8fae8efc8f26c48948937f0273cce77aac810b34e93291c21d60079"
+}

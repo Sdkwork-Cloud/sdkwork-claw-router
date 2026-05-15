@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17617,
+  "uuid": "skill-clawhub-letheclaw",
+  "skillKey": "clawhub-letheclaw",
+  "name": "letheClaw",
+  "summary": "Use letheClaw to store, search, and manage memories with criticality and provenance.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letheclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoahTheron",
+      "features": [
+        "Use letheClaw to store, search, and manage memories with criticality and provenance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/letheclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46815770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "letheclaw",
+      "url": "https://clawhub.ai/skills/letheclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letheclaw",
+    "url": "https://clawhub.ai/skills/letheclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letheclaw-8aef31613190fe91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/letheclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-letheclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54121380cc2191f8c495c1ceb537c59e67c74f38cbda55b8d496b400d05b5c2f",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T22:35:41.364Z"
+}

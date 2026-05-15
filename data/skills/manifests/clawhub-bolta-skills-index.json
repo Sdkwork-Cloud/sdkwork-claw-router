@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13780,
+  "uuid": "skill-clawhub-bolta-skills-index",
+  "skillKey": "clawhub-bolta-skills-index",
+  "name": "Social Media Automation Skills Registry",
+  "summary": "Bolta Skills Registry - canonical index and orchestration layer for all Bolta skills, organized by plane",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bolta_skills_index",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Max Fritzhand",
+      "features": [
+        "Bolta Skills Registry",
+        "canonical index and orchestration layer for all Bolta skills, organized by plane"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bolta-skills-index@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11081366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bolta-skills-index",
+      "url": "https://clawhub.ai/skills/bolta-skills-index"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bolta-skills-index",
+    "url": "https://clawhub.ai/skills/bolta-skills-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bolta-skills-index-be228d2448e07e80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bolta-skills-index@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bolta-skills-index-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7db1b7ad5481e55f8f07853a36d656f2dc824b6d0b3b8b7b1902f07c1028812",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T00:34:54.284Z"
+}

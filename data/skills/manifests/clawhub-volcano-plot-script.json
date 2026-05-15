@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29256,
+  "uuid": "skill-clawhub-volcano-plot-script",
+  "skillKey": "clawhub-volcano-plot-script",
+  "name": "Volcano Plot Script",
+  "summary": "Generate R/Python code for volcano plots from DEG (Differentially Expressed Genes) analysis results. Triggered when user needs visualization of gene expressi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano_plot_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EC-cyber258",
+      "features": [
+        "Generate R/Python code for volcano plots from DEG (Differentially Expressed Genes) analysis res.",
+        "Triggered when user needs visualization of gene expressi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcano-plot-script@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229709544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcano-plot-script",
+      "url": "https://clawhub.ai/skills/volcano-plot-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano-plot-script",
+    "url": "https://clawhub.ai/skills/volcano-plot-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-plot-script-88981205712ae6a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcano-plot-script@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcano-plot-script-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:615a0a472255d751865d4bf284ade8a46a40b5889f3eabe817d4df00fc26d8ff",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:33:17.462Z"
+}

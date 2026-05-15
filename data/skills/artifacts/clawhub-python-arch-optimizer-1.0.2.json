@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-arch-optimizer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_arch_optimizer",
+  "skill": {
+    "id": 62753,
+    "skillKey": "clawhub-python-arch-optimizer",
+    "name": "python-arch-optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-arch-optimizer",
+    "url": "https://clawhub.ai/skills/python-arch-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-arch-optimizer-c3199b25bf964b52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python 项目架构优化技能。用于分析和重构 Python 项目结构，使其符合最佳实践。使用场景：(1) 评估现有项目架构，(2) 重构目录结构，(3) 优化依赖管理，(4) 改进代码组织，(5) 建立测试架构，(6) 配置 CI/CD"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jjflydudu",
+      "userId": "publishers:jjflydudu",
+      "displayName": "test_heng",
+      "image": "https://avatars.githubusercontent.com/u/50108647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773561204068,
+      "changelog": "- 迁移脚本的执行确认方式，新增支持 \"yes\"、\"y\"、\"确认\"、\"是\" 等多种表达。\n- 其余内容无变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bccc83d536e95a77453fece1cd5949c651631418dc3eb85101144594cb91737"
+}

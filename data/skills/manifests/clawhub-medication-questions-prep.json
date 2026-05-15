@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54555,
+  "uuid": "skill-clawhub-medication-questions-prep",
+  "skillKey": "clawhub-medication-questions-prep",
+  "name": "Medication Questions Prep",
+  "summary": "Prepare structured questions for your clinician or pharmacist about your medications — no dosing advice, ever.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medication_questions_prep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Prepare structured questions for your clinician or pharmacist about your medications — no dosin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medication-questions-prep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medication-questions-prep",
+      "url": "https://clawhub.ai/skills/medication-questions-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medication-questions-prep",
+    "url": "https://clawhub.ai/skills/medication-questions-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medication-questions-prep-825800694367f7f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medication-questions-prep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medication-questions-prep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a05ef2383feb3998ff72bf293c37db633f1274a4db79b5848ff7df913c074cd8",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T05:41:09.977Z"
+}

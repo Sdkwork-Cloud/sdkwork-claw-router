@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8922,
+  "uuid": "skill-clawhub-openclaw-mission-control",
+  "skillKey": "clawhub-openclaw-mission-control",
+  "name": "Mission Control",
+  "summary": "macOS-native web dashboard for monitoring and controlling your OpenClaw agent. Live chat, cron management, task workshop, scout engine, cost tracking, and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mission_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jzineldin",
+      "features": [
+        "macOS-native web dashboard for monitoring and controlling your OpenClaw agent",
+        "Live chat, cron management, task workshop, scout engine, cost tracking, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-mission-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191884888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-mission-control",
+      "url": "https://clawhub.ai/skills/openclaw-mission-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mission-control",
+    "url": "https://clawhub.ai/skills/openclaw-mission-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mission-control-798595a38d652d74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-mission-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mission-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7663a4d0e41417ef93abce6e1bcdec6739d680058fa2fce4d8813a89960ec1b3",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T02:12:09.820Z"
+}

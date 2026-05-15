@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minecraft-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minecraft_bridge",
+  "skill": {
+    "id": 23235,
+    "skillKey": "clawhub-minecraft-bridge",
+    "name": "minecraft-bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minecraft-bridge",
+    "url": "https://clawhub.ai/skills/minecraft-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minecraft-bridge-1eb8be8472078f74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local HTTP bridge for Mineflayer-based live control of a Minecraft Java bot. Trigger when the user wants to connect a bot to their world, check bot status/in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "en1r0py1865",
+      "userId": "publishers:en1r0py1865",
+      "displayName": "en1r0py1865",
+      "image": "https://avatars.githubusercontent.com/u/175953756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773163495922,
+      "changelog": "- Initial release of minecraft-bridge skill: a local HTTP bridge for live control of a Minecraft Java bot via Mineflayer.\n- Enables in-game bot actions (move, mine, craft, follow, chat) and live state reads (status, inventory, position) through a REST API.\n- Setup instructions included for connecting to local or LAN-hosted Minecraft Java worlds.\n- Comprehensive HTTP API for real-time bot management; includes error handling and integration guidance for dependent skills.\n- Distinct usage boundaries established: use only for live-game interaction, not for knowledge or server administration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97cc50201ec4f4f656876a75c794d7d48c985f81c06b1b388f2ae6c9085dab77"
+}

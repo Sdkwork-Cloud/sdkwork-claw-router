@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17486,
+  "uuid": "skill-clawhub-gws-sheets-append",
+  "skillKey": "clawhub-gws-sheets-append",
+  "name": "Gws Sheets Append",
+  "summary": "Google Sheets: Append a row to a spreadsheet.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_sheets_append",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Sheets: Append a row to a spreadsheet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-sheets-append@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-sheets-append",
+      "url": "https://clawhub.ai/skills/gws-sheets-append"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-sheets-append",
+    "url": "https://clawhub.ai/skills/gws-sheets-append",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-sheets-append-1a0c4d9356ecb3ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-sheets-append@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-sheets-append-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7b99365bde057ecb4efad311f43ad4e3cef420ef603b60d434010adb1702a54",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:52:04.524Z"
+}

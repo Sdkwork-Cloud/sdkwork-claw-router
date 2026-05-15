@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url-preview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_preview",
+  "skill": {
+    "id": 29126,
+    "skillKey": "clawhub-url-preview",
+    "name": "URL Preview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-preview",
+    "url": "https://clawhub.ai/skills/url-preview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-preview-8adfe6068d2ffa52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically extract and display titles, descriptions, and favicons for shared HTTP/HTTPS URLs to preview webpage content without visiting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingfish1949101-wq",
+      "userId": "publishers:kingfish1949101-wq",
+      "displayName": "kingfish1949101-wq",
+      "image": "https://avatars.githubusercontent.com/u/261207010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773413346408,
+      "changelog": "- Initial release providing URL preview functionality.\n- Automatically extracts and displays page title, description (max 200 chars), favicon, and domain.\n- Activates when a user shares an HTTP/HTTPS link or requests a preview using supported trigger phrases.\n- Works only for public URLs and respects rate limits (max 5 URLs per minute).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27ea07e22a0842448d9db24aae7546e5fcbc591db6ac91c6e96cf8929167adc4"
+}

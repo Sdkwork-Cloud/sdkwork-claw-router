@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45121,
+  "uuid": "skill-clawhub-podcast-video-camera",
+  "skillKey": "clawhub-podcast-video-camera",
+  "name": "Podcast Video Camera",
+  "summary": "Get polished podcast videos ready to post, without touching a single slider. Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_video_camera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get polished podcast videos ready to post, without touching a single slider",
+        "Upload your raw footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-video-camera@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-video-camera",
+      "url": "https://clawhub.ai/skills/podcast-video-camera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-video-camera",
+    "url": "https://clawhub.ai/skills/podcast-video-camera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-video-camera-eb5ee86884207e77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-video-camera@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-video-camera-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:155549022af880690a49c3d21df149440b6d6f8305f2934f39b2de71c5b8ea87",
+      "artifactSizeBytes": 2576
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:44:31.969Z"
+}

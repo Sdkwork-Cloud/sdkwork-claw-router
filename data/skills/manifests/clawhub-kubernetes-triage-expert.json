@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38487,
+  "uuid": "skill-clawhub-kubernetes-triage-expert",
+  "skillKey": "clawhub-kubernetes-triage-expert",
+  "name": "Kubernetes Triage Expert",
+  "summary": "Analyze Kubernetes faults using only user-provided evidence. Classify the fault, rank likely hypotheses, request the next highest-value checks, and keep fact...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_triage_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ghostwritten",
+      "features": [
+        "Analyze Kubernetes faults using only user-provided evidence",
+        "Classify the fault, rank likely hypotheses, request the next highest-value checks, and keep fac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-triage-expert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19782612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-triage-expert",
+      "url": "https://clawhub.ai/skills/kubernetes-triage-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-triage-expert",
+    "url": "https://clawhub.ai/skills/kubernetes-triage-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-triage-expert-5a735e9808175511.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-triage-expert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-triage-expert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d57ec26bf9e5d0d93cdae90fe0cc3397fbba7cc7194a6be4cf054eefe0d006a",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:24:25.075Z"
+}

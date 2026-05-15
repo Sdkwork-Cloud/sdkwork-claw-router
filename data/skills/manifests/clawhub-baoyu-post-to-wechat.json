@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55075,
+  "uuid": "skill-clawhub-baoyu-post-to-wechat",
+  "skillKey": "clawhub-baoyu-post-to-wechat",
+  "name": "Baoyu Post To Wechat",
+  "summary": "Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-tex...",
+  "version": "1.103.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_post_to_wechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jim Liu 宝玉",
+      "features": [
+        "Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP",
+        "Supports article posting (文章) with HTML, markdown, or plain text input, and image-tex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baoyu-post-to-wechat@1.103.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/648674?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baoyu-post-to-wechat",
+      "url": "https://clawhub.ai/skills/baoyu-post-to-wechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-post-to-wechat",
+    "url": "https://clawhub.ai/skills/baoyu-post-to-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-post-to-wechat-152d5fa2efc2fea2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baoyu-post-to-wechat@1.103.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-baoyu-post-to-wechat-1.103.2.json",
+      "version": "1.103.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bce437768d216bd09803fb808526f460a4b1ddc7eedf67ceb9907166cf9e4ee",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T22:03:07.853Z"
+}

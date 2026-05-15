@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13606,
+  "uuid": "skill-clawhub-remote-jobs-finder",
+  "skillKey": "clawhub-remote-jobs-finder",
+  "name": "Remote Jobs Finder",
+  "summary": "Fully conversational remote job finder for WhatsApp powered by Remote Rocketship. Uses rr_jobs_search tool (server-side RR_API_KEY) and supports pagination (...",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_jobs_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lior539",
+      "features": [
+        "Fully conversational remote job finder for WhatsApp powered by Remote Rocketship",
+        "Uses rr_jobs_search tool (server-side RR_API_KEY) and supports pagination (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-jobs-finder@1.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7090054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-jobs-finder",
+      "url": "https://clawhub.ai/skills/remote-jobs-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-jobs-finder",
+    "url": "https://clawhub.ai/skills/remote-jobs-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-jobs-finder-e55255f1293c7664.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-jobs-finder@1.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-jobs-finder-1.6.2.json",
+      "version": "1.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d84faa321c52a05e54c5838cfc6eb2f7f2dc596756563cf10bb711598033012",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:23:09.261Z"
+}

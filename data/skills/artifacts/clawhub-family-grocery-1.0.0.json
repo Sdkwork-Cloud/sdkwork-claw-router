@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-grocery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_grocery",
+  "skill": {
+    "id": 51326,
+    "skillKey": "clawhub-family-grocery",
+    "name": "Family Grocery List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-grocery",
+    "url": "https://clawhub.ai/skills/family-grocery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-grocery-09058abb7f5d1fb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared family grocery list — multiple members add, remove, and view items organized by store. Admin-managed access, web-verified store addresses and item ava..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adeydas",
+      "userId": "s1720ga5s5mher1f9skk9aw6tn83t44w",
+      "displayName": "adeydas",
+      "image": "https://avatars.githubusercontent.com/u/1383020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773448844079,
+      "changelog": "Family Grocery 1.0.0 — Initial Release\n\n- Shared family grocery list for multiple members, organized by store with verified addresses.\n- Role-based access: admin manages users and store settings, members can add/remove/view items.\n- Web search integration for store addresses and item availability, with graceful fallback if unavailable.\n- All changes logged with user attribution and timestamps; history viewable on request.\n- Requires per-user identity and shared data path configured in OpenClaw memory before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:144c687020966799da80a5a53f5ddff4e949b0c1c8e56dc1ca15631f63e5b9c3"
+}

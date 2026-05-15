@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neomano-binance-assets@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_binance_assets",
+  "skill": {
+    "id": 26992,
+    "skillKey": "clawhub-neomano-binance-assets",
+    "name": "Neomano Binance Assets (Read-only)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-binance-assets",
+    "url": "https://clawhub.ai/skills/neomano-binance-assets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-binance-assets-221340ea07966441.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe, read-only Binance balance viewer (Spot wallet) using Binance API keys with READ-ONLY permissions. Use when the user wants to check holdings/balances/as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elandivar",
+      "userId": "s17abqhgmxav893t9p3w692jms83jmw7",
+      "displayName": "elandivar",
+      "image": "https://avatars.githubusercontent.com/u/4536961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773870055032,
+      "changelog": "Security: hardcode Binance API base URL (remove BINANCE_BASE_URL env override) to prevent credential exfiltration via redirected signed requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0d2d18baeb60a7d14d5223e4189b133e64c34e067d44b3e144f4ed39a4a69a7"
+}

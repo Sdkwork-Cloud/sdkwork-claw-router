@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r2-storage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r2_storage",
+  "skill": {
+    "id": 55493,
+    "skillKey": "clawhub-r2-storage",
+    "name": "R2 Storage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r2-storage",
+    "url": "https://clawhub.ai/skills/r2-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r2-storage-07bd2aec9a48e7a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloudflare R2 Storage management — setup, upload, download, sync via rclone"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwatu",
+      "userId": "s179fqp6c031f2dar75mv4pghh83ekzn",
+      "displayName": "junwatu",
+      "image": "https://avatars.githubusercontent.com/u/948279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774315952892,
+      "changelog": "- Initial release of r2: Cloudflare R2 Storage management skill using rclone.\n- Supports setup, upload, download, list, sync, and delete operations via simple commands.\n- Requires rclone and Cloudflare R2 credentials configured via R2_CONFIG.\n- Includes troubleshooting tips and direct rclone usage examples.\n- Provides setup scripts and helper commands for credentials and management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02db8dc0534052040bcc66f510c5a58ce37b8547488cee285cee5ab58b1be30f"
+}

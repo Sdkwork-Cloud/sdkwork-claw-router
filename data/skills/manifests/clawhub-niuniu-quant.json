@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73388,
+  "uuid": "skill-clawhub-niuniu-quant",
+  "skillKey": "clawhub-niuniu-quant",
+  "name": "牛牛量化股票系统",
+  "summary": "专业股票量化交易技能，支持实时数据查询、策略回测、智能选股及交易信号提示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niuniu_quant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhfqqqq1234",
+      "features": [
+        "专业股票量化交易技能，支持实时数据查询、策略回测、智能选股及交易信号提示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/niuniu-quant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16670751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "niuniu-quant",
+      "url": "https://clawhub.ai/skills/niuniu-quant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niuniu-quant",
+    "url": "https://clawhub.ai/skills/niuniu-quant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niuniu-quant-8f05f1e9e5bfeec1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/niuniu-quant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-niuniu-quant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba1f8d04eb6220a8b53dd91802b45df50ca764937709c34789ef5cd73112a99a",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:08:40.258Z"
+}

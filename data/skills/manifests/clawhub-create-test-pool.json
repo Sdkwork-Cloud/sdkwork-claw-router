@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17102,
+  "uuid": "skill-clawhub-create-test-pool",
+  "skillKey": "clawhub-create-test-pool",
+  "name": "Uniswap Create Test Pool",
+  "summary": "Deploy a custom Uniswap pool on the local testnet with configurable parameters. Create pools with specific conditions (thin liquidity, wide spreads, exact tick ranges) to test agent behavior under controlled scenarios. Requires a running l.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_test_pool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Deploy a custom Uniswap pool on the local testnet with configurable parameters",
+        "Create pools with specific conditions (thin liquidity, wide spreads, exact tick ranges) to test.",
+        "Requires a running local testnet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-test-pool@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-test-pool",
+      "url": "https://clawhub.ai/skills/create-test-pool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-test-pool",
+    "url": "https://clawhub.ai/skills/create-test-pool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-test-pool-685b8a3df57a809d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-test-pool@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-test-pool-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5440e4ef3ae8ae27112ce9e805c264bedca3f62f716548409d4baee9fa34f57c",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:41:04.422Z"
+}

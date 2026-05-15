@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raspberry-pi-servo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raspberry_pi_servo",
+  "skill": {
+    "id": 62335,
+    "skillKey": "clawhub-raspberry-pi-servo",
+    "name": "raspberry-pi-servo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raspberry-pi-servo",
+    "url": "https://clawhub.ai/skills/raspberry-pi-servo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raspberry-pi-servo-9c57abbfcfe8acb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过硬件PWM来控制树莓派上的舵机. 何时触发: 当需要精确控制舵机时."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cld1994",
+      "userId": "s176kfn77th5avbe3me5ygw01d845v6f",
+      "displayName": "CLD1994",
+      "image": "https://avatars.githubusercontent.com/u/10044266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817042775,
+      "changelog": "Initial release of raspberry-pi-servo.\n\n- Provides a guide for enabling and using hardware PWM on the Raspberry Pi to control servos.\n- Includes instructions for checking and enabling hardware PWM via config.txt and system directories.\n- Outlines detailed installation steps, recommending a Python virtual environment.\n- Supplies usage examples for the rpi-hardware-pwm Python library.\n- Offers troubleshooting resource for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b92cf0e98f48408dbcd779e25b78b9b71995d54ca3fe7aabdf0e48a50e154dd"
+}

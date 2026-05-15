@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-chrome-web-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_chrome_web_automation",
+  "skill": {
+    "id": 41111,
+    "skillKey": "clawhub-claude-code-chrome-web-automation",
+    "name": "Chrome Web Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-chrome-web-automation",
+    "url": "https://clawhub.ai/skills/claude-code-chrome-web-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-chrome-web-automation-f580552d5c7f03e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants browser automation in an existing Chrome session: click, fill, inspect tabs, capture screenshots, or debug web flows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wimi321",
+      "userId": "s177xf3genmsr92b653psf6fas83zzd8",
+      "displayName": "wimi321",
+      "image": "https://avatars.githubusercontent.com/u/34830250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775060251542,
+      "changelog": "Initial extraction from local Claude Code source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95d805ed36891ef2ff3eb325803f8b1f9e516989264809c0781be9746d2484eb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crawhub-skill-yesapi@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crawhub_skill_yesapi",
+  "skill": {
+    "id": 68949,
+    "skillKey": "clawhub-crawhub-skill-yesapi",
+    "name": "YesApi 果创云低代码平台"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crawhub-skill-yesapi",
+    "url": "https://clawhub.ai/skills/crawhub-skill-yesapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crawhub-skill-yesapi-c8ec59fe7579567d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "封装YesApi果创云低代码平台API，支持管理表单结构与执行表单数据的增删改查及批量操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phalapi",
+      "userId": "s17c1232sz6h8za6wth1ajdns183g7kj",
+      "displayName": "dogstar",
+      "image": "https://avatars.githubusercontent.com/u/12585518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774258481399,
+      "changelog": "Version 1.1.0\n\n- Updated documentation in README.md for improved clarity and usage examples.\n- Enhanced and refactored test cases in test_yesapi.py.\n- Made minor improvements and potential bug fixes in yesapi_client.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2648f90dbde9b99bb4e800dcbf2a48d31396b91fad22f08dd32783e1131358d8"
+}

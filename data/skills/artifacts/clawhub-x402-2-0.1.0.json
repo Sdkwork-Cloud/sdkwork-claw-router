@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x402-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x402_2",
+  "skill": {
+    "id": 15256,
+    "skillKey": "clawhub-x402-2",
+    "name": "X402"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x402-2",
+    "url": "https://clawhub.ai/skills/x402-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x402-2-d9a3578d95fc2367.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for new services and make paid API requests using the x402 payment protocol. Use when you don't have a clear tool to choose, search the bazaar. You can also use this tool if you or the user want to call an x402 endpoint, discover pa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrag",
+      "userId": "publishers:0xrag",
+      "displayName": "0xRAG",
+      "image": "https://avatars.githubusercontent.com/u/15928227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1037,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770843455778,
+      "changelog": "x402-2 v0.1.0 Changelog\n\n- Initial release of x402 skill.\n- Enables searching for paid API services using the x402 protocol in the bazaar.\n- Supports inspecting payment requirements and schemas for endpoints before purchase.\n- Allows making automated, authenticated USDC payments and calling paid API endpoints.\n- Provides commands for searching, browsing, and discovering details about bazaar resources.\n- Includes error handling for authentication, insufficient balance, and endpoint compatibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82003500071c63b1e700cec1530776b85d7179842993708b4203f0131e62e03a"
+}

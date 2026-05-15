@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29109,
+  "uuid": "skill-clawhub-qqbot-send",
+  "skillKey": "clawhub-qqbot-send",
+  "name": "QQBot Send",
+  "summary": "Send local files, images, audio, video, and other media through QQBot end to end. Use when the user asks to send a file to QQ, send a desktop/downloads/local...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zykkk-power",
+      "features": [
+        "Send local files, images, audio, video, and other media through QQBot end to end",
+        "Use when the user asks to send a file to QQ, send a desktop/downloads/local..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185013102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot-send",
+      "url": "https://clawhub.ai/skills/qqbot-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-send",
+    "url": "https://clawhub.ai/skills/qqbot-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-send-4482ee11872da897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed0f151b04b6684385bdb6f534efd91f49cdaa67bf48c8863c38efd89e12e6db",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T14:05:26.383Z"
+}

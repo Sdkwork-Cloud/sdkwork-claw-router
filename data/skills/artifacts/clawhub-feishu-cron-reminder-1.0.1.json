@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-cron-reminder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cron_reminder",
+  "skill": {
+    "id": 67816,
+    "skillKey": "clawhub-feishu-cron-reminder",
+    "name": "feishu-cron-reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cron-reminder",
+    "url": "https://clawhub.ai/skills/feishu-cron-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cron-reminder-5e895fc38429c28a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在飞书机器人上创建和管理定时提醒任务。支持一次性提醒和循环提醒，自动发送消息到飞书用户或群组。当用户提到\"飞书定时提醒\"、\"飞书定时任务\"、\"飞书 cron\"、\"飞书提醒\"时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zzqsama066",
+      "userId": "s17dyc6vfp7n5hkd3j2d67y20x83gx0t",
+      "displayName": "ZZQSAMA066",
+      "image": "https://avatars.githubusercontent.com/u/76558347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775552963741,
+      "changelog": "Fix metadata: remove redundant feishu_bot_id/secret fields to match SKILL.md dependencies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88a8b16e90e0867cdfb4b29e6fef61a7ac3dfaae77fd5f930e82ab015aff500e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54575,
+  "uuid": "skill-clawhub-fal-api",
+  "skillKey": "clawhub-fal-api",
+  "name": "Fal.ai API",
+  "summary": "Fal.Ai Media Generation — Generate images, videos, and audio via fal.ai API (FLUX, SDXL, Whisper, etc.)",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fal_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ricanwarfare",
+      "features": [
+        "Fal.Ai Media Generation — Generate images, videos, and audio via fal.ai API (FLUX, SDXL, Whispe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fal-api@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33404913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fal-api",
+      "url": "https://clawhub.ai/skills/fal-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fal-api",
+    "url": "https://clawhub.ai/skills/fal-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fal-api-9484f069cbcf499c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fal-api@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fal-api-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57c414d33be7a9cbe01180aed64475731430eb4ba6f098680be92c9b88e77759",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T00:01:21.509Z"
+}

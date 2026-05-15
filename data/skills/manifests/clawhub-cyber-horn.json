@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18541,
+  "uuid": "skill-clawhub-cyber-horn",
+  "skillKey": "clawhub-cyber-horn",
+  "name": "Cyber Horn",
+  "summary": "Turn text into spoken Feishu (Lark) voice messages. Use when the agent should speak in a Feishu group, send voice alerts or announcements, or reply with a pl...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_horn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richerlv",
+      "features": [
+        "Turn text into spoken Feishu (Lark) voice messages",
+        "Use when the agent should speak in a Feishu group, send voice alerts or announcements, or reply."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyber-horn@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81056591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyber-horn",
+      "url": "https://clawhub.ai/skills/cyber-horn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-horn",
+    "url": "https://clawhub.ai/skills/cyber-horn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-horn-1ed91e6d95a771d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyber-horn@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyber-horn-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:106c29196c29a64d6b3af3e669c2de84e6a7c8ff94818971bedeafbd6a4105db",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:14:18.554Z"
+}

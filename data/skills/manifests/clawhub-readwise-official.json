@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16792,
+  "uuid": "skill-clawhub-readwise-official",
+  "skillKey": "clawhub-readwise-official",
+  "name": "Readwise Official",
+  "summary": "Access your Readwise highlights and Reader documents from the command line. Search, read, organize, and manage your entire reading library.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readwise_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan",
+      "features": [
+        "Access your Readwise highlights and Reader documents from the command line",
+        "Search, read, organize, and manage your entire reading library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readwise-official@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1284332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readwise-official",
+      "url": "https://clawhub.ai/skills/readwise-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readwise-official",
+    "url": "https://clawhub.ai/skills/readwise-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readwise-official-ebe2688ba6b5b0f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readwise-official@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-readwise-official-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a3a87ecf4a469daf4b8e7ab14263eb001a727a5b498febeb494ad43868661d5",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:23:07.142Z"
+}

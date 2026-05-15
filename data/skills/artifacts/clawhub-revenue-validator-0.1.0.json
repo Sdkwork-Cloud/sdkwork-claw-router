@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revenue-validator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revenue_validator",
+  "skill": {
+    "id": 34595,
+    "skillKey": "clawhub-revenue-validator",
+    "name": "Revenue Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revenue-validator",
+    "url": "https://clawhub.ai/skills/revenue-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revenue-validator-beebe37901848adf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates side hustle ideas against a 48-hour market demand test, scoring buyer reach, problem urgency, deliverability, infrastructure, and ecosystem fit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asimons81",
+      "userId": "s17cyvwqx8jp9cdsp14hbw4wgs83gw6d",
+      "displayName": "Tony Simons",
+      "image": "https://avatars.githubusercontent.com/u/214744153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774832500897,
+      "changelog": "Initial release of revenue-validator\n\n- Validates side hustle ideas using a structured 5-point demand filter.\n- Provides a clear pass/fail for each criterion, overall score, and MVT advice.\n- Identifies the single biggest blocker and recommends pivot direction if failing.\n- Strictly enforces a 48-hour validation window with specific success metrics.\n- Rejects ideas requiring upfront spend before achieving first market signal.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:309380036044ed969179ac3dabca6077e3375a6f44386d5a7712c0f6a2d534ac"
+}

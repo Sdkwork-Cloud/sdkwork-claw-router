@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18112,
+  "uuid": "skill-clawhub-presale-regulation-auditor",
+  "skillKey": "clawhub-presale-regulation-auditor",
+  "name": "Presale Regulation Auditor",
+  "summary": "Audit regulation freshness and update policy-driven controls without hardcoding. Use when checking if sales/process regulations are outdated, inconsistent wi...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presale_regulation_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dima Tsiomo",
+      "features": [
+        "Audit regulation freshness and update policy-driven controls without hardcoding",
+        "Use when checking if sales/process regulations are outdated, inconsistent wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presale-regulation-auditor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59199852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presale-regulation-auditor",
+      "url": "https://clawhub.ai/skills/presale-regulation-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presale-regulation-auditor",
+    "url": "https://clawhub.ai/skills/presale-regulation-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presale-regulation-auditor-5c4c7f8cf7086d78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presale-regulation-auditor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-presale-regulation-auditor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f8eea194258fae6ef35f518f89161dbdfb76b8cc3aa0d155dfcdebb5d5c0cdc",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T05:44:00.273Z"
+}

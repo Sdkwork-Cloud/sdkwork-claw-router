@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_agent",
+  "skill": {
+    "id": 9680,
+    "skillKey": "clawhub-phone-agent",
+    "name": "Phone Voice Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-agent",
+    "url": "https://clawhub.ai/skills/phone-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-agent-50c182c7d2e91461.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a real-time AI phone agent using Twilio, Deepgram, and ElevenLabs. Handles incoming calls, transcribes audio, generates responses via LLM, and speaks back via streaming TTS. Use when user wants to: (1) Test voice AI capabilities, (2) H."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2882,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769838219955,
+      "changelog": "Initial ClawHub release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1adf2185f7eb9e4ccdde63ff145a0b75d9337de2173f02132c3990dac3699543"
+}

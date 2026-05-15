@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16254,
+  "uuid": "skill-clawhub-quick-test",
+  "skillKey": "clawhub-quick-test",
+  "name": "Quick Test",
+  "summary": "Run basic system commands to verify Python, working directory, file access, and command execution for OpenClaw environment validation and debugging.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GustavoZiaugra",
+      "features": [
+        "Run basic system commands to verify Python, working directory, file access, and command executi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30840206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-test",
+      "url": "https://clawhub.ai/skills/quick-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-test",
+    "url": "https://clawhub.ai/skills/quick-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-test-01dfbf24cdd0d3c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8ef68e15437662fe4c4ddbbe900bdfa3133499968792a68ba4d69f4dce4a5c4",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:22:44.932Z"
+}

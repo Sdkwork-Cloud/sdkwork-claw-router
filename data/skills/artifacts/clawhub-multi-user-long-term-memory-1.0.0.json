@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-user-long-term-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_user_long_term_memory",
+  "skill": {
+    "id": 64821,
+    "skillKey": "clawhub-multi-user-long-term-memory",
+    "name": "多用户隔离型长期记忆 Multi-user Long Term Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-user-long-term-memory",
+    "url": "https://clawhub.ai/skills/multi-user-long-term-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-user-long-term-memory-9731613c40f6fd8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为多个用户创建和管理独立的长期记忆文件，记录偏好和上下文并按用户名隔离存储。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kadbbz",
+      "userId": "s17c9yyt2sff7jk8nmf7ptf3r183g8kf",
+      "displayName": "宁伟",
+      "image": "https://avatars.githubusercontent.com/u/1631544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2073,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773744676903,
+      "changelog": "- Initial release: Manage long-term memory files for multiple users.\n- Creates and maintains independent memory files per user, tracking preferences, context, and important info.\n- Automatically identifies users using the part of `sender_id` before the `|` symbol.\n- Provides APIs to get, save, append, and initialize user memory files.\n- Memory files are stored in Markdown format for each user in a dedicated directory, enabling easy editing and persistent user context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97150255ff19a323ad6c603e8650902bb59ff0eb02f04227c1d878c93a13b9de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-0-video-generation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_0_video_generation",
+  "skill": {
+    "id": 45532,
+    "skillKey": "clawhub-seedance-2-0-video-generation",
+    "name": "For long videos, automatically split the video task, using the last frame of the previous video as the first frame of the curre."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-0-video-generation",
+    "url": "https://clawhub.ai/skills/seedance-2-0-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-0-video-generation-b6db89de54175e75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI videos using ByteDance Seedance 2.0. Use when the user wants to: (1) generate videos from text prompts, (2) generate videos from images (first fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liusaikang",
+      "userId": "s175h59dw4v4tqxfekcyq4nsv583k1t3",
+      "displayName": "liusaikang",
+      "image": "https://avatars.githubusercontent.com/u/175816566?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776161107780,
+      "changelog": "- Documentation updates only; no functional changes to the skill.\n- SKILL.md reformatted or touched, but version and implementation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf981ec34511007bab1108a3ec9c43805e082bdee40cd581818e61fbeedc3ec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiankangguanli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiankangguanli",
+  "skill": {
+    "id": 73275,
+    "skillKey": "clawhub-jiankangguanli",
+    "name": "健康管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiankangguanli",
+    "url": "https://clawhub.ai/skills/jiankangguanli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiankangguanli-a70199b3433cfaed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于用户每一次提交的个人医疗数据（如体检报告、化验单、检查报告等），立即对用户的各项常见疾病，进行AI评估并生成“患病概率”。以及进一步的个性化、精准健康干预方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lantian888",
+      "userId": "s176arne6jzyxg9h9sqks6zzr984ymqy",
+      "displayName": "lantian888",
+      "image": "https://avatars.githubusercontent.com/u/30491114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776346538483,
+      "changelog": "健康管理 1.0.0 发布\n\n- 新增健康管理，支持结构化收集用户健康信息（人口学特征、病史、用药、检验报告等）。\n- 集成大模型API，自动评估常见疾病风险并生成详细报告，结果保证无损透明呈现。\n- 支持按需生成个性化HTML健康风险报告，并自动嵌入健康筛查与热线配置信息。\n- 严格遵循流程，不允许主动生成医疗建议或修改模型返回内容。\n- 增强健壮性：API异常时友好提醒用户，保障体验连续。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afc4d794b5a58b23c4d8c074cca1d9f5e5b72290f420ca9949d86724d79cef03"
+}

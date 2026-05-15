@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pci-dss-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pci_dss_checker",
+  "skill": {
+    "id": 34155,
+    "skillKey": "clawhub-pci-dss-checker",
+    "name": "PCI DSS Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pci-dss-checker",
+    "url": "https://clawhub.ai/skills/pci-dss-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pci-dss-checker-77533db2d26e203b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates an organization's payment card processing environment against PCI DSS requirements and returns a comprehensive compliance assessment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774244156081,
+      "changelog": "Initial release of PCI DSS Compliance Checker.\n\n- Provides a security assessment tool for evaluating PCI DSS compliance across all 12 requirements.\n- Accepts detailed input about an organization's cardholder data environment, security controls, and operational practices.\n- Returns a comprehensive compliance assessment with individual requirement scores and summaries.\n- Supplies actionable recommendations and clear next steps for maintaining or achieving compliance.\n- Offers a simple POST endpoint (/pci-compliance) with structured input and output for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac12215c46bc426d199d29c6b4c5ef1209db3975f6fd32f1a4da78eab8787ae4"
+}

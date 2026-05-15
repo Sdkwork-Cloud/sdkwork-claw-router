@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-scheduler@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_scheduler",
+  "skill": {
+    "id": 11490,
+    "skillKey": "clawhub-social-scheduler",
+    "name": "Social Media Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-scheduler",
+    "url": "https://clawhub.ai/skills/social-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-scheduler-274dea351b1fb856.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and post text, images, videos, and threads across Discord, Reddit, Twitter/X, Mastodon, Bluesky, Moltbook, LinkedIn, and Telegram via OAuth or API k..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrshorrid",
+      "userId": "publishers:mrshorrid",
+      "displayName": "Shilatdoesai",
+      "image": "https://avatars.githubusercontent.com/u/88950077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1978,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770276506825,
+      "changelog": "Free alternative to Postiz - 8 platforms, 98% test coverage, production-ready",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5a07640c8960372215fd67ae7526d0623a7d3eb97e1d37ab6000af2d1409180"
+}

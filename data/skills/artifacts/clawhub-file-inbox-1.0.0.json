@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-inbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_inbox",
+  "skill": {
+    "id": 42532,
+    "skillKey": "clawhub-file-inbox",
+    "name": "File Inbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-inbox",
+    "url": "https://clawhub.ai/skills/file-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-inbox-f2af047e248633ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bidirectional file management system for OpenClaw workspaces. Organizes, indexes, and retrieves files exchanged with users via any channel. Use when: a user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dgkim311",
+      "userId": "s17f07vnrek6376aknx29e5he5842w17",
+      "displayName": "dgkim311",
+      "image": "https://avatars.githubusercontent.com/u/256553609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775876085221,
+      "changelog": "Initial release: bidirectional file management for OpenClaw workspaces",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94c2d3b42fc5c3cf6660ab80f79308d698ace2ef31ccea85770549deaeda4cab"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37670,
+  "uuid": "skill-clawhub-vendasta",
+  "skillKey": "clawhub-vendasta",
+  "name": "Vendasta",
+  "summary": "Vendasta integration. Manage data, records, and automate workflows. Use when the user wants to interact with Vendasta data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendasta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Vendasta integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Vendasta data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendasta@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendasta",
+      "url": "https://clawhub.ai/skills/vendasta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendasta",
+    "url": "https://clawhub.ai/skills/vendasta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendasta-223c77bef2e9a112.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendasta@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendasta-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32476214ff7550f09e83358f42cb8a04166c6a81a862691ad7243467e53ca5f4",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:09:01.644Z"
+}

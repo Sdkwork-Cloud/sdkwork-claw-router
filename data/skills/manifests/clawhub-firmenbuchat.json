@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52391,
+  "uuid": "skill-clawhub-firmenbuchat",
+  "skillKey": "clawhub-firmenbuchat",
+  "name": "firmenbuchat",
+  "summary": "CLI für den Zugriff auf das österreichische Firmenbuch (HVD WebServices).",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firmenbuchat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pasogott",
+      "features": [
+        "CLI für den Zugriff auf das österreichische Firmenbuch (HVD WebServices)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firmenbuchat@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23458152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firmenbuchat",
+      "url": "https://clawhub.ai/skills/firmenbuchat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firmenbuchat",
+    "url": "https://clawhub.ai/skills/firmenbuchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firmenbuchat-b7b6d05720df1477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firmenbuchat@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-firmenbuchat-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148cc1239fff9979ee3dcb734397d97cbf011d5f2c7d4bd0dcb8cfeeb70af054",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-12T12:19:28.354Z"
+}

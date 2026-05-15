@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39605,
+  "uuid": "skill-clawhub-church-event-planner",
+  "skillKey": "clawhub-church-event-planner",
+  "name": "Church Event Planner",
+  "summary": "Plan and manage church events from start to finish, including timelines, task checklists, vendors, and volunteer coordination. Use this skill whenever someon...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.church_event_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris-openclaw",
+      "features": [
+        "Plan and manage church events from start to finish, including timelines, task checklists, vendo.",
+        "Use this skill whenever someon..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/church-event-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271059507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "church-event-planner",
+      "url": "https://clawhub.ai/skills/church-event-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "church-event-planner",
+    "url": "https://clawhub.ai/skills/church-event-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/church-event-planner-f4768bd18de0fafb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/church-event-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-church-event-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30344e24e13f469e8a41f284b3630200ad01d846e670a9d5a4dc650803b2fd5",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:12:27.987Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20781,
+  "uuid": "skill-clawhub-trip-save",
+  "skillKey": "clawhub-trip-save",
+  "name": "Trip Save",
+  "summary": "Save travel inspiration from YouTube videos, Instagram reels, blog URLs, tweets, or plain text like \"want to visit Hampi\". Extracts destination, auto-tags by...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_save",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Swayam Gupta",
+      "features": [
+        "Save travel inspiration from YouTube videos, Instagram reels, blog URLs, tweets, or plain text.",
+        "Extracts destination, auto-tags by..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-save@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77153230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-save",
+      "url": "https://clawhub.ai/skills/trip-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-save",
+    "url": "https://clawhub.ai/skills/trip-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-save-33f2d5376a0f8910.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-save@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-save-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92ae3ad804c5e594aa35e8284df37dca4198b8a11a9f6004c589d9f8cc8f9f3b",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:35:18.856Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70681,
+  "uuid": "skill-clawhub-wecom-workplan-summary",
+  "skillKey": "clawhub-wecom-workplan-summary",
+  "name": "wecom-workplan-summary",
+  "summary": "团队工作计划周度/月度汇总分析。仅当用户**明确提供**了团队工作计划数据（粘贴内容或指向企微智能表格）并要求汇总/分析时触发。典型意图：\"这是团队工作计划，帮我看下上周/本周情况\"、\"我把数据复制过来了，分析一下\"、\"帮我从企微表格拉取工作计划汇总\"。**不触发**：仅提到\"周报\"、\"本周工作\"等通用词但未提供...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_workplan_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangpengle",
+      "features": [
+        "团队工作计划周度/月度汇总分析。仅当用户**明确提供**了团队工作计划数据（粘贴内容或指向企微智能表格）并要求汇总/分析时触发。典型意图：\"这是团队工作计划，帮我看下上周/本周情况\"、\"我把."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-workplan-summary@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152125462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-workplan-summary",
+      "url": "https://clawhub.ai/skills/wecom-workplan-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-workplan-summary",
+    "url": "https://clawhub.ai/skills/wecom-workplan-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-workplan-summary-6a11cd31002f8ae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-workplan-summary@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-workplan-summary-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df3e8b2b6fdb173b84117cc6c20e0cc34904102f8769d57716964a76c5a2eeea",
+      "artifactSizeBytes": 2833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:16:42.683Z"
+}

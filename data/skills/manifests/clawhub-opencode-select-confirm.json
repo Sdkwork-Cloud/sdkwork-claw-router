@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65155,
+  "uuid": "skill-clawhub-opencode-select-confirm",
+  "skillKey": "clawhub-opencode-select-confirm",
+  "name": "Opencode Select Confirm",
+  "summary": "当用户请求推荐多个选项时弹出选择框让用户确认，以及当用户说\"让我确认\"时显示确认对话框",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_select_confirm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TechhnicistSmallWhite",
+      "features": [
+        "当用户请求推荐多个选项时弹出选择框让用户确认，以及当用户说\"让我确认\"时显示确认对话框"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencode-select-confirm@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132131761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencode-select-confirm",
+      "url": "https://clawhub.ai/skills/opencode-select-confirm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-select-confirm",
+    "url": "https://clawhub.ai/skills/opencode-select-confirm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-select-confirm-6650a6360b641f3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencode-select-confirm@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencode-select-confirm-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a897ed0400d3006a6c6d0db6560b5316327f82fd8004df78bdb5b6c057a4560c",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:51:37.360Z"
+}

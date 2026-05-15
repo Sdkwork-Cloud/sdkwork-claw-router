@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50442,
+  "uuid": "skill-clawhub-polyclawster",
+  "skillKey": "clawhub-polyclawster",
+  "name": "PolyClawster",
+  "summary": "Trade on Polymarket prediction markets. Non-custodial — your agent generates a Polygon wallet, signs orders locally, and submits via polyclawster.com relay (...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclawster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilya",
+      "features": [
+        "Trade on Polymarket prediction markets",
+        "Non-custodial — your agent generates a Polygon wallet, signs orders locally, and submits via po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyclawster@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72158359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyclawster",
+      "url": "https://clawhub.ai/skills/polyclawster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclawster",
+    "url": "https://clawhub.ai/skills/polyclawster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclawster-2d0c13df6a10032d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyclawster@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyclawster-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aca3c57ab6577dd82b8e18416d37620e087eee30ee9d34a0fbfed6cf47dbfeea",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:45:29.584Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-fleet-manager-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_fleet_manager_pack",
+  "skill": {
+    "id": 24267,
+    "skillKey": "clawhub-firm-fleet-manager-pack",
+    "name": "Firm Fleet Manager Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-fleet-manager-pack",
+    "url": "https://clawhub.ai/skills/firm-fleet-manager-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-fleet-manager-pack-6dd6790a6b9ffeb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-instance Gateway fleet management pack. Status monitoring, dynamic add/remove, broadcast commands, config sync, and fleet inventory. 6 fleet orchestrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 405,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772403360156,
+      "changelog": "Initial release — 6 tools: fleet status, add, remove, broadcast, sync, list",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ff6198212e9d8e967c20a2910485e01b5fe5bfec9fb6c77b40bbf78457ba27f"
+}

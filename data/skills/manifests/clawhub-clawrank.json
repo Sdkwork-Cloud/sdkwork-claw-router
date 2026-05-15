@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23507,
+  "uuid": "skill-clawhub-clawrank",
+  "skillKey": "clawhub-clawrank",
+  "name": "ClawRank",
+  "summary": "Report local OpenClaw token usage to ClawRank (clawrank.dev), the AI agent leaderboard. Use when the user asks to submit, sync, report, or upload their agent...",
+  "version": "2.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawrank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hansen Liang",
+      "features": [
+        "Report local OpenClaw token usage to ClawRank (clawrank.dev), the AI agent leaderboard",
+        "Use when the user asks to submit, sync, report, or upload their agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawrank@2.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16120823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawrank",
+      "url": "https://clawhub.ai/skills/clawrank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawrank",
+    "url": "https://clawhub.ai/skills/clawrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawrank-ffec3371639eed3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawrank@2.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawrank-2.5.1.json",
+      "version": "2.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c6f0b5813f1920a5b8ca69c796eee0fb30021e1ff6218d3e8c85f64e187e400",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:34:23.820Z"
+}

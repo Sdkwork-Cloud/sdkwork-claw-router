@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-mesh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_mesh",
+  "skill": {
+    "id": 59612,
+    "skillKey": "clawhub-knowledge-mesh",
+    "name": "知识网格 / Knowledge Mesh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-mesh",
+    "url": "https://clawhub.ai/skills/knowledge-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-mesh-b083251f1e1c7c26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识网格 — 跨平台知识搜索聚合器，统一搜索 GitHub、Stack Overflow、Discord、Confluence、Notion、Slack、百度、Obsidian，支持自学习排序"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanjing5024064",
+      "userId": "s17c9xtrdqnyqr9gcp876pa9fh83k36z",
+      "displayName": "Jun Zhang",
+      "image": "https://avatars.githubusercontent.com/u/11209115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773927816223,
+      "changelog": "knowledge-mesh 1.1.0 重大更新：完善了功能流程、权限与安全规范，升级为更强大的多平台知识聚合助手。\n\n- 全面细化跨平台知识搜索、聚合、排序、去重、展示和本地/Obsidian/百度搜索支持\n- 新增本地知识索引、主题监控、报告导出、自学习排序等高级流程，并区分免费/付费版功能\n- 完整梳理环境变量及订阅等级校验，明示功能权限矩阵和升级提示流程\n- 强化安全规范：明确凭据保护、数据本地化、输入校验和错误处理要求\n- 丰富行为准则：提升交互体验，优化搜索结构化、建议和无结果处理流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76130ae43eb63fe5ea3e8d9d18e67f0c3724f804b4372814cc4bc038c2f2c8ea"
+}

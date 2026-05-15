@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/actual@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actual",
+  "skill": {
+    "id": 21307,
+    "skillKey": "clawhub-actual",
+    "name": "Actual AI CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actual",
+    "url": "https://clawhub.ai/skills/actual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actual-e5c6fde86910ded7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feature-complete companion for the actual CLI, an ADR-powered CLAUDE.md/AGENTS.md generator. Runs and troubleshoots actual adr-bot, status, auth, config, run..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "actual-software-inc",
+      "userId": "s175zvzz99e3ymzw9cxg3eavwh83n84c",
+      "displayName": "Actual AI",
+      "image": "https://avatars.githubusercontent.com/u/267165392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773179934869,
+      "changelog": "- Initial release of the feature-complete companion for the actual CLI.\n- Supports running and troubleshooting the actual adr-bot, covering status, authentication, config, runners, and models.\n- Full guidance for all five runners (claude-cli, anthropic-api, openai-api, codex-cli, cursor-cli) and model-to-runner inference.\n- Includes detailed operational workflows (pre-flight checks, dry-run, sync, diagnostics) and troubleshooting for all error types.\n- Quick reference sections for sync, runner selection, and error diagnosis.\n- Step-by-step install instructions for the actual CLI and fallback approaches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dda09e697e826dac634730402e5f9fcaddb40a9f8574f7947a3caad1836a675"
+}

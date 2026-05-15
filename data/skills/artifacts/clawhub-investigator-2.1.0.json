@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investigator@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investigator",
+  "skill": {
+    "id": 21709,
+    "skillKey": "clawhub-investigator",
+    "name": "Investigator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investigator",
+    "url": "https://clawhub.ai/skills/investigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investigator-ea077ff913f0f89b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Investigate public online footprints using open-source intelligence techniques. Use when a user wants to research a username, email, person, company, domain,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elyasuuuuu",
+      "userId": "s17171mynj2rgf6dcgkzmpyr5583jyeh",
+      "displayName": "Elyasuuuuu",
+      "image": "https://avatars.githubusercontent.com/u/62817517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773675258383,
+      "changelog": "OSINT Investigator 2.1.0\n\n- Expanded documentation with detailed workflow, supported target types, verification logic, and output standards.\n- Enhanced focus on public data, lightweight verification, and explicit uncertainty in results.\n- Clarified rules for module selection, evidence scoring, and structured reporting.\n- Safety boundaries emphasized, with clearer limitations on invasive or harmful requests.\n- Lists helper scripts and key references for modular, auditable investigations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f37677451b3cdccda357cc1fdac9ef0133e7f3172c86c5ef3cf3d745317da12"
+}

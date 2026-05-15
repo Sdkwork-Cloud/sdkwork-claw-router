@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56796,
+  "uuid": "skill-clawhub-pdf-ocr-layout-free",
+  "skillKey": "clawhub-pdf-ocr-layout-free",
+  "name": "完美排版ocr",
+  "summary": "Full OCR pipeline for scanned PDFs with layout preservation. Use this skill whenever the user wants to OCR a PDF, convert a scanned document to searchable te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_ocr_layout_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gamhtoi",
+      "features": [
+        "Full OCR pipeline for scanned PDFs with layout preservation",
+        "Use this skill whenever the user wants to OCR a PDF, convert a scanned document to searchable t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-ocr-layout-free@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57421512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-ocr-layout-free",
+      "url": "https://clawhub.ai/skills/pdf-ocr-layout-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-ocr-layout-free",
+    "url": "https://clawhub.ai/skills/pdf-ocr-layout-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-ocr-layout-free-fbdd3f2652a318e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-ocr-layout-free@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-layout-free-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ad0c08a1d9d6fa5741ef31cb15c615b20aeed6cf4bba648c324a75636e32bbc",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:12:02.791Z"
+}

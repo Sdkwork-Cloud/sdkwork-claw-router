@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54711,
+  "uuid": "skill-clawhub-crop-image",
+  "skillKey": "clawhub-crop-image",
+  "name": "Crop Image",
+  "summary": "Use this skill when an AI agent needs to crop images through the deployed Crop Image service. Trigger this for URL-based cropping (`POST /crop`) and file-upl...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crop_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EricDoe",
+      "features": [
+        "Use this skill when an AI agent needs to crop images through the deployed Crop Image service",
+        "Trigger this for URL-based cropping (`POST /crop`) and file-upl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crop-image@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215623474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crop-image",
+      "url": "https://clawhub.ai/skills/crop-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crop-image",
+    "url": "https://clawhub.ai/skills/crop-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crop-image-f91b628bb94e94b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crop-image@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crop-image-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3de9cdb6c99afb3b1d0afc81f6c5c27b8eec0e35fd67c87cdbb0e77b3dd97d1",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:47:30.057Z"
+}

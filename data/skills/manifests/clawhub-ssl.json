@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13646,
+  "uuid": "skill-clawhub-ssl",
+  "skillKey": "clawhub-ssl",
+  "name": "SSL",
+  "summary": "Set up HTTPS, manage TLS certificates, and debug secure connection issues.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Set up HTTPS, manage TLS certificates, and debug secure connection issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl",
+      "url": "https://clawhub.ai/skills/ssl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl",
+    "url": "https://clawhub.ai/skills/ssl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-dc5a2e46e9ef93ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e29eeac01f3a9050aff89caa941a9866125ae3fcf6635e116799b5135fa2c262",
+      "artifactSizeBytes": 1728
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:11:05.957Z"
+}

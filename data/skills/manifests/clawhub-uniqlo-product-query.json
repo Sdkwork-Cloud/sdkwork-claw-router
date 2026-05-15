@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56013,
+  "uuid": "skill-clawhub-uniqlo-product-query",
+  "skillKey": "clawhub-uniqlo-product-query",
+  "name": "uniqlo(优衣库)-product-query",
+  "summary": "Query Uniqlo discounted products for men, women, kids, and baby clothing. Generates a Markdown file with product images, prices, discount rates, and purchase...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniqlo_product_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "g_pyAng",
+      "features": [
+        "Query Uniqlo discounted products for men, women, kids, and baby clothing",
+        "Generates a Markdown file with product images, prices, discount rates, and purchase..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uniqlo-product-query@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10325039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uniqlo-product-query",
+      "url": "https://clawhub.ai/skills/uniqlo-product-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniqlo-product-query",
+    "url": "https://clawhub.ai/skills/uniqlo-product-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniqlo-product-query-0fdcca2dae9ebdaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uniqlo-product-query@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-uniqlo-product-query-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7cfbc043b419fb8531354aa832c11da8dadbe4161734fc097833b461b9a3fff",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T06:11:36.711Z"
+}

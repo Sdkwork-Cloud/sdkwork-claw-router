@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32407,
+  "uuid": "skill-clawhub-claw-keyboard",
+  "skillKey": "clawhub-claw-keyboard",
+  "name": "Claw Keyboard",
+  "summary": "Control keyboard RGB backlight, custom LEDs, macros, key mapping, and profile settings via USB HID. Use when the user asks to control keyboard lighting, mana...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_keyboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "任嘉",
+      "features": [
+        "Control keyboard RGB backlight, custom LEDs, macros, key mapping, and profile settings via USB.",
+        "Use when the user asks to control keyboard lighting, mana..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-keyboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5842910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-keyboard",
+      "url": "https://clawhub.ai/skills/claw-keyboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-keyboard",
+    "url": "https://clawhub.ai/skills/claw-keyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-keyboard-057d2ed654342c8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-keyboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-keyboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb22bfdb3acd6ba3fa4cbeda0184ef25c8e860d9163f8cfb9e73f07688237dae",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:17:01.290Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16688,
+  "uuid": "skill-clawhub-localsend",
+  "skillKey": "clawhub-localsend",
+  "name": "Localsend",
+  "summary": "Send and receive files to/from nearby devices using the LocalSend protocol. Trigger with /localsend to get an interactive Telegram menu with real inline butt...",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localsend",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chordlini",
+      "features": [
+        "Send and receive files to/from nearby devices using the LocalSend protocol",
+        "Trigger with /localsend to get an interactive Telegram menu with real inline butt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/localsend@3.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251679722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "localsend",
+      "url": "https://clawhub.ai/skills/localsend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localsend",
+    "url": "https://clawhub.ai/skills/localsend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localsend-a81b836768a25e55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/localsend@3.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-localsend-3.4.0.json",
+      "version": "3.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2127ade2256bd0cc0125b07b1a036f5245c4f805bdce81103adb51a9d894919a",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T06:15:56.647Z"
+}

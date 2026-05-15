@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bars@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bars",
+  "skill": {
+    "id": 36544,
+    "skillKey": "clawhub-bars",
+    "name": "Nearby Bars"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bars",
+    "url": "https://clawhub.ai/skills/bars",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bars-8556ab2559634a19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby bars. Invoke when user asks for drinks or nightlife near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774237586872,
+      "changelog": "Nearby Bars v0.1.0\n\n- Initial release with core functionality for finding nearby bars.\n- Supports location-based search with filters (open now, min rating, price level, keywords).\n- Returns consistent POI responses according to a standard schema.\n- Handles typical user queries for bars or nightlife in the area.\n- Implements error codes for invalid input, provider issues, and rate limiting.\n- Includes privacy safeguards and short-term caching recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7ac8f28610e87aa34d22c1b40d429a12832608816df574387101d4c7f54d5d9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-spray-paint-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_spray_paint_openapi_skill",
+  "skill": {
+    "id": 56144,
+    "skillKey": "clawhub-ai-spray-paint-openapi-skill",
+    "name": "SprayPaint Stencil Maker Online – Create Custom Spray Paint Stencils from Any Image – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-spray-paint-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-spray-paint-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-spray-paint-openapi-skill-9f675ea00d206dfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI spray paint stencil maker — convert a photo into a black-and-white spray paint stencil"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776146647551,
+      "changelog": "- Initial release of ai-spray-paint-openapi-skill.\n- Converts photos into black-and-white spray paint stencils via WeShop OpenAPI.\n- Requires HTTPS access and a WESHOP_API_KEY for authentication.\n- Provides endpoints for starting runs, polling status, and image asset upload.\n- Includes clear API security guidance and environment variable usage for API keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df6334bc3788e3e9a5966a7d40c7da027694c8bcb16b8de1670d457d2dc511b0"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19337,
+  "uuid": "skill-clawhub-notion-tasks-blocks",
+  "skillKey": "clawhub-notion-tasks-blocks",
+  "name": "Notion Tasks Blocks",
+  "summary": "Manage Notion checklist blocks inside a page (no database required). Use when the user has plain to-do blocks and wants to list tasks, add tasks, and mark ta...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_tasks_blocks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luciorenovato",
+      "features": [
+        "Manage Notion checklist blocks inside a page (no database required)",
+        "Use when the user has plain to-do blocks and wants to list tasks, add tasks, and mark ta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-tasks-blocks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6399604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-tasks-blocks",
+      "url": "https://clawhub.ai/skills/notion-tasks-blocks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-tasks-blocks",
+    "url": "https://clawhub.ai/skills/notion-tasks-blocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-tasks-blocks-2b61de54dfdde730.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-tasks-blocks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-tasks-blocks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59a84b177ced6e388256f38fa289a1887caf68d23a947a97f4f9542519cba7ad",
+      "artifactSizeBytes": 2221
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T03:10:06.937Z"
+}

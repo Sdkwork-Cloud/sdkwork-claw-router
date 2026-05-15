@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-generated-bikini-girls-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_generated_bikini_girls_openapi_skill",
+  "skill": {
+    "id": 56314,
+    "skillKey": "clawhub-ai-generated-bikini-girls-openapi-skill",
+    "name": "AI Generated Bikini Girls – Create Realistic Bikini Models Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-generated-bikini-girls-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-generated-bikini-girls-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-generated-bikini-girls-openapi-skill-8c23011b96da30f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI generated bikini girls — transform a person photo into a bikini model image or video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775983374545,
+      "changelog": "- Initial release of ai-generated-bikini-girls skill.\n- Transform a person photo into a bikini model image or video using WeShop OpenAPI.\n- Supports input of a single image URL and optional scene/text customization.\n- Choose between video or image output, and set number of outputs (up to 16).\n- Requires WESHOP_API_KEY for authentication; API key security guidelines provided.\n- Endpoints include run initiation, status polling, and image upload.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2108b052d6e37a290bde9fc870f0704cad7b983714436260ce48fd308e42a3d7"
+}

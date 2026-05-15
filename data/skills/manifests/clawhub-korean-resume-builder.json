@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62644,
+  "uuid": "skill-clawhub-korean-resume-builder",
+  "skillKey": "clawhub-korean-resume-builder",
+  "name": "Korean Resume Builder",
+  "summary": "한국 채용 시장에 최적화된 맞춤형 이력서와 자기소개서를 지원 직종, 경력, 기술에 맞춰 작성합니다.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_resume_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jochoonhwan",
+      "features": [
+        "한국 채용 시장에 최적화된 맞춤형 이력서와 자기소개서를 지원 직종, 경력, 기술에 맞춰 작성합니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/korean-resume-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258758600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "korean-resume-builder",
+      "url": "https://clawhub.ai/skills/korean-resume-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-resume-builder",
+    "url": "https://clawhub.ai/skills/korean-resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-resume-builder-d83dacbfa02d4430.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/korean-resume-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-korean-resume-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3556dc561a76d7bf3a1afd72152dc27459550560d6812fb7602824cb17d73b97",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:56:20.572Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27485,
+  "uuid": "skill-clawhub-gemini-citation",
+  "skillKey": "clawhub-gemini-citation",
+  "name": "Gemini Citation",
+  "summary": "Conduct evidence-based research with exact, accurate APA citations using the Gemini API's 'scientific citation' (Google Search grounding) feature. Use when X...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_citation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoxh",
+      "features": [
+        "Conduct evidence-based research with exact, accurate APA citations using the Gemini API's 'scie.",
+        "Use when X..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-citation@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3035139?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-citation",
+      "url": "https://clawhub.ai/skills/gemini-citation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-citation",
+    "url": "https://clawhub.ai/skills/gemini-citation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-citation-80289221ccf6d1f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-citation@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-citation-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d692b7c8d0d4924b41036a3dcbd94254a9d450b05c0b474852f16acabb7f467c",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:13:57.714Z"
+}

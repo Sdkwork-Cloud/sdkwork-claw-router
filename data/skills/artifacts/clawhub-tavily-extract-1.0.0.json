@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_extract",
+  "skill": {
+    "id": 18595,
+    "skillKey": "clawhub-tavily-extract",
+    "name": "Tavily Extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-extract",
+    "url": "https://clawhub.ai/skills/tavily-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-extract-82de8dfc1a846f11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract content from specific URLs using Tavily's extraction API. Returns clean markdown/text from web pages. Use when you have specific URLs and need their..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evanydl",
+      "userId": "s176p0spbtshsbd2jxej58029985qrzh",
+      "displayName": "Evan Rimer",
+      "image": "https://avatars.githubusercontent.com/u/208671696?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773164829351,
+      "changelog": "Initial release of the extract skill for Tavily's extraction API.\n\n- Extracts clean markdown or text from up to 20 URLs per request.\n- Supports both OAuth authentication (automatic browser flow) and API key for flexible setup.\n- Offers options for targeted extraction using query and chunking, as well as depth selection for dynamic/JavaScript-heavy pages.\n- Provides example usage with both shell scripts and direct curl commands.\n- Response includes extracted content, failed URLs, and response time for full transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:feedb2cde67fdcc03701c8a13a4ed5aa8056808f49eee8c5b2c2f5ef980325fa"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71329,
+  "uuid": "skill-clawhub-dev-var-name",
+  "skillKey": "clawhub-dev-var-name",
+  "name": "程序员变量名生成器",
+  "summary": "程序员变量名生成器。将中文（或英文）关键词转换为多种编程命名风格。支持 7 种全称风格：驼峰、下划线蛇形、帕斯卡、全大写、短横线、点分隔符(dot.case)、路径分隔符(path/case)，以及对应的缩写版本。触发场景：用户输入中文或英文关键词，要求生成变量名、函数名、API 命名等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_var_name",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiaqi",
+      "features": [
+        "程序员变量名生成器。将中文（或英文）关键词转换为多种编程命名风格。支持 7 种全称风格：驼峰、下划线蛇形、帕斯卡、全大写、短横线、点分隔符(dot.case)、路径分隔符(path/case."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-var-name@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48824215?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-var-name",
+      "url": "https://clawhub.ai/skills/dev-var-name"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-var-name",
+    "url": "https://clawhub.ai/skills/dev-var-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-var-name-4af74ae6be465ad2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-var-name@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-var-name-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fa5caeb2bbc20b77fc02ef27b91c21ece146e814b2dfabaf0b4d7f574cc1e75",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T09:30:54.633Z"
+}

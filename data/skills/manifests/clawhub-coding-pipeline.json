@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56168,
+  "uuid": "skill-clawhub-coding-pipeline",
+  "skillKey": "clawhub-coding-pipeline",
+  "name": "Coding Pipeline",
+  "summary": "Enforces a disciplined 4-phase pipeline for non-trivial coding tasks: Plan (hypothesis) → Code (one fix) → Validate (root cause) → Debug (max 3 tries, escala...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brasco05",
+      "features": [
+        "Enforces a disciplined 4-phase pipeline for non-trivial coding tasks: Plan (hypothesis) → Code."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256532966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-pipeline",
+      "url": "https://clawhub.ai/skills/coding-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-pipeline",
+    "url": "https://clawhub.ai/skills/coding-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-pipeline-0d7d790d24b023da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bb2e77b33971310e82e4d1f8566acc070db28c9665b58a816b4220d1226dc41",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:32.162Z"
+}

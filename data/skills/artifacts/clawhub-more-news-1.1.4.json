@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/more-news@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.more_news",
+  "skill": {
+    "id": 33073,
+    "skillKey": "clawhub-more-news",
+    "name": "AI news hub, powerful"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "more-news",
+    "url": "https://clawhub.ai/skills/more-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/more-news-98d7ad9744d05174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregate and rank AI and tech news from multiple user-defined sources in source.md, filtering to the latest 24-hour articles with summaries and source links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1776429223131,
+      "changelog": "- Switched article fetching to use parallel batches (5 at a time) instead of sequential fetching for improved performance.\n- No other workflow or output changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b24f24b141205d333ff0e8778d1f64c7bb7ab21789c78858a729af42d67bec48"
+}

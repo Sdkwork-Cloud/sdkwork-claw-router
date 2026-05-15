@@ -89,8 +89,8 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         row_runtime = API_REFERENCE_ROOT / "apiPlaygroundRows.ts"
         row_runtime_source = row_runtime.read_text(encoding="utf-8")
 
-        self.assertIn("generateApiPlaygroundExampleBody", row_runtime_source)
-        self.assertIn("return JSON.stringify(generateApiPlaygroundExampleBody(schema), null, 2);", row_runtime_source)
+        self.assertIn("generateOpenApiSchemaExample", row_runtime_source)
+        self.assertIn("return JSON.stringify(generateOpenApiSchemaExample(schema", row_runtime_source)
         self.assertNotIn("generateApiPlaygroundMockBody", row_runtime_source)
         self.assertNotIn("MockBody", row_runtime_source)
         self.assertNotIn("mock body", row_runtime_source.lower())
@@ -313,7 +313,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         self.assertIn("0 Network Error", browser_smoke)
 
         self.assertIn("headers.Authorization = `Bearer ${input.apiKey.trim()}`", request_source)
-        self.assertIn("headers.Authorization = `Bearer ${input.sessionToken.trim()}`", request_source)
+        self.assertIn("headers.Authorization = `Bearer ${input.authToken.trim()}`", request_source)
         self.assertIn("credentials: input.authType === 'current_user' ? 'include' : 'omit'", request_source)
 
     def test_api_reference_production_browser_smoke_blocks_disabled_local_tool_api_runtime_calls(self) -> None:

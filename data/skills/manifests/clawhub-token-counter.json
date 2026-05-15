@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14665,
+  "uuid": "skill-clawhub-token-counter",
+  "skillKey": "clawhub-token-counter",
+  "name": "Token Counter",
+  "summary": "Track and analyze OpenClaw token usage across main, cron, and sub-agent sessions with category, client, model, and tool attribution. Use when the user asks where tokens are being spent, wants daily/weekly token reports, needs per-session d.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_counter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mkhaytman87",
+      "features": [
+        "Track and analyze OpenClaw token usage across main, cron, and sub-agent sessions with category,.",
+        "Use when the user asks where tokens are being spent, wants daily/weekly token reports, needs pe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-counter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24794258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-counter",
+      "url": "https://clawhub.ai/skills/token-counter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-counter",
+    "url": "https://clawhub.ai/skills/token-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-counter-ed25aa1eb390e83c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-counter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-counter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59722b8a0b0b310f41546da3901500ae4ff47ec46c29fa4053759418dd4aed34",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:27:16.197Z"
+}

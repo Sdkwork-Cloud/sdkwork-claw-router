@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-stock-report-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_report_skill",
+  "skill": {
+    "id": 63577,
+    "skillKey": "clawhub-my-stock-report-skill",
+    "name": "my_stock_report_skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-report-skill",
+    "url": "https://clawhub.ai/skills/my-stock-report-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-report-skill-4bdc46dfeab530b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当且仅当用户明确提到使用报告引擎、分析引擎、股票引擎、report engine 或者 my_stock_report_skill 时触发。用于调用 Python 分析引擎对特定美股标的进行多维度深度分析，支持指定分析师组合，并将结论和报告归档至钉钉多维表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canonxu",
+      "userId": "s17agk69fz13xjgchzhr6sw58h83hn9f",
+      "displayName": "canonxu",
+      "image": "https://avatars.githubusercontent.com/u/7338324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774840438562,
+      "changelog": "批量同步最新版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a335ca46c5736169d71eee9a509cd05c7b1a960dca1dcc6ecab6842dff58ad5"
+}

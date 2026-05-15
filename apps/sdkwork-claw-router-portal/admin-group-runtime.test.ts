@@ -141,7 +141,7 @@ test("admin group service calls generated backend SDK paths and normalizes group
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/router/access-groups" && method === "GET") {
+      if (url === "/backend/v3/api/iam/access_groups" && method === "GET") {
         return {
           items: [
             {
@@ -159,7 +159,7 @@ test("admin group service calls generated backend SDK paths and normalizes group
           ],
         };
       }
-      if (url === "/backend/v3/api/router/access-groups" && method === "POST") {
+      if (url === "/backend/v3/api/iam/access_groups" && method === "POST") {
         return {
           item: {
             id: "group-2",
@@ -175,7 +175,7 @@ test("admin group service calls generated backend SDK paths and normalizes group
           },
         };
       }
-      if (url === "/backend/v3/api/router/access-groups/group-2" && method === "PATCH") {
+      if (url === "/backend/v3/api/iam/access_groups/group-2" && method === "PATCH") {
         return {
           item: {
             id: "group-2",
@@ -191,7 +191,7 @@ test("admin group service calls generated backend SDK paths and normalizes group
           },
         };
       }
-      if (url === "/backend/v3/api/router/access-groups/group-2" && method === "DELETE") {
+      if (url === "/backend/v3/api/iam/access_groups/group-2" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -226,10 +226,10 @@ test("admin group service calls generated backend SDK paths and normalizes group
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /backend/v3/api/router/access-groups",
-          "POST /backend/v3/api/router/access-groups",
-          "PATCH /backend/v3/api/router/access-groups/group-2",
-          "DELETE /backend/v3/api/router/access-groups/group-2",
+          "GET /backend/v3/api/iam/access_groups",
+          "POST /backend/v3/api/iam/access_groups",
+          "PATCH /backend/v3/api/iam/access_groups/group-2",
+          "DELETE /backend/v3/api/iam/access_groups/group-2",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
@@ -310,7 +310,7 @@ test("admin group service rejects unsafe SDK path ids before calling backend SDK
 test("admin group update fails closed when backend success response omits the updated entity", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/access-groups/group-2" && init?.method === "PATCH") {
+      if (url === "/backend/v3/api/iam/access_groups/group-2" && init?.method === "PATCH") {
         return { updated: true };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -327,7 +327,7 @@ test("admin group update fails closed when backend success response omits the up
 test("admin group list fails closed when backend omits stable group ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/access-groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -358,7 +358,7 @@ test("admin group list fails closed when backend omits stable group ids", async 
 test("admin group list fails closed when backend returns malformed group rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/router/access-groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
         return { items: ["not-a-group-record"] };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -380,7 +380,7 @@ test("admin group list fails closed when backend omits required group fields", a
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/router/access-groups" && (init?.method ?? "GET") === "GET") {
+        if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
           const group = {
             id: "group-1",
             name: "Default Enterprise",
@@ -415,7 +415,7 @@ test("admin group list fails closed when backend returns unsupported group enums
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/router/access-groups" && (init?.method ?? "GET") === "GET") {
+        if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
           const group = {
             id: "group-1",
             name: "Default Enterprise",

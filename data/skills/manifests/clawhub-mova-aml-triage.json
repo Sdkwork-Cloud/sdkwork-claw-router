@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31414,
+  "uuid": "skill-clawhub-mova-aml-triage",
+  "skillKey": "clawhub-mova-aml-triage",
+  "name": "Mova Aml Triage",
+  "summary": "Submit an AML transaction monitoring alert for automated L1 triage and human-in-the-loop compliance decision via MOVA. Trigger when the user mentions an AML...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_aml_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Submit an AML transaction monitoring alert for automated L1 triage and human-in-the-loop compli.",
+        "Trigger when the user mentions an AML..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-aml-triage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-aml-triage",
+      "url": "https://clawhub.ai/skills/mova-aml-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-aml-triage",
+    "url": "https://clawhub.ai/skills/mova-aml-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-aml-triage-84be20323f49a9f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-aml-triage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-aml-triage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ec51533098591de1bcb267964d98708d6a2a50902fec604dd9ff32555b4234a",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:50:04.425Z"
+}

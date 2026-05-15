@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58601,
+  "uuid": "skill-clawhub-stable-diffusion",
+  "skillKey": "clawhub-stable-diffusion",
+  "name": "Stable Diffusion",
+  "summary": "Stable Diffusion AI 绘画助手，精通 SD WebUI、ComfyUI、提示词工程、LoRA 训练",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_diffusion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Stable Diffusion AI 绘画助手，精通 SD WebUI、ComfyUI、提示词工程、LoRA 训练"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stable-diffusion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stable-diffusion",
+      "url": "https://clawhub.ai/skills/stable-diffusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-diffusion",
+    "url": "https://clawhub.ai/skills/stable-diffusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-diffusion-03e9473b368f280a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stable-diffusion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stable-diffusion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:089759f8e1a863678a993ebb4e678793d140e9c8c98015ac88ed2d4c853bf24e",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:56:29.074Z"
+}

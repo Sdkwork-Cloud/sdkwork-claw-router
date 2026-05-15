@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68644,
+  "uuid": "skill-clawhub-llm-text-correct",
+  "skillKey": "clawhub-llm-text-correct",
+  "name": "llm-text-correct",
+  "summary": "当用户想要**纠正中文文本错误**、**修改拼写错别字**、**修正语法**、**调整标点**、**润色中文句子**、**检查形近字错误**时自动触发。 使用 pycorrector + MacBERT 专业模型进行高精度中文纠错，准确率远高于普通 LLM 直接提示。 支持直接输入一段文字、长文本，或提供文本文件...",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_text_correct",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "顶尖王牌程序员",
+      "features": [
+        "当用户想要**纠正中文文本错误**、**修改拼写错别字**、**修正语法**、**调整标点**、**润色中文句子**、**检查形近字错误**时自动触发。 使用 pycorrector + M."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-text-correct@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11627332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-text-correct",
+      "url": "https://clawhub.ai/skills/llm-text-correct"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-text-correct",
+    "url": "https://clawhub.ai/skills/llm-text-correct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-text-correct-23d2e2e79d52595a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-text-correct@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-text-correct-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee40642da67bd220d411559fde7b81ece67f3c0962ef2fc84644ea7bf2491a0",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T14:52:29.229Z"
+}

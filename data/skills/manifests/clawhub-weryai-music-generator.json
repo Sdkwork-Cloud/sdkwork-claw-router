@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34701,
+  "uuid": "skill-clawhub-weryai-music-generator",
+  "skillKey": "clawhub-weryai-music-generator",
+  "name": "WeryAI Music Generator",
+  "summary": "Generate WeryAI music, vocal songs, or instrumental tracks through the WeryAI music API. Use when the user needs music generation, song generation, instrumen...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_music_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeryAI-Developer",
+      "features": [
+        "Generate WeryAI music, vocal songs, or instrumental tracks through the WeryAI music API",
+        "Use when the user needs music generation, song generation, instrumen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weryai-music-generator@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254698481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weryai-music-generator",
+      "url": "https://clawhub.ai/skills/weryai-music-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-music-generator",
+    "url": "https://clawhub.ai/skills/weryai-music-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-music-generator-f6932429d6e4f2c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weryai-music-generator@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weryai-music-generator-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:691df3a49d19500bd4e2a9fa6e7bfde884e5a51cae4a8cc48c3700ce9efde9dc",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:48:25.700Z"
+}

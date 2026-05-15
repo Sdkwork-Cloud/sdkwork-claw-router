@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-crm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_crm",
+  "skill": {
+    "id": 18047,
+    "skillKey": "clawhub-openclaw-crm",
+    "name": "openclaw-crm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-crm",
+    "url": "https://clawhub.ai/skills/openclaw-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-crm-2b248ff328927b9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first CRM for managing leads, deals, follow-ups, and pipelines via CLI using SQLite with WAL mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frank-bot07",
+      "userId": "publishers:frank-bot07",
+      "displayName": "frank-bot07",
+      "image": "https://avatars.githubusercontent.com/u/259001718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771576575334,
+      "changelog": "Initial release: Local-first CRM. 10 tests.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ca1872a85cd174d92b27200cec1dc28cdb7c31b3233cbe30bd34a3ed223bd90"
+}

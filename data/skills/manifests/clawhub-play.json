@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26997,
+  "uuid": "skill-clawhub-play",
+  "skillKey": "clawhub-play",
+  "name": "play",
+  "summary": "Make OpenClaw launch the Ashen Era CLI build, play a real run, and deliver a complete first-person play report. Use this when the user asks to \"play the game...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "usky",
+      "features": [
+        "Make OpenClaw launch the Ashen Era CLI build, play a real run, and deliver a complete first-per.",
+        "Use this when the user asks to \"play the game..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/play@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15121953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "play",
+      "url": "https://clawhub.ai/skills/play"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play",
+    "url": "https://clawhub.ai/skills/play",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-aba4cc9b8af82df5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/play@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-play-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5af9ba827a0ca913bdb25075983480b3c4f872fd2c1b94308a85124f64ab1ce2",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:29:59.440Z"
+}

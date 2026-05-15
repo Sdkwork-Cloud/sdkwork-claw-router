@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_trading",
+  "skill": {
+    "id": 10712,
+    "skillKey": "clawhub-kalshi-trading",
+    "name": "Kalshi Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-trading",
+    "url": "https://clawhub.ai/skills/kalshi-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-trading-c655af6357820176.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on Kalshi prediction markets: check portfolio, search markets, analyze orderbooks, place/cancel orders, and manage binary contract positions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghsmc",
+      "userId": "publishers:ghsmc",
+      "displayName": "ghsmc",
+      "image": "https://avatars.githubusercontent.com/u/68118719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1754,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771082281309,
+      "changelog": "Initial release — full prediction market trading via CLI (search, buy, sell, portfolio, orderbook)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f00adb20d74d8c8135230664bbec9b9a77d70e2af6a09221a382da7d02f79ee9"
+}

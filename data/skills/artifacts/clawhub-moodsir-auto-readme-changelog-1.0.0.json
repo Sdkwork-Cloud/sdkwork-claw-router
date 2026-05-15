@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodsir-auto-readme-changelog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodsir_auto_readme_changelog",
+  "skill": {
+    "id": 63525,
+    "skillKey": "clawhub-moodsir-auto-readme-changelog",
+    "name": "AI项目文档生成Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodsir-auto-readme-changelog",
+    "url": "https://clawhub.ai/skills/moodsir-auto-readme-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodsir-auto-readme-changelog-63fb9c8d68a118eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能化工具自动生成开源项目README.md和CHANGELOG.md，支持多平台分发，无需手动编写。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moodsir",
+      "userId": "s17akbx4t4ar7vbtf6y3507t9183q5g0",
+      "displayName": "moodsir",
+      "image": "https://avatars.githubusercontent.com/u/271111592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775874776399,
+      "changelog": "Initial release of AI project README & Changelog generator. Automatically generate standard open-source README.md and CHANGELOG.md, support multi-platform distribution (ClawHub, Youdao Lobster, etc.), intelligently analyze code repository structure, extract key information, pure Python implementation, no additional dependencies required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:432f75247a628c594f971606e295b8495a845250304efac87565c79329f8a0b1"
+}

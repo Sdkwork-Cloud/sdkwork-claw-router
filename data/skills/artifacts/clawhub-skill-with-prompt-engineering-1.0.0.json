@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-with-prompt-engineering@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_with_prompt_engineering",
+  "skill": {
+    "id": 25609,
+    "skillKey": "clawhub-skill-with-prompt-engineering",
+    "name": "Skill with Prompt Engineering by Gen AI Space"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-with-prompt-engineering",
+    "url": "https://clawhub.ai/skills/skill-with-prompt-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-with-prompt-engineering-55d14598ad3b54f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Prompt Engineering assistant based on Gen AI Space's 16-technique framework. Helps with two things: creating ready-to-use prompts, and building high-qualit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "golofu",
+      "userId": "s172e96gw3p3rst2anqx09jhmn84ycfq",
+      "displayName": "golofu",
+      "image": "https://avatars.githubusercontent.com/u/135396803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772865661383,
+      "changelog": "First release of skill-with-prompt-engineering by Gen AI Space.\nThis skill was built to solve a common problem: most people who try to create prompts or Claude skills on their own end up with results that don't work as intended, because they don't know which prompt engineering technique to apply or how to structure the instructions properly.\nThis skill fixes that by using Gen AI Space's 16 Prompt Engineering techniques as the foundation for everything it builds.\nWhat this version includes:\nMode 1 helps users create ready-to-use prompts for any task. The skill analyzes the use case, recommends the right technique with a clear reason, asks for missing information before building, and runs a self-review of 2-3 rounds before delivering the final prompt.\nMode 2 helps users build high-quality SKILL.md files for others to use. The skill collects required information, selects the appropriate technique for each section of the SKILL.md, builds a structured draft, and runs the same self-review process before delivering.\nBoth modes include an optional comparison view showing how the output changed from the first draft to the final version, so users can learn from the process and improve their own prompt engineering skills over time.\nIf the output doesn't feel right, users can request changes directly in the same chat without editing any files manually.\nFor more information about the 16 Prompt Engineering techniques used in this skill, visit https://genaispace.net/basic-prompt-advance-prompt/",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d064a63dd82b8b847b2b30e884a7f415b036fb87505f79a197fd439ffc10453"
+}

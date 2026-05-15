@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12370,
+  "uuid": "skill-clawhub-test-case-generator",
+  "skillKey": "clawhub-test-case-generator",
+  "name": "Test Case Generator",
+  "summary": "Automatically generate complete unit test code including imports, test cases, mocks, and assertions for Jest, Mocha, or Pytest from given code.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_case_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HonestQiao",
+      "features": [
+        "Automatically generate complete unit test code including imports, test cases, mocks, and assert."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-case-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/696708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-case-generator",
+      "url": "https://clawhub.ai/skills/test-case-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-case-generator",
+    "url": "https://clawhub.ai/skills/test-case-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-case-generator-ba144a46e19e56d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-case-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-case-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:006bcf1ee7d772a57f9158aef379b852cbf78a267d520a2c3a178771fc9f0c03",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:14:22.453Z"
+}

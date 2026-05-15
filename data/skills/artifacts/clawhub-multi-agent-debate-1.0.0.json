@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-debate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_debate",
+  "skill": {
+    "id": 37958,
+    "skillKey": "clawhub-multi-agent-debate",
+    "name": "Multi-Agent Debate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-debate",
+    "url": "https://clawhub.ai/skills/multi-agent-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-debate-c8e28d43608a89e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify facts, reduce hallucinations, and explore multiple viewpoints through structured multi-agent debate. Multiple agents independently answer the same que..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simoncatbot",
+      "userId": "s17ds5da9226707z0nnxnvcb5183yp3a",
+      "displayName": "Simon",
+      "image": "https://avatars.githubusercontent.com/u/268817640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775096776302,
+      "changelog": "Multi-agent-debate 1.0.0 initial release:\n\n- Introduces a structured multi-agent debate system to improve answer accuracy and reduce hallucinations.\n- Agents independently answer questions, then critique each other's responses to surface errors and refine answers.\n- Designed for fact-checking, complex reasoning, exploring trade-offs, and any scenario where accuracy and multi-perspective analysis are important.\n- Includes an optional consensus phase to synthesize the best answer from peer debate.\n- Not recommended for very simple, purely creative, or speed-critical use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9434de31b5152bc88e2cca510e59b9b9e58190ef0cffc1672b8fdf958313167e"
+}

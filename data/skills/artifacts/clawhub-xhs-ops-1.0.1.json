@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-ops@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_ops",
+  "skill": {
+    "id": 64403,
+    "skillKey": "clawhub-xhs-ops",
+    "name": "Xiaohongshu Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-ops",
+    "url": "https://clawhub.ai/skills/xhs-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-ops-7b3bf3dd56b7d0fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书端到端运营：账号定位、选题研究、内容生产、发布执行、数据复盘。 Use when: (1) 用户要写小红书笔记/帖子, (2) 用户说\"发小红书\"/\"写个种草文\"/\"出一篇小红书\", (3) 用户讨论小红书选题/热点/爆款分析/竞品对标, (4) 用户提到账号定位/人设/内容方向规划, (5) 用户要求生成..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovensky1992-wk",
+      "userId": "s17dsprt4znvnqphy9hhy68va983nsqs",
+      "displayName": "lovensky1992-wk",
+      "image": "https://avatars.githubusercontent.com/u/264908128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 578,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776571385761,
+      "changelog": "Daily sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e9c19e6dc8b027e7633c23d677e88eaa2413819be7941aa39a9e7d47be9d169"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-research@2.5.0",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_research",
+  "skill": {
+    "id": 18532,
+    "skillKey": "clawhub-meta-research",
+    "name": "Meta Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-research",
+    "url": "https://clawhub.ai/skills/meta-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-research-d50a97a8177b509a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous research workflow agent for AI and scientific research. Use when the user wants to brainstorm research ideas, conduct a literature review, design..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amberljc",
+      "userId": "s17c1phm3gqdnsakt6qqkea2dn83jamq",
+      "displayName": "Jiachen LIU",
+      "image": "https://avatars.githubusercontent.com/u/42296458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 673,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.5.0",
+      "createdAt": 1772603626812,
+      "changelog": "Latest sync from GitHub",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:87877efced354147b68928aed226022eb00625297618c9c53bd9710b0ed43015"
+}

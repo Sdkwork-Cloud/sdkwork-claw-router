@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "guomeiqing-safe-install",
+    "displayName": "OpenClaw Safe Install",
+    "summary": "Safely review and install third-party OpenClaw Skills. Downloads to a temp directory, runs a 7-point security audit, generates a human-readable report, and o...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774926257372,
+    "updatedAt": 1777526932810
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1774926257372,
+    "changelog": "Version 1.1.0 of guomeiqing-safe-install\n\n- Introduces a thorough 7-step security audit before installing any third-party OpenClaw Skill.\n- Downloads requested skills into a temporary, isolated directory instead of the live skills folder.\n- Audits for outbound data transmissions, credential access, dangerous shell commands, disguised behaviors, unwarranted privilege escalation, prompt injection, and script file security.\n- Generates a human-readable security review report summarizing findings with PASS/WARN/DANGER indicators for each tested area.\n- Only completes installation if the skill passes all audit checks; otherwise, it warns or blocks as appropriate.\n- Provides clear triggers and user guidance for safe skill installation workflows.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "shanggqm",
+    "userId": "s17a2q35kgfty8ehg33ecny84h83kk56",
+    "displayName": "shanggqm",
+    "image": "https://avatars.githubusercontent.com/u/2172641?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526932810
+  }
+}

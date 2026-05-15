@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28354,
+  "uuid": "skill-clawhub-reconversion-copilot",
+  "skillKey": "clawhub-reconversion-copilot",
+  "name": "Reconversion Copilot",
+  "summary": "Copilote de reconversion vers les metiers de la data. Diagnostic structure, fiches metier, plan de transition, CV repositionne, preparation entretiens, suivi.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reconversion_copilot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yerrochdi",
+      "features": [
+        "Copilote de reconversion vers les metiers de la data",
+        "Diagnostic structure, fiches metier, plan de transition, CV repositionne, preparation entretien."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reconversion-copilot@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22411555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reconversion-copilot",
+      "url": "https://clawhub.ai/skills/reconversion-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reconversion-copilot",
+    "url": "https://clawhub.ai/skills/reconversion-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reconversion-copilot-04e8224546cc3f22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reconversion-copilot@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reconversion-copilot-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0d43aa49684e9d072b3f2a541a31e42f77a22ec746507883de34c75908b123f",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:47:45.882Z"
+}

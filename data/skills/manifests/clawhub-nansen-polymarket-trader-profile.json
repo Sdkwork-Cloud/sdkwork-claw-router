@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31119,
+  "uuid": "skill-clawhub-nansen-polymarket-trader-profile",
+  "skillKey": "clawhub-nansen-polymarket-trader-profile",
+  "name": "Nansen Polymarket Trader Profile",
+  "summary": "What is a Polymarket trader betting on? Trades by address, PnL breakdown, and market context. Use when analysing a specific Polymarket wallet.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_polymarket_trader_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "What is a Polymarket trader betting on? Trades by address, PnL breakdown, and market context",
+        "Use when analysing a specific Polymarket wallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-polymarket-trader-profile@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-polymarket-trader-profile",
+      "url": "https://clawhub.ai/skills/nansen-polymarket-trader-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-polymarket-trader-profile",
+    "url": "https://clawhub.ai/skills/nansen-polymarket-trader-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-polymarket-trader-profile-c9cbb60570b33677.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-polymarket-trader-profile@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-polymarket-trader-profile-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f9e01c7857b45b2bc987293ca82e96ccff8d82ceba1e239b77941849c136991",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:31:42.367Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39755,
+  "uuid": "skill-clawhub-introspect",
+  "skillKey": "clawhub-introspect",
+  "name": "Introspect",
+  "summary": "Analyze your Claude Code sessions to discover your developer DNA - gamified performance report with letter grades, archetypes, behavioral patterns, shadow ar...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.introspect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "umang-dabhi",
+      "features": [
+        "Analyze your Claude Code sessions to discover your developer DNA",
+        "gamified performance report with letter grades, archetypes, behavioral patterns, shadow ar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/introspect@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228705128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "introspect",
+      "url": "https://clawhub.ai/skills/introspect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "introspect",
+    "url": "https://clawhub.ai/skills/introspect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/introspect-1c451833093b67ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/introspect@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-introspect-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:664ea01cdea815860a3c970544b763a1b5429ed27653ead300ac29b3aed2fbbc",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:11:31.464Z"
+}

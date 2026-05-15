@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-contact-card@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_contact_card",
+  "skill": {
+    "id": 11210,
+    "skillKey": "clawhub-agent-contact-card",
+    "name": "Agent Contact Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-contact-card",
+    "url": "https://clawhub.ai/skills/agent-contact-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-contact-card-c71aad8b95109b67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and create Agent Contact Cards - a vCard-like format for AI agents. Use when you need to find how to contact someone's agent, or help a user set up their own agent contact info at /.well-known/agent-card."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davedean",
+      "userId": "publishers:davedean",
+      "displayName": "davedean",
+      "image": "https://avatars.githubusercontent.com/u/2696454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2230,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769828380394,
+      "changelog": "- Initial release of agent-contact-card skill.\n- Enables discovery and creation of Agent Contact Cards—a vCard-like format for AI agents.\n- Provides clear instructions for publishing and finding agent contact information via /.well-known/agent-card.\n- Supports multiple communication channels and privacy tiers.\n- Includes specification and usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b65b061e556b7cb7abc762cf98f87c839ec7ba16490e8b29b2279b4f8d751e5c"
+}

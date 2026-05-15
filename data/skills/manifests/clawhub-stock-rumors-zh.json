@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70001,
+  "uuid": "skill-clawhub-stock-rumors-zh",
+  "skillKey": "clawhub-stock-rumors-zh",
+  "name": "stock-rumors-zh",
+  "summary": "通过 AISA 扫描并购、内幕、分析师、社交媒体和监管相关的市场传闻信号。触发条件：当用户关心早期市场信号、传闻、内幕活动、分析师变动或收购风声时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_rumors_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "通过 AISA 扫描并购、内幕、分析师、社交媒体和监管相关的市场传闻信号。触发条件：当用户关心早期市场信号、传闻、内幕活动、分析师变动或收购风声时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-rumors-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-rumors-zh",
+      "url": "https://clawhub.ai/skills/stock-rumors-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-rumors-zh",
+    "url": "https://clawhub.ai/skills/stock-rumors-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-rumors-zh-0fc77bea9ac54fe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-rumors-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-rumors-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:261b2dcbeecb4e8a18e6ec7de820460d2f309763e6d0de52c74eafbe5867f31a",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:56:04.652Z"
+}

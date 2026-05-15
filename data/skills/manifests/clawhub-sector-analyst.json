@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9455,
+  "uuid": "skill-clawhub-sector-analyst",
+  "skillKey": "clawhub-sector-analyst",
+  "name": "Sector Analyst",
+  "summary": "This skill should be used when analyzing sector and industry performance charts to assess market positioning and rotation patterns. Use this skill when the user provides performance chart images (1-week or 1-month timeframes) for sectors o.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sector_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "This skill should be used when analyzing sector and industry performance charts to assess marke.",
+        "Use this skill when the user provides performance chart images (1-week or 1-month timeframes) f.",
+        "All analysis and output are conducted in English."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sector-analyst@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sector-analyst",
+      "url": "https://clawhub.ai/skills/sector-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sector-analyst",
+    "url": "https://clawhub.ai/skills/sector-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sector-analyst-9635f55dc6663709.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sector-analyst@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sector-analyst-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46fa537bd44e7c460388eb5beec8c3f849ae39502d0c7151e3b3022df328a657",
+      "artifactSizeBytes": 2624
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:41:03.704Z"
+}

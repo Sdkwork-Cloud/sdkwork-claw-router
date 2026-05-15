@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-humanizer-2-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_humanizer_2_1_0",
+  "skill": {
+    "id": 16607,
+    "skillKey": "clawhub-ai-humanizer-2-1-0",
+    "name": "Ai Humanizer 2.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-humanizer-2-1-0",
+    "url": "https://clawhub.ai/skills/ai-humanizer-2-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-humanizer-2-1-0-03c9d5e810be0e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human. Uses 24 pattern det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hades4501",
+      "userId": "s1782s0wq6kjbxs8kqr3t5cydd83mbbj",
+      "displayName": "电竞战狼",
+      "image": "https://avatars.githubusercontent.com/u/45301342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 767,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772631525962,
+      "changelog": "Initial release of ai-humanizer-2-1-0, a tool to rewrite AI-generated text to sound more human:\n\n- Detects and removes 24 common LLM writing patterns and over 500 AI-related vocabulary terms.\n- Analyzes text for statistical AI signals (burstiness, type-token ratio, sentence length variation, trigram repetition).\n- Offers rewrites to improve specificity, naturalness, and personality, while preserving core meaning and target tone.\n- Provides CLI tools for analysis, scoring, suggestions, and auto-humanization.\n- Includes detailed usage instructions and guidelines for \"always-on\" humanized output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3030935242d328374b0ff35dd4634d3506ab9b03cb6748dab8c6140ec11ed097"
+}

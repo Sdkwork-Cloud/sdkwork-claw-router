@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logger",
+  "skill": {
+    "id": 54694,
+    "skillKey": "clawhub-logger",
+    "name": "Log Automation — Append log entries to Google Sheet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logger",
+    "url": "https://clawhub.ai/skills/logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logger-2686af9f25e1a64f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log Automation — Append log entries, record audit trails, and automate event logging to a pre-configured Google Sheet by PortEden Secure access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porteden",
+      "userId": "s17bsdgb41z4bpwzdr5zqz5pah83xy13",
+      "displayName": "PortEden",
+      "image": "https://avatars.githubusercontent.com/u/258120807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773797708057,
+      "changelog": "Initial release of logger — Google Sheets log automation skill.\n\n- Enables append-only event/audit logging to a Google Sheet using PortEden Secure CLI.\n- Supports batch logging, CSV import, and AI-optimized JSON output with `-jc`.\n- Configuration via environment variables (`PE_API_KEY`, `PE_SHEET_ID`) for seamless agent integration.\n- Includes setup, schema guidance, and append best practices to ensure robust logging.\n- Log entries never overwrite existing data; always appended after last data row.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a90be9330b9dc159a850645660e52c181a92413fc6c1760fcd9b0ff001275d9"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25232,
+  "uuid": "skill-clawhub-nginx-hosting",
+  "skillKey": "clawhub-nginx-hosting",
+  "name": "Nginx Hosting",
+  "summary": "Zero-auth static game hosting via the server's local nginx instance. Primary deployment method for all browser games. No login, no token, no user action requ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginx_hosting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogerwu188",
+      "features": [
+        "Zero-auth static game hosting via the server's local nginx instance",
+        "Primary deployment method for all browser games",
+        "No login, no token, no user action requ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nginx-hosting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111558451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nginx-hosting",
+      "url": "https://clawhub.ai/skills/nginx-hosting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginx-hosting",
+    "url": "https://clawhub.ai/skills/nginx-hosting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginx-hosting-be16c87ea1ca7eed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nginx-hosting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nginx-hosting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b68f353d3ddd1dff5143d86994d7fbaf20d10e72238b784dae87668d57153e9",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T21:10:17.845Z"
+}

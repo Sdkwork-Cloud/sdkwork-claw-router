@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69271,
+  "uuid": "skill-clawhub-wechat-qq-sender",
+  "skillKey": "clawhub-wechat-qq-sender",
+  "name": "微信QQ自动发消息",
+  "summary": "Windows 平台微信和 QQ 自动发消息工具。支持搜索联系人、发送消息、截图OCR分析、智能回复建议（需用户确认后发送）。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_qq_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smallccwc",
+      "features": [
+        "Windows 平台微信和 QQ 自动发消息工具。支持搜索联系人、发送消息、截图OCR分析、智能回复建议（需用户确认后发送）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-qq-sender@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98419489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-qq-sender",
+      "url": "https://clawhub.ai/skills/wechat-qq-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-qq-sender",
+    "url": "https://clawhub.ai/skills/wechat-qq-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-qq-sender-5396d3985912cbe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-qq-sender@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-qq-sender-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bb325655873a4e4859dee89ca6dae462b74ae857a9bcfdc41c1c85151b62667",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T06:07:43.095Z"
+}

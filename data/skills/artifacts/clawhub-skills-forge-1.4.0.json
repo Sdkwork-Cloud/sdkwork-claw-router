@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-forge@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_forge",
+  "skill": {
+    "id": 28480,
+    "skillKey": "clawhub-skills-forge",
+    "name": "Skill Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-forge",
+    "url": "https://clawhub.ai/skills/skills-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-forge-c9ecaf900ed34c66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect repeated capability gaps, convert recurring user needs into candidate skills, scaffold new OpenClaw-compatible skills, and validate them before instal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheepxux",
+      "userId": "s1757n1qacyr9pz2g94gkdpgfh867kn5",
+      "displayName": "SheepXu",
+      "image": "https://avatars.githubusercontent.com/u/132804464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1778295900779,
+      "changelog": "v1.4.0 Evolve First: adds opt-in evolve-or-forge routing with decide_skill_action, fitness scoring, skill_forge.py decide, forge --prefer-evolve, synthetic feedback audit entries tagged source=forge-routing, and six routing release checks. Signed approval and replay regression remain authoritative downstream.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86899b212cfdc16357743457d6479fdc06fc909405b5591ad15c5af9eff6f632"
+}

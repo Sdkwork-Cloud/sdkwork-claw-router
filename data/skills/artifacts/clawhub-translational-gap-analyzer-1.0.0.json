@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/translational-gap-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translational_gap_analyzer",
+  "skill": {
+    "id": 38590,
+    "skillKey": "clawhub-translational-gap-analyzer",
+    "name": "Translational Gap Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translational-gap-analyzer",
+    "url": "https://clawhub.ai/skills/translational-gap-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translational-gap-analyzer-fc9a87bdf52f843a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess translational gaps between preclinical models and human diseases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775031157399,
+      "changelog": "Initial release of translational-gap-analyzer.\n\n- Assesses translational gaps between preclinical models and human diseases.\n- Provides structured workflows for both full and quick risk assessments.\n- Supports multi-model comparison and focused analysis by specific disease or biological domain.\n- Outputs standardized, reproducible reports including gap scores, risks, and improvement recommendations.\n- Includes command-line interface, example usage scenarios, and security best practices.\n- Reference materials and audit-ready commands are provided for validation and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:553c9b4f0b2568c4c08d2c41b811cd6821184316f55da74ebb74d7f813e7c75a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11057,
+  "uuid": "skill-clawhub-notectl",
+  "skillKey": "clawhub-notectl",
+  "name": "Notectl",
+  "summary": "Manage Apple Notes via AppleScript CLI",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notectl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rainbat",
+      "features": [
+        "Manage Apple Notes via AppleScript CLI"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notectl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2169148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notectl",
+      "url": "https://clawhub.ai/skills/notectl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notectl",
+    "url": "https://clawhub.ai/skills/notectl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notectl-f3cef4e0a1599261.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notectl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notectl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1220dc4edb840dbe12c15c908d60a81c4aefb18a477d8f539456ba642edaac18",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-21T21:50:12.888Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26393,
+  "uuid": "skill-clawhub-firm-memory-audit-pack",
+  "skillKey": "clawhub-firm-memory-audit-pack",
+  "name": "Firm Memory Audit Pack",
+  "summary": "Memory infrastructure audit pack. pgvector configuration validation and knowledge graph integrity check. 2 memory tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_memory_audit_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Memory infrastructure audit pack",
+        "pgvector configuration validation and knowledge graph integrity check",
+        "2 memory tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-memory-audit-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-memory-audit-pack",
+      "url": "https://clawhub.ai/skills/firm-memory-audit-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-memory-audit-pack",
+    "url": "https://clawhub.ai/skills/firm-memory-audit-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-memory-audit-pack-6e500f797db1013f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-memory-audit-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-memory-audit-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a005b2415165d2c845ee2ad72c37622f963f5a76716aea027a86f47883b69ee8",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:41:11.605Z"
+}

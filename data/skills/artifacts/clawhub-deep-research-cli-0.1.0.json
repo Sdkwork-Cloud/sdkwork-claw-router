@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_cli",
+  "skill": {
+    "id": 61245,
+    "skillKey": "clawhub-deep-research-cli",
+    "name": "Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-cli",
+    "url": "https://clawhub.ai/skills/deep-research-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-cli-42a0bdc818db498b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度多步网页研究。迭代搜索、页面抓取、综合分析，生成带引用的 Markdown 报告。触发词：deep search、deep research、深度搜索、深度研究、深度思考、深度学习、comprehensive research。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangsjt",
+      "userId": "publishers:yangsjt",
+      "displayName": "yangsjt",
+      "image": "https://avatars.githubusercontent.com/u/50203653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773053553799,
+      "changelog": "Initial release of deep-research-cli.\n\n- Introduces a systematic, multi-step methodology for in-depth web research and synthesis.\n- Automates iterative search, content fetching, analysis, and gap-filling using platform-native tools.\n- Outputs a structured, citation-rich Markdown report with executive summary, key findings, limitations, and full source list.\n- Supports both English and Chinese outputs based on user’s input language.\n- Strong emphasis on citation accuracy, source diversity, and transparency about uncertainties.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d68f70265edd988be220543030800609a5897da3fd7afa94328e42c7dcf78be"
+}

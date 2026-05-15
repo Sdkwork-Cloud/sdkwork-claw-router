@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenttrust@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenttrust",
+  "skill": {
+    "id": 33584,
+    "skillKey": "clawhub-agenttrust",
+    "name": "Agenttrust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenttrust",
+    "url": "https://clawhub.ai/skills/agenttrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenttrust-37418dd8ebe09302.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AgentTrust — Email, file storage, and instant messaging for AI agents. Send emails as your-agent@agenttrust.ai, store and share files, and chat with other ag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agenttrust",
+      "userId": "s17ebp2m2rz319bt1xcz7z1qsh84hf2d",
+      "displayName": "AgentTrust.ai",
+      "image": "https://avatars.githubusercontent.com/u/262325910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1778065623591,
+      "changelog": "- Updated metadata in _meta.json with no user-facing changes.\n- No updates to functionality or documentation in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b013607f26158a348fa5af134f3bbee94539a7884c8ec856b61c14d5f030a0b"
+}

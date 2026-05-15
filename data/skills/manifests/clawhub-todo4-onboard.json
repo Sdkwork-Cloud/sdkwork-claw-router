@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34781,
+  "uuid": "skill-clawhub-todo4-onboard",
+  "skillKey": "clawhub-todo4-onboard",
+  "name": "Todo4 Onboard",
+  "summary": "Sign up for Todo4 and connect this agent via MCP. Use whenever the user says things like 'set me up with Todo4', 'sign me up for Todo4', 'install Todo4', 'co...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo4_onboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Panit Wechasil",
+      "features": [
+        "Sign up for Todo4 and connect this agent via MCP",
+        "Use whenever the user says things like 'set me up with Todo4', 'sign me up for Todo4', 'install."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo4-onboard@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/390664?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo4-onboard",
+      "url": "https://clawhub.ai/skills/todo4-onboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo4-onboard",
+    "url": "https://clawhub.ai/skills/todo4-onboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo4-onboard-f0ae34c2120643df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo4-onboard@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo4-onboard-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c4d5fd24b3f67633fa988310e404722278957ffc2a5e7686e7fa068927e03e8",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:22:22.786Z"
+}

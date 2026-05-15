@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63993,
+  "uuid": "skill-clawhub-launchctl",
+  "skillKey": "clawhub-launchctl",
+  "name": "MacOS LaunchDaemon Scheduler",
+  "summary": "在 macOS 环境下使用 launchctl 定时启动或停止应用。当用户要求「定时启动/停止某个应用」「设置定时任务」「用 launchctl 管理应用」「每天几点自动打开XX」「定时关闭XX」时应使用本 Skill。支持自然语言时间描述（如「每天9点」「每2小时」「每周一上午8点」）和标准 cron 表达式，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launchctl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kongkong",
+      "features": [
+        "在 macOS 环境下使用 launchctl 定时启动或停止应用。当用户要求「定时启动/停止某个应用」「设置定时任务」「用 launchctl 管理应用」「每天几点自动打开XX」「定时关闭."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/launchctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4474745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "launchctl",
+      "url": "https://clawhub.ai/skills/launchctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launchctl",
+    "url": "https://clawhub.ai/skills/launchctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launchctl-ae17b9a737bf75ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/launchctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-launchctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:317b50740aec201d805297fc070fd6f14d24c4e2b78fed4436a025c0d67b9a52",
+      "artifactSizeBytes": 2706
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:05:13.477Z"
+}

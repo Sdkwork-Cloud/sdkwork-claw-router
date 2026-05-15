@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talebook@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talebook",
+  "skill": {
+    "id": 69945,
+    "skillKey": "clawhub-talebook",
+    "name": "Talebook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talebook",
+    "url": "https://clawhub.ai/skills/talebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talebook-6fa6db07c6e30965.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Talebook(PoxenStudio)是个人书库管理系统，提供电子书及实体书管理，包括存储、分类、搜索和元数据管理功能。你可以帮助用户：查询书库统计信息和阅读统计,搜索/浏览书籍,获取书籍详情,更新书籍元数据（书名、作者、标签、分类、简介等）,自动联网填充书籍信息,发送书籍到邮箱或阅读器设备,上传电子书或通过..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poxenstudio",
+      "userId": "s173jhrdgj35f8pz7vay4vakah83g5q1",
+      "displayName": "PoxenStudio",
+      "image": "https://avatars.githubusercontent.com/u/215387333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774336191594,
+      "changelog": "- Documentation updated in SKILL.md to clarify that the client uses Secure Cookie (user_id + lt) for session management; removed mention of automatic curl cookie jar handling.\n- No tool interfaces or logic were changed. All tool descriptions and usage remain the same.\n- Minor formatting/wording adjustments for accuracy and clarity in authentication instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dba5972bdc23394cde6859395d491202b07cea51c5eb93ec655e32791de2c75"
+}

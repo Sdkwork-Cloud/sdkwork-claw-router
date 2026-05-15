@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adaptive-learning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adaptive_learning",
+  "skill": {
+    "id": 32803,
+    "skillKey": "clawhub-adaptive-learning",
+    "name": "Adaptive Learning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adaptive-learning",
+    "url": "https://clawhub.ai/skills/adaptive-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adaptive-learning-517241c0efd5199f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create adaptive learning flashcard apps from course materials (URLs, PDFs, or folders). Uses FSRS (Free Spaced Repetition Scheduler) and Bayesian Knowledge T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weishuz",
+      "userId": "s17e9fv8c7p4ycfhfhmyc32pjh83ybvp",
+      "displayName": "Tree",
+      "image": "https://avatars.githubusercontent.com/u/144594870?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944134664,
+      "changelog": "Initial release: FSRS + BKT adaptive learning framework with multi-course support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93013adfc3f9165d84bb75617cc3df2de6c4e907168bcb5cc3d9e0005fb3e8bb"
+}

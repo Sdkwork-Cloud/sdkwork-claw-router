@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70169,
+  "uuid": "skill-clawhub-kingston",
+  "skillKey": "clawhub-kingston",
+  "name": "Kingston",
+  "summary": "提供金士顿内存条、固态硬盘、U盘等产品信息、价格查询及电脑升级建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingston",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供金士顿内存条、固态硬盘、U盘等产品信息、价格查询及电脑升级建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kingston@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kingston",
+      "url": "https://clawhub.ai/skills/kingston"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingston",
+    "url": "https://clawhub.ai/skills/kingston",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingston-7b8ad5d2420b1c7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kingston@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kingston-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3d514931578b911ee589c145e1333eafd457c2ea3a9727290f404c436d9e2f7",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:52:12.453Z"
+}

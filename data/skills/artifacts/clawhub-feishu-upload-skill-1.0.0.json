@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-upload-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_upload_skill",
+  "skill": {
+    "id": 63227,
+    "skillKey": "clawhub-feishu-upload-skill",
+    "name": "Feishu Upload Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-upload-skill",
+    "url": "https://clawhub.ai/skills/feishu-upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-upload-skill-7b03bce2a9157be5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "上传文件到飞书云盘并发送到指定聊天，支持自动令牌管理、30MB大小限制和多种文件格式，需Node.js 18+环境。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deewooo",
+      "userId": "s17547qctp48dgpj75msntqp7h83sk9e",
+      "displayName": "IvyWooo",
+      "image": "https://avatars.githubusercontent.com/u/7700516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 981,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771399816367,
+      "changelog": "feishu-upload-skill 1.0.0\n\n- Initial release with complete file upload and send-to-chat capabilities for Feishu (Lark)\n- Supports local file upload (up to 30MB), multiple file types, and automatic token management\n- Includes error handling, logging (with debug mode), and permission checks\n- Provides Bash and Node.js scripts for flexible integration\n- Requires Node.js 18+; no external dependencies needed\n- MIT licensed",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d767ed3f4459c4bdaae9114df5a58a6699a539e6ea01c1088557ae3a174019e5"
+}

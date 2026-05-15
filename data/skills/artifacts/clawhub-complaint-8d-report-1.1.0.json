@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/complaint-8d-report@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complaint_8d_report",
+  "skill": {
+    "id": 51073,
+    "skillKey": "clawhub-complaint-8d-report",
+    "name": "Customer Complaint 8D Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complaint-8d-report",
+    "url": "https://clawhub.ai/skills/complaint-8d-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complaint-8d-report-82621b86e893c48f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates or completes 8D reports (Eight Disciplines) from customer complaint data, with D1–D8 fill-in guidance and a standard template. Supports customer-sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lams001",
+      "userId": "s17cmsp02jr81gd0k5sd44143583gq8v",
+      "displayName": "lams001",
+      "image": "https://avatars.githubusercontent.com/u/204463276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773464042694,
+      "changelog": "**Customer-specific format support and attachments.**\n\n- Added support for multiple customer-specific 8D report formats; can match section order, headings, and extra fields per customer template.\n- Introduced logic to use format files from the new `formats/` folder or parse user-provided templates.\n- Now prompts for and handles charts/diagrams (e.g., fishbone, 5-Why), image/video evidence, and document attachments in relevant report disciplines.\n- Added sample and usage documentation for custom formats under `formats/README.md` and `formats/automotive-oem-example.md`.\n- Updated triggers for customer format and template selection.\n- Clarified guidance and placeholders for attachments and diagrams in each report section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e58e84d737844476f6c399c4e42de9f6c3edec10c4b8172435b88ef884be6dbb"
+}

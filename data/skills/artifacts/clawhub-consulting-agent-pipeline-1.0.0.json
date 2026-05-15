@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consulting-agent-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consulting_agent_pipeline",
+  "skill": {
+    "id": 63679,
+    "skillKey": "clawhub-consulting-agent-pipeline",
+    "name": "Consulting Agent Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consulting-agent-pipeline",
+    "url": "https://clawhub.ai/skills/consulting-agent-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consulting-agent-pipeline-6a14b78f54031892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多Agent协作研究管线 — 将\"调研→框架→执行→审核→迭代→交付\"的咨询项目工作流抽象为可复制的标准化协议。触发场景：(1) 新项目需要多Agent协作且横跨多个平台（Claude/Codex/Gemini/Minimax），(2) 咨询类交付物需要多轮结构化审核迭代，(3) 需要建立项目状态追踪机制替代散落..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lorwaleroy",
+      "userId": "s179ng7jqqrq992gacekeypxjn83q5mg",
+      "displayName": "LorwaLeroy",
+      "image": "https://avatars.githubusercontent.com/u/198293349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776258982700,
+      "changelog": "Claude审核通过版：POSIX兼容脚本+阶段门控分类表+发送前5项检查清单+扫描时机表；基于首钢吉泰安项目25文件实战验证",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bec4ce7c56ccde599a1cebffc9e48ca43834b86b59e06488e74769e2fb3585c"
+}

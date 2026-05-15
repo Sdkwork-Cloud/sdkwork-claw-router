@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12188,
+  "uuid": "skill-clawhub-paytrigo-openclawbot",
+  "skillKey": "clawhub-paytrigo-openclawbot",
+  "name": "PayTrigo (OpenClawBot, Base/USDC)",
+  "summary": "Use when an OpenClawBot needs to create or verify PayTrigo payments on Base/USDC without webhooks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paytrigo_openclawbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paytrigo",
+      "features": [
+        "Use when an OpenClawBot needs to create or verify PayTrigo payments on Base/USDC without webhoo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paytrigo-openclawbot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251841802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paytrigo-openclawbot",
+      "url": "https://clawhub.ai/skills/paytrigo-openclawbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paytrigo-openclawbot",
+    "url": "https://clawhub.ai/skills/paytrigo-openclawbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paytrigo-openclawbot-7b43d87cbc383fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paytrigo-openclawbot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paytrigo-openclawbot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec7342528bb0e0b74635f37e57f324ff879cc2dce48f94005559250fbc3eaec0",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T16:26:41.169Z"
+}

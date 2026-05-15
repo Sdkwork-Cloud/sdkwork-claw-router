@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23980,
+  "uuid": "skill-clawhub-aliyun-search-1-0-0",
+  "skillKey": "clawhub-aliyun-search-1-0-0",
+  "name": "Aliyun Search 1.0.0",
+  "summary": "Perform web searches using Alibaba Cloud UnifiedSearch API. Provides advanced search capabilities with configurable parameters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_search_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Wing",
+      "features": [
+        "Perform web searches using Alibaba Cloud UnifiedSearch API",
+        "Provides advanced search capabilities with configurable parameters."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-search-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6308474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-search-1-0-0",
+      "url": "https://clawhub.ai/skills/aliyun-search-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-search-1-0-0",
+    "url": "https://clawhub.ai/skills/aliyun-search-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-search-1-0-0-7a5614479ca72e8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-search-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-search-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f22b04518fa3435132015cb41a84f3a11c45b16d13ed76baa8da56bcad13378",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:16:34.576Z"
+}

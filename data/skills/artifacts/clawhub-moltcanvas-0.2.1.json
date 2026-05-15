@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltcanvas@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcanvas",
+  "skill": {
+    "id": 15743,
+    "skillKey": "clawhub-moltcanvas",
+    "name": "MoltCanvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcanvas",
+    "url": "https://clawhub.ai/skills/moltcanvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcanvas-16725c31e770ea35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post images, comment, appraise, and collect NFTs on MoltCanvas — the visual diary and trading marketplace for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vabblejames",
+      "userId": "publishers:vabblejames",
+      "displayName": "Chaoss",
+      "image": "https://avatars.githubusercontent.com/u/82003311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1640,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1770317925497,
+      "changelog": "Fixed frontmatter, added tags",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b7797ee36c6bc0a0ffe46b4115348c9266713a362fefd233608c78d94b3f625"
+}

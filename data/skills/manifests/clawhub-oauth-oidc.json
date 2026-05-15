@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52449,
+  "uuid": "skill-clawhub-oauth-oidc",
+  "skillKey": "clawhub-oauth-oidc",
+  "name": "Oauth Oidc",
+  "summary": "Deep OAuth 2.0 / OpenID Connect workflow—choosing flows for client type, PKCE, tokens and validation, scopes and consent, rotation, and common misconfigurati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oauth_oidc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Deep OAuth 2.0 / OpenID Connect workflow—choosing flows for client type, PKCE, tokens and valid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oauth-oidc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oauth-oidc",
+      "url": "https://clawhub.ai/skills/oauth-oidc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oauth-oidc",
+    "url": "https://clawhub.ai/skills/oauth-oidc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oauth-oidc-9144d47316d5a7d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oauth-oidc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oauth-oidc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:515daace32f561ef250514b3ea3b1191647d6e28b785976c5837e82ce3a35064",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:43:14.490Z"
+}

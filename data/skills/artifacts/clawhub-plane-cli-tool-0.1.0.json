@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plane-cli-tool@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plane_cli_tool",
+  "skill": {
+    "id": 51325,
+    "skillKey": "clawhub-plane-cli-tool",
+    "name": "Plane CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plane-cli-tool",
+    "url": "https://clawhub.ai/skills/plane-cli-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plane-cli-tool-1f17cc00592abdac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plane.so: Create, update, and manage issues, projects, states, labels, and pages. Use when the user wants to interact with Plane.so — creating issues, listin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jzakirov",
+      "userId": "s17dc74w3fv99fmcb319bbgp7s83vma6",
+      "displayName": "Jamil Zakirov",
+      "image": "https://avatars.githubusercontent.com/u/15848838?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772750686317,
+      "changelog": "Initial release of plane-cli v0.1.0:\n\n- Introduces CLI tool for Plane.so project management tasks.\n- Supports creation, updating, listing, and deletion of issues, projects, states, labels, and pages.\n- Provides JSON output by default with support for piping to tools like jq.\n- Includes interactive configuration and support for environment variables.\n- Implements safeguards for destructive commands (requires confirmation).\n- Comprehensive built-in help and quick command reference included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b7bffc8ed27a42f18fcb9ef47bf4182eb6e45af05d409e5f4be6ab94c798d91f"
+}

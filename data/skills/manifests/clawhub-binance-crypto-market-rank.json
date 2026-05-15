@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43077,
+  "uuid": "skill-clawhub-binance-crypto-market-rank",
+  "skillKey": "clawhub-binance-crypto-market-rank",
+  "name": "Binance Crypto Market Rank",
+  "summary": "Crypto market rankings and leaderboards. Query trending tokens, Binance Alpha tokens, smart money inflow rankings, meme token rankings, and top trader PnL le...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_crypto_market_rank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dexploarer",
+      "features": [
+        "Crypto market rankings and leaderboards",
+        "Query trending tokens, Binance Alpha tokens, smart money inflow rankings, meme token rankings,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-crypto-market-rank@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211557447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-crypto-market-rank",
+      "url": "https://clawhub.ai/skills/binance-crypto-market-rank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-crypto-market-rank",
+    "url": "https://clawhub.ai/skills/binance-crypto-market-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-crypto-market-rank-7c216f59bac48908.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-crypto-market-rank@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-crypto-market-rank-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e879224337a9d36706c9872c67be57699e0d2194d1325ac04149f1b7adff9b8",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T14:36:05.646Z"
+}

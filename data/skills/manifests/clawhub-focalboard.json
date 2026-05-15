@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34653,
+  "uuid": "skill-clawhub-focalboard",
+  "skillKey": "clawhub-focalboard",
+  "name": "Focalboard",
+  "summary": "Focalboard integration. Manage data, records, and automate workflows. Use when the user wants to interact with Focalboard data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focalboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Focalboard integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Focalboard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/focalboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "focalboard",
+      "url": "https://clawhub.ai/skills/focalboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focalboard",
+    "url": "https://clawhub.ai/skills/focalboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focalboard-7267391c427b5cef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/focalboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-focalboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbc47af2f863e8e633e26af4c0869d81749c0ab2256085805f1f412455ce0154",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:57.387Z"
+}

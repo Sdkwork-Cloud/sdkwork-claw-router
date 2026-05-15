@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sexy-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sexy_claw",
+  "skill": {
+    "id": 66196,
+    "skillKey": "clawhub-sexy-claw",
+    "name": "sexy-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sexy-claw",
+    "url": "https://clawhub.ai/skills/sexy-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sexy-claw-42d1e5703f34d106.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🦞 色😍龙虾 - 根据主人审美偏好，在多个平台（小红书、抖音、YouTube、B站）搜索并推荐颜值博主/视频。 自动获取用户cookies，学习主人喜好，推送个性化内容。 使用场景： - 主人说\"找美女/小姐姐/颜值博主\" - 主人提到特定平台（小红书/抖音/YouTube/B站） - 主人给出审美偏好（如\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanzh0912",
+      "userId": "s177eytfr4qz62zr8qjb0jdvr184mx6m",
+      "displayName": "deanzh0912",
+      "image": "https://avatars.githubusercontent.com/u/216615073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775887272800,
+      "changelog": "Sexy-Claw v1.0.0\n\n- 初始版本发布：跨小红书、抖音、B站、YouTube 多平台搜索与推荐颜值类内容。\n- 根据用户审美、偏好博主和平台自动个性化推荐，按热门度排序。\n- 支持自动获取及本地保存用户 cookies，保护隐私并提示定期更新。\n- 记录并持续学习用户喜好，提升推荐精准度。\n- 提供详细操作流程与使用说明，便捷脚本调用各平台内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89072cdb66c113094afd46c0ec925b6a5e716cf79eff137a2a971cfbf5fe1b4d"
+}

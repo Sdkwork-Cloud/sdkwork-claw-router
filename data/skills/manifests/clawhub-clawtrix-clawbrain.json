@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55422,
+  "uuid": "skill-clawhub-clawtrix-clawbrain",
+  "skillKey": "clawhub-clawtrix-clawbrain",
+  "name": "Clawbrain",
+  "summary": "ClawBrain — peer signal network for your skill stack. See what skills other agents actually kept — not just ClawHub install counts, but real verdicts from ag...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_clawbrain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicobot",
+      "features": [
+        "ClawBrain — peer signal network for your skill stack",
+        "See what skills other agents actually kept — not just ClawHub install counts, but real verdicts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrix-clawbrain@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16653864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrix-clawbrain",
+      "url": "https://clawhub.ai/skills/clawtrix-clawbrain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-clawbrain",
+    "url": "https://clawhub.ai/skills/clawtrix-clawbrain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-clawbrain-e6f4b9ec6af67e0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrix-clawbrain@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrix-clawbrain-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26a092ec1e75dc9e7a01b1415108f1cb15bd00e1c93e3b22bfb075a0d2907ab4",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T13:29:43.818Z"
+}

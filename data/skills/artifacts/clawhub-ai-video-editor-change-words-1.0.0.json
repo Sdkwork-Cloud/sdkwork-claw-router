@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-change-words@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_change_words",
+  "skill": {
+    "id": 43479,
+    "skillKey": "clawhub-ai-video-editor-change-words",
+    "name": "Ai Video Editor Change Words"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-change-words",
+    "url": "https://clawhub.ai/skills/ai-video-editor-change-words",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-change-words-ead4428ab8f565b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit existing video file into updated edited video with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776284091675,
+      "changelog": "Initial release of AI Video Editor Change Words:\n\n- Instantly replace spoken or on-screen words in existing videos without re-recording.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB, delivering 1080p MP4 outputs.\n- Fast, cloud-based processing (typically 30–60 seconds); tracks credits and session state.\n- Easy workflows for quick edits, iterative changes, or batch processing.\n- User-friendly: upload, specify word changes, and download the edited video—no technical steps needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b08843dbc061eec79ce636f2ab32d7a9298924b3940c1abc8b34a8c28593b2a6"
+}

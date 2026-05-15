@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentpulse-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpulse_monitor",
+  "skill": {
+    "id": 54107,
+    "skillKey": "clawhub-agentpulse-monitor",
+    "name": "AgentPulse Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpulse-monitor",
+    "url": "https://clawhub.ai/skills/agentpulse-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpulse-monitor-2101394d6d7ac708.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered infrastructure monitoring — thin agent, smart cloud. One-command install, real-time alerts, baseline learning, auto-remediation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "strouddustinn-bot",
+      "userId": "s17934kcdajnzqqnq4vx6v7zjn83jchb",
+      "displayName": "strouddustinn-bot",
+      "image": "https://avatars.githubusercontent.com/u/230357906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776411346897,
+      "changelog": "Initial release — thin monitoring agent with quick/full health checks, cron install, and API reporting",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1b86efad5e1def974f9def1176fc0859ef0711751f34b37c1673f1467bc8e36"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60519,
+  "uuid": "skill-clawhub-kubeasz-deploy",
+  "skillKey": "clawhub-kubeasz-deploy",
+  "name": "kubeasz-deploy",
+  "summary": "为 K8s 初学者提供 Kubernetes 集群部署指导，支持 AllinOne 快速体验和生产环境高可用部署。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubeasz_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "为 K8s 初学者提供 Kubernetes 集群部署指导，支持 AllinOne 快速体验和生产环境高可用部署。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubeasz-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubeasz-deploy",
+      "url": "https://clawhub.ai/skills/kubeasz-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubeasz-deploy",
+    "url": "https://clawhub.ai/skills/kubeasz-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubeasz-deploy-fba65ca1cb05c2fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubeasz-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubeasz-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78ec59f5f4066598ce2fa7714ab909347f21d71fa36d9bca741ea7295544dfa8",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:48:22.323Z"
+}

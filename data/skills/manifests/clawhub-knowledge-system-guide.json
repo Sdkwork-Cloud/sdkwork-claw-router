@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73620,
+  "uuid": "skill-clawhub-knowledge-system-guide",
+  "skillKey": "clawhub-knowledge-system-guide",
+  "name": "知识体系建构指南",
+  "summary": "帮助用户理解知识体系的重要性，提供拆解、归纳、联系、提炼四步方法及外挂知识库搭建系统化知识结构。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_system_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "帮助用户理解知识体系的重要性，提供拆解、归纳、联系、提炼四步方法及外挂知识库搭建系统化知识结构。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-system-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-system-guide",
+      "url": "https://clawhub.ai/skills/knowledge-system-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-system-guide",
+    "url": "https://clawhub.ai/skills/knowledge-system-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-system-guide-b287e4d45f29f960.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-system-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-system-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d0c3192b616093c32a21f2f5abaaaf0f99da63d37e52520b6f3f4672fdbd611",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T07:20:22.445Z"
+}

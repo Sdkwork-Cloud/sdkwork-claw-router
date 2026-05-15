@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-data-breach-response@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_data_breach_response",
+  "skill": {
+    "id": 36741,
+    "skillKey": "clawhub-toolweb-data-breach-response",
+    "name": "Data Breach Response"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-data-breach-response",
+    "url": "https://clawhub.ai/skills/toolweb-data-breach-response",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-data-breach-response-730237c3b81e480c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates customized, phased data breach incident response playbooks with tool recommendations and compliance checklists based on your organization's profile."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774788713225,
+      "changelog": "Data Breach Response Planner v1.0.0\n\n- Initial release of the Data Breach Response Planner API.\n- Generates tailored data breach response playbooks based on organizational assessment data.\n- Includes endpoints for health checks, plan generation, incident response phase reference, and tool recommendations.\n- Supports compliance requirements and integration with existing security tools.\n- Offers clear pricing tiers for organizations of all sizes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:893dae275c256221c85606ca1362e729189eaa33e214d50b660c5f9c3b25531b"
+}

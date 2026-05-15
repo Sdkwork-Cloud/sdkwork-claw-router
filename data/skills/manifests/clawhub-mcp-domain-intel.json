@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52764,
+  "uuid": "skill-clawhub-mcp-domain-intel",
+  "skillKey": "clawhub-mcp-domain-intel",
+  "name": "mcp-domain-intel",
+  "summary": "Domain intelligence — WHOIS lookups and domain availability checks via L402 API. Use for brand research, cybersecurity investigations, and domain acquisition...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_domain_intel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HaveBlue997",
+      "features": [
+        "Domain intelligence — WHOIS lookups and domain availability checks via L402 API",
+        "Use for brand research, cybersecurity investigations, and domain acquisition..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-domain-intel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23174278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-domain-intel",
+      "url": "https://clawhub.ai/skills/mcp-domain-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-domain-intel",
+    "url": "https://clawhub.ai/skills/mcp-domain-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-domain-intel-8e04f2a768e798de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-domain-intel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-domain-intel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aab6a09ed85ff2975a059655b207312da489c9c7fed43713a2b34a0735318f27",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:11:09.604Z"
+}

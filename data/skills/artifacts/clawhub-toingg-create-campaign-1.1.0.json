@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toingg-create-campaign@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toingg_create_campaign",
+  "skill": {
+    "id": 21882,
+    "skillKey": "clawhub-toingg-create-campaign",
+    "name": "Toingg Ops Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toingg-create-campaign",
+    "url": "https://clawhub.ai/skills/toingg-create-campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toingg-create-campaign-a746c99dd4a126c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and launch Toingg voice-calling campaigns by POSTing user-supplied JSON to the toingg/make_campaign API. Use when Codex needs to turn campaign briefs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhinavpgagi",
+      "userId": "publishers:abhinavpgagi",
+      "displayName": "abhinavpgagi",
+      "image": "https://avatars.githubusercontent.com/u/159517587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772471111537,
+      "changelog": "Add campaign fetch + make_call helpers",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92b9244735092da037f83947b3cb96c7fa9883091e83dcb2d25eaa62374402d9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eswr-studio@2.9.0",
+  "version": "2.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eswr_studio",
+  "skill": {
+    "id": 54885,
+    "skillKey": "clawhub-eswr-studio",
+    "name": "eswr-studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eswr-studio",
+    "url": "https://clawhub.ai/skills/eswr-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eswr-studio-9069d0f824ca4002.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Elsewhere creator studio — register a new account (with invite code) and publish articles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pitayak",
+      "userId": "s174ghe54q0j80zy3bydm81b0983perh",
+      "displayName": "PitayaK",
+      "image": "https://avatars.githubusercontent.com/u/66871823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.9.0",
+      "createdAt": 1774951706470,
+      "changelog": "**v2.9.0 adds mandatory token checking before all actions and clarifies the registration flow.**\n\n- Introduced a new \"Step 0: Token Check\" that must be completed before any command; prevents accidental unnecessary registration.\n- Registration now only permitted if token cannot be found via environment, `.env.local`, or long-term memory.\n- Updated publish and import commands to require explicit token check flow.\n- Registration and token management instructions clarified for reliability after skill updates.\n- Documentation version bumped to v2.9.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:549d2933e1cca8a1e332414e75054a0f75d84386299080da7bb362b3bd71c7e2"
+}

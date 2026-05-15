@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codex-account-switcher@1.4.3",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_account_switcher",
+  "skill": {
+    "id": 9652,
+    "skillKey": "clawhub-codex-account-switcher",
+    "name": "Codex Account Switcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-account-switcher",
+    "url": "https://clawhub.ai/skills/codex-account-switcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-account-switcher-690c0f7cbbfa143e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multiple OpenAI Codex accounts by capturing current login tokens, switching between saved accounts, and auto-selecting the best one based on quota bud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3273,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.4.3",
+      "createdAt": 1775548774815,
+      "changelog": "Use structured requires.config metadata; make OpenClaw sync explicit; align quota probing with codex-quota; improve security disclosure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4df49d62594d4decffbd0bc96fdfcfc435f275ea80c5ef1120ed541a43b8185"
+}

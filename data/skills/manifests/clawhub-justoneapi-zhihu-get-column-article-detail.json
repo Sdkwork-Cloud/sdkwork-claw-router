@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47561,
+  "uuid": "skill-clawhub-justoneapi-zhihu-get-column-article-detail",
+  "skillKey": "clawhub-justoneapi-zhihu-get-column-article-detail",
+  "name": "Zhihu Column Article Details API",
+  "summary": "Call GET /api/zhihu/get-column-article-detail/v1 for Zhihu Column Article Details through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_zhihu_get_column_article_detail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/zhihu/get-column-article-detail/v1 for Zhihu Column Article Details through JustO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-zhihu-get-column-article-detail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-zhihu-get-column-article-detail",
+      "url": "https://clawhub.ai/skills/justoneapi-zhihu-get-column-article-detail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-zhihu-get-column-article-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-zhihu-get-column-article-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-zhihu-get-column-article-detail-7d098ed695774196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-zhihu-get-column-article-detail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-zhihu-get-column-article-detail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5cbf5f529f598ce71f45832247f08ed8c72da3c6325747ae817767a6ea5764f",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:02:24.883Z"
+}

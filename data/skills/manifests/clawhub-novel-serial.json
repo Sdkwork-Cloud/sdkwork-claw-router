@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71480,
+  "uuid": "skill-clawhub-novel-serial",
+  "skillKey": "clawhub-novel-serial",
+  "name": "番茄小说 AI 自动连载、发布技能。流程全自动，每天定时生成并发布小说章节，支持多书管理、金手指边界校验、角色状态追踪。用户只需要获取网页cookie即可每天自动发布，无需任何人工干预。",
+  "summary": "番茄小说 AI 自动连载发布技能。每天定时生成并发布小说章节，支持多书管理、金手指边界校验、角色状态追踪。需配合 OpenClaw cron 使用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_serial",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiqi52566",
+      "features": [
+        "番茄小说 AI 自动连载发布技能。每天定时生成并发布小说章节，支持多书管理、金手指边界校验、角色状态追踪。需配合 OpenClaw cron 使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-serial@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128662558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-serial",
+      "url": "https://clawhub.ai/skills/novel-serial"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-serial",
+    "url": "https://clawhub.ai/skills/novel-serial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-serial-ce3ba51c7549ab42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-serial@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-serial-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8f830bf412192c85e8f08bf1c13803c0811590fa2b5ae3c8eca10bbfa850e99",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:20:59.556Z"
+}

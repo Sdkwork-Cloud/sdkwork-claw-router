@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71582,
+  "uuid": "skill-clawhub-gofilshsearcher",
+  "skillKey": "clawhub-gofilshsearcher",
+  "name": "闲鱼商品精选助手",
+  "summary": "闲鱼商品自动搜索技能，支持严格筛选（个人闲置/单一价格/排除商家），输出 TOP10 价格升序列表",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gofilshsearcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xxxzhuo",
+      "features": [
+        "闲鱼商品自动搜索技能，支持严格筛选（个人闲置/单一价格/排除商家），输出 TOP10 价格升序列表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gofilshsearcher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191365078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gofilshsearcher",
+      "url": "https://clawhub.ai/skills/gofilshsearcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gofilshsearcher",
+    "url": "https://clawhub.ai/skills/gofilshsearcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gofilshsearcher-ca949e4ab5e88c8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gofilshsearcher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gofilshsearcher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa6c3602297e12c3b35ac92caf7b5b1ffc2fc717b459bb22ff45354ff74a21f1",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:45:08.675Z"
+}

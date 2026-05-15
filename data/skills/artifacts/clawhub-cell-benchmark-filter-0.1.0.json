@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cell-benchmark-filter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cell_benchmark_filter",
+  "skill": {
+    "id": 56814,
+    "skillKey": "clawhub-cell-benchmark-filter",
+    "name": "对标筛选"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cell-benchmark-filter",
+    "url": "https://clawhub.ai/skills/cell-benchmark-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cell-benchmark-filter-04c4f738dc443dc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Benchmark filtering for Chinese creator, OPC, and one-person-business work. Use when Codex needs to judge whether a person, creator, or business is actually..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cellinlab",
+      "userId": "s174y213bsdrc75e878jghxphh841v00",
+      "displayName": "cellinlab",
+      "image": "https://avatars.githubusercontent.com/u/46317258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775815372339,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b821f95e0fa00c8a6d6b11e7bec39f24027fe602870f61ea1cca974a35619ae0"
+}

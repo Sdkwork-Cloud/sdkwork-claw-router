@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31934,
+  "uuid": "skill-clawhub-openfactory",
+  "skillKey": "clawhub-openfactory",
+  "name": "Build Custom Linux ISO's and Deployments",
+  "summary": "Build, test, and deploy custom Linux ISOs with OpenFactory. Create VMs, run compliance tests, manage recipes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfactory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziegenbalg",
+      "features": [
+        "Build, test, and deploy custom Linux ISOs with OpenFactory",
+        "Create VMs, run compliance tests, manage recipes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openfactory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56849323?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openfactory",
+      "url": "https://clawhub.ai/skills/openfactory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfactory",
+    "url": "https://clawhub.ai/skills/openfactory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfactory-bb50a3505664cec0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openfactory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openfactory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6816d00cead6b90fc3d737d960188de46e0b4b484742ee6c1003aa9826701b1",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T20:30:28.938Z"
+}

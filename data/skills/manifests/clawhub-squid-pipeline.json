@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40053,
+  "uuid": "skill-clawhub-squid-pipeline",
+  "skillKey": "clawhub-squid-pipeline",
+  "name": "Squid",
+  "summary": "Create, modify, and debug agentic pipelines with Squid. Define multi-agent YAML workflows with spawn (OpenClaw, Claude Code, OpenCode), gates, parallel execu...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.squid_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dominik Szopa",
+      "features": [
+        "Create, modify, and debug agentic pipelines with Squid",
+        "Define multi-agent YAML workflows with spawn (OpenClaw, Claude Code, OpenCode), gates, parallel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/squid-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150737?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "squid-pipeline",
+      "url": "https://clawhub.ai/skills/squid-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "squid-pipeline",
+    "url": "https://clawhub.ai/skills/squid-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/squid-pipeline-fd210007650f0ad7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/squid-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-squid-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f48f22f170c72a769bf9b1c9d6f05d7474f35a4cc0aabc2ea300097b2bf4d961",
+      "artifactSizeBytes": 3629
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T22:50:06.804Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-in-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_in_video_generator",
+  "skill": {
+    "id": 55302,
+    "skillKey": "clawhub-ai-image-in-video-generator",
+    "name": "Ai Image In Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-in-video-generator",
+    "url": "https://clawhub.ai/skills/ai-image-in-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-in-video-generator-857dafdc629d33a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn my images into a smooth video with transitions and background music —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777104483528,
+      "changelog": "AI Image in Video Generator — Convert Images Into Videos v1.0.0\n\n- Initial release: Instantly convert uploaded images (JPG, PNG, WEBP, GIF up to 200MB) into AI-generated videos with transitions and background music.\n- Automatic cloud session setup, handling user authentication and tokens seamlessly (with 100 free credits on signup).\n- Supports video export in multiple formats (mp4, mov, avi, webm, mkv); MP4 recommended for compatibility.\n- Includes credit checking, upload status, session state, and easy export/download of results.\n- User prompts are intelligently routed for upload, edit, export, and credit actions.\n- Error handling for common issues (expired sessions, file limits, missing credits) with clear user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e24990afd9d1926e483b2e5d0b3c0d010f6082aec46df5cb3071ab8d1ad923e1"
+}

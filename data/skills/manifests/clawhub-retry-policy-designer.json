@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48290,
+  "uuid": "skill-clawhub-retry-policy-designer",
+  "skillKey": "clawhub-retry-policy-designer",
+  "name": "Retry Policy Designer",
+  "summary": "Design retry and backoff policies for distributed systems. Analyze failure modes, recommend exponential backoff with jitter, circuit breaker integration, tim...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retry_policy_designer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Design retry and backoff policies for distributed systems",
+        "Analyze failure modes, recommend exponential backoff with jitter, circuit breaker integration,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retry-policy-designer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retry-policy-designer",
+      "url": "https://clawhub.ai/skills/retry-policy-designer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retry-policy-designer",
+    "url": "https://clawhub.ai/skills/retry-policy-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retry-policy-designer-473b07b61bc61814.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retry-policy-designer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retry-policy-designer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13b4328a5dc03fb284e3f14a770f0603ac037a12f8d8260b122ece0d66878b36",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:46:56.915Z"
+}

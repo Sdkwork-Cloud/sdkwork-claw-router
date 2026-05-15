@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27510,
+  "uuid": "skill-clawhub-shippage",
+  "skillKey": "clawhub-shippage",
+  "name": "Shippage",
+  "summary": "Publish HTML or Markdown to a public URL instantly. Zero config, auto-registers on first use. Use when the user wants to share, preview, host, or deploy gene...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Uncle.J",
+      "features": [
+        "Publish HTML or Markdown to a public URL instantly",
+        "Zero config, auto-registers on first use",
+        "Use when the user wants to share, preview, host, or deploy gene..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shippage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24601947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shippage",
+      "url": "https://clawhub.ai/skills/shippage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippage",
+    "url": "https://clawhub.ai/skills/shippage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippage-c78415915ec5e78b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shippage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shippage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da2ae252aec70bc058659823f63c4ccd1ce7264daf0a57c796c1f5cfb4b91637",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T01:28:50.626Z"
+}

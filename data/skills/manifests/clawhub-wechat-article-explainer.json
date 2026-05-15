@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68338,
+  "uuid": "skill-clawhub-wechat-article-explainer",
+  "skillKey": "clawhub-wechat-article-explainer",
+  "name": "wechat-article-explainer",
+  "summary": "微信公众号文章通俗内容解释技能。当用户需要总结或解释微信公众号链接或url时使用这个技能。技能包含：根据用户提供的链接或URL，读取链接内容，用通俗的语言解释内容。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_explainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenhao11235813",
+      "features": [
+        "微信公众号文章通俗内容解释技能。当用户需要总结或解释微信公众号链接或url时使用这个技能。技能包含：根据用户提供的链接或URL，读取链接内容，用通俗的语言解释内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-explainer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220284256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-explainer",
+      "url": "https://clawhub.ai/skills/wechat-article-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-explainer",
+    "url": "https://clawhub.ai/skills/wechat-article-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-explainer-210aa7ef828d6650.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-explainer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-explainer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d3c5de86f7ceddd0fd315ed4089042390d3d94bf50908f1caa8a727d15ce8b1",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:49:23.151Z"
+}

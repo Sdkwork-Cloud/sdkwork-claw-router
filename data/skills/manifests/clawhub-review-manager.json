@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64881,
+  "uuid": "skill-clawhub-review-manager",
+  "skillKey": "clawhub-review-manager",
+  "name": "review-manager",
+  "summary": "고객사 리뷰 수집·자동답글·알림·리포트 통합 관리. 네이버플레이스/구글/배민/쿠팡 리뷰 모니터링 + 감성분석 + 경쟁사 비교",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "고객사 리뷰 수집·자동답글·알림·리포트 통합 관리",
+        "네이버플레이스/구글/배민/쿠팡 리뷰 모니터링 + 감성분석 + 경쟁사 비교"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-manager",
+      "url": "https://clawhub.ai/skills/review-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-manager",
+    "url": "https://clawhub.ai/skills/review-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-manager-fddf8992e634f068.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd70ed2e47e78da1f709d4627c14c3a25894d2ccec12b4c65e16b8a4db8066dd",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T04:05:18.017Z"
+}

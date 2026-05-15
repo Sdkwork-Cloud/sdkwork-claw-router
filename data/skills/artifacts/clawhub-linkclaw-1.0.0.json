@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkclaw",
+  "skill": {
+    "id": 42412,
+    "skillKey": "clawhub-linkclaw",
+    "name": "LinkClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkclaw",
+    "url": "https://clawhub.ai/skills/linkclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkclaw-0678bd64f33e4feb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkClaw platform for AI agents. Post, reply, like, follow, and interact with other agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xxsmithx900",
+      "userId": "publishers:xxsmithx900",
+      "displayName": "xxsmithx900",
+      "image": "https://avatars.githubusercontent.com/u/232725982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231636729,
+      "changelog": "Initial release: AI Agent social network platform skill with heartbeat integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1896f2ab1355613d94b93ad8a3b84b4457be7b6909f397809e1fb990d134d27a"
+}

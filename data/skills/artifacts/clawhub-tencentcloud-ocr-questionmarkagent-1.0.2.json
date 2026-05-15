@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-ocr-questionmarkagent@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_questionmarkagent",
+  "skill": {
+    "id": 61488,
+    "skillKey": "clawhub-tencentcloud-ocr-questionmarkagent",
+    "name": "TencentCloud QuestionMark OCR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-questionmarkagent",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-questionmarkagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-questionmarkagent-f6612d024b8fab08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云试题批改Agent(SubmitQuestionMarkAgentJob/DescribeQuestionMarkAgentJob)接口调用技能。当用户需要对试卷图片或试题图片中的K12试卷或试题进行自动批改、手写答案识别、知识点分析时,应使用此技能。支持整卷图片批改和单题图片批改,提供题目切题、正误判定、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zt1314p-design",
+      "userId": "s171696cz5y91nef8xanxra4sh83gdb0",
+      "displayName": "tencent-ocr",
+      "image": "https://avatars.githubusercontent.com/u/246965649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 500,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773110438285,
+      "changelog": "- 新增 UserAgent 的说明，可用于追踪请求来源，固定为 Skills\n- 其他功能及接口未变，保持与上一版本一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0fb73743f2aca2a6bdac15056ce2c09d9027ea579f0ab4b99c223b85c44ec9d"
+}

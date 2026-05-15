@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clipchamp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipchamp",
+  "skill": {
+    "id": 45943,
+    "skillKey": "clawhub-clipchamp",
+    "name": "Clipchamp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipchamp",
+    "url": "https://clawhub.ai/skills/clipchamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipchamp-f1206a09e2fa4965.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute screen recording or phone footage into 1080p polished edited videos just by typing what you need. Whether it's editing and exporting videos q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776013410961,
+      "changelog": "Clipchamp 1.0.0 — AI-Powered Fast Video Editing\n\n- Instantly edit and export video clips (screen recordings, phone footage, etc.) to polished 1080p videos by simply describing your needs—no manual timeline work or export settings.\n- Fully automates session creation, anonymous token handling, and initialization; just upload your clip and get started.\n- Supports fast, cloud GPU editing and export in common formats (mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac) with typical job completion in 1-2 minutes for short (~2 min) clips.\n- Seamlessly handles common requests like upload, export, checking credits, and session state via keyword classification.\n- Includes detailed error handling (token expiry, session loss, unsupported file/size, rate limits) and user-friendly feedback throughout the workflow.\n- Provides clear tips, workflows, and best practices for content creators and marketers looking to turn raw clips into social-ready exports in minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7baffe33c5dfa8198287497be4d28061f1728b2ccc439ced15cc5bad985b086"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-sentinel-ultimate@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sentinel_ultimate",
+  "skill": {
+    "id": 33507,
+    "skillKey": "clawhub-security-sentinel-ultimate",
+    "name": "Security Sentinel Ultimate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sentinel-ultimate",
+    "url": "https://clawhub.ai/skills/security-sentinel-ultimate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sentinel-ultimate-6f7f0c74c0c136b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans a skill directory for security issues and best practices"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liverock",
+      "userId": "s175ewnhnmrjf1y1sxk9d8r89s83wbxr",
+      "displayName": "Peter Lum",
+      "image": "https://avatars.githubusercontent.com/u/211891?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1775534267536,
+      "changelog": "- Improved documentation with detailed detection categories and severity model explanations.\n- Added a new severity tier system (Critical, Warning, OK) with clear definitions and reporting for individual files and overall status.\n- Expanded detection capabilities: flags dangerous calls, hardcoded secrets, risky network calls, multiple obfuscation techniques, and hidden files.\n- Enhanced scan analysis: now catches secret construction through string concatenation and `chr()` sequences.\n- Clarified tool usage instructions with updated arguments and execution details for easier integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:087f7998c6f25f9d23af5b79cf282c18a0e6c7885e6d31a8b4a1d9549f3ba23c"
+}

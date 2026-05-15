@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34130,
+  "uuid": "skill-clawhub-flowiseai",
+  "skillKey": "clawhub-flowiseai",
+  "name": "Flowiseai",
+  "summary": "FlowiseAI integration. Manage data, records, and automate workflows. Use when the user wants to interact with FlowiseAI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowiseai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FlowiseAI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FlowiseAI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowiseai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowiseai",
+      "url": "https://clawhub.ai/skills/flowiseai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowiseai",
+    "url": "https://clawhub.ai/skills/flowiseai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowiseai-55d2f25cd00a0809.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowiseai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowiseai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4664aed8231cb3649399227f193c541fe311568901b8917615dc577ba5efa3df",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:43.634Z"
+}

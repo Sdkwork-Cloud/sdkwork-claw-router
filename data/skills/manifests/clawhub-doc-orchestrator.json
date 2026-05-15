@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22383,
+  "uuid": "skill-clawhub-doc-orchestrator",
+  "skillKey": "clawhub-doc-orchestrator",
+  "name": "Doc Orchestrator",
+  "summary": "Orchestrate multi-chapter document generation using sub-agents. Use when producing long structured documents (PRDs, technical specs, research reports, design...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicola",
+      "features": [
+        "Orchestrate multi-chapter document generation using sub-agents",
+        "Use when producing long structured documents (PRDs, technical specs, research reports, design..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-orchestrator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116726033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-orchestrator",
+      "url": "https://clawhub.ai/skills/doc-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-orchestrator",
+    "url": "https://clawhub.ai/skills/doc-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-orchestrator-9e11c4493569ff66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-orchestrator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-orchestrator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ca85599867bb6dfad4e6c3d8c50351b2a73ee32f063057faa8a7892a2f03791",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T12:51:37.423Z"
+}

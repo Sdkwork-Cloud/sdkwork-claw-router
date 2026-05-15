@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-to-wechat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_to_wechat",
+  "skill": {
+    "id": 67829,
+    "skillKey": "clawhub-zhihu-to-wechat",
+    "name": "zhihu-to-wechat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-to-wechat",
+    "url": "https://clawhub.ai/skills/zhihu-to-wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-to-wechat-d7d7384b96f6046c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全自动知乎热榜选题 → IT科技风格公众号文章生成 → 自动配图 → 微信服务号发布工作流。 当用户提到\"知乎热点\"、\"公众号文章\"、\"帮我写公众号\"、\"热榜选题\"、\"微信推文\"、\"IT科技文章\"、 \"发布公众号\"等场景时，必须触发此skill。适用于科技博主、IT自媒体、技术内容创作者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dachenchen690-droid",
+      "userId": "publishers:dachenchen690-droid",
+      "displayName": "dachenchen690-droid",
+      "image": "https://avatars.githubusercontent.com/u/250045882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772760708009,
+      "changelog": "- Initial release of zhihu-to-wechat skill.\n- Automatically fetches top Zhihu trending topics and generates WeChat-style articles.\n- Guides users through topic selection, content summarization, article creation, and WeChat draft publishing.\n- Provides clear formatting standards and API usage instructions for WeChat Official Accounts.\n- Includes key reminders for account requirements and token management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a6f56c7e8b8b5780fb87c0476e088cae8c1cdffcd3de91dd0778926d6ee41c1"
+}

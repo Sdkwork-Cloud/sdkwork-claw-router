@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72393,
+  "uuid": "skill-clawhub-jike-zodiac-pairing-query",
+  "skillKey": "clawhub-jike-zodiac-pairing-query",
+  "name": "星座配对 - 即刻数据",
+  "summary": "星座配对。输入男生星座和女生星座，查询配对指数、比例、同情指数、天长地久指数、结果评述和恋爱建议。 适用场景：用户询问相关传统文化、生活常识或配对资料时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_zodiac_pairing_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "星座配对。输入男生星座和女生星座，查询配对指数、比例、同情指数、天长地久指数、结果评述和恋爱建议。 适用场景：用户询问相关传统文化、生活常识或配对资料时使用。数据由即刻数据（jikeapi.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-zodiac-pairing-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-zodiac-pairing-query",
+      "url": "https://clawhub.ai/skills/jike-zodiac-pairing-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-zodiac-pairing-query",
+    "url": "https://clawhub.ai/skills/jike-zodiac-pairing-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-zodiac-pairing-query-ecbdeffbf1d86795.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-zodiac-pairing-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-zodiac-pairing-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdd731ba022b0a95817c7b68eecf17bea6f22aba3833c6426487b0f3d3d5b4c",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:45:57.810Z"
+}

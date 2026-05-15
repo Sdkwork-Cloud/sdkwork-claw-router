@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37285,
+  "uuid": "skill-clawhub-apaya",
+  "skillKey": "clawhub-apaya",
+  "name": "Apaya",
+  "summary": "Apaya integration. Manage data, records, and automate workflows. Use when the user wants to interact with Apaya data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apaya",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Apaya integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Apaya data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apaya@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apaya",
+      "url": "https://clawhub.ai/skills/apaya"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apaya",
+    "url": "https://clawhub.ai/skills/apaya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apaya-eb68290907558b86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apaya@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apaya-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35681f54a0d2a8a92220a1ec371334a3d20e6948f628414338d8b832a07c11be",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:10:38.314Z"
+}

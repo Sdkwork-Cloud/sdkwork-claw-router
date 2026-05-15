@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nordvpn@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nordvpn",
+  "skill": {
+    "id": 12756,
+    "skillKey": "clawhub-nordvpn",
+    "name": "NordVPN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nordvpn",
+    "url": "https://clawhub.ai/skills/nordvpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nordvpn-3be61a4ec26d84ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control NordVPN on Linux via the `nordvpn` CLI (connect/disconnect, choose country/city/group, read status, tweak settings, manage allowlist). Use for automation that needs region routing or temporary VPN tunneling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maciekish",
+      "userId": "publishers:maciekish",
+      "displayName": "maciekish",
+      "image": "https://avatars.githubusercontent.com/u/442007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770152571976,
+      "changelog": "- Documentation updated to clarify that on some systems, the full path (/snap/bin/nordvpn) may be required to run the CLI when installed via snap.\n- No changes to code or implementation; this is a documentation-only update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b138353383a446ca325b93a748467e4b4ab9a0bd23922bebe0da246d341e2ba"
+}

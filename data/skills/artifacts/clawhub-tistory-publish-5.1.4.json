@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tistory-publish@5.1.4",
+  "version": "5.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tistory_publish",
+  "skill": {
+    "id": 50193,
+    "skillKey": "clawhub-tistory-publish",
+    "name": "Tistory Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tistory-publish",
+    "url": "https://clawhub.ai/skills/tistory-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tistory-publish-27dd254387afb5e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Tistory blog publishing via OpenClaw Playwright CDP. Supports any post format — handles TinyMCE editor manipulation, OG card insertion, banner uploa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garibong-labs",
+      "userId": "s17erq91vaqjxyyx47mr6hkq2183hwed",
+      "displayName": "garibong-labs",
+      "image": "https://avatars.githubusercontent.com/u/258610216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "5.1.4",
+      "createdAt": 1774709403766,
+      "changelog": "Remove internal templates (mk-review, anthropic-daily, openclaw-release). login.sh requires --cred-file arg. No internal paths in published code.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d2ec06b8555d9d0c1581286d507edf7f079f7eb534569c027dbc2f3bff3c726"
+}

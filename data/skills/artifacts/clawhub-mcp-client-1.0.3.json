@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-client@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_client",
+  "skill": {
+    "id": 10544,
+    "skillKey": "clawhub-mcp-client",
+    "name": "Mcp Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-client",
+    "url": "https://clawhub.ai/skills/mcp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-client-f2d6b223bec6c1a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Model Context Protocol (MCP) client - connect to tools, data sources and services"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nantes",
+      "userId": "s170qwtzgq9bfexvxw8e5ws1ms83g6qn",
+      "displayName": "Ivan Cetta",
+      "image": "https://avatars.githubusercontent.com/u/2672456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2413,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771783972794,
+      "changelog": "Force rescan - verified working",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d9d3a35dacf43e38eeb8632500bf58f600fc4d99d6609e09d1b272428fc6a83"
+}

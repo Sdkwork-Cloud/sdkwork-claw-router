@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/event-watcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_watcher",
+  "skill": {
+    "id": 12126,
+    "skillKey": "clawhub-event-watcher",
+    "name": "Event-Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-watcher",
+    "url": "https://clawhub.ai/skills/event-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-watcher-4de458cd06ee2f98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Event watcher skill for OpenClaw. Use when you need to subscribe to event sources (Redis Streams + webhook JSONL) and wake an agent only when matching events arrive. Covers filtering, dedupe, retry, and session routing via sessions_send/ag."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solitaire2015",
+      "userId": "s174pzgrkv4a1rh5n3g7zas1yx83jnzt",
+      "displayName": "Craig.C.Li",
+      "image": "https://avatars.githubusercontent.com/u/15261283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1784,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770436830936,
+      "changelog": "- Added a prompt safety notice: event payloads are untrusted, and a safety header is included by default to prevent instruction following.\n- Provided instructions for disabling the safety header via `wake.add_source_preamble: false` if the source is trusted.\n- No code or file changes; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6e4f57bc8f4085be5dbac8211c0a247ba153d5650e8382568a37ca8c62a7531"
+}

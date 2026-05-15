@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30970,
+  "uuid": "skill-clawhub-agent-self-evolve",
+  "skillKey": "clawhub-agent-self-evolve",
+  "name": "Agent Self-Evolve",
+  "summary": "Self-evolution system for OpenClaw agents. Enables continuous learning through mistake tracking, experience distillation, skill improvement queues, and autom...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_evolve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghengyi1986-afk",
+      "features": [
+        "Self-evolution system for OpenClaw agents",
+        "Enables continuous learning through mistake tracking, experience distillation, skill improvemen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-self-evolve@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266693384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-self-evolve",
+      "url": "https://clawhub.ai/skills/agent-self-evolve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-evolve",
+    "url": "https://clawhub.ai/skills/agent-self-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-evolve-dae1ee2bb2f3ea13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-self-evolve@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-self-evolve-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3558d155f4dedf7bc0723f1269cef856465d47d7d7ae2a0f8054589f9b997605",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T06:40:18.649Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuyonghao-self-improving@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_self_improving",
+  "skill": {
+    "id": 38000,
+    "skillKey": "clawhub-yuyonghao-self-improving",
+    "name": "Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-self-improving",
+    "url": "https://clawhub.ai/skills/yuyonghao-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-self-improving-e6d5f516b611e75f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774587779596,
+      "changelog": "Initial public release of the self-improvement skill for OpenClaw and other agents.\n\n- Introduces a structured workflow for logging errors, learnings, and feature requests in markdown files.\n- Provides templates and guidelines for categorizing and formatting log entries.\n- Details promotion targets for important learnings (e.g., project memory, agent guidelines).\n- Outlines workspace setup and directory structure, especially for OpenClaw users.\n- Includes installation instructions for both OpenClaw and generic agent environments.\n- Describes best practices for reviewing and resolving logged issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8d99849b72caf8260b78bebf58a8e87c68a5c2fe62449dc165434b8f7685429"
+}

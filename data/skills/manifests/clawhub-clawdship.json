@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15748,
+  "uuid": "skill-clawhub-clawdship",
+  "skillKey": "clawhub-clawdship",
+  "name": "Clawdship",
+  "summary": "Deploy websites and apps to clawdship.dev with zero signup. Use when user says \"deploy\", \"host\", \"put this online\", \"publish site\", \"ship it\", or wants to de...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdship",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ndlz",
+      "features": [
+        "Deploy websites and apps to clawdship.dev with zero signup",
+        "Use when user says \"deploy\", \"host\", \"put this online\", \"publish site\", \"ship it\", or wants to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdship@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20909728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdship",
+      "url": "https://clawhub.ai/skills/clawdship"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdship",
+    "url": "https://clawhub.ai/skills/clawdship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdship-db3ef1fb42660924.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdship@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdship-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c8fc4209bc2baf5ea9a0557bea72af66f8e8df0a3477eb2f4630a54d75de742",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T15:18:35.454Z"
+}

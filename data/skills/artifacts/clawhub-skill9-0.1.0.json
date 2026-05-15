@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill9@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill9",
+  "skill": {
+    "id": 53911,
+    "skillKey": "clawhub-skill9",
+    "name": "skill9"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill9",
+    "url": "https://clawhub.ai/skills/skill9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill9-a0bb35c74c88b18a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-synced skill vault — backup, version, and sync your AI agent skills across machines and platforms. Use when user wants to backup, sync, version-control..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shonge",
+      "userId": "s170hcs4ttw90s7nbtfjr6th5n84fhfg",
+      "displayName": "Skill9",
+      "image": "https://avatars.githubusercontent.com/u/13828605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775814675666,
+      "changelog": "Initial release of skill9 — cloud-synced skill vault.\n\n- Backup, version, and sync your AI agent skills across machines and platforms\n- Supports commands for pushing, pulling, listing, diffing, rollback, and deleting skills\n- Compatible with systems that have curl or wget installed\n- All commands accept --json and --platform for flexibility\n- Simple routing to setup and uninstall documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:018cf83c1bdd2284414be922de2eb0d6310e9f36ba16c2e337126fcf6e260dc8"
+}

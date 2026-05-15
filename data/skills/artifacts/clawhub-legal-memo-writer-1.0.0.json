@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-memo-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_memo_writer",
+  "skill": {
+    "id": 36690,
+    "skillKey": "clawhub-legal-memo-writer",
+    "name": "Legal Memo Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-memo-writer",
+    "url": "https://clawhub.ai/skills/legal-memo-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-memo-writer-a809461e5183177f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write formal legal memos with proper structure, citations, legal analysis, and professional tone. Use when drafting legal memoranda, case analysis, statutory..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmy974",
+      "userId": "s17dfx99gja4hssv5gt91dnmen83st71",
+      "displayName": "Jimmy974",
+      "image": "https://avatars.githubusercontent.com/u/446307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774708610411,
+      "changelog": "Initial release — generates formally structured legal memoranda with support for multiple jurisdictions and citation standards.\n\n- Drafts legal memos using IRAC or CREAC formats for US Federal, UK, and EU/GDPR jurisdictions.\n- Ensures proper legal structure, tone, and includes templates and citation guidelines for Bluebook and OSCOLA.\n- Provides quick-start Python code sample for memo auto-generation in markdown.\n- Includes detailed instructions for structuring memos, legal analysis, and compliance summaries.\n- Supports memos for case law, statutory interpretation, regulatory compliance, and contract provisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7877eb9248f0a661330a66c2bd2460b42aef36a063e547ac67b18317005c184"
+}

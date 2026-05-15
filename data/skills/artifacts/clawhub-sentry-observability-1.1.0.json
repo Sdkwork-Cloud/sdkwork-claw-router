@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentry-observability@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentry_observability",
+  "skill": {
+    "id": 21779,
+    "skillKey": "clawhub-sentry-observability",
+    "name": "Sentry Observability"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentry-observability",
+    "url": "https://clawhub.ai/skills/sentry-observability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentry-observability-de092834bf0ed7eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add observability to your OpenClaw instance — errors, logs, and traces sent to Sentry. Set up monitoring with the Sentry plugin, then investigate issues with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sergical",
+      "userId": "publishers:sergical",
+      "displayName": "Sergiy Dybskiy",
+      "image": "https://avatars.githubusercontent.com/u/3760543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1039,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771342035429,
+      "changelog": "Added structured logs docs (sentry log list/view), log buffer flush gotcha, updated plugin reference with real implementation, fixed config path docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ffde0676912b5547a75228da3d2e53b404d8cd2401e6bd96e646e8fd17a0a391"
+}

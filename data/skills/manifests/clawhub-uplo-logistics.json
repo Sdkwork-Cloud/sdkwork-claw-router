@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30064,
+  "uuid": "skill-clawhub-uplo-logistics",
+  "skillKey": "clawhub-uplo-logistics",
+  "name": "Uplo Logistics",
+  "summary": "AI-powered logistics knowledge management. Search shipment records, warehouse procedures, fleet data, and customs documentation with structured extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_logistics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RooJenkins",
+      "features": [
+        "AI-powered logistics knowledge management",
+        "Search shipment records, warehouse procedures, fleet data, and customs documentation with struc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uplo-logistics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47111622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uplo-logistics",
+      "url": "https://clawhub.ai/skills/uplo-logistics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-logistics",
+    "url": "https://clawhub.ai/skills/uplo-logistics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-logistics-d51bb630f7c18411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uplo-logistics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uplo-logistics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5be94e21b15ff7732a18401fce49d25c640c85fa9278a627ffbf84a6102de3b0",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:49:04.159Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60159,
+  "uuid": "skill-clawhub-phoenixclaw-image-gen",
+  "skillKey": "clawhub-phoenixclaw-image-gen",
+  "name": "phoenixclaw image gen",
+  "summary": "图像生成辅助。支持通过 OpenRouter 直接调用各种生图模型（如 Seedream），为 OpenClaw 优化，支持提示词、尺寸等参数配置。目前仅限 OpenRouter provider。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenixclaw_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "betterest",
+      "features": [
+        "图像生成辅助。支持通过 OpenRouter 直接调用各种生图模型（如 Seedream），为 OpenClaw 优化，支持提示词、尺寸等参数配置。目前仅限 OpenRouter provi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phoenixclaw-image-gen@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5236864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phoenixclaw-image-gen",
+      "url": "https://clawhub.ai/skills/phoenixclaw-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenixclaw-image-gen",
+    "url": "https://clawhub.ai/skills/phoenixclaw-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenixclaw-image-gen-7333d9c135458ca7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phoenixclaw-image-gen@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-phoenixclaw-image-gen-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a69974aa301f6d7a734e7711f1a35ac818b68ea31335a97998bbde1d5351029",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T14:07:18.661Z"
+}

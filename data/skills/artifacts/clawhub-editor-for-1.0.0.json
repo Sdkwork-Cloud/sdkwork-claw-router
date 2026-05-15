@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-for@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_for",
+  "skill": {
+    "id": 45604,
+    "skillKey": "clawhub-editor-for",
+    "name": "Editor For"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-for",
+    "url": "https://clawhub.ai/skills/editor-for",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-for-9743aa0447b7b77e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute unedited screen recording into 1080p edited video files just by typing what you need. Whether it's editing raw footage into a finished video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776915639645,
+      "changelog": "Initial release of Editor For — AI-powered video editing and export tool.\n\n- Instantly edit and export videos with plain-language instructions—no manual timeline work required.\n- Automatic onboarding: obtains and stores an anonymous API token if needed, then sets up a background session.\n- Upload raw footage and specify edits (e.g., cut pauses, add background music); results delivered as 1080p video in 1–2 minutes.\n- Supports key actions: video export, credits check, status updates, file upload, and instant edit requests—all matched via intent classification.\n- Real-time cloud GPU rendering pipeline, with automatic error handling and simple retry or help prompts for common issues.\n- Track edits and timeline state; receive concise updates and download links without leaving the chat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d994f1c6edd0c782891809254a6c7ebaae63844ade900642f8e01be36fd7d445"
+}

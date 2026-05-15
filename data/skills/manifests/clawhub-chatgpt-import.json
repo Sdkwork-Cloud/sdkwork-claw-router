@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15021,
+  "uuid": "skill-clawhub-chatgpt-import",
+  "skillKey": "clawhub-chatgpt-import",
+  "name": "ChatGPT Import",
+  "summary": "Import and embed ChatGPT conversation history into OpenClaw's memory search database for easy archival and retrieval of past chats.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_import",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samdickson22",
+      "features": [
+        "Import and embed ChatGPT conversation history into OpenClaw's memory search database for easy a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatgpt-import@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217395086?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatgpt-import",
+      "url": "https://clawhub.ai/skills/chatgpt-import"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-import",
+    "url": "https://clawhub.ai/skills/chatgpt-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-import-e0a6af31b1c672a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatgpt-import@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-import-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2de28e7d559d491585376592ec7c112837a2cc70e4508d20b89e7ff7c7013af2",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T00:46:30.647Z"
+}

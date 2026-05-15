@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24745,
+  "uuid": "skill-clawhub-weather-check",
+  "skillKey": "clawhub-weather-check",
+  "name": "Weather Check",
+  "summary": "Current weather conditions and multi-day forecasts for any location worldwide.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_check",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "Current weather conditions and multi-day forecasts for any location worldwide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-check",
+      "url": "https://clawhub.ai/skills/weather-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-check",
+    "url": "https://clawhub.ai/skills/weather-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-check-3fd9fa1375551d36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f3314fbb719055bcd3c83f65859fa48d75388da8141bb591f14b99ad3b87fd2",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T01:18:30.884Z"
+}

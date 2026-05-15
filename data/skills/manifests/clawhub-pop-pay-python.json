@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52205,
+  "uuid": "skill-clawhub-pop-pay-python",
+  "skillKey": "clawhub-pop-pay-python",
+  "name": "Pop Pay Skill",
+  "summary": "Your card stays on your PC — no SaaS, no login, no external account. Credentials inject directly, keeping them out of the AI's context window.",
+  "version": "0.6.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pop_pay_python",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TPEmist",
+      "features": [
+        "Your card stays on your PC — no SaaS, no login, no external account",
+        "Credentials inject directly, keeping them out of the AI's context window."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pop-pay-python@0.6.23",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22341318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pop-pay-python",
+      "url": "https://clawhub.ai/skills/pop-pay-python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pop-pay-python",
+    "url": "https://clawhub.ai/skills/pop-pay-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pop-pay-python-6f8466f06c3d008f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pop-pay-python@0.6.23",
+      "artifactUrl": "data/skills/artifacts/clawhub-pop-pay-python-0.6.23.json",
+      "version": "0.6.23",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78698786f211b930fbeedc75d4467512d72c031c4852a66a67618549c4aa0301",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:59:01.820Z"
+}

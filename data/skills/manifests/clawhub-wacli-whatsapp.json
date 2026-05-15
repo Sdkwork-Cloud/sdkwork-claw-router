@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46248,
+  "uuid": "skill-clawhub-wacli-whatsapp",
+  "skillKey": "clawhub-wacli-whatsapp",
+  "name": "wacli WhatsApp",
+  "summary": "Send WhatsApp messages or files from the command line using wacli (WhatsApp Web via whatsmeow). Use when the user asks to message someone on WhatsApp (send t...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacli_whatsapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Prantik Medhi",
+      "features": [
+        "Send WhatsApp messages or files from the command line using wacli (WhatsApp Web via whatsmeow)",
+        "Use when the user asks to message someone on WhatsApp (send t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wacli-whatsapp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140103052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wacli-whatsapp",
+      "url": "https://clawhub.ai/skills/wacli-whatsapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacli-whatsapp",
+    "url": "https://clawhub.ai/skills/wacli-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacli-whatsapp-5bbe7b2c975d3c4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wacli-whatsapp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wacli-whatsapp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5d93935b47718fee0d48a203fb03e861285532db1e14d20efa8b4245f43f36e",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T01:52:18.738Z"
+}

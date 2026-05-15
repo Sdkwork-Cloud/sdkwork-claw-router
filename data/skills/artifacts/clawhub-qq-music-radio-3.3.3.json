@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-music-radio@3.3.3",
+  "version": "3.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_music_radio",
+  "skill": {
+    "id": 62649,
+    "skillKey": "clawhub-qq-music-radio",
+    "name": "QQ音乐"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-music-radio",
+    "url": "https://clawhub.ai/skills/qq-music-radio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-music-radio-e06eae0b18745c48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 智能推荐的 QQ 音乐播放器 | ⚠️ ClawHub 高风险警告：包含网络下载和后台进程，推荐使用 start-secure.sh 安全版本"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogerrojur",
+      "userId": "publishers:rogerrojur",
+      "displayName": "rogerrojur",
+      "image": "https://avatars.githubusercontent.com/u/30387441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.3.3",
+      "createdAt": 1773222227988,
+      "changelog": "Major security update and documentation enhancements:\n\n- Added ClawHub high-risk warning and detailed security usage guidance.\n- Introduced start-secure.sh for safer, no-tunnel operation.\n- Added SECURITY-WARNING.md, PRE-INSTALL-CHECKLIST.md, and QUICK-REFERENCE.md for improved transparency and user guidance.\n- Updated SKILL description and documentation to prominently recommend secure startup methods.\n- Provided best-practice tips for Docker isolation and security checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab277af4a5a4b49b10d608ab35660c2f4ebf0de14279474c70ae545bd9e9af8b"
+}

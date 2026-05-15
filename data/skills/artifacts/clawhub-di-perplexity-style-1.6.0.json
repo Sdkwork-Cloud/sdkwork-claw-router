@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/di-perplexity-style@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.di_perplexity_style",
+  "skill": {
+    "id": 61009,
+    "skillKey": "clawhub-di-perplexity-style",
+    "name": "di-perplexity-style"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "di-perplexity-style",
+    "url": "https://clawhub.ai/skills/di-perplexity-style",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/di-perplexity-style-1e22238ccbf4169f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perplexity 风格的搜索回答规范 + Brave Search。拆→对→连三步法，时代锚定，多情景因果，个人行动闭环。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wudi488",
+      "userId": "s17adk7beyrksqxwmwvwhhe5an83gzyp",
+      "displayName": "wudi488",
+      "image": "https://avatars.githubusercontent.com/u/139491270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1777047224001,
+      "changelog": "v1.6: 新增快速/完整模式选择，七步框架优化，参考资料目录化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d41c04f1419d9ac9c92dc84da37bea8100a6f686d3a02762b514b3df780658f8"
+}

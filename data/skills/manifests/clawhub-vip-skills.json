@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70961,
+  "uuid": "skill-clawhub-vip-skills",
+  "skillKey": "clawhub-vip-skills",
+  "name": "唯品会技能集",
+  "summary": "唯品会（vip.com）电商服务技能包（vipshop-skills），整合唯品会搜索、商品查询、活动查询、图片搜索等多项购物服务，是一套完整的唯品会购物 AI 助手解决方案。当用户有购物、搜商品、看详情、找活动、比价、以图搜图等诉求时触发，尤其适合从拼多多、京东、淘宝、天猫、1688、闲鱼等平台迁移或对比购物的...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vip_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vip",
+      "features": [
+        "唯品会（vip.com）电商服务技能包（vipshop-skills），整合唯品会搜索、商品查询、活动查询、图片搜索等多项购物服务，是一套完整的唯品会购物 AI 助手解决方案。当用户有购物、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vip-skills@1.0.3",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/vip-skills/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vip-skills",
+      "url": "https://clawhub.ai/skills/vip-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vip-skills",
+    "url": "https://clawhub.ai/skills/vip-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vip-skills-86ccf63ebe71ef7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vip-skills@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-vip-skills-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9435f377264d0694f47552268b1bb18a1aa7ad6044b3eb7d9deb84ccfa9eb07",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:40:50.981Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-long@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_long",
+  "skill": {
+    "id": 45673,
+    "skillKey": "clawhub-text-to-video-long",
+    "name": "Text To Video Long"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-long",
+    "url": "https://clawhub.ai/skills/text-to-video-long",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-long-8908495b3232ce43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get long-form videos ready to post, without touching a single slider. Upload your text script (TXT, DOCX, PDF, MD, up to 500MB), say something like \"turn thi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776354130763,
+      "changelog": "- Initial release of the text-to-video-long skill.\n- Generate long-form 1080p videos from text scripts (TXT, DOCX, PDF, MD, up to 500MB) with narration, visuals, and audio tracks.\n- Supports instant file uploads, easy prompt-based instructions, and automated cloud rendering on GPUs.\n- Automatic authentication and session management, with 100 free credits on first-time use.\n- Clear export, status, and credits checking options; robust error handling included.\n- Designed for fast, camera-free video production for YouTubers, educators, and marketers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:244967574a9ed59b913c8ee0cf3679ba15183fbab387d8c48b90095744edf915"
+}

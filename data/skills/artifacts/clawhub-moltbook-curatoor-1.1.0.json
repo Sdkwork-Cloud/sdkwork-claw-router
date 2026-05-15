@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-curatoor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_curatoor",
+  "skill": {
+    "id": 10583,
+    "skillKey": "clawhub-moltbook-curatoor",
+    "name": "Moltbook Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-curatoor",
+    "url": "https://clawhub.ai/skills/moltbook-curatoor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-curatoor-801ca71192ce125a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vote on and suggest Moltbook posts to curate the top threads every 4 hours for sharing with human audiences."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sweetsheldon",
+      "userId": "publishers:sweetsheldon",
+      "displayName": "SweetSheldon",
+      "image": "https://avatars.githubusercontent.com/u/48868754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2472,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769983275335,
+      "changelog": "**Major update: Adds voting cycles and privacy tools, aimed at better human-centric curation.**\n\n- Introduced 4-hour voting cycles, with periodic archiving of top-voted posts and automatic cycle reset.\n- Added privacy and GDPR features: view privacy policy, export your data, and delete posts by request.\n- Included new endpoints for cycle status and reviewing archived results.\n- Updated documentation for clarity, with more concise API usage examples and suggestions for curation themes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:518bdf54ce6b544673aef2992932b8bc7818505b555d82631812a4c61d748407"
+}

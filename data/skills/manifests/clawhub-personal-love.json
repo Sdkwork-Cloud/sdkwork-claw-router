@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17830,
+  "uuid": "skill-clawhub-personal-love",
+  "skillKey": "clawhub-personal-love",
+  "name": "Personal Love",
+  "summary": "Acts as the user's relationship and dating assistant in the Love topic. Tracks dating life, relationship notes, advice, important dates. Use when in Personal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_love",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GekaCross",
+      "features": [
+        "Acts as the user's relationship and dating assistant in the Love topic",
+        "Tracks dating life, relationship notes, advice, important dates",
+        "Use when in Personal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-love@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57638140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-love",
+      "url": "https://clawhub.ai/skills/personal-love"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-love",
+    "url": "https://clawhub.ai/skills/personal-love",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-love-9a42d01339401d3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-love@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-love-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:519dc19108620c6b3473ef25c1ded9a692c811332c4469189d00ad9971a6a9ba",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:16:16.766Z"
+}

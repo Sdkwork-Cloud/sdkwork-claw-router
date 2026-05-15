@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62262,
+  "uuid": "skill-clawhub-outline-generator",
+  "skillKey": "clawhub-outline-generator",
+  "name": "Outline Generator",
+  "summary": "小说大纲生成器。根据小说类型、主题、字数生成 15 节拍结构化大纲。Use when: Architect 代理在 Phase 1 需要生成故事大纲、规划 15 节拍结构、创建卷章框架。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outline_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuzhihui886",
+      "features": [
+        "小说大纲生成器。根据小说类型、主题、字数生成 15 节拍结构化大纲。Use when: Architect 代理在 Phase 1 需要生成故事大纲、规划 15 节拍结构、创建卷章框架。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outline-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213567314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outline-generator",
+      "url": "https://clawhub.ai/skills/outline-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outline-generator",
+    "url": "https://clawhub.ai/skills/outline-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outline-generator-b3b530459ddc2c19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outline-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-outline-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac9e94a9f9151f2b169aaa387b1b76a8c719bac391ce8c237607114e2a840ba8",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:33:13.264Z"
+}

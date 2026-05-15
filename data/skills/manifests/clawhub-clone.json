@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30731,
+  "uuid": "skill-clawhub-clone",
+  "skillKey": "clawhub-clone",
+  "name": "Clone master",
+  "summary": "Guide agents to clone GitHub repositories using git clone with SSH or HTTPS authentication, handle branches, submodules, shallow clones, and keep repos updat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow",
+      "features": [
+        "Guide agents to clone GitHub repositories using git clone with SSH or HTTPS authentication, han."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clone@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178591028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clone",
+      "url": "https://clawhub.ai/skills/clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clone",
+    "url": "https://clawhub.ai/skills/clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clone-b5d61dc89a35d2c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clone@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clone-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86719ccf3a8a265a79298843deeb4bb2291c8e6b1edcea4c7a66db6b8e339c38",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:02:10.166Z"
+}

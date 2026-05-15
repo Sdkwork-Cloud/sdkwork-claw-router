@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58466,
+  "uuid": "skill-clawhub-pdd-shopping",
+  "skillKey": "clawhub-pdd-shopping",
+  "name": "PDD Shopping",
+  "summary": "Turn 拼多多 low-price browsing into action-ready buying advice. Use when the user wants to 查低价、百亿补贴、拼团、优惠券、补贴门槛、店铺风险、退款值不值, and needs a direct recommendation su...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdd_shopping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Turn 拼多多 low-price browsing into action-ready buying advice",
+        "Use when the user wants to 查低价、百亿补贴、拼团、优惠券、补贴门槛、店铺风险、退款值不值, and needs a direct recommendation s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdd-shopping@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdd-shopping",
+      "url": "https://clawhub.ai/skills/pdd-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdd-shopping",
+    "url": "https://clawhub.ai/skills/pdd-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdd-shopping-4f8d6103784a2fc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdd-shopping@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdd-shopping-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93ac22c0e29235f8e2ba19aa47e13b9d1e70779b147be316ea92d23630210a26",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:20:25.456Z"
+}

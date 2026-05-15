@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42756,
+  "uuid": "skill-clawhub-unleash-integration",
+  "skillKey": "clawhub-unleash-integration",
+  "name": "Unleash",
+  "summary": "Unleash integration. Manage data, records, and automate workflows. Use when the user wants to interact with Unleash data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unleash_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Unleash integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Unleash data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unleash-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unleash-integration",
+      "url": "https://clawhub.ai/skills/unleash-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unleash-integration",
+    "url": "https://clawhub.ai/skills/unleash-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unleash-integration-5768d6e2399dc2f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unleash-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-unleash-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f92c77c7fde95a8f63690232d331ca4aa615f276e1d3045a5c757d2ec268646",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:14.114Z"
+}

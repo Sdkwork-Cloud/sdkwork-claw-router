@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28800,
+  "uuid": "skill-clawhub-defi-security-audit",
+  "skillKey": "clawhub-defi-security-audit",
+  "name": "DeFi Security Audit",
+  "summary": "Analyze a DeFi protocol for vulnerabilities, mechanism safety, and risk factors. Use when the user wants to audit a DeFi project, check protocol security, or...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LJ Li",
+      "features": [
+        "Analyze a DeFi protocol for vulnerabilities, mechanism safety, and risk factors",
+        "Use when the user wants to audit a DeFi project, check protocol security, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defi-security-audit@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47474232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defi-security-audit",
+      "url": "https://clawhub.ai/skills/defi-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-security-audit",
+    "url": "https://clawhub.ai/skills/defi-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-security-audit-f4f00c10a3d60cb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defi-security-audit@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-defi-security-audit-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9859b7ae151b53d8a1fa7557c3fad4af4f9b9b5a4021efc3247ba903d7ef72d",
+      "artifactSizeBytes": 2642
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:31:16.095Z"
+}

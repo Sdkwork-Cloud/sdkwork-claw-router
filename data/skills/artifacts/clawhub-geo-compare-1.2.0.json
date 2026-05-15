@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-compare@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_compare",
+  "skill": {
+    "id": 53314,
+    "skillKey": "clawhub-geo-compare",
+    "name": "Geo Compare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-compare",
+    "url": "https://clawhub.ai/skills/geo-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-compare-823c39ae2e042328.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare GEO scores across 2-3 competing websites side by side — identify where competitors lead and where you should focus optimization efforts. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enzyme2013",
+      "userId": "s1769p76b5b6v79bsajk42ash9840ed9",
+      "displayName": "Eugene Liu",
+      "image": "https://avatars.githubusercontent.com/u/11206822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775411257061,
+      "changelog": "geo-compare v1.2.0\n\n- Updated SKILL.md documentation for clarity and completeness.\n- No changes to logic, functionality, or algorithms.\n- No new features or bug fixes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:febb9ce80f428652ced00f118dbe194616bdc20513bd9b42a6ef2b0d583ce465"
+}

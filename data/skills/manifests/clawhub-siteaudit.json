@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39047,
+  "uuid": "skill-clawhub-siteaudit",
+  "skillKey": "clawhub-siteaudit",
+  "name": "Siteaudit",
+  "summary": "Comprehensive website audit combining uptime check, TLS certificate inspection, and security headers grading in one command. Use when asked to audit a websit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siteaudit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Comprehensive website audit combining uptime check, TLS certificate inspection, and security he.",
+        "Use when asked to audit a websit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siteaudit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siteaudit",
+      "url": "https://clawhub.ai/skills/siteaudit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siteaudit",
+    "url": "https://clawhub.ai/skills/siteaudit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siteaudit-d8338ea669f0c1eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siteaudit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-siteaudit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c93cc1fbda700d87cc90e920ceb014b041dbc0bd360f85884ccade77ff4dac7",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T21:27:10.400Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/askhuman@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.askhuman",
+  "skill": {
+    "id": 16297,
+    "skillKey": "clawhub-askhuman",
+    "name": "AskHuman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "askhuman",
+    "url": "https://clawhub.ai/skills/askhuman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/askhuman-3da4e6726ed2842a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human Judgment as a Service for AI agents. Preference, tone, and trust validated by real people."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hagiss",
+      "userId": "s17d7agw2a7s9exk0jw2pwq1xd83m082",
+      "displayName": "hagiss",
+      "image": "https://avatars.githubusercontent.com/u/66506438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 892,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771159919379,
+      "changelog": "- Initial public release of AskHuman Agent Skill.\n- Provides a documented API for integrating real human judgment into AI workflows.\n- Supports agent registration, challenge-response authentication, and USDC escrow via EIP-2612 permits on Base chain.\n- Allows creation of multiple task types (CHOICE, RATING, TEXT, VERIFY) with free or paid (escrow) options.\n- Includes support for image and file attachments in tasks.\n- Real-time updates via Server-Sent Events and messaging between agent and human workers.\n- Task lifecycle management: approve, reject, cancel, and leave reviews.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:86c62511939b0d0c03db2620a3d2fda474554b2528aff780c7f41cb15ffbcc13"
+}

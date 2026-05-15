@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63694,
+  "uuid": "skill-clawhub-byted-security-skillsscanner",
+  "skillKey": "clawhub-byted-security-skillsscanner",
+  "name": "Byted Security SkillsScanner",
+  "summary": "审计和扫描技能的安全性。当用户希望对工作区中的其他技能进行安全扫描时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_security_skillsscanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "审计和扫描技能的安全性。当用户希望对工作区中的其他技能进行安全扫描时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-security-skillsscanner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-security-skillsscanner",
+      "url": "https://clawhub.ai/skills/byted-security-skillsscanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-security-skillsscanner",
+    "url": "https://clawhub.ai/skills/byted-security-skillsscanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-security-skillsscanner-6fc587d619e55a77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-security-skillsscanner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-security-skillsscanner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c45a42fb25a99aa4de87a40170917362a1bd074ec62abbb2da491b1b243fcfc6",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:43:26.811Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36925,
+  "uuid": "skill-clawhub-golioth",
+  "skillKey": "clawhub-golioth",
+  "name": "Golioth",
+  "summary": "Golioth integration. Manage data, records, and automate workflows. Use when the user wants to interact with Golioth data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golioth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Golioth integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Golioth data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golioth@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golioth",
+      "url": "https://clawhub.ai/skills/golioth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golioth",
+    "url": "https://clawhub.ai/skills/golioth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golioth-529b8fb369c5ee29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golioth@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-golioth-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bae889c75c634ba7f30c21e194a6b290854681ca51de47f95210ce8b89449a9",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:46.952Z"
+}

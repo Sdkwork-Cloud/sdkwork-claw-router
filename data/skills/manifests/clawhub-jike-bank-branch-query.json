@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72800,
+  "uuid": "skill-clawhub-jike-bank-branch-query",
+  "skillKey": "clawhub-jike-bank-branch-query",
+  "name": "银行支行、联行号查询 - 即刻数据",
+  "summary": "银行支行、联行号查询。根据银行名称、省市代码、支行关键词查询支行名称、联行号、省份和城市，也支持查询银行列表。适用场景：用户说“查工商银行西安长安区支行联行号”“查询某银行支行信息”“工商银行有哪些机构”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_bank_branch_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "银行支行、联行号查询。根据银行名称、省市代码、支行关键词查询支行名称、联行号、省份和城市，也支持查询银行列表。适用场景：用户说“查工商银行西安长安区支行联行号”“查询某银行支行信息”“工商银."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-bank-branch-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-bank-branch-query",
+      "url": "https://clawhub.ai/skills/jike-bank-branch-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-bank-branch-query",
+    "url": "https://clawhub.ai/skills/jike-bank-branch-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-bank-branch-query-a445d54d88db2645.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-bank-branch-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-bank-branch-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:649eb49fc75285552d72e5ca07a02023b5599867debe6113c0577c6614dbac64",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:22:32.047Z"
+}

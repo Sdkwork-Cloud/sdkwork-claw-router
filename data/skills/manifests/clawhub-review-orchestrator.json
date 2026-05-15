@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53706,
+  "uuid": "skill-clawhub-review-orchestrator",
+  "skillKey": "clawhub-review-orchestrator",
+  "name": "Review Orchestrator",
+  "summary": "Get multiple perspectives on your work — coordinate reviews across cognitive modes",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee Brown",
+      "features": [
+        "Get multiple perspectives on your work — coordinate reviews across cognitive modes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-orchestrator@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1395866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-orchestrator",
+      "url": "https://clawhub.ai/skills/review-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-orchestrator",
+    "url": "https://clawhub.ai/skills/review-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-orchestrator-006f47da7f5cf593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-orchestrator@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-orchestrator-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51848d778b42701d21844deac8a84280544f8c17f1d2bf1763627ce96f426f1d",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T20:54:50.383Z"
+}

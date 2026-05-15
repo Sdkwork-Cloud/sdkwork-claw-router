@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60077,
+  "uuid": "skill-clawhub-improvement-executor",
+  "skillKey": "clawhub-improvement-executor",
+  "name": "Improvement Executor",
+  "summary": "当需要把已批准的改进候选应用到目标文件、回滚之前的变更、或预览变更效果时使用。支持 4 种 action（append/replace/insert_before/update_yaml），每次变更前自动备份。不用于打分（用 improvement-discriminator）或门禁验证（用 improvemen...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improvement_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当需要把已批准的改进候选应用到目标文件、回滚之前的变更、或预览变更效果时使用。支持 4 种 action（append/replace/insert_before/update_yaml），."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/improvement-executor@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "improvement-executor",
+      "url": "https://clawhub.ai/skills/improvement-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improvement-executor",
+    "url": "https://clawhub.ai/skills/improvement-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improvement-executor-1c8aa47e34959a8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/improvement-executor@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-improvement-executor-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0080e6180ae49770b497405dc31a56e8623842430d21cecab7be341422f4b380",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:14:03.181Z"
+}

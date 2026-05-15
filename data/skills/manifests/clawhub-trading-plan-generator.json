@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71132,
+  "uuid": "skill-clawhub-trading-plan-generator",
+  "skillKey": "clawhub-trading-plan-generator",
+  "name": "基于 Brent Penfold《交易圣经》框架，为股票交易生成完整的交易预案（Setup）和交易计划（Plan）。当用户询问「帮我制定交易计划」、「帮我做交易预案」、「XX股票怎么买」、「帮我规划一下XX股票的入场和止损」时使用此技能。触发前提：用户明.",
+  "summary": "基于 Brent Penfold《交易圣经》框架，为股票交易生成完整的交易预案（Setup）和交易计划（Plan）。当用户询问「帮我制定交易计划」、「帮我做交易预案」、「XX股票怎么买」、「帮我规划一下XX股票的入场和止损」时使用此技能。触发前提：用户明确指定了具体股票代码或名称。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_plan_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shinji",
+      "features": [
+        "基于 Brent Penfold《交易圣经》框架，为股票交易生成完整的交易预案（Setup）和交易计划（Plan）。当用户询问「帮我制定交易计划」、「帮我做交易预案」、「XX股票怎么买」、「."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-plan-generator@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91775458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-plan-generator",
+      "url": "https://clawhub.ai/skills/trading-plan-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-plan-generator",
+    "url": "https://clawhub.ai/skills/trading-plan-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-plan-generator-c6d0f0361f41a792.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-plan-generator@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-plan-generator-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:450598fd70573be9caeedf643b63579558442ba06204c84a9ea5db86dc5c86b8",
+      "artifactSizeBytes": 3231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:55:15.556Z"
+}

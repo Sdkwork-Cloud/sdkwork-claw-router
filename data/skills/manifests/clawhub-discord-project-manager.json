@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19734,
+  "uuid": "skill-clawhub-discord-project-manager",
+  "skillKey": "clawhub-discord-project-manager",
+  "name": "Discord Project Manager",
+  "summary": "Discord project collaboration infrastructure for OpenClaw agents. Manage Forum Channels, threads, participant permissions, and mention mode. Supports 3-tier...",
+  "version": "2.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_project_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lemodigital",
+      "features": [
+        "Discord project collaboration infrastructure for OpenClaw agents",
+        "Manage Forum Channels, threads, participant permissions, and mention mode",
+        "Supports 3-tier..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-project-manager@2.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258789404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-project-manager",
+      "url": "https://clawhub.ai/skills/discord-project-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-project-manager",
+    "url": "https://clawhub.ai/skills/discord-project-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-project-manager-37ecec2a1c6750b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-project-manager@2.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-project-manager-2.1.6.json",
+      "version": "2.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:580ef20f8004cd81a054124cc3b02f0efdabcb43ec6d5a76aa43ddd9f8e25734",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:51:14.561Z"
+}

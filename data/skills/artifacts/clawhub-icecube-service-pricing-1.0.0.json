@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icecube-service-pricing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icecube_service_pricing",
+  "skill": {
+    "id": 63794,
+    "skillKey": "clawhub-icecube-service-pricing",
+    "name": "IceCube Service Pricing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icecube-service-pricing",
+    "url": "https://clawhub.ai/skills/icecube-service-pricing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icecube-service-pricing-60400a390487d13d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🧊 IceCube 服务报价体系 — OpenClaw 相关服务的标准化定价、报价单模板、收款流程。直接人民币收款，无中间环节。当用户提到'服务报价'、'定价'、'收款'、'报价单'时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ares521521-design",
+      "userId": "s172aacqpc1r0bvdjpej177jvh83m4wj",
+      "displayName": "ares521521-design",
+      "image": "https://avatars.githubusercontent.com/u/271112075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776532235017,
+      "changelog": "Initial release - Service pricing calculation and optimization",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61124e7464cf261a9ffe5cd1214b442d4801f676f08c6be1bc6acc64e9f9f1ef"
+}

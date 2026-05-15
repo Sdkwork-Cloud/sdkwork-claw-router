@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jianying-auto-editor@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jianying_auto_editor",
+  "skill": {
+    "id": 15500,
+    "skillKey": "clawhub-jianying-auto-editor",
+    "name": "Jianying Auto Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jianying-auto-editor",
+    "url": "https://clawhub.ai/skills/jianying-auto-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jianying-auto-editor-64b56c21a9f86ec9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Jianying draft generation from local media plus a cloud editing API. Use when Codex needs to scan a material folder, request editing decisions, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afengzi",
+      "userId": "publishers:afengzi",
+      "displayName": "afengzi",
+      "image": "https://avatars.githubusercontent.com/u/93957679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1005,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773835325123,
+      "changelog": "Update default cloud API address to 43.137.46.105 and refresh publish metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4925e94386e54874230acae924941223616542e29547c50e32f56b7a76970120"
+}

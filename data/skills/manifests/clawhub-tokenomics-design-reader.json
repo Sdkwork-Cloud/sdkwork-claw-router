@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49815,
+  "uuid": "skill-clawhub-tokenomics-design-reader",
+  "skillKey": "clawhub-tokenomics-design-reader",
+  "name": "Tokenomics Design Reader",
+  "summary": "Helps users read and evaluate tokenomics designs - supply, allocation, vesting, emission, value accrual, and incentive alignment - from whitepapers or user-p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokenomics_design_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Helps users read and evaluate tokenomics designs",
+        "supply, allocation, vesting, emission, value accrual, and incentive alignment",
+        "from whitepapers or user-p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tokenomics-design-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tokenomics-design-reader",
+      "url": "https://clawhub.ai/skills/tokenomics-design-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokenomics-design-reader",
+    "url": "https://clawhub.ai/skills/tokenomics-design-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokenomics-design-reader-c0feec7f447a2e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tokenomics-design-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tokenomics-design-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e8fca9f480cb9f610a8d1787748aaa380e7e28bd71509950fd034926aee58c0",
+      "artifactSizeBytes": 2680
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T18:12:48.750Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63922,
+  "uuid": "skill-clawhub-claw-memory-guardian",
+  "skillKey": "clawhub-claw-memory-guardian",
+  "name": "Claw Memory Guardian",
+  "summary": "自动保存、备份和恢复OpenClaw会话记忆，防止任务中断和信息丢失，支持语义搜索与项目时间线管理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_memory_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SkilledClaw",
+      "features": [
+        "自动保存、备份和恢复OpenClaw会话记忆，防止任务中断和信息丢失，支持语义搜索与项目时间线管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-memory-guardian@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250800479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-memory-guardian",
+      "url": "https://clawhub.ai/skills/claw-memory-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-memory-guardian",
+    "url": "https://clawhub.ai/skills/claw-memory-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-memory-guardian-72926effe850e838.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-memory-guardian@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-memory-guardian-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8374fad25c73a476cc7ff855c73e5cd9a7ea7cabb7577991faceb6f2975e5d4",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:39:13.787Z"
+}

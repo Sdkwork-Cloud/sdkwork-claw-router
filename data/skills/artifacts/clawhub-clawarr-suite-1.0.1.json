@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawarr-suite@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawarr_suite",
+  "skill": {
+    "id": 11838,
+    "skillKey": "clawhub-clawarr-suite",
+    "name": "ClawARR Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawarr-suite",
+    "url": "https://clawhub.ai/skills/clawarr-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawarr-suite-627ddee9a6f9ef99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive management for self-hosted media stacks (Sonarr, Radarr, Lidarr, Readarr, Prowlarr, Bazarr, Overseerr, Plex, Tautulli, SABnzbd, Recyclarr, Unpa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omiron33",
+      "userId": "publishers:omiron33",
+      "displayName": "omiron33",
+      "image": "https://avatars.githubusercontent.com/u/11729145?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1572,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771307744886,
+      "changelog": "Remove dynamic eval from setup discovery/key parsing and add security metadata/clarity docs for ClewHub classifier compatibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbd288a824cf8956a0a779bf8a55ce1adcd2c6a9466d1927a3391b470e41888d"
+}

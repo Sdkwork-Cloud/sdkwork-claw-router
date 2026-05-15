@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaceutical-bidding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaceutical_bidding",
+  "skill": {
+    "id": 24878,
+    "skillKey": "clawhub-pharmaceutical-bidding",
+    "name": "Pharmaceutical Bidding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaceutical-bidding",
+    "url": "https://clawhub.ai/skills/pharmaceutical-bidding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaceutical-bidding-73c3678998a3a5ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically collects, verifies, and evaluates pharmaceutical system bidding info from provincial sites daily, updating WeChat Work tables with actionable o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elliotlaw",
+      "userId": "publishers:elliotlaw",
+      "displayName": "ElliotLaw",
+      "image": "https://avatars.githubusercontent.com/u/81918635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 400,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772779862765,
+      "changelog": "Initial release automates pharmaceutical system bidding information collection and analysis:\n\n- Collects \"药学系统\" bidding info from provincial procurement websites.\n- Verifies product type and document deadlines; filters items not meeting criteria.\n- Gathers additional project details when source info is insufficient.\n- Records structured bid data in WeChat Work smart tables, including deadlines, budget, and responsible sales staff.\n- Analyzes projects and provides bidding recommendations based on document availability and evaluation criteria.\n- Automatically classifies projects as eligible based on timing, budget, or hospital type.\n- Runs daily at 8:30 AM with full WeChat Work API integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5950381222b5bac3d6cd4482f286ecf7e153b55cd82d400f94ed479ce7d2bf53"
+}

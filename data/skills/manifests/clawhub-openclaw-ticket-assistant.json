@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64053,
+  "uuid": "skill-clawhub-openclaw-ticket-assistant",
+  "skillKey": "clawhub-openclaw-ticket-assistant",
+  "name": "Openclaw Ticket Assistant",
+  "summary": "OpenClaw工单助手，根据客服截图自动分析客户问题并创建工单。触发词：工单、创建工单、客服截图、提工单。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_ticket_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mskmz",
+      "features": [
+        "OpenClaw工单助手，根据客服截图自动分析客户问题并创建工单。触发词：工单、创建工单、客服截图、提工单。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-ticket-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26091232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-ticket-assistant",
+      "url": "https://clawhub.ai/skills/openclaw-ticket-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-ticket-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-ticket-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-ticket-assistant-dc406fea4e32a008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-ticket-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ticket-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a3ba8b61d75575e870c3853ba790b724dd2c59ddb1c0d6dc60ff5865701fa6a",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:01:39.833Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18066,
+  "uuid": "skill-clawhub-send-usdc",
+  "skillKey": "clawhub-send-usdc",
+  "name": "Send Usdc",
+  "summary": "Send USDC to an Ethereum address or ENS name. Use when you or the user want to send money, pay someone, transfer USDC, tip, donate, or send funds to a wallet address or .eth name. Covers phrases like \"send $5 to\", \"pay 0x...\", or \"transfer.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_usdc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRAG",
+      "features": [
+        "Send USDC to an Ethereum address or ENS name",
+        "Use when you or the user want to send money, pay someone, transfer USDC, tip, donate, or send f.",
+        "Covers phrases like \"send $5 to\", \"pay 0x...\", or \"transfer to vitalik.eth\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-usdc@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15928227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-usdc",
+      "url": "https://clawhub.ai/skills/send-usdc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-usdc",
+    "url": "https://clawhub.ai/skills/send-usdc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-usdc-c4d565768824f791.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-usdc@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-usdc-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d1c95869bc8ea1cd81ba0f9be96ff821affd5aa6e4022c4f9139355470bbbe7",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:57:11.215Z"
+}

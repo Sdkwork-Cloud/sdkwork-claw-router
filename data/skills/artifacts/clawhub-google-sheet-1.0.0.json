@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-sheet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheet",
+  "skill": {
+    "id": 10140,
+    "skillKey": "clawhub-google-sheet",
+    "name": "Skill to manage and update google sheet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheet",
+    "url": "https://clawhub.ai/skills/google-sheet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheet-af56ef453101d206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, write, append, and manage Google Sheets via the Google Sheets API (Node.js SDK). Use when you need to interact with spreadsheets — reading data, writing/updating cells, appending rows, clearing ranges, formatting cells, managing shee."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longmaba",
+      "userId": "publishers:longmaba",
+      "displayName": "longmaba",
+      "image": "https://avatars.githubusercontent.com/u/9361500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3036,
+      "installsAllTime": 11,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769952098353,
+      "changelog": "Initial release of Google Sheets skill for Node.js.\n\n- Provides CLI commands to read, write, append, clear, and format data in Google Sheets via service account.\n- Includes commands for formatting cells, adding borders, resizing and auto-fitting columns/rows, freezing panes, and merging/unmerging cells.\n- Supports sheet management: create spreadsheets, add/delete/rename sheets, and fetch sheet metadata.\n- Offers setup instructions for Google Cloud credentials and sharing.\n- Example commands and JSON syntax for formatting and borders provided in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71b21bacd922c894eafc87a4e454f3a17e650f88339128ece975a39ff29bcf5e"
+}

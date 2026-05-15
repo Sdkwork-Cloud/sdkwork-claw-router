@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdio",
+  "skill": {
+    "id": 14335,
+    "skillKey": "clawhub-clawdio",
+    "name": "clawdio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdio",
+    "url": "https://clawhub.ai/skills/clawdio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdio-d54cdbc5147b5033.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auditory intelligence for AI agents. Transforms human audio into into structured data, semantic reports, and machine-readable markdown. Use when you need market intelligence, crypto alpha, speaker-attributed quotes, or sentiment analysis f."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benschiller",
+      "userId": "publishers:benschiller",
+      "displayName": "benschiller",
+      "image": "https://avatars.githubusercontent.com/u/145854256?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770480984201,
+      "changelog": "Clawdio 1.0.0 — Initial Release\n\n- Launches auditory intelligence for AI agents, transforming human voice audio into structured data, semantic reports, and machine-readable markdown.\n- Provides a payment-gated API for easy access to market intelligence, crypto alpha, speaker-attributed quotes, and sentiment analysis from voice discussions (with focus on Twitter Spaces).\n- Requires x402-compatible wallet funded with USDC on Base Mainnet; payments handled automatically.\n- Offers a free product catalog and a clear, step-by-step purchase flow returning three artifacts per purchase: metadata, structured report, and full transcript.\n- Documentation includes report schema and detailed endpoint descriptions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3fce8c22608aba7ecdc31af6b7f779edff76efc712acdaf77064bcce0794aa52"
+}

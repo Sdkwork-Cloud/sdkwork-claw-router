@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31659,
+  "uuid": "skill-clawhub-thoughtful-gpt",
+  "skillKey": "clawhub-thoughtful-gpt",
+  "name": "Thoughtful Gpt",
+  "summary": "Thoughtful GPT integration. Manage data, records, and automate workflows. Use when the user wants to interact with Thoughtful GPT data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thoughtful_gpt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Thoughtful GPT integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Thoughtful GPT data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thoughtful-gpt@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thoughtful-gpt",
+      "url": "https://clawhub.ai/skills/thoughtful-gpt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thoughtful-gpt",
+    "url": "https://clawhub.ai/skills/thoughtful-gpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thoughtful-gpt-9d023b0ceefc04d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thoughtful-gpt@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-thoughtful-gpt-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a344f0591a66532b28164bcf6441665ec0429fd6c1a8d64ded232fa3b2eb042f",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:53.837Z"
+}

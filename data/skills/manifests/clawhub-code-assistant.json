@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55573,
+  "uuid": "skill-clawhub-code-assistant",
+  "skillKey": "clawhub-code-assistant",
+  "name": "Code Assistant",
+  "summary": "Asistente de programación especializado. Analiza código, encuentra bugs, sugiere optimizaciones, refactoriza y genera documentación automáticamente.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miguel Guerra",
+      "features": [
+        "Asistente de programación especializado",
+        "Analiza código, encuentra bugs, sugiere optimizaciones, refactoriza y genera documentación auto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239301714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-assistant",
+      "url": "https://clawhub.ai/skills/code-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-assistant",
+    "url": "https://clawhub.ai/skills/code-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-assistant-bb67f42f1a9da77a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:922ca8897eb0d8fa3dd166a71bb314b889826b175443641c3a8eb195e1f8550f",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:38:41.964Z"
+}

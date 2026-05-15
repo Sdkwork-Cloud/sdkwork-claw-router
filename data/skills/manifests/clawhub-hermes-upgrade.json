@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61780,
+  "uuid": "skill-clawhub-hermes-upgrade",
+  "skillKey": "clawhub-hermes-upgrade",
+  "name": "Hermes Upgrade",
+  "summary": "Hermes Agent 完整手册 - 包含安装、配置、部署、运维和常见问题排查的完整指南",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Hermes Agent 完整手册",
+        "包含安装、配置、部署、运维和常见问题排查的完整指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-upgrade@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-upgrade",
+      "url": "https://clawhub.ai/skills/hermes-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-upgrade",
+    "url": "https://clawhub.ai/skills/hermes-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-upgrade-64e5e5f06c10bafb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-upgrade@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-upgrade-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bbbe5a141617630fc20739d61653641f29d98e3794916aafa314738ec4072df",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T16:15:00.026Z"
+}

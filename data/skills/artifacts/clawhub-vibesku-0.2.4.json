@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibesku@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibesku",
+  "skill": {
+    "id": 50940,
+    "skillKey": "clawhub-vibesku",
+    "name": "Vibesku"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibesku",
+    "url": "https://clawhub.ai/skills/vibesku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibesku-046a351a7e8ae76f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for VibeSKU — an AI-powered creative automation platform that turns product SKU photos into professional e-commerce visuals and marketplace-ready copy at..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visoar",
+      "userId": "publishers:visoar",
+      "displayName": "visoar",
+      "image": "https://avatars.githubusercontent.com/u/2937078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1773156241170,
+      "changelog": "Metadata alignment v0.2.4: declare openclaw runtime requirements (env vars, config path, node binary, primary env) to match actual skill behavior; no runtime behavior changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2265ea5730d0ead7102ecb5f44fcbe50f183f00f1319d304b6db5ee46a2d08ce"
+}

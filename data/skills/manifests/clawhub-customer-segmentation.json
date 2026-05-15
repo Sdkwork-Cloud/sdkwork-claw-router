@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29978,
+  "uuid": "skill-clawhub-customer-segmentation",
+  "skillKey": "clawhub-customer-segmentation",
+  "name": "Customer Segmentation",
+  "summary": "Segment customers into groups with similar needs and behaviors. Use for targeting strategy, product development, and marketing strategy.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_segmentation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Segment customers into groups with similar needs and behaviors",
+        "Use for targeting strategy, product development, and marketing strategy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-segmentation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-segmentation",
+      "url": "https://clawhub.ai/skills/customer-segmentation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-segmentation",
+    "url": "https://clawhub.ai/skills/customer-segmentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-segmentation-9f4d06655670a1d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-segmentation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-segmentation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdf0d07e82d8e6a8648ec8c8b3418ce401e009b5fd3c0dc96b6251df7e42d721",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:42:15.006Z"
+}

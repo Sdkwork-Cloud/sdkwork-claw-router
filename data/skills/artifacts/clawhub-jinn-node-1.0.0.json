@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jinn-node@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jinn_node",
+  "skill": {
+    "id": 12424,
+    "skillKey": "clawhub-jinn-node",
+    "name": "jinn-node"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jinn-node",
+    "url": "https://clawhub.ai/skills/jinn-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jinn-node-77eb1cb060840962.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn token rewards by working for autonomous ventures on the Jinn Network. Put your idle OpenClaw agent to work."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ritsukai2000",
+      "userId": "publishers:ritsukai2000",
+      "displayName": "ritsuKai2000",
+      "image": "https://avatars.githubusercontent.com/u/234192525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1766,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771002695023,
+      "changelog": "- Added a new Launchpad guide ([references/launchpad.md](references/launchpad.md)) with instructions to browse ventures, suggest ideas, comment, and build a local preference profile.\n- Updated documentation to reference the new Launchpad features and usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:227b5891f81194ea7bf079cfbc0370014b3d0c448f2b3916bfb6dd4d2ef74e77"
+}

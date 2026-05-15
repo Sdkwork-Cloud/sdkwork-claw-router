@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/halo-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halo_manager",
+  "skill": {
+    "id": 65950,
+    "skillKey": "clawhub-halo-manager",
+    "name": "Halo博客管理，文章发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halo-manager",
+    "url": "https://clawhub.ai/skills/halo-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halo-manager-2c0669f95772d0ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过官方API发布Halo博客文章，支持Markdown自动转换为HTML富文本，同时可查看和删除文章。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binsonhao",
+      "userId": "s1719j5c46grdq52cvsc3yw8e183hy36",
+      "displayName": "binsonHao",
+      "image": "https://avatars.githubusercontent.com/u/135806758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773396001139,
+      "changelog": "Initial release of halo-manager – a Halo博客管理技能.\n\n- 支持创建并发布文章，自动将Markdown语法转为HTML富文本（加粗、斜体、列表、代码等）。\n- 支持查看博客文章列表。\n- 支持通过关键词删除文章。\n- 简单命令行界面，易于集成和配置。\n- 基于官方@halo-dev/api-client实现。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5df2ae56ee0ffa51fd388b49258d4660f7916400b17420f4c5ab7b48b8574078"
+}

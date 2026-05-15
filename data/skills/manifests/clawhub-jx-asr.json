@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40008,
+  "uuid": "skill-clawhub-jx-asr",
+  "skillKey": "clawhub-jx-asr",
+  "name": "asr",
+  "summary": "Transcribe audio from URLs or local files into text using multilingual automatic speech recognition via SkillBoss API Hub.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Transcribe audio from URLs or local files into text using multilingual automatic speech recogni."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jx-asr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jx-asr",
+      "url": "https://clawhub.ai/skills/jx-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-asr",
+    "url": "https://clawhub.ai/skills/jx-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-asr-5fd64ab54df36801.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jx-asr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jx-asr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cd451e78e76e31eec1f7c8231fb864a3a880ae87a16af2a05634f0239274eb1",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T11:14:34.959Z"
+}

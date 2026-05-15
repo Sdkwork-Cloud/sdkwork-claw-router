@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36764,
+  "uuid": "skill-clawhub-appfire",
+  "skillKey": "clawhub-appfire",
+  "name": "Appfire",
+  "summary": "Appfire integration. Manage data, records, and automate workflows. Use when the user wants to interact with Appfire data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appfire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Appfire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Appfire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appfire@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appfire",
+      "url": "https://clawhub.ai/skills/appfire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appfire",
+    "url": "https://clawhub.ai/skills/appfire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appfire-44a14c73d6909aac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appfire@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-appfire-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4fe94563412ba6376e8b16e2db8ab6afafd4a96aa57809b2600d0a47ab3e393",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:11:23.710Z"
+}

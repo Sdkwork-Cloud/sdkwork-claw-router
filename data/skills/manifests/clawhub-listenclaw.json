@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52483,
+  "uuid": "skill-clawhub-listenclaw",
+  "skillKey": "clawhub-listenclaw",
+  "name": "ListenClaw",
+  "summary": "Formats responses for voice/audio output via the ListenClaw voice gateway. Use when: (1) A message starts with [ListenClaw] — this means the message was sent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.listenclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tinywatermonster",
+      "features": [
+        "Formats responses for voice/audio output via the ListenClaw voice gateway",
+        "Use when: (1) A message starts with [ListenClaw] — this means the message was sent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/listenclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111668177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "listenclaw",
+      "url": "https://clawhub.ai/skills/listenclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "listenclaw",
+    "url": "https://clawhub.ai/skills/listenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/listenclaw-fdae75c4125c2d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/listenclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-listenclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78445eb14eb3e27c9dad0c18618ddc4e3095ac839fe5ccaa2965e14dd0f143bc",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:12:46.201Z"
+}

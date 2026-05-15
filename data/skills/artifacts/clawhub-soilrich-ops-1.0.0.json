@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soilrich-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soilrich_ops",
+  "skill": {
+    "id": 51772,
+    "skillKey": "clawhub-soilrich-ops",
+    "name": "Soil Rich Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soilrich-ops",
+    "url": "https://clawhub.ai/skills/soilrich-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soilrich-ops-65873378095d839e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Soil Rich by John — website updates, blog/social content, ISDA compliance, orders, FFA programs. Notion-powered."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martc03",
+      "userId": "publishers:martc03",
+      "displayName": "Martin",
+      "image": "https://avatars.githubusercontent.com/u/138740843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772564013260,
+      "changelog": "Initial release of soilrich-ops — manage Soil Rich by John operations from your phone.\n\n- Update and deploy website content via Next.js/Netlify.\n- Draft blog and social posts, saved directly to Notion.\n- Look up product ISDA compliance and label requirements.\n- Track orders and customer information from Notion Orders database.\n- Manage FFA program info, sponsorships, and events.\n- All actions integrated with Notion-powered databases and file access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d164e6920627f2920cdd01c8e7a2f9f6c4e8fa8645f3cbbe2edad00bae9aba08"
+}

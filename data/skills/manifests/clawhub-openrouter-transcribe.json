@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9407,
+  "uuid": "skill-clawhub-openrouter-transcribe",
+  "skillKey": "clawhub-openrouter-transcribe",
+  "name": "Transcribe audio files via OpenRouter using audio-capable models",
+  "summary": "Transcribe audio files via OpenRouter using audio-capable models (Gemini, GPT-4o-audio, etc).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "obviyus",
+      "features": [
+        "Transcribe audio files via OpenRouter using audio-capable models (Gemini, GPT-4o-audio, etc)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openrouter-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22031114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openrouter-transcribe",
+      "url": "https://clawhub.ai/skills/openrouter-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-transcribe",
+    "url": "https://clawhub.ai/skills/openrouter-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-transcribe-1ca05d2cdd180743.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openrouter-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openrouter-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c9c52194bb1a794d470ea939425863dbd1609da8bf54faa24fffe46b52de4d",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T16:49:14.781Z"
+}

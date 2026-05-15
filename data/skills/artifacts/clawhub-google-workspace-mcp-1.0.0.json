@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-workspace-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_workspace_mcp",
+  "skill": {
+    "id": 8443,
+    "skillKey": "clawhub-google-workspace-mcp",
+    "name": "Google Workspace (No Cloud Console)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-workspace-mcp",
+    "url": "https://clawhub.ai/skills/google-workspace-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-workspace-mcp-4d8979dcd7b76d1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail, Calendar, Drive, Docs, Sheets — NO Google Cloud Console required. Just OAuth sign-in. Zero setup complexity vs traditional Google API integrations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dru-ca",
+      "userId": "s17fbsf0jwska41s434g9bxa018623yv",
+      "displayName": "Dru Carpenter",
+      "image": "https://avatars.githubusercontent.com/u/117193827?v=4"
+    },
+    "stats": {
+      "comments": 5,
+      "downloads": 11517,
+      "installsAllTime": 83,
+      "installsCurrent": 78,
+      "stars": 44,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769458839920,
+      "changelog": "Initial release of Google Workspace skill with zero setup complexity:\n\n- Access Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, and more — no Google Cloud Console required, just OAuth sign-in.\n- Install and configure instantly with a single command; credentials managed automatically.\n- Includes 49 tools for searching, reading, creating, updating, and sending within all major Google Workspace apps.\n- Simple troubleshooting and re-authentication workflows provided.\n- Example commands for common actions included in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59ea7716d868b8d7d7844d62b3ff29cc9308b2dc39c139d1126dde66919db0a4"
+}

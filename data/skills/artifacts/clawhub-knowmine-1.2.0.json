@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowmine@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowmine",
+  "skill": {
+    "id": 23097,
+    "skillKey": "clawhub-knowmine",
+    "name": "KnowMine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowmine",
+    "url": "https://clawhub.ai/skills/knowmine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowmine-1e0ba6c0f85ed818.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save and search personal notes, decisions, and insights with semantic search via MCP. Use this skill when users want to remember things across conversations,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yiing99",
+      "userId": "s177mzh03w2b4frmpm5s7jbdzx83yvbq",
+      "displayName": "YING99",
+      "image": "https://avatars.githubusercontent.com/u/217683404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773553874246,
+      "changelog": "v1.2.0: Add permissions declaration, rewrite description for clarity, remove sensitive wording that triggered false positive moderation flag, add source code link",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44b521e65cafdaf987f304c3cc3ba0f82db79e676f915be55661e13d5d31b121"
+}

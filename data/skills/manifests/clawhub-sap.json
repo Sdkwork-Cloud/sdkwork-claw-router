@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23379,
+  "uuid": "skill-clawhub-sap",
+  "skillKey": "clawhub-sap",
+  "name": "SAP Skills - Use SAP for procurement with your agent",
+  "summary": "Let your agent shop on Amazon with guardrailed wallets and owner approval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "Let your agent shop on Amazon with guardrailed wallets and owner approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sap",
+      "url": "https://clawhub.ai/skills/sap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sap",
+    "url": "https://clawhub.ai/skills/sap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sap-7a9c94a8c201bcc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ab2198c0486ed3b4e928ea81099fb804630b8990af9913f7eadf368a1503c34",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:35:05.162Z"
+}

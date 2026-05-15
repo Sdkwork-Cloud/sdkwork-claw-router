@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48760,
+  "uuid": "skill-clawhub-local-model-quantization-router",
+  "skillKey": "clawhub-local-model-quantization-router",
+  "name": "Local Model Quantization Router",
+  "summary": "Recommend local LLM model routes and quantization levels using hardware, privacy, task complexity, context size, and budget constraints. Use for Qwen/Ollama/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_model_quantization_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Recommend local LLM model routes and quantization levels using hardware, privacy, task complexi.",
+        "Use for Qwen/Ollama/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-model-quantization-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-model-quantization-router",
+      "url": "https://clawhub.ai/skills/local-model-quantization-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-model-quantization-router",
+    "url": "https://clawhub.ai/skills/local-model-quantization-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-model-quantization-router-72a041960b82ede1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-model-quantization-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-model-quantization-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea378ad5d17cc0a0adf6bcafcba508c5505eb7b30e4410dac0a13dfd3ddd1b44",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:05:20.172Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiadong-ai-news-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiadong_ai_news_zh",
+  "skill": {
+    "id": 62783,
+    "skillKey": "clawhub-jiadong-ai-news-zh",
+    "name": "Ai News Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiadong-ai-news-zh",
+    "url": "https://clawhub.ai/skills/jiadong-ai-news-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiadong-ai-news-zh-4982988e05ae360a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文AI科技日报自动采集与推送。从The Verge、Wired、TechCrunch等英文源抓取最新AI资讯，自动翻译整理为中文，按分类推送到飞书/Telegram/Discord等渠道。适合关注AI行业动态的中文用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiadong0723",
+      "userId": "s171evqrw320fst1p7x7dqf9hs84gww5",
+      "displayName": "jiadong0723",
+      "image": "https://avatars.githubusercontent.com/u/267246555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775744745608,
+      "changelog": "- 首发上线，ai-news-zh 支持自动采集、翻译并推送最新AI领域科技资讯的中文日报\n- 多渠道定时推送，覆盖飞书、Telegram、Discord\n- 智能筛选主流英文媒体AI新闻，自动分类（大模型、Agent、融资等）\n- 提供去重、增量更新与每日Top 10-12 新闻摘要",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:449c0357738b54884969c714bf65cfab64e721fe1ed7247d6449e1ae10351a41"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50298,
+  "uuid": "skill-clawhub-groundapi-a-share-analyst",
+  "skillKey": "clawhub-groundapi-a-share-analyst",
+  "name": "Groundapi A Share Analyst",
+  "summary": "Analyze A-share stocks with 13 data dimensions, macro context (gold/forex), trending sentiment, and calendar awareness — realtime quotes, financials, technic...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_a_share_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qingkongzhiqian",
+      "features": [
+        "Analyze A-share stocks with 13 data dimensions, macro context (gold/forex), trending sentiment,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groundapi-a-share-analyst@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45964299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groundapi-a-share-analyst",
+      "url": "https://clawhub.ai/skills/groundapi-a-share-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-a-share-analyst",
+    "url": "https://clawhub.ai/skills/groundapi-a-share-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-a-share-analyst-deae9237847e5fae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groundapi-a-share-analyst@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groundapi-a-share-analyst-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31a5bc137386847ff11ff147f9b2f7d72e31c12faf00f0620c8da64063964ff1",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:13:57.031Z"
+}

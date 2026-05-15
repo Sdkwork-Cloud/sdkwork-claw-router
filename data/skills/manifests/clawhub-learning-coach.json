@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19914,
+  "uuid": "skill-clawhub-learning-coach",
+  "skillKey": "clawhub-learning-coach",
+  "name": "Learning Coach",
+  "summary": "Production learning coach for personalized, multi-subject study planning with proactive reminders, curated resources, LLM-generated quizzes, rubric-based gra...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learning_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ravindra Kadam",
+      "features": [
+        "Production learning coach for personalized, multi-subject study planning with proactive reminde."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learning-coach@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/466919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learning-coach",
+      "url": "https://clawhub.ai/skills/learning-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learning-coach",
+    "url": "https://clawhub.ai/skills/learning-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learning-coach-3c3bd36a8e7581fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learning-coach@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learning-coach-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ae564ef9d834de0e71e77e95890b17bedf5048f012285329befb8cb921d29c3",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:56:12.569Z"
+}

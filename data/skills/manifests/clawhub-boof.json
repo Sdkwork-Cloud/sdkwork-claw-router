@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14446,
+  "uuid": "skill-clawhub-boof",
+  "skillKey": "clawhub-boof",
+  "name": "Boof",
+  "summary": "Convert PDFs and documents to markdown, index them locally for RAG retrieval, and analyze them token-efficiently. Use when asked to: read/analyze/summarize a...",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chiefsegundo",
+      "features": [
+        "Convert PDFs and documents to markdown, index them locally for RAG retrieval, and analyze them.",
+        "Use when asked to: read/analyze/summarize a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boof@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259753484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boof",
+      "url": "https://clawhub.ai/skills/boof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boof",
+    "url": "https://clawhub.ai/skills/boof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boof-4894b8426fe4a062.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boof@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boof-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45d3f8d83a41b144e87c99aa2d720ab1a1151553afec2f28947ad30ca0120e16",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:38:21.807Z"
+}

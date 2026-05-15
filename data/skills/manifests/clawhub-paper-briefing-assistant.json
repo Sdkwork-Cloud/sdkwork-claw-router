@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24692,
+  "uuid": "skill-clawhub-paper-briefing-assistant",
+  "skillKey": "clawhub-paper-briefing-assistant",
+  "name": "Paper_Briefing_Assistant",
+  "summary": "Engineering literature survey following Academic Research methodology. Two modes (initial survey / daily reading), two-phase workflow with user checkpoints,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_briefing_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eshin",
+      "features": [
+        "Engineering literature survey following Academic Research methodology",
+        "Two modes (initial survey / daily reading), two-phase workflow with user checkpoints,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-briefing-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179804597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-briefing-assistant",
+      "url": "https://clawhub.ai/skills/paper-briefing-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-briefing-assistant",
+    "url": "https://clawhub.ai/skills/paper-briefing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-briefing-assistant-6824db4c3338e620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-briefing-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-briefing-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afec9511cb161b0de458c8bf4cf1a39745431b6f19f7c147fc1f9403c6909d54",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:16:49.842Z"
+}

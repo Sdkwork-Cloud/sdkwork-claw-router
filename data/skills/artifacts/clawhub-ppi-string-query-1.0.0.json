@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppi-string-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppi_string_query",
+  "skill": {
+    "id": 39424,
+    "skillKey": "clawhub-ppi-string-query",
+    "name": "STRING PPI Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppi-string-query",
+    "url": "https://clawhub.ai/skills/ppi-string-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppi-string-query-9059897f9df7fbb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query STRING database for protein-protein interactions with confidence scores. Use this skill when: (1) Finding interaction partners for a protein of interes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollyya",
+      "userId": "s179vqh375ttntbve3fcfvrxps845pbn",
+      "displayName": "HollyYa",
+      "image": "https://avatars.githubusercontent.com/u/108674565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775637772379,
+      "changelog": "- Initial release of ppi-string-query skill for accessing STRING database protein-protein interactions.\n- Supports querying by UniProt ID, retrieving interaction partners, and confidence scores.\n- Allows filtering by organism, confidence thresholds, and number of interactors.\n- Returns detailed interaction scores (combined, experimental, text mining, etc.).\n- Includes code examples, parameter descriptions, error handling, and organism ID references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e12f2fd5c8deac1b3e171f70a71ac8dedf1445b0bed9d069ad2f963761e4638"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24000,
+  "uuid": "skill-clawhub-salary",
+  "skillKey": "clawhub-salary",
+  "name": "Salary",
+  "summary": "A comprehensive AI agent skill for navigating compensation conversations. Researches market rates, builds negotiation strategies, prepares scripts, evaluates...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "A comprehensive AI agent skill for navigating compensation conversations",
+        "Researches market rates, builds negotiation strategies, prepares scripts, evaluates..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salary",
+      "url": "https://clawhub.ai/skills/salary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salary",
+    "url": "https://clawhub.ai/skills/salary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salary-6384e43c02b1fbdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2236c9440192d9e2868e26396356d2ff7f786501c2630d62adf51b82bafbff2",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:38:01.285Z"
+}

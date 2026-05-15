@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22036,
+  "uuid": "skill-clawhub-notebooklm-audio-generator",
+  "skillKey": "clawhub-notebooklm-audio-generator",
+  "name": "NotebookLM Audio Generator",
+  "summary": "Automates uploading multiple sources (files, URLs, YouTube, Drive, text) to a NotebookLM notebook, generating a deep dive audio overview in a preferred langu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_audio_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiyanch",
+      "features": [
+        "Automates uploading multiple sources (files, URLs, YouTube, Drive, text) to a NotebookLM notebo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-audio-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5779494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-audio-generator",
+      "url": "https://clawhub.ai/skills/notebooklm-audio-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-audio-generator",
+    "url": "https://clawhub.ai/skills/notebooklm-audio-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-audio-generator-b3232d66460912b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-audio-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-audio-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8142d70c2afb9507038d10c492444346dbef4e36df4f8e94b7242dca926e2c19",
+      "artifactSizeBytes": 2735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:09:39.880Z"
+}

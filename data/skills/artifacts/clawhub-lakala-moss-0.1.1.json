@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lakala-moss@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lakala_moss",
+  "skill": {
+    "id": 71683,
+    "skillKey": "clawhub-lakala-moss",
+    "name": "拉卡拉MOSS接口演示"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lakala-moss",
+    "url": "https://clawhub.ai/skills/lakala-moss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lakala-moss-d49803bcb700a712.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拉卡拉MOSS统一接口功能演示，创建测试订单并生成演示链接，用于流程体验与功能验证"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars9043",
+      "userId": "s1753741s6ejwg3z002fj2t6e586ajwv",
+      "displayName": "mars9043",
+      "image": "https://avatars.githubusercontent.com/u/198885981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778235377821,
+      "changelog": "- Updated the skill to focus exclusively on demo/testing scenarios, emphasizing that all operations are performed in a non-production test environment with no real payments.\n- Expanded documentation for clarity: added a warning about non-production use, reorganized feature and usage instructions, and clarified parameter requirements.\n- Changed metadata: updated skill name, author, version, and tags to reflect its demonstration purpose.\n- Added a README file to improve usability and onboarding for new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b009e73c881807f1b6bf95c9d1f7730c5e8c28c482ca23e0bffa3e7bd81c3326"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hn-prospecting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_prospecting",
+  "skill": {
+    "id": 51596,
+    "skillKey": "clawhub-hn-prospecting",
+    "name": "Hacker News Lead Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-prospecting",
+    "url": "https://clawhub.ai/skills/hn-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-prospecting-4d755f167fe4fb7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find high-intent leads on Hacker News via the free Algolia API — no API key needed. Score posts, surface Ask HN threads, and identify technical founders acti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "3rdbrain",
+      "userId": "s1762jwgcvj4wjcxnmwy8jk5td83xapp",
+      "displayName": "pbopps",
+      "image": "https://avatars.githubusercontent.com/u/130667201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774170213940,
+      "changelog": "Initial public release.\n\n- Find and score high-intent leads on Hacker News using the free, public Algolia API (no setup or API key needed).\n- Includes commands to search posts, surface recent \"Ask HN\" threads, view front page stories, and score post lead quality.\n- Specifically targets technical founders and buyers seeking new tools.\n- No environment configuration required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc7f9173e110fa394039375f6e2e2be66dd559f42247a90dbe5cef9ca342fdd6"
+}

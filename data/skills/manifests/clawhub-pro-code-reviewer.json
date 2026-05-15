@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49932,
+  "uuid": "skill-clawhub-pro-code-reviewer",
+  "skillKey": "clawhub-pro-code-reviewer",
+  "name": "Pro Code Reviewer",
+  "summary": "Review code changes against platform-specific rules (Android/iOS) plus shared general rules. Supports: uncommitted changes, staged changes, specific commits,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pro_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "李林",
+      "features": [
+        "Review code changes against platform-specific rules (Android/iOS) plus shared general rules",
+        "Supports: uncommitted changes, staged changes, specific commits,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pro-code-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228440409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pro-code-reviewer",
+      "url": "https://clawhub.ai/skills/pro-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pro-code-reviewer",
+    "url": "https://clawhub.ai/skills/pro-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pro-code-reviewer-0c696d509800f76a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pro-code-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pro-code-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e7b3b461cc0c4c462d869f195934cd3aa4347fd9b9498ece097b3f19e7bb1fc",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T06:57:36.288Z"
+}

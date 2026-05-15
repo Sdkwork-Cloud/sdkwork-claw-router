@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67720,
+  "uuid": "skill-clawhub-personal-memory-system",
+  "skillKey": "clawhub-personal-memory-system",
+  "name": "personal-memory-system",
+  "summary": "个人AI记忆系统（Personal AI Memory System）。当用户说以下任何内容时立即触发： 记忆系统、记录今天、写日记、今天发生了、随手记、快速记录、 回顾过去、整理我的经历、帮我做决策、沙盘推演、这件事该不该做、 分析我最近的状态、预测一下、我的目标、追踪进度、生成周报、 生成月报、生成年报、这周...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_memory_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChenChen",
+      "features": [
+        "个人AI记忆系统（Personal AI Memory System）。当用户说以下任何内容时立即触发： 记忆系统、记录今天、写日记、今天发生了、随手记、快速记录、 回顾过去、整理我的经历、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-memory-system@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35963500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-memory-system",
+      "url": "https://clawhub.ai/skills/personal-memory-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-memory-system",
+    "url": "https://clawhub.ai/skills/personal-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-memory-system-8b12b5430f49eaff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-memory-system@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-memory-system-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa0061f8911d40f8469720af0916a8d49b1abbb28ad9b653dc42fb7ca1bd6629",
+      "artifactSizeBytes": 2719
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T04:38:52.560Z"
+}

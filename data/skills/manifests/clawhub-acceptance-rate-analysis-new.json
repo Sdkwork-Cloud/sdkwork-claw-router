@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71281,
+  "uuid": "skill-clawhub-acceptance-rate-analysis-new",
+  "skillKey": "clawhub-acceptance-rate-analysis-new",
+  "name": "my_acceptance_rate_analysis",
+  "summary": "对承接率下降做阶段式归因分析。适用于“今天/本周承接率为什么下降”“分析承接率下降原因”“看一下承接率环比是否下降及原因”等场景。先定位异常切片，再逐层判断是一级切片结构迁移、资方总量明显减少或分布左移、资产维度异常，还是进一步闭环到敏感资方侧收缩。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acceptance_rate_analysis_new",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzhou1982",
+      "features": [
+        "对承接率下降做阶段式归因分析。适用于“今天/本周承接率为什么下降”“分析承接率下降原因”“看一下承接率环比是否下降及原因”等场景。先定位异常切片，再逐层判断是一级切片结构迁移、资方总量明显减."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acceptance-rate-analysis-new@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16053655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acceptance-rate-analysis-new",
+      "url": "https://clawhub.ai/skills/acceptance-rate-analysis-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acceptance-rate-analysis-new",
+    "url": "https://clawhub.ai/skills/acceptance-rate-analysis-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acceptance-rate-analysis-new-3a85f0c84b2ad062.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acceptance-rate-analysis-new@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acceptance-rate-analysis-new-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82cafcf4d0dc8d55c7fa865cd2be30729c96bcaac6c6f0a5899f6cab659139d5",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:55:39.741Z"
+}

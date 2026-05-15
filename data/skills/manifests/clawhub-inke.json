@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72678,
+  "uuid": "skill-clawhub-inke",
+  "skillKey": "clawhub-inke",
+  "name": "Inke",
+  "summary": "提供映客短视频公开页面的热点视频与话题数据摘要，支持关键词检索和账号近期表现对比分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inke",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供映客短视频公开页面的热点视频与话题数据摘要，支持关键词检索和账号近期表现对比分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inke@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inke",
+      "url": "https://clawhub.ai/skills/inke"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inke",
+    "url": "https://clawhub.ai/skills/inke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inke-57a07dd18dc199fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inke@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inke-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9eb3ecb4c8286fcb3afbf31fdb2ca3a48cb19f01a315eb11f6ebe44c58a39404",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:01:29.366Z"
+}

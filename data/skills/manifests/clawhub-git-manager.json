@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30918,
+  "uuid": "skill-clawhub-git-manager",
+  "skillKey": "clawhub-git-manager",
+  "name": "Git Manager",
+  "summary": "Perform common Git operations like status, commit, push, pull, branch management, and merge with safety checks and dry-run support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liyico",
+      "features": [
+        "Perform common Git operations like status, commit, push, pull, branch management, and merge wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52720709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-manager",
+      "url": "https://clawhub.ai/skills/git-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-manager",
+    "url": "https://clawhub.ai/skills/git-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-manager-c725842f6c34351b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06df38f0d014a0f3bc59e7dfc99fb876504511b82e00bf9f28f417545b63e190",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:46:56.575Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71856,
+  "uuid": "skill-clawhub-tonghuashu",
+  "skillKey": "clawhub-tonghuashu",
+  "name": "10JQKA",
+  "summary": "操作同花顺炒股软件，覆盖盯盘、选股、自选、下单前检查、复盘等个人炒股全流程",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonghuashu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "子沫",
+      "features": [
+        "操作同花顺炒股软件，覆盖盯盘、选股、自选、下单前检查、复盘等个人炒股全流程"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tonghuashu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29696639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tonghuashu",
+      "url": "https://clawhub.ai/skills/tonghuashu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonghuashu",
+    "url": "https://clawhub.ai/skills/tonghuashu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonghuashu-cc8449b91f80120d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tonghuashu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tonghuashu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e31fdf103b0a531e668a14d7d99f62dd9e930da51f5c0bd44af01c6246c38b4",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:20:31.410Z"
+}

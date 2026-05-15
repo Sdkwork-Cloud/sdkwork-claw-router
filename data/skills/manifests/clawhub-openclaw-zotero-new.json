@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58881,
+  "uuid": "skill-clawhub-openclaw-zotero-new",
+  "skillKey": "clawhub-openclaw-zotero-new",
+  "name": "openclaw-zotero-new",
+  "summary": "将论文保存到 Zotero 文库，请按照 userid:apiKey 的格式配置 ZOTERO_CREDENTIALS 环境变量。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_zotero_new",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangjiayu",
+      "features": [
+        "将论文保存到 Zotero 文库，请按照 userid:apiKey 的格式配置 ZOTERO_CREDENTIALS 环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-zotero-new@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169880790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-zotero-new",
+      "url": "https://clawhub.ai/skills/openclaw-zotero-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-zotero-new",
+    "url": "https://clawhub.ai/skills/openclaw-zotero-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-zotero-new-0026e9554c4c45af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-zotero-new@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-zotero-new-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b87296417114aeadd88ffc2c6fb440c452572c782267656c8fde2ccc13163c4b",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:09:57.100Z"
+}

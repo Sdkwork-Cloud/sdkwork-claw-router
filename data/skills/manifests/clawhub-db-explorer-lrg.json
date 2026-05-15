@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49940,
+  "uuid": "skill-clawhub-db-explorer-lrg",
+  "skillKey": "clawhub-db-explorer-lrg",
+  "name": "Db Explorer",
+  "summary": "Connect to and explore databases (PostgreSQL, MySQL, SQLite, MongoDB, Redis). Run queries, inspect schemas, export data. Use when user wants to query a datab...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_explorer_lrg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lrg913427-dot",
+      "features": [
+        "Connect to and explore databases (PostgreSQL, MySQL, SQLite, MongoDB, Redis)",
+        "Run queries, inspect schemas, export data",
+        "Use when user wants to query a datab..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/db-explorer-lrg@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/279154854?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "db-explorer-lrg",
+      "url": "https://clawhub.ai/skills/db-explorer-lrg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-explorer-lrg",
+    "url": "https://clawhub.ai/skills/db-explorer-lrg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-explorer-lrg-cb8f72d8f4699b35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/db-explorer-lrg@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-db-explorer-lrg-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc630f20299037c7f5a2a888a351aea8ab954cf049fb004ea0cbfc53bb6ebf25",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:03:24.322Z"
+}

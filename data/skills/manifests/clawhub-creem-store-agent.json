@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54817,
+  "uuid": "skill-clawhub-creem-store-agent",
+  "skillKey": "clawhub-creem-store-agent",
+  "name": "Creem Store Agent",
+  "summary": "AI-powered Creem store monitor — alerts, churn analysis, autonomous actions via Telegram",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creem_store_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dmitrii Malakhov",
+      "features": [
+        "AI-powered Creem store monitor — alerts, churn analysis, autonomous actions via Telegram"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creem-store-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24995728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creem-store-agent",
+      "url": "https://clawhub.ai/skills/creem-store-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creem-store-agent",
+    "url": "https://clawhub.ai/skills/creem-store-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creem-store-agent-064d531599bef5a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creem-store-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-creem-store-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deca27246c0f636ca1624728639b92695f9cbf6416a79e5a03c0e394cde49c97",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T00:54:22.020Z"
+}

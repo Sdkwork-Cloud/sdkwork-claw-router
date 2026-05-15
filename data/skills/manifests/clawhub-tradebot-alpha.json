@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34784,
+  "uuid": "skill-clawhub-tradebot-alpha",
+  "skillKey": "clawhub-tradebot-alpha",
+  "name": "Tradebot Alpha",
+  "summary": "Read-only signal fetcher for TradeBot Alpha API. Subscription required for Pro tier.",
+  "version": "0.1.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradebot_alpha",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zalcmann",
+      "features": [
+        "Read-only signal fetcher for TradeBot Alpha API",
+        "Subscription required for Pro tier."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradebot-alpha@0.1.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13640097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradebot-alpha",
+      "url": "https://clawhub.ai/skills/tradebot-alpha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradebot-alpha",
+    "url": "https://clawhub.ai/skills/tradebot-alpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradebot-alpha-ed9d8701af108338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradebot-alpha@0.1.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradebot-alpha-0.1.14.json",
+      "version": "0.1.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe82c0298269bbbe24336cd62f3eae71068e0399016e93ea5c6cd39c84e48bdb",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:22:23.412Z"
+}

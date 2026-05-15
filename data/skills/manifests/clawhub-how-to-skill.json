@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23431,
+  "uuid": "skill-clawhub-how-to-skill",
+  "skillKey": "clawhub-how-to-skill",
+  "name": "How To Skill",
+  "summary": "Teaches agents how to create, structure, and publish skills by guiding through topic selection, writing SKILL.md, trigger phrases, and advanced strategies.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.how_to_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Potdealer",
+      "features": [
+        "Teaches agents how to create, structure, and publish skills by guiding through topic selection,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/how-to-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "how-to-skill",
+      "url": "https://clawhub.ai/skills/how-to-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "how-to-skill",
+    "url": "https://clawhub.ai/skills/how-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/how-to-skill-bb9856ab9f3cfb6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/how-to-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-how-to-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:911e9a42a4559c03b9d6d5a9b19128217d5702d0bb9259eca7b64760ad6ca564",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:33:05.972Z"
+}

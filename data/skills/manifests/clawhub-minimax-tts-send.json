@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66991,
+  "uuid": "skill-clawhub-minimax-tts-send",
+  "skillKey": "clawhub-minimax-tts-send",
+  "name": "minimax-tts-send",
+  "summary": "调用 MiniMax 语音合成 API 生成语音,发送语音消息。支持系统音色、克隆音色、流式/非流式输出。使用场景：用户需要生成高质量中文语音、语音合成、文本转语音。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric",
+      "features": [
+        "调用 MiniMax 语音合成 API 生成语音,发送语音消息。支持系统音色、克隆音色、流式/非流式输出。使用场景：用户需要生成高质量中文语音、语音合成、文本转语音。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-tts-send@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3387875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-tts-send",
+      "url": "https://clawhub.ai/skills/minimax-tts-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-send",
+    "url": "https://clawhub.ai/skills/minimax-tts-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-send-80eff727b63072c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-tts-send@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-tts-send-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:452e63c9e6c02efbc41817ba357a18dd93fb19d40533cdf9283a28e6a3e07d31",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:14:29.354Z"
+}

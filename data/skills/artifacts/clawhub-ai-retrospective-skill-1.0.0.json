@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-retrospective-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_retrospective_skill",
+  "skill": {
+    "id": 52632,
+    "skillKey": "clawhub-ai-retrospective-skill",
+    "name": "ai-retrospective"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-retrospective-skill",
+    "url": "https://clawhub.ai/skills/ai-retrospective-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-retrospective-skill-202792fe3512e4b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Collaboration Retrospective — a tool-agnostic post-session analysis framework. After each AI-assisted coding/development session, it systematically review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amoshc",
+      "userId": "s17fser93q7w8mq267zwqeswns84hwqw",
+      "displayName": "Amos",
+      "image": "https://avatars.githubusercontent.com/u/34994144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775808462370,
+      "changelog": "AI Collaboration Retrospective skill initial release:\n\n- Provides a tool-agnostic, systematic framework for post-session AI-assisted development retrospectives.\n- Analyzes conversations across eight defined dimensions to identify improvement opportunities and inefficiencies.\n- Generates structured, Markdown-formatted retrospective reports saved per session/topic.\n- Supports waste point tagging, counterfactual reasoning, and actionable recommendations.\n- Compatible with any AI coding assistant with access to conversation context and file I/O.\n- Designed for continuous improvement and knowledge persistence in AI + human workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9da0c83e00b79cf537aa120c5689cc85110d54fdf90b6df972a4711ba063cc2c"
+}

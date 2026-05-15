@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24400,
+  "uuid": "skill-clawhub-smtools-image-generation",
+  "skillKey": "clawhub-smtools-image-generation",
+  "name": "SMTools Image Generation Skill",
+  "summary": "Generate images from text prompts using AI models via OpenRouter, Kie.ai, or YandexART. Use when the user asks to generate, create, draw, or illustrate an im...",
+  "version": "1.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smtools_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Mikhaylov",
+      "features": [
+        "Generate images from text prompts using AI models via OpenRouter, Kie.ai, or YandexART",
+        "Use when the user asks to generate, create, draw, or illustrate an im..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smtools-image-generation@1.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/825538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smtools-image-generation",
+      "url": "https://clawhub.ai/skills/smtools-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smtools-image-generation",
+    "url": "https://clawhub.ai/skills/smtools-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smtools-image-generation-db44fe030cefa6b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smtools-image-generation@1.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smtools-image-generation-1.9.1.json",
+      "version": "1.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41634bf1f956162862744675bfc0faae3b16462cbe839f11ee4d1de5f8caf109",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:02:58.539Z"
+}

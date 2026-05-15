@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-listing-polisher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_listing_polisher",
+  "skill": {
+    "id": 20046,
+    "skillKey": "clawhub-skill-listing-polisher",
+    "name": "Skill Listing Polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-listing-polisher",
+    "url": "https://clawhub.ai/skills/skill-listing-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-listing-polisher-5df08164afa4cf1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Improve a skill's public listing before publish. Use when tightening title, description, tags, changelog, and scan-friendly packaging so the listing looks cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyoiii",
+      "userId": "publishers:kyoiii",
+      "displayName": "kyoii",
+      "image": "https://avatars.githubusercontent.com/u/183969704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773020898174,
+      "changelog": "Publish 0.1.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7e3478df9b22a1e2ec924f951c3bb2779b6218d81e855ed66da5433a65973f5"
+}

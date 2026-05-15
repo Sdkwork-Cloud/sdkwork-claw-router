@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70641,
+  "uuid": "skill-clawhub-c-cleaner-zx",
+  "skillKey": "clawhub-c-cleaner-zx",
+  "name": "C 盘清理助手",
+  "summary": "安全扫描并分析 Windows C 盘空间和文件，支持临时文件清理、重复文件去重及大文件迁移，所有修改需用户确认。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.c_cleaner_zx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roxy18",
+      "features": [
+        "安全扫描并分析 Windows C 盘空间和文件，支持临时文件清理、重复文件去重及大文件迁移，所有修改需用户确认。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/c-cleaner-zx@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56423790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "c-cleaner-zx",
+      "url": "https://clawhub.ai/skills/c-cleaner-zx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "c-cleaner-zx",
+    "url": "https://clawhub.ai/skills/c-cleaner-zx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/c-cleaner-zx-934a0eaf1c58c295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/c-cleaner-zx@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-c-cleaner-zx-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c1c2d7f369d746cc7e9c510f1398409f459fb302a64234eae41a579535e3af8",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:51:42.308Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51483,
+  "uuid": "skill-clawhub-claude-skill-sync",
+  "skillKey": "clawhub-claude-skill-sync",
+  "name": "Claude Code ↔ OpenClaw Skill Sync",
+  "summary": "This skill should be used when the user wants to sync, synchronize, or compare skills between Claude Code and OpenClaw. Use it for requests like \"sync my ski...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_skill_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rushingAI",
+      "features": [
+        "This skill should be used when the user wants to sync, synchronize, or compare skills between C.",
+        "Use it for requests like \"sync my ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-skill-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210666758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-skill-sync",
+      "url": "https://clawhub.ai/skills/claude-skill-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-skill-sync",
+    "url": "https://clawhub.ai/skills/claude-skill-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-skill-sync-988aaa8d0124d9d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-skill-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-skill-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2789866334a3635f7a810226966261ad52b2bc6a5c2f6c8412507c1d8bd8e3cf",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:03:58.760Z"
+}

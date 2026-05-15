@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/est3212411@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.est3212411",
+  "skill": {
+    "id": 72929,
+    "skillKey": "clawhub-est3212411",
+    "name": "头脑超级风暴1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "est3212411",
+    "url": "https://clawhub.ai/skills/est3212411",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/est3212411-a45467b15e0d43c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在任何创造性工作之前必须使用 - 创建功能、构建组件、添加新功能或修改行为。通过协作对话探索用户意图、需求和设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lky115",
+      "userId": "s17eyw94gx00cf2kh08jj3234183ncam",
+      "displayName": "LKY115",
+      "image": "https://avatars.githubusercontent.com/u/166357382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774835873782,
+      "changelog": "- Introduced a new brainstorming skill for creative work, focusing on collaborative dialogue to explore user intent and design\n- Follows a structured process: understanding ideas through targeted questions, exploring 2-3 alternative solutions, and presenting designs in sections\n- Outputs validated designs as documentation and commits them to git\n- Integrates with other skills for detailed implementation planning and domain-specific analysis (embedded, simulation)\n- Emphasizes core principles like asking one question at a time, preferring multiple-choice questions, and exploring alternatives before finalizing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa746b0ec8eebba95e2f471df7710fa03e24222441fe2a26044f0db78114fe51"
+}

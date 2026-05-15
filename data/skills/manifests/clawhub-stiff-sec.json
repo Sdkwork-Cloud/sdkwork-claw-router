@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52202,
+  "uuid": "skill-clawhub-stiff-sec",
+  "skillKey": "clawhub-stiff-sec",
+  "name": "Stiff-Sec — OpenClaw Security Hardener",
+  "summary": "Audit and securely harden OpenClaw setups by enforcing strict permissions, disabling elevated access, fixing proxy warnings, and backing up configs automatic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stiff_sec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sf-dev-systems",
+      "features": [
+        "Audit and securely harden OpenClaw setups by enforcing strict permissions, disabling elevated a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stiff-sec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243867764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stiff-sec",
+      "url": "https://clawhub.ai/skills/stiff-sec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stiff-sec",
+    "url": "https://clawhub.ai/skills/stiff-sec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stiff-sec-b9646bf6f6240d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stiff-sec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stiff-sec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3106fd415e1254864f5680314dbee720dbced7aabc7694ccc3697ab9a8d2ad3",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:42:58.418Z"
+}

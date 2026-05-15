@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anygen-skill@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_skill",
+  "skill": {
+    "id": 14250,
+    "skillKey": "clawhub-anygen-skill",
+    "name": "AnyGen Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-skill",
+    "url": "https://clawhub.ai/skills/anygen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-skill-d5ebd4a49ebadf9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AnyGen: AI-powered content creation suite. Create slides/PPT, documents, diagrams, websites, data visualizations, research reports, storybooks, financial ana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "logictortoise",
+      "userId": "s17dj5z1vv80h7xrg7qmd05er983j8rd",
+      "displayName": "AnyGenIO",
+      "image": "https://avatars.githubusercontent.com/u/26993581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1105,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774865553930,
+      "changelog": "- Updated SKILL.md to add a dedicated metadata.clawdbot section and reorganize requirements\n- Simplified and clarified authentication instructions\n- Removed detailed workflow, rules, and file-sending steps from SKILL.md\n- Added guidance for using the `anygen-workflow-generate` skill and instructions to install it if needed\n- Documentation now focuses on quick start and high-level usage, referencing workflow skill for implementation details",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:718b5b56b9d706ef9591e68962eeb9981020ac2aa04bae3fa69ae5cf4ca01233"
+}

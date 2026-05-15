@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goai-ppt-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goai_ppt_gen",
+  "skill": {
+    "id": 37935,
+    "skillKey": "clawhub-goai-ppt-gen",
+    "name": "GoAI PPT Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goai-ppt-gen",
+    "url": "https://clawhub.ai/skills/goai-ppt-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goai-ppt-gen-ee8b0375db8ff581.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PowerPoint presentations via GoAI API. Use when the user asks to create, generate, make, or build PPT, slides, presentations, including Chinese requ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goai",
+      "userId": "s17bth0ecttg4hrp00qrv4evbs83scf8",
+      "displayName": "GoAI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774700457068,
+      "changelog": "goai-ppt-gen 1.0.1\n\n- Migrated from shell and PowerShell scripts to a unified Python entrypoint, improving cross-platform support.\n- Now requires the `uv` tool as the only manual runtime dependency.\n- Added `pyproject.toml` and `uv.lock` for Python dependency management; all packages are managed via `uv`.\n- Legacy shell scripts (`generate_ppt.sh`, `common.sh`) were removed.\n- All invocation and dependency instructions updated to reflect the new Python-based workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b09e3a685afec110cc49b65f4ca544d2de6280c4b3c490283175c07c5198e78"
+}

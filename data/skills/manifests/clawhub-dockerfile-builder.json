@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19989,
+  "uuid": "skill-clawhub-dockerfile-builder",
+  "skillKey": "clawhub-dockerfile-builder",
+  "name": "Dockerfile Builder",
+  "summary": "Generate and lint Dockerfiles for common languages and frameworks. Use when creating container configs.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dockerfile_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Generate and lint Dockerfiles for common languages and frameworks",
+        "Use when creating container configs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dockerfile-builder@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dockerfile-builder",
+      "url": "https://clawhub.ai/skills/dockerfile-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dockerfile-builder",
+    "url": "https://clawhub.ai/skills/dockerfile-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dockerfile-builder-51993e7658050a5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dockerfile-builder@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dockerfile-builder-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d2e722a0d3b4231dbb14d84e2fa73a3fb666563d6aa8af74b0cb3ab68a28d9d",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:09:21.726Z"
+}

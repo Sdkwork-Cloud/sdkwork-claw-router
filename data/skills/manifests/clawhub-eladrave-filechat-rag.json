@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39615,
+  "uuid": "skill-clawhub-eladrave-filechat-rag",
+  "skillKey": "clawhub-eladrave-filechat-rag",
+  "name": "FileChat RAG",
+  "summary": "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using semantic vector search (RAG). Use when: (1) a user asks to save a...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eladrave_filechat_rag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eladrave",
+      "features": [
+        "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using sema.",
+        "Use when: (1) a user asks to save a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eladrave-filechat-rag@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86946294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eladrave-filechat-rag",
+      "url": "https://clawhub.ai/skills/eladrave-filechat-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eladrave-filechat-rag",
+    "url": "https://clawhub.ai/skills/eladrave-filechat-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eladrave-filechat-rag-ec61f3fa78632fb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eladrave-filechat-rag@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-eladrave-filechat-rag-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c39e91affcfa5f121bf8eab797ca33faabca4c0857e2a25bdc0115d582b128f",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:39:05.444Z"
+}

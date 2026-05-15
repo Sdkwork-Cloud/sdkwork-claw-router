@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17493,
+  "uuid": "skill-clawhub-citation-verifier",
+  "skillKey": "clawhub-citation-verifier",
+  "name": "Citation Verifier",
+  "summary": "Verify, normalize, and enrich a single citation or paper identifier. Use when the user pastes a DOI, URL, arXiv ID, PubMed ID, citation string, or paper titl...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PapersFlow",
+      "features": [
+        "Verify, normalize, and enrich a single citation or paper identifier",
+        "Use when the user pastes a DOI, URL, arXiv ID, PubMed ID, citation string, or paper titl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-verifier@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245266633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-verifier",
+      "url": "https://clawhub.ai/skills/citation-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-verifier",
+    "url": "https://clawhub.ai/skills/citation-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-verifier-18dfbfb12592eeb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-verifier@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-verifier-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:030120764d8e66b456db55cf74d244afec431976b53e5dbf3a2ee2b2f5c05a57",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T19:27:50.221Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9736,
+  "uuid": "skill-clawhub-aifs-space",
+  "skillKey": "clawhub-aifs-space",
+  "name": "AIFS - HTTP File system",
+  "summary": "Store and retrieve files via AIFS.space cloud storage API. Use when persisting notes, documents, or data to the cloud; syncing files across sessions; or when the user mentions AIFS, aifs.space, or cloud file storage. Not to be used for any.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aifs_space",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deploydon",
+      "features": [
+        "Store and retrieve files via AIFS.space cloud storage API",
+        "Use when persisting notes, documents, or data to the cloud",
+        "syncing files across sessions",
+        "or when the user mentions AIFS, aifs.space, or cloud file storage"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aifs-space@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96504831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aifs-space",
+      "url": "https://clawhub.ai/skills/aifs-space"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aifs-space",
+    "url": "https://clawhub.ai/skills/aifs-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aifs-space-36c0ded6ea6e0ec1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aifs-space@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aifs-space-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4ed581d69d5e9b2399a617b154fb675ccdf2df83e56b48841dccd103674de0b",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T07:20:41.796Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73146,
+  "uuid": "skill-clawhub-financial-statement-review",
+  "skillKey": "clawhub-financial-statement-review",
+  "name": "财务报表审查",
+  "summary": "专业财务报表审查 Skill，基于中国《会计法》《企业会计准则》和《税法》体系，对企业财务报表进行全面合规性审查、风险识别和分析。支持可扩展的策略库，包含税款比对分析、收入确认审查、成本操纵识别等多种专业策略。适用于年报审计、税务稽查准备、投资尽调、内部控制等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_statement_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weiliang911",
+      "features": [
+        "专业财务报表审查 Skill，基于中国《会计法》《企业会计准则》和《税法》体系，对企业财务报表进行全面合规性审查、风险识别和分析。支持可扩展的策略库，包含税款比对分析、收入确认审查、成本操纵."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-statement-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85890698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-statement-review",
+      "url": "https://clawhub.ai/skills/financial-statement-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-statement-review",
+    "url": "https://clawhub.ai/skills/financial-statement-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-statement-review-55be7c7f5e0ce13d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-statement-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-statement-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3778f144a1e862d16a83e875bc801a0560381ec7572569f662575b9b1a3f58ce",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:58:35.178Z"
+}

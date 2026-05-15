@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39004,
+  "uuid": "skill-clawhub-http-security-headers",
+  "skillKey": "clawhub-http-security-headers",
+  "name": "HTTP Security Headers",
+  "summary": "Analyze HTTP security headers for any URL. Check for HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, CORS, and more....",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_security_headers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze HTTP security headers for any URL",
+        "Check for HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Poli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/http-security-headers@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "http-security-headers",
+      "url": "https://clawhub.ai/skills/http-security-headers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-security-headers",
+    "url": "https://clawhub.ai/skills/http-security-headers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-security-headers-141c40160922f1fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/http-security-headers@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-http-security-headers-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba72792d911bebe9d4e00b063f905fc53e0066fc04118b33ebb07884b73789a5",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:47.382Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64455,
+  "uuid": "skill-clawhub-flowchart-gen",
+  "skillKey": "clawhub-flowchart-gen",
+  "name": "Flowchart Gen",
+  "summary": "将自然语言描述转换为流程图图片（Mermaid语法），支持DeepSeek API智能生成、多种图表类型、丰富的模板库和智能错误处理",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowchart_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andapeng",
+      "features": [
+        "将自然语言描述转换为流程图图片（Mermaid语法），支持DeepSeek API智能生成、多种图表类型、丰富的模板库和智能错误处理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowchart-gen@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13000433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowchart-gen",
+      "url": "https://clawhub.ai/skills/flowchart-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowchart-gen",
+    "url": "https://clawhub.ai/skills/flowchart-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowchart-gen-76b9b8259962e9da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowchart-gen@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowchart-gen-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58c7586a51293f5275e64ac3ee7a2a371ca536c6512c8a46441a6253c0acece6",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:01:37.946Z"
+}

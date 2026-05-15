@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34429,
+  "uuid": "skill-clawhub-shipperhq",
+  "skillKey": "clawhub-shipperhq",
+  "name": "Shipperhq",
+  "summary": "ShipperHQ integration. Manage data, records, and automate workflows. Use when the user wants to interact with ShipperHQ data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipperhq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ShipperHQ integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ShipperHQ data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipperhq@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipperhq",
+      "url": "https://clawhub.ai/skills/shipperhq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipperhq",
+    "url": "https://clawhub.ai/skills/shipperhq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipperhq-35a7ed043ee7a924.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipperhq@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipperhq-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f419391b2f21f1f6b7bf22f037cd245c4451350429daf6487e98c3a82d40da4e",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:40.707Z"
+}

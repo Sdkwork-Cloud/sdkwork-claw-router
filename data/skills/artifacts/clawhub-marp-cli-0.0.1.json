@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marp-cli@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marp_cli",
+  "skill": {
+    "id": 11303,
+    "skillKey": "clawhub-marp-cli",
+    "name": "Marp Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marp-cli",
+    "url": "https://clawhub.ai/skills/marp-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marp-cli-2c6cb8fa4902b886.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown to presentations via CLI. Output HTML, PDF, PowerPoint (PPTX), and images (PNG/JPEG)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killgfat",
+      "userId": "s17d0zyy31mmgnhxcs17jmbmk583na3e",
+      "displayName": "KGTAF",
+      "image": "https://avatars.githubusercontent.com/u/32797449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1953,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1770686346010,
+      "changelog": "Initial release.\n\n- Convert Markdown to presentations from the command line.\n- Supports output to HTML, PDF, PowerPoint (PPTX), PNG, and JPEG formats.\n- Includes server mode, watch mode, and preview window features.\n- Parallel and batch processing of multiple files or directories.\n- CLI options for presenter notes, image scaling, browser selection, and more.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:989b6b69931db99bc12072c2dc07ec8e58b44bc81ac779b73ac0c39f654d389a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-calendar-update-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_calendar_update_summary",
+  "skill": {
+    "id": 47634,
+    "skillKey": "clawhub-google-calendar-update-summary",
+    "name": "Google Calendar Update Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-calendar-update-summary",
+    "url": "https://clawhub.ai/skills/google-calendar-update-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-calendar-update-summary-6018859b596c7996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to exclusively update the summary (title) of a Google Calendar event."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777335335002,
+      "changelog": "- Initial release of Google Calendar Update Summary skill.\n- Allows updating only the summary (title) of an existing Google Calendar event via CLI.\n- Strictly limited to the summary field; does not change event times, locations, or attendees.\n- Integrates error-checking and retry logic to ensure summary is updated correctly.\n- Provides clear CLI usage example and expected output format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:768f93145c34388a8d97b6825b92ec30000957e93344f32f59b04b9b47aef1e3"
+}

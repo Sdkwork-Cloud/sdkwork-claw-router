@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "api-gateway-1",
+    "displayName": "Api Gateway 1",
+    "summary": "Connect to 100+ APIs (Google Workspace, Microsoft 365, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth. Use this skill when users want to interact...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771807545178,
+    "updatedAt": 1778387590337
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1771807545178,
+    "changelog": "Initial release of api-gateway skill.\n\n- Provides a passthrough proxy to 100+ APIs (Google Workspace, Microsoft 365, Notion, Slack, Airtable, HubSpot, etc.) with managed OAuth via Maton.\n- Base URL: `https://gateway.maton.ai/{app}/{native-api-path}`; requires `MATON_API_KEY` for authentication.\n- Includes detailed instructions for connection management (create, list, get, delete) via `https://ctrl.maton.ai`.\n- Supports specifying active connections using the `Maton-Connection` header.\n- Lists supported third-party services and proxy naming conventions.\n- Security: API key does not grant access by itself—user OAuth authorization required for each service.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kdegeek",
+    "userId": "publishers:kdegeek",
+    "displayName": "darthn8er",
+    "image": "https://avatars.githubusercontent.com/u/130706262?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_resource_identifier",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_resource_identifier, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387590337
+  }
+}

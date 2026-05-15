@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36366,
+  "uuid": "skill-clawhub-lyanthe",
+  "skillKey": "clawhub-lyanthe",
+  "name": "Lyanthe",
+  "summary": "Lyanthe integration. Manage data, records, and automate workflows. Use when the user wants to interact with Lyanthe data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lyanthe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Lyanthe integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Lyanthe data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lyanthe@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lyanthe",
+      "url": "https://clawhub.ai/skills/lyanthe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lyanthe",
+    "url": "https://clawhub.ai/skills/lyanthe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lyanthe-f1ee2c8fea151488.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lyanthe@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lyanthe-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba746d24d66be3930082ffef885c559453f9aa1f1ecb34105fae709e9c3a113f",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:51.644Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44885,
+  "uuid": "skill-clawhub-memory-auditor",
+  "skillKey": "clawhub-memory-auditor",
+  "name": "Memory-Auditor",
+  "summary": "Audits an agent's claims against stored memory to detect fabricated or drifted details and assess memory consistency with token-level analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crftsmnd",
+      "features": [
+        "Audits an agent's claims against stored memory to detect fabricated or drifted details and asse."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224760604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-auditor",
+      "url": "https://clawhub.ai/skills/memory-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auditor",
+    "url": "https://clawhub.ai/skills/memory-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auditor-c4b3939c530220ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9630cbd2457c3115c4ace1f985c5e363efde1b0f3a251a8f41c432dcfad495b",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T06:45:52.791Z"
+}

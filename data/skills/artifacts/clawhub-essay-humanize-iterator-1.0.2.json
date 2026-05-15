@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/essay-humanize-iterator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.essay_humanize_iterator",
+  "skill": {
+    "id": 34649,
+    "skillKey": "clawhub-essay-humanize-iterator",
+    "name": "Essay Humanize Iterator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "essay-humanize-iterator",
+    "url": "https://clawhub.ai/skills/essay-humanize-iterator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/essay-humanize-iterator-f555541e06ab23eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Iteratively rewrite essays to reduce AI detection scores while preserving meaning, complexity, and natural human writing style within defined linguistic metr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevin0818-lxd",
+      "userId": "s179hhzw0zteyz1ae4wjft1kjh83e23s",
+      "displayName": "kevin0818-lxd",
+      "image": "https://avatars.githubusercontent.com/u/75295236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774048291795,
+      "changelog": "- Clarified the purpose to focus on minimizing false positives from AI detectors and improving writing naturalness.\n- Updated “When to Use” examples for broader linguistic and stylistic coverage, including terms in Chinese.\n- Streamlined language in the Purpose and When to Use sections for greater inclusivity and clarity.\n- No functional or workflow changes; iteration and metric logic remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3aa0a472add8815307f12ac4def822726043e881b33d3a8da1a0095ca371a81"
+}

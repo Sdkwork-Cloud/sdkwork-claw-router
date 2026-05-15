@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41206,
+  "uuid": "skill-clawhub-skylv-cost-guard",
+  "skillKey": "clawhub-skylv-cost-guard",
+  "name": "Skylv Cost Guard",
+  "summary": "Monitors and optimizes AI API usage costs across multiple providers",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_cost_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Monitors and optimizes AI API usage costs across multiple providers"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-cost-guard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-cost-guard",
+      "url": "https://clawhub.ai/skills/skylv-cost-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-cost-guard",
+    "url": "https://clawhub.ai/skills/skylv-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-cost-guard-bef93bd1b6b44964.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-cost-guard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-cost-guard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca68ba768a39c496e3e4744aa439cba4acf327bab00f6b096599542268b7d3c5",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:36:58.555Z"
+}

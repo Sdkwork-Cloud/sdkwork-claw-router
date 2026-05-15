@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58448,
+  "uuid": "skill-clawhub-ai-fake-completion-cn",
+  "skillKey": "clawhub-ai-fake-completion-cn",
+  "name": "AI假完成",
+  "summary": "AI假完成 discovery skill for VeriClaw 爪印. Use when the intent is AI假完成, AI以为自己工作了, AI未做却说做了, AI装作自己做完了, or fake completion diagnosis. Routes users to the offici...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_fake_completion_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheygoodbai",
+      "features": [
+        "AI假完成 discovery skill for VeriClaw 爪印",
+        "Use when the intent is AI假完成, AI以为自己工作了, AI未做却说做了, AI装作自己做完了, or fake completion diagnosis",
+        "Routes users to the offici..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-fake-completion-cn@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143479205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-fake-completion-cn",
+      "url": "https://clawhub.ai/skills/ai-fake-completion-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-fake-completion-cn",
+    "url": "https://clawhub.ai/skills/ai-fake-completion-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-fake-completion-cn-63ffbcde541a6244.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-fake-completion-cn@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-fake-completion-cn-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15c902ed64b3596fa37e4a35554b7c564355efd80a6956038b14938edcb46204",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T21:20:31.078Z"
+}

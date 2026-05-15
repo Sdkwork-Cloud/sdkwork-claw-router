@@ -355,6 +355,76 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_allows_upload_model_with_file_targets_instead_of_database_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                export interface CourseApplicationVideoUploadResult {
+                  videoUrl: string;
+                  fileName: string;
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_models:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    interface: CourseApplicationVideoUploadResult
+                    fields: [videoUrl, fileName]
+                    data_sources: []
+                    file_targets: [course_application_video_uploads]
+                routes:
+                  - route: /demo
+                    required_tables: [content_course_application]
+                """,
+            )
+
+            result = FrontendFieldAudit(root=root).validate()
+            audit = FrontendFieldAudit(root=root).generate()
+
+            self.assertTrue(result.ok, result.messages)
+            self.assertEqual(["course_application_video_uploads"], audit["interfaces"][0]["file_targets"])
+
+    def test_reports_upload_model_without_file_targets_or_data_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                """
+                export interface CourseApplicationVideoUploadResult {
+                  videoUrl: string;
+                }
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_models:
+                  - route: /demo
+                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    interface: CourseApplicationVideoUploadResult
+                    fields: [videoUrl]
+                    data_sources: []
+                routes:
+                  - route: /demo
+                    required_tables: [content_course_application]
+                """,
+            )
+
+            result = FrontendFieldAudit(root=root).validate()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "frontend model apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#CourseApplicationVideoUploadResult must declare non-empty data_sources or file_targets",
+                result.messages,
+            )
+
     def test_reports_frontend_model_data_source_not_declared_on_route(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

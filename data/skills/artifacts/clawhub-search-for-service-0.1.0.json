@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/search-for-service@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_for_service",
+  "skill": {
+    "id": 16443,
+    "skillKey": "clawhub-search-for-service",
+    "name": "Search For Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-for-service",
+    "url": "https://clawhub.ai/skills/search-for-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-for-service-ec864b94e7b6148b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and browse the x402 bazaar marketplace for paid API services. Use when you or the user want to find available services, see what's available, discover APIs, or need an external service to accomplish a task. Also use as a fallback wh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrag",
+      "userId": "publishers:0xrag",
+      "displayName": "0xRAG",
+      "image": "https://avatars.githubusercontent.com/u/15928227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1041,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770843419150,
+      "changelog": "Initial release of the \"search-for-service\" skill.\n\n- Enables searching and browsing the x402 bazaar marketplace for paid API services.\n- Supports keyword search, resource browsing, and inspection of endpoint payment requirements.\n- Uses `npx awal@latest x402 bazaar` commands—no authentication or balance required for searching.\n- Results are cached locally and auto-refresh every 12 hours.\n- Serves as a fallback skill when no specific skill matches a user’s request for external services or APIs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9749ca7144be38db582d5957d19a64c28aa619596b3d014c95db1da42d5a3402"
+}
